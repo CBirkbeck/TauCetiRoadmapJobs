@@ -1095,15 +1095,15 @@
      "id": "4.4",
      "kind": "construction",
      "name": "Gysin.vistoliRationalEquivalence",
-     "statement": "For a 2-cartesian square with i : X -> Y a local embedding and v : Y' -> Y a regular local embedding with normal bundle N, the canonical rational equivalence beta(Y',X) in W_*(N x_Y C_{X/Y}) with boundary [C_{u^*C/C}] - [rho^* C_{X'/Y'}]; compatible with smooth base change, smooth factorisation and the tangent action; consequence v^![C] = [C_{X'/Y'}] in A_*(u^*C).",
+     "statement": "For a 2-cartesian square of DM stacks with Y reduced of pure dimension, i : X -> Y a local embedding and v : Y' -> Y a regular local embedding with normal bundle N, the canonical rational equivalence beta(Y',X) in W_*(N x_Y C_{X/Y}) with boundary [C_{u^*C/C}] - [rho^* C_{X'/Y'}]; compatible with smooth base change, smooth factorisation and the tangent action; consequence v^![C] = [C_{X'/Y'}] in A_*(u^*C).",
      "hypotheses": [
-      "M is a DM stack over the field k: IsDeligneMumford, of finite type over Spec k",
+      "Y a DM stack over the field k (IsDeligneMumford, of finite type over Spec k), reduced and of pure dimension",
       "i a local embedding",
       "v a regular local embedding"
      ],
      "locator": {
       "source": "vistoli1989",
-      "where": "Lemma 3.16, line 1172; Lemma 4.6, line 1458; behrend-fantechi1997 Propositions 3.3-3.5, lines 834-897"
+      "where": "Lemma 3.16, line 1172; Lemma 4.6, line 1458, and lines 1451-1452 (reduced equidimensional Y), 1465-1470 (construction); behrend-fantechi1997 Propositions 3.3-3.5, lines 834-897"
      },
      "prerequisites": [
       "target:4.2b",
@@ -1115,17 +1115,22 @@
       {
        "name": "beta_trivial",
        "kind": "degenerate",
-       "statement": "For X = Y, beta = 0."
+       "statement": "For X = Y the boundary is [N] - [N] = 0, and beta = 0 itself: the product of the ideals of X and Y' is zero, so the blow-up in Vistoli's construction is empty (vistoli1989 lines 1466-1470, 1482-1488)."
       },
       {
        "name": "beta_identity",
        "kind": "degenerate",
-       "statement": "For v the identity, the boundary is [C] - [C] = 0."
+       "statement": "For v the identity, the boundary is [C] - [C] = 0, and beta = 0 because the ideal of Y' is zero."
       },
       {
        "name": "beta_regular_self",
        "kind": "computation",
        "statement": "For v = i regular, v^![N] = s_*[X] in A(N), both with s^! equal to c_d(N) cap [X]; equality holds in A_*, not on cycles (xy = 0 in A^2 example)."
+      },
+      {
+       "name": "beta_nonreduced",
+       "kind": "non-example",
+       "statement": "For Y = A^1 x Spec k[eps]/(eps^2) and X the origin, [C_{X/Y}] = 2[A^1] (gr = k[T,E]/(E^2)) while the cone of the origin in Y_red = A^1 has multiplicity 1; the normalised blow-up only sees Y_red, so reducedness of Y is needed."
       }
      ]
     },
@@ -1865,15 +1870,16 @@
      "id": "8.4",
      "kind": "definition",
      "name": "Cotangent.intrinsicNormalSheaf",
-     "statement": "N_{M/frakM} := h1/h0((tau L_{M/frakM})^dual), an abelian cone stack with local presentations [N_{U/W}/T_{W/frakM}|_U]; a vector bundle stack iff M -> frakM is lci; BT_{M/frakM} for smooth M -> frakM.",
+     "statement": "N_{M/frakM} := h1/h0((tau L_{M/frakM})^dual), an abelian cone stack with local presentations [N_{U/W}/T_{W/frakM}|_U]; a vector bundle stack iff tau L_{M/frakM} is perfect of amplitude [-1,0], in particular when M -> frakM is lci (not conversely over a non-reduced base); BT_{M/frakM} for smooth M -> frakM.",
      "hypotheses": [
       "frakM an algebraic k-stack of pure dimension m; f : M -> frakM of Deligne-Mumford type; M a DM stack of finite type over k with affine diagonal"
      ],
      "locator": {
       "source": "behrend-fantechi1997",
-      "where": "Definition 3.6, line 902; lines 943-962; line 1652"
+      "where": "Definition 3.6, line 902; lines 943-962; line 1652; Proposition 2.4, line 674; Lemma 1.1, line 244; lines 237-239"
      },
      "prerequisites": [
+      "target:7.1",
       "target:7.4",
       "target:8.2",
       "target:8.3"
@@ -1887,7 +1893,7 @@
       {
        "name": "intrinsicNormalSheaf_lci",
        "role": "characterisation",
-       "statement": "Vector bundle stack iff lci."
+       "statement": "Vector bundle stack iff tau L_{M/frakM} is perfect of amplitude [-1,0] (the presentation C(I/I^2) is then smooth, hence a vector bundle, so I/I^2 is locally free); in particular a vector bundle stack when M -> frakM is lci."
       }
      ],
      "tests": [
@@ -1904,7 +1910,12 @@
       {
        "name": "normalSheaf_fatpoint",
        "kind": "computation",
-       "statement": "For k[x,y]/(x,y)^2: a fibre [A^3/A^2], dimension 1."
+       "statement": "For k[x,y]/(x,y)^2: a fibre [A^3/A^2], dimension 1; I/I^2 has length 7, not 9, so it is not free and N is not a vector bundle stack."
+      },
+      {
+       "name": "normalSheaf_nonreduced_base",
+       "kind": "non-example",
+       "statement": "For the closed point Spec k -> Spec k[eps]/(eps^2): I/I^2 = k, Omega_{W/frakM} = 0, tau L = k[1] perfect and N = A^1 a vector bundle, but C = Spec k[t]/(t^2) is not a vector bundle stack, so the morphism is not lci."
       }
      ]
     },
@@ -1912,19 +1923,21 @@
      "id": "8.5",
      "kind": "construction",
      "name": "Cotangent.intrinsicNormalCone",
-     "statement": "The unique closed subcone stack C_{M/frakM} of N_{M/frakM} with C|_U = [C_{U/W}/T_{W/frakM}|_U]; pure dimension m with abelian hull N; lci characterisation; products; base change along v with finite unramified diagonal (closed immersion, isomorphism for flat v); smooth pullback exact sequence.",
+     "statement": "The unique closed subcone stack C_{M/frakM} of N_{M/frakM} with C|_U = [C_{U/W}/T_{W/frakM}|_U]; pure dimension m with abelian hull N; lci iff vector bundle stack, and then C = N (C = N alone does not force lci); products; base change along v with finite unramified diagonal (closed immersion, isomorphism for flat v); smooth pullback exact sequence.",
      "hypotheses": [
       "frakM an algebraic k-stack of pure dimension m; f : M -> frakM of Deligne-Mumford type; M a DM stack of finite type over k with affine diagonal"
      ],
      "locator": {
       "source": "behrend-fantechi1997",
-      "where": "Lemma 3.2, Proposition 3.1, Lemma 3.8, Corollary 3.9, Definition 3.10, Theorem 3.11, Propositions 3.12-3.14, lines 762-1064; Proposition 7.1, line 1676; line 1656"
+      "where": "Lemma 3.2, Proposition 3.1, Lemma 3.8, Corollary 3.9, Definition 3.10, Theorem 3.11, Propositions 3.12-3.14, lines 762-1064; Proposition 7.1, line 1676; line 1656; stacks-divisors Lemma 21.4 (063H), Lemma 22.3 (063L)"
      },
      "prerequisites": [
       "target:4.2b",
       "target:7.2",
       "target:8.4",
-      "target:1.3"
+      "target:1.3",
+      "target:7.1",
+      "roadmap:SchemeAndStackFoundations §5.5"
      ],
      "api": [
       {
@@ -1933,9 +1946,14 @@
        "statement": "C_{M/frakM} has pure dimension m (Theorem 3.11)."
       },
       {
+       "name": "normalCone_vectorBundle_iff_regular",
+       "role": "characterisation",
+       "statement": "For a closed immersion U -> W of locally Noetherian schemes, the normal cone C_{U/W} is a vector bundle over U iff the immersion is regular ('if': SchemeAndStackFoundations §5.5 conormal_regular, normalCone_eq_normalBundle; 'only if': the ideal is quasi-regular, stacks-divisors Lemma 21.4, hence regular, Lemma 22.3)."
+      },
+      {
        "name": "intrinsicNormalCone_lci",
        "role": "characterisation",
-       "statement": "lci iff vector bundle stack iff C = N (Proposition 3.12)."
+       "statement": "lci iff C_{M/frakM} is a vector bundle stack, and then C = N (Proposition 3.12; for 'if', C_{U/W} is a torsor over a smooth stack, hence smooth, hence a vector bundle, and U -> W is regular by normalCone_vectorBundle_iff_regular). C = N does not imply lci."
       },
       {
        "name": "intrinsicNormalCone_baseChange",
@@ -1952,12 +1970,22 @@
       {
        "name": "normalCone_fatpoint_neq",
        "kind": "non-example",
-       "statement": "For k[x,y]/(x,y)^2: C_M has dimension 0 and N_M dimension 1."
+       "statement": "For k[x,y]/(x,y)^2: C_M has dimension 0 and N_M dimension 1, so C_M != N_M and the fat point is not lci."
       },
       {
        "name": "normalCone_BGm",
        "kind": "computation",
        "statement": "For Spec k -> BG_m, C = BG_a of dimension -1 = m."
+      },
+      {
+       "name": "normalCone_embeddedPoint_eq",
+       "kind": "non-example",
+       "statement": "For k[x,y]/(x^2, xy) in A^2: I = x(x,y) is of linear type (I ~ (x,y), I^n = x^n (x,y)^n), so Sym(I/I^2) = gr_I and C_M = N_M; but M is not Cohen-Macaulay (depth 0, dimension 1 at the origin), hence not lci, and C_M = N_M is not a vector bundle stack."
+      },
+      {
+       "name": "normalCone_regular_criterion",
+       "kind": "computation",
+       "statement": "For Spec k -> Spec k[eps]/(eps^2), gr_(eps) = k[t]/(t^2) is not a vector bundle and (eps) is not generated by a nonzerodivisor; for k[x]/(x^2) in A^1 the cone is a line bundle and x^2 is a nonzerodivisor."
       }
      ]
     }
@@ -2038,7 +2066,7 @@
       {
        "name": "IsObstructionTheory.id",
        "role": "constructor",
-       "statement": "tau L itself is an obstruction theory, perfect iff lci."
+       "statement": "tau L itself is an obstruction theory; it is perfect iff N_{M/frakM} is a vector bundle stack, in particular if M -> frakM is lci (behrend-fantechi1997 line 1321); perfect does not imply lci (Spec k -> Spec k[eps]/(eps^2))."
       },
       {
        "name": "virtualDim",
@@ -2116,19 +2144,39 @@
      "id": "10.1",
      "kind": "theorem",
      "name": "Virtual.globalResolution_dominate",
-     "statement": "Two global resolutions of E are dominated by a third through degreewise monomorphisms with locally free cokernels, and the dual comparison K_1 -> F_1 is a surjection of vector bundles.",
+     "statement": "For global resolutions F, H of E, the fibre product K_1 := F_1 x_{h1/h0(E^dual)} H_1 is a vector bundle on M and its projections K_1 -> F_1, K_1 -> H_1 are surjective morphisms of vector bundles with kernels H_0 and F_0 (hence smooth). Etale-locally on an affine U the isomorphism H = F in D(O_U) is a quasi-isomorphism of complexes psi, and K^0 = H^0 + F^0, K^-1 = F^-1 x_{F^0} K^0 = F^-1 + H^0 receives F and H by degreewise split monomorphisms with C(K^-1) = K_1|_U; no global morphism of complexes is needed.",
      "hypotheses": [
       "frakM an algebraic k-stack of pure dimension m; f : M -> frakM of Deligne-Mumford type; M a DM stack of finite type over k with affine diagonal; M separated; E -> tau L a perfect obstruction theory of constant rank r"
      ],
      "locator": {
       "source": "behrend-fantechi1997",
-      "where": "proof of Proposition 5.3, lines 1303-1312"
+      "where": "proof of Proposition 5.3, lines 1303-1312 (the source assumes a global morphism of complexes; here only an etale-local one is used)"
      },
      "prerequisites": [
-      "target:7.3b"
+      "target:7.1",
+      "target:7.3b",
+      "target:7.4",
+      "roadmap:SchemeAndStackFoundations §2.6",
+      "roadmap:SchemeAndStackFoundations §2.10"
      ],
      "api": [],
-     "tests": []
+     "tests": [
+      {
+       "name": "globalResolution_zero",
+       "kind": "degenerate",
+       "statement": "E = 0 with [0 -> 0] and [O -id-> O]: h1/h0 = M, K_1 = A^1 x M, K_1 -> F_1 has kernel H_0 = A^1 x M and K_1 -> H_1 is the identity."
+      },
+      {
+       "name": "globalResolution_ranks",
+       "kind": "computation",
+       "statement": "E = Omega_M[0], M smooth of dimension n, F = [0 -> Omega_M], H = [G -> Omega_M + G] with G of rank g: K_1 = H_0 of rank n + g = rk F_1 + rk H_0 = rk H_1 + rk F_0."
+      },
+      {
+       "name": "globalResolution_not_chain_map",
+       "kind": "non-example",
+       "statement": "On P^1 with E = [O(-4) -0-> Omega] (projection to Omega): Hom_D(E,E) = k + k + Ext^1(Omega, O(-4)) with Ext^1 = H^1(O(-2)) = k, while chain maps are pairs of scalars and homotopies vanish; 1 + xi is an automorphism of (E, phi) not given by a morphism of complexes, and K_1 is still defined."
+      }
+     ]
     },
     {
      "id": "10.2",
@@ -2184,7 +2232,7 @@
      "id": "10.3",
      "kind": "theorem",
      "name": "Virtual.virtualClass_independent",
-     "statement": "[M,E]^vir is independent of the global resolution and depends only on the isomorphism class of (E, phi).",
+     "statement": "[M,E]^vir is independent of the global resolution (both F and H give 0^!_{K_1} of the common inverse image C_{M/frakM} x_{h1/h0} K_1 under the comparison of 10.1) and depends only on the isomorphism class of (E, phi).",
      "hypotheses": [
       "frakM an algebraic k-stack of pure dimension m; f : M -> frakM of Deligne-Mumford type; M a DM stack of finite type over k with affine diagonal; M separated; E -> tau L a perfect obstruction theory of constant rank r",
       "E has a global resolution"
@@ -2251,20 +2299,22 @@
      "id": "10.6",
      "kind": "theorem",
      "name": "Virtual.virtualClass_pullback",
-     "statement": "For a 2-cartesian square over v : frakM' -> frakM (pure dimension, finite unramified diagonal), u^*E is a perfect obstruction theory with a global resolution and v^![M,E]^vir = [M',u^*E]^vir when v is flat or a regular local embedding.",
+     "statement": "For a 2-cartesian square over v : frakM' -> frakM (pure dimension, finite unramified diagonal), u^*E is a perfect obstruction theory with a global resolution and v^![M,E]^vir = [M',u^*E]^vir when v is flat, and when v is a regular local embedding and frakM is reduced (4.4 is applied on the W of relative local embeddings, smooth over frakM).",
      "hypotheses": [
       "frakM an algebraic k-stack of pure dimension m; f : M -> frakM of Deligne-Mumford type; M a DM stack of finite type over k with affine diagonal; M separated; E -> tau L a perfect obstruction theory of constant rank r",
       "frakM' pure dimensional",
       "v with finite unramified diagonal",
-      "M' separated"
+      "M' separated",
+      "frakM reduced (for the regular local embedding case)"
      ],
      "locator": {
       "source": "behrend-fantechi1997",
-      "where": "Proposition 7.2, line 1682; lines 1690-1699"
+      "where": "Proposition 7.2, line 1682; lines 1690-1699; Lemma 5.9, line 1397; stated for smooth frakM, frakM' at line 1668"
      },
      "prerequisites": [
       "target:4.4",
       "target:4.5",
+      "target:8.1",
       "target:8.3",
       "target:8.5",
       "target:10.2"
@@ -2276,14 +2326,15 @@
      "id": "10.7",
      "kind": "theorem",
      "name": "Virtual.virtualClass_functorial",
-     "statement": "For compatible perfect obstruction theories over an lci v : Z' -> Z of frakM-stacks with finite unramified diagonal, v^![X,E]^vir = [X',F]^vir when v is smooth or Z', Z are smooth over frakM, with v^! flat pullback, resp. the Gysin map of the graph Z' -> Z' x_frakM Z composed with flat pullback.",
+     "statement": "For compatible perfect obstruction theories over an lci v : Z' -> Z of frakM-stacks with finite unramified diagonal, v^![X,E]^vir = [X',F]^vir when v is smooth, or when frakM is reduced and Z', Z are smooth over frakM, with v^! flat pullback, resp. the Gysin map of the graph Z' -> Z' x_frakM Z composed with flat pullback.",
      "hypotheses": [
       "frakM an algebraic k-stack of pure dimension m; f : M -> frakM of Deligne-Mumford type; M a DM stack of finite type over k with affine diagonal; M separated; E -> tau L a perfect obstruction theory of constant rank r",
-      "compatibility datum (morphism of distinguished triangles)"
+      "compatibility datum (morphism of distinguished triangles)",
+      "frakM reduced (for the case Z', Z smooth over frakM)"
      ],
      "locator": {
       "source": "behrend-fantechi1997",
-      "where": "Definition 5.8, Lemma 5.9, Proposition 5.10, lines 1381-1498; Proposition 7.5, line 1734"
+      "where": "Definition 5.8, Lemma 5.9, Proposition 5.10, lines 1381-1498; Proposition 7.5, line 1734 (base smooth of constant dimension, line 1668)"
      },
      "prerequisites": [
       "target:4.4",
@@ -2301,11 +2352,12 @@
      "id": "10.8",
      "kind": "theorem",
      "name": "Virtual.virtualCount_deformationInvariant",
-     "statement": "For M proper over k the virtual count is the integral of [M,E]^vir (vd = 0); for M -> frakM x B with B a smooth connected curve and M proper over B, the virtual counts of the fibres over k-points of B are equal.",
+     "statement": "For M proper over k the virtual count is the integral of [M,E]^vir (vd = 0); for frakM reduced, M -> frakM x B with B a smooth connected curve and M proper over B, the virtual counts of the fibres over k-points of B are equal.",
      "hypotheses": [
       "frakM an algebraic k-stack of pure dimension m; f : M -> frakM of Deligne-Mumford type; M a DM stack of finite type over k with affine diagonal; M separated; E -> tau L a perfect obstruction theory of constant rank r",
       "M proper over B",
-      "B a smooth connected curve over k"
+      "B a smooth connected curve over k",
+      "frakM reduced (for deformation invariance)"
      ],
      "locator": {
       "source": "behrend-fantechi1997",
@@ -2511,6 +2563,7 @@
   {
    "roadmap": "SchemeAndStackFoundations",
    "sections": [
+    "§0.7",
     "§1.1",
     "§1.10",
     "§1.18",
@@ -2519,7 +2572,9 @@
     "§1.21",
     "§1.22",
     "§1.23",
+    "§2.6",
     "§2.9",
+    "§2.10",
     "§2.20",
     "§3.3",
     "§4.1",
@@ -2529,7 +2584,7 @@
     "§5.5",
     "§5.6"
    ],
-   "what": "stacks in groupoids, DM stacks, |M|, properness, quotient stacks, QCoh on stacks, coarse moduli spaces and Keel-Mori; the small etale site of algebraic spaces; big-site modules; relative duality; degrees on curves; lifting for smooth morphisms; Chow groups of schemes with pushforward, pullback, localisation, homotopy invariance, Chern classes, normal cones, refined Gysin maps and intersection products"
+   "what": "stacks in groupoids, DM stacks, |M|, properness, quotient stacks, QCoh on stacks, coarse moduli spaces and Keel-Mori; the small etale site of algebraic spaces; local dimension of schemes; big-site modules; affine vanishing and topology comparison of quasi-coherent cohomology; relative duality; degrees on curves; lifting for smooth morphisms; Chow groups of schemes with pushforward, pullback, localisation, homotopy invariance, Chern classes, normal cones, refined Gysin maps and intersection products"
   },
   {
    "roadmap": "AlgebraicVectorBundles",
@@ -2580,7 +2635,7 @@
  "consumers": [
   {
    "roadmap": "MotivicStructuresInModuliOfCurves",
-   "what": "rational Chow groups, Gysin pullbacks, intersection products and degrees on the DM stacks Mbar_{g,n} (Layers 2-6); requires ordering after this roadmap"
+   "what": "rational Chow groups, Gysin pullbacks, intersection products and degrees on the DM stacks Mbar_{g,n} (Layers 2-6)"
   },
   {
    "roadmap": "a roadmap on stacks of stable maps and algebraic Gromov-Witten invariants",
