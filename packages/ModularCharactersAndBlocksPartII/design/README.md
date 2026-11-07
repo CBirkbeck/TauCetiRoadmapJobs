@@ -63,7 +63,9 @@ Already in the libraries, and consumed rather than rebuilt:
 - **Conjugation, inertia and Clifford theory.** `TauCeti.conjNormalFDRep`,
   `TauCeti.conjNormalFDRep_ρ`, `TauCeti.char_conjFDRep`, `TauCeti.inertia`, `TauCeti.le_inertia`,
   `TauCeti.mem_inertia_iff`, `FDRep.cliffordCorrespondence`, `FDRep.clifford_restrict_dvd_finrank`,
-  `FDRep.clifford_restrict_inertia_eq_top_of_coprime`, `TauCeti.clifford_restrict_character`.
+  `FDRep.clifford_restrict_inertia_eq_top_of_coprime`, `TauCeti.clifford_restrict_character`,
+  `TauCeti.Representation.isSemisimpleRepresentation_comp_subtype`; Mathlib's
+  `Rep.indResAdjunction`.
 - **Tensor factorisation over an extension.** `TauCeti.IsProjectiveInertiaExtension`,
   `TauCeti.IsProjectiveInertiaExtension.tensorRep`,
   `TauCeti.IsProjectiveInertiaExtension.tensorRepEquiv`,
@@ -199,7 +201,10 @@ complements beyond the abelian case); `Sylow`, `IsPGroup`, `IsSolvable`, `IsCycl
 `Representation.IsIrreducible`, `Representation.isIntegral_character`
 (`Mathlib/RepresentationTheory/Character.lean`: for a finite group and a finite-dimensional
 representation over a field, the character values are integral over `ℤ`), `LinearMap.det`,
-`FDRep`; `IsCyclotomicExtension`,
+`FDRep`, `Rep.indResAdjunction` (`Mathlib/RepresentationTheory/Induced.lean`: for a commutative
+ring `k` and a group homomorphism `φ : G →* H`, induction `Rep k G ⥤ Rep k H` along `φ` is left
+adjoint to restriction along `φ`, with no hypothesis on `k`; used with `φ` the inclusion of a
+normal subgroup and `k` the residue field); `IsCyclotomicExtension`,
 `IsPrimitiveRoot.autToPow`, `ZMod.chineseRemainder`, `IsGalois`, `IntermediateField.adjoin`,
 `IntermediateField.fixedField`, `IsIntegral`; `padicValNat`, `padicValRat`;
 `IsDiscreteValuationRing`, `IsAdicComplete`, `IsLocalRing.ResidueField`, `MonoidAlgebra`,
@@ -217,6 +222,13 @@ The declarations listed under *Already in the libraries*, read at their files:
 the values), `CharacterTable/Cyclotomic/Action.lean`
 (`IsPrimitiveRoot.cyclotomicIrreducibleCharacterAction`, with `K`, `L`, `G` in one universe and
 the value formula `χ(g^j)`), `Induction/Conjugate.lean`, `Induction/Inertia.lean`,
+`Induction/Clifford/Basic.lean` (`TauCeti.Representation.isSemisimpleRepresentation_comp_subtype`:
+over any field, the restriction of a finite-dimensional irreducible representation to a normal
+subgroup is semisimple, with no hypothesis on the characteristic or on algebraic closure),
+`Induction/Clifford/Decomposition.lean` (`TauCeti.clifford_restrict_character`: for finite `G`
+over an algebraically closed field in which `|G|` is a unit, the character of the restriction of
+a simple representation to `N` is a positive multiple of the sum of the distinct conjugates of a
+simple constituent; used over `ℂ` only),
 `Induction/Clifford/Classes.lean` (`FDRep.cliffordCorrespondence`, algebraically closed of
 characteristic zero, on classes of simple representations lying over a simple `V`),
 `Induction/Clifford/Dimension.lean` (`FDRep.clifford_restrict_dvd_finrank`: for simple `W`, a
@@ -293,7 +305,10 @@ idempotents), §3.6 (the irreducible characters of `G × H` are the products `ψ
 Layer 1 (`conjRep` and the conjugate character), Layer 2 (the induced character and Frobenius
 reciprocity), Layer 5 (Clifford's theorem and the Clifford correspondence), Layer 7 (the scalar
 obstruction `cliffordObstruction` and the tensor factorisation over a compatible projective
-extension).
+extension). Layers 2 and 5 state reciprocity and Clifford theory with `IsUnit (Nat.card G : k)`,
+so this roadmap consumes them for ordinary characters only, over `ℂ`; the characteristic-`p`
+step of §7.2 uses instead the field-general Mathlib `Rep.indResAdjunction` and Tau Ceti
+`TauCeti.Representation.isSemisimpleRepresentation_comp_subtype`.
 
 What InductionRestriction must provide (gap:clifford-multiplicity-dvd-index): for a finite group
 `G`, `N ⊴ G`, `χ ∈ Irr(G)` and an irreducible constituent `θ` of `χ|_N`, the quotient `χ(1)/θ(1)`
@@ -961,8 +976,10 @@ Proposition 7.11); `Σ_{B covers b} e_B = Σ_{b'} e_{b'}`, `b'` running over the
 `b` (martinez line 1642); the blocks of `N` covered by `B` form one `G`-orbit (martinez line 1760,
 Corollary 7.8); if `B` covers `b`, every `θ ∈ Irr(b)` lies under some `χ ∈ Irr(B)` and every
 `φ ∈ IBr(b)` under some member of `IBr(B)` (martinez line 1763, Proposition 7.9); and if `b^G` is
-defined it covers `b` (martinez line 1976, Lemma 8.6). Route: for the first, Clifford's theorem,
-which gives `ω_χ = ω_ξ` on the `G`-class sums in `N` for every `ξ` under `χ`, and
+defined it covers `b` (martinez line 1976, Lemma 8.6). Route: for the first, Clifford's theorem
+in character form over `ℂ`, where `Irr(G)` is read (Conventions), so that the unit and
+algebraic-closure hypotheses of Tau Ceti `TauCeti.clifford_restrict_character` hold; it gives
+`ω_χ = ω_ξ` on the `G`-class sums in `N` for every `ξ` under `χ`, and
 `ω_ψ(e_η) = δ_{ψη}` on the orbit idempotent `Σ_i e_{θ_i}` (`θ_i` the `G`-conjugates of `θ`), a
 combination of `G`-class sums in `N`, so that `ω_ξ = ω_θ` there only for `ξ` conjugate to `θ`;
 for the third, the sum of the `e_{b'}` over the `G`-orbit of `b` is a `G`-invariant idempotent of
@@ -973,12 +990,19 @@ the first applied to some `χ ∈ Irr(B)` over some `θ ∈ Irr(b)` (base §8.2)
 combination of `G`-class sums in `N`, on which `λ_B` agrees with `λ_b`, and `λ_b` is `1` on it, so
 `B` is one of the `B'`; for the fourth, the third and the orthogonality of the idempotent sums of
 two distinct orbits, which therefore share no `e_B`; for the fifth, connectivity of `Irr(b)` in
-the Brauer graph (§6.1), the decomposition of `χ⁰` (base §2.4), Frobenius reciprocity and the
-semisimplicity of the restriction of a simple module to a normal subgroup (InductionRestriction
-Layer 5), with base §2.1 for induced Brauer characters; for the sixth, the second and `λ_{b^G}(𝒞⁺) = λ_b((𝒞 ∩ N)⁺) = λ_b(𝒞⁺)` for a
+the Brauer graph (§6.1), the decomposition of `χ⁰` (base §2.4), Frobenius reciprocity for ordinary
+characters (InductionRestriction Layer 2), and, for the modular step that a simple `k[G]`-module
+`W` with a simple `k[N]`-module `V` among the composition factors of `Res_N W` is a quotient of
+`Ind_N^G V`, two statements that hold over every field, in particular over the residue field `k`,
+which need not be algebraically closed (it is `𝔽₄` for `S₃` at `p = 2`, base §1.1): the restriction of a simple module to a normal subgroup is semisimple (Tau Ceti
+`TauCeti.Representation.isSemisimpleRepresentation_comp_subtype`), so `V` is a submodule of
+`Res_N W`, and induction is left adjoint to restriction (Mathlib `Rep.indResAdjunction`), so
+`Hom_G(Ind_N^G V, W) ≅ Hom_N(V, Res_N W) ≠ 0`; base §2.1 identifies the Brauer character of
+`Ind_N^G V` with `φ^G`; for the sixth, the second and `λ_{b^G}(𝒞⁺) = λ_b((𝒞 ∩ N)⁺) = λ_b(𝒞⁺)` for a
 `G`-class `𝒞 ⊆ N`, which is the definition of `b^G` (base §7.1). *Needs:* §6.1; base §§0.2, 2.1,
 2.4, 3.1, 4.2, 7.1, 8.2; InductionRestriction Layers 2 and 5; Tau Ceti
-`TauCeti.clifford_restrict_character`.
+`TauCeti.clifford_restrict_character`, `TauCeti.Representation.isSemisimpleRepresentation_comp_subtype`;
+Mathlib `Rep.indResAdjunction`.
 
 **Checks.**
 - `S₃`, `N = C₃`, `p = 2`: `B₀` covers `{1_N}` and the defect-zero block covers both `{λ}` and
@@ -986,6 +1010,14 @@ Layer 5), with base §2.1 for induced Brauer characters; for the sixth, the seco
 - `S₃`, `N = C₃`, `p = 3`: one block on each side, and it covers.
 - `N = 1`: every block covers the unique block of `1`; `N = G`: `B` covers `b` exactly when
   `B = b`.
+- The modular step needs no invertibility of `|N|`: `S₄`, `N = A₄`, `p = 2`, `k ⊇ 𝔽₄`. The
+  two-dimensional simple `k[S₄]`-module `W`, inflated from `S₃`, restricts to `λ ⊕ λ̄` with `λ`
+  inflated from `A₄/V₄ ≅ C₃`, a semisimple restriction although `2` divides `|A₄|`; the adjunction
+  gives a nonzero map `Ind_{A₄}^{S₄} λ → W`, onto as `W` is simple, hence an isomorphism (both of
+  dimension `2`), with Brauer character `2, −1` on the classes of `1` and of a `3`-cycle. So
+  `λ, λ̄ ∈ IBr(A₄)` lie under `W`, as the fifth statement requires for the single `2`-blocks of
+  `A₄` and `S₄`, while a supplier assuming `|G|` invertible in `k` (`24 = 0` in `k`) does not
+  apply.
 
 ### 7.3 Defect groups under domination
 
@@ -1081,8 +1113,8 @@ correspondence is the identity on `B₀`.
 
 ### Dependencies
 
-Layer 6; base §§0.2, 1.2, 2.1, 3.1, 4.2, 6.1–6.2, 7.1, 8.1–8.2; InductionRestriction Layer 5;
-Tau Ceti Clifford theory.
+Layer 6; base §§0.2, 1.2, 2.1, 2.4, 3.1, 4.2, 6.1–6.2, 7.1, 8.1–8.2; InductionRestriction
+Layers 2 and 5; Tau Ceti Clifford theory; Mathlib `Rep.indResAdjunction`.
 
 ## Layer 8: blocks with a normal defect group
 

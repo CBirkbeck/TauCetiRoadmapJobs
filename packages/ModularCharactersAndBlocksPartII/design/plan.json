@@ -100,8 +100,7 @@
      "prerequisites": [
       "roadmap:LocalFiniteGroupTheory L3",
       "mathlib:ConjClasses",
-      "mathlib:FixedPoints.subgroup",
-      "target:1.1"
+      "mathlib:FixedPoints.subgroup"
      ],
      "api": [],
      "tests": [
@@ -607,7 +606,7 @@
       "target:2.2",
       "target:3.2",
       "mathlib:FixedPoints.subgroup",
-      "mathlib:QuotientGroup.mk",
+      "mathlib:MulDistribMulAction (G ⧸ H) (FixedPoints.subgroup H α)",
       "mathlib:IsSolvable"
      ],
      "api": [
@@ -1277,7 +1276,9 @@
       "roadmap:ModularCharactersAndBlocks §8.2",
       "roadmap:InductionRestriction Layer 2",
       "roadmap:InductionRestriction Layer 5",
-      "tauceti:TauCeti.clifford_restrict_character"
+      "tauceti:TauCeti.clifford_restrict_character",
+      "tauceti:TauCeti.Representation.isSemisimpleRepresentation_comp_subtype",
+      "mathlib:Rep.indResAdjunction"
      ],
      "api": [],
      "tests": [
@@ -1295,6 +1296,11 @@
        "name": "extreme_N",
        "kind": "degenerate",
        "statement": "N = 1: every block covers; N = G: covering is equality."
+      },
+      {
+       "name": "s4_a4_p2_modular_step",
+       "kind": "computation",
+       "statement": "S₄, N = A₄, p = 2, k ⊇ 𝔽₄: the two-dimensional simple k[S₄]-module W (inflated from S₃) restricts to λ ⊕ λ̄, semisimple although 2 divides |A₄|; the adjunction makes W a quotient of Ind λ, so W ≅ Ind λ with Brauer character (2, −1), and λ, λ̄ lie under W; |G| = 24 is zero in k."
       }
      ]
     },
