@@ -286,3 +286,96 @@ licence_class = "none"
 status = "uncertified"
 version_note = "J. Differential Geom. 18 (1983), 445-503; the Project Euclid landing page offers no readable copy, cited by its locator without the text"
 cited_for = ["10.3"]
+
+[[source]]
+id = "kindred2020"
+authors = "Thomas Kindred"
+title = "A geometric proof of the flyping theorem"
+year = 2020
+arxiv = "2008.06490v3"
+locator_scheme = "section"
+locator = "§2.2"
+url = "https://arxiv.org/abs/2008.06490v3"
+fetched_from = "https://arxiv.org/pdf/2008.06490v3"
+fetched_at = "2026-11-07T06:05:58Z"
+sha256 = "8cc620f4a9b53ae91a788cbe811ec94f41402c1286ae5ca9bcf89de7ed80f620"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-07"
+version_note = "arXiv v3"
+cited_for = ["4.9.1"]
+
+[[source]]
+id = "htw1998"
+authors = "Hoste"
+title = "The first 1,701,936 knots"
+year = 1998
+venue = "The Mathematical Intelligencer 20"
+doi = "10.1007/bf03025227"
+locator_scheme = "page"
+locator = "Table 1"
+url = "https://doi.org/10.1007/bf03025227"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["4.9.1"]
+
+[[source]]
+id = "hirsch1976"
+authors = "Morris W. Hirsch"
+title = "Differential Topology"
+year = 1976
+venue = "Graduate Texts in Mathematics"
+doi = "10.1007/978-1-4684-9449-5"
+locator_scheme = "theorem"
+locator = "Chapter 9, Theorems 3.5, 3.6, 3.7, 3.10, 3.11"
+url = "https://doi.org/10.1007/978-1-4684-9449-5"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["1.1", "1.3", "1.7"]
+
+[[source]]
+id = "lickorish1962"
+authors = "W. B. R. Lickorish"
+title = "A representation of orientable combinatorial 3-manifolds"
+year = 1962
+venue = "Annals of Mathematics 76"
+doi = "10.2307/1970373"
+locator_scheme = "theorem"
+locator = "the twist theorem (every orientation-preserving homeomorphism of a compact orientable surface is isotopic to a product of twists)"
+url = "https://doi.org/10.2307/1970373"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled (JSTOR); cited by its locator without the text"
+cited_for = ["1.7.2", "5.2"]
+
+[[source]]
+id = "lickorish1964"
+authors = "W. B. R. Lickorish"
+title = "A finite set of generators for the homeotopy group of a 2-manifold"
+year = 1964
+venue = "Proceedings of the Cambridge Philosophical Society 60"
+doi = "10.1017/S030500410003824X"
+locator_scheme = "theorem"
+locator = "main theorem (the 3g − 1 twists), with the corrigendum in volume 62 (1966)"
+url = "https://doi.org/10.1017/S030500410003824X"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled (Cambridge); cited by its locator without the text"
+cited_for = ["1.7.2"]
+
+[[source]]
+id = "farb-margalit2012"
+authors = "Benson Farb, Dan Margalit"
+title = "A Primer on Mapping Class Groups"
+year = 2012
+venue = "Princeton Mathematical Series 49"
+doi = "10.1515/9781400839049"
+locator_scheme = "theorem"
+locator = "Lemma 2.1, Proposition 2.4, Theorem 2.5, Theorem 4.1"
+url = "https://doi.org/10.1515/9781400839049"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled (Princeton University Press); cited by its locator without the text"
+cited_for = ["1.7.2"]
