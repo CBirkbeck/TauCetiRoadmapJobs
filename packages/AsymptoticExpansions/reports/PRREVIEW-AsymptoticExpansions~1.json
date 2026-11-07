@@ -1,0 +1,13 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-AsymptoticExpansions~1",
+  "head": "9824db0741000f562155724d5a504d815c94bdce",
+  "pr": 1857,
+  "folder": "AsymptoticExpansions",
+  "date": "2026-11-07",
+  "findings": 8,
+  "blocking": 2,
+  "notes": "Full review. Gate at head: tex=9, prnum=1, build=2 (Lake module-system warning), all other scanners 0; depcheck 0 problems, no UPWARD/CYCLE; no change outside the folder. Seeded sample (What this roadmap owns / What it does not own / The boundary in one sentence) verified against the pins and the two suppliers on main (ZerosOfLFunctions 1.2/1.3, ContourIntegration residue). DLMF 2.2, 2.3, 2.4, 2.5, 2.6, 2.7, 2.9 read through the sources service: all sampled locators support the statements; DLMF 2.10 unreadable through the service (resolves to the figure PDF). 30 Mathlib/Tau Ceti declarations opened at the pins. Adversarial table of 40 rows with computed values; no false statement found. Blocking: SpecialFunctionsParabolicCylinder #1801 (same author) also owns Watson's lemma in a sector, the Gamma strip bound, the line shift and the Cahen-Mellin integral (P2); stationary phase (Milestone 6) and Abel-Plana (13.2) statable but absent from Suggested.lean (P2). P3: gate tex/prnum, module header, README shape and dated process text, padding (add and isLittleO close in one term on a scratch probe), Tau Ceti LaplaceTransform.lean not in the inventory, five Lean definitions and all theorem names absent from the README. Two DLMF source issues recorded (2.3.26 sign of a; 2.7(ii) divergence remark)."
+ }
+}
