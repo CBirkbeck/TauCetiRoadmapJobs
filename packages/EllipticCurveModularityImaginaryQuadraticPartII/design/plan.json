@@ -25,12 +25,13 @@
      ],
      "locator": {
       "source": "MilneCM",
-      "where": "Proposition 1.4, Corollary 1.5 and Remark 1.6, p. 10 (lines 273-301)"
+      "where": "Proposition 1.4(b) with the uniqueness of complex conjugation noted after it, and Corollary 1.5, p. 10 (lines 273-295)"
      },
      "prerequisites": [
       "mathlib:NumberField.IsCMField",
       "mathlib:NumberField.IsCMField.ofCMExtension",
       "mathlib:NumberField.IsCMField.complexConj",
+      "mathlib:NumberField.IsCMField.isConj_complexConj",
       "mathlib:IsCyclotomicExtension",
       "mathlib:IsCyclotomicExtension.Rat.isCMField",
       "mathlib:NumberField.isTotallyComplex_of_algebra"
@@ -422,7 +423,7 @@
      "id": "3.2",
      "kind": "theorem",
      "name": "sl2Five_adjoint_restriction_unipotent_bijective",
-     "statement": "For U = [[1,1],[0,1]] in SL(2, F5), restriction H¹(SL(2,F5), sl2AdjointRep F5) → H¹(⟨U⟩, sl2AdjointRep F5) is bijective; both are one-dimensional and the target is spanned by the class of f. The same holds over any field k ⊇ F5 and for every subgroup of order five.",
+     "statement": "For U = [[1,1],[0,1]] in SL(2, F5), restriction H¹(SL(2,F5), ad⁰) → H¹(⟨U⟩, ad⁰), with ad⁰ the adjoint representation of 3.1, is bijective; both are one-dimensional and the target is spanned by the class of f. The same holds over any field k ⊇ F5 and for every subgroup of order five.",
      "hypotheses": [
       "U = [[1,1],[0,1]] in SL(2, ZMod 5)"
      ],
@@ -502,7 +503,7 @@
       {
        "name": "protected_semisimple_inertia",
        "kind": "non-example",
-       "statement": "Over F5 with q_v = 11, inertia diag(ζ3, ζ3⁻¹) and swap Frobenius: nontrivial non-unipotent inertia, not protected."
+       "statement": "Over F5 with q_v = 11, an order-three tame inertia quotient with generator ↦ M = [[0,−1],[1,−1]] and Frobenius ↦ Φ = [[4,1],[0,1]]: M³ = 1, ΦMΦ⁻¹ = [[4,1],[4,0]] = M⁻¹ = M¹¹, char poly X² + X + 1; inertia nontrivial and not unipotent, so not protected. diag(ζ3, ζ3⁻¹) needs F25 since #F5ˣ = 4."
       },
       {
        "name": "protected_lost_index_p",
@@ -548,6 +549,11 @@
        "name": "uni_first_order",
        "kind": "computation",
        "statement": "(1+εf)U has trace 2+ε and fails (i); (1+εh)U has trace 2, determinant 1 and satisfies it."
+      },
+      {
+       "name": "uni_residual_frobenius_entry",
+       "kind": "boundary",
+       "statement": "k = F25, q_v = 11, ρbar(τ) = U, ρbar(φ) = 1 + ζE12 with ζ ∉ F5: protected, residual upper-right entry z̄ = ζ ≠ 0, not removable by φ ↦ φτ^x (ζ ↦ ζ + x, x ∈ F5); the third coordinate is z − [ζ], and z is a unit on every lift."
       }
      ]
     },
@@ -1552,7 +1558,7 @@
    "neededBy": [
     "5.3"
    ],
-   "detail": "Theorem 5.3 needs, for a CM field containing an imaginary quadratic field, places v ∤ p split over imaginary quadratic subfields with Iw_{v,1} ⊆ K_v ⊆ Iw_v (hyperspecial at the conjugates outside the set) and a non-Eisenstein maximal ideal, a Galois representation over the Hecke algebra with torus operators modulo an ideal of bounded exponent whose inertial characteristic polynomials are the torus polynomials P_{v,σ}. PotentialAutomorphyInfrastructure and CrystallineLocalGlobalCompatibilityCM §§9.7, 9.9 cite this as AutomorphicGaloisRepresentationsPartII AG2.5, whose text states characteristic-zero comparisons only.",
+   "detail": "Theorem 5.3 needs ACC Theorem 3.1.1 for GL_2 in the setting of ACC23 §3.1: F CM containing an imaginary quadratic field with every p-adic place of F⁺ split in F; a good level; a finite conjugation-stable S containing the p-adic places with ACC's conditions outside S; R ⊆ S prime to p with residue characteristics split in imaginary quadratic subfields, Iw_{v,1} ⊆ K_v ⊆ Iw_v on R and K_v hyperspecial on R^c ∖ R; a non-Eisenstein maximal ideal. Conclusion: N depending only on the rank and [F:Q], an ideal I_R with I_R^N = 0 in the Hecke algebra with torus operators at R, and a representation of G_{F,S∖(R^c∖R)} over the quotient with Hecke Frobenius polynomials and characteristic polynomial P_{v,σ} at every σ ∈ W_{F_v}, v ∈ R. PotentialAutomorphyInfrastructure and CrystallineLocalGlobalCompatibilityCM §9.7 (and §9.9 through it) cite this as AutomorphicGaloisRepresentationsPartII AG2.5, whose text states characteristic-zero comparisons only.",
    "needs": "A statement of ACC Theorem 3.1.1 (torsion local-global compatibility at Iwahori places away from p) in AutomorphicGaloisRepresentationsPartII.",
    "supplier": "AutomorphicGaloisRepresentationsPartII",
    "section": "AG2.5"

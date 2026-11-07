@@ -71,13 +71,16 @@ separate roadmap); number fields that are neither CM nor totally real; abelian v
 (ModularityAndLanglandsExtensions §2.30); height-density statements (ModularityAndLanglandsExtensions
 §2.29).
 
-**Lean.** `Suggested.lean` states the targets expressible against the pinned libraries: the
-definition `sl2AdjointRep` (§3.1), the finite-group theorem
-`sl2Five_adjoint_restriction_unipotent_bijective` (§3.2) and the field-theoretic theorem
-`isCMField_of_intermediate_cyclotomic` (§1.1). Its module docstring records that automorphic
-representations of `GL₂` over number fields, Galois deformation rings, arithmetic locally symmetric
-spaces and continuous Galois cohomology of number fields with local conditions are absent from the
-pins, so the remaining endpoints are specified here as mathematics.
+**Lean.** `Suggested.lean` states no theorem, and its module docstring says why. The headline
+theorems are Theorem 2.5 (modularity over CM fields not containing `ζ₅`), Theorem 6.2 (the
+protected lifting theorem at five) and Theorem 8.1 (modularity over every CM field), and none is
+statable against the pinned Mathlib and Tau Ceti. Theorems 2.5 and 8.1 need automorphic
+representations of `GL₂(𝔸_K)` over a number field `K` with their attached `ℓ`-adic Galois
+representations `r_ι(π)`, local Langlands parameters and `L`-functions; Theorem 6.2 needs these and,
+in addition, potentially semistable `5`-adic representations of local Galois groups with their
+labelled Hodge–Tate weights. Neither pinned library has any of these carriers. The field-theoretic,
+finite-group and local statements of Layers 1 and 3 are ingredients of the proofs, not headlines,
+and are specified here as mathematics with their Checks.
 
 **Status of the sources.** Layers 3–7 follow CaptainSude26, an unrefereed pseudonymous manuscript;
 Layer 2 follows LeHung26, a discussion draft; the parent follows OpenAI26. Theorem 2.5 uses as
@@ -141,9 +144,10 @@ Pin `1b1ccf4b088b32fa3f23f2de1127433254a81e1e`.
 
 - `NumberField.IsCMField` (`Mathlib/NumberTheory/NumberField/CMField.lean`): a characteristic-zero
   field that is totally complex and quadratic over `maximalRealSubfield`. With it
-  `NumberField.IsCMField.complexConj`, `NumberField.IsCMField.ofCMExtension` (a totally complex
-  quadratic extension of a totally real field is CM), `NumberField.IsCMField.of_isAbelianGalois`
-  and `IsCyclotomicExtension.Rat.isCMField`. The file has no statement about composita or subfields
+  `NumberField.IsCMField.complexConj` and `NumberField.IsCMField.isConj_complexConj` (it induces
+  complex conjugation through every complex embedding), `NumberField.IsCMField.ofCMExtension` (a
+  totally complex quadratic extension of a totally real field is CM),
+  `NumberField.IsCMField.of_isAbelianGalois` and `IsCyclotomicExtension.Rat.isCMField`. The file has no statement about composita or subfields
   of CM fields; Theorem 1.1 supplies the one needed.
 - `IsCyclotomicExtension` (`Mathlib/NumberTheory/Cyclotomic/Basic.lean`) and `IsPrimitiveRoot`.
 - `NumberField.isTotallyComplex_of_algebra`
@@ -257,15 +261,22 @@ through Taylor–Wiles selection (CN23 line 4404); Layer 4 replaces that step.
 
 ### Supplier obligations
 
-- **AutomorphicGaloisRepresentationsPartII, AG2.5: the torsion inertial comparison at Iwahori places.**
-  Theorem 5.3 needs ACC Theorem 3.1.1: for a CM field containing an imaginary quadratic field, a set
-  `R` of places prime to `p` split over imaginary quadratic subfields, a good level with
-  `Iw_{v,1} ⊆ K_v ⊆ Iw_v` at `v ∈ R` and hyperspecial at `R^c ∖ R`, and a non-Eisenstein maximal ideal,
-  a representation over the Hecke algebra with torus operators modulo an ideal of exponent bounded in
-  terms of `n` and `[F:ℚ]`, whose inertial characteristic polynomials at `v ∈ R` are the torus
-  polynomials `P_{v,σ}`. PotentialAutomorphyInfrastructure and CrystallineLocalGlobalCompatibilityCM
-  §§9.7 and 9.9 consume this statement as AG2.5; AG2.5 states characteristic-zero comparisons only.
-  The supplier section must state the torsion form.
+What AutomorphicGaloisRepresentationsPartII must provide (gap:acc-torsion-inertial-comparison): a
+statement in its Layer AG2.5 of ACC Theorem 3.1.1, the torsion local–global compatibility for
+`GL_m` at Iwahori places away from `p`. The setting is that of ACC23 §3.1 (lines 2309–2345): a CM
+field `F` containing an imaginary quadratic field, with every `p`-adic place of `F⁺` split in `F`; a
+good level `K`; a finite conjugation-stable set `S` of finite places containing those above `p`,
+with the conditions there on residue characteristics outside `S`; a subset `R ⊆ S` of places prime
+to `p`, each with residue characteristic split in an imaginary quadratic subfield, such that
+`Iw_{v,1} ⊆ K_v ⊆ Iw_v` for `v ∈ R` and `K_v = GL_m(O_{F_v})` for `v ∈ R^c ∖ R`; and a non-Eisenstein
+maximal ideal `𝔪`. The statement gives an integer `N` depending only on `m` and `[F:ℚ]`, an ideal
+`I_R` with `I_R^N = 0` in the localized Hecke algebra generated together with the torus operators
+`t_{v,i}(σ)` at `R`, and a continuous representation of `G_{F, S ∖ (R^c ∖ R)}` over the quotient
+whose Frobenius characteristic polynomials outside `S ∖ (R^c ∖ R)` are the Hecke polynomials `P_v`
+and whose characteristic polynomial at every `σ ∈ W_{F_v}`, `v ∈ R`, is the torus polynomial
+`P_{v,σ}` (ACC23, Theorem 3.1.1, lines 2346–2355). Theorem 5.3 needs it with `m = 2`.
+PotentialAutomorphyInfrastructure and CrystallineLocalGlobalCompatibilityCM §9.7 (and §9.9 through it)
+consume the same statement as AG2.5, whose text states characteristic-zero comparisons only.
 
 ## How to read the build
 
@@ -285,20 +296,24 @@ Layers 2 and 7 into the headline. Layers 1–2 are independent of Layers 3–7.
 
 ### 1.1 Intermediate fields of a cyclotomic extension of a CM field
 
-Prove `isCMField_of_intermediate_cyclotomic`: let `K` be a CM number field, `S` a set of positive
-integers and `L/K` a finite extension with `IsCyclotomicExtension S K L`. Then every intermediate field
-`K ⊆ E ⊆ L` is a CM field; in particular `L` is CM. The route: `L` is the composite of `K` with a
-cyclotomic field `ℚ(μ_m)` inside `L`, which is CM or `ℚ` (`IsCyclotomicExtension.Rat.isCMField`); a
-composite of CM fields is CM, because each complex embedding induces the same complex conjugation on
-the composite (MilneCM, Proposition 1.4 and Corollary 1.5, p. 10). For `E` between `K` and `L`:
-`E` is totally complex because it contains `K` (`NumberField.isTotallyComplex_of_algebra`); complex
-conjugation of the Galois closure of `L`, which is CM, is central in its Galois group (MilneCM,
-Remark 1.6, p. 10), so it preserves `E`; its fixed field in `E` is totally real and `E` is quadratic
-over it, so `NumberField.IsCMField.ofCMExtension` applies. This is the fact used when descending
-along `F/K` through intermediate fields (LeHung26, Lemma 5.1, p. 9).
+Prove: let `K` be a CM number field, `S` a set of positive integers and `L/K` a finite extension
+with `IsCyclotomicExtension S K L`. Then every intermediate field `K ⊆ E ⊆ L` is a CM field; in
+particular `L` is CM. The route: `L` is the composite of `K` with a cyclotomic field `ℚ(μ_m)` inside
+`L`, which is CM or `ℚ` (`IsCyclotomicExtension.Rat.isCMField`); a composite of CM fields is CM,
+because each complex embedding induces the same complex conjugation on the composite (MilneCM,
+Proposition 1.4 and Corollary 1.5, p. 10). For `E` between `K` and `L`: `E` is totally complex
+because it contains `K` (`NumberField.isTotallyComplex_of_algebra`). The Galois closure `L̃` of `L`
+over `ℚ` is CM (MilneCM, Corollary 1.5), and its complex conjugation `ι` is central in `Gal(L̃/ℚ)`:
+for an embedding `φ : L̃ → ℂ` and `σ ∈ Gal(L̃/ℚ)`, `φ ∘ σ` is again an embedding, so
+`φ ∘ σισ⁻¹ = conj ∘ φ = φ ∘ ι` (`NumberField.IsCMField.isConj_complexConj`) and `σισ⁻¹ = ι` because `φ`
+is injective (MilneCM, Proposition 1.4(b) and the uniqueness of complex conjugation noted after it,
+p. 10, lines 273–290). Hence `ι` normalizes `Gal(L̃/E)` and preserves `E`; its fixed field in `E` is
+totally real and `E` is quadratic over it, so `NumberField.IsCMField.ofCMExtension` applies. This is
+the fact used when descending along `F/K` through intermediate fields (LeHung26, Lemma 5.1, p. 9).
 
 *Needs:* Mathlib `NumberField.IsCMField`, `NumberField.IsCMField.ofCMExtension`,
-`NumberField.IsCMField.complexConj`, `IsCyclotomicExtension`, `IsCyclotomicExtension.Rat.isCMField`,
+`NumberField.IsCMField.complexConj`, `NumberField.IsCMField.isConj_complexConj`,
+`IsCyclotomicExtension`, `IsCyclotomicExtension.Rat.isCMField`,
 `NumberField.isTotallyComplex_of_algebra`.
 
 **Checks.**
@@ -507,8 +522,8 @@ EllipticCurves Layer 5; ClassFieldTheory Layer 11.
 
 ### 3.1 The adjoint representation of SL₂
 
-Define `sl2AdjointRep k`, for a field `k`, as the representation of `SL(2, k)` on the trace-zero
-matrices `LieAlgebra.SpecialLinear.sl (Fin 2) k` by `g · X = g X g⁻¹`, built with
+Define the adjoint representation `ad⁰` of `SL(2, k)`, for a field `k`, as the representation on
+the trace-zero matrices `LieAlgebra.SpecialLinear.sl (Fin 2) k` by `g · X = g X g⁻¹`, built with
 `Rep.ofDistribMulAction`. (CaptainSude26, Lemma 3.1, line 187.)
 
 - Conjugation by an element of `SL(2, k)` preserves trace zero, is `k`-linear and multiplicative in
@@ -516,8 +531,8 @@ matrices `LieAlgebra.SpecialLinear.sl (Fin 2) k` by `g · X = g X g⁻¹`, built
 - The central element `−1` acts trivially, so the representation factors through `PSL₂(k)`.
 - For `k` of odd characteristic the trace form `⟨X, Y⟩ = tr(XY)` is a nondegenerate invariant
   symmetric form, identifying the representation with its dual.
-- A field embedding `k → k'` identifies the base change of `sl2AdjointRep k` with the restriction of
-  `sl2AdjointRep k'` along `SL(2, k) → SL(2, k')`.
+- A field embedding `k → k'` identifies the base change to `k'` of `ad⁰` over `k` with the
+  restriction of `ad⁰` over `k'` along `SL(2, k) → SL(2, k')`.
 - For `k` of odd characteristic the invariants vanish: a trace-zero matrix commuting with
   `U = [[1,1],[0,1]]` and its transpose is zero.
 
@@ -533,10 +548,9 @@ matrices `LieAlgebra.SpecialLinear.sl (Fin 2) k` by `g · X = g X g⁻¹`, built
 
 ### 3.2 The exceptional class of SL₂(𝔽₅) is detected by a unipotent subgroup
 
-Prove `sl2Five_adjoint_restriction_unipotent_bijective`: for `U = [[1,1],[0,1]] ∈ SL(2, 𝔽₅)` and its
-cyclic subgroup `⟨U⟩` of order five, restriction
-`H¹(SL(2, 𝔽₅), sl2AdjointRep 𝔽₅) → H¹(⟨U⟩, sl2AdjointRep 𝔽₅)` is bijective, both groups being
-one-dimensional over `𝔽₅`, and the target is spanned by the class corresponding to `f` under
+Prove: for `U = [[1,1],[0,1]] ∈ SL(2, 𝔽₅)` and its cyclic subgroup `⟨U⟩` of order five, restriction
+`H¹(SL(2, 𝔽₅), ad⁰) → H¹(⟨U⟩, ad⁰)` is bijective, both groups being one-dimensional over `𝔽₅`,
+and the target is spanned by the class corresponding to `f` under
 `Rep.FiniteCyclicGroup.groupCohomologyIsoOdd`. The same holds after extending scalars to any field
 `k ⊇ 𝔽₅`, and for every subgroup of order five of `SL(2, 𝔽₅)`, these being conjugate. Injectivity is
 restriction to a Sylow subgroup of index `24`, invertible in `𝔽₅` (ArithmeticGaloisRepresentations
@@ -580,8 +594,12 @@ paragraph after Lemma 5.1, lines 533–536.)
   ArithmeticGaloisRepresentations §6.3 gives inertia acting by `[[1, v(q)·t_p(σ)],[0,1]]`.
 - For `p | v(q)` the module `E_q[p]` is unramified, hence not protected; for
   `q = ϖ_v⁵` and `p = 5` this is the case.
-- Over `𝔽₅` with `q_v = 11`, `ρ̄(τ) = diag(ζ₃, ζ₃⁻¹)` and `ρ̄(φ)` the swap matrix give nontrivial
-  inertia that is not unipotent (its order is three), so `ρ̄` is not protected.
+- Over `𝔽₅` with `q_v = 11`, let inertia act through a tame quotient of order three, a generator
+  mapping to `M = [[0, −1],[1, −1]]`, and let a Frobenius lift map to `Φ = [[4, 1],[0, 1]]`. Then
+  `M³ = 1`, `ΦMΦ⁻¹ = [[4, 1],[4, 0]] = M⁻¹ = M¹¹`, as the tame relation requires since `11 ≡ 2 mod 3`,
+  and `M` has characteristic polynomial `X² + X + 1`; inertia is nontrivial and not unipotent, so `ρ̄`
+  is not protected. A diagonal model `diag(ζ₃, ζ₃⁻¹)` does not exist over `𝔽₅`, whose unit group has order
+  four; it needs `𝔽₂₅`.
 - After a base change of ramification index five, residual inertia becomes `U⁵ = 1`: protection is
   lost.
 
@@ -600,8 +618,10 @@ By Cayley–Hamilton `N = ρ_A(τ) − 1` satisfies `N² = tr(N) N − det(N)`; 
 off-diagonal entry is a unit, so (ii) forces `tr N = det N = 0` and conversely. In the basis
 `(N e₂, e₂)`, `N = E₁₂`, and the relation `ρ_A(φ) N ρ_A(φ)⁻¹ = q_v N` forces
 `ρ_A(φ) = [[q_v δ, z],[0, δ]]` with `δ² = ψ(φ)/q_v` and `δ` the unique square root lifting the residual
-one; the free parameters are the entries `a ∈ 𝔪_A`, `b − 1 ∈ 𝔪_A` of `N = [[a, b],[−a²/b, −a]]` and
-`z ∈ 𝔪_A`. (CaptainSude26, Lemma 3.1, lines 184–220.)
+one. Residually this basis is `(e₁, e₂)`, in which `ρ̄(τ) = U`, so `z` lifts the upper-right entry `z̄`
+of `ρ̄(φ)` in that basis. The free parameters are the entries `a ∈ 𝔪_A`, `b − 1 ∈ 𝔪_A` of
+`N = [[a, b],[−a²/b, −a]]` and `z − [z̄] ∈ 𝔪_A`, with `[z̄] ∈ O` the Teichmüller lift; these are the
+three coordinates `x₁, x₂, x₃`. (CaptainSude26, Lemma 3.1, lines 184–220.)
 
 *Needs:* §3.3; LocalGaloisDeformationRings §§1.10, 2.3, 2.6, 2.8, 2.21.
 
@@ -613,6 +633,10 @@ one; the free parameters are the entries `a ∈ 𝔪_A`, `b − 1 ∈ 𝔪_A` of
   rank-two Steinberg Frobenius relation of LocalGaloisDeformationRings §2.5.
 - The first-order lift with `ρ(τ) = (1 + εf)U` has trace `2 + ε` and violates (i); the lift with
   `ρ(τ) = (1 + εh)U` has trace `2` and determinant `1` and satisfies it.
+- For `k = 𝔽₂₅`, `q_v = 11`, `ρ̄(τ) = U` and `ρ̄(φ) = 1 + ζE₁₂` with `ζ ∈ 𝔽₂₅ ∖ 𝔽₅`, `ρ̄(φ)` commutes
+  with `U = U¹¹`, so `ρ̄` is protected and `z̄ = ζ ≠ 0`. No change of tame lift removes it: `φ ↦ φτ^x`
+  replaces `ζ` by `ζ + x` with `x ∈ 𝔽₅`. The third coordinate is `z − [ζ]`; the coordinate `z` itself
+  is a unit on every lift.
 
 ### 3.5 The tangent line and its dual
 
@@ -837,8 +861,8 @@ condition over the possibly nonreduced quotient. The complex conjugate places `P
 so the representation is unramified there. (CaptainSude26, Lemma 4.1, lines 291–408; CN23,
 Propositions 5.6.2–5.6.3, lines 4334–4390; ACC23, Theorem 3.1.1, line 2346.)
 
-*Needs:* §§3.4, 5.1, 5.2; CrystallineLocalGlobalCompatibilityCM §§8.6, 9.4, 9.6, 9.7, 9.9; the torsion
-inertial comparison requested of AutomorphicGaloisRepresentationsPartII AG2.5 (Supplier obligations).
+*Needs:* §§3.4, 5.1, 5.2; CrystallineLocalGlobalCompatibilityCM §§8.6, 9.4, 9.6, 9.7, 9.9;
+`gap:acc-torsion-inertial-comparison` (AutomorphicGaloisRepresentationsPartII AG2.5).
 
 **Checks.**
 
@@ -890,8 +914,8 @@ semistable at `S`, split multiplicative at a place `v ∈ P` with five not divid
 
 Layers 3–4; CrystallineLocalGlobalCompatibilityCM §§7.5, 8.2–8.7, 9.1, 9.4–9.10;
 DeformationAndDerivedPatchingAlgebra §§8.1–8.5; GlobalGaloisDeformations §§3.4, 5.5;
-LocalGaloisDeformationRings §§2.15, 3.14, 4.14–4.15, 6.6; the supplier obligation of
-AutomorphicGaloisRepresentationsPartII AG2.5.
+LocalGaloisDeformationRings §§2.15, 3.14, 4.14–4.15, 6.6; AutomorphicGaloisRepresentationsPartII
+AG2.5 through `gap:acc-torsion-inertial-comparison`.
 
 ## Layer 6: The Steinberg-protected lifting theorem
 
@@ -1216,10 +1240,10 @@ versions below, with printed pages where given.
 - **AKT23.** Patrick B. Allen, Chandrashekhar Khare and Jack A. Thorne, *Modularity of `GL₂(𝔽_p)`-representations
   over CM fields*, arXiv:1910.12986v2. Lemma A.5, p. 86 (line 3979), replaced in this case by Lemma 4.2's
   route.
-- **ACC23.** P. B. Allen et al., *Potential automorphy over CM fields*, arXiv:1812.09999v2. Theorem 3.1.1,
-  p. 58 (line 2346); §6.4.1 (patching data); §6.5.12 (auxiliary imaginary quadratic fields, line 7163);
+- **ACC23.** P. B. Allen et al., *Potential automorphy over CM fields*, arXiv:1812.09999v2. §3.1 setting,
+  pp. 57–58 (lines 2309–2345); Theorem 3.1.1, p. 58 (line 2346); §6.4.1 (patching data); §6.5.12 (auxiliary imaginary quadratic fields, line 7163);
   Proposition 6.5.13.
 - **CHT08.** Laurent Clozel, Michael Harris and Richard Taylor, *Automorphy for some l-adic lifts of
   automorphic mod l Galois representations*, Publ. Math. IHÉS 108 (2008). Lemma 4.1.2, p. 116.
-- **MilneCM.** J. S. Milne, *Complex Multiplication*, course notes, version of 14 July 2020. Proposition 1.4,
-  Corollary 1.5 and Remark 1.6, p. 10 (lines 273–301).
+- **MilneCM.** J. S. Milne, *Complex Multiplication*, course notes, version of 14 July 2020. Proposition 1.4
+  with the uniqueness of complex conjugation noted after it, and Corollary 1.5, p. 10 (lines 273–295).
