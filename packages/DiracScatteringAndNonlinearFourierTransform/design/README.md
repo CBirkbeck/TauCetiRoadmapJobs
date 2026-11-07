@@ -143,6 +143,15 @@ stated for complex potentials `q = f + ig` (the system with `Q_q = [[g, f], [f, 
   `TendstoLocallyUniformlyOn`.
 - **Scalars and carriers.** Banach spaces in Layer 1 are over `𝕜 ∈ {ℝ, ℂ}` (`RCLike 𝕜`); `2 × 2`
   matrices are `Matrix (Fin 2) (Fin 2) ℂ`; all types live in `Type`.
+- **Norms on `ℂ²`.** The Dirac system and the scattering matrix act on `ℂ² = EuclideanSpace ℂ (Fin 2)`
+  with the Euclidean norm `|(u, v)|² = |u|² + |v|²`. A `2 × 2` matrix acts on it through Mathlib's
+  `Matrix.toEuclideanCLM`, with the Euclidean operator norm (Mathlib's scoped `Matrix.Norms.L2Operator`).
+  Hence `|Θ|² = |A|² + |C|²`, `‖Ω‖ = 1` and `‖Q_q(t)‖ = |q(t)|`, because `Q_q(t)` is real symmetric with
+  `Q_q(t)² = |q(t)|² · 1`, so its eigenvalues are `±|q(t)|`. Norm witness: for `q = 1 + i` the Dirac
+  coefficient at `z = 0` is `ΩQ_q = [[1, −1], [−1, −1]]`. Its Euclidean operator norm is `√2 = |q|`, while
+  its maximum-row-sum norm, which is the operator norm of `Fin 2 → ℂ` with the sup norm, is `2`. The
+  bounds on the Dirac coefficient and on `M` in §1.6 and §3.1 hold for the Euclidean norm, not for the
+  sup norm.
 
 ## Exact supplier contracts
 
@@ -202,8 +211,23 @@ All at the pinned Mathlib; paths under `Mathlib/`.
   `Matrix.mul_nonsing_inv` (`LinearAlgebra/Matrix/NonsingularInverse.lean` line 209, `AA⁻¹ = 1` when
   `det A` is a unit), `HasFDerivAt.comp_hasDerivAt` (`Analysis/Calculus/Deriv/Comp.lean` line 375, the
   chain rule along a curve) and `HasFDerivAt.restrictScalars`
-  (`Analysis/Calculus/FDeriv/RestrictScalars.lean` line 54). The derivative of `det` is Tau Ceti's
-  (below).
+  (`Analysis/Calculus/FDeriv/RestrictScalars.lean` line 54). Also
+  `LipschitzWith.comp_absolutelyContinuousOnInterval` (`MeasureTheory/Function/AbsolutelyContinuous.lean`
+  line 344: a Lipschitz map into a pseudo-metric space composed with an absolutely continuous curve is
+  absolutely continuous), applied to the entry maps of the matrix, and `EuclideanSpace.equiv`
+  (`Analysis/InnerProductSpace/PiL2.lean` line 296, the continuous linear equivalence
+  `EuclideanSpace 𝕜 ι ≃L[𝕜] (ι → 𝕜)` that is the identity on coordinates), for the transport to the
+  Euclidean carrier. The derivative of `det` is Tau Ceti's (below).
+- For the Euclidean carrier of the Dirac system: `Matrix.toEuclideanCLM` (`Analysis/CStarAlgebra/Matrix.lean`
+  line 101, the star-algebra equivalence of `Matrix n n 𝕜` with `EuclideanSpace 𝕜 n →L[𝕜] EuclideanSpace 𝕜 n`
+  given by the standard basis, for `RCLike 𝕜`), with the scoped Euclidean operator norm
+  `Matrix.Norms.L2Operator` and `Matrix.l2_opNorm_toEuclideanCLM` (line 240, the two norms agree).
+- For the Hardy space in §2.6 and §2.8: `ConvexOn.map_integral_le` (`Analysis/Convex/Integral.lean` line
+  196, Jensen's inequality for a probability measure, with `f` and `g ∘ f` integrable and `g` continuous
+  and convex on a closed convex set), `convexOn_exp` (`Analysis/Convex/SpecificFunctions/Basic.lean` line
+  62), `MeasureTheory.lintegral_liminf_le` (`MeasureTheory/Integral/Lebesgue/Add.lean` line 237, Fatou's
+  lemma for measurable `ℝ≥0∞`-valued functions) and `MeasureTheory.lintegral_lintegral_swap`
+  (`MeasureTheory/Measure/Prod.lean` line 1102, Tonelli for s-finite measures).
 
 ### From Tau Ceti
 
@@ -383,23 +407,30 @@ solution with value `y` at `s` (romanov2014 line 213–224 for the chain rule).
 
 ### 1.4 Liouville's formula
 
-For `E = Fin n → 𝕜` and a matrix coefficient `P`, prove `det N_P(t, s) = exp(∫_s^t tr P)` for
-`s, t ∈ I`, with `N_P(t, s)` and `P(r)` identified with their matrices in the standard basis
-(coddingtonlevinson1955, Ch. 1 §7, waived; romanov2014 line 218–219 for `det ≡ 1`). Route: fix `s`.
-At almost every `t` the curve `N_P(·, s)` has derivative `P(t)N` at `t`, where `N = N_P(t, s)` is
-invertible (§1.2, §1.3). The chain rule and Jacobi's formula at an invertible matrix (Tau Ceti
-`Matrix.hasFDerivAt_det`, restricted to real scalars when `𝕜 = ℂ`) then give
-`∂ₜ det N_P(t, s) = det N · tr(N⁻¹P(t)N) = det N · tr P(t)`. The function `det N_P(·, s)` is
-absolutely continuous, being a finite sum of products of the absolutely continuous entries (the
-Leibniz expansion). It is therefore an absolutely continuous solution of the scalar equation
-`y′ = (tr P) y`, `y(s) = 1`, whose coefficient is integrable because `|tr P| ≤ n‖P‖`. By the
-uniqueness clause of §1.2 it equals `exp(∫_s^t tr P)`, which solves the same equation.
+For `E = Fin n → 𝕜` or `E = EuclideanSpace 𝕜 (Fin n)` and a matrix coefficient `P`, prove
+`det N_P(t, s) = exp(∫_s^t tr P)` for `s, t ∈ I`, with `N_P(t, s)` and `P(r)` identified with their
+matrices in the standard basis (coddingtonlevinson1955, Ch. 1 §7, waived; romanov2014 line 218–219 for
+`det ≡ 1`). Route: fix `s`. At almost every `t` the curve `N_P(·, s)` has derivative `P(t)N` at `t`, where
+`N = N_P(t, s)` is invertible (§1.2, §1.3). The chain rule and Jacobi's formula at an invertible matrix
+(Tau Ceti `Matrix.hasFDerivAt_det`, restricted to real scalars when `𝕜 = ℂ`) then give
+`∂ₜ det N_P(t, s) = det N · tr(N⁻¹P(t)N) = det N · tr P(t)`. Each entry `N ↦ (N e_j)_i` is `1`-Lipschitz
+on `E →L[𝕜] E`, since `|(N e_j)_i| ≤ ‖N e_j‖ ≤ ‖N‖`. So the entries of the absolutely continuous curve
+`N_P(·, s)` (§1.2) are absolutely continuous (Mathlib
+`LipschitzWith.comp_absolutelyContinuousOnInterval`). The function `det N_P(·, s)` is then absolutely
+continuous, being a finite sum of products of these entries (the Leibniz expansion). It is therefore an
+absolutely continuous solution of the scalar equation `y′ = (tr P) y`, `y(s) = 1`, whose coefficient is
+integrable because `|tr P| ≤ n‖P‖`. By the uniqueness clause of §1.2 it equals `exp(∫_s^t tr P)`, which
+solves the same equation. The same formula holds for `E = EuclideanSpace 𝕜 (Fin n)`, the carrier of §3.1.
+Mathlib's `EuclideanSpace.equiv` is a continuous linear equivalence with `Fin n → 𝕜` that is the identity
+on coordinates. Conjugation by it carries a coefficient to a coefficient, and so, by the uniqueness clause
+of §1.2, the propagator to the propagator. It changes neither the matrices in the standard basis nor their
+determinants and traces.
 
 *Needs:* §1.2 (absolute continuity, the derivative almost everywhere, the uniqueness clause), §1.3
 (invertibility); Tau Ceti `Matrix.hasFDerivAt_det`; Mathlib `Matrix.det_apply`,
 `Matrix.trace_mul_comm`, `Matrix.mul_nonsing_inv`, `HasFDerivAt.comp_hasDerivAt`,
-`HasFDerivAt.restrictScalars`, `AbsolutelyContinuousOnInterval.add`,
-`AbsolutelyContinuousOnInterval.smul`.
+`HasFDerivAt.restrictScalars`, `LipschitzWith.comp_absolutelyContinuousOnInterval`,
+`AbsolutelyContinuousOnInterval.add`, `AbsolutelyContinuousOnInterval.smul`, `EuclideanSpace.equiv`.
 
 **Checks.**
 
@@ -450,8 +481,11 @@ hence holomorphic, and the series converges locally uniformly.
 - The domination hypothesis is needed: `E = ℂ`, `I = [0, 1]`, `P(t, z) = 1/(z − t)`, `N(t, 0) = z/(z − t)`
   is holomorphic on `U = {Re z > 2}` where the bound holds, and has a pole at `z = t` for every
   `t ∈ (0, 1]`, so no statement on a `U` meeting `[0, 1]` holds.
-- The Dirac coefficient `P(t, z) = −Ω(z − Q_q(t))` is entire with `m_K(t) = sup_K |z| + |q(t)|`; at a
-  fixed `z` the conclusion is the fixed-parameter existence statement of 1.2.
+- The Dirac coefficient `P(t, z) = −Ω(z − Q_q(t)) = [[f(t), −z − g(t)], [z − g(t), −f(t)]]` on
+  `EuclideanSpace ℂ (Fin 2)` is entire with `m_K(t) = sup_K |z| + |q(t)|` in the Euclidean operator norm.
+  In the maximum-row-sum norm of `Fin 2 → ℂ` the coefficient at `z = 0` has norm `|f(t)| + |g(t)|`, which
+  exceeds `|q(t)|` whenever `f(t)g(t) ≠ 0`: for `q = 1 + i` it is `2 > √2 = |q|`. At a fixed `z` the conclusion
+  is the fixed-parameter existence statement of 1.2.
 
 ### 1.7 The nonlinear Carathéodory theorem
 
@@ -484,7 +518,8 @@ because `Y` is a uniform limit of step functions and `F` is Lipschitz in `x`
 ### Examples
 
 - The scalar equation `y′ = p(t) y` with `p ∈ L¹_loc` has propagator `exp(∫_s^t p)`.
-- The Dirac fundamental matrix of §3.1 is the propagator of an entire, trace-free coefficient.
+- The Dirac fundamental matrix of §3.1 is the propagator on `EuclideanSpace ℂ (Fin 2)` of an entire,
+  trace-free coefficient with `m_K(t) = sup_K |z| + |q(t)|` in the Euclidean operator norm.
 - The scattering matrix of §4.1 is the propagator of an entire coefficient with
   `m_K(t) = |q(t)| e^{2t sup_K |Im z|}`.
 
@@ -663,18 +698,34 @@ Define `H²(ℂ₊)` as the holomorphic `F` on `ℂ₊` with `‖F‖² = sup_{y
   hence `|F(z)|² ≤ ‖F‖²/(4π Im z)` (mauth2022 Lemma 2 line 370–377 states a weaker constant).
 - Products: `∫ F*(x) G*(x) dx = 0` for `F, G ∈ H²(ℂ₊)`; bounded multipliers: `GF ∈ H²(ℂ₊)` with
   `‖GF‖ ≤ sup|G| ‖F‖` for bounded holomorphic `G`.
+- Logarithmic bound: if `F ∈ H²(ℂ₊)` and `F ≢ 0`, then `log|F*| ∈ L¹(Π)`, so `F* ≠ 0` almost everywhere,
+  and `log|F(z)| ≤ P[log|F*|](z)` for every `z ∈ ℂ₊` (garnett2007, Ch. II §4, uncertified). Route: for
+  `ε > 0` the translate `F(· + iε)` is holomorphic near the closed half-plane and bounded there by
+  `‖F‖/√(4πε)` (the point bound above). So §2.5 gives the bound for it, with boundary function
+  `F(· + iε)` on `ℝ`. As `ε → 0`, `log⁺|F(· + iε)| → log⁺|F*|` in `L¹(P(z, x) dx)`. This is because
+  `|log⁺a − log⁺b| ≤ |a − b|` for `a, b ≥ 0`, `F(· + iε) → F*` in `L²(ℝ)`, and `∫ P(z, x)² dx = 1/(2π Im z)`.
+  Take a sequence `εₙ → 0` along which `F(· + iεₙ) → F*` almost everywhere. Fatou's lemma for
+  `log⁻|F(· + iεₙ)|` then gives the bound in the limit at every `z` with `F(z) ≠ 0`. At one such `z` it
+  also gives the integrability of `log⁻|F*|`, while `log⁺|F*| ≤ |F*|²` is integrable.
 - Weak convergence `Fₙ ⇀ F` in `H²(ℂ₊)` implies locally uniform convergence on `ℂ₊`
   (mauth2022 Lemma 11 line 487), and `‖M_∞ F‖_{L²} ≤ C‖F‖` (mauth2022 Lemma 6, via §2.3).
 - `H²(ℂ₋)` is defined by reflection, and its boundary values are the complex conjugates of those of
   `H²(ℂ₊)`, orthogonal to them in `L²(ℝ)`.
 
-*Needs:* §2.1–§2.5; Mathlib `MeasureTheory.Lp.fourierTransformₗᵢ`, `fourier_real_eq`.
+*Needs:* §2.1–§2.5; Mathlib `MeasureTheory.Lp.fourierTransformₗᵢ`, `fourier_real_eq`,
+`MeasureTheory.lintegral_liminf_le`, `tendstoInMeasure_of_tendsto_eLpNorm`,
+`TendstoInMeasure.exists_seq_tendsto_ae`.
 
 **Checks.**
 
 - `F(z) = 1/(z + i)`: `F(z) = −i∫₀^∞ e^{−s} e^{isz} ds`, `‖F‖² = π`, and the point bound at `z = i` is
   attained: `|F(i)|² = 1/4 = π/(4π)`.
 - `∫ dx/(x + i)² = 0`: the product of `1/(z + i)` with itself, as the product law requires.
+- Logarithmic bound, equality and strict cases: for `F = 1/(z + i)`, `log|F*| = −log|x + i|` and
+  `P[log|F*|](z) = −log|z + i| = log|F(z)|` (the outer case of §2.8; at `z = i` both sides are
+  `−log 2 ≈ −0.693`). For `F = e^{iz}/(z + i)` the boundary modulus is the same, but `log|F(z)|` is smaller
+  by `Im z`: at `z = i` it is `−1 − log 2 ≈ −1.693 < −0.693`. For `F ≡ 0` the boundary function `log|F*|` is
+  identically `−∞`, so `F ≢ 0` is needed.
 - `F ≡ 1` is not in `H²(ℂ₊)` (the integrals are infinite), and `1/(z − i)` is not holomorphic on `ℂ₊`.
 - Mathlib-convention witness: for `g(x) = 1/(x + i)`, closing the contour in the lower half-plane
   gives `𝓕g(w) = −2πi e^{−2πw}` for `w > 0`, and `𝓕g(w) = 0` for `w < 0`; the vanishing condition is
@@ -723,8 +774,21 @@ garnett2007, Ch. II §4, p. 64, uncertified). Its API:
 - A zero-free holomorphic `F` on `ℂ₊` with `log|F| = P[h]` is `c O_h` with `|c| = 1`; two outer
   functions with the same boundary modulus differ by a unimodular constant.
 - For even `h`, `O_h` is real and positive on the imaginary axis.
+- Outer multipliers: let `F ∈ H²(ℂ₊)` and let `G = c O_h` be outer with `|F*| e^h ∈ L²(ℝ)`. Then
+  `FG ∈ H²(ℂ₊)`, `|(FG)*| = |F*| e^h` almost everywhere, and `‖FG‖ = ‖F* e^h‖_{L²}` (garnett2007, Ch. II
+  §4, uncertified; poltoratski2024 line 685–687 and line 766 and mauth2022 line 945 and line 1137 use it
+  without proof). Route: the case `F ≡ 0` is trivial. Otherwise the logarithmic bound of §2.6 and
+  `log|G| = P[h]` give `2 log|FG(z)| ≤ P[k](z)` with `k = 2 log|F*| + 2h ∈ L¹(Π)`. Jensen's inequality for
+  the probability measure `P(z, x) dx` and the convex function `exp` gives `|FG(z)|² ≤ P[|F*|² e^{2h}](z)`.
+  Integrating in `x` at height `y`, with `∫ P(x + iy, u) dx = 1` and Tonelli, gives
+  `∫ |FG(x + iy)|² dx ≤ ‖F* e^h‖²`. The boundary modulus follows from the nontangential limits of `F`
+  (§2.6) and of `|G| = e^{P[h]}` (§2.4), and the norm identity from `‖FG‖ = ‖(FG)*‖_{L²}` (§2.6).
+- Boundary values of outer functions: if the measure `e^{2h} dx` is Poisson-finite (`∫ e^{2h} dΠ < ∞`), then
+  `O_h/(z + i) ∈ H²(ℂ₊)` by the previous bullet with `F = 1/(z + i)`. So `O_h` has a nontangential limit at
+  almost every `x ∈ ℝ` (§2.6), of modulus `e^{h(x)}`.
 
-*Needs:* §2.1, §2.4.
+*Needs:* §2.1, §2.4, §2.6; Mathlib `ConvexOn.map_integral_le`, `convexOn_exp`,
+`MeasureTheory.lintegral_lintegral_swap`.
 
 **Checks.**
 
@@ -732,7 +796,14 @@ garnett2007, Ch. II §4, p. 64, uncertified). Its API:
   `h` is even and `O_h(iy) = y + 1 > 0`.
 - `e^{iz}` has boundary modulus `1` but is not `c O_0 = c`, and `(z − i)/(z + i)` has a zero; neither is
   outer.
-- `h = 0`: `O_0 = 1`.
+- `h = 0`: `O_0 = 1`, and the outer-multiplier bullet reduces to `FG = cF` with `‖FG‖ = ‖F‖`.
+- Outer multipliers: for `F = 1/(z + i)²` and `h = log|x + i|` (`G = −i(z + i)`), `FG = −i/(z + i) ∈ H²(ℂ₊)`
+  with `‖FG‖² = π`, and `‖F* e^h‖² = ∫ |x + i|²/|x + i|⁴ dx = ∫ dx/(1 + x²) = π`.
+- The boundary condition is needed: `F = 1/(z + i)` with the same `G` has `|F*| e^h = |x + i|/|x + i| = 1`,
+  not in `L²(ℝ)`, and indeed `FG = −i` is not in `H²(ℂ₊)`.
+- Outerness is needed: `G = e^{−iz}` is zero-free with `|G| = 1` on `ℝ`, but `log|G(z)| = Im z > 0 = P[0](z)`,
+  so it is not outer. For `F = 1/(z + i)`, `|F*| · 1 ∈ L²(ℝ)`, while `FG = e^{−iz}/(z + i)` has
+  `∫ |FG(x + iy)|² dx = πe^{2y}/(y + 1)`, unbounded in `y`.
 
 ### Examples
 
@@ -744,7 +815,8 @@ garnett2007, Ch. II §4, p. 64, uncertified). Its API:
 ### Dependencies
 
 Mathlib (harmonic functions, Lebesgue differentiation, the `L²` Fourier transform, Phragmén–Lindelöf,
-Banach–Alaoglu); Tau Ceti (maximal function, Nevanlinna representation, half-plane primitives,
+Banach–Alaoglu, Jensen's inequality, Fatou's lemma, Tonelli's theorem); Tau Ceti (maximal function,
+Nevanlinna representation, half-plane primitives,
 mean-value converse, F. and M. Riesz uniqueness, Cayley transform, the dual of `L¹` of a finite
 measure).
 
@@ -755,9 +827,11 @@ Throughout, `q` is a potential (integrable on every `[0, t]`), `f = Re q`, `g = 
 ### 3.1 The Dirac system and its fundamental matrix
 
 Define `Q_q(t) = [[g(t), f(t)], [f(t), −g(t)]]` and the fundamental matrix `M_q(t, z)`, `t ≥ 0`,
-`z ∈ ℂ`, as the propagator `N(t, 0)` (§1.3) of the coefficient `−Ω(z − Q_q(t))`, which is entire in
-`z` with `‖−Ω(z − Q_q(t))‖ ≤ |z| + |q(t)|` (§1.6). Write `M = [[A, B], [C, D]]`, `Θ = (A, C)ᵀ`,
-`Φ = (B, D)ᵀ` (poltoratski2024 line 136–166; mauth2022 (5)–(6) line 546–563).
+`z ∈ ℂ`, as the propagator `N(t, 0)` (§1.3) on `E = EuclideanSpace ℂ (Fin 2)` of the coefficient
+`−Ω(z − Q_q(t))`, acting through `Matrix.toEuclideanCLM`. The coefficient is entire in `z`, with Euclidean
+operator norm `‖−Ω(z − Q_q(t))‖ ≤ ‖Ω‖(|z| + ‖Q_q(t)‖) = |z| + |q(t)|` (§1.6, Conventions). `M` is the matrix
+of `N(t, 0)` in the standard basis. Write `M = [[A, B], [C, D]]`, `Θ = (A, C)ᵀ`, `Φ = (B, D)ᵀ`
+(poltoratski2024 line 136–166; mauth2022 (5)–(6) line 546–563).
 
 - `ΩM(t, z) = Ω + ∫₀ᵗ (z − Q_q(s)) M(s, z) ds`, `M(0, z) = 1`, and `M(t, ·)` is entire, jointly continuous
   in `(t, z)`.
@@ -767,14 +841,15 @@ Define `Q_q(t) = [[g(t), f(t)], [f(t), −g(t)]]` and the fundamental matrix `M_
   `Q_q` has real entries.
 - Chain rule: `M_q(t, z) = M_{q(s+·)}(t − s, z) M_q(s, z)` for `0 ≤ s ≤ t` (romanov2014 line 223–224),
   and locality: `M_q(t, ·)` depends only on `q` almost everywhere on `[0, t]`.
-- `‖M(t, z)‖ ≤ exp(t|z| + ∫₀ᵗ |q|)`; in particular every entry is entire of order at most one and of
-  exponential type at most `t`.
+- In the Euclidean operator norm, `‖M(t, z)‖ ≤ exp(t|z| + ∫₀ᵗ |q|)`, with equality for a constant
+  potential at `z = 0`; in particular every entry is entire of order at most one and of exponential
+  type at most `t`.
 - Christoffel–Darboux identity: `M(t, λ)* Ω M(t, z) − Ω = (z − conj λ) ∫₀ᵗ M(s, λ)* M(s, z) ds`
   (romanov2014 (12) line 758).
 - For a real potential, `A(t, −z) = A(t, z)`, `D(t, −z) = D(t, z)`, `B(t, −z) = −B(t, z)`,
   `C(t, −z) = −C(t, z)`, and `M(t, 0) = diag(e^{F(t)}, e^{−F(t)})` with `F(t) = ∫₀ᵗ f`.
 
-*Needs:* §1.3, §1.4, §1.6; Mathlib `Matrix.det_fin_two`.
+*Needs:* §1.3, §1.4, §1.6; Mathlib `Matrix.det_fin_two`, `Matrix.toEuclideanCLM`.
 
 **Checks.**
 
@@ -785,6 +860,10 @@ Define `Q_q(t) = [[g(t), f(t)], [f(t), −g(t)]]` and the fundamental matrix `M_
   `det = cosh² − sinh² = 1`.
 - A smooth complex potential (`f(t) = 0.8 cos 3t + 0.3`, `g(t) = 0.5 sin 2t`, `t = 1.7`,
   `z = 0.6 + 0.25i`) gives `det M = 1` to twelve digits under numerical integration.
+- Norm convention: for `q = 1 + i` on `[0, 1]` at `z = 0`,
+  `M(1, 0) = exp(ΩQ_q) = cosh(√2) · 1 + (sinh(√2)/√2) ΩQ_q ≈ [[3.5465, −1.3683], [−1.3683, 0.8099]]`.
+  Its Euclidean operator norm is `e^{√2} ≈ 4.1133`, so the bound `exp(t|z| + ∫|q|)` is attained. Its
+  maximum-row-sum norm is `≈ 4.9148`, so the bound fails for the sup-norm carrier `Fin 2 → ℂ`.
 
 ### 3.2 The Hermite–Biehler functions `E` and `Ẽ`
 
@@ -854,9 +933,10 @@ Throughout, `q` is a potential and `t ≥ 0`.
 
 ### 4.1 The scattering matrix and the scattering functions
 
-Define the scattering matrix `G_q(t, z)` as the propagator `N(t, 0)` (§1.3) of the coefficient
-`[[0, e^{−2izt} conj q(t)], [e^{2izt} q(t), 0]]`, entire in `z` with norm at most
-`|q(t)| e^{2t|Im z|}` (§1.6), and the scattering functions `a = (G_q)₂₂`, `b = (G_q)₂₁`
+Define the scattering matrix `G_q(t, z)` as the propagator `N(t, 0)` (§1.3) on `EuclideanSpace ℂ (Fin 2)`
+of the coefficient `[[0, e^{−2izt} conj q(t)], [e^{2izt} q(t), 0]]`, entire in `z` with operator norm
+`max(|e^{−2izt}|, |e^{2izt}|) |q(t)| = |q(t)| e^{2t|Im z|}` (§1.6), and the scattering functions
+`a = (G_q)₂₂`, `b = (G_q)₂₁`
 (poltoratski2024 (5.3) line 492–501).
 
 - Structure: `G_q = [[a#, b#], [b, a]]` and `det G_q = a a# − b b# = 1`; on `ℝ`,
@@ -1490,15 +1570,20 @@ Prove that for almost every `s ∈ ℝ` and every `C > 0`,
 `sup_{λ ∈ Q(s, C/t)} |w(s) K_t(λ, λ)/Sinc_t(λ, λ) − 1| → 0` as `t → ∞`, where
 `K_t(λ, λ) = sup{|F(λ)|² : F ∈ PW_t, ∫|F|² dμ ≤ 1}` and
 `Sinc_t(λ, λ) = sup{|F(λ)|² : F ∈ PW_t, ∫|F|² dx ≤ 1} = sinh(2t Im λ)/(2π Im λ)` (poltoratski2024 Lemma 2
-line 630–727; mauth2022 Lemma 21 line 794). Route (upper bound): at `s` with `w(s) > 0`, `s` a Lebesgue
-point of `√(M_1 P[|log w|])` (§2.3) and the outer `G` with `|G|² = w` (§2.8, §6.8) having nontangential
-limit `√w(s)`, rescale by `t`; a counterexample sequence `fₙ ∈ PW_1` gives `e^{iz}fₙ Gₙ` bounded in
-`H²(ℂ₊)`, weakly convergent, normally convergent (§2.6), and §2.7's characterisation produces an `H ∈ PW_1`
-violating the extremal value. Lower bound: `|Sinc(t, λ, ·)|²/‖Sinc(t, λ, ·)‖²₂` is an approximate identity
-at `s`, so its `μ`-integral tends to `w(s)` at almost every `s` (§2.4), and `Sinc(t, λ, ·)/‖·‖_μ` is a
-competitor.
+line 630–727; mauth2022 Lemma 21 line 794). Route (upper bound): let `G = O_{(1/2) log w}` be the outer
+function with `|G|² = w` on `ℝ` (§2.8; `log w ∈ L¹(Π)` by §6.8). Take `s` with `w(s) > 0` that is a
+Lebesgue point of `√(M_1 P[|log w|])` (§2.3) and at which `G` has a nontangential limit, and multiply `G`
+by a unimodular constant so that this limit is `√w(s)`. Almost every `s` qualifies: the limits exist
+almost everywhere by the boundary-value bullet of §2.8, because `w dx ≤ μ` is Poisson-finite. Rescale by
+`t`: `G_t(z) = G(s + z/t)` is outer with boundary modulus `√w(s + ·/t)`, by the covariance of §2.1 and the
+characterisation of §2.8. A counterexample sequence `fₙ ∈ PW_1` with `∫ |fₙ|² w(s + ·/kₙ) dx ≤ 1` has
+`e^{iz}fₙ ∈ H²(ℂ₊)` (§2.7). So `e^{iz}fₙ G_{kₙ} ∈ H²(ℂ₊)` with norm at most `1`, by the outer-multiplier
+bullet of §2.8. A subsequence converges weakly and normally (§2.6), and §2.7's characterisation produces
+an `H ∈ PW_1` violating the extremal value. Lower bound: `|Sinc(t, λ, ·)|²/‖Sinc(t, λ, ·)‖²₂` is an
+approximate identity at `s`, so its `μ`-integral tends to `w(s)` at almost every `s` (§2.4), and
+`Sinc(t, λ, ·)/‖·‖_μ` is a competitor.
 
-*Needs:* §2.3, §2.4, §2.6, §2.7, §2.8, §6.2, §6.6, §6.8.
+*Needs:* §2.1, §2.3, §2.4, §2.6, §2.7, §2.8, §6.2, §6.6, §6.8.
 
 **Checks.**
 
@@ -1528,13 +1613,16 @@ the approximate-identity limit of §8.2, then use §8.2 and `Sinc_t(λ, λ) ≍ 
 
 Prove that for almost every `s` and every `C > 0`,
 `sup_{λ, z ∈ Q(s, C/t)} |K(t, λ, z) − Sinc(t, λ, z)/w(s)| = o(t)` (poltoratski2024 Lemma 4 (6.6) line
-756–792; mauth2022 Lemma 22 line 1129). Route: `F(t, ·) = e^{itz} G(z)(K(t, λ_t, ·) − Sinc(t, λ_t, ·)/w(s))`
-has `H²` norm `o(√t)`, hence nontangential maximal function `o(√t)` in `L²` (§2.6); choose two real points
+756–792; mauth2022 Lemma 22 line 1129). Route: `Δ = K(t, λ_t, ·) − Sinc(t, λ_t, ·)/w(s)` lies in `PW_t`
+(§6.2, §2.7), so `e^{itz}Δ ∈ H²(ℂ₊)` (§2.7). Since `w dx ≤ μ`, §8.3 gives `∫ |Δ|² w dx ≤ ∫ |Δ|² dμ = o(t)`.
+Let `G = O_{(1/2) log w}` be the outer function with `|G|² = w` on `ℝ` (§2.8, §6.8). The outer-multiplier
+bullet of §2.8 then gives `F(t, ·) = e^{itz} G Δ ∈ H²(ℂ₊)` with `‖F(t, ·)‖² = ∫ |Δ|² w dx = o(t)`. Hence
+`F(t, ·)` has nontangential maximal function `o(√t)` in `L²` (§2.6); choose two real points
 on either side of `Q(s, C/t)` where it is `o(t)` and where `√(M_1 P[log w])` is controlled; the difference
 of kernels is real entire, so the bound on the boundary of a rhombus symmetric about `ℝ` gives the bound
 inside by the maximum principle.
 
-*Needs:* §2.3, §2.6, §2.8, §6.8, §8.3.
+*Needs:* §2.3, §2.6, §2.7, §2.8, §6.2, §6.8, §8.3.
 
 **Checks.**
 

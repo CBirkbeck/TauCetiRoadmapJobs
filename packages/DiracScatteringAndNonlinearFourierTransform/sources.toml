@@ -68,7 +68,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-05"
 version_note = "arXiv v14 read (OCR text of an image-only scan); all locators are to v14. Its §9 (subinterval calculus, insertion of zero intervals, Lemma 10) differs from the published version, whose Lemma 11 mnatsakanyan2022 v4 reports to be in error; formulas garbled by OCR are cross-checked against mauth2022 and recomputed in the design"
-cited_for = ["Conventions", "3.1", "3.2", "3.3", "4.1", "4.3", "4.4", "5.1", "5.2", "5.3", "5.4", "5.5", "5.6", "6.1", "6.2", "6.3", "6.5", "6.6", "6.8", "7.1", "7.2", "7.3", "8.1", "8.2", "8.3", "8.4", "8.5", "8.6", "8.7", "8.8", "8.9", "9.1", "9.2", "9.3", "9.4", "9.5", "9.6", "9.7", "9.8"]
+cited_for = ["Conventions", "2.8", "3.1", "3.2", "3.3", "4.1", "4.3", "4.4", "5.1", "5.2", "5.3", "5.4", "5.5", "5.6", "6.1", "6.2", "6.3", "6.5", "6.6", "6.8", "7.1", "7.2", "7.3", "8.1", "8.2", "8.3", "8.4", "8.5", "8.6", "8.7", "8.8", "8.9", "9.1", "9.2", "9.3", "9.4", "9.5", "9.6", "9.7", "9.8"]
 
 [[source]]
 id = "taothiele2012"
@@ -132,7 +132,7 @@ year = 2007
 venue = "Graduate Texts in Mathematics"
 doi = "10.1007/0-387-49763-3"
 locator_scheme = "chapter"
-locator = "Ch. I §§3–5 (pp. 16, 27, 30); Ch. II §§1–4 (pp. 55, 64, 84), as cited by mauth2022"
+locator = "Ch. I §§3–5 (pp. 16, 27, 30); Ch. II §§1–4 (pp. 55, 64, 84), as cited by mauth2022; Ch. II §4 for the logarithmic bound and the outer multipliers of H² in 2.6 and 2.8"
 url = "https://doi.org/10.1007/0-387-49763-3"
 licence_class = "none"
 status = "uncertified"
