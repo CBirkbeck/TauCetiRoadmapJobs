@@ -1,0 +1,13 @@
+{
+  "review": {
+    "status": "needs_changes",
+    "reviewer": "independent-review-PRREVIEW-RootSystems~13",
+    "head": "265d185853484784651f6b8965704b69e3402874",
+    "pr": 1196,
+    "folder": "RepresentationTheory/RootSystems",
+    "date": "2026-11-07",
+    "findings": 6,
+    "blocking": 2,
+    "notes": "Full review of 265d185 (1551 changed lines since 3e78a6d). Gate rerun with --build --order: statement-hygiene=1 (Nonempty-iso headline, R03) and build=2 (module-system advisory on the import Mathlib header, R04), every other counter zero; depcheck 239 roadmaps, 2363 edges, 0 problems; lake env lean: 11 sorry warnings only. #check sweep of 185 cited names at pins Mathlib 1b1ccf4b / Tau Ceti 2fd255d9: all resolve (previous R01 chamber namespace resolved by the pin). One-tactic probes: rational_classification closes by exact RootPairing.existsUnique_nonempty_equiv_rationalRootSystem (pinned at FiniteType/RationalClassification.lean:70): R01 P2; the other ten do not close. EnriquesSurfaces #1286 head a85be7e Scope line 9 and §5.2 lines 525-561 own the same Layer 1 geometric faithfulness/root-sign/integral objects: R02 P2 (two owners). LieHighestWeight #1220 drops Layers 1-2 cited at README 45/1135: R05 P3. Humphreys 1990 linked from a course-page scan and three cited works absent from the manifest: R06 P3. Seeded sample: Milne and SGA 3 locators checked at cache lines; Humphreys/Bourbaki/Bjorner-Brenti not readable legally. Adversarial table: 27 rows with recomputed root counts, greatest roots, unit-ascent counts and rank-two geometric values."
+  }
+}
