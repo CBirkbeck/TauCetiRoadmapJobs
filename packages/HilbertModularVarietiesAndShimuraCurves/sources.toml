@@ -1,0 +1,38 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "HilbertModularVarietiesAndShimuraCurves"
+
+[[source]]
+id = "Voi21"
+authors = "John Voight"
+title = "Quaternion Algebras"
+year = 2021
+venue = "Graduate Texts in Mathematics 288, Springer"
+doi = "10.1007/978-3-030-56694-4"
+version_note = "author edition v1.0.5 read; locators are theorem numbers, its page numbers differ from the published book"
+locator_scheme = "theorem"
+locator = "Example 41.3.16"
+url = "https://jvoight.github.io/quat-book-v1.0.5.pdf"
+fetched_from = "https://jvoight.github.io/quat-book-v1.0.5.pdf"
+fetched_at = "2026-11-07T15:02:36Z"
+sha256 = "7386db0c57915a099af2cf60042b5284a71309a3785a67b4aa0f76002053babc"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-07"
+cited_for = ["R18.5.16a", "R18.5.16c"]
+
+[[source]]
+id = "Zha14"
+authors = "Wei Zhang"
+title = "Selmer groups and the indivisibility of Heegner points"
+year = 2014
+venue = "Cambridge Journal of Mathematics 2 (2014), 191-253"
+locator_scheme = "section"
+locator = "§3.4"
+url = "https://intlpress.com/site/pub/files/_fulltext/journals/cjm/2014/0002/0002/CJM-2014-0002-0002-a002.pdf"
+fetched_from = "https://intlpress.com/site/pub/files/_fulltext/journals/cjm/2014/0002/0002/CJM-2014-0002-0002-a002.pdf"
+fetched_at = "2026-11-07T15:02:37Z"
+sha256 = "698eb8a6d2297684c683c4c3f43a195cac1d8752ef0c8362ab90c74f5b3792ec"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-11-07"
+cited_for = ["R18.5.17a"]
