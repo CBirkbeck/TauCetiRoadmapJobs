@@ -25,7 +25,8 @@ universal property and its Plücker form; the Nash blowup of a `k`-scheme, its N
 its iterates and the predicate that the iteration resolves `X`; the normalised Nash blowup, its
 iterates and the corresponding predicate; the Gauss-map description, the blowup description and the
 hypersurface case; the smoothness criteria (Layers 4 and 5) together with the commutative algebra
-they need and that no other roadmap plans: the Lie derivative on Kähler differentials, stability of
+they need and that no other roadmap plans in this generality: the Lie derivative on the Kähler
+differentials of an arbitrary algebra over a field, in every characteristic, stability of
 annihilators, Seidenberg's lemma on derivation-stable ideals, coordinates from a free quotient of
 the differentials, the `p`-monomial operators and the freeness of the Frobenius pushforward of a
 normal local ring; and the interface statements of Layer 0 on Tau Ceti's sheaf of relative
@@ -46,8 +47,12 @@ stalks §0.30; modifications with witness §4.11; regular schemes, `regularLocus
 perfect field and Serre's normality criterion §4.13. The converse of Kunz's theorem
 (`isRegular_of_frobenius_flat`) is EnhancedDerivedSheaves §E1.6. The theory of `p`-bases of fields
 (a family is a `p`-basis exactly when its differentials form a basis of `Ω¹`) is
-DerivedDeRhamCohomology §0.23. The sheaf `Ω_{X/R}` of a scheme over a ring, its universal derivation,
-quasi-coherence, finite presentation, restriction to open subschemes, finite local freeness and rank
+DerivedDeRhamCohomology §0.23. The Lie derivative on the one-forms of a field over a subfield of
+characteristic zero is DiophantineApproximationAndTranscendence §5.6 (`lieDerivativeOneForm`, the unique
+operator of `exists_lieDerivativeOneForm`); §4.2 differs in constructing it for an arbitrary `k`-algebra in
+every characteristic, through `J/J²`, because §4.4 applies it to local rings, and it agrees with that
+operator on fields of characteristic zero. The sheaf `Ω_{X/R}` of a scheme over a ring, its universal
+derivation, quasi-coherence, finite presentation, restriction to open subschemes, finite local freeness and rank
 on smooth schemes, pure dimension, the blowup of a scheme along an ideal sheaf with its universal
 property, exterior powers of sheaves of modules and the reduced-source factorisation through a
 vanishing ideal are in the pinned Tau Ceti; the smooth locus, relative normalisation, scheme-theoretic
@@ -199,9 +204,18 @@ planned.
 
 ### From TauCetiRoadmap.DerivedDeRhamCohomology
 
-- §0.23 (`DerivedDeRham.IsPBasis`, `DerivedDeRham.pBasis_kaehler_basis`): for a field `K` of
-  characteristic `p`, a family is a `p`-basis (its `p`-monomials with exponents `< p` form a `K^p`-basis)
-  exactly when its differentials form a `K`-basis of `Ω¹_{K/𝔽_p}`.
+- §0.23: for a field `K` of characteristic `p`, a family is a `p`-basis (its `p`-monomials with exponents
+  `< p` form a `K^p`-basis) exactly when its differentials form a `K`-basis of `Ω¹_{K/𝔽_p}`. The forward
+  half, for a finite family, is `DerivedDeRham.pBasis_kaehler_basis` (with the predicate
+  `DerivedDeRham.IsPBasis`); the converse half, from a basis of differentials to a `p`-basis, is stated in
+  the prose of §0.23 and is the half §5.3 uses.
+
+### From TauCetiRoadmap.DiophantineApproximationAndTranscendence
+
+- §5.6, the algebraic Cartan and Lie-derivative adapter (`exists_lieDerivativeOneForm`,
+  `lieDerivativeOneForm`): for fields `C ⊆ F` with `C` of characteristic zero and a `C`-derivation `D` of
+  `F`, there is a unique `C`-linear `L_D : Ω[F⁄C] → Ω[F⁄C]` with `L_D(a·db) = D(a)·db + a·d(Db)`. Only the
+  agreement bullet of §4.2 uses it.
 
 No gap is recorded: every input above is stated by its owner.
 
@@ -314,13 +328,16 @@ to the local sections of `h*K`.
 
 ### 0.5 Cotangent spaces at points with separable residue field
 
-Prove *cotangentSpaceEquivKaehler*: for a field `k` and a Noetherian local `k`-algebra `(R, m, κ)` whose
-residue field is finite separable over `k`, the map `m/m² → κ ⊗_R Ω_{R/k}`, `a ↦ 1 ⊗ da`, is a
-`κ`-linear isomorphism (stacksAlgebra, Lemma 10.140.4, tag 00TU, line 17647, for injectivity; the exact
-sequence in the proof of Lemma 10.140.5, tag 00TV, lines 17676–17678, with `Ω_{κ/k} = 0`, for
-surjectivity). Route: `κ` is formally étale over `k` (`Algebra.FormallyEtale.of_isSeparable`), so `R/m² → κ` has a `k`-algebra section; Mathlib's
-`retractionKerCotangentToTensorEquivSection` turns it into a retraction of `m/m² → κ ⊗ Ω_{R/k}`;
-surjectivity is `KaehlerDifferential.exact_kerCotangentToTensor_mapBaseChange` with `Ω_{κ/k} = 0`.
+Prove *cotangentSpaceEquivKaehler*: for a field `k` and a local `k`-algebra `(R, m, κ)`, not necessarily
+Noetherian, whose residue field is finite separable over `k`, the map `m/m² → κ ⊗_R Ω_{R/k}`, `a ↦ 1 ⊗ da`,
+is a `κ`-linear isomorphism (stacksAlgebra, Lemma 10.140.4, tag 00TU, line 17647, for injectivity: it is
+stated for Noetherian `R`, but its proof, lines 17654–17671, replaces `R` by `R/m²` and lifts `κ` into it,
+and uses the Noetherian hypothesis nowhere; the exact sequence in the proof of Lemma 10.140.5, tag 00TV,
+lines 17676–17678, with `Ω_{κ/k} = 0`, for surjectivity). Route: `κ` is formally étale over `k`
+(`Algebra.FormallyEtale.of_isSeparable`), so `R/m² → κ` has a `k`-algebra section; Mathlib's
+`retractionKerCotangentToTensorEquivSection` (for any surjective algebra map, no finiteness hypothesis)
+turns it into a retraction of `m/m² → κ ⊗ Ω_{R/k}`; surjectivity is
+`KaehlerDifferential.exact_kerCotangentToTensor_mapBaseChange` and holds whenever `Ω_{κ/k} = 0`.
 
 **Checks.**
 
@@ -328,6 +345,9 @@ surjectivity is `KaehlerDifferential.exact_kerCotangentToTensor_mapBaseChange` w
 - For `R = k` both sides are zero.
 - For `k = 𝔽_p(t)` and `R = k[x]_{(x^p − t)}`, `κ = k(t^{1/p})` is inseparable and the class of
   `x^p − t ≠ 0` in `m/m²` maps to `d(x^p − t) = 0`: separability is needed for injectivity.
+- For the non-Noetherian `R = k[x_1, x_2, …]` localised at `(x_1, x_2, …)`, `m/m²` has basis the classes of
+  the `x_i` and `κ ⊗ Ω_{R/k}` has basis the `1 ⊗ dx_i`, and the map is `x_i ↦ dx_i`: an isomorphism of
+  infinite-dimensional `k`-spaces, so a statement requiring `R` Noetherian would be needlessly narrow.
 
 *Needs:* Mathlib `retractionKerCotangentToTensorEquivSection`,
 `KaehlerDifferential.exact_kerCotangentToTensor_mapBaseChange`, `Algebra.FormallyEtale.of_isSeparable`.
@@ -521,9 +541,10 @@ a `k`-scheme through `ν`.
 - For the cusp `X = V(y² − x³) ⊆ 𝔸²` over a field of characteristic `0` or `≥ 5`, `X* ≅ 𝔸¹` with `ν(t) = (t², t³)`
   (the normalisation): the tangent quotients `[1 : 3t/2]` tend to `[1 : 0]`. Here
   `ν*Ω_{X/k} ≅ k[t]·dx ⊕ k[t]/(t³)` with `L = k[t]·dx` the quotient by the torsion summand of length three.
-- For the node `xy = 0` in characteristic `≠ 2`, the two branches have tangent quotients `[1 : 0]` and
-  `[0 : 1]`, so `X* = 𝔸¹ ⊔ 𝔸¹` separates them; a construction using only the reduced fibre of `Ω` over
-  the origin (a single `ℙ¹`) is excluded.
+- For the node `xy = 0`, in every characteristic, the two branches have tangent quotients `[1 : 0]` and
+  `[0 : 1]` (near a point of `y = 0` with `x ≠ 0`, `x` is a unit and the relation `y·dx + x·dy = 0` gives
+  `dy = 0`; symmetrically `dx = 0` on `x = 0`), so `X* = 𝔸¹ ⊔ 𝔸¹` separates them; a construction using only
+  the reduced fibre of `Ω` over the origin (a single `ℙ¹`) is excluded.
 - For `d = 0` and `X = Spec k`, `X* = X`.
 
 *Needs:* §§0.3, 1.1, 1.2; Tau Ceti `AlgebraicGeometry.Scheme.relativeDifferentials`,
@@ -652,8 +673,8 @@ Define *nashIterate*: `X^{(0)} = X` and `X^{(i+1)} = (X^{(i)})*` (with the same 
 ### Examples
 
 The cusp `y² = x³`: in characteristic `0` or `≥ 5`, `X* = 𝔸¹` with `ν*Ω = L ⊕ k[t]/(t³)`; in characteristics
-`2` and `3`, `X* ≅ X`. The node: `X* = 𝔸¹ ⊔ 𝔸¹`. The Whitney-type surface `y² = x²z`: `ν⁻¹(0) ≅ ℙ¹`
-(nobile1975, Example 4).
+`2` and `3`, `X* ≅ X`. The node, in every characteristic: `X* = 𝔸¹ ⊔ 𝔸¹`. The Whitney-type surface `y² = x²z`
+in characteristic `≠ 2`: `ν⁻¹(0) ≅ ℙ¹` (nobile1975, Example 4).
 
 ### Dependencies
 
@@ -750,7 +771,7 @@ with `∂_i(x_j) = δ_ij`, such that `Ω_{R/k} = (⊕_j R·dx_j) ⊕ ker q`; if 
 `x_j` can be chosen in `m` (nashModificationNotes2024, Section 2, lines 194–197, and Section 5, lines
 484–501; duarteNunezBetancourt2020, proof of Theorem 3.10, lines 263–268). Route: the `q(dr)` generate `R^d`,
 so by Nakayama some `q(dx_j)` reduce to a basis of `κ^d` and are a basis of `R^d`; let `∂_i` be the `i`-th
-coordinate of `q ∘ d` in that basis. For `κ` separable, `m/m² → κ ⊗ Ω_{R/k}` is onto (§0.5), so the `x_j`
+coordinate of `q ∘ d` in that basis. For `κ` finite separable, `m/m² → κ ⊗ Ω_{R/k}` is onto (§0.5), so the `x_j`
 may be taken in `m`.
 
 **Checks.**
@@ -775,6 +796,10 @@ derivation `∂ ⊗ 1 + 1 ⊗ ∂` of `R ⊗_k R`, which preserves `J` and `J²`
   `∂`-stable: for `a` in it and every `ω`, `∂(a)·ω = L_∂(aω) − a·L_∂(ω) ∈ N` (the computation pattern of
   hamann2003, proof of Lemma 0.1, lines 61–64).
 - In the situation of §4.1, `L_{∂_i}(dx_j) = d(δ_ij) = 0`, so `N = ⊕_j R·dx_j` is `L_{∂_i}`-stable.
+- Agreement on fields: if `R` is a field and `k` has characteristic zero, `L_∂` equals
+  DiophantineApproximationAndTranscendence's `lieDerivativeOneForm ∂` (§5.6). Both are `k`-linear
+  (`L_∂(c·ω) = ∂(c)·ω + c·L_∂(ω) = c·L_∂(ω)` for `c ∈ k`, as `∂` kills `k`) and satisfy the same rule on
+  `a·db`, and `exists_lieDerivativeOneForm` asserts uniqueness of such an operator.
 
 **Checks.**
 
@@ -785,7 +810,8 @@ derivation `∂ ⊗ 1 + 1 ⊗ ∂` of `R ⊗_k R`, which preserves `J` and `J²`
   `L_∂(dx) = dx` and `L_∂(x·dx) = x·dx + x·dx = 0` in `Ω_{R/k}`, so `L_∂` respects the relation, as the
   construction through `J/J²` guarantees.
 
-*Needs:* Mathlib `KaehlerDifferential`, `Derivation`, `Algebra.TensorProduct`.
+*Needs:* Mathlib `KaehlerDifferential`, `Derivation`, `Algebra.TensorProduct`; for the agreement bullet only,
+DiophantineApproximationAndTranscendence §5.6 (`exists_lieDerivativeOneForm`).
 
 ### 4.3 Seidenberg's lemma
 
@@ -858,7 +884,8 @@ For the cusp over `ℚ` at the origin, `Ω = (R dx ⊕ R dy)/(2y dy − 3x² dx)
 
 ### Dependencies
 
-Layers 0–2; SchemeAndStackFoundations §0.7.
+Layers 0–2; SchemeAndStackFoundations §0.7; DiophantineApproximationAndTranscendence §5.6 (the agreement
+bullet of §4.2).
 
 ## Layer 5: normal varieties in positive characteristic
 
@@ -905,7 +932,9 @@ for `α ≤ β` and `0` otherwise, the matrix `(∂^{(α)}(x^β))_{α,β ∈ A}`
 Prove *frobeniusBasis_functionField*: let `k` be perfect of characteristic `p`, `K` a field finitely generated over
 `k` with `dim_K Ω_{K/k} = d`, and `x_1, …, x_d ∈ K` with `dx_1, …, dx_d` a basis of `Ω_{K/k}`. Then the monomials
 `x^α`, `α ∈ A`, form a `K^p`-basis of `K`, so `[K : K^p] = p^d`. Route: `Ω_{K/𝔽_p} → Ω_{K/k}` is an isomorphism
-because `dc = d((c^{1/p})^p) = 0` for `c ∈ k`; so `x_1, …, x_d` is a `p`-basis by DerivedDeRhamCohomology §0.23.
+because `dc = d((c^{1/p})^p) = 0` for `c ∈ k`; so `dx_1, …, dx_d` is a `K`-basis of `Ω¹_{K/𝔽_p}`, and
+`x_1, …, x_d` is a `p`-basis by the converse half of DerivedDeRhamCohomology §0.23 (from a basis of
+differentials to a `p`-basis).
 
 **Checks.**
 
@@ -996,9 +1025,11 @@ line 6498, and Lemma 29.55.3, tag 035P, line 6521). For `X` in the Setting:
 - For the cusp in characteristic `0`, `X̄* = X* = 𝔸¹`.
 - For the cusp in characteristic `2`, `X* ≅ X` and `X̄* = 𝔸¹`: the normalised Nash blowup resolves it in one step
   while the Nash iteration never does (§2.7).
-- For the node in characteristic `≠ 2`, `X* = 𝔸¹ ⊔ 𝔸¹` is already normal and `η` is the identity; a definition
-  normalising `X` instead of `X*` would give the same scheme here but differs for the surface `y² = x²z`, whose
-  normalisation is finite over `X` while `X̄* = X*` has a `ℙ¹` over the origin (nobile1975, Example 4).
+- For the node `xy = 0`, in every characteristic, `X* = 𝔸¹ ⊔ 𝔸¹` is already normal and `η` is the identity; a
+  definition normalising `X` instead of `X*` would give the same scheme here but differs for the surface
+  `y² = x²z` in characteristic `≠ 2`, whose normalisation is finite over `X` while `X̄* = X*` has a `ℙ¹` over
+  the origin (nobile1975, Example 4). In characteristic `2` the Jacobian ideal of that surface is the
+  principal ideal `(x²)` on an integral surface, so `X* = X` (§3.3) and the two definitions agree there.
 
 *Needs:* §§2.1–2.3; AlgebraicModuliForArithmeticGeometry §5.4; SchemeAndStackFoundations §0.30.
 

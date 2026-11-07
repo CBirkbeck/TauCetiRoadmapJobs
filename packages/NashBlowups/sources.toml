@@ -231,7 +231,7 @@ sha256 = "b035a1f02104906a1820636cd332a0d7962fef3318d207a056634cb14dc86947"
 licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-07"
-cited_for = ["§0.3 Lemma 10.140.3 (00TT, line 17618)", "§0.5 Lemma 10.140.4 (00TU, line 17647) and the proof of Lemma 10.140.5 (00TV, lines 17676-17678)", "§4.2 Lemma 10.131.13 (00RW, line 15590)", "§5.5 Example 10.140.8 (00TY, lines 17720-17726): a regular non-smooth curve over F_p(t)"]
+cited_for = ["§0.3 Lemma 10.140.3 (00TT, line 17618)", "§0.5 Lemma 10.140.4 (00TU, line 17647; its proof, lines 17654-17671, uses no Noetherian hypothesis) and the proof of Lemma 10.140.5 (00TV, lines 17676-17678)", "§4.2 Lemma 10.131.13 (00RW, line 15590)", "§5.5 Example 10.140.8 (00TY, lines 17720-17726): a regular non-smooth curve over F_p(t)"]
 
 [[source]]
 id = "alperModuli"

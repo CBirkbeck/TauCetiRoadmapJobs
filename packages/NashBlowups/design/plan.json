@@ -179,15 +179,15 @@
      "id": "0.5",
      "kind": "theorem",
      "name": "cotangentSpaceEquivKaehler",
-     "statement": "For a Noetherian local k-algebra (R, m, κ) with κ finite separable over k, the map m/m² → κ ⊗_R Ω_{R/k}, a ↦ 1 ⊗ da, is a κ-linear isomorphism.",
+     "statement": "For a local k-algebra (R, m, κ), not necessarily Noetherian, with κ finite separable over k, the map m/m² → κ ⊗_R Ω_{R/k}, a ↦ 1 ⊗ da, is a κ-linear isomorphism; surjectivity holds whenever Ω_{κ/k} = 0.",
      "hypotheses": [
       "k a field",
-      "R Noetherian local k-algebra",
+      "R a local k-algebra (no Noetherian hypothesis)",
       "κ = R/m finite separable over k"
      ],
      "locator": {
       "source": "stacksAlgebra",
-      "where": "Lemma 10.140.4 (00TU), line 17647, and the exact sequence in the proof of Lemma 10.140.5 (00TV), lines 17676–17678"
+      "where": "Lemma 10.140.4 (00TU), line 17647, stated for Noetherian R with a proof (lines 17654–17671) that does not use it, and the exact sequence in the proof of Lemma 10.140.5 (00TV), lines 17676–17678"
      },
      "prerequisites": [
       "mathlib:retractionKerCotangentToTensorEquivSection",
@@ -209,6 +209,11 @@
        "name": "cotangentSpace_inseparable_counterexample",
        "kind": "non-example",
        "statement": "k = 𝔽_p(t), R = k[x]_(x^p − t): the nonzero class of x^p − t maps to d(x^p − t) = 0"
+      },
+      {
+       "name": "cotangentSpaceEquivKaehler_nonNoetherian",
+       "kind": "compatibility",
+       "statement": "R = k[x_1, x_2, …] localised at (x_1, x_2, …): x_i ↦ dx_i is an isomorphism of infinite-dimensional spaces; the Noetherian hypothesis is not needed"
       }
      ]
     },
@@ -521,7 +526,7 @@
       {
        "name": "nashBlowup_node",
        "kind": "computation",
-       "statement": "node xy = 0 in characteristic ≠ 2: X* = 𝔸¹ ⊔ 𝔸¹ (tangent quotients [1:0] and [0:1])"
+       "statement": "node xy = 0 in every characteristic: X* = 𝔸¹ ⊔ 𝔸¹ (tangent quotients [1:0] and [0:1])"
       },
       {
        "name": "nashBlowup_point",
@@ -960,7 +965,8 @@
      "prerequisites": [
       "mathlib:KaehlerDifferential",
       "mathlib:Derivation",
-      "mathlib:Algebra.TensorProduct"
+      "mathlib:Algebra.TensorProduct",
+      "roadmap:DiophantineApproximationAndTranscendence §5.6"
      ],
      "api": [
       {
@@ -987,6 +993,11 @@
        "name": "lieDerivative_dx_coordinate",
        "role": "compatibility",
        "statement": "in the situation of 4.1, L_{∂_i}(dx_j) = 0 and ⊕ R dx_j is L_{∂_i}-stable"
+      },
+      {
+       "name": "lieDerivative_eq_lieDerivativeOneForm",
+       "role": "compatibility",
+       "statement": "if R is a field and k has characteristic zero, L_∂ equals DiophantineApproximationAndTranscendence's lieDerivativeOneForm ∂ (§5.6), by the uniqueness in exists_lieDerivativeOneForm"
       }
      ],
      "tests": [
@@ -1377,7 +1388,7 @@
       {
        "name": "normalized_vs_normalization",
        "kind": "non-example",
-       "statement": "y² = x²z: the normalisation of X is finite over X, while X̄* = X* has ℙ¹ over 0; normalising X instead of X* is excluded"
+       "statement": "y² = x²z in characteristic ≠ 2: the normalisation of X is finite over X, while X̄* = X* has ℙ¹ over 0; normalising X instead of X* is excluded (in characteristic 2, J_f = (x²) is invertible and X* = X)"
       }
      ]
     },
@@ -1666,7 +1677,14 @@
    "sections": [
     "§0.23"
    ],
-   "what": "p-bases of fields and the basis of Ω¹_{K/𝔽_p}."
+   "what": "p-bases of fields: a family is a p-basis exactly when its differentials form a basis of Ω¹_{K/𝔽_p}; the forward half is DerivedDeRham.pBasis_kaehler_basis, the converse half (used by §5.3) is stated in the prose of §0.23."
+  },
+  {
+   "roadmap": "DiophantineApproximationAndTranscendence",
+   "sections": [
+    "§5.6"
+   ],
+   "what": "exists_lieDerivativeOneForm / lieDerivativeOneForm: the unique C-linear Lie derivative on Ω[F⁄C] for fields C ⊆ F with C of characteristic zero; used only for the agreement bullet of §4.2."
   }
  ],
  "consumers": [
