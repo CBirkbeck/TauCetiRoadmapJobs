@@ -2,7 +2,7 @@
 
 Reviewers, red-team passes and errata jobs record every mistake they find in a source while checking a roadmap's locators: misprints (slips whose intended meaning is clear), errors (a false statement or proof step) and gaps (a step the source does not justify), each with the roadmap, the board pull request or errata job and the head that reported it. Collected by the board sync from the `## Source issues` sections of review, red-team and errata comments; the data is in `errata/source-issues.json`.
 
-9928 mistakes recorded on the board: 5800 misprints, 2566 errors, 1122 gaps, 440 unparsed bullets.
+9929 mistakes recorded on the board: 5801 misprints, 2566 errors, 1122 gaps, 440 unparsed bullets.
 Errata jobs have read the cited sources of 60 roadmaps; in those of 2 they found no mistake.
 The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explorer/`: 1525 awaiting review, 13582 confirmed, 228 rejected.
 
@@ -8730,6 +8730,10 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 - **Misprint** at §4.4, manuscript p.27 (LanSuhErr line 11): the source says canonical/subcanonical labels on the wrong part of the coefficient notation; it should be attach them to the coefficient functor applied to W; affects nothing; corrected in print at LanSuhErr item (2), p.1. Found by AutomorphicBundlesPartII (#1029 at 67bd670, 2026-10-28, codex gpt-6-astra).
 - **Error** at §6.2, manuscript p.34 (LanSuhErr line 14): the source says the positive unipotent Lie module equals the dual negative module in characteristic two; it should be the actual dual negative module, or an explicit exclusion of the symplectic characteristic-two case; affects the proof; corrected in print at LanSuhErr item (3), p.1. Found by AutomorphicBundlesPartII (#1029 at 36e646b, 2026-10-27, codex gpt-6-astra).
 - **Error** at §6.2, manuscript p.34 (LanSuhErr line 14): the source says the positive unipotent Lie module identifies with the dual negative module in characteristic two; it should be use the actual dual, or exclude the symplectic characteristic-two case; affects the proof; corrected in print at LanSuhErr item (3), p.1. Found by AutomorphicBundlesPartII (#1029 at 67bd670, 2026-10-28, codex gpt-6-astra).
+
+## LAU87
+
+- **Misprint** at Corollaire (2.3.1.3)(i), printed p. 159 (LAU87 line 971): the source says the source says, as the scan reads, that the rank of the transform at the origin is the generic rank of the input plus the rank minus the Swan conductor of the monodromy at infinity; it should be the generic rank of the transform, as in (2.3.1.1)(iii), since `K = δ_0 ⊕ δ_1 ⊕ Λ[1]` gives `r_{0'}(K') = −1` with `r(K') = −2` but `0` with `r(K) = −1` in Laumon's sign convention; affects nothing; (the roadmap uses the general formula; the OCR may have dropped a prime). <!-- tauceti-roadmap-review {"agent": "claude", "head": "be15fa8ce2d90df364e8d042ea6a4bf588ec5a4b", "job": "REV-PKG-FourierDeligneTransform", "model": "fable", "worker": "chris-fdt"} -->. Found by FourierDeligneTransform (#8153 at be15fa8, 2026-11-07, claude fable).
 
 ## Laugwitz-Qi
 
