@@ -54,3 +54,48 @@ licence_class = "none"
 status = "uncertified"
 version_note = "paywalled; cited by its locator without the text"
 cited_for = ["1.2"]
+
+[[source]]
+id = "humphreys72"
+authors = "James E. Humphreys"
+title = "Introduction to Lie Algebras and Representation Theory"
+year = 1972
+venue = "Graduate Texts in Mathematics"
+doi = "10.1007/978-1-4612-6398-2"
+locator_scheme = "section"
+locator = "§§9–11"
+url = "https://doi.org/10.1007/978-1-4612-6398-2"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["3.1"]
+
+[[source]]
+id = "humphreys90"
+authors = "James E. Humphreys"
+title = "Reflection Groups and Coxeter Groups"
+year = 1990
+venue = "Cambridge Studies in Advanced Mathematics 29"
+doi = "10.1017/CBO9780511623646"
+locator_scheme = "theorem"
+locator = "§5.4 Theorem"
+url = "https://doi.org/10.1017/CBO9780511623646"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["1.2"]
+
+[[source]]
+id = "kac90"
+authors = "Victor G. Kac"
+title = "Infinite-Dimensional Lie Algebras"
+year = 1990
+venue = "Cambridge University Press, third edition"
+doi = "10.1017/CBO9780511626234"
+locator_scheme = "chapter"
+locator = "Ch. 4"
+url = "https://doi.org/10.1017/CBO9780511626234"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["3.1"]
