@@ -8,7 +8,7 @@ title = "Explicit bounds on exponential sums and the scarcity of squarefree bino
 year = 1996
 doi = "10.1112/S0025579300011608"
 locator_scheme = "theorem"
-locator = "Lemma 8.6"
+locator = "Lemmas 8.4 and 8.6"
 sha256 = "2fc57e71c90e5246a661464b82a3bd7e33514660e3cf1bb0d6bdadb2ff3fad63"
 licence_class = "operator-local"
 status = "certified"
@@ -37,7 +37,7 @@ venue = "Indagationes Mathematicae (N.S.) 33 (2022), no. 5, 1012-1032"
 doi = "10.1016/j.indag.2022.04.007"
 arxiv = "2009.00769v1"
 locator_scheme = "theorem"
-locator = "Lemma 2.3; Lemmas 3.1, 3.2"
+locator = "Lemmas 2.1, 2.3, 2.5, 3.1, 3.2; displays (12)-(19), (25), (27)-(42)"
 url = "https://arxiv.org/abs/2009.00769v1"
 fetched_from = "https://arxiv.org/pdf/2009.00769v1"
 fetched_at = "2026-11-06T00:33:22Z"
@@ -91,12 +91,12 @@ year = 2012
 venue = "Universitext"
 doi = "10.1007/978-1-4471-4096-2"
 locator_scheme = "theorem"
-locator = "Theorems 5.6, 5.8, 5.12"
+locator = "Lemma 5.7; Theorems 5.6, 5.8, 5.12"
 url = "https://doi.org/10.1007/978-1-4471-4096-2"
 licence_class = "none"
 status = "uncertified"
 version_note = "paywalled; cited by its locator without the text"
-cited_for = ["2.2; 2.3a; 2.3b"]
+cited_for = ["2.2; 2.3a; 2.3b; Scope and ownership: ExplicitCharacterSumsAndSieves, Part II"]
 
 [[source]]
 id = "filaseta1990"
@@ -126,7 +126,7 @@ url = "https://doi.org/10.1023/A:1011445212478"
 licence_class = "none"
 status = "uncertified"
 version_note = "paywalled; cited by its locator without the text"
-cited_for = ["proposed Part II (report): not cited by this design"]
+cited_for = ["Scope and ownership: ExplicitCharacterSumsAndSieves, Part II"]
 
 [[source]]
 id = "frolenkovsoundararajan2013"
@@ -136,7 +136,7 @@ year = 2013
 venue = "The Ramanujan Journal 31"
 doi = "10.1007/s11139-012-9462-y"
 locator_scheme = "theorem"
-locator = "Theorem 1"
+locator = "Theorems 1 and 2; Corollary 1"
 url = "https://doi.org/10.1007/s11139-012-9462-y"
 licence_class = "none"
 status = "uncertified"
@@ -152,7 +152,7 @@ venue = "Acta Arithmetica 166 (2014), no. 3, 289-299"
 doi = "10.4064/aa166-3-5"
 arxiv = "1410.7561v2"
 locator_scheme = "theorem"
-locator = "Definition 4.1, Theorems 4.2 and 4.3 (arXiv v2 numbering)"
+locator = "Lemmas 3.1, 4.4, 4.5; Propositions 3.2, 3.3; Definition 4.1; Theorems 4.2 and 4.3 (arXiv v2 numbering)"
 url = "https://arxiv.org/abs/1410.7561v2"
 fetched_from = "https://arxiv.org/pdf/1410.7561v2"
 fetched_at = "2026-11-06T00:34:30Z"
@@ -195,7 +195,7 @@ url = "https://doi.org/10.1007/bf01540603"
 licence_class = "none"
 status = "uncertified"
 version_note = "paywalled; cited by its locator without the text"
-cited_for = ["proposed Part II (report): not cited by this design"]
+cited_for = ["Scope and ownership: ExplicitCharacterSumsAndSieves, Part II"]
 
 [[source]]
 id = "greaves2001"
@@ -235,7 +235,7 @@ venue = "International Journal of Number Theory 11 (2015), no. 5, 1653-1678"
 doi = "10.1142/S1793042115400163"
 arxiv = "1412.3062v2"
 locator_scheme = "theorem"
-locator = "Theorem 1, Corollary 1, Theorem 2, Corollary 2, Theorem 3, Tables 1-3"
+locator = "Theorem A, Theorems 1 and 2, Corollaries 1 and 2, Theorem C, Lemmas 1-6, displays (26)-(59), Tables 1-7"
 url = "https://arxiv.org/abs/1412.3062v2"
 fetched_from = "https://arxiv.org/pdf/1412.3062v2"
 fetched_at = "2026-11-06T00:36:01Z"
@@ -255,7 +255,7 @@ venue = "International Journal of Number Theory 8 (2012), no. 1, 227-254"
 doi = "10.1142/S1793042112500133"
 arxiv = "1011.4501v2"
 locator_scheme = "theorem"
-locator = "Theorem A.1 (appendix) and its table of C(r)"
+locator = "Theorems A.1 and A.9, Lemmas A.5-A.8 (appendix) and the table of C(r)"
 url = "https://arxiv.org/abs/1011.4501v2"
 fetched_from = "https://arxiv.org/pdf/1011.4501v2"
 fetched_at = "2026-11-06T00:36:07Z"
@@ -264,7 +264,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-06"
 version_note = "arXiv v2 carries the title \"Norm-Euclidean Galois fields\"; published as \"Norm-Euclidean cyclic fields of prime degree\"; the explicit Burgess inequality with the table C(2) = 10.0366 to C(15) = 1.7700 is Theorem A.1 of the appendix in the arXiv numbering and is restated as Theorem C in trevino2015 lines 113-128"
-cited_for = ["4.3; 4.4a; 4.4b; 6.6"]
+cited_for = ["4.2c; 4.3; 4.4a; 4.4b; 6.6"]
 
 [[source]]
 id = "jainsharmakhaleliu2021"
@@ -284,7 +284,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-06"
 version_note = "arXiv v2"
-cited_for = ["proposed Part II (report): not cited by this design"]
+cited_for = ["Scope and ownership: ExplicitCharacterSumsAndSieves, Part II"]
 
 [[source]]
 id = "bordignonkerr2020"
@@ -293,7 +293,7 @@ title = "An explicit Pólya-Vinogradov inequality via Partial Gaussian sums"
 year = 2019
 arxiv = "1909.01052v1"
 locator_scheme = "theorem"
-locator = "Corollary 1; Theorem 5"
+locator = "Theorem 2; Corollary 1; Theorem 5"
 url = "https://arxiv.org/abs/1909.01052v1"
 fetched_from = "https://arxiv.org/pdf/1909.01052v1"
 fetched_at = "2026-11-06T00:42:02Z"
@@ -302,7 +302,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-06"
 version_note = "arXiv v1"
-cited_for = ["proposed Part II (report): not cited by this design"]
+cited_for = ["Scope and ownership: ExplicitCharacterSumsAndSieves, Part II"]
 
 [[source]]
 id = "bordignon2021"
@@ -332,7 +332,7 @@ year = "2006"
 venue = "Mathematics of Computation 75 (2006), no. 255, 1481-1492"
 doi = "10.1090/S0025-5718-06-01850-3"
 locator_scheme = "theorem"
-locator = "Proposition 2 and Table 1"
+locator = "Proposition 2 and Table 1; displays (28)-(30)"
 url = "https://www.ams.org/journals/mcom/2006-75-255/S0025-5718-06-01850-3/S0025-5718-06-01850-3.pdf"
 fetched_from = "https://www.ams.org/journals/mcom/2006-75-255/S0025-5718-06-01850-3/S0025-5718-06-01850-3.pdf"
 fetched_at = "2026-11-06T00:36:26Z"
@@ -341,7 +341,7 @@ licence_class = "publisher-open"
 status = "certified"
 accessed = "2026-11-06"
 version_note = "AMS open archive copy; the explicit Burgess bound is Proposition 2 (not a theorem), for integers 0 < M, N ≤ 2√d and the sum over M ≤ n < M+N"
-cited_for = ["4.1b"]
+cited_for = ["4.1a; 4.1b; Scope and ownership: ExplicitCharacterSumsAndSieves, Part II"]
 
 [[source]]
 id = "fan2022"
@@ -350,7 +350,7 @@ title = "An inequality for the distribution of numbers free of small prime facto
 year = "2022"
 venue = "Integers 22 (2022), Paper No. A26"
 locator_scheme = "theorem"
-locator = "Theorem (the single theorem, inequalities (4) and (5))"
+locator = "Theorem (the single theorem, inequalities (4), (5) and (6))"
 url = "http://math.colgate.edu/~integers/w26/w26.pdf"
 fetched_from = "https://math.colgate.edu/~integers/w26/w26.pdf"
 fetched_at = "2026-11-06T00:36:27Z"
@@ -445,7 +445,7 @@ licence_class = "institutional"
 status = "certified"
 accessed = "2026-11-06"
 version_note = "ICM Polish digital mathematics library copy (open); Théorème 1 has implicit constants depending on n; the explicit constants are Bordellès 2012, Theorem 5.12 (uncertified)"
-cited_for = ["proposed Part II (report): not cited by this design"]
+cited_for = ["Scope and ownership: ExplicitCharacterSumsAndSieves, Part II"]
 
 [[source]]
 id = "bordignon2022partial"
@@ -456,7 +456,7 @@ venue = "Revista Matemática Iberoamericana 38 (2022), no. 4, 1101-1127"
 doi = "10.4171/RMI/1328"
 arxiv = "2001.05114v1"
 locator_scheme = "theorem"
-locator = "Theorem 1.3 (arXiv v1 numbering; the published text, CC BY 4.0, is the certified copy but its extraction garbles theorem headings)"
+locator = "Theorem 1.1 with Tables 1-3, and Theorem 1.3 (published numbering)"
 url = "https://ems.press/content/serial-article-files/39044"
 fetched_from = "https://ems.press/content/serial-article-files/39044"
 fetched_at = "2026-11-06T00:41:22Z"
@@ -464,8 +464,8 @@ sha256 = "9642b7b7be99859b67262b2f2c74a6db28a5c4744a0b09880b530b54e6c598fc"
 licence_class = "publisher-open"
 status = "certified"
 accessed = "2026-11-06"
-version_note = "published open access (CC BY 4.0) at EMS Press; arXiv v1 read for the numbering: Theorem 1.3 is the Pólya-Vinogradov bound for every primitive character with leading constants (2/π²)(3/8+ε) (even) and (1/π)(3/8+ε) (odd); this is the non-squarefree analogue of bordignonkerr2020 that the TME-EMT page attributes to [Bordignon, 2021]"
-cited_for = ["proposed Part II (report): not cited by this design"]
+version_note = "published open access (CC BY 4.0) at EMS Press, the copy read; in the published numbering Theorem 1.1 is the Pólya-Vinogradov bound for primitive characters of modulus q ≥ q₀ with leading constants (2/π²)(3/8+ε) (even) and (1/π)(3/8+ε) (odd) and Tables 1-3 of (ε, q₀, h₁, h₂), and Theorem 1.3 is the Burgess-type bound for a primitive character twisted by a character mod k; arXiv v1 numbers the Pólya-Vinogradov bound Theorem 1.3; this is the non-squarefree analogue of bordignonkerr2020 that the TME-EMT page attributes to [Bordignon, 2021]"
+cited_for = ["Scope and ownership: ExplicitCharacterSumsAndSieves, Part II"]
 
 [[source]]
 id = "chenggraham2004"
@@ -495,7 +495,7 @@ url = "https://projecteuclid.org/journals/arkiv-for-matematik/volume-21/issue-1-
 licence_class = "open-repository"
 status = "uncertified"
 version_note = "open on Project Euclid, but the sources service received only an anti-bot page (Incapsula) on 2026-11-06; cited by locator; the statement and the (L, A) table are quoted on the TME-EMT sieve page (tmeemt-art14 lines 124-155)"
-cited_for = ["proposed Part II (report): not cited by this design"]
+cited_for = ["Scope and ownership: ExplicitCharacterSumsAndSieves, Part II"]
 
 [[source]]
 id = "montgomeryvaughan1973"
@@ -505,12 +505,12 @@ year = 1973
 venue = "Mathematika 20, no. 2, 119-133"
 doi = "10.1112/S0025579300004708"
 locator_scheme = "theorem"
-locator = "Theorem 2"
+locator = "Theorem 2; Lemmas 7 and 10; display (3.3) and §3"
 url = "https://doi.org/10.1112/S0025579300004708"
 licence_class = "none"
 status = "uncertified"
 version_note = "paywalled (Wiley/LMS); cited by its locator without the text; the statement is quoted on the TME-EMT sieve page (tmeemt-art14 lines 84-87)"
-cited_for = ["5.1d; 5.5a; 5.5b; 6.2"]
+cited_for = ["5.1d; 5.5a; 5.5b; 6.2; Scope and ownership: ExplicitCharacterSumsAndSieves, Part II"]
 
 [[source]]
 id = "montgomeryvaughan1974"
@@ -601,7 +601,7 @@ title = "Explicit van der Corput's $d$-th derivative estimate"
 year = 2024
 arxiv = "2407.02094v1"
 locator_scheme = "theorem"
-locator = "Lemmas 1, 4, 5; Theorem 7"
+locator = "Lemmas 1, 4, 5, 6; Remark 2; Theorem 7 and its proof"
 url = "https://arxiv.org/abs/2407.02094v1"
 fetched_from = "https://arxiv.org/pdf/2407.02094v1"
 fetched_at = "2026-11-07T19:44:36Z"
@@ -619,7 +619,7 @@ title = "An improved explicit estimate for $ζ(1/2+it)$"
 year = 2022
 arxiv = "2207.02366v1"
 locator_scheme = "theorem"
-locator = "Lemma 2.3"
+locator = "Lemmas 2.3 and 2.4"
 url = "https://arxiv.org/abs/2207.02366v1"
 fetched_from = "https://arxiv.org/pdf/2207.02366v1"
 fetched_at = "2026-11-07T19:44:46Z"
@@ -655,7 +655,7 @@ title = "An explicit sub-Weyl bound for $ζ(1/2 + it)$"
 year = 2023
 arxiv = "2302.13444v1"
 locator_scheme = "theorem"
-locator = "Lemmas 1.2, 2.1, 2.2, 2.3"
+locator = "Lemmas 2.1, 2.2, 2.3"
 url = "https://arxiv.org/abs/2302.13444v1"
 fetched_from = "https://arxiv.org/pdf/2302.13444v1"
 fetched_at = "2026-11-07T19:44:59Z"
@@ -664,7 +664,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-07"
 version_note = "arXiv v1"
-cited_for = ["proposed Part II (report): not cited by this design"]
+cited_for = ["Scope and ownership: ExplicitCharacterSumsAndSieves, Part II"]
 
 [[source]]
 id = "francis2021"
@@ -682,7 +682,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-07"
 version_note = "arXiv v2"
-cited_for = ["proposed Part II (report): not cited by this design"]
+cited_for = ["Scope and ownership: ExplicitCharacterSumsAndSieves, Part II"]
 
 [[source]]
 id = "yamada2023"
@@ -700,7 +700,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-07"
 version_note = "arXiv v1"
-cited_for = ["proposed Part II (report): not cited by this design"]
+cited_for = ["Scope and ownership: ExplicitCharacterSumsAndSieves, Part II"]
 
 [[source]]
 id = "zhao2024"
@@ -709,7 +709,7 @@ title = "Integral Points Close to Smooth Plane Curves"
 year = 2024
 arxiv = "2407.01778v1"
 locator_scheme = "theorem"
-locator = "Theorem 2.1"
+locator = "Theorems 2.1, 2.5, 2.7; Lemma 2.6"
 url = "https://arxiv.org/abs/2407.01778v1"
 fetched_from = "https://arxiv.org/pdf/2407.01778v1"
 fetched_at = "2026-11-07T19:49:21Z"
@@ -718,7 +718,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-07"
 version_note = "arXiv v1"
-cited_for = ["2.2; 2.3a; 2.3b"]
+cited_for = ["2.2; 2.3a; 2.3b; Scope and ownership: ExplicitCharacterSumsAndSieves, Part II"]
 
 [[source]]
 id = "platttrudgian2018"
@@ -727,7 +727,7 @@ title = "Improved bounds on Brun's constant"
 year = 2018
 arxiv = "1803.01925v1"
 locator_scheme = "theorem"
-locator = "Theorem 2"
+locator = "Theorem 2; display (11)"
 url = "https://arxiv.org/abs/1803.01925v1"
 fetched_from = "https://arxiv.org/pdf/1803.01925v1"
 fetched_at = "2026-11-07T19:54:25Z"
@@ -736,7 +736,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-07"
 version_note = "arXiv v1"
-cited_for = ["proposed Part II (report): not cited by this design"]
+cited_for = ["Scope and ownership: ExplicitCharacterSumsAndSieves, Part II"]
 
 [[source]]
 id = "pomerance2011"
@@ -744,7 +744,7 @@ authors = "Carl Pomerance"
 title = "Remarks on the Pólya–Vinogradov inequality"
 year = 2011
 locator_scheme = "theorem"
-locator = "Theorem 1"
+locator = "Lemmas 2, 3, 4; Theorem 1; displays (4)-(10)"
 url = "https://math.dartmouth.edu/~carlp/pvrev.pdf"
 fetched_from = "https://math.dartmouth.edu/~carlp/pvrev.pdf"
 fetched_at = "2026-11-07T19:54:41Z"
@@ -779,7 +779,7 @@ title = "Numerically explicit version of the Pólya--Vinogradov inequality"
 year = 2011
 arxiv = "1107.0381v1"
 locator_scheme = "theorem"
-locator = "Theorem 1"
+locator = "equation (1)"
 url = "https://arxiv.org/abs/1107.0381v1"
 fetched_from = "https://arxiv.org/pdf/1107.0381v1"
 fetched_at = "2026-11-07T19:56:11Z"
@@ -797,7 +797,7 @@ title = "The Least Square-free Primitive Root Modulo a Prime"
 year = 2017
 arxiv = "1701.05980v1"
 locator_scheme = "theorem"
-locator = "Theorem 1.2"
+locator = "Theorems 1.2 and 1.3"
 url = "https://arxiv.org/abs/1701.05980v1"
 fetched_from = "https://arxiv.org/pdf/1701.05980v1"
 fetched_at = "2026-11-07T19:56:21Z"
@@ -824,7 +824,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-07"
 version_note = "arXiv v6"
-cited_for = ["proposed Part II (report): not cited by this design"]
+cited_for = ["Scope and ownership: ExplicitCharacterSumsAndSieves, Part II"]
 
 [[source]]
 id = "trevino2015kth"

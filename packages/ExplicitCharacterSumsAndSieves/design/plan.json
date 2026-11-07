@@ -90,10 +90,10 @@
      "id": "0.2",
      "kind": "definition",
      "name": "nearIntegerCount",
-     "statement": "R(f, a, N, delta) = number of integers n with a <= n <= a + N and ||f(n)|| < delta, with ||x|| the norm of x in UnitAddCircle.",
+     "statement": "R(f, a, N, delta) = number of integers n with a <= n <= a + N and ||f(n)|| < delta, with ||x|| the norm of x in UnitAddCircle; defined for real N >= 0 (length 0 gives 0 or 1).",
      "hypotheses": [
       "a real",
-      "N > 0",
+      "N >= 0",
       "delta > 0"
      ],
      "locator": {
@@ -136,6 +136,11 @@
        "name": "strictness",
        "kind": "non-example",
        "statement": "f(x) = x/3, a = N = 1, delta = 1/3: n = 1 is not counted since ||1/3|| = 1/3"
+      },
+      {
+       "name": "length_zero",
+       "kind": "degenerate",
+       "statement": "R(x/3, 3, 0, 0.1) = 1 and R(x/3, 2.5, 0, 0.5) = 0; 2.3a evaluates R at length N - h = 0 when h = A = N"
       }
      ]
     },
@@ -143,14 +148,14 @@
      "id": "0.3",
      "kind": "theorem",
      "name": "vanDerCorput_finite",
-     "statement": "For integers N, H >= 1 and complex b_1..b_N, with C(h) = sum_{n=1}^{N-h} b_{n+h} conj(b_n) (zero for h >= N): H^2 |sum b_n|^2 <= (N + H - 1)(H sum |b_n|^2 + 2 Re sum_{h=1}^{H-1} (H - h) C(h)). Corollaries: the absolute-value form, and |S_f[N+1,N+L]|^2 <= (L + q - 1)(L/q + (2/q) sum_{r<q} (1 - r/q) |S_{g_r}[N+1, N+L-r]|) with g_r(x) = f(x+r) - f(x).",
+     "statement": "For integers N, H >= 1 and complex b_1..b_N, with C(h) = sum_{n=1}^{N-h} b_{n+h} conj(b_n) (zero for h >= N): H^2 |sum b_n|^2 <= (N + H - 1)(H sum |b_n|^2 + 2 Re sum_{h=1}^{H-1} (H - h) C(h)). Corollaries: the absolute-value form; |S_f[N+1,N+L]|^2 <= (L + q - 1)(L/q + (2/q) sum_{r<q} (1 - r/q) |S_{g_r}[N+1, N+L-r]|) with g_r(x) = f(x+r) - f(x); and, for real X, Y >= 1, natural 1 <= H <= Y and |b_n| <= 1 on the integers of (X, X+Y], |Y^{-1} sum b_n|^2 <= 4/H + (4/(HY)) sum_{h=1}^{H-1} |C(h)|. The real-part form of ariasdereyna2024 Lemma 6 is not a corollary (enlarging N + H - 1 to 2Y lowers a negative real-part term).",
      "hypotheses": [
       "N, H >= 1 integers",
       "b complex"
      ],
      "locator": {
       "source": "yang2024",
-      "where": "Lemma 2.3, lines 324-339; hiarypatelyang2024 Lemma 2.4, lines 96-108; ariasdereyna2024 Lemma 6, lines 224-227"
+      "where": "Lemma 2.3, lines 324-339; hiarypatelyang2024 Lemma 2.4, lines 96-108; ariasdereyna2024 proof of Theorem 7, lines 405-415 (absolute-value form; Lemma 6, lines 224-227, states a real-part form)"
      },
      "prerequisites": [
       "mathlib:Finset.sum_mul_sq_le_sq_mul_sq",
@@ -168,6 +173,11 @@
        "name": "vanDerCorput_expSum",
        "role": "corollary",
        "statement": "the exponential-sum form with q = H"
+      },
+      {
+       "name": "vanDerCorput_normalised",
+       "role": "corollary",
+       "statement": "|Y^{-1} sum b_n|^2 <= 4/H + (4/(HY)) sum_{h<H} |C(h)| for |b_n| <= 1 on (X, X+Y], 1 <= H <= Y"
       }
      ],
      "tests": [
@@ -185,6 +195,16 @@
        "name": "alternating",
        "kind": "computation",
        "statement": "b = (1,-1), H = 2: 0 <= 3(4 - 2) = 6"
+      },
+      {
+       "name": "normalised",
+       "kind": "computation",
+       "statement": "b = (1,1,1) on (0,3], H = 2: 1 <= 2 + (4/6)*2 = 3.33"
+      },
+      {
+       "name": "negative_real_part",
+       "kind": "non-example",
+       "statement": "b = (1,-1) on (0,2], H = 2: the real-part term is 3*2*(-1) = -6, and with 2Y = 4 in place of N + H - 1 it would be -8"
       }
      ]
     },
@@ -534,6 +554,11 @@
        "name": "lambda_form",
        "kind": "compatibility",
        "statement": "with lambda = W/V this is the TME-EMT form"
+      },
+      {
+       "name": "excess",
+       "kind": "computation",
+       "statement": "Patel's form exceeds the sharper form 2((L-1)/V+2)(2 sqrt(W/pi)+1/2)+1 by L/V + 1 + (4 sqrt(W/pi)+1)/V: 8.454 at L = 10, V = 2, W = 3"
       }
      ]
     },
@@ -664,6 +689,11 @@
        "name": "difference",
        "kind": "computation",
        "statement": "f = x^2, a = (1): 2x + 1; a = (1,1): 2"
+      },
+      {
+       "name": "route_form",
+       "kind": "compatibility",
+       "statement": "the d = 1 step is |Y^{-1} sum e(f(n))|^2 <= 4/H_1 + 4 T_1, the normalised corollary of 0.3 (ariasdereyna2024 lines 405-415)"
       }
      ]
     }
@@ -719,7 +749,7 @@
      "name": "first_derivative_test_points",
      "statement": "If f has a continuous derivative on [a,a+N] with lambda1 <= |f'| <= c1 lambda1, lambda1 > 0, c1 >= 1, then R(f,a,N,delta) <= 2 c1 N lambda1 + 4 c1 N delta + 2 delta/lambda1 + 1 for every delta > 0.",
      "hypotheses": [
-      "N > 0",
+      "N >= 0",
       "delta > 0",
       "lambda1 > 0",
       "c1 >= 1"
@@ -941,6 +971,11 @@
        "name": "C1_C3",
        "kind": "computation",
        "statement": "C_1(pi) = -1, C_3(pi) = -5/6, both above the bound"
+      },
+      {
+       "name": "route_endpoint",
+       "kind": "computation",
+       "statement": "alternative route at n = 2: endpoint values log 2 - 4/3 = -0.640 and -2/3 = -0.667 of -log(2s) - 1/(3s) on [1/4, 1/2]; the minimum is the right endpoint, both > -2/n = -1"
       }
      ]
     },
@@ -1044,7 +1079,13 @@
       "target:6.1"
      ],
      "api": [],
-     "tests": []
+     "tests": [
+      {
+       "name": "L_range",
+       "kind": "computation",
+       "statement": "L <= q holds from q = 19 (even: L = 19 at q = 19, L = 19 > 18 at q = 18) and from q = 24 (odd: L = 24 at q = 24, L = 24 > 23 at q = 23); q > 25 is Lapkova's sufficient split"
+      }
+     ]
     },
     {
      "id": "3.5b",
@@ -1115,26 +1156,40 @@
      "id": "4.1a",
      "kind": "theorem",
      "name": "degenerate_tuple_count",
-     "statement": "For integers H >= 1, r >= 1 with r <= 9H, the number of tuples in {1..H}^{2r} in which every value occurs at least twice is at most (2r-1)!! H^r.",
+     "statement": "For integers H >= 1, r >= 1 and d >= 2, the number of d-degenerate tuples in {1..H}^{2r} (for every value v, #{i <= r : b_i = v} is congruent mod d to #{i > r : b_i = v}) is at most (2r-1)!! H^r. Route: the count equals E|Z_1 + ... + Z_H|^{2r} for independent uniform d-th roots of unity; d even: perfect matchings; d > r: rearrangements, r! H^r; odd 3 <= d <= r: random rotation and Jensen give (pi/(d sin(pi/d)))^{2r} r! H^r <= (2r-1)!! H^r for r >= 5; (d,r) = (3,3), (3,4): exact counts 6H^3 - 8H^2 + 3H and 24H^4 - 56H^3 + 42H^2 - 9H.",
      "hypotheses": [
-      "r <= 9H"
+      "H >= 1",
+      "r >= 1",
+      "d >= 2"
      ],
      "locator": {
       "source": "trevino2015kth",
-      "where": "Theorem 1.2 (combinatorial count)"
+      "where": "the count behind Theorem 1.2; booker2006 lines 506-507 for d = 2"
      },
-     "prerequisites": [],
+     "prerequisites": [
+      "mathlib:ConvexOn.map_integral_le"
+     ],
      "api": [],
      "tests": [
       {
        "name": "r2_H2",
        "kind": "computation",
-       "statement": "8 <= 12"
+       "statement": "even d: 8 <= 12 (2 constant tuples, 6 with two of each); d >= 3: 6 rearrangements <= 12"
       },
       {
        "name": "r2_H1",
        "kind": "degenerate",
        "statement": "1 <= 3"
+      },
+      {
+       "name": "odd_multiplicity",
+       "kind": "computation",
+       "statement": "d = 3, r = 3: (1,1,1,2,2,2) is degenerate (f = (X+1)^3 (X+2)^6 is a cube); exact count 22 <= 120 at H = 2"
+      },
+      {
+       "name": "at_least_twice_too_large",
+       "kind": "non-example",
+       "statement": "the set where every value occurs at least twice has 1.0672e16 > 11!! 100^6 = 1.0395e16 elements at r = 6, H = 100"
       }
      ]
     },
@@ -1142,19 +1197,21 @@
      "id": "4.1b",
      "kind": "theorem",
      "name": "burgess_moment_bound",
-     "statement": "For p prime, chi != 1 mod p, r >= 1, real B > 0 with r <= 9B: sum_{x mod p} |sum_{1<=b<=B} chi(x+b)|^{2r} <= (2r-1)!! B^r p + (2r-1) B^{2r} sqrt p.",
+     "statement": "For p prime, chi != 1 mod p, every integer r >= 1 and real B > 0: sum_{x mod p} |sum_{1<=b<=B} chi(x+b)|^{2r} <= (2r-1)!! B^r p + (2r-1) B^{2r} sqrt p. Route: reduce floor(B) modulo p (a full period sums to 0); d-degenerate tuples contribute <= p each (4.1a), the others (m-1) sqrt p by Weil. The source's r <= 9B is not used.",
      "hypotheses": [
       "p prime",
       "chi != 1",
-      "r <= 9B"
+      "r >= 1",
+      "B > 0"
      ],
      "locator": {
       "source": "trevino2015",
-      "where": "Theorem A, lines 57-63 (proved in trevino2015kth Theorem 1.2)"
+      "where": "Theorem A, lines 57-63 (stated under r <= 9B; proved in trevino2015kth Theorem 1.2); booker2006 displays (28)-(30), lines 494-510, for quadratic chi"
      },
      "prerequisites": [
       "roadmap:CharacterSumsOverFiniteFields §4.7",
       "target:4.1a",
+      "tauceti:DirichletCharacter.sum_range_level_eq_zero",
       "mathlib:MulChar"
      ],
      "api": [],
@@ -1175,7 +1232,7 @@
      "id": "4.2a",
      "kind": "theorem",
      "name": "burgess_energy_lemma1",
-     "statement": "If N < p and 28 <= A < N/12 (A integer) then V2 = sum_x v(x)^2 <= 2AN(AN/p + log(1.85 A)).",
+     "statement": "For A an integer with 28 <= A < N/12, N < p, and multipliers all integers in [1, A]: V2 = sum_x v(x)^2 <= 2AN(AN/p + log(1.85 A)).",
      "hypotheses": [
       "p prime",
       "N < p",
@@ -1195,7 +1252,7 @@
       {
        "name": "A28_N400",
        "kind": "computation",
-       "statement": "V2 <= 88437 against the trivial 313600"
+       "statement": "V2 <= 22400(0.00112 + 3.9474) = 88447 against the trivial 313600"
       }
      ]
     },
@@ -1203,7 +1260,7 @@
      "id": "4.2b",
      "kind": "theorem",
      "name": "burgess_energy_lemma6",
-     "statement": "If A >= 30, N > 7A and 2AN < p then V2 <= 2AN log(1.85 A).",
+     "statement": "For multipliers all integers in [1, A], A >= 30, N > 7A and 2AN < p: V2 <= 2AN log(1.85 A).",
      "hypotheses": [
       "A >= 30 integer",
       "N > 7A",
@@ -1220,17 +1277,45 @@
      "tests": []
     },
     {
+     "id": "4.2c",
+     "kind": "theorem",
+     "name": "burgess_energy_prime_multipliers",
+     "statement": "For multipliers the primes in [1, A], A >= 2 an integer with 2AN <= p: V2 <= pi(A) N + 2N sum_{a prime <= A} (pi(a) - 1)/a + 2 sum_{a prime <= A} (pi(a) - 1).",
+     "hypotheses": [
+      "p prime",
+      "A >= 2 integer",
+      "2AN <= p"
+     ],
+     "locator": {
+      "source": "mcgown2012",
+      "where": "Lemma A.7, lines 1130-1142, with Lemma A.6, lines 1119-1129"
+     },
+     "prerequisites": [
+      "mathlib:ZMod",
+      "mathlib:Nat.primeCounting"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "primes_235",
+       "kind": "computation",
+       "statement": "multipliers {2,3,5}, M = 0, N = 100, p = 1009: V2 = 300 + 2(33 + 20 + 20) = 446 <= 452.7"
+      }
+     ]
+    },
+    {
      "id": "4.3",
      "kind": "theorem",
      "name": "burgess_amplification",
-     "statement": "For chi != 1 mod p, M integer, N >= 1, r >= 1, reals 1 <= A < p and B >= 1, H = floor A floor B, E(h) = max_K |S_chi(K,h)|: |S_chi(M,N)| <= H^{-1} V1^{1-1/r} V2^{1/(2r)} W^{1/(2r)} + (2/H) sum_{a<=A,b<=B} E(ab).",
+     "statement": "For chi != 1 mod p, M integer, N >= 1, r >= 1, reals 1 <= A < p and B >= 1, a nonempty set of multipliers in [1, A] (all integers, or the primes), H = |multipliers| floor B, E(h) = max_K |S_chi(K,h)|: |S_chi(M,N)| <= H^{-1} V1^{1-1/r} V2^{1/(2r)} W^{1/(2r)} + (2/H) sum_{a, b<=B} E(ab).",
      "hypotheses": [
       "1 <= A < p",
-      "B >= 1"
+      "B >= 1",
+      "multiplier set nonempty"
      ],
      "locator": {
       "source": "trevino2015",
-      "where": "displays (26)-(29), lines 643-700; mcgown2012 Lemma A.5, line 1083"
+      "where": "displays (26)-(29), lines 643-700 (all integers a); mcgown2012 Lemma A.5, lines 1083-1118 (prime a)"
      },
      "prerequisites": [
       "target:0.4a",
@@ -1248,6 +1333,11 @@
        "name": "A_ge_p",
        "kind": "non-example",
        "statement": "A >= p is excluded: a = p is not invertible"
+      },
+      {
+       "name": "prime_multipliers",
+       "kind": "degenerate",
+       "statement": "for 1 <= A < 2 the primes in [1, A] form the empty set (excluded); at A = 5, B = 3: H = 9 against 15 for all multipliers"
       }
      ]
     },
@@ -1255,19 +1345,23 @@
      "id": "4.4a",
      "kind": "theorem",
      "name": "burgess_mcgown_parametric",
-     "statement": "For p odd prime, r >= 2, reals d > 4, C >= 1, p0 >= 2 with (A.1) C^r p0^{1/4-1/(4r)} (log p0)^{1/2} >= 4d(d+1)r and (A.2) C >= ((d+1)(2r-1)(4r-1))^{1/(2r)}/(1 - 2 d^{-(1-1/r)}): for p >= p0 and 1 <= H <= sqrt(rd) p^{1/2+1/(4r)}, |sum_{N0<n<=N0+H} chi(n)| <= C H^{1-1/r} p^{(r+1)/(4r^2)} (log p)^{1/(2r)}.",
+     "statement": "Under RosserSchoenfeldFiniteRangeInput: for p odd prime, r >= 2, reals d > 4, C >= 1, p0 >= 2 with (A.1) C^r p0^{1/4-1/(4r)} (log p0)^{1/2} >= 4d(d+1)r and (A.2) C >= ((d+1)(2r-1)(4r-1))^{1/(2r)}/(1 - 2 d^{-(1-1/r)}): for p >= p0 and 1 <= H <= sqrt(rd) p^{1/2+1/(4r)}, |sum_{N0<n<=N0+H} chi(n)| <= C H^{1-1/r} p^{(r+1)/(4r^2)} (log p)^{1/(2r)}.",
      "hypotheses": [
       "(A.1)",
       "(A.2)",
-      "d > 4"
+      "d > 4",
+      "RosserSchoenfeldFiniteRangeInput"
      ],
      "locator": {
       "source": "mcgown2012",
-      "where": "Theorem A.9, lines 1209-1233"
+      "where": "Theorem A.9, lines 1209-1233; proof lines 1234-1432 (Lemmas A.5-A.8)"
      },
      "prerequisites": [
       "target:4.1b",
-      "target:4.3"
+      "target:4.2c",
+      "target:4.3",
+      "roadmap:AnalyticNumberTheoryPartI §0.5",
+      "mathlib:Nat.primeCounting"
      ],
      "api": [],
      "tests": [
@@ -1275,6 +1369,11 @@
        "name": "d4",
        "kind": "non-example",
        "statement": "d = 4 makes (A.2) undefined"
+      },
+      {
+       "name": "pi_lower",
+       "kind": "computation",
+       "statement": "pi(A) >= A/(1 + log A) at A = 4: 2 >= 1.676, while A/log A = 2.885 would fail"
       }
      ]
     },
@@ -1282,9 +1381,10 @@
      "id": "4.4b",
      "kind": "theorem",
      "name": "burgess_mcgown_table",
-     "statement": "For primes p >= 2*10^4, 2 <= r <= 15 and 1 <= H <= 4 p^{1/2+1/(4r)}: |sum| < C(r) H^{1-1/r} p^{(r+1)/(4r^2)} (log p)^{1/(2r)} with C(2) = 10.0366, ..., C(15) = 1.7700.",
+     "statement": "Under RosserSchoenfeldFiniteRangeInput, for primes p >= 2*10^4, 2 <= r <= 15 and 1 <= H <= 4 p^{1/2+1/(4r)}: |sum| < C(r) H^{1-1/r} p^{(r+1)/(4r^2)} (log p)^{1/(2r)} with C(2) = 10.0366, ..., C(15) = 1.7700.",
      "hypotheses": [
-      "McGownTableCertificate"
+      "McGownTableCertificate",
+      "RosserSchoenfeldFiniteRangeInput"
      ],
      "locator": {
       "source": "mcgown2012",
@@ -1299,12 +1399,12 @@
       {
        "name": "C2",
        "kind": "computation",
-       "statement": "C0(2) = 10.0364 < 10.0366"
+       "statement": "C0(2) = 10.03655 < 10.0366"
       },
       {
        "name": "C3",
        "kind": "computation",
-       "statement": "C0(3) = 4.9538 < 4.9539"
+       "statement": "C0(3) = 4.95382 < 4.9539"
       }
      ]
     },
@@ -2078,12 +2178,12 @@
       {
        "name": "r2",
        "kind": "computation",
-       "statement": "10.0364 < 10.0366"
+       "statement": "C0(2) = 3.98428/0.396977 = 10.03655 < 10.0366"
       },
       {
-       "name": "r3",
+       "name": "r3_r8",
        "kind": "computation",
-       "statement": "4.9538 < 4.9539"
+       "statement": "C0(3) = 4.95382 < 4.9539; tightest row r = 8: C0(8) = 2.272099 < 2.2721"
       },
       {
        "name": "A1",
@@ -2096,7 +2196,7 @@
      "id": "6.7",
      "kind": "definition",
      "name": "TrevinoTable1Certificate",
-     "statement": "For each row of Table 1 with (k, c1') from Table 5 and all p >= p0: A >= 29, c1' < c1, positive denominator, and the right side of (46)/(47) at the stated A, B, s is at most c1.",
+     "statement": "For each row of Table 1 with (k, c1') from Table 5 and every real p >= p0: A >= 29, c1' < c1, positive denominator, and the right side of (46)/(47) at the stated A, B, s is at most c1. An inequality between explicit functions of p on [p0, infinity), not a finite verification.",
      "hypotheses": [],
      "locator": {
       "source": "trevino2015",
@@ -2119,6 +2219,11 @@
        "name": "monotone",
        "kind": "characterisation",
        "statement": "(46)-(47) decrease in A and B"
+      },
+      {
+       "name": "r2_reduces_to_p0",
+       "kind": "computation",
+       "statement": "at r = 2, p = 10^7 the right side of (46) is 2.73807 <= 2.7381; the bracket of (46) has derivative (1 - 3u/8 - 2 log(1.85 k u))/(k u^3) < 0 for u = log p >= 16, k >= 1/30 (numerator -5.03 at log 10^7, k = 1/30)"
       }
      ]
     },
@@ -2126,7 +2231,7 @@
      "id": "6.8",
      "kind": "definition",
      "name": "TrevinoTable3Certificate",
-     "statement": "The analogue of 6.7 for Table 3 with (k, c2') from Table 7, displays (58)-(59) and floor A >= 30.",
+     "statement": "The analogue of 6.7 for Table 3 with (k, c2') from Table 7, displays (58)-(59) and floor A >= 30, for every real p >= p0.",
      "hypotheses": [],
      "locator": {
       "source": "trevino2015",
@@ -2149,6 +2254,11 @@
        "name": "scope",
        "kind": "non-example",
        "statement": "Corollary 2 does not use this certificate"
+      },
+      {
+       "name": "bracket_not_monotone",
+       "kind": "non-example",
+       "statement": "r = 10, p0 = 10^10 (k = 0.054, c2' = 1.579, s = 15.91): the bracket of (59) rises from 4.7426 to 4.8535 at p = 10^23.3 since c sqrt(log p0) = 1.080 < sqrt e; the whole right side still falls from 1.57930 to 1.51537, a property of the row"
       }
      ]
     }
@@ -2178,7 +2288,7 @@
     "§0.19",
     "§0.20"
    ],
-   "what": "Rosser-Schoenfeld bounds for pi(x), sum 1/p and sum log p/p at arguments >= 319 (5.6)"
+   "what": "Rosser-Schoenfeld bounds for pi(x), sum 1/p and sum log p/p at arguments >= 319 (5.6); the lower bound pi(A) > A/log A for A >= 59 in McGown's route (4.4)"
   }
  ],
  "consumers": [
