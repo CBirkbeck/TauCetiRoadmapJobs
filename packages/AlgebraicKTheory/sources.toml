@@ -154,3 +154,39 @@ locator = "Theorem V.3.5"
 cited_for = ["4.2"]
 status = "uncertified"
 note = "no open copy; cited by locator, as restated in weibel-kbook-I line 151"
+
+[[source]]
+id = "horvath-kania-2026"
+authors = "Bence Horváth, Tomasz Kania"
+title = "Twisting exponential spectra"
+year = 2026
+arxiv = "2609.05362v1"
+locator_scheme = "theorem"
+locator = "Lemma 2.1; Lemma 2.2(ii), pp. 3-4"
+url = "https://arxiv.org/abs/2609.05362v1"
+fetched_from = "https://arxiv.org/pdf/2609.05362v1"
+fetched_at = "2026-11-07T18:25:13Z"
+sha256 = "5e8416e39b443dd1976edf7353f9d1652decac39873975328f00c42e53d99886"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-07"
+version_note = "arXiv v1"
+cited_for = ["8.2"]
+
+[[source]]
+id = "shirbisheh-2021"
+authors = "Vahid Shirbisheh"
+title = "Lectures on C*-algebras"
+year = 2012
+arxiv = "1211.3404v2"
+locator_scheme = "theorem"
+locator = "Problem 2.8(iii)-(v), printed p. 51"
+url = "https://arxiv.org/abs/1211.3404v2"
+fetched_from = "https://arxiv.org/pdf/1211.3404v2"
+fetched_at = "2026-11-07T18:25:22Z"
+sha256 = "50372d5215737bfe37ca245405123d4d42e09ff880d6c414fa33abe8a3758e2a"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-07"
+version_note = "arXiv v2"
+cited_for = ["8.2"]
