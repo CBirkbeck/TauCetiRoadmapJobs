@@ -18,3 +18,31 @@ status = "certified"
 accessed = "2026-11-05"
 version_note = "arXiv v1"
 cited_for = ["RQFT6.ControlledExtension"]
+
+[[source]]
+id = "borcherds-qft"
+authors = "Richard E. Borcherds"
+title = "Quantum field theory, handwritten course notes"
+year = 2002
+arxiv = "math-ph/0204014v1"
+locator_scheme = "page"
+locator = "pp. 1-121"
+url = "https://arxiv.org/abs/math-ph/0204014v1"
+fetched_from = "https://arxiv.org/pdf/math-ph/0204014v1"
+fetched_at = "2026-11-07T19:52:42Z"
+sha256 = "6ac0ae08a7c37cd4f2df7b424f0308ca4f1f76cd55ec46996f68fb65f04d0fe9"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-07"
+version_note = "arXiv v1"
+resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/6166#issuecomment-6712166014"
+
+[[source]]
+id = "unsw-qft"
+authors = "UNSW course"
+title = "Relativistic quantum field theory, course notes"
+locator_scheme = "page"
+locator = "pp. 1-62"
+licence_class = "none"
+status = "waived"
+resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/6166#issuecomment-6712166014"
