@@ -1,0 +1,4 @@
+{"review": {"status": "needs_changes", "reviewer": "independent-review-PRREVIEW-AlgebraicCurves~28",
+            "head": "25e4020af0f7baeaa778a47ef391a5c2381a32d0", "pr": 1854, "folder": "AlgebraicCurves", "date": "2026-11-07",
+            "findings": 1, "blocking": 0,
+            "notes": "Full review. Folder byte-identical to the other open pull request's copy; previous R01-R04 repaired (Suggested.lean states nothing under the module header; README cites the pinned theorems). Sole finding: the two outside-folder hunks (ArithmeticDirichletSeries, SymplecticGeometry; worker's gate outside-folder=2, build=0, all scanners 0; depcheck 0 problems). 166 pinned names elaborated by #check and compared with the README hypotheses; seeded sample (Riemann-Hurwitz, Portfolio ownership, Route decision) verified; adversarial table with 34 computed rows. Stichtenoth/Fulton not legally readable."}}
