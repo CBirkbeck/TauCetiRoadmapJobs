@@ -274,3 +274,18 @@ licence_class = "none"
 status = "uncertified"
 version_note = "paywalled; cited by its locator without the text"
 cited_for = ["3.3"]
+
+[[source]]
+id = "KLE66"
+authors = "Steven L. Kleiman"
+title = "Toward a numerical theory of ampleness"
+year = 1966
+venue = "Annals of Mathematics 84 (1966), 293–344"
+doi = "10.2307/1970447"
+locator_scheme = "theorem"
+locator = "Theorem III.1; Theorem IV.1"
+url = "https://doi.org/10.2307/1970447"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled (JSTOR); cited by its locator without the text"
+cited_for = ["1.7"]
