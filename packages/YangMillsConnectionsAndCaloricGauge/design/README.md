@@ -58,12 +58,14 @@ Lie algebra (Conventions):
 It leaves to named roadmaps:
 
 - **PDE** owns the Euclidean Sobolev spaces beyond the Tau Ceti carriers (density, embeddings,
-  trace and extension on Lipschitz domains: §1.2, §1.4, §1.6), Calderón–Zygmund theory and the
-  Mihlin–Hörmander multiplier theorem (§2.3), Bochner spaces (§6.1), the heat semigroup on `ℝ^d`
-  (§6.3), the dyadic partition with the Bernstein and Littlewood–Paley estimates (§7.1), Besov
-  spaces with their homogeneous versions (§7.2) and paraproducts (§7.3). Everything here is scalar
+  Poincaré inequalities, trace and extension on Lipschitz domains: §1.2, §1.4, §1.5, §1.6),
+  Calderón–Zygmund theory and the Mihlin–Hörmander multiplier theorem (§2.3), Bochner spaces
+  (§6.1), the heat semigroup on `ℝ^d` (§6.3), the dyadic partition with the Bernstein and
+  Littlewood–Paley estimates (§7.1), Besov spaces with their homogeneous versions (§7.2) and
+  paraproducts (§7.3). Everything here is scalar
   there and is applied componentwise to `𝔤`-valued functions in an orthonormal basis of `𝔤`.
-  The `L^p` theory of the Neumann problem on the unit ball and Hardy's inequality on `ℝ^d` are
+  The `L^p` theory of the Neumann problem on the unit ball, the `L^p` div–curl estimate for
+  1-forms with vanishing normal component on the unit ball, and Hardy's inequality on `ℝ^d` are
   sections PDE lacks; they are requested of PDE under Exact supplier contracts.
 - **SmoothBundlesConnections** owns principal connections, curvature, the gauge group and its
   left action `u·A = Ad(u)A − du·u⁻¹` (B3.1, B4.1, B4.2). Every smooth connection here is a connection
@@ -76,20 +78,22 @@ It leaves to named roadmaps:
   those forms on curvatures of connections on Euclidean space and computes characteristic numbers
   by transgression on `ℝ^d`; it states no comparison with Chern–Weil classes of bundles on `S^d`.
 - **DifferentialGeometry** owns differential forms, `extDeriv` on manifolds, Stokes' theorem and
-  the homotopy operator (Layers 0, 1, 5.3, 5.4), the de Rham theorem (Layer 8) and the Brouwer
-  degree with its integral formula and homotopy invariance (Layer 10). Tau Ceti's
+  the homotopy operator (Layers 0, 1, 5.3, 5.4) and the Brouwer degree with its integral formula,
+  homotopy invariance and `deg id = 1` (Layer 10, items 10.3–10.5). Tau Ceti's
   `Orientation.formHodgeStar` is the pointwise Hodge star.
 - **AlgebraicTopology** owns the absolute Hurewicz theorem and the comparison of cubical and
-  spherical homotopy groups (Stage 8, item 3), through which the degree classifies maps `S³ → S³`.
+  spherical homotopy groups (Stage 8, item 3), and the comparison of the homological degree with
+  DifferentialGeometry's smooth degree (Stage 6, item 5); through them the degree classifies maps
+  `S³ → S³`.
 - **LieGroups** owns the matrix exponential, `Ad` and `ad` (Layers 0, 1) and the closed-subgroup
   theorem (Layer 2). An `𝔰𝔲(2)` subalgebra of a noncommutative compact Lie algebra on which the
   bracket constant `γ₀` of §1.6 is attained is a section LieGroups lacks; it is requested of LieGroups
   under Exact supplier contracts.
 - **Yamabe** owns the sharp Euclidean Sobolev inequality with the constant `Y(Sⁿ)` (Y2 item 1),
   which the energy gap of §7.5 consumes in dimension four.
-- **FourManifolds**, Layer 5, states Uhlenbeck's small-curvature Coulomb gauge on the unit
-  Euclidean 4-ball for `SU(2)` and constructs the BPST instanton on its oriented `S⁴` carrier. It
-  is earlier in the merge order and does not consume this roadmap. §4.1 here states the lemma for
+- **FourManifolds** states Uhlenbeck's small-curvature Coulomb gauge on the unit Euclidean
+  4-ball for `SU(2)` (§5.3) and constructs the BPST instanton on its oriented `S⁴` carrier
+  (Layer 5, introduction). FourManifolds does not consume this roadmap. §4.1 here states the lemma for
   every compact `G` and every `d ≥ 3`, of which FourManifolds' statement is the case `G = SU(2)`,
   `d = 4`; §7.6's BPST connection is the explicit potential on `ℝ⁴`, the kept variant that the
   heat flow on `ℝ⁴` needs.
@@ -198,7 +202,13 @@ At the pinned Tau Ceti; paths under `TauCeti/`.
 - `TauCeti.exists_isOpenEmbedding_normalTube` (`Geometry/Manifold/TubularNeighborhood/Euclidean.lean`):
   the tubular neighbourhood theorem for a compact boundaryless `C²` embedded submanifold of a
   finite-dimensional inner product space, as an open embedding of the normal tube of some radius
-  `ε > 0`; it gives no smoothness of the inverse, which §1.2 adds.
+  `ε > 0`. `TauCeti.exists_contMDiffOn_normalRetraction`
+  (`Geometry/Manifold/TubularNeighborhood/LocalInverse.lean`): near every point of a `C^{n+1}`
+  immersion of a boundaryless manifold into a finite-dimensional inner product space, `n ≥ 1`, a
+  `C^n` retraction `r` onto a source patch, defined on an open set containing the image of that
+  patch, with `y − f(r(y))` normal at `r(y)`; it asserts neither a global retraction nor uniqueness
+  of nearest points. Together they give the local smoothness of the inverse of normal addition;
+  §1.2 adds the global nearest-point statement and the formula for `dπ_G`.
 - `Orientation.formHodgeStar` (`Analysis/InnerProductSpace/HodgeStar/AlternatingForm.lean`) with
   `Orientation.wedge_formHodgeStar_apply` (`α ∧ ⋆β = ⟨α, β⟩ vol`) and
   `Orientation.formHodgeStar_formHodgeStar_of_even`.
@@ -209,6 +219,8 @@ At the pinned Tau Ceti; paths under `TauCeti/`.
 - §1.2: density of smooth functions in `W^{k,p}` on arbitrary open sets (used in §2.2).
 - §1.4: Sobolev, Morrey and higher-order embeddings, including `W^{k,p}(Ω) → W^{k−1,p*}(Ω)` on bounded
   Lipschitz domains and the whole-space Gagliardo–Nirenberg–Sobolev inequality (§§2.2–2.5, 5.1).
+- §1.5: the Poincaré inequality on balls, `‖u − u_B‖_{L^p(B)} ≤ C(d, p) r ‖∇u‖_{L^p(B)}` for a ball `B`
+  of radius `r` and `1 ≤ p < ∞`, with the constant scaling linearly in `r` (§2.2).
 - §1.6: the trace operator and the extension operator on bounded Lipschitz domains (§§2.2, 4.1).
 - §2.2 and §2.3: interpolation, Calderón–Zygmund operators, the Riesz transforms and the
   Mihlin–Hörmander theorem, for the whole-space div–curl estimate `‖∇u‖_p ≲ ‖div u‖_p + ‖curl u‖_p`,
@@ -218,16 +230,26 @@ At the pinned Tau Ceti; paths under `TauCeti/`.
 - §7.1: the homogeneous blocks `P_k`, Bernstein and Littlewood–Paley estimates, and the heat-block
   estimate `‖e^{sΔ}P_k f‖_p ≲ exp(−c4^k s)‖P_k f‖_p`; §7.2: homogeneous Besov spaces `Ḃ^s_{p,q}` with
   their realisation for `s < d/p`; §7.3: paraproducts and the Littlewood–Paley trichotomy (Layers 8–10).
-- PDE must also provide two sections its main branch lacks.
-  - (slug `lp-neumann-ball`) For `1 < p < ∞` and the unit ball `B₁ ⊂ ℝ^d`: for `f ∈ L^p(B₁)` with
-    `∫ f = 0` the Neumann problem `Δu = f` in `B₁`, `∂_ν u = 0` on `∂B₁` has a solution
-    `u ∈ W^{2,p}(B₁)`, unique up to constants, with `‖∇u‖_{W^{1,p}} ≤ C(d,p)‖f‖_{L^p}`; and every
-    `𝔤`-valued 1-form `a ∈ W^{1,p}(B₁)` with `x^ℓ a_ℓ = 0` on `∂B₁` satisfies
-    `‖a‖_{W^{1,p}(B₁)} ≤ C(d,p)(‖da‖_{L^p} + ‖∂^ℓ a_ℓ‖_{L^p})`. Used in §4.1. A new section of PDE
-    Layer 5.
-  - (slug `hardy-inequality`) For `d ≥ 2`, `1 ≤ p < d` and `u ∈ C_c^∞(ℝ^d)`,
-    `‖u/|x|‖_{L^p(ℝ^d)} ≤ (p/(d − p)) ‖∇u‖_{L^p(ℝ^d)}`, hence the same for `u ∈ Ẇ^{1,p}`. Used in §§5.2,
-    5.3, 6.1. A new item of PDE §1.4.
+
+What PDE must provide (gap:lp-neumann-ball): for `1 < p < ∞`, the unit ball `B₁ ⊂ ℝ^d`, `d ≥ 2`,
+`f ∈ L^p(B₁)` and a vector field `V ∈ W^{1,p}(B₁; ℝ^d)` with `∫_{B₁} f = ∫_{∂B₁} ν·V`, the Neumann problem
+`Δu = f` in `B₁`, `∂_ν u = ν·V` on `∂B₁` (in the sense of traces) has a solution `u ∈ W^{2,p}(B₁)`,
+unique up to constants, with `‖∇u‖_{W^{1,p}(B₁)} ≤ C(d, p)(‖f‖_{L^p(B₁)} + ‖V‖_{W^{1,p}(B₁)})`; the
+compatibility condition is necessary by the divergence theorem, and `V = 0` is the homogeneous
+problem. Used in §4.1 (openness of the method of continuity and the `U(1)` case). Required location:
+a new section of PDE Layer 5 on the `L^p` Neumann problem.
+
+What PDE must provide (gap:lp-divcurl-normal-ball): for `1 < p < ∞`, `d ≥ 2` and every 1-form
+`a ∈ W^{1,p}(B₁; ℝ^d)` on the unit ball whose normal component `x^ℓ a_ℓ` vanishes on `∂B₁` (in the
+sense of traces), `‖a‖_{W^{1,p}(B₁)} ≤ C(d, p)(‖da‖_{L^p(B₁)} + ‖∂^ℓ a_ℓ‖_{L^p(B₁)})`, applied here
+componentwise to `𝔤`-valued 1-forms. Used in §4.1 (the a priori estimate and the uniqueness of the
+Coulomb gauge). Required location: the same new section of PDE Layer 5, as its second theorem; it is
+a Gaffney-type estimate for the absolute boundary condition and does not follow from the scalar
+Neumann problem alone.
+
+What PDE must provide (gap:hardy-inequality): for `d ≥ 2`, `1 ≤ p < d` and `u ∈ C_c^∞(ℝ^d)`,
+`‖u/|x|‖_{L^p(ℝ^d)} ≤ (p/(d − p)) ‖∇u‖_{L^p(ℝ^d)}`, hence the same for `u ∈ Ẇ^{1,p}`. Used in §§5.2,
+5.3, 6.1. Required location: a new item of PDE §1.4.
 
 ### From TauCetiRoadmap.SmoothBundlesConnections
 
@@ -248,11 +270,14 @@ At the pinned Tau Ceti; paths under `TauCeti/`.
   `d² = 0`, Leibniz): §1.4.
 - 5.2–5.3 (integration of top forms, Stokes' theorem with the outward-first boundary orientation)
   and 5.4 (the homotopy operator): §§1.4, 6.2, 6.4.
-- Layer 8 (the de Rham theorem) and Layer 10 (`degree`, `∫ f*ω = deg · ∫ ω`, homotopy invariance,
-  `deg id = 1`): §6.4.
+- Layer 10, items 10.3–10.5 (`degree` of a smooth map between closed oriented connected manifolds
+  of the same dimension, `∫ f*ω = deg · ∫ ω` for top forms, homotopy invariance, `deg id = 1`): §6.4.
 
 ### From TauCetiRoadmap.AlgebraicTopology
 
+- Stage 6, item 5: the homological characterization `f_*[M] = deg f · [N]` of DifferentialGeometry's
+  smooth degree for closed oriented connected manifolds, compared there with DifferentialGeometry
+  Layer 10: §6.4.
 - Stage 8, item 3: the absolute Hurewicz map from the cubical homotopy groups through pointed
   sphere maps, and the theorem `π_n(X) ≅ H_n(X; ℤ)` for `(n−1)`-connected `X`, `n ≥ 2`: §§5.6, 6.4.
 
@@ -260,14 +285,16 @@ At the pinned Tau Ceti; paths under `TauCeti/`.
 
 - Layer 0 (the exponential map), Layer 1 (`Ad`, `ad`), Layer 2 (the closed-subgroup theorem: a closed
   subgroup of a Lie group is an embedded Lie subgroup with the Lie algebra above): §1.1.
-- LieGroups must also provide a section its Layer 6 lacks (slug `compact-su2-subalgebra`): every
-  noncommutative compact Lie algebra `𝔤` (a Lie subalgebra of some `𝔲(N)` with `[𝔤, 𝔤] ≠ 0`) with an
-  `ad`-invariant inner product contains a Lie subalgebra `𝔰 ≅ 𝔰𝔲(2)` with
-  `sup_{X,Y∈𝔰} |[X,Y]|/(|X||Y|) = sup_{X,Y∈𝔤} |[X,Y]|/(|X||Y|)`: the rank-one subalgebra of a highest root
-  of a maximal abelian subalgebra of `[𝔤, 𝔤]`, built from the `𝔰𝔩₂`-triple of the complexification
-  (Mathlib's `LieAlgebra.IsKilling.exists_isSl2Triple_of_weight_isNonZero`), together with the bound
-  `|[X, Y]| ≤ |α| |X| |Y|` by the largest root length `|α|` (OhTataru-TopClass Lemma 6.4,
-  lines 2381–2401). Used in §7.7.
+
+What LieGroups must provide (gap:compact-su2-subalgebra): every noncommutative compact Lie algebra
+`𝔤` (a Lie subalgebra of some `𝔲(N)` with `[𝔤, 𝔤] ≠ 0`) with an `ad`-invariant inner product contains
+a Lie subalgebra `𝔰 ≅ 𝔰𝔲(2)` with `sup_{X,Y∈𝔰} |[X,Y]|/(|X||Y|) = sup_{X,Y∈𝔤} |[X,Y]|/(|X||Y|)`: the
+rank-one subalgebra of a highest root of a maximal abelian subalgebra of `[𝔤, 𝔤]`, built from the
+`𝔰𝔩₂`-triple of the complexification (Mathlib's
+`LieAlgebra.IsKilling.exists_isSl2Triple_of_weight_isNonZero`), together with the bound
+`|[X, Y]| ≤ |α| |X| |Y|` by the largest root length `|α|` (OhTataru-TopClass Lemma 6.4,
+lines 2381–2401). Used in §7.7. Required location: a new item of LieGroups Layer 6 on root `𝔰𝔲(2)`
+subalgebras.
 
 ### From TauCetiRoadmap.Yamabe
 
@@ -330,9 +357,14 @@ complex matrices (Frobenius inner product) and a smooth map `π_G : 𝒰 → G` 
 for `g ∈ G`, `π_G(M)` is the unique point of `G` nearest to `M`, and the derivative of `π_G` at
 `g ∈ G` is the orthogonal projection onto `g𝔤` (used in OhTataru-TopClass lines 1057–1058). Route: `G`
 is a compact embedded submanifold; Tau Ceti's normal-tube theorem gives an open embedding
-`(g, v) ↦ g + v` of the normal vectors of length `< ε`; its derivative at `(g, 0)` is invertible, so
-its inverse is smooth by the inverse function theorem, and `π_G` is the first component of that
-inverse.
+`(g, v) ↦ g + v` of the normal vectors of length `< ε`, and Tau Ceti's local normal retraction
+`TauCeti.exists_contMDiffOn_normalRetraction` gives near each point of `G` a smooth map `r` fixing a
+patch of `G` with `y − r(y)` normal at `r(y)`. Where `|y − r(y)| < ε`, injectivity of the tube map
+identifies `(r(y), y − r(y))` with the inverse of the tube map at `y`; by compactness finitely many
+such domains cover `𝒰 = {M : dist(M, G) < ε'}` for some `0 < ε' ≤ ε`, so the inverse is smooth on `𝒰`
+and `π_G` is its first component. A nearest point `g*` of `G` to `M ∈ 𝒰` exists by compactness and
+`M − g*` is normal at `g*` with `|M − g*| < ε`, so injectivity gives `g* = π_G(M)`: the nearest point is
+unique. Differentiating `π_G(g + v) = g` for normal `v` and `π_G = id` on `G` gives `dπ_G(g)`.
 
 **Checks.**
 
@@ -351,8 +383,8 @@ inverse.
 - `G = U(N)`: `|0 − g|² = tr(g*g) = N` for every `g ∈ U(N)`, so `0` has no unique nearest point and
   `0 ∉ 𝒰`. No retraction is defined on the whole matrix space, and every `M ∈ 𝒰` is invertible.
 
-*Needs:* Tau Ceti `TauCeti.exists_isOpenEmbedding_normalTube`; LieGroups Layer 2; Mathlib's inverse
-function theorem.
+*Needs:* Tau Ceti `TauCeti.exists_isOpenEmbedding_normalTube` and
+`TauCeti.exists_contMDiffOn_normalRetraction`; LieGroups Layer 2.
 
 ### 1.3 Gauge identities for smooth data
 
@@ -466,9 +498,9 @@ this roadmap; OhTataru-TopClass Lemma 6.4 and line 2404).
 
 ### Dependencies
 
-Mathlib's unitary groups and exponential; Tau Ceti's Hodge star and normal tube; LieGroups Layers
-0–2; SmoothBundlesConnections B3.1, B4.1, B4.2; CharacteristicClasses C4 item 1; DifferentialGeometry
-Layers 0–1 and 5.4.
+Mathlib's unitary groups and exponential; Tau Ceti's Hodge star, normal tube and local normal
+retraction; LieGroups Layers 0–2; SmoothBundlesConnections B3.1, B4.1, B4.2; CharacteristicClasses C4
+item 1; DifferentialGeometry Layers 0–1 and 5.4.
 
 ## Layer 2: critical Sobolev maps into `G`
 
@@ -516,7 +548,8 @@ and equal to `1` on `W`; the Poincaré inequality on small balls gives
 `dist(O_δ(x), G)^d ≲ ∫_{B_{δh(x)}(x)} |∂O|^d → 0` uniformly, so `π_G ∘ O_δ` is defined and converges.
 The source's hypothesis `V ∩ W = ∅` is replaced by disjoint closures, which the cut-off `h` needs.
 
-*Needs:* PDE §1.2 and §1.4 (Poincaré on balls, Sobolev embedding `W^{k,d/k} ⊆ W^{1,d}`); 1.2; 2.1.
+*Needs:* PDE §1.2, §1.4 (Sobolev embedding `W^{k,d/k} ⊆ W^{1,d}`) and §1.5 (Poincaré on balls); 1.2;
+2.1.
 
 ### 2.3 Products and inverses
 
@@ -577,8 +610,8 @@ extension to the ball.
 
 ### Dependencies
 
-Layer 1; Tau Ceti's weak derivatives and Sobolev carriers; PDE §1.2 and §1.4; Mathlib's homotopy and
-polar-coordinate API.
+Layer 1; Tau Ceti's weak derivatives and Sobolev carriers; PDE §1.2, §1.4 and §1.5; Mathlib's
+homotopy and polar-coordinate API.
 
 ## Layer 3: rough connections and gauge invariance
 
@@ -690,8 +723,9 @@ Prove (OhTataru-TopClass Theorem 3.11, lines 1358–1395; Uhlenbeck-LpCurvature 
 
 Route: the method of continuity along `A_t(x) = tA(tx)`, `t ∈ [0, 1]`, whose curvature norms are
 `‖F‖_{L^{d/2}(B_t)}`; openness by the implicit function theorem for the map
-`(O, A) ↦ ∂^ℓ(O·A)_ℓ` with Neumann data, closedness by the a priori estimate for the div–curl system
-`dÃ + ½[Ã ∧ Ã] = F`, `∂^ℓ Ã_ℓ = 0`, `x^ℓ Ã_ℓ = 0`, both through the requested Neumann theory; uniqueness
+`(O, A) ↦ ∂^ℓ(O·A)_ℓ` with Neumann data, through the requested `L^p` Neumann theory; closedness by the
+a priori estimate for the div–curl system `dÃ + ½[Ã ∧ Ã] = F`, `∂^ℓ Ã_ℓ = 0`, `x^ℓ Ã_ℓ = 0`, through the
+requested div–curl estimate with vanishing normal component; uniqueness
 because `Õ = O'O⁻¹` has `‖Õ;x‖_{W^{1,d/2}} ≲ ε₀` and solves a div–curl system with vanishing normal
 component, forcing `Õ;x = 0`; continuity by weak compactness, uniqueness and the strong convergence of
 `F[Ã_n] = Ad(O_n)F[A_n]` (OhTataru-TopClass lines 1372–1395). Rescaling gives the same statement on
@@ -702,13 +736,14 @@ component, forcing `Õ;x = 0`; continuity by weak compactness, uniqueness and th
 - `G = U(1)`: `Ã = A − i dφ` where `φ` solves the Neumann problem `Δφ = −i ∂^ℓ A_ℓ`, `∂_ν φ = −i x^ℓ A_ℓ`;
   the gauge is unique up to the constant in `φ`, matching the second item.
 - `A = 0`: the gauges are exactly the constants.
-- `G = SU(2)`, `d = 4`: the statement is FourManifolds Layer 5's small-curvature Coulomb gauge on the
+- `G = SU(2)`, `d = 4`: the statement is FourManifolds §5.3's small-curvature Coulomb gauge on the
   unit 4-ball, with `‖Ã‖_{W^{1,2}} + ‖Ã‖_{L⁴} ≲ ‖F‖_{L²}` because `W^{1,2}(B₁) ⊆ L⁴(B₁)`.
 - Linearising at `A = 0`: a gauge `O = exp(ψ)` with small `ψ` keeps the three properties to first
   order exactly when `Δψ = 0` in `B₁` and `∂_ν ψ = 0` on `∂B₁`, whose solutions are the constants; this is
   the infinitesimal form of the second item, and its proof uses the bound to stay in this regime.
 
-*Needs:* gap `lp-neumann-ball` (PDE); PDE §1.4 and §1.6; 2.3, 2.4, 3.1; 4.3.
+*Needs:* gap `lp-neumann-ball` (PDE); gap `lp-divcurl-normal-ball` (PDE); PDE §1.4 and §1.6; 2.3, 2.4,
+3.1; 4.3.
 
 ### 4.2 Uhlenbeck's lemma on a punctured ball
 
@@ -760,12 +795,12 @@ The norm `‖·‖_{Ẇ^{1,d/2}(B_R)}` is `‖∂A‖_{L^{d/2}} + ‖A‖_{L^d}`
 
 ### Examples
 
-The Neumann Coulomb gauge for `U(1)`; FourManifolds' `SU(2)` lemma as the case `d = 4`; the removable
+The Neumann Coulomb gauge for `U(1)`; FourManifolds §5.3's `SU(2)` lemma as the case `d = 4`; the removable
 pure-gauge singularity of `Φ(x/|x|)`.
 
 ### Dependencies
 
-Layers 2–3; PDE §1.4, §1.6, §2.3, §7.1; the gap `lp-neumann-ball`.
+Layers 2–3; PDE §1.4, §1.6, §2.3, §7.1; the gaps `lp-neumann-ball` and `lp-divcurl-normal-ball`.
 
 ## Layer 5: the good global gauge and the topological class
 
@@ -830,10 +865,22 @@ Prove (OhTataru-TopClass Proposition 1.6 and Remark 1.7, lines 397–405, proof 
 representatives `(O_(∞), B)` and `(O'_(∞), B')`. Then `O'_(∞)|_{S^{d−1}}` is homotopic to
 `c · O_(∞)|_{S^{d−1}} · c'` for some constants `c, c' ∈ G`; for connected `G`, `O'_(∞)` and `O_(∞)` are
 homotopic. Conversely every smooth homogeneous `O'_(∞)` whose restriction is homotopic to that of `O_(∞)`
-is a gauge at infinity of `A`. The class does not depend on the cut-off. Route: the identity
-`(O_(∞)⁻¹ P O'_(∞));x = Ad(O_(∞)⁻¹P)B' − Ad(O_(∞)⁻¹)B` on `ℝ^d ∖ B₂` puts `O_(∞)⁻¹PO'_(∞)` in `G^{1,d}(ℝ^d ∖ B̄₂)`,
-and 2.5 shows that `P` and `O_(∞)⁻¹PO'_(∞)` restrict to classes of constant maps. The source's conclusion
-"`O_(∞)` homotopic to `O'_(∞)`" holds for connected `G`; the constants are needed otherwise (5.1, Checks).
+is a gauge at infinity of `A`. The class does not depend on the cut-off. Route: outside a ball `B_ρ`
+off which both cut-offs equal `1`, `A' = P·A` and the Leibniz rules of 2.4 give
+`(O'_(∞)⁻¹ P O_(∞));x = Ad(O'_(∞)⁻¹P)B − Ad(O'_(∞)⁻¹)B'`, which puts `O'_(∞)⁻¹PO_(∞)` in
+`G^{1,d}(ℝ^d ∖ B̄_ρ)`; 2.5 shows that `P` and `O'_(∞)⁻¹PO_(∞)` restrict on spheres to classes of constant
+maps `c` and `c''`, so `O'_(∞) = P O_(∞) (O'_(∞)⁻¹PO_(∞))⁻¹` is homotopic to `c O_(∞) c''⁻¹`. The source
+writes the identity for `A = O·A'` (OhTataru-TopClass lines 1671–1673), that is for `O = P⁻¹`. The
+source's conclusion "`O_(∞)` homotopic to `O'_(∞)`" holds for connected `G`; the constants are needed
+otherwise (5.1, Checks).
+
+**Checks.**
+
+- `G = U(1)`, `O_(∞) = e^{iθ}`, `O'_(∞) = e^{iθ'}` and `P = e^{iψ}` with real `θ, θ', ψ`, and `B = B' = 0`
+  on `ℝ^d ∖ B_ρ`: there `A' = P·A = A − i dψ` gives `dθ' = dθ + dψ`, and
+  `(O'_(∞)⁻¹PO_(∞));x = i(−dθ' + dψ + dθ) = 0`, matching the right side `0`; the identity with the roles
+  of `O_(∞)` and `O'_(∞)` exchanged would give `i(−dθ + dψ + dθ') = 2i dψ` against a right side `0`,
+  false unless `ψ` is locally constant there.
 
 *Needs:* gap `hardy-inequality` (PDE); 2.2, 2.4, 2.5, 5.1.
 
@@ -983,10 +1030,12 @@ Prove (OhTataru-TopClass lines 256–264 and 852–860; OhTataru-YMHF lines 327�
 - `[a] ↦ c₂(a)` is a bijection `Top(4, SU(2)) → ℤ`, so `π₃(SU(2)) ≅ ℤ`; the class of `−n` is that of
   `x ↦ Φ(x/|x|)ⁿ` (quaternionic power), which has degree `n`.
 
-Route: 6.2 with `∫_{S³} O*ω_f = deg(Φ⁻¹ ∘ O) ∫_{S³} Φ*ω_f = −8π² deg` (DifferentialGeometry Layer 10's
-integral formula); injectivity by the Hopf degree theorem for `S³`, from the Hurewicz isomorphism
-`π₃(S³) ≅ H₃(S³; ℤ)` and the comparison of the homological degree with DifferentialGeometry's degree
-through the de Rham theorem. The source states `c₂ = deg O_(∞)` "with the appropriate choices of
+Route: 6.2 with `∫_{S³} O*ω_f = deg(Φ⁻¹ ∘ O) ∫_{S³} Φ*ω_f = −8π² deg`, the integral formula of
+DifferentialGeometry 10.3–10.4 applied to the smooth map `Φ⁻¹ ∘ O : S³ → S³` and the top form `Φ*ω_f`;
+injectivity by the Hopf degree theorem for `S³`: the Hurewicz isomorphism `π₃(S³) ≅ H₃(S³; ℤ)`
+(AlgebraicTopology Stage 8, item 3) sends the class of a based map `h` to `h_*[S³]`, which equals
+`deg h · [S³]` by AlgebraicTopology Stage 6, item 5, so based maps of equal degree are homotopic, and
+5.6 passes to free classes. The source states `c₂ = deg O_(∞)` "with the appropriate choices of
 orientations" (OhTataru-TopClass line 2369); the sign here is fixed by the orientations of the
 Conventions.
 
@@ -999,7 +1048,8 @@ Conventions.
 - The trivial connection has `c₂ = 0`; with the opposite orientation of `S³` all signs flip, which is
   why the orientation is part of the statement.
 
-*Needs:* AlgebraicTopology Stage 8 item 3; DifferentialGeometry Layers 8 and 10; 1.4, 5.6, 6.2.
+*Needs:* AlgebraicTopology Stage 6 item 5 and Stage 8 item 3; DifferentialGeometry Layer 10
+(10.3–10.5); 1.4, 5.6, 6.2.
 
 ### Examples
 
@@ -1007,8 +1057,8 @@ Conventions.
 
 ### Dependencies
 
-Layers 1, 5; DifferentialGeometry Layers 5, 8 and 10; AlgebraicTopology Stage 8; the gap
-`hardy-inequality`.
+Layers 1, 5; DifferentialGeometry Layer 5 and Layer 10 (10.3–10.5); AlgebraicTopology Stage 6 item 5
+and Stage 8; the gap `hardy-inequality`.
 
 ## Layer 7: harmonic Yang–Mills connections and the ground state
 
@@ -1041,13 +1091,17 @@ lines 253–266).
 
 ### 7.2 Regularity
 
-Prove (OhTataru-YMHF Theorem 2.1, lines 275–280; OhTataru-Threshold Theorem 1.5, lines 268–274;
-Uhlenbeck-LpCurvature): every harmonic Yang–Mills connection on a ball or on `ℝ⁴` is smooth after a
-gauge transformation `O ∈ G^{2,2}_loc`, and on a general open set locally so; and there is `ε > 0` such that
-`‖F‖_{L²(B₁)} ≤ ε` implies `‖D^{(n)}F‖_{L^∞(B_{1/2})} ≲_n ‖F‖_{L²(B₁)}` for every `n`. Route: the Coulomb gauge of
-4.1 on small balls turns the equation into the elliptic system `ΔA_k = −[A_j, D_kA_j] + …` (OhTataru-YMHF
-(1.4), line 134) with critical quadratic terms; smallness of `‖A‖_{W^{1,2}}` bootstraps through
-`W^{2,p}`, `p > 2`, and 4.3; patching by 3.3.
+Prove (OhTataru-YMHF Theorem 2.1, lines 275–276; OhTataru-Threshold Theorem 1.5, lines 269–274):
+every harmonic Yang–Mills connection on a ball or on `ℝ⁴` is smooth after a gauge transformation
+`O ∈ G^{2,2}_loc`, and on a general open set locally so. Prove further the quantitative ε-regularity,
+which the cited sources do not state and which is proved here by the route below from 4.1 and 4.3:
+there is `ε > 0` such that every harmonic Yang–Mills connection on `B₁` with `‖F‖_{L²(B₁)} ≤ ε` satisfies
+`‖D^{(n)}F‖_{L^∞(B_{1/2})} ≲_n ‖F‖_{L²(B₁)}` for every `n ≥ 0`; the left side is gauge invariant, since
+`D^{(n)}F` transforms by `Ad(O)`. Route: the Coulomb gauge of 4.1 (on `B₁` itself when `ε < ε₀`, on
+small balls in general) turns the equation into the elliptic system `ΔA_k = −[A_j, D_kA_j] + …` (OhTataru-YMHF (1.4), line 134) with
+critical quadratic terms; smallness of `‖A‖_{W^{1,2}} ≤ C₀‖F‖_{L²}` bootstraps through `W^{2,p}`, `p > 2`,
+and 4.3, and in this small regime every estimate is bounded by a constant multiple of
+`‖A‖_{W^{1,2}(B₁)}`, which gives the quantitative bound; patching by 3.3.
 
 *Needs:* 3.3, 4.1, 4.3; PDE §2.3, §1.4.
 
@@ -1216,9 +1270,9 @@ Prove: every `u ∈ Ḣ^σ` has a `(−σ₁, σ₂)`-admissible envelope with `
 For `A ∈ Ḣ¹` put `Δ_A = D^ℓ D_ℓ`. Prove (OhTataru-YMHF Theorems 4.1–4.2, lines 955–1175): for
 `0 < σ < 2` and `F ∈ Ḣ^{σ−2}` there is a unique `B ∈ Ḣ^σ` with `Δ_A B = F` and
 `‖B‖_{Ḣ^σ} ≲_{‖A‖_{Ḣ¹}} ‖F‖_{Ḣ^{σ−2}}`; if moreover `∂^j A_j ∈ ℓ¹L²`, then `‖B‖_{ℓ¹Ḣ²} ≲ ‖F‖_{ℓ¹L²}` with a
-constant depending on `‖A‖_{Ḣ¹}` and `‖∂^j A_j‖_{ℓ¹L²}`; and if `c_k` is a `(−1, S)` envelope for `A` in `Ḣ¹` and
-`d_k` a `1`-compatible `(−1, S)` envelope for `F` in `Ḣ^{−1}`, then `‖P_k B‖_{Ḣ¹} ≲ d_k`. Route: at `σ = 1`, the
-minimiser of `∫ ½|DB|² − ⟨B, F⟩` with the diamagnetic inequality `|∂|B|| ≤ |DB|` and
+constant depending on `‖A‖_{Ḣ¹}` and `‖∂^j A_j‖_{ℓ¹L²}`; and if `c_k` is a `(−1, S)` envelope for `A` in
+`Ḣ¹` and `d_k` a `(−1, S)` envelope for `F` in `Ḣ^{−1}` that is `1`-compatible with `c_k`, then
+`‖P_k B‖_{Ḣ¹} ≲ d_k`. Route: at `σ = 1`, the minimiser of `∫ ½|DB|² − ⟨B, F⟩` with the diamagnetic inequality `|∂|B|| ≤ |DB|` and
 `‖B‖_{L⁴} + ‖B‖_{Ḣ¹} ≲ (1 + ‖A‖_{Ḣ¹})‖DB‖_{L²}`; `σ < 1` by duality; `σ > 1` and the envelope bounds by the
 paradifferential decomposition with `[P_{<k}, Δ_A]`.
 
@@ -1258,13 +1312,14 @@ envelope version.
 
 Assume `‖P_k A(s)‖_{Ḣ¹} ≲ c_k(1 + 2^{2k}s)^{−N}` for all `s > 0` with `(c_k) ∈ ℓ²` and `N > 2`. Prove
 (OhTataru-YMHF Theorems 4.7–4.8, lines 1346–1530): for `−2 < σ < 4/p`, `2 ≤ p ≤ ∞` and
-`0 < δ ≤ min{4/p − σ, 2 + σ}`, with `c_k` a `δ`-compatible `(−δ, S)` envelope and `d^{σ,p}_k` a `(−δ, S)`
-envelope for `b` in `Ẇ^{σ,p}`, the homogeneous problem `(∂_s − Δ_A − 2ad(F))B = 0`, `B(0) = b`, has a unique
-solution `B ∈ C([0, ∞); Ẇ^{σ,p})` with `‖P_k B(s)‖_{Ẇ^{σ,p}} ≲_{‖c‖_{ℓ²}, N} d^{σ,p}_k (1 + 2^{2k}s)^{−N}`; and for
-`0 ≤ β < 1`, the inhomogeneous problem with `B(0) = 0` and
-`‖P_k G‖_{Ẇ^{σ,p}} ≲ 2^{2k}(2^{2k}s)^{−β} d_k (1 + 2^{2k}s)^{−N}` has
-`‖P_k B‖_{Ẇ^{σ,p}} ≲ (2^{2k}s)^{1−β} d_k (1 + 2^{2k}s)^{−N}`. The source writes the exponent of the second
-conclusion as `1 − α/2` (line 1522), which does not match its `L²` case `1 − β` (line 1517); the
+`0 < δ ≤ min{4/p − σ, 2 + σ}`, with the sequence `c_k` of the hypothesis a `(−δ, S)` envelope and
+`d^{σ,p}_k` a `(−δ, S)` envelope for `b` in `Ẇ^{σ,p}` that is `δ`-compatible with `c_k`, the homogeneous
+problem `(∂_s − Δ_A − 2ad(F))B = 0`, `B(0) = b`, has a unique solution `B ∈ C([0, ∞); Ẇ^{σ,p})` with
+`‖P_k B(s)‖_{Ẇ^{σ,p}} ≲_{‖c‖_{ℓ²}, N} d^{σ,p}_k (1 + 2^{2k}s)^{−N}`; and for `0 ≤ β < 1` and a `(−δ, S)`
+envelope `d^{σ,p}_k` that is `δ`-compatible with `c_k`, the inhomogeneous problem with `B(0) = 0` and
+`‖P_k G‖_{Ẇ^{σ,p}} ≲ 2^{2k}(2^{2k}s)^{−β} d^{σ,p}_k (1 + 2^{2k}s)^{−N}` has
+`‖P_k B‖_{Ẇ^{σ,p}} ≲ (2^{2k}s)^{1−β} d^{σ,p}_k (1 + 2^{2k}s)^{−N}`. The source writes the exponent of the
+second conclusion as `1 − α/2` (line 1522), which does not match its `L²` case `1 − β` (line 1517); the
 exponent `1 − β` is the one its induction (4.35) propagates with `α` read as `β`.
 
 **Checks.**
@@ -1383,10 +1438,12 @@ Corollaries 5.12–5.14, lines 1878–1948):
 
 Prove (OhTataru-YMHF Corollary 5.15 and Lemma 5.33, lines 1952–1957 and 2509–2520): for a global `Ḣ¹`
 solution with `Q(a) ≤ Q < ∞` the limit `A_∞ = lim_{s→∞} A(s)` exists in `Ḣ¹` (in `ℋ` for `a ∈ ℋ`) and is flat;
-the linearised solution has a limit `B_∞` in `Ḣ^σ`, `0 ≤ σ ≤ 1` (in `ℋ`), with
-`D(A_∞)_k B_{∞,j} − D(A_∞)_j B_{∞,k} = 0`; the map `a ↦ A_∞` is Lipschitz in `Ḣ¹`, `ℋ` and `Ḣ¹ ∩ Ḣ^σ` (`σ > 1`)
+the linearised solution with data `b ∈ Ḣ^σ`, `0 ≤ σ ≤ 1` (resp. `b ∈ ℋ`), has a limit `B_∞` in `Ḣ^σ`
+(resp. `ℋ`), with `D(A_∞)_k B_{∞,j} − D(A_∞)_j B_{∞,k} = 0`; the map `a ↦ A_∞` is Lipschitz in `Ḣ¹`, `ℋ` and `Ḣ¹ ∩ Ḣ^σ` (`σ > 1`)
 on bounded convex subsets of `Ḣ¹` on which `Q` is uniformly bounded, and `C¹` along every `C¹` curve in
-these spaces with uniformly bounded `Q`, with derivative `B_∞`.
+these spaces with uniformly bounded `Q`, with derivative `B_∞`. The source's Corollary 5.15 states the
+linearised limit for `−1 < σ < 2` (OhTataru-YMHF lines 1954–1955), while its proof, Lemma 5.33(2)
+(lines 2515–2516), gives `0 ≤ σ ≤ 1`; the statement above keeps the range that is proved.
 
 **Checks.**
 

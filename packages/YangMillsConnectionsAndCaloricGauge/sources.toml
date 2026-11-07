@@ -104,7 +104,7 @@ url = "https://projecteuclid.org/journals/communications-in-mathematical-physics
 licence_class = "none"
 status = "uncertified"
 version_note = "open access on Project Euclid, but every fetch by the sources service was answered by the site's bot wall (Incapsula 'Request unsuccessful' / HTTP 403), so no text was read; cited by its locator. The statement used (Uhlenbeck's lemma on the unit ball for a general compact G) is restated as OhTataru-TopClass Theorem 3.11, which is certified."
-cited_for = ["4.1", "7.2"]
+cited_for = ["4.1"]
 
 [[source]]
 id = "FreedUhlenbeck-Instantons"

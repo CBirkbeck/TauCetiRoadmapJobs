@@ -98,6 +98,7 @@
           },
           "prerequisites": [
             "tauceti:TauCeti.exists_isOpenEmbedding_normalTube",
+            "tauceti:TauCeti.exists_contMDiffOn_normalRetraction",
             "roadmap:LieGroups Layer 2",
             "target:1.1"
           ],
@@ -367,6 +368,7 @@
           "prerequisites": [
             "roadmap:PDE §1.2",
             "roadmap:PDE §1.4",
+            "roadmap:PDE §1.5",
             "target:1.2",
             "target:2.1"
           ],
@@ -635,6 +637,7 @@
           },
           "prerequisites": [
             "gap:lp-neumann-ball",
+            "gap:lp-divcurl-normal-ball",
             "roadmap:PDE §1.4",
             "roadmap:PDE §1.6",
             "target:2.3",
@@ -657,7 +660,7 @@
             {
               "name": "fourManifolds",
               "kind": "compatibility",
-              "statement": "G = SU(2), d = 4 gives FourManifolds Layer 5's unit 4-ball lemma"
+              "statement": "G = SU(2), d = 4 gives FourManifolds §5.3's unit 4-ball lemma"
             }
           ]
         },
@@ -865,7 +868,13 @@
             "target:5.1"
           ],
           "api": [],
-          "tests": []
+          "tests": [
+            {
+              "name": "routeIdentityDirection",
+              "kind": "computation",
+              "statement": "U(1), O_∞ = e^{iθ}, O'_∞ = e^{iθ'}, P = e^{iψ}, B = B' = 0 outside B_ρ: A' = P·A gives dθ' = dθ + dψ and (O'_∞⁻¹PO_∞);x = i(−dθ' + dψ + dθ) = 0 = Ad(O'_∞⁻¹P)B − Ad(O'_∞⁻¹)B'; the identity with O_∞ and O'_∞ exchanged gives 2i dψ ≠ 0 unless ψ is locally constant"
+            }
+          ]
         },
         {
           "id": "5.4",
@@ -1135,8 +1144,8 @@
             "where": "lines 256–264, 852–860; OhTataru-YMHF lines 327–335, 2913–2915"
           },
           "prerequisites": [
+            "roadmap:AlgebraicTopology Stage 6",
             "roadmap:AlgebraicTopology Stage 8",
-            "roadmap:DifferentialGeometry Layer 8",
             "roadmap:DifferentialGeometry Layer 10",
             "target:1.4",
             "target:5.6",
@@ -1240,13 +1249,13 @@
           "id": "7.2",
           "kind": "theorem",
           "name": "YangMills.IsHarmonic.regularity",
-          "statement": "Harmonic Yang–Mills connections on balls or ℝ⁴ are smooth after a G^{2,2}_loc gauge transformation (locally on general open sets); ε-regularity: ‖F‖_{L²(B₁)} ≤ ε ⇒ ‖D^{(n)}F‖_{L^∞(B_{1/2})} ≲_n ‖F‖_{L²(B₁)}.",
+          "statement": "Harmonic Yang–Mills connections on balls or ℝ⁴ are smooth after a G^{2,2}_loc gauge transformation (locally on general open sets); ε-regularity, proved here from 4.1 and 4.3: a harmonic Yang–Mills connection on B₁ with ‖F‖_{L²(B₁)} ≤ ε has ‖D^{(n)}F‖_{L^∞(B_{1/2})} ≲_n ‖F‖_{L²(B₁)}.",
           "hypotheses": [
             "d = 4"
           ],
           "locator": {
             "source": "OhTataru-YMHF",
-            "where": "Theorem 2.1, lines 275–280; OhTataru-Threshold Theorem 1.5, lines 268–274"
+            "where": "Theorem 2.1, lines 275–276; OhTataru-Threshold Theorem 1.5, lines 269–274 (qualitative smoothness); the quantitative ε-regularity is not stated there and is proved here from targets 4.1 and 4.3"
           },
           "prerequisites": [
             "roadmap:PDE §2.3",
@@ -1582,9 +1591,10 @@
           "id": "8.4",
           "kind": "theorem",
           "name": "YangMills.covariantHeat_Lp",
-          "statement": "Under ‖P_kA(s)‖_{Ḣ¹} ≲ c_k(1+2^{2k}s)^{−N}, c ∈ ℓ², N > 2: for −2 < σ < 4/p, 2 ≤ p ≤ ∞, 0 < δ ≤ min(4/p−σ, 2+σ), the homogeneous problem has a unique solution in C([0,∞);Ẇ^{σ,p}) with ‖P_kB(s)‖ ≲ d_k(1+2^{2k}s)^{−N}; the inhomogeneous problem with ‖P_kG‖ ≲ 2^{2k}(2^{2k}s)^{−β}d_k(1+2^{2k}s)^{−N}, 0 ≤ β < 1, has ‖P_kB‖ ≲ (2^{2k}s)^{1−β}d_k(1+2^{2k}s)^{−N}.",
+          "statement": "Under ‖P_kA(s)‖_{Ḣ¹} ≲ c_k(1+2^{2k}s)^{−N}, c ∈ ℓ², N > 2, with c_k a (−δ,S) envelope: for −2 < σ < 4/p, 2 ≤ p ≤ ∞, 0 < δ ≤ min(4/p−σ, 2+σ), and d^{σ,p}_k a (−δ,S) envelope for b in Ẇ^{σ,p} that is δ-compatible with c_k, the homogeneous problem has a unique solution in C([0,∞);Ẇ^{σ,p}) with ‖P_kB(s)‖ ≲ d^{σ,p}_k(1+2^{2k}s)^{−N}; for such d^{σ,p}_k, the inhomogeneous problem with ‖P_kG‖ ≲ 2^{2k}(2^{2k}s)^{−β}d^{σ,p}_k(1+2^{2k}s)^{−N}, 0 ≤ β < 1, has ‖P_kB‖ ≲ (2^{2k}s)^{1−β}d^{σ,p}_k(1+2^{2k}s)^{−N}.",
           "hypotheses": [
             "d = 4",
+            "d^{σ,p}_k δ-compatible with c_k (OhTataru-YMHF lines 1355 and 1518–1519)",
             "exponent 1 − β (source prints 1 − α/2)"
           ],
           "locator": {
@@ -1794,13 +1804,13 @@
           "id": "9.5",
           "kind": "theorem",
           "name": "YangMills.HeatFlow.flatLimit",
-          "statement": "For a global Ḣ¹ solution with Q(a) ≤ Q < ∞, A_∞ = lim A(s) exists in Ḣ¹ (ℋ) and is flat; the linearised limit B_∞ exists in Ḣ^σ, 0 ≤ σ ≤ 1 (ℋ), and is D(A_∞)-curl-free; a ↦ A_∞ is Lipschitz on bounded convex sets with uniform Q and C¹ along C¹ curves with uniform Q, with derivative B_∞.",
+          "statement": "For a global Ḣ¹ solution with Q(a) ≤ Q < ∞, A_∞ = lim A(s) exists in Ḣ¹ (ℋ) and is flat; for data b ∈ Ḣ^σ, 0 ≤ σ ≤ 1 (resp. ℋ), the linearised limit B_∞ exists in Ḣ^σ (resp. ℋ), and is D(A_∞)-curl-free; a ↦ A_∞ is Lipschitz on bounded convex sets with uniform Q and C¹ along C¹ curves with uniform Q, with derivative B_∞.",
           "hypotheses": [
             "d = 4"
           ],
           "locator": {
             "source": "OhTataru-YMHF",
-            "where": "Corollary 5.15, Lemma 5.33, lines 1952–1957, 2509–2520"
+            "where": "Corollary 5.15, Lemma 5.33, lines 1952–1957, 2509–2520 (σ-range 0 ≤ σ ≤ 1 of Lemma 5.33(2); Corollary 5.15 states −1 < σ < 2)"
           },
           "prerequisites": [
             "target:9.2",
@@ -2126,6 +2136,7 @@
       "sections": [
         "§1.2",
         "§1.4",
+        "§1.5",
         "§1.6",
         "§2.2",
         "§2.3",
@@ -2135,7 +2146,7 @@
         "§7.2",
         "§7.3"
       ],
-      "what": "Euclidean Sobolev density, embeddings, trace and extension; Calderón–Zygmund and multipliers; Bochner spaces; the heat semigroup; dyadic blocks, Besov spaces and paraproducts"
+      "what": "Euclidean Sobolev density, embeddings, Poincaré inequalities, trace and extension; Calderón–Zygmund and multipliers; Bochner spaces; the heat semigroup; dyadic blocks, Besov spaces and paraproducts"
     },
     {
       "roadmap": "SmoothBundlesConnections",
@@ -2161,17 +2172,17 @@
         "5.2",
         "5.3",
         "5.4",
-        "Layer 8",
         "Layer 10"
       ],
-      "what": "forms, exterior derivative, Stokes, homotopy operator, de Rham theorem, Brouwer degree"
+      "what": "forms, exterior derivative, Stokes, homotopy operator, Brouwer degree with its integral formula (Layer 10, items 10.3–10.5)"
     },
     {
       "roadmap": "AlgebraicTopology",
       "sections": [
+        "Stage 6",
         "Stage 8"
       ],
-      "what": "absolute Hurewicz theorem and cube–sphere comparison (item 3)"
+      "what": "comparison of the homological degree with DifferentialGeometry's smooth degree (Stage 6 item 5); absolute Hurewicz theorem and cube–sphere comparison (Stage 8 item 3)"
     },
     {
       "roadmap": "LieGroups",
@@ -2203,14 +2214,25 @@
   "gaps": [
     {
       "slug": "lp-neumann-ball",
-      "title": "L^p Neumann problem and normal-boundary div–curl estimate on the unit ball",
+      "title": "L^p Neumann problem on the unit ball",
       "neededBy": [
         "4.1"
       ],
-      "detail": "For 1 < p < ∞: Δu = f, ∂_νu = 0 on B₁ solvable in W^{2,p} for ∫f = 0, unique up to constants, ‖∇u‖_{W^{1,p}} ≤ C‖f‖_{L^p}; and ‖a‖_{W^{1,p}(B₁)} ≤ C(‖da‖_{L^p} + ‖∂^ℓa_ℓ‖_{L^p}) for 1-forms with x^ℓa_ℓ = 0 on ∂B₁.",
-      "needs": "PDE states elliptic boundary regularity only for the Dirichlet problem, and Uhlenbeck's Coulomb gauge needs the L^p Neumann theory on the ball.",
+      "detail": "For 1 < p < ∞, d ≥ 2, f ∈ L^p(B₁) and V ∈ W^{1,p}(B₁;ℝ^d) with ∫_{B₁} f = ∫_{∂B₁} ν·V: Δu = f in B₁, ∂_νu = ν·V on ∂B₁ has a solution u ∈ W^{2,p}(B₁), unique up to constants, with ‖∇u‖_{W^{1,p}} ≤ C(d,p)(‖f‖_{L^p} + ‖V‖_{W^{1,p}}).",
+      "needs": "PDE states elliptic boundary regularity only for the Dirichlet problem, and the method of continuity for Uhlenbeck's Coulomb gauge needs the W^{2,p} Neumann problem on the ball with inhomogeneous data.",
       "supplier": "PDE",
       "section": "Layer 5 (a new section on the L^p Neumann problem)"
+    },
+    {
+      "slug": "lp-divcurl-normal-ball",
+      "title": "L^p div–curl estimate with vanishing normal component on the unit ball",
+      "neededBy": [
+        "4.1"
+      ],
+      "detail": "For 1 < p < ∞, d ≥ 2 and every 1-form a ∈ W^{1,p}(B₁;ℝ^d) with x^ℓa_ℓ = 0 on ∂B₁: ‖a‖_{W^{1,p}(B₁)} ≤ C(d,p)(‖da‖_{L^p} + ‖∂^ℓa_ℓ‖_{L^p}).",
+      "needs": "PDE has no Gaffney-type estimate for the absolute boundary condition, and the a priori bound and uniqueness of Uhlenbeck's Coulomb gauge need it; it does not follow from the scalar Neumann problem alone.",
+      "supplier": "PDE",
+      "section": "Layer 5 (the same new section, as its second theorem)"
     },
     {
       "slug": "hardy-inequality",
