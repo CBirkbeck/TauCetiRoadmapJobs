@@ -1,0 +1,13 @@
+{
+  "review": {
+    "status": "needs_changes",
+    "reviewer": "independent-review-PRREVIEW-AnalyticNumberTheoryPartII~5",
+    "head": "a7edaf5b7ae9bc9510531b685dab0637d44e2556",
+    "pr": 1167,
+    "folder": "AnalyticNumberTheoryPartII",
+    "date": "2026-11-07",
+    "findings": 4,
+    "blocking": 3,
+    "notes": "incremental re-review of 28 changed lines since 1458ecb; the worker's gate fails build=3 at the pins moved by the main merge (deprecated derivedSeries at Suggested.lean:85, module-form warning twice), reproduced with the targeted build and lake env lean; module-form plus Subgroup.derivedSeries probe elaborates with only ten sorry warnings and 25 unchanged signatures; plain gate OK, depcheck 240 roadmaps 2376 edges 0 problems, no outside-folder diff; all six historical findings still repaired; every new AnalyticNumberTheoryPartI citation (§§0.9, 0.31b .siegel_gap, 0.34, 2.5, 2.15, 2.31e names) resolved at 294c990; seeded §5.7 locators checked against LOWW arXiv 2110.07712v2 (Lemma 2.5 p.8, Remark 2.7, Prop 3.4 and Lemma 3.5 p.11, Remark 3.3); twelve computed adversarial rows for the changed statements plus carried r4 rows; duplicate owner of the effective residue lower bound found in ArithmeticStatisticsPartV #1175 lines 1238-1240; Friedman-Skoruppa paywalled, AnalyticNumberTheoryPartI §0.34 sources not read."
+  }
+}
