@@ -155,3 +155,16 @@ licence_class = "author-page"
 status = "certified"
 accessed = "2026-11-06"
 cited_for = ["K2"]
+
+[[source]]
+id = "chevalley-eilenberg"
+locator_scheme = "equation"
+locator = "§23, (23.1)–(23.2), pp. 115–116"
+url = "https://www.ams.org/journals/tran/1948-063-01/S0002-9947-1948-0024908-8/S0002-9947-1948-0024908-8.pdf"
+fetched_from = "https://www.ams.org/journals/tran/1948-063-01/S0002-9947-1948-0024908-8/S0002-9947-1948-0024908-8.pdf"
+fetched_at = "2026-11-07T15:53:44Z"
+sha256 = "52168b752d0c3f9c7c7892b96fcf637732a61abce5a2f8ebe544b67f67b77795"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-11-07"
+cited_for = ["K8"]
