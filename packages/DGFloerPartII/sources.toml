@@ -1,0 +1,40 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "DGFloerPartII"
+
+[[source]]
+id = "bdho-cotangent"
+authors = "Jean-François Barraud, Mihai Damian, Vincent Humilière, Alexandru Oancea"
+title = "Floer Homology with DG Coefficients. Applications to cotangent bundles"
+year = 2024
+arxiv = "2404.07953v3"
+locator_scheme = "theorem"
+locator = "Theorem I"
+url = "https://arxiv.org/abs/2404.07953v3"
+fetched_from = "https://arxiv.org/pdf/2404.07953v3"
+fetched_at = "2026-11-07T15:55:42Z"
+sha256 = "eb1bf3be03bf005aa7526eaa309b31dfff290e04a71ef3eac1d6a416b75698b7"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-07"
+version_note = "arXiv v3"
+cited_for = ["4.5"]
+
+[[source]]
+id = "css-derivative"
+authors = "Diarmuid Crowley, Thomas Schick, Wolfgang Steimle"
+title = "The derivative map for diffeomorphism of disks: An example"
+year = 2020
+venue = "Geom. Topol. 27 (2023) 3699-3713"
+doi = "10.2140/gt.2023.27.3699"
+arxiv = "2012.13634v1"
+locator_scheme = "theorem"
+locator = "Lemma 2.2"
+url = "https://arxiv.org/abs/2012.13634v1"
+fetched_from = "https://arxiv.org/pdf/2012.13634v1"
+fetched_at = "2026-11-07T16:23:05Z"
+sha256 = "9c26a21bfe2937be6c0d3e633df8cab8e376fb90517ccd0ce00ac7a2889d258d"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-07"
+version_note = "arXiv v1"
+cited_for = ["4.3"]
