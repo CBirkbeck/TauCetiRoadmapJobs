@@ -173,3 +173,20 @@ licence_class = "author-page"
 status = "certified"
 accessed = "2026-10-21"
 cited_for = ["3.1"]
+
+[[source]]
+id = "LS26"
+authors = "OpenAI"
+title = "Uniform exclusion of Landau–Siegel zeros"
+year = 2026
+version_note = "1 October 2026 version (repository openai/math); the community revision of 26 October 2026 is numbered differently"
+locator_scheme = "theorem"
+locator = "Theorem 1, p. 1 (1 October 2026 version)"
+url = "https://raw.githubusercontent.com/openai/math/main/preprints/Uniform-exclusion-of-Landau-Siegel-zeros-October-1-2026/paper.pdf"
+fetched_from = "https://raw.githubusercontent.com/openai/math/main/preprints/Uniform-exclusion-of-Landau-Siegel-zeros-October-1-2026/paper.pdf"
+fetched_at = "2026-11-07T09:29:22Z"
+sha256 = "fab9f6e84ece2a37d834b2c031d8eb14e81413d9f6270791e7b5468b295214ef"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-07"
+cited_for = ["4.8", "4.9"]
