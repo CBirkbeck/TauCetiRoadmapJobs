@@ -124,7 +124,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-06"
 version_note = "arXiv, latest version"
-cited_for = ["2.1", "2.4"]
+cited_for = ["2.1", "2.4", "2.6", "7.5"]
 
 [[source]]
 id = "gunramaresivaraman2023"
@@ -160,7 +160,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-06"
 version_note = "arXiv, latest version"
-cited_for = ["3.3", "4.7"]
+cited_for = ["3.3", "4.7", "7.1"]
 
 [[source]]
 id = "garcialee2022artin"
@@ -214,7 +214,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-06"
 version_note = "arXiv v3"
-cited_for = ["4.1", "4.2"]
+cited_for = ["4.1", "4.2", "7.3", "7.4"]
 
 [[source]]
 id = "lee2021zerofree"
@@ -234,7 +234,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-06"
 version_note = "arXiv v3 read; the published Journal of Number Theory text prints 0.0501 where the arXiv text prints 0.05017; the targets follow the text read"
-cited_for = ["4.6"]
+cited_for = ["4.6", "4.8 (Check)", "7.3"]
 
 [[source]]
 id = "mcgowntrudgian2020"
@@ -471,7 +471,7 @@ url = "https://doi.org/10.1142/S1793042122500233"
 licence_class = "none"
 status = "uncertified"
 version_note = "paywalled; no legal text; the exponent 0.74 is not planned"
-cited_for = ["6.5 (motivation for a Part II)"]
+cited_for = ["6.5 (Chen's criterion (2.5), by locator)"]
 
 [[source]]
 id = "ramare2001"
@@ -571,7 +571,7 @@ sha256 = "8c3cac1ee52eb05af05ec410adc587a18505a46aacdde41ae097038b0e7c3897"
 licence_class = "operator-local"
 status = "certified"
 accessed = "2026-11-06"
-cited_for = ["gap:explicit-mertens-second"]
+cited_for = ["gap:explicit-mertens-second", "gap:schoenfeld-psi-rh"]
 
 [[source]]
 id = "washington1997"
@@ -600,3 +600,396 @@ licence_class = "none"
 status = "uncertified"
 version_note = "textbook, not openly available; cited by its locator for the class-number formula and the Hecke integral representation, as louboutin2003 line 138 cites it"
 cited_for = ["0.4", "References"]
+
+[[source]]
+id = "ramare2025"
+authors = "Olivier Ramaré"
+title = "Explicit count of integral ideals of an imaginary quadratic field"
+year = 2025
+venue = "Annales mathématiques du Québec"
+doi = "10.1007/s40316-025-00243-0"
+locator_scheme = "theorem"
+locator = "Theorem 1.1"
+url = "https://ramare-olivier.github.io/Maths/ConvolutionAndVoronoi-10-AMQ.pdf"
+licence_class = "open-repository"
+status = "uncertified"
+version_note = "author's preprint of the published article; also quotes the published constant 8.81e11 of lee2023ideals at n = 2"
+cited_for = ["2.3 (Check)", "2.7"]
+
+[[source]]
+id = "fehnker2026"
+authors = "Anton Fehnker"
+title = "Explicit counting of ideals in number fields of arbitrary degree"
+year = 2026
+arxiv = "2604.19681"
+locator_scheme = "theorem"
+locator = "Theorem 1.1"
+url = "https://arxiv.org/abs/2604.19681"
+licence_class = "open-repository"
+status = "uncertified"
+version_note = "arXiv v1, preprint"
+cited_for = ["2.6"]
+
+[[source]]
+id = "gglm2026"
+authors = "Stephan Ramon Garcia, Loïc Grenié, Ethan Simpson Lee, Giuseppe Molteni"
+title = "Explicit conditional bounds for the residue of a Dedekind zeta-function at s = 1"
+year = 2026
+venue = "Journal of Number Theory"
+doi = "10.1016/j.jnt.2026.08.010"
+arxiv = "2506.17416v5"
+locator_scheme = "theorem"
+locator = "Theorem 1.1"
+url = "https://arxiv.org/abs/2506.17416v5"
+licence_class = "open-repository"
+status = "uncertified"
+version_note = "arXiv v5, accepted version"
+cited_for = ["3.6", "gap:schoenfeld-psi-rh", "gap:rh-mertens-product"]
+
+[[source]]
+id = "palojarvisimonic2026"
+authors = "Neea Palojärvi, Aleksander Simonič"
+title = "Conditional estimates for L-functions in the Selberg class"
+year = 2026
+venue = "Journal of Number Theory 285, 135–193"
+arxiv = "2211.01121"
+locator_scheme = "theorem"
+locator = "Corollary 4"
+url = "https://arxiv.org/abs/2211.01121"
+licence_class = "open-repository"
+status = "uncertified"
+version_note = "cited through its quotation in gglm2026 Remark 1.2"
+cited_for = ["3.6"]
+
+[[source]]
+id = "leenosal2026"
+authors = "Ethan Simpson Lee, P. Nosal"
+title = "Sharper bounds for the error in the prime number theorem assuming the Riemann Hypothesis"
+year = 2026
+venue = "Journal of Number Theory 283, 241–258"
+locator_scheme = "theorem"
+locator = "Corollary 1.3"
+licence_class = "none"
+status = "uncertified"
+version_note = "cited through its quotation as gglm2026 Lemma 2.2"
+cited_for = ["gap:rh-mertens-product"]
+
+[[source]]
+id = "lamzourilisoundararajan2015"
+authors = "Youness Lamzouri, Xiannan Li, Kannan Soundararajan"
+title = "Conditional bounds for the least quadratic non-residue and related problems"
+year = 2015
+venue = "Mathematics of Computation 84, 2391–2412"
+arxiv = "1309.3595"
+locator_scheme = "theorem"
+locator = "Theorem 1.5"
+url = "https://arxiv.org/abs/1309.3595"
+licence_class = "open-repository"
+status = "uncertified"
+cited_for = ["3.6 (Check)"]
+
+[[source]]
+id = "amberger2026"
+authors = "Victor Amberger"
+title = "Estimating the number of zeros of Dedekind zeta-functions"
+year = 2026
+arxiv = "2510.27444v5"
+locator_scheme = "theorem"
+locator = "Theorem 1"
+url = "https://arxiv.org/abs/2510.27444v5"
+licence_class = "open-repository"
+status = "uncertified"
+version_note = "arXiv v5, unrefereed preprint; the parameter certification script is an ancillary file"
+cited_for = ["4.2"]
+
+[[source]]
+id = "dglsw2025"
+authors = "S. Das, S. Gaba, E. S. Lee, A. Savalia, P.-J. Wong"
+title = "New zero-free regions for Dedekind zeta-functions at small and large ordinates"
+year = 2025
+arxiv = "2506.19319"
+locator_scheme = "theorem"
+locator = "Theorem 1.1"
+url = "https://arxiv.org/abs/2506.19319"
+licence_class = "open-repository"
+status = "uncertified"
+version_note = "arXiv preprint; a journal version is reported but not confirmed"
+cited_for = ["4.5 (Check)", "4.6 (Check)", "4.8", "4.10", "7.3"]
+
+[[source]]
+id = "kadiriwong2022"
+authors = "Habiba Kadiri, Peng-Jie Wong"
+title = "Primes in the Chebotarev density theorem for all number fields (with an appendix by Andrew Fiori)"
+year = 2022
+venue = "Journal of Number Theory 241, 700–737"
+locator_scheme = "section"
+locator = "Appendix"
+licence_class = "none"
+status = "uncertified"
+version_note = "the table of minimal discriminants, cited through dglsw2025 Table 1"
+cited_for = ["4.8"]
+
+[[source]]
+id = "guo2026"
+authors = "Victor Zhenyu Guo"
+title = "An explicit elementary proof of no Landau–Siegel zeros"
+year = 2026
+arxiv = "2610.30476"
+locator_scheme = "theorem"
+locator = "main theorem"
+url = "https://arxiv.org/abs/2610.30476"
+licence_class = "open-repository"
+status = "uncertified"
+version_note = "unrefereed preprint; enters only through UniformQuadraticZeroGap"
+cited_for = ["0.5", "4.9", "gap:uniform-landau-siegel-gap"]
+
+[[source]]
+id = "banks2026siegel"
+authors = "William D. Banks"
+title = "On the OpenAI proof that Landau–Siegel zeros do not exist"
+year = 2026
+arxiv = "2610.15483"
+locator_scheme = "theorem"
+locator = "Theorem 1.1"
+url = "https://arxiv.org/abs/2610.15483"
+licence_class = "open-repository"
+status = "uncertified"
+version_note = "unrefereed preprint; Remark 7.1 computes the constant 3.069e-3"
+cited_for = ["0.5", "4.9", "gap:uniform-landau-siegel-gap"]
+
+[[source]]
+id = "banks2026brauersiegel"
+authors = "William D. Banks"
+title = "Landau–Siegel zeros over a base field and effective Brauer–Siegel"
+year = 2026
+arxiv = "2610.31402"
+locator_scheme = "theorem"
+locator = "main theorem"
+url = "https://arxiv.org/abs/2610.31402"
+licence_class = "open-repository"
+status = "uncertified"
+version_note = "unrefereed preprint; no numerical value of the constant"
+cited_for = ["5.7"]
+
+[[source]]
+id = "luzamanzhao2026"
+authors = "Rick F. Lu, Asif Zaman, Haonan Zhao"
+title = "Numerical computations concerning Landau–Siegel zeros"
+year = 2026
+doi = "10.1090/mcom/4268"
+arxiv = "2602.03626v2"
+locator_scheme = "theorem"
+locator = "Theorem 1.1"
+url = "https://arxiv.org/abs/2602.03626v2"
+licence_class = "open-repository"
+status = "uncertified"
+cited_for = ["4.9"]
+
+[[source]]
+id = "openai2026siegel"
+authors = "OpenAI"
+title = "Uniform exclusion of Landau–Siegel zeros"
+year = 2026
+locator_scheme = "theorem"
+locator = "Theorem 1"
+url = "https://github.com/openai/math"
+licence_class = "none"
+status = "uncertified"
+version_note = "repository preprint, unrefereed; context only, no numerical constant"
+cited_for = ["4.9 (context)"]
+
+[[source]]
+id = "kerr2026"
+authors = "Bryce Kerr"
+title = "A simpler proof that there are no Landau–Siegel zeros"
+year = 2026
+arxiv = "2610.21099"
+locator_scheme = "theorem"
+locator = "Theorem 1"
+url = "https://arxiv.org/abs/2610.21099"
+licence_class = "open-repository"
+status = "uncertified"
+version_note = "unrefereed preprint; context only"
+cited_for = ["4.9 (context)"]
+
+[[source]]
+id = "green2026"
+authors = "Ben Green"
+title = "On Landau–Siegel zeros"
+year = 2026
+locator_scheme = "theorem"
+locator = "Theorem 1.1"
+url = "https://hexagonmath.org/2610.00311"
+licence_class = "none"
+status = "uncertified"
+version_note = "Hexagon 2610.00311 v2, unrefereed; context only"
+cited_for = ["4.9 (context)"]
+
+[[source]]
+id = "kadiring2012"
+authors = "Habiba Kadiri, Nathan Ng"
+title = "Explicit zero density theorems for Dedekind zeta functions"
+year = 2012
+venue = "Journal of Number Theory 132, 748–775"
+arxiv = "1201.3932"
+locator_scheme = "theorem"
+locator = "Theorem 4"
+url = "https://arxiv.org/abs/1201.3932"
+licence_class = "open-repository"
+status = "uncertified"
+cited_for = ["4.10"]
+
+[[source]]
+id = "kadiringwong2019"
+authors = "Habiba Kadiri, Nathan Ng, Peng-Jie Wong"
+title = "The least prime ideal in the Chebotarev density theorem"
+year = 2019
+arxiv = "1902.08640"
+locator_scheme = "theorem"
+locator = "Theorem 1.1"
+url = "https://arxiv.org/abs/1902.08640"
+licence_class = "open-repository"
+status = "uncertified"
+cited_for = ["4.10", "4.11", "7.4"]
+
+[[source]]
+id = "odlyzko1976"
+authors = "Andrew M. Odlyzko"
+title = "Lower bounds for discriminants of number fields"
+year = 1976
+venue = "Acta Arithmetica 29"
+locator_scheme = "theorem"
+locator = "Theorem 1"
+licence_class = "none"
+status = "uncertified"
+version_note = "cited through its weak form quoted as kadiringwong2019 Theorem 2.3"
+cited_for = ["4.11"]
+
+[[source]]
+id = "cholemkeoliverzaman2025"
+authors = "Peter J. Cho, Robert J. Lemke Oliver, Asif Zaman"
+title = "Effective Brauer–Siegel theorems for Artin L-functions"
+year = 2025
+arxiv = "2510.02309"
+locator_scheme = "section"
+locator = "Section 1"
+url = "https://arxiv.org/abs/2510.02309"
+licence_class = "open-repository"
+status = "uncertified"
+version_note = "context only"
+cited_for = ["5.7 (context)"]
+
+[[source]]
+id = "mcgownsorenson2024"
+authors = "Kevin J. McGown, Jonathan P. Sorenson"
+title = "Computation of the least primitive root"
+year = 2024
+venue = "Mathematics of Computation"
+doi = "10.1090/mcom/4003"
+arxiv = "2206.14193v2"
+locator_scheme = "theorem"
+locator = "Theorem 3"
+url = "https://arxiv.org/abs/2206.14193v2"
+licence_class = "open-repository"
+status = "uncertified"
+version_note = "arXiv v2; Theorems 2 and 4 are printed for every prime but hold for odd primes (h(2) = 3)"
+cited_for = ["6.3", "6.4", "6.5"]
+
+[[source]]
+id = "tudzi2026"
+authors = "Sebastian Tudzi"
+title = "On the generalised divisor problem"
+year = 2026
+arxiv = "2506.21823v2"
+locator_scheme = "theorem"
+locator = "main theorem"
+url = "https://arxiv.org/abs/2506.21823v2"
+licence_class = "open-repository"
+status = "uncertified"
+version_note = "arXiv v2, preprint"
+cited_for = ["5.4", "gap:tudzi-tau3-remainder"]
+
+[[source]]
+id = "greniemolteni2019"
+authors = "Loïc Grenié, Giuseppe Molteni"
+title = "An explicit Chebotarev density theorem under GRH"
+year = 2019
+venue = "Journal of Number Theory 200, 441–485"
+arxiv = "1709.07609"
+locator_scheme = "theorem"
+locator = "Theorem 1.1"
+url = "https://arxiv.org/abs/1709.07609"
+licence_class = "open-repository"
+status = "uncertified"
+cited_for = ["7.2", "gap:schoenfeld-psi-rh"]
+
+[[source]]
+id = "greniemolteni2016"
+authors = "Loïc Grenié, Giuseppe Molteni"
+title = "Explicit versions of the prime ideal theorem for Dedekind zeta functions under GRH"
+year = 2016
+venue = "Mathematics of Computation 85, 889–906"
+arxiv = "1312.4463"
+locator_scheme = "theorem"
+locator = "Corollary 1.4"
+url = "https://arxiv.org/abs/1312.4463"
+licence_class = "open-repository"
+status = "uncertified"
+version_note = "Corollary 1.4 is misstated; the corrected form is displayed in greniemolteni2019 §1"
+cited_for = ["7.2 (Check)"]
+
+[[source]]
+id = "daskadiring2025"
+authors = "S. Das, Habiba Kadiri, Nathan Ng"
+title = "An effective version of Chebotarev's density theorem"
+year = 2025
+arxiv = "2508.09480"
+locator_scheme = "theorem"
+locator = "Corollary 1.1"
+url = "https://arxiv.org/abs/2508.09480"
+licence_class = "open-repository"
+status = "uncertified"
+version_note = "arXiv v1, preprint"
+cited_for = ["7.3"]
+
+[[source]]
+id = "ahnkwon2019"
+authors = "Jeoung-Hwan Ahn, Soun-Hi Kwon"
+title = "An explicit upper bound for the least prime ideal in the Chebotarev density theorem"
+year = 2019
+venue = "Annales de l'Institut Fourier 69, 1411–1458"
+arxiv = "1807.00508"
+locator_scheme = "theorem"
+locator = "Theorem 1"
+url = "https://arxiv.org/abs/1807.00508"
+licence_class = "open-repository"
+status = "uncertified"
+cited_for = ["7.4"]
+
+[[source]]
+id = "thornerzaman2017"
+authors = "Jesse Thorner, Asif Zaman"
+title = "An explicit bound for the least prime ideal in the Chebotarev density theorem"
+year = 2017
+venue = "Algebra & Number Theory 11"
+arxiv = "1604.01750"
+locator_scheme = "theorem"
+locator = "Theorem 1.1"
+url = "https://arxiv.org/abs/1604.01750"
+licence_class = "open-repository"
+status = "uncertified"
+cited_for = ["7.4"]
+
+[[source]]
+id = "bachsorenson1996"
+authors = "Eric Bach, Jonathan Sorenson"
+title = "Explicit bounds for primes in residue classes"
+year = 1996
+venue = "Mathematics of Computation 65, 1717–1735"
+locator_scheme = "section"
+locator = "main theorem"
+url = "https://www.ams.org/journals/mcom/1996-65-216/S0025-5718-96-00763-6/"
+licence_class = "publisher-open"
+status = "uncertified"
+version_note = "the publisher page refused the service; cited through its quotation as (1.4) of thornerzaman2017"
+cited_for = ["7.4"]
