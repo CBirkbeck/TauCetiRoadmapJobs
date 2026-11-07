@@ -1,0 +1,17 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "NoncompactQuantumSymmetry"
+
+[[source]]
+id = "Mackey1958"
+authors = "George W. Mackey"
+title = "Unitary representations of group extensions. I"
+year = 1958
+venue = "Acta Mathematica 99"
+doi = "10.1007/BF02392428"
+locator_scheme = "theorem"
+locator = "Theorems 8.1, 9.1"
+url = "https://doi.org/10.1007/BF02392428"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["M4.ParticleLabels"]
