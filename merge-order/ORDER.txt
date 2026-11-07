@@ -269,6 +269,7 @@ ModularityAndLanglandsExtensionsPartII
 GSp4NonregularModularityLifting
 EllipticModularityEffectiveComparisons
 TeichmullerGeometry
+QuasiregularMaps
 PositiveMass
 HodgeClassesForJacquetLanglands
 MappingClassGroupsAndCanonicalRepresentations
