@@ -1,0 +1,114 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "GaugeQuiltFieldTheory"
+
+[[source]]
+id = "ww-coprime"
+authors = "Katrin Wehrheim, Chris Woodward"
+title = "Floer field theory for coprime rank and degree"
+year = 2016
+arxiv = "1601.04924v2"
+locator_scheme = "theorem"
+locator = "Theorem 3.3.3"
+url = "https://arxiv.org/abs/1601.04924v2"
+fetched_from = "https://arxiv.org/pdf/1601.04924v2"
+fetched_at = "2026-11-07T03:52:58Z"
+sha256 = "80813b80dda7c43b4c3dc7e38327663a64760c9120e975b45aefbbd90eb0f444"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-07"
+version_note = "arXiv v2"
+cited_for = ["GQ1"]
+
+[[source]]
+id = "mww-functors"
+authors = "S. Ma'u, K. Wehrheim, C. Woodward"
+title = "A-infinity functors for Lagrangian correspondences"
+year = 2016
+arxiv = "1601.04919v5"
+locator_scheme = "theorem"
+locator = "Theorem 1.1"
+url = "https://arxiv.org/abs/1601.04919v5"
+fetched_from = "https://arxiv.org/pdf/1601.04919v5"
+fetched_at = "2026-11-07T03:53:11Z"
+sha256 = "88b1d0e05f5445597710bdee353e843db3611e0741d24f6914a1f63cb00c18ce"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-07"
+version_note = "arXiv v5"
+cited_for = ["GQ4"]
+
+[[source]]
+id = "ww-orientations"
+authors = "Katrin Wehrheim, Chris Woodward"
+title = "Orientations for pseudoholomorphic quilts"
+year = 2015
+arxiv = "1503.07803v6"
+locator_scheme = "theorem"
+locator = "Theorem 1.0.1"
+url = "https://arxiv.org/abs/1503.07803v6"
+fetched_from = "https://arxiv.org/pdf/1503.07803v6"
+fetched_at = "2026-11-07T03:53:24Z"
+sha256 = "f6f75b60feae0fc2f9b5aa0a8781a27c2861def88f90c5f92388e9b213d0010d"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-07"
+version_note = "arXiv v6"
+cited_for = ["GQ2c"]
+
+[[source]]
+id = "dfl-atiyah-floer"
+authors = "Aliakbar Daemi, Kenji Fukaya, Maksim Lipyanskiy"
+title = "Lagrangians, SO(3)-instantons and the Atiyah-Floer Conjecture"
+year = 2021
+arxiv = "2109.07032v1"
+locator_scheme = "theorem"
+locator = "Lemma 2.43"
+url = "https://arxiv.org/abs/2109.07032v1"
+fetched_from = "https://arxiv.org/pdf/2109.07032v1"
+fetched_at = "2026-11-07T03:53:36Z"
+sha256 = "7984f34243cda268f7f0a7d0557f723a9ff80dcfee4de8f07adaa00eb3e46dcb"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-07"
+version_note = "arXiv v1"
+cited_for = ["GQ1"]
+
+[[source]]
+id = "ss-newstead"
+authors = "Christopher Scaduto, Matthew Stoffregen"
+title = "On Newstead's Mayer-Vietoris argument in characteristic 2"
+year = 2017
+venue = "Internat. J. Math. 30 (2019), no. 12, 1950065, 18 pp"
+doi = "10.1142/S0129167X19500654"
+arxiv = "1707.06268v1"
+locator_scheme = "theorem"
+locator = "Proposition 1"
+url = "https://arxiv.org/abs/1707.06268v1"
+fetched_from = "https://arxiv.org/pdf/1707.06268v1"
+fetched_at = "2026-11-07T03:53:47Z"
+sha256 = "128683d09348dbc8352243b91a985607e9139eb55d9dbbdfad0a7cf3d382f349"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-07"
+version_note = "arXiv v1"
+cited_for = ["GQ2b"]
+
+[[source]]
+id = "ss-rank-two"
+authors = "Christopher Scaduto, Matthew Stoffregen"
+title = "The cohomology of rank two stable bundle moduli: mod two nilpotency & skew Schur polynomials"
+year = 2017
+venue = "Canad. J. Math. 71 (2019), no. 3, 683-715"
+doi = "10.4153/CJM-2017-050-7"
+arxiv = "1707.06207v1"
+locator_scheme = "theorem"
+locator = "Section 4.2"
+url = "https://arxiv.org/abs/1707.06207v1"
+fetched_from = "https://arxiv.org/pdf/1707.06207v1"
+fetched_at = "2026-11-07T03:54:12Z"
+sha256 = "6f081d7ab1875ffa3e50ddcbbd671681d9d84fc4c6e1bf6a9c18bdc58a3aa72f"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-07"
+version_note = "arXiv v1"
+cited_for = ["GQ2a"]
