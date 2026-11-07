@@ -98,7 +98,7 @@
       {
        "name": "clifford_three_one",
        "kind": "compatibility",
-       "statement": "The polar form of TauCeti.realCliffordForm 3 1 is Lorentzian with timelike e₃, Q(e₃) = −1."
+       "statement": "For Q = TauCeti.realCliffordForm 3 1, QuadraticMap.associated Q (half the polar form) has Gram matrix diag(1, 1, 1, −1) and is Lorentzian with timelike e₃ and value Q(e₃) = −1 at (e₃, e₃); the polar form QuadraticMap.polar Q has Gram matrix diag(2, 2, 2, −2), value −2 at (e₃, e₃)."
       }
      ]
     },
@@ -373,7 +373,7 @@
      "id": "1.9",
      "kind": "example",
      "name": "LinearMap.BilinForm.acousticalForm",
-     "statement": "The polar form of TauCeti.realCliffordForm n 1 (time last) is Lorentzian with ker dt spacelike; −θ⁰⊗θ⁰ + Σθ^i⊗θ^i is Lorentzian for a basis θ of V*; the acoustical form a_{c,v} = −c²ττ' + ⟪ξ − τv, ξ' − τ'v⟫ (c > 0) is Lorentzian, a(B, B) = −c² for B = (1, v), a⁻¹ = −c⁻² B⊗B + Σ ∂_i⊗∂_i, a⁻¹(dt, dt) = −c⁻², and (τ, ξ) is causal iff nonzero with |ξ − τv| ≤ c|τ|.",
+     "statement": "The associated bilinear form (QuadraticMap.associated, half the polar form) of TauCeti.realCliffordForm n 1 (time last), with value TauCeti.realCliffordForm n 1 v at (v, v), is Lorentzian with ker dt spacelike; −θ⁰⊗θ⁰ + Σθ^i⊗θ^i is Lorentzian for a basis θ of V*; the acoustical form a_{c,v} = −c²ττ' + ⟪ξ − τv, ξ' − τ'v⟫ (c > 0) is Lorentzian, a(B, B) = −c² for B = (1, v), a⁻¹ = −c⁻² B⊗B + Σ ∂_i⊗∂_i, a⁻¹(dt, dt) = −c⁻², and (τ, ξ) is causal iff nonzero with |ξ − τv| ≤ c|τ|.",
      "hypotheses": [
       "c > 0",
       "v ∈ ℝⁿ"
@@ -437,7 +437,7 @@
      "statement": "ContDiffLocallyHolderOn k α f s: f is ContDiffOn ℝ k on s and every x ∈ s has a neighbourhood U within s and C with HolderOnWith C α (iteratedFDerivWithin ℝ k f s) U.",
      "hypotheses": [
       "f : F → G between normed spaces",
-      "s : Set F (used for relatively open subsets of range I)",
+      "s : Set F (used for sets relatively open in range I; the Lipschitz, algebra and composition facts assume s relatively open in a convex set with nonempty interior)",
       "k : ℕ",
       "0 < α ≤ 1"
      ],
@@ -451,6 +451,9 @@
       "mathlib:ContDiffOn",
       "mathlib:ModelWithCorners.uniqueDiffOn",
       "mathlib:ModelWithCorners.convex_range",
+      "mathlib:ModelWithCorners.nonempty_interior",
+      "mathlib:uniqueDiffOn_convex",
+      "mathlib:UniqueDiffOn.inter",
       "mathlib:ContDiffPointwiseHolderAt",
       "roadmap:PDE §1.7"
      ],
@@ -458,7 +461,7 @@
       {
        "name": "ContDiffLocallyHolderOn.mono_exponent",
        "role": "structure",
-       "statement": "Exponent monotonicity; implies ContDiffOn ℝ k; ContDiffOn ℝ (k+1) on a relatively open subset of a convex set implies exponent 1 at order k."
+       "statement": "Exponent monotonicity; implies ContDiffOn ℝ k; for s relatively open in a convex set with nonempty interior (such as range I), ContDiffOn ℝ (k+1) on s implies exponent 1 at order k."
       },
       {
        "name": "ContDiffLocallyHolderOn.congr_cover",
@@ -468,7 +471,7 @@
       {
        "name": "ContDiffLocallyHolderOn.comp",
        "role": "functoriality",
-       "statement": "Sums, bilinear compositions, composition with maps C^∞ within their domain, and inversion of invertible linear maps preserve the class."
+       "statement": "For s (and, for compositions, the domain t of f) relatively open in a convex set with nonempty interior: sums, bilinear compositions, composition with maps C^∞ within s, and inversion of invertible linear maps preserve the class."
       },
       {
        "name": "contDiffLocallyHolderOn_iff_mem_Ckα_loc",
@@ -501,6 +504,11 @@
        "name": "corner_tested",
        "kind": "degenerate",
        "statement": "√(x+y) on [0,1)² is C^{0,½} and not C^{0,1} at the corner, though C^∞ at every interior point."
+      },
+      {
+       "name": "empty_interior",
+       "kind": "degenerate",
+       "statement": "On the segment (0,1) × {0} in ℝ² (convex, empty interior), every 2t dx + c dy is a derivative of x² within the set at (t, 0), so iteratedFDerivWithin ℝ 1 is an arbitrary choice and C² gives no Lipschitz bound on it; on (0,1) × (−1,1) the derivative 2x dx is 2-Lipschitz."
       }
      ]
     },
