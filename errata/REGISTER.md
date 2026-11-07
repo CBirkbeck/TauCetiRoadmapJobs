@@ -2,7 +2,7 @@
 
 Reviewers, red-team passes and errata jobs record every mistake they find in a source while checking a roadmap's locators: misprints (slips whose intended meaning is clear), errors (a false statement or proof step) and gaps (a step the source does not justify), each with the roadmap, the board pull request or errata job and the head that reported it. Collected by the board sync from the `## Source issues` sections of review, red-team and errata comments; the data is in `errata/source-issues.json`.
 
-9893 mistakes recorded on the board: 5780 misprints, 2560 errors, 1116 gaps, 437 unparsed bullets.
+9928 mistakes recorded on the board: 5800 misprints, 2566 errors, 1122 gaps, 440 unparsed bullets.
 Errata jobs have read the cited sources of 60 roadmaps; in those of 2 they found no mistake.
 The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explorer/`: 1525 awaiting review, 13582 confirmed, 228 rejected.
 
@@ -445,6 +445,9 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 - **Unparsed** (GrossZagierAndArithmeticHeightsPartII, #2441 at 6a03183, 2026-11-06): Gap** in LZ at §8.2, proof of Theorem 8.2.1, p. 59: the source transports the horizontal and vertical functions separately under L♭ + ⟨x⟩ = L′♭ + ⟨x′⟩; only the totals transport, and the difference of the vertical functions transports after Theorem 6.1.3; affects the proof.
 - **Unparsed** (GrossZagierAndArithmeticHeightsPartII, #2441 at 6a03183, 2026-11-06): Gap** in LL2 at Lemma 2.57, pp. 34–35: the source states the lemma for r > 2 as printed in the extracted text, while the proof of Theorem 2.7 uses it, through the definition of a special lattice and Lemma 2.58, at r = 2; the proof of the lemma does not use r > 2, so it should read r ≥ 2; affects the proof. (Read as "⩾" the printed inequalities, including a_{n−1} ⩾ 3, are correct.) <!-- tauceti-roadmap-review {"agent": "claude", "head": "6a0318341e2f41be27b1a59e0de5a24a5f4c2628", "job": "REV-PKG-GrossZagierAndArithmeticHeightsPartII", "model": "fable", "worker": "chris-x18"} -->
 - **Unparsed** (LevelOneAutomorphicFormsForClassicalGroups, #6082 at 2675540, 2026-11-06): Misprint** in CT20 at §5.3.1, printed p. 48: the source says the 199 parameters and 59 eigenparameters are for `1 ≤ g ≤ 12`; the counts include the genus-zero parameter `[1]` (198 and 58 in positive genus); affects nothing.
+- **Unparsed** (YangMillsConnectionsAndCaloricGauge, #7643 at 9a5d985, 2026-11-07): Misprint** in OhTataru-TopClass at (1.26), line 886 (p. 17): the source writes `⟨F∧F⟩` as the all-index sum without the factor `¼` that (6.11) of the heat-flow paper carries; with it omitted Lemma 1.31 fails for `F = X(dx¹²+dx³⁴)`; affects a stated result (Lemma 1.31 as printed).
+- **Unparsed** (YangMillsConnectionsAndCaloricGauge, #7643 at 9a5d985, 2026-11-07): Gap** in OhTataru-YMHF at Corollary 5.15, line 1954 (p. 41): the linearised limit is claimed in `Ḣ^σ` for `−1 < σ < 2`; its proof, Lemma 5.33(2), gives `0 ≤ σ ≤ 1`; affects a stated result. <!-- tauceti-roadmap-review {"agent": "claude", "head": "9a5d985fcda42e48537cfd2703445bbfe374fc7f", "job": "REV-DESIGN-YangMillsConnectionsAndCaloricGauge", "model": "fable", "worker": "chris-x17"} -->
+- **Unparsed** (NashBlowups, #7586 at df807c1, 2026-11-07): Misprint** in nashModificationNotes2024 at Propositions 2.2–2.3, printed p. 5 (lines 173–181): the same proposition and its preamble are printed twice under two numbers; the second copy should be dropped; affects nothing.
 
 ## A
 
@@ -579,6 +582,10 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 - **Error** at the paragraph after equation (2.11), printed p. 11 (AGLR line 650): the source says the rigid affine line has many nonalgebraic automorphisms; it should be nonalgebraic endomorphisms; its automorphisms are affine linear; affects nothing. Found by DiamondsAndVStacksPartII (#1482 at 3f6d9df, 2026-10-28, codex gpt-6-astra).
 - **Misprint** at §2.1–§2.3, printed pp. 9–18 (AGLR lines 541, 848, 989): the source says Theorem when referring to several numbered lemmas, definitions and propositions; it should be the actual labels, including Lemma 2.4, Proposition 2.22 and Definition 2.36; affects nothing. Found by DiamondsAndVStacksPartII (#1482 at edad780, 2026-10-27, codex gpt-6-astra).
 - **Misprint** at §2.3, footnote 1, p. 14 (AGLR line 838): the source says the additional analytic-locus axiom for general formal schemes is spatiality; it should be local spatiality, with quasicompact specialization as in the cited kimberlite definition; affects nothing. Found by DiamondsAndVStacksPartII (#1482 at eeaa487, 2026-10-25, codex gpt-6-astra).
+
+## AgnolettoCorreaHoyosDaSilvaNardulli2025
+
+- **Gap** at Theorem 2.32 (proof), arXiv v3 page 17–18: the source says the proof asserts that locally bounded first variation and positive density are preserved by pushing a varifold forward through a bi-Lipschitz smooth chart, with no argument; it should be compare the first variations for the pulled-back metric and the Euclidean metric (a C¹-closeness estimate, which this design proves as 4.5); affects the proof. Found by Varifolds (#7602 at f19ba8b, 2026-11-07, claude fable).
 
 ## AGV08
 
@@ -860,6 +867,10 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 ## Alper, moduli lecture notes (the report gives no title)
 
 - **Misprint** at the display immediately after the identity h¹ = h⁰ − χ in the H¹-vanishing and regularity argument: the source says the Hilbert-polynomial term enters with a plus sign; it should be a minus sign, consistent with the identity h¹ = h⁰ − χ just before; affects the proof. Found by  (? at , 2026-10-23, backfill from earlier reviews (claude opus)).
+
+## alper-moduli
+
+- **Misprint** at Exercise 4.5.11 (a), printed page 183: the source says the stabiliser action on a framed tangent vector as composing `g` after the framing `α : x ≅ τ|_k`, which does not typecheck for `g ∈ Aut(x)`; it should be precomposition with `g` (or its inverse for a left action), as ahr2020 states; affects nothing; <!-- tauceti-roadmap-review {"agent": "claude", "head": "54a30e17ffc861ca75a495d79432ce0159978bba", "job": "REV-DESIGN-StackPointsAndResidualGerbes", "model": "fable", "worker": "chris-x10"} -->. Found by StackPointsAndResidualGerbes (#7629 at 54a30e1, 2026-11-07, claude fable).
 
 ## ALRS
 
@@ -1638,6 +1649,12 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 
 - **Misprint** at Theorem 1.6(1), preprint p.4, and Theorem 1.10(1), p.5 (BdJ2003 lines 168,209): the source says the target Adams weight is r; it should be n, as in the adjacent diagrams; affects nothing. Found by PadicHodgeRegulators (#168 at 5eff35d, 2026-10-24, codex gpt-6-astra).
 - **Misprint** at equation (4.4), preprint p.24 (BdJ2003 line 1081): the source says truncated forms vanish when n<j; it should be when j<n, consistently with the preceding degree-at-least-n complex; affects nothing. Found by PadicHodgeRegulators (#168 at 5eff35d, 2026-10-24, codex gpt-6-astra).
+
+## behrend-fantechi1997
+
+- **Gap** at Proposition 5.3, printed page 39 (lines 1303–1305): the source says one may assume the two global resolutions map to `E` by morphisms of complexes; it should be justify this, since morphisms in `D(O_X)` between complexes of vector bundles need not be morphisms of complexes on a stack; affects the proof; <!-- tauceti-roadmap-review {"agent": "claude", "head": "0e4f62ebc95c4c60245b368e6c8703686740993f", "job": "REV-DESIGN-VirtualFundamentalClasses", "model": "fable", "worker": "chris-x9"} -->. Found by VirtualFundamentalClasses (#7642 at 0e4f62e, 2026-11-07, claude fable).
+- **Misprint** at Proposition 5.5, printed page 39 (line 1354): the source says the hypothesis is `h¹(E•) = 0`; it should be `h^{−1}(E•) = 0` (compare Proposition 7.3 (1), line 1708); affects nothing. Found by VirtualFundamentalClasses (#7642 at 0e4f62e, 2026-11-07, claude fable).
+- **Misprint** at the remark after Definition 1.2, printed page 8 (line 275): the source says the dual of `0 → F' → F → E → 0` runs `C(E) → C(F') → C(F)`; it should be `C(E) → C(F) → C(F')` (the functor is contravariant); affects nothing. Found by VirtualFundamentalClasses (#7642 at 0e4f62e, 2026-11-07, claude fable).
 
 ## behrens
 
@@ -3940,6 +3957,10 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 - **Error** at Theorem 5.2.1, proof, printed page 574 (CGLS lines 2151–2152, 2173–2174): the source says the source derives the root number from the Selmer corank at an odd prime by citing Monsky [40, Theorem 1.5], whose theorem is the 2-Selmer parity; it should be cite the odd-p parity theorem (Nekovář, or Dokchitser–Dokchitser Theorem 1.4); affects the proof. Found by RankZeroOneBSDPartII (#1744 at de6e426, 2026-10-28, claude fable).
 - **Misprint** at Theorem5.2.1 proof, condition(d′), printed p.574 (CGLS line 2177): the source says the s-order is taken of the fixed central value; it should be the order at s=1 of the function L(Eᴷ,s); affects nothing. Found by RankZeroOneBSDPartII (#1744 at 07fd530, 2026-10-26, codex gpt-6-astra).
 - **Misprint** at proof of Theorem 5.2.1, condition (d′), printed p.574, CGLS line 2177: the source says central order of the twist L-value with its argument already fixed to one; it should be central order of the twist L-function with variable argument s; affects nothing. Found by RankZeroOneBSDPartII (#1744 at 07fd530, 2026-10-25, codex gpt-6-astra).
+
+## cgpt-2023
+
+- **Error** at §1.2, lines 375–378, printed p. 8: the source says `π_k ∘ J_k(A)` has mean zero on `𝕋ⁿ` for every `k`, because `J_k(A)_{xy} ≠ 0` forces `m_k(x) ≠ m_k(y)`; for `n = 2`, `k = 0`, `x = (0.05, 0.05)`, `y = (0.95, 0.95)` one has `|x − y| = 0.9√2 ≥ 1` and `m₀(x) = m₀(y)`; it should be asserted for `4^k ≥ √n`; affects the proof; (only large `k` is used, so the conclusion stands). <!-- tauceti-roadmap-review {"agent": "claude", "head": "039bca4b4f8af8d2eb0028f8e6cfbf908754f79e", "job": "REV-DESIGN-SchattenClassesAndSchurMultipliers", "model": "fable", "worker": "chris-x10"} -->. Found by SchattenClassesAndSchurMultipliers (#7622 at 039bca4, 2026-11-07, claude fable).
 
 ## CGS23
 
@@ -6802,6 +6823,11 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 
 - **Misprint** at Theorem 5.1, p.35, and Corollary 5.1: the source says the lower-bound form of the linear sieve with a wrong sign; it should be the corrected sign (the review confirms the correction is needed); affects a stated result. Found by  (#177 at , 2026-10-23, backfill from earlier reviews (claude opus)).
 
+## HeikkilaPankka2025
+
+- **Misprint** at Appendix B, proof of Proposition B.1, line 1328 (arXiv v2): the source says the composite of the map `p : M → N` and the embedding `ι : N → ℝ^m` in the order `p ∘ ι`; it should be `ι ∘ p`, the only composable order; affects nothing; <!-- tauceti-roadmap-review {"agent": "claude", "head": "d5ab755dad8c7355dfaa8b5ce6819ec6a8f33b43", "job": "REV-DESIGN-SobolevMapsBetweenManifolds", "model": "fable", "worker": "chris-x17"} -->. Found by SobolevMapsBetweenManifolds (#7625 at d5ab755, 2026-11-07, claude fable).
+- **Misprint** at Proof of Proposition B.1, line 1328 (printed page 24): the source says the composite of the Nash embedding and the map in the order "map after embedding"; it should be the embedding after the map, since the embedding goes out of the target; affects nothing; <!-- tauceti-roadmap-review {"agent": "claude", "head": "38117fbaa57d9fc796bf4e44b0b05b2bc073639e", "job": "REV-PKG-QuasiregularMaps", "model": "fable", "worker": "chris-x9"} -->. Found by QuasiregularMaps (#7613 at 38117fb, 2026-11-07, claude fable).
+
 ## HEITMANNMA18
 
 - **Gap** at Theorem 1.6, p. 4 (line 143): the source says non-badness of partial double sequences is precisely what makes the full-modification limits nonzero modulo the maximal ideals; it should be justify the passage from full to partial witnesses, inherited from Hochster; affects the proof. Found by DirectSummandsAndBigCohenMacaulay (#1452 at dfaea30, 2026-10-26, claude fable).
@@ -8638,6 +8664,13 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 - **Error** at proof of Lemma 3.1.4.3(i), printed p.12: the source says it uses d trivializing complexes and nilpotence exponent d in Krull dimension d, which fails for d=0; it should be use d+1 of each; affects the proof. Found by SchemeAndStackFoundationsPartII (#420 at accb0a0, 2026-10-23, claude opus).
 - **Gap** at proof of Lemma 3.1.4.3(iv), printed p.12: the source says it deduces that n kills η from nilpotence and (r+η)ⁿ∈ℤ, which nilpotence alone does not give (ℤ[η]/(η²+2η,η³): (1+η)²=1, 2η≠0); it should be argue in K₀⊗ℚ and clear denominators; affects the proof. Found by SchemeAndStackFoundationsPartII (#420 at accb0a0, 2026-10-23, claude opus).
 
+## lafforgue-delasalle-2011
+
+- **Misprint** at Lemma 1.9, proof, line 348, printed p. 8: the source says the source names the target of `A ↦ UAU*` as `S_p(L²(X, ν))`; it should be `S_p(L²(X, μ))`; affects nothing. Found by SchattenClassesAndSchurMultipliers (#7622 at 039bca4, 2026-11-07, claude fable).
+- **Misprint** at Remark 1.4, line 249, printed p. 6: the source says `S_q = [S_p, S_{p'}]_θ` with `1/q = θ/p' + (1−θ)/p` for `2 ≤ p ≤ q`, whose right side lies in `[1/p, 1/p']` and cannot equal `1/q < 1/p`; it should be `S_p = [S_q, S_{q'}]_θ` with `1/p = θ/q' + (1−θ)/q`; affects nothing; (the inequality `‖φ‖_{M S_p} ≤ ‖φ‖_{M S_q}` stands). Found by SchattenClassesAndSchurMultipliers (#7622 at 039bca4, 2026-11-07, claude fable).
+- **Gap** at Theorem 1.7, proof, lines 312–313, printed p. 8: the source says a filtration of finite σ-algebras whose martingale converges almost surely to `φ` without justifying its existence when the σ-algebra is not countably generated; it should be first pass to a countably generated sub-σ-algebra carrying `φ`; affects the proof. Found by SchattenClassesAndSchurMultipliers (#7622 at 039bca4, 2026-11-07, claude fable).
+- **Gap** at §1.4, lines 487–488, printed p. 12: the source says an atom as a measurable set that cannot be split into two sets of positive measure, so every null set is an atom and the hypothesis "no atom" of Theorem 1.18 is never satisfied; it should be require the atom to have positive measure; affects a stated result; (the hypothesis of Theorem 1.18 must be read with positive measure). Found by SchattenClassesAndSchurMultipliers (#7622 at 039bca4, 2026-11-07, claude fable).
+
 ## Lagarias–Li, arXiv:1506.06161v1
 
 - **Misprint** at equation (2.5), the Lerch differential relations: the source says the partial differential equation with a positive sign on the s-term; it should be carry the negative sign, because the lowering operator sends −sΦ(z,s+1,c) to −sΦ(z,s,c); affects a stated result. Found by  (? at , 2026-10-23, backfill from earlier reviews (claude opus)).
@@ -9265,6 +9298,11 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 
 - **Error** at Theorem 3 (physical p.7) and the comparison at cached extraction lines 1601–1607: the source says the mean-square comparison over the finite good set in [X,2X] holds uniformly up to h=X, with no upper-endpoint error; it should be a bound with an added h/X term: for f=1, h=X and a dense good set the integral is at least X/36; affects a stated result. Found by  (#172 at , 2026-10-23, backfill from earlier reviews (claude opus)).
 
+## mauth2022
+
+- **Misprint** at Corollary 4 proof, line 1217–1221, printed p. 25: the source says the source bounds `π|λ − z|` on the box of half-side `C/t` by `π√2 C/t`; it should be `2√2 πC/t`, the diameter of the box; affects nothing; <!-- tauceti-roadmap-review {"agent": "claude", "head": "512b333513663efad3477120dba514e2937d6ce9", "job": "REV-DESIGN-DiracScatteringAndNonlinearFourierTransform~4", "model": "fable", "worker": "chris-x9"} -->. Found by DiracScatteringAndNonlinearFourierTransform (#7428 at 512b333, 2026-11-07, claude fable).
+- **Misprint** at Lemma 43, line 3146–3149, printed p. 44: the source says the approximants with `γ(ty(t))` while the parameters are `z(t) = u(t) − ip(t)`, `z̃(t) = ũ(t) − ip(t)`; it should be `γ(tp(t))`; affects nothing; <!-- tauceti-roadmap-review {"agent": "claude", "head": "3f3f02954418898a63e723782b433c8bcc03ee0a", "job": "REV-DESIGN-DiracScatteringAndNonlinearFourierTransform~2", "model": "fable", "worker": "chris-x10"} -->. Found by DiracScatteringAndNonlinearFourierTransform (#7428 at 3f3f029, 2026-11-06, claude fable).
+
 ## May
 
 - **Error** at Chapter 16 §3, cellular-boundary proof, p. 125 (May line 5318): the source says fixing g=d_i f reduces the attaching map onto g to the contribution of face i; it should be sum all face contributions: the coefficient is Σ_{j:d_j f=g}(−1)^j; repeated nondegenerate faces can contribute twice; affects the proof. Found by CharacteristicClasses (ERRATA-CharacteristicClasses at d077cb4, 2026-10-24, codex gpt-6-astra).
@@ -9688,6 +9726,14 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 - **Misprint** at §3.1.5, arXiv v2 printed p.41 (line 1814–1818): the source says the holomorphy exception is k=2 and excludes s=2; it should be the possible pole s=k, excluding s=k in that evaluated identity; affects a stated result. Found by KatoEulerSystems (#163 at 0ff66a0, 2026-10-26, codex gpt-6-astra).
 - **Misprint** at §3.1.5, v2 printed p.41 (lines 1812–1818): the source says the general-weight operator is holomorphic except at k=2 and excludes s=2; it should be possible pole s=k and comparisons away from that pole; affects a stated result. Found by KatoEulerSystems (#163 at 9a2ec7c, 2026-10-28, codex gpt-6-astra).
 
+## nashModificationNotes2024
+
+- **Error** at Section 2, printed p. 4 (lines 157–160) and Section 3, p. 6 (lines 226–229): the source says the universal property is asserted for every morphism `h : Z → X` carrying a rank-`d` locally free quotient of `h*Ω`; it should be require `Z` reduced with `h⁻¹(U)` dense (a closed point of the cusp with the quotient `[0:1]` does not factor); affects a stated result. Found by NashBlowups (#7586 at df807c1, 2026-11-07, claude fable).
+- **Error** at Section 3, printed p. 6 (lines 226–229): the source says the universal property is asserted for every `h : T → S` carrying a rank-`d` locally free quotient of `h*F`; it should be require `T` reduced with `h⁻¹(U)` dense (a closed point of the cusp with the quotient `[0:1]` does not factor); affects a stated result; <!-- tauceti-roadmap-review {"agent": "claude", "head": "71f8325227779f917251dc3b2fdaaf7c537ec3a8", "job": "REV-DESIGN-NashBlowups~2", "model": "fable", "worker": "chris-x10"} -->. Found by NashBlowups (#7586 at 71f8325, 2026-11-07, claude fable).
+- **Gap** at Section 5, p. 11 (line 428) and in duarteNunezBetancourt2020 at the proof of Theorem 3.10, p. 7 (lines 286–287): the source says a splitting of `R_Q → R_Q^{1/p}` is deduced from freeness of `R_Q^{1/p}` alone; it should be use that the cokernel is torsion-free because `R_Q` is integrally closed; affects the proof; <!-- tauceti-roadmap-review {"agent": "claude", "head": "df807c164b4bb91e53fc018044c2dd62a03c729a", "job": "REV-DESIGN-NashBlowups", "model": "fable", "worker": "chris-x10"} -->. Found by NashBlowups (#7586 at df807c1, 2026-11-07, claude fable).
+- **Misprint** at Theorem 5.1, printed p. 10 (line 364): the source says the Nash modification of a normal variety in characteristic `p` is an isomorphism iff the variety is singular; it should be nonsingular; affects a stated result. Found by NashBlowups (#7586 at df807c1, 2026-11-07, claude fable).
+- **Misprint** at Theorem 6.2, printed p. 12 (line 512): the source says the normalised `n`-th Nash modification is an isomorphism iff `X` is an isomorphism; it should be iff `X` is nonsingular; affects nothing. Found by NashBlowups (#7586 at df807c1, 2026-11-07, claude fable).
+
 ## native_multiplicative_heights
 
 - **Misprint** at docstring of `NumberField.absMulHeight₁`: the source says the junk value off algebraic elements is 0; it should be 1, which the definition returns; affects nothing; <!-- tauceti-roadmap-review {"agent": "claude", "head": "d36cfa5", "job": "REV-PKG-LogicAndDefinabilityInNumberTheory~3", "model": "opus", "worker": "fable-rev107"} -->. Found by LogicAndDefinabilityInNumberTheory (#164 at d36cfa5, 2026-10-25, claude opus).
@@ -9922,6 +9968,20 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 
 - **Error** at §§4.2–4.3, pp. 320–321: the source says that at a ramified prime (139 in the example) the Euler factor is replaced by the unsquared local factor, e.g. (1+4εX+139X²)⁻¹; it should be ((1−α²p^(−2s))(1−β²p^(−2s)))⁻¹, since its condition C1 requires square support; affects the proof. Found by  (#133 at , 2026-10-23, backfill from earlier reviews (claude opus)).
 - **Error** at §§4.2–4.3, pp. 320–321: the source says at a ramified prime (139 in the example) the Euler factor is replaced by the unsquared local factor, e.g. (1+4εX+139X²)⁻¹; it should be ((1−α²p^(−2s))(1−β²p^(−2s)))⁻¹, since its condition C1 requires square support; affects the proof. Found by  (#133 at , 2026-10-23, backfill from earlier reviews (claude opus)).
+
+## OhTataru-TopClass
+
+- **Misprint** at Lemma 3.13, line 1423 (p. 29): the source says the conclusion's exponent uses an undefined `n`; it should be `d/(m+2)`; affects nothing. Found by YangMillsConnectionsAndCaloricGauge (#7643 at 9a5d985, 2026-11-07, claude fable).
+- **Misprint** at Lemma 3.4(3), line 1130 (p. 22): the source says the second term of the Leibniz rule as the adjoint of the bracket of the right Maurer–Cartan form with `B`; it should be the bracket of the right Maurer–Cartan form with `Ad(O)B` (equivalently the adjoint of the bracket with the left form); affects nothing. Found by YangMillsConnectionsAndCaloricGauge (#7643 at 9a5d985, 2026-11-07, claude fable).
+- **Error** at Proposition 1.6(1), line 401, and Lemmas 3.21–3.22, lines 1634 and 1646 (pp. 9, 33): the source says for disconnected `G` the gauges at infinity are homotopic only up to left and right constants, and `[id]` differs from the class of a constant map (`G = {±1}`, `A = 0`); it should be connected `G` or the quotient by constants; affects a stated result. Found by YangMillsConnectionsAndCaloricGauge (#7643 at 9a5d985, 2026-11-07, claude fable).
+- **Misprint** at Proposition 3.9, line 1303 (p. 26): the source says the global potential lies in `W^{k,d/k}(B_R)`; it should be `W^{k−1,d/k}`, as its displayed bound says; affects nothing. Found by YangMillsConnectionsAndCaloricGauge (#7643 at 9a5d985, 2026-11-07, claude fable).
+- **Misprint** at Theorem 1.5, line 374 (p. 8): the source says the higher-regularity hypothesis is on `L^p(B_R)`; it should be on `L^p(ℝ^d)`, since the conclusion `B ∈ Ẇ^{n+1,p}(ℝ^d)` is global; affects a stated result. Found by YangMillsConnectionsAndCaloricGauge (#7643 at 9a5d985, 2026-11-07, claude fable).
+
+## OhTataru-YMHF
+
+- **Error** at (1.19), line 240, and (5.11), line 1617 (pp. 6, 34): the source says the dissipation term of the energy identity carries the factor `1` for the energy `½∫⟨F,F⟩`; it should be `2∫Σ_j|D^ℓF_ℓj|²` (witness: one `U(1)` Fourier mode); affects nothing. Found by YangMillsConnectionsAndCaloricGauge (#7643 at 9a5d985, 2026-11-07, claude fable).
+- **Misprint** at Theorem 4.8, (4.34), line 1522 (p. 33): the source says the exponent is `1 − α/2` with `α` undefined; it should be `1 − β`, as in (4.32); affects nothing. Found by YangMillsConnectionsAndCaloricGauge (#7643 at 9a5d985, 2026-11-07, claude fable).
+- **Gap** at Theorem 6.1, lines 2567 and 2580 (pp. 55–56): the source says the statement asserts that the concentration points `x_n` converge to a point `x₀`; the proof chooses the parabolic cubes without bounding `x_n`; it should be either drop the clause or add the argument; affects a stated result. Found by YangMillsConnectionsAndCaloricGauge (#7643 at 9a5d985, 2026-11-07, claude fable).
 
 ## Olivier
 
@@ -10215,6 +10275,12 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 ## Pollack–Stevens, Overconvergent modular symbols and p-adic L-functions (Ann. Sci. ÉNS)
 
 - **Misprint** at Theorem 2.6 / Corollary 2.7, p. 12: the source says (T⁻¹ − 1)D_∞, with the companion expression v_i|(γ_i − 1) + Σ v′_i; it should be (1 − T⁻¹)D_∞, as the Γ₀(2) relation D′₁ = {0} − {−1} fixes, the companion expression as the witness in the cited review requires; affects a stated result. Found by  (? at , 2026-10-23, backfill from earlier reviews (claude opus)).
+
+## poltoratski2024
+
+- **Error** at (5.5), line 545–548, printed p. 14: the source says the `L¹(ℝ)` norm of `log|a(t,·)|` equals the squared `L²(0,t)` norm of `f` with constant `1`; it should be `π/2` times that norm in the normalisations of (1.1) and (5.2) (first-order check: `∫|∫₀ᵗ f e^{2ixs}ds|²dx = π∫₀ᵗ f²`; computed `1.5707` for `f = 1_{[0,1]}`); affects a stated result; (used only qualitatively in the source). The same constant `1` is printed in mauth2022 (4), line 206–207. Found by DiracScatteringAndNonlinearFourierTransform (#7428 at ef270ea, 2026-11-06, claude fable).
+- **Misprint** at Lemma 5 proof, line 830, printed p. 22: the source says the distance of two points of the box of half-side `C/t` is at most `1/t`; it should be at most `2√2 C/t`, the box diameter; affects nothing. Found by DiracScatteringAndNonlinearFourierTransform (#7428 at 512b333, 2026-11-07, claude fable).
+- **Misprint** at Lemma 7, line 1038–1039, printed p. 27: the source says `p(t) > C(t)` for `t ∉ T₀(s,C)` and `p(t) ≤ C(t)` for `t ∈ T₀(s,C)`; it should be `tp(t) > C(t)` and `tp(t) ≤ C(t)` (a zero in `Q(s, C(t)/t)` has imaginary part at most `C(t)/t`); affects nothing; The same misprint is in mauth2022 Lemma 43, line 3150. <!-- tauceti-roadmap-review {"agent": "claude", "head": "ef270ea47f23f463ae0ba16d56c1dd8f06552456", "job": "REV-DESIGN-DiracScatteringAndNonlinearFourierTransform", "model": "fable", "worker": "chris-x9"} -->. Found by DiracScatteringAndNonlinearFourierTransform (#7428 at ef270ea, 2026-11-06, claude fable).
 
 ## Poonen, Rational Points on Varieties
 
@@ -11529,6 +11595,11 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 ## silverman2014
 
 - **Misprint** at Example 6, printed page 9: the source says the iterates of `(x, y, z) ↦ (y, z, x + yz)` have degree `F_n`; it should be `F_{n+2}` (the map has degree `2 = F_3`, its square degree `3`, its cube degree `5`); affects nothing. Found by DynamicalDegreesOfRationalMaps (#6585 at 91f762e, 2026-11-05, claude fable).
+
+## Simon1983
+
+- **Misprint** at 42.8 (proof), printed page 250: the source says the text says that max{ψ_i, N} converges in L¹(B_1(0)) to θ_0 for an integer N > θ_0; it should be min{ψ_i, N} (the truncation at N), since max{ψ_i, N} ≥ N > θ_0 cannot converge to θ_0; affects nothing; (the intended step is the one 7.6's route states). Found by Varifolds (#7602 at 333c24e, 2026-11-07, claude fable).
+- **Misprint** at 42.9, printed page 262: the source says the constant is written ε = ε(δ, Λ, n), while the remark that follows (42.10) and the induction bound depend on n, k and Λ; it should be ε(δ, Λ, n, k); affects nothing; <!-- tauceti-roadmap-review {"agent": "claude", "head": "f19ba8bb16867c5f0f482b8b345632607ddc44af", "job": "REV-DESIGN-Varifolds", "model": "fable", "worker": "chris-x9"} -->. Found by Varifolds (#7602 at f19ba8b, 2026-11-07, claude fable).
 
 ## skinner-2020
 
