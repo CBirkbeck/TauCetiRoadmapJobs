@@ -196,8 +196,11 @@ It leaves to named roadmaps:
   `Convex.norm_image_sub_le_of_norm_hasFDerivWithin_le'`
   (`Mathlib/Analysis/Calculus/MeanValue.lean`): Rademacher's theorem; the mean value inequality
   on convex sets, and its variant against a fixed linear map.
-- `extChartAt` (`Mathlib/Geometry/Manifold/IsManifold/ExtChartAt.lean`): the preferred extended
-  chart at a point, in which the local bi-Lipschitz property of §6.1 is stated.
+- `extChartAt` and `Manifold.locallyCompact_of_finiteDimensional`
+  (`Mathlib/Geometry/Manifold/IsManifold/ExtChartAt.lean`): the preferred extended chart at a
+  point, in which the local bi-Lipschitz property of §6.1 is stated; a manifold modelled on a
+  finite-dimensional space over a locally compact field is locally compact, which §6.1 uses for
+  local finiteness of a triangulation.
 - `DifferentiableAt.conformalAt` (`Mathlib/Analysis/Complex/Conformal.lean`): a complex
   differentiable map with non-zero derivative is conformal.
 - `lineDeriv`, `HasLineDerivAt` and `LineDifferentiableAt`
@@ -287,10 +290,17 @@ It leaves to named roadmaps:
   (`TauCeti/Geometry/Manifold/SmoothTriangulation/Basic.lean`): a homeomorphism from a realization
   onto a manifold that is `Cᵏ` within every closed simplex with injective differential there.
   The definition does not include local finiteness or purity, which §6.1 proves.
-  `AbstractSimplicialComplex.Realization` and `AbstractSimplicialComplex.faceInclusion`
-  (`TauCeti/AlgebraicTopology/SimplicialComplex/Realization/Basic.lean`);
-  `AbstractSimplicialComplex.exists_finset_support_subset_of_isCompact` and
-  `AbstractSimplicialComplex.compactSpace_realization_iff_finite` (`…/Realization/Compact.lean`);
+  `AbstractSimplicialComplex.Realization`, `AbstractSimplicialComplex.faceInclusion`,
+  `AbstractSimplicialComplex.continuous_faceInclusion`, `AbstractSimplicialComplex.carrier` and
+  `AbstractSimplicialComplex.faceBarycenter`
+  (`TauCeti/AlgebraicTopology/SimplicialComplex/Realization/Basic.lean`): the realization with
+  the weak topology, final for the continuous face inclusions; the carrier of a point, the support
+  of its barycentric coordinates; the barycentre of a face, with coordinate `1/|σ|` on each vertex
+  of `σ`. `AbstractSimplicialComplex.exists_finset_support_subset_of_isCompact` and
+  `AbstractSimplicialComplex.compactSpace_realization_iff_finite` (`…/Realization/Compact.lean`):
+  the carriers of the points of a compact subset lie in one finite vertex set, for every complex;
+  the realization is compact exactly when the vertex type is finite. Neither assumes nor yields
+  local finiteness, which §6.1 proves for triangulations of manifolds;
   `PreAbstractSimplicialComplex.SimplicialMap` (`…/SimplicialComplex/Maps.lean`) and
   `PreAbstractSimplicialComplex.SimplicialMap.realizationMap` (`…/Realization/Map.lean`), affine
   on each face, with its identity and composition laws; `PreAbstractSimplicialComplex.IsPure`
@@ -349,8 +359,8 @@ What DifferentialGeometry must provide (gap:orientation-descent): For a group `�
 ### From TauCetiRoadmap.GeometricTopology
 
 - Layer 11: realizations of abstract simplicial complexes, simplicial maps and their
-  realizations, and the lemma that a compact subset of a realization lies in finitely many
-  simplices, through the Tau Ceti declarations above (Layer 6).
+  realizations, and the lemma that every compact subset of a realization lies in the realization
+  of a restriction to finitely many vertices, through the Tau Ceti declarations above (Layer 6).
 
 ### From TauCetiRoadmap.TeichmullerGeometry
 
@@ -1284,8 +1294,9 @@ coordinates of its vertices positive).
 
 Prove, for a `C¹` smooth triangulation `κ` of a boundaryless `n`-manifold `M` (`n ≥ 1`):
 
-- every compact subset of `M` meets `κ(σ)` for only finitely many simplices `σ`, so `K` is
-  locally finite (`AbstractSimplicialComplex.exists_finset_support_subset_of_isCompact`);
+- `K` is locally finite: every simplex of `K`, in particular every vertex, is a face of only
+  finitely many simplices; and every compact subset of `M` meets `κ(σ)` for only finitely many
+  simplices `σ`;
 - `K` is pure of dimension `n` (`PreAbstractSimplicialComplex.IsPure`): every simplex is a face
   of an `n`-simplex, and there are no simplices of dimension above `n`;
 - the image under `κ` of the union of the simplices of dimension below `n` is a null set
@@ -1301,8 +1312,24 @@ Prove, for a `C¹` smooth triangulation `κ` of a boundaryless `n`-manifold `M` 
   other chart at `κ x` gives the same property after shrinking `σ'`, since transition maps are
   `C¹` with invertible differentials.
 
-Route. The null images come from `DifferentiableOn.addHaar_image_eq_zero_of_finrank_lt_finrank`
-in charts. A maximal simplex `τ` has `τ°` open in the realization. If `dim τ < n` then `κ(τ°)`
+Route. Local finiteness uses the local compactness of `M`, which holds because `E` is
+finite-dimensional (`Manifold.locallyCompact_of_finiteDimensional`); the realization alone does
+not give it. Let `p` be a point of the realization with carrier `τ`, the support of its
+barycentric coordinates (`AbstractSimplicialComplex.carrier`), and let `C` be a compact
+neighbourhood of `p`, the preimage under `κ` of a compact neighbourhood of `κ p`. The carriers of
+the points of `C` are subsets of one finite vertex set `V`
+(`AbstractSimplicialComplex.exists_finset_support_subset_of_isCompact`). For every simplex
+`σ ⊇ τ`, with barycentre `b_σ` (`AbstractSimplicialComplex.faceBarycenter`), the point
+`(1 − t) p + t b_σ` has carrier `σ` for `0 < t ≤ 1` and tends to `p` as `t → 0`, since it moves
+along a segment of the closed simplex `σ` and `AbstractSimplicialComplex.continuous_faceInclusion`
+holds. It lies in `C` for small `t`, so `σ ⊆ V`. Hence only finitely many simplices contain `τ`;
+every simplex is the carrier of its barycentre, so this holds for every simplex. A compact
+`C' ⊆ M` meets `κ(σ)` only if some face `τ` of `σ` is the carrier of a point of `κ⁻¹(C')`. Such
+`τ` are subsets of one finite vertex set by the same lemma, so there are finitely many of them,
+and each is a face of finitely many `σ`.
+
+The null images come from `DifferentiableOn.addHaar_image_eq_zero_of_finrank_lt_finrank` in
+charts. A maximal simplex `τ` has `τ°` open in the realization. If `dim τ < n` then `κ(τ°)`
 would be a non-empty open null set, which is impossible (`TauCeti.IsNullSet.interior_eq_empty`).
 If `dim τ > n`, an injective differential from a space of dimension above `n` into `ℝⁿ` is
 impossible. For the local bi-Lipschitz property at `x ∈ σ`, the chart representative `φ ∘ κ` is
@@ -1333,11 +1360,22 @@ of `TauCeti.IsSmoothTriangulation` suffices for every statement here.
   vanishes at `0`. Tau Ceti's `TauCeti.exists_contMDiff_not_isSmoothTriangulation_trans` shows it is not
   a `C¹` triangulation, and its inverse `t ↦ √t` is not Lipschitz near `0`, so the local
   bi-Lipschitz statement at the vertex `0` uses the injectivity of the differential.
+- The infinite star, one vertex `v` joined by an edge to each of infinitely many vertices, is
+  not locally finite, although every compact subset of its realization lies in a finite
+  subcomplex: `{v}` is compact, has carrier `{v}`, and meets every closed edge. Every
+  neighbourhood of `v` meets every open edge, so none is compact, and the route above does not
+  apply; nor is the realization a `1`-manifold, since removing `v` from any neighbourhood of `v`
+  leaves infinitely many components, while a point of a `1`-manifold has an interval
+  neighbourhood that it cuts into two. Local finiteness is a consequence of the manifold, not of
+  the realization.
 
-*Needs:* Mathlib `extChartAt`, `Convex.norm_image_sub_le_of_norm_hasFDerivWithin_le`,
+*Needs:* Mathlib `extChartAt`, `Manifold.locallyCompact_of_finiteDimensional`,
+`Convex.norm_image_sub_le_of_norm_hasFDerivWithin_le`,
 `Convex.norm_image_sub_le_of_norm_hasFDerivWithin_le'`; Tau Ceti `TauCeti.IsSmoothTriangulation`,
 `TauCeti.IsSimplexImmersion`,
-`AbstractSimplicialComplex.Realization`, `AbstractSimplicialComplex.exists_finset_support_subset_of_isCompact`,
+`AbstractSimplicialComplex.Realization`, `AbstractSimplicialComplex.carrier`,
+`AbstractSimplicialComplex.faceBarycenter`, `AbstractSimplicialComplex.continuous_faceInclusion`,
+`AbstractSimplicialComplex.exists_finset_support_subset_of_isCompact`,
 `PreAbstractSimplicialComplex.IsPure`, `DifferentiableOn.addHaar_image_eq_zero_of_finrank_lt_finrank`,
 `TauCeti.IsNullSet.interior_eq_empty`; GeometricTopology Layer 11.
 
