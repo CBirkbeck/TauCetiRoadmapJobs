@@ -230,6 +230,9 @@ At the pinned Tau Ceti; paths under `TauCeti/`.
 - §7.1: the homogeneous blocks `P_k`, Bernstein and Littlewood–Paley estimates, and the heat-block
   estimate `‖e^{sΔ}P_k f‖_p ≲ exp(−c4^k s)‖P_k f‖_p`; §7.2: homogeneous Besov spaces `Ḃ^s_{p,q}` with
   their realisation for `s < d/p`; §7.3: paraproducts and the Littlewood–Paley trichotomy (Layers 8–10).
+  §7.3 states its estimates in the Hölder–Besov spaces `𝒞^α`; the `L²`-based product bounds of Layers
+  8–10, such as `‖[u, v]‖_{Ḣ^σ} ≲ ‖u‖_{Ḣ¹}‖v‖_{Ḣ^{σ+1}}` on `ℝ⁴` for `−2 < σ < 1` (9.5, 10.5), follow from its
+  decomposition `fg = T_f g + T_g f + R(f, g)` and §7.1's Bernstein inequality.
 
 What PDE must provide (gap:lp-neumann-ball): for `1 < p < ∞`, the unit ball `B₁ ⊂ ℝ^d`, `d ≥ 2`,
 `f ∈ L^p(B₁)` and a vector field `V ∈ W^{1,p}(B₁; ℝ^d)` with `∫_{B₁} f = ∫_{∂B₁} ν·V`, the Neumann problem
@@ -539,14 +542,33 @@ and lines 982–989).
 ### 2.2 Approximation by smooth `G`-valued maps
 
 Prove: for `O ∈ G^{k,d/k}_loc(X)`, an open `U` with compact closure in `X`, open `V`, `W ⊆ U` with
-disjoint closures, and `ε > 0`, there is `O' ∈ G^{k,d/k}_loc(X)` equal to `O` almost everywhere on `V`
+`V ∩ W = ∅`, and `ε > 0`, there is `O' ∈ G^{k,d/k}_loc(X)` equal to `O` almost everywhere on `V`
 and off `U`, smooth with values in `G` on `W`, with `‖O' − O‖_{W^{k,d/k}(U)} < ε`; in particular `O` is
 the `W^{k,d/k}(B)`-limit of smooth `G`-valued maps on every ball `B` with closure in `X`
 (OhTataru-TopClass Lemma 3.2, lines 1038–1072). Route: inhomogeneous mollification
-`O_δ(x) = ∫ ζ(y) O(x − δh(x)y) dy` with a cut-off `h` vanishing on `V` and off a compact subset of `X`
-and equal to `1` on `W`; the Poincaré inequality on small balls gives
-`dist(O_δ(x), G)^d ≲ ∫_{B_{δh(x)}(x)} |∂O|^d → 0` uniformly, so `π_G ∘ O_δ` is defined and converges.
-The source's hypothesis `V ∩ W = ∅` is replaced by disjoint closures, which the cut-off `h` needs.
+`O_δ(x) = ∫ ζ(y) O(x − δh(x)y) dy`, with `ζ` smooth, supported in the unit ball and of integral `1`, and
+a smooth `h : X → [0, 1]` vanishing on `V` and off `U` and positive on `W`; such an `h` exists because
+`W` lies in the open set `U ∖ V̄` (an open `W` disjoint from `V` misses `V̄`), and every open subset of
+`ℝ^d` is the set where some smooth function `h ≥ 0` is positive. Then `O_δ = O` where `h = 0`, that is
+on `V` and off `U`, and `O_δ` is smooth where `h > 0`, in particular on `W`; the Poincaré inequality
+on small balls gives `dist(O_δ(x), G)^d ≲ ∫_{B_{δh(x)}(x)} |∂O|^d → 0` uniformly on the compact
+closure of `U`, so `π_G ∘ O_δ` is defined and converges. The source chooses `h` equal to `1` on `W`
+(line 1049), which needs disjoint closures of `V` and `W`; a cut-off that is only positive on `W`
+needs no more than `V ∩ W = ∅`.
+
+**Checks.**
+
+- `U = W = B₁`, `V = ∅` (the plain approximation on a ball): a smooth `h` equal to `1` on `B₁` equals `1`
+  on `∂B₁` and so is positive at points off `U`, where `O_δ` differs from `O`; the standard bump
+  `h(x) = exp(−1/(1 − |x|²))` for `|x| < 1`, `h = 0` otherwise, is smooth with values in `[0, e^{−1}]`,
+  positive on `W` and zero off `U`, as the route requires.
+- `U = B₁`, `V = B₁ ∩ {x₁ < 0}`, `W = B₁ ∩ {x₁ > 0}`: `V ∩ W = ∅` while the closures meet along
+  `{x₁ = 0}`, so no continuous `h` is `0` on `V` and `1` on `W`; the product of `exp(−1/x₁)` (for
+  `x₁ > 0`, and `0` for `x₁ ≤ 0`) with the bump of the previous Check is smooth, positive exactly on
+  `W`, and zero on `V` and off `U`, so the statement holds for this pair.
+- `V = U`, `W = ∅`: the conclusion is met by `O' = O`, and `O'` keeps every singularity of `O` in `V`
+  (for instance that of the map `exp(log log(1/|x|) X)` of 2.1 at `0 ∈ V`): smoothness is asserted on
+  `W` only.
 
 *Needs:* PDE §1.2, §1.4 (Sobolev embedding `W^{k,d/k} ⊆ W^{1,d}`) and §1.5 (Poincaré on balls); 1.2;
 2.1.
@@ -1436,21 +1458,43 @@ Corollaries 5.12–5.14, lines 1878–1948):
 
 ### 9.5 Convergence to a flat connection
 
-Prove (OhTataru-YMHF Corollary 5.15 and Lemma 5.33, lines 1952–1957 and 2509–2520): for a global `Ḣ¹`
+Prove (OhTataru-YMHF Corollary 5.15 and Lemma 5.33, lines 1952–1957 and 2509–2555): for a global `Ḣ¹`
 solution with `Q(a) ≤ Q < ∞` the limit `A_∞ = lim_{s→∞} A(s)` exists in `Ḣ¹` (in `ℋ` for `a ∈ ℋ`) and is flat;
-the linearised solution with data `b ∈ Ḣ^σ`, `0 ≤ σ ≤ 1` (resp. `b ∈ ℋ`), has a limit `B_∞` in `Ḣ^σ`
-(resp. `ℋ`), with `D(A_∞)_k B_{∞,j} − D(A_∞)_j B_{∞,k} = 0`; the map `a ↦ A_∞` is Lipschitz in `Ḣ¹`, `ℋ` and `Ḣ¹ ∩ Ḣ^σ` (`σ > 1`)
+the linearised solution with data `b ∈ Ḣ^σ`, `−1 < σ ≤ 1` (resp. `b ∈ ℋ`), has a limit `B_∞` in `Ḣ^σ`
+(resp. `ℋ`), with `‖B_∞‖_{Ḣ^σ} ≲_{Q,M₁} ‖b‖_{Ḣ^σ}` when `‖a‖_{Ḣ¹} ≤ M₁` and
+`D(A_∞)_k B_{∞,j} − D(A_∞)_j B_{∞,k} = 0`; the map `a ↦ A_∞` is Lipschitz in `Ḣ¹`, `ℋ` and `Ḣ¹ ∩ Ḣ^σ` (`σ > 1`)
 on bounded convex subsets of `Ḣ¹` on which `Q` is uniformly bounded, and `C¹` along every `C¹` curve in
-these spaces with uniformly bounded `Q`, with derivative `B_∞`. The source's Corollary 5.15 states the
-linearised limit for `−1 < σ < 2` (OhTataru-YMHF lines 1954–1955), while its proof, Lemma 5.33(2)
-(lines 2515–2516), gives `0 ≤ σ ≤ 1`; the statement above keeps the range that is proved.
+these spaces with uniformly bounded `Q`, with derivative `B_∞`.
+
+Route for `−1 < σ < 1`: the infinitesimal de Turck trick of the proof of Lemma 5.33 (lines 2538–2549), with
+the bound of Lemma 5.23, Case 1 (lines 2172–2208). Put `A₀(0) = 0`. Then `F_{0j}` solves the homogeneous
+equation of 8.3 with data `b`, so it is bounded in `Ḣ^σ` and tends to `0` there as `s → ∞` (for `σ < 0`
+reduce, by the uniform `Ḣ^σ` bound, to data in the dense subspace `L² ∩ Ḣ^{σ₁}`, `−2 < σ₁ < σ`, and
+interpolate between the `L²` decay and the `Ḣ^{σ₁}` bound). The `L¹` bound of 8.3, applied to the equation
+of `D^ℓF_{ℓ0}`, whose right side lies in `L¹Ḣ^{σ−1}` for `−1 < σ < 1`, gives
+`‖D^ℓF_{ℓ0}‖_{L¹Ḣ^{σ+1}} ≲_{Q,M₁} ‖b‖_{Ḣ^σ}`. Hence `A₀(s) = ∫₀^s D^ℓF_{ℓ0}` converges in `Ḣ^{σ+1}` to some `a_{0,∞}`.
+The product bound `‖[u, v]‖_{Ḣ^σ} ≲ ‖u‖_{Ḣ¹}‖v‖_{Ḣ^{σ+1}}` on `ℝ⁴`, valid for `−2 < σ < 1` (Bony's
+decomposition of PDE §7.3 with the Bernstein inequality of PDE §7.1), and `A → A_∞` in `Ḣ¹` then give
+`B_j = F_{0j} + D_jA₀ → D(A_∞)_j a_{0,∞}` in `Ḣ^σ`. This limit is `D(A_∞)`-curl-free because `A_∞` is flat,
+and the bound on `B_∞` is the uniform bound of 9.4. For `σ = 1` and for `ℋ` the route is the covariant div–curl
+system of lines 2530–2537 and 2550. The source's Corollary 5.15 states the linearised limit for
+`−1 < σ < 2` (lines 1954–1955). Its proof, Lemma 5.33(2), writes `0 ≤ σ ≤ 1` (lines 2515–2516), but the de
+Turck argument given there for `0 ≤ σ < 1` uses only facts that hold for `−1 < σ < 1` (for `σ < 0` the
+decay of `F_{0j}` by the reduction above), so it proves the negative range as well. For data in `Ḣ^σ`
+alone with `1 < σ < 2` neither place gives a proof, and that range is not stated here.
 
 **Checks.**
 
 - `G = U(1)`: `A_∞ = ∇φ`, the gradient part of `a`, and `a ↦ A_∞` is the bounded linear Helmholtz projection.
 - Pure gauge data `a = −O;x` with `O;x ∈ Ḣ¹`: `A_∞ = a`.
+- `G = U(1)`, `σ = −½`: the linearised flow is `∂_s B = ΔB − ∇(∂^ℓB_ℓ)`. For the splitting
+  `b = ∇ψ + b^{df}` it gives `B(s) = ∇ψ + e^{sΔ}b^{df}`, where `e^{sΔ}` is the multiplier `e^{−4π²s|ξ|²}`
+  in Mathlib's normalisation, and `‖e^{sΔ}b^{df}‖²_{Ḣ^{−1/2}} ≈ ∫ |ξ|^{−1}e^{−8π²s|ξ|²}|b̂^{df}(ξ)|² dξ → 0` by
+  dominated convergence. So `B_∞ = ∇ψ` is curl-free, and `‖B_∞‖_{Ḣ^{−1/2}} ≤ ‖b‖_{Ḣ^{−1/2}}` because each
+  block `P_k` commutes with the `L²`-orthogonal Helmholtz projection: the negative range holds, with
+  constant `1`, in the abelian case.
 
-*Needs:* 9.2–9.4.
+*Needs:* PDE §7.1, §7.3 (the product bound); 8.3, 9.1–9.4.
 
 ### 9.6 The Dichotomy Theorem
 
@@ -1494,7 +1538,7 @@ with infinite caloric size; the threshold `16π²` for `SU(2)`.
 
 ### Dependencies
 
-Layer 8; Layers 4, 6 and 7 for 9.6–9.7; PDE §6.3.
+Layer 8; Layers 4, 6 and 7 for 9.6–9.7; PDE §6.3, and PDE §7.1 and §7.3 for the product bound of 9.5.
 
 ## Layer 10: the caloric gauge and the caloric manifold
 
@@ -1593,6 +1637,13 @@ lines 3363–3385 and 613–619):
   `‖L(a, w)‖_{ℓ¹Ḣ^{σ+1}} ≲_{Q,E} ‖w‖_{Ḣ^σ}`;
 - the projection `Π_a w = b` is bounded on `L²` with range `T^{L²}_a𝒞` and kernel `D(a)Ḣ¹`.
 
+Route for the `Ḣ^σ` bound, `−1 < σ < 1` (OhTataru-YMHF lines 3381–3385): `‖a‖_{Ḣ¹} ≲_{Q,E} 1` by 10.3. Solve
+(5.23) with data `w`. By 9.5 its limit `W(∞)` exists in `Ḣ^σ` with `‖W(∞)‖_{Ḣ^σ} ≲_{Q,E} ‖w‖_{Ḣ^σ}`, and it is
+curl-free because `A_∞ = 0` for caloric `a`. So `W(∞) = −∇c` with `c = −Δ⁻¹∂^ℓW(∞)_ℓ` and
+`‖c‖_{Ḣ^{σ+1}} ≈ ‖W(∞)‖_{Ḣ^σ}`. Put `b = w + D(a)c`. The linearised flow of `D(a)c` is `D(A(s))c`, by the
+residual freedom of 9.1, and it tends to `∇c`, so the flow of `b` tends to `W(∞) + ∇c = 0`. Finally `[a, c]`
+is bounded in `Ḣ^σ` by the product bound of 9.5's route.
+
 Define the bundle of caloric initial data sets `T^{L²}𝒞 = {(a, b) ∈ ℋ × L² : a ∈ 𝒞, b ∈ T^{L²}_a𝒞}`
 (OhTataru-Threshold lines 920–925), equal to `{(a, Π_a w) : a ∈ 𝒞, w ∈ L²}`.
 
@@ -1603,7 +1654,7 @@ Define the bundle of caloric initial data sets `T^{L²}𝒞 = {(a, b) ∈ ℋ ×
 - `w = D(a)c₀` with `c₀ ∈ Ḣ¹`: `b = 0` and `c = −c₀`, so `Π_a` kills the linearised gauge directions.
 - `w ∈ T^{L²}_a𝒞`: `c = 0` and `Π_a w = w`.
 
-*Needs:* 8.2, 9.5, 10.2–10.4.
+*Needs:* PDE §7.1, §7.3 (the product bound); 8.2, 9.1, 9.5, 10.2–10.4.
 
 ### Examples
 
@@ -1612,7 +1663,7 @@ projection; pure gauges, which `Cal` sends to `0`.
 
 ### Dependencies
 
-Layers 8–9; Layer 7 for the subthreshold existence of `Cal`.
+Layers 8–9; Layer 7 for the subthreshold existence of `Cal`; PDE §7.1 and §7.3 for the product bound in 10.5.
 
 ## Downstream consumers
 

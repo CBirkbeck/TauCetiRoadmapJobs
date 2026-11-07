@@ -355,11 +355,11 @@
           "id": "2.2",
           "kind": "theorem",
           "name": "YangMills.GkpLoc.exists_smooth_approx",
-          "statement": "For O ∈ G^{k,d/k}_loc(X), U with compact closure in X, V, W ⊆ U open with disjoint closures, ε > 0: there is O' ∈ G^{k,d/k}_loc(X) equal to O a.e. on V and off U, smooth G-valued on W, with ‖O' − O‖_{W^{k,d/k}(U)} < ε.",
+          "statement": "For O ∈ G^{k,d/k}_loc(X), U with compact closure in X, V, W ⊆ U open with V ∩ W = ∅, ε > 0: there is O' ∈ G^{k,d/k}_loc(X) equal to O a.e. on V and off U, smooth G-valued on W, with ‖O' − O‖_{W^{k,d/k}(U)} < ε. Route: inhomogeneous mollification with a smooth cut-off h ≥ 0 vanishing on V and off U and positive on W (positivity set U ∖ V̄).",
           "hypotheses": [
             "d ≥ 3",
             "k ≥ 1",
-            "closures of V and W disjoint"
+            "V ∩ W = ∅ (the source's hypothesis; a cut-off positive on W needs no more)"
           ],
           "locator": {
             "source": "OhTataru-TopClass",
@@ -373,7 +373,23 @@
             "target:2.1"
           ],
           "api": [],
-          "tests": []
+          "tests": [
+            {
+              "name": "ballCutoff",
+              "kind": "degenerate",
+              "statement": "U = W = B₁, V = ∅: a smooth h = 1 on B₁ is positive off U; the bump exp(−1/(1−|x|²)) on B₁, 0 off it, is smooth, positive on W, zero off U"
+            },
+            {
+              "name": "touchingClosures",
+              "kind": "computation",
+              "statement": "U = B₁, V = B₁ ∩ {x₁<0}, W = B₁ ∩ {x₁>0}: closures meet, no continuous h is 0 on V and 1 on W; exp(−1/x₁)·bump is smooth and positive exactly on W"
+            },
+            {
+              "name": "smoothOnlyOnW",
+              "kind": "non-example",
+              "statement": "V = U, W = ∅: O' = O keeps the singularity of exp(log log(1/|x|)X) at 0 ∈ V; smoothness is claimed on W only"
+            }
+          ]
         },
         {
           "id": "2.3",
@@ -1804,15 +1820,19 @@
           "id": "9.5",
           "kind": "theorem",
           "name": "YangMills.HeatFlow.flatLimit",
-          "statement": "For a global Ḣ¹ solution with Q(a) ≤ Q < ∞, A_∞ = lim A(s) exists in Ḣ¹ (ℋ) and is flat; for data b ∈ Ḣ^σ, 0 ≤ σ ≤ 1 (resp. ℋ), the linearised limit B_∞ exists in Ḣ^σ (resp. ℋ), and is D(A_∞)-curl-free; a ↦ A_∞ is Lipschitz on bounded convex sets with uniform Q and C¹ along C¹ curves with uniform Q, with derivative B_∞.",
+          "statement": "For a global Ḣ¹ solution with Q(a) ≤ Q < ∞, A_∞ = lim A(s) exists in Ḣ¹ (ℋ) and is flat; for data b ∈ Ḣ^σ, −1 < σ ≤ 1 (resp. ℋ), the linearised limit B_∞ exists in Ḣ^σ (resp. ℋ), with ‖B_∞‖_{Ḣ^σ} ≲_{Q,M₁} ‖b‖_{Ḣ^σ} for ‖a‖_{Ḣ¹} ≤ M₁, and is D(A_∞)-curl-free; a ↦ A_∞ is Lipschitz on bounded convex sets with uniform Q and C¹ along C¹ curves with uniform Q, with derivative B_∞. Route for −1 < σ < 1: the infinitesimal de Turck trick (F_{0j} → 0 in Ḣ^σ by 8.3; ‖D^ℓF_{ℓ0}‖_{L¹Ḣ^{σ+1}} ≲ ‖b‖_{Ḣ^σ} by the L¹ bound of 8.3; product bound Ḣ¹ × Ḣ^{σ+1} → Ḣ^σ on ℝ⁴).",
           "hypotheses": [
             "d = 4"
           ],
           "locator": {
             "source": "OhTataru-YMHF",
-            "where": "Corollary 5.15, Lemma 5.33, lines 1952–1957, 2509–2520 (σ-range 0 ≤ σ ≤ 1 of Lemma 5.33(2); Corollary 5.15 states −1 < σ < 2)"
+            "where": "Corollary 5.15, Lemma 5.33, lines 1952–1957, 2509–2555; Lemma 5.23 Case 1, lines 2172–2208 (Lemma 5.33(2) writes 0 ≤ σ ≤ 1 and its de Turck argument covers −1 < σ < 1; Corollary 5.15 states −1 < σ < 2, of which 1 < σ < 2 is not proved and not stated)"
           },
           "prerequisites": [
+            "roadmap:PDE §7.1",
+            "roadmap:PDE §7.3",
+            "target:8.3",
+            "target:9.1",
             "target:9.2",
             "target:9.3",
             "target:9.4"
@@ -1828,6 +1848,11 @@
               "name": "pureGauge",
               "kind": "degenerate",
               "statement": "a = −O;x: A_∞ = a"
+            },
+            {
+              "name": "u1Negative",
+              "kind": "computation",
+              "statement": "U(1), σ = −½: B(s) = ∇ψ + e^{sΔ}b^{df} → ∇ψ in Ḣ^{−1/2}, curl-free, ‖B_∞‖ ≤ ‖b‖ (blocks commute with the Helmholtz projection)"
             }
           ]
         },
@@ -2081,7 +2106,10 @@
             "where": "Definition 2.21, lines 604–610; lines 3347–3361; Proposition 7.9, lines 3363–3385; Theorem 2.22, lines 613–619; OhTataru-Threshold lines 920–925"
           },
           "prerequisites": [
+            "roadmap:PDE §7.1",
+            "roadmap:PDE §7.3",
             "target:8.2",
+            "target:9.1",
             "target:9.5",
             "target:10.2",
             "target:10.3",
@@ -2096,7 +2124,7 @@
             {
               "name": "decomposition",
               "role": "structure",
-              "statement": "w = b − D(a)c with ‖b‖_{Ḣ^σ} + ‖c‖_{Ḣ^{σ+1}} ≲ ‖w‖_{Ḣ^σ} (−1<σ<1) and the ℋ bound"
+              "statement": "w = b − D(a)c with ‖b‖_{Ḣ^σ} + ‖c‖_{Ḣ^{σ+1}} ≲ ‖w‖_{Ḣ^σ} (−1<σ<1, from the linearised limit W(∞) = −∇c of 9.5 on that range) and the ℋ bound"
             },
             {
               "name": "projection",
