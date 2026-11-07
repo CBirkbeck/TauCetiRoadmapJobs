@@ -1,0 +1,13 @@
+{
+  "review": {
+    "status": "needs_changes",
+    "reviewer": "independent-review-PRREVIEW-FormalConnectionsOpers~6",
+    "head": "7e7e5074eee11620ed68a31e3e29f530caae86a8",
+    "pr": 1056,
+    "folder": "FormalConnectionsOpers",
+    "date": "2026-11-07",
+    "findings": 1,
+    "blocking": 1,
+    "notes": "incremental re-review of 16 changed lines since 0694b63. Checked: the previous R01 (repaired: the description names the ReductiveGroups revision #1676, with #1808/#1797); the rewritten Scope bullet on ReductiveGroups 3A.5 against ReductiveGroups on main and at #1676, #1808, #1797, #1854, ComplexComparisonPartII C-1.1 at #848 and the merge order (new R01, P2: 3A.5 owns its own classical topology and charts at every head stating G(C), so G(C) cannot rest on C-1.1's, and the identification §4.3 needs is unowned); the deleted ReductiveGroups Layer 11 consumer bullet (correct once #1676 merges first); the consumers of F4.3 found with roadmaps grep. Gate rerun: every counter 0, OK; the worker's gate also has build=0. lake env lean: three sorry warnings, exit 0. Suggested.lean unchanged and pins unchanged. depcheck: 239 roadmaps, 2427 edges, 0 problems. No outside-folder change. The adversarial table carries 84 rows from r5 and adds 6 new rows for the changed passages. No sampled target falls in the changed lines."
+  }
+}
