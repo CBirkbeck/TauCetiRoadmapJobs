@@ -1,0 +1,13 @@
+{
+  "review": {
+    "status": "needs_changes",
+    "reviewer": "independent-review-PRREVIEW-K3BlochGroups~9",
+    "head": "feadaba3090eaffedb4618b05dbaa0cb216ebe6d",
+    "pr": 1430,
+    "folder": "K3BlochGroups",
+    "date": "2026-11-07",
+    "findings": 1,
+    "blocking": 0,
+    "notes": "incremental re-review of 120 changed lines since 2fe1218. All seven previous findings (R01-R07) are repaired: section 4.9 reduced to eta^3 = 12 nu with pi_3 S = Z/24 and nu imported from StringOrientation S2.3, the GeometryOfNumbers 6.1a, AlgebraicTopology Stage 4, BordismFormalGroups F1-F2, GeneralizedCohomology G2.5/G4.x/G5.6 and Tau Ceti formal-group contracts dropped, the unnamed StableHomotopyKTheory 7.1 facts cited in prose, homotopyGroup_sphere_add_three_equiv deleted, finite-field headlines on [Finite F]/Nat.card with nonempty_ names, Ravenel and Adams references dropped. One new P3 finding: README line 1358 credits ArithmeticKTheory 7.5 with a Moore-spectrum divisibility on the way to eta^4 = 0, which its head e6275108 no longer contains (eta_pow_four_eq_zero added at a9ba4264, removed at 97c9c8c8); repair is to delete that sentence. New 4.9 mathematics recomputed: E2^(3,6) = Z/2 on alpha_1^3 (three coboundaries 2[t1|t1|t1]), no differential in or out, stem-one detection, eta^3 = 12k nu = 12 nu for every unit k, the four Checks. Suppliers resolved: StringOrientation S2.3 (head 07f0981, lines 607-662), EllipticCohomology E4.S/E5 (main), StableHomotopyKTheory 7.1 (open head, line 2351/2359), ArithmeticKTheory 7.5 (lines 3958-4012), BordismFormalGroups F3/F4 and GeneralizedCohomology G2/G3 item 9 (main). Ownership: eta^3 = 12 nu and E2^(3,6) stated nowhere else (FourManifolds only quotes it). Gate: all checks pass (worker's gate build=0; mine OK), depcheck 239 roadmaps 2428 edges 0 problems; lake env lean: eight sorry warnings only; #check @ of all 13 declarations matches the README; one-tactic probe (simp, infer_instance, rfl, decide, trivial) fails on the three changed theorems. Seeded sample in the diff: 4.9 (Hatcher printed p.385, hatcher line 16749-16752) and 5.2 (hutchinson2013 Cor 3.6 p.14, Lemma 3.14 p.17) verified; other sampled targets untouched and carried. Adversarial table: 12 new rows with values plus 16 carried rows for the sampled targets and headlines."
+  }
+}
