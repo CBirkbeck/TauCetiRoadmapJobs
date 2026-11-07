@@ -321,6 +321,7 @@
       "where": "Theorem 1.2 (lines 336–348, p. 8), Theorem 1.3 (lines 349–368, pp. 8–9), Corollary 1.4 (line 371, p. 9)"
      },
      "prerequisites": [
+      "target:1.4",
       "target:1.5"
      ],
      "api": [],
@@ -471,7 +472,7 @@
       {
        "name": "ContDiffLocallyHolderOn.comp",
        "role": "functoriality",
-       "statement": "For s (and, for compositions, the domain t of f) relatively open in a convex set with nonempty interior: sums, bilinear compositions, composition with maps C^∞ within s, and inversion of invertible linear maps preserve the class."
+       "statement": "For s (and, for compositions, the domain t of f) relatively open in a convex set with nonempty interior: sums, bilinear compositions, composition with maps C^∞ within s, and postcomposition F ∘ f with a map F that is C^∞ on an open set containing f(s) (inversion of invertible linear maps, t ↦ 1/t on nowhere-vanishing scalar functions, exp) preserve the class."
       },
       {
        "name": "contDiffLocallyHolderOn_iff_mem_Ckα_loc",
@@ -571,7 +572,7 @@
      "id": "2.3",
      "kind": "definition",
      "name": "TauCeti.Manifold.IsBilinFormOfClass",
-     "statement": "For ℛ : TauCeti.Manifold.MetricRegularity (C^k, k ∈ ℕ∞, or C^{k,α}), a pointwise bilinear field b is of class C^k if its section is ContMDiff of order k, and of class C^{k,α} if for every x₀ its coefficients in the chart at x₀ are ContDiffLocallyHolderOn k α on the chart target.",
+     "statement": "For ℛ : TauCeti.Manifold.MetricRegularity (C^k, k ∈ ℕ∞, or C^{k,α}), a pointwise bilinear field b is of class C^k if its section is ContMDiff of order k, and of class C^{k,α} if for every x₀ its coefficients in the chart at x₀ are ContDiffLocallyHolderOn k α on the extended chart target (extChartAt I x₀).target. The class ℛ of a function f : M → ℝ and of a section s of TM, T*M or Hom(TM, TM) is defined by the same test: C^k is ContMDiff of order k (of f, respectively of the section into the total space); C^{k,α} is ContDiffLocallyHolderOn k α of f ∘ (extChartAt I x₀).symm, respectively of z ↦ (trivializationAt _ _ x₀ ⟨y, s y⟩).2 with y = (extChartAt I x₀).symm z, on (extChartAt I x₀).target for every x₀; on an open U, the same test on the open submanifold U.",
      "hypotheses": [
       "IsManifold I ∞ M",
       "E finite-dimensional"
@@ -585,6 +586,8 @@
       "target:2.2",
       "mathlib:contMDiffAt_hom_bundle",
       "mathlib:contMDiffWithinAt_hom_bundle",
+      "mathlib:Bundle.contMDiffAt_section",
+      "mathlib:extChartAt",
       "mathlib:ModelWithCorners.uniqueDiffOn",
       "tauceti:TauCeti.Manifold.tangentBilinFormInCoordinates"
      ],
@@ -602,7 +605,7 @@
       {
        "name": "IsBilinFormOfClass.add_mul_inv",
        "role": "structure",
-       "statement": "Sums, products with functions of class ℛ, and inverses of nondegenerate fields (in coordinates) preserve the class."
+       "statement": "Sums of fields of class ℛ; products of a class-ℛ function with a class-ℛ function, vector field, one-form or bilinear field; quotients by a nowhere-vanishing class-ℛ function; F ∘ f for f of class ℛ and F C^∞ on an open set containing f(M); tensor products of class-ℛ one-forms; contractions b(·, X) and evaluations θ(X); and the coefficient matrix of the pointwise inverse of a nondegenerate field (in every chart) are of class ℛ."
       }
      ],
      "tests": [
@@ -620,6 +623,16 @@
        "name": "nonsmooth_chart",
        "kind": "non-example",
        "statement": "Through the homeomorphism (t, x) ↦ (t, x³) the flat metric has coefficient (1/9)y^{−4/3}: only charts of the smooth atlas are allowed."
+      },
+      {
+       "name": "function_class_product_rule",
+       "kind": "computation",
+       "statement": "On ℝ × ℝ² (self model), f(t, x) = |x|^{3/2} has derivative (3/2)|x|^{−1/2}⟪x, ·⟫, ½-Hölder (ratio 3√a/√(2a) = 3/√2 ≈ 2.1213 at x = (±a, 0)), radial second derivative (3/4)|x|^{−1/2} unbounded: f is C^{1,½}, not C². Hence f∂_{x¹} is C^{1,½} and the acoustical metric −4dt² + (dx¹ − f dt)² + (dx²)² is C^{1,½} by the product rule, not C² since g(∂_t, ∂_{x¹}) = −f."
+      },
+      {
+       "name": "vector_field_by_coordinates",
+       "kind": "non-example",
+       "statement": "X = x∂_x on ℝ has coordinate x and is C^∞ while its length |x| is not differentiable at 0: a definition by the class of the pointwise length would reject a smooth field."
       }
      ]
     },
@@ -627,7 +640,7 @@
      "id": "2.3a",
      "kind": "theorem",
      "name": "TauCeti.Manifold.isBilinFormOfClass_iff_forall_mem_maximalAtlas",
-     "statement": "b is of class ℛ iff for every chart e of the maximal smooth atlas the coefficient matrix z ↦ b(De⁻¹_z ·, De⁻¹_z ·) is C^k, respectively ContDiffLocallyHolderOn k α, on e.target.",
+     "statement": "b is of class ℛ iff for every chart e of the maximal smooth atlas the coefficient matrix z ↦ b(De⁻¹_z ·, De⁻¹_z ·), with De⁻¹_z the derivative within range I of (e.extend I).symm at z, is C^k, respectively ContDiffLocallyHolderOn k α, on the extended chart target (e.extend I).target = I.symm ⁻¹' e.target ∩ range I ⊆ E, relatively open in range I.",
      "hypotheses": [
       "IsManifold I ∞ M",
       "E finite-dimensional"
@@ -639,7 +652,9 @@
      "prerequisites": [
       "target:2.1",
       "target:2.3",
-      "mathlib:contMDiffAt_hom_bundle"
+      "mathlib:contMDiffAt_hom_bundle",
+      "mathlib:OpenPartialHomeomorph.extend",
+      "mathlib:OpenPartialHomeomorph.extend_target"
      ],
      "proofSketch": "C^k: contMDiffAt_hom_bundle in every chart. C^{k,α}: transition maps are C^∞ within range I and 2.1 is stable under composition and products.",
      "api": [],
@@ -687,9 +702,9 @@
      "id": "2.5",
      "kind": "construction",
      "name": "TauCeti.Manifold.LorentzianMetric.pullback",
-     "statement": "Restriction to open subsets; pullback along smooth local diffeomorphisms; conformal rescaling e^{2φ}g; metrics from continuous coframes; the acoustical metric −c²dt² + Σ(dx^i − v^i dt)² for functions t, x^i with independent differentials (corners allowed), with B = ∂_t + v·∇ timelike, g(B,B) = −c², g⁻¹(dt,dt) = −c⁻², slices spacelike; the double null metric −2Ω²(du⊗dv + dv⊗du) + γ with g⁻¹(du,du) = 0, g⁻¹(du,dv) = −(2Ω²)⁻¹; and g = h − 2h(·,X)h(·,X)/h(X,X) from a Riemannian h and nowhere-vanishing X; each of the class of its data.",
+     "statement": "Restriction to open subsets; pullback along smooth local diffeomorphisms; conformal rescaling e^{2φ}g; metrics from continuous coframes; the acoustical metric −c²dt² + Σ(dx^i − v^i dt)² for functions t, x^i with independent differentials (corners allowed), with B = ∂_t + v·∇ timelike, g(B,B) = −c², g⁻¹(dt,dt) = −c⁻², slices spacelike; the double null metric −2Ω²(du⊗dv + dv⊗du) + γ for a function Ω > 0 and coefficient functions γ_{AB} of class ℛ with g⁻¹(du,du) = 0, g⁻¹(du,dv) = −(2Ω²)⁻¹; and g = h − 2h(·,X)h(·,X)/h(X,X) from a Riemannian h and nowhere-vanishing X; each of the class of its data.",
      "hypotheses": [
-      "data of class ℛ",
+      "data of class ℛ (functions, vector fields, one-forms and bilinear fields in the sense of 2.3)",
       "c > 0, Ω > 0, γ positive definite, X nowhere vanishing"
      ],
      "locator": {
@@ -752,6 +767,7 @@
      },
      "prerequisites": [
       "target:1.3",
+      "target:1.4",
       "target:1.5",
       "target:2.2",
       "tauceti:TauCeti.Manifold.IsPiecewiseContMDiffOn",
@@ -766,7 +782,12 @@
       {
        "name": "IsCausalCurve.comp_reparam",
        "role": "functoriality",
-       "statement": "Increasing C¹ reparametrisations, restriction and concatenation preserve causal, timelike, null curves."
+       "statement": "Increasing C¹ reparametrisations with positive derivative, and restriction to a subinterval [c, d] ⊆ [a, b] with c < d, preserve causal, timelike and null curves."
+      },
+      {
+       "name": "IsCausalCurve.concat_iff",
+       "role": "structure",
+       "statement": "For causal (timelike, null) γ₁ on [a, b] and γ₂ on [b, c] with γ₁(b) = γ₂(b), their concatenation is causal (timelike, null) on [a, c] iff the velocity of γ₁ within [a, b] at b and the velocity of γ₂ within [b, c] at b lie in the closure of one time cone of g_{γ₁(b)}."
       },
       {
        "name": "IsCausalCurve.velocity_ne_zero",
@@ -788,7 +809,7 @@
       {
        "name": "break_condition",
        "kind": "non-example",
-       "statement": "Velocities (1,0) then (−1,0) are timelike on each piece but in opposite cones; (1,1) then (−1,−1) has η = 0 ≤ 0 yet is not causal."
+       "statement": "Velocities (1,0) then (−1,0) are timelike on each piece but in opposite cones (η((1,0),(−1,0)) = 1 > 0), so this concatenation of two timelike curves with matching endpoint is not timelike: concatenation needs the junction condition; (1,1) then (1,−1) is a null curve; (1,1) then (−1,−1) has η = 0 ≤ 0 yet is not causal."
       }
      ]
     }
@@ -802,7 +823,7 @@
      "id": "3.1",
      "kind": "definition",
      "name": "CovariantDerivative.IsLeviCivitaFor",
-     "statement": "For a pointwise bilinear field b and cov : CovariantDerivative I E (TangentSpace I): cov.torsion = 0 and v(b(Y, Z)) = b(∇_v Y, Z) + b(Y, ∇_v Z) for v ∈ T_xM and Y, Z differentiable at x.",
+     "statement": "For a pointwise bilinear field b and cov : CovariantDerivative I E (TangentSpace I), the conjunction of: the pairings y ↦ b_y(Y y, Z y) of fields Y, Z differentiable at x are differentiable at x, for every x; cov.torsion = 0; and v(b(Y, Z)) = b(∇_v Y, Z) + b(Y, ∇_v Z) for v ∈ T_xM and Y, Z differentiable at x. The first clause makes the left side of compatibility a derivative rather than the junk value 0; it holds for b differentiable as a section (MDifferentiableAt.clm_bundle_apply₂), in particular for b of class C¹.",
      "hypotheses": [
       "IsManifold I ∞ M",
       "E finite-dimensional"
@@ -814,6 +835,8 @@
      "prerequisites": [
       "mathlib:CovariantDerivative",
       "mathlib:CovariantDerivative.torsion",
+      "mathlib:MDifferentiableAt.clm_bundle_apply₂",
+      "tauceti:TauCeti.Manifold.ContMDiffNondegenerateMetric.mdifferentiableAt_apply",
       "tauceti:TauCeti.Manifold.koszulBilinear",
       "tauceti:TauCeti.Manifold.koszulBilinear_sub_two_mul_apply_eq_derivBilinearTensor",
       "tauceti:TauCeti.Manifold.metricProductRule_of_two_apply_eq_koszulBilinear",
@@ -825,12 +848,12 @@
       {
        "name": "IsLeviCivitaFor.iff_smooth",
        "role": "compatibility",
-       "statement": "For smooth b it is ContMDiffNondegenerateMetric.IsLeviCivitaConnection; for smooth Riemannian metrics Mathlib's CovariantDerivative.IsLeviCivitaConnection."
+       "statement": "For smooth b it is ContMDiffNondegenerateMetric.IsLeviCivitaConnection (the first clause by ContMDiffNondegenerateMetric.mdifferentiableAt_apply); for smooth Riemannian metrics Mathlib's CovariantDerivative.IsLeviCivitaConnection."
       },
       {
        "name": "isLeviCivitaFor_iff_koszul",
        "role": "characterisation",
-       "statement": "For symmetric b with differentiable pairings, IsLeviCivitaFor cov b implies 2b(∇_X Y, Z) = koszulBilinear I b X Y Z for differentiable X, Y, Z; if b is moreover nondegenerate at every point, the Koszul identity implies IsLeviCivitaFor cov b (compatibility from symmetry alone, torsion-freeness from nondegeneracy), so the two are equivalent."
+       "statement": "For symmetric b, IsLeviCivitaFor cov b implies 2b(∇_X Y, Z) = koszulBilinear I b X Y Z for differentiable X, Y, Z; if b is symmetric, nondegenerate at every point and has differentiable pairings of differentiable fields, the Koszul identity implies IsLeviCivitaFor cov b (compatibility from symmetry alone, torsion-freeness from nondegeneracy), so for such b the two are equivalent."
       },
       {
        "name": "IsLeviCivitaFor.pullback",
@@ -858,6 +881,11 @@
        "name": "degenerate_koszul",
        "kind": "non-example",
        "statement": "For b = 0 on ℝ² and ∇_v Y = DY(v) + v⁰JY, the Koszul identity reads 0 = 0 while the torsion at (e₀, e₁) is e₀ ≠ 0: the converse needs nondegeneracy. For b = η the same connection violates it: with constant X = Z = e₀, Y = e₁, koszulBilinear = 0 and 2η(Je₁, e₀) = −2."
+      },
+      {
+       "name": "nondifferentiable_pairing",
+       "kind": "non-example",
+       "statement": "b = (1 + |t|)η on ℝ² is a continuous Lorentzian metric; the pairing −(1 + |t|) of the constant fields e₀, e₀ is not differentiable at (0, x), so no covariant derivative is Levi-Civita for b. Without the first clause the compatibility law at (0, x) for these fields and the trivial connection would read 0 = 0 with the junk derivative 0, although the one-sided t-derivatives of the pairing are ∓1."
       }
      ]
     },
@@ -898,7 +926,7 @@
      "id": "3.3",
      "kind": "theorem",
      "name": "CovariantDerivative.IsLeviCivitaFor.christoffelSymbol_eq",
-     "statement": "For symmetric nondegenerate b of class C^k (k ≥ 1, k ∈ ℕ∞), resp. C^{k,α} (k ≥ 1), and ∇ Levi-Civita for b: in the chart at x₀, Γ^k_ij = ½ g^{kl}(∂_i g_jl + ∂_j g_il − ∂_l g_ij) on the chart target with within-derivatives; Γ is C^{k−1}, resp. ContDiffLocallyHolderOn (k−1) α; Γ̃_z(a,b) = (Dφ_z)⁻¹(D²φ_z(a,b) + Γ_{φ(z)}(Dφ_z a, Dφ_z b)) for φ the transition from the chart of Γ̃ to the chart of Γ (x = φ(z)); ∇Y is C^{min(j, k−1)} for Y ∈ C^{j+1}.",
+     "statement": "For symmetric nondegenerate b of class C^k (k ≥ 1, k ∈ ℕ∞), resp. C^{k,α} (k ≥ 1), and ∇ Levi-Civita for b: in the chart at x₀, Γ^k_ij = ½ g^{kl}(∂_i g_jl + ∂_j g_il − ∂_l g_ij) on the extended chart target (extChartAt I x₀).target with within-derivatives; Γ is C^{k−1}, resp. ContDiffLocallyHolderOn (k−1) α; Γ̃_z(a,b) = (Dφ_z)⁻¹(D²φ_z(a,b) + Γ_{φ(z)}(Dφ_z a, Dφ_z b)) for φ the transition from the chart of Γ̃ to the chart of Γ (x = φ(z)); ∇Y is C^{min(j, k−1)} for Y ∈ C^{j+1}.",
      "hypotheses": [
       "b symmetric nondegenerate of class C^k or C^{k,α}, k ≥ 1"
      ],
@@ -1065,7 +1093,7 @@
       "mathlib:ODE_solution_unique_of_mem_Ioo",
       "mathlib:IsPicardLindelof"
      ],
-     "proofSketch": "Christoffel symbols locally Lipschitz on chart targets; ODE uniqueness on the chart target; open-closed argument in J.",
+     "proofSketch": "Christoffel symbols locally Lipschitz on each extended chart target (extChartAt I x₀).target; ODE uniqueness on that set (relatively open in range I); open-closed argument in J.",
      "api": [],
      "tests": []
     }
@@ -1163,7 +1191,7 @@
      "id": "4.3",
      "kind": "theorem",
      "name": "TauCeti.Manifold.LorentzianMetric.card_timeOrientation",
-     "statement": "For time-orientable (M, g) with ConnectedSpace M, Nat.card (TimeOrientation g) = 2. Future-/past-directed causal vectors (g(T(x), v) < 0 / > 0) depend only on the orientation; a causal curve is future-directed iff one of its one-sided velocities is.",
+     "statement": "For time-orientable (M, g) with ConnectedSpace M, Nat.card (TimeOrientation g) = 2. Future-/past-directed causal vectors (g(T(x), v) < 0 / > 0) depend only on the orientation; a causal curve is future-directed iff one of its one-sided velocities is. The concatenation of two future-directed causal (timelike, null) curves with matching endpoint is a future-directed causal (timelike, null) curve, since both one-sided velocities at the junction lie in the closure of the future time cone (2.6 junction condition).",
      "hypotheses": [
       "ConnectedSpace M",
       "IsTimeOrientable g"
@@ -1180,7 +1208,13 @@
       "target:4.1"
      ],
      "api": [],
-     "tests": []
+     "tests": [
+      {
+       "name": "concat_future_directed",
+       "kind": "non-example",
+       "statement": "For [∂_t] on Minkowski ℝ²: (1, 1) then (1, −1) are future-directed (η(e₀, ·) = −1) and concatenate to a future-directed null curve; (1, 0) then (−1, 0) joins a future-directed piece (η(e₀, (1, 0)) = −1) to a past-directed one (η(e₀, (−1, 0)) = 1) and is not causal."
+      }
+     ]
     },
     {
      "id": "4.3a",
@@ -1247,6 +1281,7 @@
       "where": "Remark 2.1.2, lines 121–131, p. 4; minguzzi2019 §1.7, lines 456–465, p. 11; sbierski2018 Remark 2.16, lines 485–489, p. 11"
      },
      "prerequisites": [
+      "target:1.5",
       "target:2.4",
       "target:2.5",
       "target:4.1",
