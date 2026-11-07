@@ -1,0 +1,18 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "EllipticCurveModularityTotallyReal"
+
+[[source]]
+id = "LeHung26"
+authors = "Bao V. Le Hung"
+title = "A geometric prime switch for elliptic curves over totally real and CM fields"
+year = 2026
+locator_scheme = "theorem"
+locator = "Theorem 1.1 p.2 (totally real part); inputs 2.1-2.2 pp.4-5; Section 3 pp.6-7; Section 5 p.9 (locators as filed, unverified)"
+url = "https://hexagonmath.org/pdf/2610.00156v1"
+fetched_from = "https://hexagonmath.org/pdf/2610.00156v1"
+fetched_at = "2026-11-07T19:53:02Z"
+sha256 = "a4235c74b05d21ae022d415b54c8bbc66a05d1fd3c7719589fc58c3f5a9f8e58"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-07"
+resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/3439#issuecomment-6712044815"
