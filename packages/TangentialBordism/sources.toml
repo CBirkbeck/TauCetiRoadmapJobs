@@ -1,0 +1,18 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "TangentialBordism"
+
+[[source]]
+id = "hatcherSS"
+authors = "A. Hatcher"
+title = "Spectral Sequences (Chapter 1: The Serre Spectral Sequence)"
+locator_scheme = "section"
+locator = "Chapter 1, Section 1.1"
+url = "https://pi.math.cornell.edu/~hatcher/SSAT/SSch1.pdf"
+fetched_from = "https://pi.math.cornell.edu/~hatcher/SSAT/SSch1.pdf"
+fetched_at = "2026-11-07T02:38:09Z"
+sha256 = "d34a09b4559eade18dac2c01f6718d4689c5f565d9dc252c3a67de0167520eca"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-07"
+cited_for = ["5.7"]
+version_note = "undated work-in-progress chapter on the author's page; the copy read on 2026-11-07, Atiyah-Hirzebruch paragraph on p. 18"
