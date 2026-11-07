@@ -428,3 +428,22 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-21"
 cited_for = ["4.1 coordinate lattice reduction Check"]
+
+[[source]]
+id = "HuberKings"
+authors = "Annette Huber, Guido Kings"
+title = "A $p$-adic analogue of the Borel regulator and the Bloch-Kato exponential map"
+year = 2006
+venue = "Journal of the Institute of Mathematics of Jussieu, volume 10, issue 01, 2011, pp. 149-190"
+arxiv = "math/0612611v1"
+locator_scheme = "theorem"
+locator = "Definition 2.2.1"
+url = "https://arxiv.org/abs/math/0612611v1"
+fetched_from = "https://arxiv.org/pdf/math/0612611v1"
+fetched_at = "2026-11-07T06:16:49Z"
+sha256 = "028c4f89602090632e4caf894fff1be9c5f974eed9ab1171ff1592cf24d9025b"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-07"
+version_note = "arXiv v1"
+cited_for = ["2.2"]
