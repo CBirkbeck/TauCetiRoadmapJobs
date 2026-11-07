@@ -1410,7 +1410,7 @@
      "id": "5.1.2",
      "kind": "theorem",
      "name": "swan_tensor_slopeOne",
-     "statement": "Slope decomposition and s(V) = Σ λ r(V_λ); for L of rank one and Swan one, s(V ⊗ L) = r(V_{[0,1[}) + s(V_1 ⊗ L) + s(V_{]1,∞[}) with s(V_1 ⊗ L) ≤ r(V_1); ℒ_ψ(a/π) has slope one; for k algebraically closed and V ≠ 0 purely of slope one, some a ∈ k makes V ⊗ ℒ_ψ(a/π) have a nonzero part of slope < 1. Route of the last clause, with K = k((π)) and G^u the upper ramification subgroups of G_K: G^1/G^{1+} is abelian of exponent p, so it suffices that every character θ of it is ℒ_ψ(b/π)|_{G^1} for some b ∈ k. θ factors through H^1 = Gal(L/L_0) for a finite Galois L/K with group H, H^{1+} = 1 and L_0 = L^{H^1}; with m = ψ_{L_0/K}(1) (Herbrand function), G^1 = G_{L_0}^m and G^{1+} = G_{L_0}^{m+}, so θ = ℒ_ψ(w) for a class w ∈ L_0/℘(L_0) of break ≤ m. In L_0 = k((ϖ_0)) the coefficient c(b) of ϖ_0^{−m} in the reduced representative of the class of b/π is injective and additive in b, with c(b)^{p^N} an additive polynomial in b, hence a monomial and onto k; choosing c(b) equal to the coefficient of w leaves w − [b/π] of break < m, trivial on G_{L_0}^m = G^1.",
+     "statement": "Slope decomposition and s(V) = Σ λ r(V_λ); for L of rank one and Swan one, s(V ⊗ L) = r(V_{[0,1[}) + s(V_1 ⊗ L) + s(V_{]1,∞[}) with s(V_1 ⊗ L) ≤ r(V_1); ℒ_ψ(a/π) has slope one; for k algebraically closed and V ≠ 0 purely of slope one, some a ∈ k makes V ⊗ ℒ_ψ(a/π) have a nonzero part of slope < 1. Route of the last clause, with K = k((π)) and G^u the upper ramification subgroups of G_K: G^1/G^{1+} is abelian of exponent p, so it suffices that every character θ of it is ℒ_ψ(b/π)|_{G^1} for some b ∈ k. θ factors through H^1 = Gal(L/L_0) for a finite Galois L/K with group H, H^{1+} = 1 and L_0 = L^{H^1}; with m = ψ_{L_0/K}(1) (Herbrand function), G^1 = G_{L_0}^m and G^{1+} = G_{L_0}^{m+}, so θ = ℒ_ψ(w) for a class w ∈ L_0/℘(L_0) of break ≤ m. In L_0 = k((ϖ_0)), every class has a representative that is integral or of pole order prime to p, two representatives with poles of order prime to p have the same pole order, and such a pole makes the class nontrivial (pinned Tau Ceti statements at the ϖ_0-adic place), and the termwise reduced representative is the roadmap's own; the coefficient c(b) of ϖ_0^{−m} in the reduced representative of the class of b/π is injective and additive in b, with c(b)^{p^N} an additive polynomial in b, hence a monomial and onto k; choosing c(b) equal to the coefficient of w leaves w − [b/π] of break < m, trivial on G_{L_0}^m = G^1.",
      "hypotheses": [
       "henselian trait of equal characteristic p, perfect residue field (no excellence assumed)"
      ],
@@ -1430,6 +1430,9 @@
       "tauceti:TauCeti.ContCohomology.DiscreteShortExact.longExact_exact₃",
       "tauceti:TauCeti.ContCohomology.H1EquivOfSmulEqSelf",
       "tauceti:TauCeti.ContCohomology.explicitH1AddEquivContinuousCohomology",
+      "tauceti:TauCeti.Place.exists_reduced_artinSchreier_representative",
+      "tauceti:TauCeti.ord_reduced_artinSchreier_representative_eq",
+      "tauceti:TauCeti.ne_pow_sub_self_of_exists_reduced_artinSchreier_pole",
       "mathlib:ContinuousCohomology.zeroIso",
       "roadmap:EtaleCohomologyFoundations §F.3a",
       "target:2.7"
@@ -1445,6 +1448,11 @@
        "name": "twist_nonClosed_nonexample",
        "kind": "non-example",
        "statement": "k = 𝔽_p, c ∈ 𝔽_{p²} ∖ 𝔽_p, V induced from ℒ_ψ(c/π) on the unramified quadratic extension: purely of slope one, and for every a ∈ 𝔽_p both characters ℒ_ψ((c + a)/π), ℒ_ψ((c^p + a)/π) of V ⊗ ℒ_ψ(a/π) have slope one; algebraic closure of k is needed."
+      },
+      {
+       "name": "artinSchreier_reduced_poleOrder",
+       "kind": "computation",
+       "statement": "k = 𝔽̄_3, L_0 = k((t)), u = t^{−6} + t^{−4} + t^{−2} (pole order 6): w = t^{−2} gives the reduced t^{−4} + 2t^{−2}; z = t^{−2} + t^{−1} gives t^{−4} − t^{−3} + 2t^{−2} + t^{−1}, pole order 4 again, reducing to t^{−4} + 2t^{−2}; break 4, not the naive 6."
       }
      ]
     },
