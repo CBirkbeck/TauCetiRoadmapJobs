@@ -1,0 +1,15 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "StringOrientation"
+
+[[source]]
+id = "zagier-landweber-stong"
+locator_scheme = "page"
+locator = "p. 221, equation (14)"
+url = "https://people.mpim-bonn.mpg.de/zagier/files/doi/10.1007/BFb0078047/fulltext.pdf"
+fetched_from = "https://people.mpim-bonn.mpg.de/zagier/files/doi/10.1007/BFb0078047/fulltext.pdf"
+fetched_at = "2026-11-07T03:11:22Z"
+sha256 = "c2e1c36be126329dc8407edf14826e45b6f7a2d273760565576edcff01bd9efa"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-07"
+cited_for = ["4.2"]
