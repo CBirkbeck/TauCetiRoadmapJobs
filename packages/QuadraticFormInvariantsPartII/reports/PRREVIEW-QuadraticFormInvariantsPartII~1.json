@@ -1,0 +1,4 @@
+{"review": {"status": "needs_changes", "reviewer": "independent-review-PRREVIEW-QuadraticFormInvariantsPartII~1",
+            "head": "04296f6a71349ffc60d98d02552e4f9bd9ac0687", "pr": 1834, "folder": "QuadraticFormInvariantsPartII", "date": "2026-11-07",
+            "findings": 2, "blocking": 1,
+            "notes": "Gate OK (every scanner, depcheck 0 problems, targeted build). Seeded sample 1.1, 1.2, 2.4, 2.7, 3.2, 3.3, 3.6, 3.7, 5.3, 5.4, 6.1, 6.2, 6.4, 6.5, 7.2 plus every headline locator verified in ekm, dp, morel, ojanguren-panin, jannsen16 and the fetched Kuhlmann notes: all theorem numbers, pages and hypotheses agree. All 25 Lean declarations re-elaborated; no sorried theorem closes by one tactic; 40 pinned Mathlib/Tau Ceti declarations opened. Two findings: plan.json still declares gap:real-closure-uniqueness although 6.0 proves it (P2); the cited kuhlmann source is missing from sources.toml (P3)."}}
