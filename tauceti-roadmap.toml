@@ -35,7 +35,7 @@ library = "TauCetiProject/TauCeti"
 # Hosted board runs queue for hours and get cancelled; the local tick (every 30 min) runs the intake instead.
 dispatch = false
 # Who may file targets: org teams ("team:org/slug") and bare logins. Other target issues are closed by board sync.
-target_filers = ["team:TauCetiProject/humans", "roed-math"]
+target_filers = ["team:TauCetiProject/humans", "team:TauCetiProject/roadmap-reviewers", "roed-math"]
 # Logins whose open roadmap pull requests count as ours in merge-order chains (the hosted workflow runs as a bot).
 operators = ["CBirkbeck", "roed-math", "kim-em"]
 # Label every job issue carries, so that a board inside the content repository stays separable.
