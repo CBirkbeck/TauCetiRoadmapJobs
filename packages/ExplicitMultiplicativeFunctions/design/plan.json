@@ -2759,10 +2759,10 @@
     "1.5",
     "1.10"
    ],
-   "detail": "Rosser–Schoenfeld 1962, Theorem 12 (the maximum of ψ(x)/x at x = 113); ramare2013aa line 203, Lemma 4.1.",
+   "detail": "Rosser–Schoenfeld 1962, Theorem 12 (the maximum of ψ(x)/x at x = 113); ramare2013aa line 203, Lemma 4.1. Stated by ExplicitPrimeCounting §3.2 (ψ(x) < 1.03883 x for every real x > 0), which the README cites in its supplier contract.",
    "needs": "ψ(x) ≤ 1.04 x for every real x ≥ 0.",
    "supplier": "ExplicitPrimeCounting",
-   "section": "Layer 2 (T2.1, ψ(x) < 1.03883 x)"
+   "section": "Layer 3 (§3.2, Rosser–Schoenfeld and Schoenfeld constants for ψ and θ: ψ(x) < 1.03883 x for x > 0)"
   },
   {
    "slug": "psi-initial-range",
@@ -2772,10 +2772,10 @@
     "1.5",
     "1.10"
    ],
-   "detail": "ramare2013aa lines 205–207, (4.1)–(4.2), a verification under the zeros of ζ verified to a height.",
+   "detail": "ramare2013aa lines 205–207, (4.1)–(4.2); ExplicitPrimeCounting §1.3 states ButheVerified (0.94√x on (11, 10^19]), which gives the first clause on (11, 10^10] but not 0.8√x.",
    "needs": "|ψ(x) − x| ≤ √x for every real x with 8 ≤ x ≤ 10^10, and |ψ(x) − x| ≤ 0.8√x for every real x with 1500 ≤ x ≤ 10^10.",
    "supplier": "ExplicitPrimeCounting",
-   "section": "Layers 1–2 (bounds under RH(H))"
+   "section": "Layer 1 (§1.3, finite-range verifications)"
   },
   {
    "slug": "psi-dusart-log",
@@ -2785,10 +2785,10 @@
     "1.5",
     "1.10"
    ],
-   "detail": "Dusart's Théorème 1.3 (0.006409 for x > e^22), improving Rosser–Schoenfeld Theorem 7; El Marraki needs 0.00776291.",
-   "needs": "|ψ(x) − x| ≤ 0.0065 x/log x for every real x ≥ e^22.",
+   "detail": "Dusart's Théorème 1.3 (0.006409 for x > e^22), improving Rosser–Schoenfeld Theorem 7; El Marraki needs 0.00776291. Stated by ExplicitPrimeCounting §3.3 (0.006409 for x > e^22); the need is taken on the open range x > e^22 as that section states it; the closed endpoint follows by right-continuity of ψ, since 0.006409 < 0.0065, which the README cites in its supplier contract.",
+   "needs": "|ψ(x) − x| ≤ 0.0065 x/log x for every real x > e^22.",
    "supplier": "ExplicitPrimeCounting",
-   "section": "Layer 2 (T2.2, Dusart)"
+   "section": "Layer 3 (§3.3, Dusart's bounds: |ψ(x) − x| ≤ 0.006409 x/log x for x > e^22)"
   },
   {
    "slug": "psi-relative-large",
@@ -2797,10 +2797,10 @@
     "1.2",
     "1.5"
    ],
-   "detail": "ramare2013aa line 220, (4.4).",
+   "detail": "ramare2013aa line 220, (4.4). Stated by ExplicitPrimeCounting §6.1 (the row (1, 0.000213, 10^10)); it also follows from §1.3 on [10^10, 10^19] and §3.3 beyond, which the README cites in its supplier contract.",
    "needs": "|ψ(x) − x| ≤ 0.000213 x for every real x ≥ 10^10.",
    "supplier": "ExplicitPrimeCounting",
-   "section": "Layer 2 (T2.0 scheme instances)"
+   "section": "Layer 6 (§6.1, the row (1, 0.000213, 10^10) of RamareRumelyTable1)"
   },
   {
    "slug": "psi-tilde-explicit",
@@ -2809,10 +2809,10 @@
     "1.5",
     "1.8"
    ],
-   "detail": "Ramaré 2013 with the range rectified by Vanlalngaia 2017; the printed range x ≥ 23 (ramare2013aa line 251) is false (0.053 against 0.0021 at x = 23).",
+   "detail": "Ramaré 2013 with the range rectified by Vanlalngaia 2017; the printed range x ≥ 23 (ramare2013aa line 251) is false (0.053 against 0.0021 at x = 23). Stated by ExplicitPrimeCounting §4.2 (Ramaré's corrected corollary), which the README cites in its supplier contract.",
    "needs": "|Σ_{n ≤ x} Λ(n)/n − log x + γ| ≤ 0.0067/log x for every real x ≥ 1 520 000.",
    "supplier": "ExplicitPrimeCounting",
-   "section": "Layer 3 (T3.2)"
+   "section": "Layer 4 (§4.2, the sum Σ Λ(n)/n: O*(0.0067/log x) for x ≥ 1.52·10^6)"
   },
   {
    "slug": "mertens-reciprocal-cubic",
@@ -2822,10 +2822,10 @@
     "8.2",
     "9.4"
    ],
-   "detail": "Vanlalngaia 2017, Corollary 1, with B = mertensConstant ℚ.",
+   "detail": "Vanlalngaia 2017, Corollary 1, with B = mertensConstant ℚ. Stated by ExplicitPrimeCounting §4.3 (≤ 1/log³ x for x ≥ 24 284), which the README cites in its supplier contract.",
    "needs": "|Σ_{p ≤ x} 1/p − log log x − B| ≤ 1/log³ x for every real x ≥ 24 284, with B = mertensConstant ℚ.",
    "supplier": "ExplicitPrimeCounting",
-   "section": "Layer 3 (T3.3)"
+   "section": "Layer 4 (§4.3, the sum Σ 1/p and the Meissel–Mertens constant: Vanlalngaia's Corollary 1)"
   },
   {
    "slug": "theta-progression-explicit",
@@ -2833,10 +2833,10 @@
    "neededBy": [
     "8.3"
    ],
-   "detail": "ExplicitPrimeCounting's T5.2; a constant relative bound would not give a decaying reciprocal-prime remainder.",
+   "detail": "ExplicitPrimeCounting's T5.2; a constant relative bound would not give a decaying reciprocal-prime remainder. Stated by ExplicitPrimeCounting §6.3 (c_θ(q) ≤ 1/840 for 3 ≤ q ≤ 10^4 and x_θ(q) ≤ 8·10^9 for 3 ≤ q ≤ 10^5), which the README cites in its supplier contract.",
    "needs": "For every natural q ≥ 3 and a coprime to q, |θ(x; q, a) − x/φ(q)| < c_θ(q) x/log x for every real x ≥ x_θ(q), with explicit c_θ(q) ≤ 1/840 and x_θ(q) ≤ 8·10^9 for 3 ≤ q ≤ 10^4.",
    "supplier": "ExplicitPrimeCounting",
-   "section": "Layer 5 (T5.2)"
+   "section": "Layer 6 (§6.3, Bennett–Martin–O'Bryant–Rechnitzer)"
   },
   {
    "slug": "nth-prime-lower",
@@ -2845,10 +2845,10 @@
     "9.1",
     "9.3"
    ],
-   "detail": "ExplicitPrimeCounting's T4.2, with p₁ = 2 (index shift as that roadmap states it).",
+   "detail": "ExplicitPrimeCounting's T4.2, with p₁ = 2 (index shift as that roadmap states it). Stated by ExplicitPrimeCounting §5.3 (Dusart's Theorem 3, for every k ≥ 2), which the README cites in its supplier contract.",
    "needs": "p_k ≥ k(log k + log log k − 1) for every natural k ≥ 2, where p_k is the k-th prime and p₁ = 2.",
    "supplier": "ExplicitPrimeCounting",
-   "section": "Layer 4 (T4.2)"
+   "section": "Layer 5 (§5.3, Robin, Massias–Robin and Dusart: Dusart's Theorem 3)"
   },
   {
    "slug": "prime-count-lower",
@@ -2856,10 +2856,10 @@
    "neededBy": [
     "9.3"
    ],
-   "detail": "Rosser–Schoenfeld 1962, Corollary 1; used by Ivić at line 49. AnalyticNumberTheoryPartI §0.5 covers only x ≥ 59, under its finite-range input.",
+   "detail": "Rosser–Schoenfeld 1962, Corollary 1; used by Ivić at line 49. AnalyticNumberTheoryPartI §0.5 covers only x ≥ 59, under its finite-range input. Stated by ExplicitPrimeCounting §3.5 (x/log x < π(x) for x ≥ 17), which the README cites in its supplier contract.",
    "needs": "π(x) > x/log x for every real x ≥ 17.",
    "supplier": "ExplicitPrimeCounting",
-   "section": "Layer 2 (T2.1, Rosser–Schoenfeld Corollary 1)"
+   "section": "Layer 3 (§3.5, bounds for π(x): Rosser–Schoenfeld Corollary 1)"
   },
   {
    "slug": "mertens-reciprocal-axler",
@@ -2867,10 +2867,10 @@
    "neededBy": [
     "8.1"
    ],
-   "detail": "Axler 2018, Proposition 5.1 (Proposition 7 in print), refining Dusart's 1/(5 log³ x); rests on a computation to 19 035 709 163.",
+   "detail": "Axler 2018, Proposition 5.1 (Proposition 7 in print), refining Dusart's 1/(5 log³ x); rests on a computation to 19 035 709 163. ExplicitPrimeCounting §4.3 states Vanlalngaia's and Axler 2024's rows, not this one.",
    "needs": "With η_A(x) = 1/(20 log³ x) + 3/(16 log⁴ x) and B = mertensConstant ℚ: Σ_{p≤x} 1/p − log log x − B ≥ −η_A(x) for every real x > 1, and ≤ η_A(x) for every real x ≥ 46 909 074.",
    "supplier": "ExplicitPrimeCounting",
-   "section": "Layer 3 (reciprocal-prime sums)"
+   "section": "Layer 4 (§4.3, the sum Σ 1/p and the Meissel–Mertens constant)"
   },
   {
    "slug": "mertens-reciprocal-large",
@@ -2879,10 +2879,10 @@
     "8.1",
     "8.2"
    ],
-   "detail": "Axler 2022, Theorem 1.5 (preprint).",
+   "detail": "Axler 2022, Theorem 1.5 (preprint). Stated by ExplicitPrimeCounting §4.3 (Axler's instances, the transfer at §3.7's η = 0.024334, k = 3), which the README cites in its supplier contract.",
    "needs": "|Σ_{p≤x} 1/p − log log x − B| ≤ f(x) = (0.024334/(3 log³ x))(1 + 15/(4 log x)) for every real x ≥ 1 757 126 630 797, with B = mertensConstant ℚ.",
    "supplier": "ExplicitPrimeCounting",
-   "section": "Layer 3 (reciprocal-prime sums)"
+   "section": "Layer 4 (§4.3, the sum Σ 1/p and the Meissel–Mertens constant: Axler's instances)"
   },
   {
    "slug": "psi-sqrt-buthe",
@@ -2891,22 +2891,22 @@
     "1.8",
     "1.10"
    ],
-   "detail": "Büthe 2018, Theorem 2, under the zeros of ζ verified to a height.",
+   "detail": "Büthe 2018, Theorem 2, under the zeros of ζ verified to a height. Stated by ExplicitPrimeCounting §1.3 (the proposition ButheVerified), which the README cites in its supplier contract.",
    "needs": "|ψ(x) − x| ≤ 0.94√x for every real x with 11 < x ≤ 10^19.",
    "supplier": "ExplicitPrimeCounting",
-   "section": "Layers 1–2 (bounds under RH(H))"
+   "section": "Layer 1 (§1.3, finite-range verifications: ButheVerified)"
   },
   {
    "slug": "psi-relative-bklnw",
-   "title": "|ψ(x) − x| ≤ 8·10^{−5}x (x ≥ 10^8), 2.58843·10^{−5}x (x ≥ e^21), 1.93378·10^{−8}x (x ≥ e^40), 9·10^{−7}x/log x (x ≥ 10^19)",
+   "title": "|ψ(x) − x| ≤ 8·10^{−5}x (x ≥ 10^8), 2.58843·10^{−5}x (x ≥ e^21), 9·10^{−7}x/log x (x ≥ 10^19)",
    "neededBy": [
     "1.8",
     "1.10"
    ],
-   "detail": "The tables of Broadbent–Kadiri–Lumley–Ng–Wilk 2021 with Büthe 2016, as used by Ramaré–Zuniga Alterman 2025, (12)–(16).",
-   "needs": "|ψ(x) − x| ≤ 8·10^{−5} x for x ≥ 10^8, ≤ 2.58843·10^{−5} x for x ≥ e^21, ≤ 1.93378·10^{−8} x for x ≥ e^40, and ≤ 9·10^{−7} x/log x for x ≥ 10^19.",
+   "detail": "The tables of Broadbent–Kadiri–Lumley–Ng–Wilk 2021 with Büthe's verified range, as used by Ramaré–Zuniga Alterman 2025, (12)–(16); the row 1.93378·10^{−8}x for x ≥ e^40 is ExplicitPrimeCounting §3.1's BKLNWPsiTable at b = 40 and is cited, not owed.",
+   "needs": "|ψ(x) − x| ≤ 8·10^{−5} x for every real x ≥ 10^8, ≤ 2.58843·10^{−5} x for every real x ≥ e^21, and ≤ 9·10^{−7} x/log x for every real x ≥ 10^19.",
    "supplier": "ExplicitPrimeCounting",
-   "section": "Layer 2 (relative bounds)"
+   "section": "Layer 3 (§3.1 BKLNWPsiTable and §3.7)"
   },
   {
    "slug": "psi-tilde-difference",
@@ -2914,10 +2914,10 @@
    "neededBy": [
     "1.10"
    ],
-   "detail": "Vanlalngaia 2017, Theorem 9, second part; r(x) = Σ_{n≤x} Λ(n)/n − log x + γ.",
+   "detail": "Vanlalngaia 2017, Theorem 9, second part; ExplicitPrimeCounting §4.2 states the weaker 1/(2√x) + 1.75·10^{−12} from x ≥ 8950.",
    "needs": "|Σ_{n≤x} Λ(n)/n − log x + γ − (ψ(x) − x)/x| ≤ 0.05/√x + 1.75·10^{−12} for every real x ≥ 394 385.",
    "supplier": "ExplicitPrimeCounting",
-   "section": "Layer 3 (T3.2 and its refinement)"
+   "section": "Layer 4 (§4.2, the sum Σ Λ(n)/n)"
   },
   {
    "slug": "psi-log-power",
@@ -2928,7 +2928,7 @@
    "detail": "Johnston–Leong–Tudzi's Lemma A.5, from the tables of Broadbent et al. to e^3000 and Fiori–Kadiri–Swidinsky beyond.",
    "needs": "|ψ(x) − ⌊x⌋| < B_β x/log^β x for every real x ≥ e^20 and β = 1, 2, 3, 4, with (B₁, B₂, B₃, B₄) = (8.96237·10^{−4}, 0.0188209, 0.395239, 75.1090).",
    "supplier": "ExplicitPrimeCounting",
-   "section": "Layer 2 (bounds of de la Vallée Poussin type and their tables)"
+   "section": "Layer 3 (§§3.4 and 3.7, bounds of de la Vallée Poussin type and their tables)"
   },
   {
    "slug": "theta-lower",
@@ -2936,10 +2936,10 @@
    "neededBy": [
     "9.4"
    ],
-   "detail": "Rosser–Schoenfeld 1962, Theorem 4, (3.14).",
+   "detail": "Rosser–Schoenfeld 1962, Theorem 4, (3.14). Stated by ExplicitPrimeCounting §3.2 (Rosser–Schoenfeld Theorem 4), which the README cites in its supplier contract.",
    "needs": "θ(x) > x(1 − 1/(2 log x)) for every real x ≥ 563.",
    "supplier": "ExplicitPrimeCounting",
-   "section": "Layer 2 (T2.1, Rosser–Schoenfeld Theorem 4)"
+   "section": "Layer 3 (§3.2, Rosser–Schoenfeld and Schoenfeld constants for ψ and θ: θ(x) > x(1 − 1/(2 log x)) for x ≥ 563)"
   },
   {
    "slug": "zeta-reciprocal-bounds",
@@ -2950,7 +2950,7 @@
    "detail": "Lee–Leong's inputs: zero-free regions of Mossinghoff–Trudgian–Yang, Yang and Bellotti, and bounds for ζ, ζ'/ζ and 1/ζ.",
    "needs": "For t ≥ H = 3 000 175 332 800 and σ ≥ 1 − 1/(5.56 log t), |1/ζ(σ + it)| ≤ 1237 (log t)^{11/12}, with the Littlewood and Korobov–Vinogradov companions; |1/ζ(σ + it)| ≤ 30.812 log t for σ ≥ 1, t ≥ 13; |1/ζ(σ + it)| ≤ e^{146} log t for σ ≥ 3/4, 14 ≤ t ≤ H.",
    "supplier": "ExplicitZetaBounds",
-   "section": "explicit bounds for 1/ζ"
+   "section": "target 7 (bounds on the 1-line, including 1/|ζ(1 + it)|) and target 16 (zero-free regions)"
   }
  ]
 }
