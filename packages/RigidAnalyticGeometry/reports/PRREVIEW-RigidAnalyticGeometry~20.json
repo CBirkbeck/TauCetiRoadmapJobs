@@ -1,0 +1,4 @@
+{"review": {"status": "needs_changes", "reviewer": "independent-review-PRREVIEW-RigidAnalyticGeometry~20",
+            "head": "7e8275c4060496dbd1cb31e0986d2b419366e80f", "pr": 1807, "folder": "RigidAnalyticGeometry", "date": "2026-11-07",
+            "findings": 4, "blocking": 1,
+            "notes": "incremental re-review of 0 changed lines since e752fe8: folder byte-identical, pins unchanged (TauCeti 2fd255d9, Mathlib 1b1ccf4b); R01 (P2 restated pinned theorems, private carriers), R02, R03 (P3) re-witnessed and not repaired; new R04 (P3): gate statement-hygiene letI at Suggested.lean 84 and 167, gate FAIL; elaboration 20 sorry warnings; depcheck 0 problems; AlgHom.Finite repair tested on a scratch copy; seeded sample in no changed passage, locators carried; adversarial table carried with values"}}
