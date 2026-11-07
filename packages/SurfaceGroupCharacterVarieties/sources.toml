@@ -1,0 +1,54 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "SurfaceGroupCharacterVarieties"
+
+[[source]]
+id = "Richardson1988"
+authors = "R. W. Richardson"
+title = "Conjugacy classes of n-tuples in Lie algebras and algebraic groups"
+year = 1988
+doi = "10.1215/S0012-7094-88-05701-8"
+locator_scheme = "theorem"
+locator = "Theorem 3.6"
+url = "https://projecteuclid.org/journals/duke-mathematical-journal/volume-57/issue-1/Conjugacy-classes-of-n-tuples-in-Lie-algebras-and-algebraic/10.1215/S0012-7094-88-05701-8.full"
+fetched_from = "https://projecteuclid.org/journals/duke-mathematical-journal/volume-57/issue-1/Conjugacy-classes-of-n-tuples-in-Lie-algebras-and-algebraic/10.1215/S0012-7094-88-05701-8.full"
+fetched_at = "2026-11-07T19:52:48Z"
+sha256 = "b37f1eda845acc63d30664baf927862a8186a7e108fd5e66b60412b1c10af340"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-07"
+resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/6024#issuecomment-6712166115"
+
+[[source]]
+id = "RichardsonSlodowy1990"
+authors = "R. W. Richardson, P. J. Slodowy"
+title = "Minimum Vectors for Real Reductive Algebraic Groups"
+year = 1990
+doi = "10.1112/jlms/s2-42.3.409"
+locator_scheme = "theorem"
+locator = "§4 (Theorem 4.3: closed orbits and minimal vectors); §7 (real points: G(ℝ)-orbit closed iff G(ℂ)-orbit closed); §9 (the quotient of the closed-orbit real points is Hausdorff)"
+licence_class = "none"
+status = "waived"
+resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/6024#issuecomment-6712166115"
+
+[[source]]
+id = "FarbMargalit2012"
+authors = "Benson Farb, Dan Margalit"
+title = "A Primer on Mapping Class Groups"
+year = 2012
+doi = "10.1515/9781400839049"
+locator_scheme = "chapter"
+locator = "Chapters 1, 2, 4, 8"
+licence_class = "none"
+status = "waived"
+resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/6024#issuecomment-6712166115"
+
+[[source]]
+id = "Knapp2002"
+authors = "Anthony W. Knapp"
+title = "Lie Groups Beyond an Introduction, 2nd ed., Progress in Mathematics 140"
+year = 2002
+locator_scheme = "chapter"
+locator = "Chapter VI, §§1–2 (Theorems 6.16, 6.31)"
+licence_class = "none"
+status = "waived"
+resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/6024#issuecomment-6712166115"
