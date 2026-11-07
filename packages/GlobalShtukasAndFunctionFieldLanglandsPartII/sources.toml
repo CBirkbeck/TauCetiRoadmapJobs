@@ -433,3 +433,22 @@ status = "certified"
 accessed = "2026-11-05"
 version_note = "arXiv v2 (2008) numbering; the published Compositio Mathematica version is cited by its DOI"
 cited_for = ["5.1"]
+
+[[source]]
+id = "gross-reeder"
+authors = "Benedict H. Gross, Mark Reeder"
+title = "Arithmetic invariants of discrete Langlands parameters"
+year = 2010
+venue = "Duke Mathematical Journal 154 (2010), no. 3, 431–508"
+doi = "10.1215/00127094-2010-043"
+locator_scheme = "theorem"
+locator = "author's preprint: §9.2 (affine generic characters of Z(k)I+, simply connected almost simple split G) and Proposition 9.3 (irreducibility and supercuspidality of the compact induction, and its proof by the Mackey decomposition with Lemma 9.1), pp. 60–63"
+url = "https://abel.math.harvard.edu/~gross/preprints/AdjointGamma5.pdf"
+fetched_from = "https://abel.math.harvard.edu/~gross/preprints/AdjointGamma5.pdf"
+fetched_at = "2026-11-07T17:53:09Z"
+sha256 = "f3a74e45c72ea6b1c59d176097055bf637dffdc0aa471c1e57dbf3ccbd739af1"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-07"
+version_note = "author's preprint of 1 March 2010 on the first author's page; section, proposition and page numbers are those of this preprint, not checked against the Duke pagination"
+cited_for = ["4.0"]
