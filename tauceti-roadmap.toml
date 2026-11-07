@@ -97,7 +97,7 @@ forbid_mathlib_subimports = true
 forbidden_patterns = []
 # File (relative to the state directory) listing roadmap names that must never be cited, one per
 # line: dropped or abandoned roadmaps. Empty = none.
-dropped_names_file = ""
+dropped_names_file = "dropped-names.txt"   # names our roadmaps never cite as suppliers (other authors' pull requests whose material we own ourselves): the gate refuses a mention
 # Regular expressions for paths outside TauCetiRoadmap/<Name>/ that a port pull request may
 # still touch. The default (empty) means: the outside-folder diff must be empty.
 outside_folder_allow = []
