@@ -76,11 +76,11 @@ What EtaleCohomologyFoundations must provide (gap:smooth-exceptional-pullback): 
 
 ### From TauCetiRoadmap.SchemeAndStackFoundations
 
-§0.29 scheme Frobenius (`SchemeFrobenius.qPowerFrobenius`, `SchemeFrobenius.relativeFrobenius`); §2.9 the sheaves `𝔾_a`, `𝔾_m`, `μ_n`; §2.11 the Kummer and Artin–Schreier sequences and exactness and base change of finite pushforward.
+§0.29 scheme Frobenius: the absolute and relative Frobenius of a scheme of characteristic `p`, and the `q`-power Frobenius of a scheme over `𝔽_q` with its base change along extensions of finite fields; §2.9 the sheaves `𝔾_a`, `𝔾_m`, `μ_n`; §2.11 the Kummer and Artin–Schreier sequences and exactness and base change of finite pushforward.
 
 ### From TauCetiRoadmap.AlgebraicVectorBundles
 
-§L1A (Layer 4, relative Spec): relative Spec; §L2B (Layer 7, geometric vector bundles): the total space `totalSpace`, fibrewise addition, zero sections, duals and base change.
+§L1A (Layer 4, relative Spec): relative Spec; §L2B (Layer 7, geometric vector bundles): the total space `V(E) = Spec_S Sym(E^∨)` of a finite locally free `E`, that is the linear scheme of `E^∨`, with fibrewise addition, zero sections, duals and base change.
 
 ### From TauCetiRoadmap.ReductiveGroupsPartII
 
@@ -159,7 +159,7 @@ For `k = 𝔽_5`, `W = k`, `Λ = ℤ/11`, `ψ(1) = 3` (order `5` in `(ℤ/11)^×
 
 ### Dependencies
 
-Mathlib only.
+Mathlib; Tau Ceti `Submodule.sum_addChar_dotProduct` (`TauCeti/InformationTheory/Coding/CharacterSum.lean`), only as the domain-valued case that the orthogonality of §0.1 and the subspace identity of §0.2 agree with.
 
 ## Layer 1: kernel transforms and trace functions
 
@@ -332,7 +332,7 @@ On `𝔸¹_{𝔽_5}` with `Λ = ℤ/11`, `ψ(1) = 3` and `f = x²`, the stalk tr
 
 ### Dependencies
 
-Layer 1; ReductiveGroupsPartII §RG2.3.7; SchemeAndStackFoundations §§0.29, 2.9, 2.11; EtaleCohomologyFoundations §§0.7, F.0.1–F.0.4, F.2.4–F.3a, F.4.1; AdicEtaleGeometry §A1.0.5; ArithmeticGaloisRepresentations §§3.1, 3.7; EtaleDualityAndPerverseSheaves §5.2; InverseGaloisAndArithmeticFundamentalGroups §IG.0.T2; gap:torsor-character-sheaf.
+Layer 1; Mathlib `CategoryTheory.GrpObj` and `FiniteField.norm_surjective`, and `IsKrasner.of_completeSpace` as one route to the completion comparison of §2.7; ReductiveGroupsPartII §RG2.3.7; SchemeAndStackFoundations §§0.29, 2.9, 2.11; EtaleCohomologyFoundations §§0.7, F.0.1–F.0.4, F.2.4–F.3a, F.4.1; AdicEtaleGeometry §A1.0.5; ArithmeticGaloisRepresentations §§3.1, 3.7; EtaleDualityAndPerverseSheaves §5.2; InverseGaloisAndArithmeticFundamentalGroups §IG.0.T2; gap:torsor-character-sheaf.
 
 ## Layer 3: the Fourier–Deligne transform on a vector bundle
 
@@ -434,7 +434,7 @@ Prove: for Noetherian `S` and finite `Λ`, `FT_ψ` preserves `Dᵇ_ctf`; for a r
 ### 3.8 Trace functions and Frobenius
 
 Let `S` be separated of finite type over `𝔽_q` and `K ∈ Dᵇ_ctf(V, Λ)`. Prove: for every `n ≥ 1`, `s ∈ S(𝔽_{qⁿ})` and `e' ∈ V'_s(𝔽_{qⁿ})`, `t_{FT_ψ K, n}(e') = (−1)^r Σ_{e ∈ V_s(𝔽_{qⁿ})} t_{K,n}(e) ψ(Tr_{𝔽_{qⁿ}/𝔽_p}⟨e, e'⟩)`, that is `(−1)^r 𝔉_ψ(t_K)` fibrewise (LAU87 Théorème (1.2.1.2), LAU87 lines 389–391); and the trace forms of §§3.4–3.6, including Plancherel. For `S_0` over `𝔽_q`, `S = S_0 ⊗ 𝔽̄_q` and the Frobenius `F = F_{V_0} × id` of `V`, construct a canonical isomorphism `F^* FT_ψ(K) ≅ FT_ψ(F^*K)`, natural in `K`, compatible with composition of powers of `F` and with base change, as the composite of the base change of §3.6 along the automorphism `id × Spec(σ^{−1})` of `S` (`σ` the arithmetic Frobenius of `𝔽̄_q`), which lifts to `V` and `V'`, and the identification of absolute Frobenius pullback with the identity; so `FT_ψ` sends a pair `(K, φ : F^*K ≅ K)` to a pair of the same kind, and for `K` descended to `V_0` this is the descent datum of `FT_ψ(K_0)`.
-*Needs:* §§1.4, 3.4–3.7, 0.2; InverseGaloisAndArithmeticFundamentalGroups §§IG.0.T2–IG.0.T3; EtaleCohomologyFoundations §§F.0.4, F.10.1–F.10.2b; SchemeAndStackFoundations §0.29.
+*Needs:* §§1.4, 3.4–3.7, 0.2; InverseGaloisAndArithmeticFundamentalGroups §§IG.0.T2–IG.0.T3; EtaleCohomologyFoundations §§F.0.4, F.10.1–F.10.2b; SchemeAndStackFoundations §0.29; Tau Ceti `AlgebraicGeometry.Scheme.Hom.qPowerFrobenius_baseChange` for the Frobenius exchange.
 
 **Checks.**
 - `r = 1`, `K = Λ_{𝔸¹}`: `t_{FT K}(0') = −q` and `0` elsewhere (Conventions witness).
@@ -447,7 +447,7 @@ Let `S` be separated of finite type over `𝔽_q` and `K ∈ Dᵇ_ctf(V, Λ)`. P
 
 ### Dependencies
 
-Layers 0–2; EtaleCohomologyFoundations §§0.7–0.9, F.0.4, F.2.1–F.2.3, F.2.7, F.4.1–F.4.6, F.5–F.6, F.10.1–F.10.2b; AlgebraicVectorBundles §L1A (Layer 4, relative Spec), §L2B (Layer 7, geometric vector bundles); SchemeAndStackFoundations §§0.29, 2.11; InverseGaloisAndArithmeticFundamentalGroups §§IG.0.T2–IG.0.T3; EtaleDualityAndPerverseSheaves §2.7; gap:projection-formula-qcqs; gap:smooth-exceptional-pullback.
+Layers 0–2; Tau Ceti `TauCeti.AlgebraicGeometry.FiniteLocallyFreeSheaf.dual`, `TauCeti.AlgebraicGeometry.FiniteLocallyFreeSheaf.evalIso` and `AlgebraicGeometry.Scheme.Hom.qPowerFrobenius_baseChange`; EtaleCohomologyFoundations §§0.7–0.9, F.0.4, F.2.1–F.2.3, F.2.7, F.4.1–F.4.6, F.5–F.6, F.10.1–F.10.2b; AlgebraicVectorBundles §L1A (Layer 4, relative Spec), §L2B (Layer 7, geometric vector bundles); SchemeAndStackFoundations §§0.29, 2.11; InverseGaloisAndArithmeticFundamentalGroups §§IG.0.T2–IG.0.T3; EtaleDualityAndPerverseSheaves §2.7; gap:projection-formula-qcqs; gap:smooth-exceptional-pullback.
 
 ## Layer 4: perverse `t`-exactness
 
@@ -585,7 +585,7 @@ For `p = 5`, `k = 𝔽_5`, `Λ = 𝔽_11` and `K = j_!ℒ_χ[1]` with `χ` quadr
 
 ### Dependencies
 
-Layers 3–4; §§2.6–2.7; ArithmeticGaloisRepresentations §§3.1, 3.7; RamificationOfCompleteDiscretelyValuedFields §§3a.1, 4a.1–4a.2; LefschetzPencilsAndVanishingCycles §§0.3–0.8; EtaleDualityAndPerverseSheaves §§2.10, 5.2; EtaleCohomologyFoundations §§F.2.1, F.3a.
+Layers 3–4; §§2.6–2.7; Mathlib `ContinuousCohomology.zeroIso`; Tau Ceti `TauCeti.additiveHilbert90`, `TauCeti.ContCohomology.DiscreteShortExact`, `TauCeti.ContCohomology.H1EquivOfSmulEqSelf`, `TauCeti.ContCohomology.explicitH1AddEquivContinuousCohomology`, `TauCeti.Place.exists_reduced_artinSchreier_representative`, `TauCeti.ord_reduced_artinSchreier_representative_eq` and `TauCeti.ne_pow_sub_self_of_exists_reduced_artinSchreier_pole`, for the slope-one twisting lemma of §5.1; ArithmeticGaloisRepresentations §§3.1, 3.7; RamificationOfCompleteDiscretelyValuedFields §§3a.1, 4a.1–4a.2; LefschetzPencilsAndVanishingCycles §§0.3–0.8; EtaleDualityAndPerverseSheaves §§2.10, 5.2; EtaleCohomologyFoundations §§F.2.1, F.3a.
 
 ## Downstream consumers
 
