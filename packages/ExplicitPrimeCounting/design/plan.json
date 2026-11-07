@@ -3550,6 +3550,7 @@
    "title": "The proposition RH(H) and its named instances",
    "neededBy": [
     "1.1",
+    "3.1a",
     "2.6",
     "3.2",
     "3.3",
@@ -3567,8 +3568,8 @@
     "7.3c",
     "7.5"
    ],
-   "detail": "Section 1.1 here proves that RH(H) agrees with the statement form over riemannZeta used in Suggested.lean.",
-   "needs": "Supply, for real H, the proposition RH(H) that every zero of the entire completion of ζ with 0 ≤ Re s ≤ 1 and |Im s| ≤ H has real part 1/2, antitone in H and implied by Mathlib’s RiemannHypothesis, with its instances at H = 545 439 823, 30 610 046 000 and 3 000 175 332 800 as named hypotheses.",
+   "detail": "Section 1.1 here proves that RH(H) agrees with the statement form RiemannHypothesisUpTo over riemannZeta; the low-height verification is the input of 3.1a (Dusart's region-only theorem), whose proof needs a height T₀ > 2π with N(T₀) = M(T₀).",
+   "needs": "For real `H`, the proposition `RH(H)` that every zero of the entire completion of `ζ` with `0 ≤ Re s ≤ 1` and `|Im s| ≤ H` has real part `1/2`, antitone in `H` and implied by Mathlib's `RiemannHypothesis`, with the named instances at `H = 545 439 823`, `30 610 046 000` and `3 000 175 332 800` and the named verification that `ζ` has no zero `s` with `0 < Re s < 1` and `|Im s| ≤ 14`.",
    "supplier": "ExplicitZetaBounds",
    "section": "target 20"
   },
@@ -3582,7 +3583,7 @@
     "6.4"
    ],
    "detail": "Section 1.2 here turns these primitive-character statements into GRH(q, H) for all characters modulo q.",
-   "needs": "Supply, for each conductor f ≥ 1 and real H, the proposition that every zero of L(s, χ*) with 0 < Re s < 1 and |Im s| ≤ H has real part 1/2 for every primitive character χ* of conductor f, antitone in H, with Rumely’s instances (height 10 000 for f ≤ 13; height 2500 for f ≤ 72, composite f ≤ 112 and the moduli listed at ramare-2002 lines 155–159) and the instance at height 10⁸/f for every f ≤ 400 000 derived from ComputationalNumberTheory §4.22. The verified height of Platt’s computation (platt-2016, Theorem 1) is max(10⁸/f, 7.5·10⁷/f + 200) for even f and max(10⁸/f, 3.75·10⁷/f + 200) for odd f; the instance at 10⁸/f is its weakening.",
+   "needs": "For each conductor `f ≥ 1` and real `H`, the proposition that every zero of `L(s, χ*)` with `0 < Re s < 1` and `|Im s| ≤ H` has real part `1/2` for every primitive character `χ*` of conductor `f`, antitone in `H`, with Rumely's instances (height `10 000` for `f ≤ 13`; height `2500` for `f ≤ 72`, for composite `f ≤ 112` and for the moduli listed at `ramare-2002` lines 155–159) and the instance at height `10⁸/f` for every `f ≤ 400 000` derived from ComputationalNumberTheory §4.22, the weakening of the verified height `max(10⁸/f, 7.5·10⁷/f + 200)` for even `f` and `max(10⁸/f, 3.75·10⁷/f + 200)` for odd `f` of `platt-2016` Theorem 1.",
    "supplier": "ExplicitZetaBounds",
    "section": "target 20"
   },
@@ -3608,7 +3609,7 @@
     "7.3c"
    ],
    "detail": "Each of the first three is implied by the region with any smaller R, for instance 5.558691.",
-   "needs": "Supply, for ζ, that no zero has |t| ≥ 2 and σ ≥ 1 − 1/(R log |t|) for each of R = 5.69693, 5.573412 and 5.5666305, and that no zero has |t| ≥ 21 and σ ≥ 1 − 1/(9.645908801 log(|t|/17)).",
+   "needs": "For `ζ`, that no zero has `|t| ≥ 2` and `σ ≥ 1 − 1/(R log |t|)` for each of `R = 5.69693`, `5.573412` and `5.5666305`, and that no zero has `|t| ≥ 21` and `σ ≥ 1 − 1/(9.645908801 log(|t|/17))`.",
    "supplier": "ExplicitZetaBounds",
    "section": "target 16"
   },
@@ -3622,7 +3623,7 @@
     "6.7"
    ],
    "detail": "The first region implies McCurley’s (R = 9.645908801) and Kadiri’s R = 6.50 form; the second is Ramaré–Rumely’s, lines 822–826.",
-   "needs": "Supply, for q ≥ 3, that ∏_{χ mod q} L(s, χ) has at most one zero with σ ≥ 1 − 1/(6.4355 log(q max(1, |t|))), real, simple and of a real nonprincipal character; and, for χ of conductor k and H ≥ 1000, that every zero β + iγ of L(s, χ) with |γ| ≥ H satisfies 1 − β ≥ 1/(9.645908801 log(k|γ|/C₁(χ, H))) with the constant C₁(χ, H) of ramare-rumely-1996 Theorem 3.6.3. For the exceptional clause, the two forms used in 6.3 and 6.7: for 3 ≤ q ≤ 10¹⁰, ∏_{χ mod q} L(s, χ) has no zero with σ ≥ 1 − 1/(10 log max(q, q|t|, 10)) (lu-zaman-zhao-2026 Corollary 1.2, no exception); for q₁ > 400 000 a possible exceptional zero β₁ of a real character modulo q₁ satisfies β₁ ≤ 1 − 100/(√q₁ log² q₁) (thorner-zaman-2024 Theorem 2.6).",
+   "needs": "For `q ≥ 3`, that the product of the `L(s, χ)` over the characters `χ` modulo `q` has at most one zero with `σ ≥ 1 − 1/(6.4355 log(q max(1, |t|)))`, that zero being real, simple and of a real nonprincipal character; for `χ` of conductor `k` and `H ≥ 1000`, that every zero `β + iγ` of `L(s, χ)` with `|γ| ≥ H` satisfies `1 − β ≥ 1/(9.645908801 log(k|γ|/C₁(χ, H)))` with the constant `C₁(χ, H)` of `ramare-rumely-1996` Theorem 3.6.3; for `3 ≤ q ≤ 10¹⁰`, that the same product has no zero with `σ ≥ 1 − 1/(10 log max(q, q|t|, 10))` (`lu-zaman-zhao-2026` Corollary 1.2); and, for `q₁ > 400 000`, that a possible exceptional zero `β₁` of a real character modulo `q₁` satisfies `β₁ ≤ 1 − 100/(√q₁ log² q₁)` (`thorner-zaman-2024` Theorem 2.6).",
    "supplier": "ExplicitZetaBounds",
    "section": "target 16"
   },
@@ -3635,7 +3636,7 @@
     "6.7"
    ],
    "detail": "Section 1.7 here proves agreement with the form over Mathlib’s DirichletCharacter.LFunction; the existence of some gap is AnalyticNumberTheoryPartI §0.34. The second instance rests on an unrefereed argument and stays a named hypothesis.",
-   "needs": "Supply, for real c ≥ 0 and Q ∈ [3, ∞], the proposition that every real zero β ∈ (0, 1) of L(s, χ), for every primitive real character χ of conductor q with 3 ≤ q ≤ Q, satisfies (1 − β) log q ≥ c, with the named instances (c, Q) = (1/5, 10¹⁰) (the computation of lu-zaman-zhao-2026, Theorem 1.1) and (c, Q) = (3.0·10⁻³, ∞) (banks-2026, Theorem 1.1, with the first instance).",
+   "needs": "For real `c ≥ 0` and `Q ∈ [3, ∞]`, the proposition that every real zero `β ∈ (0, 1)` of `L(s, χ)`, for every primitive real character `χ` of conductor `q` with `3 ≤ q ≤ Q`, satisfies `(1 − β) log q ≥ c`, with the named instances `(c, Q) = (1/5, 10¹⁰)` (the computation of `lu-zaman-zhao-2026`, Theorem 1.1) and `(c, Q) = (3.0·10⁻³, ∞)` (`banks-2026`, Theorem 1.1, with the first instance).",
    "supplier": "ExplicitZetaBounds",
    "section": "target 18 and target 20"
   },
@@ -3646,7 +3647,7 @@
     "6.6"
    ],
    "detail": "The statement quoted at kadiri-2008 lines 337–341 (her Theorem 2.2), used for her Table 1.",
-   "needs": "Supply, for real x ≥ 8·10⁹ and 1 ≤ q ≤ x, that ∏_{χ mod q} L(s, χ) has at most four zeros with |Im s| ≤ x/q and σ ≥ 1 − 1/(3.82 log x).",
+   "needs": "For real `x ≥ 8·10⁹` and `1 ≤ q ≤ x`, that the product of the `L(s, χ)` over the characters `χ` modulo `q` has at most four zeros with `|Im s| ≤ x/q` and `σ ≥ 1 − 1/(3.82 log x)`.",
    "supplier": "ExplicitZetaBounds",
    "section": "target 16, Dirichlet regions"
   },
@@ -3658,7 +3659,7 @@
     "7.5"
    ],
    "detail": "The region used at dudek-2016 lines 702–706 and cully-hugill-2021 lines 98–100; the supplier itself declares the explicit mean value theorem behind it as a gap.",
-   "needs": "Supply, for |t| ≥ 3, that ζ has no zero with σ ≥ 1 − 1/(57.54 (log |t|)^{2/3} (log log |t|)^{1/3}).",
+   "needs": "For `|t| ≥ 3`, that `ζ` has no zero with `σ ≥ 1 − 1/(57.54 (log |t|)^(2/3) (log log |t|)^(1/3))`.",
    "supplier": "ExplicitZetaBounds",
    "section": "target 17"
   },
@@ -3689,7 +3690,7 @@
     "7.5"
    ],
    "detail": "Rosser’s triple is the one of targets 3.2, 3.3, 3.4a, 3.4b and 7.1.",
-   "needs": "Supply, with N(T) the number of zeros of ζ with 0 < Re ρ < 1 and 0 < Im ρ ≤ T counted with multiplicity and M(T) = (T/2π) log(T/2π) − T/2π + 7/8, |N(T) − M(T)| ≤ 0.137 log T + 0.443 log log T + 1.588 for T ≥ 2 and |N(T) − M(T)| ≤ 0.112 log T + 0.278 log log T + 2.510 + 1/(5T) for T ≥ e. Also |N(T) − M(T)| ≤ min(0.28 log T, 0.1038 log T + 0.2573 log log T + 9.3675) for T ≥ 2π (the form used by lee-nosal-2026, display (8)).",
+   "needs": "With `N(T)` the number of zeros of `ζ` with `0 < Re ρ < 1` and `0 < Im ρ ≤ T` counted with multiplicity and `M(T) = (T/2π) log(T/2π) − T/2π + 7/8`, the bounds `|N(T) − M(T)| ≤ 0.137 log T + 0.443 log log T + 1.588` for `T ≥ 2`, `|N(T) − M(T)| ≤ 0.112 log T + 0.278 log log T + 2.510 + 1/(5T)` for `T ≥ e`, and `|N(T) − M(T)| ≤ min(0.28 log T, 0.1038 log T + 0.2573 log log T + 9.3675)` for `T ≥ 2π` (the form of `lee-nosal-2026`, display (8)).",
    "supplier": "ExplicitZetaBounds",
    "section": "target 8"
   },
@@ -3704,7 +3705,7 @@
     "6.6"
    ],
    "detail": "Used by targets 6.1, 6.3, 6.5b, 6.5c and 6.6.",
-   "needs": "Supply, for a primitive character χ of conductor q > 1 and T ≥ 5/7 with ℓ = log(q(T + 2)/(2π)) > 1.567, that the number of zeros of L(s, χ) with 0 < Re ρ < 1 and |Im ρ| ≤ T, counted with multiplicity, is (T/π) log(qT/(2π)) − T/π − χ(−1)/4 + O*(0.22737 ℓ + 2 log(1 + ℓ) − 0.5).",
+   "needs": "For a primitive character `χ` of conductor `q > 1` and `T ≥ 5/7` with `ℓ = log(q(T + 2)/(2π)) > 1.567`, that the number of zeros of `L(s, χ)` with `0 < Re ρ < 1` and `|Im ρ| ≤ T`, counted with multiplicity, is `(T/π) log(qT/(2π)) − T/π − χ(−1)/4 + O*(0.22737 ℓ + 2 log(1 + ℓ) − 0.5)`.",
    "supplier": "ExplicitZetaBounds",
    "section": "target 9"
   },
@@ -3727,7 +3728,7 @@
     "7.5"
    ],
    "detail": "Target 19 writes 2N for the count over |Im ρ| ≤ T. Dudek takes A = 9.7 from ramare-2016 Theorem 1.1, whose leading constant broadbent-kadiri-lumley-ng-wilk-2021 lines 950–952 report to be off by a factor over 100.",
-   "needs": "Supply, with N(σ, T) the number of zeros of ζ with σ ≤ Re ρ < 1 and 0 < Im ρ ≤ T counted with multiplicity, N(17/20, T) ≤ 0.5561 T + 0.7586 log T − 268 658 for T ≥ 3.061·10¹⁰; N(σ, T) ≤ A (3T)^{8(1−σ)/3} log^{5−2σ} T + 103 log² T for T ≥ 2000 and σ ≥ 0.52 with an explicit A; and, for 3/4 ≤ σ < 1 and T ≥ 1, N(σ, T) ≤ C₁(σ) T^{8(1−σ)/3} log^{5−2σ} T + C₂(σ) log² T with tabulated C₁(σ), C₂(σ), including the recomputed constants of johnston-yang-2023 Table 3. Kadiri–Lumley–Ng’s own statement at σ = 0.90 is N(0.90, T) < 11.499 (log T)^{16/5} T^{4/15} + 3.186 log² T for T ≥ 3.0610046·10¹⁰, and their correction of the ζ-form of ramare-2016 is N(σ, T) ≤ 965 (3T)^{8(1−σ)/3} log^{5−2σ} T + 51.5 log² T; both are requested in that form.",
+   "needs": "With `N(σ, T)` the number of zeros of `ζ` with `σ ≤ Re ρ < 1` and `0 < Im ρ ≤ T` counted with multiplicity, the bounds `N(17/20, T) ≤ 0.5561 T + 0.7586 log T − 268 658` for `T ≥ 3.061·10¹⁰`, `N(σ, T) ≤ A (3T)^(8(1−σ)/3) (log T)^(5−2σ) + 103 log² T` for `T ≥ 2000` and `σ ≥ 0.52` with an explicit `A` (and Kadiri–Lumley–Ng's corrected form `N(σ, T) ≤ 965 (3T)^(8(1−σ)/3) (log T)^(5−2σ) + 51.5 log² T`), `N(0.90, T) < 11.499 (log T)^(16/5) T^(4/15) + 3.186 log² T` for `T ≥ 3.0610046·10¹⁰`, and, for `3/4 ≤ σ < 1` and `T ≥ 1`, `N(σ, T) ≤ C₁(σ) T^(8(1−σ)/3) (log T)^(5−2σ) + C₂(σ) log² T` with the tabulated `C₁(σ)`, `C₂(σ)`, including the recomputed constants of `johnston-yang-2023` Table 3.",
    "supplier": "ExplicitZetaBounds",
    "section": "target 19"
   },
@@ -3745,7 +3746,7 @@
     "7.3a"
    ],
    "detail": "Used for the high zeros in Layers 2, 3, 6, 7; the Brent–Platt–Trudgian form, with error of size |φ′| log T + φ/T, is the route of the current instances.",
-   "needs": "Supply the weighted sum over ordinates in Brent–Platt–Trudgian’s form (brent-platt-trudgian-2021, Lemma 3): for φ with a continuous derivative, nonnegative and non-increasing on [T₁, T₂] with T₁ ≥ 2π, the sum of φ(γ) over the ordinates T₁ < γ ≤ T₂ of the zeros of ζ, with multiplicity, is (1/2π) ∫_{T₁}^{T₂} φ(t) log(t/2π) dt + φ(T₂)Q(T₂) − φ(T₁)Q(T₁) plus an error of absolute value at most 2(2.067 + 0.059 log T₁)|φ′(T₁)| + (0.059 + 1/150)φ(T₁)/T₁, with Q(T) = N(T) − M(T); and, as its corollary, Lehman’s form: for φ continuous, positive and decreasing on [T₁, T₂] with T₁ ≥ 2πe, the sum is (1/2π) ∫_{T₁}^{T₂} φ(t) log(t/2π) dt + O*(4 φ(T₁) log T₁ + 2 ∫_{T₁}^{T₂} φ(t) dt/t).",
+   "needs": "The weighted sum over ordinates in Brent–Platt–Trudgian's form (`brent-platt-trudgian-2021`, Lemma 3): for `φ` with a continuous derivative, nonnegative and non-increasing on `[T₁, T₂]` with `T₁ ≥ 2π`, the sum of `φ(γ)` over the ordinates `T₁ < γ ≤ T₂` of the zeros of `ζ`, with multiplicity, is `(1/2π) ∫ φ(t) log(t/2π) dt` over `[T₁, T₂]` plus `φ(T₂) Q(T₂) − φ(T₁) Q(T₁)` plus an error of absolute value at most `2(2.067 + 0.059 log T₁) |φ′(T₁)| + (0.059 + 1/150) φ(T₁)/T₁`, with `Q(T) = N(T) − M(T)`, together with its corollary in Lehman's form, for `φ` continuous, positive and decreasing on `[T₁, T₂]` with `T₁ ≥ 2πe`, that the sum is `(1/2π) ∫ φ(t) log(t/2π) dt + O*(4 φ(T₁) log T₁ + 2 ∫ φ(t) dt/t)`, both integrals over `[T₁, T₂]`.",
    "supplier": "ExplicitZetaBounds",
    "section": "target 10"
   },
@@ -3755,10 +3756,10 @@
    "neededBy": [
     "2.5"
    ],
-   "detail": "Used in target 2.5 for the prime powers and the edges.",
-   "needs": "Supply, for real x > 0 and y > k and coprime positive integers k and ℓ, π(x + y; k, ℓ) − π(x; k, ℓ) ≤ 2y/(φ(k) log(y/k)) for the primes p ≡ ℓ (mod k).",
-   "supplier": "ExplicitCharacterSumsAndSieves",
-   "section": "target 21"
+   "detail": "Closed in this roadmap: §0.1 states and proves the inequality from the forbidden-residue large sieve of SieveMethodsAndPrimePatterns §2.9, and §2.5 cites §0.1. ExplicitCharacterSumsAndSieves comes after this roadmap in the order of supply and consumes the inequality from §0.1, so no supplier owes it.",
+   "needs": "For real `x > 0` and `y > k` and coprime positive integers `k` and `l`, `π(x + y; k, l) − π(x; k, l) ≤ 2y/(φ(k) log(y/k))` for the primes `p ≡ l (mod k)` (Montgomery–Vaughan's Theorem 2), proved in §0.1 of this roadmap.",
+   "supplier": "none",
+   "section": ""
   }
  ]
 }
