@@ -1,0 +1,13 @@
+{
+  "review": {
+    "status": "needs_changes",
+    "reviewer": "independent-review-PRREVIEW-QSeriesPartitionsAndMockModularForms~5",
+    "head": "b6c41905153c40c48e016becbdc34406d717f6f6",
+    "pr": 1391,
+    "folder": "QSeriesPartitionsAndMockModularForms",
+    "date": "2026-11-07",
+    "findings": 2,
+    "blocking": 0,
+    "notes": "incremental re-review of 22 changed lines since 4daf6e0; checked: both previous findings (R01 partly repaired: the README now consumes ModularForms §0.2 and the double ownership is gone, but the description does not name the ModularForms revision #1706 that alone defines §0.2; R02 repaired), every changed passage (lines 13, 47-48, 101, 822-842, 972, 1763) against ModularForms #1706 head 3453d2ba lines 385-470 and 1499-1502, HalfIntegralWeightModularForms #1721 head 1a78fdd2 lines 944-974, and main; the seeded target 5.2 (Zwegers2002 Theorem 1.11(2), lines 709-805, printed pp. 15-17); 17 new adversarial rows with eta evaluated numerically at three tau for eight SL2(Z) matrices and eight cocycle pairs, plus 139 rows carried from r4; gate OK (exit 0, all checks 0, build=0), depcheck 239 roadmaps 0 problems, lake env lean on Suggested.lean exit 0 with 15 sorry warnings and 27 signatures; two P3 findings: name the ModularForms revision in the description, and name one owner for the Dedekind-sum closed form at line 1763"
+  }
+}
