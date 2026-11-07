@@ -1,0 +1,13 @@
+{
+  "review": {
+    "status": "needs_changes",
+    "reviewer": "independent-review-PRREVIEW-EisensteinIdealAndRationalTorsion~6",
+    "head": "3360c0232933cc3079aeb114a0f96877d8e3ea70",
+    "pr": 1264,
+    "folder": "EisensteinIdealAndRationalTorsion",
+    "date": "2026-11-07",
+    "findings": 3,
+    "blocking": 2,
+    "notes": "incremental re-review of 8 changed lines since 27586f6. Both previous P3 findings repaired: line 13/1308 matches the EllipticCurveModularityPartII head (51b297d), and line 9/51 matches ModularCurvesPartII 7.5-7.6 and 13.7-13.9 at the #913 head. The merge of main moved the pins (Lean v4.36.0-rc2, Mathlib 1b1ccf4b, Tau Ceti 2fd255d9). The gate rerun with --build fails (build=2, Lake module-system warning): R01 P1. A module-form scratch copy elaborates with six sorry warnings only. R02 P2: the ModularForms revision (#1706) renames Layer 8 and moves the Layer 0/8 objects to the pinned Tau Ceti (correctedE2, heckeTCuspAlgebra, period map, CoefficientField); q-expansions are Mathlib's. R03 P3: stale pins at README line 33 and the partial name AlgebraicGeometry.AbelianVariety. Depcheck: 240 roadmaps, 2441 edges, 0 problems. Six signatures unchanged at the new pins; 30 one-tactic padding probes fail. No seeded target falls in the changed passages, so their rows carry forward from r5."
+  }
+}
