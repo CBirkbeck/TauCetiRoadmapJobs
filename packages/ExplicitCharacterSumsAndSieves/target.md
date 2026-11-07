@@ -391,3 +391,10 @@ same), `karatsubakorolev2007` (main theorem), `vinogradov2004`, `bordelles2012` 
 - **Cycles.** The triage removes the two potential cycles (`ψ` bounds from `ExplicitPrimeCounting`,
   pointwise bounds from `ExplicitMultiplicativeFunctions`); the design must not reintroduce them by
   importing either roadmap.
+
+
+## Addendum: the current explicit record (operator literature check)
+
+The design must state each target at the strength of the current literature and follow the modern route. The table below gives, for every target above, the strongest verified result on record with its source, and lists the results a modern explicit roadmap should add and the methods now standard. Where it says stronger, the design restates the target at that strength and cites that source; false or unproven statements are repaired first; October 2026 preprints are cited as unrefereed with the conditional statement kept alongside; the Landau–Siegel exclusion itself is owned by AnalyticNumberTheoryPartI §0.34, only its numerical instance and consequences are stated here.
+
+# ExplicitCharacterSumsAndSieves and 
