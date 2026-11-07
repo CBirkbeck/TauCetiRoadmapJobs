@@ -154,3 +154,20 @@ licence_class = "none"
 status = "uncertified"
 version_note = "paywalled; cited by its locator without the text"
 cited_for = ["Layer 3"]
+
+[[source]]
+id = "kuhlmann"
+authors = "Salma Kuhlmann"
+title = "Real algebraic geometry, lecture notes 08 (12 November 2009)"
+year = 2009
+venue = "University of Konstanz, course Reelle algebraische Geometrie, WS 2009/10"
+locator_scheme = "theorem"
+locator = "Theorem 2.2; Proposition 1.3; Proposition 2.1; Corollaries 2.3-2.6"
+url = "https://www.math.uni-konstanz.de/algebra/WS0910/Notes08.pdf"
+fetched_from = "https://www.math.uni-konstanz.de/algebra/WS0910/Notes08.pdf"
+fetched_at = "2026-11-07T00:57:49Z"
+sha256 = "135cafd7885b114c04218f7c11ddfd5173994aa03d8f701ecdc0e155399abb33"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-07"
+cited_for = ["6.0", "6.4"]
