@@ -101,7 +101,7 @@
       "roadmap:SchemeAndStackFoundations §1.18",
       "roadmap:SchemeAndStackFoundations §1.19",
       "roadmap:SchemeAndStackFoundations §1.20",
-      "gap:stack-morphism-calculus",
+      "gap:stack-morphism-permanence",
       "gap:stack-separation-axioms"
      ],
      "api": [
@@ -150,7 +150,7 @@
       {
        "name": "example_100_11_6",
        "kind": "non-example",
-       "statement": "Spec Q -> U/G (Gal(Qbar/Q) discrete) is a monomorphism between one-point spaces, not an isomorphism."
+       "statement": "For U = Spec(Qbar ⊗_Q Qbar) and G = Gal(Qbar/Q) discrete acting through the second factor, X = U/G lies over Spec Qbar; the point Spec Qbar -> U -> X is a section of X -> Spec Qbar, hence a monomorphism between one-point spaces, and not an isomorphism (U x_X Spec Qbar = G x Spec Qbar is discrete); there is no morphism Spec Q -> X."
       }
      ]
     },
@@ -174,7 +174,7 @@
       "roadmap:SchemeAndStackFoundations §1.19",
       "roadmap:SchemeAndStackFoundations §1.20",
       "gap:flat-groupoid-quotients",
-      "gap:stack-morphism-calculus"
+      "gap:stack-morphism-permanence"
      ],
      "api": [
       {
@@ -310,7 +310,7 @@
       "roadmap:SchemeAndStackFoundations §1.20",
       "mathlib:AlgebraicGeometry.Scheme.IdealSheafData.vanishingIdeal",
       "gap:reduced-regular-smooth-local",
-      "gap:stack-morphism-calculus"
+      "gap:stack-morphism-permanence"
      ],
      "api": [
       {
@@ -384,7 +384,7 @@
       "target:0.5",
       "roadmap:SchemeAndStackFoundations §1.20",
       "mathlib:AlgebraicGeometry.LocallyOfFiniteType",
-      "gap:stack-morphism-calculus"
+      "gap:stack-morphism-permanence"
      ],
      "api": [
       {
@@ -493,12 +493,12 @@
       "where": "Section 101.19 lines 1667-1674, Lemmas 101.19.2, 101.19.4, Remarks 101.19.3, 101.19.5, lines 1690-1725; Remark 101.5.2, Definition 101.5.3, Lemmas 101.5.4, 101.5.7, lines 497-618"
      },
      "prerequisites": [
+      "target:0.2",
       "roadmap:SchemeAndStackFoundations §1.13",
       "roadmap:SchemeAndStackFoundations §1.14",
       "roadmap:SchemeAndStackFoundations §1.20",
-      "target:0.2",
-      "gap:flat-groupoid-quotients",
-      "gap:stack-morphism-calculus"
+      "gap:inertia-of-presentations",
+      "gap:isomorphism-fpqc-local-spaces"
      ],
      "api": [
       {
@@ -566,7 +566,7 @@
      "prerequisites": [
       "target:1.3",
       "gap:stack-separation-axioms",
-      "gap:spaces-over-fields"
+      "gap:group-spaces-over-fields"
      ],
      "api": [],
      "tests": [
@@ -576,9 +576,9 @@
        "statement": "For G = A^1_k/Z (characteristic zero) BG has G_x = G, not a scheme; inertia not quasi-separated."
       },
       {
-       "name": "DM_finiteEtale",
-       "kind": "computation",
-       "statement": "On a Deligne-Mumford stack G_x is a finite etale group scheme."
+       "name": "DM_etale_notFinite",
+       "kind": "non-example",
+       "statement": "On a Deligne-Mumford stack G_x is an etale group scheme (unramified inertia), finite when I_X -> X is quasi-compact; BZ over k is DM with G_x = Z_k etale and not finite, B(Z/2) has G_x = (Z/2)_k finite etale."
       },
       {
        "name": "BGm",
@@ -609,7 +609,7 @@
       "roadmap:AlgebraicModuliForArithmeticGeometry §4.1",
       "roadmap:SchemeAndStackFoundations §1.18",
       "roadmap:SchemeAndStackFoundations §1.23",
-      "gap:stack-morphism-calculus"
+      "gap:stack-morphism-permanence"
      ],
      "api": [
       {
@@ -713,7 +713,7 @@
       "target:2.2",
       "roadmap:SchemeAndStackFoundations §1.21",
       "gap:flat-groupoid-quotients",
-      "gap:stack-morphism-calculus"
+      "gap:stack-morphism-permanence"
      ],
      "api": [],
      "tests": [
@@ -754,8 +754,9 @@
       "roadmap:SchemeAndStackFoundations §1.14",
       "roadmap:SchemeAndStackFoundations §1.17",
       "roadmap:SchemeAndStackFoundations §1.20",
+      "gap:inertia-of-presentations",
       "gap:flat-groupoid-quotients",
-      "gap:stack-morphism-calculus"
+      "gap:stack-morphism-permanence"
      ],
      "api": [],
      "tests": [
@@ -792,7 +793,8 @@
       "target:2.1",
       "target:2.4",
       "roadmap:SchemeAndStackFoundations §1.20",
-      "gap:stack-morphism-calculus"
+      "gap:flat-lfp-open",
+      "gap:stack-morphism-permanence"
      ],
      "api": [],
      "tests": [
@@ -832,8 +834,8 @@
       "target:2.4",
       "roadmap:SchemeAndStackFoundations §1.20",
       "gap:generic-flatness-spaces",
-      "gap:flat-groupoid-quotients",
-      "gap:stack-morphism-calculus"
+      "gap:inertia-of-presentations",
+      "gap:stack-morphism-permanence"
      ],
      "api": [],
      "tests": [
@@ -877,7 +879,7 @@
       "target:0.1",
       "roadmap:SchemeAndStackFoundations §1.19",
       "roadmap:SchemeAndStackFoundations §1.20",
-      "gap:stack-morphism-calculus",
+      "gap:stack-morphism-permanence",
       "gap:reduced-regular-smooth-local"
      ],
      "api": [],
@@ -895,7 +897,7 @@
       {
        "name": "example_100_11_6",
        "kind": "characterisation",
-       "statement": "U/G is reduced one-point and not locally Noetherian; Spec Q -> U/G is flat, surjective, lft and not lfp."
+       "statement": "U/G (U = Spec(Qbar ⊗_Q Qbar), G = Gal(Qbar/Q) discrete) is reduced one-point and not locally Noetherian; Spec Qbar -> U/G is flat, surjective, lft and not lfp: Spec Qbar -> U is a closed immersion with non-finitely-generated ideal, flat because the local rings of U are Qbar."
       }
      ]
     },
@@ -916,15 +918,17 @@
       "target:0.2",
       "target:3.1",
       "roadmap:SchemeAndStackFoundations §1.21",
+      "roadmap:SchemeAndStackFoundations §1.8",
+      "mathlib:AlgebraicGeometry.LocallyOfFinitePresentation.iff_locallyOfFiniteType",
       "gap:flat-groupoid-quotients",
-      "gap:stack-morphism-calculus"
+      "gap:stack-morphism-permanence"
      ],
      "api": [],
      "tests": [
       {
        "name": "example_100_11_6",
        "kind": "non-example",
-       "statement": "Spec Q -> U/G is a non-equivalence monomorphism; the core of U/G is Spec Q."
+       "statement": "Spec Qbar -> U/G is a non-equivalence monomorphism; the core of U/G is Spec Qbar = [Spec Qbar/R] with R = Spec Qbar."
       },
       {
        "name": "needs_mono",
@@ -1022,7 +1026,7 @@
       "target:3.3",
       "roadmap:SchemeAndStackFoundations §1.20",
       "gap:stack-separation-axioms",
-      "gap:stack-morphism-calculus",
+      "gap:stack-morphism-permanence",
       "gap:reduced-regular-smooth-local"
      ],
      "api": [],
@@ -1112,8 +1116,10 @@
       "target:3.3",
       "target:3.4",
       "roadmap:SchemeAndStackFoundations §1.21",
+      "roadmap:SchemeAndStackFoundations §1.8",
+      "mathlib:AlgebraicGeometry.LocallyOfFinitePresentation.iff_locallyOfFiniteType",
       "gap:flat-groupoid-quotients",
-      "gap:stack-morphism-calculus"
+      "gap:stack-morphism-permanence"
      ],
      "api": [],
      "tests": [
@@ -1152,10 +1158,12 @@
       "target:3.4",
       "roadmap:SchemeAndStackFoundations §1.19",
       "roadmap:SchemeAndStackFoundations §1.21",
+      "roadmap:SchemeAndStackFoundations §1.8",
+      "mathlib:AlgebraicGeometry.LocallyOfFinitePresentation.iff_locallyOfFiniteType",
       "gap:quasi-dm-flat-presentation",
       "gap:flat-groupoid-quotients",
-      "gap:spaces-over-fields",
-      "gap:stack-morphism-calculus"
+      "gap:quasi-finite-over-fields",
+      "gap:stack-morphism-permanence"
      ],
      "api": [],
      "tests": [
@@ -1201,7 +1209,7 @@
       "target:2.6",
       "target:3.3",
       "target:4.2",
-      "gap:stack-morphism-calculus"
+      "gap:stack-morphism-permanence"
      ],
      "api": [],
      "tests": [
@@ -1241,7 +1249,7 @@
       "roadmap:SchemeAndStackFoundations §1.20",
       "roadmap:SchemeAndStackFoundations §1.21",
       "gap:flat-groupoid-quotients",
-      "gap:stack-morphism-calculus"
+      "gap:stack-morphism-permanence"
      ],
      "api": [],
      "tests": [
@@ -1258,7 +1266,7 @@
       {
        "name": "example_100_11_6",
        "kind": "non-example",
-       "statement": "U/G is not locally Noetherian; its residual gerbe Spec Q exists by 4.1."
+       "statement": "U/G is not locally Noetherian; its residual gerbe Spec Qbar exists by 4.1."
       }
      ]
     },
@@ -1282,7 +1290,7 @@
       "target:3.3",
       "target:4.1",
       "target:4.4",
-      "gap:stack-morphism-calculus"
+      "gap:stack-morphism-permanence"
      ],
      "api": [],
      "tests": [
@@ -1299,7 +1307,7 @@
       {
        "name": "needs_noetherian",
        "kind": "non-example",
-       "statement": "On U/G the closed point has Z_x = Spec Q -> U/G not a closed immersion."
+       "statement": "On U/G the closed point has Z_x = Spec Qbar -> U/G a monomorphism and not a closed immersion (it would be all of the reduced U/G by 0.5, and it is not an isomorphism)."
       }
      ]
     }
@@ -1326,7 +1334,7 @@
       "target:0.3",
       "target:2.5",
       "roadmap:SchemeAndStackFoundations §1.20",
-      "gap:stack-morphism-calculus",
+      "gap:stack-morphism-permanence",
       "gap:stack-separation-axioms",
       "gap:decent-algebraic-spaces"
      ],
@@ -1398,7 +1406,8 @@
       "target:4.3",
       "target:4.4",
       "target:5.1",
-      "gap:decent-algebraic-spaces"
+      "gap:decent-algebraic-spaces",
+      "gap:reduced-scheme-residue-field-factorisation"
      ],
      "api": [],
      "tests": [
@@ -1501,8 +1510,8 @@
       "target:3.4",
       "target:5.1",
       "target:5.3",
-      "gap:decent-algebraic-spaces",
-      "gap:stack-morphism-calculus"
+      "gap:quasi-separated-space-schematic-locus",
+      "gap:stack-morphism-permanence"
      ],
      "api": [],
      "tests": [
@@ -1543,7 +1552,7 @@
       "target:3.4",
       "target:5.3",
       "mathlib:finite_of_finite_type_of_isJacobsonRing",
-      "gap:stack-morphism-calculus"
+      "gap:stack-morphism-permanence"
      ],
      "api": [
       {
@@ -1686,9 +1695,10 @@
      "id": "6.3",
      "kind": "definition",
      "name": "Stacks.ResidualGerbe.IsNeutral",
-     "statement": "The canonical BG_x -> Z_x of a representative is an equivalence iff Spec k -> base is an isomorphism (for decent X iff kappa(x) -> k is an isomorphism); then R_x = G_x and Z_x ≃ BG_x. Z_x is neutral if it has an object over its base, iff some representative satisfies this.",
+     "statement": "The canonical BG_x -> Z_x of a representative is an equivalence iff Spec k -> base is an isomorphism (for decent X iff kappa(x) -> k is an isomorphism); then R_x = G_x and Z_x ≃ BG_x. Z_x is neutral if the gerbe Z_x -> base has a section; a representative with Spec k -> base an isomorphism makes Z_x neutral, and for decent X (base Spec kappa(x)) Z_x is neutral iff some representative has kappa(x) -> k an isomorphism. Without decency the converse fails (Spec Q(t)/Z).",
      "hypotheses": [
-      "x : Spec k -> X a representative with Z_x"
+      "x : Spec k -> X a representative of a point whose residual gerbe Z_x exists",
+      "for the converse of the neutrality criterion: X decent"
      ],
      "locator": {
       "source": "stacks-06QB",
@@ -1698,9 +1708,11 @@
       "target:2.1",
       "target:2.2",
       "target:2.3",
+      "target:3.4",
+      "target:5.3",
       "target:6.1",
       "target:6.2",
-      "gap:stack-morphism-calculus"
+      "gap:stack-morphism-permanence"
      ],
      "api": [
       {
@@ -1711,7 +1723,7 @@
       {
        "name": "neutral_iff",
        "role": "lemma",
-       "statement": "Z_x is neutral iff some representative has Spec k -> base an isomorphism."
+       "statement": "A representative with Spec k -> base an isomorphism makes Z_x neutral; for decent X, Z_x is neutral iff it has an object over Spec kappa(x), iff some representative has kappa(x) -> k an isomorphism."
       },
       {
        "name": "R_eq_G",
@@ -1734,6 +1746,11 @@
        "name": "A1Q",
        "kind": "characterisation",
        "statement": "On A^1_Q at t^2+1 = 0 the representative over Q(i) gives an equivalence, the one over C does not."
+      },
+      {
+       "name": "neutral_needs_decent",
+       "kind": "non-example",
+       "statement": "X = Spec Q(t)/Z (not decent) is its own residual gerbe and base, so the identity is a section and X is neutral, while no representative Spec k -> X is an isomorphism onto the base: the converse needs decency."
       }
      ]
     },
@@ -1759,7 +1776,7 @@
       "target:4.1",
       "target:4.5",
       "target:6.3",
-      "gap:stack-morphism-calculus"
+      "gap:stack-morphism-permanence"
      ],
      "api": [],
      "tests": [
@@ -1843,7 +1860,7 @@
      "id": "7.2",
      "kind": "definition",
      "name": "Stacks.normalSpace",
-     "statement": "For X locally of finite type over k, x in X(k) closed with p x = id and G_x affine, N_x = (i^* I)^∨, the contragredient of the finite-dimensional G_x-representation of I/I^2 on BG_x under QCoh(BG_x) ≃ Rep(G_x).",
+     "statement": "For X locally of finite type over k, x in X(k) closed with p x = id and G_x affine, N_x = (i^* I)^∨, the contragredient of the finite-dimensional G_x-representation of I/I^2 on BG_x under QCoh(BG_x) ≃ Rep(G_x), the equivalence given by SchemeAndStackFoundations §1.22 QCoh.presentationEquiv for BG_x = [Spec k/G_x] (descent data along G_x ⇉ Spec k are O(G_x)-comodule structures).",
      "hypotheses": [
       "k a field",
       "X locally of finite type over k",
@@ -1939,7 +1956,7 @@
       {
        "name": "linear_equivariant",
        "role": "lemma",
-       "statement": "theta_x is k-linear and G_x(k)-equivariant (Convention 5)."
+       "statement": "theta_x is k-linear and G_x(k)-equivariant for the left action g.(tau, alpha) = (tau, alpha g^-1) of Convention 5, the inverse of the reframing alpha -> alpha g of AlgebraicModuliForArithmeticGeometry §8.3."
       },
       {
        "name": "exact",
@@ -2029,6 +2046,7 @@
   {
    "roadmap": "SchemeAndStackFoundations",
    "sections": [
+    "§1.2",
     "§1.7",
     "§1.8",
     "§1.9",
@@ -2047,7 +2065,7 @@
     "§4.12",
     "§4.13"
    ],
-   "what": "Algebraic spaces and their points, group spaces, groupoids, stabilizers, torsors, Artin's bootstrap, stacks in groupoids, algebraic and DM stacks, inertia, SmoothLocal properties, |X|, quotient stacks, quasi-coherent modules with QCoh(BG) as comodules, the moduli functor, generic flatness and regular schemes."
+   "what": "Algebraic spaces and their points, group spaces, groupoids, stabilizers, torsors, Artin's bootstrap, stacks in groupoids, algebraic and DM stacks, inertia, SmoothLocal properties, |X|, quotient stacks, quasi-coherent modules and their description on a presentation (QCoh(BG) as comodules through QCoh.presentationEquiv), the moduli functor, generic flatness and regular schemes."
   },
   {
    "roadmap": "AlgebraicModuliForArithmeticGeometry",
@@ -2076,7 +2094,7 @@
   },
   {
    "roadmap": "FunctionFieldArithmeticPartII",
-   "what": "zero-dimensional Deligne-Mumford stacks as disjoint unions of residual gerbes BG_x (0.5, 1.4, 4.5, 6.4)"
+   "what": "zero-dimensional Deligne-Mumford stacks with quasi-compact diagonal as disjoint unions of residual gerbes BG_x (0.5, 1.4, 4.5, 6.4)"
   },
   {
    "roadmap": "MotivicStructuresInModuliOfCurves",
@@ -2084,7 +2102,7 @@
   },
   {
    "roadmap": "VirtualFundamentalClasses",
-   "what": "residual gerbes as zero-dimensional integral substacks (4.2, 4.5, 5.3)"
+   "what": "residual gerbes of closed points of DM stacks with their residue fields and automorphism groups, for degrees of zero-cycles (1.3, 4.2, 4.5, 5.3)"
   },
   {
    "roadmap": "EquivariantIntersectionTheory",
@@ -2097,14 +2115,13 @@
  ],
  "gaps": [
   {
-   "slug": "stack-morphism-calculus",
+   "slug": "stack-morphism-permanence",
    "title": "Permanence of morphism properties of algebraic stacks",
    "neededBy": [
     "0.2",
     "0.3",
     "0.5",
     "1.1",
-    "1.3",
     "2.1",
     "2.3",
     "2.4",
@@ -2124,8 +2141,32 @@
     "6.3",
     "6.4"
    ],
-   "detail": "Stacks, Morphisms of Stacks, Lemmas 101.5.1, 101.7.3-101.7.7, 101.17.2-101.17.8, 101.25.2-101.25.5, 101.27.2-101.27.16, 101.33.2; Properties of Stacks, Section 100.3. SchemeAndStackFoundations §1.20 defines SmoothLocal and QuasiCompactStack with atlas independence only.",
-   "needs": "SchemeAndStackFoundations §1.20 must prove composition, base change, descent along surjective flat locally finitely presented base change, agreement with RepresentableProperty, cancellation and openness for its SmoothLocal properties, surjectivity and QuasiCompactStack, and that the inertia is locally of finite type.",
+   "detail": "Stacks, Properties of Stacks, Lemmas 100.3.1-100.3.3, 100.5.2-100.5.5 (stacks-04XE lines 111-245, 577-590); Morphisms of Stacks, Lemmas 101.7.3-101.7.7, 101.7.10, 101.17.2-101.17.8, 101.25.2-101.25.5, 101.27.2-101.27.14, 101.27.16, 101.33.2-101.33.5 (stacks-06RD lines 801-889, 1478-1540, 2328-2357, 2438-2577, 3294-3308). SchemeAndStackFoundations §1.20 defines SmoothLocal and QuasiCompactStack with atlas independence only.",
+   "needs": "SchemeAndStackFoundations §1.20 must prove, for its SmoothLocal properties (flat, lfp, lft, smooth), surjectivity and QuasiCompactStack, composition, base change, descent along surjective flat lfp base change, agreement with RepresentableProperty, the implications smooth => lfp => lft, cancellation for lft and lfp, and fppf-local essential surjectivity of surjective flat lfp morphisms.",
+   "supplier": "SchemeAndStackFoundations",
+   "section": "§1.20"
+  },
+  {
+   "slug": "flat-lfp-open",
+   "title": "Flat locally finitely presented morphisms of algebraic stacks are open",
+   "neededBy": [
+    "2.5"
+   ],
+   "detail": "Stacks, Morphisms of Stacks, Lemma 101.27.15 (stacks-06RD lines 2560-2567), used in the proof of Lemma 101.28.13 (stacks-06QB line 2875).",
+   "needs": "SchemeAndStackFoundations §1.20 must prove that |f| is open for every flat, locally finitely presented morphism f of algebraic stacks.",
+   "supplier": "SchemeAndStackFoundations",
+   "section": "§1.20"
+  },
+  {
+   "slug": "inertia-of-presentations",
+   "title": "Inertia is locally of finite type and pulls back to the stabilizer of a presentation",
+   "neededBy": [
+    "1.3",
+    "2.4",
+    "2.6"
+   ],
+   "detail": "Stacks, Morphisms of Stacks, Lemmas 101.5.1 and 101.5.7 (stacks-06RD lines 463-496, 609-618). SchemeAndStackFoundations §1.20 states inertia.representable only.",
+   "needs": "SchemeAndStackFoundations §1.20 must prove that the inertia and relative inertia of algebraic stacks are locally of finite type and that the stabilizer of a presentation [U/R] ≃ X is U x_X I_X.",
    "supplier": "SchemeAndStackFoundations",
    "section": "§1.20"
   },
@@ -2138,8 +2179,8 @@
     "3.4",
     "5.1"
    ],
-   "detail": "Stacks, Morphisms of Stacks, Definitions 101.4.1-101.4.2, Lemmas 101.4.3, 101.4.4, 101.4.11, 101.6.1 (stacks-06RD lines 216-345, 637).",
-   "needs": "SchemeAndStackFoundations §1.20 must define DM, quasi-DM and quasi-separated morphisms and stacks by the diagonal with their implications, base change and composition, Lemma 101.4.11 and the diagonal-inertia comparison Lemma 101.6.1.",
+   "detail": "Stacks, Morphisms of Stacks, Definitions 101.4.1-101.4.2, Lemmas 101.4.3, 101.4.4, 101.4.10, 101.4.11, 101.6.1 (stacks-06RD lines 216-345, 637-657). DM stacks are SchemeAndStackFoundations §1.19's IsDeligneMumford with .iff_unramified_diagonal.",
+   "needs": "SchemeAndStackFoundations §1.20 must define DM, quasi-DM and quasi-separated morphisms and quasi-DM and quasi-separated stacks by the diagonal (DM stacks being §1.19's IsDeligneMumford), with their implications, base change, composition, Lemma 101.4.11 and the diagonal-inertia comparison Lemma 101.6.1.",
    "supplier": "SchemeAndStackFoundations",
    "section": "§1.20"
   },
@@ -2159,11 +2200,9 @@
    "title": "Quotients of flat groupoids and the canonical comparison",
    "neededBy": [
     "0.3",
-    "1.3",
     "2.2",
     "2.3",
     "2.4",
-    "2.6",
     "3.2",
     "3.5",
     "4.1",
@@ -2171,8 +2210,8 @@
     "4.4",
     "6.1"
    ],
-   "detail": "Stacks, Criteria for Representability, Theorem 97.17.2, Lemmas 97.17.1, 97.18.3 (stacks-criteria lines 1401-1424, 1509-1525); Groupoids in Spaces, Lemmas 78.25.1, 78.27.1-78.27.2; Algebraic Stacks, Lemma 94.16.1 and Remark 94.16.3; Morphisms of Stacks, Lemma 101.5.7.",
-   "needs": "SchemeAndStackFoundations §1.21 must prove that for flat lfp groupoids in algebraic spaces [U/R] is algebraic and U -> [U/R] is surjective flat lfp, that [B/G] is algebraic iff G is flat lfp and is then a gerbe over B, that the canonical [U/R] -> X is fully faithful and an equivalence for surjective flat lfp U -> X, that restricting a groupoid gives a fully faithful functor of quotients, and that the stabilizer of a presentation is the pullback of the inertia.",
+   "detail": "Stacks, Criteria for Representability, Theorem 97.17.2, Lemmas 97.17.1, 97.18.3 (stacks-criteria lines 1401-1424, 1509-1525); Groupoids in Spaces, Lemmas 78.25.1, 78.27.1-78.27.2; Algebraic Stacks, Lemma 94.16.1 and Remark 94.16.3.",
+   "needs": "SchemeAndStackFoundations §1.21 must prove that for flat lfp groupoids in algebraic spaces [U/R] is algebraic and U -> [U/R] is surjective flat lfp, that [B/G] is algebraic iff G is flat lfp and is then a gerbe over B, that the canonical [U/R] -> X is fully faithful and an equivalence for surjective flat lfp U -> X, and that restricting a groupoid gives a fully faithful functor of quotients.",
    "supplier": "SchemeAndStackFoundations",
    "section": "§1.21"
   },
@@ -2182,25 +2221,67 @@
    "neededBy": [
     "5.1",
     "5.2",
-    "5.3",
-    "5.4"
+    "5.3"
    ],
-   "detail": "Stacks, Decent Spaces, Definition 68.6.1, Lemmas 68.7.2, 68.8.3, 68.11.1, Proposition 68.12.4 (stacks-decent-spaces lines 567-589, 710-716, 816-824, 1214-1220, 1364-1366); Properties of Spaces, Proposition 66.13.3; Morphisms, Lemmas 29.59.1-29.59.2.",
-   "needs": "SchemeAndStackFoundations §1.7 must define decent algebraic spaces and prove that quasi-separated and locally separated spaces are decent, that points of decent spaces are represented by monomorphisms from fields, sobriety, Lemmas 68.7.2 and 68.8.3, the dense open subscheme of a quasi-separated space, and the scheme factorisation lemma through a residue field.",
+   "detail": "Stacks, Decent Spaces, Definition 68.6.1, Lemmas 68.7.2, 68.8.3, 68.11.1, 68.15.2, Proposition 68.12.4 (stacks-decent-spaces lines 567-589, 710-716, 816-824, 1214-1220, 1364-1366, 1754).",
+   "needs": "SchemeAndStackFoundations §1.7 must define decent algebraic spaces and prove that quasi-separated and locally separated spaces are decent, that points of decent spaces are represented by monomorphisms from fields, sobriety, and Lemmas 68.7.2 and 68.8.3.",
    "supplier": "SchemeAndStackFoundations",
    "section": "§1.7"
   },
   {
-   "slug": "spaces-over-fields",
+   "slug": "quasi-separated-space-schematic-locus",
+   "title": "A quasi-separated algebraic space has a dense open subscheme",
+   "neededBy": [
+    "5.4"
+   ],
+   "detail": "Stacks, Properties of Spaces, Proposition 66.13.3 (cited at stacks-decent-spaces line 1019).",
+   "needs": "SchemeAndStackFoundations §1.9 must prove that a quasi-separated algebraic space has a dense open subspace which is a scheme.",
+   "supplier": "SchemeAndStackFoundations",
+   "section": "§1.9"
+  },
+  {
+   "slug": "reduced-scheme-residue-field-factorisation",
+   "title": "Morphisms from reduced schemes with image in a point factor through its residue field",
+   "neededBy": [
+    "5.2"
+   ],
+   "detail": "Stacks, Morphisms, Lemmas 29.59.1-29.59.2 (stacks-morphisms-schemes lines 7102-7125), used at stacks-decent-spaces lines 1582-1583 and 1601. No Mathlib lemma at the pin factors a reduced scheme with one-point image through Scheme.fromSpecResidueField.",
+   "needs": "SchemeAndStackFoundations §1.7 must prove that a morphism from a reduced scheme with image in {x} factors through Spec kappa(x), and, over a locally Noetherian scheme, through the union of the residue fields of a set of points without specialisations containing the image.",
+   "supplier": "SchemeAndStackFoundations",
+   "section": "§1.7"
+  },
+  {
+   "slug": "group-spaces-over-fields",
    "title": "Group algebraic spaces over fields that are schemes",
    "neededBy": [
-    "1.4",
-    "4.2"
+    "1.4"
    ],
-   "detail": "Stacks, Spaces over Fields, Lemmas 72.10.8-72.10.9; More on Groupoids in Spaces, Lemma 79.9.4 and Proposition 79.10.3 (cited at stacks-06RD lines 1682-1689 and 3078-3080).",
-   "needs": "SchemeAndStackFoundations §1.13 must prove that a group algebraic space over a field which is locally quasi-finite, quasi-separated or locally separated is a scheme, and Spaces over Fields Lemma 72.10.9.",
+   "detail": "Stacks, Spaces over Fields, Lemma 72.10.8; More on Groupoids in Spaces, Lemma 79.9.4 and Proposition 79.10.3 (cited at stacks-06RD lines 1682-1689).",
+   "needs": "SchemeAndStackFoundations §1.13 must prove that a group algebraic space over a field which is locally quasi-finite, quasi-separated or locally separated is a scheme.",
    "supplier": "SchemeAndStackFoundations",
    "section": "§1.13"
+  },
+  {
+   "slug": "quasi-finite-over-fields",
+   "title": "Monomorphisms followed by locally quasi-finite morphisms over fields",
+   "neededBy": [
+    "4.2"
+   ],
+   "detail": "Stacks, Spaces over Fields, Lemma 72.10.9 (cited at stacks-06RD lines 3077-3080).",
+   "needs": "SchemeAndStackFoundations §1.8 must prove that a morphism of algebraic spaces to a disjoint union of spectra of fields that factors as a monomorphism followed by a locally quasi-finite morphism is locally quasi-finite.",
+   "supplier": "SchemeAndStackFoundations",
+   "section": "§1.8"
+  },
+  {
+   "slug": "isomorphism-fpqc-local-spaces",
+   "title": "Being an isomorphism of algebraic spaces is fpqc local on the target",
+   "neededBy": [
+    "1.3"
+   ],
+   "detail": "Stacks, Descent on Spaces, Lemma 74.11.15 (cited at stacks-06RD lines 1714-1715 in the proof of Lemma 101.19.4). SchemeAndStackFoundations §1.2 treats fppf descent of algebraic spaces only.",
+   "needs": "SchemeAndStackFoundations §1.2 must prove that being an isomorphism is fpqc local on the target for morphisms of algebraic spaces, in particular descends along field extensions.",
+   "supplier": "SchemeAndStackFoundations",
+   "section": "§1.2"
   },
   {
    "slug": "generic-flatness-spaces",
@@ -2208,7 +2289,7 @@
    "neededBy": [
     "2.6"
    ],
-   "detail": "Stacks, Morphisms of Spaces, Proposition 67.32.1; Morphisms, Proposition 29.27.2 (used at stacks-06QB lines 2929-2932). §4.12 states generic_flatness for schemes over an integral base.",
+   "detail": "Stacks, Morphisms of Spaces, Proposition 67.32.1; Morphisms, Proposition 29.28.2 (used at stacks-06QB lines 2929-2932). §4.12 states generic_flatness for schemes over an integral base.",
    "needs": "SchemeAndStackFoundations §4.12 must extend generic_flatness to quasi-compact morphisms of algebraic spaces locally of finite type over a reduced base, giving a dense open over which the morphism is flat and locally of finite presentation.",
    "supplier": "SchemeAndStackFoundations",
    "section": "§4.12"
