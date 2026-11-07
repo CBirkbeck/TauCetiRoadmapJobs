@@ -1,0 +1,28 @@
+{
+  "gaps": [
+    {
+      "slug": "torsor-character-sheaf",
+      "supplier": "EtaleCohomologyFoundations",
+      "section": "§F.0.3",
+      "needs": "For every scheme X, finite group A, finite étale A-torsor P → X and character χ : A → Λ^×, the rank-one lisse sheaf P ×^A Λ(χ), identified with an isotypic part of the pushforward of Λ_P, with its monodromy, tensor compatibility in χ, functoriality along homomorphisms A → A' with the pushed-out torsor, pullback and coefficient change, without assuming |A| invertible."
+    },
+    {
+      "slug": "projection-formula-qcqs",
+      "supplier": "EtaleCohomologyFoundations",
+      "section": "§0.8 and §F.5",
+      "needs": "For every separated finitely presented f : X → Y between qcqs schemes and torsion Λ, the projection isomorphisms Rf_!(B ⊗^L f^*A) ≅ Rf_!B ⊗^L A for A ∈ D⁺(Y, Λ) and B ∈ D⁺(X, Λ) with one of A, B of finite Tor amplitude, natural and compatible with composition and base change."
+    },
+    {
+      "slug": "smooth-exceptional-pullback",
+      "supplier": "EtaleCohomologyFoundations",
+      "section": "§F.6",
+      "needs": "For a smooth separated finitely presented f : X → Y of relative dimension d between Noetherian schemes on which the characteristic of Λ is invertible, the natural isomorphism f^!M ≅ f^*M(d)[2d] for M ∈ D⁺(Y, Λ) and the smooth base change f^*RHom(K, M) ≅ RHom(f^*K, f^*M) for K ∈ Dᵇ_c(Y, Λ)."
+    },
+    {
+      "slug": "perverse-exactness-affine-smooth",
+      "supplier": "EtaleCohomologyFoundations",
+      "section": "§F.8",
+      "needs": "For a morphism f : X → Y of separated finite-type schemes over a field and each perverse t-structure of §F.8 (the middle one for finite Λ, E and ℚ̄_ℓ, and both p and p⁺ for O_E), the t-exactness of f^*[d] when f is smooth of pure relative dimension d, and the right t-exactness of Rf_* and left t-exactness of Rf_! when f is affine."
+    }
+  ]
+}
