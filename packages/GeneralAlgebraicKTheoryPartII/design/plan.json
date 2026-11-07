@@ -4267,66 +4267,6 @@
       "section": "§1.2"
     },
     {
-      "slug": "tc-mod-p-cyclotomic-colimits",
-      "needs": "Prove that TC/p preserves all small colimits of cyclotomic spectra whose underlying spectra are connective.",
-      "supplier": "RefinedTraceMethods",
-      "section": "§2.10"
-    },
-    {
-      "slug": "tc-mod-p-ring-sifted-colimits",
-      "needs": "Prove that A↦TC(A)/p preserves sifted colimits of connective E₁-rings.",
-      "supplier": "RefinedTraceMethods",
-      "section": "§2.10"
-    },
-    {
-      "slug": "thh-all-cyclic-assembly",
-      "needs": "Prove that for every discrete group G and connective E₁-ring R, colim_(G/H∈Or_Cyc(G))THH(R[H])→THH(R[G]) is an equivalence of cyclotomic spectra, with all cyclic subgroups including infinite cyclic ones.",
-      "supplier": "RefinedTraceMethods",
-      "section": "§2.10"
-    },
-    {
-      "slug": "tc-z-k1-nonzero",
-      "needs": "Prove L_K(1)TC(ℤ)≠0 for every prime p, including p=2.",
-      "supplier": "RefinedTraceMethods",
-      "section": "§4.17"
-    },
-    {
-      "slug": "tc-z-inverse-p-vanishing",
-      "needs": "Prove TC(ℤ[1/p])^∧p=0 for every prime p.",
-      "supplier": "RefinedTraceMethods",
-      "section": "§2.10"
-    },
-    {
-      "slug": "k1-tc-filtered-colimits",
-      "needs": "Prove that A↦L_K(1)TC(A) preserves filtered colimits of discrete unital rings into K(1)-local spectra.",
-      "supplier": "RefinedTraceMethods",
-      "section": "§2.10"
-    },
-    {
-      "slug": "linear-weak-additive-motives",
-      "needs": "For each E∞ ring A and sufficiently large regular κ, supply the stable category Mot_κ(A) and universal functor U_A for weakly additive invariants on κ-compact A-linear perfect categories.",
-      "supplier": "RefinedTraceMethods",
-      "section": "§4.6"
-    },
-    {
-      "slug": "linear-motive-tensor-unit",
-      "needs": "Supply the symmetric monoidal structure on Mot_κ(A) whose unit is the motive of Perf(A), for commutative A and an accessibility cardinal κ as above.",
-      "supplier": "RefinedTraceMethods",
-      "section": "§4.10"
-    },
-    {
-      "slug": "linear-motive-kzero-unit",
-      "needs": "Supply the natural map K₀(C)→π₀Map(U_A(Perf(A)),U_A(C)) for κ-compact A-linear C, sending [A] to the monoidal unit when C=Perf(A).",
-      "supplier": "RefinedTraceMethods",
-      "section": "§4.10"
-    },
-    {
-      "slug": "linear-motive-projection-formula",
-      "needs": "For a map A→B of E∞ rings with B perfect over A, prove that restriction and extension of A-linear perfect-category motives satisfy the tensor projection formula.",
-      "supplier": "RefinedTraceMethods",
-      "section": "§4.10"
-    },
-    {
       "slug": "spectral-etale-descent",
       "needs": "With D₀=Hℚ and D_n=T(n) for n≥1, for every E∞ ring R and n≥0 prove that Y↦L_D(n)K(Perf(Y)) is an étale sheaf on the spectral étale site of R (yuan line 310, Theorem 4.3, manuscript p.8).",
       "supplier": "KTheoryFiniteLocalFields",
@@ -4391,12 +4331,6 @@
       "needs": "Prove KH(A)→KH(A/I) is an equivalence for every nilpotent two-sided ideal I of a discrete associative unital ring A, in all integer degrees.",
       "supplier": "SchemeKTheoryOperations",
       "section": "§5.6"
-    },
-    {
-      "slug": "stable-james-splitting",
-      "needs": "Supply a natural reduced stable equivalence Σ∞ΩΣW≃⋁_(r≥1)Σ∞W^∧r for every connected pointed CW space W, compatible with the word filtration and its smash-power quotients.",
-      "supplier": "HomotopySpheres",
-      "section": "§3B"
     },
     {
       "slug": "all-height-morava-realization",

@@ -598,3 +598,23 @@ status = "certified"
 accessed = "2026-10-29"
 version_note = "arXiv v2"
 cited_for = ["8.9 Classical regular localization checks"]
+
+[[source]]
+id = "lrrv"
+authors = "Wolfgang Lück, Holger Reich, John Rognes and Marco Varisco"
+title = "Algebraic K-theory of group rings and the cyclotomic trace map"
+year = 2015
+venue = "Adv. Math. 304 (2017) 930-1020"
+doi = "10.1016/j.aim.2016.09.004"
+arxiv = "1504.03674v3"
+locator_scheme = "theorem"
+locator = "Theorem 1.19(i), p.7; Theorem 6.1, p.25; §4J, Definition 4.8 and the following remark, pp.19–20"
+url = "https://arxiv.org/abs/1504.03674v3"
+fetched_from = "https://arxiv.org/pdf/1504.03674v3"
+fetched_at = "2026-11-07T15:01:55Z"
+sha256 = "170370c89c08c31fb7cb3d033c08609582b71e69ca41211cbd14cfbe86312605"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-07"
+version_note = "arXiv v3; theorem numbering and pages of arXiv:1504.03674v3, published in Adv. Math. 304 (2017)"
+cited_for = ["10.4 p-adic TC assembly for cyclic subgroups"]
