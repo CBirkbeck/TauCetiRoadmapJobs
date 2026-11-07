@@ -168,8 +168,9 @@ timeout_minutes = 360
 codex_model = "gpt-6-astra"
 
 [agents.lanes.prreview]
+# Pull-request reviews: Astra on Codex; a Claude reviewer runs the model it was started with (Fable by default,
+# Opus while the Fable subscriptions are limited), so the review backlog keeps moving.
 codex_model = "gpt-6-astra"
-claude_model = "fable"
 
 [review]
 # Who counts as independent of an author. "operator": another operator login (projects with several
