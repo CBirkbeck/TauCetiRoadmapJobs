@@ -51,3 +51,55 @@ status = "certified"
 accessed = "2026-11-06"
 version_note = "arXiv v3; the README's BCGP21 locators (section numbers and pages) follow arXiv v3"
 cited_for = ["7.11"]
+
+[[source]]
+id = "serre-1981-chebotarev"
+authors = "Jean-Pierre Serre"
+title = "Quelques applications du théorème de densité de Chebotarev"
+year = 1981
+venue = "Publ. Math. IHÉS 54 (1981), 123–201"
+locator_scheme = "section"
+locator = "Introduction, p. 124; §2.1, Théorème 1; §6.4, Proposition 13; §7.2, Théorème 15"
+url = "https://www.numdam.org/item/PMIHES_1981__54__123_0.pdf"
+fetched_from = "https://www.numdam.org/item/PMIHES_1981__54__123_0.pdf"
+fetched_at = "2026-11-07T00:52:26Z"
+sha256 = "bfcda9821742b02801e4f1264750aebeb656141fbd53fb61b8662333e1491830"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-07"
+cited_for = ["5.1", "5.8", "5.9"]
+
+[[source]]
+id = "serre-1987-modular-galois"
+authors = "Jean-Pierre Serre"
+title = "Sur les représentations modulaires de degré 2 de Gal(Q̄/Q)"
+year = 1987
+venue = "Duke Math. J. 54 (1987), 179–230"
+locator_scheme = "section"
+locator = "3.3, p. 198"
+url = "https://www.college-de-france.fr/media/jean-pierre-serre/UPL5835292064138487263_Serre_Repr.modulaires_Galois.pdf"
+fetched_from = "https://www.college-de-france.fr/media/jean-pierre-serre/UPL5835292064138487263_Serre_Repr.modulaires_Galois.pdf"
+fetched_at = "2026-11-07T00:52:30Z"
+sha256 = "8048919db24dcb972435aaaa2a74d1168d0fe533af3aa26c6c809b12ddaee038"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-07"
+cited_for = ["4.1"]
+
+[[source]]
+id = "khare-wintenberger-2009-i"
+authors = "Chandrashekhar Khare, Jean-Pierre Wintenberger"
+title = "Serre's modularity conjecture (I)"
+year = 2009
+venue = "Invent. Math. 178 (2009), 485–504"
+version_note = "HAL preprint; the page 10 of the locator is the preprint pagination"
+locator_scheme = "theorem"
+locator = "Lemma 6.1, p. 10"
+url = "https://hal.science/hal-00138160/document"
+fetched_from = "https://hal.science/hal-00138160/document"
+fetched_at = "2026-11-07T00:54:02Z"
+sha256 = "3bf48fb96e9f98dd2f854cf94007c9f8170a2313924dd23a7305bf64208a9889"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-07"
+cited_for = ["4.4"]
