@@ -82,9 +82,20 @@ It leaves to named roadmaps:
   §1.2 with `F = ℝ`, as §1.4 proves through `TauCeti.W1p`.
 - [PseudoholomorphicCurveAnalysis](../PseudoholomorphicCurveAnalysis/README.md) PH1.1 owns the
   planar classes of every order on open subsets of `ℂ` and on half-discs. At order one on an
-  open subset of `ℂ` they are the classes of §1.1–§1.2 with `E = ℂ`. Its PH4.1 owns
-  `W^{k,p}_loc(Σ, M)` for maps from Riemann surfaces with `kp > 2`, a two-dimensional
-  higher-order sibling in the range where Morrey's embedding applies.
+  open subset of `ℂ` they are the classes of §1.1–§1.2 with `E = ℂ`. Its PH1.2 composition and
+  change-of-variables theorems at order one on open subsets of `ℂ`, where `p > 2`, are the cases
+  `E = ℂ` of §2.4 and §2.2 (a Check of each); here they hold for every `p` (for continuous
+  members in §2.4) and in every dimension. Its PH4.1 owns `W^{k,p}_loc(Σ, M)` for maps from
+  Riemann surfaces with `kp > 2`, a two-dimensional higher-order sibling in the range where
+  Morrey's embedding applies.
+- SobolevPolynomialApproximation §2.1 (composition with `C^k` diffeomorphisms with bounded
+  derivatives, a bounded operator on the global `W^{k,p}(Ω)`) and SobolevDifferentialForms §4.1
+  (pullback of Sobolev differential forms by `C¹` diffeomorphisms with `DΦ` and `DΦ⁻¹` bounded)
+  own the global precomposition theorems for scalar functions and forms on Euclidean domains,
+  with their norm bounds. At order one, and in form degree `0`, they are the global counterparts
+  of §2.2 for `C¹` diffeomorphisms `θ : Ω' → Ω` with `Dθ` and `(Dθ)⁻¹` bounded, with the same
+  derivative `Du(θ) ∘ Dθ`. §2.2 is the local, vector-valued statement, with no bound and no
+  injectivity, and gives no norm bound.
 - [TeichmullerGeometry](../TeichmullerGeometry/README.md) §7.4 owns planar quasiconformal maps,
   the weak Wirtinger derivatives and the Beltrami equation.
 - [PseudodifferentialOperators](../PseudodifferentialOperators/README.md) §5.2 owns Sobolev
@@ -101,10 +112,11 @@ It leaves to named roadmaps:
   formulas. Mathlib's `LinearMap.normDet` is the unsigned Jacobian, and §6.1 compares the
   oriented Jacobian with it.
 - SobolevMapsBetweenManifolds, Part II, described under Downstream consumers, owns the density
-  of smooth maps (Hajlasz2009 Theorem 2.1, lines 129–137; Bethuel1991), traces, homotopy classes
-  of Sobolev maps, Sobolev maps into metric spaces, higher-order classes `W^{k,p}_loc(M, N)`,
-  bi-Lipschitz changes of variables (Ziemer1989 Theorem 2.2.2), approximate differentiability of
-  Sobolev maps and the tangency `D(ι ∘ u) ∈ dι(TN)` for the extrinsic class.
+  of smooth maps (Hajlasz2009 Theorem 2.1, lines 129–130, for `p > dim M`, and lines 138–141 for
+  `p = dim M`; Bethuel1991), traces, homotopy classes of Sobolev maps, Sobolev maps into metric
+  spaces, higher-order classes `W^{k,p}_loc(M, N)`, bi-Lipschitz changes of variables
+  (Ziemer1989 Theorem 2.2.2), approximate differentiability of Sobolev maps and the tangency
+  `D(ι ∘ u) ∈ dι(TN)` for the extrinsic class.
 
 Nash's isometric embedding theorem is not used: where an isometric embedding appears, isometry is
 a hypothesis (§8.2).
@@ -125,7 +137,8 @@ a hypothesis (§8.2).
   Smooth manifolds are the main case. `C¹` is what the chain rules need, so it is the standing
   hypothesis. "A chart" is a member of `IsManifold.maximalAtlas`, and the class is defined
   through the preferred extended charts `extChartAt`. Second countability enters as
-  `[LindelofSpace M]` exactly where it is used (existence of `Df`, the Riemannian volume).
+  `[LindelofSpace M]` exactly where it is used (existence of `Df`, the Riemannian volume, images
+  of null sets in §3.3).
   No separation axiom is used.
 - **Null sets.** No measurable structure is installed on a manifold. A null set is a
   `TauCeti.IsNullSet`: its image in every preferred chart is null for every Haar measure of the
@@ -182,7 +195,9 @@ a hypothesis (§8.2).
   measurable set.
 - `MeasureTheory.Measure.withDensity` and `MeasureTheory.withDensity_absolutelyContinuous`
   (`Mathlib/MeasureTheory/Measure/WithDensity.lean`); `MeasurableEmbedding.comap_apply`
-  (`Mathlib/MeasureTheory/Measure/Restrict.lean`).
+  (`Mathlib/MeasureTheory/Measure/Restrict.lean`); `Topology.IsOpenEmbedding.measurableEmbedding`
+  (`Mathlib/MeasureTheory/Constructions/BorelSpace/Basic.lean`): between Borel spaces an open
+  embedding is a measurable embedding, so it maps Borel sets to Borel sets.
 - `ContDiffAt.toOpenPartialHomeomorph`
   (`Mathlib/Analysis/Calculus/InverseFunctionTheorem/ContDiff.lean`): the `C¹` inverse function
   theorem. `exists_contDiff_support_eq_eq_one_iff` and
@@ -210,10 +225,15 @@ a hypothesis (§8.2).
   installed as an instance.
 - `Orientation.volumeForm`, `Orientation.volumeForm_robust`,
   `Orientation.volumeForm_neg_orientation`, `Orientation.abs_volumeForm_apply_le`,
-  `Orientation.abs_volumeForm_apply_of_orthonormal` and `Orientation.volumeForm_map`
-  (`Mathlib/Analysis/InnerProductSpace/Orientation.lean`): the oriented volume form, its value
-  `±1` on oriented orthonormal bases, its sign under reversal, Hadamard's inequality for vectors
-  `|ω(v)| ≤ Π |vᵢ|`, and naturality under linear isometric equivalences.
+  `Orientation.abs_volumeForm_apply_of_orthonormal`, `Orientation.volumeForm_map` and
+  `Orientation.finOrthonormalBasis` (`Mathlib/Analysis/InnerProductSpace/Orientation.lean`): the
+  oriented volume form, its value `±1` on oriented orthonormal bases, its sign under reversal,
+  Hadamard's inequality for vectors `|ω(v)| ≤ Π |vᵢ|`, naturality under linear isometric
+  equivalences, and a positively oriented orthonormal basis in dimension `n ≥ 1`.
+  `Module.Basis.orientation_isEmpty` (`Mathlib/LinearAlgebra/Orientation.lean`): the empty basis
+  is positively oriented. `AlternatingMap.eq_smul_basis_det`
+  (`Mathlib/LinearAlgebra/Determinant.lean`): an alternating form indexed by a basis's index type
+  is its value on the basis times the basis determinant.
 - `LinearMap.det`; `LinearMap.normDet`, `LinearMap.normDet_eq_abs_det` and
   `LinearMap.normDet_eq_prod_singularValues` (`Mathlib/Analysis/InnerProductSpace/NormDet.lean`):
   the unsigned Jacobian, equal to `|det|` for endomorphisms.
@@ -312,6 +332,8 @@ a hypothesis (§8.2).
 ### From TauCetiRoadmap.PseudoholomorphicCurveAnalysis
 
 - PH1.1: the planar local classes, used in the agreement Checks of §1.1 and §1.2.
+- PH1.2: the composition and change-of-variables theorems for `kp > 2`, used at `k = 1` in the
+  agreement Checks of §2.2 and §2.4.
 
 ## How to read the build
 
@@ -551,6 +573,9 @@ from §2.1 for `p = ∞`, where null sets pull back to null sets.
   in `L^∞(ℝ)`, so no global bounded statement applies.
 - For `E' = E` an inner product space, `p < ∞`, `θ` injective on `Ω'` with `‖Dθ‖ ≤ L` and
   `|det Dθ| ≥ c > 0`, and `F = ℝ`, the derivative agrees with `TauCeti.W1p.gradient_compL_ae`.
+- For `E = E' = ℂ`, `p > 2` and `θ` a `C¹` diffeomorphism of `Ω'` onto `Ω`, the second item is
+  PseudoholomorphicCurveAnalysis PH1.2's change of variables at `k = 1`. The covering `z ↦ z²`
+  of the second Check, and every `1 ≤ p ≤ 2`, lie outside that statement.
 
 *Needs:* §1.2, §1.3, §2.1; Tau Ceti `TauCeti.W1p.compL`, `TauCeti.W1p.value_compL_ae`,
 `TauCeti.W1p.gradient_compL_ae`, `TauCeti.HasWeakFDerivOn.comp_measurePreserving`,
@@ -621,6 +646,10 @@ that equals `G` near `K`. Apply §2.3 to `G̃` on `V`, and glue by §1.3. Local 
   `u(Ω) ⊆ W` fails at `0`, and indeed `log |x| ∉ W^{1,2}_loc(ℝ²)`.
 - Continuity is used: §2.3's third Check has `u = log |x|` discontinuous at `0` and
   `G(t) = e^{t²}` smooth on `W = ℝ`, with `G ∘ u ∉ L¹_loc`.
+- For `E = ℂ`, `p > 2` and `W = F`, a member `u` has a continuous representative (PH1.2's Morrey
+  embedding), and the second item for it is PseudoholomorphicCurveAnalysis PH1.2's composition
+  at `k = 1`. The second Check, `G = log` on `W = (0, ∞)`, needs `G` only on `W` and lies outside
+  that statement.
 
 *Needs:* §1.3, §2.3; Mathlib `exists_contDiff_support_eq_eq_one_iff`.
 
@@ -708,11 +737,21 @@ Let `M'` and `M` be boundaryless `C¹` manifolds with models `E'`, `E`. Prove:
 
 - if `θ : M' → M` is a `C¹` local diffeomorphism (`IsLocalDiffeomorph I' I 1 θ`), then
   `θ⁻¹(s)` is a `TauCeti.IsNullSet` whenever `s` is;
-- if `f : M' → M` is `C¹` and `finrank E' ≤ finrank E`, then `f(s)` is a `TauCeti.IsNullSet`
-  whenever `s` is;
+- if `f : M' → M` is `C¹`, `finrank E' ≤ finrank E`, and `s ⊆ M'` is a `TauCeti.IsNullSet`
+  contained in the union of countably many preferred chart sources `(extChartAt I' xₖ).source`,
+  then `f(s)` is a `TauCeti.IsNullSet`. Every `s` has such a cover when `[LindelofSpace M']`,
+  since the preferred chart sources form an open cover of `M'`;
 - for an open `U ⊆ M` and `s ⊆ U`, `s` is null in the manifold `U` iff it is null in `M`.
 
-Route: read in charts, with §2.1 and `contDiffOn_ext_coord_change`.
+Route: read in charts, with §2.1 and `contDiffOn_ext_coord_change`. For the first and third
+items, a chart source of the domain is second countable, so countably many open sets on which `θ`
+has a `C¹` inverse (first item), or countably many chart sources of `U` (third item), cover it,
+and no countability of `M'` or `M` is used.
+For the second item, `f(s) = ⋃ₖ f(s ∩ Sₖ)` over the countable cover `(Sₖ)`. In a chart `ψ` of
+`M`, `ψ(f(s ∩ Sₖ) ∩ ψ.source)` is the image of the null set
+`φₖ(s ∩ Sₖ ∩ f⁻¹(ψ.source))` under the representative `ψ ∘ f ∘ φₖ.symm`, which is differentiable
+on the open set `φₖ(Sₖ ∩ f⁻¹(ψ.source))`. That image is null by §2.1, and
+`TauCeti.IsNullSet.iUnion` takes the countable union.
 
 **Checks.**
 
@@ -722,9 +761,15 @@ Route: read in charts, with §2.1 and `contDiffOn_ext_coord_change`.
   line `ℝ × {0}` back to `ℝ²`.
 - The projection `ℝ² → ℝ` maps the null line `ℝ × {0}` onto `ℝ`, which is not null. The
   dimension hypothesis of the second item is used.
+- The countable cover of the second item is used. Let `D` be `ℝ` with the discrete topology and
+  `M' = ℝ × D`, charted by `(x, d) ↦ x` on each slice `ℝ × {d}`: a Hausdorff `C^∞` `1`-manifold
+  that is not Lindelöf. The locally constant map `f(x, d) = d` into `ℝ` is `C¹`. The set
+  `s = {0} × D` meets each chart source in one point, whose image `{0}` is null, so `s` is
+  null; but `f(s) = ℝ` is not. Here `s` meets uncountably many slices, and no countable family
+  of chart sources covers it. With `D = ℤ` instead, `M'` is Lindelöf and `f(s) = ℤ` is null.
 
 *Needs:* §2.1; Mathlib `IsLocalDiffeomorph`, `contDiffOn_ext_coord_change`; Tau Ceti
-`TauCeti.IsNullSet`.
+`TauCeti.IsNullSet`, `TauCeti.IsNullSet.iUnion`.
 
 ### Examples
 
@@ -1020,11 +1065,19 @@ Layers 3 and 4; Mathlib's Riemannian bundles; Tau Ceti's Riemannian volume.
 
 Let `V`, `W` be real inner product spaces of dimension `n` with orientations
 `o_V`, `o_W : Orientation ℝ · (Fin n)`. For linear `A : V → W` define the *oriented Jacobian*
-`J(A)` as the scalar with `A^*(o_W.volumeForm) = J(A) · o_V.volumeForm`, that is
-`J(A) = o_W.volumeForm (A ∘ b)` for any positively oriented orthonormal basis `b` of `V`
-(`Orientation.volumeForm_robust` makes this independent of `b`). This is the Jacobian of
-MartioRickmanVaisala1969 line 124 and Rickman1993 Ch. I §1 when `V = W = ℝⁿ`.
+`J(A)` as the unique scalar with `A^*(o_W.volumeForm) = J(A) · o_V.volumeForm`. It exists and is
+unique because every alternating `n`-form on `V` is a multiple of the determinant of a basis
+(`AlternatingMap.eq_smul_basis_det`) and `o_V.volumeForm` is non-zero: it takes the value `±1` on
+every orthonormal basis (`Orientation.abs_volumeForm_apply_of_orthonormal`). Both facts hold for
+`n = 0`, where the only basis is the empty family. This is the Jacobian
+of MartioRickmanVaisala1969 line 124 and Rickman1993 Ch. I §1 when `V = W = ℝⁿ`.
 
+- *Basis formula.* For every orthonormal basis `b : Fin n → V`,
+  `J(A) = o_V.volumeForm b · o_W.volumeForm (A ∘ b)`, since `o_V.volumeForm b = ±1`. When `b` is
+  positively oriented, `o_V.volumeForm b = 1` (`Orientation.volumeForm_robust`) and
+  `J(A) = o_W.volumeForm (A ∘ b)`. Such a basis exists when `n ≥ 1`
+  (`Orientation.finOrthonormalBasis`). It does not exist when `n = 0` and `o_V` is the negative
+  orientation, since the empty basis is positively oriented (`Module.Basis.orientation_isEmpty`).
 - For linear `B : W → X` with `X` oriented of dimension `n`, `J(B ∘ A) = J(B) J(A)`. Also
   `J(id_V) = 1`, and `J(cA) = cⁿ J(A)`.
 - For `V = W` with `o_V = o_W`, `J(A) = det A` (`LinearMap.det`).
@@ -1032,12 +1085,15 @@ MartioRickmanVaisala1969 line 124 and Rickman1993 Ch. I §1 when `V = W = ℝⁿ
   (`Orientation.volumeForm_neg_orientation`).
 - `|J(A)| = normDet(A)` (`LinearMap.normDet`). So `J(A) ≠ 0` iff `A` is bijective, and `J(A) > 0`
   iff `A` is bijective and carries `o_V` to `o_W`.
-- *Hadamard's inequality:* `|J(A)| ≤ ‖A‖ⁿ`, from `Orientation.abs_volumeForm_apply_le` applied to
-  `A b`. Equality holds when `A` is a non-negative multiple of a linear isometry.
+- *Hadamard's inequality:* `|J(A)| ≤ ‖A‖ⁿ`, from the basis formula and
+  `Orientation.abs_volumeForm_apply_le` applied to `A ∘ b` for an orthonormal basis `b`. Equality
+  holds when `A` is a non-negative multiple of a linear isometry.
 - For linear isometric equivalences `U : V' ≃ V` and `U' : W ≃ W'`, `J(U' ∘ A ∘ U)` is `J(A)` times
   the signs `J(U)`, `J(U') ∈ {±1}`.
-- In orthonormal bases `J(A)` is the determinant of the matrix of `A` (for positively oriented bases),
-  a polynomial in its entries; so `J` is continuous.
+- For orthonormal bases `b` of `V` and `b'` of `W`, both indexed by `Fin n`,
+  `J(A) = o_V.volumeForm b · o_W.volumeForm b' · det[A]`, where `[A]` is the matrix of `A` in these
+  bases and the two signs are `±1`. So `J` is a polynomial in the matrix entries, hence
+  continuous. For `n = 0` the matrix is empty with determinant `1`.
 
 **Checks.**
 
@@ -1052,11 +1108,15 @@ MartioRickmanVaisala1969 line 124 and Rickman1993 Ch. I §1 when `V = W = ℝⁿ
   `(A⁻¹)^* vol_V = J vol_W` would give `1/2`.
 - Dimension `0`: the volume form of a zero-dimensional space is `±1` on the empty family, so
   `J(A) = 1` when `o_V` and `o_W` are both positive or both negative, and `−1` otherwise.
-  `normDet(A) = 1 = |J(A)|`, and Hadamard reads `1 ≤ ‖A‖⁰ = 1`.
+  `normDet(A) = 1 = |J(A)|`, and Hadamard reads `1 ≤ ‖A‖⁰ = 1`. When `o_V` is negative no
+  positively oriented basis exists. A definition as `o_W.volumeForm (A ∘ b)` with `b` the empty
+  basis would ignore `o_V` and give `+1` for `o_V` negative and `o_W` positive.
 
 *Needs:* Mathlib `Orientation.volumeForm`, `Orientation.volumeForm_robust`,
 `Orientation.volumeForm_neg_orientation`, `Orientation.abs_volumeForm_apply_le`,
-`Orientation.abs_volumeForm_apply_of_orthonormal`, `Orientation.volumeForm_map`, `LinearMap.det`,
+`Orientation.abs_volumeForm_apply_of_orthonormal`, `Orientation.volumeForm_map`,
+`Orientation.finOrthonormalBasis`, `Module.Basis.orientation_isEmpty`,
+`AlternatingMap.eq_smul_basis_det`, `LinearMap.det`,
 `LinearMap.normDet`, `LinearMap.normDet_eq_abs_det`, `LinearMap.normDet_eq_prod_singularValues`.
 
 ### 6.2 The Jacobian of a Sobolev map (T4)
@@ -1137,12 +1197,15 @@ it is `∫ g J_f dvol_M` (HeikkilaPankka2025 lines 25–27).
   `μ_f^− = 0`.
 - `μ_f^+(A) + μ_f^−(A) ≤ ∫_A ‖Df‖ⁿ dvol_M`.
 
-Prove: if `f` is a `C¹` open embedding (`C¹`, injective, with invertible differential) and is
-orientation preserving at every point, then `μ_f^− = 0` and `μ_f^+(A) = vol_N(f(A))` for every
-Borel `A ⊆ M`. If `f` is orientation reversing at every point, the roles of `μ_f^+` and `μ_f^−`
-are exchanged (Lee2012 Ch. 16). Route: the chart formula of §6.2,
-`MeasureTheory.lintegral_image_eq_lintegral_abs_det_fderiv_mul` in charts,
-`TauCeti.setLIntegral_riemannianVolume_of_subset`, and a countable cover.
+Prove: let `N` also be Lindelöf with `[MeasurableSpace N] [BorelSpace N]`, so that
+`vol_N = TauCeti.riemannianVolume` of `N` is defined. If `f` is a `C¹` open embedding (`C¹`,
+injective, with invertible differential) and is orientation preserving at every point, then
+`μ_f^− = 0` and `μ_f^+(A) = vol_N(f(A))` for every Borel `A ⊆ M`; here `f(A)` is Borel because
+`f` is an open embedding (`Topology.IsOpenEmbedding.measurableEmbedding`). If `f` is orientation
+reversing at every point, the roles of `μ_f^+` and `μ_f^−` are exchanged (Lee2012 Ch. 16).
+Route: the chart formula of §6.2, `MeasureTheory.lintegral_image_eq_lintegral_abs_det_fderiv_mul`
+in charts, `TauCeti.setLIntegral_riemannianVolume_of_subset` on `M` and on `N`, and a countable
+cover.
 
 **Checks.**
 
@@ -1154,7 +1217,8 @@ are exchanged (Lee2012 Ch. 16). Route: the chart formula of §6.2,
   has area `15π`; the factor `2` is the multiplicity.
 
 *Needs:* §6.2, §6.3, §3.1; Mathlib `MeasureTheory.Measure.withDensity`,
-`MeasureTheory.lintegral_image_eq_lintegral_abs_det_fderiv_mul`; Tau Ceti
+`MeasureTheory.lintegral_image_eq_lintegral_abs_det_fderiv_mul`,
+`Topology.IsOpenEmbedding.measurableEmbedding`; Tau Ceti `TauCeti.riemannianVolume`,
 `TauCeti.setLIntegral_riemannianVolume_of_subset`.
 
 ### Examples
@@ -1348,8 +1412,9 @@ extensions; Mathlib's smooth embeddings and the Whitney embedding.
   smooth structure (§4.2's atlas independence). The comparison is a Check of PH4.1 against §4.2.
 - **SobolevMapsBetweenManifolds, Part II** starts where this roadmap stops, at the classes of
   Layers 4 and 8 without topology or approximation on them. It owns:
-  - the density of smooth maps in `W^{1,p}(M, N)` for `p ≥ dim M` (Hajlasz2009 Theorem 2.1,
-    lines 129–137) and the topological obstructions for `p < dim M` (Bethuel1991);
+  - the density of smooth maps in `W^{1,p}(M, N)` for `p > dim M` (Hajlasz2009 Theorem 2.1,
+    lines 129–130) and for `p = dim M` (Hajlasz2009 lines 138–141), and the topological
+    obstructions for `p < dim M` (Bethuel1991);
   - traces and homotopy classes of Sobolev maps, and higher-order classes;
   - approximate differentiability and the tangency of `D(ι ∘ u)` to `ι(N)`;
   - the weak and stationary (p-)harmonic maps of Hajlasz2009 lines 37–53, which need §8.3–§8.4.
@@ -1376,7 +1441,8 @@ extensions; Mathlib's smooth embeddings and the Whitney embedding.
   `J_f`), lines 1328–1329 (the class through an embedding).
 - `Hajlasz2009`: P. Hajłasz, *Sobolev mappings between manifolds and metric spaces*, in Sobolev
   Spaces in Mathematics I, Springer, 2009; lines 20–28 (the class through an embedding),
-  lines 37–53 (weakly `p`-harmonic maps), lines 129–137 (Theorem 2.1).
+  lines 37–53 (weakly `p`-harmonic maps), lines 129–130 (Theorem 2.1, `p > dim M`), lines
+  138–141 (the case `p = dim M`).
 - `MartioRickmanVaisala1969`: O. Martio, S. Rickman and J. Väisälä, *Definitions for quasiregular
   mappings*, Ann. Acad. Sci. Fenn. Ser. A I 448 (1969); line 124 (the Jacobian), lines 332–340
   (Definition 2.16, `ACL` and `ACL^p`).

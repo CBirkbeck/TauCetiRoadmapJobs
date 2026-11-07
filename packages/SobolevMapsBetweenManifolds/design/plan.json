@@ -375,6 +375,11 @@
        "name": "w1p_compL_agreement",
        "kind": "compatibility",
        "statement": "E' = E inner product, p < ∞, θ injective with ‖Dθ‖ ≤ L, |det Dθ| ≥ c > 0, F = ℝ: agrees with TauCeti.W1p.gradient_compL_ae."
+      },
+      {
+       "name": "ph12_change_of_variables_agreement",
+       "kind": "compatibility",
+       "statement": "E = E' = ℂ, p > 2, θ a C¹ diffeomorphism Ω' → Ω: the membership statement is PseudoholomorphicCurveAnalysis PH1.2's change of variables at k = 1; the covering z ↦ z² and every 1 ≤ p ≤ 2 lie outside it."
       }
      ]
     },
@@ -459,6 +464,11 @@
        "name": "continuity_used",
        "kind": "non-example",
        "statement": "u = log|x| discontinuous, G = e^{t²} on W = ℝ: G ∘ u ∉ L¹_loc."
+      },
+      {
+       "name": "ph12_composition_agreement",
+       "kind": "compatibility",
+       "statement": "E = ℂ, p > 2, W = F: a member has a continuous representative (PH1.2 Morrey) and the statement for it is PseudoholomorphicCurveAnalysis PH1.2's composition at k = 1; G = log on W = (0,∞) lies outside it."
       }
      ]
     }
@@ -563,9 +573,10 @@
      "id": "3.3",
      "kind": "theorem",
      "name": "IsNullSet.preimage_of_isLocalDiffeomorph",
-     "statement": "(i) θ : M' → M with IsLocalDiffeomorph I' I 1 θ: IsNullSet I s ⇒ IsNullSet I' (θ ⁻¹' s). (ii) f : M' → M C¹ with finrank E' ≤ finrank E: IsNullSet I' s ⇒ IsNullSet I (f '' s). (iii) For U : Opens M and s ⊆ U: null in U ↔ null in M.",
+     "statement": "(i) θ : M' → M with IsLocalDiffeomorph I' I 1 θ: IsNullSet I s ⇒ IsNullSet I' (θ ⁻¹' s). (ii) f : M' → M C¹ with finrank E' ≤ finrank E, and s ⊆ ⋃ₖ (extChartAt I' xₖ).source for countably many xₖ (every s when LindelofSpace M'): IsNullSet I' s ⇒ IsNullSet I (f '' s). (iii) For U : Opens M and s ⊆ U: null in U ↔ null in M.",
      "hypotheses": [
-      "M', M boundaryless C¹ manifolds with finite-dimensional models E', E"
+      "M', M boundaryless C¹ manifolds with finite-dimensional models E', E",
+      "(ii) only: s covered by countably many preferred chart sources of M' (automatic under LindelofSpace M')"
      ],
      "locator": {
       "source": "Lee2012",
@@ -575,7 +586,8 @@
       "target:2.1",
       "mathlib:IsLocalDiffeomorph",
       "mathlib:contDiffOn_ext_coord_change",
-      "tauceti:TauCeti.IsNullSet"
+      "tauceti:TauCeti.IsNullSet",
+      "tauceti:TauCeti.IsNullSet.iUnion"
      ],
      "api": [],
      "tests": [
@@ -593,6 +605,11 @@
        "name": "projection_image",
        "kind": "non-example",
        "statement": "ℝ² → ℝ maps the null line ℝ×{0} onto ℝ: dimension hypothesis of (ii) used."
+      },
+      {
+       "name": "non_lindelof_source",
+       "kind": "non-example",
+       "statement": "M' = ℝ × D, D = ℝ discrete, charts (x,d) ↦ x on slices; f(x,d) = d is C¹; s = {0} × D meets each chart source in one point, so is null, but f(s) = ℝ is not null; s meets uncountably many slices, so the countable-cover hypothesis of (ii) is used. With D = ℤ, f(s) = ℤ is null."
       }
      ]
     }
@@ -1080,7 +1097,7 @@
      "id": "6.1",
      "kind": "definition",
      "name": "orientedJacobian",
-     "statement": "For real inner product spaces V, W of dimension n with orientations o_V, o_W : Orientation ℝ · (Fin n) and linear A : V → W, orientedJacobian o_V o_W A is the scalar c with (o_W.volumeForm).compLinearMap A = c • o_V.volumeForm, i.e. o_W.volumeForm (A ∘ b) for any positively oriented orthonormal basis b of V.",
+     "statement": "For real inner product spaces V, W of dimension n with orientations o_V, o_W : Orientation ℝ · (Fin n) and linear A : V → W, orientedJacobian o_V o_W A is the unique scalar c with (o_W.volumeForm).compLinearMap A = c • o_V.volumeForm; it exists by AlternatingMap.eq_smul_basis_det and is unique since o_V.volumeForm = ±1 on orthonormal bases (also for n = 0, the empty basis). Basis formula: c = o_V.volumeForm b * o_W.volumeForm (A ∘ b) for every orthonormal basis b : Fin n → V, and c = o_W.volumeForm (A ∘ b) for b positively oriented (such b exists iff n ≥ 1 or o_V is positive).",
      "hypotheses": [
       "V, W real inner product spaces",
       "finrank V = finrank W = n",
@@ -1100,9 +1117,17 @@
       "mathlib:LinearMap.det",
       "mathlib:LinearMap.normDet",
       "mathlib:LinearMap.normDet_eq_abs_det",
-      "mathlib:LinearMap.normDet_eq_prod_singularValues"
+      "mathlib:LinearMap.normDet_eq_prod_singularValues",
+      "mathlib:Orientation.finOrthonormalBasis",
+      "mathlib:Module.Basis.orientation_isEmpty",
+      "mathlib:AlternatingMap.eq_smul_basis_det"
      ],
      "api": [
+      {
+       "name": "orientedJacobian_eq_volumeForm_basis",
+       "role": "basis formula",
+       "statement": "For every orthonormal basis b : Fin n → V, J(A) = o_V.volumeForm b * o_W.volumeForm (A ∘ b); for b positively oriented, J(A) = o_W.volumeForm (A ∘ b). A positively oriented orthonormal basis exists for n ≥ 1 (Orientation.finOrthonormalBasis), not for n = 0 with o_V negative (Module.Basis.orientation_isEmpty)."
+      },
       {
        "name": "orientedJacobian_comp",
        "role": "multiplicativity",
@@ -1126,7 +1151,7 @@
       {
        "name": "abs_orientedJacobian_le",
        "role": "Hadamard",
-       "statement": "|J(A)| ≤ ‖A‖ⁿ, with equality for non-negative multiples of linear isometries."
+       "statement": "|J(A)| ≤ ‖A‖ⁿ (basis formula and Orientation.abs_volumeForm_apply_le on A ∘ b, b orthonormal), with equality for non-negative multiples of linear isometries."
       },
       {
        "name": "orientedJacobian_isometry",
@@ -1136,7 +1161,7 @@
       {
        "name": "continuous_orientedJacobian",
        "role": "regularity",
-       "statement": "J is a polynomial in the matrix entries in orthonormal bases, hence continuous."
+       "statement": "In orthonormal bases b of V and b' of W, J(A) = o_V.volumeForm b * o_W.volumeForm b' * det[A] with both signs ±1 (empty matrix, det 1, for n = 0); a polynomial in the matrix entries, hence continuous."
       }
      ],
      "tests": [
@@ -1163,7 +1188,7 @@
       {
        "name": "dimension_zero",
        "kind": "degenerate",
-       "statement": "n = 0: J(A) = 1 for equal sign orientations, −1 otherwise; normDet = 1 = |J|; Hadamard 1 ≤ ‖A‖⁰ = 1."
+       "statement": "n = 0: J(A) = 1 for equal sign orientations, −1 otherwise; normDet = 1 = |J|; Hadamard 1 ≤ ‖A‖⁰ = 1. With o_V negative no positively oriented basis exists; o_W.volumeForm (A ∘ b) with b the empty basis would ignore o_V and give +1 for o_V negative, o_W positive."
       }
      ]
     },
@@ -1289,10 +1314,11 @@
      "id": "6.4",
      "kind": "definition",
      "name": "jacobianMeasure",
-     "statement": "For f ∈ W^{1,p}_loc(M,N) with MemLpLoc riemannianVolume 1 univ J_f: μ_f^± = riemannianVolume.withDensity (ENNReal.ofReal (max (±J_f) 0)); the Jacobian measure is μ_f^+ − μ_f^− on relatively compact Borel sets. Theorem: for a C¹ open embedding f orientation preserving at every point, μ_f^− = 0 and μ_f^+ A = riemannianVolume (f '' A) for Borel A (roles exchanged if orientation reversing everywhere).",
+     "statement": "For f ∈ W^{1,p}_loc(M,N) with MemLpLoc riemannianVolume 1 univ J_f: μ_f^± = riemannianVolume.withDensity (ENNReal.ofReal (max (±J_f) 0)); the Jacobian measure is μ_f^+ − μ_f^− on relatively compact Borel sets. Theorem: with N also Lindelöf with MeasurableSpace N, BorelSpace N, for a C¹ open embedding f orientation preserving at every point, μ_f^− = 0 and μ_f^+ A = riemannianVolume (f '' A) for Borel A, f '' A being Borel (Topology.IsOpenEmbedding.measurableEmbedding) (roles exchanged if orientation reversing everywhere).",
      "hypotheses": [
       "as in 6.2",
-      "J_f locally integrable"
+      "J_f locally integrable",
+      "for the change-of-variables theorem: LindelofSpace N, MeasurableSpace N, BorelSpace N (so that vol_N = TauCeti.riemannianVolume of N is defined)"
      ],
      "locator": {
       "source": "Lee2012",
@@ -1304,7 +1330,9 @@
       "target:6.3",
       "mathlib:MeasureTheory.Measure.withDensity",
       "mathlib:MeasureTheory.lintegral_image_eq_lintegral_abs_det_fderiv_mul",
-      "tauceti:TauCeti.setLIntegral_riemannianVolume_of_subset"
+      "tauceti:TauCeti.setLIntegral_riemannianVolume_of_subset",
+      "mathlib:Topology.IsOpenEmbedding.measurableEmbedding",
+      "tauceti:TauCeti.riemannianVolume"
      ],
      "api": [
       {
@@ -1325,7 +1353,7 @@
       {
        "name": "jacobianMeasure_of_openEmbedding",
        "role": "change of variables",
-       "statement": "C¹ open embedding, orientation preserving everywhere: μ_f^− = 0 and μ_f^+(A) = vol_N(f(A))."
+       "statement": "N Lindelöf with MeasurableSpace N, BorelSpace N; f a C¹ open embedding, orientation preserving everywhere: μ_f^− = 0 and μ_f^+(A) = vol_N(f(A)) for Borel A (f(A) Borel by Topology.IsOpenEmbedding.measurableEmbedding)."
       }
      ],
      "tests": [
@@ -1616,9 +1644,10 @@
   {
    "roadmap": "PseudoholomorphicCurveAnalysis",
    "sections": [
-    "PH1.1"
+    "PH1.1",
+    "PH1.2"
    ],
-   "what": "The planar local classes MemLpLoc and MemWkpLoc, used only in the agreement Checks of 1.1 and 1.2."
+   "what": "The planar local classes MemLpLoc and MemWkpLoc (PH1.1), used only in the agreement Checks of 1.1 and 1.2; the composition and change-of-variables theorems for kp > 2 (PH1.2), used at k = 1 only in the agreement Checks of 2.2 and 2.4."
   }
  ],
  "consumers": [
