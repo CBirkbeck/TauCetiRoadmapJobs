@@ -338,3 +338,21 @@ licence_class = "institutional"
 status = "certified"
 accessed = "2026-11-05"
 cited_for = ["Layer 7.C"]
+
+[[source]]
+id = "ivashkovich-shevchishin"
+authors = "S. Ivashkovich, V. Shevchishin"
+title = "Gromov compactness theorem for stable curves"
+year = 1999
+arxiv = "math/9903047v1"
+locator_scheme = "theorem"
+locator = "Theorem 1.1"
+url = "https://arxiv.org/abs/math/9903047v1"
+fetched_from = "https://arxiv.org/pdf/math/9903047v1"
+fetched_at = "2026-11-07T15:27:24Z"
+sha256 = "07efb710f280c0a9dff0b9620cb11eb99bb32072410c2897701f52d98ecd2b5f"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-07"
+version_note = "arXiv v1"
+cited_for = ["Layer 7.C.2d"]
