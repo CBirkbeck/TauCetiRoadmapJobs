@@ -1,0 +1,58 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "AnalyticStableMaps"
+
+[[source]]
+id = "pardon13"
+authors = "John Pardon"
+title = "An algebraic approach to virtual fundamental cycles on moduli spaces of pseudo-holomorphic curves"
+year = 2013
+venue = "Geom. Topol. 20 (2016) 779-1034"
+doi = "10.2140/gt.2016.20.779"
+arxiv = "1309.2370v6"
+locator_scheme = "theorem"
+locator = "Definition B.4.1"
+url = "https://arxiv.org/abs/1309.2370v6"
+fetched_from = "https://arxiv.org/pdf/1309.2370v6"
+fetched_at = "2026-11-07T13:07:38Z"
+sha256 = "2e5f1a6741e52436ba36661586f25dbb78325043f9fa28eb71f8b4ea7f1221ac"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-07"
+version_note = "arXiv v6"
+cited_for = ["6.1"]
+
+[[source]]
+id = "wendl"
+authors = "Chris Wendl"
+title = "Lectures on Holomorphic Curves in Symplectic and Contact Geometry"
+year = 2010
+arxiv = "1011.1690v2"
+locator_scheme = "theorem"
+locator = "Proposition 4.3"
+url = "https://arxiv.org/abs/1011.1690v2"
+fetched_from = "https://arxiv.org/pdf/1011.1690v2"
+fetched_at = "2026-11-07T13:07:47Z"
+sha256 = "d83d338539f04991aa6cd4218a955c51d86630df3be094244e30774fa8ee1a5b"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-07"
+version_note = "arXiv v2"
+cited_for = ["0.5"]
+
+[[source]]
+id = "is99"
+authors = "S. Ivashkovich, V. Shevchishin"
+title = "Gromov compactness theorem for stable curves"
+year = 1999
+arxiv = "math/9903047v1"
+locator_scheme = "theorem"
+locator = "Theorem 1.1"
+url = "https://arxiv.org/abs/math/9903047v1"
+fetched_from = "https://arxiv.org/pdf/math/9903047v1"
+fetched_at = "2026-11-07T13:07:53Z"
+sha256 = "07efb710f280c0a9dff0b9620cb11eb99bb32072410c2897701f52d98ecd2b5f"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-07"
+version_note = "arXiv v1"
+cited_for = ["3.7"]
