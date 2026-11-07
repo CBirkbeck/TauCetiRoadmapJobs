@@ -614,7 +614,7 @@
      ],
      "locator": {
       "source": "HTT",
-      "where": "Proposition 2.1.1.3 (PDF p. 75) and Proposition 1.2.5.1 (PDF p. 54)"
+      "where": "Proposition 2.1.1.3 (PDF p. 75) and Proposition 1.2.5.1 (PDF p. 53)"
      },
      "prerequisites": [
       "target:2.1",
@@ -959,7 +959,7 @@
       {
        "name": "BG",
        "kind": "non-example",
-       "statement": "Spec k -> BG is affine with fibre G; BG -> Spec k is not."
+       "statement": "For a nontrivial affine group scheme G over k, Spec k -> BG is affine with fibre G, whereas BG -> Spec k is not: BG at the discrete test ring O(G) has pi_1 = G(O(G)), containing id != 1, while affines take discrete values on discrete test rings. For G = 1 both maps are the identity, which is affine."
       }
      ]
     },
@@ -1321,7 +1321,7 @@
      "id": "6.2",
      "kind": "theorem",
      "name": "Prestack.QCoh.tStructure",
-     "statement": "(a) For presentable QCoh(X), QCoh(X)^cn generates an accessible t-structure; pullbacks are right t-exact. (b) For geometric X (hypercomplete fpqc sheaf with affine diagonal and faithfully flat Spec A -> X; classical context also quasi-affine diagonal), (co)connectivity is detected on the atlas, the t-structure is compatible with filtered colimits and left and right complete, and the heart is descent data, equal to Stacks.QCoh for classical stacks with flat affine atlas and affine diagonal.",
+     "statement": "(a) For presentable QCoh(X), QCoh(X)^cn generates an accessible t-structure; pullbacks are right t-exact. (b) For geometric X (hypercomplete fpqc sheaf with affine diagonal and faithfully flat Spec A -> X, i.e. flat affine (4.1) and an fpqc surjection (3.3); classical context also quasi-affine diagonal), (co)connectivity is detected on the atlas, the t-structure is compatible with filtered colimits and left and right complete, and the heart is descent data, equal to Stacks.QCoh for classical stacks with flat affine atlas and affine diagonal.",
      "hypotheses": [
       "(a) QCoh(X) presentable",
       "(b) X geometric"
@@ -1522,7 +1522,7 @@
      ],
      "locator": {
       "source": "HTT",
-      "where": "Definition 6.1.2.7 (PDF p. 559) and Theorem 6.1.0.6 (PDF p. 12)"
+      "where": "Definition 6.1.2.7 (PDF p. 559); Theorem 6.1.0.6 (PDF pp. 547-548) through Propositions 6.1.3.10 and 6.1.3.19 (PDF pp. 566-567 and 573-574)"
      },
      "prerequisites": [
       "target:2.1",
@@ -1530,13 +1530,14 @@
       "target:3.1",
       "roadmap:SchemeAndStackFoundations §1.13",
       "roadmap:HigherToposTheory L6.8",
-      "roadmap:HigherToposTheory L10.5"
+      "roadmap:HigherToposTheory L10.1",
+      "roadmap:HigherToposTheory L10.3"
      ],
      "api": [
       {
        "name": "effective",
        "role": "structure",
-       "statement": "X x_{|G^{x.} x X|} X = G x X."
+       "statement": "Groupoid objects of the presheaf infinity-topos PreStk_T are effective (HTT 6.1.3.10 with 6.1.3.19): X x_{|G^{x.} x X|} X = G x X."
       },
       {
        "name": "geometric_quotient",
@@ -1840,37 +1841,50 @@
      "id": "8.3",
      "kind": "theorem",
      "name": "Prestack.IsPerfectStack.permanence",
-     "statement": "(a) Affine (classical: flat affine) over perfect is perfect; (b) classical: flat, representable by qcqs schemes with affine diagonal and a fibrewise ample line bundle over perfect is perfect; (c) maps between perfect stacks have perfect fibres (animated, E-infinity; classical for flat maps); (d) fibre products of perfect stacks over a base with affine diagonal are perfect (animated, E-infinity; classical when one leg is flat).",
+     "statement": "(a) Affine over perfect is perfect (classical: flat affine over perfect). (b) Classical: if f : Y -> X is flat and representable by qcqs schemes (5.4(b)), X is perfect, and a set {L_i} of invertible objects of QCoh(Y) restricts on every base change Y_eta to an ample family of invertible modules (Stacks tag 0FXR), then Y is perfect; one ample invertible object is the one-member case. (c) Animated, E-infinity: every morphism between perfect stacks has perfect base change along every point of the target; classical: every morphism representable by qcqs schemes with affine diagonal (every base change along a point a qcqs scheme with affine diagonal) has perfect base change along every point, with no flatness and no perfectness of source or target. (d) Animated, E-infinity: for perfect X_1, X_2 over Y with affine diagonal, X_1 x_Y X_2 is perfect (Y final: X_1 x X_2). Classical: if X_2 is perfect and X_1 -> Y is flat affine or of the kind in (b), then X_1 x_Y X_2 is perfect.",
      "hypotheses": [
-      "X perfect",
-      "classical context: flatness hypotheses as stated"
+      "(a) f affine and X perfect; classical context: f flat affine",
+      "(b) classical context; f flat and representable by qcqs schemes; X perfect; {L_i} invertible objects of QCoh(Y) forming an ample family on every base change Y_eta along a point of X",
+      "(c) animated and E-infinity: source and target perfect; classical: the morphism representable by qcqs schemes with affine diagonal",
+      "(d) animated and E-infinity: X_1, X_2 perfect, Y with affine diagonal; classical: X_2 perfect, X_1 -> Y flat affine or of the kind in (b)"
      ],
      "locator": {
       "source": "BZFN",
-      "where": "Propositions 3.21 and 3.24 and Corollary 3.23, pp. 24-25"
+      "where": "Lemma 3.20, Propositions 3.21 and 3.24 and Corollary 3.23, pp. 23-25; Section 3.1.2, p. 20 (Neeman's theorem); Stacks, Morphisms of Schemes, Definition 29.12.1, Lemma 29.12.2 and Remark 29.12.3, tags 0FXR, 0FXS and 0FXT; Stacks, Derived Categories of Schemes, Lemma 36.16.1, tag 0BQR"
      },
      "prerequisites": [
+      "target:1.5",
+      "target:4.1",
       "target:4.2",
       "target:5.3",
       "target:5.4",
       "target:6.3",
-      "target:8.2"
+      "target:8.1",
+      "target:8.2",
+      "roadmap:EnhancedDerivedSheaves E3.2",
+      "roadmap:EnhancedDerivedSheaves E3.3",
+      "roadmap:EnhancedDerivedSheaves E5:presentability.1"
      ],
      "api": [
       {
        "name": "affine_case",
        "role": "structure",
-       "statement": "Affine over perfect is perfect."
+       "statement": "Affine (classical: flat affine) over perfect is perfect: f^* preserves compact objects, the f^*M generate through the pointwise pushforward, and compact objects are dualizable by Neeman's theorem (BZFN 3.1.2) with indCompactComparison."
       },
       {
-       "name": "ample",
+       "name": "ample_family",
        "role": "structure",
-       "statement": "Generation by f^*M (x) L^{-n} using Stacks Lemma 36.16.1 (tag 0BQR)."
+       "statement": "Classical: generation by f^*M (x) L_i^{-n} for an ample family {L_i} on the base changes, through the proof of Stacks Lemma 36.16.1 (tag 0BQR) applied to an ample family; base changes have affine diagonal (tag 0FXS)."
+      },
+      {
+       "name": "fibres",
+       "role": "structure",
+       "statement": "Animated, E-infinity: base changes of morphisms between perfect stacks along points are perfect, by (a). Classical: base changes of morphisms representable by qcqs schemes with affine diagonal are perfect, by 8.1 with 8.2."
       },
       {
        "name": "products",
        "role": "structure",
-       "statement": "Fibre products over affine-diagonal bases."
+       "statement": "Animated, E-infinity: X_1 x X_2 is perfect (pointwise pushforward along the projection, external products of compact objects generate), and X_1 x_Y X_2 is affine over it. Classical: X_1 x_Y X_2 -> X_2 is a base change of X_1 -> Y; apply (a) or (b)."
       }
      ],
      "tests": [
@@ -1882,12 +1896,22 @@
       {
        "name": "BGm2",
        "kind": "computation",
-       "statement": "B(G_m^2) over Z is perfect, generated by characters."
+       "statement": "Animated and E-infinity: (d) with Y final makes B(G_m^2) over Z perfect, generated by characters."
       },
       {
        "name": "nonflat_classical",
        "kind": "non-example",
-       "statement": "For the closed point Spec F_p -> Spec Z classical base change fails and (a) does not apply to non-flat classical maps."
+       "statement": "For the closed point Spec F_p -> Spec Z classical base change fails and (a) does not apply to non-flat classical maps; the classical clause of (c) is therefore not stated for arbitrary morphisms between perfect stacks."
+      },
+      {
+       "name": "dual_numbers_diagonal",
+       "kind": "computation",
+       "statement": "Classical, A = k[e]/(e^2), X_1 = X_2 = Y = Spec A: (d) applies through the flat affine identity and returns Y; the diagonal Spec A -> Spec(A (x)_Z A) is affine and not flat, Tor_1 = I/I^2 = Omega_{A/Z}, which surjects onto Omega_{A/k} != 0."
+      },
+      {
+       "name": "doubled_origin_family",
+       "kind": "non-example",
+       "statement": "The affine line with doubled origin over k has the ample family {L_1, L_-1} (Stacks tag 0FXT) and no ample invertible module (it is not separated); (b) applies to h_Z -> Spec k and agrees with 8.1 and 8.2."
       }
      ]
     },
@@ -2062,10 +2086,11 @@
     "L7.6",
     "L9.4",
     "L9.6",
-    "L10.5",
+    "L10.1",
+    "L10.3",
     "L11.3"
    ],
-   "what": "HTT and HA Chapter 1 statements used in proof routes: fibred groupoids and Kan complexes, free cocompletion, groupoid objects, localizations, derived infinity-categories, t-structures, Giraud, hypercompleteness of truncated objects."
+   "what": "HTT and HA Chapter 1 statements used in proof routes: fibred groupoids and Kan complexes, free cocompletion, groupoid objects, localizations, derived infinity-categories, t-structures, infinity-topoi and the statement of Giraud's theorem, descent and effective groupoid objects in infinity-topoi, hypercompleteness of truncated objects."
   }
  ],
  "consumers": [
