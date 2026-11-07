@@ -106,8 +106,8 @@
       "X bounded"
      ],
      "locator": {
-      "source": "lafforgue-delasalle-2011",
-      "where": "lines 397-403 (estimate (9))"
+      "source": "caspers-delasalle-2015",
+      "where": "lines 638-642 (the bilinear trace duality <A,B> = Tr(AB) between S_p and S_p'); the case X in S_p is NoncommutativeIntegration §2.1 (Lp-Lq duality with the norming element) read through its §1.5, restricted to the dense finite-rank operators of target 1.1; the case X not in S_p (both sides infinite) is this roadmap's, by compressions and the lower semicontinuity of 1.1; lafforgue-delasalle-2011 line 400, estimate (9) in the proof of Lemma 1.11, is the form used by 3.3 and 5.2"
      },
      "prerequisites": [
       "target:1.1",
@@ -332,7 +332,7 @@
      ],
      "locator": {
       "source": "lafforgue-delasalle-2011",
-      "where": "Remark 1.3, line 244 (transposition argument); reed-simon-1-1980 §VI.6"
+      "where": "lines 226-230 (the bilinear identification of S_2(L2(X)) with L2(X x X) through int f g, under which A^T is the flip k_A(y,x)); Remark 1.3, line 244 (duality of a multiplier with its transpose); pisier-grothendieck-2012 Remark 13.4, line 2086 (transposition on M_n is isometric with cb norm n)"
      },
      "prerequisites": [
       "target:1.1",
@@ -800,7 +800,8 @@
       "target:3.5",
       "target:3.7",
       "target:5.1",
-      "mathlib:MeasureTheory.Integrable.tendsto_ae_condExp"
+      "mathlib:MeasureTheory.Integrable.tendsto_ae_condExp",
+      "mathlib:ContinuousLinearMap.comp_condExp_comm"
      ],
      "api": [],
      "tests": []
@@ -939,7 +940,8 @@
       "target:6.3",
       "roadmap:VonNeumannAlgebras V13b",
       "roadmap:BanachSpaceTheory B4.0",
-      "mathlib:MeasureTheory.Integrable.tendsto_ae_condExp"
+      "mathlib:MeasureTheory.Integrable.tendsto_ae_condExp",
+      "mathlib:ContinuousLinearMap.comp_condExp_comm"
      ],
      "api": [],
      "tests": []
@@ -1302,7 +1304,7 @@
      ],
      "locator": {
       "source": "caspers-delasalle-2015",
-      "where": "Lemma 4.1, line 449; Theorem 4.2 proof lines 494-522"
+      "where": "Lemma 4.1, line 449 (locally compact groups, 1 < p < infinity with p/p' rational; on R^n explicit Gaussians give every 1 <= p <= infinity, with the L1-normalised Gaussian the narrower one at p = infinity and the wider one at p = 1); Theorem 4.2 proof lines 494-522"
      },
      "prerequisites": [
       "target:9.2",
@@ -1880,7 +1882,7 @@
     "2.4"
    ],
    "detail": "AutomorphicSpectralTheory §0.8 states the kernel operator T_K, kernel_apply, kernel_unique and kernel_norm on sigma-finite standard Borel spaces with separable L2, and §0.10 the trace formula Tr(T_1 T_2) = int int K_1(x,y) K_2(y,x). Layers 2, 5 and 7 need them for arbitrary sigma-finite measure spaces, including sub-sigma-algebras of a standard Borel space, which are not standard Borel. A route without countable orthonormal bases: VonNeumannAlgebras V2.RectangularL2 composed with the unitary S_2(L2(nu), L2(mu)) = L2(mu) (x) conj(L2(nu)) of V4.Core, identified with the integral formula on rank-one kernels and extended by continuity.",
-   "needs": "AutomorphicSpectralTheory §0.8 and the first assertion of §0.10 stated for arbitrary sigma-finite measure spaces, without standard Borel or separability hypotheses.",
+   "needs": "For arbitrary sigma-finite measure spaces (X, mu) and (Y, nu), with no standard Borel or separability hypothesis: the kernel operator T_K : L2(Y, nu) -> L2(X, mu), T_K f(x) = int K(x, y) f(y) dnu(y) for almost every x, of every K in L2(mu x nu), with K -> T_K a linear embedding of L2(mu x nu) into the bounded operators, isometric for the Hilbert-Schmidt norm: ||T_K||_HS = ||K||_2 (§0.8: kernel_apply, kernel_unique, kernel_norm), and Tr(T_1 T_2) = int int K_1(x, y) K_2(y, x) dmu(x) dmu(y) for K_1, K_2 in L2(mu x mu) (§0.10, first assertion).",
    "supplier": "AutomorphicSpectralTheory",
    "section": "§0.8 (and §0.10)"
   },
@@ -1891,7 +1893,7 @@
     "10.4"
    ],
    "detail": "For N semifinite, a filtration (F_k) of a probability space with F_0 trivial generating F, M = Linf(Omega) (x) N with trace int (x) tau_N, E_k = E[.|F_k] (x) id, E_{-1} = 0, ||f||_{BMO_c} = sup_k ||E_k |f - E_{k-1} f|^2||^(1/2), BMO_r via f*, BMO = max: there is an absolute C such that for 2 <= p < infinity and every Psi(z) = sum_j e^{delta z^2 + lambda_j z} f_j (f_j in L2 cap M of mean zero, delta >= 0, lambda_j real), ||Psi(2/p)||_p <= C p max(sup_t ||Psi(it)||_BMO, sup_t ||Psi(1+it)||_2). Sources: cgpt-2023 Lemma 1.4 (lines 471-484) for the dyadic filtration of T^n with N = B(L2(R^n)); mei-2007 Lemma 6.1 (line 3218) for semifinite operator-valued dyadic filtrations with equivalent norms; musat-2003 Theorem 3.1 (uncertified); jrwz-2020 (uncertified) for the order O(1/(q-1)) of the Burkholder-Gundy constant. NoncommutativeIntegration owns finite-tracial H1-BMO duality (§8.4) and Burkholder-Gundy with constants depending only on p (§7.3); the semifinite operator-valued version with the sharp order is in its direction.",
-   "needs": "The semifinite operator-valued martingale BMO space and its complex interpolation inequality with L2 with constant O(p), as stated in the README contract.",
+   "needs": "For a semifinite von Neumann algebra (N, tau_N), a probability space (Omega, F, P) with a filtration (F_k)_{k >= 0}, F_0 trivial, generating F, the algebra M = Linf(Omega) (x) N with the trace int (x) tau_N, E_k = E[. | F_k] (x) id_N and E_{-1} = 0: the norms ||f||_{BMO_c} = sup_{k >= 0} ||E_k |f - E_{k-1} f|^2||^{1/2}, ||f||_{BMO_r} = ||f*||_{BMO_c} and ||f||_BMO = max(||f||_{BMO_c}, ||f||_{BMO_r}) on L2(M) cap M, and an absolute constant C such that ||Psi(2/p)||_{Lp(M)} <= C p max(sup_t ||Psi(it)||_BMO, sup_t ||Psi(1 + it)||_{L2(M)}) for every 2 <= p < infinity and every Psi(z) = sum_j e^{delta z^2 + lambda_j z} f_j on the strip 0 <= Re z <= 1 with finitely many f_j in L2(M) cap M, E_0 f_j = 0, delta >= 0 and lambda_j real.",
    "supplier": "NoncommutativeIntegration",
    "section": "Part II (proposed), extending §7.3 and §8.4"
   }

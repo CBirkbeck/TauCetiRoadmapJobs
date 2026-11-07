@@ -170,8 +170,14 @@ differences, which belong to SchattenClassesAndSchurMultipliers, Part II (Downst
   `𝒜`-measurable classes and the orthogonal projection onto it; `MeasureTheory.condExp`: the
   conditional expectation, defined when `μ` is σ-finite on the sub-σ-algebra.
 - `MeasureTheory.Integrable.tendsto_ae_condExp` (`Mathlib/Probability/Martingale/Convergence.lean`):
-  Lévy's upward theorem, almost-everywhere convergence of `E[g | ℱ_n]` to a `⨆ ℱ_n`-measurable
-  integrable `g`.
+  Lévy's upward theorem, almost-everywhere convergence of `E[g | ℱ_n]` to `g`, for a real-valued
+  integrable `g` on a finite measure space (`IsFiniteMeasure μ`), a filtration `ℱ` indexed by `ℕ`
+  (`MeasureTheory.Filtration ℕ`) and `g` strongly measurable for `⨆ n, ℱ n`. §5.3 and §6.4 apply it
+  after the reduction to a finite measure (§3.7), on `μ ⊗ μ` along the sequence `𝓑_n ⊗ 𝓑_n`,
+  whose supremum is `𝒜₀ ⊗ 𝒜₀`, to the real and imaginary parts of a complex symbol;
+  `ContinuousLinearMap.comp_condExp_comm`
+  (`Mathlib/MeasureTheory/Function/ConditionalExpectation/Basic.lean`) with `Complex.reCLM` and
+  `Complex.imCLM` makes the conditional expectation commute with taking those parts.
 - `IsCompactOperator` and `compactOperator` (`Mathlib/Analysis/Normed/Operator/Compact/Basic.lean`):
   compactness and the submodule of compact operators; `ContinuousLinearMap.adjoint`.
 - `Matrix.hadamard` (`Mathlib/LinearAlgebra/Matrix/Hadamard.lean`), `Matrix.PosSemidef.hadamard`
@@ -306,8 +312,9 @@ semifinite operator-valued filtrations (gap `semifinite-martingale-bmo-interpola
 ### From TauCetiRoadmap.AutomorphicSpectralTheory
 
 - §0.8: for square-integrable `K ∈ L²(X × Y)`, the integral operator `T_K : L²(Y) → L²(X)`,
-  `kernel_apply` (`T_K f(x) = ∫ K(x, y) f(y) dν(y)` almost everywhere), `kernel_unique` (an
-  isometric linear embedding of `L²(X × Y)` into the bounded operators) and `kernel_norm`
+  `kernel_apply` (`T_K f(x) = ∫ K(x, y) f(y) dν(y)` almost everywhere), `kernel_unique` (a
+  linear embedding of `L²(X × Y)` into the bounded operators, isometric for the Hilbert–Schmidt
+  norm) and `kernel_norm`
   (`‖T_K‖_{HS} = ‖K‖₂`).
 - §0.9: the complex trace on the trace class with `Tr(BC) = Σ_j ⟨B* e_j, C e_j⟩` for
   Hilbert–Schmidt `B, C`.
@@ -410,8 +417,13 @@ OperatorIdeals OI-A12, OI-A23, OI-A25–OI-A30, OI-A38–OI-A40; NoncommutativeI
 Prove that for every bounded `X` on `H` and `1 ≤ p < ∞`,
 `‖X‖_p = sup { |Tr(X B)| : B of finite rank, ‖B‖_{p'} ≤ 1 }` in `[0, ∞]`, where for `p = 1` the
 condition on `B` is `‖B‖ ≤ 1`; and that for every bounded `X`,
-`‖X‖ = sup { |Tr(X B)| : B of finite rank, ‖B‖₁ ≤ 1 }` (lafforgue-delasalle-2011 lines 397–403, the
-estimate (9) used there). In particular a bounded operator whose pairings with finite-rank
+`‖X‖ = sup { |Tr(X B)| : B of finite rank, ‖B‖₁ ≤ 1 }`. For `X ∈ S_p` the first formula is the
+duality `L^{p'}(B(H), Tr) = Lᵖ(B(H), Tr)*` under `(X, Y) ↦ Tr(XY)` of NoncommutativeIntegration
+§2.1, read through its §1.5, restricted to the dense finite-rank operators of §1.1 (the bilinear trace
+duality between `S_p` and `S_{p'}` is recalled in caspers-delasalle-2015 lines 638–642); the case
+of a bounded `X ∉ S_p`, where both sides are `∞`, is this roadmap's. The finite-rank pairing bound
+in the form used by §3.3 and §5.2 is lafforgue-delasalle-2011 line 400, the estimate (9) in the
+proof of Lemma 1.11. In particular a bounded operator whose pairings with finite-rank
 operators are bounded in this way lies in `S_p`. Route: `≥` by Hölder (NoncommutativeIntegration
 §1.4 with §1.5) and `|Tr Y| ≤ ‖Y‖₁` (VonNeumannAlgebras V4.Core). For `X ∈ S_p`, `≤` by the
 norming element of NoncommutativeIntegration §2.1 and density of finite-rank operators in
@@ -563,14 +575,23 @@ VonNeumannAlgebras V4.Core (Hölder at `p = q = 2`, cyclicity); Mathlib `Measure
 ### 2.3 Transposition
 
 Let `J` be complex conjugation on `L²(Ω, μ)`, the conjugate-linear isometric involution
-`f ↦ conj f`. For bounded `A` define `A^T = J A* J`.
+`f ↦ conj f`. For bounded `A` define `A^T = J A* J`, the adjoint of `A` for the bilinear pairing
+`∫ f g dμ`: `∫ (A^T f) g dμ = ∫ f (A g) dμ`. Under the identification of `S₂(L²(Ω, μ))` with
+`L²(Ω × Ω, μ ⊗ μ)` through this bilinear pairing (lafforgue-delasalle-2011 lines 226–230) it is
+the flip of the two variables, and it is the transposition through which a multiplier is compared
+with its dual in lafforgue-delasalle-2011 Remark 1.3, line 244 (used in §4.1).
 
 - `A ↦ A^T` is complex linear, `(A^T)^T = A`, `(A B)^T = B^T A^T`, `(A*)^T = (A^T)*`, and
-  `D_f^T = D_f`.
+  `D_f^T = D_f` (each from `⟨J f, J g⟩ = ⟨g, f⟩` and `J² = 1`).
 - `aₙ(A^T) = aₙ(A)` for every `n` (conjugation by `J` preserves rank and norm, with OI-A30); so
-  `‖A^T‖_p = ‖A‖_p` for every `p`, and `A^T` is compact exactly when `A` is.
-- For `A ∈ S₂`, `k_{A^T}(x, y) = k_A(y, x)`; for `A ∈ S₁`, `Tr(A^T) = Tr(A)`, hence
-  `Tr(A^T B^T) = Tr(A B)`.
+  `‖A^T‖_p = ‖A‖_p` for every `p`, and `A^T` is compact exactly when `A` is. On `M_n` the
+  transposition is an isometry for the operator norm whose completely bounded norm is `n`
+  (pisier-grothendieck-2012 Remark 13.4, line 2086; the first Check of §1.4).
+- For `A ∈ S₂`, `k_{A^T}(x, y) = k_A(y, x)` (lafforgue-delasalle-2011 lines 228–230): by
+  `kernel_apply`, `J B J` has kernel `conj k_B(x, y)`, and §2.2 gives `k_{A*}(x, y) = conj k_A(y, x)`.
+- For `A ∈ S₁`, `Tr(A^T) = Tr(A)`, hence `Tr(A^T B^T) = Tr(A B)`: `J (u ⊗ v*) J = (J u) ⊗ (J v)*`,
+  so `Tr(J X J) = conj Tr(X)` for trace-class `X` by the rank-one formula of VonNeumannAlgebras
+  V4.Core, and `Tr(A*) = conj Tr(A)`.
 - For a finite index set with counting measure, `A^T` is Mathlib's `Matrix.transpose`.
 
 **Checks.**
@@ -899,9 +920,10 @@ measure by an `𝒜`-measurable positive density (§3.7); for finite `𝒜` the 
 a block amplification of the finite matrix multiplier (§3.6); in general choose a countably
 generated `𝒜₀ ⊆ 𝒜` for which `φ` is `𝒜₀ ⊗ 𝒜₀`-measurable and finite σ-algebras `𝓑_n` increasing
 to `𝒜₀`; `φ_n = E[φ | 𝓑_n ⊗ 𝓑_n] → φ` almost everywhere
-(`MeasureTheory.Integrable.tendsto_ae_condExp`), and the completely bounded norms of `φ_n` converge
-to those of `φ` on both spaces by §5.1 and the lower semicontinuity of §3.3 applied on `Ω × ℕ`
-(§3.6). The statement is for completely bounded norms only; for the norms it is
+(`MeasureTheory.Integrable.tendsto_ae_condExp` on the finite measure `μ ⊗ μ`, applied to `Re φ`
+and `Im φ` through `ContinuousLinearMap.comp_condExp_comm`), and the completely bounded norms of
+`φ_n` converge to those of `φ` on both spaces by §5.1 and the lower semicontinuity of §3.3 applied
+on `Ω × ℕ` (§3.6). The statement is for completely bounded norms only; for the norms it is
 lafforgue-delasalle-2011 Question 1.14 (line 442).
 
 On `Ω = {1, 2, 3, 4}` with counting measure and `𝒜` generated by `{1, 2}` and `{3, 4}`, the symbol
@@ -909,7 +931,8 @@ with block values `[[1, 2], [2, 1]]` acts on `L²(𝒜) ≅ ℂ²` (equivalent t
 `2 × 2` matrix and on `L²(𝓑) = ℂ⁴` as its Kronecker product with the all-ones `2 × 2` matrix, and
 both completely bounded norms are `2`.
 
-*Needs:* §3.3, §3.6, §3.7, §5.1; Mathlib `MeasureTheory.Integrable.tendsto_ae_condExp`.
+*Needs:* §3.3, §3.6, §3.7, §5.1; Mathlib `MeasureTheory.Integrable.tendsto_ae_condExp`,
+`ContinuousLinearMap.comp_condExp_comm`.
 
 ### Examples
 
@@ -1017,7 +1040,8 @@ has `‖S_{M_n}‖_∞ ≤ ‖S_M‖_∞` on `L²(𝓑_n)` (§5.1), so §6.3 on 
 `‖ξ_n‖_∞ = ‖η_n‖_∞ ≤ (‖S_M‖_∞ + 1/n)^{1/2}`. In the ultraproduct `K = ∏_𝒰 K_n`
 (VonNeumannAlgebras V13b) put `a(u) = [∫ u ξ_n dμ]` and `b(v) = [∫ v η_n dμ]` for `u, v ∈ L¹(𝒜₀)`;
 then `⟨a(u), b(v)⟩ = lim_𝒰 ∫∫ conj u(x) v(y) M_n(x, y) = ∫∫ conj u(x) v(y) M(x, y)` by Lévy's
-theorem and dominated convergence. By the Radon–Nikodým representation of BanachSpaceTheory B4.0,
+theorem (on the finite measure `μ ⊗ μ`, for `Re M` and `Im M`) and dominated convergence
+(`|M_n| ≤ ‖M‖_∞`). By the Radon–Nikodým representation of BanachSpaceTheory B4.0,
 `a(u) = ∫ u ξ dμ` and `b(v) = ∫ v η dμ` with `‖ξ‖_∞ ‖η‖_∞ ≤ ‖a‖ ‖b‖ ≤ ‖S_M‖_∞`; testing against
 products `u(x) v(y)` gives `M = ⟨ξ, η⟩` almost everywhere; the closed span of the essential
 ranges of `ξ, η` is separable. The `p = 1` equalities follow from §4.1 and §6.2.
@@ -1027,7 +1051,7 @@ On `[0, 1]`, elementary symbols `f(x) g(y)` have all five quantities equal to `�
 `⟨ξ(x), η(y)⟩ = cos(x − y)` and `‖ξ‖_∞ = ‖η‖_∞ = 1`, and `|M(x, x)| = 1`, so all five equal `1`.
 
 *Needs:* §3.7, §4.1, §5.1, §6.2, §6.3; VonNeumannAlgebras V13b; BanachSpaceTheory B4.0;
-Mathlib `MeasureTheory.Integrable.tendsto_ae_condExp`.
+Mathlib `MeasureTheory.Integrable.tendsto_ae_condExp`, `ContinuousLinearMap.comp_condExp_comm`.
 
 ### Examples
 
@@ -1305,11 +1329,18 @@ Theorem 5.1, line 529, and Theorem 5.2, line 543, for `G = ℝⁿ`):
 Prove that for `1 ≤ p ≤ ∞` there are `f_R ∈ L² ∩ Lᵖ(ℝⁿ)`, `g_R ∈ L² ∩ L^{p'}(ℝⁿ)` with
 `‖f_R‖_p = ‖g_R‖_{p'} = 1`, nonnegative even Fourier transforms, and
 `∫ (T_m f_R) g_R → m(0)` for every bounded `m` continuous at `0` (caspers-delasalle-2015 Lemma 4.1,
-line 449, for `G = ℝⁿ`): Gaussians `f_R` of width `R` normalised in `Lᵖ` and `g_R` their Hölder
-duals (for `p ∈ {1, ∞}` a Gaussian of larger width), for which
-`∫ (T_m f_R) g_R = ∫ m(ξ) 𝓕f_R(ξ) 𝓕g_R(ξ) dξ` with a nonnegative weight of total mass tending to `1`
-concentrating at `0`. Deduce, for `m` bounded and continuous, points `s_1, …, s_N ∈ ℝⁿ` and
-`a ∈ S_p^N(S_p^k)`, `b ∈ S_{p'}^N(S_{p'}^k)`:
+line 449, proves this on a locally compact group for `1 < p < ∞` with `p/p'` rational; on `ℝⁿ`
+explicit Gaussians give every `1 ≤ p ≤ ∞`). Write `γ_T(x) = e^{−π|x|²/T²}` for the Gaussian of
+width `T`, and take `f_R` the multiple of `γ_R` normalised in `Lᵖ`. For `1 < p < ∞` take
+`g_R = f_R^{p−1}`, the norming element, a multiple of `γ_{R/√(p−1)}` with `‖g_R‖_{p'} = 1` and
+`∫ f_R g_R = 1`. For `p = 1` take `g_R = γ_{T_R}` (normalised in `L^∞`) with `T_R/R → ∞`, and for
+`p = ∞` take `g_R = T_R^{−n} γ_{T_R}` (normalised in `L¹`) with `T_R/R → 0`; then
+`∫ f_R g_R = (1 + R²/T_R²)^{−n/2}`, respectively `(1 + T_R²/R²)^{−n/2}`, which tends to `1`. In
+every case `∫ (T_m f_R) g_R = ∫ m(ξ) 𝓕f_R(ξ) 𝓕g_R(ξ) dξ` with a nonnegative Gaussian weight of
+total mass `∫ f_R g_R → 1` and of width at most `1/R` in `ξ`. At `p = ∞` the dual Gaussian must be
+the narrower one: for `n = 1`, `f = γ_R` and `g = T^{−1}γ_T` the mass is `R (R² + T²)^{−1/2}`,
+which is `0.995` at `T = R/10` and `0.0995` at `T = 10R`. Deduce, for `m` bounded and continuous,
+points `s_1, …, s_N ∈ ℝⁿ` and `a ∈ S_p^N(S_p^k)`, `b ∈ S_{p'}^N(S_{p'}^k)`:
 `|Σ_{i,j} m(s_i − s_j) tr(a_{ij} b_{ji})| ≤ ‖T_m‖_{cb,p} ‖a‖_p ‖b‖_{p'}`, by testing `T_m ⊗ id` on
 `A_R(x) = D(x) (a f_R(x)) D(x)*` with the unitary `D(x) = diag(e_{s_i}(x))`, and the modulation rule
 of §9.2 (caspers-delasalle-2015 Theorem 4.2, proof lines 494–522).
