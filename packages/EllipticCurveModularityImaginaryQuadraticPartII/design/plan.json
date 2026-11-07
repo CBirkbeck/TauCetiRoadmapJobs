@@ -717,9 +717,9 @@
      "api": [],
      "tests": [
       {
-       "name": "presentation_d1",
+       "name": "presentation_cyclotomic_five",
        "kind": "computation",
-       "statement": "d = 1, t = 1, r = 3 gives g = 0, as in CrystallineLocalGlobalCompatibilityCM §9.3."
+       "statement": "F = Q(ζ5): d = 2, t = 1, r = 6 (least with g ≥ 0) gives g = 0, as the count q − 3[F⁺:Q] − 1 + |S| of CrystallineLocalGlobalCompatibilityCM §9.3 at (6, 2, 1); d = 1 has no μ5."
       },
       {
        "name": "presentation_dims",
@@ -794,7 +794,7 @@
       {
        "name": "datum_degree_condition",
        "kind": "computation",
-       "statement": "[F⁺:Q] = 8 with five-adic local degrees (1,1,6): condition (ii) fails at the degree-6 place (complementary sums 1); with eight places of degree 1 it holds (sum 6 > 4)."
+       "statement": "(i) at five and μ5 ⊂ F make five-adic local degrees of F⁺ multiples of 4, at least 8. [F⁺:Q] = 40 with (e, f) = (4, 2), (4, 2), (4, 6): (ii) holds at the degree-8 places (24 > 20) and fails at the degree-24 place (8 < 20); five places with (e, f) = (4, 2): 24 > 20 everywhere; no [F⁺:Q] < 40 satisfies (ii) everywhere."
       },
       {
        "name": "datum_residue_F5",
@@ -860,7 +860,7 @@
       {
        "name": "problem_local_dim",
        "kind": "computation",
-       "statement": "d = 1, one five-adic place of degree 2, R = ∅: dim R^loc_χ = 6; P adds nothing."
+       "statement": "Smallest configuration of 5.1 (d = 40, ten five-adic places of F of local degree 8), R = ∅: t = 10, dim R^loc_χ = 111 = 1 + 3t + 2d; P adds nothing."
       }
      ]
     },
@@ -957,7 +957,7 @@
       {
        "name": "lifting_deficit",
        "kind": "computation",
-       "statement": "d = 1: deficit 1 = l₀ for PGL₂ over an imaginary quadratic field."
+       "statement": "Smallest configuration of 5.1 (d = 40, t = 10, R = ∅): deficit 40 = l₀ for PGL₂ over a CM field of degree 80; at r = 111, dim R_∞ = 111 and dim S_∞ = 151."
       }
      ]
     }

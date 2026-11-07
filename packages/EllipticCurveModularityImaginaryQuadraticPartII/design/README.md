@@ -761,8 +761,10 @@ GlobalGaloisDeformations §3.7, whose tangent-generator part needs no liftabilit
 
 **Checks.**
 
-- For `d = 1`, `t = 1`, `r = 3` the count is `g = 0`, agreeing with CrystallineLocalGlobalCompatibilityCM
-  §9.3's count with `|S| = 1`.
+- For `F = ℚ(ζ₅)` (`d = 2`, a single place above five), `T` that place (`t = 1`) and `r = 6`, the least
+  value with `g ≥ 0`, the count is `g = 6 − 6 − 1 + 1 = 0`, agreeing with the count
+  `q − 3[F⁺:ℚ] − 1 + |S|` of CrystallineLocalGlobalCompatibilityCM §9.3 at `q = 6`, `[F⁺:ℚ] = 2`,
+  `|S| = 1`. No field with `d = 1` is an instance: an imaginary quadratic field does not contain `μ₅`.
 - For `d = 2`, `t = 3`, `r = 10` and local rings of relative dimension `3` away from five and
   `3 + [F_v:ℚ₅]` above five, `dim R^loc_T = 1 + 9 + 4 = 14`, `g = 6`, `dim R^loc_T[[x]] = 20 = r + 4t − d`,
   and the framing algebra with `Z₅^r` has dimension `1 + (4t − 1) + r = 22 = r + 4t`: the deficit is
@@ -812,10 +814,16 @@ for `v ∈ P`. (CaptainSude26, §4, lines 264–289; CN23, §5.6, lines 4226–4
 - `P = ∅` is excluded: with image `SL₂(𝔽₅)` and `ζ₅ ∈ F` that is exactly the configuration excluded by
   clause (15) of CrystallineLocalGlobalCompatibilityCM §9.1.
 - A place `v ∈ P` with `v^c ∈ R` violates `P^c ∩ S = ∅`.
-- With `[F⁺:ℚ] = 8` and five-adic local degrees `(1, 1, 6)` of `F⁺`, condition (ii) holds at the two
-  places of degree one (complementary sum `6 > 4`) and fails at the place of degree six (complementary
-  sums `1`), so the datum is not prepared; with degrees `(1, 1, 1, 1, 1, 1, 1, 1)` the complementary
-  sum is `6 > 4` everywhere.
+- Condition (i) at five and `μ₅ ⊂ F` make every five-adic place `v̄` of `F⁺` split in `F` with
+  `F⁺_v̄ = F_v ⊇ ℚ₅(ζ₅)`, so its ramification index is divisible by four, and (ii) asks residue degree
+  at least two: every five-adic local degree of `F⁺` is a multiple of four and at least eight. With
+  `[F⁺:ℚ] = 40` and five-adic places of `F⁺` of ramification index four and residue degrees `(2, 2, 6)`,
+  condition (ii) holds at the two places of degree eight (complementary sum `24 > 20`) and fails at the
+  place of degree twenty-four (complementary sum `8 < 20`), so the datum is not prepared; with five
+  places of ramification index four and residue degree two the complementary sum is `24 > 20`
+  everywhere. No smaller `[F⁺:ℚ]` satisfies (ii) at every place: two degrees of at least eight force
+  `[F⁺:ℚ] > 32`, the degree is a multiple of four, and at `36` every place would need degree eight,
+  which does not divide `36`.
 - A residue field `𝔽₅` above five violates (ii) even when `ρ̄` is trivial there.
 
 ### 5.2 The protected deformation problems
@@ -840,8 +848,9 @@ GlobalGaloisDeformations §5.5. (CaptainSude26, §4, lines 285–289; CN23, §5.
 - For `Q = ∅` the augmented problem is `𝒮^P_χ`; for `χ = 1` the coefficient module is trivial.
 - The Steinberg lifts of LocalGaloisDeformationRings §2.5 are defined for trivial residual data and do
   not apply at `P`, where `ρ̄` is protected; the condition used is §3.4's.
-- For `d = 1`, `S₅` one place of local degree `2` and `R = ∅`, `dim R^loc_χ = 1 + 3 + 2 = 6`: the
-  protected places add nothing to the local base.
+- For the smallest configuration of §5.1 (`d = 40`, ten five-adic places of `F` of local degree eight)
+  and `R = ∅`, `t = 10` and `dim R^loc_χ = 1 + 10 · (3 + 8) = 111 = 1 + 3t + 2d`: the protected places add
+  nothing to the local base.
 
 ### 5.3 Hecke-valued representations satisfy the protected problems
 
@@ -901,7 +910,9 @@ DeformationAndDerivedPatchingAlgebra §§8.1–8.5; LocalGaloisDeformationRings 
   of the patched problem, although `ρ̄` is protected.
 - Source and target lie on matching components at five: ordinary or nonordinary at `S₅^cr`,
   non-crystalline ordinary at `S₅^st`; a supersingular target with an ordinary source is excluded.
-- With `d = 1` the deficit is one, matching `l₀ = 1` for `PGL₂` over an imaginary quadratic field.
+- For the smallest configuration of §5.1 (`d = 40`, `t = 10`, `R = ∅`) the deficit is forty, matching
+  `l₀ = 40` for `PGL₂` over a CM field of degree eighty, one for each complex place; at `r = 111`, the
+  least value with `g ≥ 0`, `dim R_∞ = 111 = r + 4t − d` and `dim S_∞ = 151 = r + 4t`.
 
 ### Examples
 
