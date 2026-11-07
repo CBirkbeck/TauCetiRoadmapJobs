@@ -208,6 +208,7 @@ PolynomialGaloisGroupsPartII
 ArithmeticDynamicsPartII
 QuaternionicAnalysis
 ImplicitAtlases
+AnalyticStableMaps
 DirectSummandsAndBigCohenMacaulay
 PerfectoidQuotientsPartII
 PurityForFlatCohomology
