@@ -6,10 +6,11 @@ Chapter 8 of Simon's lectures: a varifold is an arbitrary Radon measure on the G
 unoriented k-planes, and the analysis is carried out for varifolds of locally bounded first
 variation. It starts from Mathlib's Radon measures, Riesz–Markov–Kakutani theorem, Hausdorff
 measure, norm determinants and Levi-Civita connection, Tau Ceti's flows of compactly supported
-vector fields, signed Riesz representation and Prokhorov theorem, and the rectifiability, area
-formula and Grassmann-bundle material of GeometricMeasureTheory and GeometricCurrents. Its end
-theorems are: the Riesz decomposition of the first variation into generalised mean curvature,
-generalised boundary measure and outward co-normal; the monotonicity formula, Euclidean and
+vector fields, signed Riesz representation, Prokhorov theorem, divergence theorem and countably
+rectifiable sets, and the approximate tangent plane, area formula and Grassmann-bundle material of
+GeometricMeasureTheory and GeometricCurrents. Its end theorems are: the Riesz decomposition of
+the first variation into generalised mean curvature, generalised boundary measure and outward
+co-normal; the monotonicity formula, Euclidean and
 intrinsically Riemannian, with the existence and semicontinuity of densities; Allard's
 rectifiability theorem; the compactness theorems for rectifiable and for integral varifolds;
 varifold tangents and rectifiable and integral tangent cones; the constancy theorem; the
@@ -48,8 +49,10 @@ Owned here:
 
 Owned elsewhere and cited:
 
-- Euclidean countable k-rectifiability, approximate tangent planes of rectifiable sets, tangential
-  differentiation, the area formula and the normalised Hausdorff measure: GeometricMeasureTheory G2.
+- Approximate tangent planes of rectifiable sets, tangential differentiation and the area formula:
+  GeometricMeasureTheory G2. Countable k-rectifiability and its closure API, on any extended metric
+  space and so on (M, d_g), are already in Tau Ceti (`TauCeti.CountablyRectifiable`), and the
+  normalised Hausdorff measure is Mathlib's.
 - Rectifiable sets and Hᵏ on manifolds with their chart comparison, integer-rectifiable and
   integral currents, their mass measures: GeometricCurrents G1–G2. The distributional constancy
   criterion (a distribution on a connected open set whose coordinate derivatives vanish is a
@@ -66,8 +69,9 @@ Owned elsewhere and cited:
   distance function: RiemannianGeometry R4, item 1. Smooth second variation and stability:
   RiemannianGeometry R5b (not used here).
 - The Riemannian distance, the exponential map, normal balls and the Gauss lemma: HopfRinow
-  (Completed), Layers 0–2. Divergence and the divergence theorem on boundaryless manifolds:
-  DifferentialGeometry 12.3 and 12.5.
+  (Completed), Layers 0–2. The divergence of a vector field on a Riemannian manifold and the
+  divergence theorem on boundaryless manifolds are already in Tau Ceti
+  (`TauCeti.Manifold.divergence`, `TauCeti.Manifold.integral_divergence_eq_zero`).
 
 Outside this roadmap: Allard's regularity theorem and every regularity statement beyond the
 definition of the regular set (the subject of Varifolds, Part II); Wickramasekera's stable
@@ -147,8 +151,11 @@ here only as tests of the definitions.
   (`Mathlib/Probability/Kernel/Disintegration/StandardBorel.lean`, finite measures on a product with
   standard Borel second factor).
 - Differentiation of measures: `HasBesicovitchCovering` and its finite-dimensional instance
-  (`Mathlib/MeasureTheory/Covering/BesicovitchVectorSpace.lean`), `Besicovitch.vitaliFamily` and
-  `Besicovitch.ae_tendsto_rnDeriv` (`Mathlib/MeasureTheory/Covering/Besicovitch.lean`),
+  (`Mathlib/MeasureTheory/Covering/BesicovitchVectorSpace.lean`), `Besicovitch.vitaliFamily`,
+  `Besicovitch.ae_tendsto_rnDeriv` and `Besicovitch.ae_tendsto_measure_inter_div_of_measurableSet`
+  (`Mathlib/MeasureTheory/Covering/Besicovitch.lean`; the last says that for a locally finite
+  measure and a measurable set s, the proportion of s in the closed ball B̄_r(x) tends to the
+  indicator of s at x as r ↓ 0, for a.e. x),
   `Vitali.vitaliFamily` (`Mathlib/MeasureTheory/Covering/Vitali.lean`, which needs a uniform
   constant C with `μ(closedBall x (3r)) ≤ C μ(closedBall x r)` frequently as r ↓ 0 at every
   point), `VitaliFamily.ae_tendsto_average` (`Mathlib/MeasureTheory/Covering/Differentiation.lean`).
@@ -169,8 +176,8 @@ here only as tests of the definitions.
   (`TauCeti/Geometry/Manifold/IntegralCurve/GlobalFlow.lean`: the flow of a complete C¹ vector
   field on a Hausdorff boundaryless manifold, jointly C^n for a C^n field) and
   `TauCeti.isCompleteVectorField_of_isCompact_of_eq_zero_off`
-  (`TauCeti/Geometry/Manifold/IntegralCurve/CompactSupport.lean`: a C¹ field vanishing off a
-  compact set is complete).
+  (`TauCeti/Geometry/Manifold/Flow/Complete.lean`: on a Hausdorff boundaryless C¹ manifold
+  modelled on a complete space, a C¹ field vanishing off a compact set is complete).
 - `TauCeti.RealRMK.posPart`, `TauCeti.RealRMK.negPart`,
   `TauCeti.RealRMK.integral_rieszMeasure_posPart_sub_integral_rieszMeasure_negPart`
   (`TauCeti/MeasureTheory/Integral/RieszMarkovKakutani/Signed.lean`: an order-bounded functional on
@@ -183,23 +190,35 @@ here only as tests of the definitions.
   divergence with integral 0).
 - `TauCeti.riemannianVolume` (`TauCeti/Geometry/Manifold/Riemannian/VolumeDensity/Volume.lean`),
   the orientation-free Riemannian measure.
+- `TauCeti.Manifold.divergence` (`TauCeti/Geometry/Manifold/Riemannian/Laplacian.lean`: the trace
+  of `CovariantDerivative.leviCivitaConnection` applied to the field, on a C² manifold with a C¹
+  metric) and `TauCeti.Manifold.integral_divergence_eq_zero`
+  (`TauCeti/Geometry/Manifold/Riemannian/DivergenceTheorem.lean`: on a smooth, Hausdorff,
+  σ-compact manifold with boundaryless model and a C¹ metric, the divergence of a compactly
+  supported C¹ field has integral 0 against `TauCeti.riemannianVolume`).
+- `TauCeti.CountablyRectifiable` (`TauCeti/Geometry/MeasureTheory/Rectifiable/Basic.lean`: a subset
+  of an extended metric space is countably k-rectifiable when countably many Lipschitz maps from
+  subsets of ℝ^k cover it up to a set that is null for the k-dimensional
+  `MeasureTheory.Measure.euclideanHausdorffMeasure`; no measurability is part of the notion), with `TauCeti.CountablyRectifiable.mono`, `TauCeti.CountablyRectifiable.congr`
+  (null modifications), `TauCeti.CountablyRectifiable.iUnion` and
+  `TauCeti.CountablyRectifiable.image` (images under maps Lipschitz on the set). On (M, d_g) this
+  is the countable k-rectifiability used throughout.
 
 ### From TauCetiRoadmap.GeometricMeasureTheory
 
-G2: the closure API of countably k-rectifiable sets in Euclidean space, existence and a.e.
-uniqueness of approximate tangent planes for countably rectifiable sets of locally finite Hᵏ
-measure and measurability of the tangent-plane field, tangential differentiation, the area
-formula with extended multiplicities and its tangential version on rectifiable sets, agreement
-with classical tangent spaces and Jacobians on C¹ graphs.
+G2: existence and a.e. uniqueness of approximate tangent planes for countably rectifiable sets of
+locally finite Hᵏ measure in Euclidean space and measurability of the tangent-plane field,
+tangential differentiation, the area formula with extended multiplicities and its tangential
+version on rectifiable sets, agreement with classical tangent spaces and Jacobians on C¹ graphs.
 
 ### From TauCetiRoadmap.GeometricCurrents
 
 - G1: the distributional constancy criterion on connected Euclidean open sets; mass measures of
   locally finite-mass currents.
-- G2: countable k-rectifiability and approximate tangent planes on a Riemannian manifold through
-  charts, with the comparison of Hᵏ (for d_g) and the chart Hausdorff measures, representation
-  independence under null changes; the mass measure of a smooth submanifold equals its
-  Riemannian volume; integer-rectifiable and locally integral currents, represented by a
+- G2: the manifold/chart comparison for countable k-rectifiability (`TauCeti.CountablyRectifiable`
+  for d_g) and approximate tangent planes on a Riemannian manifold, with the comparison of Hᵏ (for
+  d_g) and the chart Hausdorff measures, representation independence under null changes; the mass
+  measure of a smooth submanifold equals its Riemannian volume; integer-rectifiable and locally integral currents, represented by a
   countably k-rectifiable carrier, an orienting simple k-vector and an integer multiplicity.
 - G5: local area minimization of integral currents (comparison with T + ∂Q on relatively compact
   variation domains), used only in 9.3.
@@ -220,12 +239,6 @@ with classical tangent spaces and Jacobians on C¹ graphs.
 - R5a.2: the averaged mean curvature, minimality, the first volume variation
   `δVol = ∫ div_M X^⊤ − m⟨H, X^⊥⟩` for compactly supported variations of boundaryless immersions,
   and the sphere/Euclidean mean-curvature dictionary.
-
-### From TauCetiRoadmap.DifferentialGeometry
-
-12.3 (divergence as the trace of the Levi-Civita covariant derivative) and 12.5 (the divergence
-theorem on boundaryless manifolds: the integral of the divergence of a compactly supported C¹ field
-vanishes).
 
 ### From HopfRinow (Completed)
 
@@ -425,17 +438,19 @@ continuity of θ.
 **Checks.**
 
 - μ = H¹⌞L for the x-axis L of ℝ² has approximate tangent space L with multiplicity 1 at every
-  point of L, and 2H¹⌞L has multiplicity 2; a normalisation by λ^{−k−1} instead of λ^{−k} would
-  give multiplicity 0 for both.
+  point of L, and 2H¹⌞L has multiplicity 2; since μ(x + λB_1(0)) = 2λ for x ∈ L, a normalisation
+  by λ^{−k+1} instead of λ^{−k} would give λ⁰·2λ → 0, multiplicity 0 for both, and one by
+  λ^{−k−1} would give λ^{−2}·2λ = 2/λ → ∞, blow-ups that diverge.
 - Lebesgue measure on ℝ² with k = 1 has μ_{x,λ}(B_1(0)) = πλ → 0, so no approximate tangent line
   exists anywhere and the criterion does not apply.
 - For k = 1, δ_0 on ℝ² has μ_{0,λ}(B_1(0)) = λ⁻¹ → ∞: no approximate tangent line at 0.
 - Chart comparison: for φ(y) = 2y on ℝ² and μ = H¹⌞L, φ_*μ = ½ H¹⌞L, with multiplicity
   1/J_L(2·id) = 1/2.
 
-(Simon1983 line 2276–2374; Federer1969 3.2; Maggi2012 Part II.) *Needs:* GeometricMeasureTheory G2 (approximate tangent planes of
-rectifiable sets, area formula); GeometricCurrents G2 (chart comparison of rectifiable sets and
-Hᵏ); Mathlib `Besicovitch.ae_tendsto_rnDeriv`; HopfRinow Layer 2 (normal balls).
+(Simon1983 line 2276–2374; Federer1969 3.2; Maggi2012 Part II.) *Needs:* GeometricMeasureTheory G2
+(approximate tangent planes of rectifiable sets, area formula); GeometricCurrents G2 (chart
+comparison of rectifiable sets and Hᵏ); Tau Ceti `TauCeti.CountablyRectifiable`; Mathlib
+`Besicovitch.ae_tendsto_rnDeriv`; HopfRinow Layer 2 (normal balls).
 
 ### 2.2 Rectifiable and integral varifolds
 
@@ -465,7 +480,7 @@ line 166–175).
   is Hᵏ-null.
 
 (Simon1983 line 2861–2897, 7318–7326.) *Needs:* Layer 1.3, Layer 2.1; GeometricMeasureTheory G2;
-GeometricCurrents G2.
+GeometricCurrents G2; Tau Ceti `TauCeti.CountablyRectifiable` and its closure lemmas.
 
 ### 2.3 The varifold of a C¹ submanifold
 
@@ -498,7 +513,8 @@ non-rectifiable lift of Lebesgue measure.
 
 ### Dependencies
 
-Layer 1; GeometricMeasureTheory G2; GeometricCurrents G2; HopfRinow Layer 2.
+Layer 1; GeometricMeasureTheory G2; GeometricCurrents G2; Tau Ceti `TauCeti.CountablyRectifiable`;
+HopfRinow Layer 2.
 
 ## Layer 3: push-forward, blow-ups and tangent spaces
 
@@ -590,10 +606,23 @@ V has tangent space T ∈ G(T_xM, k) with multiplicity θ ∈ (0, ∞) at x when
 
 The fibre measures come from `MeasureTheory.Measure.condKernel` in g-orthonormal trivialisations
 (1.2) of the finite restrictions of V to compact sets; the ball limits come from
-`VitaliFamily.ae_tendsto_average` for `Besicovitch.vitaliFamily` in E, and on M for
-`Vitali.vitaliFamily` of the closed geodesic balls on the subspace D with ‖V‖⌞D, where every
-small radius satisfies the doubling hypothesis with C = 3^k + 1. The theorem follows from
-2.1's criterion and the fibre measures (Simon1983 line 7419–7440).
+`VitaliFamily.ae_tendsto_average` for `Besicovitch.vitaliFamily` in E. On M they come from
+`VitaliFamily.ae_tendsto_average` for `Vitali.vitaliFamily` on a Borel set D' ⊆ D with
+‖V‖(D ∖ D') = 0, with the distance min(d_g, 1) (same small balls as d_g) and the measure ‖V‖⌞D',
+where every point x of D' is a density point of D for geodesic balls:
+‖V‖(B̄_r(x) ∖ D) = o(‖V‖(B̄_r(x))) as r ↓ 0. Such a D' exists: in a chart,
+`Besicovitch.ae_tendsto_measure_inter_div_of_measurableSet` for the image of ‖V‖ makes ‖V‖-a.e.
+x ∈ D a density point of D for chart balls; for a constant c ≥ 1 and small r, the geodesic ball
+B̄_r(x) lies in the chart ball of radius cr, which lies in B̄_{c²r}(x), and
+‖V‖(B̄_{c²r}(x)) ≤ (c^{2k} + 1)‖V‖(B̄_r(x)) because Θ^k(‖V‖, x) ∈ (0, ∞). At x ∈ D' the ratio
+(‖V‖⌞D')(B̄_{3r}(x)) / (‖V‖⌞D')(B̄_r(x)) tends to 3^k, so the doubling hypothesis holds with
+C = 3^k + 1 for every small r; the averages over B̄_r(x) ∩ D' and over B̄_r(x) differ by o(1)
+because the integrand y ↦ ∫ f(y, S) dν^y(S) is bounded. The density points cannot be replaced by D
+itself: on ℝ² with k = 1, L the x-axis and ‖V‖ the sum of |y_1| H¹⌞L and the measure of density
+|y|⁻¹ with respect to Lebesgue measure, ‖V‖(B_r(0)) = r² + 2πr, so Θ^1(‖V‖, 0) = π and D = L, while
+(‖V‖⌞D)(B̄_{3r}(0)) = 9r² = 9 (‖V‖⌞D)(B̄_r(0)) for every r > 0; with the weight e^{−1/|y_1|} in
+place of |y_1| the ratio is at least e^{1/(2r)}, so no constant C serves on D. The theorem follows
+from 2.1's criterion and the fibre measures (Simon1983 line 7419–7440).
 
 **Checks.**
 
@@ -608,7 +637,8 @@ small radius satisfies the doubling hypothesis with C = 3^k + 1. The theorem fol
 - For V = v(L, 1), ν^x = δ_{P_L} at every x ∈ L.
 
 (Simon1983 line 7333–7440.) *Needs:* Layer 2.1–2.2, Layer 3.2; Mathlib
-`MeasureTheory.Measure.condKernel`, `Besicovitch.vitaliFamily`, `Vitali.vitaliFamily`,
+`MeasureTheory.Measure.condKernel`, `Besicovitch.vitaliFamily`,
+`Besicovitch.ae_tendsto_measure_inter_div_of_measurableSet`, `Vitali.vitaliFamily`,
 `VitaliFamily.ae_tendsto_average`.
 
 ### Examples
@@ -636,8 +666,8 @@ AgnolettoCorreaHoyosDaSilvaNardulli2025 line 179–187; Scharrer2022 line 87–9
 - Locality: δV(X) = 0 when X vanishes on an open set containing spt‖V‖ ∩ spt X; for open W' ⊆ W
   and spt X ⊆ W', the restriction of V to W' has first variation δV(X).
 - Continuity: V_j → V implies δV_j(X) → δV(X) for every such X.
-- Degenerate dimensions: for k = 0, δV = 0; for k = N, δV(X) = ∫ div X d‖V‖ with div the divergence
-  of DifferentialGeometry 12.3.
+- Degenerate dimensions: for k = 0, δV = 0; for k = N, G(T_xM, N) = {1} and δV(X) = ∫ div X d‖V‖
+  with div X = tr(∇X) the Riemannian divergence `TauCeti.Manifold.divergence`.
 - Derivative of mass: let φ_t be the flow of X (`TauCeti.globalFlow`, complete by
   `TauCeti.isCompleteVectorField_of_isCompact_of_eq_zero_off`) and K ⊆ W compact with spt X ⊆ K. Then
   t ↦ ‖(φ_t)_#V‖(K) is differentiable at every t, with derivative δ((φ_t)_#V)(X), and equal to
@@ -655,14 +685,14 @@ L_X g, with (L_X g)(u, v) = g(∇_u X, v) + g(u, ∇_v X) for the Levi-Civita co
   the flow dilates C to the circle of radius e^t, whose length 2πe^t has derivative 2π at 0.
 - For V = v(L, 1), L the x-axis of ℝ², and X = ψ(y)e_2, div_L X = ∂_1 X^1 = 0, so δV(X) = 0.
 - For k = N and V the Riemannian volume of W, δV(X) = ∫ div X dvol = 0 for compactly supported X
-  (DifferentialGeometry 12.5).
+  (Tau Ceti `TauCeti.Manifold.integral_divergence_eq_zero`, applied on M to X extended by 0).
 - δV(X) is not determined by X on spt‖V‖ in general: for the vertical lift V of H¹⌞(x-axis) and
   X = ψ(y)y_2 e_2, X vanishes on spt‖V‖ while div_S X = ψ on the axis, so δV(X) = ∫ψ(t, 0) dt ≠ 0.
 
 (Simon1983 line 7455–7473, 1860–1956.) *Needs:* Layer 1.3, Layer 3.1; Mathlib
 `CovariantDerivative.leviCivitaConnection`; Tau Ceti `TauCeti.globalFlow`,
-`TauCeti.contMDiff_globalFlow_uncurry`, `TauCeti.isCompleteVectorField_of_isCompact_of_eq_zero_off`;
-DifferentialGeometry 12.3.
+`TauCeti.contMDiff_globalFlow_uncurry`, `TauCeti.isCompleteVectorField_of_isCompact_of_eq_zero_off`,
+`TauCeti.Manifold.divergence`.
 
 ### 4.2 Stationary varifolds and locally bounded first variation
 
@@ -802,8 +832,8 @@ showing that first variations under two metrics differ by a derivative term.
 
 ### Dependencies
 
-Layers 1–3; Tau Ceti flows and signed Riesz representation; DifferentialGeometry 12.3, 12.5;
-HopfRinow Layer 2.
+Layers 1–3; Tau Ceti flows, signed Riesz representation, `TauCeti.Manifold.divergence` and
+`TauCeti.Manifold.integral_divergence_eq_zero`; HopfRinow Layer 2.
 
 ## Layer 5: smooth submanifolds and embedded ambient manifolds
 
@@ -818,9 +848,11 @@ and only if Σ is minimal (Simon1983 line 1950–1973, 9.3 and 9.5(2); 2979–29
 variation t ↦ φ_t ∘ ι of the inclusion ι of Σ.
 
 Route: along Σ, div_{T_xΣ} X = div_Σ X^⊤ − ⟨X, tr B⟩ (differentiate ⟨X^⊥, τ_i⟩ = 0), and
-∫_Σ div_Σ X^⊤ dHᵏ = 0 by the divergence theorem on the boundaryless Σ (DifferentialGeometry 12.5; for
-C² Σ the same identity in C² charts of Σ, by a partition of unity and Tau Ceti's flat
-`MeasureTheory.integral_divergence_eq_zero` applied to the coordinate field times the volume density).
+∫_Σ div_Σ X^⊤ dHᵏ = 0 by the divergence theorem on the boundaryless Σ: X^⊤ is C¹ with compact
+support in Σ because Σ is closed in W, and Hᵏ⌞Σ is the Riemannian volume of Σ (2.3). For smooth Σ
+this is Tau Ceti's `TauCeti.Manifold.integral_divergence_eq_zero` for Σ with its induced metric;
+for C² Σ it is the same identity in C² charts of Σ, by a partition of unity and Tau Ceti's flat
+`MeasureTheory.integral_divergence_eq_zero` applied to the coordinate field times the volume density.
 
 **Checks.**
 
@@ -834,7 +866,8 @@ C² Σ the same identity in C² charts of Σ, by a partition of unity and Tau Ce
 - For k = N and Σ = W, B = 0 and [W] is stationary, as in 4.2.
 
 (Simon1983 line 1950–1973, 2979–2988.) *Needs:* Layer 2.3, Layer 4.1–4.4; RiemannianGeometry R5a,
-R5a.2; DifferentialGeometry 12.5; Tau Ceti `MeasureTheory.integral_divergence_eq_zero`.
+R5a.2; Tau Ceti `TauCeti.Manifold.integral_divergence_eq_zero`,
+`MeasureTheory.integral_divergence_eq_zero`.
 
 ### 5.2 Varifolds on an embedded submanifold of Euclidean space
 
@@ -880,7 +913,8 @@ a test case of 5.2.
 
 ### Dependencies
 
-Layers 2–4; RiemannianGeometry R5a, R5a.2; DifferentialGeometry 12.5; GeometricCurrents G2.
+Layers 2–4; RiemannianGeometry R5a, R5a.2; Tau Ceti `TauCeti.Manifold.integral_divergence_eq_zero`;
+GeometricCurrents G2.
 
 ## Layer 6: monotonicity, densities and constancy
 
@@ -1354,7 +1388,8 @@ G1, G2, G5, G6.
 ### 9.4 Statement-level acceptance tests
 
 The following theorems of the literature are statable with the definitions of this roadmap; they are
-not targets of this roadmap and test that its carrier and notions are the ones the literature uses.
+neither targets nor headline theorems of this roadmap, and test that its carrier and notions are the
+ones the literature uses.
 
 - Simon's theorem (Simon2023 line 84–96, Theorem 1.1, and line 432–441, Theorem 3.7). Let n ≥ 3,
   m ≥ 2, n + m ≥ 8, ℓ ≥ 1 and K ⊆ ℝ^ℓ closed. For every sufficiently small τ ∈ (0, 1) there are a
@@ -1379,6 +1414,9 @@ not targets of this roadmap and test that its carrier and notions are the ones t
   tangent cones (7.2, 8.2).
 - In Simon's theorem with K = ∅, sing^∞[Σ] = ∅ and Σ is closed.
 - C_{p,q} itself, with V_i = V, satisfies the conclusion of the second statement with y_i = 0.
+
+*Needs:* Layer 1.4, Layer 2.2–2.3, Layer 3.1, Layer 4.2, Layer 6.3, Layer 7.2, Layer 8.2,
+Layer 9.1.
 
 ### Examples
 

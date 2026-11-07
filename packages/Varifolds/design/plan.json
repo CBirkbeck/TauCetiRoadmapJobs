@@ -301,7 +301,8 @@
       "roadmap:GeometricMeasureTheory G2",
       "roadmap:GeometricCurrents G2",
       "mathlib:Besicovitch.ae_tendsto_rnDeriv",
-      "roadmap:HopfRinow Layer 2"
+      "roadmap:HopfRinow Layer 2",
+      "tauceti:TauCeti.CountablyRectifiable"
      ],
      "api": [
       {
@@ -329,7 +330,7 @@
       {
        "name": "line",
        "kind": "computation",
-       "statement": "H^1 on the x-axis has multiplicity 1; 2 H^1 has multiplicity 2; a lambda^{-k-1} normalisation would give 0."
+       "statement": "H^1 on the x-axis has multiplicity 1; 2 H^1 has multiplicity 2; since mu(x + lambda B_1(0)) = 2 lambda on L, a lambda^{-k+1} normalisation would give multiplicity 0 and a lambda^{-k-1} normalisation would give 2/lambda -> inf (divergent blow-ups)."
       },
       {
        "name": "Lebesgue",
@@ -365,7 +366,8 @@
       "target:1.3",
       "target:2.1",
       "roadmap:GeometricMeasureTheory G2",
-      "roadmap:GeometricCurrents G2"
+      "roadmap:GeometricCurrents G2",
+      "tauceti:TauCeti.CountablyRectifiable"
      ],
      "api": [
       {
@@ -627,6 +629,7 @@
       "target:3.2",
       "mathlib:MeasureTheory.Measure.condKernel",
       "mathlib:Besicovitch.vitaliFamily",
+      "mathlib:Besicovitch.ae_tendsto_measure_inter_div_of_measurableSet",
       "mathlib:Vitali.vitaliFamily",
       "mathlib:VitaliFamily.ae_tendsto_average"
      ],
@@ -639,7 +642,7 @@
       {
        "name": "fibre measures",
        "role": "structure",
-       "statement": "x -> nu^x probability measures with V = integral of delta_x x nu^x d||V||; ball averages converge a.e. (E) and on the positive finite density set (M)."
+       "statement": "x -> nu^x probability measures with V = integral of delta_x x nu^x d||V||; ball averages converge a.e. (E, Besicovitch) and at ||V||-a.e. point of the positive finite density set D (M, Vitali family on the geodesic density points of D)."
       },
       {
        "name": "first rectifiability",
@@ -701,7 +704,7 @@
       "tauceti:TauCeti.globalFlow",
       "tauceti:TauCeti.contMDiff_globalFlow_uncurry",
       "tauceti:TauCeti.isCompleteVectorField_of_isCompact_of_eq_zero_off",
-      "roadmap:DifferentialGeometry 12.3"
+      "tauceti:TauCeti.Manifold.divergence"
      ],
      "api": [
       {
@@ -959,7 +962,7 @@
       "target:4.4",
       "roadmap:RiemannianGeometry R5a",
       "roadmap:RiemannianGeometry R5a.2",
-      "roadmap:DifferentialGeometry 12.5",
+      "tauceti:TauCeti.Manifold.integral_divergence_eq_zero",
       "tauceti:MeasureTheory.integral_divergence_eq_zero"
      ],
      "api": [],
@@ -1774,7 +1777,9 @@
      },
      "prerequisites": [
       "target:1.4",
+      "target:2.2",
       "target:2.3",
+      "target:3.1",
       "target:4.2",
       "target:6.3",
       "target:7.2",
@@ -1809,7 +1814,7 @@
    "sections": [
     "G2"
    ],
-   "what": "Euclidean countable rectifiability, approximate tangent planes, tangential differentiation, area formula, normalised Hausdorff measure."
+   "what": "Approximate tangent planes of Euclidean rectifiable sets, tangential differentiation, area formula (countable rectifiability itself is TauCeti.CountablyRectifiable at the pin)."
   },
   {
    "roadmap": "GeometricCurrents",
@@ -1829,14 +1834,6 @@
     "R5a.2"
    ],
    "what": "Hessian comparison for the distance function; immersion geometry and second fundamental form; averaged mean curvature and first volume variation."
-  },
-  {
-   "roadmap": "DifferentialGeometry",
-   "sections": [
-    "12.3",
-    "12.5"
-   ],
-   "what": "Divergence and the divergence theorem on boundaryless manifolds."
   },
   {
    "roadmap": "HopfRinow",
