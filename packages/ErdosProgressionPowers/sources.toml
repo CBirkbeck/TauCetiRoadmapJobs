@@ -77,3 +77,20 @@ locator = "Bound (36), as cited in BS20 §9, Theorem 8"
 licence_class = "none"
 status = "waived"
 resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/65#issuecomment-6306906253"
+
+[[source]]
+id = "OpenAI2026"
+authors = "OpenAI"
+title = "Uniform exclusion of Landau–Siegel zeros"
+year = 2026
+locator_scheme = "theorem"
+locator = "Theorem 1"
+url = "https://raw.githubusercontent.com/openai/math/main/preprints/Uniform-exclusion-of-Landau-Siegel-zeros-October-1-2026/paper.pdf"
+fetched_from = "https://raw.githubusercontent.com/openai/math/main/preprints/Uniform-exclusion-of-Landau-Siegel-zeros-October-1-2026/paper.pdf"
+fetched_at = "2026-11-07T15:35:21Z"
+sha256 = "fab9f6e84ece2a37d834b2c031d8eb14e81413d9f6270791e7b5468b295214ef"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-07"
+cited_for = ["AnalyticNumberTheoryPartI contract; references"]
+version_note = "OpenAI mathematics release of 1 October 2026 (repository openai/math); Theorem 1 numbering is that of this version"
