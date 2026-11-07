@@ -144,3 +144,22 @@ licence_class = "none"
 status = "uncertified"
 version_note = "paywalled; cited by its locator without the text"
 cited_for = ["Layers 6, 9"]
+
+[[source]]
+id = "ekm2008"
+authors = "R. Elman, N. Karpenko, A. Merkurjev"
+title = "The Algebraic and Geometric Theory of Quadratic Forms"
+year = 2008
+venue = "AMS Colloquium Publications 56"
+doi = "10.1090/coll/056"
+locator_scheme = "chapter"
+locator = "II §7"
+url = "https://sites.ualberta.ca/~karpenko/publ/Kniga.pdf"
+fetched_from = "https://sites.ualberta.ca/~karpenko/publ/Kniga.pdf"
+fetched_at = "2026-11-07T16:13:51Z"
+sha256 = "2b69553b999f8b4e2d47947b29c0c84d153018cdba8142c784b93473004813d5"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-07"
+version_note = "authors' copy on N. Karpenko's page; the numbering of chapters and sections is that of the published book"
+cited_for = ["Layers 0–4"]
