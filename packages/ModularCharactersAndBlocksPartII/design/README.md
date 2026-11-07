@@ -277,8 +277,9 @@ a projective multiplicity representation with factor set `β⁻¹`; this roadmap
   `G/N` solvable, any two complements of `N` are conjugate.
 - L3: Glauberman's lemma: if a group `A` of order coprime to `|G|`, with `A` or `G` solvable, and
   `G` act compatibly on a set `Ω` with `G` transitive, then `A` fixes a point of `Ω` and the
-  `A`-fixed points form one `C_G(A)`-orbit; and `exists_mem_fixedPoints_mul_of_forall_mem`. The
-  solvability hypothesis is met because `S` is solvable wherever these are used.
+  `A`-fixed points form one `C_G(A)`-orbit; and `exists_mem_fixedPoints_mul_of_forall_mem`. §1.2,
+  the only consumer, carries the same hypothesis, `S` or `Γ` solvable (a subgroup of `Γ` being
+  solvable when `Γ` is); its own consumers in Layers 3–4 have `S` cyclic or solvable.
 
 ### From TauCetiRoadmap.RepresentationTheory.CharacterTheory
 
@@ -358,16 +359,19 @@ line 302). No coprimality is assumed in this subsection. *Needs:* Mathlib `MulDi
   elements, and `C = Z(Q₈) = {±1}`.
 - Trivial action, or `S = 1`: `Irr_S(Γ) = Irr(Γ)` and `C = Γ`.
 
-### 1.2 Fixed classes under a coprime solvable action
+### 1.2 Fixed classes under a coprime action
 
-Let `S` be solvable and coprime to `Γ`. Prove: two elements of `C` that are conjugate in `Γ` are
-conjugate in `C`; an `S`-invariant conjugacy class of `Γ` meets `C`; and if `H ≤ Γ` is
+Let `S` be coprime to `Γ`, with `S` or `Γ` solvable. Prove: two elements of `C` that are conjugate
+in `Γ` are conjugate in `C`; an `S`-invariant conjugacy class of `Γ` meets `C`; and if `H ≤ Γ` is
 `S`-invariant and `s • (g H) = g H` for all `s`, the coset `g H` meets `C`. Hence `t ↦` (the
 `Γ`-class of `t`) is a bijection from the conjugacy classes of `C` to the `S`-invariant conjugacy
-classes of `Γ` (glauberman line 287, Lemma 3 (a)–(c)). Route: apply Glauberman's lemma to `Γ`
-acting by conjugation on a class (for the first two statements) and to `H` acting on `g H` by
-`x ↦ x h⁻¹` (for the third); the actions are compatible with that of `S`. *Needs:*
-LocalFiniteGroupTheory L3 (Glauberman's lemma); Mathlib `ConjClasses`, `FixedPoints.subgroup`.
+classes of `Γ` (glauberman line 287, Lemma 3 (a)–(c), stated there for every relatively prime
+operator group; the solvability hypothesis here is the one under which LocalFiniteGroupTheory L3
+supplies Glauberman's lemma). Route: apply Glauberman's lemma to `Γ` acting by
+conjugation on a class (for the first two statements) and to `H` acting on `g H` by `x ↦ x h⁻¹`
+(for the third, `H` being solvable when `Γ` is); the actions are compatible with that of `S`.
+*Needs:* LocalFiniteGroupTheory L3 (Glauberman's lemma); Mathlib `ConjClasses`,
+`FixedPoints.subgroup`.
 
 **Checks.**
 - `Q₈` with `C₃`: the invariant classes are `{1}` and `{−1}`, two, the number of classes of
@@ -376,6 +380,13 @@ LocalFiniteGroupTheory L3 (Glauberman's lemma); Mathlib `ConjClasses`, `FixedPoi
   transposition `t` fixes all three classes, while `C = ⟨t⟩` has two classes.
 - Without coprimality the coset statement fails: `C₂` swapping the factors of `Γ = C₂ × C₂` has
   `C` the diagonal, and the invariant coset `(1, 0) + C = {(1,0), (0,1)}` contains no fixed point.
+- A nonsolvable `S` over a solvable `Γ`: `S = A₅` (order `60`) permuting the coordinates of
+  `Γ = 𝔽₇⁵` (order `7⁵`). As `A₅` is transitive on five points, `C` is the line of constant
+  vectors; the classes of the abelian `Γ` are its elements, so the `S`-invariant classes are the
+  `7` elements of `C`, and `C` has `7` classes. The `S`-invariant subgroup `H = {Σ_i v_i = 0}` has
+  the `S`-invariant cosets `{Σ_i v_i = c}`, each containing the constant vector with entries
+  `3c = c/5`. A version requiring `S` solvable does not apply here. Over `𝔽₅⁵`, where `5 ∣ |A₅|`,
+  the invariant coset `{Σ_i v_i = 1}` contains no constant vector, since `5 c = 0`.
 
 ### 1.3 Brauer's permutation lemma for automorphisms
 
@@ -532,9 +543,12 @@ InductionRestriction Layer 7.
 Let `A = ⟨a⟩` be cyclic and coprime to `Γ`. Prove: every element `inr a · inl g` of `Γ ⋊ A` is
 conjugate to some `inr a · inl t` with `t ∈ C`; for `t₁, t₂ ∈ C`, `inr a · inl t₁` and
 `inr a · inl t₂` are conjugate in `Γ ⋊ A` exactly when `t₁` and `t₂` are conjugate in `C`; and the
-centraliser of `inr a · inl t` is `inr(A) · inl(C_C(t))` (glauberman line 266, Lemma 2). Route: the
-`p'`-part of `a g` generates a complement of `Γ`, conjugate to `inr(A)` by the conjugacy half of
-Schur–Zassenhaus (the quotient `A` is cyclic, hence solvable); the conjugacy and centraliser
+centraliser of `inr a · inl t` is `inr(A) · inl(C_C(t))` (glauberman line 266, Lemma 2). Route:
+for `π` the set of primes dividing `|A|`, the `π`-part of `a g` (the power of `a g` whose order is
+the largest divisor of the order of `a g` built from primes in `π`) has order `|A|`, because
+`(a g)^{|A|}` lies in `Γ` and so has order prime to `|A|`; it generates a complement of `Γ`,
+conjugate to `inr(A)` by the conjugacy half of Schur–Zassenhaus (the quotient `A` is cyclic,
+hence solvable); the conjugacy and centraliser
 statements use `k |Γ| ≡ 1 (mod |A|)` to recover `a` as a power of `a t`. *Needs:*
 LocalFiniteGroupTheory L1 (`exists_conj_eq_of_isComplement'`); Mathlib `SemidirectProduct`,
 `IsCyclic`.
@@ -543,7 +557,9 @@ LocalFiniteGroupTheory L1 (`exists_conj_eq_of_isComplement'`); Mathlib `Semidire
 - `S₃ = C₃ ⋊ C₂`: the coset of `a` consists of the three transpositions, all conjugate to `a`;
   `C = 1` and the centraliser of `a` is `⟨a⟩`.
 - `SL(2,3)`: the coset `a Q₈` splits into the classes of `a` and of `a · (−1)`, of sizes
-  `24/6 = 4` each, matching the two classes of `C = {±1}`.
+  `24/6 = 4` each, matching the two classes of `C = {±1}`. Here `π = {3}`: `a · (−1)` has order
+  `6` and `3`-part `(a · (−1))⁴ = a`, of order `|A| = 3`; its `2`-part `(a · (−1))³ = −1` lies in
+  `Q₈` and generates no complement.
 - Coprimality is needed: in `D₈ = C₄ ⋊ C₂` the reflection `a x` is not conjugate to `a` or to
   `a x²`, the only elements `a t` with `t ∈ C = {1, x²}`.
 
@@ -670,9 +686,11 @@ composition series `C`, and that for solvable `S`, `Λ_C = Λ_D` for any two com
 `1 = T₀ ⊴ T₁ ⊴ ⋯ ⊴ T_r = S` with each `T_{i+1}/T_i` a `p_i`-group, `Λ` is the composite of the
 `p_i`-group correspondences of `T_{i+1}/T_i` on `C_Γ(T_i)`, by refining the chain to a composition
 series. Route: as in the source, by induction on `|S|`, with §4.2 for prime-power order, §3.4 (b)
-for the cyclic `p`-group case, the decomposition of a cyclic group into a `p`-part and a
-`p'`-part with §§2.2, 3.2, and for two series with different first terms the quotient by their
-intersection. *Needs:* §§3.2, 3.4, 4.1, 4.2.
+for the cyclic `p`-group case, for cyclic `S` not of prime-power order the decomposition
+`S = P × E` into its Sylow `p`-subgroup `P` and its Hall `p'`-subgroup `E`, where `p = |S : S₁|` is
+the order of the top factor of the series (glauberman line 562), with §§2.2, 3.2, and for two
+series with different first terms the quotient by their intersection. *Needs:* §§3.2, 3.4, 4.1,
+4.2.
 
 **Checks.**
 - The two series of `C₆` in §4.1 give the same `Λ(sgn) = χ₂ × 1`.
@@ -943,13 +961,24 @@ Proposition 7.11); `Σ_{B covers b} e_B = Σ_{b'} e_{b'}`, `b'` running over the
 `b` (martinez line 1642); the blocks of `N` covered by `B` form one `G`-orbit (martinez line 1760,
 Corollary 7.8); if `B` covers `b`, every `θ ∈ Irr(b)` lies under some `χ ∈ Irr(B)` and every
 `φ ∈ IBr(b)` under some member of `IBr(B)` (martinez line 1763, Proposition 7.9); and if `b^G` is
-defined it covers `b` (martinez line 1976, Lemma 8.6). Route: Clifford's theorem for the first,
-the idempotent sums for the second and third, connectivity of `Irr(b)` in the Brauer graph (§6.1)
-and, for the fifth, connectivity of `Irr(b)` in the Brauer graph (§6.1), the decomposition of
-`χ⁰` (base §2.4), Frobenius reciprocity and the semisimplicity of the restriction of a simple
-module to a normal subgroup (InductionRestriction Layer 5), with base §2.1 for induced Brauer
-characters. *Needs:* §6.1; base §§2.1, 2.4, 3.1, 4.2, 7.1, 8.2; InductionRestriction Layers 2
-and 5; Tau Ceti `TauCeti.clifford_restrict_character`.
+defined it covers `b` (martinez line 1976, Lemma 8.6). Route: for the first, Clifford's theorem,
+which gives `ω_χ = ω_ξ` on the `G`-class sums in `N` for every `ξ` under `χ`, and
+`ω_ψ(e_η) = δ_{ψη}` on the orbit idempotent `Σ_i e_{θ_i}` (`θ_i` the `G`-conjugates of `θ`), a
+combination of `G`-class sums in `N`, so that `ω_ξ = ω_θ` there only for `ξ` conjugate to `θ`;
+for the third, the sum of the `e_{b'}` over the `G`-orbit of `b` is a `G`-invariant idempotent of
+`Z(O[N])`, hence central in `O[G]` and the sum of the block idempotents of `G` below it (base
+§0.2), which are those of the blocks covering `b` (base §8.2); for the second, in one direction
+the first applied to some `χ ∈ Irr(B)` over some `θ ∈ Irr(b)` (base §8.2) with
+`λ_B(𝒞⁺) = ω_χ(𝒞⁺) mod m` (§6.1), and in the other the third: `Σ_{B' covers b} e_{B'}` is a
+combination of `G`-class sums in `N`, on which `λ_B` agrees with `λ_b`, and `λ_b` is `1` on it, so
+`B` is one of the `B'`; for the fourth, the third and the orthogonality of the idempotent sums of
+two distinct orbits, which therefore share no `e_B`; for the fifth, connectivity of `Irr(b)` in
+the Brauer graph (§6.1), the decomposition of `χ⁰` (base §2.4), Frobenius reciprocity and the
+semisimplicity of the restriction of a simple module to a normal subgroup (InductionRestriction
+Layer 5), with base §2.1 for induced Brauer characters; for the sixth, the second and `λ_{b^G}(𝒞⁺) = λ_b((𝒞 ∩ N)⁺) = λ_b(𝒞⁺)` for a
+`G`-class `𝒞 ⊆ N`, which is the definition of `b^G` (base §7.1). *Needs:* §6.1; base §§0.2, 2.1,
+2.4, 3.1, 4.2, 7.1, 8.2; InductionRestriction Layers 2 and 5; Tau Ceti
+`TauCeti.clifford_restrict_character`.
 
 **Checks.**
 - `S₃`, `N = C₃`, `p = 2`: `B₀` covers `{1_N}` and the defect-zero block covers both `{λ}` and
@@ -987,7 +1016,7 @@ are `B` and `B^G` because `ψ^G` is irreducible for `ψ` over `θ ∈ Irr(b)` (`
 `ω_{ψ^G}(𝒞⁺) = Σ ω_ψ(ℒ⁺)` over the `T`-classes `ℒ ⊆ 𝒞` (reynolds line 149, Theorem 2); induction
 from `T` to `G` gives the correspondence of simple modules and of lattices; the defect groups by
 §7.1 and the degree count `min ν(ψ^G(1)) = ν(|G : T|) + min ν(ψ(1))` with §6.2; heights by the same
-count. *Needs:* §§6.2, 7.1, 7.2; base §§0.2, 1.2, 2.1, 7.1, 8.2; Tau Ceti
+count. *Needs:* §§6.2, 6.3, 7.1, 7.2; base §§0.2, 1.2, 2.1, 7.1, 8.2; Tau Ceti
 `FDRep.cliffordCorrespondence`.
 
 - `B^G` is defined for `B` covering `b`, and covers `b`.
@@ -1110,7 +1139,7 @@ some `χ ∈ Irr(B)` (§7.2). Route: `χ = ψ^G` with `ψ ∈ Irr(T | θ_ξ)` (C
 `h(χ) = ν(ξ(1))` for every irreducible constituent `ξ` of `χ|_D`, so the set of heights of `B` is
 `{ν(ξ(1)) : ξ ∈ Irr(D)}` (reynolds line 531, Theorem 8; martinez line 2131), using
 gap:clifford-multiplicity-dvd-index (applied to `N ⊴ T`) to make `ψ(1)/θ_ξ(1)` prime to `p`.
-*Needs:* §§7.2, 7.6, 8.2; Tau Ceti `FDRep.cliffordCorrespondence`,
+*Needs:* §§6.3, 7.2, 7.6, 8.2; Tau Ceti `FDRep.cliffordCorrespondence`,
 `FDRep.clifford_restrict_dvd_finrank`; gap:clifford-multiplicity-dvd-index (InductionRestriction
 Layer 7) for the height formula.
 
@@ -1184,7 +1213,7 @@ Alperin–McKay property `|Irr₀(B)| = |Irr₀(b')|`, and the Alperin–McKay p
 validity for every block of every finite group (ruhstorfer line 16; martinez line 2360,
 Conjecture 9.9). Prove its instances: blocks of defect zero and blocks with a normal defect
 group, where `N_G(D) = G` and `b' = B`. Cited and not planned: the property at `p = 2`
-(ruhstorfer line 20, Theorem A). *Needs:* §6.4; base `brauer_first_main`.
+(ruhstorfer line 20, Theorem A). *Needs:* §§6.3, 6.4; base `brauer_first_main`.
 
 **Checks.**
 - `S₃`, `p = 2`, `B₀`: `N_G(C₂) = C₂`, and `|Irr₀(B₀)| = 2 = |Irr₀(b')|`.
@@ -1216,8 +1245,8 @@ GlaubermanZStar consumes the base only.
 - G. Glauberman, *Correspondences of characters for relatively prime operator groups*, Canad. J.
   Math. 20 (1968), 1465–1488: Theorem 1 (line 100), Theorem 2 (line 234), Lemmas 1–3 (lines 173,
   266, 287), Theorem 3 (line 299), Corollaries 4–6 (lines 364, 375, 454), Lemmas 4–5 (lines 481,
-  524), the definition (line 503), Theorem 4 (line 537), Corollaries 7–9 (lines 601, 607, 623),
-  Theorem 5 (line 636).
+  524), the definition (line 503), Theorem 4 (line 537, the proof of (b) at line 562),
+  Corollaries 7–9 (lines 601, 607, 623), Theorem 5 (line 636).
 - B. Hartley, A. Turull, *On characters of coprime operator groups and the Glauberman character
   correspondence*, J. reine angew. Math. 451 (1994), 175–219: Theorem A (line 84), the reduction
   to prime order (line 91), Definition 3.1 (line 304), Proposition 3.2 (line 306).
