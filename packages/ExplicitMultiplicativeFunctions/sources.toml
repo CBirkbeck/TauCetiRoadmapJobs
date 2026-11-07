@@ -150,7 +150,7 @@ venue = "The Ramanujan Journal 69"
 doi = "10.1007/s11139-025-01290-5"
 arxiv = "2508.06764v2"
 locator_scheme = "section"
-locator = "Sections 6.1-6.5, Tables 12-18 (λ(k) for 2 ≤ k ≤ 100 and the maximisers)"
+locator = "Sections 6.1-6.5 (§6.1: ε₁(2) = 0.1950, ε₂(2) = 0.3466, λ₁(2) = 1.5126), Tables 12-18 (Table 16: ε₁(k), ε₂(k), λ₁(k), λ(k) for 2 ≤ k ≤ 34; λ(k) for 2 ≤ k ≤ 100 and the maximisers)"
 url = "https://arxiv.org/abs/2508.06764v2"
 fetched_from = "https://arxiv.org/pdf/2508.06764v2"
 fetched_at = "2026-11-05T21:09:19Z"
@@ -159,7 +159,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-05"
 version_note = "arXiv v2"
-cited_for = ["Layer 9"]
+cited_for = ["Layer 0.7 (SuperiorTableVerified instances)", "Layer 9.2"]
 
 [[source]]
 id = "balazard2012"
@@ -236,7 +236,7 @@ licence_class = "none"
 status = "uncertified"
 accessed = "2026-11-05"
 version_note = "open access at the publisher, but the host blocked the automated fetch (bot check); cited by its locator without the text"
-cited_for = ["Layer 1 hypothesis MoebiusTableVerified(10^12)"]
+cited_for = ["Layer 0.7 (MoebiusTableVerified 0.571 10^12)", "Layer 1.5"]
 
 [[source]]
 id = "kotnikVanDeLune2004"
@@ -348,7 +348,7 @@ title = "Explicit upper bounds for the remainder term in the divisor problem"
 year = 2012
 venue = "Mathematics of Computation 81, 1025-1051"
 locator_scheme = "theorem"
-locator = "Theorems 1.1-1.2; Corollary 2.2 (constant term read as γ² − 2γ₁); Lemma 3.1"
+locator = "Theorems 1.1-1.2; Corollary 2.2 (constant term read as γ² − 2γ₁) and its proof in §13; Lemma 3.1"
 url = "https://hal.science/hal-02572796/document"
 fetched_from = "https://hal.science/hal-02572796/document"
 fetched_at = "2026-11-05T21:17:44Z"
@@ -356,7 +356,7 @@ sha256 = "847847c4745bd0d96a76f385a0fe9389a579d0974e90af32783b3ed496f01bda"
 licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-05"
-cited_for = ["Layer 5; Layer 7"]
+cited_for = ["Layer 0.5", "Layer 0.7", "Layer 5.2", "Layer 7.4"]
 
 [[source]]
 id = "ramare2014aa"
