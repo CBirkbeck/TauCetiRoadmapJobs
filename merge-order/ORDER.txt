@@ -4,11 +4,14 @@ KacMoody
 LefschetzPencilsAndVanishingCyclesPartII
 VonNeumannAlgebras
 EllipticCohomology
+CStarAlgebras
+HilbertModules
+OperatorKTheory
+IndexTheory
 StringOrientation
 SmoothBundlesConnections
 PseudodifferentialOperators
 TangentialBordism
-HilbertModules
 AlgebraicKTheory
 StableHomotopyKTheory
 GeneralAlgebraicKTheory
