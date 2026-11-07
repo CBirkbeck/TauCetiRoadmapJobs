@@ -380,6 +380,11 @@
        "name": "firstQuadrant_stable",
        "role": "instance",
        "statement": "First-quadrant E₂ cohomological: E_r^{p,q} = E_∞^{p,q} for r > max(p, q+1)."
+      },
+      {
+       "name": "stabilizesAt_of_finite_adjacentDegrees",
+       "role": "implication",
+       "statement": "If finitely many positions of total degrees n − 1 and n + 1 are nonzero on page r₀, every position pq of total degree n stabilises: the page-r differential leaving pq has target at (fil pq + r − e, n + 1) and the entering one source at (fil pq − r + e, n − 1), outside the finite nonzero set for large r, and vanishing persists. Finiteness in degree n alone does not suffice (1.4's filtered complex, n = 0)."
       }
      ],
      "tests": [
@@ -391,7 +396,7 @@
       {
        "name": "not_bounded_below_example",
        "kind": "non-example",
-       "statement": "The filtered complex of 1.4's non-example is bounded above but not bounded below in total degree 1 and is not regular at (0,0)."
+       "statement": "The filtered complex of 1.4's non-example is bounded above but not bounded below in total degree 1 and is not regular at (0,0); in total degree 0 its only nonzero first-page position is (0,0), so finiteness in the position's own degree does not give stabilisation."
       },
       {
        "name": "bounded_zero",
@@ -414,13 +419,14 @@
      ],
      "locator": {
       "source": "stacks-012K",
-      "where": "line 3185–3195, proof of Lemma 24.12, tag 0BDW"
+      "where": "line 3185–3195, the page step in the proof of Lemma 24.12, tag 0BDW (stated there for filtered complexes); route: regroup the page by total degree into a ℤ-indexed complex of finite direct sums and apply Tau Ceti's Euler–Poincaré engine, or Stacks' even–odd argument (line 3185–3191)"
      },
      "prerequisites": [
       "target:2.1",
       "mathlib:ComplexShape.EulerCharSigns",
       "tauceti:HomologicalComplex.sum_negOnePow_X_eq_sum_negOnePow_homology",
-      "mathlib:CategoryTheory.ObjectProperty.IsSerreClass"
+      "mathlib:CategoryTheory.ObjectProperty.IsSerreClass",
+      "mathlib:CategoryTheory.Limits.HasFiniteBiproducts"
      ],
      "api": [
       {
@@ -533,7 +539,7 @@
      ],
      "locator": {
       "source": "stacks-012K",
-      "where": "line 3131–3143, Definition 24.9, tag 012U; helle-rognes2024 line 94–98, Definition 2.7; weibel1994 Definition 5.2.11 (uncertified)"
+      "where": "line 3131–3143, Definition 24.9, tag 012U, in its filtered-complex form; helle-rognes2024 line 94–98, Definition 2.7; weibel1994 Definition 5.2.11 (uncertified)"
      },
      "prerequisites": [
       "target:1.4",
@@ -648,7 +654,7 @@
      ],
      "locator": {
       "source": "stacks-012K",
-      "where": "line 3152–3197, Lemmas 24.11 (2)–(4) and 24.12, tags 012W, 0BDW; weibel1994 Definition 5.2.5 (uncertified)"
+      "where": "line 3152–3197, Lemmas 24.11 (2)–(4) and 24.12, tags 012W, 0BDW, in their filtered-complex form; weibel1994 Definition 5.2.5 (uncertified)"
      },
      "prerequisites": [
       "target:3.1",
@@ -765,26 +771,6 @@
        "statement": "×2 example ⊗ ℚ: degree-1 sum 1 on page 2, dim H^1 = 0, strict since d_2 ≠ 0."
       }
      ]
-    },
-    {
-     "id": "3.7",
-     "kind": "example",
-     "name": "CategoryTheory.SpectralSequence.Examples.rangeOfDegrees",
-     "statement": "Convergence in a range of degrees: a spectral sequence with E_1 supported in 0 ≤ m ≤ d, differentials of bidegree (r, 1−r), converging to a complex whose i-th cohomology is identified with a given object only for i above a bound, is a strong convergence structure in I = {i > bound} with finite filtrations; the vanishing of d_r for odd r is degeneration on odd pages.",
-     "hypotheses": [
-      "finite support in the filtration degree",
-      "I an upper ray of ℤ"
-     ],
-     "locator": {
-      "source": "browning-sawin2020",
-      "where": "line 57–75, Theorem 1.1; line 568–587, Theorem 2.7 (arXiv v3 numbering)"
-     },
-     "prerequisites": [
-      "target:3.2",
-      "target:3.4"
-     ],
-     "api": [],
-     "tests": []
     }
    ]
   },
@@ -892,12 +878,12 @@
      "id": "4.3",
      "kind": "theorem",
      "name": "CategoryTheory.Abelian.SpectralObject.limitPageIsoEInfty",
-     "statement": "With Zᵗ = ker(δ : H^n(q ≤ q+1) → H^{n+1}(⊥ ≤ q)) and Bᵗ = im(δ : H^{n−1}(q+1 ≤ ⊤) → H^n(q ≤ q+1)): Zᵗ ≤ Z_r, B_r ≤ Bᵗ; EInfty q n = Zᵗ/Bᵗ is the canonical subquotient Zᵗ/B_∞ ⊆ E_∞(p,q) ↠ Zᵗ/Bᵗ, the inclusion an iso iff Z_∞ = Zᵗ and the projection an iso iff B_∞ = Bᵗ; H^{n+1}(⊥ ≤ i) = 0 (i ≤ q) ⇒ Z_r = Zᵗ for r ≥ q − i + 2; H^n(⊥ ≤ j) → H^n(⊥ ≤ ⊤) mono (j ≥ q+1) ⇒ B_r = Bᵗ for r ≥ j − q + 1; with exact sequential colimits and colim_j H^n(q ≤ j) ≅ H^n(q ≤ ⊤), B_∞ = Bᵗ; under both, stabilisation from max(q−i+2, j−q+1) and agreement with spectralSequencePageXIsoEInfty.",
+     "statement": "With Zᵗ = ker(δ : H^n(q ≤ q+1) → H^{n+1}(⊥ ≤ q)) and Bᵗ = im(δ : H^{n−1}(q+1 ≤ ⊤) → H^n(q ≤ q+1)): Zᵗ ≤ Z_r, B_r ≤ Bᵗ; EInfty q n = Zᵗ/Bᵗ is the canonical subquotient Zᵗ/B_∞ ⊆ E_∞(p,q) ↠ Zᵗ/Bᵗ, the inclusion an iso iff Z_∞ = Zᵗ and the projection an iso iff B_∞ = Bᵗ; H^{n+1}(⊥ ≤ i) = 0 (i ≤ q) ⇒ Z_r = Zᵗ for r ≥ q − i + 2; H^n(⊥ ≤ j) → H^n(⊥ ≤ ⊤) mono (j ≥ q+1) ⇒ B_r = Bᵗ for r ≥ j − q + 1; with sequential colimits and colim_{j ≥ q+1} H^{n−1}(q+1 ≤ j) → H^{n−1}(q+1 ≤ ⊤) an epimorphism, B_∞(p,q) exists and equals Bᵗ (no exactness of the colimits used; an isomorphism is not needed); under both, stabilisation from max(q−i+2, j−q+1) and agreement with spectralSequencePageXIsoEInfty.",
      "hypotheses": [
       "C abelian",
       "X : SpectralObject C EInt",
       "limit page at (p,q) where used",
-      "the stated vanishing/monomorphism/continuity hypotheses"
+      "the stated vanishing/monomorphism hypotheses; for continuity at ⊤, HasColimitsOfShape ℕ C and the epimorphism colim_{j ≥ q+1} H^{n−1}(q+1 ≤ j) → H^{n−1}(q+1 ≤ ⊤)"
      ],
      "locator": {
       "source": "stacks-012K",
@@ -910,7 +896,7 @@
       "target:4.2",
       "tauceti:CategoryTheory.Abelian.SpectralObject.EInfty",
       "tauceti:CategoryTheory.Abelian.SpectralObject.spectralSequencePageXIsoEInfty",
-      "mathlib:CategoryTheory.HasExactColimitsOfShape"
+      "mathlib:CategoryTheory.Limits.HasColimitsOfShape"
      ],
      "api": [],
      "tests": [
@@ -1208,7 +1194,7 @@
      "id": "5.4",
      "kind": "theorem",
      "name": "CochainComplex.strongConvergence_of_exhaustive_boundedBelow",
-     "statement": "If C has exact sequential colimits and for each n ∈ I the filtration is exhaustive on K^{n−1}, K^n, K^{n+1} and F^sK^m = 0 for s ≥ p₀(n), m ∈ {n, n+1}, the spectral sequence of 5.1 is regular in total degree n, has limit pages there, and converges strongly in degrees I to H^*(K); the induced filtration is exhaustive and vanishes from p₀(n).",
+     "statement": "If C has exact sequential colimits and for each n ∈ I the filtration is exhaustive on K^{n−1} and K^n and F^sK^m = 0 for s ≥ p₀(n), m ∈ {n, n+1}, the spectral sequence of 5.1 is regular in total degree n, has limit pages there, and converges strongly in degrees I to H^*(K); the induced filtration is exhaustive and vanishes from p₀(n). Route: bounded below on K^{n+1} gives regularity (4.3 cycle side); exhaustiveness on K^{n−1} with exact sequential colimits makes colim_j H^{n−1}(G_j/G_{q+1}) → H^{n−1}(K/G_{q+1}) an epimorphism, so B_∞ = Bᵗ by 4.3's continuity at ⊤; exhaustiveness on K^n makes the induced filtration exhaustive.",
      "hypotheses": [
       "C abelian",
       "HasColimitsOfShape ℕ C",
@@ -1235,7 +1221,7 @@
       {
        "name": "exhaustive_needed",
        "kind": "non-example",
-       "statement": "The non-exhaustive complex of 4.3 is bounded below and fails weak convergence."
+       "statement": "The non-exhaustive complex of 4.3 is bounded below and exhaustive on K^0 but not on K^{−1} = K^{n−1} (n = 0); weak convergence fails at (0,0)."
       },
       {
        "name": "bounded_below_needed",
@@ -1577,7 +1563,7 @@
      "id": "7.4",
      "kind": "theorem",
      "name": "CategoryTheory.ExactCouple.boardman_weakConvergence",
-     "statement": "In an abelian category with countable products and coproducts, CountableAB4Star, exact sequential colimits and lim-acyclic epimorphic towers, for a cohomological exact couple with A^s = D^{s,n−s}: A^{−∞} = colim_{s→−∞}, F^s = im(A^s → A^{−∞}); A^{+∞} = lim_{s→+∞}, RA^{+∞} = lim¹, F^s = ker(A^{+∞} → A^s); conditional convergence to the colimit (A^{+∞} = RA^{+∞} = 0) or to the limit (A^{−∞} = 0); RE_∞ = lim¹_r Z_r; W^n = colim_{s→−∞} lim¹_r(ker(A^s → A^{−∞}) ∩ Im^rA^s). Theorems: conditional convergence to the colimit with RE_∞ = 0 ⇒ weak convergence to A^{−∞}, exhaustive complete filtration, lim_s F^s ≅ W^n; to the limit with RE_∞ = 0 ⇒ strong convergence to A^{+∞}, RA^{+∞} ≅ W^n; E_1 vanishing for s < s₀ in degrees n−1, n ⇒ W^n = 0; E_1 vanishing for s > s₁ in degrees n−1, n, n+1 ⇒ RE_∞ = 0 = W^n in degree n; regular positions have RE_∞ = 0.",
+     "statement": "In an abelian category with countable products and coproducts, CountableAB4Star, exact sequential colimits and lim-acyclic epimorphic towers, for a cohomological exact couple with A^s = D^{s,n−s}: A^{−∞} = colim_{s→−∞}, F^s = im(A^s → A^{−∞}); A^{+∞} = lim_{s→+∞}, RA^{+∞} = lim¹, F^s = ker(A^{+∞} → A^s); conditional convergence to the colimit (A^{+∞} = RA^{+∞} = 0) or to the limit (A^{−∞} = 0); RE_∞ = lim¹_r Z_r; W^n = colim_{s→−∞} lim¹_r(ker(A^s → A^{−∞}) ∩ Im^rA^s). Theorems: conditional convergence to the colimit with RE_∞ = 0 ⇒ weak convergence to A^{−∞}, exhaustive filtration with lim¹_s F^s = 0 (complete in the sense of helle-rognes2024 Definition 2.5; complete in the sense of 3.1 iff W^n = 0), meet lim_s F^s ≅ W^n; to the limit with RE_∞ = 0 ⇒ strong convergence to A^{+∞}, RA^{+∞} ≅ W^n; E_1 vanishing for s < s₀ in degrees n−1, n ⇒ W^n = 0; E_1 vanishing for s > s₁ in degrees n−1, n, n+1 ⇒ RE_∞ = 0 = W^n in degree n; regular positions have RE_∞ = 0.",
      "hypotheses": [
       "C abelian",
       "HasCountableProducts C",
@@ -1641,6 +1627,11 @@
        "name": "finite_length_RE",
        "kind": "compatibility",
        "statement": "Finite-length first page ⇒ Mittag–Leffler cycle towers ⇒ RE_∞ = 0 (7.2), other hypotheses remain."
+      },
+      {
+       "name": "whole_plane_obstruction_nonzero",
+       "kind": "non-example",
+       "statement": "helle-rognes2024 Example 8.1 (line 943–967) with s ↦ −s: over a field k, D^{s,−s} = A^s = ∏_{i ≥ |s|} k, i the inclusion for s ≥ 0 and the projection for s < 0; E_1 = k at (s,−s), s ≥ 0, and at (s,−1−s), s < 0; d_{2m−1} : E^{−m,m−1} ≅ E^{m−1,1−m}; E_∞ = 0, RE_∞ = 0; A^{+∞} = RA^{+∞} = 0; A^{−∞} = ∏k/⨁k with F^s = A^{−∞} for all s, lim¹_s F^s = 0, meet ∏k/⨁k ≅ W^0 ≠ 0: weak convergence, not convergence, not strong; a model with W := 0 fails."
       }
      ]
     },
@@ -1648,7 +1639,7 @@
      "id": "7.5",
      "kind": "theorem",
      "name": "CochainComplex.weakConvergence_of_complete_exhaustive",
-     "statement": "In C as in 7.4, for a decreasingly filtered complex exhaustive and complete in every degree (K^m ≅ lim_p K^m/F^pK^m) whose spectral sequence (5.1) is regular: weak convergence to H^*(K) with exhaustive complete induced filtration and separation defect W^n; if moreover E_1^{p,n−p} = 0 for p below a bound in total degrees n−1, n, strong convergence.",
+     "statement": "In C as in 7.4, for a decreasingly filtered complex exhaustive and complete in every degree (K^m ≅ lim_p K^m/F^pK^m) whose spectral sequence (5.1) is regular: weak convergence to H^*(K) with induced filtration exhaustive and lim¹_p F^p H^n = 0, separation defect ⋂_p F^p H^n ≅ W^n, separated (and so complete in the sense of 3.1) iff W^n = 0; if moreover E_1^{p,n−p} = 0 for p below a bound in total degrees n−1, n, strong convergence.",
      "hypotheses": [
       "C as in 7.4",
       "exhaustive and complete in every degree",

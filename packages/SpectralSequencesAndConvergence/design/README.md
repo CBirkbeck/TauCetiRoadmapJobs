@@ -113,7 +113,11 @@ part of this roadmap.
   convergence* adds completeness (Helle–Rognes and Boardman "converges strongly"; stacks-012K
   "converges" additionally requires regularity, which here is a separate property of the
   spectral sequence). Helle–Rognes include exhaustiveness in "converges weakly"; here it is not
-  included.
+  included. Helle–Rognes and Boardman call a filtration *complete* when `lim¹_p F^p = 0` and
+  *Hausdorff* when its meet `lim_p F^p` is `0` (helle-rognes2024 line 81–84, Definition 2.5).
+  Here *complete* is the limit-cone condition of 3.1, which implies separated and, under
+  `CountableAB4Star`, is equivalent to Hausdorff together with `lim¹_p F^p = 0` (3.1). A filtration
+  with `lim¹_p F^p = 0` and nonzero meet is complete in their sense and not in this one.
 - **Classical indexing of a filtered complex.** For a decreasing filtration `F^p` of a cochain
   complex `K`, the increasing functor `G_t = F^{−t}` is the filtration that Tau Ceti's
   `CochainComplex.filtrationFunctor` takes. The classical `E_r^{p,q}` is page `r + 1` of
@@ -472,8 +476,13 @@ the first page `r ≥ r₀` with `r ≥ β(n + 1) − fil pq + e` and `r ≥ fil
 
 - First quadrant: for an `E₂` cohomological spectral sequence with `E_2^{p,q} = 0` unless
   `p, q ≥ 0`, the sequence is bounded, and `E_r^{p,q} = E_∞^{p,q}` for `r > max(p, q + 1)`.
-- If finitely many positions of total degree `n` are nonzero on page `r₀`, every position of
-  total degree `n` stabilises.
+- If finitely many positions of total degrees `n − 1` and `n + 1` are nonzero on page `r₀`, every
+  position `pq` of total degree `n` stabilises. The differential of page `r` leaving `pq` has its
+  target at `(fil pq + r − e, n + 1)` and the entering one its source at `(fil pq − r + e, n − 1)`;
+  for large `r` both lie outside the finite set of nonzero positions, and vanishing persists to
+  later pages. Finiteness in degree `n` alone does not suffice (second Check). If finitely many
+  positions are nonzero in every total degree, `E` is bounded (stacks-012K line 3114 and 3126,
+  Definition 24.7 (3) and Lemma 24.8 (3)).
 
 **Checks.**
 
@@ -482,7 +491,10 @@ the first page `r ≥ r₀` with `r ≥ β(n + 1) − fil pq + e` and `r ≥ fil
   `E_2^{1,0} = E_∞^{1,0}`, as `r > max(1, 1)` predicts.
 - The filtered complex of the last Check of 1.4 is bounded above but not bounded below in total
   degree `1` (`E_1^{p,1−p} = ℤ/ℓ` for all `p ≥ 1`). It is not regular at `(0, 0)`, consistent with
-  the theorem not applying.
+  the theorem not applying. In total degree `0` its only nonzero first-page position is `(0, 0)`,
+  yet `Z_r(0,0) = ℓ^{r−1} ℤ` never stabilises: finiteness in the degree of the position itself is
+  not enough, and the finiteness bullet above needs degrees `n − 1` and `n + 1`, where degree `1`
+  has infinitely many nonzero positions.
 - The zero spectral sequence is bounded.
 
 ### 2.3 Euler characteristics of pages
@@ -494,9 +506,18 @@ function from objects of `C` to an abelian group, additive on short exact sequen
 satisfy `P`. Prove: if only finitely many positions of page `r` are nonzero and all satisfy `P`,
 the same holds on page `r + 1`, and
 `Σ_pq (−1)^{deg pq} v(E_r(pq)) = Σ_pq (−1)^{deg pq} v(E_{r+1}(pq))` (stacks-012K line 3185–3195,
-proof of Lemma 24.12, tag 0BDW). Register the `ComplexShape.EulerCharSigns` instance
-`(p, q) ↦ (−1)^{p+q}` for the cohomological page shapes. *Needs:* 2.1; Mathlib
-`ComplexShape.EulerCharSigns`; Tau Ceti
+the page step in the proof of Lemma 24.12, tag 0BDW, which Stacks states for filtered complexes).
+Register the `ComplexShape.EulerCharSigns` instance `(p, q) ↦ (−1)^{p+q}` for the cohomological
+page shapes. The route: Tau Ceti's Euler–Poincaré engine is stated for a `CochainComplex A ℤ`
+strictly supported in a finite interval, not for a page of shape `ComplexShape.up' (r, 1 − r)` on
+`ℤ × ℤ`. Regroup the finitely many nonzero positions by total degree into the `ℤ`-indexed complex
+whose degree-`n` term is the finite direct sum of the `E_r(pq)` with `deg pq = n` (in `P` by closure
+under extensions), with the differentials of page `r` as components (they raise `deg` by `1` by
+2.1). Its cohomology in degree `n` is the direct sum of the homologies of page `r` at those
+positions, that is of the `E_{r+1}(pq)`; apply the engine to it, its homology relation holding
+because kernels, images and cohomology lie in `P`. Stacks' even–odd argument (stacks-012K line
+3185–3191) is an equivalent route. *Needs:* 2.1; Mathlib `ComplexShape.EulerCharSigns`,
+`CategoryTheory.Limits.HasFiniteBiproducts`; Tau Ceti
 `HomologicalComplex.sum_negOnePow_X_eq_sum_negOnePow_homology`.
 
 - For `C = ModuleCat k` over a field and `v = finrank` on finite-dimensional spaces, the identity
@@ -563,8 +584,8 @@ of filtered objects is a Mathlib `CategoryTheory.FilteredObject.Hom`. Define its
 
 Fix `E : SpectralSequence C c r₀`, a bidegree assignment `(fil, deg, e)`, a set `I ⊆ ℤ` of total
 degrees and an abutment `H : ℤ → FilteredObject C ℤᵒᵖ`. Define
-(stacks-012K line 3131–3143, Definition 24.9, tag 012U; helle-rognes2024 line 94–98, Definition
-2.7; weibel1994 Definition 5.2.11, uncertified):
+(stacks-012K line 3131–3143, Definition 24.9, tag 012U, in its filtered-complex form;
+helle-rognes2024 line 94–98, Definition 2.7; weibel1994 Definition 5.2.11, uncertified):
 
 - *weak convergence in `I`*: `E` has a limit page at every position of total degree in `I`. For
   every `n ∈ I` and every `s ∈ ℤ` there is an isomorphism `β : E_∞(pq) ≅ gr^s H^n` when
@@ -622,13 +643,13 @@ convergence in degree `n`. In that case `H^n` has a finite chain of subobjects w
 quotients are the `E_∞` at the positions of total degree `n`. `H^n = 0` if all these `E_∞`
 vanish. If they all satisfy a weak Serre class `P` as in 2.3, so does `H^n`. If the limit page
 at these positions is reached on page `r` and the `E_r` satisfy `P`, so does `H^n`
-(stacks-012K line 3152–3174, Lemma 24.11 (2)–(4), tag 012W; weibel1994 Definition 5.2.5 and the
-remark after 5.2.6, uncertified). *Needs:* 3.1, 3.2, 2.2.
+(stacks-012K line 3152–3174, Lemma 24.11 (2)–(4), tag 012W, in its filtered-complex form;
+weibel1994 Definition 5.2.5 and the remark after 5.2.6, uncertified). *Needs:* 3.1, 3.2, 2.2.
 
 - Under a finite filtration in every degree and finitely many nonzero positions on page `r`, all
   in `P`: only finitely many `H^n` are nonzero, and
   `Σ_n (−1)^n v(H^n) = Σ_pq (−1)^{deg pq} v(E_r(pq))` (stacks-012K line 3175–3197, Lemma 24.12,
-  tag 0BDW).
+  tag 0BDW, in its filtered-complex form).
 
 **Checks.**
 
@@ -771,8 +792,10 @@ is Tau Ceti's `abutment X n = H^n(⊥ ≤ ⊤)` and whose `p`th step is
 `abutmentFiltration (n − p + 1) n`, embedded by `abutmentFiltrationι`, with transition maps
 `abutmentFiltrationMap`. Identify `gr^p` with `EInfty (n − p) n` through `EInftyIsoCokernel`. With
 the E₂ assignment `(p, q) ↦ (p, p + q)` of 2.1, the position `(p, n − p)` carries `gr^p H^n`
-(Tau Ceti `SpectralObject/Abutment.lean`). *Needs:* 2.1, 3.1; Tau Ceti `abutment`,
-`abutmentFiltration`, `abutmentFiltrationι`, `abutmentFiltrationMap`, `EInftyIsoCokernel`.
+(helle-rognes2024 line 145–152, Definition 3.6, the filtration of a colimit by images, in its
+exact-couple form; Tau Ceti `SpectralObject/Abutment.lean`). *Needs:* 2.1, 3.1; Tau Ceti
+`abutment`, `abutmentFiltration`, `abutmentFiltrationι`, `abutmentFiltrationMap`,
+`EInftyIsoCokernel`.
 
 - The construction is functorial in `X`, through Tau Ceti `opcyclesMapOfHom`.
 - The step `p` is zero when `H^n(⊥ ≤ n − p + 1) = 0` and everything when
@@ -805,14 +828,22 @@ filtered-complex form):
 - *Boundary side.* If `H^n(⊥ ≤ j) → H^n(⊥ ≤ ⊤)` is a monomorphism for some integer `j ≥ q + 1`,
   then `B_r = Bᵗ` for `r ≥ j − q + 1`. The vanishing of `H^{n−1}(j ≤ ⊤)` is a sufficient
   condition.
-- *Continuity at `⊤`.* If `C` has exact sequential colimits and the canonical maps
-  `colim_j H^n(q ≤ j) → H^n(q ≤ ⊤)` are isomorphisms, then `B_∞` exists and equals `Bᵗ`.
+- *Continuity at `⊤`.* If `C` has sequential colimits (`HasColimitsOfShape ℕ C`) and the canonical
+  map `colim_{j ≥ q+1} H^{n−1}(q + 1 ≤ j) → H^{n−1}(q + 1 ≤ ⊤)` is an epimorphism, then `B_∞(p, q)`
+  exists and equals `Bᵗ`. The image of the colimit map is the least upper bound of the images of
+  the `H^{n−1}(q + 1 ≤ j)`, so they have join `⊤`; `B_{j−q+1}` is the image under `δ` of the
+  `j`th of them, by naturality of `δ` in the triple `q ≤ q + 1 ≤ j`, and the image under `δ`
+  preserves least upper bounds. No exactness of the colimits is used, and an isomorphism is not
+  needed: for the spectral object (Tau Ceti `CochainComplex.spectralObject`) of
+  `K = (ℤ →(id) ℤ)` in degrees `n − 2`, `n − 1`, with the increasing filtration `G_j = 0` in degree
+  `n − 2` for all finite `j` and `G_j = ℤ` in degree `n − 1` exactly for `j ≥ q + 2`, the map is
+  `colim_j H^{n−1}(G_j / G_{q+1}) = ℤ → H^{n−1}(K) = 0`, onto but not injective.
 - Under both the cycle-side and boundary-side hypotheses, `E` stabilises at `(p, q)` from page
   `max(q − i + 2, j − q + 1)`. The resulting isomorphism agrees with Tau Ceti's
   `spectralSequencePageXIsoEInfty` whenever the latter's hypotheses hold.
 
 *Needs:* 1.3, 1.4, 4.1, 4.2; Tau Ceti `EInfty`, `spectralSequencePageXIsoEInfty`; Mathlib
-spectral-object exact sequences.
+spectral-object exact sequences, and `HasColimitsOfShape` for the continuity item.
 
 **Checks.**
 
@@ -866,7 +897,8 @@ satisfies `IsThirdQuadrant`, the hypotheses of 4.4 hold in cohomological degree 
 `a = min(m, 1)` and `b = 1`. Hence `X.spectralSequence coreE₂HomologicalNat` converges strongly
 with the homological assignment `(p, q) ↦ (−p, −p − q)`. The filtration in cohomological degree
 `m` is `F^s H^m := abutmentFiltration (m − s + 1) m`, where `s = −p` is the filtration degree, so
-that position `(p, q)` carries `EInfty (−q) m`. *Needs:* 4.4; Mathlib `IsFirstQuadrant`,
+that position `(p, q)` carries `EInfty (−q) m` (stacks-012K line 3202–3240, Lemma 24.13, tag
+0BK5, in its filtered-complex form, applied through 4.4). *Needs:* 4.4; Mathlib `IsFirstQuadrant`,
 `IsThirdQuadrant`, `coreE₂CohomologicalNat`, `coreE₂HomologicalNat`.
 
 - The edge morphisms and five-term sequence of 3.6 apply to every first-quadrant spectral object.
@@ -887,7 +919,8 @@ Prove that a morphism `φ : X ⟶ Y` of spectral objects indexed by `EInt` induc
 converging structures (3.3) between the structures of 4.4, built from Tau Ceti
 `spectralSequenceMap`, `EMap` and the abutment components `(φ.hom n).app`. Deduce from 3.5 that
 `φ` is an isomorphism on `H^n(⊥ ≤ ⊤)` when it is an isomorphism on some page and the hypotheses of
-4.4 hold for `X` and `Y` in degree `n`. *Needs:* 3.3, 3.5, 4.4; Tau Ceti `spectralSequenceMap`,
+4.4 hold for `X` and `Y` in degree `n` (weibel1994 Theorem 5.2.12, uncertified, applied through
+3.5). *Needs:* 3.3, 3.5, 4.4; Tau Ceti `spectralSequenceMap`,
 `EMap`, `opcyclesMapOfHom`, `spectralSequencePageXMap_comp_pageXIsoEInfty_hom`.
 
 - The deduced comparison contains Tau Ceti's `isIso_hom_app_abutment_of_isIso_page` and has a
@@ -994,13 +1027,19 @@ is the case `I = ℤ`). *Needs:* 4.4, 5.1, 5.2; Tau Ceti `CochainComplex.isZero_
 ### 5.4 Classical convergence for exhaustive filtrations bounded below
 
 Let `C` have exact sequential colimits. Suppose that for each `n ∈ I` the filtration is
-exhaustive on `K^{n−1}`, `K^n` and `K^{n+1}` (the steps have least upper bound `⊤`), and bounded
-below on `K^n` and `K^{n+1}` (`F^s K^m = 0` for `s ≥ p₀(n)`). Prove that the spectral sequence of
-5.1 is regular at every position of total degree `n`, has a limit page there (`B_∞` exists by
-4.3's continuity at `⊤`), and converges strongly in degrees `I` to `H^*(K)` with the induced
-filtration. The induced filtration of `H^n` is exhaustive and vanishes from `p₀(n)` on
-(weibel1994 Theorem 5.5.1, uncertified; stacks-012K line 3202–3210, Lemma 24.13, for the variant
-with hypotheses on `H^n(F^s K)`). *Needs:* 4.3, 5.1, 5.2; Mathlib `HasExactColimitsOfShape`.
+exhaustive on `K^{n−1}` and `K^n` (the steps have least upper bound `⊤`), and bounded below on
+`K^n` and `K^{n+1}` (`F^s K^m = 0` for `s ≥ p₀(n)`). Prove that the spectral sequence of 5.1 is
+regular at every position of total degree `n`, has a limit page there, and converges strongly in
+degrees `I` to `H^*(K)` with the induced filtration (weibel1994 Theorem 5.5.1, uncertified;
+stacks-012K line 3202–3210, Lemma 24.13, for the variant with hypotheses on `H^n(F^s K)`). The
+route, with `G_t = F^{−t}` as in 5.1: bounded below on `K^{n+1}` gives `Z_r = Zᵗ` for large `r`
+(4.3's cycle side), so the sequence is regular there and `Z_∞` exists. `B_∞` exists and equals
+`Bᵗ` by 4.3's continuity at `⊤`: exact sequential colimits and exhaustiveness on `K^{n−1}` make
+`colim_j (G_j / G_{q+1}) → K / G_{q+1}` an isomorphism in degree `n − 1` and a monomorphism in
+degree `n`, hence an isomorphism on cycles in degree `n − 1`; cohomology commutes with exact
+sequential colimits, so `colim_j H^{n−1}(G_j / G_{q+1}) → H^{n−1}(K / G_{q+1})` is an epimorphism.
+Exhaustiveness on `K^n` makes the induced filtration of `H^n` exhaustive, and bounded below on
+`K^n` makes it vanish from `p₀(n)` on. *Needs:* 4.3, 5.1, 5.2; Mathlib `HasExactColimitsOfShape`.
 
 - For complexes of modules (`ModuleCat R` is `AB5`) this contains Tau Ceti's
   `CochainComplex.exists_mem_range_filtrationAbutmentFiltrationι` and DGFloer Layer 1 item 3's
@@ -1010,8 +1049,9 @@ with hypotheses on `H^n(F^s K)`). *Needs:* 4.3, 5.1, 5.2; Mathlib `HasExactColim
 
 - For `ModuleCat R`, exhaustiveness of a filtration of `K^m` by submodules means every element
   lies in some step. The theorem then gives Tau Ceti's exhaustive-filtration statement.
-- *Exhaustiveness is needed.* The non-exhaustive complex of 4.3 is bounded below, and weak
-  convergence fails.
+- *Exhaustiveness on `K^{n−1}` is needed.* The non-exhaustive complex of 4.3 is bounded below
+  and exhaustive on `K^0`, but not on `K^{−1}`, which is `K^{n−1}` for `n = 0`; weak convergence
+  fails at `(0, 0)` (`E_∞^{0,0} = ℤ`, `H^0(K) = 0`).
 - *Bounded below is needed.* The `ℓ`-adic filtration of the complex `ℤ` in degree `0` is
   exhaustive and not bounded below. The spectral sequence converges but not strongly (3.2).
 
@@ -1131,7 +1171,8 @@ used). Prove:
   `0 → lim F′ → lim F → lim F″ → lim¹ F′ → lim¹ F → lim¹ F″ → 0` for every levelwise short exact
   sequence of towers;
 - invariance under passage to a cofinal subsequence and under pro-isomorphism (in any additive
-  category with the products);
+  category with the products and with the kernel and cokernel of the product–difference maps,
+  which lim and lim¹ need to be defined);
 - pro-zero towers have `lim = lim¹ = 0`, from `IsProZero.isIso_towerDifference`.
 
 *Needs:* Tau Ceti `CategoryTheory.Functor.towerDifference`,
@@ -1224,8 +1265,10 @@ Prove (helle-rognes2024 line 163–168, Theorems 3.9 and 3.10, citing boardman19
 uncertified, in the indexing `s ↦ −s`; and line 185–247 for Lemmas 3.13–3.15 and the proofs):
 
 - if the couple converges conditionally to the colimit and `RE_∞ = 0`, the spectral sequence
-  converges weakly to `A^{−∞}`, the filtration of `A^{−∞}` is exhaustive and complete
-  (`lim¹_s F^s = 0`), and the meet `F^{+∞} = lim_s F^s` is isomorphic to `W^n`;
+  converges weakly to `A^{−∞}`, the filtration of `A^{−∞}` is exhaustive and has
+  `lim¹_s F^s = 0` (complete in the sense of helle-rognes2024 Definition 2.5; complete in the
+  sense of 3.1 if and only if `W^n = 0`), and the meet `F^{+∞} = lim_s F^s` is isomorphic to
+  `W^n`;
 - if the couple converges conditionally to the limit and `RE_∞ = 0`, the spectral sequence
   converges strongly to `A^{+∞}` and `RA^{+∞} ≅ W^n`;
 - *Half-plane criteria.* If `E_1^{s,·} = 0` in total degrees `n − 1` and `n` for all `s < s₀`,
@@ -1252,20 +1295,39 @@ uncertified, in the indexing `s ↦ −s`; and line 185–247 for Lemmas 3.13–
   not force a zero target.
 - If every first-page object has finite length, the cycle towers are Mittag–Leffler and
   `RE_∞ = 0` (7.2). The conditional-convergence and `W` hypotheses remain.
+- *A nonzero whole-plane obstruction* (helle-rognes2024 line 943–967, Example 8.1, in the
+  indexing `s ↦ −s`). In `ModuleCat k` over a field `k`, let `D^{s,t} = A^s = ∏_{i ≥ |s|} k` when
+  `s + t = 0` and `0` otherwise, with `i : A^{s+1} → A^s` the inclusion for `s ≥ 0` and the
+  projection for `s < 0`. Exactness forces `E_1^{s,−s} = coker(i) = k` for `s ≥ 0`,
+  `E_1^{s,−1−s} = ker(i) = k` for `s < 0`, and `E_1 = 0` elsewhere; `d_{2m−1}` maps
+  `E^{−m, m−1}` isomorphically onto `E^{m−1, 1−m}` for `m ≥ 1` (6.2: `Z_r(−m, m−1)` is everything
+  for `r ≤ 2m − 1` and `0` from `2m` on), so `E_∞ = 0` and every cycle tower is eventually
+  constant, `RE_∞ = 0`. In total degree `0`, `A^{+∞} = ⋂_s ∏_{i ≥ s} k = 0` and `RA^{+∞} = 0`
+  (`A^0 → lim_s A^0 / A^s = ∏ k` is the identity), so the couple converges conditionally to the
+  colimit. `A^{−∞} = ∏ k / ⨁ k`, and every `A^s → A^{−∞}` is onto, so `F^s = A^{−∞}` for all `s`:
+  `gr^s = 0 = E_∞`, the filtration is exhaustive with `lim¹_s F^s = 0`, and its meet is
+  `∏ k / ⨁ k`. Directly, for `s = −m` and `r ≥ 2m`, `ker(A^{−m} → A^{−∞}) ∩ Im^r A^{−m}` is
+  `⨁_{i ≥ r−m} k`, whose `lim¹_r` is `∏_{i ≥ m} k / ⨁_{i ≥ m} k`, so `W^0 ≅ ∏ k / ⨁ k ≠ 0`, as
+  the first theorem says. The spectral sequence converges weakly to `A^{−∞}` but does not converge
+  (the filtration is not separated), so it is not strongly convergent. A model with `W := 0`
+  contradicts `F^{+∞} ≅ W^0`. Neither half-plane criterion applies: `E_1` is nonzero in total
+  degree `−1` for every `s < 0` and in total degree `0` for every `s ≥ 0`.
 
 ### 7.5 Complete convergence for filtered complexes
 
 Let `C` be as in 7.4. For a decreasingly filtered complex `K`, suppose the filtration is
 exhaustive in every degree and complete in every degree, in the sense of 3.1 applied to
 `K^m / F^p K^m` (`K^m ≅ lim_p K^m / F^p K^m`), and suppose the spectral sequence of 5.1 is regular.
-Prove that it converges weakly to `H^*(K)` with the induced filtration, which is exhaustive and
-complete, and that the separation defect of `H^n` is `W^n`. If moreover, for each `n`,
-`E_1^{p,n−p} = 0` for `p` below some bound in total degrees `n − 1` and `n`, then the convergence is
-strong (weibel1994 Theorem 5.5.10, uncertified; eilenberg-moore1962 §7, uncertified). The route:
-completeness gives `lim_s F^s K^m = lim¹_s F^s K^m = 0` (7.1 and 7.2). `1 − s` is then an
-isomorphism on `∏_s F^s K`, so `lim_s H^n(F^s K) = lim¹_s H^n(F^s K) = 0`, which is conditional
-convergence to the colimit for the couple of 6.3. Exhaustiveness and exact sequential colimits
-give `A^{−∞} = H^n(K)`, and 7.4 applies. *Needs:* 5.1, 5.2, 6.3, 7.1, 7.2, 7.4.
+Prove that it converges weakly to `H^*(K)` with the induced filtration, which is exhaustive with
+`lim¹_p F^p H^n = 0`, and that the separation defect `⋂_p F^p H^n` is `W^n`; so the induced
+filtration is separated, and then complete in the sense of 3.1, if and only if `W^n = 0`. If
+moreover, for each `n`, `E_1^{p,n−p} = 0` for `p` below some bound in total degrees `n − 1` and
+`n`, then `W^n = 0` (7.4, half-plane criteria) and the convergence is strong (weibel1994 Theorem
+5.5.10, uncertified; eilenberg-moore1962 §7, uncertified). The route: completeness gives
+`lim_s F^s K^m = lim¹_s F^s K^m = 0` (7.1 and 7.2). `1 − s` is then an isomorphism on
+`∏_s F^s K`, so `lim_s H^n(F^s K) = lim¹_s H^n(F^s K) = 0`, which is conditional convergence to
+the colimit for the couple of 6.3. Exhaustiveness and exact sequential colimits give
+`A^{−∞} = H^n(K)`, and 7.4 applies. *Needs:* 5.1, 5.2, 6.3, 7.1, 7.2, 7.4.
 
 - For `ModuleCat R` this contains DGFloer Layer 1 item 3's complete convergence theorem for
   module complexes.
