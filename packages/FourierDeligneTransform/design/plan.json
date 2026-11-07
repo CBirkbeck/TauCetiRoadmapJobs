@@ -106,7 +106,8 @@
      "prerequisites": [
       "target:0.1",
       "mathlib:FiniteField.trace_to_zmod_nondegenerate",
-      "mathlib:Algebra.trace"
+      "mathlib:Algebra.trace",
+      "tauceti:Submodule.sum_addChar_dotProduct"
      ],
      "api": [],
      "tests": []
@@ -127,7 +128,8 @@
      "prerequisites": [
       "target:0.1",
       "target:0.1.1",
-      "mathlib:Module.Dual"
+      "mathlib:Module.Dual",
+      "tauceti:Submodule.sum_addChar_dotProduct"
      ],
      "api": [
       {
@@ -176,6 +178,11 @@
        "name": "ff_dft_sign",
        "kind": "compatibility",
        "statement": "For N = p = 3 and Φ = 1_{1}: ZMod.dft Φ k = stdAddChar(−k) while 𝔉Φ(k) = stdAddChar(k)."
+      },
+      {
+       "name": "ff_subspace_code_orthogonality",
+       "kind": "compatibility",
+       "statement": "W = 𝔽_3² with the dot product, Λ = ℤ/7, ψ(1) = 2, U = span(1, 1): 𝔉_ψ(1_U) is 3 on U^⊥ = {(0,0), (1,2), (2,1)} and 0 elsewhere, as Tau Ceti's Submodule.sum_addChar_dotProduct gives for C = U; at (1, 1) ∈ U ∖ U^⊥ the value is ψ(0) + ψ(2) + ψ(1) = 7 ≡ 0, not |U| = 3."
       }
      ]
     },
@@ -216,7 +223,7 @@
      ],
      "locator": {
       "source": "LAU87",
-      "where": "(1.1.1.3)–(1.1.1.4), LAU87 lines 257–262; BRY86 Ch. IX, BRY86 line 3358"
+      "where": "Proposition (1.2.2.9), LAU87 lines 472–474, and BRY86 Proposition 9.4 1), BRY86 lines 3449–3450 and 3460, for base change of the Fourier kernel, proved by proper base change; BRY86 Définition 9.1, BRY86 line 3394, for the Fourier kernel as the motivating instance; SGA 4 XVII 5.4.3 as recalled at LAU87 lines 459–461 for Künneth; kernel transforms at this generality are this roadmap's own"
      },
      "prerequisites": [
       "roadmap:EtaleCohomologyFoundations §0.8",
@@ -281,7 +288,7 @@
      ],
      "locator": {
       "source": "LAU87",
-      "where": "SGA 4 XVII 5.4.3 as recalled at LAU87 lines 459–461"
+      "where": "Proposition (1.2.2.9), LAU87 lines 472–474, and BRY86 Proposition 9.4 1), BRY86 lines 3449–3450 and 3460 (base change of the Fourier kernel, by proper base change); SGA 4 XVII 5.4.3 as recalled at LAU87 lines 459–461 (Künneth)"
      },
      "prerequisites": [
       "target:1.1",
@@ -357,8 +364,8 @@
       "kernels of finite Tor amplitude"
      ],
      "locator": {
-      "source": "BRY86",
-      "where": "Ch. IX, BRY86 line 3358"
+      "source": "LAU87",
+      "where": "lines 413–417 and 440–444, the proofs of (1.2.2.1) and (1.2.2.4), which compose a Fourier kernel with a Fourier or a graph kernel by proper base change and the projection formula; the coherence statements are this roadmap's own"
      },
      "prerequisites": [
       "target:1.2",
@@ -1419,6 +1426,11 @@
       "roadmap:RamificationOfCompleteDiscretelyValuedFields §4a.1",
       "roadmap:RamificationOfCompleteDiscretelyValuedFields §4a.2",
       "tauceti:TauCeti.additiveHilbert90",
+      "tauceti:TauCeti.ContCohomology.DiscreteShortExact.longExact_exact₁",
+      "tauceti:TauCeti.ContCohomology.DiscreteShortExact.longExact_exact₃",
+      "tauceti:TauCeti.ContCohomology.H1EquivOfSmulEqSelf",
+      "tauceti:TauCeti.ContCohomology.explicitH1AddEquivContinuousCohomology",
+      "mathlib:ContinuousCohomology.zeroIso",
       "roadmap:EtaleCohomologyFoundations §F.3a",
       "target:2.7"
      ],
