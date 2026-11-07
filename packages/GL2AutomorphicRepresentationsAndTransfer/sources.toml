@@ -1,0 +1,37 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "GL2AutomorphicRepresentationsAndTransfer"
+
+[[source]]
+id = "jl70-ubc"
+authors = "Hervé Jacquet and Robert P. Langlands"
+title = "Automorphic forms on GL(2)"
+year = 1970
+locator_scheme = "equation"
+locator = "(16.1.7), printed p. 275"
+url = "https://sunsite.ubc.ca/DigitalMathArchive/Langlands/pdf/jl-ps.pdf"
+fetched_from = "https://sunsite.ubc.ca/DigitalMathArchive/Langlands/pdf/jl-ps.pdf"
+fetched_at = "2026-11-07T14:09:11Z"
+sha256 = "4dae9de4ce65b6ed81a8ec4688e1f65131f188ba33195d5cf066cd923eabef0a"
+licence_class = "institutional"
+status = "certified"
+accessed = "2026-11-07"
+version_note = "UBC Digital Mathematics Archive retypesetting of Lecture Notes in Mathematics 114; the README cites the same work as [jl70] and [jl70-global] in other paginations"
+cited_for = ["R16.2.13", "R17.1.3", "R17.2.5"]
+
+[[source]]
+id = "pan26-global"
+authors = "Lue Pan"
+title = "On locally analytic vectors of the completed cohomology of modular curves II"
+year = 2022
+arxiv = "2209.06366v1"
+locator_scheme = "section"
+locator = "§5.4.1, Definition 5.4.11, §5.5.5"
+url = "https://arxiv.org/abs/2209.06366v1"
+fetched_from = "https://arxiv.org/pdf/2209.06366v1"
+fetched_at = "2026-11-07T14:09:55Z"
+sha256 = "0873b61a758c57a9c5567f8e9ed7d905adcb7b359013a24e680facd1027b31b4"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-07"
+version_note = "arXiv v1 pagination; the README cites the same work as [pan26], published in Ann. of Math. 203 (2026)"
+cited_for = ["R17.3.7", "R17.3.9"]
