@@ -1,0 +1,17 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "ArithmeticStatisticsPartV"
+
+[[source]]
+id = "stark1974"
+authors = "H. M. Stark"
+title = "Some effective cases of the Brauer-Siegel Theorem"
+year = 1974
+venue = "Inventiones Mathematicae 23"
+doi = "10.1007/BF01405166"
+locator_scheme = "theorem"
+locator = "Lemma 8"
+url = "https://doi.org/10.1007/BF01405166"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["Effective fixed-degree residue lower bound"]
