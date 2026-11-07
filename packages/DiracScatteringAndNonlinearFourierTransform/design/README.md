@@ -30,10 +30,11 @@ This roadmap owns, by layer:
   theorem with an integrable coefficient in a Banach space, the two-parameter propagator, Liouville's
   formula, continuous dependence on the coefficient in `L¹`, holomorphic dependence on a
   parameter, and the nonlinear Carathéodory theorem with an integrable Lipschitz modulus;
-- Layer 2: Poisson integrals of Poisson-finite measures on `ℝ`, positive harmonic functions on
-  `ℂ₊`, nontangential maximal functions, Fatou's theorem for Poisson integrals, boundary values
-  and uniqueness for bounded holomorphic functions on `ℂ₊`, the Hardy space `H²(ℂ₊)`, the
-  Paley–Wiener spaces `PW_t`, and outer functions on `ℂ₊`;
+- Layer 2: Poisson integrals of Poisson-finite measures on `ℝ` (Tau Ceti's half-space Poisson
+  integral takes bounded data only), positive harmonic functions on `ℂ₊`, nontangential maximal
+  functions, Fatou's theorem for Poisson integrals, boundary values and uniqueness for bounded
+  holomorphic functions on `ℂ₊`, the Hardy space `H²(ℂ₊)`, the Paley–Wiener spaces `PW_t`, and
+  outer functions on `ℂ₊`;
 - Layer 3: the Dirac system with a locally integrable complex potential, its fundamental matrix,
   its Hermite–Biehler functions and the Hermite–Biehler property;
 - Layer 4: the scattering matrix `G`, the scattering functions `a`, `b` on a finite interval,
@@ -57,17 +58,22 @@ This roadmap owns, by layer:
 It leaves to named owners:
 
 - Picard–Lindelöf with continuous time, `ODE_solution_unique_of_mem_Ioo`, absolutely continuous
-  functions, the Lebesgue differentiation theorem, the `L²` Fourier transform and Phragmén–Lindelöf
-  in a half-plane to Mathlib, consumed as listed in the supplier contracts;
+  functions, the Lebesgue differentiation theorem, the `L²` Fourier transform, the Poisson kernel
+  and the Poisson formula of a disc, and Phragmén–Lindelöf in a half-plane to Mathlib, consumed as
+  listed in the supplier contracts;
 - the essentially-bounded Carathéodory theorem, the constant-kernel integral Grönwall inequality,
   the Dyson series of a continuous path, Jacobi's formula for the derivative of the determinant,
   the identity `det(exp A) = exp(tr A)`, Young's inequality for an integrable kernel, the duality
   `L^∞(μ) ≃ L¹(μ)*` of a finite measure, the Hardy–Littlewood maximal function with its weak
   and strong type bounds, the Herglotz and Nevanlinna representations, the Cayley transform of
-  the half-plane, the half-plane Phragmén–Lindelöf principle for bounded functions, the converse
-  mean-value theorem for harmonic functions and the F. and M. Riesz uniqueness theorem on discs
-  to Tau Ceti; Layer 1 states the integrable-coefficient generalisations and records the pinned
-  essentially-bounded, continuous and constant-coefficient cases as Checks;
+  the half-plane, the half-plane Phragmén–Lindelöf principle for bounded functions, the
+  half-space Poisson kernel with its mass, positivity, harmonicity in the pole and kernel
+  comparison, the half-space Poisson integral of bounded data with its harmonicity and boundary
+  values, the converse mean-value theorem for harmonic functions and the F. and M. Riesz uniqueness
+  theorem on discs to Tau Ceti; Layer 1 states the integrable-coefficient generalisations and
+  records the pinned essentially-bounded, continuous and constant-coefficient cases as Checks, and
+  Layer 2 states the Poisson integral of a Poisson-finite measure and records the pinned
+  bounded-data case as a Check;
 - finite-order Hadamard factorization to AnalyticNumberTheoryPartI §0.23, consumed in Layer 7
   for entire functions of order at most one;
 - the disc Hardy space `H²(𝔻)` and its Toeplitz operators to OperatorTheory (ToeplitzOperators T1);
@@ -119,9 +125,10 @@ stated for complex potentials `q = f + ig` (the system with `Q_q = [[g, f], [f, 
   identity with constant `π` (denisov2006 (194) line 3250–3255) becomes `π/2` under the
   dictionary `a(r) = 2 Re A(2r)` (denisov2006 line 4230). Only the value `π/2` is used.
 - **The half-plane.** `ℂ₊ = {Im z > 0}` is Mathlib's `UpperHalfPlane.upperHalfPlaneSet`; the closed
-  half-plane is `{Im z ≥ 0}`. The Poisson kernel is `P(z, x) = Im z / (π |x − z|²)`, the Poisson
-  measure is `dΠ = dx/(1 + x²)` with `Π(ℝ) = π` (poltoratski2024 line 250), and a positive Borel
-  measure `ν` on `ℝ` is Poisson-finite when `∫ dν/(1 + x²) < ∞`.
+  half-plane is `{Im z ≥ 0}`. The Poisson kernel is `P(z, x) = Im z / (π |x − z|²)`, Tau Ceti's
+  half-space Poisson kernel in dimension `2` (§2.1), the Poisson measure is `dΠ = dx/(1 + x²)` with
+  `Π(ℝ) = π` (poltoratski2024 line 250), and a positive Borel measure `ν` on `ℝ` is Poisson-finite
+  when `∫ dν/(1 + x²) < ∞`.
 - **Fourier transform.** Mathlib's `𝓕 g (w) = ∫ e^{−2πi v w} g(v) dv` (`fourier_real_eq`).
   The Paley–Wiener space is `PW_t = {∫_{−t}^{t} φ(s) e^{isz} ds : φ ∈ L²(−t, t)}`, with
   `‖F‖²_{L²(ℝ)} = 2π ‖φ‖²` and reproducing kernel `sin(t(z − conj λ))/(π(z − conj λ))`.
@@ -228,6 +235,23 @@ All at the pinned Mathlib; paths under `Mathlib/`.
   62), `MeasureTheory.lintegral_liminf_le` (`MeasureTheory/Integral/Lebesgue/Add.lean` line 237, Fatou's
   lemma for measurable `ℝ≥0∞`-valued functions) and `MeasureTheory.lintegral_lintegral_swap`
   (`MeasureTheory/Measure/Prod.lean` line 1102, Tonelli for s-finite measures).
+- For the half-plane Poisson kernel in §2.1: `Complex.orthonormalBasisOneI`
+  (`Analysis/InnerProductSpace/PiL2.lean` line 853, the orthonormal basis `1, i` of `ℂ` over `ℝ`, whose
+  coordinate map `ℂ ≃ₗᵢ[ℝ] EuclideanSpace ℝ (Fin 2)` is `z ↦ (Re z, Im z)`),
+  `EuclideanSpace.volume_ball_fin_two` (`MeasureTheory/Measure/Lebesgue/VolumeOfBalls.lean` line 395, the
+  ball of radius `r` in `EuclideanSpace ℝ (Fin 2)` has volume `πr²`), `LinearIsometryEquiv.measurePreserving`
+  (`MeasureTheory/Measure/Haar/InnerProductSpace.lean` line 151, a linear isometry of finite-dimensional
+  real inner product spaces preserves volume), `DifferentiableOn.analyticAt` (`Analysis/Complex/CauchyIntegral.lean`
+  line 723, a function complex differentiable on a neighbourhood of a point is analytic there) and
+  `AnalyticAt.harmonicAt_re` (`Analysis/InnerProductSpace/Harmonic/Constructions.lean` line 55, the real part of
+  a complex-analytic function is harmonic).
+- The disc Poisson kernel `poissonKernel c w ζ = (|ζ − c|² − |w − c|²)/|ζ − w|²` (`Analysis/Complex/Poisson.lean`
+  line 54, in the root namespace and without the factor `1/(2π)`, which Mathlib's `Real.circleAverage`
+  carries), so that `poissonKernel 0 w ζ = (1 − |w|²)/|ζ − w|²` for `|ζ| = 1`, in §2.1's Cayley comparison
+  and §2.5; and the Poisson formula `InnerProductSpace.HarmonicOnNhd.circleAverage_poissonKernel_smul`
+  (`Analysis/Complex/Harmonic/Poisson.lean` line 92: a real function harmonic on a neighbourhood of the
+  closed disc `closedBall c R` is, at every `w` of the open disc, the circle average of
+  `poissonKernel c w` times it), used in a §2.1 Check.
 
 ### From Tau Ceti
 
@@ -281,6 +305,26 @@ All at the pinned Tau Ceti; paths under `TauCeti/`.
 - `TauCeti.PhragmenLindelof.upper_half_plane_of_isBounded` (`Analysis/Complex/PhragmenLindelof.lean`
   line 33): a bounded holomorphic function on `ℂ₊`, continuous on the closed half-plane, is bounded
   by its bound on `ℝ`.
+- The half-space Poisson kernel, in `Analysis/PDE/GreenFunction/HalfSpace.lean`: for a unit inward
+  normal `v` of `EuclideanSpace ℝ (Fin n)`, `TauCeti.halfSpacePoissonKernel n v x y`
+  (line 122) is `2⟨v, x⟩/(n ωₙ ‖y − x‖ⁿ)`, with pole `x`, point `y` and `ωₙ` the volume of the unit
+  ball. `TauCeti.halfSpacePoissonKernel_pos` (line 147): positive for `0 < ⟨v, x⟩` and `y ≠ x`.
+  `TauCeti.harmonicOnNhd_halfSpacePoissonKernel_left` (line 177): for `y` on the hyperplane
+  `⟨v, y⟩ = 0`, harmonic in the pole on the open half-space `0 < ⟨v, x⟩`.
+  `TauCeti.halfSpacePoissonKernel_le_mul` (line 198): for `y` on the hyperplane, `0 ≤ ⟨v, x⟩`,
+  `0 < ⟨v, x₁⟩` and `‖y − x₁‖ ≤ A‖y − x‖`, the bound `K(x, y) ≤ (⟨v, x⟩/⟨v, x₁⟩) Aⁿ K(x₁, y)`.
+- The half-space Poisson integral, in `Analysis/PDE/PoissonIntegral/HalfSpace.lean`, against the
+  Lebesgue measure of the hyperplane `(ℝ ∙ v)ᗮ`. `TauCeti.integral_halfSpacePoissonKernel` (line 135):
+  mass one, `∫ K(x, y) dy = 1`, for `0 < ⟨v, x⟩`. `TauCeti.halfSpacePoissonIntegral` (line 179): the
+  Poisson integral `∫ K(x, y) g(y) dy` of real data `g` on the hyperplane.
+  `TauCeti.harmonicOnNhd_halfSpacePoissonIntegral` (line 419): harmonic on the open half-space for
+  bounded, almost everywhere strongly measurable `g`. `TauCeti.tendsto_halfSpacePoissonIntegral`
+  (line 297): for such `g` continuous at a point `ξ` of the hyperplane, `P[g](x) → g(ξ)` as `x → ξ`
+  through the open half-space, without restriction on the approach.
+- Layer 2 uses these at `n = 2` with `v = (0, 1)`, identifying `ℂ` with `EuclideanSpace ℝ (Fin 2)`
+  through `Complex.orthonormalBasisOneI` (Mathlib, above). Then `⟨v, z⟩ = Im z` and `ω₂ = π`, so the kernel
+  is `Im z/(π|x − z|²)`. The hyperplane is the real axis, with Lebesgue measure. Complex data are
+  treated through their real and imaginary parts.
 - `DifferentiableOn.hasDerivAt_wedgeIntegral_upperHalfPlane`
   (`Analysis/Complex/UpperHalfPlane/Primitive.lean` line 118): every holomorphic function on `ℂ₊`
   has a primitive there; with Mathlib's complex partial this gives harmonic conjugates and
@@ -534,7 +578,10 @@ Tau Ceti Jacobi's formula (`Analysis/Calculus/FDeriv/Det.lean`) for §1.4, and T
 
 ### 2.1 Poisson-finite measures, Poisson and Schwarz integrals
 
-Define the Poisson kernel `P(z, x) = Im z/(π|x − z|²)` for `z ∈ ℂ₊`, `x ∈ ℝ`; the Poisson measure
+Define the Poisson kernel `P(z, x)` for `z ∈ ℂ₊`, `x ∈ ℝ` as Tau Ceti's `TauCeti.halfSpacePoissonKernel 2 v`
+with unit inward normal `v = (0, 1)`, pole `z` and boundary point `x`, read through Mathlib's
+`Complex.orthonormalBasisOneI`; since `⟨v, z⟩ = Im z` and `2ω₂ = 2π` (Mathlib `EuclideanSpace.volume_ball_fin_two`),
+it is `P(z, x) = Im z/(π|x − z|²)`, the notation used below. Define the Poisson measure
 `Π = dx/(1 + x²)`; a positive Borel measure `ν` on `ℝ` is Poisson-finite when
 `∫ dν/(1 + x²) < ∞`. Define the Poisson integral `P[ν](z) = ∫ P(z, x) dν(x)`, and for a complex
 `h ∈ L¹(Π)` write `P[h] = P[h dx]` (componentwise). For a Poisson-finite `ν` (or a real `h ∈ L¹(Π)`)
@@ -542,27 +589,49 @@ define the Schwarz integral `S[ν](z) = (1/(πi)) ∫ (1/(x − z) − x/(1 + x�
 `h ∈ L¹(ℝ)` the integral normalised at infinity `S⁰[h](z) = (1/(πi)) ∫ h(x)/(x − z) dx`
 (poltoratski2024 line 250–254 and 610–614; mauth2022 line 378–392).
 
-- `∫ P(z, x) dx = 1`, and `P(z, x) ≤ C(z)/(1 + x²)` with
-  `C(z) = 2(1 + (Re z)²) max(Im z, 1/Im z)/π`, so `P[ν]` is finite on `ℂ₊` for Poisson-finite `ν`.
+- `∫ P(z, x) dx = 1` (Tau Ceti `TauCeti.integral_halfSpacePoissonKernel`; the hyperplane carries the
+  Lebesgue measure of `ℝ` by Mathlib `LinearIsometryEquiv.measurePreserving`), and `P(z, x) ≤ C(z)/(1 + x²)`
+  with `C(z) = 2(1 + (Re z)²) max(Im z, 1/Im z)/π`, so `P[ν]` is finite on `ℂ₊` for Poisson-finite `ν`.
 - `P[ν]` is harmonic on `ℂ₊`, nonnegative, and `P[ν] = Re S[ν]`; `S[ν]` is holomorphic on `ℂ₊` and
-  real at `z = i`; `S⁰[h] − S[h]` is the imaginary constant `−(i/π) ∫ x h(x)/(1 + x²) dx`.
+  real at `z = i`; `S⁰[h] − S[h]` is the imaginary constant `−(i/π) ∫ x h(x)/(1 + x²) dx`. Route: on a
+  compact subset of `ℂ₊` the `z`-derivative `(x − z)^{−2}` of the Schwarz integrand is bounded by a
+  constant times `1/(1 + x²)`, so `S[ν]` is holomorphic (Mathlib `hasFDerivAt_integral_of_dominated_of_fderiv_le`),
+  hence analytic (Mathlib `DifferentiableOn.analyticAt`). Its real part `P[ν]` is then harmonic (Mathlib
+  `AnalyticAt.harmonicAt_re`). It is nonnegative because the kernel is positive (Tau Ceti
+  `TauCeti.halfSpacePoissonKernel_pos`).
 - `P(i, x) = 1/(π(1 + x²))`, so `h ∈ L¹(Π)` exactly when `P[|h|](i) < ∞`.
 - Cayley comparison: with `w = (z − i)/(z + i)` and `ζ = (x − i)/(x + i)`,
-  `P(z, x) = (1 − |w|²)/|ζ − w|² · 1/(π(1 + x²))`, so `P[ν]` is the disc Poisson integral at `w` of
-  the image of `dν/(π(1 + x²))` under Tau Ceti `TauCeti.boundaryCayley`.
+  `P(z, x) = poissonKernel 0 w ζ · 1/(π(1 + x²))`, where Mathlib's disc Poisson kernel is
+  `poissonKernel 0 w ζ = (1 − |w|²)/|ζ − w|²` for `|ζ| = 1`. So `P[ν](z) = ∫ poissonKernel 0 w ζ dσ(ζ)` is the
+  disc Poisson integral at `w` of the image `σ` of `dν/(π(1 + x²))` under Tau Ceti `TauCeti.boundaryCayley`.
 - Translation and dilation covariance: for the translate `ν_u` of `ν` by `u ∈ ℝ`,
   `P[ν_u](z) = P[ν](z − u)`; for `λ > 0` and the image `ν^λ` of `ν` under `x ↦ x/λ`,
   `P[ν^λ](z) = λ P[ν](λz)`.
 
-*Needs:* Mathlib Bochner integrals and `InnerProductSpace.HarmonicOnNhd`; Tau Ceti
-`TauCeti.boundaryCayley`.
+*Needs:* Mathlib Bochner integrals, `InnerProductSpace.HarmonicOnNhd`, `Complex.orthonormalBasisOneI`,
+`EuclideanSpace.volume_ball_fin_two`, `LinearIsometryEquiv.measurePreserving`,
+`hasFDerivAt_integral_of_dominated_of_fderiv_le`, `DifferentiableOn.analyticAt`, `AnalyticAt.harmonicAt_re`,
+`poissonKernel`; Tau Ceti `TauCeti.halfSpacePoissonKernel`, `TauCeti.halfSpacePoissonKernel_pos`,
+`TauCeti.integral_halfSpacePoissonKernel`, `TauCeti.boundaryCayley`.
 
 **Checks.**
 
+- Identification with the pinned kernel: at `z = 1 + i` and `x = 3`, Tau Ceti's kernel at `n = 2`,
+  `v = (0, 1)`, with pole `z` is `2 · 1/(2π · 5) = 1/(5π)`, which is `Im z/(π|x − z|²)`. With the two
+  arguments exchanged (pole `x`) it is `0`, because `⟨v, x⟩ = 0` for real `x`.
 - Lebesgue measure: `P[dx] ≡ 1`; a kernel without the factor `1/π` would give `π`.
-- `ν = δ₀`: `P[δ₀](z) = Im z/(π|z|²) = Im(−1/(πz))`, with value `1/π` at `z = i`.
+- `ν = δ₀`: `P[δ₀](z) = Im z/(π|z|²) = Im(−1/(πz))`, with value `1/π` at `z = i`. It is harmonic on `ℂ₊`, as
+  Tau Ceti's `TauCeti.harmonicOnNhd_halfSpacePoissonKernel_left` states for the kernel in its pole.
 - `h = 1/(1 + x²)`: `P[h](z) = Re(i/(z + i))` and `S[h](z) = i/(z + i)`; at `z = 2i`, the direct integral
-  `(2/π)∫ dx/((x² + 4)(x² + 1)) = 1/3 = i/(3i)`.
+  `(2/π)∫ dx/((x² + 4)(x² + 1)) = 1/3 = i/(3i)`. This `h` is real, bounded and continuous, so `P[h]` is
+  also Tau Ceti's `TauCeti.halfSpacePoissonIntegral` at `n = 2`, harmonic by
+  `TauCeti.harmonicOnNhd_halfSpacePoissonIntegral`.
+- Cayley comparison at `z = 2i`, `x = 1`: `w = 1/3`, `ζ = −i`, `poissonKernel 0 (1/3) (−i) = (8/9)/(10/9) = 4/5`
+  and `(4/5)/(2π) = 2/(5π) = P(2i, 1)`. For `h(x) = (x² − 1)/(x² + 1) = Re ζ`, Mathlib's Poisson formula
+  on the unit disc (`InnerProductSpace.HarmonicOnNhd.circleAverage_poissonKernel_smul` for the harmonic
+  function `Re`) gives `P[h](z) = Re w`. At `z = 2i` the direct integral is
+  `(2/π)∫ (x² − 1)/((x² + 1)(x² + 4)) dx = 1/3 = Re(1/3)`. A kernel that also carried the circle-average
+  factor `1/(2π)` would give `1/(6π)`.
 - `ν = |x| dx` is not Poisson-finite (`∫ |x|/(1 + x²) = ∞`) and `P[ν] ≡ ∞`.
 
 ### 2.2 Positive harmonic functions on the half-plane
@@ -598,20 +667,23 @@ pp. 27, 55–56, uncertified). Its API:
 
 - Cone comparison: for `x′ + iy ∈ Γ_∞(x)` and every `s ∈ ℝ`, `P(x′ + iy, s) ≤ 3 P(x + iy, s)`; hence for
   `g` locally integrable with `P[|g|]` finite, `M_∞ P[g](x) ≤ 3 · TauCeti.maximalFunction volume g x`.
+  The kernel inequality is Tau Ceti's `TauCeti.halfSpacePoissonKernel_le_mul` at `n = 2` with the poles
+  `x′ + iy` and `x + iy` of equal height and `A = √3`, so that `Aⁿ = 3`.
 - Aperture independence: cones `|Re z − x| < α Im z`, `α > 0`, give the same nontangential limits, by
-  the same comparison with the constant `max(2, 1 + 2α²)`, which is `3` for `α = 1`.
+  the same comparison with `A² = max(2, 1 + 2α²)`, which is `3` for `α = 1`.
 - Localisation: for `h ∈ L¹(Π)` and `R > 0` there is `C_R`, depending only on `R`, with
   `M_1 P[h](x) ≤ 3 · TauCeti.maximalFunction volume (h · 1_{[−R−2, R+2]}) x + C_R ‖h‖_{L¹(Π)}` for `|x| ≤ R`.
 - Weak type: `|{x ∈ [−R, R] : M_1 P[h](x) > λ}| ≤ C_R ‖h‖_{L¹(Π)}/λ` for `λ > 0`, so `√(M_1 P[|h|])` is
   integrable on every bounded interval (mauth2022 Lemma 5 and Corollary 1, line 421–427).
 - Strong type: `‖M_∞ P[g]‖_{L²} ≤ C‖g‖_{L²}` for `g ∈ L²(ℝ)` with an absolute constant `C` (mauth2022
   Lemma 6 line 430).
-- Route: `|s − x| ≤ |s − x′| + y` gives `(s − x)² + y² ≤ 3((s − x′)² + y²)`; `P(x + iy, ·)` is radially
-  decreasing about `x` with integral `1`, so its integral against `|g|` is at most the maximal function by
-  the layer-cake formula; then Tau Ceti's weak and strong type bounds.
+- Route: `|s − x| ≤ |s − x′| + y` gives `(s − x)² + y² ≤ 3((s − x′)² + y²)`, which is the distance
+  hypothesis `|s − (x + iy)| ≤ √3 |s − (x′ + iy)|` of the pinned comparison. `P(x + iy, ·)` is radially
+  decreasing about `x` with integral `1` (§2.1), so its integral against `|g|` is at most the maximal
+  function by the layer-cake formula; then Tau Ceti's weak and strong type bounds.
 
-*Needs:* §2.1; Tau Ceti `TauCeti.maximalFunction`, `TauCeti.mul_measure_lt_maximalFunction_le`,
-`TauCeti.lintegral_rpow_maximalFunction_le`.
+*Needs:* §2.1; Tau Ceti `TauCeti.halfSpacePoissonKernel_le_mul`, `TauCeti.maximalFunction`,
+`TauCeti.mul_measure_lt_maximalFunction_le`, `TauCeti.lintegral_rpow_maximalFunction_le`.
 
 **Checks.**
 
@@ -646,7 +718,9 @@ at a Lebesgue point of `w` where `ν_s(B(x, r))/2r → 0` (Mathlib
 - `ν = δ₀`: the limit is `0` at every `x ≠ 0`, and `w = 0`.
 - `h = 1_{[0,1]}`: the limit is `1` on `(0, 1)` and `0` off `[0, 1]`; at the jump `x = 0` there is no
   nontangential limit, since `P[h](iy) → 1/2` while `P[h](−y/2 + iy) → 1/2 − arctan(1/2)/π ≈ 0.352`.
-- Continuous bounded `h`: the limit exists at every point and equals `h(x)` (mauth2022 Lemma 4).
+- Continuous bounded `h`: the limit exists at every point and equals `h(x)`, even without restriction
+  on the approach; this is Tau Ceti's `TauCeti.tendsto_halfSpacePoissonIntegral` at `n = 2`, applied to
+  `Re h` and `Im h`.
 
 ### 2.5 Bounded holomorphic functions on the half-plane
 
@@ -658,19 +732,26 @@ uncertified). Its API:
 - If `F` extends continuously to the closed half-plane then `F* = F` on `ℝ`.
 - Uniqueness: if `F*` vanishes on a set of positive measure then `F ≡ 0`.
 - If `F ≢ 0` then `log|F*| ∈ L¹(Π)` and `log|F(z)| ≤ P[log|F*|](z)` on `ℂ₊`.
-- Route: the bounded functions `F(· + iε)` are continuous up to `ℝ`, and `F(· + iε) − P[F(· + iε)|_ℝ]`,
-  reflected oddly across `ℝ`, has the mean-value property (Tau Ceti
-  `TauCeti.harmonicOnNhd_of_setAverage_ball_eq`) and is bounded, hence constant by
-  `InnerProductSpace.bounded_harmonic_on_complex_plane_is_constant`, hence `0`. A weak-* limit point of
+- Route: the bounded functions `F(· + iε)` are continuous up to `ℝ`. The Poisson integral of their
+  restriction to `ℝ` is harmonic and tends to `F(x + iε)` at every `x ∈ ℝ` (Tau Ceti
+  `TauCeti.harmonicOnNhd_halfSpacePoissonIntegral` and `TauCeti.tendsto_halfSpacePoissonIntegral`, for the
+  real and imaginary parts). So `F(· + iε) − P[F(· + iε)|_ℝ]`, reflected oddly across `ℝ`, is continuous,
+  has the mean-value property (Tau Ceti `TauCeti.harmonicOnNhd_of_setAverage_ball_eq`) and is bounded,
+  hence constant by `InnerProductSpace.bounded_harmonic_on_complex_plane_is_constant`, hence `0`. A weak-* limit point of
   `F(· + iε)` in `L^∞(Π) = L¹(Π)^*` gives the Poisson representation, because `x ↦ (1 + x²)P(z, x)` is
   bounded and so lies in `L¹(Π)`; as a space of classes `L^∞(Π)` is `L^∞(ℝ)`, since `Π` and Lebesgue
   measure have the same null sets. §2.4 then gives the nontangential limits.
   Uniqueness and the logarithmic bound transport Tau Ceti `TauCeti.eqOn_const_ball_of_tendsto_circleMap`
   and `AnalyticOnNhd.le_circleAverage_log_norm` through the Cayley transform, under which a disc radius
-  ending at `ζ ≠ 1` becomes an arc ending at `x` inside every cone at `x`.
+  ending at `ζ ≠ 1` becomes an arc ending at `x` inside every cone at `x`. Jensen's bound is stated at
+  the centre of the disc. It gives the logarithmic bound at `z = i`, because the Cayley transform carries
+  `P(i, x) dx` to `dθ/(2π)`: this is §2.1's Cayley comparison at `w = 0`, where `poissonKernel 0 0 ζ = 1`.
+  §2.1's translation and dilation covariance, applied to `F(Re z + (Im z) ·)`, then give the bound at every
+  `z ∈ ℂ₊`.
 
 *Needs:* §2.1, §2.4; Mathlib `InnerProductSpace.bounded_harmonic_on_complex_plane_is_constant`,
-`WeakDual.isCompact_closedBall`; Tau Ceti `MeasureTheory.Lp.dualOneEquiv`,
+`WeakDual.isCompact_closedBall`, `poissonKernel`; Tau Ceti `MeasureTheory.Lp.dualOneEquiv`,
+`TauCeti.harmonicOnNhd_halfSpacePoissonIntegral`, `TauCeti.tendsto_halfSpacePoissonIntegral`,
 `TauCeti.harmonicOnNhd_of_setAverage_ball_eq`, `TauCeti.eqOn_const_ball_of_tendsto_circleMap`,
 `AnalyticOnNhd.le_circleAverage_log_norm`, `TauCeti.bijOn_sub_I_div_add_I_upperHalfPlaneSet`.
 
@@ -809,16 +890,16 @@ garnett2007, Ch. II §4, p. 64, uncertified). Its API:
 
 - `1/(z + i)` lies in `H²(ℂ₊)`, `z + i` is outer, `e^{iz}` and `(z − i)/(z + i)` are bounded and not outer.
 - `P[dx/(1 + x²)]` is `Re(i/(z + i))`, a bounded positive harmonic function with boundary values
-  `1/(1 + x²)` everywhere.
+  `1/(1 + x²)` everywhere (Tau Ceti `TauCeti.tendsto_halfSpacePoissonIntegral` for continuous bounded data).
 - `2 sin(tz)/z` spans the kernel direction at `0` of `PW_t`.
 
 ### Dependencies
 
-Mathlib (harmonic functions, Lebesgue differentiation, the `L²` Fourier transform, Phragmén–Lindelöf,
-Banach–Alaoglu, Jensen's inequality, Fatou's lemma, Tonelli's theorem); Tau Ceti (maximal function,
-Nevanlinna representation, half-plane primitives,
-mean-value converse, F. and M. Riesz uniqueness, Cayley transform, the dual of `L¹` of a finite
-measure).
+Mathlib (harmonic functions, the disc Poisson kernel and Poisson formula, Lebesgue differentiation,
+the `L²` Fourier transform, Phragmén–Lindelöf, Banach–Alaoglu, Jensen's inequality, Fatou's lemma,
+Tonelli's theorem); Tau Ceti (the half-space Poisson kernel and Poisson integral, maximal function,
+Nevanlinna representation, half-plane primitives, mean-value converse, F. and M. Riesz uniqueness,
+Cayley transform, the dual of `L¹` of a finite measure).
 
 ## Layer 3: Dirac systems and their Hermite–Biehler functions
 
@@ -986,7 +1067,9 @@ Let `L = ∫₀ᵗ |q|`. Prove that for `z` in the closed upper half-plane `|a(t
 the `n`-th Dyson term of `a` or `b` is an integral over the simplex `s₁ < ⋯ < sₙ < t` of
 `q(sₙ) conj q(sₙ₋₁) ⋯` times `e^{2izσ}` with an alternating sum `σ ≥ 0`, so it is bounded by `Lⁿ/n!`;
 decay is the Riemann–Lebesgue lemma for the image of the simplex integrand under `σ`, uniform over the
-compact family `e^{−2σ Im z}` (taothiele2012 Lecture 1 Lemma 3 line 296 for the discrete analogue).
+compact family `e^{−2σ Im z}`. For the discrete analogue on `ℓ¹`, see taothiele2012 Lecture 1 §3: Lemma 5
+(line 430–433) gives the uniform convergence of truncations, and line 460–465 gives the bound
+`sup arccosh|a| ≤ Σ arccosh((1 − |F_n|²)^{−1/2})` on the circle.
 
 *Needs:* §1.3 (Dyson expansion), §4.1; Mathlib Riemann–Lebesgue lemma.
 
@@ -1416,7 +1499,11 @@ API:
 
 **Checks.**
 
-- `ν = σ`: `S = 0`; `ν = 2σ`: `S = log 2 = log ν(X)`; `ν` a point mass: `S = −∞`.
+- Let `σ = dθ/2π` be the Cayley image of `Π/π`: the `σ` of the transport bullet, a non-atomic probability
+  measure. Then `ν = σ` gives `S = 0`, and `ν = 2σ` gives `S = log 2 = log ν(X)`. For the point mass
+  `ν = δ₁`, the set `X ∖ {1}` has `ν`-measure `0` and `σ`-measure `1`. So `σ` is not absolutely continuous
+  with respect to `ν`, and `S = −∞`. Two equal point masses, by contrast, give `S(δ₁ | δ₁) = 0`, so this
+  case needs a non-atomic first argument.
 - Semicontinuity is not continuity: `νₙ = (1 + sin nθ) dθ/2π → σ` weakly while
   `S(σ | νₙ) = (1/2π)∫₀^{2π} log(1 + sin θ) dθ = −log 2 < 0 = S(σ | σ)`.
 - Free spectral measure `μ = dx`: `S(σ | ν) = (1/π)∫ log 1 dΠ = 0`.
@@ -1974,7 +2061,7 @@ Layer 3, Layer 4, Layer 5 (§5.2, §5.5, §5.6), Layer 6 (§6.5, §6.8), Layer 7
 - **romanov2014** — R. Romanov, *Canonical systems and de Branges spaces*, arXiv:1408.6022 v1 (§0, §1 Example
   1, §3 Proposition 4 and Theorem 5, §8 Theorems 15–16).
 - **taothiele2012** — T. Tao, C. Thiele, *Nonlinear Fourier analysis*, arXiv:1201.5129 v1 (Lecture 1 Lemma 3,
-  Lecture 2 Lemma 6), for the discrete SU(1,1) model.
+  Lecture 1 §3 Lemma 5, Lecture 2 Lemma 6), for the discrete SU(1,1) model.
 - **killipsimon2003** — R. Killip, B. Simon, *Sum rules for Jacobi matrices and their applications to
   spectral theory*, Ann. of Math. 158 (2003); arXiv:math-ph/0112008 v2 (§5, (5.9), Lemma 5.1, Theorem 5.2,
   Corollary 5.3).
