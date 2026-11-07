@@ -13,7 +13,7 @@ licence_class = "operator-local"
 status = "certified"
 local_name = "bordelles2002.pdf"
 resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/6064#issuecomment-6671942201"
-cited_for = ["0.1", "0.3", "5.3"]
+cited_for = ["0.3", "5.3"]
 
 [[source]]
 id = "bordelles2006"
@@ -252,7 +252,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-06"
 version_note = "arXiv, latest version"
-cited_for = ["0.6", "6.2", "6.3"]
+cited_for = ["0.6", "6.2", "6.3", "gap:burgess-moment-estimate"]
 
 [[source]]
 id = "kerrmcgowntrudgian2020"
@@ -270,7 +270,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-06"
 version_note = "arXiv v1"
-cited_for = ["0.6", "6.1", "6.5"]
+cited_for = ["0.6", "6.1", "6.5", "gap:polya-vinogradov-lapkova"]
 
 [[source]]
 id = "trevino2015"
@@ -288,7 +288,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-06"
 version_note = "arXiv v2"
-cited_for = ["Scope (the explicit Burgess inequalities, left to ExplicitCharacterSumsAndSieves Layer 4)"]
+cited_for = ["Scope (the explicit Burgess inequalities, left to ExplicitCharacterSumsAndSieves)", "References"]
 
 [[source]]
 id = "mcgown2012"
@@ -306,7 +306,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-06"
 version_note = "arXiv v1"
-cited_for = ["Scope (the explicit Burgess inequalities, left to ExplicitCharacterSumsAndSieves Layer 4)"]
+cited_for = ["Scope (the explicit Burgess inequalities, left to ExplicitCharacterSumsAndSieves)", "References"]
 
 [[source]]
 id = "louboutin2005"
@@ -353,7 +353,7 @@ url = "https://doi.org/10.1007/s11139-020-00333-3"
 licence_class = "none"
 status = "uncertified"
 version_note = "paywalled; cited by its locator without the text"
-cited_for = ["5.4 (consumed from ExplicitMultiplicativeFunctions T7.5)"]
+cited_for = ["5.4 (consumed from ExplicitMultiplicativeFunctions §7.5)"]
 
 [[source]]
 id = "kadiri2012"
@@ -425,7 +425,7 @@ sha256 = "d5f7c9a26a62940faba552f3cbea2a5f77c77d05d31eaf554e2689eed37484a7"
 licence_class = "publisher-open"
 status = "certified"
 accessed = "2026-11-06"
-cited_for = ["Scope (the explicit Burgess inequalities, left to ExplicitCharacterSumsAndSieves Layer 4)"]
+cited_for = ["Scope (the explicit Burgess inequalities, left to ExplicitCharacterSumsAndSieves)", "References"]
 
 [[source]]
 id = "sunley1973"
@@ -486,7 +486,7 @@ url = "https://doi.org/10.4064/aa100-3-4"
 licence_class = "none"
 status = "uncertified"
 version_note = "open at the IMPAN archive, which answered HTTP 502 to the service on every attempt; cited by its locator; the bounds are consumed from ExplicitZetaBounds target 14, which records the same work"
-cited_for = ["5.2 (consumed from ExplicitZetaBounds target 14)"]
+cited_for = ["5.2", "5.6", "gap:ramare-L1-bounds"]
 
 [[source]]
 id = "cohenoliveirasilvatrudgian2016"
@@ -554,7 +554,7 @@ sha256 = "8e37b06f82e09421bceb2502578c47b61469141f0287e6acedb70e01765ab556"
 licence_class = "operator-local"
 status = "certified"
 accessed = "2026-11-06"
-cited_for = ["gap:totient-quotient-bound"]
+cited_for = ["6.5 (consumed from ExplicitMultiplicativeFunctions §9.4)", "References"]
 
 [[source]]
 id = "schoenfeld-1976"
@@ -571,7 +571,7 @@ sha256 = "8c3cac1ee52eb05af05ec410adc587a18505a46aacdde41ae097038b0e7c3897"
 licence_class = "operator-local"
 status = "certified"
 accessed = "2026-11-06"
-cited_for = ["gap:explicit-mertens-second", "gap:schoenfeld-psi-rh"]
+cited_for = ["gap:explicit-mertens-second", "gap:schoenfeld-psi-rh (Theorem 10, used in 3.6 and 7.2)"]
 
 [[source]]
 id = "washington1997"
@@ -599,7 +599,7 @@ locator = "Chapter XIII"
 licence_class = "none"
 status = "uncertified"
 version_note = "textbook, not openly available; cited by its locator for the class-number formula and the Hecke integral representation, as louboutin2003 line 138 cites it"
-cited_for = ["0.4", "References"]
+cited_for = ["References (the class-number formula)"]
 
 [[source]]
 id = "ramare2025"
@@ -644,7 +644,7 @@ url = "https://arxiv.org/abs/2506.17416v5"
 licence_class = "open-repository"
 status = "uncertified"
 version_note = "arXiv v5, accepted version"
-cited_for = ["3.6", "gap:schoenfeld-psi-rh", "gap:rh-mertens-product"]
+cited_for = ["3.6", "gap:rh-mertens-product"]
 
 [[source]]
 id = "palojarvisimonic2026"
@@ -672,7 +672,7 @@ locator = "Corollary 1.3"
 licence_class = "none"
 status = "uncertified"
 version_note = "cited through its quotation as gglm2026 Lemma 2.2"
-cited_for = ["gap:rh-mertens-product"]
+cited_for = ["3.6", "gap:rh-mertens-product"]
 
 [[source]]
 id = "lamzourilisoundararajan2015"
@@ -783,7 +783,7 @@ locator = "Theorem 1.1"
 url = "https://arxiv.org/abs/2602.03626v2"
 licence_class = "open-repository"
 status = "uncertified"
-cited_for = ["4.9"]
+cited_for = ["0.5", "4.9 (through ExplicitPrimeCounting §1.7)"]
 
 [[source]]
 id = "openai2026siegel"
@@ -850,7 +850,7 @@ locator = "Theorem 1.1"
 url = "https://arxiv.org/abs/1902.08640"
 licence_class = "open-repository"
 status = "uncertified"
-cited_for = ["4.10", "4.11", "7.4"]
+cited_for = ["4.10", "7.4", "Scope (its Theorem 2.3, quoting odlyzko1976)"]
 
 [[source]]
 id = "odlyzko1976"
@@ -863,7 +863,7 @@ locator = "Theorem 1"
 licence_class = "none"
 status = "uncertified"
 version_note = "cited through its weak form quoted as kadiringwong2019 Theorem 2.3"
-cited_for = ["4.11"]
+cited_for = ["Scope (discriminant bounds, the input of AnalyticNumberTheoryPartI §2.9a)"]
 
 [[source]]
 id = "cholemkeoliverzaman2025"
@@ -907,7 +907,7 @@ url = "https://arxiv.org/abs/2506.21823v2"
 licence_class = "open-repository"
 status = "uncertified"
 version_note = "arXiv v2, preprint"
-cited_for = ["5.4", "gap:tudzi-tau3-remainder"]
+cited_for = ["5.4 (consumed from ExplicitMultiplicativeFunctions §7.9)"]
 
 [[source]]
 id = "greniemolteni2019"
@@ -921,7 +921,7 @@ locator = "Theorem 1.1"
 url = "https://arxiv.org/abs/1709.07609"
 licence_class = "open-repository"
 status = "uncertified"
-cited_for = ["7.2", "gap:schoenfeld-psi-rh"]
+cited_for = ["7.2"]
 
 [[source]]
 id = "greniemolteni2016"
