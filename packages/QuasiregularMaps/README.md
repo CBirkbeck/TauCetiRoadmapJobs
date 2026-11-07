@@ -1537,9 +1537,14 @@ non-constant because `R` is a bijection, so it is a witness in the sense of the 
 ### 7.3 Independence of the metric
 
 Prove that if `α|w| ≤ |w|' ≤ β|w|` on `TN` and `N` is `K`-quasiregularly elliptic for `g_N`,
-then it is `(β/α)ⁿ K`-quasiregularly elliptic for `g'_N`. Hence for closed `N`, quasiregular
-ellipticity does not depend on the metric. With §7.2 it is a property of the closed connected
-orientable smooth manifold. Route: §4.1 with `a = b = 1` on `ℝⁿ`.
+then it is `(β/α)ⁿ K`-quasiregularly elliptic for `g'_N` (the definition on a Riemannian
+manifold is HeikkilaPankka2025 lines 20–21; the comparison is §4.1). Hence for closed `N`,
+quasiregular ellipticity does not depend on the metric. This is the reading HeikkilaPankka2025
+takes for granted: its Theorem 1.1 (line 18) speaks of a closed quasiregularly elliptic manifold
+without fixing a metric, and lines 32–34 measure quasiregularity of a branched covering of a
+closed `N` by a torus against the two smooth structures only. With §7.2, quasiregular
+ellipticity of a closed `N` is a property of the closed connected orientable smooth manifold.
+Route: §4.1 with `a = b = 1` on `ℝⁿ`.
 
 **Checks.**
 
