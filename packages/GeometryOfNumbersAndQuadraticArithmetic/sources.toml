@@ -1,0 +1,124 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "GeometryOfNumbersAndQuadraticArithmetic"
+
+[[source]]
+id = "DutourSikiricSchurmannVallentin2009"
+authors = "Mathieu Dutour Sikiric, Achill Schuermann, Frank Vallentin"
+title = "Classification of eight dimensional perfect forms"
+year = 2006
+venue = "Electron. Res. Announc. Amer. Math. Soc. 13 (2007), 21-32"
+doi = "10.1090/S1079-6762-07-00171-0"
+arxiv = "math/0609388v3"
+locator_scheme = "section"
+locator = "§1, p.1"
+url = "https://arxiv.org/abs/math/0609388v3"
+fetched_from = "https://arxiv.org/pdf/math/0609388v3"
+fetched_at = "2026-11-07T13:20:34Z"
+sha256 = "6de1c88daf85385300f6b41359ee31f6d22fcd777a7c6760d688457107da86b4"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-07"
+version_note = "arXiv v3"
+cited_for = ["4.4.1"]
+
+[[source]]
+id = "Evertse2023"
+authors = "Jan-Hendrik Evertse"
+title = "Diophantine approximation, Chapter 2: Geometry of numbers"
+year = 2023
+locator_scheme = "theorem"
+locator = "Theorem 2.20"
+url = "https://pub.math.leidenuniv.nl/~evertsejh/dio19-2.pdf"
+fetched_from = "https://pub.math.leidenuniv.nl/~evertsejh/dio19-2.pdf"
+fetched_at = "2026-11-07T13:20:42Z"
+sha256 = "99194d1c4a670d42219e277d5b9945d5e80ef159c3969ac1e0e467c304586063"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-07"
+cited_for = ["4.4.3"]
+
+[[source]]
+id = "Regev2004"
+authors = "Oded Regev (lecturer), Elad Verbin (scribe)"
+title = "Transference Theorems, Lattices in Computer Science, Lecture 11"
+year = 2004
+locator_scheme = "page"
+locator = "p.2, Definition 2 and equations (1)-(2)"
+url = "https://cims.nyu.edu/~regev/teaching/lattices_fall_2004/ln/transference.pdf"
+fetched_from = "https://cims.nyu.edu/~regev/teaching/lattices_fall_2004/ln/transference.pdf"
+fetched_at = "2026-11-07T13:20:43Z"
+sha256 = "11986af4502c60d4d53ad4db111d51b039845943af013fc54d2154e8396b0cf2"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-07"
+cited_for = ["4.4.2-4.4.14"]
+
+[[source]]
+id = "Schlichting2010"
+authors = "Marco Schlichting"
+title = "Hermitian K-theory of exact categories"
+year = 2010
+venue = "J. K-Theory 5 (2010), 105-165"
+doi = "10.1017/is009010017jkt075"
+locator_scheme = "page"
+locator = "pp.109-110, 113, 123-124"
+url = "https://webhomes.maths.ed.ac.uk/~v1ranick/papers/schlicht.pdf"
+fetched_from = "https://webhomes.maths.ed.ac.uk/~v1ranick/papers/schlicht.pdf"
+fetched_at = "2026-11-07T13:20:46Z"
+sha256 = "fdcf61c0e9e41550b7aaf8d34f2e9deb3276b0a6f8e59f9fb3262018b7052f0e"
+licence_class = "institutional"
+status = "certified"
+accessed = "2026-11-07"
+cited_for = ["6.2-6.7"]
+
+[[source]]
+id = "KurinczukSkodlerackStevens2020"
+authors = "Robert Kurinczuk, Daniel Skodlerack, Shaun Stevens"
+title = "Endo-parameters for p-adic classical groups"
+year = 2016
+arxiv = "1611.02667v3"
+locator_scheme = "theorem"
+locator = "Lemma 3.1"
+url = "https://arxiv.org/abs/1611.02667v3"
+fetched_from = "https://arxiv.org/pdf/1611.02667v3"
+fetched_at = "2026-11-07T13:26:45Z"
+sha256 = "1cbcbb779d8d4ba8f3339d749b3dd7bc3d2555e6792491338a861d45009d9092"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-07"
+version_note = "arXiv v3"
+cited_for = ["2.9"]
+
+[[source]]
+id = "Henk2002"
+authors = "Martin Henk"
+title = "Successive Minima and Lattice Points"
+year = 2002
+arxiv = "math/0204158v1"
+locator_scheme = "theorem"
+locator = "Theorem 1.5"
+url = "https://arxiv.org/abs/math/0204158v1"
+fetched_from = "https://arxiv.org/pdf/math/0204158v1"
+fetched_at = "2026-11-07T13:26:54Z"
+sha256 = "403d8f400cfd8a823260466713ef90bc7425c5be0677b986388b43da78608b60"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-07"
+version_note = "arXiv v1"
+cited_for = ["4.1.12"]
+
+[[source]]
+id = "Benoist2019"
+authors = "Yves Benoist"
+title = "Arithmeticity of discrete subgroups"
+year = 2019
+locator_scheme = "page"
+locator = "pp.5-7, 20"
+url = "https://www.imo.universite-paris-saclay.fr/~yves.benoist/prepubli/19ArithmeticityLectures.pdf"
+fetched_from = "https://www.imo.universite-paris-saclay.fr/~yves.benoist/prepubli/19ArithmeticityLectures.pdf"
+fetched_at = "2026-11-07T13:28:46Z"
+sha256 = "d5e8b727b09c39ca74be90009e1e0e15430ed6611799d696a812acaf4ef68d6b"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-07"
+cited_for = ["3.3, 4.2, 4.5"]
