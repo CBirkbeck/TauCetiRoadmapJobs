@@ -883,9 +883,13 @@
       "where": "Chapter I.3, Proposition 1.4.4, p. 149; SAG Proposition 6.2.3.4(3), p. 493"
      },
      "prerequisites": [
+      "target:2.3",
       "target:2.5",
+      "target:3.1",
       "target:3.3",
-      "roadmap:EnhancedDerivedSheaves E5:presentability.2"
+      "roadmap:EnhancedDerivedSheaves E5:presentability.2",
+      "roadmap:EnhancedDerivedSheaves E2.7",
+      "roadmap:HigherToposTheory L11.3"
      ],
      "api": [
       {
@@ -913,7 +917,12 @@
       {
        "name": "empty_scheme",
        "kind": "degenerate",
-       "statement": "For the empty scheme QCoh = 0."
+       "statement": "For the empty scheme the only affine open is the empty one, Spec 0, so the limit is Mod_0 = 0; h_empty is the prestack Spec 0, not the empty prestack."
+      },
+      {
+       "name": "doubled_plane",
+       "kind": "non-example",
+       "statement": "For the plane with doubled origin and f : Spec k[x,y,a,b]/(ax+by-1) -> A^2 minus 0, the fibre of colim_U h_U -> h_X over f is two points (charts U, U'); on D(x), D(y) the images {x != 0}, {y != 0} are least affine opens, so the fibre is contractible after Zariski sheafification."
       }
      ]
     }
@@ -2098,7 +2107,7 @@
     "L10.3",
     "L11.3"
    ],
-   "what": "HTT and HA Chapter 1 statements used in proof routes: fibred groupoids and Kan complexes, Cartesian edges and exponentials, free cocompletion, groupoid objects, localizations, derived infinity-categories, t-structures, infinity-topoi and the statement of Giraud's theorem, descent and effective groupoid objects in infinity-topoi, hypercompleteness of truncated objects."
+   "what": "HTT and HA Chapter 1 statements used in proof routes: fibred groupoids and Kan complexes, Cartesian edges and exponentials, free cocompletion, groupoid objects, localizations, derived infinity-categories, t-structures, infinity-topoi and the statement of Giraud's theorem, descent and effective groupoid objects in infinity-topoi, hypercompleteness of truncated objects and the realizations of hypercoverings."
   }
  ],
  "consumers": [
