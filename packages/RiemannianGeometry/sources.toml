@@ -132,3 +132,20 @@ licence_class = "none"
 status = "uncertified"
 version_note = "paywalled; cited by its locator without the text"
 cited_for = ["R4.6 cut locus"]
+
+[[source]]
+id = "zhu-ricci-comparison"
+authors = "Shunhui Zhu"
+title = "The Comparison Geometry of Ricci Curvature"
+year = 1997
+venue = "Comparison Geometry, MSRI Publications 30, Cambridge University Press (1997), 221–262; institute's open library copy"
+locator_scheme = "theorem"
+locator = "Theorem 3.1, p. 226; Corollary 3.3(1), p. 228"
+url = "https://library.slmath.org/books/Book30/files/zhu.pdf"
+fetched_from = "https://library.slmath.org/books/Book30/files/zhu.pdf"
+fetched_at = "2026-11-08T22:57:56Z"
+sha256 = "73fed71fc4443c13e7d895367bdb95fb62c3f5c7ecc7166ecb5c2a9d0e1ba46b"
+licence_class = "institutional"
+status = "certified"
+accessed = "2026-11-08"
+cited_for = ["R4.1"]
