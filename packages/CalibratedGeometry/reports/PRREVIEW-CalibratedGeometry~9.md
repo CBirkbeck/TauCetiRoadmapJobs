@@ -1,0 +1,115 @@
+# Review of CalibratedGeometry (pull request #946 at d70bed5)
+**Verdict:** accepted
+
+:robot: Independent AI review. This is a full review of the repaired head (319 changed lines since `3f5512f`, the head the previous review read). All five findings of the previous review are repaired (details below). The gate passes, the dependency check is clean, `Suggested.lean` elaborates with only its eleven `sorry` warnings, and the one-tactic probe closes none of the eleven theorems. No finding remains. Nothing in the worktree was changed; every probe ran on scratch copies.
+
+## Previous findings
+
+- **R01 (3.2 and 6.5 re-planned RiemannianGeometry R5b): repaired.**
+  - The Scope bullet (`README.md:101–108`) now reads "The polarized normal second variation Q of a minimal immersion with its acceleration independence, stability (`Q(V,V) ≥ 0` …), and the normal Jacobi operator with its ellipticity and formal self-adjointness: RiemannianGeometry R5b", and the Owned-here bullet (`:69–73`) keeps only "the special Lagrangian second-variation identity for immersions, and the identification of RiemannianGeometry R5b's normal Jacobi operator … with the Hodge Laplacian".
+  - The R5b contract (`:357–358`) lists the normal variation, acceleration independence, Q, L with `Q(V,W) = ∫⟨LV, W⟩`, ellipticity, self-adjointness and stability, which is what R5b on main states (`RiemannianGeometry/README.md:1145–1168`).
+  - 3.2 (`:852–856`): "Stability of a minimal immersion is RiemannianGeometry R5b's … Prove that a minimal immersion whose volume is least at `t = 0` along each such normal variation is stable, by elementary calculus", with R5b on the *Needs:* line (`:865`).
+  - 6.5 (`:1460–1472`): L is R5b's; the route is self-adjointness (R5b, K5a), the same quadratic form through `secondVariation_volume_eq_hodgeEnergy`, and polarization; "Ellipticity and formal self-adjointness are R5b's for L and K5a's for the Hodge Laplacian". The acceleration-independence sentence (`:1442–1445`) is now a corollary of the identity, not a target.
+- **R02 (Stiefel manifold pinned): repaired.** 1.4 (`:537–540`) takes the frame space to be `TauCeti.stiefel E k` with `TauCeti.gramSym2Deriv_surjective`; the Stiefel-dimension API bullet is gone, replaced by the quotient dimension `k(dim E − k)` (`:565–567`); the Owned-elsewhere bullet (`:127–138`) and the Tau Ceti contract (`:257–275`) name `TauCeti.stiefel`, `TauCeti.finiteGrassmannian`, `TauCeti.finiteOrthonormalFrame` and `TauCeti.finiteOrientedGrassmannian` with their files. All fifteen names resolve at the pin (below).
+- **R03 (`kahlerPowerForm` through the pinned Riesz map): repaired.** `Suggested.lean:184–187` is the tested body `(r!)⁻¹ • alternatingFormEquiv … ⟨ω̂ʳ, …⟩`; 4.2 (`:928–931`, `:948–949`) says so and adds `TauCeti.alternatingFormEquiv`, `TauCeti.norm_alternatingFormEquiv_le` to its *Needs:* line.
+- **R04 (locators for 1.4, 3.2, 3.3): repaired.** 1.4 cites Hatcher2017VBKT, Section 1.2, p. 31, lines 1219–1221 and 1228–1231 (`:537`, `:549–550`), recorded in the manifest and in the References (`:1565–1567`); 3.2 cites McLean1998 lines 32–33, Joyce2001SLLectures line 64 and Harvey–Lawson Theorem II.4.2 (`:861–862`); 3.3 cites Harvey–Lawson Proposition II.7.10 (`:883–884`).
+- **R05 (6.5 for immersions): repaired.** The Layer 6 standing sentence (`:1216–1218`) and 6.5's first sentence (`:1428–1430`) state the identity for a phase-θ special Lagrangian immersion of a closed oriented N; the Lean docstring (`:373`) says "The immersion need not be an embedding"; the double-cover Check (`:1504–1509`) computes both sides.
+
+## Verified sound
+
+**Gate, build, order.**
+- The gate was re-run on this head: `OK`, every scanner at 0 (`set_option=0 … depcheck=0 … stray-files=0 dirty=0 outside-folder=0 source-material=0`). The worktree is clean, and `git diff --stat origin/main...HEAD` outside the folder is empty.
+- `lake env lean …/Suggested.lean`: exit 0 in 20 s; exactly eleven warnings, all `sorry`, at lines 71, 128, 162, 168, 198, 206, 239, 280, 289, 326 and 374.
+- Dependency check: `depcheck: 238 roadmaps, 2349 edges, 0 problem(s)`; no UPWARD, CYCLE or `moved:` line.
+- `ORDER.txt`: SmoothBundlesConnections 12, PseudodifferentialOperators 13, TangentialBordism 14, CalibratedGeometry 222, FukayaTheory (a consumer) 223, DeRhamCohomologyAndDuality 393 (not cited). The other suppliers are on main.
+
+**Signatures and padding.**
+- `signatures.md` lists 26 declarations; the five "dropped binder" leads are the definitions `IsCalibration`, `IsKahlerMetric`, `IsNormalizedHolomorphicVolumeForm`, `specialLagrangianForm` and `contractionPullback`, whose types mention neither `FiniteDimensional` nor `IsManifold`; every theorem about them carries the hypotheses (`[FiniteDimensional ℝ E]` through the section variables, `[CompactSpace] [T2Space] [Boundaryless]` explicitly). `hodgeEnergyDensity` keeps `IsManifold I' ∞ N` and the `RiemannianBundle` instance, which the rough Hodge star needs. Each elaborated type was compared with its README statement: 3.1's "any ambient M, compact Hausdorff sources without boundary", 4.3's "compact complex N, compact real 2r-manifold without boundary", 6.5's "closed oriented N, a family of immersions for every t, velocity normal at 0" all match the binders.
+- One-tactic probe on a scratch copy, each of `rfl`, `simp`, `infer_instance`, `norm_num`, `exact le_rfl`, `aesop` wrapped with `done`: all eleven theorems fall through to `sorry` (the linter reports every alternative "never executed" or "does not change the goal"). No declaration restates a definition, mirrors a Check or treats a boundary case.
+- `ContinuousAlternatingMap.curryLeft` at the pin: `curryLeft f x v = f (Matrix.vecCons x v)` (`Alternating/Curry.lean:57`), so `contractionPullback` contracts in the first slot, as 6.5 says.
+
+**Seeded sample (15 targets).** Every locator was read in the text; each cited statement supports the README's claim with the same hypotheses.
+- 1.1: HL II.(3.1), cache line 370, p. 56 (comass as a supremum over unit simple p-vectors); McLean1998 line 27.
+- 1.2: HL Lemma II.3.5, line 393, p. 57 (`T(φ) ≤ M(T)` for comass one, equality for positive φ-currents).
+- 1.3: HL II.(3.1) again, with `TauCeti.norm_alternatingFormEquiv_le` (`AlternatingForm.lean`) for the lower bound.
+- 1.6: HL Proposition II.7.10, line 1004, p. 76 (φ of comass one, ψ a unit decomposable q-form on the orthogonal summand W); Zust2025Products Theorem 1.2 line 59, Corollary 1.4 line 74, `294/256 > 1` line 76.
+- 2.1: Joyce lines 58–60 (one-sided bound on oriented planes); HL Definition II.4.1, line 444, p. 59 (comass one and closed).
+- 2.2: HL Lemma II.3.5; Joyce line 62 (calibrated submanifold).
+- 3.2: McLean1998 lines 32–33 ("least volume in its homology class … stable minimal"); Joyce line 64 citing HL Theorem II.4.2; HL Theorem II.4.2, line 450, p. 59.
+- 3.3: HL Proposition II.7.10 as above.
+- 4.1: HL Theorem II.6.11, line 807, p. 70; McLean1998 line 43.
+- 4.2: HL Theorem II.6.11 and Lemma II.6.13 (normal form, line 814); McLean1998 lines 37–48.
+- 5.1: Joyce Propositions 2.3 and 2.4, lines 96 and 107; HL Theorem III.1.10 and Corollary III.1.11, lines 1412 and 1417, p. 89; McLean1998 Proposition 3.2, line 483.
+- 5.4: HL Theorem III.2.3, line 1493, p. 91 (`Im det(I + i Hess F) = 0`); Theorem III.2.13, line 1599, p. 95 (ellipticity of the linearization).
+- 6.1: McLean1998 Corollary 3.3 and Remark 3.4, lines 486 and 493; the map (3.3) at lines 539–550; `F′(0)` at line 572; Lemma 3.12 at line 580.
+- 6.2: McLean1998 lines 589–595.
+- 6.3: Campanato1963 Teorema I.2, printed p. 183, line 224.
+- Also read: McLean1998 Theorem 3.13, line 598, p. 723 (stated for a normal family; the README's generalisation to an arbitrary family with normal velocity is justified by the second-jet argument and by `H = 0` on a closed source, see the table); Corollary 3.14, line 603; Theorem 3.6, line 510; Corollaries 3.7–3.10, lines 519–532; Lemma 3.1, line 448; the SU(n) structure, lines 450–462; Joyce Theorem 5.1, line 678; Joyce line 76 (phase convention) and line 90 (the real plane is calibrated by `Re Ω`); HL Proposition III.2.17 and (2.19), lines 1647 and 1655, p. 96.
+- 1.4: Hatcher2017VBKT line 1102–1103 (`V_n(ℝ^k)` is the space of orthonormal n-frames), lines 1219–1221, p. 31 (the oriented Grassmannian is the quotient of `V_n(ℝ^k)` identifying frames with the same oriented subspace, which is the SO(n) quotient), lines 1228–1231 (the orientation-forgetting map is a two-to-one covering, by the local trivialisations of Lemma 1.15; Hatcher states it for `ℝ^∞`, the finite case uses the same trivialisations).
+
+**Library declarations opened at the pins.**
+- Tau Ceti `2fd255d9`, Stiefel and Grassmannians (R02): `Instances/Stiefel.lean:129` (`gramSym2Deriv_surjective`), `:144` (`index_gramSym2Deriv [FiniteDimensional ℝ E]`), `:162` (`stiefel`), `:169` (`mem_stiefel_iff`), `:187` (`nonempty_stiefel`), `:200` (`isCompact_stiefel`), `:223` (`instIsManifold`); `Topology/Grassmannian/Basic.lean:52` (`finiteGrassmannian`), `Orthonormal.lean:54` (`finiteOrthonormalFrame`), `:254` (`unitaryOrbitHomeomorph`); `Oriented.lean:44` (`finiteOrientedGrassmannian (r : ℕ+)`, positive rank only, as the README says), `:53` (`forget`), `:61` (`CompactSpace` instance); `VectorBundle/Orientation/Cover.lean:164` (`deck`), `:298` (`isCoveringMap_proj`); `Proper.lean:55` (`isProperMap_proj`). `Geometry/Manifold/Instances/` has no Grassmannian module and `Topology/Grassmannian/` has no `IsManifold`, so "no smooth structure on the finite Grassmannians is pinned" is right.
+- A scratch `#check` file of 77 library names from the README: 72 elaborate; the other five live in modules the probe did not import and were resolved in the source: `leviCivitaConnection` (Mathlib `CovariantDerivative/LeviCivita.lean:360`), `AlmostComplexStructure.complexModule` (`Symplectic/Complex/Module/Basic.lean:63`), `SmoothSimplex.integral` (`SmoothSingular/Integral.lean:86`), `SmoothAlmostComplexStructure.ofComplexManifold` (`Complex/AlmostComplexStructure.lean:76`), `TauCeti.ContinuousAlternatingMap.alternatizeBilinCLM` (`Alternating/Bilinear.lean:43`, value `B(v₀,v₁) − B(v₁,v₀)`, so "sends an alternating B to 2B" is right).
+- Also resolved in the source: `SmoothEmbedding.normalExp` (`TubularNeighborhood/Riemannian/Basic.lean:113`), `exists_partialDiffeomorph_normalExp_subset` (`Coordinates.lean:89`, `[SecondCountableTopology N] [Nonempty M]`), `exists_diffeomorph_normalBundle_riemannian_subset` (`:146`); `deRhamCohomology` (`DeRham/Basic.lean:127`), `period_injective [PreconnectedSpace M]` (`DeRham/Period.lean:468`); `TotallyRealLoop.maslovIndex` (`Maslov/Index.lean:99`); `complexAssociatedForm` and `hermitianCore` (`Symplectic/Hermitian.lean:78, :260`); `homotopyOperator` (`DifferentialForm/HomotopyOperator.lean:100`); `mpullback_mextDeriv (hf : ContMDiff I I' 2 f)` (`Naturality.lean:249`); `integralTopForm_mextDeriv` (`Integration/Stokes.lean:37`); `ComplexManifold.isManifold_real` (`Complex/Orientation.lean:195`); `IsSmoothTriangulation` (`SmoothTriangulation/Basic.lean:191`); `W1p0` (`Sobolev/W1p/Zero.lean:158`), `W1p.norm_value_le_mul_norm_gradient_of_subset_slab` (`Poincare/W1p0.lean:102`), `dist_preciseRepresentative_le_of_setAverage_norm_sub_le` (`Function/Campanato.lean:257`), `W1p.holderOnWith_preciseRepresentative_of_setIntegral_norm_gradient_le` (`DirichletGrowth.lean:167`), `exists_le_mul_div_rpow_mul_add_mul_rpow_of_le_mul_add` (`DecayIteration.lean:109`), `PDE.energyFormH1` (`EnergyForm/Sobolev.lean:411`), `PDE.existsUnique_isWeakSolutionDirichlet` (`DirichletProblem.lean:334`); `Analysis/PDE/Regularity/ConstantCoefficientDecay.lean` exists.
+- Mathlib `1b1ccf4b`: `Analysis/InnerProductSpace/NormDet.lean`, `Analysis/InnerProductSpace/ExteriorPower.lean`, `AlgebraicTopology/SimplicialSet/Homology/Basic.lean` exist as cited; `Orientation R M ι` is `Module.Ray R (M [⋀^ι]→ₗ[R] R)` (`LinearAlgebra/Orientation.lean:51`), so the `Fin 0` orientation of the zero space has two rays, as 1.4's k = 0 clause says.
+
+**Cross-roadmap citations resolved.**
+- On main `fb998610`: RiemannianGeometry R5a (`:1044`), R5a.1 (`:1067`), R5a.2 (`:1103`), R5b (`:1145`; "R5b has no CalibratedGeometry input", "CalibratedGeometry C3 also consumes R5a.1", matching the Downstream-consumers paragraph); DifferentialGeometry 1.4, 5.4, 12.5 (`:325, :524, :930`; 5.4 is proved without Stokes so M may have boundary, as the contract says); GeometricTopology Layer 1 collars (`:205`) and smoothing item 1 (`:938`); AlgebraicTopology Stage 2 (`:326`), Stage 3 item 1 subdivision and prism (`:481`), Stage 6 item 3 orientation local systems (`:1180`); SmoothBundlesConnections B1.4 (`:421`), B2.1–B2.5 (`:559–802`), B5 (`:1072`); LieGroups Layer 2 (`RepresentationTheory/LieGroups/README.md:356`, the closed-subgroup theorem); CharacteristicClasses C1.1a (`:246`: the finite oriented Grassmannian for n ≥ 1, its comparison with the right-SO(n) quotient of the orthonormal-frame Stiefel carrier, rank 0 as a canonical point with separate sign datum); TopologicalKTheory T1.5 (item 5 at `:260`, `finiteGrassmannian 𝕜 r N`) and T1.6a (`:394`); GeneralizedCohomology G4.0b (`:939`); PDE 1.4 (A4) (`:803`) and 5.6 (E25) (`:2097`); ComplexKahlerGeometry K1 (`:96`), K2 (`:193`), K4 (`:444`), K5a (`:570`), K5b.0 (`:1169`), K6.0 (`:1245`, "a Hermitian metric on a complex manifold with closed fundamental form"), K6.1 (`:1274`); PseudodifferentialOperators P1.0 (`:164`), P5 (`:927`), P6 (`:1484`); HeegaardFloer F1.4 (`:2195`) and F2.6c (`:2915`, the degree-two Wirtinger inequality `ω(v,w) ≤ |v∧w|_g` with `ω(v,w) = g(Jv,w)`, the same convention as here); GeometricCurrents consumer lines `:65, :81, :88`.
+- TangentialBordism B1.5 at #942's head `ef08ea4c` (`README.md:697–726`): the relative refinement with `∂N` a subcomplex, each closed simplex smoothly embedded, naming CalibratedGeometry 2.4 as its consumer.
+- Open revisions: ComplexKahlerGeometry #1398 keeps K1, K2, K4, K5a, K5b.0, K6.0, K6.1 in its headings (`:267, :406, :849, :996, :1806, :1949, :2070`) and #1234 keeps them (`:103, :210, :557, :800, :1426, :1506`); DifferentialGeometry #886 keeps 1.4, 5.4, 12.5 (`:678, :1110, :2098`); RiemannianGeometry #1683 (`:1734–2051`) and #1327 (`:1649–1784`) keep R5a–R5b; AlgebraicTopology #1663 keeps Stages 2, 3, 6 (`:556, :646, :1255`). `overlaps.md`: no other pull request changes this folder, no cited id is dropped, no id is defined only by an open revision.
+- GeometricCurrents' anchor `#c2-calibrated-immersions-and-integration` (`GeometricCurrents/README.md:92`) does not match this README's Layer 2 heading. The folder is new on main, so no id is dropped here; the stale anchor is GeometricCurrents'.
+
+**Ownership.** `roadmaps grep` over the open heads and main: "special Lagrangian" and "McLean" occur only in this roadmap; "oriented Grassmannian" elsewhere only as citations of TopologicalKTheory T1.5–T1.6 (HomotopySpheres #1287 `:230, :1454`, TangentialBordism #942) and in main; "comass" elsewhere only as a consumed bound (GromovWittenTheory #990 `:188–197`, RiemannianGeometry #1683 `:1674`, ComplexComparisonPartII #848); "Wirtinger" elsewhere is the degree-two inequality of HeegaardFloer F2.6c, cited here, and unrelated uses (GlobalHolomorphicFunctions). No open roadmap builds calibrations, the Kähler or special Lagrangian calibration, the Stiefel quotient of a general E, or the special Lagrangian second variation. The smooth Stiefel manifold and the finite oriented Grassmannian are consumed from Tau Ceti, and the Jacobi operator from RiemannianGeometry R5b.
+
+**Adversarial table.** Values were computed for the headlines, the sampled targets and every target the previous findings touched; rows marked "carried" were recomputed for this head where the statement changed and otherwise stand from the previous review.
+
+| Statement | Instances | Values computed (each side) | Result |
+|---|---|---|---|
+| `norm_eq_sSup_abs_orthonormal` | `dx₁∧dx₂+dx₃∧dx₄` on ℝ⁴; k = 0, φ = −3; k = 3 on ℝ² | sup 1 at `(e₁,e₂)`, norm 1; `{3}`, `‖const‖ = 3`; `sSup ∅ = 0 = ‖0‖` | holds |
+| 1.2 comass form, `normDet` identity | `((1,0),(1,1))`; `(v,v)`; empty frame | Gram `[[1,1],[1,2]]`, volume 1 vs `Π‖vᵢ‖ = √2`; 0; 1 = `normDet` on the zero space | holds (carried) |
+| 1.3 upper bound | `dx₁∧dx₂+dx₃∧dx₄` | `1 ≤ √2 ≤ √6`; `‖φ̂‖² = 2 ≤ √6·√2·1` | holds (carried) |
+| 1.4 quotient dimension (new bullet) | k = 2, ℝ³; k = 1, ℝⁿ; k = n | `6 − 3 − 1 = 2 = 2(3−2)`; `(n−1) − 0 = n − 1`; `n² − n(n+1)/2 − n(n−1)/2 = 0`, two points | holds |
+| 1.4 pinned index | k = 2, ℝ³; k = 1 | `index_gramSym2Deriv = 2·3 − 3 = 3`; `n − 1` | pinned |
+| 1.5 `IsCalibratedFrame` | `dx₁∧dx₂` on `(e₁,e₂)`, `(e₂,e₁)`, `(e₁,e₃)`; `((2,0,0),(0,1/2,0))`; k = 0, φ = ±1 | 1, −1, 0; value 1 but not orthonormal; T / F | holds (carried) |
+| 1.6 products | `dx∧dx`; `ω₁∧ω₂`; Züst | 1 vs bound 2; 1 vs bound 6; `294/256 > 1` | holds (carried) |
+| `IsCalibration` (2.1) | `dx₁∧dx₂`; `2dx₁∧dx₂`; `x₃dx₁∧dx₂`; k = 0, −2 | comass 1, closed; comass 2; `d = dx₁∧dx₂∧dx₃`; one-sided bound accepts −2, absolute bound rejects | holds (carried) |
+| `immersionVolume`, `IsCalibratedImmersion` (2.2) | circle radius 2, both orientations; plane `x₃ = x₁` | 4π both; `f*φ = dvol/√2` | holds (carried) |
+| `immersionVolume_le_of_isCalibratedImmersion` | flat torus `(t,0)` vs `(t, sin2πt/4)`; reversed circle; k = 0 | periods `(1,0)` both, `1 < ∫sqrt(1+(π/2)²cos²)`; period −1, hypothesis fails; signed counts | holds (carried) |
+| 3.2 stability chain (new) | flat disk, `V = u e₃`; equator `Sᵐ ⊂ S^(m+1)`, `V = ν` | R5b's `Q = ∫|∇u|² − 0 − 0 ≥ 0`; `Q(ν,ν) = −(|A|² + Ric(ν,ν))Vol = −m·Vol`, equal to `(cosᵐt)″(0)·Vol = −m·Vol` | holds; equator unstable, not calibrated |
+| 3.2 calibrated ⇒ stable (new) | compactly supported normal variation of a calibrated f | `Vol(f_t) ≥ ∫f_t*φ = ∫f*φ = Vol(f)`, so `t = 0` is a minimum and `Q(V,V) ≥ 0` | holds |
+| 3.3 product calibration (new) | `dθ₁` on `S¹×S¹`; `φ₁` of comass `c ∈ (0,1]`, `ψ` unit decomposable; `φ₁ = 0` | `π₁*dθ₁ ∧ 1`, comass 1, calibrates `S¹×{pt}`; `comass((φ₁/c)∧ψ) = 1` so `comass(φ₁∧ψ) = c ≤ 1`; product 0 | holds; closedness by the Leibniz rule |
+| `standardKahlerForm`, `norm_standardKahlerForm` | n = 1, `(1,i)`, `(i,1)`, `(1,1)`; n = 0 | 1, −1, 0; zero form, comass 0, so `hn` is needed | holds (carried) |
+| `isCalibratedFrame_standardKahlerForm_iff` | `(1,i)`, `(i,1)`, `(1,−i)`, n = 2 `(e₁,e₂)`, n = 0 | T/T, F/F, F/F, F/F, F/F | both directions (carried) |
+| `kahlerPowerForm` as `(r!)⁻¹·alternatingFormEquiv ω̂ʳ` | r = 0; n = r = 2; r = 3 > n = 2 | `⟪1, ιMulti ![]⟫ = 1`; `2/2! = 1` on `(e₁,ie₁,e₂,ie₂)`; `ω̂³ = 0` | holds; pinned map |
+| 4.2 Riesz bound bullet (new) | general n, r; r = 0; r = n; n = 2, r = 1 | `ω̂ʳ = r!·Σ_(|J|=r)∧_(j∈J)(e_j∧ie_j)`, orthonormal summands, `‖ω̂ʳ‖/r! = sqrt(C(n,r))`; 1; 1; `√2 ≥ 1` | holds, consistent with `norm_kahlerPowerForm` |
+| `isCalibratedFrame_kahlerPowerForm_iff` | n = 3, r = 2, `(e₁,ie₁,e₂,cos t·ie₂+sin t·e₃)`; r = 0; r > n | `cos t`: T/T at 0, F/F at π, π/2; empty frames T/T; no orthonormal 2r-frame, F/F | both directions (carried) |
+| `IsKahlerMetric` | flat ℂ; `dx²+4dy²`; `|z|⁻²Re⟪,⟫` on `ℂ²∖0` | `ω(1,i) = 1`; `g(i,i) = 4 ≠ 1`; coefficient `−2x₁|z|⁻⁴` on `dx₁∧dx₂∧dy₂` | both clauses needed (carried) |
+| `immersionVolume_le_of_isKahlerMetric` | r = 0; `{z₂ = 0}` disk | `#N ≤ #N′`; π vs any surface with equal periods | holds (carried) |
+| `standardComplexVolume`, `norm_standardSpecialLagrangianForm` | n = 2, `(e₁,ie₂)`; n = 0, θ = π/2 | `det = i`; constant `cos(π/2) = 0`, so `hn` is needed | holds (carried) |
+| `specialLagrangianFrame_iff` | n = 2: `(e₁, cos t e₂ + i sin t e₁)`; `(e₁,ie₂)` at θ = 0, π/2; `(e₁,ie₁)`; n = 0 | `det = cos t` real but `Im⟪v₁,v₂⟫ = sin t ≠ 0`, F/F; `Re i = 0` F/F, `Re(−i·i) = 1` T/T; `Ω = 0` F/F; `cos θ = 1 ⇔ sin θ = 0 ∧ cos θ > 0` | both directions (carried) |
+| `IsNormalizedHolomorphicVolumeForm`, `specialLagrangianForm` | `dz`; `2dz`; `dz̄`; `dz₁` on ℂ²; degree n > dim | modulus 1; 2; `conj(i) = −i ≠ i`; 0 on `e₂`; only Ω = 0, vacuous normalization, φ = 0 | holds (carried) |
+| `isCalibration_specialLagrangianForm` | n = m unitary frame; n > m; n = 0 | `|Ω(v)| = |det| ≤ Π‖vᵢ‖ = 1`; zero form is a calibration; locally constant of modulus ≤ 1 | holds (carried) |
+| `secondVariation_volume_eq_hodgeEnergy` degeneracies | dim N ≠ dim_ℂ M; N = ∅ | hΩ or hcal unsatisfiable (no unitary n-frame, or `f*0 = dvol`); both sides 0 | not false |
+| 5.2 symplectic comparison | `Im⟪v,w⟫` vs `ω₀(Rv,Rw)` | both `⟪Re v, Im w⟫ − ⟪Im v, Re w⟫`; n = 1, `(1,i)`: 1 = 1 | holds (carried) |
+| 5.3 circle radius ρ | `ρe^(is)` | θ = s + π/2, `J grad θ = −e^(is)/ρ = H_tr`, `ι_H ω = −dθ` | holds (carried) |
+| 6.1 contraction sign | `V = Σa_j∂_(y_j)` on ℝⁿ | `β = −Σa_j dx_j`; `ι_V Im Ω = −★β` | holds (carried) |
+| 6.5 second jet | `A = (a)`; `diag(1,−1)`; `[[0,1],[−1,0]]` | `a²`; gap 0; Gram `(1+t²)I`, `det = 1−t²`, `″ = 4 = |W′|²` | holds (carried) |
+| 6.5 first variations of `F_t*ω`, `F_t*Im Ω_θ` (new wording) | closed α, family F | `d/dt F_t*α|₀ = d(ι_V α|_N)` by the homotopy formula, `ι_V α|_N(w) = α(V, df w)` = `contractionPullback`; `ι_V ω|_N = β`, `ι_V Im Ω_θ|_N = −★β` | holds |
+| 6.5 acceleration independence | f minimal, N closed, acceleration a | `Vol″(0) = Q(V,V) + δVol(a) = Q(V,V)` since `δVol(a) = −∫⟨H, a⟩ = 0` | holds; a corollary, R5b's for general f |
+| `secondVariation_volume_eq_hodgeEnergy` | m = 0: circle, `a = ε sin2πx` | `∫a′² = 2π²ε²` both sides | holds (carried) |
+| 6.5 immersion Check (new) | double cover `f = 2x`, `F_t = 2x + itε sin2πx` | `L″(0) = ∫2π²ε²cos² = π²ε²`; `f*g = 4dx²`, `β = −2ε sin dx`, `⋆β = −ε sin`, `⋆d⋆β = −πε cos`, `∫π²ε²cos²·2dx = π²ε²`; with `dx²` instead: `⋆d⋆β = −4πε cos`, `8π²ε²` | holds; wrong metric detected |
+| 6.5 Jacobi identification (new) | `T²`, `V = a(x₁)∂_(y₂)`, `a = ε sin2πx₁` | R5b: `Q = ∫|∇⊥V|² = ∫a′² = 2π²ε²`, `LV = −a″∂_(y₂)`; `β = −a dx₂`, `(dδ+δd)β = a″dx₂ = g(i·LV, ·) = ι_(LV)ω`; `−(dδ+δd)` would give `+a″∂_(y₂)` | identity and sign hold |
+| 6.5 isometry `V ↦ ι_V ω` | Lagrangian plane P | `ω(P,P) = g(iP,P) = 0` so `iP = P^⊥`; `β = g(iV,·)|_P`, `|β| = |iV| = |V|` | holds |
+| 6.5 kernel of L | flat `Tⁿ` | constant normal fields, `n = b₁(Tⁿ)`; harmonic one-forms are the constant forms | holds |
+
+## Not verifiable
+
+- Lee2012ISM, Theorems 18.7 and 18.12 (2.3): recorded uncertified; the cache holds a copy taken from a personal web page, which was not read.
+- Munkres1966EDT (2.4): waived; not read.
+- HarveyLawson1982: the manifest records it as uncertified (paywalled DOI). The locators above were read in the operator's cached text of the article (taken from the YMSC archive copy of Acta Mathematica); the manifest status was not changed.
+- Ownership against ComplexKahlerGeometry #1807 and #1808 was not checked file by file, because the brief gives no checkout for them; `overlaps.md` reports no dropped id from them.
+- The truth of the eleven admitted theorems is not established by the build; the table above holds hand computations.
+
+## Source issues
+
+- none
