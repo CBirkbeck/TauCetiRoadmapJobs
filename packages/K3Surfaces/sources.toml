@@ -227,3 +227,19 @@ licence_class = "none"
 status = "uncertified"
 version_note = "paywalled; cited by its locator without the text"
 cited_for = ["0.2"]
+
+[[source]]
+id = "stacks-02UP"
+authors = "The Stacks project authors"
+title = "The Stacks project, Chapter 37 (More on Morphisms), Lemma 37.44.2"
+year = 2026
+locator_scheme = "tag"
+locator = "Tag 02UP (§37.44, Lemma 37.44.2)"
+url = "https://stacks.math.columbia.edu/tag/02UP"
+fetched_from = "https://stacks.math.columbia.edu/download/more-morphisms.pdf#nameddest=02UP"
+fetched_at = "2026-11-08T04:28:41Z"
+sha256 = "59df05f5d52f453b17677398c72a51fe156367f460f6dcfdf764d9631b7c787c"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-08"
+cited_for = ["0.2"]
