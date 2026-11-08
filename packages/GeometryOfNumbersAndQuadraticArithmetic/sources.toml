@@ -122,3 +122,57 @@ licence_class = "author-page"
 status = "certified"
 accessed = "2026-11-07"
 cited_for = ["3.3, 4.2, 4.5"]
+
+[[source]]
+id = "CDHIII2026v4"
+authors = "Baptiste Calmès, Emanuele Dotto, Yonatan Harpaz, Fabian Hebestreit, Markus Land, Kristian Moi, Denis Nardin, Thomas Nikolaus, Wolfgang Steimle"
+title = "Hermitian K-theory for stable $\\infty$-categories III: Grothendieck-Witt groups of rings"
+year = 2020
+arxiv = "2009.07225v4"
+locator_scheme = "theorem"
+locator = "Proposition 1.1.13 and Remark 1.1.14, p.14"
+url = "https://arxiv.org/abs/2009.07225v4"
+fetched_from = "https://arxiv.org/pdf/2009.07225v4"
+fetched_at = "2026-11-07T17:59:58Z"
+sha256 = "1e4b6720055ebdce0012f5780bfc7cdb5b853e32f29b17224a1be0bc676f770c"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-07"
+version_note = "arXiv v4"
+cited_for = ["6.1a", "6.8a", "6.9", "6.10", "6.10a", "6.10b", "6.11"]
+
+[[source]]
+id = "CDHII2025v5"
+authors = "Baptiste Calmès, Emanuele Dotto, Yonatan Harpaz, Fabian Hebestreit, Markus Land, Kristian Moi, Denis Nardin, Thomas Nikolaus, Wolfgang Steimle"
+title = "Hermitian K-theory for stable $\\infty$-categories II: Cobordism categories and additivity"
+year = 2020
+arxiv = "2009.07224v5"
+locator_scheme = "theorem"
+locator = "Remark 1.1.7, pp.17-18"
+url = "https://arxiv.org/abs/2009.07224v5"
+fetched_from = "https://arxiv.org/pdf/2009.07224v5"
+fetched_at = "2026-11-07T18:00:16Z"
+sha256 = "eaa19b40046c953f6aedc5d11ed86eaee16018fcad995fcbafeb4746af6239a3"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-07"
+version_note = "arXiv v5"
+cited_for = ["6.1a", "6.8a"]
+
+[[source]]
+id = "CDHI2021v3"
+authors = "Baptiste Calmès, Emanuele Dotto, Yonatan Harpaz, Fabian Hebestreit, Markus Land, Kristian Moi, Denis Nardin, Thomas Nikolaus, Wolfgang Steimle"
+title = "Hermitian K-theory for stable $\\infty$-categories I: Foundations"
+year = 2020
+arxiv = "2009.07223v3"
+locator_scheme = "theorem"
+locator = "Definitions 1.1.1, 1.2.1 and 2.1.1, pp.10, 17, 30"
+url = "https://arxiv.org/abs/2009.07223v3"
+fetched_from = "https://arxiv.org/pdf/2009.07223v3"
+fetched_at = "2026-11-07T18:00:50Z"
+sha256 = "2c423b7f8fa95e1ee236c1d59a22d559de26fb8882328d9604e7680f31a7c68e"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-07"
+version_note = "arXiv v3"
+cited_for = ["6.1a", "6.8a", "6.10b"]
