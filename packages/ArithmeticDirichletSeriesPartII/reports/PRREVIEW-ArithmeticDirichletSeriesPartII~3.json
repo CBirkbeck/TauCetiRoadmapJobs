@@ -1,0 +1,13 @@
+{
+  "review": {
+    "status": "needs_changes",
+    "reviewer": "independent-review-PRREVIEW-ArithmeticDirichletSeriesPartII~3",
+    "head": "aa2af100366540a71b098d40feb7b4305189c8e2",
+    "pr": 1415,
+    "folder": "ArithmeticDirichletSeriesPartII",
+    "date": "2026-11-08",
+    "findings": 6,
+    "blocking": 0,
+    "notes": "Full re-review (427 changed lines since 93f5273). The previous review had no findings, and the four earlier ones it confirmed stay repaired. Six P3 findings: §2.2a cites an unrecorded, paywalled Korevaar chapter instead of its readable PNT+ source; §0.1a has no locator; Tau Ceti's tendsto_inv_mul_tsum_mul_div_atTop is uncited; the d_k asymptotic is claimed although AnalyticNumberTheoryPartI §§3.12a and 3.22 state it; pin labels are stale and SumWindow.lean has moved to Sum/Window.lean; Wood p. 416 not 417, and C₂^r×{1} conflicts with the additive Check. Gate re-run: OK. Depcheck: 229 roadmaps, 2316 edges, 0 problems. lake env lean: 19 sorry warnings, 0 errors. #check pass on all 24 declarations: no lost binders. One-tactic probe: all 19 fail. All 15 seeded targets checked against delange1954, wood2019, osele-laplace and PNT+ Wiener.lean; Korevaar not verifiable (paywalled). 35 computed adversarial rows. Worktree unchanged; no manifest edited."
+  }
+}
