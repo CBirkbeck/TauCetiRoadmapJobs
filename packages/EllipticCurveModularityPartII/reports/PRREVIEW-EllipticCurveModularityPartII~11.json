@@ -1,0 +1,4 @@
+{"review": {"status": "needs_changes", "reviewer": "independent-review-PRREVIEW-EllipticCurveModularityPartII~11",
+            "head": "9bc95b1f4680d063841a15db8fcd1babec48ffd7", "pr": 1491, "folder": "EllipticCurveModularityPartII", "date": "2026-11-08",
+            "findings": 6, "blocking": 2,
+            "notes": "incremental re-review of 54 changed lines since 95f7c2f: previous R04, R05, R06 repaired, R03 partly (description), R01, R02, R07, R08 carried; seven rewritten supplier contracts resolved at the heads of #1018, #1013, #856, #928, #1007, #852 and the EC.0-EC.6 table at #1336; changed locators read at BS2020 lines 169-233, 294, 334-335 and Lemos2017 lines 197-202; new theorem rational_isogeny_j_tables elaborated, #check'd and probed (not padding); one new P3 (self-contradictory §6.0b Check); gate OK on my rerun (worker build=0), depcheck 0 problems, nothing outside the folder."}}
