@@ -1095,7 +1095,7 @@
      "id": "4.4",
      "kind": "construction",
      "name": "Gysin.vistoliRationalEquivalence",
-     "statement": "For a 2-cartesian square of DM stacks with Y reduced of pure dimension, i : X -> Y a local embedding and v : Y' -> Y a regular local embedding with normal bundle N, the canonical rational equivalence beta(Y',X) in W_*(N x_Y C_{X/Y}) with boundary [C_{u^*C/C}] - [rho^* C_{X'/Y'}]; compatible with smooth base change and with smooth factorisations (alpha^* beta(Y',X) = beta(Ytilde',X)); not invariant under all of T_Y (contrary to behrend-fantechi1997 Proposition 3.5), the invariance along relative tangent directions being 8.5; consequence v^![C] = [C_{X'/Y'}] in A_*(u^*C).",
+     "statement": "For a 2-cartesian square of DM stacks with Y reduced of pure dimension, i : X -> Y a local embedding and v : Y' -> Y a regular local embedding with normal bundle N, the canonical rational equivalence beta(Y',X) in W_*(N x_Y C_{X/Y}) with boundary [C_{u^*C/C}] - [rho^* C_{X'/Y'}]; compatible with smooth base change and with smooth factorisations (alpha^* beta(Y',X) = beta(Ytilde',X)); not invariant under all of T_Y (contrary to behrend-fantechi1997 Proposition 3.5; the error is recorded at kresch1999b lines 41-47 and 340-343), the invariance along relative tangent directions being 8.5; consequence v^![C] = [C_{X'/Y'}] in A_*(u^*C).",
      "hypotheses": [
       "Y a DM stack over the field k (IsDeligneMumford, of finite type over Spec k), reduced and of pure dimension",
       "i a local embedding",
@@ -1103,7 +1103,7 @@
      ],
      "locator": {
       "source": "vistoli1989",
-      "where": "Lemma 3.16, line 1172; Lemma 4.6, line 1458, and lines 1451-1452 (reduced equidimensional Y), 1465-1470 (construction); behrend-fantechi1997 Propositions 3.1, 3.3 and 3.4, lines 762-888"
+      "where": "Lemma 3.16, line 1172; Lemma 4.6, line 1458, and lines 1451-1452 (reduced equidimensional Y), 1465-1470 (construction); behrend-fantechi1997 Propositions 3.1, 3.3 and 3.4, lines 762-888; kresch1999b lines 41-47 and 340-343 (the error in behrend-fantechi1997 Proposition 3.5)"
      },
      "prerequisites": [
       "target:4.2b",
@@ -1935,7 +1935,7 @@
      ],
      "locator": {
       "source": "behrend-fantechi1997",
-      "where": "Lemma 3.2, Proposition 3.1, Lemma 3.8, Corollary 3.9, Definition 3.10, Theorem 3.11, Propositions 3.12-3.14, lines 762-1064; Proposition 7.1, line 1676; line 1656; stacks-divisors Lemma 21.4 (063H), Lemma 22.3 (063L); lines 781-809 and proof of Proposition 3.5, lines 894-897 (corrected: the two inverse images of Y' in Y x Y agree only when Y' comes from the base)"
+      "where": "Lemma 3.2, Proposition 3.1, Lemma 3.8, Corollary 3.9, Definition 3.10, Theorem 3.11, Propositions 3.12-3.14, lines 762-1064; Proposition 7.1, line 1676; line 1656; stacks-divisors Lemma 21.4 (063H), Lemma 22.3 (063L); lines 781-809 and proof of Proposition 3.5, lines 894-897 (corrected: the two inverse images of Y' in Y x Y agree only when Y' comes from the base); kresch1999b Theorem 3.1, line 334, with proof lines 344-405 (over a field, for the rational equivalence of its Proposition 2.3, line 242, which has the boundary of beta, line 304; the deduced invariance under T_{Y'/frakM} for frakM = Spec k), and the remark at lines 340-343"
      },
      "prerequisites": [
       "target:4.2b",
@@ -1971,7 +1971,7 @@
       {
        "name": "vistoliRationalEquivalence_relTangent_invariant",
        "role": "invariance",
-       "statement": "For Y' = Y x_frakB frakB' pulled back along a smooth p : Y -> frakB of Deligne-Mumford type (frakB reduced of pure dimension), beta(Y',X) is invariant under T_{Y/frakB}|_{X'} acting on N x_Y C_{X/Y} through the second factor (Proposition 3.4 through both projections of Y x_frakB Y, which pull Y' back to the same substack); hence for a regular local embedding Y' -> Y of stacks smooth over a reduced frakM, invariance under T_{Y'/frakM} (etale-locally Y' is the fibre over {0} x frakM of a smooth Y -> A^c x frakM)."
+       "statement": "For Y' = Y x_frakB frakB' pulled back along a smooth p : Y -> frakB of Deligne-Mumford type (frakB reduced of pure dimension), beta(Y',X) is invariant under T_{Y/frakB}|_{X'} acting on N x_Y C_{X/Y} through the second factor (Proposition 3.4 through both projections of Y x_frakB Y, which pull Y' back to the same substack); hence for a regular local embedding Y' -> Y of stacks smooth over a reduced frakM, invariance under T_{Y'/frakM} (etale-locally Y' is the fibre over {0} x frakM of a smooth Y -> A^c x frakM); for frakM = Spec k compare kresch1999b Theorem 3.1, proved there for the rational equivalence of its Proposition 2.3, which has the boundary of beta."
       }
      ],
      "tests": [
@@ -2354,7 +2354,7 @@
      "id": "10.7",
      "kind": "theorem",
      "name": "Virtual.virtualClass_functorial",
-     "statement": "For compatible perfect obstruction theories over an lci v : Z' -> Z of frakM-stacks with finite unramified diagonal, v^![X,E]^vir = [X',F]^vir when v is smooth, or when frakM is reduced and Z', Z are smooth over frakM, with v^! flat pullback, resp. the Gysin map of the graph Z' -> Z' x_frakM Z composed with flat pullback; in the second case beta of 4.4 for Z' x_frakM W -> Z x_frakM W is descended along T_{(Z' x_frakM W)/frakM} by the second invariance statement of 8.5.",
+     "statement": "For compatible perfect obstruction theories over an lci v : Z' -> Z of frakM-stacks with finite unramified diagonal, v^![X,E]^vir = [X',F]^vir when v is smooth, or when frakM is reduced and Z', Z are smooth over frakM, with v^! flat pullback, resp. the Gysin map of the graph Z' -> Z' x_frakM Z composed with flat pullback; in the second case, for a relative local embedding (U, W) of X, beta of 4.4 for the graph Z' x_frakM W -> Z' x_frakM Z x_frakM W of v (a regular local embedding with normal bundle v^*T_{Z/frakM}) and the local embedding Z' x_frakM U -> Z' x_frakM Z x_frakM W is descended along T_{(Z' x_frakM W)/frakM} by the second invariance statement of 8.5; the quotient is a torsor under g^*[v^*T_{Z/frakM}/T_{Z'/frakM}] over u^*C_{X/frakM}, identified with h1/h0(F^vee) x_{u^*h1/h0(E^vee)} u^*C_{X/frakM} by the compatibility datum alone (the source's reduction through the theory q^*E + Omega_{Z'/frakM} on Z' x_frakM X fails: F need not be compatible with it over the graph).",
      "hypotheses": [
       "frakM an algebraic k-stack of pure dimension m; f : M -> frakM of Deligne-Mumford type; M a DM stack of finite type over k with affine diagonal; M separated; E -> tau L a perfect obstruction theory of constant rank r",
       "compatibility datum (morphism of distinguished triangles)",
@@ -2362,14 +2362,16 @@
      ],
      "locator": {
       "source": "behrend-fantechi1997",
-      "where": "Definition 5.8, Lemma 5.9, Proposition 5.10, lines 1381-1498; Proposition 7.5, line 1734 (base smooth of constant dimension, line 1668)"
+      "where": "Definition 5.8, Lemma 5.9, Proposition 5.10, lines 1381-1498 (the exact sequence of vector bundle stacks, lines 1389-1392; the identification at line 1419; the regular case, lines 1471-1488; the reduction of the general case, lines 1489-1498, replaced here by the graph ambient); Proposition 7.5, line 1734 (base smooth of constant dimension, line 1668)"
      },
      "prerequisites": [
       "target:4.4",
+      "target:4.5",
       "target:5.1",
       "target:7.5",
       "target:8.3",
       "target:8.5",
+      "target:10.1",
       "target:10.2",
       "target:10.6"
      ],

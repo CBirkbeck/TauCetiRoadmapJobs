@@ -364,3 +364,22 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-07"
 cited_for = ["8.5 a closed immersion whose normal cone is a vector bundle is quasi-regular, hence regular on a locally Noetherian scheme"]
+
+[[source]]
+id = "kresch1999b"
+authors = "Andrew Kresch"
+title = "Canonical rational equivalence of intersections of divisors"
+year = 1997
+venue = "Invent. Math. 136 (1999), 483–496"
+arxiv = "alg-geom/9710011v2"
+locator_scheme = "theorem"
+locator = "Theorem 3.1 (lines 334–336, proof lines 344–405), Proposition 2.3 (line 242) and its rational equivalence (line 304), the remarks at lines 41–47 and 340–343"
+url = "https://arxiv.org/abs/alg-geom/9710011v2"
+fetched_from = "https://arxiv.org/pdf/alg-geom/9710011v2"
+fetched_at = "2026-11-08T10:44:59Z"
+sha256 = "ed76099bb4fb561514b36fc5d10f040cb5735f6a571604b900c094670d42b7ff"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-08"
+version_note = "arXiv v2; the roadmap cites the v2 numbering and line numbers"
+cited_for = ["4.4 the error in behrend-fantechi1997 Proposition 3.5 (lines 41–47, 340–343)", "8.5 invariance of the rational equivalence under the tangent bundle of the smooth regularly embedded substack over a field (Theorem 3.1)"]

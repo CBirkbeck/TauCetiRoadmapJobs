@@ -865,7 +865,8 @@ relative tangent bundle `T_{Ỹ/Y}` and hence smooth (Proposition 3.1, line 762,
 `α^*β(Y', X) = β(Ỹ', X)` in `W_*(N ×_Y C_{X/Ỹ})` (Proposition 3.4, line 884). Invariance of `β`
 under tangent directions is stated in 8.5, where it is used, for the directions along the fibres
 of a smooth morphism from which `Y'` is pulled back; `β` is not invariant under all of `T_Y`,
-which behrend-fantechi1997 Proposition 3.5 (line 889) asserts (Checks). Once the Gysin maps of
+which behrend-fantechi1997 Proposition 3.5 (line 889) asserts (Checks; the error is recorded at
+kresch1999b lines 41–47 and 340–343). Once the Gysin maps of
 4.3 and 4.5 are available, prove the consequence `v^![C] = [C_{X'/Y'}]` in `A_*(u^*C)`
 (behrend-fantechi1997 lines 828–833). *Needs:* 4.2, Layer 2; SchemeAndStackFoundations §5.5
 (`deformationToNormalCone`, `specialization`); for the consequence, 4.3 and 4.5.
@@ -1515,7 +1516,12 @@ Prove:
   `Y'`, since the transitivity triangle of 8.3 for `Y' → Y → 𝔐` gives the exact sequence
   `0 → I/I² → Ω_{Y/𝔐}|_{Y'} → Ω_{Y'/𝔐} → 0`; so `(f_1, …, f_c) : Y → 𝔸^c × 𝔐` is smooth along `Y'`,
   `Y'` is the inverse image of `{0} × 𝔐`, and the first statement applies over `𝔅 = 𝔸^c × 𝔐`, with
-  `T_{Y/𝔅}|_{Y'} = T_{Y'/𝔐}`. The first statement is the descent of 10.6 (with `𝔅 = 𝔐`, `Y = W`),
+  `T_{Y/𝔅}|_{Y'} = T_{Y'/𝔐}`. For `𝔐 = Spec k`, kresch1999b Theorem 3.1 (line 334) proves this
+  invariance for the rational equivalence of its Proposition 2.3 (line 242), which has the boundary
+  of `β` (line 304), by extending the action to the double deformation space (lines 377–405); its
+  notation exchanges the roles (its smooth substack is our `Y'`, its `Y'` our `X`), and its
+  statement prints the acting bundle as `T_{Y'}` while its proof (line 400) acts by the tangent
+  bundle of the smooth substack. The first statement is the descent of 10.6 (with `𝔅 = 𝔐`, `Y = W`),
   the second that of 10.7 and, for `𝔐 = Spec k`, of behrend-fantechi1997 Lemma 5.9 (line 1397).
 
 *Needs:* 4.2, 4.4, 7.1, 7.2, 8.3, 8.4; 1.3; SchemeAndStackFoundations §5.5 (`conormal_regular`,
@@ -1839,25 +1845,70 @@ diagonal over `𝔐`, with `v` a local complete intersection morphism, and perfe
 distinguished triangles from `u^*E → F → g^*τ^{≥−1}L_{Z'/Z}` to the transitivity triangle of 8.3
 (behrend-fantechi1997 Definition 5.8, line 1381; relative form, lines 1721–1733). Here `v^!` is the Gysin map of the local complete intersection morphism `v` (4.5): flat pullback
 when `v` is smooth, and when `Z'`, `Z` are smooth over `𝔐` the composite of the Gysin map of the
-graph `Z' → Z' ×_𝔐 Z`, a regular local embedding, with flat pullback along the projection to `Z`
-(behrend-fantechi1997 lines 1489–1498). Prove that compatible obstruction theories satisfy
+graph `Γ_v : Z' → Z' ×_𝔐 Z`, a regular local embedding, with flat pullback along the projection to
+`Z` (behrend-fantechi1997 lines 1489–1498). Prove that compatible obstruction theories satisfy
 `v^![X, E]^vir = [X', F]^vir` when `v` is smooth, or when `𝔐` is reduced and `Z'` and `Z` are
 smooth over `𝔐` (Proposition 5.10, line 1428; Proposition 7.5, line 1734, whose base is smooth of
 constant dimension, line 1668). The second case uses the rational equivalence of
-behrend-fantechi1997 Lemma 5.9 (line 1397) for a regular local embedding between stacks smooth
-over `𝔐`: for a relative local embedding `(U, W)` of `X` over `𝔐`, it is `β` of 4.4 for the regular
-local embedding `Z' ×_𝔐 W → Z ×_𝔐 W` and the local embedding `U → Z ×_𝔐 W`, descended along
-`T_{(Z'×_𝔐W)/𝔐}|_{U'}` by the second invariance statement of 8.5. Both `Z ×_𝔐 W` and `Z' ×_𝔐 W` are
-smooth over `𝔐`, hence reduced and of pure dimension on each connected component when `𝔐` is
-reduced, and the finite diagonal of `Z` over `𝔐` with the product of 8.1 makes
-`U → (Z ×_𝔐 W) ×_𝔐 (Z ×_𝔐 W)` a local embedding. The smooth case uses no hypothesis on `𝔐`.
-*Needs:* 4.4, 5.1, 7.5, 8.3, 8.5, 10.2, 10.6.
+behrend-fantechi1997 Lemma 5.9 (line 1397), formed in the ambient of the graph so that `v` need not
+be an embedding. Put `𝔈 := h¹/h⁰(E^∨)`, `𝔉 := h¹/h⁰(F^∨)` and
+`𝔑_v := h¹/h⁰(τ^{≥−1}L_{Z'/Z}^∨) = [v^*T_{Z/𝔐}/T_{Z'/𝔐}]`; the compatibility datum gives the short
+exact sequence `g^*𝔑_v → 𝔉 → u^*𝔈` (7.5; behrend-fantechi1997 lines 1389–1392). For a relative
+local embedding `(U, W)` of `X` over `𝔐`, put `Y := Z' ×_𝔐 Z ×_𝔐 W` and `Y' := Z' ×_𝔐 W`, mapped
+to `Y` by the graph of `v` times `W`: a section of the smooth projection `Y → Y'` and a base change
+of the diagonal of `Z` over `𝔐`, hence a regular local embedding, with normal bundle `N` the
+pullback of `v^*T_{Z/𝔐}`. The local embedding `Z' ×_𝔐 U → Y` (a base change of `U → Z ×_𝔐 W`) has
+fibre product `U' := U ×_Z Z'` with `Y'`, étale over `X'`. Take `β(Y', Z' ×_𝔐 U)` of 4.4 and descend
+it along `T_{Y'/𝔐}|_{U'} = (T_{Z'/𝔐} ⊕ T_{W/𝔐})|_{U'}` by the second invariance statement of 8.5.
+That group acts on `u^*C_{U/Z×_𝔐W}` through `dv ⊕ id` into `v^*T_{Z/𝔐} ⊕ T_{W/𝔐}`, so the quotient
+is a torsor under `g^*𝔑_v` over `u^*C_{X/𝔐}|_{U'}`, which the compatibility datum identifies with
+`𝔉 ×_{u^*𝔈} u^*C_{X/𝔐}` over `U'` (as at behrend-fantechi1997 line 1419); the descended classes glue
+over the relative local embeddings (4.4, compatibility with smooth factorisations). For global
+resolutions `E^•` of `E` and `F^•` of `F`, with `E_i`, `F_i`, `C(E^•)`, `C(F^•)` as in 10.2, pull the
+result back to `K_1 := F_1 ×_{u^*𝔈} u^*E_1`, a vector bundle over `X'` with surjections onto `F_1`
+(kernel `u^*E_0`) and onto `u^*E_1` (étale-locally as for `K_1` in 10.1). With `q : Z' ×_𝔐 X → X`
+the projection and `u^*C(E^•) → q^*C(E^•)` the base change of the graph, this gives
+`[N × (C_{X'/𝔐} ×_𝔉 K_1)] = [C_{u^*C(E^•)/q^*C(E^•)} ×_{u^*E_1} K_1]` in `A_*(N × K_1)`, and
+`0^!_{N×K_1}` with 5.1 turns the two sides into `[X', F]^vir` and
+`0^!_{u^*E_1} Γ_v^! [q^*C(E^•)] = Γ_v^! q^*[X, E]^vir = v^![X, E]^vir`. When `v` is a regular local
+embedding, `Z ×_𝔐 W` with its regular local embedding `Z' ×_𝔐 W` may replace `Y` and `Y'` (and `U`
+replaces `Z' ×_𝔐 U`), and `𝔑_v` is the normal bundle of `v` (behrend-fantechi1997 lines
+1471–1488). The source reduces the general case instead to the theory `q^*E ⊕ Ω_{Z'/𝔐}` on
+`Z' ×_𝔐 X` (lines 1489–1498), which is compatible with `E` over the projection, but with which `F`
+need not be compatible over the graph (Checks); the route above uses only the compatibility over
+`v`. The stacks `Y`, `Y'` and `Z ×_𝔐 W` are smooth over `𝔐`, hence reduced and of pure dimension
+on each connected component when `𝔐` is reduced, and the finite unramified diagonals of `Z'` and
+`Z` over `𝔐`, with the product of 8.1, make `Z' ×_𝔐 U → Y ×_𝔐 Y` a local embedding. The smooth case
+uses no hypothesis on `𝔐`.
+*Needs:* 4.4, 4.5, 5.1, 7.5, 8.3, 8.5, 10.1, 10.2, 10.6.
 
 **Checks.**
 
 - `v = id`: compatibility forces `F ≅ u^*E` and the statement is trivial.
 - `Z' = Z × 𝔸¹ → Z` the projection, `X' = X × 𝔸¹`, `F = E ⊞ Ω_{𝔸¹}`: `v^* [X, E]^vir =
   [X, E]^vir × [𝔸¹] = [X', F]^vir`, matching 10.5.
+- A local complete intersection that is neither smooth nor an embedding: over `𝔐 = Spec k`,
+  `v : 𝔸² → 𝔸¹`, `(s, t) ↦ st`, with `X = Z`, `E = Ω_{𝔸¹}`, `X' = Z'`, `F = Ω_{𝔸²}` and the
+  transitivity triangle as compatibility datum. The graph `{z = st} ⊆ 𝔸² × 𝔸¹` is a smooth divisor,
+  so `v^![𝔸¹] = Γ_v^![𝔸³] = [𝔸²] = [X', F]^vir`, which is also the flat pullback. In the route, with
+  `U = W = 𝔸¹`, the vector `(a, b, e)` of `T_{Y'} = T_{𝔸²} ⊕ T_W` moves the normal coordinate
+  `ζ = z − w` of the diagonal `U ⊆ Z × W` by `ζ ↦ ζ + at + bs − e`, transitively with stabiliser
+  `T_{𝔸²}`, so the quotient is `B T_{𝔸²} = 𝔉`, a torsor under `g^*𝔑_v = [v^*T_{𝔸¹}/T_{𝔸²}]` (rank
+  `1 − 2 = −1`) over `u^*𝔈 = B v^*T_{𝔸¹}`.
+- No obstruction theory on `Z' ×_𝔐 X` need be compatible with `E` over the projection and with `F`
+  over the graph. Over `Spec k`, let `v : C → ℙ²` be a smooth conic (normal bundle `N_C = O(4)`
+  on `C ≅ ℙ¹`), `X = ℙ² × ℙ¹ → ℙ²` the projection, `E = Ω_X ⊕ V[1]` with `V = O(−2) ⊠ O(−2)` and zero
+  map on `V[1]`, and `F` on `X' = C × ℙ¹` the theory whose class `χ : g^*N_C^∨[1] → u^*E[1]` is the
+  conormal map plus a nonzero element of `Ext¹(g^*N_C^∨, u^*V) = H¹(O(0, −2)) = k` (bidegrees on
+  `C × ℙ¹`). As `T_{ℙ²}|_C = O(3)²`, not `O(2) ⊕ O(4)`, the conormal sequence of `C` does not split;
+  its class in `Ext¹(Ω_C, N_C^∨) = H¹(O(−2)) = k` cups with that element to a nonzero class in
+  `Ext²(g^*Ω_C, u^*V) = H²(O(−2, −2)) = k`, a component of the `k`-invariant (the class in
+  `Ext²(h^0, h^{−1})` that classifies a complex of amplitude `[−1, 0]`) of the fibre of
+  `F → τ^{≥−1}L_{X'} → τ^{≥−1}L_{X'/C×X}`. A theory `G` on `C × X` compatible with `E` over the
+  projection has `h^0(G) = Ω_{C×X}`, `h^{−1}(G) = q^*V` and `k`-invariant in
+  `Ext²(Ω_{C×X}, q^*V) = 0` (all cohomology of `O(−2)` and `T_{ℙ²}(−2)` on `ℙ²` vanishes), while a
+  compatibility of `F` with `G` over the graph would identify that fibre with the restriction of
+  `G`. Here `v` is a regular embedding, and the route above applies.
 
 ### 10.8 Virtual counts
 
@@ -2074,6 +2125,10 @@ EnhancedDerivedSheaves E1.4; DerivedModuleAlgebra §0.25. Within the layer, 11.1
   arXiv alg-geom/9508012. Theorem 1.1, Corollary 1.3.
 - [kresch1999] A. Kresch, *Cycle groups for Artin stacks*, Invent. Math. 138 (1999), 495–536;
   arXiv math/9810166. Theorems 2.1.12 and 6.2.1 (boundaries).
+- [kresch1999b] A. Kresch, *Canonical rational equivalence of intersections of divisors*, Invent.
+  Math. 136 (1999), 483–496; arXiv alg-geom/9710011, cited in its v2 numbering. Proposition 2.3
+  and its rational equivalence (line 304), Theorem 3.1 with its proof, and the remarks on
+  behrend-fantechi1997 Proposition 3.5 (lines 41–47, 340–343).
 - [li-tian1998] J. Li, G. Tian, *Virtual moduli cycles and Gromov–Witten invariants of algebraic
   varieties*, J. Amer. Math. Soc. 11 (1998), 119–174; arXiv alg-geom/9602007. Theorem 4.3.
 - [olsson2007] M. Olsson, *Sheaves on Artin stacks*, J. reine angew. Math. 603 (2007), 55–112.
