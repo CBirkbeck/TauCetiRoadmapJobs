@@ -1,0 +1,4 @@
+{"review": {"status": "needs_changes", "reviewer": "independent-review-PRREVIEW-EquivariantIntersectionTheory~9",
+            "head": "493bc969fbb9e63707a4ed6820c8467b10afb46a", "pr": 1685, "folder": "EquivariantIntersectionTheory", "date": "2026-11-08",
+            "findings": 2, "blocking": 0,
+            "notes": "incremental re-review of 31 changed lines since f62b21a: the affine-bundle clause of 2.2 and the B/T tower of 2.3. Previous R01 repaired. Two P3: the gate fails dropped=1 on line 598 (a dropped-list name in Downstream consumers); line 420 cites Fulton 1998 Thm 3.3(a) with no References entry and no manifest key. Checked: gate with --build (every other scanner 0, build=0), depcheck 245/2467/0, lake env lean 9 sorry warnings, Suggested.lean unchanged since 1650b0a; SSF §§5.2–5.4 on main and at the five revision heads; the 2.2 argument against Stacks 02TY and on (P1xP1)\\Delta, the rank-0 and split cases; the 2.3 tower on GL2, GL3 and N = n(n-1)/2."}}
