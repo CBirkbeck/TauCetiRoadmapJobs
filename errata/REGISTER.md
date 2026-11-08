@@ -2,7 +2,7 @@
 
 Reviewers, red-team passes and errata jobs record every mistake they find in a source while checking a roadmap's locators: misprints (slips whose intended meaning is clear), errors (a false statement or proof step) and gaps (a step the source does not justify), each with the roadmap, the board pull request or errata job and the head that reported it. Collected by the board sync from the `## Source issues` sections of review, red-team and errata comments; the data is in `errata/source-issues.json`.
 
-9949 mistakes recorded on the board: 5810 misprints, 2570 errors, 1127 gaps, 442 unparsed bullets.
+9955 mistakes recorded on the board: 5810 misprints, 2572 errors, 1127 gaps, 446 unparsed bullets.
 Errata jobs have read the cited sources of 60 roadmaps; in those of 2 they found no mistake.
 The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explorer/`: 1525 awaiting review, 13582 confirmed, 228 rejected.
 
@@ -450,6 +450,10 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 - **Unparsed** (NashBlowups, #7586 at df807c1, 2026-11-07): Misprint** in nashModificationNotes2024 at Propositions 2.2–2.3, printed p. 5 (lines 173–181): the same proposition and its preamble are printed twice under two numbers; the second copy should be dropped; affects nothing.
 - **Unparsed** (ExplicitCharacterSumsAndSieves, #8420 at b9a1276, 2026-11-07): Misprint** in tmeemt-art05 at §3 (Hiary's third derivative test): the constant `β` is printed with `65/15`; the source (hiary2016zeta Lemma 1.2) has `64/15`; affects a stated result.
 - **Unparsed** (YangMillsConnectionsAndCaloricGauge, #7643 at 32137ba, 2026-11-07): Gap** in OhTataru-YMHF at Corollary 5.15, PDF page 42 (line 1954): the linearised limit is claimed in `Ḣ^σ` for `−1 < σ < 2`; its proof, Lemma 5.33(2) (PDF page 54, line 2516), gives `0 ≤ σ ≤ 1`; affects a stated result.
+- **Unparsed** (ExplicitZetaBounds, #8434 at c9c623a, 2026-11-08): Error** in `trudgian2014argument` at Lemma 3 (the logarithmic Phragmén–Lindelöf lemma): the source says `|log(Q + s)|` may be used as an interpolating factor with unequal exponents; it is not monotone in `σ`, as `fiori2025` lines 13–18 and 91–93 record; affects the proof (and the constants of Trudgian's and HSW's `N(T)` bounds).
+- **Unparsed** (ExplicitZetaBounds, #8434 at c9c623a, 2026-11-08): Error** in `ramare2016density` at equation (1.1), printed page 326: the source says `N(σ, T) ≤ 4.9(3T)^{8(1−σ)/3}(log T)^{5−2σ} + 51.5 log² T`; `kadirilumleyng2018` lines 93–95 record that the proof is mistaken and quote a revised form with `965`; affects a stated result.
+- **Unparsed** (ExplicitZetaBounds, #8434 at c9c623a, 2026-11-08): Error** in `ramare2016perron` at Theorem 3.1 and definition (3.1): `cullyhugilljohnston2025` lines 68–76 record a missing factor `k + 1` in the error term, a typo in (3.1) and measure-theoretic gaps; affects the proof and the stated error term.
+- **Unparsed** (ExplicitZetaBounds, #8434 at c9c623a, 2026-11-08): Misprint** in `kadiri2005` at Théorème 1.1, printed page 2 (arXiv version, line 14 and 79): the source says `R₀ = 5.70176`; the published version has `5.69693` (quoted at `mty2024` line 1279, `jangkwon2014` line 13); affects a stated result (the preprint's constant is the weaker one). <!-- tauceti-roadmap-review {"agent": "claude", "head": "c9c623aca48e92925800c82c2cd430eac664c965", "job": "REV-DESIGN-ExplicitZetaBounds", "model": "fable", "worker": "chris-x9"} -->
 
 ## A
 
@@ -4116,6 +4120,10 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 - **Gap** at the proof of Proposition 5.2.16(d), printed page 402: the source says a dihedral-type pair has both projective images of order at most 2; it should be also treat a rotation with a reflection, where the reflection and the product are involutions; affects the proof; only (the statement stands). Found by NonabelianLevelStructures (#2283 at 710d47b, 2026-11-05, claude fable).
 - **Error** at §4.11, printed page 388: the source says the centralizer obstruction d′ for odd dihedral D_{2k} is 2; it should be 1, since a primitive rotation's centralizer is the rotation subgroup (the normalizer quotient has order 2); affects nothing; (the text's conclusion that m′ is the culprit stands). Found by NonabelianLevelStructures (#2283 at 710d47b, 2026-11-05, claude fable).
 
+## chenggraham2004
+
+- **Error** at Lemma 2 (uncertified; page not read): the source says the Kusmin–Landau bound holds with constant `1/(πθ) + 1`; it should be `cot(πθ/2) ≤ 2/(πθ)` (Landau's optimal form; recorded at `hiarypatelyang2024` lines 29–33 and `ariasdereyna2024` lines 105–108); affects a stated result; and every bound built on its Lemma 3 (Hiary's `0.63`, Trudgian's `3/4 log t`). Found by ExplicitZetaBounds (#8434 at c9c623a, 2026-11-08, claude fable).
+
 ## Chen–Przytycki
 
 - **Misprint** at §2, Figure 2 caption, printed p.1 (Chen–Przytycki line 26): the source says the six-diagram basis is indexed only from b₁ through b₅; it should be index through b₆, since the figure has six diagrams and binom(4,2)=6; affects nothing. Found by TemperleyLiebOperatorAlgebras (ERRATA-TemperleyLiebOperatorAlgebras at cb75c58, 2026-10-24, codex gpt-6-astra).
@@ -6737,6 +6745,10 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 - **Error** at III, Corollary 2.14, printed p. 95 (Harvey-Lawson line 1604): the source says all sufficiently small C² boundary perturbations admit solutions C² up to the boundary; it should be require C²,α data and base solution, 0<α<1; at n=2, harmonic extensions of boundary φ with φ″(t)=sgn(t)/log(1/|t|) near zero need not be C²; affects a stated result. Found by CalibratedGeometry (ERRATA-CalibratedGeometry at 9cd2a3a, 2026-10-24, codex gpt-6-astra).
 - **Error** at III, Remark 2.6, printed p. 92 (Harvey-Lawson line 1527): the source says the graphical special Lagrangian locus has n components for even n and n−1 for odd n; it should be n−1 for even n and n for odd n; for n=2 it is the connected space of trace-free symmetric matrices; affects a stated result. Found by CalibratedGeometry (ERRATA-CalibratedGeometry at 9cd2a3a, 2026-10-24, codex gpt-6-astra).
 - **Misprint** at III, introduction to Theorem 2.7, printed p. 92 (Harvey-Lawson line 1529): the source says volume minimization follows from Theorem II.3.5; it should be Theorem II.4.2, or its Euclidean Corollary II.4.5; II.3.5 is the pointwise/integrated inequality lemma; affects the proof. Found by CalibratedGeometry (ERRATA-CalibratedGeometry at 9cd2a3a, 2026-10-24, codex gpt-6-astra).
+
+## hasanalizadeshenwong2022
+
+- **Error** at Corollary 1.2, printed page 2 (line 61): the source says the constant term is `9.3675`; it should be `9.4925` as recorded in `bellottiwong2025` Table 1 (line 58); affects a stated result. Found by ExplicitZetaBounds (#8434 at c9c623a, 2026-11-08, claude fable).
 
 ## Hatcher
 
