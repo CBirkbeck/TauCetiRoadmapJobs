@@ -1321,3 +1321,21 @@ status = "certified"
 accessed = "2026-11-08"
 version_note = "arXiv v5"
 cited_for = ["Layer 1.9"]
+
+[[source]]
+id = "tao2025mo"
+authors = "Terence Tao"
+title = "Answer to: Is the least common multiple sequence lcm(1, 2, …, n) a subset of the highly abundant numbers?"
+year = 2025
+venue = "MathOverflow, question 501066, answer 501229 (answered 5 October 2025, edited 20 January 2026)"
+locator_scheme = "theorem"
+locator = "answer 501229: the Theorem (the six-prime criterion) with its proof, and the range n ≥ 89693² that follows it (lines 233–297 of the recorded text)"
+url = "https://mathoverflow.net/a/501229"
+fetched_from = "https://mathoverflow.net/questions/501066/is-the-least-common-multiple-sequence-textlcm1-2-dots-n-a-subset-of-t/501229#501229"
+fetched_at = "2026-11-08T13:43:34Z"
+sha256 = "24b57f0d4cd9dea77cf4f43b6c92041a49dfd3e454862fb6478d0f5717014fb9"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-08"
+version_note = "MathOverflow content under CC BY-SA 4.0; the answer as edited on 20 January 2026"
+cited_for = ["9.3a"]
