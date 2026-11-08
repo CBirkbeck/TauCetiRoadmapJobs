@@ -241,3 +241,23 @@ status = "certified"
 accessed = "2026-11-08"
 version_note = "arXiv v2 read: its (2.1)–(2.7) (pp.5–6) and Lemma 2.3 (p.7) carry the content the README cites as the published (2-1)–(2-7) and Lemma 2.3; the published page numbers were not read"
 cited_for = ["2.17a", "2.21", "2.22", "2.22a", "2.31f", "2.34"]
+
+[[source]]
+id = "ghoshsarnak2022"
+authors = "Amit Ghosh, Peter Sarnak"
+title = "Integral points on Markoff type cubic surfaces"
+year = 2022
+venue = "Invent. Math. 2022"
+doi = "10.1007/s00222-022-01114-z"
+arxiv = "1706.06712v3"
+locator_scheme = "section"
+locator = "§1, p.3 (exceptional families); §4.1, pp.12–13; §8, Proposition 8.1, pp.22–24 (arXiv:1706.06712v3)"
+url = "https://arxiv.org/abs/1706.06712v3"
+fetched_from = "https://arxiv.org/pdf/1706.06712v3"
+fetched_at = "2026-11-08T23:01:30Z"
+sha256 = "e4ddc7a115ad4afd61f0063d0b931baf85792eee2267d1d5c232bece11d3163d"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-08"
+version_note = "arXiv v3 read; the README cites its page numbers (§1 p.3, §4.1 pp.12–13, §8 pp.22–24), which are the printed numbers of that PDF; the published pagination was not read"
+cited_for = ["3.13", "3.14", "3.15", "3.16", "3.31"]
