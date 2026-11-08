@@ -22,11 +22,13 @@ Goldbach-range propositions with their elementary transfers (Layer 13).
 **Place in the series.** AnalyticNumberTheoryPartI owns Layers 0–3 (quantitative primes, the
 exclusion of Landau–Siegel zeros, explicit formulas, Hecke and Artin comparisons, multiplicative
 means) and AnalyticNumberTheoryPartII owns Layers 4–6. This part owns Layers 7–13, numbered after
-them so that section numbers never collide across the series. Part I stops where its proofs use
-contour shifts, smoothing kernels, logarithmic-derivative bounds and the classical Dirichlet
-series as local steps of particular estimates (its §§0.11c, 1.2a and 3.24 are examples); this part
-builds those tools once, as general statements with their own hypotheses. It plans none of Part
-II's objects.
+them so that section numbers never collide across the series. Part I uses contour shifts and
+smoothing kernels as local steps of particular estimates (its §§0.11c and 1.2a are examples), and
+it states two results for `ζ` alone: the logarithmic-derivative bound right of the de la Vallée
+Poussin curve (§0.33a) and the divisor-square Euler identity (§3.24a). This part builds the tools
+once, as general statements with their own hypotheses; it consumes those two `ζ` statements as
+the `K = ℚ` instance of 10.3 and the `α = β = 0` instance of 11.3 and does not restate them. It
+plans none of Part II's objects.
 
 **Owned here.**
 
@@ -42,11 +44,22 @@ II's objects.
 - Layer 10: smoothed summatory functions of Dirichlet series as inverse Mellin integrals and their
   comparison with sharp sums; the transfer theorem in Ingham's zero-free-region form; the
   classical logarithmic-derivative bound for Dedekind zeta functions and Hecke `L`-functions of a
-  fixed field and character.
+  fixed field and character. Its `K = ℚ`, `χ = 1` instance is AnalyticNumberTheoryPartI §0.33a;
+  10.3 differs in covering every number field and every ray class character.
 - Layer 11: the predicate of complete multiplicativity on `ArithmeticFunction R` and its equivalence
   with Mathlib's `ℕ →*₀ R`; `σ_ν` for `ν ∈ ℂ`; `d_z` for `z ∈ ℂ`; Ramanujan's four-shift identity;
-  the series of `2^ω`, `μ²`, `λ`, `φ`, `τ²` and `τ(n²)`, each with its exact abscissa of absolute
-  convergence.
+  the series of `2^ω`, `μ²`, `λ` and `φ`, each with its exact abscissa of absolute convergence, and
+  the series of `τ(n²)`. The `α = β = 0` instance of Ramanujan's identity,
+  `Σ τ(n)² n^{−s} = ζ(s)⁴/ζ(2s)`, is AnalyticNumberTheoryPartI §3.24a. 11.1 is the `ℕ`-indexed
+  predicate for an arbitrary monoid with zero `R`, with no condition on the primes where `f`
+  vanishes; ArithmeticDirichletSeries §0.2's `TauCeti.MultiplicativeIdealWeight` is the
+  ideal-indexed carrier `Ideal (𝓞 K) →*₀ ℂ` of a number field that kills only finitely many primes,
+  with unit-modulus subtype `TauCeti.UnitaryIdealWeight`; at `K = ℚ` its image under
+  `TauCeti.normCoeff` is completely multiplicative in the sense of 11.1, while 11.1 also admits
+  functions vanishing at infinitely many primes. The Dirichlet series of `d_k = ζ^k`, `k ∈ ℕ`, is
+  the `z = k` instance of 11.2 and is owned here;
+  ArithmeticDirichletSeriesPartII, later in the merge order, owns the asymptotic of the partial
+  sums of `d_k` (its §5.1) and consumes the series from 11.2.
 - Layer 12: the Hardy–Landau Tauberian theorem for Cesàro means, one-sided for real sequences and
   two-sided in Banach spaces.
 - Layer 13: the asymptotics of the least number of factors of `n!` bounded by `n²` (Erdős problem
@@ -73,8 +86,10 @@ II's objects.
 - Zero-free regions, zero counting, the explicit formula and the prime ideal theorem with
   classical error: ZerosOfLFunctions Layers 4–8 (its §8.5 at `K = ℚ` is a Check of 10.2–10.3 here).
 - Effective and conductor-uniform estimates, the zero-free strip for `ζ` with logarithmic bounds
-  for `ζ − 1/(s − 1)` and `1/ζ` (§0.33), the Dirichlet divisor average (§3.22) and the pointwise
-  divisor bounds (§§3.1, 3.4): AnalyticNumberTheoryPartI.
+  for `ζ − 1/(s − 1)` and `1/ζ` (§0.33), the bounds for `ζ′` and `ζ′/ζ` after pole subtraction on
+  the half-plane right of the curve (§0.33a), the Dirichlet divisor average (§3.22), the pointwise
+  divisor bounds (§§3.1, 3.4) and the divisor-square Euler identity (§3.24a):
+  AnalyticNumberTheoryPartI.
 - Truncated Perron for `LSeries`, Abel–Stieltjes summation, Wiener–Ikehara and the transfer
   `ψ → θ → π`: ArithmeticDirichletSeries Layers 6, 9 and 10.
 - Newman's Tauberian theorem: TauberianBoundaryConvergence N1–N2.
@@ -237,11 +252,16 @@ product to bound `|L(2 + it)|` below by a positive constant depending only on `[
 
 ### From TauCetiRoadmap.AnalyticNumberTheoryPartI
 
-- §0.33 (zero-free zeta strip with `|ζ(s) − 1/(s − 1)|, |1/ζ(s)| ≤ C log(|Im s| + 2)`): a Check of
-  10.3 at `K = ℚ`.
+- §0.33a (`riemannZeta_deriv_logDeriv_bound`): there are `0 < β < 1` and `C > 0` such that every
+  `s ≠ 1` with `Re s ≥ 1 − β/log(|Im s| + 2)` has `ζ(s) ≠ 0` and
+  `|ζ′/ζ(s) + 1/(s − 1)| ≤ C log(|Im s| + 2)`, the left side extending analytically across `1`.
+  This is the `K = ℚ`, `χ = 1` instance of 10.3, consumed and not restated; it enters 10.3 as a
+  Check.
 - §§3.3–3.4 (the ordered factorization count `d_n` and its subpolynomial bound): `d_n` is the
   value at `z = n` of 11.2's `d_z`, a Check.
-- §3.24 states `Σ τ(n)² n^{−s} = ζ(s)⁴/ζ(2s)` as a step of its fourth-moment route; 11.3 proves it.
+- §3.24a (`riemannZeta_pow_four_eq_mul_LSeries_divisor_sq`): for `Re s > 1` the series
+  `Σ τ(n)² n^{−s}` converges absolutely and `ζ(s)⁴ = ζ(2s) Σ τ(n)² n^{−s}`. This is the
+  `α = β = 0` instance of 11.3, consumed and not restated; it enters 11.3 as a Check.
 
 There are no gaps: every prerequisite above exists at the pins or is a section of a roadmap on main
 or earlier in the merge order.
@@ -258,9 +278,11 @@ half-planes of absolute convergence. A proof sketch names one route and its inpu
 `Suggested.lean` states the definitions `mellinConv`, `deltaSpike`, `smoothCutoff`,
 `inghamExponent`, `IsCompletelyMultiplicative`, `sigmaC`, `generalizedDivisor`,
 `factorialFactorCount`, `EvenGoldbachUpTo` and `OddGoldbachUpTo`, and the headline theorems of
-7.1, 7.3, 8.2, 8.3, 9.4, 10.1, 10.2, 11.2–11.4, 12.1, 13.1 and 13.2, together with 10.3 at
-`K = ℚ` (`riemannZeta`); 8.1 and 10.3 for a general number field need Tau Ceti's residue and Hecke
-`L`-function and are stated in this README.
+7.1, 7.3, 8.1, 8.2, 8.3, 9.4, 10.1, 10.2, 10.3, 11.2–11.4, 12.1, 13.1 and 13.2. 8.1 is stated with
+`TauCeti.Contour.residue` and Mathlib's rectangle edge expression, and 10.3 in its general form,
+for `TauCeti.LFunctions.heckeLFunctionC χ` with `χ : TauCeti.GlobalNumberFields.RayClassCharacter 𝔪`
+of finite order; `Suggested.lean` imports the Tau Ceti modules that declare these carriers. The
+`K = ℚ`, `χ = 1` instance of 10.3 is AnalyticNumberTheoryPartI §0.33a and is not stated again.
 
 ## Layer 7: Fourier and Laplace tools
 
@@ -405,8 +427,10 @@ and split the curve integral into the four edges.
 
 *The U-shaped form.* If moreover `y ↦ f(σ₂ + iy)` is integrable on `ℝ` and `t₁ = −T`, `t₂ = T`,
 then `∫_ℝ f(σ₂ + iy) dy` equals the sum of the two tails `∫_{|y|>T} f(σ₂ + iy) dy`, the left edge
-`∫_{−T}^{T} f(σ₁ + iy) dy`, the two horizontal edges divided by `i`, and `2π Σ_{p∈P} Res_p f`
-(kontorovichtao-pntplus lines 596–613, Definitions 4.1.3–4.1.5 and Lemma 4.1.1).
+`∫_{−T}^{T} f(σ₁ + iy) dy`, the horizontal term
+`(∫_{σ₁}^{σ₂} f(x + iT) dx − ∫_{σ₁}^{σ₂} f(x − iT) dx)/i` (top edge minus bottom edge, divided by
+`i`), and `2π Σ_{p∈P} Res_p f` (kontorovichtao-pntplus lines 596–613, Definitions 4.1.3–4.1.5 and
+Lemma 4.1.1). This is the edge expression above divided by `i` and solved for the right edge.
 
 **Checks.**
 
@@ -417,6 +441,13 @@ then `∫_ℝ f(σ₂ + iy) dy` equals the sum of the two tails `∫_{|y|>T} f(�
   wrong.
 - `f = 1/s²` on `[−1, 1] ×ℂ [−1, 1]`: a double pole with residue `0`, and the expression is `0`;
   a statement restricted to simple poles would not cover it.
+- The sign of the horizontal term in the U-shaped form, tested on the finite-height identity behind
+  it (right edge = left edge + horizontal term + `2π Σ_{p∈P} Res_p f`, which needs no integrability)
+  at `f = 1/s`, `σ₁ = −1`, `σ₂ = 1`, `T = 1`: the right edge is `∫_{−1}^{1} dy/(1 + iy) = π/2`,
+  the left edge `∫_{−1}^{1} dy/(−1 + iy) = −π/2`, the bottom edge `∫_{−1}^{1} dx/(x − i) = iπ/2`,
+  the top edge `∫_{−1}^{1} dx/(x + i) = −iπ/2` and the residue sum `1`. The identity `π/2 = −π/2 + X + 2π` forces the horizontal term to be
+  `X = −π = (−iπ/2 − iπ/2)/i`, top minus bottom over `i`; bottom minus top over `i`, the clockwise
+  model, gives `+π` and fails.
 
 *Needs:* ZerosOfLFunctions §7.1; Tau Ceti `TauCeti.Contour.classicalResidueTheorem_nullHomologous`,
 `TauCeti.Contour.residue`; Mathlib `Complex.integral_boundary_rect_eq_zero_of_differentiableOn` (for
@@ -655,8 +686,11 @@ case `η = A₀/log^{n₁} t`; montgomeryvaughan2007, Chapter 6; tenenbaum2015, 
 iwanieckowalski2004, Chapter 5).
 
 Route: by 10.1 with `σ₀ = 1 + 1/log x`, write the smoothed sum as an integral on `Re s = σ₀`; choose
-`T ≥ 3` with `log T = η(T) log x` (possible by continuity and monotonicity once `η(3) log x > log 3`;
-smaller `x` are absorbed in `C′`), so that `η(T) log x = log T ≥ inghamExponent η x / 2`; apply 8.1
+`T ≥ 3` with `log T = η(T + 3) log x` (the function `t ↦ η(t + 3) log x − log t` is continuous and
+strictly decreasing on `[3, ∞)` and tends to `−∞`, and it is positive at `3` once
+`η(6) log x > log 3`; smaller `x` are absorbed in `C′`). Taking `t = T + 3 ≤ 2T` in the infimum gives
+`inghamExponent η x ≤ log T + log(2T)`, so `η(T + 3) log x = log T ≥ (inghamExponent η x − log 2)/2`,
+and the left edge saves `x^{−η(T + 3)} = 1/T`; apply 8.1
 on `[1 − η(T + 3), σ₀] ×ℂ [−T, T] ⊆ R_η`, which has the single pole `1` with residue
 `r · 𝓜1̃_ε(1) · x`; bound the tails by 9.4 and `|F(σ₀ + it)| ≤ B Σ log(n+1) n^{−σ₀} = O(B log² x)`,
 the horizontal edges and the left edge by the hypothesis on `G` and `|r/(s − 1)| ≤ |r|/η(T + 3)`;
@@ -669,8 +703,9 @@ Pintz's `1 − ε` (platttrudgian2020 lines 54–56) need zero-density input and
 
 - `η(t) = c₀/log t`: `inghamExponent η x = 2√(c₀ log x)` once `√(c₀ log x) ≥ log 3`; at `c₀ = 1`,
   `x = e^{100}` the infimum is `20`, attained at `log t = 10`. The conclusion is the classical
-  `x exp(−c√log x)`, consistent with ZerosOfLFunctions §8.5 at `K = ℚ` through 10.3.
-- `η(t) = A₀/log^{n₁} t` gives `inghamExponent η x ≍ (log x)^{1/(1+n₁)}`, the filed form; `n₁ = 9`
+  `x exp(−c√log x)`, consistent with ZerosOfLFunctions §8.5 at `K = ℚ` through 10.3 at `K = ℚ`
+  (AnalyticNumberTheoryPartI §0.33a).
+- `η(t) = A₀/log^{n₁} t` gives `inghamExponent η x ≍ (log x)^{1/(1+n₁)}`; `n₁ = 9`
   is kontorovichtao-pntplus line 1684 (Theorem 4.6.2, error `exp(−c (log x)^{1/10})`).
 - A constant width `η ≡ η₀` gives `inghamExponent η x = η₀ log x + log 3` and the power saving
   `x^{1−cη₀}`.
@@ -678,6 +713,12 @@ Pintz's `1 − ε` (platttrudgian2020 lines 54–56) need zero-density input and
   `η = c₀/log t` and gives no decay; the infimum over `t` is essential.
 - `a = μ`, `r = 0`, `G = 1/ζ`: the conclusion is `M(x) = O(x exp(−c√log x))`, the zero-residue case.
 - `a ≡ 1`, `r = 1`, `G = ζ − 1/(s − 1)`: the conclusion `⌊x⌋ − x = O(x exp(−cω))` holds trivially.
+- The height in the route is chosen by `η(T + 3)`, not by `η(T)`. Take `η = 1/2` on `[3, T₀]`,
+  linear on `[T₀, T₀ + 3]` down to `1/log²(T₀ + 3)`, and `1/log² t` beyond, which meets every
+  hypothesis with `a₀ = 1/2`, `A = 2` for `T₀ ≥ 6`, and `log x = 2 log T₀`. Then
+  `inghamExponent η x ≥ log T₀`; the choice `log T = η(T) log x` gives `T = T₀` and a left-edge
+  saving `x^{−η(T₀ + 3)} = exp(−2 log T₀/log²(T₀ + 3)) → 1`, no power of `T₀`, while the choice by
+  `η(T + 3)` saves `1/T` with `log T ≥ log(T₀ − 3)`.
 
 *Needs:* 8.1, 9.4, 10.1; Mathlib `LSeries`, `riemannZeta`; ZerosOfLFunctions §8.5 for the Check.
 
@@ -705,10 +746,12 @@ is `O(log |t|)` because `|L′/L(σ + it)| ≤ [K:ℚ] |ζ′/ζ(σ)|` for `σ >
 
 **Checks.**
 
-- `K = ℚ`, `χ = 1`: `G = −ζ′/ζ − 1/(s − 1)` and the statement is consistent with
-  AnalyticNumberTheoryPartI §0.33, whose bounds `|ζ − 1/(s − 1)|, |1/ζ| ≪ log t` give
-  `|ζ′/ζ| ≪ log³ t` on a narrower region by Cauchy's estimate on discs of radius `≍ 1/log t`,
-  weaker by two logarithms and so not contradicting the statement.
+- `K = ℚ`, `χ = 1` is AnalyticNumberTheoryPartI §0.33a: there `G = −ζ′/ζ − 1/(s − 1)`, extended
+  across `1`, and with `c = β` (Part I's width) every `s ∈ R_c` has
+  `Re s ≥ 1 − β/log(|Im s| + 3) > 1 − β/log(|Im s| + 2)`, inside the open half-plane right of Part
+  I's curve, where `ζ` has no zero and `|G(s)| ≤ C log(|Im s| + 2) ≤ C log(|Im s| + 3)`; the residue
+  term is `δ_χ = 1`. Part I's strip bounds of §0.33 alone, multiplied as `ζ′ · (1/ζ)`, give only
+  `log³`, so the single logarithm here agrees with §0.33a and does not follow from §0.33.
 - `δ_χ` is the residue of `−L′/L` at `1`: `ζ` has residue `1`, `ζ′/ζ` residue `−1`, so `−ζ′/ζ` has
   residue `+1`; a definition with `δ_χ` the residue of `L` itself would put the class number formula
   in place of `1` for `K ≠ ℚ`.
@@ -720,17 +763,18 @@ is `O(log |t|)` because `|L′/L(σ + it)| ≤ [K:ℚ] |ζ′/ζ(σ)|` for `σ >
 
 *Needs:* 8.3; ZerosOfLFunctions §§3.4, 6.2–6.5; LFunctions Layers 3, 5 and 7; Tau Ceti
 `TauCeti.LFunctions.heckeLFunctionC`, `TauCeti.LFunctions.heckeLFunctionC_eq_primitive`;
-AnalyticNumberTheoryPartI §0.33 for the Check.
+AnalyticNumberTheoryPartI §0.33a for the Check.
 
 ### Examples
 
-- 10.2 with 10.3 at `K = ℚ`, `χ = 1`, `a = Λ`, `r = 1`: `ψ(x) = x + O(x exp(−c√log x))`.
+- 10.2 with 10.3 at `K = ℚ`, `χ = 1` (AnalyticNumberTheoryPartI §0.33a), `a = Λ`, `r = 1`:
+  `ψ(x) = x + O(x exp(−c√log x))`.
 - 10.2 with `a` the coefficients of `−L′/L(s, χ)` for a nontrivial Dirichlet character: `r = 0`.
 
 ### Dependencies
 
 Layers 8 and 9; ZerosOfLFunctions §§3.4, 4.3, 6.2–6.5, 8.5; LFunctions Layers 3, 5, 7; Tau Ceti Hecke
-`L`-functions; Mathlib Mellin inversion.
+`L`-functions; Mathlib Mellin inversion; AnalyticNumberTheoryPartI §0.33a for a Check.
 
 ## Layer 11: Dirichlet series of the classical arithmetic functions
 
@@ -759,6 +803,10 @@ Definition 9.1.8, Theorems 9.1.66–9.1.67; apostol1976, Chapter 2). API:
   coprime-only condition, Mathlib's `IsMultiplicative`, is the wrong model.
 - Dropping `f 1 = 1` admits the zero function, which is no `ℕ →*₀ R` for nontrivial `R`.
 - The inverse formula at `f = λ`: `μλ = μ²`, and `Σ_{d|4} λ(d) μ²(4/d) = 0 − 1 + 1 = 0`.
+- The indicator of the positive integers all of whose prime factors are `≡ 1 (mod 4)` is completely
+  multiplicative (`f(1) = 1`, `f(5 · 13) = 1 = f(5) f(13)`, `f(5 · 3) = 0 = f(5) f(3)`) and vanishes
+  at `2` and at every prime `≡ 3 (mod 4)`; a predicate requiring a finite set of zero primes, as the
+  ideal weights of ArithmeticDirichletSeries §0.2 do, would exclude it.
 
 *Needs:* Mathlib `ArithmeticFunction`, `ArithmeticFunction.IsMultiplicative`, `MonoidWithZeroHom`,
 `ArithmeticFunction.liouville_apply_mul`, `EulerProduct.eulerProduct_completely_multiplicative_tprod`.
@@ -822,20 +870,24 @@ Let `α, β ∈ ℂ` and `Re s > max(1, 1 + Re α, 1 + Re β, 1 + Re(α + β))`.
 `ζ(s) ζ(s − α) ζ(s − β) ζ(s − α − β)/ζ(2s − α − β)`, with `ζ(2s − α − β) ≠ 0` because
 `Re(2s − α − β) > 2` (kontorovichtao-pntplus lines 3324–3329, Theorem 9.1.33; iwanieckowalski2004,
 (1.28); titchmarsh1986, Chapter I). Route: both sides are Euler products on the half-plane; compare
-the local factors, which are rational functions of `X = p^{−s}`, `p^α`, `p^β`. Corollaries for
-`Re s > 1`: `Σ τ(n)² n^{−s} = ζ(s)⁴/ζ(2s)` (`α = β = 0`) and, by the same local comparison,
-`Σ τ(n²) n^{−s} = ζ(s)³/ζ(2s)` (lines 3336–3360 and 3489, Theorems 9.1.34–9.1.36 and 9.1.50).
+the local factors, which are rational functions of `X = p^{−s}`, `p^α`, `p^β`. Corollary for
+`Re s > 1`, by the same local comparison: `Σ τ(n²) n^{−s}` converges absolutely and equals
+`ζ(s)³/ζ(2s)` (lines 3353–3363 and 3489–3494, Theorems 9.1.36 and 9.1.50).
 
 **Checks.**
 
-- The `p²`-coefficient of `ζ⁴/ζ(2s)` is that of `(1 − X)^{−4}(1 − X²)`, namely `10 − 1 = 9 = τ(p²)²`;
-  without the factor `ζ(2s)` it would be `10`.
+- At `α = β = 0` the identity is AnalyticNumberTheoryPartI §3.24a, `Σ τ(n)² n^{−s} = ζ(s)⁴/ζ(2s)`
+  on `Re s > 1` (kontorovichtao-pntplus line 3336, Theorem 9.1.34), whose half-plane is the one
+  here at `α = β = 0`. The local factor `(1 − X)^{−4}(1 − X²) = (1 + X)/(1 − X)³` has coefficients
+  `1, 4, 9, 16, 25 = (k + 1)²`, Part I's prime-power statement; the `p²`-coefficient is
+  `10 − 1 = 9 = τ(p²)²`, and without the factor `ζ(2s)` it would be `10`.
 - `(1 − X)^{−3}(1 − X²) = 1 + 3X + 5X² + ⋯` gives `τ(p²) = 3` and `τ(p⁴) = 5`.
 - The half-plane is needed: at `α = 2`, `β = 0`, real `s = 3` lies on the boundary
   `1 + Re α = 3`, and `Σ σ₂(n) τ(n) n^{−3} ≥ Σ_p 2(p² + 1)/p³ = ∞`.
 
 *Needs:* 11.2; Mathlib Euler products (`EulerProduct.eulerProduct_tprod` via
-`ArithmeticFunction.IsMultiplicative`), `riemannZeta_ne_zero_of_one_le_re`.
+`ArithmeticFunction.IsMultiplicative`), `riemannZeta_ne_zero_of_one_le_re`;
+AnalyticNumberTheoryPartI §3.24a for the Check.
 
 ### 11.4 The series of `2^ω`, `μ²`, `λ` and `φ`
 
@@ -866,7 +918,7 @@ cast to `ℂ`; no new carrier is introduced for `2^ω`.
 ### Dependencies
 
 Mathlib arithmetic functions, `LSeries`, Euler products, `Ring.multichoose`; AnalyticNumberTheoryPartI
-§3.3 for a Check.
+§§3.3 and 3.24a for Checks.
 
 ## Layer 12: Cesàro summability
 

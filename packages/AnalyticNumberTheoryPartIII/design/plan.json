@@ -350,7 +350,7 @@
      "id": "8.1b",
      "kind": "theorem",
      "name": "verticalIntegral_eq_U_contour_add_residues",
-     "statement": "Under 8.1a with t₁ = −T, t₂ = T and y ↦ f(σ₂+iy) integrable on ℝ: ∫_ℝ f(σ₂+iy)dy equals the tails over |y|>T on Re s = σ₂, plus ∫_{−T}^{T} f(σ₁+iy)dy, plus the horizontal edges divided by i, plus 2π Σ_{p∈P} Res_p f.",
+     "statement": "Under 8.1a with t₁ = −T, t₂ = T and y ↦ f(σ₂+iy) integrable on ℝ: ∫_ℝ f(σ₂+iy)dy equals the tails over |y|>T on Re s = σ₂, plus ∫_{−T}^{T} f(σ₁+iy)dy, plus (∫_{σ₁}^{σ₂} f(x+iT)dx − ∫_{σ₁}^{σ₂} f(x−iT)dx)/i (top minus bottom, over i), plus 2π Σ_{p∈P} Res_p f.",
      "hypotheses": [
       "hypotheses of 8.1a",
       "Integrable (fun y ↦ f (σ₂ + y * I))"
@@ -363,7 +363,13 @@
       "target:8.1a"
      ],
      "api": [],
-     "tests": []
+     "tests": [
+      {
+       "name": "horizontal_sign",
+       "kind": "convention",
+       "statement": "f = 1/s, σ₁ = −1, σ₂ = 1, T = 1 (finite-height identity): right π/2, left −π/2, bottom iπ/2, top −iπ/2, residue 1; π/2 = −π/2 + X + 2π forces X = −π = (top − bottom)/i; the clockwise model gives +π."
+      }
+     ]
     },
     {
      "id": "8.2a",
@@ -846,7 +852,7 @@
       {
        "name": "classical",
        "kind": "compatibility",
-       "statement": "η = c/log t with 10.3 at K = ℚ gives ψ(x) = x + O(x exp(−c√log x)), ZerosOfLFunctions §8.5."
+       "statement": "η = c/log t with 10.3 at K = ℚ (AnalyticNumberTheoryPartI §0.33a) gives ψ(x) = x + O(x exp(−c√log x)), ZerosOfLFunctions §8.5."
       },
       {
        "name": "medium",
@@ -862,6 +868,11 @@
        "name": "constant_width",
        "kind": "computation",
        "statement": "η ≡ η₀: power saving x^{1−cη₀}."
+      },
+      {
+       "name": "steep_width",
+       "kind": "non-example",
+       "statement": "η = 1/2 on [3,T₀], linear to 1/log²(T₀+3) on [T₀,T₀+3], 1/log² t beyond (a₀ = 1/2, A = 2), log x = 2 log T₀: choosing T by log T = η(T) log x gives T = T₀ and left-edge saving exp(−2 log T₀/log²(T₀+3)) → 1 although inghamExponent η x ≥ log T₀; the route chooses T by log T = η(T+3) log x and saves 1/T."
       }
      ]
     },
@@ -896,7 +907,7 @@
       {
        "name": "zeta",
        "kind": "compatibility",
-       "statement": "K = ℚ, χ = 1: consistent with AnalyticNumberTheoryPartI §0.33, which gives the weaker |ζ′/ζ| ≪ log³ t."
+       "statement": "K = ℚ, χ = 1 is AnalyticNumberTheoryPartI §0.33a: with c = β, R_c lies in the open half-plane right of Part I's curve (log(|t|+3) > log(|t|+2)), G = −ζ′/ζ − 1/(s−1) extended across 1, |G| ≤ C log(|t|+2) ≤ C log(|t|+3), δ_χ = 1; §0.33's strip bounds multiplied give only log³."
       },
       {
        "name": "residue_sign",
@@ -987,6 +998,11 @@
        "name": "inverse",
        "kind": "computation",
        "statement": "λ ⋆ μ² at 4: 0 − 1 + 1 = 0."
+      },
+      {
+       "name": "infinitely_many_zero_primes",
+       "kind": "boundary",
+       "statement": "the indicator of integers with all prime factors ≡ 1 mod 4 is completely multiplicative and vanishes at 2 and every prime ≡ 3 mod 4; a finite-bad-set carrier (ArithmeticDirichletSeries §0.2) would exclude it."
       }
      ]
     },
@@ -1128,13 +1144,13 @@
      "id": "11.3",
      "kind": "theorem",
      "name": "LSeries_sigmaC_mul_sigmaC",
-     "statement": "For α, β ∈ ℂ and Re s > max(1, 1+Re α, 1+Re β, 1+Re(α+β)): Σ σ_α(n)σ_β(n) n^{−s} converges absolutely and equals ζ(s)ζ(s−α)ζ(s−β)ζ(s−α−β)/ζ(2s−α−β); corollaries Σ τ(n)² n^{−s} = ζ⁴/ζ(2s) and Σ τ(n²) n^{−s} = ζ³/ζ(2s) for Re s > 1.",
+     "statement": "For α, β ∈ ℂ and Re s > max(1, 1+Re α, 1+Re β, 1+Re(α+β)): Σ σ_α(n)σ_β(n) n^{−s} converges absolutely and equals ζ(s)ζ(s−α)ζ(s−β)ζ(s−α−β)/ζ(2s−α−β); corollary Σ τ(n²) n^{−s} = ζ³/ζ(2s) for Re s > 1. The α = β = 0 case Σ τ(n)² n^{−s} = ζ⁴/ζ(2s) is AnalyticNumberTheoryPartI §3.24a.",
      "hypotheses": [
       "max(1, 1+Re α, 1+Re β, 1+Re(α+β)) < Re s"
      ],
      "locator": {
       "source": "kontorovichtao-pntplus",
-      "where": "lines 3324–3360, 3489, Theorems 9.1.33–9.1.36, 9.1.50"
+      "where": "lines 3324–3329, 3353–3363, 3489–3494, Theorems 9.1.33, 9.1.36, 9.1.50"
      },
      "prerequisites": [
       "target:11.2a",
@@ -1145,8 +1161,8 @@
      "tests": [
       {
        "name": "tau_sq",
-       "kind": "computation",
-       "statement": "p²-coefficient of ζ⁴/ζ(2s) is 10 − 1 = 9 = τ(p²)²."
+       "kind": "compatibility",
+       "statement": "α = β = 0 is AnalyticNumberTheoryPartI §3.24a: local factor (1−X)^{−4}(1−X²) = (1+X)/(1−X)³ = Σ (k+1)² X^k; p²-coefficient 10 − 1 = 9 = τ(p²)², 10 without ζ(2s)."
       },
       {
        "name": "tau_n2",
@@ -1544,12 +1560,12 @@
   {
    "roadmap": "AnalyticNumberTheoryPartI",
    "sections": [
-    "§0.33",
+    "§0.33a",
     "§3.3",
     "§3.4",
-    "§3.24"
+    "§3.24a"
    ],
-   "what": "Checks of 10.3 and 11.2; the τ² identity used by §3.24 is proved in 11.3"
+   "what": "§0.33a is the K = ℚ, χ = 1 instance of 10.3 and §3.24a the α = β = 0 instance of 11.3 (Σ τ(n)² n^{−s} = ζ⁴/ζ(2s)), both consumed as Checks and not restated; §§3.3–3.4 d_n as a Check of 11.2"
   }
  ],
  "consumers": [
@@ -1571,7 +1587,7 @@
   },
   {
    "roadmap": "ArithmeticDirichletSeriesPartII",
-   "what": "§5.1 Dirichlet series of d_k is the z = k case of 11.2"
+   "what": "§5.1: the Dirichlet series of d_k = ζ^k, k ∈ ℕ, is the z = k case of 11.2, owned here; §5.1 keeps the asymptotic of the partial sums of d_k"
   }
  ],
  "gaps": []
