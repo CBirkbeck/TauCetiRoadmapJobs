@@ -576,7 +576,7 @@
      "id": "3.3",
      "kind": "construction",
      "name": "MappingClass.outerAction",
-     "statement": "Ψ_x : Mod^±(X) →* Out(π₁(X,x)), [f] ↦ [f_δ], well defined and a homomorphism; for σ : x ⟶ x' the induced Out(π₁(X,x)) ≃* Out(π₁(X,x')) is independent of σ and intertwines Ψ_x and Ψ_{x'}; on Mod(S*) the based map [f] ↦ f_const lifts Ψ_x and sends Push(α) to MulAut.conj [α].",
+     "statement": "Ψ_x : Mod^±(X) →* Out(π₁(X,x)), [f] ↦ [f_δ], well defined and a homomorphism; for σ : x ⟶ x' the induced Out(π₁(X,x)) ≃* Out(π₁(X,x')) is independent of σ and intertwines Ψ_x and Ψ_{x'}; for X = Σ_{g,n}, Ψ_x[f] on Mod_{g,n} is the outer class of f_* through which MordellLawrenceVenkatesh §5.9's actions on finite coverings and on conjugacy classes of homomorphisms factor; on Mod(S*) the based map [f] ↦ f_const lifts Ψ_x and sends Push(α) to MulAut.conj [α].",
      "hypotheses": [
       "X path-connected"
      ],
@@ -618,7 +618,7 @@
       {
        "name": "torus_shear",
        "kind": "computation",
-       "statement": "The shear (u,v) ↦ (u, u+v) maps to [[1,1],[0,1]] in GL₂(ℤ)."
+       "statement": "The shear (u,v) ↦ (u, u+v) maps to [[1,0],[1,1]] in GL₂(ℤ) (matrices on column vectors); its transpose is the image of (u,v) ↦ (u+v, v)."
       },
       {
        "name": "interval",
@@ -631,9 +631,10 @@
      "id": "3.4",
      "kind": "theorem",
      "name": "MappingClass.outerAction_surjective_closed",
-     "statement": "For closed connected oriented smooth Σ, π₀ Diff(Σ) → Mod^±(Σ) is a homomorphism; Ψ_x composed with it is TeichmullerGeometry §5.2's map read through §4.2's Out(Π) ≃ Out(π₁); Ψ_x : Mod^±(Σ) → Out(π₁(Σ,x)) is surjective and Mod(Σ) maps onto the outer classes acting trivially on H₂.",
+     "statement": "For closed connected oriented smooth Σ, π₀ Diff(Σ) → Mod^±(Σ) is a homomorphism; Ψ_x composed with it is TeichmullerGeometry §5.2's map read through §4.2's Out(Π) ≃ Out(π₁); Ψ_x : Mod^±(Σ) → Out(π₁(Σ,x)) is surjective; for genus g ≥ 1, Out(π₁(Σ,x)) acts on H₂(π₁(Σ,x); ℤ) (groupHomology of the trivial module, inner automorphisms acting trivially), H₂(π₁(Σ,x); ℤ) ≅ H₂(Σ; ℤ) ≅ ℤ by asphericity, and Ψ_x maps Mod(Σ) onto the index-two subgroup acting trivially on it; for g = 0 Out(π₁) and the image of Mod(Σ) are trivial.",
      "hypotheses": [
-      "Σ closed connected oriented smooth surface"
+      "Σ closed connected oriented smooth surface",
+      "g ≥ 1 for the H₂ clause"
      ],
      "locator": {
       "source": "FarbMargalit2012",
@@ -641,23 +642,31 @@
      },
      "prerequisites": [
       "target:2.1",
+      "target:3.2",
       "target:3.3",
       "roadmap:TeichmullerGeometry §0.2",
       "roadmap:TeichmullerGeometry §3.1",
       "roadmap:TeichmullerGeometry §4.2",
-      "roadmap:TeichmullerGeometry §5.2"
+      "roadmap:TeichmullerGeometry §4.3",
+      "roadmap:TeichmullerGeometry §5.2",
+      "roadmap:MordellLawrenceVenkatesh §5.1",
+      "roadmap:MordellLawrenceVenkatesh §5.15",
+      "roadmap:ClassifyingSpaces Stage 3 item 11",
+      "roadmap:ClassifyingSpaces Stage 4 item 17",
+      "mathlib:groupHomology",
+      "mathlib:groupHomology.map"
      ],
      "api": [],
      "tests": [
       {
        "name": "torus",
        "kind": "computation",
-       "statement": "Mod^±(T²) ≅ GL₂(ℤ) via H₁."
+       "statement": "Mod^±(T²) ≅ GL₂(ℤ) via H₁; A acts on H₂(ℤ²;ℤ) = Λ²ℤ² by det A, so Mod(T²) maps onto SL₂(ℤ), index two."
       },
       {
        "name": "sphere",
        "kind": "degenerate",
-       "statement": "Out(1) is trivial while the antipodal map is a nontrivial class: surjective, not injective."
+       "statement": "Out(1) is trivial while the antipodal map is a nontrivial class: surjective, not injective; H₂(π₁(S²);ℤ) = 0 ≠ ℤ = H₂(S²;ℤ), so the H₂ clause needs g ≥ 1."
       },
       {
        "name": "genus_two",
@@ -670,18 +679,19 @@
      "id": "3.5",
      "kind": "theorem",
      "name": "MappingClass.actionHomConj",
-     "statement": "Mod^±_{g,n} acts on Rep(π₁(Σ_{g,n},x), H) through Ψ_x and 1.3, compatibly with basepoint change and H →* H'; orbits are finite under a finite-index subgroup (e.g. PMod_{g,n}) iff under Mod^±_{g,n}; for nonabelian H the inner automorphisms act nontrivially on homomorphisms with nonabelian image, so the action does not lift to Hom.",
+     "statement": "For every group H, MordellLawrenceVenkatesh §5.9's action of Mod_{g,n} on Rep(π₁(Σ_{g,n},x), H) is Ψ_x followed by 1.3, [f]·[ρ] = [ρ ∘ Ψ_x[f]⁻¹]; this formula extends it to Mod^±_{g,n}, compatibly with basepoint change and H →* H'; orbits are finite under a finite-index subgroup (e.g. PMod_{g,n}) iff under Mod^±_{g,n}; for nonabelian H the inner automorphisms act nontrivially on homomorphisms with nonabelian image, so the action does not lift to Hom.",
      "hypotheses": [
       "H an arbitrary group"
      ],
      "locator": {
       "source": "LandesmanLitt2024",
-      "where": "lines 41–50 (Definition 1.1.1); §2.1, line 523"
+      "where": "lines 41–50 (Definition 1.1.1); lines 473–475 (PMod_{g,n} of index n!)"
      },
      "prerequisites": [
       "target:1.3",
       "target:2.3",
       "target:3.3",
+      "roadmap:MordellLawrenceVenkatesh §5.9",
       "roadmap:MordellLawrenceVenkatesh §5.22"
      ],
      "api": [],
@@ -700,6 +710,11 @@
        "name": "abelian_target",
        "kind": "degenerate",
        "statement": "For commutative H the action is through H₁ and lifts to Hom."
+      },
+      {
+       "name": "coverings_comparison",
+       "kind": "compatibility",
+       "statement": "On the torus, for the shear f (Ψ[f] = M = [[1,0],[1,1]]) and the triple cover with monodromy ρ(u,v) = v mod 3, f∘p has subgroup M(ker ρ) = {b ≡ a mod 3} = ker(ρ ∘ M⁻¹), as MordellLawrenceVenkatesh §5.9's precomposition with (f⁻¹)_* predicts; the right action ρ ∘ M gives {b ≡ −a mod 3}."
       }
      ]
     }
@@ -924,9 +939,9 @@
      "prerequisites": [
       "roadmap:ReductiveGroups Layer 8",
       "roadmap:ReductiveGroups Layer 9",
-      "roadmap:LieGroups Layer 7",
-      "roadmap:ArithmeticLocallySymmetricSpaces §ALS.0.1",
-      "gap:holomorphic-reps-algebraic"
+      "roadmap:LieGroups Layer 7, Real forms and global descent",
+      "roadmap:LieGroups Layer 7, Compact-real-form pairs and algebraic morphisms",
+      "roadmap:ArithmeticLocallySymmetricSpaces §ALS.0.1"
      ],
      "api": [],
      "tests": [
@@ -1060,11 +1075,6 @@
        "name": "IsReductiveRep.comp_surjective",
        "role": "functoriality",
        "statement": "Hom^red is stable under precomposition with surjections Γ' ↠ Γ and automorphisms of Γ."
-      },
-      {
-       "name": "IsReductiveRep.ofComplex_iff",
-       "role": "compatibility",
-       "statement": "For Res_{ℂ/ℝ} H, real semisimplicity of Lie(H) equals complex semisimplicity."
       }
      ],
      "tests": [
@@ -1089,7 +1099,7 @@
      "id": "6.2",
      "kind": "theorem",
      "name": "IsSemisimpleRepresentation.baseChange_iff",
-     "statement": "For k'/k and a finite-dimensional representation V of a monoid over k: V ⊗ k' semisimple ⇒ V semisimple; the converse for perfect k. Hence Ad ∘ ρ semisimple on 𝔤^ℝ iff on 𝔤.",
+     "statement": "For k'/k and a finite-dimensional representation V of a monoid over k: V ⊗ k' semisimple ⇒ V semisimple; the converse for perfect k. Hence Ad ∘ ρ semisimple on 𝔤^ℝ iff on 𝔤; and for 𝐆 = Res_{ℂ/ℝ} H, Ad ∘ ρ on Lie(H) regarded over ℝ is semisimple iff the complex representation Lie(H) is, via W_ℝ ⊗_ℝ ℂ ≅ W ⊕ W̄.",
      "hypotheses": [
       "k a field",
       "V finite-dimensional"
@@ -1100,7 +1110,8 @@
      },
      "prerequisites": [
       "roadmap:ArithmeticGaloisRepresentations §1.7",
-      "mathlib:IsSemisimpleModule"
+      "mathlib:IsSemisimpleModule",
+      "target:5.1"
      ],
      "api": [],
      "tests": [
@@ -1118,6 +1129,11 @@
        "name": "imperfect",
        "kind": "non-example",
        "statement": "Over k = 𝔽_p(s), k' = k(s^{1/p}) the converse fails (ArithmeticGaloisRepresentations §1.7's example)."
+      },
+      {
+       "name": "weil_restriction",
+       "kind": "computation",
+       "statement": "For H = GL₂, Γ = ℤ: ρ(1) = [[1,1],[0,1]] gives a nontrivial unipotent Ad, semisimple on neither 𝔤𝔩₂(ℂ) nor ℝ⁸; ρ(1) = diag(2,3) is semisimple on both."
       }
      ]
     },
@@ -1163,11 +1179,12 @@
      "id": "6.4",
      "kind": "theorem",
      "name": "isGCompletelyReducible_iff_reductive",
-     "statement": "For G, Z as in 6.3, Z is G-completely reducible iff Z⁰ is reductive.",
+     "statement": "For G as in 6.3 and Z a closed subgroup topologically generated by finitely many elements z₁,…,z_m, Z is G-completely reducible iff Z⁰ is reductive; the implication G-cr ⇒ Z⁰ reductive holds for every closed Z (gap gcr-reductive-identity-component).",
      "hypotheses": [
       "characteristic zero",
+      "algebraically closed field",
       "G connected reductive",
-      "Z closed subgroup, topologically finitely generated for the route"
+      "Z a closed subgroup topologically generated by finitely many elements (for the reverse implication)"
      ],
      "locator": {
       "source": "BateMartinRohrle2005",
@@ -1198,6 +1215,11 @@
        "name": "GLV",
        "kind": "compatibility",
        "statement": "For G = GL(V), complete reducibility is semisimplicity of V."
+      },
+      {
+       "name": "normalizer_torus",
+       "kind": "computation",
+       "statement": "Z = N(T) in SL₂(ℂ) is topologically generated by diag(2,1/2) and [[0,−1],[1,0]]; Z⁰ = T reductive, Z fixes no line, so Z is SL₂-completely reducible although disconnected."
       }
      ]
     },
@@ -1568,7 +1590,7 @@
     "§5.22",
     "§5.23"
    ],
-   "what": "Surfaces with punctures, classification, Mod(S), Mod(S*), Forget, isotopy extension for a moving point, Push, the Birman exact sequence, the symplectic representation, the once-punctured free basis."
+   "what": "Surfaces with punctures, classification, Mod(S) and its action through Out(pi_1 S) on conjugacy classes of homomorphisms and on finite coverings, Mod(S*), Forget, asphericity, isotopy extension for a moving point, Push, the Birman exact sequence, the symplectic representation, the once-punctured free basis."
   },
   {
    "roadmap": "TeichmullerGeometry",
@@ -1599,6 +1621,14 @@
     "Stage 1 item 5"
    ],
    "what": "Based van Kampen and the free fundamental group of a wedge of circles."
+  },
+  {
+   "roadmap": "ClassifyingSpaces",
+   "sections": [
+    "Stage 3 item 11",
+    "Stage 4 item 17"
+   ],
+   "what": "Singular homology of a K(G,1) CW complex is Mathlib's groupHomology of the trivial module, naturally; maps of K(G,1) complexes realizing homomorphisms of fundamental groups."
   },
   {
    "roadmap": "ReductiveGroups",
@@ -1648,10 +1678,12 @@
   {
    "roadmap": "LieGroups",
    "sections": [
-    "Layer 7",
+    "Layer 7, Real forms and global descent",
+    "Layer 7, Representations and holomorphic descent",
+    "Layer 7, Compact-real-form pairs and algebraic morphisms",
     "Layer 9"
    ],
-   "what": "Compact real forms and holomorphic representations; the Cartan decomposition."
+   "what": "Compact real forms of connected complex reductive groups (existence, connectedness, conjugacy); holomorphic representations of the complexification versus continuous representations of the compact form; regular algebraicity of the holomorphic extension of a continuous homomorphism between compact-real-form pairs; the Cartan decomposition."
   },
   {
    "roadmap": "CompactGroups",
@@ -1704,17 +1736,6 @@
    "detail": "For a closed unipotent subgroup U of a connected reductive group G over an algebraically closed field there is a parabolic P with U contained in R_u(P) and N_G(U) contained in P. Needed by the route of gcr-reductive-identity-component.",
    "needs": "The Borel-Tits theorem placing a closed unipotent subgroup and its normalizer in a parabolic whose unipotent radical contains it.",
    "supplier": "ReductiveGroups",
-   "section": "Layer 7"
-  },
-  {
-   "slug": "holomorphic-reps-algebraic",
-   "title": "Holomorphic representations of complex reductive groups are algebraic",
-   "neededBy": [
-    "5.2"
-   ],
-   "detail": "For H connected reductive over C, every holomorphic finite-dimensional representation of the complex Lie group H(C) is a morphism of algebraic groups; equivalently LieGroups Layer 7's complexification of a compact real form of H(C) is H(C) with its algebraic structure.",
-   "needs": "Algebraicity of holomorphic finite-dimensional representations of the complex points of a connected reductive group over C.",
-   "supplier": "LieGroups",
    "section": "Layer 7"
   }
  ]
