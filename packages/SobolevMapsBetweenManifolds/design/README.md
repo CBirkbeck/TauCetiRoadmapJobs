@@ -101,10 +101,14 @@ It leaves to named roadmaps:
 - [PseudodifferentialOperators](../PseudodifferentialOperators/README.md) §5.2 owns Sobolev
   sections of vector bundles over compact bases, a global normed carrier. The classes here are
   local and need no compactness.
-- [RiemannianGeometry](../RiemannianGeometry/README.md) R4.6 and R6 prove that the cut locus and
-  the focal set have Riemannian measure zero. They relate chart nullity to the volume of a smooth
-  metric for those sets. The comparison for arbitrary sets and every continuous metric is §3.1
-  here.
+- [RiemannianGeometry](../RiemannianGeometry/README.md) R4.6 owns the comparison of chartwise
+  nullity with the Riemannian volume under its conventions (smooth, boundaryless, Hausdorff,
+  second-countable manifolds with smooth metrics), through which it proves that the cut locus has
+  Riemannian measure zero; R6 reuses the comparison for the focal set. §3.1 differs in asking only
+  a continuous metric on a `C¹` Lindelöf manifold, possibly with boundary, and for a smooth metric
+  it is R4.6's comparison (a Check). Its consequences (the almost-everywhere reformulation, the
+  independence of the metric, and `TauCeti.riemannianVolume = volume` on a flat inner product
+  space) are owned here.
 - [DifferentialGeometry](../DifferentialGeometry/README.md) Layer 2 (orientations), 12.1
   (metrics on open subsets) and 12.4 (volume form and Riemannian measure) are consumed through
   their Tau Ceti implementations.
@@ -170,7 +174,10 @@ a hypothesis (§8.2).
 - **Dimension.** `n = finrank ℝ E`. Dimension `0` is allowed and computed in the Checks: every map
   of a `0`-manifold lies in every class, `Df = 0`, and `J(A) = ±1`.
 - **Totality.** The weak differential is a total function, `0` off the class. Statements carry
-  the class as a hypothesis.
+  the class as a hypothesis. On the class it is determined only outside a null set, so a value
+  of `Df`, `‖Df‖` or `J_f` computed for a particular map in a Check or an example holds almost
+  everywhere. Pointwise identities of linear algebra, such as `|J_f| = normDet(Df)` and
+  `|J_f| ≤ ‖Df‖ⁿ`, hold everywhere.
 
 ## Exact supplier contracts
 
@@ -335,6 +342,13 @@ a hypothesis (§8.2).
 - PH1.2: the composition and change-of-variables theorems for `kp > 2`, used at `k = 1` in the
   agreement Checks of §2.2 and §2.4.
 
+### From TauCetiRoadmap.RiemannianGeometry
+
+- R4.6: the comparison of chartwise nullity with the Riemannian volume, for the smooth metrics on
+  smooth, boundaryless, Hausdorff, second-countable manifolds of its conventions. It is used only
+  in the agreement Check of §3.1; no proof here consumes it, since §3.1 asks only a continuous
+  metric on a `C¹` Lindelöf manifold.
+
 ## How to read the build
 
 Layer 1 defines the local Lebesgue classes and the vector-valued local Sobolev classes on open
@@ -433,10 +447,14 @@ in `W^{1,p}_loc(Ω; F)` when `u ∈ L^p_loc(Ω, μ)` and there is `U : E → (E 
 - The Heaviside function on `ℝ` lies in `L^p_loc(ℝ)` but in no class: a weak derivative `U` would
   satisfy `∫ U φ = φ(0)` for every test function `φ`, which fails for `φ` concentrating at `0`. A
   definition through the classical derivative almost everywhere, which is `0`, would accept it.
-- The Cantor function on `(0, 1)` is continuous with classical derivative `0` almost everywhere,
-  yet it is not in `W^{1,1}_loc((0, 1))`. A member is absolutely continuous on compact
-  subintervals (`TauCeti.HasWeakLineDerivOn.absolutelyContinuousOnInterval`), and the Cantor
-  function is not (`TauCeti.not_absolutelyContinuousOnInterval_cantorFunction`).
+- The Cantor function `c`, which is `0` on `(−∞, 0]` and `1` on `[1, ∞)`, is continuous on `ℝ`
+  with classical derivative `0` almost everywhere, yet it is not in `W^{1,1}_loc(ℝ)`. A member
+  restricts to `(0, 1)` with a weak derivative integrable there, so a member continuous on
+  `[0, 1]` is absolutely continuous on `[0, 1]`
+  (`TauCeti.HasWeakLineDerivOn.absolutelyContinuousOnInterval`), and `c` is not
+  (`TauCeti.not_absolutelyContinuousOnInterval_cantorFunction`). Nor is `c` in
+  `W^{1,1}_loc((0, 1))`: it would be absolutely continuous on `[1/4, 3/4]` with derivative `0`
+  almost everywhere, hence constant there, while `c(1/4) = 1/3` and `c(3/4) = 2/3`.
 - For `E = ℂ` with Lebesgue measure, the class is PH1.1's order-one planar class at the same `p`,
   literally.
 
@@ -699,6 +717,14 @@ Consequences:
   density is `√det(4 I₂) = 4`), while a segment is null for both.
 - No non-empty open set is null on either side. That is `TauCeti.IsNullSet.interior_eq_empty`
   and `TauCeti.isOpenPosMeasure_riemannianVolume`, which therefore agree.
+- For a smooth metric on a smooth, boundaryless, Hausdorff, second-countable manifold, the
+  statement is RiemannianGeometry R4.6's comparison of chartwise nullity with the Riemannian
+  volume. The continuous metric `(1 + |x₁|^{1/2})(dx₁² + dx₂²)` on `ℝ²` is not differentiable
+  along `x₁ = 0`, so it lies outside R4.6 and inside §3.1. Its volume has density
+  `1 + |x₁|^{1/2}` against Lebesgue measure, the unit square `[0, 1]²` has volume
+  `∫_0^1 (1 + t^{1/2}) dt = 5/3`, and the segment `{0} × [0, 1]`, along which the metric is not
+  differentiable, is null for it as for the flat metric. A comparison stated only for smooth
+  metrics would say nothing here.
 
 *Needs:* Tau Ceti `TauCeti.IsNullSet`, `TauCeti.IsNullSet.iUnion`, `TauCeti.riemannianVolume`,
 `TauCeti.riemannianVolume_restrict_source`, `TauCeti.chartRiemannianVolume`,
@@ -894,7 +920,9 @@ otherwise. For `N = V` it is the weak differential of §4.1.
   `Df = 1`.
 - `f = id_M`: `Df(x) = id` outside a null set.
 - Totality: for a discontinuous `f`, `Df = 0` everywhere. For the map into `S¹` of §4.2 at
-  `p < 2`, `Df(t)` is `sign(t)|t|^{−1/2}/2` times the angular unit vector, for `t ≠ 0`.
+  `p < 2`, `Df(t)` is `sign(t)|t|^{−1/2}/2` times the angular unit vector for almost every `t`.
+  Changing that field at `t = 1` gives another weak differential, so no value at a single point
+  is determined.
 
 *Needs:* §4.1, §4.2; Tau Ceti `TauCeti.HasWeakFDerivOn.ae_eq`, `TauCeti.IsNullSet.iUnion`;
 Mathlib `mfderiv`.
@@ -908,10 +936,10 @@ expression of `mfderiv` (`mfderiv_eq_fderiv` in charts), and §1.2 applies.
 
 **Checks.**
 
-- `f(t) = t|t|` on `ℝ` is `C¹` but not `C²`. `Df(t) = 2|t|` everywhere, and `f` is in every
-  class.
-- `f = |t|` is not `C¹`, yet it is in every class, with `Df = sign(t)`. The theorem gives a
-  sufficient condition only.
+- `f(t) = t|t|` on `ℝ` is `C¹` but not `C²`. `mfderiv f t = 2|t|` at every `t`, so
+  `Df(t) = 2|t|` for almost every `t`, and `f` is in every class.
+- `f = |t|` is not `C¹`, yet it is in every class, with `Df = sign(t)` almost everywhere. The
+  theorem gives a sufficient condition only.
 - The Cantor function, `C¹` with derivative `0` off the Cantor set, is in no class (§1.2), so
   "`C¹` off a closed null set" does not suffice.
 
@@ -1003,8 +1031,8 @@ For `f ∈ W^{1,p}_loc(M, N)` consider `x ↦ ‖Df(x)‖`, the operator norm fr
 
 - `f = id` from flat `ℝ` to `ℝ` with `4 dt²` gives `‖Df‖ = 2`. A norm computed in charts with the
   norms of the models would give `1`.
-- The map into `S¹` of §4.2, with the round metric of radius `1`: `‖Df(t)‖ = |t|^{−1/2}/2`. With
-  radius `3`: `3|t|^{−1/2}/2`.
+- The map into `S¹` of §4.2, with the round metric of radius `1`: `‖Df(t)‖ = |t|^{−1/2}/2` for
+  almost every `t`. With radius `3`: `3|t|^{−1/2}/2`.
 - Chart dependence of the naive norm: in the chart `φ(x) = 2x` of the source, the representative
   of `id` has norm `1/2`, while `‖Df‖ = 1`.
 
@@ -1079,7 +1107,7 @@ of MartioRickmanVaisala1969 line 124 and Rickman1993 Ch. I §1 when `V = W = ℝ
   (`Orientation.finOrthonormalBasis`). It does not exist when `n = 0` and `o_V` is the negative
   orientation, since the empty basis is positively oriented (`Module.Basis.orientation_isEmpty`).
 - For linear `B : W → X` with `X` oriented of dimension `n`, `J(B ∘ A) = J(B) J(A)`. Also
-  `J(id_V) = 1`, and `J(cA) = cⁿ J(A)`.
+  `J(id_V) = 1` when `o_W = o_V` and `J(id_V) = −1` when `o_W = −o_V`, and `J(cA) = cⁿ J(A)`.
 - For `V = W` with `o_V = o_W`, `J(A) = det A` (`LinearMap.det`).
 - Reversing exactly one of `o_V`, `o_W` negates `J(A)`, and reversing both leaves it unchanged
   (`Orientation.volumeForm_neg_orientation`).
@@ -1102,8 +1130,9 @@ of MartioRickmanVaisala1969 line 124 and Rickman1993 Ch. I §1 when `V = W = ℝ
 - `R = diag(−1, 1)`: `J(R) = −1` from the standard orientation to itself, and `J(R) = +1` from the
   standard orientation to its negative. The unsigned `|det R| = 1` would make `R` and the identity
   indistinguishable.
-- Orthonormal bases are used. For `id : ℝ² → ℝ²`, the matrix in the bases `(2e₁, e₂)` and
-  `(e₁, e₂)` is `diag(2, 1)` with determinant `2`, while `J(id) = 1`.
+- Orthonormal bases are used. For `id : ℝ² → ℝ²` with the standard orientation on both sides,
+  the matrix in the bases `(2e₁, e₂)` and `(e₁, e₂)` is `diag(2, 1)` with determinant `2`, while
+  `J(id) = 1`.
 - The direction of the pullback: `J(diag(2, 1)) = 2`. A definition through
   `(A⁻¹)^* vol_V = J vol_W` would give `1/2`.
 - Dimension `0`: the volume form of a zero-dimensional space is `±1` on the empty family, so
@@ -1151,7 +1180,7 @@ define `J_f(x) = J(Df(x))`, computed with the tangent orientations `o_M.orientat
 - `M = N = ℝ`, flat, standard orientations: `J_f = f'` almost everywhere. With the metric
   `4 dt²` on the target, `ρ_N = 2` and `J_f = 2f'`. A Jacobian taken as the determinant of the
   representative without densities would give `f'`, contradicting `|J_f| = normDet(Df) = 2|f'|`.
-- The identity of `M` from `(M, o)` to `(M, −o)`, `M` non-empty: `J_f = −1`.
+- The identity of `M` from `(M, o)` to `(M, −o)`, `M` non-empty: `J_f = −1` almost everywhere.
 - The fold `F(x₁, x₂) = (|x₁|, x₂)` of `ℝ²`: `J_F = sign(x₁)` almost everywhere and `‖DF‖ = 1`. An
   unsigned Jacobian would give `1`.
 
@@ -1424,8 +1453,9 @@ extensions; Mathlib's smooth embeddings and the Whitney embedding.
 - *The circle map.* `f(t) = (cos |t|^{1/2}, sin |t|^{1/2})` from flat `ℝ` to the round unit
   circle is continuous. In angle charts its representative is `|t|^{1/2}`, so
   `f ∈ W^{1,p}_loc(ℝ, S¹)` iff `p < 2` (§4.2). Its weak differential is
-  `sign(t)|t|^{−1/2}/2` times the angular unit vector (§4.3), with `‖Df‖ = |t|^{−1/2}/2` (§5.1),
-  in agreement with T3. The inclusion of `S¹` in `ℝ²` is isometric, so
+  `sign(t)|t|^{−1/2}/2` times the angular unit vector almost everywhere (§4.3), with
+  `‖Df‖ = |t|^{−1/2}/2` almost everywhere (§5.1), in agreement with T3. The inclusion of `S¹` in
+  `ℝ²` is isometric, so
   `|D(ι ∘ f)| = ‖Df‖` (§8.2). With both manifolds oriented, `J_f = Df` read as a number, since
   `n = 1`.
 - *The radial stretch.* `f(x) = x|x|^{−1/2}` on `ℝ²`: `‖Df‖ = |x|^{−1/2}`, `J_f = |x|^{−1}/2`, `f`

@@ -180,7 +180,7 @@
       {
        "name": "cantor_not_member",
        "kind": "non-example",
-       "statement": "The Cantor function on (0,1) has classical derivative 0 a.e. but is not in W^{1,1}_loc: members are absolutely continuous on compact subintervals (TauCeti.HasWeakLineDerivOn.absolutelyContinuousOnInterval), the Cantor function is not (TauCeti.not_absolutelyContinuousOnInterval_cantorFunction)."
+       "statement": "The Cantor function c (0 on (−∞,0], 1 on [1,∞)) is continuous on ℝ with classical derivative 0 a.e. but is not in W^{1,1}_loc(ℝ): a member restricts to (0,1) with an integrable weak derivative, so a member continuous on [0,1] is absolutely continuous on [0,1] (TauCeti.HasWeakLineDerivOn.absolutelyContinuousOnInterval), and c is not (TauCeti.not_absolutelyContinuousOnInterval_cantorFunction). Nor is c in W^{1,1}_loc((0,1)): it would be absolutely continuous on [1/4,3/4] with derivative 0 a.e., hence constant, while c(1/4) = 1/3 and c(3/4) = 2/3."
       },
       {
        "name": "empty_domain",
@@ -524,6 +524,11 @@
        "name": "open_sets",
        "kind": "compatibility",
        "statement": "Non-empty open sets are null on neither side: TauCeti.IsNullSet.interior_eq_empty and TauCeti.isOpenPosMeasure_riemannianVolume agree."
+      },
+      {
+       "name": "riemannian_geometry_agreement",
+       "kind": "compatibility",
+       "statement": "For a smooth metric on a smooth boundaryless Hausdorff second-countable manifold this is RiemannianGeometry R4.6's comparison. The continuous metric (1 + |x₁|^{1/2})(dx₁² + dx₂²) on ℝ², not differentiable along x₁ = 0, is outside R4.6: volume density 1 + |x₁|^{1/2}, unit square volume ∫_0^1 (1 + t^{1/2}) dt = 5/3, and {0} × [0,1] null for it as for the flat metric."
       }
      ]
     },
@@ -841,7 +846,7 @@
       {
        "name": "circle_map_differential",
        "kind": "computation",
-       "statement": "For the circle map at p < 2, Df(t) = sign(t)|t|^{−1/2}/2 times the angular unit vector for t ≠ 0."
+       "statement": "For the circle map at p < 2, Df(t) = sign(t)|t|^{−1/2}/2 times the angular unit vector for almost every t; changing the field at t = 1 gives another weak differential, so no single value is determined."
       }
      ]
     },
@@ -870,12 +875,12 @@
       {
        "name": "t_abs_t",
        "kind": "computation",
-       "statement": "f(t) = t|t| is C¹ not C²: Df = 2|t| everywhere, member for every p."
+       "statement": "f(t) = t|t| is C¹ not C²: mfderiv f t = 2|t| at every t, so Df = 2|t| a.e.; member for every p."
       },
       {
        "name": "abs_not_C1",
        "kind": "compatibility",
-       "statement": "|t| is not C¹ but is a member with Df = sign t: sufficient condition only."
+       "statement": "|t| is not C¹ but is a member with Df = sign t a.e.: sufficient condition only."
       },
       {
        "name": "cantor",
@@ -1002,7 +1007,7 @@
       {
        "name": "circle_radius",
        "kind": "computation",
-       "statement": "Circle map into the unit round circle: ‖Df(t)‖ = |t|^{−1/2}/2; into the circle of radius 3: 3|t|^{−1/2}/2."
+       "statement": "Circle map into the unit round circle: ‖Df(t)‖ = |t|^{−1/2}/2 for a.e. t; into the circle of radius 3: 3|t|^{−1/2}/2."
       },
       {
        "name": "naive_chart_norm",
@@ -1131,7 +1136,7 @@
       {
        "name": "orientedJacobian_comp",
        "role": "multiplicativity",
-       "statement": "J(B ∘ A) = J(B) J(A); J(id) = 1; J(cA) = cⁿ J(A)."
+       "statement": "J(B ∘ A) = J(B) J(A); J(id) = 1 for o_V = o_W and J(id) = −1 for o_W = −o_V; J(cA) = cⁿ J(A)."
       },
       {
        "name": "orientedJacobian_self_eq_det",
@@ -1178,7 +1183,7 @@
       {
        "name": "non_orthonormal_bases",
        "kind": "non-example",
-       "statement": "id : ℝ² → ℝ² has matrix diag(2,1) in bases (2e₁,e₂),(e₁,e₂) with det 2, while J(id) = 1."
+       "statement": "id : ℝ² → ℝ² with the standard orientation on both sides has matrix diag(2,1) in bases (2e₁,e₂),(e₁,e₂) with det 2, while J(id) = 1."
       },
       {
        "name": "pullback_direction",
@@ -1265,7 +1270,7 @@
       {
        "name": "identity_reversed",
        "kind": "characterisation",
-       "statement": "id : (M,o) → (M,−o), M non-empty: J_f = −1."
+       "statement": "id : (M,o) → (M,−o), M non-empty: J_f = −1 a.e."
       },
       {
        "name": "fold_map",
@@ -1648,6 +1653,13 @@
     "PH1.2"
    ],
    "what": "The planar local classes MemLpLoc and MemWkpLoc (PH1.1), used only in the agreement Checks of 1.1 and 1.2; the composition and change-of-variables theorems for kp > 2 (PH1.2), used at k = 1 only in the agreement Checks of 2.2 and 2.4."
+  },
+  {
+   "roadmap": "RiemannianGeometry",
+   "sections": [
+    "R4.6"
+   ],
+   "what": "The comparison of chartwise nullity with the Riemannian volume for the smooth metrics on smooth, boundaryless, Hausdorff, second-countable manifolds of its conventions, used only in the agreement Check of 3.1; 3.1 asks only a continuous metric on a C¹ Lindelöf manifold, possibly with boundary, and consumes nothing from it."
   }
  ],
  "consumers": [
