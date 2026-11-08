@@ -1026,3 +1026,19 @@ licence_class = "none"
 status = "uncertified"
 version_note = "paywalled; cited by its locator without the text"
 cited_for = ["4.7", "5.7"]
+
+[[source]]
+id = "dlmf"
+authors = "F. W. J. Olver, A. B. Olde Daalhuis, D. W. Lozier, B. I. Schneider, R. F. Boisvert, C. W. Clark, B. R. Miller, B. V. Saunders, H. S. Cohl, M. A. McClain (eds.)"
+title = "NIST Digital Library of Mathematical Functions"
+year = 2026
+locator_scheme = "equation"
+locator = "5.7.6, 5.15.1"
+url = "https://dlmf.nist.gov/5.7"
+fetched_from = "https://dlmf.nist.gov/5.7"
+fetched_at = "2026-11-08T12:05:33Z"
+sha256 = "cc76af227da3ada6e33c4b41d5cc570867c000f9ce18ac3e76434e35ea4c11e3"
+licence_class = "institutional"
+status = "certified"
+accessed = "2026-11-08"
+cited_for = ["1.1a"]
