@@ -227,3 +227,120 @@ status = "certified"
 accessed = "2026-11-08"
 version_note = "the chapter page was fetched; sections 6.2, 6.12 and 6.16 of the same online edition were read"
 cited_for = ["7.2"]
+
+[[source]]
+id = "brown1967"
+authors = "J.L Brown"
+title = "On the error in reconstructing a non-bandlimited function by means of the bandpass sampling theorem"
+year = 1967
+venue = "Journal of Mathematical Analysis and Applications 18"
+doi = "10.1016/0022-247X(67)90183-7"
+locator_scheme = "theorem"
+locator = "Theorem 1"
+url = "https://doi.org/10.1016/0022-247X(67)90183-7"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["7.4"]
+
+[[source]]
+id = "ieantn-brown1967"
+authors = "T. Tao and the IEANTN contributors"
+title = "IEANTN (Integrated Explicit Analytic Number Theory Network), file IEANTN/Nodes/Brown1967/v1/Conclusions.lean"
+year = 2026
+locator_scheme = "section"
+locator = "IEANTN/Nodes/Brown1967/v1/Conclusions.lean at commit 466b41b28ecc224398cf53a99c5fe9618131398b: module docstring (node Brown1967.v1): the hypotheses and optimality of Brown's Theorem 1, ieantn-brown1967 lines 37-40; the symmetric partial sums, lines 52-56"
+url = "https://raw.githubusercontent.com/teorth/IEANTN/466b41b28ecc224398cf53a99c5fe9618131398b/IEANTN/Nodes/Brown1967/v1/Conclusions.lean"
+fetched_from = "https://raw.githubusercontent.com/teorth/IEANTN/466b41b28ecc224398cf53a99c5fe9618131398b/IEANTN/Nodes/Brown1967/v1/Conclusions.lean"
+fetched_at = "2026-11-08T22:09:09Z"
+sha256 = "4b85054cfc72602552455fbd5016f5c84cca1486c99854fb6dc94fa4337c8507"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-08"
+version_note = "Apache-2.0 Lean project github.com/teorth/IEANTN; the file at commit 466b41b28ecc224398cf53a99c5fe9618131398b (2026-11-02); line numbers are those of the cached text of this file"
+cited_for = ["7.4"]
+
+[[source]]
+id = "ieantn-contourintegration"
+authors = "T. Tao and the IEANTN contributors"
+title = "IEANTN (Integrated Explicit Analytic Number Theory Network), file IEANTN/Nodes/ContourIntegration/v1/Conclusions.lean"
+year = 2026
+locator_scheme = "section"
+locator = "IEANTN/Nodes/ContourIntegration/v1/Conclusions.lean at commit 466b41b28ecc224398cf53a99c5fe9618131398b: ContourIntegration.v1.residue_theorem_rectangle, ieantn-contourintegration lines 60-90"
+url = "https://raw.githubusercontent.com/teorth/IEANTN/466b41b28ecc224398cf53a99c5fe9618131398b/IEANTN/Nodes/ContourIntegration/v1/Conclusions.lean"
+fetched_from = "https://raw.githubusercontent.com/teorth/IEANTN/466b41b28ecc224398cf53a99c5fe9618131398b/IEANTN/Nodes/ContourIntegration/v1/Conclusions.lean"
+fetched_at = "2026-11-08T22:09:10Z"
+sha256 = "456e9ed77427947a96257b17c559eb4bab7078a129ccf7c922aa9d38d6ed5ab6"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-08"
+version_note = "Apache-2.0 Lean project github.com/teorth/IEANTN; the file at commit 466b41b28ecc224398cf53a99c5fe9618131398b (2026-11-02); line numbers are those of the cached text of this file"
+cited_for = ["8.1a"]
+
+[[source]]
+id = "ieantn-ch2v4"
+authors = "T. Tao and the IEANTN contributors"
+title = "IEANTN (Integrated Explicit Analytic Number Theory Network), file IEANTN/Nodes/CH2/v4/Conclusions.lean"
+year = 2026
+locator_scheme = "section"
+locator = "IEANTN/Nodes/CH2/v4/Conclusions.lean at commit 466b41b28ecc224398cf53a99c5fe9618131398b: CH2.v4.lContourIntegral and CH2.v4.contour_shift, ieantn-ch2v4 lines 93-110 and 135-162"
+url = "https://raw.githubusercontent.com/teorth/IEANTN/466b41b28ecc224398cf53a99c5fe9618131398b/IEANTN/Nodes/CH2/v4/Conclusions.lean"
+fetched_from = "https://raw.githubusercontent.com/teorth/IEANTN/466b41b28ecc224398cf53a99c5fe9618131398b/IEANTN/Nodes/CH2/v4/Conclusions.lean"
+fetched_at = "2026-11-08T22:09:10Z"
+sha256 = "93c34069a81657e7afdf9968d92041d1a20c3df030cee2f2e1c8f93d08639608"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-08"
+version_note = "Apache-2.0 Lean project github.com/teorth/IEANTN; the file at commit 466b41b28ecc224398cf53a99c5fe9618131398b (2026-11-02); line numbers are those of the cached text of this file"
+cited_for = ["8.1b"]
+
+[[source]]
+id = "ieantn-erdos392"
+authors = "T. Tao and the IEANTN contributors"
+title = "IEANTN (Integrated Explicit Analytic Number Theory Network), file IEANTN/Nodes/Erdos392/v1/Conclusions.lean"
+year = 2026
+locator_scheme = "section"
+locator = "IEANTN/Nodes/Erdos392/v1/Conclusions.lean at commit 466b41b28ecc224398cf53a99c5fe9618131398b: Erdos392.v1.factors_le_n, factors_le_n_sq, factors_le_n_sq_lower, ieantn-erdos392 lines 16-21, 25-26, 62-65, 72-75, 87-89"
+url = "https://raw.githubusercontent.com/teorth/IEANTN/466b41b28ecc224398cf53a99c5fe9618131398b/IEANTN/Nodes/Erdos392/v1/Conclusions.lean"
+fetched_from = "https://raw.githubusercontent.com/teorth/IEANTN/466b41b28ecc224398cf53a99c5fe9618131398b/IEANTN/Nodes/Erdos392/v1/Conclusions.lean"
+fetched_at = "2026-11-08T22:09:10Z"
+sha256 = "4f8c52b135fe56ab07fd00a9a2dadf0bac4a559bc56e94295691b919e8861d3a"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-08"
+version_note = "Apache-2.0 Lean project github.com/teorth/IEANTN; the file at commit 466b41b28ecc224398cf53a99c5fe9618131398b (2026-11-02); line numbers are those of the cached text of this file"
+cited_for = ["13.1"]
+
+[[source]]
+id = "ieantn-goldbach"
+authors = "T. Tao and the IEANTN contributors"
+title = "IEANTN (Integrated Explicit Analytic Number Theory Network), file IEANTN/Nodes/Goldbach/v1/Conclusions.lean"
+year = 2026
+locator_scheme = "section"
+locator = "IEANTN/Nodes/Goldbach/v1/Conclusions.lean at commit 466b41b28ecc224398cf53a99c5fe9618131398b: Goldbach.v1.even_implies_odd, even_and_gaps_imply_odd, odd_up_to_1_1325e26, odd_up_to_kadiri_lumley, ieantn-goldbach lines 46-73, 91-98, 100-115"
+url = "https://raw.githubusercontent.com/teorth/IEANTN/466b41b28ecc224398cf53a99c5fe9618131398b/IEANTN/Nodes/Goldbach/v1/Conclusions.lean"
+fetched_from = "https://raw.githubusercontent.com/teorth/IEANTN/466b41b28ecc224398cf53a99c5fe9618131398b/IEANTN/Nodes/Goldbach/v1/Conclusions.lean"
+fetched_at = "2026-11-08T22:09:10Z"
+sha256 = "c1a3d50be73b1597efba341ebd15e21b72398873818e3adfa360fbc917c50f7e"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-08"
+version_note = "Apache-2.0 Lean project github.com/teorth/IEANTN; the file at commit 466b41b28ecc224398cf53a99c5fe9618131398b (2026-11-02); line numbers are those of the cached text of this file"
+cited_for = ["13.2"]
+
+[[source]]
+id = "ieantn-goldbach-vocabulary"
+authors = "T. Tao and the IEANTN contributors"
+title = "IEANTN (Integrated Explicit Analytic Number Theory Network), file IEANTN/Vocabulary/Goldbach.lean"
+year = 2026
+locator_scheme = "section"
+locator = "IEANTN/Vocabulary/Goldbach.lean at commit 466b41b28ecc224398cf53a99c5fe9618131398b: IEANTN.GoldbachEvenUpTo and IEANTN.GoldbachOddUpTo, ieantn-goldbach-vocabulary lines 25-51"
+url = "https://raw.githubusercontent.com/teorth/IEANTN/466b41b28ecc224398cf53a99c5fe9618131398b/IEANTN/Vocabulary/Goldbach.lean"
+fetched_from = "https://raw.githubusercontent.com/teorth/IEANTN/466b41b28ecc224398cf53a99c5fe9618131398b/IEANTN/Vocabulary/Goldbach.lean"
+fetched_at = "2026-11-08T22:09:11Z"
+sha256 = "2ee6ad691c12271da34f445c9cd42367a5c0bc3ced973bbdb3db8949e13b7293"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-08"
+version_note = "Apache-2.0 Lean project github.com/teorth/IEANTN; the file at commit 466b41b28ecc224398cf53a99c5fe9618131398b (2026-11-02); line numbers are those of the cached text of this file"
+cited_for = ["13.2"]
