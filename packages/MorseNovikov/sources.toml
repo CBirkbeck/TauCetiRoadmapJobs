@@ -1,0 +1,68 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "MorseNovikov"
+
+[[source]]
+id = "rt3"
+authors = "Michael Hutchings"
+title = "Reidemeister torsion in generalized Morse theory"
+year = 2002
+venue = "Forum Mathematicum 14 (2002), 209-244"
+locator_scheme = "theorem"
+locator = "Proposition A.2"
+url = "https://math.berkeley.edu/~hutching/pub/rt3/rt3.pdf"
+fetched_from = "https://math.berkeley.edu/~hutching/pub/rt3/rt3.pdf"
+fetched_at = "2026-11-08T18:03:32Z"
+sha256 = "cc0daa5f92c5a3aab1b06e9ffce98ebb42515eebc64c3fa9b7c5bca65aebace3"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-08"
+cited_for = ["4.1"]
+
+[[source]]
+id = "Gra72"
+authors = "Andrzej Granas"
+title = "The Leray-Schauder index and the fixed point theory for arbitrary ANRs"
+year = 1972
+venue = "Bulletin de la Société Mathématique de France 100 (1972), 209-228"
+locator_scheme = "theorem"
+locator = "Theorem 10.1 with properties (I), (II), (VII) of §5, pp. 214 and 224; §§2-3, pp. 210-211; §6, p. 215"
+url = "http://www.numdam.org/item/BSMF_1972__100__209_0/"
+fetched_from = "https://www.numdam.org/item/BSMF_1972__100__209_0.pdf"
+fetched_at = "2026-11-08T18:06:24Z"
+sha256 = "72c3d6d87d5b74d8be4c29394c07bf98b7a27d02888aab4411273032d9860b51"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-08"
+cited_for = ["6.5"]
+
+[[source]]
+id = "Hop29"
+authors = "Heinz Hopf"
+title = "Über die algebraische Anzahl von Fixpunkten"
+year = 1929
+venue = "Mathematische Zeitschrift 29"
+doi = "10.1007/BF01180550"
+locator_scheme = "page"
+locator = "Math. Z. 29, pp. 493-524 (whole article)"
+url = "https://doi.org/10.1007/BF01180550"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["6.4"]
+
+[[source]]
+id = "Hat02"
+authors = "Allen Hatcher"
+title = "Algebraic Topology"
+year = 2002
+venue = "Cambridge University Press; author's online edition"
+locator_scheme = "theorem"
+locator = "§2.C, Theorem 2C.3, p. 179, proof pp. 180-181; Theorem A.7 as stated on p. 179"
+url = "https://pi.math.cornell.edu/~hatcher/AT/AT.pdf"
+fetched_from = "https://pi.math.cornell.edu/~hatcher/AT/AT.pdf"
+fetched_at = "2026-11-08T18:06:44Z"
+sha256 = "bebb3032bf9021b956da3bd070eb6c67dc662cf849be9cdf6679f677560e5618"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-08"
+cited_for = ["6.5"]
