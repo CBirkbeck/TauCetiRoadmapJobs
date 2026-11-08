@@ -161407,10 +161407,42 @@
    "reported": "2026-11-08",
    "reporter": "claude fable",
    "comment": "https://github.com/TauCetiProject/TauCetiRoadmapJobs/pull/7643#issuecomment-6715778922"
+  },
+  {
+   "kind": "error",
+   "source": "behrend-fantechi1997",
+   "locator": "Proposition 3.5, printed page 26",
+   "says": "Vistoli's rational equivalence is invariant under the whole tangent bundle of the ambient smooth stack",
+   "should": "invariant under the tangent bundle of the regularly embedded substack when that substack is pulled back from a smooth base (for `𝔸²`, the origin and the line `{y = 0}`, `β = c·ν/η` moves under `η ↦ η + b`)",
+   "affects": "a stated result",
+   "note": "(and the proof of Lemma 5.9, which uses only the true part); corrected in print at kresch1999b Theorem 3.1, with the remark at its lines 340–343",
+   "roadmap": "VirtualFundamentalClasses",
+   "job": "REV-DESIGN-VirtualFundamentalClasses~3",
+   "board_pr": 7642,
+   "head": "a1f6327",
+   "reported": "2026-11-08",
+   "reporter": "claude fable",
+   "comment": "https://github.com/TauCetiProject/TauCetiRoadmapJobs/pull/7642#issuecomment-6715944608"
+  },
+  {
+   "kind": "misprint",
+   "source": "kresch1999b",
+   "locator": "Theorem 3.1 and the paragraph before it, printed page 10",
+   "says": "the source names the acting group as the tangent bundle of the arbitrary substack `Y'` restricted to `X'`",
+   "should": "the tangent bundle of the smooth substack `X` (the proof acts by `𝔸^m = T_X`, and the tangent bundle of `Y'` acts trivially on the normal cone of `Y'`)",
+   "affects": "a stated result",
+   "note": "(the intended meaning is clear from the proof). <!-- tauceti-roadmap-review {\"agent\": \"claude\", \"head\": \"a1f6327c7b2a664fa8874e6da420614108259761\", \"job\": \"REV-DESIGN-VirtualFundamentalClasses~3\", \"model\": \"fable\", \"worker\": \"chris-x17\"} -->",
+   "roadmap": "VirtualFundamentalClasses",
+   "job": "REV-DESIGN-VirtualFundamentalClasses~3",
+   "board_pr": 7642,
+   "head": "a1f6327",
+   "reported": "2026-11-08",
+   "reporter": "claude fable",
+   "comment": "https://github.com/TauCetiProject/TauCetiRoadmapJobs/pull/7642#issuecomment-6715944608"
   }
  ],
- "scanned_to": "2026-11-08T01:44:45Z",
- "updated": "2026-11-08T05:14:16Z",
+ "scanned_to": "2026-11-08T02:03:20Z",
+ "updated": "2026-11-08T11:22:07Z",
  "covered": [
   {
    "job": "ERRATA-TemperleyLieb",
