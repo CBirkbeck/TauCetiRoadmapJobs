@@ -1,0 +1,4 @@
+{"review": {"status": "needs_changes", "reviewer": "independent-review-PRREVIEW-PadicFunctionalAnalysis~32",
+            "head": "ac36c4779832dc88f24bd726cd331c83f4c8445b", "pr": 1807, "folder": "PadicFunctionalAnalysis", "date": "2026-11-08",
+            "findings": 11, "blocking": 2,
+            "notes": "Full review. Gate passes at ac36c47; depcheck 230 roadmaps, 2316 edges, 0 problems; Suggested.lean elaborates (exit 0, 8 sorry warnings); #check @ signatures match; one-tactic probe closes nothing. Previous R01-R04 repaired, R05 partly. Seeded sample read at locators: JN 2.1, Buz Prop 2.1/Lemma 2.3, Serre Prop 1-3, Conrad 1.1.5, Mah Thm 1, Col I.4.1-I.4.9 and II.2.1-II.2.2, Amice Th. 2-3, RJW 3.16/(3.4)/3.25/3.47, ST Thm 2.2, LWX Prop 3.14/Lemma 3.15. 338 README Lean names resolved at the pins. Blocking: R01 the 4.7 unbounded Amice bijection is statable (tested repair elaborates) but declared not statable; R02 5.5 level convention undefined for h < v_p(q)."}}
