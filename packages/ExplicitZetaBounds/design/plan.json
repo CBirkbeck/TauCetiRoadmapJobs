@@ -2,7 +2,7 @@
  "roadmap": "ExplicitZetaBounds",
  "title": "Explicit bounds for the zeta function and Dirichlet L-functions",
  "parent": null,
- "summary": "The numerically explicit layer above ZerosOfLFunctions: the O* error calculus; bounded-height RH(H) and GRH(q, H) with the bridge from Platt's finite-conductor theorem; Stirling's series with Stieltjes', Lindelöf's, Brent's and Nemes' remainder bounds, Binet's formulas, the two-sided modulus bound for Γ and real-axis Gamma, digamma and polygamma brackets; the explicit Phragmén–Lindelöf principle and Rademacher's convexity bound on records of finite-order type; Backlund's strip bounds, bounds right of one and explicit approximate functional equations; the explicit van der Corput toolkit (Kusmin–Landau, A- and B-processes, derivative tests), the Riemann–Siegel formula with Gabcke's remainder and the critical-line, one-line and σ_k-line bounds; Backlund's argument lemma and the explicit Riemann–von Mangoldt formulas for ζ and L(s, χ); weighted zero sums; smoothed and averaged Perron formulas, the majorant principle, Preissmann's weighted Hilbert inequality, mean values and weighted and maximal large sieves; classical, Littlewood-type and Vinogradov–Korobov zero-free regions with decimal constants, Dirichlet regions, real-zero bounds and the numerical Landau–Siegel gap; zero-density estimates; and upper and lower bounds for L(1, χ). Computations enter only as named certificates; the Vinogradov–Korobov targets rest on a declared gap (the explicit Vinogradov mean value theorem).",
+ "summary": "The numerically explicit layer above ZerosOfLFunctions: the O* error calculus; bounded-height RH(H) and GRH(q, H) with the bridge from Platt's finite-conductor theorem; Stirling's series with Stieltjes', Lindelöf's, Brent's and Nemes' remainder bounds, Binet's formulas, the two-sided modulus bound for Γ and real-axis Gamma, digamma and polygamma brackets; the explicit Phragmén–Lindelöf principle and Rademacher's convexity bound on records of finite-order type; Backlund's strip bounds, bounds right of one and explicit approximate functional equations; the explicit van der Corput toolkit (Kusmin–Landau, A- and B-processes, derivative tests), the explicit Vinogradov mean value theorem with Richert-type bounds, the Riemann–Siegel formula with Gabcke's remainder and the critical-line, one-line and σ_k-line bounds; Backlund's argument lemma and the explicit Riemann–von Mangoldt formulas for ζ and L(s, χ); weighted zero sums; smoothed and averaged Perron formulas, the majorant principle, Preissmann's weighted Hilbert inequality, mean values and weighted and maximal large sieves; classical, Littlewood-type and Vinogradov–Korobov zero-free regions with decimal constants, Dirichlet regions, real-zero bounds and the capped real-zero gap with its numerical instances; zero-density estimates; and upper and lower bounds for L(1, χ). Computations enter only as named certificates; the explicit Vinogradov mean value theorem and the exponential-sum bound behind the Vinogradov–Korobov targets are stated here (4.9a).",
  "baseline": {
   "mathlib": "1b1ccf4b088b32fa3f23f2de1127433254a81e1e",
   "tauceti": "2fd255d997f47c0b5d834ee416c7015d55444ce5"
@@ -184,7 +184,11 @@
       "roadmap:AnalyticNumberTheoryPartI §1.6",
       "roadmap:ZerosOfLFunctions 6.5",
       "roadmap:ZerosOfLFunctions Layer 9",
-      "target:0.2a"
+      "target:0.2a",
+      "mathlib:DirichletCharacter.changeLevel",
+      "mathlib:DirichletCharacter.LFunction_changeLevel",
+      "mathlib:DirichletCharacter.primitiveCharacter",
+      "mathlib:DirichletCharacter.changeLevel_primitiveCharacter"
      ],
      "api": [
       {
@@ -206,6 +210,11 @@
        "name": "iff_allOnCriticalLine",
        "role": "compatibility",
        "statement": "for H ≥ 0, GRH(q, H) iff AllOnCriticalLine of completedLFunction χ on Icc 0 1 ×ℂ Icc (−H) H for every primitive χ"
+      },
+      {
+       "name": "iff_imprimitive",
+       "role": "compatibility",
+       "statement": "for q ≥ 1: every χ : DirichletCharacter ℂ q (primitive or not) has its zeros with 0 < Re ρ < 1, |Im ρ| ≤ H on Re ρ = 1/2 iff GRH(f, H) for every f ∣ q (the Euler factors 1 − χ*(p)p^{−s} vanish only on Re s = 0)"
       }
      ],
      "tests": [
@@ -223,6 +232,11 @@
        "name": "q_two_mod_four",
        "kind": "non-example",
        "statement": "for q ≡ 2 (mod 4) the statement is vacuous, so GRH(q, H) gives no information"
+      },
+      {
+       "name": "imprimitive_mod_two",
+       "kind": "compatibility",
+       "statement": "q = 2: (1 − 2^{−s})ζ(s) has extra zeros 2πik/log 2 on Re s = 0 (height 9.06), outside the open strip; the law reduces to RH(H)"
       }
      ]
     },
@@ -484,6 +498,11 @@
        "name": "not_monotone_below_one",
        "kind": "non-example",
        "statement": "θ_x → 30/π³ as x → 0⁺ while θ_{0.5} = 0.32076"
+      },
+      {
+       "name": "theta100",
+       "kind": "computation",
+       "statement": "θ₂ = 0.51176, θ₁₀ = 0.87001, θ₁₀₀ = 0.98632: increasing in (3/10, 1)"
       }
      ]
     },
@@ -709,7 +728,7 @@
      ],
      "locator": {
       "source": "nemes2015",
-      "where": "Theorems 1.1–1.3, lines 86–108, 169–171"
+      "where": "Theorems 1.1–1.3, lines 86–108, 169–171; the convention γ₁ = −1/12, line 38"
      },
      "prerequisites": [
       "mathlib:PowerSeries.exp",
@@ -727,7 +746,7 @@
       {
        "name": "signs",
        "role": "structure",
-       "statement": "(−1)^N γ_{2N−1} ≥ 0 and (−1)^{N+1} γ_{2N} ≥ 0"
+       "statement": "for N ≥ 1, (−1)^{N+1} γ_{2N−1} ≥ 0 and (−1)^{N+1} γ_{2N} ≥ 0: signs + + − − + + …; Nemes' γ_n is (−1)^n times these (his γ₁ = −1/12), so his (1.4) reads (−1)^N γ_{2N−1} ≥ 0"
       },
       {
        "name": "reciprocal",
@@ -765,6 +784,11 @@
        "name": "x10",
        "kind": "computation",
        "statement": "1.0083654 < 1.0083681"
+      },
+      {
+       "name": "signs",
+       "kind": "non-example",
+       "statement": "γ₅ = 163879/209018880 > 0, γ₃ < 0, γ₇ < 0; Nemes' form (−1)^N γ_{2N−1} ≥ 0 taken over unchanged would give γ₁ ≤ 0"
       }
      ]
     },
@@ -1327,7 +1351,7 @@
      "id": "4.7c",
      "kind": "theorem",
      "name": "ExplicitBounds.dirichletL_criticalLine_tz",
-     "statement": "For primitive χ of conductor q and real t: |L(1/2+it, χ)| ≤ 2.97655(q|1+it|)^{1/4}.",
+     "statement": "For primitive χ of conductor q and real t: |L(1/2+it, χ)| ≤ 2.97655(q|1+it|)^{1/4}, for χ ≠ 1 from the numerical certificate 2 Σ_{j≥0} (−1)^j log ζ(j + 3/2) ≤ 1.4988.",
      "hypotheses": [
       "χ primitive"
      ],
@@ -1340,7 +1364,7 @@
       "target:2.8",
       "target:4.7a",
       "roadmap:LFunctions Layer 4",
-      "mathlib:DirichletCharacter.completedLFunction_one_sub"
+      "mathlib:DirichletCharacter.IsPrimitive.completedLFunction_one_sub"
      ],
      "tests": [
       {
@@ -1352,6 +1376,11 @@
        "name": "chi5",
        "kind": "computation",
        "statement": "ratio ≤ 0.519 on 0 ≤ t ≤ 100"
+      },
+      {
+       "name": "certificate",
+       "kind": "computation",
+       "statement": "Σ_{j≥0} (−1)^j log ζ(j + 3/2) = 0.74940, so the certificate is 2Σ = 1.4988 (lines 366–379), not Σ ≤ 1.4988"
       }
      ]
     },
@@ -1441,10 +1470,59 @@
      ]
     },
     {
+     "id": "4.9a",
+     "kind": "theorem",
+     "name": "ExplicitBounds.vinogradov_meanValue",
+     "statement": "With J_{s,k}(P) = ∫_{[0,1]^k}|Σ_{1≤x≤P} e(α₁x+…+α_kx^k)|^{2s} dα, J_{s,k,h}(B) the count of the incomplete system (h ≤ j ≤ k) in B, C(P,R) the integers ≤ P with all prime factors in (√R, R], and S(N,t) = max_{0<u≤1} max_{N<R≤2N}|Σ_{N<n≤R}(n+u)^{−it}|: (Ford Thm 3) for k ≥ 1000, 2k² ≤ s ≤ (k²/2)(1/2 + log(3k/8)), P ≥ 1, J_{s,k}(P) ≤ k^{2.055k³−5.91k²+3s} 1.06^{sk+2s²/k−9.7278k³} P^{2s−k(k+1)/2+Δ_s}, Δ_s = (3/8)k²e^{1/2−2s/k²+1.7/k}; for k ≥ 129 some s ≤ ρk² has J_{s,k}(P) ≤ k^{θk³}P^{2s−k(k+1)/2+0.001k²} with (ρ, θ) from (1.7); (Ford Thm 4) the incomplete-system bound J_{s,k,h}(C(P,P^η)) ≤ e^C P^E for k ≥ 60, 0.9k ≤ h ≤ k−2, 2t ≤ s ≤ ⌊h/2⌋t, D ≥ 10, P ≥ e^{Dk²}, η in the range (1.10); (Ford Thm 2) for integers N ≥ 2, t ≥ N, λ = log t/log N: S(N,t) ≤ 9.463 N^{1−1/(133.66λ²)}; (Bellotti Thms 1.4–1.5) S(N,t) ≤ 8.7979 N^{1−1/(132.94357λ²)}.",
+     "hypotheses": [
+      "k ≥ 1000 and 2k² ≤ s ≤ (k²/2)(1/2 + log(3k/8)) (first clause); k ≥ 129 (second clause)",
+      "P ≥ 1",
+      "k ≥ 60, 0.9k ≤ h ≤ k − 2, 2t ≤ s ≤ ⌊h/2⌋t, D ≥ 10, P ≥ e^{Dk²}, 2/k³ < η ≤ 1/(2k), 1/(8k) ≤ 4 log k/(Dk²η) ≤ 0.4 (incomplete systems)",
+      "N ≥ 2 an integer, t ≥ N (exponential sums)",
+      "named certificates (Ford Table 6.1; Bellotti §§3–4)"
+     ],
+     "locator": {
+      "source": "ford2002vinogradov",
+      "where": "Theorems 2–4, lines 129–130, 220–234, 283–290; (1.3)–(1.8), lines 121–244; bellotti2024 Theorems 1.4–1.5, lines 183–230"
+     },
+     "prerequisites": [
+      "mathlib:Real.fourierChar",
+      "mathlib:MeasureTheory.volume",
+      "mathlib:Nat.primeFactors"
+     ],
+     "tests": [
+      {
+       "name": "J21",
+       "kind": "computation",
+       "statement": "J_{2,1}(2) = 6 = ∫₀¹|e(α)+e(2α)|⁴ dα; with exponent s instead of 2s the integral is 2"
+      },
+      {
+       "name": "diagonal",
+       "kind": "degenerate",
+       "statement": "for s ≤ k only diagonal solutions: J_{2,2}(3) = 15; in Theorem 3's range 2s − k(k+1)/2 + Δ_s > s, as J_{s,k}(P) ≥ ⌊P⌋^s requires"
+      },
+      {
+       "name": "delta_k1000",
+       "kind": "computation",
+       "statement": "k = 1000: Δ_s = 11 343 at s = 2k², Δ_s = 1001.7 at s = 3 213 463 = 3.2135k²"
+      },
+      {
+       "name": "trivial_range",
+       "kind": "computation",
+       "statement": "the S(N,t) bound beats N only for log N > 300.39λ² (Ford) and 289.09λ² (Bellotti)"
+      },
+      {
+       "name": "N1",
+       "kind": "degenerate",
+       "statement": "N = 1: λ undefined, but S(1, t) = 1 (single term (2+u)^{−it}) ≤ 9.463, so the bound holds for 1 ≤ N ≤ t as Ford's Lemma 7.3 assumes"
+      }
+     ]
+    },
+    {
      "id": "4.10",
      "kind": "theorem",
      "name": "ExplicitBounds.zeta_richert",
-     "statement": "Under the explicit Vinogradov mean value theorem: for |t| ≥ 3, 1/2 ≤ σ ≤ 1, |ζ(σ+it)| ≤ A|t|^{B(1−σ)^{3/2}} log^{2/3}|t| and the same for |ζ(σ+it,u) − u^{−s}|, with (A, B) = (76.2, 4.45) and (70.6995, 4.43795).",
+     "statement": "From the bound for S(N, t) of 4.9a: for |t| ≥ 3, 1/2 ≤ σ ≤ 1, |ζ(σ+it)| ≤ A|t|^{B(1−σ)^{3/2}} log^{2/3}|t| and the same for |ζ(σ+it,u) − u^{−s}|, with (A, B) = (76.2, 4.45) and (70.6995, 4.43795).",
      "hypotheses": [
       "|t| ≥ 3",
       "1/2 ≤ σ ≤ 1",
@@ -1452,10 +1530,10 @@
      ],
      "locator": {
       "source": "ford2002vinogradov",
-      "where": "Theorem 1, lines 28–31; bellotti2024 Theorem 1.1, lines 60–63"
+      "where": "Theorem 1, lines 28–31, and Lemmas 7.1–7.3, lines 3053–3222; bellotti2024 Theorem 1.1, lines 60–63"
      },
      "prerequisites": [
-      "gap:explicit-vinogradov-mean-value",
+      "target:4.9a",
       "target:4.2",
       "mathlib:hurwitzZeta"
      ],
@@ -1671,7 +1749,7 @@
      ],
      "locator": {
       "source": "ramare2007eigen",
-      "where": "Theorem 7.1, lines 742–759; cullyhugilljohnston2023 Theorem 2.1, lines 141–156"
+      "where": "Theorem 7.1, lines 742–759; cullyhugilljohnston2023 Theorem 2.1, lines 141–156, and Lemma 2.2 (the kernel bound), line 163"
      },
      "prerequisites": [
       "tauceti:TauCeti.truncatedPerron_LSeries",
@@ -1760,7 +1838,7 @@
      ],
      "locator": {
       "source": "preissmann1984",
-      "where": "main theorem; ramare2016density Lemma 6.2"
+      "where": "main theorem; ramare2016density Lemma 6.5, line 828 (the upper bound; the two-sided form from the same proof)"
      },
      "prerequisites": [
       "roadmap:AnalyticNumberTheoryPartI §1.5a",
@@ -1909,17 +1987,18 @@
      "id": "7.3",
      "kind": "theorem",
      "name": "ExplicitBounds.zeroFree_kadiriCriterion",
-     "statement": "Kadiri's criterion: from an admissible polynomial, RH(T₀), an established region R, parameters r, t₀, θ and the certificate C(η) ≤ 0 on [0, η₀], the region with any R₀ ≥ max(r, Ag₁(θ)/((1−κ)²K(w₀,θ))); instances R₀ = 5.69693, 5.68371, 5.573412, 5.558691 for |t| ≥ 2 and 4.896 for t ≥ 3.",
+     "statement": "Kadiri's criterion: from an admissible polynomial, RH(T₀), an established region (every zero with |γ| ≥ 2 has β ≤ 1 − 1/(R log|γ|)), parameters r < R, t₀, θ and the certificate C(η) ≤ 0 on [0, η₀]: every zero with |γ| ≥ 2 has β ≤ 1 − 1/(R₀ log|γ|) (no zero with β > 1 − 1/(R₀ log|γ|)) for every R₀ ≥ max(r, Ag₁(θ)/((1−κ)²K(w₀,θ))), and no zero with β ≥ 1 − 1/(R₀ log|γ|) for R₀ strictly larger; instances for |t| ≥ 2: R₀ = 5.69693, 5.68371, 5.558691 (with ≥) and 5.573412 (with >); R₀ = 4.896 for t ≥ 3 (with >).",
      "hypotheses": [
       "admissible f_n",
       "RH(T₀)",
-      "R > r > 0",
+      "R > r > 0 with every zero (|γ| ≥ 2) satisfying β ≤ 1 − 1/(R log|γ|)",
+      "t₀ ∈ [1, T₀]",
       "θ ∈ (π/2, π)",
       "named certificates"
      ],
      "locator": {
       "source": "mossinghofftrudgian2015",
-      "where": "(2.1)–(3.1), lines 164–263; Theorem 1, lines 117–118; mty2024 Theorem 1.3, lines 96–97; kadiri2005 Théorème 1.1; jangkwon2014 Proposition 11; bellottitrudgianyang2026 Theorem 1"
+      "where": "(2.1)–(3.1), lines 157–263; Theorem 1, lines 117–118; mty2024 Theorem 1.3, lines 96–97; kadiri2005 Théorème 1.1; jangkwon2014 Proposition 11; bellottitrudgianyang2026 Theorem 1, line 67"
      },
      "prerequisites": [
       "target:7.1",
@@ -1941,6 +2020,11 @@
        "name": "chain",
        "kind": "computation",
        "statement": "9.645908801 > 8.464 > 5.69693 > 5.68371 > 5.573412 > 5.558691 > 4.896"
+      },
+      {
+       "name": "strict_boundary",
+       "kind": "degenerate",
+       "statement": "at |t| = 3·10¹² the boundary σ = 0.9937548 of the 5.573412 region is not excluded by the form with >, but lies in the 5.558691 region σ ≥ 0.9937382; for 4.896 only the form with > holds"
       }
      ]
     },
@@ -1948,7 +2032,7 @@
      "id": "7.4",
      "kind": "theorem",
      "name": "ExplicitBounds.zeroFree_littlewood",
-     "statement": "Under the explicit Vinogradov mean value theorem: ζ(σ+it) ≠ 0 for |t| ≥ 3, σ > 1 − log log|t|/(21.233 log|t|).",
+     "statement": "ζ(σ+it) ≠ 0 for |t| ≥ 3, σ > 1 − log log|t|/(21.233 log|t|).",
      "hypotheses": [
       "|t| ≥ 3"
      ],
@@ -1957,7 +2041,6 @@
       "where": "Corollary 1.2, lines 88–89"
      },
      "prerequisites": [
-      "gap:explicit-vinogradov-mean-value",
       "target:0.4",
       "target:0.5",
       "target:3.1",
@@ -2014,7 +2097,7 @@
      "id": "7.6",
      "kind": "theorem",
      "name": "ExplicitBounds.zeroFree_vinogradovKorobov",
-     "statement": "Under the explicit Vinogradov mean value theorem: ζ(σ+it) ≠ 0 for |t| ≥ 3 and 1−σ ≤ 1/(c(log|t|)^{2/3}(log log|t|)^{1/3}), c = 57.54, 55.241, 54.004 (and 49.13, 48.1588, 48.0718 for large |t|); Khale's region for L(s,χ), q ≥ 3, |t| ≥ 10.",
+     "statement": "ζ(σ+it) ≠ 0 for |t| ≥ 3 and 1−σ ≤ 1/(c(log|t|)^{2/3}(log log|t|)^{1/3}), c = 57.54, 55.241, 54.004 (and 49.13, 48.1588, 48.0718 for large |t|); Khale's region for L(s,χ), q ≥ 3, |t| ≥ 10.",
      "hypotheses": [
       "|t| ≥ 3 (resp. large |t|; q ≥ 3, |t| ≥ 10)"
      ],
@@ -2023,7 +2106,6 @@
       "where": "Theorems 1 and 5, lines 32–34, 135–136; mty2024 Theorems 1.1–1.2; bellotti2024 Theorems 1.2–1.3; khale2024 Theorem 1.1"
      },
      "prerequisites": [
-      "gap:explicit-vinogradov-mean-value",
       "target:4.10",
       "target:7.1",
       "target:7.2",
@@ -2091,19 +2173,21 @@
      "id": "7.9",
      "kind": "definition",
      "name": "ExplicitBounds.HasLandauSiegelGap",
-     "statement": "HasLandauSiegelGap c: every real zero β ∈ (0,1) of L(s,χ) for χ primitive real nonprincipal of conductor q ≥ 3 has (1−β) log q ≥ c; with the instance c = 3.0·10⁻³.",
+     "statement": "HasLandauSiegelGap c Q: for real c and Q ∈ ℕ ∪ {∞}, every real zero β ∈ (0,1) of L(s,χ) for χ primitive real nonprincipal of conductor q with 3 ≤ q ≤ Q has (1−β) log q ≥ c; with the instances (c, Q) = (1/5, 10¹⁰) from 7.8 and (3.0·10⁻³, ∞) from Banks with the first.",
      "hypotheses": [
-      "c > 0"
+      "c : ℝ",
+      "Q ∈ ℕ ∪ {∞}"
      ],
      "locator": {
       "source": "banks2026",
-      "where": "Theorem 1.1, lines 89–107"
+      "where": "Theorem 1.1, lines 89–107; luzamanzhao2026 Theorem 1.1, lines 39–42"
      },
      "prerequisites": [
       "roadmap:AnalyticNumberTheoryPartI §0.34",
       "roadmap:AnalyticNumberTheoryPartI §0.34a",
       "target:7.5",
       "target:7.8",
+      "roadmap:ComputationalNumberTheory §4.24",
       "roadmap:ZerosOfLFunctions 6.3",
       "mathlib:MulChar.IsQuadratic",
       "mathlib:DirichletCharacter.IsPrimitive"
@@ -2112,34 +2196,59 @@
       {
        "name": "antitone",
        "role": "structure",
-       "statement": "c ≤ c' and the gap at c' give the gap at c"
+       "statement": "c ≤ c', Q ≤ Q' and the gap at (c', Q') give the gap at (c, Q)"
       },
       {
        "name": "exists",
        "role": "compatibility",
-       "statement": "AnalyticNumberTheoryPartI §0.34 gives ∃ c > 0, HasLandauSiegelGap c"
+       "statement": "AnalyticNumberTheoryPartI §0.34 gives ∃ c > 0, HasLandauSiegelGap c ∞"
+      },
+      {
+       "name": "of_le_400000",
+       "role": "structure",
+       "statement": "HasLandauSiegelGap c Q for every real c when Q ≤ 400 000 (ComputationalNumberTheory §4.24), and for every Q when c ≤ 0"
       },
       {
        "name": "zeroFree",
        "role": "characterisation",
-       "statement": "HasLandauSiegelGap c iff L(σ, χ) ≠ 0 on [1 − c/log q, 1) for all such χ"
+       "statement": "HasLandauSiegelGap c Q iff, for all such χ, L(σ, χ) ≠ 0 for real σ with 0 < σ < 1 and σ > 1 − c/log q (the endpoint is not excluded)"
+      },
+      {
+       "name": "luZamanZhao",
+       "role": "constructor",
+       "statement": "HasLandauSiegelGap (1/5) 10¹⁰, from 7.8"
+      },
+      {
+       "name": "banks",
+       "role": "constructor",
+       "statement": "HasLandauSiegelGap (3.0·10⁻³) ∞, from Banks' Theorem 1.1 for q ≥ 10¹⁰ and the first instance below"
+      },
+      {
+       "name": "exceptional_zero",
+       "role": "compatibility",
+       "statement": "for moduli q ≤ Q, c > 1/9.645908801 excludes McCurley's exceptional zero of 7.5 (not at equality)"
       }
      ],
      "tests": [
       {
        "name": "q3",
        "kind": "computation",
-       "statement": "q = 3: 1 − β ≥ 0.002731"
+       "statement": "q = 3: 1 − β ≥ 0.002731 (uncapped) and 1 − β > 0.182048 (capped)"
       },
       {
        "name": "q1e10",
        "kind": "computation",
-       "statement": "q = 10¹⁰: 1.303·10⁻⁴ against 8.686·10⁻³ from 7.8"
+       "statement": "q = 10¹⁰: 1.303·10⁻⁴ (uncapped) against 8.686·10⁻³ (capped); q = 10¹¹: only 1.184·10⁻⁴"
       },
       {
-       "name": "conductor_one",
+       "name": "mccurley",
+       "kind": "computation",
+       "statement": "1/5 > 1/9.645908801 = 0.103671 > 3.0·10⁻³: the capped instance removes McCurley's exceptional zero up to 10¹⁰, the uncapped one does not"
+      },
+      {
+       "name": "conductor_bound",
        "kind": "non-example",
-       "statement": "q = 1 would make log q = 0, which is why q ≥ 3 is in the definition"
+       "statement": "no primitive real nonprincipal character has conductor 1 or 2, so 3 ≤ q excludes none; a definition through the modulus 6 of the character induced by χ₋₃ would be weaker (log 6 > log 3)"
       }
      ]
     },
@@ -2147,7 +2256,7 @@
      "id": "7.10",
      "kind": "theorem",
      "name": "ExplicitBounds.zeta_oneLine_reciprocal",
-     "statement": "Under the explicit Vinogradov mean value theorem: 1/|ζ(1+it)| ≤ 431.7 log t/log log t for t ≥ 3.",
+     "statement": "1/|ζ(1+it)| ≤ 431.7 log t/log log t for t ≥ 3.",
      "hypotheses": [
       "t ≥ 3"
      ],
@@ -2156,7 +2265,6 @@
       "where": "Theorem 2, lines 41–43"
      },
      "prerequisites": [
-      "gap:explicit-vinogradov-mean-value",
       "target:3.4",
       "target:4.8",
       "target:4.10",
@@ -2301,7 +2409,7 @@
      "id": "8.5",
      "kind": "theorem",
      "name": "ExplicitBounds.zeroDensity_logFree_zeta",
-     "statement": "Under the explicit Vinogradov mean value theorem: for 3·10¹² < T ≤ exp(6.7·10¹²), σ ∈ [0.9927, 1]: N(σ,T) ≤ 1.62·10¹¹ T^{1.448(1−σ)}.",
+     "statement": "For 3·10¹² < T ≤ exp(6.7·10¹²), σ ∈ [0.9927, 1]: N(σ,T) ≤ 1.62·10¹¹ T^{1.448(1−σ)}.",
      "hypotheses": [
       "3·10¹² < T ≤ exp(6.7·10¹²)",
       "0.9927 ≤ σ ≤ 1"
@@ -2311,7 +2419,6 @@
       "where": "Theorem 1.1, lines 91–101"
      },
      "prerequisites": [
-      "gap:explicit-vinogradov-mean-value",
       "target:0.4",
       "target:4.7a",
       "target:4.7b",
@@ -2350,7 +2457,7 @@
      "prerequisites": [
       "target:1.2",
       "mathlib:gaussSum",
-      "mathlib:DirichletCharacter.completedLFunction_one_sub",
+      "mathlib:DirichletCharacter.IsPrimitive.completedLFunction_one_sub",
       "mathlib:Fourier.fourierIntegral"
      ],
      "tests": [
@@ -2517,7 +2624,7 @@
  "consumers": [
   {
    "roadmap": "ExplicitPrimeCounting",
-   "what": "RH(H), GRH(q, H), the Platt bridge and recorded verifications (0.2–0.5); explicit N(T) and Lehman's lemma (5.2, 5.4); Perron (6.1–6.2); zero-free regions (7.3, 7.5, 7.6); densities (8.1, 8.3)"
+   "what": "RH(H), GRH(q, H) with the passage to imprimitive characters, the Platt bridge and recorded verifications (0.2–0.4); explicit N(T) and Lehman's lemma (5.2, 5.4); Perron (6.1–6.2); zero-free regions (7.3, 7.5, 7.6); the capped real-zero gap HasLandauSiegelGap at (1/5, 10¹⁰) and (3.0·10⁻³, ∞) (7.9); densities (8.1, 8.3)"
   },
   {
    "roadmap": "ExplicitCharacterSumsAndSieves",
@@ -2525,29 +2632,12 @@
   },
   {
    "roadmap": "ExplicitMultiplicativeFunctions",
-   "what": "bounds right of the line one (3.4), Perron (6.1), RH(T) (0.2)"
+   "what": "bounds right of the line one (3.4), Perron (6.1), RH(H) (0.2, through ExplicitPrimeCounting §1.1)"
   },
   {
    "roadmap": "ExplicitNumberFields",
    "what": "Rademacher's bound on records of finite-order type at dedekindZetaData (3.2), Backlund's argument lemma (5.1), complex Stirling (Layer 2), GRH(q, H) (0.3–0.4), L(1, χ) comparisons (9.1)"
   }
  ],
- "gaps": [
-  {
-   "slug": "explicit-vinogradov-mean-value",
-   "title": "Explicit Vinogradov mean value theorem",
-   "neededBy": [
-    "4.10",
-    "7.3",
-    "7.4",
-    "7.6",
-    "7.10",
-    "8.5"
-   ],
-   "detail": "J_{s,k}(N) = ∫_{[0,1]^k}|Σ_{n≤N} e(α₁n + … + α_kn^k)|^{2s} dα ≤ C(s,k)N^{2s − k(k+1)/2 + Δ(s,k)} with the explicit C(s,k), Δ(s,k) of Ford's Theorem 3 (ford2002vinogradov §§2–6) and its refinement in Bellotti's Theorem 1.4 (bellotti2024); the instance 4.896 of 7.3 uses it through 7.4.",
-   "needs": "No roadmap states an explicit form of Vinogradov's mean value theorem, which the Richert-type bounds 4.10 and everything built on them require.",
-   "supplier": "none",
-   "section": "a future roadmap on Vinogradov's mean value theorem (Ford's Theorem 3 and Bellotti's Theorem 1.4)"
-  }
- ]
+ "gaps": []
 }

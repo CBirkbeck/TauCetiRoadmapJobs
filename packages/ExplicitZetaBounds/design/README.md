@@ -11,7 +11,8 @@ Stieltjes' sector remainder, the two-sided modulus bound for `Γ` and the real-a
 Ramanujan–Mortici, Nemes and Diamond–Straub; the explicit Phragmén–Lindelöf principle and
 Rademacher's convexity bound on records of finite-order type; Backlund's strip bounds, the bounds
 right of the line one and an explicit approximate functional equation; the van der Corput
-derivative tests with explicit constants, the Riemann–Siegel formula with Gabcke's remainder and the
+derivative tests with explicit constants, the explicit Vinogradov mean value theorem with the
+Richert-type bounds it gives, the Riemann–Siegel formula with Gabcke's remainder and the
 critical-line and one-line bounds that follow from them; Backlund's argument lemma for records of
 any degree and the explicit Riemann–von Mangoldt formulas for `ζ` and `L(s, χ)`; weighted zero sums;
 smoothed Perron formulas, mean values of Dirichlet polynomials and of `ζ`, and the weighted and
@@ -49,7 +50,9 @@ Suggested home: `TauCeti/NumberTheory/ExplicitBounds/`, divided into `BigOStar/`
   derivative test with recursive constants, truncated Poisson summation, stationary phase and the
   B-process, and an explicit approximate functional equation — together with the Riemann–Siegel formula with Gabcke's remainder and
   the explicit bounds for `|ζ(1/2 + it)|`, `|ζ(1 + it)|`, `|ζ|` on the lines `σ_k = 1 − k/(2^k − 2)`
-  and `|L(1/2 + it, χ)|` that they give (Layer 4);
+  and `|L(1/2 + it, χ)|` that they give; the explicit Vinogradov mean value theorem for complete and
+  incomplete systems, the bound for the short sums `Σ (n + u)^{−it}` that it gives, and the
+  Richert-type bounds for `ζ` and the Hurwitz zeta function (Layer 4);
 - Backlund's argument lemma for analytic records of any degree, the explicit Riemann–von Mangoldt
   formulas for `ζ` and primitive Dirichlet L-functions, Lehman's weighted zero sum and its
   derivative form, and the value of `Σ_{γ>0} γ⁻²` (Layer 5);
@@ -58,15 +61,19 @@ Suggested home: `TauCeti/NumberTheory/ExplicitBounds/`, divided into `BigOStar/`
   Montgomery–Vaughan and Preissmann constants and Elliott's maximal large sieve (Layer 6);
 - the criteria behind the classical, Littlewood-type and Vinogradov–Korobov zero-free regions, the
   regions with decimal constants for `ζ` and `L(s, χ)`, the real-zero bounds for quadratic
-  characters and the numerical instance of the Landau–Siegel exclusion (Layer 7);
+  characters, and the real-zero gap `(1 − β) log q ≥ c` for conductors up to a cap `Q` with its
+  instances up to `10¹⁰` and, numerically, without a cap (Layer 7);
 - the explicit zero-density estimates for `ζ` and for Dirichlet L-functions, including the log-free
   densities (Layer 8);
 - upper bounds for `|L(1, χ)|` for every primitive character and their refinements under
   conditions on `χ(2)` and `χ(3)`, and lower bounds for non-quadratic characters and for quadratic
   characters of conductor at most `10¹⁰` (Layer 9).
 
-The van der Corput toolkit of Layer 4 is general mathematics about exponential sums; it is stated
-here because every consumer of it on the board comes later in the merge order than this roadmap.
+The van der Corput toolkit and the explicit Vinogradov mean value theorem of Layer 4 are general
+mathematics about exponential sums; they are stated here because every consumer of them on the board
+comes later in the merge order than this roadmap, and neither Mathlib, Tau Ceti nor a roadmap on
+main or earlier in the merge order states Vinogradov's mean value theorem in any form
+(`ExplicitCharacterSumsAndSieves` places it outside its scope).
 
 ### Consumed, not redefined
 
@@ -105,8 +112,6 @@ here because every consumer of it on the board comes later in the merge order th
   progressions (`ExplicitPrimeCounting`); explicit Pólya–Vinogradov, Burgess and Brun–Titchmarsh
   inequalities (`ExplicitCharacterSumsAndSieves`); explicit means of multiplicative functions
   (`ExplicitMultiplicativeFunctions`);
-- the explicit Vinogradov mean value theorem, which the Vinogradov–Korobov targets of Layers 4, 7 and
-  8 take from a supplier contract (Exact supplier contracts, last item);
 - the theory of exponent pairs beyond the explicit A- and B-processes of Layer 4 (Huxley's discrete
   Hardy–Littlewood method and decoupling bounds), which belongs to a later roadmap;
 - every algorithm, interval-arithmetic computation and table: a numerical fact enters a theorem
@@ -134,7 +139,7 @@ here because every consumer of it on the board comes later in the merge order th
   `a = 1` if `χ` is odd (`DirichletCharacter.Even`, `DirichletCharacter.Odd`). Mathlib's
   `DirichletCharacter.completedLFunction χ s` is `Gammaℝ(s + a) L(s, χ)` off the poles of the gamma
   factor, without the conductor power; the functional equation is
-  `DirichletCharacter.completedLFunction_one_sub`. "Quadratic" is `MulChar.IsQuadratic` with `χ ≠ 1`.
+  `DirichletCharacter.IsPrimitive.completedLFunction_one_sub`. "Quadratic" is `MulChar.IsQuadratic` with `χ ≠ 1`.
 - **Logarithms and branches.** `log` on positive reals is `Real.log`; `Log` on the slit plane is the
   principal `Complex.log`; `log Γ` on the slit plane is the branch of `AnalyticNumberTheoryPartI`
   §0.23a, real on `(0, ∞)`, which agrees with the sector branch of `ZerosOfLFunctions` 1.1 on its
@@ -170,8 +175,11 @@ here because every consumer of it on the board comes later in the merge order th
 - `DirichletCharacter.LFunction`, `DirichletCharacter.LFunction_eq_LSeries` (for `1 < Re s`),
   `DirichletCharacter.completedLFunction`, `DirichletCharacter.gammaFactor`,
   `DirichletCharacter.LFunction_eq_completed_div_gammaFactor`,
-  `DirichletCharacter.completedLFunction_one_sub` (primitive characters),
-  `DirichletCharacter.rootNumber`, `DirichletCharacter.LFunction_ne_zero_of_one_le_re`,
+  `DirichletCharacter.IsPrimitive.completedLFunction_one_sub` (primitive characters),
+  `DirichletCharacter.rootNumber`, `DirichletCharacter.changeLevel`,
+  `DirichletCharacter.LFunction_changeLevel` (the Euler factors at the primes dividing the new level,
+  for `χ ≠ 1` or `s ≠ 1`), `DirichletCharacter.primitiveCharacter`,
+  `DirichletCharacter.changeLevel_primitiveCharacter`, `DirichletCharacter.LFunction_ne_zero_of_one_le_re`,
   `DirichletCharacter.LFunction_apply_one_ne_zero`, `DirichletCharacter.LFunction_modOne_eq`,
   `DirichletCharacter.completedLFunction_modOne_eq`, `DirichletCharacter.isPrimitive_one_level_one`,
   `DirichletCharacter.IsPrimitive` (`conductor χ = q`), `DirichletCharacter.conductor`,
@@ -266,17 +274,6 @@ here because every consumer of it on the board comes later in the merge order th
   frequencies, `0 < δ ≤ 1/2`, `N ≥ 1`), `SieveApplications.sharp_primitive_largeSieve` (constant
   `H − 1 + Q²`), and the separated Hilbert inequality with constant `π/δ`.
 
-### Declared gap: the explicit Vinogradov mean value theorem
-
-No roadmap on main, earlier in the merge order or in an open pull request plans an explicit form of
-Vinogradov's mean value theorem. The targets 4.10, 7.4, 7.6, 7.10 and 8.5, and the instance `4.896` of 7.3, need the
-following, which a future roadmap on Vinogradov's mean value theorem must provide: for integers
-`k ≥ 2`, `s ≥ 1` and `N ≥ 1`, with
-`J_{s,k}(N) = ∫_{[0,1]^k} |Σ_{n≤N} e(α₁n + … + α_k n^k)|^{2s} dα`, the bound
-`J_{s,k}(N) ≤ C(s, k) N^{2s − k(k+1)/2 + Δ(s,k)}` with the explicit functions `C(s, k)` and
-`Δ(s, k)` of Ford's Theorem 3 (`ford2002vinogradov`, §§2–6). Until it exists these targets carry
-`gap:explicit-vinogradov-mean-value`.
-
 ## How to read the build
 
 Layer 0 fixes the language: the explicit error predicate, the bounded-height Riemann hypotheses with
@@ -284,7 +281,8 @@ the bridge from Platt's theorem, and admissible cosine polynomials. Layers 1 and
 function with explicit constants, on the positive axis and in the complex plane; everything later
 that touches a gamma factor uses them. Layer 3 turns the Gamma bounds into pointwise bounds for `ζ`
 and `L(s, χ)` by the explicit Phragmén–Lindelöf principle. Layer 4 is the explicit theory of
-exponential sums and the subconvex and one-line bounds it gives. Layer 5 counts zeros with explicit
+exponential sums, by van der Corput's and by Vinogradov's methods, and the subconvex, one-line and
+Richert-type bounds it gives. Layer 5 counts zeros with explicit
 errors, from Layer 3 and the argument principle of `ZerosOfLFunctions` Layer 7. Layer 6 is
 Perron's formula, mean values and large sieves. Layer 7 proves the zero-free regions, from the
 partial-fraction identities, the Gamma bounds, the zero counts and the pointwise bounds, and bounds
@@ -345,6 +343,16 @@ The open strip excludes the trivial zeros and the junk value of `riemannZeta` at
 - `(∀ H, GRH(q, H))` if and only if `DirichletGRH χ` (`AnalyticNumberTheoryPartI` §1.6) for every
   primitive `χ` modulo `q`: the extra clause `χ ≠ 1 ∨ s ≠ 1` and the half-plane `Re s > 0` of
   `DirichletGRH` are reconciled by `DirichletCharacter.LFunction_ne_zero_of_one_le_re`.
+- Passage to imprimitive characters: for `q ≥ 1` and real `H`, every `χ : DirichletCharacter ℂ q`,
+  primitive or not, has all its zeros with `0 < Re ρ < 1` and `|Im ρ| ≤ H` on `Re ρ = 1/2` if and
+  only if `GRH(f, H)` holds for every divisor `f` of `q`. The L-function of `χ` is that of its
+  primitive character `χ*` (`DirichletCharacter.primitiveCharacter`, of level `f = conductor χ`,
+  which divides `q`) times `∏_{p ∣ q} (1 − χ*(p) p^{−s})` (`DirichletCharacter.LFunction_changeLevel`
+  with `DirichletCharacter.changeLevel_primitiveCharacter`, valid for `s ≠ 1`); a factor with
+  `χ*(p) = 0` is `1`, and one with `χ*(p) ≠ 0` vanishes only where `p^{Re s} = |χ*(p)| = 1`, that is
+  on `Re s = 0`. So `χ` and `χ*` have the same zeros in the open strip; conversely a primitive
+  character of level `f ∣ q` and its lift to level `q` (`DirichletCharacter.changeLevel`) have the
+  same zeros there, by the same identity.
 - Agreement with the certified-zero language: for `H ≥ 0`, `RH(H)` if and only if
   *AllOnCriticalLine* `completedRiemannZeta univ (Icc 0 1 ×ℂ Icc (−H) H)`, and `GRH(q, H)` if and only
   if *AllOnCriticalLine* `(DirichletCharacter.completedLFunction χ) univ (Icc 0 1 ×ℂ Icc (−H) H)` for
@@ -359,7 +367,9 @@ The open strip excludes the trivial zeros and the junk value of `riemannZeta` at
 `riemannZeta_ne_zero_of_one_le_re`, `RiemannHypothesis`, `DirichletCharacter.LFunction`,
 `DirichletCharacter.IsPrimitive`, `DirichletCharacter.LFunction_modOne_eq`,
 `DirichletCharacter.isPrimitive_one_level_one`, `DirichletCharacter.LFunction_ne_zero_of_one_le_re`,
-`DirichletCharacter.LFunction_eq_completed_div_gammaFactor`; `AnalyticNumberTheoryPartI` §1.6;
+`DirichletCharacter.LFunction_eq_completed_div_gammaFactor`, `DirichletCharacter.changeLevel`,
+`DirichletCharacter.LFunction_changeLevel`, `DirichletCharacter.primitiveCharacter`,
+`DirichletCharacter.changeLevel_primitiveCharacter`; `AnalyticNumberTheoryPartI` §1.6;
 `ZerosOfLFunctions` 6.5 and Layer 9.
 
 **Checks.**
@@ -371,6 +381,11 @@ The open strip excludes the trivial zeros and the junk value of `riemannZeta` at
   no character modulo `2` is primitive. The same holds for every `q ≡ 2 (mod 4)`.
 - `GRH(1, H)` and `RH(H)` are the same statement: the unique character modulo `1` is primitive and
   its L-function is `riemannZeta`.
+- The passage to imprimitive characters at `q = 2`: the only character modulo `2` has L-function
+  `(1 − 2^{−s}) ζ(s)`, whose extra zeros `2πik/log 2` lie on `Re s = 0`, outside the strip; the law
+  reads "its zeros up to height `H` in the strip are on the line iff `GRH(1, H)` and `GRH(2, H)`",
+  that is iff `RH(H)`. The same law with the closed condition `0 ≤ Re ρ` in place of `0 < Re ρ`
+  would fail for every `H ≥ 9.07`, at the zero `ρ = 2πi/log 2` of height `9.0647`.
 - `RH(14)` asserts nothing about the zero `1/2 + 14.1347…i`, whose ordinate exceeds `14`; it is a
   statement about the empty set of zeros with `|γ| ≤ 14` and follows from any recorded
   verification of 0.4.
@@ -543,7 +558,7 @@ Mortici's monotonicity proof, Theorem 1, `mortici2011ramanujan`). Route: monoton
 
 **Checks.**
 
-- `θ₁ = 0.33593`, `θ₂ = 0.51176`, `θ₁₀ = 0.87001`, `θ₁₀₀ = 0.98625`: increasing, inside `(3/10, 1)`.
+- `θ₁ = 0.33593`, `θ₂ = 0.51176`, `θ₁₀ = 0.87001`, `θ₁₀₀ = 0.98632`: increasing, inside `(3/10, 1)`.
 - At `x = 1` the lower bound `(13.01)^{1/6} √π/e = 0.999985` and the upper bound `1.000283` bracket
   `Γ(2) = 1`; with `1/30` replaced by `1/100` the upper bound becomes `0.999985 < 1` and fails.
 - Monotonicity holds only on `[1, ∞)`: `θ_x → 30/π³ = 0.96755` as `x → 0⁺`, while `θ_{0.5} = 0.32076`,
@@ -719,7 +734,9 @@ real `x > 0` the sign pattern of Theorem 1.1 (lines 86–100). Consequence (line
 upper bound `exp(1/(12x))` that 1.2 gives at `m = 0`.
 
 - `γ₀ = 1`, `γ₁ = 1/12`, `γ₂ = 1/288`, `γ₃ = −139/51840`, `γ₄ = −571/2488320`.
-- `γ_k` is rational, and `(−1)^{N} γ_{2N−1} ≥ 0`, `(−1)^{N+1} γ_{2N} ≥ 0` (Theorem 1.1).
+- `γ_k` is rational, and for `N ≥ 1`, `(−1)^{N+1} γ_{2N−1} ≥ 0` and `(−1)^{N+1} γ_{2N} ≥ 0`: the
+  signs run `+, +, −, −, +, +, …` (Theorem 1.1, (1.4), read in the convention here: Nemes' `γ_n`
+  is `(−1)^n` times the `γ_n` here, his `γ₁` being `−1/12`, line 38).
 - The reciprocal: `Σ_k (−1)^k γ_k w^k` is the formal inverse of `Σ_k γ_k w^k`, because the exponent is
   an odd series in `w`; it is the expansion of `1/Γ` that Nemes' bounds also cover.
 
@@ -731,6 +748,10 @@ upper bound `exp(1/(12x))` that 1.2 gives at `m = 0`.
   whose `w²` coefficient is `0`.
 - `γ₃ = B₄/12 + γ₁³/6 = −1/360 + 1/10368 = −139/51840`; a definition through `log Γ` coefficients
   would give `−1/360`.
+- The signs: `γ₁, γ₂ > 0`, `γ₃, γ₄ < 0`, and `γ₅ = 163879/209018880 > 0`,
+  `γ₆ = 5246819/75246796800 > 0`, `γ₇ = −534703531/902961561600 < 0`. Nemes' form
+  `(−1)^N γ_{2N−1} ≥ 0` taken over unchanged would claim `γ₁ ≤ 0` and `γ₃ ≥ 0`, false here; it is
+  the sign pattern of his convention, in which `γ₁ = −1/12` and `γ₃ = 139/51840`.
 - The real bound at `x = 1`: the ratio is `e/√(2π) = 1.084438` against `1 + 1/12 + 1/288 = 1.086806`; at
   `x = 10`: `1.0083654` against `1.0083681`, while `exp(1/120) = 1.0083682` is weaker; at `x = 0.01` the
   ratio `4.19548` is far below the bound `44.06`.
@@ -1138,7 +1159,8 @@ Prove:
   `benligoeltwisszaman2026`, lines 145–147). Route for `χ ≠ 1`: 3.5 with
   `F(x) = L(x + it, χ)`, the functional equation on `Re s = 0`, 2.8 on the line `σ = 0` (which gives
   `|Γ((1 + a + iτ)/2)/Γ((a − iτ)/2)| ≤ (|1 + iτ|/2)^{1/2}`), and the numerical certificate
-  `Σ_j (−1)^j log ζ(j + 3/2) ≤ 1.4988` (line 379); for `χ = 1`, the first two items.
+  `2 Σ_{j≥0} (−1)^j log ζ(j + 3/2) ≤ 1.4988` (lines 366–379; the sum itself is `0.74940`); for
+  `χ = 1`, the first two items.
 - (Hiary, Corollary 1.1 and Theorem 1.2, `hiary2016hybrid` lines 57–86) if `q > 1` is a sixth power
   and `χ` is primitive modulo `q`, then `|L(1/2 + it, χ)| ≤ 9.05 τ(q)(q|t|)^{1/6} log^{3/2}(q|t|)` for
   `|t| ≥ 200`, with `τ(q)` the number of divisors of `q` (`ArithmeticFunction.sigma 0`); the general
@@ -1148,7 +1170,7 @@ Prove:
   Lemma 3.3), with 4.1–4.3.
 
 *Needs:* 4.1–4.6, 3.5, 2.8; L-functions Layer 4 `dirichletData`; Mathlib
-`DirichletCharacter.completedLFunction_one_sub`, `ArithmeticFunction.sigma`; the named numerical
+`DirichletCharacter.IsPrimitive.completedLFunction_one_sub`, `ArithmeticFunction.sigma`; the named numerical
 certificates.
 
 **Checks.**
@@ -1205,17 +1227,84 @@ the numerical certificate of Yang's parameter choices.
 - Convexity between the critical line and the line one gives only `t^{13/147 + ε}` at `σ = 5/7`
   (`yang2024` lines 55–58), and `13/147 > 1/14`.
 
+### 4.9a The explicit Vinogradov mean value theorem
+
+For integers `k ≥ 1`, `s ≥ 1` and real `P ≥ 1` let `J_{s,k}(P)` be Vinogradov's integral
+`∫_{[0,1]^k} |Σ_{1≤x≤P} e(α₁x + … + α_k x^k)|^{2s} dα`, which equals the number of integer solutions
+of `Σ_{i≤s} (x_i^j − y_i^j) = 0` for `1 ≤ j ≤ k` with `1 ≤ x_i, y_i ≤ P` (`ford2002vinogradov`
+(1.3)–(1.4), lines 167–178). For `1 ≤ h ≤ k` and a finite set `B` of positive integers let
+`J_{s,k,h}(B)` count the solutions of the same equations for `h ≤ j ≤ k` only, with `x_i, y_i ∈ B`
+((1.8), lines 240–244), and let `C(P, R)` be the set of integers at most `P` all of whose prime
+factors lie in `(√R, R]`. For an integer `N ≥ 1` and real `t ≥ N` let
+`S(N, t) = max_{0<u≤1} max_{N<R≤2N} |Σ_{N<n≤R} (n + u)^{−it}|` (lines 121–128). Prove:
+
+- (Ford, Theorem 3, lines 220–234) for integers `k ≥ 1000` and `s` with
+  `2k² ≤ s ≤ (k²/2)(1/2 + log(3k/8))`, and every real `P ≥ 1`,
+  `J_{s,k}(P) ≤ k^{2.055k³ − 5.91k² + 3s} · 1.06^{sk + 2s²/k − 9.7278k³} · P^{2s − k(k+1)/2 + Δ_s}`
+  with `Δ_s = (3/8) k² e^{1/2 − 2s/k² + 1.7/k}`; and for every integer `k ≥ 129` there is an integer
+  `s ≤ ρk²` with `J_{s,k}(P) ≤ k^{θk³} P^{2s − k(k+1)/2 + 0.001k²}` for every real `P ≥ 1`, where
+  `(ρ, θ) = (3.21432, 2.3291)` for `k ≥ 200`, `(3.21734, 2.3849)` for `150 ≤ k ≤ 199` and
+  `(3.22313, 2.4183)` for `129 ≤ k ≤ 149`.
+- (Ford, Theorem 4, lines 283–290) for integers `k ≥ 60`, `h` with `0.9k ≤ h ≤ k − 2`, `t ≥ 1` and
+  `s` with `2t ≤ s ≤ ⌊h/2⌋t`, and reals `D ≥ 10`, `P ≥ e^{Dk²}` and `η` with `2/k³ < η ≤ 1/(2k)` and
+  `1/(8k) ≤ 4 log k/(Dk²η) ≤ 0.4`: `J_{s,k,h}(C(P, P^η)) ≤ e^{C} P^{E}`, where
+  `E = 2s − t(h + k)/2 + t(t − 1)/2 + ηs²/(2t) + ht e^{−s/(ht)}` and `C` is the closed expression in
+  `k, h, s, t, D, η` displayed with the theorem.
+- (Ford, Theorem 2, lines 129–130) for integers `N ≥ 2` and real `t ≥ N`, with `λ = log t/log N`,
+  `S(N, t) ≤ 9.463 N^{1 − 1/(133.66 λ²)}`.
+- (Bellotti, Theorems 1.4 and 1.5, `bellotti2024` lines 183–230) under the same hypotheses
+  `S(N, t) ≤ 8.7979 N^{1 − 1/(132.94357 λ²)}`; its inputs are Ford's Theorem 4 and her Theorem 1.4,
+  whose second clause is the second clause of Ford's Theorem 3 with `(ρ, θ)` from her table
+  (lines 216–225; for instance `(3.208630, 2.17720)` for `k ≥ 90 000` and `(3.177207, 2.40930)` for
+  `129 ≤ k ≤ 137`), and whose first clause is a bound of the shape of Ford's first clause for
+  `k ≥ 90 000`, on the range of `s` and with the exponent `Δ_s` of her (1.10) (lines 183–208).
+
+Route: Ford's §§2–4 prove Theorems 3 and 4 by Wooley's efficient differencing combined with the
+Arkhipov–Karatsuba device for incomplete systems (lines 214–219 and 262–282); §5 deduces the bound
+for `S(N, t)` when `λ ≥ 87` from the second clause of Theorem 3 and from Theorem 4, through his
+Lemma 5.1 (lines 2031–2471); §6 proves it for `λ ≤ 87`, by Weyl differencing for `λ ≤ 2.6` and by his
+Lemma 6.3, which bounds `S(N, t)` through `J_{s,k}(M)`, with mean-value bounds for small `k` iterated
+by his Lemmas 6.5–6.7 (Lemma 6.8 and the rows of Table 6.1, a numerical certificate). Bellotti
+reruns the argument with Preobrazhenskiĭ's and Tyrina's bounds for `J_{s,k}` (`bellotti2024`
+lines 173–182 and 357–386) and moves the critical value of `λ` from `87` to `84`.
+
+*Needs:* Mathlib `Real.fourierChar` (for `e(x)`), `MeasureTheory.volume` on `[0, 1]^k`,
+`Nat.primeFactors`; the numerical certificates of `ford2002vinogradov` Table 6.1 and of
+`bellotti2024` §§3–4.
+
+**Checks.**
+
+- `J_{2,1}(2) = 6`: the equation `x₁ + x₂ = y₁ + y₂` in `{1, 2}` has `1 + 4 + 1` solutions, and by
+  Parseval `∫₀¹ |e(α) + e(2α)|⁴ dα = 6`; the exponent `2s` is what matches the count, since
+  `∫₀¹ |e(α) + e(2α)|² dα = 2`.
+- For `s ≤ k` only the diagonal solutions exist (equal power sums up to degree `s` force equal
+  multisets), for instance `J_{2,2}(3) = 2 · 3² − 3 = 15`; and `J_{s,k}(P) ≥ ⌊P⌋^s` always. In
+  Theorem 3's range `s ≥ 2k² > k(k + 1)/2`, so the exponent `2s − k(k+1)/2 + Δ_s` exceeds `s`, as the
+  diagonal count requires; and `Δ_s ≥ 0` is necessary, by the lower bound
+  `J_{s,k}(P) ≥ (2s)^{−k} ⌊P⌋^{2s − k(k+1)/2}` ((1.5), lines 197–201) as `P → ∞`.
+- At `k = 1000`: `Δ_s = 375 000 e^{−3.4983} = 11 343` at `s = 2k²`, and `Δ_s = k e^{1.7/k} = 1001.7`
+  at the top of the range `s = (k²/2)(1/2 + log 375) = 3 213 463`, that is `s = 3.2135 k²`, where the
+  second clause takes `ρ = 3.21432`; the factor `3/8` replaces the `1/2` of Wooley's earlier exponent
+  (lines 214–217).
+- The bound for `S(N, t)` beats the trivial `S(N, t) ≤ N` only when `N^{1/(133.66 λ²)} > 9.463`, that
+  is `log N > 300.39 λ²` (for Bellotti's pair, `log N > 289.09 λ²`), and Ford's proof uses the
+  trivial bound below `e^{300 λ²}` (lines 2292–2295); Bellotti's pair `(8.7979, 132.94357)` is
+  smaller than Ford's `(9.463, 133.66)` in both entries. The shift `u ∈ (0, 1]` is what lets one bound
+  serve every Hurwitz zeta function in 4.10; at `u = 1` the sum is `Σ_{N+1<m≤R+1} m^{−it}`.
+- `N = 1` is outside the statement (`λ = log t/log 1` is undefined) but trivial: the sum has the
+  single term `(2 + u)^{−it}`, so `S(1, t) = 1`, below both constants; with `1/λ²` read as `0` the
+  bound therefore holds for every `1 ≤ N ≤ t`, the range that Ford's Lemma 7.3 assumes in 4.10.
+
 ### 4.10 Richert-type bounds
 
-Assuming the explicit Vinogradov mean value theorem (Exact supplier contracts, declared gap), prove
-for `|t| ≥ 3` and `1/2 ≤ σ ≤ 1`: `|ζ(σ + it)| ≤ A |t|^{B(1−σ)^{3/2}} log^{2/3}|t|`, and the same for
+Prove for `|t| ≥ 3` and `1/2 ≤ σ ≤ 1`: `|ζ(σ + it)| ≤ A |t|^{B(1−σ)^{3/2}} log^{2/3}|t|`, and the same for
 `|ζ(σ + it, u) − u^{−s}|` with `0 < u ≤ 1`, with `(A, B) = (76.2, 4.45)` (Ford, Theorem 1,
 `ford2002vinogradov` lines 28–31) and `(A, B) = (70.6995, 4.43795)` (Bellotti, Theorem 1.1,
-`bellotti2024` lines 60–63). Route: Ford's Theorem 2 (an explicit bound for `Σ n^{−it}` over short
-ranges from the mean value theorem) and his Lemma 7.1–7.3 for the passage to `ζ`; Bellotti's
-refinement of the mean value input and of Lemma 7.3 with `C = 8.7979`, `D = 132.94357`.
+`bellotti2024` lines 60–63). Route: the bound `S(N, t) ≤ C N^{1 − 1/(Dλ²)}` of 4.9a, with
+`(C, D) = (9.463, 133.66)` for Ford's constants and `(8.7979, 132.94357)` for Bellotti's, inserted
+in Ford's Lemmas 7.1–7.3 (`ford2002vinogradov` lines 3053–3222) for the passage to `ζ(s, u) − u^{−s}`.
 
-*Needs:* `gap:explicit-vinogradov-mean-value`; 4.2; Mathlib `hurwitzZeta`.
+*Needs:* 4.9a (the bound for `S(N, t)`); 4.2; Mathlib `hurwitzZeta`.
 
 **Checks.**
 
@@ -1234,7 +1323,8 @@ refinement of the mean value input and of Lemma 7.3 with `C = 8.7979`, `D = 132.
 ### Dependencies
 
 Layers 2–3; `AsymptoticExpansions` §§13.1 and Layer 5; L-functions Layer 4; Mathlib exponential sums
-over `Real.fourierChar`, `ArithmeticFunction.sigma`, `hurwitzZeta`. 4.10 depends on the declared gap.
+over `Real.fourierChar`, `ArithmeticFunction.sigma`, `hurwitzZeta`; 4.10 depends on 4.9a, which
+rests on the numerical certificates of Ford's Table 6.1 and of Bellotti's §§3–4.
 
 ## Layer 5: zero counting with explicit errors
 
@@ -1390,10 +1480,13 @@ cut-off (Cully-Hugill and Johnston, Theorem 2.1, `cullyhugilljohnston2023` lines
 `θ' = 2/(√(π² + 4) + π)`, for `T > 0`, `x ≥ 1` and `λ ≥ θ'/T`, the same identity holds with error
 `O*((x^κ/(πλT)) Σ_n |a_n|/n^κ + (1/(πT)) ∫_{θ'/T}^{λ} Σ_{|log(x/n)|≤u} |a_n| e^{κu} du/u²)`, a
 self-contained variant of Ramaré's Theorem 1.1 in `ramare2016perron`. Both are
-finite when `x` is an integer, unlike the Davenport form. Route: the kernel bound
-`|(1/2πi)∫_{κ−iT}^{κ+iT} y^z dz/z − 1_{y>1}| ≤ (y^κ/π) min(7/2, 1/(T|log y|))` (their Lemma 7.1,
-lines 683–684, with the endpoint value `π⁻¹ arctan(T/κ)` of `TauCeti.truncatedPerronKernel_one` at
-`y = 1`), summed against `|a_n|` and rewritten as an integral over `u`.
+finite when `x` is an integer, unlike the Davenport form. Route: the kernel bound of
+Cully-Hugill and Johnston, Lemma 2.2 (`cullyhugilljohnston2023` line 163), stated there at height
+`1` and rescaled by `z = Tw`: for `y > 0`, with `v = 1` if `y ≥ 1` and `v = 0` if `y < 1`,
+`|v − (1/2πi)∫_{κ−iT}^{κ+iT} y^z dz/z| ≤ min(y^κ/(πT|log y|), |v − y^κ π⁻¹ arctan(T/κ)| + T|log y| y^κ/π)`,
+which at `y = 1` is an equality, the integral being the endpoint value `π⁻¹ arctan(T/κ)` of
+`TauCeti.truncatedPerronKernel_one`; then `y = x/n`, summed against `|a_n|` and rewritten as an
+integral over `u`.
 
 *Needs:* Tau Ceti `TauCeti.truncatedPerron_LSeries`, `TauCeti.truncatedPerronKernel`,
 `TauCeti.truncatedPerronKernel_one`, `TauCeti.norm_truncatedPerron_LSeries_sub_sum_le`; Mathlib
@@ -1458,10 +1551,12 @@ For distinct real `λ_r` with local spacings `δ_r = min_{s≠r} |λ_r − λ_s|
 (Preissmann, `preissmann1984`), improving the constant `3π/2` of `AnalyticNumberTheoryPartI` §1.5a.
 Consequences: for `T > 0` and complex `a₁, …, a_N`,
 `∫₀^T |Σ_{n≤N} a_n n^{it}|² dt = Σ_n |a_n|² (T + O*(2π c₀ (n + 1)))`, with `π c₀` in place of `2π c₀`
-for real `a_n` (Ramaré, Lemma 6.2, `ramare2016density`). Route for the consequence: expand the square;
-the off-diagonal is the difference of the Hilbert forms for `u_n = a_n n^{iT}` and `u_n = a_n`
-divided by `i`, with `λ_n = log n` and `δ_n ≥ log(1 + 1/n) ≥ 1/(n + 1)`; for real `a_n` the second
-form vanishes by antisymmetry.
+for real `a_n` (Ramaré, Lemma 6.5, `ramare2016density` line 828, which states the upper bound
+`∫₀^T |Σ_n a_n n^{it}|² dt ≤ Σ_n |a_n|² (T + 2π c₀ (n + 1))`; the two-sided form follows from the same
+proof, which bounds the off-diagonal terms in absolute value). Route for the consequence: expand
+the square; the off-diagonal is the difference of the Hilbert forms for `u_n = a_n n^{iT}` and
+`u_n = a_n` divided by `i`, with `λ_n = log n` and `δ_n ≥ log(1 + 1/n) ≥ 1/(n + 1)`; for real `a_n`
+the second form vanishes by antisymmetry.
 
 *Needs:* `AnalyticNumberTheoryPartI` §1.5a (the structure of the proof, which Preissmann sharpens);
 Mathlib `Matrix.IsHermitian.eigenvalues`, `intervalIntegral`.
@@ -1597,30 +1692,40 @@ lines 137–143 record that the proof of the original input by Cheng and Graham 
 ### 7.3 Kadiri's criterion and the classical region
 
 Let `f_n = (a_k)` be admissible (0.5) with `A = f_n(0) − a₀`, `T₀ > 0` with `RH(T₀)`, `R > r > 0` such
-that `ζ` has no zero with `|γ| ≥ 2` and `β ≥ 1 − 1/(R log|γ|)`, `t₀ ∈ [1, T₀]` and `θ ∈ (π/2, π)`.
+that every zero of `ζ` with `|γ| ≥ 2` has `β ≤ 1 − 1/(R log|γ|)` (an established region in the form
+with `>`: no zero with `|γ| ≥ 2` and `β > 1 − 1/(R log|γ|)`), `t₀ ∈ [1, T₀]` and `θ ∈ (π/2, π)`.
 With `η₀, σ₀, w₀` as in (2.1), `h_θ`, `g₁(θ)`, `d₁(θ)`, `m(θ)`, `δ`, `κ` and
 `K(w, θ) = ∫₀^{d₁(θ)} (a₁ e^{−u} − a₀) h_θ(u) e^{wu} du` as defined in `mossinghofftrudgian2015`
 lines 164–220, and the error term `C(η)` of Kadiri's (52)–(64) with Mossinghoff and Trudgian's
 refinements (lines 296–440), prove: if the numerical certificate `C(η) ≤ 0` for `0 ≤ η ≤ η₀` holds,
-then `ζ` has no zero with `|γ| ≥ 2` and `β ≥ 1 − 1/(R₀ log|γ|)` for every
-`R₀ ≥ max(r, A g₁(θ)/((1 − κ)² K(w₀, θ)))`, and the refined bound (3.1) of `mossinghofftrudgian2015`
-line 263 (Kadiri's method, `kadiri2005` criterion (10); `mossinghofftrudgian2015` (2.2)–(3.1)).
-Instances, each with its source's polynomial certificate, smoothing and numerical certificate:
+then every zero of `ζ` with `|γ| ≥ 2` has `β ≤ 1 − 1/(R₀ log|γ|)`, that is `ζ` has no zero with
+`|γ| ≥ 2` and `β > 1 − 1/(R₀ log|γ|)`, for every `R₀ ≥ max(r, A g₁(θ)/((1 − κ)² K(w₀, θ)))`, and
+likewise with the refined bound (3.1) of `mossinghofftrudgian2015` line 263 in place of that maximum
+(Kadiri's method, `kadiri2005` criterion (10); `mossinghofftrudgian2015` (2.2)–(3.1)). The method
+takes a hypothetical zero `ρ₀ = β₀ + iγ₀` with `1 − 1/(r log γ₀) ≤ β₀ ≤ 1 − 1/(R log γ₀)` and proves
+`β₀ ≤ 1 − 1/(R₀ log γ₀)` (`mossinghofftrudgian2015` lines 157–163), so it gives the region with `>`;
+the region with `≥` (no zero with `β ≥ 1 − 1/(R₀ log|γ|)`) follows for every `R₀` strictly larger
+than the maximum. Instances, each with its source's polynomial certificate, smoothing and numerical
+certificate:
 
 - `R₀ = 5.69693` (Kadiri, Théorème 1.1, `kadiri2005`; the value of the published version, quoted in
   `jangkwon2014` line 13, `mossinghofftrudgian2015` line 111 and `mty2024` line 1279; the preprint
-  prints `5.70176`), from `R = 9.645908801` and `RH(3·10¹²)`;
+  prints `5.70176`), from `R = 9.645908801` and `RH(3·10¹²)`, in the form with `≥`: the computation
+  gives the maximum `5.696924…` (`mossinghofftrudgian2015` line 240), below the printed value;
 - `R₀ = 5.68371` (Jang and Kwon, Proposition 11, `jangkwon2014` lines 10–15 and 603), from Kadiri's
-  region and `RH(30 610 046 000)`, with a different smoothing;
+  region and `RH(30 610 046 000)`, with a different smoothing, in the form with `≥` as stated there;
 - `R₀ = 5.573412` (Mossinghoff and Trudgian, Theorem 1, `mossinghofftrudgian2015` lines 117–118),
   from `R = 5.7`, `RH(3.06·10¹⁰)`, their degree-16 polynomial `F₁₆` (Table 5) and the sum
-  `Σ_{γ>0} γ^{−2} ≤ 0.023105` (5.4);
-- `R₀ = 5.558691` (Mossinghoff, Trudgian and Yang, Theorem 1.3, `mty2024` lines 96–97 and §9), from
-  `R = 5.573412`, `RH(3·10¹²)`, the polynomial `F₁₆`, Jang and Kwon's smoothing with `λ = 1`,
-  `θ = 1.13489`, and seven iterations (Table 3);
-- `R₀ = 4.896` for `t ≥ 3` (Bellotti, Trudgian and Yang, Theorem 1, `bellottitrudgianyang2026`
-  line 67, an unrefereed preprint): their Lemma 1 for `3 ≤ t ≤ exp(76.47)` from `RH(3·10¹²)`, and the
-  Littlewood-type region 7.4 above.
+  `Σ_{γ>0} γ^{−2} ≤ 0.023105` (5.4), in the form with `>` as stated there; the form with `≥` at
+  `5.573412` follows from the next instance, since `1/(5.573412 log|γ|) < 1/(5.558691 log|γ|)`;
+- `R₀ = 5.558691` (Mossinghoff, Trudgian and Yang, Theorem 1.3, `mty2024` lines 96–97 and §9), in the
+  form with `≥`, from `R = 5.573412` in the form with `>` (which is what the hypothesis asks for),
+  `RH(3·10¹²)`, the polynomial `F₁₆`, Jang and Kwon's smoothing with `λ = 1`, `θ = 1.13489`, and
+  seven iterations (Table 3);
+- `R₀ = 4.896` for `t ≥ 3`, in the form with `>`: no zero with `t ≥ 3` and `β > 1 − 1/(4.896 log t)`
+  (Bellotti, Trudgian and Yang, Theorem 1, `bellottitrudgianyang2026` line 67, an unrefereed
+  preprint): their Lemma 1 for `3 ≤ t ≤ exp(76.47)` from `RH(3·10¹²)`, and the Littlewood-type
+  region 7.4 above.
 
 The starting region `R = 9.645908801` follows from 7.2 (Theorem 4 has `8.464 < 9.645908801`) together
 with `RH(14)` for `2 ≤ |γ| < 3`. Route of the criterion: suppose a zero `ρ₀ = β₀ + iγ₀` just outside
@@ -1628,13 +1733,19 @@ the region; apply `Σ_k a_k Re(−ζ'/ζ)` at the points `σ + ikγ₀`, smoothe
 `h_θ`; bound the zero sums by 7.1 with the zeros below `T₀` on the line by `RH(T₀)`, the tail by
 Lehman's lemma (5.4) and the gamma terms by 2.7.
 
-*Needs:* 7.1, 7.2, 0.4, 0.5, 2.7, 5.4; the named polynomial and numerical certificates.
+*Needs:* 7.1, 7.2, 0.4, 0.5, 2.7, 5.4; 7.4 (for the `4.896` instance); the named polynomial and
+numerical certificates.
 
 **Checks.**
 
 - At `|t| = 2` the region of `5.558691` is `σ ≥ 0.740461`, and at `|t| = 3·10¹²` it is
   `σ ≥ 0.993738`; below height `3·10¹²` it follows from `RH(3·10¹²)` alone, since the region lies in
   `σ > 1/2` for `|t| ≥ 2` (`1/(5.558691 log 2) = 0.2595 < 1/2`).
+- The boundary: at `|t| = 3·10¹²` (`log|t| = 28.72963`) the boundary point of the `5.573412` region
+  is `σ = 1 − 0.0062452 = 0.9937548`, which the form with `>` does not exclude; it lies inside the
+  `5.558691` region `σ ≥ 0.9937382`, so the form with `≥` at `5.573412` holds as a consequence. For
+  `4.896`, the smallest constant, no such consequence exists and only the form with `>` is asserted
+  (its boundary at that height is `σ = 0.9928907`).
 - The constants decrease along the chain `9.645908801 > 8.464 > 5.69693 > 5.68371 > 5.573412 >
   5.558691 > 4.896`, and a smaller constant gives a wider region; the preprint's `5.70176` is weaker
   than the published `5.69693`, so stating the published value is the stronger claim, supported by
@@ -1645,15 +1756,13 @@ Lehman's lemma (5.4) and the gamma terms by 2.7.
 
 ### 7.4 The Littlewood-type region
 
-Assuming the explicit Vinogradov mean value theorem (declared gap), prove: `ζ(σ + it) ≠ 0` for
-`|t| ≥ 3` and `σ > 1 − log log|t|/(21.233 log|t|)` (Yang, Corollary 1.2, `yang2024` lines 88–89).
+Prove: `ζ(σ + it) ≠ 0` for `|t| ≥ 3` and `σ > 1 − log log|t|/(21.233 log|t|)` (Yang, Corollary 1.2, `yang2024` lines 88–89).
 Route: `RH(5.45·10⁸)` for `3 ≤ t ≤ 5.45·10⁸`; Ford's region 7.2 with the critical-line input of 4.7
 for `5.45·10⁸ ≤ t < e^{170.2}`; above, the bounds 4.9 and 4.10 interpolated by 3.1, the degree-46
 polynomial of `mty2024` (a polynomial certificate) and Ford's zero-detecting argument
 (`yang2024` lines 2326–2372).
 
-*Needs:* `gap:explicit-vinogradov-mean-value`; 0.4, 0.5, 3.1, 4.7, 4.9, 4.10, 7.1, 7.2; the named
-certificates.
+*Needs:* 0.4, 0.5, 3.1, 4.7, 4.9, 4.10, 7.1, 7.2; the named certificates.
 
 **Checks.**
 
@@ -1706,8 +1815,7 @@ conductors.
 
 ### 7.6 Vinogradov–Korobov regions
 
-Assuming the explicit Vinogradov mean value theorem (declared gap), prove that `ζ(σ + it) ≠ 0` for
-`|t| ≥ 3` and `1 − σ ≤ 1/(c (log|t|)^{2/3}(log log|t|)^{1/3})` with `c = 57.54` (Ford, Theorem 5,
+Prove that `ζ(σ + it) ≠ 0` for `|t| ≥ 3` and `1 − σ ≤ 1/(c (log|t|)^{2/3}(log log|t|)^{1/3})` with `c = 57.54` (Ford, Theorem 5,
 `ford2002zerofree` lines 135–136), `c = 55.241` (Mossinghoff, Trudgian and Yang, Theorem 1.1,
 `mty2024` lines 53–54) and `c = 54.004` (Bellotti, Theorem 1.2, `bellotti2024` lines 81–82); and for
 sufficiently large `|t|`, effectively, with `c = 0.05507 B^{−2/3}` given Richert's bound with constant
@@ -1719,7 +1827,7 @@ bounds 4.10 inserted in the zero-detecting inequality of 7.1 with an admissible 
 in `mty2024`), the intermediate regions 7.2–7.4 below the threshold, and the numerical certificates
 of the sources; for Khale, McCurley's region (7.5) for `|t| ≤ e^{1944}`.
 
-*Needs:* `gap:explicit-vinogradov-mean-value`; 4.10, 7.1–7.5, 0.5; the named certificates.
+*Needs:* 4.10, 7.1–7.5, 0.5; the named certificates.
 
 **Checks.**
 
@@ -1777,41 +1885,58 @@ Mertens-type explicit sums).
 
 ### 7.9 The numerical Landau–Siegel gap
 
-Define *HasLandauSiegelGap* `c`, for real `c > 0`, as: for every primitive real nonprincipal Dirichlet
-character `χ` of conductor `q ≥ 3` and every real zero `β ∈ (0, 1)` of `L(s, χ)`,
-`(1 − β) log q ≥ c`. `AnalyticNumberTheoryPartI` §0.34 proves `∃ c > 0, HasLandauSiegelGap c`. Prove
-*HasLandauSiegelGap* `(3.0·10⁻³)` (Banks, Theorem 1.1, `banks2026` lines 89–107, an unrefereed
+Define *HasLandauSiegelGap* `c Q`, for real `c` and a conductor cap `Q ∈ ℕ ∪ {∞}`, as: for every
+primitive real nonprincipal Dirichlet character `χ` of conductor `q` with `3 ≤ q ≤ Q` and every real
+zero `β ∈ (0, 1)` of `L(s, χ)`, `(1 − β) log q ≥ c`. `AnalyticNumberTheoryPartI` §0.34 proves
+`∃ c > 0, HasLandauSiegelGap c ∞`. Prove *HasLandauSiegelGap* `(1/5) 10¹⁰` (Lu, Zaman and Zhao,
+Theorem 1.1, `luzamanzhao2026` lines 39–42): for `3 ≤ q ≤ 10¹⁰`, 7.8 excludes real zeros in
+`[1 − 1/(5 log q), 1)`, so every real zero in `(0, 1)` has `(1 − β) log q > 1/5`. Prove
+*HasLandauSiegelGap* `(3.0·10⁻³) ∞` (Banks, Theorem 1.1, `banks2026` lines 89–107, an unrefereed
 preprint): for `q ≥ 10¹⁰` from the explicit form of the argument of §0.34 (Banks §§2–7, with the
-constants of its Remark 7.1), and for `q < 10¹⁰` from 7.8, since there `(1 − β) log q > 1/5`.
+constants of its Remark 7.1), and for `q ≤ 10¹⁰` from the first instance, since `3.0·10⁻³ < 1/5`.
 
-- *HasLandauSiegelGap* is antitone in `c`: `c ≤ c'` and the gap at `c'` give the gap at `c`.
-- Against 7.5: *HasLandauSiegelGap* `c` with `c ≥ 1/9.645908801` would exclude the possible
-  exceptional zero of McCurley's region altogether; at `c = 3.0·10⁻³` it confines that zero to
+- Antitone in both arguments: `c ≤ c'`, `Q ≤ Q'` and *HasLandauSiegelGap* `c' Q'` give
+  *HasLandauSiegelGap* `c Q`.
+- Trivial cases: *HasLandauSiegelGap* `c Q` holds for every real `c` when `Q ≤ 400 000`, since no
+  primitive character of conductor at most `400 000` has a real zero in `(0, 1)`
+  (`ComputationalNumberTheory` §4.24); and for every `Q` when `c ≤ 0`, since `(1 − β) log q > 0`.
+- Zero-free form: *HasLandauSiegelGap* `c Q` holds if and only if, for every such `χ`, `L(σ, χ) ≠ 0`
+  for every real `σ` with `0 < σ < 1` and `σ > 1 − c/log q`; the endpoint `σ = 1 − c/log q` is not
+  excluded.
+- Against 7.5: for a modulus `q ≤ Q`, *HasLandauSiegelGap* `c Q` with `c > 1/9.645908801` excludes
+  the possible exceptional zero of McCurley's region (a real zero of a quadratic character modulo `q`
+  with `(1 − β) log q ≤ 1/9.645908801`, inherited from the primitive character of conductor
+  `d ∣ q`, `d ≥ 3`, with `(1 − β) log q ≥ (1 − β) log d`); at `c = 1/9.645908801` exactly a zero on
+  the boundary of that region is not excluded; at `c = 3.0·10⁻³` the zero is confined to
   `1 − β ≥ c/log q`.
-- For every `q ≥ 3`, *HasLandauSiegelGap* `c` implies that `L(σ, χ) ≠ 0` for real
-  `σ ∈ [1 − c/log q, 1]`.
 
-*Needs:* `AnalyticNumberTheoryPartI` §§0.34, 0.34a; 7.5, 7.8; `ZerosOfLFunctions` 6.3; Mathlib
-`MulChar.IsQuadratic`, `DirichletCharacter.IsPrimitive`.
+*Needs:* `AnalyticNumberTheoryPartI` §§0.34, 0.34a; 7.5, 7.8; `ComputationalNumberTheory` §4.24;
+`ZerosOfLFunctions` 6.3; Mathlib `MulChar.IsQuadratic`, `DirichletCharacter.IsPrimitive`.
 
 **Checks.**
 
-- `q = 3`: the gap `3.0·10⁻³` excludes zeros with `β > 1 − 0.002731`; Lu–Zaman–Zhao's `1/(5 log 3) =
-  0.1820` is far larger at this conductor.
-- At `q = 10¹⁰` the gap is `1 − β ≥ 1.303·10⁻⁴`, against `8.686·10⁻³` from 7.8; the uniform statement
-  matters only above `10¹⁰`.
-- *HasLandauSiegelGap* `c` fails for every `c` if the conductor `q = 1` were allowed, since `log 1 = 0`;
-  the hypothesis `q ≥ 3` is part of the definition, as in §0.34.
+- `q = 3`: the instance `(3.0·10⁻³, ∞)` excludes zeros with `β > 1 − 0.002731`, the instance
+  `(1/5, 10¹⁰)` those with `β > 1 − 1/(5 log 3) = 1 − 0.182048`, far more at this conductor (and
+  §4.24 excludes every real zero there).
+- At `q = 10¹⁰` the uncapped instance gives `1 − β ≥ 1.303·10⁻⁴`, against `8.686·10⁻³` from the
+  capped one; the uncapped instance matters only above `10¹⁰`, and at `q = 10¹¹`, outside the cap,
+  it is all there is: `1 − β ≥ 3.0·10⁻³/log 10¹¹ = 1.184·10⁻⁴`.
+- `1/5 > 1/9.645908801 = 0.103671 > 3.0·10⁻³`: the capped instance removes McCurley's exceptional
+  zero for every modulus up to `10¹⁰`, the uncapped one for none.
+- The lower bound `3 ≤ q` excludes no character: a primitive real nonprincipal character has
+  conductor at least `3` (the character modulo `1` is principal, and no character modulo `2` is
+  primitive), so `log q ≥ log 3 > 0`; a definition through the modulus of an imprimitive character
+  would be weaker, since the character modulo `6` induced by `χ₋₃` has the real zeros of `L(s, χ₋₃)`
+  and `log 6 > log 3`.
 
 ### 7.10 The reciprocal of `ζ` on the line one
 
-Assuming the explicit Vinogradov mean value theorem (declared gap), prove
-`1/|ζ(1 + it)| ≤ 431.7 log t/log log t` for `t ≥ 3` (Hiary, Leong and Yang, Theorem 2,
+Prove `1/|ζ(1 + it)| ≤ 431.7 log t/log log t` for `t ≥ 3` (Hiary, Leong and Yang, Theorem 2,
 `hiaryleongyang2025` lines 41–43). Route: the Borel–Carathéodory and Hadamard three-circle method
 with the Richert-type bound 4.10, Yang's region 7.4, the bounds of Ramaré for `|ζ'/ζ|` near the line
 one (`ramare2016density`), and the numerical certificate for `2 ≤ t ≤ 500` (lines 1171–1175).
 
-*Needs:* `gap:explicit-vinogradov-mean-value`; 3.4, 4.8, 4.10, 7.4; Mathlib `Complex.borelCaratheodory`;
+*Needs:* 3.4, 4.8, 4.10, 7.4; Mathlib `Complex.borelCaratheodory`;
 the named certificate.
 
 **Checks.**
@@ -1831,7 +1956,7 @@ the named certificate.
 ### Dependencies
 
 Layers 0–5; `ZerosOfLFunctions` Layers 1, 4–6; `AnalyticNumberTheoryPartI` §§0.34, 0.34a;
-`ComputationalNumberTheory` §§4.22, 4.24; 4.10 and the declared gap for 7.4, 7.6, 7.10; the named
+`ComputationalNumberTheory` §§4.22, 4.24; 4.10, and through it 4.9a, for 7.4, 7.6, 7.10; the named
 certificates.
 
 ## Layer 8: zero-density estimates
@@ -1933,15 +2058,14 @@ repulsion through the zeros near `β₁(Q)`.
 
 ### 8.5 A log-free density near `σ = 1` for `ζ`
 
-Assuming the explicit Vinogradov mean value theorem (declared gap), prove: for
-`3·10¹² < T ≤ exp(6.7·10¹²)` and `σ ∈ [0.9927, 1]`, `N(σ, T) ≤ 1.62·10¹¹ T^{1.448(1−σ)}`, and the
+Prove: for `3·10¹² < T ≤ exp(6.7·10¹²)` and `σ ∈ [0.9927, 1]`, `N(σ, T) ≤ 1.62·10¹¹ T^{1.448(1−σ)}`, and the
 sharper constants `(B, C)` of `bellotti2025density` Table 2 on its subranges (Bellotti, Theorem 1.1,
 lines 91–101). Route: the Halász–Montgomery large-values method for zero detectors, the zero-free
 regions 7.3, 7.4 and 7.6, the critical-line bounds 4.7 (Hiary's `1.461` for `|t| ≤ 3`, `0.618 t^{1/6}
 log t` up to `e^{105}`, `66.7 t^{27/164}` beyond), `RH(3·10¹²)`, and the numerical certificate of its
 tables.
 
-*Needs:* `gap:explicit-vinogradov-mean-value`; 0.4, 4.7, 6.4, 7.3, 7.4, 7.6; the named certificate.
+*Needs:* 0.4, 4.7, 6.4, 7.3, 7.4, 7.6; the named certificate.
 
 **Checks.**
 
@@ -1957,7 +2081,7 @@ tables.
 
 ### Dependencies
 
-Layers 0, 3–7; `SieveMethodsAndPrimePatterns` §2.9; the declared gap for 8.5; the named certificates.
+Layers 0, 3–7; `SieveMethodsAndPrimePatterns` §2.9; the named certificates.
 
 ## Layer 9: the size of `L(1, χ)`
 
@@ -1974,7 +2098,7 @@ is a Gauss-sum twisted series controlled through the functional equation of `L(s
 Fourier transform of the smoothing `f`, optimized at `X ≈ √q`; for `2 | q` the factor `1 − χ(2)/2`
 does not arise and the even part of the sum halves the main term.
 
-*Needs:* Mathlib `gaussSum`, `DirichletCharacter.completedLFunction_one_sub`,
+*Needs:* Mathlib `gaussSum`, `DirichletCharacter.IsPrimitive.completedLFunction_one_sub`,
 `DirichletCharacter.LFunction_eq_LSeries`; 1.2 (for the digamma values in the smoothing integrals);
 Mathlib `Fourier.fourierIntegral`.
 
@@ -2045,16 +2169,19 @@ L-functions; the named numerical certificates.
 
 ## Downstream consumers
 
-- `ExplicitPrimeCounting` takes 0.2–0.4 by name (`RH(H)`, `GRH(q, H)`, the Platt bridge and the
-  recorded verifications), 5.2 and 5.4 (the explicit `N(T)` and Lehman's lemma with
-  `Σ γ^{−2}`), 6.1–6.2 (Perron), 7.3, 7.5 and 7.6 (the classical constants `5.558691`, Kadiri's
-  `6.4355` and `5.60`, McCurley's `9.645908801`, the Vinogradov–Korobov constants) and 8.1, 8.3 (the
-  densities).
+- `ExplicitPrimeCounting` takes 0.2–0.4 by name (`RH(H)`, `GRH(q, H)` with its passage to
+  imprimitive characters, the Platt bridge and the recorded verifications), 5.2 and 5.4 (the
+  explicit `N(T)` and Lehman's lemma with `Σ γ^{−2}`), 6.1–6.2 (Perron), 7.3, 7.5 and 7.6 (the
+  classical constants `5.558691`, Kadiri's `6.4355` and `5.60`, McCurley's `9.645908801`, the
+  Vinogradov–Korobov constants), 7.9 (*HasLandauSiegelGap* at `(1/5, 10¹⁰)` and
+  `(3.0·10⁻³, ∞)`) and 8.1, 8.3 (the densities). The propositions of its hypotheses layer, the
+  bounded-height Riemann hypotheses over all characters modulo `q` and the capped real-zero gap
+  (its §§1.1, 1.2 and 1.7), are those of 0.2 and 7.9, cited by name rather than defined again.
 - `ExplicitCharacterSumsAndSieves` takes the van der Corput toolkit 4.1–4.5 (Kusmin–Landau, the
   A-process, the derivative tests and the B-process), which it would otherwise state in its own first
   layer, and the weighted and maximal large sieves of 6.5.
-- `ExplicitMultiplicativeFunctions` takes 3.4 (bounds right of the line one), 6.1 (Perron) and 0.2
-  (its verified-zero hypothesis is `RH(T)`).
+- `ExplicitMultiplicativeFunctions` takes 3.4 (bounds right of the line one), 6.1 (Perron) and
+  `RH(H)` of 0.2, its verified-zero hypothesis, through `ExplicitPrimeCounting` §1.1.
 - `ExplicitNumberFields` takes 3.2 at `dedekindZetaData K` (the Dedekind instance of Rademacher's
   bound), 5.1 with 3.2 for the argument of Dedekind zeta functions of any degree, Layer 2 for the
   gamma factors, 0.2–0.3 (`GRH(q, H)`) and 9.1 for comparisons.
@@ -2074,7 +2201,7 @@ cited.
 - `hiary2016zeta`: Ghaith A. Hiary, *An explicit van der Corput estimate for ζ(1/2+it)*, Indagationes Mathematicae 27 (2015); doi:10.1016/j.indag.2015.10.011, arXiv:1507.01261v4. Cited for: Theorem 1.1.
 - `patel2022`: Dhir Patel, *An Explicit Upper Bound for |ζ(1+it)|*, Indagationes Mathematicae 33 (2020); doi:10.1016/j.indag.2022.04.007, arXiv:2009.00769v1. Cited for: Theorem 1.1.
 - `kadiri2013density`: Habiba Kadiri, *A zero density result for the Riemann zeta function*, Acta Arith. 160 (2013), 185--200 (2014); arXiv:1401.4781v1. Cited for: Theorems 1.1, 1.2 and 1.4.
-- `ramare2016density`: O. Ramaré, *An explicit density estimate for Dirichlet L-series*, Mathematics of Computation 85 (2015); doi:10.1090/mcom/2991. Cited for: Theorem 1.1, Lemma 6.2.
+- `ramare2016density`: O. Ramaré, *An explicit density estimate for Dirichlet L-series*, Mathematics of Computation 85 (2015); doi:10.1090/mcom/2991. Cited for: Theorem 1.1, Lemma 5.4, Lemma 6.5.
 - `hasanalizadeshenwong2022`: E. Hasanalizade, Q. Shen, P.-J. Wong, *Counting zeros of the Riemann zeta function*, Journal of Number Theory 235 (2022); doi:10.1016/j.jnt.2021.06.032, arXiv:2107.06506v1. Cited for: Corollaries 1.2 and 1.4.
 - `bmor2021`: M. A. Bennett, G. Martin, K. O'Bryant, A. Rechnitzer, *Counting zeros of Dirichlet L-functions*, Mathematics of Computation 90 (2021); doi:10.1090/mcom/3599, arXiv:2005.02989v1. Cited for: Theorem 1.1.
 - `ramare2007eigen`: Olivier Ramaré, *Eigenvalues in the large sieve inequality*, Functiones et Approximatio Commentarii Mathematici 37 (2007); doi:10.7169/facm/1229619662. Cited for: Theorem 7.1.
@@ -2084,7 +2211,7 @@ cited.
 - `mossinghoffstarichkovatrudgian2022`: M. J. Mossinghoff, V. V. Starichkova, T. S. Trudgian, *Explicit lower bounds on |L(1,χ)|*, Journal of Number Theory 240 (2022); doi:10.1016/j.jnt.2021.12.013, arXiv:2107.09230v1. Cited for: Theorem 1.1.
 - `mossinghofftrudgian2015`: M. J. Mossinghoff, T. S. Trudgian, *Nonnegative trigonometric polynomials and a zero-free region for the Riemann zeta-function*, Journal of Number Theory 157 (2015); doi:10.1016/j.jnt.2015.05.010, arXiv:1410.3926v1. Cited for: Theorem 1.
 - `mty2024`: M. J. Mossinghoff, T. S. Trudgian, A. Yang, *Explicit zero-free regions for the Riemann zeta-function*, Research in Number Theory 10 (2024); doi:10.1007/s40993-023-00498-y, arXiv:2212.06867v1. Cited for: Theorem 1.3 (R0 = 5.558691); Theorem 1.1 (Vinogradov-Korobov region).
-- `bellotti2024`: C. Bellotti, *Explicit bounds for the Riemann zeta function and a new zero-free region*, Journal of Mathematical Analysis and Applications 536 (2024); doi:10.1016/j.jmaa.2024.128249, arXiv:2306.10680v1. Cited for: Theorem 1.1 (zeta bound); Theorem 1.2 (zero-free region).
+- `bellotti2024`: C. Bellotti, *Explicit bounds for the Riemann zeta function and a new zero-free region*, Journal of Mathematical Analysis and Applications 536 (2024); doi:10.1016/j.jmaa.2024.128249, arXiv:2306.10680v1. Cited for: Theorem 1.1 (zeta bound); Theorem 1.2 (zero-free region); Theorems 1.4–1.5 (Vinogradov's integral and the sums S(N, t)).
 - `ralaivaosaonarazakarinoro2026`: Dimbinaina Ralaivaosaona, Faratiana Brice Razakarinoro, *An explicit upper bound for Siegel zeros of imaginary quadratic fields*, Journal of Number Theory 281 (2020); doi:10.1016/j.jnt.2025.10.014, arXiv:2001.05782v2. Cited for: Theorem 1.1.
 - `kadiring2012`: Habiba Kadiri, Nathan Ng, *Explicit zero density theorems for Dedekind zeta functions*, Journal of Number Theory 132 (2012); doi:10.1016/j.jnt.2011.09.002, arXiv:1201.3932v1. Cited for: Theorem 1 (explicit N_K(T)); context only, Dedekind case belongs to ExplicitNumberFields.
 - `kadirilumleyng2018`: Habiba Kadiri, Allysa Lumley, Nathan Ng, *Explicit zero density for the Riemann zeta function*, J. Math. Anal. Appl. 465 (2018), no. 1, 22-46 (2021); doi:10.1016/j.jmaa.2018.04.071, arXiv:2101.12263v1. Cited for: Theorem 1.1 and its corollary at sigma = 9/10.
@@ -2096,7 +2223,7 @@ cited.
 - `logan1988`: B. F. Logan, *An interference problem for exponentials* (1988). Cited for: Theorem 1.
 - `hiary2016hybrid`: Ghaith A. Hiary, *An explicit hybrid estimate for L(1/2+it,χ)* (2015); arXiv:1510.00950v2. Cited for: Theorem 1.2; Corollary 1.1.
 - `thornerzaman2024`: Jesse Thorner, Asif Zaman, *An explicit version of Bombieri's log-free density estimate and Sárközy's theorem for shifted primes*, Forum Math. 36 (2024), no. 4, 1059-1080 (2022); doi:10.1515/forum-2023-0091, arXiv:2208.11123v4. Cited for: Proposition 2.10.
-- `ford2002vinogradov`: Kevin Ford, *Vinogradov's integral and bounds for the Riemann zeta function*, Proc. London Math. Soc. 85 (2002), 565-633 (2019); arXiv:1910.08209v1. Cited for: Theorem 1.
+- `ford2002vinogradov`: Kevin Ford, *Vinogradov's integral and bounds for the Riemann zeta function*, Proc. London Math. Soc. 85 (2002), 565-633 (2019); arXiv:1910.08209v1. Cited for: Theorems 1–4 (Theorem 3: the explicit Vinogradov mean value theorem); Lemmas 7.1–7.3.
 - `ford2002zerofree`: Kevin Ford, *Zero-free regions for the Riemann zeta function*, In the book Number Theory for the Millenium (Urbana, IL, 2000) (M. A. Bennett, B. C. Berndt, N. Boston, H. G. Diamond, A. J. Hildebrand and W. Phillip, eds), vol. II (2002), 25-56 (2019); arXiv:1910.08205v5. Cited for: Theorems 1 and 3.
 - `khale2024`: Tanmay Khale, *An explicit Vinogradov-Korobov zero-free region for Dirichlet L-functions* (2022); arXiv:2210.06457v1. Cited for: Theorem 1.1.
 - `platttrudgian2021`: Dave Platt, Tim Trudgian, *The Riemann hypothesis is true up to 3cdot 10^{12}* (2020); doi:10.1112/blms.12460, arXiv:2004.09765v1. Cited for: Theorem 1.
@@ -2126,7 +2253,7 @@ cited.
 - `rumely1993`: R. Rumely, *Numerical computations concerning the ERH*, Mathematics of Computation 61 (1993); doi:10.1090/S0025-5718-1993-1195435-0. Cited for: Theorem 1 and the table of moduli.
 - `ramare2016perron`: O. Ramaré, *Modified truncated Perron formulae*, Annales mathématiques Blaise Pascal 23, no. 1, 109-128 (Centre Mersenne, open access) (2016). Cited for: Theorem 1.1 and the modified formulae of Section 2.
 - `gabcke1979`: W. Gabcke, *Neue Herleitung und explizite Restabschätzung der Riemann-Siegel-Formel* (1979); doi:10.53846/goediss-5113. Cited for: Satz 4.2.3 (explicit remainder of the Riemann–Siegel formula).
-- `nemes2015`: Gergő Nemes, *Error bounds and exponential improvements for the asymptotic expansions of the gamma function and its reciprocal*, Proceedings of the Royal Society of Edinburgh, Section A: Mathematics, Volume 145 (2015), Issue 3, 571-596 (2013); doi:10.1017/S0308210513001558, arXiv:1310.0166v2. Cited for: Theorem 1.3.
+- `nemes2015`: Gergő Nemes, *Error bounds and exponential improvements for the asymptotic expansions of the gamma function and its reciprocal*, Proceedings of the Royal Society of Edinburgh, Section A: Mathematics, Volume 145 (2015), Issue 3, 571-596 (2013); doi:10.1017/S0308210513001558, arXiv:1310.0166v2. Cited for: Theorems 1.1–1.3.
 - `brent2019`: Richard P. Brent, *On asymptotic approximations to the log-Gamma and Riemann-Siegel theta functions*, Journal of the Australian Mathematical Society, 107 (2019), 319--337 (2016); doi:10.1017/S1446788718000393, arXiv:1609.03682v2. Cited for: Theorem 1.
 - `simonic2020`: Aleksander Simonič, *Explicit zero density estimate for the Riemann zeta-function near the critical line* (2019); arXiv:1910.08274v2. Cited for: Theorem 4, Corollary 1.
 - `hiarypatelyang2024`: Ghaith A. Hiary, Dhir Patel, Andrew Yang, *An improved explicit estimate for ζ(1/2+it)* (2022); arXiv:2207.02366v1. Cited for: Theorem 1.1, Lemma 2.3.
@@ -2134,7 +2261,7 @@ cited.
 - `hiaryleongyang2025`: Ghaith A. Hiary, Nicol Leong, Andrew Yang, *Explicit bounds for the Riemann zeta-function on the 1-line* (2023); arXiv:2306.13289v3. Cited for: Theorems 1 and 2.
 - `bellottiwong2025`: Chiara Bellotti, Peng-Jie Wong, *Improved estimates for the argument and zero-counting function of the Riemann zeta-function* (2024); arXiv:2412.15470v2. Cited for: Theorem 1.1.
 - `brentplatttrudgian2021`: Richard P. Brent, David J. Platt, Timothy S. Trudgian, *Accurate estimation of sums over zeros of the Riemann zeta-function*, Mathematics of Computation 90 (2021), 2923-2935 (2020); doi:10.1090/mcom/3652, arXiv:2009.13791v1. Cited for: Lemma 3, Theorem 1.
-- `cullyhugilljohnston2023`: Michaela Cully-Hugill, Daniel R. Johnston, *On the error term in the explicit formula of Riemann--von Mangoldt* (2021); arXiv:2111.10001v5. Cited for: Theorem 2.1.
+- `cullyhugilljohnston2023`: Michaela Cully-Hugill, Daniel R. Johnston, *On the error term in the explicit formula of Riemann--von Mangoldt* (2021); arXiv:2111.10001v5. Cited for: Theorem 2.1, Lemma 2.2.
 - `cullyhugilljohnston2025`: Michaela Cully-Hugill, Daniel R. Johnston, *On the error term in the explicit formula of Riemann-von Mangoldt II* (2024); arXiv:2402.04272v3. Cited for: Corollary 3.2.
 - `donahelfgottzunigaalterman2022`: Daniele Dona, Harald A. Helfgott, Sebastian Zuniga Alterman, *Explicit L^2 bounds for the Riemann ζ function*, J. Théor. Nombres Bordeaux, 34(1):91--133, 2022 (2019); doi:10.5802/jtnb.1194, arXiv:1906.01097v7. Cited for: Theorems 1.1 and 1.2.
 - `luzamanzhao2026`: Rick F. Lu, Asif Zaman, Haonan Zhao, *Numerical computations concerning Landau-Siegel zeros* (2026); doi:10.1090/mcom/4268, arXiv:2602.03626v2. Cited for: Theorem 1.1, Corollaries 1.2 and 1.3.
