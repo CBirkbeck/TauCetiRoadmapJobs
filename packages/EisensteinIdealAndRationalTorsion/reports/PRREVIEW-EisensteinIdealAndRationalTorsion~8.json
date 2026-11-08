@@ -1,0 +1,13 @@
+{
+  "review": {
+    "status": "accepted",
+    "reviewer": "independent-review-PRREVIEW-EisensteinIdealAndRationalTorsion~8",
+    "head": "e49787cc1028f9274f69691955e0284d176eb26c",
+    "pr": 1264,
+    "folder": "EisensteinIdealAndRationalTorsion",
+    "date": "2026-11-08",
+    "findings": 0,
+    "blocking": 0,
+    "notes": "incremental re-review of 84 changed lines since 65d9398. Previous R01-R03 all repaired: eisenstein_index and eisensteinIdeal stated on the pinned Gamma0(P) Hecke ring; single-double-coset generators described correctly; cusp constant terms attributed to the unnormalized charG2MF with the normalizedCharG2MF_def scale. Gate with --build: all scanners 0, build=0 OK; depcheck 245 roadmaps, 2474 edges, 0 problems; no file outside the folder. lake env lean: exit 0, 7 sorry warnings; #check types match signatures.md; 5 one-tactic probes on eisenstein_index fail. Adversarial rows computed for every changed statement: P=2,3,5,7,13 (n=1, whole ring), P=11 (5Z), P=17 (4Z), P=37 (3Z, T of index 2 in Z^2), wrong models without the kernel term and with U_P+1, 2L(2,chi_17)=2.2529230 scaled to -2.0000. 18 pinned Tau Ceti declarations opened by file and line; ModularCurvesPartII 13.2/13.3 and the two unresolved-name leads resolved. Mazur1977 locators p.90 (T), p.95 (I), Props 9.3/9.4/9.7 pp.94-96 verified. Seeded sample: none of the 15 targets falls in the changed passages; rows carried forward."
+  }
+}
