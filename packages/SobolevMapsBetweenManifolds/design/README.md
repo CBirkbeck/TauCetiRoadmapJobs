@@ -498,8 +498,8 @@ support, into test functions of single `Ωᵢ`. Local `Lᵖ` glues by §1.1.
 
 Let `E` be an inner product space and `F = ℝ`. Prove that `u ∈ W^{1,p}_loc(Ω; ℝ)` iff, for every
 open `V` with compact closure contained in `Ω`, some `w ∈ TauCeti.W1p μ V p` has value equal to
-`u` almost everywhere on `V`. Then `Du(x) = ⟨∇w(x), ·⟩` almost everywhere on `V`
-(`TauCeti.mem_w1pSubmodule_iff_hasWeakFDerivOn`). This is GeometricCurrents G6's
+`u` almost everywhere on `V` (Mazya2011 §1.1). Then `Du(x) = ⟨∇w(x), ·⟩` almost everywhere on
+`V` (`TauCeti.mem_w1pSubmodule_iff_hasWeakFDerivOn`). This is GeometricCurrents G6's
 `W^{1,p}_loc(Ω)` at order one. Route: "only if" restricts local `Lᵖ` to `V`, whose closure is a
 compact subset of `Ω`; "if" glues the derivatives of the `w` over an exhaustion by §1.3.
 
@@ -741,10 +741,10 @@ With `M` as in §3.1 and boundaryless, prove the following for `g : M → B`, `B
 and `1 ≤ p ≤ ∞`:
 `g ∈ L^p_loc(M, riemannianVolume)` (§1.1 with `s = M`) iff
 `g ∘ (extChartAt I x₀).symm ∈ L^p_loc((extChartAt I x₀).target, μ)` for every `x₀ ∈ M` and one,
-equivalently every, Haar measure `μ` on `E`. The same holds with the charts of any atlas in
-`IsManifold.maximalAtlas`. Route: on a compact subset of a chart source, the chart density is
-bounded above and below by positive constants. The comparable-measures criterion of §1.1 then
-applies, and §1.1's gluing covers compact subsets of `M`.
+equivalently every, Haar measure `μ` on `E` (Lee2012 Ch. 16). The same holds with the charts of
+any atlas in `IsManifold.maximalAtlas`. Route: on a compact subset of a chart source, the chart
+density is bounded above and below by positive constants. The comparable-measures criterion of
+§1.1 then applies, and §1.1's gluing covers compact subsets of `M`.
 
 - Any two continuous metrics on `M` give the same class `L^p_loc(M)`.
 - The class is local: membership on each set of an open cover gives membership on `M`.
@@ -763,7 +763,7 @@ applies, and §1.1's gluing covers compact subsets of `M`.
 
 ### 3.3 Null sets under `C¹` maps of manifolds
 
-Let `M'` and `M` be boundaryless `C¹` manifolds with models `E'`, `E`. Prove:
+Let `M'` and `M` be boundaryless `C¹` manifolds with models `E'`, `E`. Prove (Lee2012 Ch. 6):
 
 - if `θ : M' → M` is a `C¹` local diffeomorphism (`IsLocalDiffeomorph I' I 1 θ`), then
   `θ⁻¹(s)` is a `TauCeti.IsNullSet` whenever `s` is;
@@ -945,8 +945,10 @@ null sets between charts, and §1.3 glues.
 
 Prove that a `C¹` map `f : M → N` (`ContMDiff I J 1 f`) lies in `W^{1,p}_loc(M, N)` for every
 `1 ≤ p ≤ ∞`, that `mfderiv f` is a weak differential of `f`, and hence that `Df = mfderiv f`
-outside a `TauCeti.IsNullSet`. Route: its representatives are `C¹`, with derivative the chart
-expression of `mfderiv` (`mfderiv_eq_fderiv` in charts), and §1.2 applies.
+outside a `TauCeti.IsNullSet` (Ziemer1989 Ch. 2 §2.1, where the classical derivative of a `C¹`
+function on a Euclidean domain is its weak derivative). Route: its representatives are `C¹`,
+with derivative the chart expression of `mfderiv` (`mfderiv_eq_fderiv` in charts), and §1.2
+applies.
 
 **Checks.**
 
@@ -961,7 +963,7 @@ expression of `mfderiv` (`mfderiv_eq_fderiv` in charts), and §1.2 applies.
 
 ### 4.5 Restriction, locality and metric copies
 
-Prove, for continuous `f : M → N`:
+Prove, for continuous `f : M → N` (Mazya2011 §1.1, locality of weak derivatives):
 
 - for an open `U ⊆ M`, `f ∈ W^{1,p}_loc(M, N)` gives `f|_U ∈ W^{1,p}_loc(U, N)`, with
   `D(f|_U) = Df|_U` almost everywhere (open subsets carry
@@ -1090,11 +1092,12 @@ local `Lᵖ` of `‖Df‖` into local `Lᵖ` of the representatives' derivatives
 
 Let `g_M`, `g'_M` be continuous metrics on `M` with `a|v| ≤ |v|' ≤ b|v|` for all tangent vectors,
 `0 < a ≤ b`. Let `g_N`, `g'_N` on `N` satisfy `α|w| ≤ |w|' ≤ β|w|`, `0 < α ≤ β`. Prove that every
-linear `A : T_xM → T_yN` has `(α/b)‖A‖ ≤ ‖A‖' ≤ (β/a)‖A‖`. Hence
-`(α/b)‖Df‖ ≤ ‖Df‖' ≤ (β/a)‖Df‖` almost everywhere, the weak differential being metric-free up to
-a null set (§4.5). Moreover any two
-continuous metrics are uniformly comparable on each compact subset, so T3's condition does not
-depend on the metrics.
+linear `A : T_xM → T_yN` has `(α/b)‖A‖ ≤ ‖A‖' ≤ (β/a)‖A‖`, an estimate read off the definition
+of the operator norm. Hence `(α/b)‖Df‖ ≤ ‖Df‖' ≤ (β/a)‖Df‖` almost everywhere, the weak
+differential being metric-free up to a null set (§4.5). Moreover any two continuous metrics are
+uniformly comparable on each compact subset, so T3's condition does not depend on the metrics
+(Hajlasz2009 lines 104–106, for Riemannian metrics on a compact manifold; the compactness
+argument uses only continuity).
 
 **Checks.**
 
@@ -1499,13 +1502,15 @@ extensions; Mathlib's smooth embeddings and the Whitney embedding.
   `J_f`), lines 1328–1329 (the class through an embedding).
 - `Hajlasz2009`: P. Hajłasz, *Sobolev mappings between manifolds and metric spaces*, in Sobolev
   Spaces in Mathematics I, Springer, 2009; lines 20–28 (the class through an embedding),
-  lines 37–53 (weakly `p`-harmonic maps), lines 129–130 (Theorem 2.1, `p > dim M`), lines
-  138–141 (the case `p = dim M`).
+  lines 37–53 (weakly `p`-harmonic maps), lines 104–106 (all Riemannian metrics on a compact
+  manifold are equivalent), lines 129–130 (Theorem 2.1, `p > dim M`), lines 138–141 (the case
+  `p = dim M`).
 - `MartioRickmanVaisala1969`: O. Martio, S. Rickman and J. Väisälä, *Definitions for quasiregular
   mappings*, Ann. Acad. Sci. Fenn. Ser. A I 448 (1969); line 124 (the Jacobian), lines 332–340
   (Definition 2.16, `ACL` and `ACL^p`).
-- `Ziemer1989`: W. P. Ziemer, *Weakly Differentiable Functions*, GTM 120; Ch. 2 §2.1, Theorem
-  2.1.11 (chain rule), Theorem 2.2.2 (change of variables).
+- `Ziemer1989`: W. P. Ziemer, *Weakly Differentiable Functions*, GTM 120; Ch. 2 §2.1 (weak
+  derivatives, among them the classical derivative of a `C¹` function), Theorem 2.1.11 (chain
+  rule), Theorem 2.2.2 (change of variables).
 - `Mazya2011`: V. Maz'ya, *Sobolev Spaces*, 2nd ed., Grundlehren 342; §1.1 (local spaces,
   locality, change of variables).
 - `Rickman1993`: S. Rickman, *Quasiregular Mappings*, Ergebnisse 26; Ch. I §1 (Sobolev classes,

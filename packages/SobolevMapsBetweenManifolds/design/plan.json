@@ -869,8 +869,8 @@
       "1 ≤ p ≤ ∞"
      ],
      "locator": {
-      "source": "HeikkilaPankka2025",
-      "where": "lines 22–26"
+      "source": "Ziemer1989",
+      "where": "Chapter 2, §2.1 (the classical derivative of a C¹ function on a Euclidean domain is its weak derivative)"
      },
      "prerequisites": [
       "target:1.2",
@@ -1076,8 +1076,8 @@
       "two continuous metrics on M and on N with the comparison constants"
      ],
      "locator": {
-      "source": "Rickman1993",
-      "where": "Chapter I, Section 1"
+      "source": "Hajlasz2009",
+      "where": "lines 104–106 (all Riemannian metrics on a compact manifold are equivalent)"
      },
      "prerequisites": [
       "target:4.5",
