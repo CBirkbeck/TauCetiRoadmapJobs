@@ -292,14 +292,14 @@
      "id": "1.5",
      "kind": "theorem",
      "name": "Prestack.limit_adjointable",
-     "statement": "(a) A natural transformation of diagrams K -> Cat_infty-hat with componentwise right adjoints and right adjointable naturality squares has a componentwise right adjoint on limits, and the projection squares are right adjointable. (b) Dualizable (invertible) objects of a limit of symmetric monoidal infinity-categories are those with dualizable (invertible) images. (c) Descent criterion: an augmented cosimplicial infinity-category satisfying Beck-Chevalley is a limit diagram iff C^{-1} -> C^0 is comonadic.",
+     "statement": "(a) A natural transformation of diagrams K -> Cat_infty-hat with componentwise right adjoints and right adjointable naturality squares has a componentwise right adjoint on limits, and the projection squares are right adjointable. (b) Dualizable (invertible) objects of a limit of symmetric monoidal infinity-categories are those with dualizable (invertible) images; the invertible half from the dualizable half, invertible = dualizable with evaluation an equivalence, and equivalences in a limit being detected componentwise. (c) Descent criterion: an augmented cosimplicial infinity-category satisfying Beck-Chevalley is a limit diagram iff C^{-1} -> C^0 is comonadic.",
      "hypotheses": [
       "K is an infinity-category",
       "for (c), each coface square is right adjointable"
      ],
      "locator": {
       "source": "HA",
-      "where": "Corollary 4.7.4.18, p. 699; Proposition 4.6.1.11, p. 620; Theorem 4.7.5.2 and Corollary 4.7.5.3, pp. 704-705; Proposition 5.2.2.36, p. 835"
+      "where": "Corollary 4.7.4.18, p. 699; Proposition 4.6.1.11 and Remark 4.6.1.12, p. 620; Theorem 4.7.5.2 and Corollary 4.7.5.3, pp. 704-705; Proposition 5.2.2.36, p. 835; SAG Remark 2.9.5.5, p. 283; HTT Propositions 2.4.1.5 and 3.1.2.1, PDF pp. 134 and 169-170"
      },
      "prerequisites": [
       "target:1.2",
@@ -307,7 +307,9 @@
       "roadmap:EnhancedDerivedSheaves E3.2",
       "roadmap:EnhancedDerivedSheaves E3.4",
       "roadmap:EnhancedDerivedSheaves E5:abstract.5",
-      "roadmap:EnhancedDerivedSheaves E0.7"
+      "roadmap:EnhancedDerivedSheaves E0.7",
+      "roadmap:HigherToposTheory L3.5",
+      "roadmap:HigherToposTheory L4.2"
      ],
      "api": [
       {
@@ -318,7 +320,7 @@
       {
        "name": "dualizable_limit",
        "role": "characterisation",
-       "statement": "Dualizable and invertible objects of a limit are detected componentwise."
+       "statement": "Dualizable objects of a limit are detected componentwise; so are invertible ones, an object being invertible exactly when it is dualizable with evaluation an equivalence, and equivalences in a limit being detected componentwise."
       },
       {
        "name": "descent_criterion",
@@ -335,7 +337,7 @@
       {
        "name": "product_dualizable",
        "kind": "computation",
-       "statement": "(Z, Q) in D(Z) x D(Z) is not dualizable; (Z, Z[1]) is invertible."
+       "statement": "(Z, Q) in D(Z) x D(Z) is not dualizable; (Z, Z[1]) is invertible; (Z, Z (+) Z) is dualizable and not invertible (evaluation of rank 4 to rank 1)."
       },
       {
        "name": "non_adjointable",
@@ -977,7 +979,7 @@
      ],
      "locator": {
       "source": "SAG",
-      "where": "Proposition 6.3.4.1 and Corollary 6.3.4.3, pp. 505-506; GR-I Chapter I.3, Proposition 2.2.2, p. 153"
+      "where": "Proposition 6.3.4.1 and Corollary 6.3.4.3, pp. 505-507; GR-I Chapter I.3, Proposition 2.2.2, p. 153"
      },
      "prerequisites": [
       "target:1.2",
@@ -1218,7 +1220,7 @@
      ],
      "locator": {
       "source": "Stacks",
-      "where": "Derived Categories of Schemes, Lemmas 36.4.5, 36.22.1 and 36.22.5, tags 08DZ, 08EU and 08IB; SAG Proposition 6.3.4.1 and Corollary 6.3.4.3, pp. 505-506"
+      "where": "Derived Categories of Schemes, Lemmas 36.4.5, 36.22.1 and 36.22.5, tags 08DZ, 08EU and 08IB; SAG Proposition 6.3.4.1 and Corollary 6.3.4.3, pp. 505-507"
      },
      "prerequisites": [
       "target:4.2",
@@ -1393,7 +1395,7 @@
      ],
      "locator": {
       "source": "SAG",
-      "where": "Propositions 6.2.6.2 and 6.2.6.3, p. 497; HA Proposition 4.6.1.11, p. 620; GR-I Chapter I.3, Corollaries 3.6.4-3.6.5, p. 163"
+      "where": "Propositions 6.2.6.2 and 6.2.6.3, p. 497; HA Proposition 4.6.1.11, p. 620, for dualizability and SAG Remark 2.9.5.5, p. 283, for invertibility, both through 1.5; GR-I Chapter I.3, Corollaries 3.6.4-3.6.5, p. 163"
      },
      "prerequisites": [
       "target:1.4",
@@ -2085,6 +2087,8 @@
    "sections": [
     "L2.1",
     "L2.2",
+    "L3.5",
+    "L4.2",
     "L6.3",
     "L6.8",
     "L7.6",
@@ -2094,7 +2098,7 @@
     "L10.3",
     "L11.3"
    ],
-   "what": "HTT and HA Chapter 1 statements used in proof routes: fibred groupoids and Kan complexes, free cocompletion, groupoid objects, localizations, derived infinity-categories, t-structures, infinity-topoi and the statement of Giraud's theorem, descent and effective groupoid objects in infinity-topoi, hypercompleteness of truncated objects."
+   "what": "HTT and HA Chapter 1 statements used in proof routes: fibred groupoids and Kan complexes, Cartesian edges and exponentials, free cocompletion, groupoid objects, localizations, derived infinity-categories, t-structures, infinity-topoi and the statement of Giraud's theorem, descent and effective groupoid objects in infinity-topoi, hypercompleteness of truncated objects."
   }
  ],
  "consumers": [
