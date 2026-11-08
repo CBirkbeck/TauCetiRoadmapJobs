@@ -993,3 +993,36 @@ licence_class = "publisher-open"
 status = "uncertified"
 version_note = "the publisher page refused the service; cited through its quotation as (1.4) of thornerzaman2017"
 cited_for = ["7.4"]
+
+[[source]]
+id = "mossinghofftrudgian2015"
+authors = "Michael J. Mossinghoff, Timothy S. Trudgian"
+title = "Nonnegative trigonometric polynomials and a zero-free region for the Riemann zeta-function"
+year = 2014
+arxiv = "1410.3926v1"
+locator_scheme = "theorem"
+locator = "Table 5"
+url = "https://arxiv.org/abs/1410.3926v1"
+fetched_from = "https://arxiv.org/pdf/1410.3926v1"
+fetched_at = "2026-11-08T10:30:48Z"
+sha256 = "fe6dfe7641890783d791842b6e464afaa3862e25acf19434812b59a433dd86a1"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-08"
+version_note = "arXiv v1"
+cited_for = ["Computational hypotheses (MossinghoffTrudgianF16Certificate, Table 5; DGLSWPolynomialCertificates, Table 2)", "4.6", "4.8"]
+
+[[source]]
+id = "stark1974"
+authors = "H. M. Stark"
+title = "Some effective cases of the Brauer-Siegel Theorem"
+year = 1974
+venue = "Inventiones Mathematicae 23"
+doi = "10.1007/BF01405166"
+locator_scheme = "theorem"
+locator = "Lemma 4"
+url = "https://doi.org/10.1007/BF01405166"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["4.7", "5.7"]
