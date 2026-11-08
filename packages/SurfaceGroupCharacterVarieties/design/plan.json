@@ -650,7 +650,11 @@
       "roadmap:TeichmullerGeometry §4.3",
       "roadmap:TeichmullerGeometry §5.2",
       "roadmap:MordellLawrenceVenkatesh §5.1",
+      "roadmap:MordellLawrenceVenkatesh §5.5",
       "roadmap:MordellLawrenceVenkatesh §5.15",
+      "roadmap:MordellLawrenceVenkatesh §5.19",
+      "roadmap:AlgebraicTopology Stage 4 item 2",
+      "roadmap:AlgebraicTopology Stage 4 item 3",
       "roadmap:ClassifyingSpaces Stage 3 item 11",
       "roadmap:ClassifyingSpaces Stage 4 item 17",
       "mathlib:groupHomology",
@@ -679,19 +683,22 @@
      "id": "3.5",
      "kind": "theorem",
      "name": "MappingClass.actionHomConj",
-     "statement": "For every group H, MordellLawrenceVenkatesh §5.9's action of Mod_{g,n} on Rep(π₁(Σ_{g,n},x), H) is Ψ_x followed by 1.3, [f]·[ρ] = [ρ ∘ Ψ_x[f]⁻¹]; this formula extends it to Mod^±_{g,n}, compatibly with basepoint change and H →* H'; orbits are finite under a finite-index subgroup (e.g. PMod_{g,n}) iff under Mod^±_{g,n}; for nonabelian H the inner automorphisms act nontrivially on homomorphisms with nonabelian image, so the action does not lift to Hom.",
+     "statement": "For every group H, MordellLawrenceVenkatesh §5.9's action of Mod_{g,n} on Rep(π₁(Σ_{g,n},x), H) is Ψ_x followed by 1.3, [f]·[ρ] = [ρ ∘ Ψ_x[f]⁻¹]; this formula extends it to Mod^±_{g,n}, compatibly with basepoint change and H →* H'; orbits are finite under a finite-index subgroup (e.g. PMod_{g,n}) iff under Mod^±_{g,n}. Non-descent: for 2g − 2 + n > 0 and S = Σ_{g,n} marked at x, the based action [f]·ρ = ρ ∘ (f_const)⁻¹ of Mod(S*) on Hom(π₁(S,x), H) makes Hom(π₁(S,x), H) → Rep(π₁(S,x), H) equivariant for Mod(S*) acting on Rep through Forget, and it factors through Forget iff every homomorphism π₁(S,x) → H has commutative image (ker Forget = Push(π₁(S,x)), Push(α) acting by ρ ↦ MulAut.conj (ρ[α])⁻¹ ∘ ρ).",
      "hypotheses": [
-      "H an arbitrary group"
+      "H an arbitrary group",
+      "2g − 2 + n > 0 for the non-descent clause"
      ],
      "locator": {
       "source": "LandesmanLitt2024",
-      "where": "lines 41–50 (Definition 1.1.1); lines 473–475 (PMod_{g,n} of index n!)"
+      "where": "lines 41–50 (Definition 1.1.1 and the remark that Mod_{g,n} does not naturally act on the representation variety); lines 473–475 (PMod_{g,n} of index n!)"
      },
      "prerequisites": [
       "target:1.3",
       "target:2.3",
       "target:3.3",
       "roadmap:MordellLawrenceVenkatesh §5.9",
+      "roadmap:MordellLawrenceVenkatesh §5.19",
+      "roadmap:MordellLawrenceVenkatesh §5.20",
       "roadmap:MordellLawrenceVenkatesh §5.22"
      ],
      "api": [],
@@ -709,12 +716,22 @@
       {
        "name": "abelian_target",
        "kind": "degenerate",
-       "statement": "For commutative H the action is through H₁ and lifts to Hom."
+       "statement": "For commutative H the action is through H₁, and the based action of Mod(S*) factors through Forget."
       },
       {
        "name": "coverings_comparison",
        "kind": "compatibility",
        "statement": "On the torus, for the shear f (Ψ[f] = M = [[1,0],[1,1]]) and the triple cover with monodromy ρ(u,v) = v mod 3, f∘p has subgroup M(ker ρ) = {b ≡ a mod 3} = ker(ρ ∘ M⁻¹), as MordellLawrenceVenkatesh §5.9's precomposition with (f⁻¹)_* predicts; the right action ρ ∘ M gives {b ≡ −a mod 3}."
+      },
+      {
+       "name": "push_moves_surjection",
+       "kind": "computation",
+       "statement": "(g,n) = (0,3), π₁ = F₂ = ⟨a,b⟩, H = S₃, ρ(a) = (1 2), ρ(b) = (2 3): Push(a)·ρ sends b to (1 2)(2 3)(1 2) = (1 3) ≠ (2 3), so a class in ker Forget moves ρ."
+      },
+      {
+       "name": "set_lift_exists",
+       "kind": "non-example",
+       "statement": "As an action on sets the action on Rep always lifts to Hom (fibres over one orbit are pairwise in bijection through ρ ↦ ρ ∘ φ⁻¹); for (0,3), H = S₃ it lifts the action on the 11 classes of Rep(F₂,S₃) to the 36 points of Hom(F₂,S₃), so 'no lift exists' is false and the theorem concerns the based action."
       }
      ]
     }
@@ -1581,6 +1598,7 @@
    "sections": [
     "§5.1",
     "§5.4",
+    "§5.5",
     "§5.9",
     "§5.15",
     "§5.16",
@@ -1590,7 +1608,7 @@
     "§5.22",
     "§5.23"
    ],
-   "what": "Surfaces with punctures, classification, Mod(S) and its action through Out(pi_1 S) on conjugacy classes of homomorphisms and on finite coverings, Mod(S*), Forget, asphericity, isotopy extension for a moving point, Push, the Birman exact sequence, the symplectic representation, the once-punctured free basis."
+   "what": "Surfaces with punctures, classification, the fundamental class and duality, Mod(S) and its action through Out(pi_1 S) on conjugacy classes of homomorphisms and on finite coverings, Mod(S*), Forget, asphericity, isotopy extension for a moving point, Push, the Birman exact sequence, the symplectic representation, the once-punctured free basis."
   },
   {
    "roadmap": "TeichmullerGeometry",
@@ -1618,9 +1636,11 @@
    "roadmap": "AlgebraicTopology",
    "sections": [
     "Stage 1 item 4",
-    "Stage 1 item 5"
+    "Stage 1 item 5",
+    "Stage 4 item 2",
+    "Stage 4 item 3"
    ],
-   "what": "Based van Kampen and the free fundamental group of a wedge of circles."
+   "what": "Based van Kampen and the free fundamental group of a wedge of circles; the cellular differential and the natural comparison of cellular with singular homology."
   },
   {
    "roadmap": "ClassifyingSpaces",

@@ -43,7 +43,8 @@ This roadmap owns:
   `Mod_{g,n}` on conjugacy classes of homomorphisms with `Ψ_x` followed by Layer 1's action of `Out`,
   and, from that formula, its extension to `Mod^±_{g,n}`, its compatibility with basepoint change
   and with homomorphisms of the target group, the comparison of finite orbits under finite-index
-  subgroups and the non-lifting theorem (Layer 3);
+  subgroups, and the non-descent theorem for the based action of the marked-point group `Mod(S*)` on
+  homomorphisms (Layer 3);
 - the representation scheme `Hom(Γ, G)` of a finitely generated group into an affine group scheme
   over a commutative ring, its topologies on real and complex points, and the surface-group
   instances (Layer 4);
@@ -62,17 +63,18 @@ It leaves to named owners, which are consumed and never planned again:
 - surfaces with boundary and punctures as topological data, `Mod(S)` (orientation-preserving,
   boundary fixed, punctures permuted) and its action, through `Out(π₁ S)`, on conjugacy classes of
   homomorphisms `π₁(S) → G` and on finite coverings, the marked-point group `Mod(S*)`, `Forget`, the
-  classification of compact surfaces, asphericity, trivial centre for `χ(S) < 0`, the evaluation
-  fibration, Hamstrom's theorem, point pushing, the Birman exact sequence, capping, Dehn twists, the
-  symplectic representation and the configuration fibration: MordellLawrenceVenkatesh §§5.1, 5.4,
-  5.9–5.12, 5.15–5.23;
+  classification of compact surfaces, the fundamental class and duality, asphericity, trivial centre
+  for `χ(S) < 0`, the evaluation fibration, Hamstrom's theorem, point pushing, the Birman exact
+  sequence, capping, Dehn twists, the symplectic representation and the configuration fibration:
+  MordellLawrenceVenkatesh §§5.1, 5.4, 5.5, 5.9–5.12, 5.15–5.23;
 - the smooth closed mapping class group `Mod±(Σ) = π₀ Diff(Σ)`, smooth isotopies and diffeotopies,
   the geometric group `Π = π₁ᵒᵖ` and its inversion equivalence, the polygon presentation, the Euler
   number, the uniformizing holonomy, the smooth Dehn–Nielsen–Baer theorem and the converse marked
   representation comparison: TeichmullerGeometry §§0.2, 3.1, 4.2–4.5, 5.1–5.4, 6.1;
 - the presented surface groups `S±(g, m)` and the freeness of `S±(g, m)` for `m ≥ 1`:
   FreeGroupsAndLimitGroups §§6.1–6.2; van Kampen and the wedge of circles: AlgebraicTopology
-  Stage 1; the singular homology of a `K(G, 1)` CW complex as group homology: ClassifyingSpaces
+  Stage 1; cellular homology and its comparison with singular homology: AlgebraicTopology Stage 4;
+  the singular homology of a `K(G, 1)` CW complex as group homology: ClassifyingSpaces
   Stage 4;
 - affine group schemes, their Lie algebras and adjoint representations, closed orbits in orbit
   closures, unipotent radicals, reductivity and characteristic-zero linear reductivity, Levi
@@ -211,16 +213,19 @@ signatures displayed in their files at the pin.
 ### From TauCetiRoadmap.MordellLawrenceVenkatesh
 
 §5.1 (surfaces `Σ ∖ P` with boundary charts and orientation as data), §5.4 (classification of
-compact surfaces), §5.9 (`Mod(S)`, `Mod(S*)`, `Forget`, and the action of `Mod(S)` on conjugacy
-classes of homomorphisms `π₁(S) → G` and on finite coverings by precomposition with the outer
-automorphism `(f⁻¹)_*`), §5.15
-(asphericity), §5.16 (trivial centre for `χ < 0`), §5.17 (the evaluation fibration of
-`Homeo⁺(S, ∂S)`, equivalently isotopy extension for moving one interior point of a surface with
-punctures), §5.19 (`Push : π₁(S, x) →* Mod(S*)`, acting on `π₁(S, x)` by `MulAut.conj`), §5.20 (the
-Birman exact sequence for `χ(S) < 0`), §5.23 (the once-punctured surface group is free on `2g`
-classes with the puncture loop conjugate to the product of commutators). Assumed: the isotopy
-relation of §5.9 is ambient isotopy (Conventions); the surfaces of §5.1 include `Σ_g ∖ P` with empty
-boundary.
+compact surfaces), §5.5 (the fundamental class `[S] ∈ H₂(S, ∂S; ℤ)` of a compact oriented surface,
+Lefschetz duality, and the invariance of the intersection form under orientation-preserving
+homeomorphisms by naturality of cap products), §5.9 (`Mod(S)`, `Mod(S*)`, `Forget`, and the
+action of `Mod(S)` on conjugacy classes of homomorphisms `π₁(S) → G` and on finite coverings by
+precomposition with the outer automorphism `(f⁻¹)_*`), §5.15 (asphericity), §5.16 (trivial
+centre for `χ < 0`), §5.17 (the evaluation fibration of `Homeo⁺(S, ∂S)`, equivalently isotopy
+extension for moving one interior point of a surface with punctures), §5.19
+(`Push : π₁(S, x) →* Mod(S*)`, acting on `π₁(S, x)` by `MulAut.conj`, with `Forget(Push α) = 1`),
+§5.20 (the Birman exact sequence for `χ(S) < 0`), §5.23 (the once-punctured surface group is free
+on `2g` classes with the puncture loop conjugate to the product of commutators). Assumed: the
+isotopy relation of §5.9 is ambient isotopy (Conventions); the surfaces of §5.1 include `Σ_g ∖ P` with empty
+boundary; an orientation-preserving homeomorphism of a closed oriented surface `S` fixes the
+fundamental class `[S]` of §5.5, the fact on which §5.5's invariance of the intersection form rests.
 
 ### From TauCetiRoadmap.TeichmullerGeometry
 
@@ -244,7 +249,10 @@ groups with `χ ≤ 0` not free).
 
 Stage 1 item 4 (based van Kampen for two path-connected opens with path-connected intersection
 containing the basepoint, and its presentation corollaries), item 5 (the fundamental group of a
-wedge of circles is free on the circles).
+wedge of circles is free on the circles). Stage 4 item 2 (the cellular differential, its matrix
+entries as degrees of attaching maps, naturality for cellular maps) and item 3 (the comparison of
+cellular with singular homology, natural on homology for cellular maps, with oriented cell
+generators negated by reversing the cell orientation).
 
 ### From TauCetiRoadmap.ClassifyingSpaces
 
@@ -698,7 +706,8 @@ loops `γ` at `x`. With `f = id`, `f_η = 1`, and the change-of-path law of §3.
   on the abelianization; `−1` is not induced by an inner automorphism, so the involution is not
   isotopic to the identity.
 
-*Needs:* §3.1; §2.1; Mathlib `FundamentalGroupoidFunctor.homotopicMapsNatIso`, `ContinuousMap.Homotopy`.
+*Needs:* §3.1; §2.1; MordellLawrenceVenkatesh §5.19; Mathlib
+`FundamentalGroupoidFunctor.homotopicMapsNatIso`, `ContinuousMap.Homotopy`.
 
 ### 3.3 The homomorphism Ψ and change of basepoint
 
@@ -743,12 +752,17 @@ trivial and so is the image of `Mod(Σ)`, of index one (FarbMargalit2012, Ch. 8,
 *Proof sketch.* For `g ≥ 1`, `Σ` is aspherical (MordellLawrenceVenkatesh §5.15) and is a CW complex
 by its polygon model (TeichmullerGeometry §4.3), so its singular homology is the group homology of
 `π₁(Σ, x)`, naturally (ClassifyingSpaces Stage 4 item 17). Hence `Ψ_x[f]` acts on
-`H₂(π₁(Σ, x); ℤ)` as `f` acts on `H₂(Σ; ℤ) ≅ ℤ`, by `+1` if `f` preserves the orientation
-(MordellLawrenceVenkatesh §5.1) and by `−1` if it reverses it. An inner automorphism `MulAut.conj [α]`
-is `f_{const}` for the push of `x` around `α` (§3.2), which is isotopic to the identity, so it acts
-trivially. A reflection of the polygon model reverses orientation, so the action of `Out` is onto
-`{±1}`; an outer class acting by `+1` is `Ψ_x[f]` for some `f` by surjectivity, and that `f` cannot
-reverse orientation.
+`H₂(π₁(Σ, x); ℤ)` as `f` acts on `H₂(Σ; ℤ) ≅ ℤ`: by `+1` if `f` preserves the orientation, because
+it fixes the fundamental class `[Σ]` (MordellLawrenceVenkatesh §5.5), and by `−1` if it reverses it,
+since `f = (f ∘ r) ∘ r` with `f ∘ r` orientation-preserving (§2.1, index two), where `r` is the
+reflection of the polygon model (TeichmullerGeometry §4.3) through the axis exchanging the edges in
+positions `k` and `3 − k` modulo `4g`. This `r` respects the side pairing of the word
+`a₁ b₁ a₁⁻¹ b₁⁻¹ ⋯ a_g b_g a_g⁻¹ b_g⁻¹`, is cellular, and maps the unique two-cell to itself by a
+reflection, so it acts by `−1` on cellular `H₂`, hence on singular `H₂` (AlgebraicTopology Stage 4
+items 2–3). An inner automorphism `MulAut.conj [α]` is `f_{const}` for the push of `x` around `α`
+(§3.2), which is isotopic to the identity (MordellLawrenceVenkatesh §5.19), so it acts trivially.
+Since `r` acts by `−1`, the action of `Out` is onto `{±1}`; an outer class acting by `+1` is `Ψ_x[f]`
+for some `f` by surjectivity, and that `f` cannot reverse orientation.
 
 **Checks.**
 
@@ -764,8 +778,9 @@ reverse orientation.
 
 *Needs:* §2.1; §3.2; §3.3; TeichmullerGeometry §0.2; TeichmullerGeometry §3.1; TeichmullerGeometry
 §4.2; TeichmullerGeometry §4.3; TeichmullerGeometry §5.2; MordellLawrenceVenkatesh §5.1;
-MordellLawrenceVenkatesh §5.15; ClassifyingSpaces Stage 3 item 11; ClassifyingSpaces Stage 4 item 17;
-Mathlib `groupHomology`, `groupHomology.map`.
+MordellLawrenceVenkatesh §5.5; MordellLawrenceVenkatesh §5.15; MordellLawrenceVenkatesh §5.19;
+AlgebraicTopology Stage 4 items 2–3; ClassifyingSpaces Stage 3 item 11; ClassifyingSpaces Stage 4
+item 17; Mathlib `groupHomology`, `groupHomology.map`.
 
 ### 3.5 The mapping class action on conjugacy classes of representations
 
@@ -775,10 +790,21 @@ MordellLawrenceVenkatesh §5.9 (on conjugacy classes of homomorphisms) is `Ψ_x`
 `Mod^±_{g,n}`. Prove that the extended action is compatible with the basepoint isomorphisms of §3.3
 and with homomorphisms `H → H'`; that for a subgroup `M ≤ Mod^±_{g,n}` of finite index (in particular
 `PMod_{g,n}`, index `n!` in `Mod_{g,n}`, §2.3) an orbit is finite under `M` exactly when it is finite
-under `Mod^±_{g,n}`; and that the action does not lift to `Hom(π₁(Σ_{g,n}, x), H)`: for nonabelian
-`H` the inner automorphisms of `π₁`, which are the images of point pushes, act nontrivially on
-homomorphisms with nonabelian image (§1.3) (LandesmanLitt2024 lines 41–50, Definition 1.1.1, for
-the action and its non-lifting; lines 473–475 for `PMod_{g,n}` of index `n!`).
+under `Mod^±_{g,n}`. Prove the non-descent theorem: let `2g − 2 + n > 0`, `S = Σ_{g,n}` marked at
+`x`, and `Mod(S*)` the group of classes fixing `x` with `Forget : Mod(S*) → Mod_{g,n}`
+(MordellLawrenceVenkatesh §5.9). The based action `[f] · ρ = ρ ∘ (f_{const})⁻¹` of `Mod(S*)` on
+`Hom(π₁(S, x), H)`, given by §3.3's based homomorphism and §1.3, makes the quotient map
+`Hom(π₁(S, x), H) → Rep(π₁(S, x), H)` equivariant for `Mod(S*)` acting on `Rep(π₁(S, x), H)`
+through `Forget`; and it factors through `Forget` if and only if every homomorphism `π₁(S, x) → H`
+has commutative image (LandesmanLitt2024 lines 41–50, Definition 1.1.1 and the remark after it that
+`Mod_{g,n}` does not naturally act on the representation variety; lines 473–475 for `PMod_{g,n}` of
+index `n!`).
+
+*Proof sketch.* Equivariance: `Ψ_x[Forget f]` is the class of `f_{const}`, the constant path
+joining `x` to `f(x) = x` (§3.3). Non-descent: the kernel of `Forget` is `Push(π₁(S, x))` for
+`χ(S) < 0` (MordellLawrenceVenkatesh §5.20), and `Push(α)` acts by
+`ρ ↦ ρ ∘ (MulAut.conj [α])⁻¹ = MulAut.conj (ρ [α])⁻¹ ∘ ρ` (§§1.3, 3.3), which fixes `ρ` for every
+`α` exactly when `ρ(π₁(S, x))` is commutative.
 
 **Checks.**
 
@@ -790,14 +816,25 @@ the action and its non-lifting; lines 473–475 for `PMod_{g,n}` of index `n!`).
   `H¹(Σ₂; ℂ)`, and `Mod_{2,0}` moves the primitive class `f` through infinitely many lines
   (MordellLawrenceVenkatesh §5.22).
 - For commutative `H` the action on `Hom(π₁, H) = Hom(H₁(Σ_{g,n}), H)` is the action through
-  `H₁`; for `H` abelian no lift problem arises, consistently with §1.3.
+  `H₁`, and the based action of `Mod(S*)` factors through `Forget`, consistently with §1.3.
+- Non-descent on `(g, n) = (0, 3)`, `π₁ = F₂ = ⟨a, b⟩`, `H = S₃`: for the surjection `ρ` with
+  `ρ(a) = (1 2)`, `ρ(b) = (2 3)`, `Push(a) · ρ` sends `b` to `(1 2)(2 3)(1 2) = (1 3) ≠ (2 3)`, so a
+  class in the kernel of `Forget` moves `ρ`.
+- The theorem is about the based action, not about lifts of sets: as an action on sets, the action
+  of `Mod_{g,n}` on `Rep(π₁, H)` always lifts along `Hom(π₁, H) → Rep(π₁, H)`, because the fibres
+  over one orbit are conjugation orbits `H · ρ`, pairwise in bijection through `ρ ↦ ρ ∘ φ⁻¹`, and
+  transporting one fibre along chosen bijections gives an equivariant action. For `(0, 3)` and
+  `H = S₃` this lifts the action on the `11` classes of `Rep(F₂, S₃)` (Burnside's count
+  `(36 + 3 · 4 + 2 · 9)/6`) to the `36` points of `Hom(F₂, S₃)`; a statement that no lift exists
+  would be false.
 - Agreement with MordellLawrenceVenkatesh §5.9's action on coverings: on the torus, for the shear
   `f` with `Ψ[f] = M = [[1,0],[1,1]]` (§3.3) and the triple cover `p` with monodromy
   `ρ(u, v) = v mod 3`, the cover `f ∘ p` has subgroup `M(ker ρ) = {(a, b) : b ≡ a mod 3}`, the kernel
   of `ρ ∘ M⁻¹ : (a, b) ↦ b − a mod 3`, as the formula `[ρ ∘ Ψ[f]⁻¹]` predicts; the right action
   `ρ ∘ M : (a, b) ↦ a + b mod 3` has kernel `{b ≡ −a mod 3}`, a different cover.
 
-*Needs:* §1.3; §2.3; §3.3; MordellLawrenceVenkatesh §5.9; MordellLawrenceVenkatesh §5.22.
+*Needs:* §1.3; §2.3; §3.3; MordellLawrenceVenkatesh §5.9; MordellLawrenceVenkatesh §5.19;
+MordellLawrenceVenkatesh §5.20; MordellLawrenceVenkatesh §5.22.
 
 ### Examples
 
@@ -808,8 +845,8 @@ the action and its non-lifting; lines 473–475 for `PMod_{g,n}` of index `n!`).
 ### Dependencies
 
 Layers 1 and 2; Mathlib's fundamental group and groupoid and `groupHomology`;
-MordellLawrenceVenkatesh §§5.1, 5.9, 5.15, 5.19, 5.22; TeichmullerGeometry §§0.2, 3.1, 4.2, 4.3, 5.2;
-ClassifyingSpaces Stage 4. Layer 3 supplies Layer 7.
+MordellLawrenceVenkatesh §§5.1, 5.5, 5.9, 5.15, 5.19, 5.20, 5.22; TeichmullerGeometry §§0.2, 3.1, 4.2,
+4.3, 5.2; AlgebraicTopology Stage 4; ClassifyingSpaces Stages 3–4. Layer 3 supplies Layer 7.
 
 ## Layer 4: Representation schemes
 
