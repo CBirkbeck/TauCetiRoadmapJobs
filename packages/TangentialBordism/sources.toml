@@ -86,3 +86,21 @@ status = "certified"
 accessed = "2026-11-08"
 cited_for = ["8.3"]
 version_note = "notes dated 11 February 2013 for the Fall 2012 course"
+
+[[source]]
+id = "beaudryCampbell"
+authors = "Agnes Beaudry, Jonathan A. Campbell"
+title = "A Guide for Computing Stable Homotopy Groups"
+year = 2018
+arxiv = "1801.07530v2"
+locator_scheme = "theorem"
+locator = "Remark 3.2.2, p.18; Figure 31, p.41; Theorem 5.1.1 and Corollary 5.1.2, p.42 (arXiv v2)"
+url = "https://arxiv.org/abs/1801.07530v2"
+fetched_from = "https://arxiv.org/pdf/1801.07530v2"
+fetched_at = "2026-11-08T20:09:11Z"
+sha256 = "c866d9e35b62cae6803fde4e744583608fa9705381c3c36415c492dc5a1d5ed2"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-08"
+version_note = "arXiv v2"
+cited_for = ["7.2", "8.3", "8.4"]
