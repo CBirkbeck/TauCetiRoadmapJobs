@@ -1,0 +1,13 @@
+{
+  "review": {
+    "status": "accepted",
+    "reviewer": "independent-review-PRREVIEW-K3BlochGroups~10",
+    "head": "d0c91909546c53964bdf697bd03adec5cfed7f64",
+    "pr": 1430,
+    "folder": "K3BlochGroups",
+    "date": "2026-11-07",
+    "findings": 0,
+    "blocking": 0,
+    "notes": "incremental re-review of 2 changed lines since feadaba. Checked: R01 of the previous report repaired (README line 1358 keeps only 'Since 12ν=2·(6ν), the relation also places η³ in 2π₃S', which is true; the Moore/η⁴ credit to ArithmeticKTheory §7.5 is gone and nothing else cites it); ArithmeticKTheory §7.5 re-resolved at its head e6275108 for every item §4.9, Check 4 and the supplier contract cite (sphereAdamsNovikovLowE2, structure formulas, sparseness, zero line, E₂^(1,2), π₄S=0, d₃ onto E₃^(4,8)); Hatcher p.385 re-read; roadmaps grep over main and 475 open heads (no citation of §4.9 or the deleted remark). Seeded sample (§§1.2, 2.5, 3.6, 3.13, 3.16, 4.3, 4.7, 4.17, 4.18, 4.19, 5.3, 5.8, 6.1, 6.4, 6.6): none falls in the changed passage; text unchanged, locator checks carried from earlier reviews; no README locator flagged unverified. Gate re-run: OK, every check 0; worker gate build=0. Depcheck: 242 roadmaps, 2452 edges, 0 problems, no UPWARD/CYCLE/moved line. lake env lean: eight 'declaration uses sorry' warnings only; #check @ on all 13 declarations matches signatures.md, no lost binder; Suggested.lean unchanged since feadaba. Adversarial table: changed sentence, etaCube_eq_twelveNu, Check 4 and the alphaOneCube computation recomputed; sampled targets and headlines carried with values. Overlaps: none. Waived sources suslin-1984, suslin-1991, bloch untouched."
+  }
+}
