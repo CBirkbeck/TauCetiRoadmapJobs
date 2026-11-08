@@ -34,3 +34,130 @@ status = "certified"
 accessed = "2026-11-04"
 version_note = "arXiv v6 (2015), the Deductive Press book edition; printed page numbers"
 cited_for = ["1.2"]
+
+[[source]]
+id = "bkt"
+authors = "Benjamin Bakker, Bruno Klingler, Jacob Tsimerman"
+title = "Tame topology of arithmetic quotients and algebraicity of Hodge loci"
+year = 2018
+arxiv = "1810.04801v2"
+locator_scheme = "section"
+locator = "4.5, Definition 4.11"
+url = "https://arxiv.org/abs/1810.04801v2"
+fetched_from = "https://arxiv.org/pdf/1810.04801v2"
+fetched_at = "2026-11-08T22:02:48Z"
+sha256 = "9f997104c775342fa49ba54f4b4782650f1da07a3bdc1717be977f86cc4ddcdc"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-08"
+version_note = "arXiv v2"
+cited_for = ["3.2", "3.7"]
+
+[[source]]
+id = "lt"
+authors = "Michael Lipnowski, Jacob Tsimerman"
+title = "How Large is $A_g(\\mathbb{F}_q)$?"
+year = 2015
+venue = "Duke Math. J. 167, no. 18 (2018), 3403-3453"
+doi = "10.1215/00127094-2018-0029"
+arxiv = "1511.02212v1"
+locator_scheme = "equation"
+locator = "(21)"
+url = "https://arxiv.org/abs/1511.02212v1"
+fetched_from = "https://arxiv.org/pdf/1511.02212v1"
+fetched_at = "2026-11-08T22:02:54Z"
+sha256 = "5ceed8168ce37b75da67699189e7e8730527c31f3339dce979a1a1901243f81a"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-08"
+version_note = "arXiv v1"
+cited_for = ["4.5"]
+
+[[source]]
+id = "conrad"
+authors = "Brian Conrad"
+title = "Weil and Grothendieck approaches to adelic points"
+year = 2012
+venue = "L'Enseignement Mathématique 58 (2012), 61–97"
+version_note = "author preprint; locators use its pagination"
+locator_scheme = "theorem"
+locator = "Proposition 2.1; Theorem 3.6, (3.6.2)"
+url = "https://math.stanford.edu/~conrad/papers/adelictop.pdf"
+fetched_from = "https://math.stanford.edu/~conrad/papers/adelictop.pdf"
+fetched_at = "2026-11-08T22:03:04Z"
+sha256 = "fe4a9193aff4ef575665b40971f3da32f850a74d87b3f2d0fa28bba26b9cbabb"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-08"
+cited_for = ["1.2"]
+
+[[source]]
+id = "bkt-erratum"
+authors = "Benjamin Bakker, Bruno Klingler, Jacob Tsimerman"
+title = "Erratum: Tame topology of arithmetic quotients and algebraicity of Hodge loci"
+year = 2023
+venue = "Journal of the American Mathematical Society 36 (2023)"
+doi = "10.1090/jams/1025"
+version_note = "four-page author copy; locators use its pagination"
+locator_scheme = "section"
+locator = "1.5"
+url = "https://benjamin-bakker.github.io/DefArithErr.pdf"
+fetched_from = "https://benjamin-bakker.github.io/DefArithErr.pdf"
+fetched_at = "2026-11-08T22:03:05Z"
+sha256 = "86d76a5d2443840ddcaf2c08966cd236759bade659e338e3fcdb3edcd2b61ac7"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-08"
+cited_for = ["3.7"]
+
+[[source]]
+id = "bgst"
+authors = "Benjamin Bakker, Thomas W. Grimm, Christian Schnell, Jacob Tsimerman"
+title = "Finiteness for self-dual classes in integral variations of Hodge structure"
+year = 2021
+arxiv = "2112.06995"
+version_note = "author PDF, 2021 edition; Proposition 28.1 on pp. 14–15"
+locator_scheme = "theorem"
+locator = "Proposition 28.1"
+url = "https://benjamin-bakker.github.io/finiteness.pdf"
+fetched_from = "https://benjamin-bakker.github.io/finiteness.pdf"
+fetched_at = "2026-11-08T22:03:05Z"
+sha256 = "5dd8ad61c1dab6a781bc8edad76f1df964d5a5472b413cf1e03f67f1a02a170b"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-08"
+cited_for = ["3.7"]
+
+[[source]]
+id = "milne"
+authors = "J. S. Milne"
+title = "Introduction to Shimura varieties"
+year = 2017
+version_note = "author revision of 16 September 2017 of the Clay Mathematics Proceedings 4 (2005) article"
+locator_scheme = "page"
+locator = "58"
+url = "https://www.jmilne.org/math/xnotes/svi.pdf"
+fetched_from = "https://www.jmilne.org/math/xnotes/svi.pdf"
+fetched_at = "2026-11-08T22:03:09Z"
+sha256 = "f637e61735ff9cf9730c43d978d8f05185685a37d5e1920fc3347061c83d7c7e"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-08"
+cited_for = ["4.4", "4.5"]
+
+[[source]]
+id = "arthur"
+authors = "James Arthur"
+title = "An introduction to the trace formula"
+year = 2005
+venue = "Clay Mathematics Proceedings 4 (2005), 1–263"
+locator_scheme = "page"
+locator = "13"
+url = "https://www.claymath.org/library/cw/arthur/pdf/62.pdf"
+fetched_from = "https://www.claymath.org/library/cw/arthur/pdf/62.pdf"
+fetched_at = "2026-11-08T22:03:15Z"
+sha256 = "2b6623010ce5d854732458dfb5e61600a4e6cc7288629a72cb63d5f7530ac510"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-11-08"
+cited_for = ["4.5"]
