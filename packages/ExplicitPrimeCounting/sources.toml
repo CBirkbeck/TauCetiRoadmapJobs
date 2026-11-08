@@ -1370,3 +1370,21 @@ licence_class = "publisher-open"
 status = "certified"
 accessed = "2026-11-08"
 cited_for = ["0.1"]
+
+[[source]]
+id = "buthe-2014"
+authors = "Jan Büthe"
+title = "A Brun-Titchmarsh inequality for weighted sums over prime numbers"
+year = 2014
+arxiv = "1410.7561v2"
+locator_scheme = "theorem"
+locator = "Lemma 4.5"
+url = "https://arxiv.org/abs/1410.7561v2"
+fetched_from = "https://arxiv.org/pdf/1410.7561v2"
+fetched_at = "2026-11-08T04:53:37Z"
+sha256 = "83c6afae9cf205e6f45c14708f4dd9a15304e5b8cfc163893fc6bdf5513846b9"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-08"
+version_note = "arXiv v2"
+cited_for = ["0.1"]
