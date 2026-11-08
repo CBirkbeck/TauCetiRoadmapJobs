@@ -306,5 +306,60 @@ sha256 = "fe4a9193aff4ef575665b40971f3da32f850a74d87b3f2d0fa28bba26b9cbabb"
 licence_class = "author-page"
 status = "certified"
 accessed = "2026-11-08"
-cited_for = ["3A.5"]
 version_note = "author's version dated 31 December 2011; page numbers are those of that version"
+cited_for = ["3A.5"]
+
+[[source]]
+id = "arzhantsev"
+authors = "Ivan V. Arzhantsev"
+title = "Invariant Ideals and Matsushima's Criterion"
+year = 2005
+venue = "Comm. Algebra 36 (2008), no. 12, 4368--4374"
+arxiv = "math/0506430v1"
+locator_scheme = "theorem"
+locator = "Proposition 2.2"
+url = "https://arxiv.org/abs/math/0506430v1"
+fetched_from = "https://arxiv.org/pdf/math/0506430v1"
+fetched_at = "2026-11-08T22:15:55Z"
+sha256 = "786bff5625883f4456f6decd82e3fc72c60ace70ced673d58aeb20566889b685"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-08"
+version_note = "arXiv v1"
+cited_for = ["6B"]
+
+[[source]]
+id = "ernst"
+authors = "Dana C. Ernst"
+title = "Cell Complexes for Arrangements with Group Actions"
+year = 2009
+arxiv = "0905.4434v1"
+locator_scheme = "theorem"
+locator = "Theorem 6.10"
+url = "https://arxiv.org/abs/0905.4434v1"
+fetched_from = "https://arxiv.org/pdf/0905.4434v1"
+fetched_at = "2026-11-08T22:16:01Z"
+sha256 = "abff0e502b94c69f3df0ff756c3e41a3d1a4085a4def9da68fc85f5f26a4cb65"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-08"
+version_note = "arXiv v1"
+cited_for = ["11B"]
+
+[[source]]
+id = "fang-lim-tan"
+authors = "Ming Fang, Kay Jin Lim, Kai Meng Tan"
+title = "Jantzen filtration of Weyl modules, product of Young symmetrizers and denominator of Young's seminormal basis"
+year = 2019
+arxiv = "1904.13040v2"
+locator_scheme = "section"
+locator = "2.1"
+url = "https://arxiv.org/abs/1904.13040v2"
+fetched_from = "https://arxiv.org/pdf/1904.13040v2"
+fetched_at = "2026-11-08T22:16:08Z"
+sha256 = "650154cf5e1c4008f06fd55528063499e4a7996d306c9ed28f32ccfb8658a954"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-08"
+version_note = "arXiv v2"
+cited_for = ["10B"]
