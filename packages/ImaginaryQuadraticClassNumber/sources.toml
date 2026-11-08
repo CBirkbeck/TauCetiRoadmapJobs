@@ -33,3 +33,18 @@ licence_class = "none"
 status = "uncertified"
 version_note = "paywalled; cited by its locator without the text"
 cited_for = ["H3.3"]
+
+[[source]]
+id = "davenport1980"
+authors = "Harold Davenport"
+title = "Multiplicative Number Theory"
+year = 1980
+venue = "Graduate Texts in Mathematics"
+doi = "10.1007/978-1-4757-5927-3"
+locator_scheme = "chapter"
+locator = "Chapters 6 and 21"
+url = "https://doi.org/10.1007/978-1-4757-5927-3"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["H2.1–H2.4"]
