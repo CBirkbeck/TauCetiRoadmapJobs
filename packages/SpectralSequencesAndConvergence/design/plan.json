@@ -81,7 +81,7 @@
      ],
      "locator": {
       "source": "stacks-012K",
-      "where": "line 2612–2624, Definition 20.1, tag 011N; helle-rognes2024 line 65–70, Lemma 2.2"
+      "where": "line 2612–2624, the construction after Definition 20.1, tag 011N; helle-rognes2024 line 65–70, Lemma 2.2"
      },
      "prerequisites": [
       "mathlib:CategoryTheory.SpectralSequence",
@@ -501,12 +501,7 @@
       {
        "name": "isSeparated_of_isComplete",
        "role": "implication",
-       "statement": "Complete ⇒ separated."
-      },
-      {
-       "name": "isComplete_iff_limOne",
-       "role": "characterisation",
-       "statement": "With countable products and CountableAB4Star: complete ⇔ separated and lim¹_p F^p = 0 (7.1)."
+       "statement": "Complete ⇒ separated (the characterisation of completeness through lim¹ is in 7.1)."
       }
      ],
      "tests": [
@@ -731,7 +726,7 @@
      "id": "3.6",
      "kind": "theorem",
      "name": "CategoryTheory.SpectralSequence.fiveTerm_exact",
-     "statement": "For an E₂ cohomological spectral sequence with the standard assignment: (vanishing) convergence in degree n and E_r^{p,n−p} = 0 ∀p ⇒ H^n = 0; (dimension) over a field with finite dimensions, finitely many nonzero, finite filtration: dim H^n = Σ_p dim E_∞^{p,n−p} ≤ Σ_p dim E_r^{p,n−p}, with equality iff all differentials of pages r′ ≥ r leaving or entering total degree n vanish; (two columns) E_2^{p,q} = 0 for p ∉ {0,1} ⇒ 0 → E_2^{1,n−1} → H^n → E_2^{0,n} → 0; (two rows) E_2^{p,q} = 0 for q ∉ {0,1}, convergence in n, n+1 ⇒ E_2^{n−1,1} → E_2^{n+1,0} → H^{n+1} → E_2^{n,1} → E_2^{n+2,0} exact; (first quadrant) edge morphisms E_2^{n,0} ↠ F^nH^n ↪ H^n ↠ E_∞^{0,n} ↪ E_2^{0,n}, five-term sequence 0 → E_2^{1,0} → H^1 → E_2^{0,1} → E_2^{2,0} → H^2 under convergence in degrees 1, 2, and for m ≥ 1 with E_2^{p,q} = 0 for 0 < q < m: E_2^{j,0} ≅ H^j for j < m and 0 → E_2^{m,0} → H^m → E_2^{0,m} → E_2^{m+1,0} → H^{m+1}.",
+     "statement": "For an E₂ cohomological spectral sequence with the standard assignment: (vanishing) convergence in degree n and E_r^{p,n−p} = 0 ∀p ⇒ H^n = 0; (dimension) over a field with finite dimensions, finitely many nonzero, finite filtration: dim H^n = Σ_p dim E_∞^{p,n−p} ≤ Σ_p dim E_r^{p,n−p}, with equality iff all differentials of pages r′ ≥ r leaving or entering total degree n vanish; (two columns) E_2^{p,q} = 0 for p ∉ {0,1} ⇒ 0 → E_2^{1,n−1} → H^n → E_2^{0,n} → 0; (two rows) E_2^{p,q} = 0 for q ∉ {0,1}, convergence in degree n+1 ⇒ E_2^{n−1,1} → E_2^{n+1,0} → H^{n+1} → E_2^{n,1} → E_2^{n+2,0} exact; (first quadrant) edge morphisms E_2^{n,0} ↠ F^nH^n ↪ H^n ↠ E_∞^{0,n} ↪ E_2^{0,n}, five-term sequence 0 → E_2^{1,0} → H^1 → E_2^{0,1} → E_2^{2,0} → H^2 under convergence in degrees 1, 2, and for m ≥ 1 with E_2^{p,q} = 0 for 0 < q < m: E_2^{j,0} ≅ H^j for j < m and 0 → E_2^{m,0} → H^m → E_2^{0,m} → E_2^{m+1,0} → H^{m+1}.",
      "hypotheses": [
       "C abelian",
       "E₂ cohomological spectral sequence",
@@ -1396,17 +1391,18 @@
      "id": "7.1",
      "kind": "definition",
      "name": "CategoryTheory.Functor.limOne",
-     "statement": "For a tower F : ℕᵒᵖ ⥤ C in an abelian category with countable products, lim F := kernel and lim¹ F := cokernel of Tau Ceti towerDifference F; lim F is the categorical limit; functoriality; under CountableAB4Star the six-term exact sequence for levelwise short exact sequences; cofinal-subsequence and pro-isomorphism invariance; pro-zero towers have lim = lim¹ = 0.",
+     "statement": "For a tower F : ℕᵒᵖ ⥤ C in an abelian category with countable products, lim F := kernel and lim¹ F := cokernel of Tau Ceti towerDifference F; lim F is the categorical limit; functoriality; under CountableAB4Star the six-term exact sequence for levelwise short exact sequences; cofinal-subsequence and pro-isomorphism invariance; pro-zero towers have lim = lim¹ = 0; for a decreasingly filtered object X (3.1), with lim¹_p F^p X the lim¹ of the tower n ↦ F^n X (n ∈ ℕ): a complete filtration is separated with lim¹_p F^p X = 0, and under CountableAB4Star a separated filtration with lim¹_p F^p X = 0 is complete.",
      "hypotheses": [
       "C abelian",
       "HasCountableProducts C",
-      "CountableAB4Star C for the six-term sequence"
+      "CountableAB4Star C for the six-term sequence and for the converse of the completeness characterisation"
      ],
      "locator": {
       "source": "weibel1994",
-      "where": "§3.5, definition of lim¹ for towers (uncertified); helle-rognes2024 line 71–84"
+      "where": "§3.5, definition of lim¹ for towers (uncertified); helle-rognes2024 line 71–84; helle-rognes2024 line 85–93, the proof of Lemma 2.6 (for graded modules), for the completeness characterisation"
      },
      "prerequisites": [
+      "target:3.1",
       "tauceti:CategoryTheory.Functor.towerDifference",
       "tauceti:CategoryTheory.Functor.towerDifference_naturality",
       "tauceti:CategoryTheory.Functor.isLimitConeOfTowerDifference",
@@ -1441,6 +1437,11 @@
        "statement": "Pro-zero towers: lim = lim¹ = 0."
       },
       {
+       "name": "isComplete_iff_isSeparated_and_limOne",
+       "role": "characterisation",
+       "statement": "Complete ⇒ separated and lim¹_p F^p X = 0 (partial-sum section of 1 − s, countable products only); under CountableAB4Star, separated and lim¹_p F^p X = 0 ⇒ complete (six-term sequence of 0 → F^n X → X → X/F^n X → 0)."
+      },
+      {
        "name": "limOne_moduleCat",
        "role": "compatibility",
        "statement": "On ModuleCat R agrees with TauCeti.ModuleTower.lim and TauCeti.ModuleTower.limOne."
@@ -1461,6 +1462,11 @@
        "name": "zero_transitions",
        "kind": "non-example",
        "statement": "ℤ/ℓ with zero transitions: pro-zero, lim = lim¹ = 0, Mittag–Leffler though not surjective."
+      },
+      {
+       "name": "ladic_completeness_limOne",
+       "kind": "computation",
+       "statement": "ℓ-adic filtration of ℤ: separated, lim¹_p ℓ^pℤ ≅ ℤ_ℓ/ℤ ≠ 0, not complete; of ℤ_ℓ: lim¹ = 0, complete; constant filtration F^p = X ≠ 0: lim¹ = 0, not complete (separation needed)."
       }
      ]
     },

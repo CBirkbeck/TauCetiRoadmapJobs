@@ -115,9 +115,10 @@ part of this roadmap.
   spectral sequence). Helle–Rognes include exhaustiveness in "converges weakly"; here it is not
   included. Helle–Rognes and Boardman call a filtration *complete* when `lim¹_p F^p = 0` and
   *Hausdorff* when its meet `lim_p F^p` is `0` (helle-rognes2024 line 81–84, Definition 2.5).
-  Here *complete* is the limit-cone condition of 3.1, which implies separated and, under
-  `CountableAB4Star`, is equivalent to Hausdorff together with `lim¹_p F^p = 0` (3.1). A filtration
-  with `lim¹_p F^p = 0` and nonzero meet is complete in their sense and not in this one.
+  Here *complete* is the limit-cone condition of 3.1. It implies separated (3.1) and, with
+  countable products, `lim¹_p F^p = 0`; under `CountableAB4Star` it is equivalent to Hausdorff
+  together with `lim¹_p F^p = 0` (7.1). A filtration with `lim¹_p F^p = 0` and nonzero meet is
+  complete in their sense and not in this one.
 - **Classical indexing of a filtered complex.** For a decreasing filtration `F^p` of a cochain
   complex `K`, the increasing functor `G_t = F^{−t}` is the filtration that Tau Ceti's
   `CochainComplex.filtrationFunctor` takes. The classical `E_r^{p,q}` is page `r + 1` of
@@ -185,7 +186,11 @@ part of this roadmap.
 - `HasCountableProducts`, `HasCountableCoproducts`, `CountableAB4Star`, `HasExactColimitsOfShape`,
   `AB5`, `EnoughProjectives`, `IsGrothendieckAbelian`, with the module-category instances `AB5`,
   `AB4Star` and `EnoughProjectives` for `ModuleCat R`
-  (`Mathlib/CategoryTheory/Abelian/GrothendieckAxioms/Basic.lean`,
+  (`Mathlib/CategoryTheory/Limits/Shapes/Countable.lean`,
+  `Mathlib/CategoryTheory/Limits/HasExactLimitsOfShape.lean`,
+  `Mathlib/CategoryTheory/Abelian/GrothendieckAxioms/Basic.lean`,
+  `Mathlib/CategoryTheory/Abelian/GrothendieckCategory/Basic.lean`,
+  `Mathlib/CategoryTheory/Preadditive/Projective/Basic.lean`,
   `Mathlib/Algebra/Category/ModuleCat/AB.lean`,
   `Mathlib/Algebra/Category/ModuleCat/Projective.lean`).
 - `CategoryTheory.ObjectProperty.IsSerreClass`
@@ -329,8 +334,8 @@ subobjects `Z_r(pq)` and `B_r(pq)` of the first object `(E.page r₀).X pq`, wit
 `(E.page r).X pq` by `(B_r(pq), Z_r(pq))`. The start is `B_{r₀} = ⊥`, `Z_{r₀} = ⊤`. In the
 inductive step `Z_{r+1}` is the preimage of the kernel of the differential of page `r` leaving
 `pq`, and `B_{r+1}` the preimage of the image of the differential of page `r` entering `pq`,
-transported by 1.1 and by `E.iso r (r+1) pq` (stacks-012K line 2612–2624, Definition 20.1, tag
-011N; helle-rognes2024 line 65–70, Lemma 2.2). *Needs:* 1.1; Mathlib
+transported by 1.1 and by `E.iso r (r+1) pq` (stacks-012K line 2612–2624, the construction after
+Definition 20.1, tag 011N; helle-rognes2024 line 65–70, Lemma 2.2). *Needs:* 1.1; Mathlib
 `CategoryTheory.SpectralSequence`, `HomologicalComplex.cycles`, `HomologicalComplex.homology`.
 
 - `B_r ≤ B_{r+1} ≤ Z_{r+1} ≤ Z_r` for all `r ≥ r₀`.
@@ -565,9 +570,8 @@ of filtered objects is a Mathlib `CategoryTheory.FilteredObject.Hom`. Define its
 - Finite implies exhaustive, separated and complete.
 - *Five-lemma induction.* A morphism of finitely filtered objects that is an isomorphism on every
   `gr^p` is an isomorphism, and so is its restriction to every step.
-- Complete implies separated.
-- In an abelian category with countable products and `CountableAB4Star`, complete is equivalent
-  to separated together with `lim¹_p F^p X = 0` (with lim¹ of Layer 7.1).
+- Complete implies separated: a subobject below every `F^p X` maps to zero in every `X / F^p X`,
+  hence to zero in their limit `X`. The characterisation of completeness through lim¹ is in 7.1.
 
 **Checks.**
 
@@ -644,7 +648,8 @@ quotients are the `E_∞` at the positions of total degree `n`. `H^n = 0` if all
 vanish. If they all satisfy a weak Serre class `P` as in 2.3, so does `H^n`. If the limit page
 at these positions is reached on page `r` and the `E_r` satisfy `P`, so does `H^n`
 (stacks-012K line 3152–3174, Lemma 24.11 (2)–(4), tag 012W, in its filtered-complex form;
-weibel1994 Definition 5.2.5 and the remark after 5.2.6, uncertified). *Needs:* 3.1, 3.2, 2.2.
+weibel1994 Definition 5.2.5 and the remark after 5.2.6, uncertified). *Needs:* 3.1, 3.2, 2.2;
+2.3 for the weak Serre classes and for the page-step identity behind the Euler identity.
 
 - Under a finite filtration in every degree and finitely many nonzero positions on page `r`, all
   in `P`: only finitely many `H^n` are nonzero, and
@@ -706,10 +711,11 @@ mccleary2001 Ch. 2, uncertified):
   vanishes.
 - *Two columns.* If `E_2^{p,q} = 0` for `p ∉ {0, 1}`, every `d_r` with `r ≥ 2` vanishes, and
   convergence in degree `n` gives a short exact sequence `0 → E_2^{1,n−1} → H^n → E_2^{0,n} → 0`.
-- *Two rows.* If `E_2^{p,q} = 0` for `q ∉ {0, 1}` and the sequence converges in degrees `n` and
-  `n + 1`, then
-  `E_2^{n−1,1} →(d_2) E_2^{n+1,0} → H^{n+1} → E_2^{n,1} →(d_2) E_2^{n+2,0}` is exact. Over all `n`
-  with convergence these splice into a long exact sequence.
+- *Two rows.* If `E_2^{p,q} = 0` for `q ∉ {0, 1}` and the sequence converges in degree `n + 1`,
+  then `E_2^{n−1,1} →(d_2) E_2^{n+1,0} → H^{n+1} → E_2^{n,1} →(d_2) E_2^{n+2,0}` is exact: only
+  `d_2` is nonzero, `E_∞^{n+1,0}` is its cokernel and `E_∞^{n,1}` its kernel, and convergence in
+  degree `n + 1` gives `F^{n+2} H^{n+1} = 0` and `F^n H^{n+1} = H^{n+1}`. Over all `n` with
+  convergence these splice into a long exact sequence.
 - *First quadrant.* If `E_2^{p,q} = 0` for `p < 0` or `q < 0` and the sequence converges in degree
   `n`, the edge morphisms `E_2^{n,0} ↠ E_∞^{n,0} ≅ F^n H^n ↪ H^n` and
   `H^n ↠ H^n / F^1 H^n ≅ E_∞^{0,n} ↪ E_2^{0,n}` exist. Convergence in degrees `1` and `2` gives the
@@ -1111,9 +1117,12 @@ after it; helle-rognes2024 line 136–144, Definition 3.3 and Lemma 3.4, with Re
 - For `r = 0`: `Z_1 = k^{−1}(D) = E` and `B_1 = j(ker id) = 0`.
 - For the couple `D = ℤ`, `i = ×ℓ`, `E = ℤ/ℓ` (the Bockstein couple of `ℤ`, with `j` the reduction
   and `k = 0`): `ker i^r = 0` and `B_r = 0`. Every `Z_r = E`, so `E_∞ = ℤ/ℓ`.
-- *Wrong model.* Taking `Z_{r+1} := k^{−1}(im i^{r+1})` shifts the tower by one page. On the
-  Bockstein couple of `ℤ/ℓ²` (`D = ℤ/ℓ²`, `i = ×ℓ`) it would make `Z_2` smaller than the cycles
-  of `d_1`.
+- *Wrong model.* Taking `Z_{r+1} := k^{−1}(im i^{r+1})` shifts the tower by one page. Take, in
+  each bidegree, `D = ℤ/ℓ²`, `i = ×ℓ`, `E = ℤ/ℓ ⊕ ℤ/ℓ`, `j(x) = (x mod ℓ, 0)` and
+  `k(a, b) = ℓb`. It is exact: `ker i = ℓℤ/ℓ² = im k`, `ker j = ℓℤ/ℓ² = im i` and
+  `ker k = ℤ/ℓ ⊕ 0 = im j`. Here `d_1 = jk = 0` (`jk(a, b) = j(ℓb) = (0, 0)`), so the cycles of
+  `d_1` are `E`, and indeed `Z_2 = k^{−1}(im i) = k^{−1}(ℓℤ/ℓ²) = E`. The wrong model gives
+  `k^{−1}(im i²) = k^{−1}(0) = ℤ/ℓ ⊕ 0 ⊊ E`.
 
 ### 6.3 Exact couples of spectral objects and filtered complexes
 
@@ -1173,9 +1182,23 @@ used). Prove:
 - invariance under passage to a cofinal subsequence and under pro-isomorphism (in any additive
   category with the products and with the kernel and cokernel of the product–difference maps,
   which lim and lim¹ need to be defined);
-- pro-zero towers have `lim = lim¹ = 0`, from `IsProZero.isIso_towerDifference`.
+- pro-zero towers have `lim = lim¹ = 0`, from `IsProZero.isIso_towerDifference`;
+- *completeness through lim¹*: for a decreasingly filtered object `X` (3.1), let `lim¹_p F^p X`
+  be lim¹ of the tower `n ↦ F^n X` (`n ∈ ℕ`; the indices `p ≥ 0` are cofinal in `ℤ`, so
+  completeness may be tested on them). A complete filtration is separated and has
+  `lim¹_p F^p X = 0`. Under `CountableAB4Star`, a separated filtration with `lim¹_p F^p X = 0` is
+  complete (helle-rognes2024 line 85–93, the step `F_jG ≅ lim_i F_jG / F_iG` in the proof of
+  Lemma 2.6, for graded modules). For the first claim, the partial sums `σ_n = Σ_{k<n} π_k`,
+  each followed by `F^k X → X`, give `σ : ∏_n F^n X → ∏_n X` with `(1 − s) ∘ σ` equal to minus
+  the inclusion. The image of `σ` in `∏_n X / F^n X` lies in the limit, completeness lifts it to
+  `c : ∏_n F^n X → X`, and `Δ ∘ c − σ`, with `Δ : X → ∏_n X` the diagonal, factors through
+  `∏_n F^n X` as a section of `1 − s`. For the converse, the six-term sequence of
+  `0 → F^n X → X → X / F^n X → 0`, where the constant tower has `lim = X` and `lim¹ = 0` (the
+  partial sums split its `1 − s`), reads
+  `0 → lim_n F^n X → X → lim_n X / F^n X → lim¹_n F^n X → 0`, and `lim_n F^n X` is the meet of
+  the steps.
 
-*Needs:* Tau Ceti `CategoryTheory.Functor.towerDifference`,
+*Needs:* 3.1; Tau Ceti `CategoryTheory.Functor.towerDifference`,
 `CategoryTheory.Functor.isLimitConeOfTowerDifference`,
 `CategoryTheory.Functor.IsProZero.isIso_towerDifference`; Mathlib `HasCountableProducts`,
 `CountableAB4Star`.
@@ -1189,6 +1212,12 @@ used). Prove:
 - The tower `ℤ ← ℤ ← ⋯` with transitions `×ℓ` has `lim = 0` and `lim¹ ≅ ℤ_ℓ / ℤ ≠ 0`.
 - The tower `ℤ/ℓ` with zero transitions is pro-zero, so `lim = lim¹ = 0`. It is Mittag–Leffler
   although its transitions are not surjective.
+- *Completeness through lim¹.* The `ℓ`-adic filtration of `ℤ` (3.1) is separated, and its tower
+  `ℓ^n ℤ` with inclusions is the tower `×ℓ` on `ℤ` (divide by `ℓ^n`), so
+  `lim¹_p F^p ℤ ≅ ℤ_ℓ / ℤ ≠ 0` and the filtration is not complete. On `ℤ_ℓ` the six-term sequence
+  is `0 → 0 → ℤ_ℓ → lim_n ℤ_ℓ / ℓ^n ℤ_ℓ → lim¹ → 0` with an isomorphism in the middle, so
+  `lim¹ = 0` and the filtration is complete. The constant filtration `F^p = X ≠ 0` has
+  `lim¹ = 0` and is not complete: separation cannot be dropped from the converse.
 
 ### 7.2 Epimorphic towers and the Mittag–Leffler condition
 
@@ -1228,7 +1257,7 @@ products and `CountableAB4Star`. Put `Im^r A^s = im(i^r : A^{s+r} → A^s)`,
 The route: the bi-indexed system `(Im^r A^s)_{r,s}` is pro-isomorphic along the diagonal to
 `(A^s)`. Its lim¹ is the first cohomology of the two-by-two double complex of products, whose
 column filtration gives the short exact sequence; only the exactness of countable products is
-used. *Needs:* 7.1.
+used. *Needs:* 7.1; 7.2 for the epimorphic-limit bullet.
 
 - Under lim-acyclic epimorphic towers, if every `Q^{s+1} → Q^s` is an epimorphism, then every
   `lim_s Q^s → Q^s` is an epimorphism (helle-rognes2024 line 213–214, Lemma 3.15 (c)).
@@ -1324,10 +1353,10 @@ filtration is separated, and then complete in the sense of 3.1, if and only if `
 moreover, for each `n`, `E_1^{p,n−p} = 0` for `p` below some bound in total degrees `n − 1` and
 `n`, then `W^n = 0` (7.4, half-plane criteria) and the convergence is strong (weibel1994 Theorem
 5.5.10, uncertified; eilenberg-moore1962 §7, uncertified). The route: completeness gives
-`lim_s F^s K^m = lim¹_s F^s K^m = 0` (7.1 and 7.2). `1 − s` is then an isomorphism on
-`∏_s F^s K`, so `lim_s H^n(F^s K) = lim¹_s H^n(F^s K) = 0`, which is conditional convergence to
-the colimit for the couple of 6.3. Exhaustiveness and exact sequential colimits give
-`A^{−∞} = H^n(K)`, and 7.4 applies. *Needs:* 5.1, 5.2, 6.3, 7.1, 7.2, 7.4.
+`lim_s F^s K^m = lim¹_s F^s K^m = 0` (7.1, completeness through lim¹). `1 − s` is then an
+isomorphism on `∏_s F^s K`, so `lim_s H^n(F^s K) = lim¹_s H^n(F^s K) = 0`, which is
+conditional convergence to the colimit for the couple of 6.3. Exhaustiveness and exact
+sequential colimits give `A^{−∞} = H^n(K)`, and 7.4 applies. *Needs:* 5.1, 5.2, 6.3, 7.1, 7.2, 7.4.
 
 - For `ModuleCat R` this contains DGFloer Layer 1 item 3's complete convergence theorem for
   module complexes.
@@ -1362,8 +1391,6 @@ axioms and `EnoughProjectives`.
 - **DGFloerPartII**, **AlgebraicTopologyPartII**, **StableHomotopyKTheoryPartII**,
   **ChromaticHomotopyTheory**, **EtaleHomotopyTypes**: convergence in a range of degrees,
   comparison and conditional convergence (Layers 3, 4, 7).
-- A roadmap on the geometric circle method, whose main theorem is strong convergence in a range of
-  degrees (the Example of Layer 3).
 
 ## References
 
@@ -1371,11 +1398,12 @@ axioms and `EnoughProjectives`.
   §§10, 19–24 and 31 (tags 011N, 011O, 011Q–011T, 0121, 012B–012D, 012L–012W, 0BDU–0BDW, 0BK5,
   02N0, 02N1).
 - helle-rognes2024: G. O. Helle, J. Rognes, *Boardman's whole-plane obstruction group for
-  Cartan–Eilenberg systems*, Definitions 2.3–2.7, 3.1–3.11, 4.5, Lemmas 3.13–3.15, Theorems 3.9,
-  3.10.
+  Cartan–Eilenberg systems*, Lemmas 2.2, 2.6, 3.4, 3.13–3.15, Definitions 2.3, 2.5, 2.7, 3.3, 3.6,
+  3.7, 3.11, 4.5, Remarks 2.4, 3.5, 4.6, 4.10, the sequence (3.1), Theorems 3.9, 3.10, Example
+  8.1.
 - browning-sawin2020: T. Browning, W. Sawin, *A geometric version of the circle method*, Ann. of
   Math. 191 (2020); arXiv 1711.10451v3, Theorems 1.1 and 2.7.
-- weibel1994: C. A. Weibel, *An Introduction to Homological Algebra*, §§3.5, 5.2, 5.4, 5.5, 5.9
+- weibel1994: C. A. Weibel, *An Introduction to Homological Algebra*, §§3.5, 5.2, 5.5, 5.9
   (uncertified).
 - boardman1999: J. M. Boardman, *Conditionally convergent spectral sequences*, Contemp. Math. 239,
   3.4(b), Definition 5.10, Theorems 7.1, 8.2, 8.10, 8.13 (uncertified).
