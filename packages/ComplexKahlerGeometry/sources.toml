@@ -168,3 +168,32 @@ licence_class = "publisher-open"
 status = "certified"
 accessed = "2026-11-07"
 cited_for = ["K8"]
+
+[[source]]
+id = "raghunathan-discrete-subgroups"
+authors = "M. S. Raghunathan"
+title = "Discrete Subgroups of Lie Groups"
+year = 1972
+doi = "10.1007/978-3-642-86426-1"
+locator_scheme = "theorem"
+locator = "Theorem 1.13, p. 23; Corollary 1, p. 31"
+url = "https://doi.org/10.1007/978-3-642-86426-1"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["K8"]
+
+[[source]]
+id = "griffiths-harris"
+authors = "Phillip Griffiths, Joseph Harris"
+title = "Principles of Algebraic Geometry"
+year = 1978
+venue = "Wiley Classics Library edition 1994"
+doi = "10.1002/9781118032527"
+locator_scheme = "chapter"
+locator = "Chapter 0, §§1–2"
+url = "https://doi.org/10.1002/9781118032527"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled (the DOI landing page at Wiley answers HTTP 403); cited by its locator without the text"
+cited_for = ["K3", "K6"]
