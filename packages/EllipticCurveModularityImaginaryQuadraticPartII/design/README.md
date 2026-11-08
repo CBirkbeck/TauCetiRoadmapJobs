@@ -972,29 +972,42 @@ potentially semistable at every `v | 5` with all labelled weights `{0, 1}`; `ρ�
 with `r̄_ι(π) ≅ ρ̄`, matching potential ordinarity and `N(rec(π_v)) = 0` at the potentially crystalline
 places above five and `ι`-ordinary with non-potentially-crystalline `r_ι(π)` at the others. Suppose
 either that clause (4) holds (if the projective image of `ρ̄(G_{F(ζ₅)})` is `PSL₂(𝔽₅)`, the field cut out
-by the projective image of `ρ̄` does not contain `ζ₅`), or that there is a nonempty finite set `P` of
-places `v ∤ 5` such that for every `v ∈ P`: `ρ̄(I_v)` is nontrivial and unipotent; every element of
-`ρ(I_v)` has characteristic polynomial `(X − 1)²`; `π_v` has nonzero Iwahori-fixed vectors; and `ρ` and
-`π` are unramified at `v^c`. Prove that `ρ ≅ r_ι(Π)` for a cuspidal regular algebraic weight-zero `Π` of
-`PGL₂(𝔸_F)`. If (4) holds this is the parent's §5.2 `potentiallySemistableCM`. Suppose (4) fails. Then
-`ζ₅ ∈ F`: for `ζ₅ ∉ F` the determinant `ε̄₅⁻¹` has order two or four on `G_F`, and the argument of CN23
-Lemma 6.1.4, which uses only the determinant, gives (4). With `ζ₅ ∈ F` the determinant is trivial, the
-image lies in `SL₂(k)` with projective image conjugate to `PSL₂(𝔽₅)`, and a subgroup of `SL₂(𝔽₅)`
-surjecting onto `PSL₂(𝔽₅)` is all of it, so `ρ̄(G_F)` is conjugate to `SL₂(𝔽₅)`. Apply §6.1, then §5.4
-over `F'`, then PotentialAutomorphyInfrastructure §2.3(2) to descend, `ρ|G_{F'}` being absolutely
-irreducible. (CaptainSude26, §4 and Theorem 4.2,
-lines 264–498; CN23, Theorem 5.2, lines 3849–3872, and Lemma 6.1.4, line 4562.)
+by the projective image of `ρ̄` does not contain `ζ₅`), or that `ζ₅ ∈ F` and there is a nonempty finite
+set `P` of places `v ∤ 5` such that for every `v ∈ P`: `ρ̄(I_v)` is nontrivial and unipotent; every
+element of `ρ(I_v)` has characteristic polynomial `(X − 1)²`; `π_v` has nonzero Iwahori-fixed vectors;
+and `ρ` and `π` are unramified at `v^c`. Prove that `ρ ≅ r_ι(Π)` for a cuspidal regular algebraic
+weight-zero `Π` of `PGL₂(𝔸_F)`. If (4) holds this is the parent's §5.2 `potentiallySemistableCM`.
+Otherwise `ζ₅ ∈ F` by hypothesis, so `ε̄₅⁻¹` is trivial on `G_F = G_{F(ζ₅)}`, and since (4) fails the
+projective image of `ρ̄(G_F)` is conjugate to `PSL₂(𝔽₅)`. The preimage of `PSL₂(𝔽₅)` in `SL₂(k̄)` is
+`SL₂(𝔽₅)` (a scalar of determinant one is `±1`), and a subgroup of `SL₂(𝔽₅)` surjecting onto
+`PSL₂(𝔽₅)` has even order, so contains the unique involution `−1` and is all of `SL₂(𝔽₅)`; hence
+`ρ̄(G_F)` is conjugate to `SL₂(𝔽₅)`. Apply §6.1, then §5.4 over `F'`, then
+PotentialAutomorphyInfrastructure §2.3(2) to descend, `ρ|G_{F'}` being absolutely irreducible. The
+hypothesis `ζ₅ ∈ F` of the protected alternative is the standing assumption `μ₅ ⊂ F` of the protected
+route and does not follow from the failure of (4) (first Check). (CaptainSude26, §4 and Theorem 4.2,
+lines 264–498, with `μ₅ ⊂ F` at line 267; CN23, Theorem 5.2, lines 3849–3872.)
 
 *Needs:* §§5.4, 6.1; EllipticCurveModularityImaginaryQuadratic §5.2; PotentialAutomorphyInfrastructure
 §2.3.
 
 **Checks.**
 
-- If `ζ₅ ∉ F` and `det ρ̄ = ε̄₅⁻¹` has order two, an element of determinant `−1` times `2` (a square root
-  of `−1 = 4` in `𝔽₅`) has determinant `(−1)·4 = 1`, so the projective images of `G_F` and `G_{F(ζ₅)}` are
-  both `PSL₂(𝔽₅)`; the two projective kernels then differ by the index `[F(ζ₅):F] = 2`, the projective
-  field does not contain `ζ₅`, (4) holds and `P` is not needed.
-- For imaginary quadratic `F`, `ζ₅ ∉ F` since `[ℚ(ζ₅):ℚ] = 4`; the theorem reduces to the parent's §5.2.
+- The hypothesis `ζ₅ ∈ F` is not implied by the failure of (4). Let `ζ₅ ∉ F` with `det ρ̄ = ε̄₅⁻¹` of
+  order two, so `[F(ζ₅):F] = 2`, and suppose the antecedent of (4), so `ρ̄(G_{F(ζ₅)})` is conjugate to
+  `SL₂(𝔽₅)`. If `ρ̄` is valued in `GL₂(𝔽₅)`, as the mod-five representation of an elliptic curve is, an
+  element `g` of determinant `−1` gives `det(2g) = 4·(−1) = 1`, so the projective image of `G_F` is
+  `PSL₂(𝔽₅)`, the projective kernels of `G_F` and `G_{F(ζ₅)}` have indices `60` and `2·60 = 120` in
+  `G_F`, and (4) holds (CN23, Lemma 6.1.4, line 4562). Over `k = 𝔽₂₅` take `μ` with `μ² = 2` and
+  `h = diag(1, 2)`: then `det(μh) = 2·2 = 4 = −1`, `tr(μh) = 3μ ∉ 𝔽₅`, `(μh)² = diag(2, 3) ∈ SL₂(𝔽₅)`, and
+  `⟨SL₂(𝔽₅), μh⟩` has order `240`, determinants `{±1}` and projective image `PGL₂(𝔽₅)` of order `120`
+  (`det h = 2` is not a square modulo five); both projective kernels have index `120`, so they are
+  equal, the projective field contains `F(ζ₅)` and (4) fails although `ζ₅ ∉ F`.
+- If `ζ₅ ∉ F` and `det ρ̄` has order four, (4) holds for every coefficient field: the projective image of
+  `G_F` normalizes `PSL₂(𝔽₅)` in `PGL₂(k̄)`, whose normalizer is `PGL₂(𝔽₅)` (the centralizer is trivial
+  because `SL₂(𝔽₅)` is perfect and absolutely irreducible), so `[G_F:G] ≤ 120 < 240 = 4·60 = [G_F:H]`
+  for the two projective kernels `G ⊇ H`.
+- For imaginary quadratic `F`, `ζ₅ ∉ F` since `[ℚ(ζ₅):ℚ] = 4`, so only the alternative (4) is available
+  and the theorem is the parent's §5.2.
 - A protected place of a split Tate curve with `5 | v(Δ)` does not exist: such a place has unramified
   residual representation and fails the first condition at `P`.
 
@@ -1141,12 +1154,12 @@ coefficient `3`); they generate `SL₂(𝔽₅)`, and `det = ε̄₅` is trivial
 `F` by Theorem 1.2. Part (b) is §7.3. For (c): apply §7.4 to `ρ̄ = A_t[5]` with the partition given by the
 potential reduction types of `A_t` above five, `F_avoid` containing the field cut out by `ρ̄`, and `Σ` the
 places above `q` with the split-multiplicative opens at the places above `v` and the good-reduction
-opens at the others, all nonempty because `A_t` supplies points. Over the resulting `L`, Theorem 6.2
-applies to `H¹(A_t)|G_L`, `π_{A'}` and `P` the places above `v`: clause (4) fails, the protected
-conditions hold by §7.3 and §7.4, the five-adic matching holds by the parent's §0.3
-`auxiliary_local_types`. Descend along `L/K` by PotentialAutomorphyInfrastructure §2.3(2); the result is
-cuspidal because `A_t` is non-CM. (CaptainSude26, Proposition 2.3(3)–(4), lines 120–125, and
-Corollary 5.3, line 604.)
+opens at the others, all nonempty because `A_t` supplies points. Over the resulting `L`, which contains
+`ζ₅` because `K` does, the protected alternative of Theorem 6.2 applies to `H¹(A_t)|G_L`, `π_{A'}` and `P`
+the places above `v`: clause (4) fails, the protected conditions hold by §7.3 and §7.4, the five-adic
+matching holds by the parent's §0.3 `auxiliary_local_types`. Descend along `L/K` by
+PotentialAutomorphyInfrastructure §2.3(2); the result is cuspidal because `A_t` is non-CM.
+(CaptainSude26, Proposition 2.3(3)–(4), lines 120–125, and Corollary 5.3, line 604.)
 
 *Needs:* §§7.2, 7.3, 7.4, 6.2; Theorem 1.2; EllipticCurveModularityImaginaryQuadratic §§6.5, 7.1, 7.2,
 7.4, 0.3 (`auxiliary_local_types`, `modular_elliptic_all_coefficients`); PotentialAutomorphyInfrastructure

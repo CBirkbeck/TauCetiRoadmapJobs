@@ -1015,16 +1015,16 @@
      "id": "6.2",
      "kind": "theorem",
      "name": "steinberg_protected_lifting",
-     "statement": "F CM, ρ : G_F → GL₂(Q̄5) satisfying CN23 Theorem 5.2 (1),(2),(3),(5) at p = 5. If either (4) holds or there is a nonempty finite set P of places v ∤ 5 with ρbar(I_v) nontrivial unipotent, ρ(I_v) unipotent, π_v^{Iw} ≠ 0, and ρ, π unramified at v^c, then ρ ≅ r_ι(Π) for a cuspidal regular algebraic weight-zero Π of PGL₂(𝔸_F).",
+     "statement": "F CM, ρ : G_F → GL₂(Q̄5) satisfying CN23 Theorem 5.2 (1),(2),(3),(5) at p = 5. If either (4) holds, or ζ5 ∈ F and there is a nonempty finite set P of places v ∤ 5 with ρbar(I_v) nontrivial unipotent, ρ(I_v) unipotent, π_v^{Iw} ≠ 0, and ρ, π unramified at v^c, then ρ ≅ r_ι(Π) for a cuspidal regular algebraic weight-zero Π of PGL₂(𝔸_F).",
      "hypotheses": [
       "F CM",
       "ι : Q̄5 ≅ C",
       "CN23 Thm 5.2 (1),(2),(3),(5)",
-      "(4) or a protected set P"
+      "(4), or ζ5 ∈ F and a protected set P"
      ],
      "locator": {
       "source": "CaptainSude26",
-      "where": "§4 and Theorem 4.2, lines 264-498; CN23 Theorem 5.2 lines 3849-3872, Lemma 6.1.4 line 4562"
+      "where": "§4 and Theorem 4.2, lines 264-498 (μ5 ⊂ F at line 267); CN23 Theorem 5.2 lines 3849-3872, Lemma 6.1.4 line 4562"
      },
      "prerequisites": [
       "target:5.4",
@@ -1037,12 +1037,17 @@
       {
        "name": "lifting_det_order_two",
        "kind": "computation",
-       "statement": "ζ5 ∉ F, det of order 2: an element of determinant −1 times 2 has determinant (−1)·4 = 1, the projective images agree and (4) holds."
+       "statement": "ζ5 ∉ F, det of order 2, ρbar(G_{F(ζ5)}) ≅ SL₂(F5): with GL₂(F5)-coefficients det(2g) = 4·(−1) = 1, the projective image of G_F is PSL₂(F5) (kernel indices 60 vs 120) and (4) holds; over F25 with μ² = 2, h = diag(1,2), ⟨SL₂(F5), μh⟩ has order 240, det(μh) = −1, tr(μh) = 3μ ∉ F5, projective image PGL₂(F5) (both kernel indices 120), so (4) fails although ζ5 ∉ F: ζ5 ∈ F is a genuine hypothesis of the protected alternative."
+      },
+      {
+       "name": "lifting_det_order_four",
+       "kind": "computation",
+       "statement": "ζ5 ∉ F, det of order 4: the projective image of G_F lies in the normalizer PGL₂(F5) of PSL₂(F5) in PGL₂(F̄5), so [G_F:G] ≤ 120 < 240 = [G_F:H] and (4) holds for every coefficient field."
       },
       {
        "name": "lifting_imag_quadratic",
        "kind": "compatibility",
-       "statement": "For imaginary quadratic F, ζ5 ∉ F and the theorem is potentiallySemistableCM."
+       "statement": "For imaginary quadratic F, ζ5 ∉ F, the protected alternative is unavailable and the theorem is potentiallySemistableCM under (4)."
       },
       {
        "name": "lifting_tate_divisible",
