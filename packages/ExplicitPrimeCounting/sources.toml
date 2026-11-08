@@ -1352,3 +1352,21 @@ licence_class = "institutional"
 status = "certified"
 accessed = "2026-11-07"
 cited_for = ["0.1"]
+
+[[source]]
+id = "montgomery-1978"
+authors = "Hugh L. Montgomery"
+title = "The analytic principle of the large sieve"
+year = 1978
+venue = "Bull. Amer. Math. Soc. 84 (1978), 547-567"
+doi = "10.1090/S0002-9904-1978-14497-8"
+locator_scheme = "section"
+locator = "§6, display (16); §8"
+url = "https://www.ams.org/journals/bull/1978-84-04/S0002-9904-1978-14497-8/S0002-9904-1978-14497-8.pdf"
+fetched_from = "https://www.ams.org/journals/bull/1978-84-04/S0002-9904-1978-14497-8/S0002-9904-1978-14497-8.pdf"
+fetched_at = "2026-11-08T00:33:35Z"
+sha256 = "92b47a258c41cb250a595a50b7dc564a5a84fd4cb2f50c14ff7b595d6c6de0da"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-11-08"
+cited_for = ["0.1"]
