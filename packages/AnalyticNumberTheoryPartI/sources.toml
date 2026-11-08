@@ -130,3 +130,38 @@ licence_class = "author-page"
 status = "certified"
 accessed = "2026-11-08"
 cited_for = ["2.41", "2.18a"]
+
+[[source]]
+id = "greentao2008"
+authors = "Ben Green, Terence Tao"
+title = "The primes contain arbitrarily long arithmetic progressions"
+year = 2008
+arxiv = "math/0404188v6"
+locator_scheme = "theorem"
+locator = "Appendix A, Lemma A.1"
+url = "https://arxiv.org/abs/math/0404188v6"
+fetched_from = "https://arxiv.org/pdf/math/0404188v6"
+fetched_at = "2026-11-08T19:06:38Z"
+sha256 = "d03dd6156165fc92e488b3fec35a574c8f7c9df55125cec0f3eebdf95d7256e1"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-08"
+version_note = "arXiv v6, read; published in Ann. of Math. 167 (2008), whose Appendix A, Lemma A.1 has the same number; page numbers in the README are those of the journal"
+cited_for = ["0.33", "1.1"]
+
+[[source]]
+id = "dit2016"
+authors = "W. Duke, Ö. Imamoḡlu, Á. Tóth"
+title = "Geometric invariants for real quadratic fields"
+year = 2016
+locator_scheme = "theorem"
+locator = "Proposition 2 and its proof, (6.7)"
+url = "https://www.math.ucla.edu/~wdduke/preprints/geometric.pdf"
+fetched_from = "https://www.math.ucla.edu/~wdduke/preprints/geometric.pdf"
+fetched_at = "2026-11-08T19:06:41Z"
+sha256 = "f1f042adf06eafd410b43b819e076c24c9be8f928f0a8a7927f7569ef8b5cfcf"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-08"
+version_note = "author's preprint, read; published in Ann. of Math. 184 (2016); statement and equation numbers agree with the journal, page numbers do not"
+cited_for = ["1.1", "2.37"]
