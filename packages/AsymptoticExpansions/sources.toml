@@ -1,0 +1,28 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "AsymptoticExpansions"
+
+[[source]]
+id = "dlmf28"
+locator_scheme = "section"
+locator = "2.8"
+url = "https://dlmf.nist.gov/2.8"
+fetched_from = "https://dlmf.nist.gov/2.8"
+fetched_at = "2026-11-08T08:59:01Z"
+sha256 = "7624c2ca1f7aa41a8dc3f50388c1bfa4f2d19310723f7efcb84409247b9a28d1"
+licence_class = "institutional"
+status = "certified"
+accessed = "2026-11-08"
+cited_for = ["11.3"]
+
+[[source]]
+id = "dlmf210"
+locator_scheme = "section"
+locator = "2.10"
+url = "https://dlmf.nist.gov/2.10.i"
+fetched_from = "https://dlmf.nist.gov/2.10.F1.pdf"
+fetched_at = "2026-11-08T09:01:07Z"
+sha256 = "771d968aeb094c277dcf8b5cd11fddb202f109b2e585f675de3ef855b09a4012"
+licence_class = "institutional"
+status = "certified"
+accessed = "2026-11-08"
+cited_for = ["13.6"]

@@ -1,0 +1,104 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "UnboundedOperators"
+
+[[source]]
+id = "teschl"
+authors = "Gerald Teschl"
+title = "Mathematical Methods in Quantum Mechanics: With Applications to Schrödinger Operators"
+year = 2009
+venue = "Graduate Studies in Mathematics 99, author's online edition of 12 February 2009"
+locator_scheme = "theorem"
+locator = "Theorem 2.18"
+url = "https://www.mat.univie.ac.at/~gerald/ftp/book-schroe/schroe.pdf"
+fetched_from = "https://www.mat.univie.ac.at/~gerald/ftp/book-schroe/schroe.pdf"
+fetched_at = "2026-11-08T15:55:13Z"
+sha256 = "8dc8de0b58aa0a3fedfe594a345f9b5875322e5526ea581cb640a98d55b82818"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-08"
+cited_for = ["4.2", "3.2", "1.1"]
+
+[[source]]
+id = "kato"
+authors = "Tosio Kato"
+title = "Perturbation Theory for Linear Operators"
+year = 1995
+venue = "Classics in Mathematics"
+doi = "10.1007/978-3-642-66282-9"
+locator_scheme = "section"
+locator = "Chapter VII, §§1–3; Chapter II, §6"
+url = "https://doi.org/10.1007/978-3-642-66282-9"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["5.5"]
+
+[[source]]
+id = "jones"
+authors = "Vaughan F. R. Jones"
+title = "Von Neumann Algebras"
+year = 2015
+venue = "lecture notes, version of 13 November 2015"
+locator_scheme = "theorem"
+locator = "Exercises 12.1.11(ii), 12.1.15"
+url = "https://cdn.vanderbilt.edu/t2-my/my-prd/wp-content/uploads/sites/3392/2020/10/vonNeumann2015.pdf"
+fetched_from = "https://cdn.vanderbilt.edu/t2-my/my-prd/wp-content/uploads/sites/3392/2020/10/vonNeumann2015.pdf"
+fetched_at = "2026-11-08T16:05:33Z"
+sha256 = "781c6912b7d7b9a425d1e03fbaca251dd9a8ef229db280b040ca60ad57369886"
+licence_class = "institutional"
+status = "certified"
+accessed = "2026-11-08"
+cited_for = ["5.1"]
+
+[[source]]
+id = "flato-simon-snellman-sternheimer"
+authors = "M. Flato, J. Simon, H. Snellman, D. Sternheimer"
+title = "Simple facts about analytic vectors and integrability"
+year = 1972
+venue = "Annales scientifiques de l'École normale supérieure 5"
+doi = "10.24033/asens.1233"
+locator_scheme = "theorem"
+locator = "Theorem 1"
+url = "https://doi.org/10.24033/asens.1233"
+fetched_from = "https://www.numdam.org/item/10.24033/asens.1233.pdf"
+fetched_at = "2026-11-08T16:05:34Z"
+sha256 = "60468dea8c60756ea275244721c77b460331c4a8f7a808188708c0936f5a90d7"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-08"
+cited_for = ["5.3"]
+
+[[source]]
+id = "eckhardt-gesztesy-nichols-teschl"
+authors = "Jonathan Eckhardt, Fritz Gesztesy, Roger Nichols, Gerald Teschl"
+title = "Weyl-Titchmarsh Theory for Sturm-Liouville Operators with Distributional Potentials"
+year = 2012
+venue = "Opuscula Math. 33, 467-563 (2013)"
+doi = "10.7494/OpMath.2013.33.3.467"
+arxiv = "1208.4677v3"
+locator_scheme = "theorem"
+locator = "Hypothesis 2.1, Theorem 2.2"
+url = "https://arxiv.org/abs/1208.4677v3"
+fetched_from = "https://arxiv.org/pdf/1208.4677v3"
+fetched_at = "2026-11-08T16:05:48Z"
+sha256 = "33eeffbd159326e7698a6e1f75a66b6012202a7d90e7f228e698a9a50f75fc68"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-08"
+version_note = "arXiv v3"
+cited_for = ["4.8"]
+
+[[source]]
+id = "weidmann"
+authors = "Joachim Weidmann"
+title = "Spectral Theory of Ordinary Differential Operators"
+year = 1987
+venue = "Lecture Notes in Mathematics"
+doi = "10.1007/BFb0077960"
+locator_scheme = "section"
+locator = "§§3–6"
+url = "https://doi.org/10.1007/BFb0077960"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["4.8"]

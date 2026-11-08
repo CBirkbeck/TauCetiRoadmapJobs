@@ -1,0 +1,139 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "AutomorphicGaloisRepresentations"
+
+[[source]]
+id = "Carayol"
+authors = "Henri Carayol"
+title = "Sur les représentations l-adiques associées aux formes modulaires de Hilbert"
+year = 1986
+venue = "Ann. Sci. École Norm. Sup. (4) 19 (1986), 409–468"
+locator_scheme = "theorem"
+locator = "Théorème (A); 0.8 Corollaire"
+url = "https://www.numdam.org/article/ASENS_1986_4_19_3_409_0.pdf"
+fetched_from = "https://www.numdam.org/article/ASENS_1986_4_19_3_409_0.pdf"
+fetched_at = "2026-11-07T19:54:11Z"
+sha256 = "d4a5fb6b1cd76f944f8948e06df1c7ad5656ae5ee14b9189178ee1e8f2b0dab8"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-07"
+cited_for = ["4.3", "6.4"]
+
+[[source]]
+id = "DDT"
+authors = "Henri Darmon, Fred Diamond, Richard Taylor"
+title = "Fermat's Last Theorem"
+year = 2007
+venue = "Author revision of 9 September 2007 of Current Developments in Mathematics 1995"
+locator_scheme = "theorem"
+locator = "Theorem 3.1"
+url = "https://www.math.mcgill.ca/darmon/pub/Articles/Expository/05.DDT/paper.pdf"
+fetched_from = "https://www.math.mcgill.ca/darmon/pub/Articles/Expository/05.DDT/paper.pdf"
+fetched_at = "2026-11-07T19:54:46Z"
+sha256 = "254f6e29957f95219eff046c29478f5ee584615bee12c8aa8357f499c8cbe8b3"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-07"
+cited_for = ["1.5", "4.8", "6.4"]
+
+[[source]]
+id = "Scholl"
+authors = "A. J. Scholl"
+title = "Motives for modular forms"
+year = 1990
+venue = "Invent. Math. 100 (1990), 419–430; author copy"
+locator_scheme = "theorem"
+locator = "Theorem 1.2.4"
+url = "https://www.dpmms.cam.ac.uk/~ajs1005/preprints/mf.pdf"
+fetched_from = "https://www.dpmms.cam.ac.uk/~ajs1005/preprints/mf.pdf"
+fetched_at = "2026-11-07T19:54:48Z"
+sha256 = "b3a28690b3ba4aff316ac52ea7003cca8da757bfa309b75a9aba9557a134def6"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-07"
+cited_for = ["5.2"]
+
+[[source]]
+id = "KisinPST"
+authors = "Mark Kisin"
+title = "Potentially semi-stable deformation rings"
+year = 2008
+venue = "J. Amer. Math. Soc. 21 (2008), 513–546"
+locator_scheme = "theorem"
+locator = "Theorem 4.3; Theorems 2.5.5, 2.7.6; Corollary 2.7.7; §4.1"
+url = "https://www.ams.org/journals/jams/2008-21-02/S0894-0347-07-00576-0/S0894-0347-07-00576-0.pdf"
+fetched_from = "https://www.ams.org/journals/jams/2008-21-02/S0894-0347-07-00576-0/S0894-0347-07-00576-0.pdf"
+fetched_at = "2026-11-07T19:59:01Z"
+sha256 = "3e70d1f74f1c396d4c520f8f127c18556221139f02a69babc25cfdd50b885556"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-11-07"
+cited_for = ["3.10", "3.11", "4.6", "6.8"]
+
+[[source]]
+id = "DeligneSerre"
+authors = "Pierre Deligne, Jean-Pierre Serre"
+title = "Formes modulaires de poids 1"
+year = 1974
+venue = "Ann. Sci. École Norm. Sup. (4) 7 (1974), 507–530"
+locator_scheme = "theorem"
+locator = "Théorème 4.1; Propositions 5.1, 5.5, 7.2; §8"
+url = "https://www.numdam.org/article/ASENS_1974_4_7_4_507_0.pdf"
+fetched_from = "https://www.numdam.org/article/ASENS_1974_4_7_4_507_0.pdf"
+fetched_at = "2026-11-07T19:59:35Z"
+sha256 = "65b390f6d33e827e30c6c66bbc15421eca51db3180bdf5996dcee19047be97fc"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-07"
+cited_for = ["2.10"]
+
+[[source]]
+id = "SaitoMFPH"
+authors = "Takeshi Saito"
+title = "Modular forms and p -adic Hodge theory"
+year = 1997
+venue = "Inventiones Mathematicae 129"
+doi = "10.1007/s002220050175"
+locator_scheme = "theorem"
+locator = "Theorem 1"
+url = "https://doi.org/10.1007/s002220050175"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["4.5", "5.2"]
+
+[[source]]
+id = "Saito2009"
+authors = "Takeshi Saito"
+title = "Hilbert modular forms and p-adic Hodge theory"
+year = 2006
+venue = "Compositio Math. 145 (2009) 1081-1113"
+doi = "10.1112/S0010437X09004175"
+arxiv = "math/0612077v2"
+locator_scheme = "page"
+locator = "Introduction, p. 1"
+url = "https://arxiv.org/abs/math/0612077v2"
+fetched_from = "https://arxiv.org/pdf/math/0612077v2"
+fetched_at = "2026-11-07T20:05:33Z"
+sha256 = "fb5b69b76d2257ce20f47366c4bd165ccdb571333e7f25a4ed6e92dbb4b55df7"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-07"
+version_note = "arXiv v2"
+cited_for = ["4.5", "5.2"]
+
+[[source]]
+id = "SaitoWM"
+authors = "Takeshi Saito"
+title = "Weight-monodromy conjecture for l-adic representations associated to modular forms. A supplement to the paper: Modular forms and p-adic Hodge theory"
+year = 2000
+venue = "The Arithmetic and Geometry of Algebraic Cycles (Banff, 1998), Kluwer, 427–431"
+locator_scheme = "theorem"
+locator = "Theorem 3"
+url = "https://www.ms.u-tokyo.ac.jp/~t-saito/pp/weightmonodromy.pdf"
+fetched_from = "https://www.ms.u-tokyo.ac.jp/~t-saito/pp/weightmonodromy.pdf"
+fetched_at = "2026-11-07T20:09:10Z"
+sha256 = "200571eea5cad6f2e1701f8432f57ca78406bf32c589bc11930fb559e686ce9c"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-07"
+cited_for = ["4.5"]

@@ -154,3 +154,77 @@ licence_class = "none"
 status = "uncertified"
 version_note = "paywalled; cited by its locator without the text"
 cited_for = ["4.7"]
+
+[[source]]
+id = "allen-et-al-2023-potential-automorphy"
+authors = "Patrick B. Allen, Frank Calegari, Ana Caraiani, Toby Gee, David Helm, Bao V. Le Hung, James Newton, Peter Scholze, Richard Taylor, Jack A. Thorne"
+title = "Potential automorphy over CM fields"
+year = 2018
+venue = "Ann. of Math. 197 (2023), 897–1113"
+arxiv = "1812.09999v2"
+locator_scheme = "theorem"
+locator = "Lemma 7.1.6"
+url = "https://arxiv.org/abs/1812.09999v2"
+fetched_from = "https://arxiv.org/pdf/1812.09999v2"
+fetched_at = "2026-11-07T16:31:41Z"
+sha256 = "7c882c4dc7208e08a0b1f4b3ce6e5c5234c9815f139a4c3a372898378a24d08c"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-07"
+version_note = "arXiv v2 read; lemma numbers are cited from it, page numbers in the README are those of the Annals version"
+cited_for = ["3.7", "4.4", "4.7", "7.2", "7.4", "7.7", "7.10", "7.12"]
+
+[[source]]
+id = "deligne-1973-constantes"
+authors = "Pierre Deligne"
+title = "Les constantes des équations fonctionnelles des fonctions L"
+year = 1973
+venue = "Modular Functions of One Variable II, Lecture Notes in Math. 349, Springer, 1973, 501–597"
+locator_scheme = "section"
+locator = "2.2.2–2.2.4, pp. 521–522"
+url = "https://publications.ias.edu/sites/default/files/Number20.pdf"
+fetched_from = "https://publications.ias.edu/sites/default/files/Number20.pdf"
+fetched_at = "2026-11-07T16:31:59Z"
+sha256 = "b03f483c4eeca79b75e34b88f41406fe4c9e16ba621480ce859697c93e8d5844"
+licence_class = "institutional"
+status = "certified"
+accessed = "2026-11-07"
+version_note = "scan of the Lecture Notes pages, with their printed pagination"
+cited_for = ["1.3", "1.12", "2.1", "2.2", "2.3", "2.4", "2.5", "2.5a", "2.7"]
+
+[[source]]
+id = "boxer-calegari-gee-pilloni-2025"
+authors = "George Boxer, Frank Calegari, Toby Gee, Vincent Pilloni"
+title = "Modularity theorems for abelian surfaces"
+year = 2025
+arxiv = "2502.20645v1"
+locator_scheme = "section"
+locator = "§4.11, pp. 109–110"
+url = "https://arxiv.org/abs/2502.20645v1"
+fetched_from = "https://arxiv.org/pdf/2502.20645v1"
+fetched_at = "2026-11-07T16:32:17Z"
+sha256 = "51d7eacca6eae394943f09ab72dfe09ee9aa6da27f563be8237c416e5da4e95c"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-07"
+version_note = "arXiv v1"
+cited_for = ["5.11", "5.12", "6.6", "7.6", "7.12"]
+
+[[source]]
+id = "ulmer-2016-conductors"
+authors = "Douglas Ulmer"
+title = "Conductors of ℓ-adic representations"
+year = 2016
+venue = "Proc. Amer. Math. Soc. 144 (2016)"
+arxiv = "1307.4525v4"
+locator_scheme = "section"
+locator = "§6, p. 5"
+url = "https://arxiv.org/abs/1307.4525v4"
+fetched_from = "https://arxiv.org/pdf/1307.4525v4"
+fetched_at = "2026-11-08T01:40:12Z"
+sha256 = "a7a8039574e4975830de12ed2c23d07c208af95300c3865e941ff51fed0fed73"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-08"
+version_note = "arXiv v4; the README's section and page locators are those of arXiv v4"
+cited_for = ["3.1", "3.3", "3.4", "3.6", "3.7"]

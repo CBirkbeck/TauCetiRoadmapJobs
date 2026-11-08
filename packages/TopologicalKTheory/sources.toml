@@ -171,3 +171,18 @@ licence_class = "none"
 status = "uncertified"
 version_note = "paywalled; cited by its locator without the text"
 cited_for = ["T7.0"]
+
+[[source]]
+id = "eschenburg-hanke-bott"
+authors = "Jost Eschenburg, Bernhard Hanke"
+title = "Bott Periodicity, Submanifolds, and Vector Bundles"
+year = 2017
+venue = "Springer Proceedings in Mathematics &amp; Statistics"
+doi = "10.1007/978-981-10-5556-0_25"
+locator_scheme = "section"
+locator = "§§2–4"
+url = "https://doi.org/10.1007/978-981-10-5556-0_25"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["T7.0a"]

@@ -338,3 +338,56 @@ licence_class = "institutional"
 status = "certified"
 accessed = "2026-11-05"
 cited_for = ["Layer 7.C"]
+
+[[source]]
+id = "ivashkovich-shevchishin"
+authors = "S. Ivashkovich, V. Shevchishin"
+title = "Gromov compactness theorem for stable curves"
+year = 1999
+arxiv = "math/9903047v1"
+locator_scheme = "theorem"
+locator = "Theorem 1.1"
+url = "https://arxiv.org/abs/math/9903047v1"
+fetched_from = "https://arxiv.org/pdf/math/9903047v1"
+fetched_at = "2026-11-07T15:27:24Z"
+sha256 = "07efb710f280c0a9dff0b9620cb11eb99bb32072410c2897701f52d98ecd2b5f"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-07"
+version_note = "arXiv v1"
+cited_for = ["Layer 7.C.2d"]
+
+[[source]]
+id = "bott-lie-groups"
+authors = "Raoul Bott"
+title = "An application of the Morse theory to the topology of Lie-groups"
+year = 1956
+venue = "Bulletin de la Société Mathématique de France 84 (1956), 251–281"
+doi = "10.24033/bsmf.1472"
+locator_scheme = "section"
+locator = "§1, corollary to Theorems A and B (p. 253)"
+url = "https://doi.org/10.24033/bsmf.1472"
+fetched_from = "https://www.numdam.org/item/10.24033/bsmf.1472.pdf"
+fetched_at = "2026-11-07T21:03:59Z"
+sha256 = "78d429bd4df018dc0ebea2bf84187c3226343f68fe38e469b6a9efd2a903494d"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-07"
+cited_for = ["11.2"]
+
+[[source]]
+id = "meinrenken-lie"
+authors = "Eckhard Meinrenken"
+title = "Lie groups and Lie algebras (lecture notes, Winter 2026)"
+year = 2026
+locator_scheme = "theorem"
+locator = "Corollary 8.16, Theorem 8.22, Proposition 8.33, Theorem 7.8, Definition 11.11, Theorem 12.4, Proposition 12.5, Remark 12.6"
+url = "https://www.math.utoronto.ca/mein/teaching/LectureNotes/lie.pdf"
+fetched_from = "https://www.math.utoronto.ca/mein/teaching/LectureNotes/lie.pdf"
+fetched_at = "2026-11-08T03:14:26Z"
+sha256 = "cb488ca1c8bed42f867f8e02f92283ead5ee2c1e1bec8470bff8ab751e25ebe1"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-08"
+version_note = "the author's lecture notes, version of Winter 2026; numbering as in that version"
+cited_for = ["11.1", "11.2"]

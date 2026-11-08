@@ -171,3 +171,21 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-06"
 cited_for = ["6.3"]
+
+[[source]]
+id = "ConradRA"
+authors = "Brian Conrad"
+title = "Relative ampleness in rigid geometry"
+year = 2006
+venue = "Annales de l'Institut Fourier 56(4), 1049-1126"
+doi = "10.5802/aif.2207"
+locator_scheme = "theorem"
+locator = "Example 2.2.11"
+url = "http://www.numdam.org/item/AIF_2006__56_4_1049_0/"
+fetched_from = "https://www.numdam.org/item/AIF_2006__56_4_1049_0.pdf"
+fetched_at = "2026-11-08T06:38:37Z"
+sha256 = "7525678b9e010121991c14a73ac498c8b1252d91c3a83e23f15d68594d524b66"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-08"
+cited_for = ["8.1"]

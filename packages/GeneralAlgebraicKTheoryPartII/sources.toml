@@ -598,3 +598,68 @@ status = "certified"
 accessed = "2026-10-29"
 version_note = "arXiv v2"
 cited_for = ["8.9 Classical regular localization checks"]
+
+[[source]]
+id = "lrrv"
+authors = "Wolfgang Lück, Holger Reich, John Rognes and Marco Varisco"
+title = "Algebraic K-theory of group rings and the cyclotomic trace map"
+year = 2015
+venue = "Adv. Math. 304 (2017) 930-1020"
+doi = "10.1016/j.aim.2016.09.004"
+arxiv = "1504.03674v3"
+locator_scheme = "theorem"
+locator = "Theorem 1.19(i), p.7; Theorem 6.1, p.25; §4J, Definition 4.8 and the following remark, pp.19–20"
+url = "https://arxiv.org/abs/1504.03674v3"
+fetched_from = "https://arxiv.org/pdf/1504.03674v3"
+fetched_at = "2026-11-07T15:01:55Z"
+sha256 = "170370c89c08c31fb7cb3d033c08609582b71e69ca41211cbd14cfbe86312605"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-07"
+version_note = "arXiv v3; theorem numbering and pages of arXiv:1504.03674v3, published in Adv. Math. 304 (2017)"
+cited_for = ["10.4 p-adic TC assembly for cyclic subgroups"]
+
+[[source]]
+id = "hatcher"
+authors = "Allen Hatcher"
+title = "Algebraic Topology"
+year = 2002
+locator_scheme = "theorem"
+locator = "§3.2 and Proposition 3.22, p.224; Corollary 3A.7, p.266; Proposition 3C.8, p.288; Theorem 4.37, p.371; Proposition 4.74, p.418; Example 4A.3, p.422; Theorem 4J.1 and proof, pp.471–473; Theorem A.6, p.524 (printed pages of the author-hosted edition)"
+url = "https://pi.math.cornell.edu/~hatcher/AT/AT.pdf"
+fetched_from = "https://pi.math.cornell.edu/~hatcher/AT/AT.pdf"
+fetched_at = "2026-11-08T05:46:33Z"
+sha256 = "bebb3032bf9021b956da3bd070eb6c67dc662cf849be9cdf6679f677560e5618"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-08"
+cited_for = ["4.30b The James reduced product"]
+
+[[source]]
+id = "lurie-ha"
+authors = "Jacob Lurie"
+title = "Higher Algebra"
+year = 2017
+locator_scheme = "theorem"
+locator = "Proposition 4.1.1.18, p.458 (version of September 18, 2017)"
+url = "https://www.math.ias.edu/~lurie/papers/HA.pdf"
+fetched_from = "https://www.math.ias.edu/~lurie/papers/HA.pdf"
+fetched_at = "2026-11-08T05:47:18Z"
+sha256 = "112b145a95a62daefb8275851cac9ab6430004cfc8f751a33a8d981fd7ad68c3"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-08"
+cited_for = ["4.30c The stable James splitting"]
+
+[[source]]
+id = "james"
+authors = "I. M. James"
+title = "Reduced product spaces"
+year = 1955
+doi = "10.2307/2007107"
+locator_scheme = "page"
+locator = "Annals of Mathematics (2) 62 (1955), pp.170–197"
+cited_for = ["4.30b The James reduced product"]
+url = "https://www.jstor.org/stable/2007107"
+status = "uncertified"
+note = "paywalled publisher page (JSTOR); cited by locator only; the statements it is cited for are read in hatcher, Theorem 4J.1 and §3.2"

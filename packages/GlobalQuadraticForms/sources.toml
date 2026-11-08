@@ -1,0 +1,48 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "GlobalQuadraticForms"
+
+[[source]]
+id = "milne-cft"
+authors = "J. S. Milne"
+title = "Class Field Theory (course notes, version 4.03)"
+year = 2020
+version_note = "version 4.03 (2020); locators use its printed page numbers"
+locator_scheme = "theorem"
+locator = "VIII Thm 1.1, Ex 1.3 (p. 229); Thm 3.1 (p. 234); Thm 3.5, Prop 3.7 (pp. 235-237); Prop 6.2 (p. 251); Thm 6.3 (p. 252); Thm 6.10 (p. 255)"
+url = "https://www.jmilne.org/math/CourseNotes/CFT.pdf"
+fetched_from = "https://www.jmilne.org/math/CourseNotes/CFT.pdf"
+fetched_at = "2026-11-08T11:51:21Z"
+sha256 = "50d79af78250a9f1117ad9d337e0b231704a533fc707966ed1bfa52e13d498f5"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-08"
+cited_for = ["4.2", "4.3", "5.1", "7.4", "8.2", "8.3", "8.4"]
+
+[[source]]
+id = "omeara"
+authors = "O. Timothy O’Meara"
+title = "Introduction to Quadratic Forms"
+year = 1963
+doi = "10.1007/978-3-642-62031-7"
+locator_scheme = "theorem"
+locator = "58:7, 65:15, 66:1, 66:3, 66:4, 66:5, 71:19, 71:19a, 72:1"
+url = "https://doi.org/10.1007/978-3-642-62031-7"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["4.2", "5.5", "6.1", "6.2", "6.3", "7.2", "7.3", "8.1"]
+
+[[source]]
+id = "serre"
+authors = "Jean-Pierre Serre"
+title = "A Course in Arithmetic"
+year = 1973
+venue = "Graduate Texts in Mathematics"
+doi = "10.1007/978-1-4684-9884-4"
+locator_scheme = "section"
+locator = "Ch. III §1.2 Thm 1; Ch. III §2.2 Thm 3; Ch. IV §2.1; Ch. IV §3.2 Thm 8"
+url = "https://doi.org/10.1007/978-1-4684-9884-4"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["Conventions", "References"]

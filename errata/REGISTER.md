@@ -2,7 +2,7 @@
 
 Reviewers, red-team passes and errata jobs record every mistake they find in a source while checking a roadmap's locators: misprints (slips whose intended meaning is clear), errors (a false statement or proof step) and gaps (a step the source does not justify), each with the roadmap, the board pull request or errata job and the head that reported it. Collected by the board sync from the `## Source issues` sections of review, red-team and errata comments; the data is in `errata/source-issues.json`.
 
-9928 mistakes recorded on the board: 5800 misprints, 2566 errors, 1122 gaps, 440 unparsed bullets.
+9985 mistakes recorded on the board: 5823 misprints, 2579 errors, 1134 gaps, 449 unparsed bullets.
 Errata jobs have read the cited sources of 60 roadmaps; in those of 2 they found no mistake.
 The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explorer/`: 1525 awaiting review, 13582 confirmed, 228 rejected.
 
@@ -448,6 +448,15 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 - **Unparsed** (YangMillsConnectionsAndCaloricGauge, #7643 at 9a5d985, 2026-11-07): Misprint** in OhTataru-TopClass at (1.26), line 886 (p. 17): the source writes `⟨F∧F⟩` as the all-index sum without the factor `¼` that (6.11) of the heat-flow paper carries; with it omitted Lemma 1.31 fails for `F = X(dx¹²+dx³⁴)`; affects a stated result (Lemma 1.31 as printed).
 - **Unparsed** (YangMillsConnectionsAndCaloricGauge, #7643 at 9a5d985, 2026-11-07): Gap** in OhTataru-YMHF at Corollary 5.15, line 1954 (p. 41): the linearised limit is claimed in `Ḣ^σ` for `−1 < σ < 2`; its proof, Lemma 5.33(2), gives `0 ≤ σ ≤ 1`; affects a stated result. <!-- tauceti-roadmap-review {"agent": "claude", "head": "9a5d985fcda42e48537cfd2703445bbfe374fc7f", "job": "REV-DESIGN-YangMillsConnectionsAndCaloricGauge", "model": "fable", "worker": "chris-x17"} -->
 - **Unparsed** (NashBlowups, #7586 at df807c1, 2026-11-07): Misprint** in nashModificationNotes2024 at Propositions 2.2–2.3, printed p. 5 (lines 173–181): the same proposition and its preamble are printed twice under two numbers; the second copy should be dropped; affects nothing.
+- **Unparsed** (ExplicitCharacterSumsAndSieves, #8420 at b9a1276, 2026-11-07): Misprint** in tmeemt-art05 at §3 (Hiary's third derivative test): the constant `β` is printed with `65/15`; the source (hiary2016zeta Lemma 1.2) has `64/15`; affects a stated result.
+- **Unparsed** (YangMillsConnectionsAndCaloricGauge, #7643 at 32137ba, 2026-11-07): Gap** in OhTataru-YMHF at Corollary 5.15, PDF page 42 (line 1954): the linearised limit is claimed in `Ḣ^σ` for `−1 < σ < 2`; its proof, Lemma 5.33(2) (PDF page 54, line 2516), gives `0 ≤ σ ≤ 1`; affects a stated result.
+- **Unparsed** (ExplicitZetaBounds, #8434 at c9c623a, 2026-11-08): Error** in `trudgian2014argument` at Lemma 3 (the logarithmic Phragmén–Lindelöf lemma): the source says `|log(Q + s)|` may be used as an interpolating factor with unequal exponents; it is not monotone in `σ`, as `fiori2025` lines 13–18 and 91–93 record; affects the proof (and the constants of Trudgian's and HSW's `N(T)` bounds).
+- **Unparsed** (ExplicitZetaBounds, #8434 at c9c623a, 2026-11-08): Error** in `ramare2016density` at equation (1.1), printed page 326: the source says `N(σ, T) ≤ 4.9(3T)^{8(1−σ)/3}(log T)^{5−2σ} + 51.5 log² T`; `kadirilumleyng2018` lines 93–95 record that the proof is mistaken and quote a revised form with `965`; affects a stated result.
+- **Unparsed** (ExplicitZetaBounds, #8434 at c9c623a, 2026-11-08): Error** in `ramare2016perron` at Theorem 3.1 and definition (3.1): `cullyhugilljohnston2025` lines 68–76 record a missing factor `k + 1` in the error term, a typo in (3.1) and measure-theoretic gaps; affects the proof and the stated error term.
+- **Unparsed** (ExplicitZetaBounds, #8434 at c9c623a, 2026-11-08): Misprint** in `kadiri2005` at Théorème 1.1, printed page 2 (arXiv version, line 14 and 79): the source says `R₀ = 5.70176`; the published version has `5.69693` (quoted at `mty2024` line 1279, `jangkwon2014` line 13); affects a stated result (the preprint's constant is the weaker one). <!-- tauceti-roadmap-review {"agent": "claude", "head": "c9c623aca48e92925800c82c2cd430eac664c965", "job": "REV-DESIGN-ExplicitZetaBounds", "model": "fable", "worker": "chris-x9"} -->
+- **Unparsed** (YangMillsConnectionsAndCaloricGauge, #7643 at 30dfebe, 2026-11-08): Gap** in OhTataru-YMHF at Corollary 5.15, PDF page 42 (lines 1954–1955): the linearised limit is claimed in `Ḣ^σ` for `−1 < σ < 2`; its proof, Lemma 5.33(2), writes `0 ≤ σ ≤ 1`, and its argument extends to `−1 < σ < 1` but not to `1 < σ < 2`; affects a stated result (recorded in round 2; re-read).
+- **Unparsed** (YangMillsConnectionsAndCaloricGauge, #7643 at 5b101ca, 2026-11-08): Gap** in OhTataru-YMHF at Corollary 5.15, PDF page 42 (lines 1954–1955): the linearised limit is claimed in `Ḣ^σ` for `−1 < σ < 2`; its proof, Lemma 5.33(2), writes `0 ≤ σ ≤ 1` and extends to `−1 < σ < 1` but not to `1 < σ < 2`; affects a stated result.
+- **Unparsed** (YangMillsConnectionsAndCaloricGauge, #7643 at bead714, 2026-11-08): The issues recorded in round 4 (Theorem 4.6's `L¹Ḣ^σ`, the three decay gaps, Corollary 5.15's range, the misprints in (1.19), (5.11), Proposition 3.9, Lemma 3.13, and Proposition 1.6(1)) stand and are not repeated here. <!-- tauceti-roadmap-review {"agent": "claude", "head": "bead7142f27b35545b71755048ddb24ce79a82de", "job": "REV-DESIGN-YangMillsConnectionsAndCaloricGauge~5", "model": "fable", "worker": "chris-x9"} -->
 
 ## A
 
@@ -1100,6 +1109,10 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 
 - **Misprint** at Lemma 5.4 proof, p. 76 (ArakiWoods1968 line 748): the source says earlier selected pairs satisfy l(α′,k′)<l(α,k′); it should be l(α′,k′)<l(α,k), the current pair's position in the enumeration; affects the proof. Found by VonNeumannAlgebras (ERRATA-VonNeumannAlgebras at fc982a6, 2026-10-24, codex gpt-6-astra).
 
+## ariasdereyna2024
+
+- **Gap** at Lemma 6, display (4) (p. 5, lines 227 and 285–299): the source says the real-part term is bounded by multiplying the factor `Y + H` by `2Y`, which needs the real part nonnegative; it should be carry `(Y + H)` or the absolute value, as the proof of Theorem 7 does at line 408; affects the proof. Found by ExplicitCharacterSumsAndSieves (#8420 at b9a1276, 2026-11-07, claude fable).
+
 ## Arthur (Art80, 1980)
 
 - **Error** at Lemma 1.1: the source says a strict inequality; it should be the corrected inequality recorded in Arthur, An Introduction to the Trace Formula (2005), p. 68; affects a stated result. Found by  (? at , 2026-10-23, backfill from earlier reviews (claude opus)).
@@ -1652,9 +1665,13 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 
 ## behrend-fantechi1997
 
+- **Error** at Proposition 3.12, printed page 30 (lines 1010–1023): the source says `C_X = N_X` implies `X` is a local complete intersection, via "normal cone equals normal sheaf implies regular immersion"; it should be require `C_X` to be a vector bundle stack, since `Spec k[x,y]/(x², xy) ⊂ 𝔸²` has `Sym(I/I²) ≅ gr_I` with `I/I²` not locally free; affects a stated result; ((3) ⇒ (1) of the proposition). Found by VirtualFundamentalClasses (#7642 at cfc932d, 2026-11-07, claude fable).
+- **Error** at Proposition 3.5, printed page 26: the source says Vistoli's rational equivalence is invariant under the whole tangent bundle of the ambient smooth stack; it should be invariant under the tangent bundle of the regularly embedded substack when that substack is pulled back from a smooth base (for `𝔸²`, the origin and the line `{y = 0}`, `β = c·ν/η` moves under `η ↦ η + b`); affects a stated result; (and the proof of Lemma 5.9, which uses only the true part); corrected in print at kresch1999b Theorem 3.1, with the remark at its lines 340–343. Found by VirtualFundamentalClasses (#7642 at a1f6327, 2026-11-08, claude fable).
+- **Error** at Proposition 5.10, proof of the general case, printed page 44: the source says `F` is compatible with the product theory `Ω_{Y'} ⊞ E` on `Y' × X` over the graph of `v`; it should be no theory on `Y' × X` need be compatible with `F` over the graph (for a conic in `ℙ²`, `X = ℙ² × ℙ¹` and `E = Ω_X ⊕ (O(−2) ⊠ O(−2))[1]`, the `k`-invariants differ); affects the proof; (the proposition survives by forming Lemma 5.9's rational equivalence in the ambient `Y' × Y × M`). Found by VirtualFundamentalClasses (#7642 at f39b441, 2026-11-08, claude fable).
 - **Gap** at Proposition 5.3, printed page 39 (lines 1303–1305): the source says one may assume the two global resolutions map to `E` by morphisms of complexes; it should be justify this, since morphisms in `D(O_X)` between complexes of vector bundles need not be morphisms of complexes on a stack; affects the proof; <!-- tauceti-roadmap-review {"agent": "claude", "head": "0e4f62ebc95c4c60245b368e6c8703686740993f", "job": "REV-DESIGN-VirtualFundamentalClasses", "model": "fable", "worker": "chris-x9"} -->. Found by VirtualFundamentalClasses (#7642 at 0e4f62e, 2026-11-07, claude fable).
 - **Misprint** at Proposition 5.5, printed page 39 (line 1354): the source says the hypothesis is `h¹(E•) = 0`; it should be `h^{−1}(E•) = 0` (compare Proposition 7.3 (1), line 1708); affects nothing. Found by VirtualFundamentalClasses (#7642 at 0e4f62e, 2026-11-07, claude fable).
 - **Misprint** at the remark after Definition 1.2, printed page 8 (line 275): the source says the dual of `0 → F' → F → E → 0` runs `C(E) → C(F') → C(F)`; it should be `C(E) → C(F) → C(F')` (the functor is contravariant); affects nothing. Found by VirtualFundamentalClasses (#7642 at 0e4f62e, 2026-11-07, claude fable).
+- **Misprint** at the remark after Definition 1.2, printed page 8 (line 275): the source says the dual sequence runs `C(E) → C(F') → C(F)`; it should be `C(E) → C(F) → C(F')` (the functor is contravariant); affects nothing. Found by VirtualFundamentalClasses (#7642 at cfc932d, 2026-11-07, claude fable).
 
 ## behrens
 
@@ -3961,6 +3978,7 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 ## cgpt-2023
 
 - **Error** at §1.2, lines 375–378, printed p. 8: the source says `π_k ∘ J_k(A)` has mean zero on `𝕋ⁿ` for every `k`, because `J_k(A)_{xy} ≠ 0` forces `m_k(x) ≠ m_k(y)`; for `n = 2`, `k = 0`, `x = (0.05, 0.05)`, `y = (0.95, 0.95)` one has `|x − y| = 0.9√2 ≥ 1` and `m₀(x) = m₀(y)`; it should be asserted for `4^k ≥ √n`; affects the proof; (only large `k` is used, so the conclusion stands). <!-- tauceti-roadmap-review {"agent": "claude", "head": "039bca4b4f8af8d2eb0028f8e6cfbf908754f79e", "job": "REV-DESIGN-SchattenClassesAndSchurMultipliers", "model": "fable", "worker": "chris-x10"} -->. Found by SchattenClassesAndSchurMultipliers (#7622 at 039bca4, 2026-11-07, claude fable).
+- **Error** at §1.2, lines 375–378, printed p. 8: the source says `π_k ∘ J_k(A)` has mean zero on `𝕋ⁿ` for every `k`, because `J_k(A)_{xy} ≠ 0` forces `m_k(x) ≠ m_k(y)`; for `n = 2`, `k = 0`, `x = (0.05, 0.05)`, `y = (0.95, 0.95)` one has `|x − y| ≥ 1` with `m₀(x) = m₀(y)`; it should be asserted for `4^k ≥ √n`; affects the proof; (only large `k` is used, so the conclusion stands). <!-- tauceti-roadmap-review {"agent": "claude", "head": "ba5db01a912a9e5521272685dd489ad3e3e5da71", "job": "REV-DESIGN-SchattenClassesAndSchurMultipliers~2", "model": "fable", "worker": "chris-x10"} -->. Found by SchattenClassesAndSchurMultipliers (#7622 at ba5db01, 2026-11-07, claude fable).
 
 ## CGS23
 
@@ -4106,6 +4124,10 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 - **Misprint** at the proof of Proposition 5.2.16(d), printed page 402: the source says absolute irreducibility is equivalent to commutator trace equal to 2; it should be different from 2 (Lemma 5.2.9); affects nothing. Found by NonabelianLevelStructures (#2283 at 710d47b, 2026-11-05, claude fable).
 - **Gap** at the proof of Proposition 5.2.16(d), printed page 402: the source says a dihedral-type pair has both projective images of order at most 2; it should be also treat a rotation with a reflection, where the reflection and the product are involutions; affects the proof; only (the statement stands). Found by NonabelianLevelStructures (#2283 at 710d47b, 2026-11-05, claude fable).
 - **Error** at §4.11, printed page 388: the source says the centralizer obstruction d′ for odd dihedral D_{2k} is 2; it should be 1, since a primitive rotation's centralizer is the rotation subgroup (the normalizer quotient has order 2); affects nothing; (the text's conclusion that m′ is the culprit stands). Found by NonabelianLevelStructures (#2283 at 710d47b, 2026-11-05, claude fable).
+
+## chenggraham2004
+
+- **Error** at Lemma 2 (uncertified; page not read): the source says the Kusmin–Landau bound holds with constant `1/(πθ) + 1`; it should be `cot(πθ/2) ≤ 2/(πθ)` (Landau's optimal form; recorded at `hiarypatelyang2024` lines 29–33 and `ariasdereyna2024` lines 105–108); affects a stated result; and every bound built on its Lemma 3 (Hiary's `0.63`, Trudgian's `3/4 log t`). Found by ExplicitZetaBounds (#8434 at c9c623a, 2026-11-08, claude fable).
 
 ## Chen–Przytycki
 
@@ -6589,6 +6611,11 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 - **Misprint** at §2.4, printed p. 13, H26 line 622: the source says the reverse functor with the extension i_{i!}; it should be i_{1!}, as its source D(G*) and the p. 9 definition require; affects nothing. Found by ExcursionOperatorsAndSpectralActionPartII (#1289 at 913f271, 2026-10-26, claude fable).
 - **Misprint** at §2.4, reverse Hecke composite, printed p. 13 (H26 line 622): the source says the last extension bears subscript i; it should be i₁!, agreeing with the source character space and the p. 9 definition; affects nothing. Found by ExcursionOperatorsAndSpectralActionPartII (#1289 at 913f271, 2026-10-27, codex gpt-6-astra).
 
+## HA
+
+- **Misprint** at Proposition 7.2.1.19, printed page 1236: the source says M is a right A-module, N a left A-module and the Tor is over `π_*A`, with the ring named R; it should be R throughout; affects nothing; <!-- tauceti-roadmap-review {"agent": "claude", "head": "b6e473888b97576e4984c0a1d8ab846c81290a05", "job": "REV-DESIGN-QuasicoherentSheavesOnPrestacks~5", "model": "fable", "worker": "chris-x9"} -->. Found by QuasicoherentSheavesOnPrestacks (#7645 at b6e4738, 2026-11-08, claude fable).
+- **Misprint** at Theorem 7.2.2.15, printed page 1240: the source says the connective module N is a "left A-module" and writes the tensor product over A, where the ring was named R; it should be R throughout; affects nothing. Found by QuasicoherentSheavesOnPrestacks (#7645 at b6e4738, 2026-11-08, claude fable).
+
 ## Haagerup
 
 - **Misprint** at Theorem 1.1 proof, Lemma 3.1, p. 99 (Haagerup line 225; Haagerup line 227): the source says the Taylor expansion applies φ to b and b²; it should be use ψ for every B-variable term, keeping φ for A-variable terms; affects the proof. Found by CStarAlgebras (ERRATA-CStarAlgebras at 2a35ac0, 2026-10-24, codex gpt-6-astra).
@@ -6729,6 +6756,10 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 - **Error** at III, Remark 2.6, printed p. 92 (Harvey-Lawson line 1527): the source says the graphical special Lagrangian locus has n components for even n and n−1 for odd n; it should be n−1 for even n and n for odd n; for n=2 it is the connected space of trace-free symmetric matrices; affects a stated result. Found by CalibratedGeometry (ERRATA-CalibratedGeometry at 9cd2a3a, 2026-10-24, codex gpt-6-astra).
 - **Misprint** at III, introduction to Theorem 2.7, printed p. 92 (Harvey-Lawson line 1529): the source says volume minimization follows from Theorem II.3.5; it should be Theorem II.4.2, or its Euclidean Corollary II.4.5; II.3.5 is the pointwise/integrated inequality lemma; affects the proof. Found by CalibratedGeometry (ERRATA-CalibratedGeometry at 9cd2a3a, 2026-10-24, codex gpt-6-astra).
 
+## hasanalizadeshenwong2022
+
+- **Error** at Corollary 1.2, printed page 2 (line 61): the source says the constant term is `9.3675`; it should be `9.4925` as recorded in `bellottiwong2025` Table 1 (line 58); affects a stated result. Found by ExplicitZetaBounds (#8434 at c9c623a, 2026-11-08, claude fable).
+
 ## Hatcher
 
 - **Error** at Example 2.13, p. 56 (Hatcher line 2253): the source says reduced K-classes are nilpotent for all compact manifolds and finite cell complexes; it should be require connectedness; for the two-point manifold S⁰, reduced K⁰ is Z with its usual multiplication; affects a stated result. Found by TopologicalKTheory (ERRATA-TopologicalKTheory at 7575afa, 2026-10-24, codex gpt-6-astra).
@@ -6826,7 +6857,9 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 ## HeikkilaPankka2025
 
 - **Misprint** at Appendix B, proof of Proposition B.1, line 1328 (arXiv v2): the source says the composite of the map `p : M → N` and the embedding `ι : N → ℝ^m` in the order `p ∘ ι`; it should be `ι ∘ p`, the only composable order; affects nothing; <!-- tauceti-roadmap-review {"agent": "claude", "head": "d5ab755dad8c7355dfaa8b5ce6819ec6a8f33b43", "job": "REV-DESIGN-SobolevMapsBetweenManifolds", "model": "fable", "worker": "chris-x17"} -->. Found by SobolevMapsBetweenManifolds (#7625 at d5ab755, 2026-11-07, claude fable).
+- **Misprint** at Appendix B, proof of Proposition B.1, line 1328 (arXiv v2): the source says the composite of the map `p : M → N` with the embedding `ι : N → ℝ^m` in the order `p ∘ ι`; it should be `ι ∘ p`, the only composable order; affects nothing; <!-- tauceti-roadmap-review {"agent": "claude", "head": "f9c8ebfb80decfe1fe3cc4f5d732ea155b8c858f", "job": "REV-DESIGN-SobolevMapsBetweenManifolds~2", "model": "fable", "worker": "chris-x9"} -->. Found by SobolevMapsBetweenManifolds (#7625 at f9c8ebf, 2026-11-07, claude fable).
 - **Misprint** at Proof of Proposition B.1, line 1328 (printed page 24): the source says the composite of the Nash embedding and the map in the order "map after embedding"; it should be the embedding after the map, since the embedding goes out of the target; affects nothing; <!-- tauceti-roadmap-review {"agent": "claude", "head": "38117fbaa57d9fc796bf4e44b0b05b2bc073639e", "job": "REV-PKG-QuasiregularMaps", "model": "fable", "worker": "chris-x9"} -->. Found by QuasiregularMaps (#7613 at 38117fb, 2026-11-07, claude fable).
+- **Misprint** at Proof of Proposition B.1, line 1328 (printed page 24): the source says the composite of the Nash embedding and the map as the map after the embedding; it should be the embedding after the map, since the embedding goes out of the target; affects nothing; <!-- tauceti-roadmap-review {"agent": "claude", "head": "547b900fcb33dbef0c00588a2986cb391413ccc2", "job": "REV-PKG-QuasiregularMaps~3", "model": "fable", "worker": "chris-x9"} -->. Found by QuasiregularMaps (#7613 at 547b900, 2026-11-07, claude fable).
 
 ## HEITMANNMA18
 
@@ -7356,6 +7389,10 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 - **Error** at Lemma 2.2, preprint p.4 (HUNEKELYUBEZNIK line 166): the source says annihilation by finite integral extension holds without positive cohomological degree; it should be require i>0; in R=𝔽_p, I=0, the class 1∈H⁰ cannot vanish in an injective extension; affects a stated result. Found by DirectSummandsAndBigCohenMacaulay (#1452 at fef1736, 2026-10-27, codex gpt-6-astra).
 - **Error** at Lemma 2.2, preprint p.4, lines 166–173: the source says the annihilation assertion without requiring positive cohomological degree; it should be restricted to i>0; with R a field, I=0 and α=1 in H⁰, no injective extension kills α; affects a stated result. Found by DirectSummandsAndBigCohenMacaulay (#1452 at dfaea30, 2026-10-26, codex gpt-6-astra).
 - **Misprint** at Lemma 2.2, preprint p.5 (HUNEKELYUBEZNIK line 186): the source says the Čech terms of M are sums of localizations of R; it should be use the corresponding localizations of M; affects nothing. Found by DirectSummandsAndBigCohenMacaulay (#1452 at fef1736, 2026-10-27, codex gpt-6-astra).
+
+## hunter2016
+
+- **Misprint** at Theorem 1.3 (p. 16, lines 680–684): the source says Frolenkov–Soundararajan's Theorem 2 is quoted for initial sums `Σ_{n ≤ x}` only; the source bounds the maximum over all intervals (as tmeemt-art15 lines 114–118 state); it should be the maximal form; affects nothing; (the quoted form is weaker). <!-- tauceti-roadmap-review {"agent": "claude", "head": "b9a127681ce11bb947f07152d477054deec1c8ad", "job": "REV-DESIGN-ExplicitCharacterSumsAndSieves", "model": "fable", "worker": "chris-x10"} -->. Found by ExplicitCharacterSumsAndSieves (#8420 at b9a1276, 2026-11-07, claude fable).
 
 ## Huybrechts, Lectures on K3 surfaces (author draft)
 
@@ -8307,6 +8344,13 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 - **Misprint** at §5, dimension comparison preceding Proposition 11, p. 12 (Kogan–Miller line 607): the source says to take the complex dimension of the line bundle Lλ_τ itself; it should be take the dimension of Γ(Lλ_τ), the space of sections; affects the proof. Found by GroebnerGeometry (ERRATA-GroebnerGeometry at 163d43c, 2026-10-24, codex gpt-6-astra).
 - **Error** at §5, dominant weights and branching formula (8), pp. 10–11 (Kogan–Miller line 548 and line 557): the source says dominant weights and branching weights are strictly decreasing positive sequences; it should be allow weakly decreasing integer weights; even λ=(3,2,1) branches to μ=(2,2), omitted by the printed restriction; affects a stated result. Found by GroebnerGeometry (ERRATA-GroebnerGeometry at 163d43c, 2026-10-24, codex gpt-6-astra).
 
+## kontorovichtao-pntplus
+
+- **Misprint** at Lemma 3.1.3, printed p. 7 (line 187): the source says the statement ends with a clause about an absolute constant `C` although no `C` occurs in it; it should be end after the `L¹` bound; affects nothing. Found by AnalyticNumberTheoryPartIII (#9211 at 08250e4, 2026-11-08, claude fable).
+- **Misprint** at Lemma 4.3.2, printed p. 23 (line 901): the source says symmetry of the Mellin convolution is asserted for `x ≠ 0` for functions on the positive reals; it should be `x > 0` (on an `ℝ`-carrier the substitution `z = x/y` fails for `x < 0`); affects nothing. Found by AnalyticNumberTheoryPartIII (#9211 at 08250e4, 2026-11-08, claude fable).
+- **Misprint** at Lemma 4.3.4, printed p. 25 (line 985): the source says the proof cites Lemma 4.3.1 for `𝓜ν_ε(1) = 𝓜ν(ε)`; it should be cite Corollary 4.3.1; affects nothing. Found by AnalyticNumberTheoryPartIII (#9211 at 08250e4, 2026-11-08, claude fable).
+- **Error** at Theorem 9.1.70, printed p. 90 (lines 3626–3631): the source says the totient series was stated for `Re s > 1` in an earlier build; it should be `Re s > 2`; affects a stated result; corrected in print at the same theorem (the build read records the correction). <!-- tauceti-roadmap-review {"agent": "claude", "head": "08250e4c799ff3f4054b5deb294c93fe813b51d1", "job": "REV-DESIGN-AnalyticNumberTheoryPartIII", "model": "fable", "worker": "chris-c-antiiir"} -->. Found by AnalyticNumberTheoryPartIII (#9211 at 08250e4, 2026-11-08, claude fable).
+
 ## Kosaki
 
 - **Misprint** at Theorem 3.7 proof, printed p.36 (Kosaki line 1570): the source says Ind F is the sum of E⁻¹(p_ij); it should be use F⁻¹(p_ij), as in the immediately preceding equation; affects the proof. Found by Subfactors (ERRATA-Subfactors at 7b88277, 2026-10-24, codex gpt-6-astra).
@@ -8492,6 +8536,11 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 
 - **Misprint** at §4, proof of Proposition 4.2 after (4.5), p. 245 (KreckStolz line 524): the source says the argument excludes p from the gcd whenever q ≥ 1; it should be q > 1, as the immediately following parenthesis acknowledges; affects the proof. Found by TangentialBordism (ERRATA-TangentialBordism at bf9da30, 2026-10-24, codex gpt-6-astra).
 
+## kresch1999b
+
+- **Misprint** at Theorem 3.1 and the paragraph before it, printed page 10: the source says the source names the acting group as the tangent bundle of the arbitrary substack `Y'` restricted to `X'`; it should be the tangent bundle of the smooth substack `X` (the proof acts by `𝔸^m = T_X`, and the tangent bundle of `Y'` acts trivially on the normal cone of `Y'`); affects a stated result; (the intended meaning is clear from the proof). <!-- tauceti-roadmap-review {"agent": "claude", "head": "a1f6327c7b2a664fa8874e6da420614108259761", "job": "REV-DESIGN-VirtualFundamentalClasses~3", "model": "fable", "worker": "chris-x17"} -->. Found by VirtualFundamentalClasses (#7642 at a1f6327, 2026-11-08, claude fable).
+- **Misprint** at Theorem 3.1 and the paragraph before it, printed page 10: the source says the source names the acting group as the tangent bundle of the arbitrary substack `Y'` and the second cycle as the normal cone of `X'` in `Y'`; it should be the tangent bundle of the smooth substack `X` and the normal cone of `X'` in `X` (the proof acts by `𝔸^m = T_X`, and line 304 gives the cone of `N|_{X'}` in `N`); affects a stated result; (the intended meaning is clear from the proof). <!-- tauceti-roadmap-review {"agent": "claude", "head": "f39b4416307f2544bb12549169278f6794f22e86", "job": "REV-DESIGN-VirtualFundamentalClasses~4", "model": "fable", "worker": "chris-x10"} -->. Found by VirtualFundamentalClasses (#7642 at f39b441, 2026-11-08, claude fable).
+
 ## Kriz–May
 
 - **Misprint** at V.§9, proof of Lemma 9.3, printed p. 136 (Kriz–May printed version line 4722): the source says τσ₁ acts on L(1), while σ₁τ acts on L(2), throughout the homotopy calculation; it should be σ₁τ on L(1) and τσ₁ on L(2), with every corresponding composite corrected; affects the proof. Found by TopologicalKTheory (ERRATA-TopologicalKTheory at 7575afa, 2026-10-24, codex gpt-6-astra).
@@ -8668,6 +8717,7 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 
 - **Misprint** at Lemma 1.9, proof, line 348, printed p. 8: the source says the source names the target of `A ↦ UAU*` as `S_p(L²(X, ν))`; it should be `S_p(L²(X, μ))`; affects nothing. Found by SchattenClassesAndSchurMultipliers (#7622 at 039bca4, 2026-11-07, claude fable).
 - **Misprint** at Remark 1.4, line 249, printed p. 6: the source says `S_q = [S_p, S_{p'}]_θ` with `1/q = θ/p' + (1−θ)/p` for `2 ≤ p ≤ q`, whose right side lies in `[1/p, 1/p']` and cannot equal `1/q < 1/p`; it should be `S_p = [S_q, S_{q'}]_θ` with `1/p = θ/q' + (1−θ)/q`; affects nothing; (the inequality `‖φ‖_{M S_p} ≤ ‖φ‖_{M S_q}` stands). Found by SchattenClassesAndSchurMultipliers (#7622 at 039bca4, 2026-11-07, claude fable).
+- **Misprint** at Remark 1.4, line 249, printed p. 6: the source says the interpolation identity with `1/q = θ/p' + (1−θ)/p` for `2 ≤ p ≤ q`, whose right side lies between `1/p` and `1/p'` and cannot equal `1/q < 1/p` unless `p = q`; it should be `S_p = [S_q, S_{q'}]_θ` with `1/p = θ/q' + (1−θ)/q`; affects nothing. Found by SchattenClassesAndSchurMultipliers (#7622 at ba5db01, 2026-11-07, claude fable).
 - **Gap** at Theorem 1.7, proof, lines 312–313, printed p. 8: the source says a filtration of finite σ-algebras whose martingale converges almost surely to `φ` without justifying its existence when the σ-algebra is not countably generated; it should be first pass to a countably generated sub-σ-algebra carrying `φ`; affects the proof. Found by SchattenClassesAndSchurMultipliers (#7622 at 039bca4, 2026-11-07, claude fable).
 - **Gap** at §1.4, lines 487–488, printed p. 12: the source says an atom as a measurable set that cannot be split into two sets of positive measure, so every null set is an atom and the hypothesis "no atom" of Theorem 1.18 is never satisfied; it should be require the atom to have positive measure; affects a stated result; (the hypothesis of Theorem 1.18 must be read with positive measure). Found by SchattenClassesAndSchurMultipliers (#7622 at 039bca4, 2026-11-07, claude fable).
 
@@ -8730,6 +8780,10 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 - **Misprint** at §4.4, manuscript p.27 (LanSuhErr line 11): the source says canonical/subcanonical labels on the wrong part of the coefficient notation; it should be attach them to the coefficient functor applied to W; affects nothing; corrected in print at LanSuhErr item (2), p.1. Found by AutomorphicBundlesPartII (#1029 at 67bd670, 2026-10-28, codex gpt-6-astra).
 - **Error** at §6.2, manuscript p.34 (LanSuhErr line 14): the source says the positive unipotent Lie module equals the dual negative module in characteristic two; it should be the actual dual negative module, or an explicit exclusion of the symplectic characteristic-two case; affects the proof; corrected in print at LanSuhErr item (3), p.1. Found by AutomorphicBundlesPartII (#1029 at 36e646b, 2026-10-27, codex gpt-6-astra).
 - **Error** at §6.2, manuscript p.34 (LanSuhErr line 14): the source says the positive unipotent Lie module identifies with the dual negative module in characteristic two; it should be use the actual dual, or exclude the symplectic characteristic-two case; affects the proof; corrected in print at LanSuhErr item (3), p.1. Found by AutomorphicBundlesPartII (#1029 at 67bd670, 2026-10-28, codex gpt-6-astra).
+
+## LAU87
+
+- **Misprint** at Corollaire (2.3.1.3)(i), printed p. 159 (LAU87 line 971): the source says the source says, as the scan reads, that the rank of the transform at the origin is the generic rank of the input plus the rank minus the Swan conductor of the monodromy at infinity; it should be the generic rank of the transform, as in (2.3.1.1)(iii), since `K = δ_0 ⊕ δ_1 ⊕ Λ[1]` gives `r_{0'}(K') = −1` with `r(K') = −2` but `0` with `r(K) = −1` in Laumon's sign convention; affects nothing; (the roadmap uses the general formula; the OCR may have dropped a prime). <!-- tauceti-roadmap-review {"agent": "claude", "head": "be15fa8ce2d90df364e8d042ea6a4bf588ec5a4b", "job": "REV-PKG-FourierDeligneTransform", "model": "fable", "worker": "chris-fdt"} -->. Found by FourierDeligneTransform (#8153 at be15fa8, 2026-11-07, claude fable).
 
 ## Laugwitz-Qi
 
@@ -9971,17 +10025,35 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 
 ## OhTataru-TopClass
 
+- **Misprint** at Lemma 3.13, PDF page 29 (line 1423): the source says the conclusion is printed as `L^{d/(n+2)}` with `n` undefined; it should be `L^{d/(m+2)}`; affects nothing. Found by YangMillsConnectionsAndCaloricGauge (#7643 at 30dfebe, 2026-11-08, claude fable).
 - **Misprint** at Lemma 3.13, line 1423 (p. 29): the source says the conclusion's exponent uses an undefined `n`; it should be `d/(m+2)`; affects nothing. Found by YangMillsConnectionsAndCaloricGauge (#7643 at 9a5d985, 2026-11-07, claude fable).
+- **Gap** at Lemma 3.2, PDF page 21 (lines 1039–1050): the source says the hypothesis is `V ∩ W = ∅` and the proof takes a smooth `h` equal to `0` on `V` and `1` on `W` by Urysohn's lemma; smooth Urysohn needs disjoint closures (two open sets with touching closures admit no such continuous `h`); it should be assume the closures of `V` and `W` disjoint, as the roadmap does; affects the proof. Found by YangMillsConnectionsAndCaloricGauge (#7643 at 32137ba, 2026-11-07, claude fable).
+- **Gap** at Lemma 3.2, proof, PDF page 21 (line 1049): the source says the cut-off is taken equal to `0` on `V` and `1` on `W` under the hypothesis `V ∩ W = ∅` alone, which does not give one when the closures meet; it should be positive on `W` and `0` on `V` (the lemma then holds as stated); affects the proof. Found by YangMillsConnectionsAndCaloricGauge (#7643 at bead714, 2026-11-08, claude fable).
 - **Misprint** at Lemma 3.4(3), line 1130 (p. 22): the source says the second term of the Leibniz rule as the adjoint of the bracket of the right Maurer–Cartan form with `B`; it should be the bracket of the right Maurer–Cartan form with `Ad(O)B` (equivalently the adjoint of the bracket with the left form); affects nothing. Found by YangMillsConnectionsAndCaloricGauge (#7643 at 9a5d985, 2026-11-07, claude fable).
+- **Error** at Proposition 1.6(1), PDF page 9 (line 401): the source says for disconnected `G` the two gauges at infinity are homotopic only up to left and right constants; it should be connected `G` or the quotient by constants; affects a stated result; <!-- tauceti-roadmap-review {"agent": "claude", "head": "5b101ca32275b89e247278bd796cc89b0c028a8e", "job": "REV-DESIGN-YangMillsConnectionsAndCaloricGauge~4", "model": "fable", "worker": "chris-x10"} -->. Found by YangMillsConnectionsAndCaloricGauge (#7643 at 5b101ca, 2026-11-08, claude fable).
+- **Error** at Proposition 1.6(1), line 401, and Lemmas 3.21–3.22, lines 1634 and 1646: the source says for disconnected `G` the gauges at infinity are homotopic only up to left and right constants, and `[id]` differs from the class of a constant map (`G = {±1}`, `A = 0`); it should be connected `G` or the quotient by constants; affects a stated result; (recorded in round 1; re-read this round). <!-- tauceti-roadmap-review {"agent": "claude", "head": "32137ba27fc146b4e95c3c6e14c3ba5d96014775", "job": "REV-DESIGN-YangMillsConnectionsAndCaloricGauge~2", "model": "fable", "worker": "chris-x9"} -->. Found by YangMillsConnectionsAndCaloricGauge (#7643 at 32137ba, 2026-11-07, claude fable).
+- **Error** at Proposition 1.6(1), line 401, and Lemmas 3.21–3.22, lines 1634 and 1646: the source says for disconnected `G` the gauges at infinity are homotopic only up to left and right constants; it should be connected `G` or the quotient by constants; affects a stated result; (recorded in rounds 1–2; re-read). <!-- tauceti-roadmap-review {"agent": "claude", "head": "30dfebe67e33f84fdccc6c74b776cca242065e1f", "job": "REV-DESIGN-YangMillsConnectionsAndCaloricGauge~3", "model": "fable", "worker": "chris-x9"} -->. Found by YangMillsConnectionsAndCaloricGauge (#7643 at 30dfebe, 2026-11-08, claude fable).
 - **Error** at Proposition 1.6(1), line 401, and Lemmas 3.21–3.22, lines 1634 and 1646 (pp. 9, 33): the source says for disconnected `G` the gauges at infinity are homotopic only up to left and right constants, and `[id]` differs from the class of a constant map (`G = {±1}`, `A = 0`); it should be connected `G` or the quotient by constants; affects a stated result. Found by YangMillsConnectionsAndCaloricGauge (#7643 at 9a5d985, 2026-11-07, claude fable).
+- **Misprint** at Proposition 3.9, PDF page 26 (line 1303): the source says the global potential is said to lie in `W^{k,d/k}(B_R)`; it should be `W^{k−1,d/k}`, as the estimate at line 1309 reads; affects nothing. Found by YangMillsConnectionsAndCaloricGauge (#7643 at 30dfebe, 2026-11-08, claude fable).
 - **Misprint** at Proposition 3.9, line 1303 (p. 26): the source says the global potential lies in `W^{k,d/k}(B_R)`; it should be `W^{k−1,d/k}`, as its displayed bound says; affects nothing. Found by YangMillsConnectionsAndCaloricGauge (#7643 at 9a5d985, 2026-11-07, claude fable).
 - **Misprint** at Theorem 1.5, line 374 (p. 8): the source says the higher-regularity hypothesis is on `L^p(B_R)`; it should be on `L^p(ℝ^d)`, since the conclusion `B ∈ Ẇ^{n+1,p}(ℝ^d)` is global; affects a stated result. Found by YangMillsConnectionsAndCaloricGauge (#7643 at 9a5d985, 2026-11-07, claude fable).
 
 ## OhTataru-YMHF
 
+- **Misprint** at (1.19), PDF page 6 (line 243), and Proposition 5.6, (5.11), PDF page 34 (lines 1612–1619): the source says the energy dissipation is printed with factor `1` for the energy `½∫⟨F_jk, F^{jk}⟩`; it should be `2∫Σ_k|D^ℓF_ℓk|²`; affects nothing. Found by YangMillsConnectionsAndCaloricGauge (#7643 at 30dfebe, 2026-11-08, claude fable).
+- **Misprint** at (1.19), PDF page 6 (line 243), and Proposition 5.6, (5.11), PDF page 34 (lines 1612–1619): the source says the dissipation term is printed with factor `1` for the energy `½∫⟨F_jk, F^{jk}⟩`; it should be `2∫Σ_k|D^ℓF_ℓk|²`; affects nothing. Found by YangMillsConnectionsAndCaloricGauge (#7643 at 5b101ca, 2026-11-08, claude fable).
 - **Error** at (1.19), line 240, and (5.11), line 1617 (pp. 6, 34): the source says the dissipation term of the energy identity carries the factor `1` for the energy `½∫⟨F,F⟩`; it should be `2∫Σ_j|D^ℓF_ℓj|²` (witness: one `U(1)` Fourier mode); affects nothing. Found by YangMillsConnectionsAndCaloricGauge (#7643 at 9a5d985, 2026-11-07, claude fable).
+- **Gap** at Lemma 5.33(2), proof, PDF page 55 (line 2543): the source says the proof asserts that the homogeneous covariant-heat solution `F_{0j}` vanishes at `s = ∞` in `Ḣ^σ`; it should be prove the decay, which Theorem 4.3 (bounds only) does not give; affects the proof. Found by YangMillsConnectionsAndCaloricGauge (#7643 at 30dfebe, 2026-11-08, claude fable).
+- **Gap** at Lemma 5.33(2), proof, PDF page 55 (line 2543): the source says the homogeneous covariant-heat solution `F_{0j}` is said to vanish at `s = ∞` in `Ḣ^σ` without argument; it should be proved from the bounds (as 8.3's decay clause does); affects the proof. Found by YangMillsConnectionsAndCaloricGauge (#7643 at 5b101ca, 2026-11-08, claude fable).
+- **Gap** at Lemma 5.33(2), proof, PDF page 55 (lines 2534–2535): the source says `curl_A B → 0` in `L²` is taken from "the `L²` solvability"; it should be proved, since Theorem 4.3 gives bounds only; affects the proof. Found by YangMillsConnectionsAndCaloricGauge (#7643 at 5b101ca, 2026-11-08, claude fable).
+- **Gap** at Proposition 7.9(1), proof, PDF page 72 (lines 3381–3384): the source says the proof takes the boundedness of `w ↦ W(∞)` on `Ḣ^σ` for `−1 < σ < 1` from Corollary 5.15; it should be note that Lemma 5.33(2), the proof of that corollary, covers only `0 ≤ σ ≤ 1`, and supply the range `−1 < σ < 0` (the same de Turck argument applies); affects a stated result. Found by YangMillsConnectionsAndCaloricGauge (#7643 at 32137ba, 2026-11-07, claude fable).
+- **Gap** at Remark 7.10, PDF page 72 (lines 3402–3404): the source says the `L²` decay of `F_{0j}` is taken from "the `L²` theory in Theorem 4.3"; it should be note that Theorem 4.3 states bounds and supply the decay argument; affects the proof. Found by YangMillsConnectionsAndCaloricGauge (#7643 at 30dfebe, 2026-11-08, claude fable).
+- **Error** at Theorem 4.6, PDF page 29 (line 1290): the source says the conclusion is printed in the norm `L¹Ḣ^σ`; it should be `ℓ²L¹Ḣ^σ`, which the block-by-block proof (lines 1297–1320) gives and the applications (lines 2207, 2546) use, the `L¹` form being false already for the heat equation; affects a stated result. Found by YangMillsConnectionsAndCaloricGauge (#7643 at 5b101ca, 2026-11-08, claude fable).
+- **Misprint** at Theorem 4.8, (4.34), PDF page 33 (line 1522): the source says the exponent is `1 − α/2` with `α` undefined; it should be `1 − β`, as in (4.32); affects nothing. Found by YangMillsConnectionsAndCaloricGauge (#7643 at 32137ba, 2026-11-07, claude fable).
 - **Misprint** at Theorem 4.8, (4.34), line 1522 (p. 33): the source says the exponent is `1 − α/2` with `α` undefined; it should be `1 − β`, as in (4.32); affects nothing. Found by YangMillsConnectionsAndCaloricGauge (#7643 at 9a5d985, 2026-11-07, claude fable).
 - **Gap** at Theorem 6.1, lines 2567 and 2580 (pp. 55–56): the source says the statement asserts that the concentration points `x_n` converge to a point `x₀`; the proof chooses the parabolic cubes without bounding `x_n`; it should be either drop the clause or add the argument; affects a stated result. Found by YangMillsConnectionsAndCaloricGauge (#7643 at 9a5d985, 2026-11-07, claude fable).
+- **Error** at Theorem 7.8, proof, Step 2, (7.10), PDF page 70 (line 3325): the source says the bound is printed with the left side in the norm `ℓ¹Ḣ¹` and is said to follow from Theorem 4.1; it should be in the norm of `ℋ`, since `[a, c]` lies outside `ℓ¹Ḣ¹` for caloric `a` outside `ℓ¹Ḣ¹`, and the `ℋ` form is what (7.9) needs; affects the proof. Found by YangMillsConnectionsAndCaloricGauge (#7643 at bead714, 2026-11-08, claude fable).
+- **Misprint** at §2.4, PDF page 14 (line 558): the source says the gauge transformation `O` with `a_∞ = O⁻¹∂O` is said to be unique up to constant conjugations; it should be up to left multiplication by constants, as its formula shows; affects nothing. Found by YangMillsConnectionsAndCaloricGauge (#7643 at bead714, 2026-11-08, claude fable).
 
 ## Olivier
 
@@ -10122,6 +10194,11 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 - **Misprint** at Lemma 5.1, equation (26), preprint p.17 (PAS22 line 751): the source says the coefficient-lattice factor is its torsion-valued Pontryagin dual; it should be Hom_O(λ,O) before tensoring with L/O; affects the proof; corrected in print at DPS23 footnote 15, preprint p.40 (DPS23 line 1896). Found by ScholzeFunctorAndModpCohomologyOfTheLubinTateTower (#1702 at 6b357b6, 2026-10-27, codex gpt-6-astra).
 - **Misprint** at Lemma 5.1, equation (26), printed preprint p.17 (PAS22 lines 748–751): the source says the lattice factor is its Pontryagin dual; it should be Hom_O(λ,O) before tensoring with the torsion coefficient; affects the proof; corrected in print at DPS23, footnote 15, preprint p.40 (DPS23 line 1896). Found by ScholzeFunctorAndModpCohomologyOfTheLubinTateTower (#1702 at 90f788e, 2026-10-26, codex gpt-6-astra).
 - **Misprint** at Lemma 5.3 and its proof, preprint p.18 (PAS22 line 782 and line 794): the source says the determinant formula uses the cyclotomic character in the displayed direction; it should be use its inverse in those two places; affects a stated result; corrected in print at DPS23 footnote 14, preprint p.39 (DPS23 line 1848). Found by ScholzeFunctorAndModpCohomologyOfTheLubinTateTower (#1702 at 6b357b6, 2026-10-27, codex gpt-6-astra).
+
+## patel2022
+
+- **Misprint** at Lemma 2.5 (p. 6, line 160): the source says the hypothesis asks for four continuous derivatives; the proof uses the third derivative only (through the mean value theorem for `f″`), as Hiary's Lemma 1.2 assumes; it should be three; affects a stated result; (a needlessly strong hypothesis). Found by ExplicitCharacterSumsAndSieves (#8420 at b9a1276, 2026-11-07, claude fable).
+- **Misprint** at Lemma 3.1, statement (arXiv v1 p. 7, line 196): the source says the constant `β₄` is printed with the factor `18/20`; the proof's displays (33) and (35) produce `18/10 = 9/5`; it should be `(9/5)√(β̃₃η₃)η₄^{−1/3}`; affects a stated result. Found by ExplicitCharacterSumsAndSieves (#8420 at b9a1276, 2026-11-07, claude fable).
 
 ## Penneys
 
@@ -10281,6 +10358,10 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 - **Error** at (5.5), line 545–548, printed p. 14: the source says the `L¹(ℝ)` norm of `log|a(t,·)|` equals the squared `L²(0,t)` norm of `f` with constant `1`; it should be `π/2` times that norm in the normalisations of (1.1) and (5.2) (first-order check: `∫|∫₀ᵗ f e^{2ixs}ds|²dx = π∫₀ᵗ f²`; computed `1.5707` for `f = 1_{[0,1]}`); affects a stated result; (used only qualitatively in the source). The same constant `1` is printed in mauth2022 (4), line 206–207. Found by DiracScatteringAndNonlinearFourierTransform (#7428 at ef270ea, 2026-11-06, claude fable).
 - **Misprint** at Lemma 5 proof, line 830, printed p. 22: the source says the distance of two points of the box of half-side `C/t` is at most `1/t`; it should be at most `2√2 C/t`, the box diameter; affects nothing. Found by DiracScatteringAndNonlinearFourierTransform (#7428 at 512b333, 2026-11-07, claude fable).
 - **Misprint** at Lemma 7, line 1038–1039, printed p. 27: the source says `p(t) > C(t)` for `t ∉ T₀(s,C)` and `p(t) ≤ C(t)` for `t ∈ T₀(s,C)`; it should be `tp(t) > C(t)` and `tp(t) ≤ C(t)` (a zero in `Q(s, C(t)/t)` has imaginary part at most `C(t)/t`); affects nothing; The same misprint is in mauth2022 Lemma 43, line 3150. <!-- tauceti-roadmap-review {"agent": "claude", "head": "ef270ea47f23f463ae0ba16d56c1dd8f06552456", "job": "REV-DESIGN-DiracScatteringAndNonlinearFourierTransform", "model": "fable", "worker": "chris-x9"} -->. Found by DiracScatteringAndNonlinearFourierTransform (#7428 at ef270ea, 2026-11-06, claude fable).
+
+## pomerance2011
+
+- **Error** at §2, the Fourier series of `Φ` (p. 6, line 228): the source says the series of the step function is said to converge uniformly on `[0, 2π)`; a discontinuous function's series cannot; it should be pointwise convergence, to the midpoint values at the jumps; affects nothing; (only the values at `2πa/q` are used). Found by ExplicitCharacterSumsAndSieves (#8420 at b9a1276, 2026-11-07, claude fable).
 
 ## Poonen, Rational Points on Varieties
 
@@ -11584,6 +11665,10 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 
 - **Error** at §§3.1–3.2, v2 printed pp.3–4: the source says the rank-four holomorphic sector is invariant under the natural combined diagonal and permutation action; it should be diagonal-invariant and permutation-sign-equivariant, or permutation-invariant only after a sign twist; affects nothing. Found by PeriodsAndSpecialValues (#169 at 9f14c68, 2026-10-24, codex gpt-6-astra).
 
+## Sikora2012
+
+- **Misprint** at §11, line 836, printed p. 18: the source says the source refers to "Proposition 30" for the closed-orbit characterization; it should be Theorem 30 (line 572); affects nothing; <!-- tauceti-roadmap-review {"agent": "claude", "head": "19b9aa348ffab45dc1c17c8587cb7f7998a08a70", "job": "REV-DESIGN-SurfaceGroupCharacterVarieties~2", "model": "fable", "worker": "chris-x17"} -->. Found by SurfaceGroupCharacterVarieties (#9066 at 19b9aa3, 2026-11-08, claude fable).
+
 ## Silliman, arXiv:2009.14353v2
 
 - **Error** at Theorem 8.10 (weights of Hasse lifts; construction in §8.4): the source says the source says, as literally quantified, mod-p^m congruent Hasse lifts in weights not divisible by p^(m−1)(p−1), contradicting Katz Cor. 4.4.2 (witness p = 5, m = 2, w ≡ 4 mod 20); it should be positive even multiples of (p−1)p^{N₀(F,p,m)}, with N₀ ≥ 1 at p = 2 and precision fixed before the weight; affects a stated result. Found by  (? at , 2026-10-23, backfill from earlier reviews (claude opus)).
@@ -12070,6 +12155,15 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 ## STACKS
 
 - **Misprint** at Duality for Schemes, Lemma 48.29.1, printed p.77 (STACKS line 3647): the source says the presentation matrix has rank r=r₀−r₁ when its determinant map is invertible; it should be have rank r₁; for ranks (r₁,r₀)=(1,3), the required rank is 1, not 2; affects the proof; <!-- tauceti-roadmap-review {"agent": "codex", "head": "fef173649da81183d384ef317d5c9cdae1617236", "job": "RT-DirectSummandsAndBigCohenMacaulay~2a", "model": "gpt-6-astra", "worker": "chris-3"} -->. Found by DirectSummandsAndBigCohenMacaulay (#1452 at fef1736, 2026-10-27, codex gpt-6-astra).
+
+## stacks-04XE
+
+- **Gap** at Lemma 100.10.1, printed page 23: the source says the source omits the proof of unicity of the reduced closed substack with given support; it should be argue through Lemma 100.10.2 applied to the fibre product of two candidates; affects nothing; (the README's route supplies it). <!-- tauceti-roadmap-review {"agent": "claude", "head": "0555065e7f0e768ed1ee4630d2d7f69b394eaf9c", "job": "REV-DESIGN-StackPointsAndResidualGerbes~2", "model": "fable", "worker": "chris-x17"} -->. Found by StackPointsAndResidualGerbes (#7629 at 0555065, 2026-11-07, claude fable).
+
+## stacks-06RD
+
+- **Gap** at Lemma 101.19.2, printed page 36: the source says the proof is omitted; it should be apply the base-change formula for `G_x` to a common field extension of two representatives; affects nothing; (the README's 1.3 API states the argument). <!-- tauceti-roadmap-review {"agent": "claude", "head": "572e1ca4f96fe28a92477a26f7ccf0389d28a100", "job": "REV-DESIGN-StackPointsAndResidualGerbes~3", "model": "fable", "worker": "chris-x10"} -->. Found by StackPointsAndResidualGerbes (#7629 at 572e1ca, 2026-11-08, claude fable).
+- **Gap** at Lemma 101.51.2, printed page 102: the source says the proof leaves to the reader that the reduced closed substack and the base of the dense open gerbe are locally Noetherian; it should be cite Lemma 101.17.5 for the former and smooth descent along the gerbe (Lemma 101.33.8) for the latter; affects the proof; (R03 adds the step to the roadmap's route). <!-- tauceti-roadmap-review {"agent": "claude", "head": "3f218e374f3ba12521b7cf92df3c55906b4b15b5", "job": "REV-DESIGN-StackPointsAndResidualGerbes~4", "model": "fable", "worker": "chris-x17"} -->. Found by StackPointsAndResidualGerbes (#7629 at 3f218e3, 2026-11-08, claude fable).
 
 ## stacks-projective-picard-review
 
@@ -12579,6 +12673,10 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 - **Misprint** at Introduction, printed p. 2 (Tingley line 72): the source says the alternative braiding is compared with ordinary symmetry at q=0; it should be use q=1; the displayed braiding contains negative powers of q and cannot be evaluated at zero; affects nothing. Found by TemperleyLieb (ERRATA-TemperleyLieb at f3fd371, 2026-10-23, codex gpt-6-astra).
 - **Misprint** at §3A, paragraph following (3), printed p. 6 (Tingley line 219): the source says adjoining a square root to the rational-function field gives C[q¹ᐟ²]; it should be use C(q¹ᐟ²); the polynomial ring does not contain the already required q⁻¹; affects nothing. Found by TemperleyLieb (ERRATA-TemperleyLieb at f3fd371, 2026-10-23, codex gpt-6-astra).
 
+## tmeemt-art15
+
+- **Misprint** at §2 (Treviño's `c₂` table): the source says the page prints a column headed `p₀ = 10⁷` that trevino2015 Table 3 does not contain, and its other columns differ from the paper (`3.5341` for the paper's `3.5751` at `r = 2`, `p₀ = 10²⁰`); it should be the paper's Table 3 with `p₀ ∈ {10¹⁰, 10¹⁵, 10²⁰}`; affects a stated result. Found by ExplicitCharacterSumsAndSieves (#8420 at b9a1276, 2026-11-07, claude fable).
+
 ## tom-Dieck
 
 - **Error** at §13.1, Corollary 13.1.9, p. 321 (tom-Dieck line 13498): the source says the displayed φ_n are a numeration of U_n; it should be apply Lemma 13.1.4 to their zero extensions; for t₁=x,t₂=1−x on [0,1], supp(φ₁)=[0,1] exceeds U₁=[0,1]∖{½}; affects a stated result. Found by CharacteristicClasses (ERRATA-CharacteristicClasses at d077cb4, 2026-10-24, codex gpt-6-astra).
@@ -12600,6 +12698,10 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 ## Treumann–Venkatesh, Functoriality, Smith theory and the Brauer homomorphism (Annals, 2016)
 
 - **Misprint** at §2.10, p. 187: the source says the Hecke action on the permutation module A[S] has kernel h(s,t), which under its own product (2.10.1) is a right action; it should be the transposed kernel h(t,s), the only form yielding a left action and (2.10.2); affects nothing. Found by  (? at , 2026-10-23, backfill from earlier reviews (claude opus)).
+
+## trevino2015
+
+- **Gap** at the proof of Theorem 1, Tables 4–5 (arXiv v2 pp. 14–15, lines 1008–1012), and of Theorem 2, Tables 6–7 (pp. 18–19): the source says the closing constants (46), (47), (58), (59) are evaluated at `p = p₀` as the worst case; the monotonicity in `p` for `p ≥ p₀` is not stated; it should be shown (the bracket in (46) is decreasing in `log p` for `log p ≥ 16` and every `k ≥ 1/30`, and `A`, `B` increase with `p`); affects the proof. Found by ExplicitCharacterSumsAndSieves (#8420 at b9a1276, 2026-11-07, claude fable).
 
 ## Trudgian
 

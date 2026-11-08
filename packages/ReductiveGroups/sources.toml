@@ -290,3 +290,21 @@ licence_class = "none"
 status = "uncertified"
 version_note = "paywalled; cited by its locator without the text"
 cited_for = ["7"]
+
+[[source]]
+id = "conrad-adelic"
+authors = "Brian Conrad"
+title = "Weil and Grothendieck approaches to adelic points"
+year = 2012
+venue = "L'Enseignement Mathématique 58 (2012), 61–97"
+locator_scheme = "theorem"
+locator = "Proposition 3.1"
+url = "https://math.stanford.edu/~conrad/papers/adelictop.pdf"
+fetched_from = "https://math.stanford.edu/~conrad/papers/adelictop.pdf"
+fetched_at = "2026-11-08T03:13:15Z"
+sha256 = "fe4a9193aff4ef575665b40971f3da32f850a74d87b3f2d0fa28bba26b9cbabb"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-08"
+cited_for = ["3A.5"]
+version_note = "author's version dated 31 December 2011; page numbers are those of that version"

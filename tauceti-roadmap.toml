@@ -97,7 +97,7 @@ forbid_mathlib_subimports = true
 forbidden_patterns = []
 # File (relative to the state directory) listing roadmap names that must never be cited, one per
 # line: dropped or abandoned roadmaps. Empty = none.
-dropped_names_file = ""
+dropped_names_file = "dropped-names.txt"   # names our roadmaps never cite as suppliers (other authors' pull requests whose material we own ourselves): the gate refuses a mention
 # Regular expressions for paths outside TauCetiRoadmap/<Name>/ that a port pull request may
 # still touch. The default (empty) means: the outside-folder diff must be empty.
 outside_folder_allow = []
@@ -224,7 +224,8 @@ open-repository = ["arxiv.org", ".arxiv.org", "hal.science", ".hal.science", ".a
                    "gdz.sub.uni-goettingen.de", "eudml.org", ".eudml.org", "projecteuclid.org",
                    "stacks.math.columbia.edu", "zbmath.org", ".zbmath.org",
                    "mathnet.ru", ".mathnet.ru", "geodesic.mathdoc.fr",
-                   "e-periodica.ch", ".e-periodica.ch", "jmilne.org", ".jmilne.org"]
+                   "e-periodica.ch", ".e-periodica.ch", "jmilne.org", ".jmilne.org",
+                   "hexagonmath.org", ".hexagonmath.org"]   # the Hexagon Mathematics Foundation archive (CC BY 4.0)
 publisher-open = ["doi.org", "www.ams.org/journals/"]   # subscription publishers are not open by default; add a host only when its content is open
 author-page = ["jmilne.org", ".jmilne.org", "users.renyi.hu"]
 institutional = ["users.renyi.hu"]   # the Rényi Institute's archive of Erdős's papers

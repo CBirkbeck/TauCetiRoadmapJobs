@@ -155,3 +155,61 @@ licence_class = "author-page"
 status = "certified"
 accessed = "2026-11-06"
 cited_for = ["K2"]
+
+[[source]]
+id = "chevalley-eilenberg"
+locator_scheme = "equation"
+locator = "§23, (23.1)–(23.2), pp. 115–116"
+url = "https://www.ams.org/journals/tran/1948-063-01/S0002-9947-1948-0024908-8/S0002-9947-1948-0024908-8.pdf"
+fetched_from = "https://www.ams.org/journals/tran/1948-063-01/S0002-9947-1948-0024908-8/S0002-9947-1948-0024908-8.pdf"
+fetched_at = "2026-11-07T15:53:44Z"
+sha256 = "52168b752d0c3f9c7c7892b96fcf637732a61abce5a2f8ebe544b67f67b77795"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-11-07"
+cited_for = ["K8"]
+
+[[source]]
+id = "raghunathan-discrete-subgroups"
+authors = "M. S. Raghunathan"
+title = "Discrete Subgroups of Lie Groups"
+year = 1972
+doi = "10.1007/978-3-642-86426-1"
+locator_scheme = "theorem"
+locator = "Theorem 1.13, p. 23; Corollary 1, p. 31"
+url = "https://doi.org/10.1007/978-3-642-86426-1"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["K8"]
+
+[[source]]
+id = "griffiths-harris"
+authors = "Phillip Griffiths, Joseph Harris"
+title = "Principles of Algebraic Geometry"
+year = 1978
+venue = "Wiley Classics Library edition 1994"
+doi = "10.1002/9781118032527"
+locator_scheme = "chapter"
+locator = "Chapter 0, §§1–2"
+url = "https://doi.org/10.1002/9781118032527"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled (the DOI landing page at Wiley answers HTTP 403); cited by its locator without the text"
+cited_for = ["K3", "K6"]
+
+[[source]]
+id = "hormann-steinbauer-distributions"
+authors = "Günther Hörmann, Roland Steinbauer"
+title = "Lecture Notes on the Theory of Distributions"
+year = 2009
+locator_scheme = "theorem"
+locator = "Theorem 1.70, p. 35; Theorem 4.22, pp. 89-90"
+url = "https://mat.univie.ac.at/~stein/teaching/courses/SoSem09/distrvo.pdf"
+fetched_from = "https://mat.univie.ac.at/~stein/teaching/courses/SoSem09/distrvo.pdf"
+fetched_at = "2026-11-08T14:24:50Z"
+sha256 = "56f9d146c815af308ee8a0f3e2fb8e0c4038e50b241e6168b304600df4b2b0a8"
+licence_class = "institutional"
+status = "certified"
+accessed = "2026-11-08"
+cited_for = ["K5a.DistributionLocalStructure"]

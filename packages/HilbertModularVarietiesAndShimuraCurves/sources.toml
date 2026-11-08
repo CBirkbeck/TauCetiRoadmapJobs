@@ -1,0 +1,78 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "HilbertModularVarietiesAndShimuraCurves"
+
+[[source]]
+id = "Voi21"
+authors = "John Voight"
+title = "Quaternion Algebras"
+year = 2021
+venue = "Graduate Texts in Mathematics 288, Springer"
+doi = "10.1007/978-3-030-56694-4"
+version_note = "author edition v1.0.5 read; locators are theorem numbers, its page numbers differ from the published book"
+locator_scheme = "theorem"
+locator = "Example 41.3.16"
+url = "https://jvoight.github.io/quat-book-v1.0.5.pdf"
+fetched_from = "https://jvoight.github.io/quat-book-v1.0.5.pdf"
+fetched_at = "2026-11-07T15:02:36Z"
+sha256 = "7386db0c57915a099af2cf60042b5284a71309a3785a67b4aa0f76002053babc"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-07"
+cited_for = ["R18.5.16a", "R18.5.16c"]
+
+[[source]]
+id = "Zha14"
+authors = "Wei Zhang"
+title = "Selmer groups and the indivisibility of Heegner points"
+year = 2014
+venue = "Cambridge Journal of Mathematics 2 (2014), 191-253"
+locator_scheme = "section"
+locator = "§3.4"
+url = "https://intlpress.com/site/pub/files/_fulltext/journals/cjm/2014/0002/0002/CJM-2014-0002-0002-a002.pdf"
+fetched_from = "https://intlpress.com/site/pub/files/_fulltext/journals/cjm/2014/0002/0002/CJM-2014-0002-0002-a002.pdf"
+fetched_at = "2026-11-07T15:02:37Z"
+sha256 = "698eb8a6d2297684c683c4c3f43a195cac1d8752ef0c8362ab90c74f5b3792ec"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-11-07"
+cited_for = ["R18.5.17a"]
+
+[[source]]
+id = "MS19"
+authors = "Jeff Manning, Jack Shotton"
+title = "Ihara's lemma for Shimura curves over totally real fields via patching"
+year = 2019
+venue = "Mathematische Annalen 379 (2020) 187-234"
+doi = "10.1007/s00208-020-02048-8"
+arxiv = "1907.06043v2"
+locator_scheme = "section"
+locator = "§6.2, Theorem 6.8 and its proof; §2.11"
+url = "https://arxiv.org/abs/1907.06043v2"
+fetched_from = "https://arxiv.org/pdf/1907.06043v2"
+fetched_at = "2026-11-07T19:46:51Z"
+sha256 = "3ae8ca9200d86d2e03505e54afcfb0318bf8951ddb212a9083a384adb1eb5917"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-07"
+version_note = "arXiv v2"
+cited_for = ["R18.3.8", "R18.4.7", "R18.4.8", "R18.4.9", "R18.4.10", "R18.4.11", "R18.4.14", "R18.4.15", "R18.4.16", "R18.4.17", "R18.4.18", "R18.4.19", "R18.4.20", "R18.4.21", "R18.4.22", "R18.4.23", "R18.4.24", "R18.4.27", "R18.4.28", "R18.4.29", "R18.4.30", "R18.4.31", "R18.4.32", "R18.4.33"]
+
+[[source]]
+id = "Sai09"
+authors = "Takeshi Saito"
+title = "Hilbert modular forms and p-adic Hodge theory"
+year = 2006
+venue = "Compositio Math. 145 (2009) 1081-1113"
+doi = "10.1112/S0010437X09004175"
+arxiv = "math/0612077v2"
+locator_scheme = "section"
+locator = "§§4–5"
+url = "https://arxiv.org/abs/math/0612077v2"
+fetched_from = "https://arxiv.org/pdf/math/0612077v2"
+fetched_at = "2026-11-07T19:46:57Z"
+sha256 = "fb5b69b76d2257ce20f47366c4bd165ccdb571333e7f25a4ed6e92dbb4b55df7"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-07"
+version_note = "arXiv v2"
+cited_for = ["R18.3.29", "R18.4.24a", "R18.4.27", "R18.4.34", "R18.4.35"]

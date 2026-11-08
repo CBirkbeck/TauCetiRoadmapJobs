@@ -1,0 +1,4 @@
+{"review": {"status": "needs_changes", "reviewer": "independent-review-PRREVIEW-AnalyticStableMaps~5",
+            "head": "36817fc3ed3be860984e74ea947d2949c79fb113", "pr": 987, "folder": "AnalyticStableMaps", "date": "2026-11-07",
+            "findings": 4, "blocking": 1,
+            "notes": "Full review. All 7 previous findings repaired. Gate OK; depcheck 0 problems; lake env lean exit 0 (2 sorry). Seeded sample (15 targets) checked against pardon13 and wendl at their locators; ImplicitAtlases at its open head, main suppliers and pinned Tau Ceti declarations resolved. R01 (P2): the stability theorem of section 1.2 is statable on the pinned NodalGluing carrier (probe elaborates) but absent. R02-R04 (P3): false Layer 5 Examples on r_alpha, pinned NodalGluing and J-holomorphic energy results not cited, neck Check missing 2pi."}}

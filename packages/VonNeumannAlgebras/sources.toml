@@ -1,0 +1,226 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "VonNeumannAlgebras"
+
+[[source]]
+id = "hiai-lectures"
+authors = "Fumio Hiai"
+title = "Concise lectures on selected topics of von Neumann algebras"
+year = 2020
+arxiv = "2004.02383v1"
+locator_scheme = "theorem"
+locator = "Theorem 6.5"
+url = "https://arxiv.org/abs/2004.02383v1"
+fetched_from = "https://arxiv.org/pdf/2004.02383v1"
+fetched_at = "2026-11-07T13:08:13Z"
+sha256 = "a287a32777b854ad635349f1c4b0988111df90ca5d65d7bbcf5d904fef66790c"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-07"
+version_note = "arXiv v1"
+cited_for = ["13.1"]
+
+[[source]]
+id = "arveson-1969"
+authors = "William B. Arveson"
+title = "Subalgebras of C*-algebras"
+year = 1969
+venue = "Acta Mathematica 123"
+doi = "10.1007/BF02392388"
+locator_scheme = "theorem"
+locator = "Theorem 1.2.3"
+url = "https://doi.org/10.1007/BF02392388"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["13.1"]
+
+[[source]]
+id = "anantharaman-popa"
+locator_scheme = "section"
+locator = "10.2"
+url = "https://www.math.ucla.edu/~popa/Books/IIun.pdf"
+fetched_from = "https://www.math.ucla.edu/~popa/Books/IIun.pdf"
+fetched_at = "2026-11-07T13:08:26Z"
+sha256 = "a8cfb540a4d9154a4f6e662dfad6f0ecdf5e92a34130e3b5b81b51ce674b1726"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-07"
+cited_for = ["13.2"]
+
+[[source]]
+id = "connes-feldman-weiss"
+locator_scheme = "theorem"
+locator = "Theorem 10"
+url = "https://archives.ihes.fr/files/original/57f3fbe1d1911e34cb972047e46ca38b.pdf"
+fetched_from = "https://archives.ihes.fr/files/original/57f3fbe1d1911e34cb972047e46ca38b.pdf"
+fetched_at = "2026-11-07T13:13:09Z"
+sha256 = "edaed0fbd5639ff73914779e4e723a27a4f8b1ec479aa3ce24f10e4d6d7fa5a1"
+licence_class = "institutional"
+status = "certified"
+accessed = "2026-11-07"
+cited_for = ["13.2"]
+
+[[source]]
+id = "haagerup-1985"
+authors = "Uffe Haagerup"
+title = "A new proof of the equivalence of injectivity and hyperfiniteness for factors on a separable Hilbert space"
+year = 1985
+venue = "Journal of Functional Analysis 62"
+doi = "10.1016/0022-1236(85)90002-3"
+locator_scheme = "theorem"
+locator = "Theorem 2.2"
+url = "https://doi.org/10.1016/0022-1236(85)90002-3"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["13.2"]
+
+[[source]]
+id = "haagerup-1987"
+authors = "Uffe Haagerup"
+title = "Conne’s bicentralizer problem and uniqueness of the injective factor of type III1"
+year = 1987
+venue = "Acta Mathematica 158"
+doi = "10.1007/BF02392257"
+locator_scheme = "theorem"
+locator = "Theorem 2.3"
+url = "https://doi.org/10.1007/BF02392257"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["13.2"]
+
+[[source]]
+id = "haagerup-2016"
+authors = "Uffe Haagerup"
+title = "On the uniqueness of injective III$_1$ factor"
+year = 2016
+arxiv = "1606.03156v1"
+locator_scheme = "theorem"
+locator = "Theorem 1.1"
+url = "https://arxiv.org/abs/1606.03156v1"
+fetched_from = "https://arxiv.org/pdf/1606.03156v1"
+fetched_at = "2026-11-07T13:08:36Z"
+sha256 = "da18ceba626f8400412769e83eaab35c963946b164410b9408963a873556f45e"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-07"
+version_note = "arXiv v1"
+cited_for = ["13.2"]
+
+[[source]]
+id = "connes-stormer-1978"
+authors = "Alain Connes, Erling Størmer"
+title = "Homogeneity of the state space of factors of type III1"
+year = 1978
+venue = "Journal of Functional Analysis 28"
+doi = "10.1016/0022-1236(78)90085-X"
+locator_scheme = "theorem"
+locator = "Theorem 4"
+url = "https://doi.org/10.1016/0022-1236(78)90085-X"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["13.2"]
+
+[[source]]
+id = "jones-vna"
+locator_scheme = "theorem"
+locator = "Theorem 5.2.1"
+url = "https://math.berkeley.edu/~vfr/VonNeumann2009.pdf"
+fetched_from = "https://math.berkeley.edu/~vfr/VonNeumann2009.pdf"
+fetched_at = "2026-11-07T13:10:53Z"
+sha256 = "69b0850316db1efe424433f432e5f817adabaabff80c7a9029a4607a2b431936"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-07"
+cited_for = ["V1"]
+
+[[source]]
+id = "peterson-notes"
+locator_scheme = "theorem"
+locator = "Theorem 6.2.1"
+url = "https://math.vanderbilt.edu/peters10/teaching/spring2013/vonNeumannAlgebras.pdf"
+fetched_from = "https://math.vanderbilt.edu/peters10/teaching/spring2013/vonNeumannAlgebras.pdf"
+fetched_at = "2026-11-07T13:10:56Z"
+sha256 = "5a30c5db90bd240415c6c095ac426c6cd307ec8e681768aa0bea777e9191fb7c"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-07"
+cited_for = ["13.1"]
+
+[[source]]
+id = "houdayer"
+locator_scheme = "theorem"
+locator = "Theorem 3.1"
+url = "https://cyrilhoudayer.com/wp-content/uploads/2014/09/vn-graduate-course.pdf"
+fetched_from = "https://cyrilhoudayer.com/wp-content/uploads/2014/09/vn-graduate-course.pdf"
+fetched_at = "2026-11-07T13:10:57Z"
+sha256 = "21d589d70ed2ffe81f7684b2ddcc852967b4524b89450b9798ea608f9767e095"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-07"
+cited_for = ["V1"]
+
+[[source]]
+id = "tomiyama-1957"
+locator_scheme = "theorem"
+locator = "Theorem 1"
+url = "https://projecteuclid.org/journals/proceedings-of-the-japan-academy-series-a-mathematical-sciences/volume-33/issue-10/On-the-projection-of-norm-one-in-W--algebras/10.3792/pja/1195524885.pdf"
+fetched_from = "https://projecteuclid.org/journals/proceedings-of-the-japan-academy-series-a-mathematical-sciences/volume-33/issue-10/On-the-projection-of-norm-one-in-W--algebras/10.3792/pja/1195524885.pdf"
+fetched_at = "2026-11-07T13:10:57Z"
+sha256 = "9abeb0fc351b43888881a33157148742f8d3bb85b02184e40742ca2e09dd0416"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-07"
+cited_for = ["13.1"]
+
+[[source]]
+id = "haagerup-1989"
+locator_scheme = "section"
+locator = "2"
+url = "https://msp.org/pjm/1989/137-2/pjm-v137-n2-p03-s.pdf"
+fetched_from = "https://msp.org/pjm/1989/137-2/pjm-v137-n2-p03-s.pdf"
+fetched_at = "2026-11-07T13:11:06Z"
+sha256 = "c02947fff3629e409a5bd46a3494e9dda923ed9c7c646bf79023cb1d2b217319"
+licence_class = "institutional"
+status = "certified"
+accessed = "2026-11-07"
+cited_for = ["13.2"]
+
+[[source]]
+id = "bunce-wright-1992"
+authors = "L. J. Bunce, J. D. Maitland Wright"
+title = "The Mackey-Gleason Problem"
+year = 1992
+venue = "Bull. Amer. Math. Soc. (N.S.) 26 (1992) 288-293"
+arxiv = "math/9204228v1"
+locator_scheme = "theorem"
+locator = "Theorem A"
+url = "https://arxiv.org/abs/math/9204228v1"
+fetched_from = "https://arxiv.org/pdf/math/9204228v1"
+fetched_at = "2026-11-08T09:34:12Z"
+sha256 = "967e91a369f03715cbf1c47748a20aba386a43ad2abfb0c73b52a113ca0b1fa3"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-08"
+version_note = "arXiv v1, the paper as published, same numbering"
+cited_for = ["V12.J.Scalar"]
+
+[[source]]
+id = "hamhalter-2014"
+authors = "Jan Hamhalter"
+title = "Dye's Theorem and Gleason's Theorem for AW*-algebras"
+year = 2014
+arxiv = "1408.4597v1"
+locator_scheme = "theorem"
+locator = "Theorem 4.3"
+url = "https://arxiv.org/abs/1408.4597v1"
+fetched_from = "https://arxiv.org/pdf/1408.4597v1"
+fetched_at = "2026-11-08T09:34:18Z"
+sha256 = "9f8080582fa8a19032a38b748425e7af3f6991f203e32fe92fe9371215faef8b"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-08"
+version_note = "arXiv v1"
+cited_for = ["V12.J.Dye"]

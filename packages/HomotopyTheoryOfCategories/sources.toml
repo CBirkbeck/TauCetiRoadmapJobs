@@ -61,3 +61,57 @@ licence_class = "none"
 status = "uncertified"
 version_note = "paywalled; cited by its locator without the text"
 cited_for = ["12.5"]
+
+[[source]]
+id = "arxiv_1511_04809"
+authors = "Philip S. Hirschhorn, Ismar Volic"
+title = "Functors between Reedy model categories of diagrams"
+year = 2015
+arxiv = "1511.04809v3"
+locator_scheme = "section"
+locator = "Reedy category definition"
+url = "https://arxiv.org/abs/1511.04809v3"
+fetched_from = "https://arxiv.org/pdf/1511.04809v3"
+fetched_at = "2026-11-07T18:30:33Z"
+sha256 = "4f14192c9285ae721756df6bd0f08257391f3fa3891f8204ecef9d398924069f"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-07"
+version_note = "arXiv v3"
+cited_for = ["8.3"]
+
+[[source]]
+id = "arxiv_1507_01065"
+authors = "Michael Shulman"
+title = "Reedy categories and their generalizations"
+year = 2015
+arxiv = "1507.01065v1"
+locator_scheme = "section"
+locator = "Reedy category definition"
+url = "https://arxiv.org/abs/1507.01065v1"
+fetched_from = "https://arxiv.org/pdf/1507.01065v1"
+fetched_at = "2026-11-07T18:30:40Z"
+sha256 = "e687833c478f93cc905b45683458f45aa84c3cc1a3df6f40c1eb58171d204ce9"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-07"
+version_note = "arXiv v1"
+cited_for = ["8.3"]
+
+[[source]]
+id = "arxiv_1510_04392"
+authors = "Aaron Mazel-Gee"
+title = "Model $\\infty$-categories II: Quillen adjunctions"
+year = 2015
+arxiv = "1510.04392v1"
+locator_scheme = "section"
+locator = "Reedy categories"
+url = "https://arxiv.org/abs/1510.04392v1"
+fetched_from = "https://arxiv.org/pdf/1510.04392v1"
+fetched_at = "2026-11-07T18:31:20Z"
+sha256 = "8b8adc0133d10c4ee76a3aba7c69a1dd3e1e1bbce6ce53b110c6a7c01072c110"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-07"
+version_note = "arXiv v1"
+cited_for = ["8.3"]

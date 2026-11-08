@@ -1,0 +1,161 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "SurfaceGroupCharacterVarieties"
+
+[[source]]
+id = "Richardson1988"
+authors = "R. W. Richardson"
+title = "Conjugacy classes of n-tuples in Lie algebras and algebraic groups"
+year = 1988
+doi = "10.1215/S0012-7094-88-05701-8"
+locator_scheme = "theorem"
+locator = "Theorem 3.6"
+url = "https://doi.org/10.1215/S0012-7094-88-05701-8"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator (Theorem 3.6) without the text"
+resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/6024#issuecomment-6712166115"
+cited_for = ["6.5: closed simultaneous-conjugation orbits and reductive Zariski closures (cited by its locator)"]
+
+[[source]]
+id = "RichardsonSlodowy1990"
+authors = "R. W. Richardson, P. J. Slodowy"
+title = "Minimum Vectors for Real Reductive Algebraic Groups"
+year = 1990
+doi = "10.1112/jlms/s2-42.3.409"
+locator_scheme = "theorem"
+locator = "§4 (closed orbits and minimal vectors); §7 (real points: G(ℝ)-orbit closed iff G(ℂ)-orbit closed); §9 (Hausdorff quotient of the closed-orbit real points)"
+licence_class = "none"
+status = "waived"
+resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/6024#issuecomment-6712166115"
+cited_for = ["5.4: minimal vectors", "6.6: real and complex closed orbits", "7.1: Hausdorff character variety"]
+
+[[source]]
+id = "FarbMargalit2012"
+authors = "Benson Farb, Dan Margalit"
+title = "A Primer on Mapping Class Groups"
+year = 2012
+doi = "10.1515/9781400839049"
+locator_scheme = "chapter"
+locator = "Ch. 1, §§1.1, 1.4; Ch. 2, §§2.1–2.2; Ch. 4, §4.2; Ch. 8, §8.1 (Theorem 8.1)"
+licence_class = "none"
+status = "waived"
+resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/6024#issuecomment-6712166115"
+cited_for = ["1.1: Out(π₁) as the target of the mapping class group", "2.1: isotopy and paths of homeomorphisms", "2.2, 2.6: punctures versus marked points", "2.4: surface groups", "2.5: Birman exact sequence", "3.1–3.4: the outer action and Dehn–Nielsen–Baer"]
+
+[[source]]
+id = "Knapp2002"
+authors = "Anthony W. Knapp"
+title = "Lie Groups Beyond an Introduction, 2nd ed., Progress in Mathematics 140"
+year = 2002
+locator_scheme = "chapter"
+locator = "Chapter VI, §§1–2 (Theorems 6.16, 6.31)"
+licence_class = "none"
+status = "waived"
+resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/6024#issuecomment-6712166115"
+cited_for = ["5.1–5.2: real forms and Cartan involutions"]
+
+[[source]]
+id = "LandesmanLitt2024"
+authors = "Aaron Landesman, Daniel Litt"
+title = "Canonical representations of surface groups"
+year = 2022
+arxiv = "2205.15352v4"
+locator_scheme = "section"
+locator = "lines 41–50 (Definition 1.1.1); lines 473–475 (PMod of index n!); lines 503–515 (Lemma 2.0.1)"
+url = "https://arxiv.org/abs/2205.15352v4"
+fetched_from = "https://arxiv.org/pdf/2205.15352v4"
+fetched_at = "2026-11-08T09:51:38Z"
+sha256 = "4cb511ba40675aa6899b351f2ee27eb9487b4a21f65ec8000c1f2cc1a5107ceb"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-08"
+version_note = "arXiv v4"
+cited_for = ["1.2–1.3: conjugacy classes and the outer action", "2.3: PMod of index n!", "2.5: pure Birman sequence as used downstream", "3.3, 3.5: the Mod_{g,n}-action on conjugacy classes"]
+
+[[source]]
+id = "BCGGO2024"
+authors = "Steve Bradlow, Brian Collier, Oscar Garcia-Prada, Peter Gothen, André Oliveira"
+title = "A general Cayley correspondence and higher Teichmüller spaces"
+year = 2021
+arxiv = "2101.09377v2"
+locator_scheme = "section"
+locator = "lines 466–481 (§2.3, real forms and Cartan involutions); lines 2706–2726 (§8.1, Definition 8.1, Example 8.2)"
+url = "https://arxiv.org/abs/2101.09377v2"
+fetched_from = "https://arxiv.org/pdf/2101.09377v2"
+fetched_at = "2026-11-08T09:51:50Z"
+sha256 = "c981234d6e1636c1d894834c3b545c35c8448e8a934db5120fa2b538fa6beaf8"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-08"
+version_note = "arXiv v2"
+cited_for = ["4.2–4.3: Hom(π₁Σ, G^ℝ)", "5.1–5.2: real forms as fixed points of antiholomorphic involutions", "6.1, 6.7: reductive representations", "7.1, 7.4: the character variety and the Fuchsian locus"]
+
+[[source]]
+id = "Sikora2012"
+authors = "Adam S. Sikora"
+title = "Character Varieties"
+year = 2009
+venue = "Trans. of AMS 364 (2012) 5173--5208"
+arxiv = "0902.2589v3"
+locator_scheme = "section"
+locator = "line 228 (Proposition 8); lines 262–268 (Corollary 9); lines 363–364 (Corollary 17); lines 572–586 (Theorem 30); lines 823–845 (§11, Example 48)"
+url = "https://arxiv.org/abs/0902.2589v3"
+fetched_from = "https://arxiv.org/pdf/0902.2589v3"
+fetched_at = "2026-11-08T09:51:59Z"
+sha256 = "db4f2de2daf6a5c6b6b0747f3e3f659870b292add5f4fa4a50ebafe172a76cc9"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-08"
+version_note = "arXiv v3"
+cited_for = ["4.1: Hom(Γ, G) as a closed subset of Hom(F, G)", "6.3–6.7: completely reducible representations and closed orbits", "7.2: the affine quotient and the unique closed orbit per fibre", "7.3: images of completely reducible subgroups"]
+
+[[source]]
+id = "Goldman1984"
+authors = "William M Goldman"
+title = "The symplectic nature of fundamental groups of surfaces"
+year = 1984
+venue = "Advances in Mathematics 54"
+doi = "10.1016/0001-8708(84)90040-9"
+locator_scheme = "section"
+locator = "§1 (the space Hom(π, G)/G and its topology)"
+url = "https://doi.org/10.1016/0001-8708(84)90040-9"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["References: background for the space Hom(π, G)/G; no target rests on it"]
+
+[[source]]
+id = "BohmLafuente2021"
+authors = "Christoph Böhm, Ramiro A. Lafuente"
+title = "Real geometric invariant theory"
+year = 2017
+arxiv = "1701.00643v3"
+locator_scheme = "theorem"
+locator = "definition (1), lines 52–62; Theorem 1.1, lines 77–88; examples, lines 172–193; Lemma 5.1, line 417; Corollary 5.5, line 445; Lemma 6.3, line 518; Corollary 6.4, line 562; Lemma 6.5, line 568; Corollary A.2, line 1050"
+url = "https://arxiv.org/abs/1701.00643v3"
+fetched_from = "https://arxiv.org/pdf/1701.00643v3"
+fetched_at = "2026-11-08T10:30:10Z"
+sha256 = "55f2da6524be20b8b2c906f0848a42eec14d23a22bfde06f60336cc95141f500"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-08"
+version_note = "arXiv v3 (2017), the version read; published in Differential Geometry in the Large, LMS Lecture Note Ser. 463 (2021), numbering of the published version not checked"
+cited_for = ["5.3: real reductive linear groups", "5.4: the real Kempf–Ness theorem", "6.6, 7.1: closed real orbits and the Hausdorff quotient"]
+
+[[source]]
+id = "BateMartinRohrle2005"
+authors = "Michael Bate, Benjamin Martin, Gerhard Röhrle"
+title = "A Geometric Approach to Complete Reducibility"
+year = 2005
+arxiv = "math/0408109v2"
+locator_scheme = "theorem"
+locator = "§2.4, line 263; Lemma 2.6, line 267; Lemma 2.12, line 355; Proposition 2.13, line 379; Corollary 3.7, line 510; Theorem 3.46, line 861"
+url = "https://arxiv.org/abs/math/0408109v2"
+fetched_from = "https://arxiv.org/pdf/math/0408109v2"
+fetched_at = "2026-11-08T10:44:49Z"
+sha256 = "6d0342a79f8178a51f0dcded98d02952453238136a709eec0cfbc0fce9caae58"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-08"
+version_note = "arXiv v2 (2004), the version read; published Invent. Math. 161 (2005), 177–218"
+cited_for = ["6.3–6.4: reductive closures and complete reducibility", "6.5: closed orbits of tuples", "6.7: irreducibility and products"]

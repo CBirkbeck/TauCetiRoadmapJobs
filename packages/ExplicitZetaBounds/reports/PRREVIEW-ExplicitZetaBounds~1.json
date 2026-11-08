@@ -1,0 +1,13 @@
+{
+  "review": {
+    "status": "needs_changes",
+    "reviewer": "independent-review-PRREVIEW-ExplicitZetaBounds~1",
+    "head": "d7f47a1147b6eb954d497f7a39bb2cc744e2fb0c",
+    "pr": 1954,
+    "folder": "ExplicitZetaBounds",
+    "date": "2026-11-08",
+    "findings": 9,
+    "blocking": 6,
+    "notes": "Gate at d7f47a1: every check passed; depcheck: 244 roadmaps, 2461 edges, 0 problems; lake env lean on Suggested.lean: 20 sorry warnings only; 25 elaborated signatures compared with the README (no lost binders); one-tactic probe leaves all 20 theorems open (no padding). Seeded sample verified at its locators: 1.2, 1.3, 2.4 (DLMF uncertified, formulas re-derived), 2.7, 4.5a, 4.6, 6.4, 6.6, 7.1 (Davenport uncertified, re-derived), 7.3, 7.5, 7.8, 7.9, 8.1, 9.2, plus the sources of all 20 headlines. Numerical checks: Gamma two-sided bound on 242 points; Rademacher for 4 characters; HPY, Patel, HLY, Yang, Richert on t in [3,60]; Ramare at q=104; BMOR low zeros for q<=11; Platt character count. 85 Mathlib names checked with #check, 9 Tau Ceti declarations opened; about 40 cross-roadmap citations resolved. Findings: R01 P1 (0.5 admits n=0); R02 P2 (7.3 criterion constant and smoothing); R03 P2 (two headlines lack an RH-type hypothesis); R04 P2 (van der Corput toolkit owned also by ExplicitCharacterSumsAndSieves); R05 P2 (consumer gaps unanswered, RH(H) restated downstream); R06 P2 (Dirichlet densities and quadratic L(1) lower bound statable, absent); R07-R09 P3 (Nemes constant, CNT 4.22 range, locator numbering)."
+  }
+}

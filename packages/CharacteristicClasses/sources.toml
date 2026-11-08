@@ -146,3 +146,38 @@ licence_class = "none"
 status = "uncertified"
 version_note = "paywalled; cited by its locator without the text"
 cited_for = ["C2.1"]
+
+[[source]]
+id = "alekseev-meinrenken-chern-weil"
+authors = "A. Alekseev, E. Meinrenken"
+title = "Lie theory and the Chern-Weil homomorphism"
+year = 2003
+venue = "Ann. Sci. Ecole Norm. Sup. (4) 38 (2005), no. 2, 303--338"
+arxiv = "math/0308135v1"
+locator_scheme = "section"
+locator = "3.1"
+url = "https://arxiv.org/abs/math/0308135v1"
+fetched_from = "https://arxiv.org/pdf/math/0308135v1"
+fetched_at = "2026-11-07T23:48:42Z"
+sha256 = "269729fefe71c980063fa7cba7f815dfdd16b1c7dfd370409bc4ea78e83f7df8"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-07"
+version_note = "arXiv v1"
+cited_for = ["C5a.3"]
+
+[[source]]
+id = "hatcher-at"
+authors = "Allen Hatcher"
+title = "Algebraic Topology"
+year = 2002
+locator_scheme = "theorem"
+locator = "Theorem 3C.4, Corollary 4D.3, Section 3.G"
+url = "https://pi.math.cornell.edu/~hatcher/AT/AT.pdf"
+fetched_from = "https://pi.math.cornell.edu/~hatcher/AT/AT.pdf"
+fetched_at = "2026-11-07T23:50:13Z"
+sha256 = "bebb3032bf9021b956da3bd070eb6c67dc662cf849be9cdf6679f677560e5618"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-07"
+cited_for = ["C5a.2", "C5a.4", "C5a.5", "C5a.7"]

@@ -1,0 +1,286 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "SchubertGeometry"
+
+[[source]]
+id = "Littelmann1995"
+authors = "Peter Littelmann"
+title = "Paths and root operators in representation theory"
+year = 1995
+venue = "Annals of Mathematics 142, 499-525"
+doi = "10.2307/2118553"
+locator_scheme = "theorem"
+locator = "Proposition 4.7"
+url = "https://www.mi.uni-koeln.de/~littelma/papers/RootOperator.pdf"
+fetched_from = "https://www.mi.uni-koeln.de/~littelma/papers/RootOperator.pdf"
+fetched_at = "2026-11-07T15:19:20Z"
+sha256 = "08b256fd0b8c91297a607db08fa7f5671821a71dd792b181442379484667a6d3"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-07"
+cited_for = ["4.2"]
+
+[[source]]
+id = "BrionFlags"
+authors = "Michel Brion"
+title = "Lectures on the geometry of flag varieties"
+year = 2004
+arxiv = "math/0410240v1"
+locator_scheme = "theorem"
+locator = "Proposition 1.4.5"
+url = "https://arxiv.org/abs/math/0410240v1"
+fetched_from = "https://arxiv.org/pdf/math/0410240v1"
+fetched_at = "2026-11-07T15:19:25Z"
+sha256 = "88c50482789663441d6e6a0b73581203499566ed88112238673dd28f1079795c"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-07"
+version_note = "arXiv v1"
+cited_for = ["7.2"]
+
+[[source]]
+id = "CFL"
+authors = "Rocco Chirivì, Xin Fang, Peter Littelmann"
+title = "LS Algebras, Valuations and Schubert Varieties"
+year = 2022
+venue = "Atti Accad. Naz. Lincei Cl. Sci. Fis. Mat. Natur. 33 (2022), no. 4, pp. 925--957"
+arxiv = "2203.12992v1"
+locator_scheme = "theorem"
+locator = "Definition 2.1"
+url = "https://arxiv.org/abs/2203.12992v1"
+fetched_from = "https://arxiv.org/pdf/2203.12992v1"
+fetched_at = "2026-11-07T15:19:31Z"
+sha256 = "cb33fd65b5f53ae76ac7f68a1861d96a5f068380dad2fc7d4b4f97a42b1d2a10"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-07"
+version_note = "arXiv v1"
+cited_for = ["4.3"]
+
+[[source]]
+id = "KnutsonDemazure"
+authors = "Allen Knutson"
+title = "The Atiyah-Bott formula and the Demazure character formula (Math 261 handout)"
+year = 2002
+locator_scheme = "section"
+locator = "§4.0.2"
+url = "https://pi.math.cornell.edu/~allenk/courses/12spring/6500/notes2/Demazure9.pdf"
+fetched_from = "https://pi.math.cornell.edu/~allenk/courses/12spring/6500/notes2/Demazure9.pdf"
+fetched_at = "2026-11-07T15:19:55Z"
+sha256 = "2002228c025e91ce7cbe5b527c8e3cc17231f32e79578af8fd577a94f64e0619"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-07"
+cited_for = ["3.6"]
+
+[[source]]
+id = "KnutsonBottSamelson"
+authors = "Allen Knutson"
+title = "The Bott-Samelson cranks and Bott-Samelson manifolds (Math 261 handout)"
+year = 2002
+locator_scheme = "section"
+locator = "§1"
+url = "https://pi.math.cornell.edu/~allenk/courses/12spring/6500/notes2/BottSamelsons8.pdf"
+fetched_from = "https://pi.math.cornell.edu/~allenk/courses/12spring/6500/notes2/BottSamelsons8.pdf"
+fetched_at = "2026-11-07T15:20:40Z"
+sha256 = "80eac6dac7015896637d82d09acf126ed2d4639f1ce946ff6a00e939b6529070"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-07"
+cited_for = ["2.1"]
+
+[[source]]
+id = "KnutsonSymplectic"
+authors = "Allen Knutson"
+title = "Symplectic geometry of K/T (Math 261 handout)"
+year = 2002
+locator_scheme = "section"
+locator = "§§1–3"
+url = "https://pi.math.cornell.edu/~allenk/courses/12spring/6500/notes2/symplectic3.pdf"
+fetched_from = "https://pi.math.cornell.edu/~allenk/courses/12spring/6500/notes2/symplectic3.pdf"
+fetched_at = "2026-11-07T15:21:11Z"
+sha256 = "16a6f66092dd87317ae4b26160736bbeaff402a6a432a02b0f7dabc0f607c8ef"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-07"
+cited_for = ["9.7"]
+
+[[source]]
+id = "KnutsonBorelWeil"
+authors = "Allen Knutson"
+title = "Representations of U(n): the Borel-Weil theorem (Math 261 handout)"
+year = 2001
+locator_scheme = "page"
+locator = "pp. 4–5"
+url = "https://pi.math.cornell.edu/~allenk/courses/16spring/BorelWeil.pdf"
+fetched_from = "https://pi.math.cornell.edu/~allenk/courses/16spring/BorelWeil.pdf"
+fetched_at = "2026-11-07T15:21:12Z"
+sha256 = "403e63595bb824bc5638f7738739a9524798847cc0d8ce723c96c7ca9223ef42"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-07"
+cited_for = ["Worked examples"]
+
+[[source]]
+id = "SGA1"
+authors = "Alexander Grothendieck, Michele Raynaud"
+title = "Revêtements étales et groupe fondamental (SGA 1)"
+year = 2002
+arxiv = "math/0206203v2"
+locator_scheme = "theorem"
+locator = "Exposé XII, Theorem 4.4"
+url = "https://arxiv.org/abs/math/0206203v2"
+fetched_from = "https://arxiv.org/pdf/math/0206203v2"
+fetched_at = "2026-11-07T15:21:29Z"
+sha256 = "8e64218d356456c534eebf996940f0f957e43b54f1a080241debe12cbaf60d3c"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-07"
+version_note = "arXiv v2"
+cited_for = ["9.0"]
+
+[[source]]
+id = "MerkurjevEquivariant"
+authors = "Alexander Merkurjev"
+title = "Equivariant K-theory (author draft dated 2000)"
+year = 2000
+version_note = "author draft; locators refer to its numbering, not to the 2005 Handbook of K-theory chapter"
+locator_scheme = "theorem"
+locator = "Proposition 6.5"
+url = "https://www.math.ucla.edu/~merkurev/papers/handbook.pdf"
+fetched_from = "https://www.math.ucla.edu/~merkurev/papers/handbook.pdf"
+fetched_at = "2026-11-07T15:21:32Z"
+sha256 = "e7fc69703115687d60540b067a5a55296729e37321a35e54aca8f4973809d92b"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-07"
+cited_for = ["8.3"]
+
+[[source]]
+id = "Ramanathan1987"
+authors = "A. Ramanathan"
+title = "Equations defining Schubert varieties and Frobenius splitting of diagonals"
+year = 1987
+venue = "Publications Mathematiques de l'IHES 65, 61-90"
+locator_scheme = "theorem"
+locator = "Theorem 3.5"
+url = "https://www.numdam.org/item/PMIHES_1987__65__61_0/"
+fetched_from = "https://www.numdam.org/item/PMIHES_1987__65__61_0.pdf"
+fetched_at = "2026-11-07T15:21:54Z"
+sha256 = "b68f1ecc5d42a476526eb799a05dbd5008dbab3fd03c2362182464e7c0c2cf4d"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-07"
+cited_for = ["5.2"]
+
+[[source]]
+id = "SerreGAGA"
+authors = "Jean-Pierre Serre"
+title = "Geometrie algebrique et geometrie analytique"
+year = 1956
+venue = "Annales de l'Institut Fourier 6, 1-42"
+doi = "10.5802/aif.59"
+version_note = "printed page = scan page - 1"
+locator_scheme = "section"
+locator = "§12"
+url = "https://www.numdam.org/item/AIF_1956__6__1_0/"
+fetched_from = "https://www.numdam.org/item/AIF_1956__6__1_0.pdf"
+fetched_at = "2026-11-07T15:21:56Z"
+sha256 = "9898f985dd6932496e26450bfe0beca8655a937032f545b97cebd88d1bc8eb98"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-07"
+cited_for = ["9.0"]
+
+[[source]]
+id = "ConradReductive"
+authors = "Brian Conrad"
+title = "Reductive group schemes"
+year = 2014
+venue = "Autour des schemas en groupes, vol. I, Panoramas et Syntheses 42-43, Societe Mathematique de France"
+locator_scheme = "theorem"
+locator = "Theorem 2.3.6"
+url = "https://math.stanford.edu/~conrad/papers/luminysga3.pdf"
+fetched_from = "https://math.stanford.edu/~conrad/papers/luminysga3.pdf"
+fetched_at = "2026-11-07T15:22:09Z"
+sha256 = "1a63a17e4ccb7e23263d65f05d93a6651262861e978e9eb0c1c53a01fd59140a"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-07"
+cited_for = ["1.0"]
+
+[[source]]
+id = "Steinberg1975"
+authors = "Robert Steinberg"
+title = "On a theorem of Pittie"
+year = 1975
+venue = "Topology 14"
+doi = "10.1016/0040-9383(75)90025-7"
+locator_scheme = "theorem"
+locator = "Theorem 2.2"
+url = "https://doi.org/10.1016/0040-9383(75)90025-7"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["8.2"]
+
+[[source]]
+id = "Pittie1972"
+authors = "Harsh V. Pittie"
+title = "Homogeneous vector bundles on homogeneous spaces"
+year = 1972
+venue = "Topology 11"
+doi = "10.1016/0040-9383(72)90007-9"
+locator_scheme = "page"
+locator = "pp. 199-203"
+url = "https://doi.org/10.1016/0040-9383(72)90007-9"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["8.2"]
+
+[[source]]
+id = "LLM"
+authors = "V. Lakshmibai, P. Littelmann, P. Magyar"
+title = "Standard monomial theory for Bott-Samelson varieties"
+year = 2002
+venue = "Compositio Mathematica 130"
+doi = "10.1023/a:1014396129323"
+version_note = "author copy on P. Magyar's page; Theorems 4 and 6 numbered as in the published article (pp. 299 and 301), at lines 263 and 338 of this copy"
+locator_scheme = "theorem"
+locator = "Theorem 4"
+url = "https://users.math.msu.edu/users/magyarp/papers/smt-bs-llm.pdf"
+fetched_from = "https://users.math.msu.edu/users/magyarp/papers/smt-bs-llm.pdf"
+fetched_at = "2026-11-07T15:23:31Z"
+sha256 = "11918f6acaffd41707e840ef19ffbbd38ba85e5d871d9b15ff7058a0510a7eb1"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-07"
+cited_for = ["4.6"]
+
+[[source]]
+id = "Jantzen"
+authors = "J. C. Jantzen"
+title = "Representations of Algebraic Groups"
+year = 2003
+venue = "Mathematical Surveys and Monographs 107, American Mathematical Society, second edition"
+locator_scheme = "chapter"
+locator = "Part II, Chapter 14"
+licence_class = "none"
+status = "uncertified"
+version_note = "book; cited by its locator without the text"
+cited_for = ["3.4"]
+
+[[source]]
+id = "MehtaRamanathan1985"
+authors = "V. B. Mehta, A. Ramanathan"
+title = "Frobenius splitting and cohomology vanishing for Schubert varieties"
+year = 1985
+venue = "Annals of Mathematics 122"
+doi = "10.2307/1971368"
+locator_scheme = "page"
+locator = "pp. 27-40"
+url = "https://doi.org/10.2307/1971368"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited only through Ramanathan1987, by its locator without the text"
+cited_for = ["5.1"]

@@ -1,0 +1,200 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "EtaleCohomologyFoundations"
+
+[[source]]
+id = "stacks-0F1P"
+authors = "The Stacks Project Authors"
+title = "The Stacks Project"
+year = 2026
+locator_scheme = "tag"
+locator = "0F1P"
+url = "https://stacks.math.columbia.edu/tag/0F1P"
+fetched_from = "https://stacks.math.columbia.edu/download/etale-cohomology.pdf#nameddest=0F1P"
+fetched_at = "2026-11-08T07:49:24Z"
+sha256 = "71b2eb78422e599bedadb929b22812daac27c0c35510b880acb6c4489a5ea363"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-08"
+cited_for = ["F.2.6"]
+
+[[source]]
+id = "stacks-0F7H"
+authors = "The Stacks Project Authors"
+title = "The Stacks Project"
+year = 2026
+locator_scheme = "tag"
+locator = "0F7H"
+url = "https://stacks.math.columbia.edu/tag/0F7H"
+fetched_from = "https://stacks.math.columbia.edu/download/more-etale.pdf#nameddest=0F7H"
+fetched_at = "2026-11-08T07:49:27Z"
+sha256 = "ad29409a512b8f379ea4a20a7c956a24bf4a64dc020d7eef426fb81b9c40074f"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-08"
+cited_for = ["0.8"]
+
+[[source]]
+id = "stacks-09ED"
+authors = "The Stacks Project Authors"
+title = "The Stacks Project"
+year = 2026
+locator_scheme = "tag"
+locator = "09ED"
+url = "https://stacks.math.columbia.edu/tag/09ED"
+fetched_from = "https://stacks.math.columbia.edu/download/more-algebra.pdf#nameddest=09ED"
+fetched_at = "2026-11-08T07:49:43Z"
+sha256 = "ab69179738e642603ddbde651f2838e1cb5d8711e8bcd7c447cbf02a8bb6a5d2"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-08"
+cited_for = ["F.3a", "F.0.A1"]
+
+[[source]]
+id = "sga1"
+authors = "Alexander Grothendieck, Michele Raynaud"
+title = "Revêtements étales et groupe fondamental (SGA 1)"
+year = 2002
+arxiv = "math/0206203v2"
+locator_scheme = "section"
+locator = "Exposé V §2"
+url = "https://arxiv.org/abs/math/0206203v2"
+fetched_from = "https://arxiv.org/pdf/math/0206203v2"
+fetched_at = "2026-11-08T07:51:09Z"
+sha256 = "8e64218d356456c534eebf996940f0f957e43b54f1a080241debe12cbaf60d3c"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-08"
+version_note = "arXiv v2"
+cited_for = ["F.0.A1", "F.0.A0", "F.0.A2"]
+
+[[source]]
+id = "bhatt-scholze-proetale"
+authors = "Bhargav Bhatt, Peter Scholze"
+title = "The pro-étale topology for schemes"
+year = 2013
+arxiv = "1309.1198v2"
+locator_scheme = "theorem"
+locator = "Proposition 6.8.4"
+url = "https://arxiv.org/abs/1309.1198v2"
+fetched_from = "https://arxiv.org/pdf/1309.1198v2"
+fetched_at = "2026-11-08T07:54:35Z"
+sha256 = "ae0960a28f0f25300211569cd350def057d6c0f781f635694182868e766d3c84"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-08"
+version_note = "arXiv v2; numbering checked against the authors' PDF of the Astérisque 369 version cited in the README"
+cited_for = ["F.4.1", "F.4.3", "F.4.4", "F.4.5", "F.4.6"]
+
+[[source]]
+id = "stacks-0F0V"
+authors = "The Stacks Project Authors"
+title = "The Stacks Project"
+year = 2026
+locator_scheme = "tag"
+locator = "0F0V"
+url = "https://stacks.math.columbia.edu/tag/0F0V"
+fetched_from = "https://stacks.math.columbia.edu/download/etale-cohomology.pdf#nameddest=0F0V"
+fetched_at = "2026-11-08T08:10:28Z"
+sha256 = "71b2eb78422e599bedadb929b22812daac27c0c35510b880acb6c4489a5ea363"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-08"
+cited_for = ["F.3"]
+
+[[source]]
+id = "stacks-09YQ"
+authors = "The Stacks Project Authors"
+title = "The Stacks Project"
+year = 2026
+locator_scheme = "tag"
+locator = "09YQ"
+url = "https://stacks.math.columbia.edu/tag/09YQ"
+fetched_from = "https://stacks.math.columbia.edu/download/etale-cohomology.pdf#nameddest=09YQ"
+fetched_at = "2026-11-08T08:10:37Z"
+sha256 = "71b2eb78422e599bedadb929b22812daac27c0c35510b880acb6c4489a5ea363"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-08"
+cited_for = ["F.4.6", "0.6"]
+
+[[source]]
+id = "stacks-03SW"
+authors = "The Stacks Project Authors"
+title = "The Stacks Project"
+year = 2026
+locator_scheme = "tag"
+locator = "03SW"
+url = "https://stacks.math.columbia.edu/tag/03SW"
+fetched_from = "https://stacks.math.columbia.edu/download/trace.pdf#nameddest=03SW"
+fetched_at = "2026-11-08T12:57:32Z"
+sha256 = "99d5358fe636cb18afa5a81f93c7906995db2a02a15efd742ba90e07cb74c828"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-08"
+cited_for = ["F.10.2", "F.0.1"]
+
+[[source]]
+id = "stacks-09BT"
+authors = "The Stacks Project Authors"
+title = "The Stacks Project"
+year = 2026
+locator_scheme = "tag"
+locator = "09BT"
+url = "https://stacks.math.columbia.edu/tag/09BT"
+fetched_from = "https://stacks.math.columbia.edu/download/proetale.pdf#nameddest=09BT"
+fetched_at = "2026-11-08T12:57:35Z"
+sha256 = "a774ebf71c470b0309c7647abca23de96ad5cc40d336226c8d31681f7a1564a4"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-08"
+cited_for = ["F.4.1", "F.4.3"]
+
+[[source]]
+id = "lrz-relative-poincare"
+authors = "Shizhang Li, Emanuel Reinecke, Bogdan Zavyalov"
+title = "Relative Poincaré duality in nonarchimedean geometry"
+year = 2024
+arxiv = "2410.08200v1"
+locator_scheme = "theorem"
+locator = "Theorem 6.1.1"
+url = "https://arxiv.org/abs/2410.08200v1"
+fetched_from = "https://arxiv.org/pdf/2410.08200v1"
+fetched_at = "2026-11-08T12:57:44Z"
+sha256 = "dd6ff5ffd9bdc522e4d719ae4d248097e4916642b8ed8b8c905ac300bc391767"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-08"
+version_note = "arXiv v1"
+cited_for = ["0.11", "0.9"]
+
+[[source]]
+id = "stacks-0FFP"
+authors = "The Stacks Project Authors"
+title = "The Stacks Project"
+year = 2026
+locator_scheme = "tag"
+locator = "0FFP"
+url = "https://stacks.math.columbia.edu/tag/0FFP"
+fetched_from = "https://stacks.math.columbia.edu/download/categories.pdf#nameddest=0FFP"
+fetched_at = "2026-11-08T13:10:44Z"
+sha256 = "0c5b215939e22e807d605dd1e35149aa3972d5443da8bbabb33d9f43a3db4a51"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-08"
+cited_for = ["F.5"]
+
+[[source]]
+id = "stacks-09C1"
+authors = "The Stacks Project Authors"
+title = "The Stacks Project"
+year = 2026
+locator_scheme = "tag"
+locator = "09C1"
+url = "https://stacks.math.columbia.edu/tag/09C1"
+fetched_from = "https://stacks.math.columbia.edu/download/proetale.pdf#nameddest=09C1"
+fetched_at = "2026-11-08T13:10:49Z"
+sha256 = "a774ebf71c470b0309c7647abca23de96ad5cc40d336226c8d31681f7a1564a4"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-08"
+cited_for = ["F.4.1", "F.4.3"]

@@ -80,3 +80,53 @@ licence_class = "author-page"
 status = "certified"
 accessed = "2026-11-07"
 cited_for = ["0.34"]
+
+[[source]]
+id = "kedlayaant"
+authors = "Kiran S. Kedlaya"
+title = "Notes on analytic number theory"
+year = 2025
+locator_scheme = "section"
+locator = "§§22.1–22.4, pp.127–129"
+url = "https://kskedlaya.org/papers/ant-ptx.pdf"
+fetched_from = "https://kskedlaya.org/papers/ant-ptx.pdf"
+fetched_at = "2026-11-08T14:01:08Z"
+sha256 = "7a934fce8272cedd36ad609f79bbe79af0056320bb1e0bc690c87af990f305be"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-08"
+cited_for = ["2.18a"]
+
+[[source]]
+id = "ramarerumely1996"
+authors = "Olivier Ramaré, Robert Rumely"
+title = "Primes in arithmetic progressions"
+year = 1996
+venue = "Mathematics of Computation 65"
+locator_scheme = "theorem"
+locator = "Theorem 1 and Table 1, Theorem 2.1.1"
+url = "https://ramare-olivier.github.io/Maths/rumely.pdf"
+fetched_from = "https://ramare-olivier.github.io/Maths/rumely.pdf"
+fetched_at = "2026-11-08T14:01:09Z"
+sha256 = "94bd522a40cfa72da87c5d8acc35f5e8e8ce2ea3347acdda5e1114eb880e553d"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-08"
+cited_for = ["0.16"]
+
+[[source]]
+id = "cogdellartin"
+authors = "James W. Cogdell"
+title = "On Artin L-functions"
+year = 2012
+version_note = "author's manuscript on the author page, expanded 2011–2012; page numbers are those of that PDF"
+locator_scheme = "page"
+locator = "pp.12–14, 18"
+url = "https://people.math.osu.edu/cogdell.1/artin-www.pdf"
+fetched_from = "https://people.math.osu.edu/cogdell.1/artin-www.pdf"
+fetched_at = "2026-11-08T14:01:11Z"
+sha256 = "7b9b8b4c0069c4ef135cd8f54f095092210bd5876f5c555b027f75b3d9c83789"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-08"
+cited_for = ["2.41", "2.18a"]

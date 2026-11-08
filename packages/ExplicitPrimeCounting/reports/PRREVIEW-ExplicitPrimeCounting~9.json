@@ -1,0 +1,13 @@
+{
+  "review": {
+    "status": "needs_changes",
+    "reviewer": "independent-review-PRREVIEW-ExplicitPrimeCounting~9",
+    "head": "03fb1a7bcb8b45baa50832f46793a213c4d4ddd5",
+    "pr": 1945,
+    "folder": "ExplicitPrimeCounting",
+    "date": "2026-11-08",
+    "findings": 5,
+    "blocking": 3,
+    "notes": "Full re-review of 03fb1a7. Review 8: R01, R04, R05, R06, R07 repaired; R02 (li owned twice with SpecialFunctionsEiLiErfIncompleteGamma 7a75a23 §§8.2-8.5) repaired in Lean only, re-raised as R03; R03 moot (EffectiveClassNumbers now 267, after this roadmap at 266). New: R01 P2 §6.3 needs Kadiri's 5.6 region (BMOR lines 2784-2795), not 6.4355; R02 P2 §3.7 hypothesis list omits §2.1's regions and ZetaZeroCubeSum/height-14; R04 P3 EffectiveClassNumbers not listed and cites deleted Lean names; R05 P3 theta_ap vs thetaAP. Gate rerun: all checks 0, OK. Depcheck: 237 roadmaps, 2425 edges, 0 problems. lake env lean: 15 sorry warnings only. #check of 38 declarations and 87 cited library names: 0 errors. One-tactic probe: 0 of 15 close. BrunTitchmarshFiniteRange verified on [25, 2e4] (min margin 0.0229); MVDiagonalFiniteRange to 2e6 (min 0.0441). Sample verified against the texts: §§0.1, 0.6, 1.6, 2.1, 2.5, 3.2, 3.3, 3.4, 4.1, 4.2, 4.3, 5.1, 5.5, 6.3, 6.7 and the new §6.1 target; uncertified sources listed as not verifiable. Supplier contracts checked against ExplicitZetaBounds c6ba511."
+  }
+}

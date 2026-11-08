@@ -1,0 +1,13 @@
+{
+  "review": {
+    "status": "needs_changes",
+    "reviewer": "independent-review-PRREVIEW-ComplexKahlerGeometry~47",
+    "head": "ac36c4779832dc88f24bd726cd331c83f4c8445b",
+    "pr": 1807,
+    "folder": "ComplexKahlerGeometry",
+    "date": "2026-11-08",
+    "findings": 13,
+    "blocking": 5,
+    "notes": "incremental re-review of 0 changed lines since 3e107fa: folder byte-identical, pins unchanged (Tau Ceti 2fd255d9, Mathlib 1b1ccf4b). All 14 previous findings re-verified against main adf01c6, the open heads and the pins: 12 carried (R01-R05 P2; R06-R13 P3), previous R06 repaired externally (DifferentialGeometry ids restored at #886 head 6f270bf and present on main), previous R14 carried with #1854 added. Gate run: only dropped=13 fails (PlanarTopology/SurfaceTopology, R01); outside-folder lines are the 13 named sibling folders; depcheck 229 roadmaps, 2310 edges, 0 problems. lake env lean Suggested.lean exit 0, 14 sorry warnings; #check @ of all 24 declarations plus R02 (IsDomain inferInstance), R04 (Nullstellensatz, Oka) and R12 (restrictScalars_of_ne_zero one-liner) probes, exit 0. Seeded sample falls in no changed text; carried, with demailly-agbook, rainer, ballmann and knutson cache lines re-opened. CharacteristicClasses C1.5 consumer citation re-resolved after its edits since 3e107fa. Adversarial table carried with values from 3e107fa/7e8275c."
+  }
+}
