@@ -314,3 +314,49 @@ licence_class = "author-page"
 status = "certified"
 accessed = "2026-11-08"
 cited_for = ["G2.4"]
+
+[[source]]
+id = "AtiyahSingerSkew"
+locator_scheme = "theorem"
+locator = "Theorem A"
+url = "http://www.numdam.org/article/PMIHES_1969__37__5_0.pdf"
+fetched_from = "https://www.numdam.org/article/PMIHES_1969__37__5_0.pdf"
+fetched_at = "2026-11-08T12:11:07Z"
+sha256 = "ec53f63230e9a6b8f1439eae3e7d00442da6a99ccbf5e615d028d9be8a4b5a27"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-08"
+cited_for = ["G5.0"]
+
+[[source]]
+id = "QuillenHA"
+authors = "Daniel G. Quillen"
+title = "Homotopical Algebra"
+year = 1967
+venue = "Lecture Notes in Mathematics"
+doi = "10.1007/BFb0097438"
+locator_scheme = "section"
+locator = "Chapter II, §3"
+url = "https://doi.org/10.1007/BFb0097438"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["G2.1"]
+
+[[source]]
+id = "AraPereraToms"
+authors = "Pere Ara, Francesc Perera, Andrew S. Toms"
+title = "K-Theory for operator algebras. Classification of C$^*$-algebras"
+year = 2009
+arxiv = "0902.3381v1"
+locator_scheme = "theorem"
+locator = "Theorem 3.8"
+url = "https://arxiv.org/abs/0902.3381v1"
+fetched_from = "https://arxiv.org/pdf/0902.3381v1"
+fetched_at = "2026-11-08T12:31:04Z"
+sha256 = "199ac7fee690d255a9f4ddd267dd314cb869f2a366ec8a164ede2687523e5680"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-08"
+version_note = "arXiv v1"
+cited_for = ["G5.5"]
