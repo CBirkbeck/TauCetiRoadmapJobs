@@ -660,13 +660,18 @@ The API consists of the following facts.
 - Every nonempty locally closed `T ⊆ |𝒳|` contains a finite type point, so `𝒳_ft-pts ∩ T` is dense in
   every closed `T` (stacks-06RD lines 1593–1601, Lemma 101.18.6); the proof uses the reduced induced
   locally closed substack of 0.5.
-- If `x` is a finite type point, every representative which is locally of finite type is one; the
-  property is attached to the point.
 
 **Checks.**
 
 - The generic point of `Spec ℤ_(p)` is a finite type point, since `Spec ℚ → Spec ℤ_(p)` is of finite
   type (`ℚ = ℤ_(p)[1/p]`), and it is not closed (alper-moduli lines 6983–6984).
+- The property belongs to the point, not to each representative: the point of `Spec ℚ` is a finite
+  type point through the identity, while its representative `Spec ℚ̄ → Spec ℚ` is not locally of
+  finite type (a finitely generated `ℚ`-algebra which is a field is finite over `ℚ` by Zariski's
+  lemma, and `[ℚ̄ : ℚ]` is infinite). A definition asking every representative to be locally of finite
+  type would have no finite type points at all: for any representative `Spec k → 𝒳`, the composite
+  `Spec k(t) → Spec k → 𝒳` is another one, and it is not locally of finite type, since by
+  cancellation `Spec k(t) → Spec k` would then be.
 - On `[𝔸¹/𝔾_m]` over `k`, the open point `1` is a finite type point and is not closed
   (alper-moduli lines 6985–6987).
 - The generic point of `𝔸¹_k` is not a finite type point: `k(t)` is not a finitely generated
@@ -688,13 +693,23 @@ The API consists of the following facts.
 - The map is natural in `𝒳` and compatible with field extensions `k ⊆ k'`: the square formed by
   pullback `π₀ 𝒳(Spec k) → π₀ 𝒳(Spec k')` and the two maps to `|𝒳|` commutes.
 - A point lies in the image iff it has a representative defined over `k`.
-- Two objects over `k` have the same image iff they become isomorphic over some extension of `k`.
+- Two objects `x, y` over `Spec k` have the same image iff there are a field `Ω` and two field
+  homomorphisms `a, b : k → Ω` with `(Spec a)^*x ≅ (Spec b)^*y` (stacks-04XE lines 341–350, the
+  equivalence of points with `K = L = k`). Objects which become isomorphic over one extension
+  `k ⊆ k'` have the same image; the converse needs the two embeddings.
 
 **Checks.**
 
 - For `𝒳 = B(ℤ/2)` over `ℝ`, `π₀ 𝒳(Spec ℝ)` has two elements, the trivial torsor and `Spec ℂ`
   (SchemeAndStackFoundations §1.21's `test_real_points`), and both map to the single point of `|𝒳|`:
   the map is not injective.
+- The fibres need two embeddings: for the scheme `𝒳 = Spec ℚ(i)` and `k = ℚ(i)`, the objects over
+  `Spec k` are the two ring maps `id` and `σ` (complex conjugation), and both represent the single
+  point of `|𝒳|`, through `a = σ`, `b = id` (`σ ∘ id = σ = id ∘ σ`). Over a single embedding
+  `ι : k → Ω` they become the ring maps `ι` and `ι ∘ σ`, which differ since `ι(i) ≠ −ι(i)` in
+  characteristic zero, and the isomorphism classes of objects of a scheme over `Spec Ω` are its
+  morphisms from `Spec Ω`: a fibre relation through one common extension would separate the two
+  objects.
 - For `𝒳 = 𝔸¹_ℝ`, the image of `π₀ 𝒳(Spec ℝ) = ℝ` misses the closed point `t² + 1 = 0`, which has no
   real representative: the map is not surjective.
 - For `X` a scheme locally of finite type over an algebraically closed `k`, the `k`-morphisms
@@ -1157,9 +1172,10 @@ Prove that if `𝒳` is a gerbe, the residual gerbe exists at every `x`, namely
 `𝒵_x = (𝒳 ×_{𝒳^♭} 𝒵^♭_x)_red` for the residual space `𝒵^♭_x` of the base at the image of `x`
 (stacks-06QB lines 2893–2904, Lemma 101.28.15); and that if `I_𝒳 → 𝒳` is quasi-compact, the residual
 gerbe exists at every `x`, namely the residual gerbe at `x` of the dense open gerbe (2.6) of the
-reduced closure of `x` (stacks-06RD lines 3048–3056, Lemma 101.31.1). *Needs:* 0.5, 2.1, 2.3, 2.5,
-2.6, 3.3, 4.2; gap:stack-morphism-permanence (a stack locally of finite type over a locally Noetherian
-one is locally Noetherian; base change of quasi-compact morphisms).
+reduced closure `𝒳'` of `x` (stacks-06RD lines 3048–3056, Lemma 101.31.1), whose inertia is the
+base change `I_𝒳 ×_𝒳 𝒳'` (0.2's API, Lemma 101.5.6) and so is quasi-compact. *Needs:* 0.2, 0.5, 2.1,
+2.3, 2.5, 2.6, 3.3, 4.2; gap:stack-morphism-permanence (a stack locally of finite type over a locally
+Noetherian one is locally Noetherian; base change of quasi-compact morphisms).
 
 **Checks.**
 
@@ -1250,11 +1266,29 @@ Decent Spaces, Definition 68.6.1, stacks-decent-spaces lines 567–573).
 Prove that for `f : 𝒴 → 𝒳` and `x ∈ |𝒳|` with `𝒳` decent or locally Noetherian, `I_𝒳 → 𝒳`
 quasi-compact, `|f|(|𝒴|) ⊆ {x}` and `𝒴` reduced, `f` factors through `𝒵_x` (stacks-06RD lines
 4842–4865, Lemma 101.51.2); the case of algebraic spaces, through the residual space, is part of the
-statement (stacks-decent-spaces lines 1565–1601, Lemmas 68.13.9–68.13.10). For the proof, factor
-through the reduced closure of `x` (0.5), pass to its dense open gerbe (2.6), which contains `x`,
-reduce to the base algebraic space by 3.4's pullback formula, and apply the space case. *Needs:* 0.5,
-2.5, 2.6, 3.4, 4.3, 4.4, 5.1; gap:decent-algebraic-spaces (Lemmas 68.7.2, 68.8.3, 68.11.1 in the
-space case); gap:reduced-scheme-residue-field-factorisation (the scheme case).
+statement (stacks-decent-spaces lines 1565–1601, Lemmas 68.13.9–68.13.10). For the proof, make
+three reductions, each keeping the hypotheses.
+
+1. `f` factors through the reduced closed substack `𝒳'` on the closure of `x` (0.5, `𝒴` being
+   reduced). `𝒳'` is decent when `𝒳` is (5.1, Lemma 101.48.3; a closed immersion is a monomorphism,
+   hence separated). It is locally Noetherian when `𝒳` is (0.5's API, Lemma 101.17.5). Its inertia
+   `I_{𝒳'} = I_𝒳 ×_𝒳 𝒳'` (0.2's API, Lemma 101.5.6) is quasi-compact over `𝒳'` as a base change.
+2. The dense open gerbe `𝒰 ⊆ 𝒳'` of 2.6 contains `x`, the generic point of `|𝒳'|`, so `f` factors
+   through `𝒰` (0.3). `𝒰` is decent (5.1) or locally Noetherian (0.1's API, open substacks) when
+   `𝒳'` is. A residual gerbe of `𝒰` at `x` is one of `𝒳`, a composite of monomorphisms being a
+   monomorphism (0.2).
+3. Let `π : 𝒰 → U` exhibit `𝒰` as a gerbe over the algebraic space `U`, and let `u = π(x)`. `U` is
+   decent when `𝒰` is (5.1, Lemma 101.48.5). It is locally Noetherian when `𝒰` is, by 0.1's API
+   applied to `π`, which is smooth and surjective (2.3, Lemma 101.33.8); this is the descent the
+   source leaves to the reader at stacks-06RD lines 4862–4863. The residual space `𝒵_u` of `U`
+   exists (4.2), and `𝒵_x = 𝒵_u ×_U 𝒰` (3.4's pullback formula), so it suffices that `π ∘ f`
+   factors through `𝒵_u`. As `𝒵_u → U` is a monomorphism (0.2), this can be checked on a smooth
+   atlas `V → 𝒴` by a scheme, which is reduced (0.1). The space case then applies to `V → U`: Lemma
+   68.13.10 when `U` is decent, Lemma 68.13.9 when `U` is locally Noetherian.
+
+*Needs:* 0.1, 0.2, 0.3, 0.5, 2.3, 2.5, 2.6, 3.4, 4.2, 4.3, 4.4, 5.1; gap:stack-morphism-permanence
+(base change of quasi-compact morphisms); gap:decent-algebraic-spaces (Lemmas 68.7.2, 68.8.3,
+68.11.1 in the space case); gap:reduced-scheme-residue-field-factorisation (the scheme case).
 
 **Checks.**
 
@@ -1308,11 +1342,12 @@ Prove that if `𝒳` has quasi-compact diagonal and `ξ ∈ |𝒳|`, there is a 
 gerbe over an integral affine scheme `Z` whose generic point is the image of `ξ`; then
 `𝒵_ξ = 𝒵 ×_Z Spec κ(ξ)` and `𝒵_ξ → 𝒳` is quasi-affine (rydh2011 lines 1268–1305, Theorem B.2)
 (*Stacks.algebraicityOfPoints*). The proof route here replaces Rydh's generic flatness theorem B.1 by
-the dense open gerbe: replace `𝒳` by the reduced closure of `ξ` (its diagonal and inertia remain
-quasi-compact), take the dense open gerbe of 2.6, which contains `ξ` since `ξ` is a generic point of
-the irreducible closure; its base has quasi-compact diagonal by 2.5, so it is a quasi-separated
+the dense open gerbe: replace `𝒳` by the reduced closure of `ξ` (its diagonal and inertia are base
+changes of those of `𝒳`, by 0.2's API, Lemmas 100.8.6 and 101.5.6, so they remain quasi-compact),
+take the dense open gerbe of 2.6, which contains `ξ` since `ξ` is a generic point of the
+irreducible closure; its base has quasi-compact diagonal by 2.5, so it is a quasi-separated
 algebraic space and has a dense open affine subscheme through the image of `ξ`; restrict to it.
-*Needs:* 0.3, 0.5, 2.5, 2.6, 3.4, 5.1, 5.3; gap:quasi-separated-space-schematic-locus (dense open
+*Needs:* 0.2, 0.3, 0.5, 2.5, 2.6, 3.4, 5.1, 5.3; gap:quasi-separated-space-schematic-locus (dense open
 subscheme of a quasi-separated space); gap:stack-morphism-permanence.
 
 **Checks.**

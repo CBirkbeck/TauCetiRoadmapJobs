@@ -410,6 +410,11 @@
        "statement": "The generic point of Spec Z_(p) is a finite type point and not closed."
       },
       {
+       "name": "representative_not_lft",
+       "kind": "non-example",
+       "statement": "The point of Spec Q is a finite type point through the identity, while its representative Spec Qbar -> Spec Q is not locally of finite type; requiring every representative to be lft would leave no finite type points, since Spec k(t) -> Spec k -> X is never lft."
+      },
+      {
        "name": "A1Gm_open",
        "kind": "computation",
        "statement": "The open point 1 of [A^1/G_m] is a finite type point and not closed."
@@ -458,7 +463,7 @@
       {
        "name": "fibre",
        "role": "lemma",
-       "statement": "Two objects over k have the same image iff they become isomorphic over an extension."
+       "statement": "Two objects x, y over Spec k have the same image iff there are a field Omega and field homomorphisms a, b : k -> Omega with (Spec a)^*x ≅ (Spec b)^*y; becoming isomorphic over one extension suffices but is not necessary."
       }
      ],
      "tests": [
@@ -466,6 +471,11 @@
        "name": "BZ2_R",
        "kind": "computation",
        "statement": "For B(Z/2) over R the two real torsors map to the one point: not injective."
+      },
+      {
+       "name": "two_embeddings",
+       "kind": "non-example",
+       "statement": "On Spec Q(i) over k = Q(i), the objects id and complex conjugation represent the one point through (a, b) = (sigma, id) and differ after every single embedding iota : k -> Omega, as iota(i) != -iota(i)."
       },
       {
        "name": "A1_R",
@@ -1206,6 +1216,7 @@
       "where": "Lemma 101.28.15, lines 2893-2904; stacks-06RD Lemma 101.31.1, lines 3048-3056"
      },
      "prerequisites": [
+      "target:0.2",
       "target:0.5",
       "target:2.1",
       "target:2.3",
@@ -1403,15 +1414,21 @@
       "where": "Lemma 101.51.2, lines 4842-4865; stacks-decent-spaces Lemmas 68.13.9-68.13.10, lines 1565-1601"
      },
      "prerequisites": [
+      "target:0.1",
+      "target:0.2",
+      "target:0.3",
       "target:0.5",
+      "target:2.3",
       "target:2.5",
       "target:2.6",
       "target:3.4",
+      "target:4.2",
       "target:4.3",
       "target:4.4",
       "target:5.1",
       "gap:decent-algebraic-spaces",
-      "gap:reduced-scheme-residue-field-factorisation"
+      "gap:reduced-scheme-residue-field-factorisation",
+      "gap:stack-morphism-permanence"
      ],
      "api": [],
      "tests": [
@@ -1507,6 +1524,7 @@
       "where": "Theorem B.2, lines 1268-1305"
      },
      "prerequisites": [
+      "target:0.2",
       "target:0.3",
       "target:0.5",
       "target:2.5",
@@ -2152,6 +2170,7 @@
     "4.4",
     "4.5",
     "5.1",
+    "5.2",
     "5.4",
     "5.5",
     "6.4",

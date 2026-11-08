@@ -15,7 +15,7 @@ sha256 = "0bed3a87534ac17a31cd9bd897c57d81910ac28be21df5a0d80465b6766da57a"
 licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-05"
-cited_for = ["points of algebraic stacks (§100.4); smooth-local properties, monomorphisms, immersions, closed substacks and reduced induced structures (§§100.7-100.10); quasi-compact points (§100.14): targets 0.1-0.5, 1.2, 5.1; properties of morphisms representable by algebraic spaces and their check after a flat base change (§100.3, Lemmas 100.3.1-100.3.3, the list of properties fppf local on the target): Convention 3 and gap stack-morphism-permanence"]
+cited_for = ["points of algebraic stacks (§100.4); smooth-local properties, monomorphisms, immersions, closed substacks and reduced induced structures (§§100.7-100.10); quasi-compact points (§100.14): targets 0.1-0.5, 1.2, 5.1, 5.4; properties of morphisms representable by algebraic spaces and their check after a flat base change (§100.3, Lemmas 100.3.1-100.3.3, the list of properties fppf local on the target): Convention 3 and gap stack-morphism-permanence"]
 
 [[source]]
 id = "stacks-06ML"
@@ -63,7 +63,7 @@ sha256 = "ba3fb2d5c613e4fee0fdc5ee640581d9bf3bf9241760f9f502efab7dca3a8865"
 licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-05"
-cited_for = ["separation axioms, inertia, finite type points, automorphism groups, smooth quotients, existence of residual gerbes, decent stacks and residual gerbes at closed points (§§101.4-101.5, 101.18-101.19, 101.31, 101.33, 101.48, 101.51): targets 0.2, 0.5, 1.1-1.4, 2.3, 3.4, 4.1-4.5, 5.1, 5.2, 6.1; a stack locally of finite type over a locally Noetherian one is locally Noetherian (Lemma 101.17.5): targets 6.4, 7.2 and gap stack-morphism-permanence"]
+cited_for = ["separation axioms, inertia, finite type points, automorphism groups, smooth quotients, existence of residual gerbes, decent stacks and residual gerbes at closed points (§§101.4-101.5, 101.18-101.19, 101.31, 101.33, 101.48, 101.51): targets 0.2, 0.5, 1.1-1.4, 2.3, 3.4, 4.1-4.5, 5.1, 5.2, 5.4, 6.1; an immersion is locally of finite type, a stack locally of finite type over a locally Noetherian one is locally Noetherian, and cancellation of local finite type (Lemmas 101.17.4, 101.17.5, 101.17.8): targets 0.5, 1.1, 5.2, 6.4, 7.2 and gap stack-morphism-permanence"]
 
 [[source]]
 id = "ahr2020"
