@@ -1,0 +1,34 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "GlobalHolomorphicFunctions"
+
+[[source]]
+id = "rainer"
+authors = "Armin Rainer"
+title = "Advanced Complex Analysis"
+year = 2025
+locator_scheme = "theorem"
+locator = "Theorem 10.2"
+url = "https://www.tuwien.at/mg/arainer/wp-content/uploads/2025/03/advanced-complex-analysis.pdf"
+fetched_from = "https://www.tuwien.at/mg/arainer/wp-content/uploads/2025/03/advanced-complex-analysis.pdf"
+fetched_at = "2026-11-08T03:20:02Z"
+sha256 = "c86be0dcbf5402ff9a610ac1e91a1152588c72c55f55d9573bed6b83dfe8e418"
+licence_class = "institutional"
+status = "certified"
+accessed = "2026-11-08"
+cited_for = ["0.3", "2.1", "7.1"]
+
+[[source]]
+id = "gray-morris"
+authors = "J. D. Gray and S. A. Morris"
+title = "When Is a Function That Satisfies the Cauchy-Riemann Equations Analytic?"
+year = 1978
+locator_scheme = "theorem"
+locator = "Theorem 3"
+url = "https://www.sidneymorris.net/Morris51.pdf"
+fetched_from = "https://www.sidneymorris.net/Morris51.pdf"
+fetched_at = "2026-10-30T03:40:54Z"
+sha256 = "2dbcc98ee4291316daec9d42393e2ec6969b714bd07e283b03a2245ab3d461cd"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-08"
+cited_for = ["0.2"]
