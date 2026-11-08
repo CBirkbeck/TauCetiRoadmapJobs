@@ -116,3 +116,85 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-08"
 cited_for = ["F.4.6", "0.6"]
+
+[[source]]
+id = "stacks-03SW"
+authors = "The Stacks Project Authors"
+title = "The Stacks Project"
+year = 2026
+locator_scheme = "tag"
+locator = "03SW"
+url = "https://stacks.math.columbia.edu/tag/03SW"
+fetched_from = "https://stacks.math.columbia.edu/download/trace.pdf#nameddest=03SW"
+fetched_at = "2026-11-08T12:57:32Z"
+sha256 = "99d5358fe636cb18afa5a81f93c7906995db2a02a15efd742ba90e07cb74c828"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-08"
+cited_for = ["F.10.2", "F.0.1"]
+
+[[source]]
+id = "stacks-09BT"
+authors = "The Stacks Project Authors"
+title = "The Stacks Project"
+year = 2026
+locator_scheme = "tag"
+locator = "09BT"
+url = "https://stacks.math.columbia.edu/tag/09BT"
+fetched_from = "https://stacks.math.columbia.edu/download/proetale.pdf#nameddest=09BT"
+fetched_at = "2026-11-08T12:57:35Z"
+sha256 = "a774ebf71c470b0309c7647abca23de96ad5cc40d336226c8d31681f7a1564a4"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-08"
+cited_for = ["F.4.1", "F.4.3"]
+
+[[source]]
+id = "lrz-relative-poincare"
+authors = "Shizhang Li, Emanuel Reinecke, Bogdan Zavyalov"
+title = "Relative Poincaré duality in nonarchimedean geometry"
+year = 2024
+arxiv = "2410.08200v1"
+locator_scheme = "theorem"
+locator = "Theorem 6.1.1"
+url = "https://arxiv.org/abs/2410.08200v1"
+fetched_from = "https://arxiv.org/pdf/2410.08200v1"
+fetched_at = "2026-11-08T12:57:44Z"
+sha256 = "dd6ff5ffd9bdc522e4d719ae4d248097e4916642b8ed8b8c905ac300bc391767"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-08"
+version_note = "arXiv v1"
+cited_for = ["0.11", "0.9"]
+
+[[source]]
+id = "stacks-0FFP"
+authors = "The Stacks Project Authors"
+title = "The Stacks Project"
+year = 2026
+locator_scheme = "tag"
+locator = "0FFP"
+url = "https://stacks.math.columbia.edu/tag/0FFP"
+fetched_from = "https://stacks.math.columbia.edu/download/categories.pdf#nameddest=0FFP"
+fetched_at = "2026-11-08T13:10:44Z"
+sha256 = "0c5b215939e22e807d605dd1e35149aa3972d5443da8bbabb33d9f43a3db4a51"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-08"
+cited_for = ["F.5"]
+
+[[source]]
+id = "stacks-09C1"
+authors = "The Stacks Project Authors"
+title = "The Stacks Project"
+year = 2026
+locator_scheme = "tag"
+locator = "09C1"
+url = "https://stacks.math.columbia.edu/tag/09C1"
+fetched_from = "https://stacks.math.columbia.edu/download/proetale.pdf#nameddest=09C1"
+fetched_at = "2026-11-08T13:10:49Z"
+sha256 = "a774ebf71c470b0309c7647abca23de96ad5cc40d336226c8d31681f7a1564a4"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-08"
+cited_for = ["F.4.1", "F.4.3"]
