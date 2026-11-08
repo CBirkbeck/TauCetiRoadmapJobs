@@ -1588,3 +1588,39 @@ status = "certified"
 accessed = "2026-11-08"
 version_note = "author-page text, CC BY-SA 4.0, still under development; exercises numbered by section"
 cited_for = ["6.1a"]
+
+[[source]]
+id = "leeLeong2022"
+authors = "Ethan Simpson Lee, Nicol Leong"
+title = "New explicit bounds for Mertens function and the reciprocal of the Riemann zeta-function"
+year = 2022
+arxiv = "2208.06141v5"
+locator_scheme = "theorem"
+locator = "Theorem 1.1 (6); Lemma 4.3"
+url = "https://arxiv.org/abs/2208.06141v5"
+fetched_from = "https://arxiv.org/pdf/2208.06141v5"
+fetched_at = "2026-11-08T07:18:46Z"
+sha256 = "76e61bb702beecade0deca82896d5125043cd747c694986ec7e732d13be54ad1"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-08"
+version_note = "arXiv v5"
+cited_for = ["7.10"]
+
+[[source]]
+id = "leong2026"
+authors = "Nicol Leong"
+title = "Explicit estimates for the logarithmic derivative and the reciprocal of the Riemann zeta function"
+year = 2024
+arxiv = "2405.04869v5"
+locator_scheme = "theorem"
+locator = "Corollary 4; Corollary 3; Table 4"
+url = "https://arxiv.org/abs/2405.04869v5"
+fetched_from = "https://arxiv.org/pdf/2405.04869v5"
+fetched_at = "2026-11-08T07:20:40Z"
+sha256 = "3e8e80e193368aae29f00f9ba3d61989973dfa87054d9c38329494bd5f7cd558"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-08"
+version_note = "arXiv v5"
+cited_for = ["7.10"]
