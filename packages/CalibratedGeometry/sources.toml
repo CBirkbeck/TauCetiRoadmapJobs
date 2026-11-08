@@ -108,3 +108,20 @@ licence_class = "none"
 status = "uncertified"
 version_note = "paywalled; cited by its locator without the text"
 cited_for = ["2.3", "3.1"]
+
+[[source]]
+id = "Hatcher2017VBKT"
+authors = "Allen Hatcher"
+title = "Vector Bundles and K-Theory"
+year = 2017
+locator_scheme = "section"
+locator = "Section 1.2, p. 31"
+url = "https://pi.math.cornell.edu/~hatcher/VBKT/VB.pdf"
+fetched_from = "https://pi.math.cornell.edu/~hatcher/VBKT/VB.pdf"
+fetched_at = "2026-11-08T15:32:22Z"
+sha256 = "04282b30dfa6305183827d399deddd0bd98240c2e6d2d0c416b06e2d4e1fa097"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-08"
+version_note = "version 2.2, November 2017"
+cited_for = ["1.4"]
