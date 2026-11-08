@@ -993,7 +993,7 @@
           ],
           "locator": {
             "source": "OhTataru-Threshold",
-            "where": "line 1074; OhTataru-TopClass line 53"
+            "where": "line 1074"
           },
           "prerequisites": [
             "mathlib:HomotopyGroup",
@@ -1573,19 +1573,22 @@
           "id": "8.3",
           "kind": "theorem",
           "name": "YangMills.covariantHeat_L2",
-          "statement": "For A ∈ L^∞Ḣ¹ with F ∈ L²Ḣ¹, ∂_sA ∈ L²L², the problem ∂_sB − Δ_AB − 2ad(F)B = G + DH is well posed in Ḣ^σ, −2 < σ < 2, with ‖B‖_{L^∞Ḣ^σ} + ‖DB‖_{L²Ḣ^σ} ≲ ‖B(0)‖ + ‖G‖_{L¹Ḣ^σ} + ‖H‖_{L²Ḣ^σ}; envelope bounds; and ‖DB‖_{L¹Ḣ^σ} ≲ ‖B(0)‖_{Ḣ^{σ−1}} + ‖G‖_{L¹Ḣ^{σ−1}} for H = 0, −1 < σ < 1.",
+          "statement": "For A ∈ L^∞Ḣ¹ with F ∈ L²Ḣ¹, ∂_sA ∈ L²L², the problem ∂_sB − Δ_AB − 2ad(F)B = G + DH is well posed in Ḣ^σ, −2 < σ < 2, with ‖B‖_{L^∞Ḣ^σ} + ‖DB‖_{L²Ḣ^σ} ≲ ‖B(0)‖ + ‖G‖_{L¹Ḣ^σ} + ‖H‖_{L²Ḣ^σ}; envelope bounds; ‖DB‖_{ℓ²L¹Ḣ^σ} ≲ ‖B(0)‖_{Ḣ^{σ−1}} + ‖G‖_{L¹Ḣ^{σ−1}} for H = 0, −1 < σ < 1 (ℓ²L¹, not L¹: the block sum of the envelope version ‖P_kDB‖_{L¹L²} ≲ d_k); and for J = [0, ∞), B(0) ∈ Ḣ^σ, G ∈ L¹Ḣ^σ, H ∈ L²Ḣ^σ, −2 < σ < 2: B(s) → 0 in Ḣ^σ as s → ∞. The same holds for 𝔤-valued functions and 2-forms, with −2ad(F)B replaced by a constant-coefficient bilinear bracket term R(F, B) (R = 0 for functions). Route for the decay: ∫‖DB‖²_{L²} < ∞ gives ‖B(s_n)‖_{Ḣ¹} → 0 (diamagnetic and Sobolev inequalities); with the uniform Ḣ^{−1/2} bound, ‖B(s_n)‖_{L²} → 0; the σ = 0 bound on [s_n, ∞) gives L² decay; density of finite block sums Σ_{|k|≤N}P_ku in Ḣ^σ and interpolation with the uniform Ḣ^{σ'} bounds give every σ; splitting at S handles G, H.",
           "hypotheses": [
             "d = 4",
-            "J an interval"
+            "J an interval",
+            "J = [0, ∞) for the decay clause"
           ],
           "locator": {
             "source": "OhTataru-YMHF",
-            "where": "(4.9), Theorems 4.3, 4.5, 4.6, Corollary 4.4, lines 1176–1345"
+            "where": "(4.9), Theorems 4.3, 4.5, 4.6, Corollary 4.4, lines 1176–1345 (Theorem 4.6 prints L¹Ḣ^σ at line 1290; its proof, lines 1297–1320, gives the ℓ²L¹ form used at lines 2207 and 2546; the decay is stated nowhere and used without proof at lines 2535, 2543 and 3404)"
           },
           "prerequisites": [
             "roadmap:PDE §6.1",
             "roadmap:PDE §6.3",
             "roadmap:PDE §7.1",
+            "roadmap:PDE §7.2",
+            "mathlib:MeasureTheory.eLpNorm_le_eLpNorm_fderiv_of_eq",
             "target:8.1",
             "target:8.2"
           ],
@@ -1600,6 +1603,26 @@
               "name": "scaling",
               "kind": "computation",
               "statement": "invariance under A ↦ λA(λ²s,λx), B ↦ λ²B, G ↦ λ⁴G, H ↦ λ³H"
+            },
+            {
+              "name": "sigmaTwo",
+              "kind": "non-example",
+              "statement": "σ = 2 excluded: 2[F_j^k, B_k] with F ∈ L²Ḣ¹ is not controlled in L¹Ḣ²"
+            },
+            {
+              "name": "l1Fails",
+              "kind": "non-example",
+              "statement": "A = 0, σ = 0: ‖∇e^{sΔ}P_kb‖_{L¹L²} ≈ ‖P_kb‖_{Ḣ^{−1}}, so ℓ²L¹ holds; b = Σ_{k≤K} b_k with ‖b_k‖_{Ḣ^{−1}} = K^{−1/2} at |ξ| ≈ 2^k has ‖b‖_{Ḣ^{−1}} ≈ 1 and ‖∇e^{sΔ}b‖_{L¹L²} ≳ K^{1/2}"
+            },
+            {
+              "name": "decayHeat",
+              "kind": "computation",
+              "statement": "A = 0: ‖e^{sΔ}b‖²_{Ḣ^σ} ≈ ∫|2πξ|^{2σ}e^{−8π²s|ξ|²}|b̂|² → 0 by dominated convergence; no uniform rate (b̂ in |ξ| ≤ 2^{1−m}, s = 4^m: multiplier ≥ e^{−16π²})"
+            },
+            {
+              "name": "staticInstanton",
+              "kind": "non-example",
+              "statement": "static Yang–Mills connection with F ≠ 0 (BPST): F ∉ L²([0,∞);Ḣ¹), and B_j = ξ^kF_{kj} ∈ L² is a nonzero stationary solution (Bianchi, D^jF_{jk} = 0 give D^ℓD_ℓB_i = −2[F_{ij}, B_j])"
             }
           ]
         },
@@ -1820,17 +1843,18 @@
           "id": "9.5",
           "kind": "theorem",
           "name": "YangMills.HeatFlow.flatLimit",
-          "statement": "For a global Ḣ¹ solution with Q(a) ≤ Q < ∞, A_∞ = lim A(s) exists in Ḣ¹ (ℋ) and is flat; for data b ∈ Ḣ^σ, −1 < σ ≤ 1 (resp. ℋ), the linearised limit B_∞ exists in Ḣ^σ (resp. ℋ), with ‖B_∞‖_{Ḣ^σ} ≲_{Q,M₁} ‖b‖_{Ḣ^σ} for ‖a‖_{Ḣ¹} ≤ M₁, and is D(A_∞)-curl-free; a ↦ A_∞ is Lipschitz on bounded convex sets with uniform Q and C¹ along C¹ curves with uniform Q, with derivative B_∞. Route for −1 < σ < 1: the infinitesimal de Turck trick (F_{0j} → 0 in Ḣ^σ by 8.3; ‖D^ℓF_{ℓ0}‖_{L¹Ḣ^{σ+1}} ≲ ‖b‖_{Ḣ^σ} by the L¹ bound of 8.3; product bound Ḣ¹ × Ḣ^{σ+1} → Ḣ^σ on ℝ⁴).",
+          "statement": "For a global Ḣ¹ solution with Q(a) ≤ Q < ∞, A_∞ = lim A(s) exists in Ḣ¹ (ℋ) and is flat; for data b ∈ Ḣ^σ, −1 < σ ≤ 1 (resp. ℋ), the linearised limit B_∞ exists in Ḣ^σ (resp. ℋ), with ‖B_∞‖_{Ḣ^σ} ≲_{Q,M₁} ‖b‖_{Ḣ^σ} for ‖a‖_{Ḣ¹} ≤ M₁, and is D(A_∞)-curl-free; a ↦ A_∞ is Lipschitz on bounded convex sets with uniform Q and C¹ along C¹ curves with uniform Q, with derivative B_∞. Route for −1 < σ < 1: the infinitesimal de Turck trick (F_{0j} → 0 in Ḣ^σ by the decay clause of 8.3; ‖D^ℓF_{ℓ0}‖_{ℓ²L¹Ḣ^{σ+1}} ≲ ‖b‖_{Ḣ^σ} by the ℓ²L¹ bound of 8.3, so A₀(s) converges in Ḣ^{σ+1} block by block with square-summable tails; product bound Ḣ¹ × Ḣ^{σ+1} → Ḣ^σ on ℝ⁴); for σ = 1, curl_A B → 0 in L² by the 2-form decay clause of 8.3, the forcing [F, DB] + [DF, B] ∈ L²Ḣ^{−1} being written D^kH_k with H ∈ L²L² by 8.2.",
           "hypotheses": [
             "d = 4"
           ],
           "locator": {
             "source": "OhTataru-YMHF",
-            "where": "Corollary 5.15, Lemma 5.33, lines 1952–1957, 2509–2555; Lemma 5.23 Case 1, lines 2172–2208 (Lemma 5.33(2) writes 0 ≤ σ ≤ 1 and its de Turck argument covers −1 < σ < 1; Corollary 5.15 states −1 < σ < 2, of which 1 < σ < 2 is not proved and not stated)"
+            "where": "Corollary 5.15, Lemma 5.33, lines 1952–1957, 2509–2555; Lemma 5.23 Case 1, lines 2172–2208 (Lemma 5.33(2) writes 0 ≤ σ ≤ 1 and its de Turck argument covers −1 < σ < 1; Corollary 5.15 states −1 < σ < 2, of which 1 < σ < 2 is not proved and not stated; the decay of F_{0j} (line 2543) and of curl_A B (line 2535) is asserted there without proof and is the decay clause of 8.3)"
           },
           "prerequisites": [
             "roadmap:PDE §7.1",
             "roadmap:PDE §7.3",
+            "target:8.2",
             "target:8.3",
             "target:9.1",
             "target:9.2",

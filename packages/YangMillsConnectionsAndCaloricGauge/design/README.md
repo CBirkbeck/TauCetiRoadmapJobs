@@ -163,7 +163,10 @@ same way with exponents `d/2` and `d`. For `σ ∈ ℝ`, `Ḣ^σ = Ḃ^σ_{2,2}`
 `k ∈ ℤ`, of PDE §7.1 (Mathlib's Fourier normalisation with `2π` in the exponent);
 `ℋ = {a ∈ Ḣ¹ : ∂^ℓ a_ℓ ∈ ℓ¹L²}` with norm `‖a‖_{Ḣ¹} + ‖∂^ℓ a_ℓ‖_{ℓ¹L²}`. The heat-time variable is
 `s ≥ 0`, `J ⊆ [0, ∞)` is an interval, and `L^p(J; X)` is Mathlib's Bochner space with values in the
-Banach space `X`. Littlewood–Paley indices follow PDE §7.1: a frequency of size `2^j` is carried by
+Banach space `X`. For such a space-time norm `Y = L^q(J; Ḣ^σ)`, `ℓ^pY` is the norm
+`‖u‖_{ℓ^pY} = (Σ_k ‖P_k u‖^p_Y)^{1/p}` (OhTataru-YMHF line 857); Minkowski's integral inequality gives
+`‖u‖_{ℓ²L¹Ḣ^σ} ≲ ‖u‖_{L¹Ḣ^σ}`, and the reverse bound fails (8.3, Checks).
+Littlewood–Paley indices follow PDE §7.1: a frequency of size `2^j` is carried by
 `P_{j−1}` (PDE §7.1, first Check).
 
 ## Exact supplier contracts
@@ -961,7 +964,7 @@ Prove: for connected `G`, the map from the based homotopy classes of pointed map
 `[S³, G]` forgetting the base point is a bijection (a free map `O` is homotopic to the based map
 `O(e₁)⁻¹O`, and a free homotopy `H` between based maps yields the based homotopy `H(t, e₁)⁻¹H(t, ·)`), so
 `Top(4, G) ≅ π₃(G)`, with Mathlib's cubical `HomotopyGroup` compared to pointed sphere maps through
-AlgebraicTopology Stage 8 (OhTataru-Threshold line 1074; OhTataru-TopClass line 53).
+AlgebraicTopology Stage 8 (OhTataru-Threshold line 1074).
 
 **Checks.**
 
@@ -1316,8 +1319,33 @@ On `ℝ⁴ × J` let `A ∈ L^∞(J; Ḣ¹)` with `F ∈ L²(J; Ḣ¹)` and `∂
 `‖A‖_{L^∞Ḣ¹}`, `‖F‖_{L²Ḣ¹}`, `‖∂_s A‖_{L²L²}`, with covariant derivatives on the left for `σ ≥ 1` and on the right
 for `σ ≤ −1`; the envelope bounds `‖P_k B‖_{L^∞L²} + ‖P_k DB‖_{L²L²} ≲ d_k` for `(−2, 2)` envelopes, and for
 `1`-compatible `(−2, S)` envelopes when `‖P_k A‖_{L^∞Ḣ¹} + ‖P_k F‖_{L²Ḣ¹} + ‖P_k ∂_s A‖_{L²L²} ≲ c_k` with `c_k` a
-`(−1, S)` envelope; and for `H = 0`, `−1 < σ < 1`, `‖DB‖_{L¹Ḣ^σ} ≲ ‖B(0)‖_{Ḣ^{σ−1}} + ‖G‖_{L¹Ḣ^{σ−1}}`, with its
-envelope version.
+`(−1, S)` envelope; for `H = 0` and `−1 < σ < 1`, `‖DB‖_{ℓ²L¹Ḣ^σ} ≲ ‖B(0)‖_{Ḣ^{σ−1}} + ‖G‖_{L¹Ḣ^{σ−1}}`, with
+its envelope version `‖P_k DB‖_{L¹L²} ≲ d_k` for `1`-compatible `(−1, S)` envelopes `d_k` of `B(0)` in `Ḣ^{−1}`
+and `G` in `L¹Ḣ^{−1}`; and, for `J = [0, ∞)`, decay: if `−2 < σ < 2`, `B(0) ∈ Ḣ^σ`, `G ∈ L¹Ḣ^σ` and
+`H ∈ L²Ḣ^σ`, then `B(s) → 0` in `Ḣ^σ` as `s → ∞`. All of this holds, with the same proofs, for `𝔤`-valued
+functions and 2-forms `B`, the term `−2[F_j^k, B_k]` being replaced by a bilinear term `R(F, B)` with
+constant coefficients built from brackets and index contractions (`R = 0` for functions): the proofs use
+only `|R(F, B)| ≲ |F||B|`, the Leibniz rule `D R(F, B) = R(DF, B) + R(F, DB)`, and that the adjoint of
+`R(F, ·)` is of the same form.
+
+The source's Theorem 4.6 prints `L¹Ḣ^σ` on the left (line 1290). Its proof bounds each block `P_k DB` in
+`L¹L²` (lines 1297–1320), which sums to the `ℓ²L¹` norm that its applications use (lines 2207 and 2546);
+the `L¹Ḣ^σ` form is false (Checks). The source states no decay, and uses it without proof at lines 2535,
+2543 and 3404.
+
+Route for the decay. First let `G = H = 0` and `B(0) ∈ L² ∩ Ḣ^{−1/2}`. The bound at `σ = 0` gives
+`∫₀^∞ ‖DB‖²_{L²} ds < ∞`, so `‖DB(s_n)‖_{L²} → 0` along some `s_n → ∞`. Since `‖B‖_{L⁴} ≲ ‖∂|B|‖_{L²} ≤ ‖DB‖_{L²}`
+(Sobolev's inequality and the diamagnetic inequality of 8.2) and `‖∂B‖_{L²} ≲ ‖DB‖_{L²} + ‖A‖_{L⁴}‖B‖_{L⁴}`, also
+`‖B(s_n)‖_{Ḣ¹} → 0`; with the uniform `Ḣ^{−1/2}` bound and `‖u‖_{L²} ≲ ‖u‖^{2/3}_{Ḣ^{−1/2}} ‖u‖^{1/3}_{Ḣ¹}`, this gives
+`‖B(s_n)‖_{L²} → 0`. The `σ = 0` bound on `[s_n, ∞)`, whose constants are at most those of `[0, ∞)`, gives
+`sup_{s ≥ s_n} ‖B(s)‖_{L²} ≲ ‖B(s_n)‖_{L²}`, so `B(s) → 0` in `L²`. For data `u ∈ Ḣ^σ`, approximate by the
+finite block sums `Σ_{|k|≤N} P_k u`: they converge to `u` in `Ḣ^σ` because its norm is the `ℓ²` sum of the
+block norms (PDE §7.2), and, having Fourier transforms in `L²` supported in compact annuli, they lie in
+every `Ḣ^τ`. For such data, interpolate the `L²` decay with the uniform `Ḣ^{σ'}` bound for some
+`σ' ∈ (−2, 2)` with `σ` between `0` and `σ'`; the uniform `Ḣ^σ` bound controls the approximation error. For
+nonzero `G` and `H`, split the solution at `s = S` into the homogeneous solution with data `B(S)` and the
+solution with zero data at `S`; the latter is bounded in `Ḣ^σ` by `‖G‖_{L¹([S, ∞); Ḣ^σ)} + ‖H‖_{L²([S, ∞); Ḣ^σ)}`,
+which tends to `0` as `S → ∞`.
 
 **Checks.**
 
@@ -1327,8 +1355,20 @@ envelope version.
   `H ↦ λ³H(λ²s, λx)`: for instance `‖λ⁴G(λ²·, λ·)‖_{L¹L²} = λ⁴ · λ^{−2} · λ^{−2} ‖G‖_{L¹L²}`, and the hypotheses'
   norms of `A` are invariant.
 - `σ = 2` is excluded: the term `2[F_j^k, B_k]` with `F ∈ L²Ḣ¹` is not controlled in `L¹Ḣ²`.
+- `ℓ²L¹` against `L¹`, at `A = 0`, `σ = 0`: `‖∇e^{sΔ}P_k b‖_{L¹L²} ≲ 2^k ∫₀^∞ e^{−c4^k s} ds ‖P_k b‖_{L²} ≈ ‖P_k b‖_{Ḣ^{−1}}`,
+  so the `ℓ²L¹` bound holds. For `b = Σ_{k=1}^{K} b_k` with `b̂_k` supported where `|ξ| ≈ 2^k` and
+  `‖b_k‖_{Ḣ^{−1}} = K^{−1/2}`, `‖b‖_{Ḣ^{−1}} ≈ 1`, while on `4^{−k−1} ≤ s ≤ 4^{−k}` the block `k` alone gives
+  `‖∇e^{sΔ}b‖_{L²} ≳ 4^k K^{−1/2}`; summing over `k`, `‖∇e^{sΔ}b‖_{L¹L²} ≳ K^{1/2}`, so the `L¹L²` form fails.
+- Decay at `A = 0`, `G = H = 0`: `‖e^{sΔ}b‖²_{Ḣ^σ} ≈ ∫ |2πξ|^{2σ} e^{−8π²s|ξ|²} |b̂(ξ)|² dξ → 0` by dominated
+  convergence. No rate depends on `‖b‖_{Ḣ^σ}` alone: if `b̂` is supported in `|ξ| ≤ 2^{1−m}`, then at
+  `s = 4^m` the multiplier is at least `e^{−16π²}` on the support, so the decay is qualitative.
+- The time-global hypotheses are needed: a static Yang–Mills connection with `F ≠ 0`, such as BPST (which
+  also lies outside `Ḣ¹`), has `F ∉ L²([0, ∞); Ḣ¹)`, and for `ξ ∈ ℝ⁴` the field `B_j = ξ^k F_{kj}` (in `L²`, as
+  `|F| ≈ |x|^{−4}` at infinity) is a nonzero stationary solution of the homogeneous equation. Indeed the
+  Bianchi identity gives `D_j B_i − D_i B_j = −ξ^k D_k F_{ij}`, and with `D^j F_{jk} = 0` and
+  `D_j D_k − D_k D_j = ad(F_{jk})` this yields `D^ℓ D_ℓ B_i = −2[F_{ij}, B_j]`. It does not decay.
 
-*Needs:* PDE §6.1, §6.3, §7.1; 8.1, 8.2.
+*Needs:* PDE §6.1, §6.3, §7.1, §7.2; Mathlib `MeasureTheory.eLpNorm_le_eLpNorm_fderiv_of_eq`; 8.1, 8.2.
 
 ### 8.4 The covariant heat operator: `L^p` parabolic regularity
 
@@ -1468,20 +1508,26 @@ these spaces with uniformly bounded `Q`, with derivative `B_∞`.
 
 Route for `−1 < σ < 1`: the infinitesimal de Turck trick of the proof of Lemma 5.33 (lines 2538–2549), with
 the bound of Lemma 5.23, Case 1 (lines 2172–2208). Put `A₀(0) = 0`. Then `F_{0j}` solves the homogeneous
-equation of 8.3 with data `b`, so it is bounded in `Ḣ^σ` and tends to `0` there as `s → ∞` (for `σ < 0`
-reduce, by the uniform `Ḣ^σ` bound, to data in the dense subspace `L² ∩ Ḣ^{σ₁}`, `−2 < σ₁ < σ`, and
-interpolate between the `L²` decay and the `Ḣ^{σ₁}` bound). The `L¹` bound of 8.3, applied to the equation
-of `D^ℓF_{ℓ0}`, whose right side lies in `L¹Ḣ^{σ−1}` for `−1 < σ < 1`, gives
-`‖D^ℓF_{ℓ0}‖_{L¹Ḣ^{σ+1}} ≲_{Q,M₁} ‖b‖_{Ḣ^σ}`. Hence `A₀(s) = ∫₀^s D^ℓF_{ℓ0}` converges in `Ḣ^{σ+1}` to some `a_{0,∞}`.
-The product bound `‖[u, v]‖_{Ḣ^σ} ≲ ‖u‖_{Ḣ¹}‖v‖_{Ḣ^{σ+1}}` on `ℝ⁴`, valid for `−2 < σ < 1` (Bony's
-decomposition of PDE §7.3 with the Bernstein inequality of PDE §7.1), and `A → A_∞` in `Ḣ¹` then give
+equation of 8.3 with data `b`, so it is bounded in `Ḣ^σ`, and it tends to `0` there as `s → ∞` by the decay
+clause of 8.3 (the source asserts this decay at line 2543). The `ℓ²L¹` bound of 8.3, applied to the equation
+of the `𝔤`-valued function `D^ℓF_{ℓ0}`, whose right side `[DF, F_{0x}] + [F, DF_{0x}]` lies in `L¹Ḣ^{σ−1}` for
+`−1 < σ < 1` (`DF ∈ L²L²` against `F_{0x} ∈ L²Ḣ^{σ+1}`, and `F ∈ L²Ḣ¹` against `DF_{0x} ∈ L²Ḣ^σ`), gives
+`‖D^ℓF_{ℓ0}‖_{ℓ²L¹Ḣ^{σ+1}} ≲_{Q,M₁} ‖b‖_{Ḣ^σ}`. Hence each block `P_k A₀(s) = ∫₀^s P_k D^ℓF_{ℓ0}` converges in
+`Ḣ^{σ+1}`, and its tail `∫_s^∞ ‖P_k D^ℓF_{ℓ0}‖_{Ḣ^{σ+1}}` tends to `0` for each `k` and is at most the
+square-summable `‖P_k D^ℓF_{ℓ0}‖_{L¹Ḣ^{σ+1}}`; by dominated convergence in `ℓ²`, `A₀(s)` converges in
+`Ḣ^{σ+1}` to some `a_{0,∞}`. The product bound `‖[u, v]‖_{Ḣ^σ} ≲ ‖u‖_{Ḣ¹}‖v‖_{Ḣ^{σ+1}}` on `ℝ⁴`, valid for
+`−2 < σ < 1` (Bony's decomposition of PDE §7.3 with the Bernstein inequality of PDE §7.1), and `A → A_∞` in
+`Ḣ¹` then give
 `B_j = F_{0j} + D_jA₀ → D(A_∞)_j a_{0,∞}` in `Ḣ^σ`. This limit is `D(A_∞)`-curl-free because `A_∞` is flat,
 and the bound on `B_∞` is the uniform bound of 9.4. For `σ = 1` and for `ℋ` the route is the covariant div–curl
-system of lines 2530–2537 and 2550. The source's Corollary 5.15 states the linearised limit for
-`−1 < σ < 2` (lines 1954–1955). Its proof, Lemma 5.33(2), writes `0 ≤ σ ≤ 1` (lines 2515–2516), but the de
-Turck argument given there for `0 ≤ σ < 1` uses only facts that hold for `−1 < σ < 1` (for `σ < 0` the
-decay of `F_{0j}` by the reduction above), so it proves the negative range as well. For data in `Ḣ^σ`
-alone with `1 < σ < 2` neither place gives a proof, and that range is not stated here.
+system of lines 2530–2537 and 2550: `curl_A B` solves the 2-form version of the equation of 8.3 with right
+side `[F, DB] + [DF, B]` in `L²Ḣ^{−1}`, which is `D^k H_k` with `H = D Δ_A^{−1}([F, DB] + [DF, B]) ∈ L²L²` by
+8.2, so `curl_A B → 0` in `L²` by the decay clause of 8.3 (the source asserts this at line 2535). The
+source's Corollary 5.15 states the linearised limit for `−1 < σ < 2` (lines 1954–1955). Its proof, Lemma
+5.33(2), writes `0 ≤ σ ≤ 1` (lines 2515–2516), but the de Turck argument given there for `0 ≤ σ < 1` uses
+only facts that hold for `−1 < σ < 1` (for `σ < 0` the decay of `F_{0j}` is the decay clause of 8.3 at a
+negative index), so it proves the negative range as well. For data in `Ḣ^σ` alone with `1 < σ < 2`
+neither place gives a proof, and that range is not stated here.
 
 **Checks.**
 
@@ -1494,7 +1540,7 @@ alone with `1 < σ < 2` neither place gives a proof, and that range is not state
   block `P_k` commutes with the `L²`-orthogonal Helmholtz projection: the negative range holds, with
   constant `1`, in the abelian case.
 
-*Needs:* PDE §7.1, §7.3 (the product bound); 8.3, 9.1–9.4.
+*Needs:* PDE §7.1, §7.3 (the product bound); 8.2 (for `σ = 1`), 8.3 (bounds, `ℓ²L¹` bound and decay); 9.1–9.4.
 
 ### 9.6 The Dichotomy Theorem
 
