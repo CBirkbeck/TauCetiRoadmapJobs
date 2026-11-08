@@ -1,0 +1,13 @@
+{
+  "review": {
+    "status": "needs_changes",
+    "reviewer": "independent-review-PRREVIEW-ExplicitMultiplicativeFunctions~7",
+    "head": "68453f2ea9e2280b47ae83e39f7485952e70f457",
+    "pr": 1946,
+    "folder": "ExplicitMultiplicativeFunctions",
+    "date": "2026-11-08",
+    "findings": 3,
+    "blocking": 2,
+    "notes": "Full review. Gate rerun: all fields 0, OK. Depcheck: 244 roadmaps, 2465 edges, 0 problems. lake env lean: 12 sorry warnings only; #check of all 25 declarations matches the README; one-tactic probe fails on all 12 theorems (no padding). Previous findings: R01-R08 repaired (R02/R03/R05 recomputed: maximal-sum rows on [a,1e5], (16.2)-(16.4), coprime first rows, 0.173 row to 1e8, Piltz k=4,5), R09 (PR description) not repaired. New: ExplicitZetaBounds at 1f1a271 owns the three 1/zeta bounds in its 7.10 (two owners with 1.9, P2), and 1.9 lacks RH(3 000 175 332 800) and overstates the third range (P2). Seeded sample 0.3, 1.2, 1.5, 1.9, 3.1, 3.4, 4.1, 5.4, 5.6, 6.5, 7.1, 7.5, 7.7, 7.9, 8.3 checked at their locators or recomputed where uncertified; supplier citations resolved at EPC d7232a7, EZB 1f1a271, ECSS 7dbb08f; five declared gaps precise and unsupplied; four source issues recorded."
+  }
+}
