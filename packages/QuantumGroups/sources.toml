@@ -193,3 +193,36 @@ licence_class = "none"
 status = "uncertified"
 version_note = "paywalled; cited by its locator without the text"
 cited_for = ["0.5"]
+
+[[source]]
+id = "kustermansvaes"
+authors = "Johan Kustermans, Stefaan Vaes"
+title = "Locally compact quantum groups"
+year = 2000
+venue = "Annales scientifiques de l'École Normale Supérieure 33"
+doi = "10.1016/S0012-9593(00)01055-7"
+locator_scheme = "theorem"
+locator = "Definition 2.1"
+url = "http://www.numdam.org/item/ASENS_2000_4_33_6_837_0/"
+fetched_from = "https://www.numdam.org/item/ASENS_2000_4_33_6_837_0.pdf"
+fetched_at = "2026-11-08T19:38:00Z"
+sha256 = "cf8b6b17bd06f1b0c8f044949c55039b88dbe4f405019424671dda50e90ddede"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-08"
+cited_for = ["1.1"]
+
+[[source]]
+id = "timmermann"
+authors = "Thomas Timmermann"
+title = "An Invitation to Quantum Groups and Duality"
+year = 2008
+venue = "EMS Textbooks in Mathematics"
+doi = "10.4171/043"
+locator_scheme = "theorem"
+locator = "Theorem 5.1.6"
+url = "https://doi.org/10.4171/043"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["1.2", "2.1", "2.2", "2.3", "3.1", "3.2", "3.3", "3.4", "4.1", "5.1", "7.1", "8.6"]
