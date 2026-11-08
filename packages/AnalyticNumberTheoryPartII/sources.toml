@@ -90,3 +90,38 @@ status = "certified"
 accessed = "2026-11-08"
 version_note = "read as arXiv v1; theorem and equation numbers agree with arXiv v2 (Theorems 2.1–2.2, Theorem 8.4, (8.14)–(8.20)); page numbers cited for v1 are v1's"
 cited_for = ["4.1", "4.4", "4.4b", "4.4c", "4.5", "4.5g", "4.6", "4.6a", "4.8", "4.12a", "4.16", "4.17", "4.17a"]
+
+[[source]]
+id = "HeathBrown95"
+authors = "D. R. Heath-Brown"
+title = "A mean value estimate for real character sums"
+year = 1995
+venue = "Acta Arithmetica 72 (1995), no. 3, 235-275"
+locator_scheme = "theorem"
+locator = "Theorem 1, Corollaries 1-2, p.237; Theorem 2, p.238; proof of Theorem 1 §§2-8, pp.240-265; Corollaries §9, pp.265-267; Theorem 2 §10, pp.267-272"
+url = "https://matwbn.icm.edu.pl/ksiazki/aa/aa72/aa7234.pdf"
+fetched_from = "https://matwbn.icm.edu.pl/ksiazki/aa/aa72/aa7234.pdf"
+fetched_at = "2026-11-08T23:36:09Z"
+sha256 = "50e42d8ec3a7a57f60e6d2d68f4a9af2e4576d25a4bf22bab281f9ca88d2e590"
+licence_class = "institutional"
+status = "certified"
+accessed = "2026-11-08"
+cited_for = ["5.29", "5.30"]
+
+[[source]]
+id = "ConnesMarcolli08"
+authors = "Alain Connes, Matilde Marcolli"
+title = "Noncommutative Geometry, Quantum Fields and Motives"
+year = 2008
+venue = "American Mathematical Society Colloquium Publications 55"
+locator_scheme = "theorem"
+locator = "Ch. 3, §4.6: Theorem 3.32, pp.474-475; (3.138)-(3.142), pp.475-476"
+version_note = "author's copy; printed page = PDF page - 22"
+url = "https://www.its.caltech.edu/~matilde/coll-55.pdf"
+fetched_from = "https://www.its.caltech.edu/~matilde/coll-55.pdf"
+fetched_at = "2026-11-08T23:37:15Z"
+sha256 = "4154ad00fad638e06746f11cd476adb00d186d30cee11e9f531fd21c45aa71f7"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-08"
+cited_for = ["6.50"]
