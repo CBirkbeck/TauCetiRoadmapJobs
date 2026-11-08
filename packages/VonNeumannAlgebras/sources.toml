@@ -187,3 +187,40 @@ licence_class = "institutional"
 status = "certified"
 accessed = "2026-11-07"
 cited_for = ["13.2"]
+
+[[source]]
+id = "bunce-wright-1992"
+authors = "L. J. Bunce, J. D. Maitland Wright"
+title = "The Mackey-Gleason Problem"
+year = 1992
+venue = "Bull. Amer. Math. Soc. (N.S.) 26 (1992) 288-293"
+arxiv = "math/9204228v1"
+locator_scheme = "theorem"
+locator = "Theorem A"
+url = "https://arxiv.org/abs/math/9204228v1"
+fetched_from = "https://arxiv.org/pdf/math/9204228v1"
+fetched_at = "2026-11-08T09:34:12Z"
+sha256 = "967e91a369f03715cbf1c47748a20aba386a43ad2abfb0c73b52a113ca0b1fa3"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-08"
+version_note = "arXiv v1, the paper as published, same numbering"
+cited_for = ["V12.J.Scalar"]
+
+[[source]]
+id = "hamhalter-2014"
+authors = "Jan Hamhalter"
+title = "Dye's Theorem and Gleason's Theorem for AW*-algebras"
+year = 2014
+arxiv = "1408.4597v1"
+locator_scheme = "theorem"
+locator = "Theorem 4.3"
+url = "https://arxiv.org/abs/1408.4597v1"
+fetched_from = "https://arxiv.org/pdf/1408.4597v1"
+fetched_at = "2026-11-08T09:34:18Z"
+sha256 = "9f8080582fa8a19032a38b748425e7af3f6991f203e32fe92fe9371215faef8b"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-08"
+version_note = "arXiv v1"
+cited_for = ["V12.J.Dye"]
