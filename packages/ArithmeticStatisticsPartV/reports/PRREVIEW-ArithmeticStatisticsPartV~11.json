@@ -1,0 +1,13 @@
+{
+  "review": {
+    "status": "needs_changes",
+    "reviewer": "independent-review-PRREVIEW-ArithmeticStatisticsPartV~11",
+    "head": "4608cd5249c8f9b1c60db452e25d61ebd36a757b",
+    "pr": 1175,
+    "folder": "ArithmeticStatisticsPartV",
+    "date": "2026-11-08",
+    "findings": 1,
+    "blocking": 1,
+    "notes": "incremental re-review of 10 changed lines since 9198e54. Checked: previous R01 (joint-spin contract hypotheses and fixed data) repaired at README:60; new Mathlib names NumberField.discr_dvd_discr (Discriminant/Different.lean:120) and IsCyclotomicExtension.Rat.discr_prime_pow (Cyclotomic/Basic.lean:620) at the pin; SieveMethodsAndPrimePatterns §5.6 at its head (unit hypothesis, F, psi, T×V, s_a, Type I under C, Type II unconditional, prime bound); seeded sample in the changed passages (§3.30): ref103 Lemma 2.1 p.4, (2.2) p.5, (2.3)-(2.6) pp.5-7, Theorems 1 and 3, §5 pp.22-23; ref135 (3.1) p.7, (6.6) p.21; step-by-step check of the new proof of 'No sixteen rank governing field' with computed cyclotomic discriminants (13 new adversarial rows, 188 carried from ~10). One new P2: number-field quadratic reciprocity and the mod-8 dyadic factor are cited from SieveMethodsAndPrimePatterns §5.6, which imports them from ClassicalArithmeticCompletion §§1.66 and 1.57 (on main). Gate: worker's gate OK; my full gate depcheck=7 only against the unmoved ORDER.txt (--movable gives a moved: line, 0 problems); brief depcheck against merge-order-moved.txt 0 problems; lake env lean exit 0 with 41 sorry warnings; 49 #check signatures elaborate. Two source issues in ref103 (§5 modulus gap, (5.2) misprint)."
+  }
+}
