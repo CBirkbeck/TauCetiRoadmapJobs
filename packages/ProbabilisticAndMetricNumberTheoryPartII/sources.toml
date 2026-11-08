@@ -104,3 +104,20 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-26"
 cited_for = ["§3.4", "§3.5", "Notes on the sources"]
+
+[[source]]
+id = "PNT+"
+authors = "Alex Kontorovich, Terence Tao and contributors"
+title = "Prime Number Theorem and More (PrimeNumberTheoremAnd), file PrimeNumberTheoremAnd/IEANTN/KadiriEq12Helpers.lean"
+year = 2026
+version_note = "Apache-2.0 Lean project; the file at revision 127b50e33f6033e2147921167a117af96d9ba4ea (committed 2026-10-20); the declaration is cited by name, PNT+ lines 319–324."
+locator_scheme = "section"
+locator = "PrimeNumberTheoremAnd/IEANTN/KadiriEq12Helpers.lean at revision 127b50e33f6033e2147921167a117af96d9ba4ea: Phi_analyticOnNhd"
+url = "https://raw.githubusercontent.com/AlexKontorovich/PrimeNumberTheoremAnd/127b50e33f6033e2147921167a117af96d9ba4ea/PrimeNumberTheoremAnd/IEANTN/KadiriEq12Helpers.lean"
+fetched_from = "https://raw.githubusercontent.com/AlexKontorovich/PrimeNumberTheoremAnd/127b50e33f6033e2147921167a117af96d9ba4ea/PrimeNumberTheoremAnd/IEANTN/KadiriEq12Helpers.lean"
+fetched_at = "2026-11-08T21:06:00Z"
+sha256 = "6735a3dea158e24480e32d1c11c627f15b9295859e178f651f5e57e60cc3394f"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-08"
+cited_for = ["§2.5"]
