@@ -12,3 +12,70 @@ locator = "§§I–IV, Appendix"
 licence_class = "none"
 status = "waived"
 resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/2819#issuecomment-6632679124"
+
+[[source]]
+id = "epstein1966"
+authors = "D. B. A. Epstein"
+title = "Curves on 2-manifolds and isotopies"
+year = 1966
+venue = "Acta Mathematica 115 (1966), 83–107"
+doi = "10.1007/BF02392203"
+locator_scheme = "theorem"
+locator = "Theorems 1.7, 2.1, 3.1, 3.3, 3.4, 6.3, 6.4; Lemmas 2.4, 2.5, 3.2; Appendix Theorem A4"
+url = "https://archive.ymsc.tsinghua.edu.cn/pacm_download/117/6005-11511_2006_Article_BF02392203.pdf"
+fetched_from = "https://archive.ymsc.tsinghua.edu.cn/pacm_download/117/6005-11511_2006_Article_BF02392203.pdf"
+fetched_at = "2026-11-08T20:08:16Z"
+sha256 = "02da21c204329382ffeaff7e141faf1ddba213a090d3aec4701a3abce56ea4f7"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-11-08"
+cited_for = ["0.0d", "0.0h", "5.4", "5.5"]
+
+[[source]]
+id = "hirsch1976"
+authors = "Morris W. Hirsch"
+title = "Differential Topology"
+year = 1976
+venue = "Graduate Texts in Mathematics"
+doi = "10.1007/978-1-4684-9449-5"
+locator_scheme = "chapter"
+locator = "Chapter 8, §1"
+url = "https://doi.org/10.1007/978-1-4684-9449-5"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["0.3"]
+
+[[source]]
+id = "hatcher2002"
+authors = "Allen Hatcher"
+title = "Algebraic Topology"
+year = 2002
+venue = "Cambridge University Press"
+locator_scheme = "section"
+locator = "§3.3, pp. 234–235, Proposition 3.25"
+url = "https://pi.math.cornell.edu/~hatcher/AT/AT.pdf"
+fetched_from = "https://pi.math.cornell.edu/~hatcher/AT/AT.pdf"
+fetched_at = "2026-11-08T20:17:47Z"
+sha256 = "bebb3032bf9021b956da3bd070eb6c67dc662cf849be9cdf6679f677560e5618"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-08"
+cited_for = ["0.0c"]
+
+[[source]]
+id = "kriegl-michor1997"
+authors = "Andreas Kriegl and Peter W. Michor"
+title = "The Convenient Setting of Global Analysis"
+year = 1997
+venue = "Mathematical Surveys and Monographs 53, American Mathematical Society"
+locator_scheme = "theorem"
+locator = "Theorem 42.1 (p. 439), Lemma 42.5 (p. 442), Theorem 43.1 (pp. 454–455)"
+url = "https://www.mat.univie.ac.at/~michor/apbookh-ams.pdf"
+fetched_from = "https://www.mat.univie.ac.at/~michor/apbookh-ams.pdf"
+fetched_at = "2026-11-08T20:22:03Z"
+sha256 = "95b9a8ef8270e5e1ddc393d07f28511665bb041b9132e7c42795e137fd9018b9"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-08"
+cited_for = ["0.2"]
