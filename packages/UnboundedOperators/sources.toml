@@ -102,3 +102,18 @@ licence_class = "none"
 status = "uncertified"
 version_note = "paywalled; cited by its locator without the text"
 cited_for = ["4.8"]
+
+[[source]]
+id = "nelson"
+authors = "Edward Nelson"
+title = "Analytic Vectors"
+year = 1959
+venue = "Annals of Mathematics 70, 572–615"
+doi = "10.2307/1970331"
+locator_scheme = "section"
+locator = "§10; Lemmas 5.1 and 10.1"
+url = "https://doi.org/10.2307/1970331"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled (JSTOR, the only copy the author's bibliography lists); cited by its locator without the text"
+cited_for = ["2.3", "5.3", "6.4"]
