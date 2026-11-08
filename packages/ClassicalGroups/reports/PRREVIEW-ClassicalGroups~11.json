@@ -1,0 +1,4 @@
+{"review": {"status": "accepted", "reviewer": "independent-review-PRREVIEW-ClassicalGroups~11",
+            "head": "47ca68e3f7e2fa1720b4bcc99d474d8ded222c6f", "pr": 1192, "folder": "RepresentationTheory/ClassicalGroups", "date": "2026-11-08",
+            "findings": 0, "blocking": 0,
+            "notes": "incremental re-review of 8 changed lines since 3eb0c3a: the seven Mathlib file-and-line locators of r10 R01 (SymplecticGroup.lean:58,101,132,148; ExteriorPower/Basis.lean:94; RootSystem/CartanMatrix.lean:106; PiTensorProduct/Basis.lean:33) each opened at Mathlib 6b7abb3c and found on the declaration header; Suggested.lean byte-identical to 3eb0c3a; gate rerun OK with every counter zero; depcheck 236 roadmaps, 2419 edges, 0 problems; lake env lean exits 0 with exactly the same eleven sorry warnings; no file changed outside the folder; seeded sample lies in unchanged text whose r8/r9 verification stands; adversarial table carried with one new locator row."}}
