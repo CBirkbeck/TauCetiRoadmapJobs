@@ -45,8 +45,11 @@ SchemeAndStackFoundations §0.7; descent of smoothness along field extensions §
 `bijective_of_depth` §0.17; universal homeomorphisms §0.23; normal schemes and their codimension-one
 stalks §0.30; modifications with witness §4.11; regular schemes, `regularLocus_eq_smoothLocus` over a
 perfect field and Serre's normality criterion §4.13. The converse of Kunz's theorem
-(`isRegular_of_frobenius_flat`) is EnhancedDerivedSheaves §E1.6. The theory of `p`-bases of fields
-(a family is a `p`-basis exactly when its differentials form a basis of `Ω¹`) is
+(`isRegular_of_frobenius_flat`) is EnhancedDerivedSheaves §E1.6. F-finiteness (the absolute Frobenius
+makes the ring a finite module over itself: a field `k` is F-finite exactly when `[k : k^p] < ∞`, and the
+property passes to finite-type algebras and to localisations), hence the finiteness of the Frobenius of an
+algebra essentially of finite type over a perfect field, is DeformationAndDerivedPatchingAlgebra §3.14. The
+theory of `p`-bases of fields (a family is a `p`-basis exactly when its differentials form a basis of `Ω¹`) is
 DerivedDeRhamCohomology §0.23. The Lie derivative on the one-forms of a field over a subfield of
 characteristic zero is DiophantineApproximationAndTranscendence §5.6 (`lieDerivativeOneForm`, the unique
 operator of `exists_lieDerivativeOneForm`); §4.2 differs in constructing it for an arbitrary `k`-algebra in
@@ -208,7 +211,15 @@ planned.
   `< p` form a `K^p`-basis) exactly when its differentials form a `K`-basis of `Ω¹_{K/𝔽_p}`. The forward
   half, for a finite family, is `DerivedDeRham.pBasis_kaehler_basis` (with the predicate
   `DerivedDeRham.IsPBasis`); the converse half, from a basis of differentials to a `p`-basis, is stated in
-  the prose of §0.23 and is the half §5.3 uses.
+  the prose of §0.23 and is the half §5.2 uses.
+
+### From TauCetiRoadmap.DeformationAndDerivedPatchingAlgebra
+
+- §3.14, F-finiteness: a ring of characteristic `p` is F-finite when its absolute Frobenius makes it a finite
+  module over itself; a field `k` is F-finite exactly when `[k : k^p] < ∞`; F-finiteness passes to quotients,
+  to localisations and to finite-type algebras. Used in §5.3 for the localisations `R_Q` of `R = O_{X,x}`, `X`
+  of finite type over a perfect field `k` (so `[k : k^p] = 1`): `R_Q` is a localisation of a finitely generated
+  `k`-algebra.
 
 ### From TauCetiRoadmap.DiophantineApproximationAndTranscendence
 
@@ -229,7 +240,8 @@ property, Plücker form, locality and flat base change. Layer 2 specialises it t
 blowup, its modification property, its universal property, the triviality criterion, locality, field
 base change and the iteration. Layer 3 gives the embedded (Gauss map) and blowup descriptions. Layers 4
 and 5 prove the smoothness criteria, in characteristic zero and for normal schemes over perfect fields
-of characteristic `p`; both start from §4.1. Layer 6 builds the normalised Nash blowup and its
+of characteristic `p` (Layer 5 takes the finiteness of the Frobenius from DeformationAndDerivedPatchingAlgebra
+§3.14); both start from §4.1. Layer 6 builds the normalised Nash blowup and its
 isomorphism criteria, and Layer 7 the iterations and the never-resolves principle. Layers 4 and 5 are
 independent of Layers 3, 6 and 7.
 
@@ -492,7 +504,10 @@ closure of `σ_U(U)` onto the closure of its image, and both sides are reduced.
 
 ### 1.5 Locality and flat base change
 
-Prove *nashModification.restrict*: for an open `V ⊆ X`, `N(V, F|_V, r, U ∩ V) ≅ π_N⁻¹(V)` over `V`.
+Prove *nashModification.restrict*: for an open `V ⊆ X`, `N(V, F|_V, r, U ∩ V) ≅ π_N⁻¹(V)` over `V`
+(stacksNormalization, Morphisms Lemma 29.6.3(3), tag 01R8, line 421: the scheme-theoretic image of the
+quasi-compact `σ_U` commutes with restriction to opens; AlgebraicModuliForArithmeticGeometry §1.3 for
+`Gr_r(F|_V) = π⁻¹(V)`).
 
 Prove *nashModification.baseChange*: for a flat morphism `g : X' → X` from a reduced locally Noetherian
 scheme such that `g⁻¹(U)` is dense in `X'`, `N(X', g*F, r, g⁻¹(U)) ≅ N(X, F, r, U) ×_X X'` over `X'`,
@@ -571,7 +586,9 @@ gonzalezSprinberg1982, §1.2, line 94). On every irreducible component `ν` is b
 ### 2.3 The setting is preserved
 
 Prove *nashBlowup_setting*: for `X` in the Setting, `X*` is reduced, separated and of finite type over `k`,
-pure of dimension `d`, and its smooth locus contains `ν⁻¹(X_sm)`, hence is dense. Route: reducedness and
+pure of dimension `d`, and its smooth locus contains `ν⁻¹(X_sm)`, hence is dense (nashModificationNotes2024,
+Section 1, lines 109–112, for an embedded variety over an algebraically closed field: the Nash modification is a
+variety, proper and birational over `X` and an isomorphism over the regular locus). Route: reducedness and
 separatedness from §1.2; finite type since `Gr_d(Ω_{X/k}) → X` is of finite type; the irreducible components
 of `X*` are the closures of those of `ν⁻¹(X_sm) ≅ X_sm`, of dimension `d` by SchemeAndStackFoundations §0.7
 (dimension equals the transcendence degree of the function field).
@@ -717,9 +734,10 @@ uniqueness parts (`blowup_hom_ext`, §1.3).
 
 Prove *exists_nashBlowup_blowupPresentation*: every point of `X` has an affine open neighbourhood `V = Spec A`
 with an ideal `I ⊆ A` containing a nonzerodivisor and a surjection `∧^d Ω_{A/k} → I` that is an isomorphism
-over `V_sm`. Route: `∧^dΩ ⊗ Q(A)` is free of rank one over the total ring of fractions `Q(A)`, a product of the
-function fields; choose a basis, clear the finitely many denominators of the images of generators by a
-nonzerodivisor.
+over `V_sm` (nobile1975, proof of Theorem 1, lines 107–116, where the ideal is built from minors of the Jacobian
+matrix weighted by functions separating the irreducible components). Route: `∧^dΩ ⊗ Q(A)` is free of rank one
+over the total ring of fractions `Q(A)`, a product of the function fields; choose a basis, clear the finitely many
+denominators of the images of generators by a nonzerodivisor.
 
 **Checks.**
 
@@ -889,24 +907,7 @@ bullet of §4.2).
 
 ## Layer 5: normal varieties in positive characteristic
 
-### 5.1 Frobenius finiteness
-
-Prove *frobenius_finite_of_essFiniteType*: for a perfect field `k` of characteristic `p` and a `k`-algebra `R`
-essentially of finite type, the absolute Frobenius `F : R → R` is finite; for `R` a domain, `F_*R ≅ R^{1/p}`
-(nashModificationNotes2024, Section 5, lines 418–420). Route: if `R` is generated by `a_1, …, a_n` over
-`k = k^p`, the monomials `a^α`, `0 ≤ α_i < p`, generate `R` over `R^p`; for a localization `S⁻¹R`,
-`s⁻¹ = s^{p−1}/s^p`.
-
-**Checks.**
-
-- For `R = k[t]`, `F_*R` is free on `1, t, …, t^{p−1}`.
-- For `R = k`, `F` is an isomorphism (perfect field).
-- For `k = 𝔽_p(t)` imperfect, `R = k(s)` with `s` transcendental is finite over `R^p = k^p(s^p)` of degree `p²`,
-  not `p`: the count of generators uses `k^p = k`.
-
-*Needs:* Mathlib `frobenius`, `Algebra.FiniteType`, `Module.Finite`.
-
-### 5.2 The p-monomial operators
+### 5.1 The p-monomial operators
 
 Prove *exists_pMonomialOperators*: let `R` be a local `k`-algebra of characteristic `p`, `x_1, …, x_d ∈ m` and
 `∂_1, …, ∂_d` `k`-derivations with `∂_i(x_j) = δ_ij`. For `α ∈ A = {0, …, p−1}^d` put
@@ -923,16 +924,18 @@ for `α ≤ β` and `0` otherwise, the matrix `(∂^{(α)}(x^β))_{α,β ∈ A}`
 - For `d = 0`, `A = {∅}` and `φ_∅ = id`.
 - For the cusp in characteristic `3` with `x_1 = x`, `∂ = ∂/∂x`: the operators exist, `φ` separates
   `1, x, x²`, but `y = t³` is not in the `R^3`-span of `1, x, x²`, so the operators alone do not give freeness
-  (§5.4 needs normality).
+  (§5.3 needs normality).
 
 *Needs:* §4.1; Mathlib `Derivation`, `Matrix`.
 
-### 5.3 The generic Frobenius basis
+### 5.2 The generic Frobenius basis
 
 Prove *frobeniusBasis_functionField*: let `k` be perfect of characteristic `p`, `K` a field finitely generated over
 `k` with `dim_K Ω_{K/k} = d`, and `x_1, …, x_d ∈ K` with `dx_1, …, dx_d` a basis of `Ω_{K/k}`. Then the monomials
-`x^α`, `α ∈ A`, form a `K^p`-basis of `K`, so `[K : K^p] = p^d`. Route: `Ω_{K/𝔽_p} → Ω_{K/k}` is an isomorphism
-because `dc = d((c^{1/p})^p) = 0` for `c ∈ k`; so `dx_1, …, dx_d` is a `K`-basis of `Ω¹_{K/𝔽_p}`, and
+`x^α`, `α ∈ A`, form a `K^p`-basis of `K`, so `[K : K^p] = p^d` (the rank `p^d` of `R^{1/p}` for a local ring `R`
+of a `d`-dimensional variety, with `K = Frac R`, is used in duarteNunezBetancourt2020, proof of Theorem 3.10,
+lines 301–302, and nashModificationNotes2024, Section 5, lines 421–422). Route: `Ω_{K/𝔽_p} → Ω_{K/k}` is an
+isomorphism because `dc = d((c^{1/p})^p) = 0` for `c ∈ k`; so `dx_1, …, dx_d` is a `K`-basis of `Ω¹_{K/𝔽_p}`, and
 `x_1, …, x_d` is a `p`-basis by the converse half of DerivedDeRhamCohomology §0.23 (from a basis of
 differentials to a `p`-basis).
 
@@ -945,21 +948,26 @@ differentials to a `p`-basis).
 
 *Needs:* DerivedDeRhamCohomology §0.23; Mathlib `KaehlerDifferential`, `frobenius`.
 
-### 5.4 Freeness of the Frobenius pushforward
+### 5.3 Freeness of the Frobenius pushforward
 
 Prove *frobeniusPushforward_free_of_kaehler_surjection*: let `k` be perfect of characteristic `p`, `X` normal, of
 finite type over `k`, pure of dimension `d`, `x` a closed point, `R = O_{X,x}`, and `q : Ω_{R/k} → R^d` a
-surjection. With `x_j ∈ m`, `∂_i` from §4.1, the `R`-linear map `ψ : ⊕_{α ∈ A} R e_α → F_*R`, `e_α ↦ x^α`
-(that is, `Σ r_α e_α ↦ Σ r_α^p x^α`), is an isomorphism; hence the Frobenius of `R` is flat and `R` is regular
-(duarteNunezBetancourt2020, proof of Theorem 3.10, lines 284–305; nashModificationNotes2024, Section 5, lines
-408–439). Route:
+surjection. Write `F_*R` for `R` viewed as an `R`-module through the absolute Frobenius; as `R` is a domain,
+`r ↦ r^{1/p}` identifies `F_*R` with the subring `R^{1/p}` of a perfect closure of `Frac R`, and the structure map
+`R → F_*R` with the inclusion `R ⊆ R^{1/p}`. With `x_j ∈ m`, `∂_i` from §4.1, the `R`-linear map
+`ψ : ⊕_{α ∈ A} R e_α → F_*R`, `e_α ↦ x^α` (that is, `Σ r_α e_α ↦ Σ r_α^p x^α`), is an isomorphism; hence the
+Frobenius of `R` is flat and `R` is regular (duarteNunezBetancourt2020, proof of Theorem 3.10, lines 284–305;
+nashModificationNotes2024, Section 5, lines 408–439). Route:
 
-1. `ψ` is injective: `φ_γ` (§5.2) applied to `Σ r_α^p x^α` returns `r_γ^p`, and `R` is reduced.
-2. At the zero prime, `ψ ⊗ K` is bijective by §5.3 applied to `K = Frac R`, where `dx_1, …, dx_d` is a basis of
+1. `ψ` is injective: `φ_γ` (§5.1) applied to `Σ r_α^p x^α` returns `r_γ^p`, and `R` is reduced.
+2. At the zero prime, `ψ ⊗ K` is bijective by §5.2 applied to `K = Frac R`, where `dx_1, …, dx_d` is a basis of
    `Ω_{K/k}` (generic smoothness, §1.1 and §0.3).
 3. At a height-one prime `Q`, `R_Q` is a discrete valuation ring (SchemeAndStackFoundations §0.30), `F_*R_Q` is
-   finite (§5.1) and torsion-free, hence free of rank `p^d` (step 2), and `R_Q → F_*R_Q` splits (its cokernel is
-   torsion-free because `R_Q` is integrally closed). With a splitting `σ_Q`, the map
+   finite because `R_Q` is F-finite (DeformationAndDerivedPatchingAlgebra §3.14: `k` is F-finite as
+   `[k : k^p] = 1`, and `R_Q` is a localisation of a finitely generated `k`-algebra; nashModificationNotes2024,
+   Section 5, lines 418–420) and torsion-free, hence free of rank `p^d` (step 2), and `R_Q → F_*R_Q` splits (its
+   cokernel `R_Q^{1/p}/R_Q` is torsion-free: if `s·f ∈ R_Q` with `s ≠ 0`, then `f ∈ Frac R` and `f^p ∈ R_Q`, so `f`
+   is integral over the integrally closed `R_Q`). With a splitting `σ_Q`, the map
    `ρ_Q(f) = Σ_γ σ_Q(φ_γ(f)) e_γ` is a surjection of free modules of rank `p^d` with `ρ_Q ∘ ψ_Q = id`, so `ψ_Q` is
    bijective.
 4. At primes of height `≥ 2`, `depth R_Q ≥ 2` (Serre's criterion, SchemeAndStackFoundations §4.13) and `0` is the
@@ -970,19 +978,28 @@ surjection. With `x_j ∈ m`, `∂_i` from §4.1, the `R`-linear map `ψ : ⊕_{
 
 **Checks.**
 
-- For `R = k[x_1, …, x_d]_{m}`, `ψ` is the standard identification of `F_*R` with the free module on `x^α`.
+- For `R = k[x_1, …, x_d]_{m}`, `ψ` is the standard identification of `F_*R` with the free module on `x^α`; for
+  `d = 1` the basis of `F_*k[t]_{(t)}` is `1, t, …, t^{p−1}`, already a basis of `F_*k[t]` over `k[t]` before
+  localising.
 - For the cusp in characteristic `3` (not normal), `ψ` is injective but not surjective (`t³ ∉` image), so
   normality is needed in step 3.
-- For `d = 0`, `R = k` and `ψ : R → F_*R` is the identity under `k^p = k`.
+- For `d = 0`, `R = k` and `ψ : R → F_*R` is the identity under `k^p = k`: the Frobenius of the perfect field `k`
+  is bijective, and `F_*k` is free of rank `1 = p^0`.
+- Over the imperfect field `k = 𝔽_p(t)`, take `X = 𝔸¹_k = Spec k[s]`, `x = (s)`, `R = k[s]_{(s)}` and `q(ds) = 1`,
+  so `x_1 = s` and `d = 1`. The function field `K = k(s)` has `dim_K Ω_{K/k} = 1` but `[K : K^p] = p²` (with
+  `K^p`-basis `t^i s^j`, `0 ≤ i, j < p`), so `F_*R` has rank `p²` while `ψ` has rank `p`, and `t ∈ F_*R` is not of
+  the form `Σ r_α^p s^α`: `ψ` is not surjective although `R` is regular. The perfectness of `k` enters through the
+  rank count of steps 2 and 3, not through finiteness: `R` is still F-finite, as `[k : k^p] = p` is finite.
 
-*Needs:* §§0.3, 1.1, 4.1, 5.1, 5.2, 5.3; SchemeAndStackFoundations §§0.17, 0.30, 4.13; EnhancedDerivedSheaves §E1.6.
+*Needs:* §§0.3, 1.1, 4.1, 5.1, 5.2; DeformationAndDerivedPatchingAlgebra §3.14; SchemeAndStackFoundations §§0.17,
+0.30, 4.13; EnhancedDerivedSheaves §E1.6.
 
-### 5.5 The theorem of Duarte and Núñez-Betancourt
+### 5.4 The theorem of Duarte and Núñez-Betancourt
 
 Prove *nashBlowupHom_isIso_iff_smooth_of_normal*: for a perfect field `k` of characteristic `p > 0` and `X` normal
 in the Setting, `ν` is an isomorphism iff `X` is smooth over `k` (duarteNunezBetancourt2020, Theorem 3.10, line 256,
 over an algebraically closed field; nashModificationNotes2024, Theorem 5.1, line 362, where "singular" should read
-"nonsingular"). Route: §2.5 gives the quotient, §5.4 regularity at closed points, §0.6 smoothness.
+"nonsingular"). Route: §2.5 gives the quotient, §5.3 regularity at closed points, §0.6 smoothness.
 
 **Checks.**
 
@@ -994,7 +1011,7 @@ over an algebraically closed field; nashModificationNotes2024, Theorem 5.1, line
 - The quadric cone `z² = xy` (normal) in characteristic `p ≠ 2` has Jacobian ideal `(x, y, z)`, not invertible, so
   `ν` is not an isomorphism, consistently.
 
-*Needs:* §§0.6, 2.5, 5.4.
+*Needs:* §§0.6, 2.5, 5.3.
 
 ### Examples
 
@@ -1003,7 +1020,7 @@ The imperfect-field curve `x^p + y² + t = 0` over `𝔽_p(t)`; the cusp in smal
 ### Dependencies
 
 Layers 0–2 and §4.1; SchemeAndStackFoundations §§0.17, 0.30, 4.13; EnhancedDerivedSheaves §E1.6;
-DerivedDeRhamCohomology §0.23.
+DerivedDeRhamCohomology §0.23; DeformationAndDerivedPatchingAlgebra §3.14.
 
 ## Layer 6: the normalised Nash blowup
 
@@ -1056,13 +1073,16 @@ property (AlgebraicModuliForArithmeticGeometry §5.4) lifts `q`. The hypothesis 
 
 ### 6.3 Locality and separable base change
 
-Prove *normalizedNashBlowup.restrict*: for `V ⊆ X` open, `V̄* ≅ ν̄⁻¹(V)` over `V` (§2.6 and normalisation commuting
-with open immersions, AlgebraicModuliForArithmeticGeometry §5.4).
+Prove *normalizedNashBlowup.restrict*: for `V ⊆ X` open, `V̄* ≅ ν̄⁻¹(V)` over `V` (stacksNormalization, Lemma
+29.54.6, tag 035K, line 6332, for the normalisation over an open, applied to the inclusion of the generic points of
+`X*`; §2.6 and normalisation commuting with open immersions, AlgebraicModuliForArithmeticGeometry §5.4).
 
 Prove *normalizedNashBlowup.baseChange*: for a finite separable extension `k'/k`, `(X̄*)_{k'} ≅ (X_{k'})̄*` over
-`X_{k'}`. Route: §2.6, `Spec k' → Spec k` is smooth, and the base change of the inclusion of generic points of `X*`
-is the inclusion of generic points of `(X*)_{k'}` because `κ(ξ) ⊗_k k'` is a finite product of fields; Mathlib's
-`normalizationPullback` is an isomorphism along smooth maps.
+`X_{k'}` (stacksVarieties, Lemma 33.27.5, tag 0C3N, line 2256, for the normalisation of a locally algebraic
+`k`-scheme under a separable extension of `k`, applied to `X*`; §2.6 for `(X*)_{k'} ≅ (X_{k'})*`). Route: §2.6,
+`Spec k' → Spec k` is smooth, and the base change of the inclusion of generic points of `X*` is the inclusion of
+generic points of `(X*)_{k'}` because `κ(ξ) ⊗_k k'` is a finite product of fields; Mathlib's `normalizationPullback`
+is an isomorphism along smooth maps.
 
 **Checks.**
 
@@ -1083,7 +1103,7 @@ separated) whose image contains the dense `ν⁻¹(X_sm)`, so `s` is a surjectiv
 and `ν` is an isomorphism (`isIso_of_isClosedImmersion_of_surjective`); `X ≅ X̄*` is normal. Conversely, if `X` is
 normal and `ν` is an isomorphism, `X*` is normal and `η` is an isomorphism (AlgebraicModuliForArithmeticGeometry §5.4).
 
-Corollaries: in characteristic zero (§4.5), and over a perfect field of characteristic `p` (§5.5), `ν̄` is an
+Corollaries: in characteristic zero (§4.5), and over a perfect field of characteristic `p` (§5.4), `ν̄` is an
 isomorphism iff `X` is smooth over `k`.
 
 **Checks.**
@@ -1093,7 +1113,7 @@ isomorphism iff `X` is smooth over `k`.
 - Over `𝔽_p(t)`, `p > 2`, the regular curve `x^p + y² + t = 0` has `ν̄` an isomorphism without being smooth: the
   perfectness hypothesis of the corollary is needed.
 
-*Needs:* §§2.5, 4.5, 5.5, 6.1; Mathlib `isIso_of_isClosedImmersion_of_surjective`; AlgebraicModuliForArithmeticGeometry §5.4.
+*Needs:* §§2.5, 4.5, 5.4, 6.1; Mathlib `isIso_of_isClosedImmersion_of_surjective`; AlgebraicModuliForArithmeticGeometry §5.4.
 
 ### Examples
 
@@ -1129,8 +1149,9 @@ Prove *iterate_openSubscheme*: for `Y` in the Setting, an open `U ⊆ Y` and a `
 Nash iterate of `Y` contains an open subscheme `k`-isomorphic to the `i`-th Nash iterate of `Z`, for every `i`; the
 same holds for the normalised iterates. Consequently, if `Y_m` contains an open subscheme `k`-isomorphic to `X` for
 some `m ≥ 1`, then `Y_{m+i}` contains an open subscheme isomorphic to `Y_i` for all `i`, and `Y_{jm}` contains one
-isomorphic to `X` for all `j ≥ 1`; likewise for the `X^{(i)}`. Route: §2.6 and §6.3 (locality), and the transport of
-Nash blowups along `k`-isomorphisms (§2.4 uniqueness).
+isomorphic to `X` for all `j ≥ 1`; likewise for the `X^{(i)}` (castilloDuarteLeytonLiendo2026, Theorem, lines
+58–67: the consequence drawn there from items (i)–(iii) uses this propagation without stating it). Route: §2.6 and
+§6.3 (locality), and the transport of Nash blowups along `k`-isomorphisms (§2.4 uniqueness).
 
 **Checks.**
 

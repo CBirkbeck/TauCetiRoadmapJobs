@@ -443,7 +443,7 @@
      ],
      "locator": {
       "source": "stacksNormalization",
-      "where": "Morphisms Lemma 29.26.16 (081I), line 2198"
+      "where": "Morphisms Lemma 29.26.16 (081I), line 2198; Lemma 29.6.3(3) (01R8), line 421"
      },
      "prerequisites": [
       "target:1.2",
@@ -839,7 +839,7 @@
      ],
      "locator": {
       "source": "nobile1975",
-      "where": "Theorem 1, line 105; nashModificationNotes2024 Section 3, lines 243–247"
+      "where": "Theorem 1, line 105, and its proof, lines 107–116; nashModificationNotes2024 Section 3, lines 243–247"
      },
      "prerequisites": [
       "target:1.3",
@@ -1142,42 +1142,6 @@
     {
      "id": "5.1",
      "kind": "theorem",
-     "name": "frobenius_finite_of_essFiniteType",
-     "statement": "For a perfect field k of characteristic p and a k-algebra R essentially of finite type, the absolute Frobenius of R is finite; for a domain F_*R ≅ R^{1/p}.",
-     "hypotheses": [
-      "k perfect of characteristic p",
-      "R essentially of finite type over k"
-     ],
-     "locator": {
-      "source": "nashModificationNotes2024",
-      "where": "Section 5, lines 418–420"
-     },
-     "prerequisites": [
-      "mathlib:frobenius",
-      "mathlib:Algebra.FiniteType",
-      "mathlib:Module.Finite"
-     ],
-     "tests": [
-      {
-       "name": "frobenius_polynomial",
-       "kind": "computation",
-       "statement": "k[t]: F_*R free on 1, t, …, t^{p−1}"
-      },
-      {
-       "name": "frobenius_perfect_field",
-       "kind": "degenerate",
-       "statement": "R = k: F is an isomorphism"
-      },
-      {
-       "name": "frobenius_imperfect",
-       "kind": "non-example",
-       "statement": "over 𝔽_p(t), k(s) has degree p² over its p-th powers, not p"
-      }
-     ]
-    },
-    {
-     "id": "5.2",
-     "kind": "theorem",
      "name": "exists_pMonomialOperators",
      "statement": "For a local k-algebra R of characteristic p with x_j ∈ m and derivations ∂_i, ∂_i(x_j) = δ_ij, there are R^p-linear operators φ_γ (γ ∈ {0,…,p−1}^d) with φ_γ(x^β) = δ_{γβ}, built from (α!)⁻¹ ∂^α and the inverse of the unitriangular matrix (∂^{(α)}(x^β)).",
      "hypotheses": [
@@ -1213,7 +1177,7 @@
      ]
     },
     {
-     "id": "5.3",
+     "id": "5.2",
      "kind": "theorem",
      "name": "frobeniusBasis_functionField",
      "statement": "For k perfect of characteristic p, K finitely generated over k with dim Ω_{K/k} = d and dx_1, …, dx_d a basis, the monomials x^α (α ∈ {0,…,p−1}^d) form a K^p-basis of K; [K : K^p] = p^d.",
@@ -1224,7 +1188,7 @@
      ],
      "locator": {
       "source": "duarteNunezBetancourt2020",
-      "where": "proof of Theorem 3.10, lines 284–286 and 301–302 (rank p^d of R^{1/p})"
+      "where": "proof of Theorem 3.10, lines 284–286 and 301–302 (rank p^d of R^{1/p}); nashModificationNotes2024 Section 5, lines 421–422"
      },
      "prerequisites": [
       "roadmap:DerivedDeRhamCohomology §0.23",
@@ -1250,10 +1214,10 @@
      ]
     },
     {
-     "id": "5.4",
+     "id": "5.3",
      "kind": "theorem",
      "name": "frobeniusPushforward_free_of_kaehler_surjection",
-     "statement": "For k perfect of characteristic p, X normal, of finite type, pure of dimension d, x closed, R = O_{X,x} and q : Ω_{R/k} → R^d surjective, ψ : ⊕_α R e_α → F_*R, e_α ↦ x^α, is an isomorphism; hence Frobenius is flat and R is regular.",
+     "statement": "For k perfect of characteristic p, X normal, of finite type, pure of dimension d, x closed, R = O_{X,x} and q : Ω_{R/k} → R^d surjective, ψ : ⊕_α R e_α → F_*R ≅ R^{1/p}, e_α ↦ x^α, is an isomorphism; hence Frobenius is flat and R is regular. F_*R_Q is finite at height-one primes because R_Q is F-finite (DeformationAndDerivedPatchingAlgebra §3.14).",
      "hypotheses": [
       "k perfect of characteristic p",
       "X normal, finite type, pure of dimension d",
@@ -1262,7 +1226,7 @@
      ],
      "locator": {
       "source": "duarteNunezBetancourt2020",
-      "where": "proof of Theorem 3.10, lines 284–305; nashModificationNotes2024 Section 5, lines 408–439"
+      "where": "proof of Theorem 3.10, lines 284–305; nashModificationNotes2024 Section 5, lines 408–439 (finiteness of R^{1/p}: lines 418–420)"
      },
      "prerequisites": [
       "target:0.3",
@@ -1270,7 +1234,7 @@
       "target:4.1",
       "target:5.1",
       "target:5.2",
-      "target:5.3",
+      "roadmap:DeformationAndDerivedPatchingAlgebra §3.14",
       "roadmap:SchemeAndStackFoundations §0.17",
       "roadmap:SchemeAndStackFoundations §0.30",
       "roadmap:SchemeAndStackFoundations §4.13",
@@ -1280,7 +1244,7 @@
       {
        "name": "psi_polynomial",
        "kind": "computation",
-       "statement": "R = k[x_1..x_d]_m: ψ is the standard basis of F_*R"
+       "statement": "R = k[x_1..x_d]_m: ψ is the standard basis of F_*R; for d = 1 the basis 1, t, …, t^{p−1} of F_*k[t]_{(t)}, already a basis of F_*k[t]"
       },
       {
        "name": "psi_cusp_char3",
@@ -1290,12 +1254,17 @@
       {
        "name": "psi_point",
        "kind": "degenerate",
-       "statement": "d = 0, R = k: ψ is the identity"
+       "statement": "d = 0, R = k: ψ is the identity; the Frobenius of the perfect field k is bijective, F_*k free of rank 1 = p^0"
+      },
+      {
+       "name": "psi_rank_imperfect",
+       "kind": "non-example",
+       "statement": "over k = 𝔽_p(t), R = k[s]_{(s)} with q(ds) = 1: [K : K^p] = p² for K = k(s), so ψ (rank p) misses t although R is regular; the rank p^d needs k perfect, while R is still F-finite ([k : k^p] = p)"
       }
      ]
     },
     {
-     "id": "5.5",
+     "id": "5.4",
      "kind": "theorem",
      "name": "AlgebraicGeometry.nashBlowupHom_isIso_iff_smooth_of_normal",
      "statement": "For a perfect field k of characteristic p > 0 and X normal in the Setting, ν is an isomorphism iff X is smooth over k.",
@@ -1310,7 +1279,7 @@
      "prerequisites": [
       "target:0.6",
       "target:2.5",
-      "target:5.4"
+      "target:5.3"
      ],
      "tests": [
       {
@@ -1439,8 +1408,8 @@
       "k'/k finite separable"
      ],
      "locator": {
-      "source": "stacksNormalization",
-      "where": "Lemma 29.55.5 (035Q), line 6561"
+      "source": "stacksVarieties",
+      "where": "Lemma 33.27.5 (0C3N), line 2256 (normalisation and separable field extension); stacksNormalization Lemma 29.54.6 (035K), line 6332 (normalisation over an open)"
      },
      "prerequisites": [
       "target:2.6",
@@ -1482,7 +1451,7 @@
      "prerequisites": [
       "target:2.5",
       "target:4.5",
-      "target:5.5",
+      "target:5.4",
       "target:6.1",
       "mathlib:AlgebraicGeometry.isIso_of_isClosedImmersion_of_surjective",
       "roadmap:AlgebraicModuliForArithmeticGeometry §5.4"
@@ -1577,7 +1546,7 @@
      ],
      "locator": {
       "source": "castilloDuarteLeytonLiendo2026",
-      "where": "Theorem, lines 58–67 (the consequence drawn there)"
+      "where": "Theorem, lines 58–67 (the consequence drawn there uses this propagation without stating it)"
      },
      "prerequisites": [
       "target:2.4",
@@ -1677,7 +1646,14 @@
    "sections": [
     "§0.23"
    ],
-   "what": "p-bases of fields: a family is a p-basis exactly when its differentials form a basis of Ω¹_{K/𝔽_p}; the forward half is DerivedDeRham.pBasis_kaehler_basis, the converse half (used by §5.3) is stated in the prose of §0.23."
+   "what": "p-bases of fields: a family is a p-basis exactly when its differentials form a basis of Ω¹_{K/𝔽_p}; the forward half is DerivedDeRham.pBasis_kaehler_basis, the converse half (used by §5.2) is stated in the prose of §0.23."
+  },
+  {
+   "roadmap": "DeformationAndDerivedPatchingAlgebra",
+   "sections": [
+    "§3.14"
+   ],
+   "what": "F-finiteness: a ring of characteristic p is F-finite when its absolute Frobenius makes it a finite module over itself; a field k is F-finite iff [k : k^p] < ∞; F-finiteness passes to quotients, localisations and finite-type algebras. Used in §5.3 for the localisations R_Q of R = O_{X,x}, X of finite type over a perfect field."
   },
   {
    "roadmap": "DiophantineApproximationAndTranscendence",
