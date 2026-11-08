@@ -270,6 +270,7 @@ ExplicitPrimeCounting
 ExplicitCharacterSumsAndSieves
 ExplicitMultiplicativeFunctions
 ExplicitNumberFields
+AnalyticNumberTheoryPartIII
 EllipticCurveModularityPartII
 PolynomialGaloisGroupsPartII
 ArithmeticDynamicsPartII
