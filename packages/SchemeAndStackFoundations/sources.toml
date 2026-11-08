@@ -132,3 +132,46 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-05"
 cited_for = ["x"]
+
+[[source]]
+id = "de-jong-1996"
+authors = "A. J. De Jong"
+title = "Smoothness, semi-stability and alterations"
+year = 1996
+venue = "Publications Mathématiques de l'IHÉS 83"
+doi = "10.1007/BF02698644"
+locator_scheme = "theorem"
+locator = "Theorem 4.1"
+url = "https://doi.org/10.1007/BF02698644"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["4.19"]
+
+[[source]]
+id = "stacks-project"
+locator_scheme = "tag"
+locator = "07GC"
+url = "https://stacks.math.columbia.edu/"
+fetched_from = "https://stacks.math.columbia.edu/"
+fetched_at = "2026-11-08T10:25:43Z"
+sha256 = "6d2ec1c3deb43a69fce322d5c9c639ee9354626efcb02e53c3dc8ffd2732ed7c"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-08"
+cited_for = ["0.15"]
+
+[[source]]
+id = "hartshorne-1977"
+authors = "Robin Hartshorne"
+title = "Algebraic Geometry"
+year = 1977
+venue = "Graduate Texts in Mathematics"
+doi = "10.1007/978-1-4757-3849-0"
+locator_scheme = "theorem"
+locator = "V.1, Proposition 1.4"
+url = "https://doi.org/10.1007/978-1-4757-3849-0"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["5.9"]
