@@ -1,0 +1,31 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "InverseGaloisAndArithmeticFundamentalGroups"
+
+[[source]]
+id = "ribes-zalesskii-profinite-groups"
+authors = "Luis Ribes, Pavel Zalesskii"
+title = "Profinite Groups"
+year = 2010
+doi = "10.1007/978-3-642-01642-4"
+locator_scheme = "theorem"
+locator = "Theorem 2.3.15"
+url = "https://doi.org/10.1007/978-3-642-01642-4"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["IG.3.4 Conjugacy of coprime complements; IG.4.5 Coprime profinite complements"]
+
+[[source]]
+id = "huppert-endliche-gruppen-1"
+authors = "Bertram Huppert"
+title = "Endliche Gruppen I"
+year = 1967
+venue = "Grundlehren der mathematischen Wissenschaften"
+doi = "10.1007/978-3-642-64981-3"
+locator_scheme = "chapter"
+locator = "Kap. III, §4"
+url = "https://doi.org/10.1007/978-3-642-64981-3"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["IG.4.3 The Fitting subgroup; IG.4.3 Fitting supplements for solvable groups (Kap. III, Satz 3.2(b), Satz 4.2(c))"]
