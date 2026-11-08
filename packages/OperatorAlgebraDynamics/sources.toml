@@ -231,3 +231,16 @@ licence_class = "none"
 status = "uncertified"
 version_note = "paywalled; cited by its locator without the text"
 cited_for = ["D2.BoundedSequenceTranslation"]
+
+[[source]]
+id = "araki1973"
+locator_scheme = "theorem"
+locator = "Proposition 4.1"
+url = "https://ems.press/content/serial-article-files/41744?nt=1"
+fetched_from = "https://ems.press/content/serial-article-files/41744?nt=1"
+fetched_at = "2026-11-08T04:48:23Z"
+sha256 = "08049dcff4e39992d2cc27ad8b9bc8319d259c47dd97f315b095298e8517a7a1"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-11-08"
+cited_for = ["D7"]
