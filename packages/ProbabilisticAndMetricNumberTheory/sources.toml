@@ -586,3 +586,20 @@ locator = "Chapter 1"
 licence_class = "none"
 status = "waived"
 resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/9208#issuecomment-6722340683"
+
+[[source]]
+id = "PNTPlus"
+authors = "Alex Kontorovich, Terence Tao and contributors"
+title = "Prime Number Theorem and More (PrimeNumberTheoremAnd), file PrimeNumberTheoremAnd/IwaniecKowalskiCh1.lean"
+year = 2026
+version_note = "Apache-2.0 Lean project; the file at revision 127b50e33f6033e2147921167a117af96d9ba4ea; IsAdditive is cited by name, lines 43-44 of the file."
+locator_scheme = "section"
+locator = "PrimeNumberTheoremAnd/IwaniecKowalskiCh1.lean at revision 127b50e33f6033e2147921167a117af96d9ba4ea: IsAdditive, lines 43-44"
+url = "https://raw.githubusercontent.com/AlexKontorovich/PrimeNumberTheoremAnd/127b50e33f6033e2147921167a117af96d9ba4ea/PrimeNumberTheoremAnd/IwaniecKowalskiCh1.lean"
+fetched_from = "https://raw.githubusercontent.com/AlexKontorovich/PrimeNumberTheoremAnd/127b50e33f6033e2147921167a117af96d9ba4ea/PrimeNumberTheoremAnd/IwaniecKowalskiCh1.lean"
+fetched_at = "2026-11-08T21:37:26Z"
+sha256 = "7d03e98aa9e4e660e5ccbf32713a6afcf74f5faaa848dfbd5ffaab56bfa4e16e"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-08"
+cited_for = ["§0.1"]
