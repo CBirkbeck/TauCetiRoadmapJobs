@@ -248,3 +248,37 @@ licence_class = "none"
 status = "uncertified"
 version_note = "paywalled (JSTOR); cited by its locator without the text"
 cited_for = ["8.11a"]
+
+[[source]]
+id = "stacks-simplicial"
+authors = "The Stacks project authors"
+title = "The Stacks project, Chapter 14: Simplicial Methods"
+year = 2026
+venue = "https://stacks.math.columbia.edu"
+locator_scheme = "tag"
+locator = "Lemma 14.31.6 (Tag 08NZ)"
+url = "https://stacks.math.columbia.edu/download/simplicial.pdf"
+fetched_from = "https://stacks.math.columbia.edu/download/simplicial.pdf"
+fetched_at = "2026-11-08T18:52:25Z"
+sha256 = "87847df7287b59afaf814cfffa2a1cd7c431869e1b455d3840ece4e44bbc2015"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-08"
+cited_for = ["8.2"]
+
+[[source]]
+id = "moore1955"
+authors = "John C. Moore"
+title = "Homotopie des complexes monoïdaux, I"
+year = 1955
+venue = "Séminaire Henri Cartan 7 (1954-1955), no. 2, exposé 18, pp. 1-8"
+locator_scheme = "section"
+locator = "Exposé 18"
+url = "https://www.numdam.org/item/SHC_1954-1955__7_2_A8_0.pdf"
+fetched_from = "https://www.numdam.org/item/SHC_1954-1955__7_2_A8_0.pdf"
+fetched_at = "2026-11-08T18:53:33Z"
+sha256 = "68ce7cffc3c7caf485f093435f25e74a926b620ee46caff9d19bd089e32b92f7"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-08"
+cited_for = ["8.2"]
