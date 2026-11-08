@@ -1,0 +1,98 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "DiophantineApproximationAndTranscendence"
+
+[[source]]
+id = "W00"
+locator_scheme = "theorem"
+locator = "Proposition 4.7"
+url = "https://webusers.imj-prg.fr/~michel.waldschmidt/articles/pdf/dalag.pdf"
+fetched_from = "https://webusers.imj-prg.fr/~michel.waldschmidt/articles/pdf/dalag.pdf"
+fetched_at = "2026-11-08T08:29:41Z"
+sha256 = "e04a822f5b5d61be78c290f508ee7c8a28766e060ef4ec62377d068a942e3d59"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-08"
+cited_for = ["3.4"]
+
+[[source]]
+id = "P22"
+locator_scheme = "theorem"
+locator = "Definition 3.3.1"
+url = "https://esaga.uni-due.de/f/lukas.pottmeyer/DioApp.pdf"
+fetched_from = "https://esaga.uni-due.de/f/lukas.pottmeyer/DioApp.pdf"
+fetched_at = "2026-11-08T09:03:29Z"
+sha256 = "f86bb6072e20c5515e29d86fd654b3e37f0c0841d50b69c607f0d6240d7235cf"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-08"
+cited_for = ["1.4"]
+
+[[source]]
+id = "E19-ch1"
+locator_scheme = "theorem"
+locator = "Theorem 1.1"
+url = "https://pub.math.leidenuniv.nl/~evertsejh/dio19-1.pdf"
+fetched_from = "https://pub.math.leidenuniv.nl/~evertsejh/dio19-1.pdf"
+fetched_at = "2026-11-08T09:03:30Z"
+sha256 = "299eabc4e88d0e114bc35819531c803699c3beb2873b9b24e11afadd84d82e23"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-08"
+cited_for = ["0.4"]
+
+[[source]]
+id = "E19-ch3"
+locator_scheme = "theorem"
+locator = "Exercise 3.7"
+url = "https://pub.math.leidenuniv.nl/~evertsejh/dio19-3.pdf"
+fetched_from = "https://pub.math.leidenuniv.nl/~evertsejh/dio19-3.pdf"
+fetched_at = "2026-11-08T09:03:31Z"
+sha256 = "205a3bd4614aff0e4da77c0ff7ecb106cea63fcfd3bba60528f18d841d1e39df"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-08"
+cited_for = ["0.3"]
+
+[[source]]
+id = "E19-ch4"
+locator_scheme = "theorem"
+locator = "Theorem 4.16"
+url = "https://pub.math.leidenuniv.nl/~evertsejh/dio19-4.pdf"
+fetched_from = "https://pub.math.leidenuniv.nl/~evertsejh/dio19-4.pdf"
+fetched_at = "2026-11-08T09:03:31Z"
+sha256 = "1d120934e01ca54eb985678211716b7f5dd656dc3ad6882ed8cbfbbff5ddee54"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-08"
+cited_for = ["3.2"]
+
+[[source]]
+id = "E19-ch8"
+locator_scheme = "theorem"
+locator = "Theorem 8.13"
+url = "https://pub.math.leidenuniv.nl/~evertsejh/dio19-8.pdf"
+fetched_from = "https://pub.math.leidenuniv.nl/~evertsejh/dio19-8.pdf"
+fetched_at = "2026-11-08T09:03:32Z"
+sha256 = "f2d717adf6adb48802ab3d57e6e1b1a6a8a08d3735247c67f538911023537f5a"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-08"
+cited_for = ["2.4"]
+
+[[source]]
+id = "Bugeaud"
+authors = "Yann Bugeaud"
+title = "Exponents of Diophantine approximation"
+year = 2015
+arxiv = "1502.03052v1"
+locator_scheme = "theorem"
+locator = "Definition 1.2"
+url = "https://arxiv.org/abs/1502.03052v1"
+fetched_from = "https://arxiv.org/pdf/1502.03052v1"
+fetched_at = "2026-11-08T09:03:37Z"
+sha256 = "5d98ac74c956da01bc275aefc1d06b41b676df1fcf57511604e93ff66f7518f3"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-08"
+version_note = "arXiv v1"
+cited_for = ["0.5"]
