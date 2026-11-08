@@ -221,3 +221,23 @@ licence_class = "publisher-open"
 status = "certified"
 accessed = "2026-11-08"
 cited_for = ["2.2", "2.6", "2.17a", "2.22", "2.32", "2.33", "2.34", "2.44", "2.45", "2.46", "2.50", "2.51", "3.3", "3.4", "3.27"]
+
+[[source]]
+id = "thornerzaman2017"
+authors = "Jesse Thorner, Asif Zaman"
+title = "An explicit bound for the least prime ideal in the Chebotarev density theorem"
+year = 2017
+venue = "Alg. Number Th. 11 (2017) 1135-1197"
+doi = "10.2140/ant.2017.11.1135"
+arxiv = "1604.01750v2"
+locator_scheme = "equation"
+locator = "§2, (2-1)–(2-7), pp.1140–1141 and Lemma 2.3, p.1142 (Algebra & Number Theory 11 (2017)); arXiv:1604.01750v2 numbers the same equations (2.1)–(2.7)"
+url = "https://arxiv.org/abs/1604.01750v2"
+fetched_from = "https://arxiv.org/pdf/1604.01750v2"
+fetched_at = "2026-11-08T22:41:03Z"
+sha256 = "5c4877ac9c0f0e5dc0c377ca966fb97f4aae6912c669b2f1334591aec0f36ee4"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-08"
+version_note = "arXiv v2 read: its (2.1)–(2.7) (pp.5–6) and Lemma 2.3 (p.7) carry the content the README cites as the published (2-1)–(2-7) and Lemma 2.3; the published page numbers were not read"
+cited_for = ["2.17a", "2.21", "2.22", "2.22a", "2.31f", "2.34"]
