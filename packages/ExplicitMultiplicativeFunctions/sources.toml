@@ -1339,3 +1339,37 @@ status = "certified"
 accessed = "2026-11-08"
 version_note = "MathOverflow content under CC BY-SA 4.0; the answer as edited on 20 January 2026"
 cited_for = ["9.3a"]
+
+[[source]]
+id = "primeNumberTheoremAnd"
+authors = "A. Kontorovich, T. Tao and contributors"
+title = "PrimeNumberTheoremAnd"
+year = 2026
+locator_scheme = "theorem"
+locator = "blueprint labels at revision 127b50e33f6033e2147921167a117af96d9ba4ea, in PrimeNumberTheoremAnd/Consequences.lean (mun, mu-pnt, mu-pnt-alt), IwaniecKowalskiCh1.lean (d_apply_prime_pow, d_apply, two_pow_omega_le_sigma_zero), IEANTN/MobiusLemma.lean (M-def, Q-def, mobius-lemma-1-sub, mobius-lemma-1, mobius-lemma-2, mobius-lemma-2-sub-1, mobius-lemma-2-sub-2), IEANTN/Mertens.lean (Meissel-Mertens-eq, Mertens-third-error, Mertens-third-theorem-error), IEANTN/Dusart.lean (Dusart_thm_5_9a, Dusart_thm_5_9b) and IEANTN/Lcm.lean (highlyabundant-def to thm:large-n-final)"
+url = "https://raw.githubusercontent.com/AlexKontorovich/PrimeNumberTheoremAnd/127b50e33f6033e2147921167a117af96d9ba4ea/PrimeNumberTheoremAnd/IEANTN/Lcm.lean"
+fetched_from = "https://raw.githubusercontent.com/AlexKontorovich/PrimeNumberTheoremAnd/127b50e33f6033e2147921167a117af96d9ba4ea/PrimeNumberTheoremAnd/IEANTN/Lcm.lean"
+fetched_at = "2026-11-08T22:40:46Z"
+sha256 = "fb98efcaf49676edbe18599725aea4295b2cec4bd4d573fb2270041b979ce5ed"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-08"
+version_note = "Lean and blueprint sources at commit 127b50e33f6033e2147921167a117af96d9ba4ea of github.com/AlexKontorovich/PrimeNumberTheoremAnd, Apache 2.0; the url and sha256 are those of IEANTN/Lcm.lean, and the five other files named in the locator were fetched at the same commit (Consequences.lean sha256 7b9146a398d01aac583ce4ebfa6d62036f1a3de2d53b9dad827d34f1414d9611, IwaniecKowalskiCh1.lean 7d03e98aa9e4e660e5ccbf32713a6afcf74f5faaa848dfbd5ffaab56bfa4e16e, IEANTN/MobiusLemma.lean 862efd0969940e2fa3af5394f4ccc74ce6405e3fd82ec5e09cdefd49780e9a8e, IEANTN/Mertens.lean 4118d652ad0d671a7977df5bd57e13398534f6e27a539a00806d4d52bf2bc7bd, IEANTN/Dusart.lean 6bc79eebeb782009508c1e17a61dcb467286fccd50b61dfe95957298605ebbb9). In IEANTN/Lcm.lean the step lemmas from lem:choose-pi on are stated for n at least 89693 squared."
+cited_for = ["0.1", "0.5", "1.4", "2.1", "2.3", "7.1a", "8.1", "8.1a", "9.2", "9.3a"]
+
+[[source]]
+id = "ieantn"
+authors = "T. Tao and contributors"
+title = "IEANTN, the Integrated Explicit Analytic Number Theory Network"
+year = 2026
+locator_scheme = "theorem"
+locator = "nodes Lcm/v1 (HighlyAbundant, lcmUpto_not_highlyAbundant) and Lcm/v2 (HighlyAbundant, lcmUpto_not_highlyAbundant_of_primeGap) at revision 466b41b28ecc224398cf53a99c5fe9618131398b"
+url = "https://raw.githubusercontent.com/teorth/IEANTN/466b41b28ecc224398cf53a99c5fe9618131398b/IEANTN/Nodes/Lcm/v2/Conclusions.lean"
+fetched_from = "https://raw.githubusercontent.com/teorth/IEANTN/466b41b28ecc224398cf53a99c5fe9618131398b/IEANTN/Nodes/Lcm/v2/Conclusions.lean"
+fetched_at = "2026-11-08T22:40:46Z"
+sha256 = "d633b6117349ddf45ce37ae31bb3d85da59d2f193438a477bfc7149dc6089877"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-08"
+version_note = "Lean sources at commit 466b41b28ecc224398cf53a99c5fe9618131398b of github.com/teorth/IEANTN, Apache 2.0; the url and sha256 are those of IEANTN/Nodes/Lcm/v2/Conclusions.lean, and IEANTN/Nodes/Lcm/v1/Conclusions.lean (sha256 1722328c2f0bc16332c59cf14be2d74d021ebf753db18d8b547804a513bbc0e2) and IEANTN/Vocabulary/PrimeGaps.lean (HasPrimeInInterval.logPower, sha256 5c7168269e729f01ed0d17620bf9b6c134442e56ae2efbb018cbaa979916f18f) were fetched at the same commit."
+cited_for = ["9.3a"]
