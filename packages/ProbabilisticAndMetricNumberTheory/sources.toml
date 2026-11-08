@@ -562,3 +562,27 @@ licence_class = "institutional"
 status = "certified"
 accessed = "2026-11-08"
 cited_for = ["4.9b"]
+
+[[source]]
+id = "BHV2007"
+authors = "Bachir Bekka, Pierre de la Harpe, Alain Valette"
+title = "Kazhdan's Property (T)"
+year = 2008
+doi = "10.1017/cbo9780511542749"
+locator_scheme = "section"
+locator = "Appendix B.1"
+licence_class = "none"
+status = "waived"
+resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/9208#issuecomment-6722340683"
+
+[[source]]
+id = "IK2004"
+authors = "Henryk Iwaniec, Emmanuel Kowalski"
+title = "Analytic Number Theory"
+year = 2004
+doi = "10.1090/coll/053"
+locator_scheme = "chapter"
+locator = "Chapter 1"
+licence_class = "none"
+status = "waived"
+resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/9208#issuecomment-6722340683"
