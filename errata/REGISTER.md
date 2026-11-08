@@ -2,7 +2,7 @@
 
 Reviewers, red-team passes and errata jobs record every mistake they find in a source while checking a roadmap's locators: misprints (slips whose intended meaning is clear), errors (a false statement or proof step) and gaps (a step the source does not justify), each with the roadmap, the board pull request or errata job and the head that reported it. Collected by the board sync from the `## Source issues` sections of review, red-team and errata comments; the data is in `errata/source-issues.json`.
 
-9974 mistakes recorded on the board: 5816 misprints, 2577 errors, 1133 gaps, 448 unparsed bullets.
+9980 mistakes recorded on the board: 5821 misprints, 2578 errors, 1133 gaps, 448 unparsed bullets.
 Errata jobs have read the cited sources of 60 roadmaps; in those of 2 they found no mistake.
 The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explorer/`: 1525 awaiting review, 13582 confirmed, 228 rejected.
 
@@ -6610,6 +6610,11 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 - **Misprint** at §2.4, printed p. 13, H26 line 622: the source says the reverse functor with the extension i_{i!}; it should be i_{1!}, as its source D(G*) and the p. 9 definition require; affects nothing. Found by ExcursionOperatorsAndSpectralActionPartII (#1289 at 913f271, 2026-10-26, claude fable).
 - **Misprint** at §2.4, reverse Hecke composite, printed p. 13 (H26 line 622): the source says the last extension bears subscript i; it should be i₁!, agreeing with the source character space and the p. 9 definition; affects nothing. Found by ExcursionOperatorsAndSpectralActionPartII (#1289 at 913f271, 2026-10-27, codex gpt-6-astra).
 
+## HA
+
+- **Misprint** at Proposition 7.2.1.19, printed page 1236: the source says M is a right A-module, N a left A-module and the Tor is over `π_*A`, with the ring named R; it should be R throughout; affects nothing; <!-- tauceti-roadmap-review {"agent": "claude", "head": "b6e473888b97576e4984c0a1d8ab846c81290a05", "job": "REV-DESIGN-QuasicoherentSheavesOnPrestacks~5", "model": "fable", "worker": "chris-x9"} -->. Found by QuasicoherentSheavesOnPrestacks (#7645 at b6e4738, 2026-11-08, claude fable).
+- **Misprint** at Theorem 7.2.2.15, printed page 1240: the source says the connective module N is a "left A-module" and writes the tensor product over A, where the ring was named R; it should be R throughout; affects nothing. Found by QuasicoherentSheavesOnPrestacks (#7645 at b6e4738, 2026-11-08, claude fable).
+
 ## Haagerup
 
 - **Misprint** at Theorem 1.1 proof, Lemma 3.1, p. 99 (Haagerup line 225; Haagerup line 227): the source says the Taylor expansion applies φ to b and b²; it should be use ψ for every B-variable term, keeping φ for A-variable terms; affects the proof. Found by CStarAlgebras (ERRATA-CStarAlgebras at 2a35ac0, 2026-10-24, codex gpt-6-astra).
@@ -8337,6 +8342,13 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 - **Misprint** at §2, definition of ω_J preceding (4), pp. 5–6 (Kogan–Miller line 284): the source says to sum weights in columns n+1−j_i, giving q_{3}=t⁻³z₁₃ when n=3; it should be sum ω_{i,j_{k+1−i}} for increasingly ordered J of size k, yielding polynomial q_J with constant antidiagonal coefficient; affects a stated result. Found by GroebnerGeometry (ERRATA-GroebnerGeometry at 163d43c, 2026-10-24, codex gpt-6-astra).
 - **Misprint** at §5, dimension comparison preceding Proposition 11, p. 12 (Kogan–Miller line 607): the source says to take the complex dimension of the line bundle Lλ_τ itself; it should be take the dimension of Γ(Lλ_τ), the space of sections; affects the proof. Found by GroebnerGeometry (ERRATA-GroebnerGeometry at 163d43c, 2026-10-24, codex gpt-6-astra).
 - **Error** at §5, dominant weights and branching formula (8), pp. 10–11 (Kogan–Miller line 548 and line 557): the source says dominant weights and branching weights are strictly decreasing positive sequences; it should be allow weakly decreasing integer weights; even λ=(3,2,1) branches to μ=(2,2), omitted by the printed restriction; affects a stated result. Found by GroebnerGeometry (ERRATA-GroebnerGeometry at 163d43c, 2026-10-24, codex gpt-6-astra).
+
+## kontorovichtao-pntplus
+
+- **Misprint** at Lemma 3.1.3, printed p. 7 (line 187): the source says the statement ends with a clause about an absolute constant `C` although no `C` occurs in it; it should be end after the `L¹` bound; affects nothing. Found by AnalyticNumberTheoryPartIII (#9211 at 08250e4, 2026-11-08, claude fable).
+- **Misprint** at Lemma 4.3.2, printed p. 23 (line 901): the source says symmetry of the Mellin convolution is asserted for `x ≠ 0` for functions on the positive reals; it should be `x > 0` (on an `ℝ`-carrier the substitution `z = x/y` fails for `x < 0`); affects nothing. Found by AnalyticNumberTheoryPartIII (#9211 at 08250e4, 2026-11-08, claude fable).
+- **Misprint** at Lemma 4.3.4, printed p. 25 (line 985): the source says the proof cites Lemma 4.3.1 for `𝓜ν_ε(1) = 𝓜ν(ε)`; it should be cite Corollary 4.3.1; affects nothing. Found by AnalyticNumberTheoryPartIII (#9211 at 08250e4, 2026-11-08, claude fable).
+- **Error** at Theorem 9.1.70, printed p. 90 (lines 3626–3631): the source says the totient series was stated for `Re s > 1` in an earlier build; it should be `Re s > 2`; affects a stated result; corrected in print at the same theorem (the build read records the correction). <!-- tauceti-roadmap-review {"agent": "claude", "head": "08250e4c799ff3f4054b5deb294c93fe813b51d1", "job": "REV-DESIGN-AnalyticNumberTheoryPartIII", "model": "fable", "worker": "chris-c-antiiir"} -->. Found by AnalyticNumberTheoryPartIII (#9211 at 08250e4, 2026-11-08, claude fable).
 
 ## Kosaki
 
