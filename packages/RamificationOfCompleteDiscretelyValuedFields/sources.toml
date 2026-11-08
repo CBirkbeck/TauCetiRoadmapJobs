@@ -65,3 +65,20 @@ licence_class = "none"
 status = "uncertified"
 version_note = "paywalled; cited by its locator without the text"
 cited_for = ["3a.1, 3a.2, 3a.3, 4a.2"]
+
+[[source]]
+id = "serre1960"
+authors = "Jean-Pierre Serre"
+title = "Groupes proalgébriques"
+year = 1960
+venue = "Publications mathématiques de l'IHÉS 7, 5–67"
+locator_scheme = "section"
+locator = "n° 1.2, 1.4, 2.4, 2.5, 5.1"
+url = "http://www.numdam.org/item?id=PMIHES_1960__7__5_0"
+fetched_from = "https://www.numdam.org/item/10.1007/BF02699186.pdf"
+fetched_at = "2026-11-08T18:39:52Z"
+sha256 = "f37353ed71786d32f0c498c3c6fdee1936d3c884eeb1d45a79c6fa1f0254ecbe"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-08"
+cited_for = ["3a.3"]
