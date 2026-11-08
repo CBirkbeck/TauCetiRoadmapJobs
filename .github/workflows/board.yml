@@ -36,7 +36,7 @@ concurrency:
 jobs:
   board:
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    timeout-minutes: 55
     env:
       GH_TOKEN: ${{ github.token }}
       PYTHONUNBUFFERED: "1"
@@ -47,11 +47,14 @@ jobs:
       - uses: astral-sh/setup-uv@v6
       - name: Install the worker
         run: uv tool install git+https://github.com/TauCetiProject/TauCetiRoadmapWorker@main
-      - name: Intake
-        run: tauceti-roadmap --conf ./tauceti-roadmap.toml board intake --yes
+      # The sync (labels, gate and review rounds) runs first and the intake (merges of submissions, one every
+      # ~40 s when many wait) is bounded, so the job's timeout never cuts the sync or the stale-claims release.
       - name: Sync
         if: always()
         run: tauceti-roadmap --conf ./tauceti-roadmap.toml board sync --yes
+      - name: Intake
+        if: always()
+        run: timeout 2400 tauceti-roadmap --conf ./tauceti-roadmap.toml board intake --yes || [ $? -eq 124 ]
       - name: Stale claims
         if: always()
         run: tauceti-roadmap --conf ./tauceti-roadmap.toml board stale --release --yes
