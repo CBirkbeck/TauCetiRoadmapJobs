@@ -228,3 +228,22 @@ status = "certified"
 accessed = "2026-11-08"
 version_note = "arXiv v4; the README's section and page locators are those of arXiv v4"
 cited_for = ["3.1", "3.3", "3.4", "3.6", "3.7"]
+
+[[source]]
+id = "calegari-geraghty-harris-2019"
+authors = "Frank Calegari, David Geraghty, Michael Harris"
+title = "Bloch–Kato conjectures for automorphic motives"
+year = 2019
+venue = "Appendix to F. Calegari, D. Geraghty, Minimal modularity lifting for nonregular symplectic representations, Duke Math. J. 169 (2020), 801–896"
+arxiv = "1907.08694v1"
+version_note = "arXiv v1, cited with its own numbering (§4, Lemma 4.2, p. 8); the published appendix is cited by no locator"
+locator_scheme = "theorem"
+locator = "§4, proof of Lemma 4.2, p. 8"
+url = "https://arxiv.org/abs/1907.08694v1"
+fetched_from = "https://arxiv.org/pdf/1907.08694v1"
+fetched_at = "2026-11-08T19:35:39Z"
+sha256 = "8389edfec6576b92aea1fd4dbf6c96ccb86b2186a6f244ab46c4abf1c02e2bed"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-08"
+cited_for = ["5.9"]
