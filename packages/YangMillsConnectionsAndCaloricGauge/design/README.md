@@ -52,8 +52,9 @@ Lie algebra (Conventions):
   well-posedness and long-time theory in the local caloric gauge, and the Dichotomy and Threshold
   Theorems (Layer 9);
 - flat `Ḣ¹` connections as pure gauges, caloric connections, the map `Cal`, the notion of a `C¹`
-  split submanifold of a Banach space, the caloric manifold, its tangent spaces, the projection
-  `Π_a` and the bundle of caloric initial data sets (Layer 10).
+  split submanifold of a Banach space (a subset with charts that are Mathlib's `C¹` smooth embeddings), the
+  caloric manifold, its tangent spaces, the projection `Π_a` and the bundle of caloric initial data sets
+  (Layer 10).
 
 It leaves to named roadmaps:
 
@@ -190,6 +191,15 @@ At the pinned Mathlib; paths under `Mathlib/`.
   `Analysis/Normed/Module/Ball/RadialEquiv.lean`) for polar coordinates.
 - `ContDiff` and `HasFDerivAt` for maps between Banach spaces; `Submodule.ClosedComplemented`
   (`Topology/Algebra/Module/Complement.lean`) for split subspaces; `Orientation.volumeForm`.
+- `Manifold.IsSmoothEmbedding` (`Geometry/Manifold/SmoothEmbedding.lean`: a `C^n` immersion that is a
+  topological embedding) and `Manifold.IsImmersion` with `Manifold.IsImmersion.isDiffImmersionAt`
+  (`Geometry/Manifold/Immersion.lean`: one complement `F` for all points, the local normal form `u ↦ (u, 0)` in
+  charts of the maximal `C^n` atlases, and a continuous left inverse of the derivative at every point), for the
+  charts of 10.4; `TopologicalSpace.Opens.instChartedSpace` (`Geometry/Manifold/HasGroupoid.lean`) for an open
+  subset as a manifold; the inverse function theorem `ContDiffAt.toOpenPartialHomeomorph` and
+  `ContDiffAt.to_localInverse` (`Analysis/Calculus/InverseFunctionTheorem/ContDiff.lean`). `isDiffImmersionAt`
+  goes from an immersion to a split injective derivative only; 10.4 proves the converse from the inverse function
+  theorem.
 
 ### From Tau Ceti
 
@@ -228,14 +238,16 @@ At the pinned Tau Ceti; paths under `TauCeti/`.
 - §2.2 and §2.3: interpolation, Calderón–Zygmund operators, the Riesz transforms and the
   Mihlin–Hörmander theorem, for the whole-space div–curl estimate `‖∇u‖_p ≲ ‖div u‖_p + ‖curl u‖_p`,
   `1 < p < ∞` (§§4.3, 5.2, 8.2).
+- §3.2: the weak maximum principle for weak subsolutions of the Laplacian on balls (§10.4).
 - §6.1: Bochner spaces; §6.3: the heat semigroup `e^{sΔ}` on `L^p(ℝ^d)`, its generator, Duhamel's
   formula and the smoothing estimates (Layers 8–9).
 - §7.1: the homogeneous blocks `P_k`, Bernstein and Littlewood–Paley estimates, and the heat-block
   estimate `‖e^{sΔ}P_k f‖_p ≲ exp(−c4^k s)‖P_k f‖_p`; §7.2: homogeneous Besov spaces `Ḃ^s_{p,q}` with
   their realisation for `s < d/p`; §7.3: paraproducts and the Littlewood–Paley trichotomy (Layers 8–10).
   §7.3 states its estimates in the Hölder–Besov spaces `𝒞^α`; the `L²`-based product bounds of Layers
-  8–10, such as `‖[u, v]‖_{Ḣ^σ} ≲ ‖u‖_{Ḣ¹}‖v‖_{Ḣ^{σ+1}}` on `ℝ⁴` for `−2 < σ < 1` (9.5, 10.5), follow from its
-  decomposition `fg = T_f g + T_g f + R(f, g)` and §7.1's Bernstein inequality.
+  8–10, such as `‖[u, v]‖_{Ḣ^σ} ≲ ‖u‖_{Ḣ¹}‖v‖_{Ḣ^{σ+1}}` on `ℝ⁴` for `−2 < σ < 1` (9.5, 10.5) and
+  `‖[u, v]‖_{ℓ¹L²} ≲ ‖u‖_{Ḣ¹}‖v‖_{Ḣ¹}` on `ℝ⁴` (10.4), follow from its decomposition `fg = T_f g + T_g f + R(f, g)`
+  and §7.1's Bernstein inequality.
 
 What PDE must provide (gap:lp-neumann-ball): for `1 < p < ∞`, the unit ball `B₁ ⊂ ℝ^d`, `d ≥ 2`,
 `f ∈ L^p(B₁)` and a vector field `V ∈ W^{1,p}(B₁; ℝ^d)` with `∫_{B₁} f = ∫_{∂B₁} ν·V`, the Neumann problem
@@ -1646,27 +1658,67 @@ Prove (OhTataru-YMHF Proposition 7.7, lines 3286–3290; OhTataru-Threshold Theo
 ### 10.4 The caloric manifold
 
 Define a `C¹` split submanifold of a real Banach space `𝔅` as a subset `S` such that every `a ∈ S` has an open
-neighbourhood `U`, a closed subspace `E ⊆ 𝔅` with `Submodule.ClosedComplemented`, an open `V ⊆ E` and a `C¹`
-map `φ : V → 𝔅` that is a homeomorphism onto `S ∩ U` with injective derivative of closed complemented range;
-its tangent space at `a = φ(v)` is the range of `Dφ(v)`, independent of the chart. Prove
-(OhTataru-YMHF Theorem 7.8, lines 3294–3346): `𝒞` is a `C¹` split submanifold of `ℋ`, with the chart at `a`
-given by `a + b ↦ Cal(a + b)` on the covariant Coulomb slice `{a + b : D(a)^ℓ b_ℓ = 0}` near `a` (lines 3301–3306).
-Route: `C¹` regularity from 10.2; the derivative `b ↦ b − D(a)c`, `c = dO(0)b`, is bounded below because
-`‖D(a)c‖_{ℓ¹Ḣ¹} ≲ ‖Δ_a c‖_{ℓ¹L²}` (8.2); local surjectivity by gauge-transforming the segment to a nearby
-caloric connection into the slice, solving `D^k D_k O;h = …` in `ℓ¹Ḣ²`. No regularity beyond `C¹` is
-asserted (lines 3295–3296).
+neighbourhood `U`, a closed subspace `E ⊆ 𝔅` with `Submodule.ClosedComplemented`, an open `V ⊆ E` and a chart
+`φ : V → 𝔅` with image `S ∩ U` that is a `C¹` smooth embedding in Mathlib's sense,
+`Manifold.IsSmoothEmbedding 𝓘(ℝ, E) 𝓘(ℝ, 𝔅) 1 φ`, where `V` is charted as an open subset of `E`
+(`TopologicalSpace.Opens.instChartedSpace`). That is, `φ` is a topological embedding and a `C¹` immersion
+(`Manifold.IsImmersion`): there is one Banach space `F` such that near each `v ∈ V` some `C¹` charts of `V` and of
+`𝔅` write `φ` as `u ↦ (u, 0)` through an isomorphism `E × F ≅ 𝔅`. The tangent space at `a = φ(v)` is the range
+of `Dφ(v)`. Prove:
+
+- at every point the derivative of a chart has a continuous left inverse (Mathlib
+  `Manifold.IsImmersion.isDiffImmersionAt`; on an open subset of `E` the manifold derivative is the Fréchet
+  derivative), so the tangent space is a closed complemented subspace isomorphic to `E`;
+- conversely, a `C¹` map `φ` on a connected open `V ⊆ E` that is a homeomorphism onto its image, with `Dφ(v)`
+  injective of closed complemented range for every `v`, is a `C¹` smooth embedding: at `v₀`, with
+  `𝔅 = Dφ(v₀)E ⊕ F`, the map `(u, w) ↦ φ(u) + w` on `V × F` has invertible derivative at `(v₀, 0)`, so its local
+  inverse is a `C¹` chart of `𝔅` (Mathlib `ContDiffAt.toOpenPartialHomeomorph`, `ContDiffAt.to_localInverse`) in
+  which `φ` reads `u ↦ (u, 0)`; that chart serves every point near `v₀`, with `F ≅ 𝔅/Dφ(v)E` there, so the
+  isomorphism class of the cokernel is locally constant, hence constant on connected `V`, and one `F` serves all
+  of `V`;
+- the tangent space does not depend on the chart: for charts with `φ₁(v₁) = φ₂(v₂) = a`, the map `φ₂⁻¹ ∘ φ₁` near
+  `v₁` is `φ₁` followed by a normal-form chart of `φ₂` and the projection `E₂ × F₂ → E₂`, hence `C¹`, so
+  `Dφ₁(v₁)E₁ ⊆ Dφ₂(v₂)E₂`, and symmetrically.
+
+Prove (OhTataru-YMHF Theorem 7.8, lines 3294–3346): `𝒞` is a `C¹` split submanifold of `ℋ`, with the chart at `a`
+given by `b ↦ Cal(a + b)` on a ball around `0` in the covariant Coulomb slice `E_a = {b ∈ ℋ : D(a)^ℓ b_ℓ = 0}`
+(lines 3301–3306). Route: `C¹` regularity from 10.2. Let `Δ_a⁻¹` be the solution operator of 8.2 on `ℓ¹L²` and
+`𝒢_a = D(a)Δ_a⁻¹(ℓ¹L²)` the gauge directions. By 8.2, Hölder with `ℓ¹Ḣ² ⊂ L^∞` and the product bound
+`‖[u, v]‖_{ℓ¹L²} ≲ ‖u‖_{Ḣ¹}‖v‖_{Ḣ¹}` on `ℝ⁴` (PDE §7.1, §7.3), `‖D(a)Δ_a⁻¹f‖_ℋ ≲ ‖f‖_{ℓ¹L²}` and `D(a)^ℓ h_ℓ ∈ ℓ¹L²` for `h ∈ ℋ`, so
+`Ph = h − D(a)Δ_a⁻¹(D(a)^ℓ h_ℓ)` is a bounded projection of `ℋ` onto `E_a` with kernel `𝒢_a`. The derivative of the
+chart at `0` is `Lb = b − D(a)c`, `c = dO(0)b` (lines 3315–3321), and `c = Δ_a⁻¹(Δ_a c)` with
+`Δ_a c = −D(a)^ℓ(Lb)_ℓ ∈ ℓ¹L²`: both vanish at infinity (`O(∞) = 1`; `ℓ¹Ḣ² ⊂ C₀` by Bernstein), and a solution `z`
+of `Δ_a z = 0` vanishing at infinity has `Δ|z|² = 2|D(a)z|² ≥ 0`, so `z = 0` by the weak maximum principle on large
+balls (PDE §3.2). Hence `PL = id`: `L` is bounded below and its range is closed and complemented by `𝒢_a`. The
+construction of the second item at `0` puts the chart in normal form on a ball, where it is a `C¹` immersion with
+continuous inverse; local surjectivity, which makes its image `𝒞 ∩ U` for an open `U ∋ a`, by gauge-transforming
+the segment to a nearby caloric connection into the slice, solving `D^k D_k O;h = …` in `ℓ¹Ḣ²` (lines 3327–3346).
+No regularity beyond `C¹` is asserted (lines 3295–3296).
 
 **Checks.**
 
-- `G = U(1)`: `𝒞 = {a ∈ Ḣ¹ : ∂^ℓ a_ℓ = 0}` is a closed linear subspace of `ℋ`, complemented by the gradients
-  `{∇φ : ∇φ ∈ Ḣ¹, Δφ ∈ ℓ¹L²}`, and the chart is the identity.
+- `G = U(1)`: `𝒞 = {a ∈ Ḣ¹ : ∂^ℓ a_ℓ = 0}` is a closed linear subspace of `ℋ` and equals every slice `E_a`; the
+  chart is `b ↦ a + b` (so `c = 0` and `L` is the inclusion), `𝒢_a` is the gradients
+  `{∇φ : ∇φ ∈ Ḣ¹, Δφ ∈ ℓ¹L²}`, and `P` is the Leray projection `h ↦ h − ∇Δ⁻¹∂^ℓ h_ℓ`.
 - The unit sphere of a Hilbert space `𝔅` is a `C¹` split submanifold of codimension one: at `e` the chart
-  `v ↦ (e + v)/‖e + v‖` on `e^⊥`, complemented by `ℝe`, has derivative the inclusion of `e^⊥`.
-- The cross `{x₁² = x₂²}` in `ℝ²` is not one: no neighbourhood of `0` in it is homeomorphic to an open subset of
-  a line, so the definition excludes it; nor is the graph of `|x₁|`, which is a topological but not a `C¹`
-  submanifold (no `C¹` chart with injective derivative at `0`).
+  `v ↦ (e + v)/‖e + v‖` on `e^⊥` is a homeomorphism onto the open hemisphere where `⟨y, e⟩ > 0`, with inverse
+  `y ↦ (y − ⟨y, e⟩e)/⟨y, e⟩`, and in the chart `y ↦ (y − ⟨y, e⟩e)/⟨y, e⟩ + (‖y‖ − 1)e` of `𝔅` on `{⟨y, e⟩ > 0}`
+  (inverse `v + te ↦ (1 + t)(e + v)/‖e + v‖`, `t > −1`) it reads `v ↦ v`, the normal form `u ↦ (u, 0)` for
+  `𝔅 = e^⊥ ⊕ ℝe`; its derivative at `0` is the inclusion of `e^⊥`.
+- The cross `{x₁² = x₂²}` in `ℝ²` is not one: removing `0` from a small neighbourhood of `0` in it leaves four
+  components, while removing a point from a connected open subset of a line leaves two and of the plane one, and a
+  neighbourhood is not a point; so no chart exists at `0`.
+- The graph of `|x₁|` in `ℝ²` is a topological but not a `C¹` split submanifold, and it separates the definition
+  from "a `C¹` homeomorphism onto `S ∩ U`": `t ↦ (t³, |t|³)` is `C¹` and a homeomorphism of `ℝ` onto the graph, but
+  its derivative vanishes at `0`. No chart is an immersion at `0`: the graph has empty interior and no isolated
+  points, so `E` is a line, and a `C¹` map `t ↦ (x(t), |x(t)|)` with `x(t₀) = 0` has `x'(t₀) = 0` (else `|x|` has a
+  corner at `t₀`), and then `|x|`, minimal at `t₀`, has derivative `0` there, so `Dφ(t₀) = 0`, against the first
+  item.
 
-*Needs:* Mathlib `Submodule.ClosedComplemented`, `ContDiff`; 8.2, 10.2, 10.3.
+*Needs:* Mathlib `Submodule.ClosedComplemented`, `ContDiff`, `Manifold.IsSmoothEmbedding`, `Manifold.IsImmersion`
+with `Manifold.IsImmersion.isDiffImmersionAt`, `TopologicalSpace.Opens.instChartedSpace`,
+`ContDiffAt.toOpenPartialHomeomorph`, `ContDiffAt.to_localInverse`; PDE §3.2 (weak maximum principle), §7.1, §7.3
+(the product bound); 8.2, 10.2, 10.3.
 
 ### 10.5 Tangent spaces and the nonlinear div–curl decomposition
 
@@ -1709,7 +1761,8 @@ projection; pure gauges, which `Cal` sends to `0`.
 
 ### Dependencies
 
-Layers 8–9; Layer 7 for the subthreshold existence of `Cal`; PDE §7.1 and §7.3 for the product bound in 10.5.
+Layers 8–9; Layer 7 for the subthreshold existence of `Cal`; PDE §7.1 and §7.3 for the product bounds in 10.4 and
+10.5; PDE §3.2 for the uniqueness step of 10.4.
 
 ## Downstream consumers
 

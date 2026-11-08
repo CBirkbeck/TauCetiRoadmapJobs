@@ -2081,7 +2081,7 @@
           "id": "10.4",
           "kind": "theorem",
           "name": "YangMills.caloric_isSubmanifold",
-          "statement": "A C¹ split submanifold of a Banach space has local C¹ charts from open subsets of closed complemented subspaces that are homeomorphisms onto the set with injective derivative of closed complemented range; 𝒞 is a C¹ split submanifold of ℋ, with chart a + b ↦ Cal(a + b) on the slice {D(a)^ℓb_ℓ = 0}.",
+          "statement": "A C¹ split submanifold of a real Banach space 𝔅 is a subset S such that every a ∈ S has an open U, a closed complemented subspace E ⊆ 𝔅, an open V ⊆ E and a chart φ : V → 𝔅 with image S ∩ U that is a C¹ smooth embedding in Mathlib's sense (Manifold.IsSmoothEmbedding 𝓘(ℝ,E) 𝓘(ℝ,𝔅) 1 φ, V charted as an open subset of E); its tangent space at φ(v) is the range of Dφ(v). API: a chart's derivative has a continuous left inverse (Manifold.IsImmersion.isDiffImmersionAt); conversely a C¹ homeomorphism onto its image on a connected V with split injective derivative everywhere is a C¹ smooth embedding (inverse function theorem); the tangent space is independent of the chart. 𝒞 is a C¹ split submanifold of ℋ, with chart b ↦ Cal(a + b) on a ball in the slice E_a = {b ∈ ℋ : D(a)^ℓb_ℓ = 0}, both E_a and the range of the derivative being complemented by the gauge directions D(a)Δ_a⁻¹(ℓ¹L²).",
           "hypotheses": [
             "d = 4",
             "only C¹ asserted"
@@ -2093,6 +2093,15 @@
           "prerequisites": [
             "mathlib:Submodule.ClosedComplemented",
             "mathlib:ContDiff",
+            "mathlib:Manifold.IsSmoothEmbedding",
+            "mathlib:Manifold.IsImmersion",
+            "mathlib:Manifold.IsImmersion.isDiffImmersionAt",
+            "mathlib:TopologicalSpace.Opens.instChartedSpace",
+            "mathlib:ContDiffAt.toOpenPartialHomeomorph",
+            "mathlib:ContDiffAt.to_localInverse",
+            "roadmap:PDE §3.2",
+            "roadmap:PDE §7.1",
+            "roadmap:PDE §7.3",
             "target:8.2",
             "target:10.2",
             "target:10.3"
@@ -2102,17 +2111,22 @@
             {
               "name": "u1",
               "kind": "computation",
-              "statement": "U(1): 𝒞 = divergence-free Ḣ¹ fields, complemented by gradients"
+              "statement": "U(1): 𝒞 = divergence-free Ḣ¹ fields = every slice E_a, chart b ↦ a + b, 𝒢_a = gradients with Δφ ∈ ℓ¹L², P = Leray projection"
             },
             {
               "name": "sphere",
               "kind": "compatibility",
-              "statement": "a sphere in a Hilbert space is a C¹ split submanifold"
+              "statement": "unit sphere of a Hilbert space: chart v ↦ (e+v)/‖e+v‖ on e^⊥ reads v ↦ v in the chart y ↦ (y − ⟨y,e⟩e)/⟨y,e⟩ + (‖y‖ − 1)e of 𝔅, the normal form for 𝔅 = e^⊥ ⊕ ℝe"
             },
             {
               "name": "cone",
               "kind": "non-example",
-              "statement": "{x1² = x2²} ⊂ ℝ² has no chart at 0"
+              "statement": "{x1² = x2²} ⊂ ℝ²: removing 0 leaves four components near 0, against two (line) or one (plane), so no chart at 0"
+            },
+            {
+              "name": "abs-graph",
+              "kind": "non-example",
+              "statement": "graph of |x1|: t ↦ (t³, |t|³) is a C¹ homeomorphism onto it with zero derivative at 0; every C¹ parametrisation has Dφ = 0 at the corner, so no chart is an immersion there"
             }
           ]
         },
@@ -2192,13 +2206,14 @@
         "§1.6",
         "§2.2",
         "§2.3",
+        "§3.2",
         "§6.1",
         "§6.3",
         "§7.1",
         "§7.2",
         "§7.3"
       ],
-      "what": "Euclidean Sobolev density, embeddings, Poincaré inequalities, trace and extension; Calderón–Zygmund and multipliers; Bochner spaces; the heat semigroup; dyadic blocks, Besov spaces and paraproducts"
+      "what": "Euclidean Sobolev density, embeddings, Poincaré inequalities, trace and extension; Calderón–Zygmund and multipliers; the weak maximum principle; Bochner spaces; the heat semigroup; dyadic blocks, Besov spaces and paraproducts"
     },
     {
       "roadmap": "SmoothBundlesConnections",
