@@ -344,3 +344,93 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-08"
 cited_for = ["0.2", "0.5", "1.6"]
+
+[[source]]
+id = "est-2010"
+authors = "Ben Elias, Lior Silberman, Ramin Takloo-Bighash"
+title = "Finding Minimal Permutation Representations of Finite Groups"
+year = 2010
+venue = "Experim. Math. v.19 (2010) no.1, 121-128"
+arxiv = "0705.4122v3"
+locator_scheme = "section"
+locator = "§2, p. 2 (minimal faithful collections)"
+url = "https://arxiv.org/abs/0705.4122v3"
+fetched_from = "https://arxiv.org/pdf/0705.4122v3"
+fetched_at = "2026-11-08T21:14:07Z"
+sha256 = "a7df6e3e77bcbef8a6d84f616ef79cd1616e92522f3550bbbcdbd2de3e63ce68"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-08"
+version_note = "arXiv v3"
+cited_for = ["5.4"]
+
+[[source]]
+id = "szechtman-2015"
+authors = "Fernando Szechtman"
+title = "Groups having a faithful irreducible representation"
+year = 2015
+arxiv = "1504.01343v9"
+locator_scheme = "page"
+locator = "p. 4 (Gaschütz's criterion)"
+url = "https://arxiv.org/abs/1504.01343v9"
+fetched_from = "https://arxiv.org/pdf/1504.01343v9"
+fetched_at = "2026-11-08T21:14:13Z"
+sha256 = "0797933636f22c1f7f601d72b2b6037f3b6c376f487fd447ecf1e5033dd60ee2"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-08"
+version_note = "arXiv v9"
+cited_for = ["6.8"]
+
+[[source]]
+id = "dallavolta-lucchini-2021"
+authors = "Francesca Dalla Volta, Andrea Lucchini"
+title = "The $A$-Möbius function of a finite group"
+year = 2021
+arxiv = "2109.05260v1"
+locator_scheme = "equation"
+locator = "(1.1), p. 2; p. 3 (Hall's vanishing theorem)"
+url = "https://arxiv.org/abs/2109.05260v1"
+fetched_from = "https://arxiv.org/pdf/2109.05260v1"
+fetched_at = "2026-11-08T21:14:20Z"
+sha256 = "916b69e7af540e12bbadfb69f787c6454f4f1c95634b3abda1698b7c661c743e"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-08"
+version_note = "arXiv v1"
+cited_for = ["5.1", "5.2"]
+
+[[source]]
+id = "kunyavskii-2020"
+authors = "Boris Kunyavskiĭ"
+title = "Some new parallels between groups and Lie algebras, or What can be simpler than the multiplication table?"
+year = 2020
+venue = "EMS Newsletter, December 2020, 5–13"
+locator_scheme = "section"
+locator = "§3, p. 6"
+url = "https://ems.press/content/serial-article-files/12079"
+fetched_from = "https://ems.press/content/serial-article-files/12079"
+fetched_at = "2026-11-08T21:14:23Z"
+sha256 = "2d4b78f7e9bdae918b80441c065ffad069e289652cf3e9aa0b0b57def46805ff"
+licence_class = "institutional"
+status = "certified"
+accessed = "2026-11-08"
+cited_for = ["4.1"]
+
+[[source]]
+id = "rastanawi-2022"
+authors = "Laith Rastanawi, Günter Rote"
+title = "Towards a Geometric Understanding of the 4-Dimensional Point Groups"
+year = 2022
+arxiv = "2205.04965v1"
+locator_scheme = "section"
+locator = "Appendix D, p. 97"
+url = "https://arxiv.org/abs/2205.04965v1"
+fetched_from = "https://arxiv.org/pdf/2205.04965v1"
+fetched_at = "2026-11-08T21:14:40Z"
+sha256 = "0517424964985a1e0da5e3280512116bee3468346d0fc61ab933d72432482452"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-08"
+version_note = "arXiv v1"
+cited_for = ["10.4"]
