@@ -1,10 +1,3 @@
 {
-  "gaps": [
-    {
-      "slug": "completed-bloch-comparison",
-      "supplier": "KTheoryFiniteLocalFields",
-      "section": "§§6.6–6.7",
-      "needs": "For finite unramified L/ℚₚ and odd p, identify K₃(L)/p^ν with K₃^ind(L)/p^ν and K₃(L;ℤₚ) with lim_ν K₃(L)/p^ν, controlling the Milnor image and the Tate-module obstruction TₚK₂(L), compatibly with the completed étale edge of §§6.6–6.7, finite products and the root classes supplied by K3BlochGroups §§6.3–6.4."
-    }
-  ]
+  "gaps": []
 }

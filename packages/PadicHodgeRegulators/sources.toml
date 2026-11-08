@@ -568,3 +568,38 @@ licence_class = "publisher-open"
 status = "certified"
 accessed = "2026-10-22"
 cited_for = ["9.31 Admitted de Rham character domain", "9.32 Analytic powers of the differential operator", "9.33 Rodrigues Jacinto de Rham regulator", "9.34 De Rham interpolation and convergence bound", "9.35 Crystalline extension of the de Rham regulator"]
+
+[[source]]
+id = "Nakamura2014"
+authors = "Kentaro Nakamura"
+title = "Iwasawa theory of de Rham (φ,Γ)-modules over the Robba rings"
+year = 2012
+arxiv = "1201.6475v2"
+locator_scheme = "theorem"
+locator = "§2.2, p.12; Theorem 2.8, p.15; Definition 2.10, Remark 2.11 and Lemma 2.12(1), p.18; §2.4, pp.19–22; Proposition 2.16, p.23; Theorem 2.21, p.27; Theorem 3.5, p.34; Lemma 3.6, p.35; Theorem 3.10, pp.36–37 (arXiv v2 pagination)"
+url = "https://arxiv.org/abs/1201.6475v2"
+fetched_from = "https://arxiv.org/pdf/1201.6475v2"
+fetched_at = "2026-11-08T03:48:45Z"
+sha256 = "8bd801a88d869c17450e27f5080bbd144cf45216e7557fe6b53132d4c24c74c5"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-08"
+version_note = "arXiv v2; published in J. Inst. Math. Jussieu 13 (2014), 65–118; locators use the arXiv v2 pagination"
+cited_for = ["Supplier: From TauCetiRoadmap.PhiGammaModulesAndIwasawaCohomology and the distribution suppliers", "9.30a Differential module and Bloch–Kato maps of a de Rham (φ,Γ)-module"]
+
+[[source]]
+id = "dJ1995"
+authors = "Rob de Jeu"
+title = "Zagier's conjecture and wedge complexes in algebraic K-theory"
+year = 1995
+locator_scheme = "page"
+locator = "§2.4, printed pp. 212–213; §2.5, printed pp. 218–219; Proposition 4.1, printed p. 235; Remark 5.2, printed pp. 238–239; §5, the regulator on Ker d, printed p. 239; construction of ψ₂ and its diagram, printed p. 240"
+url = "https://www.numdam.org/item/CM_1995__96_2_197_0/"
+fetched_from = "https://www.numdam.org/item/CM_1995__96_2_197_0.pdf"
+fetched_at = "2026-11-08T03:48:58Z"
+sha256 = "75de5586541dd0ae24423ddf836b48e07b929a56baa7e7f97b07a809ff93619d"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-08"
+version_note = "Compositio Math. 96 (1995), 197–247; printed page numbers"
+cited_for = ["4.7 de Jeu's weight-two classes and Suslin's Bloch group"]
