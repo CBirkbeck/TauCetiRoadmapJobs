@@ -538,3 +538,21 @@ licence_class = "institutional"
 status = "certified"
 accessed = "2026-11-08"
 cited_for = ["4.2.7"]
+
+[[source]]
+id = "calegari2007"
+authors = "Danny Calegari"
+title = "Foliations and the Geometry of 3-Manifolds"
+year = 2007
+venue = "Oxford Mathematical Monographs, Oxford University Press"
+version_note = "author's copy of the Oxford edition; theorem and section numbers are those of this file"
+locator_scheme = "theorem"
+locator = "Theorem 4.5"
+url = "https://math.uchicago.edu/~dannyc/books/foliations/oupbook.pdf"
+fetched_from = "https://math.uchicago.edu/~dannyc/books/foliations/oupbook.pdf"
+fetched_at = "2026-11-08T22:23:19Z"
+sha256 = "4827ccafc1cc5b532529d083e6bd89c0895a34ed50d9411e22aa7404cd7b402a"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-08"
+cited_for = ["10.1", "10.2"]
