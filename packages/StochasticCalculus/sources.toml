@@ -242,3 +242,21 @@ licence_class = "none"
 status = "uncertified"
 version_note = "paywalled; cited by its locator without the text"
 cited_for = ["10.4"]
+
+[[source]]
+id = "hairer-spde"
+authors = "Martin Hairer"
+title = "An Introduction to Stochastic PDEs"
+year = 2009
+arxiv = "0907.4178v2"
+locator_scheme = "theorem"
+locator = "§4.2; Definition 4.26; Theorem 4.44"
+url = "https://arxiv.org/abs/0907.4178v2"
+fetched_from = "https://arxiv.org/pdf/0907.4178v2"
+fetched_at = "2026-11-08T22:08:36Z"
+sha256 = "d4309b35a2d725407d3eb63a130ab6c3436967137fbffbbcd8cb5f87f82f8f06"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-08"
+version_note = "arXiv v2"
+cited_for = ["8.1"]
