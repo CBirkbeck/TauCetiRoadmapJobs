@@ -39,9 +39,11 @@ fields. This roadmap starts exactly there.
   local comparison and the CM branch over an arbitrary CM field; the endpoint for `ζ₅ ∉ K`.
   Theorems 2.2–2.4 are the parent's §§8.3–8.6 over an arbitrary CM base; the parent states them for
   imaginary quadratic `K` only, and their proofs are applied here, not repeated.
-- Layer 3: the adjoint representation of `SL₂` and the detection of the exceptional class of
-  `H¹(SL₂(𝔽₅), ad⁰)` by an order-five unipotent subgroup; protected local residual data, their
-  unipotent-inertia deformation condition, its tangent line and its dual.
+- Layer 3: the detection of the exceptional class of `H¹(SL₂(𝔽₅), ad⁰)` by an order-five
+  unipotent subgroup, for the trace-zero adjoint of ArithmeticGaloisRepresentations §§7.2 and 7.9
+  restricted to `SL₂`, with the triviality of the centre and the vanishing of invariants on it;
+  protected local residual data, their unipotent-inertia deformation condition, its tangent line and
+  its dual.
 - Layer 4: the vanishing on protected places of the exceptional global classes, Taylor–Wiles primes
   at `p = 5` for residual image `SL₂(𝔽₅)` with a protected place, and the relative presentation in
   which protected places are not framed.
@@ -62,8 +64,12 @@ monodromy, character systems and congruences (Layers 1–4), Serre's large-prime
 specialization (§§7.1–7.4), the change of coefficient prime and automorphic local types (§8.1)
 and the local and CM arguments of §§8.5–8.6. CrystallineLocalGlobalCompatibilityCM supplies the
 integral local–global compatibility, non-neat `PGL₂` complexes, prepared patching and the solvable
-preparation (§§7.5, 8.1–8.7, 9.1–9.11). The deformation-theoretic, automorphic and arithmetic
-carriers come from the suppliers listed below.
+preparation (§§7.5, 8.1–8.7, 9.1–9.11). ArithmeticGaloisRepresentations supplies the trace-zero
+adjoint with its conjugation action, its trace pairing, the splitting `ad = A·1 ⊕ ad⁰` when `2` is
+invertible and its base change (§7.2, and §7.9 `ResidualImage.adZeroRep` for a homomorphism into
+`GL₂(k)`), and the cohomology of `SL₂` with these coefficients (§7.7); Layer 3 restricts it to
+`SL₂` and does not define it again. The deformation-theoretic, automorphic and arithmetic carriers
+come from the suppliers listed below.
 
 **Outside this roadmap.** Totally real fields (they use the totally real lifting theorems and are a
 separate roadmap); number fields that are neither CM nor totally real; abelian varieties of
@@ -116,11 +122,13 @@ of Layer 3 are proved by explicit computations recorded in their Checks.
   compatible with residual inertia `U` exactly because `11 ≡ 1 mod 5`; for `q_v = 7` one needs
   `ρ̄(φ)Uρ̄(φ)⁻¹ = U⁷ = [[1,2],[0,1]]`, which a scalar cannot achieve, whereas the geometric Frobenius
   `φ⁻¹` would conjugate `U` to `U³`, since `7⁻¹ ≡ 3 mod 5`.
-- `ad⁰` is the space of trace-zero `2×2` matrices with the conjugation action, basis
-  `e = E₁₂`, `h = diag(1, −1)`, `f = E₂₁`. For `U = 1 + e` and `D = Ad(U)`:
+- `ad⁰` is the trace-zero adjoint of ArithmeticGaloisRepresentations §7.2 (for a homomorphism into
+  `GL₂(k)`, its §7.9 `ResidualImage.adZeroRep`): the trace-zero `2×2` matrices with the conjugation
+  action, basis `e = E₁₂`, `h = diag(1, −1)`, `f = E₂₁`. For `U = 1 + e` and `D = Ad(U)`:
   `D(e) = e`, `D(h) = h − 2e`, `D(f) = f + h − e`. The trace form `⟨X, Y⟩ = tr(XY)` has Gram matrix
-  `[[0,0,1],[0,2,0],[1,0,0]]` in this basis, of determinant `−2`; it identifies `ad⁰` with its dual in
-  every odd characteristic and is degenerate in characteristic two.
+  `[[0,0,1],[0,2,0],[1,0,0]]` in this basis, of determinant `−2`; it identifies `ad⁰` with its dual
+  whenever `2` is invertible (the perfectness and splitting of §7.2 there) and is degenerate in
+  characteristic two.
 - For a `G_F`-module `M` over a field of characteristic `p`, `M(1) = M ⊗ μ_p`. When `μ_p ⊂ F`, a choice
   of primitive `ζ_p` identifies `M(1) ≅ M`. Unramified classes are
   `H¹_ur(F_v, N) = ker(H¹(F_v, N) → H¹(I_v, N)) = H¹(G_{F_v}/I_v, N^(I_v))`.
@@ -153,10 +161,12 @@ Pin `1b1ccf4b088b32fa3f23f2de1127433254a81e1e`.
 - `NumberField.isTotallyComplex_of_algebra`
   (`Mathlib/NumberTheory/NumberField/InfinitePlace/TotallyRealComplex.lean`): an extension of a
   totally complex field is totally complex.
-- `LieAlgebra.SpecialLinear.sl` (`Mathlib/Algebra/Lie/Classical.lean`): trace-zero matrices, as the
-  kernel of the trace. It carries no group action; §3.1 adds the conjugation representation.
-- `Rep.ofDistribMulAction` (`Mathlib/RepresentationTheory/Rep/Basic.lean`): the representation of a
-  monoid acting distributively and compatibly with scalars.
+- `Matrix.SpecialLinearGroup.toGL` (`Mathlib/LinearAlgebra/Matrix/GeneralLinearGroup/Defs.lean`):
+  the embedding `SL₂(k) → GL₂(k)`, along which §3.1 restricts the trace-zero adjoint of
+  ArithmeticGaloisRepresentations §7.9. That adjoint lives on Mathlib's trace kernel
+  `LinearMap.ker (LinearMap.trace k (Fin 2 → k))` with the conjugation action of
+  `Representation.linHom`; ArithmeticGaloisRepresentations §7.2 adds the conjugation representation
+  and its trace pairing.
 - `groupCohomology` and `groupCohomology.map`
   (`Mathlib/RepresentationTheory/Homological/GroupCohomology/Functoriality.lean`): the map
   `Hⁿ(H, A) → Hⁿ(G, B)` induced by `f : G →* H` and a morphism `res f A ⟶ B`; restriction to a
@@ -243,10 +253,15 @@ through Taylor–Wiles selection (CN23 line 4404); Layer 4 replaces that step.
 - **DeformationAndDerivedPatchingAlgebra** §§8.1–8.5 (simultaneous patching).
 - **ArithmeticGaloisDuality** R02.2 (inflation–restriction, Hochschild–Serre), R02.4.2 (the local Tate
   pairing and the counting proof that unramified classes are exact annihilators).
-- **ArithmeticGaloisRepresentations** §4.3 (subgroups of `PSL₂`, perfectness), §6.3 (the Tate curve:
-  `E_q[ℓ^n]` unramified iff `ℓ^n | v(q)`, unipotent inertia, `WD ≅ Sp(2)`), §7.7 (restriction to a
-  subgroup containing a Sylow subgroup is injective on `H¹`; `H¹(SL₂(𝔽₅), ad⁰)` is one-dimensional;
-  change of coefficient field).
+- **ArithmeticGaloisRepresentations** Layer 1 (decomposition groups), §4.3 (subgroups of `PSL₂`,
+  perfectness), §6.3 (the Tate curve: `E_q[ℓ^n]` unramified iff `ℓ^n | v(q)`, unipotent inertia,
+  `WD ≅ Sp(2)`), §7.2 (*ContinuousRep.adZero*: the trace-zero adjoint of a representation of a
+  profinite group with its conjugation action; the invariant trace pairing, perfect between `ad⁰`
+  and `ad/A·1` and hence on `ad⁰` when `2 ∈ A^×` through the splitting `ad = A·1 ⊕ ad⁰`; base
+  change), §7.7 (restriction to a subgroup containing a Sylow subgroup is
+  injective on `H¹`; `H¹(SL₂(𝔽₅), ad⁰)` is one-dimensional; change of coefficient field), §7.9
+  (`ResidualImage.adZeroRep`: the same adjoint for a homomorphism into `GL_n(k)`, on the trace kernel
+  `LinearMap.ker (LinearMap.trace k (n → k))`).
 - **FaltingsFinitenessAndIsogenyTheorems** R28.6.2–R28.6.3 (semisimplicity and the Tate Hom
   comparison for elliptic curves; absolute irreducibility of `H¹` of a non-CM curve over every finite
   extension).
@@ -520,30 +535,39 @@ EllipticCurves Layer 5; ClassFieldTheory Layer 11.
 
 ## Layer 3: Finite-group and local cohomology at a protected place
 
-### 3.1 The adjoint representation of SL₂
+### 3.1 The adjoint representation of SL₂, specialised
 
-Define the adjoint representation `ad⁰` of `SL(2, k)`, for a field `k`, as the representation on
-the trace-zero matrices `LieAlgebra.SpecialLinear.sl (Fin 2) k` by `g · X = g X g⁻¹`, built with
-`Rep.ofDistribMulAction`. (CaptainSude26, Lemma 3.1, line 187.)
+Let `k` be a field and let `ad⁰` be the trace-zero adjoint of the tautological representation of
+`SL(2, k)` on `k²`, imported from ArithmeticGaloisRepresentations: for the abstract group `SL(2, k)`
+it is that roadmap's §7.9 `ResidualImage.adZeroRep` of `Matrix.SpecialLinearGroup.toGL`, on the
+trace-zero endomorphisms `LinearMap.ker (LinearMap.trace k (Fin 2 → k))` with `g · X = g X g⁻¹`;
+for finite `k`, where `SL(2, k)` is a finite and hence profinite group, it is its §7.2
+*ContinuousRep.adZero*, and it is the coefficient module of the groups `H¹(SL₂(F), ad⁰)` of its §7.7.
+Prove that the central element `−1` acts trivially, so the representation factors through
+`PSL₂(k)`, and that if `2 ∈ k^×` the invariants vanish: a trace-zero matrix commuting with
+`U = [[1,1],[0,1]]` and with its transpose `Uᵀ` is zero, so `H⁰(SL(2, k), ad⁰) = 0`. The route: for
+`X = [[a, b],[c, −a]]`, `UX − XU = [[c, −2a],[0, −c]]` and `UᵀX − XUᵀ = [[−b, 0],[2a, b]]`. The
+trace form `⟨X, Y⟩ = tr(XY)`, its invariance and its perfectness on `ad⁰` when `2 ∈ k^×` (the trace
+pairing on `M₂(k)` is perfect, `ad⁰` is the orthogonal of `k·1`, and the two are complementary,
+`ad = k·1 ⊕ ad⁰`, when `2 ∈ k^×`; statements about the underlying `k`-modules), and base change
+along a field embedding `k → k'` for a finite group acting, are ArithmeticGaloisRepresentations §7.2
+and are used here in that form. (CaptainSude26, Lemma 3.1, line 187.)
 
-- Conjugation by an element of `SL(2, k)` preserves trace zero, is `k`-linear and multiplicative in
-  `g`; the action of `g` on `X` is the matrix product `g X g⁻¹`.
-- The central element `−1` acts trivially, so the representation factors through `PSL₂(k)`.
-- For `k` of odd characteristic the trace form `⟨X, Y⟩ = tr(XY)` is a nondegenerate invariant
-  symmetric form, identifying the representation with its dual.
-- A field embedding `k → k'` identifies the base change to `k'` of `ad⁰` over `k` with the
-  restriction of `ad⁰` over `k'` along `SL(2, k) → SL(2, k')`.
-- For `k` of odd characteristic the invariants vanish: a trace-zero matrix commuting with
-  `U = [[1,1],[0,1]]` and its transpose is zero.
+*Needs:* ArithmeticGaloisRepresentations §§7.2, 7.9; Mathlib `Matrix.SpecialLinearGroup`,
+`Matrix.SpecialLinearGroup.toGL`.
 
 **Checks.**
 
 - For `U = [[1,1],[0,1]]` the action on `e, h, f` is `e ↦ e`, `h ↦ h − 2e`, `f ↦ f + h − e`; left
-  multiplication `X ↦ UX` is not the definition, since `Uf = f + E₁₁` has trace one.
+  multiplication `X ↦ UX` is not the action, since `Uf = f + E₁₁` has trace one. When `2 ∈ k^×` the
+  matrices of `ad⁰` fixed by `U` alone form the line `k e`, so the transpose is needed for the
+  vanishing.
 - The identity and `−1` act as the identity; the action of `diag(2, 3) ∈ SL(2, 𝔽₅)` scales `e` by
   `2/3 = 4`, `f` by `3/2 = 4` and fixes `h`.
-- In characteristic two the trace form has `⟨h, h⟩ = 2 = 0` and Gram determinant `−2 = 0`, so the
-  self-duality API needs odd characteristic.
+- In characteristic two the identity matrix has trace `2 = 0`, lies in `ad⁰` and is fixed by every
+  `g`, so `H⁰(SL(2, k), ad⁰) = k·1 ≠ 0` and the hypothesis `2 ∈ k^×` cannot be dropped; there the
+  trace form also has `⟨h, h⟩ = 2 = 0` and Gram determinant `−2 = 0`, so the self-duality of
+  ArithmeticGaloisRepresentations §7.2 is unavailable.
 - Over `𝔽₅`, `(Ad(U) − 1)³ = 0` and `Ad(U)⁵ = 1`, while `(Ad(U) − 1)² ≠ 0` since it sends `f` to `−2e`.
 
 ### 3.2 The exceptional class of SL₂(𝔽₅) is detected by a unipotent subgroup
@@ -560,7 +584,7 @@ so `H¹(⟨U⟩, ad⁰) = ad⁰ / (D − 1)ad⁰ = ad⁰ / (k e ⊕ k h)`, spann
 (CaptainSude26, Lemma 3.3, lines 231–241.)
 
 *Needs:* §3.1; Mathlib `groupCohomology.map`, `Rep.FiniteCyclicGroup.groupCohomologyIsoOdd`;
-ArithmeticGaloisRepresentations §7.7.
+ArithmeticGaloisRepresentations §§7.2, 7.7, 7.9.
 
 **Checks.**
 
@@ -643,10 +667,11 @@ three coordinates `x₁, x₂, x₃`. (CaptainSude26, Lemma 3.1, lines 184–220
 Let `ρ̄` be protected, `M = ad⁰ρ̄` over `k`, and `L_v ⊆ H¹(F_v, M)` the image of the tangent space of the
 framed ring of §3.4. Prove: (a) `L_v = H¹_ur(F_v, M)` and `dim_k L_v = h⁰(F_v, M)`, which is `1` if
 `q_v ≡ 1 mod p` and `0` otherwise; (b) under the local Tate pairing between `H¹(F_v, M)` and
-`H¹(F_v, M(1))` (via the trace form), the annihilator `L_v^⊥` is `H¹_ur(F_v, M(1))`; (c) if
-`μ_p ⊂ F_v`, then `h⁰ = h² = 1`, `h¹ = 2`, and under `M(1) ≅ M` the line `L_v` is its own annihilator;
-(d) if `p ≥ 5`, `ρ̄(τ) = U` and `ρ̄(φ) = 1`, recording cocycle values on `(τ, φ)`,
-`H¹(F_v, M) = k[(f, 0)] ⊕ k[(0, e)]` and `L_v = k[(0, e)]`. For (a): unramified first-order lifts keep
+`H¹(F_v, M(1))` (via the trace form of ArithmeticGaloisRepresentations §7.2), the annihilator
+`L_v^⊥` is `H¹_ur(F_v, M(1))`; (c) if `μ_p ⊂ F_v`, then `h⁰ = h² = 1`, `h¹ = 2`, and under
+`M(1) ≅ M` the line `L_v` is its own annihilator; (d) if `p ≥ 5`, `ρ̄(τ) = U` and `ρ̄(φ) = 1`,
+recording cocycle values on `(τ, φ)`, `H¹(F_v, M) = k[(f, 0)] ⊕ k[(0, e)]` and `L_v = k[(0, e)]`.
+For (a): unramified first-order lifts keep
 `ρ̄|I_v` and so satisfy §3.4(i), giving `H¹_ur ⊆ L_v`; the framed ring of §3.4 has tangent dimension
 three, so `dim L_v = 3 − (3 − h⁰) = h⁰`; and `dim H¹_ur = dim (M^(I_v))_φ = h⁰`. For (b): cup products of
 unramified classes are inflated from `H²(Ẑ, −) = 0`, and the orders
@@ -655,8 +680,8 @@ unramified classes are inflated from `H²(Ẑ, −) = 0`, and the orders
 orthogonal subgroups are complementary; this is the counting argument of ArithmeticGaloisDuality
 R02.4.2 without its hypothesis that `M` be unramified. (CaptainSude26, Lemmas 3.1–3.2, lines 187–226.)
 
-*Needs:* §§3.1, 3.4; LocalGaloisDeformationRings §2.8; Tau Ceti
-`TauCeti.ClassFieldTheory.eulerCharacteristic_mixed`,
+*Needs:* §§3.1, 3.4; ArithmeticGaloisRepresentations §7.2; LocalGaloisDeformationRings §2.8; Tau
+Ceti `TauCeti.ClassFieldTheory.eulerCharacteristic_mixed`,
 `TauCeti.ClassFieldTheory.tateDualityPairing_perfect_mixed`; ArithmeticGaloisDuality R02.4.2;
 ClassFieldTheory Layer 5.
 
@@ -678,9 +703,10 @@ dimension three, `H¹(ℚ₁₁, ad⁰ρ̄)` is two-dimensional and the unramifi
 
 ### Dependencies
 
-Mathlib group cohomology and `LieAlgebra.SpecialLinear.sl`; Tau Ceti local duality and Euler
-characteristic; ArithmeticGaloisRepresentations §§6.3, 7.7; ArithmeticGaloisDuality R02.4.2;
-LocalGaloisDeformationRings §§1.10, 2.3, 2.6, 2.8, 2.21; ClassFieldTheory Layer 5.
+Mathlib group cohomology, `Matrix.SpecialLinearGroup` and `Matrix.SpecialLinearGroup.toGL`; Tau
+Ceti local duality and Euler characteristic; ArithmeticGaloisRepresentations §§6.3, 7.2, 7.7, 7.9;
+ArithmeticGaloisDuality R02.4.2; LocalGaloisDeformationRings §§1.10, 2.3, 2.6, 2.8, 2.21;
+ClassFieldTheory Layer 5.
 
 ## Layer 4: Global Galois cohomology at five with a protected place
 

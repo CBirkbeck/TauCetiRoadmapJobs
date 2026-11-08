@@ -354,53 +354,29 @@
    "targets": [
     {
      "id": "3.1",
-     "kind": "definition",
-     "name": "sl2AdjointRep",
-     "statement": "For a field k, sl2AdjointRep k is the representation of SL(2,k) on LieAlgebra.SpecialLinear.sl (Fin 2) k given by g·X = g X g⁻¹, built with Rep.ofDistribMulAction.",
+     "kind": "theorem",
+     "name": "sl2_adjoint_neg_one_trivial_invariants_eq_bot",
+     "statement": "For a field k, let ad⁰ be the trace-zero adjoint of the tautological representation of SL(2,k) on k², imported from ArithmeticGaloisRepresentations: §7.9 ResidualImage.adZeroRep of Matrix.SpecialLinearGroup.toGL on LinearMap.ker (LinearMap.trace k (Fin 2 → k)) with g·X = g X g⁻¹, and for finite k §7.2 ContinuousRep.adZero. Then −1 acts trivially, so ad⁰ factors through PSL₂(k); and if 2 ∈ k^× a trace-zero matrix commuting with U = [[1,1],[0,1]] and its transpose is zero, so H⁰(SL(2,k), ad⁰) = 0. The trace form, its invariance, its perfectness on ad⁰ when 2 ∈ k^× and base change are ArithmeticGaloisRepresentations §7.2.",
      "hypotheses": [
-      "k a field"
+      "k a field",
+      "2 ∈ k^× for the vanishing of invariants"
      ],
      "locator": {
       "source": "CaptainSude26",
       "where": "Lemma 3.1, line 187"
      },
      "prerequisites": [
-      "mathlib:LieAlgebra.SpecialLinear.sl",
-      "mathlib:Rep.ofDistribMulAction",
-      "mathlib:Matrix.SpecialLinearGroup"
+      "roadmap:ArithmeticGaloisRepresentations §7.2",
+      "roadmap:ArithmeticGaloisRepresentations §7.9",
+      "mathlib:Matrix.SpecialLinearGroup",
+      "mathlib:Matrix.SpecialLinearGroup.toGL"
      ],
-     "api": [
-      {
-       "name": "action_apply",
-       "role": "evaluation",
-       "statement": "The action of g on X is the matrix product g X g⁻¹, k-linear and multiplicative in g; trace zero is preserved."
-      },
-      {
-       "name": "neg_one_acts_trivially",
-       "role": "structure",
-       "statement": "The central element −1 acts trivially, so the representation factors through PSL₂(k)."
-      },
-      {
-       "name": "trace_form_nondegenerate",
-       "role": "structure",
-       "statement": "For odd characteristic the trace form tr(XY) is a nondegenerate invariant symmetric form identifying the representation with its dual."
-      },
-      {
-       "name": "baseChange",
-       "role": "functoriality",
-       "statement": "For k → k' the base change of sl2AdjointRep k is the restriction of sl2AdjointRep k' along SL(2,k) → SL(2,k')."
-      },
-      {
-       "name": "invariants_eq_bot",
-       "role": "structure",
-       "statement": "For k of odd characteristic the SL(2,k)-invariants vanish."
-      }
-     ],
+     "api": [],
      "tests": [
       {
        "name": "adjoint_U_action",
        "kind": "computation",
-       "statement": "For U = [[1,1],[0,1]]: e ↦ e, h ↦ h − 2e, f ↦ f + h − e; left multiplication would give Uf = f + E11 of trace 1."
+       "statement": "For U = [[1,1],[0,1]]: e ↦ e, h ↦ h − 2e, f ↦ f + h − e; left multiplication would give Uf = f + E11 of trace 1. When 2 ∈ k^× the fixed matrices of U alone form the line ke, so the transpose is needed."
       },
       {
        "name": "adjoint_scalar",
@@ -410,7 +386,7 @@
       {
        "name": "adjoint_char_two",
        "kind": "non-example",
-       "statement": "In characteristic 2, ⟨h,h⟩ = 2 = 0 and the Gram determinant −2 vanishes: no self-duality."
+       "statement": "In characteristic 2 the identity has trace 2 = 0, lies in ad⁰ and is invariant, so H⁰(SL(2,k), ad⁰) = k·1 ≠ 0; ⟨h,h⟩ = 2 = 0 and the Gram determinant −2 vanishes, so the self-duality of ArithmeticGaloisRepresentations §7.2 is unavailable."
       },
       {
        "name": "adjoint_unipotent_order",
@@ -423,7 +399,7 @@
      "id": "3.2",
      "kind": "theorem",
      "name": "sl2Five_adjoint_restriction_unipotent_bijective",
-     "statement": "For U = [[1,1],[0,1]] in SL(2, F5), restriction H¹(SL(2,F5), ad⁰) → H¹(⟨U⟩, ad⁰), with ad⁰ the adjoint representation of 3.1, is bijective; both are one-dimensional and the target is spanned by the class of f. The same holds over any field k ⊇ F5 and for every subgroup of order five.",
+     "statement": "For U = [[1,1],[0,1]] in SL(2, F5), restriction H¹(SL(2,F5), ad⁰) → H¹(⟨U⟩, ad⁰), with ad⁰ the trace-zero adjoint of 3.1 (ArithmeticGaloisRepresentations §7.9 restricted to SL(2,F5)), is bijective; both are one-dimensional and the target is spanned by the class of f. The same holds over any field k ⊇ F5 and for every subgroup of order five.",
      "hypotheses": [
       "U = [[1,1],[0,1]] in SL(2, ZMod 5)"
      ],
@@ -435,7 +411,9 @@
       "target:3.1",
       "mathlib:groupCohomology.map",
       "mathlib:Rep.FiniteCyclicGroup.groupCohomologyIsoOdd",
-      "roadmap:ArithmeticGaloisRepresentations §7.7"
+      "roadmap:ArithmeticGaloisRepresentations §7.2",
+      "roadmap:ArithmeticGaloisRepresentations §7.7",
+      "roadmap:ArithmeticGaloisRepresentations §7.9"
      ],
      "api": [],
      "tests": [
@@ -573,6 +551,7 @@
      "prerequisites": [
       "target:3.1",
       "target:3.4",
+      "roadmap:ArithmeticGaloisRepresentations §7.2",
       "roadmap:LocalGaloisDeformationRings §2.8",
       "tauceti:TauCeti.ClassFieldTheory.eulerCharacteristic_mixed",
       "tauceti:TauCeti.ClassFieldTheory.tateDualityPairing_perfect_mixed",
@@ -1493,9 +1472,11 @@
     "Layer 1",
     "§4.3",
     "§6.3",
-    "§7.7"
+    "§7.2",
+    "§7.7",
+    "§7.9"
    ],
-   "what": "Decomposition groups, subgroups of PSL₂ and perfectness, the Tate curve, finite-group cohomology of SL₂ with adjoint coefficients."
+   "what": "Decomposition groups, subgroups of PSL₂ and perfectness, the Tate curve, the trace-zero adjoint with its trace pairing, splitting and base change (ContinuousRep.adZero, ResidualImage.adZeroRep), finite-group cohomology of SL₂ with adjoint coefficients."
   },
   {
    "roadmap": "FaltingsFinitenessAndIsogenyTheorems",
