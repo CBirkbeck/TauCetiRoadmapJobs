@@ -1,0 +1,13 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-ArithmeticStatisticsPartV~6",
+  "head": "9816798a1024be59d14fcea1a47367ec85b2585f",
+  "pr": 1175,
+  "folder": "ArithmeticStatisticsPartV",
+  "date": "2026-11-07",
+  "findings": 1,
+  "blocking": 0,
+  "notes": "incremental re-review of 41 changed lines since e95c80e. Previous R01-R04 all repaired. Checked: publisher ref95 Lemma 2.4 (p.8, lines 375-387) and the proof of Lemma 2.1 (p.9, lines 457-459), plus Remark 3.3, Prop 3.6, Prop 3.12, Lemma 3.14 and Thm 5.1; AnalyticNumberTheoryPartII section 5.7 (regulator ratio, line 730) and 5.7a (line 749) at 480e1c2; every AnalyticNumberTheoryPartI section the diff names at 2b9b7af; the removal of section 2.32 from four Needs lines, against those targets' routes; Mathlib exists_ideal_in_class_of_norm_le and regulator_eq_det; Tau Ceti classNumber_le_bound and regulator lower bounds. Gate rerun OK (worker's build=0); depcheck 0 problems; Suggested.lean unchanged and elaborates with 41 sorry warnings and nothing else. Adversarial table: 13 new rows, 158 carried. One new P3 (R01): the propagation Needs line credits the elementary class-number bound to Minkowski alone; cite Completed EffectiveBounds Layer 1 / Tau Ceti NumberField.classNumber_le_bound instead."
+ }
+}
