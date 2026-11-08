@@ -244,3 +244,21 @@ licence_class = "publisher-open"
 status = "certified"
 accessed = "2026-11-08"
 cited_for = ["D7"]
+
+[[source]]
+id = "nielsen-petz2005"
+authors = "Michael A. Nielsen, Denes Petz"
+title = "A simple proof of the strong subadditivity inequality"
+year = 2004
+arxiv = "quant-ph/0408130v3"
+locator_scheme = "equation"
+locator = "inequality (1), p. 1; (6), p. 2; Lemmas 1–2, p. 3; §§2–4, pp. 3–6 (arXiv v3)"
+url = "https://arxiv.org/abs/quant-ph/0408130v3"
+fetched_from = "https://arxiv.org/pdf/quant-ph/0408130v3"
+fetched_at = "2026-11-08T19:53:58Z"
+sha256 = "100cd204ed134ae66f7cc6e11faa047d8415fe9dea10e8d4d3d4ac4c521db0c8"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-08"
+version_note = "arXiv v3"
+cited_for = ["D9"]
