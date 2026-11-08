@@ -27,7 +27,7 @@ year = 1998
 doi = "10.1007/s002220050351"
 arxiv = "math/9810166v1"
 locator_scheme = "theorem"
-locator = "Theorem 2.1.12, Theorem 6.2.1"
+locator = "Theorem 2.1.12 (ii) and (iii), Theorem 6.2.1"
 url = "https://arxiv.org/abs/math/9810166v1"
 fetched_from = "https://arxiv.org/pdf/math/9810166v1"
 fetched_at = "2026-11-05T19:52:27Z"
@@ -36,7 +36,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-05"
 version_note = "arXiv v1"
-cited_for = ["scope boundaries: Chow groups of Artin stacks, virtual classes without global resolutions", "downstream consumers"]
+cited_for = ["scope boundaries: Chow groups of Artin stacks, their agreement with the rational groups of Layer 2 on Deligne–Mumford stacks (Theorem 2.1.12 (ii)), virtual classes without global resolutions"]
 
 [[source]]
 id = "edidin-graham1998"
