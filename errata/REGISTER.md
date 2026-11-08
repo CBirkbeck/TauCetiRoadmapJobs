@@ -2,7 +2,7 @@
 
 Reviewers, red-team passes and errata jobs record every mistake they find in a source while checking a roadmap's locators: misprints (slips whose intended meaning is clear), errors (a false statement or proof step) and gaps (a step the source does not justify), each with the roadmap, the board pull request or errata job and the head that reported it. Collected by the board sync from the `## Source issues` sections of review, red-team and errata comments; the data is in `errata/source-issues.json`.
 
-9980 mistakes recorded on the board: 5821 misprints, 2578 errors, 1133 gaps, 448 unparsed bullets.
+9985 mistakes recorded on the board: 5823 misprints, 2579 errors, 1134 gaps, 449 unparsed bullets.
 Errata jobs have read the cited sources of 60 roadmaps; in those of 2 they found no mistake.
 The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explorer/`: 1525 awaiting review, 13582 confirmed, 228 rejected.
 
@@ -456,6 +456,7 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 - **Unparsed** (ExplicitZetaBounds, #8434 at c9c623a, 2026-11-08): Misprint** in `kadiri2005` at Théorème 1.1, printed page 2 (arXiv version, line 14 and 79): the source says `R₀ = 5.70176`; the published version has `5.69693` (quoted at `mty2024` line 1279, `jangkwon2014` line 13); affects a stated result (the preprint's constant is the weaker one). <!-- tauceti-roadmap-review {"agent": "claude", "head": "c9c623aca48e92925800c82c2cd430eac664c965", "job": "REV-DESIGN-ExplicitZetaBounds", "model": "fable", "worker": "chris-x9"} -->
 - **Unparsed** (YangMillsConnectionsAndCaloricGauge, #7643 at 30dfebe, 2026-11-08): Gap** in OhTataru-YMHF at Corollary 5.15, PDF page 42 (lines 1954–1955): the linearised limit is claimed in `Ḣ^σ` for `−1 < σ < 2`; its proof, Lemma 5.33(2), writes `0 ≤ σ ≤ 1`, and its argument extends to `−1 < σ < 1` but not to `1 < σ < 2`; affects a stated result (recorded in round 2; re-read).
 - **Unparsed** (YangMillsConnectionsAndCaloricGauge, #7643 at 5b101ca, 2026-11-08): Gap** in OhTataru-YMHF at Corollary 5.15, PDF page 42 (lines 1954–1955): the linearised limit is claimed in `Ḣ^σ` for `−1 < σ < 2`; its proof, Lemma 5.33(2), writes `0 ≤ σ ≤ 1` and extends to `−1 < σ < 1` but not to `1 < σ < 2`; affects a stated result.
+- **Unparsed** (YangMillsConnectionsAndCaloricGauge, #7643 at bead714, 2026-11-08): The issues recorded in round 4 (Theorem 4.6's `L¹Ḣ^σ`, the three decay gaps, Corollary 5.15's range, the misprints in (1.19), (5.11), Proposition 3.9, Lemma 3.13, and Proposition 1.6(1)) stand and are not repeated here. <!-- tauceti-roadmap-review {"agent": "claude", "head": "bead7142f27b35545b71755048ddb24ce79a82de", "job": "REV-DESIGN-YangMillsConnectionsAndCaloricGauge~5", "model": "fable", "worker": "chris-x9"} -->
 
 ## A
 
@@ -10027,6 +10028,7 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 - **Misprint** at Lemma 3.13, PDF page 29 (line 1423): the source says the conclusion is printed as `L^{d/(n+2)}` with `n` undefined; it should be `L^{d/(m+2)}`; affects nothing. Found by YangMillsConnectionsAndCaloricGauge (#7643 at 30dfebe, 2026-11-08, claude fable).
 - **Misprint** at Lemma 3.13, line 1423 (p. 29): the source says the conclusion's exponent uses an undefined `n`; it should be `d/(m+2)`; affects nothing. Found by YangMillsConnectionsAndCaloricGauge (#7643 at 9a5d985, 2026-11-07, claude fable).
 - **Gap** at Lemma 3.2, PDF page 21 (lines 1039–1050): the source says the hypothesis is `V ∩ W = ∅` and the proof takes a smooth `h` equal to `0` on `V` and `1` on `W` by Urysohn's lemma; smooth Urysohn needs disjoint closures (two open sets with touching closures admit no such continuous `h`); it should be assume the closures of `V` and `W` disjoint, as the roadmap does; affects the proof. Found by YangMillsConnectionsAndCaloricGauge (#7643 at 32137ba, 2026-11-07, claude fable).
+- **Gap** at Lemma 3.2, proof, PDF page 21 (line 1049): the source says the cut-off is taken equal to `0` on `V` and `1` on `W` under the hypothesis `V ∩ W = ∅` alone, which does not give one when the closures meet; it should be positive on `W` and `0` on `V` (the lemma then holds as stated); affects the proof. Found by YangMillsConnectionsAndCaloricGauge (#7643 at bead714, 2026-11-08, claude fable).
 - **Misprint** at Lemma 3.4(3), line 1130 (p. 22): the source says the second term of the Leibniz rule as the adjoint of the bracket of the right Maurer–Cartan form with `B`; it should be the bracket of the right Maurer–Cartan form with `Ad(O)B` (equivalently the adjoint of the bracket with the left form); affects nothing. Found by YangMillsConnectionsAndCaloricGauge (#7643 at 9a5d985, 2026-11-07, claude fable).
 - **Error** at Proposition 1.6(1), PDF page 9 (line 401): the source says for disconnected `G` the two gauges at infinity are homotopic only up to left and right constants; it should be connected `G` or the quotient by constants; affects a stated result; <!-- tauceti-roadmap-review {"agent": "claude", "head": "5b101ca32275b89e247278bd796cc89b0c028a8e", "job": "REV-DESIGN-YangMillsConnectionsAndCaloricGauge~4", "model": "fable", "worker": "chris-x10"} -->. Found by YangMillsConnectionsAndCaloricGauge (#7643 at 5b101ca, 2026-11-08, claude fable).
 - **Error** at Proposition 1.6(1), line 401, and Lemmas 3.21–3.22, lines 1634 and 1646: the source says for disconnected `G` the gauges at infinity are homotopic only up to left and right constants, and `[id]` differs from the class of a constant map (`G = {±1}`, `A = 0`); it should be connected `G` or the quotient by constants; affects a stated result; (recorded in round 1; re-read this round). <!-- tauceti-roadmap-review {"agent": "claude", "head": "32137ba27fc146b4e95c3c6e14c3ba5d96014775", "job": "REV-DESIGN-YangMillsConnectionsAndCaloricGauge~2", "model": "fable", "worker": "chris-x9"} -->. Found by YangMillsConnectionsAndCaloricGauge (#7643 at 32137ba, 2026-11-07, claude fable).
@@ -10050,6 +10052,8 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 - **Misprint** at Theorem 4.8, (4.34), PDF page 33 (line 1522): the source says the exponent is `1 − α/2` with `α` undefined; it should be `1 − β`, as in (4.32); affects nothing. Found by YangMillsConnectionsAndCaloricGauge (#7643 at 32137ba, 2026-11-07, claude fable).
 - **Misprint** at Theorem 4.8, (4.34), line 1522 (p. 33): the source says the exponent is `1 − α/2` with `α` undefined; it should be `1 − β`, as in (4.32); affects nothing. Found by YangMillsConnectionsAndCaloricGauge (#7643 at 9a5d985, 2026-11-07, claude fable).
 - **Gap** at Theorem 6.1, lines 2567 and 2580 (pp. 55–56): the source says the statement asserts that the concentration points `x_n` converge to a point `x₀`; the proof chooses the parabolic cubes without bounding `x_n`; it should be either drop the clause or add the argument; affects a stated result. Found by YangMillsConnectionsAndCaloricGauge (#7643 at 9a5d985, 2026-11-07, claude fable).
+- **Error** at Theorem 7.8, proof, Step 2, (7.10), PDF page 70 (line 3325): the source says the bound is printed with the left side in the norm `ℓ¹Ḣ¹` and is said to follow from Theorem 4.1; it should be in the norm of `ℋ`, since `[a, c]` lies outside `ℓ¹Ḣ¹` for caloric `a` outside `ℓ¹Ḣ¹`, and the `ℋ` form is what (7.9) needs; affects the proof. Found by YangMillsConnectionsAndCaloricGauge (#7643 at bead714, 2026-11-08, claude fable).
+- **Misprint** at §2.4, PDF page 14 (line 558): the source says the gauge transformation `O` with `a_∞ = O⁻¹∂O` is said to be unique up to constant conjugations; it should be up to left multiplication by constants, as its formula shows; affects nothing. Found by YangMillsConnectionsAndCaloricGauge (#7643 at bead714, 2026-11-08, claude fable).
 
 ## Olivier
 
@@ -11660,6 +11664,10 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 ## SH
 
 - **Error** at §§3.1–3.2, v2 printed pp.3–4: the source says the rank-four holomorphic sector is invariant under the natural combined diagonal and permutation action; it should be diagonal-invariant and permutation-sign-equivariant, or permutation-invariant only after a sign twist; affects nothing. Found by PeriodsAndSpecialValues (#169 at 9f14c68, 2026-10-24, codex gpt-6-astra).
+
+## Sikora2012
+
+- **Misprint** at §11, line 836, printed p. 18: the source says the source refers to "Proposition 30" for the closed-orbit characterization; it should be Theorem 30 (line 572); affects nothing; <!-- tauceti-roadmap-review {"agent": "claude", "head": "19b9aa348ffab45dc1c17c8587cb7f7998a08a70", "job": "REV-DESIGN-SurfaceGroupCharacterVarieties~2", "model": "fable", "worker": "chris-x17"} -->. Found by SurfaceGroupCharacterVarieties (#9066 at 19b9aa3, 2026-11-08, claude fable).
 
 ## Silliman, arXiv:2009.14353v2
 
