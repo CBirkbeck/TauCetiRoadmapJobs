@@ -1,0 +1,1762 @@
+{
+ "roadmap": "SurfaceGroupCharacterVarieties",
+ "title": "Surface group character varieties",
+ "parent": null,
+ "summary": "Outer automorphisms and their action on conjugacy classes of homomorphisms; the punctured-surface mapping class group completed by the marked-point comparison, the pure group and the pure Birman sequence; the outer action Psi of Mod_{g,n} on pi_1; representation schemes of finitely generated groups; real reductive data, the real-form bridge and the real Kempf-Ness theorem; the six characterizations of reductive representations; and the character variety X(Gamma, G^R), Hausdorff, locally compact and second countable, homeomorphic to minimal vectors modulo K, equal for complex groups to the complex points of Hom(Gamma,G)//G, with Out(Gamma) and Mod_{g,n} acting by homeomorphisms.",
+ "baseline": {
+  "mathlib": "1b1ccf4b088b32fa3f23f2de1127433254a81e1e",
+  "tauceti": "2fd255d997f47c0b5d834ee416c7015d55444ce5"
+ },
+ "layers": [
+  {
+   "key": "1",
+   "title": "Outer automorphisms and conjugacy classes of homomorphisms",
+   "targets": [
+    {
+     "id": "1.1",
+     "kind": "definition",
+     "name": "MulOut",
+     "statement": "Inn(Γ) := range of MulAut.conj : Γ →* MulAut Γ is normal; Out(Γ) := MulAut Γ ⧸ Inn(Γ); for the discrete topology on Γ, TauCeti.ContinuousAut.toMulAut is bijective and induces TauCeti.ContinuousOut Γ ≃* Out(Γ).",
+     "hypotheses": [
+      "Γ an arbitrary group"
+     ],
+     "locator": {
+      "source": "FarbMargalit2012",
+      "where": "Ch. 8, §8.1"
+     },
+     "prerequisites": [
+      "mathlib:MulAut",
+      "mathlib:MulAut.conj",
+      "mathlib:MulAut.congr",
+      "mathlib:QuotientGroup.mk'",
+      "mathlib:MonoidHom.range",
+      "tauceti:TauCeti.ContinuousAut",
+      "tauceti:TauCeti.ContinuousAut.toMulAut",
+      "tauceti:TauCeti.ContinuousAut.conj",
+      "tauceti:TauCeti.ContinuousAut.mul_conj_mul_inv",
+      "tauceti:TauCeti.ContinuousAut.ker_conj",
+      "tauceti:TauCeti.ContinuousOut"
+     ],
+     "api": [
+      {
+       "name": "MulOut.normal_inn",
+       "role": "instance",
+       "statement": "Inn(Γ) is normal: φ ∘ MulAut.conj g ∘ φ⁻¹ = MulAut.conj (φ g)."
+      },
+      {
+       "name": "MulOut.mk_eq_one_iff",
+       "role": "characterisation",
+       "statement": "The class of φ is trivial iff φ is inner."
+      },
+      {
+       "name": "MulOut.innEquivQuotientCenter",
+       "role": "equivalence",
+       "statement": "Inn(Γ) ≃* Γ ⧸ Z(Γ) via MulAut.conj."
+      },
+      {
+       "name": "MulOut.equivMulAutOfComm",
+       "role": "compatibility",
+       "statement": "For commutative Γ, Out(Γ) ≃* MulAut Γ."
+      },
+      {
+       "name": "MulOut.congr",
+       "role": "functoriality",
+       "statement": "An isomorphism Γ ≃* Γ' induces Out(Γ) ≃* Out(Γ'), functorially; inner automorphisms of Γ induce the identity."
+      },
+      {
+       "name": "MulOut.continuousOutEquiv",
+       "role": "compatibility",
+       "statement": "For the discrete topology, TauCeti.ContinuousOut Γ ≃* Out(Γ) commuting with the quotient maps."
+      }
+     ],
+     "tests": [
+      {
+       "name": "out_int",
+       "kind": "computation",
+       "statement": "Out(ℤ) has two elements."
+      },
+      {
+       "name": "out_S3_Q8",
+       "kind": "computation",
+       "statement": "Out(S₃) is trivial and |Out(Q₈)| = 6."
+      },
+      {
+       "name": "out_trivial",
+       "kind": "degenerate",
+       "statement": "Out of the trivial group is trivial."
+      },
+      {
+       "name": "out_Z2_not_SL2",
+       "kind": "non-example",
+       "statement": "Out(ℤ²) ≅ GL₂(ℤ) and the class of diag(1,−1) is nontrivial, so Out(ℤ²) is not SL₂(ℤ)."
+      }
+     ]
+    },
+    {
+     "id": "1.2",
+     "kind": "definition",
+     "name": "HomConj",
+     "statement": "Rep(Γ, H) := (Γ →* H) modulo the orbit relation of ConjAct H acting by postcomposition: ρ ∼ MulAut.conj h ∘ ρ.",
+     "hypotheses": [
+      "Γ, H arbitrary groups"
+     ],
+     "locator": {
+      "source": "LandesmanLitt2024",
+      "where": "line 42"
+     },
+     "prerequisites": [
+      "mathlib:ConjAct",
+      "mathlib:MulAction.orbitRel",
+      "mathlib:MulAut.conj",
+      "mathlib:ConjClasses"
+     ],
+     "api": [
+      {
+       "name": "HomConj.mk_eq_mk_iff",
+       "role": "characterisation",
+       "statement": "[ρ] = [ρ'] iff ρ' = MulAut.conj h ∘ ρ for some h."
+      },
+      {
+       "name": "HomConj.mapTarget",
+       "role": "functoriality",
+       "statement": "H →* H' induces Rep(Γ,H) → Rep(Γ,H'), functorially."
+      },
+      {
+       "name": "HomConj.mapSource",
+       "role": "functoriality",
+       "statement": "Γ' →* Γ induces Rep(Γ,H) → Rep(Γ',H), contravariantly functorially."
+      },
+      {
+       "name": "HomConj.equivOfComm",
+       "role": "compatibility",
+       "statement": "For commutative H the quotient map Hom(Γ,H) → Rep(Γ,H) is a bijection."
+      },
+      {
+       "name": "HomConj.intEquivConjClasses",
+       "role": "compatibility",
+       "statement": "Rep(ℤ, H) ≃ ConjClasses H via [ρ] ↦ [ρ 1]."
+      }
+     ],
+     "tests": [
+      {
+       "name": "rep_int_S3",
+       "kind": "computation",
+       "statement": "Rep(ℤ, S₃) has 3 elements while Hom(ℤ, S₃) has 6."
+      },
+      {
+       "name": "rep_trivial_target",
+       "kind": "degenerate",
+       "statement": "Rep(Γ, 1) is a point for every Γ."
+      },
+      {
+       "name": "rep_Z2_GL2",
+       "kind": "computation",
+       "statement": "Rep(ℤ/2, GL₂(ℂ)) has 3 elements (eigenvalue multisets of involutions) while Hom(ℤ/2, GL₂(ℂ)) is infinite."
+      }
+     ]
+    },
+    {
+     "id": "1.3",
+     "kind": "theorem",
+     "name": "HomConj.outAction",
+     "statement": "φ·ρ = ρ ∘ φ⁻¹ is a left action of MulAut Γ on Γ →* H commuting with H-conjugation; MulAut.conj γ · ρ = MulAut.conj (ρ γ)⁻¹ ∘ ρ; hence Out(Γ) acts on Rep(Γ,H) by [φ]·[ρ] = [ρ ∘ φ⁻¹], naturally in H. Inn(Γ) acts trivially on Γ →* H iff every homomorphism Γ → H has commutative image.",
+     "hypotheses": [
+      "Γ, H arbitrary groups"
+     ],
+     "locator": {
+      "source": "LandesmanLitt2024",
+      "where": "lines 41–50, Definition 1.1.1 and the following paragraph"
+     },
+     "prerequisites": [
+      "target:1.1",
+      "target:1.2"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "left_action_witness",
+       "kind": "computation",
+       "statement": "On ℤ² with ρ the first coordinate, φ = [[1,1],[0,1]], ψ = [[1,0],[1,1]]: (φψ)·ρ = (1,−1) = φ·(ψ·ρ) while ψ·(φ·ρ) = (2,−1)."
+      },
+      {
+       "name": "inner_free_nontrivial",
+       "kind": "non-example",
+       "statement": "For Γ = H = F₂ and ρ = id, MulAut.conj a · id = MulAut.conj a⁻¹ ≠ id, with the same class."
+      },
+      {
+       "name": "abelian_target",
+       "kind": "degenerate",
+       "statement": "For commutative H, Inn(Γ) acts trivially on Hom(Γ,H)."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "key": "2",
+   "title": "Punctured surfaces, marked points and the pure mapping class group",
+   "targets": [
+    {
+     "id": "2.1",
+     "kind": "definition",
+     "name": "Homeomorph.isotopyClasses",
+     "statement": "Homeo₀(X) := {Φ.finalHomeomorph | Φ : TauCeti.AmbientIsotopy X} is a normal subgroup of X ≃ₜ X; Mod^±(X) := (X ≃ₜ X) ⧸ Homeo₀(X); for locally compact Hausdorff X, with the topology induced by f ↦ (f, f⁻¹) into C(X,X)² (compact-open), X ≃ₜ X is a topological group and Homeo₀(X) is the identity path component.",
+     "hypotheses": [
+      "X a topological space; locally compact Hausdorff for the path-component clause"
+     ],
+     "locator": {
+      "source": "FarbMargalit2012",
+      "where": "Ch. 1, §1.4"
+     },
+     "prerequisites": [
+      "tauceti:TauCeti.AmbientIsotopy",
+      "tauceti:TauCeti.AmbientIsotopy.trans",
+      "tauceti:TauCeti.AmbientIsotopy.symm",
+      "tauceti:TauCeti.AmbientIsotopy.conj",
+      "tauceti:TauCeti.AmbientIsotopy.finalHomeomorph_conj",
+      "tauceti:TauCeti.AmbientIsotopic.setoid",
+      "mathlib:ContinuousMap.compactOpen",
+      "mathlib:Homeomorph",
+      "mathlib:QuotientGroup.mk'"
+     ],
+     "api": [
+      {
+       "name": "Homeomorph.isotopyClasses.normal",
+       "role": "instance",
+       "statement": "Homeo₀(X) is a normal subgroup."
+      },
+      {
+       "name": "Homeomorph.isotopyClasses.mk_eq_mk_iff",
+       "role": "characterisation",
+       "statement": "[f] = [g] iff f and g are TauCeti.AmbientIsotopic."
+      },
+      {
+       "name": "Homeomorph.isotopyClasses.congr",
+       "role": "functoriality",
+       "statement": "X ≃ₜ Y induces Mod^±(X) ≃* Mod^±(Y) by conjugation."
+      },
+      {
+       "name": "Homeomorph.isotopyClasses.of_compact",
+       "role": "compatibility",
+       "statement": "For compact Hausdorff X every homotopy through homeomorphisms from the identity is an ambient isotopy."
+      },
+      {
+       "name": "Homeomorph.isotopyClasses.mem_iff_joined",
+       "role": "characterisation",
+       "statement": "For locally compact Hausdorff X, f ∈ Homeo₀(X) iff f is joined to 1 in the two-sided compact-open topology."
+      }
+     ],
+     "tests": [
+      {
+       "name": "mod_real_line",
+       "kind": "computation",
+       "statement": "Mod^±(ℝ) has two elements (monotonicity type is an isotopy invariant)."
+      },
+      {
+       "name": "mod_two_points",
+       "kind": "degenerate",
+       "statement": "For the discrete two-point space Mod^± has two elements; for a point it is trivial."
+      },
+      {
+       "name": "mod_circle",
+       "kind": "computation",
+       "statement": "Mod^±(S¹) has two elements (degree is an isotopy invariant, rotations are isotopic to id)."
+      }
+     ]
+    },
+    {
+     "id": "2.2",
+     "kind": "theorem",
+     "name": "Homeomorph.extendPunctures",
+     "statement": "Restriction Homeo(Σ,P) → (Σ∖P) ≃ₜ (Σ∖P) is a group isomorphism; ambient isotopies of Σ∖P extend uniquely to ambient isotopies of Σ fixing P pointwise; Mod^±(Σ∖P) ≅ Homeo(Σ,P)/(isotopy rel P); for Σ = Σ_g oriented, Mod_{g,n} of MordellLawrenceVenkatesh §5.9 is the orientation-preserving subgroup and ≅ Homeo⁺(Σ_g,P)/(isotopy rel P).",
+     "hypotheses": [
+      "Σ compact Hausdorff",
+      "P ⊆ Σ finite",
+      "each p ∈ P has a basis of compact neighbourhoods U with U ∖ {p} nonempty and connected"
+     ],
+     "locator": {
+      "source": "FarbMargalit2012",
+      "where": "Ch. 2, §2.1"
+     },
+     "prerequisites": [
+      "target:2.1",
+      "roadmap:MordellLawrenceVenkatesh §5.1",
+      "roadmap:MordellLawrenceVenkatesh §5.9",
+      "mathlib:IsCompact",
+      "mathlib:IsConnected",
+      "mathlib:T2Space"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "two_punctured_sphere",
+       "kind": "computation",
+       "statement": "Σ = S², P = {N,S}: (θ,s) ↦ (−θ,−s) on the cylinder extends to the rotation by π about an equatorial axis; Mod_{0,2} has two elements."
+      },
+      {
+       "name": "circle_two_points",
+       "kind": "non-example",
+       "statement": "Σ = S¹, P two points: identity on one arc and reversal on the other has no continuous extension; punctured neighbourhoods are disconnected."
+      },
+      {
+       "name": "empty_P",
+       "kind": "degenerate",
+       "statement": "With P empty the isomorphism is the identity of Mod^±(Σ)."
+      }
+     ]
+    },
+    {
+     "id": "2.3",
+     "kind": "theorem",
+     "name": "MappingClass.permutation_surjective",
+     "statement": "σ : Mod_{g,n} → Sym(P) is a well-defined surjective homomorphism; PMod_{g,n} := ker σ has index n!.",
+     "hypotheses": [
+      "Σ_g closed connected oriented surface",
+      "P ⊆ Σ_g finite, |P| = n",
+      "g, n ≥ 0"
+     ],
+     "locator": {
+      "source": "LandesmanLitt2024",
+      "where": "line 474"
+     },
+     "prerequisites": [
+      "target:2.2",
+      "roadmap:MordellLawrenceVenkatesh §5.9",
+      "roadmap:MordellLawrenceVenkatesh §5.17"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "index_small_n",
+       "kind": "degenerate",
+       "statement": "n = 0 and n = 1 give index 1."
+      },
+      {
+       "name": "pants",
+       "kind": "computation",
+       "statement": "(0,3): Mod ≅ S₃, PMod trivial, index 6 = 3!."
+      },
+      {
+       "name": "annulus",
+       "kind": "computation",
+       "statement": "(0,2): Mod has order 2, PMod trivial, index 2 = 2!."
+      }
+     ]
+    },
+    {
+     "id": "2.4",
+     "kind": "theorem",
+     "name": "SurfaceGroup.fundamentalGroupEquiv",
+     "statement": "For g, n ≥ 0 and an enumeration of P there is S⁺(g,n) ≃* π₁(Σ_g ∖ P, x) carrying p_j to a based loop around the j-th puncture with the induced orientation; for n ≥ 1 the group is free of rank 2g + n − 1.",
+     "hypotheses": [
+      "Σ_g closed connected oriented surface",
+      "P ⊆ Σ_g finite with |P| = n",
+      "x ∈ Σ_g ∖ P"
+     ],
+     "locator": {
+      "source": "FarbMargalit2012",
+      "where": "Ch. 1, §1.1"
+     },
+     "prerequisites": [
+      "roadmap:MordellLawrenceVenkatesh §5.4",
+      "roadmap:MordellLawrenceVenkatesh §5.23",
+      "roadmap:FreeGroupsAndLimitGroups §6.1",
+      "roadmap:FreeGroupsAndLimitGroups §6.2",
+      "roadmap:AlgebraicTopology Stage 1",
+      "roadmap:TeichmullerGeometry §4.3"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "torus",
+       "kind": "computation",
+       "statement": "(1,0): ℤ²."
+      },
+      {
+       "name": "pants_free",
+       "kind": "computation",
+       "statement": "(0,3): free on p₁, p₂ with p₃ = (p₁p₂)⁻¹; three distinct peripheral classes."
+      },
+      {
+       "name": "sphere_disc",
+       "kind": "degenerate",
+       "statement": "(0,0) and (0,1): trivial groups; dropping peripheral generators would give ℤ² instead of F₂ for (1,1)."
+      }
+     ]
+    },
+    {
+     "id": "2.5",
+     "kind": "theorem",
+     "name": "MappingClass.pureBirman_exact",
+     "statement": "1 → π₁(Σ_{g,n}, x) → PMod(Σ_g, P ∪ {x}) → PMod(Σ_g, P) → 1 is exact, with Push and the forgetful map.",
+     "hypotheses": [
+      "2g − 2 + n > 0",
+      "x ∈ Σ_g ∖ P"
+     ],
+     "locator": {
+      "source": "LandesmanLitt2024",
+      "where": "lines 503–515, Lemma 2.0.1 (bottom row)"
+     },
+     "prerequisites": [
+      "target:2.2",
+      "target:2.3",
+      "roadmap:MordellLawrenceVenkatesh §5.9",
+      "roadmap:MordellLawrenceVenkatesh §5.19",
+      "roadmap:MordellLawrenceVenkatesh §5.20"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "pants",
+       "kind": "computation",
+       "statement": "(0,3): PMod_{0,4} ≅ F₂."
+      },
+      {
+       "name": "punctured_torus",
+       "kind": "computation",
+       "statement": "(1,1): 1 → F₂ → PMod_{1,2} → SL₂(ℤ) → 1."
+      },
+      {
+       "name": "euler_zero",
+       "kind": "non-example",
+       "statement": "(1,0) and (0,2): injectivity fails (Push trivial on the torus; π₁ = ℤ for the annulus with PMod_{0,3} trivial)."
+      }
+     ]
+    },
+    {
+     "id": "2.6",
+     "kind": "theorem",
+     "name": "MappingClass.congrOfPair",
+     "statement": "An orientation-preserving homeomorphism of pairs e : (Σ_g,P) → (Σ'_g,P') induces Mod_{g,n} ≃* Mod'_{g,n}, [f] ↦ [efe⁻¹], intertwining permutation maps; isotopic e induce the same isomorphism and different e differ by an inner automorphism; any two such pairs are related by some e.",
+     "hypotheses": [
+      "|P| = |P'| = n",
+      "same genus g"
+     ],
+     "locator": {
+      "source": "FarbMargalit2012",
+      "where": "Ch. 2, §2.1"
+     },
+     "prerequisites": [
+      "target:2.1",
+      "target:2.2",
+      "target:2.3",
+      "roadmap:MordellLawrenceVenkatesh §5.4"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "identity_pair",
+       "kind": "degenerate",
+       "statement": "e = id induces the identity."
+      },
+      {
+       "name": "self_pair",
+       "kind": "computation",
+       "statement": "e ∈ Homeo⁺(Σ_g,P) induces conjugation by [e]; for Mod_{0,3} ≅ S₃ and e a transposition, conjugation by a transposition."
+      },
+      {
+       "name": "orientation_reversing",
+       "kind": "non-example",
+       "statement": "An orientation-reversing e on the torus induces conjugation by diag(1,−1) on SL₂(ℤ), an outer automorphism."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "key": "3",
+   "title": "The outer action of the mapping class group",
+   "targets": [
+    {
+     "id": "3.1",
+     "kind": "definition",
+     "name": "Homeomorph.fundamentalGroupAut",
+     "statement": "f_δ := (fundamentalGroupMulEquivOfPath δ).symm ∘ FundamentalGroup.map f x : π₁(X,x) ≃* π₁(X,x), sending [γ] to [δ ⬝ (f ∘ γ) ⬝ δ̄].",
+     "hypotheses": [
+      "X a topological space",
+      "f : X ≃ₜ X",
+      "δ : Path x (f x)"
+     ],
+     "locator": {
+      "source": "FarbMargalit2012",
+      "where": "Ch. 8, §8.1"
+     },
+     "prerequisites": [
+      "mathlib:FundamentalGroup.map",
+      "mathlib:FundamentalGroup.fundamentalGroupMulEquivOfPath",
+      "mathlib:FundamentalGroup.mul_def",
+      "mathlib:MulAut.conj"
+     ],
+     "api": [
+      {
+       "name": "Homeomorph.fundamentalGroupAut_apply",
+       "role": "simp",
+       "statement": "f_δ [γ] = [δ ⬝ (f ∘ γ) ⬝ δ̄]."
+      },
+      {
+       "name": "Homeomorph.fundamentalGroupAut_changePath",
+       "role": "characterisation",
+       "statement": "f_{δ'} = MulAut.conj [δ ⬝ δ̄'] ∘ f_δ."
+      },
+      {
+       "name": "Homeomorph.fundamentalGroupAut_trans",
+       "role": "functoriality",
+       "statement": "(f ∘ g)_{δ ⬝ (f ∘ ε)} = f_δ ∘ g_ε."
+      },
+      {
+       "name": "Homeomorph.fundamentalGroupAut_symm",
+       "role": "functoriality",
+       "statement": "(f⁻¹)_{rev(f⁻¹ ∘ δ)} = (f_δ)⁻¹."
+      },
+      {
+       "name": "Homeomorph.fundamentalGroupAut_refl",
+       "role": "simp",
+       "statement": "id_{const} = 1 and, for a loop σ, id_σ = MulAut.conj [σ]⁻¹."
+      }
+     ],
+     "tests": [
+      {
+       "name": "convention_witness",
+       "kind": "computation",
+       "statement": "For f = id and δ a loop σ, f_δ = MulAut.conj [σ]⁻¹; the opposite reading of fundamentalGroupMulEquivOfPath gives MulAut.conj [σ]."
+      },
+      {
+       "name": "circle",
+       "kind": "computation",
+       "statement": "On S¹ with x = 1, complex conjugation acts by −1 on π₁ ≅ ℤ; rotation by π with an arc acts by +1."
+      },
+      {
+       "name": "no_path",
+       "kind": "non-example",
+       "statement": "Without a path, FundamentalGroup.map f x lands in π₁(X, f x), not π₁(X, x), when f x ≠ x."
+      }
+     ]
+    },
+    {
+     "id": "3.2",
+     "kind": "theorem",
+     "name": "Homeomorph.fundamentalGroupAut_of_homotopy",
+     "statement": "If H : f ≃ g is a homotopy of homeomorphisms with track η from f(x) to g(x), then g_{δ ⬝ η} = f_δ; if f ∈ Homeo₀(X) with track η : x ⟶ f(x) then f_δ = MulAut.conj [η ⬝ δ̄].",
+     "hypotheses": [
+      "X a topological space",
+      "f, g homeomorphisms",
+      "δ : Path x (f x)"
+     ],
+     "locator": {
+      "source": "FarbMargalit2012",
+      "where": "Ch. 8, §8.1"
+     },
+     "prerequisites": [
+      "target:3.1",
+      "target:2.1",
+      "mathlib:FundamentalGroupoidFunctor.homotopicMapsNatIso",
+      "mathlib:ContinuousMap.Homotopy",
+      "roadmap:MordellLawrenceVenkatesh §5.19"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "point_push",
+       "kind": "computation",
+       "statement": "For the push along a loop α, f_{const} = MulAut.conj [α], MordellLawrenceVenkatesh §5.19's γ ↦ α * γ * α⁻¹."
+      },
+      {
+       "name": "torus_translation",
+       "kind": "degenerate",
+       "statement": "A translation isotopy of the torus induces the identity."
+      },
+      {
+       "name": "hyperelliptic",
+       "kind": "non-example",
+       "statement": "The genus-two hyperelliptic involution acts by −1 on the abelianization, not inner, hence not isotopic to id."
+      }
+     ]
+    },
+    {
+     "id": "3.3",
+     "kind": "construction",
+     "name": "MappingClass.outerAction",
+     "statement": "Ψ_x : Mod^±(X) →* Out(π₁(X,x)), [f] ↦ [f_δ], well defined and a homomorphism; for σ : x ⟶ x' the induced Out(π₁(X,x)) ≃* Out(π₁(X,x')) is independent of σ and intertwines Ψ_x and Ψ_{x'}; for X = Σ_{g,n}, Ψ_x[f] on Mod_{g,n} is the outer class of f_* through which MordellLawrenceVenkatesh §5.9's actions on finite coverings and on conjugacy classes of homomorphisms factor; on Mod(S*) the based map [f] ↦ f_const lifts Ψ_x and sends Push(α) to MulAut.conj [α].",
+     "hypotheses": [
+      "X path-connected"
+     ],
+     "locator": {
+      "source": "FarbMargalit2012",
+      "where": "Ch. 8, §8.1"
+     },
+     "prerequisites": [
+      "target:1.1",
+      "target:2.1",
+      "target:3.1",
+      "target:3.2",
+      "roadmap:MordellLawrenceVenkatesh §5.9",
+      "roadmap:MordellLawrenceVenkatesh §5.19"
+     ],
+     "api": [
+      {
+       "name": "MappingClass.outerAction_mk",
+       "role": "simp",
+       "statement": "Ψ_x [f] = [f_δ] for every δ : x ⟶ f(x)."
+      },
+      {
+       "name": "MappingClass.outerAction_basepoint",
+       "role": "compatibility",
+       "statement": "Ψ_{x'} = Out(fundamentalGroupMulEquivOfPath σ) ∘ Ψ_x, independent of σ."
+      },
+      {
+       "name": "MappingClass.basedAction_push",
+       "role": "compatibility",
+       "statement": "The based lift sends Push(α) to MulAut.conj [α]."
+      }
+     ],
+     "tests": [
+      {
+       "name": "circle",
+       "kind": "computation",
+       "statement": "Ψ : Mod^±(S¹) → Out(ℤ) = ℤ/2 is an isomorphism."
+      },
+      {
+       "name": "torus_shear",
+       "kind": "computation",
+       "statement": "The shear (u,v) ↦ (u, u+v) maps to [[1,0],[1,1]] in GL₂(ℤ) (matrices on column vectors); its transpose is the image of (u,v) ↦ (u+v, v)."
+      },
+      {
+       "name": "interval",
+       "kind": "non-example",
+       "statement": "For X = [0,1], π₁ is trivial while the flip is a nontrivial class: Ψ is not injective."
+      }
+     ]
+    },
+    {
+     "id": "3.4",
+     "kind": "theorem",
+     "name": "MappingClass.outerAction_surjective_closed",
+     "statement": "For closed connected oriented smooth Σ, π₀ Diff(Σ) → Mod^±(Σ) is a homomorphism; Ψ_x composed with it is TeichmullerGeometry §5.2's map read through §4.2's Out(Π) ≃ Out(π₁); Ψ_x : Mod^±(Σ) → Out(π₁(Σ,x)) is surjective; for genus g ≥ 1, Out(π₁(Σ,x)) acts on H₂(π₁(Σ,x); ℤ) (groupHomology of the trivial module, inner automorphisms acting trivially), H₂(π₁(Σ,x); ℤ) ≅ H₂(Σ; ℤ) ≅ ℤ by asphericity, and Ψ_x maps Mod(Σ) onto the index-two subgroup acting trivially on it; for g = 0 Out(π₁) and the image of Mod(Σ) are trivial.",
+     "hypotheses": [
+      "Σ closed connected oriented smooth surface",
+      "g ≥ 1 for the H₂ clause"
+     ],
+     "locator": {
+      "source": "FarbMargalit2012",
+      "where": "Ch. 8, §8.1, Theorem 8.1"
+     },
+     "prerequisites": [
+      "target:2.1",
+      "target:3.2",
+      "target:3.3",
+      "roadmap:TeichmullerGeometry §0.2",
+      "roadmap:TeichmullerGeometry §3.1",
+      "roadmap:TeichmullerGeometry §4.2",
+      "roadmap:TeichmullerGeometry §4.3",
+      "roadmap:TeichmullerGeometry §5.2",
+      "roadmap:MordellLawrenceVenkatesh §5.1",
+      "roadmap:MordellLawrenceVenkatesh §5.5",
+      "roadmap:MordellLawrenceVenkatesh §5.15",
+      "roadmap:MordellLawrenceVenkatesh §5.19",
+      "roadmap:AlgebraicTopology Stage 4 item 2",
+      "roadmap:AlgebraicTopology Stage 4 item 3",
+      "roadmap:ClassifyingSpaces Stage 3 item 11",
+      "roadmap:ClassifyingSpaces Stage 4 item 17",
+      "mathlib:groupHomology",
+      "mathlib:groupHomology.map"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "torus",
+       "kind": "computation",
+       "statement": "Mod^±(T²) ≅ GL₂(ℤ) via H₁; A acts on H₂(ℤ²;ℤ) = Λ²ℤ² by det A, so Mod(T²) maps onto SL₂(ℤ), index two."
+      },
+      {
+       "name": "sphere",
+       "kind": "degenerate",
+       "statement": "Out(1) is trivial while the antipodal map is a nontrivial class: surjective, not injective; H₂(π₁(S²);ℤ) = 0 ≠ ℤ = H₂(S²;ℤ), so the H₂ clause needs g ≥ 1."
+      },
+      {
+       "name": "genus_two",
+       "kind": "computation",
+       "statement": "The hyperelliptic class maps to the outer class acting by −1 on the abelianization."
+      }
+     ]
+    },
+    {
+     "id": "3.5",
+     "kind": "theorem",
+     "name": "MappingClass.actionHomConj",
+     "statement": "For every group H, MordellLawrenceVenkatesh §5.9's action of Mod_{g,n} on Rep(π₁(Σ_{g,n},x), H) is Ψ_x followed by 1.3, [f]·[ρ] = [ρ ∘ Ψ_x[f]⁻¹]; this formula extends it to Mod^±_{g,n}, compatibly with basepoint change and H →* H'; orbits are finite under a finite-index subgroup (e.g. PMod_{g,n}) iff under Mod^±_{g,n}. Non-descent: for 2g − 2 + n > 0 and S = Σ_{g,n} marked at x, the based action [f]·ρ = ρ ∘ (f_const)⁻¹ of Mod(S*) on Hom(π₁(S,x), H) makes Hom(π₁(S,x), H) → Rep(π₁(S,x), H) equivariant for Mod(S*) acting on Rep through Forget, and it factors through Forget iff every homomorphism π₁(S,x) → H has commutative image (ker Forget = Push(π₁(S,x)), Push(α) acting by ρ ↦ MulAut.conj (ρ[α])⁻¹ ∘ ρ).",
+     "hypotheses": [
+      "H an arbitrary group",
+      "2g − 2 + n > 0 for the non-descent clause"
+     ],
+     "locator": {
+      "source": "LandesmanLitt2024",
+      "where": "lines 41–50 (Definition 1.1.1 and the remark that Mod_{g,n} does not naturally act on the representation variety); lines 473–475 (PMod_{g,n} of index n!)"
+     },
+     "prerequisites": [
+      "target:1.3",
+      "target:2.3",
+      "target:3.3",
+      "roadmap:MordellLawrenceVenkatesh §5.9",
+      "roadmap:MordellLawrenceVenkatesh §5.19",
+      "roadmap:MordellLawrenceVenkatesh §5.20",
+      "roadmap:MordellLawrenceVenkatesh §5.22"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "finite_image",
+       "kind": "computation",
+       "statement": "Classes with finite image have finite orbit."
+      },
+      {
+       "name": "unipotent_genus_two",
+       "kind": "non-example",
+       "statement": "ρ(γ) = [[1,f(γ)],[0,1]] with f = a₁* on Σ₂ has infinite orbit (lines in H¹(Σ₂;ℂ) moved by Sp₄(ℤ))."
+      },
+      {
+       "name": "abelian_target",
+       "kind": "degenerate",
+       "statement": "For commutative H the action is through H₁, and the based action of Mod(S*) factors through Forget."
+      },
+      {
+       "name": "coverings_comparison",
+       "kind": "compatibility",
+       "statement": "On the torus, for the shear f (Ψ[f] = M = [[1,0],[1,1]]) and the triple cover with monodromy ρ(u,v) = v mod 3, f∘p has subgroup M(ker ρ) = {b ≡ a mod 3} = ker(ρ ∘ M⁻¹), as MordellLawrenceVenkatesh §5.9's precomposition with (f⁻¹)_* predicts; the right action ρ ∘ M gives {b ≡ −a mod 3}."
+      },
+      {
+       "name": "push_moves_surjection",
+       "kind": "computation",
+       "statement": "(g,n) = (0,3), π₁ = F₂ = ⟨a,b⟩, H = S₃, ρ(a) = (1 2), ρ(b) = (2 3): Push(a)·ρ sends b to (1 2)(2 3)(1 2) = (1 3) ≠ (2 3), so a class in ker Forget moves ρ."
+      },
+      {
+       "name": "set_lift_exists",
+       "kind": "non-example",
+       "statement": "As an action on sets the action on Rep always lifts to Hom (fibres over one orbit are pairwise in bijection through ρ ↦ ρ ∘ φ⁻¹); for (0,3), H = S₃ it lifts the action on the 11 classes of Rep(F₂,S₃) to the 36 points of Hom(F₂,S₃), so 'no lift exists' is false and the theorem concerns the based action."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "key": "4",
+   "title": "Representation schemes",
+   "targets": [
+    {
+     "id": "4.1",
+     "kind": "construction",
+     "name": "RepresentationScheme",
+     "statement": "For an affine group scheme G over a commutative ring k (Hopf algebra A) and Γ with finite generating family s : S → Γ, the functor R ↦ Hom(Γ, G(R)) is represented by A^{⊗S} modulo the ideal generated by w*(a) − ε(a) for a ∈ A and w ∈ ker(FreeGroup S → Γ); independent of s up to unique isomorphism; finite type if A is; functorial in Γ and G; compatible with base change; G acts by conjugation.",
+     "hypotheses": [
+      "k a commutative ring",
+      "G an affine group scheme over k",
+      "Γ finitely generated"
+     ],
+     "locator": {
+      "source": "Sikora2012",
+      "where": "line 584"
+     },
+     "prerequisites": [
+      "roadmap:ReductiveGroups Layer 0",
+      "mathlib:FreeGroup",
+      "mathlib:FreeGroup.lift",
+      "mathlib:PresentedGroup"
+     ],
+     "api": [
+      {
+       "name": "RepresentationScheme.pointsEquiv",
+       "role": "equivalence",
+       "statement": "Hom(Γ,G)(R) ≃ (Γ →* G(R)), natural in R."
+      },
+      {
+       "name": "RepresentationScheme.evalGenerators",
+       "role": "constructor",
+       "statement": "Evaluation on s is a conjugation-equivariant closed immersion into G^S, an isomorphism for Γ = FreeGroup S."
+      },
+      {
+       "name": "RepresentationScheme.mapSurjective",
+       "role": "functoriality",
+       "statement": "A surjection Γ' ↠ Γ induces a closed immersion Hom(Γ,G) → Hom(Γ',G)."
+      },
+      {
+       "name": "RepresentationScheme.linearEmbedding",
+       "role": "constructor",
+       "statement": "For G ⊆ GL_N closed, ρ ↦ (ρ(s_i), ρ(s_i)⁻¹) is a closed equivariant immersion into (M_N × M_N)^S."
+      },
+      {
+       "name": "RepresentationScheme.baseChange",
+       "role": "compatibility",
+       "statement": "Hom(Γ,G)_{k'} ≅ Hom(Γ, G_{k'})."
+      }
+     ],
+     "tests": [
+      {
+       "name": "free_and_cyclic",
+       "kind": "computation",
+       "statement": "Hom(ℤ,G) = G, Hom(F_m,G) = G^m, Hom(1,G) = Spec k."
+      },
+      {
+       "name": "mu2_char2",
+       "kind": "non-example",
+       "statement": "Hom(ℤ/2, 𝔾_m) over 𝔽₂ is Spec 𝔽₂[t]/((t−1)²), nonreduced; a points-only definition loses the nilpotent."
+      },
+      {
+       "name": "commuting",
+       "kind": "computation",
+       "statement": "Hom(ℤ², GL_n) has points the commuting pairs; omitting the relator gives GL_n × GL_n."
+      }
+     ]
+    },
+    {
+     "id": "4.2",
+     "kind": "theorem",
+     "name": "RepresentationScheme.topology",
+     "statement": "Over ℂ the point topology on Hom(Γ,G(ℂ)) equals the classical topology and the pointwise topology; Hom(Γ,G(ℂ)) is closed in G(ℂ)^S, Hausdorff, locally compact. For a real reductive datum, Hom(Γ,𝐆(ℝ)) is the fixed set of complex conjugation on Hom(Γ,𝐆)(ℂ), Hom(Γ,G^ℝ) is open and closed in it, and G^ℝ acts continuously.",
+     "hypotheses": [
+      "G of finite type",
+      "Γ finitely generated"
+     ],
+     "locator": {
+      "source": "BCGGO2024",
+      "where": "lines 2706–2708"
+     },
+     "prerequisites": [
+      "target:4.1",
+      "roadmap:ReductiveGroupsPartII §RG2.0.1",
+      "roadmap:ComplexComparisonPartII §C-1.1",
+      "tauceti:TauCeti.PointTopology.topology"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "GL1",
+       "kind": "computation",
+       "statement": "Hom(ℤ, GL₁(ℝ)) = ℝ^× (two components); Hom(ℤ, GL₁(ℝ)⁰) = ℝ_{>0}."
+      },
+      {
+       "name": "SO2",
+       "kind": "computation",
+       "statement": "Hom(ℤ/2, SO(2)) = {±1} discrete; Hom(ℤ, SO(2)) is a circle."
+      },
+      {
+       "name": "free_product_topology",
+       "kind": "compatibility",
+       "statement": "Hom(F₂, G(ℂ)) has the product topology of G(ℂ)²."
+      }
+     ]
+    },
+    {
+     "id": "4.3",
+     "kind": "theorem",
+     "name": "RepresentationScheme.surfaceGroupEquiv",
+     "statement": "Hom(π₁(Σ_g,x), G) ≅ {(A_i,B_i) ∈ G^{2g} : ∏[A_i,B_i] = 1} and, for n ≥ 1, Hom(π₁(Σ_{g,n},x), G) ≅ G^{2g+n−1}, equivariantly for conjugation, with peripheral evaluations from the relator.",
+     "hypotheses": [
+      "g, n ≥ 0"
+     ],
+     "locator": {
+      "source": "BCGGO2024",
+      "where": "lines 2706–2708"
+     },
+     "prerequisites": [
+      "target:2.4",
+      "target:4.1",
+      "roadmap:FreeGroupsAndLimitGroups §6.1",
+      "roadmap:FreeGroupsAndLimitGroups §6.2"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "torus",
+       "kind": "computation",
+       "statement": "g = 1, n = 0: the commuting variety; 𝔾_m² for GL₁."
+      },
+      {
+       "name": "pants",
+       "kind": "computation",
+       "statement": "(0,3): G² with ρ(p₃) = (ρ(p₁)ρ(p₂))⁻¹."
+      },
+      {
+       "name": "sphere",
+       "kind": "degenerate",
+       "statement": "(0,0): a point; (1,1): G², not the commuting variety."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "key": "5",
+   "title": "Real reductive groups and minimal vectors",
+   "targets": [
+    {
+     "id": "5.1",
+     "kind": "definition",
+     "name": "RealReductiveDatum",
+     "statement": "A real reductive datum (𝐆, G^ℝ): 𝐆 connected reductive over ℝ and G^ℝ ⊆ 𝐆(ℝ) an open subgroup; G = 𝐆_ℂ, 𝔤^ℝ = Lie(𝐆), 𝔤 = 𝔤^ℝ ⊗ ℂ, Ad the adjoint representation; complex groups as Res_{ℂ/ℝ} H.",
+     "hypotheses": [
+      "𝐆 connected reductive over ℝ"
+     ],
+     "locator": {
+      "source": "BCGGO2024",
+      "where": "lines 466–472"
+     },
+     "prerequisites": [
+      "roadmap:ReductiveGroups Layer 2",
+      "roadmap:ReductiveGroups Layer 6",
+      "roadmap:ArithmeticLocallySymmetricSpaces §ALS.F.1",
+      "roadmap:ReductiveGroupsPartII §RG2.0a.2"
+     ],
+     "api": [
+      {
+       "name": "RealReductiveDatum.finiteIndex",
+       "role": "characterisation",
+       "statement": "G^ℝ contains 𝐆(ℝ)⁰ and has finite index in 𝐆(ℝ)."
+      },
+      {
+       "name": "RealReductiveDatum.ofComplex",
+       "role": "constructor",
+       "statement": "Res_{ℂ/ℝ} H with G^ℝ = H(ℂ) and 𝔤^ℝ = Lie(H) as a real Lie algebra."
+      },
+      {
+       "name": "RealReductiveDatum.Hom",
+       "role": "constructor",
+       "statement": "Morphisms of ℝ-groups mapping G^ℝ into G'^ℝ."
+      }
+     ],
+     "tests": [
+      {
+       "name": "SOpq_PSL2",
+       "kind": "computation",
+       "statement": "SO(p,q)(ℝ) has two components for p,q ≥ 1; PSL₂(ℝ) = PGL₂(ℝ)⁰ is a datum."
+      },
+      {
+       "name": "complex_GLn",
+       "kind": "computation",
+       "statement": "Res_{ℂ/ℝ}GL_n: G^ℝ = GL_n(ℂ), dim_ℝ 𝔤^ℝ = 2n²."
+      },
+      {
+       "name": "excluded",
+       "kind": "non-example",
+       "statement": "The universal cover of SL₂(ℝ) and 𝔾_a(ℝ) = ℝ are not data."
+      }
+     ]
+    },
+    {
+     "id": "5.2",
+     "kind": "theorem",
+     "name": "RealReductiveDatum.ofAntiholomorphicInvolution",
+     "statement": "For H connected reductive over ℂ and τ an antiholomorphic involution of H(ℂ), there is a connected reductive ℝ-group 𝐆_τ with (𝐆_τ)_ℂ ≅ H under which complex conjugation is τ, unique up to unique isomorphism; H(ℂ)^τ = 𝐆_τ(ℝ); conversely conjugations of ℝ-structures are antiholomorphic involutions; a holomorphic Cartan involution σ for τ restricts to an algebraic Cartan involution of 𝐆_τ with maximal compact fixed group.",
+     "hypotheses": [
+      "H connected reductive over ℂ",
+      "τ an antiholomorphic involution of the complex Lie group H(ℂ)"
+     ],
+     "locator": {
+      "source": "BCGGO2024",
+      "where": "lines 466–481"
+     },
+     "prerequisites": [
+      "roadmap:ReductiveGroups Layer 8",
+      "roadmap:ReductiveGroups Layer 9",
+      "roadmap:LieGroups Layer 7, Real forms and global descent",
+      "roadmap:LieGroups Layer 7, Compact-real-form pairs and algebraic morphisms",
+      "roadmap:ArithmeticLocallySymmetricSpaces §ALS.0.1"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "GLn_forms",
+       "kind": "computation",
+       "statement": "τ(g) = ḡ gives GL_n(ℝ); τ(g) = (ḡᵀ)⁻¹ gives U(n)."
+      },
+      {
+       "name": "quaternions",
+       "kind": "computation",
+       "statement": "On GL₂, τ(g) = J ḡ J⁻¹ with J = [[0,−1],[1,0]] has fixed points [[a,−b̄],[b,ā]], the group ℍ^×."
+      },
+      {
+       "name": "holomorphic_involution",
+       "kind": "non-example",
+       "statement": "g ↦ (gᵀ)⁻¹ is holomorphic with complex fixed group O_n(ℂ): not a real form."
+      }
+     ]
+    },
+    {
+     "id": "5.3",
+     "kind": "theorem",
+     "name": "RealReductiveDatum.cartanRealization",
+     "statement": "There is a closed embedding 𝐆 ⊆ GL_N over ℝ with G^ℝ transpose-stable; G^ℝ = K exp(𝔭) and G(ℂ) = U exp(i𝔲) uniquely, with U and i𝔲 stable under conjugation and i𝔲 ∩ 𝔤^ℝ = 𝔭; the conjugation action on (M_N × M_N)^S with the trace inner product makes G^ℝ (over ℝ) and G(ℂ) (over ℂ) real reductive linear groups in the sense of BohmLafuente2021 (1).",
+     "hypotheses": [
+      "(𝐆, G^ℝ) a real reductive datum",
+      "S finite"
+     ],
+     "locator": {
+      "source": "BohmLafuente2021",
+      "where": "lines 52–62, definition (1)"
+     },
+     "prerequisites": [
+      "target:5.1",
+      "roadmap:ArithmeticLocallySymmetricSpaces §ALS.F.1",
+      "roadmap:LieGroups Layer 9",
+      "roadmap:ReductiveGroupsPartII §RG2.0a.2"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "SL2",
+       "kind": "computation",
+       "statement": "SL₂(ℝ): K = SO(2), 𝔭 traceless symmetric; minimal vectors of M₂(ℝ) are the normal matrices."
+      },
+      {
+       "name": "GL1_scaling",
+       "kind": "degenerate",
+       "statement": "GL₁(ℝ) on ℝ by scaling: only 0 minimizes the norm on its orbit."
+      },
+      {
+       "name": "non_stable_embedding",
+       "kind": "non-example",
+       "statement": "SL₂(ℝ) conjugated by [[1,1],[0,1]] is not transpose-stable and the norm is not K-invariant."
+      }
+     ]
+    },
+    {
+     "id": "5.4",
+     "kind": "theorem",
+     "name": "RealReductiveLinear.kempfNess",
+     "statement": "For G ⊆ GL(V) closed with G = K exp(𝔭): (i) M = {v : ⟨Av,v⟩ = 0 ∀A ∈ 𝔭} is a closed cone equal to the norm minimizers of each orbit; (ii) Gv closed iff Gv ∩ M ≠ ∅, then Gv ∩ M = Kw; (iii) a non-closed orbit has α ∈ 𝔭 with lim exp(tα)v outside Gv; (iv) each orbit closure contains exactly one closed orbit, containing the norm minimizers of the closure; (v) G = KTK for T = exp(𝔱), 𝔱 ⊆ 𝔭 maximal abelian, and disjoint closed T-invariant sets are separated by continuous T-invariant functions.",
+     "hypotheses": [
+      "V a finite-dimensional real inner product space",
+      "G ⊆ GL(V) closed",
+      "G = K exp(𝔭), K = G ∩ O(V), 𝔭 = 𝔤 ∩ Sym(V)"
+     ],
+     "locator": {
+      "source": "BohmLafuente2021",
+      "where": "Theorem 1.1 (lines 77–88); Lemma 5.1; Corollary 5.5; Lemma 6.3; Corollary 6.4; Lemma 6.5; Corollary A.2"
+     },
+     "prerequisites": [
+      "mathlib:Matrix.orthogonalGroup",
+      "roadmap:LieGroups Layer 9"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "hyperbolic",
+       "kind": "computation",
+       "statement": "ℝ_{>0} on ℝ² with weights (1,−1): M = {|x| = |y|}; hyperbola branches and 0 are the closed orbits."
+      },
+      {
+       "name": "SLn_conjugation",
+       "kind": "computation",
+       "statement": "SL_n(ℝ) on M_n(ℝ): closed iff diagonalizable over ℂ; [[1,1],[0,1]] has the identity's orbit in its closure."
+      },
+      {
+       "name": "scaling",
+       "kind": "degenerate",
+       "statement": "ℝ_{>0} on ℝ by scaling: M = {0}; nonzero orbits are not closed; compact G: M = V."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "key": "6",
+   "title": "Reductive representations",
+   "targets": [
+    {
+     "id": "6.1",
+     "kind": "definition",
+     "name": "IsReductiveRep",
+     "statement": "ρ : Γ → G^ℝ is reductive when Ad ∘ ρ : Γ → GL(𝔤^ℝ) is a semisimple real representation (Representation.IsSemisimpleRepresentation); Hom^red(Γ, G^ℝ).",
+     "hypotheses": [
+      "(𝐆, G^ℝ) a real reductive datum",
+      "Γ a group"
+     ],
+     "locator": {
+      "source": "BCGGO2024",
+      "where": "lines 2708–2711"
+     },
+     "prerequisites": [
+      "mathlib:Representation.IsSemisimpleRepresentation",
+      "target:5.1"
+     ],
+     "api": [
+      {
+       "name": "IsReductiveRep.iff_range",
+       "role": "characterisation",
+       "statement": "Reductivity depends only on the subgroup ρ(Γ)."
+      },
+      {
+       "name": "IsReductiveRep.conj",
+       "role": "compatibility",
+       "statement": "Hom^red is stable under G^ℝ-conjugation."
+      },
+      {
+       "name": "IsReductiveRep.comp_surjective",
+       "role": "functoriality",
+       "statement": "Hom^red is stable under precomposition with surjections Γ' ↠ Γ and automorphisms of Γ."
+      }
+     ],
+     "tests": [
+      {
+       "name": "trivial_rep",
+       "kind": "degenerate",
+       "statement": "The trivial representation is reductive."
+      },
+      {
+       "name": "unipotent",
+       "kind": "non-example",
+       "statement": "ρ(1) = [[1,1],[0,1]] in SL₂(ℝ) is not reductive: Ad ∘ ρ is a nontrivial unipotent."
+      },
+      {
+       "name": "diagonal",
+       "kind": "computation",
+       "statement": "ρ(1) = diag(2,3) in GL₂(ℝ): Ad ∘ ρ has eigenvalues 1,1,2/3,3/2 with a basis of matrix units; reductive."
+      }
+     ]
+    },
+    {
+     "id": "6.2",
+     "kind": "theorem",
+     "name": "IsSemisimpleRepresentation.baseChange_iff",
+     "statement": "For k'/k and a finite-dimensional representation V of a monoid over k: V ⊗ k' semisimple ⇒ V semisimple; the converse for perfect k. Hence Ad ∘ ρ semisimple on 𝔤^ℝ iff on 𝔤; and for 𝐆 = Res_{ℂ/ℝ} H, Ad ∘ ρ on Lie(H) regarded over ℝ is semisimple iff the complex representation Lie(H) is, via W_ℝ ⊗_ℝ ℂ ≅ W ⊕ W̄.",
+     "hypotheses": [
+      "k a field",
+      "V finite-dimensional"
+     ],
+     "locator": {
+      "source": "Sikora2012",
+      "where": "lines 262–266"
+     },
+     "prerequisites": [
+      "roadmap:ArithmeticGaloisRepresentations §1.7",
+      "mathlib:IsSemisimpleModule",
+      "target:5.1"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "rotation",
+       "kind": "computation",
+       "statement": "The rotation of order four on ℝ² is irreducible over ℝ and a sum of two characters over ℂ."
+      },
+      {
+       "name": "unipotent",
+       "kind": "non-example",
+       "statement": "[[1,1],[0,1]] on ℝ² is semisimple neither over ℝ nor over ℂ."
+      },
+      {
+       "name": "imperfect",
+       "kind": "non-example",
+       "statement": "Over k = 𝔽_p(s), k' = k(s^{1/p}) the converse fails (ArithmeticGaloisRepresentations §1.7's example)."
+      },
+      {
+       "name": "weil_restriction",
+       "kind": "computation",
+       "statement": "For H = GL₂, Γ = ℤ: ρ(1) = [[1,1],[0,1]] gives a nontrivial unipotent Ad, semisimple on neither 𝔤𝔩₂(ℂ) nor ℝ⁸; ρ(1) = diag(2,3) is semisimple on both."
+      }
+     ]
+    },
+    {
+     "id": "6.3",
+     "kind": "theorem",
+     "name": "adjoint_isSemisimple_iff_reductive",
+     "statement": "For G connected reductive over an algebraically closed field of characteristic zero and Z ≤ G closed, Ad|_Z on 𝔤 is semisimple iff Z⁰ is reductive.",
+     "hypotheses": [
+      "characteristic zero",
+      "G connected reductive",
+      "Z closed subgroup"
+     ],
+     "locator": {
+      "source": "BateMartinRohrle2005",
+      "where": "line 263"
+     },
+     "prerequisites": [
+      "roadmap:ReductiveGroups Layer 2",
+      "roadmap:ReductiveGroups Layer 5",
+      "roadmap:ReductiveGroups Layer 6"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "torus",
+       "kind": "computation",
+       "statement": "A torus: reductive, 𝔤 splits into weight spaces."
+      },
+      {
+       "name": "unipotent",
+       "kind": "non-example",
+       "statement": "The upper unipotent subgroup of SL₂: Ad not semisimple, not reductive."
+      },
+      {
+       "name": "normalizer",
+       "kind": "computation",
+       "statement": "N(T) in SL₂: disconnected with reductive identity component and semisimple 𝔤."
+      }
+     ]
+    },
+    {
+     "id": "6.4",
+     "kind": "theorem",
+     "name": "isGCompletelyReducible_iff_reductive",
+     "statement": "For G as in 6.3 and Z a closed subgroup topologically generated by finitely many elements z₁,…,z_m, Z is G-completely reducible iff Z⁰ is reductive; the implication G-cr ⇒ Z⁰ reductive holds for every closed Z (gap gcr-reductive-identity-component).",
+     "hypotheses": [
+      "characteristic zero",
+      "algebraically closed field",
+      "G connected reductive",
+      "Z a closed subgroup topologically generated by finitely many elements (for the reverse implication)"
+     ],
+     "locator": {
+      "source": "BateMartinRohrle2005",
+      "where": "Lemma 2.6 (line 267); Theorem 3.46 (line 861)"
+     },
+     "prerequisites": [
+      "target:6.3",
+      "roadmap:ArithmeticGaloisRepresentations §1.11",
+      "roadmap:ReductiveGroups Layer 2",
+      "roadmap:ReductiveGroups Layer 3A",
+      "roadmap:ReductiveGroups Layer 7",
+      "gap:gcr-reductive-identity-component",
+      "gap:borel-tits"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "irreducible_finite",
+       "kind": "computation",
+       "statement": "The binary dihedral subgroup of SL₂ is in no proper parabolic, hence completely reducible and reductive."
+      },
+      {
+       "name": "borel",
+       "kind": "non-example",
+       "statement": "The Borel of SL₂ is not completely reducible and has centralizer the centre: finite centralizer modulo centre does not imply reductive."
+      },
+      {
+       "name": "GLV",
+       "kind": "compatibility",
+       "statement": "For G = GL(V), complete reducibility is semisimplicity of V."
+      },
+      {
+       "name": "normalizer_torus",
+       "kind": "computation",
+       "statement": "Z = N(T) in SL₂(ℂ) is topologically generated by diag(2,1/2) and [[0,−1],[1,0]]; Z⁰ = T reductive, Z fixes no line, so Z is SL₂-completely reducible although disconnected."
+      }
+     ]
+    },
+    {
+     "id": "6.5",
+     "kind": "theorem",
+     "name": "closedOrbit_iff_isGCompletelyReducible",
+     "statement": "For Γ finitely generated, G connected reductive over ℂ and ρ ∈ Hom(Γ,G(ℂ)): Zariski closure of ρ(Γ) G-completely reducible ⇔ G-orbit Zariski closed in Hom(Γ,G) ⇔ G(ℂ)-orbit classically closed.",
+     "hypotheses": [
+      "Γ finitely generated",
+      "G connected reductive over ℂ"
+     ],
+     "locator": {
+      "source": "Sikora2012",
+      "where": "lines 572–586, Theorem 30"
+     },
+     "prerequisites": [
+      "target:4.1",
+      "target:4.2",
+      "roadmap:ArithmeticGaloisRepresentations §1.11",
+      "roadmap:ComplexComparisonPartII §C-1.1",
+      "roadmap:ReductiveGroups Layer 3A"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "GLn_conjugacy",
+       "kind": "computation",
+       "statement": "Γ = ℤ: the orbit of g is closed iff g is semisimple; [[1,1],[0,1]] has 1 in its classical closure."
+      },
+      {
+       "name": "torus_valued",
+       "kind": "degenerate",
+       "statement": "Torus-valued representations have closed orbits."
+      },
+      {
+       "name": "borel_dense",
+       "kind": "non-example",
+       "statement": "ρ(a) = diag(2,1/2), ρ(b) = [[1,1],[0,1]]: conjugation by diag(t,t⁻¹), t → 0, tends to (diag(2,1/2), 1) outside the orbit."
+      }
+     ]
+    },
+    {
+     "id": "6.6",
+     "kind": "theorem",
+     "name": "realOrbit_closed_iff_complexOrbit_closed",
+     "statement": "For a real reductive datum and ρ ∈ Hom(Γ,G^ℝ), Γ finitely generated: G^ℝρ closed in Hom(Γ,G^ℝ) ⇔ G(ℂ)ρ closed in Hom(Γ,G(ℂ)).",
+     "hypotheses": [
+      "(𝐆, G^ℝ) a real reductive datum",
+      "Γ finitely generated"
+     ],
+     "locator": {
+      "source": "RichardsonSlodowy1990",
+      "where": "§7"
+     },
+     "prerequisites": [
+      "target:5.3",
+      "target:5.4",
+      "target:6.5",
+      "target:4.2"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "rotation_unipotent",
+       "kind": "computation",
+       "statement": "The rotation [[0,−1],[1,0]] in SL₂(ℝ) has closed real and complex orbits; [[1,1],[0,1]] has neither."
+      },
+      {
+       "name": "abelian",
+       "kind": "degenerate",
+       "statement": "ℝ^× acting trivially on Hom(ℤ,ℝ^×): all orbits are points."
+      },
+      {
+       "name": "hyperbolic_element",
+       "kind": "non-example",
+       "statement": "diag(2,1/2) ∈ SL₂(ℝ) has closed orbit though not in K: compactness is not the criterion."
+      }
+     ]
+    },
+    {
+     "id": "6.7",
+     "kind": "theorem",
+     "name": "isReductiveRep_tfae",
+     "statement": "For a real reductive datum, Γ finitely generated and ρ : Γ → G^ℝ, TFAE: (a) reductive; (b) Ad ∘ ρ semisimple on 𝔤; (c) Zariski closure Z has reductive Z⁰; (d) Z G-completely reducible; (e) G-orbit Zariski closed in Hom(Γ,G); (f) G^ℝ-orbit closed in Hom(Γ,G^ℝ). Compact image, Zariski-dense in reductive, and G-irreducible representations are reductive; for reductive ρ, G-irreducible ⇔ centralizer in G finite modulo the centre; for GL_r(ℝ), GL_r(ℂ): reductive ⇔ ℂ^r semisimple.",
+     "hypotheses": [
+      "(𝐆, G^ℝ) a real reductive datum",
+      "Γ finitely generated"
+     ],
+     "locator": {
+      "source": "BCGGO2024",
+      "where": "lines 2708–2713"
+     },
+     "prerequisites": [
+      "target:6.1",
+      "target:6.2",
+      "target:6.3",
+      "target:6.4",
+      "target:6.5",
+      "target:6.6",
+      "tauceti:ContRepresentation.IsUnitary.isSemisimpleRepresentation",
+      "roadmap:ArithmeticGaloisRepresentations §1.11",
+      "roadmap:ReductiveGroupsPartII §RG2.0a.2"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "unipotent_surface",
+       "kind": "non-example",
+       "statement": "ρ(a₁) = [[1,1],[0,1]], other generators trivial, on π₁(Σ₂) into SL₂(ℝ): all six conditions fail."
+      },
+      {
+       "name": "borel_centralizer",
+       "kind": "non-example",
+       "statement": "The Borel-dense representation has centralizer the centre and is not reductive."
+      },
+      {
+       "name": "compact",
+       "kind": "degenerate",
+       "statement": "For SO(n) every representation is reductive and every orbit closed."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "key": "7",
+   "title": "Character varieties",
+   "targets": [
+    {
+     "id": "7.1",
+     "kind": "definition",
+     "name": "CharacterVariety",
+     "statement": "𝒳(Γ, G^ℝ) := Hom^red(Γ,G^ℝ)/G^ℝ with the quotient topology; (M ∩ Hom(Γ,G^ℝ))/K ≅ 𝒳(Γ,G^ℝ); 𝒳 is Hausdorff, locally compact and second countable; every orbit closure contains exactly one closed orbit.",
+     "hypotheses": [
+      "(𝐆, G^ℝ) a real reductive datum",
+      "Γ finitely generated",
+      "a Cartan-compatible realization (5.3)"
+     ],
+     "locator": {
+      "source": "BCGGO2024",
+      "where": "lines 2712–2713, Definition 8.1"
+     },
+     "prerequisites": [
+      "target:5.3",
+      "target:5.4",
+      "target:6.7",
+      "mathlib:ProperSMul",
+      "mathlib:t2Space_quotient_mulAction_of_properSMul",
+      "mathlib:IsProperMap"
+     ],
+     "api": [
+      {
+       "name": "CharacterVariety.mk_isOpenMap",
+       "role": "characterisation",
+       "statement": "The quotient map from Hom^red is continuous, open and invariant."
+      },
+      {
+       "name": "CharacterVariety.lift",
+       "role": "universal property",
+       "statement": "Continuous G^ℝ-invariant maps from Hom^red factor uniquely through 𝒳."
+      },
+      {
+       "name": "CharacterVariety.minimalVectorsHomeomorph",
+       "role": "equivalence",
+       "statement": "(M ∩ Hom)/K ≃ₜ 𝒳, independent of the realization up to homeomorphism."
+      },
+      {
+       "name": "CharacterVariety.t2Space",
+       "role": "instance",
+       "statement": "𝒳 is Hausdorff, locally compact and second countable."
+      },
+      {
+       "name": "CharacterVariety.closedOrbit",
+       "role": "constructor",
+       "statement": "Every orbit closure contains exactly one closed orbit, of minimal norm."
+      }
+     ],
+     "tests": [
+      {
+       "name": "compact",
+       "kind": "computation",
+       "statement": "Compact G^ℝ: 𝒳 = Hom/G^ℝ, compact Hausdorff; agrees with HamiltonianReduction R5's flat connections modulo gauge type by type."
+      },
+      {
+       "name": "torus",
+       "kind": "computation",
+       "statement": "Torus G^ℝ: 𝒳 = Hom(Γ^{ab}, G^ℝ); U(1)^{2g} for π₁(Σ_g)."
+      },
+      {
+       "name": "non_hausdorff_naive",
+       "kind": "non-example",
+       "statement": "For Γ = ℤ, G^ℝ = SL₂(ℝ), the naive orbit space is not Hausdorff ([[1,1],[0,1]] and 1); 𝒳 is the semisimple classes."
+      }
+     ]
+    },
+    {
+     "id": "7.2",
+     "kind": "theorem",
+     "name": "CharacterVariety.affineQuotient",
+     "statement": "Over a field of characteristic zero, Hom(Γ,G)//G := Spec O(Hom(Γ,G))^G is a closed subscheme of G^S//G, of finite type, with the universal property; over an algebraically closed field points are closed orbits and points have the same image iff orbit closures meet. For k = ℂ, 𝒳(Γ,G(ℂ)) ≅ (Hom(Γ,G)//G)(ℂ) for the classical topology, and the quotient map is the universal Hausdorff quotient of Hom(Γ,G(ℂ))/G(ℂ).",
+     "hypotheses": [
+      "characteristic zero",
+      "G connected reductive",
+      "Γ finitely generated"
+     ],
+     "locator": {
+      "source": "Sikora2012",
+      "where": "lines 823–837, §11"
+     },
+     "prerequisites": [
+      "target:4.1",
+      "target:4.2",
+      "target:5.3",
+      "target:5.4",
+      "target:6.7",
+      "target:7.1",
+      "roadmap:ArithmeticGaloisRepresentations §1.11",
+      "roadmap:ReductiveGroups Layer 6",
+      "tauceti:TauCeti.Coalgebra.IsLinearlyReductive",
+      "tauceti:TauCeti.Comodule.Hom.fixedMap_surjective_of_isLinearlyReductive",
+      "roadmap:ComplexComparisonPartII §C-1.1"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "GLn_charpoly",
+       "kind": "computation",
+       "statement": "Γ = ℤ, G = GL_n: Hom//G = 𝔸^{n−1} × 𝔾_m by the characteristic polynomial; 𝒳 = semisimple classes."
+      },
+      {
+       "name": "free_SL2",
+       "kind": "computation",
+       "statement": "Γ = F₂, G = SL₂: (Hom//G)(ℂ) ≅ ℂ³ via (tr a, tr b, tr ab)."
+      },
+      {
+       "name": "char_p",
+       "kind": "non-example",
+       "statement": "In characteristic p invariants of a closed invariant subscheme need not lift (ArithmeticGaloisRepresentations §1.11's C₂ example)."
+      }
+     ]
+    },
+    {
+     "id": "7.3",
+     "kind": "theorem",
+     "name": "CharacterVariety.map",
+     "statement": "Morphisms of real reductive data preserve reductivity and induce continuous maps on 𝒳; surjections Γ' ↠ Γ induce closed embeddings 𝒳(Γ) → 𝒳(Γ'); restriction to finite-index subgroups preserves reductivity and induces continuous maps.",
+     "hypotheses": [
+      "Γ finitely generated"
+     ],
+     "locator": {
+      "source": "Sikora2012",
+      "where": "line 268, Corollary 9"
+     },
+     "prerequisites": [
+      "target:6.7",
+      "target:7.1"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "SO2_SL2",
+       "kind": "computation",
+       "statement": "SO(2) ⊆ SL₂(ℝ) induces 𝒳(Γ,SO(2)) → 𝒳(Γ,SL₂(ℝ))."
+      },
+      {
+       "name": "arbitrary_subgroup",
+       "kind": "non-example",
+       "statement": "Restriction from F₂ to ⟨a⟩ of a Zariski-dense ρ with ρ(a) unipotent is not reductive."
+      },
+      {
+       "name": "quotient_Z2",
+       "kind": "computation",
+       "statement": "𝒳(ℤ/2,G^ℝ) is the closed subset of 𝒳(ℤ,G^ℝ) of classes of order dividing two."
+      }
+     ]
+    },
+    {
+     "id": "7.4",
+     "kind": "theorem",
+     "name": "CharacterVariety.outAction",
+     "statement": "Out(Γ) acts on 𝒳(Γ,G^ℝ) by homeomorphisms, [φ]·[ρ] = [ρ ∘ φ⁻¹], restricting 1.3's action; for Γ = π₁(Σ_{g,n},x) basepoint paths give canonical homeomorphisms and Mod^±_{g,n} acts through Ψ_x compatibly with 3.5.",
+     "hypotheses": [
+      "Γ finitely generated"
+     ],
+     "locator": {
+      "source": "BCGGO2024",
+      "where": "lines 2712–2713"
+     },
+     "prerequisites": [
+      "target:1.3",
+      "target:3.3",
+      "target:3.5",
+      "target:6.1",
+      "target:7.1",
+      "roadmap:TeichmullerGeometry §4.2",
+      "roadmap:TeichmullerGeometry §4.5",
+      "roadmap:TeichmullerGeometry §6.1"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "GLr_semisimple",
+       "kind": "compatibility",
+       "statement": "For GL_r(ℂ) the action is 3.5's action on semisimple classes; the unipotent example's orbit lies outside 𝒳."
+      },
+      {
+       "name": "Z_inversion",
+       "kind": "computation",
+       "statement": "Out(ℤ) acts on 𝒳(ℤ,SO(2)) = SO(2) by conjugation, fixing ±1."
+      },
+      {
+       "name": "fuchsian",
+       "kind": "computation",
+       "statement": "Fuch ⊆ 𝒳(π₁(Σ_g), PSL₂(ℝ)), Euler number 2 − 2g, is in Mod-equivariant bijection with Teich(Σ_g); reflection conjugates have Euler number 2g − 2."
+      }
+     ]
+    },
+    {
+     "id": "7.5",
+     "kind": "example",
+     "name": "CharacterVariety.examples",
+     "statement": "Computed examples: Γ trivial gives a point; F_m with compact G^ℝ gives (G^ℝ)^m/G^ℝ; 𝒳(ℤ, GL₁(ℝ)) = ℝ^×; 𝒳(ℤ, PSL₂(ℝ)) is the elliptic and hyperbolic classes with the identity; 𝒳(π₁(Σ₁), GL₁(ℂ)) = (ℂ^×)²; 𝒳(π₁(Σ_{0,3}), SL₂(ℂ)) ≅ ℂ³.",
+     "hypotheses": [],
+     "locator": {
+      "source": "Sikora2012",
+      "where": "lines 844–845, Example 48"
+     },
+     "prerequisites": [
+      "target:7.1",
+      "target:7.2",
+      "target:7.4"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "trivial_group",
+       "kind": "degenerate",
+       "statement": "𝒳(1, G^ℝ) is a point."
+      },
+      {
+       "name": "PSL2_cyclic",
+       "kind": "computation",
+       "statement": "Parabolic classes are absent from 𝒳(ℤ, PSL₂(ℝ))."
+      },
+      {
+       "name": "pants_SL2C",
+       "kind": "computation",
+       "statement": "𝒳(π₁(Σ_{0,3}), SL₂(ℂ)) ≅ ℂ³."
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "suppliers": [
+  {
+   "roadmap": "MordellLawrenceVenkatesh",
+   "sections": [
+    "§5.1",
+    "§5.4",
+    "§5.5",
+    "§5.9",
+    "§5.15",
+    "§5.16",
+    "§5.17",
+    "§5.19",
+    "§5.20",
+    "§5.22",
+    "§5.23"
+   ],
+   "what": "Surfaces with punctures, classification, the fundamental class and duality, Mod(S) and its action through Out(pi_1 S) on conjugacy classes of homomorphisms and on finite coverings, Mod(S*), Forget, asphericity, isotopy extension for a moving point, Push, the Birman exact sequence, the symplectic representation, the once-punctured free basis."
+  },
+  {
+   "roadmap": "TeichmullerGeometry",
+   "sections": [
+    "§0.2",
+    "§3.1",
+    "§4.2",
+    "§4.3",
+    "§4.5",
+    "§5.2",
+    "§5.4",
+    "§6.1"
+   ],
+   "what": "Diffeotopies, the smooth closed mapping class group, the geometric group and its inversion equivalence, the polygon presentation, the uniformizing holonomy, smooth Dehn-Nielsen-Baer realization and injectivity, the converse marked representation comparison."
+  },
+  {
+   "roadmap": "FreeGroupsAndLimitGroups",
+   "sections": [
+    "§6.1",
+    "§6.2"
+   ],
+   "what": "Presented surface groups S(g,m) and their freeness for m >= 1."
+  },
+  {
+   "roadmap": "AlgebraicTopology",
+   "sections": [
+    "Stage 1 item 4",
+    "Stage 1 item 5",
+    "Stage 4 item 2",
+    "Stage 4 item 3"
+   ],
+   "what": "Based van Kampen and the free fundamental group of a wedge of circles; the cellular differential and the natural comparison of cellular with singular homology."
+  },
+  {
+   "roadmap": "ClassifyingSpaces",
+   "sections": [
+    "Stage 3 item 11",
+    "Stage 4 item 17"
+   ],
+   "what": "Singular homology of a K(G,1) CW complex is Mathlib's groupHomology of the trivial module, naturally; maps of K(G,1) complexes realizing homomorphisms of fundamental groups."
+  },
+  {
+   "roadmap": "ReductiveGroups",
+   "sections": [
+    "Layer 0",
+    "Layer 2",
+    "Layer 3A",
+    "Layer 5",
+    "Layer 6",
+    "Layer 7",
+    "Layer 8",
+    "Layer 9"
+   ],
+   "what": "Affine group schemes, Lie algebras and Ad, closed orbits in orbit closures and boundary dimensions, unipotent radicals, characteristic-zero linear reductivity and the multiplicative centre, parabolics and cocharacters, split models."
+  },
+  {
+   "roadmap": "ReductiveGroupsPartII",
+   "sections": [
+    "§RG2.0.1",
+    "§RG2.0a.2"
+   ],
+   "what": "The point topology on X(R) and Weil restriction."
+  },
+  {
+   "roadmap": "ComplexComparisonPartII",
+   "sections": [
+    "§C-1.1"
+   ],
+   "what": "The classical topology on complex points of finite-type complex schemes."
+  },
+  {
+   "roadmap": "ArithmeticGaloisRepresentations",
+   "sections": [
+    "§1.7",
+    "§1.11"
+   ],
+   "what": "Scalar extension of semisimplicity over perfect fields; affine reductive quotients of integral affine varieties; G-complete reducibility, the GL(V) comparison, the closed-tuple criterion and the cocharacter limit into the closed orbit."
+  },
+  {
+   "roadmap": "ArithmeticLocallySymmetricSpaces",
+   "sections": [
+    "§ALS.F.1",
+    "§ALS.0.1"
+   ],
+   "what": "Real points as Lie groups, transpose-stable realizations, maximal compact subgroups and polar decomposition; algebraic Cartan involutions."
+  },
+  {
+   "roadmap": "LieGroups",
+   "sections": [
+    "Layer 7, Real forms and global descent",
+    "Layer 7, Representations and holomorphic descent",
+    "Layer 7, Compact-real-form pairs and algebraic morphisms",
+    "Layer 9"
+   ],
+   "what": "Compact real forms of connected complex reductive groups (existence, connectedness, conjugacy); holomorphic representations of the complexification versus continuous representations of the compact form; regular algebraicity of the holomorphic extension of a continuous homomorphism between compact-real-form pairs; the Cartan decomposition."
+  },
+  {
+   "roadmap": "CompactGroups",
+   "sections": [
+    "Layer 5"
+   ],
+   "what": "Peter-Weyl."
+  },
+  {
+   "roadmap": "SymplecticGeometry/HamiltonianReduction",
+   "sections": [
+    "R5"
+   ],
+   "what": "Flat connections modulo gauge for compact K compared with Hom(pi_1, K)/K (Check only)."
+  }
+ ],
+ "consumers": [
+  {
+   "roadmap": "MappingClassGroupsAndCanonicalRepresentations",
+   "what": "The Mod_{g,n}-action on conjugacy classes and PMod/Mod finiteness (3.5), the pure group and pure Birman sequence (2.3, 2.5), free bases of punctured surface groups (2.4), semisimple classes as points of X(pi_1, GL_r(C)) and Hom//GL_r (7.2, 7.4)."
+  },
+  {
+   "roadmap": "GroupActionsOnRiemannSurfaces",
+   "what": "The outer action on classes of surface-kernel epimorphisms (1.3 with H finite, through 3.3)."
+  },
+  {
+   "roadmap": "GeometricTopology",
+   "what": "A GeometricTopology Part II on Culler-Shalen theory consumes the representation scheme (4.1) and the affine quotient (7.2) for 3-manifold groups."
+  }
+ ],
+ "gaps": [
+  {
+   "slug": "gcr-reductive-identity-component",
+   "title": "Completely reducible subgroups have reductive identity component",
+   "neededBy": [
+    "6.4",
+    "6.7"
+   ],
+   "detail": "For a connected reductive G over an algebraically closed field and a closed G-completely reducible subgroup H, H^0 is reductive (BateMartinRohrle2005 line 263, after Serre). Route: Borel-Tits places H in the parabolic P of R_u(H^0) with R_u(H^0) in R_u(P); a Levi subgroup of P containing H meets R_u(P) trivially.",
+   "needs": "A proof that a G-completely reducible closed subgroup of a connected reductive group over an algebraically closed field has reductive identity component.",
+   "supplier": "ArithmeticGaloisRepresentations",
+   "section": "§1.11, Complete reducibility and closed tuples"
+  },
+  {
+   "slug": "borel-tits",
+   "title": "The Borel-Tits theorem",
+   "neededBy": [
+    "6.4"
+   ],
+   "detail": "For a closed unipotent subgroup U of a connected reductive group G over an algebraically closed field there is a parabolic P with U contained in R_u(P) and N_G(U) contained in P. Needed by the route of gcr-reductive-identity-component.",
+   "needs": "The Borel-Tits theorem placing a closed unipotent subgroup and its normalizer in a parabolic whose unipotent radical contains it.",
+   "supplier": "ReductiveGroups",
+   "section": "Layer 7"
+  }
+ ]
+}
