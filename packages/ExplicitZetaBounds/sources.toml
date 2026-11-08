@@ -1624,3 +1624,54 @@ status = "certified"
 accessed = "2026-11-08"
 version_note = "arXiv v5"
 cited_for = ["7.10"]
+
+[[source]]
+id = "hoffstein1981"
+authors = "J. Hoffstein"
+title = "On the Siegel-Tatuzawa theorem"
+year = 1980
+venue = "Acta Arithmetica 38"
+doi = "10.4064/aa-38-2-167-174"
+locator_scheme = "theorem"
+locator = "Lemma 1"
+url = "http://matwbn.icm.edu.pl/ksiazki/aa/aa38/aa3826.pdf"
+fetched_from = "https://matwbn.icm.edu.pl/ksiazki/aa/aa38/aa3826.pdf"
+fetched_at = "2026-11-08T11:23:14Z"
+sha256 = "c8ae371e92177431b501960bf4b33bbf430f4a6c283026f4921c85ef3975cc5e"
+licence_class = "institutional"
+status = "certified"
+accessed = "2026-11-08"
+cited_for = ["9.3"]
+
+[[source]]
+id = "trudgian2011turing"
+authors = "T. S. Trudgian"
+title = "Improvements to Turing's method"
+year = 2011
+venue = "Mathematics of Computation 80"
+doi = "10.1090/S0025-5718-2011-02470-1"
+locator_scheme = "theorem"
+locator = "Theorem 2.2"
+url = "https://www.ams.org/journals/mcom/2011-80-276/S0025-5718-2011-02470-1/S0025-5718-2011-02470-1.pdf"
+fetched_from = "https://www.ams.org/journals/mcom/2011-80-276/S0025-5718-2011-02470-1/S0025-5718-2011-02470-1.pdf"
+fetched_at = "2026-11-08T11:23:57Z"
+sha256 = "d395fb8be352f1403a9e46387ef67dc4699077c71357f29b28581e4cc9daccfd"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-11-08"
+cited_for = ["5.4"]
+
+[[source]]
+id = "cullyhugilltrudgian2021"
+authors = "Michaela Cully-Hugill, Tim Trudgian"
+title = "Two explicit divisor sums"
+year = 2019
+venue = "The Ramanujan Journal 56"
+doi = "10.1007/s11139-020-00333-3"
+locator_scheme = "theorem"
+locator = "Theorem 2"
+url = "https://doi.org/10.1007/s11139-020-00333-3"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["8.5"]
