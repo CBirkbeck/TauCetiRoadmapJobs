@@ -198,3 +198,331 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-08"
 cited_for = ["F.4.1", "F.4.3"]
+
+[[source]]
+id = "stacks-0F41"
+authors = "The Stacks Project Authors"
+title = "The Stacks Project"
+year = 2026
+locator_scheme = "tag"
+locator = "0F41"
+url = "https://stacks.math.columbia.edu/tag/0F41"
+fetched_from = "https://stacks.math.columbia.edu/download/flat.pdf#nameddest=0F41"
+fetched_at = "2026-11-08T18:43:56Z"
+sha256 = "553b6d1e2eb22bcf1dfbb8167356c184f41b48089f72cf93acf94e0fb143212e"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-08"
+cited_for = ["G.2"]
+
+[[source]]
+id = "stacks-0BND"
+authors = "The Stacks Project Authors"
+title = "The Stacks Project"
+year = 2026
+locator_scheme = "tag"
+locator = "0BND"
+url = "https://stacks.math.columbia.edu/tag/0BND"
+fetched_from = "https://stacks.math.columbia.edu/download/pione.pdf#nameddest=0BND"
+fetched_at = "2026-11-08T18:43:59Z"
+sha256 = "387b3fcf66962a7f4ec81060a1bbb02505659a0973f0dff5c1cb7aa1dd7ee1a3"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-08"
+cited_for = ["F.0.2"]
+
+[[source]]
+id = "stacks-0BMY"
+authors = "The Stacks Project Authors"
+title = "The Stacks Project"
+year = 2026
+locator_scheme = "tag"
+locator = "0BMY"
+url = "https://stacks.math.columbia.edu/tag/0BMY"
+fetched_from = "https://stacks.math.columbia.edu/download/pione.pdf#nameddest=0BMY"
+fetched_at = "2026-11-08T18:44:03Z"
+sha256 = "387b3fcf66962a7f4ec81060a1bbb02505659a0973f0dff5c1cb7aa1dd7ee1a3"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-08"
+cited_for = ["F.0.2"]
+
+[[source]]
+id = "ddt-flt"
+authors = "Henri Darmon, Fred Diamond, Richard Taylor"
+title = "Fermat's Last Theorem"
+year = 1995
+locator_scheme = "section"
+locator = "§2.1, p. 53"
+url = "https://www.math.mcgill.ca/darmon/pub/Articles/Expository/05.DDT/paper.pdf"
+fetched_from = "https://www.math.mcgill.ca/darmon/pub/Articles/Expository/05.DDT/paper.pdf"
+fetched_at = "2026-11-08T18:44:07Z"
+sha256 = "254f6e29957f95219eff046c29478f5ee584615bee12c8aa8357f499c8cbe8b3"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-08"
+cited_for = ["F.4.0"]
+
+[[source]]
+id = "bhkt"
+authors = "Gebhard Böckle, Michael Harris, Chandrashekhar Khare, Jack A. Thorne"
+title = "$\\hat{G}$-local systems on smooth projective curves are potentially automorphic"
+year = 2016
+arxiv = "1609.03491v2"
+locator_scheme = "theorem"
+locator = "Theorem 4.8(ii)"
+url = "https://arxiv.org/abs/1609.03491v2"
+fetched_from = "https://arxiv.org/pdf/1609.03491v2"
+fetched_at = "2026-11-08T18:44:14Z"
+sha256 = "ec54cf92ce04146c73b48945be2765f675359255d46cc94a0aa35a39229743b9"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-08"
+version_note = "arXiv v2"
+cited_for = ["F.4.0"]
+
+[[source]]
+id = "deligne-weil-ii"
+authors = "Pierre Deligne"
+title = "La conjecture de Weil. II"
+year = 1980
+venue = "Publications Mathématiques de l'IHÉS 52"
+version_note = "printed page = PDF page + 135"
+locator_scheme = "theorem"
+locator = "proof of 6.2.11"
+url = "https://www.numdam.org/item/PMIHES_1980__52__137_0.pdf"
+fetched_from = "https://www.numdam.org/item/PMIHES_1980__52__137_0.pdf"
+fetched_at = "2026-11-08T18:44:16Z"
+sha256 = "b06eea61bf9cb2b596c162f5befcf85d1be69828910a6107c8aa3a99c4afcc71"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-08"
+cited_for = ["F.3"]
+
+[[source]]
+id = "juteau-2009"
+authors = "Daniel Juteau"
+title = "Decomposition numbers for perverse sheaves"
+year = 2009
+venue = "Annales de l'Institut Fourier 59"
+doi = "10.5802/aif.2461"
+locator_scheme = "section"
+locator = "§2.1, equations (2.4)–(2.7)"
+url = "https://www.numdam.org/item/10.5802/aif.2461.pdf"
+fetched_from = "https://www.numdam.org/item/10.5802/aif.2461.pdf"
+fetched_at = "2026-11-08T18:44:17Z"
+sha256 = "508c14659ee9959777bfcf74b313ab6478540f6ad745327da5024273e56dd67b"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-08"
+cited_for = ["F.8"]
+
+[[source]]
+id = "illusie-2006-vanishing"
+authors = "Luc Illusie"
+title = "Vanishing cycles over general bases after P. Deligne, O. Gabber, G. Laumon and F. Orgogozo"
+year = 2006
+locator_scheme = "section"
+locator = "§1.1, pp. 1–2"
+url = "https://www.imo.universite-paris-saclay.fr/~luc.illusie/vanishing1b.pdf"
+fetched_from = "https://www.imo.universite-paris-saclay.fr/~luc.illusie/vanishing1b.pdf"
+fetched_at = "2026-11-08T18:44:18Z"
+sha256 = "18bfa00248bae2e61eead6edbfa762f805cde11347b7e14347b19ffb83740780"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-08"
+cited_for = ["F.3a"]
+
+[[source]]
+id = "milne-av"
+authors = "James S. Milne"
+title = "Abelian Varieties (course notes, v2.00)"
+year = 2008
+locator_scheme = "section"
+locator = "§12, Theorem 12.1, p. 55"
+url = "https://www.jmilne.org/math/CourseNotes/AV.pdf"
+fetched_from = "https://www.jmilne.org/math/CourseNotes/AV.pdf"
+fetched_at = "2026-11-08T18:44:22Z"
+sha256 = "f5ca4e63e5092a4b102daad1470e4cbed5fe8f82115e3a28c8881e3f67f6aaef"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-08"
+cited_for = ["F.2.6"]
+
+[[source]]
+id = "ribet-1976"
+authors = "Kenneth A. Ribet"
+title = "A modular construction of unramified p-extensions of Q(μ_p)"
+year = 1976
+venue = "Inventiones Mathematicae 34"
+doi = "10.1007/BF01403065"
+locator_scheme = "page"
+locator = "§2, pp. 153–154"
+url = "https://doi.org/10.1007/BF01403065"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["F.4.0"]
+
+[[source]]
+id = "bbd-faisceaux-pervers"
+authors = "Alexander Beilinson, Joseph Bernstein, Pierre Deligne"
+title = "Faisceaux pervers"
+year = 1982
+venue = "Astérisque 100"
+locator_scheme = "section"
+locator = "§§1.4, 2.2, 4.1.1, 4.4"
+url = "https://www.numdam.org/item/AST_1982__100__1_0.pdf"
+fetched_from = "https://www.numdam.org/item/AST_1982__100__1_0.pdf"
+fetched_at = "2026-11-08T18:44:48Z"
+sha256 = "b1e10440e13cb6bf307f74030b577e0cf5056e41b35ca56640dc2f0d2109b9e0"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-08"
+cited_for = ["F.8"]
+
+[[source]]
+id = "deligne-weil-i"
+authors = "Pierre Deligne"
+title = "La conjecture de Weil. I"
+year = 1974
+venue = "Publications Mathématiques de l'IHÉS 43"
+version_note = "printed page = PDF page + 272"
+locator_scheme = "section"
+locator = "§§1–2"
+url = "https://www.numdam.org/item/PMIHES_1974__43__273_0.pdf"
+fetched_from = "https://www.numdam.org/item/PMIHES_1974__43__273_0.pdf"
+fetched_at = "2026-11-08T18:45:10Z"
+sha256 = "8392b345d4854e6dc55fb42cfc0b616d941935983723627237239a87348f42e5"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-08"
+cited_for = ["F.10.2", "F.10.2b"]
+
+[[source]]
+id = "ilo-travaux-de-gabber"
+authors = "Luc Illusie, Yves Laszlo, Fabrice Orgogozo"
+title = "Travaux de Gabber sur l'uniformisation locale et la cohomologie etale des schemas quasi-excellents. Seminaire a l'Ecole polytechnique 2006--2008"
+year = 2012
+arxiv = "1207.3648v1"
+locator_scheme = "section"
+locator = "Exposés XVI–XVII"
+url = "https://arxiv.org/abs/1207.3648v1"
+fetched_from = "https://arxiv.org/pdf/1207.3648v1"
+fetched_at = "2026-11-08T18:45:23Z"
+sha256 = "18a6193d6b71ff5ac91eae4443e1c8a54ab8f27f2173fda200d4bec547e3644a"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-08"
+version_note = "arXiv v1"
+cited_for = ["F.5", "F.6"]
+
+[[source]]
+id = "sga7-ii"
+authors = "Pierre Deligne, Nicholas Katz (directors)"
+title = "Groupes de monodromie en géométrie algébrique (SGA 7 II)"
+year = 1973
+venue = "Lecture Notes in Mathematics 340"
+locator_scheme = "section"
+locator = "Exposé XIII, 0.2.5 and Rappel 1.1.3"
+url = "https://publications.ias.edu/sites/default/files/Number12.pdf"
+fetched_from = "https://publications.ias.edu/sites/default/files/Number12.pdf"
+fetched_at = "2026-11-08T18:45:26Z"
+sha256 = "fa679debfc8ada3232d7e752a1837fc6ce474488e20a44d7641cf296876e1297"
+licence_class = "institutional"
+status = "certified"
+accessed = "2026-11-08"
+cited_for = ["F.3a", "F.7"]
+
+[[source]]
+id = "illusie-1994-monodromie"
+authors = "Luc Illusie"
+title = "Autour du théorème de monodromie locale"
+year = 1994
+venue = "Astérisque 223"
+version_note = "printed page = PDF page + 7"
+locator_scheme = "section"
+locator = "§4"
+url = "https://www.numdam.org/item/AST_1994__223__9_0.pdf"
+fetched_from = "https://www.numdam.org/item/AST_1994__223__9_0.pdf"
+fetched_at = "2026-11-08T18:45:27Z"
+sha256 = "a81d3e6c63ea0257b1cbd58933bb863c4adad3864cc19968f56beec700670e70"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-08"
+cited_for = ["F.4.2", "F.4.4", "F.8"]
+
+[[source]]
+id = "sga4"
+authors = "Michael Artin, Alexander Grothendieck, Jean-Louis Verdier"
+title = "Théorie des topos et cohomologie étale des schémas (SGA 4), tomes 1–3"
+year = 1973
+venue = "Lecture Notes in Mathematics 269, 270, 305"
+doi = "10.1007/BFb0070714"
+locator_scheme = "section"
+locator = "Exposés V–IX, XII, XIV–XVIII"
+url = "https://doi.org/10.1007/BFb0070714"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["F.0.1", "F.1", "F.2.1", "F.2.2", "F.2.3", "F.2.4", "F.2.5", "F.2.7", "F.3.0", "F.3", "0.6", "0.8", "0.9", "0.10", "0.11", "F.5", "F.6", "F.7"]
+
+[[source]]
+id = "sga4-et-demi"
+authors = "Pierre Deligne"
+title = "Cohomologie étale (SGA 4½)"
+year = 1977
+venue = "Lecture Notes in Mathematics 569"
+doi = "10.1007/BFb0091516"
+locator_scheme = "section"
+locator = "[Th. finitude], [Cycle], [Rapport], [Sommes trig.]"
+url = "https://doi.org/10.1007/BFb0091516"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["F.0.3", "F.0.A2", "F.3", "F.4.4", "F.10.2", "F.10.2b", "0.9", "0.10", "0.11", "F.5"]
+
+[[source]]
+id = "sga5"
+authors = "Alexander Grothendieck"
+title = "Cohomologie ℓ-adique et fonctions L (SGA 5)"
+year = 1977
+venue = "Lecture Notes in Mathematics 589"
+doi = "10.1007/BFb0096802"
+locator_scheme = "section"
+locator = "Exposés III, VI, VII"
+url = "https://doi.org/10.1007/BFb0096802"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["F.6", "F.7"]
+
+[[source]]
+id = "huber-1996-etale"
+authors = "Roland Huber"
+title = "Étale Cohomology of Rigid Analytic Varieties and Adic Spaces"
+year = 1996
+venue = "Aspects of Mathematics E30, Vieweg"
+doi = "10.1007/978-3-663-09991-8"
+locator_scheme = "theorem"
+locator = "Proposition 2.4.4, Corollary 2.4.6, Theorem 3.9.1"
+url = "https://doi.org/10.1007/978-3-663-09991-8"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["0.6", "0.10"]
+
+[[source]]
+id = "fujiwara-2002-purity"
+authors = "Kazuhiro Fujiwara"
+title = "A proof of the absolute purity conjecture (after Gabber)"
+year = 2002
+venue = "Advanced Studies in Pure Mathematics 36 (Algebraic Geometry 2000, Azumino), pp. 153–183"
+doi = "10.2969/aspm/03610153"
+locator_scheme = "section"
+locator = "§1.1"
+url = "https://doi.org/10.2969/aspm/03610153"
+licence_class = "none"
+status = "uncertified"
+version_note = "the volume's Project Euclid page offers no PDF; cited by its locator without the text"
+cited_for = ["0.9"]
