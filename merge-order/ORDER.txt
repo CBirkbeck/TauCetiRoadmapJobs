@@ -97,7 +97,6 @@ GlobalHolomorphicFunctions
 AnalyticNumberTheory
 AlgebraicModularFormsAndSerreWeights
 GL2AutomorphicRepresentationsAndTransfer
-ModularCharactersAndBlocks
 EllipticLegendreCharacterInterfaces
 HypergeometricMotives
 EllipticCurvesPartII
@@ -112,7 +111,6 @@ EffectiveBoundsCompactModels
 ArithmeticStatisticsPartII
 ArithmeticStatisticsPartIII
 ArithmeticStatisticsPartIV
-FiniteGroupInvariants
 PELModuli
 ShimuraData
 FarguesFontaineDiamonds
@@ -394,4 +392,4 @@ AbelianVarietiesOverFiniteFields
 AbelianSurfacesModularity
 DeRhamCohomologyAndDuality
 PadicExtensionFamilies
-GlaubermanZStar
+OddOrderTheorem
