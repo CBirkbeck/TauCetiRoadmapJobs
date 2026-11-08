@@ -16,3 +16,73 @@ status = "certified"
 accessed = "2026-11-07"
 cited_for = ["5.7"]
 version_note = "undated work-in-progress chapter on the author's page; the copy read on 2026-11-07, Atiyah-Hirzebruch paragraph on p. 18"
+
+[[source]]
+id = "thom1954"
+authors = "René Thom"
+title = "Quelques propriétés globales des variétés différentiables"
+year = 1954
+venue = "Commentarii Mathematici Helvetici 28"
+doi = "10.1007/BF02566923"
+locator_scheme = "theorem"
+locator = "Théorèmes III.2–III.4, p.59; III.9 and the L⁷×L⁷ example, pp.62–63; IV.12 and the groups after it, pp.79–80; IV.13, p.81"
+url = "https://www.sas.rochester.edu/mth/sites/doug-ravenel/otherpapers/Thom1954.pdf"
+fetched_from = "https://www.sas.rochester.edu/mth/sites/doug-ravenel/otherpapers/Thom1954.pdf"
+fetched_at = "2026-11-08T14:17:28Z"
+sha256 = "258134845252800c9d71a42eb90bcd96f9b8677b7537e18a561ddec3c4e4b252"
+licence_class = "institutional"
+status = "certified"
+accessed = "2026-11-08"
+cited_for = ["8.4", "10.1"]
+
+[[source]]
+id = "atiyahSpin1971"
+authors = "Michael F. Atiyah"
+title = "Riemann surfaces and spin structures"
+year = 1971
+venue = "Annales scientifiques de l'École normale supérieure 4"
+doi = "10.24033/asens.1205"
+locator_scheme = "theorem"
+locator = "Theorem 2, p.48; Theorem 5 and its proof, pp.59–60; Proposition 4.1 and Theorem 3′, p.58"
+url = "https://doi.org/10.24033/asens.1205"
+fetched_from = "https://www.numdam.org/item/10.24033/asens.1205.pdf"
+fetched_at = "2026-11-08T14:36:57Z"
+sha256 = "a9cc0fdc8c95ff66c95b1bca8282b16043c6be3c26d7f2cbab66c067677780dc"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-08"
+cited_for = ["8.1", "8.2"]
+
+[[source]]
+id = "hatcherAT"
+authors = "Allen Hatcher"
+title = "Algebraic Topology"
+year = 2002
+locator_scheme = "page"
+locator = "§4.2, p.385"
+url = "https://pi.math.cornell.edu/~hatcher/AT/AT.pdf"
+fetched_from = "https://pi.math.cornell.edu/~hatcher/AT/AT.pdf"
+fetched_at = "2026-11-08T14:36:31Z"
+sha256 = "bebb3032bf9021b956da3bd070eb6c67dc662cf849be9cdf6679f677560e5618"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-08"
+cited_for = ["8.3"]
+version_note = "the author's online edition; printed page 385 is PDF page 394"
+
+[[source]]
+id = "freedBordism"
+authors = "Daniel S. Freed"
+title = "Bordism: Old and New (lecture notes)"
+year = 2013
+locator_scheme = "equation"
+locator = "Lecture 5, Proposition 5.55 and (5.57), p.45"
+url = "https://web.ma.utexas.edu/users/dafr/bordism.pdf"
+fetched_from = "https://web.ma.utexas.edu/users/dafr/bordism.pdf"
+fetched_at = "2026-11-08T14:36:49Z"
+sha256 = "ddecb72e0c9197c612d82f9d87c22d6aaea086bd234ecd7d45c72acbd38a7b60"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-08"
+cited_for = ["8.3"]
+version_note = "notes dated 11 February 2013 for the Fall 2012 course"
