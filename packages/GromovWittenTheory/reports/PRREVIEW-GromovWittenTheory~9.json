@@ -1,0 +1,4 @@
+{"review": {"status": "needs_changes", "reviewer": "independent-review-PRREVIEW-GromovWittenTheory~9",
+            "head": "0194363c92b8a708c45bbbb88511f2946a52da49", "pr": 990, "folder": "GromovWittenTheory", "date": "2026-11-08",
+            "findings": 1, "blocking": 0,
+            "notes": "incremental re-review of 20 changed lines since dfbd130: R02 (closedness route, Scope claim) repaired and the three new Tau Ceti declarations (NovikovModule.tendsto_nhds_iff, isLocallyConstant_apply_val, denseRange_ofFinsupp) and two Mathlib lemmas (IsLocallyConstant.isClosed_fiber, isClosed_biInter) opened at 2fd255d and at both Mathlib pins; the new S = N, F(n) = -n Check recomputed; R01 (branch manifest pins Tau Ceti a91d3aa while README and docstring read 2fd255d) still open; gate rerun OK, depcheck 237 roadmaps 0 problems, lake env lean exit 0 with no output; sampled targets untouched and carried."}}
