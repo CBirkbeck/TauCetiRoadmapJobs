@@ -1388,3 +1388,23 @@ status = "certified"
 accessed = "2026-11-08"
 version_note = "arXiv v2"
 cited_for = ["0.1"]
+
+[[source]]
+id = "kadiri-lumley-ng-2018"
+authors = "Habiba Kadiri, Allysa Lumley, Nathan Ng"
+title = "Explicit zero density for the Riemann zeta function"
+year = 2021
+venue = "J. Math. Anal. Appl. 465 (2018), no. 1, 22-46"
+doi = "10.1016/j.jmaa.2018.04.071"
+arxiv = "2101.12263v1"
+locator_scheme = "equation"
+locator = "(1.5), with footnote 1 (Ramaré's revised density)"
+url = "https://arxiv.org/abs/2101.12263v1"
+fetched_from = "https://arxiv.org/pdf/2101.12263v1"
+fetched_at = "2026-11-08T06:12:13Z"
+sha256 = "fb11226af17a06d9246120d827abe98bec817ecec23554573d6b84110b4c3303"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-08"
+version_note = "arXiv v1"
+cited_for = ["7.5"]
