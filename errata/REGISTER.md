@@ -2,7 +2,7 @@
 
 Reviewers, red-team passes and errata jobs record every mistake they find in a source while checking a roadmap's locators: misprints (slips whose intended meaning is clear), errors (a false statement or proof step) and gaps (a step the source does not justify), each with the roadmap, the board pull request or errata job and the head that reported it. Collected by the board sync from the `## Source issues` sections of review, red-team and errata comments; the data is in `errata/source-issues.json`.
 
-9962 mistakes recorded on the board: 5813 misprints, 2573 errors, 1129 gaps, 447 unparsed bullets.
+9964 mistakes recorded on the board: 5814 misprints, 2574 errors, 1129 gaps, 447 unparsed bullets.
 Errata jobs have read the cited sources of 60 roadmaps; in those of 2 they found no mistake.
 The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explorer/`: 1525 awaiting review, 13582 confirmed, 228 rejected.
 
@@ -1664,6 +1664,7 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 ## behrend-fantechi1997
 
 - **Error** at Proposition 3.12, printed page 30 (lines 1010–1023): the source says `C_X = N_X` implies `X` is a local complete intersection, via "normal cone equals normal sheaf implies regular immersion"; it should be require `C_X` to be a vector bundle stack, since `Spec k[x,y]/(x², xy) ⊂ 𝔸²` has `Sym(I/I²) ≅ gr_I` with `I/I²` not locally free; affects a stated result; ((3) ⇒ (1) of the proposition). Found by VirtualFundamentalClasses (#7642 at cfc932d, 2026-11-07, claude fable).
+- **Error** at Proposition 3.5, printed page 26: the source says Vistoli's rational equivalence is invariant under the whole tangent bundle of the ambient smooth stack; it should be invariant under the tangent bundle of the regularly embedded substack when that substack is pulled back from a smooth base (for `𝔸²`, the origin and the line `{y = 0}`, `β = c·ν/η` moves under `η ↦ η + b`); affects a stated result; (and the proof of Lemma 5.9, which uses only the true part); corrected in print at kresch1999b Theorem 3.1, with the remark at its lines 340–343. Found by VirtualFundamentalClasses (#7642 at a1f6327, 2026-11-08, claude fable).
 - **Gap** at Proposition 5.3, printed page 39 (lines 1303–1305): the source says one may assume the two global resolutions map to `E` by morphisms of complexes; it should be justify this, since morphisms in `D(O_X)` between complexes of vector bundles need not be morphisms of complexes on a stack; affects the proof; <!-- tauceti-roadmap-review {"agent": "claude", "head": "0e4f62ebc95c4c60245b368e6c8703686740993f", "job": "REV-DESIGN-VirtualFundamentalClasses", "model": "fable", "worker": "chris-x9"} -->. Found by VirtualFundamentalClasses (#7642 at 0e4f62e, 2026-11-07, claude fable).
 - **Misprint** at Proposition 5.5, printed page 39 (line 1354): the source says the hypothesis is `h¹(E•) = 0`; it should be `h^{−1}(E•) = 0` (compare Proposition 7.3 (1), line 1708); affects nothing. Found by VirtualFundamentalClasses (#7642 at 0e4f62e, 2026-11-07, claude fable).
 - **Misprint** at the remark after Definition 1.2, printed page 8 (line 275): the source says the dual of `0 → F' → F → E → 0` runs `C(E) → C(F') → C(F)`; it should be `C(E) → C(F) → C(F')` (the functor is contravariant); affects nothing. Found by VirtualFundamentalClasses (#7642 at 0e4f62e, 2026-11-07, claude fable).
@@ -8519,6 +8520,10 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 ## KreckStolz
 
 - **Misprint** at §4, proof of Proposition 4.2 after (4.5), p. 245 (KreckStolz line 524): the source says the argument excludes p from the gcd whenever q ≥ 1; it should be q > 1, as the immediately following parenthesis acknowledges; affects the proof. Found by TangentialBordism (ERRATA-TangentialBordism at bf9da30, 2026-10-24, codex gpt-6-astra).
+
+## kresch1999b
+
+- **Misprint** at Theorem 3.1 and the paragraph before it, printed page 10: the source says the source names the acting group as the tangent bundle of the arbitrary substack `Y'` restricted to `X'`; it should be the tangent bundle of the smooth substack `X` (the proof acts by `𝔸^m = T_X`, and the tangent bundle of `Y'` acts trivially on the normal cone of `Y'`); affects a stated result; (the intended meaning is clear from the proof). <!-- tauceti-roadmap-review {"agent": "claude", "head": "a1f6327c7b2a664fa8874e6da420614108259761", "job": "REV-DESIGN-VirtualFundamentalClasses~3", "model": "fable", "worker": "chris-x17"} -->. Found by VirtualFundamentalClasses (#7642 at a1f6327, 2026-11-08, claude fable).
 
 ## Kriz–May
 
