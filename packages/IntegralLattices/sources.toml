@@ -65,3 +65,21 @@ status = "certified"
 accessed = "2026-11-05"
 version_note = "arXiv v3"
 cited_for = ["7E"]
+
+[[source]]
+id = "allcock-gal-mark2016"
+authors = "Daniel Allcock, Itamar Gal, Alice Mark"
+title = "The Conway-Sloane calculus for 2-adic lattices"
+year = 2015
+arxiv = "1511.04614v3"
+locator_scheme = "theorem"
+locator = "Theorem 6.2, p. 20; Corollary 6.4, p. 21; Theorem 5.1, p. 16"
+url = "https://arxiv.org/abs/1511.04614v3"
+fetched_from = "https://arxiv.org/pdf/1511.04614v3"
+fetched_at = "2026-11-08T21:58:26Z"
+sha256 = "69a6506bb67b5efdba26dc5c8d72f52f3287d1fa5eff6181f105441402eb227a"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-08"
+version_note = "arXiv v3"
+cited_for = ["3E"]
