@@ -102,7 +102,7 @@ locator = "Chapter 5, §5.1 (the inverse Mellin transform); Chapter 6, §6.1 (Bo
 url = "https://doi.org/10.1017/CBO9780511618314"
 licence_class = "none"
 status = "uncertified"
-version_note = "paywalled; no legal open copy read by the worker; cited by its chapter locator, theorem numbers to be fixed by the design"
+version_note = "paywalled; no legal open copy read by the worker; cited by its chapter and section locator only"
 cited_for = ["7.3", "8.2", "8.3", "10.2", "10.3"]
 
 [[source]]
@@ -115,7 +115,7 @@ locator_scheme = "chapter"
 locator = "Chapter I (Dirichlet series of arithmetic functions) and Chapter III (Landau's lemmas, the truncated Perron lemma and logarithmic-derivative bounds)"
 licence_class = "none"
 status = "uncertified"
-version_note = "paywalled; no legal open copy read by the worker; cited by its chapter locator, section numbers to be fixed by the design"
+version_note = "paywalled; no legal open copy read by the worker; cited by its chapter locator only"
 cited_for = ["7.3", "8.3", "10.3", "11.3"]
 
 [[source]]
@@ -173,7 +173,7 @@ locator_scheme = "chapter"
 locator = "the Tauberian theorems for Cesaro means (cited for the statement only; chapter not verified)"
 licence_class = "none"
 status = "uncertified"
-version_note = "no legal open copy read by the worker; the chapter locator is the filer's and is unverified, to be fixed by the design"
+version_note = "no legal open copy read by the worker; cited for the statement by a descriptive locator, with no chapter number asserted"
 cited_for = ["12.1"]
 
 [[source]]
