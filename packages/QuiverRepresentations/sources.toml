@@ -57,3 +57,20 @@ status = "certified"
 accessed = "2026-11-07"
 version_note = "arXiv v5"
 cited_for = ["5.1"]
+
+[[source]]
+id = "cbquiv"
+authors = "William Crawley-Boevey"
+title = "Lectures on Representations of Quivers"
+year = 1992
+venue = "notes for a lecture course given in Oxford, spring 1992"
+locator_scheme = "section"
+locator = "§1, pp.7–8"
+url = "https://www.math.uni-bielefeld.de/~wcrawley/quivlecs.pdf"
+fetched_from = "https://www.math.uni-bielefeld.de/~wcrawley/quivlecs.pdf"
+fetched_at = "2026-11-08T06:21:04Z"
+sha256 = "e4d78f7cf0f1075447d1cc438b659797daf07d7247e04d98074753ad911633aa"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-08"
+cited_for = ["4.1"]
