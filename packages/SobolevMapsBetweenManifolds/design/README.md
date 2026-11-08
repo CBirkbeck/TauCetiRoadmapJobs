@@ -213,9 +213,12 @@ a hypothesis (§8.2).
   smooth partitions of unity on `E`. `ContDiffBump`: the mollifier bumps.
 - `extChartAt`, `isOpen_extChartAt_target` and `contDiffOn_ext_coord_change`
   (`Mathlib/Geometry/Manifold/IsManifold/ExtChartAt.lean`): preferred charts, open chart targets
-  for boundaryless models, and `C¹` coordinate changes. `IsManifold.maximalAtlas`
+  for boundaryless models, and `C¹` coordinate changes between preferred charts.
+  `ModelWithCorners.contDiffOn_extendCoordChange` (same file): `C¹` coordinate changes between
+  any two charts of the maximal atlas. `IsManifold.maximalAtlas`
   (`Mathlib/Geometry/Manifold/IsManifold/Basic.lean`); `TopologicalSpace.Opens.instChartedSpace`
-  (`Mathlib/Geometry/Manifold/HasGroupoid.lean`): open subsets as manifolds.
+  (`Mathlib/Geometry/Manifold/HasGroupoid.lean`): open subsets as manifolds, the preferred chart at
+  a point being the restriction of the ambient preferred chart.
 - `mfderiv`, `ContMDiff`, `mfderiv_eq_fderiv` (`Mathlib/Geometry/Manifold/MFDeriv/NormedSpace.lean`);
   `IsLocalDiffeomorph` (`Mathlib/Geometry/Manifold/LocalDiffeomorph.lean`).
 - `Manifold.IsImmersionAt` (`Mathlib/Geometry/Manifold/Immersion.lean`): the immersion normal
@@ -754,8 +757,9 @@ applies, and §1.1's gluing covers compact subsets of `M`.
 - On a `0`-manifold every function is in every local class, since compact sets are finite and
   the volume is counting measure.
 
-*Needs:* §1.1, §3.1; Mathlib `isOpen_extChartAt_target`, `contDiffOn_ext_coord_change`; Tau Ceti
-`TauCeti.chartVolumeDensity_changeChart`, `TauCeti.setLIntegral_riemannianVolume_of_subset`.
+*Needs:* §1.1, §3.1; Mathlib `isOpen_extChartAt_target`, `contDiffOn_ext_coord_change`,
+`ModelWithCorners.contDiffOn_extendCoordChange`; Tau Ceti `TauCeti.chartVolumeDensity_changeChart`,
+`TauCeti.setLIntegral_riemannianVolume_of_subset`.
 
 ### 3.3 Null sets under `C¹` maps of manifolds
 
@@ -852,7 +856,8 @@ extrinsic description of Layer 8 (Hajlasz2009 line 28).
 - A `0`-manifold: every `u` is a member, and its weak differential is `0`.
 
 *Needs:* §1.2, §1.3, §2.2, §2.3, §2.4, §3.3; Mathlib `extChartAt`, `isOpen_extChartAt_target`,
-`contDiffOn_ext_coord_change`, `IsManifold.maximalAtlas`, `mfderiv_eq_fderiv`; Tau Ceti
+`contDiffOn_ext_coord_change`, `ModelWithCorners.contDiffOn_extendCoordChange`,
+`IsManifold.maximalAtlas`, `mfderiv_eq_fderiv`; Tau Ceti
 `TauCeti.HasWeakFDerivOn`, `TauCeti.IsNullSet.iUnion`.
 
 ### 4.2 Local representatives and the class `W^{1,p}_loc(M, N)` (T2)
@@ -872,8 +877,8 @@ equivalent:
 - the first item holds for all charts of both maximal atlases.
 
 Route: on overlaps two representatives differ by a coordinate change of `E` on the right and of
-`F` on the left. Both are `C¹` (`contDiffOn_ext_coord_change`), the first with invertible
-derivative. Representatives are continuous, so §2.2 and §2.4 apply, and §1.3 glues.
+`F` on the left. Both are `C¹` (`ModelWithCorners.contDiffOn_extendCoordChange`), the first with
+invertible derivative. Representatives are continuous, so §2.2 and §2.4 apply, and §1.3 glues.
 
 - Every `Ω_{x₀y₀}(f)` is open, by continuity of `f` and openness of chart targets.
 - The class involves no metric and no orientation. A copy `TauCeti.WithMetric g' M` has the same
@@ -895,7 +900,8 @@ derivative. Representatives are continuous, so §2.2 and §2.4 apply, and §1.3 
   `p < 3/2` (§4.1's second Check). Only charts of one `C¹` atlas are compared.
 
 *Needs:* §1.2, §1.3, §2.2, §2.4, §4.1; Mathlib `extChartAt`, `isOpen_extChartAt_target`,
-`contDiffOn_ext_coord_change`, `IsManifold.maximalAtlas`; Tau Ceti `TauCeti.WithMetric`.
+`contDiffOn_ext_coord_change`, `ModelWithCorners.contDiffOn_extendCoordChange`,
+`IsManifold.maximalAtlas`; Tau Ceti `TauCeti.WithMetric`.
 
 ### 4.3 The weak differential (T2)
 
@@ -914,6 +920,13 @@ continuous and, for every `x₀`, `y₀` and Haar measure `μ`, the field
 The *weak differential* `Df` is a total choice: a weak differential when one exists, and `0`
 otherwise. For `N = V` it is the weak differential of §4.1.
 
+Route: as in §4.1, glue the chart derivatives over a countable cover of `M` by sets
+`φₖ.source ∩ f⁻¹(ψⱼ.source)`. On overlaps, and for charts of the maximal atlases, two chart
+derivatives differ by the derivatives of the coordinate changes, which are `C¹`
+(`contDiffOn_ext_coord_change`, `ModelWithCorners.contDiffOn_extendCoordChange`). §2.2 handles
+the source side and §2.4 the target side, the representatives being continuous. §3.3 carries
+null sets between charts, and §1.3 glues.
+
 **Checks.**
 
 - The direction witness of the Conventions: for `M = N = ℝ`, the chart `φ(x) = 2x` and `f = id`,
@@ -924,8 +937,9 @@ otherwise. For `N = V` it is the weak differential of §4.1.
   Changing that field at `t = 1` gives another weak differential, so no value at a single point
   is determined.
 
-*Needs:* §4.1, §4.2; Tau Ceti `TauCeti.HasWeakFDerivOn.ae_eq`, `TauCeti.IsNullSet.iUnion`;
-Mathlib `mfderiv`.
+*Needs:* §1.3, §2.2, §2.4, §3.3, §4.1, §4.2; Tau Ceti `TauCeti.HasWeakFDerivOn.ae_eq`,
+`TauCeti.IsNullSet.iUnion`; Mathlib `mfderiv`, `contDiffOn_ext_coord_change`,
+`ModelWithCorners.contDiffOn_extendCoordChange`.
 
 ### 4.4 `C¹` maps (T2)
 
@@ -960,6 +974,16 @@ Prove, for continuous `f : M → N`:
   `TauCeti.WithMetric` copies have the same membership. Their weak differentials agree outside a
   null set, since the copies have the same charts.
 
+Route for the corestriction. The preferred chart of `W` at `y ∈ W` is the restriction of
+`ψ_y = extChartAt J y` (`TopologicalSpace.Opens.instChartedSpace`), and `f(M) ⊆ W`, so the
+corestriction's representatives are those of `f` at points of `W`, on the same domains. A chart
+`ψ` at `y₀ ∈ N ∖ W` may still meet `f(M)`; it is read through a chart of `W`. Near a point
+`φ(x)` with `f(x) = y`, the representative at `(x₀, y₀)` is
+`(ψ ∘ ψ_y.symm) ∘ (ψ_y ∘ f ∘ φ.symm)`: a continuous member followed by a coordinate change that is
+`C¹` on an open set containing its values (`contDiffOn_ext_coord_change`). So §2.4 gives
+membership, and with the chain rule `d(ψ ∘ ψ_y.symm) ∘ dψ_y = dψ` the defining identity of the
+same weak differential at `y₀`; §1.3 glues.
+
 **Checks.**
 
 - The map into `S¹` of §4.2 is smooth on `(0, ∞)` and on `(−∞, 0)`, hence in every class there,
@@ -967,10 +991,14 @@ Prove, for continuous `f : M → N`:
   apply.
 - `sign(x₁)` on the half-planes (§1.3's first Check) shows the cover must be an open cover of
   all of `M`.
-- `f = tanh` from `ℝ` to `ℝ` corestricts to `(−1, 1)` with the same `Df = 1 − tanh²`.
+- `f = tanh` from `ℝ` to `ℝ` corestricts to `(−1, 1)` with the same `Df = 1 − tanh²`. The
+  preferred chart of `ℝ` at `2 ∉ (−1, 1)` is the identity, whose source meets `tanh(ℝ)`. So
+  membership in `W^{1,p}_loc(ℝ, ℝ)` also asks for the representative there, and it is the
+  corestriction's representative `tanh` followed by the coordinate change `id`. A test through
+  the charts of `W` alone would skip that chart.
 
-*Needs:* §1.3, §3.3, §4.2, §4.3; Mathlib `TopologicalSpace.Opens.instChartedSpace`; Tau Ceti
-`TauCeti.WithMetric`.
+*Needs:* §1.3, §2.4, §3.3, §4.2, §4.3; Mathlib `TopologicalSpace.Opens.instChartedSpace`,
+`contDiffOn_ext_coord_change`; Tau Ceti `TauCeti.WithMetric`.
 
 ### 4.6 Chain rules on manifolds
 
