@@ -18,3 +18,128 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-08"
 cited_for = ["B.3"]
+
+[[source]]
+id = "kleiman2005"
+authors = "Steven L. Kleiman"
+title = "The Picard scheme"
+year = 2005
+arxiv = "math/0504020v1"
+locator_scheme = "theorem"
+locator = "Theorem 2.5; Remark 2.11, (2.11.4); Theorem 4.8; Lemma 4.9; Theorem 5.11; Proposition 5.19; Remark 5.24"
+url = "https://arxiv.org/abs/math/0504020v1"
+fetched_from = "https://arxiv.org/pdf/math/0504020v1"
+fetched_at = "2026-11-08T18:47:58Z"
+sha256 = "cc14e62f0ebebb8617777651bbcd08bb7548cb9fe955f3a25bb6491c5f3beeaa"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-08"
+version_note = "arXiv v1"
+cited_for = ["D.1"]
+
+[[source]]
+id = "milne-av"
+authors = "James S. Milne"
+title = "Abelian Varieties"
+year = 2008
+locator_scheme = "theorem"
+locator = "I Theorem 5.1, Corollary 5.2, Theorem 5.5, Remark 5.6; III Propositions 2.1, 2.3, Lemma 2.4, Proposition 6.1"
+url = "https://www.jmilne.org/math/CourseNotes/AV.pdf"
+fetched_from = "https://www.jmilne.org/math/CourseNotes/AV.pdf"
+fetched_at = "2026-11-08T19:01:04Z"
+sha256 = "f5ca4e63e5092a4b102daad1470e4cbed5fe8f82115e3a28c8881e3f67f6aaef"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-08"
+version_note = "Course notes v2.00 (2008) from the author's page; chapter, section and theorem numbering of the notes, printed page numbers"
+cited_for = ["E.1"]
+
+[[source]]
+id = "stacks-project"
+authors = "The Stacks project authors"
+title = "The Stacks Project"
+year = 2026
+locator_scheme = "tag"
+locator = "0BF4, 0BFE, 0B9M, 0B9N, 0B9T, 0BA0, 056U, 02L6, 0BFG, 0BFH, 03RP"
+url = "https://stacks.math.columbia.edu/tag/0BF4"
+fetched_from = "https://stacks.math.columbia.edu/download/more-morphisms.pdf#nameddest=0BF4"
+fetched_at = "2026-11-08T19:01:14Z"
+sha256 = "59df05f5d52f453b17677398c72a51fe156367f460f6dcfdf764d9631b7c787c"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-08"
+cited_for = ["E.1"]
+
+[[source]]
+id = "hartshorne1977"
+authors = "Robin Hartshorne"
+title = "Algebraic Geometry"
+year = 1977
+venue = "Graduate Texts in Mathematics"
+doi = "10.1007/978-1-4757-3849-0"
+locator_scheme = "chapter"
+locator = "II.6.13-6.15; III.5.1-5.2; III.7; III.12.8-12.11"
+url = "https://doi.org/10.1007/978-1-4757-3849-0"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["A.2"]
+
+[[source]]
+id = "serre1988"
+authors = "Jean-Pierre Serre"
+title = "Algebraic Groups and Class Fields"
+year = 1988
+venue = "Graduate Texts in Mathematics"
+doi = "10.1007/978-1-4612-1035-1"
+locator_scheme = "chapter"
+locator = "Chapter II"
+url = "https://doi.org/10.1007/978-1-4612-1035-1"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["B.2"]
+
+[[source]]
+id = "blr1990"
+authors = "Siegfried Bosch, Werner Lütkebohmert, Michel Raynaud"
+title = "Néron Models"
+year = 1990
+doi = "10.1007/978-3-642-51438-8"
+locator_scheme = "chapter"
+locator = "Chapters 8-9"
+url = "https://doi.org/10.1007/978-3-642-51438-8"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["D.1"]
+
+[[source]]
+id = "stichtenoth2009"
+authors = "Henning Stichtenoth"
+title = "Algebraic Function Fields and Codes"
+year = 2009
+venue = "Graduate Texts in Mathematics"
+doi = "10.1007/978-3-540-76878-4"
+locator_scheme = "section"
+locator = "Sections I.7, 4.3"
+url = "https://doi.org/10.1007/978-3-540-76878-4"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["B.2"]
+
+[[source]]
+id = "milne-jv"
+authors = "James S. Milne"
+title = "Jacobian Varieties"
+year = 1986
+venue = "Arithmetic Geometry"
+doi = "10.1007/978-1-4613-8655-1_7"
+locator_scheme = "section"
+locator = "construction and universal property"
+url = "https://doi.org/10.1007/978-1-4613-8655-1_7"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["F.1"]
