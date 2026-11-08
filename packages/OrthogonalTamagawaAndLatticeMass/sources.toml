@@ -1,0 +1,142 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "OrthogonalTamagawaAndLatticeMass"
+
+[[source]]
+id = "FominReading"
+authors = "Sergey Fomin, Nathan Reading"
+title = "Root systems and generalized associahedra"
+year = 2005
+venue = "Geometric combinatorics, 63-131, IAS/Park City Math. Ser., 13, Amer. Math. Soc., Providence, RI, 2007"
+arxiv = "math/0505518v3"
+locator_scheme = "section"
+locator = "Lecture 2, §2.5, Figure 2.8, p.24"
+url = "https://arxiv.org/abs/math/0505518v3"
+fetched_from = "https://arxiv.org/pdf/math/0505518v3"
+fetched_at = "2026-11-08T14:31:00Z"
+sha256 = "11cbcf33d86aea6aa2ab1c71df492a44e31b87d2889c85914474511083097d42"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-08"
+version_note = "arXiv v3"
+cited_for = ["4.1"]
+
+[[source]]
+id = "ChenevierLannes"
+authors = "Gaëtan Chenevier, Jean Lannes"
+title = "Formes automorphes et voisins de Kneser des réseaux de Niemeier"
+year = 2014
+arxiv = "1409.7616v2"
+locator_scheme = "theorem"
+locator = "Chapter II, Corollary 3.6, p.41; Theorems 3.16–3.17, p.48"
+url = "https://arxiv.org/abs/1409.7616v2"
+fetched_from = "https://arxiv.org/pdf/1409.7616v2"
+fetched_at = "2026-11-08T14:31:13Z"
+sha256 = "ee20dcf191d37290a74c79c4b15d9fbfe5c2b3673bd6c53283ff44d19762708d"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-08"
+version_note = "arXiv v2"
+cited_for = ["4.1", "4.2"]
+
+[[source]]
+id = "Cho"
+authors = "Sungmun Cho"
+title = "Group schemes and local densities of quadratic lattices in residue characteristic 2"
+year = 2012
+venue = "Compositio Mathematica 151 (2014) 793-827"
+doi = "10.1112/S0010437X14007829"
+arxiv = "1210.7625v3"
+locator_scheme = "theorem"
+locator = "§2, Definition 2, Remarks 2, 4, 5, Lemma 4, Theorems 3–5, §4"
+url = "https://arxiv.org/abs/1210.7625v3"
+fetched_from = "https://arxiv.org/pdf/1210.7625v3"
+fetched_at = "2026-11-08T14:31:17Z"
+sha256 = "075df3449b2e0e95701ce7558f39db6f3e883a45597ad911cab35823aa1f12ad"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-08"
+version_note = "arXiv v3"
+cited_for = ["0.1a", "2.1", "2.2", "2.3"]
+
+[[source]]
+id = "BelolipetskyGan"
+authors = "M. Belolipetsky, W. T. Gan"
+title = "The mass of unimodular lattices"
+year = 2003
+arxiv = "math/0307195v2"
+locator_scheme = "theorem"
+locator = "§2, p.3; Theorem 3.1, p.4; §5, p.11"
+url = "https://arxiv.org/abs/math/0307195v2"
+fetched_from = "https://arxiv.org/pdf/math/0307195v2"
+fetched_at = "2026-11-08T14:31:22Z"
+sha256 = "7c8b4049c807349db3d3b040c80dd1177e9e51aa54cc5bf8a40a5a7ef32d212d"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-08"
+version_note = "arXiv v2"
+cited_for = ["1.1", "1.2", "3.1"]
+
+[[source]]
+id = "MilneAG"
+authors = "J. S. Milne"
+title = "Algebraic Groups: The Theory of Group Schemes of Finite Type over a Field (corrected 2022 version)"
+year = 2022
+locator_scheme = "section"
+locator = "§24i, pp.535–537"
+url = "https://www.jmilne.org/math/Books/iAG2022.pdf"
+fetched_from = "https://www.jmilne.org/math/Books/iAG2022.pdf"
+fetched_at = "2026-11-08T14:31:50Z"
+sha256 = "f2ddd8fa4d263085f173934664b246007a2c0bd539739b7c82de39bfb5d21f40"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-08"
+cited_for = ["0.1"]
+
+[[source]]
+id = "ConwaySloaneMass"
+authors = "J. H. Conway, N. J. A. Sloane"
+title = "Low-dimensional lattices. IV. The mass formula"
+year = 1988
+venue = "Proc. Roy. Soc. London Ser. A 419 (1988), 259-286"
+doi = "10.1098/rspa.1988.0107"
+locator_scheme = "equation"
+locator = "equations (2)–(3), p.263; equation (6), p.266; §9(iv), p.274; §12, p.281"
+url = "https://neilsloane.com/doc/Me150.pdf"
+fetched_from = "https://neilsloane.com/doc/Me150.pdf"
+fetched_at = "2026-11-08T14:31:52Z"
+sha256 = "e0dcc36e77c9c8827151ba19babfee67d351e22877d6fd24de88cdfef76695d1"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-08"
+cited_for = ["1.2", "1.3", "2.3", "3.1"]
+
+[[source]]
+id = "BorcherdsTables"
+authors = "Richard E. Borcherds"
+title = "Tables of lattices: norm-zero table"
+year = 2016
+version_note = "undated web tables; the table index records an update in 2016"
+locator_scheme = "section"
+locator = "norm-zero table: the 23 root-system entries and the rootless entry"
+url = "https://math.berkeley.edu/~reb/lattices/0"
+fetched_from = "https://math.berkeley.edu/~reb/lattices/0"
+fetched_at = "2026-11-08T14:31:53Z"
+sha256 = "a902f233f1bc6d32dd9ece01715c1f6d2ce6686e59954b57800cfb01fb6b0cf8"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-08"
+cited_for = ["4.2"]
+
+[[source]]
+id = "OMeara"
+authors = "O. Timothy O’Meara"
+title = "Introduction to Quadratic Forms"
+year = 1963
+doi = "10.1007/978-3-642-62031-7"
+locator_scheme = "section"
+locator = "104:4–5"
+url = "https://doi.org/10.1007/978-3-642-62031-7"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["0.3"]
