@@ -1536,3 +1536,55 @@ licence_class = "author-page"
 status = "certified"
 accessed = "2026-11-08"
 cited_for = ["9.1"]
+
+[[source]]
+id = "guo2026"
+authors = "Victor Zhenyu Guo"
+title = "An explicit elementary proof of no Landau--Siegel zeros"
+year = 2026
+arxiv = "2610.30476v1"
+locator_scheme = "theorem"
+locator = "Theorem 1.1 (lines 54–56)"
+url = "https://arxiv.org/abs/2610.30476v1"
+fetched_from = "https://arxiv.org/pdf/2610.30476v1"
+fetched_at = "2026-11-08T06:42:00Z"
+sha256 = "f3058ae2a77e5c8e277cf90ed0faf8f745b8b638442b3439dfbf230e93e47a7e"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-08"
+version_note = "arXiv v1"
+cited_for = ["7.9"]
+
+[[source]]
+id = "ramare-rumely-1996"
+authors = "Olivier Ramaré, Robert Rumely"
+title = "Primes in arithmetic progressions"
+year = 1996
+venue = "Mathematics of Computation 65 (1996), 397–425"
+doi = "10.1090/s0025-5718-96-00669-2"
+local_name = "ramare-rumely-1996.pdf"
+locator_scheme = "theorem"
+locator = "Theorems 3.6.2 and 3.6.3 (lines 795–848)"
+fetched_at = "2026-11-08T06:42:00Z"
+sha256 = "94bd522a40cfa72da87c5d8acc35f5e8e8ce2ea3347acdda5e1114eb880e553d"
+licence_class = "operator-local"
+status = "certified"
+accessed = "2026-11-08"
+cited_for = ["7.5"]
+
+[[source]]
+id = "kedlaya2025notes"
+authors = "Kiran S. Kedlaya"
+title = "Notes on analytic number theory"
+year = 2025
+locator_scheme = "section"
+locator = "§1.6, Exercise 6 (lines 773–789)"
+url = "https://kskedlaya.org/papers/ant-ptx.pdf"
+fetched_from = "https://kskedlaya.org/papers/ant-ptx.pdf"
+fetched_at = "2026-11-08T06:42:04Z"
+sha256 = "7a934fce8272cedd36ad609f79bbe79af0056320bb1e0bc690c87af990f305be"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-08"
+version_note = "author-page text, CC BY-SA 4.0, still under development; exercises numbered by section"
+cited_for = ["6.1a"]

@@ -1,0 +1,13 @@
+{
+  "review": {
+    "status": "needs_changes",
+    "reviewer": "independent-review-PRREVIEW-ExplicitZetaBounds~2",
+    "head": "3e44c3f00ee93333dca3f293e3d0056c42572edf",
+    "pr": 1954,
+    "folder": "ExplicitZetaBounds",
+    "date": "2026-11-08",
+    "findings": 5,
+    "blocking": 4,
+    "notes": "Gate at 3e44c3f, run myself: every check passed. depcheck: 244 roadmaps, 2465 edges, 0 problems. lake env lean on Suggested.lean: 23 sorry warnings only. #check @ of all 31 declarations compared with the README: no lost binders, same generality. One-tactic probe with done guards leaves all 23 theorems open, so no padding. Previous findings: R01, R02, R03, R07, R08 and R09 repaired; R04, R05 and R06 partly repaired. Seeded sample read at its locators: 0.2, 1.6, 2.5, 3.5, 4.6, 4.7, 4.8, 4.9a, 5.3, 6.1, 6.1a (no locator), 6.5 (sources uncertified, Checks recomputed), 7.2, 7.3 (Kadiri's first iterate recomputed: 5.94294 against 5.942924085), 8.2. Numerical pass (mpmath): Gamma bounds on 400 points; Rademacher on 13 characters; HPY, Patel, HLY and Richert/Hurwitz on t in [3,60]; HLY 1/zeta on [3,300]; Ramare on 353 characters, MST on 334, LZZ on 19; Vinogradov counts by brute force; Platt's N(T) at 3.0610046e10. 97 Mathlib names and 9 Tau Ceti declarations checked at the pins; about 45 cross-roadmap citations resolved. Findings: R01 P2 (Patel's tests and the complex van der Corput inequality are also owned by ExplicitCharacterSumsAndSieves #1948); R02 P2 (consumer gaps refused under Not owned here and still declared by #1945, #1946 and #1944, so the objects have no owner); R03 P2 (S(T) is statable via Complex.digamma, so the T >= e headline is absent for a false reason); R04 P2 (8.2 is planned in the README but withheld in Suggested.lean as doubtful); R05 P3 (6.1a has no locator). Source issues: misprints in mty2024 line 1357 and ramare2016density line 1569."
+  }
+}
