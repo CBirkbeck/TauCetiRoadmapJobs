@@ -1,0 +1,312 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "CategoricalOperatorAlgebras"
+
+[[source]]
+id = "Tomatsu2018"
+authors = "Reiji Tomatsu"
+title = "Centrally free actions of amenable C$^*$-tensor categories on von Neumann algebras"
+year = 2018
+arxiv = "1812.04222v1"
+locator_scheme = "theorem"
+locator = "Theorem D; Remark 2.17(1); §2.2"
+url = "https://arxiv.org/abs/1812.04222v1"
+fetched_from = "https://arxiv.org/pdf/1812.04222v1"
+fetched_at = "2026-11-07T18:10:13Z"
+sha256 = "8caa6c753621ddd30d032efa66af7d50e2c96e7cab765bc9d631afe2f0ca4a8e"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-07"
+version_note = "arXiv v1"
+cited_for = ["CA9"]
+
+[[source]]
+id = "MasudaTomatsu2007"
+authors = "Toshihiko Masuda, Reiji Tomatsu"
+title = "Classification of minimal actions of a compact Kac algebra with amenable dual"
+year = 2006
+doi = "10.1007/s00220-007-0269-4"
+arxiv = "math/0604348v2"
+locator_scheme = "theorem"
+locator = "Lemma 8.2"
+url = "https://arxiv.org/abs/math/0604348v2"
+fetched_from = "https://arxiv.org/pdf/math/0604348v2"
+fetched_at = "2026-11-07T18:10:19Z"
+sha256 = "069d82641251fd23d80abe0ef0fe7a0a1933753ad914781f0ef63a8807f1ee55"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-07"
+version_note = "arXiv v2"
+cited_for = ["CA9"]
+
+[[source]]
+id = "MasudaTomatsu2008"
+authors = "Toshihiko Masuda, Reiji Tomatsu"
+title = "Approximate innerness and central triviality of endomorphisms"
+year = 2008
+arxiv = "0802.0344v1"
+locator_scheme = "theorem"
+locator = "Definitions 2.1, 2.4, 3.1; Theorem 3.15; Corollary 3.16; §2.4"
+url = "https://arxiv.org/abs/0802.0344v1"
+fetched_from = "https://arxiv.org/pdf/0802.0344v1"
+fetched_at = "2026-11-07T18:10:24Z"
+sha256 = "0ae90c43d3701e95f79eaaaf99ca2858a20eabeb1fdaf8ebddb6d906c45b9b0c"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-07"
+version_note = "arXiv v1"
+cited_for = ["CA9"]
+
+[[source]]
+id = "Katsura2004"
+authors = "Takeshi Katsura"
+title = "On $C^*$-algebras associated with $C^*$-correspondences"
+year = 2003
+arxiv = "math/0309088v3"
+locator_scheme = "theorem"
+locator = "Definitions 3.2, 3.4; Theorem 6.4; Theorem 8.6"
+url = "https://arxiv.org/abs/math/0309088v3"
+fetched_from = "https://arxiv.org/pdf/math/0309088v3"
+fetched_at = "2026-11-07T18:10:35Z"
+sha256 = "fd08d55e59ed9175e82c288a1e0a96a764a094c511767bfe3715e6e5d5e95840"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-07"
+version_note = "arXiv v3"
+cited_for = ["CA7"]
+
+[[source]]
+id = "CHPS2018"
+authors = "Desmond Coles, Peter Huston, David Penneys, Srivatsa Srinivas"
+title = "The module embedding theorem via towers of algebras"
+year = 2018
+arxiv = "1810.07049v1"
+locator_scheme = "theorem"
+locator = "Theorem A"
+url = "https://arxiv.org/abs/1810.07049v1"
+fetched_from = "https://arxiv.org/pdf/1810.07049v1"
+fetched_at = "2026-11-07T18:10:41Z"
+sha256 = "27e8d6912de8cf96107c570d804aa359b0f29b2ec12b1efc473fbc3ae1d65f32"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-07"
+version_note = "arXiv v1"
+cited_for = ["CA2b"]
+
+[[source]]
+id = "HenriquesPenneys2015"
+authors = "André Henriques, David Penneys"
+title = "Bicommutant categories from fusion categories"
+year = 2015
+arxiv = "1511.05226v2"
+locator_scheme = "theorem"
+locator = "Lemma 3.4; Theorem 3.5"
+url = "https://arxiv.org/abs/1511.05226v2"
+fetched_from = "https://arxiv.org/pdf/1511.05226v2"
+fetched_at = "2026-11-07T18:10:47Z"
+sha256 = "ad80417f07ad91af4a1a31cdb5d8ea0eb5c0321edaa30b9e8bc21c152c050bf7"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-07"
+version_note = "arXiv v2"
+cited_for = ["CA9"]
+
+[[source]]
+id = "HenriquesPenneys2020"
+authors = "André Henriques, David Penneys"
+title = "Representations of fusion categories and their commutants"
+year = 2020
+arxiv = "2004.08271v1"
+locator_scheme = "theorem"
+locator = "Theorems 3.10, 3.15; Corollary 3.16"
+url = "https://arxiv.org/abs/2004.08271v1"
+fetched_from = "https://arxiv.org/pdf/2004.08271v1"
+fetched_at = "2026-11-07T18:10:53Z"
+sha256 = "b89f24edf119d6adcf161e0365635362c58e00b11dd17a8b2cd79cd9af4e3bd8"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-07"
+version_note = "arXiv v1"
+cited_for = ["CA9"]
+
+[[source]]
+id = "JonesPenneys2017Operator"
+authors = "Corey Jones, David Penneys"
+title = "Operator algebras in rigid C*-tensor categories"
+year = 2016
+doi = "10.1007/s00220-017-2964-0"
+arxiv = "1611.04620v2"
+locator_scheme = "theorem"
+locator = "Theorems 3.8, 3.20, 4.28"
+url = "https://arxiv.org/abs/1611.04620v2"
+fetched_from = "https://arxiv.org/pdf/1611.04620v2"
+fetched_at = "2026-11-07T18:11:11Z"
+sha256 = "9ee71c611eb66032931ebe3131cb7c6007bf0f88d34fa70d3aa5f9f572768287"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-07"
+version_note = "arXiv v2"
+cited_for = ["CA4"]
+
+[[source]]
+id = "JonesPenneys2017Qsystems"
+authors = "Corey Jones, David Penneys"
+title = "Q-systems and compact W*-algebra objects"
+year = 2017
+arxiv = "1707.02155v1"
+locator_scheme = "theorem"
+locator = "Theorem A; Proposition 4.11; Theorem 5.3"
+url = "https://arxiv.org/abs/1707.02155v1"
+fetched_from = "https://arxiv.org/pdf/1707.02155v1"
+fetched_at = "2026-11-07T18:11:17Z"
+sha256 = "192ca51fd9b23af5dae3a8f7d0875e7ede41a04801d86f6bec3d28a3222495ff"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-07"
+version_note = "arXiv v1"
+cited_for = ["CA4"]
+
+[[source]]
+id = "CHJP2021"
+authors = "Quan Chen, Roberto Hernández Palomares, Corey Jones, David Penneys"
+title = "Q-system completion for C* 2-categories"
+year = 2021
+venue = "Journal of Functional Analysis Volume 283, Issue 3, 1 August 2022, 109524"
+doi = "10.1016/j.jfa.2022.109524"
+arxiv = "2105.12010v2"
+locator_scheme = "theorem"
+locator = "Theorem 3.36; Theorem A"
+url = "https://arxiv.org/abs/2105.12010v2"
+fetched_from = "https://arxiv.org/pdf/2105.12010v2"
+fetched_at = "2026-11-07T18:11:23Z"
+sha256 = "8e592269d3b75828c632a4fb557fc89eb1119e7763a344c21c298515d84e19d3"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-07"
+version_note = "arXiv v2"
+cited_for = ["CA3"]
+
+[[source]]
+id = "JonesPenneys2017Realizations"
+authors = "Corey Jones, David Penneys"
+title = "Realizations of algebra objects and discrete subfactors"
+year = 2017
+arxiv = "1704.02035v2"
+locator_scheme = "theorem"
+locator = "Theorem 5.35; Corollary 7.14"
+url = "https://arxiv.org/abs/1704.02035v2"
+fetched_from = "https://arxiv.org/pdf/1704.02035v2"
+fetched_at = "2026-11-07T18:11:36Z"
+sha256 = "4c25c5d964333090b3f9db343a5c5b4970a0b2e692a4e888539c2bb7d2aad810"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-07"
+version_note = "arXiv v2"
+cited_for = ["CA5"]
+
+[[source]]
+id = "Penneys2018"
+authors = "David Penneys"
+title = "Unitary dual functors for unitary multitensor categories"
+year = 2018
+arxiv = "1808.00323v1"
+locator_scheme = "theorem"
+locator = "Theorems A, C"
+url = "https://arxiv.org/abs/1808.00323v1"
+fetched_from = "https://arxiv.org/pdf/1808.00323v1"
+fetched_at = "2026-11-07T18:11:41Z"
+sha256 = "b7cdbec57e1358774ad776cbb905b552d8587c9743fb61ce33ffde32e061dd1e"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-07"
+version_note = "arXiv v1"
+cited_for = ["CA2a", "CA2b"]
+
+[[source]]
+id = "HPT2023Anchored"
+authors = "André Henriques, David Penneys, James Tener"
+title = "Unitary anchored planar algebras"
+year = 2023
+arxiv = "2301.11114v2"
+locator_scheme = "theorem"
+locator = "Theorem A"
+url = "https://arxiv.org/abs/2301.11114v2"
+fetched_from = "https://arxiv.org/pdf/2301.11114v2"
+fetched_at = "2026-11-07T18:11:47Z"
+sha256 = "fe11a5222b26fa710f1eaeb9ca13b1467714938e561c913169ec4fa2995a2654"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-07"
+version_note = "arXiv v2"
+cited_for = ["CA6"]
+
+[[source]]
+id = "HartglassPenneys2014I"
+authors = "Michael Hartglass, David Penneys"
+title = "$C^*$-algebras from planar algebras I: canonical $C^*$-algebras associated to a planar algebra"
+year = 2014
+arxiv = "1401.2485v1"
+locator_scheme = "section"
+locator = "§§2-5"
+url = "https://arxiv.org/abs/1401.2485v1"
+fetched_from = "https://arxiv.org/pdf/1401.2485v1"
+fetched_at = "2026-11-07T18:11:53Z"
+sha256 = "759222d0b7033b9e9146398e79d17fe5e1aeb2ffcb096fe10a7f7bc38870a779"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-07"
+version_note = "arXiv v1"
+cited_for = ["CA7", "CA8"]
+
+[[source]]
+id = "HartglassPenneys2014II"
+authors = "Michael Hartglass, David Penneys"
+title = "$C^*$-algebras from planar algebras II: the Guionnet-Jones-Shlyakhtenko $C^*$-algebras"
+year = 2014
+arxiv = "1401.2486v1"
+locator_scheme = "theorem"
+locator = "Theorems A-C"
+url = "https://arxiv.org/abs/1401.2486v1"
+fetched_from = "https://arxiv.org/pdf/1401.2486v1"
+fetched_at = "2026-11-07T18:11:59Z"
+sha256 = "8adf928010a55c42e41f1afc6c5ae69ed63b9f75c9b329e3a49e58ba8882aa2f"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-07"
+version_note = "arXiv v1"
+cited_for = ["CA7", "CA8"]
+
+[[source]]
+id = "HNP2024"
+authors = "André Henriques, Nivedita, David Penneys"
+title = "Complete W*-categories"
+year = 2024
+arxiv = "2411.01678v1"
+locator_scheme = "theorem"
+locator = "Theorem 7.4"
+url = "https://arxiv.org/abs/2411.01678v1"
+fetched_from = "https://arxiv.org/pdf/2411.01678v1"
+fetched_at = "2026-11-07T18:12:05Z"
+sha256 = "681f898fd2e97f8211fcb3d0c30c57e29e805a31010c659837b2262ad6fec7c6"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-07"
+version_note = "arXiv v1"
+cited_for = ["CA9"]
+
+[[source]]
+id = "HPT2023Classification"
+authors = "André Henriques, David Penneys, James Tener"
+title = "Classification of finite depth objects in bicommutant categories via anchored planar algebras"
+year = 2023
+arxiv = "2307.13822v1"
+locator_scheme = "theorem"
+locator = "Lemma 3.7; §4"
+url = "https://arxiv.org/abs/2307.13822v1"
+fetched_from = "https://arxiv.org/pdf/2307.13822v1"
+fetched_at = "2026-11-07T18:12:10Z"
+sha256 = "735933e1ed6f506698eb50d703dd643287b34d5526b68faa242b65bc14282686"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-07"
+version_note = "arXiv v1"
+cited_for = ["CA10"]
