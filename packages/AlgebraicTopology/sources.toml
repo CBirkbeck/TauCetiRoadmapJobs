@@ -233,3 +233,18 @@ licence_class = "author-page"
 status = "certified"
 accessed = "2026-11-08"
 cited_for = ["8.9"]
+
+[[source]]
+id = "dowker1952"
+authors = "C. H. Dowker"
+title = "Topology of metric complexes"
+year = 1952
+venue = "American Journal of Mathematics 74"
+doi = "10.2307/2372262"
+locator_scheme = "theorem"
+locator = "the theorem that the identity map from the weak topology to the metric topology of a simplicial complex is a homotopy equivalence (as quoted in Milnor 1959, p. 274)"
+url = "https://doi.org/10.2307/2372262"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled (JSTOR); cited by its locator without the text"
+cited_for = ["8.11a"]
