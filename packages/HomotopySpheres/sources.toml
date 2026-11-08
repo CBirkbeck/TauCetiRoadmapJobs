@@ -33,3 +33,21 @@ licence_class = "institutional"
 status = "certified"
 accessed = "2026-11-07"
 cited_for = ["1.7", "2.2"]
+
+[[source]]
+id = "kervaire1969"
+authors = ["Michel A. Kervaire"]
+title = "Smooth Homology Spheres and Their Fundamental Groups"
+year = 1969
+venue = "Transactions of the American Mathematical Society 144, 67-72"
+doi = "10.1090/S0002-9947-1969-0253347-3"
+locator_scheme = "theorem"
+locator = "Theorem 1 and the remark before it, p.67; Theorem 3, p.70"
+url = "https://www.ams.org/journals/tran/1969-144-00/S0002-9947-1969-0253347-3/S0002-9947-1969-0253347-3.pdf"
+fetched_from = "https://www.ams.org/journals/tran/1969-144-00/S0002-9947-1969-0253347-3/S0002-9947-1969-0253347-3.pdf"
+fetched_at = "2026-11-08T05:34:52Z"
+sha256 = "66de643c5124715eba3580adc8819a1c8366914f9b43f36cc80f01809f8f8369"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-11-08"
+cited_for = ["1.7"]
