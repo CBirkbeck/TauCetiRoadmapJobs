@@ -356,3 +356,21 @@ status = "certified"
 accessed = "2026-11-07"
 version_note = "arXiv v1"
 cited_for = ["Layer 7.C.2d"]
+
+[[source]]
+id = "bott-lie-groups"
+authors = "Raoul Bott"
+title = "An application of the Morse theory to the topology of Lie-groups"
+year = 1956
+venue = "Bulletin de la Société Mathématique de France 84 (1956), 251–281"
+doi = "10.24033/bsmf.1472"
+locator_scheme = "section"
+locator = "§1, corollary to Theorems A and B (p. 253)"
+url = "https://doi.org/10.24033/bsmf.1472"
+fetched_from = "https://www.numdam.org/item/10.24033/bsmf.1472.pdf"
+fetched_at = "2026-11-07T21:03:59Z"
+sha256 = "78d429bd4df018dc0ebea2bf84187c3226343f68fe38e469b6a9efd2a903494d"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-07"
+cited_for = ["11.2"]
