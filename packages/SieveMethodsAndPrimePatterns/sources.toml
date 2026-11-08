@@ -596,3 +596,20 @@ licence_class = "none"
 status = "uncertified"
 version_note = "paywalled; cited by its locator without the text"
 cited_for = ["5.3a"]
+
+[[source]]
+id = "PNT-PLUS"
+authors = "Alex Kontorovich, Terence Tao and contributors"
+title = "PrimeNumberTheoremAnd (GitHub repository)"
+year = 2026
+locator_scheme = "section"
+locator = "PrimeNumberTheoremAnd/Mathlib/NumberTheory/Sieve/SelbergBounds.lean, selbergBoundingSum_ge_sum_div; PrimeNumberTheoremAnd/Mathlib/NumberTheory/Sieve/Selberg.lean, selberg_bound_simple"
+url = "https://raw.githubusercontent.com/AlexKontorovich/PrimeNumberTheoremAnd/127b50e33f6033e2147921167a117af96d9ba4ea/PrimeNumberTheoremAnd/Mathlib/NumberTheory/Sieve/SelbergBounds.lean"
+fetched_from = "https://raw.githubusercontent.com/AlexKontorovich/PrimeNumberTheoremAnd/127b50e33f6033e2147921167a117af96d9ba4ea/PrimeNumberTheoremAnd/Mathlib/NumberTheory/Sieve/SelbergBounds.lean"
+fetched_at = "2026-11-08T21:38:04Z"
+sha256 = "02267a311ba2acc22a15ae9589e92ecdb351bdb01b6d9878d15ce8f89c7dda0a"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-08"
+version_note = "repository at commit 127b50e33f6033e2147921167a117af96d9ba4ea (Apache-2.0); the hash is of SelbergBounds.lean at that commit, and Selberg.lean is read at the same commit"
+cited_for = ["1.1", "1.3"]
