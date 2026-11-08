@@ -1,0 +1,13 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-RelativisticQuantumFieldTheory~3",
+  "head": "f2438f4246aaf685220180f26a92e27fdc0bcf90",
+  "pr": 1772,
+  "folder": "RelativisticQuantumFieldTheory",
+  "date": "2026-11-08",
+  "findings": 6,
+  "blocking": 0,
+  "notes": "Full review of the repaired head: gate OK, lake env lean exit 0 with 14 sorry warnings, depcheck 0 problems, no outside-folder change. Previous rejection reasons (course ledger, private sources, QF label drift, catalogue Suggested.lean) are repaired. Six P3 findings: README body not in house shape (0 Checks, 0 Needs lines, Milestone prose), Matrix.GeneralLinearGroup.innerAut_* absent at both Mathlib pins, Mathlib pull-request links and a process sentence, two backticked names not in Suggested.lean, references/manifest missing most inline-cited works, one section id (§9.2 → §9.1 p. 70). Seeded sample of 15 targets verified against borcherds-qft, dang14, BGP, Brunetti–Fredenhagen caches; 37-row adversarial table; 14 headlines pass the one-tactic padding probe."
+ }
+}
