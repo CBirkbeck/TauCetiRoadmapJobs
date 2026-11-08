@@ -115,3 +115,18 @@ licence_class = "author-page"
 status = "certified"
 accessed = "2026-11-08"
 cited_for = ["2.2"]
+
+[[source]]
+id = "milnor-1963"
+authors = "John Milnor"
+title = "Morse Theory"
+year = 1963
+venue = "Annals of Mathematics Studies 51, Princeton University Press"
+doi = "10.1515/9781400881802"
+locator_scheme = "theorem"
+locator = "Theorem 3.1, p. 12; Theorem 3.5, p. 20; Lemma 3.6, pp. 20-21; Corollary 6.7, p. 36"
+url = "https://doi.org/10.1515/9781400881802"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["2.2", "2.3", "2.4", "3.2"]
