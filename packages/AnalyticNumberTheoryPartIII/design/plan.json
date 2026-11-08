@@ -1,0 +1,1594 @@
+{
+ "roadmap": "AnalyticNumberTheoryPartIII",
+ "title": "Analytic number theory, part III — smoothing, contour shifts and the classical Dirichlet series",
+ "parent": "AnalyticNumberTheoryPartI",
+ "summary": "General analytic tools from a zero-free region to a prime error term (Fourier decay for bounded variation, principal-value inversion on vertical lines, rectangle residues, derivative Borel–Carathéodory, Landau's logarithmic-derivative lemma, Mellin smoothing, Ingham's transfer theorem, the classical L′/L bound for Hecke L-functions), the Dirichlet series of the classical arithmetic functions (complete multiplicativity, σ_ν, d_z, Ramanujan's identity, 2^ω, μ², λ, φ), the Hardy–Landau Tauberian theorem, Erdős problem 392 and the Goldbach-range propositions.",
+ "baseline": {
+  "mathlib": "1b1ccf4b088b32fa3f23f2de1127433254a81e1e",
+  "tauceti": "2fd255d997f47c0b5d834ee416c7015d55444ce5"
+ },
+ "layers": [
+  {
+   "key": "7",
+   "title": "Fourier and Laplace tools",
+   "targets": [
+    {
+     "id": "7.1a",
+     "kind": "theorem",
+     "name": "BoundedVariationOn.tendsto_zero_of_integrable",
+     "statement": "An integrable function f : ℝ → E of bounded variation on ℝ tends to 0 at ±∞ and satisfies ‖f x‖ ≤ (eVariationOn f univ).toReal for every x.",
+     "hypotheses": [
+      "E a complete normed ℂ-space",
+      "Integrable f",
+      "BoundedVariationOn f univ"
+     ],
+     "locator": {
+      "source": "kontorovichtao-pntplus",
+      "where": "line 189 (Lemma 3.1.4, implicit boundary step)"
+     },
+     "prerequisites": [
+      "mathlib:BoundedVariationOn",
+      "mathlib:eVariationOn",
+      "mathlib:MeasureTheory.Integrable"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "indicator",
+       "kind": "computation",
+       "statement": "f = 1_[0,1]: V = 2 and sup ‖f‖ = 1 ≤ 2."
+      },
+      {
+       "name": "nonintegrable",
+       "kind": "non-example",
+       "statement": "f = 1_[0,∞) is of bounded variation but not integrable and does not tend to 0 at +∞."
+      }
+     ]
+    },
+    {
+     "id": "7.1b",
+     "kind": "theorem",
+     "name": "norm_fourier_le_eVariationOn_div",
+     "statement": "For f : ℝ → E integrable and of bounded variation on ℝ, of total variation V, and real ξ ≠ 0: ‖𝓕 f ξ‖ ≤ V/(2π|ξ|).",
+     "hypotheses": [
+      "E a complete normed ℂ-space",
+      "Integrable f",
+      "BoundedVariationOn f univ",
+      "ξ ≠ 0"
+     ],
+     "locator": {
+      "source": "kontorovichtao-pntplus",
+      "where": "line 189, Lemma 3.1.4"
+     },
+     "prerequisites": [
+      "target:7.1a",
+      "mathlib:BoundedVariationOn.vectorMeasure",
+      "mathlib:BoundedVariationOn.variation_vectorMeasure_univ_le",
+      "mathlib:MeasureTheory.VectorMeasure.norm_integral_le_of_norm_le_const",
+      "mathlib:MeasureTheory.VectorMeasure.tendsto_integral_of_dominated_convergence",
+      "tauceti:BoundedVariationOn.integral_deriv_smul_eq_neg_integral_vectorMeasure"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "sharp",
+       "kind": "computation",
+       "statement": "f = 1_[0,1], ξ = 1/2: both sides equal 2/π; the constant 1/(4π) would fail."
+      },
+      {
+       "name": "xi_zero",
+       "kind": "degenerate",
+       "statement": "At ξ = 0 the right side is the junk V/0 = 0 while 𝓕(1_[0,1])(0) = 1, so ξ ≠ 0 is needed."
+      },
+      {
+       "name": "lorentz",
+       "kind": "computation",
+       "statement": "f = 1/(1+x²): V = 2, 𝓕f(0.1) = π e^{−0.2π} ≈ 1.68 ≤ 1/(0.1π) ≈ 3.18."
+      }
+     ]
+    },
+    {
+     "id": "7.1c",
+     "kind": "theorem",
+     "name": "fourier_le_of_deriv_boundedVariation",
+     "statement": "Let g : ℝ → E be integrable and of bounded variation with total variation V₁, and f(x) = f(0) + ∫_0^x g with f integrable. Then 𝓕 g ξ = 2πiξ 𝓕 f ξ for all ξ; ‖𝓕 f ξ‖ ≤ V₁/(2π|ξ|)² for ξ ≠ 0; and (1 + ξ²)‖𝓕 f ξ‖ ≤ ‖f‖₁ + V₁/(4π²) for all ξ.",
+     "hypotheses": [
+      "Integrable g",
+      "BoundedVariationOn g univ",
+      "∀ x, f x = f 0 + ∫ t in 0..x, g t",
+      "Integrable f"
+     ],
+     "locator": {
+      "source": "kontorovichtao-pntplus",
+      "where": "lines 198–209, Lemmas 3.1.5–3.1.6"
+     },
+     "prerequisites": [
+      "target:7.1a",
+      "target:7.1b",
+      "mathlib:Real.fourier_deriv",
+      "mathlib:Real.norm_fourier_le_integral_norm"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "tent",
+       "kind": "computation",
+       "statement": "f = max(0,1−|x|): V₁ = 4, 𝓕f(1/2) = 4/π² equals V₁/(2π·1/2)² = 4/π²."
+      },
+      {
+       "name": "zero_freq",
+       "kind": "degenerate",
+       "statement": "At ξ = 0 the (1+ξ²) form reads ‖∫f‖ ≤ ‖f‖₁ + V₁/(4π²), true; the ξ⁻² form is not asserted there."
+      }
+     ]
+    },
+    {
+     "id": "7.1d",
+     "kind": "theorem",
+     "name": "one_add_sq_mul_norm_fourier_le_of_decay",
+     "statement": "If f : ℝ → ℂ is C² with |f t|, |f″ t| ≤ A/(1+t²) for all t, then f′ is integrable and (1+ξ²)‖𝓕 f ξ‖ ≤ (π + 1/(4π)) A for every ξ.",
+     "hypotheses": [
+      "ContDiff ℝ 2 f",
+      "∀ t, ‖f t‖ ≤ A/(1+t²)",
+      "∀ t, ‖f″ t‖ ≤ A/(1+t²)"
+     ],
+     "locator": {
+      "source": "kontorovichtao-pntplus",
+      "where": "lines 210–220, Lemma 3.1.7"
+     },
+     "prerequisites": [
+      "mathlib:Real.one_add_sq_mul_norm_fourier_le"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "lorentz",
+       "kind": "computation",
+       "statement": "f = 1/(1+t²), A = 2: the left side at ξ = 0 is π ≤ 2(π + 1/(4π))."
+      }
+     ]
+    },
+    {
+     "id": "7.2",
+     "kind": "theorem",
+     "name": "dirichletIntegral_bounds",
+     "statement": "With I(x) = ∫_0^x sin t/t dt: I is odd and continuous, |I(x)| ≤ I(π) for all real x, |π/2 − I(x)| ≤ 2/x for x > 0, and |∫_a^b sin(Tv)/v dv| ≤ 2I(π) for a ≤ b, T > 0.",
+     "hypotheses": [
+      "x real",
+      "for the tail bound x > 0"
+     ],
+     "locator": {
+      "source": "dlmf-ch6",
+      "where": "6.2.19, 6.12.5–6.12.8 at n = 0, §6.16"
+     },
+     "prerequisites": [
+      "tauceti:TauCeti.Contour.tendsto_integral_sin_div_atTop",
+      "mathlib:intervalIntegral"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "not_pi_half",
+       "kind": "non-example",
+       "statement": "I(π) ≈ 1.85194 > π/2, so |I| ≤ π/2 is false."
+      },
+      {
+       "name": "tail",
+       "kind": "computation",
+       "statement": "x = π: |π/2 − I(π)| ≈ 0.2811 ≤ 2/π ≈ 0.6366."
+      },
+      {
+       "name": "negative",
+       "kind": "degenerate",
+       "statement": "x = −1: π/2 − I(−1) ≈ 2.517 > −2, so x > 0 is needed."
+      }
+     ]
+    },
+    {
+     "id": "7.3a",
+     "kind": "theorem",
+     "name": "tendsto_truncated_laplaceInv",
+     "statement": "Let g : ℝ → ℂ, c ∈ ℝ, u ↦ e^{−cu} g(u) integrable, G(c+iy) = ∫ g(u)e^{−(c+iy)u} du, and g of bounded variation on [u₀−δ, u₀+δ] for some δ > 0. Then (2π)⁻¹∫_{−T}^{T} G(c+iy) e^{(c+iy)u₀} dy → (g(u₀⁻) + g(u₀⁺))/2 as T → ∞.",
+     "hypotheses": [
+      "Integrable (u ↦ e^{−cu} g u)",
+      "δ > 0",
+      "BoundedVariationOn g (Icc (u₀−δ) (u₀+δ))"
+     ],
+     "locator": {
+      "source": "montgomeryvaughan2007",
+      "where": "Chapter 5, §5.1 (inverse Mellin transform)"
+     },
+     "prerequisites": [
+      "target:7.2",
+      "mathlib:Function.leftLim",
+      "mathlib:Function.rightLim",
+      "mathlib:Real.zero_at_infty_fourier"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "jump",
+       "kind": "computation",
+       "statement": "g = 1_{u≥0}, c > 0, u₀ = 0: the limit is 1/2, not g(0) = 1."
+      }
+     ]
+    },
+    {
+     "id": "7.3b",
+     "kind": "theorem",
+     "name": "tendsto_truncated_mellinInv",
+     "statement": "Let f : ℝ → ℂ, σ ∈ ℝ, MellinConvergent f σ, x₀ > 0, and f of bounded variation on a neighbourhood of x₀. Then (2π)⁻¹∫_{−T}^{T} x₀^{−(σ+iy)} mellin f (σ+iy) dy → (f(x₀⁻) + f(x₀⁺))/2 as T → ∞.",
+     "hypotheses": [
+      "MellinConvergent f σ",
+      "0 < x₀",
+      "f of bounded variation on Icc (x₀ − δ) (x₀ + δ), 0 < δ < x₀"
+     ],
+     "locator": {
+      "source": "montgomeryvaughan2007",
+      "where": "Chapter 5, §5.1"
+     },
+     "prerequisites": [
+      "target:7.3a",
+      "mathlib:mellin_eq_fourier",
+      "mathlib:MellinConvergent"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "perron",
+       "kind": "compatibility",
+       "statement": "f = 1_(0,1], x₀ = 1: the truncated integral is TauCeti.truncatedPerronKernel 1 σ T = π⁻¹ arctan(T/σ) → 1/2."
+      }
+     ]
+    },
+    {
+     "id": "7.3c",
+     "kind": "theorem",
+     "name": "norm_dirichletKernel_conv_sub_mean_le",
+     "statement": "There is an absolute C such that for h : ℝ → ℂ integrable and of bounded variation on ℝ with total variation V, and all u₀, δ > 0, T > 0: |∫ h(u₀−v) sin(Tv)/(πv) dv − (h(u₀⁻)+h(u₀⁺))/2| ≤ C (V⁺_δ + V⁻_δ + V/(Tδ)), V⁺_δ = variation on Ioc u₀ (u₀+δ), V⁻_δ on Ico (u₀−δ) u₀.",
+     "hypotheses": [
+      "Integrable h",
+      "BoundedVariationOn h univ",
+      "0 < δ",
+      "0 < T"
+     ],
+     "locator": {
+      "source": "montgomeryvaughan2007",
+      "where": "Chapter 5, §5.1"
+     },
+     "prerequisites": [
+      "target:7.1a",
+      "target:7.2"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "tail_counterexample",
+       "kind": "non-example",
+       "statement": "h(u₀−v) = sin(T₀v)1_[δ,2δ](v): at T = T₀ the tail tends to (log 2)/(2π) ≈ 0.110 while ‖h‖₁/(T₀δ) → 0, so a bound by ‖h‖₁/(Tδ) is false and global bounded variation is needed."
+      },
+      {
+       "name": "perron_rate",
+       "kind": "compatibility",
+       "statement": "h = e^{−σu}1_{u≥0}, u₀ = 0: V = 2, V⁺_δ = 1 − e^{−σδ}, V⁻_δ = 0, true error π⁻¹ arctan(σ/T) ≤ C(σδ + 2/(Tδ))."
+      }
+     ]
+    },
+    {
+     "id": "7.3d",
+     "kind": "example",
+     "name": "truncatedPerron_instance",
+     "statement": "For f = 1_(0,1] and σ > 0 the truncated inverse Mellin integral at x₀ = 1/x is TauCeti.truncatedPerronKernel x σ T, and at x = 1 it equals π⁻¹ arctan(T/σ), tending to 1/2.",
+     "hypotheses": [
+      "σ > 0",
+      "T > 0"
+     ],
+     "locator": {
+      "source": "montgomeryvaughan2007",
+      "where": "Chapter 5, §5.1"
+     },
+     "prerequisites": [
+      "target:7.3b",
+      "mathlib:hasMellin_one_Ioc",
+      "tauceti:TauCeti.truncatedPerronKernel_one",
+      "roadmap:ArithmeticDirichletSeries §6.3"
+     ],
+     "api": [],
+     "tests": []
+    }
+   ]
+  },
+  {
+   "key": "8",
+   "title": "Contours and discs",
+   "targets": [
+    {
+     "id": "8.1a",
+     "kind": "theorem",
+     "name": "rectangle_boundary_integral_eq_residues",
+     "statement": "For σ₁<σ₂, t₁<t₂, U open containing [σ₁,σ₂]×ℂ[t₁,t₂], P finite in the open rectangle, f differentiable on U∖P and meromorphic at each p ∈ P: ∫_{σ₁}^{σ₂} f(x+it₁)dx − ∫_{σ₁}^{σ₂} f(x+it₂)dx + i∫_{t₁}^{t₂} f(σ₂+iy)dy − i∫_{t₁}^{t₂} f(σ₁+iy)dy = 2πi Σ_{p∈P} TauCeti.Contour.residue f p.",
+     "hypotheses": [
+      "σ₁ < σ₂",
+      "t₁ < t₂",
+      "IsOpen U",
+      "rectangle ⊆ U",
+      "P ⊆ open rectangle, finite",
+      "DifferentiableOn ℂ f (U \\ P)",
+      "∀ p ∈ P, MeromorphicAt f p"
+     ],
+     "locator": {
+      "source": "kontorovichtao-pntplus",
+      "where": "lines 621–642, Theorem 4.1.2, Lemmas 4.1.2–4.1.4"
+     },
+     "prerequisites": [
+      "roadmap:ZerosOfLFunctions §7.1",
+      "tauceti:TauCeti.Contour.classicalResidueTheorem_nullHomologous",
+      "tauceti:TauCeti.Contour.residue",
+      "mathlib:Complex.integral_boundary_rect_eq_zero_of_differentiableOn",
+      "roadmap:ContourIntegration Layer 4"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "inv",
+       "kind": "computation",
+       "statement": "f = 1/s on [−1,1]×[−1,1]: 2πi; the clockwise convention gives −2πi."
+      },
+      {
+       "name": "outside",
+       "kind": "non-example",
+       "statement": "f = 1/(s−2) with P = ∅: 0; a sum over all poles of f would be wrong."
+      },
+      {
+       "name": "double",
+       "kind": "computation",
+       "statement": "f = 1/s²: residue 0 and the expression is 0."
+      }
+     ]
+    },
+    {
+     "id": "8.1b",
+     "kind": "theorem",
+     "name": "verticalIntegral_eq_U_contour_add_residues",
+     "statement": "Under 8.1a with t₁ = −T, t₂ = T and y ↦ f(σ₂+iy) integrable on ℝ: ∫_ℝ f(σ₂+iy)dy equals the tails over |y|>T on Re s = σ₂, plus ∫_{−T}^{T} f(σ₁+iy)dy, plus (∫_{σ₁}^{σ₂} f(x+iT)dx − ∫_{σ₁}^{σ₂} f(x−iT)dx)/i (top minus bottom, over i), plus 2π Σ_{p∈P} Res_p f.",
+     "hypotheses": [
+      "hypotheses of 8.1a",
+      "Integrable (fun y ↦ f (σ₂ + y * I))"
+     ],
+     "locator": {
+      "source": "kontorovichtao-pntplus",
+      "where": "lines 596–613, Definitions 4.1.3–4.1.5, Lemma 4.1.1"
+     },
+     "prerequisites": [
+      "target:8.1a"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "horizontal_sign",
+       "kind": "convention",
+       "statement": "f = 1/s, σ₁ = −1, σ₂ = 1, T = 1 (finite-height identity): right π/2, left −π/2, bottom iπ/2, top −iπ/2, residue 1; π/2 = −π/2 + X + 2π forces X = −π = (top − bottom)/i; the clockwise model gives +π."
+      }
+     ]
+    },
+    {
+     "id": "8.2a",
+     "kind": "theorem",
+     "name": "caratheodory_coeff_le",
+     "statement": "If f is holomorphic on |z−z₀| < R with Re f ≤ M there and f(z) = Σ a_n (z−z₀)^n, then |a_n| Rⁿ ≤ 2(M − Re a₀) for n ≥ 1.",
+     "hypotheses": [
+      "DifferentiableOn ℂ f (ball z₀ R)",
+      "∀ z ∈ ball z₀ R, (f z).re ≤ M",
+      "1 ≤ n"
+     ],
+     "locator": {
+      "source": "montgomeryvaughan2007",
+      "where": "Chapter 6, §6.1"
+     },
+     "prerequisites": [
+      "mathlib:circleIntegral",
+      "mathlib:HasFPowerSeriesOnBall"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "extremal",
+       "kind": "computation",
+       "statement": "f(z) = −2M(z−z₀)/(R−(z−z₀)): a_n = −2M/Rⁿ, so |a_n|Rⁿ = 2M = 2(M − Re a₀)."
+      }
+     ]
+    },
+    {
+     "id": "8.2b",
+     "kind": "theorem",
+     "name": "norm_iteratedDeriv_le_borelCaratheodory",
+     "statement": "Under 8.2a, for k ≥ 1 and |z−z₀| ≤ r < R: ‖f^{(k)}(z)‖ ≤ 2·k!·R·(M − Re f(z₀))/(R−r)^{k+1}.",
+     "hypotheses": [
+      "hypotheses of 8.2a",
+      "1 ≤ k",
+      "0 ≤ r < R",
+      "‖z − z₀‖ ≤ r"
+     ],
+     "locator": {
+      "source": "kontorovichtao-pntplus",
+      "where": "lines 1751–1758, Theorem 5.3.2 (weaker form 16MR²/(R−r)³, k = 1)"
+     },
+     "prerequisites": [
+      "target:8.2a",
+      "mathlib:Complex.borelCaratheodory"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "equality",
+       "kind": "computation",
+       "statement": "the extremal of 8.2a attains the bound at z = z₀ + r for every k."
+      },
+      {
+       "name": "k_zero",
+       "kind": "non-example",
+       "statement": "k = 0: f ≡ i, M = 0 would give |f| ≤ 0."
+      },
+      {
+       "name": "source",
+       "kind": "compatibility",
+       "statement": "k = 1, f(z₀) = 0, r = R/2: 8M/R ≤ 128M/R, the source's bound."
+      }
+     ]
+    },
+    {
+     "id": "8.3",
+     "kind": "theorem",
+     "name": "logDeriv_sub_sum_zeros_le",
+     "statement": "Fix 0 < r₁ < r₂ < R. There is C = C(r₁/R, r₂/R) such that if f is holomorphic near |z−z₀| ≤ R, f(z₀) ≠ 0, |f| ≤ e^M|f(z₀)| on that disc, then for |z−z₀| ≤ r₁ with f(z) ≠ 0: |f′(z)/f(z) − Σ_{|ρ−z₀|≤r₂, f(ρ)=0} m_ρ/(z−ρ)| ≤ C M/R.",
+     "hypotheses": [
+      "0 < r₁ < r₂ < R",
+      "AnalyticOnNhd ℂ f (closedBall z₀ R)",
+      "f z₀ ≠ 0",
+      "∀ z ∈ closedBall z₀ R, ‖f z‖ ≤ exp M * ‖f z₀‖",
+      "‖z − z₀‖ ≤ r₁",
+      "f z ≠ 0"
+     ],
+     "locator": {
+      "source": "kontorovichtao-pntplus",
+      "where": "lines 1971–1977, Theorem 5.3.7"
+     },
+     "prerequisites": [
+      "target:8.2b",
+      "roadmap:ZerosOfLFunctions §4.3",
+      "mathlib:AnalyticOnNhd.sum_divisor_le"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "linear",
+       "kind": "computation",
+       "statement": "f = z − ρ with |ρ−z₀| ≤ r₂: both sides 0."
+      },
+      {
+       "name": "needs_zero_sum",
+       "kind": "non-example",
+       "statement": "f = z − z₀ − ε: f′/f(z₀+2ε) = 1/ε while CM/R = C log((R+ε)/ε)/R."
+      },
+      {
+       "name": "constant",
+       "kind": "degenerate",
+       "statement": "M = 0 forces f constant: both sides 0."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "key": "9",
+   "title": "Mellin smoothing",
+   "targets": [
+    {
+     "id": "9.1",
+     "kind": "definition",
+     "name": "mellinConv",
+     "statement": "mellinConv f g x = ∫_{(0,∞)} f(y) g(x/y) dy/y for f g : ℝ → ℂ, x : ℝ.",
+     "hypotheses": [],
+     "locator": {
+      "source": "kontorovichtao-pntplus",
+      "where": "lines 893–898, Definition 4.3.1"
+     },
+     "prerequisites": [
+      "mathlib:MeasureTheory.integral",
+      "mathlib:mellin"
+     ],
+     "api": [
+      {
+       "name": "mellinConv_comm",
+       "role": "symmetry",
+       "statement": "For x > 0, mellinConv f g x = mellinConv g f x, with no integrability hypothesis."
+      },
+      {
+       "name": "mellin_mellinConv",
+       "role": "transform",
+       "statement": "If (x,y) ↦ f(y)g(x/y)x^{s−1}/y is integrable on (0,∞)², mellin (mellinConv f g) s = mellin f s * mellin g s."
+      },
+      {
+       "name": "mellinConv_add",
+       "role": "linearity",
+       "statement": "Additivity in each argument where the integrals converge."
+      },
+      {
+       "name": "mellinConv_support",
+       "role": "support",
+       "statement": "If f vanishes off [a,b], g off [c,d], 0 < a, c, then mellinConv f g vanishes on (0,∞) off [ac, bd]."
+      }
+     ],
+     "tests": [
+      {
+       "name": "indicators",
+       "kind": "computation",
+       "statement": "mellinConv 1_(0,1] 1_(0,1] x = log(1/x) on (0,1], 0 on (1,∞); its transform is 1/s²; the additive convolution is the tent on (0,2)."
+      },
+      {
+       "name": "at_zero",
+       "kind": "degenerate",
+       "statement": "f = 1_[0,1], g = 1_[1,2]: mellinConv g f 0 = log 2 but mellinConv f g 0 = 0, so commutativity needs x > 0."
+      },
+      {
+       "name": "support",
+       "kind": "non-example",
+       "statement": "mellinConv 1_[1,2] 1_[1,2] has support [1,4] with value log 2 at 2, not the additive support [2,4]."
+      }
+     ]
+    },
+    {
+     "id": "9.2",
+     "kind": "theorem",
+     "name": "mellin_bump_bounds",
+     "statement": "Let ν : ℝ → ℂ be C^k, k ≥ 1, supported in [a,b], 0 < a ≤ b. Then mellin ν is entire, |mellin ν s| ≤ C(1+|s|)^{−k} on each strip σ₁ ≤ Re s ≤ σ₂, and mellin ν 0 = ∫ ν(x)/x dx.",
+     "hypotheses": [
+      "ContDiff ℝ k ν",
+      "1 ≤ k",
+      "support ν ⊆ Icc a b",
+      "0 < a"
+     ],
+     "locator": {
+      "source": "kontorovichtao-pntplus",
+      "where": "lines 947–962, Theorem 4.3.2"
+     },
+     "prerequisites": [
+      "mathlib:mellin_differentiableAt_of_isBigO_rpow",
+      "mathlib:mellin"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "mass",
+       "kind": "computation",
+       "statement": "ν = (x−1)²(2−x)² on [1,2]: mellin ν 0 = 4 log 2 − 11/4 ≈ 0.0226 while ∫ν = 1/30."
+      },
+      {
+       "name": "support_zero",
+       "kind": "non-example",
+       "statement": "ν = max(0,1−x)²: mellin ν s = 2/(s(s+1)(s+2)), not entire."
+      },
+      {
+       "name": "sign",
+       "kind": "computation",
+       "statement": "mellin ν 1 = −mellin ν′ 2 = 1/30 for the bump above."
+      }
+     ]
+    },
+    {
+     "id": "9.3",
+     "kind": "definition",
+     "name": "deltaSpike",
+     "statement": "deltaSpike ν ε x = ε⁻¹ ν(x^{1/ε}) for x > 0 and 0 for x ≤ 0.",
+     "hypotheses": [],
+     "locator": {
+      "source": "kontorovichtao-pntplus",
+      "where": "lines 964–966, Definition 4.3.2"
+     },
+     "prerequisites": [
+      "mathlib:Real.rpow"
+     ],
+     "api": [
+      {
+       "name": "deltaSpike_support",
+       "role": "support",
+       "statement": "Under the bump hypotheses, support ⊆ [2^{−ε}, 2^ε] and deltaSpike ≥ 0."
+      },
+      {
+       "name": "deltaSpike_mass",
+       "role": "mass",
+       "statement": "∫_{(0,∞)} deltaSpike ν ε x / x dx = 1."
+      },
+      {
+       "name": "mellin_deltaSpike",
+       "role": "transform",
+       "statement": "mellin (deltaSpike ν ε) s = mellin ν (ε s)."
+      },
+      {
+       "name": "mellin_deltaSpike_one",
+       "role": "asymptotic",
+       "statement": "|mellin ν ε − 1| ≤ C ε for 0 < ε ≤ 1."
+      },
+      {
+       "name": "tendsto_mellinConv_deltaSpike",
+       "role": "approximate identity",
+       "statement": "For f locally integrable on (0,∞), continuous at x > 0: mellinConv (deltaSpike ν ε) f x → f x as ε → 0⁺, locally uniformly for continuous f."
+      }
+     ],
+     "tests": [
+      {
+       "name": "eps_one",
+       "kind": "computation",
+       "statement": "ε = 1 gives ν on (0,∞); without ε⁻¹ the mass would be ε."
+      },
+      {
+       "name": "support_half",
+       "kind": "computation",
+       "statement": "ε = 1/2: support in [2^{−1/2}, 2^{1/2}], not [1/4, 4]."
+      },
+      {
+       "name": "negative",
+       "kind": "degenerate",
+       "statement": "deltaSpike ν ε (−1) = 0, avoiding Mathlib's junk value of (−1)^{1/ε}."
+      }
+     ]
+    },
+    {
+     "id": "9.4",
+     "kind": "definition",
+     "name": "smoothCutoff",
+     "statement": "smoothCutoff ν ε x = mellinConv 1_(0,1] (deltaSpike ν ε) x for x > 0 and 0 for x ≤ 0; for x > 0 it equals ∫_x^∞ ν_ε(z) dz/z.",
+     "hypotheses": [],
+     "locator": {
+      "source": "kontorovichtao-pntplus",
+      "where": "lines 1015–1017, Definition 4.3.3"
+     },
+     "prerequisites": [
+      "target:9.1",
+      "target:9.3"
+     ],
+     "api": [
+      {
+       "name": "smoothCutoff_mem_Icc",
+       "role": "bounds",
+       "statement": "0 ≤ smoothCutoff ν ε x ≤ 1."
+      },
+      {
+       "name": "smoothCutoff_eq_one",
+       "role": "plateau",
+       "statement": "= 1 for 0 < x ≤ 2^{−ε}."
+      },
+      {
+       "name": "smoothCutoff_eq_zero",
+       "role": "vanishing",
+       "statement": "= 0 for x ≥ 2^ε."
+      },
+      {
+       "name": "mellin_smoothCutoff",
+       "role": "transform",
+       "statement": "For Re s > 0, mellin (smoothCutoff ν ε) s = mellin ν (ε s)/s."
+      },
+      {
+       "name": "norm_mellin_smoothCutoff_le",
+       "role": "decay",
+       "statement": "For ν C^k, k ≥ 1, 0 < σ₁ ≤ Re s ≤ σ₂, 0 < ε ≤ 1: ‖mellin (smoothCutoff ν ε) s‖ ≤ C_k/(|s|(1+ε|s|)^k)."
+      },
+      {
+       "name": "mellin_smoothCutoff_one",
+       "role": "asymptotic",
+       "statement": "|mellin (smoothCutoff ν ε) 1 − 1| ≤ C ε."
+      }
+     ],
+     "tests": [
+      {
+       "name": "half",
+       "kind": "computation",
+       "statement": "for ν(1/x) = ν(x), smoothCutoff ν ε 1 = 1/2."
+      },
+      {
+       "name": "zero",
+       "kind": "degenerate",
+       "statement": "smoothCutoff ν ε 0 = 0, so the n = 0 term of a smoothed sum vanishes."
+      },
+      {
+       "name": "limit",
+       "kind": "compatibility",
+       "statement": "as ε → 0⁺, mellin ν(εs)/s → 1/s = mellin 1_(0,1] s; the normalization mellin ν(s/ε)/s would tend to 0."
+      },
+      {
+       "name": "uniform",
+       "kind": "computation",
+       "statement": "k = 1, s = 1+iT: the bound is ≍ 1/T for T ≤ 1/ε and ≍ 1/(εT²) beyond."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "key": "10",
+   "title": "From a zero-free region to an error term",
+   "targets": [
+    {
+     "id": "10.1a",
+     "kind": "theorem",
+     "name": "smoothedSum_eq_mellinInv",
+     "statement": "Let a : ℕ → ℂ with LSeriesSummable a σ' for all σ' > 1, ν a C^k bump (k ≥ 1) with the standing hypotheses, 0 < ε ≤ 1, X > 0, σ > 1. Then Σ_{n≥1} a n · smoothCutoff ν ε (n/X) = mellinInv σ (fun s ↦ LSeries a s · mellin (smoothCutoff ν ε) s) X⁻¹.",
+     "hypotheses": [
+      "∀ σ' > 1, LSeriesSummable a σ'",
+      "ContDiff ℝ k ν, 1 ≤ k",
+      "0 ≤ ν, support ν ⊆ Icc (1/2) 2, ∫ ν x / x = 1",
+      "0 < ε ≤ 1",
+      "0 < X",
+      "1 < σ"
+     ],
+     "locator": {
+      "source": "kontorovichtao-pntplus",
+      "where": "lines 1463–1498, Definition 4.5.2, Theorem 4.5.2"
+     },
+     "prerequisites": [
+      "target:9.4",
+      "mathlib:mellinInv_mellin_eq",
+      "mathlib:LSeries"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "delta",
+       "kind": "computation",
+       "statement": "a = δ₁: both sides equal smoothCutoff ν ε (1/X)."
+      }
+     ]
+    },
+    {
+     "id": "10.1b",
+     "kind": "theorem",
+     "name": "norm_sum_sub_smoothedSum_le",
+     "statement": "If moreover |a n| ≤ B log(n+1) for n ≥ 1, there is an absolute C with |Σ_{n≤X} a n − Σ_{n≥1} a n smoothCutoff ν ε (n/X)| ≤ C B (εX + 1) log X for X ≥ 2, 0 < ε ≤ 1.",
+     "hypotheses": [
+      "∀ n ≥ 1, ‖a n‖ ≤ B * log (n+1)",
+      "2 ≤ X",
+      "0 < ε ≤ 1"
+     ],
+     "locator": {
+      "source": "kontorovichtao-pntplus",
+      "where": "lines 1502–1506, Theorem 4.5.3"
+     },
+     "prerequisites": [
+      "target:9.4"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "plus_one",
+       "kind": "non-example",
+       "statement": "a ≡ 1, X = 2, symmetric ν, ε ≤ log₂(3/2): the difference is 1/2 while CBεX log X = 2Cε → 0; the +1 term is needed."
+      }
+     ]
+    },
+    {
+     "id": "10.2a",
+     "kind": "definition",
+     "name": "inghamExponent",
+     "statement": "inghamExponent η x = ⨅ t ≥ 3, (η t * log x + log t).",
+     "hypotheses": [],
+     "locator": {
+      "source": "platttrudgian2020",
+      "where": "lines 30–32, display (2)"
+     },
+     "prerequisites": [
+      "mathlib:iInf",
+      "mathlib:Real.log"
+     ],
+     "api": [
+      {
+       "name": "inghamExponent_attained",
+       "role": "existence",
+       "statement": "For η continuous on [3,∞) with 0 < η ≤ 1/2, the infimum is attained."
+      },
+      {
+       "name": "inghamExponent_mono",
+       "role": "monotonicity",
+       "statement": "Nondecreasing in x ≥ 1; log 3 ≤ inghamExponent η x ≤ η 3 * log x + log 3."
+      },
+      {
+       "name": "inghamExponent_ge_of_polylog",
+       "role": "lower bound",
+       "statement": "If η t ≥ a₀ (log t)^{−A}, then inghamExponent η x ≥ c₁ (log x)^{1/(1+A)} for x ≥ 3."
+      },
+      {
+       "name": "inghamExponent_mono_width",
+       "role": "comparison",
+       "statement": "η ≤ η' on [3,∞) gives inghamExponent η ≤ inghamExponent η'."
+      }
+     ],
+     "tests": [
+      {
+       "name": "classical",
+       "kind": "computation",
+       "statement": "η = 1/log t, x = e^{100}: the infimum is 20 at log t = 10 (= 2√log x)."
+      },
+      {
+       "name": "constant",
+       "kind": "computation",
+       "statement": "η ≡ η₀: inghamExponent = η₀ log x + log 3."
+      },
+      {
+       "name": "wrong_eval",
+       "kind": "non-example",
+       "statement": "η(x) log x for η = c₀/log t is the constant c₀ and gives no decay; the infimum over t is needed."
+      }
+     ]
+    },
+    {
+     "id": "10.2b",
+     "kind": "theorem",
+     "name": "norm_sum_sub_mul_le_of_zeroFreeRegion",
+     "statement": "Let η be continuous and nonincreasing on [3,∞) with 0 < η ≤ 1/2 and η t ≥ a₀ (log t)^{−A}; a : ℕ → ℂ with |a n| ≤ B log(n+1); r ∈ ℂ; U open containing R_η = {s : 1 − η(|Im s|+3) ≤ Re s}; G holomorphic on U with LSeries a s = G s + r/(s−1) for Re s > 1 and |G s| ≤ C₀ log(|Im s|+3)^{B'} on R_η. Then ∃ c > 0, C', ∀ x ≥ 3, |Σ_{n≤x} a n − r x| ≤ C' x exp(−c · inghamExponent η x).",
+     "hypotheses": [
+      "ContinuousOn η (Ici 3)",
+      "AntitoneOn η (Ici 3)",
+      "∀ t ≥ 3, 0 < η t ∧ η t ≤ 1/2",
+      "∃ a₀ A > 0, ∀ t ≥ 3, a₀ * (log t)^(−A) ≤ η t",
+      "∀ n ≥ 1, ‖a n‖ ≤ B * log (n+1)",
+      "IsOpen U",
+      "R_η ⊆ U",
+      "DifferentiableOn ℂ G U",
+      "∀ s, 1 < s.re → LSeries a s = G s + r/(s−1)",
+      "∀ s ∈ R_η, ‖G s‖ ≤ C₀ * log(|s.im|+3)^B'"
+     ],
+     "locator": {
+      "source": "platttrudgian2020",
+      "where": "lines 21–32, displays (1)–(2)"
+     },
+     "prerequisites": [
+      "target:8.1b",
+      "target:9.4",
+      "target:10.1a",
+      "target:10.1b",
+      "target:10.2a"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "classical",
+       "kind": "compatibility",
+       "statement": "η = c/log t with 10.3 at K = ℚ (AnalyticNumberTheoryPartI §0.33a) gives ψ(x) = x + O(x exp(−c√log x)), ZerosOfLFunctions §8.5."
+      },
+      {
+       "name": "medium",
+       "kind": "compatibility",
+       "statement": "η = A₀/log⁹ t gives exp(−c(log x)^{1/10}), kontorovichtao-pntplus line 1684."
+      },
+      {
+       "name": "mobius",
+       "kind": "computation",
+       "statement": "a = μ, r = 0, G = 1/ζ: M(x) = O(x exp(−c√log x))."
+      },
+      {
+       "name": "constant_width",
+       "kind": "computation",
+       "statement": "η ≡ η₀: power saving x^{1−cη₀}."
+      },
+      {
+       "name": "steep_width",
+       "kind": "non-example",
+       "statement": "η = 1/2 on [3,T₀], linear to 1/log²(T₀+3) on [T₀,T₀+3], 1/log² t beyond (a₀ = 1/2, A = 2), log x = 2 log T₀: choosing T by log T = η(T) log x gives T = T₀ and left-edge saving exp(−2 log T₀/log²(T₀+3)) → 1 although inghamExponent η x ≥ log T₀; the route chooses T by log T = η(T+3) log x and saves 1/T."
+      }
+     ]
+    },
+    {
+     "id": "10.3",
+     "kind": "theorem",
+     "name": "logDeriv_heckeLFunctionC_le",
+     "statement": "For a number field K, a modulus 𝔪, a finite-order χ : RayClassCharacter 𝔪, L = TauCeti.LFunctions.heckeLFunctionC χ and δ_χ = [χ = 1]: there are c > 0, C, an open set containing R_c = {s : 1 − c/log(|Im s|+3) ≤ Re s} and G holomorphic on it with L s ≠ 0 on R_c ∖ {1}, −L′/L(s) = G(s) + δ_χ/(s−1) on R_c ∖ {1} and |G s| ≤ C log(|Im s|+3) on R_c.",
+     "hypotheses": [
+      "K a number field",
+      "χ of finite order"
+     ],
+     "locator": {
+      "source": "montgomeryvaughan2007",
+      "where": "Chapter 6, §6.1"
+     },
+     "prerequisites": [
+      "target:8.3",
+      "roadmap:ZerosOfLFunctions §3.4",
+      "roadmap:ZerosOfLFunctions §6.2",
+      "roadmap:ZerosOfLFunctions §6.3",
+      "roadmap:ZerosOfLFunctions §6.4",
+      "roadmap:ZerosOfLFunctions §6.5",
+      "roadmap:LFunctions Layer 3",
+      "roadmap:LFunctions Layer 5",
+      "roadmap:LFunctions Layer 7",
+      "tauceti:TauCeti.LFunctions.heckeLFunctionC",
+      "tauceti:TauCeti.LFunctions.heckeLFunctionC_eq_primitive"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "zeta",
+       "kind": "compatibility",
+       "statement": "K = ℚ, χ = 1 is AnalyticNumberTheoryPartI §0.33a: with c = β, R_c lies in the open half-plane right of Part I's curve (log(|t|+3) > log(|t|+2)), G = −ζ′/ζ − 1/(s−1) extended across 1, |G| ≤ C log(|t|+2) ≤ C log(|t|+3), δ_χ = 1; §0.33's strip bounds multiplied give only log³."
+      },
+      {
+       "name": "residue_sign",
+       "kind": "computation",
+       "statement": "−ζ′/ζ has residue +1 at 1, so δ_χ = 1, not the residue of ζ_K (the class number formula)."
+      },
+      {
+       "name": "imprimitive",
+       "kind": "computation",
+       "statement": "trivial character mod 2: L = (1−2^{−s})ζ, zeros only on Re s = 0; G differs by (log 2)2^{−s}/(1−2^{−s})."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "key": "11",
+   "title": "Dirichlet series of the classical arithmetic functions",
+   "targets": [
+    {
+     "id": "11.1",
+     "kind": "definition",
+     "name": "IsCompletelyMultiplicative",
+     "statement": "For R a monoid with zero and f : ArithmeticFunction R: f 1 = 1 ∧ ∀ m n, f (m * n) = f m * f n.",
+     "hypotheses": [],
+     "locator": {
+      "source": "kontorovichtao-pntplus",
+      "where": "lines 3590–3604, Definition 9.1.8, Theorems 9.1.66–9.1.67"
+     },
+     "prerequisites": [
+      "mathlib:ArithmeticFunction",
+      "mathlib:ArithmeticFunction.IsMultiplicative"
+     ],
+     "api": [
+      {
+       "name": "IsCompletelyMultiplicative.isMultiplicative",
+       "role": "implication",
+       "statement": "It implies ArithmeticFunction.IsMultiplicative."
+      },
+      {
+       "name": "isCompletelyMultiplicative_iff_exists_monoidWithZeroHom",
+       "role": "equivalence",
+       "statement": "f is completely multiplicative iff f is the coercion of a unique ℕ →*₀ R."
+      },
+      {
+       "name": "IsCompletelyMultiplicative.pmul",
+       "role": "closure",
+       "statement": "Closed under pointwise product for commutative R."
+      },
+      {
+       "name": "isCompletelyMultiplicative_liouville",
+       "role": "instance",
+       "statement": "Holds for liouville, Dirichlet characters and n ↦ n^ν."
+      },
+      {
+       "name": "IsCompletelyMultiplicative.pmul_mul",
+       "role": "distributivity",
+       "statement": "f · (g ⋆ h) = (f · g) ⋆ (f · h) for commutative semirings."
+      },
+      {
+       "name": "IsCompletelyMultiplicative.inv_eq",
+       "role": "inverse",
+       "statement": "The Dirichlet inverse of f is μ · f for commutative rings."
+      },
+      {
+       "name": "IsCompletelyMultiplicative.eulerProduct",
+       "role": "Euler product",
+       "statement": "For summable ‖f‖ in a complete normed field, ∏_p (1 − f p)⁻¹ = Σ f n, from EulerProduct.eulerProduct_completely_multiplicative_tprod."
+      }
+     ],
+     "tests": [
+      {
+       "name": "liouville",
+       "kind": "computation",
+       "statement": "λ(4) = 1 = λ(2)², λ(12) = −1 = λ(4)λ(3)."
+      },
+      {
+       "name": "moebius",
+       "kind": "non-example",
+       "statement": "μ(4) = 0 ≠ μ(2)² = 1: multiplicative but not completely multiplicative."
+      },
+      {
+       "name": "zero_fun",
+       "kind": "degenerate",
+       "statement": "without f 1 = 1 the zero function qualifies but is no ℕ →*₀ R for nontrivial R."
+      },
+      {
+       "name": "inverse",
+       "kind": "computation",
+       "statement": "λ ⋆ μ² at 4: 0 − 1 + 1 = 0."
+      },
+      {
+       "name": "infinitely_many_zero_primes",
+       "kind": "boundary",
+       "statement": "the indicator of integers with all prime factors ≡ 1 mod 4 is completely multiplicative and vanishes at 2 and every prime ≡ 3 mod 4; a finite-bad-set carrier (ArithmeticDirichletSeries §0.2) would exclude it."
+      }
+     ]
+    },
+    {
+     "id": "11.2a",
+     "kind": "definition",
+     "name": "sigmaC",
+     "statement": "sigmaC ν : ArithmeticFunction ℂ, sigmaC ν n = Σ_{d ∣ n} (d : ℂ)^ν.",
+     "hypotheses": [],
+     "locator": {
+      "source": "kontorovichtao-pntplus",
+      "where": "lines 3215–3297, Definitions 9.1.4–9.1.5, Theorems 9.1.16–9.1.29"
+     },
+     "prerequisites": [
+      "mathlib:ArithmeticFunction.sigma",
+      "mathlib:Nat.divisors"
+     ],
+     "api": [
+      {
+       "name": "sigmaC_natCast",
+       "role": "agreement",
+       "statement": "sigmaC (k : ℂ) n = (ArithmeticFunction.sigma k n : ℂ) for k : ℕ."
+      },
+      {
+       "name": "sigmaC_eq_zeta_mul_pow",
+       "role": "convolution",
+       "statement": "sigmaC ν = ζ ⋆ (n ↦ n^ν)."
+      },
+      {
+       "name": "isMultiplicative_sigmaC",
+       "role": "multiplicativity",
+       "statement": "sigmaC ν is multiplicative with sigmaC ν (p^a) = Σ_{j≤a} p^{jν}."
+      },
+      {
+       "name": "sigmaC_reflect",
+       "role": "reflection",
+       "statement": "sigmaC ν n = n^ν · sigmaC (−ν) n for n ≥ 1."
+      },
+      {
+       "name": "LSeries_sigmaC",
+       "role": "Dirichlet series",
+       "statement": "LSeries (sigmaC ν) s = ζ(s) ζ(s−ν) for Re s > max(1, 1 + Re ν)."
+      },
+      {
+       "name": "abscissaOfAbsConv_sigmaC",
+       "role": "abscissa",
+       "statement": "abscissaOfAbsConv (sigmaC ν) = max(1, 1 + Re ν)."
+      }
+     ],
+     "tests": [
+      {
+       "name": "sigma_one",
+       "kind": "computation",
+       "statement": "sigmaC 1 6 = 12 = σ₁(6); sigmaC (−1) 6 = 2."
+      },
+      {
+       "name": "half",
+       "kind": "computation",
+       "statement": "sigmaC (1/2) 4 = 3 + √2."
+      },
+      {
+       "name": "abscissa",
+       "kind": "non-example",
+       "statement": "ν = −2: abscissa 1, not 1 + Re ν = −1, since σ_{−2}(p) ≥ 1."
+      }
+     ]
+    },
+    {
+     "id": "11.2b",
+     "kind": "definition",
+     "name": "generalizedDivisor",
+     "statement": "generalizedDivisor z : ArithmeticFunction ℂ is the multiplicative function with value Ring.multichoose z a at p^a: generalizedDivisor z n = ∏_{p^a ∥ n} Ring.multichoose z a for n ≥ 1, 0 at 0.",
+     "hypotheses": [],
+     "locator": {
+      "source": "tenenbaum2015",
+      "where": "Chapter II.5"
+     },
+     "prerequisites": [
+      "mathlib:Ring.multichoose",
+      "mathlib:Nat.factorization",
+      "mathlib:ArithmeticFunction.zeta"
+     ],
+     "api": [
+      {
+       "name": "isMultiplicative_generalizedDivisor",
+       "role": "multiplicativity",
+       "statement": "generalizedDivisor z is multiplicative."
+      },
+      {
+       "name": "generalizedDivisor_natCast",
+       "role": "agreement",
+       "statement": "generalizedDivisor (k : ℂ) = ↑(ζ ^ k) for k : ℕ; z = 0, 1, −1 give 1, ζ, μ."
+      },
+      {
+       "name": "generalizedDivisor_add",
+       "role": "convolution",
+       "statement": "generalizedDivisor z ⋆ generalizedDivisor w = generalizedDivisor (z + w)."
+      },
+      {
+       "name": "norm_generalizedDivisor_le",
+       "role": "bound",
+       "statement": "‖generalizedDivisor z n‖ ≤ generalizedDivisor ‖z‖ n ≤ (ζ ^ ⌈‖z‖⌉) n."
+      },
+      {
+       "name": "LSeries_generalizedDivisor",
+       "role": "Dirichlet series",
+       "statement": "For Re s > 1, LSeries (generalizedDivisor z) s = exp(z · LSeries (Λ/log) s)."
+      },
+      {
+       "name": "abscissaOfAbsConv_generalizedDivisor",
+       "role": "abscissa",
+       "statement": "= 1 for z ≠ 0 and ⊥ for z = 0."
+      }
+     ],
+     "tests": [
+      {
+       "name": "half",
+       "kind": "computation",
+       "statement": "generalizedDivisor (1/2) (p²) = 3/8 and d_{1/2} ⋆ d_{1/2} at p² is 1."
+      },
+      {
+       "name": "ordered",
+       "kind": "compatibility",
+       "statement": "generalizedDivisor 3 4 = 6, the ordered count (unordered would give 2), as in AnalyticNumberTheoryPartI §3.3."
+      },
+      {
+       "name": "branch",
+       "kind": "non-example",
+       "statement": "riemannZeta s ^ (1/2 : ℂ) differs from LSeries d_{1/2} s by a sign where Im log ζ ∉ (−π, π]."
+      },
+      {
+       "name": "zero",
+       "kind": "degenerate",
+       "statement": "z = 0: the series is 1 and the abscissa is ⊥."
+      }
+     ]
+    },
+    {
+     "id": "11.3",
+     "kind": "theorem",
+     "name": "LSeries_sigmaC_mul_sigmaC",
+     "statement": "For α, β ∈ ℂ and Re s > max(1, 1+Re α, 1+Re β, 1+Re(α+β)): Σ σ_α(n)σ_β(n) n^{−s} converges absolutely and equals ζ(s)ζ(s−α)ζ(s−β)ζ(s−α−β)/ζ(2s−α−β); corollary Σ τ(n²) n^{−s} = ζ³/ζ(2s) for Re s > 1. The α = β = 0 case Σ τ(n)² n^{−s} = ζ⁴/ζ(2s) is AnalyticNumberTheoryPartI §3.24a.",
+     "hypotheses": [
+      "max(1, 1+Re α, 1+Re β, 1+Re(α+β)) < Re s"
+     ],
+     "locator": {
+      "source": "kontorovichtao-pntplus",
+      "where": "lines 3324–3329, 3353–3363, 3489–3494, Theorems 9.1.33, 9.1.36, 9.1.50"
+     },
+     "prerequisites": [
+      "target:11.2a",
+      "mathlib:EulerProduct.eulerProduct_tprod",
+      "mathlib:riemannZeta_ne_zero_of_one_le_re"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "tau_sq",
+       "kind": "compatibility",
+       "statement": "α = β = 0 is AnalyticNumberTheoryPartI §3.24a: local factor (1−X)^{−4}(1−X²) = (1+X)/(1−X)³ = Σ (k+1)² X^k; p²-coefficient 10 − 1 = 9 = τ(p²)², 10 without ζ(2s)."
+      },
+      {
+       "name": "tau_n2",
+       "kind": "computation",
+       "statement": "(1−X)^{−3}(1−X²) = 1 + 3X + 5X²: τ(p²) = 3, τ(p⁴) = 5."
+      },
+      {
+       "name": "boundary",
+       "kind": "non-example",
+       "statement": "α = 2, β = 0, s = 3 on the boundary: Σ σ₂(n)τ(n)n^{−3} diverges."
+      }
+     ]
+    },
+    {
+     "id": "11.4",
+     "kind": "theorem",
+     "name": "LSeries_classical",
+     "statement": "For Re s > 1: Σ 2^{ω(n)} n^{−s} = ζ(s)²/ζ(2s), Σ μ(n)² n^{−s} = ζ(s)/ζ(2s), Σ λ(n) n^{−s} = ζ(2s)/ζ(s); for Re s > 2: Σ φ(n) n^{−s} = ζ(s−1)/ζ(s); abscissas 1, 1, 1, 2.",
+     "hypotheses": [
+      "1 < Re s (resp. 2 < Re s for φ)"
+     ],
+     "locator": {
+      "source": "kontorovichtao-pntplus",
+      "where": "lines 3454–3545, 3605–3640, Theorems 9.1.49, 9.1.57, 9.1.68, 9.1.70"
+     },
+     "prerequisites": [
+      "target:11.1",
+      "target:11.2a",
+      "mathlib:ArithmeticFunction.cardDistinctFactors",
+      "mathlib:ArithmeticFunction.moebius",
+      "mathlib:ArithmeticFunction.liouville",
+      "mathlib:Nat.totient"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "factors",
+       "kind": "computation",
+       "statement": "local factors 1 + 2X + 2X² …, 1 + X, 1 − X + X² …, 1 + (p−1)X + (p²−p)X² …."
+      },
+      {
+       "name": "phi_abscissa",
+       "kind": "non-example",
+       "statement": "Σ φ(n) n^{−2} ≥ Σ_p (p−1)/p² = ∞, so Re s > 1 is insufficient for φ."
+      },
+      {
+       "name": "mu_sq",
+       "kind": "computation",
+       "statement": "μ²(12) = μ(1) + μ(2) = 0."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "key": "12",
+   "title": "Cesàro summability",
+   "targets": [
+    {
+     "id": "12.1a",
+     "kind": "theorem",
+     "name": "tendsto_of_cesaro_of_mul_ge",
+     "statement": "Let a : ℕ → ℝ, S N = Σ_{n<N} a n, and N⁻¹ Σ_{i<N} S i → S. If n · a n ≥ −K for all n, then S N → S.",
+     "hypotheses": [
+      "Tendsto (fun N ↦ (N:ℝ)⁻¹ * Σ_{i<N} S i) atTop (𝓝 S)",
+      "∀ n, −K ≤ n * a n"
+     ],
+     "locator": {
+      "source": "estradavindas2012littlewood",
+      "where": "lines 32–35 (the one-sided Hardy–Littlewood theorem for Abel summability, which Cesàro summability implies)"
+     },
+     "prerequisites": [
+      "mathlib:Filter.Tendsto.cesaro"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "grandi",
+       "kind": "non-example",
+       "statement": "a n = (−1)^n: means → 1/2, S N alternates; n a n is unbounded below."
+      },
+      {
+       "name": "divergent_means",
+       "kind": "non-example",
+       "statement": "a n = 1: n a n ≥ 0 but the means diverge."
+      }
+     ]
+    },
+    {
+     "id": "12.1b",
+     "kind": "theorem",
+     "name": "tendsto_of_cesaro_of_norm_mul_le",
+     "statement": "In a real Banach space E: if a : ℕ → E, the Cesàro means of S N = Σ_{n<N} a n converge to S and n ‖a n‖ ≤ K for all n, then S N → S.",
+     "hypotheses": [
+      "E complete normed ℝ-space",
+      "Tendsto Cesàro means to S",
+      "∀ n, n * ‖a n‖ ≤ K"
+     ],
+     "locator": {
+      "source": "hardy1949",
+      "where": "Tauberian theorems for Cesàro means (cited by locator)"
+     },
+     "prerequisites": [
+      "mathlib:Filter.Tendsto.cesaro_smul",
+      "target:12.1a"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "alt_harmonic",
+       "kind": "computation",
+       "statement": "a n = (−1)^n/(n+1): n‖a n‖ ≤ 1 and the series converges to log 2."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "key": "13",
+   "title": "Arithmetic applications",
+   "targets": [
+    {
+     "id": "13.1a",
+     "kind": "definition",
+     "name": "factorialFactorCount",
+     "statement": "factorialFactorCount B n = the least t such that n! = a₁⋯a_t with integers 1 ≤ a_i ≤ B (Nat.find over the nonempty set when B ≥ n).",
+     "hypotheses": [],
+     "locator": {
+      "source": "kontorovichtao-pntplus",
+      "where": "lines 2984–2993, Definitions 8.1.1–8.1.4"
+     },
+     "prerequisites": [
+      "mathlib:Nat.factorial",
+      "mathlib:Nat.find"
+     ],
+     "api": [
+      {
+       "name": "factorialFactorCount_le",
+       "role": "upper",
+       "statement": "factorialFactorCount B n ≤ n for B ≥ n."
+      },
+      {
+       "name": "log_factorial_le",
+       "role": "lower",
+       "statement": "factorialFactorCount B n · log B ≥ log n! for B ≥ 2."
+      },
+      {
+       "name": "factorialFactorCount_antitone",
+       "role": "monotonicity",
+       "statement": "antitone in B."
+      },
+      {
+       "name": "factorialFactorCount_sq_le",
+       "role": "pairing",
+       "statement": "factorialFactorCount (B²) n ≤ ⌈factorialFactorCount B n / 2⌉."
+      }
+     ],
+     "tests": [
+      {
+       "name": "n4_sq",
+       "kind": "computation",
+       "statement": "factorialFactorCount 16 4 = 2."
+      },
+      {
+       "name": "n4",
+       "kind": "computation",
+       "statement": "factorialFactorCount 4 4 = 3."
+      },
+      {
+       "name": "small",
+       "kind": "degenerate",
+       "statement": "factorialFactorCount B 0 = factorialFactorCount B 1 = 0 (empty product)."
+      }
+     ]
+    },
+    {
+     "id": "13.1b",
+     "kind": "theorem",
+     "name": "factorialFactorCount_asymptotic",
+     "statement": "factorialFactorCount (n²) n = n/2 − n/(2 log n) + o(n/log n) and factorialFactorCount n n = n − n/log n + o(n/log n) as n → ∞.",
+     "hypotheses": [],
+     "locator": {
+      "source": "kontorovichtao-pntplus",
+      "where": "lines 3096–3101, Theorems 8.1.1–8.1.2"
+     },
+     "prerequisites": [
+      "target:13.1a",
+      "mathlib:Nat.factorization_factorial",
+      "mathlib:Chebyshev.theta_le_log4_mul_x",
+      "mathlib:Stirling.factorial_isEquivalent_stirling",
+      "mathlib:Stirling.le_factorial_stirling"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "lower_bound",
+       "kind": "compatibility",
+       "statement": "log 24/(2 log 4) ≈ 1.146 forces t ≥ 2 at n = 4, B = 16."
+      },
+      {
+       "name": "wrong_main",
+       "kind": "non-example",
+       "statement": "main term n/2 − n/log n for B = n² contradicts the lower bound log n!/(2 log n) = n/2 − n/(2 log n) + O(1)."
+      }
+     ]
+    },
+    {
+     "id": "13.2a",
+     "kind": "definition",
+     "name": "EvenGoldbachUpTo",
+     "statement": "EvenGoldbachUpTo H : Prop := ∀ n : ℕ, Even n → 4 ≤ n → (n : ℝ) ≤ H → ∃ p q, p.Prime ∧ q.Prime ∧ n = p + q.",
+     "hypotheses": [],
+     "locator": {
+      "source": "oliveiraesilva-herzog-pardi2014",
+      "where": "lines 13–14 (abstract)"
+     },
+     "prerequisites": [
+      "mathlib:Nat.Prime",
+      "mathlib:Even"
+     ],
+     "api": [
+      {
+       "name": "EvenGoldbachUpTo.mono",
+       "role": "monotonicity",
+       "statement": "H ≤ H' and EvenGoldbachUpTo H' give EvenGoldbachUpTo H."
+      },
+      {
+       "name": "EvenGoldbachUpTo.decidable",
+       "role": "finite search",
+       "statement": "decidable for each fixed H by search over n ≤ ⌊H⌋."
+      },
+      {
+       "name": "oddGoldbachUpTo_add_three",
+       "role": "transfer",
+       "statement": "EvenGoldbachUpTo H → OddGoldbachUpTo (H + 3)."
+      }
+     ],
+     "tests": [
+      {
+       "name": "thirty",
+       "kind": "computation",
+       "statement": "EvenGoldbachUpTo 30 (e.g. 30 = 7 + 23)."
+      },
+      {
+       "name": "vacuous",
+       "kind": "degenerate",
+       "statement": "EvenGoldbachUpTo 3 holds vacuously."
+      },
+      {
+       "name": "two",
+       "kind": "non-example",
+       "statement": "starting at n = 2 would be false: 2 is not a sum of two primes."
+      }
+     ]
+    },
+    {
+     "id": "13.2b",
+     "kind": "definition",
+     "name": "OddGoldbachUpTo",
+     "statement": "OddGoldbachUpTo H : Prop := ∀ n : ℕ, Odd n → 7 ≤ n → (n : ℝ) ≤ H → ∃ p q r, p.Prime ∧ q.Prime ∧ r.Prime ∧ n = p + q + r.",
+     "hypotheses": [],
+     "locator": {
+      "source": "helfgottplatt2013",
+      "where": "lines 9–10 (abstract)"
+     },
+     "prerequisites": [
+      "mathlib:Nat.Prime",
+      "mathlib:Odd"
+     ],
+     "api": [
+      {
+       "name": "OddGoldbachUpTo.mono",
+       "role": "monotonicity",
+       "statement": "H ≤ H' and OddGoldbachUpTo H' give OddGoldbachUpTo H."
+      },
+      {
+       "name": "OddGoldbachUpTo.decidable",
+       "role": "finite search",
+       "statement": "decidable for each fixed H."
+      },
+      {
+       "name": "oddGoldbachUpTo_of_primeGaps",
+       "role": "interval transfer",
+       "statement": "EvenGoldbachUpTo H, OddGoldbachUpTo (x₀+4), Δ > 1, x₀(1−1/Δ) ≥ 2 and a prime in every (x(1−1/Δ), x] with x ≥ x₀ give OddGoldbachUpTo ((H−4)Δ + 4)."
+      }
+     ],
+     "tests": [
+      {
+       "name": "thirtythree",
+       "kind": "computation",
+       "statement": "OddGoldbachUpTo 33 (e.g. 33 = 3 + 7 + 23)."
+      },
+      {
+       "name": "vacuous",
+       "kind": "degenerate",
+       "statement": "OddGoldbachUpTo 6 holds vacuously."
+      },
+      {
+       "name": "five",
+       "kind": "non-example",
+       "statement": "starting at 5 would be false: 5 is not a sum of three primes."
+      }
+     ]
+    },
+    {
+     "id": "13.2c",
+     "kind": "theorem",
+     "name": "oddGoldbachUpTo_of_primeGaps",
+     "statement": "If Δ > 1, x₀(1 − 1/Δ) ≥ 2, every interval (x(1−1/Δ), x] with x ≥ x₀ contains a prime, EvenGoldbachUpTo H and OddGoldbachUpTo (x₀ + 4), then OddGoldbachUpTo ((H − 4)Δ + 4).",
+     "hypotheses": [
+      "1 < Δ",
+      "2 ≤ x₀ * (1 − 1/Δ)",
+      "∀ x ≥ x₀, ∃ p prime, x(1−1/Δ) < p ≤ x",
+      "EvenGoldbachUpTo H",
+      "OddGoldbachUpTo (x₀ + 4)"
+     ],
+     "locator": {
+      "source": "helfgottplatt2013",
+      "where": "lines 24–31 (the prime-ladder transfer of Saouter)"
+     },
+     "prerequisites": [
+      "target:13.2a",
+      "target:13.2b"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "bertrand",
+       "kind": "computation",
+       "statement": "Δ = 2, x₀ = 5, H = 30: OddGoldbachUpTo 9 gives OddGoldbachUpTo 56; 55 = 3 + 5 + 47."
+      }
+     ]
+    },
+    {
+     "id": "13.2d",
+     "kind": "example",
+     "name": "goldbach_verifications",
+     "statement": "The named propositions EvenGoldbachUpTo (4·10¹⁸) and OddGoldbachUpTo 8875694145621773516800000000000 are hypotheses of theorems, never proved here; EvenGoldbachUpTo (4·10¹⁸) → OddGoldbachUpTo (4·10¹⁸ + 3).",
+     "hypotheses": [],
+     "locator": {
+      "source": "oliveiraesilva-herzog-pardi2014",
+      "where": "lines 13–14"
+     },
+     "prerequisites": [
+      "target:13.2a",
+      "target:13.2b"
+     ],
+     "api": [],
+     "tests": []
+    }
+   ]
+  }
+ ],
+ "suppliers": [
+  {
+   "roadmap": "ZerosOfLFunctions",
+   "sections": [
+    "§3.4",
+    "§4.3",
+    "§6.2",
+    "§6.3",
+    "§6.4",
+    "§6.5",
+    "§7.1",
+    "§8.5"
+   ],
+   "what": "wide-strip growth, Jensen's bound, zero-free regions with the exceptional zero, the rectangle boundary curve, and the PNT with classical error as a Check"
+  },
+  {
+   "roadmap": "LFunctions",
+   "sections": [
+    "Layer 3",
+    "Layer 5",
+    "Layer 7"
+   ],
+   "what": "continued Dedekind zeta and Hecke L-functions, Euler products, nonvanishing on Re s = 1"
+  },
+  {
+   "roadmap": "ContourIntegration",
+   "sections": [
+    "Layer 2",
+    "Layer 3",
+    "Layer 4"
+   ],
+   "what": "residues and the residue theorem (realized in Tau Ceti)"
+  },
+  {
+   "roadmap": "ArithmeticDirichletSeries",
+   "sections": [
+    "§6.3",
+    "§6.4"
+   ],
+   "what": "truncated Perron kernel and arithmetic Perron formula, as Checks of 7.3"
+  },
+  {
+   "roadmap": "AnalyticNumberTheoryPartI",
+   "sections": [
+    "§0.33a",
+    "§3.3",
+    "§3.4",
+    "§3.24a"
+   ],
+   "what": "§0.33a is the K = ℚ, χ = 1 instance of 10.3 and §3.24a the α = β = 0 instance of 11.3 (Σ τ(n)² n^{−s} = ζ⁴/ζ(2s)), both consumed as Checks and not restated; §§3.3–3.4 d_n as a Check of 11.2"
+  }
+ ],
+ "consumers": [
+  {
+   "roadmap": "ExplicitPrimeCounting",
+   "what": "§2.1 multiplicative mollification of bounded-variation kernels and Mellin bounds: 7.1, 9.1–9.3"
+  },
+  {
+   "roadmap": "ExplicitZetaBounds",
+   "what": "§§6.1, 7.10: 7.3, 8.2, 8.3"
+  },
+  {
+   "roadmap": "ExplicitMultiplicativeFunctions",
+   "what": "§1.9 Borel–Carathéodory and Layer 0 series: 8.2 and Layer 11"
+  },
+  {
+   "roadmap": "ExplicitNumberFields",
+   "what": "Perron and Mellin kernels: 7.3, Layer 9"
+  },
+  {
+   "roadmap": "ArithmeticDirichletSeriesPartII",
+   "what": "§5.1: the Dirichlet series of d_k = ζ^k, k ∈ ℕ, is the z = k case of 11.2, owned here; §5.1 keeps the asymptotic of the partial sums of d_k"
+  }
+ ],
+ "gaps": []
+}
