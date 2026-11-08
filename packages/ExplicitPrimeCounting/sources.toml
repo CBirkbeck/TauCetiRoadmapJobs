@@ -1408,3 +1408,21 @@ status = "certified"
 accessed = "2026-11-08"
 version_note = "arXiv v1"
 cited_for = ["7.5"]
+
+[[source]]
+id = "cully-hugill-johnston-2021"
+authors = "Michaela Cully-Hugill, Daniel R. Johnston"
+title = "On the error term in the explicit formula of Riemann--von Mangoldt"
+year = 2021
+arxiv = "2111.10001v5"
+locator_scheme = "theorem"
+locator = "Theorem 1.2 (lines 83–93), Table 4 (lines 1064–1074), proof of Theorem 1.2 (lines 762–878)"
+url = "https://arxiv.org/abs/2111.10001v5"
+fetched_from = "https://arxiv.org/pdf/2111.10001v5"
+fetched_at = "2026-11-08T07:12:55Z"
+sha256 = "dc51b2ca4bf326dce388a7c1075ad2da88ab499560696ece490b73dc07135315"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-08"
+version_note = "arXiv v5"
+cited_for = ["2.1", "3.1", "3.4"]
