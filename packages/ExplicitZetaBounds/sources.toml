@@ -1675,3 +1675,56 @@ licence_class = "none"
 status = "uncertified"
 version_note = "paywalled; cited by its locator without the text"
 cited_for = ["8.5"]
+
+[[source]]
+id = "chirrehelfgott2025"
+authors = "Andrés Chirre, Harald Andrés Helfgott"
+title = "Optimal bounds for sums of non-negative arithmetic functions"
+year = 2025
+arxiv = "2512.15709v1"
+locator_scheme = "theorem"
+locator = "Proposition 4.1"
+url = "https://arxiv.org/abs/2512.15709v1"
+fetched_from = "https://arxiv.org/pdf/2512.15709v1"
+fetched_at = "2026-11-08T13:10:30Z"
+sha256 = "558f33421d8cbd31c969434c065375836dace5fa7248358542d7691c03138e31"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-08"
+version_note = "arXiv v1"
+cited_for = ["6.3a"]
+
+[[source]]
+id = "fks2023psi"
+authors = "Andrew Fiori, Habiba Kadiri, Joshua Swidinsky"
+title = "Sharper bounds for the Chebyshev function $ψ(x)$"
+year = 2022
+arxiv = "2204.02588v3"
+locator_scheme = "theorem"
+locator = "Theorem 2.7"
+url = "https://arxiv.org/abs/2204.02588v3"
+fetched_from = "https://arxiv.org/pdf/2204.02588v3"
+fetched_at = "2026-11-08T13:10:35Z"
+sha256 = "15eff02042f2c1ab4878d029ce52a0abd6c95d66995b183a2dbc689ce9af49a4"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-08"
+version_note = "arXiv v3"
+cited_for = ["8.3"]
+
+[[source]]
+id = "grahamvaaler1981"
+authors = "S. W. Graham, Jeffrey D. Vaaler"
+title = "A class of extremal functions for the Fourier transform"
+year = 1981
+doi = "10.1090/S0002-9947-1981-0607121-1"
+locator_scheme = "theorem"
+locator = "Theorem 9"
+url = "https://www.ams.org/journals/tran/1981-265-01/S0002-9947-1981-0607121-1/S0002-9947-1981-0607121-1.pdf"
+fetched_from = "https://www.ams.org/journals/tran/1981-265-01/S0002-9947-1981-0607121-1/S0002-9947-1981-0607121-1.pdf"
+fetched_at = "2026-11-08T13:11:37Z"
+sha256 = "4bc0d63e9d85ad69d1b4d1dbac42f14ca5ea45f19841b6f611b54171652e2e29"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-11-08"
+cited_for = ["6.3a"]
