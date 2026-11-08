@@ -368,8 +368,8 @@ Define the pairing `⟨ , ⟩ : V ×_S V' → 𝔾_{a,S}` as the global function
 
 ### 3.2 The transform
 
-Define `FT_ψ = FT_{ψ,!} : D⁺(V, Λ) → D⁺(V', Λ)` as the kernel transform with kernel `ℒ_ψ⟨ , ⟩` and shift `r`, and `FT_{ψ,*}(K) = Rpr'_*(pr^*K ⊗ ℒ_ψ⟨ , ⟩)[r]` with its forget-supports map `FT_{ψ,!} → FT_{ψ,*}`. Prove `FT_ψ(σ_*M) ≅ π'^*M[r]` for `M ∈ D⁺(S, Λ)`, and `FT_{ψ^{−1}} ≅ [−1]^* ∘ FT_ψ`. (LAU87 Définition (1.2.1.1), LAU87 lines 378–382; KL85 (2.1.1)–(2.1.2), KL85 lines 372–377.)
-*Needs:* §§1.1, 3.1; EtaleCohomologyFoundations §0.8.
+Define `FT_ψ = FT_{ψ,!} : D⁺(V, Λ) → D⁺(V', Λ)` as the kernel transform with kernel `ℒ_ψ⟨ , ⟩` and shift `r`, and `FT_{ψ,*}(K) = Rpr'_*(pr^*K ⊗ ℒ_ψ⟨ , ⟩)[r]` with its forget-supports map `FT_{ψ,!} → FT_{ψ,*}` (LAU87 Définition (1.2.1.1), LAU87 lines 378–382; KL85 (2.1.1)–(2.1.2), KL85 lines 372–377). Prove `FT_ψ(σ_*M) ≅ π'^*M[r]` for `M ∈ D⁺(S, Λ)`: `pr^*σ_*M ≅ (σ × id)_*π'^*M` by proper base change, then the projection formula for the closed immersion `σ × id` and the restriction `Λ` of the kernel to `σ(S) ×_S V'` (§3.1); for `M = Λ` this is the case `s = 0` of LAU87 Proposition (1.2.3.1), LAU87 lines 477–480. Prove `FT_{ψ^{−1}} ≅ [−1]^* ∘ FT_ψ`, from `ℒ_{ψ^{−1}}(f) ≅ ℒ_ψ(−f)` (§2.5), `⟨e, −e'⟩ = −⟨e, e'⟩` (§3.1) and base change along the automorphism `[−1]` of `V'`.
+*Needs:* §§1.1, 2.5, 3.1; EtaleCohomologyFoundations §0.8.
 
 **API.**
 - `FT_ψ` is triangulated and commutes with shifts and Tate twists.
@@ -394,13 +394,14 @@ Let `j × 1 : 𝔸¹ ×_{𝔽_p} 𝔸¹ → ℙ¹ ×_{𝔽_p} 𝔸¹` be the inc
 
 ### 3.4 Inversion
 
-Prove: `Rpr_!ℒ_ψ⟨ , ⟩ ≅ σ_*Λ(−r)[−2r]` on `V` (fibres off the zero section vanish by §2.4 and Künneth, and over the zero section `Rπ_!Λ = Λ(−r)[−2r]` by the projective-bundle formula of EtaleCohomologyFoundations §0.9 for `ℙ¹`, localization and Künneth); `FT_ψ(π^*M[r]) ≅ σ'_*M(−r)` for `M ∈ D⁺(S, Λ)` (LAU87 Proposition (1.2.2.2), LAU87 lines 419–432); and construct the inversion isomorphism `ι_K : FT^{V'}_ψ(FT^V_ψ K) ≅ [−1]^*K(−r)`, natural in `K ∈ D⁺(V, Λ)` and compatible with base change, through the cartesian diagram of LAU87 lines 407–417. Hence `FT_ψ` is an equivalence of triangulated categories with quasi-inverse `[−1]^* FT^{V'}_ψ(−)(r)`, equivalently `FT_{ψ^{−1}} ∘ FT_ψ ≅ (−r)` (LAU87 Théorème (1.2.2.1) and Corollaire (1.2.2.3), LAU87 lines 401–434). Prove also `Rπ'_!FT_ψ(K) ≅ σ^*K(−r)[−r]` and `σ'^*FT_ψ(K) ≅ Rπ_!K[r]` (LAU87 Corollaire (1.2.2.5), LAU87 lines 445–449).
-*Needs:* §§3.1–3.3; EtaleCohomologyFoundations §§0.7–0.9, F.2.1, F.2.7; gap:projection-formula-qcqs.
+Prove: `Rpr_!ℒ_ψ⟨ , ⟩ ≅ σ_*Λ(−r)[−2r]` on `V` (fibres off the zero section vanish by §2.4 and Künneth, and over the zero section `Rπ_!Λ = Λ(−r)[−2r]` by the projective-bundle formula of EtaleCohomologyFoundations §0.9 for `ℙ¹`, localization and Künneth); `FT_ψ(π^*M[r]) ≅ σ'_*M(−r)` for `M ∈ D⁺(S, Λ)` (LAU87 Proposition (1.2.2.2), LAU87 lines 419–432); and construct the inversion isomorphism `ι_K : FT^{V'}_ψ(FT^V_ψ K) ≅ [−1]^*K(−r)`, natural in `K ∈ D⁺(V, Λ)` and compatible with base change, through the cartesian diagram of LAU87 lines 407–417. Hence `FT_ψ` is an equivalence of triangulated categories with quasi-inverse `[−1]^* FT^{V'}_ψ(−)(r)`, equivalently `FT_{ψ^{−1}} ∘ FT_ψ ≅ (−r)` (LAU87 Théorème (1.2.2.1) and Corollaire (1.2.2.3), LAU87 lines 401–434). Prove also `Rπ'_!FT_ψ(K) ≅ σ^*K(−r)[−r]` (LAU87 Corollaire (1.2.2.5), LAU87 lines 445–449) and `σ'^*FT_ψ(K) ≅ Rπ_!K[r]`; the second is proper base change of `Rpr'_!` along `σ'`, the kernel restricting to `Λ` on `V ×_S σ'(S)` (§3.1), and is the case `f = π : V → S` (transpose `σ'`, transform on the zero bundle the identity) of LAU87 Théorème (1.2.2.4), LAU87 lines 435–444.
+*Needs:* §§2.4, 3.1–3.3; EtaleCohomologyFoundations §§0.7–0.9, F.2.1, F.2.7; gap:projection-formula-qcqs.
 
 **Checks.**
 - `r = 1`, `S = Spec 𝔽_q`: `FT(FT(i_{0*}Λ)) = FT(Λ[1]) = i_{0*}Λ(−1)`, trace `q` at `0`, matching `𝔉 𝔉 δ_0 = q δ_0` and the signs `(−1)^{2r}`.
 - Degenerate non-example: for the trivial character, `FT(FT(i_{0*}Λ)) = Λ_{𝔸¹}(−1)`, not supported at `0`.
 - Sign witness: for `r = 1` and the skyscraper at `a ∈ 𝔽_q^×`, `FT(FT(i_{a*}Λ)) ≅ i_{(−a)*}Λ(−1)`; without `[−1]^*` the support would be `a`, which differs from `−a` for `p` odd.
+- Zero-section values, `r = 1`: `σ'^*FT(Λ[1]) = σ'^*σ'_*Λ(−1) = Λ(−1) = Rπ_!(Λ[1])[1]` and `σ'^*FT(i_{a*}Λ) = σ'^*ℒ_ψ(a x')[1] = Λ[1] = Rπ_!(i_{a*}Λ)[1]`, while the shift `[−r]` of the first isomorphism would give `Λ(−1)[−2]` and `Λ[−1]`; on the other side `Rπ'_!FT(i_{0*}Λ) = Rπ'_!Λ[1] = Λ(−1)[−1] = σ^*(i_{0*}Λ)(−1)[−1]`, and `Rπ'_!FT(i_{a*}Λ) = 0 = σ^*(i_{a*}Λ)` for `a ≠ 0` by §2.4.
 
 ### 3.5 Duality
 
