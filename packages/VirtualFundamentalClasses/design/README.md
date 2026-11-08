@@ -331,13 +331,14 @@ Chern classes and intersection products. Layer 6 proves the three comparisons (c
 quotient stacks, degrees of zero-cycles); it uses Layers 1–5 and is independent of Layers 7–11.
 Layer 7 uses only 4.1 (cones) and 1.3 (for the dimension of a cone stack in 7.2) from Layers 1–6:
 abelian hulls, cone stacks, the small étale site and `h¹/h⁰`. Layer 8 builds the truncated relative cotangent complex
-and the relative intrinsic normal cone; its pure-dimensionality uses Layer 1.3. Layer 9 defines
+and the relative intrinsic normal cone; its pure-dimensionality uses Layer 1.3, and the invariance
+of Vistoli's rational equivalence along relative tangent directions uses 4.4. Layer 9 defines
 obstruction theories. Layer 10 combines Layers 4–5 and 8–9 into the virtual class and its
 properties. Layer 11 applies Layers 9–10 to spaces of maps from curves.
 
 Layers 1, 4.1 and 7.3 can start at once. Layer 4.4 (Vistoli's rational equivalence) is the
-longest single target and is needed only for 4.3's rational-equivalence statement, for the
-regular-immersion case of 10.6 and for 10.7.
+longest single target and is needed only for 4.3's rational-equivalence statement, for its
+invariance in 8.5, for the regular-immersion case of 10.6 and for 10.7.
 
 ## Layer 1: integral substacks, dimension and degrees
 
@@ -856,13 +857,18 @@ the product of the ideals of `X` and `Y'` and normalises (vistoli1989 lines 1465
 where reducedness enters; both conditions on `Y` are étale-local and pass to schemes smooth of
 constant relative dimension over `Y`. Prove that `β` commutes with smooth base change on `Y`
 (behrend-fantechi1997 Proposition 3.3, line 834), hence is defined for `Y` a DM stack by étale
-descent of rational equivalences (vistoli1989 lines 953–957);
-that it is compatible with replacing `i` by a factorisation through a smooth morphism of
-Deligne–Mumford type (Proposition 3.4, line 884); and that it is invariant under the action of
-`j^*N ×_Y T_Y` when `Y` is smooth (Proposition 3.5, line 889). Once the Gysin maps of 4.3 and 4.5 are
-available, prove the consequence `v^![C] = [C_{X'/Y'}]` in `A_*(u^*C)` (behrend-fantechi1997 lines
-828–833). *Needs:* 4.2, Layer 2; SchemeAndStackFoundations §5.5 (`deformationToNormalCone`,
-`specialization`); for the consequence, 4.3 and 4.5.
+descent of rational equivalences (vistoli1989 lines 953–957); and that it is compatible with
+replacing `i` by a factorisation `i = π ∘ ĩ` with `ĩ : X → Ỹ` a local embedding and `π : Ỹ → Y`
+smooth of Deligne–Mumford type and of constant relative dimension: with `Ỹ' := Ỹ ×_Y Y'` (normal
+bundle `π^*N`) and `α : C_{X/Ỹ} → C` the induced morphism, a torsor under the pullback of the
+relative tangent bundle `T_{Ỹ/Y}` and hence smooth (Proposition 3.1, line 762, and line 883),
+`α^*β(Y', X) = β(Ỹ', X)` in `W_*(N ×_Y C_{X/Ỹ})` (Proposition 3.4, line 884). Invariance of `β`
+under tangent directions is stated in 8.5, where it is used, for the directions along the fibres
+of a smooth morphism from which `Y'` is pulled back; `β` is not invariant under all of `T_Y`,
+which behrend-fantechi1997 Proposition 3.5 (line 889) asserts (Checks). Once the Gysin maps of
+4.3 and 4.5 are available, prove the consequence `v^![C] = [C_{X'/Y'}]` in `A_*(u^*C)`
+(behrend-fantechi1997 lines 828–833). *Needs:* 4.2, Layer 2; SchemeAndStackFoundations §5.5
+(`deformationToNormalCone`, `specialization`); for the consequence, 4.3 and 4.5.
 
 **Checks.**
 
@@ -884,6 +890,15 @@ available, prove the consequence `v^![C] = [C_{X'/Y'}]` in `A_*(u^*C)` (behrend-
   `I = (t, ε)` has `I^n/I^{n+1}` spanned by `t^n, t^{n−1}ε`, so `C_{X/Y} = Spec k[T, E]/(E²)` and
   `[C_{X/Y}] = 2·[𝔸¹]`, while the normalisation of a blow-up only sees `Y_red = 𝔸¹`, where the cone
   of the origin is `𝔸¹` with multiplicity `1`.
+- `β` is not invariant under the whole tangent bundle. For `Y = 𝔸²` (coordinates `x, y`), `X` the
+  origin and `Y' = {y = 0}`: `X' = X`, `u^*C = C = T_0𝔸²` (coordinates `ξ, η`) and
+  `N ×_Y C = 𝔸³` (with `ν` on `N`). Since `u^*C → C` is the identity, `C_{u^*C/C}` is the zero
+  section `{ν = 0}`, and `ρ^*C_{X'/Y'} = {η = 0}` because the cone of the origin in the line `Y'` is
+  the `ξ`-axis. As `W_2(𝔸³) = k(𝔸³)^×` and the rational functions with divisor
+  `[ν = 0] − [η = 0]` are the `c·ν/η`, `c ∈ k^×`, `β(Y', X) = c·ν/η`. It is invariant under
+  `ξ ↦ ξ + a` (the tangent directions of `Y'`), but the `y`-direction of `T_Y`, which acts on `C` by
+  `η ↦ η + b` (behrend-fantechi1997 Lemma 3.2, line 774), sends it to `c·ν/(η + b)`: already the
+  boundary component `{η = 0}` moves.
 
 ### 4.5 Bivariant classes and Gysin maps on stacks
 
@@ -1313,8 +1328,10 @@ line 906, and lines 1654–1655). Define morphisms of relative local embeddings 
 because `M → 𝔐` has unramified diagonal and `M` has affine diagonal. Prove that every point of `M`
 lies in the image of a relative local embedding with `U → W` a closed immersion into an affine
 scheme (take a lift of `U → 𝔐` to a smooth atlas étale-locally on `U`, and embed `U` in an affine
-space over it). For a relative local embedding with conormal sheaf `C_{U/W}` (the degree-one part of
-the normal cone of 4.2), define the two-term complex `K_{U,W} := [C_{U/W} → Ω_{W/𝔐}|_U]` of coherent
+space over it). For a relative local embedding with conormal sheaf `I/I²` (`I` the ideal of `U` in
+`W` where `U → W` is étale-locally a closed immersion; the degree-one part of the graded algebra
+`⊕ I^n/I^{n+1}` of the normal cone `C_{U/W}` of 4.2), define the two-term complex
+`K_{U,W} := [I/I² → Ω_{W/𝔐}|_U]` of coherent
 `O_U`-modules in degrees `−1, 0`, with differential induced by `d`, and the morphism of complexes
 induced by a morphism of relative local embeddings (behrend-fantechi1997 lines 952–959). Prove that
 it is a quasi-isomorphism, and that composition of morphisms of local embeddings gives composition
@@ -1469,9 +1486,39 @@ Prove:
 - pullback along a smooth morphism: for `u : M' → M` smooth of Deligne–Mumford type, the sequence
   `B T_{M'/M} → C_{M'/𝔐} → u^*C_{M/𝔐}` is a short exact sequence of cone stacks
   (Proposition 3.14, line 1040, for local complete intersection morphisms; the smooth case is the
-  one used in 10.7).
+  one used in 10.7);
+- invariance of Vistoli's rational equivalence along relative tangent directions: let `𝔅` be a
+  reduced algebraic `k`-stack of pure dimension, `p : Y → 𝔅` a smooth morphism of
+  Deligne–Mumford type from a DM stack, `𝔅' → 𝔅` a regular local embedding with normal bundle
+  `N_𝔅`, `Y' := Y ×_𝔅 𝔅'` (a regular local embedding with normal bundle `N := p^*N_𝔅|_{Y'}`), and
+  `i : X → Y` a local embedding such that `(i, i) : X → Y ×_𝔅 Y` is a local embedding (as for the
+  `U → W` of a relative local embedding, through the product of 8.1, and whenever `p` has finite
+  diagonal); put `X' := X ×_Y Y'`, with `j : X' → Y'` and `u : X' → X` as in 4.4, and
+  `C := C_{X/Y}`. On each open and closed part where `p` has
+  constant relative dimension `d`, `Y` is reduced of pure dimension `dim 𝔅 + d` (through a smooth
+  atlas of `𝔅`, stacks-properties Lemma 12.1, line 1374), so
+  `β(Y', X) ∈ W_*(N ×_Y C)` is defined (4.4). Prove that `β(Y', X)` is invariant under the action
+  of `T_{Y/𝔅}|_{X'}`, pulled back to `j^*N`, on `N ×_Y C = j^*N ×_{X'} u^*C` through the
+  `T_{Y/𝔅}`-cone structure of `C` (the relative Lemma 3.2 above, on an étale atlas of `Y`), so that
+  it descends to `j^*N ×_{X'} u^*[C/T_{Y/𝔅}|_X]`. Route: the projections
+  `p_1, p_2 : Y ×_𝔅 Y → Y` are smooth of Deligne–Mumford type and pull `Y'` back to the same
+  closed substack `(Y ×_𝔅 Y) ×_𝔅 𝔅'`, with the same normal bundle, so 4.4's compatibility with
+  smooth factorisations, applied to `(i, i)` through `p_1` and through `p_2`, gives
+  `p_{1*}^*β(Y', X) = β((Y ×_𝔅 Y) ×_𝔅 𝔅', X) = p_{2*}^*β(Y', X)`; under the identification
+  `C_{X/Y×_𝔅Y} = i^*T_{Y/𝔅} ×_X C` of the relative Lemma 3.2, `p_{1*}` is the projection and
+  `p_{2*}` the action (behrend-fantechi1997 lines 781–809, and the proof of Proposition 3.5, lines
+  894–897, whose two inverse images `Y' × Y` and `Y × Y'` in `Y × Y` differ). Deduce: for a
+  regular local embedding `Y' → Y` of DM stacks smooth of Deligne–Mumford type over a reduced `𝔐`
+  of pure dimension, with `(i, i) : X → Y ×_𝔐 Y` a local embedding, `β(Y', X)` is invariant under
+  `T_{Y'/𝔐}|_{X'}`, acting through `T_{Y'/𝔐} → T_{Y/𝔐}|_{Y'}`. Indeed, étale-locally on `Y`,
+  generators `f_1, …, f_c` of the ideal of `Y'` have differentials independent in `Ω_{Y/𝔐}` along
+  `Y'`, since the transitivity triangle of 8.3 for `Y' → Y → 𝔐` gives the exact sequence
+  `0 → I/I² → Ω_{Y/𝔐}|_{Y'} → Ω_{Y'/𝔐} → 0`; so `(f_1, …, f_c) : Y → 𝔸^c × 𝔐` is smooth along `Y'`,
+  `Y'` is the inverse image of `{0} × 𝔐`, and the first statement applies over `𝔅 = 𝔸^c × 𝔐`, with
+  `T_{Y/𝔅}|_{Y'} = T_{Y'/𝔐}`. The first statement is the descent of 10.6 (with `𝔅 = 𝔐`, `Y = W`),
+  the second that of 10.7 and, for `𝔐 = Spec k`, of behrend-fantechi1997 Lemma 5.9 (line 1397).
 
-*Needs:* 4.2, 7.1, 7.2, 8.4; 1.3; SchemeAndStackFoundations §5.5 (`conormal_regular`,
+*Needs:* 4.2, 4.4, 7.1, 7.2, 8.3, 8.4; 1.3; SchemeAndStackFoundations §5.5 (`conormal_regular`,
 `normalCone_eq_normalBundle`).
 
 **Checks.**
@@ -1496,6 +1543,20 @@ Prove:
   `⊕ I^n/I^{n+1} = k[t]/(t²)`, which is not a vector bundle over `Spec k`, and the immersion is not
   regular, since `ε` is a zero-divisor; for `Spec k[x]/(x²) ⊆ 𝔸¹` the cone `M × 𝔸¹` is a line
   bundle and `x²` is a nonzerodivisor.
+- Invariance needs `Y'` to come from the base. On `Y = 𝔸²`, `X` the origin and `Y' = {y = 0}`,
+  where `β(Y', X) = c·ν/η` (4.4, Checks): over `𝔅 = 𝔸¹` through `p = y`, `Y' = p^{−1}(0)` and
+  `T_{Y/𝔅}` is the `x`-direction, acting by `ξ ↦ ξ + a`, which fixes `c·ν/η`; this is also the
+  invariance under `T_{Y'}` of the deduced statement with `𝔐 = Spec k`. Over `𝔅 = 𝔸¹` through
+  `p = x`, `Y'` is a regular local embedding not pulled back from `𝔅`, `T_{Y/𝔅}` is the
+  `y`-direction acting by `η ↦ η + b`, and `c·ν/(η + b) ≠ c·ν/η`.
+- A singular reduced base. For the node `𝔐 = Spec k[a, b]/(ab)` (reduced, pure dimension `1`),
+  `W = 𝔐 × 𝔸¹` and the regular local embedding `𝔐' = V(a + b) = Spec k[a]/(a²) → 𝔐` (`a + b` is a
+  nonzerodivisor): `Ω_W` has fibre dimension `3` over the node and `2` elsewhere, so `W` is not
+  smooth over `k` and `C(Ω_W)` is not a vector bundle, while `T_{W/𝔐} = O_W`; `W ×_𝔐 W = 𝔐 × 𝔸²`
+  (coordinates `s, t`), the diagonal `{s = t}` is regular with normal bundle `O = T_{W/𝔐}`, and both
+  projections pull `W' = 𝔐' × 𝔸¹` back to `𝔐' × 𝔸²`, so the invariance applies to `W' ⊆ W`.
+- Degenerate cases: for `p` étale, `T_{Y/𝔅} = 0` and the statement is empty; for `𝔅' = 𝔅`,
+  `β = 0` (4.4, Checks), invariant under any action.
 
 ### Examples
 
@@ -1518,7 +1579,7 @@ ideal `J` satisfies `J² = 0`. For a morphism `g : T → M` over `𝔐`, an exte
 `ḡ : T̄ → M` over `𝔐` with a 2-isomorphism `ḡ|_T ≅ g` compatible with the given 2-isomorphisms to
 `𝔐`; since `f` has unramified diagonal, extensions form a set, and a sheaf `Ext(g, T̄)` on `T_ét`.
 Construct the obstruction class `ω(g) ∈ Ext¹(g^*τ^{≥−1}L_{M/𝔐}, J)` as the class of the morphisms
-`h^♯ : g^*C_{U/W} → J` of the local extensions `h : T̄ → W` of `T → U → W` over `𝔐`, which exist on
+`h^♯ : g^*(I/I²) → J` of the local extensions `h : T̄ → W` of `T → U → W` over `𝔐`, which exist on
 the affine pieces because `W → 𝔐` is smooth and are well defined up to homotopy (behrend-fantechi1997
 lines 1067–1078 and the proof of Proposition 4.1, lines 1097–1121). Prove that an extension exists
 iff `ω(g) = 0`, and that the extensions then form a torsor under `Hom(g^*Ω_{M/𝔐}, J)`
@@ -1557,8 +1618,10 @@ bundle stack `ℰ := h¹/h⁰(E^∨)`, and the obstruction cone `φ^∨(C_{M/�
 
 - `φ = id` on `τ^{≥−1}L_{M/𝔐}` is an obstruction theory; it is perfect iff `N_{M/𝔐}` is a vector
   bundle stack (8.4), in particular when `M → 𝔐` is a local complete intersection
-  (behrend-fantechi1997 line 1321), and then `vd = m + rk τ^{≥−1}L`, which is `dim M` when `M` has
-  pure dimension (e.g. for a hypersurface in `𝔸^n` over `Spec k`, `vd = n − 1`). Perfectness does
+  (behrend-fantechi1997 line 1321), in which case `M` has pure dimension `vd = m + rk τ^{≥−1}L`
+  (on a relative local embedding `(U, W)` with `W` of pure dimension `m + d` and `U → W` regular of
+  codimension `c`, every component of `U` has dimension `m + d − c` and `rk τ^{≥−1}L = d − c`; for a
+  hypersurface in `𝔸^n` over `Spec k`, `vd = n − 1`). Perfectness does
   not force a local complete intersection: for the closed point `Spec k → Spec k[ε]/(ε²)`,
   `τ^{≥−1}L = k[1]` is perfect (8.4, Checks), with `vd = 0 + (0 − 1) = −1 ≠ 0 = dim M`.
 - `E = 0 → τ^{≥−1}L_{M/𝔐}` is an obstruction theory iff `M → 𝔐` is étale.
@@ -1748,12 +1811,15 @@ perfect obstruction theory for `M'/𝔐'` with a global resolution, and that
 `v^![M, E]^vir = [M', u^*E]^vir` when `v` is flat (then `v^! = v^*`) and when `v` is a regular local
 embedding and `𝔐` is reduced (behrend-fantechi1997 Proposition 7.2, line 1682, stated there for
 `𝔐`, `𝔐'` smooth of constant dimension, line 1668). Route: in the flat case
-`C_{M'/𝔐'} = v^*C_{M/𝔐}` (8.5) and `v^!` commutes with `0^!`; in the regular case Vistoli's rational
-equivalence (4.4), applied on the relative local embeddings `(U, W)` of 8.1 and descended along
-`T_{W/𝔐}|_U` as in behrend-fantechi1997 Lemma 5.9 (line 1397), gives `v^![C(F^•)] = [C(u^*F^•)]`
-(lines 1690–1699). The regular case uses 4.4 on `W`, which is smooth over `𝔐` and so, when `𝔐` is
-reduced, is reduced and of pure dimension on each connected component; this is the only use of
-the smoothness of `𝔐` and `𝔐'` in the source's proof.
+`C_{M'/𝔐'} = v^*C_{M/𝔐}` (8.5) and `v^!` commutes with `0^!`. In the regular case, with `N` the
+normal bundle of `v`, take a relative local embedding `(U, W)` of 8.1, `W' := W ×_𝔐 𝔐'` and
+`U' := U ×_𝔐 𝔐'`: Vistoli's rational equivalence `β(W', U) ∈ W_*(N ×_W C_{U/W})` (4.4) is defined
+because `W`, smooth over the reduced `𝔐`, is reduced and of pure dimension on each connected
+component; it is invariant under `T_{W/𝔐}|_{U'}` by 8.5, since `W'` is pulled back from `𝔐`, so it
+descends to `N ×_𝔐 C_{M/𝔐}` over `U'`; glued over the relative local embeddings and pulled back
+to `F_1`, it gives `v^![C(F^•)] = [C(u^*F^•)]` (behrend-fantechi1997 Lemma 5.9, line 1397, and
+lines 1690–1699). The reducedness of `𝔐` is used for 4.4's construction on `W` and for the
+invariance of 8.5, whose route applies 4.4 on `W ×_𝔐 W`.
 *Needs:* 4.4, 4.5, 8.1, 8.3, 8.5, 10.2.
 
 **Checks.**
@@ -1777,11 +1843,14 @@ graph `Z' → Z' ×_𝔐 Z`, a regular local embedding, with flat pullback along
 (behrend-fantechi1997 lines 1489–1498). Prove that compatible obstruction theories satisfy
 `v^![X, E]^vir = [X', F]^vir` when `v` is smooth, or when `𝔐` is reduced and `Z'` and `Z` are
 smooth over `𝔐` (Proposition 5.10, line 1428; Proposition 7.5, line 1734, whose base is smooth of
-constant dimension, line 1668), using in the second case the rational equivalence of
-behrend-fantechi1997 Lemma 5.9 (line 1397), descended from 4.4 applied on `Z ×_𝔐 W` for the
-relative local embeddings `(U, W)` of `X` over `𝔐`; `Z ×_𝔐 W` is smooth over `𝔐`, hence reduced and
-of pure dimension on each connected component when `𝔐` is reduced. The smooth case uses no
-hypothesis on `𝔐`.
+constant dimension, line 1668). The second case uses the rational equivalence of
+behrend-fantechi1997 Lemma 5.9 (line 1397) for a regular local embedding between stacks smooth
+over `𝔐`: for a relative local embedding `(U, W)` of `X` over `𝔐`, it is `β` of 4.4 for the regular
+local embedding `Z' ×_𝔐 W → Z ×_𝔐 W` and the local embedding `U → Z ×_𝔐 W`, descended along
+`T_{(Z'×_𝔐W)/𝔐}|_{U'}` by the second invariance statement of 8.5. Both `Z ×_𝔐 W` and `Z' ×_𝔐 W` are
+smooth over `𝔐`, hence reduced and of pure dimension on each connected component when `𝔐` is
+reduced, and the finite diagonal of `Z` over `𝔐` with the product of 8.1 makes
+`U → (Z ×_𝔐 W) ×_𝔐 (Z ×_𝔐 W)` a local embedding. The smooth case uses no hypothesis on `𝔐`.
 *Needs:* 4.4, 5.1, 7.5, 8.3, 8.5, 10.2, 10.6.
 
 **Checks.**
@@ -1925,8 +1994,9 @@ locally free `V` of finite rank on `𝒞_M`, `Rπ_*V` is isomorphic to a two-ter
 `[R¹π_*H → R¹π_*G]` of locally free sheaves, built from `G := π^*π_*(V ⊗ L^{⊗N}) ⊗ L^{⊗−N}` and the
 kernel `H` of `G → V` for `N` large (behrend1997 Proposition 5, line 165, using that `M` is
 quasi-compact and that the fibres are reduced curves, so `H⁰(C_t, L^{⊗−N}) = 0`); hence the
-obstruction theory of 11.4 has a global resolution, and `[M]^vir` is defined (10.2). *Needs:* 11.2,
-10.1; StableReduction Layer 2 (relative ampleness, cohomology and base change).
+obstruction theory of 11.4 has a global resolution in the sense of 7.3, and `[M]^vir` is defined
+(10.2). *Needs:* 11.2, 11.4, 7.3, 10.2; StableReduction Layer 2 (relative ampleness, cohomology
+and base change).
 
 **Checks.**
 
