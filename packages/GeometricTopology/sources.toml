@@ -379,3 +379,40 @@ licence_class = "none"
 status = "uncertified"
 version_note = "paywalled (Princeton University Press); cited by its locator without the text"
 cited_for = ["1.7.2"]
+
+
+[[source]]
+id = "hatcher-torustrick"
+authors = "Allen Hatcher"
+title = "The Kirby torus trick for surfaces"
+year = 2013
+arxiv = "1312.3518v3"
+locator_scheme = "theorem"
+locator = "Theorem A, Theorem B and the refinements stated after them and after the proof of Theorem B; Handle Smoothing Theorem (Section 2)"
+url = "https://arxiv.org/abs/1312.3518v3"
+fetched_from = "https://arxiv.org/pdf/1312.3518v3"
+fetched_at = "2026-11-08T01:54:24Z"
+sha256 = "0d5a639b6636cb714a0a095ac0833a137df94804074f6f0f91d94aa465cc7c1d"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-08"
+version_note = "arXiv v3"
+cited_for = ["11.2.1"]
+
+[[source]]
+id = "smale1959"
+authors = "Stephen Smale"
+title = "Diffeomorphisms of the 2-sphere"
+year = 1959
+venue = "Proceedings of the American Mathematical Society 10"
+doi = "10.1090/S0002-9939-1959-0112149-8"
+locator_scheme = "theorem"
+locator = "Theorem A, Theorem B, Theorem 4"
+url = "https://www.ams.org/journals/proc/1959-010-04/S0002-9939-1959-0112149-8/S0002-9939-1959-0112149-8.pdf"
+fetched_from = "https://www.ams.org/journals/proc/1959-010-04/S0002-9939-1959-0112149-8/S0002-9939-1959-0112149-8.pdf"
+fetched_at = "2026-11-08T02:02:33Z"
+sha256 = "f2c495988ae1355fbe01a0878228008ad861bfccb17d6cc9c85d219156622c64"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-11-08"
+cited_for = ["3.4", "1.7.2", "11.2.1"]
