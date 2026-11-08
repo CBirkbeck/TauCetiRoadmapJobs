@@ -565,6 +565,7 @@
      },
      "prerequisites": [
       "target:1.3",
+      "roadmap:SchemeAndStackFoundations §1.9",
       "gap:stack-separation-axioms",
       "gap:group-spaces-over-fields"
      ],
@@ -573,7 +574,7 @@
       {
        "name": "nonseparated_group",
        "kind": "non-example",
-       "statement": "For G = A^1_k/Z (characteristic zero) BG has G_x = G, not a scheme; inertia not quasi-separated."
+       "statement": "For G = A^1_k/Z (characteristic zero) BG has G_x = G, not a scheme; inertia neither quasi-separated nor locally separated (the diagonal pulls back to the union of the lines y = x + n in A^2, not quasi-compact and not locally closed)."
       },
       {
        "name": "DM_etale_notFinite",
@@ -1695,7 +1696,7 @@
      "id": "6.3",
      "kind": "definition",
      "name": "Stacks.ResidualGerbe.IsNeutral",
-     "statement": "The canonical BG_x -> Z_x of a representative is an equivalence iff Spec k -> base is an isomorphism (for decent X iff kappa(x) -> k is an isomorphism); then R_x = G_x and Z_x ≃ BG_x. Z_x is neutral if the gerbe Z_x -> base has a section; a representative with Spec k -> base an isomorphism makes Z_x neutral, and for decent X (base Spec kappa(x)) Z_x is neutral iff some representative has kappa(x) -> k an isomorphism. Without decency the converse fails (Spec Q(t)/Z).",
+     "statement": "The canonical BG_x -> Z_x of a representative is an equivalence iff Spec k -> base is an isomorphism (for decent X iff kappa(x) -> k is an isomorphism); then R_x = G_x and Z_x ≃ BG_x. Z_x is neutral if the gerbe Z_x -> base has a section; a representative with Spec k -> base an isomorphism makes Z_x neutral, and for decent X (base Spec kappa(x)) Z_x is neutral iff some representative has kappa(x) -> k an isomorphism. An object of Z_x over Spec kappa(x) is a section only when it induces the identity of kappa(x). Without decency the converse fails (Spec Q(t)/Z).",
      "hypotheses": [
       "x : Spec k -> X a representative of a point whose residual gerbe Z_x exists",
       "for the converse of the neutrality criterion: X decent"
@@ -1711,19 +1712,18 @@
       "target:3.4",
       "target:5.3",
       "target:6.1",
-      "target:6.2",
-      "gap:stack-morphism-permanence"
+      "target:6.2"
      ],
      "api": [
       {
        "name": "equiv_iff",
        "role": "lemma",
-       "statement": "BG_x -> Z_x is an equivalence iff Spec k -> base is an isomorphism."
+       "statement": "BG_x -> Z_x is an equivalence iff Spec k -> base is an isomorphism; forward by the uniqueness of the base of the gerbe BG_x (2.1), backward by the base change of 6.2."
       },
       {
        "name": "neutral_iff",
        "role": "lemma",
-       "statement": "A representative with Spec k -> base an isomorphism makes Z_x neutral; for decent X, Z_x is neutral iff it has an object over Spec kappa(x), iff some representative has kappa(x) -> k an isomorphism."
+       "statement": "A representative with Spec k -> base an isomorphism makes Z_x neutral; for decent X, Z_x is neutral iff some representative has kappa(x) -> k an isomorphism (and then Z_x ≃ BG_x for it), iff some representative Spec kappa(x) -> X induces the identity of kappa(x), i.e. comes from a section."
       },
       {
        "name": "R_eq_G",
@@ -1751,6 +1751,11 @@
        "name": "neutral_needs_decent",
        "kind": "non-example",
        "statement": "X = Spec Q(t)/Z (not decent) is its own residual gerbe and base, so the identity is a section and X is neutral, while no representative Spec k -> X is an isomorphism onto the base: the converse needs decency."
+      },
+      {
+       "name": "object_not_section",
+       "kind": "non-example",
+       "statement": "For K = Q(t) and the gerbe Z = [P/GL_2] of trivialisations of the quaternion algebra A = (t, -1) (decent, one-point, its own residual gerbe, kappa = K): the residue of (t, -1) at t = 0 is -1, nontrivial in Q^x/Q^x2, so Z is not neutral; yet A ⊗_{K,sigma} K = (t^2, -1) is split for sigma : t -> t^2, so Z has an object over Spec K lying over sigma, whose BG_y -> Z is not an equivalence."
       }
      ]
     },
@@ -1877,7 +1882,8 @@
       "target:6.4",
       "roadmap:SchemeAndStackFoundations §1.22",
       "tauceti:TauCeti.Comodule",
-      "roadmap:ReductiveGroups Layer 1"
+      "roadmap:ReductiveGroups Layer 1",
+      "gap:stack-morphism-permanence"
      ],
      "api": [
       {
@@ -2138,11 +2144,11 @@
     "5.1",
     "5.4",
     "5.5",
-    "6.3",
-    "6.4"
+    "6.4",
+    "7.2"
    ],
    "detail": "Stacks, Properties of Stacks, Lemmas 100.3.1-100.3.3, 100.5.2-100.5.5 (stacks-04XE lines 111-245, 577-590); Morphisms of Stacks, Lemmas 101.7.3-101.7.7, 101.7.10, 101.17.2-101.17.8, 101.25.2-101.25.5, 101.27.2-101.27.14, 101.27.16, 101.33.2-101.33.5 (stacks-06RD lines 801-889, 1478-1540, 2328-2357, 2438-2577, 3294-3308). SchemeAndStackFoundations §1.20 defines SmoothLocal and QuasiCompactStack with atlas independence only.",
-   "needs": "SchemeAndStackFoundations §1.20 must prove, for its SmoothLocal properties (flat, lfp, lft, smooth), surjectivity and QuasiCompactStack, composition, base change, descent along surjective flat lfp base change, agreement with RepresentableProperty, the implications smooth => lfp => lft, cancellation for lft and lfp, and fppf-local essential surjectivity of surjective flat lfp morphisms.",
+   "needs": "SchemeAndStackFoundations §1.20 must prove, for its SmoothLocal properties (flat, lfp, lft, smooth), surjectivity and QuasiCompactStack, composition, base change, descent along surjective flat lfp base change, agreement with RepresentableProperty, the implications smooth => lfp => lft, cancellation for lft and lfp, and fppf-local essential surjectivity of surjective flat lfp morphisms; that representability by algebraic spaces and RepresentableProperty P, for P stable under base change and fppf local on the target, hold once they hold after one surjective flat lfp base change from an algebraic space (Lemmas 100.3.1, 100.3.3); and that an algebraic stack locally of finite type over a locally Noetherian algebraic stack is locally Noetherian (Lemma 101.17.5).",
    "supplier": "SchemeAndStackFoundations",
    "section": "§1.20"
   },

@@ -102,10 +102,14 @@ a closed point is coherent.
    `P`" is §1.19's `RepresentableProperty P f`. For arbitrary `f`, flat, locally of finite
    presentation, locally of finite type and smooth are §1.20's `SmoothLocal`, surjective means `|f|`
    surjective and quasi-compact is §1.20's `QuasiCompactStack`. "The inertia `I_𝒳 → 𝒳` is
-   quasi-compact" and "the diagonal is quasi-compact" are `RepresentableProperty` of §1.9's
-   `QuasiCompactSpace` for these representable morphisms. DM, quasi-DM and quasi-separated morphisms
-   and stacks are those of Stacks, Definitions 101.4.1–101.4.2 (the diagonal is unramified, locally
-   quasi-finite, quasi-compact and quasi-separated); separated is §1.20's `IsSeparatedStack`.
+   quasi-compact, quasi-separated or locally separated", and the same of the diagonal, are
+   `RepresentableProperty` of §1.9's `QuasiCompactSpace`, `QuasiSeparatedSpace` or
+   `LocallySeparatedSpace` (the diagonal of the morphism of algebraic spaces is an immersion) for
+   these representable morphisms; the three are stable under base change and fppf local on the
+   target (stacks-04XE lines 142–206, items (1), (2) and (31)). DM, quasi-DM and quasi-separated
+   morphisms and stacks are those of Stacks, Definitions 101.4.1–101.4.2 (the diagonal is
+   unramified, locally quasi-finite, quasi-compact and quasi-separated); separated is §1.20's
+   `IsSeparatedStack`.
 4. **Substacks.** A substack of `𝒳` is strictly full: for every scheme `T` a full subgroupoid of
    `𝒳(T)` closed under isomorphism and pullback. Two substacks are equal when they have the same
    objects; every uniqueness statement for substacks is equality in this sense. Witness: for
@@ -214,8 +218,8 @@ The pin is `2fd255d997f47c0b5d834ee416c7015d55444ce5`.
 
 - §1.7 (`points`, `opensEquiv`) and §1.8 (`Spaces.EtaleLocal`, fibre products of spaces): points
   and open subspaces of algebraic spaces, and étale-local properties of morphisms of spaces.
-- §1.9 (`IsSeparatedSpace`, `QuasiSeparatedSpace`, `QuasiCompactSpace`, `IsProperSpace`): separation
-  and quasi-compactness of morphisms of spaces.
+- §1.9 (`IsSeparatedSpace`, `QuasiSeparatedSpace`, `LocallySeparatedSpace`, `QuasiCompactSpace`,
+  `IsProperSpace`): separation, local separation and quasi-compactness of morphisms of spaces.
 - §1.13 (`Groups.GroupSpace`), §1.14 (`Groupoid`, `Groupoid.restrict`, `stabilizer`, `stabilizerAt`),
   §1.15 (`Groups.IsTorsor`), §1.17 (`artinBootstrap`): group spaces, groupoids with their
   restriction and stabilizers, torsors, and Artin's bootstrap theorem.
@@ -229,9 +233,10 @@ The pin is `2fd255d997f47c0b5d834ee416c7015d55444ce5`.
   `.atlasOpenSurjective`, `.ofSpace`, `QuasiCompactStack`, `IsSeparatedStack`, the locally Noetherian
   stacks, `stack_presentation`): everything of Convention 2–3.
 - §1.21 (`Stack.quotient`, `quotientStack`, `quotientStack.π`, `actionQuotient`,
-  `actionQuotient.torsorEquiv`, `quotientStack_algebraic`): quotient stacks of groupoids and of
-  actions, with `BG = [S/G]` for the trivial action and `[U/R]` algebraic for flat locally finitely
-  presented groupoids.
+  `actionQuotient.torsorEquiv`, `quotientStack_algebraic`): quotient stacks of groupoids in fppf
+  sheaves (`Stack.quotient`) and of actions, with `BG = [S/G]` for the trivial action, and `[U/R]`
+  algebraic for flat locally finitely presented groupoid schemes. Algebraicity for groupoids in
+  algebraic spaces, such as `u ×_𝒳 u` in 4.1, is gap:flat-groupoid-quotients.
 - §1.22 (`Stacks.QCoh`, *QCoh.presentationEquiv*): quasi-coherent modules and their description on
   a presentation `[U/R]` as modules on `U` with descent data along `R` (Stacks, Proposition
   96.14.3). Applied to `BG = [Spec k/G]` for affine `G` over a field it gives `QCoh(BG)` as
@@ -248,8 +253,13 @@ along a surjective, flat, locally finitely presented base change, agreement with
 `RepresentableProperty` for morphisms representable by algebraic spaces, the implications smooth ⇒
 locally of finite presentation ⇒ locally of finite type, the cancellation laws for local finite type
 and local finite presentation, and that a surjective, flat, locally finitely presented morphism is
-fppf-locally essentially surjective (Stacks, Properties of Stacks, Lemmas 100.3.1–100.3.3 and
-100.5.2–100.5.5; Morphisms of Stacks, Lemmas 101.7.3–101.7.7, 101.7.10, 101.17.2–101.17.8,
+fppf-locally essentially surjective; that a morphism of algebraic stacks is representable by
+algebraic spaces, and has `RepresentableProperty P` for a property `P` of morphisms of algebraic
+spaces stable under base change and fppf local on the target, as soon as its base change along one
+surjective, flat, locally finitely presented morphism from an algebraic space is so; and that an
+algebraic stack locally of finite type over a locally Noetherian algebraic stack is locally
+Noetherian (Stacks, Properties of Stacks, Lemmas 100.3.1–100.3.3 and 100.5.2–100.5.5; Morphisms of
+Stacks, Lemmas 101.7.3–101.7.7, 101.7.10, 101.17.2–101.17.8 with 101.17.5 for the last clause,
 101.25.2–101.25.5, 101.27.2–101.27.14, 101.27.16 and 101.33.2–101.33.5).
 
 What SchemeAndStackFoundations must provide (gap:flat-lfp-open): §1.20 must prove that for a flat,
@@ -423,7 +433,8 @@ line 1204). For the proof take an étale atlas `W → T` with `W` a nonempty aff
 étaleness along `W → Spec k`, and `T` is the quotient of `W` by the full relation `W ×_k W`, which is
 `Spec k`. *Needs:* SchemeAndStackFoundations §1.18 (`twoFiberProduct`), §1.19
 (`IsRepresentableBySpaces`, `RepresentableProperty`), §1.8 (`Spaces.EtaleLocal`); gap:stack-morphism-permanence
-(descent along `W → 𝒴`); for the last clause of the API gap:stack-separation-axioms.
+(representability and the monomorphism property are checked after the base change along `W → 𝒴`,
+Lemmas 100.3.1 and 100.3.3); for the last clause of the API gap:stack-separation-axioms.
 
 The API consists of the following facts.
 
@@ -487,7 +498,7 @@ a closed immersion, an immersion (stacks-04XE lines 765–776 and 853–859, Def
 *Needs:* 0.2; SchemeAndStackFoundations §1.19 (`RepresentableProperty`), §1.20 (`Stacks.points`,
 `stack_presentation`), §1.14 (`Groupoid.restrict`), §1.7 (`opensEquiv`); gap:flat-groupoid-quotients
 (restriction of a groupoid gives a fully faithful functor of quotients);
-gap:stack-morphism-permanence.
+gap:stack-morphism-permanence (fppf-locality on the target, Lemmas 100.3.1 and 100.3.3).
 
 **Checks.**
 
@@ -555,7 +566,8 @@ closed subscheme `Z ⊆ U` (Mathlib's `vanishingIdeal`); the two pullbacks of `Z
 closed subspaces with the same points, hence equal, which is checked on an étale atlas of `R`; then
 apply 0.3. *Needs:* 0.1, 0.3; SchemeAndStackFoundations §1.20 (`Stacks.points`,
 `stack_presentation`); Mathlib `AlgebraicGeometry.Scheme.IdealSheafData.vanishingIdeal`;
-gap:reduced-regular-smooth-local; gap:stack-morphism-permanence.
+gap:reduced-regular-smooth-local; gap:stack-morphism-permanence (for the locally Noetherian clause of
+the API, Lemma 101.17.5).
 
 The API consists of the following facts.
 
@@ -706,14 +718,18 @@ is quasi-DM, or `I_𝒳 → 𝒳` is quasi-separated, locally separated or local
 lines 1675–1689, Lemma 101.19.1). For the proof, the first three cases reduce to the last three by the
 comparison of diagonal and inertia; in the quasi-separated and locally separated cases `G_x` is a
 decent group algebraic space over a field, hence separated and a scheme; in the locally quasi-finite
-case it is locally quasi-finite over a field, hence a scheme. *Needs:* 1.3;
-gap:stack-separation-axioms (Lemma 101.6.1); gap:group-spaces-over-fields.
+case it is locally quasi-finite over a field, hence a scheme. *Needs:* 1.3; SchemeAndStackFoundations
+§1.9 (`QuasiSeparatedSpace`, `LocallySeparatedSpace`, Convention 3); gap:stack-separation-axioms
+(Lemma 101.6.1); gap:group-spaces-over-fields.
 
 **Checks.**
 
 - For the non-separated group algebraic space `G = 𝔸¹_k/ℤ` over a field of characteristic zero
-  (SchemeAndStackFoundations §1.12), `BG` has `G_x = G`, which is not a scheme; its inertia is not
-  quasi-separated, so a hypothesis is needed.
+  (SchemeAndStackFoundations §1.12), `BG` has `G_x = G`, which is not a scheme; its inertia, the
+  base change of `G → Spec k`, is neither quasi-separated nor locally separated: the diagonal of `G`
+  pulls back to `⊔_{n ∈ ℤ} 𝔸¹ → 𝔸²`, `x ↦ (x, x + n)`, which is not quasi-compact, and whose image,
+  the union of the lines `y = x + n`, is dense in `𝔸²` and misses its generic point, hence is not
+  locally closed. So a hypothesis is needed.
 - On a Deligne–Mumford stack `G_x` is an étale group scheme over `k`, and it need not be finite:
   the inertia is unramified (Lemma 101.6.1), so `G_x → Spec k` is unramified, `G_x` is a scheme
   (a DM stack is quasi-DM) and an unramified scheme over a field is étale; `G_x` is finite when
@@ -730,7 +746,7 @@ On `[𝔸¹/𝔾_m]`: finite type points `0` (closed) and `1` (open), `G_0 = �
 
 ### Dependencies
 
-Layer 0; SchemeAndStackFoundations §§1.12–1.14, 1.18, 1.20–1.21; Mathlib
+Layer 0; SchemeAndStackFoundations §§1.9, 1.12–1.14, 1.18, 1.20–1.21; Mathlib
 `AlgebraicGeometry.LocallyOfFiniteType`, `AlgebraicGeometry.LocallyOfFiniteType.jacobsonSpace`;
 gap:stack-morphism-permanence, gap:stack-separation-axioms, gap:inertia-of-presentations,
 gap:isomorphism-fpqc-local-spaces, gap:group-spaces-over-fields.
@@ -806,9 +822,9 @@ is surjective, flat and locally of finite presentation (stacks-06QB lines 2713�
 that for `X → Y` smooth and `G` flat and locally of finite presentation over `Y` acting on `X` over
 `Y`, `[X/G] → Y` is smooth, even when `G` is not smooth; and that a gerbe is smooth (stacks-06RD lines
 3335–3357, Lemmas 101.33.7–101.33.8). *Needs:* 2.1, 2.2; SchemeAndStackFoundations §1.21
-(`quotientStack_algebraic`); gap:flat-groupoid-quotients (`[U/G]` is a gerbe over `U`, Lemmas
-78.27.1–78.27.2); gap:stack-morphism-permanence (descent of smoothness, flatness and local finite
-presentation).
+(`Stack.quotient`); gap:flat-groupoid-quotients (`[U/G]` is algebraic for the group algebraic space
+`G` over the algebraic space `U`, Lemma 97.18.3, and is a gerbe over `U`, Lemmas 78.27.1–78.27.2);
+gap:stack-morphism-permanence (descent of smoothness, flatness and local finite presentation).
 
 **Checks.**
 
@@ -937,10 +953,11 @@ for every surjective, flat `Spec k → 𝒵` locally of finite type, `𝒵' ≃ 
 (*Stacks.reducedNoetherianSingletonCore*). For the first, the pullback of `𝒵'` to `Spec k` is a
 nonempty algebraic space with a monomorphism to `Spec k`, hence `Spec k` by 0.2, and every object of
 `𝒵` is fppf-locally a pullback of the point. *Needs:* 0.2, 3.1; SchemeAndStackFoundations §1.21
-(`quotientStack_algebraic`), §1.8 (`Spaces.EtaleLocal`); Mathlib
+(`Stack.quotient`), §1.8 (`Spaces.EtaleLocal`); Mathlib
 `AlgebraicGeometry.LocallyOfFinitePresentation.iff_locallyOfFiniteType` (a morphism of algebraic
 spaces locally of finite type into the spectrum of a field is locally of finite presentation);
-gap:flat-groupoid-quotients; gap:stack-morphism-permanence (fppf-local essential surjectivity of
+gap:flat-groupoid-quotients (`[Spec k/R]` is algebraic for the groupoid in algebraic spaces `R`,
+Theorem 97.17.2); gap:stack-morphism-permanence (fppf-local essential surjectivity of
 `Spec k → 𝒵`).
 
 **Checks.**
@@ -1053,12 +1070,14 @@ algebraic stack `𝒵` with `|𝒵|` a singleton and a morphism `𝒵 → 𝒳` 
 1609–1665, Lemma 101.18.7). Moreover, for a smooth `U → 𝒳` from an affine scheme and a closed point
 `u ∈ U` over `x`, with `u = Spec κ(u)`, `𝒵_x ≃ [u/(u ×_𝒳 u)]` and `u → 𝒵_x` is surjective, flat and
 locally of finite presentation. For the proof, the projections of `u ×_𝒳 u` to `u` are locally of
-finite type over a field, hence flat and locally of finite presentation; the quotient is algebraic
-(SchemeAndStackFoundations §1.21's `quotientStack_algebraic`), maps fully faithfully to `𝒳`, and is
-the residual gerbe by 3.4; local finite type descends along the fppf covering of `𝒵_x ×_𝒳 U` by
-`u ×_𝒳 U`. *Needs:* 1.1, 3.2–3.4; SchemeAndStackFoundations §1.21, §1.8 (`Spaces.EtaleLocal`);
-Mathlib `AlgebraicGeometry.LocallyOfFinitePresentation.iff_locallyOfFiniteType` (local finite type
-over a field implies local finite presentation); gap:flat-groupoid-quotients;
+finite type over a field, hence flat and locally of finite presentation; the quotient
+(SchemeAndStackFoundations §1.21's `Stack.quotient`) of this groupoid in algebraic spaces is
+algebraic (gap:flat-groupoid-quotients, Theorem 97.17.2), maps fully faithfully to `𝒳`, and is the
+residual gerbe by 3.4; local finite type descends along the fppf covering of `𝒵_x ×_𝒳 U` by
+`u ×_𝒳 U`. *Needs:* 1.1, 3.2–3.4; SchemeAndStackFoundations §1.21 (`Stack.quotient`), §1.8
+(`Spaces.EtaleLocal`); Mathlib `AlgebraicGeometry.LocallyOfFinitePresentation.iff_locallyOfFiniteType`
+(local finite type over a field implies local finite presentation); gap:flat-groupoid-quotients
+(algebraicity of `[u/(u ×_𝒳 u)]`; full faithfulness of `[u/(u ×_𝒳 u)] → 𝒳`);
 gap:stack-morphism-permanence (descent of local finite type).
 
 **Checks.**
@@ -1080,10 +1099,11 @@ Lemma 101.31.2). Deduce existence of residual gerbes on algebraic spaces (residu
 stacks-decent-spaces lines 1500–1531, Lemma 68.13.5), on Deligne–Mumford stacks (the étale atlas of
 SchemeAndStackFoundations §1.19's `IsDeligneMumford`), and on quasi-DM stacks (stacks-06RD lines
 3059–3060, Lemma 101.31.2, through Theorem 101.21.3). *Needs:* 0.2, 3.3, 3.4;
-SchemeAndStackFoundations §1.19 (`IsDeligneMumford`), §1.21 (`quotientStack_algebraic`), §1.8
+SchemeAndStackFoundations §1.19 (`IsDeligneMumford`), §1.21 (`Stack.quotient`), §1.8
 (`Spaces.EtaleLocal`); Mathlib `AlgebraicGeometry.LocallyOfFinitePresentation.iff_locallyOfFiniteType`
 (the projections of `R'` are locally of finite type over `U'`, hence locally of finite
-presentation); gap:quasi-dm-flat-presentation; gap:flat-groupoid-quotients;
+presentation); gap:quasi-dm-flat-presentation; gap:flat-groupoid-quotients (`[U'/R']` is algebraic
+for the groupoid in algebraic spaces `R'`, Theorem 97.17.2);
 gap:quasi-finite-over-fields (the projections of `R'` are locally quasi-finite);
 gap:stack-morphism-permanence.
 
@@ -1122,10 +1142,11 @@ one is locally Noetherian; base change of quasi-compact morphisms).
 Prove that if `𝒳` is locally Noetherian the residual gerbe exists at every point (stacks-06RD lines
 3096–3129, Lemma 101.31.3). For the proof, replace `𝒳` by the open substack image of an affine
 Noetherian smooth chart `U` (0.3), choose `u` over `x` whose closure meets the fibre `E` of `x` only in
-`u`, and show that `R' = u ×_𝒳 u` is the closed subscheme of `u ×_𝒳 U` over the reduced closure of
-`u`, so that its projections are flat and locally of finite presentation and `[u/R']` is the residual
-gerbe. *Needs:* 0.3, 3.3, 3.4; SchemeAndStackFoundations §1.20 (`stack_presentation`), §1.21;
-gap:flat-groupoid-quotients; gap:stack-morphism-permanence.
+`u`, and show that `R' = u ×_𝒳 u` is the closed subspace of the algebraic space `u ×_𝒳 U` over the
+reduced closure of `u`, so that its projections are flat and locally of finite presentation and
+`[u/R']` is the residual gerbe. *Needs:* 0.3, 3.3, 3.4; SchemeAndStackFoundations §1.20
+(`stack_presentation`), §1.21 (`Stack.quotient`); gap:flat-groupoid-quotients (`[u/R']` is algebraic
+for the groupoid in algebraic spaces `R'`, Theorem 97.17.2); gap:stack-morphism-permanence.
 
 **Checks.**
 
@@ -1243,8 +1264,9 @@ The API consists of the following facts.
 - For `𝒳 = 𝔸¹_ℚ` and `x` the point `t² + 1 = 0`, `κ(x) = ℚ(i)`.
 - For `𝒳 = [Spec ℂ / (ℤ/4)]` over `ℝ`, with `ℤ/4` acting through `ℤ/4 → ℤ/2 = Gal(ℂ/ℝ)`, `|𝒳|` is
   one point, the base is `Spec ℂ/(ℤ/4) = Spec ℝ`, so `κ = ℝ`, and `𝒳` has no object over `ℝ`: such an
-  object would lift the class of `Spec ℂ` in `H¹(ℝ, ℤ/2)` to `H¹(ℝ, ℤ/4) = Hom(ℤ/2, ℤ/4)`, whose two
-  elements both reduce to zero.
+  object lies over the identity of `Spec ℝ`, `ℝ` having no other endomorphism, so it would lift the
+  class of `Spec ℂ` in `H¹(ℝ, ℤ/2)` to `H¹(ℝ, ℤ/4) = Hom(ℤ/2, ℤ/4)`, whose two elements both reduce
+  to zero.
 
 ### 5.4 Algebraicity of points with quasi-compact diagonal
 
@@ -1361,13 +1383,21 @@ followed by the projection) is an equivalence iff `Spec k → 𝒵_x^♭` is an 
 `𝒳` means that `κ(x) → k` is an isomorphism; then `R_x = G_x` and `𝒵_x ≃ BG_x = [Spec k/G_x]`. Call
 `𝒵_x` *neutral* (*Stacks.ResidualGerbe.IsNeutral*) when the gerbe `𝒵_x → 𝒵_x^♭` has a section. If some
 representative has `Spec k → 𝒵_x^♭` an isomorphism, `𝒵_x` is neutral. For decent `𝒳`, where
-`𝒵_x^♭ = Spec κ(x)` (5.3), the converse holds: `𝒵_x` is neutral iff it has an object over
-`Spec κ(x)`, iff some representative `x : Spec k → 𝒳` has `κ(x) → k` an isomorphism, iff `𝒵_x ≃ BG_x`
-for a representative defined over `κ(x)` (stacks-06QB lines 2664–2695; alper-moduli lines 6998–6999
-and 16539–16540). For the converse, a section `s : Spec κ(x) → 𝒵_x` composed with the monomorphism
+`𝒵_x^♭ = Spec κ(x)` (5.3), the converse holds: `𝒵_x` is neutral iff some representative
+`x : Spec k → 𝒳` has `κ(x) → k` an isomorphism, and then `𝒵_x ≃ BG_x` for that representative; iff
+some representative `Spec κ(x) → 𝒳` induces the identity `κ(x) → κ(x)`, that is, comes from a
+section of `𝒵_x → Spec κ(x)` (stacks-06QB lines 2664–2695; alper-moduli lines 6998–6999 and
+16539–16540). An object of `𝒵_x` over `Spec κ(x)` is a section only when its field homomorphism
+`κ(x) → κ(x)` is the identity; pullback along a non-surjective endomorphism of `κ(x)` can make a
+non-neutral gerbe neutral (Checks). For the forward
+direction of the first statement, if `BG_x → 𝒵_x` is an equivalence then `BG_x → 𝒵_x → 𝒵_x^♭` is a
+gerbe (2.1, invariance under equivalences), and the uniqueness of the base (2.1) gives an
+isomorphism `Spec k = (BG_x)^♭ ≅ 𝒵_x^♭` under `BG_x`; it is the given `Spec k → 𝒵_x^♭`, since
+`BG_x → 𝒵_x^♭` factors through `Spec k` uniquely. The backward direction is the base change of 6.2.
+For the converse of neutrality, a section `s : Spec κ(x) → 𝒵_x` composed with the monomorphism
 `𝒵_x → 𝒳` is a representative over `κ(x)` whose composite to the base is the identity. Without
 decency the converse fails, the base not being a scheme (Checks). *Needs:* 2.1–2.3, 3.4, 5.3, 6.1,
-6.2; gap:stack-morphism-permanence (fppf descent of isomorphisms along `𝒵_x → 𝒵_x^♭`).
+6.2.
 
 **Checks.**
 
@@ -1380,6 +1410,16 @@ decency the converse fails, the base not being a scheme (Checks). *Needs:* 2.1�
   with base `X^♭ = X`, so the identity is a section and `X` is neutral; but no representative
   `Spec k → X` is an isomorphism onto the base, `X` not being a scheme (3.4). Neutrality defined by
   representatives would declare `X` non-neutral.
+- An object over `Spec κ(x)` need not be a section: for `K = ℚ(t)`, the quaternion algebra
+  `A = (t, −1)` over `K` and the gerbe `𝒵` of trivialisations of `A` (objects over `T`: a morphism
+  `T → Spec K`, a locally free `E` of rank 2 on `T` and an isomorphism `End(E) ≅ A_T`), `𝒵` is
+  `[P/GL₂]` for the `PGL₂`-torsor `P = Isom(M₂, A)`, so it has affine diagonal, is decent, smooth over
+  `K` and one-point, and is its own residual gerbe with `κ = K`. It is not neutral: the residue of
+  `(t, −1)` at `t = 0` is the class of `−1` in `ℚ^×/ℚ^{×2}`, which is nontrivial, so `[A] ≠ 0` in
+  `Br(K)`. It has an object over `Spec K` lying over the endomorphism `σ : t ↦ t²` of `K`, since
+  `A ⊗_{K,σ} K = (t², −1)` is split. For the representative `y` this object defines, `κ → K` is `σ`,
+  not an isomorphism, and `BG_y → 𝒵` is not an equivalence. A neutrality criterion through all
+  objects over `Spec κ(x)` would declare `𝒵` neutral.
 
 ### 6.4 Rational points of stacks over a field
 
@@ -1392,7 +1432,8 @@ ahr2020 lines 476–478) (*Stacks.residualGerbe_rationalPoint*). For the proof, 
 through the base (2.1), so `Spec k → 𝒵_x^♭ → Spec k` is the identity; a section of `𝒵_x^♭ → Spec k`
 is a monomorphism, and 3.2 makes it an isomorphism. Neither smoothness nor affineness of `G_x` nor
 algebraic closedness of `k` is used. *Needs:* 0.2, 2.1, 3.2, 3.4, 4.1, 4.5, 6.3;
-gap:stack-morphism-permanence (cancellation of local finite type for the section `x`).
+gap:stack-morphism-permanence (cancellation of local finite type for the section `x`; a stack locally
+of finite type over `k` is locally Noetherian, Lemma 101.17.5, as 4.5 requires).
 
 **Checks.**
 
@@ -1448,7 +1489,8 @@ Define the *normal space* `N_x := (i^* ℐ)^∨` (*Stacks.normalSpace*): the coh
 the presentation `BG_x = [Spec k/G_x]`, whose descent data along `G_x ⇉ Spec k` are the
 `O(G_x)`-comodule structures), and `N_x` is its contragredient (ahr2020 lines 39–43 and 477–480).
 *Needs:* 0.4, 4.5, 6.4; SchemeAndStackFoundations §1.22 (`Stacks.QCoh`, *QCoh.presentationEquiv*);
-Tau Ceti `TauCeti.Comodule`; ReductiveGroups Layer 1.
+Tau Ceti `TauCeti.Comodule`; ReductiveGroups Layer 1; gap:stack-morphism-permanence (`𝒳` is locally
+Noetherian, Lemma 101.17.5).
 
 The API consists of the following facts.
 
@@ -1544,7 +1586,7 @@ Layers 0, 2, 4, 6; AlgebraicModuliForArithmeticGeometry §§8.1, 8.3; ReductiveG
 SchemeAndStackFoundations §§1.21–1.22; Mathlib `retractionKerCotangentToTensorEquivSection`,
 `Algebra.FormallySmooth.exists_lift`; Tau Ceti
 `TauCeti.Comodule`, `TauCeti.linearlyReductiveAffineGroupSchemeProperty`;
-gap:algebraic-stacks-satisfy-rs.
+gap:stack-morphism-permanence, gap:algebraic-stacks-satisfy-rs.
 
 ## Downstream consumers
 
@@ -1571,8 +1613,10 @@ Deligne–Mumford stack of finite type over `K` with quasi-compact diagonal and 
 discrete. Every point is open
 and closed, so `𝒳_red` is the disjoint union of the reduced induced closed substacks on the points
 (0.3, 0.5). Each is reduced, locally Noetherian and one-point, hence the residual gerbe `𝒵_x` (3.3,
-4.5). A closed point of a stack of finite type over `K` has a representative over `K` (its finite type
-representative has residue field finite over `K`), so `𝒵_x ≃ BG_x` (6.4), and `G_x` is finite étale
+4.5). A closed point of a stack of finite type over `K` has a representative `x` with `p ∘ x = id`
+for the structure morphism `p : 𝒳 → Spec K` (a finite type representative `Spec k → 𝒳` has `k`
+finite over `K` through `p`, so `K → k` is an isomorphism, and composing with its inverse gives
+`x`), so `𝒵_x ≃ BG_x` (6.4), and `G_x` is finite étale
 over `K` (1.4; unramified, and quasi-compact because the diagonal is), hence constant. Thus
 `𝒳_red ≃ ⊔_x BG_x` with finite groups `G_x`. The diagonal hypothesis is needed: `Bℤ` over `K` is
 Deligne–Mumford, of finite type and one-point, and `G_x = ℤ` is not finite.
