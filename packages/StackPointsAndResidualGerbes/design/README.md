@@ -74,7 +74,10 @@ have no second carrier.
   The tangent space `T_{𝒳,x}` of Layer 7 is that deformation functor on the dual numbers; this
   roadmap owns only the normal space and the comparison map.
 - ReductiveGroups Layer 1 with Tau Ceti's `TauCeti.Comodule`: finite-dimensional representations of
-  affine group schemes over a field as comodules.
+  affine group schemes over a field as comodules. Tau Ceti's closed embedding of an affine group of
+  finite type into some `GLₙ`, its fppf quotients `G/H` with their torsor property and its
+  Lie-dimension smoothness criterion, with the representability of `G/H` from ReductiveGroups Layer 3,
+  give the dimension of `T_{BG_x}` in 7.3.
 
 **Left to other roadmaps.** The Luna étale slice theorems of Alper–Hall–Rydh (Theorems 1.1 and 1.2)
 use the vocabulary of Layer 7 and appear here only in Checks. Banded gerbes, their classification
@@ -213,6 +216,25 @@ The pin is `2fd255d997f47c0b5d834ee416c7015d55444ce5`.
 - `TauCeti.linearlyReductiveAffineGroupSchemeProperty`
   (`TauCeti/AlgebraicGeometry/AffineGroupScheme/LinearlyReductive.lean:60`): used only in the Checks
   of 7.4 that mention linear reductivity.
+- `TauCeti.AffineGroupSchemeCat.exists_isClosedImmersion_generalLinear`
+  (`TauCeti/Algebra/AlgebraicGroup/Representation/Embedding.lean:212`): an affine group scheme over a
+  field `k`, locally of finite type, has a homomorphism to the general linear group scheme `GLₙ` over
+  `k`, for some `n`, that is a closed immersion; `k` and the coordinate ring live in one universe. 7.3 applies it to `G_x`.
+- `TauCeti.HopfAlgebra.smooth_iff_finrank_lie_eq_ringKrullDim`
+  (`TauCeti/Algebra/AlgebraicGroup/Tangent/Regularity.lean:112`): a commutative Hopf algebra `H` of
+  finite type over a field `k` is smooth over `k` iff the dimension of its Lie algebra (the
+  `k`-derivations `H → k` at the counit) equals `ringKrullDim H`; no reducedness, connectedness or
+  perfectness of `k` is assumed. 7.3 uses it as `T_{BG_x} = 0` iff `G_x` is smooth.
+- `CommHopfAlgCat.fppfHomogeneousQuotient`
+  (`TauCeti/Algebra/AlgebraicGroup/Fppf/Quotient/Homogeneous/Basic.lean:217`): for an affine group
+  `G = Spec H` over a commutative ring and the closed subgroup cut out by a Hopf ideal, the fppf
+  sheafification of the left cosets on commutative algebras; no normality and no representability.
+  `CommHopfAlgCat.isPullback_fppfHomogeneousQuotientTorsor` and
+  `CommHopfAlgCat.isLocallySurjective_fppfHomogeneousQuotientSheafProjection`
+  (`.../Fppf/Quotient/Homogeneous/Torsor.lean:160, 154`): the projection `G → G/H` is locally
+  surjective with kernel pair `G × H`, that is an `H`-torsor. Representability is proved there only
+  for linearly reductive `H` (`.../Homogeneous/Coinvariants.lean`), which `G_x` need not be; the
+  general case is gap:homogeneous-quotient-scheme.
 
 ### From TauCetiRoadmap.SchemeAndStackFoundations
 
@@ -360,9 +382,17 @@ deformation-category clause and change-of-residue-field API state these without 
 ### From TauCetiRoadmap.ReductiveGroups
 
 Layer 1 (representations of affine group schemes of finite type over a field as comodules, and the
-finite-dimensional comodule category), Layer 2 (the Lie algebra `Lie(G)` and the smoothness
-criterion `dim Lie(G) = dim G`), Layer 3 (quotients `G/H` by closed subgroups) and Layer 3A (orbits of
-algebraic actions). Nothing about reductivity is assumed.
+finite-dimensional comodule category) and Layer 3A (orbits of algebraic actions). Nothing about
+reductivity is assumed. Layer 3 takes the quotient `G/H` first as an fppf sheaf and makes its
+representability a theorem with hypotheses; 7.3 needs that theorem for `GLₙ/G_x`.
+
+What ReductiveGroups must provide (gap:homogeneous-quotient-scheme): Layer 3 must prove that for a
+smooth affine group scheme `G` of finite type over a field `k` and a closed subgroup scheme `H`, the
+fppf quotient `G/H` (Tau Ceti `CommHopfAlgCat.fppfHomogeneousQuotient`) is represented by a separated
+scheme of finite type over `k`, smooth over `k`, all of whose irreducible components have dimension
+`dim G − dim H` (SGA 3, Exposé VI_A, Théorème 3.2 (i), (ii), (ii′) and (iv)(a′)–(c), sga3-vi-a lines
+871–894, stated there for the left quotient `H\G ≅ G/H`, `g ↦ g⁻¹`); the torsor property of
+`G → G/H` is Tau Ceti's `CommHopfAlgCat.isPullback_fppfHomogeneousQuotientTorsor`.
 
 ## How to read the build
 
@@ -432,7 +462,8 @@ line 1204). For the proof take an étale atlas `W → T` with `W` a nonempty aff
 `T ×_k T = T`, the relation `W ×_T W` equals `W ×_k W`, so `W → Spec k` is étale by fpqc descent of
 étaleness along `W → Spec k`, and `T` is the quotient of `W` by the full relation `W ×_k W`, which is
 `Spec k`. *Needs:* SchemeAndStackFoundations §1.18 (`twoFiberProduct`), §1.19
-(`IsRepresentableBySpaces`, `RepresentableProperty`), §1.8 (`Spaces.EtaleLocal`); gap:stack-morphism-permanence
+(`IsRepresentableBySpaces`, `RepresentableProperty`), §1.8 (`Spaces.EtaleLocal`), §1.20 (`Stacks.points`
+and `inertia`, for the API's `|f|` and `I_𝒳`); gap:stack-morphism-permanence
 (representability and the monomorphism property are checked after the base change along `W → 𝒴`,
 Lemmas 100.3.1 and 100.3.3); for the last clause of the API gap:stack-separation-axioms.
 
@@ -615,7 +646,8 @@ some morphism `Spec k → 𝒳` locally of finite type, and `𝒳_ft-pts ⊆ |�
 lines 1545–1548 and 1567–1569, Definition 101.18.2). Prove that `x` is a finite type point iff there
 are a scheme `U`, a closed point `u ∈ U` and a smooth `φ : U → 𝒳` with `φ(u) = x`, and that
 `𝒳_ft-pts` is the union of the images of the closed points of all affine schemes smooth over `𝒳`
-(stacks-06RD lines 1549–1578, Lemmas 101.18.1 and 101.18.3). *Needs:* SchemeAndStackFoundations
+(stacks-06RD lines 1549–1578, Lemmas 101.18.1 and 101.18.3). *Needs:* 0.5 (the reduced induced
+locally closed substack, for the density of finite type points); SchemeAndStackFoundations
 §1.20 (`SmoothLocal`, `Stacks.points`); Mathlib `AlgebraicGeometry.LocallyOfFiniteType`;
 gap:stack-morphism-permanence (composition, base change and cancellation of local finite type; smooth
 morphisms are locally of finite type).
@@ -864,7 +896,8 @@ Prove that `f : 𝒳 → 𝒴` makes `𝒳` a gerbe over `𝒴` iff `f` and `Δ_
 of finite presentation (stacks-06QB lines 2821–2843, Proposition 101.28.11); that a gerbe is a
 universal homeomorphism, that is `|𝒳 ×_𝒴 𝒴'| → |𝒴'|` is a homeomorphism for every `𝒴' → 𝒴`
 (stacks-06QB lines 2862–2875, Lemma 101.28.13); and that if `𝒳` is a gerbe over `𝒴` and `Δ_𝒳` is
-quasi-compact then so is `Δ_𝒴` (stacks-06QB lines 2876–2890, Lemma 101.28.14). *Needs:* 2.1–2.4;
+quasi-compact then so is `Δ_𝒴` (stacks-06QB lines 2876–2890, Lemma 101.28.14). *Needs:* 2.1, 2.3
+(a gerbe is surjective, flat and locally of finite presentation), 2.4;
 SchemeAndStackFoundations §1.20 (`Stacks.points`, `Stacks.points.pullbackSurjective`);
 gap:flat-lfp-open (openness of flat locally finitely presented morphisms);
 gap:stack-morphism-permanence (descent of quasi-compactness).
@@ -1533,11 +1566,30 @@ retraction; `U` itself need not be smooth over `k`); hence `J/J² ⊗ k(u) → �
 `T_{U,u} → N_x` is surjective with kernel `T_{W,u}`. Smoothness of `U → 𝒳` makes `T_{U,u} → T_{𝒳,x}` surjective with kernel the image of
 `T_{U_x,u}` (AlgebraicModuliForArithmeticGeometry §8.3's `framedDeformation_twoFibre` and
 `framedTangent_exactSequence`), and `U_x → W` is the base change of `Spec k → BG_x`, so
-`T_{W,u}/T_{U_x,u} ≅ T_{BG_x}`. Embedding `G_x` in some `GLₙ`, `BG_x = [(GLₙ/G_x)/GLₙ]` gives
-`dim T_{BG_x} = dim Lie(G_x) − dim G_x`, which vanishes iff `G_x` is smooth (ReductiveGroups Layers
-2–3). *Needs:* 0.4, 2.3, 4.5, 6.4, 7.1, 7.2; AlgebraicModuliForArithmeticGeometry §§8.1, 8.3;
-ReductiveGroups Layers 2–3; Mathlib `retractionKerCotangentToTensorEquivSection`,
-`Algebra.FormallySmooth.exists_lift`; gap:algebraic-stacks-satisfy-rs.
+`T_{W,u}/T_{U_x,u} ≅ T_{BG_x}`. To compute `T_{BG_x}`: `G_x` is affine and locally of finite type
+over `k` (1.3, the inertia being locally of finite type), hence of finite type, so it is a closed
+subgroup of some `GLₙ` (Tau Ceti `TauCeti.AffineGroupSchemeCat.exists_isClosedImmersion_generalLinear`).
+The fppf quotient `Q = GLₙ/G_x` (Tau Ceti `CommHopfAlgCat.fppfHomogeneousQuotient`) is a scheme smooth
+over `k` of pure dimension `n² − dim G_x` (gap:homogeneous-quotient-scheme), and the projection
+`π : GLₙ → Q` is a `G_x`-torsor (Tau Ceti `CommHopfAlgCat.isPullback_fppfHomogeneousQuotientTorsor`).
+Through SchemeAndStackFoundations §1.21's `actionQuotient.torsorEquiv`, `π` defines `q : Q → BG_x`
+whose base change along the surjective, flat, locally finitely presented `Spec k → BG_x` (2.2) is
+`GLₙ → Spec k`, the projection to `Q` being `π`; hence `q` is smooth (gap:stack-morphism-permanence).
+The sequence of AlgebraicModuliForArithmeticGeometry §8.3 for `q` at `ē = π(e)` reads
+`T_{GLₙ,e} → T_{Q,ē} → T_{BG_x} → 0`, and the kernel of `dπ_e` is the tangent space at `e` of the
+fibre `π⁻¹(ē) = G_x`, that is `Lie(G_x)`. Hence
+`dim T_{BG_x} = (n² − dim G_x) − (n² − dim Lie(G_x)) = dim Lie(G_x) − dim G_x`, which vanishes iff
+`G_x` is smooth (Tau Ceti `TauCeti.HopfAlgebra.smooth_iff_finrank_lie_eq_ringKrullDim`). *Needs:* 0.4,
+1.3, 2.2, 2.3, 4.5, 6.4, 7.1, 7.2; AlgebraicModuliForArithmeticGeometry §§8.1, 8.3 (deformation functor,
+stabiliser action, framed tangent sequences); SchemeAndStackFoundations §1.21
+(`actionQuotient.torsorEquiv`: the morphism `q`); Tau Ceti
+`TauCeti.AffineGroupSchemeCat.exists_isClosedImmersion_generalLinear` (`G_x ⊆ GLₙ`),
+`CommHopfAlgCat.fppfHomogeneousQuotient` and `CommHopfAlgCat.isPullback_fppfHomogeneousQuotientTorsor`
+(`GLₙ → GLₙ/G_x` is a `G_x`-torsor), `TauCeti.HopfAlgebra.smooth_iff_finrank_lie_eq_ringKrullDim`
+(`dim Lie(G_x) = dim G_x` iff `G_x` is smooth); Mathlib `retractionKerCotangentToTensorEquivSection`,
+`Algebra.FormallySmooth.exists_lift`; gap:homogeneous-quotient-scheme (`GLₙ/G_x` is a smooth scheme of
+pure dimension `n² − dim G_x`); gap:inertia-of-presentations (the inertia is locally of finite type);
+gap:stack-morphism-permanence (smoothness of `W` and of `q`); gap:algebraic-stacks-satisfy-rs.
 
 **Checks.**
 
@@ -1582,11 +1634,14 @@ chart computation of 7.3 to the smooth atlas `V → [V/G]`, for which `W = G·x`
 
 ### Dependencies
 
-Layers 0, 2, 4, 6; AlgebraicModuliForArithmeticGeometry §§8.1, 8.3; ReductiveGroups Layers 1–3A;
-SchemeAndStackFoundations §§1.21–1.22; Mathlib `retractionKerCotangentToTensorEquivSection`,
+Layers 0, 1, 2, 4, 6; AlgebraicModuliForArithmeticGeometry §§8.1, 8.3; ReductiveGroups Layers 1
+and 3A; SchemeAndStackFoundations §§1.21–1.22; Mathlib `retractionKerCotangentToTensorEquivSection`,
 `Algebra.FormallySmooth.exists_lift`; Tau Ceti
-`TauCeti.Comodule`, `TauCeti.linearlyReductiveAffineGroupSchemeProperty`;
-gap:stack-morphism-permanence, gap:algebraic-stacks-satisfy-rs.
+`TauCeti.Comodule`, `TauCeti.linearlyReductiveAffineGroupSchemeProperty`,
+`TauCeti.AffineGroupSchemeCat.exists_isClosedImmersion_generalLinear`,
+`CommHopfAlgCat.fppfHomogeneousQuotient`, `CommHopfAlgCat.isPullback_fppfHomogeneousQuotientTorsor`,
+`TauCeti.HopfAlgebra.smooth_iff_finrank_lie_eq_ringKrullDim`; gap:stack-morphism-permanence,
+gap:inertia-of-presentations, gap:homogeneous-quotient-scheme, gap:algebraic-stacks-satisfy-rs.
 
 ## Downstream consumers
 
@@ -1651,6 +1706,10 @@ over `Spec ℝ` with no real object, with `𝒳 ×_ℝ ℂ ≃ B(ℤ/2)_ℂ` at 
   Exercises 7.4.40–7.4.42).
 - [rydh2011] D. Rydh, *Étale dévissage, descent and pushouts of stacks*, J. Algebra 331 (2011), read
   as arXiv:1005.2171v2: Appendix B, Theorems B.1–B.2.
+- [sga3-vi-a] M. Demazure, A. Grothendieck (eds.), *Schémas en groupes* (SGA 3), Tome I, Exposé VI_A,
+  re-edition by P. Gille and P. Polo, Documents Mathématiques 7, SMF 2011, read in the editor's
+  compilation of 13 October 2024: Théorème 3.2 (quotients `H\G`), cited in
+  gap:homogeneous-quotient-scheme.
 - [lmb2000] G. Laumon, L. Moret-Bailly, *Champs algébriques*, Springer 2000: Chapter 11, cited by
   locator only.
 - [olsson2016] M. Olsson, *Algebraic Spaces and Stacks*, AMS 2016: Chapter 11, background only, cited

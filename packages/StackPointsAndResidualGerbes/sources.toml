@@ -234,3 +234,20 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-07"
 cited_for = ["a morphism from a reduced scheme with image in one point, or in a set of points without specialisations of a locally Noetherian scheme, factors through the residue fields (§29.59): the supplier contract gap:reduced-scheme-residue-field-factorisation of target 5.2"]
+
+[[source]]
+id = "sga3-vi-a"
+authors = "Michel Demazure, Alexander Grothendieck (eds.); re-edition by Philippe Gille, Patrick Polo"
+title = "Schémas en groupes (SGA 3), Tome I, Exposé VI_A: Généralités sur les groupes algébriques"
+year = 2011
+version_note = "Re-edition (Documents Mathématiques 7, Société Mathématique de France), file compiled 13 October 2024 from the editor's page; Théorème 3.2 is on printed page 313, and its items (ii′) and the detailed (iv) are editorial additions marked N.D.E."
+locator_scheme = "theorem"
+locator = "Exposé VI_A, Théorème 3.2"
+url = "https://webusers.imj-prg.fr/~patrick.polo/SGA3/Exp6A-13oct24.pdf"
+fetched_from = "https://webusers.imj-prg.fr/~patrick.polo/SGA3/Exp6A-13oct24.pdf"
+fetched_at = "2026-11-08T11:37:01Z"
+sha256 = "6c8795572d1fc3b21bd02d24b1bfb20a8fb447475702c2674c96939b1eb69582"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-08"
+cited_for = ["the quotient of a group of finite type over a field by a closed subgroup is a separated scheme of finite type, smooth when the group is, with components of dimension dim G − dim H, the projection an fppf torsor (Théorème 3.2 (i), (ii), (ii′), (iv)(a′)–(c)): the supplier contract gap:homogeneous-quotient-scheme of target 7.3"]

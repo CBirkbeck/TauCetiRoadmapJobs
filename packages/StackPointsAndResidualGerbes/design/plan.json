@@ -792,6 +792,7 @@
      },
      "prerequisites": [
       "target:2.1",
+      "target:2.3",
       "target:2.4",
       "roadmap:SchemeAndStackFoundations §1.20",
       "gap:flat-lfp-open",
@@ -1024,6 +1025,8 @@
       "target:2.3",
       "target:2.4",
       "target:2.5",
+      "target:3.1",
+      "target:3.2",
       "target:3.3",
       "roadmap:SchemeAndStackFoundations §1.20",
       "gap:stack-separation-axioms",
@@ -1945,6 +1948,8 @@
      },
      "prerequisites": [
       "target:0.4",
+      "target:1.3",
+      "target:2.2",
       "target:2.3",
       "target:4.5",
       "target:6.4",
@@ -1952,10 +1957,16 @@
       "target:7.2",
       "roadmap:AlgebraicModuliForArithmeticGeometry §8.1",
       "roadmap:AlgebraicModuliForArithmeticGeometry §8.3",
-      "roadmap:ReductiveGroups Layer 2",
-      "roadmap:ReductiveGroups Layer 3",
+      "roadmap:SchemeAndStackFoundations §1.21",
+      "tauceti:TauCeti.AffineGroupSchemeCat.exists_isClosedImmersion_generalLinear",
+      "tauceti:CommHopfAlgCat.fppfHomogeneousQuotient",
+      "tauceti:CommHopfAlgCat.isPullback_fppfHomogeneousQuotientTorsor",
+      "tauceti:TauCeti.HopfAlgebra.smooth_iff_finrank_lie_eq_ringKrullDim",
       "mathlib:retractionKerCotangentToTensorEquivSection",
       "mathlib:Algebra.FormallySmooth.exists_lift",
+      "gap:homogeneous-quotient-scheme",
+      "gap:inertia-of-presentations",
+      "gap:stack-morphism-permanence",
       "gap:algebraic-stacks-satisfy-rs"
      ],
      "api": [
@@ -1972,7 +1983,7 @@
       {
        "name": "BG_tangent",
        "role": "lemma",
-       "statement": "dim T_{BG} = dim Lie(G) - dim G, zero iff G smooth."
+       "statement": "For G affine of finite type over k, embedded as a closed subgroup of GL_n, the torsor GL_n -> GL_n/G defines a smooth q : GL_n/G -> BG with fibre GL_n over Spec k -> BG, and T_{GL_n,e} -> T_{GL_n/G,pi(e)} -> T_{BG} -> 0 is exact with dim T_{GL_n/G,pi(e)} = n^2 - dim G and kernel of d pi_e equal to Lie(G); hence dim T_{BG} = dim Lie(G) - dim G, zero iff G smooth."
       }
      ],
      "tests": [
@@ -2086,11 +2097,10 @@
    "roadmap": "ReductiveGroups",
    "sections": [
     "Layer 1",
-    "Layer 2",
     "Layer 3",
     "Layer 3A"
    ],
-   "what": "Representations as comodules, Lie algebras and the smoothness criterion, quotients and orbits."
+   "what": "Representations as comodules (Layer 1), orbits of algebraic actions (Layer 3A), and the representability of quotients G/H by closed subgroups as smooth schemes of dimension dim G - dim H (Layer 3, gap:homogeneous-quotient-scheme)."
   }
  ],
  "consumers": [
@@ -2145,7 +2155,8 @@
     "5.4",
     "5.5",
     "6.4",
-    "7.2"
+    "7.2",
+    "7.3"
    ],
    "detail": "Stacks, Properties of Stacks, Lemmas 100.3.1-100.3.3, 100.5.2-100.5.5 (stacks-04XE lines 111-245, 577-590); Morphisms of Stacks, Lemmas 101.7.3-101.7.7, 101.7.10, 101.17.2-101.17.8, 101.25.2-101.25.5, 101.27.2-101.27.14, 101.27.16, 101.33.2-101.33.5 (stacks-06RD lines 801-889, 1478-1540, 2328-2357, 2438-2577, 3294-3308). SchemeAndStackFoundations §1.20 defines SmoothLocal and QuasiCompactStack with atlas independence only.",
    "needs": "SchemeAndStackFoundations §1.20 must prove, for its SmoothLocal properties (flat, lfp, lft, smooth), surjectivity and QuasiCompactStack, composition, base change, descent along surjective flat lfp base change, agreement with RepresentableProperty, the implications smooth => lfp => lft, cancellation for lft and lfp, and fppf-local essential surjectivity of surjective flat lfp morphisms; that representability by algebraic spaces and RepresentableProperty P, for P stable under base change and fppf local on the target, hold once they hold after one surjective flat lfp base change from an algebraic space (Lemmas 100.3.1, 100.3.3); and that an algebraic stack locally of finite type over a locally Noetherian algebraic stack is locally Noetherian (Lemma 101.17.5).",
@@ -2169,7 +2180,8 @@
    "neededBy": [
     "1.3",
     "2.4",
-    "2.6"
+    "2.6",
+    "7.3"
    ],
    "detail": "Stacks, Morphisms of Stacks, Lemmas 101.5.1 and 101.5.7 (stacks-06RD lines 463-496, 609-618). SchemeAndStackFoundations §1.20 states inertia.representable only.",
    "needs": "SchemeAndStackFoundations §1.20 must prove that the inertia and relative inertia of algebraic stacks are locally of finite type and that the stabilizer of a presentation [U/R] ≃ X is U x_X I_X.",
@@ -2324,6 +2336,17 @@
    "needs": "AlgebraicModuliForArithmeticGeometry §8.1 must prove that an algebraic stack over a locally Noetherian base satisfies the Rim-Schlessinger condition and that framed tangent spaces commute with finite separable extensions of the residue field.",
    "supplier": "AlgebraicModuliForArithmeticGeometry",
    "section": "§8.1"
+  },
+  {
+   "slug": "homogeneous-quotient-scheme",
+   "title": "Quotients of smooth affine groups by closed subgroups are smooth schemes of the expected dimension",
+   "neededBy": [
+    "7.3"
+   ],
+   "detail": "SGA 3, Exposé VI_A, Théorème 3.2 (i), (ii), (ii') and (iv)(a')-(c) (sga3-vi-a lines 871-894), stated for the left quotient H\\G over a local Artinian ring, in particular a field. ReductiveGroups Layer 3 takes G/H as an fppf sheaf and makes representability a theorem with hypotheses; Tau Ceti has the sheaf CommHopfAlgCat.fppfHomogeneousQuotient and the torsor property CommHopfAlgCat.isPullback_fppfHomogeneousQuotientTorsor, and representability only for linearly reductive H.",
+   "needs": "ReductiveGroups Layer 3 must prove that for a smooth affine group scheme G of finite type over a field k and a closed subgroup scheme H, the fppf quotient G/H is represented by a separated scheme of finite type over k, smooth over k, all of whose irreducible components have dimension dim G - dim H.",
+   "supplier": "ReductiveGroups",
+   "section": "Layer 3"
   }
  ]
 }
