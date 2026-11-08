@@ -409,3 +409,124 @@ licence_class = "none"
 status = "uncertified"
 version_note = "the service matched arXiv 0903.5002, which is a different article (Geom. Topol. Monogr. 11, 2007); the Comment. Math. Helv. 82 (2007) paper is cited by its locator without the text"
 cited_for = ["F6.4"]
+
+[[source]]
+id = "hovey-mstring"
+authors = "Mark Hovey"
+title = "The homotopy of MString and MU<6> at large primes"
+year = 2008
+venue = "Algebraic & Geometric Topology 8"
+doi = "10.2140/agt.2008.8.2401"
+locator_scheme = "section"
+locator = "Section 2"
+url = "https://www.sas.rochester.edu/mth/sites/doug-ravenel/otherpapers/Hovey-bpbp1.pdf"
+fetched_from = "https://www.sas.rochester.edu/mth/sites/doug-ravenel/otherpapers/Hovey-bpbp1.pdf"
+fetched_at = "2026-11-08T17:10:33Z"
+sha256 = "96c034f1b899eaccbab0c8332456d3aab4882778c4475aad8a99b18815004eb0"
+licence_class = "institutional"
+status = "certified"
+accessed = "2026-11-08"
+cited_for = ["F3"]
+
+[[source]]
+id = "adams-blue-book"
+authors = "J. F. Adams"
+title = "Stable Homotopy and Generalised Homology"
+year = 1974
+venue = "Chicago Lectures in Mathematics, University of Chicago Press"
+locator_scheme = "section"
+locator = "Part II, Sections 2-4 and 12"
+licence_class = "none"
+status = "uncertified"
+version_note = "book without an open copy; cited by its locator without the text"
+cited_for = ["F2", "F4"]
+
+[[source]]
+id = "wilson-omega-spectrum-ii"
+authors = "W. Stephen Wilson"
+title = "The Omega-spectrum for Brown-Peterson cohomology, Part II"
+year = 1975
+venue = "American Journal of Mathematics 97"
+doi = "10.2307/2373662"
+locator_scheme = "section"
+locator = "Part II"
+url = "https://doi.org/10.2307/2373662"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled (JSTOR); cited by its locator without the text"
+cited_for = ["F3"]
+
+[[source]]
+id = "hopkins-smith-nilpotence-ii"
+authors = "Michael J. Hopkins, Jeffrey H. Smith"
+title = "Nilpotence and stable homotopy theory II"
+year = 1998
+venue = "Annals of Mathematics 148"
+doi = "10.2307/120991"
+locator_scheme = "theorem"
+locator = "Theorems 3, 7 and 9"
+url = "https://doi.org/10.2307/120991"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled (JSTOR); cited by its locator without the text"
+cited_for = ["F6.3"]
+
+[[source]]
+id = "hovey-strickland-memoir"
+authors = "Mark Hovey, Neil P. Strickland"
+title = "Morava K-theories and localisation"
+year = 1999
+venue = "Memoirs of the American Mathematical Society 666"
+doi = "10.1090/memo/0666"
+locator_scheme = "theorem"
+locator = "Proposition 7.10"
+url = "https://doi.org/10.1090/memo/0666"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled (AMS); cited by its locator without the text"
+cited_for = ["F6.5"]
+
+[[source]]
+id = "james-1955"
+authors = "I. M. James"
+title = "Reduced product spaces"
+year = 1955
+venue = "Annals of Mathematics 62"
+doi = "10.2307/2007107"
+locator_scheme = "section"
+locator = "Sections 1-6"
+url = "https://doi.org/10.2307/2007107"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled (JSTOR); cited by its locator without the text"
+cited_for = ["F6.2"]
+
+[[source]]
+id = "landweber-1976"
+authors = "Peter S. Landweber"
+title = "Homological properties of comodules over MU_*(MU) and BP_*(BP)"
+year = 1976
+venue = "American Journal of Mathematics 98"
+doi = "10.2307/2373808"
+locator_scheme = "theorem"
+locator = "Theorem 2.6"
+url = "https://doi.org/10.2307/2373808"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled (JSTOR); cited by its locator without the text"
+cited_for = ["F5"]
+
+[[source]]
+id = "landweber-ravenel-stong"
+authors = "Peter S. Landweber, Douglas C. Ravenel, Robert E. Stong"
+title = "Periodic cohomology theories defined by elliptic curves"
+year = 1995
+venue = "Contemporary Mathematics 181"
+doi = "10.1090/conm/181/02035"
+locator_scheme = "section"
+locator = "Section 2"
+url = "https://doi.org/10.1090/conm/181/02035"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled (AMS); the author-page copy at people.math.rochester.edu timed out three times; cited by its locator without the text"
+cited_for = ["F5"]

@@ -8,7 +8,7 @@ title = "Transformation de Fourier, constantes d'équations fonctionnelles et co
 year = 1987
 venue = "Publ. Math. IHÉS 65, 131–210"
 locator_scheme = "section"
-locator = "§0 (0.1)–(0.9); §1.1 (1.1.1)–(1.1.3.7); §1.2 (1.2.1.1)–(1.2.3.5); §1.3 (1.3.1.1)–(1.3.2.4); §1.4 (1.4.1)–(1.4.3.2); §2.1 (2.1.1), (2.1.2.4)–(2.1.5); §2.2 (2.2.1)–(2.2.2.2); §2.3 (2.3.1.1)–(2.3.3.1); §2.4 (2.4.1)–(2.4.3); §2.5 (2.5.2)–(2.5.3.1); §4.4"
+locator = "§0 (0.1)–(0.9); §1.1 (1.1.1)–(1.1.3.7); §1.2 (1.2.1.1)–(1.2.3.5); §1.3 (1.3.1.1)–(1.3.2.4); §1.4 (1.4.1)–(1.4.3.2); §2.1 (2.1.1), (2.1.2.4)–(2.1.5); §2.2 (2.2.1)–(2.2.2.2); §2.3 (2.3.1.1)–(2.3.3.1); §2.4 (2.4.1)–(2.4.3); §2.5 (2.5.2)–(2.5.3.1); §3 (scope boundary); §4.3 (4.3.1.1); §4.4"
 url = "https://www.numdam.org/item/PMIHES_1987__65__131_0/"
 fetched_from = "https://www.numdam.org/item/PMIHES_1987__65__131_0.pdf"
 fetched_at = "2026-11-06T16:58:23Z"
@@ -16,7 +16,7 @@ sha256 = "c666e214ae586651b9f171f6a39d755e58f96379970ffa98bafb2d9be591fc8e"
 licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-06"
-cited_for = ["0.1.1", "0.2", "0.2.1", "1.1", "1.1.1", "1.2", "1.2.1", "1.3", "1.4", "1.4.1", "2.1", "2.1.1", "2.2", "2.3", "2.4", "2.5", "2.6", "2.7.1", "3.1", "3.2", "3.3", "3.3.1", "3.4", "3.4.1", "3.5", "3.6", "3.8", "3.8.1", "4.1", "4.2", "5.1", "5.1.1", "5.1.2", "5.2", "5.4", "5.4.1", "5.5", "5.6", "5.6.1", "5.6.2", "Scope", "Conventions"]
+cited_for = ["Scope and ownership", "Conventions", "Exact supplier contracts", "§0.1", "§0.2", "§1.1", "§1.2", "§1.3", "§1.4", "§2.1", "§2.2", "§2.3", "§2.4", "§2.5", "§2.6", "§2.7", "§3.1", "§3.2", "§3.3", "§3.4", "§3.5", "§3.6", "§3.8", "§4.1", "§4.2", "§5.1", "§5.2", "§5.4", "§5.5", "§5.6", "Downstream consumers"]
 
 [[source]]
 id = "WII"
@@ -33,7 +33,7 @@ sha256 = "b06eea61bf9cb2b596c162f5befcf85d1be69828910a6107c8aa3a99c4afcc71"
 licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-06"
-cited_for = ["Scope (boundary: the curve estimate belongs to DeligneWeightsAndPurity)"]
+cited_for = ["Scope and ownership (boundary: weights and Weil II belong to DeligneWeightsAndPurity)"]
 
 [[source]]
 id = "KL85"
@@ -51,7 +51,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-06"
 version_note = "the scan carries two page numberings; locators use theorem numbers"
-cited_for = ["0.1", "0.1.1", "3.1", "3.2", "3.3", "3.3.1", "3.5", "3.6", "3.7", "4.1", "Scope", "Conventions"]
+cited_for = ["Scope and ownership", "Conventions", "§0.1", "§1.3", "§3.1", "§3.2", "§3.3", "§3.5", "§3.6", "§3.7", "§4.1", "Downstream consumers"]
 
 [[source]]
 id = "BRY86"
@@ -68,7 +68,7 @@ sha256 = "9e049e267f590be66150a9424a42bf335c685796bd3acb130120d0e453540a81"
 licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-06"
-cited_for = ["1.1", "1.1.1"]
+cited_for = ["§1.1"]
 
 [[source]]
 id = "LAU96"
@@ -86,7 +86,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-06"
 version_note = "arXiv v1"
-cited_for = ["Scope (boundary: the D-module and Fourier–Mukai transform is not owned here)"]
+cited_for = ["Scope and ownership (boundary: the Fourier–Mukai transform of D-modules belongs to SheafConvolutionOnAbelianVarieties)"]
 
 [[source]]
 id = "KATZ01"
@@ -105,7 +105,7 @@ licence_class = "author-page"
 status = "certified"
 accessed = "2026-11-06"
 version_note = "author's AWS 2000 lecture notes, the version published in Adv. Math.; locators use lecture and statement names"
-cited_for = ["2.2", "2.5", "2.7", "5.5.1", "Conventions"]
+cited_for = ["Conventions", "§2.2", "§2.5", "§2.7", "§2.8", "§5.5"]
 
 [[source]]
 id = "ESDE"
@@ -123,7 +123,7 @@ licence_class = "author-page"
 status = "certified"
 accessed = "2026-11-06"
 version_note = "author's corrected manuscript; chapter-local page numbering"
-cited_for = ["5.3", "5.3.1", "5.5.1"]
+cited_for = ["§5.3", "§5.5"]
 
 [[source]]
 id = "SGA45-ST"
@@ -138,7 +138,7 @@ url = "https://doi.org/10.1007/bfb0091523"
 licence_class = "none"
 status = "uncertified"
 version_note = "paywalled; cited by its locator without the text"
-cited_for = ["2.1", "2.4", "2.6", "5.4"]
+cited_for = ["§2.1", "§2.4", "§2.6", "§5.4"]
 
 [[source]]
 id = "KW01"
@@ -153,4 +153,4 @@ url = "https://doi.org/10.1007/978-3-662-04576-3"
 licence_class = "none"
 status = "uncertified"
 version_note = "paywalled; cited by its locator without the text"
-cited_for = ["4.1"]
+cited_for = ["Exact supplier contracts", "§4.1", "§5.2"]
