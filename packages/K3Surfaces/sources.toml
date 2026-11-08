@@ -243,3 +243,21 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-08"
 cited_for = ["0.2"]
+
+[[source]]
+id = "char2-orthogonal-involutions"
+authors = "Mark Hunnell, John Hutchens, Nathaniel Schwartz"
+title = "On involutions of type O(q,k) over a field of characteristic two"
+year = 2019
+arxiv = "1903.09904v3"
+locator_scheme = "section"
+locator = "§3, p.6 (generation of the orthogonal group by orthogonal transvections, except H⊥H over F_2)"
+url = "https://arxiv.org/abs/1903.09904v3"
+fetched_from = "https://arxiv.org/pdf/1903.09904v3"
+fetched_at = "2026-11-08T19:24:35Z"
+sha256 = "3e2284e9be9a0788a381a5329489aac34b64360eddfea954942b40148a293a13"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-08"
+version_note = "arXiv v3"
+cited_for = ["7.1"]
