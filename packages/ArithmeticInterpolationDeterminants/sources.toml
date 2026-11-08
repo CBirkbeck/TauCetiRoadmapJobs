@@ -80,3 +80,19 @@ licence_class = "author-page"
 status = "certified"
 accessed = "2026-11-08"
 cited_for = ["References"]
+
+[[source]]
+id = "Treil"
+authors = "S. Treil"
+title = "Linear Algebra Done Wrong"
+year = 2017
+locator_scheme = "theorem"
+locator = "Chapter 3: p. 81 (triangular matrices), Theorem 3.5 (p. 82), formula (4.2) (p. 89), Theorem 6.1 (p. 96)"
+url = "https://www.math.brown.edu/streil/papers/LADW/LADW_2017-09-04.pdf"
+fetched_from = "https://www.math.brown.edu/streil/papers/LADW/LADW_2017-09-04.pdf"
+fetched_at = "2026-11-08T13:12:00Z"
+sha256 = "d4659dd7b1c1f9d6a8f78cda7a636354d191eb8a8cbd40f12042d59e83c4074f"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-08"
+cited_for = ["2.1", "2.2", "3.1", "3.2", "4.1"]
