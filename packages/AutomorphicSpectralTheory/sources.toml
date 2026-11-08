@@ -1,0 +1,18 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "AutomorphicSpectralTheory"
+
+[[source]]
+id = "Art05"
+authors = "James Arthur"
+title = "An Introduction to the Trace Formula"
+year = 2005
+locator_scheme = "section"
+locator = "§24, paragraph after (24.1), p.158; Theorem 12.1, p.64; §7, pp.32–33; (12.5)–(12.6), p.66"
+url = "https://www.claymath.org/library/cw/arthur/pdf/62.pdf"
+fetched_from = "https://www.claymath.org/library/cw/arthur/pdf/62.pdf"
+fetched_at = "2026-11-08T15:36:49Z"
+sha256 = "2b6623010ce5d854732458dfb5e61600a4e6cc7288629a72cb63d5f7530ac510"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-11-08"
+cited_for = ["4.5"]
