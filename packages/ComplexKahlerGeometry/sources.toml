@@ -197,3 +197,19 @@ licence_class = "none"
 status = "uncertified"
 version_note = "paywalled (the DOI landing page at Wiley answers HTTP 403); cited by its locator without the text"
 cited_for = ["K3", "K6"]
+
+[[source]]
+id = "hormann-steinbauer-distributions"
+authors = "Günther Hörmann, Roland Steinbauer"
+title = "Lecture Notes on the Theory of Distributions"
+year = 2009
+locator_scheme = "theorem"
+locator = "Theorem 1.70, p. 35; Theorem 4.22, pp. 89-90"
+url = "https://mat.univie.ac.at/~stein/teaching/courses/SoSem09/distrvo.pdf"
+fetched_from = "https://mat.univie.ac.at/~stein/teaching/courses/SoSem09/distrvo.pdf"
+fetched_at = "2026-11-08T14:24:50Z"
+sha256 = "56f9d146c815af308ee8a0f3e2fb8e0c4038e50b241e6168b304600df4b2b0a8"
+licence_class = "institutional"
+status = "certified"
+accessed = "2026-11-08"
+cited_for = ["K5a.DistributionLocalStructure"]
