@@ -51,3 +51,38 @@ licence_class = "publisher-open"
 status = "certified"
 accessed = "2026-11-08"
 cited_for = ["1.7"]
+
+[[source]]
+id = "hatcher_vbkt"
+authors = ["Allen Hatcher"]
+title = "Vector Bundles and K-Theory"
+year = 2017
+locator_scheme = "theorem"
+locator = "Section 1.1, p.9; Proposition 1.14, p.25; Theorem 2.16(b), Section 2.3, p.59"
+url = "https://pi.math.cornell.edu/~hatcher/VBKT/VB.pdf"
+fetched_from = "https://pi.math.cornell.edu/~hatcher/VBKT/VB.pdf"
+fetched_at = "2026-11-08T19:28:13Z"
+sha256 = "04282b30dfa6305183827d399deddd0bd98240c2e6d2d0c416b06e2d4e1fa097"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-08"
+version_note = "Version 2.2, November 2017 (author page); printed page = PDF page - 4"
+cited_for = ["3C.5", "4B.8"]
+
+[[source]]
+id = "ranicki2002"
+authors = ["Andrew Ranicki"]
+title = "Foundations of algebraic surgery"
+year = 2001
+arxiv = "math/0111315v1"
+locator_scheme = "section"
+locator = "Section 2 (forms and formations), p.5"
+url = "https://arxiv.org/abs/math/0111315v1"
+fetched_from = "https://arxiv.org/pdf/math/0111315v1"
+fetched_at = "2026-11-08T19:29:19Z"
+sha256 = "40584fbd623e574fe460c4b7022cab4e61621201eee9771cf1338802a8cd4835"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-08"
+version_note = "arXiv v1"
+cited_for = ["7B.3", "7B.8"]
