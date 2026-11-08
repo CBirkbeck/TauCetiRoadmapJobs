@@ -52,3 +52,41 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-08"
 cited_for = ["5.3c", "5.3g", "5.3m", "5.4", "5.8", "5.10", "5.10a", "5.10b", "5.12", "5.13", "5.21", "5.21r", "5.21s", "5.24a", "5.27a"]
+
+[[source]]
+id = "JorgensonSmajlovicSpilioti25"
+authors = "Jay Jorgenson, Lejla Smajlovic, Polyxeni Spilioti"
+title = "Determinants of twisted Laplacians and the twisted Selberg zeta function"
+year = 2025
+arxiv = "2512.16681v2"
+locator_scheme = "equation"
+locator = "(2.8)–(2.9); Theorem 6.1, (6.1)–(6.7); (8.4); (8.8)"
+url = "https://arxiv.org/abs/2512.16681v2"
+fetched_from = "https://arxiv.org/pdf/2512.16681v2"
+fetched_at = "2026-11-08T22:05:24Z"
+sha256 = "1f0f399fa1c247b8b4726cd1dcd904e75166f06bea76e2b581437b9d824b5c11"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-08"
+version_note = "arXiv v2"
+cited_for = ["6.4a", "6.6", "6.12f", "6.12h", "6.12j", "6.13", "6.13a", "6.17", "6.17a", "6.17c", "6.17d", "6.17e", "6.17f", "6.17g", "6.17h", "6.19", "6.20a", "6.20c"]
+
+[[source]]
+id = "LagariasLiIII"
+authors = "Jeffrey C. Lagarias, W. -C. Winnie Li"
+title = "The Lerch zeta function III. Polylogarithms and special values"
+year = 2016
+venue = "Research in the Mathematical Sciences 3 (2016), Paper No. 2"
+doi = "10.1186/s40687-015-0049-2"
+arxiv = "1506.06161v1"
+locator_scheme = "theorem"
+locator = "(1.1); (1.8)–(1.9); (8.1); Theorems 2.1–2.2; Theorem 5.1; Theorem 8.4, (8.15), (8.17)–(8.20)"
+url = "https://arxiv.org/abs/1506.06161v1"
+fetched_from = "https://arxiv.org/pdf/1506.06161v1"
+fetched_at = "2026-11-08T22:07:42Z"
+sha256 = "010c108a9e63963dae0b6f3b053c14c457dd836d5e24b067a3fed794f44b3fa3"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-08"
+version_note = "read as arXiv v1; theorem and equation numbers agree with arXiv v2 (Theorems 2.1–2.2, Theorem 8.4, (8.14)–(8.20)); page numbers cited for v1 are v1's"
+cited_for = ["4.1", "4.4", "4.4b", "4.4c", "4.5", "4.5g", "4.6", "4.6a", "4.8", "4.12a", "4.16", "4.17", "4.17a"]
