@@ -1,0 +1,34 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "EnhancedDerivedSheaves"
+
+[[source]]
+id = "HA"
+authors = ["Jacob Lurie"]
+title = "Higher Algebra"
+year = 2017
+locator_scheme = "theorem"
+locator = "Theorem 7.1.2.13; Remark 7.1.1.16"
+url = "https://www.math.ias.edu/~lurie/papers/HA.pdf"
+fetched_from = "https://www.math.ias.edu/~lurie/papers/HA.pdf"
+fetched_at = "2026-11-08T17:43:15Z"
+sha256 = "112b145a95a62daefb8275851cac9ab6430004cfc8f751a33a8d981fd7ad68c3"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-08"
+cited_for = ["Conventions (definitional order)"]
+
+[[source]]
+id = "StacksInjectives"
+authors = ["The Stacks project authors"]
+title = "The Stacks project, Chapter 19: Injectives"
+year = 2026
+locator_scheme = "tag"
+locator = "079P"
+url = "https://stacks.math.columbia.edu/download/injectives.pdf"
+fetched_from = "https://stacks.math.columbia.edu/download/injectives.pdf"
+fetched_at = "2026-11-08T17:43:33Z"
+sha256 = "8042e6000eb43f51ebc8858b43dee9c60e8f3b1653a6cb007aabdce78a365acd"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-08"
+cited_for = ["0.1, 0.2"]
