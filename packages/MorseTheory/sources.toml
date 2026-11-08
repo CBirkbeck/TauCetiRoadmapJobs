@@ -96,3 +96,22 @@ licence_class = "none"
 status = "uncertified"
 version_note = "paywalled; cited by its locator without the text"
 cited_for = ["2.1"]
+
+[[source]]
+id = "nicolaescu-invitation"
+authors = "Liviu I. Nicolaescu"
+title = "An Invitation to Morse Theory"
+year = 2011
+venue = "Universitext"
+doi = "10.1007/978-1-4614-1105-5"
+version_note = "theorem and page numbers refer to the author version of the second edition posted on the author's page"
+locator_scheme = "theorem"
+locator = "Theorem 2.2.3, pp. 38-42, and Remark 2.2.5, p. 42"
+url = "https://academicweb.nd.edu/~lnicolae/Morse2nd.pdf"
+fetched_from = "https://academicweb.nd.edu/~lnicolae/Morse2nd.pdf"
+fetched_at = "2026-11-08T16:26:51Z"
+sha256 = "c599a63debd5e6e68c8cea35fa808c1e5c8cf12bd1be7051e2d75086082996da"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-08"
+cited_for = ["2.2"]
