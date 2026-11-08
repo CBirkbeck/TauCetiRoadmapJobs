@@ -1,0 +1,33 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "AlgebraicVectorBundles"
+
+[[source]]
+id = "Stacks"
+authors = "The Stacks project authors"
+title = "The Stacks Project"
+year = 2026
+locator_scheme = "tag"
+locator = "Tags 01CD, 01CI, 02N4, 0C6I (Sheaves of Modules); 01M1, 062M, 062N (Constructions of Schemes); 0EKK (Groupoids)"
+url = "https://stacks.math.columbia.edu/tag/0C6I"
+fetched_from = "https://stacks.math.columbia.edu/download/modules.pdf#nameddest=0C6I"
+fetched_at = "2026-11-08T23:32:05Z"
+sha256 = "7effc55750a81b6969a94ca3432fb71c366b3d91acdd4016ea4149dd28b475e6"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-08"
+cited_for = ["1.1", "2.1", "3.1", "4.1"]
+
+[[source]]
+id = "Hartshorne"
+authors = "Robin Hartshorne"
+title = "Algebraic Geometry"
+year = 1977
+venue = "Graduate Texts in Mathematics"
+doi = "10.1007/978-1-4757-3849-0"
+locator_scheme = "theorem"
+locator = "Chapter II, Exercise 5.16"
+url = "https://doi.org/10.1007/978-1-4757-3849-0"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["3.2"]
