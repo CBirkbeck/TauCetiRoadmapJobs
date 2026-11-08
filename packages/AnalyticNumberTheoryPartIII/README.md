@@ -758,8 +758,12 @@ standing bump hypotheses and `0 < ε`, prove:
   value at `1` is `≈ 0.706`, so the value `1/2` is a property of symmetric bumps only.
 - `smoothCutoff ν ε 0 = 0`, so a sum `Σ_{n≥0} a(n) smoothCutoff ν ε (n/X)` has no `n = 0` term.
 - The transform formula, computed for that non-symmetric bump at `ε = 1/2`, `s = 1.3 + 2i`: both
-  sides equal `0.30772 − 0.32853i`. With the opposite normalization `mellin ν (s/ε)/s` the limit as
-  `ε → 0⁺` would be `0` on `Re s > 0` instead of `1/s`, the transform of `1_(0,1]`.
+  sides equal `0.30772 − 0.32853i`. The opposite normalization `mellin ν (s/ε)/s` gives
+  `0.49617 + 0.09889i` there instead. As `ε → 0⁺` the correct side tends to `mellin ν 0/s = 1/s`,
+  the transform of `1_(0,1]` (`0.23536 − 0.35129i` at `ε = 1/20`, against
+  `1/s = 0.22847 − 0.35149i`). The opposite side has modulus `0.506, 0.762, 16.4, 1.9·10⁴` at
+  `ε = 1/2, 1/4, 1/10, 1/20` and is unbounded: this bump vanishes to second order at `2`, whence
+  `|mellin ν w| ≍ 2^{Re w}/|w|³` as `Re w → +∞` in a sector `|arg w| ≤ θ < π/2`.
 - The bound is uniform in `ε`: with `k = 1`, `s = 1 + iT`, it is `≍ 1/(T(1 + εT))`, which is
   `≍ 1/T` for `T ≤ 1/ε` and `≍ 1/(εT²)` beyond.
 
