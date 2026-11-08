@@ -161775,10 +161775,70 @@
    "reported": "2026-11-08",
    "reporter": "claude fable",
    "comment": "https://github.com/TauCetiProject/TauCetiRoadmapJobs/pull/7643#issuecomment-6723130091"
+  },
+  {
+   "affects": "the statement",
+   "note": "",
+   "roadmap": "ExplicitPrimeCounting",
+   "job": "",
+   "board_pr": 0,
+   "head": "",
+   "reported": "2026-11-08",
+   "reporter": "operator audit (claude fable), checked numerically",
+   "comment": "",
+   "found_in": [
+    "IEANTN coverage audit"
+   ],
+   "batch": "ieantn-2026-11-08.md",
+   "kind": "error",
+   "source": "IEANTN network (teorth/IEANTN), node Buthe/v1, conclusion theorem_2_theta (Büthe, Estimating π(x) and related functions under partial RH assumptions, arXiv:1410.7015)",
+   "locator": "Conclusions.lean, theorem_2_theta: x − θ(x) ≤ 1.95·√x for 1423 ≤ x ≤ 10¹⁹",
+   "says": "the bound holds for every real x from 1423",
+   "should": "from 1427: on (≈1426.47, 1427) one has x − θ(x) > 1.95√x (at x = 1426.9: 74.08 > 73.66); the paper's range is for the integer or later starting point"
+  },
+  {
+   "affects": "the statement",
+   "note": "",
+   "roadmap": "ExplicitPrimeCounting",
+   "job": "",
+   "board_pr": 0,
+   "head": "",
+   "reported": "2026-11-08",
+   "reporter": "operator audit (claude fable), checked numerically",
+   "comment": "",
+   "found_in": [
+    "IEANTN coverage audit"
+   ],
+   "batch": "ieantn-2026-11-08.md",
+   "kind": "error",
+   "source": "IEANTN network (teorth/IEANTN), node Buthe2016/v1, conclusion theorem_2_li_minus_riemann_pi (Büthe, An analytic method for bounding ψ(x), Math. Comp. 2018)",
+   "locator": "Conclusions.lean, theorem_2_li_minus_riemann_pi: under RH(T), |π*(x) − li x| ≤ √x·log x/(8π) for x > 59",
+   "says": "the bound holds for every real x > 59",
+   "should": "for x ≥ 97: on about (96.3, 97) the left side exceeds the right (x = 96.9: 1.93 > 1.79); the companion bound for π itself from 2657 is unaffected"
+  },
+  {
+   "affects": "the statement",
+   "note": "",
+   "roadmap": "ExplicitPrimeCounting",
+   "job": "",
+   "board_pr": 0,
+   "head": "",
+   "reported": "2026-11-08",
+   "reporter": "operator audit (claude fable), checked numerically",
+   "comment": "",
+   "found_in": [
+    "IEANTN coverage audit"
+   ],
+   "batch": "ieantn-2026-11-08.md",
+   "kind": "error",
+   "source": "IEANTN network (teorth/IEANTN), node ButheNumerics/v1, conclusion lemma_3_constant_gt_at_10 (constant of Büthe's Lemma 3 at a = 10)",
+   "locator": "Conclusions.lean, lemma_3_constant_gt_at_10: 0.1 < π(10) − li(10) + (10 − θ(10))/log 10",
+   "says": "the inequality holds with the principal-value logarithmic integral li",
+   "should": "with li the quantity is −0.1449 (π(10) = 4, li 10 = 6.1656, θ(10) = log 210); it is 0.9003 with the offset Li(x) = li(x) − li(2), which is what the paper's display must mean"
   }
  ],
  "scanned_to": "2026-11-08T16:01:06Z",
- "updated": "2026-11-08T16:18:41Z",
+ "updated": "2026-11-08T21:06:03Z",
  "covered": [
   {
    "job": "ERRATA-TemperleyLieb",

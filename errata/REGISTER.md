@@ -2,9 +2,9 @@
 
 Reviewers, red-team passes and errata jobs record every mistake they find in a source while checking a roadmap's locators: misprints (slips whose intended meaning is clear), errors (a false statement or proof step) and gaps (a step the source does not justify), each with the roadmap, the board pull request or errata job and the head that reported it. Collected by the board sync from the `## Source issues` sections of review, red-team and errata comments; the data is in `errata/source-issues.json`.
 
-9985 mistakes recorded on the board: 5823 misprints, 2579 errors, 1134 gaps, 449 unparsed bullets.
+9988 mistakes recorded on the board: 5823 misprints, 2582 errors, 1134 gaps, 449 unparsed bullets.
 Errata jobs have read the cited sources of 60 roadmaps; in those of 2 they found no mistake.
-The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explorer/`: 1525 awaiting review, 13582 confirmed, 228 rejected.
+The explorer's register (to 2026-10-21) holds 0 more, kept in `errata/explorer/`: .
 
 ## (source not named)
 
@@ -7461,6 +7461,18 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 - **Misprint** at Proposition 18.3 proof, preprint p. 34 (I01 line 1653): the source says the selected truncations are cofinal subsystems of X,Y and concludes f is strict; it should be subsystems of PX,PY, concluding Pf is strict; affects the proof. Found by EtaleHomotopyTypes (#1304 at 6962204, 2026-10-27, codex gpt-6-astra).
 - **Error** at the proof of Proposition 17.1, preprint pp. 32–33 (I01 line 1568): the source says a simultaneous favorable level presentation in the properness argument; it should be insert an intervening pro-isomorphism before the levelwise properness argument; affects the proof; corrected in print at IStr, proof of Theorem 4.15 and Remark 4.16 in the cited preprint, pp. 11–12, published Remark 4.14. Found by EtaleHomotopyTypes (#1304 at 6b61554, 2026-10-25, codex gpt-6-astra).
 - **Error** at the proof of Proposition 17.1, preprint pp. 32–33 (I01 line 1658; correction identified at IStr line 538): the source says an invalid simultaneous-level presentation in the properness argument; it should be retain the intervening pro-isomorphism and use the corrected level argument; affects the proof. Found by EtaleHomotopyTypes (#1304 at f0dd15c, 2026-10-25, codex gpt-6-astra).
+
+## IEANTN network (teorth/IEANTN), node Buthe/v1, conclusion theorem_2_theta (Büthe, Estimating π(x) and related functions under partial RH assumptions, arXiv:1410.7015)
+
+- **Error** at Conclusions.lean, theorem_2_theta: x − θ(x) ≤ 1.95·√x for 1423 ≤ x ≤ 10¹⁹: the source says the bound holds for every real x from 1423; it should be from 1427: on (≈1426.47, 1427) one has x − θ(x) > 1.95√x (at x = 1426.9: 74.08 > 73.66); the paper's range is for the integer or later starting point; affects the statement. Found by ExplicitPrimeCounting (? at , 2026-11-08, operator audit (claude fable), checked numerically).
+
+## IEANTN network (teorth/IEANTN), node Buthe2016/v1, conclusion theorem_2_li_minus_riemann_pi (Büthe, An analytic method for bounding ψ(x), Math. Comp. 2018)
+
+- **Error** at Conclusions.lean, theorem_2_li_minus_riemann_pi: under RH(T), |π*(x) − li x| ≤ √x·log x/(8π) for x > 59: the source says the bound holds for every real x > 59; it should be for x ≥ 97: on about (96.3, 97) the left side exceeds the right (x = 96.9: 1.93 > 1.79); the companion bound for π itself from 2657 is unaffected; affects the statement. Found by ExplicitPrimeCounting (? at , 2026-11-08, operator audit (claude fable), checked numerically).
+
+## IEANTN network (teorth/IEANTN), node ButheNumerics/v1, conclusion lemma_3_constant_gt_at_10 (constant of Büthe's Lemma 3 at a = 10)
+
+- **Error** at Conclusions.lean, lemma_3_constant_gt_at_10: 0.1 < π(10) − li(10) + (10 − θ(10))/log 10: the source says the inequality holds with the principal-value logarithmic integral li; it should be with li the quantity is −0.1449 (π(10) = 4, li 10 = 6.1656, θ(10) = log 210); it is 0.9003 with the offset Li(x) = li(x) − li(2), which is what the paper's display must mean; affects the statement. Found by ExplicitPrimeCounting (? at , 2026-11-08, operator audit (claude fable), checked numerically).
 
 ## IEt
 
