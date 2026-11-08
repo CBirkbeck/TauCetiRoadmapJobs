@@ -65,3 +65,34 @@ status = "certified"
 accessed = "2026-10-22"
 cited_for = ["HP.0.1"]
 
+[[source]]
+id = "pnt-wiener"
+authors = "Alex Kontorovich; Terence Tao; and the PrimeNumberTheoremAnd contributors"
+title = "PrimeNumberTheoremAnd: Wiener.lean (the Wiener–Ikehara theorem)"
+year = 2026
+locator_scheme = "section"
+locator = "PrimeNumberTheoremAnd/Wiener.lean at revision 2667e414c38e5a5dc9aa1946f16f13001e5cd3ed: wiener_ikehara_smooth (blueprint WienerIkeharaSmooth), pnt-wiener lines 1859–1883; WienerIkeharaInterval, pnt-wiener lines 2139–2150"
+url = "https://raw.githubusercontent.com/AxiomMath/PrimeNumberTheoremAnd/2667e414c38e5a5dc9aa1946f16f13001e5cd3ed/PrimeNumberTheoremAnd/Wiener.lean"
+fetched_from = "https://raw.githubusercontent.com/AxiomMath/PrimeNumberTheoremAnd/2667e414c38e5a5dc9aa1946f16f13001e5cd3ed/PrimeNumberTheoremAnd/Wiener.lean"
+fetched_at = "2026-11-08T17:08:14Z"
+sha256 = "8e9b52dc432b76d5379a2e1cd1822ff93fa9ac6ce31e92925484842252cd5c61"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-08"
+cited_for = ["§2.2a"]
+
+[[source]]
+id = "lebl-diffyqs"
+authors = "Jiří Lebl"
+title = "Notes on Diffy Qs: Differential Equations for Engineers, version 6.11"
+year = 2026
+locator_scheme = "section"
+locator = "version 6.11, §6.2.1 (Transforms of derivatives), p. 300, Table 6.2; lebl-diffyqs lines 14907–14937"
+url = "https://www.jirka.org/diffyqs/diffyqs.pdf"
+fetched_from = "https://www.jirka.org/diffyqs/diffyqs.pdf"
+fetched_at = "2026-11-08T17:08:30Z"
+sha256 = "0676c6d9f060b06fb62e15d3b3da1af584d84e73e4b8a42d89ade8a7ad91f07b"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-08"
+cited_for = ["§0.1a"]

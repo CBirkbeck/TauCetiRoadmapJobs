@@ -293,3 +293,18 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-04"
 cited_for = ["3.8a: constructible sheaves of sets, their colimit presentations, surjective detection, descent along limits of schemes and embeddings into direct images of finite constant sheaves, for cohomological properness over an arbitrary field of characteristic zero"]
+
+[[source]]
+id = "Giraud"
+authors = "Jean Giraud"
+title = "Cohomologie non abélienne"
+year = 1971
+venue = "Grundlehren der mathematischen Wissenschaften"
+doi = "10.1007/978-3-662-62103-5"
+locator_scheme = "section"
+locator = "VII 2.1.7 and 2.2.8"
+url = "https://doi.org/10.1007/978-3-662-62103-5"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["3.8a"]

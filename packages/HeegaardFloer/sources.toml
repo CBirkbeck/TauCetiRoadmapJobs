@@ -114,3 +114,18 @@ url = "https://doi.org/10.1215/S0012-7094-95-08010-7"
 licence_class = "none"
 status = "uncertified"
 cited_for = ["4.4"]
+
+[[source]]
+id = "oh1996"
+authors = "Yong-Geun Oh"
+title = "Fredholm theory of holomorphic discs under the perturbation of boundary conditions"
+year = 1996
+venue = "Mathematische Zeitschrift 222"
+doi = "10.1007/bf02621880"
+locator_scheme = "section"
+locator = "the boundary injective-point regularity theorem"
+url = "https://doi.org/10.1007/bf02621880"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["4.4"]

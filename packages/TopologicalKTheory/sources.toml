@@ -141,3 +141,48 @@ licence_class = "none"
 status = "uncertified"
 version_note = "paywalled; cited by its locator without the text"
 cited_for = ["T6.4"]
+
+[[source]]
+id = "atiyah-1968-bott-index"
+authors = "M. F. Atiyah"
+title = "Bott periodicity and the index of elliptic operators"
+year = 1968
+venue = "Quarterly Journal of Mathematics 19"
+doi = "10.1093/qmath/19.1.113"
+locator_scheme = "section"
+locator = "§§2, 4, Proposition 4.9"
+url = "https://doi.org/10.1093/qmath/19.1.113"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["T6.5"]
+
+[[source]]
+id = "sibson-1969"
+authors = "Robin Sibson"
+title = "Existence theorems for H-space inverses"
+year = 1969
+venue = "Proceedings of the Cambridge Philosophical Society 65"
+doi = "10.1017/S0305004100044029"
+locator_scheme = "page"
+locator = "pp. 19–21"
+url = "https://doi.org/10.1017/S0305004100044029"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["T7.0"]
+
+[[source]]
+id = "eschenburg-hanke-bott"
+authors = "Jost Eschenburg, Bernhard Hanke"
+title = "Bott Periodicity, Submanifolds, and Vector Bundles"
+year = 2017
+venue = "Springer Proceedings in Mathematics &amp; Statistics"
+doi = "10.1007/978-981-10-5556-0_25"
+locator_scheme = "section"
+locator = "§§2–4"
+url = "https://doi.org/10.1007/978-981-10-5556-0_25"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["T7.0a"]

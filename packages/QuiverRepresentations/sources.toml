@@ -1,0 +1,76 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "QuiverRepresentations"
+
+[[source]]
+id = "ass"
+locator_scheme = "theorem"
+locator = "Theorem III.2.12"
+url = "https://homepage.mi-ras.ru/~avfonarev/2023/fda/Assem%2C%20Simson%2C%20Skowronski%20-%20Elements%20of%20the%20representation%20theory%20of%20associative%20algebras.pdf"
+fetched_from = "https://homepage.mi-ras.ru/~avfonarev/2023/fda/Assem%2C%20Simson%2C%20Skowronski%20-%20Elements%20of%20the%20representation%20theory%20of%20associative%20algebras.pdf"
+fetched_at = "2026-11-07T16:14:49Z"
+sha256 = "300fff0aeacb0858e5f650c8fd20b1ef4777031065434b763f15c1c8ab2e8350"
+licence_class = "institutional"
+status = "certified"
+accessed = "2026-11-07"
+cited_for = ["3.2"]
+
+[[source]]
+id = "ars"
+locator_scheme = "theorem"
+locator = "Theorem V.1.15"
+url = "https://homepage.mi-ras.ru/~avfonarev/2023/fda/Auslander,%20Reiten,%20Smalo%20-%20Representation%20Theory%20of%20Artin%20Algebras.pdf"
+fetched_from = "https://homepage.mi-ras.ru/~avfonarev/2023/fda/Auslander,%20Reiten,%20Smalo%20-%20Representation%20Theory%20of%20Artin%20Algebras.pdf"
+fetched_at = "2026-11-07T16:14:58Z"
+sha256 = "d30323e76de2632b7af1747f99c34301ce9ac7a9f2f07fdd54104f03f5ba3145"
+licence_class = "institutional"
+status = "certified"
+accessed = "2026-11-07"
+cited_for = ["6.3"]
+
+[[source]]
+id = "bgp"
+locator_scheme = "theorem"
+locator = "Theorem 1.1"
+url = "https://www.math.tau.ac.il/~bernstei/Publication_list/publication_texts/BGG-CoxeterF-Usp.pdf"
+fetched_from = "https://www.math.tau.ac.il/~bernstei/Publication_list/publication_texts/BGG-CoxeterF-Usp.pdf"
+fetched_at = "2026-11-07T16:15:00Z"
+sha256 = "00416aa14381a47b255a4958c712cfd4d4172656b97b4dd995471bdc6c19961a"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-07"
+cited_for = ["4.2"]
+
+[[source]]
+id = "etingof"
+authors = "Pavel Etingof, Oleg Golberg, Sebastian Hensel, Tiankai Liu, Alex Schwendner, Dmitry Vaintrob, Elena Yudovina"
+title = "Introduction to representation theory"
+year = 2009
+arxiv = "0901.0827v5"
+locator_scheme = "section"
+locator = "5.4-5.6"
+url = "https://arxiv.org/abs/0901.0827v5"
+fetched_from = "https://arxiv.org/pdf/0901.0827v5"
+fetched_at = "2026-11-07T16:15:07Z"
+sha256 = "30325e113dcd5d9d6153cb257e1dfca8f44df19ce8d0c3019df63563ac1e0a3c"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-07"
+version_note = "arXiv v5"
+cited_for = ["5.1"]
+
+[[source]]
+id = "cbquiv"
+authors = "William Crawley-Boevey"
+title = "Lectures on Representations of Quivers"
+year = 1992
+venue = "notes for a lecture course given in Oxford, spring 1992"
+locator_scheme = "section"
+locator = "§1, pp.7–8"
+url = "https://www.math.uni-bielefeld.de/~wcrawley/quivlecs.pdf"
+fetched_from = "https://www.math.uni-bielefeld.de/~wcrawley/quivlecs.pdf"
+fetched_at = "2026-11-08T06:21:04Z"
+sha256 = "e4d78f7cf0f1075447d1cc438b659797daf07d7247e04d98074753ad911633aa"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-08"
+cited_for = ["4.1"]

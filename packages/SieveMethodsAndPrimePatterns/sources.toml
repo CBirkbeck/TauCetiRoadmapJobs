@@ -477,3 +477,122 @@ locator = "Published §3.4, Proposition 3.6; UCL manuscript pp.9–11"
 licence_class = "none"
 status = "waived"
 resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/284#issuecomment-6331926037"
+
+[[source]]
+id = "LS-EXCLUSION"
+authors = "OpenAI"
+title = "Uniform exclusion of Landau–Siegel zeros"
+year = 2026
+version_note = "OpenAI mathematics release of 1 October 2026 (repository openai/math, 9 pages); numbering of that version, not of the community revision of 26 October 2026"
+locator_scheme = "theorem"
+locator = "Theorem 1"
+url = "https://raw.githubusercontent.com/openai/math/main/preprints/Uniform-exclusion-of-Landau-Siegel-zeros-October-1-2026/paper.pdf"
+fetched_from = "https://raw.githubusercontent.com/openai/math/main/preprints/Uniform-exclusion-of-Landau-Siegel-zeros-October-1-2026/paper.pdf"
+fetched_at = "2026-11-07T10:33:55Z"
+sha256 = "fab9f6e84ece2a37d834b2c031d8eb14e81413d9f6270791e7b5468b295214ef"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-07"
+cited_for = ["3.0"]
+
+[[source]]
+id = "GREEN-LS"
+authors = "Ben Green"
+title = "On Landau–Siegel zeros"
+year = 2026
+version_note = "Hexagon 2610.00311v2, 5 pages"
+locator_scheme = "theorem"
+locator = "Theorem 1.1"
+url = "https://hexagonmath.org/pdf/2610.00311v2"
+fetched_from = "https://hexagonmath.org/pdf/2610.00311v2"
+fetched_at = "2026-11-07T10:33:57Z"
+sha256 = "6b948696c9f9c088257d9b98ab0bcee75c71ef8d884cfa23d1685ed04e95238c"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-07"
+cited_for = ["3.0"]
+
+[[source]]
+id = "CONRAD-12"
+authors = "Brian Conrad"
+title = "Weil and Grothendieck approaches to adelic points"
+year = 2012
+version_note = "Author's preprint pagination; published in L'Enseignement Mathématique 58 (2012), 61–97"
+locator_scheme = "theorem"
+locator = "Proposition 2.1, Examples 2.2–2.3, Theorems 3.4 and 3.6, Remark 3.5"
+url = "https://math.stanford.edu/~conrad/papers/adelictop.pdf"
+fetched_from = "https://math.stanford.edu/~conrad/papers/adelictop.pdf"
+fetched_at = "2026-11-08T12:20:38Z"
+sha256 = "fe4a9193aff4ef575665b40971f3da32f850a74d87b3f2d0fa28bba26b9cbabb"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-08"
+cited_for = ["5.3a"]
+
+[[source]]
+id = "HENK-02"
+authors = "Martin Henk"
+title = "Successive Minima and Lattice Points"
+year = 2002
+arxiv = "math/0204158v1"
+locator_scheme = "theorem"
+locator = "Theorem 1.5, (1.3), Lemma 2.1, (2.1)–(2.5)"
+url = "https://arxiv.org/abs/math/0204158v1"
+fetched_from = "https://arxiv.org/pdf/math/0204158v1"
+fetched_at = "2026-11-08T12:30:49Z"
+sha256 = "403d8f400cfd8a823260466713ef90bc7425c5be0677b986388b43da78608b60"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-08"
+version_note = "arXiv v1, seven-page preprint; published in Rend. Circ. Mat. Palermo (2) Suppl. 70 (2002), 377–384, not the edition cited"
+cited_for = ["0.11a"]
+
+[[source]]
+id = "RAPINCHUK-14"
+authors = "Andrei S. Rapinchuk"
+title = "On strong approximation for algebraic groups"
+year = 2012
+arxiv = "1207.4425v1"
+locator_scheme = "theorem"
+locator = "§2.1 Definition, Theorem 2.3 and Remark 1, §2.6, Lemma 2.7"
+url = "https://arxiv.org/abs/1207.4425v1"
+fetched_from = "https://arxiv.org/pdf/1207.4425v1"
+fetched_at = "2026-11-08T12:30:56Z"
+sha256 = "43f6a45ceb9e51e1ca959c0d0574474cb1c20ea5a4e13852eee1886aceadab97"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-08"
+version_note = "arXiv v1; published in Thin Groups and Superstrong Approximation, MSRI Publications 61 (2014), 269–298, not the edition cited"
+cited_for = ["5.3a"]
+
+[[source]]
+id = "BOREL-63"
+authors = "Armand Borel"
+title = "Some finiteness properties of adele groups over number fields"
+year = 1963
+version_note = "Publications mathématiques de l'IHÉS 16 (1963), 5–30"
+locator_scheme = "section"
+locator = "Introduction; §8"
+url = "http://www.numdam.org/item/PMIHES_1963__16__5_0.pdf"
+fetched_from = "https://www.numdam.org/item/PMIHES_1963__16__5_0.pdf"
+fetched_at = "2026-11-08T12:30:57Z"
+sha256 = "678a378a947a25edd682942539cc9d22de47e8e141db0a19dd124e5138d2fedc"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-08"
+cited_for = ["5.3a"]
+
+[[source]]
+id = "SCHNEIDER-11"
+authors = "Peter Schneider"
+title = "p-Adic Lie Groups"
+year = 2011
+venue = "Grundlehren der mathematischen Wissenschaften"
+doi = "10.1007/978-3-642-21147-8"
+locator_scheme = "theorem"
+locator = "Theorem 27.1; Corollary 29.6; Theorem 29.8"
+url = "https://doi.org/10.1007/978-3-642-21147-8"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["5.3a"]

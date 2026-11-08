@@ -1,0 +1,4 @@
+{"review": {"status": "needs_changes", "reviewer": "independent-review-PRREVIEW-LocallyConvexDuality~6",
+            "head": "32064cd30db70a2d49a27695fd35d8ac3c32c33e", "pr": 1782, "folder": "LocallyConvexDuality", "date": "2026-11-06",
+            "findings": 2, "blocking": 0,
+            "notes": "incremental re-review of 81 changed lines since fb54a01: all six previous findings repaired (R05 partly: its replacement locator is Ch. I no. 5 where Theoreme 5 of no. 6, p. 83, is the subspace statement, and the route sentence for the subspace clause of 5.4 overclaims); AutomorphicSpectralTheory 0.11 and SpectralManifolds SM3 resolved at their open heads; depcheck 240 roadmaps 0 problems; gate OK; lake env lean gives 13 sorry warnings only; dfSpace_strongDual resists the one-tactic probe; weakTopology = WeakBilin.instTopologicalSpace by rfl; seeded locators 0.2, 5.1, 5.2, 5.4 re-read in bourbaki1950 and grothendieck1952"}}

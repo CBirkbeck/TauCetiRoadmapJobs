@@ -1,0 +1,411 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "BordismFormalGroups"
+
+[[source]]
+id = "ravenel-green"
+authors = "Douglas C. Ravenel"
+title = "Complex Cobordism and Stable Homotopy Groups of Spheres"
+year = 2026
+locator_scheme = "theorem"
+locator = "Theorem 3.1.1"
+url = "https://www.sas.rochester.edu/mth/sites/doug-ravenel/mybooks/ravenel3rd.pdf"
+fetched_from = "https://www.sas.rochester.edu/mth/sites/doug-ravenel/mybooks/ravenel3rd.pdf"
+fetched_at = "2026-11-05T01:10:51Z"
+sha256 = "17202b523fcef38e7039b145005a7a14bab4c78a57fc5ca7614a2680344370a0"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-05"
+version_note = "digital third edition dated 2026-07-31; theorem numbers are those of this version"
+cited_for = ["F2", "F4"]
+
+[[source]]
+id = "miller-cobordism"
+authors = "Haynes Miller"
+title = "Notes on Cobordism"
+year = 2001
+locator_scheme = "theorem"
+locator = "Theorem 12.4"
+url = "https://math.mit.edu/~hrm/papers/cobordism.pdf"
+fetched_from = "https://math.mit.edu/~hrm/papers/cobordism.pdf"
+fetched_at = "2026-11-05T01:11:04Z"
+sha256 = "c70bf1f21e1d36388f7b6690ec724edf7b486378e70cb408b2b8744a5589da9a"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-05"
+version_note = "lecture notes dated 2001-12-05"
+cited_for = ["F2"]
+
+[[source]]
+id = "hatcher-at"
+authors = "Allen Hatcher"
+title = "Algebraic Topology"
+year = 2002
+locator_scheme = "theorem"
+locator = "Theorem 4J.1"
+url = "https://pi.math.cornell.edu/~hatcher/AT/AT.pdf"
+fetched_from = "https://pi.math.cornell.edu/~hatcher/AT/AT.pdf"
+fetched_at = "2026-11-05T01:11:34Z"
+sha256 = "bebb3032bf9021b956da3bd070eb6c67dc662cf849be9cdf6679f677560e5618"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-05"
+cited_for = ["F4", "F6.2"]
+
+[[source]]
+id = "quillen-elementary"
+authors = "Daniel Quillen"
+title = "Elementary proofs of some results of cobordism theory using Steenrod operations"
+year = 1971
+venue = "Advances in Mathematics 7"
+doi = "10.1016/0001-8708(71)90041-7"
+locator_scheme = "section"
+locator = "Introduction"
+url = "https://doi.org/10.1016/0001-8708(71)90041-7"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["F2"]
+
+[[source]]
+id = "quillen-fgl-bulletin"
+authors = "Daniel Quillen"
+title = "On the formal group laws of unoriented and complex cobordism theory"
+year = 1969
+venue = "Bulletin of the American Mathematical Society 75"
+doi = "10.1090/S0002-9904-1969-12401-8"
+locator_scheme = "theorem"
+locator = "Theorem 3"
+url = "https://www.ams.org/journals/bull/1969-75-06/S0002-9904-1969-12401-8/S0002-9904-1969-12401-8.pdf"
+fetched_from = "https://www.ams.org/journals/bull/1969-75-06/S0002-9904-1969-12401-8/S0002-9904-1969-12401-8.pdf"
+fetched_at = "2026-11-05T01:18:46Z"
+sha256 = "9e5c1ead222cab64d72e6481164641888765d2bccf27a5a59a45940c1d7e217c"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-11-05"
+cited_for = ["F2"]
+
+[[source]]
+id = "dhs-nilpotence-i"
+authors = "Ethan S. Devinatz, Michael J. Hopkins, Jeffrey H. Smith"
+title = "Nilpotence and stable homotopy theory I"
+year = 1988
+venue = "Annals of Mathematics 128"
+doi = "10.2307/1971440"
+locator_scheme = "section"
+locator = "Sections 1-3"
+url = "https://doi.org/10.2307/1971440"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled (JSTOR); cited by its locator without the text"
+cited_for = ["F6.2"]
+
+[[source]]
+id = "guillou-weibel"
+authors = "Bertrand Guillou, Charles Weibel"
+title = "Unstable operations in étale and motivic cohomology"
+year = 2013
+arxiv = "1301.0872v1"
+locator_scheme = "theorem"
+locator = "Theorem 6.2"
+url = "https://arxiv.org/abs/1301.0872v1"
+fetched_from = "https://arxiv.org/pdf/1301.0872v1"
+fetched_at = "2026-11-05T12:15:33Z"
+sha256 = "b27fcec7789d67d27b12433bf26a75343c54f09295fd3ee5c120c80a1ecbb04e"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-05"
+version_note = "arXiv v1"
+cited_for = ["F2"]
+
+[[source]]
+id = "thom-1954"
+authors = "René Thom"
+title = "Quelques propriétés globales des variétés différentiables"
+year = 1954
+venue = "Commentarii Mathematici Helvetici 28"
+doi = "10.1007/bf02566923"
+locator_scheme = "chapter"
+locator = "Chapitre IV"
+url = "https://doi.org/10.1007/bf02566923"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["F2"]
+
+[[source]]
+id = "bousfield-1979"
+authors = "A.K. Bousfield"
+title = "The localization of spectra with respect to homology"
+year = 1979
+venue = "Topology 18"
+doi = "10.1016/0040-9383(79)90018-1"
+locator_scheme = "theorem"
+locator = "Theorem 6.6"
+url = "https://doi.org/10.1016/0040-9383(79)90018-1"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["F2"]
+
+[[source]]
+id = "lubin-tate-1966"
+authors = "Jonathan Lubin, John Tate"
+title = "Formal moduli for one-parameter formal Lie groups"
+year = 1966
+venue = "Bulletin de la Société mathématique de France 94"
+doi = "10.24033/bsmf.1633"
+locator_scheme = "theorem"
+locator = "Theorem 3.1"
+url = "https://doi.org/10.24033/bsmf.1633"
+fetched_from = "https://www.numdam.org/item/10.24033/bsmf.1633.pdf"
+fetched_at = "2026-11-08T10:04:01Z"
+sha256 = "11100d728ec6757e3ec44ed32962bbde9abf046462e20680df7c2cd5b987b453"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-08"
+version_note = "Numdam copy of the published article; theorem numbers are those of the published version"
+cited_for = ["F5"]
+
+[[source]]
+id = "toda-1962"
+authors = "Hirosi Toda"
+title = "Composition Methods in Homotopy Groups of Spheres"
+year = 1962
+venue = "Annals of Mathematics Studies 49, Princeton University Press"
+doi = "10.1515/9781400882625"
+locator_scheme = "chapter"
+locator = "Chapter I"
+url = "https://doi.org/10.1515/9781400882625"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["F4"]
+
+[[source]]
+id = "ravenel-orange"
+authors = "Douglas C. Ravenel"
+title = "Nilpotence and Periodicity in Stable Homotopy Theory"
+year = 1992
+venue = "Annals of Mathematics Studies 128, Princeton University Press"
+locator_scheme = "chapter"
+locator = "Chapters 6-8"
+url = "https://www.sas.rochester.edu/mth/sites/doug-ravenel/mybooks/nilpb2020.pdf"
+fetched_from = "https://www.sas.rochester.edu/mth/sites/doug-ravenel/mybooks/nilpb2020.pdf"
+fetched_at = "2026-11-08T10:04:26Z"
+sha256 = "ed63192984850847125f4c08e3d794e45d56a564f88dd5f625be90d24bbdeb66"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-08"
+version_note = "digital edition dated 2020 on the author's page; theorem numbers are those of this version"
+cited_for = ["F6.3"]
+
+[[source]]
+id = "greenlees-sadofsky"
+authors = "J. P. C. Greenlees, Hal Sadofsky"
+title = "The Tate spectrum of v_n-periodic complex oriented theories"
+year = 1996
+venue = "Mathematische Zeitschrift 222"
+doi = "10.1007/bf02621873"
+locator_scheme = "theorem"
+locator = "Theorem 1.5"
+url = "https://doi.org/10.1007/bf02621873"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["F6.5"]
+
+[[source]]
+id = "kuhn-tate"
+authors = "Nicholas J. Kuhn"
+title = "Tate cohomology and periodic localization of polynomial functors"
+year = 2004
+venue = "Inventiones Mathematicae 157"
+doi = "10.1007/s00222-003-0354-z"
+arxiv = "math/0307173v1"
+locator_scheme = "theorem"
+locator = "Theorem 1.5"
+url = "https://arxiv.org/abs/math/0307173v1"
+fetched_from = "https://arxiv.org/pdf/math/0307173v1"
+fetched_at = "2026-11-08T10:04:43Z"
+sha256 = "601098cd12ca3e6399cc0dceecc819a60f202532d09a8440ed01dd8769a399ac"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-08"
+version_note = "arXiv v1; published Invent. Math. 157 (2004), DOI 10.1007/s00222-003-0354-z; theorem numbers are those of the arXiv version"
+cited_for = ["F6.5"]
+
+[[source]]
+id = "wurgler-1976"
+authors = "Urs Würgler"
+title = "Cobordism theories of unitary manifolds with singularities and formal group laws"
+year = 1976
+venue = "Mathematische Zeitschrift 150"
+doi = "10.1007/BF01221149"
+locator_scheme = "theorem"
+locator = "Theorem 2.16"
+url = "https://doi.org/10.1007/BF01221149"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["F6.3"]
+
+[[source]]
+id = "clausen-mathew"
+authors = "Dustin Clausen, Akhil Mathew"
+title = "A short proof of telescopic Tate vanishing"
+year = 2017
+venue = "Proceedings of the American Mathematical Society 145"
+doi = "10.1090/proc/13648"
+arxiv = "1608.02063v2"
+locator_scheme = "section"
+locator = "Section 2"
+url = "https://arxiv.org/abs/1608.02063v2"
+fetched_from = "https://arxiv.org/pdf/1608.02063v2"
+fetched_at = "2026-11-08T10:04:58Z"
+sha256 = "423ac8d38862fc05dce47569a6abdc84a9d61fb59ce28f0653056ac6e54745cc"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-08"
+version_note = "arXiv v2; published Proc. Amer. Math. Soc. 145 (2017), DOI 10.1090/proc/13648; section numbers are those of the arXiv version"
+cited_for = ["F6.5"]
+
+[[source]]
+id = "nikolaus-scholze"
+authors = "Thomas Nikolaus, Peter Scholze"
+title = "On topological cyclic homology"
+year = 2018
+venue = "Acta Mathematica 221"
+doi = "10.4310/acta.2018.v221.n2.a1"
+arxiv = "1707.01799v2"
+locator_scheme = "section"
+locator = "Section I.3"
+url = "https://arxiv.org/abs/1707.01799v2"
+fetched_from = "https://arxiv.org/pdf/1707.01799v2"
+fetched_at = "2026-11-08T10:05:16Z"
+sha256 = "12b6cdbd0d8ebb506284bd13f183affe80e41cc8890fef5fa21c922c2f80cec3"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-08"
+version_note = "arXiv v2; published Acta Math. 221 (2018), DOI 10.4310/acta.2018.v221.n2.a1; section numbers are those of the arXiv version"
+cited_for = ["F6.5"]
+
+[[source]]
+id = "lurie-htt"
+authors = "Jacob Lurie"
+title = "Higher Topos Theory"
+year = 2009
+venue = "Annals of Mathematics Studies 170, Princeton University Press"
+locator_scheme = "section"
+locator = "Section 2.2"
+url = "https://www.math.ias.edu/~lurie/papers/HTT.pdf"
+fetched_from = "https://www.math.ias.edu/~lurie/papers/HTT.pdf"
+fetched_at = "2026-11-08T10:05:40Z"
+sha256 = "58855f3a0ad6d9c470ded74a38938b9468927592e9ae1209bab6a068e67ede6e"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-08"
+version_note = "author's online edition; section numbers are those of this version"
+cited_for = ["F6.5"]
+
+[[source]]
+id = "lurie-ha"
+authors = "Jacob Lurie"
+title = "Higher Algebra"
+year = 2017
+locator_scheme = "section"
+locator = "Section 4.8.1"
+url = "https://www.math.ias.edu/~lurie/papers/HA.pdf"
+fetched_from = "https://www.math.ias.edu/~lurie/papers/HA.pdf"
+fetched_at = "2026-11-08T10:06:18Z"
+sha256 = "112b145a95a62daefb8275851cac9ab6430004cfc8f751a33a8d981fd7ad68c3"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-08"
+version_note = "author's online edition dated 2017; section numbers are those of this version"
+cited_for = ["F6.5"]
+
+[[source]]
+id = "cdvn-toda"
+authors = "Christian Carrick, Jack Morgan Davies, Sven van Nigtevecht"
+title = "The descent spectral sequence for topological modular forms"
+year = 2024
+arxiv = "2412.01640v2"
+locator_scheme = "theorem"
+locator = "Theorem 3.16"
+url = "https://arxiv.org/abs/2412.01640v2"
+fetched_from = "https://arxiv.org/pdf/2412.01640v2"
+fetched_at = "2026-11-08T10:06:24Z"
+sha256 = "4fc1a8dee46317d63a9652ec2807390081186ca3114b240046d28e631a456969"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-08"
+version_note = "arXiv v2, dated 2026-06-10; section and theorem numbers are those of this version"
+cited_for = ["F4"]
+
+[[source]]
+id = "bauer-tmf"
+authors = "Tilman Bauer"
+title = "Computation of the homotopy of the spectrum tmf"
+year = 2008
+venue = "Geom. Topol. Monogr. 13 (2008) 11-40"
+doi = "10.2140/gtm.2008.13.11"
+arxiv = "math/0311328v3"
+locator_scheme = "theorem"
+locator = "Lemma 8.6"
+url = "https://arxiv.org/abs/math/0311328v3"
+fetched_from = "https://arxiv.org/pdf/math/0311328v3"
+fetched_at = "2026-11-08T10:06:28Z"
+sha256 = "37adfd231751045815597f6c24f8173f1d722e6635cdb6fd38ca57bc0a9e1267"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-08"
+version_note = "arXiv v3; published Geom. Topol. Monogr. 13 (2008), DOI 10.2140/gtm.2008.13.11; lemma numbers are those of the arXiv version"
+cited_for = ["F4"]
+
+[[source]]
+id = "hovey-sadofsky"
+authors = "Mark Hovey, Hal Sadofsky"
+title = "Tate cohomology lowers chromatic Bousfield classes"
+year = 1996
+venue = "Proceedings of the American Mathematical Society 124"
+doi = "10.1090/S0002-9939-96-03495-8"
+locator_scheme = "theorem"
+locator = "Theorem 1.1"
+url = "https://www.ams.org/journals/proc/1996-124-11/S0002-9939-96-03495-8/S0002-9939-96-03495-8.pdf"
+fetched_from = "https://www.ams.org/journals/proc/1996-124-11/S0002-9939-96-03495-8/S0002-9939-96-03495-8.pdf"
+fetched_at = "2026-11-08T10:12:20Z"
+sha256 = "db5e2189028275576d099a099781ce613fa62465956f514831334cc40ad94957"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-11-08"
+cited_for = ["F6.4"]
+
+[[source]]
+id = "johnson-wilson-1975"
+authors = "David Copeland Johnson, W. Stephen Wilson"
+title = "BP operations and Morava's extraordinary K-theories"
+year = 1975
+venue = "Mathematische Zeitschrift 144"
+doi = "10.1007/bf01214408"
+locator_scheme = "theorem"
+locator = "Proposition 4.14"
+url = "https://doi.org/10.1007/bf01214408"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["F6.3"]
+
+[[source]]
+id = "symonds-permutation"
+authors = "Peter Symonds"
+title = "Permutation complexes for profinite groups"
+year = 2007
+venue = "Commentarii Mathematici Helvetici 82"
+doi = "10.4171/cmh/83"
+locator_scheme = "theorem"
+locator = "Theorem 5.2"
+url = "https://doi.org/10.4171/cmh/83"
+licence_class = "none"
+status = "uncertified"
+version_note = "the service matched arXiv 0903.5002, which is a different article (Geom. Topol. Monogr. 11, 2007); the Comment. Math. Helv. 82 (2007) paper is cited by its locator without the text"
+cited_for = ["F6.4"]

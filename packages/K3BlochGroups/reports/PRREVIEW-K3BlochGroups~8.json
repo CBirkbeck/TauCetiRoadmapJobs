@@ -1,0 +1,13 @@
+{
+  "review": {
+    "status": "needs_changes",
+    "reviewer": "independent-review-PRREVIEW-K3BlochGroups~8",
+    "head": "2fe1218392f0b2fc7d2d73647bebf671716f2d10",
+    "pr": 1430,
+    "folder": "K3BlochGroups",
+    "date": "2026-11-07",
+    "findings": 7,
+    "blocking": 2,
+    "notes": "incremental re-review of 94 changed lines since c9ca311: new section 4.9 (third stable stem) with five new supplier contracts, the section 4.16 and Layer 4 repointing, and the new Lean theorem homotopyGroup_sphere_add_three_equiv. Previous report had no findings. 7 findings, 2 blocking: R01 P2 section 4.9 and the Lean theorem re-plan the third stem owned by StringOrientation S2.3 (Lean nonempty_homotopyGroup_sphere_three_stem) and EllipticCohomology E4.S, with the eta-cubed divisibility also in ArithmeticKTheory 7.5; R02 P2 GeometryOfNumbersAndQuadraticArithmetic 6.1a at its head moved sphereSuspensionHom/stableStem names to HomotopySpheres 3A.3; R03 P3 sphere_firstStems/mooreTwo_piTwo declared nowhere; R04-R06 P3 the six gate statement-hygiene hits (Nonempty naming, Fintype beside Field); R07 P3 Ravenel and Adams not in sources.toml, Adams Prop 7.14 does not evaluate e-invariants. Mathematics of 4.9 recomputed (cobar E2 groups Z/4, Z/2, Z/3, 0; lambda = -3m1^2, 2m1, 0; c integral; Z/8 extension; eta^3 = 12 nu; Freudenthal range) and correct. Gate: statement-hygiene 6, depcheck 239 roadmaps 2426 edges 0 problems; worker's build=2 is the pin-wide Lake module-system warning (128 of 141 main roadmaps lack a module header), a false positive, not a folder defect. lake env lean: nine sorry warnings only; #check @ of all 14 declarations ok; repaired scratch copy elaborates. Seeded sample: no sampled target in the diff; hutchinson2013 Cor 3.6 and Lemma 3.14 re-read for R05/R06. Hatcher p.339 and p.385 verified; Ravenel unreachable (host timeout). Adversarial table: 14 new rows with values plus 120 carried rows."
+  }
+}

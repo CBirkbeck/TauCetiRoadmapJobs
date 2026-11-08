@@ -1,0 +1,87 @@
+# Review of NoncommutativeGeometry (pull request #1143 at 3452a95)
+
+**Verdict:** needs changes
+
+Incremental re-review of 125 changed README lines since a815fd0 (the head the previous review read), plus the change the merge of main (dc51eca0) brought under the folder: the Tau Ceti pin moved from 358314d4 to 2fd255d9 and the Mathlib pin from f6090c70 to 1b1ccf4b. `Suggested.lean` is byte-identical to a815fd0, and nothing outside the folder differs from `origin/main`. The README change moves the B(H) Schatten quasi-ideals, Hölder inequality and weak Schatten classes from N3–N4 to NoncommutativeIntegration Layer 1 and adds a SmoothBanachRepresentations Layer 8 consumer clause; the gate fails on the first.
+
+## R01 (P2) — N3 and N4 take NoncommutativeIntegration as supplier: an upward edge, the gate fails
+
+Location: `TauCetiRoadmap/NoncommutativeGeometry/README.md` lines 667 and 764 (`*Needs:* … NoncommutativeIntegration Layer 1 (§1.3–§1.5 …)` and `*Needs:* N3's trace; NoncommutativeIntegration Layer 1 (§1.4 …, §1.5 …, §1.6 …)`), with the supplier row at line 143, the scope sentence at lines 46–53 and the N3/N4 text at 520–538 and 679–686.
+
+Claim: the Schatten quasi-ideals S_p for 0<p<1, Hölder with constant one and the weak Schatten classes are consumed from NoncommutativeIntegration Layer 1 and not built here.
+
+Witness: the gate at this head, run again this round, prints `depcheck: UPWARD: NoncommutativeGeometry (on main) -> NoncommutativeIntegration (#284) at README lines [667, 764]` and `FAIL`; NoncommutativeIntegration is line 285 of the merge order, NoncommutativeGeometry is on main and not listed, and an on-main roadmap sits before every listed roadmap. A scratch copy of the README with only the two NoncommutativeIntegration items removed from those lines passes: `depcheck: 239 roadmaps, 2363 edges, 0 problem(s)`. The pull request's "Depends on #864" line does not change what the dependency check reads.
+
+The citations themselves are accurate at NoncommutativeIntegration's head 10a56146: §1.3 (its README line 286) has the p-triangle inequality and completeness, §1.4 (line 321) Hölder with constant one for all positive exponents, §1.5 (line 360) the identification `μ_t(x)=a_⌊t⌋(x)` on B(H) and of S_p with Lp(B(H),Tr) for every 0<p<∞ and "do not assert any inclusion for an infinite trace", §1.6 (line 406) the weak Schatten classes and S_(1,∞); its Downstream line 1474 names N3–N4 as consumers. So the defect is the direction of supply, not the text: the roadmap on main would cite sections that exist only at an open head, and the merge-order rule puts the earlier roadmap, this one, as owner.
+
+Repair, tested on the instance above (the depcheck passes once the two items are gone): restore the B(H) construction that a815fd0 had in N3 (the quasi-ideal `S_p={T compact : Σ_j μ_j(T)^p<∞}` with the p-triangle inequality, the ideal bounds from OI-A20, adjoint invariance from OI-A30, completeness of the p-metric, the multiplicative majorization by exterior powers and Hölder with constant one, with Fack–Kosaki Theorems 4.2 and 4.9(iii) as locators) and in N4 the weak Schatten classes `L^(p,∞)` with their `2^(1/p)` quasi-norm from OI-A17 and the weak trace class, together with the four Checks and the Fack–Kosaki reference the change deleted; delete the NoncommutativeIntegration supplier row (143) and the two `*Needs:*` items; in the scope keep the sentence that tracial Lp spaces over a general semifinite trace with their measure topology belong to NoncommutativeIntegration, and add that its §1.5 identification of Lp(B(H),Tr) with N3's S_p is that roadmap's comparison with N3, in the way its §1.5 already compares with OperatorIdeals for 1≤p≤∞. The other way round, an on-main roadmap consuming an open new-folder pull request (this head's line 667 already cites OperatorKTheory K4–K6, which the check does not list only because OperatorKTheory is not in the merge order), needs a human to overrule the dependency check; without that decision the gate blocks acceptance.
+
+## R02 (P3) — SmoothBanachRepresentations Layer 8 is said to consume N6's torus results; its head says the opposite
+
+Location: `TauCetiRoadmap/NoncommutativeGeometry/README.md` lines 59–61 ("SmoothBanachRepresentations Layer 8 consumes them for its torus specialization") and 1107–1109 ("its Layer 8 consumes N6's identification of 𝒜_θ with the gauge smooth vectors, the seminorm comparisons … and the spectral invariance of `M_n(𝒜_θ)`").
+
+Witness: SmoothBanachRepresentations at its head 22e3c680 (`TauCetiRoadmap/RepresentationTheory/SmoothBanachRepresentations/README.md`) says at line 11 that NoncommutativeGeometry N6 owns the identification, the two-sided seminorm comparison and the inverse closure at every matrix level, and that "Layer 8 states the generic smooth-algebra theorems and no torus estimate"; its Layer 8 (lines 482–520) mentions no torus, no 𝒜_θ and no rotation algebra (its only circle example, line 506, is the star law on C(S¹)). There is no torus specialization in Layer 8 to consume anything.
+
+Repair: at 59–61 write that SmoothBanachRepresentations Layer 8 states the generic smooth-algebra theorems and leaves these three torus results to N6, and its generic inverse closure is not an input here; at 1107–1109 drop the "its Layer 8 consumes" clause (SmoothBanachRepresentations records N6 as the owner and consumes only N1.Tensor).
+
+## R03 (P2) — `Suggested.lean` against the new pin: the headline is a library theorem, the docstring's "lacks" claims are false, and statable headlines are absent
+
+Location: `TauCetiRoadmap/NoncommutativeGeometry/Suggested.lean` lines 17–29 (docstring), 40–45 (`CyclicTwoCocycle`), 69–75 (`exists_cyclicTwoCocycle_torusTwoCochain`). The file is unchanged, but the merge dc51eca0 moved the Tau Ceti pin to 2fd255d9, and the file is reviewed against the pin at this head.
+
+Witness, at the pin (paths under `TauCeti/`):
+- `RingTheory/CyclicCohomology/Derivation.lean` 209–214 defines `TauCeti.traceDerivationPairCocycle hτ hδ₁ hδ₂ hcomm : cyclicCocycles k A M 2` for a trace `τ`, `τ∘δᵢ=0` and `Commute δ₁ δ₂`: the four hypotheses of line 69–74, and the cochain `τ(a₀(δ₁a₁δ₂a₂−δ₂a₁δ₁a₂))` of `torusTwoCochain` up to the scalar `(2πi)⁻¹`. The sorried headline is proved there, and `CyclicTwoCocycle` restates `TauCeti.cyclicCocycles ℂ A ℂ 2` (`Cohomology.lean` 92) by object.
+- The docstring says N3 "lacks Schatten ideals": `Analysis/OperatorIdeal/Family/Schatten.lean` 48 has `OperatorIdealFamily.schatten 𝕜 p` for 1≤p<∞ and `TraceClass.lean` 59 the trace-class family. N5 "lacks the logarithmic ideal, Dixmier traces and a periodic cyclic cohomology carrier": `Family/Logarithmic.lean` 163, `Family/DixmierTrace.lean` 91 and `RingTheory/CyclicCohomology/PeriodicCohomology.lean` 119 (`periodicCyclicCohomology`) exist. N1–N2 and N6 "lack cyclic and periodic cyclic cohomology": `Cohomology.lean` 273, `PeriodicCohomology.lean` 119 and `Continuous/Cohomology.lean` 239 (`continuousCyclicCohomology`) exist. N7 "lacks the smooth rotation algebra": `NoncommutativeGeometry/SmoothTorus/Basic.lean` 230 defines `SmoothNoncommutativeTorus θ` with `U₁`, `U₂`, star and the trace (602). What the pin still lacks is different: a trace functional on trace-class operators (only `traceFreePart` exists), hence `Tr′` and the characters of N3 and N5; the Fréchet topology and derivations of the torus and a continuous periodic cohomology, hence the N6 computation; Hilbert-module completions for N7.
+- Statable at the pin and absent: README 241–244, "every cyclic cocycle realized by such a universal-form cycle" (Connes III.1 Prop 4), on `cyclicCocycles` (`Cohomology.lean` 92), `IsClosedGradedTrace` (`Cycle.lean` 84), `cycleCocycle` (`Cycle.lean` 279) and `UniversalForms` (`NoncommutativeGeometry/UniversalDifferential/Complex.lean` 45); the folder's own `STATUS.md` records this converse as open. README 319, matrix Morita invariance: `cyclicCohomology.matrixExtension` (`Matrix.lean` 497) is defined and `Continuous/Matrix.lean` 22 says no Morita isomorphism is asserted, so its bijectivity is a statable absent headline.
+
+Repair: rewrite `Suggested.lean` against the pin: import the `TauCeti.RingTheory.CyclicCohomology.*` modules it needs, state the two headlines above (and any other N2/N4/N6 headline the author finds statable on the pinned carriers), delete lines 40–75 (the structure, the cochain, the example and the theorem the library now owns; the README keeps the N6 statement and cites `traceDerivationPairCocycle`), and rewrite the docstring's list with the carriers that are actually missing. Check the result with `#check @name` as before.
+
+## R04 (P3) — N1, N2 and N4 state as targets what the pin already proves; cite it
+
+Location: `TauCetiRoadmap/NoncommutativeGeometry/README.md` N1.Tensor 165–230, N1.Cyclic 236–330, N2 378–395, N4 671–690, and the `From Tau Ceti` contract, which names none of the following.
+
+Witness, at Tau Ceti 2fd255d9 (paths under `TauCeti/`): the completed locally convex projective tensor with its continuous universal property, `CompletedProjectiveTensorProduct` (`Analysis/Normed/Module/PiTensorProduct/Projective/Completion.lean` 54) and `liftEquiv` (`PiTensorProduct/UniversalProperty.lean` 66, 122), which N1.Tensor says it builds and the pull request description calls N1.Tensor's; universal forms, their complex and product (`NoncommutativeGeometry/UniversalDifferential/Complex.lean` 45, `Product.lean`, `OneForms.lean`); cyclic cohomology with b, B, the bicomplex comparison, reduced and relative theories (`RingTheory/CyclicCohomology/Cohomology.lean` 273, `ConnesOperator.lean`, `Bicomplex.lean`, `Reduced.lean`, `Relative.lean`); S and SBI exactness (`Periodicity.lean`, `ExactSequence.lean` 444) and periodic cohomology (`PeriodicCohomology.lean` 119), which N1.Cyclic 294–302 states as targets; the characters of cycles and the trace–derivation cocycles (`Cycle.lean` 279, `Derivation.lean` 120, 209); continuous cyclic cohomology (`Continuous/Cohomology.lean` 239); N2's matrix extension, even and odd pairings with their invariances and their descent to algebraic K₀ and K₁ (`Matrix.lean` 497, `EvenPairing/AlgebraicK0.lean` 141, `OddPairing/AlgebraicK1.lean` 77, the two `Invariance.lean` files); N4's logarithmic ideal (`Analysis/OperatorIdeal/Family/Logarithmic.lean` 163), generalized limits with the existence of dilation-invariant ones (`Analysis/Normed/Order/GeneralizedLimit.lean` 76, 309) and the Dixmier trace with positivity, the ideal bound, vanishing on trace class, the value 1 on `diag(1/(j+1))` and additivity on positive operators for dilation-invariant ω (`Family/DixmierTrace.lean` 91 and its header); N5's compact-resolvent and eigenbasis results (`Analysis/InnerProductSpace/LinearPMap/CompactResolvent.lean`, `Eigenbasis.lean`); N6's torus algebra with its trace and faithfulness (`NoncommutativeGeometry/SmoothTorus/Basic.lean` 230–649). The folder's generated `STATUS.md` lists the same for N1–N2.
+
+Repair: add a `From Tau Ceti` contract naming these declarations with their files, delete from the layers the targets the pin proves (the Scope says they are in the library), and keep the remaining targets with their Checks, as the house shape requires; the same gap exists in the folder on main, and this pull request is where the pin moved under the README.
+
+## Previous findings
+
+- R01 — repaired: line 427 is blank and line 428 begins "For inverse-closed dense Fréchet subalgebras transport them through K3"; N2's Checks list still ends before it (the lines shifted by the change above them).
+
+## Verified sound
+
+**Gate and dependency check (run this round at 3452a95).** `tauceti-roadmap gate … --base origin/main`: every scanner 0 except `depcheck=1` (R01), the worker's record adds `build=0`. The dependency check, as required:
+
+```
+UPWARD: NoncommutativeGeometry (on main) -> NoncommutativeIntegration (#284) at README lines [667, 764]
+depcheck: 239 roadmaps, 2364 edges, 1 problem(s)
+```
+
+With the two NoncommutativeIntegration `*Needs:*` items removed on a scratch copy: `depcheck: 239 roadmaps, 2363 edges, 0 problem(s)`. `git diff --stat origin/main...HEAD -- . ':!TauCetiRoadmap/NoncommutativeGeometry'` is empty. Declared gaps: none, and none needed. The folder holds `README.md`, `Suggested.lean` and the generated `PROGRESS.md`, `STATUS.md`, `metadata.toml`.
+
+**Lean at the pins (Mathlib 1b1ccf4b, Tau Ceti 2fd255d9).** `lake env lean` on a scratch copy with `#check @` of the three declarations, 12 s: the single warning "declaration uses `sorry`" at line 69 and the three types identical to `signatures.md` (`CyclicTwoCocycle : {A : Type u} → [Ring A] → [Algebra ℂ A] → Type u`; `torusTwoCochain : … → (Fin 3 → A) →ₘₗ[ℂ] ℂ`; the theorem with `htrace`, `h₁`, `h₂`, `hcomm` explicit); no binder lost; `module` header, `import Mathlib` and `TauCeti.Algebra.Lie.Derivation.Basic` only, no `set_option`, no sorry'd data, `theorem` only. The headline's content against this pin is R03.
+
+**The changed passages.** The NoncommutativeIntegration citations resolve at its head 10a56146 (§1.3 line 286, §1.4 line 321, §1.5 line 360, §1.6 line 406; the row at README 143 and the text at 525–538, 679–686 match them, including "asserts none for an infinite trace" against its line 362–363 and the zero-indexed `a_⌊t⌋` identification against its §1.5). The OperatorIdeals row (142) matches OI-A30 at `TauCetiRoadmap/OperatorTheory/OperatorIdeals/README.md` line 196 on main. Fack–Kosaki is removed consistently: no mention of it remains in the README. The policy scan (process words, pull-request numbers, LaTeX delimiters, local paths) over both files is empty. The worker's citation check found no cross-roadmap citation or Lean name missing.
+
+**Adversarial pass.** Rows for the changed statements, with values; the rows for the statements the diff leaves untouched are carried from the previous report (review of a815fd0, itself carrying cf94efe) with the values recorded there.
+
+| Statement | Instances tried | Values computed on each side | Result | Change |
+|---|---|---|---|---|
+| N3 inclusions `S_p⊆S_q`, `‖T‖_q≤‖T‖_p` for p≤q (532–538) | `T=diag(1,1)`, p=1/2,1,2; general proof; `M₂` with `tr/2`; `L∞(0,∞)` | `‖T‖_(1/2)=(1+1)²=4`, `‖T‖₁=2`, `‖T‖₂=√2`, decreasing; `Σμ_j^q=Σμ_j^pμ_j^(q−p)≤‖T‖_p^(q−p)·‖T‖_p^p=‖T‖_p^q` since `μ_j≤‖T‖_p`; with `tr/2`, `diag(1,0)` has `‖·‖_p=2^(−1/p)`, increasing in p (reverse inclusion); on `L∞(0,∞)` neither direction | as stated; the "particular to B(H)" clause is right | none |
+| N3 product inclusion `S_(p₁)⋯S_(p_k)⊆S_p`, `1/p=Σ1/p_j` (533) | `S=T=diag(1/(j+1))`, k=2 | each in S_p iff p>1; `ST=diag(1/(j+1)²)` in S_r iff 2r>1; `1/r=1/p+1/q` with p,q↓1 gives every r>1/2 and r=1/2 fails | as stated (Hölder iterated) | none |
+| N3 Check "Direction of the inclusions" (537–541) | `diag(1,1)`; `diag((j+1)^(−2))` | `(1^(1/2)+1^(1/2))²=4`, `1+1=2`, `(1+1)^(1/2)=√2`; `Σ(j+1)^(−2)=π²/6<∞`, `Σ((j+1)^(−2))^(1/2)=Σ(j+1)^(−1)=∞` | true; refutes `S_q⊆S_p` for p<q | none |
+| N3 Examples line (661–663) | `diag(1/(j+1))²`, `diag((j+1)^(−2))` | `Σ(j+1)^(−2r)<∞` iff r>1/2; in S₁, not in S_(1/2) as above; shift `Tr(S*S−SS*)=1` (previous report) | as stated | none |
+| N4 `L^(p,∞)` and `S_(1,∞)` as cited (679–686) | p=1, p=2 on `diag((j+1)^(−1/p))` | README's `sup(j+1)^(1/p)μ_j` equals NoncommutativeIntegration §1.6's `sup_j (j+1)^(1/p)a_j`; `diag(1/(j+1))` has gauge 1, trace `Σ1/(j+1)=∞`: in S_(1,∞), not S₁ (its Check at line 431 agrees) | consistent across the two roadmaps | R01 only (direction) |
+| Scope claim "NoncommutativeIntegration asserts none for an infinite trace" (537–538) | its §1.5 | its line 362: "do not assert any inclusion for an infinite trace"; its Check 391 `1/n∈ℓ²∖ℓ¹` and `t^(−1/2)1_(0,1)∈L¹∖L²` | as stated | none |
+| Scope/Downstream claim on SmoothBanachRepresentations Layer 8 (59–61, 1107–1109) | its head 22e3c680 | line 11: N6 owns the three items, "Layer 8 … no torus estimate"; Layer 8 482–520: 0 torus mentions | false | R02 |
+| `exists_cyclicTwoCocycle_torusTwoCochain` (Lean 69) | pin 2fd255d9 | `traceDerivationPairCocycle` (Derivation.lean 209) has hypotheses `τ(xy)=τ(yx)`, `τ∘δ₁=0`, `τ∘δ₂=0`, `Commute δ₁ δ₂` and cochain `τ(a₀(δ₁a₁δ₂a₂−δ₂a₁δ₁a₂))`; own cochain is `(2πi)⁻¹` times it | true, and a library theorem | R03 |
+| N2 Checks (elementary matrix, degree-zero trace, circle), N1.Tensor, N1.Cyclic, N3 unchanged Checks, N4, N5, N6, N7 rows | as in the previous report | `u⁻¹−1=−aE_12` with `E_12²=0`; `Tr(e)=rank e`, `½∉ℤ`; `ψ(z^(−k),z^k)=k`, `((1+i)√π)²/(2πi)=1`; `1⊗i=i⊗1`; periodicity `m!` for m=1,2,3; `M₂` coboundary 2; `HC^(2k)(ℂ)=ℂ`; `D=diag(0,1,−1)` resolvent values; `H_N` Dixmier examples; `U=(σ₁−σ₂)/√2`; `λ₁=−(1+i)√π/2`; `θ=½` torus values; Fourier-mode counts `1,4,4,8,12`; Heisenberg index ±1 | as stated (previous report) | none |
+
+**Cross-roadmap citations and sources.** NoncommutativeIntegration §1.3–§1.6 and Downstream line 1474 at 10a56146; SmoothBanachRepresentations lines 9, 11, 62–64, 434–457, 482–520 at 22e3c680 (§7.2a/§7.3 still consume N1.Tensor as the README says); OperatorIdeals OI-A30 on main. The previous reports' 20 locators at the cache (`connes94`, `fack-kosaki`) are untouched by the change except that Fack–Kosaki is no longer cited.
+
+## Not verifiable
+
+- none. Ownership against open pull requests beyond the heads named above was not re-run this round; the previous report's `roadmaps grep` stands.
+
+## Source issues
+
+- none

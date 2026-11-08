@@ -1,0 +1,4 @@
+{"review": {"status": "needs_changes", "reviewer": "independent-review-PRREVIEW-SobolevDifferentialForms~4",
+            "head": "577b4693a1949cea354387182c1a8269d0f1e58d", "pr": 1609, "folder": "SobolevDifferentialForms", "date": "2026-11-06",
+            "findings": 2, "blocking": 0,
+            "notes": "incremental re-review of 13 changed lines since dfa3517 (README only; Suggested.lean unchanged). Checked: Mathlib exteriorPower.hodgeStar at the pin (LinearAlgebra/ExteriorPower/HodgeStar.lean:48); Tau Ceti main (data) Orientation.hodgeStar and formHodgeStar bodies and wedge_formHodgeStar_apply; ComplexKahlerGeometry K5a on main lines 570-610 (star on alternating maps, same law, no Mathlib star named: R01 P3); r3 R01 time-bound clause unchanged (R02 P3); gate all 0 OK; depcheck 240 roadmaps 2344 edges 0 problems; lake env lean 5 sorry warnings exit 0; both citation leads are the roadmap's own declared names."}}

@@ -85,3 +85,151 @@ licence_class = "publisher-open"
 status = "certified"
 accessed = "2026-11-03"
 cited_for = ["4.5"]
+
+[[source]]
+id = "ftw1973"
+locator_scheme = "theorem"
+locator = "Theorem 4.2"
+url = "https://www.numdam.org/item/CM_1973__27_1_1_0.pdf"
+fetched_from = "https://www.numdam.org/item/CM_1973__27_1_1_0.pdf"
+fetched_at = "2026-11-06T08:48:44Z"
+sha256 = "10d5f8cd24cb2d2f8e92eb031bce52903903cdef9277fa4bf5ac284bcc38b5b2"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-06"
+cited_for = ["8.5"]
+
+[[source]]
+id = "strom1972"
+locator_scheme = "theorem"
+locator = "Theorem 6"
+url = "https://journals.msp.org/mscand/article/download/2424/2423"
+fetched_from = "https://journals.msp.org/mscand/article/download/2424/2423"
+fetched_at = "2026-11-06T09:14:08Z"
+sha256 = "84bc80677a37027d5912faa528e058677729fd04d0702a7c10c91de99b11fece"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-11-06"
+cited_for = ["4.5"]
+
+[[source]]
+id = "tomdieck2008"
+authors = "Tammo tom Dieck"
+title = "Algebraic Topology"
+year = 2008
+venue = "EMS Textbooks in Mathematics"
+doi = "10.4171/048"
+locator_scheme = "theorem"
+locator = "Theorem 9.5.1 (connected maps and Eilenberg subcomplexes)"
+url = "https://doi.org/10.4171/048"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["4.8"]
+
+[[source]]
+id = "serre1953"
+authors = "Jean-Pierre Serre"
+title = "Groupes d'homotopie et classes de groupes abéliens"
+year = 1953
+venue = "Annals of Mathematics 58"
+doi = "10.2307/1969789"
+locator_scheme = "theorem"
+locator = "Chapter III, Théorème 1 (Hurewicz modulo a class)"
+url = "https://doi.org/10.2307/1969789"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["8.8d"]
+
+[[source]]
+id = "fq1990"
+authors = "Michael H. Freedman and Frank Quinn"
+title = "Topology of 4-Manifolds"
+year = 1990
+venue = "Princeton Mathematical Series 39"
+locator_scheme = "section"
+locator = "Section 7.7 (stable fundamental group at an end)"
+licence_class = "none"
+status = "uncertified"
+version_note = "book without an open copy; cited by its locator without the text"
+cited_for = ["8.5"]
+
+[[source]]
+id = "milnor1963"
+authors = "John Milnor"
+title = "Morse Theory"
+year = 1963
+venue = "Annals of Mathematics Studies 51"
+doi = "10.2307/2312441"
+locator_scheme = "theorem"
+locator = "Lemmas 3.6 and 3.7 (attachments along homotopic maps)"
+url = "https://doi.org/10.2307/2312441"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["4.5"]
+
+[[source]]
+id = "weibel"
+authors = "Charles A. Weibel"
+title = "An Introduction to Homological Algebra"
+year = 1994
+venue = "Cambridge Studies in Advanced Mathematics 38"
+doi = "10.1017/CBO9781139644136"
+locator_scheme = "theorem"
+locator = "Theorems 5.5.1 and 5.5.10 (classical and complete convergence)"
+url = "https://doi.org/10.1017/CBO9781139644136"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["5.0", "5.1", "6.1"]
+
+[[source]]
+id = "dugundji1951"
+authors = "James Dugundji"
+title = "An extension of Tietze's theorem"
+year = 1951
+doi = "10.2140/pjm.1951.1.353"
+locator_scheme = "theorem"
+locator = "Theorem 4.1 (p.357), Corollary 4.2 (p.358), Section 7 (p.363: Kuratowski–Wojdysławski embedding) and Theorem 7.1 (p.363)"
+url = "https://msp.org/pjm/1951/1-3/pjm-v1-n3-p04-s.pdf"
+fetched_from = "https://msp.org/pjm/1951/1-3/pjm-v1-n3-p04-s.pdf"
+fetched_at = "2026-11-08T12:43:49Z"
+sha256 = "8a5afd1d3b277efcd548421e41b9929dc3079086e5208144546744c8614a2305"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-11-08"
+cited_for = ["8.11a"]
+
+[[source]]
+id = "hatcher-ssat"
+authors = "Allen Hatcher"
+title = "Spectral Sequences in Algebraic Topology, Chapter 1"
+version_note = "undated chapter on the author's page; page numbers are those of the fetched PDF"
+locator_scheme = "theorem"
+locator = "Theorem 1.3 (p.8) and the local-coefficient version (p.17)"
+url = "https://pi.math.cornell.edu/~hatcher/SSAT/SSch1.pdf"
+fetched_from = "https://pi.math.cornell.edu/~hatcher/SSAT/SSch1.pdf"
+fetched_at = "2026-11-08T12:55:14Z"
+sha256 = "d34a09b4559eade18dac2c01f6718d4689c5f565d9dc252c3a67de0167520eca"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-08"
+cited_for = ["5.5"]
+
+[[source]]
+id = "hatcher-vbkt"
+authors = "Allen Hatcher"
+title = "Vector Bundles and K-Theory"
+year = 2017
+locator_scheme = "theorem"
+locator = "Lemma 3.18 (p.100) and Proposition 3.19 (p.101)"
+url = "https://pi.math.cornell.edu/~hatcher/VBKT/VB.pdf"
+fetched_from = "https://pi.math.cornell.edu/~hatcher/VBKT/VB.pdf"
+fetched_at = "2026-11-08T12:55:20Z"
+sha256 = "04282b30dfa6305183827d399deddd0bd98240c2e6d2d0c416b06e2d4e1fa097"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-08"
+cited_for = ["8.9"]

@@ -1,0 +1,40 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "ArithmeticStatisticsPartVII"
+
+[[source]]
+id = "Kane"
+authors = "Daniel M. Kane"
+title = "On the Ranks of the 2-Selmer Groups of Twists of a Given Elliptic Curve"
+year = 2010
+venue = "Algebra Number Theory 7 (2013) 1253-1279"
+doi = "10.2140/ant.2013.7.1253"
+arxiv = "1009.1365v4"
+locator_scheme = "theorem"
+locator = "Corollary 8, Propositions 9–11, Lemmas 12–17, Proposition 18"
+url = "https://arxiv.org/abs/1009.1365v4"
+fetched_from = "https://arxiv.org/pdf/1009.1365v4"
+fetched_at = "2026-11-07T09:16:15Z"
+sha256 = "1a6573c2caff8f4abd15a1ec23b1e757c81a6e3204b4cbae68e5e5c0635e00f1"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-07"
+version_note = "arXiv v4"
+cited_for = ["5.9"]
+
+[[source]]
+id = "Montgomery1978"
+authors = "Hugh L. Montgomery"
+title = "The analytic principle of the large sieve"
+year = 1978
+venue = "Bull. Amer. Math. Soc. 84 (1978), no. 4, 547-567"
+doi = "10.1090/S0002-9904-1978-14497-8"
+locator_scheme = "theorem"
+locator = "Theorems 1-3 (pp. 549, 554, 559); Section 8, inequality (20) and the primitive-character inequality (pp. 559, 561)"
+url = "https://www.ams.org/journals/bull/1978-84-04/S0002-9904-1978-14497-8/S0002-9904-1978-14497-8.pdf"
+fetched_from = "https://www.ams.org/journals/bull/1978-84-04/S0002-9904-1978-14497-8/S0002-9904-1978-14497-8.pdf"
+fetched_at = "2026-11-07T09:22:10Z"
+sha256 = "92b47a258c41cb250a595a50b7dc564a5a84fd4cb2f50c14ff7b595d6c6de0da"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-11-07"
+cited_for = ["5.9"]

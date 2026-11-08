@@ -1,0 +1,177 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "SchemeAndStackFoundations"
+
+[[source]]
+id = "milne-tmp"
+locator_scheme = "theorem"
+locator = "Theorem 2.45"
+url = "https://www.jmilne.org/math/xnotes/CA.pdf"
+fetched_from = "https://www.jmilne.org/math/xnotes/CA.pdf"
+fetched_at = "2026-11-05T09:26:23Z"
+sha256 = "1839ca7a488ab05ca242a3d29f54ac49ac89953f5568a78f13f6a13c7c50c4be"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-05"
+cited_for = ["0.7a"]
+
+[[source]]
+id = "yun-zhang"
+authors = "Zhiwei Yun, Wei Zhang"
+title = "Shtukas and the Taylor expansion of $L$-functions"
+year = 2015
+arxiv = "1512.02683v3"
+locator_scheme = "section"
+locator = "x"
+url = "https://arxiv.org/abs/1512.02683v3"
+fetched_from = "https://arxiv.org/pdf/1512.02683v3"
+fetched_at = "2026-11-05T09:32:12Z"
+sha256 = "76bb3576bc75dc1c5214597197e3d8ef62abc10784e2b2625657a0e7ea1821ff"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-05"
+version_note = "arXiv v3"
+cited_for = ["x"]
+
+[[source]]
+id = "van-hoften"
+authors = "Pol van Hoften"
+title = "Mod $p$ points on Shimura varieties of parahoric level (with an appendix by Rong Zhou)"
+year = 2020
+venue = "Forum of Mathematics, Pi , Volume 12 , 2024 , e20"
+doi = "10.1017/fmp.2024.22"
+arxiv = "2010.10496v4"
+locator_scheme = "section"
+locator = "x"
+url = "https://arxiv.org/abs/2010.10496v4"
+fetched_from = "https://arxiv.org/pdf/2010.10496v4"
+fetched_at = "2026-11-05T09:32:18Z"
+sha256 = "593ccc39d59ebdd70122cb3b742218a96a2654cbf171dc3d6a83211618e0e738"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-05"
+version_note = "arXiv v4"
+cited_for = ["x"]
+
+[[source]]
+id = "zhu-2017"
+authors = "Xinwen Zhu"
+title = "Affine Grassmannians and the geometric Satake in mixed characteristic"
+year = 2014
+arxiv = "1407.8519v3"
+locator_scheme = "section"
+locator = "x"
+url = "https://arxiv.org/abs/1407.8519v3"
+fetched_from = "https://arxiv.org/pdf/1407.8519v3"
+fetched_at = "2026-11-05T09:32:24Z"
+sha256 = "2c23e397d21e84812daec2c637e2a763eec54ef0d784748eb74e3b2093de1e5b"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-05"
+version_note = "arXiv v3"
+cited_for = ["x"]
+
+[[source]]
+id = "bhatt-scholze-2017"
+authors = "Bhargav Bhatt, Peter Scholze"
+title = "Projectivity of the Witt vector affine Grassmannian"
+year = 2015
+arxiv = "1507.06490v3"
+locator_scheme = "section"
+locator = "x"
+url = "https://arxiv.org/abs/1507.06490v3"
+fetched_from = "https://arxiv.org/pdf/1507.06490v3"
+fetched_at = "2026-11-05T09:32:30Z"
+sha256 = "b4d5a4e0a6591971c6b8521d790e5db6e61112f1350a0e4a05a8d98b6e0b961e"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-05"
+version_note = "arXiv v3"
+cited_for = ["x"]
+
+[[source]]
+id = "kings-sprang"
+authors = "Guido Kings, Johannes Sprang"
+title = "Eisenstein-Kronecker classes, integrality of critical values of Hecke $L$-functions and $p$-adic interpolation"
+year = 2019
+venue = "Annals of Mathematics 202 (2025), 1-109"
+arxiv = "1912.03657v4"
+locator_scheme = "section"
+locator = "x"
+url = "https://arxiv.org/abs/1912.03657v4"
+fetched_from = "https://arxiv.org/pdf/1912.03657v4"
+fetched_at = "2026-11-05T09:32:37Z"
+sha256 = "fab8e605123cf9c399753b7114c4fd65000e1863e3507abdd4129c8c940fbb72"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-05"
+version_note = "arXiv v4"
+cited_for = ["x"]
+
+[[source]]
+id = "morel-voevodsky"
+locator_scheme = "section"
+locator = "x"
+url = "https://www.numdam.org/item/PMIHES_1999__90__45_0.pdf"
+fetched_from = "https://www.numdam.org/item/PMIHES_1999__90__45_0.pdf"
+fetched_at = "2026-11-05T09:32:39Z"
+sha256 = "170d4a97b4ac3d0b11319b7bdbc04060e6c6daf93fbd1662534d47ecd2d63216"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-05"
+cited_for = ["x"]
+
+[[source]]
+id = "milne-lec"
+locator_scheme = "section"
+locator = "x"
+url = "https://www.jmilne.org/math/CourseNotes/LEC.pdf"
+fetched_from = "https://www.jmilne.org/math/CourseNotes/LEC.pdf"
+fetched_at = "2026-11-05T09:32:44Z"
+sha256 = "ac4f122f371d38a44c58c296b7dbf88081d89d2de2334070bff3606771c01077"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-05"
+cited_for = ["x"]
+
+[[source]]
+id = "de-jong-1996"
+authors = "A. J. De Jong"
+title = "Smoothness, semi-stability and alterations"
+year = 1996
+venue = "Publications Mathématiques de l'IHÉS 83"
+doi = "10.1007/BF02698644"
+locator_scheme = "theorem"
+locator = "Theorem 4.1"
+url = "https://doi.org/10.1007/BF02698644"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["4.19"]
+
+[[source]]
+id = "stacks-project"
+locator_scheme = "tag"
+locator = "07GC"
+url = "https://stacks.math.columbia.edu/"
+fetched_from = "https://stacks.math.columbia.edu/"
+fetched_at = "2026-11-08T10:25:43Z"
+sha256 = "6d2ec1c3deb43a69fce322d5c9c639ee9354626efcb02e53c3dc8ffd2732ed7c"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-08"
+cited_for = ["0.15"]
+
+[[source]]
+id = "hartshorne-1977"
+authors = "Robin Hartshorne"
+title = "Algebraic Geometry"
+year = 1977
+venue = "Graduate Texts in Mathematics"
+doi = "10.1007/978-1-4757-3849-0"
+locator_scheme = "theorem"
+locator = "V.1, Proposition 1.4"
+url = "https://doi.org/10.1007/978-1-4757-3849-0"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["5.9"]

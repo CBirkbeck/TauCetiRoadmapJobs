@@ -1,0 +1,33 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "LocalAnabelianGeometry"
+
+[[source]]
+id = "hyeon2025"
+authors = "Hyeon"
+title = "The $m$-step solvable anabelian geometry of mixed-characteristic local fields"
+year = 2025
+arxiv = "2405.16950v4"
+locator_scheme = "theorem"
+locator = "Theorem 1.4"
+url = "https://arxiv.org/abs/2405.16950v4"
+fetched_from = "https://arxiv.org/pdf/2405.16950v4"
+fetched_at = "2026-11-05T21:38:06Z"
+sha256 = "d32627772bf7f48373c7a51fbe0b6943530c353b0b22c5d76cb7504ddceeb33b"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-05"
+version_note = "arXiv v4"
+cited_for = ["8.1"]
+
+[[source]]
+id = "mochizuki1997"
+locator_scheme = "theorem"
+locator = "Theorem 4.2"
+url = "https://www.kurims.kyoto-u.ac.jp/~motizuki/A%20Version%20of%20the%20Grothendieck%20Conjecture%20for%20p-adic%20Local%20Fields.pdf"
+fetched_from = "https://www.kurims.kyoto-u.ac.jp/~motizuki/A%20Version%20of%20the%20Grothendieck%20Conjecture%20for%20p-adic%20Local%20Fields.pdf"
+fetched_at = "2026-11-05T21:38:28Z"
+sha256 = "757670e59a4e9d4c69675fec91b5d6998b411d3554e721b40d445e61a867121e"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-05"
+cited_for = ["8.4"]

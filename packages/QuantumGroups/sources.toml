@@ -1,0 +1,195 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "QuantumGroups"
+
+[[source]]
+id = "jones83"
+authors = "V. F. R. Jones"
+title = "Index for subfactors"
+year = 1983
+venue = "Inventiones Mathematicae 72"
+doi = "10.1007/bf01389127"
+locator_scheme = "theorem"
+locator = "Theorem 4.3.1"
+url = "https://doi.org/10.1007/bf01389127"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["Q0.4"]
+
+[[source]]
+id = "nt"
+locator_scheme = "section"
+locator = "Chapter 2, §2.2"
+url = "https://folk.universitetetioslo.no/sergeyn/papers/CQGRC.pdf"
+fetched_from = "https://folk.universitetetioslo.no/sergeyn/papers/CQGRC.pdf"
+fetched_at = "2026-11-05T09:59:25Z"
+sha256 = "4789632e36d8ec2eb7f363008cfd80e1ec05a51f722a50a20a50635c3aade43a"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-05"
+cited_for = ["Q0.3"]
+
+[[source]]
+id = "landsman"
+authors = "N. P. Landsman"
+title = "Lecture notes on C*-algebras, Hilbert C*-modules, and quantum mechanics"
+year = 1998
+arxiv = "math-ph/9807030v1"
+locator_scheme = "section"
+locator = "§§3.2–3.3, 3.5"
+url = "https://arxiv.org/abs/math-ph/9807030v1"
+fetched_from = "https://arxiv.org/pdf/math-ph/9807030v1"
+fetched_at = "2026-11-05T10:23:50Z"
+sha256 = "b989cedcf1525568ed5a16a9ec53834b9fa5719a2f460d6a6f69d7f8071bb3ee"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-05"
+version_note = "arXiv v1"
+cited_for = ["0.2"]
+
+[[source]]
+id = "longoroberts"
+authors = "Roberto Longo, John E. Roberts"
+title = "A Theory of Dimension"
+year = 1996
+venue = "K-Theory 11 1997, 103-159"
+arxiv = "funct-an/9604008v1"
+locator_scheme = "section"
+locator = "§§2–3, Appendix"
+url = "https://arxiv.org/abs/funct-an/9604008v1"
+fetched_from = "https://arxiv.org/pdf/funct-an/9604008v1"
+fetched_at = "2026-11-05T10:23:55Z"
+sha256 = "23082fd538269b5e43e54d1d87679a2d41b958167386d605087b08239155a311"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-05"
+version_note = "arXiv v1"
+cited_for = ["0.3"]
+
+[[source]]
+id = "hiai"
+authors = "Fumio Hiai"
+title = "Concise lectures on selected topics of von Neumann algebras"
+year = 2020
+arxiv = "2004.02383v1"
+locator_scheme = "section"
+locator = "§§1.2–1.3, 2.1–2.2, 7.1"
+url = "https://arxiv.org/abs/2004.02383v1"
+fetched_from = "https://arxiv.org/pdf/2004.02383v1"
+fetched_at = "2026-11-05T10:24:03Z"
+sha256 = "a287a32777b854ad635349f1c4b0988111df90ca5d65d7bbcf5d904fef66790c"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-05"
+version_note = "arXiv v1"
+cited_for = ["0.1"]
+
+[[source]]
+id = "penneys"
+locator_scheme = "theorem"
+locator = "Theorem 4.3.17"
+url = "https://people.math.osu.edu/penneys.2/UQSL/PartI/UQSLPartIChapter4.pdf"
+fetched_from = "https://people.math.osu.edu/penneys.2/UQSL/PartI/UQSLPartIChapter4.pdf"
+fetched_at = "2026-11-05T10:24:07Z"
+sha256 = "a5da40246f576aa996facb3e1c0478c7f4e9ab6f006b407a812f0d2a3c14e0e5"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-05"
+cited_for = ["0.4"]
+
+[[source]]
+id = "bmt"
+authors = "Erik Bedos, Gerard J. Murphy, Lars Tuset"
+title = "Co-Amenability of compact quantum groups"
+year = 2000
+doi = "10.1016/S0393-0440(01)00024-9"
+arxiv = "math/0010248v1"
+locator_scheme = "theorem"
+locator = "Theorems 2.2, 2.8, 2.12, 3.6"
+url = "https://arxiv.org/abs/math/0010248v1"
+fetched_from = "https://arxiv.org/pdf/math/0010248v1"
+fetched_at = "2026-11-05T10:24:11Z"
+sha256 = "2f20dbc6aa60fa5b4a1a6e06a12aa68fff5bd1ebb0ed9d2be8c0488835a92da5"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-05"
+version_note = "arXiv v1"
+cited_for = ["4.3"]
+
+[[source]]
+id = "banica"
+authors = "Teodor Banica"
+title = "The representation theory of free orthogonal quantum groups"
+year = 1998
+venue = "C. R. Acad. Sci. Paris Ser. I Math. 322 (1996), 241-244"
+arxiv = "math/9806063v5"
+locator_scheme = "theorem"
+locator = "Theorem 1"
+url = "https://arxiv.org/abs/math/9806063v5"
+fetched_from = "https://arxiv.org/pdf/math/9806063v5"
+fetched_at = "2026-11-05T10:24:16Z"
+sha256 = "52e7df76f9d3cd21e6c538cbb92c2f56182975c8d633a994ab2f7ef7e20846e6"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-05"
+version_note = "arXiv v5"
+cited_for = ["7.2"]
+
+[[source]]
+id = "malacarne"
+authors = "Sara Malacarne"
+title = "Woronowicz's Tannaka-Krein duality and free orthogonal quantum groups"
+year = 2016
+arxiv = "1602.04807v1"
+locator_scheme = "theorem"
+locator = "Theorem 4.1"
+url = "https://arxiv.org/abs/1602.04807v1"
+fetched_from = "https://arxiv.org/pdf/1602.04807v1"
+fetched_at = "2026-11-05T10:24:22Z"
+sha256 = "83cb08ae32a2d277c22c1dadba0a2b6416415be7ad51c046f519d629035a8b2b"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-05"
+version_note = "arXiv v1"
+cited_for = ["6.1"]
+
+[[source]]
+id = "virelizier"
+locator_scheme = "section"
+locator = "§§2.3–4.1"
+url = "https://www.math.virelizier.com/sources/cours/QuantumGroupM2.pdf"
+fetched_from = "https://www.math.virelizier.com/sources/cours/QuantumGroupM2.pdf"
+fetched_at = "2026-11-05T10:24:23Z"
+sha256 = "8e10824880d11db4dc9cd0ec1c43f748efa479942e3ca802f345f07005f3d460"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-05"
+cited_for = ["8.1"]
+
+[[source]]
+id = "egno"
+locator_scheme = "section"
+locator = "§§5.1–5.3"
+url = "https://math.mit.edu/~etingof/egnobookfinal.pdf"
+fetched_from = "https://math.mit.edu/~etingof/egnobookfinal.pdf"
+fetched_at = "2026-11-05T10:24:31Z"
+sha256 = "a40d076197b666d8b3b231ac59748a95f9b311d49ce57f4024c0da8308796db3"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-05"
+cited_for = ["8.5"]
+
+[[source]]
+id = "takesaki2"
+authors = "Masamichi Takesaki"
+title = "Theory of Operator Algebras II"
+year = 2003
+venue = "Encyclopaedia of Mathematical Sciences"
+doi = "10.1007/978-3-662-10451-4"
+locator_scheme = "chapter"
+locator = "Chapters VI.1, VII.1–VII.2"
+url = "https://doi.org/10.1007/978-3-662-10451-4"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["0.5"]

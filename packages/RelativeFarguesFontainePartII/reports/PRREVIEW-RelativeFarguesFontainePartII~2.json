@@ -1,0 +1,4 @@
+{"review": {"status": "accepted", "reviewer": "independent-review-PRREVIEW-RelativeFarguesFontainePartII~2",
+            "head": "a4f22ee0ba90aa1f334c94cb8b5c0796b0c00937", "pr": 1825, "folder": "RelativeFarguesFontainePartII", "date": "2026-11-06",
+            "findings": 0, "blocking": 0,
+            "notes": "incremental re-review of 2 changed lines since c3b08bc: R01 (ST02 page range in §8.4) repaired, Corollary 3.5 and Lemma 3.6 confirmed on printed p. 11 (ST02 lines 416, 430); Suggested.lean unchanged, elaborates with three sorry warnings, #check of all four declarations matches the README; gate re-run OK, depcheck 241 roadmaps 2362 edges 0 problems, outside-folder diff empty; seeded sample 0.2, 0.3, 1.5, 1.12, 2.1, 2.2, 2.10, 5.2, 5.4, 6.6 read in FF17 and 11.3 in KT16 at their locators, 4.5, 4.9, 6.11, 10.8 carried from the previous report; no source issue found this round."}}

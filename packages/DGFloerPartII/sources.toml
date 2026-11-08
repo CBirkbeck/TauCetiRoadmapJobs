@@ -1,0 +1,92 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "DGFloerPartII"
+
+[[source]]
+id = "bdho-cotangent"
+authors = "Jean-François Barraud, Mihai Damian, Vincent Humilière, Alexandru Oancea"
+title = "Floer Homology with DG Coefficients. Applications to cotangent bundles"
+year = 2024
+arxiv = "2404.07953v3"
+locator_scheme = "theorem"
+locator = "Theorem I"
+url = "https://arxiv.org/abs/2404.07953v3"
+fetched_from = "https://arxiv.org/pdf/2404.07953v3"
+fetched_at = "2026-11-07T15:55:42Z"
+sha256 = "eb1bf3be03bf005aa7526eaa309b31dfff290e04a71ef3eac1d6a416b75698b7"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-07"
+version_note = "arXiv v3"
+cited_for = ["4.5"]
+
+[[source]]
+id = "css-derivative"
+authors = "Diarmuid Crowley, Thomas Schick, Wolfgang Steimle"
+title = "The derivative map for diffeomorphism of disks: An example"
+year = 2020
+venue = "Geom. Topol. 27 (2023) 3699-3713"
+doi = "10.2140/gt.2023.27.3699"
+arxiv = "2012.13634v1"
+locator_scheme = "theorem"
+locator = "Lemma 2.2"
+url = "https://arxiv.org/abs/2012.13634v1"
+fetched_from = "https://arxiv.org/pdf/2012.13634v1"
+fetched_at = "2026-11-07T16:23:05Z"
+sha256 = "9c26a21bfe2937be6c0d3e633df8cab8e376fb90517ccd0ce00ac7a2889d258d"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-07"
+version_note = "arXiv v1"
+cited_for = ["4.3"]
+
+[[source]]
+id = "strickland-cgwh"
+authors = "N. P. Strickland"
+title = "The category of CGWH spaces"
+year = 2009
+version_note = "expository notes dated 19 August 2009, read from the archived copy of the author's page"
+locator_scheme = "theorem"
+locator = "Proposition 2.6"
+url = "https://web.archive.org/web/20210123201715/https://neil-strickland.staff.shef.ac.uk/courses/homotopy/cgwh.pdf"
+fetched_from = "https://web.archive.org/web/20210123201715/https://neil-strickland.staff.shef.ac.uk/courses/homotopy/cgwh.pdf"
+fetched_at = "2026-11-08T05:51:02Z"
+sha256 = "321dec7234dcaf6da5bcc053f69427abf732aa45c447ba8c8ef77c8ed0557817"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-08"
+cited_for = ["1.0"]
+
+[[source]]
+id = "rezk-cg-spaces"
+authors = "Charles Rezk"
+title = "Compactly generated spaces"
+year = 2025
+version_note = "notes dated 14 January 2025 on the author's page"
+locator_scheme = "theorem"
+locator = "Proposition 8.8"
+url = "https://rezk.web.illinois.edu/cg-spaces-better.pdf"
+fetched_from = "https://rezk.web.illinois.edu/cg-spaces-better.pdf"
+fetched_at = "2026-11-08T05:51:04Z"
+sha256 = "24f0970e56d38f786b101d69f78bdbb840d941920210e63d7e91230605af0300"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-08"
+cited_for = ["1.0"]
+
+[[source]]
+id = "eschenburg-hanke-bott"
+authors = "Jost Eschenburg, Bernhard Hanke"
+title = "Bott Periodicity, Submanifolds, and Vector Bundles"
+year = 2016
+arxiv = "1610.04385v2"
+locator_scheme = "section"
+locator = "§§2–4"
+url = "https://arxiv.org/abs/1610.04385v2"
+fetched_from = "https://arxiv.org/pdf/1610.04385v2"
+fetched_at = "2026-11-08T05:51:07Z"
+sha256 = "2ad1b3d3fa80fb942fd125b290f5f93fe6a766845912b796a3a418b822b5058e"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-08"
+version_note = "arXiv v2"
+cited_for = ["4.2b", "4.2c"]

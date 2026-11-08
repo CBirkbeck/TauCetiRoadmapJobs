@@ -1,0 +1,54 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "NoncommutativeGeometry"
+
+[[source]]
+id = "connes85"
+authors = "Alain Connes"
+title = "Non-commutative differential geometry"
+year = 1985
+venue = "Publications Mathématiques de l'IHÉS 62"
+doi = "10.1007/BF02698807"
+locator_scheme = "section"
+locator = "Part II, §1–§2"
+url = "http://www.numdam.org/item/PMIHES_1985__62__41_0/"
+fetched_from = "https://www.numdam.org/item/PMIHES_1985__62__41_0.pdf"
+fetched_at = "2026-11-07T08:52:57Z"
+sha256 = "447ddf84f516429e2536eb18ec47d214bb38164e30a6c28e310a307ed6914523"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-07"
+cited_for = ["N1.Cyclic"]
+
+[[source]]
+id = "connes94"
+authors = "Alain Connes"
+title = "Noncommutative Geometry"
+year = 1994
+venue = "Academic Press"
+locator_scheme = "section"
+locator = "III.1, III.3, IV.1, IV.2, IV.6, Appendix C"
+url = "https://alainconnes.org/wp-content/uploads/book94bigpdf.pdf"
+fetched_from = "https://alainconnes.org/wp-content/uploads/book94bigpdf.pdf"
+fetched_at = "2026-11-07T08:57:01Z"
+sha256 = "21f7f4d78f5a6dc2214c0bcefecc101d6f45a912520191e93753bc1f7cba5794"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-07"
+cited_for = ["N1–N7"]
+
+[[source]]
+id = "fack-kosaki"
+authors = "Thierry Fack, Hideki Kosaki"
+title = "Generalized s-numbers of τ-measurable operators"
+year = 1986
+venue = "Pacific Journal of Mathematics 123 (2), 269–300"
+locator_scheme = "theorem"
+locator = "Theorem 4.2, Theorem 4.9(iii)"
+url = "https://msp.org/pjm/1986/123-2/pjm-v123-n2-p03-s.pdf"
+fetched_from = "https://msp.org/pjm/1986/123-2/pjm-v123-n2-p03-s.pdf"
+fetched_at = "2026-11-07T08:57:30Z"
+sha256 = "3c11d3eba00268fd2222709b7ec24bf8adade4a7b3218fc8375aeec01e452503"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-11-07"
+cited_for = ["N3"]

@@ -1,0 +1,279 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "GeometryOfNumbersAndQuadraticArithmetic"
+
+[[source]]
+id = "DutourSikiricSchurmannVallentin2009"
+authors = "Mathieu Dutour Sikiric, Achill Schuermann, Frank Vallentin"
+title = "Classification of eight dimensional perfect forms"
+year = 2006
+venue = "Electron. Res. Announc. Amer. Math. Soc. 13 (2007), 21-32"
+doi = "10.1090/S1079-6762-07-00171-0"
+arxiv = "math/0609388v3"
+locator_scheme = "section"
+locator = "§1, p.1"
+url = "https://arxiv.org/abs/math/0609388v3"
+fetched_from = "https://arxiv.org/pdf/math/0609388v3"
+fetched_at = "2026-11-07T13:20:34Z"
+sha256 = "6de1c88daf85385300f6b41359ee31f6d22fcd777a7c6760d688457107da86b4"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-07"
+version_note = "arXiv v3"
+cited_for = ["4.4.1"]
+
+[[source]]
+id = "Evertse2023"
+authors = "Jan-Hendrik Evertse"
+title = "Diophantine approximation, Chapter 2: Geometry of numbers"
+year = 2023
+locator_scheme = "theorem"
+locator = "Theorem 2.20"
+url = "https://pub.math.leidenuniv.nl/~evertsejh/dio19-2.pdf"
+fetched_from = "https://pub.math.leidenuniv.nl/~evertsejh/dio19-2.pdf"
+fetched_at = "2026-11-07T13:20:42Z"
+sha256 = "99194d1c4a670d42219e277d5b9945d5e80ef159c3969ac1e0e467c304586063"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-07"
+cited_for = ["4.4.3"]
+
+[[source]]
+id = "Regev2004"
+authors = "Oded Regev (lecturer), Elad Verbin (scribe)"
+title = "Transference Theorems, Lattices in Computer Science, Lecture 11"
+year = 2004
+locator_scheme = "page"
+locator = "p.2, Definition 2 and equations (1)-(2)"
+url = "https://cims.nyu.edu/~regev/teaching/lattices_fall_2004/ln/transference.pdf"
+fetched_from = "https://cims.nyu.edu/~regev/teaching/lattices_fall_2004/ln/transference.pdf"
+fetched_at = "2026-11-07T13:20:43Z"
+sha256 = "11986af4502c60d4d53ad4db111d51b039845943af013fc54d2154e8396b0cf2"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-07"
+cited_for = ["4.4.2-4.4.14"]
+
+[[source]]
+id = "Schlichting2010"
+authors = "Marco Schlichting"
+title = "Hermitian K-theory of exact categories"
+year = 2010
+venue = "J. K-Theory 5 (2010), 105-165"
+doi = "10.1017/is009010017jkt075"
+locator_scheme = "page"
+locator = "pp.109-110, 113, 123-124"
+url = "https://webhomes.maths.ed.ac.uk/~v1ranick/papers/schlicht.pdf"
+fetched_from = "https://webhomes.maths.ed.ac.uk/~v1ranick/papers/schlicht.pdf"
+fetched_at = "2026-11-07T13:20:46Z"
+sha256 = "fdcf61c0e9e41550b7aaf8d34f2e9deb3276b0a6f8e59f9fb3262018b7052f0e"
+licence_class = "institutional"
+status = "certified"
+accessed = "2026-11-07"
+cited_for = ["6.2-6.7"]
+
+[[source]]
+id = "KurinczukSkodlerackStevens2020"
+authors = "Robert Kurinczuk, Daniel Skodlerack, Shaun Stevens"
+title = "Endo-parameters for p-adic classical groups"
+year = 2016
+arxiv = "1611.02667v3"
+locator_scheme = "theorem"
+locator = "Lemma 3.1"
+url = "https://arxiv.org/abs/1611.02667v3"
+fetched_from = "https://arxiv.org/pdf/1611.02667v3"
+fetched_at = "2026-11-07T13:26:45Z"
+sha256 = "1cbcbb779d8d4ba8f3339d749b3dd7bc3d2555e6792491338a861d45009d9092"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-07"
+version_note = "arXiv v3"
+cited_for = ["2.9"]
+
+[[source]]
+id = "Henk2002"
+authors = "Martin Henk"
+title = "Successive Minima and Lattice Points"
+year = 2002
+arxiv = "math/0204158v1"
+locator_scheme = "theorem"
+locator = "Theorem 1.5"
+url = "https://arxiv.org/abs/math/0204158v1"
+fetched_from = "https://arxiv.org/pdf/math/0204158v1"
+fetched_at = "2026-11-07T13:26:54Z"
+sha256 = "403d8f400cfd8a823260466713ef90bc7425c5be0677b986388b43da78608b60"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-07"
+version_note = "arXiv v1"
+cited_for = ["4.1.12"]
+
+[[source]]
+id = "Benoist2019"
+authors = "Yves Benoist"
+title = "Arithmeticity of discrete subgroups"
+year = 2019
+locator_scheme = "page"
+locator = "pp.5-7, 20"
+url = "https://www.imo.universite-paris-saclay.fr/~yves.benoist/prepubli/19ArithmeticityLectures.pdf"
+fetched_from = "https://www.imo.universite-paris-saclay.fr/~yves.benoist/prepubli/19ArithmeticityLectures.pdf"
+fetched_at = "2026-11-07T13:28:46Z"
+sha256 = "d5e8b727b09c39ca74be90009e1e0e15430ed6611799d696a812acaf4ef68d6b"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-07"
+cited_for = ["3.3, 4.2, 4.5"]
+
+[[source]]
+id = "CDHIII2026v4"
+authors = "Baptiste Calmès, Emanuele Dotto, Yonatan Harpaz, Fabian Hebestreit, Markus Land, Kristian Moi, Denis Nardin, Thomas Nikolaus, Wolfgang Steimle"
+title = "Hermitian K-theory for stable $\\infty$-categories III: Grothendieck-Witt groups of rings"
+year = 2020
+arxiv = "2009.07225v4"
+locator_scheme = "theorem"
+locator = "Proposition 1.1.13 and Remark 1.1.14, p.14"
+url = "https://arxiv.org/abs/2009.07225v4"
+fetched_from = "https://arxiv.org/pdf/2009.07225v4"
+fetched_at = "2026-11-07T17:59:58Z"
+sha256 = "1e4b6720055ebdce0012f5780bfc7cdb5b853e32f29b17224a1be0bc676f770c"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-07"
+version_note = "arXiv v4"
+cited_for = ["6.1a", "6.8a", "6.9", "6.10", "6.10a", "6.10b", "6.11"]
+
+[[source]]
+id = "CDHII2025v5"
+authors = "Baptiste Calmès, Emanuele Dotto, Yonatan Harpaz, Fabian Hebestreit, Markus Land, Kristian Moi, Denis Nardin, Thomas Nikolaus, Wolfgang Steimle"
+title = "Hermitian K-theory for stable $\\infty$-categories II: Cobordism categories and additivity"
+year = 2020
+arxiv = "2009.07224v5"
+locator_scheme = "theorem"
+locator = "Remark 1.1.7, pp.17-18"
+url = "https://arxiv.org/abs/2009.07224v5"
+fetched_from = "https://arxiv.org/pdf/2009.07224v5"
+fetched_at = "2026-11-07T18:00:16Z"
+sha256 = "eaa19b40046c953f6aedc5d11ed86eaee16018fcad995fcbafeb4746af6239a3"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-07"
+version_note = "arXiv v5"
+cited_for = ["6.1a", "6.8a"]
+
+[[source]]
+id = "CDHI2021v3"
+authors = "Baptiste Calmès, Emanuele Dotto, Yonatan Harpaz, Fabian Hebestreit, Markus Land, Kristian Moi, Denis Nardin, Thomas Nikolaus, Wolfgang Steimle"
+title = "Hermitian K-theory for stable $\\infty$-categories I: Foundations"
+year = 2020
+arxiv = "2009.07223v3"
+locator_scheme = "theorem"
+locator = "Definitions 1.1.1, 1.2.1 and 2.1.1, pp.10, 17, 30"
+url = "https://arxiv.org/abs/2009.07223v3"
+fetched_from = "https://arxiv.org/pdf/2009.07223v3"
+fetched_at = "2026-11-07T18:00:50Z"
+sha256 = "2c423b7f8fa95e1ee236c1d59a22d559de26fb8882328d9604e7680f31a7c68e"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-07"
+version_note = "arXiv v3"
+cited_for = ["6.1a", "6.8a", "6.10b"]
+
+[[source]]
+id = "RanickiFoundations2001"
+authors = "Andrew Ranicki"
+title = "Foundations of algebraic surgery"
+year = 2001
+arxiv = "math/0111315v1"
+locator_scheme = "section"
+locator = "§2, pp.5–7; §5, Example, p.15"
+url = "https://arxiv.org/abs/math/0111315v1"
+fetched_from = "https://arxiv.org/pdf/math/0111315v1"
+fetched_at = "2026-11-08T04:54:12Z"
+sha256 = "40584fbd623e574fe460c4b7022cab4e61621201eee9771cf1338802a8cd4835"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-08"
+version_note = "arXiv v1"
+cited_for = ["6.8"]
+
+[[source]]
+id = "ElmanKarpenkoMerkurjev2008"
+authors = "Richard Elman, Nikita Karpenko, Alexander Merkurjev"
+title = "The Algebraic and Geometric Theory of Quadratic Forms"
+year = 2008
+locator_scheme = "theorem"
+locator = "Example 7.6, p.41; §13, pp.61–62, Proposition 13.2, Corollary 13.3, Lemma 13.4, Example 13.5(2)"
+url = "https://www.math.ucla.edu/~merkurev/Book/Kniga-final/Kniga.pdf"
+fetched_from = "https://www.math.ucla.edu/~merkurev/Book/Kniga-final/Kniga.pdf"
+fetched_at = "2026-11-08T04:54:25Z"
+sha256 = "0b547b09ee83c370a932e2c2117fe1757bb8b342ca0af9d73526b5edffb842e6"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-08"
+cited_for = ["6.8"]
+version_note = "authors' final manuscript; page numbers are those printed in it"
+
+[[source]]
+id = "Cameron2000"
+authors = "Peter J. Cameron"
+title = "Projective and Polar Spaces, second edition, Chapter 6: Polar spaces"
+year = 2000
+locator_scheme = "theorem"
+locator = "Theorem 6.7, p.84; Theorem 6.10(a), p.86; Exercise 3, p.88; §6.4, p.89; Table 6.1, p.93; Theorem 6.13, p.94"
+url = "https://webspace.maths.qmul.ac.uk/p.j.cameron/pps/pps6.pdf"
+fetched_from = "https://webspace.maths.qmul.ac.uk/p.j.cameron/pps/pps6.pdf"
+fetched_at = "2026-11-08T04:54:26Z"
+sha256 = "66283cf8430343305bd67ddda0a00b059eaa297f03fd27189939a0c51db68f71"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-08"
+cited_for = ["6.8"]
+
+[[source]]
+id = "LastPenrose2017"
+authors = "Günter Last, Mathew Penrose"
+title = "Lectures on the Poisson Process"
+year = 2017
+locator_scheme = "theorem"
+locator = "Proposition 3.5, p.21; Theorem 5.2, p.39"
+url = "https://stoch.math.kit.edu/img/Last/lastpenrose2017.pdf"
+fetched_from = "https://stoch.math.kit.edu/img/Last/lastpenrose2017.pdf"
+fetched_at = "2026-11-08T04:54:41Z"
+sha256 = "04423f7ad07ca1d07178c307c14558df7d6a309519759a4229396c11945d9c3e"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-08"
+cited_for = ["4.2"]
+version_note = "authors' version; page numbers are those printed in it"
+
+[[source]]
+id = "Kirschmer2013"
+authors = "Markus Kirschmer"
+title = "One-class genera of maximal integral quadratic forms"
+year = 2013
+locator_scheme = "theorem"
+locator = "§2, p.2; Definition 3.1, Proposition 3.2, Theorem 3.3, pp.3–4"
+url = "https://www.math.rwth-aachen.de/~Markus.Kirschmer/papers/maxgen.pdf"
+fetched_from = "https://www.math.rwth-aachen.de/~Markus.Kirschmer/papers/maxgen.pdf"
+fetched_at = "2026-11-08T04:54:42Z"
+sha256 = "d128be3ded05632cfad338ce627ec62093d6b7d18e0f47d13b1f61a46847f2e7"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-08"
+cited_for = ["3.3.5"]
+version_note = "author manuscript dated June 2013"
+
+[[source]]
+id = "GanHankeYu2001"
+authors = "Wee Teck Gan, Jonathan P. Hanke, Jiu-Kang Yu"
+title = "On an exact mass formula of Shimura"
+year = 2001
+locator_scheme = "theorem"
+locator = "§7, p.118; Propositions 7.4–7.5, pp.119–120"
+url = "https://web.math.princeton.edu/~jonhanke/Web-02/Mass-Formula-of-Shimura/shimura-mass.pdf"
+fetched_from = "https://web.math.princeton.edu/~jonhanke/Web-02/Mass-Formula-of-Shimura/shimura-mass.pdf"
+fetched_at = "2026-11-08T04:54:43Z"
+sha256 = "c33ff4ff8d334a6d14b45320e831650ce3e8878e79e57c8a748684be1fe13285"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-08"
+cited_for = ["3.3.5"]

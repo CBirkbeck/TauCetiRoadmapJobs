@@ -139,3 +139,22 @@ licence_class = "none"
 status = "uncertified"
 version_note = "paywalled; cited by its locator without the text"
 cited_for = ["Layer 2 coefficient-resolution proof"]
+
+[[source]]
+id = "dugger-isaksen"
+doi = "10.1007/s00209-003-0607-y"
+arxiv = "math/0111287v1"
+authors = "Daniel Dugger and Daniel C. Isaksen"
+title = "Topological hypercovers and A¹-realizations"
+year = 2004
+locator_scheme = "theorem"
+locator = "Theorem 1.2"
+url = "https://arxiv.org/abs/math/0111287v1"
+fetched_from = "https://arxiv.org/pdf/math/0111287v1"
+fetched_at = "2026-11-06T18:33:22Z"
+sha256 = "4b827c357bc623d477a5f5314b42bc35d02f0f7dfc36251a632ba1fd0e584783"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-06"
+version_note = "arXiv v1 (posted 2001 under the title Hypercovers in topology) read; its numbering, Theorem 1.2 on p. 2, is the one cited; published in Mathematische Zeitschrift 246 (2004), 667–689"
+cited_for = ["ComplexComparisonPartII contract (compatible-good-cover-refinement)", "4.3"]

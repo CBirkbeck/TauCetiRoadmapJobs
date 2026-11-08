@@ -1,0 +1,132 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "AnalyticNumberTheoryPartI"
+
+[[source]]
+id = "openai2026ls"
+locator_scheme = "theorem"
+locator = "Theorem 1"
+url = "https://mathcommunity.github.io/oai-math-revised/papers/Uniform-exclusion-of-Landau-Siegel-zeros-October-1-2026/"
+fetched_from = "https://mathcommunity.github.io/oai-math-revised/papers/Uniform-exclusion-of-Landau-Siegel-zeros-October-1-2026/"
+fetched_at = "2026-11-07T08:01:26Z"
+sha256 = "9ca1721d6b8a8eed1262a9d1a9a6dcb4a12c3f95aff245fd1bb587af3b0dd771"
+licence_class = "institutional"
+status = "certified"
+accessed = "2026-11-07"
+cited_for = ["0.34"]
+
+[[source]]
+id = "green2026"
+locator_scheme = "theorem"
+locator = "Theorem 1.1"
+url = "https://hexagonmath.org/pdf/2610.00311v2"
+fetched_from = "https://hexagonmath.org/pdf/2610.00311v2"
+fetched_at = "2026-11-07T08:01:55Z"
+sha256 = "6b948696c9f9c088257d9b98ab0bcee75c71ef8d884cfa23d1685ed04e95238c"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-07"
+cited_for = ["0.34c"]
+
+[[source]]
+id = "openai2026lspdf"
+locator_scheme = "theorem"
+locator = "Theorem 1"
+url = "https://raw.githubusercontent.com/openai/math/main/preprints/Uniform-exclusion-of-Landau-Siegel-zeros-October-1-2026/paper.pdf"
+fetched_from = "https://raw.githubusercontent.com/openai/math/main/preprints/Uniform-exclusion-of-Landau-Siegel-zeros-October-1-2026/paper.pdf"
+fetched_at = "2026-11-07T08:06:05Z"
+sha256 = "fab9f6e84ece2a37d834b2c031d8eb14e81413d9f6270791e7b5468b295214ef"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-07"
+cited_for = ["0.34"]
+
+[[source]]
+id = "friedlanderiwaniec2018"
+authors = "J.B. Friedlander, H. Iwaniec"
+title = "A note on Dirichlet <mml:math xmlns:mml=\"http://www.w3.org/1998/Math/MathML\" id=\"mml1\" display=\"inline\" overflow=\"scroll\" altimg=\"si1.gif\"> <mml:mi>L</mml:mi> </mml:math> -functions"
+year = 2018
+venue = "Expositiones Mathematicae 36"
+doi = "10.1016/j.exmath.2018.06.003"
+locator_scheme = "section"
+locator = "Section 5"
+url = "https://doi.org/10.1016/j.exmath.2018.06.003"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["0.9"]
+
+[[source]]
+id = "taodivisorbound"
+locator_scheme = "section"
+locator = "Proof of (3) and (4)"
+url = "https://terrytao.wordpress.com/2008/09/23/the-divisor-bound/"
+fetched_from = "https://terrytao.wordpress.com/2008/09/23/the-divisor-bound/"
+fetched_at = "2026-11-07T08:13:38Z"
+sha256 = "c87a35e7cc95aab40232560a15f7d1be155b99664de542598ba05be7a1a040eb"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-07"
+cited_for = ["3.1"]
+
+[[source]]
+id = "tao2026siegelsketch"
+locator_scheme = "section"
+locator = "Lemmas 1-3"
+url = "https://terrytao.wordpress.com/2026/10/19/a-sketch-of-the-proof-of-non-existence-of-siegel-zeroes/"
+fetched_from = "https://terrytao.wordpress.com/2026/10/19/a-sketch-of-the-proof-of-non-existence-of-siegel-zeroes/"
+fetched_at = "2026-11-07T08:32:30Z"
+sha256 = "2bbeb6a2207a35c2a717598709993202dec76f572535836b5aa78dc2f6f54ee5"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-07"
+cited_for = ["0.34"]
+
+[[source]]
+id = "kedlayaant"
+authors = "Kiran S. Kedlaya"
+title = "Notes on analytic number theory"
+year = 2025
+locator_scheme = "section"
+locator = "§§22.1–22.4, pp.127–129"
+url = "https://kskedlaya.org/papers/ant-ptx.pdf"
+fetched_from = "https://kskedlaya.org/papers/ant-ptx.pdf"
+fetched_at = "2026-11-08T14:01:08Z"
+sha256 = "7a934fce8272cedd36ad609f79bbe79af0056320bb1e0bc690c87af990f305be"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-08"
+cited_for = ["2.18a"]
+
+[[source]]
+id = "ramarerumely1996"
+authors = "Olivier Ramaré, Robert Rumely"
+title = "Primes in arithmetic progressions"
+year = 1996
+venue = "Mathematics of Computation 65"
+locator_scheme = "theorem"
+locator = "Theorem 1 and Table 1, Theorem 2.1.1"
+url = "https://ramare-olivier.github.io/Maths/rumely.pdf"
+fetched_from = "https://ramare-olivier.github.io/Maths/rumely.pdf"
+fetched_at = "2026-11-08T14:01:09Z"
+sha256 = "94bd522a40cfa72da87c5d8acc35f5e8e8ce2ea3347acdda5e1114eb880e553d"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-08"
+cited_for = ["0.16"]
+
+[[source]]
+id = "cogdellartin"
+authors = "James W. Cogdell"
+title = "On Artin L-functions"
+year = 2012
+version_note = "author's manuscript on the author page, expanded 2011–2012; page numbers are those of that PDF"
+locator_scheme = "page"
+locator = "pp.12–14, 18"
+url = "https://people.math.osu.edu/cogdell.1/artin-www.pdf"
+fetched_from = "https://people.math.osu.edu/cogdell.1/artin-www.pdf"
+fetched_at = "2026-11-08T14:01:11Z"
+sha256 = "7b9b8b4c0069c4ef135cd8f54f095092210bd5876f5c555b027f75b3d9c83789"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-08"
+cited_for = ["2.41", "2.18a"]

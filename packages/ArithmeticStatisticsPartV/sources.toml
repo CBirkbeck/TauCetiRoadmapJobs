@@ -1,0 +1,75 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "ArithmeticStatisticsPartV"
+
+[[source]]
+id = "stark1974"
+authors = "H. M. Stark"
+title = "Some effective cases of the Brauer-Siegel Theorem"
+year = 1974
+venue = "Inventiones Mathematicae 23"
+doi = "10.1007/BF01405166"
+locator_scheme = "theorem"
+locator = "Lemma 8"
+url = "https://doi.org/10.1007/BF01405166"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["Effective fixed-degree residue lower bound"]
+
+[[source]]
+id = "ref95"
+authors = "Robert J. Lemke Oliver, Jiuya Wang, Melanie Matchett Wood"
+title = "The average size of 3-torsion in class groups of 2-extensions"
+year = 2025
+venue = "Forum of Mathematics, Pi 13, e19"
+doi = "10.1017/S2050508625000009"
+arxiv = "2110.07712"
+version_note = "locators use the published numbering and pagination; arXiv v2 numbers Section 2 differently (its Lemma 2.5 and Remark 2.7 have no published counterpart under those numbers)"
+locator_scheme = "theorem"
+locator = "Lemma 2.4"
+url = "https://www.cambridge.org/core/services/aop-cambridge-core/content/view/6AABE169B5BA8192FE036455DE4F806F/S2050508625000009a.pdf/the-average-size-of-3-torsion-in-class-groups-of-2-extensions.pdf"
+fetched_from = "https://www.cambridge.org/core/services/aop-cambridge-core/content/view/6AABE169B5BA8192FE036455DE4F806F/S2050508625000009a.pdf/the-average-size-of-3-torsion-in-class-groups-of-2-extensions.pdf"
+fetched_at = "2026-11-07T14:22:03Z"
+sha256 = "d5051ab0d37f9985f1adea5cbfee2263812ce96de2b354598448765411344ce5"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-11-07"
+cited_for = ["Relative small-split-prime torsion bound"]
+
+[[source]]
+id = "ref103"
+authors = "Peter Koymans, Djordjo Milovic"
+title = "Joint distribution of spins"
+year = 2018
+arxiv = "1809.09597v1"
+locator_scheme = "theorem"
+locator = "Theorem 1; Theorem 3; Lemma 2.1; §2.2 (2.2); §2.3 (2.4); Conjecture C_n; Corollary 2.2"
+url = "https://arxiv.org/abs/1809.09597v1"
+fetched_from = "https://arxiv.org/pdf/1809.09597v1"
+fetched_at = "2026-11-08T15:10:33Z"
+sha256 = "d56a738ae1b1487dd01b92b7084dd6bd4b9a041a85efdd2fac66b86afd8af433"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-08"
+version_note = "arXiv v1"
+cited_for = ["3.30"]
+
+[[source]]
+id = "ref135"
+authors = "Peter Koymans, Djordjo Milovic"
+title = "Spins of prime ideals and the negative Pell equation $x^2 - 2py^2 = -1$"
+year = 2016
+venue = "Compositio Math. 155 (2019) 100-125"
+doi = "10.1112/S0010437X18007601"
+arxiv = "1611.10337v3"
+locator_scheme = "theorem"
+locator = "Proposition 6.1; (6.6)-(6.7); Proposition 6.2"
+url = "https://arxiv.org/abs/1611.10337v3"
+fetched_from = "https://arxiv.org/pdf/1611.10337v3"
+fetched_at = "2026-11-08T15:10:43Z"
+sha256 = "562325577ba48197ec63ca4fa93c9a28a4f1bab8087b0cd15d5cc33b0b556377"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-08"
+version_note = "arXiv v3"
+cited_for = ["3.30"]

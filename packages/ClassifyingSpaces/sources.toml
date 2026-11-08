@@ -1,0 +1,93 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "ClassifyingSpaces"
+
+[[source]]
+id = "hatcher-at"
+locator_scheme = "section"
+locator = "Section 1.B"
+url = "https://pi.math.cornell.edu/~hatcher/AT/AT.pdf"
+fetched_from = "https://pi.math.cornell.edu/~hatcher/AT/AT.pdf"
+fetched_at = "2026-11-05T00:41:26Z"
+sha256 = "bebb3032bf9021b956da3bd070eb6c67dc662cf849be9cdf6679f677560e5618"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-05"
+cited_for = ["Stage 2, Stage 3"]
+
+[[source]]
+id = "segal-1968"
+authors = "Graeme Segal"
+title = "Classifying spaces and spectral sequences"
+year = 1968
+venue = "Publications Mathématiques de l'IHÉS 34"
+doi = "10.1007/BF02684591"
+locator_scheme = "section"
+locator = "Section 3"
+url = "http://www.numdam.org/item/PMIHES_1968__34__105_0.pdf"
+fetched_from = "https://www.numdam.org/item/PMIHES_1968__34__105_0.pdf"
+fetched_at = "2026-11-05T00:51:48Z"
+sha256 = "10d84b6de849398e59128ee2dd2db4d63e5414ffbb9a7ac9e16dfb8c74b9245d"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-05"
+cited_for = ["Stage 1"]
+
+[[source]]
+id = "brown-cohomology"
+authors = "Kenneth S. Brown"
+title = "Cohomology of Groups"
+year = 1982
+venue = "Graduate Texts in Mathematics"
+doi = "10.1007/978-1-4684-9327-6"
+locator_scheme = "section"
+locator = "Section I.4"
+url = "https://doi.org/10.1007/978-1-4684-9327-6"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["Stage 3 item 13", "Stage 4 item 16"]
+
+[[source]]
+id = "schwamberger-vogt-2009"
+authors = "Eugenia Schwamberger, Rainer M. Vogt"
+title = "Dold spaces in homotopy theory"
+year = 2009
+venue = "Algebraic & Geometric Topology 9, 1585–1622"
+doi = "10.2140/agt.2009.9.1585"
+locator_scheme = "section"
+locator = "Section 2"
+url = "https://doi.org/10.2140/agt.2009.9.1585"
+licence_class = "none"
+status = "uncertified"
+version_note = "publisher page only (msp.org); the Project Euclid landing page answered with a bot-block page, not the text; cited by its locator without the text"
+cited_for = ["Stage 3 item 12"]
+
+[[source]]
+id = "milnor-1956"
+authors = "John Milnor"
+title = "Construction of universal bundles, II"
+year = 1956
+venue = "Annals of Mathematics 63, 430–436"
+doi = "10.2307/1970012"
+locator_scheme = "section"
+locator = "Section 3"
+url = "https://doi.org/10.2307/1970012"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled (JSTOR); cited by its locator without the text"
+cited_for = ["Stage 1 item 1"]
+
+[[source]]
+id = "tomdieck-1987"
+authors = "Tammo tom Dieck"
+title = "Transformation Groups"
+year = 1987
+venue = "de Gruyter Studies in Mathematics 8"
+doi = "10.1515/9783110858372"
+locator_scheme = "section"
+locator = "Section II.1"
+url = "https://doi.org/10.1515/9783110858372"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled (de Gruyter); cited by its locator without the text"
+cited_for = ["Stage 3 item 13"]

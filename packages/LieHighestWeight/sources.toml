@@ -1,0 +1,107 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "LieHighestWeight"
+
+[[source]]
+id = "EtingofRepresentationsLieGroups"
+authors = "Pavel Etingof"
+title = "Representations of Lie groups"
+year = 2024
+arxiv = "2401.01446v2"
+locator_scheme = "theorem"
+locator = "Theorem 10.1, Remark 10.2, Theorem 13.5, Theorem 14.1"
+url = "https://arxiv.org/abs/2401.01446v2"
+fetched_from = "https://arxiv.org/pdf/2401.01446v2"
+fetched_at = "2026-11-08T09:52:55Z"
+sha256 = "6dd7041a163adcdbd2356cc769741ec9d394021e446fe6a8d0b172b7d4d711e1"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-08"
+version_note = "arXiv v2"
+cited_for = ["7.1"]
+
+[[source]]
+id = "BaezOctonions"
+authors = "John C. Baez"
+title = "The Octonions"
+year = 2001
+venue = "Bull.Am.Math.Soc.39:145-205,2002"
+arxiv = "math/0105155v4"
+locator_scheme = "section"
+locator = "§2.2, §3.4"
+url = "https://arxiv.org/abs/math/0105155v4"
+fetched_from = "https://arxiv.org/pdf/math/0105155v4"
+fetched_at = "2026-11-08T10:22:16Z"
+sha256 = "f8087fb91b10cdbee2157e8eec8c33ac6b918b0de2c8c1fd16b4d8183f0868cc"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-08"
+version_note = "arXiv v4"
+cited_for = ["8"]
+
+[[source]]
+id = "GarnierAlcoves"
+authors = "Arthur Garnier"
+title = "Fundamental domains for extended affine Weyl groups"
+year = 2020
+version_note = "author's manuscript of 23 October 2020; printed page numbers"
+locator_scheme = "theorem"
+locator = "Theorem 1.3.5, Corollary 2.2.7, Proposition 2.3.1"
+url = "https://www.lamfa.u-picardie.fr/agarnier/unpub/fund_dom_KP.pdf"
+fetched_from = "https://www.lamfa.u-picardie.fr/agarnier/unpub/fund_dom_KP.pdf"
+fetched_at = "2026-11-08T10:22:25Z"
+sha256 = "e4b90cb629fd61b1c73db741f567c38eb203bcda5b43e29f677a0ad2da4d75f2"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-08"
+cited_for = ["10.1"]
+
+[[source]]
+id = "Stembridge2002LR"
+authors = "John R. Stembridge"
+title = "A concise proof of the Littlewood-Richardson rule"
+year = 2002
+venue = "Electron. J. Combin. 9 (2002), Note 5"
+doi = "10.37236/1666"
+locator_scheme = "theorem"
+locator = "second Corollary, p. 3"
+url = "https://www.combinatorics.org/ojs/index.php/eljc/article/download/v9i1n5/pdf"
+fetched_from = "https://www.combinatorics.org/ojs/index.php/eljc/article/download/v9i1n5/pdf"
+fetched_at = "2026-11-08T10:22:38Z"
+sha256 = "5e8bcd8467f504756a5d6092df234b08e326cef21ddb2785d567096030b8915b"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-11-08"
+cited_for = ["9.1"]
+
+[[source]]
+id = "EtingofLieGroupsLieAlgebras"
+authors = "Pavel Etingof"
+title = "Lie groups and Lie algebras"
+year = 2022
+arxiv = "2201.09397v5"
+locator_scheme = "theorem"
+locator = "Theorems 11.16, 11.18, 13.1, 18.8, 20.10, 24.1, 24.2, 25.17, 26.4; Corollaries 13.7, 13.8, 43.5; Proposition 32.1"
+url = "https://arxiv.org/abs/2201.09397v5"
+fetched_from = "https://arxiv.org/pdf/2201.09397v5"
+fetched_at = "2026-11-08T17:03:39Z"
+sha256 = "513faefae46044fa1a8c2b52b678da26df8ae177b32a933c64c8ab194a6e2f7e"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-08"
+version_note = "arXiv v5"
+cited_for = ["0.1", "3.1", "3.2", "4.1", "5.1", "6.1", "7.2", "7.3", "8.3", "9.1"]
+
+[[source]]
+id = "HumphreysIntroLieAlgebras"
+authors = "James E. Humphreys"
+title = "Introduction to Lie Algebras and Representation Theory"
+year = 1972
+venue = "Graduate Texts in Mathematics"
+doi = "10.1007/978-1-4612-6398-2"
+locator_scheme = "section"
+locator = "§22.3, §23.3, §24.2, §24.3"
+url = "https://doi.org/10.1007/978-1-4612-6398-2"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["6.1", "7.1"]

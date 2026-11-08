@@ -257,9 +257,9 @@ cited_for = ["5.1a", "5.2", "local-rankin-selberg", "whittaker-pairing-fourier",
 
 [[source]]
 id = "bernstein-zelevinsky"
-year = 1977
-title = "Induced representations of reductive p-adic groups. I"
 authors = "I. N. Bernstein, A. V. Zelevinsky"
+title = "Induced representations of reductive p-adic groups. I"
+year = 1977
 locator_scheme = "section"
 locator = "Section 2.12, geometric lemma, published p. 448; Section 5.2, published pp. 458–459"
 url = "https://www.numdam.org/item/ASENS_1977_4_10_4_441_0/"
@@ -273,9 +273,9 @@ cited_for = ["3.10", "local-jacquet-filtration"]
 
 [[source]]
 id = "bp-fundamental"
-year = 2019
-title = "A new proof of Jacquet-Rallis’s fundamental lemma"
 authors = "Raphaël Beuzart-Plessis"
+title = "A new proof of Jacquet-Rallis’s fundamental lemma"
+year = 2019
 arxiv = "1901.02653"
 locator_scheme = "theorem"
 locator = "Section 1, pp. 1–3; Theorem 1, p. 3, including small residue characteristic and the group comparison"
@@ -291,9 +291,9 @@ cited_for = ["relative-fundamental-lemma"]
 
 [[source]]
 id = "ag-descent"
-year = 2009
-title = "Generalized Harish-Chandra descent, Gelfand pairs, and an Archimedean analog of Jacquet-Rallis’s theorem"
 authors = "Avraham Aizenbud, Dmitry Gourevitch"
+title = "Generalized Harish-Chandra descent, Gelfand pairs, and an Archimedean analog of Jacquet-Rallis’s theorem"
+year = 2009
 arxiv = "0812.5063"
 locator_scheme = "theorem"
 locator = "Theorem 3.1.1, p. 9; Theorems 5.1.5 and 5.1.7 and Definition 5.1.6, p. 13; Theorem 8.1.5, p. 25"
@@ -306,3 +306,54 @@ status = "certified"
 accessed = "2026-10-21"
 version_note = "arXiv v6, dated October 2026; preprint pagination"
 cited_for = ["distribution-gk", "2.2", "2.3"]
+
+[[source]]
+id = "kmsw"
+authors = "Tasho Kaletha, Alberto Minguez, Sug Woo Shin, Paul-James White"
+title = "Endoscopic Classification of Representations: Inner Forms of Unitary Groups"
+year = 2014
+arxiv = "1409.3731v1"
+locator_scheme = "section"
+locator = "§0.4.4"
+url = "https://arxiv.org/abs/1409.3731v1"
+fetched_from = "https://arxiv.org/pdf/1409.3731v1"
+fetched_at = "2026-11-07T06:50:30Z"
+sha256 = "0084fd8b65f3b74d0053400f2254b3ff6a0e5a5c8d6debb511eb6fad65a6d5fe"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-07"
+version_note = "arXiv v1"
+cited_for = ["3.1"]
+
+[[source]]
+id = "bpc-bessel"
+authors = "Raphaël Beuzart-Plessis, Pierre-Henri Chaudouard"
+title = "The global Gan–Gross–Prasad conjecture for unitary groups. II. From Eisenstein series to Bessel periods"
+year = 2025
+locator_scheme = "theorem"
+locator = "Theorem 1.3.3.1"
+url = "https://webusers.imj-prg.fr/~pierre-henri.chaudouard/GGP2.pdf"
+fetched_from = "https://webusers.imj-prg.fr/~pierre-henri.chaudouard/GGP2.pdf"
+fetched_at = "2026-11-07T06:50:32Z"
+sha256 = "82167fac311311f0f4dd624eb5143c8c2330004d5d79fc34e140ee47b137959b"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-07"
+cited_for = ["4.4"]
+
+[[source]]
+id = "debacker-homogeneity-intro"
+authors = "Stephen DeBacker"
+title = "Homogeneity for reductive p-adic groups: an introduction"
+year = 2009
+version_note = "Author-page copy of the Ottawa lecture notes (Fields Institute Monographs 26, 2009); theorem numbers, pages and line locators are those of this copy"
+locator_scheme = "theorem"
+locator = "Theorem 2.2.1"
+url = "https://websites.umich.edu/~smdbackr//MATH/fields.pdf"
+fetched_from = "https://websites.umich.edu/~smdbackr//MATH/fields.pdf"
+fetched_at = "2026-11-07T11:45:33Z"
+sha256 = "8847049dd6110ba8cf616e5076e019d5e04fac17d0412e75fcc0bfe6cc13674e"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-07"
+cited_for = ["3.3a"]

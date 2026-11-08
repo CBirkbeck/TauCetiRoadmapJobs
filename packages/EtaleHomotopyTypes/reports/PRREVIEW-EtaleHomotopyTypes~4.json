@@ -1,0 +1,4 @@
+{"review": {"status": "accepted", "reviewer": "independent-review-PRREVIEW-EtaleHomotopyTypes~4",
+            "head": "62169a71dd63f1b14363904889e9c06e80483f35", "pr": 1806, "folder": "EtaleHomotopyTypes", "date": "2026-11-05",
+            "findings": 0, "blocking": 0,
+            "notes": "incremental re-review of 11 changed lines since c9c6529: R01 (stage shrinking via Stacks 05F4 before 59.74.3, with its Check computed on Spec Z / C_3 x i_*C_2), R02 (Giraud manifest entry, DOI confirmed through Crossref) and R03 (SGA2 XIV 1.18 on p. 174) all repaired at their lines; Stacks 05F4, 09Z6, 09Z7, 095E and SGA2 pp. 174/176/177 read at their lines; the seeded sample is untouched by the diff and carried from review 1; gate passes, depcheck 0 problems, Suggested.lean elaborates with no output, nothing changed outside the folder."}}

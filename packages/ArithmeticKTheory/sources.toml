@@ -367,3 +367,120 @@ locator = "Lemmas 6, 9, 12; Proposition 10; §§3–7, preprint pp. 7–11"
 licence_class = "none"
 status = "waived"
 resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/153#issuecomment-6314103459"
+
+[[source]]
+id = "borel1974"
+authors = "Armand Borel"
+title = "Stable real cohomology of arithmetic groups"
+year = 1974
+locator_scheme = "theorem"
+locator = "Theorem 7.5"
+url = "https://www.numdam.org/item/ASENS_1974_4_7_2_235_0/"
+fetched_from = "https://www.numdam.org/item/ASENS_1974_4_7_2_235_0.pdf"
+fetched_at = "2026-11-06T09:44:34Z"
+sha256 = "20247a7df85bfcab17dc51e46cdcaf8bd6c2e8c1fae194014e518913ae9f859d"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-06"
+cited_for = ["3.4"]
+
+[[source]]
+id = "borel1977"
+authors = "Armand Borel"
+title = "Cohomologie de SL_n et valeurs de fonctions zêta aux points entiers"
+year = 1977
+locator_scheme = "section"
+locator = "§5.2"
+url = "https://www.numdam.org/item/ASNSP_1977_4_4_4_613_0/"
+fetched_from = "https://www.numdam.org/item/ASNSP_1977_4_4_4_613_0.pdf"
+fetched_at = "2026-11-06T09:44:34Z"
+sha256 = "f27dc4622583423cdcfc66671cffd38904f3ecf4d97b8b1352fcf3dbf3a295b5"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-06"
+cited_for = ["3.4"]
+
+[[source]]
+id = "miller-patzt-wilson"
+authors = "Jeremy Miller, Peter Patzt, Jennifer C. H. Wilson"
+title = "On rank filtrations of algebraic K-theory and Steinberg modules"
+year = 2023
+arxiv = "2303.00245v2"
+locator_scheme = "theorem"
+locator = "Proposition 5.3"
+url = "https://arxiv.org/abs/2303.00245v2"
+fetched_from = "https://arxiv.org/pdf/2303.00245v2"
+fetched_at = "2026-11-06T09:44:47Z"
+sha256 = "8812dfd38b6f331303f4e9e118342374a213aeb31866af4c40230747ae083630"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-06"
+version_note = "arXiv v2"
+cited_for = ["7.5"]
+
+[[source]]
+id = "hutchinson-ge2"
+authors = "Kevin Hutchinson"
+title = "$\\mathrm{GE}_2$-rings and a graph of unimodular rows"
+year = 2021
+arxiv = "2108.11241v5"
+locator_scheme = "theorem"
+locator = "Theorem 3.3"
+url = "https://arxiv.org/abs/2108.11241v5"
+fetched_from = "https://arxiv.org/pdf/2108.11241v5"
+fetched_at = "2026-11-06T09:44:53Z"
+sha256 = "83931961a6758c2fe19c9c99dc2619779690e15f381290847574d8cd33b268d3"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-06"
+version_note = "arXiv v5"
+cited_for = ["7.5"]
+
+[[source]]
+id = "quillen-oberwolfach"
+authors = "Daniel Quillen"
+title = "Finite generation of K-groups for rings of S-integers"
+year = 1974
+venue = "Algebraische K-Theorie, Tagungsbericht 26/1974, Mathematisches Forschungsinstitut Oberwolfach"
+locator_scheme = "page"
+locator = "p. 7"
+url = "https://oda.mfo.de/bitstream/handle/mfo/1481/full-text.pdf?isAllowed=y&sequence=1"
+fetched_from = "https://oda.mfo.de/bitstream/handle/mfo/1481/full-text.pdf?isAllowed=y&sequence=1"
+fetched_at = "2026-11-07T10:03:28Z"
+sha256 = "aa86bcf8a5101d748618b43834261f164cdaae12d112dbfe4dbd92ebaa1399ec"
+licence_class = "institutional"
+status = "certified"
+accessed = "2026-11-07"
+cited_for = ["3.2"]
+
+[[source]]
+id = "grayson-curve"
+authors = "Daniel R. Grayson"
+title = "Finite generation of K-groups of a curve over a finite field"
+year = 1982
+venue = "Lecture Notes in Mathematics"
+doi = "10.1007/BFb0062167"
+locator_scheme = "page"
+locator = "pp. 69-90"
+url = "https://doi.org/10.1007/BFb0062167"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["3.2"]
+
+[[source]]
+id = "ravenel"
+authors = "Douglas C. Ravenel"
+title = "Complex Cobordism and Stable Homotopy Groups of Spheres"
+year = 2004
+locator_scheme = "theorem"
+locator = "Theorem A2.1.27(d)–(e) pp. 350–351; Theorem 4.4.1 and Proposition 4.4.2 p. 130; Figure 4.4.45 p. 144; (A2.2.1)–(A2.2.2) pp. 353–354; Theorem A2.2.6 p. 356"
+url = "https://www.sas.rochester.edu/mth/sites/doug-ravenel/mybooks/ravenel.pdf"
+fetched_from = "https://www.sas.rochester.edu/mth/sites/doug-ravenel/mybooks/ravenel.pdf"
+fetched_at = "2026-11-08T03:02:00Z"
+sha256 = "880c053ba8f2d1695e2d8bae5ef28f9b7f737324ea43d420173c7219409528ab"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-08"
+version_note = "Second edition (AMS Chelsea, 2004), author's posted copy; locators use its printed page numbers."
+cited_for = ["7.5"]

@@ -324,3 +324,63 @@ licence_class = "none"
 status = "uncertified"
 version_note = "paywalled; cited by its locator without the text"
 cited_for = ["5.3"]
+
+[[source]]
+id = "dadarlat2001"
+authors = "Marius Dadarlat"
+title = "Residually finite dimensional C*-algebras and subquotients of the CAR algebra"
+year = 2001
+venue = "Mathematical Research Letters 8 (2001), 545–555"
+locator_scheme = "theorem"
+locator = "Theorem 2.6"
+url = "http://www.math.purdue.edu/~mdd/Publications/Residually-finite-C_-algebras-MRL.pdf"
+fetched_from = "https://www.math.purdue.edu/~mdd/Publications/Residually-finite-C_-algebras-MRL.pdf"
+fetched_at = "2026-11-05T01:47:59Z"
+sha256 = "298d328dac64979bd8b73c7057db779a14d97bf67c37ed79c15ae75e7b98242b"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-05"
+cited_for = ["9.1", "9.3", "9.4"]
+
+[[source]]
+id = "smith1983"
+authors = "R. R. Smith"
+title = "Completely bounded maps between C*-algebras"
+year = 1983
+venue = "Journal of the London Mathematical Society (2) 27 (1983), 157–166"
+doi = "10.1112/jlms/s2-27.1.157"
+locator_scheme = "page"
+locator = "157–166"
+url = "https://doi.org/10.1112/jlms/s2-27.1.157"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["3.2"]
+
+[[source]]
+id = "pedersen1979"
+authors = "Gert K. Pedersen"
+title = "C*-algebras and their automorphism groups"
+year = 1979
+venue = "London Mathematical Society Monographs 14, Academic Press, London–New York, 1979"
+locator_scheme = "theorem"
+locator = "Proposition 3.11.9, Theorem 3.11.10, Proposition 3.12.3"
+licence_class = "none"
+status = "uncertified"
+version_note = "print monograph, no legal copy online; cited by its locator without the text"
+cited_for = ["2.9"]
+
+[[source]]
+id = "effros-haagerup1985"
+authors = "Edward G. Effros, Uffe Haagerup"
+title = "Lifting problems and local reflexivity for C*-algebras"
+year = 1985
+venue = "Duke Mathematical Journal 52 (1985), 103–128"
+doi = "10.1215/S0012-7094-85-05207-X"
+locator_scheme = "section"
+locator = "§5"
+url = "https://doi.org/10.1215/S0012-7094-85-05207-X"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["9.5"]

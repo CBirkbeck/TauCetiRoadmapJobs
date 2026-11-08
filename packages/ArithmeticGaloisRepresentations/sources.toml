@@ -1,0 +1,230 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "ArithmeticGaloisRepresentations"
+
+[[source]]
+id = "serre-local-fields"
+authors = "Jean-Pierre Serre"
+title = "Local Fields"
+year = 1979
+venue = "Graduate Texts in Mathematics"
+doi = "10.1007/978-1-4757-5673-9"
+locator_scheme = "theorem"
+locator = "Chapter I, §7, Proposition 21"
+url = "https://doi.org/10.1007/978-1-4757-5673-9"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["3.0"]
+
+[[source]]
+id = "darmon-diamond-taylor-2007"
+authors = "Henri Darmon, Fred Diamond, Richard Taylor"
+title = "Fermat's Last Theorem"
+year = 2007
+venue = "revised version (2007) of Current Developments in Mathematics 1995"
+locator_scheme = "section"
+locator = "Section 2.1"
+url = "https://www.math.mcgill.ca/darmon/pub/Articles/Expository/05.DDT/paper.pdf"
+fetched_from = "https://www.math.mcgill.ca/darmon/pub/Articles/Expository/05.DDT/paper.pdf"
+fetched_at = "2026-11-06T01:09:39Z"
+sha256 = "254f6e29957f95219eff046c29478f5ee584615bee12c8aa8357f499c8cbe8b3"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-06"
+cited_for = ["2.1", "1.2", "5.3", "6.4a"]
+
+[[source]]
+id = "boxer-calegari-gee-pilloni-2021"
+authors = "George Boxer, Frank Calegari, Toby Gee, Vincent Pilloni"
+title = "Abelian surfaces over totally real fields are potentially modular"
+year = 2021
+venue = "Publ. Math. IHÉS 134 (2021), 153–501"
+arxiv = "1812.09269v3"
+locator_scheme = "theorem"
+locator = "Remark 7.5.8"
+url = "https://arxiv.org/abs/1812.09269v3"
+fetched_from = "https://arxiv.org/pdf/1812.09269v3"
+fetched_at = "2026-11-06T01:10:05Z"
+sha256 = "7c8d74b0628d8b9cc841a853372ca2d0bc18c086ab46d138f75afd15f35689ed"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-06"
+version_note = "arXiv v3; the README's BCGP21 locators (section numbers and pages) follow arXiv v3"
+cited_for = ["7.11"]
+
+[[source]]
+id = "serre-1981-chebotarev"
+authors = "Jean-Pierre Serre"
+title = "Quelques applications du théorème de densité de Chebotarev"
+year = 1981
+venue = "Publ. Math. IHÉS 54 (1981), 123–201"
+locator_scheme = "section"
+locator = "Introduction, p. 124; §2.1, Théorème 1; §6.4, Proposition 13; §7.2, Théorème 15"
+url = "https://www.numdam.org/item/PMIHES_1981__54__123_0.pdf"
+fetched_from = "https://www.numdam.org/item/PMIHES_1981__54__123_0.pdf"
+fetched_at = "2026-11-07T00:52:26Z"
+sha256 = "bfcda9821742b02801e4f1264750aebeb656141fbd53fb61b8662333e1491830"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-07"
+cited_for = ["5.1", "5.8", "5.9"]
+
+[[source]]
+id = "serre-1987-modular-galois"
+authors = "Jean-Pierre Serre"
+title = "Sur les représentations modulaires de degré 2 de Gal(Q̄/Q)"
+year = 1987
+venue = "Duke Math. J. 54 (1987), 179–230"
+locator_scheme = "section"
+locator = "3.3, p. 198"
+url = "https://www.college-de-france.fr/media/jean-pierre-serre/UPL5835292064138487263_Serre_Repr.modulaires_Galois.pdf"
+fetched_from = "https://www.college-de-france.fr/media/jean-pierre-serre/UPL5835292064138487263_Serre_Repr.modulaires_Galois.pdf"
+fetched_at = "2026-11-07T00:52:30Z"
+sha256 = "8048919db24dcb972435aaaa2a74d1168d0fe533af3aa26c6c809b12ddaee038"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-07"
+cited_for = ["4.1"]
+
+[[source]]
+id = "khare-wintenberger-2009-i"
+authors = "Chandrashekhar Khare, Jean-Pierre Wintenberger"
+title = "Serre's modularity conjecture (I)"
+year = 2009
+venue = "Invent. Math. 178 (2009), 485–504"
+version_note = "HAL preprint; the page 10 of the locator is the preprint pagination"
+locator_scheme = "theorem"
+locator = "Lemma 6.1, p. 10"
+url = "https://hal.science/hal-00138160/document"
+fetched_from = "https://hal.science/hal-00138160/document"
+fetched_at = "2026-11-07T00:54:02Z"
+sha256 = "3bf48fb96e9f98dd2f854cf94007c9f8170a2313924dd23a7305bf64208a9889"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-07"
+cited_for = ["4.4"]
+
+[[source]]
+id = "grothendieck-raynaud-sga1"
+authors = "Alexander Grothendieck, Michele Raynaud"
+title = "Revêtements étales et groupe fondamental (SGA 1)"
+year = 2002
+arxiv = "math/0206203v2"
+locator_scheme = "theorem"
+locator = "Exposé V, Proposition 8.2"
+url = "https://arxiv.org/abs/math/0206203v2"
+fetched_from = "https://arxiv.org/pdf/math/0206203v2"
+fetched_at = "2026-11-07T12:20:09Z"
+sha256 = "8e64218d356456c534eebf996940f0f957e43b54f1a080241debe12cbaf60d3c"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-07"
+version_note = "arXiv v2"
+cited_for = ["5.13"]
+
+[[source]]
+id = "serre-1961-corps-locaux"
+authors = "Jean-Pierre Serre"
+title = "Sur les corps locaux à corps résiduel algébriquement clos"
+year = 1961
+venue = "Bull. Soc. Math. France 89 (1961), 105–154"
+doi = "10.24033/bsmf.1562"
+locator_scheme = "section"
+locator = "n° 3.7, (28)–(29), Théorème 2 and Remarque 2°, pp. 137–139"
+url = "https://www.numdam.org/item/10.24033/bsmf.1562.pdf"
+fetched_from = "https://www.numdam.org/item/10.24033/bsmf.1562.pdf"
+fetched_at = "2026-11-07T12:20:15Z"
+sha256 = "52152ad27e8b153e02849710fb59992d7bd970f88156d9297529a42f9b0a85b3"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-07"
+cited_for = ["3.2", "3.5"]
+
+[[source]]
+id = "khare-wintenberger-2009-ii"
+authors = "Chandrashekhar Khare, Jean-Pierre Wintenberger"
+title = "Serre’s modularity conjecture (II)"
+year = 2009
+venue = "Inventiones mathematicae 178"
+doi = "10.1007/s00222-009-0206-6"
+locator_scheme = "theorem"
+locator = "Lemma 4.3"
+url = "https://doi.org/10.1007/s00222-009-0206-6"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["4.7"]
+
+[[source]]
+id = "allen-et-al-2023-potential-automorphy"
+authors = "Patrick B. Allen, Frank Calegari, Ana Caraiani, Toby Gee, David Helm, Bao V. Le Hung, James Newton, Peter Scholze, Richard Taylor, Jack A. Thorne"
+title = "Potential automorphy over CM fields"
+year = 2018
+venue = "Ann. of Math. 197 (2023), 897–1113"
+arxiv = "1812.09999v2"
+locator_scheme = "theorem"
+locator = "Lemma 7.1.6"
+url = "https://arxiv.org/abs/1812.09999v2"
+fetched_from = "https://arxiv.org/pdf/1812.09999v2"
+fetched_at = "2026-11-07T16:31:41Z"
+sha256 = "7c882c4dc7208e08a0b1f4b3ce6e5c5234c9815f139a4c3a372898378a24d08c"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-07"
+version_note = "arXiv v2 read; lemma numbers are cited from it, page numbers in the README are those of the Annals version"
+cited_for = ["3.7", "4.4", "4.7", "7.2", "7.4", "7.7", "7.10", "7.12"]
+
+[[source]]
+id = "deligne-1973-constantes"
+authors = "Pierre Deligne"
+title = "Les constantes des équations fonctionnelles des fonctions L"
+year = 1973
+venue = "Modular Functions of One Variable II, Lecture Notes in Math. 349, Springer, 1973, 501–597"
+locator_scheme = "section"
+locator = "2.2.2–2.2.4, pp. 521–522"
+url = "https://publications.ias.edu/sites/default/files/Number20.pdf"
+fetched_from = "https://publications.ias.edu/sites/default/files/Number20.pdf"
+fetched_at = "2026-11-07T16:31:59Z"
+sha256 = "b03f483c4eeca79b75e34b88f41406fe4c9e16ba621480ce859697c93e8d5844"
+licence_class = "institutional"
+status = "certified"
+accessed = "2026-11-07"
+version_note = "scan of the Lecture Notes pages, with their printed pagination"
+cited_for = ["1.3", "1.12", "2.1", "2.2", "2.3", "2.4", "2.5", "2.5a", "2.7"]
+
+[[source]]
+id = "boxer-calegari-gee-pilloni-2025"
+authors = "George Boxer, Frank Calegari, Toby Gee, Vincent Pilloni"
+title = "Modularity theorems for abelian surfaces"
+year = 2025
+arxiv = "2502.20645v1"
+locator_scheme = "section"
+locator = "§4.11, pp. 109–110"
+url = "https://arxiv.org/abs/2502.20645v1"
+fetched_from = "https://arxiv.org/pdf/2502.20645v1"
+fetched_at = "2026-11-07T16:32:17Z"
+sha256 = "51d7eacca6eae394943f09ab72dfe09ee9aa6da27f563be8237c416e5da4e95c"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-07"
+version_note = "arXiv v1"
+cited_for = ["5.11", "5.12", "6.6", "7.6", "7.12"]
+
+[[source]]
+id = "ulmer-2016-conductors"
+authors = "Douglas Ulmer"
+title = "Conductors of ℓ-adic representations"
+year = 2016
+venue = "Proc. Amer. Math. Soc. 144 (2016)"
+arxiv = "1307.4525v4"
+locator_scheme = "section"
+locator = "§6, p. 5"
+url = "https://arxiv.org/abs/1307.4525v4"
+fetched_from = "https://arxiv.org/pdf/1307.4525v4"
+fetched_at = "2026-11-08T01:40:12Z"
+sha256 = "a7a8039574e4975830de12ed2c23d07c208af95300c3865e941ff51fed0fed73"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-08"
+version_note = "arXiv v4; the README's section and page locators are those of arXiv v4"
+cited_for = ["3.1", "3.3", "3.4", "3.6", "3.7"]

@@ -1,0 +1,2317 @@
+{
+ "roadmap": "ExplicitCharacterSumsAndSieves",
+ "title": "Explicit exponential sums, character sums and sieve bounds",
+ "parent": null,
+ "summary": "Numerically explicit derivative tests for exponential sums (Kusmin-Landau, second to fifth derivative tests, iterated van der Corput), explicit counts of integer points near curves, explicit Polya-Vinogradov inequalities (Gauss-sum expansion, Pomerance, Lapkova, Frolenkov-Soundararajan), explicit Burgess inequalities for a prime modulus (moment bound, energy count, amplification, McGown and Trevino tables), and explicit sieve bounds (Montgomery-Vaughan Brun-Titchmarsh, Buthe's weighted forms, Ramare-Viswanadham, Greaves, Fan), with every table or finite verification a named hypothesis.",
+ "baseline": {
+  "mathlib": "1b1ccf4b088b32fa3f23f2de1127433254a81e1e",
+  "tauceti": "2fd255d997f47c0b5d834ee416c7015d55444ce5"
+ },
+ "layers": [
+  {
+   "key": "0",
+   "title": "carriers, van der Corput's inequality and character-sum identities",
+   "targets": [
+    {
+     "id": "0.1",
+     "kind": "definition",
+     "name": "intervalExpSum",
+     "statement": "S_f[a,b] = sum over integers n with a <= n <= b of e(f(n)), e(x) the complex value of Real.fourierChar x; a finite sum over Finset.Icc (ceil a) (floor b).",
+     "hypotheses": [
+      "f : R -> R",
+      "a, b real"
+     ],
+     "locator": {
+      "source": "tmeemt-art05",
+      "where": "lines 84-89 (the sums of section 1); patel2022 line 144 for the block [N+1, N+L]"
+     },
+     "prerequisites": [
+      "mathlib:Real.fourierChar",
+      "mathlib:Int.ceil",
+      "mathlib:Int.floor",
+      "mathlib:Finset.Icc"
+     ],
+     "api": [
+      {
+       "name": "intervalExpSum_empty",
+       "role": "degenerate",
+       "statement": "the sum is 0 when [a,b] contains no integer"
+      },
+      {
+       "name": "intervalExpSum_add_linear",
+       "role": "invariance",
+       "statement": "adding k*x with k an integer leaves every term unchanged; adding a real constant multiplies the sum by a unit"
+      },
+      {
+       "name": "intervalExpSum_neg",
+       "role": "conjugation",
+       "statement": "replacing f by -f conjugates the sum"
+      },
+      {
+       "name": "intervalExpSum_split",
+       "role": "additivity",
+       "statement": "for an integer c with a <= c < b, S_f[a,b] = S_f[a,c] + S_f[c+1,b]"
+      },
+      {
+       "name": "norm_intervalExpSum_le",
+       "role": "trivial bound",
+       "statement": "|S_f[a,b]| <= floor b - ceil a + 1 <= b - a + 1 when [a,b] contains an integer"
+      },
+      {
+       "name": "intervalExpSum_Ioc",
+       "role": "comparison",
+       "statement": "sum over X < n <= X + Y equals S_f[floor X + 1, X + Y]"
+      }
+     ],
+     "tests": [
+      {
+       "name": "zero_on_0_2",
+       "kind": "computation",
+       "statement": "f = 0 on [0,2] gives 3"
+      },
+      {
+       "name": "empty_interval",
+       "kind": "degenerate",
+       "statement": "f = 0 on [0.2, 0.8] gives 0"
+      },
+      {
+       "name": "half_slope",
+       "kind": "computation",
+       "statement": "f(x) = x/2 on [0,3] gives 0 and on [0,2] gives 1, pinning e(1/2) = -1"
+      },
+      {
+       "name": "integer_slope",
+       "kind": "characterisation",
+       "statement": "f(x) = x on [0,2] equals the sum for f = 0, namely 3"
+      }
+     ]
+    },
+    {
+     "id": "0.2",
+     "kind": "definition",
+     "name": "nearIntegerCount",
+     "statement": "R(f, a, N, delta) = number of integers n with a <= n <= a + N and ||f(n)|| < delta, with ||x|| the norm of x in UnitAddCircle; defined for real N >= 0 (length 0 gives 0 or 1).",
+     "hypotheses": [
+      "a real",
+      "N >= 0",
+      "delta > 0"
+     ],
+     "locator": {
+      "source": "tmeemt-art11",
+      "where": "lines 77-86 (the count R(f,N,delta) on [N,2N])"
+     },
+     "prerequisites": [
+      "mathlib:UnitAddCircle.norm_eq",
+      "mathlib:round"
+     ],
+     "api": [
+      {
+       "name": "nearIntegerCount_le",
+       "role": "trivial bound",
+       "statement": "R(f,a,N,delta) <= N + 1"
+      },
+      {
+       "name": "nearIntegerCount_mono",
+       "role": "monotonicity",
+       "statement": "R is monotone in delta and in the interval"
+      },
+      {
+       "name": "nearIntegerCount_add_int",
+       "role": "invariance",
+       "statement": "R(f + k) = R(f) for every integer k, and R(-f) = R(f)"
+      }
+     ],
+     "tests": [
+      {
+       "name": "norm_values",
+       "kind": "computation",
+       "statement": "||2.3|| = 0.3, ||2.5|| = 0.5, ||-0.2|| = 0.2 (the fractional part would give 0.8)"
+      },
+      {
+       "name": "third_slope",
+       "kind": "computation",
+       "statement": "f(x) = x/3, a = 0, N = 6, delta = 0.1: R = 3 (n = 0, 3, 6)"
+      },
+      {
+       "name": "strictness",
+       "kind": "non-example",
+       "statement": "f(x) = x/3, a = N = 1, delta = 1/3: n = 1 is not counted since ||1/3|| = 1/3"
+      },
+      {
+       "name": "length_zero",
+       "kind": "degenerate",
+       "statement": "R(x/3, 3, 0, 0.1) = 1 and R(x/3, 2.5, 0, 0.5) = 0; 2.3a evaluates R at length N - h = 0 when h = A = N"
+      }
+     ]
+    },
+    {
+     "id": "0.3",
+     "kind": "theorem",
+     "name": "vanDerCorput_finite",
+     "statement": "For integers N, H >= 1 and complex b_1..b_N, with C(h) = sum_{n=1}^{N-h} b_{n+h} conj(b_n) (zero for h >= N): H^2 |sum b_n|^2 <= (N + H - 1)(H sum |b_n|^2 + 2 Re sum_{h=1}^{H-1} (H - h) C(h)). Corollaries: the absolute-value form; |S_f[N+1,N+L]|^2 <= (L + q - 1)(L/q + (2/q) sum_{r<q} (1 - r/q) |S_{g_r}[N+1, N+L-r]|) with g_r(x) = f(x+r) - f(x); and, for real X, Y >= 1, natural 1 <= H <= Y and |b_n| <= 1 on the integers of (X, X+Y], |Y^{-1} sum b_n|^2 <= 4/H + (4/(HY)) sum_{h=1}^{H-1} |C(h)|. The real-part form of ariasdereyna2024 Lemma 6 is not a corollary (enlarging N + H - 1 to 2Y lowers a negative real-part term).",
+     "hypotheses": [
+      "N, H >= 1 integers",
+      "b complex"
+     ],
+     "locator": {
+      "source": "yang2024",
+      "where": "Lemma 2.3, lines 324-339; hiarypatelyang2024 Lemma 2.4, lines 96-108; ariasdereyna2024 proof of Theorem 7, lines 405-415 (absolute-value form; Lemma 6, lines 224-227, states a real-part form)"
+     },
+     "prerequisites": [
+      "mathlib:Finset.sum_mul_sq_le_sq_mul_sq",
+      "mathlib:norm_sum_le",
+      "mathlib:Complex.normSq",
+      "target:0.1"
+     ],
+     "api": [
+      {
+       "name": "vanDerCorput_finite_abs",
+       "role": "corollary",
+       "statement": "the same bound with 2 sum (H-h)|C(h)|"
+      },
+      {
+       "name": "vanDerCorput_expSum",
+       "role": "corollary",
+       "statement": "the exponential-sum form with q = H"
+      },
+      {
+       "name": "vanDerCorput_normalised",
+       "role": "corollary",
+       "statement": "|Y^{-1} sum b_n|^2 <= 4/H + (4/(HY)) sum_{h<H} |C(h)| for |b_n| <= 1 on (X, X+Y], 1 <= H <= Y"
+      }
+     ],
+     "tests": [
+      {
+       "name": "N_one",
+       "kind": "degenerate",
+       "statement": "N = 1: both sides equal H^2|b_1|^2"
+      },
+      {
+       "name": "ones_H2",
+       "kind": "computation",
+       "statement": "b = (1,1), H = 2: 16 <= 18; the factor N in place of N + H - 1 would give 12 < 16"
+      },
+      {
+       "name": "alternating",
+       "kind": "computation",
+       "statement": "b = (1,-1), H = 2: 0 <= 3(4 - 2) = 6"
+      },
+      {
+       "name": "normalised",
+       "kind": "computation",
+       "statement": "b = (1,1,1) on (0,3], H = 2: 1 <= 2 + (4/6)*2 = 3.33"
+      },
+      {
+       "name": "negative_real_part",
+       "kind": "non-example",
+       "statement": "b = (1,-1) on (0,2], H = 2: the real-part term is 3*2*(-1) = -6, and with 2Y = 4 in place of N + H - 1 it would be -8"
+      }
+     ]
+    },
+    {
+     "id": "0.4a",
+     "kind": "definition",
+     "name": "charIntervalSum",
+     "statement": "For chi : DirichletCharacter C q, q >= 1, M integer and N natural, S_chi(M,N) = sum over M < n <= M + N of chi(n), n cast to ZMod q.",
+     "hypotheses": [
+      "q >= 1"
+     ],
+     "locator": {
+      "source": "tmeemt-art15",
+      "where": "lines 84-85 (the sum over a = M+1..M+N)"
+     },
+     "prerequisites": [
+      "mathlib:DirichletCharacter",
+      "tauceti:DirichletCharacter.sum_range_level_eq_zero",
+      "tauceti:DirichletCharacter.sum_range_eq_sum_range_mod",
+      "tauceti:DirichletCharacter.norm_sum_Icc_le_level"
+     ],
+     "api": [
+      {
+       "name": "charIntervalSum_add_level",
+       "role": "periodicity",
+       "statement": "S(M + q, N) = S(M, N)"
+      },
+      {
+       "name": "charIntervalSum_add",
+       "role": "additivity",
+       "statement": "S(M, N + N') = S(M, N) + S(M + N, N')"
+      },
+      {
+       "name": "charIntervalSum_level",
+       "role": "full period",
+       "statement": "for chi != 1, S(M, q) = 0"
+      },
+      {
+       "name": "norm_charIntervalSum_le",
+       "role": "trivial bound",
+       "statement": "for chi != 1, |S(M,N)| <= min(N, q)"
+      }
+     ],
+     "tests": [
+      {
+       "name": "quadratic_mod3",
+       "kind": "computation",
+       "statement": "quadratic character mod 3: S(0,1) = 1, S(0,2) = 0, S(0,3) = 0"
+      },
+      {
+       "name": "quadratic_mod5",
+       "kind": "computation",
+       "statement": "quadratic character mod 5: S(1,2) = -2"
+      },
+      {
+       "name": "principal_mod3",
+       "kind": "non-example",
+       "statement": "principal character mod 3: S(0,6) = 4, not periodic in N"
+      }
+     ]
+    },
+    {
+     "id": "0.4b",
+     "kind": "definition",
+     "name": "maxCharIntervalSum",
+     "statement": "M_chi = maximum of |S_chi(M,N)| over 0 <= M < q and 0 <= N <= q (a finite maximum).",
+     "hypotheses": [
+      "q >= 1"
+     ],
+     "locator": {
+      "source": "lapkova2018",
+      "where": "lines 245-282 (M_chi in Lemma 3A); pomerance2011 lines 18-20 (S(chi))"
+     },
+     "prerequisites": [
+      "target:0.4a"
+     ],
+     "api": [
+      {
+       "name": "le_maxCharIntervalSum",
+       "role": "bound",
+       "statement": "for chi != 1, |S_chi(M,N)| <= M_chi for all integers M and naturals N"
+      },
+      {
+       "name": "maxCharIntervalSum_inv",
+       "role": "symmetry",
+       "statement": "M_{chi^{-1}} = M_chi"
+      },
+      {
+       "name": "maxCharIntervalSum_closed",
+       "role": "comparison",
+       "statement": "for chi != 1, M_chi equals the maximum over closed intervals of Pomerance and Lapkova"
+      }
+     ],
+     "tests": [
+      {
+       "name": "mod3",
+       "kind": "computation",
+       "statement": "quadratic character mod 3: M_chi = 1"
+      },
+      {
+       "name": "mod5",
+       "kind": "computation",
+       "statement": "quadratic character mod 5: M_chi = 2"
+      },
+      {
+       "name": "principal",
+       "kind": "non-example",
+       "statement": "principal character mod 3: M_chi = 2 but S(0,6) = 4 > M_chi, so the bound needs chi != 1"
+      }
+     ]
+    },
+    {
+     "id": "0.5",
+     "kind": "theorem",
+     "name": "even_symmetry",
+     "statement": "For chi != 1 even mod q: sum_{n=1}^{q-1-N} chi(n) = - sum_{n=1}^{N} chi(n) for 0 <= N <= q-1, hence M_chi = 2 max_{0<=N<q} |sum_{n<=N} chi(n)|; for every chi != 1, M_chi <= 2 max_N |sum_{n<=N} chi(n)|.",
+     "hypotheses": [
+      "chi != 1",
+      "chi even (for the equality)"
+     ],
+     "locator": {
+      "source": "pomerance2011",
+      "where": "lines 89-95; tmeemt-art15 lines 126-129; frolenkov2011 lines 22-27"
+     },
+     "prerequisites": [
+      "mathlib:DirichletCharacter.Even.eval_neg",
+      "target:0.4a",
+      "target:0.4b"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "mod5_even",
+       "kind": "computation",
+       "statement": "quadratic mod 5: initial sums 1,0,-1,0, M_chi = 2"
+      },
+      {
+       "name": "chi4_odd",
+       "kind": "non-example",
+       "statement": "chi_4 mod 4 is odd: M_chi = 1 < 2"
+      },
+      {
+       "name": "principal_even",
+       "kind": "non-example",
+       "statement": "principal mod 5 satisfies sum_{n<=4-N} = phi(5) - sum_{n<=N} instead"
+      }
+     ]
+    },
+    {
+     "id": "0.6",
+     "kind": "theorem",
+     "name": "charIntervalSum_primitive_reduction",
+     "statement": "For chi mod q with conductor q* and primitive character chi*, and r the product of primes dividing q but not q*: S_chi(M,N) = sum_{d | r} mu(d) chi*(d) sum_{M/d < m <= (M+N)/d} chi*(m); hence M_chi <= 2^{omega(r)} M_{chi*} for chi != 1.",
+     "hypotheses": [
+      "q >= 1"
+     ],
+     "locator": {
+      "source": "montgomeryvaughan2007",
+      "where": "section 9.4"
+     },
+     "prerequisites": [
+      "mathlib:DirichletCharacter.primitiveCharacter",
+      "mathlib:DirichletCharacter.changeLevel_primitiveCharacter",
+      "mathlib:ArithmeticFunction.moebius",
+      "mathlib:ArithmeticFunction.cardDistinctFactors",
+      "target:0.4a",
+      "target:0.4b"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "principal_mod6",
+       "kind": "computation",
+       "statement": "principal mod 6: S(0,6) = 2 = 6 - 3 - 2 + 1"
+      },
+      {
+       "name": "induced_mod12",
+       "kind": "computation",
+       "statement": "chi mod 12 induced by chi_4: S(0,5) = 2 = S_{chi4}(0,5) - chi4(3) S_{chi4}(0,1)"
+      },
+      {
+       "name": "primitive_trivial",
+       "kind": "degenerate",
+       "statement": "r = 1 for primitive chi and the identity is trivial"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "key": "1",
+   "title": "exponential sums under derivative conditions",
+   "targets": [
+    {
+     "id": "1.1",
+     "kind": "theorem",
+     "name": "kusmin_landau",
+     "statement": "If f has a continuous monotone derivative on [a,b] and theta <= f'(x) - k <= 1 - theta on [a,b] for some theta in (0,1/2] and integer k, then |S_f[a,b]| <= cot(pi theta/2) <= 2/(pi theta).",
+     "hypotheses": [
+      "a <= b",
+      "f C^1 on [a,b] with f' monotone",
+      "0 < theta <= 1/2",
+      "k integer"
+     ],
+     "locator": {
+      "source": "ariasdereyna2024",
+      "where": "Lemma 1 and Remark 2, lines 90-104; patel2022 Lemma 2.1, lines 78-124; granville-ramare-1996 Lemma 8.4, lines 903-908; tmeemt-art05 lines 84-89"
+     },
+     "prerequisites": [
+      "mathlib:exists_deriv_eq_slope",
+      "mathlib:Real.cot",
+      "mathlib:Real.cot_eq_cos_div_sin",
+      "target:0.1"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "half",
+       "kind": "computation",
+       "statement": "f(x) = x/2 on [0,2]: sum 1 = cot(pi/4), attained; the constant 1/(pi theta) = 2/pi < 1 is refuted"
+      },
+      {
+       "name": "third",
+       "kind": "computation",
+       "statement": "f(x) = x/3 on [0,1]: |1 + e(1/3)| = 1 <= sqrt 3"
+      },
+      {
+       "name": "theta_zero",
+       "kind": "non-example",
+       "statement": "f = 0 gives n + 1 on [0,n]: theta = 0 is excluded"
+      }
+     ]
+    },
+    {
+     "id": "1.2",
+     "kind": "theorem",
+     "name": "kusmin_landau_asymmetric",
+     "statement": "If f has a continuous monotone derivative on [a,b] and l + 1/U <= f'(x) <= l + 1 - 1/V with l integer and U, V > 1, then |S_f[a,b]| <= (U + V)/pi.",
+     "hypotheses": [
+      "U, V > 1",
+      "l integer",
+      "f' continuous monotone"
+     ],
+     "locator": {
+      "source": "hiarypatelyang2024",
+      "where": "Lemma 2.3, lines 86-92"
+     },
+     "prerequisites": [
+      "target:1.1",
+      "mathlib:exists_deriv_eq_slope"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "symmetric",
+       "kind": "compatibility",
+       "statement": "U = V = 1/theta gives 2/(pi theta)"
+      },
+      {
+       "name": "third_slope",
+       "kind": "computation",
+       "statement": "f(x) = x/3 on [0,1], U = 3, V = 3/2: 1.43 >= 1"
+      }
+     ]
+    },
+    {
+     "id": "1.3a",
+     "kind": "theorem",
+     "name": "second_derivative_test",
+     "statement": "If f has two continuous derivatives on [a,b] with 0 < lambda <= |f''| <= Lambda, then |S_f[a,b]| <= (Lambda(b-a) + 2)(1 + 4/sqrt(pi lambda)) + 1.",
+     "hypotheses": [
+      "a <= b",
+      "f C^2 on [a,b]",
+      "0 < lambda <= |f''| <= Lambda"
+     ],
+     "locator": {
+      "source": "ariasdereyna2024",
+      "where": "Lemma 4, lines 109-181"
+     },
+     "prerequisites": [
+      "target:1.1",
+      "target:0.1",
+      "mathlib:exists_deriv_eq_slope"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "patel_sharp",
+       "kind": "compatibility",
+       "statement": "with lambda = 1/W, Lambda = 1/V, b - a = L - 1 equals patel2022 (25)"
+      },
+      {
+       "name": "patel_gap",
+       "kind": "computation",
+       "statement": "Patel (24) exceeds it by L/V + 1"
+      },
+      {
+       "name": "short_interval",
+       "kind": "computation",
+       "statement": "f(x) = x^2/200 on [0,10]: bound 50.5 above the trivial 11"
+      }
+     ]
+    },
+    {
+     "id": "1.3b",
+     "kind": "theorem",
+     "name": "second_derivative_test_sqrt",
+     "statement": "Under 1.3a and b - a >= 1: |S_f[a,b]| <= A lambda^{-1/2} (Lambda(b-a) + 2) with A = (2/sqrt pi)(1 + sqrt(1 + 3 pi/8)) = 2.79368...",
+     "hypotheses": [
+      "b - a >= 1"
+     ],
+     "locator": {
+      "source": "ariasdereyna2024",
+      "where": "Lemma 5, lines 183-219"
+     },
+     "prerequisites": [
+      "target:1.3a"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "A_value",
+       "kind": "computation",
+       "statement": "A = 1.12838 * 2.47584 = 2.79368"
+      }
+     ]
+    },
+    {
+     "id": "1.3c",
+     "kind": "theorem",
+     "name": "second_derivative_test_patel",
+     "statement": "For integers N and L >= 1, reals V < W with W > 1 and 1/W <= |f''| <= 1/V on [N+1, N+L]: |S_f[N+1,N+L]| <= 2(L/V + 2)(2 sqrt(W/pi) + 1).",
+     "hypotheses": [
+      "W > 1",
+      "V < W"
+     ],
+     "locator": {
+      "source": "patel2022",
+      "where": "Lemma 2.3, lines 140-144; tmeemt-art05 lines 98-104"
+     },
+     "prerequisites": [
+      "target:1.3a"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "lambda_form",
+       "kind": "compatibility",
+       "statement": "with lambda = W/V this is the TME-EMT form"
+      },
+      {
+       "name": "excess",
+       "kind": "computation",
+       "statement": "Patel's form exceeds the sharper form 2((L-1)/V+2)(2 sqrt(W/pi)+1/2)+1 by L/V + 1 + (4 sqrt(W/pi)+1)/V: 8.454 at L = 10, V = 2, W = 3"
+      }
+     ]
+    },
+    {
+     "id": "1.4",
+     "kind": "theorem",
+     "name": "third_derivative_test",
+     "statement": "For integers N, L >= 1, f with three continuous derivatives on [N+1,N+L], W3 > 1, lambda3 >= 1, 1/W3 <= |f'''| <= lambda3/W3, eta3 > 0: |S|^2 <= (L W3^{-1/3} + eta3)(alpha3 L + beta3 W3^{2/3}), alpha3 = 1/eta3 + (32 lambda3/(15 sqrt pi)) sqrt(eta3 + W3^{-1/3}) + 2 lambda3 eta3 W3^{-1/3} + 2 lambda3 W3^{-2/3}, beta3 = 64/(3 sqrt pi sqrt eta3) + 4 W3^{-1/3}.",
+     "hypotheses": [
+      "W3 > 1",
+      "lambda3 >= 1",
+      "eta3 > 0"
+     ],
+     "locator": {
+      "source": "patel2022",
+      "where": "Lemma 2.5, lines 160-164, proof lines 175-181"
+     },
+     "prerequisites": [
+      "target:0.3",
+      "target:1.3c",
+      "mathlib:exists_deriv_eq_slope",
+      "mathlib:Int.ceil"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "three_derivatives",
+       "kind": "compatibility",
+       "statement": "the source says four continuous derivatives; the proof and Hiary's Lemma 1.2 use three"
+      },
+      {
+       "name": "W_one",
+       "kind": "computation",
+       "statement": "at W3 = eta3 = lambda3 = 1: alpha3 = 6.702, beta3 = 16.036, against Hiary's invalid 64/15 + 3 = 7.27"
+      },
+      {
+       "name": "monotone_W",
+       "kind": "characterisation",
+       "statement": "the bound decreases in W3, giving alpha3~, beta3~ at W3 = 1"
+      }
+     ]
+    },
+    {
+     "id": "1.5a",
+     "kind": "theorem",
+     "name": "fourth_derivative_test",
+     "statement": "Patel's fourth derivative test with alpha4 = 1/eta4 + (72/91) sqrt(alpha3~)(eta4 + W4^{-1/7})^{1/6}, gamma4 = (72/55) sqrt(beta3~) eta4^{-1/6} + sqrt(eta3 alpha3~) W4^{-1/7}, beta4 = (9/5) sqrt(beta3~ eta3) eta4^{-1/3}: |S|^2 <= (L W4^{-1/7} + eta4)(alpha4 L + gamma4 sqrt L W4^{2/7} + beta4 W4^{3/7}).",
+     "hypotheses": [
+      "W4 > 1",
+      "lambda4 >= 1",
+      "eta3, eta4 > 0",
+      "1/W4 <= |f''''| <= lambda4/W4"
+     ],
+     "locator": {
+      "source": "patel2022",
+      "where": "Lemma 3.1, lines 191-196, proof lines 197-264"
+     },
+     "prerequisites": [
+      "target:0.3",
+      "target:1.4"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "coefficients",
+       "kind": "computation",
+       "statement": "2/((7/6)(13/6)) = 72/91, 2/((5/6)(11/6)) = 72/55, 2/((2/3)(5/3)) = 9/5"
+      },
+      {
+       "name": "misprint",
+       "kind": "non-example",
+       "statement": "the printed 18/20 for beta4 is not established; the proof gives 18/10"
+      }
+     ]
+    },
+    {
+     "id": "1.5b",
+     "kind": "theorem",
+     "name": "fifth_derivative_test",
+     "statement": "Patel's fifth derivative test with alpha5, tau5, gamma5, omega5, beta5 as in the README: |S|^2 <= (L W5^{-1/15} + eta5)(alpha5 L + tau5 L^{3/4} W5^{2/15} + gamma5 sqrt L W5^{3/15} + omega5 L^{1/4} W5^{1/5} + beta5 W5^{4/15}).",
+     "hypotheses": [
+      "W5 > 1",
+      "lambda5 >= 1",
+      "eta3, eta4, eta5 > 0"
+     ],
+     "locator": {
+      "source": "patel2022",
+      "where": "Lemma 3.2, lines 266-270, proof lines 271-308"
+     },
+     "prerequisites": [
+      "target:0.3",
+      "target:1.5a"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "coefficients",
+       "kind": "computation",
+       "statement": "392/435, 392/351, 98/78, 392/275 from the lag sum"
+      }
+     ]
+    },
+    {
+     "id": "1.6",
+     "kind": "theorem",
+     "name": "iterated_vanDerCorput",
+     "statement": "For real X, Y > 0, d >= 1 and integers H_r >= 1 with sum H_r <= Y: |Y^{-1} sum_{X<n<=X+Y} e(f(n))| <= B max(H_1^{-1/2}, ..., H_d^{-1/2^d}, B^{-1/2^d} T_d^{1/2^d}), B = 2 + 2 sqrt 2, T_d the normalised sum of the iterated differences.",
+     "hypotheses": [
+      "Y > 0",
+      "H_1 + ... + H_d <= Y"
+     ],
+     "locator": {
+      "source": "ariasdereyna2024",
+      "where": "Theorem 7, lines 398-404; constant B lines 384-391"
+     },
+     "prerequisites": [
+      "target:0.3",
+      "mathlib:Real.inner_le_Lp_mul_Lq_of_nonneg"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "B_property",
+       "kind": "computation",
+       "statement": "4/H + 4T <= max(B^2/H, BT) at H = 1, T = 6: 28 <= 28.97; B = 4.5 gives 28 > 27"
+      },
+      {
+       "name": "difference",
+       "kind": "computation",
+       "statement": "f = x^2, a = (1): 2x + 1; a = (1,1): 2"
+      },
+      {
+       "name": "route_form",
+       "kind": "compatibility",
+       "statement": "the d = 1 step is |Y^{-1} sum e(f(n))|^2 <= 4/H_1 + 4 T_1, the normalised corollary of 0.3 (ariasdereyna2024 lines 405-415)"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "key": "2",
+   "title": "integer points near smooth curves",
+   "targets": [
+    {
+     "id": "2.1",
+     "kind": "theorem",
+     "name": "nearIntegerCount_le_expSums",
+     "statement": "For real a, N >= 1, delta in (0,1/4), K = floor(1/(8 delta)) + 1 and 1 <= H <= K: R(f,a,N,delta) <= 4N/H + (4/H) sum_{h=1}^{H} |S_{hf}[a,a+N]| for every f.",
+     "hypotheses": [
+      "N >= 1",
+      "0 < delta < 1/4",
+      "1 <= H <= K"
+     ],
+     "locator": {
+      "source": "tmeemt-art11",
+      "where": "lines 183-186 (filaseta1990)"
+     },
+     "prerequisites": [
+      "target:0.1",
+      "target:0.2",
+      "mathlib:Real.sin_le",
+      "mathlib:strictConcaveOn_sin_Icc",
+      "mathlib:Complex.normSq"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "zero",
+       "kind": "computation",
+       "statement": "f = 0, a = 0, N = 4, delta = 0.1, H = 2: 5 <= 24"
+      },
+      {
+       "name": "half",
+       "kind": "computation",
+       "statement": "f(x) = x/2: 3 <= 16"
+      },
+      {
+       "name": "K_one",
+       "kind": "degenerate",
+       "statement": "delta = 0.2 gives K = 1"
+      }
+     ]
+    },
+    {
+     "id": "2.2",
+     "kind": "theorem",
+     "name": "first_derivative_test_points",
+     "statement": "If f has a continuous derivative on [a,a+N] with lambda1 <= |f'| <= c1 lambda1, lambda1 > 0, c1 >= 1, then R(f,a,N,delta) <= 2 c1 N lambda1 + 4 c1 N delta + 2 delta/lambda1 + 1 for every delta > 0.",
+     "hypotheses": [
+      "N >= 0",
+      "delta > 0",
+      "lambda1 > 0",
+      "c1 >= 1"
+     ],
+     "locator": {
+      "source": "tmeemt-art11",
+      "where": "lines 114-119; zhao2024 Theorem 2.5, lines 211-216"
+     },
+     "prerequisites": [
+      "target:0.2",
+      "mathlib:exists_deriv_eq_slope"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "tenth",
+       "kind": "computation",
+       "statement": "f(x) = x/10 on [0,20], delta = 0.05: 3 <= 10"
+      },
+      {
+       "name": "large_delta",
+       "kind": "degenerate",
+       "statement": "delta = 0.49: R <= N + 1 <= 1.96N + 1"
+      },
+      {
+       "name": "constant",
+       "kind": "non-example",
+       "statement": "constant f violates lambda1 > 0"
+      }
+     ]
+    },
+    {
+     "id": "2.3a",
+     "kind": "theorem",
+     "name": "huxley_reduction",
+     "statement": "For any f, real a, N >= 1, delta > 0 and 1 <= A <= N: R(f,a,N,delta) <= N/A + sum_{1<=h<=A} R(Delta_h f, a, N - h, 2 delta) + 1.",
+     "hypotheses": [
+      "N >= 1",
+      "1 <= A <= N"
+     ],
+     "locator": {
+      "source": "zhao2024",
+      "where": "Lemma 2.6, lines 284-319"
+     },
+     "prerequisites": [
+      "target:0.2"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "half",
+       "kind": "computation",
+       "statement": "f(x) = x/2, delta = 0.1, N = 4, A = 2: 3 <= 6"
+      }
+     ]
+    },
+    {
+     "id": "2.3b",
+     "kind": "theorem",
+     "name": "second_derivative_test_points",
+     "statement": "If f has two continuous derivatives on [a,a+N], N >= 1, lambda2 <= |f''| <= c2 lambda2, N lambda2 >= 1/c2, 0 < delta < 1/2, then R(f,a,N,delta) <= 6((3c2)^{1/3} N lambda2^{1/3} + (12 c2)^{1/2} N delta^{1/2} + 1).",
+     "hypotheses": [
+      "N >= 1",
+      "lambda2 > 0",
+      "c2 >= 1",
+      "N lambda2 >= 1/c2",
+      "0 < delta < 1/2"
+     ],
+     "locator": {
+      "source": "tmeemt-art11",
+      "where": "lines 130-137; zhao2024 Theorem 2.7, lines 324-330"
+     },
+     "prerequisites": [
+      "target:2.2",
+      "target:2.3a",
+      "mathlib:exists_deriv_eq_slope"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "hypothesis",
+       "kind": "non-example",
+       "statement": "f = x^2/100, N = 10: N lambda2 = 0.2 < 1 violates the hypothesis"
+      },
+      {
+       "name": "N50",
+       "kind": "computation",
+       "statement": "N = 50: bound 6(19.57 + 173.2 sqrt delta + 1)"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "key": "3",
+   "title": "explicit Polya-Vinogradov inequalities",
+   "targets": [
+    {
+     "id": "3.1",
+     "kind": "theorem",
+     "name": "charIntervalSum_gauss_expansion",
+     "statement": "For chi primitive mod q >= 2: chi(n) tau(chi^{-1}) = sum_b chi^{-1}(b) e(bn/q), hence S_chi(M,N) = tau(chi^{-1})^{-1} sum_{b=1}^{q-1} chi^{-1}(b) sum_{M<n<=M+N} e(bn/q) and |S_chi(M,N)| <= q^{-1/2} sum_{b=1}^{q-1} min(N, 1/sin(pi b/q)).",
+     "hypotheses": [
+      "chi primitive",
+      "q >= 2"
+     ],
+     "locator": {
+      "source": "pomerance2011",
+      "where": "lines 229-262, displays (7)-(10); montgomeryvaughan2007 section 9.4"
+     },
+     "prerequisites": [
+      "mathlib:gaussSum_mulShift_of_isPrimitive",
+      "mathlib:DirichletCharacter.IsPrimitive.inv",
+      "mathlib:ZMod.stdAddChar",
+      "mathlib:ZMod.isPrimitive_stdAddChar",
+      "tauceti:DirichletCharacter.IsPrimitive.norm_gaussSum",
+      "target:0.4a"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "mod3_gauss",
+       "kind": "computation",
+       "statement": "quadratic mod 3: tau = i sqrt 3"
+      },
+      {
+       "name": "mod3_N1",
+       "kind": "computation",
+       "statement": "M = 0, N = 1 recovers chi(1) = 1"
+      },
+      {
+       "name": "imprimitive",
+       "kind": "non-example",
+       "statement": "principal mod 4 has Gauss sum 0"
+      }
+     ]
+    },
+    {
+     "id": "3.2",
+     "kind": "theorem",
+     "name": "polya_vinogradov_classical",
+     "statement": "sum_{b=1}^{q-1} 1/sin(pi b/q) < (2q/pi)(log q + log(4/pi) + pi^2/(12 q^2)); hence M_chi < (2/pi) sqrt q (log q + log(4/pi) + pi^2/(12q^2)) for primitive chi mod q >= 2, M_chi < 2^{omega(r)} (2/pi) sqrt q* (...) for nonprincipal chi, and |S_chi| <= sqrt p log p for nonprincipal chi mod a prime p >= 3.",
+     "hypotheses": [
+      "q >= 2"
+     ],
+     "locator": {
+      "source": "pomerance2011",
+      "where": "proof of Lemma 4, displays (4)-(5), lines 183-203; montgomeryvaughan2007 section 9.4"
+     },
+     "prerequisites": [
+      "target:3.1",
+      "target:0.6",
+      "mathlib:ConvexOn",
+      "mathlib:intervalIntegral",
+      "mathlib:DirichletCharacter.eq_one_iff_conductor_eq_one"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "q3",
+       "kind": "computation",
+       "statement": "q = 3: 4/3 >= M_chi = 1; closed form 1.579"
+      },
+      {
+       "name": "q5",
+       "kind": "computation",
+       "statement": "q = 5: 2.462 >= 2"
+      },
+      {
+       "name": "p2",
+       "kind": "degenerate",
+       "statement": "at p = 2 the sqrt p log p comparison fails but there is no nonprincipal character"
+      }
+     ]
+    },
+    {
+     "id": "3.3a",
+     "kind": "theorem",
+     "name": "sin_cos_series_closed_forms",
+     "statement": "For 0 < x < 2 pi: sum_{j>=1} sin(jx)/j = (pi - x)/2 and sum_{j>=1} cos(jx)/j = -log(2 sin(x/2)), and the tails after n are bounded by 1/((n+1) sin(x/2)) for 0 < x <= pi.",
+     "hypotheses": [
+      "0 < x < 2 pi"
+     ],
+     "locator": {
+      "source": "pomerance2011",
+      "where": "proof of Lemma 4, line 180"
+     },
+     "prerequisites": [
+      "mathlib:Complex.hasSum_taylorSeries_neg_log",
+      "mathlib:Complex.tendsto_tsum_powerSeries_nhdsWithin_stolzSet"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "half_pi",
+       "kind": "computation",
+       "statement": "x = pi/2: pi/4 and -(log 2)/2"
+      }
+     ]
+    },
+    {
+     "id": "3.3b",
+     "kind": "theorem",
+     "name": "pomerance_cosine_sum_lower",
+     "statement": "For all real x and n >= 1, C_n(x) = sum_{j=1}^{n} cos(jx)/j > -log 2 - 2/n.",
+     "hypotheses": [
+      "n >= 1"
+     ],
+     "locator": {
+      "source": "pomerance2011",
+      "where": "Lemma 2, lines 112-134"
+     },
+     "prerequisites": [
+      "target:3.3a"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "C1_C3",
+       "kind": "computation",
+       "statement": "C_1(pi) = -1, C_3(pi) = -5/6, both above the bound"
+      },
+      {
+       "name": "route_endpoint",
+       "kind": "computation",
+       "statement": "alternative route at n = 2: endpoint values log 2 - 4/3 = -0.640 and -2/3 = -0.667 of -log(2s) - 1/(3s) on [1/4, 1/2]; the minimum is the right endpoint, both > -2/n = -1"
+      }
+     ]
+    },
+    {
+     "id": "3.3c",
+     "kind": "theorem",
+     "name": "pomerance_abs_sine_sum",
+     "statement": "For all real x and n >= 1, sum_{j=1}^{n} |sin jx|/j < (2/pi) log n + (2/pi)(gamma + log 2 + 3/n).",
+     "hypotheses": [
+      "n >= 1"
+     ],
+     "locator": {
+      "source": "pomerance2011",
+      "where": "Lemma 3, lines 147-161"
+     },
+     "prerequisites": [
+      "target:3.3b",
+      "mathlib:hasSum_fourier_series_of_summable",
+      "mathlib:Real.eulerMascheroniConstant"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "n1",
+       "kind": "computation",
+       "statement": "n = 1, x = pi/2: 1 < 2.72"
+      }
+     ]
+    },
+    {
+     "id": "3.3d",
+     "kind": "theorem",
+     "name": "pomerance_tail_sum",
+     "statement": "For q >= 2, n >= 1: sum_{a=1}^{q-1} |R_n(2 pi a/q)| < (2/pi)(q/(n+1))(log q + log(4/pi) + pi^2/(12q^2)).",
+     "hypotheses": [
+      "q >= 2",
+      "n >= 1"
+     ],
+     "locator": {
+      "source": "pomerance2011",
+      "where": "Lemma 4, lines 172-204"
+     },
+     "prerequisites": [
+      "target:3.3a",
+      "target:3.2"
+     ],
+     "api": [],
+     "tests": []
+    },
+    {
+     "id": "3.4",
+     "kind": "theorem",
+     "name": "polya_vinogradov_pomerance",
+     "statement": "For chi primitive mod q > 1: M_chi <= (2/pi^2) sqrt q log q + (4/pi^2) sqrt q log log q + (3/2) sqrt q (even), <= (1/(2pi)) sqrt q log q + (1/pi) sqrt q log log q + sqrt q (odd).",
+     "hypotheses": [
+      "chi primitive",
+      "q > 1"
+     ],
+     "locator": {
+      "source": "pomerance2011",
+      "where": "Theorem 1, lines 78-86; proof lines 263-438"
+     },
+     "prerequisites": [
+      "target:0.5",
+      "target:3.1",
+      "target:3.3b",
+      "target:3.3c",
+      "target:3.3d"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "q3_odd",
+       "kind": "computation",
+       "statement": "q = 3: 2.08 >= 1"
+      },
+      {
+       "name": "q5_even",
+       "kind": "computation",
+       "statement": "q = 5: 4.51 >= 2"
+      }
+     ]
+    },
+    {
+     "id": "3.5a",
+     "kind": "theorem",
+     "name": "polya_vinogradov_lapkova",
+     "statement": "For chi primitive mod q > 1: M_chi <= (2/pi^2) sqrt q log q + 0.9467 sqrt q + 1.668 (even), <= (1/(2pi)) sqrt q log q + 0.8204 sqrt q + 1.0285 (odd).",
+     "hypotheses": [
+      "chi primitive",
+      "q > 1",
+      "LapkovaSmallModuliVerified"
+     ],
+     "locator": {
+      "source": "lapkova2018",
+      "where": "Lemma 3A, lines 245-282, proof lines 291-408"
+     },
+     "prerequisites": [
+      "target:3.1",
+      "target:0.5",
+      "target:6.1"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "L_range",
+       "kind": "computation",
+       "statement": "L <= q holds from q = 19 (even: L = 19 at q = 19, L = 19 > 18 at q = 18) and from q = 24 (odd: L = 24 at q = 24, L = 24 > 23 at q = 23); q > 25 is Lapkova's sufficient split"
+      }
+     ]
+    },
+    {
+     "id": "3.5b",
+     "kind": "theorem",
+     "name": "polya_vinogradov_fs_rounded",
+     "statement": "M_chi <= (2/pi^2) sqrt q log q + sqrt q for primitive even chi and q >= 980; M_chi <= (1/(2pi)) sqrt q log q + sqrt q for primitive odd chi and q >= 33.",
+     "hypotheses": [
+      "chi primitive"
+     ],
+     "locator": {
+      "source": "tmeemt-art15",
+      "where": "lines 114-118; hunter2016 Theorem 1.3, lines 680-684"
+     },
+     "prerequisites": [
+      "target:3.5a"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "q980",
+       "kind": "computation",
+       "statement": "31.3044 <= 31.3050 at q = 980; fails at q = 979"
+      },
+      {
+       "name": "q33",
+       "kind": "computation",
+       "statement": "5.741 <= 5.745 at q = 33; fails at q = 32"
+      }
+     ]
+    },
+    {
+     "id": "3.6",
+     "kind": "theorem",
+     "name": "polya_vinogradov_fs_nonprincipal",
+     "statement": "For nonprincipal chi mod q >= 1000: |S_chi(M,N)| <= (1/(pi sqrt 2)) sqrt q (log q + 6) + sqrt q.",
+     "hypotheses": [
+      "chi != 1",
+      "q >= 1000"
+     ],
+     "locator": {
+      "source": "frolenkovsoundararajan2013",
+      "where": "Corollary 1; tmeemt-art15 lines 106-109; hunter2016 Theorem 1.2, lines 651-664"
+     },
+     "prerequisites": [
+      "target:0.4a"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "q1000",
+       "kind": "computation",
+       "statement": "123.5 against the trivial 200"
+      },
+      {
+       "name": "crude_route",
+       "kind": "non-example",
+       "statement": "the reduction 0.6 with 3.5a gives 0.331 > 0.2251 for q = 6q*"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "key": "4",
+   "title": "explicit Burgess inequalities for a prime modulus",
+   "targets": [
+    {
+     "id": "4.1a",
+     "kind": "theorem",
+     "name": "degenerate_tuple_count",
+     "statement": "For integers H >= 1, r >= 1 and d >= 2, the number of d-degenerate tuples in {1..H}^{2r} (for every value v, #{i <= r : b_i = v} is congruent mod d to #{i > r : b_i = v}) is at most (2r-1)!! H^r. Route: the count equals E|Z_1 + ... + Z_H|^{2r} for independent uniform d-th roots of unity; d even: perfect matchings; d > r: rearrangements, r! H^r; odd 3 <= d <= r: random rotation and Jensen give (pi/(d sin(pi/d)))^{2r} r! H^r <= (2r-1)!! H^r for r >= 5; (d,r) = (3,3), (3,4): exact counts 6H^3 - 8H^2 + 3H and 24H^4 - 56H^3 + 42H^2 - 9H.",
+     "hypotheses": [
+      "H >= 1",
+      "r >= 1",
+      "d >= 2"
+     ],
+     "locator": {
+      "source": "trevino2015kth",
+      "where": "the count behind Theorem 1.2; booker2006 lines 506-507 for d = 2"
+     },
+     "prerequisites": [
+      "mathlib:ConvexOn.map_integral_le"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "r2_H2",
+       "kind": "computation",
+       "statement": "even d: 8 <= 12 (2 constant tuples, 6 with two of each); d >= 3: 6 rearrangements <= 12"
+      },
+      {
+       "name": "r2_H1",
+       "kind": "degenerate",
+       "statement": "1 <= 3"
+      },
+      {
+       "name": "odd_multiplicity",
+       "kind": "computation",
+       "statement": "d = 3, r = 3: (1,1,1,2,2,2) is degenerate (f = (X+1)^3 (X+2)^6 is a cube); exact count 22 <= 120 at H = 2"
+      },
+      {
+       "name": "at_least_twice_too_large",
+       "kind": "non-example",
+       "statement": "the set where every value occurs at least twice has 1.0672e16 > 11!! 100^6 = 1.0395e16 elements at r = 6, H = 100"
+      }
+     ]
+    },
+    {
+     "id": "4.1b",
+     "kind": "theorem",
+     "name": "burgess_moment_bound",
+     "statement": "For p prime, chi != 1 mod p, every integer r >= 1 and real B > 0: sum_{x mod p} |sum_{1<=b<=B} chi(x+b)|^{2r} <= (2r-1)!! B^r p + (2r-1) B^{2r} sqrt p. Route: reduce floor(B) modulo p (a full period sums to 0); d-degenerate tuples contribute <= p each (4.1a), the others (m-1) sqrt p by Weil. The source's r <= 9B is not used.",
+     "hypotheses": [
+      "p prime",
+      "chi != 1",
+      "r >= 1",
+      "B > 0"
+     ],
+     "locator": {
+      "source": "trevino2015",
+      "where": "Theorem A, lines 57-63 (stated under r <= 9B; proved in trevino2015kth Theorem 1.2); booker2006 displays (28)-(30), lines 494-510, for quadratic chi"
+     },
+     "prerequisites": [
+      "roadmap:CharacterSumsOverFiniteFields §4.7",
+      "target:4.1a",
+      "tauceti:DirichletCharacter.sum_range_level_eq_zero",
+      "mathlib:MulChar"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "r1",
+       "kind": "computation",
+       "statement": "r = 1, B < p: equals floor(B) p - floor(B)^2"
+      },
+      {
+       "name": "double_factorial",
+       "kind": "computation",
+       "statement": "(2r-1)!! = (2r)!/(2^r r!): 15 at r = 3"
+      }
+     ]
+    },
+    {
+     "id": "4.2a",
+     "kind": "theorem",
+     "name": "burgess_energy_lemma1",
+     "statement": "For A an integer with 28 <= A < N/12, N < p, and multipliers all integers in [1, A]: V2 = sum_x v(x)^2 <= 2AN(AN/p + log(1.85 A)).",
+     "hypotheses": [
+      "p prime",
+      "N < p",
+      "28 <= A < N/12"
+     ],
+     "locator": {
+      "source": "trevino2015",
+      "where": "Lemma 1, lines 210-219, proof lines 462-622"
+     },
+     "prerequisites": [
+      "mathlib:ZMod",
+      "mathlib:Nat.totient",
+      "mathlib:Nat.gcd"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "A28_N400",
+       "kind": "computation",
+       "statement": "V2 <= 22400(0.00112 + 3.9474) = 88447 against the trivial 313600"
+      }
+     ]
+    },
+    {
+     "id": "4.2b",
+     "kind": "theorem",
+     "name": "burgess_energy_lemma6",
+     "statement": "For multipliers all integers in [1, A], A >= 30, N > 7A and 2AN < p: V2 <= 2AN log(1.85 A).",
+     "hypotheses": [
+      "A >= 30 integer",
+      "N > 7A",
+      "2AN < p"
+     ],
+     "locator": {
+      "source": "trevino2015",
+      "where": "Lemma 6, lines 1088-1093"
+     },
+     "prerequisites": [
+      "target:4.2a"
+     ],
+     "api": [],
+     "tests": []
+    },
+    {
+     "id": "4.2c",
+     "kind": "theorem",
+     "name": "burgess_energy_prime_multipliers",
+     "statement": "For multipliers the primes in [1, A], A >= 2 an integer with 2AN <= p: V2 <= pi(A) N + 2N sum_{a prime <= A} (pi(a) - 1)/a + 2 sum_{a prime <= A} (pi(a) - 1).",
+     "hypotheses": [
+      "p prime",
+      "A >= 2 integer",
+      "2AN <= p"
+     ],
+     "locator": {
+      "source": "mcgown2012",
+      "where": "Lemma A.7, lines 1130-1142, with Lemma A.6, lines 1119-1129"
+     },
+     "prerequisites": [
+      "mathlib:ZMod",
+      "mathlib:Nat.primeCounting"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "primes_235",
+       "kind": "computation",
+       "statement": "multipliers {2,3,5}, M = 0, N = 100, p = 1009: V2 = 300 + 2(33 + 20 + 20) = 446 <= 452.7"
+      }
+     ]
+    },
+    {
+     "id": "4.3",
+     "kind": "theorem",
+     "name": "burgess_amplification",
+     "statement": "For chi != 1 mod p, M integer, N >= 1, r >= 1, reals 1 <= A < p and B >= 1, a nonempty set of multipliers in [1, A] (all integers, or the primes), H = |multipliers| floor B, E(h) = max_K |S_chi(K,h)|: |S_chi(M,N)| <= H^{-1} V1^{1-1/r} V2^{1/(2r)} W^{1/(2r)} + (2/H) sum_{a, b<=B} E(ab).",
+     "hypotheses": [
+      "1 <= A < p",
+      "B >= 1",
+      "multiplier set nonempty"
+     ],
+     "locator": {
+      "source": "trevino2015",
+      "where": "displays (26)-(29), lines 643-700 (all integers a); mcgown2012 Lemma A.5, lines 1083-1118 (prime a)"
+     },
+     "prerequisites": [
+      "target:0.4a",
+      "mathlib:Real.inner_le_Lp_mul_Lq_of_nonneg",
+      "mathlib:ZMod.unitOfCoprime"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "A1B1",
+       "kind": "computation",
+       "statement": "A = B = 1, r = 1: |S| <= sqrt(N(p-1)) + 2E(1)"
+      },
+      {
+       "name": "A_ge_p",
+       "kind": "non-example",
+       "statement": "A >= p is excluded: a = p is not invertible"
+      },
+      {
+       "name": "prime_multipliers",
+       "kind": "degenerate",
+       "statement": "for 1 <= A < 2 the primes in [1, A] form the empty set (excluded); at A = 5, B = 3: H = 9 against 15 for all multipliers"
+      }
+     ]
+    },
+    {
+     "id": "4.4a",
+     "kind": "theorem",
+     "name": "burgess_mcgown_parametric",
+     "statement": "Under RosserSchoenfeldFiniteRangeInput: for p odd prime, r >= 2, reals d > 4, C >= 1, p0 >= 2 with (A.1) C^r p0^{1/4-1/(4r)} (log p0)^{1/2} >= 4d(d+1)r and (A.2) C >= ((d+1)(2r-1)(4r-1))^{1/(2r)}/(1 - 2 d^{-(1-1/r)}): for p >= p0 and 1 <= H <= sqrt(rd) p^{1/2+1/(4r)}, |sum_{N0<n<=N0+H} chi(n)| <= C H^{1-1/r} p^{(r+1)/(4r^2)} (log p)^{1/(2r)}.",
+     "hypotheses": [
+      "(A.1)",
+      "(A.2)",
+      "d > 4",
+      "RosserSchoenfeldFiniteRangeInput"
+     ],
+     "locator": {
+      "source": "mcgown2012",
+      "where": "Theorem A.9, lines 1209-1233; proof lines 1234-1432 (Lemmas A.5-A.8)"
+     },
+     "prerequisites": [
+      "target:4.1b",
+      "target:4.2c",
+      "target:4.3",
+      "roadmap:AnalyticNumberTheoryPartI §0.5",
+      "mathlib:Nat.primeCounting"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "d4",
+       "kind": "non-example",
+       "statement": "d = 4 makes (A.2) undefined"
+      },
+      {
+       "name": "pi_lower",
+       "kind": "computation",
+       "statement": "pi(A) >= A/(1 + log A) at A = 4: 2 >= 1.676, while A/log A = 2.885 would fail"
+      }
+     ]
+    },
+    {
+     "id": "4.4b",
+     "kind": "theorem",
+     "name": "burgess_mcgown_table",
+     "statement": "Under RosserSchoenfeldFiniteRangeInput, for primes p >= 2*10^4, 2 <= r <= 15 and 1 <= H <= 4 p^{1/2+1/(4r)}: |sum| < C(r) H^{1-1/r} p^{(r+1)/(4r^2)} (log p)^{1/(2r)} with C(2) = 10.0366, ..., C(15) = 1.7700.",
+     "hypotheses": [
+      "McGownTableCertificate",
+      "RosserSchoenfeldFiniteRangeInput"
+     ],
+     "locator": {
+      "source": "mcgown2012",
+      "where": "Theorem A.1, lines 1030-1050; trevino2015 Theorem C, lines 113-128"
+     },
+     "prerequisites": [
+      "target:4.4a",
+      "target:6.6"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "C2",
+       "kind": "computation",
+       "statement": "C0(2) = 10.03655 < 10.0366"
+      },
+      {
+       "name": "C3",
+       "kind": "computation",
+       "statement": "C0(3) = 4.95382 < 4.9539"
+      }
+     ]
+    },
+    {
+     "id": "4.5a",
+     "kind": "theorem",
+     "name": "burgess_trevino_table1",
+     "statement": "For 2 <= r <= 10, p0 in {10^7, 10^10, 10^20}, primes p >= p0: |S_chi(M,N)| <= c1(r,p0) N^{1-1/r} p^{(r+1)/(4r^2)} (log p)^{1/r}, c1 from Table 1.",
+     "hypotheses": [
+      "TrevinoTable1Certificate"
+     ],
+     "locator": {
+      "source": "trevino2015",
+      "where": "Theorem 1, lines 83-88; Table 1, lines 97-107"
+     },
+     "prerequisites": [
+      "target:3.2",
+      "target:4.1b",
+      "target:4.2a",
+      "target:4.3",
+      "target:6.7"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "range37",
+       "kind": "computation",
+       "statement": "at p = 10^7, r = 2 the bound is 225.8 sqrt N, below N exactly for N > 5.1*10^4"
+      }
+     ]
+    },
+    {
+     "id": "4.5b",
+     "kind": "theorem",
+     "name": "burgess_trevino_uniform",
+     "statement": "For primes p >= 10^7 and every r >= 1: |S_chi(M,N)| <= 2.74 N^{1-1/r} p^{(r+1)/(4r^2)} (log p)^{1/r}.",
+     "hypotheses": [
+      "p >= 10^7"
+     ],
+     "locator": {
+      "source": "trevino2015",
+      "where": "Corollary 1, lines 91-94; proof lines 1026-1085; tmeemt-art15 lines 154-157"
+     },
+     "prerequisites": [
+      "target:3.2",
+      "target:4.5a"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "r1",
+       "kind": "compatibility",
+       "statement": "r = 1 reads 2.74 sqrt p log p, implied by 3.2"
+      }
+     ]
+    },
+    {
+     "id": "4.5c",
+     "kind": "theorem",
+     "name": "burgess_trevino_table3",
+     "statement": "For 2 <= r <= 10, p0 in {10^10, 10^15, 10^20}, primes p >= p0, 1 <= N <= 2 p^{1/2+1/(4r)}: |S_chi(M,N)| < c2(r,p0) N^{1-1/r} p^{(r+1)/(4r^2)} (log p)^{1/(2r)}, c2 from Table 3.",
+     "hypotheses": [
+      "TrevinoTable3Certificate"
+     ],
+     "locator": {
+      "source": "trevino2015",
+      "where": "Theorem 2, lines 134-141; Table 3, lines 145-155"
+     },
+     "prerequisites": [
+      "target:4.1b",
+      "target:4.2b",
+      "target:4.3",
+      "target:6.8"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "wiki_column",
+       "kind": "non-example",
+       "statement": "the TME-EMT column p0 = 10^7 (3.7451...) is not the arXiv table; at r = 2, 10^20 it prints 3.5341 < 3.5751"
+      }
+     ]
+    },
+    {
+     "id": "4.5d",
+     "kind": "theorem",
+     "name": "burgess_trevino_corollary2",
+     "statement": "For primes p >= 10^10 and 3 <= r <= 10: the bound of 4.5c holds for all N >= 1.",
+     "hypotheses": [
+      "p >= 10^10",
+      "r >= 3"
+     ],
+     "locator": {
+      "source": "trevino2015",
+      "where": "Corollary 2, lines 156-161; proof lines 1324-1334"
+     },
+     "prerequisites": [
+      "target:4.5a",
+      "target:4.5c"
+     ],
+     "api": [],
+     "tests": []
+    }
+   ]
+  },
+  {
+   "key": "5",
+   "title": "explicit sieve upper bounds",
+   "targets": [
+    {
+     "id": "5.1a",
+     "kind": "theorem",
+     "name": "selbergDiagonal_ge_log",
+     "statement": "For real z >= 1: S(z) = sum over m with rad(m) <= z of 1/m, hence S(z) >= sum_{m<=z} 1/m >= log(floor z + 1) > log z.",
+     "hypotheses": [
+      "z >= 1"
+     ],
+     "locator": {
+      "source": "fan2022",
+      "where": "lines 180-187 (the diagonal S(z)); the identity is elementary"
+     },
+     "prerequisites": [
+      "mathlib:ArithmeticFunction.moebius",
+      "mathlib:Nat.totient",
+      "mathlib:log_add_one_le_harmonic"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "S6",
+       "kind": "computation",
+       "statement": "S(6) = 3.25"
+      }
+     ]
+    },
+    {
+     "id": "5.1b",
+     "kind": "theorem",
+     "name": "selbergDiagonal_coprime_ge",
+     "statement": "For k >= 1 and z >= 1: S_k(z) >= (phi(k)/k) S(z).",
+     "hypotheses": [
+      "k >= 1"
+     ],
+     "locator": {
+      "source": "vanlintrichert1965",
+      "where": "the coprime comparison, used in buthe2014 lines 226-236"
+     },
+     "prerequisites": [
+      "target:5.1a"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "k6_z7",
+       "kind": "computation",
+       "statement": "S_6(7) = 1.4167 >= (1/3)(3.4167) = 1.139"
+      }
+     ]
+    },
+    {
+     "id": "5.1c",
+     "kind": "theorem",
+     "name": "buthe_diagonal_asymptotics",
+     "statement": "H_1(z) = (15/pi^2) z + theta 47 sqrt z for z >= 1, and S(z) = log z + gamma + sum_p log p/(p(p-1)) + theta 58/sqrt z for z >= 10^9, |theta| <= 1.",
+     "hypotheses": [
+      "z >= 1, resp. z >= 10^9"
+     ],
+     "locator": {
+      "source": "buthe2014",
+      "where": "Lemma 4.4, lines 365-367; Lemma 4.5, lines 462-468; proofs lines 368-600"
+     },
+     "prerequisites": [
+      "mathlib:ArithmeticFunction.sigma",
+      "mathlib:Real.eulerMascheroniConstant"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "constant",
+       "kind": "computation",
+       "statement": "gamma + sum_p log p/(p(p-1)) = 1.3326"
+      }
+     ]
+    },
+    {
+     "id": "5.1d",
+     "kind": "theorem",
+     "name": "selbergDiagonal_ge_log_add",
+     "statement": "S(z) >= log z + 1.07 for real z >= 6 and S(z) >= log z + 0.89 for real z >= 3.",
+     "hypotheses": [
+      "z >= 6, resp. z >= 3",
+      "MVDiagonalFiniteRange"
+     ],
+     "locator": {
+      "source": "montgomeryvaughan1973",
+      "where": "Lemma 7, as quoted in fan2022 lines 185-187"
+     },
+     "prerequisites": [
+      "target:5.1c",
+      "target:6.2"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "S6",
+       "kind": "computation",
+       "statement": "3.25 >= 2.862"
+      },
+      {
+       "name": "below6",
+       "kind": "non-example",
+       "statement": "S = 2.75 < 2.860 just below 6"
+      },
+      {
+       "name": "below5",
+       "kind": "computation",
+       "statement": "2.5 >= 2.497 on [3,5) with 0.89"
+      }
+     ]
+    },
+    {
+     "id": "5.2",
+     "kind": "theorem",
+     "name": "greaves_density_sum",
+     "statement": "For kappa >= 0 on primes with kappa(p) < p, z >= 2, B > 0 with sum_{p<z} kappa(p) log p/p <= B log z, s >= 2B: sum over d | P(z), d <= z^{s/2} of prod_{p|d} kappa(p)/(p - kappa(p)) >= (1 - exp(-((s/2) log(s/(2B)) - s/2 + B))) prod_{p<z} (1 - kappa(p)/p)^{-1}.",
+     "hypotheses": [
+      "kappa(p) < p",
+      "B > 0",
+      "s >= 2B",
+      "z >= 2"
+     ],
+     "locator": {
+      "source": "tmeemt-art14",
+      "where": "lines 159-170 (greaves2001 Theorem 1, p. 52)"
+     },
+     "prerequisites": [
+      "mathlib:Real.exp",
+      "mathlib:Real.log",
+      "mathlib:Real.rpow"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "s_2B",
+       "kind": "degenerate",
+       "statement": "s = 2B gives the trivial bound 0"
+      },
+      {
+       "name": "kappa1_z3",
+       "kind": "computation",
+       "statement": "kappa = 1, z = 3, s = 2: 2 >= 0.748"
+      },
+      {
+       "name": "B0",
+       "kind": "non-example",
+       "statement": "B = 0 makes log(s/(2B)) undefined"
+      }
+     ]
+    },
+    {
+     "id": "5.3a",
+     "kind": "theorem",
+     "name": "buthe_remainder",
+     "statement": "For f absolutely continuous on I = [x, x+y] subset [0, infinity) and d coprime to k: |(kd)^{-1} int_I f - sum_{n in I, n = l (k), d | n} f(n)| <= ||f||_inf + ||f'||_1.",
+     "hypotheses": [
+      "x >= 0",
+      "gcd(d, k) = 1"
+     ],
+     "locator": {
+      "source": "buthe2014",
+      "where": "Lemma 3.1, lines 69-136"
+     },
+     "prerequisites": [
+      "mathlib:AbsolutelyContinuousOnInterval",
+      "mathlib:AbsolutelyContinuousOnInterval.integral_deriv_eq_sub"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "constant",
+       "kind": "computation",
+       "statement": "f = 1: the classical count |y/(kd) - #| <= 1"
+      },
+      {
+       "name": "step",
+       "kind": "non-example",
+       "statement": "a step function concentrated at integers violates the bound"
+      }
+     ]
+    },
+    {
+     "id": "5.3b",
+     "kind": "theorem",
+     "name": "buthe_weighted_selberg",
+     "statement": "For f >= 0 absolutely continuous on I and z >= 1: sum_{n in A, (n, P(z,k)) = 1} f(n) <= ||f||_1/(k S_k(z)) + (||f||_inf + ||f'||_1) H_k(z)^2/S_k(z)^2.",
+     "hypotheses": [
+      "f >= 0",
+      "z >= 1"
+     ],
+     "locator": {
+      "source": "buthe2014",
+      "where": "Proposition 3.2, lines 139-236"
+     },
+     "prerequisites": [
+      "target:5.3a",
+      "mathlib:BoundingSieve",
+      "mathlib:BoundingSieve.siftedSum_le_mainSum_errSum_of_upperMoebius",
+      "roadmap:SieveMethodsAndPrimePatterns §1.3"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "z1",
+       "kind": "degenerate",
+       "statement": "k = 1, z = 1 reduces to the remainder lemma at d = 1"
+      }
+     ]
+    },
+    {
+     "id": "5.3c",
+     "kind": "theorem",
+     "name": "buthe_weighted_eratosthenes",
+     "statement": "For f >= 0 absolutely continuous on I and z >= 1: sum_{n in A, (n, P(z,k)) = 1} f(n) <= (||f||_1/k) prod_{p<=z, p not | k}(1 - 1/p) + (||f||_inf + ||f'||_1) 2^{pi(z)}.",
+     "hypotheses": [
+      "f >= 0"
+     ],
+     "locator": {
+      "source": "buthe2014",
+      "where": "Proposition 3.3, lines 237-284"
+     },
+     "prerequisites": [
+      "target:5.3a",
+      "mathlib:ArithmeticFunction.moebius"
+     ],
+     "api": [],
+     "tests": []
+    },
+    {
+     "id": "5.4d",
+     "kind": "definition",
+     "name": "butheRho",
+     "statement": "rho_I(f) = ||f||_1/(||f||_inf + ||f'||_1) for f != 0 on I and rho_I(0) = 0.",
+     "hypotheses": [
+      "I = [x, x+y]"
+     ],
+     "locator": {
+      "source": "buthe2014",
+      "where": "Definition 4.1, lines 291-295"
+     },
+     "prerequisites": [
+      "mathlib:AbsolutelyContinuousOnInterval"
+     ],
+     "api": [
+      {
+       "name": "butheRho_smul",
+       "role": "invariance",
+       "statement": "rho_I(cf) = rho_I(f) for c != 0"
+      },
+      {
+       "name": "butheRho_le",
+       "role": "bound",
+       "statement": "rho_I(f) <= y, with equality for the constant 1"
+      },
+      {
+       "name": "butheRho_pos",
+       "role": "positivity",
+       "statement": "rho_I(f) > 0 iff f != 0 on I"
+      }
+     ],
+     "tests": [
+      {
+       "name": "constant",
+       "kind": "computation",
+       "statement": "f = 1: rho = y"
+      },
+      {
+       "name": "tent",
+       "kind": "computation",
+       "statement": "the tent on I: rho = (y^2/4)/(3y/2) = y/6"
+      },
+      {
+       "name": "zero",
+       "kind": "degenerate",
+       "statement": "f = 0: rho = 0 by definition, not a 0/0"
+      }
+     ]
+    },
+    {
+     "id": "5.4a",
+     "kind": "theorem",
+     "name": "buthe_weighted_bt_general",
+     "statement": "For coprime k, l >= 1 and nonnegative absolutely continuous f with rho_I(f) > k: sum_{p in I, p = l (k)} f(p) < (2||f||_1/(phi(k) log(rho/k)))(1 + 8/log(rho/k)) and < 3||f||_1/(phi(k) log(rho/k)).",
+     "hypotheses": [
+      "rho_I(f) > k"
+     ],
+     "locator": {
+      "source": "buthe2014",
+      "where": "Theorem 4.2, lines 298-348 (final step after vanlintrichert1965)"
+     },
+     "prerequisites": [
+      "target:5.3b",
+      "target:5.4d"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "vLR",
+       "kind": "compatibility",
+       "statement": "f = 1 gives the van Lint-Richert inequality, weaker than 5.5b by 1 + 8/log(y/k)"
+      }
+     ]
+    },
+    {
+     "id": "5.4b",
+     "kind": "theorem",
+     "name": "buthe_weighted_bt_one",
+     "statement": "For nonnegative absolutely continuous f with rho_I(f) > 1: sum_{p in I} f(p) < 2||f||_1/log rho_I(f).",
+     "hypotheses": [
+      "rho_I(f) > 1",
+      "ButheSmallRangeVerified",
+      "ButheMediumRangeVerified"
+     ],
+     "locator": {
+      "source": "buthe2014",
+      "where": "Theorem 4.3, lines 354-362; proof lines 602-700"
+     },
+     "prerequisites": [
+      "target:5.3b",
+      "target:5.3c",
+      "target:5.1c",
+      "target:5.4d",
+      "target:6.3",
+      "target:6.4"
+     ],
+     "api": [],
+     "tests": []
+    },
+    {
+     "id": "5.4c",
+     "kind": "theorem",
+     "name": "prime_count_interval_lt",
+     "statement": "For real x >= 0 and y > 1, the number of primes in [x, x + y] is less than 2y/log y.",
+     "hypotheses": [
+      "y > 1"
+     ],
+     "locator": {
+      "source": "buthe2014",
+      "where": "Theorem 4.3 with f = 1"
+     },
+     "prerequisites": [
+      "target:5.4b"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "ten",
+       "kind": "computation",
+       "statement": "pi(10) = 4 < 8.69"
+      }
+     ]
+    },
+    {
+     "id": "5.5a",
+     "kind": "theorem",
+     "name": "montgomery_vaughan_sifted",
+     "statement": "For coprime k, l >= 1 and reals x >= 0, y > k there is z >= 1 such that #{n in (x, x+y] : n = l (k), no prime factor p <= z with p not | k} + pi(z) <= 2y/(phi(k) log(y/k)).",
+     "hypotheses": [
+      "y > k",
+      "gcd(k, l) = 1"
+     ],
+     "locator": {
+      "source": "montgomeryvaughan1973",
+      "where": "proof of Theorem 2, display (3.3) and Lemma 10, as described in ramareviswanadham2021 lines 660-666"
+     },
+     "prerequisites": [
+      "roadmap:SieveMethodsAndPrimePatterns §2.9",
+      "target:5.1b",
+      "target:5.1d"
+     ],
+     "api": [],
+     "tests": []
+    },
+    {
+     "id": "5.5b",
+     "kind": "theorem",
+     "name": "brun_titchmarsh_mv",
+     "statement": "pi(x+y; k, l) - pi(x; k, l) <= 2y/(phi(k) log(y/k)) for coprime k, l >= 1 and reals x, y > 0 with y > k.",
+     "hypotheses": [
+      "y > k"
+     ],
+     "locator": {
+      "source": "tmeemt-art14",
+      "where": "lines 79-87 (montgomeryvaughan1973 Theorem 2)"
+     },
+     "prerequisites": [
+      "target:5.5a"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "k1",
+       "kind": "computation",
+       "statement": "pi(10) = 4 <= 8.69"
+      },
+      {
+       "name": "k3",
+       "kind": "computation",
+       "statement": "3 <= 13.03 for k = 3, l = 1, y = 30"
+      }
+     ]
+    },
+    {
+     "id": "5.5c",
+     "kind": "theorem",
+     "name": "ramare_viswanadham_lemma14",
+     "statement": "For reals A >= B > d >= 1, d integer, a coprime to d: sum_{A<m<=A+B, m = a (d)} Lambda(m)/log m <= 2B/(phi(d) log(B/d)).",
+     "hypotheses": [
+      "A >= B > d >= 1"
+     ],
+     "locator": {
+      "source": "ramareviswanadham2021",
+      "where": "Lemma 14, lines 650-666; tmeemt-art14 lines 97-104"
+     },
+     "prerequisites": [
+      "target:5.5a",
+      "mathlib:ArithmeticFunction.vonMangoldt"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "A_lt_B",
+       "kind": "non-example",
+       "statement": "A = 1, B = 7: three powers of 2 in (1,8]; the reduction fails"
+      }
+     ]
+    },
+    {
+     "id": "5.5d",
+     "kind": "theorem",
+     "name": "ramare_viswanadham_lemma15",
+     "statement": "For q >= 1, a coprime to q, M >= max(121, q^3): sum_{M<m<=2M, m = a (q)} Lambda(m) <= 3(1 + log 2/log M) M/phi(q) <= (7/2) M/phi(q), containing the source's (9/2).",
+     "hypotheses": [
+      "M >= max(121, q^3)"
+     ],
+     "locator": {
+      "source": "ramareviswanadham2021",
+      "where": "Lemma 15, lines 667-679; tmeemt-art14 lines 106-111"
+     },
+     "prerequisites": [
+      "target:5.5c"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "M121",
+       "kind": "computation",
+       "statement": "3(1 + 0.1445) = 3.434 <= 3.5"
+      }
+     ]
+    },
+    {
+     "id": "5.6",
+     "kind": "theorem",
+     "name": "fan_rough_numbers",
+     "statement": "For 1 < z <= x: Phi(x,z) < x/log z; for z >= max(3, sqrt x): Phi(x,z) < x/log z - x/(2 log^2 z); for max(2, x^{2/5}) <= z <= sqrt x: Phi(x,z) < 2x/(3 log z).",
+     "hypotheses": [
+      "1 < z <= x",
+      "RosserSchoenfeldFiniteRangeInput",
+      "FanFiniteRange"
+     ],
+     "locator": {
+      "source": "fan2022",
+      "where": "Theorem, (4)-(6), lines 157-163; proof lines 164-330"
+     },
+     "prerequisites": [
+      "roadmap:SieveMethodsAndPrimePatterns §2.9",
+      "roadmap:AnalyticNumberTheoryPartI §0.5",
+      "roadmap:AnalyticNumberTheoryPartI §0.19",
+      "roadmap:AnalyticNumberTheoryPartI §0.20",
+      "target:5.1d",
+      "target:6.5"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "x9",
+       "kind": "computation",
+       "statement": "Phi(9,3) = 3 < 4.46"
+      },
+      {
+       "name": "x32",
+       "kind": "computation",
+       "statement": "Phi(32,4) = 11 < 15.4"
+      },
+      {
+       "name": "z1",
+       "kind": "non-example",
+       "statement": "z = 1 is excluded: log 1 = 0"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "key": "6",
+   "title": "computational hypotheses",
+   "targets": [
+    {
+     "id": "6.1",
+     "kind": "definition",
+     "name": "LapkovaSmallModuliVerified",
+     "statement": "For every 2 <= q <= 25 and every primitive chi mod q, M_chi is at most the bound of 3.5a for its parity.",
+     "hypotheses": [],
+     "locator": {
+      "source": "lapkova2018",
+      "where": "proof of Lemma 3A, lines 291-408"
+     },
+     "prerequisites": [],
+     "api": [],
+     "tests": [
+      {
+       "name": "q3",
+       "kind": "computation",
+       "statement": "1 <= 2.75"
+      },
+      {
+       "name": "q5",
+       "kind": "computation",
+       "statement": "2 <= 4.51"
+      },
+      {
+       "name": "range",
+       "kind": "non-example",
+       "statement": "a version for all q would contain the conclusion of 3.5a"
+      }
+     ]
+    },
+    {
+     "id": "6.2",
+     "kind": "definition",
+     "name": "MVDiagonalFiniteRange",
+     "statement": "For every real 6 <= z < 10^9, S(z) >= log z + 1.07.",
+     "hypotheses": [],
+     "locator": {
+      "source": "montgomeryvaughan1973",
+      "where": "Lemma 7 (finite part); fan2022 lines 185-187"
+     },
+     "prerequisites": [],
+     "api": [],
+     "tests": [
+      {
+       "name": "z6",
+       "kind": "computation",
+       "statement": "margin 0.388 at z = 6"
+      },
+      {
+       "name": "below6",
+       "kind": "non-example",
+       "statement": "fails just below 6"
+      },
+      {
+       "name": "step",
+       "kind": "characterisation",
+       "statement": "equivalent to the left limits at squarefree jumps"
+      }
+     ]
+    },
+    {
+     "id": "6.3",
+     "kind": "definition",
+     "name": "ButheSmallRangeVerified",
+     "statement": "For every real 1 < Y < 20000 there is z >= 1 with Y prod_{p<=z}(1 - 1/p) + 2^{pi(z)} + pi(z) < 2Y/log Y.",
+     "hypotheses": [],
+     "locator": {
+      "source": "buthe2014",
+      "where": "lines 633-649"
+     },
+     "prerequisites": [],
+     "api": [],
+     "tests": [
+      {
+       "name": "Y100",
+       "kind": "computation",
+       "statement": "z = 7: 42.86 < 43.43"
+      },
+      {
+       "name": "Y1.5",
+       "kind": "computation",
+       "statement": "z = 1: 2.5 < 7.40"
+      },
+      {
+       "name": "Y20",
+       "kind": "computation",
+       "statement": "z = 2: 13 < 13.35, while z = 7 fails"
+      }
+     ]
+    },
+    {
+     "id": "6.4",
+     "kind": "definition",
+     "name": "ButheMediumRangeVerified",
+     "statement": "For every real 20000 <= Y <= 4*10^18 there is z >= 1 with Y/S(z) + H_1(z)^2/S(z)^2 + pi(z) < 2Y/log Y.",
+     "hypotheses": [],
+     "locator": {
+      "source": "buthe2014",
+      "where": "lines 650-700"
+     },
+     "prerequisites": [],
+     "api": [],
+     "tests": [
+      {
+       "name": "concavity",
+       "kind": "characterisation",
+       "statement": "for fixed z the condition propagates between checked endpoints"
+      },
+      {
+       "name": "Y20000",
+       "kind": "computation",
+       "statement": "right side 4039.0; z = 1 gives Y + 1 > 4039"
+      },
+      {
+       "name": "upper",
+       "kind": "degenerate",
+       "statement": "nothing is claimed above 4*10^18"
+      }
+     ]
+    },
+    {
+     "id": "6.5",
+     "kind": "definition",
+     "name": "FanFiniteRange",
+     "statement": "Inequalities (4), (5), (6) of 5.6 for every real x < 2*10^6 and z in their ranges.",
+     "hypotheses": [],
+     "locator": {
+      "source": "fan2022",
+      "where": "lines 290-292"
+     },
+     "prerequisites": [],
+     "api": [],
+     "tests": [
+      {
+       "name": "x9",
+       "kind": "computation",
+       "statement": "3 < 4.46"
+      },
+      {
+       "name": "x32",
+       "kind": "computation",
+       "statement": "11 < 15.4"
+      },
+      {
+       "name": "finite",
+       "kind": "characterisation",
+       "statement": "Phi is constant in z between primes and the right sides decrease"
+      }
+     ]
+    },
+    {
+     "id": "6.6",
+     "kind": "definition",
+     "name": "McGownTableCertificate",
+     "statement": "For r in 2..15 with C0(r) = (12(2r-1)(4r-1))^{1/(2r)}/(1 - 2*11^{-(1-1/r)}): C0(r) < C(r) and C0(r)^r (2*10^4)^{1/4-1/(4r)} (log(2*10^4))^{1/2} >= 528 r.",
+     "hypotheses": [],
+     "locator": {
+      "source": "mcgown2012",
+      "where": "proof of Theorem A.1, line 1433"
+     },
+     "prerequisites": [],
+     "api": [],
+     "tests": [
+      {
+       "name": "r2",
+       "kind": "computation",
+       "statement": "C0(2) = 3.98428/0.396977 = 10.03655 < 10.0366"
+      },
+      {
+       "name": "r3_r8",
+       "kind": "computation",
+       "statement": "C0(3) = 4.95382 < 4.9539; tightest row r = 8: C0(8) = 2.272099 < 2.2721"
+      },
+      {
+       "name": "A1",
+       "kind": "computation",
+       "statement": "1093 >= 1056 at r = 2"
+      }
+     ]
+    },
+    {
+     "id": "6.7",
+     "kind": "definition",
+     "name": "TrevinoTable1Certificate",
+     "statement": "For each row of Table 1 with (k, c1') from Table 5 and every real p >= p0: A >= 29, c1' < c1, positive denominator, and the right side of (46)/(47) at the stated A, B, s is at most c1. An inequality between explicit functions of p on [p0, infinity), not a finite verification.",
+     "hypotheses": [],
+     "locator": {
+      "source": "trevino2015",
+      "where": "displays (46)-(47), lines 889-941; Tables 1, 4, 5"
+     },
+     "prerequisites": [],
+     "api": [],
+     "tests": [
+      {
+       "name": "table4",
+       "kind": "compatibility",
+       "statement": "least admissible 2.68289 < 2.7381 at r = 2, 10^7"
+      },
+      {
+       "name": "A_value",
+       "kind": "computation",
+       "statement": "A = 40.3 >= 29 at p = 10^7, r = 2"
+      },
+      {
+       "name": "monotone",
+       "kind": "characterisation",
+       "statement": "(46)-(47) decrease in A and B"
+      },
+      {
+       "name": "r2_reduces_to_p0",
+       "kind": "computation",
+       "statement": "at r = 2, p = 10^7 the right side of (46) is 2.73807 <= 2.7381; the bracket of (46) has derivative (1 - 3u/8 - 2 log(1.85 k u))/(k u^3) < 0 for u = log p >= 16, k >= 1/30 (numerator -5.03 at log 10^7, k = 1/30)"
+      }
+     ]
+    },
+    {
+     "id": "6.8",
+     "kind": "definition",
+     "name": "TrevinoTable3Certificate",
+     "statement": "The analogue of 6.7 for Table 3 with (k, c2') from Table 7, displays (58)-(59) and floor A >= 30, for every real p >= p0.",
+     "hypotheses": [],
+     "locator": {
+      "source": "trevino2015",
+      "where": "displays (58)-(59), lines 1218-1265; Tables 3, 6, 7"
+     },
+     "prerequisites": [],
+     "api": [],
+     "tests": [
+      {
+       "name": "table6",
+       "kind": "compatibility",
+       "statement": "least admissible 2.78392 < 3.6529"
+      },
+      {
+       "name": "k_range",
+       "kind": "computation",
+       "statement": "k = 0.124 < 1/8 at r = 2"
+      },
+      {
+       "name": "scope",
+       "kind": "non-example",
+       "statement": "Corollary 2 does not use this certificate"
+      },
+      {
+       "name": "bracket_not_monotone",
+       "kind": "non-example",
+       "statement": "r = 10, p0 = 10^10 (k = 0.054, c2' = 1.579, s = 15.91): the bracket of (59) rises from 4.7426 to 4.8535 at p = 10^23.3 since c sqrt(log p0) = 1.080 < sqrt e; the whole right side still falls from 1.57930 to 1.51537, a property of the row"
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "suppliers": [
+  {
+   "roadmap": "SieveMethodsAndPrimePatterns",
+   "sections": [
+    "§1.3",
+    "§2.9"
+   ],
+   "what": "Selberg's optimal weights on the native BoundingSieve (5.3b); the large sieve for forbidden residues J(Q)|sum a_n|^2 <= (H - 1 + Q^2) sum |a_n|^2 (5.5a, 5.6)"
+  },
+  {
+   "roadmap": "CharacterSumsOverFiniteFields",
+   "sections": [
+    "§4.7"
+   ],
+   "what": "Weil's bound |sum_x chi(f(x))| <= (m - 1) sqrt q for f not a constant times a d-th power (4.1b)"
+  },
+  {
+   "roadmap": "AnalyticNumberTheoryPartI",
+   "sections": [
+    "§0.5",
+    "§0.19",
+    "§0.20"
+   ],
+   "what": "Rosser-Schoenfeld bounds for pi(x), sum 1/p and sum log p/p at arguments >= 319 (5.6); the lower bound pi(A) > A/log A for A >= 59 in McGown's route (4.4)"
+  }
+ ],
+ "consumers": [
+  {
+   "roadmap": "ExplicitZetaBounds",
+   "what": "derivative tests (Layer 1) and Polya-Vinogradov constants (Layer 3)"
+  },
+  {
+   "roadmap": "ExplicitPrimeCounting",
+   "what": "Brun-Titchmarsh inequalities and Ramare-Viswanadham sums (5.4, 5.5)"
+  },
+  {
+   "roadmap": "ExplicitNumberFields",
+   "what": "Burgess inequalities (Layer 4) and Polya-Vinogradov (Layer 3)"
+  },
+  {
+   "roadmap": "ExplicitMultiplicativeFunctions",
+   "what": "Fan's bound (5.6) and Greaves's density sum (5.2)"
+  },
+  {
+   "roadmap": "ProbabilisticAndMetricNumberTheory",
+   "what": "the finite van der Corput inequality (0.3) for its §2.5"
+  }
+ ],
+ "gaps": []
+}

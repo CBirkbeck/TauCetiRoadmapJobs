@@ -12,3 +12,56 @@ locator = "(1)"
 licence_class = "none"
 status = "waived"
 resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/5044#issuecomment-6632668140"
+
+[[source]]
+id = "kawauchi-kojima1980"
+authors = "Akio Kawauchi, Sadayoshi Kojima"
+title = "Algebraic classification of linking pairings on 3-manifolds"
+year = 1980
+venue = "Mathematische Annalen 253"
+doi = "10.1007/bf01457818"
+locator_scheme = "page"
+locator = "pp. 29-42"
+url = "https://doi.org/10.1007/bf01457818"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["1G"]
+
+[[source]]
+id = "voight2023"
+authors = "John Voight"
+title = "Kneser's method of neighbors"
+year = 2023
+arxiv = "2308.11566v1"
+locator_scheme = "theorem"
+locator = "Definition 3.10, Lemma 3.12, Proposition 3.13"
+url = "https://arxiv.org/abs/2308.11566v1"
+fetched_from = "https://arxiv.org/pdf/2308.11566v1"
+fetched_at = "2026-11-05T09:21:46Z"
+sha256 = "6662b395e1e9d7ce84db443676fa7af104cc643f39ff2a3419533d1726aadc9d"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-05"
+version_note = "arXiv v1"
+cited_for = ["4G"]
+
+[[source]]
+id = "boya-sudarshan-tilma2003"
+authors = "Luis J. Boya, E. C. G. Sudarshan, Todd Tilma"
+title = "Volumes of Compact Manifolds"
+year = 2002
+venue = "Rep. Math. Phys. 52, 3 (2003) 401-422"
+doi = "10.1016/S0034-4877(03)80038-1"
+arxiv = "math-ph/0210033v3"
+locator_scheme = "section"
+locator = "§6, equations (6.1)–(6.5) and (6.9)"
+url = "https://arxiv.org/abs/math-ph/0210033v3"
+fetched_from = "https://arxiv.org/pdf/math-ph/0210033v3"
+fetched_at = "2026-11-05T09:23:08Z"
+sha256 = "54753343ec485c39cc85ff918bcaa9306588ddeb6586466a7d03394f8d8e0482"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-05"
+version_note = "arXiv v3"
+cited_for = ["7E"]

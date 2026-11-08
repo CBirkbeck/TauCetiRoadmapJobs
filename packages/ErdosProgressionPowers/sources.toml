@@ -77,3 +77,38 @@ locator = "Bound (36), as cited in BS20 §9, Theorem 8"
 licence_class = "none"
 status = "waived"
 resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/65#issuecomment-6306906253"
+
+[[source]]
+id = "OpenAI2026"
+authors = "OpenAI"
+title = "Uniform exclusion of Landau–Siegel zeros"
+year = 2026
+locator_scheme = "theorem"
+locator = "Theorem 1"
+url = "https://raw.githubusercontent.com/openai/math/main/preprints/Uniform-exclusion-of-Landau-Siegel-zeros-October-1-2026/paper.pdf"
+fetched_from = "https://raw.githubusercontent.com/openai/math/main/preprints/Uniform-exclusion-of-Landau-Siegel-zeros-October-1-2026/paper.pdf"
+fetched_at = "2026-11-07T15:35:21Z"
+sha256 = "fab9f6e84ece2a37d834b2c031d8eb14e81413d9f6270791e7b5468b295214ef"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-07"
+version_note = "OpenAI mathematics release of 1 October 2026 (repository openai/math); Theorem 1 numbering is that of this version"
+cited_for = ["AnalyticNumberTheoryPartI contract; references"]
+
+[[source]]
+id = "Platt2013v1"
+authors = "David J. Platt"
+title = "Numerical Computations Concerning the GRH"
+year = 2013
+arxiv = "1305.3087v1"
+locator_scheme = "theorem"
+locator = "Theorem 7.1"
+url = "https://arxiv.org/abs/1305.3087v1"
+fetched_from = "https://arxiv.org/pdf/1305.3087v1"
+fetched_at = "2026-11-08T15:16:57Z"
+sha256 = "8fd109aa21345bc3feac4fde2faa7dfb51b4ef1fc9a430f643323612a39ef417"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-08"
+version_note = "arXiv v1"
+cited_for = ["Exact supplier contracts, From TauCetiRoadmap.ExplicitZetaBounds; References"]

@@ -1,0 +1,620 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "RelativisticQuantumFieldTheory"
+
+[[source]]
+id = "dang14"
+authors = "Nguyen Viet Dang"
+title = "The extension of distributions on manifolds, a microlocal approach"
+year = 2014
+arxiv = "1412.2808v1"
+locator_scheme = "theorem"
+locator = "Theorem 3.4"
+url = "https://arxiv.org/abs/1412.2808v1"
+fetched_from = "https://arxiv.org/pdf/1412.2808v1"
+fetched_at = "2026-11-05T12:37:06Z"
+sha256 = "0a6e464cc9edeec43d725b5d550e82c5798dbe60e769c9ed4095cc53946f7b6a"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-05"
+version_note = "arXiv v1"
+cited_for = ["RQFT6.ControlledExtension"]
+
+[[source]]
+id = "borcherds-qft"
+authors = "Richard E. Borcherds"
+title = "Quantum field theory, handwritten course notes"
+year = 2002
+arxiv = "math-ph/0204014v1"
+locator_scheme = "page"
+locator = "pp. 1-121"
+url = "https://arxiv.org/abs/math-ph/0204014v1"
+fetched_from = "https://arxiv.org/pdf/math-ph/0204014v1"
+fetched_at = "2026-11-07T19:52:42Z"
+sha256 = "6ac0ae08a7c37cd4f2df7b424f0308ca4f1f76cd55ec46996f68fb65f04d0fe9"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-07"
+version_note = "arXiv v1"
+resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/6166#issuecomment-6712166014"
+
+[[source]]
+id = "unsw-qft"
+authors = "UNSW course"
+title = "Relativistic quantum field theory, course notes"
+locator_scheme = "page"
+locator = "pp. 1-62"
+licence_class = "none"
+status = "waived"
+resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/6166#issuecomment-6712166014"
+
+[[source]]
+id = "bgp08"
+authors = "Christian Baer, Nicolas Ginoux, Frank Pfaeffle"
+title = "Wave Equations on Lorentzian Manifolds and Quantization"
+year = 2008
+venue = "ESI Lectures in Mathematics and Physics, European Mathematical Society Publishing House, ISBN 978-3-03719-037-1, March 2007, Softcover"
+arxiv = "0806.1036v1"
+locator_scheme = "theorem"
+locator = "Theorem 3.1.1, Definition 3.4.1, Corollary 3.4.3"
+url = "https://arxiv.org/abs/0806.1036v1"
+fetched_from = "https://arxiv.org/pdf/0806.1036v1"
+fetched_at = "2026-11-08T03:29:18Z"
+sha256 = "9f478e6fc4c68bf02d547fd2b967d3542d144ba3fab2e2ac8497b70e3243e2fb"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-08"
+version_note = "arXiv v1"
+cited_for = ["Layer 1"]
+
+[[source]]
+id = "bf00"
+authors = "Romeo Brunetti, Klaus Fredenhagen"
+title = "Microlocal analysis and interacting quantum field theories: renormalization on physical backgrounds"
+year = 2000
+arxiv = "math-ph/9903028"
+locator_scheme = "theorem"
+locator = "Theorems 5.2-5.3, §5.1, §6"
+url = "https://arxiv.org/abs/math-ph/9903028"
+fetched_from = "https://arxiv.org/pdf/math-ph/9903028"
+fetched_at = "2026-11-08T03:30:20Z"
+sha256 = "13a89d767b72c667c5009b77d276cea342a0939db85e944cd0bd819b3df07da0"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-08"
+version_note = "arXiv, latest version"
+cited_for = ["Layer 6"]
+
+[[source]]
+id = "ck00"
+authors = "Alain Connes, Dirk Kreimer"
+title = "Renormalization in quantum field theory and the Riemann-Hilbert problem I: the Hopf algebra structure of graphs and the main theorem"
+year = 2000
+arxiv = "hep-th/9912092"
+locator_scheme = "section"
+locator = "§2 (equation 6, Theorem 1), §3"
+url = "https://arxiv.org/abs/hep-th/9912092"
+fetched_from = "https://arxiv.org/pdf/hep-th/9912092"
+fetched_at = "2026-11-08T03:31:22Z"
+sha256 = "835066d0ea99b2d90e435d66872dea221ce61185875d6dcfdb9a4776d29ab5eb"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-08"
+version_note = "arXiv, latest version"
+cited_for = ["Layer 6"]
+
+[[source]]
+id = "bostelmann05"
+authors = "Henning Bostelmann"
+title = "Phase space properties and the short distance structure in quantum field theory"
+year = 2005
+arxiv = "math-ph/0409070"
+locator_scheme = "equation"
+locator = "(2.1)-(2.6), Theorems 3.3, 3.6, 4.3, (4.6)-(4.8)"
+url = "https://arxiv.org/abs/math-ph/0409070"
+fetched_from = "https://arxiv.org/pdf/math-ph/0409070"
+fetched_at = "2026-11-08T03:32:25Z"
+sha256 = "b13cc65f544d132518b2e73d5e7d79f2bf86805bd3b4b195d4765e14b5b1cf6f"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-08"
+version_note = "arXiv, latest version"
+cited_for = ["Layer 4"]
+
+[[source]]
+id = "fr19"
+authors = "Christopher J. Fewster, Kasia Rejzner"
+title = "Algebraic quantum field theory - an introduction"
+year = 2019
+arxiv = "1904.04051"
+locator_scheme = "section"
+locator = "§4.3, Appendix C"
+url = "https://arxiv.org/abs/1904.04051"
+fetched_from = "https://arxiv.org/pdf/1904.04051"
+fetched_at = "2026-11-08T03:32:46Z"
+sha256 = "304eb17e60b44848a2f00e751d0243ae106878eef7cba8625651550a25565d16"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-08"
+version_note = "arXiv, latest version"
+cited_for = ["Layer 1"]
+
+[[source]]
+id = "donoghue94"
+authors = "John F. Donoghue"
+title = "General relativity as an effective field theory: the leading quantum corrections"
+year = 1994
+arxiv = "gr-qc/9405057"
+locator_scheme = "section"
+locator = "§2"
+url = "https://arxiv.org/abs/gr-qc/9405057"
+fetched_from = "https://arxiv.org/pdf/gr-qc/9405057"
+fetched_at = "2026-11-08T03:33:33Z"
+sha256 = "be1e209adcea4c6e3c462f694db972901ee9ddfa916618987b911ebd2773a4f5"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-08"
+version_note = "arXiv, latest version"
+cited_for = ["Layer 11"]
+
+[[source]]
+id = "donoghue22"
+authors = "John F. Donoghue"
+title = "Quantum general relativity and effective field theory"
+year = 2022
+arxiv = "2211.09902"
+locator_scheme = "section"
+locator = "§4"
+url = "https://arxiv.org/abs/2211.09902"
+fetched_from = "https://arxiv.org/pdf/2211.09902"
+fetched_at = "2026-11-08T03:34:37Z"
+sha256 = "9ee7f2c24771316678110af7e4aad38b3826c97d391600397cff4fcd9fbcab85"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-08"
+version_note = "arXiv, latest version"
+cited_for = ["Layer 11"]
+
+[[source]]
+id = "cdr01"
+authors = "Roberto Conti, Sergio Doplicher, John E. Roberts"
+title = "Superselection theory for subsystems"
+year = 2001
+arxiv = "math/0001139"
+locator_scheme = "section"
+locator = "§2-§3"
+url = "https://arxiv.org/abs/math/0001139"
+fetched_from = "https://arxiv.org/pdf/math/0001139"
+fetched_at = "2026-11-08T03:35:26Z"
+sha256 = "9fc61b8c1413c1451b3cd635dbb992bf27df98cd334f0c04fc0df2bc71c036ca"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-08"
+version_note = "arXiv, latest version"
+cited_for = ["Layer 4"]
+
+[[source]]
+id = "strocchi23"
+authors = "Franco Strocchi"
+title = "Gauss law, gauge symmetry breaking and the Higgs mechanism"
+year = 2023
+arxiv = "2301.06543"
+locator_scheme = "section"
+locator = "§2"
+url = "https://arxiv.org/abs/2301.06543"
+fetched_from = "https://arxiv.org/pdf/2301.06543"
+fetched_at = "2026-11-08T03:35:44Z"
+sha256 = "30d600325bc329b930466ebd839c0eb3ffc5197cd41290a68f2600111f7cc8ea"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-08"
+version_note = "arXiv, latest version"
+cited_for = ["Layer 4"]
+
+[[source]]
+id = "greenberg03"
+authors = "O. W. Greenberg"
+title = "Why is CPT fundamental?"
+year = 2003
+arxiv = "hep-ph/0309309"
+locator_scheme = "section"
+locator = "§5, equations (17)-(28)"
+url = "https://arxiv.org/abs/hep-ph/0309309"
+fetched_from = "https://arxiv.org/pdf/hep-ph/0309309"
+fetched_at = "2026-11-08T03:36:24Z"
+sha256 = "a8f8f7253946dfa30b6696b5ecf9aad48c36d93bc050b1d6258c5006f912521b"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-08"
+version_note = "arXiv, latest version"
+cited_for = ["Layer 4"]
+
+[[source]]
+id = "by01"
+authors = "Hans-Jürgen Borchers, Jakob Yngvason"
+title = "On the PCT-theorem in the theory of local observables"
+year = 2001
+arxiv = "math-ph/0012020"
+locator_scheme = "section"
+locator = "§2.1, (2.3)"
+url = "https://arxiv.org/abs/math-ph/0012020"
+fetched_from = "https://arxiv.org/pdf/math-ph/0012020"
+fetched_at = "2026-11-08T03:37:27Z"
+sha256 = "4595daeae49e80d5b3e546127a3d6dbc9c2c1740ab01880a513c3a939893a86b"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-08"
+version_note = "arXiv, latest version"
+cited_for = ["Layer 4"]
+
+[[source]]
+id = "fewster16"
+authors = "Christopher J. Fewster"
+title = "The split property for quantum field theories in flat and curved spacetimes"
+year = 2016
+arxiv = "1603.01036"
+locator_scheme = "section"
+locator = "§3.1, equations (16)-(22)"
+url = "https://arxiv.org/abs/1603.01036"
+fetched_from = "https://arxiv.org/pdf/1603.01036"
+fetched_at = "2026-11-08T03:38:30Z"
+sha256 = "8636bb106fb67838ddc2d30a4999f3ea27ad73ec8942271ff4c697e5838acd24"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-08"
+version_note = "arXiv, latest version"
+cited_for = ["Layer 4"]
+
+[[source]]
+id = "hw01"
+authors = "Stefan Hollands, Robert M. Wald"
+title = "Existence of local covariant time ordered products of quantum fields in curved spacetime"
+year = 2002
+arxiv = "gr-qc/0111108"
+locator_scheme = "theorem"
+locator = "Lemma 4.1, equations (70)-(75)"
+url = "https://arxiv.org/abs/gr-qc/0111108"
+fetched_from = "https://arxiv.org/pdf/gr-qc/0111108"
+fetched_at = "2026-11-08T03:39:20Z"
+sha256 = "a09fbe7200f9f9b2ea7772ec23e09165a2d5f224da3c3ebf760d6f453ba0ce39"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-08"
+version_note = "arXiv, latest version"
+cited_for = ["Layer 6"]
+
+[[source]]
+id = "bbk09"
+authors = "Christoph Bergbauer, Romeo Brunetti, Dirk Kreimer"
+title = "Renormalization and resolution of singularities"
+year = 2009
+arxiv = "0908.0633"
+locator_scheme = "section"
+locator = "§2, §4, §6"
+url = "https://arxiv.org/abs/0908.0633"
+fetched_from = "https://arxiv.org/pdf/0908.0633"
+fetched_at = "2026-11-08T03:39:26Z"
+sha256 = "6dbcb14a4533c42b895e83eaa04b45297eb511126884ce30eee2e46a48a041be"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-08"
+version_note = "arXiv, latest version"
+cited_for = ["Layer 6"]
+
+[[source]]
+id = "vs08"
+authors = "Walter D. van Suijlekom"
+title = "Renormalization of gauge fields using Hopf algebras"
+year = 2008
+arxiv = "0807.0999"
+locator_scheme = "section"
+locator = "§2, §4"
+url = "https://arxiv.org/abs/0807.0999"
+fetched_from = "https://arxiv.org/pdf/0807.0999"
+fetched_at = "2026-11-08T03:39:32Z"
+sha256 = "144732b3b398729fb372c601f6e37f16c8b69b11aa2cf5cc6167e5bcec0e184f"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-08"
+version_note = "arXiv, latest version"
+cited_for = ["Layer 6"]
+
+[[source]]
+id = "dybalski05"
+authors = "Wojciech Dybalski"
+title = "Haag-Ruelle scattering theory in presence of massless particles"
+year = 2005
+arxiv = "hep-th/0412226"
+locator_scheme = "theorem"
+locator = "§1, Lemmas 2.1-2.2, Theorem 1.1"
+url = "https://arxiv.org/abs/hep-th/0412226"
+fetched_from = "https://arxiv.org/pdf/hep-th/0412226"
+fetched_at = "2026-11-08T03:41:49Z"
+sha256 = "3c616a4d6c8b52793bb669387a237de31ee66417450ddc5f29b7c93ece7b534d"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-08"
+version_note = "arXiv, latest version"
+cited_for = ["Layer 8"]
+
+[[source]]
+id = "collins19"
+authors = "John Collins"
+title = "A new and complete proof of the LSZ reduction formula"
+year = 2019
+arxiv = "1904.10923"
+locator_scheme = "section"
+locator = "§VIII-§XII, §XIV"
+url = "https://arxiv.org/abs/1904.10923"
+fetched_from = "https://arxiv.org/pdf/1904.10923"
+fetched_at = "2026-11-08T03:41:53Z"
+sha256 = "ad0024e1f9d932e74d3ca53cc6d54ee05fa134ccca39feaf1e970363b9dd82ca"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-08"
+version_note = "arXiv, latest version"
+cited_for = ["Layer 8"]
+
+[[source]]
+id = "cp17"
+authors = "Biagio Cassano, Fabio Pizzichillo"
+title = "Self-adjoint extensions for the Dirac operator with Coulomb-type spherically symmetric potentials"
+year = 2018
+arxiv = "1710.08200"
+locator_scheme = "theorem"
+locator = "Theorems 1.1-1.3, Propositions 1.7-1.8"
+url = "https://arxiv.org/abs/1710.08200"
+fetched_from = "https://arxiv.org/pdf/1710.08200"
+fetched_at = "2026-11-08T03:41:59Z"
+sha256 = "e8ef764d358779b1a28e8ff6e813d49a47323f5f1a3cdafdc42450f51d6f80da"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-08"
+version_note = "arXiv, latest version"
+cited_for = ["Layer 9"]
+
+[[source]]
+id = "bd05"
+authors = "Laurent Bruneau, Jan Dereziński"
+title = "Bogoliubov Hamiltonians and one-parameter groups of Bogoliubov transformations"
+year = 2007
+arxiv = "math-ph/0511069"
+locator_scheme = "theorem"
+locator = "§3.1, Theorem 3.2"
+url = "https://arxiv.org/abs/math-ph/0511069"
+fetched_from = "https://arxiv.org/pdf/math-ph/0511069"
+fetched_at = "2026-11-08T03:42:05Z"
+sha256 = "92155b0e9a58d3ade4a4b35962fff5e19caef45f3c5fd19537d0551d9a92d4cd"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-08"
+version_note = "arXiv, latest version"
+cited_for = ["Layer 10"]
+
+[[source]]
+id = "bm23"
+authors = "Jean-Bernard Bru, Nathan Metraud"
+title = "Fermionic Bogoliubov transformations"
+year = 2023
+arxiv = "2305.11697"
+locator_scheme = "theorem"
+locator = "Theorem 2.8"
+url = "https://arxiv.org/abs/2305.11697"
+fetched_from = "https://arxiv.org/pdf/2305.11697"
+fetched_at = "2026-11-08T03:42:39Z"
+sha256 = "1030cf2c6ea5c27d67bbaeccfd77fe92a523bc655fb289c102f9dca9c8f62196"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-08"
+version_note = "arXiv, latest version"
+cited_for = ["Layer 10"]
+
+[[source]]
+id = "lms17"
+authors = "Yiannis Loizides, Eckhard Meinrenken, Yanli Song"
+title = "Spinor modules for Hamiltonian loop group spaces"
+year = 2017
+arxiv = "1706.07493"
+locator_scheme = "theorem"
+locator = "Theorem 2.2"
+url = "https://arxiv.org/abs/1706.07493"
+fetched_from = "https://arxiv.org/pdf/1706.07493"
+fetched_at = "2026-11-08T03:42:57Z"
+sha256 = "38caa73477b08e622faac2eb3684f5b61eb27862b70b2536c51027db33bb4c39"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-08"
+version_note = "arXiv, latest version"
+cited_for = ["Layer 10"]
+
+[[source]]
+id = "tener16"
+authors = "James E. Tener"
+title = "Representation theory in chiral conformal field theory: from fields to lattices"
+year = 2016
+arxiv = "1608.02095"
+locator_scheme = "theorem"
+locator = "Definition 2.12, Theorem 2.13"
+url = "https://arxiv.org/abs/1608.02095"
+fetched_from = "https://arxiv.org/pdf/1608.02095"
+fetched_at = "2026-11-08T03:43:16Z"
+sha256 = "400c3344286860c807816010807feacb4c1ea15b215c8d8865e170d88dfaff35"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-08"
+version_note = "arXiv, latest version"
+cited_for = ["Layer 10"]
+
+[[source]]
+id = "dine-coulomb"
+authors = "Michael Dine"
+title = "Coulomb gauge quantization, lecture notes for Physics 218"
+year = 2010
+locator_scheme = "page"
+locator = "pp. 1-2"
+url = "https://scipp-legacy.pbsci.ucsc.edu/~dine/ph218/218_coulomb_gauge.pdf"
+fetched_from = "https://scipp-legacy.pbsci.ucsc.edu/~dine/ph218/218_coulomb_gauge.pdf"
+fetched_at = "2026-11-08T03:43:52Z"
+sha256 = "09902a872040b6c5b5fde3d5dda0802b93cc75cb9decdac9ad0605ea5c9c8e2a"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-08"
+cited_for = ["Layer 9"]
+
+[[source]]
+id = "os75"
+authors = "Konrad Osterwalder, Robert Schrader"
+title = "Axioms for Euclidean Green's functions II"
+year = 1975
+locator_scheme = "section"
+locator = "§II (2.1) p. 284, §IV.1 (4.1), (4.3) p. 287"
+url = "https://projecteuclid.org/journals/communications-in-mathematical-physics/volume-42/issue-3/Axioms-for-Euclidean-Greens-functions-II/cmp/1103899050.full"
+fetched_from = "https://projecteuclid.org/journals/communications-in-mathematical-physics/volume-42/issue-3/Axioms-for-Euclidean-Greens-functions-II/cmp/1103899050.full"
+fetched_at = "2026-11-08T03:52:38Z"
+sha256 = "b6013daa2d30226df3a2686ef9e1f7c2bc1e92d6bc8bd19a62d2d15ba029068a"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-08"
+cited_for = ["Layer 7"]
+
+[[source]]
+id = "eg73"
+authors = "Henri Epstein, Vladimir Glaser"
+title = "The role of locality in perturbation theory"
+year = 1973
+locator_scheme = "page"
+locator = "Ann. Inst. H. Poincaré A 19 (1973) 211-295"
+url = "http://www.numdam.org/item/AIHPA_1973__19_3_211_0/"
+fetched_from = "https://www.numdam.org/item/AIHPA_1973__19_3_211_0.pdf"
+fetched_at = "2026-11-08T03:53:25Z"
+sha256 = "802fed39964067ebc04e950ab4edde9b557757811156ee57fcb61a2939507908"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-08"
+cited_for = ["Layer 6"]
+
+[[source]]
+id = "dlmf"
+authors = "NIST Digital Library of Mathematical Functions"
+title = "DLMF, Chapter 10 Bessel functions, equation 10.31.2"
+year = 2024
+locator_scheme = "equation"
+locator = "10.31.2"
+url = "https://dlmf.nist.gov/10.31.E2"
+fetched_from = "https://dlmf.nist.gov/10.31#E2"
+fetched_at = "2026-11-08T03:54:11Z"
+sha256 = "6d740436454bc3a2f1a361c0dac4e2eb92e0c8f2bcbab78bd983df5ecef211af"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-11-08"
+cited_for = ["Layer 7"]
+
+[[source]]
+id = "strocchi67"
+authors = "Franco Strocchi"
+title = "Gauge problem in quantum field theory"
+year = 1967
+doi = "10.1103/PhysRev.162.1429"
+locator_scheme = "section"
+locator = "§II, pp. 1431-1433"
+licence_class = "none"
+status = "uncertified"
+note = "Phys. Rev. 162 (1967) 1429; paywalled (APS), cited by its locator"
+cited_for = ["Layer 4"]
+
+[[source]]
+id = "strocchi70"
+authors = "Franco Strocchi"
+title = "Gauge problem in quantum field theory. III. Quantization of Maxwell equations and weak local commutativity"
+year = 1970
+doi = "10.1103/PhysRevD.2.2334"
+locator_scheme = "section"
+locator = "§II-§III, pp. 2334-2336; §V, pp. 2338-2339"
+licence_class = "none"
+status = "uncertified"
+note = "Phys. Rev. D 2 (1970) 2334; paywalled (APS), cited by its locator"
+cited_for = ["Layer 4"]
+
+[[source]]
+id = "tong-qft"
+authors = "David Tong"
+title = "Quantum field theory, lecture notes"
+year = 2007
+url = "https://www.damtp.cam.ac.uk/user/tong/qft/qfthtml/S3.html"
+locator_scheme = "section"
+locator = "§3"
+licence_class = "author-page"
+status = "uncertified"
+note = "author page; the sources service could not verify the host certificate, cited by its locator"
+cited_for = ["Layer 6"]
+
+[[source]]
+id = "sw64"
+authors = "Raymond F. Streater, Arthur S. Wightman"
+title = "PCT, Spin and Statistics, and All That"
+year = 1964
+locator_scheme = "chapter"
+locator = "Chapters 2-4"
+licence_class = "none"
+status = "uncertified"
+note = "book (Benjamin 1964, Princeton 2000); cited by its locator"
+cited_for = ["Layer 4"]
+
+[[source]]
+id = "haag96"
+authors = "Rudolf Haag"
+title = "Local Quantum Physics: Fields, Particles, Algebras"
+year = 1996
+locator_scheme = "chapter"
+locator = "Chapters III, IV, VI"
+licence_class = "none"
+status = "uncertified"
+note = "book (Springer, 2nd edition 1996); cited by its locator"
+cited_for = ["Layer 4", "Layer 8"]
+
+[[source]]
+id = "rs75"
+authors = "Michael Reed, Barry Simon"
+title = "Methods of Modern Mathematical Physics II: Fourier Analysis, Self-Adjointness"
+year = 1975
+locator_scheme = "section"
+locator = "§X.7"
+licence_class = "none"
+status = "uncertified"
+note = "book (Academic Press 1975); cited by its locator"
+cited_for = ["Layer 3", "Layer 7"]
+
+[[source]]
+id = "hormander83"
+authors = "Lars Hörmander"
+title = "The Analysis of Linear Partial Differential Operators I"
+year = 1983
+locator_scheme = "theorem"
+locator = "Theorems 8.2.4, 8.2.10"
+licence_class = "none"
+status = "uncertified"
+note = "book (Springer 1983); cited by its locator"
+cited_for = ["Layer 6"]
+
+[[source]]
+id = "bs80"
+authors = "Nikolai N. Bogoliubov, Dmitry V. Shirkov"
+title = "Introduction to the Theory of Quantized Fields"
+year = 1980
+locator_scheme = "chapter"
+locator = "perturbative conventions"
+licence_class = "none"
+status = "uncertified"
+note = "book (Wiley, 3rd edition 1980); cited by its locator"
+cited_for = ["Layer 5"]
+
+[[source]]
+id = "weinberg95"
+authors = "Steven Weinberg"
+title = "The Quantum Theory of Fields I: Foundations"
+year = 1995
+locator_scheme = "section"
+locator = "§3.4"
+licence_class = "none"
+status = "uncertified"
+note = "book (Cambridge 1995); cited by its locator"
+cited_for = ["Layer 5", "Layer 9"]

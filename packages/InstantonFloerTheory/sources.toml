@@ -1,0 +1,114 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "InstantonFloerTheory"
+
+[[source]]
+id = "km0807"
+authors = "P. B. Kronheimer, T. S. Mrowka"
+title = "Knots, sutures and excision"
+year = 2008
+arxiv = "0807.4891v2"
+locator_scheme = "section"
+locator = "§7"
+url = "https://arxiv.org/abs/0807.4891v2"
+fetched_from = "https://arxiv.org/pdf/0807.4891v2"
+fetched_at = "2026-11-07T07:51:20Z"
+sha256 = "d179aae191309d4db9254886c30a1eb338a0827056a54f409f2b751b1e2f0161"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-07"
+version_note = "arXiv v2"
+cited_for = ["IF0,IF5,IF6,IF8"]
+
+[[source]]
+id = "scaduto1401"
+authors = "Christopher W. Scaduto"
+title = "Instantons and odd Khovanov homology"
+year = 2014
+venue = "J. Topol. 8 (2015), no. 3, 744-810"
+doi = "10.1112/jtopol/jtv012"
+arxiv = "1401.2093v3"
+locator_scheme = "theorem"
+locator = "Theorem 1.3"
+url = "https://arxiv.org/abs/1401.2093v3"
+fetched_from = "https://arxiv.org/pdf/1401.2093v3"
+fetched_at = "2026-11-07T07:51:27Z"
+sha256 = "f6630a89adcd07deb712324bad6122704d185df2bdd7aa77a3412bcaea5c6c17"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-07"
+version_note = "arXiv v3"
+cited_for = ["IF7,IF7b,IF8"]
+
+[[source]]
+id = "cs1612"
+authors = "William Chen, Christopher Scaduto"
+title = "Nilpotency in instanton homology, and the framed instanton homology of a surface times a circle"
+year = 2016
+venue = "Adv. Math. 336 (2018), 377-408"
+doi = "10.1016/j.aim.2018.08.002"
+arxiv = "1612.08690v1"
+locator_scheme = "theorem"
+locator = "Theorem 1"
+url = "https://arxiv.org/abs/1612.08690v1"
+fetched_from = "https://arxiv.org/pdf/1612.08690v1"
+fetched_at = "2026-11-07T07:51:31Z"
+sha256 = "919fc719bceb807ce1a737acbaa3bf86cf7a6aa2c3c3c4e51e79014609f42045"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-07"
+version_note = "arXiv v1"
+cited_for = ["IF8"]
+
+[[source]]
+id = "froyshov9903"
+authors = "Kim A. Froyshov"
+title = "Equivariant aspects of Yang-Mills Floer theory"
+year = 1999
+arxiv = "math/9903083v3"
+locator_scheme = "theorem"
+locator = "Theorem 4"
+url = "https://arxiv.org/abs/math/9903083v3"
+fetched_from = "https://arxiv.org/pdf/math/9903083v3"
+fetched_at = "2026-11-07T07:51:37Z"
+sha256 = "05df0f593df1a0794fa545484b894c6928e4b2b40cf1c83716d30afc123d84aa"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-07"
+version_note = "arXiv v3"
+cited_for = ["IF7a"]
+
+[[source]]
+id = "dfl07032"
+authors = "Aliakbar Daemi, Kenji Fukaya, Maksim Lipyanskiy"
+title = "Lagrangians, SO(3)-instantons and the Atiyah-Floer Conjecture"
+year = 2021
+arxiv = "2109.07032v1"
+locator_scheme = "theorem"
+locator = "Theorem 1"
+url = "https://arxiv.org/abs/2109.07032v1"
+fetched_from = "https://arxiv.org/pdf/2109.07032v1"
+fetched_at = "2026-11-07T07:51:45Z"
+sha256 = "7984f34243cda268f7f0a7d0557f723a9ff80dcfee4de8f07adaa00eb3e46dcb"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-07"
+version_note = "arXiv v1"
+cited_for = ["IF9,IF10"]
+
+[[source]]
+id = "dfl07038"
+authors = "Aliakbar Daemi, Kenji Fukaya, Maksim Lipyanskiy"
+title = "Lagrangians, SO(3)-instantons and mixed equation"
+year = 2021
+arxiv = "2109.07038v1"
+locator_scheme = "section"
+locator = "§§3–5"
+url = "https://arxiv.org/abs/2109.07038v1"
+fetched_from = "https://arxiv.org/pdf/2109.07038v1"
+fetched_at = "2026-11-07T07:51:51Z"
+sha256 = "08536ba2ec64f431319c9a1d9a61c2906da6a6d9c1bf9ced646073d1a17a2c2a"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-07"
+version_note = "arXiv v1"
+cited_for = ["IF10a"]

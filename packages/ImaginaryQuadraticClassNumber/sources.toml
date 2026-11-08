@@ -1,0 +1,50 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "ImaginaryQuadraticClassNumber"
+
+[[source]]
+id = "shin2010"
+authors = "Dong Hwa Shin"
+title = "Generation of class fields by Siegel-Ramachandra invariants"
+year = 2010
+arxiv = "1009.2253v6"
+locator_scheme = "section"
+locator = "§§4–5"
+url = "https://arxiv.org/abs/1009.2253v6"
+fetched_from = "https://arxiv.org/pdf/1009.2253v6"
+fetched_at = "2026-11-08T08:38:46Z"
+sha256 = "2784a664df6f75fb284cca52c8f4f69722ccf13feb9833405a7f84aa767435e2"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-08"
+version_note = "arXiv v6"
+cited_for = ["H3.2–H3.6"]
+
+[[source]]
+id = "stark1969"
+authors = "H.M. Stark"
+title = "On the “gap” in a theorem of Heegner"
+year = 1969
+venue = "Journal of Number Theory 1"
+doi = "10.1016/0022-314X(69)90023-7"
+locator_scheme = "page"
+locator = "pp. 16–27"
+url = "https://doi.org/10.1016/0022-314X(69)90023-7"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["H3.3"]
+
+[[source]]
+id = "davenport1980"
+authors = "Harold Davenport"
+title = "Multiplicative Number Theory"
+year = 1980
+venue = "Graduate Texts in Mathematics"
+doi = "10.1007/978-1-4757-5927-3"
+locator_scheme = "chapter"
+locator = "Chapters 6 and 21"
+url = "https://doi.org/10.1007/978-1-4757-5927-3"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["H2.1–H2.4"]

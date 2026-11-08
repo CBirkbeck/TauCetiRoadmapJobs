@@ -1,0 +1,13 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-ArithmeticStatisticsPartV~4",
+  "head": "2a319eab5e7310736aeaa0bcb34820eb888223d1",
+  "pr": 1175,
+  "folder": "ArithmeticStatisticsPartV",
+  "date": "2026-11-07",
+  "findings": 5,
+  "blocking": 2,
+  "notes": "incremental re-review of 91 changed lines since afd499a. Previous R01-R03 repaired (witnesses re-resolved at the #851, #850, #1154 heads and ref90 line 510). Changed passages: the Landau-Siegel effectivity route resolved at the ANT-I (#1126) head (0.34, 0.31b .siegel_gap, 0.32 siegel_walfisz, 2.31e interfaces, 2.7) and the ANT-II (#1167) head (5.7); the new residue lower bound's mathematics verified (ℚ(√−3): κ=0.6046, c_2≤0.664; subpower and hR corollaries; quadratic-subfield threshold) but it duplicates ANT-II §5.7's owned target (P2). Sources: FK Lemma 13 (ref90 lines 606-614) versus §0.32; LOWW Remarks 2.7 and 3.3 (ref95 lines 403-419, 513-517, 925-927). Gate: worker's run build=2 FAIL (module advisory, P1), statement-hygiene=53 letI hits (P3); depcheck 0 problems; lake env lean exit 0 with 41 sorry warnings; outside-folder diff empty. Stark 1974 uncertified (paywalled)."
+ }
+}

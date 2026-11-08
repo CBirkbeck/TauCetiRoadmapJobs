@@ -13,3 +13,38 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-03"
 cited_for = ["7.4"]
+
+[[source]]
+id = "casselman2016"
+authors = "Bill Casselman"
+title = "The theorem of Dixmier & Malliavin"
+year = 2016
+version_note = "revision of 24 January 2016, as cited in the README"
+locator_scheme = "page"
+locator = "p.1"
+url = "https://personal.math.ubc.ca/~cass/research/pdf/Dixmier-Malliavin.pdf"
+fetched_from = "https://personal.math.ubc.ca/~cass/research/pdf/Dixmier-Malliavin.pdf"
+fetched_at = "2026-11-07T17:21:05Z"
+sha256 = "6f623e7e5680599f434a1e0b813e8d695e31d1f2f6ae641ae1f81bbf8a9de65b"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-07"
+cited_for = ["0", "1", "2.1", "4.1", "5.1", "6.1"]
+
+[[source]]
+id = "henkel2014"
+authors = "Timo Henkel"
+title = "An Open Mapping Theorem for rings which have a zero sequence of units"
+year = 2014
+arxiv = "1407.5647v2"
+locator_scheme = "theorem"
+locator = "Theorem 1.6"
+url = "https://arxiv.org/abs/1407.5647v2"
+fetched_from = "https://arxiv.org/pdf/1407.5647v2"
+fetched_at = "2026-11-08T05:59:27Z"
+sha256 = "accebd6f9097d18c26f687a7adb28895c32486df2f2925504223e03b4796f69a"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-08"
+version_note = "arXiv v2 (6 October 2014), the version read and cited; Theorem 1.6 p.4, Proposition 1.9 p.5, Propositions 1.10-1.12 p.6"
+cited_for = ["7.0"]

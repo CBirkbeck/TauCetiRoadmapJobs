@@ -1,0 +1,289 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "GL2ModularityLifting"
+
+[[source]]
+id = "gee-mlt"
+authors = "Toby Gee"
+title = "Modularity lifting theorems"
+year = 2022
+venue = "Ess. Number Th. 1 (2022) 73-126"
+doi = "10.2140/ent.2022.1.73"
+arxiv = "2202.05818v2"
+locator_scheme = "section"
+locator = "5.6"
+url = "https://arxiv.org/abs/2202.05818v2"
+fetched_from = "https://arxiv.org/pdf/2202.05818v2"
+fetched_at = "2026-11-07T20:51:34Z"
+sha256 = "878f83e189ad44603ac04f6c16ef17f4c4fe046db91a2f0933a192e048715ea5"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-07"
+version_note = "arXiv v2"
+cited_for = ["3.4"]
+
+[[source]]
+id = "paskunas-2adic"
+authors = "Vytautas Paskunas"
+title = "On 2-dimensional 2-adic Galois representations of local and global fields"
+year = 2015
+venue = "Algebra Number Theory 10 (2016) 1301-1358"
+doi = "10.2140/ant.2016.10.1301"
+arxiv = "1509.00332v2"
+locator_scheme = "theorem"
+locator = "Theorem 1.1"
+url = "https://arxiv.org/abs/1509.00332v2"
+fetched_from = "https://arxiv.org/pdf/1509.00332v2"
+fetched_at = "2026-11-07T20:51:40Z"
+sha256 = "727addeb49ee302052a493cf097a868a70c340286981598b5e7382fcd8f86749"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-07"
+version_note = "arXiv v2"
+cited_for = ["9.3"]
+
+[[source]]
+id = "kw2"
+locator_scheme = "section"
+locator = "7.6.2"
+url = "https://www.math.ucla.edu/~shekhar/papers/proofs.pdf"
+fetched_from = "https://www.math.ucla.edu/~shekhar/papers/proofs.pdf"
+fetched_at = "2026-11-07T20:51:45Z"
+sha256 = "53f45f8be3b3c7de19f42417920d34a809e908412826490ebed90f07c8e86ed4"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-07"
+cited_for = ["1.6"]
+
+[[source]]
+id = "pan"
+authors = "Lue Pan"
+title = "The Fontaine-Mazur conjecture in the residually reducible case"
+year = 2019
+arxiv = "1901.07166v2"
+locator_scheme = "theorem"
+locator = "Definition 4.1.4"
+url = "https://arxiv.org/abs/1901.07166v2"
+fetched_from = "https://arxiv.org/pdf/1901.07166v2"
+fetched_at = "2026-11-07T20:51:53Z"
+sha256 = "590171129d28a65749cf92b1f6099dbacaa90cc6698828f0a4dfd3da943f4824"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-07"
+version_note = "arXiv v2"
+cited_for = ["10.1"]
+
+[[source]]
+id = "dp"
+authors = "Luis Victor Dieulefait, Ariel Martín Pacetti"
+title = "A simplified proof of Serre's Conjectures"
+year = 2021
+arxiv = "2108.07577v2"
+locator_scheme = "theorem"
+locator = "Definition 1.10"
+url = "https://arxiv.org/abs/2108.07577v2"
+fetched_from = "https://arxiv.org/pdf/2108.07577v2"
+fetched_at = "2026-11-07T20:51:58Z"
+sha256 = "0c6850dafda032f7a4008947c519b5aef8cc13762207bb67c36810170a8eebe6"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-07"
+version_note = "arXiv v2"
+cited_for = ["12.6"]
+
+[[source]]
+id = "bcdt"
+locator_scheme = "theorem"
+locator = "Theorem 1.4.1"
+url = "https://virtualmath1.stanford.edu/~conrad/papers/tswfinal.pdf"
+fetched_from = "https://virtualmath1.stanford.edu/~conrad/papers/tswfinal.pdf"
+fetched_at = "2026-11-07T20:53:25Z"
+sha256 = "13043cf6e9043a69dc7988882658cd92595efc88dfd4fd2f326ac3ef3cae8e06"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-07"
+cited_for = ["5.13"]
+
+[[source]]
+id = "cdt"
+locator_scheme = "theorem"
+locator = "Theorem 5.4.2"
+url = "https://math.stanford.edu/~conrad/papers/cdtmaster.pdf"
+fetched_from = "https://math.stanford.edu/~conrad/papers/cdtmaster.pdf"
+fetched_at = "2026-11-07T20:53:27Z"
+sha256 = "e9dac063b9db6fd7b34e79907ce09095688b1fd8b1ea48c8527797b6090ae91c"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-07"
+cited_for = ["5.13"]
+
+[[source]]
+id = "sw99"
+locator_scheme = "page"
+locator = "6"
+url = "https://www.numdam.org/item/PMIHES_1999__89__5_0.pdf"
+fetched_from = "https://www.numdam.org/item/PMIHES_1999__89__5_0.pdf"
+fetched_at = "2026-11-07T20:53:30Z"
+sha256 = "ec0697b3e9c9fa68063b19688f10347d204a8b7b86526384c9ccd6e7fe30e6f3"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-07"
+cited_for = ["11.1"]
+
+[[source]]
+id = "kw1"
+locator_scheme = "theorem"
+locator = "Theorem 4.1"
+url = "https://www.math.ucla.edu/~shekhar/papers/results.pdf"
+fetched_from = "https://www.math.ucla.edu/~shekhar/papers/results.pdf"
+fetched_at = "2026-11-07T20:53:33Z"
+sha256 = "3c389dc33e09fe847f5d8189ffd8915b5c1a73424e64e4fed6769829883bad82"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-07"
+cited_for = ["5.18"]
+
+[[source]]
+id = "gee-types"
+locator_scheme = "theorem"
+locator = "Theorem 4.6.9"
+url = "https://www.ma.imperial.ac.uk/~tsg/Index_files/prescribedlifts.pdf"
+fetched_from = "https://www.ma.imperial.ac.uk/~tsg/Index_files/prescribedlifts.pdf"
+fetched_at = "2026-11-07T20:53:37Z"
+sha256 = "d9cba984e173c30c2a502ce9fffb068d79be89e401ea8115b7a5ba993074db5b"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-07"
+cited_for = ["8.6"]
+
+[[source]]
+id = "emerton-lgc"
+locator_scheme = "theorem"
+locator = "Theorem 3.3.22"
+url = "http://www.math.uchicago.edu/~emerton/pdffiles/lg.pdf"
+fetched_from = "http://www.math.uchicago.edu/~emerton/pdffiles/lg.pdf"
+fetched_at = "2026-11-07T20:53:43Z"
+sha256 = "bf4f8556ef04be02daed0b1dba35c91ce4a7b2f4cbbf28d0d8351b1fc369eb13"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-07"
+cited_for = ["7.8"]
+
+[[source]]
+id = "tung-dyadic"
+authors = "Shen-Ning Tung"
+title = "On the modularity of 2-adic potentially semi-stable deformation rings"
+year = 2019
+venue = "Math. Z. (2020)"
+doi = "10.1007/s00209-020-02588-4"
+arxiv = "1908.06174v3"
+locator_scheme = "theorem"
+locator = "Theorem A"
+url = "https://arxiv.org/abs/1908.06174v3"
+fetched_from = "https://arxiv.org/pdf/1908.06174v3"
+fetched_at = "2026-11-07T20:54:05Z"
+sha256 = "a601da3762c35dab9ebdac5fb5106f1e3f627304dfc2390ac43fe2ac862c6de8"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-07"
+version_note = "arXiv v3"
+cited_for = ["9.3"]
+
+[[source]]
+id = "tung-odd"
+authors = "Shen-Ning Tung"
+title = "On the automorphy of 2-dimensional potentially semi-stable deformation rings of $G_{\\mathbb{Q}_p}$"
+year = 2018
+arxiv = "1803.07451v4"
+locator_scheme = "theorem"
+locator = "Remark 4.8"
+url = "https://arxiv.org/abs/1803.07451v4"
+fetched_from = "https://arxiv.org/pdf/1803.07451v4"
+fetched_at = "2026-11-07T20:54:09Z"
+sha256 = "22017bc9beb585c2aae5421d2fe1a8a9049d8a93e4f8bb8cf684149616db1ba2"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-07"
+version_note = "arXiv v4"
+cited_for = ["7.8"]
+
+[[source]]
+id = "hu-tan"
+authors = "Yongquan Hu, Fucheng Tan"
+title = "The Breuil-Mezard conjecture for non-scalar split residual representations"
+year = 2013
+arxiv = "1309.1658v2"
+locator_scheme = "section"
+locator = "Introduction"
+url = "https://arxiv.org/abs/1309.1658v2"
+fetched_from = "https://arxiv.org/pdf/1309.1658v2"
+fetched_at = "2026-11-07T20:54:16Z"
+sha256 = "d36f237d7269e9dac7d32d80f1e4d6fe5c20b210ae067075b2dedb51e73d9bb2"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-07"
+version_note = "arXiv v2"
+cited_for = ["7.8"]
+
+[[source]]
+id = "paskunas-bm"
+authors = "Vytautas Paskunas"
+title = "On the Breuil-Mézard conjecture"
+year = 2012
+venue = "Duke Math. J. 164, no. 2 (2015), 297-359"
+doi = "10.1215/00127094-2861604"
+arxiv = "1209.5205v3"
+locator_scheme = "section"
+locator = "Abstract"
+url = "https://arxiv.org/abs/1209.5205v3"
+fetched_from = "https://arxiv.org/pdf/1209.5205v3"
+fetched_at = "2026-11-07T20:54:22Z"
+sha256 = "fce17b369313877b7efedab0844e8ece721a0c249dee1ef212f1d1303fc82c18"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-07"
+version_note = "arXiv v3"
+cited_for = ["7.8"]
+
+[[source]]
+id = "gee-kisin"
+authors = "Toby Gee, Mark Kisin"
+title = "The Breuil-Mézard conjecture for potentially Barsotti-Tate representations"
+year = 2012
+arxiv = "1208.3179v5"
+locator_scheme = "section"
+locator = "Appendix B"
+url = "https://arxiv.org/abs/1208.3179v5"
+fetched_from = "https://arxiv.org/pdf/1208.3179v5"
+fetched_at = "2026-11-07T20:54:28Z"
+sha256 = "65cb5797bbe10e328843b5fdc73f2623c80e19fa89ceb72ce6cd296881eb68f9"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-07"
+version_note = "arXiv v5"
+cited_for = ["8.3"]
+
+[[source]]
+id = "cht"
+locator_scheme = "theorem"
+locator = "Lemma 4.1.2"
+url = "https://www.numdam.org/item/PMIHES_2008__108__1_0.pdf"
+fetched_from = "https://www.numdam.org/item/PMIHES_2008__108__1_0.pdf"
+fetched_at = "2026-11-07T20:54:34Z"
+sha256 = "9d3b7079440d8cd3167812bb11c25ae4b51ada973b2e98f0928624254a60156c"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-07"
+cited_for = ["1.7"]
+
+[[source]]
+id = "kisin-fm"
+locator_scheme = "theorem"
+locator = "(1.2.7)"
+url = "https://www.ams.org/journals/jams/2009-22-03/S0894-0347-09-00628-6/S0894-0347-09-00628-6.pdf"
+fetched_from = "https://www.ams.org/journals/jams/2009-22-03/S0894-0347-09-00628-6/S0894-0347-09-00628-6.pdf"
+fetched_at = "2026-11-07T21:05:56Z"
+sha256 = "0bb3747bfa3f4738160be3addf9e61aab98945e8ff232e313bba8a0017c2c2a1"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-11-07"
+cited_for = ["7.8"]

@@ -1,0 +1,25 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-REV-PKG-HeckeStacksAndLocalShtukasPartII~4",
+  "date": "2026-10-25",
+  "findings": 2,
+  "blocking": 0,
+  "notes": "comment review on the board pull request by `CBirkbeck` (claude) of a96277d",
+  "conditional_gaps": [
+   "demazure-product",
+   "dominant-subtraction",
+   "finite-coxeter-basic-class",
+   "levi-intersection-dimension",
+   "newton-cell-greatest",
+   "newton-cell-strong-purity",
+   "newton-poset-length",
+   "parabolic-root-length",
+   "straight-finite-parabolic",
+   "superbasic-classification",
+   "twisted-affine-cocenter",
+   "twisted-redmin",
+   "unipotent-linearization"
+  ]
+ }
+}

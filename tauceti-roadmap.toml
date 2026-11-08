@@ -35,7 +35,7 @@ library = "TauCetiProject/TauCeti"
 # Hosted board runs queue for hours and get cancelled; the local tick (every 30 min) runs the intake instead.
 dispatch = false
 # Who may file targets: org teams ("team:org/slug") and bare logins. Other target issues are closed by board sync.
-target_filers = ["team:TauCetiProject/humans", "roed-math"]
+target_filers = ["team:TauCetiProject/humans", "team:TauCetiProject/roadmap-reviewers", "roed-math"]
 # Logins whose open roadmap pull requests count as ours in merge-order chains (the hosted workflow runs as a bot).
 operators = ["CBirkbeck", "roed-math", "kim-em"]
 # Label every job issue carries, so that a board inside the content repository stays separable.
@@ -97,7 +97,7 @@ forbid_mathlib_subimports = true
 forbidden_patterns = []
 # File (relative to the state directory) listing roadmap names that must never be cited, one per
 # line: dropped or abandoned roadmaps. Empty = none.
-dropped_names_file = ""
+dropped_names_file = "dropped-names.txt"   # names our roadmaps never cite as suppliers (other authors' pull requests whose material we own ourselves): the gate refuses a mention
 # Regular expressions for paths outside TauCetiRoadmap/<Name>/ that a port pull request may
 # still touch. The default (empty) means: the outside-folder diff must be empty.
 outside_folder_allow = []
@@ -129,7 +129,7 @@ ready_after = false
 
 [design]
 # The design lane is the only expensive one: at most this many design jobs per operator per day.
-daily_cap = 10
+daily_cap = 20   # 2026-11-06: sixteen spent by late afternoon with the Fourier–Deligne design still waiting
 
 # AI review of every open roadmap pull request (any author): one PRREVIEW job per new head, the
 # `ai-approved` label while the latest review accepts the current head; a human still approves and merges.
@@ -146,6 +146,10 @@ repair_pool = true
 # re-review when a reply records `tauceti-roadmap-carried {from, head}` and the folders changed by at most
 # small_change_lines lines (owner decision 2026-11-04).
 carry_accept = true
+# A chore (a `chore:` title, or more than max_folders roadmap folders: a pin bump) gets no folder review; it carries
+# `ai-approved` while a pool member's comment records an accepting chore review of its current head
+# (`tauceti-roadmap-chore-review {head, status}`), the AI review of the whole change (owner request 2026-11-05).
+chore_review = true
 small_change_lines = 150
 
 [agents]
@@ -159,12 +163,14 @@ timeout_minutes = 360
 # Per-lane overrides: `agent` pins the family, `model` its model; `codex_model` and `claude_model` pin
 # the model per family and leave the family to the worker. Reviews run only on the review models.
 [agents.lanes.review]
+# Package and design reviews: Astra on Codex; a Claude reviewer runs the model it was started with (Opus or
+# Fable), so that an Opus reviewer can take the packages a Fable worker repaired and vice versa.
 codex_model = "gpt-6-astra"
-claude_model = "fable"
 
 [agents.lanes.prreview]
+# Pull-request reviews: Astra on Codex; a Claude reviewer runs the model it was started with (Fable by default,
+# Opus while the Fable subscriptions are limited), so the review backlog keeps moving.
 codex_model = "gpt-6-astra"
-claude_model = "fable"
 
 [review]
 # Who counts as independent of an author. "operator": another operator login (projects with several
@@ -218,7 +224,8 @@ open-repository = ["arxiv.org", ".arxiv.org", "hal.science", ".hal.science", ".a
                    "gdz.sub.uni-goettingen.de", "eudml.org", ".eudml.org", "projecteuclid.org",
                    "stacks.math.columbia.edu", "zbmath.org", ".zbmath.org",
                    "mathnet.ru", ".mathnet.ru", "geodesic.mathdoc.fr",
-                   "e-periodica.ch", ".e-periodica.ch", "jmilne.org", ".jmilne.org"]
+                   "e-periodica.ch", ".e-periodica.ch", "jmilne.org", ".jmilne.org",
+                   "hexagonmath.org", ".hexagonmath.org"]   # the Hexagon Mathematics Foundation archive (CC BY 4.0)
 publisher-open = ["doi.org", "www.ams.org/journals/"]   # subscription publishers are not open by default; add a host only when its content is open
 author-page = ["jmilne.org", ".jmilne.org", "users.renyi.hu"]
 institutional = ["users.renyi.hu"]   # the Rényi Institute's archive of Erdős's papers

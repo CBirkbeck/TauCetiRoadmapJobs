@@ -1,0 +1,211 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "ShimuraVarieties"
+
+[[source]]
+id = "deligne82"
+locator_scheme = "theorem"
+locator = "Proposition 3.4"
+url = "https://www.jmilne.org/math/Documents/Deligne82.pdf"
+fetched_from = "https://www.jmilne.org/math/Documents/Deligne82.pdf"
+fetched_at = "2026-11-05T01:10:34Z"
+sha256 = "827e3571c8049fc5d3aed8dfad912fee39a2f5dbf7341726c38235f035d32139"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-05"
+cited_for = ["7.0i.1"]
+
+[[source]]
+id = "milne-svi"
+locator_scheme = "theorem"
+locator = "Theorem 5.16"
+url = "https://jmilne.org/math/xnotes/svi.pdf"
+fetched_from = "https://jmilne.org/math/xnotes/svi.pdf"
+fetched_at = "2026-11-05T19:45:52Z"
+sha256 = "f637e61735ff9cf9730c43d978d8f05185685a37d5e1920fc3347061c83d7c7e"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-05"
+cited_for = ["3.4"]
+
+[[source]]
+id = "milne-mf"
+locator_scheme = "theorem"
+locator = "Lemma 8.7"
+url = "https://www.jmilne.org/math/CourseNotes/MF.pdf"
+fetched_from = "https://www.jmilne.org/math/CourseNotes/MF.pdf"
+fetched_at = "2026-11-05T19:45:55Z"
+sha256 = "977f06a4e838c43c77a7c9398c090789e60d67f64e013e1dcd9bcce0e0c27b8d"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-05"
+cited_for = ["8.11"]
+
+[[source]]
+id = "milne-2007c"
+locator_scheme = "theorem"
+locator = "Lemma 3.6"
+url = "https://jmilne.org/math/articles/2007c.pdf"
+fetched_from = "https://jmilne.org/math/articles/2007c.pdf"
+fetched_at = "2026-11-05T19:45:57Z"
+sha256 = "cec3ce6ffa0761aecf50e3b095a517ba96e4e525c545a80f9a3b39f518dc7607"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-05"
+cited_for = ["5.9a"]
+
+[[source]]
+id = "milne-1999"
+locator_scheme = "theorem"
+locator = "Lemma 2.2"
+url = "https://jmilne.org/math/articles/1999cP.pdf"
+fetched_from = "https://jmilne.org/math/articles/1999cP.pdf"
+fetched_at = "2026-11-05T19:45:58Z"
+sha256 = "9ce47be2db53ea4f97e548c47933c07f06f2cb4de37f31e836b77d241e4e34b5"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-05"
+cited_for = ["7.0c"]
+
+[[source]]
+id = "milne-1983a"
+locator_scheme = "theorem"
+locator = "Lemma 3.8"
+url = "https://jmilne.org/math/articles/1983a.pdf"
+fetched_from = "https://jmilne.org/math/articles/1983a.pdf"
+fetched_at = "2026-11-05T19:47:03Z"
+sha256 = "36caf35ff4759b920f26cff9f59f23b6f65ff689022522e1757462703dab2b42"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-05"
+cited_for = ["7.0e"]
+
+[[source]]
+id = "milne-1984t"
+locator_scheme = "theorem"
+locator = "Lemma 3.18"
+url = "https://www.jmilne.org/math/articles/1984T.pdf"
+fetched_from = "https://www.jmilne.org/math/articles/1984T.pdf"
+fetched_at = "2026-11-05T19:47:05Z"
+sha256 = "041acf5f2334f1ea389c28345255f8efb87090f5899a9ca44b145537d3b599ed"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-05"
+cited_for = ["7.0h"]
+
+[[source]]
+id = "bkt"
+locator_scheme = "theorem"
+locator = "Section 1.1"
+url = "https://benjamin-bakker.github.io/DefArith.pdf"
+fetched_from = "https://benjamin-bakker.github.io/DefArith.pdf"
+fetched_at = "2026-11-05T19:47:06Z"
+sha256 = "b559c652490eb54595e86ec063945d016dd104949a91f9d6b4616cc4e25b8c8e"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-05"
+cited_for = ["3.5a"]
+
+[[source]]
+id = "clozel86"
+authors = "Laurent Clozel"
+title = "On limit multiplicites of discrete series representations in spaces of automorphic forms"
+year = 1986
+venue = "Inventiones Mathematicae 83"
+doi = "10.1007/BF01388963"
+locator_scheme = "theorem"
+locator = "Theorem 1A"
+url = "https://doi.org/10.1007/BF01388963"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["7.0h"]
+
+[[source]]
+id = "vdd-miller"
+authors = "Lou van den Dries, Chris Miller"
+title = "On the real exponential field with restricted analytic functions"
+year = 1994
+venue = "Israel Journal of Mathematics 85"
+doi = "10.1007/BF02758635"
+locator_scheme = "theorem"
+locator = "Theorem"
+url = "https://doi.org/10.1007/BF02758635"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["3.5a"]
+
+[[source]]
+id = "serre-congruence"
+locator_scheme = "theorem"
+locator = "Section 3.5"
+url = "https://www.mathnet.ru/php/archive.phtml?jrnid=im&option_lang=eng&paperid=3061&wshow=paper"
+fetched_from = "https://www.mathnet.ru/php/archive.phtml?jrnid=im&option_lang=eng&paperid=3061&wshow=paper"
+fetched_at = "2026-11-05T19:47:11Z"
+sha256 = "07a19d6a1c6abc06fc3b7cffb871b126a6a66416a8aeabf1bca74d0be235814a"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-05"
+cited_for = ["5.9a"]
+
+[[source]]
+id = "milne-cm"
+locator_scheme = "theorem"
+locator = "Proposition 1.18"
+url = "https://www.jmilne.org/math/CourseNotes/CM.pdf"
+fetched_from = "https://www.jmilne.org/math/CourseNotes/CM.pdf"
+fetched_at = "2026-11-05T19:47:14Z"
+sha256 = "0ac337a885d72f6938f15724b897f568fe350d0d754d0b52370b8f3a01d2e2b5"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-05"
+cited_for = ["5.1"]
+
+[[source]]
+id = "platonov-rapinchuk-1979"
+authors = "V. P. Platonov, A. S. Rapinchuk"
+title = "On the group of rational points of three-dimensional groups"
+year = 1979
+venue = "Doklady Akademii Nauk SSSR 247:2"
+locator_scheme = "theorem"
+locator = "Theorem 1"
+url = "https://uva.theopenscholar.com/files/ixqrlw/files/doklady_r_247_8.pdf"
+fetched_from = "https://uva.theopenscholar.com/files/ixqrlw/files/doklady_r_247_8.pdf"
+fetched_at = "2026-11-05T20:03:37Z"
+sha256 = "383739c32a4df0c626923f989acd050ad68f588250f823effcd450cdd72a2b50"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-05"
+cited_for = ["7.7"]
+
+[[source]]
+id = "platonov-rapinchuk"
+authors = "V. P. Platonov, A. S. Rapinchuk"
+title = "Algebraic Groups and Number Theory"
+year = 1994
+venue = "Pure and Applied Mathematics 139, Academic Press"
+locator_scheme = "theorem"
+locator = "Theorem 6.22"
+licence_class = "none"
+status = "uncertified"
+version_note = "published book, no open copy (the former author-page copy returns HTTP 404); cited by its locator without the text"
+cited_for = ["7.0e"]
+isbn = "0-12-558180-7"
+
+[[source]]
+id = "kuy"
+authors = "Bruno Klingler, Emmanuel Ullmo, Andrei Yafaev"
+title = "The hyperbolic Ax-Lindemann-Weierstrass conjecture"
+year = 2016
+venue = "Publications mathématiques de l'IHÉS 123"
+doi = "10.1007/s10240-015-0078-9"
+locator_scheme = "theorem"
+locator = "Theorem 4.1"
+url = "https://www.numdam.org/item/10.1007/s10240-015-0078-9.pdf"
+fetched_from = "https://www.numdam.org/item/10.1007/s10240-015-0078-9.pdf"
+fetched_at = "2026-11-06T08:19:39Z"
+sha256 = "eed3040791f81df63004ae5b2fb4c0f9fd9b127a2df40722a574396a11690533"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-06"
+cited_for = ["3.5b"]

@@ -1,0 +1,393 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "DGFloer"
+
+[[source]]
+id = "bdho-cotangent"
+authors = "Jean-François Barraud, Mihai Damian, Vincent Humilière, Alexandru Oancea"
+title = "Floer Homology with DG Coefficients. Applications to cotangent bundles"
+year = 2024
+arxiv = "2404.07953v3"
+locator_scheme = "section"
+locator = "6.4"
+url = "https://arxiv.org/abs/2404.07953v3"
+fetched_from = "https://arxiv.org/pdf/2404.07953v3"
+fetched_at = "2026-11-05T01:46:37Z"
+sha256 = "eb1bf3be03bf005aa7526eaa309b31dfff290e04a71ef3eac1d6a416b75698b7"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-05"
+version_note = "arXiv v3"
+cited_for = ["Layer 11"]
+
+[[source]]
+id = "hofer-salamon-novikov"
+authors = "Hofer"
+title = "Floer homology and Novikov rings"
+year = 1995
+venue = "The Floer Memorial Volume"
+doi = "10.1007/978-3-0348-9217-9_20"
+locator_scheme = "section"
+locator = "4"
+url = "https://doi.org/10.1007/978-3-0348-9217-9_20"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["Layer 7.C.6"]
+
+[[source]]
+id = "hatcher-at"
+locator_scheme = "section"
+locator = "4.2"
+url = "https://pi.math.cornell.edu/~hatcher/AT/AT.pdf"
+fetched_from = "https://pi.math.cornell.edu/~hatcher/AT/AT.pdf"
+fetched_at = "2026-11-05T02:07:23Z"
+sha256 = "bebb3032bf9021b956da3bd070eb6c67dc662cf849be9cdf6679f677560e5618"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-05"
+cited_for = ["Layer 1 item 2"]
+
+[[source]]
+id = "bdho-morse-dg"
+authors = "Jean-François Barraud, Mihai Damian, Vincent Humilière, Alexandru Oancea"
+title = "Morse homology with DG coefficients"
+year = 2023
+arxiv = "2308.06104v3"
+locator_scheme = "chapter"
+locator = "7"
+url = "https://arxiv.org/abs/2308.06104v3"
+fetched_from = "https://arxiv.org/pdf/2308.06104v3"
+fetched_at = "2026-11-05T02:09:08Z"
+sha256 = "27bc4e9d282f3f2ff321734f158b69ee9dc48c0923d3ca34e60a05ec5e4b501d"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-05"
+version_note = "arXiv v3"
+cited_for = ["Layer 5 item 4"]
+
+[[source]]
+id = "barraud-cornea-serre"
+authors = "J. F. Barraud, O. Cornea"
+title = "Lagrangian Intersections and the Serre Spectral Sequence"
+year = 2004
+arxiv = "math/0401094v2"
+locator_scheme = "section"
+locator = "Appendix A"
+url = "https://arxiv.org/abs/math/0401094v2"
+fetched_from = "https://arxiv.org/pdf/math/0401094v2"
+fetched_at = "2026-11-05T02:09:13Z"
+sha256 = "5be92833b5ddd496f3e47f297e17e441e12ed5957c50d0a5749eb89b18360b32"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-05"
+version_note = "arXiv v2"
+cited_for = ["Layer 0 item 4"]
+
+[[source]]
+id = "abouzaid-viterbo"
+authors = "Mohammed Abouzaid"
+title = "Symplectic cohomology and Viterbo's theorem"
+year = 2013
+arxiv = "1312.3354v2"
+locator_scheme = "section"
+locator = "11.2"
+url = "https://arxiv.org/abs/1312.3354v2"
+fetched_from = "https://arxiv.org/pdf/1312.3354v2"
+fetched_at = "2026-11-05T02:09:21Z"
+sha256 = "b3520181dcdadd012be3b96959b894bb95f8de5c9fd446ae3dca372b24dfb7b1"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-05"
+version_note = "arXiv v2"
+cited_for = ["Layer 9 item 3"]
+
+[[source]]
+id = "abbondandolo-schwarz"
+authors = "Alberto Abbondandolo, Matthias Schwarz"
+title = "On the Floer homology of cotangent bundles"
+year = 2004
+venue = "Comm. Pure Appl. Math. 59 (2006) 254-316"
+doi = "10.1002/cpa.2009"
+arxiv = "math/0408280v2"
+locator_scheme = "section"
+locator = "1"
+url = "https://arxiv.org/abs/math/0408280v2"
+fetched_from = "https://arxiv.org/pdf/math/0408280v2"
+fetched_at = "2026-11-05T02:09:26Z"
+sha256 = "11aef3997631661e802280a6637a624306111723a39f80e146df8f361ccb6650"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-05"
+version_note = "arXiv v2"
+cited_for = ["Layer 9 item 2"]
+
+[[source]]
+id = "seidel-biased"
+authors = "Paul Seidel"
+title = "A biased view of symplectic cohomology"
+year = 2007
+arxiv = "0704.2055v6"
+locator_scheme = "section"
+locator = "3"
+url = "https://arxiv.org/abs/0704.2055v6"
+fetched_from = "https://arxiv.org/pdf/0704.2055v6"
+fetched_at = "2026-11-05T02:09:31Z"
+sha256 = "7e4526ff001c75fed114d1ff4aef7bd9dc6a320d656e8eddcbdfbc1d584a566f"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-05"
+version_note = "arXiv v6"
+cited_for = ["Layer 7 item 5"]
+
+[[source]]
+id = "lee-torsion-i"
+authors = "Yi-Jen Lee"
+title = "Reidemeister torsion in Floer-Novikov theory and counting pseudo-holomorphic tori, I"
+year = 2001
+arxiv = "math/0111313v3"
+locator_scheme = "section"
+locator = "2.1"
+url = "https://arxiv.org/abs/math/0111313v3"
+fetched_from = "https://arxiv.org/pdf/math/0111313v3"
+fetched_at = "2026-11-05T02:09:38Z"
+sha256 = "992f8caeae38c65af9e773f5ac7d7b8cebc97447daa6b5ffa28fbfa35d0d2b97"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-05"
+version_note = "arXiv v3"
+cited_for = ["Layer 7.T"]
+
+[[source]]
+id = "lee-torsion-ii"
+authors = "Yi-Jen Lee"
+title = "Reidemeister Torsion in Floer-Novikov Theory and Counting Pseudo-holomorphic Tori, II"
+year = 2005
+arxiv = "math/0505013v1"
+locator_scheme = "section"
+locator = "1"
+url = "https://arxiv.org/abs/math/0505013v1"
+fetched_from = "https://arxiv.org/pdf/math/0505013v1"
+fetched_at = "2026-11-05T02:09:45Z"
+sha256 = "140d73655d184e29f35b2519f156e9f0f846e9e85bc54f4f42dcade16e9d050e"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-05"
+version_note = "arXiv v1"
+cited_for = ["Layer 7.T.6"]
+
+[[source]]
+id = "albers-frauenfelder-oancea"
+authors = "Peter Albers, Urs Frauenfelder, Alexandru Oancea"
+title = "Local systems on the free loop space and finiteness of the Hofer-Zehnder capacity"
+year = 2017
+arxiv = "1509.02455v3"
+locator_scheme = "section"
+locator = "1"
+url = "https://arxiv.org/abs/1509.02455v3"
+fetched_from = "https://arxiv.org/pdf/1509.02455v3"
+fetched_at = "2026-11-05T02:09:50Z"
+sha256 = "e8cea7f684cf21fc673d90371835a6136ee55d8eae5f9816cb3b4ec36b547cab"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-05"
+version_note = "arXiv v3"
+cited_for = ["Layer 10 item 2"]
+
+[[source]]
+id = "irie-hz"
+authors = "Kei Irie"
+title = "Hofer-Zehnder capacity of unit disk cotangent bundles and the loop product"
+year = 2014
+arxiv = "1110.2244v1"
+locator_scheme = "section"
+locator = "1"
+url = "https://arxiv.org/abs/1110.2244v1"
+fetched_from = "https://arxiv.org/pdf/1110.2244v1"
+fetched_at = "2026-11-05T02:09:55Z"
+sha256 = "07f9274f5b94806eb6119a55b3e42832146eeffec4952180ac68191db55ed0af"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-05"
+version_note = "arXiv v1"
+cited_for = ["Layer 10 item 2"]
+
+[[source]]
+id = "audin-damian"
+locator_scheme = "chapter"
+locator = "6"
+url = "https://audin.pages.math.unistra.fr/livres/audin-damian-en.pdf"
+fetched_from = "https://audin.pages.math.unistra.fr/livres/audin-damian-en.pdf"
+fetched_at = "2026-11-05T02:12:13Z"
+sha256 = "e162409dc3c24e7bdf42d41d25b4b146594e3b477f4a42a5b62394bdbe317443"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-05"
+cited_for = ["Layer 7 item 1"]
+
+[[source]]
+id = "palais-restriction"
+authors = "Richard S. Palais"
+title = "Local triviality of the restriction map for embeddings"
+year = 1960
+venue = "Commentarii Mathematici Helvetici 34"
+doi = "10.1007/BF02565942"
+locator_scheme = "theorem"
+locator = "Theorem A"
+url = "https://doi.org/10.1007/BF02565942"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["Layer 1 item 6"]
+
+[[source]]
+id = "hofer-zehnder"
+authors = "Helmut Hofer, Eduard Zehnder"
+title = "Symplectic Invariants and Hamiltonian Dynamics"
+year = 1994
+doi = "10.1007/978-3-0348-8540-9"
+locator_scheme = "chapter"
+locator = "4"
+url = "https://doi.org/10.1007/978-3-0348-8540-9"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["Layer 6 item 5"]
+
+[[source]]
+id = "brocker-tomdieck"
+authors = "Theodor Bröcker, Tammo tom Dieck"
+title = "Representations of Compact Lie Groups"
+year = 1985
+venue = "Graduate Texts in Mathematics"
+doi = "10.1007/978-3-662-12918-0"
+locator_scheme = "chapter"
+locator = "V"
+url = "https://doi.org/10.1007/978-3-662-12918-0"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["Layer 11"]
+
+[[source]]
+id = "whitehead-elements"
+authors = "George W. Whitehead"
+title = "Elements of Homotopy Theory"
+year = 1978
+venue = "Graduate Texts in Mathematics"
+doi = "10.1007/978-1-4612-6318-0"
+locator_scheme = "chapter"
+locator = "I"
+url = "https://doi.org/10.1007/978-1-4612-6318-0"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["Layer 2"]
+
+[[source]]
+id = "massey-singular"
+authors = "William S. Massey"
+title = "Singular Homology Theory"
+year = 1980
+venue = "Graduate Texts in Mathematics"
+doi = "10.1007/978-1-4684-9231-6"
+locator_scheme = "chapter"
+locator = "II"
+url = "https://doi.org/10.1007/978-1-4684-9231-6"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["Layer 0"]
+
+[[source]]
+id = "struwe-1990"
+authors = "Michael Struwe"
+title = "Existence of periodic solutions of Hamiltonian systems on almost every energy surface"
+year = 1990
+venue = "Boletim da Sociedade Brasileira de Matemática 20"
+doi = "10.1007/bf02585433"
+locator_scheme = "section"
+locator = "1"
+url = "https://doi.org/10.1007/bf02585433"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["Layer 6 item 5"]
+
+[[source]]
+id = "hutchings-morse-notes"
+locator_scheme = "section"
+locator = "7.5"
+url = "https://web.ma.utexas.edu/users/dafr/M392C-2018-MorseTheory/Readings/Hutchings.pdf"
+fetched_from = "https://web.ma.utexas.edu/users/dafr/M392C-2018-MorseTheory/Readings/Hutchings.pdf"
+fetched_at = "2026-11-05T02:18:38Z"
+sha256 = "3db44993c56d4dfac48aa5f3d3180e61f2c4900901229682e31b68f3020642d1"
+licence_class = "institutional"
+status = "certified"
+accessed = "2026-11-05"
+cited_for = ["Layer 7.T"]
+
+[[source]]
+id = "salamon-lectures"
+locator_scheme = "section"
+locator = "3.1"
+url = "https://www.math.utoronto.ca/mgualt/Morse%20Theory/Salamon%20floer.pdf"
+fetched_from = "https://www.math.utoronto.ca/mgualt/Morse%20Theory/Salamon%20floer.pdf"
+fetched_at = "2026-11-05T02:22:00Z"
+sha256 = "91e22c2aebec9a8fc1424d0dc7f11320c38b125750c912a74876a3cb575131fd"
+licence_class = "institutional"
+status = "certified"
+accessed = "2026-11-05"
+cited_for = ["Layer 7.C"]
+
+[[source]]
+id = "ivashkovich-shevchishin"
+authors = "S. Ivashkovich, V. Shevchishin"
+title = "Gromov compactness theorem for stable curves"
+year = 1999
+arxiv = "math/9903047v1"
+locator_scheme = "theorem"
+locator = "Theorem 1.1"
+url = "https://arxiv.org/abs/math/9903047v1"
+fetched_from = "https://arxiv.org/pdf/math/9903047v1"
+fetched_at = "2026-11-07T15:27:24Z"
+sha256 = "07efb710f280c0a9dff0b9620cb11eb99bb32072410c2897701f52d98ecd2b5f"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-07"
+version_note = "arXiv v1"
+cited_for = ["Layer 7.C.2d"]
+
+[[source]]
+id = "bott-lie-groups"
+authors = "Raoul Bott"
+title = "An application of the Morse theory to the topology of Lie-groups"
+year = 1956
+venue = "Bulletin de la Société Mathématique de France 84 (1956), 251–281"
+doi = "10.24033/bsmf.1472"
+locator_scheme = "section"
+locator = "§1, corollary to Theorems A and B (p. 253)"
+url = "https://doi.org/10.24033/bsmf.1472"
+fetched_from = "https://www.numdam.org/item/10.24033/bsmf.1472.pdf"
+fetched_at = "2026-11-07T21:03:59Z"
+sha256 = "78d429bd4df018dc0ebea2bf84187c3226343f68fe38e469b6a9efd2a903494d"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-07"
+cited_for = ["11.2"]
+
+[[source]]
+id = "meinrenken-lie"
+authors = "Eckhard Meinrenken"
+title = "Lie groups and Lie algebras (lecture notes, Winter 2026)"
+year = 2026
+locator_scheme = "theorem"
+locator = "Corollary 8.16, Theorem 8.22, Proposition 8.33, Theorem 7.8, Definition 11.11, Theorem 12.4, Proposition 12.5, Remark 12.6"
+url = "https://www.math.utoronto.ca/mein/teaching/LectureNotes/lie.pdf"
+fetched_from = "https://www.math.utoronto.ca/mein/teaching/LectureNotes/lie.pdf"
+fetched_at = "2026-11-08T03:14:26Z"
+sha256 = "cb488ca1c8bed42f867f8e02f92283ead5ee2c1e1bec8470bff8ab751e25ebe1"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-08"
+version_note = "the author's lecture notes, version of Winter 2026; numbering as in that version"
+cited_for = ["11.1", "11.2"]

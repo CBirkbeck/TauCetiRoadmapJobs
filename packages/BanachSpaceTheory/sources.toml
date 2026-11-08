@@ -16,3 +16,232 @@ licence_class = "institutional"
 status = "certified"
 accessed = "2026-11-04"
 cited_for = ["B7: John's ellipsoid theorem and the contact-point decomposition"]
+
+[[source]]
+id = "pisier12gt"
+authors = "Gilles Pisier"
+title = "Grothendieck's Theorem, past and present"
+year = 2011
+venue = "Bull. Amer. Math. Soc. 49 (2012), 237--323"
+arxiv = "1101.4195v3"
+locator_scheme = "theorem"
+locator = "Definition 9.6"
+url = "https://arxiv.org/abs/1101.4195v3"
+fetched_from = "https://arxiv.org/pdf/1101.4195v3"
+fetched_at = "2026-11-08T11:08:33Z"
+sha256 = "6a4d3c5af4020942be315a207abbb443eec34b2811ea30e071a67541cc73f7bd"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-08"
+version_note = "arXiv v3"
+cited_for = ["B6.Cotype2"]
+
+[[source]]
+id = "argyroshaydon11"
+authors = "Spiros A Argyros, Richard G Haydon"
+title = "A hereditarily indecomposable L_\\infty-space that solves the scalar-plus-compact problem"
+year = 2009
+arxiv = "0903.3921v2"
+locator_scheme = "section"
+locator = "Sections 2-9"
+url = "https://arxiv.org/abs/0903.3921v2"
+fetched_from = "https://arxiv.org/pdf/0903.3921v2"
+fetched_at = "2026-11-08T11:08:39Z"
+sha256 = "3e3281e9090732da636ba09ebcb8dd15e52bcff09b7932daa509de7653a637d2"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-08"
+version_note = "arXiv v2"
+cited_for = ["B4.1"]
+
+[[source]]
+id = "aost05"
+authors = "G. Androulakis, E. Odell, Th. Schlumprecht, N. Tomczak-Jaegermann"
+title = "On the structure of the spreading models of a Banach space"
+year = 2003
+arxiv = "math/0305082v1"
+locator_scheme = "theorem"
+locator = "Theorem 5.4"
+url = "https://arxiv.org/abs/math/0305082v1"
+fetched_from = "https://arxiv.org/pdf/math/0305082v1"
+fetched_at = "2026-11-08T11:08:45Z"
+sha256 = "0177df1f0b55dea979f223b04495271d7e2f773c24ac74429ef5ebae2a023803"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-08"
+version_note = "arXiv v1"
+cited_for = ["B4.1"]
+
+[[source]]
+id = "daws04"
+locator_scheme = "theorem"
+locator = "Theorems 2.3.14 and 2.3.23"
+url = "https://matthewdaws.github.io/files/thesis.pdf"
+fetched_from = "https://matthewdaws.github.io/files/thesis.pdf"
+fetched_at = "2026-11-08T11:09:12Z"
+sha256 = "c96b3881d803639e5479517871ec6d1c5dbcb920d2b1966c80507ebd5fa14087"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-08"
+cited_for = ["B4.0"]
+
+[[source]]
+id = "garridojaramillo02"
+locator_scheme = "theorem"
+locator = "Section 2, Theorems 2 and 4"
+url = "https://matematicas.unex.es/~extracta/Vol-17-3/17J3Mari.pdf"
+fetched_from = "https://matematicas.unex.es/~extracta/Vol-17-3/17J3Mari.pdf"
+fetched_at = "2026-11-08T11:09:14Z"
+sha256 = "4c55a7750d2707906ef05e23f1b165198f40cfc5b7007e2e5938802a7bf211e4"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-08"
+cited_for = ["B5 Banach-Stone"]
+
+[[source]]
+id = "bdlhv08"
+locator_scheme = "section"
+locator = "Appendix C.5"
+url = "https://access.archive-ouverte.unige.ch/access/metadata/19c0d173-9917-4a95-b246-5f2eda3727b9/download"
+fetched_from = "https://access.archive-ouverte.unige.ch/access/metadata/19c0d173-9917-4a95-b246-5f2eda3727b9/download"
+fetched_at = "2026-11-08T11:09:27Z"
+sha256 = "950f5c9863f84cbc245704db6e838cbc94fb32e00762679d7c9026a50a09e949"
+licence_class = "institutional"
+status = "certified"
+accessed = "2026-11-08"
+cited_for = ["B5.LocalHaarDual"]
+
+[[source]]
+id = "enflo73"
+authors = "Per Enflo"
+title = "A counterexample to the approximation problem in Banach spaces"
+year = 1973
+venue = "Acta Mathematica 130"
+doi = "10.1007/BF02392270"
+locator_scheme = "section"
+locator = "Sections 1-4"
+url = "https://doi.org/10.1007/BF02392270"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["B4.0"]
+
+[[source]]
+id = "dosz09"
+authors = "S. J. Dilworth, E. Odell, Th. Schlumprecht, A. Zsák"
+title = "Partial unconditionality"
+year = 2009
+arxiv = "math/0510609v1"
+locator_scheme = "theorem"
+locator = "Theorems 2.1-2.2"
+url = "https://arxiv.org/abs/math/0510609v1"
+fetched_from = "https://arxiv.org/pdf/math/0510609v1"
+fetched_at = "2026-11-08T11:09:40Z"
+sha256 = "20704d939898b09bafe9d93c0ba0b0c9cf5dc408562946f208a3661e63b6fa37"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-08"
+version_note = "arXiv v1"
+cited_for = ["B4.1"]
+
+[[source]]
+id = "emmanuele93"
+locator_scheme = "page"
+locator = "pp. 263-266"
+url = "https://revistas.ucm.es/index.php/REMA/article/download/REMA9393220263A/16966"
+fetched_from = "https://revistas.ucm.es/index.php/REMA/es/article/download/REMA9393220263A/16966"
+fetched_at = "2026-11-08T11:10:01Z"
+sha256 = "88c1dfca89059b1c4bc9376f9b772830db94c30c25734d173f55cae30e5fc231"
+licence_class = "institutional"
+status = "certified"
+accessed = "2026-11-08"
+cited_for = ["B4.1"]
+
+[[source]]
+id = "megginson98"
+authors = "Robert E. Megginson"
+title = "An Introduction to Banach Space Theory"
+year = 1998
+venue = "Graduate Texts in Mathematics"
+doi = "10.1007/978-1-4612-0603-3"
+locator_scheme = "theorem"
+locator = "Theorems 2.6.26, 2.7.11, 2.8.6, 2.9.3-2.9.4, 2.11.14, 3.4.32, 4.4.15, 5.2.15"
+url = "https://doi.org/10.1007/978-1-4612-0603-3"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["B1", "B2", "B3", "B4"]
+
+[[source]]
+id = "albiackalton06"
+title = "Topics in Banach Space Theory"
+year = 2006
+venue = "Graduate Texts in Mathematics"
+doi = "10.1007/0-387-28142-8"
+locator_scheme = "theorem"
+locator = "6.1.3-6.1.7, 8.1.1, 8.1.3, 8.2.8, 12.2.4, 12.3.13, 13.1.5, 13.1.7, 13.3.2-13.3.7"
+url = "https://doi.org/10.1007/0-387-28142-8"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["B3", "B6", "B7"]
+
+[[source]]
+id = "runde02"
+authors = "Volker Runde"
+title = "Lectures on Amenability"
+year = 2002
+venue = "Lecture Notes in Mathematics"
+doi = "10.1007/b82937"
+locator_scheme = "section"
+locator = "Appendix B.2"
+url = "https://doi.org/10.1007/b82937"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["B4"]
+
+[[source]]
+id = "ryan02"
+authors = "Raymond A. Ryan"
+title = "Introduction to Tensor Products of Banach Spaces"
+year = 2002
+venue = "Springer Monographs in Mathematics"
+doi = "10.1007/978-1-4471-3903-4"
+locator_scheme = "chapter"
+locator = "Chapters 2-4"
+url = "https://doi.org/10.1007/978-1-4471-3903-4"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["B4"]
+
+[[source]]
+id = "hewittross63"
+authors = "Edwin Hewitt, Kenneth A. Ross"
+title = "Abstract Harmonic Analysis"
+year = 1979
+venue = "Grundlehren der mathematischen Wissenschaften"
+doi = "10.1007/978-1-4419-8638-2"
+locator_scheme = "theorem"
+locator = "Theorem 12.18"
+url = "https://doi.org/10.1007/978-1-4419-8638-2"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["B5.LocalHaarDual"]
+
+[[source]]
+id = "garlinggordon71"
+authors = "D. J. H. Garling, Y. Gordon"
+title = "Relations between some constants associated with finite dimensional Banach spaces"
+year = 1971
+venue = "Israel Journal of Mathematics 9"
+doi = "10.1007/bf02771685"
+locator_scheme = "page"
+locator = "pp. 346-361"
+url = "https://doi.org/10.1007/bf02771685"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["B7 Garling-Gordon"]

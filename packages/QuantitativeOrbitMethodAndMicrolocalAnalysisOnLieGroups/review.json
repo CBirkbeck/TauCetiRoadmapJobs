@@ -1,0 +1,33 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-REV-PKG-QuantitativeOrbitMethodAndMicrolocalAnalysisOnLieGroups~5",
+  "date": "2026-10-26",
+  "findings": 3,
+  "blocking": 0,
+  "notes": "comment review on the board pull request by `CBirkbeck` (claude) of c263049",
+  "conditional_gaps": [
+   "cotlar-stein-strong",
+   "distinction-upper-semicontinuity",
+   "global-spinor-image",
+   "harish-chandra-characters",
+   "induced-multiplicity-one",
+   "kernel-spectral-expansion",
+   "local-plancherel",
+   "local-spinor-images",
+   "orbit-restriction-sobolev",
+   "orthogonal-local-period-form",
+   "orthogonal-multiplicity-one",
+   "orthogonal-period-factorization",
+   "orthogonal-xi-integrability",
+   "orthogonal-xi-polynomial-tail",
+   "padic-plancherel-density",
+   "polynomial-eigenvalue-count",
+   "relative-character-positivity",
+   "tempered-xi-bounds",
+   "unitary-exponent-bound",
+   "unitary-xi-polynomial-tail",
+   "vogan-minimal-ktype"
+  ]
+ }
+}

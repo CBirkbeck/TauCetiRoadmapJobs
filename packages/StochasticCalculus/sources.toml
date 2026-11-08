@@ -10,3 +10,235 @@ locator = "pp. 1, 17, 98, 100-102, 111-112, 117-123, 130, 148, 173, 178, 184-185
 licence_class = "none"
 status = "waived"
 resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/3944#issuecomment-6632669233"
+
+[[source]]
+id = "lalley"
+locator_scheme = "theorem"
+locator = "Theorem 1; Theorem 5; equation (32); Theorem 7; Proposition 9"
+url = "https://galton.uchicago.edu/~lalley/Courses/383/BrownianMotion.pdf"
+fetched_from = "https://galton.uchicago.edu/~lalley/Courses/383/BrownianMotion.pdf"
+fetched_at = "2026-11-08T03:18:37Z"
+sha256 = "b5d486f948091c9133a1a6a1c979aada45f70a2341ff02899c1bf54070c11d96"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-08"
+cited_for = ["1.1"]
+
+[[source]]
+id = "morters-peres"
+locator_scheme = "theorem"
+locator = "Theorem 1.14; Theorem 1.27; Theorem 1.30; Theorem 2.5; Theorem 2.7"
+url = "https://www.mi.uni-koeln.de/~moerters/book/book.pdf"
+fetched_from = "https://www.mi.uni-koeln.de/~moerters/book/book.pdf"
+fetched_at = "2026-11-08T03:19:02Z"
+sha256 = "e850e30e824d33494e40c63faba0e23e364c8ccd80f58cee0d85732277071681"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-08"
+cited_for = ["6.3"]
+
+[[source]]
+id = "baudoin-l24"
+locator_scheme = "theorem"
+locator = "unnumbered Theorem (Burkholder-Davis-Gundy inequalities)"
+url = "https://fabricebaudoin.blog/2012/09/28/lecture-24-burkholder-davis-gundy-inequalities/"
+fetched_from = "https://fabricebaudoin.blog/2012/09/28/lecture-24-burkholder-davis-gundy-inequalities/"
+fetched_at = "2026-11-08T03:19:03Z"
+sha256 = "bc7cd80ccb1557a1fa32691f2ad99c185f48e950f996b049e808f92fdb564b8b"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-08"
+cited_for = ["4.3"]
+
+[[source]]
+id = "kratschmer-urusov"
+authors = "Volker Kratschmer, Mikhail Urusov"
+title = "A general Kolmogorov-Chentsov type theorem on general metric spaces with applications to limit theorems for Banach-valued processes"
+year = 2021
+arxiv = "2107.13837v2"
+locator_scheme = "theorem"
+locator = "Theorem 1.1"
+url = "https://arxiv.org/abs/2107.13837v2"
+fetched_from = "https://arxiv.org/pdf/2107.13837v2"
+fetched_at = "2026-11-08T03:19:07Z"
+sha256 = "3439155b539a95b20b72711b7edca595d8faa281292dab4ad5724ed7a7621c3a"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-08"
+version_note = "arXiv v2"
+cited_for = ["1.1"]
+
+[[source]]
+id = "theodorakopoulos"
+authors = "Stefanos Theodorakopoulos"
+title = "New proofs to measurable, predictable and optional section theorems"
+year = 2023
+arxiv = "2310.13086v2"
+locator_scheme = "theorem"
+locator = "Theorem 4.4"
+url = "https://arxiv.org/abs/2310.13086v2"
+fetched_from = "https://arxiv.org/pdf/2310.13086v2"
+fetched_at = "2026-11-08T03:19:13Z"
+sha256 = "6dc12eeb9fa7497e90feccb0d8d24dbc7a821fd1d244f3cccaf442e585c94d83"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-08"
+version_note = "arXiv v2"
+cited_for = ["0.2"]
+
+[[source]]
+id = "degenne-brownian-lean"
+authors = "Rémy Degenne, David Ledvinka, Etienne Marion, Peter Pfaffelhuber"
+title = "Formalization of Brownian motion in Lean"
+year = 2025
+arxiv = "2511.20118v2"
+locator_scheme = "section"
+locator = "whole paper"
+url = "https://arxiv.org/abs/2511.20118v2"
+fetched_from = "https://arxiv.org/pdf/2511.20118v2"
+fetched_at = "2026-11-08T03:19:19Z"
+sha256 = "8df535e46b91c41668ce10a4570a3ae1e9075beb8897c7f70045a277330e48ee"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-08"
+version_note = "arXiv v2"
+cited_for = ["1.1"]
+
+[[source]]
+id = "bgs1971"
+locator_scheme = "theorem"
+locator = "Theorem 1'; Theorem 3'"
+url = "https://www.ams.org/journals/tran/1971-157-00/S0002-9947-1971-0274767-6/S0002-9947-1971-0274767-6.pdf"
+fetched_from = "https://www.ams.org/journals/tran/1971-157-00/S0002-9947-1971-0274767-6/S0002-9947-1971-0274767-6.pdf"
+fetched_at = "2026-11-08T03:19:21Z"
+sha256 = "118168accaff51b6dede331ed0bd02af44fd944bf4c3f5156451664467215d6d"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-11-08"
+cited_for = ["6.5"]
+
+[[source]]
+id = "chung1985"
+locator_scheme = "page"
+locator = "p. 496"
+url = "https://www.numdam.org/item/SPS_1985__19__496_0.pdf"
+fetched_from = "https://www.numdam.org/item/SPS_1985__19__496_0.pdf"
+fetched_at = "2026-11-08T03:19:22Z"
+sha256 = "6e8fd09286bb0c114aac08df1a34b992ccb90358e36e3eb6f89a8aa0539de28a"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-08"
+cited_for = ["10.4"]
+
+[[source]]
+id = "talay-tubaro"
+locator_scheme = "theorem"
+locator = "Theorem 1"
+url = "https://www-sop.inria.fr/members/Denis.Talay/fichiers-pdf/version-publiee-talay-tubaro-90.pdf"
+fetched_from = "https://www-sop.inria.fr/members/Denis.Talay/fichiers-pdf/version-publiee-talay-tubaro-90.pdf"
+fetched_at = "2026-11-08T03:20:54Z"
+sha256 = "65e83dc9c6d667f493079ddbffa378d71a3b4522a81fd5dbf990950642dcdda3"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-08"
+cited_for = ["9.6"]
+
+[[source]]
+id = "ondrejat-seidler"
+locator_scheme = "theorem"
+locator = "Theorem 0.1"
+url = "https://www.maths.tcd.ie/EMIS/journals/EJP-ECP/article/download/2548/2548-13043-1-PB.pdf"
+fetched_from = "https://www.maths.tcd.ie/EMIS/journals/EJP-ECP/article/download/2548/2548-13043-1-PB.pdf"
+fetched_at = "2026-11-08T03:20:54Z"
+sha256 = "a9beeeae7bced5f0494ec22c77abdf04a4ca7751166d13ec5195adbc1279d622"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-08"
+cited_for = ["0.2"]
+
+[[source]]
+id = "dlmf10"
+locator_scheme = "equation"
+locator = "10.25.1; 10.29.1; 10.29.2"
+url = "https://dlmf.nist.gov/10.29"
+fetched_from = "https://dlmf.nist.gov/10.29"
+fetched_at = "2026-11-08T03:20:55Z"
+sha256 = "517632c6362593cf6fdefd2ba571cc8621bb2544f61947b2e212bf58af3bc0fc"
+licence_class = "institutional"
+status = "certified"
+accessed = "2026-11-08"
+cited_for = ["9.4"]
+
+[[source]]
+id = "karatzas-shreve"
+authors = "Ioannis Karatzas, Steven E. Shreve"
+title = "Brownian Motion and Stochastic Calculus"
+year = 1998
+venue = "Graduate Texts in Mathematics"
+doi = "10.1007/978-1-4612-0949-2"
+locator_scheme = "theorem"
+locator = "Theorem 5.7.6; §2.7.A; §2.9; §3.3; §3.4; §5.2; §5.4"
+url = "https://doi.org/10.1007/978-1-4612-0949-2"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["10.3"]
+
+[[source]]
+id = "revuz-yor"
+authors = "Daniel Revuz, Marc Yor"
+title = "Continuous Martingales and Brownian Motion"
+year = 1999
+venue = "Grundlehren der mathematischen Wissenschaften"
+doi = "10.1007/978-3-662-06400-9"
+locator_scheme = "chapter"
+locator = "Chapter IV §1, §4; Chapter V §1; Chapter VII §1; Chapter VIII §1; Chapter XI §1"
+url = "https://doi.org/10.1007/978-3-662-06400-9"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["8"]
+
+[[source]]
+id = "protter"
+authors = "Philip E. Protter"
+title = "Stochastic Integration and Differential Equations"
+year = 2005
+venue = "Stochastic Modelling and Applied Probability"
+doi = "10.1007/978-3-662-10061-5"
+locator_scheme = "chapter"
+locator = "Chapter I §4; Chapter II §6; Chapter III; Chapter V §5"
+url = "https://doi.org/10.1007/978-3-662-10061-5"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["4.4"]
+
+[[source]]
+id = "kloeden-platen"
+authors = "Peter E. Kloeden, Eckhard Platen"
+title = "Numerical Solution of Stochastic Differential Equations"
+year = 1992
+doi = "10.1007/978-3-662-12616-5"
+locator_scheme = "section"
+locator = "§14.5"
+url = "https://doi.org/10.1007/978-3-662-12616-5"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["9.6"]
+
+[[source]]
+id = "chung-rao-1981"
+authors = "K. L. Chung, K. M. Rao"
+title = "Feynman-Kac Functional and the Schrödinger Equation"
+year = 1981
+venue = "Seminar on Stochastic Processes, 1981"
+doi = "10.1007/978-1-4612-3938-3_1"
+locator_scheme = "page"
+locator = "pp. 1-29"
+url = "https://doi.org/10.1007/978-1-4612-3938-3_1"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["10.4"]

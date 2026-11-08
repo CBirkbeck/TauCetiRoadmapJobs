@@ -1,0 +1,13 @@
+{
+  "review": {
+    "status": "needs_changes",
+    "reviewer": "independent-review-PRREVIEW-EisensteinIdealAndRationalTorsion~7",
+    "head": "65d93987c918270ad73ce724a390a772f1dbf186",
+    "pr": 1264,
+    "folder": "EisensteinIdealAndRationalTorsion",
+    "date": "2026-11-07",
+    "findings": 3,
+    "blocking": 1,
+    "notes": "incremental re-review of 52 changed lines since 3360c02. Previous R01-R03 all repaired (module form; pinned Tau Ceti modular-forms contract; current pins and names). Gate with --build at 65d9398: every scanner 0, build=0 OK; depcheck 240 roadmaps, 2444 edges, 0 problems. lake env lean: exit 0, six sorry warnings; #check of all six unchanged; 30 one-tactic probes fail. Checked 17 new Tau Ceti/Mathlib names in pinned source by file, line and namespace; recomputed the three new Checks (correctedE2 at t=11, cusp constant terms, B2,chi=8/32/88). Seeded target 4.1 locator verified in Mazur1977 (II 18, Lemma 18.6, pp.135-137); 5.12/5.13 and 9.7 checked. New: R01 (P2) T/I = Z/n is statable via heckeRingHomCuspCharSpace (probe elaborates) but absent; R02 (P3) heckeTCuspAlgebra generators are single double cosets, not classical T_r; R03 (P3) constantTermAt_charG2MF is about charG2MF, not normalizedCharG2MF."
+  }
+}

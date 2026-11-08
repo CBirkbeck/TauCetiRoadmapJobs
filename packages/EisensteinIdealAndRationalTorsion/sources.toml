@@ -1,0 +1,18 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "EisensteinIdealAndRationalTorsion"
+
+[[source]]
+id = "Mazur1977"
+authors = "B. Mazur"
+title = "Modular curves and the Eisenstein ideal"
+year = 1977
+locator_scheme = "theorem"
+locator = "II Proposition 9.7"
+url = "http://www.numdam.org/item/PMIHES_1977__47__33_0/"
+fetched_from = "https://www.numdam.org/item/PMIHES_1977__47__33_0.pdf"
+fetched_at = "2026-11-07T22:25:22Z"
+sha256 = "c20c7e73be20d6cc961127504b6be019f7707e0ee6154ba1fac0bbfd5973be8a"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-07"
+cited_for = ["0.4"]

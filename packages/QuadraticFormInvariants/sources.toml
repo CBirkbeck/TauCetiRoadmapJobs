@@ -1,0 +1,165 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "QuadraticFormInvariants"
+
+[[source]]
+id = "kahn1984"
+locator_scheme = "theorem"
+locator = "Lemme II.2.1; Théorème 2; Prop. II.3.5"
+url = "https://webusers.imj-prg.fr/~bruno.kahn/preprints/sw-inventiones.pdf"
+fetched_from = "https://webusers.imj-prg.fr/~bruno.kahn/preprints/sw-inventiones.pdf"
+fetched_at = "2026-11-05T18:09:46Z"
+sha256 = "92817bc00fb8e19d16cede83cfb020a2ee3f1b088ab6df31f74669b3e0644107"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-05"
+cited_for = ["Layer 9"]
+
+[[source]]
+id = "serre1984cmh"
+locator_scheme = "theorem"
+locator = "Théorème 1′"
+url = "https://www.college-de-france.fr/media/jean-pierre-serre/UPL4088637057849025347_Serre_CMH_Trx2.pdf"
+fetched_from = "https://www.college-de-france.fr/media/jean-pierre-serre/UPL4088637057849025347_Serre_CMH_Trx2.pdf"
+fetched_at = "2026-11-05T18:09:48Z"
+sha256 = "59c1c2157b457e31b5b47071abda55eedb69d2ac6a81214e7356a5e67072e88f"
+licence_class = "institutional"
+status = "certified"
+accessed = "2026-11-05"
+cited_for = ["Layer 9"]
+
+[[source]]
+id = "kozlowski1984"
+locator_scheme = "theorem"
+locator = "Thm 1.1"
+url = "https://www.ams.org/journals/proc/1984-091-02/S0002-9939-1984-0740192-9/S0002-9939-1984-0740192-9.pdf"
+fetched_from = "https://www.ams.org/journals/proc/1984-091-02/S0002-9939-1984-0740192-9/S0002-9939-1984-0740192-9.pdf"
+fetched_at = "2026-11-05T18:09:50Z"
+sha256 = "b0111ec8c2cd9080f54f56e2d41e01f8a1f2390a5410da1a1d6c082487edcc47"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-11-05"
+cited_for = ["Layer 9"]
+
+[[source]]
+id = "milnor1970"
+authors = "John Milnor"
+title = "AlgebraicK-theory and quadratic forms"
+year = 1970
+venue = "Inventiones Mathematicae 9"
+doi = "10.1007/BF01425486"
+locator_scheme = "section"
+locator = "§4"
+url = "https://doi.org/10.1007/BF01425486"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["Layer 8"]
+
+[[source]]
+id = "serre1973cia"
+authors = "J.-P. Serre"
+title = "A Course in Arithmetic"
+year = 1973
+venue = "Graduate Texts in Mathematics"
+doi = "10.1007/978-1-4684-9884-4"
+locator_scheme = "chapter"
+locator = "II §3.3, III, IV §2"
+url = "https://doi.org/10.1007/978-1-4684-9884-4"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["Layer 6"]
+
+[[source]]
+id = "serre1979lf"
+authors = "J.-P. Serre"
+title = "Local Fields"
+year = 1979
+venue = "Graduate Texts in Mathematics"
+doi = "10.1007/978-1-4757-5673-9"
+locator_scheme = "chapter"
+locator = "X, XIV §2"
+url = "https://doi.org/10.1007/978-1-4757-5673-9"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["Layer 7"]
+
+[[source]]
+id = "evens1963"
+locator_scheme = "section"
+locator = "the norm map"
+url = "https://www.ams.org/journals/tran/1963-108-01/S0002-9947-1963-0153725-1/S0002-9947-1963-0153725-1.pdf"
+fetched_from = "https://www.ams.org/journals/tran/1963-108-01/S0002-9947-1963-0153725-1/S0002-9947-1963-0153725-1.pdf"
+fetched_at = "2026-11-05T18:11:14Z"
+sha256 = "b537700967a367febc68d2f882da26f8256cf1d336f14c3af01aab356a97d336"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-11-05"
+cited_for = ["Layer 9"]
+
+[[source]]
+id = "guillot2010"
+authors = "Pierre Guillot"
+title = "The computation of Stiefel-Whitney classes"
+year = 2009
+arxiv = "0905.3121v1"
+locator_scheme = "page"
+locator = "565-606 (published numbering; arXiv 0905.3121 read)"
+url = "https://arxiv.org/abs/0905.3121v1"
+fetched_from = "https://arxiv.org/pdf/0905.3121v1"
+fetched_at = "2026-11-05T18:11:31Z"
+sha256 = "12d45d88e7c39b05bc5e8dd54d0aa7a7aa7eaaf92b7b9971d90f644e8dc44c27"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-05"
+version_note = "arXiv v1"
+cited_for = ["Layer 8"]
+
+[[source]]
+id = "omeara1963"
+authors = "O. Timothy O’Meara"
+title = "Introduction to Quadratic Forms"
+year = 1963
+doi = "10.1007/978-3-642-62031-7"
+locator_scheme = "section"
+locator = "§63"
+url = "https://doi.org/10.1007/978-3-642-62031-7"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["Layer 6"]
+
+[[source]]
+id = "scharlau1985"
+authors = "Winfried Scharlau"
+title = "Quadratic and Hermitian Forms"
+year = 1985
+venue = "Grundlehren der mathematischen Wissenschaften"
+doi = "10.1007/978-3-642-69971-9"
+locator_scheme = "chapter"
+locator = "Ch. 2 §5, Ch. 5"
+url = "https://doi.org/10.1007/978-3-642-69971-9"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["Layers 6, 9"]
+
+[[source]]
+id = "ekm2008"
+authors = "R. Elman, N. Karpenko, A. Merkurjev"
+title = "The Algebraic and Geometric Theory of Quadratic Forms"
+year = 2008
+venue = "AMS Colloquium Publications 56"
+doi = "10.1090/coll/056"
+locator_scheme = "chapter"
+locator = "II §7"
+url = "https://sites.ualberta.ca/~karpenko/publ/Kniga.pdf"
+fetched_from = "https://sites.ualberta.ca/~karpenko/publ/Kniga.pdf"
+fetched_at = "2026-11-07T16:13:51Z"
+sha256 = "2b69553b999f8b4e2d47947b29c0c84d153018cdba8142c784b93473004813d5"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-07"
+version_note = "authors' copy on N. Karpenko's page; the numbering of chapters and sections is that of the published book"
+cited_for = ["Layers 0–4"]

@@ -1,0 +1,2006 @@
+{
+  "roadmap": "QuasiregularMaps",
+  "title": "Quasiregular maps",
+  "parent": null,
+  "summary": "Linear distortion (minimal stretch; outer, inner and Hilbert–Schmidt distortion with the sharp comparisons); K-quasiregular maps between oriented Riemannian n-manifolds on the Sobolev class W^{1,n}_loc(M,N) of SobolevMapsBetweenManifolds; outer, inner, maximal and Hilbert–Schmidt distortion of maps, attainment, Jacobian sign, locality, constancy, the C¹, Lipschitz, Euclidean and Beltrami descriptions; invariance under metrics, orientations and C¹ factors; ACL^p = W^{1,p}_loc for continuous maps and the agreement with Martio–Rickman–Väisälä; quasiregularity of non-degenerate orientation-preserving simplicial maps of C¹-triangulated manifolds; quasiregular ellipticity with orientation and metric independence, transfer along local diffeomorphisms, flat manifolds and simplicial branched coverings by tori.",
+  "baseline": {
+    "mathlib": "1b1ccf4b088b32fa3f23f2de1127433254a81e1e",
+    "tauceti": "2fd255d997f47c0b5d834ee416c7015d55444ce5"
+  },
+  "layers": [
+    {
+      "key": "1",
+      "title": "Linear distortion",
+      "targets": [
+        {
+          "id": "1.1",
+          "kind": "definition",
+          "name": "LinearMap.minStretch",
+          "statement": "For A : V -> W linear between real inner product spaces of dimension n >= 1, the minimal stretch ℓ(A) is the n-th singular value σ_n(A) (LinearMap.singularValues at index n - 1); it equals the minimum of |Av| over unit vectors v.",
+          "hypotheses": [
+            "V, W, X real inner product spaces of dimension n >= 1, each with an orientation",
+            "A : V -> W and B : W -> X linear"
+          ],
+          "locator": {
+            "source": "MartioRickmanVaisala1969",
+            "where": "line 127 (the quantity ℓ(T) next to |T|)"
+          },
+          "prerequisites": [
+            "mathlib:LinearMap.singularValues",
+            "mathlib:LinearMap.singularValues_antitone",
+            "mathlib:LinearMap.injective_iff_forall_lt_finrank_singularValues_pos",
+            "mathlib:LinearMap.normDet_eq_prod_singularValues",
+            "tauceti:LinearMap.norm_toContinuousLinearMap_eq_singularValues_zero",
+            "tauceti:LinearMap.singularValues_mul_norm_le_norm_apply"
+          ],
+          "api": [
+            {
+              "name": "minStretch_mul_norm_le",
+              "role": "lower bound",
+              "statement": "ℓ(A)|v| <= |Av| for all v, with equality for a right singular vector of σ_n; ℓ(A) is attained as the minimum over the unit sphere"
+            },
+            {
+              "name": "minStretch_le_norm",
+              "role": "comparison",
+              "statement": "ℓ(A) <= ‖A‖, with equality iff A is a non-negative multiple of a linear isometry"
+            },
+            {
+              "name": "minStretch_pos_iff",
+              "role": "characterisation",
+              "statement": "ℓ(A) > 0 iff A is injective; then ℓ(A)·‖A⁻¹‖ = 1"
+            },
+            {
+              "name": "minStretch_comp",
+              "role": "functoriality",
+              "statement": "ℓ(B∘A) >= ℓ(B)ℓ(A); ℓ(cA) = |c|ℓ(A); ℓ(U∘A∘U') = ℓ(A) for linear isometric equivalences U, U'"
+            },
+            {
+              "name": "minStretch_pow_le_normDet",
+              "role": "Jacobian bounds",
+              "statement": "ℓ(A)^n <= normDet(A) <= ‖A‖^n, since normDet(A) = σ_1⋯σ_n"
+            },
+            {
+              "name": "lipschitz_minStretch",
+              "role": "regularity",
+              "statement": "|ℓ(A) - ℓ(A')| <= ‖A - A'‖; ℓ is continuous and Borel"
+            }
+          ],
+          "tests": [
+            {
+              "name": "minStretch_diag",
+              "kind": "computation",
+              "statement": "diag(3, 1/2) on ℝ²: ℓ = 1/2, ‖A‖ = 3, ‖A⁻¹‖ = 2, ℓ·‖A⁻¹‖ = 1"
+            },
+            {
+              "name": "minStretch_shear",
+              "kind": "non-example",
+              "statement": "[[1,1],[0,1]]: AᵀA has eigenvalues (3 ± √5)/2, ℓ = (√5 − 1)/2 ≈ 0.618; the minimum of |Ae_i| over the standard basis is 1, so a basis-based definition is wrong"
+            },
+            {
+              "name": "minStretch_zero_projection",
+              "kind": "degenerate",
+              "statement": "the zero map and the projection of ℝ² onto a line have ℓ = 0, the projection having ‖A‖ = 1; the minimum of |Av| over all v (not unit v) is 0 even for the identity"
+            },
+            {
+              "name": "minStretch_dim_one",
+              "kind": "compatibility",
+              "statement": "n = 1: ℓ(a·id) = ‖a·id‖ = |a|"
+            }
+          ]
+        },
+        {
+          "id": "1.2",
+          "kind": "definition",
+          "name": "LinearMap.outerDistortion / LinearMap.innerDistortion",
+          "statement": "q_O(A) ∈ [0,∞]: ‖A‖^n / J(A) if J(A) > 0, q_O(0) = 0, q_O(A) = ∞ if A ≠ 0 and J(A) <= 0. q_I(A) ∈ [0,∞): J(A)/ℓ(A)^n if J(A) > 0, 0 if J(A) <= 0. J(A) is the oriented Jacobian of SobolevMapsBetweenManifolds T4.",
+          "hypotheses": [
+            "V, W, X real inner product spaces of dimension n >= 1, each with an orientation",
+            "A : V -> W and B : W -> X linear"
+          ],
+          "locator": {
+            "source": "MartioRickmanVaisala1969",
+            "where": "(2.21)-(2.22), lines 411-416"
+          },
+          "prerequisites": [
+            "target:1.1",
+            "gap:sobolev-maps-jacobian",
+            "mathlib:Orientation.volumeForm_neg_orientation",
+            "mathlib:Orientation.volumeForm_map"
+          ],
+          "api": [
+            {
+              "name": "outerDistortion_of_jacobian_pos",
+              "role": "singular values",
+              "statement": "if J(A) > 0: q_O(A) = Π_{i>=2} σ_1/σ_i >= 1 and q_I(A) = Π_{i<=n-1} σ_i/σ_n >= 1, both >= σ_1/σ_n"
+            },
+            {
+              "name": "outerDistortion_invariance",
+              "role": "invariance",
+              "statement": "q_O, q_I unchanged by orientation-preserving linear isometric equivalences on either side and by c > 0; for c < 0, unchanged for even n, while for odd n and J(A) > 0, q_O(cA) = ∞ and q_I(cA) = 0"
+            },
+            {
+              "name": "outerDistortion_neg_orientation",
+              "role": "orientation",
+              "statement": "reversing exactly one orientation negates J(A); reversing both changes neither quotient"
+            },
+            {
+              "name": "outerDistortion_comp_le",
+              "role": "submultiplicativity",
+              "statement": "q_O(B∘A) <= q_O(B) q_O(A) for all A, B (0·∞ = 0); q_I(B∘A) <= q_I(B) q_I(A) when J(A) >= 0 and J(B) >= 0"
+            },
+            {
+              "name": "outerDistortion_le_one_iff",
+              "role": "characterisation",
+              "statement": "q_O(A) <= 1 iff A = 0 or A = λU with λ > 0 and U a linear isometry with J(U) = 1"
+            },
+            {
+              "name": "lowerSemicontinuous_outerDistortion",
+              "role": "regularity",
+              "statement": "q_O is lower semicontinuous on the space of linear maps V -> W; q_O, q_I are Borel"
+            }
+          ],
+          "tests": [
+            {
+              "name": "outerDistortion_diag",
+              "kind": "computation",
+              "statement": "diag(2,1) on ℝ²: ‖A‖ = 2, J = 2, ℓ = 1, q_O = 2, q_I = 2"
+            },
+            {
+              "name": "outerDistortion_reflection",
+              "kind": "non-example",
+              "statement": "diag(−1,1): q_O = ∞, q_I = 0, while the naive quotient ‖R‖²/J(R) is −1"
+            },
+            {
+              "name": "outerDistortion_zero",
+              "kind": "degenerate",
+              "statement": "q_O(0) = q_I(0) = 0; the convention 0/0 = ∞ would make every constant map non-quasiregular"
+            },
+            {
+              "name": "innerDistortion_comp_counterexample",
+              "kind": "non-example",
+              "statement": "R∘R = id: q_I(id) = 1 > 0 = q_I(R)q_I(R), so q_I-submultiplicativity needs J >= 0"
+            },
+            {
+              "name": "outerDistortion_neg_id",
+              "kind": "computation",
+              "statement": "−id with one orientation: J = (−1)^n, q_O = ∞ for n = 3 and 1 for n = 2"
+            }
+          ]
+        },
+        {
+          "id": "1.3",
+          "kind": "theorem",
+          "name": "LinearMap.innerDistortion_le_outerDistortion_pow",
+          "statement": "For real K >= 0: ‖A‖^n <= K J(A) iff q_O(A) <= K, and J(A) <= K ℓ(A)^n iff q_I(A) <= K. If J(A) > 0 then q_I(A) <= q_O(A)^(n−1) and q_O(A) <= q_I(A)^(n−1); q_I = q_O^(n−1) iff σ_1 = … = σ_(n−1); q_O = q_I^(n−1) iff σ_2 = … = σ_n; for n = 2, q_O = q_I = σ_1/σ_2; q_O = 1 iff q_I = 1 iff A = λU.",
+          "hypotheses": [
+            "V, W, X real inner product spaces of dimension n >= 1, each with an orientation",
+            "A : V -> W and B : W -> X linear",
+            "K >= 0 real (characterisation)",
+            "J(A) > 0 (comparison)"
+          ],
+          "locator": {
+            "source": "MartioRickmanVaisala1969",
+            "where": "(2.25), line 438"
+          },
+          "prerequisites": [
+            "target:1.1",
+            "target:1.2",
+            "mathlib:LinearMap.normDet_eq_prod_singularValues",
+            "gap:sobolev-maps-jacobian"
+          ],
+          "api": [],
+          "tests": [
+            {
+              "name": "comparison_211",
+              "kind": "computation",
+              "statement": "diag(2,1,1): q_O = 4, q_I = 2, q_O = q_I²"
+            },
+            {
+              "name": "comparison_112",
+              "kind": "computation",
+              "statement": "diag(1,1,1/2): q_O = 2, q_I = 4 = q_O²"
+            },
+            {
+              "name": "comparison_321",
+              "kind": "computation",
+              "statement": "diag(3,2,1): q_O = 9/2, q_I = 6; 6 < 81/4 and 9/2 < 36"
+            },
+            {
+              "name": "comparison_dim_one",
+              "kind": "degenerate",
+              "statement": "n = 1, A = a·id with a > 0: q_O = q_I = 1, exponents 0"
+            },
+            {
+              "name": "comparison_needs_jacobian",
+              "kind": "non-example",
+              "statement": "projection diag(1,0): q_O = ∞ > 0 = q_I"
+            },
+            {
+              "name": "characterisation_needs_K_nonneg",
+              "kind": "non-example",
+              "statement": "K = −1, R = diag(−1,1): 1 <= (−1)(−1) holds but q_O(R) = ∞"
+            }
+          ]
+        },
+        {
+          "id": "1.4",
+          "kind": "definition",
+          "name": "LinearMap.hilbertSchmidtDistortion",
+          "statement": "q_S(A) = ‖A‖_HS^n / (n^(n/2) J(A)) if J(A) > 0, q_S(0) = 0, q_S(A) = ∞ otherwise, with ‖A‖_HS² = Σ σ_i(A)²; and q_S(A) <= q_O(A) <= n^(n/2) q_S(A) for every A, the constant n^(n/2) optimal and, for J(A) > 0 and n >= 2, not attained.",
+          "hypotheses": [
+            "V, W, X real inner product spaces of dimension n >= 1, each with an orientation",
+            "A : V -> W and B : W -> X linear"
+          ],
+          "locator": {
+            "source": "MartioRickmanVaisala1969",
+            "where": "(2.23)-(2.24), lines 426-435"
+          },
+          "prerequisites": [
+            "target:1.2",
+            "target:1.3",
+            "tauceti:TauCeti.UnitarilyInvariantSeminorm.frobenius_apply_eq_sqrt_sum_sq_singularValues",
+            "gap:sobolev-maps-jacobian"
+          ],
+          "api": [
+            {
+              "name": "hilbertSchmidtDistortion_eq",
+              "role": "singular values",
+              "statement": "q_S(A) = (σ_1²+…+σ_n²)^(n/2) / (n^(n/2) σ_1⋯σ_n) when J(A) > 0"
+            },
+            {
+              "name": "one_le_hilbertSchmidtDistortion",
+              "role": "lower bound",
+              "statement": "q_S(A) >= 1 when J(A) > 0 (AM-GM on σ_i²), with equality iff q_O(A) = 1"
+            },
+            {
+              "name": "hilbertSchmidtDistortion_invariance",
+              "role": "invariance",
+              "statement": "q_S has the invariances of q_O"
+            },
+            {
+              "name": "hilbertSchmidtDistortion_le_outerDistortion",
+              "role": "comparison",
+              "statement": "q_S(A) <= q_O(A) <= n^(n/2) q_S(A)"
+            }
+          ],
+          "tests": [
+            {
+              "name": "hilbertSchmidtDistortion_id",
+              "kind": "computation",
+              "statement": "q_S(id) = 1"
+            },
+            {
+              "name": "hilbertSchmidtDistortion_diag",
+              "kind": "computation",
+              "statement": "diag(2,1): ‖A‖_HS² = 5, q_S = 5/4, q_O = 2, 5/4 <= 2 <= 5/2"
+            },
+            {
+              "name": "hilbertSchmidtDistortion_sharp",
+              "kind": "characterisation",
+              "statement": "diag(1,ε): q_O/q_S = 2/(1+ε²) -> 2; diag(1,ε,ε) in ℝ³: ratio 3^(3/2)/(1+2ε²)^(3/2) -> 3^(3/2)"
+            },
+            {
+              "name": "hilbertSchmidtDistortion_reflection_zero",
+              "kind": "degenerate",
+              "statement": "diag(−1,1): q_S = ∞; the zero map: q_S = 0"
+            }
+          ]
+        },
+        {
+          "id": "1.5",
+          "kind": "theorem",
+          "name": "LinearMap.planar_distortion",
+          "statement": "For A z = a z + b z̄ on ℂ oriented by (1, i): ‖A‖ = |a|+|b|, ℓ(A) = ||a|−|b||, J(A) = det A = |a|²−|b|²; q_O(A) = q_I(A) = (|a|+|b|)/(|a|−|b|) if |b| < |a|; q_O(A) = ∞ if A ≠ 0 and |b| >= |a|; for 0 <= k < 1, q_O(A) <= (1+k)/(1−k) iff |b| <= k|a|.",
+          "hypotheses": [
+            "a, b ∈ ℂ",
+            "ℂ oriented by the basis (1, i)",
+            "0 <= k < 1 for the last clause"
+          ],
+          "locator": {
+            "source": "Ahlfors2006",
+            "where": "Ch. I"
+          },
+          "prerequisites": [
+            "target:1.2",
+            "target:1.3",
+            "mathlib:LinearMap.det",
+            "gap:sobolev-maps-jacobian"
+          ],
+          "api": [],
+          "tests": [
+            {
+              "name": "planar_half",
+              "kind": "computation",
+              "statement": "a = 1, b = 1/2: ‖A‖ = 3/2, ℓ = 1/2, J = 3/4, q_O = 3"
+            },
+            {
+              "name": "planar_conj",
+              "kind": "non-example",
+              "statement": "a = 0, b = 1: J = −1, q_O = ∞"
+            },
+            {
+              "name": "planar_holomorphic",
+              "kind": "degenerate",
+              "statement": "a = 2i, b = 0: q_O = 1"
+            },
+            {
+              "name": "planar_third",
+              "kind": "computation",
+              "statement": "z + z̄/3: q_O = (4/3)/(2/3) = 2, k = 1/3"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "2",
+      "title": "Quasiregular maps and the outer distortion",
+      "targets": [
+        {
+          "id": "2.1",
+          "kind": "definition",
+          "name": "IsQuasiregularWith / IsQuasiregular",
+          "statement": "For real K, f : M -> N is K-quasiregular if 1 <= K, f is continuous, f ∈ W^{1,n}_loc(M, N) and ‖Df(x)‖^n <= K J_f(x) for almost every x ∈ M; f is quasiregular if K-quasiregular for some K.",
+          "hypotheses": [
+            "n >= 1",
+            "M, N smooth, Hausdorff, second countable, boundaryless manifolds modelled with 𝓘(ℝ, E), E a real normed space of dimension n",
+            "continuous Riemannian metrics (RiemannianBundle, IsContinuousRiemannianBundle); measure TauCeti.riemannianVolume",
+            "orientations o_M, o_N : TauCeti.Manifold.Orientation 𝓘(ℝ, E) _ (Fin n)",
+            "K real"
+          ],
+          "locator": {
+            "source": "HeikkilaPankka2025",
+            "where": "lines 22-27; also Prywes2019 lines 22-26 and MartioRickmanVaisala1969 Definition 2.20, lines 409-412"
+          },
+          "prerequisites": [
+            "target:1.2",
+            "target:1.3",
+            "gap:sobolev-maps-class",
+            "gap:sobolev-maps-weak-differential",
+            "gap:sobolev-maps-norm",
+            "gap:sobolev-maps-jacobian"
+          ],
+          "api": [
+            {
+              "name": "IsQuasiregularWith.mono",
+              "role": "monotonicity",
+              "statement": "K-quasiregular and K <= K' imply K'-quasiregular"
+            },
+            {
+              "name": "isQuasiregularWith_iff_outerDistortion_le",
+              "role": "characterisation",
+              "statement": "f is K-quasiregular iff 1 <= K, f continuous, f ∈ W^{1,n}_loc(M,N) and q_O(Df(x)) <= K a.e."
+            },
+            {
+              "name": "IsQuasiregularWith.congr",
+              "role": "well-definedness",
+              "statement": "depends only on f, the metrics and orientations; almost everywhere is metric-free"
+            },
+            {
+              "name": "isQuasiregularWith_const",
+              "role": "constructor",
+              "statement": "constant maps are K-quasiregular for every K >= 1; maps out of an empty manifold are 1-quasiregular"
+            },
+            {
+              "name": "ae_mfderiv_eq_zero_of_lt_one",
+              "role": "degenerate constant",
+              "statement": "if 0 <= K < 1 and ‖Df‖^n <= K J_f a.e. then Df = 0 a.e. (Hadamard)"
+            }
+          ],
+          "tests": [
+            {
+              "name": "isQuasiregularWith_id",
+              "kind": "computation",
+              "statement": "the identity of M (one orientation) has ‖id‖ = 1, J = 1, so it is 1-quasiregular"
+            },
+            {
+              "name": "not_isQuasiregular_id_neg",
+              "kind": "non-example",
+              "statement": "identity (M,o) -> (M,−o), M non-empty: J = −1, not quasiregular; without 1 <= K, K = −1 would satisfy 1 <= (−1)(−1)"
+            },
+            {
+              "name": "not_isQuasiregular_fold",
+              "kind": "non-example",
+              "statement": "fold (|x_1|, x_2, …, x_n): ‖DF‖ = 1, J = sign x_1, not quasiregular; a |J_f|-based definition would accept it"
+            },
+            {
+              "name": "isQuasiregular_dim_one",
+              "kind": "degenerate",
+              "statement": "n = 1: t ↦ max(0,t) is 1-quasiregular, non-constant, constant on (−∞, 0]"
+            }
+          ]
+        },
+        {
+          "id": "2.2",
+          "kind": "definition",
+          "name": "outerDistortion",
+          "statement": "For continuous f ∈ W^{1,n}_loc(M, N), K_O(f) = max(1, ess sup q_O(Df)) ∈ [1, ∞] (essSup for TauCeti.riemannianVolume); K_O(f) = ∞ for every other map.",
+          "hypotheses": [
+            "n >= 1",
+            "M, N smooth, Hausdorff, second countable, boundaryless manifolds modelled with 𝓘(ℝ, E), E a real normed space of dimension n",
+            "continuous Riemannian metrics (RiemannianBundle, IsContinuousRiemannianBundle); measure TauCeti.riemannianVolume",
+            "orientations o_M, o_N : TauCeti.Manifold.Orientation 𝓘(ℝ, E) _ (Fin n)"
+          ],
+          "locator": {
+            "source": "MartioRickmanVaisala1969",
+            "where": "lines 412-413 and 418-419"
+          },
+          "prerequisites": [
+            "target:1.2",
+            "target:2.1",
+            "mathlib:essSup",
+            "tauceti:TauCeti.riemannianVolume",
+            "gap:sobolev-maps-class",
+            "gap:sobolev-maps-weak-differential",
+            "gap:sobolev-maps-norm",
+            "gap:sobolev-maps-jacobian"
+          ],
+          "api": [
+            {
+              "name": "outerDistortion_const",
+              "role": "evaluation",
+              "statement": "K_O = 1 for constant maps and for maps out of an empty manifold"
+            },
+            {
+              "name": "outerDistortion_restrict_le",
+              "role": "restriction",
+              "statement": "K_O(f|_U) <= K_O(f) for open U (2.5)"
+            },
+            {
+              "name": "outerDistortion_eq_of_contMDiff",
+              "role": "C¹ formula",
+              "statement": "for C¹ f, K_O(f) = max(1, sup_x q_O(df_x)) (2.7)"
+            },
+            {
+              "name": "outerDistortion_comp_isometry",
+              "role": "invariance",
+              "statement": "unchanged by orientation-preserving isometries on either side"
+            }
+          ],
+          "tests": [
+            {
+              "name": "outerDistortion_const_eq_one",
+              "kind": "degenerate",
+              "statement": "constant map: ess sup q_O = 0 and K_O = 1; without max(1, ·) it would be 0"
+            },
+            {
+              "name": "outerDistortion_sq",
+              "kind": "computation",
+              "statement": "z ↦ z² on ℂ: ‖Df‖ = 2|z|, J = 4|z|², q_O = 1 off 0, K_O = 1"
+            },
+            {
+              "name": "outerDistortion_radial",
+              "kind": "computation",
+              "statement": "radial stretch of ℝ³: K_O = 4 for a = 2, K_O = 2 for a = 1/2"
+            },
+            {
+              "name": "outerDistortion_fold",
+              "kind": "non-example",
+              "statement": "fold: K_O = ∞, while the ess sup of the naive ratio ‖Df‖^n/J_f = ±1 is 1"
+            }
+          ]
+        },
+        {
+          "id": "2.3",
+          "kind": "theorem",
+          "name": "outerDistortion_le_iff",
+          "statement": "For continuous f ∈ W^{1,n}_loc(M,N): {K ∈ ℝ : f is K-quasiregular} = {K ∈ ℝ : 1 <= K and K_O(f) <= K}; f is K_O(f)-quasiregular when K_O(f) < ∞; f is quasiregular iff K_O(f) < ∞.",
+          "hypotheses": [
+            "n >= 1",
+            "M, N smooth, Hausdorff, second countable, boundaryless manifolds modelled with 𝓘(ℝ, E), E a real normed space of dimension n",
+            "continuous Riemannian metrics (RiemannianBundle, IsContinuousRiemannianBundle); measure TauCeti.riemannianVolume",
+            "orientations o_M, o_N : TauCeti.Manifold.Orientation 𝓘(ℝ, E) _ (Fin n)",
+            "f continuous",
+            "f ∈ W^{1,n}_loc(M, N)"
+          ],
+          "locator": {
+            "source": "MartioRickmanVaisala1969",
+            "where": "lines 412-413 (the smallest K >= 1 is the outer dilatation)"
+          },
+          "prerequisites": [
+            "target:1.3",
+            "target:2.1",
+            "target:2.2",
+            "mathlib:ae_le_essSup",
+            "mathlib:essSup_le_of_ae_le",
+            "gap:sobolev-maps-weak-differential",
+            "gap:sobolev-maps-jacobian"
+          ],
+          "api": [],
+          "tests": [
+            {
+              "name": "attained_identity",
+              "kind": "computation",
+              "statement": "identity: the set is [1, ∞)"
+            },
+            {
+              "name": "attained_fold",
+              "kind": "non-example",
+              "statement": "fold: the set is empty and K_O = ∞"
+            },
+            {
+              "name": "attained_empty",
+              "kind": "degenerate",
+              "statement": "M empty: zero measure, ess sup = 0, K_O = 1, the set is [1, ∞)"
+            }
+          ]
+        },
+        {
+          "id": "2.4",
+          "kind": "theorem",
+          "name": "IsQuasiregularWith.jacobian_nonneg",
+          "statement": "If f is K-quasiregular then, almost everywhere: J_f >= 0; Df = 0 where J_f = 0; J_f <= ‖Df‖^n <= K J_f; J_f = |J_f| = normDet(Df); and J_f ∈ L¹_loc(M).",
+          "hypotheses": [
+            "n >= 1",
+            "M, N smooth, Hausdorff, second countable, boundaryless manifolds modelled with 𝓘(ℝ, E), E a real normed space of dimension n",
+            "continuous Riemannian metrics (RiemannianBundle, IsContinuousRiemannianBundle); measure TauCeti.riemannianVolume",
+            "orientations o_M, o_N : TauCeti.Manifold.Orientation 𝓘(ℝ, E) _ (Fin n)",
+            "f K-quasiregular"
+          ],
+          "locator": {
+            "source": "Rickman1993",
+            "where": "Ch. I"
+          },
+          "prerequisites": [
+            "target:2.1",
+            "target:2.3",
+            "mathlib:LinearMap.normDet",
+            "gap:sobolev-maps-jacobian"
+          ],
+          "api": [],
+          "tests": [
+            {
+              "name": "jacobian_sq",
+              "kind": "computation",
+              "statement": "z ↦ z²: J = 4|z|² vanishing only at 0, where Df = 0"
+            },
+            {
+              "name": "jacobian_projection",
+              "kind": "non-example",
+              "statement": "projection (x_1,…,x_(n−1),0), n >= 2: J = 0 with DP ≠ 0, not quasiregular"
+            },
+            {
+              "name": "jacobian_radial_integrable",
+              "kind": "computation",
+              "statement": "radial stretch a > 0: J = a|x|^(n(a−1)), integrable near 0 since n(a−1) > −n"
+            }
+          ]
+        },
+        {
+          "id": "2.5",
+          "kind": "theorem",
+          "name": "IsQuasiregularWith.restrict / isQuasiregularWith_iff_local",
+          "statement": "If f is K-quasiregular and U ⊆ M open (restricted metric and orientation) then f|_U is K-quasiregular and K_O(f|_U) <= K_O(f); a continuous f is K-quasiregular iff every point has an open neighbourhood U with f|_U K-quasiregular; for every open cover (U_i) and continuous f, K_O(f) = max(1, sup_i K_O(f|_(U_i))) (the max matters only for the empty cover of M = ∅).",
+          "hypotheses": [
+            "n >= 1",
+            "M, N smooth, Hausdorff, second countable, boundaryless manifolds modelled with 𝓘(ℝ, E), E a real normed space of dimension n",
+            "continuous Riemannian metrics (RiemannianBundle, IsContinuousRiemannianBundle); measure TauCeti.riemannianVolume",
+            "orientations o_M, o_N : TauCeti.Manifold.Orientation 𝓘(ℝ, E) _ (Fin n)",
+            "f continuous"
+          ],
+          "locator": {
+            "source": "Rickman1993",
+            "where": "Ch. I"
+          },
+          "prerequisites": [
+            "target:2.1",
+            "target:2.2",
+            "gap:sobolev-maps-class",
+            "tauceti:TauCeti.IsNullSet.iUnion",
+            "tauceti:TauCeti.Manifold.Orientation.restrict",
+            "roadmap:DifferentialGeometry Layer 12.1"
+          ],
+          "api": [],
+          "tests": [
+            {
+              "name": "local_shear",
+              "kind": "non-example",
+              "statement": "shear (x, y + x³/3) of ℝ²: J = 1, ‖Df‖ = (x² + √(x⁴+4))/2, K_O on |x| < R is ((R² + √(R⁴+4))/2)², finite, K_O = ∞ on ℝ²"
+            },
+            {
+              "name": "local_sq_halfplane",
+              "kind": "computation",
+              "statement": "z ↦ z² on Re z > 0 is injective and 1-quasiregular"
+            },
+            {
+              "name": "local_empty_cover",
+              "kind": "degenerate",
+              "statement": "M = ∅ with the empty cover: K_O(f) = 1 (2.3) while sup of the empty family in [0,∞] is 0; max(1, ·) restores 1"
+            }
+          ]
+        },
+        {
+          "id": "2.6",
+          "kind": "theorem",
+          "name": "eq_const_of_ae_weakDifferential_eq_zero",
+          "statement": "If M is connected and f : M -> N is continuous, f ∈ W^{1,1}_loc(M,N) and Df = 0 a.e., then f is constant; a quasiregular map of connected M with J_f = 0 a.e. is constant; a non-constant quasiregular map of connected M has J_f > 0 on a set of positive measure.",
+          "hypotheses": [
+            "n >= 1",
+            "M, N smooth, Hausdorff, second countable, boundaryless manifolds modelled with 𝓘(ℝ, E), E a real normed space of dimension n",
+            "continuous Riemannian metrics (RiemannianBundle, IsContinuousRiemannianBundle); measure TauCeti.riemannianVolume",
+            "orientations o_M, o_N : TauCeti.Manifold.Orientation 𝓘(ℝ, E) _ (Fin n)",
+            "M connected"
+          ],
+          "locator": {
+            "source": "Rickman1993",
+            "where": "Ch. I"
+          },
+          "prerequisites": [
+            "target:2.4",
+            "gap:sobolev-maps-class",
+            "gap:sobolev-maps-weak-differential",
+            "tauceti:TauCeti.W1p.exists_value_ae_eq_const_of_gradient_eq_zero"
+          ],
+          "api": [],
+          "tests": [
+            {
+              "name": "const_disconnected",
+              "kind": "non-example",
+              "statement": "two disjoint balls mapped to two points: Df = 0, not constant"
+            },
+            {
+              "name": "const_cantor",
+              "kind": "non-example",
+              "statement": "(c(x_1), 0) on (0,1)² with the Cantor function: classical derivative 0 a.e., not constant, not in W^{1,1}_loc (5.2 and TauCeti.not_absolutelyContinuousOnInterval_cantorFunction)"
+            }
+          ]
+        },
+        {
+          "id": "2.7",
+          "kind": "theorem",
+          "name": "isQuasiregularWith_iff_of_contMDiff",
+          "statement": "A C¹ map f : M -> N is K-quasiregular (K >= 1) iff ‖df_x‖^n <= K J(df_x) for every x ∈ M; K_O(f) = max(1, sup_x q_O(df_x)); f is 1-quasiregular iff every df_x is 0 or a positive multiple of an orientation-preserving linear isometry; in particular identities, orientation-preserving isometries, orientation-preserving local Riemannian isometries and orientation-preserving conformal C¹ maps are 1-quasiregular.",
+          "hypotheses": [
+            "n >= 1",
+            "M, N smooth, Hausdorff, second countable, boundaryless manifolds modelled with 𝓘(ℝ, E), E a real normed space of dimension n",
+            "continuous Riemannian metrics (RiemannianBundle, IsContinuousRiemannianBundle); measure TauCeti.riemannianVolume",
+            "orientations o_M, o_N : TauCeti.Manifold.Orientation 𝓘(ℝ, E) _ (Fin n)",
+            "f : M -> N of class C¹"
+          ],
+          "locator": {
+            "source": "Rickman1993",
+            "where": "Ch. I"
+          },
+          "prerequisites": [
+            "target:1.2",
+            "target:2.2",
+            "target:2.3",
+            "gap:sobolev-maps-class",
+            "tauceti:TauCeti.IsNullSet.interior_eq_empty",
+            "tauceti:TauCeti.isOpenPosMeasure_riemannianVolume",
+            "tauceti:TauCeti.IsLocalRiemannianIsometry"
+          ],
+          "api": [],
+          "tests": [
+            {
+              "name": "c1_sq",
+              "kind": "computation",
+              "statement": "z ↦ z²: C¹, 1-quasiregular, not injective"
+            },
+            {
+              "name": "c1_antipodal",
+              "kind": "computation",
+              "statement": "x ↦ −x on ℝⁿ: J = (−1)^n, 1-quasiregular iff n is even"
+            },
+            {
+              "name": "c1_cube",
+              "kind": "non-example",
+              "statement": "(x³, y): smooth homeomorphism, J = 3x² >= 0, q_O = max(3x²,1)²/(3x²) -> ∞ as x -> 0 and q_O = ∞ at x = 0; not quasiregular"
+            },
+            {
+              "name": "c1_torus_projection",
+              "kind": "compatibility",
+              "statement": "ℝⁿ -> ℝⁿ/ℤⁿ with the descended metric: ‖dπ‖ = 1, J = 1, K_O = 1"
+            }
+          ]
+        },
+        {
+          "id": "2.8",
+          "kind": "theorem",
+          "name": "LocallyLipschitzInCharts.isQuasiregularWith_iff",
+          "statement": "If f : M -> N is continuous and every chart representative is locally Lipschitz, then f ∈ W^{1,p}_loc(M,N) for every p ∈ [1,∞], f is differentiable at almost every point, Df = mfderiv f a.e., and f is K-quasiregular iff ‖mfderiv f x‖^n <= K J(mfderiv f x) for a.e. x.",
+          "hypotheses": [
+            "n >= 1",
+            "M, N smooth, Hausdorff, second countable, boundaryless manifolds modelled with 𝓘(ℝ, E), E a real normed space of dimension n",
+            "continuous Riemannian metrics (RiemannianBundle, IsContinuousRiemannianBundle); measure TauCeti.riemannianVolume",
+            "orientations o_M, o_N : TauCeti.Manifold.Orientation 𝓘(ℝ, E) _ (Fin n)",
+            "f locally Lipschitz in charts"
+          ],
+          "locator": {
+            "source": "HeikkilaPankka2025",
+            "where": "Lemma B.2, lines 1255-1260 (W^{1,∞} case for piecewise smooth functions on closed manifolds)"
+          },
+          "prerequisites": [
+            "target:2.1",
+            "tauceti:LocallyLipschitzOn.ae_differentiableAt_of_mem",
+            "tauceti:LocallyLipschitzOn.hasWeakFDerivOn_fderiv",
+            "gap:sobolev-maps-class",
+            "gap:sobolev-maps-euclidean"
+          ],
+          "api": [],
+          "tests": [
+            {
+              "name": "lipschitz_winding",
+              "kind": "computation",
+              "statement": "winding map (r,θ,z) ↦ (r,2θ,z) of ℝ³: Lipschitz, singular values 2,1,1, J = 2, K_O = 4, K_I = 2"
+            },
+            {
+              "name": "lipschitz_fold",
+              "kind": "non-example",
+              "statement": "the fold is 1-Lipschitz and not quasiregular"
+            },
+            {
+              "name": "lipschitz_sqrt",
+              "kind": "non-example",
+              "statement": "|x|^(1/2) on ℝ is not locally Lipschitz and lies in W^{1,p}_loc only for p < 2"
+            }
+          ]
+        },
+        {
+          "id": "2.9",
+          "kind": "theorem",
+          "name": "isQuasiregularWith_iff_euclidean",
+          "statement": "For E an n-dimensional real inner product space with orientation o and Ω ⊆ E open (flat metric, orientation o on Ω and E): f : Ω -> E is K-quasiregular iff 1 <= K, f is continuous, there is Du with TauCeti.HasWeakFDerivOn volume Ω f Du and ‖Du‖^n locally integrable on Ω, and ‖Du(x)‖^n <= K det Du(x) for a.e. x ∈ Ω; independent of o.",
+          "hypotheses": [
+            "E an n-dimensional real inner product space with an orientation o",
+            "Ω ⊆ E open"
+          ],
+          "locator": {
+            "source": "MartioRickmanVaisala1969",
+            "where": "Definition 2.20, lines 409-412; Prywes2019 lines 22-26"
+          },
+          "prerequisites": [
+            "target:2.1",
+            "tauceti:TauCeti.HasWeakFDerivOn",
+            "tauceti:TauCeti.hasWeakFDerivOn_of_hasFDerivAt_off_countable",
+            "gap:sobolev-maps-euclidean",
+            "gap:sobolev-maps-jacobian"
+          ],
+          "api": [],
+          "tests": [
+            {
+              "name": "euclidean_radial",
+              "kind": "computation",
+              "statement": "x ↦ |x|^(a−1)x, a > 0: singular values a|x|^(a−1) (once), |x|^(a−1) (n−1 times); K_O = a^(n−1), K_I = a for a >= 1 and K_O = 1/a, K_I = a^(1−n) for 0 < a < 1"
+            },
+            {
+              "name": "euclidean_radial_zero",
+              "kind": "non-example",
+              "statement": "a = 0: x/|x| is discontinuous at 0 and |x|^(−n) is not integrable there"
+            },
+            {
+              "name": "euclidean_orientation",
+              "kind": "compatibility",
+              "statement": "o on Ω and −o on E: the Jacobian is −det Du and the identity is not quasiregular"
+            }
+          ]
+        },
+        {
+          "id": "2.10",
+          "kind": "theorem",
+          "name": "isQuasiregularWith_iff_beltrami",
+          "statement": "For Ω ⊆ ℂ open (standard orientation, flat metric), f continuous with weak derivative, ‖Du‖² locally integrable, and weak Wirtinger derivatives f_z, f_z̄: for K >= 1 and k = (K−1)/(K+1), f is K-quasiregular iff |f_z̄| <= k|f_z| a.e.; for quasiregular f, K_O(f) = (1+k_0)/(1−k_0) with k_0 the ess sup of |f_z̄|/|f_z| over {f_z ≠ 0} (0 if that set is null); every orientation-preserving quasiconformal map of TeichmullerGeometry §7.4 with ‖μ‖_∞ < 1 is an injective K-quasiregular map with K = (1+‖μ‖_∞)/(1−‖μ‖_∞).",
+          "hypotheses": [
+            "Ω ⊆ ℂ open",
+            "ℂ with the standard orientation and flat metric",
+            "K >= 1"
+          ],
+          "locator": {
+            "source": "MartioRickmanVaisala1969",
+            "where": "lines 420-422; Ahlfors2006 Ch. I"
+          },
+          "prerequisites": [
+            "target:1.5",
+            "target:2.2",
+            "target:2.9",
+            "roadmap:TeichmullerGeometry §7.4",
+            "mathlib:DifferentiableAt.conformalAt"
+          ],
+          "api": [],
+          "tests": [
+            {
+              "name": "beltrami_affine",
+              "kind": "computation",
+              "statement": "z + a z̄, |a| < 1: f_z = 1, f_z̄ = a, K_O = (1+|a|)/(1−|a|), 3 for a = 1/2, the TeichmullerGeometry §7.4 dilatation for μ = a"
+            },
+            {
+              "name": "beltrami_conj",
+              "kind": "non-example",
+              "statement": "z̄: f_z = 0, f_z̄ = 1, J = −1, not quasiregular"
+            },
+            {
+              "name": "beltrami_holomorphic",
+              "kind": "degenerate",
+              "statement": "holomorphic f: f_z̄ = 0, k_0 = 0, K_O = 1"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "3",
+      "title": "Inner, maximal and Hilbert–Schmidt distortion",
+      "targets": [
+        {
+          "id": "3.1",
+          "kind": "definition",
+          "name": "innerDistortion / maxDistortion",
+          "statement": "For quasiregular f, K_I(f) = max(1, ess sup q_I(Df)); K_I(f) = ∞ for maps that are not quasiregular; K(f) = max(K_O(f), K_I(f)); f is K-quasiregular in the maximal sense when K(f) <= K.",
+          "hypotheses": [
+            "n >= 1",
+            "M, N smooth, Hausdorff, second countable, boundaryless manifolds modelled with 𝓘(ℝ, E), E a real normed space of dimension n",
+            "continuous Riemannian metrics (RiemannianBundle, IsContinuousRiemannianBundle); measure TauCeti.riemannianVolume",
+            "orientations o_M, o_N : TauCeti.Manifold.Orientation 𝓘(ℝ, E) _ (Fin n)"
+          ],
+          "locator": {
+            "source": "MartioRickmanVaisala1969",
+            "where": "lines 413-419"
+          },
+          "prerequisites": [
+            "target:1.2",
+            "target:2.2",
+            "target:2.3",
+            "target:2.4"
+          ],
+          "api": [
+            {
+              "name": "innerDistortion_le_iff",
+              "role": "characterisation",
+              "statement": "for quasiregular f, K_I(f) is the least K >= 1 with J_f <= K ℓ(Df)^n a.e."
+            },
+            {
+              "name": "innerDistortion_restrict_le",
+              "role": "restriction",
+              "statement": "K_I(f|_U) <= K_I(f); for C¹ quasiregular f, K_I(f) = max(1, sup_x q_I(df_x))"
+            },
+            {
+              "name": "maxDistortion_lt_top_iff",
+              "role": "characterisation",
+              "statement": "K(f) < ∞ iff f is quasiregular"
+            },
+            {
+              "name": "maxDistortion_eq_one_iff",
+              "role": "characterisation",
+              "statement": "for quasiregular f: K(f) = 1 iff K_O(f) = 1 iff K_I(f) = 1"
+            }
+          ],
+          "tests": [
+            {
+              "name": "innerDistortion_radial",
+              "kind": "computation",
+              "statement": "radial stretch of ℝ³: a = 1/2 gives K_O = 2, K_I = 4, K = 4; a = 2 gives K_O = 4, K_I = 2, K = 4"
+            },
+            {
+              "name": "innerDistortion_projection",
+              "kind": "non-example",
+              "statement": "projection: q_I(DP) = 0 everywhere but K_I = ∞ since it is not quasiregular; an unconditional ess sup would give 1"
+            },
+            {
+              "name": "innerDistortion_planar",
+              "kind": "compatibility",
+              "statement": "dimension two: K_I = K_O; z + z̄/2 has both equal to 3"
+            }
+          ]
+        },
+        {
+          "id": "3.2",
+          "kind": "theorem",
+          "name": "IsQuasiregular.innerDistortion_le_outerDistortion_pow",
+          "statement": "For quasiregular f: K_I(f) <= K_O(f)^(n−1) and K_O(f) <= K_I(f)^(n−1); K_O(f) <= K(f) <= K_O(f)^(n−1); for n >= 2 and s >= 1 the radial stretch with a = s has K_I = s, K_O = s^(n−1) and the one with a = 1/s has K_O = s, K_I = s^(n−1).",
+          "hypotheses": [
+            "n >= 1",
+            "M, N smooth, Hausdorff, second countable, boundaryless manifolds modelled with 𝓘(ℝ, E), E a real normed space of dimension n",
+            "continuous Riemannian metrics (RiemannianBundle, IsContinuousRiemannianBundle); measure TauCeti.riemannianVolume",
+            "orientations o_M, o_N : TauCeti.Manifold.Orientation 𝓘(ℝ, E) _ (Fin n)",
+            "f quasiregular",
+            "n >= 2 for the optimality clause"
+          ],
+          "locator": {
+            "source": "MartioRickmanVaisala1969",
+            "where": "(2.25), lines 438-439"
+          },
+          "prerequisites": [
+            "target:1.3",
+            "target:2.4",
+            "target:2.9",
+            "target:3.1"
+          ],
+          "api": [],
+          "tests": [
+            {
+              "name": "comparison_winding",
+              "kind": "computation",
+              "statement": "winding map: K_O = 4 = K_I², K_I = 2"
+            },
+            {
+              "name": "comparison_linear_321",
+              "kind": "computation",
+              "statement": "linear diag(3,2,1): K_O = 9/2, K_I = 6, both inequalities strict"
+            },
+            {
+              "name": "comparison_dim_one",
+              "kind": "degenerate",
+              "statement": "n = 1: K_O = K_I = 1"
+            },
+            {
+              "name": "comparison_radial_half",
+              "kind": "computation",
+              "statement": "radial a = 1/2 in ℝ³: K_I = 4 = K_O²"
+            }
+          ]
+        },
+        {
+          "id": "3.3",
+          "kind": "example",
+          "name": "not_isQuasiregular_projection",
+          "statement": "For n >= 2 the projection P(x) = (x_1, …, x_(n−1), 0) of ℝⁿ lies in W^{1,∞}_loc and satisfies J_P <= 1·ℓ(DP)^n everywhere, yet is not quasiregular; for n = 1 the same formula is the zero map, which is quasiregular.",
+          "hypotheses": [
+            "n >= 2 for the first assertion"
+          ],
+          "locator": {
+            "source": "MartioRickmanVaisala1969",
+            "where": "lines 423-425"
+          },
+          "prerequisites": [
+            "target:2.4",
+            "target:2.8",
+            "target:3.1"
+          ],
+          "api": [],
+          "tests": [
+            {
+              "name": "projection_values",
+              "kind": "computation",
+              "statement": "J_P = 0 = ℓ(DP)^n while ‖DP‖ = 1"
+            },
+            {
+              "name": "projection_dim_one",
+              "kind": "degenerate",
+              "statement": "n = 1: P = 0, K_O(P) = 1"
+            }
+          ]
+        },
+        {
+          "id": "3.4",
+          "kind": "definition",
+          "name": "hilbertSchmidtDistortion",
+          "statement": "For continuous f ∈ W^{1,n}_loc(M,N), K_S(f) = max(1, ess sup q_S(Df)); ∞ for other maps; and K_S(f) <= K_O(f) <= n^(n/2) K_S(f), constants optimal, so f is quasiregular iff K_S(f) < ∞.",
+          "hypotheses": [
+            "n >= 1",
+            "M, N smooth, Hausdorff, second countable, boundaryless manifolds modelled with 𝓘(ℝ, E), E a real normed space of dimension n",
+            "continuous Riemannian metrics (RiemannianBundle, IsContinuousRiemannianBundle); measure TauCeti.riemannianVolume",
+            "orientations o_M, o_N : TauCeti.Manifold.Orientation 𝓘(ℝ, E) _ (Fin n)"
+          ],
+          "locator": {
+            "source": "MartioRickmanVaisala1969",
+            "where": "(2.23)-(2.24), lines 426-435"
+          },
+          "prerequisites": [
+            "target:1.4",
+            "target:2.2",
+            "target:2.3"
+          ],
+          "api": [
+            {
+              "name": "hilbertSchmidtDistortion_le_iff",
+              "role": "characterisation",
+              "statement": "for K >= 1, K_S(f) <= K iff ‖Df‖_HS^n <= n^(n/2) K J_f a.e."
+            },
+            {
+              "name": "hilbertSchmidtDistortion_eq_one_iff",
+              "role": "characterisation",
+              "statement": "K_S(f) = 1 iff K_O(f) = 1"
+            },
+            {
+              "name": "hilbertSchmidtDistortion_le_outerDistortion",
+              "role": "comparison",
+              "statement": "K_S(f) <= K_O(f) <= n^(n/2) K_S(f)"
+            }
+          ],
+          "tests": [
+            {
+              "name": "hs_map_id",
+              "kind": "computation",
+              "statement": "identity: K_S = K_O = 1"
+            },
+            {
+              "name": "hs_map_diag",
+              "kind": "computation",
+              "statement": "linear diag(2,1): K_S = 5/4, K_O = 2"
+            },
+            {
+              "name": "hs_map_ratio",
+              "kind": "characterisation",
+              "statement": "linear diag(1,ε): K_O/K_S = 2/(1+ε²) < 2 = n^(n/2)"
+            },
+            {
+              "name": "hs_map_winding",
+              "kind": "computation",
+              "statement": "winding map of ℝ³: ‖Df‖_HS² = 6, J = 2, K_S = 6^(3/2)/(3^(3/2)·2) = √2"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "4",
+      "title": "Invariance",
+      "targets": [
+        {
+          "id": "4.1",
+          "kind": "theorem",
+          "name": "IsQuasiregularWith.of_metric_comparable",
+          "statement": "If a|v| <= |v|' <= b|v| on TM (0 < a <= b) and α|w| <= |w|' <= β|w| on TN (0 < α <= β), orientations unchanged: the class and a.e. are unchanged; ‖A‖' <= (β/a)‖A‖ and J'(A) = J(A) ρ_N(y)/ρ_M(x) with ρ_M ∈ [aⁿ, bⁿ], ρ_N ∈ [αⁿ, βⁿ]; q'_O <= (bβ/(aα))ⁿ q_O, K'_O(f) <= (bβ/(aα))ⁿ K_O(f), K-quasiregular implies (bβ/(aα))ⁿK-quasiregular; any two continuous metrics on a compact manifold are uniformly comparable, so for compact M, N the quasiregular maps M -> N are metric-independent and for compact N the quasiregular maps ℝⁿ -> N depend only on the smooth structure and orientation of N; conformal changes g'_M = e^(2u) g_M, g'_N = e^(2w) g_N with continuous u, w leave q_O, q_I and every distortion unchanged.",
+          "hypotheses": [
+            "n >= 1",
+            "M, N smooth, Hausdorff, second countable, boundaryless manifolds modelled with 𝓘(ℝ, E), E a real normed space of dimension n",
+            "continuous Riemannian metrics (RiemannianBundle, IsContinuousRiemannianBundle); measure TauCeti.riemannianVolume",
+            "orientations o_M, o_N : TauCeti.Manifold.Orientation 𝓘(ℝ, E) _ (Fin n)",
+            "g_M, g'_M continuous metrics with a|v| <= |v|' <= b|v|",
+            "g_N, g'_N continuous metrics with α|w| <= |w|' <= β|w|"
+          ],
+          "locator": {
+            "source": "Rickman1993",
+            "where": "Ch. I; HeikkilaPankka2025 lines 20-27"
+          },
+          "prerequisites": [
+            "target:1.2",
+            "target:2.1",
+            "target:2.2",
+            "gap:sobolev-maps-class",
+            "gap:sobolev-maps-norm",
+            "gap:sobolev-maps-jacobian",
+            "tauceti:TauCeti.WithMetric",
+            "tauceti:TauCeti.riemannianVolumeForm",
+            "mathlib:Orientation.volumeForm_robust"
+          ],
+          "api": [],
+          "tests": [
+            {
+              "name": "metric_rescale",
+              "kind": "computation",
+              "statement": "g'_N = c² g_N: factor (c/c)ⁿ = 1 and q'_O = cⁿ‖A‖ⁿ/(cⁿJ) = q_O"
+            },
+            {
+              "name": "metric_torus_stretch",
+              "kind": "computation",
+              "statement": "T² with dx² + 4dy² against flat: ‖dπ‖' = 2, ρ_N = 2, J' = 2, q'_O = 2 <= 4"
+            },
+            {
+              "name": "metric_noncomparable",
+              "kind": "non-example",
+              "statement": "ℝ² with dx² + e^(2x)dy²: identity from flat ℝ² has q'_O = e^|x|, quasiregular on bounded sets only"
+            },
+            {
+              "name": "metric_conformal",
+              "kind": "compatibility",
+              "statement": "target metric e^(2x)(dx² + dy²): ‖id‖' = e^x, J' = e^(2x), q'_O = 1 although the metrics are not comparable"
+            }
+          ]
+        },
+        {
+          "id": "4.2",
+          "kind": "theorem",
+          "name": "isQuasiregularWith_neg_neg_iff",
+          "statement": "f is K-quasiregular for (o_M, o_N) iff for (−o_M, −o_N), with the same J_f, K_O, K_I; for (o_M, −o_N) the Jacobian is −J_f; if f is quasiregular for both (o_M, o_N) and (o_M, −o_N) then Df = 0 a.e. and f is constant on each component of M.",
+          "hypotheses": [
+            "n >= 1",
+            "M, N smooth, Hausdorff, second countable, boundaryless manifolds modelled with 𝓘(ℝ, E), E a real normed space of dimension n",
+            "continuous Riemannian metrics (RiemannianBundle, IsContinuousRiemannianBundle); measure TauCeti.riemannianVolume",
+            "orientations o_M, o_N : TauCeti.Manifold.Orientation 𝓘(ℝ, E) _ (Fin n)"
+          ],
+          "locator": {
+            "source": "HeikkilaPankka2025",
+            "where": "lines 20-27"
+          },
+          "prerequisites": [
+            "target:2.4",
+            "target:2.6",
+            "mathlib:Orientation.volumeForm_neg_orientation",
+            "gap:sobolev-maps-jacobian"
+          ],
+          "api": [],
+          "tests": [
+            {
+              "name": "orientation_id_neg",
+              "kind": "non-example",
+              "statement": "identity (M,o) -> (M,−o), M non-empty: J = −1"
+            },
+            {
+              "name": "orientation_reflection",
+              "kind": "computation",
+              "statement": "reflection (ℝⁿ, std) -> (ℝⁿ, −std): Jacobian −det R = 1, 1-quasiregular"
+            },
+            {
+              "name": "orientation_const",
+              "kind": "degenerate",
+              "statement": "constant maps are quasiregular for all four orientation pairs"
+            }
+          ]
+        },
+        {
+          "id": "4.3",
+          "kind": "theorem",
+          "name": "IsQuasiregularWith.comp_localDiffeomorph",
+          "statement": "If θ : M' -> M is a C¹ local diffeomorphism, orientation preserving at every point, with K_θ = max(1, sup_y q_O(dθ_y)) < ∞ (automatic for compact M'), and f is K-quasiregular, then f∘θ is K_θK-quasiregular, K_O(f∘θ) <= K_O(θ)K_O(f) and K_I(f∘θ) <= K_I(θ)K_I(f).",
+          "hypotheses": [
+            "n >= 1",
+            "M, N smooth, Hausdorff, second countable, boundaryless manifolds modelled with 𝓘(ℝ, E), E a real normed space of dimension n",
+            "continuous Riemannian metrics (RiemannianBundle, IsContinuousRiemannianBundle); measure TauCeti.riemannianVolume",
+            "orientations o_M, o_N : TauCeti.Manifold.Orientation 𝓘(ℝ, E) _ (Fin n)",
+            "M' an oriented Riemannian n-manifold",
+            "θ : M' -> M C¹ local diffeomorphism, orientation preserving everywhere, K_θ < ∞"
+          ],
+          "locator": {
+            "source": "Rickman1993",
+            "where": "Ch. I"
+          },
+          "prerequisites": [
+            "target:1.2",
+            "target:2.1",
+            "target:2.7",
+            "target:3.1",
+            "gap:sobolev-maps-chain-rules",
+            "gap:sobolev-maps-jacobian",
+            "tauceti:TauCeti.Manifold.Orientation.IsOrientationPreservingAt"
+          ],
+          "api": [],
+          "tests": [
+            {
+              "name": "precomp_covering",
+              "kind": "computation",
+              "statement": "f∘π for π : ℝⁿ -> ℝⁿ/ℤⁿ (K_π = 1) has the same K_O as f"
+            },
+            {
+              "name": "precomp_shear",
+              "kind": "non-example",
+              "statement": "θ the shear, f = id: K_θ = ∞ and θ is not quasiregular"
+            },
+            {
+              "name": "precomp_reflection",
+              "kind": "non-example",
+              "statement": "θ a reflection with standard orientations: id∘θ has J = −1"
+            }
+          ]
+        },
+        {
+          "id": "4.4",
+          "kind": "theorem",
+          "name": "IsQuasiregularWith.contMDiff_comp",
+          "statement": "If g : N -> P is C¹ with ‖dg_y‖ⁿ <= K' J(dg_y) for every y and f : M -> N is K-quasiregular, then g∘f is K'K-quasiregular, K_O(g∘f) <= K_O(g)K_O(f) and K_I(g∘f) <= K_I(g)K_I(f).",
+          "hypotheses": [
+            "n >= 1",
+            "M, N smooth, Hausdorff, second countable, boundaryless manifolds modelled with 𝓘(ℝ, E), E a real normed space of dimension n",
+            "continuous Riemannian metrics (RiemannianBundle, IsContinuousRiemannianBundle); measure TauCeti.riemannianVolume",
+            "orientations o_M, o_N : TauCeti.Manifold.Orientation 𝓘(ℝ, E) _ (Fin n)",
+            "P an oriented Riemannian n-manifold",
+            "g : N -> P C¹ and K'-quasiregular, K' >= 1"
+          ],
+          "locator": {
+            "source": "Rickman1993",
+            "where": "Ch. I"
+          },
+          "prerequisites": [
+            "target:1.2",
+            "target:2.1",
+            "target:2.7",
+            "target:3.1",
+            "gap:sobolev-maps-chain-rules",
+            "gap:sobolev-maps-jacobian"
+          ],
+          "api": [],
+          "tests": [
+            {
+              "name": "postcomp_z4",
+              "kind": "computation",
+              "statement": "z² after z² is z⁴, 1-quasiregular"
+            },
+            {
+              "name": "postcomp_isometry",
+              "kind": "compatibility",
+              "statement": "an orientation-preserving isometry after f leaves K_O(f) unchanged"
+            },
+            {
+              "name": "postcomp_radial",
+              "kind": "computation",
+              "statement": "in ℝ³, radial a = 2 (C¹, 4-quasiregular) after a = 1/2 (2-quasiregular) is the identity: K_O = 1 <= 8"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "5",
+      "title": "ACL^p maps and the classical definition",
+      "targets": [
+        {
+          "id": "5.1",
+          "kind": "definition",
+          "name": "IsACL / IsACLp",
+          "statement": "u : Ω -> F (Ω ⊆ ℝⁿ = EuclideanSpace ℝ (Fin n) open, F finite-dimensional) is ACL if continuous and, for every closed coordinate box Q ⊆ Ω and every i, for a.e. z in the face Π_(j≠i)[a_j,b_j] the line function t ↦ u(z,t) is AbsolutelyContinuousOnInterval on [a_i,b_i]; ACL^p (1 <= p <= ∞) if moreover the a.e.-existing partial derivatives lie in L^p_loc(Ω).",
+          "hypotheses": [
+            "Ω ⊆ ℝⁿ open",
+            "F a finite-dimensional real normed space",
+            "1 <= p <= ∞"
+          ],
+          "locator": {
+            "source": "MartioRickmanVaisala1969",
+            "where": "Definition 2.16, lines 332-340"
+          },
+          "prerequisites": [
+            "mathlib:AbsolutelyContinuousOnInterval",
+            "mathlib:AbsolutelyContinuousOnInterval.ae_differentiableAt",
+            "mathlib:MeasureTheory.volume_preserving_piFinSuccAbove"
+          ],
+          "api": [
+            {
+              "name": "IsACL.ae_hasPartialDeriv",
+              "role": "existence",
+              "statement": "the partial derivatives of an ACL map exist a.e. and are measurable"
+            },
+            {
+              "name": "isACLp_local",
+              "role": "locality",
+              "statement": "ACL^p is local, passes to open subsets, is closed under linear combinations and composition with linear maps F -> F', and ACL^q implies ACL^p for p <= q"
+            },
+            {
+              "name": "ContDiffOn.isACLp",
+              "role": "constructor",
+              "statement": "C¹ maps are ACL^p for every p; locally Lipschitz maps are ACL^∞"
+            }
+          ],
+          "tests": [
+            {
+              "name": "acl_abs",
+              "kind": "computation",
+              "statement": "|x_1| on ℝ² is ACL^∞ with partial derivatives (sign x_1, 0)"
+            },
+            {
+              "name": "acl_cantor",
+              "kind": "non-example",
+              "statement": "c(x_1) with the Cantor function: partials 0 a.e., not ACL"
+            },
+            {
+              "name": "acl_sqrt",
+              "kind": "computation",
+              "statement": "|x|^(1/2) on ℝ² is ACL^p iff p < 4 (∫_(|x|<1) |x|^(−p/2) < ∞ iff p < 4)"
+            },
+            {
+              "name": "acl_indicator",
+              "kind": "non-example",
+              "statement": "the indicator of {0} in ℝ² is AC on almost every coordinate line but not continuous"
+            }
+          ]
+        },
+        {
+          "id": "5.2",
+          "kind": "theorem",
+          "name": "isACLp_iff_hasWeakFDerivOn",
+          "statement": "A continuous u : Ω -> F is ACL^p (1 <= p <= ∞) iff there is Du with TauCeti.HasWeakFDerivOn volume Ω u Du and Du ∈ L^p_loc(Ω); then Du(x)e_i = ∂_i u(x) a.e.",
+          "hypotheses": [
+            "Ω ⊆ ℝⁿ open",
+            "F finite-dimensional",
+            "u continuous",
+            "1 <= p <= ∞"
+          ],
+          "locator": {
+            "source": "Vaisala1971",
+            "where": "Ch. 3; Rickman1993 Ch. I; MartioRickmanVaisala1969 Definition 2.16, lines 332-340"
+          },
+          "prerequisites": [
+            "target:5.1",
+            "mathlib:AbsolutelyContinuousOnInterval.integral_mul_deriv_eq_deriv_mul",
+            "mathlib:IsOpen.ae_eq_zero_of_integral_contDiff_smul_eq_zero",
+            "mathlib:MeasureTheory.volume_preserving_piFinSuccAbove",
+            "tauceti:TauCeti.HasWeakFDerivOn",
+            "tauceti:Module.Basis.hasWeakFDerivOn_of_forall",
+            "tauceti:TauCeti.hasWeakFDerivOn_iff_forall_isCompact_closure",
+            "tauceti:TauCeti.HasWeakLineDerivOn.absolutelyContinuousOnInterval",
+            "tauceti:TauCeti.HasWeakLineDerivOn.ae_hasDerivAt"
+          ],
+          "api": [],
+          "tests": [
+            {
+              "name": "acl_sobolev_sqrt",
+              "kind": "computation",
+              "statement": "|x|^(1/2) ∈ W^{1,p}_loc(ℝ²) iff p < 4"
+            },
+            {
+              "name": "acl_sobolev_cantor",
+              "kind": "non-example",
+              "statement": "c(x_1) is in neither class"
+            },
+            {
+              "name": "acl_sobolev_c1",
+              "kind": "compatibility",
+              "statement": "C¹ u: both sides with Du = fderiv u"
+            }
+          ]
+        },
+        {
+          "id": "5.3",
+          "kind": "theorem",
+          "name": "isQuasiregularWith_iff_martioRickmanVaisala",
+          "statement": "For open G ⊆ ℝⁿ, f : G -> ℝⁿ and K >= 1: f is ACLⁿ with |f'(x)|ⁿ <= K J(x,f) a.e. (f' the formal derivative) iff f is K-quasiregular (standard orientation, flat metric); the outer, inner and maximal dilatations of MRV are K_O, K_I, K, including the value ∞; MRV's 'K-quasiregular' is K-quasiregular in the maximal sense.",
+          "hypotheses": [
+            "G ⊆ ℝⁿ open",
+            "f : G -> ℝⁿ",
+            "K >= 1"
+          ],
+          "locator": {
+            "source": "MartioRickmanVaisala1969",
+            "where": "Definition 2.20 and (2.21), lines 409-419; formal derivative line 120"
+          },
+          "prerequisites": [
+            "target:2.9",
+            "target:3.1",
+            "target:5.2"
+          ],
+          "api": [],
+          "tests": [
+            {
+              "name": "mrv_radial",
+              "kind": "computation",
+              "statement": "radial a = 1/2 in ℝ³: 2-quasiregular here, 4- but not 2-quasiregular in MRV's terminology"
+            },
+            {
+              "name": "mrv_identity",
+              "kind": "degenerate",
+              "statement": "identity: all dilatations 1 in both terminologies"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "6",
+      "title": "Piecewise smooth and simplicial maps",
+      "targets": [
+        {
+          "id": "6.1",
+          "kind": "theorem",
+          "name": "IsSmoothTriangulation.isPure / isNullSet_lowerSkeleton",
+          "statement": "For a C¹ smooth triangulation κ of a boundaryless n-manifold M: every compact subset of M meets κ(σ) for finitely many σ (K locally finite); K is pure of dimension n; the image of the union of simplices of dimension < n is a TauCeti.IsNullSet; for each n-simplex σ, κ(σ°) is open and κ restricts to a C¹ diffeomorphism of σ° onto it; κ|σ is locally bi-Lipschitz in charts: for every x ∈ σ there are a neighbourhood σ' of x in σ and 0 < c <= C with κ(σ') in the source of φ = extChartAt 𝓘(ℝ, E) (κ x) and c|y − z| <= |φ(κ y) − φ(κ z)| <= C|y − z| for y, z ∈ σ' (σ in barycentric coordinates in σ -> ℝ).",
+          "hypotheses": [
+            "κ : AbstractSimplicialComplex.Realization K ≃ₜ M with TauCeti.IsSmoothTriangulation at smoothness exponent 1",
+            "M boundaryless of dimension n >= 1"
+          ],
+          "locator": {
+            "source": "HeikkilaPankka2025",
+            "where": "Appendix B, lines 1236-1245 (piecewise smooth triangulations)"
+          },
+          "prerequisites": [
+            "mathlib:extChartAt",
+            "mathlib:Convex.norm_image_sub_le_of_norm_hasFDerivWithin_le",
+            "mathlib:Convex.norm_image_sub_le_of_norm_hasFDerivWithin_le'",
+            "tauceti:TauCeti.IsSmoothTriangulation",
+            "tauceti:TauCeti.IsSimplexImmersion",
+            "tauceti:AbstractSimplicialComplex.Realization",
+            "tauceti:AbstractSimplicialComplex.exists_finset_support_subset_of_isCompact",
+            "tauceti:PreAbstractSimplicialComplex.IsPure",
+            "tauceti:DifferentiableOn.addHaar_image_eq_zero_of_finrank_lt_finrank",
+            "tauceti:TauCeti.IsNullSet.interior_eq_empty",
+            "roadmap:GeometricTopology Layer 11"
+          ],
+          "api": [],
+          "tests": [
+            {
+              "name": "triangulation_circle",
+              "kind": "computation",
+              "statement": "boundary of a triangle radially projected onto S¹: pure of dimension 1, 0-skeleton image = 3 points, null; edge p(t) = (1−t)v_0 + t v_1 of the inscribed triangle has |p(t)|² = 1 − 3t + 3t² ∈ [1/4,1], dθ/dt = (√3/2)/|p(t)|² ∈ [√3/2, 2√3]; the arc of length 2π/3 lies in the stereographic chart at each of its points, so the edge is bi-Lipschitz there"
+            },
+            {
+              "name": "triangulation_sphere",
+              "kind": "computation",
+              "statement": "boundary of a tetrahedron radially projected onto S²: pure of dimension 2, 1-skeleton image = 6 arcs, null"
+            },
+            {
+              "name": "triangulation_square_map",
+              "kind": "non-example",
+              "statement": "following a triangulation of [0,1] by t ↦ t² is not a C¹ triangulation (TauCeti.exists_contMDiff_not_isSmoothTriangulation_trans) and its inverse √t is not Lipschitz near 0, so local bi-Lipschitz fails at the vertex 0"
+            }
+          ]
+        },
+        {
+          "id": "6.2",
+          "kind": "definition",
+          "name": "IsNondegSimplicialMap / IsOrientationPreservingSimplicialMap",
+          "statement": "For C¹ smooth triangulations κ_1 of M, κ_2 of N and a simplicial map s : K_1 -> K_2, p = κ_2 ∘ |s| ∘ κ_1⁻¹ (|s| = SimplicialMap.realizationMap); p is non-degenerate if s is injective on the vertices of every simplex; orientation preserving if p is orientation preserving (IsOrientationPreservingAt) at every point of κ_1(σ°) for every n-simplex σ.",
+          "hypotheses": [
+            "n >= 1",
+            "M, N smooth, Hausdorff, second countable, boundaryless manifolds modelled with 𝓘(ℝ, E), E a real normed space of dimension n",
+            "continuous Riemannian metrics (RiemannianBundle, IsContinuousRiemannianBundle); measure TauCeti.riemannianVolume",
+            "orientations o_M, o_N : TauCeti.Manifold.Orientation 𝓘(ℝ, E) _ (Fin n)",
+            "K_1, K_2 abstract simplicial complexes",
+            "κ_1, κ_2 C¹ smooth triangulations of M, N",
+            "s a simplicial map K_1 -> K_2"
+          ],
+          "locator": {
+            "source": "HeikkilaPankka2025",
+            "where": "Proposition B.1, lines 1247-1251"
+          },
+          "prerequisites": [
+            "target:6.1",
+            "tauceti:PreAbstractSimplicialComplex.SimplicialMap",
+            "tauceti:PreAbstractSimplicialComplex.SimplicialMap.realizationMap",
+            "tauceti:TauCeti.Manifold.Orientation.IsOrientationPreservingAt",
+            "roadmap:GeometricTopology Layer 11"
+          ],
+          "api": [
+            {
+              "name": "simplicialMap_local_model",
+              "role": "local model",
+              "statement": "for non-degenerate p and an n-simplex σ, |s| maps σ affinely and bijectively onto s(σ), and p on κ_1(σ) is κ_2 ∘ L_σ ∘ (κ_1|σ)⁻¹, C¹ within κ_1(σ) with invertible differential at every point including the boundary (HeikkilaPankka2025 lines 1322-1327)"
+            },
+            {
+              "name": "simplicialMap_jacobian_pos",
+              "role": "sign",
+              "statement": "for non-degenerate orientation-preserving p, J(dp) > 0 on the whole closed κ_1(σ)"
+            },
+            {
+              "name": "simplicialMap_comp",
+              "role": "composition",
+              "statement": "q∘p = κ_3 ∘ |t∘s| ∘ κ_1⁻¹ is non-degenerate and orientation preserving when p, q are; the identity is such a map"
+            }
+          ],
+          "tests": [
+            {
+              "name": "simplicial_identity",
+              "kind": "degenerate",
+              "statement": "the identity with κ_2 = κ_1 is non-degenerate and orientation preserving"
+            },
+            {
+              "name": "simplicial_fold",
+              "kind": "non-example",
+              "statement": "for a reflection-symmetric triangulation of ℝ² with x_1 = 0 in its 1-skeleton, the fold is non-degenerate but orientation reversing on x_1 < 0"
+            },
+            {
+              "name": "simplicial_collapse",
+              "kind": "non-example",
+              "statement": "identifying two vertices of an n-simplex makes s degenerate and collapses that simplex onto an (n−1)-simplex"
+            }
+          ]
+        },
+        {
+          "id": "6.3",
+          "kind": "theorem",
+          "name": "lipschitzInCharts_of_piecewise_contDiff",
+          "statement": "If κ is a C¹ smooth triangulation of M and p : M -> N is such that p∘κ is C¹ within σ for every n-simplex σ, then p is continuous and locally Lipschitz in charts; hence p ∈ W^{1,∞}_loc(M,N) ⊆ W^{1,n}_loc(M,N) and Dp(x) is the differential of p|κ(σ°) at every x ∈ κ(σ°).",
+          "hypotheses": [
+            "n >= 1",
+            "M, N smooth, Hausdorff, second countable, boundaryless manifolds modelled with 𝓘(ℝ, E), E a real normed space of dimension n",
+            "continuous Riemannian metrics (RiemannianBundle, IsContinuousRiemannianBundle); measure TauCeti.riemannianVolume",
+            "orientations o_M, o_N : TauCeti.Manifold.Orientation 𝓘(ℝ, E) _ (Fin n)",
+            "κ : AbstractSimplicialComplex.Realization K ≃ₜ M with TauCeti.IsSmoothTriangulation at smoothness exponent 1",
+            "M boundaryless of dimension n >= 1"
+          ],
+          "locator": {
+            "source": "HeikkilaPankka2025",
+            "where": "Lemma B.2, lines 1255-1260; proof lines 1261-1316"
+          },
+          "prerequisites": [
+            "target:2.8",
+            "target:6.1",
+            "mathlib:Convex.norm_image_sub_le_of_norm_hasFDerivWithin_le"
+          ],
+          "api": [],
+          "tests": [
+            {
+              "name": "piecewise_abs",
+              "kind": "computation",
+              "statement": "|x_1| on ℝ² with x_1 = 0 in the 1-skeleton: linear on each triangle, 1-Lipschitz"
+            },
+            {
+              "name": "piecewise_eight_sectors",
+              "kind": "computation",
+              "statement": "eight-sector map: linear part [[1,−1],[0,√2]], det = √2, LᵀL eigenvalues 2 ± √2, q_O = 1 + √2"
+            },
+            {
+              "name": "piecewise_continuity_free",
+              "kind": "degenerate",
+              "statement": "continuity is a conclusion: a function C¹ on each closed κ(σ) is single-valued on shared faces and continuous by the pasting lemma"
+            }
+          ]
+        },
+        {
+          "id": "6.4",
+          "kind": "theorem",
+          "name": "IsNondegSimplicialMap.isQuasiregularWith",
+          "statement": "For non-degenerate orientation-preserving p and K_p = sup{q_O(dp_x) : x ∈ κ_1(σ°), σ an n-simplex}: K_p < ∞ when K_1 has finitely many n-simplices (in particular M compact); if K_p < ∞ then p is max(1,K_p)-quasiregular, K_O(p) = max(1,K_p), K_I(p) = max(1, sup q_I(dp_x)); K_p >= 1 for non-empty M.",
+          "hypotheses": [
+            "n >= 1",
+            "M, N smooth, Hausdorff, second countable, boundaryless manifolds modelled with 𝓘(ℝ, E), E a real normed space of dimension n",
+            "continuous Riemannian metrics (RiemannianBundle, IsContinuousRiemannianBundle); measure TauCeti.riemannianVolume",
+            "orientations o_M, o_N : TauCeti.Manifold.Orientation 𝓘(ℝ, E) _ (Fin n)",
+            "p as in 6.2, non-degenerate and orientation preserving",
+            "K_p < ∞ (automatic for compact M)"
+          ],
+          "locator": {
+            "source": "HeikkilaPankka2025",
+            "where": "Proposition B.1, lines 1247-1251; proof lines 1317-1339"
+          },
+          "prerequisites": [
+            "target:2.2",
+            "target:2.7",
+            "target:6.2",
+            "target:6.3",
+            "tauceti:AbstractSimplicialComplex.compactSpace_realization_iff_finite"
+          ],
+          "api": [],
+          "tests": [
+            {
+              "name": "pl_identity",
+              "kind": "degenerate",
+              "statement": "the identity has K_p = 1"
+            },
+            {
+              "name": "pl_torus_double",
+              "kind": "computation",
+              "statement": "(x,y) ↦ (2x,y) on flat T² for the 6×3 and 3×3 grid triangulations: dp = diag(2,1), K_O = 2"
+            },
+            {
+              "name": "pl_fold",
+              "kind": "non-example",
+              "statement": "the fold violates orientation preservation and is not quasiregular"
+            },
+            {
+              "name": "pl_collapse",
+              "kind": "non-example",
+              "statement": "a degenerate collapse, n >= 2: dp of rank n−1 >= 1 with J = 0 on a positive-measure set, not quasiregular"
+            },
+            {
+              "name": "pl_unbounded",
+              "kind": "non-example",
+              "statement": "(x,y) ↦ (h(x),y), h piecewise linear with slope k on [k,k+1]: q_O = k on the k-th strip, K_p = ∞, not quasiregular on ℝ²"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "7",
+      "title": "Quasiregularly elliptic manifolds",
+      "targets": [
+        {
+          "id": "7.1",
+          "kind": "definition",
+          "name": "IsQuasiregularlyEllipticWith / IsQuasiregularlyElliptic",
+          "statement": "For K >= 1, a connected oriented Riemannian n-manifold N is K-quasiregularly elliptic if there is a non-constant K-quasiregular map ℝⁿ -> N, and quasiregularly elliptic if K-quasiregularly elliptic for some K.",
+          "hypotheses": [
+            "n >= 1",
+            "M, N smooth, Hausdorff, second countable, boundaryless manifolds modelled with 𝓘(ℝ, E), E a real normed space of dimension n",
+            "continuous Riemannian metrics (RiemannianBundle, IsContinuousRiemannianBundle); measure TauCeti.riemannianVolume",
+            "orientations o_M, o_N : TauCeti.Manifold.Orientation 𝓘(ℝ, E) _ (Fin n)",
+            "N connected",
+            "ℝⁿ = EuclideanSpace ℝ (Fin n) with the flat metric and the standard orientation"
+          ],
+          "locator": {
+            "source": "HeikkilaPankka2025",
+            "where": "lines 20-21 and 271-273; Prywes2019 lines 26-27"
+          },
+          "prerequisites": [
+            "target:2.1",
+            "target:2.6"
+          ],
+          "api": [
+            {
+              "name": "IsQuasiregularlyEllipticWith.mono",
+              "role": "monotonicity",
+              "statement": "K-elliptic and K <= K' imply K'-elliptic"
+            },
+            {
+              "name": "isQuasiregularlyEllipticWith_iff_jacobian",
+              "role": "characterisation",
+              "statement": "N is K-elliptic iff some K-quasiregular f : ℝⁿ -> N has J_f > 0 on a set of positive measure (2.6)"
+            },
+            {
+              "name": "IsQuasiregularlyEllipticWith.of_isometry",
+              "role": "invariance",
+              "statement": "invariant under orientation-preserving isometries of N and of ℝⁿ (4.3, 4.4)"
+            }
+          ],
+          "tests": [
+            {
+              "name": "elliptic_euclidean",
+              "kind": "computation",
+              "statement": "ℝⁿ is 1-quasiregularly elliptic through the identity"
+            },
+            {
+              "name": "elliptic_without_nonconstant",
+              "kind": "non-example",
+              "statement": "without 'non-constant' every N is elliptic through constants"
+            },
+            {
+              "name": "elliptic_ball_domain",
+              "kind": "non-example",
+              "statement": "with the unit ball as domain every N is elliptic through a chart onto a small coordinate ball; ℝⁿ is essential"
+            },
+            {
+              "name": "elliptic_dim_one",
+              "kind": "degenerate",
+              "statement": "n = 1: ℝ and S¹ = ℝ/ℤ are 1-quasiregularly elliptic"
+            }
+          ]
+        },
+        {
+          "id": "7.2",
+          "kind": "theorem",
+          "name": "isQuasiregularlyEllipticWith_neg_iff",
+          "statement": "N is K-quasiregularly elliptic for o_N iff for −o_N, with the same K.",
+          "hypotheses": [
+            "n >= 1",
+            "M, N smooth, Hausdorff, second countable, boundaryless manifolds modelled with 𝓘(ℝ, E), E a real normed space of dimension n",
+            "continuous Riemannian metrics (RiemannianBundle, IsContinuousRiemannianBundle); measure TauCeti.riemannianVolume",
+            "orientations o_M, o_N : TauCeti.Manifold.Orientation 𝓘(ℝ, E) _ (Fin n)",
+            "N connected",
+            "ℝⁿ = EuclideanSpace ℝ (Fin n) with the flat metric and the standard orientation"
+          ],
+          "locator": {
+            "source": "HeikkilaPankka2025",
+            "where": "lines 20-21 (the definition of quasiregular ellipticity that the witness f∘R satisfies)"
+          },
+          "prerequisites": [
+            "target:4.2",
+            "target:4.3",
+            "target:7.1"
+          ],
+          "api": [],
+          "tests": [
+            {
+              "name": "orientation_elliptic_jacobian",
+              "kind": "computation",
+              "statement": "the Jacobian of f∘R for (std, −o_N) at x is −(J_f(Rx)·det R) = J_f(Rx)"
+            },
+            {
+              "name": "orientation_elliptic_no_reflection",
+              "kind": "non-example",
+              "statement": "a non-constant f is not quasiregular for −o_N without the reflection (4.2)"
+            }
+          ]
+        },
+        {
+          "id": "7.3",
+          "kind": "theorem",
+          "name": "IsQuasiregularlyEllipticWith.of_metric_comparable",
+          "statement": "If α|w| <= |w|' <= β|w| on TN and N is K-quasiregularly elliptic for g_N, then it is (β/α)ⁿK-quasiregularly elliptic for g'_N; for closed N quasiregular ellipticity is metric-independent and, with 7.2, a property of the closed connected orientable smooth manifold.",
+          "hypotheses": [
+            "n >= 1",
+            "M, N smooth, Hausdorff, second countable, boundaryless manifolds modelled with 𝓘(ℝ, E), E a real normed space of dimension n",
+            "continuous Riemannian metrics (RiemannianBundle, IsContinuousRiemannianBundle); measure TauCeti.riemannianVolume",
+            "orientations o_M, o_N : TauCeti.Manifold.Orientation 𝓘(ℝ, E) _ (Fin n)",
+            "N connected",
+            "ℝⁿ = EuclideanSpace ℝ (Fin n) with the flat metric and the standard orientation",
+            "g_N, g'_N continuous metrics with α|w| <= |w|' <= β|w|"
+          ],
+          "locator": {
+            "source": "HeikkilaPankka2025",
+            "where": "lines 20-27"
+          },
+          "prerequisites": [
+            "target:4.1",
+            "target:7.1",
+            "target:7.2"
+          ],
+          "api": [],
+          "tests": [
+            {
+              "name": "metric_elliptic_rescale",
+              "kind": "computation",
+              "statement": "constant rescaling keeps K (factor 1)"
+            },
+            {
+              "name": "metric_elliptic_torus",
+              "kind": "computation",
+              "statement": "T² with dx² + 4dy²: bound 4 from the flat case, though it is isometric to flat ℝ²/(ℤ×2ℤ) and 1-elliptic"
+            }
+          ]
+        },
+        {
+          "id": "7.4",
+          "kind": "theorem",
+          "name": "IsQuasiregularlyEllipticWith.of_localDiffeomorph",
+          "statement": "If q : N -> N' is a C¹ local diffeomorphism, orientation preserving at every point, with K_q = max(1, sup q_O(dq)) < ∞ (automatic for compact N), N' connected, and N is K-quasiregularly elliptic, then N' is K_qK-quasiregularly elliptic; in particular a closed manifold finitely and orientation-preservingly covered by a quasiregularly elliptic closed manifold is quasiregularly elliptic.",
+          "hypotheses": [
+            "n >= 1",
+            "M, N smooth, Hausdorff, second countable, boundaryless manifolds modelled with 𝓘(ℝ, E), E a real normed space of dimension n",
+            "continuous Riemannian metrics (RiemannianBundle, IsContinuousRiemannianBundle); measure TauCeti.riemannianVolume",
+            "orientations o_M, o_N : TauCeti.Manifold.Orientation 𝓘(ℝ, E) _ (Fin n)",
+            "N connected",
+            "ℝⁿ = EuclideanSpace ℝ (Fin n) with the flat metric and the standard orientation",
+            "N' connected oriented Riemannian n-manifold",
+            "q : N -> N' C¹ local diffeomorphism, orientation preserving, K_q < ∞"
+          ],
+          "locator": {
+            "source": "HeikkilaPankka2025",
+            "where": "lines 85-91 (the same postcomposition, there with a piecewise linear branched covering in place of q)"
+          },
+          "prerequisites": [
+            "target:2.7",
+            "target:4.4",
+            "target:7.1"
+          ],
+          "api": [],
+          "tests": [
+            {
+              "name": "transfer_torus_double",
+              "kind": "computation",
+              "statement": "(x,y) ↦ (2x,y) on flat T²: K_q = 2; for the pulled-back source metric it is a local isometry, K_q = 1"
+            },
+            {
+              "name": "transfer_puncture",
+              "kind": "computation",
+              "statement": "inclusion ℂ∖{0} -> ℂ: K_q = 1; ℂ∖{0} is 1-elliptic through exp"
+            },
+            {
+              "name": "transfer_conj",
+              "kind": "non-example",
+              "statement": "complex conjugation is orientation reversing: K_q = ∞"
+            }
+          ]
+        },
+        {
+          "id": "7.5",
+          "kind": "theorem",
+          "name": "isQuasiregularlyEllipticWith_one_of_conformal",
+          "statement": "If π : ℝⁿ -> N is C¹, non-constant, with every dπ_x 0 or a positive multiple of an orientation-preserving linear isometry, then N is 1-quasiregularly elliptic; if π : ℝⁿ -> N is a local Riemannian isometry then N is 1-quasiregularly elliptic for each of its orientations; for Γ acting freely, properly discontinuously and isometrically on ℝⁿ, ℝⁿ/Γ with the descended metric is 1-quasiregularly elliptic for every orientation it carries, and it carries one when Γ preserves the orientation of ℝⁿ; every closed orientable flat manifold is such a quotient (Killing–Hopf, RiemannianGeometry R4 item 7) and is therefore 1-quasiregularly elliptic.",
+          "hypotheses": [
+            "n >= 1",
+            "M, N smooth, Hausdorff, second countable, boundaryless manifolds modelled with 𝓘(ℝ, E), E a real normed space of dimension n",
+            "continuous Riemannian metrics (RiemannianBundle, IsContinuousRiemannianBundle); measure TauCeti.riemannianVolume",
+            "orientations o_M, o_N : TauCeti.Manifold.Orientation 𝓘(ℝ, E) _ (Fin n)",
+            "N connected",
+            "ℝⁿ = EuclideanSpace ℝ (Fin n) with the flat metric and the standard orientation"
+          ],
+          "locator": {
+            "source": "HeikkilaPankka2025",
+            "where": "lines 52-57; Prywes2019 lines 35-36"
+          },
+          "prerequisites": [
+            "target:2.7",
+            "target:7.1",
+            "target:7.2",
+            "tauceti:TauCeti.IsLocalRiemannianIsometry",
+            "tauceti:TauCeti.Manifold.Orientation.pullback",
+            "tauceti:TauCeti.Manifold.Orientation.eq_or_eq_neg",
+            "tauceti:Bundle.ContMDiffRiemannianMetric.quotient",
+            "tauceti:Bundle.ContMDiffRiemannianMetric.isLocalRiemannianIsometry_descend",
+            "tauceti:TauCeti.isLocalDiffeomorph_quotientMk",
+            "roadmap:RiemannianGeometry R4 item 7",
+            "gap:orientation-descent"
+          ],
+          "api": [],
+          "tests": [
+            {
+              "name": "flat_torus",
+              "kind": "computation",
+              "statement": "Tⁿ = ℝⁿ/ℤⁿ: dπ an orientation-preserving isometry, J_π = 1, K_O(π) = 1"
+            },
+            {
+              "name": "flat_plane_examples",
+              "kind": "computation",
+              "statement": "ℂ -> ℂ/(ℤ + iℤ) and exp : ℂ -> ℂ∖{0} are holomorphic with nowhere-zero derivative, conformal and orientation preserving"
+            },
+            {
+              "name": "flat_klein",
+              "kind": "non-example",
+              "statement": "the Klein bottle group contains glide reflections, so the quotient carries no orientation; the rotation by π has a fixed point and does not act freely"
+            },
+            {
+              "name": "sphere_stereographic",
+              "kind": "computation",
+              "statement": "inverse stereographic projection ℝⁿ -> Sⁿ has differential 2/(1+|x|²) times an isometry: Sⁿ is 1-elliptic"
+            }
+          ]
+        },
+        {
+          "id": "7.6",
+          "kind": "theorem",
+          "name": "isQuasiregularlyElliptic_of_simplicial",
+          "statement": "For T a connected oriented Riemannian n-manifold, π : ℝⁿ -> T a C¹ local diffeomorphism orientation preserving everywhere with K_π < ∞, and p = κ_2 ∘ |s| ∘ κ_1⁻¹ : T -> N non-degenerate and orientation preserving with K_p < ∞ (automatic for compact T): p∘π is non-constant and K_π·max(1,K_p)-quasiregular, so N is quasiregularly elliptic (no compactness of N assumed); in particular a non-degenerate orientation-preserving simplicial map from a flat torus ℝⁿ/Λ to N makes N max(1,K_p)-quasiregularly elliptic.",
+          "hypotheses": [
+            "n >= 1",
+            "M, N smooth, Hausdorff, second countable, boundaryless manifolds modelled with 𝓘(ℝ, E), E a real normed space of dimension n",
+            "continuous Riemannian metrics (RiemannianBundle, IsContinuousRiemannianBundle); measure TauCeti.riemannianVolume",
+            "orientations o_M, o_N : TauCeti.Manifold.Orientation 𝓘(ℝ, E) _ (Fin n)",
+            "N connected",
+            "ℝⁿ = EuclideanSpace ℝ (Fin n) with the flat metric and the standard orientation",
+            "T connected oriented Riemannian n-manifold",
+            "π : ℝⁿ -> T C¹ local diffeomorphism, orientation preserving, K_π < ∞",
+            "p as in 6.4"
+          ],
+          "locator": {
+            "source": "HeikkilaPankka2025",
+            "where": "lines 32-34 and 85-91; Proposition B.1, lines 1247-1251"
+          },
+          "prerequisites": [
+            "target:4.3",
+            "target:6.1",
+            "target:6.4",
+            "target:7.1"
+          ],
+          "api": [],
+          "tests": [
+            {
+              "name": "simplicial_elliptic_identity",
+              "kind": "degenerate",
+              "statement": "T = N = Tⁿ, p = id recovers 7.5 with K = 1"
+            },
+            {
+              "name": "simplicial_elliptic_double",
+              "kind": "computation",
+              "statement": "the doubling of T² composed with π : ℝ² -> T² is 2-quasiregular and non-constant"
+            },
+            {
+              "name": "simplicial_elliptic_degenerate",
+              "kind": "non-example",
+              "statement": "a degenerate simplicial map fails 6.4 and gives no conclusion"
+            },
+            {
+              "name": "simplicial_elliptic_noncompact",
+              "kind": "degenerate",
+              "statement": "T = N = ℝ² with the integer grid triangulated by diagonals, s = id, π = id: K_π = K_p = 1 and p∘π = id is non-constant and 1-quasiregular although N is not compact"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "suppliers": [
+    {
+      "roadmap": "SobolevMapsBetweenManifolds",
+      "sections": [
+        "T1",
+        "T2",
+        "T3",
+        "T4",
+        "T6"
+      ],
+      "what": "The continuous class W^{1,p}_loc(M, N), Df, ‖Df‖, J(A) and J_f with Hadamard's inequality, the chain rules with C¹ factors and the Euclidean compatibility; every use is a gap (sobolev-maps-*)."
+    },
+    {
+      "roadmap": "DifferentialGeometry",
+      "sections": [
+        "Layer 2.1",
+        "Layer 2.2",
+        "Layer 12.1",
+        "Layer 12.4"
+      ],
+      "what": "Orientations and orientation-preserving maps, metrics on open submanifolds, the Riemannian volume (through the Tau Ceti declarations that implement them); gap orientation-descent for the missing descent section. Chartwise null sets are consumed from Tau Ceti (TauCeti.IsNullSet) directly."
+    },
+    {
+      "roadmap": "RiemannianGeometry",
+      "sections": [
+        "R4 item 7"
+      ],
+      "what": "Quotients by free properly discontinuous isometry groups with descended metric and covering projection (7.5)."
+    },
+    {
+      "roadmap": "GeometricTopology",
+      "sections": [
+        "Layer 11"
+      ],
+      "what": "Realizations, simplicial maps and the compactness lemma for realizations (Layer 6), through Tau Ceti."
+    },
+    {
+      "roadmap": "TeichmullerGeometry",
+      "sections": [
+        "§7.4"
+      ],
+      "what": "Weak Wirtinger derivatives and planar quasiconformal maps through the Beltrami equation (2.10)."
+    }
+  ],
+  "consumers": [
+    {
+      "roadmap": "QuasiregularMapsPartII",
+      "what": "Proposed: Reshetnyak's theorem, composition of arbitrary quasiregular maps, transfer of ellipticity along quasiregular maps, modulus inequalities, Liouville, Picard; consumes Layers 2-4 and 7."
+    },
+    {
+      "roadmap": "QuasiregularMapsPartIII",
+      "what": "Proposed: Bonk–Heinonen, Prywes and Heikkilä–Pankka cohomology bounds and #^k(S²×S²) for k >= 4; consumes Part II and Layer 7."
+    }
+  ],
+  "gaps": [
+    {
+      "slug": "sobolev-maps-class",
+      "title": "The continuous Sobolev class W^{1,p}_loc(M, N)",
+      "detail": "Chartwise class of continuous maps for 1 <= p <= ∞, independent of the atlases; restriction to open submanifolds; locality for open covers; independent of the metrics; C¹ maps belong for every p with Df = mfderiv f a.e.",
+      "needs": "For continuous maps between Hausdorff, second countable, boundaryless manifolds and `1 ≤ p ≤ ∞`, the chartwise class `W^{1,p}_loc(M, N)`, independent of the atlases and of the metrics, closed under restriction to open submanifolds, local for open covers, and containing every `C¹` map with `Df = mfderiv f` almost everywhere.",
+      "supplier": "SobolevMapsBetweenManifolds",
+      "section": "T2 and Scope item 3",
+      "neededBy": [
+        "2.1",
+        "2.2",
+        "2.5",
+        "2.6",
+        "2.7",
+        "2.8",
+        "4.1"
+      ]
+    },
+    {
+      "slug": "sobolev-maps-weak-differential",
+      "title": "The weak differential Df and null sets",
+      "detail": "The a.e.-unique chart-measurable field Df(x) : T_xM -> T_f(x)N with its chart formula; chartwise TauCeti.IsNullSet null sets coincide with TauCeti.riemannianVolume null sets for every continuous metric.",
+      "needs": "For `f ∈ W^{1,p}_loc(M, N)`, the almost-everywhere unique, chart-measurable weak differential `Df(x) : T_xM → T_{f(x)}N` with its chart formula, and the agreement of chartwise `TauCeti.IsNullSet` null sets with the null sets of `TauCeti.riemannianVolume` for every continuous metric.",
+      "supplier": "SobolevMapsBetweenManifolds",
+      "section": "T2 and Scope item 2",
+      "neededBy": [
+        "2.1",
+        "2.2",
+        "2.3",
+        "2.6"
+      ]
+    },
+    {
+      "slug": "sobolev-maps-norm",
+      "title": "The operator norm ‖Df‖",
+      "detail": "Measurability of x ↦ ‖Df(x)‖ and, for maps with representatives in W^{1,1}_loc, membership in W^{1,p}_loc iff ‖Df‖ ∈ L^p_loc(M).",
+      "needs": "For Riemannian `M` and `N`, the measurability of `x ↦ ‖Df(x)‖` and, for continuous `f` with local representatives in `W^{1,1}_loc`, the equivalence of `f ∈ W^{1,p}_loc(M, N)` with `‖Df‖ ∈ L^p_loc(M)`, with `‖Df‖` changed only by bounded factors under uniformly comparable metrics.",
+      "supplier": "SobolevMapsBetweenManifolds",
+      "section": "T3 and Scope item 4",
+      "neededBy": [
+        "2.1",
+        "2.2",
+        "4.1"
+      ]
+    },
+    {
+      "slug": "sobolev-maps-jacobian",
+      "title": "The oriented Jacobian of linear maps and of Sobolev maps",
+      "detail": "J(A) with A^*(o_W.volumeForm) = J(A)·o_V.volumeForm; multiplicativity; sign under reversal of one orientation; |J(A)| = normDet(A); J = det for endomorphisms; Hadamard |J(A)| <= ‖A‖ⁿ; J_f = J(Df) a.e. measurable, |J_f| <= ‖Df‖ⁿ, J_f ∈ L¹_loc for p >= n.",
+      "needs": "For oriented inner product spaces of one dimension `n`, the oriented Jacobian `J(A)` with `A^*(o_W.volumeForm) = J(A) · o_V.volumeForm`, multiplicative, negated by reversing one orientation, with `|J(A)| = normDet(A) ≤ ‖A‖ⁿ` and `J(A) = det A` for endomorphisms; and, for `f ∈ W^{1,p}_loc(M, N)` between oriented Riemannian `n`-manifolds, the measurable Jacobian `J_f = J(Df)` almost everywhere, with `|J_f| ≤ ‖Df‖ⁿ` and `J_f ∈ L¹_loc(M)` when `p ≥ n`.",
+      "supplier": "SobolevMapsBetweenManifolds",
+      "section": "T4 and Scope item 5",
+      "neededBy": [
+        "1.2",
+        "1.3",
+        "1.4",
+        "1.5",
+        "2.1",
+        "2.2",
+        "2.3",
+        "2.4",
+        "2.9",
+        "4.1",
+        "4.2",
+        "4.3",
+        "4.4"
+      ]
+    },
+    {
+      "slug": "sobolev-maps-chain-rules",
+      "title": "Chain rules with C¹ factors on manifolds",
+      "detail": "Precomposition with C¹ local diffeomorphisms (null preimages of null sets) and postcomposition of continuous Sobolev maps with C¹ maps, each with the a.e. chain rule and no bound on the C¹ factor.",
+      "needs": "For a `C¹` local diffeomorphism `θ : M' → M`, `f ∘ θ ∈ W^{1,p}_loc(M', N)` with `D(f ∘ θ)(y) = Df(θ y) ∘ dθ_y` almost everywhere and null preimages of null sets, and for a `C¹` map `g : N → P`, `g ∘ f ∈ W^{1,p}_loc(M, P)` with `D(g ∘ f)(x) = dg_{f(x)} ∘ Df(x)` almost everywhere, with no bound on `dθ` or `dg`.",
+      "supplier": "SobolevMapsBetweenManifolds",
+      "section": "T1 (a)-(b) and Scope item 3",
+      "neededBy": [
+        "4.3",
+        "4.4"
+      ]
+    },
+    {
+      "slug": "sobolev-maps-euclidean",
+      "title": "The Euclidean case of the class",
+      "detail": "For Ω ⊆ E open and N = E with identity charts and flat metrics: membership iff continuity and a TauCeti.HasWeakFDerivOn derivative Du with ‖Du‖ ∈ L^p_loc; Df = Du and J_f = det Du a.e. for one orientation on both sides.",
+      "needs": "For an open `Ω` of an `n`-dimensional real inner product space `E` with identity charts and flat metrics, `f ∈ W^{1,p}_loc(Ω, E)` if and only if `f` is continuous on `Ω` with a `TauCeti.HasWeakFDerivOn` derivative `Du` such that `‖Du‖ ∈ L^p_loc(Ω)`, and then `Df = Du` almost everywhere and, for one orientation on both sides, `J_f = det Du` almost everywhere.",
+      "supplier": "SobolevMapsBetweenManifolds",
+      "section": "T1 and T6",
+      "neededBy": [
+        "2.8",
+        "2.9"
+      ]
+    },
+    {
+      "slug": "orientation-descent",
+      "title": "Descent of orientations to orbit spaces",
+      "detail": "For a group acting freely, properly discontinuously by smooth orientation-preserving diffeomorphisms on an oriented connected manifold X, X/Γ has a unique orientation for which the orbit projection is orientation preserving at every point. DifferentialGeometry Layer 2 plans pullback orientations and the orientation double cover, not this descent; proposed for DifferentialGeometry, Part II.",
+      "needs": "For a group `Γ` acting freely, properly discontinuously and by smooth orientation-preserving diffeomorphisms on an oriented manifold `X`, the unique orientation of the orbit space `X/Γ` for which the orbit projection is orientation preserving at every point.",
+      "supplier": "DifferentialGeometry",
+      "section": "Layer 2 (missing section; proposed DifferentialGeometry, Part II)",
+      "neededBy": [
+        "7.5"
+      ]
+    }
+  ]
+}

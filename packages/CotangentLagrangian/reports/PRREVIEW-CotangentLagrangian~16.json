@@ -1,0 +1,13 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-CotangentLagrangian~16",
+  "head": "f049e2f3105994b5a912bf4ad8be9ed7da706213",
+  "pr": 1651,
+  "folder": "SymplecticGeometry/CotangentLagrangian",
+  "date": "2026-11-05",
+  "findings": 0,
+  "blocking": 0,
+  "notes": "incremental re-review of 0 changed lines since 824d1d3: the folder is byte-identical to the previously accepted head and the only branch change is the sibling IntegrableSystems/Suggested.lean module header, which neither imports this module nor shares a name with it. Checked: the worker's gate at this head (every counter zero, build=0 OK) and my own run of the scanners and depcheck (236 roadmaps, 2233 edges, 0 problems; outside-folder=4 is the two authorized sibling folders); lake env lean on Suggested.lean (exit 0, 8 sorry warnings only); #check of all 14 declarations against signatures.md (14 of 14 verbatim); the one-tactic padding probe (8 of 8 goals open); pins unchanged (Mathlib f6090c70, Tau Ceti 358314d4, main 3b51055b); every supplier citation re-resolved on main at the previous lines; the five seeded sample targets reopened at their Cannas da Silva locators (Prop. 5.1, Prop. 5.2, section 5.2, Thm. 5.3, Thms. 7.4/8.1/9.3) and found as cited; the settled HamiltonianReduction consumer re-probed (as-is exit 1 at 76:39, restated exit 0), unchanged and not actionable in this folder; the adversarial table carried forward (79 rows) with 10 fresh rows."
+ }
+}

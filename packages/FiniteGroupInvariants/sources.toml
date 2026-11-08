@@ -214,3 +214,133 @@ status = "certified"
 accessed = "2026-11-04"
 version_note = "arXiv v1"
 resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/5179#issuecomment-6632667435"
+
+[[source]]
+id = "serre-bounds"
+authors = "Jean-Pierre Serre"
+title = "Bounds for the orders of the finite subgroups of G(k)"
+year = 2010
+arxiv = "1011.0346v1"
+locator_scheme = "theorem"
+locator = "Theorem 1"
+url = "https://arxiv.org/abs/1011.0346v1"
+fetched_from = "https://arxiv.org/pdf/1011.0346v1"
+fetched_at = "2026-11-05T12:34:34Z"
+sha256 = "6bf84449e4fb495a1e1f7ebd6042e44483aca6ae02a8c742b2fba05c460573cb"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-05"
+version_note = "arXiv v1"
+cited_for = ["10.2"]
+
+[[source]]
+id = "guralnick-1982"
+authors = "Robert M. Guralnick"
+title = "Commutators and commutator subgroups"
+year = 1982
+venue = "Advances in Mathematics 45"
+doi = "10.1016/S0001-8708(82)80008-X"
+locator_scheme = "theorem"
+locator = "order 96"
+url = "https://doi.org/10.1016/S0001-8708(82)80008-X"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["4.1"]
+
+[[source]]
+id = "perlis-1977"
+authors = "Robert Perlis"
+title = "On the equation ζk(s) = ζk′(s)"
+year = 1977
+venue = "Journal of Number Theory 9"
+doi = "10.1016/0022-314X(77)90070-1"
+locator_scheme = "theorem"
+locator = "Theorem 1"
+url = "https://doi.org/10.1016/0022-314X(77)90070-1"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["7.4", "7.5"]
+
+[[source]]
+id = "reiner-1957"
+authors = "Irving Reiner"
+title = "Integral representations of cyclic groups of prime order"
+year = 1957
+venue = "Proceedings of the American Mathematical Society 8 (1957), 142-146"
+doi = "10.1090/S0002-9939-1957-0083493-6"
+locator_scheme = "page"
+locator = "145"
+url = "https://www.ams.org/journals/proc/1957-008-01/S0002-9939-1957-0083493-6/S0002-9939-1957-0083493-6.pdf"
+fetched_from = "https://www.ams.org/journals/proc/1957-008-01/S0002-9939-1957-0083493-6/S0002-9939-1957-0083493-6.pdf"
+fetched_at = "2026-11-05T12:34:39Z"
+sha256 = "71da052b9bcfe1da3a7521893c64b6c9df2396d809a33c261ee80327a11804f7"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-11-05"
+cited_for = ["9.2"]
+
+[[source]]
+id = "huppert-eg1"
+authors = "Bertram Huppert"
+title = "Endliche Gruppen I"
+year = 1967
+venue = "Grundlehren der mathematischen Wissenschaften"
+doi = "10.1007/978-3-642-64981-3"
+locator_scheme = "theorem"
+locator = "VI.9.5"
+url = "https://doi.org/10.1007/978-3-642-64981-3"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["1.1", "1.6"]
+
+[[source]]
+id = "sutherland-18785"
+authors = "Andrew V. Sutherland"
+title = "18.785 Number Theory I, Lecture 24: the Herbrand unit theorem and the Herbrand quotient of the unit group"
+year = 2021
+venue = "MIT course notes"
+locator_scheme = "theorem"
+locator = "Theorem 24.6"
+url = "https://math.mit.edu/classes/18.785/2021fa/LectureNotes24.pdf"
+fetched_from = "https://math.mit.edu/classes/18.785/2021fa/LectureNotes24.pdf"
+fetched_at = "2026-11-05T12:34:42Z"
+sha256 = "0f7fc7d3382375d34b52c3689fe97066184b10b181da87724bbb67945642de8d"
+licence_class = "institutional"
+status = "certified"
+accessed = "2026-11-05"
+cited_for = ["9.3"]
+
+[[source]]
+id = "isaacs"
+authors = "I. M. Isaacs"
+title = "Character Theory of Finite Groups"
+year = 1976
+venue = "Academic Press 1976; AMS Chelsea reprint 2006"
+doi = "10.1090/chel/359"
+locator_scheme = "theorem"
+locator = "Theorems 5.12, 6.22, 6.23, 6.32; Corollaries 5.13, 10.2; p. 171"
+url = "https://doi.org/10.1090/chel/359"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["6.2", "6.4", "6.7"]
+
+[[source]]
+id = "milne-gt"
+authors = "J. S. Milne"
+title = "Group Theory (course notes)"
+year = 2025
+locator_scheme = "theorem"
+locator = "Theorem 6.2, p. 88; Example 6.29(a), p. 98; Example 3.4(a), p. 44"
+version_note = "version 4.01, November 2025"
+url = "https://www.jmilne.org/math/CourseNotes/GT.pdf"
+fetched_from = "https://www.jmilne.org/math/CourseNotes/GT.pdf"
+fetched_at = "2026-11-08T04:38:53Z"
+sha256 = "826a86c9faebaa3a8f398655da515a0ee8cd922a05787fdc3a1f21a16db73633"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-08"
+cited_for = ["0.2", "0.5", "1.6"]

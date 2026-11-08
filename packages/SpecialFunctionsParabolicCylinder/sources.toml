@@ -1,0 +1,249 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "SpecialFunctionsParabolicCylinder"
+
+[[source]]
+id = "dlmf122"
+locator_scheme = "section"
+locator = "§12.2"
+url = "https://dlmf.nist.gov/12.2"
+fetched_from = "https://dlmf.nist.gov/12.2"
+fetched_at = "2026-11-05T05:48:42Z"
+sha256 = "325c38040a8ccccb5f00a354a743a0b745eb4c1eeb857b5696ed0580785ad350"
+licence_class = "institutional"
+status = "certified"
+accessed = "2026-11-05"
+cited_for = ["DLMF §12.2"]
+
+[[source]]
+id = "dlmf124"
+locator_scheme = "section"
+locator = "§12.4"
+url = "https://dlmf.nist.gov/12.4"
+fetched_from = "https://dlmf.nist.gov/12.4"
+fetched_at = "2026-11-05T05:48:54Z"
+sha256 = "d64d735419d1845724e91c08be983040487c23e47c6f22fc2a561c81cb236ac2"
+licence_class = "institutional"
+status = "certified"
+accessed = "2026-11-05"
+cited_for = ["DLMF §12.4"]
+
+[[source]]
+id = "dlmf125"
+locator_scheme = "section"
+locator = "§12.5"
+url = "https://dlmf.nist.gov/12.5"
+fetched_from = "https://dlmf.nist.gov/12.5"
+fetched_at = "2026-11-05T05:48:55Z"
+sha256 = "cd05619f6342f686a220d1302fa6dac366f322d3e4d477596b7ec3554c57771f"
+licence_class = "institutional"
+status = "certified"
+accessed = "2026-11-05"
+cited_for = ["DLMF §12.5"]
+
+[[source]]
+id = "dlmf127"
+locator_scheme = "section"
+locator = "§12.7"
+url = "https://dlmf.nist.gov/12.7"
+fetched_from = "https://dlmf.nist.gov/12.7"
+fetched_at = "2026-11-05T05:48:55Z"
+sha256 = "e043f8f77b52913e3fc594651462677383289028acaf3ab2a6ee7d1f2ab2e307"
+licence_class = "institutional"
+status = "certified"
+accessed = "2026-11-05"
+cited_for = ["DLMF §12.7"]
+
+[[source]]
+id = "dlmf128"
+locator_scheme = "section"
+locator = "§12.8"
+url = "https://dlmf.nist.gov/12.8"
+fetched_from = "https://dlmf.nist.gov/12.8"
+fetched_at = "2026-11-05T05:48:56Z"
+sha256 = "654b63919439c80b7b38bcf3cad80247fceacf969dec8c529bf8a5e6d674c46a"
+licence_class = "institutional"
+status = "certified"
+accessed = "2026-11-05"
+cited_for = ["DLMF §12.8"]
+
+[[source]]
+id = "dlmf129"
+locator_scheme = "section"
+locator = "§12.9"
+url = "https://dlmf.nist.gov/12.9"
+fetched_from = "https://dlmf.nist.gov/12.9"
+fetched_at = "2026-11-05T05:48:56Z"
+sha256 = "13e487f2116b2225ff25ca0dbae7a034ccbad3ad53f5b956d9dac7cccd2e8c5a"
+licence_class = "institutional"
+status = "certified"
+accessed = "2026-11-05"
+cited_for = ["DLMF §12.9"]
+
+[[source]]
+id = "dlmf1212"
+locator_scheme = "section"
+locator = "§12.12"
+url = "https://dlmf.nist.gov/12.12"
+fetched_from = "https://dlmf.nist.gov/12.12"
+fetched_at = "2026-11-05T05:48:57Z"
+sha256 = "82db4aaa60edbae7b690ce930ea76a5884ab7429fe8b227810402c662da2fd63"
+licence_class = "institutional"
+status = "certified"
+accessed = "2026-11-05"
+cited_for = ["DLMF §12.12"]
+
+[[source]]
+id = "dlmf1213"
+locator_scheme = "section"
+locator = "§12.13"
+url = "https://dlmf.nist.gov/12.13"
+fetched_from = "https://dlmf.nist.gov/12.13"
+fetched_at = "2026-11-05T05:48:57Z"
+sha256 = "b010ce267ba5996dc7b1d9853348503b3ee27e05c351eb094118252de5198248"
+licence_class = "institutional"
+status = "certified"
+accessed = "2026-11-05"
+cited_for = ["DLMF §12.13"]
+
+[[source]]
+id = "dlmf1214"
+locator_scheme = "section"
+locator = "§12.14"
+url = "https://dlmf.nist.gov/12.14"
+fetched_from = "https://dlmf.nist.gov/12.14"
+fetched_at = "2026-11-05T05:48:58Z"
+sha256 = "aa5b1f2d091b15c1b8928f8a41eb8ec5836968958673d2c657c770920d6c9e5f"
+licence_class = "institutional"
+status = "certified"
+accessed = "2026-11-05"
+cited_for = ["DLMF §12.14"]
+
+[[source]]
+id = "dlmf132"
+locator_scheme = "section"
+locator = "§13.2"
+url = "https://dlmf.nist.gov/13.2"
+fetched_from = "https://dlmf.nist.gov/13.2"
+fetched_at = "2026-11-05T05:48:59Z"
+sha256 = "b9afec3c8ac6bd3bc95db382a690b79982fb48c8456555c6880361826f724090"
+licence_class = "institutional"
+status = "certified"
+accessed = "2026-11-05"
+cited_for = ["DLMF §13.2"]
+
+[[source]]
+id = "dlmf72"
+locator_scheme = "section"
+locator = "§7.2"
+url = "https://dlmf.nist.gov/7.2"
+fetched_from = "https://dlmf.nist.gov/7.2"
+fetched_at = "2026-11-05T05:48:59Z"
+sha256 = "ea9645609afcc16b1d5add148ee1906f5c8df2be6a6187b3bbda5dfd8b436d26"
+licence_class = "institutional"
+status = "certified"
+accessed = "2026-11-05"
+cited_for = ["DLMF §7.2"]
+
+[[source]]
+id = "dlmf23"
+locator_scheme = "section"
+locator = "§2.3"
+url = "https://dlmf.nist.gov/2.3"
+fetched_from = "https://dlmf.nist.gov/2.3"
+fetched_at = "2026-11-05T05:49:00Z"
+sha256 = "c9df247c299dfb89adc5f01a5601c18a3a23e712ad27867fc9ad64c0dee0c5cf"
+licence_class = "institutional"
+status = "certified"
+accessed = "2026-11-05"
+cited_for = ["DLMF §2.3"]
+
+[[source]]
+id = "dlmf54"
+locator_scheme = "section"
+locator = "§5.4"
+url = "https://dlmf.nist.gov/5.4"
+fetched_from = "https://dlmf.nist.gov/5.4"
+fetched_at = "2026-11-05T05:49:01Z"
+sha256 = "4fe388f73862a5784dae473e3557bda1be89fddb210aded1fd99e78b7b37b4ab"
+licence_class = "institutional"
+status = "certified"
+accessed = "2026-11-05"
+cited_for = ["DLMF §5.4"]
+
+[[source]]
+id = "dlmf511"
+locator_scheme = "section"
+locator = "§5.11"
+url = "https://dlmf.nist.gov/5.11"
+fetched_from = "https://dlmf.nist.gov/5.11"
+fetched_at = "2026-11-05T05:49:02Z"
+sha256 = "e14b639f29dd35794b264202de444c6ab7098aec818ce8ff5f03d599c9b688a1"
+licence_class = "institutional"
+status = "certified"
+accessed = "2026-11-05"
+cited_for = ["DLMF §5.11"]
+
+[[source]]
+id = "dlmf1210"
+locator_scheme = "section"
+locator = "§12.10"
+url = "https://dlmf.nist.gov/12.10"
+fetched_from = "https://dlmf.nist.gov/12.10"
+fetched_at = "2026-11-05T05:49:02Z"
+sha256 = "253b1fe95ea412f30d031d5a4e0eadb3f898413899471ac26dda2cdcca61e8de"
+licence_class = "institutional"
+status = "certified"
+accessed = "2026-11-05"
+cited_for = ["DLMF §12.10"]
+
+[[source]]
+id = "dlmf24"
+locator_scheme = "section"
+locator = "§2.4"
+url = "https://dlmf.nist.gov/2.4"
+fetched_from = "https://dlmf.nist.gov/2.4"
+fetched_at = "2026-11-05T05:56:48Z"
+sha256 = "bf3828f3ad7280dea326b0de2283827f5a2548329900f2193e9bd9c1307f8ccc"
+licence_class = "institutional"
+status = "certified"
+accessed = "2026-11-05"
+cited_for = ["DLMF §2.4"]
+
+[[source]]
+id = "dlmf58"
+locator_scheme = "equation"
+locator = "5.8.3"
+url = "https://dlmf.nist.gov/5.8"
+fetched_from = "https://dlmf.nist.gov/5.8"
+fetched_at = "2026-11-05T18:40:22Z"
+sha256 = "738b03b7008f80bb01d6a30b5d90228a7dde34609594595cd4f717fa06e85939"
+licence_class = "institutional"
+status = "certified"
+accessed = "2026-11-05"
+cited_for = ["6.6(a)"]
+
+[[source]]
+id = "dlmf76"
+locator_scheme = "equation"
+locator = "7.6.2"
+url = "https://dlmf.nist.gov/7.6"
+fetched_from = "https://dlmf.nist.gov/7.6"
+fetched_at = "2026-11-05T18:40:23Z"
+sha256 = "98778bcee3bd878f1952613805401ebadb1ae5fbdc6e20ffc467778f6af330fc"
+licence_class = "institutional"
+status = "certified"
+accessed = "2026-11-05"
+cited_for = ["9.3"]
+
+[[source]]
+id = "dlmf113"
+locator_scheme = "equation"
+locator = "1.13.4"
+url = "https://dlmf.nist.gov/1.13"
+fetched_from = "https://dlmf.nist.gov/1.13"
+fetched_at = "2026-11-05T18:43:21Z"
+sha256 = "59e1a546ea0b80f9715f4f9d2a4eb3543e8c5a13e7a17a81b29430c4c5d170ac"
+licence_class = "institutional"
+status = "certified"
+accessed = "2026-11-05"
+cited_for = ["2.4"]

@@ -1,0 +1,4 @@
+{"review": {"status": "needs_changes", "reviewer": "independent-review-PRREVIEW-SemisimpleAlgebras~10",
+            "head": "7edf1724db74c015a44564c547a688d2ceaafc9b", "pr": 989, "folder": "RepresentationTheory/SemisimpleAlgebras", "date": "2026-11-07",
+            "findings": 1, "blocking": 0,
+            "notes": "incremental re-review of 7 changed lines since 87ec805 (README 246-251: old -> new numbering of main's Layer 1.5 as section 1.3), plus the merge of main that moved the branch pin to Mathlib 1b1ccf4b / Tau Ceti 2fd255d9. Checked: the relabelled content (main lines 200-211 = head section 1.3), the seven layer headings, citing roadmaps of Layer 1.5 (none), sections 1.1-1.3 declarations at the pin, lake env lean (one sorry warning), own gate OK, depcheck 0 problems, overlaps none. One P3: the worker's gate build=2 FAIL on Lake's module-system warning for the plain import Mathlib header; module-form scratch copy tested (same signature, one sorry warning)."}}

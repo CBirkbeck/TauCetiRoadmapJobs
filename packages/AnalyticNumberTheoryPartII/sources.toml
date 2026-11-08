@@ -1,0 +1,54 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "AnalyticNumberTheoryPartII"
+
+[[source]]
+id = "LOWW"
+authors = "Robert J. Lemke Oliver, Jiuya Wang, Melanie Matchett Wood"
+title = "The average size of $3$-torsion in class groups of $2$-extensions"
+year = 2021
+arxiv = "2110.07712v2"
+locator_scheme = "theorem"
+locator = "Lemma 2.5; Remark 2.7; Remark 3.3; Proposition 3.4; Lemma 3.5"
+url = "https://arxiv.org/abs/2110.07712v2"
+fetched_from = "https://arxiv.org/pdf/2110.07712v2"
+fetched_at = "2026-11-07T08:54:50Z"
+sha256 = "fad655111b4d5864f54fbc1a94f3319ca57fb92c7adc6741bbec01d08732d935"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-07"
+version_note = "arXiv v2, the latest version; no journal version is cited"
+cited_for = ["5.6", "5.7", "5.9", "5.11", "5.13", "5.19", "5.20", "5.21", "5.24", "5.27", "5.28"]
+
+[[source]]
+id = "Stark74"
+authors = "H. M. Stark"
+title = "Some effective cases of the Brauer–Siegel theorem"
+year = 1974
+venue = "Inventiones Mathematicae 23, 135–152"
+locator_scheme = "theorem"
+locator = "Lemma 3; Lemma 4; Lemma 8"
+url = "https://gdz.sub.uni-goettingen.de/download/pdf/PPN356556735_0023/LOG_0016.pdf"
+fetched_from = "https://gdz.sub.uni-goettingen.de/download/pdf/PPN356556735_0023/LOG_0016.pdf"
+fetched_at = "2026-11-07T08:58:14Z"
+sha256 = "24e3258b7551440be4efdbfb963ca88d1c3a48a1efb95c8f375f16aad5f2479b"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-07"
+cited_for = ["5.7a"]
+
+[[source]]
+id = "DatskovskyWright86"
+authors = "Boris Datskovsky, David J. Wright"
+title = "The adelic zeta function associated to the space of binary cubic forms. II: Local theory"
+year = 1986
+venue = "Journal für die reine und angewandte Mathematik 367, 27–75"
+locator_scheme = "page"
+locator = "§2, pp.37–38; Proposition 2.2; (2.1)–(2.4)"
+url = "https://gdz.sub.uni-goettingen.de/download/pdf/PPN243919689_0367/LOG_0007.pdf"
+fetched_from = "https://gdz.sub.uni-goettingen.de/download/pdf/PPN243919689_0367/LOG_0007.pdf"
+fetched_at = "2026-11-08T12:15:51Z"
+sha256 = "2d6aa0bbbadd11bd54cf253e148330a920997cd3646a255934bc82d3b95b985c"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-08"
+cited_for = ["5.3c", "5.3g", "5.3m", "5.4", "5.8", "5.10", "5.10a", "5.10b", "5.12", "5.13", "5.21", "5.21r", "5.21s", "5.24a", "5.27a"]

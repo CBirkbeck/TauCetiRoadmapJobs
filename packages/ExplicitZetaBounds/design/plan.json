@@ -1,0 +1,2643 @@
+{
+ "roadmap": "ExplicitZetaBounds",
+ "title": "Explicit bounds for the zeta function and Dirichlet L-functions",
+ "parent": null,
+ "summary": "The numerically explicit layer above ZerosOfLFunctions: the O* error calculus; bounded-height RH(H) and GRH(q, H) with the bridge from Platt's finite-conductor theorem; Stirling's series with Stieltjes', Lindelöf's, Brent's and Nemes' remainder bounds, Binet's formulas, the two-sided modulus bound for Γ and real-axis Gamma, digamma and polygamma brackets; the explicit Phragmén–Lindelöf principle and Rademacher's convexity bound on records of finite-order type; Backlund's strip bounds, bounds right of one and explicit approximate functional equations; the explicit van der Corput toolkit (Kusmin–Landau, A- and B-processes, derivative tests), the explicit Vinogradov mean value theorem with Richert-type bounds, the Riemann–Siegel formula with Gabcke's remainder and the critical-line, one-line and σ_k-line bounds; Backlund's argument lemma and the explicit Riemann–von Mangoldt formulas for ζ and L(s, χ); weighted zero sums; smoothed and averaged Perron formulas, the majorant principle, Preissmann's weighted Hilbert inequality, mean values and weighted and maximal large sieves; classical, Littlewood-type and Vinogradov–Korobov zero-free regions with decimal constants, Dirichlet regions, real-zero bounds and the capped real-zero gap with its numerical instances; zero-density estimates; and upper and lower bounds for L(1, χ). Computations enter only as named certificates; the explicit Vinogradov mean value theorem and the exponential-sum bound behind the Vinogradov–Korobov targets are stated here (4.9a).",
+ "baseline": {
+  "mathlib": "1b1ccf4b088b32fa3f23f2de1127433254a81e1e",
+  "tauceti": "2fd255d997f47c0b5d834ee416c7015d55444ce5"
+ },
+ "layers": [
+  {
+   "key": "0",
+   "title": "Explicit errors, verified zeros and cosine polynomials",
+   "targets": [
+    {
+     "id": "0.1",
+     "kind": "definition",
+     "name": "ExplicitBounds.BigOStar",
+     "statement": "a = b + O*(e) means ‖a − b‖ ≤ e, for a, b in a normed additive group and e : ℝ; for functions f, g, h and a set S, f = g + O*(h) on S means ∀ x ∈ S, ‖f x − g x‖ ≤ h x.",
+     "hypotheses": [
+      "E a normed additive group",
+      "e real"
+     ],
+     "locator": {
+      "source": "ramare2022excursions",
+      "where": "§1 (the O* notation)"
+     },
+     "prerequisites": [
+      "mathlib:norm_sub_rev",
+      "mathlib:norm_sub_le",
+      "mathlib:norm_smul",
+      "mathlib:abs_sub_le_iff",
+      "mathlib:MeasureTheory.norm_integral_le_integral_norm"
+     ],
+     "api": [
+      {
+       "name": "nonneg",
+       "role": "structure",
+       "statement": "a = b + O*(e) implies 0 ≤ e; a = a + O*(e) iff 0 ≤ e"
+      },
+      {
+       "name": "symm",
+       "role": "structure",
+       "statement": "a = b + O*(e) iff b = a + O*(e)"
+      },
+      {
+       "name": "trans",
+       "role": "structure",
+       "statement": "a = b + O*(e₁) and b = c + O*(e₂) give a = c + O*(e₁ + e₂)"
+      },
+      {
+       "name": "mono",
+       "role": "structure",
+       "statement": "a = b + O*(e) and e ≤ e' give a = b + O*(e')"
+      },
+      {
+       "name": "add",
+       "role": "structure",
+       "statement": "errors add under sums of two and of finitely many terms"
+      },
+      {
+       "name": "smul",
+       "role": "functoriality",
+       "statement": "c • a = c • b + O*(‖c‖ e)"
+      },
+      {
+       "name": "norm_le",
+       "role": "compatibility",
+       "statement": "‖a‖ ≤ ‖b‖ + e and ‖b‖ − e ≤ ‖a‖"
+      },
+      {
+       "name": "real_iff",
+       "role": "characterisation",
+       "statement": "on ℝ, a = b + O*(e) iff b − e ≤ a ≤ b + e"
+      },
+      {
+       "name": "integral",
+       "role": "functoriality",
+       "statement": "pointwise O* on a finite-measure set integrates to O* of the integral of the error"
+      }
+     ],
+     "tests": [
+      {
+       "name": "pi_bound",
+       "kind": "computation",
+       "statement": "π = 3 + O*(0.1416) holds and π = 3 + O*(0.1415) fails (π − 3 = 0.14159…)"
+      },
+      {
+       "name": "not_one_sided",
+       "kind": "non-example",
+       "statement": "π = 4 + O*(0) fails although π ≤ 4"
+      },
+      {
+       "name": "negative_error",
+       "kind": "degenerate",
+       "statement": "1 = 1 + O*(−1) fails"
+      },
+      {
+       "name": "absolute_not_relative",
+       "kind": "characterisation",
+       "statement": "1 = 0 + O*(1) holds; the relative reading ‖a − b‖ ≤ e‖b‖ would need 1 ≤ 0"
+      }
+     ]
+    },
+    {
+     "id": "0.2a",
+     "kind": "definition",
+     "name": "ExplicitBounds.RiemannHypothesisUpTo",
+     "statement": "RH(H): every ρ with 0 < Re ρ < 1, |Im ρ| ≤ H and riemannZeta ρ = 0 has Re ρ = 1/2.",
+     "hypotheses": [
+      "H : ℝ"
+     ],
+     "locator": {
+      "source": "platttrudgian2021",
+      "where": "Theorem 1 (the form of the statement; line 48)"
+     },
+     "prerequisites": [
+      "mathlib:riemannZeta",
+      "mathlib:RiemannHypothesis",
+      "mathlib:riemannZeta_one_sub",
+      "mathlib:riemannZeta_zero",
+      "mathlib:riemannZeta_ne_zero_of_one_le_re",
+      "roadmap:ZerosOfLFunctions Layer 9"
+     ],
+     "api": [
+      {
+       "name": "antitone",
+       "role": "structure",
+       "statement": "H ≤ H' and RH(H') give RH(H)"
+      },
+      {
+       "name": "iff_riemannHypothesis",
+       "role": "compatibility",
+       "statement": "(∀ H, RH(H)) iff Mathlib RiemannHypothesis"
+      },
+      {
+       "name": "iff_allOnCriticalLine",
+       "role": "compatibility",
+       "statement": "for H ≥ 0, RH(H) iff AllOnCriticalLine completedRiemannZeta univ (Icc 0 1 ×ℂ Icc (−H) H)"
+      },
+      {
+       "name": "of_certificate",
+       "role": "constructor",
+       "statement": "a HasZerosInRects certificate whose rectangles satisfy AllOnCriticalLine gives RH(H)"
+      }
+     ],
+     "tests": [
+      {
+       "name": "negative_height",
+       "kind": "degenerate",
+       "statement": "RH(H) holds vacuously for H < 0"
+      },
+      {
+       "name": "strip_needed",
+       "kind": "non-example",
+       "statement": "without 0 < Re ρ < 1, RH(0) would fail at the trivial zero −2"
+      },
+      {
+       "name": "first_zero",
+       "kind": "computation",
+       "statement": "RH(14) concerns no zero (first ordinate 14.1347…)"
+      }
+     ]
+    },
+    {
+     "id": "0.2b",
+     "kind": "definition",
+     "name": "ExplicitBounds.DirichletGRHUpTo",
+     "statement": "GRH(q, H): for every primitive χ : DirichletCharacter ℂ q, every ρ with 0 < Re ρ < 1, |Im ρ| ≤ H and LFunction χ ρ = 0 has Re ρ = 1/2.",
+     "hypotheses": [
+      "q ≥ 1",
+      "H : ℝ"
+     ],
+     "locator": {
+      "source": "platt2016grh",
+      "where": "Theorem 7.1 (the form of the statement; lines 955–963)"
+     },
+     "prerequisites": [
+      "mathlib:DirichletCharacter.LFunction",
+      "mathlib:DirichletCharacter.IsPrimitive",
+      "mathlib:DirichletCharacter.LFunction_modOne_eq",
+      "mathlib:DirichletCharacter.isPrimitive_one_level_one",
+      "mathlib:DirichletCharacter.LFunction_ne_zero_of_one_le_re",
+      "roadmap:AnalyticNumberTheoryPartI §1.6",
+      "roadmap:ZerosOfLFunctions 6.5",
+      "roadmap:ZerosOfLFunctions Layer 9",
+      "target:0.2a",
+      "mathlib:DirichletCharacter.changeLevel",
+      "mathlib:DirichletCharacter.LFunction_changeLevel",
+      "mathlib:DirichletCharacter.primitiveCharacter",
+      "mathlib:DirichletCharacter.changeLevel_primitiveCharacter"
+     ],
+     "api": [
+      {
+       "name": "antitone",
+       "role": "structure",
+       "statement": "H ≤ H' and GRH(q, H') give GRH(q, H)"
+      },
+      {
+       "name": "one_iff",
+       "role": "compatibility",
+       "statement": "GRH(1, H) iff RH(H)"
+      },
+      {
+       "name": "iff_dirichletGRH",
+       "role": "compatibility",
+       "statement": "(∀ H, GRH(q, H)) iff DirichletGRH χ for every primitive χ modulo q"
+      },
+      {
+       "name": "iff_allOnCriticalLine",
+       "role": "compatibility",
+       "statement": "for H ≥ 0, GRH(q, H) iff AllOnCriticalLine of completedLFunction χ on Icc 0 1 ×ℂ Icc (−H) H for every primitive χ"
+      },
+      {
+       "name": "iff_imprimitive",
+       "role": "compatibility",
+       "statement": "for q ≥ 1: every χ : DirichletCharacter ℂ q (primitive or not) has its zeros with 0 < Re ρ < 1, |Im ρ| ≤ H on Re ρ = 1/2 iff GRH(f, H) for every f ∣ q (the Euler factors 1 − χ*(p)p^{−s} vanish only on Re s = 0)"
+      }
+     ],
+     "tests": [
+      {
+       "name": "mod_two",
+       "kind": "degenerate",
+       "statement": "GRH(2, H) holds for every H: no character modulo 2 is primitive"
+      },
+      {
+       "name": "mod_one",
+       "kind": "compatibility",
+       "statement": "GRH(1, H) and RH(H) are the same statement"
+      },
+      {
+       "name": "q_two_mod_four",
+       "kind": "non-example",
+       "statement": "for q ≡ 2 (mod 4) the statement is vacuous, so GRH(q, H) gives no information"
+      },
+      {
+       "name": "imprimitive_mod_two",
+       "kind": "compatibility",
+       "statement": "q = 2: (1 − 2^{−s})ζ(s) has extra zeros 2πik/log 2 on Re s = 0 (height 9.06), outside the open strip; the law reduces to RH(H)"
+      }
+     ]
+    },
+    {
+     "id": "0.3",
+     "kind": "theorem",
+     "name": "ExplicitBounds.dirichletGRHUpTo_platt",
+     "statement": "For 1 ≤ q ≤ 400 000, GRH(q, H(q)) with H(q) = max(10⁸/q, 7.5·10⁷/q + 200) for even q and max(10⁸/q, 3.75·10⁷/q + 200) for odd q; hence GRH(q, 10⁸/q), GRH(q, 10 000) for q ≤ 13, GRH(q, 2500) for q ≤ 40 000 and GRH(8, 10 000).",
+     "hypotheses": [
+      "1 ≤ q ≤ 400 000"
+     ],
+     "locator": {
+      "source": "platt2016grh",
+      "where": "Theorem 7.1, lines 955–963"
+     },
+     "prerequisites": [
+      "roadmap:ComputationalNumberTheory §4.22",
+      "target:0.2b"
+     ],
+     "tests": [
+      {
+       "name": "H3",
+       "kind": "computation",
+       "statement": "H(3) = 10⁸/3"
+      },
+      {
+       "name": "H400000",
+       "kind": "computation",
+       "statement": "H(400 000) = 387.5, the second branch"
+      },
+      {
+       "name": "rumely",
+       "kind": "compatibility",
+       "statement": "GRH(13, 10 000) since 10⁸/13 ≥ 10⁴"
+      }
+     ]
+    },
+    {
+     "id": "0.4",
+     "kind": "example",
+     "name": "ExplicitBounds.recordedVerifications",
+     "statement": "The recorded verifications RH(545 439 823), RH(10⁹), RH(30 610 046 000) and RH(3 000 175 332 800) are hypotheses of the theorems that use them; RH(3·10¹²) implies the others.",
+     "hypotheses": [],
+     "locator": {
+      "source": "platt2017zeros",
+      "where": "Theorem 5.1, line 527; platttrudgian2021 Theorem 1, line 48"
+     },
+     "prerequisites": [
+      "target:0.2a"
+     ],
+     "tests": [
+      {
+       "name": "order",
+       "kind": "computation",
+       "statement": "3·10¹² ≥ 3.0610046·10¹⁰ ≥ 10⁹ ≥ 545 439 823"
+      },
+      {
+       "name": "count",
+       "kind": "compatibility",
+       "statement": "N(3.0610046·10¹⁰) = 103 800 788 359 against the main term 103 800 788 358.63"
+      }
+     ]
+    },
+    {
+     "id": "0.5",
+     "kind": "definition",
+     "name": "ExplicitBounds.IsAdmissibleCosinePolynomial",
+     "statement": "IsAdmissibleCosinePolynomial n a: a k ≥ 0 for k ≤ n, a 0 < a 1, and TauCeti.IsNonnegativeTrigonometricCombination (Finset.range (n+1)) (fun k ↦ (a k : ℂ)) id, i.e. Σ_{k≤n} a_k cos kθ ≥ 0 for all θ.",
+     "hypotheses": [
+      "n : ℕ",
+      "a : ℕ → ℝ"
+     ],
+     "locator": {
+      "source": "mossinghofftrudgian2015",
+      "where": "Theorem 2, line 129 (the class P_n)"
+     },
+     "prerequisites": [
+      "tauceti:TauCeti.IsNonnegativeTrigonometricCombination",
+      "tauceti:TauCeti.trigonometricCombination",
+      "tauceti:TauCeti.trigonometricCombination_nonneg_of_boundary",
+      "tauceti:TauCeti.sum_re_neg_log_one_sub_nonneg",
+      "tauceti:TauCeti.LSeries.isNonnegativeTrigonometricCombination_threeFourOne"
+     ],
+     "api": [
+      {
+       "name": "eval_zero_pi",
+       "role": "structure",
+       "statement": "P(0) = Σ a_k and P(π) = Σ (−1)^k a_k ≥ 0"
+      },
+      {
+       "name": "smul_pad",
+       "role": "structure",
+       "statement": "positive scaling and appending zeros preserve admissibility"
+      },
+      {
+       "name": "degree_pos",
+       "role": "structure",
+       "statement": "admissibility forces n ≥ 1"
+      },
+      {
+       "name": "disc",
+       "role": "compatibility",
+       "statement": "nonnegativity extends to Re Σ a_k z^k ≥ 0 on |z| ≤ 1"
+      },
+      {
+       "name": "euler_log",
+       "role": "compatibility",
+       "statement": "Σ a_k Re(−Log(1 − r z^k)) ≥ 0 for 0 ≤ r < 1, |z| ≤ 1"
+      }
+     ],
+     "tests": [
+      {
+       "name": "three_four_one",
+       "kind": "compatibility",
+       "statement": "(3, 4, 1) is admissible: 3 + 4cos θ + cos 2θ = 2(1 + cos θ)²"
+      },
+      {
+       "name": "one_two",
+       "kind": "non-example",
+       "statement": "(1, 2): a₀ < a₁ but P(π) = −1"
+      },
+      {
+       "name": "one_one",
+       "kind": "non-example",
+       "statement": "(1, 1): nonnegative but a₀ = a₁"
+      },
+      {
+       "name": "degree_zero",
+       "kind": "degenerate",
+       "statement": "(a₀) fails since a₁ = 0 ≤ a₀"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "key": "1",
+   "title": "Stirling's series and the Gamma function on the positive axis",
+   "targets": [
+    {
+     "id": "1.1",
+     "kind": "theorem",
+     "name": "ExplicitBounds.logGamma_stirling_bernoulli",
+     "statement": "For z in ℂ ∖ (−∞, 0] and n ≥ 1: log Γ(z) = (z − 1/2) Log z − z + (1/2) log 2π + Σ_{j<n} T_j(z) + r_n(z), r_n(z) = ∫₀^∞ (B_{2n} − B_{2n}({u}))/(2n (u + z)^{2n}) du.",
+     "hypotheses": [
+      "z ∉ (−∞, 0]",
+      "n ≥ 1"
+     ],
+     "locator": {
+      "source": "brent2019",
+      "where": "eqs. (5)–(8), lines 121–145"
+     },
+     "prerequisites": [
+      "roadmap:AsymptoticExpansions §13.1",
+      "roadmap:AnalyticNumberTheoryPartI §0.23a",
+      "mathlib:bernoulli",
+      "mathlib:Polynomial.bernoulli",
+      "mathlib:bernoulliFun",
+      "mathlib:Complex.Gamma"
+     ],
+     "tests": [
+      {
+       "name": "r1_at_1",
+       "kind": "computation",
+       "statement": "r₁(1) = 0.081061 ∈ (0, 1/12)"
+      },
+      {
+       "name": "r2_at_2",
+       "kind": "computation",
+       "statement": "r₂(2) = −0.000326, sign of T₂(2) = −1/2880"
+      }
+     ]
+    },
+    {
+     "id": "1.2",
+     "kind": "theorem",
+     "name": "ExplicitBounds.completelyMonotone_stirling_remainder",
+     "statement": "For m ≥ 0, F_m(x) = log Γ(x) − (x − 1/2) log x + x − (1/2) log 2π − Σ_{i≤2m} T_i(x) and G_m(x) = −(… − Σ_{i≤2m+1} T_i(x)) are strictly completely monotone on (0, ∞); hence the partial sums bracket the remainder and log x − 1/(2x) − 1/(12x²) < ψ(x) < log x − 1/(2x).",
+     "hypotheses": [
+      "x > 0",
+      "m ≥ 0"
+     ],
+     "locator": {
+      "source": "alzer1997",
+      "where": "Theorem 8, lines 520–528"
+     },
+     "prerequisites": [
+      "target:1.1",
+      "mathlib:Complex.digamma",
+      "mathlib:Real.Gamma"
+     ],
+     "tests": [
+      {
+       "name": "m0",
+       "kind": "computation",
+       "statement": "log Γ(1) = 0 > −0.081061"
+      },
+      {
+       "name": "psi1",
+       "kind": "computation",
+       "statement": "ψ(1) = −0.577216 ∈ (−0.583333, −0.5)"
+      }
+     ]
+    },
+    {
+     "id": "1.3",
+     "kind": "theorem",
+     "name": "ExplicitBounds.polygamma_bracket",
+     "statement": "For k ≥ 1, n ≥ 0, x > 0: S_k(2n; x) < (−1)^{k+1} ψ^{(k)}(x) < S_k(2n+1; x), S_k(p; x) = (k−1)!/x^k + k!/(2x^{k+1}) + Σ_{i≤p} B_{2i} ∏_{j<k}(2i + j)/x^{2i+k}.",
+     "hypotheses": [
+      "k ≥ 1",
+      "n ≥ 0",
+      "x > 0"
+     ],
+     "locator": {
+      "source": "alzer1997",
+      "where": "Theorem 9, lines 649–662"
+     },
+     "prerequisites": [
+      "target:1.2",
+      "mathlib:iteratedDeriv"
+     ],
+     "tests": [
+      {
+       "name": "trigamma1",
+       "kind": "computation",
+       "statement": "ψ'(1) = π²/6 ∈ (1.5, 1.666667)"
+      },
+      {
+       "name": "k2",
+       "kind": "computation",
+       "statement": "−ψ''(1) = 2ζ(3) ∈ (2, 2.5)"
+      }
+     ]
+    },
+    {
+     "id": "1.4",
+     "kind": "theorem",
+     "name": "ExplicitBounds.gamma_ramanujan_sixth_root",
+     "statement": "For x ≥ 1: √π(x/e)^x(8x³+4x²+x+1/100)^{1/6} < Γ(x+1) < √π(x/e)^x(8x³+4x²+x+1/30)^{1/6}; θ_x is increasing on [1, ∞) with limit 1.",
+     "hypotheses": [
+      "x ≥ 1"
+     ],
+     "locator": {
+      "source": "mortici2011ramanujan",
+      "where": "Theorem 1; andrewsberndt2013 p. 118"
+     },
+     "prerequisites": [
+      "target:1.2",
+      "mathlib:Real.Gamma"
+     ],
+     "tests": [
+      {
+       "name": "theta1",
+       "kind": "computation",
+       "statement": "θ₁ = 0.33593"
+      },
+      {
+       "name": "not_monotone_below_one",
+       "kind": "non-example",
+       "statement": "θ_x → 30/π³ as x → 0⁺ while θ_{0.5} = 0.32076"
+      },
+      {
+       "name": "theta100",
+       "kind": "computation",
+       "statement": "θ₂ = 0.51176, θ₁₀ = 0.87001, θ₁₀₀ = 0.98632: increasing in (3/10, 1)"
+      }
+     ]
+    },
+    {
+     "id": "1.5",
+     "kind": "theorem",
+     "name": "ExplicitBounds.digamma_diamondStraub",
+     "statement": "For N ≥ 1 and λ₀ the root in [0, 1/2] of B_N (N even) or B_{N+1} (N odd): ψ(x) > F_N(λ; x) for N ≡ 1 (mod 4), λ ∈ [λ₀, 1/2] and N ≡ 2 (mod 4), λ ∈ [0, λ₀], reversed for N ≡ 3, 0 (mod 4), for all x > λ; and (−1)^{⌈N/2⌉}(log Γ(x) − L_N(λ; x)) is strictly completely monotone on (λ, ∞).",
+     "hypotheses": [
+      "N ≥ 1",
+      "λ in the stated range",
+      "x > λ"
+     ],
+     "locator": {
+      "source": "diamondstraub2016",
+      "where": "Theorem 3.1, lines 320–326; Theorem 1.2, lines 90–94"
+     },
+     "prerequisites": [
+      "target:1.1",
+      "target:1.2",
+      "roadmap:AsymptoticExpansions §13.1",
+      "mathlib:Polynomial.bernoulli"
+     ],
+     "tests": [
+      {
+       "name": "N1",
+       "kind": "computation",
+       "statement": "ψ(x) > log(x − 1/2); at x = 1, −0.57722 > −0.69315"
+      },
+      {
+       "name": "N3",
+       "kind": "computation",
+       "statement": "ψ(2) = 0.422784 < F₃(1/2; 2) = 0.423984"
+      }
+     ]
+    },
+    {
+     "id": "1.6",
+     "kind": "theorem",
+     "name": "ExplicitBounds.digamma_mortici",
+     "statement": "For x > 0: a(x) < ψ(x+1) + log(e^{1/(x+1)} − 1) < a(x) + 97/(720x⁵), a(x) = −1/(24x²) + 1/(12x³) − 337/(2880x⁴).",
+     "hypotheses": [
+      "x > 0"
+     ],
+     "locator": {
+      "source": "mortici2011psi",
+      "where": "Theorem 1.1, lines 67–75"
+     },
+     "prerequisites": [
+      "target:1.2",
+      "target:1.3"
+     ],
+     "tests": [
+      {
+       "name": "x1",
+       "kind": "computation",
+       "statement": "−0.075347 < −0.009968 < 0.059375"
+      },
+      {
+       "name": "x20",
+       "kind": "computation",
+       "statement": "the value lies at 0.953 of the bracket of width 4.2·10⁻⁸"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "key": "2",
+   "title": "The Gamma function in the complex plane",
+   "targets": [
+    {
+     "id": "2.1",
+     "kind": "theorem",
+     "name": "ExplicitBounds.stirling_remainder_sector",
+     "statement": "For |arg z| < π and n ≥ 1: |r_n(z)| ≤ |T_n(z)| sec^{2n}(arg z/2); in particular |ξ(z)| ≤ 1/(12 sin²(δ/2)|z|) on |arg z| ≤ π − δ.",
+     "hypotheses": [
+      "|arg z| < π",
+      "n ≥ 1",
+      "0 < δ ≤ π"
+     ],
+     "locator": {
+      "source": "brent2019",
+      "where": "Remark 6 (Stieltjes; Olver (8.4.06)), lines 258–259"
+     },
+     "prerequisites": [
+      "target:1.1",
+      "mathlib:Real.cos"
+     ],
+     "tests": [
+      {
+       "name": "random",
+       "kind": "computation",
+       "statement": "on 2000 random points |r₁| ≤ 0.99998 × bound and |r₂| ≤ 0.9996 × bound"
+      },
+      {
+       "name": "secant_needed",
+       "kind": "non-example",
+       "statement": "at z = e^{3.1i}, |ξ| = 1.389 > |T₁(z)| = 1/12"
+      }
+     ]
+    },
+    {
+     "id": "2.2",
+     "kind": "theorem",
+     "name": "ExplicitBounds.stirling_remainder_lindelof",
+     "statement": "For |arg z| < π/2: |r_n(z)| ≤ K(θ)|T_n(z)| with K = 1 for |θ| ≤ π/4 and |csc 2θ| for π/4 < |θ| < π/2.",
+     "hypotheses": [
+      "|arg z| < π/2",
+      "n ≥ 1"
+     ],
+     "locator": {
+      "source": "brent2019",
+      "where": "Remark 5, lines 244–255; nemes2015 lines 115–121"
+     },
+     "prerequisites": [
+      "target:2.4",
+      "target:1.1"
+     ],
+     "tests": [
+      {
+       "name": "pi3",
+       "kind": "computation",
+       "statement": "K(π/3) = 1.1547 < sec²(π/6) = 1.3333"
+      }
+     ]
+    },
+    {
+     "id": "2.3",
+     "kind": "theorem",
+     "name": "ExplicitBounds.stirling_remainder_brent",
+     "statement": "For Re z ≥ 0, z ≠ 0, k ≥ 1: |r_{k+1}(z)| ≤ √π Γ(k+1/2)/Γ(k) |T_k(z)| < √(πk)|T_k(z)|.",
+     "hypotheses": [
+      "Re z ≥ 0",
+      "z ≠ 0",
+      "k ≥ 1"
+     ],
+     "locator": {
+      "source": "brent2019",
+      "where": "Theorem 1 and Corollary 1, lines 162–202"
+     },
+     "prerequisites": [
+      "target:1.1",
+      "mathlib:Real.Gamma_mul_Gamma_add_half"
+     ],
+     "tests": [
+      {
+       "name": "halfplane_needed",
+       "kind": "non-example",
+       "statement": "at z = −1 + i, u = 1 the key inequality |u+z|² ≥ u² + |z|² reads 1 ≥ 3"
+      }
+     ]
+    },
+    {
+     "id": "2.4",
+     "kind": "theorem",
+     "name": "ExplicitBounds.binet_formulas",
+     "statement": "For Re z > 0: Binet's first and second formulas for ξ(z), the integrated form ξ(z) = (1/π)∫₀^∞ z/(z²+u²) log(1/(1 − e^{−2πu})) du, and Re ξ(z) > 0.",
+     "hypotheses": [
+      "Re z > 0"
+     ],
+     "locator": {
+      "source": "dlmf",
+      "where": "§5.9 (Binet's formulas)"
+     },
+     "prerequisites": [
+      "target:1.1",
+      "mathlib:Complex.arctan"
+     ],
+     "tests": [
+      {
+       "name": "imag_axis",
+       "kind": "computation",
+       "statement": "Re ξ(i) = −(1/2) log(1 − e^{−2π}) = 0.000934"
+      },
+      {
+       "name": "left_halfplane",
+       "kind": "non-example",
+       "statement": "Re ξ(−1/2 + 2i) = −0.01004"
+      }
+     ]
+    },
+    {
+     "id": "2.5",
+     "kind": "theorem",
+     "name": "ExplicitBounds.norm_gamma_two_sided",
+     "statement": "For σ > 0, t ≠ 0, s = σ + it: √(2π)|s|^{σ−1/2}e^{−π|t|/2}e^{−σ³/(3t²)} < |Γ(s)| ≤ √(2π)|s|^{σ−1/2}e^{−π|t|/2}e^{1/(6|s|)}.",
+     "hypotheses": [
+      "σ > 0",
+      "t ≠ 0"
+     ],
+     "locator": {
+      "source": "ramare2022excursions",
+      "where": "§20.2 (the weaker lower factor e^{−σ³/t²}); route via 2.1 and 2.4"
+     },
+     "prerequisites": [
+      "target:2.1",
+      "target:2.4",
+      "mathlib:Real.arctan_le_self",
+      "mathlib:Complex.norm_cpow_of_ne_zero"
+     ],
+     "tests": [
+      {
+       "name": "random",
+       "kind": "computation",
+       "statement": "margins ≥ 1.3·10⁻⁸ (lower) and ≥ 5.3·10⁻⁴ (upper) on 3000 points"
+      },
+      {
+       "name": "half_line",
+       "kind": "computation",
+       "statement": "|Γ(1/2+10i)| = 3.77753·10⁻⁷"
+      }
+     ]
+    },
+    {
+     "id": "2.6",
+     "kind": "definition",
+     "name": "ExplicitBounds.stirlingCoeff",
+     "statement": "γ_k ∈ ℚ: the coefficients of exp(Σ_{j≥1} B_{2j} w^{2j−1}/(2j(2j−1))) in w; with Nemes' bounds: |R_N(z)| ≤ (|γ_N||z|^{−N} + |γ_{N+1}||z|^{−N−1})K(θ) for Re z > 0, and |R_N(z)| ≤ (1+ζ(N))Γ(N)(2√N + 1/2)/((2π)^{N+1}|z|^N) for N ≥ 2, |arg z| ≤ π/2. Consequence: for real x > 0, 1 < Γ(x)/(√(2π) x^{x−1/2} e^{−x}) < 1 + 1/(12x) + 1/(288x²).",
+     "hypotheses": [
+      "N ≥ 1 (≥ 2 for the second bound)",
+      "Re z > 0"
+     ],
+     "locator": {
+      "source": "nemes2015",
+      "where": "Theorems 1.1–1.3, lines 86–108, 169–171; the convention γ₁ = −1/12, line 38"
+     },
+     "prerequisites": [
+      "mathlib:PowerSeries.exp",
+      "mathlib:bernoulli",
+      "mathlib:riemannZeta",
+      "target:1.1",
+      "target:2.4"
+     ],
+     "api": [
+      {
+       "name": "values",
+       "role": "structure",
+       "statement": "γ₀ = 1, γ₁ = 1/12, γ₂ = 1/288, γ₃ = −139/51840, γ₄ = −571/2488320"
+      },
+      {
+       "name": "signs",
+       "role": "structure",
+       "statement": "for N ≥ 1, (−1)^{N+1} γ_{2N−1} ≥ 0 and (−1)^{N+1} γ_{2N} ≥ 0: signs + + − − + + …; Nemes' γ_n is (−1)^n times these (his γ₁ = −1/12), so his (1.4) reads (−1)^N γ_{2N−1} ≥ 0"
+      },
+      {
+       "name": "reciprocal",
+       "role": "compatibility",
+       "statement": "Σ (−1)^k γ_k w^k is the formal inverse of Σ γ_k w^k"
+      }
+     ],
+     "tests": [
+      {
+       "name": "gamma1",
+       "kind": "computation",
+       "statement": "γ₁ = 1/12"
+      },
+      {
+       "name": "gamma2",
+       "kind": "non-example",
+       "statement": "γ₂ = 1/288, not 0 (the series itself has no w² term)"
+      },
+      {
+       "name": "gamma3",
+       "kind": "computation",
+       "statement": "γ₃ = −1/360 + 1/10368 = −139/51840, not −1/360"
+      },
+      {
+       "name": "nemes13",
+       "kind": "computation",
+       "statement": "N = 2, z = 10: bound 0.000355 ≥ R₂(10) = 3.20·10⁻⁵"
+      },
+      {
+       "name": "x1",
+       "kind": "computation",
+       "statement": "1.084438 < 1.086806"
+      },
+      {
+       "name": "x10",
+       "kind": "computation",
+       "statement": "1.0083654 < 1.0083681"
+      },
+      {
+       "name": "signs",
+       "kind": "non-example",
+       "statement": "γ₅ = 163879/209018880 > 0, γ₃ < 0, γ₇ < 0; Nemes' form (−1)^N γ_{2N−1} ≥ 0 taken over unchanged would give γ₁ ≤ 0"
+      }
+     ]
+    },
+    {
+     "id": "2.7",
+     "kind": "theorem",
+     "name": "ExplicitBounds.digamma_sector",
+     "statement": "For |arg z| < π: ψ(z) = Log z − 1/(2z) + O*(sec³(arg z/2)/(8|z|²)); for Re z > 0 the real-part form with error 1/(2√2|z|²); hence Re ψ((σ+it)/2 + 1) ≤ log(|σ+2+it|/2) − Re 1/(σ+2+it) + √2/|σ+2+it|² for σ > −2.",
+     "hypotheses": [
+      "|arg z| < π"
+     ],
+     "locator": {
+      "source": "ramare2022excursions",
+      "where": "§20.2; derivative bound of AnalyticNumberTheoryPartI §0.23a"
+     },
+     "prerequisites": [
+      "roadmap:AnalyticNumberTheoryPartI §0.23a",
+      "target:1.2",
+      "mathlib:Complex.digamma",
+      "mathlib:Complex.log_re"
+     ],
+     "tests": [
+      {
+       "name": "z10i",
+       "kind": "computation",
+       "statement": "|ψ(10i) − Log(10i) + 1/(20i)| = 0.000834 ≤ 0.003536"
+      }
+     ]
+    },
+    {
+     "id": "2.8",
+     "kind": "theorem",
+     "name": "ExplicitBounds.gamma_quotient_vertical",
+     "statement": "For a ∈ {0, 1} and −1/2 ≤ σ ≤ 1/2: |Γ((1 − s + a)/2)/Γ((s + a)/2)| ≤ |(1 + s)/2|^{1/2−σ}.",
+     "hypotheses": [
+      "a ∈ {0,1}",
+      "−1/2 ≤ Re s ≤ 1/2"
+     ],
+     "locator": {
+      "source": "rademacher1959",
+      "where": "Lemmas 1 and 2 (as used in thornerzaman2024 lines 329–333)"
+     },
+     "prerequisites": [
+      "target:2.5",
+      "target:2.1",
+      "mathlib:Complex.Gamma_add_one",
+      "mathlib:Complex.Gamma_conj"
+     ],
+     "tests": [
+      {
+       "name": "equality",
+       "kind": "computation",
+       "statement": "σ = −1/2, t = 0, a = 0: |Γ(3/4)/Γ(−1/4)| = 1/4"
+      },
+      {
+       "name": "random",
+       "kind": "computation",
+       "statement": "ratio ≤ 0.99999999956 on 8000 points"
+      },
+      {
+       "name": "wrong_exponent",
+       "kind": "non-example",
+       "statement": "exponent 1/2 + σ gives 1 against 50.0006 at σ = −1/2, t = 100"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "key": "3",
+   "title": "Explicit convexity and pointwise bounds",
+   "targets": [
+    {
+     "id": "3.1",
+     "kind": "theorem",
+     "name": "ExplicitBounds.phragmenLindelof_explicit",
+     "statement": "For f holomorphic on a ≤ Re s ≤ b with |f| ≤ C exp(C₂e^{C₃|t|}), C₃ < π/(b−a), and real-symmetric G_i with the lower growth bound, edge bounds |f| ≤ ∏|G_i|^{α_i} at σ = a and ∏|G_i|^{β_i} at σ = b, α_i, β_i ≥ 0, |G_i(σ+it)| monotone in σ as required: |f(σ+it)| ≤ ∏|G_i(σ+it)|^{(α_i(b−σ)+β_i(σ−a))/(b−a)}.",
+     "hypotheses": [
+      "a < b",
+      "growth hypotheses",
+      "monotonicity of |G_i|"
+     ],
+     "locator": {
+      "source": "fiori2025",
+      "where": "Theorem 1, lines 47–64; Remark 2, lines 65–70"
+     },
+     "prerequisites": [
+      "mathlib:Complex.HadamardThreeLines.norm_le_interpStrip_of_mem_verticalClosedStrip",
+      "mathlib:Complex.PhragmenLindelof.vertical_strip"
+     ],
+     "tests": [
+      {
+       "name": "three_lines",
+       "kind": "compatibility",
+       "statement": "constant G recovers norm_le_interp_of_mem_verticalClosedStrip₀₁'"
+      },
+      {
+       "name": "bad_Q",
+       "kind": "non-example",
+       "statement": "G = 1/4 + s on [−1/2, 3/2] vanishes in the strip"
+      }
+     ]
+    },
+    {
+     "id": "3.2a",
+     "kind": "definition",
+     "name": "ExplicitBounds.IsFiniteOrderType",
+     "statement": "A record d of the L-functions roadmap is of finite-order type when it has Dirichlet agreement, continuation and functional equation, gammaR ⊆ {0, 1}, gammaC ⊆ {0}, polar divisor supported in {0, 1} of order ≤ 1, IsFiniteOrder d, and Σ_m |coeff m| m^{−σ} ≤ ζ(σ)^{degree} for σ > 1.",
+     "hypotheses": [
+      "d : AnalyticLFunctionData"
+     ],
+     "locator": {
+      "source": "rademacher1959",
+      "where": "Theorems 3 and 4 (their common hypotheses)"
+     },
+     "prerequisites": [
+      "roadmap:LFunctions Layer 0",
+      "roadmap:LFunctions Layer 4",
+      "roadmap:ZerosOfLFunctions Layer 0"
+     ],
+     "api": [
+      {
+       "name": "dirichlet",
+       "role": "constructor",
+       "statement": "dirichletData χ for primitive χ of conductor q > 1 is of finite-order type with degree 1, conductor q"
+      },
+      {
+       "name": "zeta",
+       "role": "constructor",
+       "statement": "riemannZetaData is of finite-order type with a pole at 1"
+      },
+      {
+       "name": "dedekind",
+       "role": "constructor",
+       "statement": "dedekindZetaData K is of finite-order type of degree [K:ℚ]"
+      },
+      {
+       "name": "dual",
+       "role": "structure",
+       "statement": "the dual record of a finite-order-type record is of finite-order type"
+      }
+     ],
+     "tests": [
+      {
+       "name": "dirichlet_q4",
+       "kind": "computation",
+       "statement": "dirichletData χ₄: gammaR = {1}, degree 1, conductor 4"
+      },
+      {
+       "name": "shift_excluded",
+       "kind": "non-example",
+       "statement": "a record with gammaR = {1/2} is not of finite-order type"
+      },
+      {
+       "name": "majorant",
+       "kind": "characterisation",
+       "statement": "for ζ the majorant is equality Σ m^{−σ} = ζ(σ)"
+      }
+     ]
+    },
+    {
+     "id": "3.2",
+     "kind": "theorem",
+     "name": "ExplicitBounds.convexity_rademacher",
+     "statement": "For d of finite-order type of degree n and conductor N, 0 < η ≤ 1/2, −η ≤ σ ≤ 1+η, s ≠ 1: ‖continuedL d s‖ ≤ P(s)(N(|1+s|/(2π))^n)^{(1+η−σ)/2} ζ(1+η)^n, P(s) = 3|(1+s)/(1−s)| if d has a pole at 1, else 1; instances for primitive Dirichlet characters (q > 1) and ζ.",
+     "hypotheses": [
+      "d of finite-order type",
+      "0 < η ≤ 1/2",
+      "−η ≤ Re s ≤ 1 + η",
+      "s ≠ 1"
+     ],
+     "locator": {
+      "source": "rademacher1959",
+      "where": "Theorems 3 and 4"
+     },
+     "prerequisites": [
+      "target:3.2a",
+      "target:2.8",
+      "target:3.1",
+      "roadmap:ZerosOfLFunctions 1.6",
+      "roadmap:ZerosOfLFunctions 3.4",
+      "roadmap:LFunctions Layer 4",
+      "mathlib:Complex.Gammaℝ_mul_Gammaℝ_add_one",
+      "mathlib:riemannZeta"
+     ],
+     "tests": [
+      {
+       "name": "dirichlet_random",
+       "kind": "computation",
+       "statement": "ratio ≤ 0.546 for χ₄, χ₅"
+      },
+      {
+       "name": "zeta_half",
+       "kind": "computation",
+       "statement": "|ζ(1/2)| = 1.46035 ≤ 11.488"
+      },
+      {
+       "name": "pole_factor",
+       "kind": "non-example",
+       "statement": "without P, at s = 1.01 the bound 1.976 < ζ(1.01) = 100.578"
+      }
+     ]
+    },
+    {
+     "id": "3.3",
+     "kind": "theorem",
+     "name": "ExplicitBounds.zeta_backlund",
+     "statement": "For t ≥ 50: |ζ(σ+it)| ≤ log t − 0.048 (σ ≥ 1); ≤ (t²/(t²−4))(t/2π)^{(1−σ)/2} log t (0 ≤ σ ≤ 1); ≤ (t/2π)^{1/2−σ} log t (−1/2 ≤ σ ≤ 0).",
+     "hypotheses": [
+      "t ≥ 50"
+     ],
+     "locator": {
+      "source": "backlund1918",
+      "where": "equations (53)–(54), (56), (76); (53) as quoted in trudgian2014argument line 261"
+     },
+     "prerequisites": [
+      "target:2.5",
+      "target:3.1",
+      "roadmap:AsymptoticExpansions §13.1",
+      "mathlib:riemannZeta_one_sub"
+     ],
+     "tests": [
+      {
+       "name": "grid",
+       "kind": "computation",
+       "statement": "ratios ≤ 0.623, 0.615, 0.616 on 50 ≤ t ≤ 125"
+      },
+      {
+       "name": "lehman_compare",
+       "kind": "computation",
+       "statement": "at t = 50: 6.581 against Lehman 6.718; reversed at t = 55"
+      }
+     ]
+    },
+    {
+     "id": "3.4",
+     "kind": "theorem",
+     "name": "ExplicitBounds.zeta_right_of_one",
+     "statement": "For σ > 1, t real: |ζ(σ+it)| ≤ ζ(σ) ≤ e^{γ(σ−1)}/(σ−1) and −Re ζ'/ζ(σ+it) ≤ −ζ'/ζ(σ) ≤ 1/(σ−1) − 1/(2σ²).",
+     "hypotheses": [
+      "σ > 1"
+     ],
+     "locator": {
+      "source": "ramare2016density",
+      "where": "Lemma 5.4, line 654; bastienrogalski2002; delange1987"
+     },
+     "prerequisites": [
+      "target:1.1",
+      "roadmap:AsymptoticExpansions §13.1",
+      "mathlib:riemannZeta",
+      "mathlib:Real.eulerMascheroniConstant",
+      "mathlib:ArithmeticFunction.vonMangoldt"
+     ],
+     "tests": [
+      {
+       "name": "ratio",
+       "kind": "computation",
+       "statement": "ζ(σ)(σ−1)e^{−γ(σ−1)} ≤ 0.99994 on (1, 11]"
+      },
+      {
+       "name": "delange",
+       "kind": "computation",
+       "statement": "−ζ'/ζ(2) = 0.56996 ≤ 0.875"
+      }
+     ]
+    },
+    {
+     "id": "3.5",
+     "kind": "theorem",
+     "name": "ExplicitBounds.poissonJensen_strip",
+     "statement": "For F holomorphic on 0 ≤ Re z ≤ 1 with log|F(x+iy)| ≤ Ce^{c|y|}, c < π: log|F(1/2+it)| ≤ (1/2)∫(log|F(i(t+v))| + log|F(1+i(t+v))|) dv/cosh(πv).",
+     "hypotheses": [
+      "c < π",
+      "F not identically zero"
+     ],
+     "locator": {
+      "source": "thornerzaman2024",
+      "where": "lines 319–321 (Bennett–Sharpley interpolation lemma)"
+     },
+     "prerequisites": [
+      "mathlib:MeromorphicOn.circleAverage_log_norm",
+      "mathlib:Complex.PhragmenLindelof.vertical_strip",
+      "mathlib:Real.cosh"
+     ],
+     "tests": [
+      {
+       "name": "constant",
+       "kind": "degenerate",
+       "statement": "both sides equal log|F| for constant F"
+      },
+      {
+       "name": "exp",
+       "kind": "computation",
+       "statement": "F = e^{az}: both sides a/2"
+      },
+      {
+       "name": "growth",
+       "kind": "non-example",
+       "statement": "F = exp(e^{−iπ(z−1/2)}) violates it with growth rate π"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "key": "4",
+   "title": "Explicit exponential sums and the size of ζ on vertical lines",
+   "targets": [
+    {
+     "id": "4.1",
+     "kind": "theorem",
+     "name": "ExplicitBounds.kusminLandau",
+     "statement": "If f' is monotone with θ ≤ f' − k ≤ 1 − θ, then |Σ e(f(n))| ≤ cot(πθ/2) ≤ 2/(πθ); if ℓ + 1/U ≤ f' ≤ ℓ + 1 − 1/V then |Σ_{a≤n<b} e(f(n))| ≤ (U+V)/π.",
+     "hypotheses": [
+      "f' continuous and monotone",
+      "0 < θ ≤ 1/2",
+      "U, V > 1"
+     ],
+     "locator": {
+      "source": "ariasdereyna2024",
+      "where": "Lemma 1 and Remark 2, lines 90–104; hiarypatelyang2024 Lemma 2.3, lines 86–92"
+     },
+     "prerequisites": [
+      "mathlib:Real.fourierChar",
+      "mathlib:Real.cot",
+      "mathlib:sum_mul_eq_sub_sub_integral_mul"
+     ],
+     "tests": [
+      {
+       "name": "attained",
+       "kind": "computation",
+       "statement": "f = x/2 gives |Σ(−1)^n| ≤ 1 = cot(π/4)"
+      },
+      {
+       "name": "cheng_graham",
+       "kind": "non-example",
+       "statement": "θ = 0.01: cot(0.005π) = 63.66 > 32.83"
+      }
+     ]
+    },
+    {
+     "id": "4.2",
+     "kind": "theorem",
+     "name": "ExplicitBounds.weylVanDerCorput",
+     "statement": "S_f(a,N)² ≤ (N−1+q)(N/q + (2/q)Σ_{r<q}(1 − r/q) S_{g_r}(a, N−r)), g_r(x) = f(x+r) − f(x), for every integer q ≥ 1.",
+     "hypotheses": [
+      "q ≥ 1"
+     ],
+     "locator": {
+      "source": "yang2024",
+      "where": "Lemma 2.3, lines 324–334; patelyang2024 Lemma 1.2"
+     },
+     "prerequisites": [
+      "mathlib:Finset.sum_mul_sq_le_sq_mul_sq",
+      "mathlib:Real.fourierChar"
+     ],
+     "tests": [
+      {
+       "name": "q1",
+       "kind": "degenerate",
+       "statement": "q = 1 gives S² ≤ N²"
+      }
+     ]
+    },
+    {
+     "id": "4.3",
+     "kind": "theorem",
+     "name": "ExplicitBounds.secondDerivativeTest",
+     "statement": "For 0 < λ ≤ f'' ≤ Λ: |Σ_{X<n≤X+Y} e(f(n))| ≤ (ΛY+2)(1 + 4/√(πλ)) + 1, and ≤ A(ΛY+2)/√λ (Y ≥ 1, A = 2.79368…); with f'' monotone and λ₂ ≤ |f''| ≤ hλ₂: S_f ≤ (4/√π)Nhλ₂^{1/2} + Nhλ₂ + (4/√π)λ₂^{−1/2}.",
+     "hypotheses": [
+      "f ∈ C²",
+      "λ > 0"
+     ],
+     "locator": {
+      "source": "ariasdereyna2024",
+      "where": "Lemmas 4 and 5, lines 109–114, 183–189; yang2024 Lemma 2.1, lines 167–172"
+     },
+     "prerequisites": [
+      "target:4.1"
+     ],
+     "tests": [
+      {
+       "name": "quadratic",
+       "kind": "computation",
+       "statement": "f = x²/(2Y): bound ≈ 6.77√Y"
+      }
+     ]
+    },
+    {
+     "id": "4.4",
+     "kind": "theorem",
+     "name": "ExplicitBounds.kthDerivativeTest",
+     "statement": "For k ≥ 3, f^{(k)} monotone, λ_k ≤ |f^{(k)}| ≤ hλ_k: S_f ≤ A_k h^{2/K}Nλ_k^{1/(2K−2)} + B_k N^{1−2/K}λ_k^{−1/(2K−2)}, K = 2^{k−1}, with Yang's recursive constants; for k ≥ 10, h ≤ 3 the constants 2.762 and 1.02.",
+     "hypotheses": [
+      "k ≥ 3",
+      "h > 1",
+      "η > 0"
+     ],
+     "locator": {
+      "source": "yang2024",
+      "where": "Lemmas 2.4–2.6, lines 344–360, 487–513, 658–666; patelyang2024 Lemma 1.4"
+     },
+     "prerequisites": [
+      "target:4.2",
+      "target:4.3"
+     ],
+     "tests": [
+      {
+       "name": "k3",
+       "kind": "computation",
+       "statement": "k = 3 gives λ₃^{1/6} and N^{1/2}λ₃^{−1/6}"
+      }
+     ]
+    },
+    {
+     "id": "4.5",
+     "kind": "theorem",
+     "name": "ExplicitBounds.bProcess",
+     "statement": "Truncated Poisson summation with error (3/π) log(β−α+2) + 4; stationary phase with error 2·3^{2/3}π^{2/3}h₃^{1/3}λ₂^{−1}λ₃^{1/3} + (1/π)(1/|f'(a)| + 1/|f'(b)|); the B-process with error 4.686λ₂^{−1/2} + 2·3^{2/3}π^{2/3}h₂h₃^{1/3}(b−a)λ₃^{1/3} + (5/π) log(β−α+2) + 6.",
+     "hypotheses": [
+      "f' continuous decreasing",
+      "f ∈ C³ with the stated derivative bounds"
+     ],
+     "locator": {
+      "source": "patelyang2024",
+      "where": "Lemmas 2.1–2.3, lines 266–268, 475–477, 667–671"
+     },
+     "prerequisites": [
+      "roadmap:AsymptoticExpansions §13.1",
+      "mathlib:Real.fourierChar"
+     ],
+     "tests": [
+      {
+       "name": "gaussian",
+       "kind": "computation",
+       "statement": "∫ e(−x²/2) dx = e(−1/8)"
+      }
+     ]
+    },
+    {
+     "id": "4.5a",
+     "kind": "theorem",
+     "name": "ExplicitBounds.zeta_approxFunctionalEquation",
+     "statement": "With χ(s) = 2^s π^{s−1} sin(πs/2) Γ(1−s), ζ(s) = Σ_{n≤x} n^{−s} + χ(s)Σ_{n≤y} n^{s−1} + R₁, |R₁| ≤ E x^{−σ} + F(|t|/2π)^{1/2−σ} y^{σ−1} for 1/2 ≤ σ ≤ 1, |t| ≥ 2π, 2πxy = |t|, x, y ≥ 1, with (E, F) from Tables 1–3; and ζ(s) = Σ_{n<ct} n^{−s} + O*(C(σ,c) t^{−σ}) (c₀ = 2.1946 at c = 1, t ≥ 14.1347).",
+     "hypotheses": [
+      "1/2 ≤ σ ≤ 1",
+      "|t| ≥ 2π",
+      "2πxy = |t|"
+     ],
+     "locator": {
+      "source": "simonic2020",
+      "where": "Theorem 4 and Tables 1–3, lines 113–124, 177–205; kadiri2013density Theorem 1.2 and Corollary 1.3, lines 107–133"
+     },
+     "prerequisites": [
+      "target:2.1",
+      "target:2.5",
+      "target:4.1",
+      "roadmap:AsymptoticExpansions §13.1",
+      "mathlib:riemannZeta_one_sub",
+      "target:4.5"
+     ],
+     "tests": [
+      {
+       "name": "R1_100",
+       "kind": "computation",
+       "statement": "|R₁(1/2+100i; 3.989, 3.989)| = 0.4532 ≤ 18.07"
+      },
+      {
+       "name": "kadiri_c0",
+       "kind": "computation",
+       "statement": "C(σ, 1) at t₀ = 14.1347 is 2.1946"
+      }
+     ]
+    },
+    {
+     "id": "4.6",
+     "kind": "theorem",
+     "name": "ExplicitBounds.riemannSiegel_gabcke",
+     "statement": "For t ≥ 200: |ζ(1/2+it)| ≤ 2|Σ_{n≤⌊√(t/2π)⌋} n^{−1/2+it}| + 1.48t^{−1/4} + 0.127t^{−3/4}, and |ζ(1/2+it)| ≤ 4(t/2π)^{1/4} − 2.08.",
+     "hypotheses": [
+      "t ≥ 200"
+     ],
+     "locator": {
+      "source": "hiarypatelyang2024",
+      "where": "Lemmas 2.1–2.2, lines 72–85; gabcke1979; lehman1970 Lemma 2"
+     },
+     "prerequisites": [
+      "target:2.1",
+      "mathlib:riemannZeta_one_sub",
+      "roadmap:ZerosOfLFunctions 7.1",
+      "roadmap:ZerosOfLFunctions 7.2",
+      "roadmap:AsymptoticExpansions Layer 5"
+     ],
+     "tests": [
+      {
+       "name": "t200",
+       "kind": "computation",
+       "statement": "5.989 ≥ |ζ(1/2+200i)| = 5.590; without the factor 2: 3.192, false"
+      }
+     ]
+    },
+    {
+     "id": "4.7a",
+     "kind": "theorem",
+     "name": "ExplicitBounds.zeta_criticalLine_hpy",
+     "statement": "|ζ(1/2+it)| ≤ 0.618 t^{1/6} log t for t ≥ 3, from the numerical certificate for 3 ≤ t < 5.5·10⁷; |ζ(1/2+it)| ≤ 1.461 for 0 ≤ t ≤ 3; |ζ(1/2+it)| ≤ 4(t/2π)^{1/4} for t ≥ 0.2.",
+     "hypotheses": [
+      "t ≥ 3 (resp. 0 ≤ t ≤ 3, t ≥ 0.2)"
+     ],
+     "locator": {
+      "source": "hiarypatelyang2024",
+      "where": "Theorem 1.1, lines 64–65; hiary2016zeta Theorem 1.1, lines 65–66"
+     },
+     "prerequisites": [
+      "target:4.1",
+      "target:4.2",
+      "target:4.3",
+      "target:4.6"
+     ],
+     "tests": [
+      {
+       "name": "t3",
+       "kind": "computation",
+       "statement": "0.8154 at t = 3; ratio ≤ 0.822 on [3, 60]"
+      },
+      {
+       "name": "max03",
+       "kind": "computation",
+       "statement": "max on [0,3] is |ζ(1/2)| = 1.46035"
+      }
+     ]
+    },
+    {
+     "id": "4.7b",
+     "kind": "theorem",
+     "name": "ExplicitBounds.zeta_criticalLine_patelYang",
+     "statement": "|ζ(1/2+it)| ≤ 66.7 t^{27/164} for t ≥ 3.",
+     "hypotheses": [
+      "t ≥ 3"
+     ],
+     "locator": {
+      "source": "patelyang2024",
+      "where": "Theorem 1.1, lines 49–50"
+     },
+     "prerequisites": [
+      "target:4.2",
+      "target:4.4",
+      "target:4.5",
+      "target:4.6"
+     ],
+     "tests": [
+      {
+       "name": "crossover",
+       "kind": "computation",
+       "statement": "below 0.618 t^{1/6} log t exactly when log t > 89.90"
+      }
+     ]
+    },
+    {
+     "id": "4.7c",
+     "kind": "theorem",
+     "name": "ExplicitBounds.dirichletL_criticalLine_tz",
+     "statement": "For primitive χ of conductor q and real t: |L(1/2+it, χ)| ≤ 2.97655(q|1+it|)^{1/4}, for χ ≠ 1 from the numerical certificate 2 Σ_{j≥0} (−1)^j log ζ(j + 3/2) ≤ 1.4988.",
+     "hypotheses": [
+      "χ primitive"
+     ],
+     "locator": {
+      "source": "thornerzaman2024",
+      "where": "Proposition 2.10, line 317"
+     },
+     "prerequisites": [
+      "target:3.5",
+      "target:2.8",
+      "target:4.7a",
+      "roadmap:LFunctions Layer 4",
+      "mathlib:DirichletCharacter.IsPrimitive.completedLFunction_one_sub"
+     ],
+     "tests": [
+      {
+       "name": "chi4",
+       "kind": "computation",
+       "statement": "ratio ≤ 0.334 on 0 ≤ t ≤ 100"
+      },
+      {
+       "name": "chi5",
+       "kind": "computation",
+       "statement": "ratio ≤ 0.519 on 0 ≤ t ≤ 100"
+      },
+      {
+       "name": "certificate",
+       "kind": "computation",
+       "statement": "Σ_{j≥0} (−1)^j log ζ(j + 3/2) = 0.74940, so the certificate is 2Σ = 1.4988 (lines 366–379), not Σ ≤ 1.4988"
+      }
+     ]
+    },
+    {
+     "id": "4.7d",
+     "kind": "theorem",
+     "name": "ExplicitBounds.dirichletL_hybrid_hiary",
+     "statement": "For q > 1 a sixth power, χ primitive modulo q, |t| ≥ 200: |L(1/2+it, χ)| ≤ 9.05 τ(q)(q|t|)^{1/6} log^{3/2}(q|t|); Theorem 1.2 for general χ.",
+     "hypotheses": [
+      "q a sixth power",
+      "|t| ≥ 200"
+     ],
+     "locator": {
+      "source": "hiary2016hybrid",
+      "where": "Corollary 1.1 and Theorem 1.2, lines 57–86"
+     },
+     "prerequisites": [
+      "target:4.1",
+      "target:4.2",
+      "target:4.3",
+      "mathlib:ArithmeticFunction.sigma"
+     ],
+     "tests": [
+      {
+       "name": "q64",
+       "kind": "computation",
+       "statement": "8911 at q = 64, t = 200, against 31.66 from 4.7c"
+      }
+     ]
+    },
+    {
+     "id": "4.8",
+     "kind": "theorem",
+     "name": "ExplicitBounds.zeta_oneLine",
+     "statement": "For t ≥ 3: |ζ(1+it)| ≤ min(log t, (1/2) log t + 1.93, (1/5) log t + 44.02) and ≤ 1.731 log t/log log t; ≤ (1/3) log t + 4.66 for t ≥ e¹⁶ and ≤ (8/33) log t + 12.45 for t ≥ e⁸⁸.",
+     "hypotheses": [
+      "t ≥ 3"
+     ],
+     "locator": {
+      "source": "patel2022",
+      "where": "Theorem 1.1, lines 61–66; hiaryleongyang2025 Theorem 1 and Proposition 3, lines 31–32, 109–117"
+     },
+     "prerequisites": [
+      "target:3.3",
+      "target:4.1",
+      "target:4.4",
+      "target:4.6",
+      "roadmap:AsymptoticExpansions §13.1"
+     ],
+     "tests": [
+      {
+       "name": "t3",
+       "kind": "computation",
+       "statement": "|ζ(1+3i)| = 0.63797 ≤ log 3"
+      },
+      {
+       "name": "crossovers",
+       "kind": "computation",
+       "statement": "branches cross at t = 47.5 and t = 8.54·10⁶⁰"
+      }
+     ]
+    },
+    {
+     "id": "4.9",
+     "kind": "theorem",
+     "name": "ExplicitBounds.zeta_sigmaK_lines",
+     "statement": "For k ≥ 4, σ_k = 1 − k/(2^k − 2), t ≥ 3: |ζ(σ_k+it)| ≤ 1.546 t^{1/(2^k−2)} log t.",
+     "hypotheses": [
+      "k ≥ 4",
+      "t ≥ 3"
+     ],
+     "locator": {
+      "source": "yang2024",
+      "where": "Theorem 1.1, lines 53–55"
+     },
+     "prerequisites": [
+      "target:4.5a",
+      "target:4.4",
+      "roadmap:AsymptoticExpansions §13.1"
+     ],
+     "tests": [
+      {
+       "name": "k4",
+       "kind": "computation",
+       "statement": "σ₄ = 5/7; ratio ≤ 0.387 on [3, 60]"
+      }
+     ]
+    },
+    {
+     "id": "4.9a",
+     "kind": "theorem",
+     "name": "ExplicitBounds.vinogradov_meanValue",
+     "statement": "With J_{s,k}(P) = ∫_{[0,1]^k}|Σ_{1≤x≤P} e(α₁x+…+α_kx^k)|^{2s} dα, J_{s,k,h}(B) the count of the incomplete system (h ≤ j ≤ k) in B, C(P,R) the integers ≤ P with all prime factors in (√R, R], and S(N,t) = max_{0<u≤1} max_{N<R≤2N}|Σ_{N<n≤R}(n+u)^{−it}|: (Ford Thm 3) for k ≥ 1000, 2k² ≤ s ≤ (k²/2)(1/2 + log(3k/8)), P ≥ 1, J_{s,k}(P) ≤ k^{2.055k³−5.91k²+3s} 1.06^{sk+2s²/k−9.7278k³} P^{2s−k(k+1)/2+Δ_s}, Δ_s = (3/8)k²e^{1/2−2s/k²+1.7/k}; for k ≥ 129 some s ≤ ρk² has J_{s,k}(P) ≤ k^{θk³}P^{2s−k(k+1)/2+0.001k²} with (ρ, θ) from (1.7); (Ford Thm 4) the incomplete-system bound J_{s,k,h}(C(P,P^η)) ≤ e^C P^E for k ≥ 60, 0.9k ≤ h ≤ k−2, 2t ≤ s ≤ ⌊h/2⌋t, D ≥ 10, P ≥ e^{Dk²}, η in the range (1.10); (Ford Thm 2) for integers N ≥ 2, t ≥ N, λ = log t/log N: S(N,t) ≤ 9.463 N^{1−1/(133.66λ²)}; (Bellotti Thms 1.4–1.5) S(N,t) ≤ 8.7979 N^{1−1/(132.94357λ²)}.",
+     "hypotheses": [
+      "k ≥ 1000 and 2k² ≤ s ≤ (k²/2)(1/2 + log(3k/8)) (first clause); k ≥ 129 (second clause)",
+      "P ≥ 1",
+      "k ≥ 60, 0.9k ≤ h ≤ k − 2, 2t ≤ s ≤ ⌊h/2⌋t, D ≥ 10, P ≥ e^{Dk²}, 2/k³ < η ≤ 1/(2k), 1/(8k) ≤ 4 log k/(Dk²η) ≤ 0.4 (incomplete systems)",
+      "N ≥ 2 an integer, t ≥ N (exponential sums)",
+      "named certificates (Ford Table 6.1; Bellotti §§3–4)"
+     ],
+     "locator": {
+      "source": "ford2002vinogradov",
+      "where": "Theorems 2–4, lines 129–130, 220–234, 283–290; (1.3)–(1.8), lines 121–244; bellotti2024 Theorems 1.4–1.5, lines 183–230"
+     },
+     "prerequisites": [
+      "mathlib:Real.fourierChar",
+      "mathlib:MeasureTheory.volume",
+      "mathlib:Nat.primeFactors"
+     ],
+     "tests": [
+      {
+       "name": "J21",
+       "kind": "computation",
+       "statement": "J_{2,1}(2) = 6 = ∫₀¹|e(α)+e(2α)|⁴ dα; with exponent s instead of 2s the integral is 2"
+      },
+      {
+       "name": "diagonal",
+       "kind": "degenerate",
+       "statement": "for s ≤ k only diagonal solutions: J_{2,2}(3) = 15; in Theorem 3's range 2s − k(k+1)/2 + Δ_s > s, as J_{s,k}(P) ≥ ⌊P⌋^s requires"
+      },
+      {
+       "name": "delta_k1000",
+       "kind": "computation",
+       "statement": "k = 1000: Δ_s = 11 343 at s = 2k², Δ_s = 1001.7 at s = 3 213 463 = 3.2135k²"
+      },
+      {
+       "name": "trivial_range",
+       "kind": "computation",
+       "statement": "the S(N,t) bound beats N only for log N > 300.39λ² (Ford) and 289.09λ² (Bellotti)"
+      },
+      {
+       "name": "N1",
+       "kind": "degenerate",
+       "statement": "N = 1: λ undefined, but S(1, t) = 1 (single term (2+u)^{−it}) ≤ 9.463, so the bound holds for 1 ≤ N ≤ t as Ford's Lemma 7.3 assumes"
+      }
+     ]
+    },
+    {
+     "id": "4.10",
+     "kind": "theorem",
+     "name": "ExplicitBounds.zeta_richert",
+     "statement": "From the bound for S(N, t) of 4.9a: for |t| ≥ 3, 1/2 ≤ σ ≤ 1, |ζ(σ+it)| ≤ A|t|^{B(1−σ)^{3/2}} log^{2/3}|t| and the same for |ζ(σ+it,u) − u^{−s}|, with (A, B) = (76.2, 4.45) and (70.6995, 4.43795).",
+     "hypotheses": [
+      "|t| ≥ 3",
+      "1/2 ≤ σ ≤ 1",
+      "0 < u ≤ 1"
+     ],
+     "locator": {
+      "source": "ford2002vinogradov",
+      "where": "Theorem 1, lines 28–31, and Lemmas 7.1–7.3, lines 3053–3222; bellotti2024 Theorem 1.1, lines 60–63"
+     },
+     "prerequisites": [
+      "target:4.9a",
+      "target:4.2",
+      "mathlib:hurwitzZeta"
+     ],
+     "tests": [
+      {
+       "name": "sigma1",
+       "kind": "computation",
+       "statement": "at σ = 1, t = 10¹⁰: 616.7 and 572.2"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "key": "5",
+   "title": "Zero counting with explicit errors",
+   "targets": [
+    {
+     "id": "5.1",
+     "kind": "theorem",
+     "name": "ExplicitBounds.backlund_argument",
+     "statement": "For f holomorphic on |z − (a+iT)| ≤ r, r > a − σ₁, Re f(a+iT) ≠ 0, f ≠ 0 on the segment: |arg f(σ₁+iT) − arg f(a+iT)| ≤ π(1 + log(M/|Re f(a+iT)|)/log(r/(a−σ₁))), M the maximum of |f| on the circle.",
+     "hypotheses": [
+      "σ₁ < a",
+      "r > a − σ₁"
+     ],
+     "locator": {
+      "source": "backlund1918",
+      "where": "Backlund's method; titchmarsh1986 §9.4; bmor2021 Proposition 5.4, lines 473–475"
+     },
+     "prerequisites": [
+      "roadmap:ZerosOfLFunctions 4.3",
+      "roadmap:ZerosOfLFunctions 7.3",
+      "mathlib:Complex.arg"
+     ],
+     "tests": [
+      {
+       "name": "one_zero",
+       "kind": "computation",
+       "statement": "f = z − b − i(T+ε): variation nearly π, bound > π"
+      },
+      {
+       "name": "constant",
+       "kind": "degenerate",
+       "statement": "f positive constant: bound π, variation 0"
+      }
+     ]
+    },
+    {
+     "id": "5.2a",
+     "kind": "theorem",
+     "name": "ExplicitBounds.riemannVonMangoldt_bellottiWong",
+     "statement": "For T ≥ e: |N(T) − (T/2π) log(T/2πe)| ≤ 0.10076 log T + 0.24460 log log T + 8.08344 and ≤ 0.11200 log T + 0.12567 log log T + 3.77417; and the general form with parameters c, r, η and input bounds.",
+     "hypotheses": [
+      "T ≥ e"
+     ],
+     "locator": {
+      "source": "bellottiwong2025",
+      "where": "Theorems 1.1–1.2, lines 31–38, 63–74"
+     },
+     "prerequisites": [
+      "target:5.1",
+      "target:2.1",
+      "target:3.1",
+      "target:3.3",
+      "target:4.7a",
+      "target:4.7b",
+      "target:4.8",
+      "target:4.9",
+      "target:0.4",
+      "roadmap:ZerosOfLFunctions 7.2",
+      "roadmap:ZerosOfLFunctions 7.3",
+      "roadmap:ZerosOfLFunctions 7.4"
+     ],
+     "tests": [
+      {
+       "name": "N100",
+       "kind": "computation",
+       "statement": "N(100) = 29 within 28.127 ± 8.921 and ± 4.482"
+      }
+     ]
+    },
+    {
+     "id": "5.2b",
+     "kind": "theorem",
+     "name": "ExplicitBounds.riemannVonMangoldt_rosser",
+     "statement": "For T ≥ 2: |N(T) − (T/2π) log(T/2πe) − 7/8| ≤ 0.137 log T + 0.443 log log T + 1.588.",
+     "hypotheses": [
+      "T ≥ 2"
+     ],
+     "locator": {
+      "source": "rosser1941",
+      "where": "Theorem 19 (bellottiwong2025 Table 1, line 54)"
+     },
+     "prerequisites": [
+      "target:5.1",
+      "target:3.3",
+      "roadmap:ZerosOfLFunctions 7.4"
+     ],
+     "tests": [
+      {
+       "name": "N1000",
+       "kind": "computation",
+       "statement": "N(1000) = 649 within 648.616 ± 3.391"
+      },
+      {
+       "name": "N14",
+       "kind": "computation",
+       "statement": "N(14) = 0 within 0.432 ± 2.379"
+      }
+     ]
+    },
+    {
+     "id": "5.3",
+     "kind": "theorem",
+     "name": "ExplicitBounds.riemannVonMangoldt_dirichlet_bmor",
+     "statement": "For χ primitive of conductor q > 1, T ≥ 5/7, ℓ = log(q(T+2)/2π): N(T,χ) = 0 if ℓ ≤ 1.567, else |N(T,χ) − ((T/π) log(qT/2πe) − χ(−1)/4)| ≤ 0.22737ℓ + 2 log(1+ℓ) − 0.5.",
+     "hypotheses": [
+      "q > 1",
+      "T ≥ 5/7"
+     ],
+     "locator": {
+      "source": "bmor2021",
+      "where": "Theorem 1.1, lines 56–63"
+     },
+     "prerequisites": [
+      "target:5.1",
+      "target:2.1",
+      "target:3.2",
+      "roadmap:ZerosOfLFunctions 7.2",
+      "roadmap:ZerosOfLFunctions 6.5",
+      "roadmap:LFunctions Layer 4"
+     ],
+     "tests": [
+      {
+       "name": "chi4",
+       "kind": "computation",
+       "statement": "N(10, χ₄) = 2 ∈ [0.78, 5.14]"
+      },
+      {
+       "name": "small",
+       "kind": "degenerate",
+       "statement": "q = 3, T = 5/7: ℓ = 0.259, no zero"
+      }
+     ]
+    },
+    {
+     "id": "5.4a",
+     "kind": "theorem",
+     "name": "ExplicitBounds.lehman_zeroSum",
+     "statement": "For 2πe ≤ T₁ ≤ T₂ and φ ≥ 0 non-increasing: Σ′_{T₁≤γ≤T₂} φ(γ) = (1/2π)∫ φ(t) log(t/2π) dt + O*(4φ(T₁) log T₁ + 2∫ φ(t)/t dt).",
+     "hypotheses": [
+      "2πe ≤ T₁ ≤ T₂",
+      "φ ≥ 0 non-increasing"
+     ],
+     "locator": {
+      "source": "lehman1966",
+      "where": "Lemma 1 (as quoted in brentplatttrudgian2021 lines 38–43)"
+     },
+     "prerequisites": [
+      "target:5.2a",
+      "roadmap:ZerosOfLFunctions 4.5",
+      "mathlib:StieltjesFunction"
+     ],
+     "tests": [
+      {
+       "name": "phi1",
+       "kind": "compatibility",
+       "statement": "φ = 1 gives Riemann–von Mangoldt with error 4 log T₁ + 2 log(T₂/T₁)"
+      }
+     ]
+    },
+    {
+     "id": "5.4b",
+     "kind": "theorem",
+     "name": "ExplicitBounds.zeroSum_bpt",
+     "statement": "For φ ∈ C², φ ≥ 0, φ' ≤ 0, φ'' > 0 and 2π ≤ T₀ ≤ T₁ ≤ T₂: E(T₁,T₂) = φ(T₂)Q(T₂) − φ(T₁)Q(T₁) + E₂, |E₂| ≤ 2(2.067 + 0.059 log T₁)|φ'(T₁)| + (0.059 + 1/150)φ(T₁)/T₁; and Σ_{γ>0} γ^{−2} = 0.0231049931154189707889338104 + O*(5·10^{−28}).",
+     "hypotheses": [
+      "2π ≤ T₀ ≤ T₁ ≤ T₂"
+     ],
+     "locator": {
+      "source": "brentplatttrudgian2021",
+      "where": "Lemma 3, Theorem 1 and Corollary 1, lines 54–71, 186–197, 412–417"
+     },
+     "prerequisites": [
+      "target:5.2a",
+      "target:5.4a",
+      "mathlib:StieltjesFunction"
+     ],
+     "tests": [
+      {
+       "name": "first_zero",
+       "kind": "computation",
+       "statement": "the first zero contributes 0.005005 to Σ γ^{−2}"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "key": "6",
+   "title": "Perron's formula, mean values and large sieves",
+   "targets": [
+    {
+     "id": "6.1",
+     "kind": "theorem",
+     "name": "ExplicitBounds.perron_ramare",
+     "statement": "For κ > κ_a, κ > 0, x ≥ 1, T ≥ 1: Σ_{n≤x} a_n = (1/2πi)∫_{κ−iT}^{κ+iT} F(z)x^z dz/z + O*(∫_{1/T}^∞ Σ_{|log(x/n)|≤u} (|a_n|/n^κ) 2x^κ du/(Tu²)); and the variant with free cut-off λ ≥ θ'/T, θ' = 2/(√(π²+4)+π).",
+     "hypotheses": [
+      "κ > κ_a",
+      "x ≥ 1",
+      "T ≥ 1 (T > 0 for the variant)"
+     ],
+     "locator": {
+      "source": "ramare2007eigen",
+      "where": "Theorem 7.1, lines 742–759; cullyhugilljohnston2023 Theorem 2.1, lines 141–156, and Lemma 2.2 (the kernel bound), line 163"
+     },
+     "prerequisites": [
+      "tauceti:TauCeti.truncatedPerron_LSeries",
+      "tauceti:TauCeti.truncatedPerronKernel",
+      "tauceti:TauCeti.truncatedPerronKernel_one",
+      "tauceti:TauCeti.norm_truncatedPerron_LSeries_sub_sum_le",
+      "mathlib:LSeries",
+      "mathlib:LSeriesSummable"
+     ],
+     "tests": [
+      {
+       "name": "F1_x1",
+       "kind": "computation",
+       "statement": "F = 1, x = 1: error term 2 ≥ |1 − π⁻¹ arctan(T/κ)|"
+      },
+      {
+       "name": "theta",
+       "kind": "computation",
+       "statement": "θ' = 0.29130"
+      }
+     ]
+    },
+    {
+     "id": "6.2",
+     "kind": "theorem",
+     "name": "ExplicitBounds.perron_averaged",
+     "statement": "There is T* ∈ [T, 2T] with Σ_{n≤x} a_n = (1/2πi)∫_{κ−iT*}^{κ+iT*} F(s)x^s ds/s + O*(R), R ≤ (1.785/T²)((x^κ/(2λ²))Σ|a_n|/n^κ + ∫_{θ'/T}^{λ} Σ_{|log(x/n)|≤u} |a_n|(x/n)^κ du/u³).",
+     "hypotheses": [
+      "x ≥ 1",
+      "T > 1",
+      "λ ≥ θ'/T"
+     ],
+     "locator": {
+      "source": "cullyhugilljohnston2025",
+      "where": "Corollary 3.2, lines 375–422"
+     },
+     "prerequisites": [
+      "target:6.1"
+     ],
+     "tests": [
+      {
+       "name": "weight",
+       "kind": "computation",
+       "statement": "∫₁² 6(u−1)(2−u) du = 1"
+      }
+     ]
+    },
+    {
+     "id": "6.3",
+     "kind": "theorem",
+     "name": "ExplicitBounds.majorant_logan_gallagher",
+     "statement": "|a_n| ≤ A_n implies ∫_{−T}^{T}|Σ a_n e(λ_n t)|² ≤ 3∫_{−T}^{T}|Σ A_n e(λ_n t)|²; for a_n ≥ 0 the integral is ≥ TΣa_n²; and ∫_{−T}^{T}|Σ a_n e(λ_n t)|² ≤ π²T²∫|Σ_{x<λ_n≤x+1/(2T)} a_n|² dx.",
+     "hypotheses": [
+      "T > 0",
+      "Σ|a_n| < ∞"
+     ],
+     "locator": {
+      "source": "montgomery1994ten",
+      "where": "Chapter 7, Theorem 3; logan1988 Theorem 1; gallagher1970 Lemma 1"
+     },
+     "prerequisites": [
+      "mathlib:Fourier.fourierIntegral",
+      "mathlib:Real.fourierChar"
+     ],
+     "tests": [
+      {
+       "name": "one_freq",
+       "kind": "computation",
+       "statement": "2T ≤ 6T, 2T ≥ T, 2T ≤ (π²/2)T"
+      },
+      {
+       "name": "signed",
+       "kind": "non-example",
+       "statement": "Logan fails for a = (1, −1) at one frequency"
+      }
+     ]
+    },
+    {
+     "id": "6.4",
+     "kind": "theorem",
+     "name": "ExplicitBounds.hilbert_preissmann_meanValue",
+     "statement": "|Σ_{r≠s} u_r ū_s/(λ_r − λ_s)| ≤ πc₀ Σ|u_r|²/δ_r, c₀ = √(1 + (2/3)√(6/5)); hence ∫₀^T |Σ a_n n^{it}|² dt = Σ|a_n|²(T + O*(2πc₀(n+1))), πc₀ for real a_n.",
+     "hypotheses": [
+      "distinct λ_r",
+      "T > 0"
+     ],
+     "locator": {
+      "source": "preissmann1984",
+      "where": "main theorem; ramare2016density Lemma 6.5, line 828 (the upper bound; the two-sided form from the same proof)"
+     },
+     "prerequisites": [
+      "roadmap:AnalyticNumberTheoryPartI §1.5a",
+      "mathlib:Matrix.IsHermitian.eigenvalues"
+     ],
+     "tests": [
+      {
+       "name": "c0",
+       "kind": "computation",
+       "statement": "c₀ = 1.31541; πc₀ = 4.1325 < 3π/2"
+      },
+      {
+       "name": "two_terms",
+       "kind": "computation",
+       "statement": "|∫₀^T|1+2^{it}|² − 2T| ≤ 2.885 ≤ 20.66"
+      }
+     ]
+    },
+    {
+     "id": "6.5",
+     "kind": "theorem",
+     "name": "ExplicitBounds.largeSieve_weighted_maximal",
+     "statement": "Σ_x (N + cδ(x)^{−1})^{−1}|S(x)|² ≤ Σ|a_n|² with c = 3/2 and c = c₀; and Elliott's Σ_x max_{u<v≤N, v−u≤H}|Σ_{u≤n<v} a_n e(nx)|² ≤ (H + 2δ^{−1} log(e/δ))Σ|a_n|².",
+     "hypotheses": [
+      "|X| ≥ 2",
+      "N ≥ 1",
+      "0 < δ ≤ 1/2 for Elliott"
+     ],
+     "locator": {
+      "source": "montgomeryvaughan1974",
+      "where": "Corollary 3; preissmann1984; elliott1987 Lemma 1"
+     },
+     "prerequisites": [
+      "target:6.4",
+      "roadmap:AnalyticNumberTheoryPartI §1.5a",
+      "roadmap:SieveMethodsAndPrimePatterns §2.6",
+      "roadmap:SieveMethodsAndPrimePatterns §2.9"
+     ],
+     "tests": [
+      {
+       "name": "two_points",
+       "kind": "computation",
+       "statement": "X = {0, 1/2}, N = 1: weights 1/4 and 0.2754"
+      }
+     ]
+    },
+    {
+     "id": "6.6",
+     "kind": "theorem",
+     "name": "ExplicitBounds.zeta_meanSquare",
+     "statement": "∫₁^T |ζ(σ+it)|² dt bounds of DHZ Theorem 1.2 for 0 ≤ σ ≤ 1, T ≥ 4 (σ = 1/2: T log T + 2.0T√(log T) + 23.06T); the tails of Theorem 1.1; Simonič's ∫₀^T|ζ(1/2+it)|² ≤ T log T − (1 + log 2π − 2γ)T + 70.26T^{3/4}√(log(T/2π)) for T ≥ 2000; Kadiri's mean value on [H, T] with E₁(σ₀, H).",
+     "hypotheses": [
+      "T ≥ 4 (resp. 200, 1040, 2000, ≥ H₀)"
+     ],
+     "locator": {
+      "source": "donahelfgottzunigaalterman2022",
+      "where": "Theorems 1.1–1.2, lines 78–120; simonic2020 lines 89–92; kadiri2013density Theorem 1.4, lines 137–162"
+     },
+     "prerequisites": [
+      "target:4.5a",
+      "target:6.4",
+      "mathlib:mellin",
+      "mathlib:riemannZeta"
+     ],
+     "tests": [
+      {
+       "name": "T4",
+       "kind": "computation",
+       "statement": "σ = 1/2, T = 4: bound 107.2"
+      },
+      {
+       "name": "main_term",
+       "kind": "compatibility",
+       "statement": "T log T exceeds T log(T/2π) + (2γ−1)T"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "key": "7",
+   "title": "Zero-free regions with explicit constants",
+   "targets": [
+    {
+     "id": "7.1",
+     "kind": "theorem",
+     "name": "ExplicitBounds.partialFraction_logDeriv",
+     "statement": "−Re ζ'/ζ(s) = Re 1/(s−1) + (1/2)Re ψ(s/2+1) − (1/2) log π − Σ_ρ Re 1/(s−ρ); for primitive χ, −Re L'/L(s,χ) = (1/2) log(q/π) + (1/2)Re ψ((s+a)/2) − Σ_ρ Re 1/(s−ρ).",
+     "hypotheses": [
+      "s not a zero or pole",
+      "χ primitive, q > 1"
+     ],
+     "locator": {
+      "source": "davenport2000",
+      "where": "§12"
+     },
+     "prerequisites": [
+      "roadmap:ZerosOfLFunctions 1.4",
+      "roadmap:ZerosOfLFunctions 4.5",
+      "roadmap:ZerosOfLFunctions 5.5",
+      "roadmap:ZerosOfLFunctions 5.6",
+      "roadmap:ZerosOfLFunctions 6.4",
+      "mathlib:Complex.digamma"
+     ],
+     "tests": [
+      {
+       "name": "s2",
+       "kind": "computation",
+       "statement": "the zero sum at s = 2 is 0.069066; first pair 0.014848"
+      }
+     ]
+    },
+    {
+     "id": "7.2",
+     "kind": "theorem",
+     "name": "ExplicitBounds.zeroFree_ford",
+     "statement": "For t ≥ 1.88·10¹⁴: ζ(σ+it) ≠ 0 for σ ≥ 1 − (0.04962 − 0.0196/(J(t)+1.15))/(J(t) + 0.685 + 0.155 log log t), J(t) = (1/6) log t + log log t + log 3; for |t| ≥ 3, σ ≥ 1 − 1/(8.464 log|t|).",
+     "hypotheses": [
+      "t ≥ 1.88·10¹⁴ (resp. |t| ≥ 3)"
+     ],
+     "locator": {
+      "source": "ford2002zerofree",
+      "where": "Theorems 3 and 4, lines 96–106; mty2024 lines 107–112"
+     },
+     "prerequisites": [
+      "target:7.1",
+      "target:4.6",
+      "target:4.7a",
+      "target:0.4",
+      "target:0.5"
+     ],
+     "tests": [
+      {
+       "name": "t3",
+       "kind": "computation",
+       "statement": "σ ≥ 0.89246 at t = 3"
+      },
+      {
+       "name": "crossover",
+       "kind": "computation",
+       "statement": "crosses the 5.558691 region at t = e^{64.1}"
+      }
+     ]
+    },
+    {
+     "id": "7.3",
+     "kind": "theorem",
+     "name": "ExplicitBounds.zeroFree_kadiriCriterion",
+     "statement": "Kadiri's criterion: from an admissible polynomial, RH(T₀), an established region (every zero with |γ| ≥ 2 has β ≤ 1 − 1/(R log|γ|)), parameters r < R, t₀, θ and the certificate C(η) ≤ 0 on [0, η₀]: every zero with |γ| ≥ 2 has β ≤ 1 − 1/(R₀ log|γ|) (no zero with β > 1 − 1/(R₀ log|γ|)) for every R₀ ≥ max(r, Ag₁(θ)/((1−κ)²K(w₀,θ))), and no zero with β ≥ 1 − 1/(R₀ log|γ|) for R₀ strictly larger; instances for |t| ≥ 2: R₀ = 5.69693, 5.68371, 5.558691 (with ≥) and 5.573412 (with >); R₀ = 4.896 for t ≥ 3 (with >).",
+     "hypotheses": [
+      "admissible f_n",
+      "RH(T₀)",
+      "R > r > 0 with every zero (|γ| ≥ 2) satisfying β ≤ 1 − 1/(R log|γ|)",
+      "t₀ ∈ [1, T₀]",
+      "θ ∈ (π/2, π)",
+      "named certificates"
+     ],
+     "locator": {
+      "source": "mossinghofftrudgian2015",
+      "where": "(2.1)–(3.1), lines 157–263; Theorem 1, lines 117–118; mty2024 Theorem 1.3, lines 96–97; kadiri2005 Théorème 1.1; jangkwon2014 Proposition 11; bellottitrudgianyang2026 Theorem 1, line 67"
+     },
+     "prerequisites": [
+      "target:7.1",
+      "target:7.2",
+      "target:7.4",
+      "target:0.4",
+      "target:0.5",
+      "target:2.7",
+      "target:5.4a",
+      "target:5.4b"
+     ],
+     "tests": [
+      {
+       "name": "t2",
+       "kind": "computation",
+       "statement": "σ ≥ 0.740461 at |t| = 2 for 5.558691"
+      },
+      {
+       "name": "chain",
+       "kind": "computation",
+       "statement": "9.645908801 > 8.464 > 5.69693 > 5.68371 > 5.573412 > 5.558691 > 4.896"
+      },
+      {
+       "name": "strict_boundary",
+       "kind": "degenerate",
+       "statement": "at |t| = 3·10¹² the boundary σ = 0.9937548 of the 5.573412 region is not excluded by the form with >, but lies in the 5.558691 region σ ≥ 0.9937382; for 4.896 only the form with > holds"
+      }
+     ]
+    },
+    {
+     "id": "7.4",
+     "kind": "theorem",
+     "name": "ExplicitBounds.zeroFree_littlewood",
+     "statement": "ζ(σ+it) ≠ 0 for |t| ≥ 3, σ > 1 − log log|t|/(21.233 log|t|).",
+     "hypotheses": [
+      "|t| ≥ 3"
+     ],
+     "locator": {
+      "source": "yang2024",
+      "where": "Corollary 1.2, lines 88–89"
+     },
+     "prerequisites": [
+      "target:0.4",
+      "target:0.5",
+      "target:3.1",
+      "target:4.7a",
+      "target:4.9",
+      "target:4.10",
+      "target:7.1",
+      "target:7.2"
+     ],
+     "tests": [
+      {
+       "name": "e200",
+       "kind": "computation",
+       "statement": "1 − σ = 0.0012477 at t = e^{200}, against 0.0008995 classically"
+      }
+     ]
+    },
+    {
+     "id": "7.5",
+     "kind": "theorem",
+     "name": "ExplicitBounds.zeroFree_dirichlet",
+     "statement": "Kadiri's 6.4355 region with c = 1.7367 for ∏_{χ mod q} L(s,χ) (at most one zero, real, simple, real character); Kadiri's 5.60 region for 3 ≤ q ≤ 400 000 without exception; McCurley's 9.645908801 region (exception only for q > 400 000) and its form over conductors ≤ Q with β₁(Q) ≤ 1 − 100/(√q₁ log² q₁); Lu–Zaman–Zhao's 1/10 region without exception for q ≤ 10¹⁰.",
+     "hypotheses": [
+      "q ≥ 2 (resp. 3 ≤ q ≤ 400 000, q ≥ 3, Q ≥ 3, q ≤ 10¹⁰)"
+     ],
+     "locator": {
+      "source": "kadiri2002thesis",
+      "where": "Théorème 11.1, lines 1958–1980; kadiri2018 Theorem 1.1; thornerzaman2024 Lemma 2.3 and Theorem 2.6; mccurley1984 Theorem 1; luzamanzhao2026 Corollary 1.2"
+     },
+     "prerequisites": [
+      "target:0.3",
+      "target:0.5",
+      "target:7.1",
+      "target:7.7",
+      "target:7.8",
+      "roadmap:ZerosOfLFunctions 6.3",
+      "roadmap:ComputationalNumberTheory §4.22",
+      "mathlib:DirichletCharacter.LFunction"
+     ],
+     "tests": [
+      {
+       "name": "q3",
+       "kind": "computation",
+       "statement": "Kadiri 2018 at q = 3, t = 0: σ ≥ 0.837457"
+      },
+      {
+       "name": "c7",
+       "kind": "computation",
+       "statement": "1/9.645908801 = 0.103671"
+      }
+     ]
+    },
+    {
+     "id": "7.6",
+     "kind": "theorem",
+     "name": "ExplicitBounds.zeroFree_vinogradovKorobov",
+     "statement": "ζ(σ+it) ≠ 0 for |t| ≥ 3 and 1−σ ≤ 1/(c(log|t|)^{2/3}(log log|t|)^{1/3}), c = 57.54, 55.241, 54.004 (and 49.13, 48.1588, 48.0718 for large |t|); Khale's region for L(s,χ), q ≥ 3, |t| ≥ 10.",
+     "hypotheses": [
+      "|t| ≥ 3 (resp. large |t|; q ≥ 3, |t| ≥ 10)"
+     ],
+     "locator": {
+      "source": "ford2002zerofree",
+      "where": "Theorems 1 and 5, lines 32–34, 135–136; mty2024 Theorems 1.1–1.2; bellotti2024 Theorems 1.2–1.3; khale2024 Theorem 1.1"
+     },
+     "prerequisites": [
+      "target:4.10",
+      "target:7.1",
+      "target:7.2",
+      "target:7.4",
+      "target:7.5",
+      "target:0.5"
+     ],
+     "tests": [
+      {
+       "name": "e1000",
+       "kind": "computation",
+       "statement": "9.125·10⁻⁵, 9.505·10⁻⁵, 9.723·10⁻⁵ at e^{1000}"
+      }
+     ]
+    },
+    {
+     "id": "7.7",
+     "kind": "theorem",
+     "name": "ExplicitBounds.realZero_quadratic",
+     "statement": "For real primitive χ: β₀ ≤ 1 − 800/(√q log²q) (odd, q > 4·10⁵), 515 (even, 4·10⁵ < q ≤ 10⁷), 80 and 100 (even, q > 10⁷ resp. q > 4·10⁵); for −d fundamental, d > 3·10⁸: no real zero ≥ 1 − 6.035/√d.",
+     "hypotheses": [
+      "q > 4·10⁵ (resp. d > 3·10⁸)"
+     ],
+     "locator": {
+      "source": "bordignon2019",
+      "where": "Theorem 1.3, lines 63–71; bordignon2020 Theorem 1.3; ralaivaosaonarazakarinoro2026 Theorem 1.1"
+     },
+     "prerequisites": [
+      "roadmap:AnalyticNumberTheoryPartI §0.34a",
+      "roadmap:ComputationalNumberTheory §4.24"
+     ],
+     "tests": [
+      {
+       "name": "q4e5",
+       "kind": "computation",
+       "statement": "0.007602 (odd) and 0.000950 (even)"
+      }
+     ]
+    },
+    {
+     "id": "7.8",
+     "kind": "theorem",
+     "name": "ExplicitBounds.realZero_lzz",
+     "statement": "For q ≤ 10¹⁰ and quadratic χ modulo q: L(σ, χ) ≠ 0 for σ ≥ 1 − 1/(5 log q).",
+     "hypotheses": [
+      "q ≤ 10¹⁰"
+     ],
+     "locator": {
+      "source": "luzamanzhao2026",
+      "where": "Theorem 1.1, lines 39–42"
+     },
+     "prerequisites": [
+      "target:7.1",
+      "roadmap:ComputationalNumberTheory §4.24"
+     ],
+     "tests": [
+      {
+       "name": "chi4",
+       "kind": "computation",
+       "statement": "q = 4: [0.855730, 1), where L(σ, χ₄) > 0"
+      }
+     ]
+    },
+    {
+     "id": "7.9",
+     "kind": "definition",
+     "name": "ExplicitBounds.HasLandauSiegelGap",
+     "statement": "HasLandauSiegelGap c Q: for real c and Q ∈ ℕ ∪ {∞}, every real zero β ∈ (0,1) of L(s,χ) for χ primitive real nonprincipal of conductor q with 3 ≤ q ≤ Q has (1−β) log q ≥ c; with the instances (c, Q) = (1/5, 10¹⁰) from 7.8 and (3.0·10⁻³, ∞) from Banks with the first.",
+     "hypotheses": [
+      "c : ℝ",
+      "Q ∈ ℕ ∪ {∞}"
+     ],
+     "locator": {
+      "source": "banks2026",
+      "where": "Theorem 1.1, lines 89–107; luzamanzhao2026 Theorem 1.1, lines 39–42"
+     },
+     "prerequisites": [
+      "roadmap:AnalyticNumberTheoryPartI §0.34",
+      "roadmap:AnalyticNumberTheoryPartI §0.34a",
+      "target:7.5",
+      "target:7.8",
+      "roadmap:ComputationalNumberTheory §4.24",
+      "roadmap:ZerosOfLFunctions 6.3",
+      "mathlib:MulChar.IsQuadratic",
+      "mathlib:DirichletCharacter.IsPrimitive"
+     ],
+     "api": [
+      {
+       "name": "antitone",
+       "role": "structure",
+       "statement": "c ≤ c', Q ≤ Q' and the gap at (c', Q') give the gap at (c, Q)"
+      },
+      {
+       "name": "exists",
+       "role": "compatibility",
+       "statement": "AnalyticNumberTheoryPartI §0.34 gives ∃ c > 0, HasLandauSiegelGap c ∞"
+      },
+      {
+       "name": "of_le_400000",
+       "role": "structure",
+       "statement": "HasLandauSiegelGap c Q for every real c when Q ≤ 400 000 (ComputationalNumberTheory §4.24), and for every Q when c ≤ 0"
+      },
+      {
+       "name": "zeroFree",
+       "role": "characterisation",
+       "statement": "HasLandauSiegelGap c Q iff, for all such χ, L(σ, χ) ≠ 0 for real σ with 0 < σ < 1 and σ > 1 − c/log q (the endpoint is not excluded)"
+      },
+      {
+       "name": "luZamanZhao",
+       "role": "constructor",
+       "statement": "HasLandauSiegelGap (1/5) 10¹⁰, from 7.8"
+      },
+      {
+       "name": "banks",
+       "role": "constructor",
+       "statement": "HasLandauSiegelGap (3.0·10⁻³) ∞, from Banks' Theorem 1.1 for q ≥ 10¹⁰ and the first instance below"
+      },
+      {
+       "name": "exceptional_zero",
+       "role": "compatibility",
+       "statement": "for moduli q ≤ Q, c > 1/9.645908801 excludes McCurley's exceptional zero of 7.5 (not at equality)"
+      }
+     ],
+     "tests": [
+      {
+       "name": "q3",
+       "kind": "computation",
+       "statement": "q = 3: 1 − β ≥ 0.002731 (uncapped) and 1 − β > 0.182048 (capped)"
+      },
+      {
+       "name": "q1e10",
+       "kind": "computation",
+       "statement": "q = 10¹⁰: 1.303·10⁻⁴ (uncapped) against 8.686·10⁻³ (capped); q = 10¹¹: only 1.184·10⁻⁴"
+      },
+      {
+       "name": "mccurley",
+       "kind": "computation",
+       "statement": "1/5 > 1/9.645908801 = 0.103671 > 3.0·10⁻³: the capped instance removes McCurley's exceptional zero up to 10¹⁰, the uncapped one does not"
+      },
+      {
+       "name": "conductor_bound",
+       "kind": "non-example",
+       "statement": "no primitive real nonprincipal character has conductor 1 or 2, so 3 ≤ q excludes none; a definition through the modulus 6 of the character induced by χ₋₃ would be weaker (log 6 > log 3)"
+      }
+     ]
+    },
+    {
+     "id": "7.10",
+     "kind": "theorem",
+     "name": "ExplicitBounds.zeta_oneLine_reciprocal",
+     "statement": "1/|ζ(1+it)| ≤ 431.7 log t/log log t for t ≥ 3.",
+     "hypotheses": [
+      "t ≥ 3"
+     ],
+     "locator": {
+      "source": "hiaryleongyang2025",
+      "where": "Theorem 2, lines 41–43"
+     },
+     "prerequisites": [
+      "target:3.4",
+      "target:4.8",
+      "target:4.10",
+      "target:7.4",
+      "mathlib:Complex.borelCaratheodory"
+     ],
+     "tests": [
+      {
+       "name": "t3",
+       "kind": "computation",
+       "statement": "1/|ζ(1+3i)| = 1.5675 ≤ 5043"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "key": "8",
+   "title": "Zero-density estimates",
+   "targets": [
+    {
+     "id": "8.1",
+     "kind": "theorem",
+     "name": "ExplicitBounds.zeroDensity_kadiri",
+     "statement": "For σ ≥ 0.55, T ≥ H₀ = 3.061·10¹⁰: N(σ,T) ≤ b₁(T−H) + b₂ log(T/H) + b₃; N(σ,T) ≤ 0.5561T + 0.7586 log T − 268 658 for σ ≥ 17/20 and ≤ 0.4421T + 0.6443 log T − 363 301 for σ ≥ 0.90.",
+     "hypotheses": [
+      "σ ≥ 0.55",
+      "T ≥ H₀",
+      "0.5208 < σ₀ < σ",
+      "10³ ≤ H ≤ H₀"
+     ],
+     "locator": {
+      "source": "kadiri2013density",
+      "where": "Theorem 1.1, lines 46–54"
+     },
+     "prerequisites": [
+      "target:4.5a",
+      "target:6.6",
+      "target:0.4",
+      "roadmap:ZerosOfLFunctions 7.2"
+     ],
+     "tests": [
+      {
+       "name": "one_sided",
+       "kind": "non-example",
+       "statement": "the bound is for N(σ,T), not 2N(σ,T)"
+      },
+      {
+       "name": "H0",
+       "kind": "computation",
+       "statement": "1.70·10¹⁰ and 1.35·10¹⁰ at T = H₀"
+      }
+     ]
+    },
+    {
+     "id": "8.2",
+     "kind": "theorem",
+     "name": "ExplicitBounds.zeroDensity_ramare_dirichlet",
+     "statement": "For T ≥ 2000, T ≥ Q ≥ 10, σ ≥ 0.52: Σ_{q≤Q}(q/φ(q))Σ*_χ N(σ,T,χ) ≤ 20(56Q⁵T³)^{1−σ} log^{5−2σ}(Q²T) + 32Q² log²(Q²T).",
+     "hypotheses": [
+      "T ≥ 2000",
+      "T ≥ Q ≥ 10",
+      "σ ≥ 0.52"
+     ],
+     "locator": {
+      "source": "ramare2016density",
+      "where": "Theorem 1.1, lines 83–92"
+     },
+     "prerequisites": [
+      "target:6.4",
+      "roadmap:SieveMethodsAndPrimePatterns §2.9",
+      "mathlib:Nat.totient"
+     ],
+     "tests": [
+      {
+       "name": "Q10",
+       "kind": "computation",
+       "statement": "1.23·10¹² at Q = 10, T = 2000, σ = 0.6"
+      }
+     ]
+    },
+    {
+     "id": "8.3",
+     "kind": "theorem",
+     "name": "ExplicitBounds.zeroDensity_kln",
+     "statement": "For the parameters of the theorem and T ≥ H₀ = 3.0610046·10¹⁰: N(σ,T) ≤ (C₁/(2πd))(log kT)^{2σ}(log T)^{5−4σ}T^{8(1−σ)/3} + (C₂/(2πd)) log² T; N(0.90,T) ≤ 11.499(log T)^{16/5}T^{4/15} + 3.186 log² T.",
+     "hypotheses": [
+      "T ≥ H₀",
+      "parameter constraints of the theorem"
+     ],
+     "locator": {
+      "source": "kadirilumleyng2018",
+      "where": "Theorem 1.1, lines 74–87"
+     },
+     "prerequisites": [
+      "target:0.4",
+      "target:4.7a",
+      "target:5.1",
+      "target:6.4",
+      "target:6.6"
+     ],
+     "tests": [
+      {
+       "name": "exponent",
+       "kind": "computation",
+       "statement": "8(1−0.9)/3 = 4/15"
+      },
+      {
+       "name": "H0",
+       "kind": "computation",
+       "statement": "1.91·10⁸ at T = H₀"
+      }
+     ]
+    },
+    {
+     "id": "8.4",
+     "kind": "theorem",
+     "name": "ExplicitBounds.zeroDensity_logFree_dirichlet",
+     "statement": "For Q ≥ 3, σ ≥ 39/40: N(σ,Q) ≤ 10^{88}(10^{421}Q^{99})^{1−σ}, N*(σ,Q) ≤ 10^{93} min(1, (1−β₁(Q)) log Q)(10^{466}Q^{170})^{1−σ}.",
+     "hypotheses": [
+      "Q ≥ 3",
+      "σ ≥ 39/40"
+     ],
+     "locator": {
+      "source": "thornerzaman2024",
+      "where": "Theorem 1.2, lines 31–43, 64–65"
+     },
+     "prerequisites": [
+      "target:7.1",
+      "target:7.5",
+      "roadmap:SieveMethodsAndPrimePatterns §2.9"
+     ],
+     "tests": [
+      {
+       "name": "Q3",
+       "kind": "computation",
+       "statement": "log₁₀ of the first bound at Q = 3, σ = 39/40 is 99.71"
+      }
+     ]
+    },
+    {
+     "id": "8.5",
+     "kind": "theorem",
+     "name": "ExplicitBounds.zeroDensity_logFree_zeta",
+     "statement": "For 3·10¹² < T ≤ exp(6.7·10¹²), σ ∈ [0.9927, 1]: N(σ,T) ≤ 1.62·10¹¹ T^{1.448(1−σ)}.",
+     "hypotheses": [
+      "3·10¹² < T ≤ exp(6.7·10¹²)",
+      "0.9927 ≤ σ ≤ 1"
+     ],
+     "locator": {
+      "source": "bellotti2025density",
+      "where": "Theorem 1.1, lines 91–101"
+     },
+     "prerequisites": [
+      "target:0.4",
+      "target:4.7a",
+      "target:4.7b",
+      "target:6.4",
+      "target:7.3",
+      "target:7.4",
+      "target:7.6"
+     ],
+     "tests": [
+      {
+       "name": "T1e13",
+       "kind": "computation",
+       "statement": "2.22·10¹¹ against N(T)/2 = 2.16·10¹³"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "key": "9",
+   "title": "The size of L(1, χ)",
+   "targets": [
+    {
+     "id": "9.1",
+     "kind": "theorem",
+     "name": "ExplicitBounds.LOne_upper_ramare",
+     "statement": "For χ primitive of conductor q > 1: |L(1,χ)| ≤ (1/2) log q (even), ≤ (1/2) log q + 5/2 − log 6 (odd); for 2 | q: ≤ (1/4) log q + (1/2) log 2 (even), ≤ (1/4) log q + 5/4 − (1/2) log 3 (odd).",
+     "hypotheses": [
+      "χ primitive",
+      "q > 1"
+     ],
+     "locator": {
+      "source": "ramare2001",
+      "where": "Corollary 1"
+     },
+     "prerequisites": [
+      "target:1.2",
+      "mathlib:gaussSum",
+      "mathlib:DirichletCharacter.IsPrimitive.completedLFunction_one_sub",
+      "mathlib:Fourier.fourierIntegral"
+     ],
+     "tests": [
+      {
+       "name": "q3",
+       "kind": "computation",
+       "statement": "0.604600 ≤ 1.257547"
+      },
+      {
+       "name": "q8_odd",
+       "kind": "computation",
+       "statement": "1.110721 ≤ 1.220554"
+      },
+      {
+       "name": "constant",
+       "kind": "compatibility",
+       "statement": "5/2 − log 6 = 0.708241, matching saadeddin2016 lines 56–65"
+      }
+     ]
+    },
+    {
+     "id": "9.2",
+     "kind": "theorem",
+     "name": "ExplicitBounds.LOne_upper_refined",
+     "statement": "If 3 | q: |L(1,χ)| ≤ (1/3) log q + 0.368296 (even), + 0.838374 (odd); if χ even and χ(2) = 1: |L(1,χ)| ≤ (1/2) log q − 0.02012.",
+     "hypotheses": [
+      "χ primitive",
+      "3 | q (resp. χ even, χ(2) = 1)"
+     ],
+     "locator": {
+      "source": "plattsaadeddin2013",
+      "where": "Theorem 1.1, lines 27–37; saadeddin2016 Theorem 1, lines 29–31"
+     },
+     "prerequisites": [
+      "target:9.1"
+     ],
+     "tests": [
+      {
+       "name": "q12",
+       "kind": "computation",
+       "statement": "0.760346 ≤ 1.196598"
+      },
+      {
+       "name": "q17",
+       "kind": "computation",
+       "statement": "1.016085 ≤ 1.396487"
+      }
+     ]
+    },
+    {
+     "id": "9.3",
+     "kind": "theorem",
+     "name": "ExplicitBounds.LOne_lower",
+     "statement": "For χ primitive non-quadratic: |L(1,χ)| ≥ 1/(9.690292 log(q/π)) for q ≥ 2 and ≥ (1+o(1))/(9.122545 log(q/π)); for q ≤ 10¹⁰ and χ primitive quadratic: L(1,χ) ≥ 1/(8 log q).",
+     "hypotheses": [
+      "χ primitive",
+      "q ≥ 2 (resp. q ≤ 10¹⁰)"
+     ],
+     "locator": {
+      "source": "mossinghoffstarichkovatrudgian2022",
+      "where": "Theorem 1.1, lines 44–49; luzamanzhao2026 Corollary 1.3, lines 96–99"
+     },
+     "prerequisites": [
+      "target:0.5",
+      "target:7.5",
+      "target:7.8",
+      "mathlib:DirichletCharacter.LFunction_apply_one_ne_zero",
+      "mathlib:MulChar.IsQuadratic"
+     ],
+     "tests": [
+      {
+       "name": "quartic5",
+       "kind": "computation",
+       "statement": "0.888577 ≥ 0.222066 ≥ 0.215189 (Louboutin)"
+      },
+      {
+       "name": "lzz3",
+       "kind": "computation",
+       "statement": "0.604600 ≥ 0.113780"
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "suppliers": [
+  {
+   "roadmap": "LFunctions",
+   "sections": [
+    "Layer 0",
+    "Layer 3",
+    "Layer 4"
+   ],
+   "what": "analytic records, their predicates, riemannZetaData, dedekindZetaData, dirichletData"
+  },
+  {
+   "roadmap": "ZerosOfLFunctions",
+   "sections": [
+    "Layer 0",
+    "1.1",
+    "1.4",
+    "1.6",
+    "3.4",
+    "4.3",
+    "4.5",
+    "5.5",
+    "5.6",
+    "6.3",
+    "6.4",
+    "6.5",
+    "7.1",
+    "7.2",
+    "7.3",
+    "7.4",
+    "Layer 9"
+   ],
+   "what": "entire completion, IsFiniteOrder, continuedL, pole-cleared function, zeroCount and N(T), Jensen, Hadamard, exceptional zero, argument principle, S(T), AllOnCriticalLine"
+  },
+  {
+   "roadmap": "ArithmeticDirichletSeries",
+   "sections": [
+    "§6.3",
+    "§6.4"
+   ],
+   "what": "truncated Perron formula, as realized in Tau Ceti"
+  },
+  {
+   "roadmap": "AnalyticNumberTheoryPartI",
+   "sections": [
+    "§0.23a",
+    "§0.34",
+    "§0.34a",
+    "§1.5",
+    "§1.5a",
+    "§1.6"
+   ],
+   "what": "slit-plane log Γ with Stieltjes remainder, Landau–Siegel exclusion and Kronecker characters, Dirichlet-polynomial mean square, weighted Hilbert inequality 3π/2, DirichletGRH"
+  },
+  {
+   "roadmap": "AsymptoticExpansions",
+   "sections": [
+    "§13.1",
+    "Layer 5"
+   ],
+   "what": "Euler–Maclaurin formula; saddle-point estimates"
+  },
+  {
+   "roadmap": "ComputationalNumberTheory",
+   "sections": [
+    "§4.22",
+    "§4.24"
+   ],
+   "what": "Platt's finite-conductor zero theorem; no real zeros for conductor ≤ 400 000"
+  },
+  {
+   "roadmap": "SieveMethodsAndPrimePatterns",
+   "sections": [
+    "§2.6",
+    "§2.9"
+   ],
+   "what": "large-sieve duality; sharp additive and primitive-character large sieves"
+  }
+ ],
+ "consumers": [
+  {
+   "roadmap": "ExplicitPrimeCounting",
+   "what": "RH(H), GRH(q, H) with the passage to imprimitive characters, the Platt bridge and recorded verifications (0.2–0.4); explicit N(T) and Lehman's lemma (5.2, 5.4); Perron (6.1–6.2); zero-free regions (7.3, 7.5, 7.6); the capped real-zero gap HasLandauSiegelGap at (1/5, 10¹⁰) and (3.0·10⁻³, ∞) (7.9); densities (8.1, 8.3)"
+  },
+  {
+   "roadmap": "ExplicitCharacterSumsAndSieves",
+   "what": "the van der Corput toolkit (4.1–4.5) and the weighted and maximal large sieves (6.5)"
+  },
+  {
+   "roadmap": "ExplicitMultiplicativeFunctions",
+   "what": "bounds right of the line one (3.4), Perron (6.1), RH(H) (0.2, through ExplicitPrimeCounting §1.1)"
+  },
+  {
+   "roadmap": "ExplicitNumberFields",
+   "what": "Rademacher's bound on records of finite-order type at dedekindZetaData (3.2), Backlund's argument lemma (5.1), complex Stirling (Layer 2), GRH(q, H) (0.3–0.4), L(1, χ) comparisons (9.1)"
+  }
+ ],
+ "gaps": []
+}

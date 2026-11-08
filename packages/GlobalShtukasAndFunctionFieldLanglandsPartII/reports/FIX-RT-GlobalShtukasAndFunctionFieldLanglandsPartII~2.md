@@ -1,0 +1,108 @@
+# FIX-RT-GlobalShtukasAndFunctionFieldLanglandsPartII~2: red-team round 2 repaired
+
+Files edited: `packages/GlobalShtukasAndFunctionFieldLanglandsPartII/README.md`, `packages/GlobalShtukasAndFunctionFieldLanglandsPartII/sources.toml`, `packages/GlobalShtukasAndFunctionFieldLanglandsPartII/design/plan.json` (the `needs` string of the gap `spherical-isogeny-transfer` only), `packages/GlobalShtukasAndFunctionFieldLanglandsPartII/Suggested.lean` (module header only, see Checks). `metadata.toml` is unchanged.
+
+## RT-GlobalShtukasAndFunctionFieldLanglandsPartII~2a/F01 (P2) — applied
+
+Verified: for F=𝔽₂((t)), PGL₂(F)/im SL₂(F) ≅ F^×/F^(×2) by the determinant (a class with square determinant is a scalar multiple of an element of SL₂(F)), and the classes 1+t^(2n+1) are pairwise distinct (a ratio has odd lowest nonconstant exponent; squares are exactly the series in t²), so the image has infinite index; it is closed (F^(×2) = 𝔽₂((t²))^× is closed), and it is not open because O^(×2) is a closed subgroup of infinite index of the compact group O^× (an open subgroup of a compact group has finite index). For F=𝔽₃((t)) the quotient F^×/F^(×2) ≅ (ℤ/2)² has order 4 and the image is open: the inseparable case is the only one without finite index. The old contract ("the actual finite-index image on rational points") had no instance at an inseparable isogeny.
+
+Changed: contract line under "From TauCetiRoadmap.SmoothRepresentationsOfLocalGroups" and the identical `needs` in `design/plan.json` → transport across central isogenies of unramified connected reductive groups over every local function field, with compatible hyperspecial and Whittaker data and lifted Satake classes, on the actual rational image and its cokernel, no finite-index or openness assumption on an inseparable isogeny, whose cokernel can be infinite. §5.1 (sentence after the local API) and the §5.4 proof route require the inseparable case explicitly. New negative-control Check in §5.1 (the computation above, with the 𝔽₃((t)) contrast). No z-extension route was substituted: the roadmap needs the transfer from G(F) to G^(ad)(F) for the lifted parameter, and a z-extension of G^(ad) does not change the direction of that transfer.
+
+## RT-GlobalShtukasAndFunctionFieldLanglandsPartII~2a/F02 (P3) — applied
+
+Verified against fs line 12671–12675: the excursion endomorphism of a Schur-irreducible A is the scalar β∘(action)∘α; for G=1 and V=L with α(1)=a, β(z)=bz it is ab, not 1.
+
+Changed: §3.0 Check "For G=1 the parameter and all one-dimensional excursion scalars equal 1" → the parameter is unique, Bun_G is a point, the scalar is ab with the three evaluations (1,1)↦1, (2,1)↦2, (0,·)↦0, and the constant-1 model is rejected at (2,1).
+
+## RT-GlobalShtukasAndFunctionFieldLanglandsPartII~2a/F03 (P2) — applied
+
+Verified: for Res_(L/F)PGL₂, L/F unramified quadratic and w inert in L, ᴸG=(SL₂×SL₂)⋊C₂; every Satake class at w lies in the Frobenius component and projects to the nontrivial element of C₂, while s_c·q_w^ν ∈ T̂ projects to 1; at t_w=1 the class acts on the induced four-dimensional module by the swap, eigenvalues 1,1,−1,−1.
+
+Changed: §2.3 statement → representative s_w=(t_w,Fr_w) with t_w ∈ T̂(ℂ)^(Fr_w), polar decomposition of t_w, ν ∈ (t̂_ℝ)^(Fr_w), real part defined on the positive component with the Frobenius component kept separate, and the weight statement per q_w^ν-eigenspace V_c (every eigenvalue of τ(s_w) on V_c has modulus q_w^c, also when Fr_w permutes weight spaces). §2.3 proof route → existence of a Fr_w-fixed representative (the coinvariant torus T̂_(Fr_w) is connected and receives (T̂^(Fr_w))° surjectively, the Lie algebra map t̂^(Fr) → t̂/(1−Fr)t̂ being an isomorphism), uniqueness of the polar decomposition on T̂^(Fr_w), and the eigenvalue argument via τ(s_c·Fr_w)^m = τ(s_c^m) compact. §2.3 API bullets 1–2 restated per eigenspace. New §2.3 Check: the quadratic-restriction swap at a place inert in L, eigenvalues 1,1,−1,−1, not the identity. Conventions: the normalized class is (s_c·q^ν, Fr) with ν Fr-fixed in the nonsplit case. §2.2: "algebraic dual-group representation τ" → "algebraic representation τ of ᴸG", a Ĝ-module without outer extension entering only through the finite induction of §5.1. §5.1 local API bullet "Polar decomposition …" → on the Frobenius-fixed torus representative, in (t̂_ℝ)^(Fr), with the outer component retained separately.
+
+## RT-GlobalShtukasAndFunctionFieldLanglandsPartII~2a/F04 (P2) — applied
+
+Verified: ᴸG_j = Ĝ_j⋊Γ_(K_j) sits in (∏_a Ĝ_(j,a))⋊Γ with infinite index (it contains none of the other factors), so algebraic induction from it carries the coordinate ring of the other factors and is not finite-dimensional. ReductiveGroupsPartII §RG2.5.2, *dual-of-weil-restriction* (`TauCetiRoadmap/ReductiveGroupsPartII/README.md` on main, the item "The L-group of a Weil restriction") gives ᴸH = (∏_τ Ĝ′)⋊Γ_K with Γ_K permuting the factors, as used.
+
+Changed: §5.1 definition → for H=Res_(L/K)H₀ pull V back to Ĥ⋊Γ_L along the Γ_L-equivariant projection onto the distinguished factor and induce from the finite-index subgroup Ĥ⋊Γ_L to Ĥ⋊Γ; dimension [L:K]·dim V; restriction to Ĥ is the sum of the conjugate factor modules; the infinite-index induction is named as not the construction. Proof route, a new API bullet, the Res_(L/F)PGL₂ Check (index-2 subgroup SL₂×SL₂, module V⊕V with the swap, dimension 4, the same eigenvalue computation as before), the local theorem's Weil-restriction clause (§5.1) and the §5.4 proof route ("the family of §5.1 induced from Ĥ_j⋊Γ_(L_j)") now use this subgroup.
+
+## RT-GlobalShtukasAndFunctionFieldLanglandsPartII~2a/F05 (P1) — applied
+
+Verified: §8.6 allowed G nonsplit at the ramified anchor u while §8.0 stated the Aubert construction only for split adjoint G; ch26 Proposition 4.5 (ch26 line 563–570) and Aubert's Théorème 1.7 and Corollaire 3.9 (aubert-duality line 107–124 and line 423–440: Définition 1.5 is D_G = Σ_(I⊆S) (−1)^(|I|) i_I ∘ r_I, (4) gives the cuspidal sign (−1)^(|S|), and the proof of Corollaire 3.9 places the irreducible dual inside the same induced representation) impose no splitting; Aubert's standing hypothesis (line 18–19) is any nonarchimedean local field, and her w_J is the longest element with w_J⁻¹(J) ⊂ Φ⁺, with J′ = w_J⁻¹(J) ⊂ S (line 78–81), which is the formula restated in §8.0.
+
+Ownership (grep rerun in this run over main and the 449 open heads of the index of 2026-11-05T08:56:41Z): the general involution is stated at the head of SmoothRepresentationsOfLocalGroupsPartII, §7.1 (*aubert-involution*) and §7.2 (*aubert-semisimple-parameter*). That roadmap is later in the merge order (position 294 against 244 for this one), so it cannot supply the involution to §8.6. Its "Downstream consumers" section names GlobalShtukasAndFunctionFieldLanglandsPartII as using its local temperedness tests and complementary-series constraints, while this roadmap's Scope and Downstream consumers name it as the consumer of §§5.1 and 8.0: each calls the other its consumer, and this package cites it nowhere as a supplier. By the brief's rule the notion moves down: it is stated here as the first paragraph of §8.0, in Aubert's own normalization (the one SmoothRepresentationsOfLocalGroupsPartII §7.1 also uses, so the later roadmap can import it without a sign change). SmoothRepresentationsOfLocalGroups §SR.5.2 (head) owns only the Zelevinsky involution of GL_n; ModularityAndLanglandsExtensions uses Aubert's construction for co-tempered packets as a consumer; QuiverRepresentationsPartII excludes it.
+
+Changed: new first paragraph of §8.0: for every connected reductive G over a local function field, D_G = Σ_(J⊆S) (−1)^(|J|) i_(P_J)∘r_(P_J) on the finite-length Grothendieck group; commutation with the contragredient; D_G∘i_(P_J) = i_(P_J)∘D_(M_J) and r_(P_J)∘D_G = Ad(w)∘D_(M_(J′))∘r_(P_(J′)) with w the longest relative Weyl element with w⁻¹(J) ⊂ Φ⁺ and J′ = w⁻¹(J); D_G² = id; D_G(π) = (−1)^(|S|)π for supercuspidal π; D_G(π)=ε_π·AZ(π) with AZ(π) irreducible, in the same i_P(ρ) as π, same cuspidal support, hence L_F(AZ(π))=L_F(π) by §3.3's normalized-induction compatibility; no splitting, adjointness or temperedness hypothesis; anisotropic G gives D_G = id (locators: aubert-duality Définition 1.5 and Théorème 1.7 p. 2181, Corollaire 3.9 p. 2189; ch26 Proposition 4.5 p. 12). The split-adjoint paragraph now only uses this involution. API bullet restated for every connected reductive G. Three new Checks: GL₂ (D_G(St) = 1, D_G(1) = St, supercuspidal sign −1; without the sign 2St+1 is not ± irreducible), anisotropic G (identity term only, AZ(π)=π, parameters literally equal; the split-at-v/anisotropic-at-u inner form is admitted at u), torus (identity; the supercuspidal sign is −1 for GL₂ and +1 for GL₃, so AZ, not D_G, carries the parameter). §8.6 proof route cites the general involution and says G need not be split or quasi-split at u. Scope says that SmoothRepresentationsOfLocalGroupsPartII also states the involution in its §§7.1–7.2 but is downstream, so §8.0 states it here. New manifest entry `aubert-duality` (publisher-open AMS text, certified).
+
+## RT-GlobalShtukasAndFunctionFieldLanglandsPartII~2a/F06 (P3) — applied
+
+Verified: the four bullets computed nothing. Changed, respectively: §2.1 → L² with ε(e₂)=e₁, generalized block of dimension 2 versus ordinary eigenspace of dimension 1, occurrence uses the former; §4.1 → G_m over 𝔽₄((t)), χ(t)=ζ₃ with model over Q(ζ₃), conjugate values ζ₃, ζ₃² of modulus 1, quotient by the centre one point, normalized squared matrix-coefficient integral 1, both conjugates ι-discrete series; §7.5 → cuspidal case by FunctionFieldArithmetic §6.5 and §2.2, plus the rational matrix [[0,−1],[1,0]] with eigenvalues ±i over Q(i); §7.6 → H/(T−2) of dimension 1 with T acting by 2 versus H/(T−2)² of dimension 2 with nonzero nilpotent part, generalized eigenspaces (which is what the §7.6 statement decomposes into).
+
+## RT-GlobalShtukasAndFunctionFieldLanglandsPartII~2b/F01 (P2) — applied
+
+Verified: PGL₂, s_c=1, ν=(½,−½): adjoint pairings 1,0,−1, standard ±½, all half-integral, ν≠0; ch26 Corollary 6.32(1) (ch26 line 1192–1196) assumes L(s) generic and unitary. Changed: §5.1 local theorem sentence → "with s_c central and s the Satake parameter of a unitary generic spherical representation"; API bullet → "On the central-compact unitary generic locus"; the §5.1 Check on the trivial PGL₂ representation now records the pairings, that the positive coroot takes the value q (not generic), and that ν=(¼,−¼) is excluded by the standard pairing ±¼ instead.
+
+## RT-GlobalShtukasAndFunctionFieldLanglandsPartII~2b/F02 (P2) — applied
+
+Verified at the head of LanglandsParameterStacks via `roadmaps show` (this run): its `###` headings are numbered 0.1–0.9, 1.1–1.18, 2.1–2.15, 3.1–3.9, 4.1–4.26, 5.1–5.3, 6.1–6.3; the cited content is 0.1 (restriction, sections and continuity of crossed cocycles), 0.2 (condensed L-parameters), 0.3 (finite wild ramification), 0.4 (discrete Weil models and the geometric degree), 1.13–1.15 (Weil–Deligne parameters, quasi-unipotence, monodromy and the Weil–Deligne comparison), 2.5 (semisimple L-parameters), 2.15 (abstract excursion centre maps), 3.2–3.6 (pseudocharacters with prescribed finite projection, reconstruction, relatively discrete and discrete-coefficient Weil continuity, continuous semisimple parameter characters), 3.9 (parameters of Schur objects). Changed throughout (Scope, contract, every `*Needs:*` and Dependencies line, §3.0 statement): LP0.1–LP0.4 → 0.1–0.4; LP1.11–LP1.12 → 1.13–1.15; LP2e.5 → 2.5; LP2e.15 → 2.15; LP2c.1–LP2c.4 → 3.2–3.6; LP2c.3–LP2c.4 (continuity) → 3.4–3.6; LP2c.8 → 3.9. No `LP` label remains; the resolver now lists only the downstream KloostermanSheavesAndBesselIsocrystals consumer.
+
+## RT-GlobalShtukasAndFunctionFieldLanglandsPartII~2b/F03 (P3) — applied
+
+Verified: ch26 line 810–814 and 869 attribute the classification to Barbasch, Ciubotaru, Barbasch–Ciubotaru, Barbasch–Moy and Tadić; the roadmap cited only ch26. Changed: the §5.1 local theorem paragraph now ends with the primary locators; References lists the new works. Manifest: `tadic-gl` (Numdam, certified; Theorem D pp. 338–339, tadic-gl line 165–173), `barbasch-spherical` (arXiv math/0609828 v5, certified; the theorem of §3.1 on p. 20, barbasch-spherical line 814, and the theorem of §7.2 on p. 54, line 2247, the ones the paper itself calls theorems 3.1 and 7.2), `ciubotaru-F4` (AMS Representation Theory open access, certified; Theorem 3.5 p. 105, ciubotaru-F4 line 656), `ciubotaru-E6` (same, certified; Theorems (1), (1′), (2) pp. 437–438, ciubotaru-E6 line 133–160), `barbasch-ciubotaru-E` (arXiv 0708.4036v2, certified: §§3.1–3.2 pp. 16–17 and the main theorem of §5.1 p. 26, barbasch-ciubotaru-E line 724–761 and line 1168–1170; the published Compositio version is named in the venue), `barbasch-moy-unitarity` (Inventiones, paywalled, uncertified by DOI and locator), `barbasch-moy-whittaker` (Contemporary Mathematics, paywalled, uncertified). The two Barbasch–Moy papers predate arXiv and have no open copy to retry. No `needs-references.toml` is left: every unread text is settled as uncertified.
+
+## Checks
+
+Elaboration (`lake env lean` on `Suggested.lean` from the content checkout, this run): exit 0, no output, 4 s. The file declares nothing, so the `#check @name` binder audit is vacuous. The only change to the file is its header, `module`, `public import Mathlib`, the unchanged docstring, then `@[expose] public section` before the namespace, which the worker's build requires.
+
+Dependency check, verbatim (this run):
+
+```text
+depcheck: 233 roadmaps, 2233 edges, 0 problem(s)
+```
+
+No UPWARD or CYCLE line and no `moved:` line (the supplied merge order already lists this roadmap after its last supplier).
+
+Citation resolver on the README after the edits (main c9a16a0 and 449 open heads, index of 2026-11-05T08:56:41Z): only `KloostermanSheavesAndBesselIsocrystals §§KB.6` (a downstream consumer named in Scope, not a supplier); no Lean name is reported. The SmoothRepresentationsOfLocalGroupsPartII §§7.1–7.2 citation in Scope resolves at that roadmap's head.
+
+Manifest: 24 sources, no duplicate id, every entry has id, authors, title, year, locator_scheme, locator and cited_for. The plan's `spherical-isogeny-transfer` gap and the README contract line carry the same `needs` sentence. No gate failures were listed in the brief. No machine path occurs in any package file.
+
+## Adversarial pass on the changed statements
+
+| Statement | Instances tried | Values on the two sides | Result / change |
+|---|---|---|---|
+| §2.3 real part with Frobenius component | Res_(L/F)PGL₂, L/F unramified quadratic, w inert, t_w=1 | class (1,Fr_w) on V⊕V: swap, eigenvalues 1,1,−1,−1, q_w^ν=1 so c=0 for all four; dual-torus-only model gives the identity, eigenvalues 1,1,1,1 | both have weight 0; the operators differ; Check added |
+| §2.3 eigenvalue modulus on V_c | split PGL₂, t=diag(2,½) at q=4, Fr trivial, m=1 | ν=(½,−½); on the weight-α eigenspace ⟨α,ν⟩=½ and the eigenvalue 2 has modulus 4^(1/2); on the other, ⟨α,ν⟩=−½ and the eigenvalue ½ has modulus 4^(−1/2) | agrees with weights ±1 |
+| §2.3 eigenvalue modulus, Fr of order 2 | Res PGL₂, t_w=(diag(a,a⁻¹),diag(a,a⁻¹)) with a=q_L^(1/4) (ν Fr-fixed) | on V_c (c=¼) the operator is q_F^(¼)·(s_c Fr) with (s_c Fr)²=s_c²: eigenvalues ±q_F^(¼), modulus q_F^(¼) | matches the §5.1 Check ±q_F^(±1/4), weights ±½ |
+| §2.3 existence of a Fr-fixed representative | T̂=G_m², Fr=swap | T̂_(Fr)=G_m via (x,y)↦xy; (T̂^(Fr))°={(x,x)}→x², surjective on G_m; on Lie algebras t̂^(Fr)=⟨(1,1)⟩ → t̂/(1−Fr)t̂ = ℂ²/⟨(1,−1)⟩ is an isomorphism | representative exists; connected coinvariants |
+| §2.3 polar factors are Fr-fixed | t ∈ T̂^(Fr), t=s_c q^ν | Fr(s_c)Fr(q^ν)=s_c q^ν and the polar decomposition of T̂ is unique, so Fr(s_c)=s_c and Fr(ν)=ν | ν ∈ (t̂_ℝ)^(Fr) as stated |
+| §5.1 Weil-restriction induction | Res_(L/F)PGL₂ quadratic, V=std | subgroup SL₂×SL₂ of index 2: dimension 2·2=4, restriction V⊕V; subgroup SL₂⋊1 of infinite index: coordinate-ring factor, infinite dimension | old text named the wrong subgroup; replaced |
+| §5.1 induced weights | same, ν=(¼,−¼) in each factor | weights of V⊕V are ±¼ twice; weights relative to q_F ±½ | integrality for the induced module ⇔ for V |
+| §5.1 separator theorem hypothesis | PGL₂, s_c=1, ν=(½,−½) | adjoint 1,0,−1; standard ±½; coroot value q ⇒ not generic | excluded by the new generic hypothesis, not by half-integrality |
+| §5.1 separator theorem | PGL₂, ν=(¼,−¼), generic unitary | standard pairing ±¼ ∉ ½ℤ | excluded by the standard module, unchanged |
+| §5.1 isogeny Check | F=𝔽₂((t)), 1+t and 1+t³ | ratio (1+t³)/(1+t)=1+t+t²+… has lowest nonconstant exponent 1 (odd); squares have only even exponents | distinct classes; infinite index |
+| §5.1 isogeny Check, determinant | g ∈ GL₂(F) with det g = c² | g/c ∈ SL₂(F), so the kernel of PGL₂(F) → F^×/F^(×2) is the image of SL₂(F) | quotient identified |
+| §5.1 isogeny Check, openness | O^×/O^(×2) for 𝔽₂((t)) | infinite (same classes), O^× compact ⇒ O^(×2) not open ⇒ F^(×2) and the image not open; "closed of infinite index" alone would not give this (O^× ⊂ F^× is open of infinite index) | argument uses the compact-group step |
+| §5.1 isogeny Check, odd p | F=𝔽₃((t)) | F^× = ⟨t⟩×𝔽₃^××(1+tO), squaring bijective on the pro-3 part: F^×/F^(×2) ≅ (ℤ/2)², image open of index 4 | the inseparable case is the only one without finite index |
+| gap `spherical-isogeny-transfer` | cokernel clause | PGL₂(𝔽₂((t)))/im SL₂ ≅ ℤ/2 × O^×/O^(×2) is infinite | "can be infinite" is what the contract needs |
+| §3.0 trivial-group excursion | G=1, V=L, (a,b)=(1,1),(2,1),(0,1) | scalars 1, 2, 0 | constant-1 model rejected at (2,1) |
+| §8.0 Aubert involution, GL₂ | Aubert's sign (−1)^(|J|): J=∅ gives +i_B r_B, J=S gives −id | D_G(St)=(St+1)−St=1; D_G(1)=(1+St)−1=St; D_G²(St)=D_G(1)=St; supercuspidal π ↦ (−1)^1 π | involution, representatives exchanged, parameter diag(q^(½),q^(−½)) kept; agrees with Théorème 1.7(4) |
+| §8.0 Aubert involution, no sign | GL₂ | St+i_B r_B(St)=2St+1 | not ± irreducible; sign essential |
+| §8.0 Aubert involution, anisotropic | G anisotropic, π any irreducible | S=∅, single term with sign (−1)^0, D_G=id, AZ(π)=π | parameters identical; no split input |
+| §8.0 Aubert involution, torus and sign | T split of rank r; GL₂; GL₃ | S=∅ ⇒ D_T=id; cuspidal sign (−1)^1=−1 for GL₂, (−1)^2=+1 for GL₃ | the sign depends on the group, AZ carries the parameter |
+| §8.0 sign of the irreducible representative | π a constituent of i_(P_I)(σ), σ supercuspidal | Corollaire 3.9(a): (−1)^(|I|)[π*] = D_G[π], so ε_π = (−1)^(|I|) depends on the cuspidal support | ε_π ∈ {±1} as stated, not a global constant |
+| §8.0 Jacquet compatibility, Weyl element | A₂, J={α₁} | elements x with x(α₁)>0 are e, s₂, s₁s₂, so w=x⁻¹ ∈ {e, s₂, s₂s₁}; longest w=s₂s₁, w⁻¹(α₁)=α₂, J′={α₂} ⊂ S, w(J′)=J; w(J)={−α₁−α₂} is not a set of simple roots | formula stated with w⁻¹(J), as in Aubert line 78–81 |
+| §8.6 anchor | adjoint inner form split at v, anisotropic at u | §8.0 general involution applies at u; split classification used only at v | gap closed |
+| §2.1 Check (F06) | L², ε(e₂)=e₁ | generalized block dim 2, ker ε dim 1 | occurrence uses the generalized block |
+| §4.1 Check (F06) | G_m/𝔽₄((t)), χ(t)=ζ₃ | conjugates ζ₃, ζ₃², modulus 1; quotient one point; integral 1 | both conjugates discrete series |
+| §7.5 Check (F06) | [[0,−1],[1,0]] over Q | characteristic polynomial X²+1, eigenvalues ±i | algebraic after a finite extension |
+| §7.6 Check (F06) | H=ℚ̄_ℓ[T], (T−2), (T−2)² | dimensions 1 and 2; T−2 rank 0 and 1 | generalized versus ordinary quotient |
+| LanglandsParameterStacks labels | each new label | 0.1–0.4, 1.13–1.15, 2.5, 2.15, 3.2–3.6, 3.9 are `###` headings at the head, with the content named in the finding | all resolve |
+
+## For the maintainer
+
+- The gap `spherical-isogeny-transfer` (SmoothRepresentationsOfLocalGroups §SR.4.2) now asks for the inseparable case explicitly; its supplier must not assume a finite-index or open image of G(F) in G^(ad)(F).
+- Move recorded: the Aubert involution of every connected reductive group over a local function field is stated in §8.0 here because SmoothRepresentationsOfLocalGroupsPartII, which states the same involution in its §§7.1–7.2 at its open head, is later in the merge order and consumes §8.0. Both state it in Aubert's normalization with the same API, so the later roadmap can import §8.0's statement and drop its own. The two roadmaps also each list the other under their downstream consumers (its "Downstream consumers" names this roadmap for the local temperedness tests and complementary-series constraints; this Scope names it for §§5.1, 8.0 and 8.5), which the merge order resolves in favour of this roadmap being the supplier; which of the two keeps the involution, and the direction of the spherical and complementary-series interfaces, is a decision for a human, not for this package.
+- Two classification sources remain `uncertified` (paywalled, no open copy exists): Barbasch–Moy 1989 and 1994. Barbasch–Ciubotaru 2009 is certified from arXiv.
+- Ownership against open pull requests was checked through the roadmap service's index (449 open heads at 2026-11-05T08:56:41Z) and the sibling checkouts named in the brief; heads not in that index were not read.
+- The two earlier runs of this job produced the same repairs and were parked by the GitHub API rate limit at submission; this run re-verified every repair against the sources and the current heads before re-applying it, and reran every check.
+- No name cited by another roadmap changed.

@@ -1,0 +1,4 @@
+{"review": {"status": "needs_changes", "reviewer": "independent-review-PRREVIEW-IntegralLattices~5",
+            "head": "b0defd832437600e97b7fa050b3f678102e8f366", "pr": 1239, "folder": "IntegralLattices", "date": "2026-11-05",
+            "findings": 1, "blocking": 0,
+            "notes": "Full re-review. Previous R01-R04 repaired. Gate OK (worker), lake env lean exit 0 with 29 sorry warnings only, depcheck 225 roadmaps 2126 edges 0 problems, padding probe closes none of 29. Seeded sample B1-B8 recomputed (Cox/Cohen uncertified, Conway-Sloane waived); Boya-Sudarshan-Tilma, Voight and Nikulin locators read in the cache. One P3: d16PlusGram is a correct Gram matrix of D16+ (det 1, even, posdef, D15 root diagram) but the basis named in its docstring and README 2077-2078 spans an index-7 sublattice (Gram det 49); the matrix is the Gram of h, e1-e2, ..., e14-e15, e14+e15."}}

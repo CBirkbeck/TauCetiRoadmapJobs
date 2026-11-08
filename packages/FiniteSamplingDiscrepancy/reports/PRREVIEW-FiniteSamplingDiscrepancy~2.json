@@ -1,0 +1,4 @@
+{"review": {"status": "needs_changes", "reviewer": "independent-review-PRREVIEW-FiniteSamplingDiscrepancy~2",
+            "head": "0fe9ace46b3326055444ff809cf998cdc7314c37", "pr": 1790, "folder": "FiniteSamplingDiscrepancy", "date": "2026-11-05",
+            "findings": 4, "blocking": 1,
+            "notes": "Full re-review. Previous R01/R02 (TV carrier, exact collision bound) repaired; R03 partly (one short Tau Ceti name remains); R04-R08 repaired. Seeded sample: all 15 targets recomputed (22-row table), LPW Prop 4.2/Remark 4.3 read at lpw line 2789-2809 (p. 48, 2nd ed.); DF80 unreadable (needs-references.toml). Gate at head: readme-ids-missing=1, build=1 (Lake module-system warning; repaired header tested on a scratch copy, 13 sorry warnings only). Depcheck 0 problems. Padding probe: no one-tactic closure of any of the 13 declarations; 1.2 is not the pinned choose-bound (type mismatch). Ownership grep over main and 455 open PRs: no other owner."}}

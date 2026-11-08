@@ -1,0 +1,18 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "GromovWittenTheory"
+
+[[source]]
+id = "stacks-curves"
+authors = "The Stacks Project authors"
+title = "The Stacks Project, chapter Algebraic Curves"
+year = 2026
+locator_scheme = "tag"
+locator = "0CE4"
+url = "https://stacks.math.columbia.edu/download/curves.pdf"
+fetched_from = "https://stacks.math.columbia.edu/download/curves.pdf"
+fetched_at = "2026-11-07T19:22:52Z"
+sha256 = "c4e3d4c0fc533a3d46ce07c1bd6ec49f03e02c131da30ed275ada4bc9f82c030"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-07"
+cited_for = ["3.2"]

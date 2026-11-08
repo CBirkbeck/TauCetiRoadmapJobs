@@ -1,0 +1,179 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "QuasiregularMaps"
+
+[[source]]
+id = "HeikkilaPankka2025"
+authors = "Susanna Heikkilä, Pekka Pankka"
+title = "De Rham algebras of closed quasiregularly elliptic manifolds are Euclidean"
+year = 2025
+venue = "Annals of Mathematics 201 (2025), no. 2, 459–488"
+doi = "10.4007/annals.2025.201.2.3"
+arxiv = "2302.11440v2"
+locator_scheme = "theorem"
+locator = "Theorem 1.1"
+url = "https://arxiv.org/abs/2302.11440v2"
+fetched_from = "https://arxiv.org/pdf/2302.11440v2"
+fetched_at = "2026-11-05T00:48:04Z"
+sha256 = "aafa0637b9df9842c381c68f7a89df85db20920cfefcd6f9d72295a682c877ae"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-05"
+version_note = "arXiv v2 read; its numbering (Theorem 1.1, (1.1), Corollary 1.2, Proposition 2.1, Theorem 2.2, Appendix B) is the one cited; the Annals version was not checked"
+cited_for = ["2.1", "2.8", "2.9", "4.1", "4.2", "6.1", "6.2", "6.3", "6.4", "7.1", "7.2", "7.3", "7.4", "7.5", "7.6", "Downstream consumers"]
+
+[[source]]
+id = "Prywes2019"
+authors = "Eden Prywes"
+title = "A bound on the cohomology of quasiregularly elliptic manifolds"
+year = 2019
+venue = "Annals of Mathematics 189 (2019), no. 3, 863–883"
+doi = "10.4007/annals.2019.189.3.5"
+arxiv = "1806.05306v1"
+locator_scheme = "theorem"
+locator = "Theorem 1.1"
+url = "https://arxiv.org/abs/1806.05306v1"
+fetched_from = "https://arxiv.org/pdf/1806.05306v1"
+fetched_at = "2026-11-05T00:48:16Z"
+sha256 = "8c31eeaa65b1c88e4fa0264921f8e113129594f73752d6f552f8ddc0543cb759"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-05"
+version_note = "arXiv v1 read; Theorem 1.1 and Corollary 1.2 are cited with the arXiv numbering; the Annals version was not checked"
+cited_for = ["2.1", "2.9", "7.1", "7.5", "Downstream consumers"]
+
+[[source]]
+id = "BonkHeinonen2001"
+authors = "Mario Bonk, Juha Heinonen"
+title = "Quasiregular mappings and cohomology"
+year = 2001
+venue = "Acta Mathematica 186 (2001), no. 2, 219–238"
+doi = "10.1007/BF02401840"
+locator_scheme = "theorem"
+locator = "Theorem 1.1"
+url = "https://projecteuclid.org/journals/acta-mathematica/volume-186/issue-2/Quasiregular-mappings-and-cohomology/10.1007/BF02401840.full"
+licence_class = "none"
+status = "uncertified"
+version_note = "the open copy on Project Euclid answered the fetcher with a bot-protection page and the DOI resolves to a paywalled host; cited by its locator without the text, with the numbering as cited by HeikkilaPankka2025 (Theorem 1.11) and Prywes2019 (Proposition 1.4)"
+cited_for = ["Downstream consumers"]
+
+[[source]]
+id = "Rickman1993"
+authors = "Seppo Rickman"
+title = "Quasiregular Mappings"
+year = 1993
+venue = "Ergebnisse der Mathematik und ihrer Grenzgebiete (3) 26, Springer"
+doi = "10.1007/978-3-642-78201-5"
+locator_scheme = "chapter"
+locator = "Ch. I"
+url = "https://doi.org/10.1007/978-3-642-78201-5"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["2.4", "2.5", "2.6", "2.7", "4.1", "4.3", "4.4", "5.2", "Downstream consumers"]
+
+[[source]]
+id = "Vaisala1971"
+authors = "Jussi Väisälä"
+title = "Lectures on n-Dimensional Quasiconformal Mappings"
+year = 1971
+venue = "Lecture Notes in Mathematics 229, Springer"
+doi = "10.1007/BFb0061216"
+locator_scheme = "chapter"
+locator = "Ch. 3"
+url = "https://doi.org/10.1007/BFb0061216"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["5.2"]
+
+[[source]]
+id = "Reshetnyak1989"
+authors = "Yurii G. Reshetnyak"
+title = "Space Mappings with Bounded Distortion"
+year = 1989
+venue = "Translations of Mathematical Monographs 73, American Mathematical Society"
+doi = "10.1090/mmono/073"
+locator_scheme = "chapter"
+locator = "Ch. II"
+url = "https://doi.org/10.1090/mmono/073"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled (AMS); cited by its locator without the text"
+cited_for = ["Downstream consumers"]
+
+[[source]]
+id = "IwaniecMartin2001"
+authors = "Tadeusz Iwaniec, Gaven Martin"
+title = "Geometric Function Theory and Non-linear Analysis"
+year = 2001
+venue = "Oxford Mathematical Monographs, Oxford University Press"
+doi = "10.1093/oso/9780198509295.001.0001"
+locator_scheme = "chapter"
+locator = "Ch. 6"
+url = "https://doi.org/10.1093/oso/9780198509295.001.0001"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled (OUP); cited by its locator without the text"
+cited_for = ["Scope and ownership"]
+
+[[source]]
+id = "Gromov1999"
+authors = "Misha Gromov"
+title = "Metric Structures for Riemannian and Non-Riemannian Spaces"
+year = 1999
+venue = "Progress in Mathematics 152, Birkhäuser; reprinted in Modern Birkhäuser Classics, 2007"
+doi = "10.1007/978-0-8176-4583-0"
+locator_scheme = "chapter"
+locator = "Ch. 2"
+url = "https://doi.org/10.1007/978-0-8176-4583-0"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text; the DOI is that of the 2007 reprint"
+cited_for = ["Downstream consumers"]
+
+[[source]]
+id = "Gromov1981"
+authors = "Misha Gromov"
+title = "Hyperbolic manifolds, groups and actions"
+year = 1981
+venue = "Riemann Surfaces and Related Topics, Annals of Mathematics Studies 97, Princeton University Press, 183–213"
+locator_scheme = "page"
+locator = "p. 200"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled (Princeton University Press); cited by its locator without the text, as the place where the question on quasiregular ellipticity of simply connected manifolds is asked, with the page as cited by Prywes2019 and HeikkilaPankka2025"
+cited_for = ["Downstream consumers"]
+
+[[source]]
+id = "MartioRickmanVaisala1969"
+authors = "Olli Martio, Seppo Rickman, Jussi Väisälä"
+title = "Definitions for quasiregular mappings"
+year = 1969
+venue = "Annales Academiae Scientiarum Fennicae, Series A I Mathematica 448 (1969), 1–40"
+doi = "10.5186/aasfm.1969.448"
+locator_scheme = "section"
+locator = "§2"
+url = "https://afm.journal.fi/article/view/134124"
+fetched_from = "https://afm.journal.fi/article/download/134124/82706"
+fetched_at = "2026-11-05T00:49:36Z"
+sha256 = "e9d55447ac88457141ef813653a8051b37a0221b75fac3c89534ab5e98edf97d"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-05"
+version_note = "the journal's open archive (Creative Commons Attribution 4.0); the scan is image-only and the recognised text is noisy"
+cited_for = ["Conventions", "1.1", "1.2", "1.3", "1.4", "2.1", "2.2", "2.3", "2.9", "2.10", "3.1", "3.2", "3.3", "3.4", "5.1", "5.3", "Downstream consumers"]
+
+[[source]]
+id = "Ahlfors2006"
+authors = "Lars V. Ahlfors"
+title = "Lectures on Quasiconformal Mappings"
+year = 2006
+venue = "Second edition, University Lecture Series 38, American Mathematical Society"
+doi = "10.1090/ulect/038"
+locator_scheme = "chapter"
+locator = "Ch. I"
+url = "https://doi.org/10.1090/ulect/038"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled (AMS); the sources service found no legal open copy (the DOI landing page is the publisher's priced e-book); cited by its locator without the text, for the standard linear algebra of the planar map z ↦ az + b z̄ and the analytic definition of planar quasiconformality"
+cited_for = ["1.5", "2.10"]

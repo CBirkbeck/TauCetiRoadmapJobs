@@ -1,0 +1,454 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "GlobalShtukasAndFunctionFieldLanglandsPartII"
+
+[[source]]
+id = "ch26"
+authors = "Dan Ciubotaru, Michael Harris"
+title = "On the generalized Ramanujan and Arthur conjectures over function fields"
+year = 2023
+arxiv = "2311.15300v1"
+locator_scheme = "theorem"
+locator = "§1.1–§1.2, pp. 2–6; §2.3–§2.4, Definitions 2.5–2.6 and Proposition 2.7, pp. 7–8; §3, Propositions 3.1, 3.10, Lemmas 3.2, 3.5, Theorems 3.6, 3.8 and Definitions 3.7, 3.9, pp. 8–11; §4, Definition 4.1, Theorems 4.2–4.3 and Proposition 4.5, pp. 11–12; §5, Theorem 5.4, Corollary 5.7, Remark 5.8, Expectation 5.9, Sketch 5.10 and (5.1), (5.3), (5.5), pp. 12–16; §6, (6.2), (6.4)–(6.5), Lemma 6.7 and Proposition 6.31, pp. 17–24; §8.2, Theorem 8.5 and Remark 8.6, pp. 28–29; §9.1–§9.2, Conjectures 9.1, 9.5, Lemma 9.2 and Definition 9.4, pp. 30–32; §10, Proposition 10.2, Theorem 10.3, Property A and Remarks 10.7–10.8, pp. 32–35; Appendix Tables 2–3, pp. 36–37; §3, opening paragraph (standing hypotheses), p. 8"
+url = "https://arxiv.org/abs/2311.15300v1"
+fetched_from = "https://arxiv.org/pdf/2311.15300v1"
+fetched_at = "2026-10-24T10:43:19Z"
+sha256 = "7261083b46cc8ec3fad81215250ff6bef47da05ef6054813572de21db10dc103"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-24"
+version_note = "arXiv v1"
+cited_for = ["RA.0, RA.1, RA.2, RA.3, RA.4, RA.5, RA.6, RA.7, RA.8"]
+
+[[source]]
+id = "ghs"
+authors = "Wee Teck Gan, Michael Harris, Will Sawin, Raphaël Beuzart-Plessis"
+title = "Local parameters of supercuspidal representations"
+year = 2024
+venue = "Forum of Mathematics, Pi 12"
+doi = "10.1017/fmp.2024.10"
+arxiv = "2109.07737v3"
+locator_scheme = "theorem"
+locator = "§2.1, the class A₀(G) of cuspidal representations with central character of finite order, p. 5; §3.1, Definitions 3.1–3.3, p. 8; §3.1, Lemma 3.5 and its proof, p. 9; §3.2, Lemma 3.6 and Remark 3.7, pp. 9–10; §3.2, Lemma 3.6 with its proof and Corollary 3.8, pp. 9–10; Remark 3.13, p. 11; §2.1, Theorem 2.1 and Corollary 2.4(i), pp. 6–7; §2.1, Theorem 2.1(iii), p. 6; §2.2, Theorem 2.3(iv)–(vi) and Corollary 2.4(ii), pp. 6–7; §3.3, Proposition 3.9 and its proof, Remark 3.10, pp. 10–11; Appendix A (R. Beuzart-Plessis), Lemma A.1 and its proof with Lemma A.3, pp. 38–39; §3.3, Proposition 3.11 and its proof, p. 11; §1, Theorem 1.2 and Corollary 1.3, p. 3; §3.3, Corollary 3.12 and Remark 3.13, p. 11"
+url = "https://www.cambridge.org/core/journals/forum-of-mathematics-pi/article/local-parameters-of-supercuspidal-representations/10EEB98855332F11F5555C45665BBA5F"
+fetched_from = "https://www.cambridge.org/core/services/aop-cambridge-core/content/view/10EEB98855332F11F5555C45665BBA5F/S2050508624000106a.pdf/div-class-title-local-parameters-of-supercuspidal-representations-div.pdf"
+fetched_at = "2026-10-24T10:45:16Z"
+sha256 = "e570036504ba58ededa9f48453e517a710da0f49128fefebfa94f5ff4439bfcc"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-10-24"
+version_note = "Published e13 numbering is used throughout; arXiv v3 assumes p>3 in Theorem 1.2 and numbers published Proposition 3.11, Corollary 3.12, Remark 3.13 as 3.10, 3.11, 3.12."
+cited_for = ["RA.0, RA.1, RA.2, RA.3, RA.4", "RA.0, RA.3, RA.4"]
+
+[[source]]
+id = "lh"
+authors = "Siyan Daniel Li-Huerta"
+title = "Local-global compatibility over function fields"
+year = 2023
+arxiv = "2301.09711v2"
+locator_scheme = "theorem"
+locator = "§5, Propositions 5.13–5.14, Theorem 5.16 and Lemma 5.18, pp. 37–41; §§2–4, Theorem 2.12, Theorem 4.9 and Proposition 4.12, pp. 8–33; §6, Lemma 6.4 and §6.13, pp. 42–47; Introduction, Theorems A and C, pp. 2–3; §6, Theorems 6.13, 6.15 and §6.16, pp. 47–49; §7.2, p. 51; §6, Theorem 6.10, §6.11 and Theorem 6.13, pp. 46–48; §1.1, parahoric group scheme over the local ring, p. 5; §5.1, parahoric group scheme over the curve, p. 33"
+url = "https://arxiv.org/abs/2301.09711v2"
+fetched_from = "https://arxiv.org/pdf/2301.09711v2"
+fetched_at = "2026-10-24T10:43:31Z"
+sha256 = "83c269e46bb28713f9081086c0c8f0340c41fccbe224d2ea457e5626421bed6c"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-24"
+version_note = "arXiv v2"
+cited_for = ["RA.3, RA.7"]
+
+[[source]]
+id = "st"
+authors = "Will Sawin, Nicolas Templier"
+title = "On the Ramanujan conjecture for automorphic forms over function fields I. Geometry"
+year = 2018
+arxiv = "1805.12231v4"
+locator_scheme = "theorem"
+locator = "§11, Lemma 11.4 and its proof, p. 83; §11, Lemmas 11.4–11.5, p. 83"
+url = "https://arxiv.org/abs/1805.12231v4"
+fetched_from = "https://arxiv.org/pdf/1805.12231v4"
+fetched_at = "2026-10-24T10:43:38Z"
+sha256 = "9dddd64e480b56f3987604a8daf096fa850b74fe998ab1963f55b17f373e3e3c"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-24"
+version_note = "arXiv v4"
+cited_for = ["RA.1, RA.6"]
+
+[[source]]
+id = "xue"
+authors = "Cong Xue"
+title = "Finiteness of cohomology groups of stacks of shtukas as modules over Hecke algebras, and applications"
+year = 2018
+venue = "Épijournal de Géométrie Algébrique, Volume 4 (June 17, 2020) epiga:5550"
+doi = "10.46298/epiga.2020.volume4.5550"
+arxiv = "1811.09513v3"
+locator_scheme = "theorem"
+locator = "Introduction, Proposition 1 and Theorem 2, pp. 2–3; §3.6, Definition 3.6.5, Lemma 3.6.6 and Theorem 3.6.7 with Remarks 3.6.3 and 3.6.8, pp. 30–31; §4.2, pp. 40–41"
+url = "https://arxiv.org/abs/1811.09513v3"
+fetched_from = "https://arxiv.org/pdf/1811.09513v3"
+fetched_at = "2026-10-24T10:43:43Z"
+sha256 = "b43e7eec00416326ab508ba6af06ec004b186a09874a6a58c1b455170e57a675"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-24"
+version_note = "arXiv v3"
+cited_for = ["RA.7"]
+
+[[source]]
+id = "lz"
+authors = "Vincent Lafforgue, Xinwen Zhu"
+title = "Décomposition au-dessus des paramètres de Langlands elliptiques"
+year = 2018
+arxiv = "1811.07976v2"
+locator_scheme = "theorem"
+locator = "§1, definition before Proposition 1.2, p. 3; §2, p. 4; §3, p. 5 (Lie(S_σ) = (Ad)^σ); §3, p. 5; §1, Theorem 1.1 and Proposition 1.2 with Remarks 1.3–1.5, pp. 2–3; §4, Lemma 4.1, p. 7; §2, Corollary 2.1, p.4"
+url = "https://arxiv.org/abs/1811.07976v2"
+fetched_from = "https://arxiv.org/pdf/1811.07976v2"
+fetched_at = "2026-10-24T10:43:48Z"
+sha256 = "871c208f006f5496b3776e1050a20ab85ef88ef7066e351ca188159daf56151d"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-24"
+version_note = "arXiv v2"
+cited_for = ["RA.6"]
+
+[[source]]
+id = "sun"
+authors = "Shenghao Sun"
+title = "L-series of Artin stacks over finite fields"
+year = 2010
+venue = "Algebra and Number Theory, 6:1 (2012), 47-122"
+doi = "10.2140/ant.2012.6.47"
+arxiv = "1008.3689v2"
+locator_scheme = "theorem"
+locator = "§2, Theorem 2.11, p. 14 (arXiv v2)"
+url = "https://arxiv.org/abs/1008.3689v2"
+fetched_from = "https://arxiv.org/pdf/1008.3689v2"
+fetched_at = "2026-10-24T10:43:55Z"
+sha256 = "85947e31a4b0f65e7d1cfad998a8f28969411d2e8dca561b645ef266ae8c8d1b"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-24"
+version_note = "arXiv v2"
+cited_for = ["RA.6"]
+
+[[source]]
+id = "glo"
+authors = "Wee Teck Gan, Luis Lomelí"
+title = "Globalization of supercuspidal representations over function fields and applications"
+year = 2015
+arxiv = "1510.00131v2"
+locator_scheme = "theorem"
+locator = "Theorem 1.1, pp. 1–2; §8, Lemma 8.1 and Proposition 8.2 with the remark after it, pp. 38–40"
+url = "https://arxiv.org/abs/1510.00131v2"
+fetched_from = "https://arxiv.org/pdf/1510.00131v2"
+fetched_at = "2026-10-24T10:44:01Z"
+sha256 = "5f4adc241b2034f97c74719a28c3c8095314fb459e297a29964c52868ecabff4"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-24"
+version_note = "arXiv v2"
+cited_for = ["RA.4"]
+
+[[source]]
+id = "hny"
+authors = "Jochen Heinloth, Ngo Bao Chau, Zhiwei Yun"
+title = "Kloosterman sheaves for reductive groups"
+year = 2010
+arxiv = "1005.2765v1"
+locator_scheme = "theorem"
+locator = "Theorems 1–2 and Corollary 2.13, pp. 16–18 (arXiv v1)"
+url = "https://arxiv.org/abs/1005.2765v1"
+fetched_from = "https://arxiv.org/pdf/1005.2765v1"
+fetched_at = "2026-10-24T10:44:07Z"
+sha256 = "0918c93759cb2d19fe3521c332b45e9c36e4d78b87b84112d65c82761c482004"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-24"
+version_note = "arXiv v1"
+cited_for = ["RA.4"]
+
+[[source]]
+id = "ty"
+authors = "Richard Taylor, Teruyoshi Yoshida"
+title = "Compatibility of local and global Langlands correspondences"
+year = 2004
+arxiv = "math/0412357v2"
+locator_scheme = "theorem"
+locator = "§1, Lemma 1.4(3)–(6) and proof, pp.6–7"
+url = "https://arxiv.org/abs/math/0412357v2"
+fetched_from = "https://arxiv.org/pdf/math/0412357v2"
+fetched_at = "2026-10-24T10:44:12Z"
+sha256 = "a17d283d3a605cd3f031a1178f2914254ee9cbe430b11cfbff8c382e8cd1713b"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-24"
+version_note = "arXiv v2"
+cited_for = ["RA.0"]
+
+[[source]]
+id = "laf02"
+authors = "Laurent Lafforgue"
+title = "Chtoucas de Drinfeld et correspondance de Langlands"
+year = 2002
+doi = "10.1007/s002220100174"
+locator_scheme = "theorem"
+locator = "Théorème VII.6, Proposition VII.7, Corollaire VII.8, pp. 198–202"
+url = "https://www.laurentlafforgue.org/math/fulltext.pdf"
+fetched_from = "https://www.laurentlafforgue.org/math/fulltext.pdf"
+fetched_at = "2026-10-24T10:44:57Z"
+sha256 = "af732dac0d2dd00056ff46075f069f09cb2239bcac5cec68b13d17faa8d2ea76"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-24"
+cited_for = ["RA.1"]
+
+[[source]]
+id = "fs"
+authors = "Laurent Fargues, Peter Scholze"
+title = "Geometrization of the local Langlands correspondence"
+year = 2021
+arxiv = "2102.13459v4"
+locator_scheme = "theorem"
+locator = "Theorem I.9.6(ii), (vi)–(vii), p. 36; Theorem VIII.4.1 and Corollary VIII.4.3, pp. 291–293; Proposition IX.3.2, pp. 326–327; Definition/Proposition IX.4.1, p. 327; Proposition IX.5.1, pp. 327–328; Theorem IX.5.2, p. 329"
+url = "https://arxiv.org/abs/2102.13459v4"
+fetched_from = "https://arxiv.org/pdf/2102.13459v4"
+fetched_at = "2026-10-24T10:47:53Z"
+sha256 = "1f8040751d3424f59ae56651d990d7b2d5030e6b7cae58bc2fc683358dfc2027"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-24"
+version_note = "arXiv v4"
+cited_for = ["RA.3"]
+
+[[source]]
+id = "xz"
+authors = "Daxin Xu, Xinwen Zhu"
+title = "Bessel F-isocrystals for reductive groups"
+year = 2019
+doi = "10.1007/s00222-021-01079-5"
+arxiv = "1910.13391v2"
+locator_scheme = "theorem"
+locator = "arXiv v2: Theorems 4.2.1, 4.3.3 and 4.4.4, pp. 42–50; §§4.3.4–4.3.6, pp. 48–49; §4.4.1, pp. 49–50; §4.4.2, p. 50; §4.3.1 and Lemma 4.5.5, pp. 47, 52–53; Corollaries 4.5.6–4.5.7 and Remark 4.5.8, pp. 53–54"
+url = "https://arxiv.org/abs/1910.13391v2"
+fetched_from = "https://arxiv.org/pdf/1910.13391v2"
+fetched_at = "2026-10-24T10:48:54Z"
+sha256 = "b8d153ef1822a20e8179005d4775e43fc3af7430d840d2b077b45cb8583667cd"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-24"
+version_note = "Read arXiv v2: Corollary 4.5.6, Corollary 4.5.7 and Remark 4.5.8; these correspond to published Corollaries 4.5.7–4.5.8 and Remark 4.5.10 as cited in Gan–Harris–Sawin."
+cited_for = ["RA.4"]
+
+[[source]]
+id = "stacks-as"
+authors = "The Stacks Project Authors"
+title = "The Stacks Project, Étale Cohomology"
+year = 2026
+locator_scheme = "tag"
+locator = "Tags 0A3K, 03PL and 03R7, Lemmas 63.1 and 28.1 and Theorem 61.6, pp. 97, 31 and 95"
+url = "https://stacks.math.columbia.edu/tag/0A3J"
+fetched_from = "https://stacks.math.columbia.edu/download/etale-cohomology.pdf#nameddest=0A3J"
+fetched_at = "2026-10-25T05:27:51Z"
+sha256 = "71b2eb78422e599bedadb929b22812daac27c0c35510b880acb6c4489a5ea363"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-25"
+cited_for = ["5.2"]
+
+[[source]]
+id = "andre-bessel"
+authors = "Yves André"
+title = "Représentations galoisiennes et opérateurs de Bessel p-adiques"
+year = 2002
+venue = "Annales de l’Institut Fourier 52 (2002), 779–808"
+locator_scheme = "theorem"
+locator = "Proposition 3.2 and proof, pp. 788–789"
+url = "https://www.numdam.org/item/AIF_2002__52_3_779_0/"
+fetched_from = "https://www.numdam.org/item/AIF_2002__52_3_779_0.pdf"
+fetched_at = "2026-10-25T12:03:11Z"
+sha256 = "74b46efc4191486bfab60b4d5ab67d0823599b85703c19b14dd0181b311b1b32"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-25"
+cited_for = ["4.0"]
+
+[[source]]
+id = "zhu-fg"
+authors = "Xinwen Zhu"
+title = "Frenkel–Gross’ irregular connection and Heinloth–Ngô–Yun’s are the same"
+year = 2016
+arxiv = "1603.05796v2"
+locator_scheme = "theorem"
+locator = "arXiv v2: Theorem 8 and Corollary 9, pp. 9–10; Lemmas 17–21 and Remark 5.1, pp. 20–23"
+url = "https://arxiv.org/abs/1603.05796v2"
+fetched_from = "https://arxiv.org/pdf/1603.05796v2"
+fetched_at = "2026-10-25T16:48:19Z"
+sha256 = "c9afc9e4216198e73ec5f2fb26c3480aa525a22dd4ca57b951b88622de8143e7"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-25"
+version_note = "arXiv v2"
+cited_for = ["4.0"]
+
+[[source]]
+id = "tadic-gl"
+authors = "Marko Tadić"
+title = "Classification of unitary representations in irreducible representations of general linear group (non-Archimedean case)"
+year = 1986
+venue = "Annales scientifiques de l'École normale supérieure 19"
+doi = "10.24033/asens.1510"
+locator_scheme = "theorem"
+locator = "Theorem D, pp. 338–339"
+url = "https://doi.org/10.24033/asens.1510"
+fetched_from = "https://www.numdam.org/item/10.24033/asens.1510.pdf"
+fetched_at = "2026-11-05T05:05:25Z"
+sha256 = "15ab6a6dbb045332ce5bd15e9531635d2e9fe28a015b52b128917f7fdad3c40a"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-05"
+cited_for = ["5.1"]
+
+[[source]]
+id = "barbasch-spherical"
+authors = "Dan Barbasch"
+title = "The unitary spherical spectrum for split classical groups"
+year = 2010
+venue = "Journal of the Institute of Mathematics of Jussieu 9 (2010), 265–356"
+doi = "10.1017/S1474748009000218"
+arxiv = "math/0609828"
+locator_scheme = "theorem"
+locator = "arXiv v5: §3.1, Theorem 3.1 (the complementary series attached to each nilpotent orbit for split Sp(2n) and SO(m), p-adic case), p. 20; §7.2, Theorem 7.2 (necessary conditions for unitarity), p. 54"
+url = "https://arxiv.org/abs/math/0609828"
+fetched_from = "https://arxiv.org/pdf/math/0609828"
+fetched_at = "2026-11-05T05:06:31Z"
+sha256 = "dee91d2b4c270ea10cee520da836c5a24744284ea2460d16383640c813f91366"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-05"
+version_note = "arXiv v5 (2009) numbering; the published Journal of the Institute of Mathematics of Jussieu version is cited by its DOI"
+cited_for = ["5.1"]
+
+[[source]]
+id = "ciubotaru-F4"
+authors = "Dan Ciubotaru"
+title = "The unitary I-spherical dual for split p-adic groups of type F4"
+year = 2005
+venue = "Representation Theory 9 (2005), 94–137"
+doi = "10.1090/S1088-4165-05-00206-2"
+locator_scheme = "theorem"
+locator = "Theorem 3.5 (spherical unitary parameters of the graded Hecke algebra of type F4), p. 105"
+url = "https://www.ams.org/journals/ert/2005-009-04/S1088-4165-05-00206-2/S1088-4165-05-00206-2.pdf"
+fetched_from = "https://www.ams.org/journals/ert/2005-009-04/S1088-4165-05-00206-2/S1088-4165-05-00206-2.pdf"
+fetched_at = "2026-11-05T05:06:37Z"
+sha256 = "d27a762127b4afdf206cdf3559b7c37f8f6d1160bc9b08f3db27a17989107990"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-11-05"
+cited_for = ["5.1"]
+
+[[source]]
+id = "ciubotaru-E6"
+authors = "Dan Ciubotaru"
+title = "Unitary I-spherical representations for split p-adic E6"
+year = 2006
+venue = "Representation Theory 10 (2006), 435–480"
+doi = "10.1090/S1088-4165-06-00301-3"
+locator_scheme = "theorem"
+locator = "Introduction, Theorems (1), (1′) and (2) (the spherical unitary dual of split E6), pp. 437–438"
+url = "https://www.ams.org/journals/ert/2006-10-17/S1088-4165-06-00301-3/S1088-4165-06-00301-3.pdf"
+fetched_from = "https://www.ams.org/journals/ert/2006-10-17/S1088-4165-06-00301-3/S1088-4165-06-00301-3.pdf"
+fetched_at = "2026-11-05T05:07:22Z"
+sha256 = "9f1bf118e6b30fb882588af643f430376768eafb79ea457e5c92d20c0b024146"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-11-05"
+cited_for = ["5.1"]
+
+[[source]]
+id = "aubert-duality"
+authors = "Anne-Marie Aubert"
+title = "Dualité dans le groupe de Grothendieck de la catégorie des représentations lisses de longueur finie d’un groupe réductif p-adique"
+year = 1995
+venue = "Transactions of the American Mathematical Society 347 (1995), no. 6, 2179–2189; erratum ibid. 348 (1996), 4687–4690"
+doi = "10.1090/S0002-9947-1995-1285969-0"
+locator_scheme = "theorem"
+locator = "Théorème 1.7 (compatibility with induction and Jacquet functors, involutivity, cuspidal sign (−1)^{|S|}), p. 2181; Corollaire 3.9 (irreducibility of the dual and preservation of the cuspidal support), p. 2189"
+url = "https://www.ams.org/journals/tran/1995-347-06/S0002-9947-1995-1285969-0/S0002-9947-1995-1285969-0.pdf"
+fetched_from = "https://www.ams.org/journals/tran/1995-347-06/S0002-9947-1995-1285969-0/S0002-9947-1995-1285969-0.pdf"
+fetched_at = "2026-11-05T05:11:19Z"
+sha256 = "57af9c46769f6edd8e142ddaf465e89acfa2f2147db222d26879a28a06df9693"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-11-05"
+cited_for = ["8.0"]
+
+[[source]]
+id = "barbasch-moy-unitarity"
+authors = "Dan Barbasch, Allen Moy"
+title = "A unitarity criterion for p-adic groups"
+year = 1989
+venue = "Inventiones Mathematicae 98 (1989), no. 1, 19–37"
+doi = "10.1007/BF01388842"
+locator_scheme = "page"
+locator = "the unitarity criterion reducing Iwahori-spherical unitarity to the Iwahori–Hecke algebra module with its star structure, Introduction and §§1–3, pp. 19–37"
+url = "https://doi.org/10.1007/BF01388842"
+licence_class = "none"
+status = "uncertified"
+accessed = "2026-11-05"
+note = "Published behind a paywall; cited by locator alone. The Göttingen digitisation of Inventiones (GDZ) exposes only the volume landing page, not the article text."
+cited_for = ["5.1"]
+
+[[source]]
+id = "barbasch-moy-whittaker"
+authors = "Dan Barbasch, Allen Moy"
+title = "Whittaker models with an Iwahori fixed vector"
+year = 1994
+venue = "Contemporary Mathematics 177 (American Mathematical Society, 1994), 101–105"
+locator_scheme = "page"
+locator = "the whole note: the Iwahori-spherical Langlands quotient admits a Whittaker model exactly when the unramified principal series is irreducible, pp. 101–105"
+url = "https://pubs.ams.org/ebooks/conm/177"
+licence_class = "none"
+status = "uncertified"
+accessed = "2026-11-05"
+note = "Contemporary Mathematics volume behind a paywall; cited by locator alone."
+cited_for = ["5.1"]
+
+[[source]]
+id = "barbasch-ciubotaru-E"
+authors = "Dan Barbasch, Dan Ciubotaru"
+title = "Whittaker unitary dual of affine graded Hecke algebras of type E"
+year = 2009
+venue = "Compositio Mathematica 145 (2009), no. 6, 1563–1616"
+arxiv = "0708.4036v2"
+locator_scheme = "section"
+locator = "arXiv v2: §§3.1–3.2 (spherical principal series and the 0-complementary series), pp. 16–17; §5.1, main theorem (the complementary series attached to a nilpotent orbit of type E equals the 0-complementary series of the centralizer Hecke algebra, with the listed exceptions), p. 26"
+url = "https://arxiv.org/abs/0708.4036v2"
+fetched_from = "https://arxiv.org/pdf/0708.4036v2"
+fetched_at = "2026-11-05T07:20:42Z"
+sha256 = "db79227f4a3ac16839780585fa6959458c94a097f42926c445a223d5331dbfd4"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-05"
+version_note = "arXiv v2 (2008) numbering; the published Compositio Mathematica version is cited by its DOI"
+cited_for = ["5.1"]
+
+[[source]]
+id = "gross-reeder"
+authors = "Benedict H. Gross, Mark Reeder"
+title = "Arithmetic invariants of discrete Langlands parameters"
+year = 2010
+venue = "Duke Mathematical Journal 154 (2010), no. 3, 431–508"
+doi = "10.1215/00127094-2010-043"
+locator_scheme = "theorem"
+locator = "author's preprint: §9.2 (affine generic characters of Z(k)I+, simply connected almost simple split G) and Proposition 9.3 (irreducibility and supercuspidality of the compact induction, and its proof by the Mackey decomposition with Lemma 9.1), pp. 60–63"
+url = "https://abel.math.harvard.edu/~gross/preprints/AdjointGamma5.pdf"
+fetched_from = "https://abel.math.harvard.edu/~gross/preprints/AdjointGamma5.pdf"
+fetched_at = "2026-11-07T17:53:09Z"
+sha256 = "f3a74e45c72ea6b1c59d176097055bf637dffdc0aa471c1e57dbf3ccbd739af1"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-07"
+version_note = "author's preprint of 1 March 2010 on the first author's page; section, proposition and page numbers are those of this preprint, not checked against the Duke pagination"
+cited_for = ["4.0"]

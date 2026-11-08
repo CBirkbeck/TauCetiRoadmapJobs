@@ -85,10 +85,10 @@ authors = "John Milnor"
 title = "Construction of Universal Bundles, II"
 year = 1956
 doi = "10.2307/1970012"
-url = "https://doi.org/10.2307/1970012"
-licence_class = "none"
 locator_scheme = "section"
 locator = "2-3"
+url = "https://doi.org/10.2307/1970012"
+licence_class = "none"
 status = "uncertified"
 cited_for = ["C1.1b"]
 note = "Annals of Mathematics 63 (1956) 430-436; the JSTOR landing page is paywalled, cited by locator only"
@@ -99,22 +99,85 @@ authors = "John Milnor, James D. Stasheff"
 title = "Characteristic Classes"
 year = 1974
 doi = "10.1515/9781400881826"
-url = "https://doi.org/10.1515/9781400881826"
-licence_class = "none"
 locator_scheme = "section"
 locator = "19"
+url = "https://doi.org/10.1515/9781400881826"
+licence_class = "none"
 status = "uncertified"
 cited_for = ["C2.1", "C3.2", "C7.1"]
 note = "Annals of Mathematics Studies 76, Princeton University Press; no legal open copy, cited by locator only (sections 10, 14, 19, Theorem 15.3)"
 
 [[source]]
 id = "milnor-tdv"
-licence_class = "none"
 authors = "John Milnor"
 title = "Topology from the Differentiable Viewpoint"
 year = 1965
 locator_scheme = "section"
 locator = "6"
+licence_class = "none"
 status = "uncertified"
 cited_for = ["C2.3"]
 note = "University Press of Virginia 1965, Princeton Landmarks reprint 1997; no DOI located and no legal open copy, cited by locator only"
+
+[[source]]
+id = "cohen-fiber-bundles"
+locator_scheme = "section"
+locator = "1.2.2, 3.4.2"
+url = "https://math.stanford.edu/~ralph/fiber.pdf"
+fetched_from = "https://math.stanford.edu/~ralph/fiber.pdf"
+fetched_at = "2026-11-06T08:49:54Z"
+sha256 = "1416c4bf496b7e5f6c9d0c569ac42a298dfb6157db66968c189a0fd08b8ccf78"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-06"
+cited_for = ["C7.3a"]
+
+[[source]]
+id = "bott-tu"
+authors = "Raoul Bott, Loring W. Tu"
+title = "Differential Forms in Algebraic Topology"
+year = 1982
+venue = "Graduate Texts in Mathematics"
+doi = "10.1007/978-1-4757-3951-0"
+locator_scheme = "section"
+locator = "6, 11-14, 20-23"
+url = "https://doi.org/10.1007/978-1-4757-3951-0"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["C2.1"]
+
+[[source]]
+id = "alekseev-meinrenken-chern-weil"
+authors = "A. Alekseev, E. Meinrenken"
+title = "Lie theory and the Chern-Weil homomorphism"
+year = 2003
+venue = "Ann. Sci. Ecole Norm. Sup. (4) 38 (2005), no. 2, 303--338"
+arxiv = "math/0308135v1"
+locator_scheme = "section"
+locator = "3.1"
+url = "https://arxiv.org/abs/math/0308135v1"
+fetched_from = "https://arxiv.org/pdf/math/0308135v1"
+fetched_at = "2026-11-07T23:48:42Z"
+sha256 = "269729fefe71c980063fa7cba7f815dfdd16b1c7dfd370409bc4ea78e83f7df8"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-07"
+version_note = "arXiv v1"
+cited_for = ["C5a.3"]
+
+[[source]]
+id = "hatcher-at"
+authors = "Allen Hatcher"
+title = "Algebraic Topology"
+year = 2002
+locator_scheme = "theorem"
+locator = "Theorem 3C.4, Corollary 4D.3, Section 3.G"
+url = "https://pi.math.cornell.edu/~hatcher/AT/AT.pdf"
+fetched_from = "https://pi.math.cornell.edu/~hatcher/AT/AT.pdf"
+fetched_at = "2026-11-07T23:50:13Z"
+sha256 = "bebb3032bf9021b956da3bd070eb6c67dc662cf849be9cdf6679f677560e5618"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-07"
+cited_for = ["C5a.2", "C5a.4", "C5a.5", "C5a.7"]

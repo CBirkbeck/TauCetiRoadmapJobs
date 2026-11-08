@@ -35,3 +35,211 @@ licence_class = "author-page"
 status = "certified"
 accessed = "2026-11-03"
 cited_for = ["0.2"]
+
+[[source]]
+id = "rudakov-shafarevich-inseparable"
+authors = "A. N. Rudakov; I. R. Shafarevich"
+title = "Inseparable morphisms of algebraic surfaces"
+year = 1976
+venue = "Mathematics of the USSR-Izvestiya 10 (1976), no. 6, 1205-1237"
+doi = "10.1070/IM1976v010n06ABEH001833"
+locator_scheme = "theorem"
+locator = "§1, Lemma 1 and Corollary, pp.1206–1207; §2, Theorem 5 and Corollaries 1–2, pp.1216–1217"
+url = "https://m.mathnet.ru/php/getFT.phtml?jrnid=im&paperid=2260&what=fullteng"
+fetched_from = "https://m.mathnet.ru/links/987e84b91b840d1568adaef4c0c787be/im2260_eng.pdf"
+fetched_at = "2026-11-07T12:47:16Z"
+sha256 = "0c16411ef53a678a9ef21a599b0b99903f53a0e4772ccdddad57423d3829a6fa"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-07"
+cited_for = ["0.2"]
+
+[[source]]
+id = "martin-infinitesimal-automorphisms"
+authors = "Gebhard Martin"
+title = "Infinitesimal automorphisms of algebraic varieties and vector fields on elliptic surfaces"
+year = 2020
+venue = "Alg. Number Th. 16 (2022) 1655-1704"
+doi = "10.2140/ant.2022.16.1655"
+arxiv = "2004.07227v3"
+locator_scheme = "theorem"
+locator = "Theorem D, pp.3–4; Corollary 1.1, p.4, proof p.40; Example 5.12, pp.36–37"
+url = "https://arxiv.org/abs/2004.07227v3"
+fetched_from = "https://arxiv.org/pdf/2004.07227v3"
+fetched_at = "2026-11-07T12:47:54Z"
+sha256 = "be7eabe7f76d145596666152cccc640584908517341f7b1fc6146772509f0e0f"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-07"
+version_note = "arXiv v3"
+cited_for = ["0.2"]
+
+[[source]]
+id = "gounelas-liedtke-symmetric-differentials"
+authors = "Frank Gounelas, Christian Liedtke"
+title = "Symmetric Differentials on K3 Surfaces"
+year = 2026
+arxiv = "2608.17953v1"
+locator_scheme = "theorem"
+locator = "Proposition 2.2(2), p.6"
+url = "https://arxiv.org/abs/2608.17953v1"
+fetched_from = "https://arxiv.org/pdf/2608.17953v1"
+fetched_at = "2026-11-07T12:47:59Z"
+sha256 = "bc4e35e34e75ef9545c3e1ec5ccd40331045cba1cb5a1fb12896b5f6a2efbeec"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-07"
+version_note = "arXiv v1"
+cited_for = ["0.2"]
+
+[[source]]
+id = "artebani-sarti-taki"
+authors = "Michela Artebani, Alessandra Sarti, Shingo Taki"
+title = "K3 surfaces with non-symplectic automorphisms of prime order"
+year = 2009
+arxiv = "0903.3481v2"
+locator_scheme = "theorem"
+locator = "Theorem 3.1, p.10"
+url = "https://arxiv.org/abs/0903.3481v2"
+fetched_from = "https://arxiv.org/pdf/0903.3481v2"
+fetched_at = "2026-11-07T12:48:04Z"
+sha256 = "6cb84208741a9af008b0563fd56e72cf97958069d239205f52260bbccd4f8b4b"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-07"
+version_note = "arXiv v2"
+cited_for = ["7.2"]
+
+[[source]]
+id = "gritsenko-hulek-enriques-moduli"
+authors = "Valery Gritsenko, Klaus Hulek"
+title = "Moduli of polarized Enriques surfaces"
+year = 2015
+arxiv = "1502.02723v2"
+locator_scheme = "section"
+locator = "§2, pp.3–5, Theorem 2.1 and Remark 2.2; §3, p.8, equation (8)"
+url = "https://arxiv.org/abs/1502.02723v2"
+fetched_from = "https://arxiv.org/pdf/1502.02723v2"
+fetched_at = "2026-11-07T12:48:28Z"
+sha256 = "cb8689c138812d7a2d365db7db8dc1d704766b620d2655aa49288d89fed737fc"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-07"
+version_note = "arXiv v2"
+cited_for = ["7.1", "7.3"]
+
+[[source]]
+id = "dolgachev-enriques-introduction"
+authors = "Igor V. Dolgachev"
+title = "A brief introduction to Enriques surfaces"
+year = 2014
+arxiv = "1412.7744v2"
+locator_scheme = "section"
+locator = "§5, pp.15–17"
+url = "https://arxiv.org/abs/1412.7744v2"
+fetched_from = "https://arxiv.org/pdf/1412.7744v2"
+fetched_at = "2026-11-07T12:48:34Z"
+sha256 = "cc7c8c8c1655dc62adae515d0680d6d824d24e54573c3b6ebefd1d317f5ca020"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-07"
+version_note = "arXiv v2"
+cited_for = ["7.3"]
+
+[[source]]
+id = "huybrechts-hyperkahler-torelli"
+authors = "Daniel Huybrechts"
+title = "A global Torelli theorem for hyperkaehler manifolds (after Verbitsky)"
+year = 2011
+venue = "Astérisque No. 348 (2012), 375-403"
+arxiv = "1106.5573v1"
+locator_scheme = "section"
+locator = "§§3–5"
+url = "https://arxiv.org/abs/1106.5573v1"
+fetched_from = "https://arxiv.org/pdf/1106.5573v1"
+fetched_at = "2026-11-07T12:48:40Z"
+sha256 = "9125a5de7efe0fc69d58fa34e44360efebfdcd1be8ba0182cfd0ea0d03ead801"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-07"
+version_note = "arXiv v1"
+cited_for = ["5", "6"]
+
+[[source]]
+id = "stacks-09NU"
+authors = "The Stacks project authors"
+title = "The Stacks project, Chapter 20 (Cohomology of Sheaves), Lemma 20.6.1"
+year = 2026
+locator_scheme = "tag"
+locator = "Tag 09NU (§20.6, Lemma 20.6.1)"
+url = "https://stacks.math.columbia.edu/tag/09NU"
+fetched_from = "https://stacks.math.columbia.edu/download/cohomology.pdf#nameddest=09NU"
+fetched_at = "2026-11-07T12:48:56Z"
+sha256 = "23fbd6af99fe8f0b36a010c0b69ebb0f0f54761f53b530c685b1375001bb5893"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-07"
+cited_for = ["gap:integral-topology"]
+
+[[source]]
+id = "shen-fried-survey"
+authors = "Shu Shen"
+title = "Analytic Torsion and Dynamical Flow: A Survey on the Fried Conjecture"
+year = 2021
+venue = "Progress in Mathematics 338 (2021), 247-299"
+locator_scheme = "section"
+locator = "§2.1, Assumption 2.1, Definition 2.2 and equations (2.7)–(2.8), pp.256–257"
+url = "https://webusers.imj-prg.fr/~shu.shen/publication/SurveyFried"
+fetched_from = "https://webusers.imj-prg.fr/~shu.shen/publication/SurveyFried"
+fetched_at = "2026-11-07T12:48:59Z"
+sha256 = "8d7cf4f595ff3a403aa0cd57b7e37e7958f257c0cfd8c342f26bbb8d9b5d3ea4"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-07"
+cited_for = ["7.2"]
+
+[[source]]
+id = "nikulin-factor-groups"
+authors = "V. V. Nikulin"
+title = "Factor groups of groups of automorphisms of hyperbolic forms with respect to subgroups generated by 2-reflections. Algebrogeometric applications"
+year = 1983
+venue = "Journal of Soviet Mathematics 22"
+doi = "10.1007/BF01094757"
+locator_scheme = "theorem"
+locator = "Theorem 4.2.2"
+url = "https://doi.org/10.1007/BF01094757"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["7.2"]
+
+[[source]]
+id = "rudakov-shafarevich"
+authors = "A. N. Rudakov, I. R. Shafarevich"
+title = "Surfaces of type K3 over fields of finite characteristic"
+year = 1983
+venue = "Journal of Soviet Mathematics 22"
+doi = "10.1007/BF01094758"
+locator_scheme = "page"
+locator = "p.1502"
+url = "https://doi.org/10.1007/BF01094758"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["0.2"]
+
+[[source]]
+id = "stacks-02UP"
+authors = "The Stacks project authors"
+title = "The Stacks project, Chapter 37 (More on Morphisms), Lemma 37.44.2"
+year = 2026
+locator_scheme = "tag"
+locator = "Tag 02UP (§37.44, Lemma 37.44.2)"
+url = "https://stacks.math.columbia.edu/tag/02UP"
+fetched_from = "https://stacks.math.columbia.edu/download/more-morphisms.pdf#nameddest=02UP"
+fetched_at = "2026-11-08T04:28:41Z"
+sha256 = "59df05f5d52f453b17677398c72a51fe156367f460f6dcfdf764d9631b7c787c"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-08"
+cited_for = ["0.2"]

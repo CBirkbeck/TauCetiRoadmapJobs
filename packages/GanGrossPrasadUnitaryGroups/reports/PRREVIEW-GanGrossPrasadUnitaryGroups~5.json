@@ -1,0 +1,4 @@
+{"review": {"status": "needs_changes", "reviewer": "independent-review-PRREVIEW-GanGrossPrasadUnitaryGroups~5",
+            "head": "42416416da1684d643091e554cad5f6292b9e678", "pr": 1404, "folder": "GanGrossPrasadUnitaryGroups", "date": "2026-11-07",
+            "findings": 1, "blocking": 0,
+            "notes": "incremental re-review of 15 changed lines since 35729d4: the four README findings of r4 (Howe finiteness stated with debacker-homogeneity-intro Thm 2.2.1 and recorded in the manifest; finite-length characters via constituents; strongly cuspidal, J_M, θ_f, X(G), D(π), θ̂_f defined with bp-arch locators; bpcz pp. 88-89) verified repaired at their locators; the seeded sample does not fall in the diff (earlier rounds verified it); gate OK, depcheck 0 problems, lake env lean clean on the unchanged declaration-free Suggested.lean; one P3 remains: the board's plan.json gaps (36 entries, unchanged since submission) disagree with the README's 34 slugs."}}

@@ -1,0 +1,53 @@
+# Review of TemperleyLiebOperatorAlgebras (pull request #867 at 7cf3fee)
+
+**Verdict:** accepted
+
+Incremental re-review of the 15 lines changed since `c4b9edf` (8 insertions, 7 deletions, all in `README.md`: the TemperleyLieb scope bullet at `:80–86` and the Conventions entry for the closure trace at `:160–166`). Nothing outside the folder changed (`git diff --stat origin/main...HEAD` outside the folder is empty), and `Suggested.lean` is byte-for-byte the file the previous review read. The gate passes at this head (every counter `0`, `OK`), `Suggested.lean` elaborates with exactly the five `sorry` warnings, and the dependency check reports no problem. The previous R02 is repaired exactly as asked, and the repair introduced nothing new. The previous R01 (two owners of the positive Temperley–Lieb completion) was answered by the repair report as not actionable in this package, with the reason that the direction of supply is already recorded on main; the reason holds (below), so the finding is settled and not raised again. No finding remains, so this roadmap folder is ready for a human's final approval.
+
+## Previous findings
+
+- R01 — not repaired: settled not actionable; the repair report's reason is that QuantumGroups on main (`TauCetiRoadmap/QuantumGroups/README.md:43`) lists this roadmap as its supplier of A1–A6, so the direction of supply is fixed on main and the two revisions (#1649 at `968db79` §0.4, #1705 at `a938955c` §0.3) restate what main imports. Rechecked: main's row is there, the former-label table (`README.md:382–390`) resolves A1–A6 into 1.1, 1.2/1.4, 1.3, Subfactors 3.2 and 2.1, Subfactors 3.3 and 2.1–2.2, and Layer 3; both revision heads are unchanged and cite this roadmap nowhere; QuantumGroups is not in the merge order, and a revision of a roadmap on main is never a dependency of this one. The duplicate is a defect of those revisions, to be raised there, not of this folder, which is in the state the finding wanted. Not re-raised.
+- R02 — repaired: `README.md:82–83` now reads "`TLAlg R δ n`, `presentedTLEquiv`, the closure trace and its comparison with Tau Ceti's `markovTrace` (Layer 4)", and `:162–163` "independent of `q` by Tau Ceti's `IsMarkovTrace.unique` applied to `isMarkovTrace_markovTrace` at both units"; both are the repair's wording and agree with the contract at `:259–261` and `:271–276`.
+
+## Verified sound
+
+**Scope and counts.** `git diff --stat c4b9edf..HEAD`: `README.md` 15 lines, no other file; the folder has only `README.md` and `Suggested.lean`. Pins at this head: Mathlib `1b1ccf4b`, Tau Ceti `2fd255d9` (`lake-manifest.json`), unchanged since the previous review. 2 pinned declarations opened; 1 supplier section on main resolved; 2 QuantumGroups revision heads and main's QuantumGroups re-read; 1 gate run; 1 elaboration; 1 dependency check; 3 adversarial rows with values for the changed statements, the rest carried.
+
+**Gate, build, dependency check.** Gate rerun on this head as prescribed: `set_option=0 blob=0 latex=0 tex=0 prnum=0 sorry-data=0 sorry-examples=0 residue=0 private-paths=0 imports=0 mathlib-subimports=0 no-import-mathlib=0 lean-lines=0 statement-hygiene=0 forbidden=0 dropped=0 readme-ids-missing=0 empty-sections=0 round-labels=0 long-fences=0 layer-ids=0 target-ids=0 depcheck=0 metadata=0 stray-files=0 dirty=0 outside-folder=0 source-material=0 OK`, exit 0. `lake env lean TauCetiRoadmap/TemperleyLiebOperatorAlgebras/Suggested.lean` from the pull-request worktree: exit 0 in 8 s, exactly five `declaration uses sorry` warnings (`:111` `pottsPartition_eq_fkPartition`, `:155` `exists_evenCliffordModel`, `:292` `exists_cubicFixedModel`, `:318` `finite_gaussianBraid_closure`, `:337` `markovTrace_neg_one_pow_nonneg_iff`), no Lake module-system warning, nothing else. Dependency check rerun as prescribed:
+
+```text
+depcheck: 239 roadmaps, 2366 edges, 0 problem(s)
+```
+
+No UPWARD, CYCLE or `moved:` line. The overlap scan lists no open pull request changing this roadmap, no dropped id and no revision-only id; `roadmaps resolve` finds every citation and Lean name of the README. Since `Suggested.lean` did not change, the worker's 26 elaborated signatures (0 with a dropped binder) and the padding probe of the earlier rounds stand.
+
+**The pinned declarations the changed lines cite, at Tau Ceti `2fd255d9`.** `TauCeti/Algebra/TemperleyLieb/Trace.lean:52` `structure IsMarkovTrace (R) [CommSemiring R] (δ : R)`, `:61` `variable {R} [CommSemiring R] {δ : R}`, `:88` `theorem unique {tr'} (htr : IsMarkovTrace R δ tr) (htr' : IsMarkovTrace R δ tr') : tr = tr'`. `TauCeti/Algebra/TemperleyLieb/MarkovTrace.lean:86` `variable {R} [CommRing R] (q : Rˣ)`, `:454` `(hδ : δ = -((q : R) + ((q⁻¹ : Rˣ) : R)))`, `:460` `def markovTrace : TemperleyLieb R δ n →ₗ[R] R`, `:509` `theorem isMarkovTrace_markovTrace : IsMarkovTrace R δ (fun _ ↦ markovTrace q hδ)`, `:518` `IsMarkovTrace.eq_markovTrace`. The sign convention the README states (`δ = −(q + q⁻¹)`, `:157–159` and `:161–162`) is the pin's `hδ`, and "at both units" is two instances of `isMarkovTrace_markovTrace` at the same `δ`, which is what `unique` consumes.
+
+**Supplier resolved.** TemperleyLieb on main `README.md:588–604`: the Layer 4 bullets state the closure trace `tr̂`, say that on the native algebra the predicate is `IsMarkovTrace R δ tr`, and state the comparison `tr̂ ∘ presentedTLEquiv = markovTrace q hδ` by uniqueness whenever `δ = −(q + q⁻¹)`. The scope bullet at `:82–83` ("the closure trace and its comparison with Tau Ceti's `markovTrace` (Layer 4)") names exactly those two items, and the contract at `:271–276` assumes of TemperleyLieb only that `tr̂ ∘ presentedTLEquiv` satisfies the native predicate; the predicate and its uniqueness are listed as Tau Ceti's at `:224–227` and `:259–261`. The three passages now agree.
+
+**Ownership rechecked.** QuantumGroups on main `README.md:43` (supplier row "TemperleyLiebOperatorAlgebras A1–A6"); this README's former-label table `:382–390`; QuantumGroups #1649 head `968db790` (§0.4, `:280–304`) and #1705 head `a938955c` (§0.3, `:244–268`), both unchanged since the previous review, `grep TemperleyLiebOperatorAlgebras` empty at both; `ORDER.txt:242` places this roadmap directly after TemperleyLieb (`:241`), QuantumGroups absent from the order. Main consumes the positive completion from here; the revisions' restatement is theirs to repair.
+
+**Adversarial table.** Rows for every statement the diff leaves untouched (1.1–1.8, 2.1–2.2, 3.1–3.4, 4.1–4.7, the five headlines, the From Tau Ceti block and the consumer contract) are carried forward from the previous report (`PRREVIEW-TemperleyLiebOperatorAlgebras~13`, itself carrying r12 and r9–r11). Computations are exact in `ℚ`, on `TL_n` with `e_i² = δ e_i`, `T_n(1) = δ^n`, `T_(n+1)(ι x) = δ T_n(x)`, `T_(n+1)(ι(x) e_n) = T_n(x)`.
+
+| Statement | Instances tried | Values on both sides | Result | Change |
+|---|---|---|---|---|
+| Conventions `:160–163`: `T_n = markovTrace q hq` for any `q` with `δ = −(q + q⁻¹)`, independent of `q` by `unique` on two instances of `isMarkovTrace_markovTrace` | `R = ℚ`, `δ = −5/2`, `q = 2` and `q′ = 1/2` | `−(2 + 1/2) = −5/2 = −(1/2 + 2)`, so both `hδ` hold at the same `δ`; both families are `IsMarkovTrace ℚ (−5/2)` (`MarkovTrace.lean:509`), so `unique` (`Trace.lean:88`) gives equality in every degree. Spot values from the fields: `n = 1`, on `1`: `δ = −5/2` both; `n = 2`, on `1`: `δ² = 25/4` both; on `e_0 = strandIncl 1 · e_0`: Markov field gives `T_1(1) = −5/2` both | holds; over a field the units at a fixed `δ ≠ ±2` are exactly the pair `q, q⁻¹`, and `q` and `q⁻¹` give the same `δ` | none |
+| Same sentence, the hypothesis "with `δ = −(q + q⁻¹)`" is needed | `q = 1` (`δ = −2`) against `q = −1` (`δ = 2`) | `markovTrace 1` and `markovTrace (−1)` live at different `δ`; `unique` has both families at one `δ`, so it says nothing, and indeed `T_1(1) = −2 ≠ 2` | holds; the sentence quantifies only over `q` at the given `δ` | none |
+| Scope bullet `:82–83`: TemperleyLieb Layer 4 owns the closure trace and its comparison with `markovTrace`; the predicate and uniqueness are not attributed to it | TemperleyLieb main `:588–604`; this README `:224–227`, `:259–261`, `:271–276` | main's Layer 4 states `tr̂` and the comparison bullet, and says the predicate is the native `IsMarkovTrace`; `:259–261` "the Markov-trace predicate with its uniqueness … are Tau Ceti's … not assumed of the roadmap"; `:271–276` assumes of Layer 4 only `tr̂ ∘ presentedTLEquiv` satisfies `IsMarkovTrace` and derives the comparison by `unique` against `isMarkovTrace_markovTrace` | consistent in all three places | none |
+| Ownership paragraph `:72–76` against main's QuantumGroups and the two revisions | main `:43`; #1649 `968db790` `:280–304`; #1705 `a938955c` `:244–268` | main cites A1–A6 from here; the former-label table maps A1–A6 to 1.1, 1.2/1.4, 1.3, Subfactors 3.2 and 2.1, Subfactors 3.3 and 2.1–2.2, Layer 3; the revisions restate and cite nothing; this roadmap is in the order (`:242`), QuantumGroups is not | this roadmap is the owner by main's record; settled | none |
+| Lean file | elaboration | exit 0, five `sorry` warnings at `:111`, `:155`, `:292`, `:318`, `:337`, no other output; file unchanged since `c4b9edf` | holds | none |
+
+**Headline theorems at the pins.** Unchanged from the previous round: the five statable headlines are stated; the absent ones (the comparisons 1.1–1.4) are named in the module docstring with the missing carriers (`TLDiagCat`, `TLAlg`, `presentedTLEquiv`, `negligibleIdeal`, none in `TauCeti/Algebra/TemperleyLieb/` at `2fd255d9`).
+
+**Sample.** None of the changed lines touches a source locator; the seeded targets (1.1–1.2, 1.4–1.7, 2.1–2.2, 3.4, 4.1–4.4, 4.6–4.7) were verified against the cached texts in rounds 6–11 and the verification stands. The changed sentences cite only pinned declarations and a supplier section on main, each opened above.
+
+**Style of the changed lines.** No LaTeX, no pull-request numbers, no process words, no absolute paths; every symbol in a code span; the gate's scanners agree (`latex=0 prnum=0 round-labels=0 residue=0 private-paths=0 statement-hygiene=0`).
+
+## Not verifiable
+
+- Graham–Lehrer 1998, Temperley–Lieb 1971, Baxter–Kelland–Wu 1976: uncertified or paywalled, settled in earlier rounds and cited by locator; none is touched by this change.
+- Ownership against open pull requests whose files the brief does not give (Subfactors #874, if still open, and any roadmap not in the brief's list): not checked beyond `roadmaps grep`, which found no further citer or owner.
+
+## Source issues
+
+- none (the two misprints recorded in r9, Morin-Duchesne–Saint-Aubin (29) and Jones p. 104, are untouched by this change and already in the register).

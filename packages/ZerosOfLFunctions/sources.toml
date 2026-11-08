@@ -1,0 +1,53 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "ZerosOfLFunctions"
+
+[[source]]
+id = "trudgian2015"
+authors = "T. S. Trudgian"
+title = "An improved upper bound for the error in the zero-counting formulae for Dirichlet $L$-functions and Dedekind zeta-functions"
+year = 2012
+venue = "Math. Comp., 2015 vol. 84, no. 294, pp. 2047-2058"
+arxiv = "1206.1844v4"
+locator_scheme = "theorem"
+locator = "Theorem 1"
+url = "https://arxiv.org/abs/1206.1844v4"
+fetched_from = "https://arxiv.org/pdf/1206.1844v4"
+fetched_at = "2026-11-08T08:07:17Z"
+sha256 = "c6e94ad46b6ce7b8e180566970093ce49cedcdc285e5d91c9db76dc410f42b20"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-08"
+version_note = "arXiv v4"
+cited_for = ["7.5"]
+
+[[source]]
+id = "dlmf5"
+locator_scheme = "equation"
+locator = "5.11.1"
+url = "https://dlmf.nist.gov/5.11"
+fetched_from = "https://dlmf.nist.gov/5.11"
+fetched_at = "2026-11-08T08:07:49Z"
+sha256 = "0deb74b95eabc4c80fe68426c9289911e69f4378d8ca435cc0cbbb00eeb0ab47"
+licence_class = "institutional"
+status = "certified"
+accessed = "2026-11-08"
+cited_for = ["1.2"]
+
+[[source]]
+id = "kadiri2012"
+authors = "Habiba Kadiri"
+title = "Explicit zero-free regions for Dedekind Zeta functions"
+year = 2011
+venue = "Int. J. of Number Theory 2 Vol. 8, No. 1 (2012) 1-23"
+arxiv = "1106.1868v1"
+locator_scheme = "theorem"
+locator = "Theorem 1.1"
+url = "https://arxiv.org/abs/1106.1868v1"
+fetched_from = "https://arxiv.org/pdf/1106.1868v1"
+fetched_at = "2026-11-08T08:22:09Z"
+sha256 = "8c20f3fc7b27d080e97b1304bcf95f54cbf5905fba59fbf1a3f0dc4d3e78d368"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-08"
+version_note = "arXiv v1"
+cited_for = ["6.2", "6.4"]

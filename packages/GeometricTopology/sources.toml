@@ -140,3 +140,401 @@ licence_class = "answered-by:CBirkbeck"
 status = "certified"
 accessed = "2026-11-04"
 resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/4188#issuecomment-6632668881"
+
+[[source]]
+id = "yazdi2016"
+authors = "Mehdi Yazdi"
+title = "On Thurston's Euler class one conjecture"
+year = 2016
+arxiv = "1603.03822v4"
+locator_scheme = "theorem"
+locator = "Main Theorem"
+url = "https://arxiv.org/abs/1603.03822v4"
+fetched_from = "https://arxiv.org/pdf/1603.03822v4"
+fetched_at = "2026-11-05T17:34:22Z"
+sha256 = "8e338304826ee33d983c7a90c6a559ce51daf313df83c648e37985cb36dc7dbc"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-05"
+version_note = "arXiv v4"
+cited_for = ["10"]
+
+[[source]]
+id = "piccirillo2020"
+authors = "Lisa Piccirillo"
+title = "The Conway knot is not slice"
+year = 2018
+arxiv = "1808.02923v1"
+locator_scheme = "theorem"
+locator = "Theorem 1.5"
+url = "https://arxiv.org/abs/1808.02923v1"
+fetched_from = "https://arxiv.org/pdf/1808.02923v1"
+fetched_at = "2026-11-05T17:34:29Z"
+sha256 = "233da6e9f24b062cc2cf8819e1f8130a047e59e2700d7042302a71ef94b4e61a"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-05"
+version_note = "arXiv v1"
+cited_for = ["6"]
+
+[[source]]
+id = "manolescu2016"
+authors = "Ciprian Manolescu"
+title = "Lectures on the triangulation conjecture"
+year = 2016
+arxiv = "1607.08163v3"
+locator_scheme = "theorem"
+locator = "Theorem 1.1"
+url = "https://arxiv.org/abs/1607.08163v3"
+fetched_from = "https://arxiv.org/pdf/1607.08163v3"
+fetched_at = "2026-11-05T17:34:34Z"
+sha256 = "d17456dfa60e26892c8beffc664660257217043c8a5ee328ace24ba282d7a4e8"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-05"
+version_note = "arXiv v3"
+cited_for = ["11"]
+
+[[source]]
+id = "watanabe2018"
+authors = "Tadayuki Watanabe"
+title = "Some exotic nontrivial elements of the rational homotopy groups of $\\mathrm{Diff}(S^4)$"
+year = 2018
+arxiv = "1812.02448v3"
+locator_scheme = "theorem"
+locator = "Theorem 1.1"
+url = "https://arxiv.org/abs/1812.02448v3"
+fetched_from = "https://arxiv.org/pdf/1812.02448v3"
+fetched_at = "2026-11-05T17:34:42Z"
+sha256 = "07d3cd2f7b261c5363c479b17f3c3daa022158969c7325549270716e0f2dcf53"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-05"
+version_note = "arXiv v3"
+cited_for = ["3"]
+
+[[source]]
+id = "hatcher-at"
+authors = "Allen Hatcher"
+title = "Algebraic Topology"
+year = 2002
+locator_scheme = "section"
+locator = "Proposition A.1"
+url = "https://pi.math.cornell.edu/~hatcher/AT/AT.pdf"
+fetched_from = "https://pi.math.cornell.edu/~hatcher/AT/AT.pdf"
+fetched_at = "2026-11-05T17:35:07Z"
+sha256 = "bebb3032bf9021b956da3bd070eb6c67dc662cf849be9cdf6679f677560e5618"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-05"
+cited_for = ["11"]
+
+[[source]]
+id = "hatcher-3m"
+authors = "Allen Hatcher"
+title = "Notes on Basic 3-Manifold Topology"
+year = 2007
+locator_scheme = "section"
+locator = "Section 1.2"
+url = "https://pi.math.cornell.edu/~hatcher/3M/3M.pdf"
+fetched_from = "https://pi.math.cornell.edu/~hatcher/3M/3M.pdf"
+fetched_at = "2026-11-05T17:35:09Z"
+sha256 = "f3781c43b4ed981f98fab36761d5eefe92bb53cc1a7100a0146954f9af5a029b"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-05"
+cited_for = ["8"]
+
+[[source]]
+id = "rourke-sanderson1972"
+authors = "C. P. Rourke, B. J. Sanderson"
+title = "Introduction to Piecewise-Linear Topology"
+year = 1972
+doi = "10.1007/978-3-642-81735-9"
+locator_scheme = "chapter"
+locator = "Chapter 7"
+url = "https://doi.org/10.1007/978-3-642-81735-9"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["2.2"]
+
+[[source]]
+id = "thurston1986"
+authors = "William P. Thurston"
+title = "A norm for the homology of 3-manifolds"
+year = 1986
+doi = "10.1090/memo/0339"
+locator_scheme = "section"
+locator = "Section 2"
+url = "https://doi.org/10.1090/memo/0339"
+licence_class = "none"
+status = "uncertified"
+version_note = "Mem. Amer. Math. Soc. 59 (1986), no. 339, 99-130; paywalled at AMS, cited by its locator without the text"
+cited_for = ["10.3", "10.4"]
+
+[[source]]
+id = "gabai1983"
+authors = "David Gabai"
+title = "Foliations and the topology of 3-manifolds"
+year = 1983
+doi = "10.4310/jdg/1214437784"
+locator_scheme = "theorem"
+locator = "Corollary 6.18"
+url = "https://doi.org/10.4310/jdg/1214437784"
+licence_class = "none"
+status = "uncertified"
+version_note = "J. Differential Geom. 18 (1983), 445-503; the Project Euclid landing page offers no readable copy, cited by its locator without the text"
+cited_for = ["10.3"]
+
+[[source]]
+id = "kindred2020"
+authors = "Thomas Kindred"
+title = "A geometric proof of the flyping theorem"
+year = 2020
+arxiv = "2008.06490v3"
+locator_scheme = "section"
+locator = "§2.2"
+url = "https://arxiv.org/abs/2008.06490v3"
+fetched_from = "https://arxiv.org/pdf/2008.06490v3"
+fetched_at = "2026-11-07T06:05:58Z"
+sha256 = "8cc620f4a9b53ae91a788cbe811ec94f41402c1286ae5ca9bcf89de7ed80f620"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-07"
+version_note = "arXiv v3"
+cited_for = ["4.9.1"]
+
+[[source]]
+id = "htw1998"
+authors = "Hoste"
+title = "The first 1,701,936 knots"
+year = 1998
+venue = "The Mathematical Intelligencer 20"
+doi = "10.1007/bf03025227"
+locator_scheme = "page"
+locator = "Table 1"
+url = "https://doi.org/10.1007/bf03025227"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["4.9.1"]
+
+[[source]]
+id = "hirsch1976"
+authors = "Morris W. Hirsch"
+title = "Differential Topology"
+year = 1976
+venue = "Graduate Texts in Mathematics"
+doi = "10.1007/978-1-4684-9449-5"
+locator_scheme = "theorem"
+locator = "Chapter 9, Theorems 3.5, 3.6, 3.7, 3.10, 3.11"
+url = "https://doi.org/10.1007/978-1-4684-9449-5"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["1.1", "1.3", "1.7"]
+
+[[source]]
+id = "lickorish1962"
+authors = "W. B. R. Lickorish"
+title = "A representation of orientable combinatorial 3-manifolds"
+year = 1962
+venue = "Annals of Mathematics 76"
+doi = "10.2307/1970373"
+locator_scheme = "theorem"
+locator = "the twist theorem (every orientation-preserving homeomorphism of a compact orientable surface is isotopic to a product of twists)"
+url = "https://doi.org/10.2307/1970373"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled (JSTOR); cited by its locator without the text"
+cited_for = ["1.7.2", "5.2"]
+
+[[source]]
+id = "lickorish1964"
+authors = "W. B. R. Lickorish"
+title = "A finite set of generators for the homeotopy group of a 2-manifold"
+year = 1964
+venue = "Proceedings of the Cambridge Philosophical Society 60"
+doi = "10.1017/S030500410003824X"
+locator_scheme = "theorem"
+locator = "main theorem (the 3g − 1 twists), with the corrigendum in volume 62 (1966)"
+url = "https://doi.org/10.1017/S030500410003824X"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled (Cambridge); cited by its locator without the text"
+cited_for = ["1.7.2"]
+
+[[source]]
+id = "farb-margalit2012"
+authors = "Benson Farb, Dan Margalit"
+title = "A Primer on Mapping Class Groups"
+year = 2012
+venue = "Princeton Mathematical Series 49"
+doi = "10.1515/9781400839049"
+locator_scheme = "theorem"
+locator = "Lemma 2.1, Proposition 2.4, Theorem 2.5, Theorem 4.1"
+url = "https://doi.org/10.1515/9781400839049"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled (Princeton University Press); cited by its locator without the text"
+cited_for = ["1.7.2"]
+
+[[source]]
+id = "hatcher-torustrick"
+authors = "Allen Hatcher"
+title = "The Kirby torus trick for surfaces"
+year = 2013
+arxiv = "1312.3518v3"
+locator_scheme = "theorem"
+locator = "Theorem A, Theorem B and the refinements stated after them and after the proof of Theorem B; Handle Smoothing Theorem (Section 2)"
+url = "https://arxiv.org/abs/1312.3518v3"
+fetched_from = "https://arxiv.org/pdf/1312.3518v3"
+fetched_at = "2026-11-08T01:54:24Z"
+sha256 = "0d5a639b6636cb714a0a095ac0833a137df94804074f6f0f91d94aa465cc7c1d"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-08"
+version_note = "arXiv v3"
+cited_for = ["11.2.1"]
+
+[[source]]
+id = "smale1959"
+authors = "Stephen Smale"
+title = "Diffeomorphisms of the 2-sphere"
+year = 1959
+venue = "Proceedings of the American Mathematical Society 10"
+doi = "10.1090/S0002-9939-1959-0112149-8"
+locator_scheme = "theorem"
+locator = "Theorem A, Theorem B, Theorem 4"
+url = "https://www.ams.org/journals/proc/1959-010-04/S0002-9939-1959-0112149-8/S0002-9939-1959-0112149-8.pdf"
+fetched_from = "https://www.ams.org/journals/proc/1959-010-04/S0002-9939-1959-0112149-8/S0002-9939-1959-0112149-8.pdf"
+fetched_at = "2026-11-08T02:02:33Z"
+sha256 = "f2c495988ae1355fbe01a0878228008ad861bfccb17d6cc9c85d219156622c64"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-11-08"
+cited_for = ["3.4", "1.7.2", "11.2.1"]
+
+[[source]]
+id = "kauffman1987"
+authors = "Louis H. Kauffman"
+title = "State models and the Jones polynomial"
+year = 1987
+venue = "Topology 26"
+doi = "10.1016/0040-9383(87)90009-7"
+locator_scheme = "theorem"
+locator = "§2, Lemmas 2.3–2.4, Propositions 2.5 and 2.7, Theorems 2.6 and 2.8"
+url = "https://doi.org/10.1016/0040-9383(87)90009-7"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["4.5.4"]
+
+[[source]]
+id = "fyhlmo1985"
+authors = "P. Freyd, D. Yetter, J. Hoste, W. B. R. Lickorish, K. Millett, A. Ocneanu"
+title = "A new polynomial invariant of knots and links"
+year = 1985
+venue = "Bulletin of the American Mathematical Society 12"
+doi = "10.1090/S0273-0979-1985-15361-3"
+locator_scheme = "page"
+locator = "pp. 241–244 (descending diagrams pp. 242–243; composition formula and pretzel permutations p. 244)"
+url = "https://www.ams.org/journals/bull/1985-12-02/S0273-0979-1985-15361-3/S0273-0979-1985-15361-3.pdf"
+fetched_from = "https://www.ams.org/journals/bull/1985-12-02/S0273-0979-1985-15361-3/S0273-0979-1985-15361-3.pdf"
+fetched_at = "2026-11-08T13:12:20Z"
+sha256 = "bf76c6c1bda967e5f0cf46ef7d498d916b281a8fd59fe8fac88f68c21d26a06d"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-11-08"
+cited_for = ["4.6.3", "4.6.5", "4.7.8"]
+
+[[source]]
+id = "kolay2019"
+authors = "Sudipta Kolay"
+title = "Knot Colorings: Coloring and Goeritz matrices"
+year = 2019
+arxiv = "1910.08044v1"
+locator_scheme = "theorem"
+locator = "§4, Proposition 4"
+url = "https://arxiv.org/abs/1910.08044v1"
+fetched_from = "https://arxiv.org/pdf/1910.08044v1"
+fetched_at = "2026-11-08T13:14:41Z"
+sha256 = "cd8e1a35b111fbdedb2f07b9d24ae7c2e32a0f00860e68527fe1827cc79f9249"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-08"
+version_note = "arXiv v1"
+cited_for = ["4.7"]
+
+[[source]]
+id = "kalfagianni2016"
+authors = "Efstratia Kalfagianni"
+title = "A Jones slopes characterization of adequate knots"
+year = 2016
+venue = "Indiana Univ. Mathematics Journal, Vol. 67, No. 1, 205-219(2018)"
+arxiv = "1601.03307v3"
+locator_scheme = "theorem"
+locator = "§2 and Theorem 3.2"
+url = "https://arxiv.org/abs/1601.03307v3"
+fetched_from = "https://arxiv.org/pdf/1601.03307v3"
+fetched_at = "2026-11-08T13:14:47Z"
+sha256 = "c100b3de70e741f5445e9e833b1af7af8af6afded511196829cf93586a23f201"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-08"
+version_note = "arXiv v3"
+cited_for = ["4.8.1"]
+
+[[source]]
+id = "ng2005"
+authors = "Lenhard Ng"
+title = "Knot and braid invariants from contact homology I"
+year = 2005
+venue = "Geometry & Topology 9"
+version_note = "author's copy; the section number is that of this file"
+locator_scheme = "section"
+locator = "§8.6"
+url = "https://sites.math.duke.edu/~ng/math/papers/knotI.pdf"
+fetched_from = "https://sites.math.duke.edu/~ng/math/papers/knotI.pdf"
+fetched_at = "2026-11-08T13:15:17Z"
+sha256 = "4590aeb8bbc71bebe99c4d4bae21b095a64ce640e490a4807c0e6eacf3430aee"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-08"
+cited_for = ["4.6.1"]
+
+[[source]]
+id = "kauffman1990"
+authors = "Louis H. Kauffman"
+title = "An invariant of regular isotopy"
+year = 1990
+venue = "Transactions of the American Mathematical Society 318"
+version_note = "author's copy, an image-only scan whose text is not extracted; cited for the skein and curl convention of the regular-isotopy polynomial"
+locator_scheme = "section"
+locator = "the skein relation of the regular-isotopy polynomial and its curl convention"
+url = "https://homepages.math.uic.edu/~kauffman/IRH.pdf"
+fetched_from = "https://homepages.math.uic.edu/~kauffman/IRH.pdf"
+fetched_at = "2026-11-08T13:15:19Z"
+sha256 = "010e66f628bf5c91ebca1b778bd3398983f4ae378ff0714d207d91c08e99ecbe"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-08"
+cited_for = ["4.6.1"]
+
+[[source]]
+id = "bode2018"
+authors = "Benjamin Bode"
+title = "Knotted fields and real algebraic links"
+year = 2018
+venue = "PhD thesis, University of Bristol"
+locator_scheme = "section"
+locator = "§2.1, Definitions 2.2–2.4"
+url = "https://research-information.bris.ac.uk/ws/portalfiles/portal/172921010/Final_Copy_2018_09_25_Bode_B_PhD.pdf"
+fetched_from = "https://research-information.bris.ac.uk/ws/portalfiles/portal/172921010/Final_Copy_2018_09_25_Bode_B_PhD.pdf"
+fetched_at = "2026-11-08T13:15:24Z"
+sha256 = "a5820d50dadbe6a8f42a7ace72bc22954ef141415c778afb5129a40500cc2884"
+licence_class = "institutional"
+status = "certified"
+accessed = "2026-11-08"
+cited_for = ["4.2.7"]

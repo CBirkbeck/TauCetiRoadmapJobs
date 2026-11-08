@@ -1,0 +1,362 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "GeneralizedCohomology"
+
+[[source]]
+id = "HSS"
+authors = "Mark Hovey, Brooke Shipley, Jeff Smith"
+title = "Symmetric spectra"
+year = 1998
+arxiv = "math/9801077v2"
+locator_scheme = "theorem"
+locator = "Theorem 3.4.4"
+url = "https://arxiv.org/abs/math/9801077v2"
+fetched_from = "https://arxiv.org/pdf/math/9801077v2"
+fetched_at = "2026-11-08T10:26:34Z"
+sha256 = "09c2216d7a4605b5cb9f289a3b3f9b35664a98c972e26d5762f0ac2fb3f51036"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-08"
+version_note = "arXiv v2"
+cited_for = ["G2.3", "G2.6"]
+
+[[source]]
+id = "HatcherAT"
+authors = "Allen Hatcher"
+title = "Algebraic Topology"
+year = 2002
+locator_scheme = "theorem"
+locator = "Corollary 4.24"
+url = "https://pi.math.cornell.edu/~hatcher/AT/AT.pdf"
+fetched_from = "https://pi.math.cornell.edu/~hatcher/AT/AT.pdf"
+fetched_at = "2026-11-08T10:27:04Z"
+sha256 = "bebb3032bf9021b956da3bd070eb6c67dc662cf849be9cdf6679f677560e5618"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-08"
+cited_for = ["G1.0", "G2.5", "G3.1"]
+
+[[source]]
+id = "LurieHTT"
+authors = "Jacob Lurie"
+title = "Higher Topos Theory"
+year = 2009
+locator_scheme = "theorem"
+locator = "Theorem 2.2.5.1; Theorem 2.4.6.1; §A.2.7"
+url = "https://www.math.ias.edu/~lurie/papers/HTT.pdf"
+fetched_from = "https://www.math.ias.edu/~lurie/papers/HTT.pdf"
+fetched_at = "2026-11-08T10:27:24Z"
+sha256 = "58855f3a0ad6d9c470ded74a38938b9468927592e9ae1209bab6a068e67ede6e"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-08"
+cited_for = ["G2.1", "G2.11"]
+
+[[source]]
+id = "CohenBMH"
+authors = "Ralph L. Cohen"
+title = "Bundles, Manifolds, and Homotopy"
+year = 2023
+locator_scheme = "section"
+locator = "Chapter 10, §8.3"
+url = "https://math.stanford.edu/~ralph/bookR4.pdf"
+fetched_from = "https://math.stanford.edu/~ralph/bookR4.pdf"
+fetched_at = "2026-11-08T10:27:37Z"
+sha256 = "3bd16984e16b22e881a8a8331b216d4495f253b49ba29d2fc7caf0831eb1f2fe"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-08"
+cited_for = ["G3.1", "G5.1"]
+
+[[source]]
+id = "MayConcise"
+authors = "J. P. May"
+title = "A Concise Course in Algebraic Topology"
+year = 1999
+locator_scheme = "section"
+locator = "Chapter 7, §4; Chapter 8, §4"
+url = "https://www.math.uchicago.edu/~may/CONCISE/ConciseRevised.pdf"
+fetched_from = "https://www.math.uchicago.edu/~may/CONCISE/ConciseRevised.pdf"
+fetched_at = "2026-11-08T10:28:16Z"
+sha256 = "6724f02748ed1f2f589a72b524d2e3f08758abbe8216f16e5e6ffd22ebdc8927"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-08"
+cited_for = ["G1.0", "G2.10"]
+
+[[source]]
+id = "HatcherSSAT"
+authors = "Allen Hatcher"
+title = "Spectral Sequences in Algebraic Topology"
+year = 2004
+locator_scheme = "theorem"
+locator = "Theorem 1.21"
+url = "https://pi.math.cornell.edu/~hatcher/SSAT/SSch1.pdf"
+fetched_from = "https://pi.math.cornell.edu/~hatcher/SSAT/SSch1.pdf"
+fetched_at = "2026-11-08T10:28:38Z"
+sha256 = "d34a09b4559eade18dac2c01f6718d4689c5f565d9dc252c3a67de0167520eca"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-08"
+cited_for = ["G5.6"]
+
+[[source]]
+id = "ABSClifford"
+authors = "M.F. Atiyah, R. Bott, A. Shapiro"
+title = "Clifford modules"
+year = 1964
+venue = "Topology 3"
+doi = "10.1016/0040-9383(64)90003-5"
+locator_scheme = "section"
+locator = "§11"
+url = "https://doi.org/10.1016/0040-9383(64)90003-5"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["G5.0"]
+
+[[source]]
+id = "DixmierDouady"
+authors = "Jacques Dixmier, Adrien Douady"
+title = "Champs continus d'espaces hilbertiens et de $C^*$-algèbres"
+year = 1963
+venue = "Bulletin de la Soci&amp;#233;t&amp;#233; math&amp;#233;matique de France 79"
+doi = "10.24033/bsmf.1596"
+locator_scheme = "theorem"
+locator = "Lemme 3"
+url = "https://doi.org/10.24033/bsmf.1596"
+fetched_from = "https://www.numdam.org/item/10.24033/bsmf.1596.pdf"
+fetched_at = "2026-11-08T10:38:46Z"
+sha256 = "c56129e01077f0170b15360c355bbb63e2a2d6e15df6ecbe54e920af9d326c73"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-08"
+cited_for = ["G5.5"]
+
+[[source]]
+id = "MMSS"
+authors = "M. A. Mandell, J. P. May, S. Schwede, B. Shipley"
+title = "Model categories of diagram spectra"
+year = 2001
+locator_scheme = "section"
+locator = "§14"
+url = "https://math.uchicago.edu/~may/PAPERS/mmssLMSDec30.pdf"
+fetched_from = "https://math.uchicago.edu/~may/PAPERS/mmssLMSDec30.pdf"
+fetched_at = "2026-11-08T11:00:39Z"
+sha256 = "0a6ac71657b5636a1ae4ba3f459925c06412acd4a0f1b625160cc4d1147ca8d8"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-08"
+cited_for = ["G2.4"]
+
+[[source]]
+id = "SchwedeSymSpec"
+authors = "Stefan Schwede"
+title = "Symmetric spectra"
+year = 2012
+locator_scheme = "chapter"
+locator = "Chapter I, Examples 1.17–1.20"
+url = "https://www.math.uni-bonn.de/~schwede/SymSpec-v3.pdf"
+fetched_from = "https://www.math.uni-bonn.de/~schwede/SymSpec-v3.pdf"
+fetched_at = "2026-11-08T11:01:01Z"
+sha256 = "71d006e6bd4a4a07a7c5af9ceea471c59c0ca8bc70b2c367d01df0deccd1a0c9"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-08"
+cited_for = ["G2.5", "G5.4"]
+
+[[source]]
+id = "ElmendorfMandell"
+authors = "A. D. Elmendorf, M. A. Mandell"
+title = "Rings, modules, and algebras in infinite loop space theory"
+year = 2004
+venue = "Adv. in Math. 205 (2006), no. 1, 163-228"
+doi = "10.1016/j.aim.2005.07.007"
+arxiv = "math/0403403v1"
+locator_scheme = "theorem"
+locator = "Theorems 1.1–1.4"
+url = "https://arxiv.org/abs/math/0403403v1"
+fetched_from = "https://arxiv.org/pdf/math/0403403v1"
+fetched_at = "2026-11-08T11:01:10Z"
+sha256 = "9f7d040ae26e3c2fe6f220b8f6d7157cf85b23b3a7dda8d53b43dce984638694"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-08"
+version_note = "arXiv v1"
+cited_for = ["G2.8"]
+
+[[source]]
+id = "NikolausScholze"
+authors = "Thomas Nikolaus, Peter Scholze"
+title = "On topological cyclic homology"
+year = 2017
+arxiv = "1707.01799v2"
+locator_scheme = "section"
+locator = "§I.3, Appendix A"
+url = "https://arxiv.org/abs/1707.01799v2"
+fetched_from = "https://arxiv.org/pdf/1707.01799v2"
+fetched_at = "2026-11-08T11:01:20Z"
+sha256 = "12b6cdbd0d8ebb506284bd13f183affe80e41cc8890fef5fa21c922c2f80cec3"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-08"
+version_note = "arXiv v2"
+cited_for = ["G2.11"]
+
+[[source]]
+id = "LurieHA"
+authors = "Jacob Lurie"
+title = "Higher Algebra"
+year = 2017
+locator_scheme = "section"
+locator = "§§4.1.8, 4.3.3, 4.8.1, 7.3.2"
+url = "https://www.math.ias.edu/~lurie/papers/HA.pdf"
+fetched_from = "https://www.math.ias.edu/~lurie/papers/HA.pdf"
+fetched_at = "2026-11-08T11:02:10Z"
+sha256 = "112b145a95a62daefb8275851cac9ab6430004cfc8f751a33a8d981fd7ad68c3"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-08"
+cited_for = ["G2.11"]
+
+[[source]]
+id = "MillerCobordism"
+authors = "Haynes Miller"
+title = "Notes on Cobordism"
+year = 2001
+locator_scheme = "chapter"
+locator = "Chapter 1 §§2–5, Chapter 2 §§1–2"
+url = "https://math.mit.edu/~hrm/papers/cobordism.pdf"
+fetched_from = "https://math.mit.edu/~hrm/papers/cobordism.pdf"
+fetched_at = "2026-11-08T11:02:13Z"
+sha256 = "c70bf1f21e1d36388f7b6690ec724edf7b486378e70cb408b2b8744a5589da9a"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-08"
+cited_for = ["G5.3"]
+
+[[source]]
+id = "McDuffSegal"
+authors = "D. McDuff, G. Segal"
+title = "Homology fibrations and the group-completion theorem"
+year = 1976
+venue = "Inventiones Mathematicae 31"
+doi = "10.1007/BF01403148"
+locator_scheme = "section"
+locator = "§4"
+url = "https://doi.org/10.1007/BF01403148"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["G2.8"]
+
+[[source]]
+id = "SegalCategories"
+authors = "Graeme Segal"
+title = "Categories and cohomology theories"
+year = 1974
+venue = "Topology 13"
+doi = "10.1016/0040-9383(74)90022-6"
+locator_scheme = "section"
+locator = "§§1–4"
+url = "https://doi.org/10.1016/0040-9383(74)90022-6"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["G2.8"]
+
+[[source]]
+id = "JoachimKO"
+authors = "Michael Joachim"
+title = "A symmetric ring spectrum representing KO-theory"
+year = 2001
+venue = "Topology 40"
+doi = "10.1016/S0040-9383(99)00063-4"
+locator_scheme = "section"
+locator = "§§2–4"
+url = "https://doi.org/10.1016/S0040-9383(99)00063-4"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["G5.4"]
+
+[[source]]
+id = "HebestreitSagave"
+authors = "Fabian Hebestreit, Steffen Sagave"
+title = "Homotopical and operator algebraic twisted K-theory"
+year = 2020
+venue = "Mathematische Annalen 378"
+doi = "10.1007/s00208-020-02066-6"
+arxiv = "1904.01872v3"
+locator_scheme = "section"
+locator = "§§6–7"
+url = "https://arxiv.org/abs/1904.01872v3"
+fetched_from = "https://arxiv.org/pdf/1904.01872v3"
+fetched_at = "2026-11-08T11:02:31Z"
+sha256 = "86d169a5cab7b4916b9a053e6a602bbfe238bd30cb8ef7fa42c1b679a8f78d5b"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-08"
+version_note = "arXiv v3"
+cited_for = ["G5.5"]
+
+[[source]]
+id = "ShipleyConvenient"
+authors = "Brooke Shipley"
+title = "A convenient model category for commutative ring spectra"
+year = 2004
+locator_scheme = "theorem"
+locator = "Theorem 3.2"
+url = "http://homepages.math.uic.edu/~bshipley/com4.pdf"
+fetched_from = "http://homepages.math.uic.edu/~bshipley/com4.pdf"
+fetched_at = "2026-11-08T11:02:48Z"
+sha256 = "3547508302e388717239abb0cd1a64239711dc9ba10bd184fff03e6a663fd2d2"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-08"
+cited_for = ["G2.4"]
+
+[[source]]
+id = "AtiyahSingerSkew"
+locator_scheme = "theorem"
+locator = "Theorem A"
+url = "http://www.numdam.org/article/PMIHES_1969__37__5_0.pdf"
+fetched_from = "https://www.numdam.org/article/PMIHES_1969__37__5_0.pdf"
+fetched_at = "2026-11-08T12:11:07Z"
+sha256 = "ec53f63230e9a6b8f1439eae3e7d00442da6a99ccbf5e615d028d9be8a4b5a27"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-08"
+cited_for = ["G5.0"]
+
+[[source]]
+id = "QuillenHA"
+authors = "Daniel G. Quillen"
+title = "Homotopical Algebra"
+year = 1967
+venue = "Lecture Notes in Mathematics"
+doi = "10.1007/BFb0097438"
+locator_scheme = "section"
+locator = "Chapter II, §3"
+url = "https://doi.org/10.1007/BFb0097438"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["G2.1"]
+
+[[source]]
+id = "AraPereraToms"
+authors = "Pere Ara, Francesc Perera, Andrew S. Toms"
+title = "K-Theory for operator algebras. Classification of C$^*$-algebras"
+year = 2009
+arxiv = "0902.3381v1"
+locator_scheme = "theorem"
+locator = "Theorem 3.8"
+url = "https://arxiv.org/abs/0902.3381v1"
+fetched_from = "https://arxiv.org/pdf/0902.3381v1"
+fetched_at = "2026-11-08T12:31:04Z"
+sha256 = "199ac7fee690d255a9f4ddd267dd314cb869f2a366ec8a164ede2687523e5680"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-08"
+version_note = "arXiv v1"
+cited_for = ["G5.5"]

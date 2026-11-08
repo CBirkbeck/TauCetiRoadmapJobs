@@ -1,0 +1,78 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "FiniteEquivalenceRelations"
+
+[[source]]
+id = "kollar2012"
+authors = "János Kollár"
+title = "Quotients by finite equivalence relations"
+year = 2008
+arxiv = "0812.3608v2"
+locator_scheme = "section"
+locator = "¶50"
+url = "https://arxiv.org/abs/0812.3608v2"
+fetched_from = "https://arxiv.org/pdf/0812.3608v2"
+fetched_at = "2026-11-08T08:45:45Z"
+sha256 = "b6eee73193e3b96bf7130e090da6906f82675187a4c0032cb8d25d526350c59c"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-08"
+version_note = "arXiv v2"
+cited_for = ["3.1"]
+
+[[source]]
+id = "raicu2010"
+authors = "Claudiu Raicu"
+title = "Affine Toric Equivalence Relations are Effective"
+year = 2009
+venue = "Proc. Amer. Math. Soc. 138: 3835-3847, 2010"
+arxiv = "0905.4805v2"
+locator_scheme = "theorem"
+locator = "Theorem 4.1"
+url = "https://arxiv.org/abs/0905.4805v2"
+fetched_from = "https://arxiv.org/pdf/0905.4805v2"
+fetched_at = "2026-11-08T08:45:51Z"
+sha256 = "f3fd46bf78e1a3dc603df0d794c4fe68884364b92c725b3c6f6f0f4b37e50ea7"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-08"
+version_note = "arXiv v2"
+cited_for = ["3.4"]
+
+[[source]]
+id = "stacks-groupoids"
+locator_scheme = "tag"
+locator = "03BM"
+url = "https://stacks.math.columbia.edu/tag/03BM"
+fetched_from = "https://stacks.math.columbia.edu/download/groupoids.pdf#nameddest=03BM"
+fetched_at = "2026-11-08T08:46:08Z"
+sha256 = "4506a39201063afc270cbb68c9c0c1d3c90937c03f98cfee074605b402e7a30f"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-08"
+cited_for = ["2.1"]
+
+[[source]]
+id = "fga3"
+locator_scheme = "page"
+locator = "212-05"
+url = "http://www.numdam.org/item/SB_1960-1961__6__99_0.pdf"
+fetched_from = "https://www.numdam.org/item/SB_1960-1961__6__99_0.pdf"
+fetched_at = "2026-11-08T08:46:10Z"
+sha256 = "2ae65a57c7c9240e0ac880dee5bae3d2edb956aab6673c2261f1095a51f26c0d"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-08"
+cited_for = ["1.2"]
+
+[[source]]
+id = "sga3-exp5"
+locator_scheme = "theorem"
+locator = "Théorème 4.1"
+url = "https://webusers.imj-prg.fr/~patrick.polo/SGA3/Exp5-13oct24.pdf"
+fetched_from = "https://webusers.imj-prg.fr/~patrick.polo/SGA3/Exp5-13oct24.pdf"
+fetched_at = "2026-11-08T08:46:12Z"
+sha256 = "9198200633f929fe1822520371a9200da4f8cf2513efab3d6a0c7e9330db84cf"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-08"
+cited_for = ["2.1"]

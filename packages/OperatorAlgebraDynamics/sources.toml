@@ -127,7 +127,6 @@ id = "attal-fock"
 authors = "Stéphane Attal"
 title = "Fock spaces (Lectures in quantum noise theory, Lecture 8)"
 year = 2015
-version_note = "lecture notes on the author's page, undated in the text; the year is the file's creation date"
 locator_scheme = "theorem"
 locator = "Definition 8.20, Proposition 8.21, (8.18)"
 url = "http://math.univ-lyon1.fr/~attal/Fock_Spaces.pdf"
@@ -137,6 +136,7 @@ sha256 = "d11bfdd99732c8f04f5009506ade44daaf3989060f5f91c216809e71434760c5"
 licence_class = "author-page"
 status = "certified"
 accessed = "2026-11-04"
+version_note = "lecture notes on the author's page, undated in the text; the year is the file's creation date"
 cited_for = ["D8"]
 
 [[source]]
@@ -197,3 +197,50 @@ licence_class = "none"
 status = "uncertified"
 version_note = "paywalled; cited by its locator without the text"
 cited_for = ["D5", "D6"]
+
+[[source]]
+id = "arici-mesland2019"
+authors = "Francesca Arici, Bram Mesland"
+title = "Toeplitz extensions in noncommutative topology and mathematical physics"
+year = 2019
+doi = "10.1007/978-3-030-53305-2_1"
+arxiv = "1911.05823v1"
+locator_scheme = "section"
+locator = "§2.1, Definition 2.1 and extension (4)"
+url = "https://arxiv.org/abs/1911.05823v1"
+fetched_from = "https://arxiv.org/pdf/1911.05823v1"
+fetched_at = "2026-11-05T15:02:35Z"
+sha256 = "863ff9fe542101ad8e901648c9addef74731443ca5520325b289ef694a842595"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-05"
+version_note = "arXiv v1"
+cited_for = ["D2.SequenceToeplitz"]
+
+[[source]]
+id = "brown-ozawa2008"
+authors = "Nathanial P. Brown, Narutaka Ozawa"
+title = "C*-algebras and finite-dimensional approximations"
+year = 2008
+venue = "Graduate Studies in Mathematics 88, American Mathematical Society"
+doi = "10.1090/gsm/088"
+locator_scheme = "theorem"
+locator = "Proposition 5.1.3"
+url = "https://doi.org/10.1090/gsm/088"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["D2.BoundedSequenceTranslation"]
+
+[[source]]
+id = "araki1973"
+locator_scheme = "theorem"
+locator = "Proposition 4.1"
+url = "https://ems.press/content/serial-article-files/41744?nt=1"
+fetched_from = "https://ems.press/content/serial-article-files/41744?nt=1"
+fetched_at = "2026-11-08T04:48:23Z"
+sha256 = "08049dcff4e39992d2cc27ad8b9bc8319d259c47dd97f315b095298e8517a7a1"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-11-08"
+cited_for = ["D7"]

@@ -1,0 +1,99 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "SymplecticAlmostComplexStructures"
+
+[[source]]
+id = "wendl-superrigidity"
+authors = "Chris Wendl"
+title = "Transversality and super-rigidity for multiply covered holomorphic curves"
+year = 2016
+arxiv = "1609.09867v7"
+locator_scheme = "section"
+locator = "Section 1, Remark 1.3"
+url = "https://arxiv.org/abs/1609.09867v7"
+fetched_from = "https://arxiv.org/pdf/1609.09867v7"
+fetched_at = "2026-11-05T06:10:46Z"
+sha256 = "cf9e6756ab9edd358287107940615f0167efcc411eb6f62e84f8428c33cf53da"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-05"
+version_note = "arXiv v7"
+cited_for = ["definitions of J(M,omega;U,J_fix) and the Baire subset J^reg"]
+
+[[source]]
+id = "gromov-pseudoholomorphic"
+authors = "M. Gromov"
+title = "Pseudo holomorphic curves in symplectic manifolds"
+year = 1985
+venue = "Inventiones Mathematicae 82"
+doi = "10.1007/BF01388806"
+locator_scheme = "section"
+locator = "Section 1"
+url = "http://gdz.sub.uni-goettingen.de/dms/resolveppn/?PPN=GDZPPN002102226"
+fetched_from = "https://gdz.sub.uni-goettingen.de/id/PPN356556735_0082?tify=%7B%22view%22:%22info%22,%22pages%22:%5B313%5D%7D"
+fetched_at = "2026-11-05T06:12:37Z"
+sha256 = "fc09aabdae14bf18432c703b57866648c84f468ce7819ce614aad40c74ea1240"
+licence_class = "open-repository"
+status = "uncertified"
+accessed = "2026-11-05"
+version_note = "open repository (EuDML landing page, GDZ volume PPN356556735_0082); the GDZ viewer served no extractable text, so the locator is cited without the text"
+cited_for = ["tame almost complex structures"]
+
+[[source]]
+id = "hirsch-difftop"
+authors = "M. W. Hirsch"
+title = "Differential Topology"
+year = 1976
+venue = "Graduate Texts in Mathematics"
+doi = "10.1007/978-1-4684-9449-5"
+locator_scheme = "chapter"
+locator = "Chapter 2"
+url = "https://doi.org/10.1007/978-1-4684-9449-5"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["weak and strong C^r topologies, Baire property"]
+
+[[source]]
+id = "audin-lafontaine"
+authors = "M. Audin and J. Lafontaine (eds.)"
+title = "Holomorphic Curves in Symplectic Geometry"
+year = 1994
+venue = "Progress in Mathematics"
+doi = "10.1007/978-3-0348-8508-9"
+locator_scheme = "chapter"
+locator = "Chapter II"
+url = "https://doi.org/10.1007/978-3-0348-8508-9"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["symplectic and almost complex manifolds"]
+
+[[source]]
+id = "mcduff-salamon-intro"
+authors = "D. McDuff, D. Salamon"
+title = "Introduction to Symplectic Topology"
+year = 2017
+venue = "Oxford Graduate Texts in Mathematics, 3rd ed."
+doi = "10.1093/oso/9780198794899.001.0001"
+locator_scheme = "section"
+locator = "Chapter 2, Section 4.1"
+url = "https://doi.org/10.1093/oso/9780198794899.001.0001"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled (publisher landing page answers HTTP 403); cited by its locator without the text"
+cited_for = ["compatible structures on symplectic vector spaces, contractibility of J(M,omega)"]
+
+[[source]]
+id = "mcduff-salamon-jhol"
+authors = "D. McDuff, D. Salamon"
+title = "J-holomorphic Curves and Symplectic Topology"
+year = 2012
+venue = "AMS Colloquium Publications 52, 2nd ed."
+doi = "10.1090/coll/052"
+locator_scheme = "chapter"
+locator = "Chapter 3"
+url = "https://doi.org/10.1090/coll/052"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled (AMS bookstore landing page only); cited by its locator without the text"
+cited_for = ["Baire argument for generic J"]

@@ -106,3 +106,18 @@ licence_class = "author-page"
 status = "certified"
 accessed = "2026-11-03"
 cited_for = ["Layers 1–3, 6"]
+
+[[source]]
+id = "navarro"
+authors = "G. Navarro"
+title = "Characters and Blocks of Finite Groups"
+year = 1998
+venue = "London Mathematical Society Lecture Note Series 250"
+doi = "10.1017/CBO9780511526015"
+locator_scheme = "theorem"
+locator = "Theorem 6.10"
+url = "https://doi.org/10.1017/CBO9780511526015"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["8.3"]

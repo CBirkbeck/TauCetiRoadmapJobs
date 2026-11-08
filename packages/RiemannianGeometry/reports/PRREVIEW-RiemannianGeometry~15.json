@@ -1,0 +1,13 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-RiemannianGeometry~15",
+  "head": "0304eae2ba6623bda11f00c717081692ff57d51a",
+  "pr": 1683,
+  "folder": "RiemannianGeometry",
+  "date": "2026-11-08",
+  "findings": 3,
+  "blocking": 0,
+  "notes": "Full review at the same head as r14 (folder unchanged). Gate: all counters zero except dropped=2 (README 271, 1052 name HomotopySpheres) -> FAIL (R01, P3); depcheck 244 roadmaps, 2466 edges, 0 problems; lake env lean exit 0 with exactly 23 sorry warnings; #check of all 29 declarations matches the README; one-tactic probe closes none of the 23 admitted theorems. Seeded sample verified in the cached texts: Andrews Prop. 16.2.1 p.154; Nicolaescu Def. 4.1.23 and Prop. 4.1.25 p.151, Thm 5.2.26 p.220, Thm 6.2.6 p.238, Ex. 6.2.29 p.243; Brewin section 5 p.9 and eq. (11.1) p.15; O'Neill and Milnor are settled uncertified keys. Adversarial table with values for every headline and the sampled targets. Pins: all cited Tau Ceti and Mathlib names resolve at the branch pin except IsNullSet and isNullSet_image_criticalPoints, which exist only at main's pin 2fd255d9 (known pin lag, Suggested.lean uses neither). R02 (P3): link fragment #the-smoothing-and-triangulation-comparison is dead on main (heading slug ends -far-horizon). R03 (P3, carried, re-raised H02): no stated order against #1327 (whose 20 declarations are all here) and #1187. Noted, not a finding under the branch pin: main's Tau Ceti pin 2fd255d9 already has TauCeti.IsJacobiFieldOn (same three fields), Jacobi uniqueness, the nonpositive-curvature endpoint-vanishing theorem, conjugateMultiplicity, and RingTheory/MvPolynomial/Harmonic.lean's Fischer decomposition; these become P2 duplications when the manifest advances."
+ }
+}
