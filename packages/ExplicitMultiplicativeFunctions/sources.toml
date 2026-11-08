@@ -1303,3 +1303,21 @@ licence_class = "open-repository"
 status = "uncertified"
 version_note = "unrefereed preprint in the openai/math repository, with no numerical constants; context only"
 cited_for = ["Supplier contracts (zero-free inputs)"]
+
+[[source]]
+id = "leong2026"
+authors = "Nicol Leong"
+title = "Explicit estimates for the logarithmic derivative and the reciprocal of the Riemann zeta function"
+year = 2024
+arxiv = "2405.04869v5"
+locator_scheme = "theorem"
+locator = "Corollary 3 (Table 2, row σ₀ = 0.95); Corollary 4 (Table 4, row W = 13)"
+url = "https://arxiv.org/abs/2405.04869v5"
+fetched_from = "https://arxiv.org/pdf/2405.04869v5"
+fetched_at = "2026-11-08T08:21:32Z"
+sha256 = "3e8e80e193368aae29f00f9ba3d61989973dfa87054d9c38329494bd5f7cd558"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-08"
+version_note = "arXiv v5"
+cited_for = ["Layer 1.9"]
