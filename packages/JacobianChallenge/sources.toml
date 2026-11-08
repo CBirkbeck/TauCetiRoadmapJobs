@@ -1,0 +1,20 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "JacobianChallenge"
+
+[[source]]
+id = "tate1968"
+authors = "John Tate"
+title = "Residues of differentials on curves"
+year = 1968
+venue = "Annales scientifiques de l'École normale supérieure 1"
+doi = "10.24033/asens.1162"
+locator_scheme = "section"
+locator = "Section 2, Theorem 1; Section 3"
+url = "https://doi.org/10.24033/asens.1162"
+fetched_from = "https://www.numdam.org/item/10.24033/asens.1162.pdf"
+fetched_at = "2026-11-08T07:35:13Z"
+sha256 = "f2cc15171e5d44d9b2cb358dc3088c53467bffe399ab887ac7feb187774b4fc4"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-08"
+cited_for = ["B.3"]
