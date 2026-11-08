@@ -1,0 +1,64 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "AlgebraicCurves"
+
+[[source]]
+id = "Stichtenoth2009"
+authors = "Henning Stichtenoth"
+title = "Algebraic Function Fields and Codes"
+year = 2009
+venue = "Graduate Texts in Mathematics"
+doi = "10.1007/978-3-540-76878-4"
+locator_scheme = "theorem"
+locator = "Thm. 3.4.13; Cor. 3.4.14; Cor. 3.5.6–3.5.8"
+url = "https://doi.org/10.1007/978-3-540-76878-4"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["Layer 7", "References"]
+
+[[source]]
+id = "Hartshorne1977"
+authors = "Robin Hartshorne"
+title = "Algebraic Geometry"
+year = 1977
+venue = "Graduate Texts in Mathematics"
+doi = "10.1007/978-1-4757-3849-0"
+locator_scheme = "section"
+locator = "I.6; IV.2; Ex. IV.2.5"
+url = "https://doi.org/10.1007/978-1-4757-3849-0"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["Layer 11", "Layer 12", "References"]
+
+[[source]]
+id = "Serre1979"
+authors = "Jean-Pierre Serre"
+title = "Local Fields"
+year = 1979
+venue = "Graduate Texts in Mathematics"
+doi = "10.1007/978-1-4757-5673-9"
+locator_scheme = "chapter"
+locator = "Ch. III (different); Ch. IV (ramification groups)"
+url = "https://doi.org/10.1007/978-1-4757-5673-9"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["Layer 7", "Layer 8", "References"]
+
+[[source]]
+id = "Fulton2008"
+authors = "William Fulton"
+title = "Algebraic Curves: An Introduction to Algebraic Geometry"
+year = 2008
+version_note = "the author's free 2008 edition (dated January 28, 2008), read from the archived copy of his University of Michigan page; the live page returned HTTP 404 on 2026-11-08"
+locator_scheme = "section"
+locator = "Ch. 5; §§8.1–8.6; Appendix A"
+url = "https://web.archive.org/web/20250122020352id_/https://dept.math.lsa.umich.edu/~wfulton/CurveBook.pdf"
+fetched_from = "https://web.archive.org/web/20250122020352id_/https://dept.math.lsa.umich.edu/~wfulton/CurveBook.pdf"
+fetched_at = "2026-11-08T17:36:12Z"
+sha256 = "937a5c2a962b5de196a64578242b5395afdbea03a132124e4feebcfe62adf628"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-08"
+cited_for = ["Layer 10", "Layer 4", "References"]
