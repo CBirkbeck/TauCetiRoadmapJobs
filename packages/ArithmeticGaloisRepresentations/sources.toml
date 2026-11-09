@@ -247,3 +247,90 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-08"
 cited_for = ["5.9"]
+
+[[source]]
+id = "chenevier-pseudocharacters"
+authors = "Gaetan Chenevier"
+title = "The p-adic analytic space of pseudocharacters of a profinite group and pseudorepresentations over arbitrary rings"
+year = 2008
+arxiv = "0809.0415v2"
+locator_scheme = "theorem"
+locator = "Cor. 1.14; Thm 2.12; Cor. 2.13"
+url = "https://arxiv.org/abs/0809.0415v2"
+fetched_from = "https://arxiv.org/pdf/0809.0415v2"
+fetched_at = "2026-11-09T00:26:45Z"
+sha256 = "f3c0e0d86e803301c617d3023d425752e30da46673ed5af932647eb284286953"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-09"
+version_note = "arXiv v2"
+cited_for = ["1.8", "5.4", "5.6"]
+
+[[source]]
+id = "deligne-serre-1974"
+authors = "Pierre Deligne, Jean-Pierre Serre"
+title = "Formes modulaires de poids $1$"
+year = 1974
+venue = "Annales scientifiques de l'École normale supérieure 7"
+doi = "10.24033/asens.1277"
+locator_scheme = "theorem"
+locator = "Lemme 6.13"
+url = "https://doi.org/10.24033/asens.1277"
+fetched_from = "https://www.numdam.org/item/10.24033/asens.1277.pdf"
+fetched_at = "2026-11-09T00:27:11Z"
+sha256 = "65b390f6d33e827e30c6c66bbc15421eca51db3180bdf5996dcee19047be97fc"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-09"
+cited_for = ["1.8"]
+
+[[source]]
+id = "bockle-harris-khare-thorne-2019"
+authors = "Gebhard Böckle, Michael Harris, Chandrashekhar Khare, Jack A. Thorne"
+title = "$\\hat{G}$-local systems on smooth projective curves are potentially automorphic"
+year = 2016
+arxiv = "1609.03491v2"
+locator_scheme = "theorem"
+locator = "Prop. 3.2; Prop. 3.10; Thm 4.8(ii)"
+url = "https://arxiv.org/abs/1609.03491v2"
+fetched_from = "https://arxiv.org/pdf/1609.03491v2"
+fetched_at = "2026-11-09T00:28:04Z"
+sha256 = "ec54cf92ce04146c73b48945be2765f675359255d46cc94a0aa35a39229743b9"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-09"
+version_note = "arXiv v2"
+cited_for = ["1.11"]
+
+[[source]]
+id = "clozel-harris-taylor-2008"
+authors = "Laurent Clozel, Michael Harris, Richard Taylor"
+title = "Automorphy for some l-adic lifts of automorphic mod l Galois representations"
+year = 2008
+venue = "Publications Mathématiques de l'IHÉS 108"
+doi = "10.1007/s10240-008-0016-1"
+locator_scheme = "theorem"
+locator = "Lemma 2.1.5; proof of Lemma 2.5.2, p. 56; Cor. 2.5.4"
+url = "https://www.numdam.org/item/PMIHES_2008__108__1_0/"
+fetched_from = "https://www.numdam.org/item/PMIHES_2008__108__1_0.pdf"
+fetched_at = "2026-11-09T00:33:39Z"
+sha256 = "9d3b7079440d8cd3167812bb11c25ae4b51ada973b2e98f0928624254a60156c"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-09"
+cited_for = ["1.11", "7.7", "7.8"]
+
+[[source]]
+id = "seshadri-1977"
+authors = "C. S. Seshadri"
+title = "Geometric reductivity over arbitrary base"
+year = 1977
+venue = "Advances in Mathematics 26"
+doi = "10.1016/0001-8708(77)90041-X"
+locator_scheme = "theorem"
+locator = "Theorem 3; Proposition 3; Lemma 2"
+url = "https://doi.org/10.1016/0001-8708(77)90041-X"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["1.11"]
