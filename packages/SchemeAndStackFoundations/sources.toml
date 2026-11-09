@@ -245,3 +245,57 @@ status = "certified"
 accessed = "2026-11-09"
 version_note = "arXiv v3 read; the README cites its numbering (Theorem 5.2.6, display (5.2.6.2))"
 cited_for = ["2.10"]
+
+[[source]]
+id = "poonen-stoll-1999"
+authors = "Bjorn Poonen, Michael Stoll"
+title = "The Cassels-Tate pairing on polarized abelian varieties"
+year = 1999
+venue = "Ann. of Math. (2) 150 (1999), no. 3, 1109-1149"
+doi = "10.2307/121064"
+arxiv = "math/9911267v1"
+locator_scheme = "section"
+locator = "§2, pp. 1113–1114; §8, p. 1126"
+url = "https://arxiv.org/abs/math/9911267v1"
+fetched_from = "https://arxiv.org/pdf/math/9911267v1"
+fetched_at = "2026-11-09T06:34:53Z"
+sha256 = "a7f6b91f8dbc38d8c061fc8aa2c2848a1ed503cb0dbe91c5bd1a6f6ef9dff804"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-09"
+version_note = "arXiv v1"
+cited_for = ["3.6"]
+
+[[source]]
+id = "milne-av"
+authors = "J. S. Milne"
+title = "Abelian Varieties (v2.00)"
+year = 2008
+locator_scheme = "theorem"
+locator = "Part III, Theorem 1.6, Remarks 1.4 (e) and 1.11, Propositions 1.13–1.14"
+url = "https://www.jmilne.org/math/CourseNotes/AV.pdf"
+fetched_from = "https://www.jmilne.org/math/CourseNotes/AV.pdf"
+fetched_at = "2026-11-09T06:35:00Z"
+sha256 = "f5ca4e63e5092a4b102daad1470e4cbed5fe8f82115e3a28c8881e3f67f6aaef"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-09"
+cited_for = ["3.6"]
+
+[[source]]
+id = "bhargava-gross-wang-2017"
+authors = "Manjul Bhargava, Benedict H. Gross, Xiaoheng Wang"
+title = "A positive proportion of locally soluble hyperelliptic curves over $\\mathbb Q$ have no point over any odd degree extension"
+year = 2013
+arxiv = "1310.7692v2"
+locator_scheme = "theorem"
+locator = "§3, Proposition 21, pp. 10–11"
+url = "https://arxiv.org/abs/1310.7692v2"
+fetched_from = "https://arxiv.org/pdf/1310.7692v2"
+fetched_at = "2026-11-09T06:46:02Z"
+sha256 = "8833a226eea99eab7e48b90de7d747fa535eafe032d5c62fd50812d38ad4c4f2"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-09"
+version_note = "arXiv v2"
+cited_for = ["3.6"]
