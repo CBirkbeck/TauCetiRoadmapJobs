@@ -350,3 +350,21 @@ status = "certified"
 accessed = "2026-11-09"
 version_note = "arXiv v2"
 cited_for = ["8.8c"]
+
+[[source]]
+id = "stacks-more-algebra"
+authors = "The Stacks project authors"
+title = "The Stacks project, Chapter 15: More on Algebra"
+year = 2026
+venue = "https://stacks.math.columbia.edu"
+locator_scheme = "tag"
+locator = "Lemma 15.65.4 (Tag 0H7Z), Künneth spectral sequence"
+version_note = "numbered Lemma 15.65.4 in the PDF read; cite by the stable tag 0H7Z"
+url = "https://stacks.math.columbia.edu/tag/0H7Z"
+fetched_from = "https://stacks.math.columbia.edu/download/more-algebra.pdf#nameddest=0H7Z"
+fetched_at = "2026-11-09T12:13:14Z"
+sha256 = "ab69179738e642603ddbde651f2838e1cb5d8711e8bcd7c447cbf02a8bb6a5d2"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-09"
+cited_for = ["5.1"]
