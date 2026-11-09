@@ -157,3 +157,19 @@ licence_class = "author-page"
 status = "certified"
 accessed = "2026-11-07"
 cited_for = ["C6.1"]
+
+[[source]]
+id = "demailly-agbook"
+authors = "Jean-Pierre Demailly"
+title = "Complex Analytic and Differential Geometry"
+year = 2012
+locator_scheme = "section"
+locator = "II (4.2)"
+url = "https://www-fourier.univ-grenoble-alpes.fr/~demailly/manuscripts/agbook.pdf"
+fetched_from = "https://www-fourier.univ-grenoble-alpes.fr/~demailly/manuscripts/agbook.pdf"
+fetched_at = "2026-11-09T05:39:34Z"
+sha256 = "d7c7654a7417e8322e5dcf8fe8ec818b4c1a18cf280b41f2df5a871b776d89a1"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-09"
+cited_for = ["C4.5", "C0.6", "C4.1", "C5.4"]
