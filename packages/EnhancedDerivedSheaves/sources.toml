@@ -82,3 +82,19 @@ licence_class = "author-page"
 status = "certified"
 accessed = "2026-11-09"
 cited_for = ["E1.6"]
+
+[[source]]
+id = "StacksDerivedCategoriesOfSchemes"
+authors = ["The Stacks project authors"]
+title = "The Stacks project, Chapter 36: Derived Categories of Schemes"
+year = 2026
+locator_scheme = "tag"
+locator = "06Z0"
+url = "https://stacks.math.columbia.edu/download/perfect.pdf"
+fetched_from = "https://stacks.math.columbia.edu/download/perfect.pdf"
+fetched_at = "2026-11-09T15:53:37Z"
+sha256 = "f79e0ebb628734948a51efd20b75d75c8e5341e4ab493e54f7fc710ebf72fb02"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-09"
+cited_for = ["E1.8"]
