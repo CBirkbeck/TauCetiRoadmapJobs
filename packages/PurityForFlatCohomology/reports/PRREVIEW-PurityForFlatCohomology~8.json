@@ -1,0 +1,13 @@
+{
+  "review": {
+    "status": "needs_changes",
+    "reviewer": "independent-review-PRREVIEW-PurityForFlatCohomology~8",
+    "head": "08c5cf2483bafb7fcba00c1d3bc011e8ff000615",
+    "pr": 1840,
+    "folder": "PurityForFlatCohomology",
+    "date": "2026-11-08",
+    "findings": 6,
+    "blocking": 3,
+    "notes": "Full review (764 changed lines since e5658f9). Gate rerun fails: dropped=39 (GroupSchemesOverABase cited as supplier, 38 README lines + Suggested.lean 73-74), all other checks 0; depcheck 238 roadmaps, 2352 edges, 0 problems; lake env lean Suggested.lean exits 0 with 9 sorry warnings; #check of 13 declarations matches signatures; one-tactic probe closes none. Seeded sample: all 15 targets checked against CS24, SGA2, SGA1, BC22, Gro66 and C19 at their locators (statements, numbers, pages match). Previous R01, R02, R04-R06 repaired; R03 reversed (now R01, P1). New: R02 small-etale-site cohomology makes CS24 Thm 3.2.4/6.2.4 statable for constant coefficients (tested repair elaborates); R03 double ownership of sections 1.4-1.5 with #1743 (and Layer 3/7.10 with the SchemeAndStackFoundationsPartII package); R04 gerbes owner is AlgebraicModuliForArithmeticGeometry 4.1, not SchemeAndStackFoundations 1.18; R05 LocalPurity 1.1 dropped by #1808; R06 two Needs omissions. Declared gaps precise, minimal and declared in plan.json."
+  }
+}
