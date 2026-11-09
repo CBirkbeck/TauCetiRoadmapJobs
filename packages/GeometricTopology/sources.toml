@@ -575,3 +575,35 @@ status = "certified"
 accessed = "2026-11-08"
 version_note = "arXiv v2"
 cited_for = ["6.4"]
+
+[[source]]
+id = "thurston-gt3m"
+authors = "William P. Thurston"
+title = "The Geometry and Topology of Three-Manifolds"
+year = 1980
+venue = "Princeton lecture notes, electronic edition of the SLMath (MSRI) library"
+locator_scheme = "section"
+locator = "Sections 5.9, 6.1-6.3"
+url = "https://library.slmath.org/nonmsri/gt3m/PDF/Thurston-gt3m.pdf"
+fetched_from = "https://library.slmath.org/nonmsri/gt3m/PDF/Thurston-gt3m.pdf"
+fetched_at = "2026-11-09T00:36:55Z"
+sha256 = "33a111aea30336d980b0d10126a3632521ab3cb51a33648d5cac5f1933568e39"
+licence_class = "institutional"
+status = "certified"
+accessed = "2026-11-09"
+cited_for = ["7.2", "7.3"]
+
+[[source]]
+id = "haagerup-munkholm1981"
+authors = "Uffe Haagerup, Hans J. Munkholm"
+title = "Simplices of maximal volume in hyperbolic n-space"
+year = 1981
+venue = "Acta Mathematica 147"
+doi = "10.1007/BF02392865"
+locator_scheme = "theorem"
+locator = "the theorem of the introduction"
+url = "https://doi.org/10.1007/BF02392865"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["7.2"]
