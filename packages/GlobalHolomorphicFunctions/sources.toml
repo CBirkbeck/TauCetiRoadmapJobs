@@ -32,3 +32,35 @@ licence_class = "author-page"
 status = "certified"
 accessed = "2026-11-08"
 cited_for = ["0.2"]
+
+[[source]]
+id = "dlmf-4-22"
+authors = "F. W. J. Olver, A. B. Olde Daalhuis, D. W. Lozier, B. I. Schneider, R. F. Boisvert, C. W. Clark, B. R. Miller, B. V. Saunders, H. S. Cohl and M. A. McClain (eds.)"
+title = "NIST Digital Library of Mathematical Functions, Release of 2026-09-15, §4.22 Infinite Products and Partial Fractions"
+year = 2026
+locator_scheme = "equation"
+locator = "(4.22.2), (4.22.3)"
+url = "https://dlmf.nist.gov/4.22"
+fetched_from = "https://dlmf.nist.gov/4.22"
+fetched_at = "2026-11-09T13:39:38Z"
+sha256 = "807308b315cbb728ad82d99015432b0dd6a695b303b185b8e723ea096bce2088"
+licence_class = "institutional"
+status = "certified"
+accessed = "2026-11-09"
+cited_for = ["6.1"]
+
+[[source]]
+id = "dlmf-5-8"
+authors = "F. W. J. Olver, A. B. Olde Daalhuis, D. W. Lozier, B. I. Schneider, R. F. Boisvert, C. W. Clark, B. R. Miller, B. V. Saunders, H. S. Cohl and M. A. McClain (eds.)"
+title = "NIST Digital Library of Mathematical Functions, Release of 2026-09-15, §5.8 Infinite Products"
+year = 2026
+locator_scheme = "equation"
+locator = "(5.8.2)"
+url = "https://dlmf.nist.gov/5.8"
+fetched_from = "https://dlmf.nist.gov/5.8"
+fetched_at = "2026-11-09T13:39:39Z"
+sha256 = "eab3ea691333c4cb7183a360df6117a583649080787f6748588f2824e250d5e3"
+licence_class = "institutional"
+status = "certified"
+accessed = "2026-11-09"
+cited_for = ["6.1"]
