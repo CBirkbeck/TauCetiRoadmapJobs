@@ -175,3 +175,55 @@ licence_class = "none"
 status = "uncertified"
 version_note = "paywalled; cited by its locator without the text"
 cited_for = ["5.9"]
+
+[[source]]
+id = "ega-iv-3"
+authors = "Alexander Grothendieck"
+title = "Éléments de géométrie algébrique IV, Étude locale des schémas et des morphismes de schémas, troisième partie"
+year = 1966
+locator_scheme = "theorem"
+locator = "Théorème 9.7.7; Proposition 9.9.4; Théorème 12.2.4"
+url = "https://www.numdam.org/item/PMIHES_1966__28__5_0.pdf"
+fetched_from = "https://www.numdam.org/item/PMIHES_1966__28__5_0.pdf"
+fetched_at = "2026-11-09T02:09:16Z"
+sha256 = "f365212b38f20608ba34c21ae3ee40bbae1b42d9d3dff01a85356f9cc819c23e"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-09"
+cited_for = ["0.8"]
+
+[[source]]
+id = "cesnavicius-2021"
+authors = "Kestutis Cesnavicius"
+title = "Macaulayfication of Noetherian schemes"
+year = 2018
+arxiv = "1810.04493v2"
+locator_scheme = "section"
+locator = "Definition 1.2; §2.10"
+url = "https://arxiv.org/abs/1810.04493v2"
+fetched_from = "https://arxiv.org/pdf/1810.04493v2"
+fetched_at = "2026-11-09T02:22:46Z"
+sha256 = "a07d62e6ef1e4c2126c172426391e97031d28006b92ccb6c5f3afd9c2ddb07b9"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-09"
+version_note = "arXiv v2 read; published in Duke Math. J. 170 (2021); the README's locators (Definition 1.2, §2.10) are those of v2"
+cited_for = ["0.19"]
+
+[[source]]
+id = "bhatt-scholze-2014"
+authors = "Bhargav Bhatt, Peter Scholze"
+title = "The pro-étale topology for schemes"
+year = 2013
+arxiv = "1309.1198v2"
+locator_scheme = "theorem"
+locator = "Definition 3.1.1; Proposition 3.2.3; Proposition 4.2.8"
+url = "https://arxiv.org/abs/1309.1198v2"
+fetched_from = "https://arxiv.org/pdf/1309.1198v2"
+fetched_at = "2026-11-09T02:30:35Z"
+sha256 = "ae0960a28f0f25300211569cd350def057d6c0f781f635694182868e766d3c84"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-09"
+version_note = "arXiv v2"
+cited_for = ["2.17"]
