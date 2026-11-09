@@ -558,3 +558,19 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-09"
 cited_for = ["F.0.2", "G.2"]
+
+[[source]]
+id = "stacks-06UQ"
+authors = "The Stacks Project Authors"
+title = "The Stacks Project"
+year = 2026
+locator_scheme = "tag"
+locator = "06UQ"
+url = "https://stacks.math.columbia.edu/tag/06UQ"
+fetched_from = "https://stacks.math.columbia.edu/download/derived.pdf#nameddest=06UQ"
+fetched_at = "2026-11-09T23:31:49Z"
+sha256 = "3d6c5169149c3a8556cab5bbfc5ce27ca34607fb1d5da49456277f4410ddcae3"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-09"
+cited_for = ["F.1"]
