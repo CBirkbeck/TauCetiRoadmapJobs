@@ -90,3 +90,20 @@ status = "certified"
 accessed = "2026-11-08"
 version_note = "arXiv v2"
 cited_for = ["4.2b", "4.2c"]
+
+[[source]]
+id = "hatcher-at"
+authors = "Allen Hatcher"
+title = "Algebraic Topology"
+year = 2002
+version_note = "author's online edition, read from the author's page"
+locator_scheme = "theorem"
+locator = "Proposition 4.48"
+url = "https://pi.math.cornell.edu/~hatcher/AT/AT.pdf"
+fetched_from = "https://pi.math.cornell.edu/~hatcher/AT/AT.pdf"
+fetched_at = "2026-11-09T16:54:49Z"
+sha256 = "bebb3032bf9021b956da3bd070eb6c67dc662cf849be9cdf6679f677560e5618"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-09"
+cited_for = ["4.2"]
