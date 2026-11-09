@@ -1,0 +1,13 @@
+{
+  "review": {
+    "status": "needs_changes",
+    "reviewer": "independent-review-PRREVIEW-ClassFieldTheory~19",
+    "head": "b94cfccc7a34c7d274c66d0033cbe674f61554ca",
+    "pr": 1215,
+    "folder": "ClassFieldTheory",
+    "date": "2026-11-09",
+    "findings": 6,
+    "blocking": 0,
+    "notes": "Full review: the folder changed by 211 lines since 024927f. Of the previous review's eight findings, five are repaired, one is repaired with two leftover gaps (R04) and two are not repaired (gate outside-folder and the order with #617/#1411). Gate: fails only on the out-of-folder Completed/LocalGaloisGroups/Suggested.lean edit. Dependency check: clean, 0 problems. lake env lean on Suggested.lean: seven sorry warnings and nothing else. #check of all nine declarations: no binder lost. One-tactic probe: closes nothing. New P3 findings: (R01) the conductor comparison restates the pinned conductorExponent_fixedField_ker; (R04) the name map misses two cited ids; (R05) the QuadraticFormInvariants boundary credits it with comparisons Tau Ceti proves; (R06) a nonexistent ProfiniteCohomology.TopRep. Seeded sample: milne-cft, milne-adt, serre1961 and kopp-lagarias locators verified, including the new VIII Theorem 3.1 citation and the Lemma 9.3 count; subsections 0.1-4.1, 8.1, 9.1, 11.1 and 14.1 carry no locator of their own. Adversarial table: 40 rows with computed values. 536 README names resolved at the pins. Ownership swept across 468 open heads. Not verifiable (settled uncertified or waived): neukirch-ant, serre-local-fields, artin-tate, nsw."
+  }
+}
