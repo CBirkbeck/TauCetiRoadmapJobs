@@ -1,0 +1,51 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "NeronModelsAndSemistableAbelianVarieties"
+
+[[source]]
+id = "stacks-varieties"
+authors = "The Stacks project authors"
+title = "The Stacks project, Chapter 33: Varieties"
+year = 2026
+venue = "https://stacks.math.columbia.edu"
+locator_scheme = "tag"
+locator = "Lemmas 33.7.4 (0385), 33.7.6 (0363), 33.7.18 (038D), 33.7.19 (038E), 33.25.6 (056U)"
+url = "https://stacks.math.columbia.edu/download/varieties.pdf"
+fetched_from = "https://stacks.math.columbia.edu/download/varieties.pdf"
+fetched_at = "2026-11-09T13:38:08Z"
+sha256 = "ed339c312c86721e3f830876da14cabe89a96e83e454a78b7cd355555f4bca45"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-09"
+cited_for = ["2.2"]
+
+[[source]]
+id = "stacks-groupoids"
+authors = "The Stacks project authors"
+title = "The Stacks project, Chapter 39: Groupoid Schemes"
+year = 2026
+venue = "https://stacks.math.columbia.edu"
+locator_scheme = "tag"
+locator = "Proposition 39.7.11 (0B7R), Lemma 39.8.1 (045X)"
+url = "https://stacks.math.columbia.edu/download/groupoids.pdf"
+fetched_from = "https://stacks.math.columbia.edu/download/groupoids.pdf"
+fetched_at = "2026-11-09T13:38:11Z"
+sha256 = "4506a39201063afc270cbb68c9c0c1d3c90937c03f98cfee074605b402e7a30f"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-09"
+cited_for = ["2.1"]
+
+[[source]]
+id = "sga7-ix"
+authors = "A. Grothendieck, M. Raynaud"
+title = "Modeles de neron et monodromie"
+year = 1972
+venue = "Lecture Notes in Mathematics"
+doi = "10.1007/bfb0068694"
+locator_scheme = "section"
+locator = "Exposé IX, §§1.1–1.2, pp. 321–323"
+url = "https://doi.org/10.1007/bfb0068694"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["2.1", "2.2"]
