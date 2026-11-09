@@ -14,8 +14,8 @@ sha256 = "d34a09b4559eade18dac2c01f6718d4689c5f565d9dc252c3a67de0167520eca"
 licence_class = "author-page"
 status = "certified"
 accessed = "2026-11-07"
-cited_for = ["5.7"]
 version_note = "undated work-in-progress chapter on the author's page; the copy read on 2026-11-07, Atiyah-Hirzebruch paragraph on p. 18"
+cited_for = ["5.7"]
 
 [[source]]
 id = "thom1954"
@@ -67,8 +67,8 @@ sha256 = "bebb3032bf9021b956da3bd070eb6c67dc662cf849be9cdf6679f677560e5618"
 licence_class = "author-page"
 status = "certified"
 accessed = "2026-11-08"
-cited_for = ["8.3"]
 version_note = "the author's online edition; printed page 385 is PDF page 394"
+cited_for = ["8.3"]
 
 [[source]]
 id = "freedBordism"
@@ -84,8 +84,8 @@ sha256 = "ddecb72e0c9197c612d82f9d87c22d6aaea086bd234ecd7d45c72acbd38a7b60"
 licence_class = "author-page"
 status = "certified"
 accessed = "2026-11-08"
-cited_for = ["8.3"]
 version_note = "notes dated 11 February 2013 for the Fall 2012 course"
+cited_for = ["8.3"]
 
 [[source]]
 id = "beaudryCampbell"
@@ -110,8 +110,8 @@ id = "medinaMardonesCupI"
 authors = "Anibal M. Medina-Mardones"
 title = "New formulas for cup-i products and fast computation of Steenrod squares"
 year = 2022
-arxiv = "2105.08025v3"
 doi = "10.1016/j.comgeo.2022.101921"
+arxiv = "2105.08025v3"
 locator_scheme = "theorem"
 locator = "Definition 1 with equation (5), p.6; Definition 2, p.7 (arXiv v3)"
 url = "https://arxiv.org/abs/2105.08025v3"
@@ -138,5 +138,129 @@ sha256 = "c70bf1f21e1d36388f7b6690ec724edf7b486378e70cb408b2b8744a5589da9a"
 licence_class = "institutional"
 status = "certified"
 accessed = "2026-11-09"
-cited_for = ["2.4", "3.2", "3.3", "4.2", "5.1", "5.5", "6.1"]
 version_note = "lecture notes typed by D. Christensen and G. Laures, version dated December 5, 2001; printed page = PDF page − 5"
+cited_for = ["2.4", "3.2", "3.3", "4.2", "5.1", "5.5", "6.1"]
+
+[[source]]
+id = "guillouWeibel"
+authors = "Bertrand Guillou, Charles Weibel"
+title = "Unstable operations in étale and motivic cohomology"
+year = 2013
+arxiv = "1301.0872v1"
+locator_scheme = "theorem"
+locator = "Theorem 6.2, p.18"
+url = "https://arxiv.org/abs/1301.0872v1"
+fetched_from = "https://arxiv.org/pdf/1301.0872v1"
+fetched_at = "2026-11-09T15:20:24Z"
+sha256 = "b27fcec7789d67d27b12433bf26a75343c54f09295fd3ee5c120c80a1ecbb04e"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-09"
+version_note = "arXiv v1"
+cited_for = ["4.2"]
+
+[[source]]
+id = "baezOctonions"
+authors = "John C. Baez"
+title = "The Octonions"
+year = 2001
+venue = "Bull.Am.Math.Soc.39:145-205,2002"
+arxiv = "math/0105155v4"
+locator_scheme = "section"
+locator = "§§3.4, 4.2"
+url = "https://arxiv.org/abs/math/0105155v4"
+fetched_from = "https://arxiv.org/pdf/math/0105155v4"
+fetched_at = "2026-11-09T15:20:35Z"
+sha256 = "f8087fb91b10cdbee2157e8eec8c33ac6b918b0de2c8c1fd16b4d8183f0868cc"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-09"
+version_note = "arXiv v4"
+cited_for = ["9.1"]
+
+[[source]]
+id = "fuehringProjective"
+locator_scheme = "theorem"
+locator = "Proposition 3.4, p.362"
+url = "https://www.uni-muenster.de/FB10/mjm/vol_15/mjm_vol_15_11.pdf"
+fetched_from = "https://www.uni-muenster.de/FB10/mjm/vol_15/mjm_vol_15_11.pdf"
+fetched_at = "2026-11-09T15:20:37Z"
+sha256 = "06e4566afcbf1b6a1a905266b3ba0b566131c0ad001add2ed290001874ac6e51"
+licence_class = "institutional"
+status = "certified"
+accessed = "2026-11-09"
+cited_for = ["10.2"]
+
+[[source]]
+id = "benedettiLisca"
+authors = "Riccardo Benedetti, Paolo Lisca"
+title = "Framing 3-manifolds with bare hands"
+year = 2018
+arxiv = "1806.04991v2"
+locator_scheme = "theorem"
+locator = "Theorem 1, p.1"
+url = "https://arxiv.org/abs/1806.04991v2"
+fetched_from = "https://arxiv.org/pdf/1806.04991v2"
+fetched_at = "2026-11-09T15:20:42Z"
+sha256 = "aa5a2f050f0d55acc33c2b9bf8dd7c3d694051258b87bf9d89f957d93cac49ee"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-09"
+version_note = "arXiv v2"
+cited_for = ["8.4"]
+
+[[source]]
+id = "atiyahBottShapiro"
+authors = "M.F. Atiyah, R. Bott, A. Shapiro"
+title = "Clifford modules"
+year = 1964
+venue = "Topology 3"
+doi = "10.1016/0040-9383(64)90003-5"
+locator_scheme = "section"
+locator = "§§10–11"
+url = "https://doi.org/10.1016/0040-9383(64)90003-5"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["7.1"]
+
+[[source]]
+id = "borelHirzebruchI"
+locator_scheme = "theorem"
+locator = "Theorem 19.4"
+url = "https://hirzebruch.mpim-bonn.mpg.de/id/eprint/162/1/19_Characteristic%20classes%20and%20homogeneous%20spaces%20I.pdf"
+fetched_from = "https://hirzebruch.mpim-bonn.mpg.de/id/eprint/162/1/19_Characteristic%20classes%20and%20homogeneous%20spaces%20I.pdf"
+fetched_at = "2026-11-09T15:20:48Z"
+sha256 = "84114d0afac89d6c9e8600b2472b8dba38304ade71caae13323358e4b256a0fe"
+licence_class = "institutional"
+status = "certified"
+accessed = "2026-11-09"
+cited_for = ["9.3"]
+
+[[source]]
+id = "kreckStolz"
+authors = "Matthias Kreck, Stephan Stolz"
+title = "HP2-bundles and elliptic homology"
+year = 1993
+venue = "Acta Mathematica 171"
+doi = "10.1007/BF02392533"
+locator_scheme = "theorem"
+locator = "Proposition 4.2, p.244"
+url = "https://doi.org/10.1007/BF02392533"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["10.4"]
+
+[[source]]
+id = "rosenbergStolz"
+locator_scheme = "theorem"
+locator = "Theorem 3.3, p.8"
+url = "https://math.umd.edu/~jmr/StableGLConj4.pdf"
+fetched_from = "https://math.umd.edu/~jmr/StableGLConj4.pdf"
+fetched_at = "2026-11-09T15:20:51Z"
+sha256 = "14c3e93664a2e1a4cdac1ce0b490e500af38550eb815f286f2bb0b1ad68d3505"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-09"
+cited_for = ["10.4"]
