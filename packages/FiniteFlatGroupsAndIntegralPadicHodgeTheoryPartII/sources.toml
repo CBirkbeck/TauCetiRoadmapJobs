@@ -243,3 +243,21 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-25"
 cited_for = ["Exact supplier contracts; README §2.6 integrality detection"]
+
+[[source]]
+id = "P23"
+authors = "Georgios Pappas"
+title = "On integral models of Shimura varieties"
+year = 2023
+arxiv = "2003.13040v4"
+locator_scheme = "section"
+locator = "arXiv v4 §3.2.1 and footnote 3, pp.15–16"
+url = "https://arxiv.org/abs/2003.13040v4"
+fetched_from = "https://arxiv.org/pdf/2003.13040v4"
+fetched_at = "2026-11-09T17:13:56Z"
+sha256 = "04fa98658a0919a870a842481cf833d74e72697c1945f232128f480d23fbe12d"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-09"
+version_note = "arXiv:2003.13040v4 (5 March 2022), the version read; published in Mathematische Annalen 385 (2023), 1–61. Page numbers are arXiv v4 pages."
+cited_for = ["Exact supplier contracts (gap:full-fixer-cutting-tensors)"]
