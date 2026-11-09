@@ -1,0 +1,13 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-EtaleCohomologyFoundations~8",
+  "head": "6217eb966587d112b1ed32d520874096200f2454",
+  "pr": 1891,
+  "folder": "EtaleCohomologyFoundations",
+  "date": "2026-11-09",
+  "findings": 1,
+  "blocking": 1,
+  "notes": "incremental re-review of 29 changed lines since 9f37291. Previous R01 (ν), R03 (Gauss–Bonnet prose) and R04 (DDT page) repaired; previous R02 (description says consumers of the extension point count are unaffected; WeilConjectures and DeligneWeightsAndPurity each define their own) not repaired and carried as R01 (P2, description only; README and Suggested.lean need no change). Checked: the two new Mathlib names at the pin (etale_le_weaklyEtale, MorphismProperty.Over.changeProp, fullyFaithfulChangeProp), the definitions of X.Etale and X.ProEt, ν ownership on main versus the open SchemeAndStackFoundations revision, the Gauss–Bonnet instances over F_q and R recomputed (including ℓ = 2), ddt-flt page 54. Gate passes (worker's run, all checks 0, build 0); depcheck re-run: 0 problems; Suggested.lean unchanged and elaborates with six sorry warnings only. Adversarial table: 3 rows computed for changed statements, 25 carried from the previous review. No sampled target lies in a changed passage."
+ }
+}
