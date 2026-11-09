@@ -484,3 +484,21 @@ status = "certified"
 accessed = "2026-11-08"
 version_note = "Second edition (AMS Chelsea, 2004), author's posted copy; locators use its printed page numbers."
 cited_for = ["7.5"]
+
+[[source]]
+id = "thomason"
+authors = "R. W. Thomason"
+title = "Algebraic K-theory and étale cohomology"
+year = 1985
+venue = "Annales scientifiques de l'École normale supérieure 18"
+doi = "10.24033/asens.1495"
+locator_scheme = "theorem"
+locator = "Theorem 4.1, p. 516; Remark 4.2, pp. 516–517; Theorem 2.43 and display (2.112), p. 498; Corollary 2.44, pp. 499–500"
+url = "https://doi.org/10.24033/asens.1495"
+fetched_from = "https://www.numdam.org/item/10.24033/asens.1495.pdf"
+fetched_at = "2026-11-08T22:26:08Z"
+sha256 = "3497d34982b0f7f43682cb978a3a031cc7567c899a43a6558bb424318111bb16"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-08"
+cited_for = ["6.15"]
