@@ -459,3 +459,16 @@ licence_class = "author-page"
 status = "certified"
 accessed = "2026-11-09"
 cited_for = ["1.5", "1.8", "1.9"]
+
+[[source]]
+id = "MC-sylow"
+locator_scheme = "theorem"
+locator = "Baer_Suzuki"
+url = "https://raw.githubusercontent.com/math-comp/math-comp/mathcomp-2.2.0/mathcomp/solvable/sylow.v"
+fetched_from = "https://raw.githubusercontent.com/math-comp/math-comp/mathcomp-2.2.0/mathcomp/solvable/sylow.v"
+fetched_at = "2026-11-09T07:15:53Z"
+sha256 = "117b3da5fd770f358aba7af34e7503cfa621298c461fbc53d08c7f078cc2fa46"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-09"
+cited_for = ["1.8"]
