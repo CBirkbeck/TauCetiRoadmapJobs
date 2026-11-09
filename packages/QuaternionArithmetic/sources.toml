@@ -1,0 +1,290 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "QuaternionArithmetic"
+
+[[source]]
+id = "voight"
+locator_scheme = "theorem"
+locator = "Theorem 15.5.5"
+url = "https://jvoight.github.io/quat/quat-book-v0.9.28.pdf"
+fetched_from = "https://jvoight.github.io/quat/quat-book-v0.9.28.pdf"
+fetched_at = "2026-11-09T08:22:16Z"
+sha256 = "ad6bd0f7459baddbca5dd6663145a4ff96b7bf7d7ce7ee8584ea46524e43ce15"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-09"
+cited_for = ["1.8", "Layers 0-9"]
+
+[[source]]
+id = "rotger"
+locator_scheme = "section"
+locator = "Section 3"
+url = "https://web.mat.upc.edu/victor.rotger/docs/ModularShimura.pdf"
+fetched_from = "https://web.mat.upc.edu/victor.rotger/docs/ModularShimura.pdf"
+fetched_at = "2026-11-09T08:22:55Z"
+sha256 = "045f9b80ef527ad47a2510e7293798e7fa7fd44c725da0ee941372fa63825e82"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-09"
+cited_for = ["9.1"]
+
+[[source]]
+id = "dembele_voight"
+authors = "Lassina Dembele, John Voight"
+title = "Explicit methods for Hilbert modular forms"
+year = 2010
+arxiv = "1010.5727v2"
+locator_scheme = "theorem"
+locator = "Theorem 3.9"
+url = "https://arxiv.org/abs/1010.5727v2"
+fetched_from = "https://arxiv.org/pdf/1010.5727v2"
+fetched_at = "2026-11-09T08:23:01Z"
+sha256 = "eac1a1ff150fcfcee098bf5f684a1eb727a356bf50ebc55f919e84d8f0bea9d3"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-09"
+version_note = "arXiv v2"
+cited_for = ["7.5"]
+
+[[source]]
+id = "vigneras1980"
+authors = "Marie-France Vignéras"
+title = "Arithmétique des Algèbres de Quaternions"
+year = 1980
+venue = "Lecture Notes in Mathematics"
+doi = "10.1007/BFb0091027"
+locator_scheme = "chapter"
+locator = "Chapter V"
+url = "https://doi.org/10.1007/BFb0091027"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["6.6"]
+
+[[source]]
+id = "pizer1980"
+authors = "Arnold Pizer"
+title = "An algorithm for computing modular forms on Γ0(N)"
+year = 1980
+venue = "Journal of Algebra 64"
+doi = "10.1016/0021-8693(80)90151-9"
+locator_scheme = "section"
+locator = "Section 2"
+url = "https://doi.org/10.1016/0021-8693(80)90151-9"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["7.1"]
+
+[[source]]
+id = "ogg1983"
+authors = "A. Ogg"
+title = "Real points on Shimura curves"
+year = 1983
+venue = "Arithmetic and Geometry"
+doi = "10.1007/978-1-4757-9284-3_12"
+locator_scheme = "section"
+locator = "Section 1"
+url = "https://doi.org/10.1007/978-1-4757-9284-3_12"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["8.6"]
+
+[[source]]
+id = "pizer1976"
+locator_scheme = "section"
+locator = "Section 1"
+url = "https://matwbn.icm.edu.pl/ksiazki/aa/aa31/aa3116.pdf"
+fetched_from = "https://matwbn.icm.edu.pl/ksiazki/aa/aa31/aa3116.pdf"
+fetched_at = "2026-11-09T08:33:28Z"
+sha256 = "ca40b71cabc28076e6240d1b218b80cd58cca2717be1b99bfe8c7f0af38ecd52"
+licence_class = "institutional"
+status = "certified"
+accessed = "2026-11-09"
+cited_for = ["6.6"]
+
+[[source]]
+id = "eichler1955"
+locator_scheme = "page"
+locator = "p. 127"
+url = "https://eudml.org/doc/150303"
+fetched_from = "https://eudml.org/doc/150303"
+fetched_at = "2026-11-09T08:33:29Z"
+sha256 = "12850d9b1ed91dd68eddfeb9501f5bc9707e0b43cf9768e4afd4d708493a39c9"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-09"
+cited_for = ["6.6"]
+
+[[source]]
+id = "lmfdb_shimcurve"
+locator_scheme = "tag"
+locator = "shimcurve"
+url = "https://www.lmfdb.org/knowledge/show/shimcurve"
+fetched_from = "https://www.lmfdb.org/knowledge/show/shimcurve"
+fetched_at = "2026-11-09T08:34:31Z"
+sha256 = "a135d504b3b38c567b0355185817b01bb10dabe487867d5ecfb446d7e97d7506"
+licence_class = "institutional"
+status = "certified"
+accessed = "2026-11-09"
+cited_for = ["10.2"]
+
+[[source]]
+id = "lmfdb_shimcurve_polarized_order"
+locator_scheme = "tag"
+locator = "shimcurve.polarized_order"
+url = "https://www.lmfdb.org/knowledge/show/shimcurve.polarized_order"
+fetched_from = "https://www.lmfdb.org/knowledge/show/shimcurve.polarized_order"
+fetched_at = "2026-11-09T08:34:32Z"
+sha256 = "6079998c380698727c4fd6a1586fb6007edffb3f596424820380e9f95783f054"
+licence_class = "institutional"
+status = "certified"
+accessed = "2026-11-09"
+cited_for = ["10.2"]
+
+[[source]]
+id = "lmfdb_shimcurve_aut_pm_mu_o"
+locator_scheme = "tag"
+locator = "shimcurve.aut_pm_mu_o"
+url = "https://www.lmfdb.org/knowledge/show/shimcurve.aut_pm_mu_o"
+fetched_from = "https://www.lmfdb.org/knowledge/show/shimcurve.aut_pm_mu_o"
+fetched_at = "2026-11-09T08:34:32Z"
+sha256 = "c48410fda1c83d4d329bd470d8eff17a647199bf0b9c6b72d01ac1ef2f00d761"
+licence_class = "institutional"
+status = "certified"
+accessed = "2026-11-09"
+cited_for = ["10.2"]
+
+[[source]]
+id = "lmfdb_shimcurve_enhanced_group"
+locator_scheme = "tag"
+locator = "shimcurve.enhanced_group"
+url = "https://www.lmfdb.org/knowledge/show/shimcurve.enhanced_group"
+fetched_from = "https://www.lmfdb.org/knowledge/show/shimcurve.enhanced_group"
+fetched_at = "2026-11-09T08:34:33Z"
+sha256 = "6cad3486f40259282f17501b84543b3912cbfa7c556e3982ad2b359168739c38"
+licence_class = "institutional"
+status = "certified"
+accessed = "2026-11-09"
+cited_for = ["10.2"]
+
+[[source]]
+id = "lmfdb_shimcurve_level"
+locator_scheme = "tag"
+locator = "shimcurve.level"
+url = "https://www.lmfdb.org/knowledge/show/shimcurve.level"
+fetched_from = "https://www.lmfdb.org/knowledge/show/shimcurve.level"
+fetched_at = "2026-11-09T08:34:34Z"
+sha256 = "868beb0b1bba68cce10621367668bfe063fba7ea5360f32c11e91f4be319e7b2"
+licence_class = "institutional"
+status = "certified"
+accessed = "2026-11-09"
+cited_for = ["10.2"]
+
+[[source]]
+id = "lmfdb_shimcurve_index"
+locator_scheme = "tag"
+locator = "shimcurve.index"
+url = "https://www.lmfdb.org/knowledge/show/shimcurve.index"
+fetched_from = "https://www.lmfdb.org/knowledge/show/shimcurve.index"
+fetched_at = "2026-11-09T08:34:34Z"
+sha256 = "7befe52a4bd5bcf93694debc67d8fecdd62f9d48da73f2c523348e1158221167"
+licence_class = "institutional"
+status = "certified"
+accessed = "2026-11-09"
+cited_for = ["10.2"]
+
+[[source]]
+id = "lmfdb_shimcurve_is_coarse"
+locator_scheme = "tag"
+locator = "shimcurve.is_coarse"
+url = "https://www.lmfdb.org/knowledge/show/shimcurve.is_coarse"
+fetched_from = "https://www.lmfdb.org/knowledge/show/shimcurve.is_coarse"
+fetched_at = "2026-11-09T08:34:35Z"
+sha256 = "2e81f77fbca5871671d71b71ab9abf3bb0e9920de11303264b0eaa59f3496781"
+licence_class = "institutional"
+status = "certified"
+accessed = "2026-11-09"
+cited_for = ["10.2"]
+
+[[source]]
+id = "lmfdb_shimcurve_nrdmu"
+locator_scheme = "tag"
+locator = "shimcurve.nrdmu"
+url = "https://www.lmfdb.org/knowledge/show/shimcurve.nrdmu"
+fetched_from = "https://www.lmfdb.org/knowledge/show/shimcurve.nrdmu"
+fetched_at = "2026-11-09T08:34:35Z"
+sha256 = "e8315cbe94f4f041601261ec0ab3700762bb718db703902d8b167a0833039bfa"
+licence_class = "institutional"
+status = "certified"
+accessed = "2026-11-09"
+cited_for = ["10.2"]
+
+[[source]]
+id = "lmfdb_shimcurve_disco"
+locator_scheme = "tag"
+locator = "shimcurve.disco"
+url = "https://www.lmfdb.org/knowledge/show/shimcurve.disco"
+fetched_from = "https://www.lmfdb.org/knowledge/show/shimcurve.disco"
+fetched_at = "2026-11-09T08:34:36Z"
+sha256 = "ef9eb89373b88d53232a20c838171ad022295eb7c7476108f8072899f97c2dc5"
+licence_class = "institutional"
+status = "certified"
+accessed = "2026-11-09"
+cited_for = ["10.2"]
+
+[[source]]
+id = "lmfdb_shimcurve_eichler"
+locator_scheme = "tag"
+locator = "shimcurve.eichler"
+url = "https://www.lmfdb.org/knowledge/show/shimcurve.eichler"
+fetched_from = "https://www.lmfdb.org/knowledge/show/shimcurve.eichler"
+fetched_at = "2026-11-09T08:34:36Z"
+sha256 = "22ddf1b75a3bc0a81d9627ee145606f16332a1729e87ac95a1f49df9369feac0"
+licence_class = "institutional"
+status = "certified"
+accessed = "2026-11-09"
+cited_for = ["10.2"]
+
+[[source]]
+id = "lmfdb_shimcurve_label"
+locator_scheme = "tag"
+locator = "shimcurve.label"
+url = "https://www.lmfdb.org/knowledge/show/shimcurve.label"
+fetched_from = "https://www.lmfdb.org/knowledge/show/shimcurve.label"
+fetched_at = "2026-11-09T08:34:37Z"
+sha256 = "88e406eb3916351491e33b13acb456717d62e3358f70ceaf7e8c33ceabe38ac8"
+licence_class = "institutional"
+status = "certified"
+accessed = "2026-11-09"
+cited_for = ["10.2"]
+
+[[source]]
+id = "shimizu1965"
+authors = "Hideo Shimizu"
+title = "On zeta functions of quaternion algebras"
+year = 1965
+venue = "Annals of Mathematics 81"
+doi = "10.2307/1970389"
+locator_scheme = "section"
+locator = "Section 1"
+url = "https://doi.org/10.2307/1970389"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled (JSTOR); cited by its locator without the text"
+cited_for = ["8.2"]
+
+[[source]]
+id = "alsina_bayer2004"
+authors = "Montserrat Alsina, Pilar Bayer"
+title = "Quaternion Orders, Quadratic Forms, and Shimura Curves"
+year = 2004
+venue = "CRM Monograph Series 22"
+doi = "10.1090/crmm/022"
+locator_scheme = "chapter"
+locator = "Chapter 1"
+url = "https://doi.org/10.1090/crmm/022"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled (AMS); cited by its locator without the text"
+cited_for = ["2.1"]
