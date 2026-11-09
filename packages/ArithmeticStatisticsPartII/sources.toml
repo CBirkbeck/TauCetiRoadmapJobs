@@ -1,0 +1,38 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "ArithmeticStatisticsPartII"
+
+[[source]]
+id = "ref-1"
+authors = "Manjul Bhargava, Arul Shankar"
+title = "Binary quartic forms having bounded invariants, and the boundedness of the average rank of elliptic curves"
+year = 2010
+arxiv = "1006.1002v3"
+locator_scheme = "theorem"
+locator = "Theorem 2.14"
+url = "https://arxiv.org/abs/1006.1002v3"
+fetched_from = "https://arxiv.org/pdf/1006.1002v3"
+fetched_at = "2026-11-09T19:00:05Z"
+sha256 = "7670970aca5df135af4ab4da926d3b2e3acc937dd5a6c918f802552c528712cf"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-09"
+version_note = "arXiv v3"
+cited_for = ["1.8"]
+
+[[source]]
+id = "ref-16"
+authors = "Manjul Bhargava, Arul Shankar, Ashvin Swaminathan"
+title = "The second moment of the size of the $2$-Selmer group of elliptic curves"
+year = 2021
+arxiv = "2110.09063v1"
+locator_scheme = "theorem"
+locator = "Theorem 1.4"
+url = "https://arxiv.org/abs/2110.09063v1"
+fetched_from = "https://arxiv.org/pdf/2110.09063v1"
+fetched_at = "2026-11-09T19:05:01Z"
+sha256 = "8f568036291bd251d8598770fa956ec7893675b348259eca1bc5326618ff6be0"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-09"
+version_note = "arXiv v1"
+cited_for = ["1.12"]
