@@ -16,3 +16,33 @@ licence_class = "author-page"
 status = "certified"
 accessed = "2026-11-08"
 cited_for = ["1.3", "2.2", "2.3", "2.4", "3.1", "3.2", "3.3", "4.2"]
+
+[[source]]
+id = "Schmudgen2012"
+authors = "Konrad Schmüdgen"
+title = "Unbounded Self-adjoint Operators on Hilbert Space"
+year = 2012
+venue = "Graduate Texts in Mathematics"
+doi = "10.1007/978-94-007-4753-1"
+locator_scheme = "theorem"
+locator = "Theorem 5.7"
+url = "https://doi.org/10.1007/978-94-007-4753-1"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["4.1"]
+
+[[source]]
+id = "Conway1990"
+authors = "John B. Conway"
+title = "A Course in Functional Analysis"
+year = 2007
+venue = "Graduate Texts in Mathematics"
+doi = "10.1007/978-1-4757-4383-8"
+locator_scheme = "theorem"
+locator = "Theorem IX.1.14"
+url = "https://doi.org/10.1007/978-1-4757-4383-8"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["1.1"]
