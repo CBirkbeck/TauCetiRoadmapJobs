@@ -1,0 +1,4 @@
+{"review": {"status": "needs_changes", "reviewer": "independent-review-PRREVIEW-BianchiModularForms~4",
+            "head": "3ffc099bc61921954826e2baf2bb63105d72f5b5", "pr": 1719, "folder": "BianchiModularForms", "date": "2026-11-09",
+            "findings": 2, "blocking": 0,
+            "notes": "incremental re-review of 8 changed lines since 916795e: the §9.5 change (dropped tiling test, Needs repointed to KleinianGroups Layer 4) checked against the Kleinian-groups roadmap at its open head and recomputed (Catalan/3, √3·L(2,χ₋₃)/8, indices 60/168); r3 R02 (Swan pp.1–77 locator) and R04 (two style slips) unrepaired and raised again as P3; r3 R01 withdrawn (Lemma 11.6 is on page 205 of the IAS book-ps.pdf copy) and R03 withdrawn (complete journal locator, GDZ LOG_0060 noted); gate with the candidate order OK, depcheck 0 problems, Suggested.lean elaborates with only its two sorry warnings; no change outside the folder."}}
