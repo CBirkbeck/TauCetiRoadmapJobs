@@ -280,3 +280,54 @@ status = "certified"
 accessed = "2026-11-09"
 version_note = "arXiv v1"
 cited_for = ["R4.1 Günther volume comparison (guenther)"]
+
+[[source]]
+id = "hatcher"
+authors = "Allen Hatcher"
+title = "Algebraic Topology"
+year = 2002
+venue = "Cambridge University Press; author's electronic edition (Cornell author page)"
+locator_scheme = "theorem"
+locator = "Theorem 4J.1 (p. 471), Proposition 3C.8 (p. 288)"
+url = "https://pi.math.cornell.edu/~hatcher/AT/AT.pdf"
+fetched_from = "https://pi.math.cornell.edu/~hatcher/AT/AT.pdf"
+fetched_at = "2026-11-09T18:33:52Z"
+sha256 = "bebb3032bf9021b956da3bd070eb6c67dc662cf849be9cdf6679f677560e5618"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-09"
+cited_for = ["R3.3"]
+
+[[source]]
+id = "taylor-lie-groups"
+authors = "Michael Taylor"
+title = "Introduction to Lie Groups"
+year = 2021
+venue = "lecture notes, University of North Carolina (author page)"
+locator_scheme = "theorem"
+locator = "(8.2.2) p. 398, (8.2.13) and Proposition 8.2.1 p. 399, Proposition 8.4.2 p. 415, Proposition 8.5.1 p. 421"
+url = "https://mtaylor.web.unc.edu/wp-content/uploads/sites/16915/2021/03/liegp.pdf"
+fetched_from = "https://mtaylor.web.unc.edu/wp-content/uploads/sites/16915/2021/03/liegp.pdf"
+fetched_at = "2026-11-09T18:34:05Z"
+sha256 = "eafe75634976f5b1af721164b8dccb624cc563e4581ecdab4d4d091a2c7e9739"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-09"
+cited_for = ["R8.2", "R8.3"]
+
+[[source]]
+id = "wilson-dg-examples-3"
+authors = "P. M. H. Wilson"
+title = "Differential Geometry, Examples 3"
+year = 2016
+venue = "University of Cambridge, Part II example sheet (author page)"
+locator_scheme = "theorem"
+locator = "Problem 14, p. 2"
+url = "https://www.dpmms.cam.ac.uk/~pmw1000/dg16.3.pdf"
+fetched_from = "https://www.dpmms.cam.ac.uk/~pmw1000/dg16.3.pdf"
+fetched_at = "2026-11-09T18:34:06Z"
+sha256 = "515bc1ea21f49eb6343f0bbb493652a80a8242a22a06243a1b63506f5448ad2a"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-09"
+cited_for = ["R5a.3"]
