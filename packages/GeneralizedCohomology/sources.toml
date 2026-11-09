@@ -376,3 +376,21 @@ licence_class = "author-page"
 status = "certified"
 accessed = "2026-11-09"
 cited_for = ["G5.0"]
+
+[[source]]
+id = "HoveyGeneralSpectra"
+authors = "Mark Hovey"
+title = "Spectra and symmetric spectra in general model categories"
+year = 2000
+arxiv = "math/0004051v3"
+locator_scheme = "theorem"
+locator = "Definition 7.7, Theorems 7.8, 7.10, 7.11"
+url = "https://arxiv.org/abs/math/0004051v3"
+fetched_from = "https://arxiv.org/pdf/math/0004051v3"
+fetched_at = "2026-11-09T20:37:57Z"
+sha256 = "aff62c63a8d4cc3ba62886bd66a8ca0cbaae9018feab50b8b5b2759d8e970081"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-09"
+version_note = "arXiv v3"
+cited_for = ["G2.2"]
