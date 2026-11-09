@@ -1,0 +1,32 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "ProfiniteCohomology"
+
+[[source]]
+id = "NSW"
+authors = "Jürgen Neukirch, Alexander Schmidt, Kay Wingberg"
+title = "Cohomology of Number Fields"
+year = 2008
+venue = "Grundlehren der mathematischen Wissenschaften"
+doi = "10.1007/978-3-540-37889-1"
+locator_scheme = "theorem"
+locator = "(1.2.2), (1.5.1), (1.6.1)"
+url = "https://doi.org/10.1007/978-3-540-37889-1"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["3.2", "4.3", "10.2", "10.7"]
+
+[[source]]
+id = "SerreGC"
+authors = "Jean-Pierre Serre"
+title = "Galois Cohomology"
+year = 1997
+venue = "Springer Monographs in Mathematics"
+doi = "10.1007/978-3-642-59141-9"
+locator_scheme = "section"
+locator = "Ch. I, §2.2, Prop. 8"
+url = "https://doi.org/10.1007/978-3-642-59141-9"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["4.3", "10.2"]
