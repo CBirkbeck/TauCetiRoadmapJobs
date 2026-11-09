@@ -66,3 +66,19 @@ status = "certified"
 accessed = "2026-11-09"
 version_note = "arXiv v2"
 cited_for = ["E4.1, E4.3"]
+
+[[source]]
+id = "BS17"
+authors = ["Bhargav Bhatt", "Peter Scholze"]
+title = "Projectivity of the Witt vector affine Grassmannian"
+year = 2017
+locator_scheme = "theorem"
+locator = "Proposition 11.31; Remark 11.33; Corollary 11.35; Lemmas 3.16, 6.14, 11.10"
+url = "https://people.mpim-bonn.mpg.de/scholze/Witt.pdf"
+fetched_from = "https://people.mpim-bonn.mpg.de/scholze/Witt.pdf"
+fetched_at = "2026-11-09T11:19:18Z"
+sha256 = "774032c0daee98e339b7be165174185c77714b0e729a39a985ee876ccc7e7b64"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-09"
+cited_for = ["E1.6"]
