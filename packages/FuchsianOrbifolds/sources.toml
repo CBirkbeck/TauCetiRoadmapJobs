@@ -1,0 +1,50 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "FuchsianOrbifolds"
+
+[[source]]
+id = "Martin2013"
+authors = "Gaven J. Martin"
+title = "The geometry and arithmetic of Kleinian groups"
+year = 2013
+arxiv = "1311.2636"
+locator_scheme = "theorem"
+locator = "Theorems 2.1 and 2.2"
+url = "https://arxiv.org/abs/1311.2636"
+fetched_from = "https://arxiv.org/pdf/1311.2636"
+fetched_at = "2026-11-09T04:40:37Z"
+sha256 = "9840f94fbb67da1548048b5bd55b77d94a53413d684e9a2f27844d988bdbb04d"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-09"
+version_note = "arXiv, latest version"
+cited_for = ["4a", "5.7"]
+
+[[source]]
+id = "Beardon1983"
+authors = "Alan F. Beardon"
+title = "The Geometry of Discrete Groups"
+year = 1983
+venue = "Graduate Texts in Mathematics"
+doi = "10.1007/978-1-4612-1146-4"
+locator_scheme = "section"
+locator = "§10.4"
+url = "https://doi.org/10.1007/978-1-4612-1146-4"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["5.7", "4a"]
+
+[[source]]
+id = "Siegel1945"
+authors = "Carl Ludwig Siegel"
+title = "Some remarks on discontinuous groups"
+year = 1945
+venue = "Annals of Mathematics 46"
+doi = "10.2307/1969206"
+locator_scheme = "page"
+locator = "pp. 708-718"
+url = "https://doi.org/10.2307/1969206"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled (JSTOR); cited by its page range without the text; the statement is read in Martin2013, Theorem 2.1"
+cited_for = ["4a"]
