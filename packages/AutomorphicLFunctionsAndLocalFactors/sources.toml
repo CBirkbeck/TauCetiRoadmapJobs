@@ -173,3 +173,21 @@ status = "certified"
 accessed = "2026-11-09"
 version_note = "arXiv v2"
 cited_for = ["AL.3.3.5", "AL.3.3.6"]
+
+[[source]]
+id = "GelbartShahidi2001"
+authors = "Stephen Gelbart, Freydoon Shahidi"
+title = "Boundedness of automorphic L-functions in vertical strips"
+year = 2001
+venue = "Journal of the American Mathematical Society 14, 79–107"
+doi = "10.1090/S0894-0347-00-00351-9"
+locator_scheme = "theorem"
+locator = "Theorem 4.1, p.87, and Corollary 4.2, p.88"
+url = "https://www.ams.org/journals/jams/2001-14-01/S0894-0347-00-00351-9/S0894-0347-00-00351-9.pdf"
+fetched_from = "https://www.ams.org/journals/jams/2001-14-01/S0894-0347-00-00351-9/S0894-0347-00-00351-9.pdf"
+fetched_at = "2026-11-09T04:40:57Z"
+sha256 = "fd7341d166d7916c897a4320cb4600b50b2bd03b55f4e1d5c0db0cd0e7ee8e29"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-11-09"
+cited_for = ["AL.3.9.2", "AL.3.9.4"]
