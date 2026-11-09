@@ -98,3 +98,21 @@ licence_class = "none"
 status = "uncertified"
 version_note = "paywalled; cited by its locator without the text"
 cited_for = ["B2", "B5", "B7"]
+
+[[source]]
+id = "beli2010"
+authors = "Constantin-Nicolae Beli"
+title = "A new approach to classification of integral quadratic forms over dyadic local fields"
+year = 2009
+arxiv = "0903.3726v1"
+locator_scheme = "theorem"
+locator = "§3, statement of O'Meara's Theorem 93:28, p. 13; proof of Lemma 2.15, p. 10 (the ideal f_k when ord a_k + ord a_(k+1) is odd)"
+url = "https://arxiv.org/abs/0903.3726v1"
+fetched_from = "https://arxiv.org/pdf/0903.3726v1"
+fetched_at = "2026-11-09T19:59:42Z"
+sha256 = "0fb7e3891c67ffe0af11861ca91d8c68386eb3204cd0203e914ef3c3d9ce91ae"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-09"
+version_note = "arXiv v1"
+cited_for = ["3D"]
