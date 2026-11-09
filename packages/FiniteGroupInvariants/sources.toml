@@ -434,3 +434,18 @@ status = "certified"
 accessed = "2026-11-08"
 version_note = "arXiv v1"
 cited_for = ["10.4"]
+
+[[source]]
+id = "guralnick-1980"
+authors = "Robert M. Guralnick"
+title = "Expressing group elements as commutators"
+year = 1980
+venue = "Rocky Mountain Journal of Mathematics 10"
+doi = "10.1216/RMJ-1980-10-3-651"
+locator_scheme = "page"
+locator = "pp. 651-654"
+url = "https://doi.org/10.1216/RMJ-1980-10-3-651"
+licence_class = "none"
+status = "uncertified"
+version_note = "the publisher's pages refuse automated access (no text retrieved); cited by its locator without the text"
+cited_for = ["4.1"]
