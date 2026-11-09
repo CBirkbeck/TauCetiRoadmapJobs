@@ -298,3 +298,55 @@ licence_class = "author-page"
 status = "certified"
 accessed = "2026-11-09"
 cited_for = ["4.7", "8.2"]
+
+[[source]]
+id = "strickland2009"
+authors = "Neil P. Strickland"
+title = "The category of CGWH spaces"
+year = 2009
+locator_scheme = "theorem"
+locator = "Corollaries 1.9 and 1.10; Propositions 1.6, 1.7 and 2.6"
+url = "https://ncatlab.org/nlab/files/StricklandCGHWSpaces.pdf"
+fetched_from = "https://ncatlab.org/nlab/files/StricklandCGHWSpaces.pdf"
+fetched_at = "2026-11-09T07:42:42Z"
+sha256 = "321dec7234dcaf6da5bcc053f69427abf732aa45c447ba8c8ef77c8ed0557817"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-09"
+cited_for = ["4.5"]
+
+[[source]]
+id = "kmr2023"
+authors = "John R. Klein, Cary Malkiewich, Maxime Ramzi"
+title = "On the multiplicativity of the Euler characteristic"
+year = 2022
+arxiv = "2211.04992v2"
+locator_scheme = "theorem"
+locator = "Theorem A"
+url = "https://arxiv.org/abs/2211.04992v2"
+fetched_from = "https://arxiv.org/pdf/2211.04992v2"
+fetched_at = "2026-11-09T07:42:46Z"
+sha256 = "8c7b6862fbdd638d89a72670e01aca636a3fab0558462454533920ebbdd06232"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-09"
+version_note = "arXiv v2"
+cited_for = ["7.2"]
+
+[[source]]
+id = "goerss-schemmerhorn2006"
+authors = "Paul G. Goerss, Kristen Schemmerhorn"
+title = "Model Categories and Simplicial Methods"
+year = 2006
+arxiv = "math/0609537v2"
+locator_scheme = "theorem"
+locator = "Example 2.15 and Theorem 4.1"
+url = "https://arxiv.org/abs/math/0609537v2"
+fetched_from = "https://arxiv.org/pdf/math/0609537v2"
+fetched_at = "2026-11-09T07:42:53Z"
+sha256 = "655ecd36b495eb63d0287d9988b9e8d6d7403b624279739b185a3b3553adb506"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-09"
+version_note = "arXiv v2"
+cited_for = ["8.8c"]
