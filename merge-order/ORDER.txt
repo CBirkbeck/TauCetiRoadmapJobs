@@ -46,6 +46,7 @@ HomotopySpheres
 DGFloerPartII
 HabiroCyclotomicCompletions
 ZerosOfLFunctions
+FuchsianOrbifolds
 AnalyticNumberTheoryPartI
 AnalyticNumberTheoryPartII
 AdelicAlgebraicGroups
@@ -280,7 +281,7 @@ OrdinaryAutomorphicFormsAndModularityLiftingPartII
 ModularityAndLanglandsExtensionsPartII
 GSp4NonregularModularityLifting
 EllipticModularityEffectiveComparisons
-FuchsianOrbifolds
+ArithmeticFuchsianGroups
 TeichmullerGeometry
 QuasiregularMaps
 PositiveMass
