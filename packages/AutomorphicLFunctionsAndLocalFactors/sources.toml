@@ -117,3 +117,20 @@ status = "certified"
 accessed = "2026-11-09"
 version_note = "arXiv v3"
 cited_for = ["AL.R.1"]
+
+[[source]]
+id = "CogdellPiatetskiShapiroDerivatives"
+authors = "James W. Cogdell, Ilya I. Piatetski-Shapiro"
+title = "Derivatives and L-functions for GLn"
+year = 2010
+version_note = "author manuscript dated 14 September 2010"
+locator_scheme = "section"
+locator = "§2.1, the basic existence theorem, pp.16–17"
+url = "https://people.math.osu.edu/cogdell.1/moish-www.pdf"
+fetched_from = "https://people.math.osu.edu/cogdell.1/moish-www.pdf"
+fetched_at = "2026-11-09T01:36:06Z"
+sha256 = "b9e9f828bed7d4ee4ac889d221ed0ecff452831f13d9dd3c9169bc0bb9701b8e"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-09"
+cited_for = ["AL.3.2.3", "AL.3.3.2"]
