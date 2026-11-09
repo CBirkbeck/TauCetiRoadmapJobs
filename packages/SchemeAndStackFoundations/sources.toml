@@ -175,3 +175,16 @@ licence_class = "none"
 status = "uncertified"
 version_note = "paywalled; cited by its locator without the text"
 cited_for = ["5.9"]
+
+[[source]]
+id = "milne-av"
+locator_scheme = "page"
+locator = "Chapter III, §1, pp. 86–90"
+url = "https://www.jmilne.org/math/CourseNotes/AV.pdf"
+fetched_from = "https://www.jmilne.org/math/CourseNotes/AV.pdf"
+fetched_at = "2026-11-09T02:26:53Z"
+sha256 = "f5ca4e63e5092a4b102daad1470e4cbed5fe8f82115e3a28c8881e3f67f6aaef"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-09"
+cited_for = ["3.6"]
