@@ -526,3 +526,35 @@ licence_class = "none"
 status = "uncertified"
 version_note = "the volume's Project Euclid page offers no PDF; cited by its locator without the text"
 cited_for = ["0.9"]
+
+[[source]]
+id = "stacks-0245"
+authors = "The Stacks Project Authors"
+title = "The Stacks Project"
+year = 2026
+locator_scheme = "tag"
+locator = "0245"
+url = "https://stacks.math.columbia.edu/tag/0245"
+fetched_from = "https://stacks.math.columbia.edu/download/descent.pdf#nameddest=0245"
+fetched_at = "2026-11-09T17:32:18Z"
+sha256 = "28e718bac216bb7c4584e9edb1d25d6420ee19a6cd536742c58599242ff8cad4"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-09"
+cited_for = ["F.0.2"]
+
+[[source]]
+id = "stacks-01ZM"
+authors = "The Stacks Project Authors"
+title = "The Stacks Project"
+year = 2026
+locator_scheme = "tag"
+locator = "01ZM"
+url = "https://stacks.math.columbia.edu/tag/01ZM"
+fetched_from = "https://stacks.math.columbia.edu/download/limits.pdf#nameddest=01ZM"
+fetched_at = "2026-11-09T17:32:20Z"
+sha256 = "a575d9eddea143ae00b39df8e0d98a66c6c9b2adcdace9d004c0ed5bc47f9d1e"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-09"
+cited_for = ["F.0.2", "G.2"]
