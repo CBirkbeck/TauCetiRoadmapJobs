@@ -98,3 +98,19 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-09"
 cited_for = ["E1.8"]
+
+[[source]]
+id = "StacksLocalCohomology"
+authors = ["The Stacks project authors"]
+title = "The Stacks project, Chapter 51: Local Cohomology"
+year = 2026
+locator_scheme = "tag"
+locator = "0EC0"
+url = "https://stacks.math.columbia.edu/download/local-cohomology.pdf"
+fetched_from = "https://stacks.math.columbia.edu/download/local-cohomology.pdf"
+fetched_at = "2026-11-09T21:13:21Z"
+sha256 = "0afda599835ae426ea0b14a6b9d2e92df000abab91da436c87bed3bd8fc5096e"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-09"
+cited_for = ["E1.6"]
