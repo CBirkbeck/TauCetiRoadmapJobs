@@ -288,3 +288,68 @@ licence_class = "none"
 status = "uncertified"
 version_note = "paywalled (AMS); cited by its locator without the text"
 cited_for = ["2.1"]
+
+[[source]]
+id = "lmfdb_shimcurve_xdn"
+locator_scheme = "tag"
+locator = "shimcurve.xdn"
+url = "https://www.lmfdb.org/knowledge/show/shimcurve.xdn"
+fetched_from = "https://www.lmfdb.org/knowledge/show/shimcurve.xdn"
+fetched_at = "2026-11-09T14:59:07Z"
+sha256 = "1e0d2af6c84f5978855982fcf0119fd80bccc88fd156189c560cc4e541199d8f"
+licence_class = "institutional"
+status = "certified"
+accessed = "2026-11-09"
+cited_for = ["9.5"]
+
+[[source]]
+id = "lmfdb_shimcurve_xdn_star"
+locator_scheme = "tag"
+locator = "shimcurve.xdn_star"
+url = "https://www.lmfdb.org/knowledge/show/shimcurve.xdn_star"
+fetched_from = "https://www.lmfdb.org/knowledge/show/shimcurve.xdn_star"
+fetched_at = "2026-11-09T14:59:08Z"
+sha256 = "5dc308b082b099db66e3b590687519f2ea540a17901e06b33689a282d8b084aa"
+licence_class = "institutional"
+status = "certified"
+accessed = "2026-11-09"
+cited_for = ["9.5"]
+
+[[source]]
+id = "lmfdb_shimcurve_xd1"
+locator_scheme = "tag"
+locator = "shimcurve.xd1"
+url = "https://www.lmfdb.org/knowledge/show/shimcurve.xd1"
+fetched_from = "https://www.lmfdb.org/knowledge/show/shimcurve.xd1"
+fetched_at = "2026-11-09T14:59:08Z"
+sha256 = "10e4868b4a16d4bd428dcb1ba23231098db7089c2e8adf11e9cc916b2d027eec"
+licence_class = "institutional"
+status = "certified"
+accessed = "2026-11-09"
+cited_for = ["9.5"]
+
+[[source]]
+id = "lmfdb_shimcurve_xd1_star"
+locator_scheme = "tag"
+locator = "shimcurve.xd1_star"
+url = "https://www.lmfdb.org/knowledge/show/shimcurve.xd1_star"
+fetched_from = "https://www.lmfdb.org/knowledge/show/shimcurve.xd1_star"
+fetched_at = "2026-11-09T14:59:09Z"
+sha256 = "fd5511c39e1255827aa2129ea8b576fb2d65bd7da37efd211ba469ccafb3ca61"
+licence_class = "institutional"
+status = "certified"
+accessed = "2026-11-09"
+cited_for = ["9.5"]
+
+[[source]]
+id = "lmfdb_shimcurve_xdm1"
+locator_scheme = "tag"
+locator = "shimcurve.xdm1"
+url = "https://www.lmfdb.org/knowledge/show/shimcurve.xdm1"
+fetched_from = "https://www.lmfdb.org/knowledge/show/shimcurve.xdm1"
+fetched_at = "2026-11-09T14:59:09Z"
+sha256 = "fd5beed6a04047af8447b512b52569134fa7bf1ec4edf2ed1ffbcf534dc20bae"
+licence_class = "institutional"
+status = "certified"
+accessed = "2026-11-09"
+cited_for = ["9.5"]
