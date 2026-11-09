@@ -1,0 +1,13 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-LatticePackingsAndPerfectForms~11",
+  "head": "8cc4a648d3a72137a799f330f4f1b6f9ac9f4e5a",
+  "pr": 1723,
+  "folder": "LatticePackingsAndPerfectForms",
+  "date": "2026-11-09",
+  "findings": 9,
+  "blocking": 1,
+  "notes": "Full review at an unchanged head. Gate: worker's gate all 0; the brief's default-order rerun fails only the known NOT IN ORDER depcheck; candidate-order depcheck has 0 problems. lake env lean: exit 0, 52 sorry warnings. #check of all 112 declarations is clean. The one-tactic probe closes 0 of 52 bodies. R01 (P2, re-raised): 23 cited Tau Ceti names (not 15) are absent at the branch pin 358314d and all present at main's 2fd255d; merging main is clean. R02-R09 are P3: Leech covering radius statement (re-raised); Ch.23 vs Ch.25 hole attribution; GoN 4.5.8 now defers Mahler to PMNT 4.9b; Venkov page numbers from the author-hosted version; no locator in 2.3 and 7.5; Nat.sInf_mem in 1.1; docstring overclaim in exists_sub_mem_extremePoints; the stray '(9)' in 5.3. Seeded sample checked against dsv2007, coulangeonnebe2012, ash1977, venkov2001, bhargavahanke and festiveniani. Citations to TS, IL, SM, GQF, MF, R24, GoN, Weights, EDM, QA, Siegel and OTM resolved; no second owner found. The adversarial table covers the sampled targets, every headline and every finding target."
+ }
+}
