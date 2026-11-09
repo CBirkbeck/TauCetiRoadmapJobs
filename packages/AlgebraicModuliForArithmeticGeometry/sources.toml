@@ -31,3 +31,20 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-09"
 cited_for = ["3.1"]
+
+[[source]]
+id = "demailly_very_ample"
+authors = ["Jean-Pierre Demailly"]
+title = "Effective bounds for very ample line bundles"
+year = 1996
+version_note = "author manuscript on the author's page (18 pages); page and theorem numbers cited are those of the manuscript; published in Invent. Math. 124 (1996)"
+locator_scheme = "theorem"
+locator = "Theorem 4.7"
+url = "https://www-fourier.univ-grenoble-alpes.fr/~demailly/manuscripts/very_ample.pdf"
+fetched_from = "https://www-fourier.univ-grenoble-alpes.fr/~demailly/manuscripts/very_ample.pdf"
+fetched_at = "2026-11-09T17:39:58Z"
+sha256 = "fa12fbe398320cd117f5c6f2f59be87074adead48e495ca1fc1bc4e798e190fe"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-09"
+cited_for = ["9.10"]
