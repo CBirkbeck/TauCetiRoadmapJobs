@@ -153,3 +153,23 @@ licence_class = "author-page"
 status = "certified"
 accessed = "2026-11-09"
 cited_for = ["AL.3.10.3"]
+
+[[source]]
+id = "HumphriesGJTests"
+authors = "Peter Humphries"
+title = "Test Vectors for Nonarchimedean Godement-Jacquet Zeta Integrals"
+year = 2019
+venue = "Bulletin of the London Mathematical Society 53:1 (2021), 92-99"
+doi = "10.1112/blms.12401"
+arxiv = "1903.02031v2"
+locator_scheme = "theorem"
+locator = "§2, p.2; Theorems 3.2 and 3.7, pp.3–4"
+url = "https://arxiv.org/abs/1903.02031v2"
+fetched_from = "https://arxiv.org/pdf/1903.02031v2"
+fetched_at = "2026-11-09T03:38:06Z"
+sha256 = "5c67c966576d4692067a91019fcfc1140d1a75ed68102c2629f3d09d125556dd"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-09"
+version_note = "arXiv v2"
+cited_for = ["AL.3.3.5", "AL.3.3.6"]
