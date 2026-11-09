@@ -396,3 +396,23 @@ status = "certified"
 accessed = "2026-11-09"
 version_note = "arXiv v1"
 cited_for = ["CA9"]
+
+[[source]]
+id = "NgSchauenburg2007Pivotal"
+authors = "Siu-Hung Ng, Peter Schauenburg"
+title = "Higher Frobenius-Schur Indicators for Pivotal Categories"
+year = 2005
+venue = "Contemporary Mathematics 441 (2007), 63-90"
+doi = "10.1090/conm/441/08500"
+arxiv = "math/0503167v2"
+locator_scheme = "theorem"
+locator = "Definition 3.1"
+url = "https://arxiv.org/abs/math/0503167v2"
+fetched_from = "https://arxiv.org/pdf/math/0503167v2"
+fetched_at = "2026-11-09T15:25:53Z"
+sha256 = "0b2754134a943a6ffd95f15038e2e33bccc865b5bca4a078f7f6f7e7ed28476c"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-09"
+version_note = "arXiv v2, cited in its numbering: Definition 3.1 on p. 8 defines the maps T_(V,W), E_(V,W), E_V^(n) and the indicators; the Contemporary Mathematics version was not read and its numbering is not used"
+cited_for = ["CA2a"]
