@@ -1,0 +1,4 @@
+{"review": {"status": "needs_changes", "reviewer": "independent-review-PRREVIEW-DifferentialGeometry~13",
+            "head": "e7464d11ee2fda2c83c6f0007af670025bf3ad71", "pr": 886, "folder": "DifferentialGeometry", "date": "2026-11-09",
+            "findings": 2, "blocking": 1,
+            "notes": "incremental re-review of 55 changed lines since 8f9be9a: R02/R03 of r12 repaired (half-space scoping, strip Check, pentagonal-cone negative control recomputed exactly: Aut C = R_{>0} id); R01 (two Tau Ceti pins, merge conflict in Suggested.lean, re-raised) and R04 (description names neither #334 nor #1187) carried as R01/R02. Gate rerun OK (build=0); lake env lean at branch pin 358314d4 exits 0 with 61 sorry warnings only; depcheck 0 problems; #check of orientable_iff_exists_atlas unchanged; one-tactic probe fails; Lee 15.6 read at 67802551 lines 17594-17613; seeded sample untouched by the diff; no outside-folder change."}}
