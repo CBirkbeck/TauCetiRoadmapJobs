@@ -1,0 +1,305 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "AlgebraicVectorBundles"
+
+[[source]]
+id = "stacks-0098"
+authors = "The Stacks project authors"
+title = "The Stacks Project, Sheaves on Spaces, Lemma 6.26.4"
+year = 2026
+locator_scheme = "tag"
+locator = "0098"
+url = "https://stacks.math.columbia.edu/tag/0098"
+fetched_from = "https://stacks.math.columbia.edu/download/sheaves.pdf#nameddest=0098"
+fetched_at = "2026-11-09T00:23:43Z"
+sha256 = "f9550bc8a12b4de6b1245fb2a0f8cc81f65cba8d3d3cba9ce33e79bd0efd6352"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-09"
+cited_for = ["1.1"]
+
+[[source]]
+id = "stacks-01CD"
+authors = "The Stacks project authors"
+title = "The Stacks Project, Sheaves of Modules, Lemma 17.16.4"
+year = 2026
+locator_scheme = "tag"
+locator = "01CD"
+url = "https://stacks.math.columbia.edu/tag/01CD"
+fetched_from = "https://stacks.math.columbia.edu/download/modules.pdf#nameddest=01CD"
+fetched_at = "2026-11-09T00:24:00Z"
+sha256 = "7effc55750a81b6969a94ca3432fb71c366b3d91acdd4016ea4149dd28b475e6"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-09"
+cited_for = ["1.2"]
+
+[[source]]
+id = "stacks-02N4"
+authors = "The Stacks project authors"
+title = "The Stacks Project, Sheaves of Modules, Lemma 17.20.2"
+year = 2026
+locator_scheme = "tag"
+locator = "02N4"
+url = "https://stacks.math.columbia.edu/tag/02N4"
+fetched_from = "https://stacks.math.columbia.edu/download/modules.pdf#nameddest=02N4"
+fetched_at = "2026-11-09T00:24:03Z"
+sha256 = "7effc55750a81b6969a94ca3432fb71c366b3d91acdd4016ea4149dd28b475e6"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-09"
+cited_for = ["2.1"]
+
+[[source]]
+id = "stacks-0C6I"
+authors = "The Stacks project authors"
+title = "The Stacks Project, Sheaves of Modules, Lemma 17.22.5"
+year = 2026
+locator_scheme = "tag"
+locator = "0C6I"
+url = "https://stacks.math.columbia.edu/tag/0C6I"
+fetched_from = "https://stacks.math.columbia.edu/download/modules.pdf#nameddest=0C6I"
+fetched_at = "2026-11-09T00:24:06Z"
+sha256 = "7effc55750a81b6969a94ca3432fb71c366b3d91acdd4016ea4149dd28b475e6"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-09"
+cited_for = ["2.2"]
+
+[[source]]
+id = "stacks-01CH"
+authors = "The Stacks project authors"
+title = "The Stacks Project, Sheaves of Modules, Lemma 17.21.2"
+year = 2026
+locator_scheme = "tag"
+locator = "01CH"
+url = "https://stacks.math.columbia.edu/tag/01CH"
+fetched_from = "https://stacks.math.columbia.edu/download/modules.pdf#nameddest=01CH"
+fetched_at = "2026-11-09T00:24:10Z"
+sha256 = "7effc55750a81b6969a94ca3432fb71c366b3d91acdd4016ea4149dd28b475e6"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-09"
+cited_for = ["3.1"]
+
+[[source]]
+id = "stacks-01CI"
+authors = "The Stacks project authors"
+title = "The Stacks Project, Sheaves of Modules, Lemma 17.21.3"
+year = 2026
+locator_scheme = "tag"
+locator = "01CI"
+url = "https://stacks.math.columbia.edu/tag/01CI"
+fetched_from = "https://stacks.math.columbia.edu/download/modules.pdf#nameddest=01CI"
+fetched_at = "2026-11-09T00:24:13Z"
+sha256 = "7effc55750a81b6969a94ca3432fb71c366b3d91acdd4016ea4149dd28b475e6"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-09"
+cited_for = ["3.1"]
+
+[[source]]
+id = "stacks-01I8"
+authors = "The Stacks project authors"
+title = "The Stacks Project, Schemes, Lemma 26.7.2"
+year = 2026
+locator_scheme = "tag"
+locator = "01I8"
+url = "https://stacks.math.columbia.edu/tag/01I8"
+fetched_from = "https://stacks.math.columbia.edu/download/schemes.pdf#nameddest=01I8"
+fetched_at = "2026-11-09T00:24:16Z"
+sha256 = "fa2b63e8fd245fcd24998767887cd5f993188eabcfb849f21be19519d58fb803"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-09"
+cited_for = ["3.3"]
+
+[[source]]
+id = "stacks-0EKK"
+authors = "The Stacks project authors"
+title = "The Stacks Project, Groupoids, Lemma 39.12.4"
+year = 2026
+locator_scheme = "tag"
+locator = "0EKK"
+url = "https://stacks.math.columbia.edu/tag/0EKK"
+fetched_from = "https://stacks.math.columbia.edu/download/groupoids.pdf#nameddest=0EKK"
+fetched_at = "2026-11-09T00:24:36Z"
+sha256 = "4506a39201063afc270cbb68c9c0c1d3c90937c03f98cfee074605b402e7a30f"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-09"
+cited_for = ["4.1"]
+
+[[source]]
+id = "stacks-062M"
+authors = "The Stacks project authors"
+title = "The Stacks Project, Constructions of Schemes, Definition 27.6.2"
+year = 2026
+locator_scheme = "tag"
+locator = "062M"
+url = "https://stacks.math.columbia.edu/tag/062M"
+fetched_from = "https://stacks.math.columbia.edu/download/constructions.pdf#nameddest=062M"
+fetched_at = "2026-11-09T00:24:40Z"
+sha256 = "8f70bb66f5bec27649fd70e68e60266fa97e7b56d043410c0c8fbc35c1f2ff4d"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-09"
+cited_for = ["4.1", "Conventions"]
+
+[[source]]
+id = "stacks-062N"
+authors = "The Stacks project authors"
+title = "The Stacks Project, Constructions of Schemes, Lemma 27.6.3"
+year = 2026
+locator_scheme = "tag"
+locator = "062N"
+url = "https://stacks.math.columbia.edu/tag/062N"
+fetched_from = "https://stacks.math.columbia.edu/download/constructions.pdf#nameddest=062N"
+fetched_at = "2026-11-09T00:24:44Z"
+sha256 = "8f70bb66f5bec27649fd70e68e60266fa97e7b56d043410c0c8fbc35c1f2ff4d"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-09"
+cited_for = ["4.1"]
+
+[[source]]
+id = "stacks-01M1"
+authors = "The Stacks project authors"
+title = "The Stacks Project, Constructions of Schemes, Section 27.6 (vector bundles)"
+year = 2026
+locator_scheme = "tag"
+locator = "01M1"
+url = "https://stacks.math.columbia.edu/tag/01M1"
+fetched_from = "https://stacks.math.columbia.edu/download/constructions.pdf#nameddest=01M1"
+fetched_at = "2026-11-09T00:24:47Z"
+sha256 = "8f70bb66f5bec27649fd70e68e60266fa97e7b56d043410c0c8fbc35c1f2ff4d"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-09"
+cited_for = ["References"]
+
+[[source]]
+id = "stacks-0FJB"
+authors = "The Stacks project authors"
+title = "The Stacks Project, More on Algebra, Lemma 15.120.2"
+year = 2026
+locator_scheme = "tag"
+locator = "0FJB"
+url = "https://stacks.math.columbia.edu/tag/0FJB"
+fetched_from = "https://stacks.math.columbia.edu/download/more-algebra.pdf#nameddest=0FJB"
+fetched_at = "2026-11-09T00:26:40Z"
+sha256 = "ab69179738e642603ddbde651f2838e1cb5d8711e8bcd7c447cbf02a8bb6a5d2"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-09"
+cited_for = ["3.2", "Conventions"]
+
+[[source]]
+id = "stacks-0FJC"
+authors = "The Stacks project authors"
+title = "The Stacks Project, More on Algebra, Lemma 15.120.3"
+year = 2026
+locator_scheme = "tag"
+locator = "0FJC"
+url = "https://stacks.math.columbia.edu/tag/0FJC"
+fetched_from = "https://stacks.math.columbia.edu/download/more-algebra.pdf#nameddest=0FJC"
+fetched_at = "2026-11-09T00:26:56Z"
+sha256 = "ab69179738e642603ddbde651f2838e1cb5d8711e8bcd7c447cbf02a8bb6a5d2"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-09"
+cited_for = ["3.2"]
+
+[[source]]
+id = "stacks-0FJE"
+authors = "The Stacks project authors"
+title = "The Stacks Project, More on Algebra, Lemma 15.120.5"
+year = 2026
+locator_scheme = "tag"
+locator = "0FJE"
+url = "https://stacks.math.columbia.edu/tag/0FJE"
+fetched_from = "https://stacks.math.columbia.edu/download/more-algebra.pdf#nameddest=0FJE"
+fetched_at = "2026-11-09T00:27:09Z"
+sha256 = "ab69179738e642603ddbde651f2838e1cb5d8711e8bcd7c447cbf02a8bb6a5d2"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-09"
+cited_for = ["3.2"]
+
+[[source]]
+id = "hartshorne-ag"
+authors = "Robin Hartshorne"
+title = "Algebraic Geometry"
+year = 1977
+venue = "Graduate Texts in Mathematics"
+doi = "10.1007/978-1-4757-3849-0"
+locator_scheme = "theorem"
+locator = "II, Exercise 5.16"
+url = "https://doi.org/10.1007/978-1-4757-3849-0"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["3.2"]
+
+[[source]]
+id = "stacks-01AG"
+authors = "The Stacks project authors"
+title = "The Stacks Project, Sheaves of Modules, Lemma 17.3.1"
+year = 2026
+locator_scheme = "tag"
+locator = "01AG"
+url = "https://stacks.math.columbia.edu/tag/01AG"
+fetched_from = "https://stacks.math.columbia.edu/download/modules.pdf#nameddest=01AG"
+fetched_at = "2026-11-09T00:35:06Z"
+sha256 = "7effc55750a81b6969a94ca3432fb71c366b3d91acdd4016ea4149dd28b475e6"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-09"
+cited_for = ["2.1"]
+
+[[source]]
+id = "stacks-01BQ"
+authors = "The Stacks project authors"
+title = "The Stacks Project, Sheaves of Modules, Lemma 17.11.5"
+year = 2026
+locator_scheme = "tag"
+locator = "01BQ"
+url = "https://stacks.math.columbia.edu/tag/01BQ"
+fetched_from = "https://stacks.math.columbia.edu/download/modules.pdf#nameddest=01BQ"
+fetched_at = "2026-11-09T00:35:09Z"
+sha256 = "7effc55750a81b6969a94ca3432fb71c366b3d91acdd4016ea4149dd28b475e6"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-09"
+cited_for = ["2.2"]
+
+[[source]]
+id = "stacks-02N3"
+authors = "The Stacks project authors"
+title = "The Stacks Project, Sheaves of Modules, Definition 17.20.1"
+year = 2026
+locator_scheme = "tag"
+locator = "02N3"
+url = "https://stacks.math.columbia.edu/tag/02N3"
+fetched_from = "https://stacks.math.columbia.edu/download/modules.pdf#nameddest=02N3"
+fetched_at = "2026-11-09T00:35:12Z"
+sha256 = "7effc55750a81b6969a94ca3432fb71c366b3d91acdd4016ea4149dd28b475e6"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-09"
+cited_for = ["Conventions"]
+
+[[source]]
+id = "stacks-0FJD"
+authors = "The Stacks project authors"
+title = "The Stacks Project, More on Algebra, Lemma 15.120.4"
+year = 2026
+locator_scheme = "tag"
+locator = "0FJD"
+url = "https://stacks.math.columbia.edu/tag/0FJD"
+fetched_from = "https://stacks.math.columbia.edu/download/more-algebra.pdf#nameddest=0FJD"
+fetched_at = "2026-11-09T00:35:28Z"
+sha256 = "ab69179738e642603ddbde651f2838e1cb5d8711e8bcd7c447cbf02a8bb6a5d2"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-09"
+cited_for = ["3.2"]
