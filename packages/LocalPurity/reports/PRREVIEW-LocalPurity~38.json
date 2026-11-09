@@ -1,0 +1,13 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-LocalPurity~38",
+  "head": "3adc047012b41982e80e92670391af94b3964aa5",
+  "pr": 1807,
+  "folder": "LocalPurity",
+  "date": "2026-11-09",
+  "findings": 5,
+  "blocking": 2,
+  "notes": "Full review at pins TauCeti 2fd255d9 / Mathlib 1b1ccf4b. Gate at this head: readme-ids-missing=4 (R04), build 0; lake env lean of Suggested.lean clean apart from 7 sorry warnings; depcheck 0 problems. Seeded sample 0.1, 0.2, 1.1-1.4, 2.1, 2.2 and every other locator read in the cache (00R4, 0BJF, 0BM7-0BM9, 0BLF-0BLM, 0BLS, 0BMA, 0EY7, 0BQ5/0EY3, 0EKS/0EII/0EKP, 09ZL/05ER/05EU, 0EL8, 0BN9, 0AFS, 00GV, 0567, SGA2 X 3.4, SGA1 X 3.1): all match. Adversarial table of 20 rows with computed values. Main defect: the pinned Tau Ceti already proves Layers 0-1 (punctured spectrum, PurityHolds, 0BM8/0BLK affine, 0BM9 full faithfulness, 00R4, flat_of_normal_dim_two, 0BJF, 0BMA (2) in dimension two, the A x A/m counterexample) and 0AFS/depth/CM/Serre conditions, which the README plans and Suggested.lean restates on private carriers; four Lean theorems close in one exact against the library (probe elaborated). Two Stacks errata (0BM9, 0BMA(2) need torsion freeness) recorded."
+ }
+}
