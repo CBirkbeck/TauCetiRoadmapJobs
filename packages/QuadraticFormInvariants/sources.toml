@@ -219,3 +219,18 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-09"
 cited_for = ["Layer 6C", "Layer 6E", "Layer 7C"]
+
+[[source]]
+id = "omeara1955"
+authors = "O. T. O'Meara"
+title = "Quadratic Forms Over Local Fields"
+year = 1955
+venue = "American Journal of Mathematics 77, no. 1"
+doi = "10.2307/2372423"
+locator_scheme = "page"
+locator = "87 ff. (cited as a whole, as the paper antecedent of O'Meara 1963 §63)"
+url = "https://doi.org/10.2307/2372423"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled (the DOI resolves to JSTOR only); cited by its locator without the text; first page 87 as Crossref records it"
+cited_for = ["Layer 6"]
