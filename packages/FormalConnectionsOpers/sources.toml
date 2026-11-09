@@ -1,0 +1,110 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "FormalConnectionsOpers"
+
+[[source]]
+id = "Kostant1963Bull"
+authors = "Bertram Kostant"
+title = "Lie group representations on polynomial rings"
+year = 1963
+venue = "Bull. Amer. Math. Soc. 69 (1963), 518-526"
+doi = "10.1090/S0002-9904-1963-10980-5"
+locator_scheme = "theorem"
+locator = "Proposition 0.4 and Theorem 0.1 (p. 521), Theorem 0.6 (p. 522), (0.1.8) (p. 524)"
+url = "https://www.ams.org/journals/bull/1963-69-04/S0002-9904-1963-10980-5/S0002-9904-1963-10980-5.pdf"
+fetched_from = "https://www.ams.org/journals/bull/1963-69-04/S0002-9904-1963-10980-5/S0002-9904-1963-10980-5.pdf"
+fetched_at = "2026-11-09T10:42:37Z"
+sha256 = "e51f8bfc8f1df89ae72ef5f19294493ca98775cc31a77feb4ddba045fb1761ed"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-11-09"
+cited_for = ["4.3"]
+
+[[source]]
+id = "Rinehart1963"
+authors = "George S. Rinehart"
+title = "Differential forms on general commutative algebras"
+year = 1963
+venue = "Trans. Amer. Math. Soc. 108 (1963), 195-222"
+doi = "10.1090/S0002-9947-1963-0154906-3"
+locator_scheme = "theorem"
+locator = "Theorem 3.1 (p. 198)"
+url = "https://www.ams.org/journals/tran/1963-108-02/S0002-9947-1963-0154906-3/S0002-9947-1963-0154906-3.pdf"
+fetched_from = "https://www.ams.org/journals/tran/1963-108-02/S0002-9947-1963-0154906-3/S0002-9947-1963-0154906-3.pdf"
+fetched_at = "2026-11-09T10:43:16Z"
+sha256 = "5b7d9761d054093f8d4625ce7998d334750e0091f1634f2388d379de463f446e"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-11-09"
+cited_for = ["2.2"]
+
+[[source]]
+id = "Katz1970"
+authors = "Nicholas M. Katz"
+title = "Nilpotent connections and the monodromy theorem: applications of a result of Turrittin"
+year = 1970
+venue = "Publ. Math. IHES 39 (1970), 175-232"
+locator_scheme = "section"
+locator = "§1.0 (pp. 178–179), §1.1 (pp. 180–181)"
+url = "https://www.numdam.org/item/PMIHES_1970__39__175_0.pdf"
+fetched_from = "https://www.numdam.org/item/PMIHES_1970__39__175_0.pdf"
+fetched_at = "2026-11-09T10:45:22Z"
+sha256 = "c982f327b47df3ca184151556b7c95545ba63cdd095092a702431a4ee0c2ba09"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-09"
+cited_for = ["2.3"]
+
+[[source]]
+id = "Huebschmann1990"
+authors = "Johannes Huebschmann"
+title = "Poisson cohomology and quantization"
+year = 2013
+venue = "J. reine angew. Math. 408 (1990), 57-113"
+arxiv = "1303.3903v1"
+locator_scheme = "theorem"
+locator = "Theorem 3.8 and Addendum 3.8.4 (arXiv v1, pp. 23–24)"
+url = "https://arxiv.org/abs/1303.3903v1"
+fetched_from = "https://arxiv.org/pdf/1303.3903v1"
+fetched_at = "2026-11-09T10:45:52Z"
+sha256 = "25dfc941c3ad1fa06d7f3a594976122546d80e9557fcdec4735d0cc2749d6603"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-09"
+version_note = "arXiv v1"
+cited_for = ["7.1"]
+
+[[source]]
+id = "FrenkelGaitsgory2006"
+authors = "Edward Frenkel, Dennis Gaitsgory"
+title = "Local geometric Langlands correspondence and affine Kac-Moody algebras"
+year = 2005
+arxiv = "math/0508382v3"
+locator_scheme = "section"
+locator = "§19.1, Corollary 1.3.2, Lemma 4.3.1"
+url = "https://arxiv.org/abs/math/0508382v3"
+fetched_from = "https://arxiv.org/pdf/math/0508382v3"
+fetched_at = "2026-11-09T10:46:24Z"
+sha256 = "521f114e4585296ddba6f19acd04226bc7d0804a38b29b6db45d2cfc1990b874"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-09"
+version_note = "arXiv v3"
+cited_for = ["1.1", "4.4", "5.2", "7.1", "8.2"]
+
+[[source]]
+id = "Frenkel2007"
+authors = "Edward Frenkel"
+title = "Langlands correspondence for loop groups"
+year = 2007
+venue = "Cambridge Studies in Advanced Mathematics 103"
+version_note = "page numbers are the printed ones, PDF page minus 14"
+locator_scheme = "section"
+locator = "§1.3.1, §4.3.1, Lemma 4.3.5"
+url = "https://math.berkeley.edu/~frenkel/loop.pdf"
+fetched_from = "https://math.berkeley.edu/~frenkel/loop.pdf"
+fetched_at = "2026-11-09T10:46:38Z"
+sha256 = "01cbce53ed4dec34224889b612a6934ee3e3fb1a8240fb627933e4e498b87939"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-09"
+cited_for = ["1.2", "3.1", "4.3", "5.2"]
