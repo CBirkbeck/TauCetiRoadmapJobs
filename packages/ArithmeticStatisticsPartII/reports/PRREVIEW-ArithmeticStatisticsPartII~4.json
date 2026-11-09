@@ -1,0 +1,13 @@
+{
+  "review": {
+    "status": "needs_changes",
+    "reviewer": "independent-review-PRREVIEW-ArithmeticStatisticsPartII~4",
+    "head": "208c89743c8a09bd9da431a8a6fe62eba9001176",
+    "pr": 1173,
+    "folder": "ArithmeticStatisticsPartII",
+    "date": "2026-11-09",
+    "findings": 3,
+    "blocking": 1,
+    "notes": "incremental re-review of 18 changed lines since 86c4511; the README-only diff makes QuadraticFormsOverABase a supplier of §1.3. That roadmap (#1930) is absent from the merge order, and its own suppliers (OrthogonalTamagawaAndLatticeMass, GeometryOfNumbersAndQuadraticArithmeticPartII, HyperellipticCurves) come after this roadmap, so scratch-order depchecks show UPWARD either way (R01, P2); the self-contained 86c4511 text passes. The previous R01 docstring note for §1.2 is not repaired (R02, P3). The gate fails statement-hygiene on cubicInvariant's Classical.choose (R03, P3); a choice-free cubicInvariantAt repair elaborates. Checked: the changed half-discriminant mathematics (n=3 coefficient map, halfDisc_comp direction, a^n scaling, pencil expansion against the README Check); QFOAB §§1.1–1.3 citations at its head; ref-9 (HCL III) Section 3.1 (11) and (19)–(20) locators; gate rerun; real-order depcheck 0 problems; lake env lean with seven sorry warnings at the new pins; simp/rfl/infer_instance padding probes all fail; outside-folder diff empty; untouched adversarial rows carried from ~3."
+  }
+}
