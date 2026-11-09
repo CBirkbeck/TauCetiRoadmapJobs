@@ -167,3 +167,39 @@ licence_class = "none"
 status = "uncertified"
 version_note = "paywalled; cited by its locator without the text"
 cited_for = ["Layer 11", "References"]
+
+[[source]]
+id = "Rosenlicht1955"
+authors = "Maxwell Rosenlicht"
+title = "Automorphisms of function fields"
+year = 1955
+venue = "Transactions of the American Mathematical Society 79"
+doi = "10.1090/S0002-9947-1955-0070211-3"
+locator_scheme = "page"
+locator = "§2, Lemmas and Theorem, pp. 2–4; §3, Theorem and example, p. 10"
+url = "https://www.ams.org/journals/tran/1955-079-01/S0002-9947-1955-0070211-3/S0002-9947-1955-0070211-3.pdf"
+fetched_from = "https://www.ams.org/journals/tran/1955-079-01/S0002-9947-1955-0070211-3/S0002-9947-1955-0070211-3.pdf"
+fetched_at = "2026-11-09T05:22:45Z"
+sha256 = "5a205de44d16fa44f8f29a0febcf57bbb77a2fd47cfa8527a13d3970b225f8b8"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-11-09"
+cited_for = ["11.4", "References"]
+
+[[source]]
+id = "DeligneMumford1969"
+authors = "Pierre Deligne; David Mumford"
+title = "The irreducibility of the space of curves of given genus"
+year = 1969
+venue = "Publications Mathématiques de l'IHÉS 36"
+doi = "10.1007/BF02684599"
+locator_scheme = "theorem"
+locator = "Theorem (1.11), p. 84"
+url = "http://www.numdam.org/item/PMIHES_1969__36__75_0/"
+fetched_from = "https://www.numdam.org/item/PMIHES_1969__36__75_0.pdf"
+fetched_at = "2026-11-09T05:22:46Z"
+sha256 = "79316edb045ef5540367e9beaa4c057ac954a887eabb8c42a8208304dd8f60c5"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-09"
+cited_for = ["References"]
