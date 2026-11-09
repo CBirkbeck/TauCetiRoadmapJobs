@@ -1,0 +1,13 @@
+{
+  "review": {
+    "status": "needs_changes",
+    "reviewer": "independent-review-PRREVIEW-ReductiveGroups~89",
+    "head": "f3a59531ff528e5816e30998fdf4d181b21dd4f0",
+    "pr": 1807,
+    "folder": "ReductiveGroups",
+    "date": "2026-11-09",
+    "findings": 17,
+    "blocking": 9,
+    "notes": "Full review of README (2237 lines), Suggested.lean and the seven companion Lean files at f3a5953 (the PR changes README 975-980 only). Gate FAILS (blob=7, sorry-data=5, imports=1, mathlib-subimports=1; outside-folder in a local run lists only the PR's own folders, empty git diff otherwise). lake env lean Suggested.lean: six sorry warnings only. Depcheck --content: 239 roadmaps, 2312 edges, 0 problems; it exempts on-main roadmaps, and reading by hand finds supply loops with ReductiveGroupsPartII, LieGroups, ComplexComparisonPartII, FormalConnectionsOpers and InverseGalois (R01-R04). Seeded sample: 'Supplier:' verified at milne-iag Prop 27.54 p487 / Cor 27.55-27.56 p488 (statement sound, direction of supply wrong); 'sheaves and descent' has no locator and no owner, restates Tau Ceti fppf/descent and SchemeAndStackFoundations Layer 1 (R09). Extra: Dudas-Michel Prop 8.9 p32 matches. #check of all 15 Suggested declarations; one-term probe confirms padding; four statable headlines (char-0 reductive => linearly reductive, conjugacy of maximal tori, Tits system/Bruhat, Brieskorn) elaborate at the pins. Tau Ceti already proves the embedding theorem, the Hopf/affine-group anti-equivalence, pseudo-reductive basics, Weil restriction and fixed-coset lifting. 41 adversarial rows with computed values; 22 cross-roadmap citations resolved; 40 sorry'd definitions in companion files."
+  }
+}
