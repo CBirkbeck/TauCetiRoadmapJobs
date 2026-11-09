@@ -149,3 +149,96 @@ licence_class = "institutional"
 status = "certified"
 accessed = "2026-11-08"
 cited_for = ["R4.1"]
+
+[[source]]
+id = "bishop-rg"
+authors = "Richard L. Bishop"
+title = "Riemannian Geometry"
+year = 2013
+venue = "lecture notes, University of Illinois; arXiv:1303.5390v2"
+arxiv = "1303.5390v2"
+locator_scheme = "theorem"
+locator = "Theorem 7.9, p. 50 (Synge's theorem, even dimension); Problem 7.11, p. 50 (odd dimension, orientability)"
+url = "https://arxiv.org/abs/1303.5390"
+fetched_from = "https://arxiv.org/pdf/1303.5390"
+fetched_at = "2026-11-09T03:42:06Z"
+sha256 = "661745181375a3fe6302d2e510ca8e628eed4ae24b3fa866745a43b292b2b1a8"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-09"
+version_note = "arXiv v2 (27 Jul 2013); page numbers are the notes' own"
+cited_for = ["R4.6 Synge's theorem (synge, synge_orientable_of_odd)"]
+
+[[source]]
+id = "eschenburg-comparison"
+authors = "Jost-Hinrich Eschenburg"
+title = "Comparison Theorems in Riemannian Geometry"
+year = 1994
+venue = "lecture notes, Università di Trento (author page, Universität Augsburg)"
+locator_scheme = "theorem"
+locator = "Theorem 3.3, p. 13; Rauch I, p. 14"
+url = "https://myweb.rz.uni-augsburg.de/~eschenbu/comparison.pdf"
+fetched_from = "https://myweb.rz.uni-augsburg.de/~eschenbu/comparison.pdf"
+fetched_at = "2026-11-09T03:42:08Z"
+sha256 = "bc1478206c223194f3ee19210062b856a38639c55e34aa68136d1c4e970a267e"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-09"
+cited_for = ["R4.1 Rauch comparison under an upper sectional bound (rauch_norm_ge_of_sectional_le)"]
+
+[[source]]
+id = "caponio-javaloyes-morse"
+authors = "Erasmo Caponio, Miguel Angel Javaloyes"
+title = "A remark on the Morse theorem about infinitely many geodesics between two points"
+year = 2011
+venue = "proceedings of the International Meeting on Differential Geometry, Córdoba 2010; arXiv:1105.3923v2"
+arxiv = "1105.3923v2"
+locator_scheme = "section"
+locator = "§1, p. 1 (Morse, The Calculus of Variations in the Large, Theorem 13.3, p. 239, and Serre's theorem on the based loop space of a compact manifold, as stated there)"
+url = "https://arxiv.org/abs/1105.3923"
+fetched_from = "https://arxiv.org/pdf/1105.3923"
+fetched_at = "2026-11-09T03:43:20Z"
+sha256 = "f40939f100887fa9f568b31802c11d27c69918f67becacbeb56149b5519b8f30"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-09"
+version_note = "arXiv v2 (28 Dec 2011)"
+cited_for = ["R4.8 two distinct geodesics between distinct points (two_distinct_geodesics)"]
+
+[[source]]
+id = "spacetime-guided-tour"
+authors = "Johanna Barzen, Frank Leymann"
+title = "Mathematics of Spacetime: A Guided Tour Through The Underlying Differential Topology and Differential Geometry"
+year = 2026
+venue = "arXiv:2606.02616"
+arxiv = "2606.02616"
+locator_scheme = "theorem"
+locator = "Theorem 9 (Killing–Hopf), p. 60"
+url = "https://arxiv.org/abs/2606.02616"
+fetched_from = "https://arxiv.org/pdf/2606.02616"
+fetched_at = "2026-11-09T03:46:45Z"
+sha256 = "29cd95b1001e5981a3905dfa84f5a405f8d44e0401d894cccd9c71fc96561793"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-09"
+version_note = "arXiv, latest version at the fetch date"
+cited_for = ["R4.7 Killing–Hopf classification (killingHopf_euclidean, killingHopf_sphere, killingHopf_hyperbolic)"]
+
+[[source]]
+id = "taimanov-three-geodesics"
+authors = "Iskander A. Taimanov"
+title = "On the existence of three nonselfintersecting closed geodesics on manifolds homeomorphic to the 2-sphere"
+year = 1992
+venue = "Izv. RAN Ser. Mat. 56:3 (1992), 605–635; English translation Russian Acad. Sci. Izv. Math. 40:3 (1993), 565–590"
+doi = "10.1070/IM1993v040n03ABEH002177"
+locator_scheme = "page"
+locator = "abstract (statement of the three-geodesics theorem); Russian pp. 605–635, English pp. 565–590"
+url = "https://www.mathnet.ru/eng/im940"
+fetched_from = "https://m.mathnet.ru/php/archive.phtml?wshow=paper&jrnid=im&paperid=940&option_lang=eng"
+fetched_at = "2026-11-09T03:47:06Z"
+sha256 = "3a490e434b601455fd3e44e31d9fecf73eaadad84490f4a5172e90bd16244058"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-09"
+version_note = "mathnet.ru abstract page (statement read there); the full-text PDF on mathnet.ru timed out at the fetch date, so no theorem number is cited"
+cited_for = ["R4.9 three simple closed geodesics (three_simple_closed_geodesics)"]
