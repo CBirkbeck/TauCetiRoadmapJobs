@@ -1,0 +1,20 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "SchemeKTheoryOperations"
+
+[[source]]
+id = "Kal80"
+authors = "Wilberd van der Kallen"
+title = "Homology stability for linear groups"
+year = 1980
+venue = "Inventiones mathematicae 60 (1980), 269-295"
+doi = "10.1007/BF01390018"
+locator_scheme = "theorem"
+locator = "Theorem 2.6(i)-(ii), p.274; Proposition 3.7, pp.280-281; Lemma 4.5, p.285; Theorem 4.8, p.287; Theorem 4.11, p.289"
+url = "https://gdz.sub.uni-goettingen.de/download/pdf/PPN356556735_0060/LOG_0015.pdf"
+fetched_from = "https://gdz.sub.uni-goettingen.de/download/pdf/PPN356556735_0060/LOG_0015.pdf"
+fetched_at = "2026-11-09T13:59:53Z"
+sha256 = "a0f98cd17ca1ff617d9d99ab9a08d297e03748112f935a41a4fdfa6550581c00"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-09"
+cited_for = ["6.7"]
