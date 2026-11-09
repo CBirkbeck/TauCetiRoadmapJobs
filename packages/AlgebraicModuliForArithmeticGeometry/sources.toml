@@ -1,0 +1,33 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "AlgebraicModuliForArithmeticGeometry"
+
+[[source]]
+id = "kleiman_picard"
+authors = "Steven L. Kleiman"
+title = "The Picard scheme"
+year = 2005
+arxiv = "math/0504020v1"
+locator_scheme = "theorem"
+locator = "Theorem 4.8"
+url = "https://arxiv.org/abs/math/0504020v1"
+fetched_from = "https://arxiv.org/pdf/math/0504020v1"
+fetched_at = "2026-11-09T14:51:37Z"
+sha256 = "cc14e62f0ebebb8617777651bbcd08bb7548cb9fe955f3a25bb6491c5f3beeaa"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-09"
+version_note = "arXiv v1"
+cited_for = ["7.6.3"]
+
+[[source]]
+id = "stacks_descent"
+locator_scheme = "tag"
+locator = "08XA"
+url = "https://stacks.math.columbia.edu/tag/08XA"
+fetched_from = "https://stacks.math.columbia.edu/download/descent.pdf#nameddest=08XA"
+fetched_at = "2026-11-09T14:53:04Z"
+sha256 = "28e718bac216bb7c4584e9edb1d25d6420ee19a6cd536742c58599242ff8cad4"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-09"
+cited_for = ["3.1"]
