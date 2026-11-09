@@ -62,3 +62,108 @@ licence_class = "author-page"
 status = "certified"
 accessed = "2026-11-08"
 cited_for = ["Layer 10", "Layer 4", "References"]
+
+[[source]]
+id = "Deuring1973"
+authors = "Max Deuring"
+title = "Lectures on the Theory of Algebraic Functions of One Variable"
+year = 1973
+venue = "Lecture Notes in Mathematics"
+doi = "10.1007/BFb0060944"
+locator_scheme = "chapter"
+locator = "whole volume (Lecture Notes in Mathematics 314)"
+url = "https://doi.org/10.1007/BFb0060944"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["Layer 8", "References"]
+
+[[source]]
+id = "Goldschmidt2003"
+authors = "David M. Goldschmidt"
+title = "Algebraic Functions and Projective Curves"
+year = 2003
+venue = "Graduate Texts in Mathematics"
+doi = "10.1007/b97844"
+locator_scheme = "chapter"
+locator = "Weierstrass points and Wronskians"
+url = "https://doi.org/10.1007/b97844"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["Layer 11", "References"]
+
+[[source]]
+id = "Rosen2002"
+authors = "Michael Rosen"
+title = "Number Theory in Function Fields"
+year = 2002
+venue = "Graduate Texts in Mathematics"
+doi = "10.1007/978-1-4757-6046-0"
+locator_scheme = "chapter"
+locator = "S-integers and class groups"
+url = "https://doi.org/10.1007/978-1-4757-6046-0"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["Layer 2", "References"]
+
+[[source]]
+id = "VillaSalvador2006"
+authors = "Gabriel Daniel Villa Salvador"
+title = "Topics in the Theory of Algebraic Function Fields"
+year = 2006
+venue = "Mathematics: Theory & Applications"
+doi = "10.1007/0-8176-4515-2"
+locator_scheme = "chapter"
+locator = "automorphism groups; constant-field extensions"
+url = "https://doi.org/10.1007/0-8176-4515-2"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["Layer 8", "Layer 11", "References"]
+
+[[source]]
+id = "Roquette1970"
+authors = "Peter Roquette"
+title = "Abschätzung der Automorphismenanzahl von Funktionenkörpern bei Primzahlcharakteristik"
+year = 1970
+venue = "Mathematische Zeitschrift 117"
+doi = "10.1007/BF01109838"
+locator_scheme = "page"
+locator = "Math. Z. 117 (1970), 157–163"
+url = "https://doi.org/10.1007/BF01109838"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["Layer 11", "References"]
+
+[[source]]
+id = "Stichtenoth1973a"
+authors = "Henning Stichtenoth"
+title = "Über die Automorphismengruppe eines algebraischen Funktionenkörpers von Primzahlcharakteristik. I"
+year = 1973
+venue = "Archiv der Mathematik 24"
+doi = "10.1007/BF01228251"
+locator_scheme = "page"
+locator = "Arch. Math. 24 (1973), 527–544"
+url = "https://doi.org/10.1007/BF01228251"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["Layer 11", "References"]
+
+[[source]]
+id = "Stichtenoth1973b"
+authors = "Henning Stichtenoth"
+title = "Über die Automorphismengruppe eines algebraischen Funktionenkörpers von Primzahlcharakteristik. II"
+year = 1973
+venue = "Archiv der Mathematik 24"
+doi = "10.1007/BF01228261"
+locator_scheme = "page"
+locator = "Arch. Math. 24 (1973), 615–631"
+url = "https://doi.org/10.1007/BF01228261"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["Layer 11", "References"]
