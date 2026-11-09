@@ -87,3 +87,42 @@ status = "certified"
 accessed = "2026-11-09"
 version_note = "arXiv v1"
 cited_for = ["1.7"]
+
+[[source]]
+id = "wilson-2020"
+authors = "Trevor M. Wilson"
+title = "Weak Vopěnka's Principle does not imply Vopěnka's Principle"
+year = 2019
+doi = "10.1016/j.aim.2020.106986"
+arxiv = "1909.09333v1"
+locator_scheme = "theorem"
+locator = "Theorem 1.2"
+url = "https://arxiv.org/abs/1909.09333v1"
+fetched_from = "https://arxiv.org/pdf/1909.09333v1"
+fetched_at = "2026-11-09T16:37:07Z"
+sha256 = "04ab943e3a61b88fb74646e8e23910cf7d72d67086662b75a7f2db93b391b1f7"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-09"
+version_note = "arXiv v1"
+cited_for = ["2.1"]
+
+[[source]]
+id = "positselski-stovicek-2022"
+authors = "Leonid Positselski, Jan Stovicek"
+title = "Derived, coderived, and contraderived categories of locally presentable abelian categories"
+year = 2021
+venue = "Journ. Pure Appl. Algebra 226 no.4 (2022), 106883, 39 pp"
+doi = "10.1016/j.jpaa.2021.106883"
+arxiv = "2101.10797v3"
+locator_scheme = "theorem"
+locator = "Question 9.10"
+url = "https://arxiv.org/abs/2101.10797v3"
+fetched_from = "https://arxiv.org/pdf/2101.10797v3"
+fetched_at = "2026-11-09T16:37:15Z"
+sha256 = "9a4e229e26b07332e720f17f0c2d007070d9a654f0f892eaf6e8cf870893f6fc"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-09"
+version_note = "arXiv v3"
+cited_for = ["Research context"]
