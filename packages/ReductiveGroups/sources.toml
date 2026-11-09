@@ -363,3 +363,21 @@ status = "certified"
 accessed = "2026-11-08"
 version_note = "arXiv v2"
 cited_for = ["10B"]
+
+[[source]]
+id = "brieskorn-1971"
+authors = "E. Brieskorn"
+title = "Die Fundamentalgruppe des Raumes der regulären Orbits einer endlichen komplexen Spiegelungsgruppe"
+year = 1971
+venue = "Inventiones Mathematicae 12"
+doi = "10.1007/BF01389827"
+locator_scheme = "theorem"
+locator = "Satz"
+url = "https://gdz.sub.uni-goettingen.de/download/pdf/PPN356556735_0012/LOG_0010.pdf"
+fetched_from = "https://gdz.sub.uni-goettingen.de/download/pdf/PPN356556735_0012/LOG_0010.pdf"
+fetched_at = "2026-11-09T16:38:01Z"
+sha256 = "35ba80e8014aeb0e51556e61dae4850cd3e5b33130709eb3a4dda79267e90df9"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-09"
+cited_for = ["11B"]
