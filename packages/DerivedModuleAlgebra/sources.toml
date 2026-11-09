@@ -386,3 +386,19 @@ status = "certified"
 accessed = "2026-11-09"
 version_note = "Zenodo record of release v1.0.0 (DOI 10.5281/zenodo.23573535, Apache-2.0); the README cites the all-versions DOI 10.5281/zenodo.23573534; locators are Lean module and declaration names"
 cited_for = ["0.DP.3", "1.1", "S.1"]
+
+[[source]]
+id = "StacksHom"
+authors = "The Stacks Project Authors"
+title = "The Stacks Project, Chapter 12: Homological Algebra"
+year = 2026
+locator_scheme = "tag"
+locator = "0130; 0132; 0133"
+url = "https://stacks.math.columbia.edu/download/homology.pdf"
+fetched_from = "https://stacks.math.columbia.edu/download/homology.pdf"
+fetched_at = "2026-11-09T04:37:40Z"
+sha256 = "f3d73df1c27a6d88f9e4dd0f01697b3dd8553b88e3ea078539a9b512dc4d9576"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-09"
+cited_for = ["S.1"]
