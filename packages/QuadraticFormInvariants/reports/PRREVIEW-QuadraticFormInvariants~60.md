@@ -1,0 +1,168 @@
+# Review of QuadraticFormInvariants (pull request #1215 at f0ebef6)
+
+**Verdict:** needs changes
+
+This is an incremental re-review. 0 lines of `TauCetiRoadmap/QuadraticFormInvariants/` have changed since 293f615. Since then, the pull request has changed only `TauCetiRoadmap/ClassFieldTheory/README.md` (+33/−10) and `TauCetiRoadmap/GlobalQuadraticForms/README.md` (+19/−18). Neither change touches anything this roadmap cites.
+
+The two P3 findings of the previous report concern the pull request as a whole, and neither is repaired. The README and `Suggested.lean` have no defect.
+
+## R01 (P3) — Four open pull requests change this folder, the heads conflict, and no merge order is stated
+
+Previous R01, not repaired.
+
+**Location.** The pull request's description, which is unchanged. Its title is "ClassFieldTheory: correct hypotheses, conductors and lifting". It mentions neither QuadraticFormInvariants nor a merge order.
+
+**Claim.** Four open pull requests change this folder:
+- #617, #1411 and #1797 each rewrite this folder's `README.md` and `Suggested.lean` differently from this head;
+- #1187 (the Tau Ceti bump) edits this folder's `Suggested.lean`.
+
+`git merge-tree` against each head reports a content conflict in this folder. Nothing says which pull request lands first.
+
+**Witness.** This folder's `Suggested.lean` at the other heads (git-verified line numbers):
+- `theorem hilbertSymbol_mul` is at #617 (21535d1) line 111, #1411 (5bfdf39) line 111 and #1797 (8709785) line 144;
+- #1187 (66ed0d4) imports `TauCetiRoadmap.ProfiniteCohomology.Suggested` at line 2.
+
+This head has neither.
+
+**Repair.** Add one paragraph to the description that says:
+- what this pull request does to QuadraticFormInvariants: Tau Ceti carriers, the three names kept for OrthogonalSpinGroups, and the old → new list;
+- that this pull request lands before #617, #1411 and #1797, and that each of those drops its QuadraticFormInvariants hunks or rebases onto this head;
+- whether #1187 lands before or after this pull request. The later of the two rebases its edit of this `Suggested.lean`.
+
+## R02 (P3) — An edit outside the pull request's named folders
+
+Previous R02, not repaired.
+
+**Location.** `Completed/LocalGaloisGroups/Suggested.lean` has 62 insertions and 50 deletions. Two examples:
+- `+import TauCeti.NumberTheory.ClassFieldTheory.Local.CohomologicalDimension.Strict`;
+- `= ClassFieldTheory.artinMap K x` becomes `= TauCeti.ClassFieldTheory.artinMap K x`.
+
+**Claim.** This review's brief names two folders as this pull request's own besides this one: ClassFieldTheory and GlobalQuadraticForms. LocalGaloisGroups is not among them, and the description does not mention this file.
+
+**Witness.** `git diff --stat origin/main...HEAD`, excluding the three folders, lists exactly this file (112 lines changed). `git merge-tree` of this head with #617 (21535d1) and with #1411 (5bfdf39) reports a content conflict in this file.
+
+**Repair.** Do one of the following:
+- say in the description that this file is ClassFieldTheory's consumer repair for its renamed declarations, so that LocalGaloisGroups counts as one of this pull request's folders (the open-PR index already lists it among #1215's roadmaps); or
+- move the edit into a companion pull request that merges together with this one.
+
+## Previous findings
+
+- R01 — not repaired: the description is unchanged and states no order against #617, #1411, #1797 or #1187. All four are open, #617 has moved to 21535d1, and each still conflicts with this head in this folder (now R01).
+- R02 — not repaired: `Completed/LocalGaloisGroups/Suggested.lean` is still changed (62+/50−), and the description does not name it (now R02).
+
+## Verified sound
+
+**Gate.** The worker's gate at f0ebef6 passes every check, with `build=0`.
+
+My run gives 0 on every check except `outside-folder=4`. The four files are the `README.md` and `Suggested.lean` of ClassFieldTheory and of GlobalQuadraticForms. The brief names both folders as this pull request's own, so these four are not a finding. R02 rests on the diff, because the gate's `outside-folder` check does not cover `Completed/`.
+
+**Build.**
+- `lake env lean TauCetiRoadmap/QuadraticFormInvariants/Suggested.lean` exits 0 with no output (7 s). The file contains no `sorry`.
+- I appended `#check @` lines for `hilbertSymbol`, `localHasse`, `localHasse_eq_prod_prod_Ioi` and `hasseInvariant_eq_localHasse` to a scratch copy and elaborated it. Each type is the README's statement:
+  - `hasseInvariant_eq_localHasse` carries `[ValuativeRel K] [TopologicalSpace K] [IsNonarchimedeanLocalField K] [Invertible 2]` explicitly;
+  - the two definitions carry only `[Field K]`, which is all their bodies need.
+
+  No binder was lost, and nothing changed.
+
+**Dependency check.** Output: `depcheck: 236 roadmaps, 2274 edges, 0 problem(s)`. There is no UPWARD and no CYCLE line.
+
+**The changes outside the folder that this roadmap relies on.** This roadmap cites ClassFieldTheory only as Layer 5, Layer 14 and "its Conventions" (README 331, 1531, 1742, 1759–1760, 1810, 2173, 2202).
+
+The ClassFieldTheory diff since 293f615 has three hunks:
+- the open-targets paragraph (lines 69–76);
+- the "Section and name correspondence" list, which becomes a former-section table (lines 252–279). That table maps former §2.1–§2.7, §4 and §5.1–§5.8, and states that "§4 Layer k" is Layer k. This README cites no former section number, so no citation here moves.
+- one sentence of the Layer 13 contract (lines 1928–1933).
+
+None of the three touches Layer 5 (from line 1051) or Layer 14 (from line 2155). The consumed declarations are listed at README 331–343: `muNRep`, `kummerClass`, `kummerCupPairing`, `localSymbol`, `invMap`, `h2MuEquivZMod`, `finiteHilbertInvariantAt` and `hilbertProductFormula`. ClassFieldTheory's sentences "QuadraticFormInvariants consumes these comparisons" (lines 217, 2176, 2211) and its direction `ClassFieldTheory → QuadraticFormInvariants` (line 225) are unchanged.
+
+The GlobalQuadraticForms diff rewords its section-and-name map ("resolves to"). Every id and declaration name in it is unchanged. This README cites GlobalQuadraticForms only as a consumer (README 89, 986, 1633, 2686).
+
+**Pinned declarations opened** (Tau Ceti at the pin, file:line):
+- `galoisEvens2_kummerClass` (`FieldTheory/QuadraticForm/StiefelWhitney/Evens/Kummer/Value.lean:220`);
+- `galoisEvens2_kummerClass_of_trace_eq_zero` (same file :182);
+- `galoisEvens2_kummerClass_one_add` (same file :329);
+- `quaternionSubgroup_eq_twoTorsion` (`NumberTheory/LocalField/Quaternion/Invariant.lean:67`);
+- `invMap_brauerGroupEquivBr_quaternionClass_eq_half_iff` (same file :79);
+- `h2MuEquivZMod_eq_one_iff_hilbertSymbol_eq_neg_one` (same file :92);
+- `hilbertSymbol_eq_cohomological` (`FieldTheory/GaloisCohomology/MuTwo/LocalSymbol.lean:191`);
+- `hilbertProductFormula` (`NumberTheory/ClassFieldTheory/Global/Hilbert/Reciprocity.lean:65`);
+- `hilbertSymbol_productFormula` (`NumberTheory/QuadraticForm/Global/ProductFormula.lean:67`).
+
+All nine are where the README's Milestone 2, the Evens-value target and the product-formula consumers say they are.
+
+**Overlaps and citations.**
+- I recomputed `git merge-tree` against the four overlapping heads. That is R01.
+- `scratch/overlaps.md` lists no id this README cites that an open pull request drops, none that only an open revision defines, and no id of this roadmap that this pull request drops and others cite.
+- The two leads in `scratch/citations.md` are roadmap declarations on main, not pinned-library names, as the previous report found:
+  - `LocalFieldsRamification.map_norm_unitFiltration_zero` (README 324);
+  - `ProfiniteCohomology.f2Pairing` (README 357).
+
+  They are untouched since then.
+
+**Seeded sample (13 targets).** All 13 are at the README lines the previous report gives: 1109, 1124, 1150, 1171, 1181, 1204, 1244, 1493, 1503, 1708, 1726, 1749 and 2437. None falls in a changed passage, so the earlier locator verifications carry forward. The README flags no locator as unverified.
+
+I re-read one locator this round. "The value of the Evens norm on a Kummer class" cites Kahn Lemme II.2.1. In `kahn1984` it is at line 763, on printed p. 241 (page marker 28 at line 753). It gives `N((a)) = (Tr a, −d·N a) + (2,d)` when `Tr a ≠ 0` and `(2,d)` when `Tr a = 0`, matching README 2442–2445. Its proof (lines 776–788) applies Serre Th. 1′.
+
+**Headlines and padding.** No declaration was added, removed or changed. The five headlines are:
+- the Layer 2 four-fold TFAE;
+- the Layer 6D local classification;
+- the Layer 7C cup-norm theorem;
+- the Layer 9 Evens value;
+- the relative `w₂`.
+
+They are stated and discharged at the pins by the Tau Ceti theorems their docstrings name. `hilbertSymbol`, `localHasse` and `hasseInvariant_eq_localHasse` are kept for the OrthogonalSpinGroups consumer on main.
+
+**Duplication and ownership.** The change introduces no object in this folder.
+
+### Adversarial table
+
+No statement of this folder changed. Rows 1–33 carry forward the rows of PRREVIEW-QuadraticFormInvariants~57, which carried them from ~53, ~51 and ~46. Rows 34–37 are this round's computations: the supplier text that changed, the Kahn locator I re-read, and the build.
+
+| # | Statement | Instances tried | Values computed (each side) | Result | Change |
+|---|---|---|---|---|---|
+| 1 | Serre Th. 1 read for `c` (r57 row 1) | `E = ℚ(∛2)` | `Q_E ≅ ⟨3,1,−1⟩`, `d_E = (−3)`; `w₂ = (3)(−1) = (2)(−3)`; `c = 0`; `C₀ ≅ (−3,1)` split | holds | none |
+| 2 | Same, trivial and rank 2 (r57 row 2) | `ℝ³`, `ℝ⁴`, `ℚ(√3)`, `ℚ(i)` | `c = [ℍ]`; `c = [ℍ]`; `w₂ = (2)(3) ≠ 0`, `c = w₂`; `0 = (2)(−1)` | holds | none |
+| 3 | Serre §1.2 names `w₂` the Witt invariant (r57 row 3) | `serre1984cmh` lines 47–56 | `w₂ = Σ_{i<j}(aᵢ)(aⱼ)`, `∏_{i<j}` convention | holds | none |
+| 4 | Kahn's formulas are for `w₂` (r57 row 4) | `kahn1984` lines 50–56, 726–733, 763–786 | Delzant `w₂` is Hasse–Witt; Lemme II.2.1 has `(2,d)` | holds | none |
+| 5 | Tau Ceti module documentation (r57 row 5) | `…/StiefelWhitney/Clifford.lean` lines 28–38, 89–103 | corrections `C(n−1,2)`, `C(n+1,4)` | holds | none |
+| 6 | EKM exclusion locators (r57 row 6) | `ekm2008` lines 2948, 3381 | §10 at p. 55; Arf at p. 62 | holds | none |
+| 7 | Local classification, 6D (r57 row 7) | `⟨1,1⟩` vs `⟨5,5⟩`, `⟨−1,−1⟩`/`ℚ₂`; `⟨1⁴⟩` vs `⟨(−1)⁴⟩`/ℝ | `s = +1 = +1`, isometric; `s = −1 ≠ +1`; ℝ equal `(4,[1],+1)`, not isometric | holds | none |
+| 8 | Relative `w₂`, L9 (r57 row 8) | `ℚ₂(i)`, `a = 1+2i`; `ℚ₂(√5)`, `1+√5`, `√5` | `(2)(5) = (2)(5)`; `(2)(5) = (2)(5)`; `0 = 0` | holds | none |
+| 9 | Transfer discriminant (r57 row 9) | as row 8 | `[−5] = [−4]+[5]`; `[−5] = [5]+[−1]` | holds | none |
+| 10 | Descended `w₁`, `w₂` (r57 row 10) | `⟨2,−10⟩ ≅ ⟨2,−40⟩`; `⟨1,−1⟩ ≅ ⟨2,−2⟩` | `(−20) = (−80)`; `0 = 0` | holds | none |
+| 11 | Unramified symbol (r57 row 11) | `ℚ₃`, `Δ = 2`; `ℚ₂`, `Δ = 5, −3, 3` | `(2,3)₃ = −1`, `(2,9)₃ = +1`; `(5,2)₂ = −1`, `(5,3)₂ = +1` | holds | none |
+| 12 | Supplier-table path (r57 row 12) | `OrthogonalGroup/Basic.lean` | exists at pin | holds | none |
+| 13 | Consumers (r57 row 13) | Part II; main | imports `{1, 4, 7A, 7B, 9}`; three names kept | holds | none |
+| 14 | `Suggested.lean` docstring (r57 row 14) | lines 23–31 | `formClass` is `TauCeti.formClass` | holds | none |
+| 15 | Four-fold TFAE, L2 (r57 row 15) | `a = 1`; `(−1,−1)/ℝ`; `(2,5)`, `(5,5)/ℚ₂` | all true; all false; `5 = 5² − 5·2²`; `ω(5) = 1`, false | holds | none |
+| 16 | Cup-norm, 7C (r57 row 16) | `a = c²`; `b = −a`; ℝ; `(2,5)/ℚ₂` | `0`; `0`; false both; nonzero iff `5 ≠ x² − 2y²` | holds | none |
+| 17 | Evens value, L9 (r57 row 17) | `ℚ₂(i)`, `a = 1+2i`; `a = 1`; `√d` | `(2)(5) ≠ 0`; `(2)(−1) = 0`; `(2)(d)` both | holds | none |
+| 18 | `hasseInvariant_eq_localHasse` (r57 row 18) | `n = 0, 1`; `⟨−1,−1⟩/ℚ₂` | `1 = 1`; `ε[ℍ] = −1 = (−1,−1)₂` | holds | none |
+| 19 | `localHasse` Checks (r57 row 19) | `![a,−a]`; `![−1]`; `![−1,2]` | `+1`; `+1`; `s = +1`, O'Meara `−1` | holds | none |
+| 20 | Quaternions central simple (r57 row 20) | `a` square or not | split when `a` is a square | holds | none |
+| 21 | Binary congruence (r57 row 21) | `⟨2,−1⟩ ≅ ⟨1,−2⟩` | `1 = 1` | holds | none |
+| 22 | `s(λq)`, `s(q⊥r)` (r57 row 22) | `n = 0` | ℕ junk exponent 0 vs value 1 | holds | none |
+| 23 | Dimension ≤ 3 (r57 row 23) | rank 2; ℝ | `ac ∈ N(K(√−ab))` iff isometric | holds | none |
+| 24 | Lam V.3.20 over ℝ (r57 row 24) | `⟨1ⁿ⟩`, `n = 1..8` | `B_n = 0,0,1,1,1,1,0,0`; `ℝ, M₂ℝ, ℍ, M₂ℍ, M₂ℍ, M₄ℍ, M₈ℝ, M₁₆ℝ` | holds | none |
+| 25 | `c(q⊥r)` on `I²` (r57 row 25) | `⟨1⁴⟩ ⊥ ⟨1⟩` | `[ℍ] = [ℍ]·1` | holds | none |
+| 26 | 6B defects over `ℚ₂` (r57 row 26) | `1, 5, −1, −5, 5/4` | `0, 4ℤ₂, 2ℤ₂, 2ℤ₂`; `δ(5/4) = 0` | holds | none |
+| 27 | 6C Gram matrix (r57 row 27) | `{−1, 2, 5}` | `!![1,0,0;0,0,1;0,1,0]` | holds | none |
+| 28 | 6D isotropy (r57 row 28) | `⟨1,1,1⟩`, `⟨1⁴⟩/ℚ₂` | `s = +1 ≠ (−1,−1)₂` | holds | none |
+| 29 | Realization exceptions (r57 row 29) | `(1,[1],−1)`, `(2,[−1],−1)`, `(2,[1],−1)` | first two excluded; third is `⟨−1,−1⟩` | holds | none |
+| 30 | Ramified-base control (r57 row 30) | `ℚ₂(√2)`, `a = 5` | `1 + π ≢ 1 mod π²` | holds | none |
+| 31 | 6B case 3 (r57 row 31) | `ℚ₂(√2)` | `#𝒪ˣ/𝒪ˣ² = 8` | holds | none |
+| 32 | `Pin⁺` (r57 row 32) | `t = (e₁−e₂)/√2` | `t² = I`; `(e₁t)⁴ = −I` | holds | none |
+| 33 | ULift square, 7B.5 (r57 row 33) | transports | pullback along `absoluteGaloisGroupCongr`, `unitsCoeffCongr` | holds | none |
+| 34 | Supplier ClassFieldTheory as consumed at README 331–343, 1531, 1742, 1759–1760, 1810, 2173, 2202 (diff since 293f615) | the 3 hunks at its lines 69–76, 252–279, 1928–1933 | hunks touch Layer 5 (from 1051) and Layer 14 (from 2155): 0 lines; former-section ids cited here: 0; consumed names on both sides: 8 = 8; direction line 225 unchanged | holds | none |
+| 35 | Supplier text GlobalQuadraticForms (consumer side, README 89, 986, 1633, 2686) | its map lines 53–82, old vs new | entries for Layers 0–3 and 4.4: 9 = 9; multiset of backticked names: identical on both sides | holds | none |
+| 36 | Evens value, L9, locator (README 2439–2445) | `kahn1984` line 763, p. 241; `Tr a ≠ 0` and `Tr a = 0` | source: `(Tr a, −d·N a) + (2,d)` and `(2,d)`; README: `(Tr a) ∪ (−d·N a) + (2) ∪ (d)` and `(2) ∪ (d)`; `(2,−1) = 0` (line 769) matches README's corollary step | holds | none |
+| 37 | Build and signatures of the 5 declarations | `lake env lean` at the pins; `#check @` on a scratch copy | exit 0, 0 warnings, 0 `sorry`; 4 checked types equal the README's; folder diff since 293f615: 0 lines | holds | none |
+
+## Not verifiable
+
+- These sources are settled as uncertified in the manifest and are cited by locator only: Lam (2005), Gille–Szamuely (2017), O'Meara (1963), Milnor (1970), Serre *A Course in Arithmetic* and Serre *Local Fields*. No passage citing them changed, so I re-read none of them.
+- Ownership against open pull requests was checked through `scratch/overlaps.md` and the four conflicting heads. The change adds no object, so I did not repeat a full ownership sweep of the open pull requests.
+
+## Source issues
+
+- none
