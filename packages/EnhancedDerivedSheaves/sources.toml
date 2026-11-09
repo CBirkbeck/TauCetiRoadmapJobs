@@ -114,3 +114,19 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-09"
 cited_for = ["E1.6"]
+
+[[source]]
+id = "StacksAlgebra"
+authors = ["The Stacks project authors"]
+title = "The Stacks project, Chapter 10: Commutative Algebra"
+year = 2026
+locator_scheme = "tag"
+locator = "032A; 00O6; 065T; 00O7; 00OC; 00OE"
+url = "https://stacks.math.columbia.edu/download/algebra.pdf"
+fetched_from = "https://stacks.math.columbia.edu/download/algebra.pdf"
+fetched_at = "2026-11-09T22:49:24Z"
+sha256 = "b035a1f02104906a1820636cd332a0d7962fef3318d207a056634cb14dc86947"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-09"
+cited_for = ["E1.6"]
