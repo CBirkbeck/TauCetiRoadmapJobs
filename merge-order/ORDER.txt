@@ -335,7 +335,6 @@ HabiroCohomologyFoundationsPartII
 GeneralAlgebraicKTheoryPartII
 ChromaticHomotopyTheory
 HabiroNahmSeries
-KatoEulerSystems
 ArithmeticKTheoryPartII
 ArithmeticDynamics
 GrossZagierAndArithmeticHeights
@@ -354,6 +353,9 @@ GaloisSectionsPadicPeriodMaps
 LocalGaloisDeformationRingsPartII
 HilbertModularVarietiesAndShimuraCurvesPartII
 FunctionFieldArithmetic
+HyperellipticCurves
+AdelicImagesAndModularCurves
+KatoEulerSystems
 CurvesOverFiniteFields
 GlobalShtukasAndFunctionFieldLanglands
 SheafTheoreticSmithTheory
@@ -391,7 +393,6 @@ LogicAndDefinabilityInNumberTheoryPartII
 SporadicOrders
 GeometryOfNumbersAndQuadraticArithmeticPartII
 ExponentialSumsAndCircleMethodPartII
-HyperellipticCurves
 AbelianVarietiesOverFiniteFields
 AbelianSurfacesModularity
 DeRhamCohomologyAndDuality
