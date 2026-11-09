@@ -629,3 +629,42 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-09"
 cited_for = ["1.1"]
+
+[[source]]
+id = "stacks-0569"
+locator_scheme = "tag"
+locator = "0569"
+url = "https://stacks.math.columbia.edu/tag/0569"
+fetched_from = "https://stacks.math.columbia.edu/download/properties.pdf#nameddest=0569"
+fetched_at = "2026-11-09T23:22:15Z"
+sha256 = "2f5b9ba41e07dd3a888da40496e07afae6caedd550597d96313ab16db4380316"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-09"
+cited_for = ["supplier contracts"]
+
+[[source]]
+id = "stacks-02IT"
+locator_scheme = "tag"
+locator = "02IT"
+url = "https://stacks.math.columbia.edu/tag/02IT"
+fetched_from = "https://stacks.math.columbia.edu/download/properties.pdf#nameddest=02IT"
+fetched_at = "2026-11-09T23:22:18Z"
+sha256 = "2f5b9ba41e07dd3a888da40496e07afae6caedd550597d96313ab16db4380316"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-09"
+cited_for = ["supplier contracts"]
+
+[[source]]
+id = "stacks-033I"
+locator_scheme = "tag"
+locator = "033I"
+url = "https://stacks.math.columbia.edu/tag/033I"
+fetched_from = "https://stacks.math.columbia.edu/download/properties.pdf#nameddest=033I"
+fetched_at = "2026-11-09T23:22:20Z"
+sha256 = "2f5b9ba41e07dd3a888da40496e07afae6caedd550597d96313ab16db4380316"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-09"
+cited_for = ["supplier contracts"]
