@@ -381,3 +381,18 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-09"
 cited_for = ["11B"]
+
+[[source]]
+id = "kohls"
+authors = "Martin Kohls"
+title = "A user friendly proof of Nagata's characterization of linearly reductive groups in positive characteristics"
+year = 2011
+venue = "Linear and Multilinear Algebra 59 (2011), 271–278"
+doi = "10.1080/03081080903402939"
+locator_scheme = "page"
+locator = "pp. 271–278"
+url = "https://doi.org/10.1080/03081080903402939"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled (publisher landing page HTTP 403, no open copy found); cited by its locator without the text"
+cited_for = ["6"]
