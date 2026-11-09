@@ -1,0 +1,4 @@
+{"review": {"status": "needs_changes", "reviewer": "independent-review-PRREVIEW-HomotopySpheres~20",
+            "head": "c2c2d3eaa387c8faccbdf31e198236f448417989", "pr": 1287, "folder": "HomotopySpheres", "date": "2026-11-09",
+            "findings": 3, "blocking": 2,
+            "notes": "incremental re-review of 17 changed lines since 1fa76c5: R04 (GeneralAlgebraicKTheoryPartII under 'On main') repaired, its new bullet resolved at #1742 ca44359 (:196-198, §4.33 :1302, §7.7 :1952); the 'On main' bullet checked against main 3090489d folders and PositiveScalarCurvature README:87-92; Track 3 row agrees with the bullets. Carried R01 (BordismFormalGroups #1807 7871afe, #1808 9ae8cc0, #1854 7abe607 still own James/Toda), R02 (#1742, #1799 f27b94b, #851 3b084ef still own 3B/4A-4B/7B objects), R03 (manifest still pins a91d3aa/6b7abb3) not repaired. Gate OK, depcheck 0 problems (2262 edges), lake env lean 16 sorry warnings only; seeded sample untouched by the diff."}}
