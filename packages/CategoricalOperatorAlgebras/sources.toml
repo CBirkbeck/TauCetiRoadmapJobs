@@ -310,3 +310,38 @@ status = "certified"
 accessed = "2026-11-07"
 version_note = "arXiv v1"
 cited_for = ["CA10"]
+
+[[source]]
+id = "Izumi1993"
+authors = "Masaki Izumi"
+title = "On type II and type III principal graphs of subfactors"
+year = 1993
+venue = "Mathematica Scandinavica 73, 307–319"
+doi = "10.7146/math.scand.a-12473"
+locator_scheme = "theorem"
+locator = "Theorem 3.5"
+url = "https://journals.msp.org/mscand/article/download/1197/1196"
+fetched_from = "https://journals.msp.org/mscand/article/download/1197/1196"
+fetched_at = "2026-11-09T05:16:21Z"
+sha256 = "2bac2b8253f50eaed0fefd1b91800a48e7cad1720ab0dc3362067edf811d9077"
+licence_class = "publisher-open"
+status = "uncertified"
+accessed = "2026-11-09"
+version_note = "Publisher archive, free six years after publication. The PDF is an image-only scan and was not read; Theorem 3.5 is the locator Masuda–Tomatsu 2009 give when recalling it as their Theorem 4.16."
+cited_for = ["CA9"]
+
+[[source]]
+id = "Popa1995"
+authors = "Sorin Popa"
+title = "Classification of subfactors and their endomorphisms"
+year = 1995
+venue = "CBMS Regional Conference Series in Mathematics 86, American Mathematical Society"
+doi = "10.1090/cbms/086"
+locator_scheme = "theorem"
+locator = "Theorem 3.5(ii); Corollary 4.4"
+url = "https://doi.org/10.1090/cbms/086"
+licence_class = "none"
+status = "uncertified"
+accessed = "2026-11-09"
+version_note = "paywalled; cited by its locator without the text, as Masuda–Tomatsu 2009 cite it for their Theorem 4.18"
+cited_for = ["CA9"]
