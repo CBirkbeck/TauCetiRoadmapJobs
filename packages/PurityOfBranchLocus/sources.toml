@@ -603,3 +603,16 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-09"
 cited_for = ["Scope and ownership (§0.3 names)"]
+
+[[source]]
+id = "stacks-00O6"
+locator_scheme = "tag"
+locator = "00O6"
+url = "https://stacks.math.columbia.edu/tag/00O6"
+fetched_from = "https://stacks.math.columbia.edu/download/algebra.pdf#nameddest=00O6"
+fetched_at = "2026-11-09T04:06:31Z"
+sha256 = "b035a1f02104906a1820636cd332a0d7962fef3318d207a056634cb14dc86947"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-09"
+cited_for = ["0.3"]
