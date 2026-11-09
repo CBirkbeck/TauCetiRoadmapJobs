@@ -211,3 +211,37 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-03"
 cited_for = ["2.4", "4.1"]
+
+[[source]]
+id = "SGA4"
+authors = "M. Artin, A. Grothendieck and J.-L. Verdier (eds.)"
+title = "Théorie des topos et cohomologie étale des schémas (SGA 4), tome 3"
+year = 1973
+venue = "Lecture Notes in Mathematics 305"
+doi = "10.1007/BFb0070714"
+version_note = "retyped edition; page locators are those of the published volume, printed in its margins"
+locator_scheme = "theorem"
+locator = "Exposé X, Théorèmes 2.1–2.3, Corollaires 2.4–2.5"
+url = "https://www.normalesup.org/~forgogozo/SGA4/tomes/tome3.pdf"
+fetched_from = "https://www.normalesup.org/~forgogozo/SGA4/tomes/tome3.pdf"
+fetched_at = "2026-11-09T12:14:48Z"
+sha256 = "b361694c81c2b4c203f18420cca41d99a3a6efe147a37342b2230965818b4a31"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-09"
+cited_for = ["5.9"]
+
+[[source]]
+id = "Ser65"
+authors = "Jean-Pierre Serre"
+title = "Sur la dimension cohomologique des groupes profinis"
+year = 1965
+venue = "Topology 3"
+doi = "10.1016/0040-9383(65)90006-6"
+locator_scheme = "theorem"
+locator = "Théorème (open subgroups of profinite groups without p-torsion)"
+url = "https://doi.org/10.1016/0040-9383(65)90006-6"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["5.9"]
