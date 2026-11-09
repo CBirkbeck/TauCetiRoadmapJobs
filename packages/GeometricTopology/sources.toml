@@ -607,3 +607,23 @@ licence_class = "none"
 status = "uncertified"
 version_note = "paywalled; cited by its locator without the text"
 cited_for = ["7.2"]
+
+[[source]]
+id = "loeh2006"
+authors = "Clara Loeh"
+title = "Measure homology and singular homology are isometrically isomorphic"
+year = 2005
+venue = "Mathematische Zeitschrift 253"
+doi = "10.1007/s00209-005-0905-7"
+arxiv = "math/0504103v2"
+locator_scheme = "theorem"
+locator = "Theorem 1.2"
+url = "https://arxiv.org/abs/math/0504103v2"
+fetched_from = "https://arxiv.org/pdf/math/0504103v2"
+fetched_at = "2026-11-09T01:37:25Z"
+sha256 = "59466231759008d76660c0c4c3388fb93eafd159a6609bd37320d2bd0600083d"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-09"
+version_note = "arXiv v2"
+cited_for = ["7.2"]
