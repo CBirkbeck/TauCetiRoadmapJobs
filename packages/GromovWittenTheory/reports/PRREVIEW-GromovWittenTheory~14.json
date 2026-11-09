@@ -1,0 +1,4 @@
+{"review": {"status": "needs_changes", "reviewer": "independent-review-PRREVIEW-GromovWittenTheory~14",
+            "head": "c8ad67117bbf06c7df48141d79b990256ade8806", "pr": 990, "folder": "GromovWittenTheory", "date": "2026-11-09",
+            "findings": 2, "blocking": 0,
+            "notes": "incremental re-review of 13 changed lines since e18b995. Previous R01-R03 (§6.3 Check, §5.3 divisor Check moved to §8.4, ASM §0.2 citation) verified repaired with every value recomputed; R04 (branch pins Tau Ceti a91d3aa while README reads 2fd255d) and R05 (#1998 writes the same folder, no stated order) carried as P3. Changed passages checked against AnalyticStableMaps head 41557ba §0.1/§0.2/§4.1 and KM94 2.2.2, 2.2.4, 2.2.7; gate rerun OK; depcheck 0 problems; lake env lean exit 0 on a declaration-free Suggested.lean."}}
