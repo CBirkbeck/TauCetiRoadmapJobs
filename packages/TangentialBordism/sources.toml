@@ -123,3 +123,20 @@ status = "certified"
 accessed = "2026-11-09"
 version_note = "arXiv v3 (2022-08-30), the version read; the journal version is Computational Geometry 2023, whose numbering was not checked"
 cited_for = ["4.1"]
+
+[[source]]
+id = "millerCobordism"
+authors = "Haynes Miller"
+title = "Notes on Cobordism"
+year = 2001
+locator_scheme = "theorem"
+locator = "Chapter 1, §1, Definitions 1.1–1.2, pp.1–2; Chapter 1, §§2–3, pp.3–7; Chapter 1, §4, Theorem 4.2 with the remark after it, p.10; Chapter 1, Theorems 12.3–12.4, pp.32–34; Chapter 2, §1, Theorem 1.4, p.41"
+url = "https://rezk.web.illinois.edu/miller-lecture-notes.pdf"
+fetched_from = "https://rezk.web.illinois.edu/miller-lecture-notes.pdf"
+fetched_at = "2026-11-09T10:31:24Z"
+sha256 = "c70bf1f21e1d36388f7b6690ec724edf7b486378e70cb408b2b8744a5589da9a"
+licence_class = "institutional"
+status = "certified"
+accessed = "2026-11-09"
+cited_for = ["2.4", "3.2", "3.3", "4.2", "5.1", "5.5", "6.1"]
+version_note = "lecture notes typed by D. Christensen and G. Laures, version dated December 5, 2001; printed page = PDF page − 5"
