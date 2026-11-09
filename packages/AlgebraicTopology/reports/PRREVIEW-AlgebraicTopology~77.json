@@ -1,0 +1,4 @@
+{"review": {"status": "needs_changes", "reviewer": "independent-review-PRREVIEW-AlgebraicTopology~77",
+            "head": "1f5b3f6fa937b5edb52c67f19fa1987065817739", "pr": 1652, "folder": "AlgebraicTopology", "date": "2026-11-09",
+            "findings": 4, "blocking": 0,
+            "notes": "Full review (180 changed lines). Gate OK at 1f5b3f6; depcheck 238 roadmaps, 2354 edges, 0 problems; lake env lean 12 sorry warnings only; #check copy of all 20 declarations matches the README; one-tactic probe closes nothing. Seeded sample of 15 targets verified in Hatcher, SSAT, Milnor 1959, FTW, Dugundji, Moore 1955 and Stacks; every classifying-space native named by the new supplier bullet opened at 2fd255d9. Previous R02–R04 repaired; R01 (branch pin, two Hurewicz headlines) and R05 (description, order) carried as R01 and R04; new P3s: 8.8b cites trivial-coefficient and Hom(A,N)-twisted natives for groupCohomology A n (R02), 4.7 and 2.6 locators (R03)."}}
