@@ -88,3 +88,35 @@ licence_class = "none"
 status = "uncertified"
 version_note = "paywalled; cited by its locator without the text"
 cited_for = ["2.4, Layer 7"]
+
+[[source]]
+id = "milne-adt"
+authors = "J. S. Milne"
+title = "Arithmetic Duality Theorems"
+year = 2006
+version_note = "Second edition; author-hosted electronic version"
+locator_scheme = "theorem"
+locator = "I Theorem 2.1 and Corollary 2.3, pp. 26-28; Theorem 2.8, p. 31; Lemmas 2.10 and 2.12"
+url = "https://www.jmilne.org/math/Books/ADTnot.pdf"
+fetched_from = "https://www.jmilne.org/math/Books/ADTnot.pdf"
+fetched_at = "2026-11-09T01:26:21Z"
+sha256 = "2c6195ec76a974f3f336c77cb71cc3845b018aad2d43136716b3477a3bc5fb31"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-09"
+cited_for = ["Layer 5"]
+
+[[source]]
+id = "nsw"
+authors = "Jürgen Neukirch, Alexander Schmidt, Kay Wingberg"
+title = "Cohomology of Number Fields"
+year = 2008
+venue = "Grundlehren der mathematischen Wissenschaften"
+doi = "10.1007/978-3-540-37889-1"
+locator_scheme = "theorem"
+locator = "(7.1.8), (7.2.5), (7.2.6), (7.3.1)-(7.3.4)"
+url = "https://doi.org/10.1007/978-3-540-37889-1"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["Layers 5 and 6"]
