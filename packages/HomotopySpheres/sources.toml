@@ -86,3 +86,34 @@ status = "certified"
 accessed = "2026-11-08"
 version_note = "arXiv v1"
 cited_for = ["7B.3", "7B.8"]
+
+[[source]]
+id = "hatcher_at"
+locator_scheme = "page"
+locator = "pp.377-378"
+url = "https://pi.math.cornell.edu/~hatcher/AT/AT.pdf"
+fetched_from = "https://pi.math.cornell.edu/~hatcher/AT/AT.pdf"
+fetched_at = "2026-11-09T01:36:35Z"
+sha256 = "bebb3032bf9021b956da3bd070eb6c67dc662cf849be9cdf6679f677560e5618"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-09"
+cited_for = ["5.0b"]
+
+[[source]]
+id = "atiyah1971"
+authors = "Michael F. Atiyah"
+title = "Riemann surfaces and spin structures"
+year = 1971
+venue = "Annales scientifiques de l'École normale supérieure 4"
+doi = "10.24033/asens.1205"
+locator_scheme = "theorem"
+locator = "Proposition 4.1"
+url = "https://doi.org/10.24033/asens.1205"
+fetched_from = "https://www.numdam.org/item/10.24033/asens.1205.pdf"
+fetched_at = "2026-11-09T01:37:24Z"
+sha256 = "a9cc0fdc8c95ff66c95b1bca8282b16043c6be3c26d7f2cbab66c067677780dc"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-09"
+cited_for = ["5.0b"]
