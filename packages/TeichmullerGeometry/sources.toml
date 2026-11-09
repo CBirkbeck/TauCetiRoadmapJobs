@@ -79,3 +79,56 @@ licence_class = "author-page"
 status = "certified"
 accessed = "2026-11-08"
 cited_for = ["0.2"]
+
+[[source]]
+id = "takeuchi1975"
+authors = "Kisao Takeuchi"
+title = "A characterization of arithmetic Fuchsian groups"
+year = 1975
+venue = "Journal of the Mathematical Society of Japan 27 (1975), 600–612"
+doi = "10.2969/jmsj/02740600"
+locator_scheme = "section"
+locator = "§1 and the Definition, pp. 600–601"
+url = "https://www.jstage.jst.go.jp/article/jmath1948/27/4/27_4_600/_pdf"
+fetched_from = "https://www.jstage.jst.go.jp/article/jmath1948/27/4/27_4_600/_pdf"
+fetched_at = "2026-11-09T05:32:17Z"
+sha256 = "6fe5afdf2c02846ee8113ea2cb6f125d6807d2fce07c77feae4d71d6d3b8c048"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-11-09"
+cited_for = ["9.1"]
+
+[[source]]
+id = "borel1981"
+authors = "Armand Borel"
+title = "Commensurability classes and volumes of hyperbolic 3-manifolds"
+year = 1981
+venue = "Annali della Scuola Normale Superiore di Pisa, Classe di Scienze (4) 8 (1981), 1–33"
+locator_scheme = "theorem"
+locator = "Lemma 8.1 (p. 25), Theorem 8.2 (p. 26)"
+url = "http://www.numdam.org/item/ASNSP_1981_4_8_1_1_0/"
+fetched_from = "https://www.numdam.org/item/ASNSP_1981_4_8_1_1_0.pdf"
+fetched_at = "2026-11-09T05:32:24Z"
+sha256 = "60440d00c6a09858a00ec119f521136e0d04495933923288ca111a1beb9af87b"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-09"
+cited_for = ["9.2"]
+
+[[source]]
+id = "greenberg1963"
+authors = "Leon Greenberg"
+title = "Maximal Fuchsian groups"
+year = 1963
+venue = "Bulletin of the American Mathematical Society 69 (1963), 569–574"
+doi = "10.1090/S0002-9904-1963-11001-0"
+locator_scheme = "theorem"
+locator = "Theorem 2, p. 571"
+url = "https://www.ams.org/journals/bull/1963-69-04/S0002-9904-1963-11001-0/S0002-9904-1963-11001-0.pdf"
+fetched_from = "https://www.ams.org/journals/bull/1963-69-04/S0002-9904-1963-11001-0/S0002-9904-1963-11001-0.pdf"
+fetched_at = "2026-11-09T05:32:39Z"
+sha256 = "77e29eeeb4ab064117346bcbaf44cfe5fb4d1d35225bbb0b2ef6aeb033729952"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-11-09"
+cited_for = ["10.4"]
