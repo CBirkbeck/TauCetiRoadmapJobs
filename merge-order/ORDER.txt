@@ -49,7 +49,6 @@ ZerosOfLFunctions
 AnalyticNumberTheoryPartI
 AnalyticNumberTheoryPartII
 AdelicAlgebraicGroups
-ArithmeticStatisticsPartV
 ErdosProgressionPowers
 InverseGaloisAndArithmeticFundamentalGroups
 GeometryOfNumbersAndQuadraticArithmetic
@@ -111,6 +110,7 @@ EffectiveBoundsCompactModels
 ArithmeticStatisticsPartII
 ArithmeticStatisticsPartIII
 ArithmeticStatisticsPartIV
+ArithmeticStatisticsPartV
 PELModuli
 ShimuraData
 FarguesFontaineDiamonds
