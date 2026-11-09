@@ -1,0 +1,13 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-ClassFieldTheory~32",
+  "head": "69323b775d9a064e81af8fc723a236a3a8a4d61c",
+  "pr": 1411,
+  "folder": "ClassFieldTheory",
+  "date": "2026-11-09",
+  "findings": 7,
+  "blocking": 0,
+  "notes": "Full review; folder unchanged since a5227b0. Seven P3 findings: R01 dropped main target names cited elsewhere, with no old-to-new line (eq_zero_of_localInv_eq_zero, sumLocalInv_eq_zero, cd_p_absoluteGaloisGroup_eq_two, localSymbol_kummerClass_eq_zero_iff, which ClassicalArithmeticCompletion cites on main, muNRepCoeffDictionary_*). R02 continuity of artinMap narrowed to K/Q_p, with a reason false in equal characteristic. R03 Milne III 2.4 locator covers characteristic 0 only. R04 stale IntegralLattices consumer claims. R05 conductorExponent_eq_sInf_upperRamificationGroup closes in one exact term. R06 dangling muNRepCoeffDictionary at README:940. R07 out-of-folder Completed/LocalGaloisGroups edit (forced; the folder needs registering). Gate: the worker's gate passes; my rerun differs only by outside-folder on the brief's own folders. depcheck: 237 roadmaps, 2312 edges, 0 problems. lake env lean: exit 0, five sorry warnings. One-tactic probe closes none of the five open targets. Sample verified: Exit criterion (Layers 0-14), Implemented in Tau Ceti, coefficient objects, local units and the H2 bound (Milne III 2.3-2.6), Hilbert symbol, Smoothness, p-adic valuation (Jahnke-Koenigsmann Thm 2.1 p.3), cyclotomic normalization (Milne VII Ex 8.2), Conductors, unit-filtration reciprocity (Milne I Prop 4.4 p.46; Serre uncertified), global Herbrand quotients (Milne VII pp. 206-211). The adversarial table has 24 rows."
+ }
+}
