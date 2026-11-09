@@ -260,3 +260,51 @@ status = "certified"
 accessed = "2026-11-08"
 version_note = "arXiv v2"
 cited_for = ["8.1"]
+
+[[source]]
+id = "lee-explosion-survey"
+authors = "Seungsoo Lee"
+title = "Finite Time Explosion of Stochastic Differential Equations: A survey into Khasminskii's Lyapunov Method and its Consistency with the Osgood Criterion"
+year = 2024
+arxiv = "2407.04834v1"
+locator_scheme = "theorem"
+locator = "Theorem 2.2"
+url = "https://arxiv.org/abs/2407.04834v1"
+fetched_from = "https://arxiv.org/pdf/2407.04834v1"
+fetched_at = "2026-11-09T03:06:39Z"
+sha256 = "57e9f3051958ac912b065aca265ab84e27be2dd6f943043ae472d2c100180b05"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-09"
+version_note = "arXiv v1"
+cited_for = ["9.2"]
+
+[[source]]
+id = "khasminskii"
+authors = "Rafail Khasminskii"
+title = "Stochastic Stability of Differential Equations"
+year = 2012
+venue = "Stochastic Modelling and Applied Probability"
+doi = "10.1007/978-3-642-23280-0"
+locator_scheme = "theorem"
+locator = "Theorem 3.5"
+url = "https://doi.org/10.1007/978-3-642-23280-0"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["9.2"]
+
+[[source]]
+id = "arnold-rds"
+authors = "Ludwig Arnold"
+title = "Random Dynamical Systems"
+year = 1998
+venue = "Springer Monographs in Mathematics"
+doi = "10.1007/978-3-662-12878-7"
+locator_scheme = "section"
+locator = "Appendix A"
+url = "https://doi.org/10.1007/978-3-662-12878-7"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["6.7"]
