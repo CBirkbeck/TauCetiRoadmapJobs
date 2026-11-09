@@ -73,3 +73,18 @@ locator = "Chapter XIV, §6"
 licence_class = "none"
 status = "waived"
 resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/5068#issuecomment-6632667758"
+
+[[source]]
+id = "serre-local-fields"
+authors = "Jean-Pierre Serre"
+title = "Local Fields"
+year = 1979
+venue = "Graduate Texts in Mathematics"
+doi = "10.1007/978-1-4757-5673-9"
+locator_scheme = "section"
+locator = "IV §1; VI §2; IX §8; XV §2"
+url = "https://doi.org/10.1007/978-1-4757-5673-9"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["2.4, Layer 7"]
