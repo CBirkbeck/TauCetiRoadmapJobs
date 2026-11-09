@@ -114,3 +114,29 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-08"
 cited_for = ["Scope and ownership"]
+
+[[source]]
+id = "stacks-01Q3"
+locator_scheme = "tag"
+locator = "01Q3"
+url = "https://stacks.math.columbia.edu/download/properties.pdf"
+fetched_from = "https://stacks.math.columbia.edu/download/properties.pdf"
+fetched_at = "2026-11-09T11:48:19Z"
+sha256 = "2f5b9ba41e07dd3a888da40496e07afae6caedd550597d96313ab16db4380316"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-09"
+cited_for = ["1.3"]
+
+[[source]]
+id = "stacks-0882"
+locator_scheme = "tag"
+locator = "0882"
+url = "https://stacks.math.columbia.edu/download/coherent.pdf"
+fetched_from = "https://stacks.math.columbia.edu/download/coherent.pdf"
+fetched_at = "2026-11-09T11:48:22Z"
+sha256 = "b4980a08a8cce98fed6a420364b18c119364a9436577031b28a16863bcbdbfb8"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-09"
+cited_for = ["1.3"]
