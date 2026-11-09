@@ -616,3 +616,16 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-09"
 cited_for = ["0.3"]
+
+[[source]]
+id = "stacks-036N"
+locator_scheme = "tag"
+locator = "036N"
+url = "https://stacks.math.columbia.edu/tag/036N"
+fetched_from = "https://stacks.math.columbia.edu/download/descent.pdf#nameddest=036N"
+fetched_at = "2026-11-09T15:01:28Z"
+sha256 = "28e718bac216bb7c4584e9edb1d25d6420ee19a6cd536742c58599242ff8cad4"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-09"
+cited_for = ["1.1"]
