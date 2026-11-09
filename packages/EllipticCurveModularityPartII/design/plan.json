@@ -1,34 +1,10 @@
 {
   "gaps": [
     {
-      "slug": "optimized-weight-two-lift",
-      "needs": "For prime ℓ≥5 and irreducible E[ℓ] of Serre weight 2 and prime-to-ℓ Artin conductor N, supply a primitive weight-two trivial-character newform of exact level N and a prime λ above ℓ whose residual representation is E[ℓ].",
-      "supplier": "SerreWeightAndLevelOptimisation",
-      "section": "exact level and weight optimization"
-    },
-    {
-      "slug": "modular-abelian-conductor",
-      "needs": "For a primitive weight-two trivial-character newform f of level N with coefficient-field degree d, its associated modular abelian variety A_f has arithmetic conductor Nᵈ, in particular N when d=1.",
-      "supplier": "AutomorphicGaloisRepresentations",
-      "section": "modular abelian conductors"
-    },
-    {
-      "slug": "mixed-modular-curves",
-      "needs": "For r>0 and p prime with gcd(r,p)=1, supply the smooth projective normalizations over ℚ of X₀(r)×_{X(1)}X_H(p), for H a Borel, split Cartan normalizer or nonsplit Cartan normalizer, with their j maps, cusps and smooth integral models at primes q∤6rp.",
-      "supplier": "ModularCurvesPartII",
-      "section": "mixed arithmetic modular curves"
-    },
-    {
       "slug": "mixed-modular-jacobians",
       "needs": "For r>0 and p prime with gcd(r,p)=1, supply the Jacobians over ℚ of the mixed Borel and Cartan-normalizer curves, with pull-push Hecke correspondences T_n for n prime to p.",
       "supplier": "ModularCurvesPartII",
       "section": "mixed modular Jacobians and Hecke maps"
-    },
-    {
-      "slug": "newform-quotient",
-      "needs": "For a primitive rational weight-two trivial-character newform f of level N, supply the elliptic quotient of J₀(N) attached to f, identifying its residual representations with those of f.",
-      "supplier": "ModularCurvesPartII",
-      "section": "rational primitive newform quotients"
     }
   ]
 }
