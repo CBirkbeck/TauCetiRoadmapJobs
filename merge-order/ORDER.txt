@@ -154,6 +154,7 @@ GeometricQuantization
 AbelianSchemesAndArithmeticModuliPartII
 NoncompactQuantumSymmetry
 CongruenceSpectralGap
+MaassForms
 CharacterSumsOverFiniteFields
 FaltingsFinitenessAndIsogenyTheorems
 MordellLawrenceVenkatesh
@@ -192,6 +193,7 @@ PotentialAutomorphyInfrastructure
 CrystallineLocalGlobalCompatibilityCM
 EllipticCurveModularityImaginaryQuadratic
 ModularityAndLanglandsExtensions
+BianchiModularForms
 K2SymbolsBrauerPartII
 LocallyAnalyticDistributionsPartII
 MetaplecticAutomorphicFormsPartII
