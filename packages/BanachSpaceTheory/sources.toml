@@ -245,3 +245,108 @@ licence_class = "none"
 status = "uncertified"
 version_note = "paywalled; cited by its locator without the text"
 cited_for = ["B7 Garling-Gordon"]
+
+[[source]]
+id = "yosidahewitt52"
+authors = "Kôsaku Yosida, Edwin Hewitt"
+title = "Finitely additive measures"
+year = 1952
+venue = "Transactions of the American Mathematical Society 72 (1952), 46-66"
+doi = "10.1090/S0002-9947-1952-0045194-X"
+locator_scheme = "theorem"
+locator = "Theorems 1.23, 1.24 and 2.3, pp. 52-53"
+url = "https://www.ams.org/journals/tran/1952-072-01/S0002-9947-1952-0045194-X/S0002-9947-1952-0045194-X.pdf"
+fetched_from = "https://www.ams.org/journals/tran/1952-072-01/S0002-9947-1952-0045194-X/S0002-9947-1952-0045194-X.pdf"
+fetched_at = "2026-11-09T14:50:58Z"
+sha256 = "4734faa25268390bc303a9292ccbcda28979daaae06171e6c95faacb6ba1cfd2"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-11-09"
+cited_for = ["5.9"]
+
+[[source]]
+id = "vanneerven22"
+authors = "Jan van Neerven"
+title = "Functional Analysis"
+year = 2021
+venue = "Cambridge Studies in Advanced Mathematics, volume 201, 2022; second edition 2026/2027"
+doi = "10.1017/9781009232487"
+arxiv = "2112.11166v8"
+locator_scheme = "theorem"
+locator = "Theorems 2.48, 3.22, 3.25, 3.28, 4.2, 4.4; Corollaries 3.23, 4.13; Propositions 4.23, 4.24; Examples 2.49-2.50; Remark 4.5"
+url = "https://arxiv.org/abs/2112.11166v8"
+fetched_from = "https://arxiv.org/pdf/2112.11166v8"
+fetched_at = "2026-11-09T15:01:42Z"
+sha256 = "3be382140cf594b78cf06511393b0e21c8f79a4a192952b6a41b727198f11262"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-09"
+version_note = "arXiv v8"
+cited_for = ["1.1", "1.2", "5.1", "5.2", "5.3", "5.4", "5.6"]
+
+[[source]]
+id = "heil97"
+authors = "Christopher Heil"
+title = "A Basis Theory Primer (original unexpanded edition, corrected 1998)"
+year = 1997
+locator_scheme = "theorem"
+locator = "Theorem 7.6, p. 54"
+url = "https://heil.math.gatech.edu/papers/bases.pdf"
+fetched_from = "https://heil.math.gatech.edu/papers/bases.pdf"
+fetched_at = "2026-11-09T15:01:46Z"
+sha256 = "1e1b313a888327e7844d580fe36bec2dc0c6515254cd6abfc2ae36caa49a2844"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-09"
+cited_for = ["3.1"]
+
+[[source]]
+id = "afjs94"
+authors = "Alvaro Arias, Tadek Figiel, William B. Johnson, Gideon Schechtman"
+title = "Banach spaces with the $2$-summing property"
+year = 1994
+arxiv = "math/9403206v1"
+locator_scheme = "section"
+locator = "Section 1, p. 3"
+url = "https://arxiv.org/abs/math/9403206v1"
+fetched_from = "https://arxiv.org/pdf/math/9403206v1"
+fetched_at = "2026-11-09T15:01:50Z"
+sha256 = "44e8260eace7804c9eb5ab0ff51b7cf20f3f787abff46e57e256a0c3358f3cbd"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-09"
+version_note = "arXiv v1"
+cited_for = ["7.2"]
+
+[[source]]
+id = "conway90"
+authors = "John B. Conway"
+title = "A Course in Functional Analysis"
+year = 2007
+venue = "Graduate Texts in Mathematics"
+doi = "10.1007/978-1-4757-4383-8"
+locator_scheme = "theorem"
+locator = "Chapter I, Proposition 4.14"
+url = "https://doi.org/10.1007/978-1-4757-4383-8"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["5.2"]
+
+[[source]]
+id = "james64"
+authors = "Robert C. James"
+title = "Weakly compact sets"
+year = 1964
+venue = "Transactions of the American Mathematical Society 113 (1964), 129-140"
+doi = "10.1090/S0002-9947-1964-0165344-2"
+locator_scheme = "theorem"
+locator = "Theorems 4 and 5, p. 138"
+url = "https://www.ams.org/journals/tran/1964-113-01/S0002-9947-1964-0165344-2/S0002-9947-1964-0165344-2.pdf"
+fetched_from = "https://www.ams.org/journals/tran/1964-113-01/S0002-9947-1964-0165344-2/S0002-9947-1964-0165344-2.pdf"
+fetched_at = "2026-11-09T15:03:50Z"
+sha256 = "63a571ecc89ec15c409d59407e8419315b76cc51bcd58927f7f26b0d8e9dfdb3"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-11-09"
+cited_for = ["2.1"]
