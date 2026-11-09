@@ -134,3 +134,22 @@ licence_class = "author-page"
 status = "certified"
 accessed = "2026-11-09"
 cited_for = ["AL.3.2.3", "AL.3.3.2"]
+
+[[source]]
+id = "Lafforgue2002"
+authors = "Laurent Lafforgue"
+title = "Chtoucas de Drinfeld et correspondance de Langlands"
+year = 2002
+venue = "Inventiones mathematicae 147, 1–241"
+doi = "10.1007/s002220100174"
+version_note = "author-page copy of the published article; its first page carries the Inventiones DOI and pagination"
+locator_scheme = "section"
+locator = "Appendix B §1a, pp.220–221"
+url = "https://www.laurentlafforgue.org/math/fulltext.pdf"
+fetched_from = "https://www.laurentlafforgue.org/math/fulltext.pdf"
+fetched_at = "2026-11-09T02:13:01Z"
+sha256 = "af732dac0d2dd00056ff46075f069f09cb2239bcac5cec68b13d17faa8d2ea76"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-09"
+cited_for = ["AL.3.10.3"]
