@@ -1,0 +1,34 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "DeligneWeightsAndPurity"
+
+[[source]]
+id = "Lef"
+authors = "Pierre Deligne"
+title = "Théorème de Lefschetz et critères de dégénérescence de suites spectrales"
+year = 1968
+locator_scheme = "theorem"
+locator = "Théorème (1.5) and (1.6), p. 108"
+url = "https://www.numdam.org/article/PMIHES_1968__35__107_0.pdf"
+fetched_from = "https://www.numdam.org/article/PMIHES_1968__35__107_0.pdf"
+fetched_at = "2026-11-09T15:19:17Z"
+sha256 = "b154116942342392ef70b6d0ceb5e0abe896545189afb6a9c9ef51338aab1bbf"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-09"
+cited_for = ["9.7", "9.8"]
+
+[[source]]
+id = "WII"
+authors = "Pierre Deligne"
+title = "La conjecture de Weil. II"
+year = 1980
+locator_scheme = "theorem"
+locator = "Corollaire (4.1.5) and proof, p. 218"
+url = "https://www.numdam.org/article/PMIHES_1980__52__137_0.pdf"
+fetched_from = "https://www.numdam.org/article/PMIHES_1980__52__137_0.pdf"
+fetched_at = "2026-11-09T15:19:33Z"
+sha256 = "b06eea61bf9cb2b596c162f5befcf85d1be69828910a6107c8aa3a99c4afcc71"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-09"
+cited_for = ["9.7", "9.8"]
