@@ -1,0 +1,13 @@
+{
+  "review": {
+    "status": "needs_changes",
+    "reviewer": "independent-review-PRREVIEW-DerivedModuleAlgebra~22",
+    "head": "ee318e57a5cd76057358cca10a7ad70211d1a3b7",
+    "pr": 1701,
+    "folder": "DerivedModuleAlgebra",
+    "date": "2026-11-09",
+    "findings": 3,
+    "blocking": 1,
+    "notes": "Full review at ee318e5 (same head as r21). Gate (own run) OK, all counters 0; depcheck 239 roadmaps, 2337 edges, 0 problems; lake env lean on Suggested.lean: 29 sorry warnings only; #check of all 39 declarations, no lost binders; one-tactic padding probe fails on all 29 theorems. Seeded sample: all 15 targets (0.1, 0.2.2, 0.5, 0.8-0.12, 0.14-0.17, 1.1, 1.1.1, 1.8) verified at their locators, plus the headline Stacks tags. 238 cited library names resolved at the pins. Cross-roadmap citations resolved on main; overlaps: dropped ids mapped. R01 (P2): existence of derived tensor (HasLeftDerivedFunctor2) and derived scalar extension is statable at the pins but absent, and the docstring says otherwise; repair tested in a scratch copy (31 sorry warnings). R02 (P3): PR description still says Suggested.lean is unchanged (r21 R01 partly repaired). R03 (P3): Stacks Ch.47/19 cited without References key or manifest entry. Source issue: SAG Construction 25.2.2.2 signed-coinvariant exterior power."
+  }
+}

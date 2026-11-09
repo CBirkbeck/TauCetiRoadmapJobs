@@ -402,3 +402,35 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-09"
 cited_for = ["S.1"]
+
+[[source]]
+id = "StacksDual"
+authors = "The Stacks Project Authors"
+title = "The Stacks Project, Chapter 47: Dualizing Complexes"
+year = 2026
+locator_scheme = "tag"
+locator = "08Z9; 08Z6; 08Z1; 0EGL"
+url = "https://stacks.math.columbia.edu/download/dualizing.pdf"
+fetched_from = "https://stacks.math.columbia.edu/download/dualizing.pdf"
+fetched_at = "2026-11-09T06:40:18Z"
+sha256 = "f69eee17ae505f86266a58fc2d317f5f27eab1f426d5943d782a69b59b3674e6"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-09"
+cited_for = ["1.M.1", "1.M.2"]
+
+[[source]]
+id = "StacksInj"
+authors = "The Stacks Project Authors"
+title = "The Stacks Project, Chapter 19: Injectives"
+year = 2026
+locator_scheme = "tag"
+locator = "079P"
+url = "https://stacks.math.columbia.edu/download/injectives.pdf"
+fetched_from = "https://stacks.math.columbia.edu/download/injectives.pdf"
+fetched_at = "2026-11-09T06:40:20Z"
+sha256 = "8042e6000eb43f51ebc8858b43dee9c60e8f3b1653a6cb007aabdce78a365acd"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-09"
+cited_for = ["0.I.1"]
