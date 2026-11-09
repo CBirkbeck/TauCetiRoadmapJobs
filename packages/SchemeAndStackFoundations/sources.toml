@@ -299,3 +299,21 @@ status = "certified"
 accessed = "2026-11-09"
 version_note = "arXiv v2"
 cited_for = ["3.6"]
+
+[[source]]
+id = "clausen-mathew-morrow-2021"
+authors = "Dustin Clausen, Akhil Mathew, Matthew Morrow"
+title = "K-theory and topological cyclic homology of henselian pairs"
+year = 2018
+arxiv = "1803.10897v2"
+locator_scheme = "theorem"
+locator = "Remark 3.19"
+url = "https://arxiv.org/abs/1803.10897v2"
+fetched_from = "https://arxiv.org/pdf/1803.10897v2"
+fetched_at = "2026-11-09T09:41:29Z"
+sha256 = "ad23c1d7b818b85e1752cdc4b01ec9442a9c62c3c8e85ebd7cf6f4584c6abd9c"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-09"
+version_note = "arXiv v2"
+cited_for = ["0.13"]
