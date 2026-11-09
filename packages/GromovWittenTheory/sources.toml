@@ -16,3 +16,39 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-07"
 cited_for = ["3.2"]
+
+[[source]]
+id = "KM94"
+authors = "M. Kontsevich, Yu. Manin"
+title = "Gromov-Witten classes, quantum cohomology, and enumerative geometry"
+year = 1994
+venue = "Commun.Math.Phys. 164 (1994) 525-562"
+doi = "10.1007/BF02101490"
+arxiv = "hep-th/9402147v2"
+locator_scheme = "theorem"
+locator = "Definition 6.1"
+url = "https://arxiv.org/abs/hep-th/9402147v2"
+fetched_from = "https://arxiv.org/pdf/hep-th/9402147v2"
+fetched_at = "2026-11-09T00:49:22Z"
+sha256 = "9143c37618e93687091b650dd87a2d79f4d920c8c4de7178576f31aad23a5a0a"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-09"
+version_note = "arXiv v2; page numbers are those of the arXiv version"
+cited_for = ["3.4", "4.1", "4.2", "4.3", "5.1", "5.2", "5.3", "5.4", "6.1", "6.2", "6.3", "7.1", "7.2"]
+
+[[source]]
+id = "stacks-cohomology"
+authors = "The Stacks Project authors"
+title = "The Stacks Project, chapter Cohomology of Sheaves"
+year = 2026
+locator_scheme = "tag"
+locator = "01FP"
+url = "https://stacks.math.columbia.edu/download/cohomology.pdf"
+fetched_from = "https://stacks.math.columbia.edu/download/cohomology.pdf"
+fetched_at = "2026-11-09T00:51:37Z"
+sha256 = "23fbd6af99fe8f0b36a010c0b69ebb0f0f54761f53b530c685b1375001bb5893"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-09"
+cited_for = ["0.4"]
