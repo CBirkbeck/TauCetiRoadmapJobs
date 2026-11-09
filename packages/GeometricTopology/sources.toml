@@ -660,3 +660,20 @@ licence_class = "none"
 status = "uncertified"
 version_note = "paywalled; cited by its locator without the text"
 cited_for = ["7.2"]
+
+[[source]]
+id = "pyronneau2024"
+authors = "Audrick Pyronneau"
+title = "The Arf and Rohklin's invariant"
+year = 2024
+venue = "lecture notes for a summer mini-course at UT Austin"
+locator_scheme = "theorem"
+locator = "§2.1, Lemmas 2.11–2.13, Corollary 2.14 and Theorem 2.15, pp. 4–5; Corollary 2.19, p. 6"
+url = "https://web.ma.utexas.edu/SMC/2024/Rokhlin_s_Invariant.pdf"
+fetched_from = "https://web.ma.utexas.edu/SMC/2024/Rokhlin_s_Invariant.pdf"
+fetched_at = "2026-11-09T04:38:50Z"
+sha256 = "c6e4a6b128adc7cab68c0522b87a2366d87130478d13e47b5063ff31a586ea63"
+licence_class = "institutional"
+status = "certified"
+accessed = "2026-11-09"
+cited_for = ["4.3.1", "6.2.1"]
