@@ -1,0 +1,4 @@
+{"review": {"status": "needs_changes", "reviewer": "independent-review-PRREVIEW-AlgebraicTopology~117",
+            "head": "5d047eba63a43927b6513832174fa76f082583fd", "pr": 1807, "folder": "AlgebraicTopology", "date": "2026-11-09",
+            "findings": 9, "blocking": 3,
+            "notes": "Full review. Gate passes at this head; depcheck: 235 roadmaps, 2255 edges, 0 problems. Sample: 15 locators (Hatcher 4.13, 4.41, 3.27, 4.37, 4.33, 1B.9, 0.19, 0.6, 3.43, 4.21, A.6, 4.57; SSAT 1.8; Milnor 1959 Thm 3/Cor 3; Strom Thm 6; FTW 4.2/4.3/4.9) plus Brown 7.4.2 and Vogt. One-tactic probe and #check pass over all 54 Suggested.lean declarations on a scratch copy; proposed integral Poincare duality statement elaborates. All 320 backticked README names resolve at the pins. Findings: auxiliary Lean files broken by the Suggested.lean rewrite (P1), natives re-owned (P2), integral PD statable but absent (P2), and seven P3s."}}
