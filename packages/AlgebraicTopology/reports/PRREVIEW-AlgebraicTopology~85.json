@@ -1,0 +1,4 @@
+{"review": {"status": "needs_changes", "reviewer": "independent-review-PRREVIEW-AlgebraicTopology~85",
+            "head": "287181dc0c46bdb6290e2111aba9115cfe045a6f", "pr": 1652, "folder": "AlgebraicTopology", "date": "2026-11-09",
+            "findings": 2, "blocking": 0,
+            "notes": "incremental re-review of 90 changed lines since 1f5b3f6: previous R02 (8.8b group-cohomology coefficients) and R03 (2.6, 4.7 locators) verified repaired against Tau Ceti 2fd255d9 (LocalCoefficients.lean:136/:150, Cohomology.lean:89, GroupCohomology.lean:248), hatcher 14562-14575, vbkt 1445, May 14.1 by locator; new 8.8b Check recomputed (Z/2, Z, sign, S3, Specker instances); R01 (branch pin 358314d4, two Hurewicz headlines absent) and R04 (stale PR title/description) carried as P3; gate all zero; depcheck 238/2324/0; lake env lean 12 sorry warnings only; Lean declarations unchanged; sample target 8.8 checked where the diff falls"}}
