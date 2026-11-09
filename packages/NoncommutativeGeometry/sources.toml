@@ -70,3 +70,23 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-08"
 cited_for = ["N1.Tensor"]
+
+[[source]]
+id = "carey-rennie-sukochev-zanin"
+authors = "A. L. Carey, A. Rennie, F. Sukochev, D. Zanin"
+title = "Universal measurability and the Hochschild class of the Chern character"
+year = 2014
+venue = "J. Spectral Theory 6 (2016), 1–41"
+doi = "10.4171/JST/116"
+arxiv = "1401.1860v1"
+locator_scheme = "theorem"
+locator = "Theorem 16, p. 9; Definition 2 and the example after it, p. 4"
+url = "https://arxiv.org/abs/1401.1860v1"
+fetched_from = "https://arxiv.org/pdf/1401.1860v1"
+fetched_at = "2026-11-09T22:18:13Z"
+sha256 = "68ebe914a418f6eaa7c0059263c73d98f75de2358f985a9648ccb7a05c1b2cab"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-09"
+version_note = "locators follow the numbering of arXiv v1, the version read; the published numbering was not checked"
+cited_for = ["N5"]
