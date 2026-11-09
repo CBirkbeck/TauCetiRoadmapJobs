@@ -447,3 +447,159 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-05"
 cited_for = ["0.2"]
+
+[[source]]
+id = "stacks-065T"
+locator_scheme = "tag"
+locator = "065T"
+url = "https://stacks.math.columbia.edu/tag/065T"
+fetched_from = "https://stacks.math.columbia.edu/download/algebra.pdf#nameddest=065T"
+fetched_at = "2026-11-09T00:01:47Z"
+sha256 = "b035a1f02104906a1820636cd332a0d7962fef3318d207a056634cb14dc86947"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-09"
+cited_for = ["Scope and ownership (§0.3 names)"]
+
+[[source]]
+id = "stacks-00O8"
+locator_scheme = "tag"
+locator = "00O8"
+url = "https://stacks.math.columbia.edu/tag/00O8"
+fetched_from = "https://stacks.math.columbia.edu/download/algebra.pdf#nameddest=00O8"
+fetched_at = "2026-11-09T00:02:09Z"
+sha256 = "b035a1f02104906a1820636cd332a0d7962fef3318d207a056634cb14dc86947"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-09"
+cited_for = ["Scope and ownership (§0.3 names)"]
+
+[[source]]
+id = "stacks-00NS"
+locator_scheme = "tag"
+locator = "00NS"
+url = "https://stacks.math.columbia.edu/tag/00NS"
+fetched_from = "https://stacks.math.columbia.edu/download/algebra.pdf#nameddest=00NS"
+fetched_at = "2026-11-09T00:02:25Z"
+sha256 = "b035a1f02104906a1820636cd332a0d7962fef3318d207a056634cb14dc86947"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-09"
+cited_for = ["Scope and ownership (§0.3 names)"]
+
+[[source]]
+id = "stacks-00NT"
+locator_scheme = "tag"
+locator = "00NT"
+url = "https://stacks.math.columbia.edu/tag/00NT"
+fetched_from = "https://stacks.math.columbia.edu/download/algebra.pdf#nameddest=00NT"
+fetched_at = "2026-11-09T00:02:42Z"
+sha256 = "b035a1f02104906a1820636cd332a0d7962fef3318d207a056634cb14dc86947"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-09"
+cited_for = ["Scope and ownership (§0.3 names)"]
+
+[[source]]
+id = "stacks-00NG"
+locator_scheme = "tag"
+locator = "00NG"
+url = "https://stacks.math.columbia.edu/tag/00NG"
+fetched_from = "https://stacks.math.columbia.edu/download/algebra.pdf#nameddest=00NG"
+fetched_at = "2026-11-09T00:02:59Z"
+sha256 = "b035a1f02104906a1820636cd332a0d7962fef3318d207a056634cb14dc86947"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-09"
+cited_for = ["Scope and ownership (§0.3 names)"]
+
+[[source]]
+id = "stacks-00O7"
+locator_scheme = "tag"
+locator = "00O7"
+url = "https://stacks.math.columbia.edu/tag/00O7"
+fetched_from = "https://stacks.math.columbia.edu/download/algebra.pdf#nameddest=00O7"
+fetched_at = "2026-11-09T00:03:23Z"
+sha256 = "b035a1f02104906a1820636cd332a0d7962fef3318d207a056634cb14dc86947"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-09"
+cited_for = ["Scope and ownership (§0.3 names)"]
+
+[[source]]
+id = "stacks-090V"
+locator_scheme = "tag"
+locator = "090V"
+url = "https://stacks.math.columbia.edu/tag/090V"
+fetched_from = "https://stacks.math.columbia.edu/download/algebra.pdf#nameddest=090V"
+fetched_at = "2026-11-09T00:03:40Z"
+sha256 = "b035a1f02104906a1820636cd332a0d7962fef3318d207a056634cb14dc86947"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-09"
+cited_for = ["Scope and ownership (§0.3 names)"]
+
+[[source]]
+id = "stacks-00OA"
+locator_scheme = "tag"
+locator = "00OA"
+url = "https://stacks.math.columbia.edu/tag/00OA"
+fetched_from = "https://stacks.math.columbia.edu/download/algebra.pdf#nameddest=00OA"
+fetched_at = "2026-11-09T00:03:57Z"
+sha256 = "b035a1f02104906a1820636cd332a0d7962fef3318d207a056634cb14dc86947"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-09"
+cited_for = ["Scope and ownership (§0.3 names)"]
+
+[[source]]
+id = "stacks-00OB"
+locator_scheme = "tag"
+locator = "00OB"
+url = "https://stacks.math.columbia.edu/tag/00OB"
+fetched_from = "https://stacks.math.columbia.edu/download/algebra.pdf#nameddest=00OB"
+fetched_at = "2026-11-09T00:04:15Z"
+sha256 = "b035a1f02104906a1820636cd332a0d7962fef3318d207a056634cb14dc86947"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-09"
+cited_for = ["Scope and ownership (§0.3 names)"]
+
+[[source]]
+id = "stacks-0CXF"
+locator_scheme = "tag"
+locator = "0CXF"
+url = "https://stacks.math.columbia.edu/tag/0CXF"
+fetched_from = "https://stacks.math.columbia.edu/download/algebra.pdf#nameddest=0CXF"
+fetched_at = "2026-11-09T00:04:36Z"
+sha256 = "b035a1f02104906a1820636cd332a0d7962fef3318d207a056634cb14dc86947"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-09"
+cited_for = ["Scope and ownership (§0.3 names)"]
+
+[[source]]
+id = "stacks-00MT"
+locator_scheme = "tag"
+locator = "00MT"
+url = "https://stacks.math.columbia.edu/tag/00MT"
+fetched_from = "https://stacks.math.columbia.edu/download/algebra.pdf#nameddest=00MT"
+fetched_at = "2026-11-09T00:05:01Z"
+sha256 = "b035a1f02104906a1820636cd332a0d7962fef3318d207a056634cb14dc86947"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-09"
+cited_for = ["Scope and ownership (§0.3 names)"]
+
+[[source]]
+id = "stacks-00LS"
+locator_scheme = "tag"
+locator = "00LS"
+url = "https://stacks.math.columbia.edu/tag/00LS"
+fetched_from = "https://stacks.math.columbia.edu/download/algebra.pdf#nameddest=00LS"
+fetched_at = "2026-11-09T00:05:23Z"
+sha256 = "b035a1f02104906a1820636cd332a0d7962fef3318d207a056634cb14dc86947"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-09"
+cited_for = ["Scope and ownership (§0.3 names)"]
