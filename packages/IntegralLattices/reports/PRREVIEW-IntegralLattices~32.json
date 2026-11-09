@@ -1,0 +1,13 @@
+{
+  "review": {
+    "status": "needs_changes",
+    "reviewer": "independent-review-PRREVIEW-IntegralLattices~32",
+    "head": "e919c36e836a575762e38c051ba264a6d8ede87c",
+    "pr": 617,
+    "folder": "IntegralLattices",
+    "date": "2026-11-09",
+    "findings": 6,
+    "blocking": 0,
+    "notes": "Full review of TauCetiRoadmap/IntegralLattices at e919c36 (161 changed lines since d8192ae). Previous findings: R03-R08 repaired; R01 (gate outside-folder: Completed/LocalFieldsRamification and Completed/LocalGaloisGroups) and R02 (no order against #1411/#1797) not repaired, re-raised as R01 and R06. New P3 findings: B3 genus characters at 2 unspecified (delta*epsilon case, fails literally at Delta=-8); B3 step-3 count #C[2]=2^(mu-1) without locator/route for Delta>0 and attributed to B4; 5B dependency row omits 1I, N0, GQF 7.3 exists_globalForm_of_isAdmissible, hilbertSymbol_productFormula; Orthogonal and Spin Groups supplier row lists B7 which consumes nothing from it. Gate: worker run outside-folder=4 FAIL, all other scanners 0, build=0; depcheck 236 roadmaps, 2287 edges, 0 problems. lake env lean Suggested.lean: exit 0, 15 sorry warnings only; one-tactic probe 15/15 fail; #check @ of 36 declarations, no lost binders. Sample B1-B8: B1/B4 native, B7/B8 proved here, Cox/Cohen/Cassels locators not verifiable (no legal source); AGM (§5 p.16, Thm 5.1, 6.2, 6.3, Cor 6.4), Boya-Sudarshan-Tilma §6 and Voight §3 locators verified in the cache. Adversarial table with brute-force values (reduced forms, genus characters, automorphism orders, narrow class numbers by cycles, N0 reflections, 3E fusion)."
+  }
+}
