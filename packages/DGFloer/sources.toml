@@ -391,3 +391,19 @@ status = "certified"
 accessed = "2026-11-08"
 version_note = "the author's lecture notes, version of Winter 2026; numbering as in that version"
 cited_for = ["11.1", "11.2"]
+
+[[source]]
+id = "hatcher-ssat"
+authors = "Allen Hatcher"
+title = "Spectral Sequences in Algebraic Topology, Chapter 1"
+locator_scheme = "theorem"
+locator = "Theorem 1.3 (p. 8), the local-coefficient remark (p. 17), Theorem 1.14 (p. 24) and the multiplicative structure (p. 25)"
+url = "https://pi.math.cornell.edu/~hatcher/SSAT/SSch1.pdf"
+fetched_from = "https://pi.math.cornell.edu/~hatcher/SSAT/SSch1.pdf"
+fetched_at = "2026-11-09T03:21:49Z"
+sha256 = "d34a09b4559eade18dac2c01f6718d4689c5f565d9dc252c3a67de0167520eca"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-09"
+version_note = "undated chapter on the author's page; page numbers are those of the fetched PDF"
+cited_for = ["1.2"]
