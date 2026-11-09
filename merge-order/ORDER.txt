@@ -53,6 +53,7 @@ AdelicAlgebraicGroups
 ErdosProgressionPowers
 InverseGaloisAndArithmeticFundamentalGroups
 GeometryOfNumbersAndQuadraticArithmetic
+ArithmeticStatisticsPartV
 SieveMethodsAndPrimePatterns
 ArithmeticGaloisRepresentations
 ArithmeticLocallySymmetricSpaces
@@ -111,7 +112,6 @@ EffectiveBoundsCompactModels
 ArithmeticStatisticsPartII
 ArithmeticStatisticsPartIII
 ArithmeticStatisticsPartIV
-ArithmeticStatisticsPartV
 PELModuli
 ShimuraData
 FarguesFontaineDiamonds
