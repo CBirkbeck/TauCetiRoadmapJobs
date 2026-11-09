@@ -182,3 +182,207 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-09"
 cited_for = ["0.2.2", "1.1.1"]
+
+[[source]]
+id = "IllusieCC"
+authors = "Luc Illusie"
+title = "Complexe Cotangent et Déformations I"
+year = 1971
+venue = "Lecture Notes in Mathematics"
+doi = "10.1007/BFb0059052"
+locator_scheme = "section"
+locator = "Chapter II, 1.2.6.2"
+url = "https://doi.org/10.1007/BFb0059052"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["0.9"]
+
+[[source]]
+id = "Prisms"
+authors = "Bhargav Bhatt, Peter Scholze"
+title = "Prisms and Prismatic Cohomology"
+year = 2019
+arxiv = "1905.08229v4"
+locator_scheme = "section"
+locator = "§1.2, footnotes 5 and 6"
+url = "https://arxiv.org/abs/1905.08229v4"
+fetched_from = "https://arxiv.org/pdf/1905.08229v4"
+fetched_at = "2026-11-09T03:22:57Z"
+sha256 = "1d91a6eb85828feb73f84ab3b27ced17514f0855d61c3bff71ab9d8287891e4a"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-09"
+version_note = "arXiv v4"
+cited_for = ["1.5", "1.6", "1.7"]
+
+[[source]]
+id = "DM"
+authors = "Bjørn Ian Dundas, Matthew Morrow"
+title = "Finite generation and continuity of topological Hochschild and cyclic homology"
+year = 2014
+arxiv = "1403.0534v1"
+locator_scheme = "theorem"
+locator = "Lemma 3.3"
+url = "https://arxiv.org/abs/1403.0534v1"
+fetched_from = "https://arxiv.org/pdf/1403.0534v1"
+fetched_at = "2026-11-09T03:23:02Z"
+sha256 = "ed6452261dc161048a5429c10dfb5d0489cf36fc322246486d62308c9327487b"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-09"
+version_note = "arXiv v1"
+cited_for = ["0.17"]
+
+[[source]]
+id = "Bhatt12"
+authors = "Bhargav Bhatt"
+title = "p-adic derived de Rham cohomology"
+year = 2012
+arxiv = "1204.6560v1"
+locator_scheme = "theorem"
+locator = "Proposition 3.22; Remarks 3.43 and 6.6"
+url = "https://arxiv.org/abs/1204.6560v1"
+fetched_from = "https://arxiv.org/pdf/1204.6560v1"
+fetched_at = "2026-11-09T03:23:08Z"
+sha256 = "e5ca4056c89eaed462a12038c29d5c3b0a7e06d02d18a7db6dfdf1cfe9f4f00f"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-09"
+version_note = "arXiv v1"
+cited_for = ["0.6", "0.17"]
+
+[[source]]
+id = "BL22"
+authors = "Bhargav Bhatt, Jacob Lurie"
+title = "Absolute prismatic cohomology"
+year = 2022
+arxiv = "2201.06120v1"
+locator_scheme = "theorem"
+locator = "Construction B.1; Remarks B.2 and B.5"
+url = "https://arxiv.org/abs/2201.06120v1"
+fetched_from = "https://arxiv.org/pdf/2201.06120v1"
+fetched_at = "2026-11-09T03:23:19Z"
+sha256 = "0b1beeb20c29424ed8e330c14a66b36c0edcc84255edf5caa0ff9e235139a269"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-09"
+version_note = "arXiv v1"
+cited_for = ["0.4", "0.14"]
+
+[[source]]
+id = "StacksAlg"
+authors = "The Stacks Project Authors"
+title = "The Stacks Project, Chapter 10: Commutative Algebra"
+year = 2026
+locator_scheme = "tag"
+locator = "051C"
+url = "https://stacks.math.columbia.edu/download/algebra.pdf"
+fetched_from = "https://stacks.math.columbia.edu/download/algebra.pdf"
+fetched_at = "2026-11-09T03:23:50Z"
+sha256 = "b035a1f02104906a1820636cd332a0d7962fef3318d207a056634cb14dc86947"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-09"
+cited_for = ["0.2.1", "0.14", "0.25", "1.5"]
+
+[[source]]
+id = "StacksDefos"
+authors = "The Stacks Project Authors"
+title = "The Stacks Project, Chapter 91: Deformation Theory"
+year = 2026
+locator_scheme = "tag"
+locator = "08S5; 08S7; 0GPT; 0GPU"
+url = "https://stacks.math.columbia.edu/download/defos.pdf"
+fetched_from = "https://stacks.math.columbia.edu/download/defos.pdf"
+fetched_at = "2026-11-09T03:23:52Z"
+sha256 = "1f5eca92aa99c646e0186ad76bdb8d8f9a936dc50b5c0b0704cc4a4a93607a7c"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-09"
+cited_for = ["0.5", "0.6", "0.25"]
+
+[[source]]
+id = "StacksSimp"
+authors = "The Stacks Project Authors"
+title = "The Stacks Project, Chapter 14: Simplicial Methods"
+year = 2026
+locator_scheme = "theorem"
+locator = "Remark 14.26.4"
+url = "https://stacks.math.columbia.edu/download/simplicial.pdf"
+fetched_from = "https://stacks.math.columbia.edu/download/simplicial.pdf"
+fetched_at = "2026-11-09T03:23:56Z"
+sha256 = "87847df7287b59afaf814cfffa2a1cd7c431869e1b455d3840ece4e44bbc2015"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-09"
+cited_for = ["0.3"]
+
+[[source]]
+id = "SAG"
+authors = "Jacob Lurie"
+title = "Spectral Algebraic Geometry"
+year = 2018
+locator_scheme = "theorem"
+locator = "Constructions 25.2.2.1–25.2.2.2; Propositions 25.2.3.1, 25.2.3.4, 25.2.4.2"
+url = "https://www.math.ias.edu/~lurie/papers/SAG-rootfile.pdf"
+fetched_from = "https://www.math.ias.edu/~lurie/papers/SAG-rootfile.pdf"
+fetched_at = "2026-11-09T03:24:49Z"
+sha256 = "515109098ae5cd73bf266fa97bf498b4e8c7adb6e936be67e6fa9a86bb69020d"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-09"
+version_note = "Version of February 2018 from the author's page; locators are statement numbers and printed pages of that version"
+cited_for = ["0.3", "0.14", "0.15", "0.16", "0.17"]
+
+[[source]]
+id = "IllusieI"
+authors = "Luc Illusie"
+title = "Errata: Complexe cotangent et déformations I"
+year = 1971
+locator_scheme = "page"
+locator = "whole erratum"
+url = "https://www.imo.universite-paris-saclay.fr/~illusie/ErrSLN239.pdf"
+fetched_from = "https://www.imo.universite-paris-saclay.fr/~luc.illusie/ErrSLN239.pdf"
+fetched_at = "2026-11-09T03:24:58Z"
+sha256 = "3e34e616dfe86dd4405cfa43dee42a46904507b4c7b1aeafba1a704b139d90e4"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-09"
+version_note = "Undated author erratum to Lecture Notes in Mathematics 239 (1971); the year is that of the corrected volume"
+cited_for = ["0.14"]
+
+[[source]]
+id = "IllusieII"
+authors = "Luc Illusie"
+title = "Errata: Complexe cotangent et déformations II"
+year = 1972
+locator_scheme = "page"
+locator = "whole erratum"
+url = "https://www.imo.universite-paris-saclay.fr/~illusie/Errsln283.pdf"
+fetched_from = "https://www.imo.universite-paris-saclay.fr/~luc.illusie/Errsln283.pdf"
+fetched_at = "2026-11-09T03:24:58Z"
+sha256 = "a94a04f38564b959c032e2921cb8a3dca262fec15b0c07449fe23b34acdefc2e"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-09"
+version_note = "Undated author erratum to Lecture Notes in Mathematics 283 (1972); the year is that of the corrected volume"
+cited_for = ["0.14"]
+
+[[source]]
+id = "AffineCrystalline"
+authors = "Marco D'Addezio"
+title = "Affine crystalline cohomology and de Rham cohomology in Lean 4"
+year = 2026
+doi = "10.5281/zenodo.23573534"
+locator_scheme = "section"
+locator = "Envelope.FreeConstruction (DPAlgebraAugmentation); Cohomology.Cech, Cohomology.CechDerived; Homology.TotM, Homology.TotQuasiIso"
+url = "https://zenodo.org/records/23573535"
+fetched_from = "https://zenodo.org/records/23573535"
+fetched_at = "2026-11-09T03:25:21Z"
+sha256 = "43ffee06c68e694a732d6e05474bc9fb79ffda1609efc9f7427493d7a1c8d4d0"
+licence_class = "institutional"
+status = "certified"
+accessed = "2026-11-09"
+version_note = "Zenodo record of release v1.0.0 (DOI 10.5281/zenodo.23573535, Apache-2.0); the README cites the all-versions DOI 10.5281/zenodo.23573534; locators are Lean module and declaration names"
+cited_for = ["0.DP.3", "1.1", "S.1"]
