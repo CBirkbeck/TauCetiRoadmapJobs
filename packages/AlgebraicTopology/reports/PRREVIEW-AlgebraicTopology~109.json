@@ -1,0 +1,13 @@
+{
+  "review": {
+    "status": "needs_changes",
+    "reviewer": "independent-review-PRREVIEW-AlgebraicTopology~109",
+    "head": "c62aafdc9e6855dae818892535d0e221b0bfa30f",
+    "pr": 1797,
+    "folder": "AlgebraicTopology",
+    "date": "2026-11-09",
+    "findings": 17,
+    "blocking": 8,
+    "notes": "Full review at c62aafd. Gate: all checks pass (worker gate.md); depcheck rerun: 239 roadmaps, 2315 edges, 0 problems. lake env lean Suggested.lean: 0 errors, 21 sorry warnings, 90 #check pins elaborate. One-tactic probe (rfl/infer_instance/simp/decide/trivial and exact?) on all 21 sorried theorems: none closes. 52 elaborated signatures compared with the README; the 2 flagged dropped binders are on definitions that need none. Source sample: 18 locators checked at the text (Hatcher 4.37, 4.32, 4.33, 4.13, 4.57, 3.27, 3.30, 3.43, 2.22/A.5, 0.17 p.15, p.125, comb pair pp.14-15, Ex 0.6, A.3, A.4, A.6, 2A.1, 4.30, 4.31; Brown 6.7.2, 7.4.2+Addendum pp.285-286, 8.4.1, 9.1.2; Vogt p.627; Strom Thm 6; Milnor 1959 Thm 3/Cor 3; FTW 4.2/4.3/4.9; VBKT 3.3); may1967 unreadable; serre1953 and other paywalled texts uncertified. Adversarial table covers all 21 theorems and all definitions with Checks. Findings: two-owner conflicts with DGFloer (#1798/main) and with GeometricTopology 12.1 in this PR; Stage 7, 4.6, 5.3-5.4, 1.6/2.5/2.6/5.5/6.0 and 8.1/8.2/8.5 targets native at the Tau Ceti pin; three headlines below source generality; overlap order with #1652/#1807/#1808/#1854/#1187; Checks, imports, locators, style."
+  }
+}
