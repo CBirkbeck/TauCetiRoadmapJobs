@@ -1,0 +1,19 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "HeightsRationalPointsAndObstructions"
+
+[[source]]
+id = "sansuc1981"
+authors = "J.-J. Sansuc"
+title = "Groupe de Brauer et arithmétique des groupes algébriques linéaires sur un corps de nombres"
+year = 1981
+doi = "10.1515/crll.1981.327.12"
+locator_scheme = "theorem"
+locator = "Lemmas 6.5, 6.6(i), 6.9(iii)–(iv), Proposition 6.10 (6.10.2), Remark 6.11.3 (6.11.4), pp.39–43"
+url = "https://gdz.sub.uni-goettingen.de/download/pdf/PPN243919689_0327/LOG_0005.pdf"
+fetched_from = "https://gdz.sub.uni-goettingen.de/download/pdf/PPN243919689_0327/LOG_0005.pdf"
+fetched_at = "2026-11-09T13:35:12Z"
+sha256 = "3da0346ffbb3fd7173a361e2188ea48efb8a2b00226377f4c2e6dfda868ef01a"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-09"
+cited_for = ["3.8e", "3.8f"]
