@@ -1,0 +1,13 @@
+{
+  "review": {
+    "status": "needs_changes",
+    "reviewer": "independent-review-PRREVIEW-ComplexKahlerGeometry~80",
+    "head": "d5ab208204302e68381624c746e4003a5bed0c61",
+    "pr": 1234,
+    "folder": "ComplexKahlerGeometry",
+    "date": "2026-11-09",
+    "findings": 2,
+    "blocking": 1,
+    "notes": "incremental re-review of 5 changed lines since ec3dc78. Checked the new K7.1 sentence (:2101-2105) against the pin: TauCeti.eulerChar_complexProjectiveSpace (ComplexProjective.lean:68) is on the sphere-quotient carrier, and eulerChar is the singular Betti sum (FiniteCWType.lean:123/133). A Lean probe shows that on Projectivization the value needs K7.1's comparison (no FiniteCWType instance; Homeomorph.finiteCWType/eulerChar_eq close it) but not the transported cells: new P3 R02. Previous R01 (P2) is not repaired: #1797 ad233ac :1388, #1807 5d047eb :1095 and #1854 200e4f3 :1077 still own the comparison, and the description states no order. Checked against main 1bea835: AlgebraicTopology Stage 4.6 :789-792 and 7.4 :1593-1594. Checked #1652 and #1808, which take chi from the pinned theorem. Gate re-run: all 0, OK (worker's run incl. build=0). depcheck --movable: 235 roadmaps, 2259 edges, 0 problems. Suggested.lean unchanged and elaborates (exit 0, 25 sorry warnings only). Nothing changed outside the folder. Seeded sample: K7.1 has no locator (pinned declarations opened); K7.2 demailly-agbook line 13812-13813 re-read. Adversarial table: 7 new rows and 72 carried."
+  }
+}
