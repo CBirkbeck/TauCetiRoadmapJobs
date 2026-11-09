@@ -1,0 +1,13 @@
+{
+  "review": {
+    "status": "needs_changes",
+    "reviewer": "independent-review-PRREVIEW-GeometricTopology~79",
+    "head": "fa2b5cc03ddbef112bb514024027ab8160e5803a",
+    "pr": 903,
+    "folder": "GeometricTopology",
+    "date": "2026-11-09",
+    "findings": 4,
+    "blocking": 1,
+    "notes": "Full review of 154 changed README lines since 68bf156. All six r78 findings are repaired (Garside proper factors, closed forms, Loeh route inputs, MFW v-span, 4.8 Needs, 5.4 unknot Check). New: R01 P2, 7.2 makes Loeh Prop 5.3 (DifferentialGeometry 8.3 smoothing) a target and leaves simplex Stokes (DifferentialGeometry 8.4) uncited. R02-R04 P3: TemperleyLieb contract omits Layers 2-3 and 6; 8.4 alpha/beta clash; 8.3.1 Check credits item 2. Gate OK exit 0; depcheck 238 roadmaps, 2352 edges, 0 problems; nothing outside the folder; lake env lean exit 0, 26 sorry warnings; #check types match; 26/26 fail the one-tactic probe; all 302 TauCeti names resolve at the pin. Seeded sample opened at locators: Brown 1960 Thms 4-5, Kolay Prop 4, Kalfagianni 3.2, KL math/0212011 Thms 1-3, Levine 1.1-1.5, Loeh 3.3-6.2, Zastrow 3.4, Hatcher 3M/3Mfds, Hatcher torus trick, Manolescu, Calegari, Watanabe. Adversarial table: 32 rows with computed values."
+  }
+}
