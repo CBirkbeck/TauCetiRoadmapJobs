@@ -83,3 +83,18 @@ status = "certified"
 accessed = "2026-11-08"
 version_note = "arXiv v3"
 cited_for = ["3E"]
+
+[[source]]
+id = "cohen1993"
+authors = "Henri Cohen"
+title = "A Course in Computational Algebraic Number Theory"
+year = 1993
+venue = "Graduate Texts in Mathematics"
+doi = "10.1007/978-3-662-02945-9"
+locator_scheme = "section"
+locator = "§5.2, §5.6"
+url = "https://doi.org/10.1007/978-3-662-02945-9"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["B2", "B5", "B7"]
