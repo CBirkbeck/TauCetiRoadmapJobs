@@ -262,7 +262,7 @@ ignore_logins = ["github-actions[bot]"]
 awaiting_author = "awaiting-author"
 awaiting_review = "awaiting-review"
 # Our own comments that start like this are housekeeping, not replies to a review.
-housekeeping_prefixes = ["Red-team repairs at", "Scope change at", "Supplier change at", "Ownership change at", "Housekeeping at"]
+housekeeping_prefixes = ["Red-team repairs at", "Scope change at", "Supplier change at", "Ownership change at", "Housekeeping at", "Merged main into this branch", "Owner's request applied at"]
 
 [prompts]
 # Optional file (in the packages repository) of project-specific rules appended to every brief.
