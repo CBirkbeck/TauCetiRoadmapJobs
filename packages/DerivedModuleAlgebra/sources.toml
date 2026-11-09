@@ -83,3 +83,102 @@ status = "certified"
 accessed = "2026-11-08"
 version_note = "arXiv v3"
 cited_for = ["0.9", "0.5", "0.6", "0.25"]
+
+[[source]]
+id = "Roby"
+authors = "Norbert Roby"
+title = "Lois polynômes et lois formelles en théorie des modules"
+year = 1963
+locator_scheme = "theorem"
+locator = "Theorem IV.1"
+url = "https://www.numdam.org/item/ASENS_1963_3_80_3_213_0.pdf"
+fetched_from = "https://www.numdam.org/item/ASENS_1963_3_80_3_213_0.pdf"
+fetched_at = "2026-11-09T00:41:41Z"
+sha256 = "1679797ecbd2a655d8d0dfe38ffe28bc8c49b881bf84bb965d018190c331e330"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-09"
+cited_for = ["0.DP.2", "0.DP.3"]
+
+[[source]]
+id = "Chenevier"
+authors = "Gaetan Chenevier"
+title = "The p-adic analytic space of pseudocharacters of a profinite group and pseudorepresentations over arbitrary rings"
+year = 2008
+arxiv = "0809.0415v2"
+locator_scheme = "section"
+locator = "§1.1"
+url = "https://arxiv.org/abs/0809.0415v2"
+fetched_from = "https://arxiv.org/pdf/0809.0415v2"
+fetched_at = "2026-11-09T00:41:46Z"
+sha256 = "f3c0e0d86e803301c617d3023d425752e30da46673ed5af932647eb284286953"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-09"
+version_note = "arXiv v2 (18 July 2013); page numbers of that version"
+cited_for = ["0.DP.1", "0.DP.2"]
+
+[[source]]
+id = "Nekovar"
+authors = "Jan Nekovář"
+title = "Selmer complexes"
+year = 2006
+locator_scheme = "section"
+locator = "§§2.2–2.3; §3.1"
+url = "https://www.numdam.org/item/AST_2006__310__R1_0.pdf"
+fetched_from = "https://www.numdam.org/item/AST_2006__310__R1_0.pdf"
+fetched_at = "2026-11-09T00:43:11Z"
+sha256 = "61c84e5ad3252a2e520747215ac57a282addc2b58c824a3637bcd77bbe02153f"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-09"
+cited_for = ["1.M.1"]
+
+[[source]]
+id = "NSW"
+authors = "Jürgen Neukirch, Alexander Schmidt, Kay Wingberg"
+title = "Cohomology of Number Fields, second edition, electronic version 2.3"
+year = 2020
+locator_scheme = "theorem"
+locator = "Proposition 2.1.1; Lemma 2.2.4"
+url = "https://www.mathi.uni-heidelberg.de/~schmidt/NSW2e/NSW2.3.pdf"
+fetched_from = "https://www.mathi.uni-heidelberg.de/~schmidt/NSW2e/"
+fetched_at = "2026-11-09T00:43:12Z"
+sha256 = "08f7c5d0abe72ac27b3923d60440c603bfa4c98046841f446ef38f54896fe410"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-09"
+version_note = "The recorded file is the authors' landing page, which offers the PDF of version 2.3 (May 2020) free for non-commercial use; locators are statement numbers with printed and PDF pages of that PDF"
+cited_for = ["S.1"]
+
+[[source]]
+id = "StacksDPA"
+authors = "The Stacks Project Authors"
+title = "The Stacks Project, Chapter 23: Divided Power Algebra"
+year = 2026
+locator_scheme = "tag"
+locator = "07H4; 07H5"
+url = "https://stacks.math.columbia.edu/download/dpa.pdf"
+fetched_from = "https://stacks.math.columbia.edu/download/dpa.pdf"
+fetched_at = "2026-11-09T00:48:58Z"
+sha256 = "a75fd45ac4e1c02714ab577ba0f7d4d89cc8c4bb35999ee51ee57612d689cf28"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-09"
+cited_for = ["0.DP.3"]
+
+[[source]]
+id = "StacksSites"
+authors = "The Stacks Project Authors"
+title = "The Stacks Project, Chapter 21: Cohomology on Sites"
+year = 2026
+locator_scheme = "tag"
+locator = "08J7; 08QD"
+url = "https://stacks.math.columbia.edu/download/sites-cohomology.pdf"
+fetched_from = "https://stacks.math.columbia.edu/download/sites-cohomology.pdf"
+fetched_at = "2026-11-09T00:49:30Z"
+sha256 = "f1af633f357c96051dabe6e6c26e0d62a16685bdc7ff81a195dfd75c5e0b2c2a"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-09"
+cited_for = ["0.2.2", "1.1.1"]
