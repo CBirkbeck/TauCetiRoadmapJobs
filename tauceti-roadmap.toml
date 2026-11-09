@@ -139,6 +139,8 @@ label = "ai-approved"
 per_run = 40   # eight Fable loops now serve reviews; 20 per sync left the newest pull requests unfiled behind the backlog (2026-11-04)
 authors = []
 skip_authors = ["bwangpj"]   # #196 is abandoned (user 2026-10-28): not tracked, not reviewed
+operator_prs = [617, 1411, 1215, 1797, 1807, 1808, 1854]   # many-folder pull requests reviewed by the operator's serial chains: the chain files their rounds, the intake files none
+parent_roadmaps = ["RiemannianGeometry"]   # carries Surfaces/ below it and stays a reviewed roadmap, not a family index
 max_folders = 20   # a pull request that repairs the dependency loops of main touches 16 roadmaps and is no chore (2026-11-04)
 # A changes-needed review of a pool author's pull request is repaired in the same job; the repaired head is re-reviewed by another worker.
 repair_pool = true
