@@ -167,3 +167,21 @@ status = "certified"
 accessed = "2026-11-08"
 version_note = "arXiv v3"
 cited_for = ["6.2"]
+
+[[source]]
+id = "SchaferNonassociative"
+authors = "R. D. Schafer"
+title = "An Introduction to Nonassociative Algebras"
+year = 1961
+venue = "Advanced Subject-Matter Institute in Algebra, Oklahoma State University (lecture notes); Project Gutenberg EBook #25156 (2008)"
+locator_scheme = "page"
+locator = "Ch. III, p. 28; Ch. IV, p. 41"
+url = "https://www.gutenberg.org/files/25156/25156-pdf.pdf"
+fetched_from = "https://www.gutenberg.org/files/25156/25156-pdf.pdf"
+fetched_at = "2026-11-09T13:35:15Z"
+sha256 = "519dc7962a712f2f043f4061167a91ddd93d04ee1fc9635da6311cb9b9b06926"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-09"
+version_note = "1961 lecture notes as transcribed by Project Gutenberg; printed page numbers; not the expanded 1966 Academic Press book"
+cited_for = ["8.1", "8.2"]
