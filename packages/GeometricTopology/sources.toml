@@ -575,3 +575,68 @@ status = "certified"
 accessed = "2026-11-08"
 version_note = "arXiv v2"
 cited_for = ["6.4"]
+
+[[source]]
+id = "piccirillo2019"
+authors = "Lisa Piccirillo"
+title = "Shake genus and slice genus"
+year = 2018
+venue = "Geom. Topol. 23 (2019) 2665-2684"
+doi = "10.2140/gt.2019.23.2665"
+arxiv = "1803.09834v2"
+locator_scheme = "theorem"
+locator = "Theorem 1.1 and Corollary 1.2"
+url = "https://arxiv.org/abs/1803.09834v2"
+fetched_from = "https://arxiv.org/pdf/1803.09834v2"
+fetched_at = "2026-11-09T01:26:44Z"
+sha256 = "e4fca90909dcd10d8b57a0cfe0e32cf946aaaf50450c94bf299232bd05092d0d"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-09"
+version_note = "arXiv v2; the theorem and corollary numbers are those of this version"
+cited_for = ["Scope and ownership"]
+
+[[source]]
+id = "lickorish1997"
+authors = "W. B. Raymond Lickorish"
+title = "An Introduction to Knot Theory"
+year = 1997
+venue = "Graduate Texts in Mathematics"
+doi = "10.1007/978-1-4612-0691-0"
+locator_scheme = "theorem"
+locator = "Proposition 16.10, p. 187; Chapter 1, pp. 2-4"
+url = "https://doi.org/10.1007/978-1-4612-0691-0"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["4.3", "4.4", "4.5", "6.1", "6.2", "6.3"]
+
+[[source]]
+id = "ratcliffe2019"
+authors = "John G. Ratcliffe"
+title = "Foundations of Hyperbolic Manifolds"
+year = 2019
+venue = "Graduate Texts in Mathematics"
+doi = "10.1007/978-3-030-31597-9"
+locator_scheme = "theorem"
+locator = "Theorem 11.8.5 and Corollary 1, p. 594"
+url = "https://doi.org/10.1007/978-3-030-31597-9"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["7.2"]
+
+[[source]]
+id = "moise1977"
+authors = "Edwin E. Moise"
+title = "Geometric Topology in Dimensions 2 and 3"
+year = 1977
+venue = "Graduate Texts in Mathematics"
+doi = "10.1007/978-1-4612-9906-6"
+locator_scheme = "theorem"
+locator = "Theorems 35.3, 36.2 and 36.4"
+url = "https://doi.org/10.1007/978-1-4612-9906-6"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["10.4", "11.2", "12.3"]
