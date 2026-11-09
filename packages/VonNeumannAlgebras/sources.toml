@@ -224,3 +224,40 @@ status = "certified"
 accessed = "2026-11-08"
 version_note = "arXiv v1"
 cited_for = ["V12.J.Dye"]
+
+[[source]]
+id = "wassermann-1988"
+authors = "Antony Wassermann"
+title = "Ergodic actions of compact groups on operator algebras. III. Classification for SU(2)"
+year = 1988
+venue = "Inventiones Mathematicae 93 (1988), 309-354"
+doi = "10.1007/BF01394336"
+locator_scheme = "theorem"
+locator = "Theorem of the Introduction, p. 309; Theorem 1, p. 311"
+url = "https://gdz.sub.uni-goettingen.de/download/pdf/PPN356556735_0093/LOG_0020.pdf"
+fetched_from = "https://gdz.sub.uni-goettingen.de/download/pdf/PPN356556735_0093/LOG_0020.pdf"
+fetched_at = "2026-11-09T09:40:21Z"
+sha256 = "69408423448f7aa57be5ab41c46afc5bc915c96f71826c0cde85e1701f2ce34e"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-09"
+version_note = "GDZ scan of the published article (image-only)"
+cited_for = ["V8.CompactErgodicActions"]
+
+[[source]]
+id = "pinzari-2011"
+authors = "Claudia Pinzari"
+title = "Growth rates of dimensional invariants of compact quantum groups and a theorem of Hoegh-Krohn, Landstad and Stormer"
+year = 2011
+arxiv = "1101.4534v2"
+locator_scheme = "theorem"
+locator = "Corollary 4.9, p. 12; Section 2, p. 6"
+url = "https://arxiv.org/abs/1101.4534v2"
+fetched_from = "https://arxiv.org/pdf/1101.4534v2"
+fetched_at = "2026-11-09T09:39:06Z"
+sha256 = "cdc19b6f2aef52c003e89488495bd964c4cc80975babcbb536242634c93af4ef"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-09"
+version_note = "arXiv v2"
+cited_for = ["V8.CompactErgodicActions"]
