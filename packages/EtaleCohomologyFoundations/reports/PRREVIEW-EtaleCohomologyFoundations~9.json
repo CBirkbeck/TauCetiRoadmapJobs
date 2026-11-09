@@ -1,0 +1,13 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-EtaleCohomologyFoundations~9",
+  "head": "6217eb966587d112b1ed32d520874096200f2454",
+  "pr": 1891,
+  "folder": "EtaleCohomologyFoundations",
+  "date": "2026-11-09",
+  "findings": 6,
+  "blocking": 3,
+  "notes": "Full review at the same head as r8 (folder unchanged). Previous R01 (description says point-count consumers unaffected) not repaired, carried as R02 (P2; #1208 Suggested.lean 54, #929 Suggested.lean 64). New: R01 (P1) arithmeticExactSequence false without QuasiSeparatedSpace X: explicit counterexample (𝔽_p ⊕ ⨁ t𝔽_{p^n}[t] doubled along its non-quasi-compact punctured spectrum; a double cover of X_k̄ with no open Galois stabilizer); Stacks 0BTX assumes qcqs; repair elaborates on a scratch copy; SGA 1 IX 6.1 recorded as a source error. R03 (P2) MonoidalCategory.IsInvertible also owned by the EnhancedDerivedSheaves revision #1630 (§0.3, README 592/3068, Suggested 178). R04 (P3) IsWeakSerreClass restates Mathlib's ContainsZero/IsClosedUnderIsomorphisms/Kernels/Cokernels/Extensions. R05 (P3) smooth base change hypothesis narrower than Stacks 0EYU. R06 (P3) supplier rows omit TauCeti.Compactification.precomp and DerivedModuleAlgebra §1.E.0. Checked: gate re-run OK; depcheck 236 roadmaps, 2269 edges, 0 problems; Suggested.lean elaborates with six sorry warnings only; #check @ of all 8 declarations (no lost binder); one-tactic probe closes none of the six theorems; all 15 seeded targets' locators read (Stacks étale/more-étale/more-algebra/proetale/trace/categories/flat/fundamental groups, Bhatt–Scholze, LRZ, DDT, BHKT, Weil I, SGA 1); all cited Tau Ceti and Mathlib names resolved at the pins; all supplier sections resolved on main; ownership checked by object with roadmaps grep. Adversarial table: 25 rows with computed values. Uncertified SGA 4/4½/5, Huber, Fujiwara, Ribet not read."
+ }
+}
