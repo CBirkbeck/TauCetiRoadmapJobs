@@ -104,3 +104,22 @@ status = "certified"
 accessed = "2026-11-08"
 version_note = "arXiv v2"
 cited_for = ["7.2", "8.3", "8.4"]
+
+[[source]]
+id = "medinaMardonesCupI"
+authors = "Anibal M. Medina-Mardones"
+title = "New formulas for cup-i products and fast computation of Steenrod squares"
+year = 2022
+arxiv = "2105.08025v3"
+doi = "10.1016/j.comgeo.2022.101921"
+locator_scheme = "theorem"
+locator = "Definition 1 with equation (5), p.6; Definition 2, p.7 (arXiv v3)"
+url = "https://arxiv.org/abs/2105.08025v3"
+fetched_from = "https://arxiv.org/pdf/2105.08025v3"
+fetched_at = "2026-11-09T04:27:43Z"
+sha256 = "caff177c8f9f7127497aca0443f4b469dc946d10b16d2b771d5d7510bf398222"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-09"
+version_note = "arXiv v3 (2022-08-30), the version read; the journal version is Computational Geometry 2023, whose numbering was not checked"
+cited_for = ["4.1"]
