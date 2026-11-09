@@ -1,0 +1,89 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "LocallyPresentableCategories"
+
+[[source]]
+id = "lazard-1969"
+authors = "Daniel Lazard"
+title = "Autour de la platitude"
+year = 1969
+venue = "Bulletin de la Soci&amp;#233;t&amp;#233; math&amp;#233;matique de France 79"
+doi = "10.24033/bsmf.1675"
+locator_scheme = "page"
+locator = "Appendice, pp. 125-126"
+url = "https://doi.org/10.24033/bsmf.1675"
+fetched_from = "https://www.numdam.org/item/10.24033/bsmf.1675.pdf"
+fetched_at = "2026-11-09T02:43:07Z"
+sha256 = "d83f5a8c597b8f937c522f41b3b549d9e3dad6803d0be8c029c2ed5d92451d47"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-09"
+cited_for = ["1.6"]
+
+[[source]]
+id = "ega-iv3"
+authors = "Alexander Grothendieck"
+title = "Éléments de géométrie algébrique : IV. Étude locale des schémas et des morphismes de schémas, Troisième partie"
+year = 1966
+venue = "Publications Mathématiques de l'IHÉS 28"
+doi = "10.1007/BF02684343"
+locator_scheme = "theorem"
+locator = "Lemme 8.5.2.1"
+url = "https://www.numdam.org/item/PMIHES_1966__28__5_0.pdf"
+fetched_from = "https://www.numdam.org/item/PMIHES_1966__28__5_0.pdf"
+fetched_at = "2026-11-09T02:43:31Z"
+sha256 = "f365212b38f20608ba34c21ae3ee40bbae1b42d9d3dff01a85356f9cc819c23e"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-09"
+cited_for = ["1.6"]
+
+[[source]]
+id = "adamek-1974"
+locator_scheme = "page"
+locator = "p. 592"
+url = "https://dml.cz/handle/10338.dmlcz/105583"
+fetched_from = "https://dml.cz/bitstream/handle/10338.dmlcz/105583/CommentatMathUnivCarol_015-1974-4_2.pdf"
+fetched_at = "2026-11-09T02:43:39Z"
+sha256 = "da3cb22a8528c095730fcb86478c0b0f83a022ddbaf478dc15006b845edf7081"
+licence_class = "institutional"
+status = "certified"
+accessed = "2026-11-09"
+cited_for = ["4.4"]
+
+[[source]]
+id = "tendas-2022"
+authors = "Giacomo Tendas"
+title = "On continuity of accessible functors"
+year = 2021
+doi = "10.1007/s10485-022-09677-x"
+arxiv = "2110.14192v2"
+locator_scheme = "theorem"
+locator = "Theorem 3.7"
+url = "https://arxiv.org/abs/2110.14192v2"
+fetched_from = "https://arxiv.org/pdf/2110.14192v2"
+fetched_at = "2026-11-09T02:43:50Z"
+sha256 = "d5905493ebcfa61f8a0edf73b3a5c2aa78ab63ddad332e58d74a4392586cfe6e"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-09"
+version_note = "arXiv v2"
+cited_for = ["1.7"]
+
+[[source]]
+id = "pare-rosicky-2013"
+authors = "R. Pare, J. Rosicky"
+title = "Colimits of accessible categories"
+year = 2011
+venue = "Math. Proc. Cambr. Phil. Soc. 155 (2013), 47-50"
+arxiv = "1110.0767v1"
+locator_scheme = "theorem"
+locator = "Theorem 2.1"
+url = "https://arxiv.org/abs/1110.0767v1"
+fetched_from = "https://arxiv.org/pdf/1110.0767v1"
+fetched_at = "2026-11-09T02:44:00Z"
+sha256 = "a3d59a284fda6c1e4d02f2982bc85dfddbd0242443ce3acd73bc40350bbf7644"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-09"
+version_note = "arXiv v1"
+cited_for = ["1.7"]
