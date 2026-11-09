@@ -153,3 +153,20 @@ licence_class = "none"
 status = "uncertified"
 version_note = "paywalled; cited by its locator without the text"
 cited_for = ["Layer 5"]
+
+[[source]]
+id = "milne-ant"
+authors = "J. S. Milne"
+title = "Algebraic Number Theory"
+year = 2020
+version_note = "Version 3.08 (July 19, 2020), author-hosted course notes; numbering and printed pages refer to this version"
+locator_scheme = "theorem"
+locator = "Proposition 7.31, p. 120"
+url = "https://www.jmilne.org/math/CourseNotes/ANT.pdf"
+fetched_from = "https://www.jmilne.org/math/CourseNotes/ANT.pdf"
+fetched_at = "2026-11-09T16:54:51Z"
+sha256 = "24b83c789a89f25aebffb3cbe4ae5ca29edd0075acc072de093d140770630847"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-09"
+cited_for = ["Layer 5"]
