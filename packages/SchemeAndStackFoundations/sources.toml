@@ -317,3 +317,23 @@ status = "certified"
 accessed = "2026-11-09"
 version_note = "arXiv v2"
 cited_for = ["0.13"]
+
+[[source]]
+id = "cesnavicius-2018"
+authors = "Kestutis Cesnavicius"
+title = "Purity for the Brauer group"
+year = 2017
+venue = "Duke Math. J. 168, no. 8 (2019), 1461-1486"
+doi = "10.1215/00127094-2018-0057"
+arxiv = "1711.06456v4"
+locator_scheme = "section"
+locator = "§2.7"
+url = "https://arxiv.org/abs/1711.06456v4"
+fetched_from = "https://arxiv.org/pdf/1711.06456v4"
+fetched_at = "2026-11-09T13:00:37Z"
+sha256 = "a62a12bbe26595aec89d31d24d46774a1ee3eff73c08da0febf5a2b472118709"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-09"
+version_note = "arXiv v4 read; the README cites v4 (§2.7, which applies Grothendieck, Brauer III, 11.7 with G_m coefficients)"
+cited_for = ["2.10"]
