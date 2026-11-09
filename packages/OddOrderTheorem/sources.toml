@@ -446,3 +446,16 @@ licence_class = "none"
 status = "uncertified"
 accessed = "2026-11-03"
 cited_for = ["Layer 1", "Layer 3", "Layer 5"]
+
+[[source]]
+id = "MC-BGappendixAB"
+locator_scheme = "section"
+locator = "BGappendixAB"
+url = "https://raw.githubusercontent.com/math-comp/odd-order/master/theories/BGappendixAB.v"
+fetched_from = "https://raw.githubusercontent.com/math-comp/odd-order/master/theories/BGappendixAB.v"
+fetched_at = "2026-11-09T03:58:48Z"
+sha256 = "5a89d43643eceea3a946cf49c61727c61b7b21afdd773b15c122a7c3802d01e9"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-09"
+cited_for = ["1.5", "1.8", "1.9"]
