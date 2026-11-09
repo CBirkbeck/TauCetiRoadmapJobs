@@ -1,0 +1,80 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "LatticePackingsAndPerfectForms"
+
+[[source]]
+id = "venkov2001"
+authors = "B. Venkov"
+title = "Réseaux et designs sphériques (notes by J. Martinet)"
+year = 2001
+venue = "Réseaux euclidiens, designs sphériques et formes modulaires, Monogr. Enseign. Math. 37 (2001)"
+locator_scheme = "theorem"
+locator = "Theorem 16.4, p.61 (author-hosted pagination)"
+url = "https://jamartin.perso.math.cnrs.fr/Publications/venkovensmath.pdf"
+fetched_from = "https://jamartin.perso.math.cnrs.fr/Publications/venkovensmath.pdf"
+fetched_at = "2026-11-09T22:20:31Z"
+sha256 = "0c9b872b59457573a4edafe92421dff30d60bb62cf46383638f7b1b7ad36f8fd"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-09"
+version_note = "author-hosted version, paginated 1-80; page locators refer to this pagination, theorem and equation numbers as in the article"
+cited_for = ["4.4", "5.2", "5.3", "5.6", "5.7"]
+
+[[source]]
+id = "dsv2007"
+authors = "Mathieu Dutour Sikiric, Achill Schuermann, Frank Vallentin"
+title = "Classification of eight dimensional perfect forms"
+year = 2006
+venue = "Electron. Res. Announc. Amer. Math. Soc. 13 (2007), 21-32"
+doi = "10.1090/S1079-6762-07-00171-0"
+arxiv = "math/0609388v3"
+locator_scheme = "section"
+locator = "§1, Table 1, p.3; Theorem 1.1"
+url = "https://arxiv.org/abs/math/0609388v3"
+fetched_from = "https://arxiv.org/pdf/math/0609388v3"
+fetched_at = "2026-11-09T22:20:35Z"
+sha256 = "6de1c88daf85385300f6b41359ee31f6d22fcd777a7c6760d688457107da86b4"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-09"
+version_note = "arXiv v3"
+cited_for = ["2.3", "4.1", "4.5", "4.10"]
+
+[[source]]
+id = "festiveniani"
+authors = "Dino Festi, Davide Cesare Veniani"
+title = "Counting elliptic fibrations on K3 surfaces"
+year = 2021
+venue = "J. Math. Soc. Japan 75 (2023), no. 4, 1195--1225"
+doi = "10.2969/jmsj/88178817"
+arxiv = "2102.09411v2"
+locator_scheme = "section"
+locator = "§2.1, p.3; Theorem 2.8, p.9"
+url = "https://arxiv.org/abs/2102.09411v2"
+fetched_from = "https://arxiv.org/pdf/2102.09411v2"
+fetched_at = "2026-11-09T22:20:42Z"
+sha256 = "fd4dc82553f291f14d309d5af85d473170caf325f369ce44781bd491dce59ba9"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-09"
+version_note = "arXiv v2"
+cited_for = ["7.5"]
+
+[[source]]
+id = "ckmrv2017"
+authors = "Henry Cohn, Abhinav Kumar, Stephen D. Miller, Danylo Radchenko, Maryna Viazovska"
+title = "The sphere packing problem in dimension 24"
+year = 2016
+venue = "Annals of Mathematics 185 (2017), 1017-1033"
+doi = "10.4007/annals.2017.185.3.8"
+arxiv = "1603.06518v4"
+locator_scheme = "section"
+locator = "§§2–4 and Appendix A"
+url = "https://arxiv.org/abs/1603.06518v4"
+fetched_from = "https://arxiv.org/pdf/1603.06518v4"
+fetched_at = "2026-11-09T22:22:15Z"
+sha256 = "d89ce08365eb2d4720ad332d36c6fb890b742b6e12e519ccf5b5e9cd0b3b283a"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-09"
+version_note = "arXiv v4"
+cited_for = ["4.11"]
