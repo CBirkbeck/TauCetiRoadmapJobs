@@ -30,3 +30,21 @@ licence_class = "none"
 status = "uncertified"
 version_note = "paywalled; cited by its locator without the text"
 cited_for = ["3.1"]
+
+[[source]]
+id = "hatcher"
+authors = "Allen Hatcher"
+title = "Algebraic Topology"
+year = 2002
+venue = "Cambridge University Press"
+locator_scheme = "theorem"
+locator = "Propositions 1.30, 1.33, 1.34"
+version_note = "locators read in the author's online edition of the 2002 Cambridge University Press book"
+url = "https://pi.math.cornell.edu/~hatcher/AT/AT.pdf"
+fetched_from = "https://pi.math.cornell.edu/~hatcher/AT/AT.pdf"
+fetched_at = "2026-11-09T13:53:44Z"
+sha256 = "bebb3032bf9021b956da3bd070eb6c67dc662cf849be9cdf6679f677560e5618"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-09"
+cited_for = ["1.2", "1.3"]
