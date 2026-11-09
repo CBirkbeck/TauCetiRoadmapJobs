@@ -96,3 +96,19 @@ licence_class = "author-page"
 status = "certified"
 accessed = "2026-11-08"
 cited_for = ["§0.1a"]
+
+[[source]]
+id = "pnt-ik-ch1"
+authors = "Alex Kontorovich; Terence Tao; and the PrimeNumberTheoremAnd contributors"
+title = "PrimeNumberTheoremAnd: IwaniecKowalskiCh1.lean (arithmetic functions and their L-series)"
+year = 2026
+locator_scheme = "section"
+locator = "PrimeNumberTheoremAnd/IwaniecKowalskiCh1.lean at revision 127b50e33f6033e2147921167a117af96d9ba4ea: LSeries_tau_eq_riemannZeta_sq, pnt-ik-ch1 line 176; d, pnt-ik-ch1 line 193; LSeries_d_summable, pnt-ik-ch1 line 243; LSeries_d_eq_riemannZeta_pow, pnt-ik-ch1 line 262; LSeries_sigma_eq_riemannZeta_mul, pnt-ik-ch1 line 622"
+url = "https://raw.githubusercontent.com/AlexKontorovich/PrimeNumberTheoremAnd/127b50e33f6033e2147921167a117af96d9ba4ea/PrimeNumberTheoremAnd/IwaniecKowalskiCh1.lean"
+fetched_from = "https://raw.githubusercontent.com/AlexKontorovich/PrimeNumberTheoremAnd/127b50e33f6033e2147921167a117af96d9ba4ea/PrimeNumberTheoremAnd/IwaniecKowalskiCh1.lean"
+fetched_at = "2026-11-09T00:13:39Z"
+sha256 = "7d03e98aa9e4e660e5ccbf32713a6afcf74f5faaa848dfbd5ffaab56bfa4e16e"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-09"
+cited_for = ["§5.1"]
