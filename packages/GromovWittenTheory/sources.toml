@@ -52,3 +52,23 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-09"
 cited_for = ["0.4"]
+
+[[source]]
+id = "Pardon16"
+authors = "John Pardon"
+title = "An algebraic approach to virtual fundamental cycles on moduli spaces of pseudo-holomorphic curves"
+year = 2013
+venue = "Geom. Topol. 20 (2016) 779-1034"
+doi = "10.2140/gt.2016.20.779"
+arxiv = "1309.2370v6"
+locator_scheme = "theorem"
+locator = "Lemma 9.3.2"
+url = "https://arxiv.org/abs/1309.2370v6"
+fetched_from = "https://arxiv.org/pdf/1309.2370v6"
+fetched_at = "2026-11-09T10:30:34Z"
+sha256 = "2e5f1a6741e52436ba36661586f25dbb78325043f9fa28eb71f8b4ea7f1221ac"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-09"
+version_note = "arXiv v6"
+cited_for = ["1.2", "2.3", "6.6"]
