@@ -1,0 +1,87 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "BianchiModularForms"
+
+[[source]]
+id = "swan1971"
+authors = "Richard G Swan"
+title = "Generators and relations for certain special linear groups"
+year = 1971
+venue = "Advances in Mathematics 6"
+doi = "10.1016/0001-8708(71)90027-2"
+locator_scheme = "section"
+locator = "Theorem 3.13, §7, §8, Proposition 8.4"
+url = "https://doi.org/10.1016/0001-8708(71)90027-2"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["0.3", "0.6", "9.4"]
+
+[[source]]
+id = "rahm2010thesis"
+authors = "Alexander D. Rahm"
+title = "(Co)homologies and K-theory of Bianchi groups using computational geometric models"
+year = 2010
+venue = "PhD thesis, Université de Grenoble and Universität Göttingen"
+hal = "tel-00526976"
+locator_scheme = "section"
+locator = "§1.1.1 Theorem 6 p.19; §1.1.4 Theorem 12 p.21"
+url = "https://theses.hal.science/tel-00526976/document"
+fetched_from = "https://theses.hal.science/tel-00526976/document"
+fetched_at = "2026-11-09T08:12:38Z"
+sha256 = "f9b4fb020a55b17f4a3cd8755f2464cf162b7737d4254f9071d65e91133fefac"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-09"
+cited_for = ["0.3", "9.4"]
+
+[[source]]
+id = "cremona1984"
+authors = "J. E. Cremona"
+title = "Hyperbolic tessellations, modular symbols, and elliptic curves over complex quadratic fields"
+year = 1984
+venue = "Compositio Mathematica 51, 275–324"
+locator_scheme = "section"
+locator = "§1 pp.276–279; §2.2 Theorem 2 pp.283–284; §2.3 pp.287–290"
+url = "https://www.numdam.org/item/CM_1984__51_3_275_0.pdf"
+fetched_from = "https://www.numdam.org/item/CM_1984__51_3_275_0.pdf"
+fetched_at = "2026-11-09T08:12:46Z"
+sha256 = "2f6d307790cda8e71342dc35a535fbc762f9cb5d29d812b8fe769696b14af3cc"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-09"
+cited_for = ["0.3", "2.6", "6.6", "9.1", "9.2"]
+
+[[source]]
+id = "cremonawhitley1994"
+authors = "J. E. Cremona, E. Whitley"
+title = "Periods of cusp forms and elliptic curves over imaginary quadratic fields"
+year = 1994
+venue = "Mathematics of Computation 62, 407–429"
+doi = "10.1090/S0025-5718-1994-1185241-6"
+locator_scheme = "section"
+locator = "§1 p.407"
+url = "https://www.ams.org/journals/mcom/1994-62-205/S0025-5718-1994-1185241-6/S0025-5718-1994-1185241-6.pdf"
+fetched_from = "https://www.ams.org/journals/mcom/1994-62-205/S0025-5718-1994-1185241-6/S0025-5718-1994-1185241-6.pdf"
+fetched_at = "2026-11-09T08:12:59Z"
+sha256 = "dcd4378c7ba300b3261094ce749683ad099de866556dec013d6003442012f5a8"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-11-09"
+cited_for = ["9.4"]
+
+[[source]]
+id = "aranes2010thesis"
+authors = "Maria Teresa Aranés"
+title = "Modular symbols over number fields"
+year = 2010
+venue = "PhD thesis, University of Warwick (WRAP 35128)"
+locator_scheme = "section"
+locator = "§3.2.2 Theorem 3.2.18 p.72; §3.2.3 Theorem 3.2.19 p.72; §3.2.4 Remark 3.2.24 p.75 and Proposition 3.2.25 p.76"
+url = "https://wrap.warwick.ac.uk/35128/1/WRAP_THESIS_Aranes_2010.pdf"
+fetched_from = "https://wrap.warwick.ac.uk/id/eprint/35128/1/WRAP_THESIS_Aranes_2010.pdf"
+fetched_at = "2026-11-09T08:14:46Z"
+sha256 = "64d899d7bc9abeed87e1f670426db5c1946da3444be3daeabb444a484863cae4"
+licence_class = "institutional"
+status = "certified"
+accessed = "2026-11-09"
+cited_for = ["0.3", "9.4"]
