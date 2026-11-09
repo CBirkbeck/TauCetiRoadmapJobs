@@ -175,3 +175,37 @@ licence_class = "none"
 status = "uncertified"
 version_note = "paywalled; cited by its locator without the text"
 cited_for = ["5.9"]
+
+[[source]]
+id = "bhatt-scholze-2014"
+authors = "Bhargav Bhatt, Peter Scholze"
+title = "The pro-étale topology for schemes"
+year = 2013
+arxiv = "1309.1198v2"
+locator_scheme = "theorem"
+locator = "Proposition 4.2.8"
+url = "https://arxiv.org/abs/1309.1198v2"
+fetched_from = "https://arxiv.org/pdf/1309.1198v2"
+fetched_at = "2026-11-09T03:15:47Z"
+sha256 = "ae0960a28f0f25300211569cd350def057d6c0f781f635694182868e766d3c84"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-09"
+version_note = "arXiv v2"
+cited_for = ["2.17"]
+
+[[source]]
+id = "grothendieck-brauer-1"
+authors = "Alexander Grothendieck"
+title = "Le groupe de Brauer. I. Algèbres d'Azumaya et interprétations diverses (Séminaire Bourbaki, exposé 290)"
+year = 1966
+locator_scheme = "theorem"
+locator = "Théorème 5.1"
+url = "http://www.numdam.org/item/SB_1964-1966__9__199_0/"
+fetched_from = "https://www.numdam.org/item/SB_1964-1966__9__199_0.pdf"
+fetched_at = "2026-11-09T03:16:16Z"
+sha256 = "b049e433783020260dd6c03d2ac80774e0d5047a88b4cb24da65d55a71ca1b9b"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-09"
+cited_for = ["2.22"]
