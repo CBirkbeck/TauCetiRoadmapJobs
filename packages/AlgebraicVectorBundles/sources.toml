@@ -303,3 +303,35 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-09"
 cited_for = ["3.2"]
+
+[[source]]
+id = "stacks-01CF"
+authors = "The Stacks project authors"
+title = "The Stacks Project, Sheaves of Modules, Section 17.21 (symmetric and exterior powers)"
+year = 2026
+locator_scheme = "tag"
+locator = "01CF"
+url = "https://stacks.math.columbia.edu/tag/01CF"
+fetched_from = "https://stacks.math.columbia.edu/download/modules.pdf#nameddest=01CF"
+fetched_at = "2026-11-09T01:25:52Z"
+sha256 = "7effc55750a81b6969a94ca3432fb71c366b3d91acdd4016ea4149dd28b475e6"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-09"
+cited_for = ["3.2"]
+
+[[source]]
+id = "stacks-01CG"
+authors = "The Stacks project authors"
+title = "The Stacks Project, Sheaves of Modules, Lemma 17.21.1"
+year = 2026
+locator_scheme = "tag"
+locator = "01CG"
+url = "https://stacks.math.columbia.edu/tag/01CG"
+fetched_from = "https://stacks.math.columbia.edu/download/modules.pdf#nameddest=01CG"
+fetched_at = "2026-11-09T01:25:55Z"
+sha256 = "7effc55750a81b6969a94ca3432fb71c366b3d91acdd4016ea4149dd28b475e6"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-09"
+cited_for = ["3.2"]
