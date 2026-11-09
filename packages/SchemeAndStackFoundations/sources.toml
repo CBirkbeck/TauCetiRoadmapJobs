@@ -227,3 +227,21 @@ status = "certified"
 accessed = "2026-11-09"
 version_note = "arXiv v2"
 cited_for = ["2.17"]
+
+[[source]]
+id = "cesnavicius-scholze"
+authors = "Kęstutis Česnavičius, Peter Scholze"
+title = "Purity for flat cohomology"
+year = 2019
+arxiv = "1912.10932"
+locator_scheme = "theorem"
+locator = "Theorem 5.2.6, (5.2.6.2)"
+url = "https://arxiv.org/abs/1912.10932"
+fetched_from = "https://arxiv.org/pdf/1912.10932"
+fetched_at = "2026-11-09T04:31:51Z"
+sha256 = "2f9d3ee868c244a7ddd6579a5dafed10a7ac9eb8b2ffe840db9f2bc115cd6ed4"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-09"
+version_note = "arXiv v3 read; the README cites its numbering (Theorem 5.2.6, display (5.2.6.2))"
+cited_for = ["2.10"]
