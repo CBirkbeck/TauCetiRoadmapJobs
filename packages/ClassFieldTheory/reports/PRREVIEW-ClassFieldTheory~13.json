@@ -1,0 +1,13 @@
+{
+  "review": {
+    "status": "needs_changes",
+    "reviewer": "independent-review-PRREVIEW-ClassFieldTheory~13",
+    "head": "b254b25db12d5f2a1bac9c5e90bafac0154dbdc5",
+    "pr": 617,
+    "folder": "ClassFieldTheory",
+    "date": "2026-11-09",
+    "findings": 12,
+    "blocking": 4,
+    "notes": "Full review; all 13 prior findings reconciled. Seeded five target headings checked against available texts and pinned declarations; unavailable locators documented. Gate fails residue, imports, statement-hygiene and five scoped outside-folder changes; raw rerun additionally counts three authorized sibling paths, not findings. Exact Lean file elaborates with ten sorry warnings only; all 76 declaration signatures checked; all ten admissions probed, maximal-order comparison closes with one simp. Dependency check: 238 roadmaps, 2318 edges, 0 problems. 123 computed adversarial rows. Ownership, overlap and pinned library audits recorded; ten unavailable texts recorded without manifest edits."
+  }
+}

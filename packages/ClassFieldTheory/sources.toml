@@ -120,3 +120,21 @@ licence_class = "none"
 status = "uncertified"
 version_note = "paywalled; cited by its locator without the text"
 cited_for = ["Layers 5 and 6"]
+
+[[source]]
+id = "jahnke-koenigsmann"
+authors = "Franziska Jahnke, Jochen Koenigsmann"
+title = "Definable henselian valuations"
+year = 2014
+arxiv = "1210.7615"
+locator_scheme = "theorem"
+locator = "Theorem 2.1, p. 3"
+url = "https://arxiv.org/abs/1210.7615"
+fetched_from = "https://arxiv.org/pdf/1210.7615"
+fetched_at = "2026-11-09T04:38:23Z"
+sha256 = "5ec01375270b351448fef451b8dac0cd8a106729f99fb8bc62cda26905ed63b6"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-09"
+version_note = "arXiv:1210.7615v4 (31 July 2014); theorem and page numbering refer to this version"
+cited_for = ["Layer 5"]
