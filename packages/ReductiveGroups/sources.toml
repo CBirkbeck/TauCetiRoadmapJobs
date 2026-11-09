@@ -381,3 +381,21 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-09"
 cited_for = ["11B"]
+
+[[source]]
+id = "kohls-thesis"
+authors = "Martin Kohls"
+title = "Ueber die Tiefe von Invariantenringen unendlicher Gruppen"
+year = 2007
+arxiv = "0711.4730v1"
+locator_scheme = "theorem"
+locator = "Satz 1.37, Satz 1.39(b), Lemma 1.41, §1.2.1 (pp. 25–32, 36)"
+url = "https://arxiv.org/abs/0711.4730v1"
+fetched_from = "https://arxiv.org/pdf/0711.4730v1"
+fetched_at = "2026-11-09T19:40:38Z"
+sha256 = "da6a337ea2de60b48731ac7f7e25607699ec7ce924dff24abe8ec486d19a3a40"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-09"
+version_note = "arXiv v1"
+cited_for = ["7"]
