@@ -1,0 +1,13 @@
+{
+  "review": {
+    "status": "needs_changes",
+    "reviewer": "independent-review-PRREVIEW-AbelianSchemesAndArithmeticModuli~6",
+    "head": "a007331219c0c8b015821ed924c466f53363e457",
+    "pr": 849,
+    "folder": "AbelianSchemesAndArithmeticModuli",
+    "date": "2026-11-09",
+    "findings": 1,
+    "blocking": 0,
+    "notes": "incremental re-review of 39 changed lines since e77dd51. Previous R01 (A1.7 field Check, n = 0) repaired at README.md:950. New EquivariantIntersectionTheory citations (§1.1 linearized invertible sheaves, §1.4 Pic of quotient stacks) resolved at its open head ca06895 and checked against SchemeAndStackFoundations §§1.13, 1.21, 1.22 on main; its suppliers are all on main and it cites nothing of this roadmap, so no upward edge or cycle; it is the single owner of G-linearized invertible sheaves. A3.6 (5) checked on 13 new adversarial rows (H = 0, O_E with E[2], nonisotropic E[2], order-two isotropic subgroup, mu_p in char p, linearization direction and cocycle, [A/H] = A/H, groupoid fibre), plus 106 rows carried from e77dd51. Gate: statement-hygiene=1 on tateModule_rank (Nonempty of a linear equivalence), all else 0, build=0; depcheck 236 roadmaps, 2264 edges, 0 problems. Elaboration exit 0, 21 sorry warnings only. R01 (P3): restate tateModule_rank as Module.Free and Module.Finite and finrank = 2g; tested by elaboration, a proved equivalence with the Nonempty form, and statement-hygiene=0 on a scratch copy. Seeded sample: no sampled target lies in the changed passages."
+  }
+}
