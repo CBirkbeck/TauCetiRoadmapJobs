@@ -106,3 +106,18 @@ status = "certified"
 accessed = "2026-11-09"
 version_note = "arXiv v3"
 cited_for = ["7.5"]
+
+[[source]]
+id = "lagarias1979"
+authors = "J. C. Lagarias, H. L. Montgomery, A. M. Odlyzko"
+title = "A bound for the least prime ideal in the Chebotarev Density Theorem"
+year = 1979
+venue = "Inventiones Mathematicae 54"
+doi = "10.1007/BF01390234"
+locator_scheme = "theorem"
+locator = "Lemma 2.3"
+url = "https://doi.org/10.1007/BF01390234"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["6.4"]
