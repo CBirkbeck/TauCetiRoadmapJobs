@@ -206,7 +206,6 @@ cited_for = ["8.11a"]
 id = "hatcher-ssat"
 authors = "Allen Hatcher"
 title = "Spectral Sequences in Algebraic Topology, Chapter 1"
-version_note = "undated chapter on the author's page; page numbers are those of the fetched PDF"
 locator_scheme = "theorem"
 locator = "Theorem 1.3 (p.8) and the local-coefficient version (p.17)"
 url = "https://pi.math.cornell.edu/~hatcher/SSAT/SSch1.pdf"
@@ -216,6 +215,7 @@ sha256 = "d34a09b4559eade18dac2c01f6718d4689c5f565d9dc252c3a67de0167520eca"
 licence_class = "author-page"
 status = "certified"
 accessed = "2026-11-08"
+version_note = "undated chapter on the author's page; page numbers are those of the fetched PDF"
 cited_for = ["5.5"]
 
 [[source]]
@@ -282,3 +282,19 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-08"
 cited_for = ["8.2"]
+
+[[source]]
+id = "may1967"
+authors = "J. Peter May"
+title = "Simplicial Objects in Algebraic Topology"
+year = 1967
+locator_scheme = "theorem"
+locator = "Theorem 14.1"
+url = "https://www.math.uchicago.edu/~may/BOOKS/Simp.pdf"
+fetched_from = "https://www.math.uchicago.edu/~may/BOOKS/Simp.pdf"
+fetched_at = "2026-11-09T01:01:15Z"
+sha256 = "68ca890c0e8ff27849747f340ae579a7001334dd1fced26b6b20fd9af4b5d919"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-09"
+cited_for = ["4.7", "8.2"]
