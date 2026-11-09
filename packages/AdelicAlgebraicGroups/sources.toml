@@ -179,3 +179,23 @@ status = "certified"
 accessed = "2026-11-09"
 version_note = "journal pagination (Numdam scan); printed page numbers"
 cited_for = ["0.3", "0.4", "1.2", "1.3", "1.4", "1.5", "2.1", "2.3", "3.1", "3.3", "3.4", "3.6", "4.2", "5.1", "5.2"]
+
+[[source]]
+id = "orr"
+authors = "Martin Orr"
+title = "Height bounds and the Siegel property"
+year = 2016
+venue = "Alg. Number Th. 12 (2018) 455-478"
+doi = "10.2140/ant.2018.12.455"
+arxiv = "1609.01315v6"
+locator_scheme = "theorem"
+locator = "Theorem 2.2"
+url = "https://arxiv.org/abs/1609.01315v6"
+fetched_from = "https://arxiv.org/pdf/1609.01315v6"
+fetched_at = "2026-11-09T01:58:26Z"
+sha256 = "907ae5ff3969eb7f33952ba1a29f352ce8df11302ce5a586200b4c5857e7e8bd"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-09"
+version_note = "arXiv v6"
+cited_for = ["3.7"]
