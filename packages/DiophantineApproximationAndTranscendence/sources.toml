@@ -200,3 +200,91 @@ licence_class = "author-page"
 status = "certified"
 accessed = "2026-11-08"
 cited_for = ["0.2", "0.3"]
+
+[[source]]
+id = "E19-ch7"
+authors = "Jan-Hendrik Evertse"
+title = "Diophantine Approximation (lecture notes), Chapter 7"
+year = 2019
+locator_scheme = "theorem"
+locator = "Theorem 7.13"
+url = "https://pub.math.leidenuniv.nl/~evertsejh/dio19-7.pdf"
+fetched_from = "https://pub.math.leidenuniv.nl/~evertsejh/dio19-7.pdf"
+fetched_at = "2026-11-09T03:21:29Z"
+sha256 = "8535b816bfc2899719849ab531686f2a7d812d0427ac9042b4ee7c86fe726610"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-09"
+cited_for = ["2.2"]
+
+[[source]]
+id = "BEG13"
+authors = "Attila Bérczes, Jan-Hendrik Evertse, Kálmán Györy"
+title = "Effective results for hyper- and superelliptic equations over number fields"
+year = 2013
+venue = "Publ. Math. Debrecen 82 (2013), 727-756"
+arxiv = "1301.7168v1"
+locator_scheme = "theorem"
+locator = "Theorem 2.1"
+url = "https://arxiv.org/abs/1301.7168v1"
+fetched_from = "https://arxiv.org/pdf/1301.7168v1"
+fetched_at = "2026-11-09T03:21:33Z"
+sha256 = "6f0c3522bec1af5548ddd4fcb3bd7fc3bc02a2e4294276abc6219289ee94334c"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-09"
+version_note = "arXiv v1"
+cited_for = ["4.4"]
+
+[[source]]
+id = "BG96"
+authors = "Yann Bugeaud, Kálmán Győry"
+title = "Bounds for the solutions of unit equations"
+year = 1996
+venue = "Acta Arith. 74 (1996), 67-80"
+locator_scheme = "theorem"
+locator = "Lemma 1"
+url = "http://matwbn.icm.edu.pl/ksiazki/aa/aa74/aa7416.pdf"
+fetched_from = "https://matwbn.icm.edu.pl/ksiazki/aa/aa74/aa7416.pdf"
+fetched_at = "2026-11-09T03:21:34Z"
+sha256 = "988ced2aaf34294d7e4caff62e9ca93a125889809b52cf2441336cf4fb870103"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-11-09"
+cited_for = ["4.5"]
+
+[[source]]
+id = "AF22"
+authors = "Boris Adamczewski, Colin Faverjon"
+title = "A new proof of Nishioka's theorem in Mahler's method"
+year = 2022
+arxiv = "2210.14528v1"
+locator_scheme = "theorem"
+locator = "Theorem 1.1"
+url = "https://arxiv.org/abs/2210.14528v1"
+fetched_from = "https://arxiv.org/pdf/2210.14528v1"
+fetched_at = "2026-11-09T03:21:39Z"
+sha256 = "614c1da0d61513059969805d330877f6349ccf37b65bbbe4c1dc0b5efaa38a8f"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-09"
+version_note = "arXiv v1"
+cited_for = ["5.5"]
+
+[[source]]
+id = "E96"
+authors = "Jan-Hendrik Evertse"
+title = "An improvement of the quantitative Subspace theorem"
+year = 1996
+venue = "Compositio Math. 101 (1996), 225-311"
+locator_scheme = "theorem"
+locator = "Lemma 26"
+url = "https://pub.math.leidenuniv.nl/~evertsejh/95-subspace.pdf"
+fetched_from = "https://pub.math.leidenuniv.nl/~evertsejh/95-subspace.pdf"
+fetched_at = "2026-11-09T03:21:47Z"
+sha256 = "ac82a38059a5d0d9fd23a40a3896fb58d8525b14ef44c42199df9582bd9a0fb4"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-09"
+cited_for = ["1.7", "2.6"]
+version_note = "author's preprint; lemma and equation numbers agree with the Compositio version (Numdam CM_1996__101_3_225_0), page locators are preprint pages"
