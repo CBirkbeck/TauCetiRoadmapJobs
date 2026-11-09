@@ -30,3 +30,21 @@ licence_class = "none"
 status = "uncertified"
 version_note = "paywalled; cited by its locator without the text"
 cited_for = ["4.3", "10.2"]
+
+[[source]]
+id = "MilneADT"
+authors = "J. S. Milne"
+title = "Arithmetic Duality Theorems"
+year = 2006
+venue = "BookSurge (second edition); author's electronic edition"
+locator_scheme = "equation"
+locator = "(0.1.1)-(0.1.6), Remark 0.11, Prop. 0.15"
+url = "https://www.jmilne.org/math/Books/ADTnot.pdf"
+fetched_from = "https://www.jmilne.org/math/Books/ADTnot.pdf"
+fetched_at = "2026-11-09T10:56:17Z"
+sha256 = "2c6195ec76a974f3f336c77cb71cc3845b018aad2d43136716b3477a3bc5fb31"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-09"
+version_note = "the author's electronic second edition, the text of the 2006 BookSurge edition; (0.1.1)-(0.1.6) are stated for Tate cohomology of a finite group"
+cited_for = ["2.4", "7.1", "8.4"]
