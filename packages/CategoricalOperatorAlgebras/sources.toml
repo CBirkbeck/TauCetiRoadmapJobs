@@ -345,3 +345,54 @@ status = "uncertified"
 accessed = "2026-11-09"
 version_note = "paywalled; cited by its locator without the text, as Masuda–Tomatsu 2009 cite it for their Theorem 4.18"
 cited_for = ["CA9"]
+
+[[source]]
+id = "Kosaki1986"
+authors = "Hideki Kosaki"
+title = "Extension of Jones' theory on index to arbitrary factors"
+year = 1986
+venue = "Journal of Functional Analysis 66"
+doi = "10.1016/0022-1236(86)90085-6"
+locator_scheme = "section"
+locator = "§3"
+url = "https://www.sciencedirect.com/science/article/pii/0022123686900856"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["CA9"]
+
+[[source]]
+id = "Izumi2003"
+authors = "Masaki Izumi"
+title = "Canonical extension of endomorphisms of type III factors"
+year = 2003
+arxiv = "math/0104228v1"
+locator_scheme = "theorem"
+locator = "Definition 3.1; Theorem 3.3"
+url = "https://arxiv.org/abs/math/0104228v1"
+fetched_from = "https://arxiv.org/pdf/math/0104228v1"
+fetched_at = "2026-11-09T07:47:26Z"
+sha256 = "16049b4dfa186e605dd70c70bc790915ff4a18b9b222b0d3f37ccc5bb28be811"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-09"
+version_note = "arXiv v1"
+cited_for = ["CA9"]
+
+[[source]]
+id = "Burns2011"
+authors = "Michael Burns"
+title = "Subfactors, Planar Algebras and Rotations"
+year = 2011
+arxiv = "1111.1362v1"
+locator_scheme = "theorem"
+locator = "Proposition 2.1.21"
+url = "https://arxiv.org/abs/1111.1362v1"
+fetched_from = "https://arxiv.org/pdf/1111.1362v1"
+fetched_at = "2026-11-09T07:51:37Z"
+sha256 = "1d0ac6abf8a849cc52521142f704ff85270f4d1c952e94e5c37d71a15cd0a98c"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-09"
+version_note = "arXiv v1"
+cited_for = ["CA9"]
