@@ -1,0 +1,103 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "ArithmeticFuchsianGroups"
+
+[[source]]
+id = "odlyzko1977"
+authors = "Andrew M. Odlyzko"
+title = "Lower bounds for discriminants of number fields. II"
+year = 1977
+locator_scheme = "theorem"
+locator = "Theorem 1, estimates (4)-(5), p. 210"
+url = "https://www.jstage.jst.go.jp/article/tmj1949/29/2/29_2_209/_pdf/-char/en"
+fetched_from = "https://www.jstage.jst.go.jp/article/tmj1949/29/2/29_2_209/_pdf/-char/en"
+fetched_at = "2026-11-09T03:58:49Z"
+sha256 = "b708a97f754bb4f5099d0de823b3cda7a6bd5f3cde3c4f7e3ac9aaabcf390ce4"
+licence_class = "institutional"
+status = "certified"
+accessed = "2026-11-09"
+cited_for = ["1.3b"]
+
+[[source]]
+id = "bgls2010"
+authors = "Mikhail Belolipetsky, Tsachik Gelander, Alex Lubotzky, Aner Shalev"
+title = "Counting arithmetic lattices and surfaces"
+year = 2008
+arxiv = "0811.2482v2"
+locator_scheme = "section"
+locator = "§§2–5"
+url = "https://arxiv.org/abs/0811.2482v2"
+fetched_from = "https://arxiv.org/pdf/0811.2482v2"
+fetched_at = "2026-11-09T03:59:24Z"
+sha256 = "2d00ba360842be031f0d3db7b1c8039ab3f9ec7b14161bf7fbae5d663becb95d"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-09"
+version_note = "arXiv v2"
+cited_for = ["1.4"]
+
+[[source]]
+id = "baderfurman2021"
+authors = "Uri Bader, Alex Furman"
+title = "Boundaries, rigidity of representations, and Lyapunov exponents"
+year = 2014
+arxiv = "1404.5107"
+locator_scheme = "theorem"
+locator = "Definition 2.3, Theorem 2.5, Lemma 2.6, Theorem 3.2, Lemma 4.2"
+url = "https://arxiv.org/abs/1404.5107"
+fetched_from = "https://arxiv.org/pdf/1404.5107"
+fetched_at = "2026-11-09T03:59:42Z"
+sha256 = "6c10dd011175e70671d0b27457d255a8bc378633944273d5f59c186e0101f741"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-09"
+version_note = "arXiv, latest version"
+cited_for = ["2.2"]
+
+[[source]]
+id = "voight2021"
+authors = "John Voight"
+title = "Quaternion Algebras (Graduate Texts in Mathematics 288)"
+year = 2021
+locator_scheme = "theorem"
+locator = "Theorem 33.5.5; Proposition 38.3.8; Main Theorem 38.4.3; Theorem 39.1.2; Main Theorem 39.1.8"
+url = "https://jvoight.github.io/quat-book.pdf"
+fetched_from = "https://jvoight.github.io/quat-book.pdf"
+fetched_at = "2026-11-09T04:01:24Z"
+sha256 = "a9316b834dbd500c52cd3a981c3205c9f4145b217042b213d23f696aee84b0f0"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-09"
+version_note = "author edition v1.0.7u (open access); its numbering may differ slightly from the printed edition, and locators refer to this edition"
+cited_for = ["1.2"]
+
+[[source]]
+id = "borel1981"
+authors = "Armand Borel"
+title = "Commensurability classes and volumes of hyperbolic 3-manifolds"
+year = 1981
+locator_scheme = "section"
+locator = "7.1, Theorem 7.3, Lemma 8.1, Theorem 8.2"
+url = "http://www.numdam.org/item/ASNSP_1981_4_8_1_1_0/"
+fetched_from = "https://www.numdam.org/item/ASNSP_1981_4_8_1_1_0.pdf"
+fetched_at = "2026-11-09T04:03:20Z"
+sha256 = "60440d00c6a09858a00ec119f521136e0d04495933923288ca111a1beb9af87b"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-09"
+cited_for = ["1.4"]
+
+[[source]]
+id = "odlyzko1976tables"
+authors = "Andrew M. Odlyzko"
+title = "Discriminant bounds (unpublished tables, November 29, 1976)"
+year = 1976
+locator_scheme = "page"
+locator = "Table 2 and Table 4"
+url = "https://www-users.cse.umn.edu/~odlyzko/unpublished/discr.bound.table4"
+fetched_from = "https://www-users.cse.umn.edu/~odlyzko/unpublished/discr.bound.table4"
+fetched_at = "2026-11-09T04:03:47Z"
+sha256 = "4c63fd3e3b2a0954044f7adb5fa28ef15acc821cf3e112f1039ca1b89250d00f"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-09"
+cited_for = ["1.5"]
