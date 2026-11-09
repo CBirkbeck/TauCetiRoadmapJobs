@@ -280,6 +280,7 @@ OrdinaryAutomorphicFormsAndModularityLiftingPartII
 ModularityAndLanglandsExtensionsPartII
 GSp4NonregularModularityLifting
 EllipticModularityEffectiveComparisons
+FuchsianOrbifolds
 TeichmullerGeometry
 QuasiregularMaps
 PositiveMass
