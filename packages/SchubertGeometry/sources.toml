@@ -284,3 +284,22 @@ licence_class = "none"
 status = "uncertified"
 version_note = "paywalled; cited only through Ramanathan1987, by its locator without the text"
 cited_for = ["5.1"]
+
+[[source]]
+id = "LRPT2006"
+authors = "Niels Lauritzen, Ulf Raben-Pedersen, Jesper Funch Thomsen"
+title = "Global F-regularity of Schubert varieties with applications to D-modules"
+year = 2004
+venue = "J. Amer. Math. Soc. 19 (2006), 345-355"
+arxiv = "math/0402052v3"
+locator_scheme = "theorem"
+locator = "Theorem 2.2"
+url = "https://arxiv.org/abs/math/0402052v3"
+fetched_from = "https://arxiv.org/pdf/math/0402052v3"
+fetched_at = "2026-11-09T09:49:21Z"
+sha256 = "098873de8f7b1258c1b5b1de7044f523735e24a420b6e4948572ea46c19ab68e"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-09"
+version_note = "arXiv v3"
+cited_for = ["5.6"]
