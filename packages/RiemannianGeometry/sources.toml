@@ -242,3 +242,23 @@ status = "certified"
 accessed = "2026-11-09"
 version_note = "mathnet.ru abstract page (statement read there); the full-text PDF on mathnet.ru timed out at the fetch date, so no theorem number is cited"
 cited_for = ["R4.9 three simple closed geodesics (three_simple_closed_geodesics)"]
+
+[[source]]
+id = "petersen-wink-bochner"
+authors = "Peter Petersen, Matthias Wink"
+title = "New Curvature Conditions for the Bochner Technique"
+year = 2019
+venue = "Invent. Math. 224, 33-54 (2021)"
+doi = "10.1007/s00222-020-01003-3"
+arxiv = "1908.09958v4"
+locator_scheme = "theorem"
+locator = "Theorem A and Corollary, p. 1"
+url = "https://arxiv.org/abs/1908.09958v4"
+fetched_from = "https://arxiv.org/pdf/1908.09958v4"
+fetched_at = "2026-11-09T10:54:07Z"
+sha256 = "3eed744917a5e365a1d725fae2f3529d8f955490ef747736e8e68306fa6c65d3"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-09"
+version_note = "arXiv v4"
+cited_for = ["R7.7"]
