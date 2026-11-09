@@ -1,0 +1,13 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-QuadraticFormInvariants~50",
+  "head": "37bd865a0fcf5ca168eb178125b7427ff753f141",
+  "pr": 1411,
+  "folder": "QuadraticFormInvariants",
+  "date": "2026-11-09",
+  "findings": 10,
+  "blocking": 1,
+  "notes": "Full review of the folder at 37bd865. Worker gate passes; my re-run reports outside-folder=4 for the PR's own ClassFieldTheory and IntegralLattices files only (the build was not reached; Suggested.lean elaborated directly: lake env lean exit 0, no warnings, no sorry). depcheck: 236 roadmaps, 2271 edges, 0 problems. 15 declarations #check'ed: types match signatures.md and the README except the omitted tr (R01). 689 of 690 README library names #check at the pins (Ideal.Quotient fails); 172 Tau Ceti paths exist. Seeded sample: Kahn Lemme II.2.1 (p. 241), Th. 2, Prop. II.3.5 and Serre CMH Th. 1' (p. 668) read and match; EKM 98.E read; the Lam, Gille-Szamuely, Serre, O'Meara locators are uncertified and checked by computation instead. 29-row adversarial table with values. Padding probe: hilbertSymbol_unramified and the sign-form product formula close in one tactic; the nine-alias deletion tested on a scratch copy (elaborates clean). Findings: R01 P2 missing tr hypothesis; R02-R10 P3 (unconsumed re-exports, dropped signedDiscr/localHasse_congr, false IntegralLattices consumer claim, two Checks, four misdescribed declarations or names, six missing locators, no order against #1797/#1187, Completed/LocalGaloisGroups edit, manifest/References gaps)."
+ }
+}
