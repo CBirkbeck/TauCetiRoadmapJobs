@@ -1,0 +1,4 @@
+{"review": {"status": "accepted", "reviewer": "independent-review-PRREVIEW-PseudolineArrangementsAndOrientedMatroids~19",
+            "head": "066156528708dc2bd176015ba31f37dcb4ba312d", "pr": 1523, "folder": "PseudolineArrangementsAndOrientedMatroids", "date": "2026-11-09",
+            "findings": 0, "blocking": 0,
+            "notes": "incremental re-review of 7 changed lines since d0c914d. Previous R01 (folder-80 References entry) repaired; the new entry checked against the Montpellier scan (cover: title, 72 pages, from 1981; printed pp. 20, 22, 24 the classification of 3.8 (b), p. 28 the listing of 3.8 (c)). Gate: all counters 0 and build 0 on the worker's run; depcheck with the candidate order 0 problems, no UPWARD or CYCLE. Suggested.lean unchanged, elaborates with 51 sorry warnings and no error. Nothing changed outside the folder. Adversarial table carried from the previous report, with a row for the changed passage. Seeded sample lies in untouched text."}}
