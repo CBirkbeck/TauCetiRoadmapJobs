@@ -302,3 +302,40 @@ locator = "the chapter on Fourier coefficients"
 licence_class = "none"
 status = "waived"
 resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/5469#issuecomment-6632666998"
+
+[[source]]
+id = "oda1981"
+authors = "Takayuki Oda"
+title = "On the poles of Andrianov L-functions"
+year = 1981
+venue = "Mathematische Annalen 256"
+doi = "10.1007/BF01679701"
+locator_scheme = "page"
+locator = "pp. 323–340"
+url = "https://gdz.sub.uni-goettingen.de/download/pdf/PPN235181684_0256/LOG_0055.pdf"
+fetched_from = "https://gdz.sub.uni-goettingen.de/download/pdf/PPN235181684_0256/LOG_0055.pdf"
+fetched_at = "2026-11-09T07:47:55Z"
+sha256 = "5eeae11e5599f7715e54ea48f5fad01dccc99828c5c4346aa10cda87b34533ae"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-09"
+cited_for = ["9.5"]
+
+[[source]]
+id = "evdokimov1980"
+authors = "S. A. Evdokimov"
+title = "A characterization of the Maass space of Siegel cusp forms of second degree"
+year = 1980
+venue = "Mat. Sb. (N.S.) 112(154) (1980), 133–142; Math. USSR-Sb. 40 (1981), 125–133"
+doi = "10.1070/SM1981v040n01ABEH001792"
+locator_scheme = "page"
+locator = "pp. 125–133"
+url = "https://eudml.org/doc/71186"
+fetched_from = "https://eudml.org/doc/71186"
+fetched_at = "2026-11-09T07:50:14Z"
+sha256 = "f8bd93eb61ce0fc14b4cf9ea65d58a99c25ba88b2d57e1d2117a3d7cd803bb99"
+licence_class = "open-repository"
+status = "uncertified"
+version_note = "The EuDML page is the record of the Russian original (Mat. Sb. 112(154), 133–142) without the text; the English text at Math-Net.Ru (DOI landing page) was unreachable; cited by its locator in the translation"
+accessed = "2026-11-09"
+cited_for = ["9.5"]
