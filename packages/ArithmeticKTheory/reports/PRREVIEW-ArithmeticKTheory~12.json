@@ -1,0 +1,4 @@
+{"review": {"status": "needs_changes", "reviewer": "independent-review-PRREVIEW-ArithmeticKTheory~12",
+            "head": "51e8c9f2764851ed5db01d6e3dbef73dcc9562f7", "pr": 1418, "folder": "ArithmeticKTheory", "date": "2026-11-09",
+            "findings": 1, "blocking": 0,
+            "notes": "incremental re-review of 45 changed lines since e79082a: both previous findings (Solomon-Tits m=2 wording; §2.4 even injectivity from n=2) repaired; one new P3: the §2.4 Needs gloss cites KTheoryFiniteLocalFields §§1.1-1.6 for K_n(F_q)=0 at even n, which GeneralAlgebraicKTheory §13.8c owns (KTFLF #1281 imports it there; AKT's GAKT contract lacks §13.8c). Gate rerun OK, depcheck 0 problems, lake env lean 4 sorry warnings, #check signatures unchanged; K-book IV.1.13 p.269, III.6.5.1 p.236, V.6.6 p.409 verified; K2SymbolsBrauer §§12.1-12.3 at #1302 resolved; §2.4 and §3.2 m=2 recomputed (Z, Z[1/p], F_q[t], F_2^2, F_2^3, empty set)."}}
