@@ -627,3 +627,36 @@ status = "certified"
 accessed = "2026-11-09"
 version_note = "arXiv v2"
 cited_for = ["7.2"]
+
+[[source]]
+id = "zastrow1998"
+authors = "Andreas Zastrow"
+title = "On the (non)-coincidence of Milnor-Thurston homology theory with singular homology theory"
+year = 1998
+venue = "Pacific Journal of Mathematics 186"
+doi = "10.2140/pjm.1998.186.369"
+locator_scheme = "theorem"
+locator = "Theorem 3.4"
+url = "https://msp.org/pjm/1998/186-2/pjm-v186-n2-p08-s.pdf"
+fetched_from = "https://msp.org/pjm/1998/186-2/pjm-v186-n2-p08-s.pdf"
+fetched_at = "2026-11-09T02:26:16Z"
+sha256 = "7d6e0d6bef505180e5c8df37b9d9c93511f87f742e2fa2fe19fe82593b45969f"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-11-09"
+cited_for = ["7.2"]
+
+[[source]]
+id = "monod2001"
+authors = "Nicolas Monod"
+title = "Continuous Bounded Cohomology of Locally Compact Groups"
+year = 2001
+venue = "Lecture Notes in Mathematics 1758"
+doi = "10.1007/b80626"
+locator_scheme = "theorem"
+locator = "Theorem 7.4.5"
+url = "https://doi.org/10.1007/b80626"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["7.2"]
