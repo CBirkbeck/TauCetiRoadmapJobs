@@ -163,3 +163,46 @@ status = "certified"
 accessed = "2026-11-07"
 version_note = "authors' copy on N. Karpenko's page; the numbering of chapters and sections is that of the published book"
 cited_for = ["Layers 0–4"]
+
+[[source]]
+id = "lam2005"
+authors = "T. Y. Lam"
+title = "Introduction to Quadratic Forms over Fields"
+year = 2005
+venue = "Graduate Studies in Mathematics 67, American Mathematical Society"
+doi = "10.1090/gsm/067"
+locator_scheme = "theorem"
+locator = "I.2.3, I.3.4–3.5, I.4.1–4.9, I.5.1–5.2, I.7, II.1, II.3, III.2.2, III.2.7, III.2.11, III.4.2, V.3.4, V.3.12, V.3.16–3.21, VII §1, Ch. X; pp. 119–120"
+url = "https://doi.org/10.1090/gsm/067"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["Layers 0–5", "Layer 8", "Layer 9"]
+
+[[source]]
+id = "gilleszamuely2017"
+authors = "P. Gille, T. Szamuely"
+title = "Central Simple Algebras and Galois Cohomology"
+year = 2017
+venue = "Cambridge Studies in Advanced Mathematics 165, Cambridge University Press, 2nd ed."
+doi = "10.1017/9781316661277"
+locator_scheme = "theorem"
+locator = "1.1.9, 1.5.2, 4.4, 4.7"
+url = "https://doi.org/10.1017/9781316661277"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text; numbering of the second edition"
+cited_for = ["Layer 2", "Layer 5", "Layer 7"]
+
+[[source]]
+id = "delzant1962"
+authors = "A. Delzant"
+title = "Définition des classes de Stiefel-Whitney d'un module quadratique sur un corps de caractéristique différente de 2"
+year = 1962
+venue = "C. R. Acad. Sci. Paris 255, 1366–1368"
+locator_scheme = "page"
+locator = "1366–1368"
+licence_class = "none"
+status = "uncertified"
+version_note = "no legal open copy reachable through the sources service (the Gallica scan of the Comptes rendus answers HTTP 403); cited by its locator without the text, as Kahn 1984 II.1.3 restates it"
+cited_for = ["Conventions", "Layer 8"]
