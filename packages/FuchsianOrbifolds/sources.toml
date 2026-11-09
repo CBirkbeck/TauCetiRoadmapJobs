@@ -48,3 +48,78 @@ licence_class = "none"
 status = "uncertified"
 version_note = "paywalled (JSTOR); cited by its page range without the text; the statement is read in Martin2013, Theorem 2.1"
 cited_for = ["4a"]
+
+[[source]]
+id = "Forster1981"
+authors = "Otto Forster"
+title = "Lectures on Riemann Surfaces"
+year = 1981
+venue = "Graduate Texts in Mathematics"
+doi = "10.1007/978-1-4612-5961-9"
+locator_scheme = "section"
+locator = "§17"
+url = "https://doi.org/10.1007/978-1-4612-5961-9"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["5.3"]
+
+[[source]]
+id = "FarkasKra1992"
+authors = "Hershel M. Farkas, Irwin Kra"
+title = "Riemann Surfaces"
+year = 1992
+venue = "Graduate Texts in Mathematics"
+doi = "10.1007/978-1-4612-2034-3"
+locator_scheme = "section"
+locator = "Chapter I §§4-5"
+url = "https://doi.org/10.1007/978-1-4612-2034-3"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["1"]
+
+[[source]]
+id = "DiamondShurman2005"
+authors = "Fred Diamond, Jerry Shurman"
+title = "A First Course in Modular Forms"
+year = 2005
+venue = "Graduate Texts in Mathematics"
+doi = "10.1007/978-0-387-27226-9"
+locator_scheme = "section"
+locator = "§§2.3-2.5"
+url = "https://doi.org/10.1007/978-0-387-27226-9"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["3"]
+
+[[source]]
+id = "Serre1973"
+authors = "Jean-Pierre Serre"
+title = "A Course in Arithmetic"
+year = 1973
+venue = "Graduate Texts in Mathematics"
+doi = "10.1007/978-1-4684-9884-4"
+locator_scheme = "chapter"
+locator = "Chapter VII"
+url = "https://doi.org/10.1007/978-1-4684-9884-4"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["6"]
+
+[[source]]
+id = "Stillwell1992"
+authors = "John Stillwell"
+title = "Geometry of Surfaces"
+year = 1992
+venue = "Universitext"
+doi = "10.1007/978-1-4612-0929-4"
+locator_scheme = "chapter"
+locator = "Chapter 5"
+url = "https://doi.org/10.1007/978-1-4612-0929-4"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["2"]
