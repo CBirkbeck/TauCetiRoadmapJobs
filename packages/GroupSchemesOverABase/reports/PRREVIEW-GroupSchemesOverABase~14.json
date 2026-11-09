@@ -1,0 +1,13 @@
+{
+  "review": {
+    "status": "needs_changes",
+    "reviewer": "independent-review-PRREVIEW-GroupSchemesOverABase~14",
+    "head": "6417bcc4bb34e6ae4facb7209b541d71b133e943",
+    "pr": 1522,
+    "folder": "GroupSchemesOverABase",
+    "date": "2026-11-09",
+    "findings": 1,
+    "blocking": 1,
+    "notes": "incremental re-review of 3 changed lines since 9265182. Previous R02 repaired (the description names ReductiveGroups #1676, with #1797/#1808 sharing and #1332 differing in numbering; headline list 4.5-4.9). Previous R01 not repaired (R01, P2): the added bullet says PurityForFlatCohomology 7.12a-e consume 0.1, 1.1-1.4, 2.1-2.3, 2.7, but at #1840 (643f30e) those sections still own D_S(M), multiplicative type, tori, X*, subgroups, quotients and the largest subtorus (lines 206-210, 3308-3310), cite this roadmap 0 times and also restate 1.5; the project's dropped-names list names GroupSchemesOverABase, so #1840 cannot cite it. Repair is route (a) (a human removes the dropped name, #1840 cites here, bullet adds 1.5) or route (b) (cede 1.1-1.5, 2.1-2.3, 2.7 to PurityForFlatCohomology; depcheck probe: moved #67 -> #219, 0 problems). Checked: worker's gate OK; my rerun with the candidate order and --build OK (plain ORDER.txt: NOT IN ORDER, expected); depcheck --movable 0 problems; lake env lean 25 sorry warnings, 33 #check types, Suggested.lean and pins unchanged; outside-folder diff empty; sample in the change: 0.1 Mathlib names at the pin, 2.3 (sga3-10 X 5.1, 5.6, 5.7, 5.9), 2.7 (sga3-9 IX 2.7, 2.11); 7.12a/b vs 1.1-1.5 term by term; ReductiveGroups ids at main, #1676, #1332. Remarks on untouched text: #852 (e816215) now consumes 0.2, 4.6, 4.8 (cycle with 4.2's Needs on its 2.3; upward edge is #852's); #1017 and #1491 consume 6.2 and 4.5 and are not under Downstream consumers. Adversarial table: rows 1-41 carried from r13, 42-47 computed."
+  }
+}
