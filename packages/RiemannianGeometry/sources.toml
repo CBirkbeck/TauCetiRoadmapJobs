@@ -262,3 +262,21 @@ status = "certified"
 accessed = "2026-11-09"
 version_note = "arXiv v4"
 cited_for = ["R7.7"]
+
+[[source]]
+id = "kwong-volume-comparison"
+authors = "Kwok-Kun Kwong"
+title = "Quantitative comparison theorems in Riemannian and Kähler geometry"
+year = 2019
+arxiv = "1904.08595v1"
+locator_scheme = "theorem"
+locator = "Theorem 10(2), p. 27"
+url = "https://arxiv.org/abs/1904.08595v1"
+fetched_from = "https://arxiv.org/pdf/1904.08595v1"
+fetched_at = "2026-11-09T13:00:05Z"
+sha256 = "ebce99cd191a871e15c23613838b731c9658f0e98ca1a62bb1bfeecf01b95f2d"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-09"
+version_note = "arXiv v1"
+cited_for = ["R4.1 Günther volume comparison (guenther)"]
