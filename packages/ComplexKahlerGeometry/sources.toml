@@ -213,3 +213,18 @@ licence_class = "institutional"
 status = "certified"
 accessed = "2026-11-08"
 cited_for = ["K5a.DistributionLocalStructure"]
+
+[[source]]
+id = "bott-tu-forms"
+authors = "Raoul Bott, Loring W. Tu"
+title = "Differential Forms in Algebraic Topology"
+year = 1982
+venue = "Graduate Texts in Mathematics"
+doi = "10.1007/978-1-4757-3951-0"
+locator_scheme = "section"
+locator = "§6, Relative de Rham theory, p. 78"
+url = "https://doi.org/10.1007/978-1-4757-3951-0"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["K6.1.RelativeIntegration"]
