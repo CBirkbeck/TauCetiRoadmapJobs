@@ -1,0 +1,4 @@
+{"review": {"status": "needs_changes", "reviewer": "independent-review-PRREVIEW-TangentialBordism~18",
+            "head": "ef08ea4cc1426ba65490e04aeb1352f11e26dfbc", "pr": 942, "folder": "TangentialBordism", "date": "2026-11-09",
+            "findings": 2, "blocking": 0,
+            "notes": "incremental re-review of 60 changed lines since be5e94d: ~17 R01-R03 repaired (B3.3 ownership of eta^3=12nu with no earlier owner, Beaudry-Campbell Thm 5.1.1/Cor 5.1.2 p.42, Remark 3.2.2 p.18, Figure 31 p.41 verified at the arXiv v2 text, B4.1-B4.2/B4.4-B4.8/B5.4 closure contains none of B3.3/B3.4/B5.5); ~17 R04/R05 not repaired and carried as 2 P3 (description names #1652 but not #1663 for AlgebraicTopology 8.13 nor #886 for DifferentialGeometry 5.5b; README/Lean need no edit). Gate rerun OK, depcheck 238 roadmaps 0 problems, Suggested.lean byte-identical to be5e94d and elaborates with 4 sorry warnings; sample targets all outside the diff."}}
