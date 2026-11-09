@@ -228,3 +228,18 @@ licence_class = "none"
 status = "uncertified"
 version_note = "paywalled; cited by its locator without the text"
 cited_for = ["K6.1.RelativeIntegration"]
+
+[[source]]
+id = "koszul-malgrange"
+authors = "J.-L. Koszul, B. Malgrange"
+title = "Sur certaines structures fibrées complexes"
+year = 1958
+venue = "Archiv der Mathematik 9"
+doi = "10.1007/bf02287068"
+locator_scheme = "page"
+locator = "pp. 102–109"
+url = "https://doi.org/10.1007/bf02287068"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["4.2"]
