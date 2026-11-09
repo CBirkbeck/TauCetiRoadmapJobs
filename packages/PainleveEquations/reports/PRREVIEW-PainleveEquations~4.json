@@ -1,0 +1,4 @@
+{"review": {"status": "accepted", "reviewer": "independent-review-PRREVIEW-PainleveEquations~4",
+            "head": "693f9f75b0e209291cb1429da3d4af24986233e1", "pr": 1955, "folder": "PainleveEquations", "date": "2026-11-09",
+            "findings": 0, "blocking": 0,
+            "notes": "incremental re-review of 27 changed lines since 2995b1c: R01-R03 repaired; gap:relative-hilbert-mumford checked against GHH15 (arXiv 1404.7267v4) Thm 3.3, Cor 1.1, Def 3.1, Prop 2.6, 2.7 with the sign convention computed on SL2 acting on P1; section 4.3 limit/weight/slope computations and Check 1073; section 3.6 Checks computed; CCPII C-1.1/C-1.2 resolved at #848 head db79c46; I23 Thm 5.1 read (SIGMA p. 21); gate OK with candidate order, depcheck 0 problems; lake env lean six sorry warnings only; Suggested.lean unchanged."}}
