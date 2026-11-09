@@ -130,3 +130,21 @@ licence_class = "none"
 status = "uncertified"
 version_note = "paywalled; cited by its locator without the text"
 cited_for = ["2.1"]
+
+[[source]]
+id = "takeuchi1983"
+authors = "Kisao Takeuchi"
+title = "Arithmetic Fuchsian groups with signature (1;e)"
+year = 1983
+venue = "Journal of the Mathematical Society of Japan 35 (1983), 381-407"
+doi = "10.2969/jmsj/03530381"
+locator_scheme = "theorem"
+locator = "Theorem 2.1"
+url = "https://www.jstage.jst.go.jp/article/jmath1948/35/3/35_3_381/_pdf/-char/en"
+fetched_from = "https://www.jstage.jst.go.jp/article/jmath1948/35/3/35_3_381/_pdf/-char/en"
+fetched_at = "2026-11-09T07:34:59Z"
+sha256 = "6c4f44cf6abc2b75d5433f594d2d9b1d4407a3fea934c5149c13fb62d2f6223f"
+licence_class = "institutional"
+status = "certified"
+accessed = "2026-11-09"
+cited_for = ["1.4"]
