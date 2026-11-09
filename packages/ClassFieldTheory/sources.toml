@@ -138,3 +138,18 @@ status = "certified"
 accessed = "2026-11-09"
 version_note = "arXiv:1210.7615v4 (31 July 2014); theorem and page numbering refer to this version"
 cited_for = ["Layer 5"]
+
+[[source]]
+id = "engler-prestel"
+authors = "Antonio J. Engler, Alexander Prestel"
+title = "Valued Fields"
+year = 2005
+venue = "Springer Monographs in Mathematics"
+doi = "10.1007/3-540-30035-X"
+locator_scheme = "theorem"
+locator = "Theorem 4.4.1"
+url = "https://doi.org/10.1007/3-540-30035-X"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["Layer 5"]
