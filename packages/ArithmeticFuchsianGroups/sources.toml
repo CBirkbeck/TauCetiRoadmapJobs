@@ -101,3 +101,32 @@ licence_class = "author-page"
 status = "certified"
 accessed = "2026-11-09"
 cited_for = ["1.5"]
+
+[[source]]
+id = "maclachlanreid2003"
+authors = "Colin Maclachlan, Alan W. Reid"
+title = "The Arithmetic of Hyperbolic 3-Manifolds"
+year = 2003
+venue = "Graduate Texts in Mathematics"
+doi = "10.1007/978-1-4757-6720-9"
+locator_scheme = "theorem"
+locator = "Theorem 11.2.1; Theorem 11.3.1"
+url = "https://doi.org/10.1007/978-1-4757-6720-9"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["1.3"]
+
+[[source]]
+id = "margulis1991"
+authors = "Gregori Aleksandrovitch Margulis"
+title = "Discrete Subgroups of Semisimple Lie Groups"
+year = 1991
+doi = "10.1007/978-3-642-51445-6"
+locator_scheme = "chapter"
+locator = "Chapter IX"
+url = "https://doi.org/10.1007/978-3-642-51445-6"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["2.1"]
