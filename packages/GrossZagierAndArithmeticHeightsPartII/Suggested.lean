@@ -20,7 +20,7 @@ The headline theorems are:
 * the modularity of the CM intersection series over `ℚ` (Zhang, §9.1 and Corollary 10.4;
   README §12.7);
 * the arithmetic fundamental lemma for strongly regular semisimple elements over `ℚ_p` with
-  `p ≥ n` (Zhang, Theorem 15.1; README §14.6).
+  `p ≥ n` (Zhang, Theorem 15.1; README §14.5).
 
 None of them is statable at the pins, so this file states no theorem:
 

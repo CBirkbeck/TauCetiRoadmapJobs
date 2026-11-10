@@ -38,7 +38,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-26"
 version_note = "arXiv v3; section, theorem and equation numbers agree with the published version"
-cited_for = ["9.1-9.7", "10.1", "11.1-11.5", "12.1-12.9", "14.1-14.7"]
+cited_for = ["9.1-9.7", "10.1", "11.1-11.5", "12.1-12.9", "14.1-14.6"]
 
 [[source]]
 id = "LRZ"
@@ -212,7 +212,7 @@ title = "Relative unitary RZ-spaces and the Arithmetic Fundamental Lemma"
 year = 2016
 arxiv = "1611.06520v2"
 locator_scheme = "theorem"
-locator = "Corollary 9.9"
+locator = "Corollary 9.9 (pp. 39-40); Definition 1.7 (p. 4); Theorem 1.12 (p. 5)"
 url = "https://arxiv.org/abs/1611.06520v2"
 fetched_from = "https://arxiv.org/pdf/1611.06520v2"
 fetched_at = "2026-11-10T21:06:15Z"
@@ -220,17 +220,17 @@ sha256 = "1df1463952e54d98a6fe4c63ae04ec46ae03dc54648d841a53f3aae64af4fb97"
 licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-10"
-version_note = "arXiv v2"
+version_note = "arXiv v2; page locators use its pagination"
 cited_for = ["9.7"]
 
 [[source]]
 id = "GS19"
-authors = "Luis E. Garcia"
+authors = "Luis E. Garcia, Siddarth Sankaran"
 title = "Green forms and the arithmetic Siegel-Weil formula"
 year = 2019
 arxiv = "1808.09313v1"
 locator_scheme = "equation"
-locator = "(1.19)"
+locator = "Theorem 1.1.2 and (1.1.19), p. 5; Theorem 1.1.1, p. 4; Example 2.6.3, p. 22"
 url = "https://arxiv.org/abs/1808.09313v1"
 fetched_from = "https://arxiv.org/pdf/1808.09313v1"
 fetched_at = "2026-11-10T21:06:40Z"
@@ -238,7 +238,7 @@ sha256 = "f5c26a130c329111ee1e8844116701f09f0a98e5e5c9f1a55c87ac53f40053f9"
 licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-10"
-version_note = "arXiv v1"
+version_note = "arXiv v1 (2018), 86 pages; theorem and equation numbers and pages are those of v1, where the equation LZ cites as (1.19) is numbered (1.1.19)"
 cited_for = ["13.7"]
 
 [[source]]
@@ -246,8 +246,10 @@ id = "Liu11a"
 authors = "Yifeng Liu"
 title = "Arithmetic theta lifting and L-derivatives for unitary groups, I"
 year = 2011
+venue = "Algebra & Number Theory 5 (2011), no. 7, 849-921"
+doi = "10.2140/ant.2011.5.849"
 locator_scheme = "theorem"
-locator = "Proposition 4.5; Theorem 4.17"
+locator = "Proposition 4.5 (p. 889); Theorem 4.17 (p. 905)"
 url = "https://msp.org/ant/2011/5-7/ant-v5-n7-p01-p.pdf"
 fetched_from = "https://msp.org/ant/2011/5-7/ant-v5-n7-p01-p.pdf"
 fetched_at = "2026-11-10T21:07:15Z"
@@ -255,4 +257,24 @@ sha256 = "0f192ff6a6d62085a4eb122db8e9c45cf20b42e744eaf2a9ce9d26a67d6e7166"
 licence_class = "publisher-open"
 status = "certified"
 accessed = "2026-11-10"
+version_note = "publisher open copy; page locators are the printed journal pages"
 cited_for = ["13.7"]
+
+[[source]]
+id = "KR11"
+authors = "Stephen Kudla, Michael Rapoport"
+title = "Special cycles on unitary Shimura varieties I. Unramified local theory"
+year = 2011
+venue = "Inventiones Mathematicae 184 (2011)"
+arxiv = "0804.0600v2"
+locator_scheme = "theorem"
+locator = "Lemma 6.5 (p. 33); Definition 6.6 (p. 34); Proposition 8.1 (p. 36)"
+url = "https://arxiv.org/abs/0804.0600v2"
+fetched_from = "https://arxiv.org/pdf/0804.0600v2"
+fetched_at = "2026-11-10T22:38:41Z"
+sha256 = "cb1cfd648f1c628d1fbf8e9cf2ae0107d7fa6982c74f6d9f0dec2cd7b57de6d2"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-10"
+version_note = "arXiv v2 (2011), 51 pages; page locators use its pagination; written for F0 = Q_p"
+cited_for = ["1.3"]
