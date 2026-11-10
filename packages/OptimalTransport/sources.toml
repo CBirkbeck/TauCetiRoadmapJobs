@@ -287,3 +287,125 @@ licence_class = "none"
 status = "uncertified"
 version_note = "paywalled; cited by its locator without the text"
 cited_for = ["9.4"]
+
+[[source]]
+id = "ags-rcd"
+authors = "Luigi Ambrosio, Nicola Gigli, Giuseppe Savaré"
+title = "Metric measure spaces with Riemannian Ricci curvature bounded from below"
+year = 2014
+arxiv = "1109.0222v2"
+locator_scheme = "theorem"
+locator = "Theorems 5.1, 6.2, 6.10, 6.11, 6.18, 6.20 and (6.1) (arXiv v2)"
+url = "https://arxiv.org/abs/1109.0222v2"
+fetched_from = "https://arxiv.org/pdf/1109.0222v2"
+fetched_at = "2026-11-10T06:30:12Z"
+sha256 = "1075f091b427c05f339866b6fdfd1822078c165b115925c6a25b65cff37235d2"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-10"
+version_note = "arXiv v2"
+cited_for = ["14.5", "14.7"]
+
+[[source]]
+id = "ags-calculus"
+authors = "Luigi Ambrosio, Nicola Gigli, Giuseppe Savaré"
+title = "Calculus and heat flow in metric measure spaces and applications to spaces with Ricci bounds from below"
+year = 2014
+arxiv = "1106.2090v4"
+locator_scheme = "theorem"
+locator = "Definition 7.1, (7.3), (7.5)-(7.7), Theorem 9.3 (arXiv v4)"
+url = "https://arxiv.org/abs/1106.2090v4"
+fetched_from = "https://arxiv.org/pdf/1106.2090v4"
+fetched_at = "2026-11-10T06:30:38Z"
+sha256 = "5fb29cb5305c325be256116b8c95235c9d424146e6d2e49bcbbe8975d770bf6d"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-10"
+version_note = "arXiv v4"
+cited_for = ["11.2", "14.7"]
+
+[[source]]
+id = "bmnn-zgw"
+authors = "Martin Bauer, Facundo Mémoli, Tom Needham, Mao Nishino"
+title = "The Z-Gromov-Wasserstein distance"
+year = 2025
+locator_scheme = "theorem"
+locator = "Theorem 29"
+url = "https://www.jmlr.org/papers/volume26/24-2189/24-2189.pdf"
+fetched_from = "https://www.jmlr.org/papers/volume26/24-2189/24-2189.pdf"
+fetched_at = "2026-11-10T06:30:57Z"
+sha256 = "8529d0e00f44c0c128179a7f1a75079b54a47606009e3f1024c05a5beb073f66"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-11-10"
+cited_for = ["15.4"]
+
+[[source]]
+id = "savare-self-improvement"
+authors = "Giuseppe Savaré"
+title = "Self-improvement of the Bakry-Émery condition and Wasserstein contraction of the heat flow in RCD(K,∞) metric measure spaces"
+year = 2014
+arxiv = "1304.0643"
+locator_scheme = "theorem"
+locator = "Corollary 4.3, Theorem 4.4 (arXiv v2)"
+url = "https://arxiv.org/abs/1304.0643"
+fetched_from = "https://arxiv.org/pdf/1304.0643"
+fetched_at = "2026-11-10T06:34:35Z"
+sha256 = "bfc7f67cf364012ff8bef5f5f538e20fbaca4e81f686e0c63a23d48a82757a52"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-10"
+version_note = "arXiv v2 read; theorem numbers from arXiv v2"
+cited_for = ["14.7"]
+
+[[source]]
+id = "lott-villani"
+authors = "John Lott, Cédric Villani"
+title = "Ricci curvature for metric-measure spaces via optimal transport"
+year = 2009
+arxiv = "math/0412127"
+locator_scheme = "theorem"
+locator = "Definition 0.10, Theorems 0.12 and 7.3 (arXiv v4)"
+url = "https://arxiv.org/abs/math/0412127"
+fetched_from = "https://arxiv.org/pdf/math/0412127"
+fetched_at = "2026-11-10T06:35:26Z"
+sha256 = "71d5a3dfb55ecdb84448372cf034c515211e5ef8592735c10a50391d50c76fb2"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-10"
+version_note = "arXiv v4 read; theorem numbers from arXiv v4"
+cited_for = ["14.6"]
+
+[[source]]
+id = "gms-convergence"
+authors = "Nicola Gigli, Andrea Mondino, Giuseppe Savaré"
+title = "Convergence of pointed non-compact metric measure spaces and stability of Ricci curvature bounds and heat flows"
+year = 2015
+arxiv = "1311.4907"
+locator_scheme = "theorem"
+locator = "Theorems 5.7, 7.2, 7.7 (arXiv v1)"
+url = "https://arxiv.org/abs/1311.4907"
+fetched_from = "https://arxiv.org/pdf/1311.4907"
+fetched_at = "2026-11-10T06:38:15Z"
+sha256 = "249a17bc85547356a93a1005f20850b0a4e9a1af7b6ded87116a58ac6bd23a9f"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-10"
+version_note = "arXiv v1 read; theorem numbers from arXiv v1"
+cited_for = ["14.5"]
+
+[[source]]
+id = "mccann-polar"
+authors = "Robert J. McCann"
+title = "Polar factorization of maps on Riemannian manifolds"
+year = 2001
+locator_scheme = "theorem"
+locator = "Theorems 8, 9 and 11, Corollary 10"
+url = "https://www.math.toronto.edu/mccann/papers/polar.pdf"
+fetched_from = "https://www.math.toronto.edu/mccann/papers/polar.pdf"
+fetched_at = "2026-11-10T06:48:14Z"
+sha256 = "8ee9960936f148fcbd2c58500ba51f2f5af510d861d5bcf2ad97ffb07da0ac61"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-10"
+cited_for = ["7.3", "7.4"]
