@@ -240,7 +240,6 @@ id = "sga3-vi-a"
 authors = "Michel Demazure, Alexander Grothendieck (eds.); re-edition by Philippe Gille, Patrick Polo"
 title = "Schémas en groupes (SGA 3), Tome I, Exposé VI_A: Généralités sur les groupes algébriques"
 year = 2011
-version_note = "Re-edition (Documents Mathématiques 7, Société Mathématique de France), file compiled 13 October 2024 from the editor's page; Théorème 3.2 is on printed page 313, and its items (ii′) and the detailed (iv) are editorial additions marked N.D.E."
 locator_scheme = "theorem"
 locator = "Exposé VI_A, Théorème 3.2"
 url = "https://webusers.imj-prg.fr/~patrick.polo/SGA3/Exp6A-13oct24.pdf"
@@ -250,4 +249,53 @@ sha256 = "6c8795572d1fc3b21bd02d24b1bfb20a8fb447475702c2674c96939b1eb69582"
 licence_class = "author-page"
 status = "certified"
 accessed = "2026-11-08"
+version_note = "Re-edition (Documents Mathématiques 7, Société Mathématique de France), file compiled 13 October 2024 from the editor's page; Théorème 3.2 is on printed page 313, and its items (ii′) and the detailed (iv) are editorial additions marked N.D.E."
 cited_for = ["the quotient of a group of finite type over a field by a closed subgroup is a separated scheme of finite type, smooth when the group is, with components of dimension dim G − dim H, the projection an fppf torsor (Théorème 3.2 (i), (ii), (ii′), (iv)(a′)–(c)): the supplier contract gap:homogeneous-quotient-scheme of target 7.3"]
+
+[[source]]
+id = "stacks-descent"
+authors = "The Stacks Project Authors"
+title = "The Stacks Project, Descent"
+year = 2026
+locator_scheme = "tag"
+locator = "Tag 034E"
+url = "https://stacks.math.columbia.edu/tag/034E"
+fetched_from = "https://stacks.math.columbia.edu/download/descent.pdf"
+fetched_at = "2026-11-10T19:58:31Z"
+sha256 = "28e718bac216bb7c4584e9edb1d25d6420ee19a6cd536742c58599242ff8cad4"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-10"
+cited_for = ["reducedness of schemes is local in the smooth topology (Lemma 35.18.1, Tag 034E) and descends along flat surjective morphisms (Lemma 35.19.1, Tag 06QM); regularity is smooth local (Lemma 35.18.4, Tag 036D, the statement of Tau Ceti's IsRegular.of_smooth): the supplier contract gap:reduced-regular-smooth-local of targets 0.1, 0.5, 3.1, 3.4"]
+
+[[source]]
+id = "stacks-spaces-descent"
+authors = "The Stacks Project Authors"
+title = "The Stacks Project, Descent and Algebraic Spaces"
+year = 2026
+locator_scheme = "tag"
+locator = "Tag 06MI"
+url = "https://stacks.math.columbia.edu/tag/06MI"
+fetched_from = "https://stacks.math.columbia.edu/download/spaces-descent.pdf"
+fetched_at = "2026-11-10T19:58:56Z"
+sha256 = "5c8408a876c17c258f78ac2cc8241662a4b089a8d33f787eefbdf27c0d782335"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-10"
+cited_for = ["reducedness of algebraic spaces descends along flat surjective morphisms (Lemma 74.9.2, Tag 06MI) and ascends and descends along smooth ones (Lemma 74.9.5, Tag 0GB3); regularity descends along flat surjective locally finitely presented morphisms (Lemma 74.9.4, Tag 06MK): the supplier contract gap:reduced-regular-smooth-local of targets 0.1, 0.5, 3.1, 3.4"]
+
+[[source]]
+id = "stacks-spaces-over-fields"
+authors = "The Stacks Project Authors"
+title = "The Stacks Project, Algebraic Spaces over Fields"
+year = 2026
+locator_scheme = "tag"
+locator = "Tag 06M1"
+url = "https://stacks.math.columbia.edu/tag/06M1"
+fetched_from = "https://stacks.math.columbia.edu/download/spaces-over-fields.pdf"
+fetched_at = "2026-11-10T19:58:58Z"
+sha256 = "b161e9ea6d579efd135abdb27022915d33be27a0fccf7a92376dfc58a9af6eb1"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-10"
+cited_for = ["a smooth algebraic space over a field is regular (Lemma 72.16.1, Tag 06M1): the supplier contract gap:reduced-regular-smooth-local of targets 3.1, 3.4"]
