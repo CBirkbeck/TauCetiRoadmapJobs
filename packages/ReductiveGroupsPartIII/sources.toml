@@ -177,3 +177,19 @@ status = "certified"
 accessed = "2026-10-25"
 version_note = "notes by J. S. Milne, revised retypeset text"
 cited_for = ["§5.1", "§5.2", "§5.3"]
+
+[[source]]
+id = "Harder66"
+authors = "Günter Harder"
+title = "Über die Galoiskohomologie halbeinfacher Matrizengruppen. II"
+year = 1966
+locator_scheme = "theorem"
+locator = "Lemma 5.5.3 and its proof, p.407"
+url = "https://gdz.sub.uni-goettingen.de/download/pdf/PPN266833020_0092/LOG_0062.pdf"
+fetched_from = "https://gdz.sub.uni-goettingen.de/download/pdf/PPN266833020_0092/LOG_0062.pdf"
+fetched_at = "2026-11-10T21:28:47Z"
+sha256 = "5fa839d146d5dbd96c438dc11e3279a0bde5e910ca031d28eec61fe49a718d51"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-10"
+cited_for = ["§2.1a", "§2.2"]
