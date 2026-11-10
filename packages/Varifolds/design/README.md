@@ -288,8 +288,12 @@ trace of an endomorphism A of E along P is tr(P ∘ A).
   functorial in U; in particular the orthogonal group of E acts continuously.
 - For each endomorphism A of E, P ↦ tr(P ∘ A) is continuous (indeed linear) on G(E, k), and
   |tr(P ∘ A)| ≤ k‖A‖.
-- For an injective linear map L : E → F and P ∈ G(E, k), the projection onto L(range P) depends
-  continuously on (L, P) on the set of such pairs.
+- For a finite-dimensional real inner product space F, the pairs (L, P) of a linear map L : E → F
+  and P ∈ G(E, k) with L injective on range P form an open set, and on it the projection onto
+  L(range P), an element of G(F, k), depends continuously on (L, P); L need not be injective on E.
+  With Q = L ∘ P and Q* its adjoint, A = Q*Q + 1 − P preserves range P and ker P, is the identity on
+  ker P and is invertible exactly when L is injective on range P (⟨Q*Qv, v⟩ = |Lv|² for v ∈ range P),
+  and the projection is Q A⁻¹ Q*.
 
 **Checks.**
 
@@ -300,6 +304,11 @@ trace of an endomorphism A of E along P is tr(P ∘ A).
 - diag(1, 1, 0) belongs to G(ℝ³, 2) and not to G(ℝ³, 1): the rank condition is on the range, and
   its trace 2 is the dimension.
 - Under the complement map, the line ℓ_0 of ℝ² goes to ℓ_{π/2}, and tr(P_{ℓ_0} ∘ diag(a, b)) = a.
+- For L_s = diag(1, s) on ℝ², L_s(ℓ_θ) is spanned by (cos θ, s sin θ): along s = 0, θ → π/2 the image
+  line is ℓ_0 and along θ = π/2, s → 0 it is ℓ_{π/2}, so the image-plane projection has no
+  continuous extension to (diag(1, 0), P_{ℓ_{π/2}}), where L kills the line. At (diag(1, 0), P_{ℓ_0})
+  the map is not injective on ℝ² but is injective on ℓ_0: the pair lies in the open set, A = 1 and
+  Q A⁻¹ Q* = P_{ℓ_0}, so a hypothesis "L injective on E" would exclude a pair that 3.1 uses.
 
 (Simon1983 line 7295–7305.) *Needs:* Mathlib `IsStarProjection`, `Submodule.starProjection`,
 `isStarProjection_iff_eq_starProjection_range`.
@@ -524,7 +533,8 @@ Let W ⊆ M, W' ⊆ M' be open subsets of Riemannian manifolds, V a varifold on 
 map whose restriction to spt‖V‖ is proper (f⁻¹(K) ∩ spt‖V‖ is compact for each compact K ⊆ W').
 Define f_#V(A) = ∫ 1_A(f(x), df_x(S)) J_S f(x) dV(x, S), the integrand being taken as 0 where
 J_S f(x) = 0; in projection form (x, P) ↦ (f(x), P_{df_x(range P)}) is continuous on the open set
-{J_S f(x) ≠ 0} (Simon1983 line 7443–7454, 39.1; AgnolettoCorreaHoyosDaSilvaNardulli2025 line
+{J_S f(x) ≠ 0}, where df_x is injective on S = range P (1.1's image-plane continuity, in orthonormal
+frames) (Simon1983 line 7443–7454, 39.1; AgnolettoCorreaHoyosDaSilvaNardulli2025 line
 188–195).
 
 - f_#V is a varifold on W'; ‖f_#V‖(A) = ∫_{π⁻¹f⁻¹(A)} J_S f(x) dV(x, S); spt‖f_#V‖ ⊆ f(spt‖V‖), with
@@ -554,7 +564,7 @@ transported by GeometricCurrents G2's chart comparison and the chain rule for J.
 - For V = Σ_{j∈ℤ} v({j} × [0, 1], 1) on ℝ² and f(y) = (0, y_2), f is not proper on spt‖V‖ and the
   formula would give infinite mass to the segment {0} × [0, 1]: properness is necessary.
 
-(Simon1983 line 7443–7454, 2903–2933; Federer1969 3.2; Allard1972 Section 3.) *Needs:* Layer 1.2–1.4, Layer 2.2; Mathlib
+(Simon1983 line 7443–7454, 2903–2933; Federer1969 3.2; Allard1972 Section 3.) *Needs:* Layer 1.1–1.4, Layer 2.2; Mathlib
 `LinearMap.normDet`; GeometricMeasureTheory G2 (area formula); GeometricCurrents G2 (chart
 comparison).
 
@@ -1030,16 +1040,17 @@ Mathlib `HasBesicovitchCovering`, `Besicovitch.ae_tendsto_rnDeriv`.
 ### 6.4 The constancy theorem
 
 Let V be stationary in W and Σ ⊆ W a connected C² embedded k-submanifold with spt‖V‖ ⊆ Σ. Then
-V = θ_0 [Σ] for a constant θ_0 ≥ 0; if V ≠ 0, Σ is closed in W and has locally finite area
-(Simon1983 line 7664–7732, 41.1–41.2(1)).
+either V = 0, or Σ is closed in W, Hᵏ(Σ ∩ K) < ∞ for every compact K ⊆ W (so that [Σ] is defined,
+2.3), and V = θ_0 [Σ] for a constant θ_0 > 0 (Simon1983 line 7664–7732, 41.1–41.2(1)).
 
 Route: for a C² function f vanishing on Σ, div_S(f∇f) = |P_S ∇f|² on spt V, so stationarity forces
 P_S ∇f = 0 on spt V; with local defining functions whose gradients span the normal spaces, S = T_xΣ
 on spt V. The density exists everywhere (6.3) and equals 1 for Hᵏ⌞Σ, so V = v(Σ, θ) with
 θ = Θ^k(‖V‖, ·). Stationarity against fields tangent to Σ says that, in a C² chart of Σ, the
 distributional derivatives of θ times the volume density vanish against all test functions, and
-GeometricCurrents G1's constancy criterion makes θ locally constant, hence constant on the connected
-Σ.
+GeometricCurrents G1's constancy criterion makes θ locally constant, hence equal to a constant θ_0 on
+the connected Σ. If θ_0 = 0, V = 0. If θ_0 > 0, Hᵏ⌞Σ = θ_0⁻¹‖V‖ is a Radon measure, so Σ has
+locally finite area, and the closure of Σ in W is spt‖V‖ (2.3), which lies in Σ: Σ is closed in W.
 
 **Checks.**
 
@@ -1050,6 +1061,11 @@ GeometricCurrents G1's constancy criterion makes θ locally constant, hence cons
   volume.
 - [half-line] has support in a line Σ but is not a constant multiple of [Σ]; consistently it is not
   stationary (σ = δ_0 at its endpoint).
+- The graph Σ of t ↦ sin(1/t) over (0, 1) is a connected C² embedded curve in ℝ² of infinite length
+  inside B̄_2(0) (its length is at least ∫_0^1 |cos(1/t)| t⁻² dt = ∫_1^∞ |cos u| du = ∞), and it is
+  not closed (its closure contains {0} × [−1, 1]). V = 0 is stationary with support in Σ and takes
+  the first alternative, and the theorem says it is the only such V; a conclusion "V = θ_0 [Σ] in
+  every case" would use [Σ], which 2.3 does not define for this Σ.
 
 (Simon1983 line 7664–7732.) *Needs:* Layer 2.3, Layer 3.3, Layer 4.2, Layer 6.3; GeometricCurrents G1
 (constancy criterion).
@@ -1401,11 +1417,13 @@ ones the literature uses.
 - Edelen–Spolaor's theorem in dimensions n ≥ 8 (EdelenSpolaor2023 line 104–135, Definition 1.1.1,
   Remark 1.2 and Theorem 1.4). Let V be a stationary integral n-varifold in the open unit ball B_1 of
   ℝ^{n+1} with Θ^n(‖V‖, ·) = 1 ‖V‖-a.e., sing^∞ V ⊆ {0}, and some element of VarTan(V, 0) equal to
-  R_#[C_{p,q}] for integers p, q ≥ 1 with p + q = n − 1 and a linear isometry R. If V_i are stationary
-  integral n-varifolds in B_1 with V_i → V, then for all large i, sing^∞(V_i) ∩ B_{1/2} is either
-  empty or a single point y_i at which some element of VarTan(V_i, y_i) equals R'_#[C_{p,q}] for a
-  linear isometry R'. (For n ≥ 8 every C_{p,q} is area minimizing, so the minimizing hypothesis of
-  Theorem 1.4 holds.)
+  R_# v(C_{p,q}, 1) for integers p, q ≥ 1 with p + q = n − 1 and a linear isometry R (the cone
+  C_{p,q} = {q|x|² = p|y|²} ⊆ ℝ^{p+1} × ℝ^{q+1} is not a submanifold at 0, and v(C_{p,q}, 1) =
+  [C_{p,q} ∖ {0}] for the smooth embedded hypersurface C_{p,q} ∖ {0} of locally finite area). If V_i
+  are stationary integral n-varifolds in B_1 with V_i → V, then for all large i, sing^∞(V_i) ∩ B_{1/2}
+  is either empty or a single point y_i at which some element of VarTan(V_i, y_i) equals
+  R'_# v(C_{p,q}, 1) for a linear isometry R'. (For n ≥ 8 every C_{p,q} is area minimizing, so the
+  minimizing hypothesis of Theorem 1.4 holds.)
 
 **Checks.**
 
@@ -1413,7 +1431,8 @@ ones the literature uses.
   sing^∞ (9.1), integral varifolds and multiplicity one (2.2, 6.3), varifold convergence (1.4) and
   tangent cones (7.2, 8.2).
 - In Simon's theorem with K = ∅, sing^∞[Σ] = ∅ and Σ is closed.
-- C_{p,q} itself, with V_i = V, satisfies the conclusion of the second statement with y_i = 0.
+- V = v(C_{p,q}, 1) itself, with V_i = V, satisfies the conclusion of the second statement with
+  y_i = 0.
 
 *Needs:* Layer 1.4, Layer 2.2–2.3, Layer 3.1, Layer 4.2, Layer 6.3, Layer 7.2, Layer 8.2,
 Layer 9.1.
