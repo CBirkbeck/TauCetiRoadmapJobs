@@ -1,0 +1,13 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-GlobalHolomorphicFunctions~20",
+  "head": "5ab28008b3298995888f2b7e97aa3cc7dd270b14",
+  "pr": 992,
+  "folder": "GlobalHolomorphicFunctions",
+  "date": "2026-11-10",
+  "findings": 0,
+  "blocking": 0,
+  "notes": "incremental re-review of 36 changed lines since 164c2fb. Checked: both previous findings repaired (description now states the order with #1234 and no longer names #886, ProductCotangentTargets.lean or 28 admissions as author text); the two Tau Ceti declarations the diff cites (residue_congr_nhdsNE, Residue/Basic.lean:146; residue_div_of_zero_deriv_ne_zero, Residue/Quotient.lean:101) opened at pin 2fd255d9 and compared with the README; residues of pi cot(pi z) and -pi tan(pi z) computed (1.0000000 at 3 points each, derivative signs (-1)^n pi and (-1)^(n+1) pi); 6.1 targets, source paragraph, Needs and Scope agree; no sampled target lies in the changed text; gate rerun, all counters 0, OK; lake env lean exits 0 with 23 sorry warnings; depcheck 0 problems; no change outside the folder; adversarial table 5 new rows plus 51 carried. Remark only: generated depends-on/merge-order blocks still show #886 until regenerated."
+ }
+}
