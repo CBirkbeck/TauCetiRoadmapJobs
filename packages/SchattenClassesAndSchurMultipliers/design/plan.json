@@ -70,7 +70,7 @@
       {
        "name": "schattenGauge_le_liminf_compress",
        "role": "strong lower semicontinuity",
-       "statement": "if finite-rank projections P_alpha increase strongly to 1 then ||X||_p <= liminf ||P_alpha X P_alpha||_p for every bounded X"
+       "statement": "if finite-rank projections P_alpha increase strongly to 1 then, for 1 <= p < infinity and every bounded X, ||X||_p <= liminf ||P_alpha X P_alpha||_p (a_n(X) <= liminf a_n(P_alpha X P_alpha) for each n, then Fatou for sum a_n^p); at p = infinity only ||X|| <= liminf ||P_alpha X P_alpha|| holds, and the extended-gauge bound fails for every non-compact X"
       }
      ],
      "tests": [
@@ -90,6 +90,11 @@
        "statement": "rank-one projection e: a_0 = 1, a_n = 0 for n >= 1, ||e||_p = 1 for all p; a one-based index would give 0"
       },
       {
+       "name": "compression_endpoint",
+       "kind": "non-example",
+       "statement": "identity of l2(N) with the coordinate projections P_alpha: ||P_alpha 1 P_alpha||_infinity = 1 for every alpha while ||1||_infinity = infinity, so the compression bound fails at p = infinity; for p < infinity ||P_alpha||_p = alpha^(1/p) -> infinity = ||1||_p"
+      },
+      {
        "name": "zero_space",
        "kind": "degenerate",
        "statement": "on the zero space every gauge is 0"
@@ -107,7 +112,7 @@
      ],
      "locator": {
       "source": "caspers-delasalle-2015",
-      "where": "lines 638-642 (the bilinear trace duality <A,B> = Tr(AB) between S_p and S_p'); the case X in S_p is NoncommutativeIntegration §2.1 (Lp-Lq duality with the norming element) read through its §1.5, restricted to the dense finite-rank operators of target 1.1; the case X not in S_p (both sides infinite) is this roadmap's, by compressions and the lower semicontinuity of 1.1; lafforgue-delasalle-2011 line 400, estimate (9) in the proof of Lemma 1.11, is the form used by 3.3 and 5.2"
+      "where": "lines 638-642 (the bilinear trace duality <A,B> = Tr(AB) between S_p and S_p'); the case X in S_p is NoncommutativeIntegration §2.1 (Lp-Lq duality with the norming element) read through its §1.5, restricted to the dense finite-rank operators of target 1.1; the case X not in S_p (both sides infinite) is this roadmap's, by compressions and the compression bound of 1.1, valid since p < infinity; lafforgue-delasalle-2011 line 400, estimate (9) in the proof of Lemma 1.11, is the form used by 3.3 and 5.2"
      },
      "prerequisites": [
       "target:1.1",
@@ -194,19 +199,24 @@
       {
        "name": "cbNorm_stabilisation",
        "role": "stabilisation",
-       "statement": "T (x) id on S_2(H (x) L) has p-norm ||T^(d)||_p for dim L = d finite and ||T||_{cb,p} for infinite-dimensional L"
+       "statement": "T (x) id acting entrywise on block matrices along a Hilbert basis of L: for dim L = d finite it is T^(d) on S_2(H (x) L) (the zero map when d = 0); for infinite-dimensional L it is defined on block matrices with finitely many nonzero blocks, and on all of S_2(H (x) L) when ||T||_2 < infinity; on either domain its p-norm is ||T||_{cb,p} (compress to finite sets of basis vectors and pair with finite-rank B through 1.2)"
       },
       {
        "name": "cbNorm_eq_cstar",
        "role": "compatibility",
-       "statement": "at p = infinity, ||T||_{cb,infinity} is the CStarAlgebras C3.2 cb norm of the extension K(H) -> K(K)"
+       "statement": "at p = infinity, when ||T||_infinity < infinity, the extension K(H) -> K(K) is completely bounded in the sense of CStarAlgebras C3.2 (cb norm defined only when finite) exactly when ||T||_{cb,infinity} < infinity, and then its C3.2 cb norm is ||T||_{cb,infinity}"
       }
      ],
      "tests": [
       {
        "name": "transpose_cb",
        "kind": "computation",
-       "statement": "transpose on M_n (n >= 2): ||t||_infinity = 1, ||t||_{cb,infinity} = n (flip unitary to n times a rank-one projection), ||t||_{cb,2} = 1, ||t||_{cb,1} = n; the first-amplification definition returns 1"
+       "statement": "transpose on M_n (n >= 2): ||t||_infinity = 1, ||t||_{cb,infinity} = n (flip unitary to n times a rank-one projection), ||t||_{cb,2} = 1, ||t||_{cb,1} = n; the first-amplification definition returns 1; on l2(N) the transpose A -> J A* J has ||t||_infinity = 1 and ||t||_{cb,infinity} = infinity, so its extension to K(l2(N)) is not completely bounded in the sense of C3.2"
+      },
+      {
+       "name": "stabilisation_needs_bounded",
+       "kind": "non-example",
+       "statement": "for infinite d and ||T||_2 = infinity, blocks B_k with ||B_k||_2 <= 2^-k and ||T B_k||_2 >= 1 give a block-diagonal A in S_2(H (x) l2(N)) whose entrywise image has sum ||T B_k||_2^2 = infinity, so T (x) id is not defined on all of S_2"
       },
       {
        "name": "unitary_conjugation",
@@ -303,7 +313,7 @@
      "id": "2.2",
      "kind": "theorem",
      "name": "SchattenClasses.kernel_calculus",
-     "statement": "For A in S_2(L2(nu), L2(mu)), B in S_2(L2(lambda), L2(nu)), u in L2(mu), v in L2(nu), f in Linf(mu), g in Linf(nu): k_{u (x) v*}(x,y) = u(x) conj v(y); k_{A*}(y,x) = conj k_A(x,y); AB in S_1 with k_{AB}(x,z) = int k_A(x,y) k_B(y,z) dnu(y) a.e.; k_{D_f A D_g}(x,y) = f(x) k_A(x,y) g(y); and Tr(A C) = int int k_A(x,y) k_C(y,x) for C in S_2(L2(mu), L2(nu)).",
+     "statement": "For A in S_2(L2(nu), L2(mu)), B in S_2(L2(lambda), L2(nu)), u in L2(mu), v in L2(nu), f in Linf(mu), g in Linf(nu): k_{u (x) v*}(x,y) = u(x) conj v(y); k_{A*}(y,x) = conj k_A(x,y); AB in S_1 with k_{AB}(x,z) = int k_A(x,y) k_B(y,z) dnu(y) a.e.; k_{D_f A D_g}(x,y) = f(x) k_A(x,y) g(y); and Tr(A C) = int int k_A(x,y) k_C(y,x) for C in S_2(L2(mu), L2(nu)), obtained from the one-space formula of the gap on the disjoint union of (Omega, mu) and (Omega', nu) applied to the extensions of A and C by zero.",
      "hypotheses": [
       "sigma-finite measure spaces"
      ],
@@ -619,7 +629,7 @@
      "id": "3.6",
      "kind": "theorem",
      "name": "SchattenClasses.schurMultiplier_stabilisation",
-     "statement": "With M_inf(x,i,y,j) = M(x,y) on Omega x N: ||S_M||_{cb,p} = ||S_{M_inf}||_{cb,p} = ||S_{M_inf}||_p. For sigma-finite (Omega', nu) and M'(x,w,y,w') = M(x,y): ||S_{M'}||_{cb,p} = ||S_M||_{cb,p}, ||S_{M'}||_p = ||S_M||_{cb,p} when L2(nu) is infinite-dimensional and = ||S_{M_d}||_p when it has dimension d. At p = infinity ||S_M||_{cb,infinity} is the CStarAlgebras C3.2 cb norm of S_M on K(H).",
+     "statement": "With M_inf(x,i,y,j) = M(x,y) on Omega x N: ||S_M||_{cb,p} = ||S_{M_inf}||_{cb,p} = ||S_{M_inf}||_p. For sigma-finite (Omega', nu) and M'(x,w,y,w') = M(x,y): ||S_{M'}||_{cb,p} = ||S_M||_{cb,p}, ||S_{M'}||_p = ||S_M||_{cb,p} when L2(nu) is infinite-dimensional and = ||S_{M_d}||_p when it has dimension d. At p = infinity, when ||S_M||_infinity < infinity, the extension of S_M to K(H) is completely bounded in the sense of CStarAlgebras C3.2 exactly when ||S_M||_{cb,infinity} < infinity, with C3.2 cb norm ||S_M||_{cb,infinity}.",
      "hypotheses": [
       "(Omega, mu), (Omega', nu) sigma-finite"
      ],
@@ -710,7 +720,7 @@
      "id": "4.3",
      "kind": "theorem",
      "name": "SchattenClasses.schurMultiplier_weakStar",
-     "statement": "If ||S_M||_infinity < infinity there is a unique weak-* continuous map on B(H) = S_1(H)* agreeing with S_M on S_2: the adjoint of S_{M^t} on S_1, of norm ||S_M||_infinity, bimodular over Linf(mu), multiplicative in the symbol, with cb norm ||S_M||_{cb,infinity} in CStarAlgebras C3.2.",
+     "statement": "If ||S_M||_infinity < infinity there is a unique weak-* continuous map on B(H) = S_1(H)* agreeing with S_M on S_2: the adjoint of S_{M^t} on S_1, of norm ||S_M||_infinity, bimodular over Linf(mu), multiplicative in the symbol, completely bounded in the sense of CStarAlgebras C3.2 exactly when ||S_M||_{cb,infinity} < infinity, with cb norm ||S_M||_{cb,infinity}.",
      "hypotheses": [
       "(Omega, mu) sigma-finite",
       "||S_M||_infinity finite"
@@ -1091,13 +1101,16 @@
       "where": "Theorem 1.19, line 524; proof lines 535-588; cgpt-2023 lines 232-237; caspers-delasalle-2015 Theorem 3.1, line 282"
      },
      "prerequisites": [
+      "target:1.1",
       "target:3.3",
       "target:3.6",
       "target:3.7",
       "target:5.1",
       "target:8.1",
       "mathlib:MeasureTheory.Measure.support",
-      "mathlib:MeasureTheory.MemLp.exists_hasCompactSupport_eLpNorm_sub_le"
+      "mathlib:MeasurableSet.exists_isCompact_lt_add",
+      "mathlib:IsCompact.exists_isOpen_lt_add",
+      "mathlib:exists_continuousMap_one_of_isCompact_subset_isOpen"
      ],
      "api": [],
      "tests": []
@@ -1400,7 +1413,7 @@
       {
        "name": "bmo_column_row",
        "kind": "computation",
-       "statement": "f = sum_{k=1}^N r_k E_{k1} with Rademacher-type r_k on T: on Q = T the column quantity is sqrt N and the row quantity is 1"
+       "statement": "f = sum_{k=1}^N 1_{I_k} E_{k1} on T with I_k = [(k-1)/N, k/N), N >= 3: with a_k = |Q cap I_k|/|Q|, avg_Q |f - f_Q|^2 = (1 - sum a_k^2) E_11, so ||f||_{BMO^c} = (1 - 1/N)^(1/2) (at Q = T); avg_Q |f* - f*_Q|^2 = diag(a) - a a^T of norm <= 1/2 (Popoviciu), = 1/2 at Q = I_1 cup I_2, so ||f||_{BMO^r} = 2^(-1/2); N = 4: 0.866 against 0.707; |g|^2 = g g* would exchange them"
       },
       {
        "name": "bmo_indicator",
@@ -1866,10 +1879,6 @@
   {
    "roadmap": "FourierMultipliersOnGroupVonNeumannAlgebras",
    "what": "Proposed: Neuwirth-Ricard and Caspers-de la Salle transference beyond R^n; consumes Layers 3, 8, 9."
-  },
-  {
-   "roadmap": "NoncommutativeGeometry",
-   "what": "N3 and N5 Schatten bounds for commutators; Layers 1, 3, 6."
   }
  ],
  "gaps": [
