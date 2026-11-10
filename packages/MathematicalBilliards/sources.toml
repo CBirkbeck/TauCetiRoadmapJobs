@@ -87,3 +87,54 @@ locator = "Mat. Zametki 18 (1975), no. 2, pp. 291–300 (English: Math. Notes 18
 licence_class = "none"
 status = "waived"
 resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/6012#issuecomment-6777030446"
+
+[[source]]
+id = "BialyMironov2022"
+authors = "Misha Bialy, Andrey E. Mironov"
+title = "The Birkhoff-Poritsky conjecture for centrally-symmetric billiard tables"
+year = 2020
+arxiv = "2008.03566v4"
+locator_scheme = "theorem"
+locator = "Theorem 1.1"
+url = "https://arxiv.org/abs/2008.03566v4"
+fetched_from = "https://arxiv.org/pdf/2008.03566v4"
+fetched_at = "2026-11-10T19:44:16Z"
+sha256 = "18000ed420ea8454148a41200a9939eeba506df5e9ca48d97e869a0ecfec6f6f"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-10"
+version_note = "arXiv v4"
+cited_for = ["T2", "T3", "T5", "T6", "Consumers"]
+
+[[source]]
+id = "ChaikaForni2026"
+authors = "Jon Chaika, Giovanni Forni"
+title = "Weakly Mixing Polygonal Billiards"
+year = 2020
+arxiv = "2003.00890v2"
+locator_scheme = "theorem"
+locator = "Theorem 1.1"
+url = "https://arxiv.org/abs/2003.00890v2"
+fetched_from = "https://arxiv.org/pdf/2003.00890v2"
+fetched_at = "2026-11-10T19:50:52Z"
+sha256 = "d342ba5b71ea981e031a9903eccf17f17006a34cb737d721b0fc4ae4f4878c1d"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-10"
+version_note = "arXiv v2"
+cited_for = ["T11", "Consumers"]
+
+[[source]]
+id = "MasurTabachnikov2002"
+authors = "Howard Masur, Serge Tabachnikov"
+title = "Chapter 13 Rational billiards and flat structures"
+year = 2002
+venue = "Handbook of Dynamical Systems"
+doi = "10.1016/S1874-575X(02)80015-7"
+locator_scheme = "section"
+locator = "§1"
+url = "https://doi.org/10.1016/S1874-575X(02)80015-7"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["T10"]
