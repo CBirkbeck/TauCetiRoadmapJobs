@@ -475,7 +475,7 @@
       {
        "name": "BZ2_class",
        "kind": "non-example",
-       "statement": "On B(Z/2) x Spec F_2, pi_0 Map(O, O[1]) = H^1(Z/2; F_2) = F_2 while its pullback to the atlas point is 0."
+       "statement": "On B(Z/2) x Spec F_2, pi_0 Map(O, O[1]) = H^1(Z/2; F_2) = F_2 (Map = Omega^infty of (F_2[1])^{hZ/2}) while its pullback to every point (A, eta) lies in pi_0 Map(A, A[1]) = pi_{-1}A = 0: maps are not determined by evaluations, and a limit of homotopy categories (Hom = Z/2-invariants of Ext^1(F_2, F_2) = 0) would lose the class."
       }
      ]
     },
@@ -483,7 +483,7 @@
      "id": "2.3",
      "kind": "theorem",
      "name": "Prestack.QCoh.formal",
-     "statement": "QCoh carries small colimits of prestacks to limits; QCoh(X) is stable with small colimits computed pointwise; f^* preserves small colimits and is symmetric monoidal; tensor is pointwise and preserves colimits in each variable; equivalences and zero objects are detected pointwise; QCoh(X) is presentable for X a u-small colimit of affines; in CRing the homotopy category of QCoh(Spec R) is DerivedCategory (ModuleCat R) with shift and triangles.",
+     "statement": "QCoh carries small colimits of prestacks to limits; QCoh(X) is stable with small colimits computed pointwise; f^* preserves small colimits and is symmetric monoidal; tensor is pointwise and preserves colimits in each variable; equivalences and zero objects are detected pointwise, vanishing of maps is not (except on affines, through the initial point); QCoh(X) is presentable for X a u-small colimit of affines; in CRing the homotopy category of QCoh(Spec R) is DerivedCategory (ModuleCat R) with shift and triangles.",
      "hypotheses": [
       "X is a prestack on one of the three contexts",
       "for presentability, X is a u-small colimit of affines"
@@ -495,6 +495,7 @@
      "prerequisites": [
       "target:2.2",
       "target:1.2",
+      "target:1.5",
       "roadmap:HigherToposTheory L6.3",
       "roadmap:EnhancedDerivedSheaves E0.5",
       "roadmap:EnhancedDerivedSheaves E5:presentability.2",
@@ -522,7 +523,7 @@
       {
        "name": "conservative",
        "role": "characterisation",
-       "statement": "A map is an equivalence iff all evaluations are."
+       "statement": "A map is an equivalence, and an object is zero, iff all evaluations are (1.5); vanishing of maps is not detected pointwise."
       },
       {
        "name": "homotopyCategory",
@@ -537,9 +538,9 @@
        "statement": "On Spec Z, Z/p (x) Z/p has pi_0 = pi_1 = Z/p."
       },
       {
-       "name": "one_point_insufficient",
+       "name": "vanishing_not_pointwise",
        "kind": "non-example",
-       "statement": "On B(Z/2) x Spec F_2 the nonzero O -> O[1] vanishes at the atlas point."
+       "statement": "On B(Z/2) x Spec F_2 the nonzero class O -> O[1] (H^1(Z/2; F_2) = F_2) has every evaluation in pi_0 Map(A, A[1]) = pi_{-1}A = 0, every point factoring up to homotopy through the atlas point; pi_0 of a limit of mapping spaces is not the limit of pi_0. Equivalences and zero objects are still detected pointwise, here by the atlas point alone (Fun(B Gamma, Mod_k) -> Mod_k conservative)."
       },
       {
        "name": "presentable_BGamma",
