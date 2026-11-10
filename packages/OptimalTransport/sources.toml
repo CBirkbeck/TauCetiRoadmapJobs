@@ -624,3 +624,21 @@ status = "certified"
 accessed = "2026-11-10"
 version_note = "arXiv v2"
 cited_for = ["14.7"]
+
+[[source]]
+id = "cavalletti-mondino-optimal-maps"
+authors = "Fabio Cavalletti, Andrea Mondino"
+title = "Optimal maps in essentially non-branching spaces"
+year = 2017
+arxiv = "1609.00782"
+locator_scheme = "theorem"
+locator = "Theorem 1.1, p. 2; standing assumptions §2, p. 2; Appendix, p. 17"
+url = "https://arxiv.org/abs/1609.00782"
+fetched_from = "https://arxiv.org/pdf/1609.00782"
+fetched_at = "2026-11-10T13:55:57Z"
+sha256 = "e8866dee16c4276a8b7afb4efa584258cabfc2273e5aa60929796bfc0ec9e211"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-10"
+version_note = "arXiv v2 (21 Feb 2017); published in Commun. Contemp. Math. 19 (2017), 1750007; theorem and page numbers cited from arXiv v2"
+cited_for = ["14.8"]
