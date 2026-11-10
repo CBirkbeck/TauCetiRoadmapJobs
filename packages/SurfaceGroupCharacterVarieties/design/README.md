@@ -2,8 +2,9 @@
 
 **Summary.** This roadmap builds the interface between the mapping class groups of punctured
 surfaces and the representation theory of their fundamental groups into real reductive groups.
-It starts from the abstract group theory of outer automorphisms (the group `Out(Γ)` of an
-arbitrary group and its action on conjugacy classes of homomorphisms `Hom(Γ, H)/H`), completes the
+It starts from the abstract group theory of outer automorphisms (the action of TeichmullerGeometry's
+outer automorphism group `Out(Γ)` of an arbitrary group on conjugacy classes of homomorphisms
+`Hom(Γ, H)/H`), completes the
 punctured-surface mapping class group of MordellLawrenceVenkatesh Layer LV.5 by the comparison of
 punctures with marked points, the permutation homomorphism, the pure mapping class group and the
 pure Birman exact sequence, and constructs the outer action `Ψ : Mod_{g,n} → Out(π₁(Σ_{g,n}, x))`
@@ -11,7 +12,8 @@ with all its laws. It then builds the representation scheme `Hom(Γ, G)` of a fi
 group, the real reductive groups `G^ℝ` (open subgroups of the real points of a connected reductive
 `ℝ`-group, with the bridge to real forms given by antiholomorphic involutions), the real
 Kempf–Ness theory of minimal vectors, the six equivalent characterizations of reductive
-representations, and the character variety `𝒳(Γ, G^ℝ) = Hom^red(Γ, G^ℝ)/G^ℝ`. The end theorems are:
+representations, and the character variety `𝒳(Γ, G^ℝ) = Hom^red(Γ, G^ℝ)/G^ℝ` of a finitely
+generated group `Γ`. The end theorems are:
 `𝒳(Γ, G^ℝ)` is Hausdorff, locally compact and second countable and is homeomorphic to the space of
 minimal vectors modulo a maximal compact subgroup; for complex groups it is homeomorphic to the
 complex points of the affine quotient `Hom(Γ, G)//G`, which is the universal Hausdorff quotient of
@@ -23,13 +25,16 @@ representations.
 
 This roadmap owns:
 
-- for an arbitrary group `Γ`, the outer automorphism group `Out(Γ) = Aut(Γ)/Inn(Γ)` as an abstract
-  group, its comparison with Tau Ceti's `TauCeti.ContinuousOut` for the discrete topology, the set
+- for an arbitrary group `Γ`, the identification `Inn(Γ) ≃* Γ ⧸ Z(Γ)` and the transport of
+  TeichmullerGeometry §4.2's `Out(Γ)` along isomorphisms `Γ ≃* Γ'`, the set
   `Rep(Γ, H) = Hom(Γ, H)/H` of conjugacy classes of homomorphisms into a group `H`, and the left
   action `[φ]·[ρ] = [ρ ∘ φ⁻¹]` of `Out(Γ)` on it, together with the theorem that the action of
   `Aut(Γ)` on `Hom(Γ, H)` itself factors through `Out(Γ)` exactly when every homomorphism
   `Γ → H` has abelian image (Layer 1);
-- the group `Mod^±(X)` of ambient isotopy classes of self-homeomorphisms of a topological space, the
+- the group `Mod^±(X)` of ambient isotopy classes of self-homeomorphisms of a topological space,
+  which differs from TeichmullerGeometry §0.0h's `MappingClassGroupFull X` by requiring the
+  level-preserving total map of an isotopy to be a homeomorphism, the relation that extends over
+  punctures, together with its comparison homomorphism onto `MappingClassGroupFull X`; the
   extension theorem identifying homeomorphisms and isotopies of `Σ ∖ P` with those of `Σ` preserving
   the finite set `P`, the permutation homomorphism `Mod_{g,n} → Sym(P)` and its surjectivity, the
   pure mapping class group `PMod_{g,n}` of index `n!`, the presentation of `π₁(Σ_g ∖ P)` by the
@@ -37,8 +42,10 @@ This roadmap owns:
   change-of-model isomorphisms (Layer 2);
 - the automorphism `f_δ` of `π₁(X, x)` induced by a homeomorphism and a path, its laws, the lemma
   that a homeomorphism isotopic to the identity induces an inner automorphism, the outer action
-  `Ψ_x : Mod^±(X) → Out(π₁(X, x))` and its canonicity under change of basepoint, its comparison
-  with the closed smooth mapping class group of TeichmullerGeometry and with the outer class of
+  `Ψ_x : Mod^±(X) → Out(π₁(X, x))` and its canonicity under change of basepoint, its
+  identification for closed surfaces of genus at least one with TeichmullerGeometry §5.4's
+  Dehn–Nielsen–Baer isomorphism and the description of the image of the orientation-preserving
+  classes by the action on `H₂`, its comparison with the outer class of
   MordellLawrenceVenkatesh §5.9, the identification of MordellLawrenceVenkatesh §5.9's action of
   `Mod_{g,n}` on conjugacy classes of homomorphisms with `Ψ_x` followed by Layer 1's action of `Out`,
   and, from that formula, its extension to `Mod^±_{g,n}`, its compatibility with basepoint change
@@ -54,9 +61,9 @@ This roadmap owns:
 - reductive representations and the equivalence of the six conditions (adjoint semisimplicity over
   `ℝ` and over `ℂ`, reductive Zariski closure, `G`-complete reducibility, closed complex orbit,
   closed real orbit) (Layer 6);
-- the character variety `𝒳(Γ, G^ℝ)`, its topology, the affine quotient `Hom(Γ, G)//G` over fields of
-  characteristic zero and its complex comparison, functoriality, the action of `Out(Γ)` and of
-  `Mod_{g,n}`, and the standard examples (Layer 7).
+- the character variety `𝒳(Γ, G^ℝ)` of a finitely generated group, its topology, the affine
+  quotient `Hom(Γ, G)//G` over fields of characteristic zero and its complex comparison,
+  functoriality, the action of `Out(Γ)` and of `Mod_{g,n}`, and the standard examples (Layer 7).
 
 It leaves to named owners, which are consumed and never planned again:
 
@@ -67,10 +74,17 @@ It leaves to named owners, which are consumed and never planned again:
   for `χ(S) < 0`, the evaluation fibration, Hamstrom's theorem, point pushing, the Birman exact
   sequence, capping, Dehn twists, the symplectic representation and the configuration fibration:
   MordellLawrenceVenkatesh §§5.1, 5.4, 5.5, 5.9–5.12, 5.15–5.23;
-- the smooth closed mapping class group `Mod±(Σ) = π₀ Diff(Σ)`, smooth isotopies and diffeotopies,
-  the geometric group `Π = π₁ᵒᵖ` and its inversion equivalence, the polygon presentation, the Euler
-  number, the uniformizing holonomy, the smooth Dehn–Nielsen–Baer theorem and the converse marked
-  representation comparison: TeichmullerGeometry §§0.2, 3.1, 4.2–4.5, 5.1–5.4, 6.1;
+- Epstein's isotopy theorem for closed surfaces, the comparison of the boundaryless and half-plane
+  models of a surface without boundary, the genus and orientability predicates of the polygon-schema
+  classification, the topological mapping class group `MappingClassGroupFull`
+  of a space (homeomorphisms modulo isotopy through embeddings), the outer automorphism group
+  `OuterAut` of an arbitrary group, written `Out` here, with the normality of the inner
+  automorphisms (`innerAut_normal`) and its comparison with `TauCeti.ContinuousOut`, the geometric
+  group `Π = π₁ᵒᵖ` and its inversion equivalence, the polygon presentation, the Euler number, the
+  uniformizing holonomy, the topological Dehn–Nielsen–Baer theorem `dehn_nielsen_baer` for closed
+  orientable surfaces of genus at least one, the mapping class groups of the sphere and the torus,
+  and the converse marked representation comparison: TeichmullerGeometry §§0.0d, 0.0e, 0.0f,
+  0.0h, 4.2–4.5, 5.4, 5.4a, 6.1;
 - the presented surface groups `S±(g, m)` and the freeness of `S±(g, m)` for `m ≥ 1`:
   FreeGroupsAndLimitGroups §§6.1–6.2; van Kampen and the wedge of circles: AlgebraicTopology
   Stage 1; cellular homology and its comparison with singular homology: AlgebraicTopology Stage 4;
@@ -98,18 +112,16 @@ It leaves to named owners, which are consumed and never planned again:
 - flat connections on a closed surface modulo gauge for compact `K` and their comparison with
   `Hom(π₁Σ, K)/K`: SymplecticGeometry/HamiltonianReduction R5, used here only as a Check.
 
-The finite-group case of `Out` is FiniteGroupInvariants §3.1, which carries a finiteness binder;
-the definition here is the same quotient for an arbitrary group. The outer action of `Out(F_r)` on
+The outer action of `Out(F_r)` on
 exterior epimorphisms onto a finite group is InverseGaloisAndArithmeticFundamentalGroups §IG.3.2;
 it is the case `Γ = F_r`, `H` finite, restricted to surjections, of Layer 1 here.
 
 Not owned and not planned here: the smooth model `Diff⁺(Σ, P)/smooth isotopy` of the punctured
-mapping class group, the Dehn–Nielsen–Baer theorem for punctured surfaces and the topological
-Baer–Epstein theorem, which extend TeichmullerGeometry's closed smooth theory and belong to a
-TeichmullerGeometry, Part II; Teichmüller space and its mapping class action (TeichmullerGeometry
-Layers 1–3, 7–8); the nonabelian Hodge correspondence, Higgs bundles, Hitchin and `Θ`-positive
-components; Goldman's symplectic form and the tangent-space theory of character varieties; the
-Kirwan–Ness stratification of the null cone.
+mapping class group and the Dehn–Nielsen–Baer theorem for punctured surfaces, which extend
+TeichmullerGeometry's closed theory and belong to a TeichmullerGeometry, Part II; Teichmüller space
+and its mapping class action (TeichmullerGeometry Layers 1–3, 7–8); the nonabelian Hodge
+correspondence, Higgs bundles, Hitchin and `Θ`-positive components; Goldman's symplectic form and
+the tangent-space theory of character varieties; the Kirwan–Ness stratification of the null cone.
 
 ## Conventions
 
@@ -121,6 +133,9 @@ Kirwan–Ness stratification of the null cone.
   Witness: on the wedge of two circles with loops `a, b` at the wedge point, `[a] * [b]` is the class
   of `b ⬝ a`, and `MulAut.conj [a] [b]` is the class of `ā ⬝ b ⬝ a`; this is the convention of
   MordellLawrenceVenkatesh §5.19, where `Push(α)` acts by `γ ↦ α * γ * α⁻¹`.
+- **Outer automorphisms.** `Inn(Γ)` is the range of `MulAut.conj : Γ →* MulAut Γ`, and `Out(Γ)` is
+  TeichmullerGeometry §4.2's `OuterAut Γ = MulAut Γ ⧸ Inn(Γ)`, for every group `Γ`; the class of
+  `φ ∈ MulAut Γ` is written `[φ]`.
 - **Commutators and surface groups.** The presented surface group is FreeGroupsAndLimitGroups
   §6.1's `S⁺(g, m)`, with relator `[a₁, b₁] ⋯ [a_g, b_g] p₁ ⋯ p_m` and `[x, y] = x⁻¹ y⁻¹ x y`.
   TeichmullerGeometry §4.3 uses `[a, b] = a b a⁻¹ b⁻¹` in the geometric group `Π`; the substitution
@@ -139,7 +154,9 @@ Kirwan–Ness stratification of the null cone.
   in Tau Ceti's sense (`TauCeti.AmbientIsotopic`): some `TauCeti.AmbientIsotopy X`, a homotopy from
   the identity whose level-preserving total map `I × X → I × X` is a homeomorphism, has final map
   `g ∘ f⁻¹`. Isotopies of a surface with punctures never move the punctures, because the punctures
-  are not points of the space.
+  are not points of the space. TeichmullerGeometry §0.0h's isotopy (`TauCeti.Isotopic`, homotopies
+  through embeddings) is weaker in general and agrees with this one on compact connected manifolds
+  without boundary (§2.1).
 - **Surfaces.** `Σ_g` is a closed connected oriented topological surface of genus `g`
   (MordellLawrenceVenkatesh §5.1 with empty boundary), `P ⊂ Σ_g` a finite set of `n` points,
   `Σ_{g,n} = Σ_g ∖ P`, `x ∈ Σ_{g,n}`. `Mod_{g,n}` is MordellLawrenceVenkatesh §5.9's `Mod(Σ_{g,n})`,
@@ -172,36 +189,40 @@ Kirwan–Ness stratification of the null cone.
 
 ### From Mathlib
 
-`FundamentalGroup`, `FundamentalGroup.mul_def`, `FundamentalGroup.map`,
+`FundamentalGroup`, `FundamentalGroup.mul_def`, `FundamentalGroup.map`, `FundamentalGroup.mapOfEq`,
 `FundamentalGroup.fundamentalGroupMulEquivOfPath` (conjugation by the class of a path, read as in
-the Conventions), `FundamentalGroupoidFunctor.homotopicMapsNatIso` (a homotopy `H : f ≃ g` gives a natural
-transformation whose component at `x` is the class of the track `t ↦ H(t, x)`), `Path`,
-`Path.Homotopic`, `Homeomorph`, `ContinuousMap.Homotopy`, `ContinuousMap.compactOpen`,
-`MulAut`, `MulAut.conj` (`conj g h = g * h * g⁻¹`), `MulAut.congr`, `QuotientGroup`,
-`MonoidHom.range`, `ConjAct`, `ConjClasses`, `MulAction.orbitRel`, `Matrix.GeneralLinearGroup`,
-`Matrix.orthogonalGroup`, `Matrix.unitaryGroup`, `PresentedGroup`, `FreeGroup`, `FreeGroup.lift`,
-`groupHomology` (the homology of the inhomogeneous chains of a representation),
-`groupHomology.map` (functoriality in the group and the module),
+the Conventions), `FundamentalGroupoidFunctor.homotopicMapsNatIso` (a homotopy `H : f ≃ g` gives a
+natural transformation whose component at `x` is the class of the track `t ↦ H(t, x)`), `Path`,
+`Path.Homotopic`, `Homeomorph`, `ContinuousMap.Homotopy`, `ContinuousMap.compactOpen`, `MulAut`,
+`MulAut.conj` (`conj g h = g * h * g⁻¹`), `MulAut.congr`, `QuotientGroup`,
+`QuotientGroup.quotientKerEquivRange` (`G ⧸ ker φ ≃* range φ`), `QuotientGroup.congr` (an
+isomorphism carrying one normal subgroup onto another descends to the quotients), `Subgroup.center`,
+`MonoidHom.range`, `Subgroup.fg_of_index_ne_zero` (Schreier's lemma: a finite-index subgroup of a
+finitely generated group is finitely generated), `ConjAct`, `ConjClasses`, `MulAction.orbitRel`,
+`Matrix.GeneralLinearGroup`, `Matrix.orthogonalGroup`, `Matrix.unitaryGroup`, `PresentedGroup`,
+`FreeGroup`, `FreeGroup.lift`, `groupHomology` (the homology of the inhomogeneous chains of a
+representation), `groupHomology.map` (functoriality in the group and the module),
 `Representation.IsSemisimpleRepresentation` (every subrepresentation has a complement),
 `IsSemisimpleModule`, `ProperSMul`, `t2Space_quotient_mulAction_of_properSMul` (the orbit space of a
-proper action is Hausdorff), `IsProperMap`, `IsCompact`, `IsConnected`, `T2Space`. Mathlib has no lemma
-that a decreasing intersection of compact connected sets is connected; §2.2 proves it. Assumed: these exist at the pin with the stated
-meaning; no outer automorphism group, mapping class group, representation scheme or character
-variety exists in Mathlib.
+proper action is Hausdorff), `IsProperMap`, `IsCompact`, `IsConnected`, `IsPreconnected`,
+`Directed`, `T2Space`. Assumed: these exist at the pin with the stated meaning; no outer
+automorphism group, mapping class group, representation scheme or character variety exists in
+Mathlib.
 
 ### From Tau Ceti
 
-`TauCeti.ContinuousAut`, `TauCeti.ContinuousAut.toMulAut`, `TauCeti.ContinuousAut.conj`,
-`TauCeti.ContinuousAut.mul_conj_mul_inv` (`φ * conj g * φ⁻¹ = conj (φ g)`),
-`TauCeti.ContinuousAut.normal_range_conj`, `TauCeti.ContinuousAut.ker_conj` (the kernel is the
-centre), `TauCeti.ContinuousOut` (continuous automorphisms modulo inner ones, for a group with
-separately continuous multiplication), `TauCeti.ContinuousOut.mk_eq_one_iff`;
 `TauCeti.AmbientIsotopy` (a homotopy from the identity whose total level-preserving map is a
 homeomorphism), `TauCeti.AmbientIsotopy.trans`, `TauCeti.AmbientIsotopy.symm`,
 `TauCeti.AmbientIsotopy.finalHomeomorph`, `TauCeti.AmbientIsotopy.conj` and
 `TauCeti.AmbientIsotopy.finalHomeomorph_conj` (conjugating an ambient isotopy by a homeomorphism
 `h` conjugates its final map by `h`), `TauCeti.AmbientIsotopic` and
-`TauCeti.AmbientIsotopic.setoid`; `TauCeti.PointTopology.topology` (the point topology on
+`TauCeti.AmbientIsotopic.setoid`; `TauCeti.Isotopic` (homotopic through embeddings);
+`TauCeti.AmbientIsotopic.isotopic` (ambient isotopic maps, the first an embedding, are isotopic);
+`TauCeti.isotopic_iff_ambientIsotopic` (for a compact connected Hausdorff space `Y` charted on a
+finite-dimensional real normed space and a homeomorphism `f₀ : X ≃ₜ Y`, a map `X → Y` is isotopic
+to `f₀` exactly when it is ambient isotopic to it); `TauCeti.isPreconnected_iInter_of_directed` (in a
+Hausdorff space, the intersection of a nonempty family of compact preconnected sets directed by
+reverse inclusion is preconnected); `TauCeti.PointTopology.topology` (the point topology on
 `A →ₐ[k] R`, the initial topology of the evaluations) and
 `TauCeti.PointTopology.instTopologicalSpaceWithConv`; `TauCeti.Coalgebra.IsLinearlyReductive` and
 `TauCeti.Comodule.Hom.fixedMap_surjective_of_isLinearlyReductive` (a surjective comodule map over a
@@ -214,30 +235,42 @@ signatures displayed in their files at the pin.
 
 §5.1 (surfaces `Σ ∖ P` with boundary charts and orientation as data), §5.4 (classification of
 compact surfaces), §5.5 (the fundamental class `[S] ∈ H₂(S, ∂S; ℤ)` of a compact oriented surface,
-Lefschetz duality, and the invariance of the intersection form under orientation-preserving
-homeomorphisms by naturality of cap products), §5.9 (`Mod(S)`, `Mod(S*)`, `Forget`, and the
-action of `Mod(S)` on conjugacy classes of homomorphisms `π₁(S) → G` and on finite coverings by
-precomposition with the outer automorphism `(f⁻¹)_*`), §5.15 (asphericity), §5.16 (trivial
-centre for `χ < 0`), §5.17 (the evaluation fibration of `Homeo⁺(S, ∂S)`, equivalently isotopy
-extension for moving one interior point of a surface with punctures), §5.19
-(`Push : π₁(S, x) →* Mod(S*)`, acting on `π₁(S, x)` by `MulAut.conj`, with `Forget(Push α) = 1`),
-§5.20 (the Birman exact sequence for `χ(S) < 0`), §5.23 (the once-punctured surface group is free
-on `2g` classes with the puncture loop conjugate to the product of commutators). Assumed: the
-isotopy relation of §5.9 is ambient isotopy (Conventions); the surfaces of §5.1 include `Σ_g ∖ P` with empty
-boundary; an orientation-preserving homeomorphism of a closed oriented surface `S` fixes the
-fundamental class `[S]` of §5.5, the fact on which §5.5's invariance of the intersection form rests.
+Lefschetz duality by cap product with `[S]`, and the intersection form `î` on `H₁(S; ℤ)`, which for
+`∂S = ∅` is `î(u, v) = ⟨D⁻¹u ∪ D⁻¹v, [S]⟩` with `D : H¹(S; ℤ) ≅ H₁(S; ℤ)` the duality isomorphism:
+alternating, perfect for `∂S = ∅`, invariant under orientation-preserving homeomorphisms, and equal
+on transverse oriented simple closed curves to the signed count of intersection points), §5.9
+(`Mod(S)`, `Mod(S*)`, `Forget`, and the action of `Mod(S)` on conjugacy classes of homomorphisms
+`π₁(S) → G` and on finite coverings by precomposition with the outer automorphism `(f⁻¹)_*`), §5.15
+(asphericity), §5.16 (trivial centre for `χ < 0`), §5.17 (the evaluation fibration of
+`Homeo⁺(S, ∂S)`, equivalently isotopy extension for moving one interior point of a surface with
+punctures), §5.19 (`Push : π₁(S, x) →* Mod(S*)`, acting on `π₁(S, x)` by `MulAut.conj`, with
+`Forget(Push α) = 1`), §5.20 (the Birman exact sequence for `χ(S) < 0`), §5.23 (the once-punctured
+surface group is free on `2g` classes with the puncture loop conjugate to the product of
+commutators). Assumed: the isotopy relation of §5.9 is ambient isotopy (Conventions); the surfaces
+of §5.1 include `Σ_g ∖ P` with empty boundary.
 
 ### From TauCetiRoadmap.TeichmullerGeometry
 
-§0.2 (`Diff(M)` with the weak Whitney topology, diffeotopies, `π₀ Diff(M)` as smooth isotopy
-classes), §3.1 (`Mod±(Σ) := π₀ Diff(Σ)` and `Mod⁺(Σ)`), §4.2 (the geometric group `Π = π₁ᵒᵖ`,
-`ι : Π ≃* π₁`, and the induced identification `Out(Π) ≃ Out(π₁)`), §4.3 (the polygon presentation
-of `Π` and its attaching word), §§4.4–4.5 (the Euler number and the uniformizing holonomy, discrete,
-faithful and cocompact, unique up to `PSL₂(ℝ)`-conjugacy), §5.2 (every automorphism of
-`π₁(Σ, x₀)` of a closed connected orientable smooth surface is induced by a diffeomorphism fixing
-`x₀`; surjectivity of `Mod±(Σ) → Out(Π)`), §5.4 (injectivity, the smooth Dehn–Nielsen–Baer
-theorem), §6.1 (the inverse of the holonomy on marked equivalence classes). Assumed: a diffeotopy
-is a level-preserving diffeomorphism of `I × Σ`, hence an ambient isotopy.
+§0.0e (a surface without boundary charted on the half-plane model `𝓡∂ 2` is read as one charted
+on the boundaryless model `𝓡 2`, and conversely), §0.0f (the classification of compact surfaces by
+the standard polygon models, with the genus `Surface.genus` and orientability `Surface.IsOrientable`,
+both invariant under homeomorphisms), §0.0h (`isotopicToIdSubgroup M`, the
+homeomorphisms of a topological space `M` isotopic to the identity through embeddings in the sense
+of `TauCeti.Isotopic`, a normal subgroup, and `MappingClassGroupFull M`, the quotient group), §4.2
+(`OuterAut G := MulAut G ⧸ (MulAut.conj : G →* MulAut G).range` for every group `G`, with
+`innerAut_normal`, the quotient map surjective with kernel the inner automorphisms, and
+`OuterAut G = MulAut G` for abelian `G`; the geometric group `Π = π₁ᵒᵖ`, `ι : Π ≃* π₁`, and the induced
+identification `OuterAut Π ≃* OuterAut π₁`), §4.3 (the polygon presentation of `Π`, its attaching
+word, and the pushed-off transverse core curves `a₁`, `b₁` of the first handle, meeting in one
+point), §§4.4–4.5 (the Euler number and the uniformizing holonomy, discrete, faithful and cocompact,
+unique up to `PSL₂(ℝ)`-conjugacy), §5.4 (`dehn_nielsen_baer`: for a compact connected orientable
+surface `S` without boundary, of genus at least one, and `x₀ ∈ S`, an isomorphism
+`MappingClassGroupFull S ≃* OuterAut (FundamentalGroup S x₀)` sending the class of a homeomorphism
+`f` fixing `x₀` to the outer class of `FundamentalGroup.mapOfEq f`), §5.4a (`mcg_sphere_full`: the
+mapping class group of `S²` has two elements, the class of a reflection being the nontrivial one;
+`mcg_torus_full`: `A ↦ [torusLinearHomeomorph A]` is an isomorphism of `GL₂(ℤ)` onto the mapping
+class group of `T²`, inverse to the action on `π₁(T², 0) = ℤ²`), §6.1 (the inverse of the holonomy
+on marked equivalence classes).
 
 ### From TauCetiRoadmap.FreeGroupsAndLimitGroups
 
@@ -348,58 +381,58 @@ Used only in a Check.
 
 ## How to read the build
 
-Layer 1 is pure group theory: `Out(Γ)`, conjugacy classes of homomorphisms, and the outer action on
-them. Layer 2 completes the punctured-surface mapping class group of MordellLawrenceVenkatesh: the
-group of isotopy classes for any space, punctures versus marked points, the permutation map and the
-pure group, presentations of punctured surface groups, the pure Birman sequence and changes of
-model. Layer 3 constructs the automorphisms `f_δ` and the outer action `Ψ`, compares it with
-TeichmullerGeometry and MordellLawrenceVenkatesh, and identifies MordellLawrenceVenkatesh's action of
-`Mod_{g,n}` on conjugacy classes of representations with `Ψ` followed by Layer 1's action. Layer 4
-builds the representation scheme and its topologies. Layer 5 fixes real reductive data, proves the
-real-form bridge, realizes the conjugation action compatibly with a Cartan involution and proves the
-real Kempf–Ness theorem. Layer 6 proves the six-way characterization of reductive representations.
-Layer 7 defines the character variety, proves its topological properties and the complex comparison
-with the affine quotient, and makes `Out(Γ)` and `Mod_{g,n}` act. Layers 1–3 and Layers 4–6 are
+Layer 1 is pure group theory: inner automorphisms and the transport of TeichmullerGeometry's
+`Out(Γ)` along isomorphisms, conjugacy classes of homomorphisms, and the outer action on them. Layer
+2 completes the punctured-surface mapping class group of MordellLawrenceVenkatesh: the group of
+isotopy classes for any space, punctures versus marked points, the permutation map and the pure
+group, presentations of punctured surface groups, the pure Birman sequence and changes of model.
+Layer 3 constructs the automorphisms `f_δ` and the outer action `Ψ`, identifies it on closed
+surfaces with TeichmullerGeometry's Dehn–Nielsen–Baer isomorphism, compares it with
+MordellLawrenceVenkatesh, and identifies MordellLawrenceVenkatesh's action of `Mod_{g,n}` on
+conjugacy classes of representations with `Ψ` followed by Layer 1's action. Layer 4 builds the
+representation scheme and its topologies. Layer 5 fixes real reductive data, proves the real-form
+bridge, realizes the conjugation action compatibly with a Cartan involution and proves the real
+Kempf–Ness theorem. Layer 6 proves the six-way characterization of reductive representations. Layer
+7 defines the character variety, proves its topological properties and the complex comparison with
+the affine quotient, and makes `Out(Γ)` and `Mod_{g,n}` act. Layers 1–3 and Layers 4–6 are
 independent; Layer 7 uses both. Every `*Needs:*` line lists what a target's statement and route use,
 item by item.
 
 ## Layer 1: Outer automorphisms and conjugacy classes of homomorphisms
 
-### 1.1 The outer automorphism group of an abstract group
+### 1.1 Inner automorphisms and the transport of outer automorphisms
 
-For an arbitrary group `Γ` define the inner automorphism group `Inn(Γ)` as the range of
-`MulAut.conj : Γ →* MulAut Γ` and the outer automorphism group `Out(Γ)` as the quotient
-`MulAut Γ ⧸ Inn(Γ)`. Prove that `Inn(Γ)` is normal, from `φ ∘ MulAut.conj g ∘ φ⁻¹ =
-MulAut.conj (φ g)`. Prove the comparison with Tau Ceti: for the discrete topology on `Γ`, every
-automorphism is continuous, `TauCeti.ContinuousAut.toMulAut` is a bijection carrying
-`TauCeti.ContinuousAut.conj` to `MulAut.conj`, and it induces an isomorphism
-`TauCeti.ContinuousOut Γ ≃* Out(Γ)` (FarbMargalit2012, Ch. 8, §8.1, where `Out(π₁ S)` is the target
-of the mapping class group).
+For an arbitrary group `Γ`, `Out(Γ)` is TeichmullerGeometry §4.2's `OuterAut Γ`, the quotient of
+`MulAut Γ` by the normal subgroup `Inn(Γ)` (Conventions). Prove that the kernel of
+`MulAut.conj : Γ →* MulAut Γ` is the centre `Z(Γ)`, so that `MulAut.conj` induces an isomorphism
+`Γ ⧸ Z(Γ) ≃* Inn(Γ)`. Prove that an isomorphism `e : Γ ≃* Γ'` induces `Out(Γ) ≃* Out(Γ')`,
+`[φ] ↦ [e ∘ φ ∘ e⁻¹]`, by descending `MulAut.congr e`; that this is functorial in `e`, the identity
+inducing the identity and `e' ∘ e` the composite of the induced maps; and that an inner
+automorphism `e = MulAut.conj g` of `Γ` induces the identity of `Out(Γ)` (FarbMargalit2012, Ch. 8,
+§8.1, where `Out(π₁ S)` is the target of the mapping class group).
 
-The outer automorphism group has the following API.
-
-- The class of an automorphism is trivial exactly when it is inner.
-- The kernel of `MulAut.conj` is the centre of `Γ`, so `Inn(Γ) ≃* Γ ⧸ Z(Γ)`.
-- For commutative `Γ`, `Inn(Γ)` is trivial and `Out(Γ) ≃* MulAut Γ`.
-- An isomorphism `e : Γ ≃* Γ'` induces `Out(Γ) ≃* Out(Γ')` by descending `MulAut.congr e`;
-  this is functorial in `e`, and an inner automorphism `e = MulAut.conj g` of `Γ` induces the
-  identity of `Out(Γ)`.
-- The comparison isomorphism with `TauCeti.ContinuousOut` for the discrete topology commutes with
-  the quotient maps.
+*Proof sketch.* `MulAut.conj g` is the identity exactly when `g` commutes with every element of `Γ`,
+and `QuotientGroup.quotientKerEquivRange` gives the isomorphism. `MulAut.congr e` sends
+`MulAut.conj g` to `MulAut.conj (e g)`, so it carries `Inn(Γ)` onto `Inn(Γ')` and descends by
+`QuotientGroup.congr`. For `e = MulAut.conj g`,
+`e ∘ φ ∘ e⁻¹ = φ ∘ MulAut.conj (φ⁻¹(g) g⁻¹)`, which has the class of `φ`.
 
 **Checks.**
 
-- `Out(ℤ)` has two elements: `MulAut ℤ = {±1}` and `Inn(ℤ)` is trivial; a definition that quotiented
-  by all automorphisms of order two would give the trivial group.
-- `Out(S₃)` is trivial: `Z(S₃) = 1`, so `|Inn(S₃)| = 6 = |MulAut S₃|`; `Out(Q₈)` has order `6`, since
-  `MulAut Q₈ ≅ S₄` has order `24` and `Inn(Q₈) ≅ Q₈/{±1}` has order `4` (FiniteGroupInvariants §3.1
-  records the same value).
-- The trivial group has trivial `Out`; `Out(ℤ²) ≅ GL₂(ℤ)`, in which the class of `diag(1, −1)` is
-  nontrivial, so `Out` is not `SL₂(ℤ)`.
+- `Γ = Q₈`: `Z(Q₈) = {±1}` and `Inn(Q₈) ≅ Q₈/{±1}` is the Klein four-group, of order `4`; a statement
+  `Inn(Γ) ≅ Γ` would give `8`, and with `|MulAut Q₈| = 24` the quotient has TeichmullerGeometry
+  §4.2's value `|Out(Q₈)| = 6`.
+- `Γ = ℤ`: `Z(ℤ) = ℤ` and `Inn(ℤ)` is trivial; `Γ = S₃`: `Z(S₃) = 1` and `Inn(S₃) ≅ S₃` has order `6`.
+- An inner `e` acts trivially on `Out` but not on `MulAut`: for `Γ = Q₈` and `e = MulAut.conj i`,
+  `MulAut.congr e` is conjugation in `MulAut Q₈ ≅ S₄` by a nontrivial element of the Klein
+  four-group `Inn(Q₈)`, nontrivial because `S₄` has trivial centre, and trivial on
+  `Out(Q₈) ≅ S₄/V₄ ≅ S₃`.
+- An outer `e` need not act trivially: for `Γ = Γ' = ℤ²` and `e = diag(1, −1)`, the induced
+  automorphism of `Out(ℤ²) = GL₂(ℤ)` is conjugation by `diag(1, −1)`, which sends `[[1,1],[0,1]]` to
+  `[[1,−1],[0,1]]`.
 
-*Needs:* Mathlib `MulAut`, `MulAut.conj`, `MulAut.congr`, `QuotientGroup`, `MonoidHom.range`;
-Tau Ceti `TauCeti.ContinuousAut`, `TauCeti.ContinuousAut.toMulAut`, `TauCeti.ContinuousAut.conj`,
-`TauCeti.ContinuousAut.mul_conj_mul_inv`, `TauCeti.ContinuousAut.ker_conj`, `TauCeti.ContinuousOut`.
+*Needs:* TeichmullerGeometry §4.2; Mathlib `MulAut`, `MulAut.conj`, `MulAut.congr`,
+`Subgroup.center`, `QuotientGroup.quotientKerEquivRange`, `QuotientGroup.congr`.
 
 ### 1.2 Conjugacy classes of homomorphisms
 
@@ -452,7 +485,7 @@ For non-descent, `MulAut.conj γ · ρ = ρ` holds for all `γ` exactly when eac
   `Γ →* H`, so the action of `Out(Γ)` on `Hom(Γ, H)` is defined; this is the case of the action on
   `H¹` with constant coefficients.
 
-*Needs:* §1.1; §1.2.
+*Needs:* §1.1; §1.2; TeichmullerGeometry §4.2.
 
 ### Examples
 
@@ -461,22 +494,24 @@ For non-descent, `MulAut.conj γ · ρ = ρ` holds for all `γ` exactly when eac
 
 ### Dependencies
 
-Mathlib's automorphism, quotient and conjugation API; Tau Ceti's `TauCeti.ContinuousOut`. Layer 1
-supplies Layers 3 and 7.
+Mathlib's automorphism, quotient and conjugation API; TeichmullerGeometry §4.2. Layer 1 supplies
+Layers 3 and 7.
 
 ## Layer 2: Punctured surfaces, marked points and the pure mapping class group
 
 ### 2.1 Isotopy classes of homeomorphisms of a space
 
 For a topological space `X` define `Homeo₀(X)` as the set of final homeomorphisms of the ambient
-isotopies of `X` (`TauCeti.AmbientIsotopy.finalHomeomorph`) and prove that it is a normal subgroup of
-`X ≃ₜ X`: closure under composition and inverses is `TauCeti.AmbientIsotopy.trans` and `symm`, and
-normality is `TauCeti.AmbientIsotopy.conj` with `TauCeti.AmbientIsotopy.finalHomeomorph_conj`.
+isotopies of `X` (`TauCeti.AmbientIsotopy.finalHomeomorph`) and prove that it is a normal subgroup
+of `X ≃ₜ X`: closure under composition and inverses is `TauCeti.AmbientIsotopy.trans` and `symm`,
+and normality is `TauCeti.AmbientIsotopy.conj` with `TauCeti.AmbientIsotopy.finalHomeomorph_conj`.
 Define `Mod^±(X) := (X ≃ₜ X) ⧸ Homeo₀(X)`; two homeomorphisms have the same class exactly when they
-are ambient isotopic, and isotopy is a congruence for composition. For locally compact Hausdorff
-`X`, give `X ≃ₜ X` the topology induced by `f ↦ (f, f⁻¹)` into `C(X, X) × C(X, X)` with the
-compact-open topology; prove that it is a group topology and that `Homeo₀(X)` is the path component
-of the identity (FarbMargalit2012, Ch. 1, §1.4).
+are ambient isotopic, and isotopy is a congruence for composition. It differs from
+TeichmullerGeometry §0.0h's `MappingClassGroupFull X` by requiring the level-preserving total map of
+an isotopy to be a homeomorphism, the relation that extends over punctures (§2.2). For locally
+compact Hausdorff `X`, give `X ≃ₜ X` the topology induced by `f ↦ (f, f⁻¹)` into `C(X, X) × C(X, X)`
+with the compact-open topology; prove that it is a group topology and that `Homeo₀(X)` is the path
+component of the identity (FarbMargalit2012, Ch. 1, §1.4).
 
 *Proof sketch.* A path `t ↦ f_t` in this topology uncurries, by the exponential law for locally
 compact `X`, to continuous maps `(t, x) ↦ f_t(x)` and `(t, x) ↦ f_t⁻¹(x)`, which are the total map of
@@ -492,6 +527,12 @@ The group of isotopy classes has the following API.
   ambient isotopy, because its total map is a continuous bijection from a compact space to a
   Hausdorff space.
 - For locally compact Hausdorff `X`, `Homeo₀(X)` is the identity path component of `X ≃ₜ X`.
+- The identity of `X ≃ₜ X` induces a surjective homomorphism `Mod^±(X) → MappingClassGroupFull X`,
+  because the final map of an ambient isotopy is isotopic to the identity through embeddings
+  (`TauCeti.AmbientIsotopic.isotopic`); it is an isomorphism when `X` is compact, connected,
+  Hausdorff and charted on a finite-dimensional real normed space
+  (`TauCeti.isotopic_iff_ambientIsotopic`), in particular for a closed surface `Σ_g`, whose atlas
+  with empty boundary is read on the boundaryless model by TeichmullerGeometry §0.0e.
 - For an oriented surface, the orientation-preserving homeomorphisms contain `Homeo₀(X)` and
   their image `Mod(X)` has index at most two in `Mod^±(X)`.
 
@@ -508,8 +549,10 @@ The group of isotopy classes has the following API.
 
 *Needs:* Tau Ceti `TauCeti.AmbientIsotopy`, `TauCeti.AmbientIsotopy.trans`,
 `TauCeti.AmbientIsotopy.symm`, `TauCeti.AmbientIsotopy.conj`,
-`TauCeti.AmbientIsotopy.finalHomeomorph_conj`, `TauCeti.AmbientIsotopic.setoid`; Mathlib
-`ContinuousMap.compactOpen`, `Homeomorph`, `QuotientGroup`.
+`TauCeti.AmbientIsotopy.finalHomeomorph_conj`, `TauCeti.AmbientIsotopic.setoid`,
+`TauCeti.Isotopic`, `TauCeti.AmbientIsotopic.isotopic`, `TauCeti.isotopic_iff_ambientIsotopic`;
+TeichmullerGeometry §0.0e; TeichmullerGeometry §0.0h; Mathlib `ContinuousMap.compactOpen`,
+`Homeomorph`, `QuotientGroup`.
 
 ### 2.2 Punctures and marked points
 
@@ -523,15 +566,18 @@ For `Σ = Σ_g` oriented, orientation is preserved by the extension, so `Mod_{g,
 MordellLawrenceVenkatesh §5.9 is the orientation-preserving subgroup of `Mod^±(Σ_{g,n})` and is
 isomorphic to `Homeo⁺(Σ_g, P)` modulo isotopy fixing `P` pointwise (FarbMargalit2012, Ch. 2, §2.1).
 
-*Proof sketch.* For `p ∈ P` and a shrinking sequence `U_k` of compact neighbourhoods with connected
-punctured sets, the sets `h(U_k ∖ {p})` are connected and their closures in `Σ` form a decreasing
-sequence of continua; their intersection is connected (if it split into two disjoint closed pieces,
-disjoint open neighbourhoods of the pieces would contain some term of the sequence by compactness,
-contradicting its connectedness), contained in `P` (a point of `Σ ∖ P` in it
-would be `h(y)` with `y` outside some `U_k`), hence a single point `q`, and setting `h̄(p) = q` gives
-a continuous extension; `h⁻¹` gives its inverse, and density of `Σ ∖ P` gives uniqueness. For an
-ambient isotopy the same argument applied to `I × (U_k ∖ {p})` gives a connected intersection inside
-`I × P` that projects onto `I`, hence equals `I × {p}` because the isotopy starts at the identity.
+*Proof sketch.* Fix `p ∈ P` and let `𝒰` be the members `U` of the given basis with `U ∩ P = {p}`,
+again a neighbourhood basis of `p`. The closures in `Σ` of the connected sets `h(U ∖ {p})`,
+`U ∈ 𝒰`, form a family of nonempty compact connected sets directed by reverse inclusion; its
+intersection is nonempty by compactness and preconnected
+(`TauCeti.isPreconnected_iInter_of_directed`). It lies in `P`: a point `h(y)` with `y ∈ Σ ∖ P` has
+the open neighbourhood `h(Σ ∖ (P ∪ U))`, disjoint from `h(U ∖ {p})`, for any `U ∈ 𝒰` not containing
+`y`. Hence it is a single point `q`, and setting `h̄(p) = q` gives a continuous extension, since
+every neighbourhood of `q` contains a member of the family; `h⁻¹` gives its inverse, and density of
+`Σ ∖ P` gives uniqueness. For an ambient isotopy the same argument, applied to the closures of the
+images of `I × (U ∖ {p})` under the level-preserving total map, gives a nonempty preconnected subset
+of `I × P` meeting every slice `{t} × Σ`, hence equal to `I × {q}`, and `q = p` because the isotopy
+starts at the identity.
 
 **Checks.**
 
@@ -543,8 +589,9 @@ ambient isotopy the same argument applied to `I × (U_k ∖ {p})` gives a connec
   at `q`, so it has no continuous extension; the punctured neighbourhoods of `p` are disconnected.
 - With `P` empty the theorem is the identity of `Mod^±(Σ)`.
 
-*Needs:* §2.1; MordellLawrenceVenkatesh §5.1; MordellLawrenceVenkatesh §5.9; Mathlib `IsCompact`,
-`IsConnected`, `T2Space`.
+*Needs:* §2.1; MordellLawrenceVenkatesh §5.1; MordellLawrenceVenkatesh §5.9; Tau Ceti
+`TauCeti.isPreconnected_iInter_of_directed`; Mathlib `IsCompact`, `IsConnected`, `IsPreconnected`,
+`Directed`, `T2Space`.
 
 ### 2.3 The permutation homomorphism and the pure mapping class group
 
@@ -650,8 +697,9 @@ of `e` induce isomorphisms differing by an inner automorphism. Any two pairs `(�
 
 ### Dependencies
 
-Tau Ceti's ambient isotopies; MordellLawrenceVenkatesh §§5.1, 5.4, 5.9, 5.17, 5.19, 5.20, 5.22,
-5.23; FreeGroupsAndLimitGroups §§6.1–6.2; AlgebraicTopology Stage 1; TeichmullerGeometry §4.3.
+Tau Ceti's isotopies, ambient isotopies and directed intersections of continua;
+MordellLawrenceVenkatesh §§5.1, 5.4, 5.9, 5.17, 5.19, 5.20, 5.22, 5.23; FreeGroupsAndLimitGroups
+§§6.1–6.2; AlgebraicTopology Stage 1; TeichmullerGeometry §§0.0e, 0.0h, 4.3.
 Layer 2 supplies Layers 3, 4 and 7.
 
 ## Layer 3: The outer action of the mapping class group
@@ -734,27 +782,42 @@ of `x` (MordellLawrenceVenkatesh §5.9) the based homomorphism
   isotopic to the identity (an ambient isotopy moves each endpoint continuously within `{0, 1}`), so
   `Mod^±([0, 1])` has two elements.
 
-*Needs:* §1.1; §2.1; §3.1; §3.2; MordellLawrenceVenkatesh §5.9; MordellLawrenceVenkatesh §5.19.
+*Needs:* §1.1; §2.1; §3.1; §3.2; TeichmullerGeometry §4.2; MordellLawrenceVenkatesh §5.9;
+MordellLawrenceVenkatesh §5.19.
 
-### 3.4 Closed surfaces: comparison with the smooth theory
+### 3.4 Closed surfaces: the Dehn–Nielsen–Baer isomorphism and the action on `H₂`
 
-Prove that for a closed connected oriented smooth surface `Σ`, the map
-`Mod±(Σ) = π₀ Diff(Σ) → Mod^±(Σ)` of TeichmullerGeometry §3.1 to §2.1 is a well-defined homomorphism
-(a diffeotopy is an ambient isotopy, TeichmullerGeometry §0.2), and that `Ψ_x` composed with it is
-TeichmullerGeometry §5.2's map `Mod±(Σ) → Out(Π)` followed by the identification `Out(Π) ≃ Out(π₁)`
-of TeichmullerGeometry §4.2. Conclude that `Ψ_x : Mod^±(Σ) → Out(π₁(Σ, x))` is surjective. For
-genus `g ≥ 1`, prove that `Out(π₁(Σ, x))` acts on `H₂(π₁(Σ, x); ℤ)`, Mathlib's `groupHomology` of the
-trivial module `ℤ` in degree two, through `groupHomology.map`, inner automorphisms acting trivially;
-that `H₂(π₁(Σ, x); ℤ) ≅ H₂(Σ; ℤ) ≅ ℤ`, because `Σ` is aspherical; and that `Ψ_x` maps `Mod(Σ)` onto
-the subgroup of index two acting trivially on `H₂(π₁(Σ, x); ℤ)`. For `g = 0`, `Out(π₁(Σ, x))` is
-trivial and so is the image of `Mod(Σ)`, of index one (FarbMargalit2012, Ch. 8, §8.1, Theorem 8.1).
+Prove that for a closed connected oriented surface `Σ = Σ_g` of genus `g ≥ 1` and `x ∈ Σ`, `Ψ_x`
+corresponds, under §2.1's isomorphism `Mod^±(Σ) ≃* MappingClassGroupFull Σ`, to TeichmullerGeometry
+§5.4's `dehn_nielsen_baer`, hence is an isomorphism `Mod^±(Σ) ≃* Out(π₁(Σ, x))`; for `g = 0` it is the
+map from the group of order two (TeichmullerGeometry §5.4a, `mcg_sphere_full`) to the trivial group.
+For genus `g ≥ 1`, prove that `Out(π₁(Σ, x))` acts on `H₂(π₁(Σ, x); ℤ)`, Mathlib's `groupHomology` of
+the trivial module `ℤ` in degree two, through `groupHomology.map`, inner automorphisms acting
+trivially; that `H₂(π₁(Σ, x); ℤ) ≅ H₂(Σ; ℤ) ≅ ℤ`, because `Σ` is aspherical; and that `Ψ_x` maps
+`Mod(Σ)` onto the subgroup of index two acting trivially on `H₂(π₁(Σ, x); ℤ)`. For `g = 0`,
+`Out(π₁(Σ, x))` is trivial and so is the image of `Mod(Σ)`, of index one (FarbMargalit2012, Ch. 8,
+§8.1, Theorem 8.1).
 
-*Proof sketch.* For `g ≥ 1`, `Σ` is aspherical (MordellLawrenceVenkatesh §5.15) and is a CW complex
-by its polygon model (TeichmullerGeometry §4.3), so its singular homology is the group homology of
-`π₁(Σ, x)`, naturally (ClassifyingSpaces Stage 4 item 17). Hence `Ψ_x[f]` acts on
-`H₂(π₁(Σ, x); ℤ)` as `f` acts on `H₂(Σ; ℤ) ≅ ℤ`: by `+1` if `f` preserves the orientation, because
-it fixes the fundamental class `[Σ]` (MordellLawrenceVenkatesh §5.5), and by `−1` if it reverses it,
-since `f = (f ∘ r) ∘ r` with `f ∘ r` orientation-preserving (§2.1, index two), where `r` is the
+*Proof sketch.* For the comparison, `Σ_g` is homeomorphic to the standard genus-`g` model
+(MordellLawrenceVenkatesh §5.4), so it has genus `g` and is orientable in the sense of
+TeichmullerGeometry §0.0f, both being invariant under homeomorphisms; TeichmullerGeometry §0.0e
+exchanges its boundaryless atlas (used in §2.1) and its half-plane atlas with empty boundary (in
+which §5.4 is stated). Every class of `Mod^±(Σ)` has a representative `f` fixing `x`, the point
+`f(x)` being moved back to `x` by isotopy extension along a path (MordellLawrenceVenkatesh §5.17),
+and both `Ψ_x` (§3.3, with the constant path) and
+`dehn_nielsen_baer` send its class to the outer class of `FundamentalGroup.mapOfEq f`. For `g ≥ 1`,
+`Σ` is aspherical (MordellLawrenceVenkatesh §5.15) and is a CW complex by its polygon model
+(TeichmullerGeometry §4.3), so its singular homology is the group homology of `π₁(Σ, x)`, naturally
+(ClassifyingSpaces Stage 4 item 17). Hence `Ψ_x[f]` acts on `H₂(π₁(Σ, x); ℤ)` as `f` acts on
+`H₂(Σ; ℤ) = ℤ[Σ]`, by the sign `ε_f = ±1` with `f_*[Σ] = ε_f [Σ]`. Naturality of cup and cap products
+gives `î(f_* u, f_* v) = ε_f î(u, v)` for `u, v ∈ H₁(Σ; ℤ)` and the intersection form `î` of
+MordellLawrenceVenkatesh §5.5: writing `u = a ∩ [Σ]` and `v = b ∩ [Σ]`, the projection formula gives
+`f_* u = ε_f (f⁻¹)^* a ∩ [Σ]`, so
+`î(f_* u, f_* v) = ε_f² ⟨a ∪ b, (f⁻¹)_*[Σ]⟩ = ε_f î(u, v)`. If `f` preserves the orientation, `î` is
+invariant under `f` (§5.5) and nonzero, the pushed-off core curves `a₁`, `b₁` of the polygon model
+meeting transversally in one point (TeichmullerGeometry §4.3), so that `î(a₁, b₁) = ±1` by §5.5's
+signed count; hence `ε_f = 1`. If `f` reverses it, `ε_f = −1`, since `f = (f ∘ r) ∘ r` with `f ∘ r`
+orientation-preserving (§2.1, index two), where `r` is the
 reflection of the polygon model (TeichmullerGeometry §4.3) through the axis exchanging the edges in
 positions `k` and `3 − k` modulo `4g`. This `r` respects the side pairing of the word
 `a₁ b₁ a₁⁻¹ b₁⁻¹ ⋯ a_g b_g a_g⁻¹ b_g⁻¹`, is cellular, and maps the unique two-cell to itself by a
@@ -762,25 +825,30 @@ reflection, so it acts by `−1` on cellular `H₂`, hence on singular `H₂` (A
 items 2–3). An inner automorphism `MulAut.conj [α]` is `f_{const}` for the push of `x` around `α`
 (§3.2), which is isotopic to the identity (MordellLawrenceVenkatesh §5.19), so it acts trivially.
 Since `r` acts by `−1`, the action of `Out` is onto `{±1}`; an outer class acting by `+1` is `Ψ_x[f]`
-for some `f` by surjectivity, and that `f` cannot reverse orientation.
+for some `f`, `Ψ_x` being onto, and that `f` cannot reverse orientation.
 
 **Checks.**
 
-- Torus: `Ψ` is the isomorphism `Mod^±(T²) ≅ GL₂(ℤ)` on the action on `H₁ = ℤ²`; `A ∈ GL₂(ℤ)` acts
-  on `H₂(ℤ²; ℤ) = Λ²ℤ² ≅ ℤ` by `det A`, so the image of `Mod(T²)` is `SL₂(ℤ)`, of index two, and the
-  reflection `diag(1, −1)` acts by `−1`.
-- Sphere: `Out(1)` is trivial while `Mod^±(S²)` is nontrivial (the antipodal map has degree `−1`, an
-  isotopy invariant); `Ψ` is surjective and not injective, so surjectivity is the only conclusion
-  drawn here. Here `H₂(π₁(S², x); ℤ) = H₂(1; ℤ) = 0` while `H₂(S²; ℤ) = ℤ`: the sphere is not
-  aspherical, which is why the `H₂` clause is stated for `g ≥ 1`.
+- Torus: `Ψ` is the isomorphism `Mod^±(T²) ≅ GL₂(ℤ)` on the action on `H₁ = ℤ²`, the inverse of
+  TeichmullerGeometry §5.4a's `mcg_torus_full` read through §2.1; `A ∈ GL₂(ℤ)` acts on
+  `H₂(ℤ²; ℤ) = Λ²ℤ² ≅ ℤ` by `det A`, so the image of `Mod(T²)` is `SL₂(ℤ)`, of index two. The sign
+  agrees with the intersection form: `î(Au, Av) = det(A) î(u, v)`, so the shear `[[1,0],[1,1]]` has
+  `ε = 1` and the reflection `diag(1, −1)` has `ε = −1`.
+- Sphere: `Out(1)` is trivial while `Mod^±(S²)` has two elements (the antipodal map has degree `−1`,
+  an isotopy invariant; TeichmullerGeometry §5.4a); so `Ψ_x` is an isomorphism for `g ≥ 1` and not
+  injective for `g = 0`. Here `H₂(π₁(S², x); ℤ) = H₂(1; ℤ) = 0` while `H₂(S²; ℤ) = ℤ`, and `î = 0` on
+  `H₁(S²; ℤ) = 0`: the sphere is not aspherical and the sign argument has no nonzero form to use,
+  which is why the `H₂` clause is stated for `g ≥ 1`.
 - Genus two: the hyperelliptic class maps to the outer class acting by `−1` on the abelianization
   (the genus-two example of TeichmullerGeometry Layer 5).
 
-*Needs:* §2.1; §3.2; §3.3; TeichmullerGeometry §0.2; TeichmullerGeometry §3.1; TeichmullerGeometry
-§4.2; TeichmullerGeometry §4.3; TeichmullerGeometry §5.2; MordellLawrenceVenkatesh §5.1;
-MordellLawrenceVenkatesh §5.5; MordellLawrenceVenkatesh §5.15; MordellLawrenceVenkatesh §5.19;
-AlgebraicTopology Stage 4 items 2–3; ClassifyingSpaces Stage 3 item 11; ClassifyingSpaces Stage 4
-item 17; Mathlib `groupHomology`, `groupHomology.map`.
+*Needs:* §2.1; §3.2; §3.3; TeichmullerGeometry §0.0e; TeichmullerGeometry §0.0f; TeichmullerGeometry
+§0.0h; TeichmullerGeometry §4.2; TeichmullerGeometry §4.3; TeichmullerGeometry §5.4;
+TeichmullerGeometry §5.4a; MordellLawrenceVenkatesh §5.1; MordellLawrenceVenkatesh §5.4;
+MordellLawrenceVenkatesh §5.5; MordellLawrenceVenkatesh §5.15; MordellLawrenceVenkatesh §5.17;
+MordellLawrenceVenkatesh §5.19; AlgebraicTopology Stage 4 items 2–3; ClassifyingSpaces Stage 3 item
+11; ClassifyingSpaces Stage 4 item 17; Mathlib `groupHomology`, `groupHomology.map`,
+`FundamentalGroup.mapOfEq`.
 
 ### 3.5 The mapping class action on conjugacy classes of representations
 
@@ -845,8 +913,9 @@ MordellLawrenceVenkatesh §5.20; MordellLawrenceVenkatesh §5.22.
 ### Dependencies
 
 Layers 1 and 2; Mathlib's fundamental group and groupoid and `groupHomology`;
-MordellLawrenceVenkatesh §§5.1, 5.5, 5.9, 5.15, 5.19, 5.20, 5.22; TeichmullerGeometry §§0.2, 3.1, 4.2,
-4.3, 5.2; AlgebraicTopology Stage 4; ClassifyingSpaces Stages 3–4. Layer 3 supplies Layer 7.
+MordellLawrenceVenkatesh §§5.1, 5.4, 5.5, 5.9, 5.15, 5.17, 5.19, 5.20, 5.22; TeichmullerGeometry
+§§0.0e, 0.0f, 0.0h, 4.2, 4.3, 5.4, 5.4a; AlgebraicTopology Stage 4; ClassifyingSpaces Stages 3–4.
+Layer 3 supplies Layer 7.
 
 ## Layer 4: Representation schemes
 
@@ -1306,7 +1375,8 @@ ComplexComparisonPartII §C-1.1. Layer 6 supplies Layer 7.
 
 ### 7.1 The character variety and its topology
 
-Define `𝒳(Γ, G^ℝ) := Hom^red(Γ, G^ℝ)/G^ℝ` with the quotient topology of the subspace topology on
+For a real reductive datum `(𝐆, G^ℝ)` and a finitely generated group `Γ`, define
+`𝒳(Γ, G^ℝ) := Hom^red(Γ, G^ℝ)/G^ℝ` with the quotient topology of the subspace topology on
 `Hom^red(Γ, G^ℝ)` (BCGGO2024 lines 2712–2713, Definition 8.1). Prove that, in a Cartan-compatible
 realization (§5.3), the inclusion of `M ∩ Hom(Γ, G^ℝ)` induces a homeomorphism
 `(M ∩ Hom(Γ, G^ℝ))/K ≅ 𝒳(Γ, G^ℝ)`; hence `𝒳(Γ, G^ℝ)` is Hausdorff, locally compact and second
@@ -1317,11 +1387,12 @@ which gives a map of sets `Hom(Γ, G^ℝ) → 𝒳(Γ, G^ℝ)` extending the quo
 *Proof sketch.* By §6.7, `Hom^red` is the set of points with closed orbit, and by §5.4 each closed
 orbit meets `M` in one `K`-orbit, so the map from `(M ∩ Hom)/K` is a continuous bijection. For its
 inverse, let `v_n → v` in `Hom^red`, `w_n ∈ G^ℝ v_n ∩ M` (bounded by `‖v_n‖`) and `w` a limit point.
-If `G^ℝ w ≠ G^ℝ v`, separate these closed orbits by a `T`-invariant function `f` (§5.4 (v)) and write
-`w_n = k_n t_n k'_n` (`G^ℝ = K T K`); along a subsequence `k_n → k`, `k'_n → k'`, and
-`f(k'_n v_n) = f(t_n k'_n v_n) = f(k_n⁻¹ w_n)` tends both to `f(k' v) = 0` and to `f(k⁻¹ w) = 1`.
-`K` is compact, so its action on the closed cone `M ∩ Hom` is proper, and the orbit space is Hausdorff
-(`t2Space_quotient_mulAction_of_properSMul`), locally compact and second countable.
+If `G^ℝ w ≠ G^ℝ v`, separate these closed orbits by a `T`-invariant function `f` (§5.4 (v)) and
+write `w_n = g_n v_n` with `g_n = k_n t_n k'_n` (`G^ℝ = K T K`); along a subsequence `k_n → k`,
+`k'_n → k'`, and `f(k'_n v_n) = f(t_n k'_n v_n) = f(k_n⁻¹ w_n)` tends both to `f(k' v) = 0` and to
+`f(k⁻¹ w) = 1`. `K` is compact, so its action on the closed cone `M ∩ Hom` is proper, and the orbit
+space is Hausdorff (`t2Space_quotient_mulAction_of_properSMul`), locally compact and second
+countable.
 
 The character variety has the following API.
 
@@ -1342,6 +1413,12 @@ The character variety has the following API.
 - `Γ = ℤ`, `G^ℝ = SL₂(ℝ)`: `𝒳(ℤ, SL₂(ℝ))` is the set of semisimple conjugacy classes; the classes of
   `[[1,1],[0,1]]` and `1` are distinct in `Hom/G^ℝ` but only `1` is a point of `𝒳`, so the naive orbit
   space `Hom(ℤ, SL₂(ℝ))/SL₂(ℝ)` is not Hausdorff while `𝒳` is.
+- Finite generation is needed: for `Γ` free of countably infinite rank and `G^ℝ = GL₁(ℝ) = ℝ^×`,
+  `Ad` is trivial, so every representation is reductive and conjugation is trivial, and the quotient
+  is `(ℝ^×)^ℕ` with the product topology, which is not locally compact (a basic open set restricts
+  finitely many coordinates, and its closure projects onto the non-compact `ℝ^×` in every other
+  one); for `Γ` free of rank `m` the same computation gives the locally compact `(ℝ^×)^m`, and the
+  realization `V = (M_N × M_N)^S` of §5.3 needs the finite generating set `S`.
 
 *Needs:* §5.3; §5.4; §6.7; Mathlib `ProperSMul`, `t2Space_quotient_mulAction_of_properSMul`,
 `IsProperMap`.
@@ -1389,12 +1466,12 @@ Layer 6; Tau Ceti `TauCeti.Coalgebra.IsLinearlyReductive`,
 
 ### 7.3 Functoriality
 
-Prove that a homomorphism of real reductive data `φ : (𝐆, G^ℝ) → (𝐆', G'^ℝ)` maps reductive
-representations to reductive representations and induces a continuous map
-`𝒳(Γ, G^ℝ) → 𝒳(Γ, G'^ℝ)`; that a surjection `Γ' ↠ Γ` induces a closed embedding
-`𝒳(Γ, G^ℝ) → 𝒳(Γ', G^ℝ)`; and that the restriction to a finite-index subgroup `Γ' ≤ Γ` maps reductive
-representations to reductive representations and induces a continuous map
-`𝒳(Γ, G^ℝ) → 𝒳(Γ', G^ℝ)` (Sikora2012 line 268, Corollary 9).
+Prove that for finitely generated groups `Γ`, `Γ'`, a homomorphism of real reductive data
+`φ : (𝐆, G^ℝ) → (𝐆', G'^ℝ)` maps reductive representations to reductive representations and induces
+a continuous map `𝒳(Γ, G^ℝ) → 𝒳(Γ, G'^ℝ)`; that a surjection `Γ' ↠ Γ` induces a closed embedding
+`𝒳(Γ, G^ℝ) → 𝒳(Γ', G^ℝ)`; and that the restriction to a finite-index subgroup `Γ' ≤ Γ`, finitely
+generated by Schreier's lemma, maps reductive representations to reductive representations and
+induces a continuous map `𝒳(Γ, G^ℝ) → 𝒳(Γ', G^ℝ)` (Sikora2012 line 268, Corollary 9).
 
 *Proof sketch.* By §6.7 (c), the image of a reductive group under a morphism of algebraic groups is
 reductive. For a finite-index `Γ'`, the Zariski closure of `ρ(Γ')` has finite index in that of
@@ -1408,16 +1485,17 @@ reductive. For a finite-index `Γ'`, the Zariski closure of `ρ(Γ')` has finite
 - `Γ = ℤ/2 ↞ ℤ`: `𝒳(ℤ/2, G^ℝ)` is the closed subset of `𝒳(ℤ, G^ℝ)` of classes of semisimple elements of
   order dividing two.
 
-*Needs:* §6.7; §7.1.
+*Needs:* §6.7; §7.1; Mathlib `Subgroup.fg_of_index_ne_zero`.
 
 ### 7.4 The outer action and the mapping class action
 
-Prove that `Out(Γ)` acts on `𝒳(Γ, G^ℝ)` by homeomorphisms, `[φ] · [ρ] = [ρ ∘ φ⁻¹]`, and that this is
-the restriction of §1.3's action on `Rep(Γ, G^ℝ)`. For `Γ = π₁(Σ_{g,n}, x)`, prove that a path
-`σ : x ⟶ x'` induces a homeomorphism `𝒳(π₁(Σ_{g,n}, x'), G^ℝ) ≅ 𝒳(π₁(Σ_{g,n}, x), G^ℝ)` independent
-of `σ`, so that `𝒳(Σ_{g,n}, G^ℝ)` is well defined, and that `Mod^±_{g,n}` acts on it by homeomorphisms
-through `Ψ_x` (§3.3), compatibly with these identifications and with §3.5's action on all conjugacy
-classes (BCGGO2024 lines 2712–2713; LandesmanLitt2024 lines 47–50).
+Prove that for a finitely generated group `Γ`, `Out(Γ)` acts on `𝒳(Γ, G^ℝ)` by homeomorphisms,
+`[φ] · [ρ] = [ρ ∘ φ⁻¹]`, and that this is the restriction of §1.3's action on `Rep(Γ, G^ℝ)`. For
+`Γ = π₁(Σ_{g,n}, x)`, prove that a path `σ : x ⟶ x'` induces a homeomorphism
+`𝒳(π₁(Σ_{g,n}, x'), G^ℝ) ≅ 𝒳(π₁(Σ_{g,n}, x), G^ℝ)` independent of `σ`, so that `𝒳(Σ_{g,n}, G^ℝ)` is
+well defined, and that `Mod^±_{g,n}` acts on it by homeomorphisms through `Ψ_x` (§3.3), compatibly
+with these identifications and with §3.5's action on all conjugacy classes (BCGGO2024 lines
+2712–2713; LandesmanLitt2024 lines 47–50).
 
 *Proof sketch.* Precomposition with `φ⁻¹` is continuous for the pointwise topology, commutes with
 conjugation and preserves reductivity (§6.1); inner automorphisms act trivially on classes (§1.3).
@@ -1475,7 +1553,8 @@ actions.
   with `H` finite, restricted to surjections, through §3.3.
 - A nonabelian Hodge and higher Teichmüller roadmap (real forms, `G^ℝ`-Higgs bundles, Fuchsian and
   Hitchin loci) and a Goldman symplectic form roadmap consume §§5.1–5.2 and Layers 6–7 for general
-  `Γ`; GeometricTopology, Part II (Culler–Shalen theory on `𝒳(π₁ M, SL₂(ℂ))`) consumes §§4.1 and 7.2.
+  finitely generated `Γ`; GeometricTopology, Part II (Culler–Shalen theory on `𝒳(π₁ M, SL₂(ℂ))`)
+  consumes §§4.1 and 7.2.
 
 ## References
 
