@@ -2,7 +2,7 @@
  "roadmap": "SchrodingerOperatorsAndSpectralTypes",
  "title": "Schrödinger operators and spectral types",
  "parent": null,
- "summary": "Measure-theoretic spectral types (Lebesgue decomposition of vector spectral measures, sigma_ac/sc/pp, the interval criterion, min-max below the essential spectrum, wave operators, Kato-Rosenblum) for arbitrary self-adjoint operators; lower bounds and cores under bounded and Kato-Rellich perturbations; the Laplace-Beltrami operator of a Riemannian manifold from C_c^infinity to its self-adjoint closure on complete manifolds (Gaffney-Chernoff-Strichartz) with its spectral vocabulary, compact case, bounded potentials and the cusp threshold 1/4; the free Laplacian on H^2(R^d) and -Delta + V for real bounded V with sigma_ess = [0, infinity) when V vanishes at infinity, and quasi-periodic potentials.",
+ "summary": "Measure-theoretic spectral types (Lebesgue decomposition of vector spectral measures, sigma_ac/sc/pp, the interval criterion, min-max below the essential spectrum, wave operators, Pearson's theorem, Kato-Rosenblum) for arbitrary self-adjoint operators; lower bounds and cores under bounded and Kato-Rellich perturbations; the Laplace-Beltrami operator of a Riemannian manifold from C_c^infinity to its self-adjoint closure on complete manifolds (Gaffney-Chernoff-Strichartz) with its spectral vocabulary, compact case, bounded potentials and the cusp threshold 1/4; the form domain and essential spectrum of the free Laplacian on H^2(R^d) (taken from QuantumFoundations S8.2) and -Delta + V for real bounded V with sigma_ess = [0, infinity) when V vanishes at infinity, and quasi-periodic potentials.",
  "baseline": {
   "mathlib": "1b1ccf4b088b32fa3f23f2de1127433254a81e1e",
   "tauceti": "2fd255d997f47c0b5d834ee416c7015d55444ce5"
@@ -108,12 +108,13 @@
      ],
      "locator": {
       "source": "teschl",
-      "where": "line 4420-4427"
+      "where": "line 3282-3304 (Lemma 2.24, p. 80), 4945-4946 (Corollary 4.6, p. 116): reduction by a commuting projection; the compression/spectral-measure identification is deduced here from SA-B44, SA-C12-SA-C19, SA-E05, SA-E44"
      },
      "prerequisites": [
       "target:1.1",
+      "roadmap:OperatorTheory SelfAdjointSpectralTheory SA-B44",
       "roadmap:OperatorTheory SelfAdjointSpectralTheory SA-C12-SA-C19",
-      "roadmap:OperatorTheory SelfAdjointSpectralTheory SA-E05-SA-E07",
+      "roadmap:OperatorTheory SelfAdjointSpectralTheory SA-E05",
       "roadmap:OperatorTheory SelfAdjointSpectralTheory SA-E44",
       "roadmap:UnboundedOperators UO-C01"
      ],
@@ -512,7 +513,7 @@
      "id": "1.8a",
      "kind": "definition",
      "name": "IsDensityBounded",
-     "statement": "x in H_ac(H) is density-bounded with constant m when mu_x.rnDeriv volume <= m^2 almost everywhere.",
+     "statement": "For self-adjoint H and real m, x is density-bounded with constant m when x in H_ac(H) and mu_x.rnDeriv volume <= m^2 almost everywhere (only m^2 enters).",
      "hypotheses": [
       "H self-adjoint",
       "m real"
@@ -523,35 +524,46 @@
      },
      "prerequisites": [
       "roadmap:UnboundedOperators UO-C03",
-      "mathlib:MeasureTheory.Measure.rnDeriv"
+      "mathlib:MeasureTheory.Measure.rnDeriv",
+      "target:1.1"
      ],
      "api": [
       {
        "name": "dense_densityBounded",
        "role": "structure",
-       "statement": "Density-bounded vectors are dense in H_ac(H): P_H({h <= m^2}) x -> x."
+       "statement": "For x in H_ac(H), h a Borel version of mu_x.rnDeriv volume and m >= 0, P_H({h <= m^2}) x is density-bounded with constant m and ||x - P_H({h <= m^2}) x||^2 = integral over {h > m^2} of h -> 0 as m -> +infinity; so density-bounded vectors are dense in H_ac(H)."
       },
       {
        "name": "densityBounded_mono",
        "role": "structure",
-       "statement": "Constant m implies constant m' for m <= m'."
+       "statement": "If m^2 <= m'^2, constant m implies constant m'; in particular for 0 <= m <= m'. Monotonicity in m itself fails for negative m."
+      },
+      {
+       "name": "densityBounded_smul",
+       "role": "structure",
+       "statement": "0 is density-bounded with every constant; constant m for x gives constant |c| m for c x."
       }
      ],
      "tests": [
       {
        "name": "multiplier",
        "kind": "characterisation",
-       "statement": "For H = M_lambda on L^2(R), x is density-bounded iff x in L^infinity cap L^2."
+       "statement": "For H = M_lambda on L^2(R), x is density-bounded with constant m iff |x| <= |m| a.e."
+      },
+      {
+       "name": "sign_of_constant",
+       "kind": "non-example",
+       "statement": "H = M_lambda, x = 1_{[0,1]}: constants -1 and 1 work, 0 does not; so -1 <= 0 does not transport the property, while m^2 = 1 <= 4 = m'^2 does."
       },
       {
        "name": "unbounded_density",
        "kind": "non-example",
-       "statement": "x = |lambda|^{-1/4} 1_{[-1,1]} lies in H_ac with density |lambda|^{-1/2}, not density-bounded."
+       "statement": "x = |lambda|^{-1/4} 1_{[-1,1]} lies in H_ac with density |lambda|^{-1/2}, not density-bounded for any m; its truncations x 1_{|lambda| >= m^{-4}} (m >= 1) have constant m and distance^2 4/m^2."
       },
       {
        "name": "no_ac_part",
        "kind": "degenerate",
-       "statement": "If H_ac(H) = 0 the only density-bounded vector is 0."
+       "statement": "H = 0 on C: H_ac = 0, so only 0 is density-bounded although every mu_x = |x|^2 delta_0 has rnDeriv 0 a.e.; without membership in H_ac, x = 1 with constant 0 and C = 1 would violate Rosenblum's estimate (infinity > 0)."
       }
      ]
     },
@@ -591,7 +603,49 @@
      ]
     },
     {
-     "id": "1.9",
+     "id": "1.9a",
+     "kind": "theorem",
+     "name": "pearson_waveOperator_exists",
+     "statement": "Let H_1, H_2 be self-adjoint on a complex Hilbert space H, J bounded on H, and C trace class (nuclearENorm C /= top) with <H_2 psi, J phi> - <psi, J H_1 phi> = <psi, C phi> for psi in dom H_2, phi in dom H_1. Then the strong limits W_pm(H_2,H_1;J) := s-lim_{t -> pm infinity} e^{itH_2} J e^{-itH_1} P_ac(H_1) exist and e^{isH_2} W_pm = W_pm e^{isH_1} for all real s. No isometry is asserted.",
+     "hypotheses": [
+      "H_1, H_2 self-adjoint on the same complex Hilbert space",
+      "J bounded",
+      "C bounded with nuclearENorm C /= top",
+      "<H_2 psi, J phi> - <psi, J H_1 phi> = <psi, C phi> for psi in dom H_2, phi in dom H_1"
+     ],
+     "locator": {
+      "source": "yafaev04",
+      "where": "line 116-122 (Definition 1.3), 191-198 (Theorem 1.8; the proof uses only Rosenblum's lemma, line 195-206); pearson78 (uncertified); rs3 Theorem XI.7 (uncertified)"
+     },
+     "prerequisites": [
+      "target:1.2",
+      "target:1.8a",
+      "target:1.8b",
+      "roadmap:OperatorTheory SelfAdjointSpectralTheory SA-E26-SA-E29",
+      "roadmap:UnboundedOperators UO-C03",
+      "tauceti:ContinuousLinearMap.nuclearENorm"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "zero_identification",
+       "kind": "degenerate",
+       "statement": "J = 0, C = 0: W_pm = 0 although H_ac(H_1) /= 0 for H_1 = M_x on L^2(R); Pearson's limit need not be isometric."
+      },
+      {
+       "name": "kato_rosenblum_case",
+       "kind": "compatibility",
+       "statement": "J = 1, H_2 = H_1 + V with V bounded self-adjoint trace class: C = V satisfies the hypothesis, and W_pm(H_2,H_1;1) = Omega_pm(H_2,H_1) P_ac(H_1)."
+      },
+      {
+       "name": "weak_not_strong",
+       "kind": "non-example",
+       "statement": "H_1 = M_x, H_2 = 2 M_x on L^2(R), x = 1_{[0,1]}: e^{itx} 1_{[0,1]} has norm 1, tends weakly to 0 ((e^{it}-1)/(it) -> 0) and stays at distance 1 from 0; H_2 - H_1 is not trace class."
+      }
+     ]
+    },
+    {
+     "id": "1.9b",
      "kind": "theorem",
      "name": "kato_rosenblum",
      "statement": "If H_1 is self-adjoint and V bounded self-adjoint trace class, H_2 = H_1 + V on dom H_1, then Omega_pm(H_2,H_1) and Omega_pm(H_1,H_2) exist on the absolutely continuous subspaces and are complete; the compressed wave operator W_pm(H_2,H_1) := Omega_pm(H_2,H_1) P_ac(H_1) (Kato's strong limit of e^{itH_2} e^{-itH_1} P_ac(H_1)) is a partial isometry with initial space H_ac(H_1) and final space H_ac(H_2); W_pm(H_2,H_1)* = W_pm(H_1,H_2); H_2 P_ac(H_2) = W_pm H_1 P_ac(H_1) W_pm*; hence (H_1)_ac and (H_2)_ac are unitarily equivalent and sigma_ac(H_1) = sigma_ac(H_2). Omega_pm itself is the unrestricted limit of 1.7a and need not vanish off H_ac(H_1).",
@@ -601,7 +655,7 @@
      ],
      "locator": {
       "source": "kato57",
-      "where": "line 21-35 (Theorem 1); rs3 SXI.3 Theorems XI.7-XI.8; rosenblum57 Theorem 1.6 line 70-72"
+      "where": "line 21-35 (Theorem 1), 25-28 (1.1), 29-30 (1.2), 32-35 (1.3); yafaev04 line 136-140 (Theorem 1.4); rs3 SXI.3 Theorem XI.8 (uncertified); rosenblum57 Theorem 1.6 line 70-72 (purely absolutely continuous case)"
      },
      "prerequisites": [
       "target:1.1",
@@ -609,6 +663,7 @@
       "target:1.4a",
       "target:1.7b",
       "target:1.8b",
+      "target:1.9a",
       "roadmap:OperatorTheory SelfAdjointSpectralTheory SA-C54",
       "roadmap:OperatorTheory SelfAdjointSpectralTheory SA-E26-SA-E29",
       "roadmap:UnboundedOperators UO-C03"
@@ -695,9 +750,10 @@
      "id": "2.1b",
      "kind": "theorem",
      "name": "spectrum_subset_Ici_iff_formBound",
-     "statement": "For gamma real: gamma ||x||^2 <= <x, A x> on dom A iff sigma(A) subset [gamma, infinity) iff P_A((-infinity, gamma)) = 0; hence lambda_0(A) = inf of the Rayleigh quotient over dom A, over any core, or over the form domain.",
+     "statement": "For every self-adjoint A (no lower bound assumed, H possibly zero) and gamma real: gamma ||x||^2 <= <x, A x> on dom A iff sigma(A) subset [gamma, infinity) iff P_A((-infinity, gamma)) = 0. For A bounded below on nonzero H, lambda_0(A) = inf of the Rayleigh quotient over dom A, over any core, or over the form domain.",
      "hypotheses": [
-      "A self-adjoint, H nonzero"
+      "A self-adjoint (the equivalence assumes no lower bound and allows H = 0)",
+      "H nonzero and A bounded below for the Rayleigh formula for lambda_0(A)"
      ],
      "locator": {
       "source": "teschl",
@@ -712,7 +768,23 @@
       "roadmap:UnboundedOperators UO-D06"
      ],
      "api": [],
-     "tests": []
+     "tests": [
+      {
+       "name": "zero_space",
+       "kind": "degenerate",
+       "statement": "H = 0: all three conditions hold for every gamma."
+      },
+      {
+       "name": "unbounded_below",
+       "kind": "non-example",
+       "statement": "A = M_x on L^2(R), gamma = 0: all three conditions fail (sigma = R, P((-infinity,0)) /= 0)."
+      },
+      {
+       "name": "scalar",
+       "kind": "computation",
+       "statement": "A = 2 on C: the conditions hold exactly for gamma <= 2."
+      }
+     ]
     },
     {
      "id": "2.2",
@@ -761,17 +833,25 @@
      ],
      "locator": {
       "source": "teschl",
-      "where": "line 5683-5720 (Lemma 6.3, Theorem 6.4); kato76 Ch. V S4.1 Theorem 4.11; rs2 Theorem X.12"
+      "where": "line 5683-5720 (Lemma 6.3, Theorem 6.4; Teschl's R_A(z) = (A - z)^{-1}, line 3043-3046, is the opposite sign of SA-E05's); kato76 Ch. V S4.1 Theorem 4.11; rs2 Theorem X.12"
      },
      "prerequisites": [
       "target:2.1b",
       "tauceti:IsSelfAdjoint.add_of_isRelativelyBounded",
       "tauceti:LinearPMap.IsRelativelyBounded",
       "roadmap:OperatorTheory SelfAdjointSpectralTheory SA-C39",
-      "roadmap:OperatorTheory SelfAdjointSpectralTheory SA-D22"
+      "roadmap:OperatorTheory SelfAdjointSpectralTheory SA-D22",
+      "roadmap:OperatorTheory SelfAdjointSpectralTheory SA-E05",
+      "roadmap:OperatorTheory SelfAdjointSpectralTheory SA-E08",
+      "roadmap:OperatorTheory SelfAdjointSpectralTheory SA-E11"
      ],
      "api": [],
      "tests": [
+      {
+       "name": "resolvent_sign",
+       "kind": "computation",
+       "statement": "On C: A = 2, V = 1, gamma = 2, a = 1, b = 0, mu = 0: R_A(0) = (0 - 2)^{-1} = -1/2, (1 - V R_A(0))(A - 0) = 3 = A + V, while (1 + V R_A(0))(A - 0) = 1."
+      },
       {
        "name": "lettering",
        "kind": "computation",
@@ -1327,7 +1407,7 @@
      "id": "3.9",
      "kind": "theorem",
      "name": "laplacian_add_boundedPotential",
-     "statement": "For complete X and real V in L^infinity(X): Delta_X + V is self-adjoint on dom Delta_X, Delta_0 + V is essentially self-adjoint on C_c^infinity with closure Delta_X + V, Delta_X + V >= ess inf V; for compact X it has compact resolvent.",
+     "statement": "For complete X and real V in L^infinity(X): Delta_X + V is self-adjoint on dom Delta_X, Delta_0 + V is essentially self-adjoint on C_c^infinity with closure Delta_X + V, Delta_X + V >= ess inf V. For compact X: Delta_X + V has compact resolvent, discrete spectrum of eigenvalues of finite multiplicity and an orthonormal eigenbasis in dom Delta_X = H^2(X); its eigenvalues with multiplicity are the min-max values mu_n(Delta_X + V) of 1.6a (+infinity for n > dim L^2(X)) and, for X nonempty, lambda_{n-1}(X) + ess inf V <= mu_n(Delta_X + V) <= lambda_{n-1}(X) + ess sup V; if X is nonempty and dim X >= 1 every mu_n is finite and mu_n -> infinity; if V is smooth the eigenfunctions are smooth. No smoothness is asserted for discontinuous V.",
      "hypotheses": [
       "X finite-dimensional real smooth manifold, Hausdorff, second countable, boundaryless",
       "smooth Riemannian metric g",
@@ -1338,12 +1418,20 @@
      ],
      "locator": {
       "source": "teschl",
-      "where": "line 5704-5711"
+      "where": "line 5704-5711 (Theorem 6.4, relative bound 0), 6358-6360 (resolvent difference for relatively compact perturbations)"
      },
      "prerequisites": [
+      "target:1.6a",
+      "target:1.6b",
       "target:2.2",
       "target:3.6",
-      "target:3.8"
+      "target:3.7a",
+      "target:3.8",
+      "roadmap:OperatorTheory SelfAdjointSpectralTheory SA-C54",
+      "roadmap:OperatorTheory SelfAdjointSpectralTheory SA-C86",
+      "roadmap:ComplexKahlerGeometry K5a",
+      "mathlib:IsCompactOperator.comp_clm",
+      "tauceti:IsSelfAdjoint.hasCompactResolvent_iff_isCompactOperator_resolvent"
      ],
      "api": [],
      "tests": [
@@ -1353,9 +1441,19 @@
        "statement": "V = c: sigma(Delta_X + c) = sigma(Delta_X) + c."
       },
       {
+       "name": "circle_shift",
+       "kind": "computation",
+       "statement": "Circle of length 2 pi, V = 1: eigenvalues 1, 2, 2, 5, 5, ... (n^2 + 1); the list starts at ess inf V = 1, not 0."
+      },
+      {
        "name": "half_circle",
        "kind": "computation",
-       "statement": "Circle of length 2 pi, V = 1_{[0,pi)}: 0 <= lambda_0 <= 1/2 (Rayleigh quotient of 1)."
+       "statement": "Circle of length 2 pi, V = 1_{[0,pi)}: 0 <= lambda_0 <= 1/2 (Rayleigh quotient of 1); no eigenfunction is smooth (continuity of V u forces u(0) = 0, the third derivatives force u'(0) = 0, so u = 0)."
+      },
+      {
+       "name": "points",
+       "kind": "degenerate",
+       "statement": "N points: Delta_X + V = multiplication by V on C^N, N eigenvalues, mu_n = +infinity for n > N."
       },
       {
        "name": "unbounded",
@@ -1368,7 +1466,7 @@
      "id": "3.10a",
      "kind": "definition",
      "name": "IsStandardCuspEnd",
-     "statement": "An open C subset of a Riemannian surface X with an isometry C = (R/wZ) x (a, infinity) for the metric (dx^2 + dy^2)/y^2, w > 0, a > 0.",
+     "statement": "An open C subset of a Riemannian surface X with an isometry C = (R/wZ) x (a, infinity) for the metric (dx^2 + dy^2)/y^2, w > 0 (width), a > 0 (height).",
      "hypotheses": [
       "X a Riemannian surface"
      ],
@@ -1383,12 +1481,17 @@
       {
        "name": "IsStandardCuspEnd.volume",
        "role": "evaluation",
-       "statement": "The area of a standard cusp end is w/a."
+       "statement": "The area of a standard cusp end of width w and height a is w/a."
       },
       {
        "name": "IsStandardCuspEnd.mono",
        "role": "structure",
-       "statement": "Shrinking a to a' > a gives a standard cusp end."
+       "statement": "For a' > a the part y > a' is a standard cusp end of width w and height a', of area w/a'."
+      },
+      {
+       "name": "IsStandardCuspEnd.map_isometry",
+       "role": "functoriality",
+       "statement": "The image under an isometry of Riemannian surfaces is a standard cusp end of the same width and height."
       }
      ],
      "tests": [
@@ -1406,6 +1509,11 @@
        "name": "power_functions",
        "kind": "characterisation",
        "statement": "y^s is L^2 on a standard cusp end iff Re s < 1/2."
+      },
+      {
+       "name": "truncation",
+       "kind": "computation",
+       "statement": "Width 1, height 1 -> height 2: area 1 -> 1/2 (a model with area w a would double it)."
       }
      ]
     },
@@ -1433,6 +1541,16 @@
        "name": "generalised_eigenfunction",
        "kind": "computation",
        "statement": "Delta y^{1/2+it} = (1/4 + t^2) y^{1/2+it}, not L^2 on the cusp."
+      },
+      {
+       "name": "zero_cutoff",
+       "kind": "non-example",
+       "statement": "psi = 0 gives u_n = 0 with norm 0; no unit vector, 0/0 = 0 junk; the route requires psi /= 0, where ||u_n||^2 = w n ||psi||^2 and the residual ratio is <= (2|t| ||psi'|| / n + ||psi''|| / n^2) / ||psi||."
+      },
+      {
+       "name": "orthonormal_subsequence",
+       "kind": "computation",
+       "statement": "n = 2^j: supports log y in [2^{j+1}, 3 2^j], disjoint since 3 2^j < 2^{j+2}."
       }
      ]
     }
@@ -1483,58 +1601,47 @@
      ]
     },
     {
-     "id": "4.2a",
-     "kind": "definition",
-     "name": "freeLaplacian",
-     "statement": "H_0 := F^{-1} M_{4 pi^2 ||xi||^2} F on L^2(R^d), the conjugate by MeasureTheory.Lp.fourierTransformLI of the maximal multiplication operator by 4 pi^2 ||xi||^2 (UO-A07).",
+     "id": "4.2",
+     "kind": "theorem",
+     "name": "freeLaplacian_form_essSpectrum",
+     "statement": "For d >= 1 and H_0 the free Hamiltonian of QuantumFoundations S8.2 at m = 1/2 (that is -Delta on H^2(R^d)): H_0 >= 0, its form domain (UO-D06) is H^1(R^d) = {u : (1 + ||xi||^2)^{1/2} F u in L^2} with form q(u) = 4 pi^2 integral ||xi||^2 |F u|^2 = sum_j ||d_j u||^2, and sigma_ess(H_0) = [0, infinity).",
      "hypotheses": [
       "d >= 1",
       "R^d = EuclideanSpace R (Fin d) with Lebesgue measure",
-      "L^2(R^d) = MeasureTheory.Lp C 2 volume"
+      "L^2(R^d) = MeasureTheory.Lp C 2 volume",
+      "H_0 = QuantumFoundations S8.2 free Hamiltonian at m = 1/2"
      ],
      "locator": {
       "source": "teschl",
-      "where": "line 7086-7092 ((7.22)-(7.24))"
+      "where": "line 7137-7143 ((7.26), p. 168)"
      },
      "prerequisites": [
-      "mathlib:MeasureTheory.Lp.fourierTransformₗᵢ",
+      "roadmap:QuantumFoundations S8.2",
+      "target:1.1",
+      "target:4.1",
       "roadmap:UnboundedOperators UO-A07",
-      "roadmap:OperatorTheory SelfAdjointSpectralTheory SA-C25",
-      "roadmap:OperatorTheory SelfAdjointSpectralTheory SA-C28",
-      "target:4.1"
+      "roadmap:UnboundedOperators UO-C02",
+      "roadmap:UnboundedOperators UO-D06",
+      "roadmap:OperatorTheory SelfAdjointSpectralTheory SA-E47",
+      "mathlib:TemperedDistribution.MemSobolev",
+      "mathlib:MeasureTheory.Lp.fourierTransformₗᵢ"
      ],
-     "api": [
-      {
-       "name": "freeLaplacian_domain",
-       "role": "characterisation",
-       "statement": "dom H_0 = H^2(R^d) and H_0 u = -Delta u (Mathlib sign)."
-      },
-      {
-       "name": "freeLaplacian_selfAdjoint",
-       "role": "structure",
-       "statement": "H_0 is self-adjoint and nonnegative with form domain H^1 and form sum ||d_j u||^2."
-      },
-      {
-       "name": "freeLaplacian_spectralProjection",
-       "role": "evaluation",
-       "statement": "P_{H_0}(B) = F^{-1} M_{1_B(4 pi^2 ||xi||^2)} F."
-      },
-      {
-       "name": "freeLaplacian_core",
-       "role": "structure",
-       "statement": "Schwartz space and C_c^infinity are cores."
-      }
-     ],
+     "api": [],
      "tests": [
       {
        "name": "gaussian_density",
        "kind": "computation",
-       "statement": "d = 1, psi = e^{-pi x^2}: d mu_psi / d lambda = e^{-lambda/(2 pi)}/(2 pi sqrt lambda), total mass 2^{-1/2} = ||psi||^2."
+       "statement": "d = 1, psi = e^{-pi x^2}: d mu_psi / d lambda = e^{-lambda/(2 pi)}/(2 pi sqrt lambda), total mass 2^{-1/2} = ||psi||^2, the n = 1 case of QuantumFoundations S8.2's density."
+      },
+      {
+       "name": "form_normalisation",
+       "kind": "computation",
+       "statement": "u = e^{-pi x^2} on R: q(u) = ||u'||^2 = pi/sqrt 2, ||u||^2 = 1/sqrt 2, Rayleigh quotient pi; without 4 pi^2 the form would give 1/(4 pi sqrt 2)."
       },
       {
        "name": "dim_zero",
        "kind": "non-example",
-       "statement": "d = 0: L^2 = C, H_0 = 0, sigma = sigma_pp = {0}; d >= 1 is needed."
+       "statement": "d = 0: L^2 = C, -Delta = 0, sigma = sigma_pp = {0}, sigma_ac = sigma_ess = empty; d >= 1 is needed."
       },
       {
        "name": "heat_generator",
@@ -1542,29 +1649,6 @@
        "statement": "On real functions -H_0 is PDE S6.3's heat generator on L^2 (domain H^2); at d = 3 H_0 is UO-E06's operator."
       }
      ]
-    },
-    {
-     "id": "4.2b",
-     "kind": "theorem",
-     "name": "freeLaplacian_spectrum",
-     "statement": "For d >= 1: mu_psi(B) = integral 1_B(4 pi^2 ||xi||^2) |F psi(xi)|^2 d xi is absolutely continuous; sigma(H_0) = sigma_ac(H_0) = [0, infinity), sigma_sc(H_0) = sigma_pp(H_0) = empty, sigma_ess(H_0) = [0, infinity); Schwartz space and C_c^infinity are cores.",
-     "hypotheses": [
-      "d >= 1",
-      "R^d = EuclideanSpace R (Fin d) with Lebesgue measure",
-      "L^2(R^d) = MeasureTheory.Lp C 2 volume"
-     ],
-     "locator": {
-      "source": "teschl",
-      "where": "line 7095-7136 (Theorem 7.8, Lemma 7.9)"
-     },
-     "prerequisites": [
-      "target:4.2a",
-      "target:1.4a",
-      "roadmap:UnboundedOperators UO-C03",
-      "roadmap:OperatorTheory SelfAdjointSpectralTheory SA-E47"
-     ],
-     "api": [],
-     "tests": []
     },
     {
      "id": "4.3a",
@@ -1593,6 +1677,11 @@
        "name": "VanishesAtInfinity.of_compact_support",
        "role": "constructor",
        "statement": "Essentially bounded V with bounded support vanishes at infinity."
+      },
+      {
+       "name": "VanishesAtInfinity.mul_bounded",
+       "role": "structure",
+       "statement": "V vanishing at infinity times an essentially bounded W vanishes at infinity."
       }
      ],
      "tests": [
@@ -1610,6 +1699,11 @@
        "name": "zero",
        "kind": "degenerate",
        "statement": "V = 0 vanishes at infinity with R = 0."
+      },
+      {
+       "name": "sums",
+       "kind": "computation",
+       "statement": "1_{B_1} + (1 + ||x||^2)^{-1/2} vanishes at infinity with radius max(1, sqrt(eps^{-2} - 1)); cos x_1 + (-cos x_1) = 0 vanishes although neither summand does."
       }
      ]
     },
@@ -1626,10 +1720,10 @@
      ],
      "locator": {
       "source": "teschl",
-      "where": "line 7213-7218 (Lemma 7.11)"
+      "where": "line 7213-7228 (Lemma 7.11, p. 170)"
      },
      "prerequisites": [
-      "target:4.2a",
+      "roadmap:QuantumFoundations S8.2",
       "target:4.3a",
       "tauceti:ContinuousLinearMap.hilbertSchmidtEnergy",
       "roadmap:OperatorTheory OperatorIdeals OI-B32-OI-B41",
@@ -1657,10 +1751,10 @@
      ],
      "locator": {
       "source": "teschl",
-      "where": "line 9578-9584 (Theorem 10.2)"
+      "where": "line 5704-5711 (Theorem 6.4, p. 135, relative bound 0)"
      },
      "prerequisites": [
-      "target:4.2a",
+      "roadmap:QuantumFoundations S8.2",
       "roadmap:OperatorTheory SelfAdjointSpectralTheory SA-C52-SA-C54"
      ],
      "api": [
@@ -1682,14 +1776,14 @@
       {
        "name": "schrodingerOperator_zero",
        "role": "compatibility",
-       "statement": "H_0 = free Laplacian when V = 0."
+       "statement": "H_V = H_0 (QuantumFoundations S8.2 at m = 1/2) when V = 0."
       }
      ],
      "tests": [
       {
        "name": "constant",
        "kind": "computation",
-       "statement": "V = c: H_V = H_0 + c, sigma = [c, infinity), lower bound attained as inf sigma."
+       "statement": "V = c: H_V = H_0 + c, sigma = [c, infinity), lower bound attained as inf sigma; for c = 1, V does not vanish at infinity and sigma_ess(H_V) = [1, infinity), covered by bounded perturbation, not by the decaying clause."
       },
       {
        "name": "square_well",
@@ -1716,14 +1810,15 @@
      ],
      "locator": {
       "source": "teschl",
-      "where": "line 9578-9589 (Theorem 10.2); rs2 SX.2; cfks87 Ch. 1"
+      "where": "line 5704-5711 (Theorem 6.4, p. 135: self-adjointness, lower bound, core transfer for every bounded V), 7095-7136 (Theorem 7.8, Lemma 7.9, p. 168: cores of H_0), 9578-9589 (Theorem 10.2, p. 222: decaying clause only); rs2 SX.2; cfks87 Ch. 1"
      },
      "prerequisites": [
       "target:4.4a",
       "target:2.1b",
       "target:2.2",
-      "target:4.2b",
+      "target:4.2",
       "target:4.3b",
+      "roadmap:QuantumFoundations S8.2",
       "roadmap:UnboundedOperators UO-E04",
       "roadmap:UnboundedOperators UO-C03"
      ],
@@ -1860,6 +1955,13 @@
    "what": "unbounded spectral integral and multipliers, spectral support, essential spectrum, the pp/ac/sc reducing decomposition, closed forms and Friedrichs extension, cores, relatively compact perturbations"
   },
   {
+   "roadmap": "QuantumFoundations",
+   "sections": [
+    "S8.2"
+   ],
+   "what": "free Hamiltonian -Delta/(2m) on H^2(R^n): self-adjointness, Schwartz and C_c^infinity cores, Fourier intertwining, spectral measure, sigma = sigma_ac = [0, infinity); used at m = 1/2"
+  },
+  {
    "roadmap": "HilbertModules",
    "sections": [
     "H6"
@@ -1952,10 +2054,6 @@
   {
    "roadmap": "MaassForms",
    "what": "Layer 0: the hyperbolic Laplacian on Gamma_0(N)\\H"
-  },
-  {
-   "roadmap": "QuantumFoundations",
-   "what": "S8.2 free Laplacian (4.2), spectral types, interval criterion, Kato-Rosenblum"
   },
   {
    "roadmap": "RelativisticQuantumFieldTheory",
