@@ -21,7 +21,7 @@ The p-adic groups, their Moy–Prasad filtration quotients, the existence of spe
 - A full polarization is `V = X × X*` with `X* = Module.Dual k X` and the form `((x, y), (x′, y′)) ↦ y′(x) − y(x′)`, written `polarizationForm k X`. In coordinates `X = kⁿ`, `y(z)` is the dot product. In block form `J = (0, I; −I, 0)` sends `(x, y)` to `(y, −x)`; it is the negative of Mathlib's `Matrix.J`, so the two are never identified by name.
 - The Schrödinger operator is `(π(t, x, y) f)(z) = ψ(t + y(z) + y(x)/2) f(z + x)` on `X → ℂ`. Translation by `x` is `π(0, x, 0)`, modulation by `y` is `π(0, 0, y)`.
 - Parity is `(Rf)(z) = f(−z)`; `S⁺` and `S⁻` are the even and odd functions, of dimensions `(qⁿ + 1)/2` and `(qⁿ − 1)/2`.
-- `χ = χ_k` is Mathlib's `quadraticChar k`, cast to `ℂ` (its values on `kˣ` are `±1`).
+- `χ = χ_k` is Mathlib's `quadraticChar k`, cast to `ℂ`: on `kˣ` it is `1` on squares and `−1` on non-squares (`quadraticChar_one_iff_isSquare`, `quadraticChar_neg_one_iff_not_isSquare`). Where only finiteness of `k` is assumed, a value `χ(d)` at a nonzero `d` is written through `IsSquare d`, since `quadraticChar` needs a chosen `Fintype` structure on `k`.
 - Semidirect products put the normal subgroup first, as in Mathlib's `SemidirectProduct`: `H(V) ⋊ Sp(V)` with `(h, g)(h′, g′) = (h (g·h′), g g′)`. The papers' `Sp(V) ⋉ H(V)` is the same group with the factors listed in the other order.
 - Lagrangian means `L^⊥ = L` for Mathlib's `LinearMap.BilinForm.orthogonal`; for isotropic `I`, `V̄ = I^⊥/I` carries the induced nondegenerate form.
 
@@ -30,9 +30,9 @@ The p-adic groups, their Moy–Prasad filtration quotients, the existence of spe
 ### From Mathlib
 
 - Bilinear forms: `LinearMap.BilinForm.IsAlt`, `LinearMap.BilinForm.Nondegenerate`, `LinearMap.BilinForm.orthogonal`, `LinearMap.BilinForm.finrank_orthogonal` (for nondegenerate `B` on a finite-dimensional space, `dim W^⊥ = dim V − dim W`), `LinearMap.mk₂`, `Module.Dual`.
-- Characters of finite fields: `AddChar`, `AddChar.IsPrimitive.of_ne_one` (a nontrivial additive character of a field is primitive), `AddChar.sum_mulShift` (the sum of a primitive character over a scaled finite ring is the cardinality at scale zero and zero otherwise), `quadraticChar`, `quadraticChar_neg_one`, `quadraticChar_two`.
+- Characters of finite fields: `AddChar`, `AddChar.IsPrimitive.of_ne_one` (a nontrivial additive character of a field is primitive), `AddChar.sum_mulShift` (the sum of a primitive character over a scaled finite ring is the cardinality at scale zero and zero otherwise), `quadraticChar`, `quadraticChar_neg_one`, `quadraticChar_two`, `quadraticChar_one_iff_isSquare` (at nonzero `a`, the value is `1` exactly when `a` is a square) and `quadraticChar_neg_one_iff_not_isSquare` (the value is `−1` exactly when `a` is not a square), all for a finite field with a `Fintype` structure and decidable equality.
 - Representations: `Representation`, `Representation.IsIrreducible`, `Representation.Equiv`, `Representation.character`, `Representation.char_orthonormal` and `FDRep.char_orthonormal` (orthonormality of irreducible characters over an algebraically closed field of characteristic not dividing the group order), `FDRep.simple_iff_char_is_norm_one`, `FDRep.simple_iff_end_is_rank_one` (Schur), `MonoidAlgebra.Submodule.exists_isCompl` (Maschke), `Representation.invariants`, `Rep.indResHomEquiv` (Frobenius reciprocity). Over `ℂ` every finite group order is invertible and the algebraic-closure hypotheses hold.
-- Linear algebra and groups: `LinearMap.det`, `LinearEquiv.det`, `LinearMap.trace`, `LinearMap.restrict`, `SemidirectProduct`, `Subgroup.index`, `Subgroup.Normal.conj_mem`.
+- Linear algebra and groups: `LinearMap.det`, `LinearEquiv.det`, `LinearMap.trace`, `LinearMap.restrict`, `LinearMap.single` (the coordinate inclusion `Xᵢ → ∏ⱼ Xⱼ`, through which a functional on a finite product restricts to each factor), `SemidirectProduct`, `Subgroup.index`, `Subgroup.Normal.conj_mem`.
 
 ### From Tau Ceti
 
@@ -64,7 +64,7 @@ Layer LV.3: §3.1 (an isotropic subspace of a `2d`-dimensional symplectic space 
 
 ## How to read the build
 
-`Suggested.lean` states the finite Stone–von Neumann theorem (§1.3), the fully ramified theorem (§1.4), the existence and uniqueness of the normalized Weil representation (§2.2), the isotropic-invariants theorem (§3.4) and the Lagrangian fixed-line theorem (§4.1), with the definitions `heisenbergFactorSet`, `Heisenberg`, `polarizationForm`, `schrodingerOp`, `evenPart` and `IsNormalizedWeil`; its docstring names the corrected Gérardin formula (§3.3) and tensor compatibility (§4.2) as not statable at the pins. Layer 0 fixes coordinates adapted to an isotropic subspace. Layer 1 builds the Heisenberg group of a finite symplectic space, the Schrödinger model, its character and the uniqueness theorems, and the intertwiners between polarized models. Layer 2 builds the projective Weil action, normalizes it by the parity determinant, computes it on generators and assembles the Weil–Heisenberg representation and its transport along special isomorphisms. Layer 3 builds mixed models, computes the parabolic fixed space with its determinant twist, deduces the corrected induction formula and proves isotropic induction for fully ramified characters. Layer 4 proves the Lagrangian fixed-line formula and tensor compatibility, the finite inputs consumed by type constructions. Each target names what its statement and its route need, so a different proof is not blocked behind an unrelated layer.
+`Suggested.lean` states the finite Stone–von Neumann theorem (§1.3), the fully ramified theorem (§1.4), the existence and uniqueness of the normalized Weil representation (§2.2), the isotropic-invariants theorem (§3.4), the Lagrangian fixed-line theorem (§4.1) and tensor compatibility of normalized Weil representations for a finite product polarization (§4.2), with the definitions `heisenbergFactorSet`, `Heisenberg`, `polarizationForm`, `schrodingerOp`, `evenPart` and `IsNormalizedWeil`; its docstring names the corrected Gérardin formula (§3.3) as not statable at the pins, because the action of `Sp(V)` on `H(V)`, and with it the group `P ⋉ H(V)`, is not a carrier there. Layer 0 fixes coordinates adapted to an isotropic subspace. Layer 1 builds the Heisenberg group of a finite symplectic space, the Schrödinger model, its character and the uniqueness theorems, and the intertwiners between polarized models. Layer 2 builds the projective Weil action, normalizes it by the parity determinant, computes it on generators and assembles the Weil–Heisenberg representation and its transport along special isomorphisms. Layer 3 builds mixed models, computes the parabolic fixed space with its determinant twist, deduces the corrected induction formula and proves isotropic induction for fully ramified characters. Layer 4 proves the Lagrangian fixed-line formula and tensor compatibility, the finite inputs consumed by type constructions. Each target names what its statement and its route need, so a different proof is not blocked behind an unrelated layer.
 
 ## Layer 0: Finite symplectic coordinates
 
@@ -435,7 +435,7 @@ Statement API:
 - For `U ≤ H` with `θ(U) = 1`, again `Q = J` and `E^U = E`, since `θ([q, u]) = θ(u)θ(u)⁻¹ = 1` for `u ∈ H`.
 - For `J = H(V)` of order `p³` (the `𝔽_p` plane), `H` the centre and `U = {(0, (x, 0))}`, `Q = HU` has order `p²` and `E^U` is a line: `1 · p² = p²`.
 - Without the hypothesis `θ(U ∩ H) = 1`, take `U = H` with `θ ≠ 1`: then `E^U = 0`, `HU = H` and `Q = J`, and `0 · |H| ≠ |J|`.
-- In the Heisenberg case `θ_U` is the inflation along `H(I^⊥) → H(V̄)` of §3.1, and the theorem recovers `S_{ψ,V}^I ≅ S_{ψ,V̄}`.
+- In the Heisenberg case (`J = H(V)`, `H` the centre, `θ = ψ`, `U = {(0, i) : i ∈ I}` for an isotropic `I`), `Q = H(I^⊥)` and `HU = {(t, i)}`, and `θ_U(t, i) = ψ(t)` is a one-dimensional character of `HU`. The representation `η_U` of `Q` is the inflation of `S_{ψ,V̄}` along the quotient `H(I^⊥) → H(V̄)` of §3.1, and its restriction to `HU` is `θ_U`-isotypic because `HU` maps onto the centre of `H(V̄)`; the theorem recovers `S_{ψ,V}^I ≅ S_{ψ,V̄}`. For a line `I` in `𝔽₃⁴`: `|HU| = 9`, `|Q| = 81`, `dim η_U = 3` and `3² · 9 = 81`; a one-dimensional `E^U`, which identifying `η_U` with the character `θ_U` would give, fails the count: `1² · 9 = 9 ≠ 81`.
 
 *Needs:* §1.4; Tau Ceti `TauCeti.indFDRep`, `TauCeti.finrank_indFDRep`, `TauCeti.Rep.indSubtypeEquivPi_ρ_apply`; Mathlib `Representation.invariants`.
 
@@ -451,7 +451,7 @@ Within this roadmap: §0.1, Layer 1, Layer 2. From other roadmaps: MetaplecticAu
 
 ### 4.1 The Lagrangian fixed line
 
-Prove `isNormalizedWeil_lagrangian_fixed`: let `W` satisfy `IsNormalizedWeil ψ W`, let `L ≤ X × X*` be Lagrangian, and let `g ∈ Sp(X × X*)` satisfy `gL ⊆ L`. If `f : X → ℂ` is fixed by `schrodingerOp ψ 0 l` for every `l ∈ L`, then `W(g)f = χ(det(g|_L)) f`. The `L`-fixed functions form a line, so `g` acts on it by the scalar `χ(det(g|_L))`.
+Prove `isNormalizedWeil_lagrangian_fixed`: let `W` satisfy `IsNormalizedWeil ψ W`, let `L ≤ X × X*` be Lagrangian, and let `g ∈ Sp(X × X*)` satisfy `gL ⊆ L`. If `f : X → ℂ` is fixed by `schrodingerOp ψ 0 l` for every `l ∈ L`, then `W(g)f = χ(det(g|_L)) f`. Since `g|_L` is injective on the finite-dimensional `L`, `det(g|_L) ≠ 0`, so the statement says: `W(g)f = f` when `det(g|_L)` is a square in `k`, and `W(g)f = −f` otherwise; the target is stated in this form, which assumes only that `k` is finite. The `L`-fixed functions form a line, so `g` acts on it by the scalar `χ(det(g|_L))`.
 
 In the form used by type constructions: if `U ≤ Sp(V)` stabilizes an isotropic `I` and its image in `Sp(I^⊥/I)` stabilizes a Lagrangian `L₀`, the inverse image `L` of `L₀` in `I^⊥` is Lagrangian, `U` stabilizes the line `S_ψ^L`, and acts there by `χ(det(u|_I)) χ(det(u|_{L₀}))`, since `det(u|_L) = det(u|_I) det(u|_{L₀})` along `0 ⊂ I ⊂ L`. If both determinants are squares for every `u ∈ U`, in particular if `U` acts unipotently on `I` and on `L₀`, then `S_ψ^L` consists of `U`-fixed vectors and is nonzero (F21, proof of Lemma 7.10, pp. 33–34; N02, the computation after Theorem 4.3, pp. 22–23).
 
@@ -459,7 +459,7 @@ A proof route: §0.1 and transitivity of `Sp` on Lagrangians (MetaplecticAutomor
 
 Statement API:
 
-- For `W` normalized, `L` Lagrangian and `g` stabilizing `L`, `W(g)` acts on the `L`-fixed line by `χ(det(g|_L))`.
+- For `W` normalized, `L` Lagrangian and `g` stabilizing `L`, `W(g)` acts on the `L`-fixed line by `χ(det(g|_L))`, that is by `1` or `−1` according as `det(g|_L)` is or is not a square in `k`.
 - The twist is multiplicative along isotropic flags: `χ(det(u|_L)) = χ(det(u|_I))χ(det(u|_{L₀}))`.
 - When the two determinants are squares, the line is pointwise fixed and nonzero.
 
@@ -469,19 +469,22 @@ Statement API:
 - In the `𝔽₅` plane, the scalar `2` on `I = X × {0}`, that is `g = m(2)`, stabilizes `I`, but its fixed line (the constants) has eigenvalue `χ₅(2) = −1`: invariance requires the square hypothesis.
 - For `q = 3`, `g = −1` stabilizes every Lagrangian line and acts on each fixed line by `χ₃(−1) = −1`, matching `W(−1) = −R` on the constants and on `δ₀`.
 - For `X = 0`, `L = 0`, `det` on the zero space is 1 and `W(g) = id`.
+- Over `𝔽₉` with `n = 1`, `g = −1` stabilizes `L = {0} × X*` with `det(g|_L) = −1`, a square in `𝔽₉` (it is `i²` for `𝔽₉ = 𝔽₃(i)`); so `W(−1)δ₀ = δ₀`, matching `W(−1) = χ₉(−1)R = R`. Reading the scalar through the prime field, `χ₃(−1) = −1`, would give `−δ₀`.
 
-*Needs:* §2.2; §2.3; §0.1; MetaplecticAutomorphicForms §0.9a; Mathlib `quadraticChar`, `LinearMap.det`, `LinearMap.restrict`; for the flag form, §3.2.
+*Needs:* §2.2; §2.3; §0.1; MetaplecticAutomorphicForms §0.9a; Mathlib `quadraticChar`, `quadraticChar_one_iff_isSquare`, `quadraticChar_neg_one_iff_not_isSquare`, `LinearMap.det`, `LinearMap.restrict`; for the flag form, §3.2.
 
 ### 4.2 Tensor compatibility along orthogonal sums
 
 For a finite orthogonal sum `V = ⊥ᵢ Vᵢ` of nondegenerate alternating spaces over the same `k`, with a common `ψ`, pull `S_{ψ,V}` back along `∏ᵢ H(Vᵢ) → H(V)`, `(tᵢ, vᵢ) ↦ (Σ tᵢ, Σ vᵢ)`. Prove that it is isomorphic to `⊗ᵢ S_{ψ,Vᵢ}` (central tuples with `Σ tᵢ = 0` act trivially), that this isomorphism intertwines the normalized Weil representations along `∏ᵢ Sp(Vᵢ) → Sp(V)` and hence the Weil–Heisenberg representations, that dimensions multiply to `q^{Σ dim Vᵢ/2}`, and that for a group acting through the factors, a pure tensor of nonzero fixed vectors `vᵢ` is a nonzero fixed vector. The empty family gives the trivial one-dimensional representation (F21, the tensor description before Lemma 7.6, p. 30, and Lemmas 7.8, 7.10, pp. 31–34; S08, Proposition 3.5, p. 14, Corollary 5.7, p. 30, Lemma 5.12, p. 33).
+
+Prove `isNormalizedWeil_pi_tensor`, the Weil part in product Schrödinger coordinates. Let `k` be finite of odd characteristic, `ψ` nontrivial, `(Xᵢ)` a finite family of finite-dimensional `k`-spaces and `X = ∏ᵢ Xᵢ`; then `X × X*` is the orthogonal sum of the `Xᵢ × Xᵢ*`, a functional `y` on `X` being the family of its restrictions `y ∘ single i` along the coordinate inclusions. Let `W` and the `Wᵢ` satisfy `IsNormalizedWeil ψ`, and let `g ∈ Sp(X × X*)` act blockwise through `gᵢ ∈ Sp(Xᵢ × Xᵢ*)`: for every `v` and `i`, the `i`-th block `((gv)₁(i), (gv)₂ ∘ single i)` of `gv` is `gᵢ` applied to the `i`-th block of `v`. Then `W(g)` sends `x ↦ ∏ᵢ fᵢ(xᵢ)` to `x ↦ ∏ᵢ (Wᵢ(gᵢ)fᵢ)(xᵢ)`. The indicator of a point of `X` is the product of the indicators of its coordinates, so pure tensors span `X → ℂ` and the statement is the equality `W|_{∏ Sp(Xᵢ × Xᵢ*)} = ⊗ᵢ Wᵢ`; for the empty family both sides are the constant function 1. The statement for an arbitrary orthogonal sum follows by transport along isometries with polarized spaces (§0.2) and the corresponding Schrödinger intertwiners (§2.4).
 
 A proof route: in product Schrödinger coordinates `X = ∏ Xᵢ`, functions on `X` are the tensor product of functions on the `Xᵢ`, pure tensors evaluate to products, and the Heisenberg actions match. For two factors, `S⁺ = S₁⁺ ⊗ S₂⁺ ⊕ S₁⁻ ⊗ S₂⁻`; writing `αᵢ = det(Wᵢ|_{Sᵢ⁺})` and `nᵢ = dim Sᵢ`, normalization of each factor gives `det(Wᵢ|_{Sᵢ⁻}) = αᵢ`, so `det(W₁ ⊗ W₂) = α₁^{2n₂} α₂^{2n₁}` and `det((W₁ ⊗ W₂)|_{S⁺}) = α₁^{n₂} α₂^{n₁}`; uniqueness (§2.2) then gives compatibility, also for `𝔽₃`-planes. Induct on the family. Linear functionals `ℓᵢ` with `ℓᵢ(vᵢ) = 1` evaluate the pure tensor to 1.
 
 Statement API:
 
 - The pullback of `S_{ψ,V}` along the sum map is `⊗ᵢ S_{ψ,Vᵢ}`.
-- On `∏ Sp(Vᵢ)`, the normalized `W_V` restricts to `⊗ᵢ W_{Vᵢ}`, and likewise for `Ω`.
+- On `∏ Sp(Vᵢ)`, the normalized `W_V` restricts to `⊗ᵢ W_{Vᵢ}` (`isNormalizedWeil_pi_tensor` in product Schrödinger coordinates), and likewise for `Ω`.
 - A pure tensor of nonzero invariant vectors is a nonzero invariant vector; the empty tensor product is the unit.
 
 **Checks.**
@@ -490,8 +493,9 @@ Statement API:
 - For a sum of two `𝔽₃` planes, the twist of §2.2 by an order-3 character on one factor would violate the determinant identity of the sum, so compatibility singles out the normalized factors.
 - With different characters `ψ₁ ≠ ψ₂` on the two factors, the central tuple `(t, −t)` acts by `ψ₁(t)ψ₂(−t) ≠ 1` for some `t`, so the product does not factor through the sum map; the common `ψ` is needed.
 - The empty family gives `ℂ` with trivial action, of dimension `q⁰ = 1`.
+- For two `𝔽₃` planes with `ψ(1) = ζ` and `g = J ⊕ J` (the `J` of `X = 𝔽₃²`), the left side on `δ₀ ⊗ δ₀ = δ_{(0,0)}` is `W(J)δ_{(0,0)} = κ · 3⁻¹ · 1` with `κ = det(F_ψ ⊗ F_ψ) = (det F_ψ)⁶ = (−i)⁶ = −1`, since `(F_ψ ⊗ F_ψ)² = R` makes the even-part factor 1; the right side is `(−i · 3^{−1/2})² · 1 = −3⁻¹ · 1`. They agree; normalizing the sum with `κ = 1` would give `+3⁻¹ · 1` and break the equality.
 
-*Needs:* §1.3; §2.2; §2.4; §2.5 (for pullbacks through special isomorphisms); §4.1.
+*Needs:* §1.3; §2.2; §2.4; §2.5 (for pullbacks through special isomorphisms); §4.1; Mathlib `LinearMap.single`.
 
 ### Examples
 

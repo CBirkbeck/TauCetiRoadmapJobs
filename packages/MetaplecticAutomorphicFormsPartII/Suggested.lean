@@ -26,19 +26,18 @@ Stated here:
   the unique representation form an irreducible representation of the orthogonal `Q` of
   dimension `√[Q : HU]`.
 * Layer 4: on the line fixed by a Lagrangian `L`, an element of `Sp` stabilizing `L` acts through
-  the quadratic character of its determinant on `L`.
+  the quadratic character of its determinant on `L`; and the normalized Weil representation of a
+  finite product polarization restricts on blockwise elements to the tensor product of the
+  normalized Weil representations of the factors.
 
 Not statable at the pins:
 
 * Layer 3, the corrected Gérardin induction formula
-  `Ω_{ψ,V}|_{P ⋉ H(V)} ≅ Ind_{P ⋉ H(I^⊥)}^{P ⋉ H(V)} ((χ ∘ det_I) ⊗ Ω_{ψ,I^⊥/I})`: it needs the
-  normalized Weil–Heisenberg representation as a constructed object (the roadmap's Layer 2
-  construction), the quotient symplectic space `I^⊥/I` with its induced form and Heisenberg
-  group, and induction from the semidirect product `P ⋉ H(I^⊥)`; none of these is a carrier at
-  the pins.
-* Layer 4, tensor compatibility of normalized Weil representations along orthogonal sums: it
-  needs the same constructed Weil–Heisenberg representation and the Heisenberg map
-  `∏ H(Vᵢ) → H(⊕ Vᵢ)`, which is not a carrier at the pins.
+  `Ω_{ψ,V}|_{P ⋉ H(V)} ≅ Ind_{P ⋉ H(I^⊥)}^{P ⋉ H(V)} ((χ ∘ det_I) ⊗ Ω_{ψ,I^⊥/I})`: its groups
+  need the action of `Sp(V)` on `H(V)` by automorphisms, which is not a carrier at the pins
+  (Tau Ceti's factor-set extensions carry no action of an isometry group; the action is
+  MetaplecticAutomorphicForms §0.8), so neither `P ⋉ H(V)` nor its subgroup `P ⋉ H(I^⊥)`, from
+  which the twisted Weil–Heisenberg representation of `I^⊥/I` is induced, exists as a group.
 -/
 
 @[expose] public section
@@ -76,7 +75,7 @@ abbrev Heisenberg (ω : LinearMap.BilinForm k V) : Type _ :=
 characteristic, a nondegenerate alternating space has an irreducible complex representation of
 its Heisenberg group on which the centre acts through a given nontrivial additive character `ψ`
 (the Schrödinger model). (N02, Lemma 2.1, p. 16; FS25, Lemma 3.3.1, p. 14.) -/
-theorem finite_stoneVonNeumann_exists [Fintype k] [FiniteDimensional k V] (hk : ringChar k ≠ 2)
+theorem finite_stoneVonNeumann_exists [Finite k] [FiniteDimensional k V] (hk : ringChar k ≠ 2)
     (ω : LinearMap.BilinForm k V) (hω : ω.IsAlt) (hnd : ω.Nondegenerate)
     (ψ : AddChar k ℂ) (hψ : ψ ≠ 1) :
     ∃ (E : Type) (_ : AddCommGroup E) (_ : Module ℂ E) (_ : FiniteDimensional ℂ E)
@@ -88,7 +87,7 @@ theorem finite_stoneVonNeumann_exists [Fintype k] [FiniteDimensional k V] (hk : 
 of `H(V)` with central character `ψ` has dimension `√|V|`, its character vanishes off the
 centre, and any two such representations are equivalent. (N02, Lemma 2.1 and the remark after
 it, pp. 16–17; FS25, Lemma 3.3.1, p. 14.) -/
-theorem finite_stoneVonNeumann [Fintype k] [FiniteDimensional k V] (hk : ringChar k ≠ 2)
+theorem finite_stoneVonNeumann [Finite k] [FiniteDimensional k V] (hk : ringChar k ≠ 2)
     (ω : LinearMap.BilinForm k V) (hω : ω.IsAlt) (hnd : ω.Nondegenerate)
     (ψ : AddChar k ℂ) (hψ : ψ ≠ 1)
     {E E' : Type*} [AddCommGroup E] [Module ℂ E] [FiniteDimensional ℂ E]
@@ -198,7 +197,7 @@ characteristic and for nontrivial `ψ`, there is exactly one normalized Weil rep
 `Sp(X × X*)` on `X → ℂ`; this holds also for `Sp₂(𝔽₃)`, where linearizations of the projective
 Weil representation are not unique. (N02, Theorems 4.2–4.3, pp. 20–22; FS25, Construction 3.4.2,
 p. 17.) -/
-theorem existsUnique_isNormalizedWeil [Fintype k] [FiniteDimensional k X] (hk : ringChar k ≠ 2)
+theorem existsUnique_isNormalizedWeil [Finite k] [FiniteDimensional k X] (hk : ringChar k ≠ 2)
     (ψ : AddChar k ℂ) (hψ : ψ ≠ 1) :
     ∃! W : TauCeti.BilinForm.isometryGroup (polarizationForm k X) →* ((X → ℂ) ≃ₗ[ℂ] (X → ℂ)),
       IsNormalizedWeil ψ W := by
@@ -250,10 +249,12 @@ variable {k X : Type*} [Field k] [AddCommGroup X] [Module k X]
 `W` be the normalized Weil representation, `L ≤ X × X*` a Lagrangian (`L^⊥ = L`) and `g ∈ Sp`
 with `g L ⊆ L`. On every function fixed by the Schrödinger operators `π(0, l)`, `l ∈ L`, the
 operator `W(g)` is multiplication by `χ(det(g|_L))`, where `χ` is the quadratic character of `k`.
-For `L` the inverse image of a Lagrangian `L₀` of `I^⊥/I`, `det(g|_L) = det(g|_I) det(g|_{L₀})`,
-which is the form used for unipotent actions in Fintzen's types. (F21, proof of Lemma 7.10 and
-footnote 3, pp. 32–34; N02, Theorem 4.3 and the computation after it, pp. 22–23.) -/
-theorem isNormalizedWeil_lagrangian_fixed [Fintype k] [DecidableEq k] [FiniteDimensional k X]
+Since `g|_L` is invertible, `χ(det(g|_L))` is `1` when `det(g|_L)` is a square in `k` and `−1`
+otherwise, which is the form stated. For `L` the inverse image of a Lagrangian `L₀` of `I^⊥/I`,
+`det(g|_L) = det(g|_I) det(g|_{L₀})`, which is the form used for unipotent actions in Fintzen's
+types. (F21, proof of Lemma 7.10 and footnote 3, pp. 32–34; N02, Theorem 4.3 and the computation
+after it, pp. 22–23.) -/
+theorem isNormalizedWeil_lagrangian_fixed [Finite k] [FiniteDimensional k X]
     (hk : ringChar k ≠ 2) (ψ : AddChar k ℂ) (hψ : ψ ≠ 1)
     (W : TauCeti.BilinForm.isometryGroup (polarizationForm k X) →* ((X → ℂ) ≃ₗ[ℂ] (X → ℂ)))
     (hW : IsNormalizedWeil ψ W)
@@ -261,12 +262,46 @@ theorem isNormalizedWeil_lagrangian_fixed [Fintype k] [DecidableEq k] [FiniteDim
     (g : TauCeti.BilinForm.isometryGroup (polarizationForm k X))
     (hg : ∀ v ∈ L, (g : (X × Module.Dual k X) ≃ₗ[k] (X × Module.Dual k X)) v ∈ L)
     (f : X → ℂ) (hf : ∀ l ∈ L, schrodingerOp ψ 0 l f = f) :
-    W g f = ((quadraticChar k (LinearMap.det (M := L) (A := k)
-      (((g : (X × Module.Dual k X) ≃ₗ[k] (X × Module.Dual k X)) :
-        (X × Module.Dual k X) →ₗ[k] (X × Module.Dual k X)).restrict hg)) : ℤ) : ℂ) •
-      f := by
+    (IsSquare (LinearMap.det (M := L) (A := k)
+        (((g : (X × Module.Dual k X) ≃ₗ[k] (X × Module.Dual k X)) :
+          (X × Module.Dual k X) →ₗ[k] (X × Module.Dual k X)).restrict hg)) → W g f = f) ∧
+      (¬ IsSquare (LinearMap.det (M := L) (A := k)
+        (((g : (X × Module.Dual k X) ≃ₗ[k] (X × Module.Dual k X)) :
+          (X × Module.Dual k X) →ₗ[k] (X × Module.Dual k X)).restrict hg)) → W g f = -f) := by
   sorry
 
 end FixedLine
+
+section Tensor
+
+/-- **Tensor compatibility of normalized Weil representations** (README §4.2). Let
+`X = ∏ᵢ Xᵢ` be a finite product of finite-dimensional spaces, so that `X × X*` is the orthogonal
+sum of the polarized spaces `Xᵢ × Xᵢ*` (a functional on `X` restricts to `Xᵢ` along the
+coordinate inclusion). Let `W` and the `Wᵢ` be the normalized Weil representations for one
+nontrivial `ψ`, and let `g ∈ Sp(X × X*)` act blockwise through `gᵢ ∈ Sp(Xᵢ × Xᵢ*)`. Then `W(g)`
+sends the pure tensor `x ↦ ∏ᵢ fᵢ(xᵢ)` to the pure tensor of the `Wᵢ(gᵢ) fᵢ`. Pure tensors span
+`X → ℂ`, so `W` restricted to `∏ᵢ Sp(Xᵢ × Xᵢ*)` is `⊗ᵢ Wᵢ`; for the empty family both sides are
+the constant function `1`. (F21, the tensor description before Lemma 7.6, p. 30, and the proof of
+Lemma 7.10, p. 32, for the tensor decomposition; the normalization is matched through
+`existsUnique_isNormalizedWeil`.) -/
+theorem isNormalizedWeil_pi_tensor {ι : Type*} [Fintype ι] [DecidableEq ι]
+    {k : Type*} [Field k] [Finite k]
+    (X : ι → Type*) [∀ i, AddCommGroup (X i)] [∀ i, Module k (X i)]
+    [∀ i, FiniteDimensional k (X i)] (hk : ringChar k ≠ 2) (ψ : AddChar k ℂ) (hψ : ψ ≠ 1)
+    (W : TauCeti.BilinForm.isometryGroup (polarizationForm k (∀ i, X i)) →*
+      (((∀ i, X i) → ℂ) ≃ₗ[ℂ] ((∀ i, X i) → ℂ)))
+    (Wᵢ : ∀ i, TauCeti.BilinForm.isometryGroup (polarizationForm k (X i)) →*
+      ((X i → ℂ) ≃ₗ[ℂ] (X i → ℂ)))
+    (hW : IsNormalizedWeil ψ W) (hWᵢ : ∀ i, IsNormalizedWeil ψ (Wᵢ i))
+    (g : TauCeti.BilinForm.isometryGroup (polarizationForm k (∀ i, X i)))
+    (gᵢ : ∀ i, TauCeti.BilinForm.isometryGroup (polarizationForm k (X i)))
+    (hg : ∀ (v : (∀ i, X i) × Module.Dual k (∀ i, X i)) (i : ι),
+      ((g.val v).1 i, (g.val v).2 ∘ₗ LinearMap.single k X i) =
+        (gᵢ i).val (v.1 i, v.2 ∘ₗ LinearMap.single k X i))
+    (f : ∀ i, X i → ℂ) :
+    W g (fun x => ∏ i, f i (x i)) = fun x => ∏ i, Wᵢ i (gᵢ i) (f i) (x i) := by
+  sorry
+
+end Tensor
 
 end TauCetiRoadmap.MetaplecticAutomorphicFormsPartII
