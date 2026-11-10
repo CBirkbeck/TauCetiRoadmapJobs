@@ -586,3 +586,41 @@ licence_class = "none"
 status = "uncertified"
 version_note = "paywalled; cited by its locator without the text"
 cited_for = ["13.13"]
+
+[[source]]
+id = "feydy-sinkhorn-divergences"
+authors = "Jean Feydy, Thibault Séjourné, François-Xavier Vialard, Shun-ichi Amari, Alain Trouvé, Gabriel Peyré"
+title = "Interpolating between Optimal Transport and MMD using Sinkhorn Divergences"
+year = 2018
+arxiv = "1810.08278v1"
+locator_scheme = "theorem"
+locator = "Theorem 1 (arXiv v1)"
+url = "https://arxiv.org/abs/1810.08278v1"
+fetched_from = "https://arxiv.org/pdf/1810.08278v1"
+fetched_at = "2026-11-10T12:47:57Z"
+sha256 = "5098d7b70fc13657fc8cc1a8fd0bf25e7f1d564bf66ba9b1fc647a0832272a81"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-10"
+version_note = "arXiv v1"
+cited_for = ["13.4"]
+
+[[source]]
+id = "agmr-sigma-finite"
+authors = "Luigi Ambrosio, Nicola Gigli, Andrea Mondino, Tapio Rajala"
+title = "Riemannian Ricci curvature lower bounds in metric measure spaces with $σ$-finite measure"
+year = 2012
+venue = "Trans. Amer. Math. Soc. 367 (2015), no. 7, 4661-4701"
+doi = "10.1090/S0002-9947-2015-06111-X"
+arxiv = "1207.4924v2"
+locator_scheme = "theorem"
+locator = "Theorems 6.1 and 6.2 (arXiv v2)"
+url = "https://arxiv.org/abs/1207.4924v2"
+fetched_from = "https://arxiv.org/pdf/1207.4924v2"
+fetched_at = "2026-11-10T12:48:20Z"
+sha256 = "7db3493a8e9652478d0fb43c3ca3bc8dfb3ee2e7c7aa456cc1617ae3d957a796"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-10"
+version_note = "arXiv v2"
+cited_for = ["14.7"]
