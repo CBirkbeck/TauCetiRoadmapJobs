@@ -7,7 +7,7 @@ authors = "Bao V. Le Hung"
 title = "A geometric prime switch for elliptic curves over totally real and CM fields"
 year = 2026
 locator_scheme = "theorem"
-locator = "Theorem 1.1 p.2; Inputs 2.1-2.2 p.4; Proposition 3.1 and Lemma 3.2 p.6; Sections 3.3-3.4 pp.6-7; Lemma 5.1 and local-global compatibility p.9"
+locator = "Theorem 1.1 p.2; Remark 1.3 p.3; conventions p.4; Sections 2.1-2.4 p.5; Proposition 3.1, Lemma 3.2 with (9)-(11) and Section 3.3 p.6; Section 3.4 p.7; Lemma 5.1 and Section 5 p.9"
 url = "https://hexagonmath.org/pdf/2610.00156v1"
 fetched_from = "https://hexagonmath.org/pdf/2610.00156v1"
 fetched_at = "2026-11-07T19:53:02Z"
@@ -16,13 +16,13 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-07"
 resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/3439#issuecomment-6712044815"
-cited_for = ["Scope", "Final targets 1-3", "Risks"]
+cited_for = ["Summary", "1.1", "1.2", "1.3", "1.4", "1.5", "1.6", "2.1", "2.2", "3.1", "3.2", "3.3", "4.1", "4.2", "4.3", "4.4"]
 version_note = "Hexagon v1 discussion draft dated 7 October 2026. Locators verified against the operator-staged extraction. Theorem 1.1 assumes the geometric inputs from OpenAI at revision adc7f12. Filed licence: CC BY 4.0."
 
 [[source]]
 id = "OpenAI26"
 locator_scheme = "theorem"
-locator = "Lemma 3.1; Proposition 3.3; Proposition 4.2; Remark 4.3; Theorem 4.5"
+locator = "Proposition 5.1 p.12; Proposition 5.2 and Lemma 5.3 p.13; Corollary 5.4 p.14; Proposition 8.4 p.23"
 url = "https://raw.githubusercontent.com/openai/math/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/Modularity-of-elliptic-curves-over-imaginary-quadratic-fields-October-4-2026/paper.pdf"
 fetched_from = "https://raw.githubusercontent.com/openai/math/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/Modularity-of-elliptic-curves-over-imaginary-quadratic-fields-October-4-2026/paper.pdf"
 fetched_at = "2026-11-10T19:34:10Z"
@@ -30,7 +30,7 @@ sha256 = "c74cc37755f500be0c22ccb4d08ce81df309404a7175a7fb6cf7321330b5187c"
 licence_class = "author-page"
 status = "certified"
 accessed = "2026-11-10"
-cited_for = ["Suppliers: imported geometric inputs"]
+cited_for = ["1.4", "1.5", "1.6", "3.1"]
 authors = "OpenAI"
 title = "Modularity of elliptic curves over imaginary quadratic fields"
 year = 2026
@@ -43,7 +43,7 @@ title = "Elliptic Curves over Real Quadratic Fields are Modular"
 year = 2015
 arxiv = "1310.7088v4"
 locator_scheme = "theorem"
-locator = "Theorems 2-3 p.3; Section 2 pp.5-6"
+locator = "Theorem 1 p.2; Theorems 2-3 p.3; Section 2 pp.5-6; Proposition 4.1 and Lemma 4.2 p.8; Theorem 6 and Corollary 5.1 p.9; Lemma 6.1 and proof of Theorem 3 for p = 5 p.10"
 url = "https://arxiv.org/abs/1310.7088v4"
 fetched_from = "https://arxiv.org/pdf/1310.7088v4"
 fetched_at = "2026-11-10T19:35:20Z"
@@ -52,7 +52,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-10"
 version_note = "arXiv v4, 18 July 2014; journal publication Inventiones Mathematicae 201 (2015), 159-206. All pages and theorem numbers here refer to v4."
-cited_for = ["Final targets and totally real seed"]
+cited_for = ["2.2", "2.3", "2.4", "2.5", "3.2", "4.2", "4.4", "Exact supplier contracts: required sections"]
 
 [[source]]
 id = "BD14"
@@ -70,7 +70,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-10"
 version_note = "arXiv v3, 4 September 2013; journal publication Annales scientifiques de l ENS 47 (2014), 905-974. The read preprint title is Formes modulaires de Hilbert modulo p et valeurs d extensions galoisiennes. No equality of published pagination is asserted."
-cited_for = ["Totally real weight-two lifting"]
+cited_for = ["2.2", "Exact supplier contracts: required of GL2ModularityLifting"]
 
 [[source]]
 id = "SW99"
@@ -83,7 +83,7 @@ sha256 = "ec0697b3e9c9fa68063b19688f10347d204a8b7b86526384c9ccd6e7fe30e6f3"
 licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-10"
-cited_for = ["Imported ordinary starting point"]
+cited_for = ["Exact supplier contracts: required of GL2ModularityLifting (not a substitute)"]
 authors = "Christopher M. Skinner, Andrew J. Wiles"
 title = "Residually reducible representations and modular forms"
 year = 1999
@@ -101,7 +101,7 @@ sha256 = "076f8bb6ec683633f7742d27504b97f5feaef2ddbae2bc5dc4325eb8386f4ee7"
 licence_class = "publisher-open"
 status = "certified"
 accessed = "2026-11-10"
-cited_for = ["Suppliers: potentially Barsotti-Tate lifting"]
+cited_for = ["Exact supplier contracts: required of GL2ModularityLifting"]
 authors = "Mark Kisin"
 title = "Moduli of finite flat group schemes, and modularity"
 year = 2009
@@ -126,7 +126,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-10"
 version_note = "Read arXiv v1 (2010); journal publication Duke Math. J. 161 (2012), 1521-1580. Locators are v1 theorem numbers and printed preprint pages; no identity with journal numbering asserted."
-cited_for = ["Suppliers: ordinary lifting"]
+cited_for = ["Exact supplier contracts: required of GL2ModularityLifting"]
 
 [[source]]
 id = "BLGG13II"
@@ -144,7 +144,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-10"
 version_note = "Read arXiv v1 (2012); journal publication Math. Res. Lett. 20 (2013), 67-72. The arXiv metadata misspells betwen. Proposition 2.1.1 is not the ordinary-lift theorem. Locators refer to v1, not journal pagination."
-cited_for = ["Suppliers: refined ordinary lifting"]
+cited_for = ["Exact supplier contracts: required of GL2ModularityLifting and of GL2AutomorphicRepresentationsAndTransfer"]
 
 [[source]]
 id = "BCDT01"
@@ -157,7 +157,7 @@ sha256 = "13043cf6e9043a69dc7988882658cd92595efc88dfd4fd2f326ac3ef3cae8e06"
 licence_class = "author-page"
 status = "certified"
 accessed = "2026-11-10"
-cited_for = ["Suppliers: rational-field starting point"]
+cited_for = ["4.4 Check K = Q"]
 authors = "Christophe Breuil, Brian Conrad, Fred Diamond, Richard Taylor"
 title = "On the modularity of elliptic curves over Q: wild 3-adic exercises"
 year = 2001
