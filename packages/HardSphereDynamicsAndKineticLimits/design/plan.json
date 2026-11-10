@@ -544,7 +544,7 @@
       {
        "name": "measurePreserving_freeFlow",
        "role": "measure",
-       "statement": "Each S_t preserves λ_N and commutes with relabelling, common translations and boosts."
+       "statement": "Each S_t preserves λ_N and commutes with relabelling and with the common translations A_y(X, V) = (X + y, V); with the boost B_c(X, V) = (X, V + c) it satisfies S_t ∘ B_c = A_{π(tc)} ∘ B_c ∘ S_t (no plain commutation)."
       },
       {
        "name": "freeFlow_eq_flowOfLipschitz",
@@ -567,6 +567,11 @@
        "name": "leaves_hardcore",
        "kind": "non-example",
        "statement": "Positions (2, 0), 0, velocities (−1, 0), 0, ε = 1 leave 𝒟̄_2 at t = 1.5."
+      },
+      {
+       "name": "boost_correction",
+       "kind": "non-example",
+       "statement": "One particle on E, d = 1, x = v = 0, t = c = 1: S_1 B_1(0,0) = (1,1) but B_1 S_1(0,0) = (0,1); A_1 B_1 S_1(0,0) = (1,1)."
       }
      ]
     },
@@ -733,7 +738,7 @@
      "id": "4.3",
      "kind": "theorem",
      "name": "HardSphere.det_fderiv_collisionMap",
-     "statement": "On U = {|a| > ε, ⟨a, u⟩ < 0, D > 0}, C(a, u) = (a + τ(u − R_q u), R_q u) is smooth with det DC = 1; B_s = S_s ∘ C on U ∩ {τ < s}, so det DB_s = 1 there.",
+     "statement": "On U = {|a| > ε, ⟨a, u⟩ < 0, D > 0}, C(a, u) = (a + τ(u − R_q u), R_q u) is smooth with det DC = 1; B_s = S_s ∘ C on U ∩ {τ < s}, so for each fixed s the derivative of (a, u) ↦ B_s(a, u), with s held fixed, has determinant 1 there.",
      "hypotheses": [
       "0 < ε"
      ],
@@ -754,9 +759,14 @@
        "statement": "C((2,0), (−1,0)) = (0, (1,0)) and S_3 C = B_3."
       },
       {
-       "name": "finite_difference",
+       "name": "explicit_derivative",
        "kind": "computation",
-       "statement": "Finite-difference Jacobians of C and B_{τ+0.7} at random points in d = 2, 3, 4 have determinant 1.000000."
+       "statement": "ε = 1, a = (2,0), u = (−1,0), coordinates (a_1, a_2, u_1, u_2): dτ = da_1 + du_1, dq = (0, da_2 + du_2), DC has rows (−1,0,0,0), (0,−1,0,−2), (0,0,−1,0), (0,2,0,3), determinant 1; DB_3 = DS_3 · DC with a shear DS_3, determinant 1."
+      },
+      {
+       "name": "fixed_time",
+       "kind": "non-example",
+       "statement": "d = 1, ε = 1, a > 1, u < 0: fixed-time B_s(a, u) = (2 − a − su, −u) where τ < s, determinant 1; the variable-time map B_{τ(a,u)+0.7}(a, u) = (1 − 0.7u, −u) has determinant 0."
       },
       {
        "name": "frozen_normal",
@@ -809,7 +819,7 @@
      "id": "4.5",
      "kind": "construction",
      "name": "HardSphere.pairMap",
-     "statement": "For i ≠ j, ε + η < ρ, 2Rs ≤ η, the pair map P^{ij}_s on {ε ≤ ‖x_i − x_j‖, ‖x_i − x_j‖ + 2Rs < ρ, |v_i|, |v_j| ≤ R} is the skew product (x_j, a, u, w) ↦ (x_j + π(h(a, u, w)), B_s(a, u), w) with a = ℓ(x_i − x_j), u = v_i − v_j, w = v_i + v_j; it is measure preserving and injective off a null set.",
+     "statement": "For i ≠ j, ε + η < ρ, 2Rs ≤ η, the pair map P^{ij}_s on {ε ≤ ‖x_i − x_j‖, ‖x_i − x_j‖ + 2Rs < ρ, |v_i|, |v_j| ≤ R} changes only the pair block (z_i, z_j) and fixes every other coordinate z_k, k ∉ {i, j}; on the block it is the skew product (x_j, a, u, w) ↦ (x_j + π(h(a, u, w)), B_s(a, u), w) with a = ℓ(x_i − x_j), u = v_i − v_j, w = v_i + v_j; it is measure preserving from λ_N restricted to its domain onto λ_N restricted to its image and injective off a null set; pair maps of disjoint pairs commute.",
      "hypotheses": [
       "0 < ε",
       "ε + η < ρ",
@@ -840,6 +850,11 @@
        "name": "velocity_change",
        "kind": "compatibility",
        "statement": "(v_i, v_j) ↦ (u, w) has determinant 2^d, applied and inverted, so factors cancel."
+      },
+      {
+       "name": "others_fixed",
+       "kind": "non-example",
+       "statement": "N = 3 on E, d = 1, ε = R = 1, η = 4: P^{12}_1 sends positions 0, 2, 20 with velocities 0.1 to 0.1, 2.1, 20; the third particle is not moved."
       }
      ]
     }
@@ -1108,7 +1123,7 @@
      "id": "6.2",
      "kind": "theorem",
      "name": "HardSphere.measurePreserving_stepMap",
-     "statement": "For R > 0, δ > 0 with ε + 4Rδ < ρ (near pairs, at distance at most ε + 2Rδ, then satisfy ‖x_i − x_j‖ + 2Rδ ≤ ε + 4Rδ < ρ, the domain of the pair maps of 4.5 with η = 4Rδ), on the set S_{δ,R} (|V| ≤ R, no particle within ε + 2Rδ of two others, no incoming or grazing contact state, no grazing collision in [0, δ] between near pairs) the near pairs form a matching, each collides at most once in [0, δ], the step map Φ_δ (pair maps on near pairs, free transport otherwise) gives the trajectory on [0, δ], and Φ_δ is injective and measure preserving; the complement of S_{δ,R} in 𝒟̄ ∩ {|V| ≤ R} is I (η = 2Rδ) up to a null set.",
+     "statement": "For R > 0, δ > 0 with ε + 4Rδ < ρ (near pairs, at distance at most ε + 2Rδ, then satisfy ‖x_i − x_j‖ + 2Rδ ≤ ε + 4Rδ < ρ, the domain of the pair maps of 4.5 with η = 4Rδ), on the set S_{δ,R} (|V| ≤ R, no particle within ε + 2Rδ of two others, no incoming or grazing contact state, no grazing collision in [0, δ] between near pairs) the near pairs form a matching, each collides at most once in [0, δ], and the step map Φ_δ gives the trajectory on [0, δ]; Φ_δ is defined block by block: on the Borel piece where the near pairs form a given matching M it acts by P^{ij}_δ on the block (z_i, z_j) of each {i, j} ∈ M and by the one-particle free step z_k ↦ (x_k + π(δ v_k), v_k) on each unmatched particle (disjoint blocks, each coordinate moved once); Φ_δ is injective on S_{δ,R} and measure preserving from λ_N restricted to S_{δ,R} onto λ_N restricted to its image; the complement of S_{δ,R} in 𝒟̄ ∩ {|V| ≤ R} is I (η = 2Rδ) up to a null set.",
      "hypotheses": [
       "0 < ε",
       "R > 0",
@@ -1123,7 +1138,8 @@
       "target:4.4",
       "target:4.5",
       "target:5.1",
-      "target:6.1"
+      "target:6.1",
+      "target:5.2"
      ],
      "api": [],
      "tests": [
@@ -1146,6 +1162,11 @@
        "name": "chart_domain",
        "kind": "non-example",
        "statement": "Unit torus, ε = 0.3, R = 1: δ = 0.09 satisfies ε + 2Rδ = 0.48 < 1/2 but a near pair at distance 0.47 would need the pair map at separation 0.65 ≥ ρ; δ = 0.045 satisfies ε + 4Rδ = 0.48 < 1/2 and near pairs stay within 0.39 + 0.09 = 0.48 < ρ."
+      },
+      {
+       "name": "block_composition",
+       "kind": "non-example",
+       "statement": "E, d = 1, ε = R = δ = 1: positions 0, 2, 20, 22, all velocities 0.1, near pairs {1,2}, {3,4}, no collision: Φ_1 gives 0.1, 2.1, 20.1, 22.1; composing N-particle maps that also free-transport the other particles moves every particle by 0.2."
       }
      ]
     },
@@ -1199,7 +1220,7 @@
      ],
      "locator": {
       "source": "GST2013",
-      "where": "Proposition 4.1.1, lines 862–863, proof lines 875–910; BGSS2023 lines 132–139; DengHaniMa2024 Proposition 1.2 lines 182–188; Alexander1976 pp. 217–232; Lanford1975 Proposition 4.3"
+      "where": "Proposition 4.1.1, lines 862–863, proof lines 875–910; BGSS2023 lines 132–139; DengHaniMa2024 Proposition 1.2 lines 182–188; Alexander1976 Proposition 4.3, pp. 217–232 (reference [2] of GST2013, line 855, bibliography lines 5439–5440)"
      },
      "prerequisites": [
       "target:5.2",
@@ -1236,7 +1257,7 @@
      "id": "7.1",
      "kind": "definition",
      "name": "HardSphere.flow",
-     "statement": "T_t Z = value at time t of the trajectory through Z if Z ∈ G, and Z otherwise. T_0 = id, T_{s+t} = T_s ∘ T_t for all real s, t; each T_t is a bijection preserving G, 𝒟̄ and their complements; (t, Z) ↦ T_t Z is measurable; T_t = S_t when there is no contact between 0 and t.",
+     "statement": "T_t Z = value at time t of the trajectory through Z if Z ∈ G, and Z otherwise. T_0 = id, T_{s+t} = T_s ∘ T_t for all real s, t; each T_t is a bijection preserving G, 𝒟̄ and their complements; (t, Z) ↦ T_t Z is measurable; T_t Z = S_t Z for Z ∈ G whose trajectory has no contact between 0 and t.",
      "hypotheses": [
       "0 < ε < ρ"
      ],
@@ -1268,7 +1289,7 @@
       {
        "name": "flow_eq_freeFlow",
        "role": "compatibility",
-       "statement": "T_t = S_t on configurations with no contact between 0 and t."
+       "statement": "T_t Z = S_t Z for Z ∈ G whose trajectory has no contact on the closed interval between 0 and t (off G the flow is the identity)."
       }
      ],
      "tests": [
@@ -1286,6 +1307,11 @@
        "name": "naive_free",
        "kind": "non-example",
        "statement": "S_t restricted to 𝒟̄ leaves 𝒟̄ and is not the flow."
+      },
+      {
+       "name": "grazing_off_G",
+       "kind": "non-example",
+       "statement": "E, d = 2, ε = 1, x_1 = (2,1), x_2 = 0, v_1 = (−1,0), v_2 = 0: D = 0, grazing at time 2, Z ∉ G; no contact on [0,1], T_1 Z = Z but S_1 Z has x_1 = (1,1)."
       }
      ]
     },
@@ -1330,7 +1356,7 @@
      "id": "7.3",
      "kind": "theorem",
      "name": "HardSphere.flow_reversal",
-     "statement": "T_t ∘ ℛ = ℛ ∘ T_{−t}; T_t commutes with relabelling, common translations and boosts (T_t(X, V + c) = (X' + π(tc), V' + c)); P and H are conserved.",
+     "statement": "T_t ∘ ℛ = ℛ ∘ T_{−t}; T_t commutes with relabelling and common translations of positions; P and H are conserved; all exactly on the whole phase space. Galilean covariance for Z = (X, V) ∈ G: T_t(X, V + c) = (X' + π(tc), V' + c) with (X', V') = T_t(X, V); hence for λ_N-a.e. Z ∈ 𝒟̄.",
      "hypotheses": [
       "0 < ε < ρ"
      ],
@@ -1340,7 +1366,8 @@
      },
      "prerequisites": [
       "target:5.3",
-      "target:7.1"
+      "target:7.1",
+      "target:6.4"
      ],
      "api": [],
      "tests": [
@@ -1358,6 +1385,11 @@
        "name": "rotate_velocities",
        "kind": "non-example",
        "statement": "Rotating the head-on velocities by a quarter turn gives v_1 = (0, −1), which never meets particle 2, while the rotated time-3 state has v_2 = (0, −1) after a collision."
+      },
+      {
+       "name": "boost_off_G",
+       "kind": "non-example",
+       "statement": "The grazing state of 7.1 boosted by c = (1,0) stays outside G; T_1 fixes it (positions (2,1), 0) while the covariance formula would give (3,1), (1,0)."
       }
      ]
     },
@@ -1405,9 +1437,9 @@
        "statement": "N = 1 on E: U_t f(x, v) = f(x − tv, v)."
       },
       {
-       "name": "constant",
+       "name": "energy_cutoff",
        "kind": "degenerate",
-       "statement": "Constants on a finite-measure 𝒟̄ are fixed."
+       "statement": "λ_N|𝒟̄ is σ-finite and infinite for N ≥ 1 even on a torus (N = d = 1 on the unit circle: 𝒟̄_1 = X × E has measure ∞, so constants are not in Lp); f = 1_{H ≤ 1/2} there has ∫|f|^p = 2 and U_t f = f."
       },
       {
        "name": "p_infinity",
@@ -1560,14 +1592,14 @@
       {
        "name": "admissible_closure",
        "role": "structure",
-       "statement": "Admissible functions form a vector space, stable under multiplication by functions of (t, P, H)."
+       "statement": "Admissible functions form a vector space, stable under relabelling and under multiplication by a(t, P, H) for bounded measurable a, differentiable in t at every point with bounded measurable ∂_t a, with L(aφ) = a Lφ + (∂_t a)φ; unbounded multipliers such as H are excluded."
       }
      ],
      "tests": [
       {
        "name": "energy_test",
        "kind": "computation",
-       "statement": "φ = χ(t)ψ(H) gives ∫_0^∞ χ' = −χ(0) times ∫ W⁰ ψ(H)."
+       "statement": "φ = χ(t)ψ(H) with χ C¹ compactly supported and ψ bounded measurable is admissible and gives ∫_0^∞ χ' = −χ(0) times ∫ W⁰ ψ(H)."
       },
       {
        "name": "free_transport",
@@ -1577,12 +1609,12 @@
       {
        "name": "non_specular",
        "kind": "non-example",
-       "statement": "φ = χ(t)⟨v_1, e_1⟩ violates the specular condition and the left side is ∫ W⁰ χ(τ)(⟨v_1,e_1⟩ − ⟨v_1',e_1⟩) ≠ 0 for head-on data."
+       "statement": "φ = χ(t)θ(H)⟨v_1, e_1⟩ (θ a compactly supported smooth energy cutoff) is bounded with bounded Lφ but violates the specular condition; the left side is ∫ W⁰ χ(τ)(⟨v_1,e_1⟩ − ⟨v_1',e_1⟩) ≠ 0 for head-on data with θ(H) = 1."
       },
       {
        "name": "collision_time_derivative",
        "kind": "non-example",
-       "statement": "Head-on witness, φ = χ(t)ψ(⟨x_1 − x_2, e_1⟩) with ψ bounded smooth and the identity on [−10, 10]: t ↦ φ(t, T_t Z) is χ(t)(2 − t) for t < 1 and χ(t) t for t ≥ 1, continuous at 1 with one-sided derivatives χ'(1) ∓ χ(1); the derivative is used only on the open pieces."
+       "statement": "Head-on witness, φ = χ(t)θ(H)ψ(⟨x_1 − x_2, e_1⟩) with θ smooth, compactly supported, equal to 1 near H = 1/2, and ψ bounded smooth with bounded derivative and the identity on [−10, 10]: admissible, and t ↦ φ(t, T_t Z) is χ(t)(2 − t) for 0 ≤ t < 1 and χ(t) t for 1 ≤ t ≤ 10, continuous at 1 with one-sided derivatives χ'(1) ∓ χ(1); the derivative is used only on the open pieces. Without θ, Lφ(1, Z) = M at x_1 − x_2 = e_1, v_1 = M e_1, v_2 = 0, χ(1) = 1, χ'(1) = 0: unbounded."
       }
      ]
     },
@@ -1590,7 +1622,7 @@
      "id": "8.3",
      "kind": "definition",
      "name": "HardSphere.marginal",
-     "statement": "For symmetric W_N ≥ 0 vanishing off 𝒟̄_N and s ≤ N, W^{(s)}_N(Z_s) = ∫ W_N(Z_s, z_{s+1}, …, z_N) dz_{s+1} ⋯ dz_N: symmetric, vanishing off 𝒟̄_s, consistent (W^{(s)} = ∫ W^{(s+1)} dz_{s+1}), W^{(N)} = W_N, W^{(0)} = ∫ W_N, and it inherits the specular condition at matching contact configurations.",
+     "statement": "For symmetric W_N ≥ 0 vanishing off 𝒟̄_N and s ≤ N, W^{(s)}_N(Z_s) = ∫ W_N(Z_s, z_{s+1}, …, z_N) dz_{s+1} ⋯ dz_N: symmetric, vanishing off 𝒟̄_s, consistent (W^{(s)} = ∫ W^{(s+1)} dz_{s+1} for s < N), W^{(N)} = W_N, W^{(0)} = ∫ W_N, and it inherits the specular condition at matching contact configurations.",
      "hypotheses": [
       "W_N symmetric",
       "W_N ≥ 0",
@@ -1609,7 +1641,7 @@
       {
        "name": "marginal_consistency",
        "role": "consistency",
-       "statement": "W^{(s)}_N = ∫ W^{(s+1)}_N dz_{s+1}."
+       "statement": "W^{(s)}_N = ∫ W^{(s+1)}_N dz_{s+1} for s < N (there is no level N + 1)."
       },
       {
        "name": "marginal_symmetric",
@@ -1644,7 +1676,7 @@
      "id": "8.4",
      "kind": "theorem",
      "name": "HardSphere.lintegral_sum_injective_eq_marginal",
-     "statement": "For a symmetric probability density W_N and measurable h ≥ 0 on (Fin s → X × E), ∫ W_N Σ_{i injective} h(z_{i_1}, …, z_{i_s}) = N!/(N − s)! ∫ W^{(s)}_N h.",
+     "statement": "For s ≤ N, a symmetric probability density W_N and measurable h ≥ 0 on (Fin s → X × E), ∫ W_N Σ_{i injective} h(z_{i_1}, …, z_{i_s}) = N!/(N − s)! ∫ W^{(s)}_N h, N!/(N − s)! = Nat.descFactorial N s being the number of injective i : Fin s → Fin N.",
      "hypotheses": [
       "s ≤ N",
       "W_N symmetric"
@@ -1654,7 +1686,8 @@
       "where": "lines 216–220"
      },
      "prerequisites": [
-      "target:8.3"
+      "target:8.3",
+      "mathlib:Nat.descFactorial"
      ],
      "api": [],
      "tests": [
@@ -1672,6 +1705,11 @@
        "name": "non_injective",
        "kind": "non-example",
        "statement": "s = 2, N = 3, h = 1: both sides 6; summing over all maps would give 9."
+      },
+      {
+       "name": "count_beyond_N",
+       "kind": "degenerate",
+       "statement": "N = 1, s = 2: no injective map Fin 2 → Fin 1, Nat.descFactorial 1 2 = 0, whereas 1!/(1 − 2)! with truncated subtraction is 1."
       }
      ]
     }
@@ -1777,7 +1815,7 @@
      "id": "9.3",
      "kind": "definition",
      "name": "HardSphere.grandCanonical",
-     "statement": "For ε ≥ 0, μ > 0 and measurable integrable f⁰ ≥ 0, the measure on 𝒟^ε with N-th component density (μ^N/(N! Z)) Π f⁰(z_i) 1_{𝒟̄_N}, Z = 1 + Σ_{N≥1}(μ^N/N!) ∫ Π f⁰ 1_{𝒟̄_N}; 1 + μ∫f⁰ ≤ Z ≤ exp(μ∫f⁰); a probability measure, exchangeable; finite sum on flat tori; Poisson particle number for ε = 0.",
+     "statement": "For ε ≥ 0, μ > 0 and measurable integrable f⁰ ≥ 0, the measure on 𝒟^ε with N-th component density (μ^N/(N! Z)) Π f⁰(z_i) 1_{𝒟̄_N}, Z = 1 + Σ_{N≥1}(μ^N/N!) ∫ Π f⁰ 1_{𝒟̄_N}; 1 + μ∫f⁰ ≤ Z ≤ exp(μ∫f⁰); a probability measure, exchangeable; Z is a finite sum on flat tori for 0 < ε < ρ; Poisson particle number for ε = 0; the vacuum law when ∫f⁰ = 0; for ε = 0 and ∫f⁰ > 0, i.i.d. particles with law f⁰/∫f⁰ conditionally on {N = n}.",
      "hypotheses": [
       "ε ≥ 0",
       "μ > 0",
@@ -1808,7 +1846,7 @@
       {
        "name": "grandCanonical_zero",
        "role": "compatibility",
-       "statement": "For ε = 0 the law of N is poissonMeasure (μ∫f⁰) and given N the particles are i.i.d."
+       "statement": "For ε = 0 the law of N is poissonMeasure (μ∫f⁰); when ∫f⁰ > 0, conditionally on {N = n} (positive probability) the particles are i.i.d. with law f⁰/∫f⁰. When ∫f⁰ = 0 the measure is the vacuum law (Z = 1, N = 0 a.s.) for every ε ≥ 0."
       },
       {
        "name": "partition_antitone",
@@ -1831,6 +1869,16 @@
        "name": "missing_factorial",
        "kind": "non-example",
        "statement": "Weights μ^N without 1/N! diverge for ε = 0 and μ∫f⁰ ≥ 1."
+      },
+      {
+       "name": "zero_density",
+       "kind": "degenerate",
+       "statement": "f⁰ = 0: Z = 1 and P(N = 0) = 1 for every ε ≥ 0; f⁰/∫f⁰ is 0/0 and no conditional law is asserted."
+      },
+      {
+       "name": "zero_diameter",
+       "kind": "non-example",
+       "statement": "Unit torus, ε = 0, μ = 1, ∫f⁰ = 1: every term 1/N! is positive and Z = e, so the finite-sum statement needs ε > 0."
       }
      ]
     },
@@ -1885,7 +1933,7 @@
      "id": "9.5",
      "kind": "definition",
      "name": "HardSphere.correlation",
-     "statement": "F_n(t)(Z_n) = μ^{−n} Σ_{p≥0} (1/p!) ∫ W_{n+p}(t)(Z_n, z_{n+1}, …, z_{n+p}) with W_N(t) = W⁰_N ∘ T_{−t}; E[Σ_{injective} h(z_{i_1}(t), …)] = μ^n ∫ F_n(t) h; symmetric, vanishing off 𝒟̄_n, ∫ F_n(t) = μ^{−n} E[N!/(N − n)!]; inversion formula under a Gaussian bound on finite-measure X.",
+     "statement": "F_n(t)(Z_n) = μ^{−n} Σ_{p≥0} (1/p!) ∫ W_{n+p}(t)(Z_n, z_{n+1}, …, z_{n+p}) with W_N(t) = W⁰_N ∘ T_{−t}; E[Σ_{injective} h(z_{i_1}(t), …)] = μ^n ∫ F_n(t) h; symmetric, vanishing off 𝒟̄_n, ∫ F_n(t) = μ^{−n} E[Nat.descFactorial N n] (zero contribution from N < n); inversion formula on finite-measure X when f⁰ ≤ C₀ exp(−β₀|v|²/2) with C₀ ≥ 0, β₀ > 0, via ∫ W_{n+m}(t)(Z_n, ·) ≤ μ^{n+m} C₀^{n+m} exp(−β₀|V_n|²/2) K^m/Z with K = μ_X(X)(2π/β₀)^{d/2}.",
      "hypotheses": [
       "0 < ε < ρ",
       "μ > 0",
@@ -1899,7 +1947,9 @@
       "target:7.5",
       "target:8.1",
       "target:8.4",
-      "target:9.3"
+      "target:9.3",
+      "mathlib:Nat.descFactorial",
+      "mathlib:GaussianFourier.integral_rexp_neg_mul_sq_norm"
      ],
      "api": [
       {
@@ -1910,12 +1960,12 @@
       {
        "name": "correlation_symmetric",
        "role": "structure",
-       "statement": "F_n(t) is symmetric and vanishes off 𝒟̄_n; ∫ F_n(t) < ∞."
+       "statement": "F_n(t) is symmetric and vanishes off 𝒟̄_n; ∫ F_n(t) = μ^{−n} E[Nat.descFactorial N n] < ∞."
       },
       {
        "name": "correlation_inversion",
        "role": "inversion",
-       "statement": "W_n(t) = μ^n Σ_p ((−μ)^p/p!) ∫ F_{n+p}(t) a.e. on finite-measure X when f⁰ ≤ C₀ exp(−β₀|v|²/2)."
+       "statement": "W_n(t) = μ^n Σ_p ((−μ)^p/p!) ∫ F_{n+p}(t) a.e., with absolutely convergent series, on finite-measure X when f⁰ ≤ C₀ exp(−β₀|v|²/2), C₀ ≥ 0, β₀ > 0; the series of absolute values is at most (μC₀)^n exp(−β₀|V_n|²/2) exp(2μC₀K)/Z with K = μ_X(X)(2π/β₀)^{d/2}."
       }
      ],
      "tests": [
@@ -1933,6 +1983,21 @@
        "name": "stationary",
        "kind": "characterisation",
        "statement": "For the invariant measure of §9.4, F_n(t) is independent of t."
+      },
+      {
+       "name": "vacuum",
+       "kind": "degenerate",
+       "statement": "f⁰ = 0: N = 0 a.s., F_1 = 0 = μ^{−1}E[Nat.descFactorial N 1]; the truncated quotient N!/(N − 1)! is 1 at N = 0 and would give μ^{−1}."
+      },
+      {
+       "name": "descFactorial_values",
+       "kind": "computation",
+       "statement": "Nat.descFactorial 1 2 = 0 (truncated 1!/(1 − 2)! = 1) and Nat.descFactorial 3 2 = 6."
+      },
+      {
+       "name": "volume_factor",
+       "kind": "computation",
+       "statement": "Unit circle, ε = 0.1, μ = C₀ = β₀ = 1, f⁰ = exp(−v²/2), n = m = 1, t = 0, v_1 = 0: ∫ W_2(0)(z_1, ·) = 0.8√(2π)/Z ≈ 2.0053/Z, above 1/Z and below K/Z = √(2π)/Z ≈ 2.5066/Z."
       }
      ]
     },
@@ -2038,8 +2103,11 @@
      "id": "10.2",
      "kind": "definition",
      "name": "HardSphere.collisionOperator",
-     "statement": "Q(g, g)(x, v) = ∫_E ∫_{S^{d−1}} ⟨w − v, ω⟩_+ (g(x, v')g(x, w') − g(x, v)g(x, w)) dσ_S(ω) dw, (v', w') = σ_ω(v, w); absolutely convergent for Gaussian-bounded g with |Q(g, g)| ≤ C'(1 + |v|)exp(−β|v|²/2); gain/loss split; weak form; ∫ Q(g,g)ψ = 0 for collision invariants; Q(M, M) = 0.",
+     "statement": "Q(g, g)(x, v) = ∫_E ∫_{S^{d−1}} ⟨w − v, ω⟩_+ (g(x, v')g(x, w') − g(x, v)g(x, w)) dσ_S(ω) dw, (v', w') = σ_ω(v, w); for measurable g with |g(x, v)| ≤ C exp(−β|v|²/2), C ≥ 0, β > 0, absolutely convergent with |Q(g, g)| ≤ C'(1 + |v|)exp(−β|v|²/2); gain/loss split; weak form for measurable ψ of polynomial growth; ∫ Q(g,g)ψ = 0 for collision invariants; Q(M, M) = 0.",
      "hypotheses": [
+      "g measurable",
+      "C ≥ 0",
+      "β > 0",
       "|g(x, v)| ≤ C exp(−β|v|²/2)"
      ],
      "locator": {
@@ -2050,7 +2118,8 @@
       "target:2.1",
       "target:2.2",
       "target:9.1",
-      "mathlib:MeasureTheory.Measure.toSphere"
+      "mathlib:MeasureTheory.Measure.toSphere",
+      "mathlib:GaussianFourier.integral_rexp_neg_mul_sq_norm"
      ],
      "api": [
       {
@@ -2066,7 +2135,7 @@
       {
        "name": "weak_form",
        "role": "symmetry",
-       "statement": "∫ Q(g,g)ψ = ¼∫∫∫ ⟨w − v, ω⟩_+ (g'g'_* − gg_*)(ψ + ψ_* − ψ' − ψ'_*) for ψ of polynomial growth."
+       "statement": "∫ Q(g,g)ψ = ¼∫∫∫ ⟨w − v, ω⟩_+ (g'g'_* − gg_*)(ψ + ψ_* − ψ' − ψ'_*) for measurable ψ of polynomial growth."
       },
       {
        "name": "collision_invariants",
@@ -2094,6 +2163,11 @@
        "name": "kernel_sign",
        "kind": "compatibility",
        "statement": "The kernels ⟨w − v, ω⟩_+ and ⟨v − w, ω⟩_+ give the same Q by ω ↦ −ω."
+      },
+      {
+       "name": "beta_zero",
+       "kind": "non-example",
+       "statement": "d = 2, β = 0, C = 1, g = 1_{|v| ≥ 1}, v = 0: for w = r e_1, ω = (1,1)/√2, r > √2 both outgoing speeds are r/√2 ≥ 1 and the gain integrand is r/√2 on an open cone, so the integral diverges."
       }
      ]
     },
@@ -2101,7 +2175,7 @@
      "id": "10.3",
      "kind": "definition",
      "name": "HardSphere.IsMildBoltzmannSolution",
-     "statement": "f : ℝ → X × E → ℝ jointly measurable with |f(t, x, v)| ≤ C exp(−β|v|²/2) on [0, T] and f(t, x + π(tv), v) = f⁰(x, v) + ∫_0^t Q(f(s), f(s))(x + π(sv), v) ds for t ∈ [0, T] and a.e. (x, v).",
+     "statement": "For T ≥ 0, measurable f⁰ and jointly measurable f : ℝ → X × E → ℝ: there are C, β > 0 with |f(t, x, v)| ≤ C exp(−β|v|²/2) for t ∈ [0, T], and f(t, x + π(tv), v) = f⁰(x, v) + ∫_0^t Q(f(s), f(s))(x + π(sv), v) ds for t ∈ [0, T] and a.e. (x, v).",
      "hypotheses": [
       "T ≥ 0"
      ],
@@ -2113,7 +2187,23 @@
       "target:1.1",
       "target:10.2"
      ],
-     "api": [],
+     "api": [
+      {
+       "name": "initial_value",
+       "role": "initial condition",
+       "statement": "f(0, x, v) = f⁰(x, v) for a.e. (x, v); f⁰ inherits the Gaussian bound a.e."
+      },
+      {
+       "name": "restrict",
+       "role": "restriction",
+       "statement": "A mild solution on [0, T] is one on [0, S] for every 0 ≤ S ≤ T, with the same C, β."
+      },
+      {
+       "name": "characteristics",
+       "role": "reformulation",
+       "statement": "Equivalently f(t, y, v) = f⁰(y − π(tv), v) + ∫_0^t Q(f(s), f(s))(y − π((t − s)v), v) ds for a.e. (y, v), since x ↦ x + π(tv) preserves μ_X."
+      }
+     ],
      "tests": [
       {
        "name": "maxwellian_solution",
@@ -2123,12 +2213,12 @@
       {
        "name": "free_case",
        "kind": "degenerate",
-       "statement": "With Q replaced by 0 the solution is f⁰(x − π(tv), v)."
+       "statement": "With Q replaced by 0 the solution is f⁰(x − π(tv), v); in d = 1, σ_ω(v, w) = (w, v) for ω = ±1, so Q ≡ 0 and mild solutions are a.e. the free transports."
       },
       {
-       "name": "wrong_direction",
+       "name": "wrong_direction_cosine",
        "kind": "non-example",
-       "statement": "f⁰(x + π(tv), v) is not a solution of the free part."
+       "statement": "Unit circle, f⁰ = (1 + 0.5cos(2πx))M_{1,0}(v): the wrongly signed f⁰(x + π(tv), v) gives 0.5M(1) along the characteristic at x = 0, v = 1, t = 1/4, where 1.5M(1) is required (and differs on a neighbourhood); spatially constant data do not discriminate."
       }
      ]
     },
@@ -2183,7 +2273,7 @@
      "id": "10.5",
      "kind": "theorem",
      "name": "HardSphere.tendsto_empirical_of_correlation",
-     "statement": "On a flat position space with f⁰ ≥ 0 integrable, t ∈ ℝ, μ_ε → ∞ as ε → 0⁺ and f integrable: if ∫ F^ε_1(t) g → ∫ f g and ∫ F^ε_2(t) g₂ → ∫ f ⊗ f g₂ for all bounded continuous g, g₂, then P_ε(|π^ε_t(h) − ∫ f h| ≥ δ) → 0 for all bounded continuous h and δ > 0; corollary HardSphere.LanfordStatement.tendsto_empirical under HardSphere.LanfordStatement d.",
+     "statement": "On a flat position space with f⁰ ≥ 0 integrable, t ∈ ℝ, μ_ε → ∞ as ε → 0⁺ and f integrable: if ∫ F^ε_1(t) g → ∫ f g and ∫ F^ε_2(t) g₂ → ∫ f ⊗ f g₂ for all bounded continuous g, g₂, then P_ε(|π^ε_t(h) − ∫ f h| ≥ δ) → 0 for all bounded continuous h and δ > 0; corollary HardSphere.LanfordStatement.tendsto_empirical for d ≥ 2 under HardSphere.LanfordStatement d.",
      "hypotheses": [
       "f⁰ ≥ 0 integrable",
       "μ_ε → ∞",
@@ -2205,14 +2295,14 @@
       {
        "name": "HardSphere.LanfordStatement.tendsto_empirical",
        "role": "corollary",
-       "statement": "Under HardSphere.LanfordStatement d the empirical measure concentrates on the Boltzmann solution for t ∈ [0, T₀]."
+       "statement": "For d ≥ 2 (so μ_ε = ε^{−(d−1)} → ∞) and under HardSphere.LanfordStatement d, the empirical measure concentrates on the Boltzmann solution for t ∈ [0, T₀]."
       }
      ],
      "tests": [
       {
        "name": "equilibrium",
        "kind": "compatibility",
-       "statement": "At the Maxwellian equilibrium on the unit torus the hypotheses hold with f = M by §9.4 and §9.6."
+       "statement": "At the Maxwellian equilibrium on the unit torus in dimension d ≥ 2 (μ_ε → ∞) the hypotheses hold with f = M by §9.4 and §9.6."
       },
       {
        "name": "poisson_variance",
@@ -2223,6 +2313,11 @@
        "name": "needs_F2",
        "kind": "non-example",
        "statement": "If F_2 → 2 f ⊗ f the variance tends to (∫ f h)² > 0."
+      },
+      {
+       "name": "dimension_one",
+       "kind": "non-example",
+       "statement": "d = 1: μ_ε = 1; on the unit circle with f⁰ = M, Z_ε → e, P(N = 1) → e^{−1}, and for h = 1, δ = 1/2, P(|π^ε_t(1) − 1| ≥ 1/2) → 1 − e^{−1} ≈ 0.63212, not 0."
       }
      ]
     }
