@@ -1287,6 +1287,11 @@
       "target:4.1",
       "target:4.2",
       "target:4.3",
+      "mathlib:IsCoveringMap.isLocalHomeomorph",
+      "tauceti:IsLocalHomeomorph.chartedSpaceComap",
+      "tauceti:IsLocalHomeomorph.isManifold_chartedSpaceComap",
+      "tauceti:IsLocalHomeomorph.isLocalDiffeomorph_chartedSpaceComap",
+      "tauceti:IsLocalHomeomorph.contMDiff_chartedSpaceComap_iff",
       "roadmap:DifferentialGeometry Layer 2.3"
      ],
      "api": [],
@@ -1720,7 +1725,7 @@
     "Layer 12.2",
     "Layer 12.3"
    ],
-   "what": "Corner conventions; covering-space smooth structures for the time-orientation double cover; positive-definite gradient, Hessian and Laplace–Beltrami for comparisons."
+   "what": "Corner conventions; smooth structures on covers (Layer 2.3, which names Tau Ceti's IsLocalHomeomorph.chartedSpaceComap and the smoothness of continuous lifts) for the time-orientation double cover; positive-definite gradient, Hessian and Laplace–Beltrami for comparisons."
   },
   {
    "roadmap": "PDE",
@@ -1739,7 +1744,7 @@
   {
    "roadmap": "RiemannianGeometry",
    "sections": [
-    "Conventions and suppliers",
+    "Conventions",
     "R1"
    ],
    "what": "Curvature sign convention and positive-definite curvature identities, for the comparison Checks of 3.4."
