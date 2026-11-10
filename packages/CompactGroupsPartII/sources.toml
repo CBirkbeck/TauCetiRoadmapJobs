@@ -1,0 +1,49 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "CompactGroupsPartII"
+
+[[source]]
+id = "Knapp2021"
+authors = "Anthony W. Knapp"
+title = "Lie Groups Beyond an Introduction, digital second edition"
+year = 2021
+locator_scheme = "theorem"
+locator = "Theorem 5.107, p.334; Theorem 5.110, pp.335–336"
+url = "https://www.math.stonybrook.edu/~aknapp/download/Beyond2.pdf"
+fetched_from = "https://www.math.stonybrook.edu/~aknapp/download/Beyond2.pdf"
+fetched_at = "2026-11-10T17:25:01Z"
+sha256 = "5ba1b91db9174613716a8421caa8899a169e154312df1df94182d60a7929df70"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-10"
+cited_for = ["6.5–6.9"]
+
+[[source]]
+id = "Etingof2024"
+authors = "Pavel Etingof"
+title = "Lie Groups and Lie Algebras II, MIT 18.755, Lecture 11"
+year = 2024
+locator_scheme = "theorem"
+locator = "§37.1, p.199; Theorem 37.5, p.202"
+url = "https://ocw.mit.edu/courses/18-755-lie-groups-and-lie-algebras-ii-spring-2024/mit18_755_s24_lec11.pdf"
+fetched_from = "https://ocw.mit.edu/courses/18-755-lie-groups-and-lie-algebras-ii-spring-2024/mit18_755_s24_lec11.pdf"
+fetched_at = "2026-11-10T17:25:56Z"
+sha256 = "5093fe43b8bf072b57f5fc2524e9ccd0ec12edb806ee2d36fb8c431d08521280"
+licence_class = "institutional"
+status = "certified"
+accessed = "2026-11-10"
+cited_for = ["3.1"]
+
+[[source]]
+id = "Conway1990"
+authors = "John B. Conway"
+title = "A Course in Functional Analysis"
+year = 2007
+venue = "Graduate Texts in Mathematics"
+doi = "10.1007/978-1-4757-4383-8"
+locator_scheme = "section"
+locator = "VII.9, Exercises 8–11"
+url = "https://doi.org/10.1007/978-1-4757-4383-8"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["4.1; 5.1"]
