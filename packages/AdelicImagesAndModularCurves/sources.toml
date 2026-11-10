@@ -207,3 +207,23 @@ status = "certified"
 accessed = "2026-11-07"
 version_note = "arXiv v3"
 cited_for = ["3.4"]
+
+[[source]]
+id = "gjn2020"
+authors = "Enrique González-Jiménez, Filip Najman"
+title = "Growth of torsion groups of elliptic curves upon base change"
+year = 2016
+venue = "Math. Comp. 89 (2020), no. 323, 1457-1485"
+doi = "10.1090/mcom/3478"
+arxiv = "1609.02515v6"
+locator_scheme = "theorem"
+locator = "Theorem 7.2"
+url = "https://arxiv.org/abs/1609.02515v6"
+fetched_from = "https://arxiv.org/pdf/1609.02515v6"
+fetched_at = "2026-11-10T02:28:37Z"
+sha256 = "6d30a87a2d93d8bf1453490cb90bda4f7433ab5ae2cfbad71dece43d036017c2"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-10"
+version_note = "arXiv v6"
+cited_for = ["3.6"]
