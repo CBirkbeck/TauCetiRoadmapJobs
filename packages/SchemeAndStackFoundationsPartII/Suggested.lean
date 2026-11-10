@@ -19,7 +19,7 @@ representable `Spec A` into the sheaf of points of the group, as in Mathlib's
 sheafification of `AddCommGrpCat.{u}`-valued presheaves on this large site is not available at
 the pins, while it is for `AddCommGrpCat.{u+1}`.
 
-Stated here (README §9.2 and §9.3):
+Stated here (README §5.2 and §5.3):
 
 * `flatCohomology_henselian_invariance`: for a henselian pair `(R, I)`, fppf cohomology of a
   commutative finite locally free `R`-group maps onto that of `R/I` in degrees `≥ 1` and
@@ -30,14 +30,9 @@ Stated here (README §9.2 and §9.3):
 
 Headline theorems not statable at the pins, with what each lacks:
 
-* README §1.2, Gabber's comparison `Br_Az(X) ≃ H²_ét(X, 𝔾_m)_tors` for a quasi-compact
-  separated scheme with an ample invertible sheaf: there is no Brauer group of Azumaya algebras
-  on a scheme and no étale sheaf `𝔾_m` with its cohomology on a scheme (Mathlib's `IsAzumaya` is
-  for algebras over a ring).
-* README §6.3, finite-ideal derived excision; §7.1, fpqc hyperdescent of flat cohomology;
-  §8.5, continuity over derived complete animated rings; §10.2, adically faithfully flat descent
-  with supports: there are no animated rings, no flat cohomology of animated rings and no
-  flat cohomology with supports at the pins.
+* README §4.5, continuity over derived complete animated rings, and §6.2, adically faithfully
+  flat descent with supports: there are no animated rings, no flat cohomology of animated rings
+  and no flat cohomology with supports at the pins.
 -/
 
 universe w u
@@ -48,7 +43,7 @@ namespace TauCetiRoadmap.SchemeAndStackFoundationsPartII
 
 open CategoryTheory Opposite TauCeti
 
-/-! ## Layer 9: Henselian invariance and algebraization -/
+/-! ## Layer 5: Henselian invariance and algebraization -/
 
 /-- The abelian group of points `A ↦ G(A)` of a commutative finite locally free group `G` over
 `R`, as a functor on commutative `R`-algebras: the convolution group of `R`-algebra maps from the
@@ -95,7 +90,7 @@ noncomputable def flatCohomology {R : Type u} [CommRing R]
       presheafToSheaf (CommAlgCat.fppfTopology R) AddCommGrpCat.{u+1}).op ⋙
     (Abelian.extFunctor n).flip.obj (coefficientSheaf G)
 
-/-- **Henselian invariance of flat cohomology** (README §9.2; Česnavičius–Scholze, *Purity for
+/-- **Henselian invariance of flat cohomology** (README §5.2; Česnavičius–Scholze, *Purity for
 flat cohomology*, Corollary 5.6.9). For a henselian pair `(R, I)`, with `R` and `I` arbitrary,
 and a commutative finite locally free `R`-group `G`, the reduction map
 `Hⁿ_fppf(R, G) → Hⁿ_fppf(R/I, G)` is surjective for `n ≥ 1` and bijective for `n ≥ 2`. -/
@@ -121,7 +116,7 @@ def IsHenselianNonunitalSubring {B : Type u} [CommRing B] (B' : NonUnitalSubring
     ∀ N : ℕ, 1 ≤ N → ∀ a : Fin (N + 1) → B', ∃ r ∈ B',
       (1 + r) ^ N * ((1 + r) - 1) + ∑ i : Fin (N + 1), (a i : B) * (1 + r) ^ (i : ℕ) = 0
 
-/-- **Algebraization of flat cohomology over a topological ring** (README §9.3;
+/-- **Algebraization of flat cohomology over a topological ring** (README §5.3;
 Česnavičius–Scholze, *Purity for flat cohomology*, Corollary 5.6.10). Let `B` be a topological
 ring, with its additive uniform structure, having an open henselian nonunital subring `B'` such
 that every neighbourhood of zero contains an open ideal of `B'`. For every commutative finite
