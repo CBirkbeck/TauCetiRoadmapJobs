@@ -26,6 +26,15 @@ representations of GL_n* (Publ. Math. IHÉS 142, 2025), §3.2:
   π_min(D), the derived action of `U(gl_n ⊗ E)` on a locally analytic representation, and the
   Harish-Chandra isomorphism for the split reductive `∏_σ gl_n` over a finite extension of `ℚ_p`
   (Tau Ceti's `TauCeti.hcProjection` assumes a Killing-semisimple Lie algebra).
+* **Compatibility with parabolic induction** (README §§3.1–3.2; Proposition 3.27 and Remark 3.28):
+  for a P-filtration `F_P` of D with graded pieces `M_i`, `t_D` restricts to a surjection of the
+  parabolic subspaces whose kernel is the image of `⊕_i Ker t_{M_i}`, and the closed parabolic
+  induction of the completed tensor product of the `π_min(M_i)`, twisted by `ε⁻¹ ∘ θ^P`, embeds into
+  the parabolic minimal subrepresentation `π_{min,F_P}(D)`. It needs admissible locally analytic
+  representations of `GL_n(K)` and of its Levi subgroups, Emerton's closed parabolic induction,
+  completed external tensor products over the Levi blocks, the parabolic subspaces with the block
+  maps `ζ_{F_P}` and `κ_{F_P}`, and the comparison maps `t_D`, `t_{M_i}`; none of these carriers
+  exists in Mathlib or Tau Ceti.
 * **Decomposition over the embeddings** (README §3.5; Corollary 3.31). It needs locally σ-analytic
   representations and the partially algebraic Ext groups.
 * **The recovery theorem** (README §4.2; Theorem 3.34): `π_min(D)_σ ≅ π_min(D′)_σ` if and only if
