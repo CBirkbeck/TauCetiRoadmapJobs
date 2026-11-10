@@ -11,9 +11,10 @@ extension and Gallagher's correspondence, Brauer's permutation lemma, the cyclic
 solvable cases of Glauberman's construction, the uniqueness of the resulting family of bijections
 and its compatibility with normal subgroups of `S`, and the degree relations, ending in the
 **Glauberman correspondence** `θ ↦ θ*` between `Irr_S(Γ)` and `Irr(C_Γ(S))` and the divisibility
-`θ(1) ∣ |Γ : C_Γ(S)| θ*(1)`. The second strand is the theory of heights: defect classes,
-**Brauer's theorem on heights**, heights and height zero characters, the Min–Max theorem, block
-covering through central characters, the **Fong–Reynolds correspondence** with its preservation of
+`θ(1) ∣ |Γ : C_Γ(S)| θ*(1)`. The second strand is the theory of heights: the central characters of
+blocks and Osima's formula, **Brauer's theorem on heights**, heights and height zero characters, the
+Min–Max theorem, block covering through central characters, domination modulo an arbitrary normal
+subgroup, the **Fong–Reynolds correspondence** with its preservation of
 heights, Fong's theorem, the extended first main theorem, the structure of blocks of `P C_G(P)`
 with defect group `P`, and **Reynolds' theorem**: a block with a normal defect group `D` has all
 its characters of height zero exactly when `D` is abelian. Brauer's height zero conjecture and the
@@ -43,11 +44,13 @@ Part II starts where the base stops and owns:
   (Layer 4);
 - the degree relation `θ(1) ∣ |Γ : C| θ*(1)` and Glauberman degree-divisibility as a named
   predicate with its proved instances (Layer 5);
-- defect classes, Brauer's theorem on heights, heights, defects and height zero characters
-  (Layer 6);
-- the Min–Max theorem, covering through central characters, defect groups under domination, the
-  Fong–Reynolds correspondence, regular blocks, Fong's theorem and the extended first main theorem
-  (Layer 7);
+- the central characters of blocks over the splitting system, Osima's formula, the existence and
+  `p`-regularity of the defect classes of the base §6.2, Brauer's theorem on heights, heights,
+  defects and height zero characters (Layer 6);
+- the Min–Max theorem, covering through central characters, domination of the blocks of `G/N` for
+  an arbitrary normal subgroup `N` (the base §8.1 states it for normal `p`-subgroups) and defect
+  groups under domination, the Fong–Reynolds correspondence, regular blocks, Fong's theorem and the
+  extended first main theorem (Layer 7);
 - vanishing off defect groups, the blocks of `P C_G(P)` with defect group `P`, heights of blocks
   with a normal defect group, and Reynolds' theorem (Layer 8);
 - Brauer's height zero conjecture and the Alperin–McKay conjecture as predicates, with their
@@ -96,10 +99,11 @@ Planned by other roadmaps, and imported by name and section:
   8.1–8.2: the splitting `p`-modular system, the lifting of block idempotents, Brauer characters,
   decomposition numbers, projective characters, the ordinary and modular block partitions,
   generalized decomposition numbers, relative traces and the Brauer
-  homomorphism, defect groups and their characterisations, Brauer pairs, block induction, the
-  first and second main theorems, domination and covering.
-- LocalFiniteGroupTheory L1 (the conjugacy half of Schur–Zassenhaus) and L3 (Glauberman's lemma
-  and fixed points modulo an invariant normal subgroup).
+  homomorphism, defect groups and their characterisations, including the defect classes, Brauer
+  pairs, block induction, the first main theorem in its Brauer-projection form and the second main
+  theorem, domination by normal `p`-subgroups, and covering for arbitrary normal subgroups.
+- InverseGaloisAndArithmeticFundamentalGroups IG.3.4, target *Conjugacy of coprime complements*
+  (the conjugacy half of Schur–Zassenhaus, when the normal subgroup or the quotient is solvable).
 - RepresentationTheory/CharacterTheory §2.1 (the sum of the squares of the degrees), §3.5
   (column orthogonality and primitive central idempotents), §3.6 (irreducible characters of a
   direct product), §4.3 (central characters and their integrality), §4.4 (the Galois action and
@@ -171,15 +175,31 @@ defect groups, and Dade's conjectures.
   identifies with the complex ones through `ℚ(ζ_e) ⊆ ℂ` and `ℚ(ζ_e) → K`. A block `B` is a block of
   `k[G]` with its unique central lift `e_B ∈ Z(O[G])` (base `existsUnique_blockIdempotent_map_residue`);
   `χ ∈ Irr(B)` exactly when `e_B e_χ = e_χ` in `K[G]`, where
-  `e_χ = χ(1) |G|⁻¹ Σ_g χ(g⁻¹) g` (base §4.2). Defect groups are those of base §6.2.
-- **Valuations and heights.** `ν = padicValNat p`; `|G|_p = p^a` with `a = ν(|G|)`; for a block
-  with defect group `D`, `|D| = p^d`. For `q ∈ ℚ ⊆ K`, `q ∈ O` exactly when `ν_p(q) ≥ 0` and
-  `q ∈ m` exactly when `ν_p(q) > 0`. Witness: `p = 2`, `q = 3/2` is not in `O` while `2/3 ∈ m`.
-- **Central characters.** `ω_χ : Z(K[G]) → K` is `TauCeti.Representation.centralCharacter`, with
-  `ω_χ(𝒞⁺) = |𝒞| χ(x)/χ(1)` for `x` in the class `𝒞` and class sum `𝒞⁺`; `λ_B : Z(k[G]) → k` is the
-  central character of a block (base §7.1). `a_B(𝒞)` is the coefficient of `𝒞⁺` in `e_B ∈ Z(k[G])`.
-  Witness: `S₃`, `p = 2`, the class of the transpositions: `ω = 3, −3, 0` for the trivial, sign
-  and two-dimensional characters, and `λ_{B₀} = 1` there.
+  `e_χ = χ(1) |G|⁻¹ Σ_g χ(g⁻¹) g` (base §4.2). Defect groups and defect classes are those of base
+  §6.2. For a block `B` with defect group `D`, its **Brauer correspondent** is the block `b'` of
+  `k[N_G(D)]` with `e_{b'} = Br_D(e_B)`: base §6.2 states, over the residue field `k` of the system
+  and with no algebraic-closure hypothesis, that `Br_D(e_B)` is a block idempotent of `k[N_G(D)]`
+  with defect group `D` and that every such block arises from exactly one `B`, and base §7.1 gives
+  `b'^G = B`. Witness: `S₃`, `p = 2`, `D = ⟨t⟩` for a transposition `t`: `N_G(D) = C_G(D) = D`,
+  `Br_D(1 + r + r²) = 1`, the block idempotent of `k[D]`, so `b'` is the block of `D` for `B₀`,
+  while `Br_D(r + r²) = 0` for the block of defect zero.
+- **Valuations and heights.** `ν = padicValNat p` on natural numbers and `ν_p = padicValRat p` on
+  rationals; both send `0` to `0`. `|G|_p = p^a` with `a = ν(|G|)`; for a block with defect group
+  `D`, `|D| = p^d`. For `q ∈ ℚ ⊆ K`, `q ∈ O` exactly when `ν_p(q) ≥ 0`, and `q ∈ m` exactly when
+  `q = 0` or `ν_p(q) > 0`. Witness at `p = 2`: `0 ∈ m` although `ν_p(0) = 0`; `3/2 ∉ O`, with
+  `ν_p(3/2) = −1`; `2/3 ∈ m`, with `ν_p(2/3) = 1`.
+- **Central characters.** For `χ ∈ Irr(G)`, a class `𝒞` with class sum `𝒞⁺` and `x ∈ 𝒞`,
+  `ω_χ(𝒞⁺) = |𝒞| χ(x)/χ(1)`, an element of `F = ℚ(ζ_e) ⊆ ℂ`. Over `ℂ` it is the value at
+  `TauCeti.classSumCenter 𝒞` of the native central character
+  `TauCeti.Representation.centralCharacter` of a representation affording `χ`
+  (`TauCeti.Representation.centralCharacter_classSumCenter_mul_character_one`, with `χ(1) ≠ 0`).
+  The native map is defined over algebraically closed fields only, so over `K` the symbol
+  `ω_χ : Z(K[G]) → K` denotes the `K`-linear map with these values on the class sums, read through
+  the embedding `F → K` of base §1.1; §6.1 proves that it is an algebra homomorphism with values in
+  `O` on the class sums. `λ_B : Z(k[G]) → k` is the central character of a block (base §7.1).
+  `a_B(𝒞)` is the coefficient of `𝒞⁺` in `e_B ∈ Z(k[G])`. Witness: `S₃`, `p = 2`, `K = ℚ₂(ζ₃)`,
+  `k = 𝔽₄`, the class of the transpositions: `ω = 3, −3, 0` for the trivial, sign and
+  two-dimensional characters, with reductions `1, 1, 0`, and `λ_{B₀} = 1` there.
 
 ## Exact supplier contracts
 
@@ -195,8 +215,10 @@ every `m`, with `FixedPoints.mem_subgroup`), the instance `MulDistribMulAction (
 for normal `H` (`Mathlib/GroupTheory/GroupAction/OfQuotient.lean`), the conjugation action
 `MulDistribMulAction (normalizer H) H` and `Subgroup.normalizerMonoidHom`
 (`Mathlib/GroupTheory/Subgroup/Centralizer.lean`); `Subgroup.exists_right_complement'_of_coprime`
-(existence only: the file `Mathlib/GroupTheory/SchurZassenhaus.lean` proves no conjugacy of
-complements beyond the abelian case); `Sylow`, `IsPGroup`, `IsSolvable`, `IsCyclic`, `ConjClasses`,
+(for a normal subgroup `N` with `Nat.Coprime (Nat.card N) N.index`, a subgroup `H` with
+`Subgroup.IsComplement' N H` exists; existence only: the file
+`Mathlib/GroupTheory/SchurZassenhaus.lean` proves no conjugacy of complements beyond the abelian
+case), `Subgroup.IsComplement'`, `MulAction.stabilizer`; `Sylow`, `IsPGroup`, `IsSolvable`, `IsCyclic`, `ConjClasses`,
 `MulAut.conj`, `Subgroup.index`, `QuotientGroup`; `Representation`, `Representation.character`,
 `Representation.IsIrreducible`, `Representation.isIntegral_character`
 (`Mathlib/RepresentationTheory/Character.lean`: for a finite group and a finite-dimensional
@@ -217,7 +239,10 @@ The declarations listed under *Already in the libraries*, read at their files:
 `TauCeti.card_irreducibleCharacters`, the latter over an algebraically closed field in which
 `|G|` is invertible), `CharacterTable/Pairing.lean`, `CharacterTable/Degree.lean`
 (`TauCeti.Representation.finrank_dvd_card`, algebraically closed of characteristic zero),
-`CharacterTable/CentralCharacter.lean`, `CharacterTable/CentralIdempotent.lean`,
+`CharacterTable/CentralCharacter.lean` (`TauCeti.Representation.centralCharacter` with its
+class-sum identity and the integrality of its values on class sums, for an irreducible
+finite-dimensional representation over an algebraically closed field; used over `ℂ` and
+transported to `K` through `F = ℚ(ζ_e)` as in Conventions), `CharacterTable/CentralIdempotent.lean`,
 `CharacterTable/FieldOfValues.lean` (`FDRep.characterField`, the intermediate field generated by
 the values), `CharacterTable/Cyclotomic/Action.lean`
 (`IsPrimitiveRoot.cyclotomicIrreducibleCharacterAction`, with `K`, `L`, `G` in one universe and
@@ -231,8 +256,9 @@ a simple representation to `N` is a positive multiple of the sum of the distinct
 simple constituent; used over `ℂ` only),
 `Induction/Clifford/Classes.lean` (`FDRep.cliffordCorrespondence`, algebraically closed of
 characteristic zero, on classes of simple representations lying over a simple `V`),
-`Induction/Clifford/Dimension.lean` (`FDRep.clifford_restrict_dvd_finrank`: for simple `W`, a
-constituent `V` of `Res_N W` with `dim V ∣ dim W` and `[G : inertia V] ∣ dim W`),
+`Induction/Clifford/Dimension.lean` (`FDRep.clifford_restrict_dvd_finrank`: over an algebraically
+closed field, for simple `W`, a constituent `V` of `Res_N W` with `dim V ∣ dim W` and
+`[G : inertia V] ∣ dim W`; used over `ℂ` only),
 `Induction/Clifford/Obstruction.lean`, `Induction/Clifford/TensorFactorization.lean`
 (`tensorRepEquiv`: an irreducible representation of the inertia group lying over a simple `A`
 over an algebraically closed field is `A ⊗ Hom_N(A, W)`),
@@ -265,33 +291,44 @@ a projective multiplicity representation with factor set `β⁻¹`; this roadmap
   and its factorisation for `Q ≤ P`.
 - §6.2: `IsDefectGroup`, `isDefectGroup_conj`, `isDefectGroup_iff_sylow_of_augmentation_ne_zero`,
   the agreement with the minimality of `P` with `e ∈ Tr_P^G(k[G]^P)` and with defect classes
-  (the defect groups of `B` are the Sylow `p`-subgroups of `C_G(x)` for `x` in a defect class),
-  `O_p(G)` in every defect group, `⟨x⟩` in every defect group of every block of `C_G(x)` for a
-  `p`-element `x`, and the characterisation of defect zero (`Irr(B) = {χ}`, `IBr(B) = {χ⁰}`,
-  `|G|_p ∣ χ(1)`). With §3.1 and the block-diagonality of §4.2 this gives `Φ_{χ⁰} = χ`, so a
-  character of defect zero vanishes on `p`-singular elements.
+  (Martínez, Definition 3.2: a defect class of `B` is a class `𝒞` with `a_B(𝒞) λ_B(𝒞⁺) ≠ 0`, and
+  the defect groups of `B` are the Sylow `p`-subgroups of `C_G(x)` for `x` in a defect class); the
+  defect classes are the base's, and this roadmap does not redefine them. Also `O_p(G)` in every
+  defect group, `⟨x⟩` in every defect group of every block of `C_G(x)` for a `p`-element `x`, the
+  characterisation of defect zero (`Irr(B) = {χ}`, `IBr(B) = {χ⁰}`, `|G|_p ∣ χ(1)`), and the
+  first main theorem in its Brauer-projection form: for a block `B` with defect group `D`,
+  `Br_D(e_B)` is a block idempotent of `k[N_G(D)]` with defect group `D`, and every such block
+  arises from exactly one `B`. This last statement is made over the residue field `k` of the
+  system, without an algebraic-closure hypothesis, and defines the Brauer correspondent
+  (Conventions). With §3.1 and the block-diagonality of §4.2 the characterisation of defect zero
+  gives `Φ_{χ⁰} = χ`, so a character of defect zero vanishes on `p`-singular elements.
 - §6.3: Brauer pairs, the order relation, and the maximal `B`-Brauer pairs, whose first components
   are the defect groups.
 - §7.1: block induction `b^G`, defined when `C_G(D_b) ≤ H`, its transitivity, the central
-  character `λ_B`, `Br_P(e_B) = Σ_{b^G = B} e_b` for `P C_G(P) ≤ H ≤ N_G(P)`, and
-  `brauer_first_main`.
+  character `λ_B`, and `Br_P(e_B) = Σ_{b^G = B} e_b` for `P C_G(P) ≤ H ≤ N_G(P)`. The base's
+  product form of the first main theorem is stated over an algebraically closed field and is not
+  consumed: the Brauer correspondent over `k` comes from §6.2.
 - §7.2: the second main theorem: `d^u_{χφ} ≠ 0` for `φ ∈ IBr(b)` implies that `(⟨u⟩, b)` is a
   Brauer pair of the block of `χ`.
-- §8.1: a normal `p`-subgroup acts trivially on simple modules, and domination: every block of
-  `G/N` is dominated by exactly one block of `G`.
-- §8.2: normal `p'`-subgroups, and block covering (Martínez, Definition 7.3 and Theorem 7.7): for
-  `N ⊴ G`, `B` covers `b` exactly when some, equivalently every, `χ ∈ Irr(B)` has its
-  constituents on `N` in `G`-conjugates of `b`.
+- §8.1: for a normal `p`-subgroup `N`, `N` acts trivially on simple `k[G]`-modules, so the simple
+  modules and Brauer characters of `G/N` are those of `G` by inflation, and every block of `G/N`
+  lies in the image of exactly one block of `G`. Domination for an arbitrary normal subgroup is
+  §7.3 here.
+- §8.2: normal `p'`-subgroups; and block covering for an arbitrary normal subgroup `N ⊴ G`: the
+  sum of the block idempotents over the `G`-orbit of a block `b` of `k[N]` is the sum of the `e_B`
+  over the blocks `B` of `G` that cover `b` (Martínez, Definition 7.3), and `B` covers `b` exactly
+  when some `χ ∈ Irr(B) ∪ IBr(B)` has an irreducible constituent of `χ_N` in `b`, exactly when for
+  every `χ ∈ Irr(B) ∪ IBr(B)` every irreducible constituent of `χ_N` lies in a `G`-conjugate of
+  `b` (Martínez, Theorem 7.7). As `e_B` is `G`-invariant, `B` covers `b` exactly when
+  `e_B e_b ≠ 0`.
 
-### From TauCetiRoadmap.LocalFiniteGroupTheory
+### From TauCetiRoadmap.InverseGaloisAndArithmeticFundamentalGroups
 
-- L1: `exists_conj_eq_of_isComplement'`: for `N ⊴ G` with `gcd(|N|, |G : N|) = 1` and `N` or
-  `G/N` solvable, any two complements of `N` are conjugate.
-- L3: Glauberman's lemma: if a group `A` of order coprime to `|G|`, with `A` or `G` solvable, and
-  `G` act compatibly on a set `Ω` with `G` transitive, then `A` fixes a point of `Ω` and the
-  `A`-fixed points form one `C_G(A)`-orbit; and `exists_mem_fixedPoints_mul_of_forall_mem`. §1.2,
-  the only consumer, carries the same hypothesis, `S` or `Γ` solvable (a subgroup of `Γ` being
-  solvable when `Γ` is); its own consumers in Layers 3–4 have `S` cyclic or solvable.
+- IG.3.4, target *Conjugacy of coprime complements*: for a finite group `G` and a normal subgroup
+  `N` with `Nat.Coprime (Nat.card N) N.index` and `N` or `G/N` solvable, any two complements of
+  `N` are conjugate by an element of `N`. §1.2 uses it in `Γ ⋊ S` and in a point stabiliser there,
+  with `S` or `Γ` solvable: the normal subgroups are `inl(Γ)` and subgroups of it, solvable when
+  `Γ` is, and the quotients are isomorphic to `S`. §3.1 uses it in `Γ ⋊ A` with `A` cyclic.
 
 ### From TauCetiRoadmap.RepresentationTheory.CharacterTheory
 
@@ -381,12 +418,28 @@ in `Γ` are conjugate in `C`; an `S`-invariant conjugacy class of `Γ` meets `C`
 `S`-invariant and `s • (g H) = g H` for all `s`, the coset `g H` meets `C`. Hence `t ↦` (the
 `Γ`-class of `t`) is a bijection from the conjugacy classes of `C` to the `S`-invariant conjugacy
 classes of `Γ` (glauberman line 287, Lemma 3 (a)–(c), stated there for every relatively prime
-operator group; the solvability hypothesis here is the one under which LocalFiniteGroupTheory L3
-supplies Glauberman's lemma). Route: apply Glauberman's lemma to `Γ` acting by
-conjugation on a class (for the first two statements) and to `H` acting on `g H` by `x ↦ x h⁻¹`
-(for the third, `H` being solvable when `Γ` is); the actions are compatible with that of `S`.
-*Needs:* LocalFiniteGroupTheory L3 (Glauberman's lemma); Mathlib `ConjClasses`,
-`FixedPoints.subgroup`.
+operator group; the solvability hypothesis here is the one under which
+InverseGaloisAndArithmeticFundamentalGroups IG.3.4 supplies the conjugacy of coprime
+complements). Route, through Glauberman's lemma
+(isaacs, Chapter 13), proved from complements: let a finite group `X`, on which `S` acts by
+automorphisms with `|X|` coprime to `|S|` and `S` or `X` solvable, act transitively on a finite
+set `Ω` on which `S` also acts, compatibly: `s · (x · ω) = (s • x) · (s · ω)`. Then `X ⋊ S` acts
+on `Ω`, and the stabiliser `M` of a point `ω` satisfies `inl(X) M = X ⋊ S`, so `M ∩ inl(X)` is a
+normal subgroup of `M` of order dividing `|X|` and index `|S|`. A complement of `M ∩ inl(X)` in
+`M` (Mathlib `Subgroup.exists_right_complement'_of_coprime`) is a complement of `inl(X)` in
+`X ⋊ S`, hence `z inr(S) z⁻¹` for some `z ∈ inl(X)` (IG.3.4), and `S` fixes `z⁻¹ · ω`. If `S`
+fixes `ω` and `x · ω` with `x ∈ X`, then `inr(S)` and `x⁻¹ inr(S) x` are complements of
+`M ∩ inl(X)` in `M`, so `x⁻¹ inr(S) x = y inr(S) y⁻¹` for some `y ∈ M ∩ inl(X)` (IG.3.4 in `M`,
+where `M ∩ inl(X)` is solvable when `X` is and `M/(M ∩ inl(X)) ≅ S`); then `x y` normalises
+`inr(S)`, hence centralises it, because a commutator `[x y, s]` lies in `inl(X) ∩ inr(S) = 1`, so
+`x y ∈ C_X(S)` and `(x y) · ω = x · ω`: the `S`-fixed points of `Ω` form one `C_X(S)`-orbit.
+Apply this with `X = Γ` acting by conjugation on a class (the class of `t ∈ C` is `S`-invariant
+and its `S`-fixed points are its elements in `C`, which gives the first statement; the second is
+the existence of a fixed point) and with `X = H` acting on `g H` by `h · x = x h⁻¹` (the third,
+`H` being solvable when `Γ` is). *Needs:* InverseGaloisAndArithmeticFundamentalGroups IG.3.4,
+target *Conjugacy of coprime complements*; Mathlib
+`Subgroup.exists_right_complement'_of_coprime`, `Subgroup.IsComplement'`, `SemidirectProduct`,
+`MulAction.stabilizer`, `ConjClasses`, `FixedPoints.subgroup`.
 
 **Checks.**
 - `Q₈` with `C₃`: the invariant classes are `{1}` and `{−1}`, two, the number of classes of
@@ -400,8 +453,11 @@ conjugation on a class (for the first two statements) and to `H` acting on `g H`
   vectors; the classes of the abelian `Γ` are its elements, so the `S`-invariant classes are the
   `7` elements of `C`, and `C` has `7` classes. The `S`-invariant subgroup `H = {Σ_i v_i = 0}` has
   the `S`-invariant cosets `{Σ_i v_i = c}`, each containing the constant vector with entries
-  `3c = c/5`. A version requiring `S` solvable does not apply here. Over `𝔽₅⁵`, where `5 ∣ |A₅|`,
-  the invariant coset `{Σ_i v_i = 1}` contains no constant vector, since `5 c = 0`.
+  `3c = c/5`. A version requiring `S` solvable does not apply here; in the route, `X = H` is
+  abelian and acts on the coset by translations, freely, so `M ∩ inl(H) = 1`, `M ≅ A₅` is a
+  complement of `inl(H)` in `H ⋊ A₅`, and IG.3.4 applies through the solvability of `H`. Over
+  `𝔽₅⁵`, where `5 ∣ |A₅|`, the invariant coset `{Σ_i v_i = 1}` contains no constant vector, since
+  `5 c = 0`.
 
 ### 1.3 Brauer's permutation lemma for automorphisms
 
@@ -419,8 +475,9 @@ orthogonality, so `tr P = tr Q`; Burnside's lemma gives the orbit count. *Needs:
   two and two; an inner automorphism of `S₃`: three and three.
 - For a noncyclic group the fixed-point counts of the whole group can differ:
   `A = ⟨a, b⟩ ≅ C₂ × C₂` acting on `𝔽₂³` by `a = 1 + E₁₂`, `b = 1 + E₁₃` fixes the two vectors of
-  `𝔽₂ e₁` but the four characters `v ↦ (−1)^{w·v}` with `w₁ = 0`; each single element fixes four
-  of each, as the lemma requires.
+  `𝔽₂ e₁` but the four characters `v ↦ (−1)^{w·v}` with `w₁ = 0`; each nonidentity element fixes
+  four vectors and four characters and the identity fixes eight of each, as the lemma requires, and
+  both orbit counts are `(8 + 4 + 4 + 4)/4 = 5`.
 - `Γ = 1`: one character, one class.
 
 ### Examples
@@ -431,8 +488,9 @@ orthogonality, so `tr P = tr Q`; Burnside's lemma gives the orbit count. *Needs:
 ### Dependencies
 
 Mathlib actions, fixed points and semidirect products; Tau Ceti characters, conjugation, inertia
-and the character table; LocalFiniteGroupTheory L3; CharacterTheory §3.5; InductionRestriction
-Layer 1.
+and the character table; Mathlib `Subgroup.exists_right_complement'_of_coprime` and
+`MulAction.stabilizer`; InverseGaloisAndArithmeticFundamentalGroups IG.3.4; CharacterTheory §3.5;
+InductionRestriction Layer 1.
 
 ## Layer 2: the canonical extension and Gallagher's correspondence
 
@@ -561,12 +619,14 @@ conjugate to some `inr a · inl t` with `t ∈ C`; for `t₁, t₂ ∈ C`, `inr 
 centraliser of `inr a · inl t` is `inr(A) · inl(C_C(t))` (glauberman line 266, Lemma 2). Route:
 for `π` the set of primes dividing `|A|`, the `π`-part of `a g` (the power of `a g` whose order is
 the largest divisor of the order of `a g` built from primes in `π`) has order `|A|`, because
-`(a g)^{|A|}` lies in `Γ` and so has order prime to `|A|`; it generates a complement of `Γ`,
-conjugate to `inr(A)` by the conjugacy half of Schur–Zassenhaus (the quotient `A` is cyclic,
-hence solvable); the conjugacy and centraliser
+`(a g)^{|A|}` lies in `Γ` and so has order prime to `|A|`; it generates a complement of `inl(Γ)`
+in `Γ ⋊ A`, conjugate to `inr(A)` by an element of `inl(Γ)` by
+InverseGaloisAndArithmeticFundamentalGroups IG.3.4, target *Conjugacy of coprime complements*,
+since `inl(Γ)` is a normal subgroup of order coprime to its index and the quotient `A` is cyclic,
+hence solvable; the conjugacy and centraliser
 statements use `k |Γ| ≡ 1 (mod |A|)` to recover `a` as a power of `a t`. *Needs:*
-LocalFiniteGroupTheory L1 (`exists_conj_eq_of_isComplement'`); Mathlib `SemidirectProduct`,
-`IsCyclic`.
+InverseGaloisAndArithmeticFundamentalGroups IG.3.4 (*Conjugacy of coprime complements*); Mathlib
+`SemidirectProduct`, `IsCyclic`.
 
 **Checks.**
 - `S₃ = C₃ ⋊ C₂`: the coset of `a` consists of the three transpositions, all conjugate to `a`;
@@ -574,7 +634,8 @@ LocalFiniteGroupTheory L1 (`exists_conj_eq_of_isComplement'`); Mathlib `Semidire
 - `SL(2,3)`: the coset `a Q₈` splits into the classes of `a` and of `a · (−1)`, of sizes
   `24/6 = 4` each, matching the two classes of `C = {±1}`. Here `π = {3}`: `a · (−1)` has order
   `6` and `3`-part `(a · (−1))⁴ = a`, of order `|A| = 3`; its `2`-part `(a · (−1))³ = −1` lies in
-  `Q₈` and generates no complement.
+  `Q₈` and generates no complement. The complements of `Q₈` are the four subgroups of order `3`,
+  one orbit under conjugation by `Q₈`, as IG.3.4 requires with the cyclic quotient `C₃`.
 - Coprimality is needed: in `D₈ = C₄ ⋊ C₂` the reflection `a x` is not conjugate to `a` or to
   `a x²`, the only elements `a t` with `t ∈ C = {1, x²}`.
 
@@ -646,7 +707,7 @@ character for a suitable sign `ε'`; for `SL(2,3)` it is `3 sgn`.
 
 ### Dependencies
 
-Layers 1–2; LocalFiniteGroupTheory L1; CharacterTheory §§3.6, 4.4.
+Layers 1–2; InverseGaloisAndArithmeticFundamentalGroups IG.3.4; CharacterTheory §§3.6, 4.4.
 
 ## Layer 4: the solvable case
 
@@ -672,10 +733,15 @@ the cyclic correspondence for `S_{i−1}/S_i` acting on `C_Γ(S_i)`, and `Λ_C(�
 
 **Checks.**
 - `S = C₃` on `Q₈`: the series `C₃ ⊵ 1` gives `Λ_C(sgn) = χ₂` and `Λ_C(1) = 1`.
-- `S = C₆ = C₂ × C₃` acting on `Q₈ × C₅`, the `C₃` factor as in `SL(2,3)` and the `C₂` factor
-  inverting `C₅`: `C = {±1} × 1`; along `C₆ ⊵ C₃ ⊵ 1` the first step sends `sgn` to `sgn × 1` on
-  `C_Γ(C₃) = {±1} × C₅` and the second to `χ₂ × 1`; along `C₆ ⊵ C₂ ⊵ 1` the first step sends `sgn`
-  to `χ₂` on `C_Γ(C₂) = Q₈` and the second to `χ₂ × 1`.
+- `S = C₁₅ = C₃ × C₅` acting on `Γ = Q₈ × C₁₁` (`gcd(15, 88) = 1`), the `C₃` factor on `Q₈` as in
+  `SL(2,3)` and a generator of the `C₅` factor sending `r` to `r³` in `C₁₁` (the powers of `3`
+  modulo `11` are `3, 9, 5, 4, 1`, so this action has order `5` and fixes only `1`):
+  `C = {±1} × 1`. Along `C₁₅ ⊵ C₃ ⊵ 1` the first step, for `C₅` on `C_Γ(C₃) = {±1} × C₁₁`, sends
+  `sgn` to `sgn × 1`, and the second, for `C₃` on `Γ`, sends it to `χ₂ × 1`; along
+  `C₁₅ ⊵ C₅ ⊵ 1` the first step, for `C₃` on `C_Γ(C₅) = Q₈ × 1`, sends `sgn` to `χ₂`, and the
+  second, for `C₅` on `Γ`, sends it to `χ₂ × 1`. Every factor acts coprimely, whereas an acting
+  group of even order on a group containing `Q₈`, such as `C₆` on `Q₈ × C₅` with
+  `gcd(6, 40) = 2`, is outside the construction.
 - `S = 1`: the empty series and `Λ_C = id`.
 
 ### 4.2 The `p`-group case
@@ -708,7 +774,7 @@ series with different first terms the quotient by their intersection. *Needs:* �
 4.2.
 
 **Checks.**
-- The two series of `C₆` in §4.1 give the same `Λ(sgn) = χ₂ × 1`.
+- The two series of `C₁₅` acting on `Q₈ × C₁₁` in §4.1 give the same `Λ(sgn) = χ₂ × 1`.
 - `S = C₉` acting on `Γ = C₁₉` through `C₉ ≤ Aut(C₁₉) ≅ C₁₈`: `C = 1`, `Irr_S(Γ) = {1}`, and the
   unique series agrees with §3.2.
 - `S` acting trivially: every series gives the identity of `Irr(Γ)`.
@@ -844,21 +910,32 @@ Layers 3–4; Tau Ceti central characters; CharacterTheory §4.3.
 
 Let `(K, O, k)` be a splitting `p`-modular system for `G` and `B` a block. Prove:
 
-- for `χ ∈ Irr(B)` and every class `𝒞`, `ω_χ(𝒞⁺) ∈ O` and `λ_B(𝒞⁺) = ω_χ(𝒞⁺) mod m`, `λ_B` being the
-  unique `k`-algebra homomorphism `Z(k[G]) → k` with `λ_B(e_B) = 1` (martinez line 351 and
-  line 373; sambale Chapter 1);
+- for `χ ∈ Irr(B)`, the `K`-linear map `ω_χ : Z(K[G]) → K` of Conventions is a `K`-algebra
+  homomorphism, and for every class `𝒞`, `ω_χ(𝒞⁺) ∈ O` and `λ_B(𝒞⁺) = ω_χ(𝒞⁺) mod m`, `λ_B` being
+  the unique `k`-algebra homomorphism `Z(k[G]) → k` with `λ_B(e_B) = 1` (martinez line 351 and
+  line 373; sambale Chapter 1). Route for the comparison with the native central character: the
+  class sums form an `F`-basis of `Z(F[G])` with structure constants in `ℤ`, `F = ℚ(ζ_e)`; the
+  native `TauCeti.Representation.centralCharacter` over `ℂ` of a representation affording `χ`
+  takes the values `|𝒞| χ(x)/χ(1) ∈ F` on them, so it restricts to an `F`-algebra homomorphism
+  `Z(F[G]) → F`, whose `K`-linear extension along `F → K` (base §1.1) is `ω_χ`; these values are
+  algebraic integers (`TauCeti.Representation.isIntegral_centralCharacter_classSumCenter`), so
+  their images lie in `O`, which is integrally closed;
 - Osima's formula: for a union `A` of connected components of the Brauer graph (`χ` linked to
   `ψ` when `d_{χφ} ≠ 0 ≠ d_{ψφ}` for some `φ`), `g` `p`-regular and `x ∈ G`,
   `Σ_{χ ∈ A} χ(g) χ(x) = Σ_{φ ∈ IBr(A)} φ(g) Φ_φ(x)` (martinez line 414, Proposition 2.3);
   hence the coefficients `|G|⁻¹ Σ_{χ ∈ A} χ(1) χ(x⁻¹)` of `f_A = Σ_{χ ∈ A} e_χ` lie in `O` and
   vanish for `p`-singular `x` (martinez line 512, Proposition 2.5), and `Irr(B)` is a single
   connected component (martinez line 566, Corollary 2.7);
-- a **defect class** of `B` is a class `𝒞` with `a_B(𝒞) λ_B(𝒞⁺) ≠ 0`; a defect class exists, since
-  `λ_B(e_B) = 1`, and its elements are `p`-regular (martinez line 699 and line 760).
+- the defect classes of `B` (base §6.2: the classes `𝒞` with `a_B(𝒞) λ_B(𝒞⁺) ≠ 0`) exist, since
+  `e_B = Σ_𝒞 a_B(𝒞) 𝒞⁺` and `λ_B(e_B) = 1`, and consist of `p`-regular elements, since `a_B(𝒞)` is
+  the reduction of the coefficient of `f_{Irr(B)}`, which vanishes on the `p`-singular classes by
+  the preceding statement (martinez line 696 and line 760).
 
 The base §6.2 identifies the defect groups of `B` with the Sylow `p`-subgroups of `C_G(x)`, `x` in
 a defect class. *Needs:* base §§1.1, 1.3, 2.3, 2.4, 3.1, 4.1, 4.2, 6.2, 7.1; CharacterTheory §4.3;
-Tau Ceti `TauCeti.Representation.isIntegral_centralCharacter_classSumCenter`.
+Tau Ceti `TauCeti.Representation.centralCharacter`,
+`TauCeti.Representation.centralCharacter_classSumCenter_mul_character_one`,
+`TauCeti.Representation.isIntegral_centralCharacter_classSumCenter`, `TauCeti.classSumCenter`.
 
 **Checks.**
 - `S₃`, `p = 2`, `B₀` with `e_{B₀} = 1 + r + r²`: the coefficient of `{1}` is
@@ -871,6 +948,10 @@ Tau Ceti `TauCeti.Representation.isIntegral_centralCharacter_classSumCenter`.
 - Osima at `x = r` for `B₀`: `IBr(B₀) = {1}`, `Φ₁ = 1 + sgn`, and `2/6 · 1 = 1/3` agrees with the
   coefficient. The set `{1}` is not a union of components (`1` and `sgn` share the Brauer
   character `1`), and `f_{{1}} = (1/6) Σ_g g` has the coefficient `1/6 ∉ ℤ₂`.
+- The values of `ω_χ` lie in `F`, not in `ℚ_p`: `C₃`, `p = 2`, `K = ℚ₂(ζ₃)`, `k = 𝔽₄`, `χ(r) = ζ₃`.
+  Then `ω_χ({r}⁺) = ζ₃`, a unit of `O = ℤ₂[ζ₃]` reducing to a root of `X² + X + 1` in `𝔽₄`, so the
+  central character of the defect-zero block `{χ}` takes a value outside `𝔽₂`; and
+  `ω_χ({r}⁺ {r²}⁺) = ω_χ({1}⁺) = 1 = ζ₃ · ζ₃²`, as an algebra homomorphism requires.
 
 ### 6.2 Brauer's theorem on heights
 
@@ -920,7 +1001,7 @@ since its defect groups are the Sylow `p`-subgroups (base
 `isDefectGroup_iff_sylow_of_augmentation_ne_zero`); a block of defect zero has
 `Irr(B) = {χ} = Irr₀(B)` with `χ(1)_p = |G|_p`, and a block containing a character `χ` with
 `χ(1)_p = |G|_p` has defect zero (base §6.2); for the Brauer correspondent `b'` of `B` in
-`N_G(D)` (base `brauer_first_main`), `D` is a defect group of `b'` and
+`N_G(D)` (Conventions: `e_{b'} = Br_D(e_B)`, base §6.2), `D` is a defect group of `b'` and
 `Irr₀(b') = {ψ ∈ Irr(b') : ψ(1)_p = |N_G(D) : D|_p}` (martinez line 718, §3.2; martinez line 583,
 Theorem 2.8, for defect zero). *Needs:* §6.3; base §§4.3, 6.2, 7.1.
 
@@ -931,6 +1012,9 @@ Theorem 2.8, for defect zero). *Needs:* §6.3; base §§4.3, 6.2, 7.1.
   height zero.
 - `SL(2,3)`, `p = 3`: the non-principal block of defect `1` has Brauer correspondent a block of
   `N_G(C₃) = C₆` with three height zero characters.
+- `S₃`, `p = 2`, over the splitting residue field `k = 𝔽₄` of base §1.1, which is not
+  algebraically closed: `Br_{⟨t⟩}(1 + r + r²) = 1`, so the Brauer correspondent of `B₀` is the
+  block of `N_G(⟨t⟩) = C₂`, and `|Irr₀(B₀)| = 2 = |Irr₀(b')|`; no algebraic closure enters.
 
 ### Examples
 
@@ -1019,21 +1103,49 @@ Mathlib `Rep.indResAdjunction`.
   `A₄` and `S₄`, while a supplier assuming `|G|` invertible in `k` (`24 = 0` in `k`) does not
   apply.
 
-### 7.3 Defect groups under domination
+### 7.3 Domination modulo a normal subgroup
 
-For `N ⊴ G`, a block `B̄` of `G/N` dominated by a block `B` of `G` (base §8.1), and a defect group
-`D` of `B`, prove that some defect group of `B̄` is contained in `D N/N` (martinez line 1928,
-Theorem 8.5 (i)). Route: `e_B ∈ Tr_D^G(k[G]^D)` (base §6.2), and the quotient map sends
-`Tr_D^G(a)` to `|N : N ∩ D| · Tr_{DN/N}^{G/N}(ā)`, `ā` being `DN/N`-invariant; the image of `e_B`
-contains `e_{B̄}` (base §8.1), so it is nonzero, the factor `|N : N ∩ D|` is a unit, and
-`e_{B̄} = e_{B̄} · ē_B` lies in the ideal `Tr_{DN/N}^{G/N}(k[G/N]^{DN/N})`; the minimality
-characterisation of base §6.2 in `G/N` applies. *Needs:* base §§6.1, 6.2, 8.1.
+Let `N ⊴ G` be any normal subgroup and `π : k[G] → k[G/N]` the algebra map induced by the quotient
+map. Say that a block `B` of `G` **dominates** a block `B̄` of `G/N` when `e_{B̄} π(e_B) = e_{B̄}`
+(martinez line 1897, Definition 8.3, through `Irr(B̄) ⊆ Irr(B)`, the two forms agreeing by
+martinez line 1907, Proposition 8.4). Prove: every block of `G/N` is dominated by exactly one
+block of `G`; `π(e_B)` is the sum of the `e_{B̄}` over the blocks `B̄` that `B` dominates, and is
+`0` when there are none; and when `B` dominates `B̄`, inflation along `G → G/N` carries `Irr(B̄)`
+into `Irr(B)` and `IBr(B̄)` into `IBr(B)` (martinez line 1895, Corollary 8.2, and line 1907,
+Proposition 8.4). For a block `B̄` dominated by `B` and a defect group `D` of `B`, prove that some
+defect group of `B̄` is contained in `D N/N` (martinez line 1928, Theorem 8.5 (i)). The base §8.1
+is the case of a normal `p`-subgroup `N`, where every block of `G` dominates at least one block of
+`G/N` (martinez line 1931, Theorem 8.5 (ii)); in general a block may dominate none. Route: `π` is
+surjective, so it maps `Z(k[G])` into `Z(k[G/N])`, and the `π(e_B)` are orthogonal central idempotents with sum `1`; for a block `B̄`,
+`e_{B̄} = Σ_B e_{B̄} π(e_B)` with each term a central idempotent below the primitive central
+idempotent `e_{B̄}`, so exactly one term is `e_{B̄}` and the others vanish. For the characters, the
+map `O[G] → O[G/N]` sends the lift `e_B ∈ Z(O[G])` to the central idempotent lifting `π(e_B)`,
+which is the sum of the lifts of the `e_{B̄}` that `B` dominates (uniqueness of central lifts,
+base §1.3), and `K[G] → K[G/N]` sends `e_χ` to `e_χ̄` when `N ≤ ker χ` and to `0` otherwise
+(martinez line 1909); a simple `k[G/N]`-module in `B̄`, inflated to `G`, is acted on by `e_B` as by
+`π(e_B) e_{B̄} = e_{B̄}`, the identity. For the defect groups: `e_B ∈ Tr_D^G(k[G]^D)` (base §6.2),
+and `π` sends `Tr_D^G(a)` to `|N : N ∩ D| · Tr_{DN/N}^{G/N}(ā)`, `ā` being `DN/N`-invariant;
+`π(e_B) ≠ 0` because it contains `e_{B̄}`, so the factor `|N : N ∩ D|` is a unit, and
+`e_{B̄} = e_{B̄} π(e_B)` lies in the ideal `Tr_{DN/N}^{G/N}(k[G/N]^{DN/N})`; the minimality
+characterisation of base §6.2 in `G/N` applies. *Needs:* base §§0.2, 1.3, 4.1, 4.2, 6.1, 6.2.
+
+- `B` dominates `B̄` exactly when `λ_{B̄}(π(e_B)) = 1`, and then `λ_{B̄} ∘ π = λ_B` on `Z(k[G])`
+  (martinez line 1924).
+- For `N = 1`, domination is equality of blocks.
 
 **Checks.**
-- `S₃`, `N = C₃`, `p = 2`: `B₀` dominates the block of `C₂`, with `D N/N = C₂`.
-- `S₃`, `N = C₃`, `p = 3`: the block with `D = C₃` dominates both blocks of `C₂`, of defect zero,
-  inside `C₃ N/N = 1`.
-- `N = 1`: `B̄ = B`.
+- `S₃`, `N = C₃`, `p = 2` (`N` a `p'`-group): `π(1 + r + r²) = 3 = 1` and `π(r + r²) = 2 = 0` in
+  `k[C₂]`, so `B₀` dominates the single block of `C₂` and the defect-zero block dominates none;
+  `D N/N = C₂`, the defect group of the block of `C₂`.
+- `S₃`, `N = C₃`, `p = 3`: the single block maps to `1 = e₊ + e₋` in `k[C₂]`, so it dominates both
+  blocks of `C₂`, of defect zero, inside `C₃ N/N = 1`; `π(e_B)` is not a single block idempotent,
+  and domination is not a bijection.
+- `N` neither a `p`- nor a `p'`-group: `G = S₃ × C₂`, `N = S₃ × 1`, `p = 2`, `|N| = 6`. The
+  blocks of `G` have idempotents `1 + r + r²` (principal, defect group `D = ⟨t⟩ × C₂`) and
+  `r + r²` (defect group `1 × C₂`), with images `1` and `0` in `k[C₂]`; the single block of
+  `G/N ≅ C₂` is dominated by the principal block only, and its defect group `C₂` equals `D N/N`.
+- `N = G`: `π` is the augmentation, so the block of the trivial group is dominated by the
+  principal block `B₀(G)` alone (base §4.3); `N = 1`: `B̄ = B`.
 
 ### 7.4 The Fong–Reynolds correspondence
 
@@ -1113,7 +1225,7 @@ correspondence is the identity on `B₀`.
 
 ### Dependencies
 
-Layer 6; base §§0.2, 1.2, 2.1, 2.4, 3.1, 4.2, 6.1–6.2, 7.1, 8.1–8.2; InductionRestriction
+Layer 6; base §§0.2, 1.2, 1.3, 2.1, 2.4, 3.1, 4.1, 4.2, 6.1–6.2, 7.1, 8.2; InductionRestriction
 Layers 2 and 5; Tau Ceti Clifford theory; Mathlib `Rep.indResAdjunction`.
 
 ## Layer 8: blocks with a normal defect group
@@ -1245,7 +1357,8 @@ Alperin–McKay property `|Irr₀(B)| = |Irr₀(b')|`, and the Alperin–McKay p
 validity for every block of every finite group (ruhstorfer line 16; martinez line 2360,
 Conjecture 9.9). Prove its instances: blocks of defect zero and blocks with a normal defect
 group, where `N_G(D) = G` and `b' = B`. Cited and not planned: the property at `p = 2`
-(ruhstorfer line 20, Theorem A). *Needs:* §§6.3, 6.4; base `brauer_first_main`.
+(ruhstorfer line 20, Theorem A). *Needs:* §§6.3, 6.4; base §§6.2, 7.1 (the Brauer correspondent,
+Conventions).
 
 **Checks.**
 - `S₃`, `p = 2`, `B₀`: `N_G(C₂) = C₂`, and `|Irr₀(B₀)| = 2 = |Irr₀(b')|`.
@@ -1260,15 +1373,15 @@ the height zero property.
 
 ### Dependencies
 
-Layers 6 and 8; base §7.1.
+Layers 6 and 8; base §§6.2, 7.1.
 
 ## Downstream consumers
 
 The intended consumers are roadmaps on the local–global conjectures for finite groups
 (the McKay and Alperin–McKay conjectures and their inductive conditions, Dade's conjectures, the
 Isaacs–Navarro refinements), stated in the vocabulary of Layers 6 and 9 and using Layer 4 as a
-tool; a roadmap on blocks with cyclic defect groups; the character-theoretic local theory that
-LocalFiniteGroupTheory names as motivation for a future roadmap; and a further part on the Isaacs
+tool; a roadmap on blocks with cyclic defect groups; character-theoretic local analysis of finite
+groups; and a further part on the Isaacs
 correspondence for groups of odd order and Turull's theory above the Glauberman correspondence.
 GlaubermanZStar consumes the base only.
 
