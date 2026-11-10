@@ -73,6 +73,11 @@
        "name": "ideal_gas",
        "kind": "computation",
        "statement": "P = e^sρ² at (1,0): ∂_ρP = 2, ∂_sP = 1, c = √2"
+      },
+      {
+       "name": "isothermal_abs",
+       "kind": "computation",
+       "statement": "p = a²ρ with a ≠ 0 has c = |a|: a = −1 gives p = ρ, p′ = 1, c = 1 (not −1); a = 0 gives p′ = 0 and is excluded"
       }
      ]
     },
@@ -301,7 +306,7 @@
       {
        "name": "exists_dominatingConeMap",
        "role": "structure",
-       "statement": "there is a continuous κ : G → (0,∞) × E with κ(U) dominating at U, e.g. (1 + λ(U), 0) with λ(U) the largest root of det(Σωᵢ Aⁱ(U) − λA⁰(U)) over unit ω"
+       "statement": "there is a continuous κ : G → (0,∞) × E with κ(U) dominating at U: for N > 0, (1 + λ(U), 0) with λ(U) ≥ 0 the largest (real) root of det(Σωᵢ Aⁱ(U) − λA⁰(U)) over unit ω, since σ(U;ζ) ≥ (ζ₀ − λ(U)|ζ′|)A⁰(U); for N = 0 every cone dominates and κ = (1, 0)"
       },
       {
        "name": "ofSymmetriser",
@@ -318,7 +323,7 @@
       {
        "name": "wave_system",
        "kind": "computation",
-       "statement": "first-order wave system: symbol eigenvalues ζ₀ ± |ζ′|, ζ₀; (1,0) dominates, (1/2,0) does not (eigenvalue −1/2 at ζ = (1/2, e₁))"
+       "statement": "first-order wave system: symbol eigenvalues ζ₀ ± |ζ′| and, for n ≥ 2, ζ₀ with multiplicity n − 1; at n = 1, ζ = (0,1) the symbol [[0,−1],[−1,0]] has characteristic polynomial λ² − 1, eigenvalues −1, 1 (no 0); (1,0) dominates, (1/2,0) does not (eigenvalue −1/2 at ζ = (1/2, e₁))"
       },
       {
        "name": "cauchy_riemann",
@@ -329,6 +334,11 @@
        "name": "indefinite_A0",
        "kind": "non-example",
        "statement": "A⁰ = diag(1,−1) is rejected"
+      },
+      {
+       "name": "size_zero",
+       "kind": "degenerate",
+       "statement": "N = 0: the empty symbol is positive semidefinite for every ζ and det(Σωᵢ Aⁱ − λA⁰) = 1 has no root, so κ = (1,0) replaces the largest-root recipe"
       }
      ]
     },
@@ -524,12 +534,12 @@
       {
        "name": "causal_iff",
        "role": "characterisation",
-       "statement": "g(X,X) ≤ 0 iff |ξ − τv| ≤ c|τ|; nonzero causal vectors have τ ≠ 0; future (τ > 0) iff g(B,X) < 0; g(B,B) = −c²"
+       "statement": "g(X,X) ≤ 0 iff |ξ − τv| ≤ c|τ| (the zero vector included); nonzero causal vectors have τ ≠ 0; future (τ > 0) iff g(B,X) < 0; g(B,B) = −c²"
       },
       {
        "name": "covector_classification",
        "role": "characterisation",
-       "statement": "ζ future causal iff ζ₀ + v·ζ′ ≥ c|ζ′|; ker ζ spacelike/null/timelike iff |ζ₀ + v·ζ′| >, =, < c|ζ′|"
+       "statement": "ζ future causal iff ζ₀ + v·ζ′ ≥ c|ζ′|; for ζ′ ≠ 0, ker ζ is spacelike (g positive definite), null (g degenerate) or timelike (g nondegenerate with exactly one negative square: indefinite for n ≥ 2, negative definite for n = 1) iff |ζ₀ + v·ζ′| >, =, < c|ζ′|"
       },
       {
        "name": "galilean",
@@ -557,6 +567,11 @@
        "name": "boost",
        "kind": "compatibility",
        "statement": "boost by w = v sends (1,3,0) to (1,2,0), null for g_{2,0}"
+      },
+      {
+       "name": "timelike_line_n1",
+       "kind": "degenerate",
+       "statement": "n = 1, c = 1, v = 0, ζ = dx: 0 < 1, ker dx is the time axis with g((τ,0),(τ,0)) = −τ² (−1, −4 at τ = 1, 2): timelike and negative definite, not indefinite"
       }
      ]
     },
@@ -714,7 +729,7 @@
      ],
      "locator": {
       "source": "Minguzzi2019",
-      "where": "lines 3576–3582, Definition 3.1, Remark 3.2; MinguzziCone2019 lines 1737–1740; Chrusciel2011 lines 1169, 1843; BarGinouxPfaffle2007 line 1006; HawkingEllis1973 §6.5"
+      "where": "lines 3576–3582, Definition 3.1, Remark 3.2 (causal curves); MinguzziCone2019 lines 1737–1740, Definition 2.17; Chrusciel2011 line 1169 (§2.5, inextendible paths) and lines 1843–1848, §2.9 (the timelike variant D⁺_I; line 1859 names the causal variant D⁺_J); BarGinouxPfaffle2007 line 1006; HawkingEllis1973 §6.5"
      },
      "prerequisites": [
       "target:3.2",
@@ -729,7 +744,7 @@
       {
        "name": "exists_inextendible",
        "role": "constructor",
-       "statement": "every past causal curve in D ending at p has a past-inextendible extension"
+       "statement": "every past causal curve in D ending at p has a past-inextendible extension (zorn_le_nonempty₀ from the given curve; nonempty chains glue)"
       },
       {
        "name": "pastClosed_restrict",
@@ -859,7 +874,7 @@
       {
        "name": "eq_wkp",
        "role": "comparison",
-       "statement": "for Λ = 0 coordinates are values of TauCeti.Wkp volume ⊤ 2 k with equivalent norms, equal exactly for k ≤ 1 (the Wkp norm uses operator norms on TauCeti.IteratedGradient above order 1); equivalently MemSobolev k 2"
+       "statement": "for Λ = 0 coordinates are values of TauCeti.Wkp volume ⊤ 2 k with equivalent norms; the norms are equal in particular for k ≤ 1, and at every order for n = 1 (scalar derivative fields), and differ for n ≥ 2, k = 2 (Wkp uses the operator norm on TauCeti.IteratedGradient above order 1); equivalently MemSobolev k 2"
       },
       {
        "name": "localise",
@@ -891,12 +906,17 @@
       {
        "name": "wkp_norm_k2",
        "kind": "non-example",
-       "statement": "n = 2, k = 2, u = e^{−|x|²}: Hessian −2I at 0, operator norm 2 versus multi-index ℓ² norm 2√2; H²_Λ and Wkp norms of u differ, equivalent; equal for k = 1"
+       "statement": "n = 2, k = 2, u = e^{−|x|²}: H²_Λ norm² = π/2 + π + 7π/2 = 5π, Wkp norm² = π/2 + π + (2 + 8e^{−2})π = (7/2 + 8e^{−2})π ≈ 4.58π (Hessian operator norm max(2, |4|x|² − 2|)u); different, equivalent; equal for k = 1"
       },
       {
        "name": "circle_comparison",
        "kind": "compatibility",
        "statement": "n = 1, Λ = 2πℤ, k = 1: cos x has TauCeti.CircleSobolev 1 ℂ norm² 2 and H¹_Λ norm² 2π; the constant 1 has 1 and 2π; ratios π and 2π differ, so equivalent but not proportional"
+      },
+      {
+       "name": "wkp_norm_n1",
+       "kind": "computation",
+       "statement": "n = 1, k = 2, u = e^{−x²}: both squared norms are √(π/2) + √(π/2) + 3√(π/2) = 5√(π/2); equality holds at every order in dimension one"
       }
      ]
     },
@@ -904,10 +924,10 @@
      "id": "4.2",
      "kind": "theorem",
      "name": "PeriodicSobolev.embedding",
-     "statement": "If 2k > n + 2j, every u ∈ Hᵏ_Λ has a Cʲ representative with sup_{|α|≤j}‖∂^αu‖_∞ ≤ C‖u‖_{Hᵏ_Λ}, derivatives tending to 0 orthogonally to span Λ; ‖u‖_{Hʲ_Λ} ≤ C‖u‖^{1−j/k}_{L²_Λ}‖u‖^{j/k}_{Hᵏ_Λ}; if u_m → u in L²_Λ with ‖u_m‖_{Hᵏ_Λ} ≤ M then u ∈ Hᵏ_Λ with norm ≤ M.",
+     "statement": "If 2k > n + 2j, every u ∈ Hᵏ_Λ has a Cʲ representative with sup_{|α|≤j}‖∂^αu‖_∞ ≤ C‖u‖_{Hᵏ_Λ}, derivatives tending to 0 orthogonally to span Λ; for k ≥ 1 and 0 ≤ j ≤ k, ‖u‖_{Hʲ_Λ} ≤ C‖u‖^{1−j/k}_{L²_Λ}‖u‖^{j/k}_{Hᵏ_Λ} (k = 0 is the identity on L²_Λ); if u_m → u in L²_Λ with ‖u_m‖_{Hᵏ_Λ} ≤ M then u ∈ Hᵏ_Λ with norm ≤ M.",
      "hypotheses": [
       "2k > n + 2j for the embedding",
-      "0 ≤ j ≤ k for interpolation"
+      "k ≥ 1 and 0 ≤ j ≤ k for interpolation (k = 0: identity)"
      ],
      "locator": {
       "source": "LukNotes",
@@ -941,10 +961,11 @@
      "id": "4.3",
      "kind": "theorem",
      "name": "PeriodicSobolev.gagliardoNirenberg",
-     "statement": "For u ∈ L^∞ ∩ Hᵏ_Λ and 0 ≤ i ≤ k: ‖Dⁱu‖_{L^{2k/i}_Λ} ≤ C‖u‖_∞^{1−i/k}‖u‖_{Hᵏ_Λ}^{i/k} (homogeneous form with ‖Dᵏu‖ for Λ = 0).",
+     "statement": "For u ∈ L^∞ ∩ Hᵏ_Λ, k ≥ 1 and 1 ≤ i ≤ k: ‖Dⁱu‖_{L^{2k/i}_Λ} ≤ C‖u‖_∞^{1−i/k}‖u‖_{Hᵏ_Λ}^{i/k} (homogeneous form with ‖Dᵏu‖ for Λ = 0); i = 0 is the L^∞ norm itself and k = 0 has no positive order.",
      "hypotheses": [
       "u ∈ L^∞ ∩ Hᵏ_Λ",
-      "0 ≤ i ≤ k"
+      "k ≥ 1",
+      "1 ≤ i ≤ k"
      ],
      "locator": {
       "source": "Nirenberg1959",
@@ -962,6 +983,11 @@
        "name": "scaling",
        "kind": "characterisation",
        "statement": "both sides scale as λ^{i − ni/(2k)} under u(λx); L^{k/i} does not"
+      },
+      {
+       "name": "order_zero_exponents",
+       "kind": "degenerate",
+       "statement": "k = i = 0: the exponents 2k/i and i/k are 0/0, so the statement starts at k ≥ 1, i ≥ 1; at k = i = 1 it reads ‖Du‖ ≤ C‖u‖_{H¹_Λ}, true with C = 1"
       }
      ]
     },
@@ -974,8 +1000,8 @@
       "f, g ∈ L^∞ ∩ Hᵏ_Λ"
      ],
      "locator": {
-      "source": "LukNotes",
-      "where": "line 1616, Lemma 6.9; Majda1984 Ch. 2, §2.1"
+      "source": "Majda1984",
+      "where": "Ch. 2, §2.1 (Moser product and commutator estimates); the product bound is derived here from 4.3, the Leibniz rule and Hölder's inequality"
      },
      "prerequisites": [
       "target:4.3"
@@ -992,7 +1018,7 @@
      "id": "4.3.2",
      "kind": "theorem",
      "name": "PeriodicSobolev.moser_composition",
-     "statement": "For Φ smooth on open G ⊆ ℝ^N, compact K ⊆ G, Ū ∈ K and u with values in K and u − Ū ∈ Hᵏ_Λ: Φ(u) − Φ(Ū) ∈ Hᵏ_Λ with ‖Φ(u) − Φ(Ū)‖_{Hᵏ_Λ} ≤ C(Φ,K,k)‖u − Ū‖_{Hᵏ_Λ}, and u ↦ Φ(u) is continuous in Hᵏ_Λ.",
+     "statement": "For Φ smooth on open G ⊆ ℝ^N, compact K ⊆ G, Ū ∈ K and u with values in K and u − Ū ∈ Hᵏ_Λ: Φ(u) − Φ(Ū) ∈ Hᵏ_Λ with ‖Φ(u) − Φ(Ū)‖_{Hᵏ_Λ} ≤ C(Φ,K,k)‖u − Ū‖_{Hᵏ_Λ}; for Λ = 0 and k ≥ 1, ‖DᵏΦ(u)‖_{L²} ≤ C(Φ,K,k)‖Dᵏu‖_{L²}; and u ↦ Φ(u) is continuous in Hᵏ_Λ.",
      "hypotheses": [
       "Φ smooth on G",
       "values of u in compact K",
@@ -1011,6 +1037,11 @@
        "name": "square",
        "kind": "computation",
        "statement": "Φ(u) = u², k = 1: ‖2uu′‖ ≤ 2‖u‖_∞‖u′‖"
+      },
+      {
+       "name": "order_zero_uncentred",
+       "kind": "non-example",
+       "statement": "Λ = 0, K = {0}, u = Ū = 0, Φ ≡ 1, k = 0: the uncentred bound ‖Φ(u)‖_{L²} ≤ C‖u‖_{L²} has sides ∞ and 0; the centred bound gives 0 ≤ 0"
       }
      ]
     },
@@ -1018,7 +1049,7 @@
      "id": "4.4",
      "kind": "construction",
      "name": "PeriodicSobolev.mollify",
-     "statement": "J_εu = φ_ε ⋆ u with φ ∈ C_c^∞(E) even, nonnegative, ∫φ = 1, φ_ε = ε^{−n}φ(·/ε).",
+     "statement": "For ε > 0, J_εu = φ_ε ⋆ u with φ ∈ C_c^∞(E) even, nonnegative, ∫φ = 1, φ_ε = ε^{−n}φ(·/ε).",
      "hypotheses": [
       "φ even, nonnegative, compactly supported, smooth, ∫φ = 1",
       "ε > 0"
@@ -1047,12 +1078,12 @@
       {
        "name": "gain_loss",
        "role": "structure",
-       "statement": "‖J_εu‖_{Hᵏ⁺¹} ≤ Cε^{−1}‖u‖_{Hᵏ}; for k ≥ 1, ‖J_εu − u‖_{Hᵏ⁻¹} ≤ Cε‖u‖_{Hᵏ}"
+       "statement": "for every ε > 0, ‖J_εu‖_{Hᵏ⁺¹} ≤ C(1 + ε^{−1})‖u‖_{Hᵏ}, hence ≤ 2Cε^{−1}‖u‖_{Hᵏ} for 0 < ε ≤ 1; for k ≥ 1 and every ε > 0, ‖J_εu − u‖_{Hᵏ⁻¹} ≤ Cε‖u‖_{Hᵏ}"
       },
       {
        "name": "friedrichs_lemma",
        "role": "structure",
-       "statement": "‖J_ε(a∂ᵢu) − a∂ᵢJ_εu‖_{L²_Λ} ≤ C(‖a‖_∞ + Lip a)‖u‖_{L²_Λ}, tending to 0 strongly"
+       "statement": "for a bounded, Lipschitz and Λ-periodic (any bounded Lipschitz a when Λ = 0): ‖J_ε(a∂ᵢu) − a∂ᵢJ_εu‖_{L²_Λ} ≤ C(‖a‖_∞ + Lip a)‖u‖_{L²_Λ} for every ε > 0, tending to 0 strongly as ε → 0"
       }
      ],
      "tests": [
@@ -1075,6 +1106,16 @@
        "name": "loss_needs_k_ge_one",
        "kind": "non-example",
        "statement": "k = 0: ‖J_ε cos(mx) − cos(mx)‖₂ = |1 − φ̂(εm)|‖cos(mx)‖₂ → ‖cos(mx)‖₂ as m → ∞, exceeding Cε‖cos(mx)‖₂ once Cε < 1; for k = 1 the bound holds since |1 − φ̂(η)| ≤ |η|∫|y|φ"
+      },
+      {
+       "name": "gain_large_eps",
+       "kind": "non-example",
+       "statement": "Λ = 2πℤ, u = 1: J_εu = 1 and ‖1‖_{Hᵏ⁺¹_Λ} = ‖1‖_{Hᵏ_Λ} = √(2π); a bound Cε^{−1} for all ε > 0 fails at ε = 2C, while 1 ≤ C(1 + ε^{−1}) holds for C ≥ 1"
+      },
+      {
+       "name": "nonperiodic_coefficient",
+       "kind": "non-example",
+       "statement": "Λ = 2πℤ, u = sin x, a = sin(x/2): the commutator ½[(φ̂(3ε/2) − φ̂(ε))sin(3x/2) − (φ̂(ε/2) − φ̂(ε))sin(x/2)] equals μ₂ε²/8 + o(ε²) at x = π and its negative at 3π, so it is not in L²_Λ; a = sin x gives a periodic commutator, constant a gives 0"
       }
      ]
     }
@@ -1153,9 +1194,11 @@
      "id": "5.2",
      "kind": "theorem",
      "name": "SymmetricHyperbolic.weighted_energy",
-     "statement": "If χ ≥ 0 is Lipschitz, Λ-periodic, with χ(t,·) supported in a set compact modulo Λ, W is C¹ near {χ > 0}, ∂_tχA⁰ + Σ∂ᵢχAⁱ ≤ 0 a.e. on {χ > 0} and |LW| ≤ C₁|W| there, then E_χ(t) = ∫_Fχ⟨A⁰W,W⟩ ≤ e^{Ct}E_χ(0).",
+     "statement": "If χ ≥ 0 is Lipschitz and Λ-periodic with {χ > 0} relatively compact modulo Λ in [0,T] × E, W is Λ-periodic and W and the coefficients of L are C¹ on a relatively open set containing the closure of {χ > 0}, ∂_tχA⁰ + Σ∂ᵢχAⁱ ≤ 0 a.e. on {χ > 0} and |LW| ≤ C₁|W| there, then E_χ(t) = ∫_Fχ⟨A⁰W,W⟩ is finite, Lipschitz in t, and E_χ(t) ≤ e^{Ct}E_χ(0).",
      "hypotheses": [
       "χ Lipschitz, nonnegative, Λ-periodic",
+      "{χ > 0} relatively compact modulo Λ",
+      "W Λ-periodic; W and the coefficients C¹ on a relatively open set containing the closure of {χ > 0}",
       "characteristic-monotone a.e. on {χ > 0}",
       "|LW| ≤ C₁|W| on {χ > 0}"
      ],
@@ -1179,6 +1222,11 @@
        "name": "sound_cone_equality",
        "kind": "computation",
        "statement": "Euler constant state: χ = (R − |x − tv₀| − c₀t)₊ gives ∂_tχ + v₀·∇χ + c₀|∇χ| = 0"
+      },
+      {
+       "name": "boundary_regularity",
+       "kind": "non-example",
+       "statement": "Λ = 0, L = ∂_t, χ = (1 − |x|)₊, W = (1 − x)^{−1} on (−1,1): W is C¹ on {χ > 0}, LW = 0, σ(dχ) = 0, but ∫₀¹ χW² = ∫₀¹ (1 − x)^{−1} = ∞; W is not C¹ near the closure, which the hypothesis demands"
       }
      ]
     },
@@ -1186,10 +1234,11 @@
      "id": "5.3",
      "kind": "theorem",
      "name": "SymmetricHyperbolic.Hk_estimate",
-     "statement": "For U with values in compact K, U − Ū ∈ C([0,T];Hᵏ_Λ) ∩ C¹([0,T];Hᵏ⁻¹_Λ), 2k > n + 2, and W in the same class with A⁰(U)∂_tW + ΣAⁱ(U)∂ᵢW = f: dE_k/dt ≤ C(K)(1 + ‖∂_tU‖_∞ + ‖U − Ū‖_{Hᵏ_Λ})E_k + C(K)E_k^{1/2}‖f‖_{Hᵏ_Λ}; when U solves the system with F(Ū) = 0, d/dt E_k(U − Ū) ≤ C(K)(1 + ‖∇U‖_∞)E_k(U − Ū).",
+     "statement": "For U with values in compact K, U − Ū ∈ C([0,T];Hᵏ_Λ) ∩ C¹([0,T];Hᵏ⁻¹_Λ), 2k > n + 2, and W in the same class with A⁰(U)∂_tW + ΣAⁱ(U)∂ᵢW = f, f ∈ C([0,T];Hᵏ_Λ): E_k is C¹ and dE_k/dt ≤ C(1 + ‖∂_tU‖_∞ + ‖U − Ū‖_{Hᵏ_Λ})E_k + C(1 + ‖U − Ū‖_{Hᵏ_Λ})E_k^{1/2}‖f‖_{Hᵏ_Λ}, C depending only on K, the system, n, k and Λ; when U solves the system with F(Ū) = 0, d/dt E_k(U − Ū) ≤ C(1 + ‖∇U‖_∞)E_k(U − Ū). For a classical solution with values in K, ‖∂_tU‖_∞ ≤ C(‖F(U)‖_∞ + ‖∇U‖_∞) ≤ C(1 + ‖∇U‖_∞), and ≤ C‖∇U‖_∞ when F = 0.",
      "hypotheses": [
       "2k > n + 2",
       "values of U in compact K ⊆ G",
+      "constants depend on K, the system, n, k, Λ only; the forcing coefficient also on ‖U − Ū‖_{Hᵏ_Λ}",
       "F(Ū) = 0 for the tame estimate"
      ],
      "locator": {
@@ -1200,13 +1249,24 @@
       "target:4.2",
       "target:4.3.1",
       "target:4.3.2",
-      "target:5.1.1"
+      "target:5.1.1",
+      "target:4.4"
      ],
      "tests": [
       {
        "name": "burgers_tame",
        "kind": "computation",
        "statement": "Burgers: d/dt‖u‖² = 0 and d/dt‖u_x‖² = −∫u_x³ ≤ ‖u_x‖_∞‖u_x‖²"
+      },
+      {
+       "name": "forcing_coefficient",
+       "kind": "non-example",
+       "statement": "Λ = 2πℤ, k = 2, A⁰(u) = 1/(2 + u), A¹ = 0, K = [−1,1], Ū = 0, U = sin(mx), f = 1, W = (δ + t)(2 + sin(mx)): E₂ = (δ + t)²S_m, S_m ≥ πm⁴/3; a forcing coefficient C₁ depending on K alone needs C₁ ≥ √(2/3)m² for every m; C(1 + ‖sin(mx)‖_{H²}) ~ m² suffices"
+      },
+      {
+       "name": "source_in_time_derivative",
+       "kind": "non-example",
+       "statement": "A⁰ = 1, A¹ = 0, F(u) = u, U = eᵗ on [0, log 2], K = [0,2]: ‖∂_tU(0)‖_∞ = 1, ‖∇U‖_∞ = 0, so ‖∂_tU‖_∞ ≤ C‖∇U‖_∞ fails; 1 ≤ C(1 + 0) holds"
       }
      ]
     },
@@ -1214,7 +1274,7 @@
      "id": "5.4",
      "kind": "theorem",
      "name": "SymmetricHyperbolic.linear_existence",
-     "statement": "For coefficients with A^μ − Ā^μ, B ∈ C([0,T];Hᵏ_Λ), A⁰ − Ā⁰ ∈ C¹([0,T];Hᵏ⁻¹_Λ) (so ∂_tA⁰ is bounded, 2(k−1) > n), A⁰ ≥ λ₀I, 2k > n + 2, W₀ ∈ Hᵏ_Λ and f ∈ C([0,T];Hᵏ_Λ) there is a unique W ∈ C([0,T];Hᵏ_Λ) ∩ C¹([0,T];Hᵏ⁻¹_Λ) with LW = f, W(0) = W₀, obeying the estimate dE_k/dt ≤ C E_k + C E_k^{1/2}‖f‖_{Hᵏ_Λ} of 5.3 with C depending on λ₀, ‖∂_tA⁰‖_∞, sup_t ‖A^μ − Ā^μ‖_{Hᵏ_Λ} and sup_t ‖B‖_{Hᵏ_Λ}.",
+     "statement": "For coefficients with A^μ − Ā^μ, B ∈ C([0,T];Hᵏ_Λ), A⁰ − Ā⁰ ∈ C¹([0,T];Hᵏ⁻¹_Λ) (so ∂_tA⁰ is bounded, 2(k−1) > n), A⁰ ≥ λ₀I, 2k > n + 2, W₀ ∈ Hᵏ_Λ and f ∈ C([0,T];Hᵏ_Λ) there is a unique W ∈ C([0,T];Hᵏ_Λ) ∩ C¹([0,T];Hᵏ⁻¹_Λ) with LW = f, W(0) = W₀, obeying the estimate dE_k/dt ≤ C E_k + C E_k^{1/2}‖f‖_{Hᵏ_Λ} of 5.3 with C depending on n, N, k, Λ, λ₀, the constant matrices Ā⁰, …, Āⁿ (spatial ones included), sup_t ‖∂_tA⁰‖_∞, sup_t ‖A^μ − Ā^μ‖_{Hᵏ_Λ} and sup_t ‖B‖_{Hᵏ_Λ}.",
      "hypotheses": [
       "2k > n + 2",
       "A⁰ ≥ λ₀I",
@@ -1232,6 +1292,13 @@
       "target:4.2",
       "mathlib:IsPicardLindelof",
       "mathlib:IsPicardLindelof.exists_eq_forall_mem_Icc_hasDerivWithinAt"
+     ],
+     "tests": [
+      {
+       "name": "background_speed",
+       "kind": "non-example",
+       "statement": "Λ = 2πℤ, k = 2, A⁰ = e^{sin x}, A¹ = M, B = f = 0, W(0) = sin x + sin 2x: E₂′(0) = 22πM, E₂(0) ≤ 24eπ, while λ₀ = e^{−1}, ∂_tA⁰ = 0, A^μ − Ā^μ do not depend on M; C must depend on |Ā¹|"
+      }
      ]
     }
    ]
@@ -1244,10 +1311,10 @@
      "id": "6.1",
      "kind": "definition",
      "name": "SymmetricHyperbolic.LensFunction",
-     "statement": "A lens function on [t₁,t₂] × E is a Lipschitz Λ-periodic φ with {φ(t,·) > 0} relatively compact modulo Λ; its lens L_φ = {φ > 0}, its base L_φ ∩ Σ_{t₁}; φ is spacelike for a solution U when σ(U; dφ) ≤ 0 a.e. on L_φ (for Euler: ∂_tφ + v·∇φ + c|∇φ| ≤ 0).",
+     "statement": "A lens function on [t₁,t₂] × E is a Lipschitz Λ-periodic φ with {φ > 0} relatively compact modulo Λ in [t₁,t₂] × E; its lens L_φ = {φ > 0}, its base L_φ ∩ Σ_{t₁}; φ is spacelike for a solution U when σ(U; dφ) ≤ 0 a.e. on L_φ (for Euler: ∂_tφ + v·∇φ + c|∇φ| ≤ 0).",
      "hypotheses": [
       "φ Lipschitz and Λ-periodic",
-      "slices relatively compact modulo Λ"
+      "{φ > 0} relatively compact modulo Λ"
      ],
      "locator": {
       "source": "Majda1984",
@@ -1266,7 +1333,7 @@
       {
        "name": "movingCone",
        "role": "constructor",
-       "statement": "the periodised moving cone max_{λ∈Λ}(R − |x − λ − x₀ − (t−t₁)w| − M(t−t₁)) is a lens function (Lipschitz, Λ-periodic, slices relatively compact modulo Λ; the single cone when Λ = 0; disjoint translates when 2R is below the least nonzero norm of Λ), spacelike for U₁ when (M,w) dominates at U₁ on the lens, since a.e. its differential is that of a term attaining the maximum"
+       "statement": "the periodised moving cone max_{λ∈Λ}(R − |x − λ − x₀ − (t−t₁)w| − M(t−t₁)) is a lens function (Lipschitz, Λ-periodic, lens inside the Λ-translates of [t₁,t₂] × B(x₀, R + |w|(t₂ − t₁)), hence relatively compact modulo Λ; the single cone when Λ = 0; disjoint translates when 2R is below the least nonzero norm of Λ), spacelike for U₁ when (M,w) dominates at U₁ on the lens, since a.e. its differential is that of a term attaining the maximum"
       }
      ],
      "tests": [
@@ -1296,8 +1363,9 @@
      "id": "6.1.1",
      "kind": "theorem",
      "name": "SymmetricHyperbolic.eq_on_lens",
-     "statement": "If U₁, U₂ are classical solutions of the same quasilinear symmetric hyperbolic system on a relatively open set containing the closure of L_φ, φ is spacelike for U₁, and U₁ = U₂ on the base, then U₁ = U₂ on L_φ.",
+     "statement": "If U₁, U₂ are Λ-periodic classical solutions of the same quasilinear symmetric hyperbolic system on a Λ-invariant relatively open set containing the closure of L_φ, φ is spacelike for U₁, and U₁ = U₂ on the base, then U₁ = U₂ on L_φ.",
      "hypotheses": [
+      "U₁, U₂ Λ-periodic (no condition for Λ = 0)",
       "φ spacelike for U₁ (only U₁'s cones)",
       "U₁ = U₂ on the base"
      ],
@@ -1309,13 +1377,20 @@
       "target:6.1",
       "target:5.2",
       "target:2.1.1"
+     ],
+     "tests": [
+      {
+       "name": "nonperiodic_solutions",
+       "kind": "non-example",
+       "statement": "Λ = ℤ, φ = 1 − t on [0,2] × ℝ (spacelike for every solution); the system A⁰ = I, A¹(u,z) = diag(z², 0) has solutions (0, x) and (g(t + 1/x)·1_{x<0}, x), g supported in (1/2,1), equal at t = 0 and different at (0.9, −1/0.3); neither is ℤ-periodic"
+      }
      ]
     },
     {
      "id": "6.2",
      "kind": "theorem",
      "name": "SymmetricHyperbolic.eq_on_causalPast",
-     "statement": "Given a continuous dominating cone map κ, a domain D, a classical solution U₁ on D with field κ ∘ U₁, S ⊆ D relatively open in Σ_{t₀}, a relatively open O ⊆ H_{t₀} and a classical solution U₂ on O with U₁ = U₂ on S ∩ O: for p ∈ D⁺_D(S) with J⁻_D(p) ⊆ O, U₁ = U₂ on J⁻_D(p).",
+     "statement": "Given a continuous dominating cone map κ, a domain D, a classical solution U₁ on D with field κ ∘ U₁, S ⊆ D relatively open in Σ_{t₀}, a relatively open O ⊆ H_{t₀} and a classical solution U₂ on O with U₁ = U₂ on S ∩ O: for p ∈ D⁺_D(S) with J⁻_D(p) ⊆ O, U₁ = U₂ on J⁻_D(p) (the lenses of the route are moving cones of 6.1 with Λ = 0).",
      "hypotheses": [
       "κ continuous and dominating at every state",
       "J⁻_D(p) ⊆ O",
@@ -1625,9 +1700,9 @@
      "id": "8.2.1",
      "kind": "theorem",
      "name": "CompressibleEuler.development_sSup",
-     "statement": "Two developments are compatible iff W₁₂ = D₁ ∩ D₂ iff they have a common upper bound; the union of a pairwise compatible family with the glued solution is a development and its least upper bound.",
+     "statement": "Two developments are compatible iff W₁₂ = D₁ ∩ D₂ iff they have a common upper bound; the union of a nonempty pairwise compatible family with the glued solution is a development and its least upper bound (the empty family only when S = ∅, with the development (∅,∅)).",
      "hypotheses": [
-      "pairwise compatible family"
+      "nonempty pairwise compatible family"
      ],
      "locator": {
       "source": "ChristodoulouMiao2014",
@@ -1636,13 +1711,20 @@
      "prerequisites": [
       "target:8.2",
       "target:3.3"
+     ],
+     "tests": [
+      {
+       "name": "empty_family",
+       "kind": "non-example",
+       "statement": "constant data on S = (−1,1): the empty family is vacuously compatible but its union ∅ has initial slice ∅ ≠ {0} × S; a singleton family has the development itself as union"
+      }
      ]
     },
     {
      "id": "8.2.2",
      "kind": "theorem",
      "name": "CompressibleEuler.exists_maximal_development",
-     "statement": "Every development lies below a maximal development.",
+     "statement": "Every development lies below a maximal development (zorn_le_nonempty₀: nonempty chains are nonempty compatible families with their union as upper bound).",
      "hypotheses": [
       "a development exists"
      ],
@@ -1832,6 +1914,10 @@
   {
    "roadmap": "RarefactionWaves",
    "what": "Luo–Yu: domains of dependence of half-space data and their null boundaries (8.3, 8.4)"
+  },
+  {
+   "roadmap": "LorentzianGeometry",
+   "what": "§1.9 takes the acoustical form of 3.1 (inverse, determinant, signature, causal and covector classification) as an example and owns its identification with general Lorentzian scalar products, on nonzero vectors (its causal vectors exclude 0; the cone of 3.1 contains 0); §2.5 owns the acoustical metric on manifolds"
   },
   {
    "roadmap": "LorentzianGeometryPartII",
