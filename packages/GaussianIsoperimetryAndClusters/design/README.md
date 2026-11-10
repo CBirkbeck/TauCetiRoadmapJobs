@@ -4,11 +4,11 @@
 
 ## Scope and ownership
 
-This roadmap owns: the weighted variation and weighted perimeter of a positive `C¹` density and their basic theory (Layer 2); clusters, interfaces, isoperimetric profiles and existence of minimizing clusters for such densities (Layer 3); the Gaussian isoperimetric function and the Gaussian splitting identities it needs (Layer 1); the canonical and general simplicial clusters, their measure map and the model profile (Layer 4); one-dimensional Gaussian isoperimetry (Layer 5); Gaussian symmetrals of measurable sets and Ehrhard symmetrisation of sets of finite Gaussian perimeter (Layer 6); the Gaussian isoperimetric theorem with its equality case (Layer 7); its integrated, Minkowski-content, functional and concentration forms (Layer 8); Gaussian symmetrals of closed sets and Ehrhard's inequality for convex sets (Layer 9). No roadmap on the main branch, no open roadmap pull request and no board package defines weighted perimeter, Gaussian perimeter, clusters in this sense, Gaussian symmetrisation, or any Gaussian isoperimetric statement.
+This roadmap owns: the weighted variation and weighted perimeter of a positive `C¹` density and their basic theory (Layer 2); clusters, interfaces, isoperimetric profiles and existence of minimizing clusters for such densities (Layer 3); the Gaussian isoperimetric function, its tail bounds and the two splitting identities of §1.3 (Layer 1); the canonical and general simplicial clusters, their measure map and the model profile (Layer 4); one-dimensional Gaussian isoperimetry (Layer 5); Gaussian symmetrals of measurable sets and Ehrhard symmetrisation of sets of finite Gaussian perimeter (Layer 6); the Gaussian isoperimetric theorem with its equality case (Layer 7); its integrated, Minkowski-content, functional and concentration forms (Layer 8); Gaussian symmetrals of closed sets and Ehrhard's inequality for convex sets (Layer 9). No roadmap on the main branch, no open roadmap pull request and no board package defines weighted perimeter, Gaussian perimeter, clusters in this sense, Gaussian symmetrisation, or any Gaussian isoperimetric statement. Tau Ceti's `TauCeti.perimeter μ Ω U` takes a measure parameter but pairs `χ_U` with the ordinary divergence; for `μ = γ` it is not the Gaussian perimeter of Layer 2 (§2.1, third Check).
 
-Already in the library and used, not stated again: the standard Gaussian measure `ProbabilityTheory.stdGaussian` on every finite-dimensional real inner product space, its invariance under linear isometry equivalences and its orthonormal-basis description, the multivariate Gaussian laws `ProbabilityTheory.multivariateGaussian`, the one-dimensional laws `ProbabilityTheory.gaussianReal` with density `ProbabilityTheory.gaussianPDFReal` and distribution function `ProbabilityTheory.cdf` (Mathlib); the Lebesgue density of the standard Gaussian on `EuclideanSpace ℝ ι`, the error-function form of the Gaussian distribution function and the quantile function of a law on `ℝ` (Tau Ceti). The normalized Euclidean Hausdorff measure `MeasureTheory.Measure.euclideanHausdorffMeasure` with its isometry invariance and its agreement with volume on affine subspaces is Mathlib's.
+Already in the library and used, not stated again: the standard Gaussian measure `ProbabilityTheory.stdGaussian` on every finite-dimensional real inner product space, its invariance under linear isometry equivalences and its orthonormal-basis description, the multivariate Gaussian laws `ProbabilityTheory.multivariateGaussian`, the one-dimensional laws `ProbabilityTheory.gaussianReal` with density `ProbabilityTheory.gaussianPDFReal` and distribution function `ProbabilityTheory.cdf` (Mathlib); the density `e^{−W}` of the standard Gaussian on every finite-dimensional real inner product space, the law of its orthogonal projections onto a subspace and onto a family of orthogonal subspaces, the error-function form and strict monotonicity of the Gaussian distribution function, the quantile function of a law on `ℝ` and its two inverse laws with the distribution function (Tau Ceti: `TauCeti.Probability.stdGaussian_eq_withDensity_norm`, `Submodule.map_orthogonalProjectionOnto_stdGaussian`, `TauCeti.Probability.map_orthogonalProjectionOnto_stdGaussian_pi`, `TauCeti.Probability.cdf_gaussianReal_zero_one`, `TauCeti.Probability.strictMono_cdf_gaussianReal`, `MeasureTheory.Measure.quantile`, `MeasureTheory.Measure.cdf_quantile`, `MeasureTheory.Measure.quantile_cdf`). The normalized Euclidean Hausdorff measure `MeasureTheory.Measure.euclideanHausdorffMeasure` with its isometry invariance and its agreement with volume on affine subspaces is Mathlib's. Tau Ceti's Euclidean theory of variation and perimeter is used as it stands: total variation and perimeter by duality, the variation measure and its polar decomposition, lower semicontinuity, local compactness, the BV Poincaré inequality on balls, the scalar coarea formula on open and Borel sets, the reduced boundary, outer normal and Gauss–Green formula against the perimeter measure, the essential boundary, the one-dimensional variation bound and the surface measure of spheres; the exact declarations are in the supplier contracts.
 
-Stated by other roadmaps and imported by section: Euclidean BV functions, the vector derivative measure, its polar decomposition and the variational characterization of total variation (GeometricMeasureTheory G3); lower semicontinuity, `L¹_loc` compactness, mollification estimates, the BV Poincaré inequality on balls and the scalar BV coarea formula (GeometricMeasureTheory G4); reduced and essential boundary, De Giorgi's structure theorem, locality and the finite-perimeter boundary criterion (GeometricMeasureTheory G5); Gauss–Green for sets of locally finite perimeter and the surface comparison on Lipschitz domains (GeometricMeasureTheory G6); the area and coarea formulas, the tangential area formula on rectifiable sets, graph and sphere surface measure (GeometricMeasureTheory G2); the Euclidean finite-perimeter slicing theorem along lines with its reduced-boundary and normal comparison (Isoperimetry I4); the continuity and uniqueness properties of quantiles of continuous strictly increasing distribution functions (StandardDistributions Layer 7.2). Steiner symmetrisation, Prékopa–Leindler and Brunn–Minkowski stay with Isoperimetry I1–I2 and are used only in a Check. The Gaussian logarithmic Sobolev and Poincaré inequalities and Herbst's mean-centred concentration stay with RandomMatrices 2.2; the median-centred concentration of Layer 8 has the sharp constant from isoperimetry and is a different statement.
+Stated by other roadmaps and imported by section, for the parts the pinned libraries lack: the pointwise mollification estimate for BV functions (GeometricMeasureTheory G4); De Giorgi's structure theorem identifying the perimeter measure with `μHE[n−1]` on the reduced boundary, the blow-up and density one-half at reduced-boundary points, the comparison of essential and reduced boundary and the finite-perimeter boundary criterion (GeometricMeasureTheory G5); the surface comparison on Lipschitz domains (GeometricMeasureTheory G6); the coarea formula for Lipschitz functions with weights, the tangential area formula on rectifiable sets and graph surface measure for locally Lipschitz graphs (GeometricMeasureTheory G2); the Euclidean finite-perimeter slicing theorem along lines with its reduced-boundary and normal comparison (Isoperimetry I4). Steiner symmetrisation, Prékopa–Leindler and Brunn–Minkowski stay with Isoperimetry I1–I2 and are used only in a Check. The Gaussian logarithmic Sobolev and Poincaré inequalities and Herbst's mean-centred concentration stay with RandomMatrices 2.2; the median-centred concentration of Layer 8 has the sharp constant from isoperimetry and is a different statement.
 
 Outside this roadmap: regularity of minimizing clusters (Almgren's interface regularity and the singular-set theorems of Taylor, White and Colombo–Edelen–Spolaor), the second-variation calculus of Milman–Neeman Sections 5–10, and therefore the proof of the Gaussian multi-bubble theorem for `3 ≤ q ≤ n + 1`; its precise statement in this roadmap's terms closes the document as motivation for a future roadmap. Also outside: infinite-dimensional Gaussian measures and Cameron–Martin spaces; quantitative stability of the Gaussian isoperimetric inequality (Cianchi–Fusco–Maggi–Pratelli Theorems 1.1–1.2); Ehrhard's inequality for arbitrary Borel sets; the Ornstein–Uhlenbeck semigroup. Weighted perimeter is not developed for densities that are only measurable or vanish somewhere.
 
@@ -24,7 +24,7 @@ The perimeter normalization is Milman–Neeman's: the Gaussian perimeter of a ha
 
 The outward measure-theoretic normal `ν_U` follows GeometricMeasureTheory: `Dχ_U = −ν_U |Dχ_U|` and `|Dχ_U| = μHE[n−1]` restricted to the reduced boundary `∂*U`.
 
-A Gaussian symmetral replaces a section by a sublevel half-space: a section of Gaussian measure `v` becomes `{⟨y, u⟩ < Φ⁻¹(v)}`, written `{Φ(⟨y, u⟩) < v}` so that `v = 0` gives the empty set and `v = 1` the whole section.
+A Gaussian symmetral replaces a section by a sublevel half-space: a section of Gaussian measure `v` with `0 < v < 1` becomes `{⟨y, u⟩ < Φ⁻¹(v)}`. The rule is written `{Φ(⟨y, u⟩) < v}` for every `v ∈ [0, 1]`, so that `v = 0` gives the empty set and `v = 1` the whole section; no quantile is evaluated at `0` or `1`.
 
 For `q ≥ 1`, `Δ^{(q−1)} = {v ∈ ℝ^q : v_i ≥ 0, Σ v_i = 1}` is the probability simplex, `int Δ^{(q−1)}` its relative interior, and `E^{(q−1)} = {x ∈ ℝ^q : Σ x_i = 0}` its tangent space with the Euclidean structure of `EuclideanSpace ℝ (Fin q)`. For nonnegative numbers `A = (A_ij)_{i<j}`, `L_A = Σ_{i<j} A_ij (e_i − e_j)(e_i − e_j)ᵀ`; as a quadratic form on `E^{(q−1)}` it is `⟨a, L_A a⟩ = Σ_{i<j} A_ij (a_i − a_j)²`. Gradients and Hessians of functions on `int Δ^{(q−1)}` are tensors on `E^{(q−1)}`. The identification of `Δ^{(1)}` with `[0, 1]` by `v ↦ v_1` contracts distances by `√2`.
 
@@ -32,7 +32,7 @@ For `q ≥ 1`, `Δ^{(q−1)} = {v ∈ ℝ^q : v_i ≥ 0, Σ v_i = 1}` is the pro
 
 - The half-space `{x : ⟨x, ν⟩ > 1}` with `‖ν‖ = 1` has `γ = 1 − Φ(1) = 0.158655` and Gaussian perimeter `φ(1) = 0.241971` here, against `e^{−1/2} = 0.606531` in Cianchi–Fusco–Maggi–Pratelli; the ratio is `2.506628 = √(2π)`. A design mixing the two normalizations would misstate `I(0.158655) = 0.241971`.
 - On `ℝ`, `U = (−∞, s)` has `Dχ_U = −δ_s`, so `ν_U(s) = +1`, and for every `C¹` compactly supported `X` the weighted Gauss–Green identity reads `∫_{−∞}^{s} (X′ − tX) φ dt = X(s) φ(s)`, which is `⟨X, ν_U⟩ φ(s)`. An inner normal would give `−X(s) φ(s)`.
-- The sublevel convention fixes `{⟨x, e⟩ < a}` under symmetrisation in direction `e`: its sections have measure `Φ(a)` and the sublevel half-line of that measure is `(−∞, a)`. The superlevel half-line `(Φ⁻¹(v), ∞)` has measure `1 − v`, which for `v = Φ(1)` is `0.158655` instead of `0.841345`.
+- The sublevel convention fixes `{⟨x, e⟩ < a}` under symmetrisation in direction `e`: its sections have measure `Φ(a)` and the sublevel half-line of that measure is `(−∞, a)`. For `0 < v < 1`, keeping the threshold and flipping the side gives `(Φ⁻¹(v), ∞)`, of measure `1 − v`, which for `v = Φ(1)` is `0.158655` instead of `0.841345`.
 - For `q = 2`, `L_A` acts on `E^{(1)} = ℝ (e_1 − e_2)/√2` as multiplication by `2A_12`, and `⟨a, L_A a⟩ = A_12 (a_1 − a_2)²`.
 
 ## Exact supplier contracts
@@ -46,39 +46,53 @@ For `q ≥ 1`, `Δ^{(q−1)} = {v ∈ ℝ^q : v_i ≥ 0, Σ v_i = 1}` is the pro
 - `LinearMap.normDet` (Mathlib/Analysis/InnerProductSpace/NormDet.lean:69), the Jacobian of a linear map between inner product spaces, used for the tangential Jacobian of a projection.
 - `geometric_hahn_banach_open_open` (Mathlib/Analysis/LocallyConvex/Separation.lean:135): two disjoint open convex sets are strictly separated by a continuous linear functional.
 - `Metric.thickening` (Mathlib/Topology/MetricSpace/Thickening.lean:53), the open set of points at distance `< δ`, which is empty for `δ ≤ 0`; `Metric.cthickening` (line 181), the closed set at distance `≤ δ`, with `Metric.cthickening_zero` (line 226) equal to the closure.
-- `isOpenMap_of_hasStrictFDerivAt_equiv` (Mathlib/Analysis/Calculus/InverseFunctionTheorem/FDeriv.lean:204): a map with invertible strict derivative everywhere is open.
-- `LipschitzWith.ae_differentiableAt` (Mathlib/Analysis/Calculus/Rademacher.lean:385), `norm_fderiv_le_of_lipschitz` (Mathlib/Analysis/Calculus/FDeriv/Basic.lean:947), `Monotone.ae_differentiableAt` (Mathlib/Analysis/Calculus/Monotone.lean:209) and `MonotoneOn.intervalIntegral_deriv_mem_uIcc` (Mathlib/MeasureTheory/Integral/IntervalIntegral/DerivIntegrable.lean:100), which bounds the integral of the derivative of a monotone function by its increment.
-- `Convex.nullMeasurableSet` (Mathlib/Analysis/Convex/Measure.lean:85): a convex set is null-measurable for every additive Haar measure.
+- `isOpenMap_of_hasStrictFDerivAt_equiv` (Mathlib/Analysis/Calculus/InverseFunctionTheorem/FDeriv.lean:205): a map with invertible strict derivative everywhere is open.
+- `LipschitzWith.ae_differentiableAt` (Mathlib/Analysis/Calculus/Rademacher.lean:386), `norm_fderiv_le_of_lipschitz` (Mathlib/Analysis/Calculus/FDeriv/Basic.lean:949), `Monotone.ae_differentiableAt` (Mathlib/Analysis/Calculus/Monotone.lean:213) and `MonotoneOn.intervalIntegral_deriv_mem_uIcc` (Mathlib/MeasureTheory/Integral/IntervalIntegral/DerivIntegrable.lean:101), which bounds the integral of the derivative of a monotone function by its increment.
+- `Convex.nullMeasurableSet` (Mathlib/Analysis/Convex/Measure.lean:89): a convex set is null-measurable for every additive Haar measure.
 
 ### From Tau Ceti
 
-Tau Ceti at the pin contains no weighted or Euclidean perimeter, no BV theory and no Gaussian isoperimetric statement.
+Tau Ceti at the pin contains the Euclidean theory of total variation and perimeter defined by duality against a measure parameter, with the variation measure, the polar decomposition, the reduced boundary and the scalar coarea formula. It contains no weighted divergence, no weighted perimeter and no Gaussian isoperimetric statement: `TauCeti.perimeter γ Ω U` is the supremum of `∫_U div X dγ`, with the ordinary divergence, and is not `P_γ(U; Ω)` (§2.1, third Check). Every Euclidean declaration below is used with `volume`, an additive Haar measure.
 
-- `TauCeti.Probability.stdGaussian_eq_withDensity` (TauCeti/Probability/Distributions/Gaussian/Density.lean:158): on `EuclideanSpace ℝ ι`, the standard Gaussian is `volume` with density `(2π)^{−card ι/2} exp(−‖x‖²/2)`. Layer 1 transports it to `E`.
-- `TauCeti.Probability.cdf_gaussianReal_zero_one` (TauCeti/Probability/Distributions/Gaussian/Cdf.lean:122): `Φ(x) = (1 + erf(x/√2))/2`; with `TauCeti.Real.strictMono_erf` and `TauCeti.Real.continuous_erf` (TauCeti/Analysis/SpecialFunctions/Erf.lean:132 and :105) this makes `Φ` a continuous strictly increasing bijection of `ℝ` onto `(0, 1)`.
-- `MeasureTheory.Measure.quantile` (TauCeti/Probability/Quantile.lean:101): the least point where a distribution function reaches a level; for levels outside `(0, 1)` its value is a junk `0`, which is why `I` is defined separately at `0` and `1`.
+Gaussian laws and quantiles.
+
+- `TauCeti.Probability.stdGaussian_eq_withDensity_norm` (TauCeti/Probability/Distributions/Gaussian/Density.lean:178): on every finite-dimensional real inner product space `E` with its Borel σ-algebra, `stdGaussian E` is `volume` with density `(2π)^{−dim E/2} exp(−‖x‖²/2)`, which is `e^{−W}` for the `W` of the Conventions.
+- `Submodule.map_orthogonalProjectionOnto_stdGaussian` (TauCeti/Probability/Distributions/Gaussian/Projection.lean:47): the orthogonal projection onto a subspace `K` carries `stdGaussian E` to `stdGaussian K`. `TauCeti.Probability.map_orthogonalProjectionOnto_stdGaussian_pi` (same file, line 94): for a finite family of pairwise orthogonal subspaces `K_i`, the joint law of the projections `x ↦ (P_{K_i} x)_i` is `Measure.pi (i ↦ stdGaussian (K i))`. Neither states the addition map `F × F^⊥ → E` or a binary product measure, which §1.3 derives.
+- `TauCeti.Probability.cdf_gaussianReal_zero_one` (TauCeti/Probability/Distributions/Gaussian/Cdf.lean:148): `Φ(x) = (1 + erf(x/√2))/2`, with `TauCeti.Real.continuous_erf` (TauCeti/Analysis/SpecialFunctions/Erf.lean:115). `TauCeti.Probability.strictMono_cdf_gaussianReal` (Cdf.lean:219), `TauCeti.Probability.cdf_gaussianReal_pos` (line 205) and `TauCeti.Probability.cdf_gaussianReal_lt_one` (line 212), for nonzero variance: `Φ` is strictly increasing with values in `(0, 1)`.
+- `MeasureTheory.Measure.quantile` (TauCeti/Probability/Quantile.lean:164): the infimum of the points where the distribution function reaches a level `t`. Its value is the junk `0` for `t ≤ 0` (`MeasureTheory.Measure.quantile_of_nonpos`, line 209) and for `t > 1` (`MeasureTheory.Measure.quantile_of_one_lt`, line 216). At `t = 1` it is the least point of full cumulative mass when there is one and `0` otherwise: `2` for the Dirac mass at `2`, whose level-one set is `[2, ∞)`, and `0` for `gaussianReal 0 1`, whose distribution function stays below `1`. Hence `I` is defined separately at `0` and `1`, and no statement below evaluates `Φ⁻¹` at `0` or `1`.
+- `MeasureTheory.Measure.cdf_quantile` (Quantile.lean:340): if the distribution function of `μ` is continuous and `0 < t < 1`, it takes the value `t` at the quantile. `MeasureTheory.Measure.quantile_cdf` (line 359): if the distribution function is strictly increasing on the points where its value lies in `(0, 1)`, and its value at `x` lies in `(0, 1)`, the quantile at that value is `x`. For `gaussianReal 0 1` they give `Φ(Φ⁻¹(v)) = v` for `0 < v < 1` and `Φ⁻¹(Φ(s)) = s` for every real `s`.
+
+Euclidean variation and perimeter.
+
+- `TauCeti.totalVariationOn` (TauCeti/Analysis/BoundedVariation/TotalVariation.lean:100): `|Du|(Ω)`, the supremum of `∫ u div X dμ` over test fields `X ∈ 𝓓(Ω, E)` with `‖X‖ ≤ 1`; `TauCeti.totalVariationOn_le_liminf` (line 375): lower semicontinuity under `L¹_loc(Ω)` convergence.
+- `TauCeti.perimeter` (TauCeti/Analysis/BoundedVariation/Perimeter.lean:64): the total variation of the indicator; `TauCeti.perimeter_congr_ae` (line 83): locality, a null modification inside `Ω` does not change `P(U; Ω)`; `TauCeti.perimeter_compl` (line 109).
+- `TauCeti.variationMeasure` (TauCeti/Analysis/BoundedVariation/VariationMeasure.lean:136): for `u` locally integrable on `Ω` with locally finite variation, the regular Borel measure `|Du|` on `Ω` whose value on every open `U ⊆ Ω` is `TauCeti.totalVariationOn volume U u` (`TauCeti.variationMeasure_preimage_coe`, line 150), and `0` otherwise. `TauCeti.polarDensity` (TauCeti/Analysis/BoundedVariation/PolarDecomposition.lean:260) with `TauCeti.integral_divergenceCLM_mul_eq_neg_integral_inner_polarDensity` (line 284) and `TauCeti.ae_norm_polarDensity_eq_one` (line 303): `Du = σ_u |Du|` with `‖σ_u‖ = 1` `|Du|`-almost everywhere.
+- `TauCeti.reducedBoundary` and `TauCeti.outerNormal` (TauCeti/Analysis/BoundedVariation/ReducedBoundary.lean:95 and 106), with `Dχ_U = −ν_U |Dχ_U|`, the convention of this roadmap; `TauCeti.reducedBoundary_congr_ae` (line 404); `TauCeti.integral_trace_fderiv_mul_indicator_eq_integral_inner_outerNormal` (line 271): for `U` of locally finite perimeter in `Ω` and a `C¹` field `X` with compact support in `Ω`, `∫_U div X = ∫ ⟨X, ν_U⟩ d|Dχ_U|`, the perimeter measure not yet identified with a Hausdorff measure.
+- `TauCeti.essentialBoundary` and `TauCeti.essentialInterior` (TauCeti/MeasureTheory/Covering/EssentialBoundary.lean:143 and 132): the points where `U` has neither density `0` nor density `1`, written `∂^M U`, and the points of density one; `TauCeti.essentialBoundary_subset_frontier` (line 345).
+- `TauCeti.exists_subseq_tendsto_measure_symmDiff_inter_of_perimeter_le` (TauCeti/Analysis/BoundedVariation/Compactness.lean:223): a sequence of sets with locally bounded perimeter in `Ω` has a subsequence converging locally in measure in `Ω`.
+- `TauCeti.setLIntegral_enorm_sub_setAverage_le_mul_totalVariationOn_of_eq_ball` (TauCeti/Analysis/BoundedVariation/Poincare.lean:251): the BV Poincaré inequality on a ball of radius `R`, with constant `2^{n+1} R`.
+- `TauCeti.totalVariationOn_eq_lintegral_perimeter` (TauCeti/Analysis/BoundedVariation/Coarea.lean:392): `|Du|(Ω) = ∫ P({u > t}; Ω) dt` for `u` locally integrable on `Ω`; `TauCeti.variationMeasure_apply_eq_lintegral` (line 546) and `TauCeti.lintegral_variationMeasure_eq_lintegral_lintegral` (line 558): for `u` of locally finite variation, `|Du|(B) = ∫ |Dχ_{u > t}|(B) dt` for measurable `B ⊆ Ω` and `∫ f d|Du| = ∫ ∫ f d|Dχ_{u > t}| dt` for nonnegative `f`; `TauCeti.measurable_perimeter_setOf_lt` (line 335): measurability in `t`.
+- `TauCeti.Real.ofReal_sum_abs_sub_le_totalVariationOn` (TauCeti/Analysis/BoundedVariation/Real.lean:185): on the line, for Lebesgue points `x_0 ≤ ⋯ ≤ x_m` of `u` with `[x_0, x_m] ⊆ Ω` and Lebesgue values `v_i`, `Σ |v_{i+1} − v_i| ≤ |Du|(Ω)`.
+- `TauCeti.euclideanHausdorffMeasure_sphere` (TauCeti/Geometry/Euclidean/Volume/Sphere.lean:367): `μHE[n−1](sphere c r) = n ω_n r^{n−1}` for `r > 0`.
 
 ### From TauCetiRoadmap.GeometricMeasureTheory
 
-- G2: the coarea formula for Lipschitz `f : E → ℝ` with nonnegative Borel weights and `μHE[n−1]` on fibres; the tangential area formula for Lipschitz maps on countably `(n−1)`-rectifiable sets; graph surface measure `√(1 + ‖Dφ‖²)`; `μHE[n−1](sphere c r) = n ω_n r^{n−1}`.
-- G3: the vector derivative measure `Du` of `u ∈ BV_loc(Ω)`, its total variation `|Du|`, the polar decomposition `Du = σ_u |Du|` with `‖σ_u‖ = 1` `|Du|`-a.e., and the equality of `|Du|(Ω)` with the supremum of `∫ u div X` over smooth compactly supported fields of norm at most one.
-- G4: lower semicontinuity of variation under `L¹_loc` convergence; compactness in `L¹_loc` of families locally bounded in `L¹` and variation; mollification estimates `|∇(u ∗ ρ_ε)| ≤ |Du| ∗ ρ_ε`; the BV Poincaré inequality on balls; scalar BV coarea `|Du|(B) = ∫ P({u > t}; B) dt` for Borel `B`, with measurability in `t`.
-- G5: reduced boundary, essential boundary and outward normal; De Giorgi's theorem `|Dχ_U| = μHE[n−1] ⌊ ∂*U` with blow-up to the half-space `{⟨y, ν_U(x)⟩ < 0}` at `μHE[n−1]`-a.e. `x ∈ ∂*U`, so that such points have density `1/2`; the essential boundary differs from the reduced boundary by a `μHE[n−1]`-null set; locality of perimeter; the converse criterion that a measurable set whose essential boundary has locally finite `μHE[n−1]` measure has locally finite perimeter.
-- G6: Gauss–Green `∫_U div X = ∫_{∂*U} ⟨X, ν_U⟩ dμHE[n−1]` for sets of locally finite perimeter and compactly supported `C¹` fields; `|Dχ_U| = μHE[n−1] ⌊ ∂U` for bounded Lipschitz domains.
+These are the inputs the pinned libraries lack.
+
+- G2: the coarea formula for Lipschitz `f : E → ℝ` with nonnegative Borel weights and `μHE[n−1]` on fibres (Tau Ceti's `MeasureTheory.lintegral_euclideanHausdorffMeasure_inter_preimage_eq_lintegral_normDet_adjoint_fderiv` (TauCeti/MeasureTheory/Function/Coarea/Basic.lean:445) needs a surjective derivative at every point and has no weight); the tangential area formula for Lipschitz maps on countably `(n−1)`-rectifiable sets; graph surface measure `√(1 + ‖Dφ‖²)` for locally Lipschitz graphs over open sets.
+- G4: the pointwise mollification estimate `|∇(u ∗ ρ_ε)| ≤ |Du| ∗ ρ_ε` as measures (Tau Ceti's `ContDiffBump.totalVariationOn_normed_convolution_le` is its integrated form on open sets).
+- G5: De Giorgi's theorem `|Dχ_U| = μHE[n−1] ⌊ ∂*U` with blow-up to the half-space `{⟨y, ν_U(x)⟩ < 0}` at `μHE[n−1]`-a.e. `x ∈ ∂*U`, so that such points have density `1/2`; the essential boundary differs from the reduced boundary by a `μHE[n−1]`-null set; the converse criterion that a measurable set whose essential boundary has locally finite `μHE[n−1]` measure has locally finite perimeter.
+- G6: `|Dχ_U| = μHE[n−1] ⌊ ∂U` for bounded Lipschitz domains.
 
 ### From TauCetiRoadmap.Isoperimetry
 
-- I4: the finite-perimeter slicing theorem along lines. For `U` of locally finite perimeter in `E`, `n ≥ 2`, and a unit vector `e`, for `volume`-a.e. `z ∈ e^⊥` the section `U_z = {t : z + te ∈ U}` has locally finite perimeter in `ℝ`, its reduced boundary is `{t : z + te ∈ ∂*U}`, and `⟨ν_U(z + te), e⟩ ≠ 0` at each such point. The measure-preserving identification of `e^⊥ × ℝ` with `E` comes with it. Nothing about Gaussian weights is assumed.
-
-### From TauCetiRoadmap.StandardDistributions
-
-- Layer 7.2: for a law on `ℝ` with continuous distribution function `F`, `F(Q(u)) = u` for `0 < u < 1`, and strict increase of `F` on its support interval makes `Q(u)` the unique solution there. For `gaussianReal 0 1` this makes `Φ⁻¹` the two-sided inverse of `Φ` on `(0, 1)`.
+- I4: the finite-perimeter slicing theorem along lines. For `U` of locally finite perimeter in `E`, `n ≥ 2`, and a unit vector `e`, for `volume`-a.e. `z ∈ e^⊥` the section `U_z = {t : z + te ∈ U}` has locally finite perimeter in `ℝ`, its reduced boundary is `{t : z + te ∈ ∂*U}`, and `⟨ν_U(z + te), e⟩ ≠ 0` at each such point. The measure-preserving identification of `e^⊥ × ℝ` with `E` comes with it. Nothing about Gaussian weights is assumed. Tau Ceti's `TauCeti.lintegral_perimeter_lineSection_le` is only the integrated inequality for sets of finite volume.
 
 No supplier contract is missing: every input above is a stated target of its roadmap.
 
 ## How to read the build
 
-Layer 1 fixes the one-dimensional Gaussian functions and the product structure of `γ`. Layer 2 builds weighted perimeter for a general positive `C¹` density on top of GeometricMeasureTheory; the Gaussian weight appears only in the explicit perimeters of §2.3, the translation formula of §2.5 and the invariances of §2.7. Layer 3 builds clusters and the existence theorem for every probability density. Layer 4, which needs only Layers 1–3 and the weighted Gauss–Green formula, constructs the model simplicial clusters and their profile; it does not depend on any isoperimetric inequality. Layers 5–7 prove the Gaussian isoperimetric theorem with equality: the one-dimensional case, then Ehrhard symmetrisation of sets of finite Gaussian perimeter, then the existence-and-symmetrisation argument of Cianchi–Fusco–Maggi–Pratelli. Layer 8 derives the integrated, functional and concentration forms from Layer 7. Layer 9 develops the closed-set Gaussian symmetrisation of Ehrhard and proves Ehrhard's inequality for convex sets; it uses Layer 8's enlargement inequality only on the line. Layer 1, the definitions of Layers 2–4 and Layer 5 do not use GeometricMeasureTheory G5–G6; every other section lists its inputs in its *Needs:* line.
+Layer 1 fixes the one-dimensional Gaussian functions and the product structure of `γ`. Layer 2 builds weighted perimeter for a general positive `C¹` density on top of Tau Ceti's Euclidean variation, perimeter and variation measure and GeometricMeasureTheory's De Giorgi theorem; the Gaussian weight appears only in the explicit perimeters of §2.3, the translation formula of §2.5 and the invariances of §2.7. Layer 3 builds clusters and the existence theorem for every probability density. Layer 4, which needs only Layers 1–3 and the weighted Gauss–Green formula, constructs the model simplicial clusters and their profile; it does not depend on any isoperimetric inequality. Layers 5–7 prove the Gaussian isoperimetric theorem with equality: the one-dimensional case, then Ehrhard symmetrisation of sets of finite Gaussian perimeter, then the existence-and-symmetrisation argument of Cianchi–Fusco–Maggi–Pratelli. Layer 8 derives the integrated, functional and concentration forms from Layer 7. Layer 9 develops the closed-set Gaussian symmetrisation of Ehrhard and proves Ehrhard's inequality for convex sets; it uses Layer 8's enlargement inequality only on the line. Layer 1, the definitions of Layers 2–4 and Layer 5 do not use GeometricMeasureTheory G5–G6; every other section lists its inputs in its *Needs:* line.
 
 ## Layer 1: the standard Gaussian on the line and on Euclidean spaces
 
@@ -86,17 +100,17 @@ Layer 1 fixes the one-dimensional Gaussian functions and the product structure o
 
 Define the Gaussian isoperimetric function `I : ℝ → ℝ` by `I(v) = φ(Φ⁻¹(v))` for `0 < v < 1` and `I(v) = 0` otherwise, where `Φ⁻¹(v)` is the quantile of `gaussianReal 0 1` at level `v` (MilmanNeeman2022 line 182–185; Ledoux1999 line 214–217; CianchiFuscoMaggiPratelli2011 line 55–57 in their normalization). It is the perimeter of a half-space of Gaussian measure `v` (§2.3) and the right-hand side of every isoperimetric inequality below.
 
-- For every real `s`, `I(Φ(s)) = φ(s)`; for `0 < v < 1`, `Φ(Φ⁻¹(v)) = v`, and for every real `s`, `Φ⁻¹(Φ(s)) = s`.
+- For every real `s`, `I(Φ(s)) = φ(s)`.
 - `I(1 − v) = I(v)` for every `v`.
 - `I` is continuous on `[0, 1]`, strictly positive on `(0, 1)`, zero at `0` and `1`, and attains its maximum `φ(0) = (2π)^{−1/2}` only at `1/2`.
 - `I` is `C^∞` on `(0, 1)` with `I′(v) = −Φ⁻¹(v)` and `I″(v) = −1/I(v)`; hence `I` is strictly concave on `[0, 1]` and locally Lipschitz on `(0, 1)` (MilmanNeeman2022 equation (1.1), line 186–187).
 
-A route: `Φ` is a continuous strictly increasing bijection of `ℝ` onto `(0, 1)` by the error-function formula, so the quantile is its two-sided inverse on `(0, 1)`; differentiate the inverse and use `φ′(t) = −t φ(t)`. *Needs:* Mathlib `ProbabilityTheory.gaussianPDFReal`, `ProbabilityTheory.cdf`; Tau Ceti `TauCeti.Probability.cdf_gaussianReal_zero_one`, `TauCeti.Real.strictMono_erf`, `TauCeti.Real.continuous_erf`, `MeasureTheory.Measure.quantile`; StandardDistributions Layer 7.2.
+A route: `Φ` is continuous by the error-function formula and strictly increasing with values in `(0, 1)`, so `MeasureTheory.Measure.cdf_quantile` and `MeasureTheory.Measure.quantile_cdf`, applied to `gaussianReal 0 1`, make the quantile the two-sided inverse of `Φ` on `(0, 1)` (`Φ(Φ⁻¹(v)) = v` for `0 < v < 1`, `Φ⁻¹(Φ(s)) = s` for real `s`), which gives `I(Φ(s)) = φ(s)`; differentiate the inverse and use `φ′(t) = −t φ(t)`. *Needs:* Mathlib `ProbabilityTheory.gaussianPDFReal`, `ProbabilityTheory.cdf`; Tau Ceti `TauCeti.Probability.cdf_gaussianReal_zero_one`, `TauCeti.Real.continuous_erf`, `TauCeti.Probability.strictMono_cdf_gaussianReal`, `TauCeti.Probability.cdf_gaussianReal_pos`, `TauCeti.Probability.cdf_gaussianReal_lt_one`, `MeasureTheory.Measure.quantile`, `MeasureTheory.Measure.cdf_quantile`, `MeasureTheory.Measure.quantile_cdf`.
 
 **Checks.**
 
 - `I(1/2) = φ(0) = 0.398942`, `I(1 − Φ(1)) = φ(1) = 0.241971` and `I(1/3) = I(2/3) = 0.363600`, with `Φ⁻¹(1/3) = −0.430727`.
-- At the endpoints `I(0) = I(1) = 0`; applying `φ` to the quantile's junk value `0` at level `0` would give `0.398942` instead, so the separate definition at `0` and `1` is forced.
+- At the endpoints `I(0) = I(1) = 0`; applying `φ` to the quantile of `gaussianReal 0 1` at level `0` or `1`, which is `0` at both, would give `0.398942` instead, so the separate definition at `0` and `1` is forced.
 - The second difference of `I` at `0.3` is `−2.876104`, equal to `−1/I(0.3)`, and `I′(0.3) = 0.524401 = −Φ⁻¹(0.3)`. The profile in the other normalization, `√(2π) I`, satisfies `(√(2π) I)″ = −2π/(√(2π) I)`, so the differential equation pins the normalization.
 
 ### 1.2 Gaussian tails
@@ -108,15 +122,15 @@ Prove that `1 − Φ(r) < φ(r)/r` for every `r > 0` (CianchiFuscoMaggiPratelli2
 - At `r = 1`: `1 − Φ(1) = 0.158655`, `φ(1) = 0.241971`, `½ e^{−1/2} = 0.303265`. At `r = 2`: `0.022750` against `½ e^{−2} = 0.067668`.
 - At `r = 0` both sides of the second bound are `1/2`, so a constant `1/4` in place of `1/2` fails; the bound `e^{−r²/2}` without the factor `1/2` holds but is not the one stated.
 
-### 1.3 Orthogonal splitting and the intrinsic density
+### 1.3 Orthogonal splitting
 
-For a subspace `F ⊆ E`, write `γ_F = stdGaussian F`. Prove that the addition map `F × F^⊥ → E` carries `γ_F ⊗ γ_{F^⊥}` to `γ_E`; that the orthogonal projection onto `F` carries `γ_E` to `γ_F`; that `γ_E({x : ⟨x, ν⟩ < s}) = Φ(s)` for every unit vector `ν` and real `s`; and that `γ_E = e^{−W} · volume` with `W(x) = ‖x‖²/2 + (n/2) log(2π)` (MilmanNeeman2022 line 481–483 and equation (2.1), line 490–497; Ledoux1993 line 251–252). A route: choose an orthonormal basis of `E` adapted to `F ⊕ F^⊥`, use the orthonormal-basis description of `γ_E`, and split the product of normal laws over the corresponding partition of the index set; transport the Euclidean density along the isometry `E ≃ EuclideanSpace ℝ (Fin n)` of an orthonormal basis, which preserves both `γ` and `volume`. *Needs:* Mathlib `ProbabilityTheory.stdGaussian_eq_map_pi_orthonormalBasis`, `ProbabilityTheory.stdGaussian_map`, `MeasureTheory.measurePreserving_sumPiEquivProdPi`, `Submodule.measurePreserving_measurableEquivProd`; Tau Ceti `TauCeti.Probability.stdGaussian_eq_withDensity`.
+For a subspace `F ⊆ E`, write `γ_F = stdGaussian F`. Prove that the addition map `F × F^⊥ → E`, `(y, z) ↦ y + z`, carries the product measure `γ_F ⊗ γ_{F^⊥}` to `γ_E`, and that `γ_E({x : ⟨x, ν⟩ < s}) = Φ(s)` for every unit vector `ν` and real `s` (MilmanNeeman2022 line 481–483 and equation (2.1), line 490–497; Ledoux1993 line 251–252). The law of the projection onto `F` alone, the joint law of the projections onto finitely many orthogonal subspaces, and the density `γ_E = e^{−W} · volume` are Tau Ceti's and are used as they stand; the first statement differs from the joint-projection law in being the binary product on `F × F^⊥` pushed forward by addition, which is the form that Fubini over `F^⊥` and the cylinders of §2.7 use. A route: `x ↦ (P_F x, P_{F^⊥} x)` is the inverse of the addition map, and its law is the binary product by `TauCeti.Probability.map_orthogonalProjectionOnto_stdGaussian_pi` for the two-member family `(F, F^⊥)`, reindexed from `Measure.pi` over a two-element type to `Measure.prod`; for the half-space, project onto `ℝν` by `Submodule.map_orthogonalProjectionOnto_stdGaussian` and write `stdGaussian (ℝν)` as the image of `gaussianReal 0 1` under `t ↦ tν` by `ProbabilityTheory.stdGaussian_eq_map_pi_orthonormalBasis` for the one-element orthonormal basis `(ν)`, so that `⟨x, ν⟩` has law `gaussianReal 0 1` under `γ_E`. *Needs:* Tau Ceti `TauCeti.Probability.map_orthogonalProjectionOnto_stdGaussian_pi`, `Submodule.map_orthogonalProjectionOnto_stdGaussian`; Mathlib `ProbabilityTheory.stdGaussian_eq_map_pi_orthonormalBasis`.
 
 **Checks.**
 
 - In `ℝ²` with `F = ℝ (e_1 + e_2)/√2`, the coordinate `(x_1 + x_2)/√2` has law `gaussianReal 0 1`, so `γ({x_1 + x_2 < √2}) = Φ(1) = 0.841345`.
-- On `E^{(q−1)}`, `√(q/(q−1)) x_i` and `(x_i − x_j)/√2` (`i ≠ j`) have law `gaussianReal 0 1`. For `q = 3` this gives `γ({x_i ≥ 1}) = 1 − Φ(√1.5) = 0.110336`; the reciprocal factor `√((q−1)/q)` would give `0.207108`.
-- `F = {0}` and `F = E` give the trivial identities `γ_E = δ_0 ⊗ γ_E` and `γ_E ⊗ δ_0`. The density at the origin of `ℝ²` is `(2π)^{−1} = 0.159155`; omitting the factor `(2π)^{−n/2}` gives total mass `2π`.
+- For `q ≥ 2`, on `E^{(q−1)}`, `√(q/(q−1)) x_i` and `(x_i − x_j)/√2` (`i ≠ j`) have law `gaussianReal 0 1`, because the projection of `e_i` to `E^{(q−1)}` has squared norm `(q − 1)/q` and `e_i − e_j` has norm `√2`. For `q = 3` this gives `γ({x_i ≥ 1}) = 1 − Φ(√1.5) = 0.110336`; the reciprocal factor `√((q−1)/q)` would give `0.207108`. At `q = 1`, `E^{(0)} = {0}` and `x_1 = 0` has variance `0`, not `1`, and the factor `q/(q − 1)` divides by zero: the statement is not made there.
+- `F = {0}` and `F = E` give the trivial identities `γ_E = δ_0 ⊗ γ_E` and `γ_E ⊗ δ_0` under the identifications `{0} × E ≅ E ≅ E × {0}`. By Tau Ceti's density theorem the density at the origin of `ℝ²` is `(2π)^{−1} = 0.159155`; omitting the factor `(2π)^{−n/2}` gives total mass `2π`.
 
 ### Examples
 
@@ -124,7 +138,7 @@ The half-space `{x_1 < 0}` in any `E` has measure `1/2`, and the half-space `{x_
 
 ### Dependencies
 
-Mathlib Gaussian laws and product measures; Tau Ceti's Gaussian density, error function and quantile; StandardDistributions Layer 7.2.
+Mathlib Gaussian laws and product measures; Tau Ceti's Gaussian density, projection laws, error function, quantile and its inverse laws.
 
 ## Layer 2: weighted variation and perimeter
 
@@ -137,20 +151,20 @@ For an open set `Ω ⊆ E` and `u ∈ L¹_loc(Ω)`, define the weighted variatio
 - Density-bounded form: `V_μ(u; Ω)` equals the supremum of `∫_Ω u div Y dx` over `C¹` fields `Y` compactly supported in `Ω` with `‖Y‖ ≤ e^{−W}` pointwise, and also over smooth such fields.
 - `V_μ(u; Ω)` depends only on the class of `u` up to null sets; `P_μ(U; Ω) = P_μ(E ∖ U; Ω)`; `P_μ(∅; Ω) = P_μ(E; Ω) = 0`.
 - If `Ω ⊆ Ω′` then `V_μ(u; Ω) ≤ V_μ(u; Ω′)`; `V_μ(u + u′; Ω) ≤ V_μ(u; Ω) + V_μ(u′; Ω)` and `V_μ(c u; Ω) = |c| V_μ(u; Ω)` for real `c`.
-- For a real constant `c`, the weight `W + c` multiplies `V_μ` by `e^{−c}`; the weight `0` gives the Euclidean variation and perimeter of GeometricMeasureTheory G3.
-- If `Ω′` is open with compact closure in `Ω`, then `(min_{cl Ω′} e^{−W}) |Du|(Ω′) ≤ V_μ(u; Ω′) ≤ (max_{cl Ω′} e^{−W}) |Du|(Ω′)`, with `|Du|(Ω′)` the Euclidean variation of G3; in particular `V_μ(u; Ω) < ∞` implies `u ∈ BV_loc(Ω)`.
+- For a real constant `c`, the weight `W + c` multiplies `V_μ` by `e^{−c}`; the weight `0`, for which `μ = volume`, gives Tau Ceti's Euclidean variation `TauCeti.totalVariationOn volume Ω u` and perimeter `TauCeti.perimeter volume Ω U`.
+- If `Ω′` is open with compact closure in `Ω`, then `(min_{cl Ω′} e^{−W}) |Du|(Ω′) ≤ V_μ(u; Ω′) ≤ (max_{cl Ω′} e^{−W}) |Du|(Ω′)`, with `|Du|(Ω′) = TauCeti.totalVariationOn volume Ω′ u`; in particular `V_μ(u; Ω) < ∞` implies `u ∈ BV_loc(Ω)`.
 
-A route for the density-bounded form: `div(e^{−W} X) = e^{−W} div_μ X`, and mollified density-bounded fields multiplied by `1 − δ` stay density-bounded on a compact support. *Needs:* Conventions; GeometricMeasureTheory G3 for the Euclidean variation; GeometricMeasureTheory G4 mollification.
+A route for the density-bounded form: `div(e^{−W} X) = e^{−W} div_μ X`, and density-bounded `C¹` fields convolved with a smooth bump and multiplied by `1 − δ` stay density-bounded on a compact support, by uniform continuity of `e^{−W}` there. *Needs:* Conventions; Tau Ceti `TauCeti.totalVariationOn`, `TauCeti.perimeter`; Mathlib `ContDiffBump`.
 
 **Checks.**
 
 - For the weight `0` on `ℝ`, `P((0, ∞)) = 1` and `P((0, 1)) = 2`; on `ℝ²` a half-plane has Euclidean perimeter `∞`, while its Gaussian perimeter is finite (§2.3).
 - For `γ` on `ℝ²`, `P_γ(ball(0, 1)) = e^{−1/2} = 0.606531`, and for the half-plane `{x_1 > 1}`, `0.241971` (§2.3).
-- The plausible wrong definition `sup ∫_U div X dμ`, without the term `−⟨∇W, X⟩`, assigns to `U = ℝ` under `γ` the value `sup ∫ t X(t) dγ = ∫ |t| dγ = 0.797885` instead of `0`, and is not complement invariant.
+- The plausible wrong definition `sup ∫_U div X dμ`, without the term `−⟨∇W, X⟩`, is Tau Ceti's `TauCeti.perimeter μ Ω U` with the measure `μ` in place of `volume`. It assigns to `U = ℝ` under `γ` the value `sup ∫ t X(t) dγ = ∫ |t| dγ = 0.797885` instead of `0`, and is not complement invariant; Tau Ceti's complement and whole-space laws for `TauCeti.perimeter` assume an additive Haar measure, which `γ` is not.
 
 ### 2.2 Weighted variation is the weighted variation measure
 
-Prove that for `u ∈ BV_loc(Ω)` and every open `Ω′ ⊆ Ω`, `V_μ(u; Ω′) = ∫_{Ω′} e^{−W} d|Du|`; so `V_μ(u; ·)` extends to the Borel measure `e^{−W} |Du|` on `Ω`, which defines `V_μ(u; B)` and `P_μ(U; B)` for Borel `B ⊆ Ω`. Prove that if `U` is Lebesgue measurable and `P_μ(U; Ω) < ∞`, or more generally `U` has locally finite perimeter in `Ω`, then `P_μ(U; B) = μ^{n−1}(∂*U ∩ B) = μ^{n−1}(∂^M U ∩ B)` for every Borel `B ⊆ Ω` (MilmanNeeman2022 line 755–757; CianchiFuscoMaggiPratelli2011 equations (2.3)–(2.5), line 174–208; Maggi2012 Theorem 15.9). A route: the upper bound is the polar decomposition `Du = σ_u |Du|`; the lower bound approximates `−e^{−W} σ_u` in `L¹(|Du|)` on compacts by smooth density-bounded fields, as in the Euclidean variational characterization; the boundary formulas are De Giorgi's theorem and the comparison of essential and reduced boundary. *Needs:* §2.1; GeometricMeasureTheory G3 (polar decomposition and variational characterization), G4 (mollification), G5 (De Giorgi's theorem, essential boundary).
+Prove that for `u ∈ BV_loc(Ω)`, that is, `u` locally integrable on `Ω` with locally finite Euclidean variation, and every open `Ω′ ⊆ Ω`, `V_μ(u; Ω′) = ∫_{Ω′} e^{−W} d|Du|`, where `|Du| = TauCeti.variationMeasure volume Ω u`; so `V_μ(u; ·)` extends to the Borel measure `e^{−W} |Du|` on `Ω`, which defines `V_μ(u; B)` and `P_μ(U; B)` for Borel `B ⊆ Ω`. Prove that if `U` is Lebesgue measurable and `P_μ(U; Ω) < ∞`, or more generally `U` has locally finite perimeter in `Ω`, then `P_μ(U; B) = μ^{n−1}(∂*U ∩ B) = μ^{n−1}(∂^M U ∩ B)` for every Borel `B ⊆ Ω` (MilmanNeeman2022 line 755–757; CianchiFuscoMaggiPratelli2011 equations (2.3)–(2.5), line 174–208; Maggi2012 Theorem 15.9). A route: the upper bound is the polar decomposition `Du = σ_u |Du|` with `‖σ_u‖ = 1` `|Du|`-a.e.; the lower bound approximates `−e^{−W} σ_u` in `L¹(|Du|)` on compacts by smooth fields of norm at most `e^{−W}`, using the regularity of `|Du|`; the boundary formulas are De Giorgi's theorem, with `ν_U = TauCeti.outerNormal`, and the comparison of essential and reduced boundary. *Needs:* §2.1; Tau Ceti `TauCeti.variationMeasure`, `TauCeti.variationMeasure_preimage_coe`, `TauCeti.polarDensity`, `TauCeti.integral_divergenceCLM_mul_eq_neg_integral_inner_polarDensity`, `TauCeti.ae_norm_polarDensity_eq_one`, `TauCeti.reducedBoundary`, `TauCeti.outerNormal`, `TauCeti.essentialBoundary`; GeometricMeasureTheory G5 (De Giorgi's theorem, essential versus reduced boundary).
 
 **Checks.**
 
@@ -159,7 +173,7 @@ Prove that for `u ∈ BV_loc(Ω)` and every open `Ω′ ⊆ Ω`, `V_μ(u; Ω′)
 
 ### 2.3 Frontier bound, convex sets and explicit perimeters
 
-Prove that for every Lebesgue-measurable `U` and open `Ω`, `P_μ(U; Ω) ≤ μ^{n−1}(∂^M U ∩ Ω) ≤ μ^{n−1}(frontier U ∩ Ω)` in `[0, ∞]`. Prove that for every open convex set `C`, bounded or not, and for every bounded Lipschitz domain `C`, `P_μ(C; Ω) = μ^{n−1}(∂C ∩ Ω)`. For the Gaussian weight prove `P_γ({x : ⟨x, ν⟩ < s}) = φ(s)` for every unit `ν` and real `s`, and `P_γ(ball(0, r)) = (2π)^{−n/2} e^{−r²/2} n ω_n r^{n−1}` for `r > 0`, where `ω_n = volume(ball(0, 1))` (MilmanNeeman2022 line 32–33; CianchiFuscoMaggiPratelli2011 line 48–56 and 182–184). A route: if `U` does not have locally finite perimeter in `Ω`, the boundary criterion gives a compact `K ⊆ Ω` with `μHE[n−1](∂^M U ∩ K) = ∞`, and `e^{−W}` is bounded below on `K`; otherwise apply §2.2 and `∂^M U ⊆ frontier U`. For convex `C`, the intersection with any ball is a bounded convex Lipschitz domain and locality transfers its boundary measure; on the hyperplane `{⟨x, ν⟩ = s}`, `μHE[n−1]` is the image of `volume` on `ν^⊥` and `e^{−W}(sν + y) = φ(s) e^{−W_{ν^⊥}}(y)` by §1.3. *Needs:* §1.3, §2.2; GeometricMeasureTheory G5 (boundary criterion, locality), G6 (Lipschitz domains), G2 (sphere measure); Mathlib `AffineSubspace.euclideanHausdorffMeasure_coe_image`, `EuclideanGeometry.measurePreserving_vaddConst`.
+Prove that for every Lebesgue-measurable `U` and open `Ω`, `P_μ(U; Ω) ≤ μ^{n−1}(∂^M U ∩ Ω) ≤ μ^{n−1}(frontier U ∩ Ω)` in `[0, ∞]`. Prove that for every open convex set `C`, bounded or not, and for every bounded Lipschitz domain `C`, `P_μ(C; Ω) = μ^{n−1}(∂C ∩ Ω)`. For the Gaussian weight prove `P_γ({x : ⟨x, ν⟩ < s}) = φ(s)` for every unit `ν` and real `s`, and `P_γ(ball(0, r)) = (2π)^{−n/2} e^{−r²/2} n ω_n r^{n−1}` for `r > 0`, where `ω_n = volume(ball(0, 1))` (MilmanNeeman2022 line 32–33; CianchiFuscoMaggiPratelli2011 line 48–56 and 182–184). A route: if `U` does not have locally finite perimeter in `Ω`, the boundary criterion gives a compact `K ⊆ Ω` with `μHE[n−1](∂^M U ∩ K) = ∞`, and `e^{−W}` is bounded below on `K`; otherwise apply §2.2 and `∂^M U ⊆ frontier U`. For convex `C`, the intersection with any ball is a bounded convex Lipschitz domain and locality transfers its boundary measure; on the hyperplane `{⟨x, ν⟩ = s}`, `μHE[n−1]` is the image of `volume` on `ν^⊥` and `e^{−W}(sν + y) = φ(s) e^{−W_{ν^⊥}}(y)` by the explicit density of `γ`. *Needs:* §2.2; Tau Ceti `TauCeti.essentialBoundary_subset_frontier`, `TauCeti.perimeter_congr_ae`, `TauCeti.euclideanHausdorffMeasure_sphere`, `TauCeti.Probability.stdGaussian_eq_withDensity_norm`; GeometricMeasureTheory G5 (boundary criterion), G6 (Lipschitz domains); Mathlib `AffineSubspace.euclideanHausdorffMeasure_coe_image`, `EuclideanGeometry.measurePreserving_vaddConst`.
 
 **Checks.**
 
@@ -170,7 +184,7 @@ Prove that for every Lebesgue-measurable `U` and open `Ω`, `P_μ(U; Ω) ≤ μ^
 
 ### 2.4 Lower semicontinuity and compactness
 
-Prove that `u_k → u` in `L¹_loc(Ω)` implies `V_μ(u; Ω) ≤ liminf V_μ(u_k; Ω)`. Prove that if `μ(E) < ∞`, every sequence of Lebesgue-measurable sets `U_k` with `sup_k P_μ(U_k) < ∞` has a subsequence whose indicators converge in `L¹(μ)` to the indicator of a Lebesgue-measurable set `U`, and then `P_μ(U) ≤ liminf P_μ(U_k)` (CianchiFuscoMaggiPratelli2011 line 209–213; MilmanNeeman2022 line 939–947; Maggi2012 Proposition 12.15 and Theorem 12.26). A route: each functional `u ↦ ∫ u div_μ X dμ` is continuous for `L¹_loc` convergence, so their supremum is lower semicontinuous. For compactness, §2.1 bounds the Euclidean perimeters in every ball, G4 gives `L¹_loc` convergence of a diagonal subsequence, and `∫_{‖x‖ > R} |χ_{U_k} − χ_U| dμ ≤ μ({‖x‖ > R})` upgrades it to `L¹(μ)`. *Needs:* §2.1; GeometricMeasureTheory G4 (compactness).
+Prove that `u_k → u` in `L¹_loc(Ω)` implies `V_μ(u; Ω) ≤ liminf V_μ(u_k; Ω)`. Prove that if `μ(E) < ∞`, every sequence of Lebesgue-measurable sets `U_k` with `sup_k P_μ(U_k) < ∞` has a subsequence whose indicators converge in `L¹(μ)` to the indicator of a Lebesgue-measurable set `U`, and then `P_μ(U) ≤ liminf P_μ(U_k)` (CianchiFuscoMaggiPratelli2011 line 209–213; MilmanNeeman2022 line 939–947; Maggi2012 Proposition 12.15 and Theorem 12.26). A route: each functional `u ↦ ∫ u div_μ X dμ` is continuous for `L¹_loc` convergence, so their supremum is lower semicontinuous. For compactness, §2.1 bounds the Euclidean perimeters in every ball, `TauCeti.exists_subseq_tendsto_measure_symmDiff_inter_of_perimeter_le` gives a subsequence converging locally in measure, that is, with indicators converging in `L¹_loc`, and `∫_{‖x‖ > R} |χ_{U_k} − χ_U| dμ ≤ μ({‖x‖ > R})` upgrades it to `L¹(μ)`. *Needs:* §2.1; Tau Ceti `TauCeti.exists_subseq_tendsto_measure_symmDiff_inter_of_perimeter_le`.
 
 **Checks.**
 
@@ -180,7 +194,7 @@ Prove that `u_k → u` in `L¹_loc(Ω)` implies `V_μ(u; Ω) ≤ liminf V_μ(u_k
 
 ### 2.5 Weighted Gauss–Green formula
 
-Prove that for `U` of locally finite perimeter and a compactly supported `C¹` field `X`, `∫_U div_μ X dμ = ∫_{∂*U} ⟨X, ν_U⟩ dμ^{n−1}`. Prove the same identity when `μ(E) < ∞`, `P_μ(U) < ∞`, `X` is `C¹`, bounded with bounded derivative, and `⟨∇W, X⟩ ∈ L¹(μ)`. Deduce for the Gaussian weight that if `P_γ(U) < ∞` and `w ∈ E`, then `t ↦ γ(U + t w)` is differentiable at `0` with derivative `∫_{∂*U} ⟨w, ν_U⟩ dγ^{n−1}` (MilmanNeeman2022 equations (3.1) and (3.3), line 705–708 and 758–761; Maggi2012 Theorem 15.9). A route: apply G6 to `e^{−W} X`; for bounded fields, multiply by `χ(x/R)` for a cutoff `χ` and pass to the limit by dominated convergence on both sides; for the translation derivative, differentiate `∫_U e^{−W(x + tw)} dx` under the integral and apply the bounded-field identity to the constant field `w`, whose Gaussian divergence `−⟨x, w⟩` is `γ`-integrable. *Needs:* §1.3, §2.2; GeometricMeasureTheory G6.
+Prove that for `U` of locally finite perimeter and a compactly supported `C¹` field `X`, `∫_U div_μ X dμ = ∫_{∂*U} ⟨X, ν_U⟩ dμ^{n−1}`. Prove the same identity when `μ(E) < ∞`, `P_μ(U) < ∞`, `X` is `C¹`, bounded with bounded derivative, and `⟨∇W, X⟩ ∈ L¹(μ)`. Deduce for the Gaussian weight that if `P_γ(U) < ∞` and `w ∈ E`, then `t ↦ γ(U + t w)` is differentiable at `0` with derivative `∫_{∂*U} ⟨w, ν_U⟩ dγ^{n−1}` (MilmanNeeman2022 equations (3.1) and (3.3), line 705–708 and 758–761; Maggi2012 Theorem 15.9). A route: apply Tau Ceti's Gauss–Green formula `TauCeti.integral_trace_fderiv_mul_indicator_eq_integral_inner_outerNormal` to the compactly supported `C¹` field `e^{−W} X` and identify the perimeter measure `|Dχ_U|` with `μHE[n−1] ⌊ ∂*U` by De Giorgi's theorem; for bounded fields, multiply by `χ(x/R)` for a cutoff `χ` and pass to the limit by dominated convergence on both sides; for the translation derivative, differentiate `∫_U e^{−W(x + tw)} dx` under the integral and apply the bounded-field identity to the constant field `w`, whose Gaussian divergence `−⟨x, w⟩` is `γ`-integrable. *Needs:* §1.3, §2.2; Tau Ceti `TauCeti.integral_trace_fderiv_mul_indicator_eq_integral_inner_outerNormal`, `TauCeti.Probability.stdGaussian_eq_withDensity_norm`; GeometricMeasureTheory G5 (De Giorgi's theorem).
 
 **Checks.**
 
@@ -190,7 +204,7 @@ Prove that for `U` of locally finite perimeter and a compactly supported `C¹` f
 
 ### 2.6 Weighted coarea formulas
 
-Prove: (a) for Lipschitz `f : E → ℝ` and Borel `g : E → [0, ∞]`, `∫ g ‖∇f‖ dμ = ∫_ℝ ∫_{f⁻¹(t)} g dμ^{n−1} dt`; (b) for every `u ∈ L¹_loc(Ω)`, `V_μ(u; Ω) = ∫_ℝ P_μ({u > t}; Ω) dt` in `[0, ∞]`, and for `u ∈ BV_loc(Ω)` the identity holds with `Ω` replaced by any Borel subset (Maggi2012 Sections 13.1 and 18.1; GeometricMeasureTheory G2 and G4 state the unweighted forms). A route: (a) is G2's coarea formula with weight `g e^{−W}`; (b) integrates `e^{−W}` against G4's measure identity, and if `u ∉ BV_loc(Ω)` both sides are infinite by the local comparison of §2.1. *Needs:* §2.1, §2.2; GeometricMeasureTheory G2 (coarea), G4 (scalar BV coarea).
+Prove: (a) for Lipschitz `f : E → ℝ` and Borel `g : E → [0, ∞]`, `∫ g ‖∇f‖ dμ = ∫_ℝ ∫_{f⁻¹(t)} g dμ^{n−1} dt`; (b) for every `u ∈ L¹_loc(Ω)`, `V_μ(u; Ω) = ∫_ℝ P_μ({u > t}; Ω) dt` in `[0, ∞]`, and for `u ∈ BV_loc(Ω)` the identity holds with `Ω` replaced by any Borel subset (Maggi2012 Sections 13.1 and 18.1; GeometricMeasureTheory G2 states the unweighted Lipschitz form and Tau Ceti proves the unweighted BV form). A route: (a) is G2's coarea formula with weight `g e^{−W}`; (b) integrates `e^{−W}` against the identity `∫ f d|Du| = ∫_ℝ ∫ f d|Dχ_{u > t}| dt` of `TauCeti.lintegral_variationMeasure_eq_lintegral_lintegral` and uses §2.2 on both sides, and if `u ∉ BV_loc(Ω)` both sides are infinite by the local comparison of §2.1 and `TauCeti.totalVariationOn_eq_lintegral_perimeter`. *Needs:* §2.1, §2.2; GeometricMeasureTheory G2 (coarea); Tau Ceti `TauCeti.lintegral_variationMeasure_eq_lintegral_lintegral`, `TauCeti.totalVariationOn_eq_lintegral_perimeter`, `TauCeti.measurable_perimeter_setOf_lt`.
 
 **Checks.**
 
@@ -214,7 +228,7 @@ A half-space of Gaussian measure `v` has Gaussian perimeter `I(v)` (§2.3 with �
 
 ### Dependencies
 
-Layer 1; GeometricMeasureTheory G2–G6; Mathlib Hausdorff measure on affine subspaces.
+Layer 1; Tau Ceti's Euclidean variation, perimeter, variation measure, polar decomposition, reduced boundary, Gauss–Green formula, compactness, coarea formula, sphere measure and Gaussian density; GeometricMeasureTheory G2, G5 and G6; Mathlib Hausdorff measure on affine subspaces.
 
 ## Layer 3: clusters and their interfaces
 
@@ -224,13 +238,13 @@ The weight `W` is arbitrary in §§3.1–3.2; from §3.3 on, `μ(E) = 1`.
 
 For `q ≥ 2`, a `q`-cluster for `μ` is a `q`-tuple `Ω = (Ω_1, …, Ω_q)` of Lebesgue-measurable cells that are pairwise disjoint, satisfy `μ(E ∖ ⋃_i Ω_i) = 0`, and have `P_μ(Ω_i) < ∞` for each `i`; cells may be empty or disconnected. Its total perimeter is `P_μ(Ω) = ½ Σ_i P_μ(Ω_i)`, and when `μ(E) = 1` its measure vector is `μ(Ω) = (μ(Ω_1), …, μ(Ω_q)) ∈ Δ^{(q−1)}`. Two clusters are equivalent when corresponding cells agree up to null sets (MilmanNeeman2022 line 57–67 and 697–702; Maggi2012 Part IV synopsis, line 716–725).
 
-- Equivalent clusters have the same total perimeter, the same measure vector and the same interfaces (§3.2).
+- Equivalent clusters have the same total perimeter and the same measure vector.
 - Permuting the cells of a cluster gives a cluster with the same total perimeter and permuted measure vector.
-- For `q ≥ 3`, replacing two cells `Ω_i, Ω_j` by `Ω_i ∪ Ω_j` gives a `(q − 1)`-cluster whose total perimeter is at most that of `Ω` (by §3.2 it drops by `A_ij`).
+- For `q ≥ 3`, replacing two cells `Ω_i, Ω_j` by `Ω_i ∪ Ω_j` gives a `(q − 1)`-cluster whose total perimeter is at most that of `Ω`: `χ_{Ω_i ∪ Ω_j} = χ_{Ω_i} + χ_{Ω_j}`, so subadditivity of `V_μ` (§2.1) gives `P_μ(Ω_i ∪ Ω_j) ≤ P_μ(Ω_i) + P_μ(Ω_j) < ∞`. The exact decrement is in §3.2.
 - For `q = 2`, `P_μ(Ω) = P_μ(Ω_1) = P_μ(Ω_2)` (MilmanNeeman2022 line 68–70), by complement invariance and null invariance.
 - A linear isometry of `E` carries `γ`-clusters to `γ`-clusters with the same total perimeter (§2.7).
 
-*Needs:* §2.1, §2.7; §3.2 for the merging bullet.
+*Needs:* §2.1, §2.7.
 
 **Checks.**
 
@@ -240,17 +254,18 @@ For `q ≥ 2`, a `q`-cluster for `μ` is a `q`-tuple `Ω = (Ω_1, …, Ω_q)` of
 
 ### 3.2 The interface decomposition
 
-For a `q`-cluster `Ω` and `i ≠ j`, the interface is `Σ_ij = ∂*Ω_i ∩ ∂*Ω_j` and its weighted area is `A_ij = μ^{n−1}(Σ_ij)`. Prove that for every `S ⊆ {1, …, q}`, `μHE[n−1]`-almost every point of `∂*(⋃_{i ∈ S} Ω_i)` lies in `Σ_ij` for some `i ∈ S`, `j ∉ S`; that `μHE[n−1]`-almost every point of `∂*Ω_i` lies in exactly one `Σ_ij`; that `P_μ(Ω_i) = Σ_{j ≠ i} A_ij`, `P_μ(⋃_{i ∈ S} Ω_i) = Σ_{i ∈ S, j ∉ S} A_ij` and `P_μ(Ω) = Σ_{i<j} A_ij`; and that the closure of `∂*Ω_i` equals the closure of `⋃_{j ≠ i} Σ_ij` (MilmanNeeman2022 equations (3.4)–(3.6), line 769–784; Maggi2012 Exercise 29.7, cited by locator). The closure form replaces the literal set equality `∂*Ω_i = ⋃_{j ≠ i} Σ_ij`, which fails (Checks). A route: by G5, `μHE[n−1]`-almost every point `x` has density `0`, `1/2` or `1` for each cell and lies in `∂*Ω_k` exactly when that density is `1/2`; densities of disjoint cells add and sum to `1`; at a point of `∂*(⋃_S Ω_i)` the density of the union is `1/2`, which forces exactly one `i ∈ S` and exactly one `j ∉ S` of density `1/2`. Three cells of density `1/2` at one point are impossible, which gives uniqueness. For the closures, `|Dχ_{Ω_i}| = μHE[n−1] ⌊ ∂*Ω_i` has support the closure of `∂*Ω_i`, and the two measures agree. *Needs:* §2.2, §3.1; GeometricMeasureTheory G5 (density one-half on the reduced boundary, essential versus reduced boundary).
+For a `q`-cluster `Ω` and `i ≠ j`, the interface is `Σ_ij = ∂*Ω_i ∩ ∂*Ω_j` and its weighted area is `A_ij = μ^{n−1}(Σ_ij)`. Prove that for every `S ⊆ {1, …, q}`, `μHE[n−1]`-almost every point of `∂*(⋃_{i ∈ S} Ω_i)` lies in `Σ_ij` for some `i ∈ S`, `j ∉ S`; that `μHE[n−1]`-almost every point of `∂*Ω_i` lies in exactly one `Σ_ij`; that `P_μ(Ω_i) = Σ_{j ≠ i} A_ij`, `P_μ(⋃_{i ∈ S} Ω_i) = Σ_{i ∈ S, j ∉ S} A_ij` and `P_μ(Ω) = Σ_{i<j} A_ij`; that the closure of `∂*Ω_i` equals the closure of `⋃_{j ≠ i} Σ_ij`; that equivalent clusters have the same interfaces; and that for `q ≥ 3` the `(q − 1)`-cluster of §3.1 obtained by merging `Ω_i` and `Ω_j` has total perimeter exactly `P_μ(Ω) − A_ij` (MilmanNeeman2022 equations (3.4)–(3.6), line 769–784; Maggi2012 Exercise 29.7, cited by locator). The closure form replaces the literal set equality `∂*Ω_i = ⋃_{j ≠ i} Σ_ij`, which fails (Checks). A route: by G5, `μHE[n−1]`-almost every point `x` has density `0`, `1/2` or `1` for each cell and lies in `∂*Ω_k` exactly when that density is `1/2`; densities of disjoint cells add and sum to `1`; at a point of `∂*(⋃_S Ω_i)` the density of the union is `1/2`, which forces exactly one `i ∈ S` and exactly one `j ∉ S` of density `1/2`. Three cells of density `1/2` at one point are impossible, which gives uniqueness. For the closures, `|Dχ_{Ω_i}| = μHE[n−1] ⌊ ∂*Ω_i` has support the closure of `∂*Ω_i`, and the two measures agree. Interfaces of equivalent clusters agree because the reduced boundary depends only on the class of a set up to null sets. For the merged cluster, the interfaces between unmerged cells are the same sets as before, and the interface of the merged cell with an unmerged cell `Ω_k` has area `A_ik + A_jk`, by comparing `P_μ(Ω_k) = Σ_{l ≠ k} A_kl` in the two clusters; so the sum of its interface areas is `Σ_{k<l} A_kl − A_ij`. *Needs:* §2.2, §3.1; Tau Ceti `TauCeti.reducedBoundary_congr_ae`; GeometricMeasureTheory G5 (density one-half on the reduced boundary, essential versus reduced boundary).
 
 **Checks.**
 
 - For `q = 2`, `Σ_12 = ∂*Ω_1 = ∂*Ω_2` up to null sets, `A_12 = P_μ(Ω_1)` and `P_μ(Ω) = A_12`.
 - For the three intervals of §3.1, `Σ_12 = {a}`, `Σ_23 = {b}`, `Σ_13 = ∅`, so `A_12 = φ(a)`, `A_23 = φ(b)`, `A_13 = 0`, and `Σ_{i<j} A_ij = φ(a) + φ(b)` agrees with §3.1.
+- Merging: with `a = 0`, `b = 1`, merging the first two intervals gives the `2`-cluster `((−∞, 0) ∪ (0, 1), (1, ∞))`, equivalent to `((−∞, 1), (1, ∞))`, of total perimeter `φ(1) = 0.241971`, which is `(φ(0) + φ(1)) − A_12 = 0.640913 − 0.398942`; subtracting `A_23 = φ(1)` instead would give `0.398942`, and the merged cluster's interface area with the third cell is `A_13 + A_23 = 0 + 0.241971`.
 - Negative control for the set equality: in `ℝ²` let `Ω_1 = {x_2 < 0}`, `Ω_2 = ⋃_{k ≥ 0} {x : x_2 > 0, 2^{−2k−1} ≤ ‖x‖ < 2^{−2k}}` and `Ω_3 = {x_2 > 0} ∖ Ω_2`. The boundary of each half-annulus has total Gauss–Green vector `0` and length `2^{−2k}(3π/2 + 1)`, so the ratio defining the normal of `Ω_2` at the origin does not tend to a unit vector; the origin lies in `∂*Ω_1` but in neither `∂*Ω_2` nor `∂*Ω_3`. It is a single, `μHE[1]`-null point, consistent with the almost-everywhere statements.
 
 ### 3.3 The interface quadratic form
 
-Prove that if `μ(E) = 1` and `μ(Ω) ∈ int Δ^{(q−1)}`, the graph on `{1, …, q}` with an edge `{i, j}` whenever `A_ij > 0` is connected, and `L_A` is positive definite on `E^{(q−1)}` (MilmanNeeman2022 Lemma 3.4, line 892–905). A route: a component `S` of the graph would give `U = ⋃_{i ∈ S} Ω_i` with `0 < μ(U) < 1` and `P_μ(U) = 0` by §3.2; zero perimeter makes `χ_U` locally of zero variation, hence constant on every ball by the BV Poincaré inequality, hence `U` null or conull. Milman–Neeman use the Gaussian isoperimetric inequality instead; this route holds for every weight. *Needs:* §3.2; GeometricMeasureTheory G4 (BV Poincaré on balls).
+Prove that if `μ(E) = 1` and `μ(Ω) ∈ int Δ^{(q−1)}`, the graph on `{1, …, q}` with an edge `{i, j}` whenever `A_ij > 0` is connected, and `L_A` is positive definite on `E^{(q−1)}` (MilmanNeeman2022 Lemma 3.4, line 892–905). A route: a component `S` of the graph would give `U = ⋃_{i ∈ S} Ω_i` with `0 < μ(U) < 1` and `P_μ(U) = 0` by §3.2; zero perimeter makes `χ_U` locally of zero variation, hence constant on every ball by the BV Poincaré inequality, hence `U` null or conull. Milman–Neeman use the Gaussian isoperimetric inequality instead; this route holds for every weight. *Needs:* §3.2; Tau Ceti `TauCeti.setLIntegral_enorm_sub_setAverage_le_mul_totalVariationOn_of_eq_ball` (BV Poincaré on balls).
 
 **Checks.**
 
@@ -259,18 +274,18 @@ Prove that if `μ(E) = 1` and `μ(Ω) ∈ int Δ^{(q−1)}`, the graph on `{1, �
 
 ### 3.4 Isoperimetric profiles and minimizing clusters
 
-For `μ(E) = 1`, `q ≥ 2` and `v ∈ Δ^{(q−1)}`, define the isoperimetric profile `I_μ^{(q−1)}(v) = inf {P_μ(Ω) : Ω a q-cluster with μ(Ω) = v}`; a cluster is `μ`-minimizing when it attains the profile at its own measure vector. Write `I^{(q−1)}` for `I_γ^{(q−1)}` (MilmanNeeman2022 line 169–170 and 909–910). Set `I^{(0)}(1) = 0`.
+For `μ(E) = 1`, `q ≥ 2` and `v ∈ Δ^{(q−1)}`, define the isoperimetric profile `I_μ^{(q−1)}(v) = inf {P_μ(Ω) : Ω a q-cluster with μ(Ω) = v}`; a cluster is `μ`-minimizing when it attains the profile at its own measure vector. Write `I^{(q−1)}` for `I_γ^{(q−1)}` (MilmanNeeman2022 line 169–170 and 909–910). For every weight with `μ(E) = 1` set `I_μ^{(0)}(1) = 0`, in particular `I^{(0)}(1) = 0`; this is a boundary convention for the padding bullet below with `|J| = 1`, not the infimum over `1`-clusters, which do not exist (§3.1 needs `q ≥ 2`).
 
 - `I_μ^{(q−1)}(v) < ∞` for every `v`: concentric annuli `{r_{i−1} ≤ ‖x‖ < r_i}` with radii chosen by continuity of `r ↦ μ(ball(0, r))` form a cluster with measure vector `v`, and spheres have finite weighted area because `e^{−W}` is continuous.
 - `I_μ^{(q−1)}` is invariant under simultaneous permutation of the coordinates of `v`; at a vertex of the simplex it is `0`.
 - Padding with empty cells: `I_μ^{(q−1)}(v) ≤ I_μ^{(|J|−1)}(v_J)` when `v` vanishes outside `J`, where `v_J` keeps the coordinates in `J`.
 - For `q = 2`, `I_μ^{(1)}(v_1, 1 − v_1) = inf {P_μ(U) : μ(U) = v_1}`.
 
-*Needs:* §2.3, §3.1; GeometricMeasureTheory G2 (sphere measure, for the annuli).
+*Needs:* §2.3, §3.1; Tau Ceti `TauCeti.euclideanHausdorffMeasure_sphere` (for the annuli).
 
 **Checks.**
 
-- At the vertex `(1, 0)`, the cluster `(E, ∅)` shows `I_μ^{(1)}(1, 0) = 0`.
+- At the vertex `(1, 0)`, the cluster `(E, ∅)` shows `I_μ^{(1)}(1, 0) = 0`, which agrees with the padding bound `I_μ^{(1)}(1, 0) ≤ I_μ^{(0)}(1) = 0` for `J = {1}`; a convention `I_μ^{(0)}(1) = ∞`, the infimum over the empty set of `1`-clusters, would make the padding bound vacuous at vertices.
 - For the smooth positive probability density `ρ(x, y) = c (1 + y²) exp(−x²(1 + y²)⁴)` on `ℝ²`, with `c` normalizing, the line `{x = 0}` has infinite weighted length, so the only half-plane `{x < t}` of measure `1/2` has infinite perimeter; balls give a finite-perimeter set of measure `1/2`, and so does the symmetric slab `{|x| < a}` of measure `1/2`, since `a > 0` and a line `{x = t}` with `t ≠ 0` has finite weighted length. Half-planes `{x < t}` alone would not prove finiteness of the profile.
 - For `γ` and `q = 2`, Layer 7 gives `I^{(1)}(1/2, 1/2) = 0.398942`; the ball of measure `0.393469` in `ℝ²` gives the upper bound `I^{(1)}(0.393469, 0.606531) ≤ 0.606531`, consistent with the value `0.384633`.
 
@@ -289,18 +304,18 @@ Under `γ` on `ℝ`, the cluster `((−∞, a), (a, b), (b, ∞))` has interface
 
 ### Dependencies
 
-Layer 2; GeometricMeasureTheory G4–G5.
+Layer 2; Tau Ceti's reduced boundary, BV Poincaré inequality and sphere measure; GeometricMeasureTheory G5.
 
 ## Layer 4: model simplicial clusters and the model profile
 
-From here on `μ = γ`. The cluster number satisfies `2 ≤ q ≤ n + 1` whenever a simplicial cluster in `E` is involved; the canonical model lives in `E^{(q−1)}` for every `q ≥ 1`.
+From here on `μ = γ`. The cluster number satisfies `2 ≤ q ≤ n + 1` whenever a simplicial cluster in `E` is involved; the canonical model lives in `E^{(q−1)}` for every `q ≥ 2`. The one-point space `E^{(0)}` enters only through the boundary convention `I_m^{(0)}(1) = 0` of §4.4.
 
 ### 4.1 The canonical model cluster
 
-On `E^{(q−1)}` with its standard Gaussian `γ_{q−1}` and `γ_{q−1}^{q−2} = e^{−W} μHE[q−2]`, define the model cells `Ω^m_i = {x ∈ E^{(q−1)} : x_i > x_j for all j ≠ i}`, which are the interiors of `{x : max_j x_j = x_i}`; the translated model cluster `x + Ω^m = (x + Ω^m_1, …, x + Ω^m_q)` for `x ∈ E^{(q−1)}`; the model interfaces `Σ^m_ij = {x : x_i = x_j ≥ x_k for all k}`; and the model interface areas `A^m_ij(x) = γ_{q−1}^{q−2}(x + Σ^m_ij)` (MilmanNeeman2022 line 499–505). For `q = 1`, `E^{(0)} = {0}` and the model cluster is `(E^{(0)})`.
+For `q ≥ 2`, on `E^{(q−1)}` with its standard Gaussian `γ_{q−1}` and `γ_{q−1}^{q−2} = e^{−W} μHE[q−2]`, define the model cells `Ω^m_i = {x ∈ E^{(q−1)} : x_i > x_j for all j ≠ i}`, which are the interiors of `{x : max_j x_j = x_i}`; the translated model cluster `x + Ω^m = (x + Ω^m_1, …, x + Ω^m_q)` for `x ∈ E^{(q−1)}`; the model interfaces `Σ^m_ij = {x : x_i = x_j ≥ x_k for all k}`; and the model interface areas `A^m_ij(x) = γ_{q−1}^{q−2}(x + Σ^m_ij)` (MilmanNeeman2022 line 499–505).
 
-- `x + Ω^m` is a `γ_{q−1}`-cluster whose cells are open convex polyhedral cones with apex `x`; its interfaces in the sense of §3.2 are `x + Σ^m_ij` up to `μHE[q−2]`-null sets, with constant normal `n_ij = (e_j − e_i)/√2` pointing from cell `i` to cell `j`.
-- `A^m_ij(x) > 0` for all `i ≠ j` and `x` (when `q ≥ 2`), and `P_γ(x + Ω^m) = Σ_{i<j} A^m_ij(x)`.
+- `x + Ω^m` is a `γ_{q−1}`-cluster whose cells are open convex polyhedral cones with apex `x`; its interfaces in the sense of §3.2 are the closed faces `x + Σ^m_ij` up to `μHE[q−2]`-null sets (the closed faces also contain the lower-dimensional strata where three or more cells meet), with constant normal `n_ij = (e_j − e_i)/√2` pointing from cell `i` to cell `j`.
+- `A^m_ij(x) > 0` for all `i ≠ j` and `x`, and `P_γ(x + Ω^m) = Σ_{i<j} A^m_ij(x)`.
 - Every codimension-two face `F_ijk = {x_i = x_j = x_k ≥ x_l for all l}` lies on exactly the three interfaces `Σ^m_ij, Σ^m_jk, Σ^m_ki`; the outward conormal of `Σ^m_ij` along `F_ijk` within the hyperplane `{x_i = x_j}` is `η_{ij,k} = (2e_k − e_i − e_j)/√6`, and `η_{ij,k} + η_{jk,i} + η_{ki,j} = 0`.
 - Writing `x + Σ^m_ij = ⟨n_ij, x⟩ n_ij + (π_ij x + Σ^m_ij)` with `π_ij` the orthogonal projection onto `n_ij^⊥ ∩ E^{(q−1)}`, `A^m_ij(x) = φ(⟨n_ij, x⟩) γ_{n_ij^⊥}(π_ij x + Σ^m_ij)`.
 
@@ -311,13 +326,15 @@ On `E^{(q−1)}` with its standard Gaussian `γ_{q−1}` and `γ_{q−1}^{q−2}
 - `q = 2`: `E^{(1)} = ℝ u` with `u = (e_1 − e_2)/√2`; for `x = t u`, `x + Ω^m_1 = {s u : s > t}` has measure `Φ(−t)` and `A^m_12(tu) = φ(t)`.
 - `q = 3`, `x = 0`: each `Σ^m_ij` is a ray from the origin, so `A^m_ij(0) = ∫_0^∞ (2π)^{−1} e^{−s²/2} ds = 1/(2√(2π)) = 0.199471` and `P_γ(Ω^m) = 0.598413`; the cells have measure `1/3` each.
 - The conormals for `(i, j, k) = (1, 2, 3)` are `(−1, −1, 2)/√6`, `(2, −1, −1)/√6` and `(−1, 2, −1)/√6`, summing to `0` and meeting at `120°`; for a non-equidistant triple of centres the bisectors do not meet at equal angles and the sum is nonzero.
+- Negative control for literal equality of closed faces and interfaces: for `q = 3` and `x = 0` the origin lies on all three closed faces `Σ^m_12, Σ^m_23, Σ^m_13`, but on no reduced-boundary interface of §3.2. Each cell is a `120°` sector of density `1/3` at the origin, not `1/2`, and its averaged normal `Dχ(B_r)/|Dχ|(B_r)` is the mean of the two edge normals, which meet at `60°`, of norm `cos 30° = √3/2 < 1`. The difference is the `μHE[1]`-null set `{0}`, so both readings give the areas `0.199471`.
+- Negative control for `q = 1`: `E^{(0)} = {0}` carries the Dirac mass `δ_0`, the standard Gaussian of the zero space; the one-cell tuple `({0})` is not a cluster in the sense of §3.1, and there are no interfaces. With natural subtraction the weight `e^{−W} μHE[q − 2]` would read `e^{−W} μHE[0]`, the counting measure, a junk value; the definitions above are made for `q ≥ 2` only.
 
 ### 4.2 Simplicial clusters in a Euclidean space
 
 For `2 ≤ q ≤ n + 1` and points `p_1, …, p_q ∈ E` with `‖p_i − p_j‖` equal to one positive number for all `i ≠ j`, the simplicial cluster with these centres has cells `Ω_i = {y ∈ E : ‖y − p_i‖ < ‖y − p_j‖ for all j ≠ i}`, the interiors of the Voronoi cells (MilmanNeeman2022 line 76–82).
 
 - Every simplicial cluster is the image `ι(x + Ω^m) ⊕ (range ι)^⊥`, cell by cell, for some linear isometric embedding `ι : E^{(q−1)} → E` and some `x ∈ E^{(q−1)}`; conversely every such image is simplicial. The point `ι(x)` is the projection of the circumcentre of the centres onto `range ι`.
-- The cells of a simplicial cluster are open convex polyhedral cones with common apex the circumcentre, and the cluster is unchanged by scaling the centres about the circumcentre.
+- The cells of a simplicial cluster are open convex polyhedral cones with common apex the circumcentre `c`, and the cluster is unchanged when every centre `p_i` is replaced by `c + λ(p_i − c)` for a real `λ > 0`: the condition `‖y − p_i‖ < ‖y − p_j‖` reads `⟨y − c, p_j − p_i⟩ < 0`, which is invariant under multiplying `p_j − p_i` by `λ > 0`.
 - A simplicial cluster is a `γ`-cluster, and `γ(Ω_i) = γ_{q−1}(x + Ω^m_i)`, `P_γ(Ω) = P_γ(x + Ω^m)` (§2.7).
 
 *Needs:* §2.7, §4.1; Mathlib `ProbabilityTheory.stdGaussian_map`.
@@ -327,10 +344,11 @@ For `2 ≤ q ≤ n + 1` and points `p_1, …, p_q ∈ E` with `‖p_i − p_j‖
 - `q = 2`: two centres give the complementary open half-spaces bounded by the bisecting hyperplane, a pair of measure vector `(Φ(s), 1 − Φ(s))` and perimeter `φ(s)`, `s` the signed distance of the hyperplane from the origin.
 - `q = 3` in `ℝ²` with an equilateral triangle centred at the origin: three `120°` sectors, each of measure `1/3`, total perimeter `0.598413`.
 - Non-example: the collinear centres `0, 1, 2` in `ℝ` give the Voronoi cells `(−∞, 1/2), (1/2, 3/2), (3/2, ∞)`, a `3`-cluster, but not a simplicial one: the centres are not equidistant, and `q = 3 > n + 1`.
+- Scaling factor: the centres `−1, 1` in `ℝ` have circumcentre `0` and first cell `(−∞, 0)`; after scaling by `λ` the first-cell condition `‖y + λ‖ < ‖y − λ‖` is `4λy < 0`. For `λ = 2` it is `8y < 0`, the same cell; for `λ = −1` it is `−4y < 0`, the cell `(0, ∞)`, so the cells are exchanged; for `λ = 0` it is `0 < 0`, both centres coincide and both cells are empty. The restriction `λ > 0` is needed.
 
 ### 4.3 The measure map
 
-Prove that `Ψ : E^{(q−1)} → ℝ^q`, `Ψ(x) = γ_{q−1}(x + Ω^m)`, is `C^∞`, injective, with image `int Δ^{(q−1)}`, and that its derivative at every `x` is the linear map `−L_{A^m(x)}/√2` of `E^{(q−1)}`, which is invertible; hence `Ψ` is a diffeomorphism of `E^{(q−1)}` onto `int Δ^{(q−1)}` (MilmanNeeman2022 Lemma 2.1, line 506–543). A route: smoothness by differentiating `∫_{Ω^m_i} e^{−W(x + y)} dy`; the derivative from the translation formula of §2.5, `∂_w Ψ_i(x) = Σ_{j ≠ i} ⟨w, n_ij⟩ A^m_ij(x) = −(L_{A^m(x)} w)_i/√2`; invertibility from `A^m_ij > 0`. For injectivity, given `y ≠ x` take `i` maximizing `(y − x)_i`; then `y + Ω^m_i ⊊ x + Ω^m_i` and the difference contains an open set, so `Ψ_i(y) < Ψ_i(x)`. (Milman–Neeman assert `y ∈ x + Ω^m_i` for some `i`, which fails when the maximal coordinate of `y − x` is attained twice; the maximal-coordinate argument covers ties.) For surjectivity, `Ψ` is open (inverse function theorem) and proper onto `int Δ^{(q−1)}`: if `x_k` is unbounded then `max_i x_{k,i} → ∞` along a subsequence, and `x + Ω^m_i ⊆ {z : z_i ≥ x_i}` gives `Ψ_i(x_k) ≤ 1 − Φ(√(q/(q−1)) x_{k,i}) → 0`. So the image is open and closed in the connected set `int Δ^{(q−1)}`. Milman–Neeman's invariance-of-domain step is not needed. *Needs:* §1.2, §1.3, §2.5, §4.1; Mathlib `isOpenMap_of_hasStrictFDerivAt_equiv`.
+Prove that `Ψ : E^{(q−1)} → ℝ^q`, `Ψ(x) = γ_{q−1}(x + Ω^m)`, is `C^∞`, injective, with image `int Δ^{(q−1)}`, and that its derivative at every `x` is the linear map `−L_{A^m(x)}/√2` of `E^{(q−1)}`, which is invertible; hence `Ψ` is a diffeomorphism of `E^{(q−1)}` onto `int Δ^{(q−1)}` (MilmanNeeman2022 Lemma 2.1, line 506–543). A route: smoothness by differentiating `∫_{Ω^m_i} e^{−W(x + y)} dy`; the derivative from the translation formula of §2.5, `∂_w Ψ_i(x) = Σ_{j ≠ i} ⟨w, n_ij⟩ A^m_ij(x) = −(L_{A^m(x)} w)_i/√2`; invertibility from `A^m_ij > 0`. For injectivity, given `y ≠ x` take `i` maximizing `(y − x)_i`; then `y + Ω^m_i ⊊ x + Ω^m_i` and the difference contains an open set, so `Ψ_i(y) < Ψ_i(x)`. (Milman–Neeman assert `y ∈ x + Ω^m_i` for some `i`, which fails when the maximal coordinate of `y − x` is attained twice; the maximal-coordinate argument covers ties.) For surjectivity, `Ψ` is open (inverse function theorem) and proper onto `int Δ^{(q−1)}`: if `x_k` is unbounded then `max_i x_{k,i} → ∞` along a subsequence, and `x + Ω^m_i ⊆ {z : z_i ≥ x_i}` gives `Ψ_i(x_k) ≤ 1 − Φ(√(q/(q−1)) x_{k,i}) → 0`. So the image is open and closed in the connected set `int Δ^{(q−1)}`. Milman–Neeman's invariance-of-domain step is not needed. *Needs:* §1.2, §1.3, §2.5, §4.1; Tau Ceti `TauCeti.Probability.stdGaussian_eq_withDensity_norm`; Mathlib `isOpenMap_of_hasStrictFDerivAt_equiv`.
 
 **Checks.**
 
@@ -340,15 +358,16 @@ Prove that `Ψ : E^{(q−1)} → ℝ^q`, `Ψ(x) = γ_{q−1}(x + Ω^m)`, is `C^�
 
 ### 4.4 The model profile and its transport
 
-Define the model profile `I_m^{(q−1)} : int Δ^{(q−1)} → ℝ` by `I_m^{(q−1)}(v) = P_γ(Ψ⁻¹(v) + Ω^m) = Σ_{i<j} A^m_ij(Ψ⁻¹(v))`, and `I_m^{(0)}(1) = 0` (MilmanNeeman2022 Definition 2.2, line 548–553). Prove that for `n ≥ q − 1`, every simplicial `q`-cluster in `E` with measure vector `v ∈ int Δ^{(q−1)}` has total perimeter `I_m^{(q−1)}(v)`, and that for every such `v` a simplicial cluster with measure vector `v` exists (MilmanNeeman2022 line 554–556). *Needs:* §4.2, §4.3.
+For `q ≥ 2` define the model profile `I_m^{(q−1)} : int Δ^{(q−1)} → ℝ` by `I_m^{(q−1)}(v) = P_γ(Ψ⁻¹(v) + Ω^m) = Σ_{i<j} A^m_ij(Ψ⁻¹(v))`, and set `I_m^{(0)}(1) = 0` (MilmanNeeman2022 Definition 2.2, line 548–553). The value at `q = 1` is a boundary convention, used by the face identity of §4.5 at vertices; it is not the perimeter of a cluster. Prove that for `n ≥ q − 1`, every simplicial `q`-cluster in `E` with measure vector `v ∈ int Δ^{(q−1)}` has total perimeter `I_m^{(q−1)}(v)`, and that for every such `v` a simplicial cluster with measure vector `v` exists (MilmanNeeman2022 line 554–556). *Needs:* §4.2, §4.3.
 
 - `I_m^{(q−1)}` is invariant under permuting coordinates, and `I_m^{(1)}(v) = I(v_1)` on `int Δ^{(1)}`.
-- `I_m^{(q−1)}(v) > 0` on `int Δ^{(q−1)}`.
+- For `q ≥ 2`, `I_m^{(q−1)}(v) > 0` on `int Δ^{(q−1)}`.
 
 **Checks.**
 
 - `q = 2`: for `v_1 = Φ(−t)`, `I_m^{(1)}(v) = φ(t) = I(v_1)`; at `v = (1/2, 1/2)` the value is `0.398942`.
 - `q = 3`: `I_m^{(2)}(1/3, 1/3, 1/3) = 0.598413`, larger than the single-bubble value `I(1/3) = 0.363600`, as it must be since `(Ω_1, Ω_2 ∪ Ω_3)` is a `2`-cluster of smaller perimeter.
+- Negative control for `q = 1`: in its relative topology `int Δ^{(0)} = Δ^{(0)} = {(1)}` and `I_m^{(0)}(1) = 0`, so positivity would read `0 > 0`; it is claimed only for `q ≥ 2`. The face value `I_m^{(2)}(1, 0, 0) = I_m^{(0)}(1) = 0` and the two-cell value `I_m^{(1)}(1/2, 1/2) = 0.398942 > 0` are unaffected.
 - Evaluating the interface sum at the point `v − (1/q, …, 1/q)` instead of at `Ψ⁻¹(v)` is a plausible wrong definition: for `q = 2` and `v = (Φ(1), 1 − Φ(1))` it gives `φ(0.482734) = 0.355065`, whereas `I_m^{(1)}(v) = φ(1) = 0.241971`.
 
 ### 4.5 Boundary behaviour of the model profile
@@ -387,13 +406,13 @@ The tripod cluster in `ℝ²` with measure vector `(1/3, 1/3, 1/3)` has interfac
 
 ### Dependencies
 
-Layers 1–3; GeometricMeasureTheory G6 through §2.3 and §2.5; Mathlib's inverse function theorem.
+Layers 1–3; Tau Ceti's Gaussian density; GeometricMeasureTheory G5 and G6 through §2.3 and §2.5; Mathlib's inverse function theorem.
 
 ## Layer 5: Gaussian isoperimetry on the line
 
 ### 5.1 Sets of locally finite perimeter on the line
 
-Prove that if `J ⊆ ℝ` is an open interval and `U ⊆ ℝ` is Lebesgue measurable with locally finite perimeter in `J`, then `T = ∂^M U ∩ J` is a locally finite subset of `J`, equals `∂*U ∩ J`, and `U ∩ J` agrees a.e. with a union of open intervals whose endpoints in `J` are exactly the points of `T`; consequently `P_μ(U; B) = Σ_{t ∈ T ∩ B} e^{−W(t)}` for every weight `W` on `ℝ` and Borel `B ⊆ J` (CianchiFuscoMaggiPratelli2011 line 245–248). A route: `χ_U` has a representative of locally bounded classical variation on `J`; a `{0, 1}`-valued such function has finitely many jumps, each of size one, in every compact subinterval, and its derivative measure is the signed sum of unit masses at the jumps. *Needs:* §2.2; GeometricMeasureTheory G3 (one-dimensional comparison with classical variation).
+Prove that if `J ⊆ ℝ` is an open interval and `U ⊆ ℝ` is Lebesgue measurable with locally finite perimeter in `J`, then `T = ∂^M U ∩ J` is a locally finite subset of `J`, equals `∂*U ∩ J`, and `U ∩ J` agrees a.e. with a union of open intervals whose endpoints in `J` are exactly the points of `T`; consequently `P_μ(U; B) = Σ_{t ∈ T ∩ B} e^{−W(t)}` for every weight `W` on `ℝ` and Borel `B ⊆ J` (CianchiFuscoMaggiPratelli2011 line 245–248). A route: almost every point is a Lebesgue point of `χ_U` with value `0` or `1`, and every neighbourhood of a point of `T` contains Lebesgue points of both values; for a compact subinterval `K` of an open `J′` with compact closure in `J`, `TauCeti.Real.ofReal_sum_abs_sub_le_totalVariationOn` bounds the number of alternations between the values `0` and `1` along `K` by the finite variation of `χ_U` on `J′`, so `T ∩ K` is finite and `χ_U` is a.e. constant on each gap of `T`; the derivative measure of such a step function is the signed sum of unit masses at its jumps. *Needs:* §2.2; Tau Ceti `TauCeti.Real.ofReal_sum_abs_sub_le_totalVariationOn`, `TauCeti.essentialBoundary`; Mathlib `Besicovitch.ae_tendsto_measure_inter_div`.
 
 **Checks.**
 
@@ -426,7 +445,7 @@ The intervals `(0, 1)`, `(−1, 1)` and `(−∞, s)` have perimeters `0.640913`
 
 ### Dependencies
 
-Layers 1–2; GeometricMeasureTheory G3.
+Layers 1–2; Tau Ceti's one-dimensional variation bound and essential boundary; Mathlib's Lebesgue density theorem.
 
 ## Layer 6: Gaussian symmetrisation of sets of finite Gaussian perimeter
 
@@ -437,15 +456,16 @@ For a subspace `F ⊆ E` of dimension `k ≥ 1`, a unit vector `u ∈ F` and a L
 - `S_{F,u}(U)` is Lebesgue measurable, `v_{S_{F,u}(U)} = v_U` almost everywhere on `F^⊥`, and `γ(S_{F,u}(U)) = γ(U)`.
 - If `U ⊆ U′` then `S_{F,u}(U) ⊆ S_{F,u}(U′)`; sets equal up to a null set have symmetrals equal up to a null set; `S_{F,u}` is idempotent.
 - For a linear isometry `T` of `E` with `T(F) = F` and `T(u) = u`, `S_{F,u}(T(U)) = T(S_{F,u}(U))`.
-- Half-spaces `{⟨x, u⟩ < a}` are fixed; null sets go to `∅` and conull sets to `E`.
+- Half-spaces `{⟨x, u⟩ < a}` are fixed, `S_{F,u}(∅) = ∅` and `S_{F,u}(E) = E`. If `γ(U) = 0` then `S_{F,u}(U)` is null, and if `γ(U) = 1` then `E ∖ S_{F,u}(U)` is null; that is, `S_{F,u}(U)` equals `∅`, respectively `E`, up to a null set. The literal equality `S_{F,u}(U) = ∅`, respectively `E`, holds when every section `U_x` is `γ_F`-null, respectively of full `γ_F`-measure.
 
 A route: Fubini along the splitting of §1.3, and the identity `γ_F({y : Φ(⟨y, u⟩) < v}) = v` for `v ∈ [0, 1]`. *Needs:* §1.1, §1.3.
 
 **Checks.**
 
-- `{⟨x, e⟩ < a}` has sections of measure `Φ(a)` and is fixed by `S_e`; the superlevel definition would send it to `{⟨x, e⟩ > −a}`, which has measure `1 − Φ(a)`, `0.158655` instead of `0.841345` at `a = 1`.
+- `{⟨x, e⟩ < a}` has sections of measure `Φ(a)` and is fixed by `S_e`. The superlevel rule, which replaces a section of measure `v` by the upper half-line of measure `v`, sends it to the reflected half-space `{⟨x, e⟩ > −a}`: a different set of the same measure `Φ(a)`, `0.841345` at `a = 1`, so the rule fails literal fixedness. Keeping the threshold `a` and flipping the side instead gives `{⟨x, e⟩ > a}`, of the wrong measure `1 − Φ(a) = 0.158655` at `a = 1`.
 - For `U = ball(0, 1) ⊂ ℝ²` and `e = e_2`, `v_U(z) = 2Φ(√(1 − z²)) − 1` for `|z| < 1` and `0` otherwise; `γ(S_e(U)) = 0.393469 = γ(U)`, and the section of `S_e(U)` over `z = 0` is `(−∞, 0.475231)`.
-- `S_e` of the null set `ℚ e` is `∅`, and of its complement is `E`.
+- `S_e` of the null set `ℚ e` is `∅`, and of its complement is `E`: every section of `ℚ e` is `γ¹`-null and every section of its complement has full measure.
+- Negative control for literal null images: in `ℝ²` with `F = ℝ e_2` and `u = e_2`, the vertical line `U = ℝ e_2` has `γ(U) = 0`, but `v_U(0) = 1` and `v_U(z) = 0` for `z ≠ 0`, so `S_{F,u}(U) = U ≠ ∅`; its complement is conull and is fixed, `S_{F,u}(E ∖ U) = E ∖ U ≠ E`. Both differences, `S_{F,u}(U) ∖ ∅` and `E ∖ S_{F,u}(E ∖ U)`, are the null line, as the almost-everywhere statement allows.
 
 ### 6.2 Slicing the reduced boundary
 
@@ -458,7 +478,7 @@ Prove that for `U` of locally finite perimeter in `E`, `n ≥ 2`, a unit vector 
 
 ### 6.3 The section-measure function
 
-Prove that for `P_γ(U) < ∞`, `n ≥ 2` and a unit vector `e`, `v_U ∈ BV_loc(e^⊥)`, and for every Borel `B ⊆ e^⊥`, `∫_B e^{−W_{e^⊥}} d|Dv_U| ≤ P_γ(U; B ⊕ ℝ e)`, where `e^{−W_{e^⊥}}` is the density of `γ_{e^⊥}`. Prove that the absolutely continuous part of `Dv_U` has density `∇v_U(z) = −Σ_{t : z + te ∈ ∂*U} φ(t) ν_U^⊥(z + te)/|⟨ν_U(z + te), e⟩|` at every good `z`, where `ν^⊥` is the component in `e^⊥`, and that its singular part is carried by the null projection of `{⟨ν_U, e⟩ = 0}` (CianchiFuscoMaggiPratelli2011 Lemma 4.4, equations (4.7)–(4.8), line 605–618, stated there with the inner normal and unnormalized section weights). A route: for a smooth compactly supported field `Y` on `e^⊥`, the field `X(z + te) = Y(z)` has `div_γ X = div_{γ_{e^⊥}} Y`; Fubini gives `∫_U div_γ X dγ = ∫ v_U div_{γ_{e^⊥}} Y dγ_{e^⊥}`, and the bounded-field Gauss–Green identity of §2.5 equates it to `∫_{∂*U} ⟨Y, ν_U⟩ dγ^{n−1}`. This yields the variation bound and, through §2.1, `BV_loc`; §6.2 splits the boundary integral into its absolutely continuous and singular parts. *Needs:* §1.3, §2.1, §2.5, §6.2.
+Prove that for `P_γ(U) < ∞`, `n ≥ 2` and a unit vector `e`, `v_U ∈ BV_loc(e^⊥)`, and for every Borel `B ⊆ e^⊥`, `∫_B e^{−W_{e^⊥}} d|Dv_U| ≤ P_γ(U; B ⊕ ℝ e)`, where `e^{−W_{e^⊥}}` is the density of `γ_{e^⊥}`. Prove that the absolutely continuous part of `Dv_U` has density `∇v_U(z) = −Σ_{t : z + te ∈ ∂*U} φ(t) ν_U^⊥(z + te)/|⟨ν_U(z + te), e⟩|` at every good `z`, where `ν^⊥` is the component in `e^⊥`, and that its singular part is carried by the null projection of `{⟨ν_U, e⟩ = 0}` (CianchiFuscoMaggiPratelli2011 Lemma 4.4, equations (4.7)–(4.8), line 605–618, stated there with the inner normal and unnormalized section weights). A route: for a smooth compactly supported field `Y` on `e^⊥`, the field `X(z + te) = Y(z)` has `div_γ X = div_{γ_{e^⊥}} Y`; Fubini gives `∫_U div_γ X dγ = ∫ v_U div_{γ_{e^⊥}} Y dγ_{e^⊥}`, and the bounded-field Gauss–Green identity of §2.5 equates it to `∫_{∂*U} ⟨Y, ν_U⟩ dγ^{n−1}`. This yields the variation bound and, through §2.1, `BV_loc`; §6.2 splits the boundary integral into its absolutely continuous and singular parts. *Needs:* §1.3, §2.1, §2.5, §6.2; Tau Ceti `TauCeti.Probability.stdGaussian_eq_withDensity_norm` (the density of `γ_{e^⊥}`).
 
 **Checks.**
 
@@ -468,7 +488,7 @@ Prove that for `P_γ(U) < ∞`, `n ≥ 2` and a unit vector `e`, `v_U ∈ BV_loc
 
 ### 6.4 A lower bound by sections
 
-For `z ∈ e^⊥` let `p_U(z) = Σ_{t ∈ ∂^M(U_z)} φ(t)`, the Gaussian perimeter of the section. Prove that for `P_γ(U) < ∞`, `n ≥ 2` and every Borel `B ⊆ e^⊥` consisting of good points, `P_γ(U; B ⊕ ℝ e) ≥ ∫_B √(p_U(z)² + ‖∇v_U(z)‖²) dγ_{e^⊥}(z)`, with equality when `U ∩ (B ⊕ ℝ e) = S_e(U) ∩ (B ⊕ ℝ e)` (CianchiFuscoMaggiPratelli2011 Lemma 4.6, line 781–828). A route: §6.2 with `g = e^{−W}/|⟨ν_U, e⟩|` and the factorization `e^{−W}(z + te) = e^{−W_{e^⊥}}(z) φ(t)` express the boundary measure over good points as `∫_B Σ_t φ(t) √(1 + ‖ν^⊥‖²/⟨ν, e⟩²) dγ_{e^⊥}`; Jensen's inequality for `w ↦ √(1 + ‖w‖²)` with weights `φ(t)/p_U(z)` and §6.3 give the bound, and a symmetral has one boundary point on each good section. *Needs:* §1.3, §5.1, §6.2, §6.3.
+For `z ∈ e^⊥` let `p_U(z) = Σ_{t ∈ ∂^M(U_z)} φ(t)`, the Gaussian perimeter of the section. Prove that for `P_γ(U) < ∞`, `n ≥ 2` and every Borel `B ⊆ e^⊥` consisting of good points, `P_γ(U; B ⊕ ℝ e) ≥ ∫_B √(p_U(z)² + ‖∇v_U(z)‖²) dγ_{e^⊥}(z)`, with equality when `U ∩ (B ⊕ ℝ e) = S_e(U) ∩ (B ⊕ ℝ e)` (CianchiFuscoMaggiPratelli2011 Lemma 4.6, line 781–828). A route: §6.2 with `g = e^{−W}/|⟨ν_U, e⟩|` and the factorization `e^{−W}(z + te) = e^{−W_{e^⊥}}(z) φ(t)` express the boundary measure over good points as `∫_B Σ_t φ(t) √(1 + ‖ν^⊥‖²/⟨ν, e⟩²) dγ_{e^⊥}`; Jensen's inequality for `w ↦ √(1 + ‖w‖²)` with weights `φ(t)/p_U(z)` and §6.3 give the bound, and a symmetral has one boundary point on each good section. *Needs:* §1.3, §5.1, §6.2, §6.3; Tau Ceti `TauCeti.Probability.stdGaussian_eq_withDensity_norm` (the factorization of the density).
 
 **Checks.**
 
@@ -477,7 +497,7 @@ For `z ∈ e^⊥` let `p_U(z) = Σ_{t ∈ ∂^M(U_z)} φ(t)`, the Gaussian perim
 
 ### 6.5 An upper bound for the symmetral
 
-Prove that for `P_γ(U) < ∞`, `n ≥ 2` and every Borel `B ⊆ e^⊥`, `P_γ(S_e(U); B ⊕ ℝ e) ≤ ∫_B e^{−W_{e^⊥}} d|Dv_U| + ∫_B I(v_U(z)) dγ_{e^⊥}(z)`; in particular `S_e(U)` has finite Gaussian perimeter, at most `2 P_γ(U)` (CianchiFuscoMaggiPratelli2011 Lemma 4.5, line 624–779). A route: reduce to bounded open `B` and a test field `X` supported in `B ⊕ ℝ e`. The `e`-component contributes exactly `∫ X_e(z, Φ⁻¹(v_U(z))) I(v_U(z)) dγ_{e^⊥}` by Fubini. For the `e^⊥`-components, `H(z, s) = ∫_{−∞}^{Φ⁻¹(s)} X^⊥(z + te) φ(t) dt` is smooth on `e^⊥ × [0, 1]` with `∂_s H(z, s) = X^⊥(z + Φ⁻¹(s) e)`; for a smooth `v` with values in `[0, 1]` the chain rule bounds the contribution of `{Φ(t) < v(z)}` by `∫ ‖∇v‖ dγ_{e^⊥}`; apply this to mollifications of `v_U` and pass to the limit with `‖∇(v_U ∗ ρ_ε)‖ ≤ |Dv_U| ∗ ρ_ε`. Cianchi–Fusco–Maggi–Pratelli use strict approximation and Reshetnyak continuity instead. *Needs:* §1.1, §1.3, §2.1, §2.2, §6.1, §6.3; GeometricMeasureTheory G4 (mollification).
+Prove that for `P_γ(U) < ∞`, `n ≥ 2` and every Borel `B ⊆ e^⊥`, `P_γ(S_e(U); B ⊕ ℝ e) ≤ ∫_B e^{−W_{e^⊥}} d|Dv_U| + ∫_B I(v_U(z)) dγ_{e^⊥}(z)`; in particular `S_e(U)` has finite Gaussian perimeter, at most `2 P_γ(U)` (CianchiFuscoMaggiPratelli2011 Lemma 4.5, line 624–779). A route: reduce to bounded open `B` and a test field `X` supported in `B ⊕ ℝ e`. The `e`-component contributes exactly `∫ X_e(z, Φ⁻¹(v_U(z))) I(v_U(z)) dγ_{e^⊥}` by Fubini, the integrand being taken as `0` where `v_U(z) ∈ {0, 1}`, since then the section of `S_e(U)` is empty or the whole line and `I(v_U(z)) = 0`. For the `e^⊥`-components, `H(z, s) = ∫_{{t : Φ(t) < s}} X^⊥(z + te) φ(t) dt` is `0` at `s = 0` and `∫_ℝ X^⊥(z + te) φ(t) dt` at `s = 1`, and is smooth on `e^⊥ × [0, 1]` with `∂_s H(z, s) = X^⊥(z + Φ⁻¹(s) e)` for `0 < s < 1`, which vanishes for `s` near `0` and `1` because `X` has compact support; for a smooth `v` with values in `[0, 1]` the chain rule bounds the contribution of `{Φ(t) < v(z)}` by `∫ ‖∇v‖ dγ_{e^⊥}`; apply this to mollifications of `v_U` and pass to the limit with `‖∇(v_U ∗ ρ_ε)‖ ≤ |Dv_U| ∗ ρ_ε`. Cianchi–Fusco–Maggi–Pratelli use strict approximation and Reshetnyak continuity instead. *Needs:* §1.1, §1.3, §2.1, §2.2, §6.1, §6.3; GeometricMeasureTheory G4 (mollification).
 
 **Checks.**
 
@@ -499,7 +519,7 @@ For the unit disc in `ℝ²`, symmetrisation along `e_2` keeps the measure `0.39
 
 ### Dependencies
 
-Layers 1, 2 and 5; GeometricMeasureTheory G2, G4, G5; Isoperimetry I4.
+Layers 1, 2 and 5; Tau Ceti's Gaussian density; GeometricMeasureTheory G2, G4, G5; Isoperimetry I4.
 
 ## Layer 7: the Gaussian isoperimetric theorem
 
@@ -514,7 +534,7 @@ Let `n ≥ 2`, `0 < r < 1` and `H` a Lebesgue-measurable set with `γ(H) = r` an
 
 ### 7.2 Minimizers are convex
 
-For `H` as in §7.1, prove that the set `H^{(1)}` of points of density one of `H` is open and convex, and that the same holds for `E ∖ H` (CianchiFuscoMaggiPratelli2011 Section 4.2, Steps III–IV, line 913–966). A route: given `x_1, x_2 ∈ H^{(1)}`, take `e` along `x_2 − x_1`; density one at both points makes almost every nearby section in direction `e` meet `H` near both points, and these sections are half-lines by §7.1, hence contain the segment between; this gives density one along `[x_1, x_2]`, cylinders aligned with `e` being comparable with balls. A convex set all of whose points have density one is open. `E ∖ H` is a minimizer for `1 − r` by complement invariance. *Needs:* §2.1, §7.1; Mathlib `Besicovitch.ae_tendsto_measure_inter_div` (MeasureTheory/Covering/Besicovitch.lean:1105).
+For `H` as in §7.1, prove that the set `H^{(1)} = TauCeti.essentialInterior volume H` of points of density one of `H` is open and convex, and that the same holds for `E ∖ H` (CianchiFuscoMaggiPratelli2011 Section 4.2, Steps III–IV, line 913–966). A route: given `x_1, x_2 ∈ H^{(1)}`, take `e` along `x_2 − x_1`; density one at both points makes almost every nearby section in direction `e` meet `H` near both points, and these sections are half-lines by §7.1, hence contain the segment between; this gives density one along `[x_1, x_2]`, cylinders aligned with `e` being comparable with balls. A convex set all of whose points have density one is open. `E ∖ H` is a minimizer for `1 − r` by complement invariance. *Needs:* §2.1, §7.1; Tau Ceti `TauCeti.essentialInterior`; Mathlib `Besicovitch.ae_tendsto_measure_inter_div` (Mathlib/MeasureTheory/Covering/Besicovitch.lean:1104).
 
 **Checks.**
 
@@ -546,7 +566,7 @@ In every dimension, the sets of Gaussian measure `1/3` with least Gaussian perim
 
 ### Dependencies
 
-Layers 2–6; Mathlib's separation theorem and Lebesgue density theorem.
+Layers 2–6; Tau Ceti's essential interior; Mathlib's separation theorem and Lebesgue density theorem.
 
 ## Layer 8: integrated, functional and concentration forms
 
@@ -576,7 +596,7 @@ Prove that for every Borel `A ⊆ E`, `liminf_{r ↓ 0} (γ(Metric.cthickening r
 For a continuous `f : E → [0, 1]`, define its subgraph set `A_f = {(x, y) : Φ(y) < f(x)}` in the inner product space `E × ℝ` with the `L²` product norm, of dimension `n + 1`. Prove that `γ_{E×ℝ}(A_f) = ∫ f dγ_E`; that if `f` is locally Lipschitz, the frontier of `A_f` is the graph of `Φ⁻¹ ∘ f` over the open set `{0 < f < 1}` and `γ_{E×ℝ}^{n}(frontier A_f) = ∫ √(I(f)² + ‖∇f‖²) dγ_E`. Prove Bobkov's inequality: for every locally Lipschitz `f : E → [0, 1]`, `I(∫ f dγ) ≤ ∫ √(I(f)² + ‖∇f‖²) dγ`, with equality for the constants and for `f(x) = Φ(α⟨x, ν⟩ + β)`, `α, β` real and `ν` a unit vector. Conversely, if Bobkov's inequality holds for every Lipschitz `f : E → [0, 1]`, then the Minkowski-content inequality of §8.2 holds for every closed `A` (Bobkov1997 Theorem 1.1, cited by locator; Ledoux1999 inequality (1.11) and its equivalence with (1.4), line 296–313; CianchiFuscoMaggiPratelli2011 equations (4.13) and (4.6), line 656–720 and 597–601, for the computation on subgraphs; CarlenKerce2001 Theorem 1, cited by locator). A route: the measure by §1.3 and Fubini; the frontier by continuity of `f`; the area formula for the locally Lipschitz graph map `x ↦ (x, Φ⁻¹(f(x)))` on `{0 < f < 1}`, whose Jacobian `√(1 + ‖∇f‖²/I(f)²)` multiplied by the density `e^{−W_E}(x) φ(Φ⁻¹(f(x)))` gives the integrand; then §2.3 and §7.3 in `E × ℝ`. For the converse apply the inequality to `f_r = max(0, 1 − d_A/r)`: `∫ f_r dγ → γ(A)`, `∫ I(f_r) dγ → 0`, and `∫ ‖∇f_r‖ dγ ≤ (γ(Metric.cthickening r A) − γ(A))/r`. *Needs:* §1.1, §1.3, §2.3, §7.3; GeometricMeasureTheory G2 (area formula, graph surface measure); Mathlib `LipschitzWith.ae_differentiableAt`, `Metric.cthickening`.
 
 - `A_f` is open, `A_{f′} ⊆ A_f` when `f′ ≤ f`, `A_0 = ∅` and `A_1 = E × ℝ`.
-- For `f` constant `c`, `A_f = E × (−∞, Φ⁻¹(c))`, a half-space when `0 < c < 1`.
+- For `f` constant `c` with `0 < c < 1`, `A_f = E × (−∞, Φ⁻¹(c))`, a half-space of measure `c`; the endpoint constants give `A_0 = ∅` and `A_1 = E × ℝ`, by the previous bullet, not by this formula.
 - `A_f` is the Gaussian symmetral of §6.1 of any set whose sections over `E` have measures `f`.
 
 **Checks.**
@@ -584,6 +604,7 @@ For a continuous `f : E → [0, 1]`, define its subgraph set `A_f = {(x, y) : Φ
 - `f(x) = Φ(x)` on `ℝ`: `∫ f dγ = 1/2`, `I(1/2) = 0.398942`, and `∫ √2 φ(x)² dx = 0.398942`; for `Φ(2x)` the right side is again `0.398942`: `A_f` is a half-plane in both cases.
 - `f(x) = min(x², 1)` on `ℝ`: `∫ f dγ = 0.516059`, `I(0.516059) = 0.398619`, and the right side is `0.647406`.
 - For constant `c` both sides equal `I(c)`; omitting `I(f)²` under the root makes the right side `0` and the inequality false.
+- Endpoint constants: `f = 0` gives `A_f = ∅` of measure `0`, and `f = 1` gives `A_f = E × ℝ` of measure `1`, both equal to `∫ f dγ_E`. The half-space formula read with the quantile of `gaussianReal 0 1`, which is `0` at both levels `0` and `1`, would give `E × (−∞, 0)`, of measure `Φ(0) = 1/2` in both cases.
 
 ### 8.4 Concentration of Lipschitz functions
 
