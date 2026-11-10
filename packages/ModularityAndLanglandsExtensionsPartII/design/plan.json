@@ -5749,7 +5749,7 @@
     {
       "slug": "components-under-field-extension",
       "needs": "in Layer 1, the behaviour of irreducible components of a quasi-separated rigid space over a complete field `E` under extension of the ground field to a finite extension and to `ℂ_p`: every component over `ℂ_p` lies in the base change of a component over `E`, and if there are finitely many components then after a finite extension `E′/E` all components are geometrically irreducible (Conrad, con99 Theorem 3.4.2, internal pp. 26–27).",
-      "supplier": "AdicSpacesPartIIPartII",
+      "supplier": "AdicSpacesPartV",
       "section": "Layer 1"
     },
     {
@@ -5760,9 +5760,9 @@
     },
     {
       "slug": "formal-torus-patching",
-      "needs": "in Layer 6, the formal-group contract used by Newton–Thorne II Propositions 2.8–2.9 and Newton–Thorne 2026 Proposition 4.9 (after Khare–Wintenberger, kw09 Proposition 2.5): a free action of a formal torus `Ĝ_m^γ` on `Sp R′`, an equivariant map `δ` to `Ĝ_m^γ` for the square action with fibre `Sp R = δ^{−1}(1)`, the resulting `Ĝ_m^γ[2]`-torsor `Sp R → Sp R^{inv}` on represented complete-local functors, actions on both patched modules, and transitivity of `Ĝ_m^γ[2](𝒪)` on the components containing a given point; no torsor on `Spec` is inferred from the formal statement.",
+      "needs": "in §5.4 and Layer 6, the two additions to the formal quotient and the dyadic determinant torsor of GlobalGaloisDeformations §§4.6, 4.11 (imported, not restated: a free action of the formal torus `Ĝ_m^γ` on `Sp R′`, a map `δ` to `Ĝ_m^γ` equivariant for the square action, and the `Ĝ_m^γ[2]`-torsor `Sp R → Sp (R′)^{Ĝ_m^γ}` with `Sp R = δ^{−1}(1)`, finite flat of degree `2^γ` at `p = 2`) used by Newton–Thorne II Proposition 2.8 and Newton–Thorne 2026 Proposition 4.9 (after Khare–Wintenberger, kw09 Proposition 9.3): (i) patched actions: when the finite-level patching data carry compatible twisting actions of the finite groups `Ĝ_m^γ[2^N]` on the rings `R′_N` with square-equivariant determinant maps of fibre `R_N`, compatible actions of `Ĝ_m^γ[2]` on the pseudodeformation rings `P_N` making `P_N → R_N` equivariant, and actions of `Ĝ_m^γ[2](𝒪)` on finite-level modules `H_{D,N}` over `R_N` and `H_{G,N}` over `P_N` lifting the ring actions, the patched limit carries the free `Ĝ_m^γ`-action on `Sp R′_∞` with square-equivariant `δ` and `δ^{−1}(1) = Sp R_∞`, a `Ĝ_m^γ[2]`-action on `Sp P_∞` making `Sp R_∞ → Sp P_∞` equivariant, and actions of `Ĝ_m^γ[2](𝒪)` on both patched modules lifting those on `R_∞` and `P_∞`; (ii) component transitivity: if `R′_∞` is a domain flat over `𝒪`, then `Ĝ_m^γ[2](𝒪) = {±1}^γ` acts transitively on the irreducible components of `Spec R_∞`. The torsor is the formal one of GlobalGaloisDeformations §4.11, on represented complete-local functors.",
       "supplier": "DeformationAndDerivedPatchingAlgebra",
-      "section": "Layer 6"
+      "section": "§5.4 and Layer 6"
     },
     {
       "slug": "artinian-crystalline-quotients",
