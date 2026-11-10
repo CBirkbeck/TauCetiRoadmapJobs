@@ -285,7 +285,6 @@ GSp4NonregularModularityLifting
 EllipticModularityEffectiveComparisons
 ArithmeticFuchsianGroups
 TeichmullerGeometry
-QuasiregularMaps
 PositiveMass
 HodgeClassesForJacquetLanglands
 MappingClassGroupsAndCanonicalRepresentations
@@ -400,3 +399,4 @@ PadicExtensionFamilies
 OddOrderTheorem
 VirtualFundamentalClasses
 SobolevMapsBetweenManifolds
+QuasiregularMaps
