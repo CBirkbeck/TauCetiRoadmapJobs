@@ -3059,13 +3059,13 @@
       "slug": "kummer-restriction-invariants",
       "supplier": "FiniteFlatGroupsAndIntegralPadicHodgeTheory",
       "section": "§R07.4.24",
-      "needs": "for a finite-dimensional continuous `𝔽`-representation `W` of `G_K` that becomes upper triangular over an unramified extension `K′/K` of degree prime to `p` with `H⁰(G_{K′}, (W|_{G_{K′}})^ss ⊗ ω^{−1}) = 0`, the restriction `H⁰(G_K, W) → H⁰(G_{K∞}, W)` is bijective (BHHMS23, Lemma 3.2.8 and its source LLHLM23, Lemma 7.2.10(3))."
+      "needs": "for a finite-dimensional continuous `𝔽`-representation `W` of `G_K` that becomes upper triangular over an unramified extension `K′/K` of degree prime to `p` with `H⁰(G_{K′}, (W|_{G_{K′}})^ss ⊗ ω^{−1}) = 0`, the restriction `H⁰(G_K, W) → H⁰(G_{K∞}, W)` is bijective and the restriction `H¹(G_K, W) → H¹(G_{K∞}, W)` is injective (LLHLM18, Lemmas 3.10–3.11, pp. 29–31; LLHLM23, Lemma 7.2.10(1), p. 107; BHHMS23, Lemma 3.2.8)."
     },
     {
       "slug": "rank-two-descent-kisin-modules",
       "supplier": "LocalGaloisDeformationRings",
       "section": "§6.9",
-      "needs": "the §6.9 construction in rank two for `K′/K` of degree `r ∈ {1,2}` and every height `h`, over every complete Noetherian local `𝒪`-algebra `R` with residue field `𝔽`: the category `Y^{[0,h],τ}(R)` of rank-two Kisin modules with descent of type `τ`, eigenbases, `T*_dd`, coefficient base change and the eigenbasis transformation law, together with the Hodge-bound subfunctor `Y^{≤λ,τ}` and its minor criterion on `𝒪`-flat `p`-complete `R` (the `i × i` minors of the Frobenius matrix are divisible by `(v+p)` to the sum of the `i` smallest entries of `λ_j`)."
+      "needs": "the §6.9 construction in rank two for `K′/K` of degree `r ∈ {1,2}` and every height `h`, over every complete Noetherian local `𝒪`-algebra `R` with residue field `𝔽`: the category `Y^{[0,h],τ}(R)` of rank-two Kisin modules with descent of type `τ`, eigenbases, the contravariant realization `T*_dd` (equal to `Hom_φ(M, 𝒪̂_{ℰ^ur} ⊗̂_{ℤ_p} R)` for the étale descent `M` of the module over `𝒪_{ℰ,K,R}`; LLHLM18, §2.3, p. 23), coefficient base change and the eigenbasis transformation law, together with the Hodge-bound subfunctor `Y^{≤λ,τ}` and its minor criterion on `𝒪`-flat `p`-complete `R` (the `i × i` minors of the Frobenius matrix are divisible by `(v+p)` to the sum of the `i` smallest entries of `λ_j`)."
     },
     {
       "slug": "ghls-existence",
