@@ -95,3 +95,21 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-26"
 cited_for = ["1.1", "1.2", "1.3", "1.4", "2.1", "2.2", "2.3", "2.4", "2.5", "2.6", "2.7", "2.8", "2.9"]
+
+[[source]]
+id = "AIP15"
+authors = "Fabrizio Andreatta, Adrain Iovita, Vincent Pilloni"
+title = "P-Adic families of Siegel modular cuspforms"
+year = 2015
+arxiv = "1212.3812v1"
+locator_scheme = "theorem"
+locator = "Proposition 7.2.3; section 7.3"
+url = "https://arxiv.org/abs/1212.3812v1"
+fetched_from = "https://arxiv.org/pdf/1212.3812v1"
+fetched_at = "2026-11-10T20:17:43Z"
+sha256 = "546120d2dcbf50bc86a3b980602728c9dcebd90cc2b08528df4415ec2f7ea851"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-10"
+version_note = "arXiv v1"
+cited_for = ["6.4"]
