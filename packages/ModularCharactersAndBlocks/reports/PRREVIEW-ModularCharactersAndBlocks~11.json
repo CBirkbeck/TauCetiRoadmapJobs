@@ -1,0 +1,13 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-ModularCharactersAndBlocks~11",
+  "head": "03f9b142c8dcf3878b0782c4166e04b9b4458f93",
+  "pr": 1775,
+  "folder": "RepresentationTheory/ModularCharactersAndBlocks",
+  "date": "2026-11-10",
+  "findings": 1,
+  "blocking": 0,
+  "notes": "incremental re-review of 34 changed lines since 73529a5. Previous R01 partly repaired: the README no longer cites LocalFiniteGroupTheory and defines O_{p'}(G) in section 8.2 (definition, four API facts and Checks recomputed on S3, A4, C6, Q8, S4; section 8.3 rechecked on S3 and A4); remaining P3: the description's generated depends-on block still lists #1634. Gate OK at 03f9b14 (all counters 0, build 0); depcheck 232 roadmaps, 0 problems; Suggested.lean elaborates with 8 sorry warnings only; one-tactic probe fails on all 8; Fong-Swan scope checked against GL2AutomorphicRepresentationsAndTransfer R17.5.12 at its open head; ownership of the p'-core checked against the pins, main and open heads (OddOrderTheorem 1.1 is later in the merge order). Adversarial table: 39 rows carried, 7 computed this round."
+ }
+}
