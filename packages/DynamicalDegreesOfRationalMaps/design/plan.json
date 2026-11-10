@@ -2,10 +2,10 @@
  "roadmap": "DynamicalDegreesOfRationalMaps",
  "title": "Dynamical degrees of rational maps",
  "parent": null,
- "summary": "Graphs and topological degrees of dominant rational maps between projective varieties over an arbitrary field; Euler-characteristic intersection numbers with the positivity package over an arbitrary field (Kleiman, Siu, Hodge inequality, Khovanskii-Teissier, Siu for products); degrees deg_k(f; L, M) with model independence, positivity, normalization and field-extension invariance, sub-multiplicativity and comparison; dynamical degrees, log-concavity, birational and field-extension invariance, algebraic entropy; projective-space and affine-space examples (forms, morphisms, Cremona, Fibonacci, Frobenius, polynomial maps).",
+ "summary": "Graphs and topological degrees of dominant rational maps between projective varieties over an arbitrary field; Euler-characteristic intersection numbers; imported nefness and Kleiman nonnegativity read in these numbers, and the positivity package over an arbitrary field (Siu, Hodge inequality on possibly singular surfaces, Khovanskii-Teissier, Siu for products); degrees deg_k(f; L, M) with model independence, positivity, normalization and field-extension invariance, sub-multiplicativity and comparison; dynamical degrees, log-concavity, birational and field-extension invariance, algebraic entropy; projective-space and affine-space examples (forms, morphisms, Cremona, Fibonacci, Frobenius, polynomial maps).",
  "baseline": {
-  "mathlib": "f6090c7095e1e56b3464c1daba5f24631f1290d2",
-  "tauceti": "358314d4ab97483df4fc4cb8adcc02e74a8d9f5a"
+  "mathlib": "1b1ccf4b088b32fa3f23f2de1127433254a81e1e",
+  "tauceti": "2fd255d997f47c0b5d834ee416c7015d55444ce5"
  },
  "layers": [
   {
@@ -16,7 +16,7 @@
      "id": "1.1",
      "kind": "definition",
      "name": "RationalMap.functionFieldPullback / RationalMap.topologicalDegree",
-     "statement": "For a dominant K-rational map f : X ⤏ Y of varieties over K, f^* : K(Y) -> K(X) is the K-algebra map induced by RationalMap.fromFunctionField f (which hits the generic point of Y); e(f) = Module.finrank over f^*K(Y) of K(X). f |-> f^* is a bijection onto K-algebra maps K(Y) -> K(X); (g∘f)^* = f^*∘g^*; e(f) > 0 iff dim X = dim Y (junk 0 otherwise); e(g∘f) = e(f)e(g) in equal dimension; e(f) = 1 iff f^* is an isomorphism iff f is birational (the rational map of a partial isomorphism over K); then Scheme.Birational X Y holds and f^{-1} has pullback (f^*)^{-1}.",
+     "statement": "For a dominant K-rational map f : X ⤏ Y of varieties over K, f^* : K(Y) -> K(X) is Tau Ceti's Scheme.Hom.functionFieldAlgHom of a K-representative f_V : V -> Y on a dense open V, composed with K(V) = K(X); it is independent of the representative and equals the stalk map induced by RationalMap.fromFunctionField f. e(f) = Module.finrank over f^*K(Y) of K(X). f |-> f^* is a bijection onto K-algebra maps K(Y) -> K(X); (g∘f)^* = f^*∘g^*; e(f) > 0 iff dim X = dim Y (junk 0 otherwise); e(g∘f) = e(f)e(g) in equal dimension; e(f) = 1 iff f^* is an isomorphism iff f is birational (the rational map of a partial isomorphism over K); then Scheme.Birational X Y holds and f^{-1} has pullback (f^*)^{-1}.",
      "hypotheses": [
       "X, Y integral, separated, of finite type over K",
       "f dominant and over Spec K",
@@ -37,6 +37,9 @@
       "mathlib:AlgebraicGeometry.Scheme.PartialIso.IsOver",
       "mathlib:AlgebraicGeometry.Scheme.PartialIso.symm",
       "mathlib:AlgebraicGeometry.Scheme.PartialIso.toRationalMap",
+      "tauceti:AlgebraicGeometry.Scheme.Hom.functionFieldAlgHom",
+      "tauceti:AlgebraicGeometry.Scheme.Hom.functionFieldAlgHom_comp",
+      "tauceti:AlgebraicGeometry.Scheme.Hom.functionFieldAlgHom_id",
       "tauceti:TauCeti.AlgebraicGeometry.topologicalKrullDim_eq_toNat_trdeg_functionField",
       "roadmap:SchemeAndStackFoundations §4.16"
      ],
@@ -117,7 +120,7 @@
      ],
      "locator": {
       "source": "dinhsibony2005",
-      "where": "lines 45-51; dang2020 lines 21-25; guedj2010 lines 1099-1110; stacks-morphisms Lemma 6.7 (tag 056B), line 488"
+      "where": "lines 45-51; dang2020 lines 21-25; guedj2010 lines 1099-1110; stacks-morphisms Lemma 6.7 (tag 056B), line 488 (closure of the image; reducedness is Tau Ceti's Scheme.Hom.isReduced_image)"
      },
      "prerequisites": [
       "mathlib:AlgebraicGeometry.Scheme.RationalMap.domain",
@@ -128,6 +131,7 @@
       "mathlib:AlgebraicGeometry.IsProper",
       "mathlib:AlgebraicGeometry.IsDominant",
       "mathlib:AlgebraicGeometry.Scheme.PartialIso.symm",
+      "tauceti:AlgebraicGeometry.Scheme.Hom.isReduced_image",
       "target:1.1",
       "roadmap:SchemeAndStackFoundations §0.7",
       "roadmap:SchemeAndStackFoundations §4.11",
@@ -198,7 +202,7 @@
      "id": "1.3",
      "kind": "construction",
      "name": "RationalMap.compositeCorrespondence",
-     "statement": "For dominant f : X ⤏ Y and g : Y ⤏ Z between projective varieties of the same dimension d, W_{f,g} = Γ_{(f, g∘f)} ⊆ X × Y × Z is an integral projective variety of dimension d; (q_X,q_Y) : W -> Γ_f and (q_X,q_Z) : W -> Γ_{g∘f} are proper birational; (q_Y,q_Z) : W -> Γ_g is proper, surjective, generically finite of degree e(f).",
+     "statement": "For dominant f : X ⤏ Y and g : Y ⤏ Z between projective varieties of the same dimension d, W_{f,g} ⊆ X ×_K Y ×_K Z is the scheme-theoretic image of (ι_U, f_U, (g∘f)_U) : U -> X ×_K Y ×_K Z, U the intersection of the domains of f and g∘f; it uses only the integral source and no integrality of Y ×_K Z (which may be reducible, e.g. P^1_C ×_R P^1_C), so it is not the graph of §1.2 applied to a map into Y ×_K Z. W_{f,g} is an integral projective variety of dimension d, independent of the dense open U; (q_X,q_Y) : W -> Γ_f and (q_X,q_Z) : W -> Γ_{g∘f} are proper birational; (q_Y,q_Z) : W -> Γ_g is proper, surjective, generically finite of degree e(f).",
      "hypotheses": [
       "X, Y, Z projective varieties of the same dimension",
       "f, g dominant K-rational maps"
@@ -210,10 +214,14 @@
      "prerequisites": [
       "mathlib:AlgebraicGeometry.Scheme.RationalMap.comp",
       "mathlib:AlgebraicGeometry.Scheme.RationalMap.comp_assoc",
+      "mathlib:AlgebraicGeometry.Scheme.RationalMap.domain",
+      "mathlib:AlgebraicGeometry.Scheme.RationalMap.toPartialMap",
       "mathlib:AlgebraicGeometry.Scheme.Hom.image",
+      "tauceti:AlgebraicGeometry.Scheme.Hom.isReduced_image",
       "target:1.1",
       "target:1.2",
-      "roadmap:SchemeAndStackFoundations §4.16"
+      "roadmap:SchemeAndStackFoundations §4.16",
+      "roadmap:StableReduction Layer 2"
      ],
      "api": [
       {
@@ -227,12 +235,17 @@
        "statement": "(q_Y,q_Z) is proper surjective generically finite of degree e(f) onto Γ_g"
       },
       {
-       "name": "rationalMap_prod",
-       "role": "constructor",
-       "statement": "(a, b) : X ⤏ Y ×_K Z on the intersection of domains"
+       "name": "compositeCorrespondence_isIntegral",
+       "role": "structure",
+       "statement": "W_{f,g}, the scheme-theoretic image of (ι_U, f_U, (g∘f)_U) in X ×_K Y ×_K Z, is integral, closed, projective, of dimension d, and does not depend on the dense open U; no integrality of Y ×_K Z is used"
       }
      ],
      "tests": [
+      {
+       "name": "real_complex_triple_diagonal",
+       "kind": "degenerate",
+       "statement": "K = R, X = Y = Z = P^1_C, f = g = id: Y ×_R Z has two components (C ⊗_R C ≅ C × C) and is not a variety, while W is the triple diagonal ≅ P^1_C, integral of dimension 1, with all projections onto graphs of degree 1"
+      },
       {
        "name": "cremona_square",
        "kind": "computation",
@@ -254,11 +267,12 @@
      "id": "1.4",
      "kind": "theorem",
      "name": "RationalMap.graph_normalization / RationalMap.graph_baseChange",
-     "statement": "Normalization: for ν : X̃ -> X and f̃ = ν^{-1}∘f∘ν, ν×ν maps Γ_{f̃} properly and birationally onto Γ_f, and (f^n)~ = f̃^n. Field extension: (Γ_f)_{K'} is the scheme-theoretic image of γ_f ×_K K'; for X, Y geometrically integral, f_{K'} is dominant, e(f_{K'}) = e(f), (g∘f)_{K'} = g_{K'}∘f_{K'}, Γ_{f_{K'}} = (Γ_f)_{K'}.",
+     "statement": "Normalization: for ν : X̃ -> X and f̃ = ν^{-1}∘f∘ν, ν×ν maps Γ_{f̃} properly and birationally onto Γ_f, and (f^n)~ = f̃^n. Field extension: (Γ_f)_{K'} is the scheme-theoretic image of γ_f ×_K K'; for X, Y geometrically integral, f_{K'} is dominant, e(f_{K'}) = e(f), (g∘f)_{K'} = g_{K'}∘f_{K'}, Γ_{f_{K'}} = (Γ_f)_{K'}. The degree equality is proved by cases: if dim X = dim Y, a basis of K(X) over f^*K(Y) of e(f) ≥ 1 elements stays a basis after ⊗_K K' and localization; if dim X > dim Y, K(X) is infinite-dimensional over f^*K(Y), no finite basis is used, and invariance of dimension gives e(f_{K'}) = 0 = e(f).",
      "hypotheses": [
       "X projective variety, f dominant self-map for the normalization part",
       "K'/K any field extension",
-      "X, Y geometrically integral for the statements on f_{K'}"
+      "X, Y geometrically integral for the statements on f_{K'}",
+      "no equal-dimension hypothesis for e(f_{K'}) = e(f): the case dim X > dim Y is the junk value 0 on both sides"
      ],
      "locator": {
       "source": "stacks-morphisms",
@@ -270,6 +284,7 @@
       "mathlib:AlgebraicGeometry.Scheme.Hom.image",
       "target:1.1",
       "target:1.2",
+      "roadmap:SchemeAndStackFoundations §0.7",
       "roadmap:SchemeAndStackFoundations §0.11",
       "roadmap:SchemeAndStackFoundations §0.20",
       "roadmap:SchemeAndStackFoundations §0.30"
@@ -288,7 +303,7 @@
       {
        "name": "topologicalDegree_baseChange",
        "role": "compatibility",
-       "statement": "e(f_{K'}) = e(f)"
+       "statement": "e(f_{K'}) = e(f); in equal dimension by a basis of e(f) ≥ 1 elements, in larger source dimension by invariance of dimension and the junk value 0"
       }
      ],
      "tests": [
@@ -306,6 +321,11 @@
        "name": "cusp_normalization",
        "kind": "degenerate",
        "statement": "cuspidal cubic with normalization P^1: the lift of id is id"
+      },
+      {
+       "name": "projection_rank_control",
+       "kind": "non-example",
+       "statement": "K' = K, projection P^2 ⤏ P^1: K(u,v) over K(u) has the independent family 1, v, v^2, ..., so it is not free of rank e = 0; both degrees are the junk value 0. z ↦ z^2: basis {1, z} stays a basis, e = 2 on both sides"
       }
      ]
     }
@@ -319,7 +339,7 @@
      "id": "2.1",
      "kind": "theorem",
      "name": "intersectionNumber_eq_sum_components",
-     "statement": "For X proper over K, Z ⊆ X closed of dimension r with r-dimensional components Z_i of generic multiplicity m_i and line bundles L_1..L_r: (L_1⋯L_r·Z) = Σ m_i (L_1⋯L_r·Z_i).",
+     "statement": "For X proper over K, Z ⊆ X closed of dimension r with r-dimensional components Z_i of generic multiplicity m_i and line bundles L_1..L_r: (L_1⋯L_r·Z) = Σ m_i (L_1⋯L_r·Z_i). For r = 1 this is the length-weighted component law for curve degrees of AlgebraicModuliForArithmeticGeometryPartII §0.1; the statement here is its form in every dimension.",
      "hypotheses": [
       "X proper over K",
       "dim Z = r"
@@ -330,7 +350,8 @@
      },
      "prerequisites": [
       "roadmap:CyclotomicClassGroupsAndStickelberger §4.3",
-      "roadmap:SchemeAndStackFoundations §2.6"
+      "roadmap:SchemeAndStackFoundations §2.6",
+      "roadmap:AlgebraicModuliForArithmeticGeometryPartII §0.1"
      ],
      "api": [],
      "tests": [
@@ -496,40 +517,34 @@
    "targets": [
     {
      "id": "3.1",
-     "kind": "definition",
-     "name": "LineBundle.IsNef",
-     "statement": "On a projective K-scheme, L is nef if (L·C) ≥ 0 for every integral closed curve C (on a projective variety this is ArakelovGeometryAndAbelianHeightsPartII §0.1's nefness). Ample implies nef; nef is stable under sums, positive multiples, restriction and pullback; big and nef pulls back to big and nef along generically finite surjective maps of equal dimension with ((p^*L)^d) = deg(p)(L^d); nefness is invariant under field extension; nefness passes to W of §2.4.",
+     "kind": "theorem",
+     "name": "isNef_iff_intersectionNumber_nonneg / isNef_baseChange_iff",
+     "statement": "Nefness is imported from AlgebraicModuliForArithmeticGeometryPartII §1.5 over the base Spec K (nonnegative degree on every integral curve of a proper K-scheme; sums, positive multiples, pullback, preservation under field extension), with ample implies nef from its §1.7. A nef real class here is a finite positive combination of nef line bundles, a restricted part of that nef cone. This section proves: L is nef iff (L·C) ≥ 0 for every integral closed curve, with the numerical intersection (the coefficient of n in χ(C, nL) is the degree χ(C,L) − χ(C,O_C)); on a projective variety this is ArakelovGeometryAndAbelianHeightsPartII §0.1's nefness; big and nef pulls back to big and nef along generically finite surjective maps of equal dimension with ((p^*L)^d) = deg(p)(L^d); for every projective K-scheme, L nef iff L_{K'} nef (forward direction imported, converse through §2.1 and field-extension compatibility); nefness passes to W of §2.4.",
      "hypotheses": [
-      "X projective over K"
+      "X projective (for the field-extension item) or proper over K"
      ],
      "locator": {
       "source": "cutkosky2015",
-      "where": "§2.2, lines 274-287 (nef classes over an arbitrary field); the definition is ArakelovGeometryAndAbelianHeightsPartII §0.1"
+      "where": "§2.2, lines 274-287 (nef classes over an arbitrary field); the definition is AlgebraicModuliForArithmeticGeometryPartII §1.5"
      },
      "prerequisites": [
+      "roadmap:AlgebraicModuliForArithmeticGeometryPartII §0.1",
+      "roadmap:AlgebraicModuliForArithmeticGeometryPartII §1.5",
+      "roadmap:AlgebraicModuliForArithmeticGeometryPartII §1.7",
       "roadmap:ArakelovGeometryAndAbelianHeightsPartII §0.1",
       "roadmap:CyclotomicClassGroupsAndStickelberger §4.3",
+      "target:2.1",
       "target:2.2",
       "target:2.3",
       "target:2.4",
       "roadmap:SchemeAndStackFoundations §3.3",
-      "gap:numerical-nef-big-transfer"
+      "tauceti:TauCeti.AlgebraicGeometry.LineBundleClass.intersectionNumber_eq_finrank_mul"
      ],
      "api": [
       {
-       "name": "isNef_of_ample",
-       "role": "constructor",
-       "statement": "ample line bundles are nef"
-      },
-      {
-       "name": "isNef_pullback",
-       "role": "functoriality",
-       "statement": "p^*L is nef for every morphism p of projective K-schemes"
-      },
-      {
-       "name": "isNef_restrict",
-       "role": "functoriality",
-       "statement": "restrictions of nef line bundles to closed subschemes are nef"
+       "name": "isNef_iff_intersectionNumber_nonneg",
+       "role": "compatibility",
+       "statement": "L is nef (AlgebraicModuliForArithmeticGeometryPartII §1.5) iff (L·C) ≥ 0 in numerical intersections for every integral closed curve C; on a projective variety this is ArakelovGeometryAndAbelianHeightsPartII §0.1's nefness"
       },
       {
        "name": "isBigNef_pullback",
@@ -539,19 +554,19 @@
       {
        "name": "isNef_baseChange_iff",
        "role": "compatibility",
-       "statement": "for every projective K-scheme, L nef iff L_{K'} nef; the forward direction on an integral X is gap:numerical-nef-big-transfer, the forward direction in general (through the irreducible components) and the converse (through §2.1 and field-extension compatibility) are proved here"
+       "statement": "for every projective K-scheme, L nef iff L_{K'} nef; the forward direction is the base change of AlgebraicModuliForArithmeticGeometryPartII §1.5 along Spec K' -> Spec K, the converse is proved here through §2.1 and field-extension compatibility"
       },
       {
        "name": "isNef_reduction",
        "role": "compatibility",
-       "statement": "nef on V implies nef pullback to W of §2.4"
+       "statement": "nef on V implies nef pullback to W of §2.4 (pullback, independence of the base field K or K' by the field-tower degree scaling, field extension, closed immersion)"
       }
      ],
      "tests": [
       {
        "name": "complex_line_base_change",
        "kind": "computation",
-       "statement": "P^1_C over R with L = O(1): L_C nef on P^1_C ⊔ P^1_C (degree 1 on each component), converse computes (L·X) = 2 = 1 + 1; the line y = tx in A^2_{K(t)} dominates A^2_K, so the supplied statement is needed on integral X of every dimension"
+       "statement": "P^1_C over R with L = O(1): L_C nef on P^1_C ⊔ P^1_C (degree 1 on each component), converse computes (L·X) = 2 = 1 + 1; the line y = tx in A^2_{K(t)} dominates A^2_K, so the forward direction is the imported base-change theorem, not a curve-by-curve comparison"
       },
       {
        "name": "P1_nef",
@@ -578,12 +593,11 @@
     {
      "id": "3.2",
      "kind": "theorem",
-     "name": "intersectionNumber_nonneg_of_isNef / isAmple_add_of_isNef",
-     "statement": "X projective over K, Z ⊆ X closed of dimension r, D_1..D_r nef (line bundles or nef real classes): (D_1⋯D_r·Z) ≥ 0. Over an algebraically closed field: D nef and H ample imply D + H ample.",
+     "name": "intersectionNumber_nonneg_of_isNef",
+     "statement": "X proper over K, Z ⊆ X closed of dimension r, D_1..D_r nef line bundles or nef real classes (positive combinations of nef line bundles): (D_1⋯D_r·Z) ≥ 0 for the numerical intersection. Kleiman's theorem on integral closed subschemes with Chow degrees, and ampleness of nef plus ample over every field, are imported from AlgebraicModuliForArithmeticGeometryPartII §1.7 (ii); this target adds nonintegral Z (through §2.1), the Euler-characteristic numbers (through §2.2) and positive real combinations (multilinear expansion).",
      "hypotheses": [
-      "X projective over K",
-      "D_i nef",
-      "algebraic closedness of K for nef-plus-ample"
+      "X proper over K",
+      "D_i nef line bundles or positive combinations of nef line bundles"
      ],
      "locator": {
       "source": "lazarsfeld2004",
@@ -591,12 +605,10 @@
      },
      "prerequisites": [
       "target:2.1",
+      "target:2.2",
       "target:2.3",
-      "target:2.4",
-      "target:3.1",
-      "roadmap:SchemeAndStackFoundations §4.15",
-      "roadmap:CyclotomicClassGroupsAndStickelberger §4.3",
-      "roadmap:StableReduction Layer 2"
+      "roadmap:AlgebraicModuliForArithmeticGeometryPartII §1.5",
+      "roadmap:AlgebraicModuliForArithmeticGeometryPartII §1.7"
      ],
      "api": [],
      "tests": [
@@ -611,9 +623,14 @@
        "statement": "(O(1,-1)^2) = -2 < 0 and O(1,-1) is not nef"
       },
       {
+       "name": "double_line",
+       "kind": "degenerate",
+       "statement": "Z = V(x^2) ⊆ P^2: χ(O_Z(n)) = 2n + 1, (O(1)·Z) = 2 = 2·1 ≥ 0; the reduced support alone would give 1"
+      },
+      {
        "name": "nef_plus_ample",
        "kind": "computation",
-       "statement": "O(1,0) + O(1,1) = O(2,1) ample; O(1,0) alone nef not ample"
+       "statement": "imported nef-plus-ample: O(1,0) + O(1,1) = O(2,1) ample with square 4 and ruling degrees 1, 2; O(1,0) alone nef not ample"
       },
       {
        "name": "blowup",
@@ -667,7 +684,7 @@
      "id": "3.4",
      "kind": "theorem",
      "name": "hodge_inequality_surface",
-     "statement": "S integral projective surface over K, H any line bundle with (H^2) > 0, D any line bundle: (D·H)^2 ≥ (D^2)(H^2). No positivity of H is assumed; the route derives the index theorem for H from the ample one of SchemeAndStackFoundations §5.10 by an integer combination xH + yD orthogonal to an ample class.",
+     "statement": "S integral projective surface over K, H any line bundle with (H^2) > 0, D any line bundle: (D·H)^2 ≥ (D^2)(H^2). No positivity of H is assumed. The route reduces to a smooth projective surface over an algebraically closed field (§2.4, de Jong) and applies SchemeAndStackFoundations §5.10's Hodge index theorem, which already assumes only H^2 > 0, to D'' = (H'^2)φ^*D − (φ^*D·H')H'; what is added here is the reduction from an integral, possibly singular surface over an arbitrary field.",
      "hypotheses": [
       "S integral projective surface",
       "(H^2) > 0"
@@ -682,8 +699,7 @@
       "target:2.4",
       "roadmap:SchemeAndStackFoundations §4.13",
       "roadmap:SchemeAndStackFoundations §4.19",
-      "roadmap:SchemeAndStackFoundations §5.10",
-      "roadmap:StableReduction Layer 2"
+      "roadmap:SchemeAndStackFoundations §5.10"
      ],
      "api": [],
      "tests": [
@@ -728,12 +744,12 @@
       "target:2.3",
       "target:2.4",
       "target:3.1",
-      "target:3.2",
       "target:3.4",
       "roadmap:LefschetzPencilsAndVanishingCycles §5.1",
       "roadmap:CyclotomicClassGroupsAndStickelberger §4.3",
-      "roadmap:StableReduction Layer 2",
-      "tauceti:AlgebraicGeometry.Scheme.IdealSheafData.IsEffectiveCartier"
+      "tauceti:AlgebraicGeometry.Scheme.IdealSheafData.IsEffectiveCartier",
+      "roadmap:AlgebraicModuliForArithmeticGeometryPartII §1.7",
+      "roadmap:AlgebraicModuliForArithmeticGeometry §1.4"
      ],
      "api": [],
      "tests": [
@@ -773,11 +789,11 @@
       "target:2.3",
       "target:2.4",
       "target:3.1",
-      "target:3.2",
       "target:3.3",
       "roadmap:LefschetzPencilsAndVanishingCycles §5.1",
       "roadmap:CyclotomicClassGroupsAndStickelberger §4.3",
-      "roadmap:StableReduction Layer 2"
+      "roadmap:AlgebraicModuliForArithmeticGeometryPartII §1.7",
+      "roadmap:AlgebraicModuliForArithmeticGeometry §1.4"
      ],
      "api": [],
      "tests": [
@@ -808,7 +824,7 @@
      "id": "4.1",
      "kind": "definition",
      "name": "RationalMap.mixedDegree",
-     "statement": "deg(f; L_1..L_{d-k} | M_1..M_k) = (π_1^*L_1⋯π_1^*L_{d-k}·π_2^*M_1⋯π_2^*M_k)_{Γ_f}; deg_k(f; L, M); deg_{k,ω}(f) = deg_k(f; ω, ω). Model independence with factor e; product formula on X×Y; formula through f^* = π_{1*}(c_1(π_2^*M)…∩[Γ_f]); multilinearity.",
+     "statement": "deg(f; L_1..L_{d-k} | M_1..M_k) = (π_1^*L_1⋯π_1^*L_{d-k}·π_2^*M_1⋯π_2^*M_k)_{Γ_f}; deg_k(f; L, M); deg_{k,ω}(f) = deg_k(f; ω, ω). Model independence with factor e; product formula on X×Y; for line bundles, f^*(M_1⋯M_k) = π_{1*}(c_1(π_2^*M_1)∩⋯∩[Γ_f]) ∈ CH_{d-k}(X) with deg = deg(c_1(L)∩⋯∩f^*(M)); for real classes, f^*(M_1⋯M_k) ∈ CH_{d-k}(X) ⊗_Z R, using the R-linear extension of the first-Chern action (additive by SchemeAndStackFoundations §5.3), of proper pushforward and of the degree, with the same degree formula by multilinear expansion; multilinearity.",
      "hypotheses": [
       "X, Y projective varieties of the same dimension d ≥ 1",
       "f dominant",
@@ -840,7 +856,12 @@
       {
        "name": "mixedDegree_chow",
        "role": "compatibility",
-       "statement": "deg = deg(c_1(L)^{d-k} ∩ f^*(M^k)) with f^* = π_{1*}(c_1(π_2^*M)^k ∩ [Γ_f])"
+       "statement": "for line bundles, deg = deg(c_1(L)^{d-k} ∩ f^*(M^k)) with f^*(M^k) = π_{1*}(c_1(π_2^*M)^k ∩ [Γ_f]) ∈ CH_{d-k}(X)"
+      },
+      {
+       "name": "mixedDegree_chow_real",
+       "role": "compatibility",
+       "statement": "for real classes, f^*(M_1⋯M_k) ∈ CH_{d-k}(X) ⊗_Z R through the R-linear extensions of c_1(−)∩, proper pushforward and degree; it is multilinear, is the image of the integral cycle for line bundles, and satisfies the same degree formula"
       },
       {
        "name": "mixedDegree_multilinear",
@@ -863,6 +884,11 @@
        "name": "cremona_product",
        "kind": "computation",
        "statement": "Cremona of P^2: (pr_1^*H·pr_2^*H·Γ_σ) = 2"
+      },
+      {
+       "name": "real_cycle_coefficients",
+       "kind": "non-example",
+       "statement": "X = Y = P^1, f = id, k = 1: M = O(1) gives [point] of degree 1; M = √2·O(1) gives √2·[point] ∈ CH_0(P^1) ⊗ R of degree √2, which no element of CH_0(P^1) ≅ Z has; M = 0 gives 0"
       }
      ]
     },
@@ -1249,10 +1275,11 @@
      "id": "6.1",
      "kind": "theorem",
      "name": "projectiveSpace_rationalMap_forms",
-     "statement": "Forms F_0..F_d of a common degree, not all zero, define a unique K-rational map of P^d; every K-rational map of P^d is given by forms without common factor, unique up to a scalar, of degree deg f, with domain the complement of V(F) (codimension ≥ 2); composition is substitution divided by the gcd, deg(g∘f) ≤ deg f·deg g with equality if f or g is a morphism.",
+     "statement": "Forms F_0..F_d of a common degree, not all zero, define a unique K-rational map of P^d; every K-rational map of P^d is given by forms without common factor, unique up to a scalar, of degree deg f, with domain the complement of V(F) (codimension ≥ 2). Composition: for f = [F] dominant and g = [G] any rational map (reduced forms), G(F) is not identically zero, g∘f = [G(F)/gcd], deg(g∘f) ≤ deg f·deg g, with equality if f or g is a morphism. Iterates of morphisms: a morphism of degree a ≥ 1 is finite, surjective and dominant, with iterates of degree a^n; a morphism of degree 0 is constant, not dominant, and its iterates are taken in the composition of morphisms (RationalMap.compHom): f^0 = id, f^n = f for n ≥ 1, so deg(f^n) = (deg f)^n with 0^0 = 1.",
      "hypotheses": [
       "K a field",
-      "d ≥ 1"
+      "d ≥ 1",
+      "f dominant for the composition g∘f (Mathlib's RationalMap.comp); g arbitrary"
      ],
      "locator": {
       "source": "stacks-constructions",
@@ -1265,6 +1292,9 @@
       "mathlib:MvPolynomial.uniqueFactorizationMonoid",
       "mathlib:AlgebraicGeometry.Scheme.RationalMap.equivFunctionFieldOver",
       "mathlib:AlgebraicGeometry.Scheme.RationalMap.comp",
+      "mathlib:AlgebraicGeometry.Scheme.RationalMap.IsDominant",
+      "mathlib:AlgebraicGeometry.Scheme.RationalMap.compHom",
+      "mathlib:AlgebraicGeometry.IsFinite",
       "roadmap:SchemeAndStackFoundations §0.3",
       "roadmap:StableReduction Layer 2"
      ],
@@ -1284,6 +1314,16 @@
        "name": "common_factor",
        "kind": "non-example",
        "statement": "(x0^2, x0x1, x0x2) defines the identity, degree 1 not 2"
+      },
+      {
+       "name": "constant_into_base_point",
+       "kind": "non-example",
+       "statement": "constant f = [0:0:1] (forms (0,0,1), degree 0) followed by Cremona σ: G(F) = (0,0,0), no composite rational map; as a morphism f^n = f for n ≥ 1, of degree 0"
+      },
+      {
+       "name": "dominant_morphism_then_cremona",
+       "kind": "computation",
+       "statement": "f = [x_0^2 : x_1^2 : x_2^2], g = σ: G(F) = (x_1^2x_2^2, x_0^2x_2^2, x_0^2x_1^2) without common factor, degree 4 = 2·2; f = g = σ: h = x_0x_1x_2, degree 1 < 4"
       }
      ]
     },
@@ -1383,7 +1423,7 @@
      "id": "6.4",
      "kind": "theorem",
      "name": "affineSpace_polynomialMap",
-     "statement": "For F : A^d -> A^d dominant with a = max deg F_i: the extension [x_0^a : x_0^a F_i(x/x_0)] has reduced forms of degree a, restricts to F on A^d; deg_{1,H}(f) = a; λ_d(f) = e(f) = [K(x) : K(F)]; extensions compose; proper F is finite and surjective.",
+     "statement": "For F : A^d -> A^d dominant with a = max deg F_i: the extension [x_0^a : x_0^a F_i(x/x_0)] has reduced forms of degree a, restricts to F on A^d; deg_{1,H}(f) = a; λ_d(f) = e(f) = [K(x) : K(F)]; extensions of dominant polynomial maps compose, the inner map first; proper F is finite and surjective.",
      "hypotheses": [
       "F_1..F_d algebraically independent over K"
      ],
@@ -1435,12 +1475,28 @@
    "what": "numerical intersections on proper schemes over a field: polynomiality, symmetry, additivity, projection formula, Cartier restriction, ample positivity, field-extension compatibility"
   },
   {
+   "roadmap": "AlgebraicModuliForArithmeticGeometryPartII",
+   "sections": [
+    "§0.1",
+    "§1.5",
+    "§1.7"
+   ],
+   "what": "curve degree with the length-weighted component law; nefness over a field (sums, positive scaling, pullback, base change along field extensions); Kleiman nonnegativity on integral closed subschemes and nef plus ample is ample, over every field; ample implies nef"
+  },
+  {
+   "roadmap": "AlgebraicModuliForArithmeticGeometry",
+   "sections": [
+    "§1.4"
+   ],
+   "what": "very ampleness; high powers of an ample line bundle are very ample, very ample implies ample"
+  },
+  {
    "roadmap": "ArakelovGeometryAndAbelianHeightsPartII",
    "sections": [
     "§0.1",
     "§0.3"
    ],
-   "what": "geometric nefness; volume, bigness, Hilbert-Samuel for nef, Siu's inequality vol(L-M) ≥ L^d - d L^{d-1}M"
+   "what": "geometric nefness on projective varieties (read for §0.3); volume, bigness, Hilbert-Samuel for nef, Siu's inequality vol(L-M) ≥ L^d - d L^{d-1}M"
   },
   {
    "roadmap": "LefschetzPencilsAndVanishingCycles",
@@ -1462,7 +1518,6 @@
     "§4.11",
     "§4.12",
     "§4.13",
-    "§4.15",
     "§4.16",
     "§4.19",
     "§5.1",
@@ -1470,14 +1525,14 @@
     "§5.3",
     "§5.10"
    ],
-   "what": "Proj and twisting sheaves, dimension theory, field descent, normalization, coherent cohomology and Serre vanishing, curve degrees, modifications, Chow's lemma, regular=smooth, Nakai-Moishezon over algebraically closed fields, alterations, de Jong, Chow groups and first Chern classes, Hodge index and Riemann-Roch on smooth surfaces"
+   "what": "Proj and twisting sheaves, dimension theory, field descent, normalization, coherent cohomology and Serre vanishing, curve degrees, modifications, Chow's lemma, regular=smooth, alterations, de Jong, Chow groups and first Chern classes (additive, with projection formula), Hodge index for H^2 > 0 and Riemann-Roch on smooth surfaces"
   },
   {
    "roadmap": "StableReduction",
    "sections": [
     "Layer 2"
    ],
-   "what": "ampleness, projective morphisms, tensor powers, global generation"
+   "what": "projective morphisms, tensor powers, pullback, global generation"
   },
   {
    "roadmap": "ArithmeticDynamics",
@@ -1506,22 +1561,5 @@
    "what": "h_alg and log-concavity"
   }
  ],
- "gaps": [
-  {
-   "slug": "numerical-nef-big-transfer",
-   "title": "nefness under extension of the ground field",
-   "neededBy": [
-    "3.1",
-    "3.2",
-    "3.3",
-    "3.4",
-    "3.5",
-    "3.6"
-   ],
-   "detail": "The field-extension part of the contract StableReductionPartII records for SchemeAndStackFoundations under the same name, in its forward direction on a projective integral K-scheme. §3.1 derives from it the converse and the statement for every projective K-scheme, and uses it to transport nefness to the integral variety over an algebraically closed field of §2.4.",
-   "needs": "For a projective integral K-scheme X, a line bundle L on X and a field extension K'/K, if (L · C) ≥ 0 for every integral closed curve C ⊆ X, then (L_{K'} · C') ≥ 0 for every integral closed curve C' ⊆ X_{K'}.",
-   "supplier": "SchemeAndStackFoundations",
-   "section": "§5.3"
-  }
- ]
+ "gaps": []
 }
