@@ -729,11 +729,12 @@
      "id": "3.5",
      "kind": "theorem",
      "name": "khovanskii_teissier",
-     "statement": "V integral projective of dimension d ≥ 2, A, B, C_1..C_{d-2} nef (line bundles or nef real classes): (A·B·C)^2 ≥ (A^2·C)(B^2·C); hence s_k = (A^k B^{d-k}) satisfies s_k^2 ≥ s_{k-1}s_{k+1}.",
+     "statement": "V integral projective of dimension d ≥ 2, A, B, C_1..C_{d-2} nef (line bundles or nef real classes): (A·B·C)^2 ≥ (A^2·C)(B^2·C); hence s_k = (A^k B^{d-k}) satisfies s_k^2 ≥ s_{k-1}s_{k+1} for 1 ≤ k ≤ d-1.",
      "hypotheses": [
       "V integral projective over K",
       "all classes nef",
-      "d ≥ 2"
+      "d ≥ 2",
+      "1 ≤ k ≤ d-1 for the log-concavity of s_k (at k = 0 natural subtraction gives s_0^2 ≥ s_0 s_1, false on P^2 for A = 2H, B = H: 1 ≥ 2)"
      ],
      "locator": {
       "source": "cutkosky2015",
@@ -774,7 +775,7 @@
      "id": "3.6",
      "kind": "theorem",
      "name": "siu_inequality_products",
-     "statement": "V integral projective of dimension r ≥ 1, 1 ≤ i ≤ r, nef A_1..A_i, B, C_1..C_{r-i} with (B^r) > 0: (B^r)(A_1⋯A_i·C) ≤ (r-i+1)^i (A_1⋯A_i·B^{r-i})(B^i·C). Consequently nef A, B with positive top powers have all (A^k B^{r-k}) > 0.",
+     "statement": "V integral projective of dimension r ≥ 1, 1 ≤ i ≤ r, nef A_1..A_i, B, C_1..C_{r-i} with (B^r) > 0: (B^r)(A_1⋯A_i·C) ≤ (r-i+1)^i (A_1⋯A_i·B^{r-i})(B^i·C). Consequently nef A, B with positive top powers have (A^k B^{r-k}) > 0 for every 0 ≤ k ≤ r.",
      "hypotheses": [
       "V integral projective over K",
       "all classes nef",
@@ -896,10 +897,11 @@
      "id": "4.2",
      "kind": "theorem",
      "name": "mixedDegree_values / mixedDegree_pos",
-     "statement": "deg_0(f; L, M) = (L^d); deg_d(f; L, M) = e(f)(M^d); for a morphism deg_k = (L^{d-k}(f^*M)^k); f^*ω ≅ qω with (ω^d) ≠ 0 gives deg_{k,ω} = q^k(ω^d) and e(f) = q^d; integer for line bundles; nef gives ≥ 0 and monotonicity; big and nef (or real polarizations) give deg_k > 0 for all k.",
+     "statement": "deg_0(f; L, M) = (L^d); deg_d(f; L, M) = e(f)(M^d); for a morphism deg_k = (L^{d-k}(f^*M)^k); f^*ω ≅ qω with (ω^d) ≠ 0 gives deg_{k,ω} = q^k(ω^d) and e(f) = q^d; integer for line bundles; nef gives ≥ 0 and monotonicity; big and nef (or real polarizations) give deg_k > 0 for every 0 ≤ k ≤ d.",
      "hypotheses": [
       "X, Y projective varieties of dimension d ≥ 1",
       "f dominant",
+      "0 ≤ k ≤ d",
       "L, M nef/big as stated"
      ],
      "locator": {
@@ -947,7 +949,8 @@
      "hypotheses": [
       "X, Y projective varieties",
       "f dominant",
-      "geometric integrality for f_{K'}"
+      "geometric integrality for f_{K'}",
+      "0 ≤ k ≤ d"
      ],
      "locator": {
       "source": "truong2020",
@@ -984,10 +987,11 @@
      "id": "4.4",
      "kind": "theorem",
      "name": "mixedDegree_comp_le",
-     "statement": "f_1 : X_1 ⤏ X_2, f_2 : X_2 ⤏ X_3 dominant, equal dimension d ≥ 1, L_j nef with L_2 big and nef (or a real polarization): deg_k(f_2∘f_1; L_1, L_3) ≤ ((d-k+1)^k/(L_2^d)) deg_k(f_1; L_1, L_2) deg_k(f_2; L_2, L_3).",
+     "statement": "f_1 : X_1 ⤏ X_2, f_2 : X_2 ⤏ X_3 dominant, equal dimension d ≥ 1, 0 ≤ k ≤ d, L_j nef with L_2 big and nef (or a real polarization): deg_k(f_2∘f_1; L_1, L_3) ≤ ((d-k+1)^k/(L_2^d)) deg_k(f_1; L_1, L_2) deg_k(f_2; L_2, L_3).",
      "hypotheses": [
       "X_j projective varieties of dimension d ≥ 1",
       "f_j dominant",
+      "0 ≤ k ≤ d",
       "L_1, L_3 nef, L_2 big and nef"
      ],
      "locator": {
@@ -1034,7 +1038,8 @@
      "hypotheses": [
       "X, Y projective varieties of dimension d ≥ 1",
       "ω, ω' real polarizations",
-      "φ birational"
+      "φ birational",
+      "0 ≤ k ≤ d"
      ],
      "locator": {
       "source": "dang2020",
@@ -1134,10 +1139,12 @@
      "id": "5.2",
      "kind": "theorem",
      "name": "dynamicalDegree_properties",
-     "statement": "λ_k(f) ∈ [1, ∞); independent of ω; λ_k(f^m) = λ_k(f)^m; λ_0 = 1; λ_d = e(f); λ_k^2 ≥ λ_{k-1}λ_{k+1}; λ_k ≤ λ_1^k.",
+     "statement": "λ_k(f) ∈ [1, ∞); independent of ω; λ_k(f^m) = λ_k(f)^m for m ≥ 1; λ_0 = 1; λ_d = e(f); λ_k^2 ≥ λ_{k-1}λ_{k+1} for 1 ≤ k ≤ d-1; λ_k ≤ λ_1^k.",
      "hypotheses": [
       "X projective variety of dimension d ≥ 1",
-      "f dominant"
+      "f dominant",
+      "0 ≤ k ≤ d",
+      "1 ≤ k ≤ d-1 for log-concavity (at k = 0 natural subtraction gives λ_0^2 ≥ λ_0 λ_1, false for the Fibonacci map: 1 ≥ golden ratio)"
      ],
      "locator": {
       "source": "dang2020",
@@ -1177,7 +1184,8 @@
      "hypotheses": [
       "X projective variety",
       "φ birational to a projective variety",
-      "geometric integrality for f_{K'}"
+      "geometric integrality for f_{K'}",
+      "0 ≤ k ≤ d"
      ],
      "locator": {
       "source": "truong2020",
@@ -1212,7 +1220,7 @@
      "id": "5.4",
      "kind": "definition",
      "name": "RationalMap.algebraicEntropy",
-     "statement": "h_alg(f) = log max_k λ_k(f) ≥ 0; invariant under birational conjugacy, normalization and field extension (geometrically integral); h_alg(f^n) = n h_alg(f); log e(f) ≤ h_alg(f) ≤ d log λ_1(f); the maximizing indices form an interval.",
+     "statement": "h_alg(f) = log max_{0 ≤ k ≤ d} λ_k(f) ≥ 0; invariant under birational conjugacy, normalization and field extension (geometrically integral); h_alg(f^n) = n h_alg(f); log e(f) ≤ h_alg(f) ≤ d log λ_1(f); the maximizing indices form an interval.",
      "hypotheses": [
       "X projective variety of dimension d ≥ 1",
       "f dominant"
@@ -1331,9 +1339,10 @@
      "id": "6.2",
      "kind": "theorem",
      "name": "projectiveSpace_degree_formulas",
-     "statement": "For f given by reduced forms of degree a ≥ 1, dominant: deg_{1,H}(f) = a; deg_{k+1,H} ≤ a·deg_{k,H} so deg_{k,H} ≤ a^k; equality for morphisms; for morphisms deg_{k,H}(f^n) = a^{nk}, λ_k = a^k, e = a^d; λ_1(f) = lim (deg f^n)^{1/n}; deg_{1,H}(g∘f) ≤ deg_{1,H}(f)deg_{1,H}(g).",
+     "statement": "For f given by reduced forms of degree a ≥ 1, dominant: deg_{1,H}(f) = a; deg_{k+1,H} ≤ a·deg_{k,H} for 0 ≤ k ≤ d-1, so deg_{k,H} ≤ a^k for 0 ≤ k ≤ d; equality for morphisms; for morphisms deg_{k,H}(f^n) = a^{nk}, λ_k = a^k, e = a^d; λ_1(f) = lim (deg f^n)^{1/n}; deg_{1,H}(g∘f) ≤ deg_{1,H}(f)deg_{1,H}(g).",
      "hypotheses": [
-      "f dominant self-map of P^d given by reduced forms of degree a ≥ 1"
+      "f dominant self-map of P^d given by reduced forms of degree a ≥ 1",
+      "0 ≤ k ≤ d-1 for the recursion (it compares (A^{d-k-1}B^k·(aA - B)) on Γ_f); 0 ≤ k ≤ d for the bounds"
      ],
      "locator": {
       "source": "russakovskiishiffman1997",
@@ -1379,9 +1388,10 @@
      "id": "6.3",
      "kind": "example",
      "name": "projectiveSpace_standard_examples",
-     "statement": "Cremona σ on P^d, d ≥ 2: σ∘σ = id, deg_{1,H}(σ) = d, deg_{1,H}(σ^2) = 1 < d^2, e = 1, λ_k = 1, h_alg = 0. Fibonacci map [yz : xy : z^2]: f^n = [x^{fib(n-1)}y^{fib n}z^{fib n} : x^{fib n}y^{fib(n+1)} : z^{fib(n+2)}], deg_{1,H}(f^n) = fib(n+2), λ_1 = golden ratio, λ_2 = 1, h_alg = log golden ratio. Frobenius: λ_k = p^k, λ_d = e = p^d.",
+     "statement": "Cremona σ on P^d, d ≥ 2: σ∘σ = id, deg_{1,H}(σ) = d, deg_{1,H}(σ^2) = 1 < d^2, e = 1, λ_k = 1, h_alg = 0. Fibonacci map [yz : xy : z^2]: f^0 = id; for n ≥ 1, f^n = [x^{fib(n-1)}y^{fib n}z^{fib n} : x^{fib n}y^{fib(n+1)} : z^{fib(n+2)}] (reduced forms of degree fib(n+2)); deg_{1,H}(f^n) = fib(n+2) for every n ≥ 0 (n = 0: the identity, degree 1 = fib 2), λ_1 = golden ratio, λ_2 = 1, h_alg = log golden ratio. Frobenius: λ_k = p^k, λ_d = e = p^d.",
      "hypotheses": [
       "d ≥ 2 for the Cremona involution",
+      "n ≥ 1 for the coordinate formula of the Fibonacci iterate f^n (Mathlib's Nat.fib with natural subtraction); f^0 = id separately",
       "characteristic p for Frobenius"
      ],
      "locator": {
@@ -1402,6 +1412,11 @@
      ],
      "api": [],
      "tests": [
+      {
+       "name": "fibonacci_n0",
+       "kind": "degenerate",
+       "statement": "n = 0: f^0 = id = [x : y : z], degree 1 = fib 2; substituting n = 0 in the n ≥ 1 tuple gives fib(0-1) = fib 0 = 0 and the tuple (1, y, z), of coordinate degrees 0, 1, 1, not homogeneous: excluded"
+      },
       {
        "name": "fibonacci_n2",
        "kind": "computation",

@@ -656,8 +656,8 @@ Prove:
 Let `f = [F_0 : ⋯ : F_d]` be dominant, with forms of degree `a ≥ 1` without common factor. Prove:
 
 - `deg_{1,H}(f) = a`;
-- `deg_{k+1,H}(f) ≤ a·deg_{k,H}(f)`, hence `deg_{k,H}(f) ≤ a^k`;
-- `deg_{k,H}(f) = a^k` for all `k` when `f` is a morphism;
+- `deg_{k+1,H}(f) ≤ a·deg_{k,H}(f)` for `0 ≤ k ≤ d − 1`, hence `deg_{k,H}(f) ≤ a^k` for `0 ≤ k ≤ d`;
+- `deg_{k,H}(f) = a^k` for all `0 ≤ k ≤ d` when `f` is a morphism;
 - for a morphism, `deg_{k,H}(f^n) = a^{nk}`, `λ_k(f) = a^k` and `e(f) = a^d`;
 - `λ_1(f) = lim_n (deg f^n)^{1/n}`, Silverman's first dynamical degree;
 - `deg_{1,H}(g ∘ f) ≤ deg_{1,H}(f)·deg_{1,H}(g)`, the constant being `1`.
@@ -676,13 +676,14 @@ Let `f = [F_0 : ⋯ : F_d]` be dominant, with forms of degree `a ≥ 1` without 
 ### 6.3 Standard examples
 
 - *The standard Cremona involution.* For `d ≥ 2` let `σ = [Π_{j≠0} x_j : ⋯ : Π_{j≠d} x_j]`, forms of degree `d` without common factor. Then `σ ∘ σ = id`, `deg_{1,H}(σ) = d`, `deg_{1,H}(σ²) = 1 < d²`, `e(σ) = 1`, `λ_k(σ) = 1` for all `k` and `h_alg(σ) = 0`. For `d = 2` the degrees are `(1, 2, 1)` (guedj2010 Exemple 2.5, lines 1272–1282, for `d = 3`; russakovskiishiffman1997 lines 542–552 for `d = 2`; truong2020 §6.4, lines 1542–1544).
-- *The Fibonacci map.* `f[x : y : z] = [yz : xy : z²]` on `ℙ²`. For `n ≥ 1`, `f^n = [x^{fib(n−1)} y^{fib(n)} z^{fib(n)} : x^{fib(n)} y^{fib(n+1)} : z^{fib(n+2)}]`, by induction on `n` through the exponent matrix `[[0, 1], [1, 1]]`. These forms have no common factor, so `deg_{1,H}(f^n) = fib(n + 2)`. Further, `λ_1(f) = Real.goldenRatio`, `e(f) = 1` (on `z = 1` the inverse of `(x, y) ↦ (y, xy)` is `(u, v) ↦ (v/u, u)`), `λ_2(f) = 1` and `h_alg(f) = log Real.goldenRatio` (silverman2014 Example 5, lines 358–372).
+- *The Fibonacci map.* `f[x : y : z] = [yz : xy : z²]` on `ℙ²`. For `n ≥ 1`, `f^n = [x^{fib(n−1)} y^{fib(n)} z^{fib(n)} : x^{fib(n)} y^{fib(n+1)} : z^{fib(n+2)}]`, by induction on `n` through the exponent matrix `[[0, 1], [1, 1]]`. These forms have no common factor, so `deg_{1,H}(f^n) = fib(n + 2)` for `n ≥ 1`. The iterate `f^0` is the identity, of degree `1 = fib 2`, so `deg_{1,H}(f^n) = fib(n + 2)` holds for every `n ≥ 0`; the coordinate formula is not used at `n = 0`. Further, `λ_1(f) = Real.goldenRatio`, `e(f) = 1` (on `z = 1` the inverse of `(x, y) ↦ (y, xy)` is `(u, v) ↦ (v/u, u)`), `λ_2(f) = 1` and `h_alg(f) = log Real.goldenRatio` (silverman2014 Example 5, lines 358–372).
 - *Frobenius.* Over a field of characteristic `p`, `F = [x_0^p : ⋯ : x_d^p]` is a morphism of degree `p` with `λ_k(F) = p^k` and `λ_d(F) = e(F) = p^d`, a purely inseparable degree.
 
 *Needs:* §§1.1, 4.2, 5.1–5.4, 6.1, 6.2; Mathlib `Nat.fib`, `Real.goldenRatio`.
 
 **Checks.**
 
+- Fibonacci map, `n = 0`: `f^0 = [x : y : z]`, of degree `1 = fib 2`. Substituting `n = 0` into the coordinate formula would give, with natural subtraction, `fib(0 − 1) = fib 0 = 0` and the tuple `(1, y, z)`, of coordinate degrees `0, 1, 1`. It is not homogeneous and does not define a map on `ℙ²` (the representatives `(2, 3, 1)` and `(4, 6, 2)` of one point go to `[1 : 3 : 1]` and `[1 : 6 : 2]`), which is why the formula is stated for `n ≥ 1`.
 - Fibonacci map, `n = 2`: `[xyz : xy² : z³]`, degree `3 = fib 4`. For `n = 3`: `[xy²z² : x²y³ : z⁵]`, degree `5 = fib 5`. The exponent of `x` in the first coordinate at `n = 1` is `fib 0 = 0`.
 - The Cremona involution of `ℙ³` has `deg_{1,H}(σ) = 3` and `deg_{1,H}(σ²) = 1`, as in Guedj's example.
 - Frobenius with `p = 2`, `d = 1`: `deg_{1,H} = 2 = e`, a purely inseparable degree.
