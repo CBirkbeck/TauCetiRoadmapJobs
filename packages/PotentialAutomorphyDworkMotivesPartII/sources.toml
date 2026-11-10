@@ -27,7 +27,7 @@ title = "Ordinarity of Local Galois Representation Arising from Dwork Motives"
 year = 2021
 arxiv = "2103.00106v1"
 locator_scheme = "theorem"
-locator = "Theorem 1.1, Remark 1.2, Theorem 1.4, Lemma 2.1, Remarks 2.2 and 2.4, Theorem 2.3, Lemmas 4.1–4.3 (arXiv v1)"
+locator = "Theorem 1.1, Remark 1.2, §4 (Lemmas 4.1–4.3) (arXiv v1)"
 url = "https://arxiv.org/abs/2103.00106v1"
 fetched_from = "https://arxiv.org/pdf/2103.00106v1"
 fetched_at = "2026-10-26T15:34:16Z"
@@ -36,7 +36,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-26"
 version_note = "arXiv v1"
-cited_for = ["Layers 4, 8"]
+cited_for = ["Layer 8"]
 
 [[source]]
 id = "BCGNT25"

@@ -5846,12 +5846,6 @@
       "section": "RD.3.34 Convergent F-isocrystals"
     },
     {
-      "slug": "equivariant-toroidal-semistable-reduction",
-      "needs": "For a log smooth (toroidal) scheme over a complete discrete valuation ring whose toroidal charts carry a finite group acting through characters on the chart coordinates, a unimodular subdivision of the conical complex gives, after a totally ramified base change of suitable degree e, an equivariant projective blowup that is strictly semistable and an isomorphism over the generic fibre (Kempf–Knudsen–Mumford–Saint-Donat).",
-      "supplier": "SchemeAndStackFoundations",
-      "section": "4.20 Traits, S-varieties, strict semistability and the semistable alteration theorem"
-    },
-    {
       "slug": "twisted-modular-curve-over-number-fields",
       "needs": "For a number field F, an integer r ≥ 3 and a continuous ρ : G_F → GL₂(ℤ/r) with determinant the mod-r cyclotomic character, the twisted curve Y(ρ)/F with its universal elliptic curve, its geometric connectedness, a smooth model with good reduction of the universal curve over O_F[1/r], and for every prime p ∤ r the equality of the geometric mod-p monodromy of the universal curve with SL₂(𝔽_p).",
       "supplier": "ModularCurvesPartII",
