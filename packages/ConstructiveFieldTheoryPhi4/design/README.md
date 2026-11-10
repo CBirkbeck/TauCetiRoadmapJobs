@@ -1,10 +1,10 @@
 # Roadmap: constructive scalar field theory on the lattice — φ⁴, Ising and their scaling limits
 
-**Summary.** This roadmap builds the lattice, probabilistic side of Euclidean scalar field theory in every dimension d ≥ 1, entirely with honest probability measures on finite-dimensional spaces and with families of finite-dimensional laws. It starts from single-site measures on ℝ (the φ⁴ measures `exp(−λφ⁴ + bφ²) dφ`, the Gaussian measures and the Ising measure `½(δ₋₁ + δ₁)`), defines the finite-volume Gibbs measures of ferromagnetic pair interactions, and introduces the Griffiths–Simon class of single-site measures through Ising block spins. It proves the correlation inequalities of the subject in finite volume: Griffiths' first and second inequalities, the FKG inequality, the random current representation and switching lemma of the Ising model, the Lebowitz, Gaussian (Newman) and Simon–Lieb inequalities for the Griffiths–Simon class, and the Messager–Miracle-Solé reflection inequality. On top of these it constructs the free-boundary infinite-volume state and its two-point function, susceptibility and critical point, proves reflection positivity, Gaussian domination and the infrared bound for periodic nearest-neighbour systems with long-range order of the Ising model in d ≥ 3 as an application, and develops random fields indexed by test functions, Schwinger functions, Gaussian random fields and Wick's law. It closes by defining the random fields reachable as scaling limits of lattice systems (Aizenman–Duminil-Copin, Definition 1.1), proving their basic structure and that the massive (and in d ≥ 3 the massless) Gaussian free field is reachable from Gaussian lattice fields, and by stating the marginal triviality theorem of Aizenman and Duminil-Copin and its Griffiths–Simon extension as the summit statements.
+**Summary.** This roadmap builds the lattice, probabilistic side of Euclidean scalar field theory in every dimension d ≥ 1, entirely with honest probability measures on finite-dimensional spaces and with families of finite-dimensional laws. It starts from single-site measures on ℝ (the φ⁴ measures `exp(−λφ⁴ + bφ²) dφ`, the Gaussian measures and the Ising measure `½(δ₋₁ + δ₁)`), defines the finite-volume Gibbs measures of ferromagnetic pair interactions, and introduces the Griffiths–Simon class of single-site measures through Ising block spins. It proves the correlation inequalities of the subject in finite volume: Griffiths' first and second inequalities, the FKG inequality, the random current representation and switching lemma of the Ising model, the Lebowitz, Gaussian (Newman) and Simon–Lieb inequalities for the Griffiths–Simon class, and the Messager–Miracle-Solé reflection inequality. On top of these it constructs the free-boundary infinite-volume state and its two-point function, susceptibility and critical point, proves reflection positivity, Gaussian domination and the infrared bound for periodic nearest-neighbour systems with long-range order of the Ising model in d ≥ 3 as an application, and develops random fields indexed by test functions, Schwinger functions, Gaussian random fields and Wick's law. It closes by defining the random fields reachable as scaling limits of lattice systems (Aizenman–Duminil-Copin, Definition 1.1), proving their basic structure and that the massive (and in d ≥ 3 the massless) Gaussian free field is reachable from Gaussian lattice fields. The marginal triviality theorem of Aizenman and Duminil-Copin and its Griffiths–Simon extension are downstream goals owned by ConstructiveFieldTheoryPhi4PartII.
 
 ## Scope and ownership
 
-This roadmap owns, at the generality stated in its layers: single-site measures and the Griffiths–Simon class (Layers 0 and 2); finite-volume Gibbs measures of pair interactions on finite sets, including Gaussian lattice fields (Layer 1); the finite-volume correlation inequalities and the random current representation with its switching lemma (Layer 3); the free-boundary infinite-volume state on ℤ^d (Layer 4); reflection positivity, Gaussian domination and the infrared bound on the discrete torus (Layer 5); random fields indexed by compactly supported continuous test functions, Schwinger functions, Gaussian processes with a prescribed covariance kernel and Wick's law (Layer 6); reachable random fields and the reachability of the Gaussian free field (Layer 7); and the statements of marginal triviality (Layer 8). No other roadmap plans these objects. The construction of a Gaussian process with an arbitrary positive semidefinite covariance kernel on an arbitrary index set is general probability rather than field theory; it is planned here because no roadmap plans it and every Gaussian random field of this roadmap needs it.
+This roadmap owns, at the generality stated in its layers: single-site measures and the Griffiths–Simon class (Layers 0 and 2); finite-volume Gibbs measures of pair interactions on finite sets, including Gaussian lattice fields (Layer 1); the finite-volume correlation inequalities and the random current representation with its switching lemma (Layer 3); the free-boundary infinite-volume state on ℤ^d (Layer 4); reflection positivity, Gaussian domination and the infrared bound on the discrete torus (Layer 5); random fields indexed by compactly supported continuous test functions, Schwinger functions, Gaussian processes with a prescribed covariance kernel and Wick's law (Layer 6); reachable random fields and the reachability of the Gaussian free field (Layer 7). ConstructiveFieldTheoryPhi4PartII owns the marginal-triviality goals below. The continuum analytic kernels used in Layer 7 are imported as specified below. The construction of a Gaussian process with an arbitrary positive semidefinite covariance kernel on an arbitrary index set is general probability rather than field theory; it is planned here because no roadmap plans it and every Gaussian random field of this roadmap needs it.
 
 Material consumed from elsewhere, by section:
 
@@ -13,9 +13,9 @@ Material consumed from elsewhere, by section:
 
 Left to other roadmaps:
 
-- The geometry of random currents beyond the switching lemma (current intersection probabilities, the tree diagram and improved tree diagram bounds, the mixing property of random currents), the transfer-matrix spectral representation of the two-point function, the identification below the critical point of the free-boundary, periodic and boundary-condition infinite-volume limits (Aizenman–Duminil-Copin, Proposition 5.2, stated there without proof), the infinite-volume and sliding-scale infrared bounds, the lower bound on the two-point function at criticality, the uniform local integrability of rescaled two-point functions, and the proofs of the two summit statements of Layer 8 belong to ConstructiveFieldTheoryPhi4PartII, which consumes this roadmap.
-- Osterwalder–Schrader reconstruction, Euclidean free Schwinger distributions as tempered functionals, Wightman fields and the Green function of `−Δ + m²` as a tempered distribution belong to RelativisticQuantumFieldTheory. The covariance of the Gaussian free field is defined here directly in Fourier space (Layer 7), so no statement of this roadmap depends on that roadmap.
-- The two-dimensional stochastic quantisation equation and its Gibbs measure are a PDE topic (PDE, stretch goals). Quantum spin systems and KMS states are OperatorAlgebraDynamics D9.
+- The geometry of random currents beyond the switching lemma (current intersection probabilities, the tree diagram and improved tree diagram bounds, the mixing property of random currents), the transfer-matrix spectral representation of the two-point function, the identification below the critical point of the free-boundary, periodic and boundary-condition infinite-volume limits (Aizenman–Duminil-Copin, Proposition 5.2, stated there without proof), the infinite-volume and sliding-scale infrared bounds, the lower bound on the two-point function at criticality, the uniform local integrability of rescaled two-point functions, and the marginal-triviality theorems (downstream goals 8.1 and 8.2), including their statements and proofs, belong to ConstructiveFieldTheoryPhi4PartII, which consumes this roadmap.
+- Osterwalder–Schrader reconstruction, Euclidean free Schwinger distributions as tempered functionals and Wightman fields belong to RelativisticQuantumFieldTheory. Its §7.1 supplies the analytic continuum Green kernels of `−Δ + m²`, their Fourier agreement, exterior decay and massless radial formula. This roadmap owns the C_c-indexed probability law, its block normalization and its lattice reachability (7.4).
+- The two-dimensional stochastic quantisation equation and its Gibbs measure are a PDE topic (PDE, Scope and ownership: the stochastic programme assigned to PDE, Part II). Quantum spin systems and KMS states are OperatorAlgebraDynamics D9.
 - The Lee–Yang theorem, the GHS inequality, the Peierls argument, the DLR formalism of specifications and uniqueness of Gibbs measures are not part of this roadmap; the free-boundary state of Layer 4 is constructed by monotone limits and needs none of them.
 
 ## Conventions
@@ -32,37 +32,37 @@ Left to other roadmaps:
 
 **Test functions and the continuum Fourier transform.** Aizenman–Duminil-Copin's `C_0(ℝ^d)` is the space of compactly supported continuous functions; here it is Mathlib's `CompactlySupportedContinuousMap` on `EuclideanSpace ℝ (Fin d)` with values in ℝ, written C_c(ℝ^d) (not Mathlib's space of functions vanishing at infinity). The continuum Fourier transform is Mathlib's `𝓕` with kernel `e^{−2πi⟨x,ξ⟩}` (`Real.fourier_eq`); the symbol of `−Δ + m²` is then `4π²|ξ|² + m²`. The Gaussian free field covariance is `C_m(f, g) = ∫ conj(𝓕f(ξ)) 𝓕g(ξ) / (4π²|ξ|² + m²) dξ`. Witness: for d = 1 this is `∫∫ f(x) e^{−m|x−y|}/(2m) g(y) dx dy`, because the Fourier transform of `e^{−m|x|}/(2m)` is `1/(m² + 4π²ξ²)`.
 
-**Total functions.** The rescaled lattice field divides by the square root of a block variance Σ ≥ 0; with Lean's conventions `√0 = 0` and `0⁻¹ = 0` the field is identically zero when Σ = 0, which happens exactly for ρ = δ₀. Monotone limits of nonnegative correlation functions are taken in `[0, ∞]`.
+**Total functions.** The rescaled lattice field divides by the square root of a finite block second moment Σ ≥ 0 (a variance when ρ is even); with Lean's conventions `√0 = 0` and `0⁻¹ = 0` the field is identically zero when Σ = 0, which, for a stable Gibbs law with integrable coordinate squares and a nonempty block, happens exactly for ρ = δ₀. An infinite second moment is excluded from this real normalization, rather than assigned the junk value of a real integral. Monotone limits of nonnegative correlation functions are taken in `[0, ∞]`.
 
 ## Exact supplier contracts
 
 ### From Mathlib
 
-The pin is f6090c7095e1e56b3464c1daba5f24631f1290d2. The following declarations are consumed, each read at the pin.
+The pin is 1b1ccf4b088b32fa3f23f2de1127433254a81e1e. The following declarations are consumed, each read at the pin.
 
-- `MeasureTheory.Measure.IsNegInvariant` (Mathlib/MeasureTheory/Group/Measure.lean:309): invariance of a measure under negation, `μ.neg = μ`; it is the evenness of single-site measures and of Gibbs measures throughout.
+- `MeasureTheory.Measure.IsNegInvariant` (Mathlib/MeasureTheory/Group/Measure.lean:310): invariance of a measure under negation, `μ.neg = μ`; it is the evenness of single-site measures and of Gibbs measures throughout.
 - `ProbabilityTheory.integrableExpSet` (Mathlib/Probability/Moments/IntegrableExpMul.lean:112): the set of t for which `exp(tX)` is integrable; admissibility of ρ is `integrableExpSet (fun φ ↦ φ²) ρ = Set.univ`.
-- `MeasureTheory.Measure.pi` (finite products), `MeasureTheory.Measure.withDensity` and `MeasureTheory.Measure.map`: the Gibbs measure of Layer 1 is `(ρ^{⊗V}).withDensity (e^{−H}/Z)`. `MeasureTheory.Measure.infinitePi` (Mathlib/Probability/ProductMeasure.lean:354) is the J = 0 infinite-volume state.
-- `MeasureTheory.IsProjectiveMeasureFamily`, `MeasureTheory.IsProjectiveLimit` and `MeasureTheory.IsProjectiveLimit.unique` (Mathlib/MeasureTheory/Constructions/Projective.lean:115 and following): the language of the Kolmogorov extension in Layers 4 and 6. Mathlib itself contains no existence theorem for projective limits; its Brownian motion file says so explicitly.
+- `MeasureTheory.Measure.pi` (Mathlib/MeasureTheory/Constructions/Pi.lean:211), `MeasureTheory.Measure.withDensity` (Mathlib/MeasureTheory/Measure/WithDensity.lean:39) and `MeasureTheory.Measure.map` (Mathlib/MeasureTheory/Measure/Map.lean:96): the Gibbs measure of Layer 1 is `(ρ^{⊗V}).withDensity (e^{−H}/Z)`. `MeasureTheory.Measure.infinitePi` (Mathlib/Probability/ProductMeasure.lean:354) is the J = 0 infinite-volume state.
+- `MeasureTheory.IsProjectiveMeasureFamily`, `MeasureTheory.IsProjectiveLimit` and `MeasureTheory.IsProjectiveLimit.unique` (Mathlib/MeasureTheory/Constructions/Projective.lean:45, 115 and 150): the language of the Kolmogorov extension in Layers 4 and 6. Mathlib itself contains no existence theorem for projective limits; its Brownian motion file says so explicitly.
 - `ProbabilityTheory.map_eq_iff_forall_finset_map_restrict_eq` (Mathlib/Probability/Process/FiniteDimensionalLaws.lean:61): equality of laws of processes is equality of all finite-dimensional laws; this is equality up to finite-dimensional distributions in Layer 6.
-- `ProbabilityTheory.IsGaussianProcess` (Mathlib/Probability/Distributions/Gaussian/IsGaussianProcess/Def.lean): a structure whose single field says that every restriction to a finite index set has a Gaussian law (`ProbabilityTheory.HasGaussianLaw`); `ProbabilityTheory.IsGaussian` (Mathlib/Probability/Distributions/Gaussian/Basic.lean:45) says that every continuous linear functional has a real Gaussian law `ProbabilityTheory.gaussianReal`. A generalised Gaussian process of Layer 6 is `ProbabilityTheory.IsGaussianProcess` for a random field; Mathlib's definition does not require centring.
-- `ProbabilityTheory.multivariateGaussian`, `ProbabilityTheory.measurePreserving_restrict₂_multivariateGaussian` and `ProbabilityTheory.charFun_multivariateGaussian` (Mathlib/Probability/Distributions/Gaussian/Multivariate.lean:236–269): finite-dimensional Gaussian laws and their restriction marginals, for the projective family of 6.3; `ProbabilityTheory.BrownianReal.projectiveFamily` (Mathlib/Probability/BrownianMotion/GaussianProjectiveFamily.lean:81) is the pattern for the kernel min(s, t).
+- `ProbabilityTheory.IsGaussianProcess` (Mathlib/Probability/Distributions/Gaussian/IsGaussianProcess/Def.lean:30): a structure whose single field says that every restriction to a finite index set has a Gaussian law (`ProbabilityTheory.HasGaussianLaw`, Mathlib/Probability/Distributions/Gaussian/HasGaussianLaw/Def.lean:33); `ProbabilityTheory.IsGaussian` (Mathlib/Probability/Distributions/Gaussian/Basic.lean:45) says that every continuous linear functional has a real Gaussian law `ProbabilityTheory.gaussianReal`. A generalised Gaussian process of Layer 6 is `ProbabilityTheory.IsGaussianProcess` for a random field; Mathlib's definition does not require centring.
+- `ProbabilityTheory.multivariateGaussian`, `ProbabilityTheory.measurePreserving_restrict₂_multivariateGaussian` and `ProbabilityTheory.charFun_multivariateGaussian` (Mathlib/Probability/Distributions/Gaussian/Multivariate.lean:166, 241 and 233, respectively): finite-dimensional Gaussian laws and their restriction marginals, for the projective family of 6.3; `ProbabilityTheory.BrownianReal.projectiveFamily` (Mathlib/Probability/BrownianMotion/GaussianProjectiveFamily.lean:81) is the pattern for the kernel min(s, t).
 - `MeasureTheory.Measure.ext_of_charFun` (Mathlib/MeasureTheory/Measure/CharacteristicFunction/Basic.lean:257), `MeasureTheory.ProbabilityMeasure.tendsto_iff_tendsto_charFun` (Lévy's continuity theorem, Mathlib/MeasureTheory/Measure/LevyConvergence.lean:214) and `ProbabilityTheory.tendstoInDistribution_iff_tendstoInDistribution_inner` (Cramér–Wold, Mathlib/Probability/CramerWold.lean:39): weak convergence and identification of finite-dimensional laws in Layers 1, 4, 6 and 7.
-- `MeasureTheory.ProbabilityMeasure` with its topology of weak convergence, `MeasureTheory.ProbabilityMeasure.tendsto_iff_forall_integral_tendsto` (Mathlib/MeasureTheory/Measure/ProbabilityMeasure.lean:365) and `isCompact_closure_of_isTightMeasureSet` (Prokhorov, Mathlib/MeasureTheory/Measure/Prokhorov.lean:530).
-- `fkg` (Mathlib/Combinatorics/SetFamily/FourFunctions.lean:369): the FKG inequality for a log-supermodular weight on a finite distributive lattice, used for the discretisation route of 3.3. It says nothing about measures on ℝ^V.
+- `MeasureTheory.ProbabilityMeasure` with its topology of weak convergence, `MeasureTheory.ProbabilityMeasure.tendsto_iff_forall_integral_tendsto` (Mathlib/MeasureTheory/Measure/ProbabilityMeasure.lean:367) and `isCompact_closure_of_isTightMeasureSet` (Prokhorov, Mathlib/MeasureTheory/Measure/Prokhorov.lean:530).
+- `fkg` (Mathlib/Combinatorics/SetFamily/FourFunctions.lean:370): the FKG inequality for a log-supermodular weight on a finite distributive lattice, used for the discretisation route of 3.3. It says nothing about measures on ℝ^V.
 - `CompactlySupportedContinuousMap` (Mathlib/Topology/ContinuousMap/CompactlySupported.lean:41): the index space of random fields.
-- `Real.fourier_eq` (Mathlib/Analysis/Fourier/FourierTransform.lean): the continuum Fourier transform and its normalisation; `ZMod.dft` (Mathlib/Analysis/Fourier/ZMod.lean:87): the discrete Fourier transform on `ZMod N`, used coordinatewise on the torus.
+- `Real.fourier_eq` (Mathlib/Analysis/Fourier/FourierTransform.lean:434): the continuum Fourier transform and its normalisation; `ZMod.dft` (Mathlib/Analysis/Fourier/ZMod.lean:87): the discrete Fourier transform on `ZMod N`, used coordinatewise on the torus.
 - `ae_eq_zero_of_integral_contDiff_smul_eq_zero` (Mathlib/Analysis/Distribution/AEEqOfIntegralContDiff.lean:186): a locally integrable function whose integrals against all smooth compactly supported functions vanish is zero almost everywhere; it gives uniqueness of Schwinger functions in 6.2.
-- `integral_gaussian` (Mathlib/Analysis/SpecialFunctions/Gaussian/GaussianIntegral.lean:211) and `Real.Gamma`: normalisations and moments of the single-site measures.
-- `hasDerivAt_integral_of_dominated_loc_of_deriv_le` (Mathlib/Analysis/Calculus/ParametricIntegral.lean:286): differentiation under the integral sign, for the coupling derivatives of 1.3.
+- `integral_gaussian` (Mathlib/Analysis/SpecialFunctions/Gaussian/GaussianIntegral.lean:210) and `Real.Gamma` (Mathlib/Analysis/SpecialFunctions/Gamma/Basic.lean:402): normalisations and moments of the single-site measures.
+- `hasDerivAt_integral_of_dominated_loc_of_deriv_le` (Mathlib/Analysis/Calculus/ParametricIntegral.lean:569): differentiation under the integral sign, for the coupling derivatives of 1.3.
 
 ### From Tau Ceti
 
-The pin is 358314d4ab97483df4fc4cb8adcc02e74a8d9f5a.
+The pin is 2fd255d997f47c0b5d834ee416c7015d55444ce5.
 
-- `TauCeti.Measure.exists_isProjectiveLimit_of_countable` (TauCeti/MeasureTheory/Measure/ProjectiveLimit/Countable.lean:167): a projective family of probability measures on the finite subproducts of a countable family of standard Borel spaces has a projective limit, which is a probability measure. Used for the infinite-volume law on ℝ^{ℤ^d} in 4.2.
-- `TauCeti.Measure.ext_of_forall_integral_pow_eq_of_exists_integrable_exp` (TauCeti/Probability/Moments/Determinacy.lean:243): two finite measures on ℝ, each with `∫ e^{a|x|} < ∞` for some a > 0, and with equal polynomial moments, are equal. Used in 4.2 and 6.4.
-- `TauCeti.Probability.centralMoment_id_two_mul_gaussianReal` (TauCeti/Probability/Distributions/Gaussian/Moments.lean:118): the even central moments `(2n − 1)!! vⁿ` of `gaussianReal m v`, used in Checks of Layers 0, 3 and 6.
+- `TauCeti.Measure.exists_isProjectiveLimit_of_countable` (TauCeti/MeasureTheory/Measure/ProjectiveLimit/Countable.lean:165): a projective family of probability measures on the finite subproducts of a countable family of standard Borel spaces has a projective limit, which is a probability measure. Used for the infinite-volume law on ℝ^{ℤ^d} in 4.2.
+- `TauCeti.Measure.ext_of_forall_integral_pow_eq_of_exists_integrable_exp` (TauCeti/Probability/Moments/Determinacy.lean:246): two finite measures on ℝ, each with `∫ e^{a|x|} < ∞` for some a > 0, and with equal polynomial moments, are equal. Used in 4.2 and 6.4.
+- `TauCeti.Probability.centralMoment_id_two_mul_gaussianReal` (TauCeti/Probability/Distributions/Gaussian/Moments.lean:147): the even central moments `(2n − 1)!! vⁿ` of `gaussianReal m v`, used in Checks of Layers 0, 3 and 6.
 
 ### From TauCetiRoadmap.StochasticCalculus
 
@@ -72,9 +72,13 @@ The pin is 358314d4ab97483df4fc4cb8adcc02e74a8d9f5a.
 
 §5.3 (mixed moments): for a centred random vector Z with law `ProbabilityTheory.multivariateGaussian 0 S`, S positive semidefinite, every monomial in the coordinates is integrable, odd products have mean zero, and `E[Z_{i_1} ⋯ Z_{i_{2n}}] = Σ_π Π_{j=1}^n S_{i_{π(2j−1)} i_{π(2j)}}` with π over the pairings of {1, …, 2n}. Used in 6.4 and in the Gaussian Checks of 3.5. Nothing else of that roadmap is assumed.
 
+### From TauCetiRoadmap.RelativisticQuantumFieldTheory
+
+§7.1: for m > 0 and d ≥ 1, the positive radial locally integrable Green kernel of `−Δ + m²`, given away from zero by its heat integral, has Mathlib-normalized Fourier multiplier `(4π²|ξ|² + m²)⁻¹` and exponential exterior decay with any rate 0 < c < m. For m = 0 and d ≥ 3, use the decaying radial kernel `Γ(d/2 − 1)/(4π^{d/2}|x|^{d−2})` for x ≠ 0 and its Fourier agreement; no arbitrary harmonic-polynomial addition is included. Layer 7 consumes these analytic facts, while its test-function Gaussian probability law, block second-moment normalization and lattice scaling limit are owned here.
+
 ## How to read the build
 
-Layer 0 fixes the single-site measures and the admissibility condition that makes every finite-volume measure exist. Layer 1 builds the finite-volume Gibbs measures, their symmetries, their dependence on the couplings and on the single-site measure, and the Gaussian lattice fields. Layer 2 realises lattice systems with Ising-block single-site measures as images of Ising systems and defines the Griffiths–Simon class as their limits; it proves that φ⁴ measures belong to it. Layer 3 proves the finite-volume correlation inequalities: Griffiths and FKG for general single-site measures, the random current representation of the Ising model and, through it and Layer 2, the Lebowitz, Gaussian and Simon–Lieb inequalities for the Griffiths–Simon class, the Messager–Miracle-Solé reflection inequality and uniform moment bounds. Layer 4 takes monotone infinite-volume limits and defines the two-point function, the susceptibility and the critical point. Layer 5 is independent of Layers 2–4: it treats periodic systems on the torus, proves reflection positivity, Gaussian domination and the infrared bound, and derives long-range order of the Ising model in d ≥ 3. Layer 6 is independent of Layers 0–5: it develops random fields indexed by test functions, Schwinger functions, Gaussian random fields and Wick's law. Layer 7 combines Layers 1 and 6 into reachable random fields and proves the reachability of the Gaussian free field. Layer 8 states marginal triviality.
+Layer 0 fixes the single-site measures and the admissibility condition that makes every finite-volume measure exist. Layer 1 builds the finite-volume Gibbs measures, their symmetries, their dependence on the couplings and on the single-site measure, and the Gaussian lattice fields. Layer 2 realises lattice systems with Ising-block single-site measures as images of Ising systems and defines the Griffiths–Simon class as their limits; it proves that φ⁴ measures belong to it. Layer 3 proves the finite-volume correlation inequalities: Griffiths and FKG for general single-site measures, the random current representation of the Ising model and, through it and Layer 2, the Lebowitz, Gaussian and Simon–Lieb inequalities for the Griffiths–Simon class, the Messager–Miracle-Solé reflection inequality and uniform moment bounds. Layer 4 takes monotone infinite-volume limits and defines the two-point function, the susceptibility and the critical point. Layer 5 is independent of Layers 2–4: it treats periodic systems on the torus, proves reflection positivity, Gaussian domination and the infrared bound, and derives long-range order of the Ising model in d ≥ 3. Layer 6 is independent of Layers 0–5: it develops random fields indexed by test functions, Schwinger functions, Gaussian random fields and Wick's law. Layer 7 combines Layers 1 and 6 into reachable random fields and proves the reachability of the Gaussian free field. The downstream marginal-triviality goals specify what ConstructiveFieldTheoryPhi4PartII proves from this foundation.
 
 ## Layer 0: Single-site measures
 
@@ -178,7 +182,7 @@ Prove that for admissible ρ, a finite set V and a measurable F with `|F(φ)| �
 
 ### 1.4 Continuity in the single-site measure
 
-Prove that if single-site measures ρ_k converge weakly to ρ and `sup_k ∫ e^{cφ²} dρ_k < ∞` for every c, then ρ is admissible and, for every finite V, every coupling J and every continuous F with `|F(φ)| ≤ C(1 + Σ_x φ_x²)^m`, `Z_{V,J}(ρ_k) → Z_{V,J}(ρ)` and `⟨F⟩_{V,J,ρ_k} → ⟨F⟩_{V,J,ρ}`; in particular `μ_{V,J,ρ_k}` converges weakly to `μ_{V,J,ρ}`. This is the continuity through which Aizenman–Duminil-Copin extend Ising statements to the Griffiths–Simon class (lines 1984–1985 and 2020–2022). A proof route: weak convergence of the finite products `ρ_k^{⊗V}` through characteristic functions and Lévy's continuity theorem, and uniform integrability of `F e^{−H}` from the uniform bound on `∫ exp(c Σ_x φ_x²) dρ_k^{⊗V}`.
+Prove that if single-site measures ρ_k converge weakly to ρ and `sup_k ∫ e^{cφ²} dρ_k < ∞` for every c, then ρ is admissible and, for every finite V, every coupling J and every continuous F with `|F(φ)| ≤ C(1 + Σ_x φ_x²)^m`, `Z_{V,J}(ρ_k) → Z_{V,J}(ρ)` and `⟨F⟩_{V,J,ρ_k} → ⟨F⟩_{V,J,ρ}`; in particular `μ_{V,J,ρ_k}` converges weakly to `μ_{V,J,ρ}`. This supplies the continuity step when uniform quadratic exponential moments of approximants are available; the full Griffiths–Simon finite-volume transfer, including a suitable approximation under a growth condition on the limit alone, is a separate target in 2.2 (Aizenman–Duminil-Copin, lines 1984–1985 and 2020–2022). A proof route: weak convergence of the finite products `ρ_k^{⊗V}` through characteristic functions and Lévy's continuity theorem, and uniform integrability of `F e^{−H}` from the uniform bound on `∫ exp(c Σ_x φ_x²) dρ_k^{⊗V}`.
 
 *Needs:* 0.1; 1.1; 1.2; Mathlib `MeasureTheory.ProbabilityMeasure.tendsto_iff_tendsto_charFun`, `MeasureTheory.ProbabilityMeasure.tendsto_iff_forall_integral_tendsto`.
 
@@ -231,22 +235,24 @@ The API consists of the following facts.
 
 ### 2.2 The Griffiths–Simon class
 
-Define the Griffiths–Simon class to consist of the single-site measures ρ for which there are Ising-block measures ρ_k converging weakly to ρ and an exponent α > 2 with `sup_k ∫ exp(|φ|^α) dρ_k < ∞` (Aizenman–Duminil-Copin, Definition 2.1(2) and (2.2), lines 374–386). Aizenman–Duminil-Copin require the growth bound of the limit only; here it is required uniformly along the approximating sequence, which is the form in which finite-volume statements transfer through 1.4, and every member satisfies their (2.2).
+Define the Griffiths–Simon class to consist of the single-site measures ρ that are weak limits of the nonnegative-weight Ising-block measures of 2.1 and satisfy `∫ exp(|φ|^α) dρ < ∞` for some α > 2. The growth condition is on ρ, not on the approximating sequence (Aizenman–Duminil-Copin, Definition 2.1(2) and (2.2), lines 374–386, with the nonnegative-weight convention of 2.1).
 
 The API consists of the following facts.
 
 - Every Ising-block measure belongs to the class (constant sequence); in particular ρ_I, δ₀ and the uniform measure on {−1, 0, 1} do.
-- Every member is even, admissible and satisfies `∫ exp(|φ|^α) dρ < ∞` for the same α, by lower semicontinuity of integrals of nonnegative continuous functions under weak convergence.
-- The class is closed under φ ↦ sφ for s ∈ ℝ, and under weak limits of members whose approximating sequences satisfy a common growth bound (a diagonal argument).
-- For every finite V, ferromagnetic J and ρ in the class, `μ_{V,J,ρ}` is the weak limit of the images of Ising Gibbs measures given by 2.1, and its moments are the limits of the corresponding Ising-block moments (1.4).
+- Every member is even, by weak closure of negation invariance, and admissible, since for each c the function `cφ² − |φ|^α` is bounded above when α > 2.
+- The class is closed under φ ↦ sφ for s ∈ ℝ (use nonnegative weights multiplied by |s| and any smaller exponent between 2 and α), and under weak limits ρ_j → ρ with `sup_j ∫ exp(|φ|^α) dρ_j < ∞` for one α > 2 (weak diagonal approximation and lower semicontinuity).
+- Finite-volume transfer: for every ρ in the class, finite V and ferromagnetic J, there exists a sequence of Ising-block measures η_k converging weakly to ρ such that `μ_{V,J,η_k} → μ_{V,J,ρ}` weakly and `⟨F⟩_{V,J,η_k} → ⟨F⟩_{V,J,ρ}` for every continuous polynomially bounded F. One sequence must serve any prescribed finite collection of such systems simultaneously, including a system on V and its restrictions to subregions. This is a theorem at the full limit-growth generality, including the choice and tail control of the approximants; it does not follow merely from weak convergence or assume a uniform superquadratic bound on an arbitrary given approximation (Aizenman–Duminil-Copin, lines 1982–1985 and 2019–2022).
 
-*Needs:* 0.1; 1.4; 2.1.
+*Needs:* 0.1; 1.1; 1.2; 1.4 (continuity when its uniform quadratic-moment hypotheses have been established); 2.1.
 
 **Checks.**
 
 - The standard normal law is a weak limit of Ising-block measures (independent spins, K = 0, q_n = N^{−1/2}, by the central limit theorem) but is not in the class: `∫ exp(|φ|^α) dN(0,1) = ∞` for α > 2. The growth condition is what excludes it.
 - `(1 − ε)δ₀ + ½ε(δ₁ + δ₋₁)` with ε < 1/3 is even and admissible but is not in the class, because it violates the single-site Lebowitz inequality `∫φ⁴ ≤ 3(∫φ²)²` (ε > 3ε²), which every member satisfies by 3.5.
 - Every φ⁴ measure is in the class (2.3), while the Gaussian measures γ_b are not.
+- Independent blocks `X_N = Σ_{i=1}^N σ_i/(√N log N)`, N ≥ 3, have variance `(log N)⁻² → 0`, hence converge to δ₀, whose exponential α-moment is 1. For every α > 2 their exponential α-moments are at least `2^{1−N} exp(N^{α/2}/(log N)^α) → ∞`. The constant δ₀ block approximation instead has moment 1 at every stage: transfer must allow a suitable choice of approximants.
+- Simultaneous transfer on one and two sites gives the one-site second moment s² and `⟨φ_xφ_y⟩ = s² tanh(Js²)` for `ρ = ½(δ_{−s} + δ_s)`; at s = 0 it is 0 and the zeroth moment is 1. For the Curie–Weiss approximation of 2.3, the established uniform tails let 1.4 supply convergence of every finite-volume polynomial moment.
 
 ### 2.3 φ⁴ measures as limits of Ising blocks
 
@@ -313,12 +319,13 @@ Prove that for a finite set V, a ferromagnetic coupling J, an admissible ρ (not
 
 ### 3.4 Random currents and the switching lemma
 
-Define, for a finite set V and a ferromagnetic coupling J, a current as a function n from unordered pairs of distinct sites to ℕ, its sources `∂n = {x : Σ_y n_{xy} is odd}`, its weight `w_J(n) = Π_{{x,y}} J_{xy}^{n_{xy}}/n_{xy}!`, and, for B ⊆ V, the event `𝓕_B` of currents n admitting a current m ≤ n with ∂m = B (Aizenman–Duminil-Copin, Definitions 3.1–3.2 and (3.2), lines 421–471). Prove the random current representation: for every A ⊆ V, `Z_{V,J}(ρ_I) ⟨σ_A⟩_{V,J,ρ_I} = Σ_{∂n=A} w_J(n)`, in particular `Z = Σ_{∂n=∅} w_J(n)` ((3.3)–(3.5), lines 429–448). Prove the switching lemma: for A, B ⊆ V and every F from currents to `[0, ∞]`, `Σ_{∂n₁=A, ∂n₂=B} F(n₁ + n₂) w(n₁) w(n₂) = Σ_{∂n₁=A∆B, ∂n₂=∅} F(n₁ + n₂) w(n₁) w(n₂) 1[n₁ + n₂ ∈ 𝓕_B]` (Lemma 3.3, line 474), and its corollary `⟨σ_A⟩⟨σ_B⟩ = ⟨σ_{A∆B}⟩ · P^{A∆B,∅}[n₁ + n₂ ∈ 𝓕_B]` in finite volume, P^{A∆B,∅} being the product of the normalised source-constrained current laws ((3.7)–(3.9), lines 500–507).
+Define, for a finite set V and a ferromagnetic coupling J, a current as a function n from unordered pairs of distinct sites to ℕ, its sources `∂n = {x : Σ_y n_{xy} is odd}`, its weight `w_J(n) = Π_{{x,y}} J_{xy}^{n_{xy}}/n_{xy}!`, and, for B ⊆ V, the event `𝓕_B` of currents n admitting a current m ≤ n with ∂m = B (Aizenman–Duminil-Copin, Definitions 3.1–3.2 and (3.2), lines 421–471). Prove the random current representation: for every A ⊆ V, `Z_{V,J}(ρ_I) ⟨σ_A⟩_{V,J,ρ_I} = Σ_{∂n=A} w_J(n)`, in particular `Z = Σ_{∂n=∅} w_J(n)` ((3.3)–(3.5), lines 429–448). Prove the switching lemma: for A, B ⊆ V and every F from currents to `[0, ∞]`, `Σ_{∂n₁=A, ∂n₂=B} F(n₁ + n₂) w(n₁) w(n₂) = Σ_{∂n₁=A∆B, ∂n₂=∅} F(n₁ + n₂) w(n₁) w(n₂) 1[n₁ + n₂ ∈ 𝓕_B]` (Lemma 3.3, line 474), and, when `Z_{A∆B} > 0`, its probability corollary `⟨σ_A⟩⟨σ_B⟩ = ⟨σ_{A∆B}⟩ · P^{A∆B,∅}[n₁ + n₂ ∈ 𝓕_B]` in finite volume, where `Z_D = Σ_{∂n=D} w_J(n)` and the law `P^D(n) = 1[∂n=D] w_J(n)/Z_D` is defined as a probability measure only for `Z_D > 0`; P^{A∆B,∅} is the product `P^{A∆B} ⊗ P^∅`. The empty-source normalizer is at least 1 from the zero current ((3.7)–(3.9), lines 500–507). The unnormalised switching identity holds without positivity of any source normalizer.
 
 The API consists of the following facts.
 
 - The current weights are summable: `Σ_n w_J(n) = Π_{{x,y}} e^{J_{xy}}`.
 - Griffiths I for Ising spins and arbitrary sets A is immediate from the representation.
+- `Z_D > 0` iff D has even cardinality in each connected component of the graph with edges `J_{xy} > 0`: necessity follows by source parity in each component, and sufficiency by pairing its sources along positive-edge paths.
 - Currents with ∂n = A exist only if |A| is even; a current with sources A connects each source to another source by a path of edges with n > 0.
 
 *Needs:* 0.2; 1.1.
@@ -327,13 +334,14 @@ The API consists of the following facts.
 
 - Two sites: currents are n ∈ ℕ on the single pair, `Σ_{n even} Jⁿ/n! = cosh J = Z` and `Σ_{n odd} Jⁿ/n! = sinh J`, so `⟨σ_xσ_y⟩ = tanh J`.
 - Switching lemma on two sites with A = B = {x, y} and F ≡ 1: the left side is `sinh² J`; the right side sums over pairs of even currents with n₁ + n₂ ≥ 1 (so that a unit subcurrent from x to y exists), which is `cosh² J − 1 = sinh² J`.
+- Two sites with J = 0 and D = {x, y}: `Z_D = sinh 0 = 0`, so no source-conditioned probability law exists, while switching with A = D, B = ∅ remains `0 = 0`. At J = 1, `Z_D = sinh 1 > 0` and the normalised total mass is 1. A singleton source has normalizer 0 for every J; even total parity also fails for two singleton sources in different positive-coupling components.
 - Omitting the factorials in the weight gives `Σ_n Jⁿ = 1/(1 − J)`, which diverges for J ≥ 1 and does not reproduce cosh J.
 
 ### 3.5 Lebowitz, Gaussian and Simon–Lieb inequalities
 
-Prove, for a finite set V and a ferromagnetic coupling J, with Ising spins: (i) for distinct x₁, …, x_{2n} ∈ V, `⟨σ_{x₁} ⋯ σ_{x_{2n}}⟩ ≤ Σ_{j=2}^{2n} ⟨σ_{x₁}σ_{x_j}⟩ ⟨Π_{i≠1,j} σ_{x_i}⟩`; (ii) for arbitrary x₁, …, x_{2n} ∈ V, repetitions allowed, the Gaussian inequality `⟨σ_{x₁} ⋯ σ_{x_{2n}}⟩ ≤ Σ_π Π_{j=1}^n ⟨σ_{x_{π(2j−1)}} σ_{x_{π(2j)}}⟩` over pairings π, whose case n = 2 is the Lebowitz inequality `U₄(x, y, z, t) ≤ 0` for the Ursell function (1.21); (iii) the Simon–Lieb inequality: for 0 ∈ Λ ⊆ V and y ∈ V ∖ Λ, `⟨σ_0σ_y⟩_V ≤ Σ_{u∈Λ, v∈V∖Λ} ⟨σ_0σ_u⟩_Λ J_{uv} ⟨σ_vσ_y⟩_V` (Aizenman–Duminil-Copin (3.11), line 520, Lemma 5.7, line 1314, and footnote 5, line 1342; Sokal (2.23)–(2.24), lines 419–422; Fröhlich, line 109; Aizenman 1982; Fernández–Fröhlich–Sokal, Part I). Prove the same three inequalities, with φ in place of σ, for every single-site measure ρ in the Griffiths–Simon class (Aizenman–Duminil-Copin, lines 1996–2002). Prove the corollaries: for ρ in the class and t ∈ [0, ∞)^V, `⟨(Σ_x t_xφ_x)^{2n}⟩ ≤ (2n − 1)!! ⟨(Σ_x t_xφ_x)²⟩ⁿ`, and the single-site inequality `∫ φ^{2n} dρ ≤ (2n − 1)!! (∫ φ² dρ)ⁿ`.
+Prove, for a finite set V and a ferromagnetic coupling J, with Ising spins: (i) for n ≥ 1 and distinct x₁, …, x_{2n} ∈ V, `⟨σ_{x₁} ⋯ σ_{x_{2n}}⟩ ≤ Σ_{j=2}^{2n} ⟨σ_{x₁}σ_{x_j}⟩ ⟨Π_{i≠1,j} σ_{x_i}⟩`; (ii) for arbitrary x₁, …, x_{2n} ∈ V, repetitions allowed, the Gaussian inequality `⟨σ_{x₁} ⋯ σ_{x_{2n}}⟩ ≤ Σ_π Π_{j=1}^n ⟨σ_{x_{π(2j−1)}} σ_{x_{π(2j)}}⟩` over pairings π, whose case n = 2 is the Lebowitz inequality `U₄(x, y, z, t) ≤ 0` for the Ursell function (1.21); (iii) the Simon–Lieb inequality: for 0 ∈ Λ ⊆ V and y ∈ V ∖ Λ, `⟨σ_0σ_y⟩_V ≤ Σ_{u∈Λ, v∈V∖Λ} ⟨σ_0σ_u⟩_Λ J_{uv} ⟨σ_vσ_y⟩_V` (Aizenman–Duminil-Copin (3.11), line 520, Lemma 5.7, line 1314, and footnote 5, line 1342; Sokal (2.23)–(2.24), lines 419–422; Fröhlich, line 109; Aizenman 1982; Fernández–Fröhlich–Sokal, Part I). Prove the same three inequalities, with φ in place of σ, for every single-site measure ρ in the Griffiths–Simon class (Aizenman–Duminil-Copin, lines 1996–2002). Prove the corollaries: for ρ in the class and t ∈ [0, ∞)^V, `⟨(Σ_x t_xφ_x)^{2n}⟩ ≤ (2n − 1)!! ⟨(Σ_x t_xφ_x)²⟩ⁿ`, and the single-site inequality `∫ φ^{2n} dρ ≤ (2n − 1)!! (∫ φ² dρ)ⁿ`.
 
-A proof route: for (i), apply the switching lemma with A′ = {x₁, x_j}, B′ the remaining sources and the indicator of `𝓕_{A′}`, and use that in a current with sources {x₁, …, x_{2n}} the source x₁ is joined by a path to some other source x_j; (ii) follows from (i) by induction on n with Griffiths I, reducing repeated sites by σ_x² = 1; (iii) follows from the switching lemma by conditioning a current with sources {0, y} on the cluster of 0 in its restriction to the pairs inside Λ, which a path to y must leave through some pair {u, v} with u ∈ Λ and v ∉ Λ (Aizenman–Duminil-Copin, footnote 5). For the Griffiths–Simon class, an Ising-block single-site measure with nonnegative weights q reduces each inequality to the Ising inequality on V × Fin N through 2.1, by expanding φ_x = Σ_n q_n σ_{x,n} with nonnegative coefficients; the inequalities pass to weak limits by 1.4 and 2.2.
+A proof route: use the unnormalised switching identity throughout (or use source-conditioned laws only after verifying their positive normalizers, with zero-normalizer cases treated by the unnormalised identity). For (i), apply the switching lemma with A′ = {x₁, x_j}, B′ the remaining sources and the indicator of `𝓕_{A′}`, and use that in a current with sources {x₁, …, x_{2n}} the source x₁ is joined by a path to some other source x_j; (ii) follows from (i) by induction on n with Griffiths I, reducing repeated sites by σ_x² = 1; (iii) follows from the switching lemma by conditioning a current with sources {0, y} on the cluster of 0 in its restriction to the pairs inside Λ, which a path to y must leave through some pair {u, v} with u ∈ Λ and v ∉ Λ (Aizenman–Duminil-Copin, footnote 5). For the Griffiths–Simon class, an Ising-block single-site measure with nonnegative weights q reduces each inequality to the Ising inequality on V × Fin N through 2.1, by expanding φ_x = Σ_n q_n σ_{x,n} with nonnegative coefficients; the inequalities pass to the full weak-limit class by the finite-volume moment-transfer theorem of 2.2.
 
 *Needs:* 1.1; 1.4; 2.1; 2.2; 3.1; 3.4.
 
@@ -342,6 +350,7 @@ A proof route: for (i), apply the switching lemma with A′ = {x₁, x_j}, B′ 
 - Single-site checks of `∫φ⁴ ≤ 3(∫φ²)²`: ρ_I gives 1 ≤ 3; `ρ_{λ,0}` gives `1/(4λ) ≤ 3Γ(3/4)²/(Γ(1/4)²λ) ≈ 0.3427/λ`; the Gaussian law gives equality (by `TauCeti.Probability.centralMoment_id_two_mul_gaussianReal`), the boundary case of the Gaussian inequality.
 - The class hypothesis cannot be weakened to evenness and admissibility: `(1 − ε)δ₀ + ½ε(δ₁ + δ₋₁)` with ε = ¼ gives `∫φ⁴ = ¼ > 3/16 = 3(∫φ²)²`.
 - Simon–Lieb on the Ising chain 0 − 1 − 2 with Λ = {0}: `⟨σ_0σ_2⟩ = tanh² J ≤ J tanh J = ⟨σ_0σ_0⟩_{{0}} J_{01} ⟨σ_1σ_2⟩`, true since tanh J ≤ J.
+- At n = 0 the pairing and Gaussian moment inequalities both give `1 = 1`; the recursion (i), which selects x₁, is stated only for n ≥ 1.
 - With repeated sites, two Ising sites and (x, x, y, y): `⟨σ_x²σ_y²⟩ = 1 ≤ 1 + 2tanh² J`.
 
 ### 3.6 Reflection monotonicity
@@ -400,7 +409,7 @@ The API consists of the following facts.
 
 - d = 1, nearest-neighbour Ising: `⟨σ_0σ_x⟩_{V_R} = tanh^{|x|} J` for every R ≥ |x| (open chain), so `⟨σ_0σ_x⟩_{J,ρ_I} = tanh^{|x|} J`.
 - The exhaustion W_n = {−n, …, 2n} of ℤ gives the same limits as the boxes.
-- For ρ = δ₀ all limits vanish, and for J = 0 they are products of single-site moments.
+- For ρ = δ₀ correlations of positive total degree vanish and the zeroth correlation is 1 (in particular A = 2δ_x gives 0 and A = 0 gives 1), and for J = 0 they are products of single-site moments.
 
 ### 4.2 The infinite-volume law
 
@@ -412,12 +421,12 @@ The API consists of the following facts.
 - `μ_{J,ρ}` is invariant under the translations of ℤ^d, under the elements of W_d preserving J and under φ ↦ −φ.
 - Griffiths I and II and the FKG inequality hold for `μ_{J,ρ}` (for continuous, polynomially bounded, coordinatewise non-decreasing functions of finitely many coordinates), and for ρ in the Griffiths–Simon class also the Lebowitz and Gaussian inequalities and Newman's exponential bound.
 
-*Needs:* 3.7; 4.1; Mathlib `isCompact_closure_of_isTightMeasureSet`, `MeasureTheory.Measure.ext_of_charFun`, `ProbabilityTheory.tendstoInDistribution_iff_tendstoInDistribution_inner`, `MeasureTheory.IsProjectiveMeasureFamily`; Tau Ceti `TauCeti.Measure.exists_isProjectiveLimit_of_countable`, `TauCeti.Measure.ext_of_forall_integral_pow_eq_of_exists_integrable_exp`.
+*Needs:* 3.3 (finite-volume FKG and uniform-integrability passage for continuous polynomially bounded cylinder functions); 3.7; 4.1; Mathlib `isCompact_closure_of_isTightMeasureSet`, `MeasureTheory.Measure.ext_of_charFun`, `ProbabilityTheory.tendstoInDistribution_iff_tendstoInDistribution_inner`, `MeasureTheory.IsProjectiveMeasureFamily`; Tau Ceti `TauCeti.Measure.exists_isProjectiveLimit_of_countable`, `TauCeti.Measure.ext_of_forall_integral_pow_eq_of_exists_integrable_exp`.
 
 **Checks.**
 
 - d = 1, nearest-neighbour Ising: `μ_{J,ρ_I}` is the law of the stationary two-state Markov chain on {±1}^ℤ with `P(σ_{x+1} = σ_x) = (1 + tanh J)/2`.
-- For J = 0, `μ_{0,ρ}` is `MeasureTheory.Measure.infinitePi` of ρ.
+- For J = 0, `μ_{0,ρ}` is `MeasureTheory.Measure.infinitePi` of ρ. The inherited FKG inequality with F = G = φ on one Ising coordinate is `1 ≥ 0`; with F = φ_x, G = φ_y at independent distinct coordinates it is `0 ≥ 0`.
 - The exponential moment condition is what identifies limits: without it a sequence of laws with converging moments may have two different limit points with the same moments (the log-normal law and its Stieltjes perturbations have equal moments), so moment convergence alone does not give weak convergence.
 
 ### 4.3 Two-point function, susceptibility and critical point
@@ -491,7 +500,7 @@ Prove reflection positivity of `μ^{per}` through vertex hyperplanes and through
 
 - L = 1, d = 1, edge reflection 0 ↔ 1: the form `(f, f) = ⟨f(σ_0)f(σ_1)⟩` has matrix proportional to `[[e^{2J}, e^{−2J}], [e^{−2J}, e^{2J}]]`, positive semidefinite iff J ≥ 0; the antiferromagnet fails.
 - With all f_v ≡ 1 the chessboard estimate is an equality.
-- For J = 0, `μ^{per}` is a product measure and reflection positivity is `|E f|² ≥ 0`.
+- For J = 0, `μ^{per}` is a product measure: an edge reflection gives `|E f|² ≥ 0`, while a vertex reflection gives `E[|E(f | spins on the fixed vertices)|²] ≥ 0`. For d = 1, L = 2, R(x) = −x, Ising spins and f = φ₀, the latter form is 1, whereas `|E f|² = 0` (Peled–Spinka, Proposition 2.14, line 1331).
 
 ### 5.3 Gaussian domination
 
@@ -502,7 +511,7 @@ Prove that for every h ∈ ℝ^{T_L}, `Z(h) ≤ Z(0)`, where `Z(h) = ∫ exp(−
 **Checks.**
 
 - L = 1, d = 1, Ising: with u = h₀ − h₁, `Z(h) ∝ 2e^{−Ju²} + e^{−J(2+u)²} + e^{−J(2−u)²}`, whose second derivative at u = 0 is `−4J + e^{−4J}(32J² − 4J) ≤ 0` (the maximum of `e^{−4J}(8J − 1)` is `2e^{−3/2} ≈ 0.45 < 1`), consistent with a maximum at h = 0.
-- For a Lebesgue a-priori measure (the discrete Gaussian free field) Z(h) = Z(0) for all h by translation invariance, the equality case (Peled–Spinka, lines 1633–1648).
+- As a separate Gaussian-gradient example with Lebesgue measure, pin φ₀ = 0 and integrate over the other coordinates of the connected torus, removing the constant zero mode. Translation by `h − h₀` preserves this pinned space and gives `Z(h) = Z(0) < ∞` for J > 0. For the two-vertex torus with J = 1 this is `Z(u) = ∫ exp(−(x − u)²) dx = √π`; without pinning the common-translation integral is infinite. This example is outside the probability a-priori setting of the theorem (Peled–Spinka, lines 1633–1648).
 - For h constant, Z(h) = Z(0) exactly.
 
 ### 5.4 The infrared bound and the sum rule
@@ -618,14 +627,14 @@ StochasticCalculus §1.1; StandardDistributions §5.3; Mathlib `CompactlySupport
 
 ### 7.1 The rescaled lattice field
 
-Define, for L ≥ 1, a function f : ℝ^d → ℝ, a finite set V ⊂ ℤ^d, Σ ≥ 0 and φ ∈ ℝ^V, the rescaled lattice field `T_{f,L,Σ}(φ) = Σ^{−1/2} Σ_{x∈V} f(x/L) φ_x`, and the block variance `Σ^{(R)}_L(ρ, J) = ⟨(Σ_{x∈Λ_L} φ_x)²⟩_{V_R,J,ρ}` for R ≥ L (Aizenman–Duminil-Copin (1.14)–(1.15), lines 157–166).
+Define, for L ≥ 1, a function f : ℝ^d → ℝ, a finite set V ⊂ ℤ^d, Σ ≥ 0 and φ ∈ ℝ^V, the rescaled lattice field `T_{f,L,Σ}(φ) = Σ^{−1/2} Σ_{x∈V} f(x/L) φ_x`, and, for a stable triple with every coordinate square integrable under its Gibbs law, the finite block second moment `Σ^{(R)}_L(ρ, J) = ⟨(Σ_{x∈Λ_L} φ_x)²⟩_{V_R,J,ρ} < ∞` for R ≥ L (a variance for even ρ) (Aizenman–Duminil-Copin (1.14)–(1.15), lines 157–166).
 
 The API consists of the following facts.
 
 - T is linear in f and in φ, and depends on f only through its values on `L⁻¹V`.
 - For g ∈ W_d and a g-invariant V, `T_{f∘g,L,Σ}(φ) = T_{f,L,Σ}(φ ∘ g⁻¹)`; equivalently `T_{f,L,Σ}(φ ∘ g) = T_{f∘g⁻¹,L,Σ}(φ)`.
-- Covariance: `⟨T_{f,L,Σ} T_{g,L,Σ}⟩_{V,J,ρ} = Σ⁻¹ Σ_{x,y∈V} f(x/L) g(y/L) ⟨φ_xφ_y⟩`.
-- For R ≥ L and Σ = Σ^{(R)}_L > 0, the field of the indicator of Q has variance 1: `⟨T_{1_Q,L,Σ}²⟩_{V_R} = 1`.
+- Second-moment identity, assuming stability and integrable coordinate squares (it is a covariance identity for even ρ): `⟨T_{f,L,Σ} T_{g,L,Σ}⟩_{V,J,ρ} = Σ⁻¹ Σ_{x,y∈V} f(x/L) g(y/L) ⟨φ_xφ_y⟩`.
+- Under the same moment hypothesis, for R ≥ L and Σ = Σ^{(R)}_L > 0, the field of the indicator of Q has second moment 1: `⟨T_{1_Q,L,Σ}²⟩_{V_R} = 1`.
 - For even admissible ρ and ferromagnetic J, `Σ^{(R)}_L` is non-decreasing in R (3.2) and is zero only for ρ = δ₀.
 
 *Needs:* 1.1; 1.2; 3.2.
@@ -635,23 +644,24 @@ The API consists of the following facts.
 - J = 0, ρ = ρ_I: `Σ^{(R)}_L = (2L + 1)^d` and `⟨T_{f,L}²⟩ = Σ_x f(x/L)²/(2L + 1)^d → 2^{−d} ∫ f²`, the white-noise normalisation.
 - d = 1, L = R = 1, nearest-neighbour Ising with t = tanh J: `Σ^{(1)}_1 = 3 + 4t + 2t²` (open chain of three sites).
 - ρ = δ₀: Σ = 0 and T ≡ 0 by the junk convention of the Conventions.
-- The direction of the W_d action: d = 2, L = 1, Σ = 1, `V = {0, ±e₁, ±e₂}`, g the rotation `(x₁, x₂) ↦ (−x₂, x₁)` (of order 4, so g ≠ g⁻¹) and `f = 1_{e₁}` on V. Then `T_{f∘g}(φ) = φ_{g⁻¹e₁} = φ_{−e₂}`, which agrees with `T_f(φ ∘ g⁻¹) = φ_{−e₂}`; the identity with g on both sides would give `T_f(φ ∘ g) = φ_{ge₁} = φ_{e₂}`, which differs for `φ = 1_{e₂}`. Only d = 1 and the reflections, where g = g⁻¹, fail to separate the two.
+- The direction of the W_d action: d = 2, L = 1, Σ = 1, `V = {0, ±e₁, ±e₂}`, g the rotation `(x₁, x₂) ↦ (−x₂, x₁)` (of order 4, so g ≠ g⁻¹) and `f = 1_{e₁}` on V. Then `T_{f∘g}(φ) = φ_{g⁻¹e₁} = φ_{−e₂}`, which agrees with `T_f(φ ∘ g⁻¹) = φ_{−e₂}`; the identity with g on both sides would give `T_f(φ ∘ g) = φ_{ge₁} = φ_{e₂}`, which differs for `φ = 1_{e₂}`. The two identities cannot be separated when g² = id; the quarter-turn and the selected f and φ separate them. For the half-turn g = −I, f = 1_{e₁} and φ = 1_{−e₁}, both candidate right sides and the left side are 1.
 
 ### 7.2 Reachability
 
-Define, for d ≥ 1 and a set 𝒞 of single-site measures, a reachability scheme as sequences ρ_n ∈ 𝒞, J_n ≥ 0, L_n ≥ 1 with L_n → ∞, and R_{n,m} ≥ L_n with R_{n,m} → ∞ as m → ∞ for each n, such that each triple `(V_{R_{n,m}}, J_n · nearest-neighbour, ρ_n)` is stable; write `μ_{n,m}` for its Gibbs measure, `Σ_{n,m} = Σ^{(R_{n,m})}_{L_n}(ρ_n, J_n)` and `T^{n,m}_f = T_{f,L_n,Σ_{n,m}}` on `V_{R_{n,m}}`. The scheme converges if for every finite F ⊆ C_c(ℝ^d) the law of (T^{n,m}_f)_{f∈F} under μ_{n,m} converges weakly as m → ∞ to a law ν^n_F, and ν^n_F converges weakly as n → ∞ to a law ν_F. A random field is 𝒞-reachable if its finite-dimensional laws are the ν_F of a convergent scheme (Aizenman–Duminil-Copin, Definition 1.1, lines 167–179, and footnote 2, lines 183–187). The free boundary conditions on V_R and the order of the limits (volume first, then scale) are those of the source; the volumes R_{n,m} may be chosen along subsequences.
+Define, for d ≥ 1 and a set 𝒞 of single-site measures, a reachability scheme as sequences ρ_n ∈ 𝒞, J_n ≥ 0, L_n ≥ 1 with L_n → ∞, and R_{n,m} ≥ L_n with R_{n,m} → ∞ as m → ∞ for each n, such that each triple `(V_{R_{n,m}}, J_n · nearest-neighbour, ρ_n)` is stable and every coordinate square is integrable under its Gibbs law; write `μ_{n,m}` for its Gibbs measure, `0 ≤ Σ_{n,m} = Σ^{(R_{n,m})}_{L_n}(ρ_n, J_n) < ∞` and `T^{n,m}_f = T_{f,L_n,Σ_{n,m}}` on `V_{R_{n,m}}`. The scheme converges if for every finite F ⊆ C_c(ℝ^d) the law of (T^{n,m}_f)_{f∈F} under μ_{n,m} converges weakly as m → ∞ to a law ν^n_F, and ν^n_F converges weakly as n → ∞ to a law ν_F. A random field is 𝒞-reachable if its finite-dimensional laws are the ν_F of a convergent scheme (Aizenman–Duminil-Copin, Definition 1.1, lines 167–179, and footnote 2, lines 183–187). The free boundary conditions on V_R and the order of the limits (volume first, then scale) are those of the source; the volumes R_{n,m} may be chosen along subsequences.
 
 The API consists of the following facts.
 
 - Reachability is monotone in 𝒞.
-- For admissible members of 𝒞 the stability condition is automatic (1.1); for the Gaussian measures γ_b it is the positivity condition of 1.5, which for `b ≤ −d·J_n` holds on every box.
+- For admissible members of 𝒞 both stability and coordinate-square integrability are automatic (1.1–1.2); for the Gaussian measures γ_b both follow from the positive-definiteness condition of 1.5, which for `b ≤ −d·J_n` holds on every box.
 
-*Needs:* 1.1; 1.5; 6.1; 7.1; Mathlib `MeasureTheory.ProbabilityMeasure`.
+*Needs:* 1.1; 1.2 (admissible moments); 1.5; 6.1; 7.1; Mathlib `MeasureTheory.ProbabilityMeasure`.
 
 **Checks.**
 
 - ρ_n = ρ_I, J_n = 0: by the central limit theorem and the Riemann sums of 7.1, white noise with covariance `2^{−d} ∫ fg` is {ρ_I}-reachable.
 - 𝒞 = {δ₀}: the only reachable field is the zero field.
+- At J = 0 with N block sites, Ising has Σ = N, a centred Gaussian of variance v has Σ = Nv, and δ₀ has Σ = 0 and gives the zero field. The standard Cauchy law also has Z = 1, but its N-spin sum is Cauchy of scale N with infinite second moment, so it fails the scheme hypothesis.
 - d = 1, ρ_n = ρ_I and `tanh J_n = e^{−c/L_n}`: the rescaled chain converges to the random telegraph process X with `E[X_uX_v] = e^{−c|u−v|}`, and `T_f = κ^{−1/2} ∫ f(u)X_u du` with `κ = ∫∫_{Q²} e^{−c|u−v|}` is {ρ_I}-reachable, bounded and hence not Gaussian.
 
 ### 7.3 Structure of reachable fields
@@ -668,21 +678,21 @@ Prove that every convergent reachability scheme has a reachable random field, un
 
 ### 7.4 The Gaussian free field as a reachable field
 
-Define, for m ≥ 0, the covariance `C_m(f, g) = ∫ conj(𝓕f(ξ)) 𝓕g(ξ)/(4π²|ξ|² + m²) dξ` on C_c(ℝ^d), finite and positive semidefinite for m > 0 in every dimension and for m = 0 when d ≥ 3, and the Gaussian free field of mass m as the centred Gaussian random field with covariance `C_m(f, g)/C_m(1_Q, 1_Q)` (6.3). The covariance has the following API.
+Define, for m ≥ 0, the covariance `C_m(f, g) = ∫ conj(𝓕f(ξ)) 𝓕g(ξ)/(4π²|ξ|² + m²) dξ` on C_c(ℝ^d), finite and positive semidefinite for m > 0 in every dimension and for m = 0 when d ≥ 3, and also evaluate this same Fourier integral at the block indicator `1_Q ∈ L¹ ∩ L²`. Define the Gaussian free field of mass m as the centred Gaussian random field with covariance `C_m(f, g)/C_m(1_Q, 1_Q)` (6.3). The covariance has the following API.
 
-- C_m is symmetric, positive semidefinite and finite on C_c(ℝ^d) in the stated range of (d, m), and is non-increasing in m.
-- For m > 0, `C_m(f, g) = ∫∫ f(x) G_m(x − y) g(y) dx dy` with `G_m` the inverse Fourier transform of `1/(4π²|ξ|² + m²)`, a positive, radial, locally integrable function decaying exponentially; for m = 0 and d ≥ 3, `G_0(x) = Γ(d/2 − 1)/(4π^{d/2}|x|^{d−2})`.
+- C_m is symmetric, positive semidefinite and finite on C_c(ℝ^d) in the stated range of (d, m), and is non-increasing in m in quadratic-form order: `C_{m₂}(f, f) ≤ C_{m₁}(f, f)` for m₂ ≥ m₁ in the permitted range.
+- Using the analytic Green-kernel facts of RelativisticQuantumFieldTheory §7.1, prove for m > 0 that `C_m(f, g) = ∫∫ f(x) G_m(x − y) g(y) dx dy` with `G_m` the inverse Fourier transform of `1/(4π²|ξ|² + m²)`, a positive, radial, locally integrable function decaying exponentially; for m = 0 and d ≥ 3, `G_0(x) = Γ(d/2 − 1)/(4π^{d/2}|x|^{d−2})` for x ≠ 0. Values at the single point 0 do not affect the integral.
 - `0 < C_m(1_Q, 1_Q) < ∞`, and C_m is invariant under the Euclidean motions of ℝ^d acting on test functions.
 
 Prove that for d ≥ 1 and m > 0, and for d ≥ 3 and m = 0, the Gaussian free field of mass m is reachable from the Gaussian class {γ_b : b < 0}, with `J_n = 1`, `b_n = −(d + m²/(2L_n²))`, and arbitrary L_n → ∞ and R_{n,m} → ∞ (Sokal, Section 2.3 and Lemma 2.2, lines 620–721; Fröhlich, lines 266–269; Simon, Twelve Tales, lines 960–975; Glimm–Jaffe, Chapter 6). A proof route: the laws of `(T^{n,m}_f)_f` are centred Gaussian (1.5); as R → ∞ their covariances converge to `Σ_L⁻¹ Σ_{x,y} f(x/L)g(y/L) G_{m/L}(x − y)`, with `G_μ` of 1.5 and `Σ_L = Σ_{x,y∈Λ_L} G_{m/L}(x − y)` the limit of the non-decreasing block variances; after the substitution p = q/L, `L^{−(d+2)} Σ_{x,y} f(x/L) g(y/L) G_{m/L}(x − y) = (2π)^{−d} ∫_{[−πL,πL]^d} conj(F_L(q)) H_L(q) / (L²E(q/L) + m²) dq`, with `F_L(q) = L^{−d}Σ_x f(x/L)e^{−iq·x/L}` and H_L likewise for g, converging to `C_m(f, g)` by dominated convergence (`L²E(q/L) ≥ (4/π²)|q|²` on the domain, Parseval for F_L and H_L); the same holds for `1_Q`, whose transforms are products of Dirichlet kernels; convergence of covariances gives convergence of the Gaussian laws.
 
-*Needs:* 1.5; 6.3; 7.2; 7.3; Mathlib `Real.fourier_eq`, `ProbabilityTheory.charFun_multivariateGaussian`, `MeasureTheory.ProbabilityMeasure.tendsto_iff_tendsto_charFun`.
+*Needs:* 1.5; 6.3; 7.2; 7.3; RelativisticQuantumFieldTheory §7.1 (analytic continuum Green kernels, Fourier agreement and decay); Mathlib `Real.fourier_eq`, `ProbabilityTheory.charFun_multivariateGaussian`, `MeasureTheory.ProbabilityMeasure.tendsto_iff_tendsto_charFun`.
 
 **Checks.**
 
-- d = 1: `C_m(f, g) = ∫∫ f(x) e^{−m|x−y|}/(2m) g(y) dx dy` and `C_m(1_Q, 1_Q) = 2/m² − (1 − e^{−2m})/m³`, which tends to infinity like 2/m as m → 0: no massless field in d = 1.
+- The imported Fourier normalization gives multiplier 1 at m = 1, ξ = 0, and `G_1(1) = e⁻¹/2` in d = 1. Here `C_m(f, g) = ∫∫ f(x) e^{−m|x−y|}/(2m) g(y) dx dy` and `C_m(1_Q, 1_Q) = 2/m² − (1 − e^{−2m})/m³`, which is `1 + e⁻²` at m = 1 and tends to infinity like 2/m as m → 0: no massless field in d = 1. Quadratic-form monotonicity gives `C_2(f, f) ≤ C_1(f, f)`; for g = −f the inequality on cross terms reverses, so it is not an order on every pair (f, g).
 - The lattice normalisation is exact before the limit: `⟨(T^{n,m}_{1_Q})²⟩ = 1` for every n and m (7.1).
-- In d = 4 the Green function `G_m(x)` behaves like `1/(4π²|x|²)` near 0, locally integrable on ℝ⁴, so the field has a two-point Schwinger function satisfying (1.10) (exponential decay for m > 0, `|x|^{−2}` decay for m = 0); it is a non-vacuous instance of the hypotheses of Layer 8, reached from Gaussian rather than φ⁴ single-site measures.
+- In d = 4 the Green function `G_m(x)` behaves like `1/(4π²|x|²)` near 0, locally integrable on ℝ⁴, so the field has a two-point Schwinger function satisfying (1.10) (exponential decay for m > 0, `|x|^{−2}` decay for m = 0); it is a non-vacuous instance of the field hypotheses of downstream goal 8.1, reached from Gaussian rather than φ⁴ single-site measures.
 
 ### Examples
 
@@ -690,15 +700,19 @@ White noise (from independent spins), the random telegraph field (from the one-d
 
 ### Dependencies
 
-Layers 1, 3 (through 3.2) and 6; Mathlib `MeasureTheory.ProbabilityMeasure`, `MeasureTheory.ProbabilityMeasure.tendsto_iff_forall_integral_tendsto`, `MeasureTheory.ProbabilityMeasure.tendsto_iff_tendsto_charFun`, `Real.fourier_eq`, `ProbabilityTheory.charFun_multivariateGaussian`.
+Layers 1, 3 (through 3.2) and 6; RelativisticQuantumFieldTheory §7.1; Mathlib `MeasureTheory.ProbabilityMeasure`, `MeasureTheory.ProbabilityMeasure.tendsto_iff_forall_integral_tendsto`, `MeasureTheory.ProbabilityMeasure.tendsto_iff_tendsto_charFun`, `Real.fourier_eq`, `ProbabilityTheory.charFun_multivariateGaussian`.
 
-## Layer 8: Marginal triviality
+## Downstream consumers
+
+- **ConstructiveFieldTheoryPhi4PartII** owns the two marginal-triviality goals 8.1 and 8.2 below. It consumes the random current representation and switching lemma (3.4), the Lebowitz, Gaussian and Simon–Lieb inequalities for the full Griffiths–Simon class (3.5), the uniform moment bounds (3.7), the free-boundary state, two-point function, susceptibility and critical point (Layer 4), the axis monotonicity (4.4), the torus infrared bound and reflection positivity (Layer 5), Wick's law (6.4) and reachable fields (Layer 7), and owns the additional current intersection estimates, tree diagram and improved tree diagram bounds, spectral representation, identification of boundary conditions below the critical point, infinite-volume and sliding-scale infrared bounds and uniform local integrability of rescaled two-point functions needed for those proofs.
+- **ConstructiveFieldTheoryPhi4PartII** also owns the application of reachable-field Schwinger functions to Osterwalder–Schrader reconstruction, consuming the covariance comparison of 7.4 and the reconstruction theorem of RelativisticQuantumFieldTheory.
+- **Ising-type statistical mechanics** (phase transitions by the infrared bound and the Peierls argument, Lee–Yang theory, sharpness of the phase transition), which no roadmap owns, would build on Layers 1, 3, 4 and 5.
+
+The base completion ends at Layer 7, including Gaussian-field reachability. The following sourced statements describe the downstream goals and retain identifiers 8.1 and 8.2 for their mathematical content; they are not theorem targets or acceptance statements of this roadmap.
 
 ### 8.1 Gaussianity of reachable φ⁴ and Ising fields in d ≥ 4
 
-State: for d ≥ 4, let 𝒞 consist of the φ⁴ measures `ρ_{λ,b}` (λ > 0, b ∈ ℝ) and the Ising measure ρ_I. Every 𝒞-reachable random field that has a two-point Schwinger function S_2 satisfying the decay condition (1.10) is a generalised Gaussian process (Aizenman–Duminil-Copin, Theorem 1.2, line 190, with (1.10), line 126, for d = 4; for d ≥ 5, Aizenman–Duminil-Copin, lines 122–128, citing Aizenman 1982 and Fröhlich 1982, whose main statement is at Fröhlich, lines 112–115). The proof is the subject of ConstructiveFieldTheoryPhi4PartII. By 7.3 such a field is symmetric, so it is centred, and by 6.4 its Schwinger functions are `G_n[S_2]`.
-
-*Needs:* 0.2; 6.2; 6.3; 7.2.
+ConstructiveFieldTheoryPhi4PartII proves: for d ≥ 4, let 𝒞 consist of the φ⁴ measures `ρ_{λ,b}` (λ > 0, b ∈ ℝ) and the Ising measure ρ_I. Every 𝒞-reachable random field that has a two-point Schwinger function S_2 satisfying the decay condition (1.10) is a generalised Gaussian process (Aizenman–Duminil-Copin, Theorem 1.2, line 190, with (1.10), line 126, for d = 4; for d ≥ 5, Aizenman–Duminil-Copin, lines 122–128, citing Aizenman 1982 and Fröhlich 1982, whose main statement is at Fröhlich, lines 112–115). By 7.3 such a field is symmetric, so it is centred, and by 6.4 its Schwinger functions are `G_n[S_2]`.
 
 **Checks.**
 
@@ -708,29 +722,13 @@ State: for d ≥ 4, let 𝒞 consist of the φ⁴ measures `ρ_{λ,b}` (λ > 0, 
 
 ### 8.2 The Griffiths–Simon extension
 
-State: for d ≥ 4 and 𝒞 the Griffiths–Simon class of 2.2, every 𝒞-reachable random field that has a two-point Schwinger function satisfying (1.10) is a generalised Gaussian process (Aizenman–Duminil-Copin, Section 7, lines 1979–1985, Theorem 7.1, line 2006, and Proposition 7.2, lines 2014–2017, for d = 4; Aizenman 1982 for d ≥ 5). The class of 2.2 is contained in the class of Aizenman–Duminil-Copin's Definition 2.1. The proof is the subject of ConstructiveFieldTheoryPhi4PartII.
-
-*Needs:* 2.2; 6.2; 6.3; 7.2.
+ConstructiveFieldTheoryPhi4PartII proves: for d ≥ 4 and 𝒞 the Griffiths–Simon class of 2.2, every 𝒞-reachable random field that has a two-point Schwinger function satisfying (1.10) is a generalised Gaussian process (Aizenman–Duminil-Copin, Section 7, lines 1979–1985, Theorem 7.1, line 2006, and Proposition 7.2, lines 2014–2017, for d = 4; Aizenman 1982 for d ≥ 5). The class of 2.2 uses the limit-growth condition of Aizenman–Duminil-Copin's Definition 2.1 with nonnegative block weights.
 
 **Checks.**
 
 - 8.2 implies 8.1, because ρ_I and every φ⁴ measure lie in the Griffiths–Simon class (2.2, 2.3) and reachability is monotone in 𝒞 (7.2).
 - The telegraph counterexample of 8.1 applies here as well, since ρ_I is in the class.
 - The Gaussian measures γ_b are not in the class, so the reachability of the Gaussian free field (7.4) is not an instance of 8.2.
-
-### Examples
-
-The worked examples of Layer 7 bracket the statements: the telegraph field shows that d ≥ 4 is needed, white noise shows the role of the Schwinger-function hypothesis, and the Gaussian free field is a field of the stated kind reached from the Gaussian class.
-
-### Dependencies
-
-Layers 0, 2, 6 and 7.
-
-## Downstream consumers
-
-- **ConstructiveFieldTheoryPhi4PartII** proves the summit statements of Layer 8. It consumes the random current representation and switching lemma (3.4), the Lebowitz, Gaussian and Simon–Lieb inequalities for the Griffiths–Simon class (3.5), the uniform moment bounds (3.7), the free-boundary state, two-point function, susceptibility and critical point (Layer 4), the axis monotonicity (4.4), the torus infrared bound and reflection positivity (Layer 5), Wick's law (6.4) and reachable fields (Layer 7), and adds the current intersection estimates, the tree diagram and improved tree diagram bounds, the spectral representation, the identification of boundary conditions below the critical point, the infinite-volume and sliding-scale infrared bounds and the uniform local integrability of rescaled two-point functions.
-- **RelativisticQuantumFieldTheory** can take the Schwinger functions of reachable fields (Layer 7) as candidate Euclidean data for its Osterwalder–Schrader reconstruction, and compare its massive Euclidean covariance in d = 4 with the covariance C_m of 7.4.
-- **Ising-type statistical mechanics** (phase transitions by the infrared bound and the Peierls argument, Lee–Yang theory, sharpness of the phase transition), which no roadmap owns, would build on Layers 1, 3, 4 and 5.
 
 ## References
 

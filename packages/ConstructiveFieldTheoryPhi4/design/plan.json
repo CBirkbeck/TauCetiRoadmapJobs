@@ -2,10 +2,10 @@
  "roadmap": "ConstructiveFieldTheoryPhi4",
  "title": "Constructive scalar field theory on the lattice: phi^4, Ising and their scaling limits",
  "parent": null,
- "summary": "Single-site measures (phi^4, Gaussian, Ising) and the Griffiths-Simon class; finite-volume Gibbs measures of ferromagnetic pair interactions; Griffiths, FKG, random-current, Lebowitz, Gaussian, Simon-Lieb and Messager-Miracle-Sole inequalities; the free-boundary infinite-volume state, two-point function, susceptibility and critical point; reflection positivity, Gaussian domination and the infrared bound on the torus with Ising long-range order in d >= 3; random fields indexed by test functions, Schwinger functions, Gaussian fields and Wick's law; reachable random fields and the reachability of the Gaussian free field; and the marginal triviality statements of Aizenman and Duminil-Copin in d >= 4 as summit statements.",
+ "summary": "Single-site measures (phi^4, Gaussian, Ising) and the Griffiths-Simon class; finite-volume Gibbs measures of ferromagnetic pair interactions; Griffiths, FKG, random-current, Lebowitz, Gaussian, Simon-Lieb and Messager-Miracle-Sole inequalities; the free-boundary infinite-volume state, two-point function, susceptibility and critical point; reflection positivity, Gaussian domination and the infrared bound on the torus with Ising long-range order in d >= 3; random fields indexed by test functions, Schwinger functions, Gaussian fields and Wick's law; reachable random fields and the reachability of the Gaussian free field. Marginal triviality in d >= 4 is owned by the downstream ConstructiveFieldTheoryPhi4PartII.",
  "baseline": {
-  "mathlib": "f6090c7095e1e56b3464c1daba5f24631f1290d2",
-  "tauceti": "358314d4ab97483df4fc4cb8adcc02e74a8d9f5a"
+  "mathlib": "1b1ccf4b088b32fa3f23f2de1127433254a81e1e",
+  "tauceti": "2fd255d997f47c0b5d834ee416c7015d55444ce5"
  },
  "layers": [
   {
@@ -517,14 +517,16 @@
      "id": "2.2",
      "kind": "definition",
      "name": "GriffithsSimonClass",
-     "statement": "rho is in the Griffiths-Simon class if there are Ising-block measures rho_k -> rho weakly and alpha > 2 with sup_k integral exp(|phi|^alpha) d rho_k < infinity.",
+     "statement": "rho is in the Griffiths-Simon class iff it is a weak limit of the nonnegative-weight Ising-block measures of 2.1 and integral exp(|phi|^alpha) d rho < infinity for some alpha > 2; growth is imposed on the limit.",
      "hypotheses": [],
      "locator": {
       "source": "aizenman-duminilcopin-2021",
-      "where": "Definition 2.1(2) and (2.2), lines 374-386 (growth required uniformly along the sequence here)"
+      "where": "Definition 2.1(2) and (2.2), lines 374-386; full-class continuity, lines 1982-1985 and 2019-2022; nonnegative weights as in 2.1"
      },
      "prerequisites": [
       "target:0.1",
+      "target:1.1",
+      "target:1.2",
       "target:1.4",
       "target:2.1"
      ],
@@ -537,17 +539,17 @@
       {
        "name": "mem_even_admissible",
        "role": "lemma",
-       "statement": "Members are even, admissible and satisfy integral exp(|phi|^alpha) < infinity (Aizenman-Duminil-Copin (2.2))."
+       "statement": "Members are even by weak closure and admissible because c phi^2 - |phi|^alpha is bounded above for alpha > 2."
       },
       {
        "name": "closure",
        "role": "lemma",
-       "statement": "Closed under phi -> s phi and under weak limits with a common growth bound."
+       "statement": "Closed under phi -> s phi, allowing a smaller exponent between 2 and alpha, and under weak limits of members with sup_j integral exp(|phi|^alpha) d rho_j < infinity for a common alpha > 2."
       },
       {
        "name": "gibbs_limit",
-       "role": "lemma",
-       "statement": "For finite V and ferromagnetic J, mu_{V,J,rho} is the weak limit of block-spin Ising images, moments converge (1.4)."
+       "role": "theorem",
+       "statement": "For every member rho, finite V and ferromagnetic J there exists an Ising-block sequence eta_k -> rho weakly such that mu_{V,J,eta_k} -> mu_{V,J,rho} weakly and expectations of every continuous polynomially bounded F converge. This full-class finite-volume transfer includes choice/tail control of approximants; it does not assume uniform superquadratic moments of arbitrary weak approximants (lines 1982-1985, 2019-2022). One sequence must serve any prescribed finite collection of finite ferromagnetic systems simultaneously, including V and its subregions."
       }
      ],
      "tests": [
@@ -565,6 +567,16 @@
        "name": "phi4_member",
        "kind": "compatibility",
        "statement": "Every phi^4 measure is a member (2.3); gamma_b is not."
+      },
+      {
+       "name": "bad_approximation_of_zero",
+       "kind": "non-example",
+       "statement": "Independent X_N = sum sigma_i/(sqrt(N) log N), N >= 3, have variance 1/log(N)^2 -> 0 but exponential alpha-moments >= 2^(1-N) exp(N^(alpha/2)/log(N)^alpha) -> infinity for every alpha > 2. Constant delta_0 approximants have those moments 1."
+      },
+      {
+       "name": "finite_volume_transfer",
+       "kind": "computation",
+       "statement": "The same sequence on one and two sites gives the one-site second moment s^2 and two-site moment s^2 tanh(J s^2); at s=0 these moments are 0 and the zeroth moment is 1. The phi^4 approximants of 2.3 satisfy 1.4 by their uniform tails."
       }
      ]
     },
@@ -734,7 +746,7 @@
      "id": "3.4",
      "kind": "definition",
      "name": "Current",
-     "statement": "For finite V and ferromagnetic J: a current is n from unordered pairs of distinct sites to N; sources dn = {x : sum_y n_xy odd}; weight w_J(n) = prod J_xy^{n_xy}/n_xy!; F_B = currents n admitting m <= n with dm = B.",
+     "statement": "For finite V and ferromagnetic J: a current is n from unordered pairs of distinct sites to N; sources dn = {x : sum_y n_xy odd}; weight w_J(n) = prod J_xy^{n_xy}/n_xy!; F_B = currents n admitting m <= n with dm = B. Put Z_D = sum_{dn=D} w(n); define the probability law P^D(n) = 1[dn=D] w(n)/Z_D only when Z_D > 0. Z_empty >= 1.",
      "hypotheses": [
       "J >= 0"
      ],
@@ -765,12 +777,17 @@
       {
        "name": "ratio_formula",
        "role": "lemma",
-       "statement": "<sigma_A><sigma_B> = <sigma_{A Delta B}> P^{A Delta B, empty}[n1 + n2 in F_B] ((3.7), line 500)."
+       "statement": "When Z_{A Delta B} > 0, <sigma_A><sigma_B> = <sigma_{A Delta B}> P^{A Delta B,empty}[n1+n2 in F_B], where the law is the product of normalized constrained laws. Unnormalized switching holds for all A,B, including zero normalizers ((3.7)-(3.9), lines 500-507)."
       },
       {
        "name": "sources_even",
        "role": "lemma",
        "statement": "dn = A requires |A| even; each source is joined to another source by a positive path."
+      },
+      {
+       "name": "normalizer_positive_iff",
+       "role": "theorem",
+       "statement": "Z_D > 0 iff D has even cardinality in every connected component of the graph of strictly positive J edges; pair sources along positive-edge paths for sufficiency."
       }
      ],
      "tests": [
@@ -788,6 +805,11 @@
        "name": "no_factorial",
        "kind": "non-example",
        "statement": "Dropping 1/n! gives sum J^n = 1/(1-J), divergent for J >= 1."
+      },
+      {
+       "name": "zero_normalizer",
+       "kind": "degenerate",
+       "statement": "Two sites, J=0,D={x,y}: Z_D=sinh(0)=0, no probability P^D; switching A=D,B=empty is 0=0. At J=1,Z_D=sinh(1)>0 and normalized mass=1. Singleton sources always give 0, as do sources in separate positive-edge components with odd parity."
       }
      ]
     },
@@ -795,11 +817,12 @@
      "id": "3.5",
      "kind": "theorem",
      "name": "lebowitz_gaussian_simonLieb",
-     "statement": "Ising, finite V, ferromagnetic J: (i) <sigma_x1...sigma_x2n> <= sum_j <sigma_x1 sigma_xj><prod_{i != 1,j} sigma_xi> for distinct sites; (ii) Gaussian inequality <sigma_x1...sigma_x2n> <= sum over pairings of products of two-point functions (repetitions allowed), n = 2 is Lebowitz U4 <= 0; (iii) Simon-Lieb <s0 sy>_V <= sum_{u in Lambda, v notin Lambda} <s0 su>_Lambda J_uv <sv sy>_V. The same for phi with rho in the Griffiths-Simon class; corollaries <(sum t_x phi_x)^{2n}> <= (2n-1)!! <(sum t_x phi_x)^2>^n for t >= 0 and integral phi^{2n} d rho <= (2n-1)!! (integral phi^2 d rho)^n.",
+     "statement": "Ising, finite V, ferromagnetic J: (i) for n >= 1, <sigma_x1...sigma_x2n> <= sum_j <sigma_x1 sigma_xj><prod_{i != 1,j} sigma_xi> for distinct sites; (ii) Gaussian inequality <sigma_x1...sigma_x2n> <= sum over pairings of products of two-point functions (repetitions allowed), n = 2 is Lebowitz U4 <= 0; (iii) Simon-Lieb <s0 sy>_V <= sum_{u in Lambda, v notin Lambda} <s0 su>_Lambda J_uv <sv sy>_V. The same for phi with rho in the Griffiths-Simon class; corollaries <(sum t_x phi_x)^{2n}> <= (2n-1)!! <(sum t_x phi_x)^2>^n for t >= 0 and integral phi^{2n} d rho <= (2n-1)!! (integral phi^2 d rho)^n.",
      "hypotheses": [
       "J >= 0",
       "Ising spins, or rho in the Griffiths-Simon class",
-      "0 in Lambda subset V, y in V minus Lambda for (iii)"
+      "0 in Lambda subset V, y in V minus Lambda for (iii)",
+      "n >= 1 for recursion (i); n = 0 pairing/moment inequalities use empty product 1."
      ],
      "locator": {
       "source": "aizenman-duminilcopin-2021",
@@ -834,8 +857,14 @@
        "name": "repeated_sites",
        "kind": "degenerate",
        "statement": "(x,x,y,y): 1 <= 1 + 2 tanh^2 J."
+      },
+      {
+       "name": "zeroth_moment",
+       "kind": "degenerate",
+       "statement": "n=0: pairing and Gaussian moment inequalities give 1=1. The recursion selecting x_1 requires n>=1."
       }
-     ]
+     ],
+     "proof_route": "Any source-conditioned probability in a proof requires its positive normalizer; zero cases use unnormalized switching. Full GS transfer uses the theorem in 2.2, not bare weak continuity."
     },
     {
      "id": "3.6",
@@ -981,7 +1010,7 @@
       {
        "name": "trivial",
        "kind": "degenerate",
-       "statement": "rho = delta_0: all limits 0; J = 0: products of single-site moments."
+       "statement": "rho = delta_0: every positive-total-degree correlation is 0 and the zeroth correlation is 1; A=0 gives 1 and A=2 delta_x gives 0. At J=0 limits are products of single-site moments."
       }
      ]
     },
@@ -998,6 +1027,7 @@
       "where": "(a)-(b), lines 405-409; duminilcopin-2017-lectures Corollary 1.9, line 549"
      },
      "prerequisites": [
+      "target:3.3",
       "target:3.7",
       "target:4.1",
       "mathlib:isCompact_closure_of_isTightMeasureSet",
@@ -1039,6 +1069,11 @@
        "name": "determinacy_needed",
        "kind": "non-example",
        "statement": "Without exponential moments, moment convergence does not identify limits (log-normal and its Stieltjes perturbations share moments)."
+      },
+      {
+       "name": "fkg_limit",
+       "kind": "computation",
+       "statement": "Finite-volume 3.3 passes by uniform integrability to continuous polynomially bounded increasing cylinders: F=G=phi at one Ising coordinate gives 1>=0; independent distinct coordinates give 0>=0."
       }
      ]
     },
@@ -1229,7 +1264,7 @@
       {
        "name": "product",
        "kind": "degenerate",
-       "statement": "J = 0: |E f|^2 >= 0."
+       "statement": "J=0: edge reflections give |E f|^2; vertex reflections give E |E(f | fixed spins)|^2. At d=1,L=2,R(x)=-x,Ising,f=phi_0, the vertex form is 1 while |E f|^2=0 (Proposition 2.14, line 1331)."
       }
      ]
     },
@@ -1263,7 +1298,7 @@
       {
        "name": "lebesgue_equality",
        "kind": "compatibility",
-       "statement": "Lebesgue a-priori measure: Z(h) = Z(0) for all h."
+       "statement": "Separate Gaussian-gradient example with Lebesgue measure on the connected torus: pin phi_0=0 and take J>0; shifting by h-h_0 yields Z(h)=Z(0)<infinity. Two vertices,J=1: integral exp(-(x-u)^2) dx=sqrt(pi); unpinned integral is infinite. Outside probability a-priori setting (lines 1633-1648)."
       },
       {
        "name": "constant_h",
@@ -1564,10 +1599,11 @@
      "id": "7.1",
      "kind": "definition",
      "name": "rescaledLatticeField",
-     "statement": "T_{f,L,Sigma}(phi) = Sigma^{-1/2} sum_{x in V} f(x/L) phi_x for L >= 1, f : R^d -> R, finite V subset Z^d, Sigma >= 0; block variance Sigma^(R)_L(rho,J) = <(sum_{x in Lambda_L} phi_x)^2>_{V_R,J,rho} for R >= L.",
+     "statement": "T_{f,L,Sigma}(phi) = Sigma^{-1/2} sum_{x in V} f(x/L) phi_x for L >= 1, f : R^d -> R, finite V subset Z^d, Sigma >= 0; finite block second moment (variance for even rho) Sigma^(R)_L(rho,J) = <(sum_{x in Lambda_L} phi_x)^2>_{V_R,J,rho} for R >= L, a stable triple, and every coordinate square integrable under the Gibbs law; 0 <= Sigma^(R)_L < infinity.",
      "hypotheses": [
       "L >= 1",
-      "R >= L"
+      "R >= L",
+      "Expectations require stability and integrable coordinate squares; normalization Sigma is finite real, zero allowed with T=0."
      ],
      "locator": {
       "source": "aizenman-duminilcopin-2021",
@@ -1592,12 +1628,12 @@
       {
        "name": "covariance",
        "role": "lemma",
-       "statement": "<T_f T_g> = Sigma^{-1} sum f(x/L) g(y/L) <phi_x phi_y>."
+       "statement": "Under the coordinate-square integrability hypothesis, <T_f T_g> = Sigma^{-1} sum f(x/L)g(y/L)<phi_x phi_y>; a covariance identity for even rho."
       },
       {
        "name": "indicator_normalised",
        "role": "lemma",
-       "statement": "<T_{1_Q,L,Sigma}^2>_{V_R} = 1 for Sigma = Sigma^(R)_L > 0."
+       "statement": "For a stable law with integrable coordinate squares, <T_{1_Q,L,Sigma}^2>=1 when Sigma=Sigma^(R)_L>0, a second moment and a variance for even rho."
       },
       {
        "name": "blockVariance_monotone",
@@ -1624,7 +1660,7 @@
       {
        "name": "hyperoctahedral_direction",
        "kind": "non-example",
-       "statement": "d = 2, L = 1, Sigma = 1, V = {0, +-e_1, +-e_2}, g the rotation (x_1, x_2) -> (-x_2, x_1), f = 1_{e_1}: T_{f o g}(phi) = phi_{-e_2} = T_f(phi o g^{-1}); the identity with g on both sides would give phi_{e_2}, differing for phi = 1_{e_2}."
+       "statement": "d = 2, L = 1, Sigma = 1, V = {0, +-e_1, +-e_2}, g the rotation (x_1, x_2) -> (-x_2, x_1), f = 1_{e_1}: T_{f o g}(phi) = phi_{-e_2} = T_f(phi o g^{-1}); the identity with g on both sides would give phi_{e_2}, differing for phi = 1_{e_2}. If g^2=id the two candidate formulas agree for every f,phi; for g=-I,f=1_{e_1},phi=1_{-e_1} both give 1."
       }
      ]
     },
@@ -1632,7 +1668,7 @@
      "id": "7.2",
      "kind": "definition",
      "name": "IsReachable",
-     "statement": "A reachability scheme: rho_n in C, J_n >= 0, L_n -> infinity, R_{n,m} >= L_n with R_{n,m} -> infinity in m, each nearest-neighbour triple stable; it converges if for every finite F subset C_c(R^d) the laws of (T^{n,m}_f)_{f in F} converge weakly in m to nu^n_F and nu^n_F -> nu_F in n; a random field is C-reachable if its fdd laws are the nu_F of a convergent scheme.",
+     "statement": "A reachability scheme: rho_n in C, J_n >= 0, L_n -> infinity, R_{n,m} >= L_n with R_{n,m} -> infinity in m, each nearest-neighbour triple stable with every coordinate square integrable, so 0 <= Sigma_{n,m} < infinity; Sigma=0 gives T=0; it converges if for every finite F subset C_c(R^d) the laws of (T^{n,m}_f)_{f in F} converge weakly in m to nu^n_F and nu^n_F -> nu_F in n; a random field is C-reachable if its fdd laws are the nu_F of a convergent scheme.",
      "hypotheses": [
       "C a set of probability measures on R",
       "d >= 1"
@@ -1643,6 +1679,7 @@
      },
      "prerequisites": [
       "target:1.1",
+      "target:1.2",
       "target:1.5",
       "target:6.1",
       "target:7.1",
@@ -1657,7 +1694,7 @@
       {
        "name": "stability",
        "role": "lemma",
-       "statement": "Automatic for admissible members; for gamma_b the positivity condition of 1.5, true for b <= -d J_n."
+       "statement": "Stability and coordinate-square integrability are automatic for admissible members (1.1-1.2) and for Gaussian gamma_b satisfying 1.5; b <= -d J_n suffices on boxes."
       }
      ],
      "tests": [
@@ -1675,6 +1712,11 @@
        "name": "telegraph",
        "kind": "non-example",
        "statement": "d = 1, rho_I, tanh J_n = e^{-c/L_n}: the random telegraph field kappa^{-1/2} integral f X is reachable and non-Gaussian."
+      },
+      {
+       "name": "finite_second_moment",
+       "kind": "non-example",
+       "statement": "At J=0 and N block sites, Ising gives Sigma=N, centered Gaussian variance v gives Nv, delta_0 gives 0 and T=0. Standard Cauchy gives Z=1 but its sum has scale N and infinite second moment; excluded from schemes."
       }
      ]
     },
@@ -1720,7 +1762,7 @@
      "id": "7.4",
      "kind": "definition",
      "name": "gffCovariance",
-     "statement": "C_m(f,g) = integral conj(F f(xi)) F g(xi) / (4 pi^2 |xi|^2 + m^2) d xi (Mathlib Fourier transform), finite and PSD for m > 0 (all d) and m = 0 (d >= 3); the Gaussian free field of mass m is the centred Gaussian random field with covariance C_m(f,g)/C_m(1_Q,1_Q).",
+     "statement": "C_m(f,g) = integral conj(F f(xi)) F g(xi) / (4 pi^2 |xi|^2 + m^2) d xi (Mathlib Fourier transform), finite and PSD for m > 0 (all d) and m = 0 (d >= 3); the Gaussian free field of mass m is the centred Gaussian random field with covariance C_m(f,g)/C_m(1_Q,1_Q). The same Fourier integral is also evaluated at the block indicator 1_Q in L^1 intersect L^2; pointwise radial kernel formulas apply for x != 0, and the value at 0 does not affect integrals.",
      "hypotheses": [
       "m > 0, or m = 0 and d >= 3"
      ],
@@ -1730,18 +1772,19 @@
      },
      "prerequisites": [
       "target:6.3",
-      "mathlib:Real.fourier_eq"
+      "mathlib:Real.fourier_eq",
+      "roadmap:RelativisticQuantumFieldTheory §7.1"
      ],
      "api": [
       {
        "name": "psd",
        "role": "lemma",
-       "statement": "C_m is symmetric, positive semidefinite and finite on C_c(R^d)."
+       "statement": "C_m is symmetric, positive semidefinite and finite on C_c(R^d). Non-increasing in mass in quadratic-form order, not on arbitrary cross terms."
       },
       {
        "name": "position_space",
        "role": "lemma",
-       "statement": "For m > 0, C_m(f,g) = integral integral f(x) G_m(x-y) g(y) with G_m the continuum Green function, locally integrable."
+       "statement": "Consume the analytic continuum Green kernels, Fourier agreement, exterior decay (m>0) and decaying massless radial kernel (m=0,d>=3) from RelativisticQuantumFieldTheory §7.1; prove C_m(f,g)=integral integral f(x)G_m(x-y)g(y), identifying the C_c-indexed covariance here."
       },
       {
        "name": "normalisation_finite",
@@ -1753,7 +1796,7 @@
       {
        "name": "d1_kernel",
        "kind": "computation",
-       "statement": "d = 1: C_m(f,g) = integral integral f(x) e^{-m|x-y|}/(2m) g(y); C_m(1_Q,1_Q) = 2/m^2 - (1 - e^{-2m})/m^3."
+       "statement": "d = 1: C_m(f,g) = integral integral f(x) e^{-m|x-y|}/(2m) g(y); C_m(1_Q,1_Q) = 2/m^2 - (1 - e^{-2m})/m^3. At m=1,xi=0 multiplier=1, G_1(1)=exp(-1)/2 and block normalization=1+exp(-2). C_2(f,f)<=C_1(f,f), whereas cross terms with g=-f reverse that inequality."
       },
       {
        "name": "massless_d1",
@@ -1803,91 +1846,7 @@
       {
        "name": "d4_instance",
        "kind": "characterisation",
-       "statement": "In d = 4 the field has S_2 satisfying (1.10), a non-vacuous instance of Layer 8's hypotheses from the Gaussian class."
-      }
-     ]
-    }
-   ]
-  },
-  {
-   "key": "8",
-   "title": "Marginal triviality",
-   "targets": [
-    {
-     "id": "8.1",
-     "kind": "theorem",
-     "name": "marginalTriviality",
-     "statement": "For d >= 4 and C = {rho_{lambda,b} : lambda > 0, b real} union {rho_I}: every C-reachable random field with a two-point Schwinger function satisfying (1.10) is a generalised Gaussian process (IsGaussianProcess).",
-     "hypotheses": [
-      "d >= 4",
-      "Phi C-reachable",
-      "S_2 exists and satisfies (1.10)"
-     ],
-     "locator": {
-      "source": "aizenman-duminilcopin-2021",
-      "where": "Theorem 1.2, line 190, with (1.10), line 126 (d = 4); lines 122-128 citing aizenman-1982 and frohlich-1982 lines 112-115 (d >= 5)"
-     },
-     "prerequisites": [
-      "target:0.2",
-      "target:6.2",
-      "target:6.3",
-      "target:7.2"
-     ],
-     "api": [],
-     "tests": [
-      {
-       "name": "telegraph_d1",
-       "kind": "non-example",
-       "statement": "d = 1: the telegraph field is {rho_I}-reachable with S_2 = e^{-c|u-v|}/kappa satisfying (1.10) and is bounded, hence not Gaussian: d >= 4 cannot be dropped."
-      },
-      {
-       "name": "white_noise_excluded",
-       "kind": "degenerate",
-       "statement": "White noise (J_n = 0) has no S_2, so the hypothesis is a genuine restriction; it is Gaussian anyway."
-      },
-      {
-       "name": "gff_consistent",
-       "kind": "compatibility",
-       "statement": "The d = 4 GFF satisfies the field hypotheses with single-site measures outside C and is Gaussian."
-      }
-     ]
-    },
-    {
-     "id": "8.2",
-     "kind": "theorem",
-     "name": "marginalTriviality_griffithsSimon",
-     "statement": "For d >= 4 and C the Griffiths-Simon class of 2.2: every C-reachable random field with a two-point Schwinger function satisfying (1.10) is a generalised Gaussian process.",
-     "hypotheses": [
-      "d >= 4",
-      "Phi reachable from the Griffiths-Simon class",
-      "S_2 exists and satisfies (1.10)"
-     ],
-     "locator": {
-      "source": "aizenman-duminilcopin-2021",
-      "where": "Section 7, lines 1979-1985; Theorem 7.1, line 2006; Proposition 7.2, lines 2014-2017 (d = 4); aizenman-1982 (d >= 5)"
-     },
-     "prerequisites": [
-      "target:2.2",
-      "target:6.2",
-      "target:6.3",
-      "target:7.2"
-     ],
-     "api": [],
-     "tests": [
-      {
-       "name": "implies_8_1",
-       "kind": "compatibility",
-       "statement": "8.2 implies 8.1 since rho_I and phi^4 measures are in the class and reachability is monotone in C."
-      },
-      {
-       "name": "telegraph",
-       "kind": "non-example",
-       "statement": "The d = 1 telegraph field shows d >= 4 is needed, as rho_I is in the class."
-      },
-      {
-       "name": "gaussian_outside",
-       "kind": "non-example",
-       "statement": "gamma_b is not in the class, so 7.4.1 is not an instance of 8.2."
+       "statement": "In d = 4 the field has S_2 satisfying (1.10), a non-vacuous instance of the field hypotheses of downstream goal 8.1 from the Gaussian class."
       }
      ]
     }
@@ -1908,17 +1867,104 @@
     "§5.3"
    ],
    "what": "Wick-Isserlis mixed-moment formula for centred multivariate Gaussian vectors with positive semidefinite covariance."
+  },
+  {
+   "roadmap": "RelativisticQuantumFieldTheory",
+   "sections": [
+    "§7.1"
+   ],
+   "what": "Analytic Green kernels of -Delta+m^2: heat integral, Fourier multiplier with 4 pi^2 normalization, local integrability and exponential exterior decay for m>0,d>=1; decaying radial massless kernel and Fourier agreement for m=0,d>=3. Probability law, block normalization and lattice reachability remain here."
   }
  ],
  "consumers": [
   {
    "roadmap": "ConstructiveFieldTheoryPhi4PartII",
-   "what": "Proofs of the summit statements: random current intersection estimates, tree diagram and improved tree diagram bounds, spectral representation, identification of boundary conditions below beta_c, sliding-scale infrared bound, uniform local integrability; consumes Layers 3-7."
-  },
-  {
-   "roadmap": "RelativisticQuantumFieldTheory",
-   "what": "Schwinger functions of reachable fields as candidate Osterwalder-Schrader data; comparison of its d = 4 massive Euclidean covariance with C_m of 7.4."
+   "what": "Owns statements and proofs of downstream goals 8.1-8.2; consumes Layers 0-7. Owns current intersection estimates, tree and improved tree bounds, spectral representation, boundary-condition comparison, infinite-volume and sliding-scale infrared bounds, uniform local integrability and applications to OS reconstruction."
   }
  ],
- "gaps": []
+ "gaps": [],
+ "downstream_goals": [
+  {
+   "id": "8.1",
+   "kind": "downstream goal",
+   "name": "marginalTriviality",
+   "statement": "Owned and proved by ConstructiveFieldTheoryPhi4PartII: For d >= 4 and C = {rho_{lambda,b} : lambda > 0, b real} union {rho_I}: every C-reachable random field with a two-point Schwinger function satisfying (1.10) is a generalised Gaussian process (IsGaussianProcess).",
+   "hypotheses": [
+    "Downstream ownership: ConstructiveFieldTheoryPhi4PartII; not a base acceptance target.",
+    "d >= 4",
+    "Phi C-reachable",
+    "S_2 exists and satisfies (1.10)"
+   ],
+   "locator": {
+    "source": "aizenman-duminilcopin-2021",
+    "where": "Theorem 1.2, line 190, with (1.10), line 126 (d = 4); lines 122-128 citing aizenman-1982 and frohlich-1982 lines 112-115 (d >= 5)"
+   },
+   "prerequisites": [
+    "target:0.2",
+    "target:6.2",
+    "target:6.3",
+    "target:7.2"
+   ],
+   "api": [],
+   "tests": [
+    {
+     "name": "telegraph_d1",
+     "kind": "non-example",
+     "statement": "d = 1: the telegraph field is {rho_I}-reachable with S_2 = e^{-c|u-v|}/kappa satisfying (1.10) and is bounded, hence not Gaussian: d >= 4 cannot be dropped."
+    },
+    {
+     "name": "white_noise_excluded",
+     "kind": "degenerate",
+     "statement": "White noise (J_n = 0) has no S_2, so the hypothesis is a genuine restriction; it is Gaussian anyway."
+    },
+    {
+     "name": "gff_consistent",
+     "kind": "compatibility",
+     "statement": "The d = 4 GFF satisfies the field hypotheses with single-site measures outside C and is Gaussian."
+    }
+   ],
+   "owner": "ConstructiveFieldTheoryPhi4PartII"
+  },
+  {
+   "id": "8.2",
+   "kind": "downstream goal",
+   "name": "marginalTriviality_griffithsSimon",
+   "statement": "Owned and proved by ConstructiveFieldTheoryPhi4PartII: For d >= 4 and C the Griffiths-Simon class of 2.2: every C-reachable random field with a two-point Schwinger function satisfying (1.10) is a generalised Gaussian process.",
+   "hypotheses": [
+    "Downstream ownership: ConstructiveFieldTheoryPhi4PartII; not a base acceptance target.",
+    "d >= 4",
+    "Phi reachable from the Griffiths-Simon class",
+    "S_2 exists and satisfies (1.10)"
+   ],
+   "locator": {
+    "source": "aizenman-duminilcopin-2021",
+    "where": "Section 7, lines 1979-1985; Theorem 7.1, line 2006; Proposition 7.2, lines 2014-2017 (d = 4); aizenman-1982 (d >= 5)"
+   },
+   "prerequisites": [
+    "target:2.2",
+    "target:6.2",
+    "target:6.3",
+    "target:7.2"
+   ],
+   "api": [],
+   "tests": [
+    {
+     "name": "implies_8_1",
+     "kind": "compatibility",
+     "statement": "8.2 implies 8.1 since rho_I and phi^4 measures are in the class and reachability is monotone in C."
+    },
+    {
+     "name": "telegraph",
+     "kind": "non-example",
+     "statement": "The d = 1 telegraph field shows d >= 4 is needed, as rho_I is in the class."
+    },
+    {
+     "name": "gaussian_outside",
+     "kind": "non-example",
+     "statement": "gamma_b is not in the class, so 7.4.1 is not an instance of 8.2."
+    }
+   ],
+   "owner": "ConstructiveFieldTheoryPhi4PartII"
+  }
+ ]
 }
