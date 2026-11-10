@@ -229,3 +229,21 @@ licence_class = "none"
 status = "uncertified"
 version_note = "paywalled; cited by its locator without the text"
 cited_for = ["2.2"]
+
+[[source]]
+id = "CM"
+authors = "Huayi Chen, Atsushi Moriwaki"
+title = "Arakelov geometry over adelic curves"
+year = 2019
+arxiv = "1903.10798v1"
+locator_scheme = "theorem"
+locator = "Corollary 1.2.31, p. 72, with Remark 1.2.28, p. 70"
+url = "https://arxiv.org/abs/1903.10798v1"
+fetched_from = "https://arxiv.org/pdf/1903.10798v1"
+fetched_at = "2026-11-10T18:17:47Z"
+sha256 = "dc98c99dfd20cc143701e0168d7b0051ae711f9eea512d60744b13ad09e7b8e5"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-10"
+version_note = "arXiv v1; theorem and page numbers refer to this version"
+cited_for = ["1.3"]
