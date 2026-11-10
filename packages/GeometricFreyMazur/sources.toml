@@ -69,3 +69,18 @@ licence_class = "none"
 status = "uncertified"
 version_note = "paywalled; cited by its locator without the text"
 cited_for = ["Exact supplier contracts: AbelianSchemesAndArithmeticModuli and NeronModelsAndSemistableAbelianVarieties", "9.7"]
+
+[[source]]
+id = "Sil09"
+authors = "Joseph H. Silverman"
+title = "The Arithmetic of Elliptic Curves"
+year = 2009
+venue = "Graduate Texts in Mathematics"
+doi = "10.1007/978-0-387-09494-6"
+locator_scheme = "theorem"
+locator = "Corollary III.9.4"
+url = "https://doi.org/10.1007/978-0-387-09494-6"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["9.2"]
