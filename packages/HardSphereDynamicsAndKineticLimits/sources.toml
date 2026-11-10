@@ -44,8 +44,8 @@ title = "Time evolution for infinitely many hard spheres"
 year = 1976
 venue = "Communications in Mathematical Physics 49"
 doi = "10.1007/BF01608728"
-locator_scheme = "page"
-locator = "pp. 217-232"
+locator_scheme = "theorem"
+locator = "Proposition 4.3, pp. 217-232 (cited as reference [2] in GST2013 line 855; bibliography lines 5439-5440)"
 url = "https://projecteuclid.org/journals/communications-in-mathematical-physics/volume-49/issue-3/Time-evolution-for-infinitely-many-hard-spheres/cmp/1103900016.pdf"
 licence_class = "open-repository"
 status = "uncertified"
@@ -93,12 +93,12 @@ year = 1975
 venue = "Lecture Notes in Physics"
 doi = "10.1007/3-540-07171-7_1"
 locator_scheme = "theorem"
-locator = "Proposition 4.3 and the convergence theorem (as attributed in GST2013 line 855 and BGSS2023 line 316)"
+locator = "the convergence theorem (cited as reference [47] in BGSS2023 line 316 and as reference [34] in GST2013 line 667)"
 url = "https://doi.org/10.1007/3-540-07171-7_1"
 licence_class = "none"
 status = "uncertified"
 version_note = "paywalled; cited by its locator without the text"
-cited_for = ["6.4", "10.4"]
+cited_for = ["10.4"]
 
 [[source]]
 id = "CIP1994"
