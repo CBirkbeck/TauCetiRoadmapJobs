@@ -1,0 +1,10 @@
+{
+  "review": {
+    "status": "needs_changes",
+    "reviewer": "independent-review-REV-DESIGN-StackPointsAndResidualGerbes~5",
+    "date": "2026-11-10",
+    "findings": 7,
+    "blocking": 1,
+    "notes": "Round-4 findings F01-F03 verified repaired at the quoted passages (1.2 two-embedding fibre bullet and Check; 1.1 Check with cancellation; 5.2 three-step route, with the 4.3 and 5.4 base-change clauses). One P2: gap:reduced-regular-smooth-local asks SchemeAndStackFoundations 4.13 for regularity of schemes (definition, smooth ascent, flat descent) that the pinned Tau Ceti provides (Scheme/Regular/Scheme.lean:68, :90; Scheme/Regular/Descent.lean:56), and the supplier's README on main, revised 2026-11-10, now cites Tau Ceti for it. Six P3: four supplier Check and carrier names no longer exist at the SchemeAndStackFoundations head; 7.4 cites ReductiveGroups Layer 3A, now restricted to algebraically closed fields, for an orbit it defines itself; 0.4's ideal must be the kernel in QCoh (Sheaves on Stacks 96.15.1 (3)); 5.3's existence citation omits 4.4; 6.4's existence hypothesis is redundant (Lemma 101.17.8 makes a rational section a finite type point); 6.1 uses an undefined base S. Sampled 0.4, 0.5, 1.1, 2.5, 3.3, 4.3, 4.4, 5.1, 5.3, 5.4, 6.1, 6.2, 6.4, 7.2, 7.4 read at their locators (Stacks chapters 96, 100, 101, Decent Spaces, Rydh 2011 App. B, Alper notes, AHR 2020); all agree with the README apart from the findings. Gate: 224 roadmaps, 2034 edges, 0 problems, no UPWARD or CYCLE. Overlaps: none. All Mathlib (1b1ccf4b) and Tau Ceti (2fd255d9) file-and-line citations opened at the pins. The other fifteen declared gaps are precise, absent at supplier and pins, with the same slugs in plan.json and README. 131 Checks = 131 plan tests, 38 targets. Elaboration not available (design stage, no Suggested.lean)."
+  }
+}
