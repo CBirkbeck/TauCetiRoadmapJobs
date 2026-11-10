@@ -1,0 +1,15 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "CotangentLagrangian"
+
+[[source]]
+id = "CannasDaSilvaLSG"
+locator_scheme = "theorem"
+locator = "§4.2, Prop. 5.1, Prop. 5.2, §5.2, Thm. 5.3, Thm. 6.5, Prop. 6.8, Thm. 7.4, Thms. 8.1, 8.4, 8.6, 9.1, 9.3"
+url = "https://people.math.ethz.ch/~acannas/Papers/lsg.pdf"
+fetched_from = "https://people.math.ethz.ch/~acannas/Papers/lsg.pdf"
+fetched_at = "2026-11-10T06:07:25Z"
+sha256 = "0b1c3a1f303b2fac4388d3b66019b42fc34196570225776c2448f797439e458b"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-10"
+cited_for = ["C1", "C3", "C3.1", "C4"]
