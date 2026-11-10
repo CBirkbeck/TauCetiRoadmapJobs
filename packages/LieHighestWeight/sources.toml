@@ -185,3 +185,52 @@ status = "certified"
 accessed = "2026-11-09"
 version_note = "1961 lecture notes as transcribed by Project Gutenberg; printed page numbers; not the expanded 1966 Academic Press book"
 cited_for = ["8.1", "8.2"]
+
+[[source]]
+id = "GaribaldiE8"
+authors = "S. Garibaldi"
+title = "$E_8$, the most exceptional group"
+year = 2016
+venue = "Bulletin of the AMS, vol. 53 #4 (2016), 643--671"
+doi = "10.1090/bull/1540"
+arxiv = "1605.01721v1"
+locator_scheme = "section"
+locator = "Z/3-graded construction"
+url = "https://arxiv.org/abs/1605.01721v1"
+fetched_from = "https://arxiv.org/pdf/1605.01721v1"
+fetched_at = "2026-11-10T18:34:32Z"
+sha256 = "2b69f5b39acaaa47f4f427c7a13cb217bf95dacde9e734222e6c3da007019c6a"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-10"
+version_note = "arXiv v1"
+cited_for = ["8"]
+
+[[source]]
+id = "BourbakiLie78"
+authors = "Nicolas Bourbaki"
+title = "Lie Groups and Lie Algebras"
+year = 2005
+doi = "10.1007/978-3-540-89394-3"
+locator_scheme = "chapter"
+locator = "Chapters 7–8, Chapter 8"
+url = "https://doi.org/10.1007/978-3-540-89394-3"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["7.1"]
+
+[[source]]
+id = "GoodmanWallachSymmetry"
+authors = "Roe Goodman, Nolan R. Wallach"
+title = "Symmetry, Representations, and Invariants"
+year = 2009
+venue = "Graduate Texts in Mathematics"
+doi = "10.1007/978-0-387-79852-3"
+locator_scheme = "chapter"
+locator = "highest-weight and classical-group background"
+url = "https://doi.org/10.1007/978-0-387-79852-3"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["9"]
