@@ -204,3 +204,55 @@ status = "certified"
 accessed = "2026-11-06"
 version_note = "arXiv v1, 3 pages; the main theorem is numbered Theorem 1"
 cited_for = ["0.5"]
+
+[[source]]
+id = "Mih16"
+authors = "Andreas Mihatsch"
+title = "Relative unitary RZ-spaces and the Arithmetic Fundamental Lemma"
+year = 2016
+arxiv = "1611.06520v2"
+locator_scheme = "theorem"
+locator = "Corollary 9.9"
+url = "https://arxiv.org/abs/1611.06520v2"
+fetched_from = "https://arxiv.org/pdf/1611.06520v2"
+fetched_at = "2026-11-10T21:06:15Z"
+sha256 = "1df1463952e54d98a6fe4c63ae04ec46ae03dc54648d841a53f3aae64af4fb97"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-10"
+version_note = "arXiv v2"
+cited_for = ["9.7"]
+
+[[source]]
+id = "GS19"
+authors = "Luis E. Garcia"
+title = "Green forms and the arithmetic Siegel-Weil formula"
+year = 2019
+arxiv = "1808.09313v1"
+locator_scheme = "equation"
+locator = "(1.19)"
+url = "https://arxiv.org/abs/1808.09313v1"
+fetched_from = "https://arxiv.org/pdf/1808.09313v1"
+fetched_at = "2026-11-10T21:06:40Z"
+sha256 = "f5c26a130c329111ee1e8844116701f09f0a98e5e5c9f1a55c87ac53f40053f9"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-10"
+version_note = "arXiv v1"
+cited_for = ["13.7"]
+
+[[source]]
+id = "Liu11a"
+authors = "Yifeng Liu"
+title = "Arithmetic theta lifting and L-derivatives for unitary groups, I"
+year = 2011
+locator_scheme = "theorem"
+locator = "Proposition 4.5; Theorem 4.17"
+url = "https://msp.org/ant/2011/5-7/ant-v5-n7-p01-p.pdf"
+fetched_from = "https://msp.org/ant/2011/5-7/ant-v5-n7-p01-p.pdf"
+fetched_at = "2026-11-10T21:07:15Z"
+sha256 = "0f192ff6a6d62085a4eb122db8e9c45cf20b42e744eaf2a9ce9d26a67d6e7166"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-11-10"
+cited_for = ["13.7"]
