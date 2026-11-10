@@ -4,17 +4,17 @@
 
 ## Scope and ownership
 
-This roadmap owns: theorems about the reduced ramification divisor and the Higman invariant of an elliptic admissible G-cover; the branch cycles of the level cover over j = 0, 1728, ∞; boundary deformation and density; functoriality in G and absolute level structures; cofinality; the finite description of cusps (gluing data, precuspidal data, cusp graphs, the invariant set I(G), the standard cusp, classification and inversion); cusp automorphism groups and the representability criterion; the obstruction pair m′_c, d′_c and the combinatorial congruence; the square-subgroup lemma and the simple-group congruence; the integral rank-two character scheme, the outer action in trace coordinates over every commutative ring, the matrix-algebra criterion, trace strata, admissible traces, the diagonal outer group and normalizers of SL_n(𝔽_q); the epimorphic trace −2 locus over prime fields, the branch cycles in trace coordinates, rotation slices at arbitrary level over every finite field, the exact rotation order and the vertical automorphisms of SL₂(𝔽_q)-level structures; and the trace −2 Markoff modular geometry of Layer 7, including the alternating containment at primes congruent to 3 modulo 4 and the composition factors of congruence quotients used for noncongruence.
+This roadmap owns: theorems about the reduced ramification divisor and the Higman invariant of an elliptic admissible G-cover; the branch cycles of the level cover over j = 0, 1728, ∞; boundary deformation and density; the properness, surjectivity, fibre description and functoriality in G of the quotient-cover maps, and absolute level structures; cofinality; the finite description of cusps (gluing data, precuspidal data, cusp graphs, the invariant set I(G), the standard cusp, classification and inversion); cusp automorphism groups and the representability criterion; the obstruction pair m′_c, d′_c and the combinatorial congruence; the square-subgroup lemma and the simple-group congruence; the integral rank-two character scheme, the outer action in trace coordinates over every commutative ring, the matrix-algebra criterion, trace strata, admissible traces, the diagonal outer group and normalizers of SL_n(𝔽_q); the epimorphic trace loci over every finite field, the branch cycles in trace coordinates, rotation slices at arbitrary level over every finite field, the exact rotation order and the vertical automorphisms of SL₂(𝔽_q)-level structures; and the trace −2 Markoff modular geometry of Layer 7, including the alternating containment at primes congruent to 3 modulo 4 and the composition factors of congruence quotients used for noncongruence.
 
 It leaves the following to named roadmaps.
 
-- ArithmeticDynamicsPartII §6.0 owns the specialization of the admissible-cover stack to (g, n) = (1, 1), written Adm(G) here; the center-rigidified level stack, written M(G) here; its admissible compactification M̄(G); their coarse spaces and forgetful maps to the j-line; the comparison of geometric components with Out⁺(F₂)-orbits on Epi^ext(F₂, G); the cotangent line at a marked ramification point and its character exponent m; the coarse degree congruence `12·ord(c) ∣ m·d·deg(X → P¹_j)` of Chen's Theorem 3.5.1; the vertical automorphism group Z(G) ∩ ⟨c⟩ at a smooth ramification point and the bound of the full character exponent by 12 times the vertical one; the general prime-power degree congruence of Chen's Corollary 4.12.5(a); and the refinements for absolutely irreducible non-dihedral H ≤ SL₂(𝔽_q): center containment, the bound on the diagonal normalizer quotient, `m ∣ 24` or `m ∣ 12`, and the centralizer bounds on d. Its §6.1 owns the finite-field trace dictionary (absolutely irreducible pairs modulo GL₂(𝔽_q) for commutator trace t ≠ 2, and the non-dihedral locus as the triples with at least two nonzero coordinates), §6.2 the trace order n_q(t) as `traceOrder`, §§6.3–6.4 the generalized Markoff orbit congruences, §6.5 the oriented Markoff orbit divisibility and §6.6 oriented transitivity and geometric connectedness of the absolute trace −2 level stack. Its §1.4 owns Chen's divisibility theorem for Vieta-stable sets (Martin's proof), §§2.1–2.2 the rotation slices and their periods on the prime-field zero level, §2.3 the count of X*(𝔽_p), §2.4 the divisor sum Φ and the rotation orbit count, §§3.6–3.7 and 4.2 the giant orbit, the sparse and then finite exceptional set, and §§7.2–7.4a the sign blocks, the Meiri–Puder condition MP(p), primitivity of the block action and alternating containment at primes congruent to 1 modulo 4.
+- ArithmeticDynamicsPartII §6.0 owns the specialization of the admissible-cover stack to (g, n) = (1, 1), written Adm(G) here; the center-rigidified level stack, written M(G) here; its admissible compactification M̄(G); their coarse spaces and forgetful maps to the j-line; the comparison of geometric components with Out⁺(F₂)-orbits on Epi^ext(F₂, G); the cotangent line at a marked ramification point and its character exponent m; the coarse degree congruence `12·ord(c) ∣ m·d·deg(X → P¹_j)` of Chen's Theorem 3.5.1; the vertical automorphism group Z(G) ∩ ⟨c⟩ at a smooth ramification point and the bound of the full character exponent by 12 times the vertical one; the general prime-power degree congruence of Chen's Corollary 4.12.5(a); the quotient-cover map M(H) → M(H/N) for a normal subgroup N, its compatibility with compactification, inner conjugacy and γ₋ᵢ, and the divisibility of coarse degrees along it; and the refinements for absolutely irreducible non-dihedral H ≤ SL₂(𝔽_q): center containment, the bound on the diagonal normalizer quotient, `m ∣ 24` or `m ∣ 12`, and the centralizer bounds on d. Its §6.1 owns the finite-field trace dictionary (absolutely irreducible pairs modulo GL₂(𝔽_q) for commutator trace t ≠ 2, and the non-dihedral locus as the triples with at least two nonzero coordinates) and the prime-field trace −2 equality of the non-dihedral and epimorphic loci with X*(𝔽_p) for primes p ≥ 3, §6.2 the trace order n_q(t) as `traceOrder`, §§6.3–6.4 the generalized Markoff orbit congruences, §6.5 the oriented Markoff orbit divisibility and §6.6 oriented transitivity and geometric connectedness of the absolute trace −2 level stack. Its §1.4 owns Chen's divisibility theorem for Vieta-stable sets (Martin's proof), §§2.1–2.2 the rotation slices and their periods on the prime-field zero level, §2.3 the count of X*(𝔽_p), §2.4 the divisor sum Φ and the rotation orbit count, §§3.6–3.7 and 4.2 the giant orbit, the sparse and then finite exceptional set, and §§7.2–7.4a the sign blocks, the Meiri–Puder condition MP(p), primitivity of the block action and alternating containment at primes congruent to 1 modulo 4.
 - InverseGaloisAndArithmeticFundamentalGroups §IG.5.4 owns balanced admissible G-covers of marked curves, the proper admissible-cover stack and the equivalence with stable marked G-curves, whose marking over a ramified label is the reduced ramification divisor; §IG.3.2 owns exterior epimorphisms and the action of Out(F_r) on them; §IG.3.1 owns Riemann existence for punctured curves; §§IG.1.2–IG.1.4 own tame tangential fibres, invariance under algebraically closed base extension in characteristic zero and the moduli outer action.
 - AnabelianGeometryAndNonabelianChabauty §§1.1–1.2 own tangential fibre functors on P¹ ∖ {0, 1, ∞}, local inertia orbits on branches, good paths and the existence of symmetric good paths.
 - StableReduction owns nodes, normalization and dual graphs with loops (Layer 1), the relative dualizing sheaf of nodal curves (Layer 2), and prestable and stable pointed curves with external and self-clutching (Layer 3).
 - SchemeAndStackFoundations owns Deligne–Mumford stacks (§1.19), quotient stacks (§1.21), coarse moduli spaces (§1.23), Riemann–Hurwitz for curves (§3.2), versal deformation of a node (§4.6) and the stack of stable pointed curves (§4.15). AlgebraicModuliForArithmeticGeometry §5.1 owns rigidification along inertia subgroups and its vertical-kernel representability criterion, and §8.3 the comparison of framed deformations with completed local rings and atlas presentations. ModularCurvesPartII owns full level structures and the Deligne–Rapoport level stacks (§§3.1, 3.12) and the compactified coarse j-line (§3.11).
 - ArithmeticGaloisRepresentations owns absolute irreducibility in Burnside's form (§1.7), normal subgroups and automorphisms of PSL₂ and PGL₂ (§4.3) and Dickson's classification (§4.4). ClassicalArithmeticCompletion owns the Markoff level surfaces V_k and the trace-coordinate surface X (§4.58), the Markoff–Hurwitz moves with permutations and even sign changes (§4.57) and the finite-field point count (§4.76). Tau Ceti owns the Fricke identity `Matrix.SpecialLinearGroup.trace_commutatorElement_fin_two`.
-- MappingClassGroupsAndCanonicalRepresentations owns the analytic orbifold fundamental group of the moduli stack of pointed curves (C.0/moduli-monodromy). HeightsRationalPointsAndObstructions §4.6 owns Faltings's finiteness theorem. BelyiMaps Layer 10 §10.4 owns Belyi's theorem (that roadmap assigns the layer to a successor roadmap). Tau Ceti owns the statement of the classification of finite simple groups, `TauCeti.ClassificationStatement`.
+- MappingClassGroupsAndCanonicalRepresentations owns the analytic orbifold fundamental group of the moduli stack of pointed curves (§2.3, "Teichmüller uniformization of the pointed moduli stack"). HeightsRationalPointsAndObstructions §4.6 owns Faltings's finiteness theorem. BelyiMaps Layer 10 §10.4 owns Belyi's theorem, implemented in Tau Ceti as `TauCeti.IsFunctionField.exists_isAlgebraicBelyiPair`. CFSGBasicProperties owns the properties of the groups on the CFSG list (A0); Vdovin's bound on abelian subgroups of every nonabelian finite simple group other than PSL₂(𝔽_q), which rests on the classification of finite simple groups, is requested from it as gap:vdovin-abelian-subgroups and is not proved here.
 
 The stack Hodge degree deg λ = 1/24 and the conormal power isomorphism along a ramified section enter only the proof of Chen's Theorem 3.5.1, which ArithmeticDynamicsPartII §6.0 states; they belong to that proof and are not separate targets here.
 
@@ -28,7 +28,7 @@ Adm(G) is the stack of elliptic admissible G-covers before rigidification, Adm�
 
 A compatible system of primitive roots of unity (ζ_n) is fixed wherever a Higman invariant is formed; over ℂ it is ζ_n = exp(2πi/n). Changing the system by a coprime power changes the Higman class by that power; no invariance under arbitrary coprime powers is asserted.
 
-The trace-coordinate surface at level t + 2 is `x² + y² + z² − x y z = t + 2` (ClassicalArithmeticCompletion §4.58 with k = t + 2), so the commutator trace t = −2 is the Markoff surface X and X*(R) removes the origin. Γ is generated by the Vieta moves and the coordinate permutations, without sign changes (ArithmeticDynamicsPartII §0.1); the larger group of ClassicalArithmeticCompletion §4.57 also has the even sign changes, and the two are compared explicitly where both occur. A trace t is split semisimple when `X² − t X + 1` has two distinct roots in the field and nonsplit when it is irreducible; this works in characteristic two, where a discriminant-square test does not. Invariants under GL₂ as an algebraic group are invariants of the coaction of the group scheme.
+The trace-coordinate surface at level t + 2 is `x² + y² + z² − x y z = t + 2` (ClassicalArithmeticCompletion §4.58 with k = t + 2), so the commutator trace t = −2 is the Markoff surface X and X*(R) removes the origin. Γ is generated by the Vieta moves and the coordinate permutations, without sign changes (ArithmeticDynamicsPartII §0.1); the group of ClassicalArithmeticCompletion §4.57 adjoins the even sign changes, which is a strict enlargement when 4 ≠ 0 in the coefficient ring and no enlargement in characteristic two (§5.2); the two are compared explicitly where both occur. A trace t is split semisimple when `X² − t X + 1` has two distinct roots in the field and nonsplit when it is irreducible; this works in characteristic two, where a discriminant-square test does not. Invariants under GL₂ as an algebraic group are invariants of the coaction of the group scheme.
 
 Convention witnesses.
 
@@ -45,11 +45,11 @@ Convention witnesses.
 
 ### From Tau Ceti
 
-`Matrix.SpecialLinearGroup.trace_commutatorElement_fin_two` (`TauCeti/LinearAlgebra/Matrix/Trace/FinTwo.lean`) is the Fricke identity tr[A, B] = x² + y² + z² − x y z − 2 for A, B ∈ SL₂(R) over every commutative ring, with (x, y, z) = (tr A, tr B, tr AB). `TauCeti.PermutationTriple` (`TauCeti/Combinatorics/PermutationTriple/Basic.lean`) is a triple of permutations of `Fin n` with σ∞ σ₁ σ₀ = 1; `TauCeti.PermutationTriple.eulerChar` and `TauCeti.PermutationTriple.genus` (`TauCeti/Combinatorics/PermutationTriple/EulerCharacteristic.lean`) are the sum of the cycle counts minus n and the truncated combinatorial genus, and `TauCeti.PermutationTriple.IsConnected.two_sub_two_mul_genus` gives 2 − 2g = χ for a connected triple; the genus has geometric meaning only for connected triples. `TauCeti.ClassificationStatement` (`TauCeti/GroupTheory/SpecificGroups/CFSG/Classification.lean`) is the proposition that every finite simple group is isomorphic to a group on the classification list, `TauCeti.CFSGIndex.Group`; it is a `Prop`-valued definition, not a theorem, and `TauCeti.classificationStatement_of_zero` transports it from universe zero to every universe. §4.2 uses its truth to pass from the listed groups to every finite simple group.
+`Matrix.SpecialLinearGroup.trace_commutatorElement_fin_two` (`TauCeti/LinearAlgebra/Matrix/Trace/FinTwo.lean`) is the Fricke identity tr[A, B] = x² + y² + z² − x y z − 2 for A, B ∈ SL₂(R) over every commutative ring, with (x, y, z) = (tr A, tr B, tr AB). `TauCeti.PermutationTriple` (`TauCeti/Combinatorics/PermutationTriple/Basic.lean`) is a triple of permutations of `Fin n` with σ∞ σ₁ σ₀ = 1; `TauCeti.PermutationTriple.eulerChar` and `TauCeti.PermutationTriple.genus` (`TauCeti/Combinatorics/PermutationTriple/EulerCharacteristic.lean`) are the sum of the cycle counts minus n and the truncated combinatorial genus, and `TauCeti.PermutationTriple.IsConnected.two_sub_two_mul_genus` gives 2 − 2g = χ for a connected triple; the genus has geometric meaning only for connected triples. `TauCeti.IsFunctionField.exists_isAlgebraicBelyiPair` (`TauCeti/FieldTheory/FunctionField/Belyi/Existence.lean`) is Belyi's existence theorem in function-field form: over a field k algebraic over ℚ, a function field F/k with exact constant field k (`IsIntegrallyClosedIn k F`) has an element β transcendental over k such that F over k(β) is an algebraic Belyi pair, branched over at most 0, 1, ∞.
 
 ### From TauCetiRoadmap.ArithmeticDynamicsPartII
 
-§6.0: for every finite group H over ℤ[1/|H|], Adm(H), Adm⁰(H), M(H) and M̄(H) with M(H) → 𝓜(1) representable finite étale; coarse formation compatible with the base changes of Chen's Theorem 2.5.2(2); geometric fibres Epi^ext(F₂, H) with components the Out⁺(F₂)-orbits; the coarse degree congruence `12·ord(c) ∣ m·d·deg` on a component with ord(c) > 1 and a chosen component of the reduced ramification divisor; the vertical group Z(H) ∩ ⟨c⟩ at a smooth ramification point, the embedding of boundary vertical automorphisms into the cusp automorphism group and the bound of the full exponent by 12 times the vertical one; Chen's Corollary 4.12.5(a) in degree form; and, for q ≥ 3 and H ≤ SL₂(𝔽_q) absolutely irreducible and not dihedral, Z(SL₂(𝔽_q)) ≤ H, the bound on the diagonal normalizer quotient, `m ∣ 24` (odd q) or `m ∣ 12` (even q) and `d ∣ |C_H(c)/⟨c⟩|`. §6.1: for a finite field and t ≠ 2 the trace map identifies absolutely irreducible pairs modulo GL₂-conjugacy with the points of the level t + 2 surface, the non-dihedral locus is the set of triples with at least two nonzero coordinates, and the Aut⁺(F₂)-image is normal of index at most two in the image of Aut(F₂). §6.2: `traceOrder`, the order of the companion matrix of `X² − t X + 1`, with n_q(2) = p and n_q(−2) = 2p for odd q and the split and nonsplit divisibilities. §§6.3–6.6, §1.4, §§2.1–2.4, §§3.6–3.7, §4.2 and §§7.2–7.4a as listed in Scope and ownership; in particular the predicate MP(p) of §7.3 and the block group Q_p on Y*(p) = X*(𝔽_p)/(even sign changes) of §7.2.
+§6.0: for every finite group H over ℤ[1/|H|], Adm(H), Adm⁰(H), M(H) and M̄(H) with M(H) → 𝓜(1) representable finite étale; coarse formation compatible with the base changes of Chen's Theorem 2.5.2(2); geometric fibres Epi^ext(F₂, H) with components the Out⁺(F₂)-orbits; the coarse degree congruence `12·ord(c) ∣ m·d·deg` on a component with ord(c) > 1 and a chosen component of the reduced ramification divisor; the vertical group Z(H) ∩ ⟨c⟩ at a smooth ramification point, the embedding of boundary vertical automorphisms into the cusp automorphism group and the bound of the full exponent by 12 times the vertical one; Chen's Corollary 4.12.5(a) in degree form; for a normal subgroup N of H over ℤ[1/|H|], the quotient-cover map M(H) → M(H/N), compatible with compactification, inner conjugacy and γ₋ᵢ, whose nonempty coarse components over an algebraically closed field of characteristic zero map finitely and dominantly onto their images; and, for q ≥ 3 and H ≤ SL₂(𝔽_q) absolutely irreducible and not dihedral, Z(SL₂(𝔽_q)) ≤ H, the bound on the diagonal normalizer quotient, `m ∣ 24` (odd q) or `m ∣ 12` (even q) and `d ∣ |C_H(c)/⟨c⟩|`. §6.1: for a finite field and t ≠ 2 the trace map identifies absolutely irreducible pairs modulo GL₂-conjugacy with the points of the level t + 2 surface, the non-dihedral locus is the set of triples with at least two nonzero coordinates, for every prime p ≥ 3 the trace −2 non-dihedral and epimorphic loci both equal X*(𝔽_p), and the Aut⁺(F₂)-image is normal of index at most two in the image of Aut(F₂). §6.2: `traceOrder`, the order of the companion matrix of `X² − t X + 1`, with n_q(2) = p and n_q(−2) = 2p for odd q and the split and nonsplit divisibilities. §§6.3–6.6, §1.4, §§2.1–2.4, §§3.6–3.7, §4.2 and §§7.2–7.4a as listed in Scope and ownership; in particular the predicate MP(p) of §7.3 and the block group Q_p on Y*(p) = X*(𝔽_p)/(even sign changes) of §7.2.
 
 What ArithmeticDynamicsPartII must provide (gap:markoff-alternating-three-mod-four): for primes p ≡ 3 (mod 4) with Q_p transitive on Y*(p) and MP(p), the block group Q_p contains the alternating group of Y*(p) (Meiri–Puder, Theorem 1.4, from the primitivity of ArithmeticDynamicsPartII §7.4 and the Guralnick–Magaard classification of primitive groups containing an element with at least half the points fixed).
 
@@ -99,7 +99,7 @@ What LanglandsParameterStacks must provide (gap:integral-rank-two-invariants): f
 
 ### From TauCetiRoadmap.MappingClassGroupsAndCanonicalRepresentations
 
-C.0/moduli-monodromy: for 2g − 2 + n > 0 the analytic orbifold fundamental group of the ordered moduli stack M(g, n) is the pure mapping class group, as an orbifold group rather than the fundamental group of a coarse space.
+§2.3, "Teichmüller uniformization of the pointed moduli stack": for 2g − 2 + n > 0 the analytic moduli stack M(g, n)^an is the orbifold quotient of the contractible Teichmüller space by the pure mapping class group, so its orbifold fundamental group is that group, as an orbifold group rather than the fundamental group of a coarse space; in genus one with one point the Teichmüller space is the upper half-plane and the orbifold group is SL₂(ℤ), with generic stabilizer ±1.
 
 What MappingClassGroupsAndCanonicalRepresentations must provide (gap:punctured-torus-nielsen): Nielsen's isomorphism Out(F₂) ≅ GL₂(ℤ) through abelianization with Out⁺(F₂) the preimage of SL₂(ℤ), the identification of the orbifold fundamental group of 𝓜(1,1)^an with Out⁺(F₂) for a positively oriented basis (a, b) of the punctured torus with boundary loop [b, a], and the images in Out⁺(F₂) of the standard loops of the j-line around j = 0, 1728, ∞, namely the classes of (a, b) ↦ (a b⁻¹, a), (a, b) ↦ (b⁻¹, a) and (a, b) ↦ (a, a b).
 
@@ -111,17 +111,17 @@ What MappingClassGroupsAndCanonicalRepresentations must provide (gap:asada-cofin
 
 ### From TauCetiRoadmap.BelyiMaps
 
-Layer 10, §10.4: a curve over ℚ̄ admits a Belyi map. BelyiMaps assigns that layer to a successor roadmap; the statement is consumed as BelyiMaps states it.
+Layer 10, §10.4, "A curve over ℚ̄ admits a Belyi map": for a function field F/ℚ̄ there is a nonconstant β ∈ F with F/ℚ̄(β) finite separable and branched over at most 0, 1, ∞; its function-field form over any algebraic extension of ℚ is the Tau Ceti declaration `TauCeti.IsFunctionField.exists_isAlgebraicBelyiPair` listed above.
 
 ### From TauCetiRoadmap.CFSGBasicProperties
 
-A0, the assembled list properties: every group on the CFSG list is finite and simple.
+A0 assembles the finiteness and simplicity of every group on the CFSG list; it does not prove that every finite simple group is on the list, so on its own it says nothing about an arbitrary finite simple group.
 
-What CFSGBasicProperties must provide (gap:vdovin-abelian-subgroups): every nonabelian group on the CFSG list that is not isomorphic to PSL₂(𝔽_q) for any prime power q has every abelian subgroup of order strictly less than the cube root of its order (Vdovin, Theorem A).
+What CFSGBasicProperties must provide (gap:vdovin-abelian-subgroups): for every nonabelian finite simple group G, in every universe, that is not isomorphic to PSL₂(𝔽_q) for any prime power q, every abelian subgroup of G has order strictly less than |G|^(1/3) (Vdovin, Theorem A); the contract concerns every finite simple group, not only the listed ones, so it includes the passage from the list to all finite simple groups, which is the truth of the classification proposition `TauCeti.ClassificationStatement` and is not supplied by the `Prop`-valued definition itself.
 
 ## How to read the build
 
-Layer 0 proves the ramification, Higman, branch-cycle, deformation and functoriality properties of the level stacks of ArithmeticDynamicsPartII §6.0, and their cofinality. Layer 1 describes the cusps of these stacks completely by finite group data and Layer 2 computes their automorphism groups, including the criterion for the rigidified compactification to be representable over the elliptic stack. Layer 3 combines the cusp automorphism groups with the coarse degree congruence of ArithmeticDynamicsPartII §6.0 to obtain the combinatorial congruence on Out⁺(F₂)-orbits, stated in `combinatorial_congruence`. Layer 4 bounds the two obstructions group-theoretically and proves `simple_group_congruence`. Layer 5 builds the rank-two trace coordinates over every commutative ring and the finite-field trace data. Layer 6 specializes to SL₂(𝔽_q): the epimorphic trace −2 locus, the branch cycles and rotations in trace coordinates, and vertical automorphisms. Layer 7 combines these with the Markoff dynamics of ArithmeticDynamicsPartII to describe the trace −2 Markoff level curves. A target's *Needs:* line lists what its statement and its indicated proof route use.
+Layer 0 proves the ramification, Higman, branch-cycle, deformation and functoriality properties of the level stacks of ArithmeticDynamicsPartII §6.0, and their cofinality. Layer 1 describes the cusps of these stacks completely by finite group data and Layer 2 computes their automorphism groups, including the criterion for the rigidified compactification to be representable over the elliptic stack. Layer 3 combines the cusp automorphism groups with the coarse degree congruence of ArithmeticDynamicsPartII §6.0 to obtain the combinatorial congruence on Out⁺(F₂)-orbits, stated in `combinatorial_congruence`. Layer 4 bounds the two obstructions group-theoretically and proves `simple_group_congruence`. Layer 5 builds the rank-two trace coordinates over every commutative ring and the finite-field trace data. Layer 6 specializes to SL₂(𝔽_q): the epimorphic trace loci, the branch cycles and rotations in trace coordinates, and vertical automorphisms. Layer 7 combines these with the Markoff dynamics of ArithmeticDynamicsPartII to describe the trace −2 Markoff level curves. A target's *Needs:* line lists what its statement and its indicated proof route use.
 
 ## Layer 0: ramification, branch cycles and functoriality of elliptic level structures
 
@@ -129,7 +129,7 @@ All objects of this layer are those of ArithmeticDynamicsPartII §6.0 and Invers
 
 ### 0.1 The reduced ramification divisor and its monodromy
 
-For an elliptic admissible G-cover π : C → E over S, the reduced ramification divisor R_π is the marking of the stable marked G-curve attached to π over the origin (InverseGaloisAndArithmeticFundamentalGroups §IG.5.4). Prove the following description and properties. For a nontrivial cyclic H ≤ G let Δ(H) be the fixed locus of H in the smooth locus C^sm minus the fixed loci of all strictly larger cyclic subgroups; then R_π is the disjoint union of the Δ(H), with the induced fixed-locus scheme structures. It is an effective Cartier divisor in C^sm, finite étale over S, compatible with every base change, and its geometric points are the points over the origin with nontrivial inertia. On a connected base the ramification index e at the origin is constant; if e ≥ 2 then R_π has degree |G|/e over S and is the fibrewise reduced origin fibre, while if e = 1 it is empty and the marking is the whole étale origin fibre. If S is reduced then R_π is reduced; conversely, if R_π → S is surjective (in particular if e ≥ 2 and S is nonempty and connected) and R_π is reduced, then S is reduced. (Chen, §2.2, pp. 322–325, Proposition 2.2.3 and Remark 2.2.4; Definition 3.2.1, pp. 351–352.) The converse without surjectivity, asserted in Chen's Remark 2.2.4, is false (Checks below).
+Let π : C → E be an elliptic admissible G-cover over S. Where the origin is ramified, the reduced ramification divisor R_π is the marking of the stable marked G-curve attached to π; where the origin is unramified, the marking is the whole étale origin fibre and R_π is empty (InverseGaloisAndArithmeticFundamentalGroups §IG.5.4). Prove the following description and properties. For a nontrivial cyclic H ≤ G let Δ(H) be the fixed locus of H in the smooth locus C^sm minus the fixed loci of all strictly larger cyclic subgroups; then R_π is the disjoint union of the Δ(H), with the induced fixed-locus scheme structures. It is an effective Cartier divisor in C^sm, finite étale over S, compatible with every base change, and its geometric points are the points over the origin with nontrivial inertia. On a connected base the ramification index e at the origin is constant; if e ≥ 2 then R_π has degree |G|/e over S and is the fibrewise reduced origin fibre, while if e = 1 it is empty and the marking is the whole étale origin fibre. If S is reduced then R_π is reduced; conversely, if R_π → S is surjective (in particular if e ≥ 2 and S is nonempty and connected) and R_π is reduced, then S is reduced. (Chen, §2.2, pp. 322–325, Proposition 2.2.3 and Remark 2.2.4; Definition 3.2.1, pp. 351–352.) The converse without surjectivity, asserted in Chen's Remark 2.2.4, is false (Checks below).
 
 Monodromy. Let S be connected and e ≥ 2, and let x be a geometric ramified point with inertia group H. Then all connected components of R_π are isomorphic finite étale Galois covers of S, and their deck groups embed in N_G(H)/H. If S is regular and integral and contains a primitive e-th root of unity, they embed in C_G(H)/H. For a connected component X of Adm(G) over ℤ[1/|G|, ζ_e] the same holds for the universal reduced ramification divisor; consequently the degree d_X of a connected component of the universal divisor over X^coarse divides |C_G(⟨c⟩)/⟨c⟩| for the Higman element c. (Chen, Proposition 2.2.5, pp. 325–326; Proposition 3.2.2, pp. 352–353.)
 
@@ -182,7 +182,7 @@ One proof route: transport the elliptic universal family through the orbifold id
 - The generic stack fibre has twice the size of the coarse fibre exactly when γ₋ᵢ has no fixed point on the orbit: for G = C₃ the orbit O consists of the 8 surjections ℤ² → ℤ/3, γ₋ᵢ (negation) acts freely and the coarse degree is 4, the index in PSL₂(ℤ) of the image of Γ₁(3), not 8; for G = C₂ it acts trivially and the coarse degree is |O| = 3.
 - For G = (ℤ/n)² the operators reduce, through Epi^ext(F₂, (ℤ/n)²) = surjections ℤ² → (ℤ/n)², to the standard SL₂(ℤ)-action on full level n bases, matching ModularCurvesPartII §3.1 after fixing the Weil pairing.
 
-*Needs:* ArithmeticDynamicsPartII §6.0 (fibres and components); MappingClassGroupsAndCanonicalRepresentations C.0/moduli-monodromy and gap:punctured-torus-nielsen; InverseGaloisAndArithmeticFundamentalGroups §§IG.3.1, IG.3.2, IG.1.3, IG.1.4; Tau Ceti `TauCeti.CoveringSpace.monodromyFunctor` (topological monodromy of covering spaces, not Riemann existence for stacks).
+*Needs:* ArithmeticDynamicsPartII §6.0 (fibres and components); MappingClassGroupsAndCanonicalRepresentations §2.3 (orbifold fundamental group of 𝓜(1,1)^an) and gap:punctured-torus-nielsen; InverseGaloisAndArithmeticFundamentalGroups §§IG.3.1, IG.3.2, IG.1.3, IG.1.4; Tau Ceti `TauCeti.CoveringSpace.monodromyFunctor` (topological monodromy of covering spaces, not Riemann existence for stacks).
 
 ### 0.4 Boundary deformation and density
 
@@ -200,24 +200,25 @@ One proof route: use equivariant nodal deformation theory with the framed compar
 
 ### 0.5 Functoriality under quotients of G
 
-For a surjection f : G₁ → G₂ of finite groups generated by two elements, quotienting a connected torsor by ker f defines M(f) : M(G₁) → M(G₂), which extends to a proper surjective quasi-finite morphism M̄(G₁) → M̄(G₂). On geometric fibres it is postcomposition φ ↦ f ∘ φ on Epi^ext(F₂, −), it maps the Higman class c to f(c), and identities and composites of surjections give canonically isomorphic maps. Surjectivity uses the lifting of generating pairs along f, not surjectivity of f on elements. (Chen, Theorem 2.5.2(6), p. 337; Proposition 2.5.10(f), pp. 344–345; §4.12, p. 389.)
+For a surjection f : G₁ → G₂ of finite groups with G₁ generated by two elements, let M(f) : M(G₁) → M(G₂) over ℤ[1/|G₁|] be the quotient-cover map of ArithmeticDynamicsPartII §6.0 for the normal subgroup ker f, followed by the identification G₁/ker f ≅ G₂ induced by f, and let M̄(f) : M̄(G₁) → M̄(G₂) be its extension to compactifications, also constructed there. Prove the properties that §6.0 does not state: M̄(f) is proper, quasi-finite and surjective; on geometric fibres M(f) is postcomposition φ ↦ f ∘ φ on Epi^ext(F₂, −); it maps the Higman class c to f(c); and identities and composites of surjections give canonically isomorphic maps. Surjectivity uses the lifting of generating pairs along f, not surjectivity of f on elements. (Chen, Theorem 2.5.2(6), p. 337; Proposition 2.5.10(f), pp. 344–345; §4.12, p. 389.)
 
-The defining API is:
+The API proved here is:
 
 - M(f₂ ∘ f₁) is canonically isomorphic to M(f₂) ∘ M(f₁), and M(id) to the identity.
-- The fibre map is φ ↦ f ∘ φ, equivariant for Out⁺(F₂).
+- The fibre map is φ ↦ f ∘ φ, equivariant for Out⁺(F₂) and surjective onto Epi^ext(F₂, G₂).
 - The Higman class of the quotient cover is the image of the Higman class.
-- The map agrees with the proper quasi-finite extension on compactifications.
+- The extension M̄(f) on compactifications is proper, quasi-finite and surjective.
 
 **Checks.**
 
 - An isomorphism G₁ ≅ G₂ gives an isomorphism of level stacks.
 - G → 1 gives the forgetful map to 𝓜(1) and agrees with the coarse j-line.
 - A nonsurjective homomorphism is not admitted: for C₂ → C₂ × C₂ the composite of a surjection F₂ → C₂ is not surjective, so it classifies no connected (C₂ × C₂)-torsor.
+- The two-generation hypothesis on G₁ is needed for surjectivity: the projection C₂ × C₂ × C₂ → C₂ × C₂ is surjective on elements, but M(C₂ × C₂ × C₂) is empty (§0.4) while M(C₂ × C₂) is not.
 
-One proof route: take the quotient cover and extend it over the admissible boundary by the general quotient construction; use the lifting of generating pairs and the fibre dictionary for surjectivity; check identity and composition by the quotient universal property.
+One proof route: start from the quotient-cover map of ArithmeticDynamicsPartII §6.0 and its compactification; properness and quasi-finiteness follow from those of the compactified forgetful map of G₁ (§0.4), since M̄(G₂) is a separated Deligne–Mumford stack over M̄(1); the lifting of generating pairs and the fibre dictionary give surjectivity over M(G₂), and properness with the density of the smooth-target locus (§0.4) extends it to M̄(G₂); check identity and composition by the quotient universal property.
 
-*Needs:* §0.3; gap:gaschutz-generating-pairs (InverseGaloisAndArithmeticFundamentalGroups §IG.3.2); InverseGaloisAndArithmeticFundamentalGroups §IG.5.4; ArithmeticDynamicsPartII §6.0.
+*Needs:* §0.3; §0.4; gap:gaschutz-generating-pairs (InverseGaloisAndArithmeticFundamentalGroups §IG.3.2); InverseGaloisAndArithmeticFundamentalGroups §IG.5.4; ArithmeticDynamicsPartII §6.0 (the quotient-cover map M(H) → M(H/N) for a normal subgroup N and its compactification).
 
 ### 0.6 Absolute and intermediate level structures
 
@@ -252,7 +253,7 @@ One proof route: apply Asada's theorem through the orbifold fibre dictionary of 
 - A positive-dimensional affine level curve cannot map finite étale onto a projective curve, so the open U is essential.
 - For X = P¹ one may take U = P¹ ∖ {0, 1, ∞} and N a component of M(G) whose coarse curve covers it.
 
-*Needs:* gap:asada-cofinality (MappingClassGroupsAndCanonicalRepresentations); BelyiMaps Layer 10 §10.4; §0.3; InverseGaloisAndArithmeticFundamentalGroups §IG.3.1.
+*Needs:* gap:asada-cofinality (MappingClassGroupsAndCanonicalRepresentations); BelyiMaps Layer 10 §10.4 (Tau Ceti `TauCeti.IsFunctionField.exists_isAlgebraicBelyiPair`); §0.3; InverseGaloisAndArithmeticFundamentalGroups §IG.3.1.
 
 ### Examples
 
@@ -260,7 +261,7 @@ For G = C₂ the level stack is the Γ₁(2)-curve: one component of coarse degr
 
 ### Dependencies
 
-InverseGaloisAndArithmeticFundamentalGroups §§IG.1.2, IG.1.3, IG.1.4, IG.3.1, IG.3.2, IG.5.4 and gap:gaschutz-generating-pairs; ArithmeticDynamicsPartII §6.0; AnabelianGeometryAndNonabelianChabauty §1.1; StableReduction Layer 2; SchemeAndStackFoundations §§1.19, 1.21, 1.23 and gap:equivariant-node-smoothing; AlgebraicModuliForArithmeticGeometry §§5.1, 8.3 and gap:geometric-point-completion; ModularCurvesPartII §3.1; MappingClassGroupsAndCanonicalRepresentations C.0/moduli-monodromy, gap:punctured-torus-nielsen and gap:asada-cofinality; BelyiMaps Layer 10; Tau Ceti `TauCeti.CoveringSpace.monodromyFunctor`.
+InverseGaloisAndArithmeticFundamentalGroups §§IG.1.2, IG.1.3, IG.1.4, IG.3.1, IG.3.2, IG.5.4 and gap:gaschutz-generating-pairs; ArithmeticDynamicsPartII §6.0; AnabelianGeometryAndNonabelianChabauty §1.1; StableReduction Layer 2; SchemeAndStackFoundations §§1.19, 1.21, 1.23 and gap:equivariant-node-smoothing; AlgebraicModuliForArithmeticGeometry §§5.1, 8.3 and gap:geometric-point-completion; ModularCurvesPartII §3.1; MappingClassGroupsAndCanonicalRepresentations §2.3, gap:punctured-torus-nielsen and gap:asada-cofinality; BelyiMaps Layer 10 §10.4; Tau Ceti `TauCeti.CoveringSpace.monodromyFunctor`, `TauCeti.IsFunctionField.exists_isAlgebraicBelyiPair`.
 
 ## Layer 1: cusps and their finite data
 
@@ -469,7 +470,7 @@ One proof route: an endomorphism of the torsor G commuting with right multiplica
 
 ### 2.3 Full and marked cusp stabilizers and representability
 
-For a cusp [[u, h]], its vertical automorphism group is A(G, u, h). Its full automorphism group in Adm(G) equals A(G, u, h) if [[u, h]] ≠ [[u⁻¹, h⁻¹]], and otherwise is an extension 1 → A(G, u, h) → Aut → C₂ → 1. The stabilizer of a point over the origin, which equals the vertical automorphism group of the corresponding point of the reduced ramification divisor, is A(G, u, h) ∩ ⟨[u⁻¹, h⁻¹]⟩. The cover is irreducible if and only if M_(u,h) = G, and then its vertical group is Z(G). The rigidified compactification M̄(G) → M̄(1) is representable if and only if k_(u,h) = |u|, equivalently A(G, u, h) = Z(G), for every generating pair (u, h). (Chen, Theorem 4.10.3(a′)–(d), pp. 384–386.)
+For a cusp [[u, h]], its vertical automorphism group is A(G, u, h). Its full automorphism group in Adm(G) equals A(G, u, h) if [[u, h]] ≠ [[u⁻¹, h⁻¹]], and otherwise is an extension 1 → A(G, u, h) → Aut → C₂ → 1. For every generating pair, the stabilizer in A(G, u, h) of a point over the origin is A(G, u, h) ∩ ⟨[u⁻¹, h⁻¹]⟩, and a vertical automorphism fixing one such point fixes the whole origin fibre. If [u, h] ≠ 1 the origin is ramified, the points over it are the points of the reduced ramification divisor, and this group is the vertical automorphism group of the corresponding cuspidal point of that divisor; if [u, h] = 1 the divisor is empty, the marking is the whole origin fibre and the stabilizer is trivial. The cover is irreducible if and only if M_(u,h) = G, and then its vertical group is Z(G). The rigidified compactification M̄(G) → M̄(1) is representable if and only if k_(u,h) = |u|, equivalently A(G, u, h) = Z(G), for every generating pair (u, h). (Chen, Theorem 4.10.3(a′)–(d), pp. 384–386.)
 
 One proof route: compute the stabilizer of an origin point from the gluing description, through the canonical bijection of the fibre over 1 with the γ₁-orbits on the tangential fibre (the stabilizer condition becomes a ∈ ⟨u⁻¹h⁻¹uh⟩); apply §1.9 for the image in Aut(E) = C₂; apply the vertical-kernel criterion of AlgebraicModuliForArithmeticGeometry §5.1 after rigidifying by Z(G), together with the smooth-locus vertical group Z(G) of InverseGaloisAndArithmeticFundamentalGroups §IG.5.4.
 
@@ -477,6 +478,7 @@ One proof route: compute the stabilizer of an origin point from the gluing descr
 
 - For G = S₃, u = (1 2 3), h = (1 2): A ∩ ⟨[u⁻¹, h⁻¹]⟩ = C₃, so the marked stabilizer has order 3 and M̄(S₃) → M̄(1) is not representable.
 - For abelian G every cusp has A = G = Z(G), so the rigidified map is representable.
+- For G = 1 the single cusp [[1, 1]] is the identity cover of the nodal curve: the marking is the origin, of degree 1, the reduced ramification divisor is empty, of degree 0, and the stabilizer A ∩ ⟨1⟩ is trivial; reading the stabilizer as the automorphism group of a point of the divisor would have no point to attach it to.
 - For G = SL₂(𝔽₅) and every generating pair, k_(u,h) = |u| (Chen, Remark 4.10.2), so M̄(SL₂(𝔽₅)) → M̄(1) is representable; the marked stabilizer at a trace −2 cusp is {±1} ∩ ⟨c⟩ = {±1}, since the element of order 10 has fifth power −1.
 
 *Needs:* §2.2; §1.9; §0.1; AlgebraicModuliForArithmeticGeometry §5.1 (`ArithmeticModuli.Rigidification.vertical_kernel`); InverseGaloisAndArithmeticFundamentalGroups §IG.5.4; ArithmeticDynamicsPartII §6.0 (M̄(G)).
@@ -542,7 +544,7 @@ The defining API is:
 
 ### 3.2 The obstruction pair m′_c and d′_c
 
-For a finite group G and c ∈ G define `cuspVerticalExponent` c = m′_c, the least positive integer killing A(G, u, h) ∩ ⟨[u⁻¹, h⁻¹]⟩ for every generating pair (u, h) with [u, h] conjugate to c; it is the least common multiple of the orders of the elements of these groups, and equals 1 when no such pair exists. Define `centralizerQuotientOrder` c = d′_c = |C_G(⟨c⟩)/⟨c⟩|. Both are invariants of the conjugacy class of c. Each A(G, u, h) ∩ ⟨[u⁻¹, h⁻¹]⟩ is cyclic, and by §2.3 it is the vertical automorphism group of a cuspidal point of the reduced ramification divisor. (Chen, Theorem 4.10.5(a)–(b) and its proof, pp. 386–387.)
+For a finite group G and c ∈ G define `cuspVerticalExponent` c = m′_c, the least positive integer killing A(G, u, h) ∩ ⟨[u⁻¹, h⁻¹]⟩ for every generating pair (u, h) with [u, h] conjugate to c; it is the least common multiple of the orders of the elements of these groups, and equals 1 when no such pair exists. Define `centralizerQuotientOrder` c = d′_c = |C_G(⟨c⟩)/⟨c⟩|. Both are invariants of the conjugacy class of c. Each A(G, u, h) ∩ ⟨[u⁻¹, h⁻¹]⟩ is cyclic; by §2.3 it is the stabilizer of a point over the origin of the cusp [[u, h]], and, when c ≠ 1, the vertical automorphism group of the corresponding cuspidal point of the reduced ramification divisor (for c = 1 the divisor is empty and the group is trivial). (Chen, Theorem 4.10.5(a)–(b) and its proof, pp. 386–387.)
 
 The defining API is:
 
@@ -615,7 +617,7 @@ One proof route. By Vdovin's theorem every abelian subgroup B of G has |B| < |G|
 - For G = A₅ ≅ PSL₂(𝔽₄) ≅ PSL₂(𝔽₅) the theorem does not apply, and A₅ has an abelian subgroup of order 5 ≥ 60^(1/3) ≈ 3.9; the exclusion of PSL₂ is necessary for Vdovin's bound.
 - For G = A₆ ≅ PSL₂(𝔽₉) the theorem does not apply.
 
-*Needs:* §4.1; §3.3; gap:vdovin-abelian-subgroups (CFSGBasicProperties); Tau Ceti `TauCeti.ClassificationStatement` (to transfer Vdovin's bound from the listed groups to every finite simple group); Mathlib `IsSimpleGroup`, `Matrix.ProjectiveSpecialLinearGroup`, `Nat.factorization`.
+*Needs:* §4.1; §3.3; gap:vdovin-abelian-subgroups (CFSGBasicProperties, Vdovin's bound for every nonabelian finite simple group other than PSL₂(𝔽_q)); Mathlib `IsSimpleGroup`, `Matrix.ProjectiveSpecialLinearGroup`, `Nat.factorization`.
 
 ### Examples
 
@@ -623,7 +625,7 @@ For G = PSU₃(4), of order 62400, and the four rationally conjugate classes c o
 
 ### Dependencies
 
-§§2.2, 3.2, 3.3; gap:vdovin-abelian-subgroups; Tau Ceti `TauCeti.ClassificationStatement`; Mathlib `IsSimpleGroup`, `Matrix.ProjectiveSpecialLinearGroup`, `Nat.factorization`.
+§§2.2, 3.2, 3.3; gap:vdovin-abelian-subgroups (CFSGBasicProperties); Mathlib `IsSimpleGroup`, `Matrix.ProjectiveSpecialLinearGroup`, `Nat.factorization`.
 
 ## Layer 5: rank-two trace coordinates
 
@@ -652,7 +654,7 @@ One proof route: obtain generation of the invariants of pairs of 2 × 2 matrices
 
 ### 5.2 Outer automorphisms in trace coordinates
 
-Over every commutative ring R, right precomposition by Aut(F₂) induces an anti-homomorphism from Aut(F₂) to the group of polynomial automorphisms of 𝔸³_R, which factors through Out(F₂)/⟨−I⟩ ≅ PGL₂(ℤ). The Nielsen generators r : (a, b) ↦ (a⁻¹, b), s : (a, b) ↦ (b, a) and t : (a, b) ↦ (a⁻¹, a b) act by (x, y, z) ↦ (x, y, x y − z), (y, x, z) and (x, z, y), and the central element γ₋ᵢ acts trivially. The image is the group generated by the Vieta move and the coordinate permutations, which over a finite field restricts on the punctured Markoff surface to the group Γ of ArithmeticDynamicsPartII §0.1; no faithfulness is asserted. The group of ClassicalArithmeticCompletion §4.57 also contains the even sign changes and is strictly larger. ArithmeticDynamicsPartII §6.1 states the finite-field orientation index; this section states the polynomial action over every ring. (Chen, Proposition 5.2.5, pp. 396–397; Chen displays the map with an injective arrow, but it is not injective, since γ₋ᵢ and every inner automorphism act trivially on triples.)
+Over every commutative ring R, right precomposition by Aut(F₂) induces an anti-homomorphism from Aut(F₂) to the group of polynomial automorphisms of 𝔸³_R, which factors through Out(F₂)/⟨−I⟩ ≅ PGL₂(ℤ). The Nielsen generators r : (a, b) ↦ (a⁻¹, b), s : (a, b) ↦ (b, a) and t : (a, b) ↦ (a⁻¹, a b) act by (x, y, z) ↦ (x, y, x y − z), (y, x, z) and (x, z, y), and the central element γ₋ᵢ acts trivially. The image is the group generated by the Vieta move and the coordinate permutations, which over a finite field restricts on the punctured Markoff surface to the group Γ of ArithmeticDynamicsPartII §0.1; no faithfulness is asserted. On R³ the group Γ_(3,1)(R) of ClassicalArithmeticCompletion §4.57 is generated by the permutations this image induces together with the even sign changes (x, y, z) ↦ (ε₁x, ε₂y, ε₁ε₂z). Over every ring in which 4 ≠ 0, for instance ℤ or a field of odd characteristic, it is strictly larger: every element of the image fixes (2, 2, 2), the triple of the pair (I, I), while (x, y, z) ↦ (−x, −y, z) sends it to (−2, −2, 2). Over a ring of characteristic two the even sign changes are the identity and the two groups coincide. ArithmeticDynamicsPartII §6.1 states the finite-field orientation index; this section states the polynomial action over every ring. (Chen, Proposition 5.2.5, pp. 396–397; Chen displays the map with an injective arrow, but it is not injective, since γ₋ᵢ and every inner automorphism act trivially on triples.)
 
 One proof route: compute the three trace transformations from tr(AB) + tr(AB⁻¹) = tr A · tr B; check the composition order of the right action explicitly; inner automorphisms act by simultaneous conjugation and fix the coordinates, and γ₋ᵢ fixes them because tr(A⁻¹B⁻¹) = tr(BA) = tr(AB).
 
@@ -661,7 +663,8 @@ One proof route: compute the three trace transformations from tr(AB) + tr(AB⁻�
 - The composition rule: φ ∘ (r ∘ t) sends a ↦ φ(a), b ↦ φ(a)⁻¹φ(b), with triple (x, x y − z, y); this is the move of r followed by that of t, and differs from the reverse composite (x, z, x z − y) at (2, 3, 5), giving (2, 1, 3) against (2, 5, 7).
 - r² = 1 in Aut(F₂) and its move is an involution: (x, y, x y − z) ↦ (x, y, x y − (x y − z)) = (x, y, z).
 - γ₋ᵢ is not inner in F₂ but fixes every triple, so the map is not injective on Out(F₂).
-- A single sign change (x, y, z) ↦ (−x, y, z) does not preserve the level surfaces in general ((1, 1, 1) has level 2 and (−1, 1, 1) level 4), so it is not in the image.
+- Over ℤ a single sign change (x, y, z) ↦ (−x, y, z) does not preserve the level surfaces ((1, 1, 1) has level 2 and (−1, 1, 1) level 4), so it is not in the image; over 𝔽₂ it is the identity.
+- Negative control for strictness: over 𝔽₂, and over 𝔽₂[ε]/(ε²), −1 = 1, so each even sign change is the identity and adjoining them leaves the group unchanged; (−1, −1, 1) = (1, 1, 1) there, whereas over ℤ the map (x, y, z) ↦ (−x, −y, z) sends (1, 1, 1) to (−1, −1, 1) and (2, 2, 2) to (−2, −2, 2), and no element of the image moves (2, 2, 2).
 
 *Needs:* §5.1; gap:punctured-torus-nielsen (Out(F₂) ≅ GL₂(ℤ)); ClassicalArithmeticCompletion §4.57; ArithmeticDynamicsPartII §0.1; Mathlib `FreeGroup`.
 
@@ -768,20 +771,19 @@ Tau Ceti `Matrix.SpecialLinearGroup.trace_commutatorElement_fin_two`; gap:integr
 
 Throughout, q = p^f is a prime power and t ∈ 𝔽_q; X_t(q) is the level t + 2 surface, and its non-dihedral locus X_t*(q) is the set of triples coming from absolutely irreducible pairs whose projective image is neither trivial nor dihedral, equivalently for t ≠ 2 the triples with at least two nonzero coordinates (ArithmeticDynamicsPartII §6.1).
 
-### 6.1 The epimorphic trace −2 locus over a prime field
+### 6.1 Epimorphic trace loci
 
-Let X_t°(q) be the set of triples of pairs generating SL₂(𝔽_q) with commutator trace t. For q ≥ 3 and t ≠ 2, X_t°(q) ⊆ X_t*(q); for q = 2 the non-dihedral locus is empty (SL₂(𝔽₂) ≅ S₃ is dihedral) while X_1°(2) is not. Both loci are empty at t = 2. For an odd prime p and t = −2 both loci equal the punctured Markoff surface X*(𝔽_p), and the trace map is a bijection Epi(F₂, SL₂(𝔽_p))_(−2)/GL₂(𝔽_p) → X*(𝔽_p). This equality is not extended to proper prime powers. (Chen, Definitions 5.2.14–5.2.15 and Propositions 5.2.16–5.2.17, pp. 401–402; (1.2), p. 307.) In the proof of Chen's Proposition 5.2.16(d) absolute irreducibility is equivalent to commutator trace different from 2, not equal to 2, and the dihedral case with one rotation and one reflection is added: the reflection and the product are involutions, so two traces vanish.
+Let X_t°(q) be the set of triples of pairs generating SL₂(𝔽_q) with commutator trace t. For every prime power q both X_2°(q) and X_2*(q) are empty. For q ≥ 3 and every t ∈ 𝔽_q, X_t°(q) ⊆ X_t*(q); for q = 2 the non-dihedral locus is empty (SL₂(𝔽₂) ≅ S₃ is dihedral) while X_1°(2) is not. (Chen, Definitions 5.2.14–5.2.15 and Proposition 5.2.16(a)–(c), pp. 401–402.) For every prime p ≥ 3 and t = −2, ArithmeticDynamicsPartII §6.1 identifies both loci with the punctured Markoff surface X*(𝔽_p), which has 40 points at p = 5 and none at p = 3, and with the trace dictionary of that section the trace map is a bijection Epi(F₂, SL₂(𝔽_p))_(−2)/GL₂(𝔽_p) → X*(𝔽_p); no such equality is asserted for proper prime powers (Chen, Proposition 5.2.17, p. 402; (1.2), p. 307). The coordinate description of X_t*(q) for t ≠ 2, Chen's Proposition 5.2.16(d), is also ArithmeticDynamicsPartII §6.1; in Chen's proof of it absolute irreducibility is equivalent to commutator trace different from 2, not equal to 2, and the dihedral case with one rotation and one reflection must be added: the reflection and the product are involutions, so two traces vanish.
 
-One proof route: a nonzero point of the Markoff surface has at least two nonzero coordinates (if y = z = 0 then x² = 0); a noncentral element of trace −2 has order 2p, so the projective image contains an element of order p; by Dickson's classification over the prime field the image is then PSL₂(𝔽_p), the exceptional A₄, S₄, A₅ arising only for p ∈ {3, 5}, where X*(𝔽₃) is empty and A₅ is PSL₂(𝔽₅); the image contains the center (ArithmeticDynamicsPartII §6.0), so the pair generates SL₂(𝔽_p).
+One proof route: a generating pair of SL₂(𝔽_q) has image SL₂(𝔽_q), whose span is M₂(𝔽_q), so the pair is absolutely irreducible (ArithmeticGaloisRepresentations §1.7) and its commutator trace is not 2 (§5.3); at t = 2 no pair is absolutely irreducible, which empties both loci. For q ≥ 3 the projective image PSL₂(𝔽_q) is neither trivial nor dihedral: PSL₂(𝔽₃) ≅ A₄ has no subgroup of index two, and PSL₂(𝔽_q) is nonabelian simple for q ≥ 4. For q = 2 every subgroup of SL₂(𝔽₂) ≅ S₃ is cyclic, hence not absolutely irreducible, or dihedral, while generating pairs exist.
 
 **Checks.**
 
-- The origin is excluded from X*(𝔽_p) for every odd prime p.
+- Over 𝔽₃ the matrices u = `[[1, 1], [0, 1]]` and h = `[[0, −1], [1, 0]]` have orders 3 and 4, so they generate SL₂(𝔽₃), which has order 24 and no subgroup of order 12; with u h = `[[1, −1], [1, 0]]` their triple is (2, 0, 1), with two nonzero coordinates, and the commutator trace is 4 + 0 + 1 − 0 − 2 = 3 = 0 ≠ 2, so the point lies in X_0°(3) ∩ X_0*(3).
 - Over 𝔽₂ the punctured zero-level surface has four points, but X_(−2)°(2) = ∅ because −2 = 2.
 - At q = 2 the inclusion X_t° ⊆ X_t* fails at t = 1, so no blanket statement for all q holds.
-- At p = 5 the epimorphic locus is the set of 40 nonzero zero-level points; no rescaling by 3 is needed for the coefficient-one equation.
 
-*Needs:* §5.5; ArithmeticDynamicsPartII §§6.0, 6.1; ArithmeticGaloisRepresentations §4.4; ClassicalArithmeticCompletion §4.58.
+*Needs:* §5.3; ArithmeticGaloisRepresentations §1.7; ArithmeticDynamicsPartII §6.1 (the prime-field trace −2 equality and the coordinate description of the non-dihedral locus); ClassicalArithmeticCompletion §4.58; Mathlib `Matrix.SpecialLinearGroup`.
 
 ### 6.2 Branch cycles in trace coordinates
 
@@ -807,13 +809,14 @@ The defining API is:
 - C₁(a)_t and C₁(a)_t* are the slice of the level surface and its non-dihedral part.
 - γ∞ restricts to multiplication by L_a on the slice.
 - L_a is classified by X² − a X + 1 over 𝔽_q: split with distinct roots, irreducible, or with a repeated root.
-- Formation of the slice and of L_a commutes with finite-field embeddings; orbit lengths need not.
+- Formation of the slice, of its non-dihedral part and of L_a commutes with every embedding 𝔽_q ↪ 𝔽_q′, and the embedding preserves the γ∞-period of every point of the smaller slice, since L_aⁿ P = P is an equation between coordinates and the embedding is injective; the larger field can only add points, for instance on a slice whose polynomial X² − a X + 1 is irreducible over 𝔽_q and splits over 𝔽_q′.
 
 **Checks.**
 
 - For odd q and a = 2 the slice is (y − z)² = t − 2.
 - A nonsplit degenerate slice with a² = t + 2 consists of the single point (a, 0, 0), which X_t* removes; the full affine conic is not empty.
 - Over 𝔽₄ with a satisfying a² + a + 1 = 0, X² + a X + 1 is irreducible and L_a has order 5, although the discriminant a² is a square.
+- Embeddings keep periods and add points. Over 𝔽₅ with a = 0, t = −2, the point (0, 1, 2) has (y, z)-orbit (1, 2), (2, 4), (4, 3), (3, 1) of length 4, and the same four pairs form its orbit over 𝔽₂₅. For a = 1, t = 4 the slice over 𝔽₅ is the single point (1, 0, 0), while over 𝔽₂₅, where X² − X + 1 splits into two primitive sixth roots of unity, it is two lines through (1, 0, 0) with 2·25 − 1 = 49 points; the 48 new points lie in C₁(1)_4* and have period 6, and the old point keeps period 1.
 
 *Needs:* ClassicalArithmeticCompletion §4.58; ArithmeticDynamicsPartII §§2.1, 6.1; §6.2.
 
@@ -821,13 +824,14 @@ The defining API is:
 
 For q ≥ 3, t ≠ 2 and P = (a, y, z) ∈ C₁(a)_t*, the γ∞-orbit of P has length n_q(a), the order of a noncentral element of SL₂(𝔽_q) of trace a (ArithmeticDynamicsPartII §6.2, `traceOrder`). Correspondingly, the γ∞-orbit of an absolutely irreducible non-dihedral representation modulo the diagonal outer action and conjugacy has length the order of its first matrix. (Chen, Lemma 5.3.1 and its proof, pp. 405–409.) Chen's Lemma 5.3.1 excludes only the simultaneous vanishing of the last two coordinates; the full non-dihedral hypothesis is used here.
 
-One proof route: for distinct eigenvalues diagonalize L_a over 𝔽_q or 𝔽_q²; a vector with both eigencoordinates nonzero has period the common order of the inverse eigenvalues, and the conic equation with (y, z) ≠ (0, 0) excludes the eigenlines in the degenerate slices; for a = ±2 in odd characteristic use the nontrivial Jordan block, where t ≠ 2 excludes the fixed eigenline; in characteristic 2 with a = 0, L_0 swaps y and z and t ≠ 2 excludes y = z; translate through the trace bijection, a non-dihedral representation having noncentral first matrix.
+One proof route: for distinct eigenvalues λ ≠ λ⁻¹ diagonalize L_a over 𝔽_q or 𝔽_q²; since λ and λ⁻¹ have the same order, every nonzero vector has period ord(λ) = n_q(a), whether both of its eigencoordinates are nonzero or it lies on an eigenline, so L_a acts freely with orbits of that length on the punctured plane and only (y, z) ≠ (0, 0) is used (Chen, proof of Lemma 5.3.1, p. 408); eigenline points occur, as the two lines of a split degenerate slice; for a = ±2 in odd characteristic use the nontrivial Jordan block, where t ≠ 2 excludes the fixed eigenline; in characteristic 2 with a = 0, L_0 swaps y and z and t ≠ 2 excludes y = z; translate through the trace bijection, a non-dihedral representation having noncentral first matrix.
 
 **Checks.**
 
 - At p = 5 the zero-trace slice of X*(𝔽₅) has 8 points in two 4-cycles, n₅(0) = 4; each ±2 slice has 10 points with periods 5 and 10.
 - At a = 2 the eigenvalue is 1 but the period is p, not 1.
 - Over 𝔽₄ with X² + a X + 1 irreducible the period is 5, which divides q + 1 = 5 and not q − 1 = 3.
+- Eigenline points keep the full period: over 𝔽₇ with a = 1, t = 6 the point P = (1, 1, 3) satisfies 1 + 9 − 3 + (1 − 2 − 6) = 0, lies in C₁(1)_6* since all coordinates are nonzero, and is an eigenvector, L₁(1, 3) = (3, 2) = 3·(1, 3); its orbit (1, 3), (3, 2), (2, 6), (6, 4), (4, 5), (5, 1) has length 6 = ord₇(3) = n₇(1). A route that discarded eigenline points would leave these points without a period.
 
 *Needs:* §6.3; ArithmeticDynamicsPartII §§6.1, 6.2; Mathlib `Function.minimalPeriod`, `orderOf`.
 
@@ -865,7 +869,7 @@ At p = 5, X*(𝔽₅) has 40 points; under γ∞ the zero slice splits into two 
 
 ### Dependencies
 
-§§0.3, 2.2, 2.3, 5.2, 5.5, 5.6; ArithmeticDynamicsPartII §§2.1, 2.2, 6.0, 6.1, 6.2; ArithmeticGaloisRepresentations §4.4; ClassicalArithmeticCompletion §§4.57, 4.58; Mathlib `Function.minimalPeriod`, `orderOf`.
+§§0.3, 2.2, 2.3, 5.2, 5.3, 5.6; ArithmeticDynamicsPartII §§2.1, 2.2, 6.0, 6.1, 6.2; ArithmeticGaloisRepresentations §§1.7, 4.4; ClassicalArithmeticCompletion §§4.57, 4.58; Mathlib `Matrix.SpecialLinearGroup`, `Function.minimalPeriod`, `orderOf`.
 
 ## Layer 7: Markoff modular geometry
 
@@ -875,7 +879,7 @@ Throughout, p ≥ 5 is prime, X* = X*(𝔽_p), D = |X*| = p(p + 3) for p ≡ 1 (
 
 Assume Γ is transitive on X*. Then the orientation-preserving image is transitive (ArithmeticDynamicsPartII §6.6), the stack M(SL₂(𝔽_p))_(−2) has exactly two geometric connected components, distinguished by the two noncentral trace −2 Higman classes and exchanged by the involution of D(p), each coarse component is isomorphic to the coarse absolute level curve M_p of M(SL₂(𝔽_p))_(−2)/D(p) and has j-degree D, and its compactification is a smooth proper geometrically connected curve. (Chen, Theorem 5.5.7(b), p. 416; opening of §5.6 and Theorem 5.6.3, pp. 417–418.) The hypothesis p ≥ 5 is needed: at p = 3 the trace −2 equals 1 and X*(𝔽₃) is empty (Chen's Theorem 1.2.10 omits it).
 
-One proof route: by §6.1 the fibre of M(SL₂(𝔽_p))_(−2)/D(p) is X*; the Γ⁺-orbit is all of X*; the two Higman classes are interchanged freely by D(p), so an orbit on the quotient meets each class in exactly one orbit on exterior pairs; use §6.2 for the coarse degree and the compactification of ArithmeticDynamicsPartII §6.0, and base-change invariance from ℚ̄ to every algebraically closed field of characteristic zero.
+One proof route: by ArithmeticDynamicsPartII §6.1 and §6.2 the fibre of M(SL₂(𝔽_p))_(−2)/D(p) is X*; the Γ⁺-orbit is all of X*; the two Higman classes are interchanged freely by D(p), so an orbit on the quotient meets each class in exactly one orbit on exterior pairs; use §6.2 for the coarse degree and the compactification of ArithmeticDynamicsPartII §6.0, and base-change invariance from ℚ̄ to every algebraically closed field of characteristic zero.
 
 **Checks.**
 
@@ -883,7 +887,7 @@ One proof route: by §6.1 the fibre of M(SL₂(𝔽_p))_(−2)/D(p) is X*; the �
 - At p = 3 the punctured surface is empty and no connected curve is obtained.
 - The coordinate swap fixes (3, 3, 3) and reverses orientation, so Γ-transitivity gives Γ⁺-transitivity; without such a fixed point two Γ⁺-orbits exchanged by Γ could occur.
 
-*Needs:* §§0.6, 5.5, 5.6, 6.1, 6.2; ArithmeticDynamicsPartII §§2.3, 6.0, 6.6; InverseGaloisAndArithmeticFundamentalGroups §IG.1.3.
+*Needs:* §§0.6, 5.5, 5.6, 6.2; ArithmeticDynamicsPartII §§2.3, 6.0, 6.1, 6.6; InverseGaloisAndArithmeticFundamentalGroups §IG.1.3.
 
 ### 7.2 Branch and cusp counts
 
@@ -922,7 +926,7 @@ One proof route: extend K finitely so that each relevant component is defined an
 **Checks.**
 
 - For p = 5, 7 the genus is 0 and for p = 11 it is 1, so no finiteness follows from this argument.
-- A K-point of the coarse curve records only j: for j ≠ 0, 1728 an elliptic curve E over K and its quadratic twists by the classes of K^×/K^(×2) have the same j and are pairwise non-isomorphic over K, so the conclusion concerns j-invariants.
+- The map to the j-line forgets the level information, not the coarse curve: at p = 13 the coarse component has degree 208 and j = 1 is not a branch value, so above j = 1 lie 208 distinct geometric points, all rational over a finite extension of K and all with the same image. On the elliptic-curve side, for j ≠ 0, 1728 an elliptic curve E over K and its quadratic twists by the classes of K^×/K^(×2) have the same j and are pairwise non-isomorphic over K; so the finiteness conclusion is about the image in the j-line of the finite set of rational points, not about K-isomorphism classes of curves.
 
 *Needs:* §7.3; HeightsRationalPointsAndObstructions §4.6 (`mordell_finite`); §7.1.
 
@@ -945,7 +949,7 @@ The defining API is:
 
 One proof route: identify central twists with the even sign action; prove freeness by the fixed-coordinate equations; compare lifts of projective representations and quotient by projective outer automorphisms through the full SL₂ trace fibre and the two Higman classes.
 
-*Needs:* §7.1; §6.1; §0.6; ClassicalArithmeticCompletion §4.57; ArithmeticDynamicsPartII §7.2; ArithmeticGaloisRepresentations §4.3.
+*Needs:* §7.1; §0.6; ClassicalArithmeticCompletion §4.57; ArithmeticDynamicsPartII §§6.1, 7.2; ArithmeticGaloisRepresentations §4.3.
 
 ### 7.6 Large projective monodromy
 
@@ -1009,7 +1013,7 @@ The genus column is (2 + D − c₀ − c₁₇₂₈ − c∞)/2 for the cycle 
 
 ### Dependencies
 
-§§0.6, 5.5, 5.6, 6.1, 6.2; ArithmeticDynamicsPartII §§2.3, 2.4, 4.2, 6.0, 6.1, 6.6, 7.2, 7.3, 7.4, 7.4a and gap:markoff-alternating-three-mod-four; ClassicalArithmeticCompletion §4.57; ArithmeticGaloisRepresentations §4.3; InverseGaloisAndArithmeticFundamentalGroups §IG.1.3; SchemeAndStackFoundations §3.2; HeightsRationalPointsAndObstructions §4.6; gap:punctured-torus-nielsen; Tau Ceti `TauCeti.PermutationTriple`, `TauCeti.PermutationTriple.genus`, `TauCeti.PermutationTriple.IsConnected.two_sub_two_mul_genus`; Mathlib `CongruenceSubgroup.IsCongruenceSubgroup`, `CongruenceSubgroup.Gamma`, `alternatingGroup.isSimpleGroup`, `nat_card_alternatingGroup`, `Nat.totient`.
+§§0.6, 5.5, 5.6, 6.2; ArithmeticDynamicsPartII §§2.3, 2.4, 4.2, 6.0, 6.1, 6.6, 7.2, 7.3, 7.4, 7.4a and gap:markoff-alternating-three-mod-four; ClassicalArithmeticCompletion §4.57; ArithmeticGaloisRepresentations §4.3; InverseGaloisAndArithmeticFundamentalGroups §IG.1.3; SchemeAndStackFoundations §3.2; HeightsRationalPointsAndObstructions §4.6; gap:punctured-torus-nielsen; Tau Ceti `TauCeti.PermutationTriple`, `TauCeti.PermutationTriple.genus`, `TauCeti.PermutationTriple.IsConnected.two_sub_two_mul_genus`; Mathlib `CongruenceSubgroup.IsCongruenceSubgroup`, `CongruenceSubgroup.Gamma`, `alternatingGroup.isSimpleGroup`, `nat_card_alternatingGroup`, `Nat.totient`.
 
 ## Downstream consumers
 
@@ -1017,7 +1021,7 @@ No roadmap earlier in the merge order consumes this one. Its combinatorial congr
 
 ## Worked examples
 
-The combinatorial congruence on SL₂(𝔽₅). Every generating pair of SL₂(𝔽₅) has k_(u,h) = |u|, so A(G, u, h) = Z(G) = {±1} and m′_c = 2 for every commutator class of order divisible by 2. For c of trace −2 (order 10), d′_c = |C(c)|/10 = 1 and the modulus is 10/gcd(10, 2) = 5; the Out⁺(F₂)-orbit has 40 classes, matching the 40 points of X*(𝔽₅) through §6.1. For c of trace 1 (order 6), d′_c = 6/6 = 1 and the modulus is 6/gcd(6, 2) = 3; the orbit has 72 classes.
+The combinatorial congruence on SL₂(𝔽₅). Every generating pair of SL₂(𝔽₅) has k_(u,h) = |u|, so A(G, u, h) = Z(G) = {±1} and m′_c = 2 for every commutator class of order divisible by 2. For c of trace −2 (order 10), d′_c = |C(c)|/10 = 1 and the modulus is 10/gcd(10, 2) = 5; the Out⁺(F₂)-orbit has 40 classes, matching the 40 points of X*(𝔽₅) through ArithmeticDynamicsPartII §6.1. For c of trace 1 (order 6), d′_c = 6/6 = 1 and the modulus is 6/gcd(6, 2) = 3; the orbit has 72 classes.
 
 The conic slices at p = 5. Over 𝔽₅ with a = 1, t = 4 the slice is the single point (1, 0, 0) and its non-dihedral part is empty; over 𝔽₄ = 𝔽₂[a]/(a² + a + 1) the polynomial X² + a X + 1 has no root and `[[0, 1], [1, a]]` has order five although its discriminant a² is a square.
 
