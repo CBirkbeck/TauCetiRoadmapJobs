@@ -1,0 +1,13 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-SpinGeometry~20",
+  "head": "02d46b38b5fae97460076e15dafba809468ab0c5",
+  "pr": 1674,
+  "folder": "SpinGeometry",
+  "date": "2026-11-10",
+  "findings": 1,
+  "blocking": 1,
+  "notes": "incremental re-review of 0 changed lines since e586e98: folder byte-identical, no change outside the folder against merged main f8836c4; the merge moved the pins to Tau Ceti 2fd255d9 / Mathlib 1b1ccf4b. Gate OK (worker build=0, my scanner run OK); depcheck 235 roadmaps, 2268 edges, 0 problems; lake env lean exit 0 with the five sorry warnings; 11 signatures unchanged. R01 (P2, new, caused by the pin move): all five admitted theorems of Suggested.lean are proved from Tau Ceti at 2fd255d9 (CliffordAlgebra.scalarTrace and its regular-trace, cyclicity and conjStar positivity lemmas; TauCeti.isotypicTensorEquivOfBijective; volumeElement_eq/_mul_self/_mul_\u03b9_of_even and isCompl_eigenspace_one_neg_one), verified by scratch proofs of the verbatim statements with no sorry; repair: delete them with their six definitions, cite the library in Scope and From Tau Ceti, audit G1.1-G2.3 against the new Clifford files. Overlap leads checked: the ComplexKahlerGeometry K5 anchor is mapped by all four open revisions (#1234, #1807, #1808, #1854); #1780 order is stated in the description; remarks only on the dropped #g1-/#g4- anchors cited by SpinRepresentations at #1207 and on one description sentence. Seeded sample does not intersect a changed passage; previous locator checks and adversarial rows carried from ~15, five new rows with computed values for the statements the pin change touches."
+ }
+}
