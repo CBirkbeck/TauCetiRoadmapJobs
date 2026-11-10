@@ -2324,6 +2324,17 @@
     "needs": "For every noncommutative compact real Lie algebra with a prescribed ad-invariant positive inner product, the bracket constant γ₀ equals the largest root length, and its restriction to the normalised compact su(2) subalgebra of a longest root has the same value.",
     "supplier": "LieGroups",
     "section": "Layer 6, Rank-one representatives (metric extremality)"
+  },
+  {
+    "slug": "vector-valued-wkp",
+    "title": "Finite-dimensional vector-valued Sobolev classes on Euclidean open sets",
+    "neededBy": [
+      "2.1"
+    ],
+    "detail": "For a finite-dimensional real normed space V, an open Ω ⊆ ℝ^d, every integer k ≥ 0 and 1 ≤ p ≤ ∞: the space W^{k,p}(Ω; V) of u ∈ L^p(Ω; V) whose iterated weak derivatives (TauCeti.HasWeakFDerivOn) of order ≤ k exist and lie in L^p, complete for the sum of the L^p norms of u and its derivatives, with a continuous linear equivalence to the product of dim V copies of TauCeti.Wkp of order k given by the coordinates in any basis of V and commuting with every iterated weak derivative (so the class does not depend on the basis), and the local class W^{k,p}_loc(Ω; V) of the u whose restriction to every ball with closure in Ω lies in W^{k,p}. Used in §2.1 and through it in Layers 2–5 and 7; the generic bridge belongs with PDE's Euclidean Sobolev spaces rather than with any one consumer.",
+    "needs": "For a finite-dimensional real normed space V, an open Ω ⊆ ℝ^d, every integer k ≥ 0 and 1 ≤ p ≤ ∞: the space W^{k,p}(Ω; V) of u ∈ L^p(Ω; V) whose iterated weak derivatives (TauCeti.HasWeakFDerivOn) of order ≤ k exist and lie in L^p, complete for the sum of the L^p norms of u and its derivatives, with a continuous linear equivalence to the product of dim V copies of TauCeti.Wkp of order k given by the coordinates in any basis of V and commuting with every iterated weak derivative (so the class does not depend on the basis), and the local class W^{k,p}_loc(Ω; V) of the u whose restriction to every ball with closure in Ω lies in W^{k,p}.",
+    "supplier": "PDE",
+    "section": "Layer 1 (a new section on finite-dimensional vector-valued Sobolev classes)"
   }
 ]
 }

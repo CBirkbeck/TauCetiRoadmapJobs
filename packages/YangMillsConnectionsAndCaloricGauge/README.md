@@ -28,9 +28,11 @@ This roadmap owns, for a compact matrix group `G` with an `Ad`-invariant inner p
 Lie algebra (Conventions):
 
 - the comparison of Euclidean matrix formulas with SmoothBundlesConnections B3.1, B4.1–B4.2
-  (gauge action, curvature, Bianchi identity, Leibniz rules),
-  the evaluation of invariant symmetric forms on `𝔤`-valued 2-forms with the transgression
-  identity on Euclidean space and the bi-invariant Cartan forms on `G`, the self-dual splitting
+  (gauge action, curvature, Bianchi identity, Leibniz rules), the derivative of the
+  nearest-point retraction onto `G` (whose existence is RiemannianGeometry R6's),
+  the Euclidean and right Maurer–Cartan form of CharacteristicClasses' curvature evaluation,
+  transgression and Chern–Simons forms (C4 item 1, C5a.3) with the explicit `SU(2)`
+  normalisation, the self-dual splitting
   of `𝔤`-valued 2-forms in dimension four with the pointwise Bogomol'nyi inequality, and the
   structure constant `γ₀` with the cubic bound for self-dual forms (Layer 1);
 - the classes `G^{k,d/k}_loc` of matrix-valued Sobolev maps with values in `G` almost everywhere,
@@ -48,7 +50,8 @@ Lie algebra (Conventions):
 - harmonic Yang–Mills connections on `ℝ⁴`: regularity, removable singularities and decay, the
   Weitzenböck and improved Kato inequalities, the energy gap, the BPST connection on `ℝ⁴` and the
   ground state energy (Layer 7);
-- the finite-dimensional coefficient specialisations of PDE §7.2’s homogeneous spaces,
+- the finite-dimensional coefficient specialisations of PDE §7.2’s homogeneous spaces and of
+  Tau Ceti's `TauCeti.D1p0`, the realised homogeneous spaces `Ẇ^{σ,p}` on `ℝ⁴`,
   the graph space `ℋ` and frequency envelopes on `ℝ⁴`, and
   the solvability theory of the covariant Laplacian and of the covariant heat operator (Layer 8);
 - the covariant, dynamic and linearised Yang–Mills heat flows on `ℝ⁴`, their gauge fixings, the
@@ -69,8 +72,10 @@ It leaves to named roadmaps:
   paraproducts (§7.3). Everything here is scalar
   there and is applied componentwise to `𝔤`-valued functions in an orthonormal basis of `𝔤`.
   The `L^p` theory of the Neumann problem on the unit ball, the `L^p` div–curl estimate for
-  1-forms with vanishing normal component on the unit ball, and Hardy's inequality on `ℝ^d` are
-  sections PDE lacks; they are requested of PDE under Exact supplier contracts.
+  1-forms with vanishing normal component on the unit ball, Hardy's inequality on `ℝ^d`, and the
+  Sobolev classes `W^{k,p}(Ω; V)` of maps into a finite-dimensional real normed space `V` with
+  their coordinate comparison with the scalar classes are sections PDE lacks; they are requested
+  of PDE under Exact supplier contracts.
 - **SmoothBundlesConnections** owns principal connections, curvature, the gauge group and its
   left action `u·A = Ad(u)A − du·u⁻¹` (B3.1, B4.1, B4.2). Every smooth connection here is a connection
   on the trivial bundle `X × G` in its sense, and §1.3 proves that the formulas used here are its
@@ -78,9 +83,16 @@ It leaves to named roadmaps:
   Part II, and the closed-manifold `SU(2)` theory with anti-self-dual moduli spaces is FourManifolds,
   Layer 5; neither is planned here.
 - **CharacteristicClasses** owns `Ad`-invariant symmetric polynomial forms on a Lie algebra with
-  polarisation and pullback (C4 item 1) and Chern–Weil theory of bundles. This roadmap evaluates
-  those forms on curvatures of connections on Euclidean space and computes characteristic numbers
-  by transgression on `ℝ^d`; it states no comparison with Chern–Weil classes of bundles on `S^d`.
+  polarisation and pullback, their evaluation on curvature, closedness, gauge invariance and the
+  transgression form of the affine connection path (C4 item 1), the Weil algebra with the
+  normalised Chern–Simons forms `CS_P` and their Maurer–Cartan cocycles `τ(P)` (C5a.3), and
+  Chern–Weil theory of bundles. This roadmap reads those objects in the Euclidean trivialisation
+  and in its right Maurer–Cartan convention (§1.4), and computes characteristic numbers of rough
+  connections by transgression on `ℝ^d` (Layer 6); it states no comparison with Chern–Weil
+  classes of bundles on `S^d`.
+- **RiemannianGeometry** owns the inversion of the normal tube of a closed Euclidean embedding and
+  the smooth nearest-point retraction on a tube of uniform radius for compact embeddings (R6).
+  §1.2 applies it to `G` and computes the derivative of the retraction along `G`.
 - **DifferentialGeometry** owns differential forms, `extDeriv` on manifolds, Stokes' theorem and
   the homotopy operator (Layers 0, 1, 5.3, 5.4) and the Brouwer degree with its integral formula,
   homotopy invariance and `deg id = 1` (Layer 10, items 10.3–10.5). Tau Ceti's
@@ -171,9 +183,15 @@ and is oriented through `Φ`.
 `𝔤`-valued 1-forms or 2-forms) the spaces below are defined componentwise in an orthonormal basis
 and are independent of the basis. `Ḣ¹(ℝ⁴; V) = {u ∈ L⁴ : ∇u ∈ L²}` with norm `‖∇u‖_{L²} + ‖u‖_{L⁴}`,
 the scaling-invariant form of OhTataru-TopClass line 957–963; `Ẇ^{1,d/2}(ℝ^d; V)` is defined the
-same way with exponents `d/2` and `d`. For `σ ∈ ℝ`, `Ḣ^σ = Ḃ^σ_{2,2}`, `ℓ¹L² = Ḃ⁰_{2,1}` and
+same way with exponents `d/2` and `d`. Coefficientwise these are the images of Tau Ceti's
+`TauCeti.D1p0` (with `p = 2`, `p* = 4`, respectively `p = d/2`, `p* = d`) under its Sobolev embedding,
+with equivalent norms: 8.1 proves this for `Ḣ¹`, and its cut-off and mollification argument, with
+`‖∇χ_R‖_{L^d}` independent of `R`, gives it for `Ẇ^{1,d/2}`. For `σ ∈ ℝ`, `Ḣ^σ = Ḃ^σ_{2,2}`, `ℓ¹L² = Ḃ⁰_{2,1}` and
 `ℓ¹Ḣ^σ = Ḃ^σ_{2,1}` are PDE §7.2's homogeneous Besov spaces built on the homogeneous blocks `P_k`,
 `k ∈ ℤ`, of PDE §7.1 (Mathlib's Fourier normalisation with `2π` in the exponent);
+`|D| = (−Δ)^{1/2}` is the multiplier `2π|ξ|`, and for `σ < 4/p` the realised homogeneous space
+`Ẇ^{σ,p}(ℝ⁴; V)`, with norm `‖|D|^σ u‖_{L^p}`, and its heat-continuity subspace `Ẇ^{σ,∞}_c` are
+defined in 8.1;
 `ℋ = {a ∈ Ḣ¹ : ∂^ℓ a_ℓ ∈ ℓ¹L²}` with norm `‖a‖_{Ḣ¹} + ‖∂^ℓ a_ℓ‖_{ℓ¹L²}`. The heat-time variable is
 `s ≥ 0`; weighted `ds/s` norms are over `s > 0`, with the initial trace stated
 separately. In endpoint exponent formulas `1/∞ = 0`. Write `J ⊆ [0, ∞)` is an interval, and `L^p(J; X)` is Mathlib's Bochner space with values in the
@@ -202,6 +220,11 @@ At the pinned Mathlib; paths under `Mathlib/`.
   for compactly supported `C¹` functions), `MeasureTheory.Measure.toSphere` and
   `homeomorphUnitSphereProd` (`MeasureTheory/Constructions/HaarToSphere.lean` and
   `Analysis/Normed/Module/Ball/RadialEquiv.lean`) for polar coordinates.
+- `TemperedDistribution.fourierMultiplierCLM` (`Analysis/Distribution/FourierMultiplier.lean`: the
+  Fourier multiplier `𝓕⁻¹(g · 𝓕u)` on tempered distributions with values in a complex normed space,
+  used on the complexification of `V`) and `MeasureTheory.Lp.toTemperedDistribution`
+  (`Analysis/Distribution/TemperedDistribution.lean`), for the multipliers `|D|^σ P_k` and the
+  realised spaces of 8.1.
 - `ContDiff` and `HasFDerivAt` for maps between Banach spaces; `Submodule.ClosedComplemented`
   (`Topology/Algebra/Module/Complement.lean`) for split subspaces; `Orientation.volumeForm`.
 - `Manifold.IsSmoothEmbedding` (`Geometry/Manifold/SmoothEmbedding.lean`: a `C^n` immersion that is a
@@ -220,21 +243,24 @@ At the pinned Tau Ceti; paths under `TauCeti/`.
 
 - `TauCeti.HasWeakFDerivOn` (`Analysis/Sobolev/WeakDeriv/Basic.lean`): weak Fréchet derivatives of
   functions with values in a complete normed space, which includes local integrability of the
-  function and of the derivative; vector-valued Sobolev classes are built from it in §2.1.
-  `TauCeti.W1p` and `TauCeti.Wkp` (`Analysis/Sobolev/W1p/Basic.lean`, `Analysis/Sobolev/Wkp/Basic.lean`)
-  are the real-valued carriers that §2.1 compares with componentwise.
+  function and of the derivative; the vector-valued Sobolev classes requested of PDE (gap
+  `vector-valued-wkp`) are built from it. `TauCeti.W1p` and `TauCeti.Wkp`
+  (`Analysis/Sobolev/W1p/Basic.lean`, `Analysis/Sobolev/Wkp/Basic.lean`) are the real-valued carriers
+  with which those classes are compared coordinatewise.
 - `TauCeti.W1p.morreyRepresentative` (`Analysis/Sobolev/W1p/Morrey.lean`) and
   `TauCeti.enorm_sub_le_of_mem_ball_of_finrank_lt`, used through PDE §1.4.
-- `TauCeti.exists_isOpenEmbedding_normalTube` (`Geometry/Manifold/TubularNeighborhood/Euclidean.lean`):
-  the tubular neighbourhood theorem for a compact boundaryless `C²` embedded submanifold of a
-  finite-dimensional inner product space, as an open embedding of the normal tube of some radius
-  `ε > 0`. `TauCeti.exists_contMDiffOn_normalRetraction`
-  (`Geometry/Manifold/TubularNeighborhood/LocalInverse.lean`): near every point of a `C^{n+1}`
-  immersion of a boundaryless manifold into a finite-dimensional inner product space, `n ≥ 1`, a
-  `C^n` retraction `r` onto a source patch, defined on an open set containing the image of that
-  patch, with `y − f(r(y))` normal at `r(y)`; it asserts neither a global retraction nor uniqueness
-  of nearest points. Together they give the local smoothness of the inverse of normal addition;
-  §1.2 adds the global nearest-point statement and the formula for `dπ_G`.
+- `TauCeti.D1p0` (`Analysis/Sobolev/D1p0/Basic.lean`): for a measure finite on compact sets, an open
+  `Ω` and `1 ≤ p`, the closure in `L^p(Ω; E)` of the gradients of real test functions, each element
+  recorded by its gradient field, with its norm and completeness; `TauCeti.D1p0.ofTestFunctionₗ` with
+  `TauCeti.D1p0.norm_ofTestFunctionₗ` (a test function has norm `‖∇φ‖_p`) and
+  `TauCeti.D1p0.denseRange_ofTestFunctionₗ` (test functions are dense). For an additive Haar measure
+  and `1/p* + 1/dim E = 1/p`: `TauCeti.D1p0.sobolevEmbeddingL`, the continuous linear map to
+  `L^{p*}(Ω)` extending `φ ↦ φ`; with `p* ≠ ∞`, `TauCeti.D1p0.norm_sobolevEmbeddingL_le` (the
+  Gagliardo–Nirenberg–Sobolev bound), `TauCeti.D1p0.hasWeakFDerivOn_sobolevEmbeddingL` (the recorded
+  field is the weak gradient of the image) and `TauCeti.D1p0.sobolevEmbeddingL_injective`. It is
+  scalar and of order one: it supplies neither the converse characterisation of its image by weak
+  gradients, nor fractional or Besov orders, nor covariant operators. Used in 8.1 with Lebesgue
+  measure, `Ω = ℝ⁴`, `p = 2`, `p* = 4`.
 - `Orientation.formHodgeStar` (`Analysis/InnerProductSpace/HodgeStar/AlternatingForm.lean`) with
   `Orientation.wedge_formHodgeStar_apply` (`α ∧ ⋆β = ⟨α, β⟩ vol`) and
   `Orientation.formHodgeStar_formHodgeStar_of_even`.
@@ -271,6 +297,9 @@ Used in §§4.1; required location: Layer 5 (the same new section, as its second
 What PDE must provide (gap:hardy-inequality): For `d ≥ 2` and `1 ≤ p < d`, `‖u/|x|‖_{L^p(ℝ^d)} ≤ (p/(d−p))‖∇u‖_{L^p(ℝ^d)}` for `u ∈ C_c^∞(ℝ^d)`, with extension to the homogeneous Sobolev closure.
 Used in §§5.2, 5.3, 6.1; required location: §1.4 (a new item).
 
+What PDE must provide (gap:vector-valued-wkp): For a finite-dimensional real normed space `V`, an open `Ω ⊆ ℝ^d`, every integer `k ≥ 0` and `1 ≤ p ≤ ∞`: the space `W^{k,p}(Ω; V)` of `u ∈ L^p(Ω; V)` whose iterated weak derivatives (`TauCeti.HasWeakFDerivOn`) of order `≤ k` exist and lie in `L^p`, complete for the sum of the `L^p` norms of `u` and its derivatives, with a continuous linear equivalence to the product of `dim V` copies of `TauCeti.Wkp` of order `k` given by the coordinates in any basis of `V` and commuting with every iterated weak derivative (so the class does not depend on the basis), and the local class `W^{k,p}_loc(Ω; V)` of the `u` whose restriction to every ball with closure in `Ω` lies in `W^{k,p}`.
+Used in §2.1, and through it in Layers 2–5 and 7; required location: Layer 1 (a new section on finite-dimensional vector-valued Sobolev classes).
+
 ### From TauCetiRoadmap.SmoothBundlesConnections
 
 - B3.1: principal connections and the local potential `A' = Ad(g⁻¹)A + g⁻¹dg` for `s' = s·g`.
@@ -282,14 +311,28 @@ Used in §§5.2, 5.3, 6.1; required location: §1.4 (a new item).
 
 - C4 item 1: `Ad`-invariant homogeneous symmetric polynomial forms on the Lie algebra, their
   polarisation `P(z) = B_P(z, …, z)` with no extra factorial, pullback by Lie homomorphisms and
-  evaluation on curvature with the value-bundle wedge. Used in §1.4 and Layer 6.
+  evaluation on curvature with the value-bundle wedge; gauge invariance, closedness from the
+  Bianchi identity, and connection independence along the affine connection path with its explicit
+  transgression form. Used in §1.4 and Layer 6.
+- C5a.3: the Weil algebra `W(𝔤)` with `d_W θ = Ω − ½[θ, θ]`, `d_W Ω = −[θ, Ω]`; for homogeneous
+  invariant `P` of degree `k ≥ 1` the normalised form `CS_P = k ∫₀¹ B_P(θ, F_t, …, F_t) dt`,
+  `F_t = tΩ + ((t² − t)/2)[θ, θ]`, with `d_W CS_P = P(Ω)`, pullback naturality, and the cocycle
+  `τ(P)` obtained by setting `Ω = 0`. It is stated for the compact connected group with Lie algebra
+  `𝔤`, here the identity component of `G`; its constructions are algebraic in `𝔤`. Used in §1.4.
+
+### From TauCetiRoadmap.RiemannianGeometry
+
+- R6: for a closed-image smooth embedding into a Euclidean space, the inversion of the normal tube
+  below its injectivity radius, giving the nearest-point retraction with smooth inverse of normal
+  addition, and a tube of uniform radius when the embedded manifold is compact. Used in §1.2 for
+  the compact embedded submanifold `G ⊂ M_N(ℂ)` of LieGroups Layer 2.
 
 ### From TauCetiRoadmap.DifferentialGeometry
 
 - Layer 0 (forms and the paired wedge, `wedgeWith`) and Layer 1 (`mextDeriv`, naturality,
   `d² = 0`, Leibniz): §1.4.
 - 5.2–5.3 (integration of top forms, Stokes' theorem with the outward-first boundary orientation)
-  and 5.4 (the homotopy operator): §§1.4, 6.2, 6.4.
+  and 5.4 (the homotopy operator): §§6.2, 6.4, and 5.2 for the integral in the Checks of §1.4.
 - Layer 10, items 10.3–10.5 (`degree` of a smooth map between closed oriented connected manifolds
   of the same dimension, `∫ f*ω = deg · ∫ ω` for top forms, homotopy invariance, `deg id = 1`): §6.4.
 
@@ -373,19 +416,15 @@ inner product on `𝔤` (OhTataru-YMHF line 92–102; OhTataru-TopClass line 121
 
 ### 1.2 The nearest-point retraction onto `G`
 
-Prove that there are an open neighbourhood `𝒰` of `G` in the real inner product space of `N × N`
-complex matrices (Frobenius inner product) and a smooth map `π_G : 𝒰 → G` such that `π_G(g) = g`
-for `g ∈ G`, `π_G(M)` is the unique point of `G` nearest to `M`, and the derivative of `π_G` at
-`g ∈ G` is the orthogonal projection onto `g𝔤` (used in OhTataru-TopClass line 1057–1058). Route: `G`
-is a compact embedded submanifold; Tau Ceti's normal-tube theorem gives an open embedding
-`(g, v) ↦ g + v` of the normal vectors of length `< ε`, and Tau Ceti's local normal retraction
-`TauCeti.exists_contMDiffOn_normalRetraction` gives near each point of `G` a smooth map `r` fixing a
-patch of `G` with `y − r(y)` normal at `r(y)`. Where `|y − r(y)| < ε`, injectivity of the tube map
-identifies `(r(y), y − r(y))` with the inverse of the tube map at `y`; by compactness finitely many
-such domains cover `𝒰 = {M : dist(M, G) < ε'}` for some `0 < ε' ≤ ε`, so the inverse is smooth on `𝒰`
-and `π_G` is its first component. A nearest point `g*` of `G` to `M ∈ 𝒰` exists by compactness and
-`M − g*` is normal at `g*` with `|M − g*| < ε`, so injectivity gives `g* = π_G(M)`: the nearest point is
-unique. Differentiating `π_G(g + v) = g` for normal `v` and `π_G = id` on `G` gives `dπ_G(g)`.
+`G` is a compact embedded submanifold of the real inner product space of `N × N` complex matrices
+with the Frobenius inner product (LieGroups Layer 2), with tangent space `g𝔤` at `g` (1.1).
+RiemannianGeometry R6, applied to this closed embedding, gives `ε > 0`, the open neighbourhood
+`𝒰 = {M : dist(M, G) < ε}` of `G` and a smooth map `π_G : 𝒰 → G` with `π_G(g) = g` for `g ∈ G`, such
+that `π_G(M)` is the unique point of `G` nearest to `M` and `π_G(g + v) = g` for every `v` normal to `G`
+at `g` with `|v| < ε`. Prove that the derivative of `π_G` at `g ∈ G` is the orthogonal projection onto
+`g𝔤` (used in OhTataru-TopClass line 1057–1058). Route: differentiating `π_G = id` on `G` gives the
+identity on `g𝔤`, and differentiating `t ↦ π_G(g + tv) = g` at `t = 0` gives `0` on the normal space,
+the orthogonal complement of `g𝔤`.
 
 - The restriction of the retraction to `G` is the identity, so its derivative on tangent vectors
   is the identity.
@@ -411,8 +450,7 @@ unique. Differentiating `π_G(g + v) = g` for normal `v` and `π_G = id` on `G` 
 - `G = U(N)`: `|0 − g|² = tr(g*g) = N` for every `g ∈ U(N)`, so `0` has no unique nearest point and
   `0 ∉ 𝒰`. No retraction is defined on the whole matrix space, and every `M ∈ 𝒰` is invertible.
 
-*Needs:* Tau Ceti `TauCeti.exists_isOpenEmbedding_normalTube` and
-`TauCeti.exists_contMDiffOn_normalRetraction`; LieGroups Layer 2.
+*Needs:* RiemannianGeometry R6; LieGroups Layer 2; 1.1.
 
 ### 1.3 Gauge identities for smooth data
 
@@ -448,16 +486,32 @@ The last Leibniz rule corrects OhTataru-TopClass Lemma 3.4(3), line 1130, which 
 
 ### 1.4 Invariant forms, transgression and Cartan forms
 
-Let `k ≥ 1` and let `f` be an `Ad(G)`-invariant symmetric `k`-linear form on `𝔤`, the object of CharacteristicClasses
-C4 item 1. For `𝔤`-valued 2-forms `F₁, …, F_k` on `ℝ^d`, `f(F₁ ∧ … ∧ F_k)` is the `2k`-form obtained by
-the paired wedge. Prove (OhTataru-TopClass line 236–255; OhTataru-YMHF Lemma 6.7, lines 2860–2883):
+Let `k ≥ 1` and let `f` be an `Ad(G)`-invariant symmetric `k`-linear form on `𝔤`: the polarisation
+`B_P = f` of the invariant polynomial `P(X) = f(X, …, X)` of CharacteristicClasses C4 item 1.
+CharacteristicClasses owns the evaluation of `P` on curvature with its gauge invariance and
+closedness, the transgression form of the affine connection path (C4 item 1), and the normalised
+Chern–Simons form `CS_P = k ∫₀¹ B_P(θ, F_t, …, F_t) dt`, `F_t = tΩ + ((t² − t)/2)[θ, θ]`, of the Weil
+algebra `W(𝔤)` with `d_W CS_P = P(Ω)` and its cocycle `τ(P)` at `Ω = 0` (C5a.3, stated for the identity
+component of `G`, which has the same Lie algebra). This section records their form on Euclidean
+space and in the right Maurer–Cartan convention of this roadmap (OhTataru-TopClass line 236–255;
+OhTataru-YMHF Lemma 6.7, lines 2860–2883). For `𝔤`-valued 2-forms `F₁, …, F_k` on `ℝ^d`,
+`f(F₁ ∧ … ∧ F_k)` is the `2k`-form obtained by the paired wedge. Prove:
 
-- `f(Ad(O)F₁ ∧ … ∧ Ad(O)F_k) = f(F₁ ∧ … ∧ F_k)` for `O ∈ G`, and in `d = 2k` the coefficient of
+- Through 1.3's identification of a smooth connection `A` on an open `X ⊆ ℝ^d` with a principal
+  connection on `X × G`, C4's evaluation of `P` on its curvature is `f(F ∧ … ∧ F)`;
+  `f(Ad(O)F₁ ∧ … ∧ Ad(O)F_k) = f(F₁ ∧ … ∧ F_k)` for `O ∈ G`, and in `d = 2k` the coefficient of
   `f(F ∧ … ∧ F)` is bounded by `C_f |F|^k`.
-- For a smooth connection `A` on an open `X ⊆ ℝ^d`, `f(F ∧ … ∧ F)` is closed and equals `d T_f(A)`, with
-  the transgression form `T_f(A) = k ∫₀¹ f(A ∧ F_t ∧ … ∧ F_t) dt`, `F_t = t dA + ½ t² [A ∧ A]`.
-- There is a closed `(2k−1)`-form `ω_f` on `G`, invariant under left and right translations, such
-  that `T_f(−O;x) = O*ω_f` for every smooth `G`-valued `O` on `X`.
+- The assignment `θ ↦ A`, `Ω ↦ F[A]` is a map of differential graded algebras from `W(𝔤)` to the
+  forms on `X` (the image of `d_W Ω = −[θ, Ω]` is the Bianchi identity `dF = −[A ∧ F]` of 1.3), and
+  it sends `CS_P` to `T_f(A) = k ∫₀¹ f(A ∧ F_t ∧ … ∧ F_t) dt` with `F_t = t dA + ½ t² [A ∧ A]`, the
+  curvature of `tA`; this is C4's transgression form for the affine path from the product connection
+  to `A`. Hence `f(F ∧ … ∧ F) = d T_f(A)`.
+- For the right Maurer–Cartan form `θ_R = dg g⁻¹` of `G`, which satisfies `dθ_R = θ_R ∧ θ_R`, the
+  connection `−θ_R` on `G` is flat, and `ω_f = T_f(−θ_R)`, the image of `τ(P)` under `θ ↦ −θ_R`, is a
+  closed `(2k − 1)`-form on `G`. It is invariant under left and right translations: `θ_R` is
+  right-invariant and `L_h*θ_R = Ad(h)θ_R`, and `f` is `Ad(G)`-invariant, which for disconnected `G`
+  is more than C5a's connected setting provides. For every smooth `G`-valued `O` on `X`,
+  `−O;x = O*(−θ_R)`, so `T_f(−O;x) = O*ω_f` by naturality.
 - For `G = SU(2)`, `f(X, Y) = tr(XY)` (that is, `f = −⟨·,·⟩` for `⟨X, Y⟩ = −tr(XY)`):
   `T_f(A) = tr(A ∧ dA + ⅔ A ∧ A ∧ A)` and `ω_f = ⅓ tr((dg g⁻¹)³)`.
 
@@ -470,8 +524,14 @@ the paired wedge. Prove (OhTataru-TopClass line 236–255; OhTataru-YMHF Lemma 6
   gives `∫_{S³} Φ*tr((dg g⁻¹)³) = −12 · 2π² = −24π²`, so `∫_{S³} Φ*ω_f = −8π²`.
 - In `d = 4` with `f = −⟨·,·⟩` the transgression form is
   `−(⟨a_j, ∂_k a_l⟩ + ⅓⟨a_j, [a_k, a_l]⟩) dx^j ∧ dx^k ∧ dx^l`, the form `Y` of OhTataru-YMHF line 2869.
+- C5a.3's normalisation for `k = 2`, `B_P(X, Y) = tr(XY)`: `∫₀¹ t dt = ½` and `∫₀¹ (t² − t)/2 dt = −1/12`
+  give `CS_P = tr(θΩ) − (1/6) tr(θ[θ, θ])`; with `[θ, θ] = 2θ ∧ θ` and `Ω ↦ dA + A ∧ A` its image is
+  `tr(A ∧ dA) + tr(A³) − ⅓ tr(A³) = tr(A ∧ dA + ⅔ A³)`, the `SU(2)` formula above, and at
+  `θ = −θ_R`, `Ω = 0` it is `−⅓ tr((−θ_R)³) = ⅓ tr(θ_R³) = ω_f`. An extra factor `1/k!` in the
+  polarisation would halve both and give `∫_{S³} Φ*ω_f = −4π²`.
 
-*Needs:* CharacteristicClasses C4 item 1; DifferentialGeometry Layers 0–1 and 5.4; 1.3.
+*Needs:* CharacteristicClasses C4 item 1 and C5a.3; DifferentialGeometry Layers 0–1, and 5.2 for the
+integral in the Checks; 1.3.
 
 ### 1.5 Self-duality in dimension four
 
@@ -532,9 +592,9 @@ this roadmap; OhTataru-TopClass Lemma 6.4 and line 2404).
 
 ### Dependencies
 
-Mathlib's unitary groups and exponential; Tau Ceti's Hodge star, normal tube and local normal
-retraction; LieGroups Layers 0–2 and 5A; SmoothBundlesConnections B3.1, B4.1, B4.2; CharacteristicClasses C4
-item 1; DifferentialGeometry Layers 0–1 and 5.4.
+Mathlib's unitary groups and exponential; Tau Ceti's Hodge star; RiemannianGeometry R6; LieGroups
+Layers 0–2 and 5A; SmoothBundlesConnections B3.1, B4.1, B4.2; CharacteristicClasses C4 item 1 and
+C5a.3; DifferentialGeometry Layers 0–1.
 
 ## Layer 2: critical Sobolev maps into `G`
 
@@ -544,16 +604,15 @@ and every `1 ≤ p ≤ ∞`.
 
 ### 2.1 Vector-valued Sobolev classes and `G^{k,p}`
 
-For a finite-dimensional real normed space `V` use finite products of Tau Ceti’s scalar
-`TauCeti.Wkp` to realise `W^{k,p}(X; V)`: its elements are the `u ∈ L^p(X; V)` whose
-iterated weak derivatives of order `≤ k` (Tau Ceti `TauCeti.HasWeakFDerivOn`) exist and lie in `L^p`,
-and `W^{k,p}_loc(X; V)` as the `u` with `u|_B ∈ W^{k,p}(B; V)` for every ball `B` with closure in `X`
-(OhTataru-TopClass line 964–968). Define `G^{k,p}_loc(X)` as the `O ∈ W^{k,p}_loc(X; M_N(ℂ))` with
+For a finite-dimensional real normed space `V`, `W^{k,p}(X; V)` and `W^{k,p}_loc(X; V)` are PDE's
+vector-valued Sobolev classes (gap `vector-valued-wkp` under Exact supplier contracts): the
+`u ∈ L^p(X; V)` whose iterated weak derivatives of order `≤ k` (Tau Ceti `TauCeti.HasWeakFDerivOn`)
+exist and lie in `L^p`, coordinatewise the scalar `TauCeti.Wkp` in any basis of `V`, and the `u` with
+`u|_B ∈ W^{k,p}(B; V)` for every ball `B` with closure in `X` (OhTataru-TopClass line 964–968).
+Define `G^{k,p}_loc(X)` as the `O ∈ W^{k,p}_loc(X; M_N(ℂ))` with
 `O(x) ∈ G` for almost every `x`, and `G^{k,p}(U)` likewise (OhTataru-TopClass (1.5), lines 283–285,
 and lines 982–989).
 
-- In any basis of `V`, `u ∈ W^{k,p}(X; V)` exactly when each coordinate lies in Tau Ceti's `TauCeti.Wkp`
-  of order `k`; the class does not depend on the basis.
 - Every `O ∈ G^{k,p}_loc(X)` satisfies `|O(x)| = √N` almost everywhere (Frobenius norm), so lies in `L^∞`.
 - Restriction to open subsets, constant maps, and smooth `G`-valued maps on a neighbourhood of the
   closure of a bounded `U` give elements; membership is local (a sheaf condition on open covers).
@@ -571,7 +630,7 @@ and lines 982–989).
 - `d = 3`, `G = U(1)`, `O = exp(iθ)` with `θ` the angle around the `x₃`-axis: `|∇O| ≈ 1/ρ`, `ρ` the
   distance to the axis, and `∫_{B₁} ρ^{−3} dx = ∞`, so `O ∉ G^{1,3}(B₁)` and `O ∉ G^{2,3/2}(B₁)`.
 
-*Needs:* Tau Ceti `TauCeti.HasWeakFDerivOn`, `TauCeti.Wkp`; Mathlib `MeasureTheory.Lp`; 1.1.
+*Needs:* gap `vector-valued-wkp` (PDE); Mathlib `MeasureTheory.Lp`; 1.1.
 
 ### 2.2 Approximation by smooth `G`-valued maps
 
@@ -696,8 +755,8 @@ extension to the ball.
 
 ### Dependencies
 
-Layer 1; Tau Ceti's weak derivatives and Sobolev carriers; PDE §1.2, §1.4 and §1.5; Mathlib's
-homotopy and polar-coordinate API.
+Layer 1; Tau Ceti's weak derivatives and Sobolev carriers; PDE §1.2, §1.4 and §1.5, and the
+vector-valued classes of gap `vector-valued-wkp`; Mathlib's homotopy and polar-coordinate API.
 
 ## Layer 3: rough connections and gauge invariance
 
@@ -951,7 +1010,8 @@ for every `D ∈ A^{1,d/2}_loc(ℝ^d)` with `F ∈ L^{d/2}(ℝ^d)`, `r_c^{ε_*}[
 coordinate `y = x − x₀` its potential is `A(y) = −η(y/(2R)) O_(∞);y + B(y)`, with `O_(∞)` smooth, homogeneous of
 degree `0` with values in `G`, `B ∈ Ẇ^{1,d/2}(ℝ^d)`, `‖B‖_{Ẇ^{1,d/2}} ≲_{ε_*, R/r} 1` and
 `‖O_(∞)‖_{C^n(S^{d−1})} ≲_{ε_*, R/r, n} 1` for every `n`; if moreover `D^{(n)}F ∈ L^p(ℝ^d)` for an integer
-`n ≥ 0` and `p ∈ (1, ∞)` with `p ≥ d/(n+2)`, then `B ∈ Ẇ^{n+1,p}(ℝ^d)`. For `d = 4`: every connection with
+`n ≥ 0` and `p ∈ (1, ∞)` with `p ≥ d/(n+2)`, then the weak derivatives of order `n + 1` of `B` lie in
+`L^p(ℝ^d)`. For `d = 4`: every connection with
 finite energy is gauge equivalent to `−η O_(∞);x + b` with `b ∈ Ḣ¹(ℝ⁴)` (OhTataru-Threshold Theorem 2.17,
 lines 1069–1075). Route: choose `x₀` with exterior curvature at radius `2R` at most `ε_*` (the infimum
 defining `R_c` need not be attained), translate to `x₀ = 0`, and use 3.3 for a global potential and
@@ -1373,10 +1433,51 @@ Throughout Layers 8–10 `d = 4`, and connections are `𝔤`-valued 1-forms on `
 
 ### 8.1 Homogeneous spaces and frequency envelopes
 
-Use the coefficient specialisations of the spaces `Ḣ¹ = Ẇ^{1,2}`, `Ḣ^σ`, `ℓ¹L²`, `ℓ¹Ḣ^σ` and `ℋ` of the Conventions, and for block norms
-`‖P_k u‖_{Ẇ^{σ,p}} = 2^{kσ}‖P_k u‖_{L^p}`. Prove that `Ḣ¹ = {u ∈ L⁴ : ∇u ∈ L²}` is a Banach space in which
-`C_c^∞` is dense, that it agrees with the realisation of PDE §7.2's `Ḃ¹_{2,2}` (`s = 1 < d/p = 2`) with
-equivalent norms, and that `ℋ` is a Banach space. Define, after OhTataru-YMHF Definitions 3.2–3.4 and
+Use the coefficient specialisations of the spaces `Ḣ¹`, `Ḣ^σ`, `ℓ¹L²`, `ℓ¹Ḣ^σ` and `ℋ` of the Conventions.
+
+For real coefficients, Tau Ceti's `TauCeti.D1p0` with Lebesgue measure, `Ω = ℝ⁴` and `p = 2` is complete
+with dense test functions, and `TauCeti.D1p0.sobolevEmbeddingL` with `p* = 4` (`1/4 + 1/4 = 1/2`) is an
+injective bounded map to `L⁴` sending each element to a function whose weak gradient is the recorded
+field (Exact supplier contracts). Prove that its image is exactly `{u ∈ L⁴ : ∇u ∈ L²}`: for such `u` and
+`χ_R = χ(·/R)` with a smooth cut-off `χ` equal to `1` on `B₁` and `0` off `B₂`,
+`‖u ∇χ_R‖_{L²} ≤ ‖∇χ‖_{L⁴} ‖u‖_{L⁴(R ≤ |x| ≤ 2R)} → 0`, because `‖∇χ_R‖_{L⁴}` does not depend on `R`, and
+mollifying the compactly supported `χ_R u` gives test functions converging to `u` in the gradient norm.
+Hence, in an orthonormal basis of `V`, `Ḣ¹(ℝ⁴; V)` is the product of `dim V` copies of `TauCeti.D1p0` with an
+equivalent norm (`‖u‖_{L⁴} ≤ C‖∇u‖_{L²}`, `TauCeti.D1p0.norm_sobolevEmbeddingL_le`), so it is a Banach
+space in which `C_c^∞` is dense. Prove that it agrees with the realisation of PDE §7.2's `Ḃ¹_{2,2}`
+(`s = 1 < d/p = 2`) with equivalent norms, and that `ℋ` is a Banach space.
+
+Let `𝒮'_h(ℝ⁴; V)` be the tempered distributions `u` with `P_{≤k}u → 0` in `𝒮'` as `k → −∞`, where `P_{≤k}`
+is the Fourier multiplier by `χ(2^{−k−1}ξ)` for PDE §7.1's cut-off `χ`; at every `ξ ≠ 0` this symbol is the
+sum of the block symbols `ψ(2^{−j}ξ)`, `j ≤ k`. For `σ ∈ ℝ` and `1 ≤ p ≤ ∞` with `σ < 4/p`, define the
+realised homogeneous space `Ẇ^{σ,p}(ℝ⁴; V)` as the set of `u ∈ 𝒮'_h` for which some
+`g ∈ L^p(ℝ⁴; V) ∩ 𝒮'_h` has `P_k g = |D|^σ P_k u` for every `k ∈ ℤ`, where `|D|^σ P_k` is the multiplier
+`(2π|ξ|)^σ ψ(2^{−k}ξ)`, smooth because `ψ` vanishes near `0` (Mathlib `TemperedDistribution.fourierMultiplierCLM`
+on the complexification of `V`); equivalently `𝓕g = (2π|ξ|)^σ 𝓕u` on `ℝ⁴ ∖ {0}`. Write `g = |D|^σ u` and
+`‖u‖_{Ẇ^{σ,p}} = ‖g‖_{L^p}`. Define the heat-continuity subspace
+`Ẇ^{σ,∞}_c = {u ∈ Ẇ^{σ,∞} : ‖e^{sΔ}u − u‖_{Ẇ^{σ,∞}} → 0 as s → 0⁺}`. These are the spaces of 8.4;
+OhTataru-YMHF names them (line 850–856, used at line 1355–1356) without fixing a realisation. Prove:
+
+- `g` is unique: two candidates differ by an element of `𝒮'_h` with Fourier support in `{0}`, a
+  polynomial `q`, and `P_{≤k}q = q` for every `k` forces `q = 0`. Every `u ∈ 𝒮'_h` is `Σ_k P_k u` in `𝒮'`,
+  so `‖u‖_{Ẇ^{σ,p}} = 0` only for `u = 0`.
+- `u ↦ |D|^σ u` is a linear isometry of `Ẇ^{σ,p}` onto `L^p ∩ 𝒮'_h`, which is all of `L^p` for `p < ∞`
+  and for `p = ∞` a closed subspace of `L^∞` containing no nonzero constant. Its inverse is
+  `g ↦ Σ_k |D|^{−σ}P_k g`, whose low-frequency part converges in `L^∞` because
+  `‖|D|^{−σ}P_k g‖_{L^∞} ≲ 2^{k(4/p − σ)}‖g‖_{L^p}` (Bernstein, PDE §7.1) and `σ < 4/p`. Hence `Ẇ^{σ,p}`
+  is a Banach space.
+- On a single block, `‖P_k u‖_{Ẇ^{σ,p}}` lies between constant multiples, depending on `σ` and `p`, of
+  `2^{kσ}‖P_k u‖_{L^p}`: on the frequencies of `P_k` the multipliers `2^{−kσ}|D|^σ` and `2^{kσ}|D|^{−σ}`
+  have kernels that are `L¹`-dilates of fixed Schwartz functions (PDE §7.1). So frequency envelopes in
+  `Ẇ^{σ,p}` (below) may be formed with either quantity, up to constants.
+- `Ḃ^σ_{p,1} ⊆ Ẇ^{σ,p} ⊆ Ḃ^σ_{p,∞}` for PDE §7.2's realised Besov spaces, with bounded inclusions, and
+  `Ẇ^{σ,2} = Ḣ^σ` with equivalent norms (Plancherel).
+- The heat semigroup `e^{sΔ}` of PDE §6.3 commutes with `|D|^σ`, preserves `𝒮'_h` and is a contraction of
+  `Ẇ^{σ,p}`, strongly continuous for `p < ∞`. `Ẇ^{σ,∞}_c` is the closed subspace of the `u` for which
+  `|D|^σ u` has a bounded uniformly continuous representative, and it contains `C_c^∞` for `−2 < σ < 0`.
+- `‖u(λ·)‖_{Ẇ^{σ,p}} = λ^{σ − 4/p}‖u‖_{Ẇ^{σ,p}}` for every `λ > 0`.
+
+Define, after OhTataru-YMHF Definitions 3.2–3.4 and
 Lemma 3.5 (lines 884–954), with a small universal `δ > 0` and `0 < ε ≪ 1`:
 
 - a frequency envelope for `u` in a translation-invariant space `X` is a positive sequence `(c_k)_{k∈ℤ}`
@@ -1404,8 +1505,32 @@ Prove: every `u ∈ Ḣ^σ` has a `(−σ₁, σ₂)`-admissible envelope with `
 - `ℋ ⊊ Ḣ¹`: a gradient field `a = ∇φ` with `‖P_k(∂^ℓ a_ℓ)‖_{L²} = 1/k` for `k ≥ 1` and `0` otherwise is in `Ḣ¹`
   but `Σ_k 1/k = ∞`, so `a ∉ ℋ`; a divergence-free `a ∈ Ḣ¹` has `‖a‖_ℋ = ‖a‖_{Ḣ¹}`; for `λ = 2^m`,
   `‖λa(λ·)‖_ℋ = ‖a‖_ℋ`.
+- `Ḣ¹` against Tau Ceti's space: a test function `φ` maps to itself under the Sobolev embedding and has
+  norm `‖∇φ‖_{L²}` there, while the Conventions' norm adds `‖φ‖_{L⁴} ≤ C‖∇φ‖_{L²}`: equivalent, not equal.
+  The constant `1` has `∇1 = 0 ∈ L²` but is not in `L⁴`, so it is not an element; the condition `u ∈ L⁴`
+  is what removes the constants that the gradient norm alone does not see.
+- The step at `p = ∞`, `σ = −1`: `g = sign(x₁)` lies in `L^∞ ∩ 𝒮'_h`, since `P_{≤k}g(x) = Φ(2^{k+1}x₁)` for an
+  odd bounded `Φ` and this tends to `0` boundedly as `k → −∞`. So `b = Σ_k |D|P_k g ∈ Ẇ^{−1,∞}` with
+  `|D|^{−1}b = g` and `‖b‖_{Ẇ^{−1,∞}} = 1`. Each `g + c`, `c ≠ 0` constant, has the same blocks and sup norm
+  `1 + |c|`, but `P_{≤k}(g + c) → c ≠ 0`: without the realisation `𝒮'_h` the norm would not be determined.
+  `|D|^{−1}(e^{sΔ}b − b) = e^{sΔ}g − g` with `e^{sΔ}g(x) = erf(x₁/(2√s))`, whose sup distance to `g` is `1`
+  for every `s > 0`, so `b ∉ Ẇ^{−1,∞}_c`. The zero distribution has norm `0`, and the dilation law holds with
+  `λ^{σ − 4/p} = λ^{−1}`: `|D|^{−1}(b(λ·)) = λ^{−1}g(λ·) = λ^{−1}g`.
+- A smooth datum: for real `φ ∈ C_c^∞(ℝ⁴)`, `|D|^{−1}φ(x) = (4π²)^{−1} ∫ φ(y)|x − y|^{−3} dy` (the Riesz
+  potential, constant `Γ(3/2)/(2π²Γ(1/2)) = 1/(4π²)`), a bounded uniformly continuous function of size
+  `(4π²)^{−1}(∫φ)|x|^{−3}` at infinity, so `φ ∈ Ẇ^{−1,∞}_c`: the heat-continuity subspace is not reduced to
+  `0`, and it is a proper subspace by the previous Check.
+- The `2π` and the full norm against blocks, at `p = 2`: for `𝓕u` supported in a thin shell around
+  `|ξ| = 2^{k+1}`, where `ψ(2^{−k}ξ) = 1` and the neighbouring block symbols vanish,
+  `‖u‖_{Ẇ^{σ,2}} = ‖(2π|ξ|)^σ 𝓕u‖_{L²}` tends to `(4π)^σ 2^{kσ}‖P_k u‖_{L²}` as the shell shrinks. The full
+  norm equals the block quantity only at `σ = 0`; a definition with `|ξ|^σ` in place of `(2π|ξ|)^σ` would
+  give the factor `2^σ`.
 
-*Needs:* PDE §7.1, §7.2; Mathlib `MeasureTheory.eLpNorm_le_eLpNorm_fderiv_of_eq`.
+*Needs:* Tau Ceti `TauCeti.D1p0`, `TauCeti.D1p0.sobolevEmbeddingL`, `TauCeti.D1p0.norm_sobolevEmbeddingL_le`,
+`TauCeti.D1p0.hasWeakFDerivOn_sobolevEmbeddingL`, `TauCeti.D1p0.sobolevEmbeddingL_injective`,
+`TauCeti.D1p0.denseRange_ofTestFunctionₗ`; Mathlib `TemperedDistribution.fourierMultiplierCLM`,
+`MeasureTheory.Lp.toTemperedDistribution`, `MeasureTheory.eLpNorm_le_eLpNorm_fderiv_of_eq`;
+PDE §6.3, §7.1, §7.2.
 
 ### 8.2 Solvability for the covariant Laplacian
 
@@ -1470,8 +1595,12 @@ which tends to `0` as `S → ∞`.
 
 **Checks.**
 
-- `A = 0`, `G = H = 0`, `σ = 0`: `‖B(s)‖²_{L²} + 2∫₀^s ‖∇B‖²_{L²} = ‖B(0)‖²_{L²}` with Mathlib's `Δ`, so the
-  estimate holds with constant `1`.
+- `A = 0`, `G = H = 0`, `σ = 0`: `‖B(s)‖²_{L²} + 2∫₀^s ‖∇B‖²_{L²} = ‖B(0)‖²_{L²}` with Mathlib's `Δ`, so
+  `‖B‖_{L^∞L²} ≤ ‖B(0)‖_{L²}` and `‖∇B‖_{L²L²} ≤ 2^{−1/2}‖B(0)‖_{L²}`, and the estimate holds with constant
+  `1 + 1/√2`. On `J = [0, ∞)` this constant is attained by every nonzero `b`: for `‖b‖_{L²} = 1`,
+  `sup_s ‖e^{sΔ}b‖_{L²} = 1` and `∫₀^∞ ‖∇e^{sΔ}b‖²_{L²} ds = ½` (since `e^{sΔ}b → 0` in `L²`), so the left side
+  is `1 + 1/√2 > 1`; the energy identity has coefficients `1` and `2`, the sum estimate does not have
+  constant `1`.
 - At `σ = 0` the estimate is invariant under `A ↦ λA(λ²s, λx)`, `B ↦ λ²B(λ²s, λx)`, `G ↦ λ⁴G(λ²s, λx)`,
   `H ↦ λ³H(λ²s, λx)`: for instance `‖λ⁴G(λ²·, λ·)‖_{L¹L²} = λ⁴ · λ^{−2} · λ^{−2} ‖G‖_{L¹L²}`, and the hypotheses'
   norms of `A` are invariant.
@@ -1495,7 +1624,8 @@ which tends to `0` as `S → ∞`.
 
 Assume `‖P_k A(s)‖_{Ḣ¹} ≲ c_k(1 + 2^{2k}s)^{−N}` for all `s > 0` with `(c_k) ∈ ℓ²` and `N > 2`. Prove
 (OhTataru-YMHF Theorems 4.7–4.8, lines 1346–1530): for `−2 < σ < 4/p`, `2 ≤ p ≤ ∞` and
-`0 < δ ≤ min{4/p − σ, 2 + σ}`, with the sequence `c_k` of the hypothesis a `(−δ, S)` envelope and
+`0 < δ ≤ min{4/p − σ, 2 + σ}`, with the sequence `c_k` of the hypothesis a `(−δ, S)` envelope,
+`b ∈ Ẇ^{σ,p}` (the realised space of 8.1) and
 `d^{σ,p}_k` a `(−δ, S)` envelope for `b` in `Ẇ^{σ,p}` that is `δ`-compatible with `c_k`, the homogeneous
 problem `(∂_s − Δ_A − 2ad(F))B = 0`, `B(0) = b`, has a unique solution in the class with the stated dyadic bounds, strongly continuous
 in `Ẇ^{σ,p}` for `p < ∞`, with
@@ -1503,7 +1633,7 @@ in `Ẇ^{σ,p}` for `p < ∞`, with
 envelope `d^{σ,p}_k` that is `δ`-compatible with `c_k`, the inhomogeneous problem with `B(0) = 0` and
 `‖P_k G‖_{Ẇ^{σ,p}} ≲ 2^{2k}(2^{2k}s)^{−β} d^{σ,p}_k (1 + 2^{2k}s)^{−N}` has
 `‖P_k B‖_{Ẇ^{σ,p}} ≲ (2^{2k}s)^{1−β} d^{σ,p}_k (1 + 2^{2k}s)^{−N}`. At `p = ∞`, require the initial trace block by block and in distributions; strong continuity
-in the full norm holds on the subspace where `e^{sΔ}b → b` in `Ẇ^{σ,∞}`. The source
+in the full norm at `s = 0` holds for `b` in the heat-continuity subspace `Ẇ^{σ,∞}_c` of 8.1. The source
 asserts full norm continuity also at `p = ∞` (line 1356); that endpoint requires this distinction.
 The source writes the exponent of the
 second conclusion as `1 − α/2` (line 1522), which does not match its `L²` case `1 − β` (line 1517); the
@@ -1515,7 +1645,7 @@ exponent `1 − β` is the one its induction (4.35) propagates with `α` read as
   polynomial decay asserted.
 - `β = 0`, `A = 0`, `G = P_k G` constant near `s = 0` and smoothly cut off by heat-time `2^{−2k}`: `B(s) = ∫₀^s e^{(s−s')Δ}G ds'` has `‖B‖ ≈ s‖G‖` for
   `s ≲ 2^{−2k}`, matching `(2^{2k}s) · 2^{−2k}`.
-- At `p = ∞`, `σ = −1`, let `g(x) = sign(x₁)` and `b = |D|g` as a homogeneous distribution.
+- At `p = ∞`, `σ = −1`, let `g(x) = sign(x₁)` and `b ∈ Ẇ^{−1,∞}` with `|D|^{−1}b = g` (8.1, Checks).
   Then `‖b‖_{Ẇ^{−1,∞}} = ‖g‖_∞ = 1`, but
   `‖e^{sΔ}b − b‖_{Ẇ^{−1,∞}} = ‖e^{sΔ}g − g‖_∞ = 1` for every `s > 0`: the heat-smoothed step
   approaches `0` at the jump. Each fixed frequency block converges, so this separates the two traces.
@@ -1524,11 +1654,13 @@ exponent `1 − β` is the one its induction (4.35) propagates with `α` read as
 
 ### Examples
 
-The heat equation as the case `A = 0`; the conjugation of `Δ` by a pure gauge; single-block envelopes.
+The heat equation as the case `A = 0`; the conjugation of `Δ` by a pure gauge; single-block envelopes;
+the step `|D| sign(x₁)` in `Ẇ^{−1,∞}` outside the heat-continuity subspace.
 
 ### Dependencies
 
-PDE §6.1, §6.3, §7.1–7.3; Layer 1.
+PDE §6.1, §6.3, §7.1–7.3; Tau Ceti's `TauCeti.D1p0`; Mathlib's Fourier multipliers on tempered
+distributions; Layer 1.
 
 ## Layer 9: the Yang–Mills heat flow on `ℝ⁴`
 
@@ -1796,14 +1928,31 @@ Proposition 7.4, Corollary 7.6, lines 3213–3278; Theorem 2.20, lines 591–592
 
 ### 10.3 Caloric connections lie in `ℋ`
 
-Prove (OhTataru-YMHF Proposition 7.7, lines 3286–3290; OhTataru-Threshold Theorem 2.8, lines 912–917): for
-`a ∈ 𝒞_Q` with `ℰ_e(a) ≤ E`, its heat flow satisfies
-`‖A‖_{Ḣ¹} + ‖∂^ℓ A_ℓ‖_{ℓ¹L² ∩ W^{1,4/3}} ≲_{Q,E} 1` uniformly in `s`; in particular `𝒞 ⊆ ℋ`.
+Prove (OhTataru-YMHF Proposition 7.7, lines 3286–3290, from Lemma 5.30, line 2419–2423;
+OhTataru-Threshold Theorem 2.8, lines 912–917): for `a ∈ 𝒞_Q` with `ℰ_e(a) ≤ E`, its heat flow satisfies
+`‖A‖_{Ḣ¹} + ‖∂^ℓ A_ℓ‖_{ℓ¹L²} + ‖∇(∂^ℓ A_ℓ)‖_{L^{4/3}} ≲_{Q,E} 1` uniformly in `s`, that is a uniform bound
+in `ℓ¹L² ∩ Ẇ^{1,4/3}` with the homogeneous gradient seminorm on the `L²` function `∂^ℓ A_ℓ`; in
+particular `𝒞 ⊆ ℋ`. Route: the `Ḣ¹` bound is the global covariant bound of 9.2 on `[0, ∞)`, and the
+divergence bounds integrate `∂_s ∂^ℓ A_ℓ = −[A_ℓ, D^j F_{jℓ}]` (OhTataru-YMHF line 2434) in heat time between
+`s` and `∞`, where `∂^ℓ A_ℓ → 0` because the flat limit of a caloric connection is `0` (9.5). Proposition
+7.7 prints the inhomogeneous `W^{1,4/3}` (line 3288), whereas the Lemma 5.30 it invokes bounds the
+homogeneous `Ẇ^{1,4/3}` (line 2423); the inhomogeneous bound is false (Checks).
 
 **Checks.**
 
 - `G = U(1)`: `∂^ℓ a_ℓ = 0` for `a ∈ 𝒞`, and the bound reduces to `‖a‖_{Ḣ¹} ≲ ℰ_e(a)^{1/2}`, since for divergence-free
   `a = iα`, `ℰ_e(a) = ∫ |∇α|² − ∫ (∂^ℓ α_ℓ)² = ‖∇α‖²_{L²}` (inner product `⟨ix, iy⟩ = xy`).
+- Dilation: `a_λ = λa(λ·)` is caloric with the same `ℰ_e` and `Q`, and `h = ∂^ℓ a_ℓ` becomes
+  `h_λ = λ²h(λ·)`. Then `‖∇h_λ‖_{L^{4/3}} = ‖∇h‖_{L^{4/3}}` and, for `λ = 2^m`, `‖h_λ‖_{ℓ¹L²} = ‖h‖_{ℓ¹L²}`,
+  while `‖h_λ‖_{L^{4/3}} = λ^{−1}‖h‖_{L^{4/3}}`, which is unbounded as `λ = 2^{−m} → 0` unless `h = 0`. So no
+  bound by `Q` and `E` controls the inhomogeneous `W^{1,4/3}` norm of a caloric connection with nonzero
+  divergence.
+- Such connections exist for `G = SU(2)`: for small divergence-free data `εu`, the divergence of the caloric
+  representative is `ε² ∫₀^∞ [e^{sΔ}u_ℓ, Δe^{sΔ}u_ℓ] ds + O(ε³)`, by integrating the identity of the route
+  with `A(s) = εe^{sΔ}u + O(ε²)`. For `u` the sum of two plane-wave packets with frequencies near `ξ = e₁` and
+  `η = 2e₁`, polarisation `e₂` and Lie coefficients `i` and `j`, the component at frequency `ξ + η` has symbol
+  `(|ξ|² − |η|²)/(|ξ|² + |η|²)[i, j] = (1 − 4)/5 · 2k = −6k/5 ≠ 0`. In the abelian case the bracket vanishes,
+  `h = 0`, and the two norms cannot be told apart.
 
 *Needs:* 9.2, 9.4, 9.5, 10.2.
 
