@@ -1,0 +1,20 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "IntegralHeckeAndGaloisDeterminants"
+
+[[source]]
+id = "Chenevier"
+authors = "Gaetan Chenevier"
+title = "The p-adic analytic space of pseudocharacters of a profinite group and pseudorepresentations over arbitrary rings"
+year = 2008
+arxiv = "0809.0415v2"
+locator_scheme = "theorem"
+locator = "Theorem 1.15; Proposition 1.6"
+url = "https://arxiv.org/abs/0809.0415v2"
+fetched_from = "https://arxiv.org/pdf/0809.0415v2"
+fetched_at = "2026-11-10T18:38:55Z"
+sha256 = "f3c0e0d86e803301c617d3023d425752e30da46673ed5af932647eb284286953"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-10"
+version_note = "arXiv v2"
+cited_for = ["0.4"]
