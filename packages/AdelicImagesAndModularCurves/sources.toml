@@ -227,3 +227,37 @@ status = "certified"
 accessed = "2026-11-10"
 version_note = "arXiv v6"
 cited_for = ["3.6"]
+
+[[source]]
+id = "reichert1986"
+authors = "Markus A. Reichert"
+title = "Explicit determination of nontrivial torsion structures of elliptic curves over quadratic number fields"
+year = 1986
+venue = "Math. Comp. 46 (1986), no. 174, 637-658"
+locator_scheme = "theorem"
+locator = "Theorem 1, p. 638; §2, pp. 642–645"
+url = "https://www.ams.org/journals/mcom/1986-46-174/S0025-5718-1986-0829635-X/S0025-5718-1986-0829635-X.pdf"
+fetched_from = "https://www.ams.org/journals/mcom/1986-46-174/S0025-5718-1986-0829635-X/S0025-5718-1986-0829635-X.pdf"
+fetched_at = "2026-11-10T04:30:43Z"
+sha256 = "98ca394bd08d5b8deb187e4d2011b6eed34b6f69e3a5fec3124e0624700ea629"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-11-10"
+cited_for = ["6.4"]
+
+[[source]]
+id = "ligozat1975"
+authors = "Gérard Ligozat"
+title = "Courbes modulaires de genre 1"
+year = 1975
+venue = "Mémoires de la Société Mathématique de France 43 (1975), 5-80"
+locator_scheme = "section"
+locator = "§4.1 (Lemma 4.1.1, p. 42); (4.2.5)–(4.2.6), pp. 44–45"
+url = "https://www.numdam.org/item/MSMF_1975__43__5_0.pdf"
+fetched_from = "https://www.numdam.org/item/MSMF_1975__43__5_0.pdf"
+fetched_at = "2026-11-10T04:30:45Z"
+sha256 = "60da7f0cfa21dc35c33707ded75b9130884efb76430d9cb63fe4c8de4b9c4e20"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-10"
+cited_for = ["6.4"]
