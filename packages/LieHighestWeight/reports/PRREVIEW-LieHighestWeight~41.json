@@ -1,0 +1,13 @@
+{
+  "review": {
+    "status": "needs_changes",
+    "reviewer": "independent-review-PRREVIEW-LieHighestWeight~41",
+    "head": "beea1d2bb14b600eb277f69adc4a3ddc8dc58ef4",
+    "pr": 1220,
+    "folder": "RepresentationTheory/LieHighestWeight",
+    "date": "2026-11-10",
+    "findings": 15,
+    "blocking": 6,
+    "notes": "Full review: six previous findings audited; all 14 seeded source subsections checked against accessible texts with unavailable references recorded; whole-folder mathematical and ownership pass with 124-row computed table, 140 exact tensor-norm cases, Jordan and normalization tests. Direct Lean elaboration and all 11 explicit signature checks pass with ten sorry warnings; one-tactic probes close 0/10. Worker gate FAIL solely on two statement-hygiene hits. Dependency tool reports 228 roadmaps, 2128 edges, 0 problems, but main LieGroups consumes this Serre presentation while this head consumes LieGroups: manual cycle finding. Native Layer 6/7/Albert duplication and four already-owned gap contracts found. All four overlap leads resolved; three dropped layer ids require mapping; #1797 order is stated. No worktree edits."
+  }
+}
