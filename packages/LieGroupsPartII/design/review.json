@@ -1,0 +1,10 @@
+{
+  "review": {
+    "status": "needs_changes",
+    "reviewer": "independent-review-REV-DESIGN-LieGroupsPartII~2",
+    "date": "2026-11-10",
+    "findings": 12,
+    "blocking": 10,
+    "notes": "Checked F01-F11 individually, all 42 plan targets and 32 numbered README sections, and all 15 seeded targets. Computed adversarial witnesses identify false datum conjugacy, disconnected split-centre decomposition, arbitrary-symmetric matrix Levi factorization and a dynamic Check; supplier signatures and ownership also drifted. Read all four cached open sources and retained four settled uncertified books without requesting them again. Gate: 233 roadmaps, 2095 edges, 0 problems; target DAG: 42 nodes, 99 edges, acyclic. Native declarations were inspected directly at both pins. No Suggested.lean exists; elaboration and one-tactic probes are not available in this design lane. Full evidence and exact repairs are in packages/LieGroupsPartII/reports/REV-DESIGN-LieGroupsPartII~2.md."
+  }
+}
