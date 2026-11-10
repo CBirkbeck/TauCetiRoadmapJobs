@@ -52,7 +52,7 @@
       {
        "name": "divisors",
        "role": "functoriality",
-       "statement": "for d | n the data of (k,d) are subfields of those of (k,n), compatibly with delta"
+       "statement": "for d >= 3 dividing n the data (M_d, L_d, delta_d) of (k,d) satisfy M_d in M, L_d in L and delta_d restricted to G_L equals delta (zeta_d = zeta^(n/d)); for d in {1,2} the data are k with trivial character, which differs from delta when delta is nontrivial"
       },
       {
        "name": "Mathlib comparison",
@@ -85,6 +85,11 @@
        "name": "Mathlib agreement",
        "kind": "compatibility",
        "statement": "for k = Q and n = 5, L = Q(sqrt 5) is NumberField.maximalRealSubfield of Q(zeta_5), a CM field by IsCyclotomicExtension.Rat.isCMField"
+      },
+      {
+       "name": "divisor boundary",
+       "kind": "degenerate",
+       "statement": "k = Q, n = 3, d = 1: the trivial character is 1 at complex conjugation while delta is -1, so the divisor statement needs d >= 3"
       }
      ]
     },
@@ -92,12 +97,13 @@
      "id": "1.2",
      "kind": "construction",
      "name": "reflectionTwist",
-     "statement": "For a number field k, E: y^2 = h(x), odd n >= 3, t in U(k) and m | n with m > 1, the twist C^delta_m of C_m(t) tensor L by the cocycle g -> w^e(g) (delta = (-1)^e): a smooth proper geometrically connected genus-m curve over L with phi : C^delta_m tensor M -> C_m tensor M, phi o g(phi)^-1 = w^e(g). The transported rotations and reflection are L-rational with the same relations; quotient maps twist; C^delta_m/<u'> = B_t^delta and C^delta_3/<w'> = D_t tensor L; phi^* identifies integral H^1 with the action (w^*)^e(g) rho(g). For m = 1, C^delta_1 = B_t^delta.",
+     "statement": "For a number field k, E: y^2 = h(x), odd n >= 3, t in U(k) and m | n with m > 1, the twist C^delta_m of C_m(t) tensor L by the cocycle g -> w^e(g) (delta = (-1)^e): a smooth proper geometrically connected genus-m curve over L with phi : C^delta_m tensor M -> C_m tensor M, phi o g(phi)^-1 = w^e(g). The transported rotations and reflection are L-rational with the same relations; quotient maps twist; C^delta_m/<u'> = B_t^delta, and if 3 | n then C^delta_3/<w'> = D_t tensor L; phi^* identifies integral H^1 with the action (w^*)^e(g) rho(g). For m = 1, C^delta_1 = B_t^delta.",
      "hypotheses": [
       "k a number field",
       "n >= 3 odd",
       "t in switchParameterOpen(k)",
-      "m | n"
+      "m | n",
+      "3 | n for the cubic quotient C^delta_3/<w'>"
      ],
      "locator": {
       "source": "LeHung26",
@@ -159,6 +165,11 @@
        "name": "quadratic twist sign",
        "kind": "computation",
        "statement": "y^2 = x^3 - x + 1 over F_5 has 8 points (a_5 = -2); its twist by the nonsquare 2 has 4 points (a_5 = 2)"
+      },
+      {
+       "name": "cubic clause needs 3 | n",
+       "kind": "non-example",
+       "statement": "n = 5: the tower has indices 1 and 5; forcing Y^3 = f_t gives valuations 1, -1, -5, 5 at S, -S, R, -R, four branch points, 2g - 2 = 8 and genus 5; for n = 15 the valuations -15, 15 at R, -R are divisible by 3, two branch points and genus 3"
       }
      ]
     },
@@ -166,7 +177,7 @@
      "id": "1.3",
      "kind": "construction",
      "name": "descendedCharacterSystem",
-     "statement": "For theta : mu_n -> M_0^x and a prime l, W_(theta,l) is the theta-eigenspace of the L-rational rotations on H^1(C^delta_n over Lbar, Qbar_l), with u'^* x = j_l(theta(zeta)) x; it is G_L-stable and populates the shared raw carrier over L with coefficient field M_0 = Q(mu_n).",
+     "statement": "For theta : mu_n -> M_0^x and a prime l, W_(theta,l) is the theta-eigenspace of the L-rational rotations on H^1(C^delta_n over Lbar, Qbar_l), with u'^* x = j_l(theta(zeta)) x; it is G_L-stable. Only the eigenspaces, their Galois actions and the idempotents are constructed here; the compatible system is assembled at the end of 1.4.",
      "hypotheses": [
       "as in 1.2 with m = n",
       "fixed embeddings j, j_l of M_0"
@@ -177,8 +188,7 @@
      },
      "prerequisites": [
       "target:1.2",
-      "roadmap:EllipticCurveModularityImaginaryQuadratic §4.1",
-      "roadmap:SmallRamificationAndAbelianVarietyBaseCases §5.0d"
+      "roadmap:EllipticCurveModularityImaginaryQuadratic §4.1"
      ],
      "api": [
       {
@@ -234,7 +244,7 @@
      "id": "1.4",
      "kind": "theorem",
      "name": "descended_system_properties",
-     "statement": "Each W_(theta,l) is semisimple of dimension two with determinant eps_l^-1, potentially semistable at every v | l with labelled Hodge-Tate weights {0,1} and crystalline at v | l outside S; outside a finite set S of places of L independent of l and theta, and away from l, it is unramified with Frobenius polynomial j_l(P_(theta,v)) for P_(theta,v) in M_0[X] independent of l; the system is weakly compatible; if k is totally real it is totally odd.",
+     "statement": "Let S be the places of L of bad reduction of J^delta_n and those above n. Each W_(theta,l) is semisimple of dimension two with determinant eps_l^-1, potentially semistable at every v | l with labelled Hodge-Tate weights {0,1} and crystalline at v | l outside S; outside S and away from l it is unramified with Frobenius polynomial j_l(P_(theta,v)) for a monic degree-two P_(theta,v) in M_0[X] independent of l with constant term q_v; if k is totally real it is totally odd. Then the descended system is assembled on the shared raw carrier over L (coefficient field M_0, bad set S, polynomials P_(theta,v), members W_(theta,l) realized over the completions of M_0, Hodge multisets {0,1}) and satisfies the weak predicate of AG2.P.",
      "hypotheses": [
       "as in 1.3",
       "k totally real for total oddness"
@@ -252,6 +262,7 @@
       "roadmap:AbelianSchemesAndArithmeticModuli A6.11",
       "roadmap:NeronModelsAndSemistableAbelianVarieties §5.1",
       "roadmap:NeronModelsAndSemistableAbelianVarieties §5.3",
+      "roadmap:SmallRamificationAndAbelianVarietyBaseCases §5.0d",
       "roadmap:AutomorphicGaloisRepresentationsPartII AG2.P",
       "roadmap:ArithmeticGaloisRepresentations §4.1"
      ],
@@ -278,10 +289,10 @@
      "id": "1.5",
      "kind": "theorem",
      "name": "descended_congruence_chain",
-     "statement": "T^delta_theta = H^1(C^delta_n over Lbar, Z_l) tensor over Z_l[U'] via theta of O is O-free of rank two, G_L-stable, with rationalization W_theta; equal reductions of theta, theta' give isomorphic residual G_L-modules, including l | n. For n = 3p, p > 3 prime: W_eta =_p W_chi =_3 W_psi =_p W_1 over L, and W_eta =_3 W_1.",
+     "statement": "For a finite extension E_lambda of Q_l in Qbar_l containing j_l(M_0), with ring of integers O (which never contains j_l(M_0), as 1/l is in M_0; the values j_l(theta(zeta)) are roots of unity, hence in O^x), T^delta_theta = H^1(C^delta_n over Lbar, Z_l) tensor over Z_l[U'] via j_l o theta of O is O-free of rank two, G_L-stable, with T^delta_theta tensor_O Qbar_l = W_(theta,l); if j_l o theta and j_l o theta' have equal reductions mod m, the residual G_L-modules are isomorphic, including l | n. For n = 3p, p > 3 prime: W_eta =_p W_chi =_3 W_psi =_p W_1 over L, and W_eta =_3 W_1.",
      "hypotheses": [
       "as in 1.3",
-      "O contains j_l(M_0)",
+      "E_lambda a finite extension of Q_l in Qbar_l containing j_l(M_0), O its ring of integers",
       "n = 3p, p > 3 prime for the chain"
      ],
      "locator": {
@@ -297,8 +308,49 @@
       "roadmap:EllipticCurveModularityImaginaryQuadratic §4.4",
       "roadmap:ArithmeticGaloisRepresentations Layer 1"
      ],
-     "api": [],
+     "api": [
+      {
+       "name": "evaluation",
+       "role": "structure",
+       "statement": "T^delta_theta is the quotient of H^1 tensor_(Z_l) O by the O-span of (u'^*_zeta - j_l(theta(zeta)))x; the quotient map is O-linear, G_L-equivariant and intertwines u'^*_zeta with multiplication by j_l(theta(zeta))"
+      },
+      {
+       "name": "rank two",
+       "role": "structure",
+       "statement": "for every l, including l | n, T^delta_theta is O-free of rank two, from the regular-module marking of ECMIQ §3.1 transported by 1.2(5)"
+      },
+      {
+       "name": "Galois action",
+       "role": "structure",
+       "statement": "G_L acts continuously and O-linearly, commuting with U', since the rotations are L-rational"
+      },
+      {
+       "name": "rationalization",
+       "role": "compatibility",
+       "statement": "T^delta_theta tensor_O E_lambda is the theta-eigenspace of H^1 with E_lambda coefficients, and its extension to Qbar_l is W_(theta,l)"
+      },
+      {
+       "name": "coefficient extension",
+       "role": "functoriality",
+       "statement": "for finite E'/E_lambda with integers O', the lattice formed with O' is T^delta_theta tensor_O O', G_L-equivariantly"
+      },
+      {
+       "name": "restriction to G_M",
+       "role": "compatibility",
+       "statement": "phi^* identifies T^delta_theta restricted to G_M with ECMIQ §4.3 characterLattice theta at t over F = M"
+      },
+      {
+       "name": "reduction",
+       "role": "structure",
+       "statement": "T^delta_theta / m = H^1(C^delta_n, F_l) tensor over F_l[U'] via theta-bar of kappa depends only on theta-bar = j_l o theta mod m; its semisimplification is the semisimplified reduction of W_(theta,l)"
+      }
+     ],
      "tests": [
+      {
+       "name": "coefficient ring",
+       "kind": "non-example",
+       "statement": "1/l in M_0 has v_l = -1, so no ring of integers contains j_l(M_0); for l = 3, n = 3p, E_lambda = Q_3(mu_n) contains j_3(M_0), the theta-values are units and T^delta_theta is free of rank two while 1/3 is not in O"
+      },
       {
        "name": "l = 3 divides n",
        "kind": "degenerate",
@@ -317,7 +369,7 @@
       {
        "name": "untwisted lattice",
        "kind": "non-example",
-       "statement": "G_L does not act on H^1(C_n) tensor_theta O since it permutes theta and theta^-1"
+       "statement": "for delta nontrivial and theta != 1 (so theta != theta^-1, n odd), g in G_L with delta(g) = -1 carries the kernel of the theta-evaluation of the untwisted H^1(C_n) tensor O to that of the theta^-1-evaluation, so G_L does not act on the untwisted quotient; positive control: theta = 1, where both labels are 1 and the untwisted coinvariant quotient is G_L-stable, and every evaluation is stable when delta is trivial"
       }
      ]
     },
@@ -325,10 +377,10 @@
      "id": "1.6",
      "kind": "theorem",
      "name": "descended_elliptic_endpoints",
-     "statement": "For every order-three eta and every l, W_eta is isomorphic to H^1(A_t) restricted to G_L, A_t = Pic^0(D_t); W_1 is isomorphic to H^1(B_t)|G_L tensor delta; hence H^1(E)|G_L = W_1 tensor delta tensor chi_h(t). The isomorphisms are rational and compatible with coefficient embeddings.",
+     "statement": "If 3 | n, then for every order-three eta and every l, W_eta is isomorphic to H^1(A_t) restricted to G_L, A_t = Pic^0(D_t); for every odd n >= 3, W_1 is isomorphic to H^1(B_t)|G_L tensor delta; hence H^1(E)|G_L = W_1 tensor delta tensor chi_h(t). The isomorphisms are rational and compatible with coefficient embeddings.",
      "hypotheses": [
       "as in 1.3",
-      "3 | n"
+      "3 | n for the cubic endpoint"
      ],
      "locator": {
       "source": "LeHung26",
@@ -414,7 +466,7 @@
      "id": "2.2",
      "kind": "theorem",
      "name": "summand_weight_two_lifting",
-     "statement": "L totally real, l odd, A/L abelian variety, e idempotent of End_L(A) tensor Qbar, r = e H^1(A over Lbar, Qbar_l) of dimension two with det r = eps_l^-1 and labelled weights {0,1}. If r-bar is residually modular and absolutely irreducible on G_(L(zeta_l)), then r is modular; no local condition is imposed and l = 5 is allowed.",
+     "statement": "L totally real, l odd, A/L abelian variety, e idempotent of End_L(A) tensor Qbar, r = e H^1(A over Lbar, Qbar_l) of dimension two with det r = eps_l^-1 and labelled weights {0,1}. If r-bar is residually modular and absolutely irreducible on G_(L(zeta_l)), and when l = 5 either the image of r-bar(G_(L(zeta_5))) in PGL2(Fbar_5) is not isomorphic to PSL2(F5) or r-bar is the scalar extension of a representation G_L -> GL2(F5), then r is modular; no local condition is imposed. For A = E elliptic and e = 1 the residual representation is the dual of E[l], an F_l-model, so the second alternative holds at l = 5.",
      "hypotheses": [
       "L totally real",
       "l odd prime",
@@ -422,11 +474,12 @@
       "det r = eps_l^-1",
       "labelled HT weights {0,1}",
       "r-bar residually modular",
-      "r-bar absolutely irreducible on G_(L(zeta_l))"
+      "r-bar absolutely irreducible on G_(L(zeta_l))",
+      "if l = 5: projective image of r-bar(G_(L(zeta_5))) not PSL2(F5), or r-bar has an F5-model"
      ],
      "locator": {
       "source": "LeHung26",
-      "where": "Proposition 3.1, p.6 (LeHung26 line 231); FLHS15 Theorem 2, p.3 (line 116) and Section 2, pp.5-6; BD14 Theoreme 3.2.2, pp.36-37 (line 2144)"
+      "where": "Proposition 3.1, p.6 (LeHung26 line 231; excludes l = 5); FLHS15 Theorem 2, p.3 (line 116) and Section 2, pp.5-6 (lines 221-265, the F5-model argument at five); BD14 Theoreme 3.2.2, pp.36-37 (lines 2144-2146)"
      },
      "prerequisites": [
       "gap:totally-real-weight-two-lifting",
@@ -450,14 +503,19 @@
        "statement": "multiplicative, ordinary and supersingular places above l may coexist, unlike GL2ModularityLifting §5.7"
       },
       {
-       "name": "A5 simple",
+       "name": "F5-model at five",
        "kind": "computation",
-       "statement": "PSL2(F5) = A5 of order 60 has no quotient of order two, so cyclotomic determinant excludes the five-adic exception"
+       "statement": "for r-bar = r0 tensor Fbar_5 with det r0 = eps-bar_5^-1 the projective square class is det r0 mod squares, the character of L(sqrt 5)/L; Gal(K0/L) = PSL2(F5) = A5 with zeta_5 in K0 would force sqrt 5 in L and an order-two quotient Gal(L(zeta_5)/L) of the simple group A5 of order 60"
       },
       {
        "name": "weight one",
        "kind": "non-example",
        "statement": "an Artin representation with weights {0,0} is outside the statement"
+      },
+      {
+       "name": "determinant without F5-model",
+       "kind": "non-example",
+       "statement": "in F_25 with a^2 = 3, B = [[0,2],[1,0]], C = aB: B^2 = 2I, C^2 = I, det C = 4 a square in F5, but [C] = [B] with det B = 3 a nonsquare, so [C] is not in PSL2(F5); the determinant square class alone does not control the projective image"
       }
      ]
     },
@@ -482,7 +540,13 @@
       "roadmap:InverseGaloisAndArithmeticFundamentalGroups IG.2.4",
       "roadmap:InverseGaloisAndArithmeticFundamentalGroups IG.2.6",
       "roadmap:InverseGaloisAndArithmeticFundamentalGroups IG.2.7",
-      "roadmap:ArithmeticGaloisRepresentations §6.2"
+      "roadmap:ArithmeticGaloisRepresentations §6.2",
+      "mathlib:WeierstrassCurve.IsElliptic",
+      "mathlib:WeierstrassCurve.j",
+      "tauceti:WeierstrassCurve.torsionGaloisAction",
+      "tauceti:TauCeti.Isogeny.weilPairing",
+      "tauceti:WeierstrassCurve.weilPairing_torsionGaloisAction",
+      "tauceti:WeierstrassCurve.nonempty_basis_torsionBy"
      ],
      "api": [],
      "tests": [
@@ -576,7 +640,7 @@
       {
        "name": "zeta_5 not in K",
        "kind": "characterisation",
-       "statement": "K totally real so the five-adic exclusion is handled by the cyclotomic determinant"
+       "statement": "K totally real so zeta_5 is not in K; the residual representation is the dual of E[5], an F5-model with determinant eps-bar_5^-1, so the F5-model alternative of 2.2 applies; for image GL2(F5) the image of G_(K(zeta_5)) is SL2(F5) with projective image PSL2(F5), so the projective-image alternative fails"
       }
      ]
     }
@@ -651,7 +715,7 @@
       {
        "name": "over L",
        "kind": "characterisation",
-       "statement": "residual irreducibility of A_t[5] is known on G_(L(zeta_5)), so the seed is applied over L"
+       "statement": "the seed is applied directly over L, avoiding an automorphic base change from K; the residual condition also holds over K, since G_(L(zeta_5)) is contained in G_(K(zeta_5)) and an invariant line for the larger group is invariant for the smaller"
       },
       {
        "name": "both cubic characters",
@@ -814,16 +878,19 @@
      "id": "4.3",
      "kind": "theorem",
      "name": "totallyReal_cm_modularity",
-     "statement": "K totally real, E/K geometrically CM by T: T is not in K, endomorphisms are defined over KT, H^1(E)|G_KT = psi + psi^c with psi = r_(l,iota)(theta) for an algebraic Hecke character theta of KT, psi != psi^c, H^1(E) = Ind psi, and pi_E = AI_(KT/K)(theta), unitarily normalized, is cuspidal of type (2,0) with trivial central character and rho_(pi_E,iota) = H^1(E).",
+     "statement": "For any number field K and elliptic E/K with End(E_Kbar) tensor Q imaginary quadratic: [.] : End(E_Kbar) -> Kbar, alpha^* omega = [alpha] omega for omega invariant over K, is an injective ring homomorphism with [g alpha g^-1] = g([alpha]), so the kernel of G_K on End(E_Kbar) is G_KT and alpha is defined over K' exactly when [alpha] is in K'. For K totally real and E geometrically CM by T: T is not in K, H^1(E)|G_KT = psi + psi^c with psi = r_(l,iota)(theta) for an algebraic Hecke character theta of KT, psi != psi^c, H^1(E) = Ind psi, and pi_E = AI_(KT/K)(theta), unitarily normalized, is cuspidal of type (2,0) with trivial central character and rho_(pi_E,iota) = H^1(E).",
      "hypotheses": [
-      "K totally real",
+      "K a number field for the field of definition of the endomorphisms",
+      "K totally real for the rest",
       "E geometrically CM"
      ],
      "locator": {
       "source": "LeHung26",
-      "where": "Section 5, p.9 (LeHung26 lines 364-366)"
+      "where": "Section 5, p.9 (LeHung26 lines 364-366); OpenAI26 Section 9.4, p.27 (OpenAI26 line 1200) for the field of definition"
      },
      "prerequisites": [
+      "roadmap:EllipticCurves Layer 0.5",
+      "roadmap:EllipticCurves Layer 1",
       "roadmap:ShimuraVarieties §5.3",
       "roadmap:AbelianSchemesAndArithmeticModuli A6",
       "roadmap:AutomorphicGaloisRepresentations §3.10",
@@ -850,6 +917,21 @@
        "name": "no sum branch",
        "kind": "non-example",
        "statement": "over Q(i), outside scope, y^2 = x^3 - x gives an isobaric sum; over a totally real base induction is always cuspidal"
+      },
+      {
+       "name": "field of definition",
+       "kind": "computation",
+       "statement": "on y^2 = x^3 - x, [i](x,y) = (-x, iy) pulls dx/2y back to i dx/2y; complex conjugation sends [i] to (x,y) -> (-x,-iy) = [-i], so [i] is defined over Q(i), not Q: the model with all CM endomorphisms K-rational fails over totally real K"
+      },
+      {
+       "name": "T inside K'",
+       "kind": "degenerate",
+       "statement": "when T is in K' every geometric endomorphism is K'-rational; over Q(i) all of Z[i] acts rationally on y^2 = x^3 - x, giving the isobaric sum"
+      },
+      {
+       "name": "characteristic p",
+       "kind": "degenerate",
+       "statement": "over F_p the p-power Frobenius pulls dx/2y back to d(x^p)/2y^p = 0, so [.] is not injective; characteristic zero is used"
       }
      ]
     },
@@ -1000,10 +1082,12 @@
   {
    "roadmap": "EllipticCurves",
    "sections": [
+    "Layer 0.5",
+    "Layer 1",
     "Layer 4.5a",
     "Layer 5"
    ],
-   "what": "models and quadratic twists"
+   "what": "Galois conjugation and descent, invariant differentials, models and quadratic twists"
   },
   {
    "roadmap": "JacobianChallenge",
@@ -1059,7 +1143,7 @@
    "sections": [
     "§5.3"
    ],
-   "what": "CM algebra actions"
+   "what": "CM algebra actions (the field of definition of elliptic CM endomorphisms is proved in 4.3)"
   },
   {
    "roadmap": "EtaleCohomologyFoundations",
@@ -1090,8 +1174,8 @@
    "neededBy": [
     "2.2"
    ],
-   "detail": "For F totally real, l odd and r : G_F -> GL2(Qbar_l) continuous, finitely ramified, det r = eps^-1 psi with psi of finite order, potentially semistable with labelled weights {0,1} at every v | l: if r-bar is residually modular and absolutely irreducible on G_(F(zeta_l)) (when l = 5, either projective image of r-bar(G_(F(zeta_5))) not PSL2(F5) or det r-bar = eps-bar^-1), then r is modular, with no matching of local types. BD14 Theoreme 3.2.2 (from Gee's prescribed-type lifts, BLGG12 Theorems 6.1.5 and 6.1.8, BLGG13II Theorems 2.1.2 and 3.1.2, Kisin09 (3.5.5)); FLHS15 Section 2 for the cyclotomic-determinant clause at five. GL2ModularityLifting §§5.7 and 5.10 need potentially Barsotti-Tate representations, matched ordinary components and residue field F_p.",
-   "needs": "The universal modularity conclusion of Breuil-Diamond Theoreme 3.2.2 for weight-two potentially semistable lifts over totally real fields, without local matching or residue-field restriction, including the cyclotomic-determinant clause at five.",
+   "detail": "For F totally real, l odd and r : G_F -> GL2(Qbar_l) continuous, finitely ramified, det r = eps^-1 psi with psi of finite order, potentially semistable with labelled weights {0,1} at every v | l: if r-bar is residually modular and absolutely irreducible on G_(F(zeta_l)), and when l = 5 either (a) the image of r-bar(G_(F(zeta_5))) in PGL2(Fbar_5) is not isomorphic to PSL2(F5) or (b) r-bar is the scalar extension of r0 : G_F -> GL2(F5) with det r0 = eps-bar_5^-1, then r is modular, with no matching of local types. For l != 5 and for (a): BD14 Theoreme 3.2.2 (hypotheses lines 2144-2146), from Gee's prescribed-type lifts, BLGG12 Theorems 6.1.5 and 6.1.8, BLGG13II Theorems 2.1.2 and 3.1.2, Kisin09 (3.5.5). For (b): FLHS15 Section 2, whose argument uses the F5-model (PGL2(F5) -> F5^x/(F5^x)^2 is det r0 mod squares); without an F5-model the determinant does not control the projective square class. GL2ModularityLifting §§5.7 and 5.10 need potentially Barsotti-Tate representations, matched ordinary components and residue field F_p.",
+   "needs": "The universal modularity conclusion of Breuil-Diamond Theoreme 3.2.2 for weight-two potentially semistable lifts over totally real fields, without local matching or residue-field restriction, with its five-adic projective-image hypothesis replaced, for residual representations having an F5-model with determinant eps-bar_5^-1, by the Freitas-Le Hung-Siksek argument.",
    "supplier": "GL2ModularityLifting",
    "section": "Layer 5, a section after §5.10"
   },
@@ -1101,7 +1185,7 @@
    "neededBy": [
     "2.4"
    ],
-   "detail": "For F totally real, p odd and r-bar : G_F -> GL2(Fbar_p) continuous, absolutely irreducible, totally odd with solvable image, r-bar is the semisimplified reduction of rho_(pi0,iota) for a cuspidal pi0 of cohomological type (all k_tau >= 2). R17.5.14 gives only a parallel-weight-one witness. Route: Langlands-Tunnell weight one, soluble totally real base change unramified above p, Hida theory to an ordinary parallel-weight-two form (BLGG13II proof of Theorem 3.1.1, p.3); elliptic case FLHS15 Theorem 6.",
+   "detail": "For F totally real, p odd and r-bar : G_F -> GL2(Fbar_p) continuous, absolutely irreducible, totally odd with solvable image, r-bar is the semisimplified reduction of rho_(pi0,iota) for a cuspidal pi0 of cohomological type (all k_tau >= 2). R17.5.14 gives only a parallel-weight-one witness. Route: Langlands-Tunnell weight one over F; a finite soluble totally real extension F'/F, linearly disjoint from the field of r-bar, over which r-bar is unramified at every place above p (F'/F is in general ramified above p: an unramified extension leaves residual inertia, e.g. diag(-1,1), unchanged, a ramified quadratic one kills it); Hida theory to an ordinary parallel-weight-two form over F' as in the proof of BLGG13II Theorem 3.1.1, p.3 (lines 129-145), which treats p = 3 under its own hypotheses. The arbitrary-p statement and the return from F' to F are the supplier's obligation; elliptic case FLHS15 Theorem 6.",
    "needs": "Residual modularity in a cohomological weight for every totally odd absolutely irreducible solvable mod-p representation of a totally real field, p odd.",
    "supplier": "GL2AutomorphicRepresentationsAndTransfer",
    "section": "R17.5, a section after R17.5.14"
