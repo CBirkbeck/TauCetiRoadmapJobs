@@ -3076,8 +3076,8 @@
     {
       "slug": "deligne-lusztig-reduction",
       "supplier": "ModpRepresentationsOfGL2OverLocalFields",
-      "section": "MP.3, translation-map",
-      "needs": "for `ν ∈ η + Λ_R` and `μ − sw^{−1}ν − η` 1-deep, the Jordan–Hölder constituents of the reduction of the Deligne–Lusztig representation `R_{sw^{−1}}(μ − sw^{−1}ν)` of `GL₂(𝔽_q)` are the weights `F(t_{μ−η}(sw^{−1}(ω − ν̄)))` for `ω ∈ Σ`, each with multiplicity one, in MP.3's translation coordinates (BHHMS23, Proposition 2.4.3, p. 16)."
+      "section": "§3.2",
+      "needs": "for `ν ∈ η + Λ_R` and `μ − sw^{−1}ν − η` 1-deep, the Jordan–Hölder constituents of the reduction of the Deligne–Lusztig representation `R_{sw^{−1}}(μ − sw^{−1}ν)` of `GL₂(𝔽_q)` are the weights `F(t_{μ−η}(sw^{−1}(ω − ν̄)))` for `ω ∈ Σ`, each with multiplicity one, in the translation coordinates of §3.2 (BHHMS23, Proposition 2.4.3, p. 16)."
     },
     {
       "slug": "regular-local-factorial",
