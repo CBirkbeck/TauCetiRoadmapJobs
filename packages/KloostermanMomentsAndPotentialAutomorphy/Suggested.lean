@@ -46,11 +46,12 @@ open PowerSeries
 /-! ## Layer 0: finite sums and symmetric-power moments -/
 
 /-- The rank-two Kloosterman sum `Kl₂(a; ψ) = Σ_{x ∈ Fˣ} ψ(x + a/x)` over a finite field `F`,
-with no prefactor (Fresán–Sabbah–Yu, (1.1)). It is the rank-two case of the product-fibre
-hyper-Kloosterman sum, by elimination of the last variable. -/
-noncomputable def kloostermanSum (F : Type*) [Field F] [Fintype F] [DecidableEq F]
+with no prefactor (Fresán–Sabbah–Yu, (1.1)). It is defined for every `a ∈ F`; for a unit `a` it is
+the rank-two case of the product-fibre hyper-Kloosterman sum, by elimination of the last variable,
+while at `a = 0` it is `Σ_{x ∈ Fˣ} ψ(x)` and the product fibre is empty. -/
+noncomputable def kloostermanSum (F : Type*) [Field F] [Finite F]
     (ψ : AddChar F ℂ) (a : F) : ℂ :=
-  ∑ x : Fˣ, ψ ((x : F) + a * (x : F)⁻¹)
+  ∑ᶠ x : Fˣ, ψ ((x : F) + a * (x : F)⁻¹)
 
 /-- The additive character `x ↦ exp(2πi Tr_{𝔽_{p^m}/𝔽_p}(x)/p)` of `𝔽_{p^m}`: the standard
 character of `ZMod p` composed with the field trace. These characters are compatible in towers of
@@ -71,9 +72,7 @@ def symmetricTrace {R : Type*} [CommRing R] (t d : R) : ℕ → R
 (Fresán–Sabbah–Yu, §1.1). The minus sign makes `−Kl₂(a)` the sum of the two Frobenius
 eigenvalues, whose product is `p^m`. -/
 noncomputable def moment (p : ℕ) [Fact p.Prime] (k m : ℕ) : ℂ :=
-  letI : Fintype (GaloisField p m) := Fintype.ofFinite _
-  letI : DecidableEq (GaloisField p m) := Classical.decEq _
-  ∑ a : (GaloisField p m)ˣ,
+  ∑ᶠ a : (GaloisField p m)ˣ,
     symmetricTrace (-kloostermanSum (GaloisField p m) (traceChar p m) (a : GaloisField p m))
       ((p : ℂ) ^ m) k
 
@@ -175,8 +174,10 @@ completed functions (§1.1). It differs from the product of the standard factors
 noncomputable def paperGamma (d : ℕ) (s : ℂ) : ℂ :=
   (Real.pi : ℂ) ^ (-(d : ℂ) * s / 2) * ∏ j ∈ Finset.Icc 1 d, Complex.Gamma ((s - j) / 2)
 
-/-- The Dirichlet coefficients of the Euler product `Π_p L(p; p^{−s})` attached to a family of
-Euler factors: `n ↦ Π_{p^j ∥ n} [T^j] L(p; T)`. -/
+/-- The Dirichlet coefficients `n ↦ Π_{p^j ∥ n} [T^j] L(p; T)` attached to a family of power
+series. When every `L(p; T)` with `p` prime has constant coefficient `1`, as the moment Euler
+factors do, these are the coefficients of the Euler product `Π_p L(p; p^{−s})`, and the two agree
+wherever the Dirichlet series is absolutely summable. -/
 noncomputable def eulerCoeff (L : ℕ → PowerSeries ℂ) (n : ℕ) : ℂ :=
   n.factorization.prod fun p j => coeff j (L p)
 

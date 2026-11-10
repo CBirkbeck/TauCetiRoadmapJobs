@@ -3981,7 +3981,7 @@
       "slug": "irregular-stationary-phase",
       "needs": "For a holonomic module on the affine line whose formal structure at infinity is a sum of E^(c_i t) tensor regular modules R_i (plus parts of slope other than one), the inverse Fourier transform is smooth away from the c_i and its vanishing cycles at c_i are R_i with their monodromy, in the sign convention of the kernel E^(t tau).",
       "supplier": "MixedHodgeModulesAndIrregularHodgeTheory",
-      "section": "Layer T"
+      "section": "§11.5"
     },
     {
       "slug": "nori-weight-filtration",
@@ -4000,6 +4000,12 @@
       "needs": "For a characteristic-zero field E, an E-algebra with E-linear anti-involution and a finite-dimensional module with a nondegenerate involution-compatible symmetric or alternating form, the semisimplification carries a nondegenerate compatible form of the same type (Serre, arXiv:1708.00046v3, Theorem 4.2.1).",
       "supplier": "ArithmeticGaloisRepresentations",
       "section": "§7.4"
+    },
+    {
+      "slug": "toric-polytope-projective-embedding",
+      "needs": "For a full-dimensional lattice polytope P whose normal fan is regular, the invariant divisor D_P = sum over rays of -min_{u in P}<u, v_rho> D_rho and every commutative ring A, the characters chi^u, u in P ∩ M, are generating sections of O(D_P) on X_{Sigma_P, A} and define a closed immersion into projective space over A, compatible with base change.",
+      "supplier": "AnalyticToricGeometryPartII",
+      "section": "§0.5"
     }
   ],
   "restructure": [
