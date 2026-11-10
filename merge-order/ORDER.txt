@@ -10,6 +10,7 @@ OperatorKTheory
 IndexTheory
 StringOrientation
 SmoothBundlesConnections
+YangMillsConnectionsAndCaloricGauge
 PseudodifferentialOperators
 TangentialBordism
 AlgebraicKTheory
