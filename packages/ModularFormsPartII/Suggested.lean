@@ -31,7 +31,8 @@ Headline theorems that are not statable at the pins:
   continuation of solutions of a linear differential operator and no local monodromy, nor the
   meromorphic-basis condition at a singular point;
 * the arithmetic fundamental-group theorem for the cuspidal smooth model of `X(N)` (README §9.3):
-  the pinned libraries have neither the regular model of `X(N)` over `𝓞_K` nor its cusp section.
+  the pinned libraries have neither the minimal regular model of `X(N)` over `𝓞_K` nor its cusp
+  section.
 -/
 
 namespace TauCetiRoadmap.ModularFormsPartII
