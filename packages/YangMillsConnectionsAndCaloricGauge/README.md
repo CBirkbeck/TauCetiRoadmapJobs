@@ -52,8 +52,8 @@ Lie algebra (Conventions):
   ground state energy (Layer 7);
 - the finite-dimensional coefficient specialisations of PDE §7.2’s homogeneous spaces and of
   Tau Ceti's `TauCeti.D1p0`, the realised homogeneous spaces `Ẇ^{σ,p}` on `ℝ⁴`,
-  the graph space `ℋ` and frequency envelopes on `ℝ⁴`, and
-  the solvability theory of the covariant Laplacian and of the covariant heat operator (Layer 8);
+  the graph space `ℋ` and frequency envelopes on `ℝ⁴`, the homogeneous `L²` product
+  estimates (distinct from PDE §7.3's inhomogeneous Hölder estimates), and the solvability theory of the covariant Laplacian and of the covariant heat operator (Layer 8);
 - the covariant, dynamic and linearised Yang–Mills heat flows on `ℝ⁴`, their gauge fixings, the
   well-posedness and long-time theory in the local caloric gauge, and the Dichotomy and Threshold
   Theorems (Layer 9);
@@ -75,7 +75,8 @@ It leaves to named roadmaps:
   1-forms with vanishing normal component on the unit ball, Hardy's inequality on `ℝ^d`, and the
   Sobolev classes `W^{k,p}(Ω; V)` of maps into a finite-dimensional real normed space `V` with
   their coordinate comparison with the scalar classes are sections PDE lacks; they are requested
-  of PDE under Exact supplier contracts.
+  of PDE under Exact supplier contracts. The consistent inhomogeneous partition needed for the
+  restriction-Besov norm of §4.3 is requested of PDE §7.1–§7.2 there as well.
 - **SmoothBundlesConnections** owns principal connections, curvature, the gauge group and its
   left action `u·A = Ad(u)A − du·u⁻¹` (B3.1, B4.1, B4.2). Every smooth connection here is a connection
   on the trivial bundle `X × G` in its sense, and §1.3 proves that the formulas used here are its
@@ -111,10 +112,10 @@ It leaves to named roadmaps:
   which the energy gap of §7.5 consumes in dimension four.
 - **FourManifolds** states Uhlenbeck's small-curvature Coulomb gauge on the unit Euclidean
   4-ball for `SU(2)` (§5.3) and constructs the BPST instanton on its oriented `S⁴` carrier
-  (Layer 5, introduction). FourManifolds does not consume this roadmap. §4.1 here states the lemma for
-  every compact `G` and every `d ≥ 3`, of which FourManifolds' statement is the case `G = SU(2)`,
-  `d = 4`; §7.6's BPST connection is the explicit potential on `ℝ⁴`, the kept variant that the
-  heat flow on `ℝ⁴` needs.
+  (Layer 5, introduction). This roadmap owns the Euclidean statements of §§4.1–4.2 and §7.3
+  (Coulomb gauge and removability) and §7.6 (the BPST potential on `ℝ⁴` needed by the heat flow).
+  The unit-ball statement for `SU(2)` is the case `G = SU(2)`, `d = 4` of §4.1;
+  FourManifolds' `S⁴` carrier, moduli spaces and compactification belong there.
 
 Not owned here and owned by no roadmap this one consumes: the hyperbolic Yang–Mills equation, its
 initial data sets, the constraint equation and the caloric form of the wave equation, together
@@ -194,7 +195,7 @@ with equivalent norms: 8.1 proves this for `Ḣ¹`, and its cut-off and mollific
 defined in 8.1;
 `ℋ = {a ∈ Ḣ¹ : ∂^ℓ a_ℓ ∈ ℓ¹L²}` with norm `‖a‖_{Ḣ¹} + ‖∂^ℓ a_ℓ‖_{ℓ¹L²}`. The heat-time variable is
 `s ≥ 0`; weighted `ds/s` norms are over `s > 0`, with the initial trace stated
-separately. In endpoint exponent formulas `1/∞ = 0`. Write `J ⊆ [0, ∞)` is an interval, and `L^p(J; X)` is Mathlib's Bochner space with values in the
+separately. In endpoint exponent formulas `1/∞ = 0`. Here `J ⊆ [0, ∞)` is an interval, and `L^p(J; X)` is Mathlib's Bochner space with values in the
 Banach space `X`. For such a space-time norm `Y = L^q(J; Ḣ^σ)`, `ℓ^pY` is the norm
 `‖u‖_{ℓ^pY} = (Σ_k ‖P_k u‖^p_Y)^{1/p}` (OhTataru-YMHF line 857); Minkowski's integral inequality gives
 `‖u‖_{ℓ²L¹Ḣ^σ} ≲ ‖u‖_{L¹Ḣ^σ}`, and the reverse bound fails (8.3, Checks).
@@ -253,9 +254,9 @@ At the pinned Tau Ceti; paths under `TauCeti/`.
   `Ω` and `1 ≤ p`, the closure in `L^p(Ω; E)` of the gradients of real test functions, each element
   recorded by its gradient field, with its norm and completeness; `TauCeti.D1p0.ofTestFunctionₗ` with
   `TauCeti.D1p0.norm_ofTestFunctionₗ` (a test function has norm `‖∇φ‖_p`) and
-  `TauCeti.D1p0.denseRange_ofTestFunctionₗ` (test functions are dense). For an additive Haar measure
-  and `1/p* + 1/dim E = 1/p`: `TauCeti.D1p0.sobolevEmbeddingL`, the continuous linear map to
-  `L^{p*}(Ω)` extending `φ ↦ φ`; with `p* ≠ ∞`, `TauCeti.D1p0.norm_sobolevEmbeddingL_le` (the
+  `TauCeti.D1p0.denseRange_ofTestFunctionₗ` (test functions are dense). For an additive Haar measure,
+  `p* ≠ ∞` and `1/p* + 1/dim E = 1/p`: `TauCeti.D1p0.sobolevEmbeddingL`, the continuous linear map to
+  `L^{p*}(Ω)` extending `φ ↦ φ`, with `TauCeti.D1p0.norm_sobolevEmbeddingL_le` (the
   Gagliardo–Nirenberg–Sobolev bound), `TauCeti.D1p0.hasWeakFDerivOn_sobolevEmbeddingL` (the recorded
   field is the weak gradient of the image) and `TauCeti.D1p0.sobolevEmbeddingL_injective`. It is
   scalar and of order one: it supplies neither the converse characterisation of its image by weak
@@ -281,12 +282,13 @@ At the pinned Tau Ceti; paths under `TauCeti/`.
 - §6.1: Bochner spaces; §6.3: the heat semigroup `e^{sΔ}` on `L^p(ℝ^d)`, its generator, Duhamel's
   formula and the smoothing estimates (Layers 8–9).
 - §7.1: the homogeneous blocks `P_k`, Bernstein and Littlewood–Paley estimates, and the heat-block
-  estimate `‖e^{sΔ}P_k f‖_p ≲ exp(−c4^k s)‖P_k f‖_p`; §7.2: homogeneous Besov spaces `Ḃ^s_{p,q}` with
-  their realisation for `s < d/p`; §7.3: paraproducts and the Littlewood–Paley trichotomy (Layers 8–10).
-  §7.3 states its estimates in the Hölder–Besov spaces `𝒞^α`; the `L²`-based product bounds of Layers
-  8–10, such as `‖[u, v]‖_{Ḣ^σ} ≲ ‖u‖_{Ḣ¹}‖v‖_{Ḣ^{σ+1}}` on `ℝ⁴` for `−2 < σ < 1` (9.5, 10.5) and
-  `‖[u, v]‖_{ℓ¹L²} ≲ ‖u‖_{Ḣ¹}‖v‖_{Ḣ¹}` on `ℝ⁴` (10.4), follow from its decomposition `fg = T_f g + T_g f + R(f, g)`
-  and §7.1's Bernstein inequality.
+  estimate for indices `j ≥ 1`; §8.1 here extends that estimate to every `k ∈ ℤ` by dilation.
+  §7.2 supplies whole-space inhomogeneous Besov spaces and homogeneous Besov spaces modulo
+  polynomials; §8.1 fixes their representatives in `𝒮'_h` in dimension four, and §4.3 defines the
+  restriction norm on a ball, using the consistent inhomogeneous partition requested below.
+  §7.3 supplies the inhomogeneous Bony decomposition pattern and its
+  Hölder–Besov estimates. The homogeneous `L²` product estimates needed in Layers 8–10 are the
+  distinct targets of §8.1, using §7.1's Bernstein inequality.
 
 What PDE must provide (gap:lp-neumann-ball): For `1 < p < ∞`, `d ≥ 2`, `f ∈ L^p(B₁)` and `V ∈ W^{1,p}(B₁;ℝ^d)` with `∫_{B₁} f = ∫_{∂B₁} ν·V`: `Δu = f` in `B₁`, `∂_νu = ν·V` on `∂B₁` has a solution `u ∈ W^{2,p}(B₁)`, unique up to constants, with `‖∇u‖_{W^{1,p}} ≤ C(d,p)(‖f‖_{L^p} + ‖V‖_{W^{1,p}})`.
 Used in §§4.1; required location: Layer 5 (a new section on the L^p Neumann problem).
@@ -299,6 +301,13 @@ Used in §§5.2, 5.3, 6.1; required location: §1.4 (a new item).
 
 What PDE must provide (gap:vector-valued-wkp): For a finite-dimensional real normed space `V`, an open `Ω ⊆ ℝ^d`, every integer `k ≥ 0` and `1 ≤ p ≤ ∞`: the space `W^{k,p}(Ω; V)` of `u ∈ L^p(Ω; V)` whose iterated weak derivatives (`TauCeti.HasWeakFDerivOn`) of order `≤ k` exist and lie in `L^p`, complete for the sum of the `L^p` norms of `u` and its derivatives, with a continuous linear equivalence to the product of `dim V` copies of `TauCeti.Wkp` of order `k` given by the coordinates in any basis of `V` and commuting with every iterated weak derivative (so the class does not depend on the basis), and the local class `W^{k,p}_loc(Ω; V)` of the `u` whose restriction to every ball with closure in `Ω` lies in `W^{k,p}`.
 Used in §2.1, and through it in Layers 2–5 and 7; required location: Layer 1 (a new section on finite-dimensional vector-valued Sobolev classes).
+
+What PDE must provide (gap:inhomogeneous-besov-partition): For every `d ≥ 1`, use the consistent inhomogeneous blocks `Δ_{−1} = χ(D)`, `Δ_j = ψ(2^{−j}D)` for `j ≥ 0`, with `Σ_{j≥−1}Δ_j = I`, and supply §7.2's complete Besov norms and cutoff independence for this partition.
+Used in §4.3; required location: §7.1–§7.2 (the inhomogeneous partition and its Besov norms).
+Indeed, the blocks written in §7.1 as `P_0 = χ(D)` and `P_j = ψ(2^{−j}D)` for `j ≥ 1`
+have sum `1 + χ(ξ) − χ(ξ/2)`, which vanishes at `|ξ| = 2`; they cannot define the
+claimed inhomogeneous norm. The homogeneous blocks used in §8.1 sum over all integers
+and have no such omission.
 
 ### From TauCetiRoadmap.SmoothBundlesConnections
 
@@ -381,7 +390,7 @@ Dichotomy and Threshold Theorems. Layer 10 constructs the caloric gauge and the 
 Layer 1 depends only on suppliers; Layer 8 then uses its coefficient algebra;
 within Layer 4 the elliptic estimates of §4.3 precede their uses in §4.1; Layers 2–7 form a chain (Layer 6
 needs Layer 5, Layer 7 needs Layers 4–6); Layer 9 needs Layer 8 for its local theory and Layers 4, 6
-and 7 for the Dichotomy and Threshold Theorems; Layer 10 needs Layer 9.
+and 7 for the Dichotomy and Threshold Theorems; Layer 10 needs Layer 9 and Layers 3–4 for §10.1.
 
 ## Layer 1: structure groups and pointwise gauge algebra
 
@@ -545,9 +554,10 @@ OhTataru-YMHF Lemma 6.9, lines 2892–2902; Bogomolnyi-Stability).
 **Checks.**
 
 - `F = X(dx¹ ∧ dx² + dx³ ∧ dx⁴)` is self-dual with `|F|² = 2|X|²` and `⋆⟨F ∧ F⟩ = 2|X|²`: equality.
-- `F = X dx¹ ∧ dx²` has `F^± = ½X(dx¹ ∧ dx² ± dx³ ∧ dx⁴)`, `|F|² = |X|²` and `⋆⟨F ∧ F⟩ = 0`: strict.
-- With the coefficient of `⟨F ∧ F⟩` taken as the all-index sum `8(⟨F₁₂, F₃₄⟩ − …)`, the first Check
+- For `X ≠ 0`, `F = X dx¹ ∧ dx²` has `F^± = ½X(dx¹ ∧ dx² ± dx³ ∧ dx⁴)`, `|F|² = |X|²` and `⋆⟨F ∧ F⟩ = 0`: strict.
+- For `X ≠ 0`, with the coefficient of `⟨F ∧ F⟩` taken as the all-index sum `8(⟨F₁₂, F₃₄⟩ − …)`, the first Check
   would give `8|X|² > 2|X|²`, refuting the inequality; this pins the Conventions' normalisation.
+  For `X = 0` every displayed quantity is `0`, and no strictness is asserted.
 
 *Needs:* Tau Ceti `Orientation.formHodgeStar`, `Orientation.wedge_formHodgeStar_apply`,
 `Orientation.formHodgeStar_formHodgeStar_of_even`; 1.1.
@@ -809,8 +819,9 @@ Prove: for `A ∈ W^{1,d/2}_loc(X; 𝔤 ⊗ (ℝ^d)*)` and `O ∈ G^{2,d/2}_loc(
 ### 3.3 Patching to a global gauge
 
 Prove: every `G^{2,d/2}_loc` bundle on `X = B_R` or `X = ℝ^d` admits a global gauge, and every connection
-on it has a global potential in `W^{1,d/2}_loc(X)`; for `B_R`, `R ≥ 1`, covered by uniformly separated
-unit balls `B_α`, transition maps and local potentials with `‖O_(αβ);x‖_{W^{1,d/2}} ≤ M` and
+on it has a global potential in `W^{1,d/2}_loc(X)`; for `B_R`, `R ≥ 1`, covered by
+unit balls `B_α` whose centres are pairwise at distance at least `c(d) > 0`
+(and hence with overlap multiplicity at most `C(d)`), transition maps and local potentials with `‖O_(αβ);x‖_{W^{1,d/2}} ≤ M` and
 `‖A_(α)‖_{W^{1,d/2}} ≤ M` give a global potential with `‖A‖_{W^{1,d/2}(B_R)} ≲_{R,M} 1`
 (OhTataru-TopClass Propositions 3.9–3.10 and Scenarios (1)–(3), lines 1165–1347; Proposition 3.9 writes
 `W^{k,d/k}` for the potential, which should read `W^{k−1,d/k}`).
@@ -904,9 +915,14 @@ the decay of the small transition maps.
 
 - `d = 4`, `A = −O;x` with `O = Φ(x/|x|)`: `F = 0`, `A ∉ W^{1,2}(B'₁)` since `∫ |x|^{−4} dx = ∞` near `0`, and
   `Ã = O⁻¹·A = 0` extends: the extension needs the gauge change.
-- Every connection with `F ∈ L^{d/2}(B'₁)` extends across the puncture: `‖F‖_{L^{d/2}(B'_r)} ≤ ε'₀` for small
+- Every connection on `B'_{1+δ}` with a global potential and `F ∈ L^{d/2}(B'₁)` extends across the puncture: `‖F‖_{L^{d/2}(B'_r)} ≤ ε'₀` for small
   `r` by absolute continuity, and the statement applies on `B'_r` after rescaling; the threshold only
   governs the bound on `B'₁`.
+- For `d = 3`, a `U(1)` monopole of charge `n ≠ 0` on a punctured ball has no global
+  potential: its flux is `2πn`, whereas the flux of `dA` for a global potential is `0`.
+  Hölder on each sphere gives `∫_{S_r}|F|^{3/2} ≥ |2πn|^{3/2}/(4πr²)^{1/2}`;
+  integrating in `r` gives a positive multiple of `|n|^{3/2}∫₀¹ dr/r = ∞`.
+  It fails both the global-potential and finite-curvature hypotheses.
 
 *Needs:* 2.5, 3.3, 4.1.
 
@@ -930,7 +946,17 @@ If the original potentials also converge in the ordinary Sobolev orders
 `W^{j+1,d/(j+2)}` for `0 ≤ j ≤ m`, the equation for `∂O_n` upgrades the
 gauge convergence to `W^{m+2,d/(m+2)}(λB)`. Thus higher derivative convergence requires
 higher derivative data, rather than only the base convergence in §4.1.
-Finally prove that `O` has a continuous representative when `O;x ∈ ℓ¹W^{1,d/2}(B)`.
+For a ball `B ⊂ ℝ^d` and `1 < p < ∞`, define `ℓ¹W^{1,p}(B)` as the restrictions to `B`
+of `B¹_{p,1}(ℝ^d)` with the inhomogeneous partition of gap `inhomogeneous-besov-partition`
+(PDE §7.1–§7.2), with norm
+`inf{‖U‖_{B¹_{p,1}(ℝ^d)} : U|_B = u}`; equality on `B` is distributional.
+Use this restriction norm in every local occurrence of `ℓ¹W^{1,p}`. Prove that it is a
+Banach quotient by the closed subspace of extensions vanishing on `B`, independent of the
+chosen extension and, up to equivalent norms, of the admissible dyadic cutoff.
+It is precisely the infimum of the extension norms used in OhTataru-TopClass Lemma 3.17,
+lines 1487–1496. For `O ∈ G^{2,d/2}(B)`, prove that `O;x ∈ ℓ¹W^{1,d/2}(B)` implies that `O`
+has a continuous representative on `B` (same locator). The proof estimates differences of
+`O` using any extension of `O;x` and then takes the infimum; it does not extend `O;x` by zero.
 
 **Checks.**
 
@@ -940,10 +966,21 @@ Finally prove that `O` has a continuous representative when `O;x ∈ ℓ¹W^{1,d
   `‖A_n‖_{W^{1,2}} = O(n^{−1/2}) → 0`, but
   `‖∂²A_n‖_{L^{4/3}(λB)} ≍ n^{1/2} → ∞` for `0 < λ < 1`.
   Its curvature derivative has the same growth, so the extra convergence hypothesis excludes it.
-- Constant gauges have `O;x = 0`, Besov sum `0`, and a continuous representative;
-  the oscillating critical gauge of §2.1 has no such summable derivative control.
+- Constant gauges have `O;x = 0`, restriction norm `0`, and a continuous representative.
+  The map `exp(log log(1/|x|) X)` of §2.1 has distinct cluster values at `0`, so its
+  Maurer–Cartan derivative cannot have this restriction regularity.
+- A nonzero constant on `B` has finite restriction norm: multiply it by a smooth compactly
+  supported cutoff equal to `1` near the closure of `B`. Its extension by zero has a jump
+  and a surface measure in its weak derivative; it is not in `W^{1,p}`, hence not in
+  `B¹_{p,1}` for `p > 1`. Zero extension cannot define this norm.
+- At a frequency `|ξ| = 2`, the consistent inhomogeneous partition has low symbol
+  `χ(ξ) = 0` and `Δ_0` symbol `χ(ξ/2) − χ(ξ) = 1`, hence total `1`.
+  Omitting `Δ_0` gives total `0`; this is the missing-annulus model excluded by the supplier gap.
+- Two smooth compactly supported extensions that differ only outside `B` restrict to the
+  same element; their difference has quotient norm `0`, while a nonzero constant on `B`
+  has positive quotient norm, since the quotient norm controls its `L^p(B)` norm.
 
-*Needs:* PDE §2.3 (whole-space div–curl estimate), §1.4, §7.1; 2.4.
+*Needs:* PDE §2.3 (whole-space div–curl estimate), §1.4, §7.1–7.2; gap `inhomogeneous-besov-partition` (PDE); 2.4.
 
 ### 4.4 The good gauge on a ball
 
@@ -969,7 +1006,7 @@ pure-gauge singularity of `Φ(x/|x|)`.
 
 ### Dependencies
 
-Layers 2–3; PDE §1.4, §1.6, §2.3, §7.1; the gaps `lp-neumann-ball` and `lp-divcurl-normal-ball`.
+Layers 2–3; PDE §1.4, §1.6, §2.3, §7.1–7.2; the gaps `lp-neumann-ball`, `lp-divcurl-normal-ball` and `inhomogeneous-besov-partition`.
 
 ## Layer 5: the good global gauge and the topological class
 
@@ -1023,8 +1060,12 @@ statement above assumes it on `ℝ^d`.
 
 **Checks.**
 
-- A flat connection on `ℝ^d` (`F = 0`): `r_c = ∞`, `R_c = 0`, and the theorem gives `O_(∞)` constant and
-  `B = 0`, i.e. the connection is gauge equivalent to `0`.
+- A flat connection on `ℝ^d` (`F = 0`): on each ball §4.1 gives a Coulomb potential with
+  norm at most `C₀·0 = 0`. Transitions between these zero potentials have zero derivative
+  and are constants on connected overlaps. A locally constant cocycle on the simply connected
+  space `ℝ^d` is trivial, so these gauges patch as in §3.3 to the potential `0`.
+  This representative has `(O_(∞), B) = (1, 0)`, `r_c = ∞` and `R_c = 0`; the numerical bound
+  in §5.2 alone does not force a chosen remainder to vanish.
 - `A ∈ Ẇ^{1,d/2}` itself: the representative `(1, A)` already has the form, with no bound uniform in
   `R/r` claimed for it.
 - A translated BPST instanton centred at `b` has the same concentration radii as one at `0`;
@@ -1145,7 +1186,7 @@ The two gauges at infinity of `A = 0` for `G = {±1}`; the `O(4)` reflection exc
 
 ### Dependencies
 
-Layers 2–4; AlgebraicTopology Stage 8; PDE §1.4; the gap `hardy-inequality`.
+Layers 1 (1.3), 2–4; AlgebraicTopology Stage 8; PDE §1.4; the gap `hardy-inequality`.
 
 ## Layer 6: characteristic numbers and the instanton number
 
@@ -1204,8 +1245,10 @@ when `F⁺ = 0` almost everywhere or `F⁻ = 0` almost everywhere; and `χ(a) = 
 
 - For `SU(2)`: `ℰ_e = 8π² c₂ + 2‖F⁺‖²`, FourManifolds Layer 5's normalisation
   `E(A) = 8π²k + 2‖F_A⁺‖²` with `k = c₂`.
-- A connection self-dual on one region and anti-self-dual on another has `ℰ_e = ∫|F⁺|² + ∫|F⁻|²` and
-  `|χ| = |∫|F⁻|² − ∫|F⁺|²| < ℰ_e`: pointwise equality everywhere does not give integrated equality.
+- Put `I₊ = ∫|F⁺|²` and `I₋ = ∫|F⁻|²`. If both are positive, then
+  `ℰ_e − |χ| = I₊ + I₋ − |I₋ − I₊| = 2 min(I₊, I₋) > 0`.
+  Thus pointwise equality does not imply integrated equality when both dualities carry
+  nonzero energy. For `I₊ = I₋ = 1` the difference is `2`; for `F = 0` it is `0`.
 - The BPST connection (anti-self-dual) has `ℰ_e = χ = 8π²`.
 
 *Needs:* 1.5, 6.1, 6.2, 5.5.
@@ -1247,7 +1290,7 @@ Conventions.
 
 ### Dependencies
 
-Layers 1, 5; DifferentialGeometry Layer 5 and Layer 10 (10.3–10.5); AlgebraicTopology Stage 6 item 5
+Layers 1, 3 (3.2), 5; DifferentialGeometry Layer 5 and Layer 10 (10.3–10.5); AlgebraicTopology Stage 6 item 5
 and Stage 8; the gap `hardy-inequality`.
 
 ## Layer 7: harmonic Yang–Mills connections and the ground state
@@ -1449,7 +1492,24 @@ space in which `C_c^∞` is dense. Prove that it agrees with the realisation of 
 
 Let `𝒮'_h(ℝ⁴; V)` be the tempered distributions `u` with `P_{≤k}u → 0` in `𝒮'` as `k → −∞`, where `P_{≤k}`
 is the Fourier multiplier by `χ(2^{−k−1}ξ)` for PDE §7.1's cut-off `χ`; at every `ξ ≠ 0` this symbol is the
-sum of the block symbols `ψ(2^{−j}ξ)`, `j ≤ k`. For `σ ∈ ℝ` and `1 ≤ p ≤ ∞` with `σ < 4/p`, define the
+sum of the block symbols `ψ(2^{−j}ξ)`, `j ≤ k`. Prove that for `1 ≤ p, q ≤ ∞`,
+`s < 4/p`, or `s = 4/p` with `q = 1`, every class in PDE §7.2's `Ḃ^s_{p,q}` has a unique
+representative in `𝒮'_h`, given by `Σ_k P_k u`. Indeed, its low-frequency tail is controlled by
+`Σ_{k≤K} 2^{k(4/p−s)}(2^{ks}‖P_k u‖_p)`, tending to `0` as `K → −∞`; at equality the
+`ℓ¹` tail tends to `0`. The high-frequency sum converges in `𝒮'` by testing against Schwartz
+functions. Two representatives differ by a polynomial, and the low-frequency condition kills it.
+Use these representatives whenever the indices satisfy this range; outside it the Besov space
+remains a quotient. This supplies the realisation used below (PDE §7.2's reconstruction,
+with this low-frequency argument; BahouriCheminDanchin-FourierAnalysis, Definition 2.68 and
+Proposition 2.71, cited by locator).
+
+Prove also the heat-block estimate for every `k ∈ ℤ` and `1 ≤ p ≤ ∞`:
+`‖e^{tΔ}P_k f‖_p ≤ C exp(−c4^k t)‖P_k f‖_p` for `t ≥ 0` and `P_k f ∈ L^p`.
+For `λ = 2^{k−1}`, Fourier dilation gives
+`P_k f = (P_1(f(λ⁻¹·)))(λ·)` and
+`e^{tΔ}(g(λ·)) = (e^{λ²tΔ}g)(λ·)`.
+PDE §7.1's estimate at index `1` therefore gives this estimate, with constants independent of
+`k`, including `k ≤ 0`. For `σ ∈ ℝ` and `1 ≤ p ≤ ∞` with `σ < 4/p`, define the
 realised homogeneous space `Ẇ^{σ,p}(ℝ⁴; V)` as the set of `u ∈ 𝒮'_h` for which some
 `g ∈ L^p(ℝ⁴; V) ∩ 𝒮'_h` has `P_k g = |D|^σ P_k u` for every `k ∈ ℤ`, where `|D|^σ P_k` is the multiplier
 `(2π|ξ|)^σ ψ(2^{−k}ξ)`, smooth because `ψ` vanishes near `0` (Mathlib `TemperedDistribution.fourierMultiplierCLM`
@@ -1470,19 +1530,48 @@ OhTataru-YMHF names them (line 850–856, used at line 1355–1356) without fixi
   `2^{kσ}‖P_k u‖_{L^p}`: on the frequencies of `P_k` the multipliers `2^{−kσ}|D|^σ` and `2^{kσ}|D|^{−σ}`
   have kernels that are `L¹`-dilates of fixed Schwartz functions (PDE §7.1). So frequency envelopes in
   `Ẇ^{σ,p}` (below) may be formed with either quantity, up to constants.
-- `Ḃ^σ_{p,1} ⊆ Ẇ^{σ,p} ⊆ Ḃ^σ_{p,∞}` for PDE §7.2's realised Besov spaces, with bounded inclusions, and
+- `Ḃ^σ_{p,1} ⊆ Ẇ^{σ,p} ⊆ Ḃ^σ_{p,∞}` for the representatives of PDE §7.2's Besov spaces just constructed, with bounded inclusions, and
   `Ẇ^{σ,2} = Ḣ^σ` with equivalent norms (Plancherel).
 - The heat semigroup `e^{sΔ}` of PDE §6.3 commutes with `|D|^σ`, preserves `𝒮'_h` and is a contraction of
   `Ẇ^{σ,p}`, strongly continuous for `p < ∞`. `Ẇ^{σ,∞}_c` is the closed subspace of the `u` for which
   `|D|^σ u` has a bounded uniformly continuous representative, and it contains `C_c^∞` for `−2 < σ < 0`.
 - `‖u(λ·)‖_{Ẇ^{σ,p}} = λ^{σ − 4/p}‖u‖_{Ẇ^{σ,p}}` for every `λ > 0`.
 
+**Homogeneous product bounds.** On `ℝ⁴` construct the continuous bilinear product
+`Ḣ¹ × Ḣ^{σ+1} → Ḣ^σ` for `−2 < σ < 1`, agreeing with multiplication of smooth annular
+Fourier truncations and with the pointwise product when both inputs are functions for which
+that product is defined. Prove
+`‖uv‖_{Ḣ^σ} ≲_σ ‖u‖_{Ḣ¹}‖v‖_{Ḣ^{σ+1}}` and the stronger summability bound
+`‖uv‖_{ℓ¹L²} ≲ ‖u‖_{Ḣ¹}‖v‖_{Ḣ¹}` for `u, v ∈ Ḣ¹`.
+They apply componentwise to any fixed bilinear map between finite-dimensional coefficient
+spaces, in particular the Lie bracket. Their source is homogeneous Bony calculus
+(BahouriCheminDanchin-FourierAnalysis, Theorems 2.82 and 2.85, cited by locator;
+OhTataru-YMHF lines 2287–2301 use the bilinear theory).
+
+A route is the homogeneous trichotomy
+`T_u v = Σ_k P_{≤k−4}u · P_k v`, `T_v u` with the inputs interchanged, and
+`R(u,v) = Σ_{|j−k|≤3} P_j u · P_k v`. These three sets of pairs partition all block pairs;
+the separation by four matches the support `1 ≤ |ξ| ≤ 4` of the blocks and makes each
+paraproduct term annular. Prove convergence of the three series in `𝒮'` on the stated
+Sobolev domains, with sum the product above, independent of the annular approximation.
+For `a_j = 2^j‖P_j u‖₂`, `b_k = 2^{k(σ+1)}‖P_k v‖₂`, Bernstein gives the paraproduct bounds at
+output frequency `k` by
+`b_k Σ_{j≤k−4} 2^{j−k} a_j` and
+`a_k Σ_{j≤k−4} 2^{(1−σ)(j−k)} b_j` after weighting by `2^{kσ}`.
+Comparable high inputs at index `j` and output `k ≤ j + C` give
+`2^{kσ}‖P_k(P_j u P_l v)‖₂ ≲ 2^{(σ+2)(k−j)} a_j b_l` for `|j−l| ≤ 3`.
+All kernels are summable exactly in the stated open range. Cauchy–Schwarz and convolution
+in the block indices prove the `ℓ²` output estimate; at `σ = 0`, summing these bounds in
+`ℓ¹` gives `‖uv‖_{ℓ¹L²} ≲ ‖a‖₂‖b‖₂`. Thus no product of arbitrary distributions is assumed.
+
 Define, after OhTataru-YMHF Definitions 3.2–3.4 and
 Lemma 3.5 (lines 884–954), with a small universal `δ > 0` and `0 < ε ≪ 1`:
 
 - a frequency envelope for `u` in a translation-invariant space `X` is a positive sequence `(c_k)_{k∈ℤ}`
   with `‖P_k u‖_X ≤ c_k` and `2^{−δ(j−k)}c_j ≲ c_k ≲ 2^{δ(j−k)}c_j` for `j > k`;
-  the identically zero sequence is also allowed, and majorizes only zero data;
+  the identically zero sequence is also allowed and majorizes exactly the data whose
+  homogeneous blocks all vanish. In a realised space contained in `𝒮'_h` this means `u = 0`;
+  in a homogeneous quotient it means the zero class;
 - for `σ₁, σ₂ > 0` it is `(−σ₁, σ₂)`-admissible if
   `2^{−σ₁(1−ε)(j−k)}c_j ≲ c_k ≲ 2^{σ₂(1−ε)(j−k)}c_j` for `j > k`;
 - `d_k` is `σ`-compatible with `c_k` if `c_k Σ_{j<k} 2^{σ(1−ε)(j−k)} d_j ≲ d_k`;
@@ -1495,10 +1584,35 @@ Prove: every `u ∈ Ḣ^σ` has a `(−σ₁, σ₂)`-admissible envelope with `
 
 **Checks.**
 
+- In the trichotomy, a pair of indices `(0,4)` occurs once in `T_u v`, `(4,0)` once
+  in `T_v u`, and `(0,0)` and `(0,3)` once in `R`. Counting the pair `(0,3)` also as
+  a paraproduct would count its product twice.
+- Under `u(λ·), v(λ·)`, both sides of the Sobolev product bound have degree `σ − 2`;
+  the `ℓ¹L²` bound has degree `−2`. At `λ = 2`, `σ = 0` both sides acquire `1/4`;
+  if either input is `0`, both products and all three series are `0`.
+- The lower endpoint fails: for nonzero real Schwartz `u = v` with annular Fourier support,
+  `∫u² > 0`, so the Fourier transform of `u²` is nonzero at `0` and its `Ḣ^{−2}` norm
+  contains `∫₀^ε r^{−1}dr = ∞`, although `‖u‖_{Ḣ¹}‖u‖_{Ḣ^{−1}} < ∞`.
+  The upper endpoint also fails: choose real annular Schwartz `φ` with nonnegative Fourier transform and `φ(0) > 0` and
+  `v_N = N^{−1/2}Σ_{j=1}^N φ(2^j·)`. Then `‖v_N‖_{Ḣ²} ≍ 1` and
+  `v_N(0) = √N φ(0)`. A fixed nonzero test bump concentrated at scale `2^{−2N}`,
+  `u_N(x) = 2^{2N}u(2^{2N}x)`, has `‖u_N‖_{Ḣ¹} ≍ 1` but
+  `‖u_N v_N‖_{Ḣ¹} ≳ √N`. Neither excluded endpoint is imported as an estimate.
+- For `k = 0`, Plancherel and `|ξ| ≥ 1` on the block support give
+  `‖e^{tΔ}P_0 f‖₂ ≤ e^{−4π²t}‖P_0 f‖₂`; for `k = −1` the corresponding bound is
+  `e^{−π²t}`. The dilation from index `1` uses `λ = 1/2` and `1/4`, respectively.
+- A constant has every homogeneous block `0`, so its quotient class has the unique realised
+  representative `0`; the constant itself has `P_{≤k}1 = 1` and is excluded. At the
+  endpoint `s = 2`, `p = 2`, `q = 1`, a low tail with weighted block sizes `2^k`, `k ≤ 0`,
+  has sum `Σ_{k≤K}2^k = 2^{K+1} → 0`; merely bounded sizes `1` have an infinite tail,
+  so the endpoint proof requires `q = 1`.
 - `u` with a single nonzero block `P_{k₀}u`: `c_k = 2^{−δ|k−k₀|}‖P_{k₀}u‖_X` is an envelope, and every
   envelope has `c_{k₀} ≥ ‖P_{k₀}u‖_X`.
 - `c_k = 2^{k}` for `k ≤ 0`, `c_k = 1` for `k > 0` grows at rate `1 > 1 − ε` to the right on `k ≤ 0`, so it is
   not `(−1, S)`-admissible for any `S`.
+- The constant `1 ∈ L^∞` has every `P_k1 = 0`, so the zero envelope majorizes it although
+  `‖1‖_∞ = 1`. It is excluded from `𝒮'_h` since `P_{≤k}1 = 1` for every `k`.
+  The zero distribution has all blocks and all low-frequency limits `0`.
 - Zero data admit the zero envelope and its `ℓ²` norm is `0`; requiring strict positivity
   while also demanding `‖c‖₂ ≤ C‖0‖` would give `0 < c_k ≤ 0`. With `d_j = 1` for `j < 0`
   and `σ̃ = 0`, the convolution at `k = 0` is `Σ_{j<0}1 = ∞`; the finiteness condition excludes it.
@@ -1509,6 +1623,12 @@ Prove: every `u ∈ Ḣ^σ` has a `(−σ₁, σ₂)`-admissible envelope with `
   norm `‖∇φ‖_{L²}` there, while the Conventions' norm adds `‖φ‖_{L⁴} ≤ C‖∇φ‖_{L²}`: equivalent, not equal.
   The constant `1` has `∇1 = 0 ∈ L²` but is not in `L⁴`, so it is not an element; the condition `u ∈ L⁴`
   is what removes the constants that the gradient norm alone does not see.
+- At `d = 4`, `p = 2`, `p* = 4`, the exponent equation is `1/4 + 1/4 = 1/2` and
+  `p* ≠ ∞`. At `d = p = 4`, `p* = ∞`, the equation `0 + 1/4 = 1/4` still holds,
+  but the identity-extending embedding is not asserted: smooth truncations of a cutoff
+  of `log log(1/r)` have bounded gradient fourth-power integral
+  `C∫₁^∞ t^{−4}dt = C/3` and arbitrarily large supremum. The finite-exponent hypothesis
+  cannot be dropped from the supplier contract.
 - The step at `p = ∞`, `σ = −1`: `g = sign(x₁)` lies in `L^∞ ∩ 𝒮'_h`, since `P_{≤k}g(x) = Φ(2^{k+1}x₁)` for an
   odd bounded `Φ` and this tends to `0` boundedly as `k → −∞`. So `b = Σ_k |D|P_k g ∈ Ẇ^{−1,∞}` with
   `|D|^{−1}b = g` and `‖b‖_{Ẇ^{−1,∞}} = 1`. Each `g + c`, `c ≠ 0` constant, has the same blocks and sup norm
@@ -1521,8 +1641,9 @@ Prove: every `u ∈ Ḣ^σ` has a `(−σ₁, σ₂)`-admissible envelope with `
   `(4π²)^{−1}(∫φ)|x|^{−3}` at infinity, so `φ ∈ Ẇ^{−1,∞}_c`: the heat-continuity subspace is not reduced to
   `0`, and it is a proper subspace by the previous Check.
 - The `2π` and the full norm against blocks, at `p = 2`: for `𝓕u` supported in a thin shell around
-  `|ξ| = 2^{k+1}`, where `ψ(2^{−k}ξ) = 1` and the neighbouring block symbols vanish,
-  `‖u‖_{Ẇ^{σ,2}} = ‖(2π|ξ|)^σ 𝓕u‖_{L²}` tends to `(4π)^σ 2^{kσ}‖P_k u‖_{L²}` as the shell shrinks. The full
+  `|ξ| = 2^{k+1}`, the symbol `ψ(2^{−k}ξ)` tends uniformly to `1` and the neighbouring symbols
+  tend to `0` as the shell shrinks. Thus the ratio of
+  `‖u‖_{Ẇ^{σ,2}} = ‖(2π|ξ|)^σ 𝓕u‖_{L²}` to `2^{kσ}‖P_k u‖_{L²}` tends to `(4π)^σ`. The full
   norm equals the block quantity only at `σ = 0`; a definition with `|ξ|^σ` in place of `(2π|ξ|)^σ` would
   give the factor `2^σ`.
 
@@ -1530,7 +1651,7 @@ Prove: every `u ∈ Ḣ^σ` has a `(−σ₁, σ₂)`-admissible envelope with `
 `TauCeti.D1p0.hasWeakFDerivOn_sobolevEmbeddingL`, `TauCeti.D1p0.sobolevEmbeddingL_injective`,
 `TauCeti.D1p0.denseRange_ofTestFunctionₗ`; Mathlib `TemperedDistribution.fourierMultiplierCLM`,
 `MeasureTheory.Lp.toTemperedDistribution`, `MeasureTheory.eLpNorm_le_eLpNorm_fderiv_of_eq`;
-PDE §6.3, §7.1, §7.2.
+PDE §6.3, §7.1–7.3 (the decomposition pattern and Bernstein, with the homogeneous targets above).
 
 ### 8.2 Solvability for the covariant Laplacian
 
@@ -1791,8 +1912,32 @@ solution with `Q(a) ≤ Q < ∞` the limit `A_∞ = lim_{s→∞} A(s)` exists i
 the linearised solution with data `b ∈ Ḣ^σ`, `−1 < σ ≤ 1` (resp. `b ∈ ℋ`), has a limit `B_∞` in `Ḣ^σ`
 (resp. `ℋ`), with `‖B_∞‖_{Ḣ^σ} ≲_{Q,M₁} ‖b‖_{Ḣ^σ}` when `‖a‖_{Ḣ¹} ≤ M₁` and
 `D(A_∞)_k B_{∞,j} − D(A_∞)_j B_{∞,k} = 0`; the map `a ↦ A_∞` is Lipschitz in `Ḣ¹`, `ℋ` and `Ḣ¹ ∩ Ḣ^σ` (`σ > 1`)
-on bounded convex subsets of `Ḣ¹` on which `Q` is uniformly bounded, and `C¹` along every `C¹` curve in
-these spaces with uniformly bounded `Q`, with derivative `B_∞`.
+on bounded convex subsets of the respective space on which `Q` is uniformly bounded.
+For each `X = Ḣ¹`, `ℋ`, or `Ḣ¹ ∩ Ḣ^σ` with `σ > 1` (intersection norm), prove that
+`Ω_X = {a ∈ X : Q(a) < ∞}` is open, `Q` is locally bounded there, and
+`a ↦ A_∞(a) : Ω_X → X` is continuously Fréchet differentiable, in the sense of Mathlib
+`ContDiff ℝ 1` on the open domain. Its derivative is the bounded linear map
+`L_X(a) : X → X`, `b ↦ B_∞[a]b`, with operator-norm continuity:
+for each `a ∈ Ω_X` and `ε > 0` there is `δ > 0` such that
+`‖ã − a‖_X < δ` implies `ã ∈ Ω_X` and
+`sup_{‖b‖_X ≤ 1} ‖B_∞[ã]b − B_∞[a]b‖_X < ε`.
+The mixed space `ℋ ∩ Ḣ^σ` has the same conclusion by combining the two intersection norms.
+
+For openness, flat convergence gives a large finite `T` with `ℰ_e(A(T))` below the
+small-energy threshold of §9.4. Finite-time stability of §9.3 gives the same strict bound
+for nearby data, and §9.4 controls the whole tail and hence `Q` locally.
+For differentiability, distinguish the curve calculation (OhTataru-YMHF lines 2552–2555)
+from the operator-norm continuity target above. A route to that target subtracts the
+linearised flows with the same initial datum `b` around `Ã` and `A`; the difference has
+zero initial datum and forcing formed from `Ã − A`, its derivatives and `B[ã]b`.
+Use §§8.1, 8.3 and §9.4 for the resulting difference estimates, uniformly over
+`‖b‖_X ≤ 1`. Splitting the coefficient frequencies at a finite cutoff makes the tails
+small by the fixed data's Sobolev or Besov summability and bounds the finite part by
+`C_{a,ε}‖ã − a‖_X`. This operator estimate must include the limit as heat-time tends to
+infinity; pointwise convergence for each `b` does not suffice.
+Once it holds, integration along `a + th`, `0 ≤ t ≤ 1`, gives the explicit remainder bound
+`‖A_∞(a+h) − A_∞(a) − L_X(a)h‖_X ≤ ‖h‖_X sup_{0≤t≤1}‖L_X(a+th) − L_X(a)‖_{X→X} = o(‖h‖_X)`.
+Thus the Fréchet assertion includes an estimate beyond the source's curve argument.
 
 Route for `−1 < σ < 1`: the infinitesimal de Turck trick of the proof of Lemma 5.33 (lines 2538–2549), with
 the bound of Lemma 5.23, Case 1 (lines 2172–2208). Put `A₀(0) = 0`. Then `F_{0j}` solves the homogeneous
@@ -1804,7 +1949,7 @@ of the `𝔤`-valued function `D^ℓF_{ℓ0}`, whose right side `[DF, F_{0x}] + 
 `Ḣ^{σ+1}`, and its tail `∫_s^∞ ‖P_k D^ℓF_{ℓ0}‖_{Ḣ^{σ+1}}` tends to `0` for each `k` and is at most the
 square-summable `‖P_k D^ℓF_{ℓ0}‖_{L¹Ḣ^{σ+1}}`; by dominated convergence in `ℓ²`, `A₀(s)` converges in
 `Ḣ^{σ+1}` to some `a_{0,∞}`. The product bound `‖[u, v]‖_{Ḣ^σ} ≲ ‖u‖_{Ḣ¹}‖v‖_{Ḣ^{σ+1}}` on `ℝ⁴`, valid for
-`−2 < σ < 1` (Bony's decomposition of PDE §7.3 with the Bernstein inequality of PDE §7.1), and `A → A_∞` in
+`−2 < σ < 1` (§8.1, homogeneous product bounds), and `A → A_∞` in
 `Ḣ¹` then give
 `B_j = F_{0j} + D_jA₀ → D(A_∞)_j a_{0,∞}` in `Ḣ^σ`. This limit is `D(A_∞)`-curl-free because `A_∞` is flat,
 and the bound on `B_∞` is the uniform bound of 9.4. For `σ = 1` and for `ℋ` the route is the covariant div–curl
@@ -1821,6 +1966,13 @@ neither place gives a proof, and that range is not stated here.
 
 - `G = U(1)`: `A_∞ = ∇φ`, the gradient part of `a`, and `a ↦ A_∞` is the bounded linear Helmholtz projection.
 - Pure gauge data `a = −O;x` with `O;x ∈ Ḣ¹`: `A_∞ = a`.
+- In the abelian case `L_X(a)` is the gradient projection for every `a`, so
+  `‖L_X(ã) − L_X(a)‖_{X→X} = 0` and the Fréchet remainder is `0`.
+- For `N(u) = sin u` on `L²(0,1)`, curve derivatives are `cos(u)h`, but take
+  `u_n = π 1_{(0,1/n)}` at `u = 0`: `‖u_n‖₂ = π/√n → 0`,
+  `‖(cos u_n − 1)·‖_{L²→L²} = 2` and
+  `‖sin u_n − u_n‖₂/‖u_n‖₂ = 1`. This excludes replacing the operator-norm
+  condition by differentiation along curves.
 - `G = U(1)`, `σ = −½`: the linearised flow is `∂_s B = ΔB − ∇(∂^ℓB_ℓ)`. For the splitting
   `b = ∇ψ + b^{df}` it gives `B(s) = ∇ψ + e^{sΔ}b^{df}`, where `e^{sΔ}` is the multiplier `e^{−4π²s|ξ|²}`
   in Mathlib's normalisation, and `‖e^{sΔ}b^{df}‖²_{Ḣ^{−1/2}} ≈ ∫ |ξ|^{−1}e^{−8π²s|ξ|²}|b̂^{df}(ξ)|² dξ → 0` by
@@ -1828,7 +1980,7 @@ neither place gives a proof, and that range is not stated here.
   block `P_k` commutes with the `L²`-orthogonal Helmholtz projection: the negative range holds, with
   constant `1`, in the abelian case.
 
-*Needs:* PDE §7.1, §7.3 (the product bound); 8.2 (for `σ = 1`), 8.3 (bounds, `ℓ²L¹` bound and decay); 9.1–9.4.
+*Needs:* 8.1 (homogeneous product bounds); 8.2 (for `σ = 1`), 8.3 (bounds, `ℓ²L¹` bound and decay); 9.1–9.4.
 
 ### 9.6 The Dichotomy Theorem
 
@@ -1879,7 +2031,7 @@ with infinite caloric size; the threshold `16π²` for `SU(2)`.
 
 ### Dependencies
 
-Layer 8; Layers 4, 6 and 7 for 9.6–9.7; PDE §6.3, and PDE §7.1 and §7.3 for the product bound of 9.5.
+Layers 1 (1.3), 8; Layers 4, 6 and 7 for 9.6–9.7; PDE §1.4 (9.2), §6.3; §8.1 supplies the homogeneous product bounds of 9.5.
 
 ## Layer 10: the caloric gauge and the caloric manifold
 
@@ -1890,16 +2042,30 @@ lines 1487–1496): for flat `a ∈ Ḣ¹(ℝ⁴)` there is `O ∈ G^{2,2}_loc(�
 then `O;x = Ad(O)a ∈ Ḣ¹`; `O` is unique up to left multiplication by a constant; if `a ∈ ℋ`, `O` is
 continuous with a limit at infinity and is normalised by `lim_{x→∞} O(x) = 1`. With `c^p_{jk} = ‖P_j Ad(O) P_k‖_{L^p→L^p}`,
 `2 ≤ p < ∞`: `c^p_{jk} ≲_{‖O⁻¹∂_x O‖_{Ḣ¹}} 2^{−(4/p)|j−k|}`, and `c^p_{jk} ≲ 2^{(4/p)(k−j)} c_j` for `k < j − C` when `c_k` is a
-`(−1, S)` envelope for `O⁻¹∂_x O` in `Ḣ¹`. Route: 5.2 for a flat connection, 4.3.
+`(−1, S)` envelope for `O⁻¹∂_x O` in `Ḣ¹`. Route: §4.1 on balls gives zero
+Coulomb potentials; their constant transition maps trivialise on the simply connected
+space `ℝ⁴`, giving the global gauge as in §3.3. §4.3 gives continuity under the local
+restriction-Besov hypothesis, obtained from the flat div–curl system when `a ∈ ℋ`
+(OhTataru-TopClass Lemma 3.16, lines 1474–1484; OhTataru-YMHF lines 3053–3071).
 
 **Checks.**
 
 - `G = U(1)`, `a = i∇φ` with `∇φ ∈ Ḣ¹`: `O = exp(iφ)` up to a constant.
 - `a = 0`: `O` is constant, and normalised to `1`.
 
-*Needs:* 4.3, 5.2, 8.1.
+*Needs:* 3.3, 4.1, 4.3, 8.1.
 
 ### 10.2 Caloric connections and the caloric gauge
+
+For the normalised gauge use the real Banach space `𝔘` of matrix-valued functions
+`U ∈ C₀(ℝ⁴; M_N(ℂ))` whose distributional derivative belongs to `Ḣ¹`, with norm
+`‖U‖_∞ + ‖∂U‖_{Ḣ¹}`. Here `C₀` means continuous and tending to zero at infinity.
+Prove completeness by passing to uniform limits and weak derivatives, and continuity of
+its inclusion into bounded continuous functions and of its derivative map into `Ḣ¹`.
+A gauge normalised by `O(∞) = 1` is represented by `O − 1 ∈ 𝔘`;
+Fréchet differentiability below is into this ambient Banach space, with the additional
+pointwise condition `1 + U ∈ G`, rather than into an uncharted set of gauges
+(OhTataru-YMHF lines 3033–3078).
 
 Define a caloric connection as `a ∈ Ḣ¹` with `Q(a) < ∞` and `A_∞ = 0`; `𝒞` as the set of caloric
 connections and `𝒞_Q = {a ∈ 𝒞 : Q(a) ≤ Q}`; the orbit pseudometric `d(a₁, a₂) = inf_{c∈G} ‖Ad(c)a₁ − a₂‖_{Ḣ¹}`,
@@ -1911,20 +2077,47 @@ Proposition 7.4, Corollary 7.6, lines 3213–3278; Theorem 2.20, lines 591–592
 - every `ã ∈ Ḣ¹` with `Q(ã) < ∞` is gauge equivalent to a caloric connection `Cal(ã)`, unique up to constant
   gauge transformations; `Q` and `ℰ_e` are unchanged;
 - `ã ↦ Cal(ã)` is continuous from `{ã ∈ Ḣ¹ : Q(ã) < ∞}` to `Ḣ¹` modulo `Ad(G)` with the distance `d`, and
-  `C¹` in `ℋ` and in `ℋ ∩ Ḣ^σ`, `σ > 1`, along families with uniformly bounded `Q`, for the normalisation
-  `O(∞) = 1`; the map `ã ↦ O` is `C¹` from `ℋ` to `{O : O;x ∈ Ḣ¹} ∩ C⁰`;
+  continuously Fréchet differentiable from the open set `Ω_X = {ã ∈ X : Q(ã) < ∞}` to `X`,
+  for `X = ℋ` and `X = ℋ ∩ Ḣ^σ`, `σ > 1`, with the normalisation `O(∞) = 1`;
+  the map `ã ↦ O(ã) − 1 : Ω_ℋ → 𝔘` is continuously Fréchet differentiable;
 - for noncommutative `G` and `ℰ_e(ã) < 2E_GS` the caloric representative exists for every `ã ∈ Ḣ¹`;
 - an `Ḣ¹` envelope of `ã` is an envelope of `Cal(ã)`: `‖P_j Cal(ã)‖_{Ḣ¹} ≲_{Q, M₁} c_j`.
 
 `𝒞` is dilation invariant; the heat flow of a caloric connection stays caloric.
 
+For the Fréchet assertions, put `q = A_∞(ã)` and let `b ∈ ℋ`.
+The flat div–curl system improves `q` to `ℓ¹Ḣ¹` (OhTataru-YMHF lines 3053–3057).
+With `B_∞ = L_ℋ(ã)b`, solve
+`Δ_q ψ = D(q)^j B_{∞,j}`, `ψ ∈ ℓ¹Ḣ² ⊂ C₀`, by §8.2.
+Prove `D(q)ψ = B_∞` and the derivative formulas
+`dO[ã]b = Oψ` and
+`dCal[ã]b = Ad(O)(b − B_∞ + [ψ, ã − q])` (lines 3065–3078).
+Use the operator-norm continuity in §9.5 and the elliptic resolvent identity
+`Δ_q⁻¹ − Δ_q'⁻¹ = Δ_q⁻¹(Δ_q' − Δ_q)Δ_q'⁻¹`, together with §8.1's products,
+to prove operator-norm continuity of `b ↦ Oψ` into `𝔘` and of `b ↦ dCal[ã]b` into `ℋ`.
+The divergence component of the latter is estimated in `ℓ¹L²` as in lines 3082–3086;
+the extra `Ḣ^σ` norm uses the higher-regularity bounds of §9.4.
+Integration along short segments then supplies the Fréchet remainder in each stated norm,
+as in §9.5. This is a Banach-space derivative assertion, including continuity in operator norm.
+
 **Checks.**
+
+- The zero function lies in `𝔘` with norm `0`; for `a = 0` the normalised gauge is `1`,
+  represented by `O − 1 = 0`. A nonzero constant matrix has derivative `0` but fails the
+  limit at infinity and is excluded from `𝔘`.
+- A smooth compactly supported matrix function `U = φM` lies in `𝔘` with norm
+  `‖φM‖_∞ + ‖∂(φM)‖_{Ḣ¹} < ∞`. Taking `M = 1` and `φ ≥ 0` positive somewhere gives
+  `1 + U ∉ U(N)` there, since its norm on vectors is `1 + φ > 1`: the ambient space
+  does not itself impose the group-valued condition.
+- For `G = U(1)` and real `φ ∈ C_c^∞`, the flat input `ã_t = it dφ` has
+  `O_t = exp(itφ)` and `Cal(ã_t) = 0`; at `t = 0`, `ψ = iφ`,
+  `dO = iφ`, `dCal = i dφ − i dφ = 0`. The opposite sign for `ψ` would give `2i dφ`.
 
 - `G = U(1)`: `Cal(ã) = ã − ∇φ`, the divergence-free part; caloric means `∂^ℓ a_ℓ = 0`.
 - Pure gauge data `ã = −O;x`: `Cal(ã) = 0`.
 - `d(Ad(c)a, a) = 0` for every constant `c`, so `Cal` is defined only up to `Ad(G)` until `O(∞) = 1` is imposed.
 
-*Needs:* 7.7, 9.4, 9.5, 9.7, 10.1.
+*Needs:* 8.1 (homogeneous products), 8.2 (elliptic inverse); 7.7, 9.4, 9.5 (Fréchet regularity and operator-norm continuity), 9.7, 10.1.
 
 ### 10.3 Caloric connections lie in `ℋ`
 
@@ -1985,7 +2178,7 @@ Prove (OhTataru-YMHF Theorem 7.8, lines 3294–3346): `𝒞` is a `C¹` split su
 given by `b ↦ Cal(a + b)` on a ball around `0` in the covariant Coulomb slice `E_a = {b ∈ ℋ : D(a)^ℓ b_ℓ = 0}`
 (lines 3301–3306). Route: `C¹` regularity from 10.2. Let `Δ_a⁻¹` be the solution operator of 8.2 on `ℓ¹L²` and
 `𝒢_a = D(a)Δ_a⁻¹(ℓ¹L²)` the gauge directions. By 8.2, Hölder with `ℓ¹Ḣ² ⊂ L^∞` and the product bound
-`‖[u, v]‖_{ℓ¹L²} ≲ ‖u‖_{Ḣ¹}‖v‖_{Ḣ¹}` on `ℝ⁴` (PDE §7.1, §7.3), `‖D(a)Δ_a⁻¹f‖_ℋ ≲ ‖f‖_{ℓ¹L²}` and `D(a)^ℓ h_ℓ ∈ ℓ¹L²` for `h ∈ ℋ`, so
+`‖[u, v]‖_{ℓ¹L²} ≲ ‖u‖_{Ḣ¹}‖v‖_{Ḣ¹}` on `ℝ⁴` (§8.1), `‖D(a)Δ_a⁻¹f‖_ℋ ≲ ‖f‖_{ℓ¹L²}` and `D(a)^ℓ h_ℓ ∈ ℓ¹L²` for `h ∈ ℋ`, so
 `Ph = h − D(a)Δ_a⁻¹(D(a)^ℓ h_ℓ)` is a bounded projection of `ℋ` onto `E_a` with kernel `𝒢_a`. The derivative of the
 chart at `0` is `Lb = b − D(a)c`, `c = dO(0)b` (lines 3315–3321), and `c = Δ_a⁻¹(Δ_a c)` with
 `Δ_a c = −D(a)^ℓ(Lb)_ℓ ∈ ℓ¹L²`: both vanish at infinity (`O(∞) = 1`; `ℓ¹Ḣ² ⊂ C₀` by Bernstein), and a solution `z`
@@ -2006,6 +2199,11 @@ No regularity beyond `C¹` is asserted (lines 3295–3296).
   `y ↦ (y − ⟨y, e⟩e)/⟨y, e⟩`, and in the chart `y ↦ (y − ⟨y, e⟩e)/⟨y, e⟩ + (‖y‖ − 1)e` of `𝔅` on `{⟨y, e⟩ > 0}`
   (inverse `v + te ↦ (1 + t)(e + v)/‖e + v‖`, `t > −1`) it reads `v ↦ v`, the normal form `u ↦ (u, 0)` for
   `𝔅 = e^⊥ ⊕ ℝe`; its derivative at `0` is the inclusion of `e^⊥`.
+- Differentiability along curves does not give the chart's Fréchet `C¹` regularity:
+  for `N(u) = sin u` on `L²(0,1)`, the sequence `u_n = π1_{(0,1/n)}` has norm
+  `π/√n → 0` but derivative operators at distance `2` from the derivative at `0`,
+  and relative linearisation error `1` (§9.5, Checks). The operator-norm condition of
+  §§9.5–10.2 excludes this model before the inverse function theorem is used.
 - The cross `{x₁² = x₂²}` in `ℝ²` is not one: removing `0` from a small neighbourhood of `0` in it leaves four
   components, while removing a point from a connected open subset of a line leaves two and of the plane one, and a
   neighbourhood is not a point; so no chart exists at `0`.
@@ -2018,8 +2216,8 @@ No regularity beyond `C¹` is asserted (lines 3295–3296).
 
 *Needs:* Mathlib `Submodule.ClosedComplemented`, `ContDiff`, `Manifold.IsSmoothEmbedding`, `Manifold.IsImmersion`
 with `Manifold.IsImmersion.isDiffImmersionAt`, `TopologicalSpace.Opens.instChartedSpace`,
-`ContDiffAt.toOpenPartialHomeomorph`, `ContDiffAt.to_localInverse`; PDE §3.2 (weak maximum principle), §7.1, §7.3
-(the product bound); 8.2, 10.2, 10.3.
+`ContDiffAt.toOpenPartialHomeomorph`, `ContDiffAt.to_localInverse`; PDE §3.2 (weak maximum principle);
+8.1 (homogeneous product bounds), 8.2, 10.2, 10.3.
 
 ### 10.5 Tangent spaces and the nonlinear div–curl decomposition
 
@@ -2041,7 +2239,7 @@ Route for the `Ḣ^σ` bound, `−1 < σ < 1` (OhTataru-YMHF line 3381–3385): 
 curl-free because `A_∞ = 0` for caloric `a`. So `W(∞) = −∇c` with `c = −Δ⁻¹∂^ℓW(∞)_ℓ` and
 `‖c‖_{Ḣ^{σ+1}} ≈ ‖W(∞)‖_{Ḣ^σ}`. Put `b = w + D(a)c`. The linearised flow of `D(a)c` is `D(A(s))c`, by the
 residual freedom of 9.1, and it tends to `∇c`, so the flow of `b` tends to `W(∞) + ∇c = 0`. Finally `[a, c]`
-is bounded in `Ḣ^σ` by the product bound of 9.5's route.
+is bounded in `Ḣ^σ` by §8.1's homogeneous product bound.
 
 Define the bundle of caloric initial data sets `T^{L²}𝒞 = {(a, b) ∈ ℋ × L² : a ∈ 𝒞, b ∈ T^{L²}_a𝒞}`
 (OhTataru-Threshold line 920–925), equal to `{(a, Π_a w) : a ∈ 𝒞, w ∈ L²}`.
@@ -2053,7 +2251,7 @@ Define the bundle of caloric initial data sets `T^{L²}𝒞 = {(a, b) ∈ ℋ ×
 - `w = D(a)c₀` with `c₀ ∈ Ḣ¹`: `b = 0` and `c = −c₀`, so `Π_a` kills the linearised gauge directions.
 - `w ∈ T^{L²}_a𝒞`: `c = 0` and `Π_a w = w`.
 
-*Needs:* PDE §7.1, §7.3 (the product bound); 8.2, 9.1, 9.5, 10.2–10.4.
+*Needs:* 8.1 (homogeneous product bounds), 8.2, 9.1, 9.5, 10.2–10.4.
 
 ### Examples
 
@@ -2062,8 +2260,7 @@ projection; pure gauges, which `Cal` sends to `0`.
 
 ### Dependencies
 
-Layers 8–9; Layer 7 for the subthreshold existence of `Cal`; PDE §7.1 and §7.3 for the product bounds in 10.4 and
-10.5; PDE §3.2 for the uniqueness step of 10.4.
+Layers 8–9; Layers 3–4 for 10.1; Layer 7 for the subthreshold existence of `Cal`; §8.1 for the homogeneous product bounds in 10.4–10.5; PDE §3.2 for the uniqueness step of 10.4.
 
 ## Downstream consumers
 
@@ -2100,6 +2297,9 @@ Layers 8–9; Layer 7 for the subthreshold existence of `Cal`; PDE §7.1 and §7
   Springer 1991, Ch. 1–3; cited by locator.
 - `DonaldsonKronheimer`: S. K. Donaldson, P. B. Kronheimer, *The Geometry of Four-Manifolds*, Oxford 1990,
   Ch. 2–4; cited by locator.
+- `BahouriCheminDanchin-FourierAnalysis`: H. Bahouri, J.-Y. Chemin, R. Danchin,
+  *Fourier Analysis and Nonlinear Partial Differential Equations*, Springer 2011,
+  Definition 2.68, Proposition 2.71 and Theorems 2.82, 2.85; cited by locator.
 - `Bogomolnyi-Stability`: E. B. Bogomol'nyi, *The stability of classical solutions*, Sov. J. Nucl. Phys. 24
   (1976); cited by locator.
 - `MimuraToda-TopologyLieGroups`: M. Mimura, H. Toda, *Topology of Lie Groups, I and II*, AMS 1991,

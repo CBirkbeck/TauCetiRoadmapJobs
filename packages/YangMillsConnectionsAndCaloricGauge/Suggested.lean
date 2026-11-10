@@ -33,20 +33,22 @@ analytic or geometric carriers, rather than unspecified predicates for their con
   would omit the critical weak hypotheses of these headlines.
 * Layer 8, homogeneous covariant elliptic invertibility (§8.2) and parabolic estimates
   with decay (§§8.3–8.4): TauCeti.D1p0 supplies the scalar first-order space Ḣ¹(ℝ⁴), but
-  the realised fractional spaces Ḣ^σ and Ẇ^{σ,p}, the Besov spaces ℓ¹L² and ℓ²L¹Ḣ^σ, and
-  the covariant operators on those distribution spaces are missing. Inhomogeneous scalar
+  the realised fractional spaces Ḣ^σ and Ẇ^{σ,p}, the Besov spaces ℓ¹L² and ℓ²L¹Ḣ^σ,
+  the homogeneous product maps, and the covariant operators on those distribution spaces are missing. Inhomogeneous scalar
   Wkp, Mathlib's inhomogeneous Bessel-potential scale and an abstract semigroup do not
   identify these spaces or these operators.
 * Layer 9, local well-posedness, stability and continuation (§§9.3–9.4), flat limits of
   the nonlinear and linearised flows (§9.5), the Dichotomy Theorem (§9.6), and the
   Threshold Theorem (§9.7): missing the local-caloric solution carrier on the critical
   connection space (coefficientwise TauCeti.D1p0), its weak curvature, maximal lifespan
-  and caloric size, and the harmonic-bubble convergence interface. These constructions cannot be a short bundle
+  and caloric size, the linearised limit operators with their operator-norm topology,
+  and the harmonic-bubble convergence interface. These constructions cannot be a short bundle
   of native data or a free Prop-valued field.
 * Layer 10, flat connections as pure gauges and the caloric-gauge theorem (§§10.1–10.2),
   caloric bounds and the C¹ split caloric manifold (§§10.3–10.4), and tangent spaces
   with the nonlinear div–curl decomposition (§10.5): missing the Banach space ℋ,
-  the caloric subset, and the linearised heat-flow solution and limit operators.
+  the caloric subset, the Banach space of continuous matrix functions vanishing at infinity
+  with derivative in Ḣ¹ used for normalised gauges, and the linearised heat-flow solution and limit operators.
   Manifold.IsSmoothEmbedding supplies the chart predicate, but not those carriers.
 
 The README states all these targets, their hypotheses, supplier contracts, APIs and Checks.
