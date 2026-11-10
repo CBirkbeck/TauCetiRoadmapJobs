@@ -1,0 +1,13 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-RandomMatrices~7",
+  "head": "0df60c1a2e324537a3b6c4f5fa9e9a76702364a6",
+  "pr": 1971,
+  "folder": "RandomMatrices",
+  "date": "2026-11-10",
+  "findings": 10,
+  "blocking": 3,
+  "notes": "incremental re-review of 122 changed lines since 5d55d20. Checked: the eight previous findings (R01, R02, R05, R06, R08 not repaired; R03, R04, R07 partly), README section 8.4 and the new Layer 8 section of Suggested.lean (six declarations: #check, one-tactic probe, three elaborated controls, normalisation against AGZ Theorems 3.1.1, 3.1.4, 3.1.5 and Exercise 3.7.5), SpecialFunctionsAiry ids on main, the description. Gate run at the head: fails on dropped=10 and depcheck=1 (UPWARD to StochasticCalculus), all else 0; lake env lean exits 0 with 13 sorry warnings. Two new P3 findings in the added text (bulk-gap locator covers E = 0 only; the wrong-model sentence of the new F2 Check)."
+ }
+}
