@@ -28,7 +28,9 @@
      "prerequisites": [
       "roadmap:SchemeAndStackFoundations §1.19",
       "roadmap:SchemeAndStackFoundations §1.20",
-      "roadmap:SchemeAndStackFoundations §4.13",
+      "tauceti:TauCeti.AlgebraicGeometry.IsRegular",
+      "tauceti:TauCeti.AlgebraicGeometry.IsRegular.of_smooth",
+      "tauceti:TauCeti.AlgebraicGeometry.IsRegular.of_flat_of_surjective",
       "mathlib:AlgebraicGeometry.IsReduced",
       "mathlib:AlgebraicGeometry.IsLocallyNoetherian",
       "gap:reduced-regular-smooth-local"
@@ -47,7 +49,7 @@
       {
        "name": "locallyNoetherian_iff",
        "role": "compatibility",
-       "statement": "For P locally Noetherian the notion is SchemeAndStackFoundations §1.20's locally Noetherian stack; for schemes it is Mathlib IsReduced / IsLocallyNoetherian and §4.13 IsRegular."
+       "statement": "For P locally Noetherian the notion is SchemeAndStackFoundations §1.20's locally Noetherian stack; for schemes it is Mathlib IsReduced / IsLocallyNoetherian and Tau Ceti TauCeti.AlgebraicGeometry.IsRegular."
       },
       {
        "name": "regular_reduced",
@@ -230,14 +232,14 @@
      "id": "0.4",
      "kind": "definition",
      "name": "Stacks.infinitesimalNeighbourhood",
-     "statement": "Closed substacks of X correspond bijectively and inclusion-reversingly to quasi-coherent ideals of O_X; V(I) x_X Y = V(I O_Y) for every Y -> X. The n-th infinitesimal neighbourhood of a closed substack Z with ideal I is V(I^{n+1}).",
+     "statement": "Closed substacks of X correspond bijectively and inclusion-reversingly to quasi-coherent ideals of O_X (subobjects of O_X in the abelian category Stacks.QCoh X), the ideal of Z being the kernel in Stacks.QCoh X of O_X -> i_* O_Z (quasi-coherent pushforward); V(I) x_X Y = V(I O_Y) for every Y -> X, with images taken in Stacks.QCoh Y. The n-th infinitesimal neighbourhood of a closed substack Z with ideal I is V(I^{n+1}).",
      "hypotheses": [
       "X an algebraic stack",
       "I a quasi-coherent ideal in SchemeAndStackFoundations §1.22's Stacks.QCoh X"
      ],
      "locator": {
       "source": "stacks-04XE",
-      "where": "Lemma 100.9.11, lines 872-888, with stacks-sheaves-on-stacks lines 953-955 (Proposition 96.14.3) and ahr2020 lines 248-252 (§1.5)"
+      "where": "Lemma 100.9.11, lines 872-888, with stacks-sheaves-on-stacks lines 953-955 (Proposition 96.14.3) and 1068-1073 (Lemma 96.15.1 (1)-(3): QCoh abelian, inclusion into all modules not exact) and ahr2020 lines 248-252 (§1.5)"
      },
      "prerequisites": [
       "target:0.3",
@@ -250,12 +252,12 @@
       {
        "name": "closedSubstackEquivIdeal",
        "role": "construction",
-       "statement": "Z |-> ker(O_X -> i_* O_Z) and I |-> V(I) are inverse bijections."
+       "statement": "Z |-> ker(O_X -> i_* O_Z), the kernel taken in the abelian category Stacks.QCoh X (on a presentation [U/R] the R-invariant ideal of U x_X Z), and I |-> V(I) are inverse bijections; the kernel among all fppf O_X-modules is not quasi-coherent."
       },
       {
        "name": "factor_iff",
        "role": "lemma",
-       "statement": "x : T -> X factors through V(I) iff the image of x^* I -> O_T is zero."
+       "statement": "x : T -> X from a scheme factors through V(I) iff the map x^* I -> O_T of quasi-coherent O_T-modules is zero."
       },
       {
        "name": "neighbourhood_chain",
@@ -288,6 +290,11 @@
        "name": "ideal_not_radical",
        "kind": "characterisation",
        "statement": "The ideal of V((t^2)) is (t^2), not (t); a support-only correspondence fails."
+      },
+      {
+       "name": "kernel_in_QCoh",
+       "kind": "non-example",
+       "statement": "For A^1_k and the origin, the fppf-module kernel of O_X -> i_* O_Z is (t) over A^1 and 0 over Spec k at the origin, while (t) pulls back to k t there: not quasi-coherent; the QCoh kernel is the module of (t), whose value k t over the origin maps to 0 in k."
       }
      ]
     },
@@ -1467,8 +1474,13 @@
       "target:2.5",
       "target:3.4",
       "target:5.1",
+      "target:3.5",
+      "target:4.1",
+      "target:4.3",
+      "target:4.4",
       "mathlib:AlgebraicGeometry.Scheme.residueField",
-      "gap:decent-algebraic-spaces"
+      "gap:decent-algebraic-spaces",
+      "gap:stack-separation-axioms"
      ],
      "api": [
       {
@@ -1489,7 +1501,7 @@
       {
        "name": "existence_cases",
        "role": "lemma",
-       "statement": "Quasi-separated stacks, locally Noetherian decent stacks, and finite type points of decent stacks have residual gerbes that are gerbes over their residue field."
+       "statement": "Quasi-separated stacks (decent by 5.1; quasi-compact inertia, so 4.3), locally Noetherian decent stacks (4.4), and finite type points of decent stacks (4.1) have residual gerbes that are gerbes over their residue field."
       }
      ],
      "tests": [
@@ -1784,15 +1796,15 @@
      "id": "6.4",
      "kind": "theorem",
      "name": "Stacks.residualGerbe_rationalPoint",
-     "statement": "For X over Spec k and a section x in X(k) with Z_x existing, Spec k -> base is an isomorphism and Z_x ≃ BG_x; if X is locally of finite type over k, Z_x exists and Z_x ≃ BG_x; if moreover x is closed, BG_x -> X is a closed immersion.",
+     "statement": "For an algebraic stack X with p : X -> Spec k and a section x in X(k) (p x = id): x is locally of finite type by cancellation (Lemma 101.17.8), so Z_x exists (4.1); Spec k -> base of Z_x is an isomorphism and Z_x ≃ BG_x; if moreover X is locally Noetherian (for instance locally of finite type over k) and x is closed, BG_x -> X is a closed immersion (4.5).",
      "hypotheses": [
-      "p : X -> Spec k",
+      "p : X -> Spec k, X an algebraic stack",
       "x : Spec k -> X with p x = id",
-      "Z_x exists (automatic if X is locally of finite type over k)"
+      "for the closed-immersion clause: X locally Noetherian and x a closed point"
      ],
      "locator": {
       "source": "alper-moduli",
-      "where": "Proposition 4.5.16 (2), lines 6998-6999 and 7017-7024; ahr2020 lines 476-478"
+      "where": "Proposition 4.5.16 (2), lines 6998-6999 and 7017-7024; ahr2020 lines 476-478; stacks-06RD lines 1527-1528 (Lemma 101.17.8, cancellation)"
      },
      "prerequisites": [
       "target:0.2",
@@ -1820,6 +1832,11 @@
        "name": "needs_section",
        "kind": "non-example",
        "statement": "Spec k -> Spec kappa with k/kappa finite nontrivial: Z_x = Spec kappa, BG_x = Spec k."
+      },
+      {
+       "name": "nonFiniteType",
+       "kind": "degenerate",
+       "statement": "Spec k[x_0, x_1, ...] is not lft over k, yet the origin is lft (a closed immersion, not lfp) and Z_x = Spec k = BG_x; on [Spec k[x_0, x_1, ...]/G_m] the origin gives Z_x = B G_m = BG_x."
       }
      ]
     }
@@ -2047,8 +2064,9 @@
       "target:6.4",
       "target:7.2",
       "target:7.3",
+      "roadmap:SchemeAndStackFoundations §1.20",
       "roadmap:SchemeAndStackFoundations §1.21",
-      "roadmap:ReductiveGroups Layer 3A"
+      "mathlib:AlgebraicGeometry.Scheme.IdealSheafData.vanishingIdeal"
      ],
      "api": [],
      "tests": [
@@ -2100,7 +2118,7 @@
     "§4.12",
     "§4.13"
    ],
-   "what": "Algebraic spaces and their points, group spaces, groupoids, stabilizers, torsors, Artin's bootstrap, stacks in groupoids, algebraic and DM stacks, inertia, SmoothLocal properties, |X|, quotient stacks, quasi-coherent modules and their description on a presentation (QCoh(BG) as comodules through QCoh.presentationEquiv), the moduli functor, generic flatness and regular schemes."
+   "what": "Algebraic spaces and their points, group spaces, groupoids, stabilizers, torsors, Artin's bootstrap, stacks in groupoids, algebraic and DM stacks, inertia, SmoothLocal properties, |X|, quotient stacks, quasi-coherent modules and their description on a presentation (QCoh(BG) as comodules through QCoh.presentationEquiv), the moduli functor, generic flatness, and (through gap:reduced-regular-smooth-local) the smooth locality of reducedness and of regularity of algebraic spaces; regular schemes themselves are Tau Ceti's."
   },
   {
    "roadmap": "AlgebraicModuliForArithmeticGeometry",
@@ -2115,10 +2133,9 @@
    "roadmap": "ReductiveGroups",
    "sections": [
     "Layer 1",
-    "Layer 3",
-    "Layer 3A"
+    "Layer 3"
    ],
-   "what": "Representations as comodules (Layer 1), orbits of algebraic actions (Layer 3A), and the representability of quotients G/H by closed subgroups as smooth schemes of dimension dim G - dim H (Layer 3, gap:homogeneous-quotient-scheme)."
+   "what": "Representations as comodules (Layer 1) and the representability of quotients G/H by closed subgroups as smooth schemes of dimension dim G - dim H (Layer 3, gap:homogeneous-quotient-scheme)."
   }
  ],
  "consumers": [
@@ -2214,7 +2231,8 @@
     "0.2",
     "1.4",
     "3.4",
-    "5.1"
+    "5.1",
+    "5.3"
    ],
    "detail": "Stacks, Morphisms of Stacks, Definitions 101.4.1-101.4.2, Lemmas 101.4.3, 101.4.4, 101.4.10, 101.4.11, 101.6.1 (stacks-06RD lines 216-345, 637-657). DM stacks are SchemeAndStackFoundations §1.19's IsDeligneMumford with .iff_unramified_diagonal.",
    "needs": "SchemeAndStackFoundations §1.20 must define DM, quasi-DM and quasi-separated morphisms and quasi-DM and quasi-separated stacks by the diagonal (DM stacks being §1.19's IsDeligneMumford), with their implications, base change, composition, Lemma 101.4.11 and the diagonal-inertia comparison Lemma 101.6.1.",
@@ -2333,15 +2351,15 @@
   },
   {
    "slug": "reduced-regular-smooth-local",
-   "title": "Reducedness and regularity are smooth local and descend",
+   "title": "Reducedness over an arbitrary base and reducedness and regularity of algebraic spaces are smooth local and descend",
    "neededBy": [
     "0.1",
     "0.5",
     "3.1",
     "3.4"
    ],
-   "detail": "Stacks, Descent, Lemmas 35.18.1, 35.18.4, 35.19.1-35.19.2; Descent on Spaces, Lemmas 74.9.2, 74.9.4; Spaces over Fields, Lemma 72.16.1 (cited at stacks-04XE lines 657-665 and stacks-06ML lines 1164-1166, 1314-1318).",
-   "needs": "SchemeAndStackFoundations §4.13 must prove that reducedness and regularity are local in the smooth topology and descend along flat (respectively flat locally finitely presented) surjections for schemes and algebraic spaces, and that smooth algebraic spaces over a field are regular.",
+   "detail": "Stacks, Descent, Lemmas 35.18.1 and 35.19.1 (stacks-descent lines 2277, 2320-2321); Descent on Spaces, Lemmas 74.9.2, 74.9.4, 74.9.5 (stacks-spaces-descent lines 424-425, 442-443, 451-452); Spaces over Fields, Lemma 72.16.1 (stacks-spaces-over-fields lines 1213-1214); cited at stacks-04XE lines 657-665 and stacks-06ML lines 1164-1166, 1314-1318. At the pins: regularity of schemes is Tau Ceti TauCeti.AlgebraicGeometry.IsRegular (Scheme/Regular/Scheme.lean:68, extends IsLocallyNoetherian), IsRegular.of_smooth (:90) and IsRegular.of_flat_of_surjective (Scheme/Regular/Descent.lean:56, target locally Noetherian); smooth ascent of reducedness to a locally Noetherian base is Mathlib AlgebraicGeometry.GeometricallyReduced.isReduced_of_flat_of_isLocallyNoetherian (Geometrically/Reduced.lean:109) with Tau Ceti TauCeti.AlgebraicGeometry.Smooth.geometricallyReduced (Morphisms/Smooth/GeometricallyReduced.lean:56). None of these is asked for.",
+   "needs": "SchemeAndStackFoundations §4.13 must prove that reducedness of schemes is local in the smooth topology over an arbitrary base and descends along flat surjections (Descent 35.18.1, 35.19.1); that reducedness of algebraic spaces ascends along smooth morphisms and descends along flat surjections, and regularity of algebraic spaces ascends along smooth morphisms and descends along flat surjective locally finitely presented morphisms (Descent on Spaces 74.9.2, 74.9.4, 74.9.5); and that a smooth algebraic space over a field is regular (Spaces over Fields 72.16.1), regularity of schemes being Tau Ceti's and not asked for.",
    "supplier": "SchemeAndStackFoundations",
    "section": "§4.13"
   },
