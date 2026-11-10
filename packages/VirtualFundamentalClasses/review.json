@@ -1,10 +1,10 @@
 {
   "review": {
     "status": "needs_changes",
-    "reviewer": "independent-review-REV-PKG-VirtualFundamentalClasses",
+    "reviewer": "independent-review-REV-PKG-VirtualFundamentalClasses~2",
     "date": "2026-11-10",
-    "findings": 15,
-    "blocking": 13,
-    "notes": "Read all 53 target subsections, conventions, Needs lines and supplier contracts; checked all 15 seeded targets against cached sources and recorded computed adversarial values for the sample, headlines and findings. Open-work ownership conflict with PR #1996 and curve-map overlap with #1998. Pin/source/legacy supplier mappings inspected. Prescribed Lean elaboration passed with exit 0 and no warnings; zero declarations, hence exhaustive padding and signature audits have empty domains. Dependency check: 233 roadmaps, 2091 edges, 0 problems. Gillet 1984 and Fulton 1998 remain settled uncertified sources. Author files and manifest unchanged."
+    "findings": 10,
+    "blocking": 8,
+    "notes": "Audited all 15 prior findings, all 53 README targets using fresh changed/sample checks and the prior computed rows, all 15 seeded source targets, headline coverage, supplier citations, pinned declarations and open-work overlaps. Ten findings: five P1, three P2 and two P3. Lean elaboration exited 0 without diagnostics; zero declarations make the exhaustive padding and binder probes empty. Dependency check: 236 roadmaps, 2133 edges, 0 problems. Two manifest sources remain settled uncertified. Prior R02's human ownership decision was not re-raised."
   }
 }
