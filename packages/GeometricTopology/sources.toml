@@ -492,7 +492,6 @@ authors = "Lenhard Ng"
 title = "Knot and braid invariants from contact homology I"
 year = 2005
 venue = "Geometry & Topology 9"
-version_note = "author's copy; the section number is that of this file"
 locator_scheme = "section"
 locator = "§8.6"
 url = "https://sites.math.duke.edu/~ng/math/papers/knotI.pdf"
@@ -502,6 +501,7 @@ sha256 = "4590aeb8bbc71bebe99c4d4bae21b095a64ce640e490a4807c0e6eacf3430aee"
 licence_class = "author-page"
 status = "certified"
 accessed = "2026-11-08"
+version_note = "author's copy; the section number is that of this file"
 cited_for = ["4.6.1"]
 
 [[source]]
@@ -510,7 +510,6 @@ authors = "Louis H. Kauffman"
 title = "An invariant of regular isotopy"
 year = 1990
 venue = "Transactions of the American Mathematical Society 318"
-version_note = "author's copy, an image-only scan whose text is not extracted; cited for the skein and curl convention of the regular-isotopy polynomial"
 locator_scheme = "section"
 locator = "the skein relation of the regular-isotopy polynomial and its curl convention"
 url = "https://homepages.math.uic.edu/~kauffman/IRH.pdf"
@@ -520,6 +519,7 @@ sha256 = "010e66f628bf5c91ebca1b778bd3398983f4ae378ff0714d207d91c08e99ecbe"
 licence_class = "author-page"
 status = "certified"
 accessed = "2026-11-08"
+version_note = "author's copy, an image-only scan whose text is not extracted; cited for the skein and curl convention of the regular-isotopy polynomial"
 cited_for = ["4.6.1"]
 
 [[source]]
@@ -545,7 +545,6 @@ authors = "Danny Calegari"
 title = "Foliations and the Geometry of 3-Manifolds"
 year = 2007
 venue = "Oxford Mathematical Monographs, Oxford University Press"
-version_note = "author's copy of the Oxford edition; theorem and section numbers are those of this file"
 locator_scheme = "theorem"
 locator = "Theorem 4.5"
 url = "https://math.uchicago.edu/~dannyc/books/foliations/oupbook.pdf"
@@ -555,6 +554,7 @@ sha256 = "4827ccafc1cc5b532529d083e6bd89c0895a34ed50d9411e22aa7404cd7b402a"
 licence_class = "author-page"
 status = "certified"
 accessed = "2026-11-08"
+version_note = "author's copy of the Oxford edition; theorem and section numbers are those of this file"
 cited_for = ["10.1", "10.2"]
 
 [[source]]
@@ -575,6 +575,71 @@ status = "certified"
 accessed = "2026-11-08"
 version_note = "arXiv v2"
 cited_for = ["6.4"]
+
+[[source]]
+id = "piccirillo2019"
+authors = "Lisa Piccirillo"
+title = "Shake genus and slice genus"
+year = 2018
+venue = "Geom. Topol. 23 (2019) 2665-2684"
+doi = "10.2140/gt.2019.23.2665"
+arxiv = "1803.09834v2"
+locator_scheme = "theorem"
+locator = "Theorem 1.1 and Corollary 1.2"
+url = "https://arxiv.org/abs/1803.09834v2"
+fetched_from = "https://arxiv.org/pdf/1803.09834v2"
+fetched_at = "2026-11-09T01:26:44Z"
+sha256 = "e4fca90909dcd10d8b57a0cfe0e32cf946aaaf50450c94bf299232bd05092d0d"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-09"
+version_note = "arXiv v2; the theorem and corollary numbers are those of this version"
+cited_for = ["Scope and ownership"]
+
+[[source]]
+id = "lickorish1997"
+authors = "W. B. Raymond Lickorish"
+title = "An Introduction to Knot Theory"
+year = 1997
+venue = "Graduate Texts in Mathematics"
+doi = "10.1007/978-1-4612-0691-0"
+locator_scheme = "theorem"
+locator = "Proposition 16.10, p. 187; Chapter 1, pp. 2-4"
+url = "https://doi.org/10.1007/978-1-4612-0691-0"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["4.3", "4.4", "4.5", "6.1", "6.2", "6.3"]
+
+[[source]]
+id = "ratcliffe2019"
+authors = "John G. Ratcliffe"
+title = "Foundations of Hyperbolic Manifolds"
+year = 2019
+venue = "Graduate Texts in Mathematics"
+doi = "10.1007/978-3-030-31597-9"
+locator_scheme = "theorem"
+locator = "Theorem 11.8.5 and Corollary 1, p. 594"
+url = "https://doi.org/10.1007/978-3-030-31597-9"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["7.2"]
+
+[[source]]
+id = "moise1977"
+authors = "Edwin E. Moise"
+title = "Geometric Topology in Dimensions 2 and 3"
+year = 1977
+venue = "Graduate Texts in Mathematics"
+doi = "10.1007/978-1-4612-9906-6"
+locator_scheme = "theorem"
+locator = "Theorems 35.3, 36.2 and 36.4"
+url = "https://doi.org/10.1007/978-1-4612-9906-6"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["10.4", "11.2", "12.3"]
 
 [[source]]
 id = "thurston-gt3m"
