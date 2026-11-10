@@ -11,7 +11,9 @@ other target, the API lists and the Checks.
 The headline theorems, all stated below:
 
 * `polynomialGraph_coeff` (README §1.2): Kronecker substitution with a base exceeding every
-  exponent preserves every coefficient;
+  exponent preserves every coefficient; this specialises Tau Ceti's general coefficient theorem
+  `MvPolynomial.coeff_aeval_X_pow_weight` to the weights `B^i`, the added step being injectivity
+  of the base-`B` weight on exponent vectors with entries `< B`;
 * `exists_avoiding_graph` (README §1.3): a nonzero polynomial in `m > 0` variables pulls back to
   a nonzero polynomial along a Kronecker graph, which is a closed immersion of the affine line;
 * `exists_marked_etale_curve` (README §2.3): the marked étale curve over a fixed étale chart;
@@ -36,7 +38,9 @@ noncomputable section
 
 /-- The **Kronecker substitution** `k[X_0, …, X_{m-1}] → k[T]`, `X_i ↦ T^(B^i)`, the identity on
 coefficients. Variables are numbered from zero, so `X_0 ↦ T`. Its spectrum is the graph
-`a_B : 𝔸¹_k → 𝔸^m_k`, `T ↦ (T, T^B, …, T^(B^(m-1)))`. -/
+`a_B : 𝔸¹_k → 𝔸^m_k`, `T ↦ (T, T^B, …, T^(B^(m-1)))`. It is the ring map underlying
+`MvPolynomial.aeval (fun i ↦ T ^ (B ^ i))`, Tau Ceti's Kronecker substitution
+(`TauCeti/RingTheory/MvPolynomial/Kronecker.lean`) for the weight `i ↦ B ^ i`. -/
 def polynomialGraph (k : Type*) [CommRing k] (m B : ℕ) :
     MvPolynomial (Fin m) k →+* Polynomial k :=
   MvPolynomial.eval₂Hom Polynomial.C fun i => Polynomial.X ^ (B ^ (i : ℕ))
@@ -44,7 +48,10 @@ def polynomialGraph (k : Type*) [CommRing k] (m B : ℕ) :
 /-- **Coefficients survive bounded Kronecker substitution.** Over any commutative ring, if every
 exponent `d_i` of every monomial in the support of `h` is `< B`, then for every exponent vector
 `e` with all `e_i < B` the coefficient of `T^(Σ e_i B^i)` in the substituted polynomial is the
-coefficient of `X^e` in `h`. In particular a nonzero `h` has a nonzero image. -/
+coefficient of `X^e` in `h`. In particular a nonzero `h` has a nonzero image. This is Tau Ceti's
+`MvPolynomial.coeff_aeval_X_pow_weight` for the weight `i ↦ B ^ i` on the box of exponent vectors
+with entries `< B`; what it adds is the injectivity of that weight on the box (uniqueness of
+base-`B` digits for `B ≥ 2`; the box is a subsingleton for `B ≤ 1`). -/
 theorem polynomialGraph_coeff {k : Type*} [CommRing k] {m B : ℕ} (h : MvPolynomial (Fin m) k)
     (hh : ∀ d ∈ h.support, ∀ i, d i < B) (e : Fin m →₀ ℕ) (he : ∀ i, e i < B) :
     (polynomialGraph k m B h).coeff (Finsupp.weight (fun i : Fin m => B ^ (i : ℕ)) e) =

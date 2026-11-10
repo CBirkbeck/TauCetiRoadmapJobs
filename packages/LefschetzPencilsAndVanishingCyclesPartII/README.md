@@ -9,10 +9,11 @@ an affine curve `C` over `k`, smooth of relative dimension one and geometrically
 The point `y` may lie outside `U`, the good open `g⁻¹(U)` need not contain any rational point, and
 nothing is assumed of `Y` away from `V`. Over `k = 𝔽_q` both marked residue fields are `𝔽_q`, so a
 lisse sheaf on `Y` has the same Frobenius at `c` and at `y`, with no passage to a power of
-Frobenius. The proof is elementary and local. Layer 1 builds the Kronecker substitution
-`X_i ↦ T^(B^i)` (`polynomialGraph`), proves that a base `B` exceeding every exponent preserves
-every coefficient (`polynomialGraph_coeff`), and deduces that the graph
-`a_B : 𝔸¹_k → 𝔸^m_k` through the origin meets the complement of any given hypersurface
+Frobenius. The proof is elementary and local. Layer 1 specialises Tau Ceti's Kronecker
+substitution to the weights `X_i ↦ T^(B^i)` (`polynomialGraph`), deduces from Tau Ceti's
+coefficient theorem and the uniqueness of base-`B` digits that a base `B` exceeding every exponent
+preserves every coefficient (`polynomialGraph_coeff`), and concludes that over the field `k` the
+graph `a_B : 𝔸¹_k → 𝔸^m_k` through the origin meets the complement of any given hypersurface
 (`exists_avoiding_graph`). Layer 2 takes an étale chart `π : V → 𝔸^m_k` at `y`, encloses the
 boundary `V ∖ U` in a hypersurface `V(h)` of `𝔸^m_k`, pulls the graph `a_B` back along `π`, and keeps
 the connected component through the marked point (`exists_marked_etale_curve`). This supplies the
@@ -46,9 +47,11 @@ target here.
 
 **This roadmap owns**
 
-- the Kronecker substitution `polynomialGraph` with its normalisation API, coefficient
-  preservation under a base exceeding every exponent, surjectivity for `m > 0`, and the avoiding
-  graph (Layer 1);
+- the base-`B` Kronecker substitution `polynomialGraph` in `m` variables (Tau Ceti's substitution
+  for the weight `i ↦ B^i`, as the ring map whose spectrum is the graph `a_B`) with its
+  normalisation API; the bounded-base coefficient theorem `polynomialGraph_coeff`, whose own step
+  is the injectivity of the base-`B` weight on exponent vectors with entries `< B`; surjectivity
+  for `m > 0`; and the avoiding graph (Layer 1);
 - the boundary polynomial of an étale chart: a proper closed subset of an integral affine scheme
   étale over `𝔸^m_k` maps into a hypersurface (§2.1);
 - the marked component of the pullback of a Kronecker graph along an étale chart, with its API and
@@ -56,12 +59,17 @@ target here.
 - the same-field curve through a smooth rational point, including the zero-dimensional case and
   the residue-field identity at the marks (§2.4).
 
-The Kronecker substitution is owned here because no pinned library or roadmap states it as a
-map with a coefficient theorem: Mathlib's Noether normalisation (`Mathlib/RingTheory/NoetherNormalization.lean`)
-uses the same base-`B` separation of exponents only through private lemmas about the different
-substitution `X_i ↦ X_i + X_0^(r_i)`. The boundary polynomial (§2.1) is owned here because
-SchemeAndStackFoundations §0.8 states étale coordinates without any statement about images of
-closed subsets; the route of §2.1 is algebraic and needs no dimension theory.
+The Kronecker substitution for an arbitrary weight, with its coefficient and injectivity
+theorems, is Tau Ceti's (below); this roadmap does not restate it. Owned here is only its
+specialisation to the explicit weights `B^i` in `m` variables, which makes the graph `a_B`
+explicit (first coordinate `T`, so for `m > 0` a closed immersion, through the origin when
+`B ≥ 1`) and its base computable from the exponents of `h`, together with the injectivity of that
+weight on the box of exponent vectors with entries `< B`. Mathlib's Noether normalisation
+(`Mathlib/RingTheory/NoetherNormalization.lean`) uses the same digit argument only inside private
+lemmas about the different substitution `X_i ↦ X_i + X_0^(r_i)`. The boundary polynomial (§2.1)
+is owned here because SchemeAndStackFoundations §0.8 states étale coordinates without any
+statement about images of closed subsets; the route of §2.1 is algebraic and needs no dimension
+theory.
 
 **Owned elsewhere and consumed here.** Each object has one owner; this roadmap builds no second
 carrier.
@@ -73,23 +81,37 @@ carrier.
   33.25.4 (056T) and 33.25.10 (0CDW); Properties, Lemma 28.7.7 (033N)). The step "smooth and
   geometrically connected implies geometrically integral" is already Tau Ceti's instance
   `TauCeti.AlgebraicGeometry.Smooth.geometricallyIntegral`.
+- *The Kronecker substitution `X_s ↦ T^(e_s)` for an arbitrary weight `e`*: Tau Ceti
+  `MvPolynomial.coeff_aeval_X_pow_weight` (coefficients survive where the weight is injective),
+  `MvPolynomial.injOn_aeval_X_pow` (injectivity on polynomials supported there) and
+  `Finsupp.exists_injOn_weight` (module `TauCeti.RingTheory.MvPolynomial.Kronecker`), over any
+  commutative semiring and any type of variables. The two-variable power substitution
+  `Z ↦ X, W ↦ X^B` is ArithmeticInterpolationDeterminants §0.3 `powerSubstitution`; for `m = 2`,
+  `polynomialGraph k 2 B` is its underlying ring map, and the difference is that §1.2 here
+  bounds every exponent of `m` variables by `B`, while §0.3 there bounds only the `Z`-degree.
 - *Polynomial evaluation, base-`B` digits, weights*: Mathlib `MvPolynomial.eval₂Hom`,
-  `Nat.ofDigits_inj_of_len_eq`, `Nat.ofDigits_eq_sum_mapIdx`, `Nat.injOn_ofDigits`,
-  `Finsupp.weight`.
+  `MvPolynomial.aeval_def`, `Nat.ofDigits_inj_of_len_eq`, `Nat.ofDigits_eq_sum_mapIdx`,
+  `Nat.injOn_ofDigits`, `Finsupp.weight`.
 - *Scheme morphism properties*: Mathlib `Etale`, `Smooth`, `SmoothOfRelativeDimension`,
   `GeometricallyIntegral`, `IsClosedImmersion`, and the facts listed in the supplier contracts.
 - *Residue fields at sections*: Tau Ceti `TauCeti.AlgebraicGeometry.residueDegree_eq_one_of_section`
   and `TauCeti.AlgebraicGeometry.residueFieldMap_bijective_of_section` (module
   `TauCeti.AlgebraicGeometry.RationalPoint.Basic`).
 
-**Not in this roadmap.** Lefschetz pencils and Bertini theorems over finite fields (Poonen,
-*Bertini theorems over finite fields*, Theorem 3.3 and Corollary 3.4, p. 10, produce smooth
-subvarieties of a smooth quasi-projective, respectively projective geometrically integral,
-ambient variety through finitely many closed points, but do not make the subvariety meet a
-prescribed dense open, and Corollary 3.4 needs a projective ambient variety which a smooth chart
-of a stack does not provide); curves through singular points of local models; lifting rational
-points to smooth atlases of algebraic stacks; lisse sheaves, their stalks and Frobenius
-conjugacy classes; monodromy of universal hypersurface families; semistable potential maps.
+**Not in this roadmap.** Lefschetz pencils and Bertini theorems over finite fields. Poonen,
+*Bertini theorems over finite fields*, Corollary 3.4 (p. 10), gives inside a smooth projective
+geometrically integral variety over `𝔽_q` a smooth projective geometrically integral curve
+containing any finite set of closed points; adding to that set a closed point of a dense open `U`
+makes the curve meet `U`, and densely, since the curve is integral. What it does not reach is a
+smooth chart of a stack, which is in general affine and not projective, and whose closure in a
+projective space need not be smooth. Poonen's Theorem 3.3 (p. 10) does apply to a smooth
+quasi-projective `X`, giving a smooth hypersurface section `H ∩ X` through finitely many closed
+points, but for non-projective `X` it does not assert that `H ∩ X` is connected, so cutting down to
+a curve in this way need not put the marked point and the added point of `U` on one component.
+Also not here:
+curves through singular points of local models; lifting rational points to smooth atlases of
+algebraic stacks; lisse sheaves, their stalks and Frobenius conjugacy classes; monodromy of
+universal hypersurface families; semistable potential maps.
 
 ## Conventions
 
@@ -120,7 +142,8 @@ conjugacy classes; monodromy of universal hypersurface families; semistable pote
 ### From Mathlib
 
 - `MvPolynomial.eval₂Hom`, `MvPolynomial.eval₂Hom_C`, `MvPolynomial.eval₂Hom_X'`,
-  `MvPolynomial.eval₂Hom_monomial`, `MvPolynomial.comp_eval₂Hom`, `MvPolynomial.constantCoeff`,
+  `MvPolynomial.eval₂Hom_monomial`, `MvPolynomial.comp_eval₂Hom`, `MvPolynomial.aeval_def`
+  (`aeval f p = eval₂ (algebraMap R S) f p`), `MvPolynomial.constantCoeff`,
   `Polynomial.constantCoeff` (`Mathlib/Algebra/MvPolynomial/Eval.lean`,
   `Mathlib/Algebra/MvPolynomial/Basic.lean`, `Mathlib/Algebra/Polynomial/Coeff.lean`).
 - `Nat.ofDigits_inj_of_len_eq` (two digit lists of equal length with all digits `< b`, `1 < b`, and
@@ -163,6 +186,13 @@ conjugacy classes; monodromy of universal hypersurface families; semistable pote
 
 ### From Tau Ceti
 
+- `MvPolynomial.coeff_aeval_X_pow_weight` (module `TauCeti.RingTheory.MvPolynomial.Kronecker`):
+  over a commutative semiring, if `Finsupp.weight e` is injective on a set `S` of exponent vectors
+  containing the support of `f` and the vector `μ`, then the coefficient of `T^(weight e μ)` in
+  `aeval (fun s ↦ T^(e s)) f` is the coefficient of `X^μ` in `f`. Used in §1.2 with
+  `e = (i ↦ B^i)` and `S` the box of vectors with entries `< B`.
+- `MvPolynomial.injOn_aeval_X_pow` (same module): with `e` and `S` as above, the substitution is
+  injective on the polynomials supported in `S`. Used in §1.2.
 - `TauCeti.AlgebraicGeometry.Smooth.geometricallyIntegral` (module
   `TauCeti.AlgebraicGeometry.Morphisms.Smooth.GeometricallyIntegral`): a smooth, geometrically
   connected morphism is geometrically integral.
@@ -181,15 +211,19 @@ conjugacy classes; monodromy of universal hypersurface families; semistable pote
 
 ## How to read the build
 
-Layer 1 is commutative algebra over an arbitrary commutative ring: it defines the Kronecker
-substitution `polynomialGraph`, proves that a large base separates monomials so that coefficients
-survive (`polynomialGraph_coeff`), proves surjectivity for `m > 0`, and assembles these into a
-graph `𝔸¹ → 𝔸^m` that is a closed immersion and meets the complement of a given hypersurface
-(`exists_avoiding_graph`). Layer 2 is geometry over a field: it encloses the boundary of a dense
-open of an étale chart in a hypersurface (§2.1), forms the pullback of the avoiding graph along the
-chart and keeps the component through the marked point (§2.2), proves that this is a marked curve
-whose good open is nonempty and dense (§2.3), and reduces the general smooth rational point to a
-chart; in the zero-dimensional case the curve is a constant map from `𝔸¹_k` (§2.4).
+Layer 1 is commutative algebra over an arbitrary commutative ring: it defines the base-`B`
+Kronecker substitution `polynomialGraph`, proves from Tau Ceti's coefficient theorem and the
+uniqueness of base-`B` digits that a large base separates monomials so that coefficients survive
+(`polynomialGraph_coeff`), proves surjectivity for `m > 0`, and assembles these into a graph
+`𝔸¹ → 𝔸^m` that is a closed immersion along which a given nonzero polynomial `h` stays nonzero
+(`exists_avoiding_graph`). Over a field, and not over an arbitrary ring, this makes the graph meet
+the complement of the hypersurface `V(h)` in a nonempty dense open: over a ring with nilpotents a
+nonzero substituted polynomial can have empty principal open (§1.3). Layer 2 is geometry over a
+field: it encloses the boundary of a dense open of an étale chart in a hypersurface (§2.1), forms
+the pullback of the avoiding graph along the chart and keeps the component through the marked
+point (§2.2), proves that this is a marked curve whose good open is nonempty and dense (§2.3), and
+reduces the general smooth rational point to a chart; in the zero-dimensional case the curve is a
+constant map from `𝔸¹_k` (§2.4).
 
 ## Layer 1: Kronecker substitution and graphs avoiding a hypersurface
 
@@ -200,8 +234,10 @@ Throughout this layer `k` is a commutative ring and `m, B` are natural numbers.
 Define `polynomialGraph k m B : k[X_0, …, X_{m-1}] →+* k[T]` as Mathlib's `MvPolynomial.eval₂Hom`
 for the coefficient inclusion `Polynomial.C` and the values `X_i ↦ T^(B^i)`. Its spectrum is the
 graph `a_B : 𝔸¹_k → 𝔸^m_k`, `T ↦ (T, T^B, T^(B²), …, T^(B^(m−1)))`. The definition is total: it
-exists for `m = 0` and for `B = 0, 1`; the graph is a closed immersion only for `m > 0` (§1.3), and the curve construction uses `B ≥ 2`. Because indices
-start at zero, the first coordinate is `T^(B^0) = T`. *Needs:* Mathlib `MvPolynomial.eval₂Hom`.
+exists for `m = 0` and for `B = 0, 1`; the graph is a closed immersion for `m > 0` (§1.3), and for
+`m = 0` it is not one over a nontrivial ring; the curve construction uses `B ≥ 2`. Because indices
+start at zero, the first coordinate is `T^(B^0) = T`. *Needs:* Mathlib `MvPolynomial.eval₂Hom`,
+`MvPolynomial.aeval_def`.
 
 API:
 
@@ -210,14 +246,19 @@ API:
 - A monomial maps to a monomial: `a X^d ↦ C a · T^(w_B(d))`, with `w_B` the weight of Convention 3.
 - It is a `k`-algebra map: composed with the coefficient inclusion it is `Polynomial.C`, so the
   spectrum of `polynomialGraph` is a morphism over `Spec k`.
+- It is the ring map underlying `MvPolynomial.aeval (fun i ↦ T^(B^i))`, which is Tau Ceti's
+  Kronecker substitution for the weight `i ↦ B^i` (`MvPolynomial.aeval_def`, the algebra map
+  `k → k[T]` being `Polynomial.C`); Tau Ceti's theorems about that substitution therefore apply
+  to `polynomialGraph` without change.
 - For `B ≥ 1` it preserves the origin: evaluating the image at `T = 0` equals evaluating the
-  input at the origin, so `a_B(0) = 0`. For `B = 0` and `m ≥ 2` this fails, since then
-  `X_1 ↦ T^0 = 1`.
+  input at the origin, so `a_B(0) = 0`. For `B = 0`, `m ≥ 2` and `k` nontrivial this fails:
+  `X_1 ↦ T^0 = 1`, whose value at `T = 0` is `1`, while `X_1` vanishes at the origin.
 - For `m = 1` it is the identification `k[X_0] ≅ k[T]`, `X_0 ↦ T`, for every `B` including `0`.
 - It commutes with change of coefficients: for a ring map `k → K`, mapping coefficients and then
   substituting equals substituting and then mapping coefficients, with the same `m` and `B`.
-- For `m ≥ 2` it is not injective: `X_1 − X_0^B` lies in its kernel. This polynomial has an
-  exponent equal to `B`, so it does not contradict §1.2.
+- For `m ≥ 2` and `k` nontrivial it is not injective: `X_1 − X_0^B` is a nonzero element of its
+  kernel (its coefficient at `X_1` is `1`, since `X_1 ≠ X_0^B` for every `B`, `X_0^0 = 1`
+  included). This polynomial has an exponent equal to `B`, so it does not contradict §1.2.
 
 **Checks.**
 
@@ -233,8 +274,14 @@ API:
 - For `m = 0` the source is `k`, and the map is `Polynomial.C`; over a field it is not surjective
   (`T` is not a constant). A definition supplying a first coordinate automatically would be
   surjective here.
-- For `m = 2`, `B = 0`: `X_0 ↦ T` and `X_1 ↦ 1`, so the graph misses the origin; this is the
-  negative control for the hypothesis `B ≥ 1` of origin preservation.
+- Over `ℤ`, for `m = 2`, `B = 0`: `X_0 ↦ T` and `X_1 ↦ 1`, so the graph misses the origin (the
+  origin value of `X_1` is `0`, the value of its image at `T = 0` is `1`); this is the negative
+  control for the hypothesis `B ≥ 1` of origin preservation.
+- Over the zero ring `ℤ/1ℤ` both polynomial rings are singletons, so for every `m`, `m = 0`
+  included, and every `B` the map is the unique bijection between them: the kernel element
+  `X_1 − X_0^B` is `0`, the two origin evaluations agree even at `m = 2`, `B = 0`, and for `m = 0`
+  the spectrum map is a closed immersion of empty schemes. A version of the non-injectivity, the
+  origin-failure or the `m = 0` statement without the nontriviality hypothesis is false here.
 
 ### 1.2 Coefficients survive bounded substitution
 
@@ -245,23 +292,31 @@ a nonzero `h` with this bound has nonzero image. No hypothesis on `k` is needed 
 characteristic), and none on `B`: for `B = 1` the bounds force `h` to be constant and `e = 0`, and the
 statement is about the constant term; for `B = 0` and `m ≥ 1` the bounds force `h = 0` and admit no
 `e`. The vector `e` need not lie in the support; both sides are then
-zero. *Proof sketch.* Send an exponent vector to the list `(d_0, …, d_{m-1})` of length `m`;
-`Nat.ofDigits_eq_sum_mapIdx` identifies its base-`B` value with `w_B(d)`, and
-`Nat.ofDigits_inj_of_len_eq` (or `Nat.injOn_ofDigits`) gives injectivity of `w_B` on vectors with
-entries `< B` when `B ≥ 2`. Expand `h` over its support with `MvPolynomial.eval₂Hom_monomial`;
-distinct support monomials go to distinct powers of `T`, so extracting the coefficient of
-`T^(w_B(e))` returns the coefficient of `X^e`. This is an identity of polynomials, not of functions
-on `k`-points. *Needs:* §1.1; Mathlib `Nat.ofDigits_eq_sum_mapIdx`, `Nat.ofDigits_inj_of_len_eq`,
-`MvPolynomial.eval₂Hom_monomial`, `Finsupp.weight`.
+zero. This is an identity of polynomials, not of functions on `k`-points. *Proof sketch.* By
+§1.1, `polynomialGraph k m B h` is Tau Ceti's substitution `aeval (fun i ↦ T^(B^i)) h`. Apply
+Tau Ceti's `MvPolynomial.coeff_aeval_X_pow_weight` with the weight `i ↦ B^i` and the box
+`S_B = {d | d_i < B for all i}`, which contains the support of `h` and the vector `e` by
+hypothesis. What remains, and is the step this target adds to the imported theorem, is that `w_B`
+is injective on `S_B`. For `B ≥ 2`, send `d` to the list `(d_0, …, d_{m-1})` of length `m`;
+`Nat.ofDigits_eq_sum_mapIdx` identifies its base-`B` value with `w_B(d)`, and `Nat.injOn_ofDigits`
+(or `Nat.ofDigits_inj_of_len_eq`) gives injectivity. For `B = 1` the box is `{0}`, and for `B = 0`
+it is empty when `m > 0` and the single empty vector when `m = 0`, so injectivity is automatic.
+The same injectivity and Tau Ceti's `MvPolynomial.injOn_aeval_X_pow` show that `polynomialGraph k m B`
+is injective on the polynomials all of whose exponents are `< B`. *Needs:* §1.1; Tau Ceti
+`MvPolynomial.coeff_aeval_X_pow_weight`, `MvPolynomial.injOn_aeval_X_pow`; Mathlib
+`Nat.ofDigits_eq_sum_mapIdx`, `Nat.injOn_ofDigits`, `Finsupp.weight`.
 
 **Checks.**
 
 - For `h = X_0² X_1 − X_0 X_1²` over `ℤ` and `B = 3`, the coefficient of `T⁵` is `1` (from `e = (2,1)`)
   and that of `T⁷` is `−1` (from `e = (1,2)`); the coefficient of `T⁶`, the weight of `e = (0,2)`, is
   `0`, matching the coefficient of `X_1²` in `h`.
-- For `h = X_1 − X_0²` and `B = 2`, the hypothesis fails (`d_0 = 2`); the conclusion fails too: the
-  coefficient of `T²` in the image is `0` while the coefficient of `X_1` (`e = (0,1)`, weight `2`)
-  is `1`. This is the negative control for the strict bound.
+- Over `ℤ`, for `h = X_1 − X_0²` and `B = 2`, the hypothesis fails (`d_0 = 2`); the conclusion
+  fails too: the coefficient of `T²` in the image is `0` while the coefficient of `X_1`
+  (`e = (0,1)`, weight `2`) is `1`. This is the negative control for the strict bound.
+- For `h = X_1` and `B = 2`, with the query `e = (2, 0)` outside the box: the coefficient of
+  `T^(w_2(e)) = T²` in the image `T²` is `1`, while the coefficient of `X_0²` in `h` is `0`. This is
+  the negative control for the bound on the query vector, which the imported theorem also needs.
 - For `m = 0` the only exponent vector is empty, of weight `0`, and the statement says that the
   constant term of `C a` is `a`.
 - Over the zero ring every polynomial is zero and both sides vanish; the statement does not
@@ -282,8 +337,12 @@ commutative ring `k`, there is `B ≥ 2` exceeding every exponent in the support
 field `k`, `a_B` passes through the origin and `a_B⁻¹(D(h)) = D(φ(h))` with `φ = polynomialGraph k m B`;
 since `k[T]` is a domain, `D(φ(h))` contains the generic point, so it is a nonempty, hence dense,
 open subset of `𝔸¹_k`. Nonemptiness does not need a rational value of `T` at which `h ∘ a_B` is
-nonzero. The theorem avoids one given hypersurface; no graph avoids every proper closed subset
-at once. *Proof sketch.* Pick `e` in the support of `h`, apply §1.2 at `e`, then surjectivity;
+nonzero. Over an arbitrary commutative ring the theorem gives `φ(h) ≠ 0` and the closed immersion,
+not this geometric conclusion: `D(φ(h))` can be empty when `k` has nilpotents. The hypersurface is
+fixed before `B` is chosen: for `m ≥ 2` over a field no single graph meets the complement of every
+proper closed subset of `𝔸^m_k`, since its own image lies in the proper closed subset
+`V(X_1 − X_0^B)`, whereas for `m = 1` the graph is the identity of `𝔸¹_k` and meets every nonempty
+open. *Proof sketch.* Pick `e` in the support of `h`, apply §1.2 at `e`, then surjectivity;
 over a field use `IsOpen.dense`. *Needs:* §1.2; the surjectivity above; Mathlib `IsOpen.dense`.
 
 **Checks.**
@@ -297,6 +356,15 @@ over a field use `IsOpen.dense`. *Needs:* §1.2; the surjectivity above; Mathlib
   injective on points); this is why `m > 0` is a hypothesis.
 - For `h = X_1 − X_0²` over `𝔽_2`, `B = 2` is excluded by the bound and indeed gives `φ(h) = 0`;
   `B = 3` gives `T³ − T²`, whose principal open is `𝔸¹ ∖ {0, 1}`.
+- *No graph for all hypersurfaces at once.* Over a field and for `m = 2`, the image of `a_B` is
+  `V(X_1 − X_0^B)`, a proper closed subset of `𝔸²_k` since `X_1 − X_0^B ≠ 0`, and the preimage of
+  its complement is empty. A version of the theorem choosing `B` before `h` is false here.
+- *Dimension one.* For `m = 1` the graph is the identity of `𝔸¹_k` for every `B`, so the preimage of
+  the complement of any proper closed subset is that same nonempty complement; the previous Check
+  needs `m ≥ 2`.
+- *A ring with nilpotents.* Over `ℤ/4ℤ`, `m = 1`, `h = 2`: `φ(h) = 2 ≠ 0` for every `B`, so the
+  theorem holds, but `2² = 0` puts `2` in every prime ideal of `(ℤ/4ℤ)[T]`, so `D(φ(h)) = ∅`. The
+  passage to the geometric conclusion uses that `k[T]` is a domain, not only that `φ(h) ≠ 0`.
 
 ### Examples
 
@@ -306,7 +374,9 @@ over a field use `IsOpen.dense`. *Needs:* §1.2; the surjectivity above; Mathlib
 
 ### Dependencies
 
-Mathlib only: `MvPolynomial.eval₂Hom` and its evaluation lemmas, `Nat.ofDigits_inj_of_len_eq`,
+Tau Ceti `MvPolynomial.coeff_aeval_X_pow_weight` and `MvPolynomial.injOn_aeval_X_pow` (module
+`TauCeti.RingTheory.MvPolynomial.Kronecker`), for §1.2; Mathlib `MvPolynomial.eval₂Hom` and its
+evaluation lemmas, `MvPolynomial.aeval_def`, `Nat.injOn_ofDigits`, `Nat.ofDigits_inj_of_len_eq`,
 `Nat.ofDigits_eq_sum_mapIdx`, `Finsupp.weight`, `IsClosedImmersion.spec_of_surjective`,
 `IsOpen.dense`.
 
@@ -536,9 +606,12 @@ and `TauCeti.AlgebraicGeometry.RationalPoint.Basic`.
   Proposition 5.3.5 (p. 54) of arXiv:2103.09945v2 apply a curve through a rational point of a smooth
   chart of an integral model of a Shimura variety, over the same finite field, meeting a dense
   stratum. Their citation of Poonen's Corollary 3.4 for this step requires a smooth projective
-  geometrically integral ambient variety, which a smooth chart does not supply, and Poonen's
-  statements do not make the curve meet a prescribed dense open; `exists_same_field_curve` gives
-  the needed curve directly. Roadmaps formalising Shimura varieties and their local models consume
+  geometrically integral ambient variety, which a smooth chart does not supply; in that projective
+  setting Corollary 3.4 would also give the meeting with the stratum, by adding one of its closed
+  points to the finite set. Poonen's Theorem 3.3, which does apply to the quasi-projective chart,
+  does not assert that its hypersurface sections are connected, so it does not by itself keep the
+  marked point and the stratum on one component. `exists_same_field_curve` gives the needed curve
+  directly, without projectivity. Roadmaps formalising Shimura varieties and their local models consume
   it there; the singular local-model curve of Kisin–Zhou, Proposition 5.2.3, and the rational lift
   to a smooth atlas are theirs.
 - Any argument transporting a statement about Frobenius at a rational point of a smooth variety over
@@ -583,3 +656,6 @@ and `TauCeti.AlgebraicGeometry.RationalPoint.Basic`.
   `Mathlib/RingTheory/Etale/Basic.lean`, `Mathlib/RingTheory/Etale/Field.lean`,
   `Mathlib/RingTheory/EssentialFiniteness.lean`, `Mathlib/RingTheory/Ideal/GoingUp.lean`,
   `Mathlib/Topology/Irreducible.lean`.
+- Tau Ceti: `TauCeti/RingTheory/MvPolynomial/Kronecker.lean`,
+  `TauCeti/AlgebraicGeometry/Morphisms/Smooth/GeometricallyIntegral.lean`,
+  `TauCeti/AlgebraicGeometry/RationalPoint/Basic.lean`.
