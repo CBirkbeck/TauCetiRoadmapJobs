@@ -9,7 +9,7 @@ year = 1996
 venue = "Aspects of Mathematics"
 doi = "10.1007/978-3-663-09991-8"
 locator_scheme = "theorem"
-locator = "Proposition 2.3.10; Corollary 2.4.6; Corollary 2.8.3; Section 3.8; Proposition 6.1.1"
+locator = "Proposition 2.3.10; Corollary 2.4.6; Corollary 2.8.3; Theorem 3.7.2 (page 226); Proposition 6.1.1"
 url = "https://doi.org/10.1007/978-3-663-09991-8"
 licence_class = "none"
 status = "uncertified"
@@ -90,7 +90,7 @@ title = "Lectures on Étale Cohomology (v2.21)"
 year = 2013
 venue = "author's course notes, 202 pages"
 locator_scheme = "section"
-locator = "Sections 12, 17, 19, 21"
+locator = "Section 12; Section 17, Corollary 17.8; Section 19, Theorem 19.2"
 url = "https://www.jmilne.org/math/CourseNotes/LEC.pdf"
 fetched_from = "https://www.jmilne.org/math/CourseNotes/LEC.pdf"
 fetched_at = "2026-11-04T20:59:58Z"
@@ -98,7 +98,7 @@ sha256 = "ac4f122f371d38a44c58c296b7dbf88081d89d2de2334070bff3606771c01077"
 licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-04"
-cited_for = ["1.4", "2.2", "2.6", "3.1", "4.2", "4.4"]
+cited_for = ["1.4", "2.2", "3.1", "4.2", "4.3", "4.4"]
 
 [[source]]
 id = "stacks03N1"
