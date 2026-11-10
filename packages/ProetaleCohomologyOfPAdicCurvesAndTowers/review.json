@@ -1,0 +1,10 @@
+{
+  "review": {
+    "status": "needs_changes",
+    "reviewer": "independent-review-REV-PKG-ProetaleCohomologyOfPAdicCurvesAndTowers~2",
+    "date": "2026-11-10",
+    "findings": 20,
+    "blocking": 15,
+    "notes": "Reviewed all four package files, previous findings F01–F06, repair additions, 50 subsections and all 15 seeded source targets. Computed adversarial witnesses and source issues are in the round-2 report. Lean elaboration passes with only the intended sorry warning; all eight signatures checked, and the sole sorried theorem resists simp/rfl/infer_instance with no matching one-lemma proof. Dependency gate: 236 roadmaps, 2154 edges, 0 problems. Library, supplier, ownership and gap audits completed. Five settled uncertified source originals remain unread; no new missing-reference request. Findings include monodromy conventions, Steinberg dual, tower levels, absolute irreducibility, disconnected diagrams, Jacobian interfaces, scope, supplier uniformity, duplication and Checks."
+  }
+}
