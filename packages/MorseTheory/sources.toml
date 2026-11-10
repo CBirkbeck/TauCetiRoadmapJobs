@@ -130,3 +130,21 @@ licence_class = "none"
 status = "uncertified"
 version_note = "paywalled; cited by its locator without the text"
 cited_for = ["2.2", "2.3", "2.4", "3.2"]
+
+[[source]]
+id = "takens-1968"
+authors = "F. Takens"
+title = "The minimal number of critical points of a function on a compact manifold and the Lusternik-Schnirelman category"
+year = 1968
+venue = "Inventiones Mathematicae 6, 197-244"
+doi = "10.1007/BF01404825"
+locator_scheme = "page"
+locator = "Introduction, pp. 197-198"
+url = "https://gdz.sub.uni-goettingen.de/download/pdf/PPN356556735_0006/LOG_0025.pdf"
+fetched_from = "https://gdz.sub.uni-goettingen.de/download/pdf/PPN356556735_0006/LOG_0025.pdf"
+fetched_at = "2026-11-10T04:18:21Z"
+sha256 = "af762f10ec159ff6d8afb5dc9669285ebdf3492ab546c14dbc6c8092d578322e"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-10"
+cited_for = ["4.2"]
