@@ -33,7 +33,10 @@ Not statable at the pins:
   class): continuous Galois cohomology of `O_{K'}[1/p]` with the CM coefficients `T_φ^∨(1)`,
   Bloch–Kato dual exponentials and the de Rham period map `per_φ` are missing.
 * Layer 3 (CM Lubin–Tate comparison, torsion–ring-class disjointness, semilocal splitting):
-  Lubin–Tate formal modules, CM torsion fields `H(E[p^{n+1}])` and ring class fields are missing.
+  Lubin–Tate formal modules with their division fields, and the CM elliptic curve over the
+  Hilbert class field attached to `φ` with its torsion fields `H(E[p^{n+1}])`, are missing. Ring
+  class fields themselves are native (`TauCeti.ClassFieldTheory.ringClassField`); the missing
+  ingredient is the CM attachment and its torsion fields.
 * Layer 1 (root-number formulas `W(φν) = W(φ)`, `W(φνχ) = (−1)^c W(φν)` and the canonical
   sign `W(φ) = (2/D)`): global and local root numbers of Hecke characters are missing.
 * Layer 6 (Jia's Galois-average limit): the action of `Aut(ℂ/K)` on algebraic Hecke characters is

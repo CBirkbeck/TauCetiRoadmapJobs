@@ -9,7 +9,7 @@ This roadmap owns:
 - the carriers of the anticyclotomic family on Tau Ceti's `HeckeCharacter` (Layer 0): conjugation-equivariant characters of type `(1,0)`, anticyclotomic characters, the `p`-anticyclotomic family, primitive Euler factors and central values;
 - the integral CM period of a good Néron differential, the auxiliary split prime and the auxiliary characters `X_l` (Layer 0);
 - the root-number formulas of the twists and the forced central zeros (Layer 1);
-- Kato's theta function on an elliptic curve and its CM refinement, standard elliptic units, the elliptic zeta element, Kato's realisation `V(ψ)`, `S(ψ)`, `per_ψ`, the height-one explicit reciprocity law in the form applied by Kato, Kato's reciprocity law for CM characters (Kato 2004, Proposition 15.9), the integral BKO class, its direct-character reciprocity, its twist comparison and period laws (Layer 2). No earlier roadmap constructs elliptic units of CM curves or this reciprocity law (KatoEulerSystems works with Siegel units on modular curves); the CM continuations of ModularIwasawaMainConjecturesPartII consume them from here;
+- the CM refinement `_aθ_E` of Kato's theta function for an ideal `a` of an arbitrary imaginary quadratic `K`, with its comparison `_{(c)}θ_E = _cθ_E` to the normalised theta unit, its cocycle and its isogeny law; the standard elliptic units `_az_f = _aθ_E(α)` of the canonical CM pairs; the elliptic zeta element, Kato's realisation `V(ψ)`, `S(ψ)`, `per_ψ`, the height-one explicit reciprocity law in the form applied by Kato, Kato's reciprocity law for CM characters (Kato 2004, Proposition 15.9), the integral BKO class, its direct-character reciprocity, its twist comparison and period laws (Layer 2). The normalised theta unit `_cθ_E` itself, for `c` prime to `6` and invertible on the base, is PadicFamilies §4.0.1, imported here (KatoEulerSystems imports it from there as well, for modular curves). NoncommutativeAndEquivariantIwasawa §4.3 constructs elliptic units of ray class fields for a CM elliptic curve over `Q` (so `h_K = 1`) at a split ordinary prime, as products of Siegel-function values in their `12N`-th power normalisation; it covers neither `h_K > 1` nor Kato's normalisation through `_aθ_E` and the canonical CM pair, which Layer 2 needs at an inert prime, so Layer 2 states those here and does not use the Siegel-function construction. The CM continuations of ModularIwasawaMainConjecturesPartII consume Layer 2 from here;
 - the torsion and ring-class composita, their disjointness, the semilocal splitting, the inert Frobenius and the CM application of the Honda–Lubin–Tate comparison (Layer 3);
 - Finis's divisibility theorem in weight one, both for split and for nonsplit valuation primes, with its proof through primitive theta functions, Shintani operators, integral theta functions and the nonvanishing of theta functions in characteristic `ℓ` (Layer 4). No earlier roadmap states Finis's theorem; its higher-weight split case (Finis, Theorem 1.1(1) with `k > 1`) follows from weight one by Katz's two-variable measure, and belongs with that measure;
 - the specialisation of Finis's theorem to the canonical family, the unit witness, the unramified coefficient field and the scalar/tensor kernel comparison (Layer 5);
@@ -19,11 +19,12 @@ It consumes, by section:
 
 - ComplexMultiplicationAndExplicitReciprocity §1.2 (CM period and de Rham pairings, with the period-lattice comparison of the ideal twists `ℂ/aΛ`), §2.2 (Normalized idele and torsion dictionary), §3.2 (Exact ray-level field and generation criterion), §4.1 (The algebraic Hecke character of a CM abelian variety; One-dimensional CM components of the Tate module; Frobenius and infinity-type identities), §4.2 (Full elliptic CM L-factorization, including bad primes; CM induction and compatible-system comparison), §4.3 (`IsCanonicalGrossCharacter`, `canonicalGrossExistence`, Canonical Gross good reduction away from the discriminant). The existence of canonical characters and their curves is imported, never reconstructed.
 - AutomorphicLFunctionsAndLocalFactors, Layer AL.1 (local epsilon factors and Gauss sums, completed Hecke functions, the Hecke functional equation) and Layer AL.5 (finite Euler corrections, central-sign vanishing).
-- LubinTateFormalModulesAndQuasiCanonicalLifts LT.2 (division fields, Tate modules, the Lubin–Tate character) and LT.4 (unramified Honda–Lubin–Tate comparison, supersingular elliptic comparison). Lubin–Tate theory is applied, not rebuilt.
+- LubinTateFormalModulesAndQuasiCanonicalLifts §2.1 (Finite-height torsion), §2.2 (The π-adic Tate module), §2.3 (Lubin–Tate division fields), §2.4 (The Lubin–Tate character), §4.3 (The unramified Honda–Lubin–Tate comparison) and §4.4 (The supersingular elliptic comparison). Lubin–Tate theory is applied, not rebuilt.
 - SelmerIwasawaCohomology §§0.8–0.11 (Kummer identifications, cup products and Shapiro), §3.6 (semilocal cohomology), §3.7 (twisting Iwasawa cohomology).
 - PadicHodgeRegulators §1.4 (Kato's dual exponential), §1.7 (twists, restriction, corestriction), §1.11 (semilocal Bloch–Kato maps).
 - ModularSymbolsPadicLFunctions §1.2 (algebraicity of critical values) and §4.3 (coefficient embeddings); GL2AutomorphicRepresentationsAndTransfer R17.4.16 (quadratic automorphic induction and CM theta series).
 - DiophantineApproximationAndTranscendence §2.1 (the `p`-adic subspace theorem) and §2.3 (`p`-adic approximation of algebraic numbers).
+- PadicFamilies §4.0.1 (the normalised theta unit `_cθ_E`).
 - GlobalNumberFields Layers 9–11, ClassFieldTheory Layer 13, Chebotarev Layer 10, LocalFieldsRamification Layers 2–3, EllipticCurves Layers 1–3, ArithmeticDirichletSeries Layer 5.
 
 The ordinary CM `p`-adic period, the Katz and Rubin `p`-adic `L`-functions, the primitive elliptic-unit coordinate, the signed local decomposition, the `Δ`-projection of the elliptic class and its derivatives are outside this roadmap: AnticyclotomicLocalUnits owns the local projections and InertAnticyclotomicCMMainConjecture the Rubin function. The normalised values here define no Iwasawa function by interpolation.
@@ -36,7 +37,7 @@ The ordinary CM `p`-adic period, the Katz and Rubin `p`-adic `L`-functions, the 
 
 **L-functions.** `L(η, s) = Σ_a η(a) N(a)^{−s}`, the sum over integral ideals prime to the conductor of `η`: the primitive `L`-function. For a finite set `S` of primes, `L_S(η, s)` removes the Euler factors at `S` (only the support of a modulus matters for deletion). A character `η = φρ` with `ρ` of finite order has weight one, its Euler product converges for `Re s > 3/2`, its central point is `s = 1`, and after the unitary normalisation `η|·|^{1/2}` the centre is `1/2`. Root numbers `W(η)` are those of AutomorphicLFunctionsAndLocalFactors AL.1 for the standard additive character `ψ_K = ψ_Q ∘ Tr_{K/Q}`; changing `ψ_v` to `ψ_v(−·)` multiplies a local central epsilon factor by `η_v(−1)`, and the product of these changes over all places is `1`.
 
-**Indices.** For an anticyclotomic character `ν` of exact order `l^r`, `r ≥ 1`, with `l` split, `l ∤ h_K`, `l ≥ 5`, the field layer is `L[r]` (degree `l^r`) and the conductor is `l^m O_K` with `m = r + 1`; for `ν = 1`, `r = m = 0`. For a `p`-anticyclotomic `χ` of exact order `p^n`, `n ≥ 1`, the conductor is `p^c O_K` with `c = n + 1`; the trivial character has `c = 0`. Order indices and conductor indices are never identified.
+**Indices.** For an anticyclotomic character `ν` of exact order `l^r`, `r ≥ 1`, with `l` split, `l ∤ h_K`, `l ≥ 5`, the field layer is `L[r]` (degree `l^r`) and the conductor is `l^m O_K` with `m = r + 1`; for `ν = 1`, `r = m = 0`. For a `p`-anticyclotomic `χ` of exact order `p^n`, `n ≥ 1`, and `p ∤ h_K`, the conductor is `p^c O_K` with `c = n + 1`; the trivial character has `c = 0`. When `p | h_K` the family contains unramified characters of order `p` (with `c = 0`), and statements are made in terms of the conductor exponent `c`, never of the order. Order indices and conductor indices are never identified.
 
 **Towers and periods.** `F_n = H(E[p^{n+1}])`, `Φ_n` its completion at the place above `p` fixed by `ι_p`, of degree `(p² − 1)p^{2n}` over `Φ`; `Φ_0 ≠ Φ`. Arithmetic Frobenius on the covariant Tate module of the reduction at a place above `p` is `[−p]`, and a compatible `π`-power basis differs from a `p`-power basis by the sign `(−1)^n` at level `n`. A period datum `(E, ω, Ω)` consists of a CM curve `E/H` with good reduction above `p`, a Néron differential `ω` at the place above `p`, and `Ω ∈ ℂ×` with period lattice of `ω` equal to `Ω O_K`; `Ω` is determined up to `O_K×`.
 
@@ -57,6 +58,7 @@ The ordinary CM `p`-adic period, the Katz and Rubin `p`-adic `L`-functions, the 
 
 - `TauCeti.GlobalNumberFields.HeckeCharacter` (`ContinuousMonoidHom (IdeleClassGroup (𝓞 K) K) ℂˣ`), with `HeckeCharacter.IsFiniteOrder`, `HeckeCharacter.finiteConductor`, `HeckeCharacter.finiteConductor_ne_bot`, `HeckeCharacter.conductorExponent`, `HeckeCharacter.finiteComponent` and `HeckeCharacter.idealCharacter` (TauCeti/NumberTheory/NumberField/Global/HeckeCharacter/FiniteComponent.lean and Ideal.lean). `idealCharacter_apply_prime` identifies the ideal value at a prime with the local component at any uniformizer; `idealCharacter_apply_toPrincipalIdeal` identifies the value at `(x)`, `x ≡ 1`, with the inverse of the archimedean components. The carrier includes non-unitary characters; finite order is a separate predicate.
 - `TauCeti.GlobalNumberFields.Modulus`, `idealsPrimeTo`, `IsCongrOne`, `IsCongrOne.toPrincipalIdeal_mem_idealsPrimeTo`, `toPrincipalIdeal`: moduli, ideals prime to a modulus and multiplicative congruence. `IsCongrOne` is a condition on `Kˣ`, so zero is excluded.
+- `TauCeti.ClassFieldTheory.ringClassField` (for an order `O : NumberFieldOrder K`, an `IntermediateField K (SeparableClosure K)`), with `ringClassArtinEquiv : Pic O ≃* Gal(ringClassField O / K)`, `finrank_ringClassField`, `isUnramifiedAt_ringClassField` (unramified at primes not dividing the conductor of `O`), the splitting law `isArithFrobAt_ringClassArtinEquiv_picClass` and the splitting criterion `ncard_primesOver_ringClassField_eq_finrank_iff` (a prime of `O_K` prime to the conductor splits completely exactly when it is generated by an element of `O`) (TauCeti/NumberTheory/ClassFieldTheory/ClassFields/RingClass/Field.lean). These carry the ring class fields of Layers 0 and 3; what Layer 3 lacks at the pins is the CM elliptic curve attached to `φ` with its torsion fields `H(E[p^{n+1}])`, and Lubin–Tate formal modules.
 
 ### From TauCetiRoadmap.ComplexMultiplicationAndExplicitReciprocity
 
@@ -72,10 +74,14 @@ The ordinary CM `p`-adic period, the Katz and Rubin `p`-adic `L`-functions, the 
 - AL.5.1.1 Finite Euler corrections at critical points (`L^S = E_S L`, orders add) and AL.5.3.2 The functional-equation sign at the centre (sign `−1` at the centre forces a zero).
 - What AutomorphicLFunctionsAndLocalFactors must provide (gap:al-local-frohlich-queyrut): the local Fröhlich–Queyrut theorem in AL.1's local epsilon factors — for a quadratic extension `E/F` of local fields, a quasi-character `χ` of `E×` trivial on `F×` and `ψ_E = ψ_F ∘ Tr_{E/F}`, `ε(1/2, χ, ψ_E) = χ(Δ)` for every `Δ ∈ E×` with `Δ² ∈ F×` and `Δ ∉ F`.
 
-### From LubinTateFormalModulesAndQuasiCanonicalLifts
+### From TauCetiRoadmap.LubinTateFormalModulesAndQuasiCanonicalLifts
 
-- LT.2 `primitive-division` (the `π^m`-division field is totally ramified of degree `(q − 1)q^{m−1}` and generated by a primitive point), `tate-module-comparison`, `lt-character`.
-- LT.4 `unramified-honda-comparison` (over `O = W(F_{p²})`, a formal group with `q`-Frobenius `[sp]`, `s = ±1`, is strictly isomorphic to the Lubin–Tate group for `sp`) and `elliptic-honda-comparison` (an elliptic curve over `O` with `a_{p²} = 2sp` has `q`-Frobenius `[sp]` and Lubin–Tate parameter `sp`). The sign convention `a_{p²} = −2p ↔ π = −p` is the one fixed there.
+- §2.1 Finite-height torsion and §2.2 The π-adic Tate module (for a formal `O`-module of `O`-height `h` over the integers of a finite extension, the Tate module is free of rank `h` with continuous `O`-linear Galois action); §2.3 Lubin–Tate division fields (the `π^m`-division field is totally ramified of degree `(q − 1)q^{m−1}` and generated by any primitive point); §2.4 The Lubin–Tate character (the Galois action on the Tate module of a Lubin–Tate module is a character onto `O×` factoring through the division tower).
+- §4.3 The unramified Honda–Lubin–Tate comparison (over `O = W(F_{p²})`, a formal group with `q`-Frobenius `[sp]`, `s = ±1`, is strictly isomorphic to the Lubin–Tate group for `sp`) and §4.4 The supersingular elliptic comparison (an elliptic curve over `O` with `a_{p²} = 2sp`, that is `#Ē(F_{p²}) = p² + 1 − 2sp`, has `q`-Frobenius `[sp]` and Lubin–Tate parameter `sp`). The sign convention `a_{p²} = −2p ↔ π = −p` is the one fixed there.
+
+### From TauCetiRoadmap.PadicFamilies
+
+- §4.0.1 Geometric classes, moments and norm relations: the normalised theta unit `_cθ_E` of an elliptic curve `E` over a base on which `c` is invertible, `c` prime to `6`, with divisor `c²(0) − E[c]`, invariance `N_b(_cθ_E) = _cθ_E` under the norm along multiplication by every integer `b` prime to `c`, base change, the Tate `q`-expansion with Kato's normalisation of the leading coefficient, and the isogeny norm. Assumed: the isogeny norm is applied only to isogenies of degree prime to `c`, the range in which it holds (Kato 2004, Proposition 1.3(4), p.122, KATO04 line 238); the complex specialisation of the `q`-expansion is Kato's product formula (Kato 2004, Proposition 1.3(3), p.122).
 
 ### From TauCetiRoadmap.SelmerIwasawaCohomology
 
@@ -112,7 +118,7 @@ Layer 0 fixes the carriers (anticyclotomic characters, the `p`-anticyclotomic fa
 
 ### 0.1 Conjugation-equivariant characters of type (1,0)
 
-Define `IsEquivariantTypeOneZero ι φ`, for a Hecke character `φ` of an imaginary quadratic `K` and an embedding `ι : K → ℂ`, by two conditions on the ideal character modulo the finite conductor (`conductorModulus φ`, the conductor ideal with no real places): `φ((x)) = ι(x)` for every `x ∈ K×` with `x ≡ 1` modulo the conductor, and `φ(ā) = conj φ(a)` for every fractional ideal `a` prime to the conductor. The first condition fixes the archimedean component `z ↦ z⁻¹` (the elements `x ≡ 1` form a subgroup of finite index of `K×`, dense in `ℂ×`), so the character is algebraic of ideal type `(1,0)` for `ι`. Prove that such a `φ` satisfies `φ((n)) = κ_K(n) n` for every rational integer `n` prime to the conductor, and conversely that this rational-principal law together with type `(1,0)` gives equivariance (Jia, Property 1, pp.3–4; JIA24 line 126). Prove that the conductor `f` is stable under conjugation and that `φ φ̄ = N` on ideals prime to `f`. *Needs:* Tau Ceti `HeckeCharacter.idealCharacter`, `idealCharacter_apply_toPrincipalIdeal`; GlobalNumberFields Layers 9–10.
+Define `IsEquivariantTypeOneZero ι φ`, for a Hecke character `φ` of an imaginary quadratic `K` and an embedding `ι : K → ℂ`, by two conditions on the ideal character modulo the finite conductor (`conductorModulus φ`, the conductor ideal with no real places): `φ((x)) = ι(x)` for every `x ∈ K×` with `x ≡ 1` modulo the conductor, and `φ(ā) = conj φ(a)` for every fractional ideal `a` prime to the conductor. The first condition fixes the archimedean component `z ↦ z⁻¹`: the elements `x ≡ 1` form a subgroup of `K×` whose image under `ι` is dense in `ℂ×`, by weak approximation imposing the finitely many congruence conditions at the primes dividing the conductor together with closeness at the complex place, and the archimedean component is continuous; so the character is algebraic of ideal type `(1,0)` for `ι`. That subgroup has infinite index in `K×`, since its elements have valuation `0` at every prime dividing the conductor; density, not finite index, is what the argument uses. Prove that such a `φ` satisfies `φ((n)) = κ_K(n) n` for every rational integer `n` prime to the conductor, and conversely that this rational-principal law together with type `(1,0)` gives equivariance (Jia, Property 1, pp.3–4; JIA24 line 126). Prove that the conductor `f` is stable under conjugation and that `φ φ̄ = N` on ideals prime to `f`. *Needs:* Tau Ceti `HeckeCharacter.idealCharacter`, `idealCharacter_apply_toPrincipalIdeal`; GlobalNumberFields Layers 9–10.
 
 API:
 
@@ -128,6 +134,7 @@ API:
 - The inverse character `φ⁻¹` has archimedean component `z ↦ z` and fails the first condition: `φ⁻¹((x)) = ι(x)⁻¹`, not `ι(x)`.
 - Agreement with Tau Ceti: at a prime `v ∤ f`, the ideal value equals `φ.finiteComponent v (ϖ_v)` for any uniformizer `ϖ_v`, by `idealCharacter_apply_prime`; a definition through `ϖ_v⁻¹` gives `φ(v)⁻¹`, of absolute value `N(v)^{−1/2}`.
 - The norm character `N` itself has `N((x)) = x x̄`, not `ι(x)`; it is excluded.
+- For `K = Q(i)` and conductor `(1 + i)³`, the elements `(1 + i)^n`, `n ∈ Z`, lie in pairwise distinct cosets of the congruence subgroup (their valuations at `(1 + i)` are `n`), so the subgroup has infinite index in `K×`; it is still dense in `ℂ×`, which is all the archimedean-type conclusion needs.
 
 ### 0.2 Anticyclotomic characters and the p-anticyclotomic family
 
@@ -139,6 +146,7 @@ API:
 - An anticyclotomic character of odd order is trivial on every conjugation-stable ideal prime to its conductor: `χ(b) = χ(b̄) = χ(b)⁻¹` and `χ(b)` has odd order.
 - For `p ∤ h_K`, the `p`-part of `Gal(K[p^∞]/K)` is `Z_p` and the characters of exact order `p^n` have conductor `p^{n+1}`.
 - An odd-order anticyclotomic character satisfies `χ((p)) = 1`.
+- With no class-number hypothesis, every `c ≥ 2` is the conductor exponent of a member of the family: for `p` odd and inert and `O_{p^c}` the order of conductor `p^c`, `#Pic(O_{p^c}) = p · #Pic(O_{p^{c−1}})` when `c ≥ 2`, so a character of `p`-power order of `Pic(O_{p^c})` that does not factor through `Pic(O_{p^{c−1}})` exists; it is anticyclotomic, unramified outside `p`, and has conductor exactly `p^c O_K`. Both parities of `c` therefore occur infinitely often.
 
 **Checks.**
 
@@ -146,6 +154,7 @@ API:
 - A character of `5`-power order of the cyclotomic `Z_5`-extension (factoring through the norm to `Q`) satisfies `χ(ā) = χ(a)` and is not anticyclotomic unless trivial.
 - A character ramified only at one of the two primes above a split `l` is not anticyclotomic: conjugation exchanges the primes and would force equal conductor exponents.
 - The trivial character belongs to the family with `c = 0`; the formula `c = n + 1` is not applied to it.
+- `p ∤ h_K` is needed for `c = n + 1`: `K = Q(√−31)` has the reduced forms `(1, 1, 8)`, `(2, ±1, 4)`, so `h_K = 3`, and `3` is inert since `−31 ≡ 2` is a nonsquare modulo `3`. A nontrivial character of the class group has order `3`, is anticyclotomic (`a ā = (N(a))` is principal) and unramified everywhere, so it lies in the `3`-anticyclotomic family with `c = 0`, not `n + 1 = 2`; its sign factor in §1.3 is `(−1)^0 = 1`.
 
 ### 0.3 Primitive Euler factors and central values
 
@@ -163,7 +172,7 @@ API:
 - At a ramified prime the factor is `1`, not `(1 − 0)⁻¹` computed from an extended-by-zero value of a wrong modulus; for `η` ramified at both primes above `l`, the `l`-factors are `1` (§5.3).
 - For `φ` of the curve `y² = x³ − x` at the inert prime `7`, `eulerFactor` at `s = 1` is `(1 − (−7)/49)⁻¹ = (1 + 1/7)⁻¹ = 7/8`; using `+7` gives `7/6`.
 - The trivial `p`-character with the `p`-factor deleted: `E_{{p}}(1) = 1 − φ((p))/p² = 1 + 1/p`, which is nonzero but has `v_p = −1`; deletion at `p` is harmless for nonvanishing and changes valuations.
-- Without the entire-function clause, `HasCentralValue η ϖ 0` would be satisfied vacuously by no `F`; the definition demands existence, so `HasCentralValue η ϖ z` with `z ≠ 0` asserts nonvanishing.
+- Without the entire-function clause the value would not be determined: take `F` equal to the Euler product on `Re s > 3/2` and assign it an arbitrary value at `s = 1`; this gives both `0` and `1` as candidate central values. Requiring `F` entire excludes such assignments, so `HasCentralValue η ϖ z` holds for at most one `z`, and `HasCentralValue η ϖ z` with `z ≠ 0` asserts nonvanishing.
 
 ### 0.4 The integral CM period
 
@@ -250,7 +259,7 @@ Prove: let `p` be odd and inert, `φ` as in §0.1 with `p ∤ f`, `ν` anticyclo
 
 **Checks.**
 
-- `c = 2` (order `p`) preserves the sign; `c = 3` (order `p²`) reverses it.
+- `c = 2` preserves the sign and `c = 3` reverses it; when `p ∤ h_K` these are the characters of order `p` and `p²`. When `p | h_K` an unramified character of order `p` has `c = 0` and preserves the sign (§0.2, `K = Q(√−31)`, `p = 3`).
 - The trivial `χ` has `c = 0` and keeps `W(φν)`; the formula `c = n + 1` would assign it `c = 1` and reverse the sign.
 - At `p` the unitary value is `−1` because `p` is inert; for a split prime the same twist has two ramified places and no parity factor.
 
@@ -274,30 +283,33 @@ Layer 0; ComplexMultiplicationAndExplicitReciprocity §4.3; AL.1, AL.5 and the l
 
 ## Layer 2: Elliptic units and Kato's reciprocity law for CM characters
 
-### 2.1 Kato's theta function and its CM refinement
+### 2.1 The CM refinement of Kato's theta function
 
-Construct, for an elliptic curve `E` over a scheme `S` and an integer `c` prime to `6`, the unique `_cθ_E ∈ O(E ∖ E[c])×` with divisor `c²(0) − E[c]` and `N_a(_cθ_E) = _cθ_E` for every `a` prime to `c`, where `N_a` is the norm along multiplication by `a`; prove the distribution relation in `c` and `d`, and its analytic value on `ℂ/(Zτ + Z)` as a product formula (Kato 2004, Proposition 1.3, pp.121–122). For `End(E) ≅ O_K`, with the normalisation that `O_K` acts on `Lie(E)` through the inclusion, and an ideal `a` prime to `6`, construct the unique `_aθ_E ∈ O(E ∖ E[a])×` with divisor `N(a)(0) − E[a]` and `N_b(_aθ_E) = _aθ_E` for integers `b` prime to `a`; prove `_{(c)}θ_E = _cθ_E`, compatibility with norms along isogenies of CM curves, and the cocycle relation between `a` and `b` (Kato 2004, §15.4, (15.4.1)–(15.4.4), pp.252–253). *Needs:* EllipticCurves Layer 1; ComplexMultiplicationAndExplicitReciprocity §1.2 (the period-lattice comparison).
+The normalised theta unit `_cθ_E` of PadicFamilies §4.0.1 (divisor `c²(0) − E[c]`, invariance under the norms `N_b` along multiplication by integers `b` prime to `c`, base change, Tate `q`-expansion, and the isogeny norm for isogenies of degree prime to `c`, Kato 2004, Proposition 1.3, pp.121–122) is used here only over fields of characteristic `0` containing `K`, where every `c` is invertible, so the supplier's range suffices and Layer 2 needs no extension to non-invertible `c`. For a field `K'` containing `K`, an elliptic curve `E/K'` with `End(E) ≅ O_K`, normalised so that `O_K` acts on `Lie(E)` through the inclusion, and an ideal `a` of `O_K` prime to `6`, construct the unique `_aθ_E ∈ O(E ∖ E[a])×` with divisor `N(a)(0) − E[a]` and `N_b(_aθ_E) = _aθ_E` for integers `b` prime to `a`; prove `_{(c)}θ_E = _cθ_E`, the cocycle relation between `a` and `b`, and the isogeny law: for an isogeny `h : E → E'` of such curves (automatically `O_K`-linear, both actions being normalised on `Lie` in characteristic `0`) whose kernel meets `E[a]` trivially, equivalently whose kernel has annihilator prime to `a`, the norm along `h`, from `O(E ∖ h⁻¹(E'[a]))×` to `O(E' ∖ E'[a])×`, sends `_aθ_E` to `_aθ_{E'}` (Kato 2004, §15.4, (15.4.1)–(15.4.4), pp.252–253). The printed (15.4.2), KATO04 lines 5254–5255, states the isogeny law without the kernel condition, which is necessary (see the Checks); for `a = (c)` the condition is the degree condition of Kato 2004, Proposition 1.3(4), KATO04 line 238, since a finite kernel meets `E[c]` trivially exactly when its order is prime to `c`. For an isogeny whose kernel meets `E[a]` nothing is asserted. *Needs:* PadicFamilies §4.0.1; EllipticCurves Layer 1; ComplexMultiplicationAndExplicitReciprocity §1.2 (the period-lattice comparison).
 
 API:
 
 - Uniqueness: two units with the same divisor and the norm invariance agree.
-- Isogeny invariance: for an isogeny `E → E'` of curves with CM by `O_K`, the norm sends `_aθ_E` to `_aθ_{E'}`.
+- Isogeny law: for an isogeny `h : E → E'` of curves with normalised CM by `O_K` whose kernel meets `E[a]` trivially, the norm along `h` sends `_aθ_E` to `_aθ_{E'}`; the divisor identity behind it is `h_*(N(a)(0) − E[a]) = N(a)(0) − E'[a]`, since `h` maps `E[a]` bijectively onto `E'[a]`.
 - Cocycle: `(_bθ_E)^{N(a)} · (pr_1^* {}_bθ_{E/aE})^{−1} = (_aθ_E)^{N(b)} · (pr_2^* {}_aθ_{E/bE})^{−1}`.
+- Comparison: `_{(c)}θ_E` is the supplier's `_cθ_E`; for `a = (c)`, `b = (d)` the cocycle gives Kato's distribution relation in `c` and `d` on CM curves.
 
 **Checks.**
 
 - `a = (c)`: the CM refinement is Kato's `_cθ_E`; its divisor `c²(0) − E[c]` has degree `c² − c² = 0`.
 - For `a` of norm `5` in `Z[i]`, `E[a]` has `5` points and the divisor `5(0) − E[a]` has degree `0`; a divisor `(0) − E[a]` has nonzero degree and is not principal.
 - Without the norm invariance, `ζ·_aθ_E` for a root of unity `ζ` has the same divisor; the invariance `N_b(ζθ) = ζ^{b²}N_b(θ)` excludes `ζ ≠ 1` for suitable `b`.
+- The kernel condition is necessary: for `E = ℂ/Z[i]`, `a = (5)` and `h = [5]`, the kernel `E[5]` is all of `E[a]`, and `h_*(25(0) − E[5]) = 25(0) − 25(0) = 0`, so the norm of `_aθ_E` is constant, while `_aθ_E` has the nonzero divisor `25(0) − E[5]`. For `h = [2]`, with kernel `E[2]` of annihilator `2` prime to `5`, `[2]` permutes `E[5]`, the pushed divisor is again `25(0) − E[5]`, and the law holds.
+- The condition is on the kernel, not on the degree: for `a = (2 − i)` and `h : E → E/E[2 + i]`, of degree `5 = N(a)`, the kernel meets `E[2 − i]` trivially and the law holds; for `a = (2 + i)` and the same `h`, the kernel is `E[a]` and `h_*(5(0) − E[a]) = 0`.
 
 ### 2.2 Canonical CM pairs and standard elliptic units
 
-Construct, for an ideal `f` with `O_K× → (O_K/f)×` injective, the canonical CM pair `(E, α)` of modulus `f` over the ray class field `K(f)`: a CM curve with the normalised `O_K`-action and a torsion point with annihilator `f`, isomorphic over `ℂ` to `(ℂ/f, 1 mod f)`; prove its uniqueness up to unique isomorphism, its universality, and that the Artin symbol of `a` carries `(E, α)` to `(E/E[a], α mod E[a])` (Kato 2004, §15.3, (15.3.1)–(15.3.3), pp.251–252). Define the standard elliptic unit `_az_f = _aθ_E(α) ∈ K(f)×` for `a` prime to `6f`; prove norm compatibility in the tower `K(p^n f)` and that `_az_f` is a `𝔭`-unit for primes `𝔭 ∤ f`, a unit when `f` has two prime divisors (Kato 2004, §15.5, pp.253). *Needs:* §2.1; ComplexMultiplicationAndExplicitReciprocity §2.2 Normalized idele and torsion dictionary, §3.2 Exact ray-level field and generation criterion; ClassFieldTheory Layer 13.
+Construct, for an ideal `f` with `O_K× → (O_K/f)×` injective, the canonical CM pair `(E, α)` of modulus `f` over the ray class field `K(f)`: a CM curve with the normalised `O_K`-action and a torsion point with annihilator `f`, isomorphic over `ℂ` to `(ℂ/f, 1 mod f)`; prove its uniqueness up to unique isomorphism, its universality, and that the Artin symbol of `a` carries `(E, α)` to `(E/E[a], α mod E[a])` (Kato 2004, §15.3, (15.3.1)–(15.3.3), pp.251–252). Define the standard elliptic unit `_az_f = _aθ_E(α) ∈ K(f)×` for `a` prime to `6f`; prove norm compatibility in the tower `K(p^n f)` for `a` prime to `6pf`, by the isogeny law of §2.1 applied to the canonical isogeny from the canonical curve of modulus `p^{n+1}f` to that of modulus `p^n f` (over `ℂ`, `ℂ/p^{n+1}f → ℂ/p^n f`), whose kernel `p^n f/p^{n+1}f` is killed by `p` and so meets `E[a]` trivially; and prove that `_az_f` is a `𝔭`-unit for primes `𝔭 ∤ f`, a unit when `f` has two prime divisors (Kato 2004, §15.5, p.253). *Needs:* §2.1; ComplexMultiplicationAndExplicitReciprocity §2.2 Normalized idele and torsion dictionary, §3.2 Exact ray-level field and generation criterion; ClassFieldTheory Layer 13.
 
 API:
 
 - Base change: a CM pair over a field `K'` is the base change of the canonical pair along a unique `K(f) → K'`.
-- Norm compatibility: the norm from `K(p^{n+1}f)` to `K(p^n f)` sends `_az_{p^{n+1}f}` to `_az_{p^n f}` for `n ≥ 1`.
+- Norm compatibility: for `a` prime to `6pf` and `n ≥ 1` with `O_K× → (O_K/p^n f)×` injective, the norm from `K(p^{n+1}f)` to `K(p^n f)` sends `_az_{p^{n+1}f}` to `_az_{p^n f}` (Kato 2004, §15.5, p.253, deduced there from (15.4.2); the kernel condition of §2.1 holds here).
 - Kronecker's limit formula: `Σ_σ χ(σ) log|σ(_az_f)| = (N(a) − χ(a)⁻¹) · lim_{s→0} s⁻¹ L_{K,f}(χ, s)` for characters `χ` of `Gal(K(f)/K)` (Kato 2004, (15.5.1), p.253).
 
 **Checks.**
@@ -324,23 +336,26 @@ API:
 
 ### 2.4 Kato's realisation, de Rham line and period map
 
-Construct, for a Hecke character `ψ` of type `(−r, 0)`, `r ≥ 1`, with value field `L = K(ψ(K×))`: the `L`-line `V_L(ψ) = H₁(E(ℂ), Q)^{⊗ r} ⊗ L` from the canonical CM pair over `K(f)`, the Galois action on `V_{L_λ}(ψ)` by which the Artin symbol of `a` acts as `ψ(a)⁻¹`, the `L`-line `S(ψ) ⊂ coLie(E)^{⊗ r} ⊗_K L` of `Gal(K(f)/K)`-invariants, the period map `per_ψ : S(ψ) → ℂ`, and the de Rham isomorphism `S(ψ) ⊗_L L_λ ≅ D^j_dR(K ⊗ Q_p, V_{L_λ}(ψ))`, `1 ≤ j ≤ r`, independent of `f` (Kato 2004, §15.7–15.8, pp.255–257). Prove the dictionary with this roadmap's conventions: for `ψ = φ` (`r = 1`), `V(φ)(1) = T_φ^∨(1)[1/p]`, the de Rham line at every prime above `p` is generated by `ω`, `γ = per_φ(ω)/Ω`, and the analytic character in §2.6 is `φ̄` times the direct finite character (Kato 2004, §15.8 and Proposition 15.9, pp.256–258; BKO, §3.0.2, p.951 and (3.4), p.952). *Needs:* §2.2; ComplexMultiplicationAndExplicitReciprocity §4.1 One-dimensional CM components of the Tate module and Frobenius and infinity-type identities; PadicHodgeRegulators §1.4.
+Construct, for a Hecke character `ψ` of type `(−r, 0)`, `r ≥ 1`, with value field `L ⊂ ℂ` generated over `K` by the values `ψ(a)` of `ψ` on the finite ideles `a ∈ K̂×` (a finite extension of `K`, Kato 2004, §15.7, p.256; `ψ` is trivial on the principal ideles `K× ⊂ ℂ× × K̂×`, so their values generate nothing), and for `f` contained in the conductor of `ψ` with `O_K× → (O_K/f)×` injective and `(E, α)` the canonical CM pair over `K(f)`: the `L`-line `V_L(ψ) = H¹(E(ℂ), Q)^{⊗_K r} ⊗_K L`, where `K` acts on the one-dimensional `K`-space `H¹(E(ℂ), Q)` through `K ≅ End(E) ⊗ Q` and the tensor powers are over `K`; the Galois action on `V_{L_λ}(ψ) = V_L(ψ) ⊗_L L_λ` by which the Artin symbol of `a` prime to `pf` acts as `ψ(a)⁻¹`; the `L`-line `S(ψ) ⊂ coLie(E)^{⊗ r} ⊗_K L` of `Gal(K(f)/K)`-invariants; the period map `per_ψ : S(ψ) → V_L(ψ) ⊗_L ℂ` induced by the de Rham–Betti period map `coLie(E) → H¹(E(ℂ), Q) ⊗_Q ℂ`; and the de Rham isomorphism `S(ψ) ⊗_L L_λ ≅ D^j_dR(K ⊗ Q_p, V_{L_λ}(ψ))`, the same for every `1 ≤ j ≤ r`, independent of `f` (Kato 2004, §15.7–15.8, pp.255–257, KATO04 lines 5383–5453). Prove the dictionary with this roadmap's conventions: for `ψ = φ` (`r = 1`), `V(φ)(1) = T_φ^∨(1)[1/p]`, the de Rham line at every prime above `p` is generated by `ω`, `γ = per_φ(ω)/Ω`, and the analytic character in §2.6 is `φ̄` times the direct finite character (Kato 2004, §15.8 and Proposition 15.9, pp.256–258; BKO, §3.0.2, p.951 and (3.4), p.952). *Needs:* §2.2; ComplexMultiplicationAndExplicitReciprocity §4.1 One-dimensional CM components of the Tate module and Frobenius and infinity-type identities; PadicHodgeRegulators §1.4.
 
 API:
 
-- The Artin symbol of `a` prime to `pf` acts on `V_{L_λ}(ψ)` as `ψ(a)⁻¹`; the idele `a ∈ K̂×` acts as `a_v ψ(a)⁻¹` at the place `v` under `λ`.
-- `S(ψ)` is one-dimensional over `L` and `per_ψ` is injective.
+- The Artin symbol of `a` prime to `pf` acts on `V_{L_λ}(ψ)` as `ψ(a)⁻¹`; through the reciprocity map, a finite idele `a ∈ K̂×` acts as multiplication by `a_v^r ψ(a)⁻¹`, with `v` the place of `K` under `λ`, `a_v ∈ K_v ⊂ L_λ` its `v`-component and `ψ(a)` the value of `ψ` at `a` (Kato 2004, §15.8, p.256, KATO04 lines 5414–5417).
+- `S(ψ)` is one-dimensional over `L`, `per_ψ` is injective, and `per_ψ` takes values in the `ℂ`-line `V_L(ψ) ⊗_L ℂ`; the vector `γ ∈ V_L(ψ)` of §2.6 is an element of that line, not a scalar.
+- Hodge filtration: `D⁰_dR(K ⊗ Q_p, V_{L_λ}(ψ))` has `L_λ`-dimension `2`, `D^j_dR` is the line `S(ψ) ⊗_L L_λ` for `1 ≤ j ≤ r`, and `D^{r+1}_dR = 0`; the line is the `ι`-eigenpart `coLie(E)^{⊗ r}`, the conjugate eigenpart `H¹(E, O)^{⊗ r}` lies in `D⁰` only.
 - At a good prime `a`, arithmetic Frobenius on `T_φ^∨(1)` is `N(a)/φ(a)`.
 
 **Checks.**
 
 - Dual and twist: on `T_φ` arithmetic Frobenius at `a` is `φ(a)`; on the dual it is `φ(a)⁻¹`, and the Tate twist multiplies by `N(a)`: `N(a)/φ(a)`. Omitting the twist gives `φ(a)⁻¹`, of absolute value `N(a)^{−1/2}` instead of `N(a)^{1/2}`.
 - The analytic character is `φ̄χ`, not `φχ`, `φ̄⁻¹χ` or `φ̄χ⁻¹`: for nonreal `χ` the four values `L_{pf}(·, 1)` differ.
-- `r = 1`: `D⁰_dR` and `D¹_dR` coincide with `S(φ) ⊗ L_λ`; the index `j` matters only for `r ≥ 2`.
+- `r = 1`: `H¹` has Hodge pieces `(1, 0)` and `(0, 1)`, so over the two coefficient embeddings `D⁰_dR` has `L_λ`-dimension `2` and `D¹_dR = S(φ) ⊗ L_λ` has dimension `1`; identifying `D⁰_dR` with the line would be wrong already at `r = 1`, and the dual exponential of §2.6 lands in `D⁰_dR(V(ψ)(1)) = D¹_dR(V(ψ)) ⊗ t⁻¹`.
+- Cohomology, not homology: for `y² = x³ − x` over `Q(i)` (`r = 1`, `ψ = φ`) at the inert prime `7`, arithmetic Frobenius acts on the line `H¹` by `φ((7))⁻¹ = −1/7`, and on its Tate twist by `49 · (−1/7) = −7 = N(a)/φ(a)`; on homology `H₁` it acts by `−7` before any twist, which is `φ(a)`, not the required `ψ(a)⁻¹`.
+- The exponent `r` in the local scalar: for `x ∈ K×`, viewed as a finite idele, `ψ(x) = ψ_∞(x)⁻¹ = x^r`, so `x_v^r ψ(x)⁻¹ = 1`, as the reciprocity map requires; the formula `x_v ψ(x)⁻¹ = x^{1 − r}` is not trivial on `K×` for `r ≥ 2`, and at `r = 2`, `a_v = 6` it differs from the correct scalar by the factor `6` (`36` against `6`, times `ψ(a)⁻¹`).
 
 ### 2.5 The height-one explicit reciprocity law
 
-Prove, in the form applied by Kato: let `K'` be a finite extension of `K` inside `K(p^∞f)`, of the shape `K(g)` with `g = p^m f_0`, `m ≥ 1`, `f_0` the prime-to-`p` part, `(E, α)` the canonical CM pair over `K(g)`, `ξ = (ξ_n)` the `O_K ⊗ Z_p`-basis of `T_pE` coming from the Betti class of `1 ∈ K`, and `θ_n(z) = {}_aθ_E(z + ν_n)` for the torsion points `ν_n = ξ_n − α_n` killed by `f_0`. Then the image of `ξ^{⊗(−r)} ⊗ (θ_n(α_n))_n` under the cup product with `(T_pE)^{⊗(−r)}`, localisation at the places above `p` and the dual exponential is `p^{−mr} (r − 1)!⁻¹ (d/ω)^r log θ_m (α_m) · ω^{⊗ r}`, for a `K'`-basis `ω` of `coLie(E)` (Kato 2004, proof of Proposition 15.9, pp.258–259, applying the height `h = 1` case of Kato's generalised explicit reciprocity law to the `𝔭`-divisible groups of the Néron model, one for each place `v | p` of `K'` and prime `𝔭 | p` of `O_K`). The CM curve has good reduction at every place of `K(g)` (Serre–Tate), and each `𝔭`-divisible group is a height-one formal `O_𝔭`-module (relative Lubin–Tate). *Needs:* §§2.1–2.4; PadicHodgeRegulators §§1.4, 1.7, 1.11; SelmerIwasawaCohomology §0.11; LubinTateFormalModulesAndQuasiCanonicalLifts LT.2.
+Prove, in the form applied by Kato: let `K'` be a finite extension of `K` inside `K(p^∞f)`, of the shape `K(g)` with `g = p^m f_0`, `m ≥ 1`, `f_0` the prime-to-`p` part, `(E, α)` the canonical CM pair over `K(g)`, `ξ = (ξ_n)` the `O_K ⊗ Z_p`-basis of `T_pE` coming from the Betti class of `1 ∈ K`, and `θ_n(z) = {}_aθ_E(z + ν_n)` for the torsion points `ν_n = ξ_n − α_n` killed by `f_0`. Then the image of `ξ^{⊗(−r)} ⊗ (θ_n(α_n))_n` under the cup product with `(T_pE)^{⊗(−r)}`, localisation at the places above `p` and the dual exponential is `p^{−mr} (r − 1)!⁻¹ (d/ω)^r log θ_m (α_m) · ω^{⊗ r}`, for a `K'`-basis `ω` of `coLie(E)` (Kato 2004, proof of Proposition 15.9, pp.258–259, applying the height `h = 1` case of Kato's generalised explicit reciprocity law to the `𝔭`-divisible groups of the Néron model, one for each place `v | p` of `K'` and prime `𝔭 | p` of `O_K`). The CM curve has good reduction at every place of `K(g)` (Serre–Tate), and each `𝔭`-divisible group is a height-one formal `O_𝔭`-module (relative Lubin–Tate). *Needs:* §§2.1–2.4; PadicHodgeRegulators §§1.4, 1.7, 1.11; SelmerIwasawaCohomology §0.11; LubinTateFormalModulesAndQuasiCanonicalLifts §2.1 Finite-height torsion, §2.2 The π-adic Tate module.
 
 **Checks.**
 
@@ -419,13 +434,13 @@ For `K = Q(√−7)`, `p = 5`, `f` the canonical conductor, `a = (α)` with `α 
 
 ### Dependencies
 
-Layers 0–1; EllipticCurves Layer 1; ComplexMultiplicationAndExplicitReciprocity §§1.2, 2.2, 3.2, 4.1; ClassFieldTheory Layer 13; SelmerIwasawaCohomology §§0.8–0.11, 3.6, 3.7 and its character twist; PadicHodgeRegulators §§1.4, 1.7, 1.11; LubinTateFormalModulesAndQuasiCanonicalLifts LT.2; AL.5.
+Layers 0–1; PadicFamilies §4.0.1; EllipticCurves Layer 1; ComplexMultiplicationAndExplicitReciprocity §§1.2, 2.2, 3.2, 4.1; ClassFieldTheory Layer 13; SelmerIwasawaCohomology §§0.8–0.11, 3.6, 3.7 and its character twist; PadicHodgeRegulators §§1.4, 1.7, 1.11; LubinTateFormalModulesAndQuasiCanonicalLifts §§2.1–2.2; AL.5.
 
 ## Layer 3: Torsion towers and the CM Lubin–Tate comparison
 
 ### 3.1 The torsion and ring-class compositum
 
-Construct, for `n ≥ 0`, `r ≥ 0`, the fields `F_n = H(E[p^{n+1}])` and `M_{n,r} = F_n L[r]` inside `Q̄`, the corestriction maps between their continuous Kummer cohomologies induced by the field inclusions, and `Φ_n`, the completion of `F_n` at the place fixed by `ι_p`. For `ν` of exact order `l^r`, `r ≥ 1`, prove `M_{n,r} ⊂ K(f l^{r+1} p^{n+1})`; for `ν = 1`, `M_{n,0} = F_n` (BKO, p.952 and the corestriction arrows on pp.952–953). *Needs:* §0.6; ComplexMultiplicationAndExplicitReciprocity §4.1 The algebraic Hecke character of a CM abelian variety, §3.2 Exact ray-level field and generation criterion; ClassFieldTheory Layer 13; SelmerIwasawaCohomology §0.11; LubinTateFormalModulesAndQuasiCanonicalLifts LT.2 `primitive-division`.
+Construct, for `n ≥ 0`, `r ≥ 0`, the fields `F_n = H(E[p^{n+1}])` and `M_{n,r} = F_n L[r]` inside `Q̄`, the corestriction maps between their continuous Kummer cohomologies induced by the field inclusions, and `Φ_n`, the completion of `F_n` at the place fixed by `ι_p`. For `ν` of exact order `l^r`, `r ≥ 1`, prove `M_{n,r} ⊂ K(f l^{r+1} p^{n+1})`; for `ν = 1`, `M_{n,0} = F_n` (BKO, p.952 and the corestriction arrows on pp.952–953). *Needs:* §0.6; ComplexMultiplicationAndExplicitReciprocity §4.1 The algebraic Hecke character of a CM abelian variety, §3.2 Exact ray-level field and generation criterion; ClassFieldTheory Layer 13; SelmerIwasawaCohomology §0.11; LubinTateFormalModulesAndQuasiCanonicalLifts §2.3 Lubin–Tate division fields.
 
 API:
 
@@ -452,7 +467,7 @@ Prove: `F_n` and `L[r]` are linearly disjoint over `K`, so `F_n ⊗_K L[r] → M
 
 ### 3.3 Splitting and the semilocal character factors
 
-Prove: `pO_K` splits completely in `H` and in every ring class field of conductor prime to `p`, including `L[r]`. After compatible choices of places, `F_n ⊗_K Φ ≅ ∏_{Gal(H/K)} Φ_n` and `M_{n,r} ⊗_K Φ ≅ ∏_{Gal(H/K) × Gal(L[r]/K)} Φ_n`; finite-level Kummer cohomology acquires the corresponding regular group-algebra factors, evaluation of the second factor sends `[g]` to `ν(g)`, and forgetting the `H`-factor is its augmentation; these identifications commute with the transition maps (BKO, pp.952–953). Proof route: `p` lies in every order of conductor prime to `p` and generates a principal proper ideal, whose Artin class is trivial; combine with §3.2 and the local torsion ramification. *Needs:* §§3.1–3.2; ClassFieldTheory Layer 13; LocalFieldsRamification Layer 2; SelmerIwasawaCohomology §§0.11, 3.6; LubinTateFormalModulesAndQuasiCanonicalLifts LT.2; Mathlib `MonoidAlgebra.lift_single`.
+Prove: `pO_K` splits completely in `H` and in every ring class field of conductor prime to `p`, including `L[r]`. After compatible choices of places, `F_n ⊗_K Φ ≅ ∏_{Gal(H/K)} Φ_n` and `M_{n,r} ⊗_K Φ ≅ ∏_{Gal(H/K) × Gal(L[r]/K)} Φ_n`; finite-level Kummer cohomology acquires the corresponding regular group-algebra factors, evaluation of the second factor sends `[g]` to `ν(g)`, and forgetting the `H`-factor is its augmentation; these identifications commute with the transition maps (BKO, pp.952–953). Proof route: `p` lies in every order of conductor prime to `p` and generates a principal proper ideal, whose Artin class is trivial; combine with §3.2 and the local torsion ramification. *Needs:* §§3.1–3.2; Tau Ceti `TauCeti.ClassFieldTheory.ncard_primesOver_ringClassField_eq_finrank_iff`; ClassFieldTheory Layer 13; LocalFieldsRamification Layer 2; SelmerIwasawaCohomology §§0.11, 3.6; LubinTateFormalModulesAndQuasiCanonicalLifts §2.3 Lubin–Tate division fields; Mathlib `MonoidAlgebra.lift_single`.
 
 **Checks.**
 
@@ -472,11 +487,11 @@ Prove: for `φ` as in §0.1 and `p ∤ f` inert, `φ((p)) = −p`; at a place of
 
 ### 3.5 Apply the Honda comparison at π = −p
 
-Prove: the formal completion of the good model of `E` at the place above `p`, with the differential `ω`, is a height-two formal group over `O_Φ` and is strictly isomorphic over `O_Φ`, with the CM tangent embedding, to the Lubin–Tate `O_Φ`-module for `π = −p`; the isomorphism matches invariant differentials and compatible Tate bases; the completion of `H(E[p^{n+1}])` is the `π^{n+1}`-division field `Φ_n`, totally ramified of degree `(p² − 1)p^{2n}`; and `μ_{p^{n+1}} ⊂ Φ_n` by the Weil pairing on `E[p^{n+1}]` (BKO, §2, p.947 and §3.0.2, p.953; Rubin 1987, §3, pp.409–410). Compatible points with `[p]P_{n+1} = P_n` are converted to the `[−p]` convention by the sign `(−1)^n`. *Needs:* §§3.1, 3.4; LubinTateFormalModulesAndQuasiCanonicalLifts LT.4 `elliptic-honda-comparison`, `unramified-honda-comparison`, LT.2 `tate-module-comparison`, `primitive-division`, `lt-character`; EllipticCurves Layer 2.
+Prove: the formal completion of the good model of `E` at the place above `p`, with the differential `ω`, is a height-two formal group over `O_Φ` and is strictly isomorphic over `O_Φ`, with the CM tangent embedding, to the Lubin–Tate `O_Φ`-module for `π = −p`; the isomorphism matches invariant differentials and compatible Tate bases; the completion of `H(E[p^{n+1}])` is the `π^{n+1}`-division field `Φ_n`, totally ramified of degree `(p² − 1)p^{2n}`; and `μ_{p^{n+1}} ⊂ Φ_n` by the Weil pairing on `E[p^{n+1}]` (BKO, §2, p.947 and §3.0.2, p.953; Rubin 1987, §3, pp.409–410). Compatible points with `[p]P_{n+1} = P_n` are converted to the `[−p]` convention by the sign `(−1)^n`. *Needs:* §§3.1, 3.4; LubinTateFormalModulesAndQuasiCanonicalLifts §4.4 The supersingular elliptic comparison, §4.3 The unramified Honda–Lubin–Tate comparison, §2.2 The π-adic Tate module, §2.3 Lubin–Tate division fields, §2.4 The Lubin–Tate character; EllipticCurves Layer 2.
 
 **Checks.**
 
-- The parameter is `−p`: `a_{p²} = −2p` corresponds to `s = −1` in LT.4; `s = +1` would require `a_{p²} = 2p`.
+- The parameter is `−p`: `a_{p²} = −2p` corresponds to `s = −1` in LubinTateFormalModulesAndQuasiCanonicalLifts §4.4; `s = +1` would require `a_{p²} = 2p`.
 - `n = 0`: degree `p² − 1`; for `p = 5`, `24`.
 - The Weil pairing puts `μ_{p^{n+1}}` in `Φ_n`; `[Φ_n : Φ]` is divisible by `[Φ(μ_{p^{n+1}}) : Φ] = (p − 1)p^n`, consistent with `(p² − 1)p^{2n}`.
 
@@ -486,7 +501,7 @@ For `p = 5`: `Φ_0/Φ` has degree `24`, `Φ_1/Φ` degree `600`; the inert Froben
 
 ### Dependencies
 
-Layers 0 and 2 (the class field `K(f)` and torsion fields); ComplexMultiplicationAndExplicitReciprocity §§3.2, 4.1, 4.2; ClassFieldTheory Layer 13; LocalFieldsRamification Layers 2–3; EllipticCurves Layers 2–3; SelmerIwasawaCohomology §§0.11, 3.6; LubinTateFormalModulesAndQuasiCanonicalLifts LT.2, LT.4.
+Layers 0 and 2 (the class field `K(f)` and torsion fields); ComplexMultiplicationAndExplicitReciprocity §§3.2, 4.1, 4.2; ClassFieldTheory Layer 13; LocalFieldsRamification Layers 2–3; EllipticCurves Layers 2–3; SelmerIwasawaCohomology §§0.11, 3.6; LubinTateFormalModulesAndQuasiCanonicalLifts §§2.2–2.4, 4.3–4.4.
 
 ## Layer 4: Finis's divisibility theorem in weight one
 
@@ -494,23 +509,24 @@ Throughout this layer, following Finis, the *tower prime* is a prime split in `K
 
 ### 4.1 Finis's local invariants
 
-Define, for a Hecke character `λ` of `K` with Finis type `(k, j)` (`λ_∞(x) = x^{−k}x̄^{−j}`) and dual `λ*(x) = λ(x̄)⁻¹|x|_{A_K}`: `λ` is anticyclotomic in Finis's sense when `λ = λ*` (then `k + j = −1` and `λ|_{A_Q×} = ω_{K/Q}|·|`); the local Gauss sum `G(d_q, λ_q)` with respect to `e_K = e_Q ∘ Tr`; the local root numbers `W_q(λ) = N(q)^{−e(q)}G(−δ, λ_q)` at nonsplit `q` and `W_ℓ(λ)` at the valuation prime; the set `W` of sign systems `(w_q)` over nonsplit primes with almost all `w_q = 1` and `∏ w_q = 1`, and `w(λ) ∈ W` for `W(λ) = +1`; for an inert `q` and a character `χ_q` of `K_q×`, `μ_ℓ(χ_q) = 0` if `χ_q` is unramified and `min_{x ∈ O_{K_q}×} v_ℓ(χ_q(x) − 1)` otherwise; and `b_ℓ(χ_ℓ, w) ∈ Q` for `ℓ` inert or ramified, by Finis's equation (14) (Finis, §1, pp.768–769, FINIS06 lines 61–99; §3, Proposition 3.4, p.786, and equation (14) with the vanishing of `b_ℓ`, p.788, FINIS06 lines 902–917). Prove `W_q(λ) = ±1` for nonsplit `q`, `W_q(λ) = (−1)^{v_q(f_λ)}` for inert `q`, and `W(λ) = ∏_q W_q(λ)` for type `(−k, k − 1)`, `k ≥ 1` (Finis, p.769; proof of Corollary 2.3, p.778). Prove `b_ℓ(χ_ℓ, w) = 0` when `χ_ℓ` is unramified (`ℓ` inert) or of minimal conductor (`ℓ` ramified) (Finis, p.769 and Proposition 3.4, p.786). *Needs:* AL.1.3.4 The local Gauss sum, AL.1.3.5 Explicit local ε-factors; Tau Ceti `HeckeCharacter`.
+Define, for a Hecke character `λ` of `K` with Finis type `(k, j)` (`λ_∞(x) = x^{−k}x̄^{−j}`) and dual `λ*(x) = λ(x̄)⁻¹|x|_{A_K}`: `λ` is anticyclotomic in Finis's sense when `λ = λ*` (then `k + j = −1` and `λ|_{A_Q×} = ω_{K/Q}|·|`); the local Gauss sum `G(d_q, λ_q)` with respect to `e_K = e_Q ∘ Tr`; the local root numbers `W_q(λ) = N(q)^{−e(q)}G(−δ, λ_q)` at nonsplit `q` and `W_ℓ(λ)` at the valuation prime; the set `W` of sign systems `(w_q)` over nonsplit primes with almost all `w_q = 1` and `∏ w_q = 1`, and `w(λ) ∈ W` for `W(λ) = +1`; for an inert `q` and a character `χ_q` of `K_q×`, `μ_ℓ(χ_q) = 0` if `χ_q` is unramified and `min_{x ∈ O_{K_q}×} v_ℓ(χ_q(x) − 1)` otherwise; and `b_ℓ(χ_ℓ, w) ∈ Q` for `ℓ` inert or ramified, by Finis's equation (14), with `b_ℓ(χ_ℓ, w) = 0` for `ℓ` split (Finis, §1, pp.768–769, FINIS06 lines 61–99; §3, Proposition 3.4, p.786, and equation (14) with the vanishing of `b_ℓ`, p.788, FINIS06 lines 893–917). Through the isomorphism `Q_{>0}/N(K×) ≅ W`, `r ↦ (ω_{K/Q,q}(r))_q`, `b_ℓ(χ_ℓ, w)` is equally indexed by positive rationals `r` with `W_ℓ(χ_ℓ) = ω_{K/Q,ℓ}(r)` (Finis, p.788, FINIS06 lines 889–893). Prove `W_q(λ) = ±1` for nonsplit `q`, `W_q(λ) = (−1)^{v_q(f_λ)}` for inert `q`, and `W(λ) = ∏_q W_q(λ)` for type `(−k, k − 1)`, `k ≥ 1` (Finis, p.769; proof of Corollary 2.3, p.778). Prove `b_ℓ(χ_ℓ, w) = 0` when `χ_ℓ` is unramified (`ℓ` inert) or of minimal conductor (`ℓ` ramified) (Finis, p.769 and Proposition 3.4, p.786). *Needs:* AL.1.3.4 The local Gauss sum, AL.1.3.5 Explicit local ε-factors; Tau Ceti `HeckeCharacter`.
 
 API:
 
 - `μ_ℓ` depends only on the restriction to local units, and `μ_ℓ(χ_q) = 0` when that restriction is trivial.
 - `μ_ℓ(χ_q χ'_q) = μ_ℓ(χ_q)` when `χ'_q` is unramified.
-- `λ ↦ λ/N` (`N` the norm character) carries ideal type `(1,0)` equivariant characters times anticyclotomic finite-order characters to Finis-anticyclotomic characters of type `(−1, 0)` (§5.1).
+- `η ↦ η̄/N`, with `η̄ = η ∘ c` and `N` the norm character, carries `η = φρ`, `φ` equivariant of ideal type `(1,0)` and `ρ` anticyclotomic of finite order, to the Finis-anticyclotomic character `φ̄ρ̄/N = φ̄ρ⁻¹/N` of Finis type `(−1, 0)`: its archimedean component is `z̄⁻¹ · z z̄ = z` (§5.1, with `ν = ρ⁻¹`). Without the conjugation, `φρ/N` has archimedean component `z⁻¹ · z z̄ = z̄`, Finis type `(0, −1)`.
 
 **Checks.**
 
 - `χ_q` of conductor `q` with values `ζ_ℓ` on units: `μ_ℓ = v_ℓ(ζ_ℓ − 1) = 1/(ℓ − 1)` in the normalisation `v_ℓ(ℓ) = 1`; for values of order prime to `ℓ`, `μ_ℓ = 0`.
 - Type `(−1, 0)` gives `k + j = −1`; type `(1, 0)` gives `k + j = 1` and is not Finis-anticyclotomic.
+- Conjugation in the norm twist, evaluated at `z = i`: the archimedean component of `φ̄/N` is `z̄⁻¹ · z z̄ = z`, value `i`, Finis type `(−1, 0)`; that of `φ/N` is `z⁻¹ · z z̄ = z̄`, value `−i`, Finis type `(0, −1)`, outside the family `(−k, k − 1)`, `k ≥ 1`, of Finis's theorem.
 - For inert `q` with `v_q(f_λ) = 1`, `W_q = −1`; with `v_q(f_λ) = 0`, `W_q = 1`.
 
 ### 4.2 Primitive theta functions, Shintani operators and Yang's formula
 
-Construct the spaces of primitive theta functions `V^{prim}_{d,C;ν}` on a CM elliptic curve, the Shintani operators `F*` and the Shintani representation, and prove: the characters appearing in `T^{prim}_{d_0 p^m}` are exactly those with restriction `ω_{K/Q}|·|` to `A_Q×`, type `(−1, 0)`, root number `+1` and conductor `d_0 p^m D d⁻¹` with `d` a squarefree product of ramified primes (Finis, §2, Proposition 2.2, and the description recalled on p.796). Prove Yang's formula: for a Shintani eigenfunction `ϑ` with character `λ`, `|l(ϑ)|²/⟨ϑ, ϑ⟩ = (w_K² √D / 4πh_K) ∏_{p|d}(1 − ω_{K/Q}(p)p⁻¹)⁻¹ L(0, λ)` (Finis, Proposition 2.4, p.780, FINIS06 line 564, reformulating Yang's theta-lifting formula). *Needs:* §4.1; ComplexMultiplicationAndExplicitReciprocity §1.2 (the period-lattice comparison); AL.1.5.2 Normalization of the supplied completed Hecke function.
+Construct the spaces of primitive theta functions `V^{prim}_{d,C;ν}` on a CM elliptic curve, the Shintani operators `F*` and the Shintani representation, and prove: the characters appearing in `T^{prim}_{d_0 p^m}` are exactly those with restriction `ω_{K/Q}|·|` to `A_Q×`, type `(−1, 0)`, root number `+1` and conductor `d_0 p^m D 𝔡⁻¹` with `𝔡` a squarefree product of ramified prime ideals (Finis, §2, Proposition 2.2, and the description recalled on p.796). Prove Yang's formula: for a positive integer `d` and a Shintani eigenfunction `ϑ ∈ V^{prim}_{d,C;ν}` with character `λ`, `|l(ϑ)|²/⟨ϑ, ϑ⟩ = (w_K² √D / 4πh_K) ∏_{p|d}(1 − ω_{K/Q}(p)p⁻¹)⁻¹ L(0, λ)`, the product over the rational primes dividing the integer `d` (Finis, Proposition 2.4, p.780, FINIS06 line 564, reformulating Yang's theta-lifting formula). *Needs:* §4.1; ComplexMultiplicationAndExplicitReciprocity §1.2 (the period-lattice comparison); AL.1.5.2 Normalization of the supplied completed Hecke function.
 
 **Checks.**
 
@@ -520,11 +536,12 @@ Construct the spaces of primitive theta functions `V^{prim}_{d,C;ν}` on a CM el
 
 ### 4.3 Integral theta functions and the valuation identity
 
-Construct integral theta functions and prove the arithmetic form of Yang's formula: for `λ` anticyclotomic of type `(−1, 0)`, `W(λ) = +1`, conductor `dDd⁻¹`, `Ω⁻¹ L(0, λ) = 2^{ν(D)}√D ∏_{q|d}(1 − ω_{K/Q}(q)q⁻¹) b_a(ϑ_λ, ā, ϑ_λ, a)⁻¹ (l(ϑ_λ)/w_K)²` (Finis, Proposition 3.6, (13), p.787), and the valuation of the pairing term (Finis, Proposition 3.7, (15), p.789). Deduce, for `λ` of type `(−1, 0)` with `W(λ) = +1` and the normalised integral eigenfunction `ϑ_λ`, `v_ℓ(Ω⁻¹ W̃ D^{1/4} L(0, λ)) = Σ_{q ≠ ℓ inert} μ_ℓ(λ_q) + b_ℓ(λ_ℓ, w(λ)) + 2 v_ℓ(l(ϑ_λ)/w_K)` with `W̃ = 1` for nonsplit `ℓ` (Finis, proof of Theorem 1.1, p.794, FINIS06 lines 1130–1148). The period is that of a pair `(E, ω)` with good reduction at the `ℓ`-adic place and `ω` reducing to a nonvanishing differential (Finis, p.768). *Needs:* §§4.1–4.2; ComplexMultiplicationAndExplicitReciprocity §1.2 CM period and de Rham pairings (with its period-lattice comparison).
+Construct integral theta functions and prove the arithmetic form of Yang's formula. Let `d` be a positive integer, `𝔡` a squarefree product of ramified prime ideals, and `λ` anticyclotomic of type `(−1, 0)` with `W(λ) = +1` and conductor `dD𝔡⁻¹`; let `ϑ_λ` be a nonzero element of the one-dimensional Shintani eigenspace of `λ` in `V^{prim}_{d,C}`, `C` the class determined by `λ`, `a` a fractional ideal with `N(a) ∈ C`, and `ϑ_{λ,a}`, `ϑ_{λ,ā}` the components of `ϑ_λ` on the lattices `a` and `ā`. With the arithmetic pairing `b_ar = (Ω/2π)b`, the value `b_ar(ϑ_{λ,ā}, ϑ_{λ,a})` is a nonzero multiple of `⟨ϑ_λ, ϑ_λ⟩ > 0`, hence nonzero (Finis, Lemma 3.5, p.787, FINIS06 lines 854–861), and `Ω⁻¹ L(0, λ) = 2^{ν(D)}√D ∏_{q|d}(1 − ω_{K/Q}(q)q⁻¹) b_ar(ϑ_{λ,ā}, ϑ_{λ,a})⁻¹ (l(ϑ_λ)/w_K)²`, with `ν(D)` the number of primes dividing `D` and the product over the rational primes dividing `d`; for `a` prime to `dD`, `b_ar(ϑ_{λ,ā}, ϑ_{λ,a}) = λ(ā)⁻¹ b′_ar(ϑ_{λ,a}, ϑ_{λ,a})` for the symmetric variant `b′_ar` (Finis, Proposition 3.6, (13), p.787, FINIS06 lines 862–868). Prove the valuation of the pairing term: for `a` prime to `dD𝔩̄`, `𝔩` the prime above `ℓ` fixed by `ι_ℓ`, and a normalised integral Shintani eigenfunction `ϑ ∈ T^{prim}_{d/N(a),a}` with local eigencharacters `λ_q`, `v_ℓ(W̃ D^{1/4} b′_ar(ϑ, ϑ) ∏_{q|d}(1 − ω_{K/Q}(q)q⁻¹)) = Σ_{q | d inert, q ≠ ℓ} μ_ℓ(λ_q) + b_ℓ(λ_ℓ, dN(a)⁻¹)`, where, with `m = v_ℓ(d)`, `W̃ = g(λ_𝔩, μ) = Σ_{k mod ℓ^m} λ_𝔩(k)μ^k` is the Gauss sum of `λ_𝔩` on `O_{K_𝔩}× = Z_ℓ×`, viewed as a Dirichlet character modulo `ℓ^m`, at a root of unity `μ` of order `ℓ^m` when `ℓ` splits in `K` and divides `d`, and `W̃ = 1` otherwise (Finis, the Gauss sum before Proposition 3.7, p.788, and Proposition 3.7, (15), p.789, FINIS06 lines 918–940). Deduce, for `λ` of type `(−1, 0)` with `W(λ) = +1` and conductor `dD𝔡⁻¹` as above and a normalised integral element `ϑ_λ` of its eigenspace, `v_ℓ(Ω⁻¹ W̃ D^{1/4} L(0, λ)) = Σ_{q ≠ ℓ inert} μ_ℓ(λ_q) + b_ℓ(λ_ℓ, w(λ)) + 2 v_ℓ(l(ϑ_λ)/w_K)`, with `W̃` the Gauss sum just defined for this `d`. For nonsplit `ℓ`, `W̃ = 1`. For split `ℓ`, `b_ℓ = 0` (§4.1), `D^{1/4}` is an `ℓ`-adic unit and `v_ℓ(W̃) = v_ℓ(W_ℓ(λ))`, so the identity reads `v_ℓ(Ω⁻¹ W_ℓ(λ) L(0, λ)) = Σ_{q inert} μ_ℓ(λ_q) + 2 v_ℓ(l(ϑ_λ)/w_K)` (Finis, proof of Theorem 1.1, p.794, FINIS06 lines 1134–1148). The period is that of a pair `(E, ω)` with good reduction at the `ℓ`-adic place and `ω` reducing to a nonvanishing differential (Finis, p.768). *Needs:* §§4.1–4.2; ComplexMultiplicationAndExplicitReciprocity §1.2 CM period and de Rham pairings (with its period-lattice comparison).
 
 **Checks.**
 
-- `v_ℓ(l(ϑ_λ)/w_K) ≥ 0` gives the lower bound `v_ℓ(Ω⁻¹ D^{1/4} L(0, λ)) ≥ Σ μ_ℓ + b_ℓ`, except possibly for `K = Q(√−3)`, `ℓ = 3`.
+- `v_ℓ(l(ϑ_λ)/w_K) ≥ 0` gives the lower bound `v_ℓ(Ω⁻¹ W̃ D^{1/4} L(0, λ)) ≥ Σ μ_ℓ + b_ℓ`, except possibly for `K = Q(√−3)`, `ℓ = 3`.
+- Split `ℓ = 11` in `K = Q(√−7)` (`−7 ≡ 4 = 2²` modulo `11`) with `11 ∤ d`: `W̃ = 1`, `v_11(W̃) = 0` and `b_11 = 0`; leaving `W̃` unspecified would allow the value `11`, which shifts the left side by `1` with the right side unchanged. The nonsplit case at `ℓ = 5` (inert in `Q(√−7)`) with `λ_5` unramified has `W̃ = 1` and `b_5 = 0`.
 - Replacing `ω` by `ℓω` changes `Ω` by `ℓ` and the left side by `−1`; the good-reduction normalisation excludes it.
 - `D^{1/4}` is an `ℓ`-adic unit for `ℓ ∤ D` and must be kept when `ℓ | D`.
 
@@ -683,7 +700,7 @@ API:
 
 - `P = {p}`, rational direction `(a, b) ∈ Z²`: `|ub − va|` is a nonzero integer divisible by `q`, so it is at least `q`, while `|ub − va| ≤ (|a| + |b|)q^d`; hence `M(q, q^d) = 0` for any fixed `d < 1` and large `q`.
 - With modulus `Z_p` in place of `qZ_p`, every pair in the box off the direction line counts, `M(q, q^c)` grows like `q^{2c}`, and part one fails.
-- `c ≤ 0`: the box contains only `(0, 0)`, excluded by the nonvanishing condition, so `M = 0` for every `q`.
+- `c < 0` and `q > 1`: `t = q^c < 1`, the box contains only `(0, 0)`, excluded by the nonvanishing condition, so `M(q, q^c) = 0`. At `c = 0` the box is the nine-point square `{−1, 0, 1}²` and the count need not vanish for every `q`: for `P = {5}`, `α_5 = 5`, `β_5 = 0`, the form is `uβ_5 − vα_5 = −5v`, so `q = 5` counts the six pairs `(u, ±1)`, `u ∈ {−1, 0, 1}`, while `q = 25` counts none. The quantifier "for all sufficiently large `q`" is needed.
 - `d = 11/20`, `s = 7/16`: `5d/2 − 1 = 3/8 < 7/16 < 1/2`, an admissible pair.
 
 ### 6.2 The Galois-average limit
@@ -702,7 +719,8 @@ Prove: for `η = φρ` as in §6.2 and `σ ∈ Aut(ℂ/K)`, `L(η, 1) = 0` impli
 
 **Checks.**
 
-- `σ` is complex conjugation: `η^σ = η̄`, and `L(η̄, 1) = L(η, 1)` by §1.4, consistent with the statement.
+- `σ = id` fixes `K` and gives `η^σ = η`. For `K = Q(√−7)` (`h_K = 1`, so the canonical `φ` takes values in `K`), `ν = 1`, `χ` of order `25` and `σ ∈ Aut(ℂ/K)` with `σ(ζ_25) = ζ_25²`: `η^σ = φχ²`, and `χ²` again has order `25` and conductor exponent `3`, so both values vanish by §1.4, as the statement requires.
+- Complex conjugation is not in `Aut(ℂ/K)`: for `K = Q(i)` it sends `i` to `−i`. The identity `L(η̄, 1) = L(η, 1)`, `η̄ = conj ∘ η = η ∘ c` by equivariance, is a separate compatibility of the two complex embeddings, proved by reindexing ideals `a ↦ ā` (§§0.1, 1.4), not an instance of this theorem.
 - Nonvanishing is not transported by a transcendental period alone; the algebraic normalisation is essential.
 - `η` and `η^σ` have the same conductor, so the family of §6.2 is stable under `σ`.
 
@@ -718,7 +736,7 @@ Prove: for `φ` as in §0.1 and a fixed anticyclotomic `ν` of odd finite order,
 
 ### 6.5 The parity dichotomy
 
-Prove `centralValue_parity_dichotomy`: let `K` be imaginary quadratic, `ι : K → ℂ`, `p` an odd prime with `pO_K` prime (inert), `v` the prime `pO_K`, `φ` with `IsEquivariantTypeOneZero ι φ` unramified at `v`, and `ν` an anticyclotomic character of odd finite order unramified at `v`; fix uniformizers `ϖ`. There is `ε ∈ {±1}` such that for every `χ` with `IsPAnticyclotomic p v χ` and `c = conductorExponent v χ`: if `(−1)^c = −ε` then `HasCentralValue (φνχ) ϖ 0`; and the set of `χ` with `(−1)^c = ε` for which no nonzero central value exists is finite. Here `ε = W(φν)`. Proof route: §1.3 gives `W(φνχ) = (−1)^c W(φν)`; §1.4 gives the zeros; §6.4 gives the nonvanishing; §0.3 identifies `HasCentralValue` with the continued value. The sign `ε` is determined, because the family contains infinitely many characters of each parity of `c` (§0.2). By `L(φ̄νχ, s) = L(φν⁻¹χ⁻¹, s)` the statement holds verbatim for the characters `φ̄νχ` used in BKO §§3 and 6. No hypothesis `p ∤ h_K` or `p ≥ 5` is needed. *Needs:* §§0.1–0.3, 1.3, 1.4, 6.4.
+Prove `centralValue_parity_dichotomy`: let `K` be imaginary quadratic, `ι : K → ℂ`, `p` an odd prime with `pO_K` prime (inert), `v` the prime `pO_K`, `φ` with `IsEquivariantTypeOneZero ι φ` unramified at `v`, and `ν` an anticyclotomic character of odd finite order unramified at `v`; fix uniformizers `ϖ`. There is `ε ∈ {±1}` such that for every `χ` with `IsPAnticyclotomic p v χ` and `c = conductorExponent v χ`: if `(−1)^c = −ε` then `HasCentralValue (φνχ) ϖ 0`; and the set of `χ` with `(−1)^c = ε` for which no nonzero central value exists is finite. Here `ε = W(φν)`. Proof route: §1.3 gives `W(φνχ) = (−1)^c W(φν)`; §1.4 gives the zeros; §6.4 gives the nonvanishing; §0.3 identifies `HasCentralValue` with the continued value. The sign `ε` is determined, because the family contains infinitely many characters of each parity of `c` (§0.2, with no class-number hypothesis). By `L(φ̄νχ, s) = L(φν⁻¹χ⁻¹, s)` the statement holds verbatim for the characters `φ̄νχ` used in BKO §§3 and 6. No hypothesis `p ∤ h_K` or `p ≥ 5` is needed. *Needs:* §§0.1–0.3, 1.3, 1.4, 6.4.
 
 **Checks.**
 
@@ -737,7 +755,7 @@ Layers 0 and 1; DiophantineApproximationAndTranscendence §§2.1, 2.3; Arithmeti
 
 ## Downstream consumers
 
-AnticyclotomicLocalUnits consumes the integral class and its reciprocity (§§2.7–2.10), the towers, splitting and Lubin–Tate comparison (Layer 3), the forced zeros (§1.4), the unit theorem and witness (§§5.4–5.5) and the scalar/tensor comparison (§5.7); it owns the `ξ_ν` projection, the `Δ`-averaging, derivatives and signed kernels, and must compare its native derivative with the scalar value. InertAnticyclotomicCMMainConjecture consumes the central nonvanishing and parity dichotomy (§§6.4–6.5) and the period laws (§2.10). The CM continuations of ModularIwasawaMainConjecturesPartII consume Kato's theta function, elliptic units and the reciprocity law (§§2.1–2.6). The scalar/tensor comparison applies only with unramified coefficients (§5.7).
+AnticyclotomicLocalUnits consumes the integral class and its reciprocity (§§2.7–2.10), the towers, splitting and Lubin–Tate comparison (Layer 3), the forced zeros (§1.4), the unit theorem and witness (§§5.4–5.5) and the scalar/tensor comparison (§5.7); it owns the `ξ_ν` projection, the `Δ`-averaging, derivatives and signed kernels, and must compare its native derivative with the scalar value. InertAnticyclotomicCMMainConjecture consumes the central nonvanishing and parity dichotomy (§§6.4–6.5) and the period laws (§2.10). The CM continuations of ModularIwasawaMainConjecturesPartII consume the CM refinement of Kato's theta function, the standard elliptic units and the reciprocity law (§§2.1–2.6). The scalar/tensor comparison applies only with unramified coefficients (§5.7).
 
 ## Worked examples
 
