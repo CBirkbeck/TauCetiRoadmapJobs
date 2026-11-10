@@ -189,3 +189,17 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-08"
 cited_for = ["8.1"]
+
+[[source]]
+id = "Prestel"
+authors = "Alexander Prestel"
+title = "Einführung in die Mathematische Logik und Modelltheorie"
+year = 1986
+doi = "10.1007/978-3-663-07641-4"
+locator_scheme = "section"
+locator = "4.17"
+url = "https://doi.org/10.1007/978-3-663-07641-4"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["8.2"]
