@@ -1,0 +1,13 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-ModularCharactersAndBlocks~15",
+  "head": "f49016c76d0dd2c938af39eb260ac6ce46c1d53f",
+  "pr": 1775,
+  "folder": "RepresentationTheory/ModularCharactersAndBlocks",
+  "date": "2026-11-10",
+  "findings": 1,
+  "blocking": 0,
+  "notes": "incremental re-review of 11 changed lines since 581ed75. Previous R02 (Downstream consumers entry vs §8.4) repaired; previous R01 (family index says the roadmap owns Brauer characters, which the folder imports from GL2AutomorphicRepresentationsAndTransfer §R17.5.11) not repaired and carried as the one P3. Checked: the Downstream entry item by item against §8.4 and GlaubermanZStar's contract at its open head; Layer 8 Dependencies against the layer's direct uses; gate (all counters 0 apart from outside-folder on the family index, which is the pull request's own; worker build=0); depcheck 0 problems; Suggested.lean elaborates with 8 sorry warnings only, file unchanged; adversarial table with 4 new rows and the previous report's rows carried."
+ }
+}
