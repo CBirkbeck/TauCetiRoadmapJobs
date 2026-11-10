@@ -44,7 +44,7 @@ title = "Integral p-adic Hodge theory"
 year = 2016
 arxiv = "1602.03148v3"
 locator_scheme = "theorem"
-locator = "Lemma 3.2; Lemmas 3.9-3.10"
+locator = "Lemma 3.2; Definition 3.5; Example 3.6; Lemmas 3.9-3.10"
 url = "https://arxiv.org/abs/1602.03148v3"
 fetched_from = "https://arxiv.org/pdf/1602.03148v3"
 fetched_at = "2026-10-26T15:23:16Z"
@@ -53,7 +53,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-26"
 version_note = "arXiv v3"
-cited_for = ["Q5.1", "Q5.3", "Conventions"]
+cited_for = ["Q5.1", "Q5.3", "Q9.4", "Q10.5", "Conventions"]
 
 [[source]]
 id = "Wedhorn"

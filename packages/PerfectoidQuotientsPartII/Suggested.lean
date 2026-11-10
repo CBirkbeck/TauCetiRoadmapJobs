@@ -2,6 +2,7 @@ module
 
 import Mathlib
 import TauCeti.RingTheory.Huber.Basic
+import TauCeti.RingTheory.Perfectoid.Integral
 import TauCeti.RingTheory.Valuation.Continuous.Basic
 import TauCeti.RingTheory.Syntomic.StandardSyntomic
 
@@ -12,12 +13,14 @@ This file is not the roadmap: the roadmap is `README.md`. This file states the r
 theorems against the pinned Mathlib and Tau Ceti, each with `sorry`, together with the few
 definitions they need; the README's other targets, API lists and Checks stay in the README.
 
-`IsIntegralPerfectoid` restates, on Mathlib's carriers, the integral perfectoid predicate of
-PerfectoidSpaces P1.24 (BMS1 Definition 3.5), so that this file elaborates without importing
-another roadmap. `IsSyntomic` is Stacks' description of a syntomic ring map as one that is standard
-syntomic (Tau Ceti `TauCeti.Algebra.IsStandardSyntomicOfRelativeDimension`) Zariski locally on the
-source, `IsIndSyntomic` is the factorization form of ind-syntomic maps and `IsPZariski` the
-`p`-Zariski condition.
+*Integral perfectoid* is Tau Ceti's `TauCeti.Perfectoid.IsIntegralPerfectoid` (BMS1
+Definition 3.5), whose instance
+`TauCeti.Perfectoid.IsIntegralPerfectoid.isAdicComplete_span_natCast` supplies the `p`-adic
+completeness that Mathlib's `PreTilt.untilt` and `WittVector.fontaineTheta` need. `IsSyntomic` is
+Stacks' description of a syntomic ring map as one that is standard syntomic
+(Tau Ceti `TauCeti.Algebra.IsStandardSyntomicOfRelativeDimension`) Zariski locally on the source,
+`IsIndSyntomic` is the factorization form of ind-syntomic maps and `IsPZariski` the `p`-Zariski
+condition.
 
 Stated: fibre products of perfectoid rings (Česnavičius–Scholze Proposition 2.1.4); the transfer of
 adic completeness, of the valuation-ring property with its value group, and of algebraic closedness
@@ -40,6 +43,8 @@ Not statable at the pins:
 
 namespace TauCetiRoadmap.PerfectoidQuotientsPartII
 
+open TauCeti.Perfectoid (IsIntegralPerfectoid)
+
 universe u v
 
 /-! ## Standing definitions -/
@@ -47,23 +52,6 @@ universe u v
 section Definitions
 
 variable (p : ℕ) [Fact p.Prime]
-
-/-- A commutative ring `A` is *integral perfectoid* (BMS1 Definition 3.5; PerfectoidSpaces P1.24)
-if it is complete and separated for the adic topology of some `π` with `π ^ p ∣ p`, Frobenius on
-`A/p` is surjective, and the kernel of Fontaine's map `θ : W(A♭) → A` is principal. The last
-condition is stated for every proof that `p` is a nonunit and `A` is `p`-adically complete, so the
-zero ring satisfies the predicate. -/
-class IsIntegralPerfectoid (A : Type*) [CommRing A] : Prop where
-  /-- A complete separated adic element with `π ^ p ∣ p`. -/
-  exists_adic_element : ∃ π : A, π ^ p ∣ (p : A) ∧ IsAdicComplete (Ideal.span {π}) A
-  /-- Frobenius on `A/p` is surjective. -/
-  frobenius_surjective : Function.Surjective (fun x : ModP A p ↦ x ^ p)
-  /-- The kernel of Mathlib's Fontaine map is principal. -/
-  theta_kernel_principal : ∀ (hp : ¬ IsUnit (p : A))
-      (hc : IsAdicComplete (Ideal.span {(p : A)}) A),
-    letI : Fact (¬ IsUnit (p : A)) := ⟨hp⟩
-    letI := hc
-    (RingHom.ker (WittVector.fontaineTheta A p)).IsPrincipal
 
 /-- A ring map `R → S` is *syntomic* if `S` is covered by finitely many principal opens `D(g)` on
 which `S_g` is a standard syntomic `R`-algebra (Stacks, Lemmas 10.136.4 and 10.136.15, tags 00SO
@@ -117,7 +105,7 @@ Let `A'` be a nonzero integral perfectoid ring, `ξ` a generator of the kernel o
 `θ : W(A'♭) → A'` and `ϖ♭ ∈ A'♭` a divisor of its zeroth Witt coordinate. Then `A'♭` is
 `ϖ♭`-adically complete if and only if `A'` is `(ϖ♭)♯`-adically complete. -/
 theorem isAdicComplete_preTilt_iff (A' : Type*) [CommRing A'] [IsIntegralPerfectoid p A']
-    [Fact (¬ IsUnit (p : A'))] [IsAdicComplete (Ideal.span {(p : A')}) A']
+    [Fact (¬ IsUnit (p : A'))]
     (ξ : WittVector p (PreTilt A' p))
     (hξ : RingHom.ker (WittVector.fontaineTheta A' p) = Ideal.span {ξ})
     (ϖ : PreTilt A' p) (hϖ : ϖ ∣ ξ.coeff 0) :
@@ -138,8 +126,7 @@ perfectoid valuation ring `A`, divisibility in `A♭` is detected after `x ↦ x
 of `A` is a unit multiple of a sharp. Together these say that `x ↦ x♯` induces an order-preserving
 isomorphism `Frac(A♭)ˣ/(A♭)ˣ ≃ Frac(A)ˣ/Aˣ`. -/
 theorem untilt_dvd_iff_and_exists_isUnit_mul_untilt (A : Type*) [CommRing A] [IsDomain A]
-    [ValuationRing A] [IsIntegralPerfectoid p A] [Fact (¬ IsUnit (p : A))]
-    [IsAdicComplete (Ideal.span {(p : A)}) A] :
+    [ValuationRing A] [IsIntegralPerfectoid p A] [Fact (¬ IsUnit (p : A))] :
     (∀ x y : PreTilt A p, x ∣ y ↔ PreTilt.untilt x ∣ PreTilt.untilt y) ∧
       ∀ a : A, ∃ u : A, IsUnit u ∧ ∃ b : PreTilt A p, a = u * PreTilt.untilt b :=
   sorry
@@ -197,7 +184,7 @@ be integral perfectoid with the `ϖ`-adic topology, where `ϖ ^ p ∣ p` and `A`
 complete, and let `a ∈ A` and `m ≥ 0`. There is `a' ∈ A♭` such that every continuous valuation
 `v` on `A` with `v ≤ 1` on `A` satisfies `v(a - a'♯) ≤ v(p) · max(v(a'♯), v(ϖ) ^ (p m))`. -/
 theorem exists_approximation (A : Type u) [CommRing A] [TopologicalSpace A]
-    [IsIntegralPerfectoid p A] [Fact (¬ IsUnit (p : A))] [IsAdicComplete (Ideal.span {(p : A)}) A]
+    [IsIntegralPerfectoid p A] [Fact (¬ IsUnit (p : A))]
     (ϖ : A) (hϖ : ϖ ^ p ∣ (p : A)) (hadic : IsAdic (Ideal.span {ϖ}))
     (hc : IsAdicComplete (Ideal.span {ϖ}) A) (a : A) (m : ℕ) :
     ∃ a' : PreTilt A p, ∀ (Γ₀ : Type v) [LinearOrderedCommGroupWithZero Γ₀]
