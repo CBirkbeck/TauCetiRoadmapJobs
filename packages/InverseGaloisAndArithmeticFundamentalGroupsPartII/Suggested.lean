@@ -1,7 +1,5 @@
-module
-
-public import Mathlib
-public import TauCeti.GroupTheory.SpecificGroups.Braid.Basic
+import Mathlib
+import TauCeti.GroupTheory.SpecificGroups.Braid.Basic
 
 /-!
 # Inverse Galois theory and arithmetic fundamental groups, Part II: target signatures
@@ -29,14 +27,14 @@ Headline theorems not statable at the pins:
   (EVW Proposition 7.8): Mathlib has pro-étale `ℓ`-adic cohomology of schemes
   (`AlgebraicGeometry.Scheme.EllAdicCohomology`) but no Hurwitz scheme, a moduli construction
   supplied by the parent roadmap;
-* stabilization of a graded module from its low K-homology (EVW Theorem 4.2): there is no carrier
-  for internally graded modules over the noncommutative component algebra together with the
-  K-complex and its homology;
+* stabilization of a graded module from its low K-homology (EVW Theorem 4.2): Tau Ceti has the
+  category `TauCeti.GradedModuleCat` of internally graded modules over a graded algebra and the
+  graded balanced tensor product, but not the component algebra, the monoid algebra of the
+  braid-orbit monoid with its length grading, nor the K-complex with its differential and its
+  homology; both are constructions of the roadmap, not short definitions;
 * `(n − 2)`-connectivity of the disc arc complex (Hatcher–Wahl Proposition 7.2): there is no
   carrier for isotopy classes of embedded arcs in a marked disc.
 -/
-
-@[expose] public section
 
 namespace TauCetiRoadmap.InverseGaloisAndArithmeticFundamentalGroupsPartII
 

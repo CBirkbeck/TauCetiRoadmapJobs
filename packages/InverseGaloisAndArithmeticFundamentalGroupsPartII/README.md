@@ -71,22 +71,26 @@ It does not own, and consumes by name:
   the coefficient towers: §IG.5.3 (*Arithmetic Hurwitz stacks and schemes*, *Analytic and
   topological Hurwitz comparison*) and §IG.5.5 (*Fixed-degree Hurwitz mod-`ℓ` comparison*,
   *Coefficient towers and rational Betti dimensions*);
-- plane configurations versus disc configurations and the half-twist convention: ReductiveGroups
-  Layer 11A; the finite Salvetti complex of a finite reflection arrangement and its comparison with
-  the complement: ReductiveGroups Layer 11B. The type-A poset model and its coarsening are therefore
-  not built here; Layer 5 specializes the ReductiveGroups model to `W = S_n` and lifts it to
-  Hurwitz covers;
+- plane configuration spaces, the identification of `π_1(Conf_n(ℂ))` with `TauCeti.BraidGroup n`
+  and the half-twist convention: ReductiveGroups Layer 11A; the finite Salvetti complex of a finite
+  Weyl arrangement (a finite reduced crystallographic root pairing) and its comparison with the
+  complexified complement: ReductiveGroups Layer 11B. The type-A poset model and its coarsening are
+  therefore not built here; Layer 5 specializes the ReductiveGroups model to the Weyl group
+  `W = S_n` of type `A_(n−1)` and lifts it to Hurwitz covers. Plane and disc configurations are
+  compared through Mathlib's `Homeomorph.unitBall`, applied coordinatewise (§5.1);
 - homology of a `K(G, 1)` with local coefficients as group homology: ClassifyingSpaces Stage 4,
   items 16–17;
 - singular homology, cellular homology, the Künneth theorem over a field, finite covers, transfer,
   Cartan–Leray and coinvariants, the Serre spectral sequence, relative simplicial approximation,
   Hurewicz and Whitehead: AlgebraicTopology Stages 2, 4, 5 and 8;
-- collars, tubular neighbourhoods and diffeomorphism groups of compact manifolds relative to the
-  boundary: GeometricTopology Layers 1 and 3;
-- graded and DG modules over an algebra, balanced tensor products, derived tensor products and
-  their resolutions: DGAInfinity Layers 0, 1 and 5;
-- group homology, representations, monoid algebras, graded objects and spectral-sequence pages:
-  Mathlib.
+- collars, tubular neighbourhoods, diffeomorphism groups of compact manifolds relative to the
+  boundary and Smale's disc theorem: GeometricTopology Layers 1 and 3 (§3.4);
+- the diffeomorphism group `TauCeti.DiscDiff 2` of the disc fixing its boundary pointwise, the
+  abelian category `TauCeti.GradedModuleCat` of internally graded modules over a graded algebra,
+  its shifts and graded free modules, and the graded balanced tensor product: Tau Ceti;
+- the long exact sequences and spectral sequences of graded `Tor`: DGAInfinity Layer 5;
+- group homology, representations, monoid algebras and their gradings, graded objects and
+  spectral-sequence pages: Mathlib.
 
 ArithmeticStatisticsPartVIII §5.16 states, for its own §5.19, the component-ring stability, the
 graded `Tor` spectral sequences, the K-complex bound, the arc spectral sequence, EVW Theorem 6.1,
@@ -156,7 +160,11 @@ time.
 - `MonoidAlgebra`, `MonoidAlgebra.single`, `MonoidAlgebra.mapDomainLinearMap`,
   `MonoidAlgebra.lhom_ext'` (`Mathlib/Algebra/MonoidAlgebra/`): the component ring is the monoid
   algebra of the braid-orbit monoid, and the permutation modules `k[X]` are monoid algebras of
-  sets.
+  sets. `AddMonoidAlgebra.gradeBy` with its `GradedAlgebra` instance
+  (`Mathlib/Algebra/MonoidAlgebra/Grading.lean`) and `MonoidAlgebra.toAdditiveAlgEquiv`
+  (`Mathlib/Algebra/MonoidAlgebra/Basic.lean`) grade a monoid algebra by a homomorphism to `ℤ`.
+- `Homeomorph.unitBall` (`Mathlib/Analysis/Normed/Module/Ball/Homeomorph.lean`): the homeomorphism
+  `x ↦ (1 + ‖x‖²)^(−1/2) x` of a real normed space onto its open unit ball, fixing `0`.
 - `Rep`, `Rep.ofMulAction`, `Rep.res`, `Rep.ofHom`, `Representation.ofMulAction`,
   `groupHomology`, `groupHomology.map` (`Mathlib/RepresentationTheory/`): representations, the
   permutation representation of an action, restriction along a homomorphism and group homology,
@@ -168,8 +176,8 @@ time.
   pages and differentials only; it carries no convergence statement, which every use below proves
   separately.
 - `CategoryTheory.Functor.leftDerived` (`Mathlib/CategoryTheory/Abelian/LeftDerived.lean`): left
-  derived functors in an abelian category with enough projectives, compared with the graded `Tor`
-  of DGAInfinity.
+  derived functors of an additive functor out of an abelian category with enough projectives;
+  graded `Tor` is the left derived functor of the graded balanced tensor product of Tau Ceti.
 - `IsCoveringMap` (`Mathlib/Topology/Covering/Basic.lean`), `FreeGroup`
   (`Mathlib/GroupTheory/FreeGroup/Basic.lean`), `Module.rank`.
 - `AlgebraicGeometry.Scheme.EllAdicCohomology`
@@ -187,6 +195,34 @@ time.
   `TauCeti.BraidGroup.strandSucc`, `TauCeti.BraidGroup.permHom` and
   `TauCeti.BraidGroup.pureSubgroup`, all in the module
   `TauCeti.GroupTheory.SpecificGroups.Braid.Basic`. `BraidGroup 0` and `BraidGroup 1` are trivial.
+- `TauCeti.DiscDiff 2` (`TauCeti/Geometry/Diffeomorphism/Disc.lean`): the group of smooth
+  diffeomorphisms of the closed unit disc of `ℝ²` fixing the unit circle pointwise, the fixing
+  subgroup `TauCeti.RelativeDiff` of the boundary, closed by `Diffeomorph.isClosed_fixingSubgroup`,
+  with the subspace topology of the weak Whitney topology (the `C^∞` topology, the disc being
+  compact). Nothing about its homotopy type is pinned.
+- `TauCeti.GradedModuleCat 𝒜` (`TauCeti/Algebra/Category/GradedModuleCat/Basic.lean`): for a
+  `k`-algebra `A`, not necessarily commutative, with a family `𝒜 : ℤ → Submodule k A`, the
+  category of `A`-modules with an internal `ℤ`-grading on which `𝒜_i` raises degrees by `i`,
+  morphisms of degree zero; its `Abelian` instance (`Abelian.lean`), the shift
+  `TauCeti.GradedModuleCat.shiftFunctor n` with `(M{n})_p = M_(p−n)` and no sign (`Basic.lean`),
+  graded free modules on homogeneous generators and the instance
+  `TauCeti.GradedModuleCat.enoughProjectives` (`Free.lean`). Gradings are
+  `TauCeti.InternalGrading`, built from a direct-sum decomposition by
+  `TauCeti.InternalGrading.ofDecomposition`; `TauCeti.InternalGrading.opposite` grades the opposite
+  algebra and `TauCeti.trivialGrading` grades `k` in degree zero. No positivity of the grading and
+  no finite dimension is assumed; the nonnegatively supported modules used here form a full
+  subcategory.
+- `TauCeti.BalancedTensorProduct k A M N` (`TauCeti/LinearAlgebra/TensorProduct/Balanced/`): for a
+  right `A`-module `M` (a `Module Aᵐᵒᵖ M`) and a left `A`-module `N`, the quotient of `M ⊗_k N` by
+  `m a ⊗ n − m ⊗ a n`, with `TauCeti.BalancedTensorProduct.balance`, the universal property
+  `TauCeti.BalancedTensorProduct.liftEquiv`, the grading
+  `TauCeti.BalancedTensorProduct.grading` with `|m ⊗ n| = |m| + |n|` and no Koszul sign, and the
+  evaluations `TauCeti.BalancedTensorProduct.lid`, `TauCeti.BalancedTensorProduct.rid` and
+  `TauCeti.BalancedTensorProduct.finsuppScalarRight` on regular and free modules. As a functor,
+  `TauCeti.GradedModuleCat.bimoduleModuleTensor` sends a graded `(A, B)`-bimodule and a graded left
+  `B`-module to a graded left `A`-module, additively in the module; with `A = k` graded by
+  `TauCeti.trivialGrading`, a graded right `R`-module `N` gives the additive functor `N ⊗_R −`
+  whose left derived functors are graded `Tor_i^R(N, −)`.
 
 ### From TauCetiRoadmap.InverseGaloisAndArithmeticFundamentalGroups
 
@@ -207,9 +243,12 @@ time.
   marking*: `G` acts by simultaneous conjugation, the quotient forgets the boundary marking, and
   the stabilizer of a tuple with exact image `H` is `C_G(H)`.
 - §IG.5.3, *Arithmetic Hurwitz stacks and schemes*: the tame Hurwitz schemes over `ℤ[1/|G|]`,
-  including the variant with affine branch locus that is ramified or unramified at `∞`, which is
-  EVW's `Hn_{G,n}`, and its class loci for rational classes; §IG.5.3, *Analytic and topological
-  Hurwitz comparison*: for centreless `G` the complex points of `Hn^c_{G,n}` are `CHur^c_{G,n}/G`.
+  with exactly `n` branch points, including the variant with affine branch locus that is ramified
+  or unramified at `∞`, which is EVW's `Hn_{G,n}`, and its class loci for rational classes;
+  §IG.5.3, *Analytic and topological Hurwitz comparison*: for centreless `G` and a
+  conjugation-invariant `c ⊆ G ∖ {1}`, the complex points of `Hn^c_{G,n}` are `CHur^c_{G,n}/G`.
+  The branch locus is exact, so tuples with an identity entry are not points of the scheme; the
+  comparison is not asserted when `1 ∈ c`.
 - §IG.5.5, *Fixed-degree Hurwitz mod-`ℓ` comparison*: for centreless `G`, a rational class `c`
   generating `G`, `q` prime to `|G|`, fixed `n` and a prime `ℓ > max(|G|, q, n)`, an isomorphism
   `H^i(Hn^c_{G,n}(ℂ), ℤ/ℓ) ≅ H^i_ét(Hn^c_{G,n} ⊗ 𝔽̄_q, ℤ/ℓ)` for every `i`; §IG.5.5, *Coefficient
@@ -218,17 +257,23 @@ time.
 
 ### From TauCetiRoadmap.ReductiveGroups
 
-- Layer 11A: the based comparison of plane and disc configurations with `TauCeti.BraidGroup n`,
-  with the positive half twist checked against the convention of §IG.3.2.
-- Layer 11B: the finite face/chamber Salvetti model of a finite real reflection arrangement, its
-  good open-star cover with contractible intersections, its quotient with one vertex and one
+- Layer 11A: the plane configuration spaces `PConf_n(ℂ)` and `Conf_n(ℂ)`, the finite covering
+  `PConf_n(ℂ) → Conf_n(ℂ)`, and the based isomorphism `π_1(Conf_n(ℂ)) ≅ TauCeti.BraidGroup n`
+  sending the counterclockwise half twist of the points `i` and `i + 1` of the base configuration
+  `z_j = j` to `TauCeti.BraidGroup.sigma i`. The comparison with configurations in the open disc
+  is not part of it; §5.1 transports it along `Homeomorph.unitBall`.
+- Layer 11B: for a finite reduced crystallographic root pairing with a base (a finite Weyl
+  arrangement; type `A_(n−1)`, with Weyl group `S_n`, is the case used here), the face/chamber
+  Salvetti model with its comparison with the complexified root-hyperplane complement by
+  Salvetti's explicit homotopy, at least on two-skeleta, its quotient with one vertex and one
   one-cell per simple wall, and the based identification of the fundamental group of the quotient
   with the Artin group.
 
-What ReductiveGroups must provide (gap:reductive-salvetti-homotopy-type): in Layer 11B, the full
-`W`-equivariant homotopy equivalence between the Salvetti complex and the complexified complement
-(not only its two-skeleton), and the cell count of the quotient complex, one cell of dimension
-`|T|` for each subset `T` of the simple reflections.
+What ReductiveGroups must provide (gap:reductive-salvetti-homotopy-type): in Layer 11B, for a
+finite reduced crystallographic root pairing, the full `W`-equivariant homotopy equivalence between
+the Salvetti complex and the complexified complement (not only its two-skeleton), and the cell
+count of the quotient complex, one cell of dimension `|T|` for each subset `T` of the simple
+reflections.
 
 ### From TauCetiRoadmap.ClassifyingSpaces
 
@@ -271,39 +316,48 @@ simplicial complex is `m`-connected when every simplicial map from a triangulate
 - Layer 1: collar and tubular neighbourhood theorems for smooth manifolds with boundary.
 - Layer 3: the group `Diff(M, ∂M)` of a compact manifold with the `C^∞` topology, fixing the
   boundary pointwise, as a topological group.
+- §3.4, Smale's disc theorem: the diffeomorphisms of the square `[0, 1]²` equal to the identity on
+  a neighbourhood of the boundary form a contractible space (SMA59 Theorem B and Theorem 4), and a
+  diffeomorphism of `D²` equal to the identity near `∂D²` is smoothly isotopic to the identity
+  through such diffeomorphisms.
+
+What GeometricTopology must provide (gap:geomtop-boundary-pointwise-disc-smale): in §3.4, Smale's
+disc theorem in the boundary-pointwise form, that `TauCeti.DiscDiff 2` is weakly contractible. A
+route: the subgroup `Diff_c(D²)` of diffeomorphisms equal to the identity on a neighbourhood of
+`∂D²` is weakly contractible by the collar-fixing form, and its inclusion into
+`TauCeti.DiscDiff 2` is a weak homotopy equivalence, by straightening compact families near `∂D²`
+along a collar through homotopies that keep members of `Diff_c(D²)` inside it. `Diff_c(D²)` is not
+closed in `TauCeti.DiscDiff 2`, so it is not a retract of it (§2.1, Checks).
 
 What GeometricTopology must provide (gap:geomtop-arc-isotopy-extension): in Layer 1, smooth
 isotopy extension for a finite system of disjoint properly embedded arcs in a compact surface,
 relative to a closed subset of the boundary, together with cutting a surface along such a system.
 
 What GeometricTopology must provide (gap:geomtop-marked-disc-diffeomorphisms): in Layer 3, the
-closed subgroup `Diff(D, P; ∂D)` of `Diff(D, ∂D)` preserving a finite set `P` of interior points
-setwise, and the bijectivity of the homomorphism `π_0 Diff(D, P; ∂D) → Mod(D, P)` to the
-topological mapping class group of the marked disc relative to `∂D` defined in §2.1.
+closed subgroup `Diff(D, P; ∂D)` of `Diff(D, ∂D) = TauCeti.DiscDiff 2` preserving a finite set
+`P` of interior points setwise, and the bijectivity of the homomorphism
+`π_0 Diff(D, P; ∂D) → Mod(D, P)` to the topological mapping class group of the marked disc
+relative to `∂D` defined in §2.1.
 
 ### From TauCetiRoadmap.DGAInfinity
 
-- Layer 0: graded modules as graded objects and as internal direct sums, with shifts and direct
-  sums.
-- Layer 1: DG algebras from ordinary graded algebras with zero differential, right and left DG
-  modules, the tensor product and the derived tensor target, extension of scalars.
 - Layer 5: derived tensor products and semi-free resolutions.
 
-What DGAInfinity must provide (gap:dga-internally-graded-modules): in Layer 1, for a connected
-nonnegatively graded noncommutative algebra `R` over a field, the abelian categories of graded left
-and right `R`-modules with an internal grading separate from the cohomological grading and without
-Koszul signs, the balanced tensor product `N ⊗_R M` with the relation `n r ⊗ m = n ⊗ r m` and its
-universal property, tensor evaluation on graded free modules `R[q]`, and the internal shift.
+The graded modules, their shifts, graded free modules and the graded balanced tensor product are
+Tau Ceti's (*From Tau Ceti*), without Koszul signs, and graded `Tor_i^R(N, −)` is
+`CategoryTheory.Functor.leftDerived` of the additive functor `N ⊗_R −` on
+`TauCeti.GradedModuleCat`; DGAInfinity is consumed only for the homological algebra of that `Tor`.
 
-What DGAInfinity must provide (gap:dga-graded-tor-spectral-sequences): in Layer 5, for such `R`,
-graded `Tor_i^R(N, M)` of a right and a left module computed by graded free resolutions, with long
-exact sequences in either variable, its comparison with `CategoryTheory.Functor.leftDerived`, the
+What DGAInfinity must provide (gap:dga-graded-tor-spectral-sequences): in Layer 5, for a connected
+nonnegatively graded `k`-algebra `R`, not necessarily commutative, and graded `Tor_i^R(N, M)` of
+a graded right module `N` and a graded left module `M` defined as above: its computation by a
+graded free resolution of either variable, the long exact sequences in either variable, the
 composite-functor spectral sequence `Tor_i^(R̄)(k, Tor_j^R(R̄, M)) ⇒ Tor_(i+j)^R(k, M)` for a
-quotient `R → R̄ → k`, and the hyperhomology spectral sequence of a bounded-below complex of right
-modules tensored with a left module, all preserving the internal grading and with finite-diagonal
-convergence. ArithmeticStatisticsPartVIII §5.16 (*Tor spectral sequences over graded algebras*)
-states the same spectral sequences for its own use; the generic graded `Tor` is DGAInfinity's, and
-this roadmap takes it from there.
+quotient `R → R̄ → k`, and the hyperhomology spectral sequence of a bounded-below complex of
+right modules tensored with a left module, all preserving the internal grading and with
+finite-diagonal convergence. ArithmeticStatisticsPartVIII §5.16 (*Tor spectral sequences over
+graded algebras*) states the same spectral sequences for its own use; their generic form is
+DGAInfinity's, and this roadmap takes it from there.
 
 ## How to read the build
 
@@ -483,8 +537,9 @@ action of `G` and the grading by boundary product. Write `r_g` for the basis ele
 one-term tuple `(g)`. Then `R` is generated by the `r_g`, `g ∈ c`, subject to
 `r_g r_h = r_(g h g⁻¹) r_g`, and gluing identifies `R` with `⊕_n H_0(Hur_n; k)` as graded algebras
 (EVW16 §3.3, p. 13; EVW16 lines 561–569). *Needs:* §IG.3.2 *The braid-orbit monoid*, *The Hurwitz
-braid action*; §0.4, §0.5; Mathlib `MonoidAlgebra`, `MonoidAlgebra.single`; DGAInfinity Layer 0
-for the graded algebra structure.
+braid action*; §0.4, §0.5; Mathlib `MonoidAlgebra`, `MonoidAlgebra.single`, and
+`AddMonoidAlgebra.gradeBy` through `MonoidAlgebra.toAdditiveAlgEquiv` for the length grading;
+Tau Ceti `TauCeti.InternalGrading.ofDecomposition`.
 
 - The braid orbits form a homogeneous basis of `R`.
 - A family of elements of a `k`-algebra satisfying the Hurwitz relations extends uniquely to an
@@ -573,8 +628,8 @@ order. Thresholds and exponents are chosen before the field. *Needs:* §0.1, §0
 ### Dependencies
 
 InverseGaloisAndArithmeticFundamentalGroups §§IG.3.2, IG.5.1, IG.5.2; ClassifyingSpaces Stage 4;
-AlgebraicTopology Stages 5, 8; DGAInfinity Layer 0; Tau Ceti `TauCeti.BraidGroup`; Mathlib group
-homology, representations and monoid algebras.
+AlgebraicTopology Stages 5, 8; Tau Ceti `TauCeti.BraidGroup`, `TauCeti.InternalGrading`; Mathlib
+group homology, representations, monoid algebras and their gradings.
 
 ## Layer 1: graded K-complexes and homological degree bounds
 
@@ -586,8 +641,14 @@ The layer shows that `R` behaves as if it had cohomological dimension one (EVW16
 Use graded left and right `R`-modules with an internal nonnegative grading, morphisms of internal
 degree zero, `deg` as in the conventions, and the shift `M[q]`; a homogeneous map of degree `a` is a
 degree-zero map `M[a] → N` (EVW16 §1.11, p. 8; EVW16 lines 342–349). Homological complexes keep a
-separate chain index. *Needs:* Mathlib `CategoryTheory.GradedObject`; DGAInfinity Layers 0–1
-(gap:dga-internally-graded-modules).
+separate chain index. Graded left `R`-modules are objects of `TauCeti.GradedModuleCat` for the
+length grading of `R`; graded right `R`-modules are the graded `(k, R)`-bimodules taken by
+`TauCeti.GradedModuleCat.bimoduleModuleTensor`, that is graded modules over `k ⊗_k Rᵐᵒᵖ` with the
+tensor product of `TauCeti.trivialGrading` and the opposite grading
+`TauCeti.InternalGrading.opposite`; and `M[q]` is `TauCeti.GradedModuleCat.shiftFunctor q`.
+*Needs:* Tau Ceti `TauCeti.GradedModuleCat`, `TauCeti.GradedModuleCat.shiftFunctor`,
+`TauCeti.InternalGrading.opposite`, `TauCeti.trivialGrading`; Mathlib
+`CategoryTheory.GradedObject`.
 
 - `deg V ≤ b` holds exactly when every piece above `b` is zero.
 - For `n ≥ q` the `n`-th piece of `M[q]` is `M_(n−q)`, and it is zero below `q`.
@@ -611,7 +672,8 @@ For a graded left `R`-module `M` let `M[U] = ker(U : M → M)`, in the source gr
 the target grading; put `A(M) = max(deg M[U], deg M/UM)` and
 `δ(M) = max(deg Tor_0^R(R̄, M), deg Tor_1^R(R̄, M))` (EVW16 (4.5.1)–(4.5.3), p. 18;
 EVW16 lines 815–827). Finite `A(M)` is the meaning of eventual `U`-stability. *Needs:* §0.7,
-§0.8, §1.1; DGAInfinity Layers 1, 5 (gap:dga-graded-tor-spectral-sequences).
+§0.8, §1.1; Tau Ceti `TauCeti.GradedModuleCat.bimoduleModuleTensor`; Mathlib
+`CategoryTheory.Functor.leftDerived`; DGAInfinity Layer 5 (gap:dga-graded-tor-spectral-sequences).
 
 - `R̄ ⊗_R M` is naturally `M/UM`, compatibly with the left `R̄`-action.
 - `M[U]_n` is the kernel of `U : M_n → M_(n+a)`.
@@ -653,7 +715,8 @@ Prove: for a graded right `R`-module `N` and a graded left `R`-module `M`,
 `deg(N ⊗_R M) ≤ deg N + deg H_0^aug(M)` whenever the right side is finite; the same holds over `R̄`
 (EVW16 Lemma 4.4, p. 17; EVW16 line 785). *Proof sketch.* Filter a bounded `N` from its top degree;
 the top piece is a sum of shifted copies of `k`, and right exactness of the balanced tensor product
-reduces to `N = k`. *Needs:* §1.1, §1.2; DGAInfinity Layer 1 (gap:dga-internally-graded-modules).
+reduces to `N = k`. *Needs:* §1.1, §1.2; Tau Ceti `TauCeti.BalancedTensorProduct`,
+`TauCeti.BalancedTensorProduct.grading`, `TauCeti.GradedModuleCat.bimoduleModuleTensor`.
 
 **Checks.**
 
@@ -709,7 +772,7 @@ Prove: for a graded left `R̄`-module `V` with `deg(k ⊗_(R̄) V)` finite,
 `deg V ≤ deg(k ⊗_(R̄) V) + deg R̄`; in particular `k ⊗_(R̄) V = 0` implies `V = 0` (EVW16 Lemma 4.8,
 p. 19; EVW16 line 899). *Proof sketch.* Lift a homogeneous basis of the coinvariants; the quotient
 by the submodule they generate has zero coinvariants, and its lowest nonzero degree would survive in
-the coinvariants. *Needs:* §1.1, §1.2; DGAInfinity Layer 1.
+the coinvariants. *Needs:* §1.1, §1.2; Tau Ceti `TauCeti.GradedModuleCat`.
 
 **Checks.**
 
@@ -754,7 +817,8 @@ Define, for a graded left `R`-module `M`, the homological complex `K(M)` with
 `K(M)_q = k[c^q] ⊗_k M[q]`, `q ≥ 0`, and differential
 `(g_0, …, g_q) ⊗ m ↦ Σ_i (−1)^i (g_0, …, ĝ_i, …, g_q) ⊗ r(g_i^(g_(i+1) ⋯ g_q)) m`, the empty suffix
 product being `1`; `k[c^q]` sits in internal degree zero (EVW16 §4.1 and (4.1.1), p. 16;
-EVW16 lines 726–740). *Needs:* §0.6, §1.1; Mathlib `TensorProduct`; DGAInfinity Layer 1.
+EVW16 lines 726–740). *Needs:* §0.6, §1.1; Mathlib `TensorProduct`, `HomologicalComplex`; Tau Ceti
+`TauCeti.GradedModuleCat`.
 
 - The `n`-th internal piece in chain degree `q` is `k[c^q] ⊗ M_(n−q)`, zero for `n < q`.
 - The differential preserves the internal grading and lowers the chain degree by one; adjacent
@@ -783,7 +847,8 @@ Prove: the right action on `K(R)_q` commutes with the differential, and evaluati
 tensor product gives a natural isomorphism of complexes `K(R) ⊗_R M ≅ K(M)`, compatible with
 internal shifts and with the action of `U` (EVW16 §4.1, p. 16, and proof of Proposition 4.13,
 p. 21). *Proof sketch.* The differential acts by left multiplications on the `R` factor.
-*Needs:* §1.11; DGAInfinity Layer 1.
+*Needs:* §1.11; Tau Ceti `TauCeti.GradedModuleCat.bimoduleModuleTensor`,
+`TauCeti.BalancedTensorProduct.finsuppScalarRight`.
 
 **Checks.**
 
@@ -906,8 +971,9 @@ constants depend only on `(G, c)` and `D`, not on the permitted field (EVW16 The
 
 ### Dependencies
 
-Layer 0; DGAInfinity Layers 0, 1, 5; Mathlib `CategoryTheory.GradedObject`,
-`CategoryTheory.SpectralSequence`, `CategoryTheory.Functor.leftDerived`.
+Layer 0; DGAInfinity Layer 5; Tau Ceti `TauCeti.GradedModuleCat`, `TauCeti.BalancedTensorProduct`;
+Mathlib `CategoryTheory.GradedObject`, `CategoryTheory.SpectralSequence`,
+`CategoryTheory.Functor.leftDerived`.
 
 ## Layer 2: the truncated arc resolution
 
@@ -919,9 +985,11 @@ points.
 Define `Mod(D, P)` as the group, under composition, of isotopy classes relative to `∂D` of
 orientation-preserving homeomorphisms of `D` that fix `∂D` pointwise and preserve `P` setwise; an
 isotopy relative to `∂D` fixes `∂D` pointwise and preserves `P` setwise at every time. Write
-`Diff(D, P; ∂D)` for the closed subgroup of `Diff(D, ∂D)` (GeometricTopology Layer 3) of
-diffeomorphisms preserving `P` setwise; a diffeomorphism fixing `∂D` pointwise preserves the
-orientation. *Needs:* GeometricTopology Layer 3 (gap:geomtop-marked-disc-diffeomorphisms).
+`Diff(D, ∂D)` for the group of diffeomorphisms of `D` fixing `∂D` pointwise (GeometricTopology
+Layer 3), which for `D` the closed unit disc of `ℝ²` is Tau Ceti's `TauCeti.DiscDiff 2`, and
+`Diff(D, P; ∂D)` for its closed subgroup of diffeomorphisms preserving `P` setwise; a
+diffeomorphism fixing `∂D` pointwise preserves the orientation. *Needs:* Tau Ceti
+`TauCeti.DiscDiff`; GeometricTopology Layer 3 (gap:geomtop-marked-disc-diffeomorphisms).
 
 - Restriction to `P` is a homomorphism `Mod(D, P) → Sym(P)`, whose kernel is the pure mapping
   class group of the classes fixing `P` pointwise.
@@ -951,18 +1019,24 @@ p. 8; EVW16 lines 354–368). *Proof sketch.* The evaluation map `Diff(D, ∂D) 
 `Diff(D, ∂D)` on the ordered configuration space admits local cross-sections, obtained by pushing
 `n` small disjoint discs around the points of a configuration, and an equivariant map to a space
 with local cross-sections is locally trivial (PAL60, Theorem A and §3); the finite cover
-`PConf_n → Conf_n` carries the bundle down. `Diff(D, ∂D)` is contractible: the diffeomorphisms of
-the square that are the identity near the boundary form a contractible space in the `C^r`
-topology (SMA59, Theorem B and Theorem 4; SMA59 lines 15–17, 124–129), the interior of the square
-is diffeomorphic to the interior of `D` with the compactly supported diffeomorphisms matching, and a
-collar of `∂D` (GeometricTopology Layer 1) retracts `Diff(D, ∂D)` onto the subgroup of
-diffeomorphisms that are the identity near `∂D`. The homotopy exact sequence of the bundle then
+`PConf_n → Conf_n` carries the bundle down. The exact sequence below uses only that `π_0` and
+`π_1` of `Diff(D, ∂D)` vanish, and `Diff(D, ∂D)` is weakly contractible by Smale's disc theorem
+in the boundary-pointwise form (GeometricTopology §3.4, gap:geomtop-boundary-pointwise-disc-smale).
+Smale proves contractibility for the diffeomorphisms of the square that are the identity on a
+neighbourhood of the boundary, in the `C^r` topology (SMA59, Theorem B and Theorem 4; SMA59
+lines 15–17, 124–129). The corresponding subgroup `Diff_c(D)` of `Diff(D, ∂D)`, of diffeomorphisms
+equal to the identity on a neighbourhood of `∂D`, is not closed (Checks below), so it is not a
+retract of `Diff(D, ∂D)`; its inclusion is a weak homotopy equivalence, whose homotopies straighten
+a compact family near `∂D` along a collar and move members of `Diff_c(D)` within `Diff_c(D)`.
+The homotopy exact sequence of the bundle then
 makes the boundary map `π_1(Conf_n, P) → π_0 Diff(D, P; ∂D)`, the class of a loop to the end of its
 lifted isotopy, an isomorphism; compose with `π_1(Conf_n) ≅ TauCeti.BraidGroup n` of §IG.5.1 and
 with `π_0 Diff(D, P; ∂D) ≅ Mod(D, P)`. The loop exchanging two adjacent points counterclockwise
-lifts to the positive half twist, the convention of §IG.3.2 and ReductiveGroups Layer 11A.
-*Needs:* Tau Ceti `TauCeti.BraidGroup`, `TauCeti.TopCat.serreFibrations`; §IG.5.1; ReductiveGroups
-Layer 11A; GeometricTopology Layers 1, 3 (gap:geomtop-marked-disc-diffeomorphisms);
+lifts to the positive half twist, the convention of §IG.3.2 and of ReductiveGroups Layer 11A
+transported to the disc by the radial homeomorphism of §5.1, which preserves orientation.
+*Needs:* Tau Ceti `TauCeti.BraidGroup`, `TauCeti.DiscDiff`, `TauCeti.TopCat.serreFibrations`;
+§IG.5.1; ReductiveGroups Layer 11A; GeometricTopology Layer 3
+(gap:geomtop-marked-disc-diffeomorphisms) and §3.4 (gap:geomtop-boundary-pointwise-disc-smale);
 AlgebraicTopology Stage 8 (the exact sequence of the based pair
 `(Diff(D, ∂D), Diff(D, P; ∂D))`, whose relative homotopy groups the lifting property of the bundle
 identifies with those of `Conf_n`).
@@ -980,6 +1054,16 @@ identifies with those of `Conf_n`).
   `π_0 Diff(A, {x}; ∂A)`, maps to a nontrivial class and is not the end of a lifted loop of the one
   point; the boundary map is not surjective, and the contractibility of `Diff(D, ∂D)` is what the
   disc statement uses.
+- The collar-fixing subgroup `Diff_c(D)` is not closed in `Diff(D, ∂D)`. In polar coordinates let
+  `f(r, θ) = (r, θ + φ(r))`, with `φ` smooth, zero near `r = 0` and equal to `exp(−1/(1 − r)²)`
+  near `r = 1`, and let `f_j` be the same twist with `φ_j(r) = χ(j(1 − r)) φ(r)`, where `χ` is
+  smooth, `0` on `(−∞, 1]` and `1` on `[2, ∞)`. Each `f_j` is the identity on the collar
+  `r ≥ 1 − 1/j`; `f` is not, since `φ(1 − 1/j) = e^(−j²) > 0`; and `f_j → f` in every `C^m`:
+  `φ_j − φ` is supported in `r ≥ 1 − 2/j`, where the `l`-th derivative of `χ(j(1 − r))` is
+  `O(j^l)` and every derivative of `φ` is `O((1 − r)^N) = O(j^(−N))` for every `N`. A retraction
+  onto `Diff_c(D)` would fix each `f_j`, hence by continuity fix `f`, which is not in `Diff_c(D)`.
+  The twists with `φ` replaced by `s φ`, `0 ≤ s ≤ 1`, join `f` to the identity in `Diff(D, ∂D)`,
+  as a weak homotopy equivalence permits.
 
 ### 2.2 The based arc complex
 
@@ -1110,8 +1194,9 @@ complexes of the cut surfaces, which is `(n − p − 2)`-connected by induction
 
 ### Dependencies
 
-Tau Ceti `TauCeti.BraidGroup`, `TauCeti.TopCat.serreFibrations`; §IG.5.1; ReductiveGroups Layer 11A;
-GeometricTopology Layers 1, 3; AlgebraicTopology Stages 4, 5, 8. Independent of Layer 1.
+Tau Ceti `TauCeti.BraidGroup`, `TauCeti.DiscDiff`, `TauCeti.TopCat.serreFibrations`; §IG.5.1;
+ReductiveGroups Layer 11A; GeometricTopology Layers 1, 3 (with §3.4); AlgebraicTopology Stages 4,
+5, 8. Independent of Layer 1.
 
 ## Layer 3: the arc spectral sequence for Hurwitz homology
 
@@ -1343,10 +1428,16 @@ points. Pull back each of the four Hurwitz covers along the homotopy equivalence
 each Hurwitz variant with `n` branch points is homotopy equivalent to a CW complex with at most
 `(2|G|)^n` cells (EVW16 Proposition 2.5, p. 11; EVW16 lines 501–505; CD95 Theorem 1.4.1, p. 5, and
 Corollary 2.2.3, p. 9; CD95 lines 181, 334). *Proof sketch.* Specialize the Salvetti complex of
-ReductiveGroups Layer 11B to the braid arrangement of `S_n`, whose complement modulo `S_n` is
-`Conf_n(ℂ) ≃ Conf_n(𝔻)` (ReductiveGroups Layer 11A); its quotient has one cell per subset of simple
-reflections. A covering of degree `≤ |G|^n` lifts each cell to at most `|G|^n` cells. *Needs:*
-ReductiveGroups Layers 11A, 11B (gap:reductive-salvetti-homotopy-type); §§IG.5.1, IG.5.2;
+ReductiveGroups Layer 11B to the Weyl arrangement of type `A_(n−1)`, the root hyperplanes
+`z_i = z_j` of `ℂ^n` with Weyl group `S_n`: its complement is `PConf_n(ℂ)` (the diagonal line is a
+`W`-fixed central summand, a contractible factor), its quotient by `S_n` is `Conf_n(ℂ)`, and the
+quotient complex has one cell per subset of simple reflections. Applying `Homeomorph.unitBall` of
+`ℂ` coordinatewise preserves distinctness of coordinates and commutes with permutations, so it
+induces homeomorphisms `PConf_n(ℂ) ≅ PConf_n(int D)` and `Conf_n(ℂ) ≅ Conf_n(int D)` carrying the
+base configuration `z_j = j` of ReductiveGroups Layer 11A to `z_j = j/√(1 + j²)`. Pull each Hurwitz
+cover of §IG.5.2 back along the resulting homotopy equivalence `Z_n → Conf_n(int D)`; a covering
+of degree `≤ |G|^n` lifts each cell to at most `|G|^n` cells. *Needs:* ReductiveGroups Layers 11A,
+11B (gap:reductive-salvetti-homotopy-type); Mathlib `Homeomorph.unitBall`; §§IG.5.1, IG.5.2;
 AlgebraicTopology Stages 4, 5.
 
 - For `n ≥ 1` the `q`-cells of `Z_n` are indexed by the `q`-element subsets of `{1, …, n − 1}`.
@@ -1365,6 +1456,15 @@ AlgebraicTopology Stages 4, 5.
   wrong.
 - A `d`-sheeted cover lifts each open cell to `d` cells; omitting the sheet factor would give the
   bound `2^n` for `Hur_n`.
+- The plane/disc transport sends `0 ↦ 0`, `1 ↦ 1/√2` and `2 ↦ 2/√5`, so the base configuration
+  `(0, 1)` of `Conf_2(ℂ)` goes to `(0, 1/√2)` in the open unit disc, and its inverse sends `1/√2`
+  back to `1`. It fixes the empty configuration and commutes with every permutation of the
+  coordinates; a constant rescaling such as `z ↦ z/2` is not onto the open disc and gives no
+  homeomorphism of configuration spaces.
+- The supplier's model is for crystallographic arrangements, and `S_n` is the Weyl group of type
+  `A_(n−1)`; for `n = 3`, `W = S₃` of type `A₂`, the quotient has cell counts `(1, 2, 1)`. A
+  noncrystallographic dihedral group such as `I₂(5)`, whose Cartan product `4 cos²(π/5)` is
+  `(3 + √5)/2`, is not needed.
 
 ### 5.2 The uniform field Betti bound
 
@@ -1399,8 +1499,12 @@ inertia in `c` (§IG.5.3). There is `C = C(G, c)` such that for every `i, n ≥ 
 `dim_(ℚ_ℓ) H^i_ét(Hn^c_{G,n} ⊗ 𝔽̄_q, ℚ_ℓ) ≤ C^(i+1)` and
 `dim_(𝔽_ℓ) H^i_ét(Hn^c_{G,n} ⊗ 𝔽̄_q, 𝔽_ℓ) ≤ C^(i+1)`
 (EVW16 Proposition 7.8 and (7.8.1), p. 34; EVW16 lines 1578–1606; Remark 7.9, p. 35).
-*Proof sketch.* For the given `n`, §IG.5.5 identifies the mod-`ℓ` étale cohomology with
-`H^i(Hn^c_{G,n}(ℂ), 𝔽_ℓ)`, and §IG.5.3 identifies `Hn^c_{G,n}(ℂ)` with `CHur_n/G`; its mod-`ℓ`
+*Proof sketch.* If `G` is trivial then `c = {1}`; a cover with trivial group is unramified, so
+`Hn^c_{1,0}` is `Spec ℤ` and `Hn^c_{1,n}` is empty for `n ≥ 1`, and every dimension is `1` for
+`(i, n) = (0, 0)` and `0` otherwise, at most `C^(i+1)` for every `C ≥ 1`. Otherwise `1 ∉ c`,
+because the class `{1}` generates only the trivial group, so `c ⊆ G ∖ {1}`. For the given `n`,
+§IG.5.5 identifies the mod-`ℓ` étale cohomology with `H^i(Hn^c_{G,n}(ℂ), 𝔽_ℓ)`, and §IG.5.3, for
+`c ⊆ G ∖ {1}`, identifies `Hn^c_{G,n}(ℂ)` with `CHur_n/G`; its mod-`ℓ`
 cohomology has the dimension of its mod-`ℓ` homology, a finite complex being given by §5.1, and
 §5.2 with `k = 𝔽_ℓ` (permitted, as `ℓ > |G|`) bounds it. The coefficient towers of §IG.5.5 bound
 the `ℚ_ℓ`-dimension by the `𝔽_ℓ`-dimension. Only the comparison at the given `n` is used; no
@@ -1418,6 +1522,11 @@ dimensions*.
 - Rationality of `c` is needed for the class locus over `ℤ[1/|G|]` (§IG.5.3); the topological
   stability theorems do not use it.
 - If `c` does not generate `G`, `Hn^c_{G,n}` is empty and the bound is trivial (EVW16 Remark 7.9).
+- Identity inertia. `G = 1`, `c = {1}`, `n = 1` satisfies every hypothesis; the exact-branch scheme
+  `Hn^c_{1,1}` is empty, with `H^0` of dimension `0`, whereas `CHur_1/G = Conf_1` is contractible,
+  with `H_0` of dimension `1`. So `Hn^c_{G,n}(ℂ)` is not `CHur^c_{G,n}/G` when `1 ∈ c`, and the
+  trivial group is treated separately. For `S₃` with its transpositions, `1 ∉ c` and the comparison
+  applies unchanged.
 
 ### Examples
 
@@ -1429,7 +1538,7 @@ dimensions*.
 ### Dependencies
 
 Layers 0–4; ReductiveGroups Layers 11A, 11B; §§IG.5.1–IG.5.3, IG.5.5; AlgebraicTopology
-Stages 4, 5.
+Stages 4, 5; Mathlib `Homeomorph.unitBall`.
 
 ## Notes on the sources
 
