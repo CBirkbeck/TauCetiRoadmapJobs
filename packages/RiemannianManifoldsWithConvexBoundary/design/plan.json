@@ -2,7 +2,7 @@
  "roadmap": "RiemannianManifoldsWithConvexBoundary",
  "title": "Riemannian manifolds with convex boundary",
  "parent": null,
- "summary": "Boundary geometry of smooth Riemannian manifolds with boundary over Mathlib's half-space model: boundary defining functions, the second fundamental form, Weingarten map and mean curvature, conformal change, strict convexity/convexity/strict concavity with Hessian characterisations and stability, regular domains and the realisation of every (M, g) in a boundaryless manifold (collar extension, double, Seeley extension of metrics), geodesics at the boundary, signed distance and boundary normal coordinates, convexity functions with strictly concave level sets, unit sphere bundle strata, exit time and its regularity, non-trapping criteria (Paternain–Salo–Uhlmann Prop. 3.3.1), scattering relation and lens data, and acceptance examples (balls, caps, hyperbolic domains, small geodesic balls, half-spaces, exteriors, a conformal disc made strictly concave).",
+ "summary": "Boundary geometry of smooth Riemannian manifolds with boundary over Mathlib's half-space model: boundary defining functions, the second fundamental form, Weingarten map and mean curvature, conformal change, strict convexity/convexity/strict concavity with Hessian characterisations and stability, regular domains and the realisation of every (M, g) in a boundaryless manifold (defining functions on GeometricTopology's collar extension and double, Seeley extension of metrics), geodesics at the boundary, signed distance and boundary normal coordinates, convexity functions with strictly concave level sets, unit sphere bundle strata, exit time and its regularity, non-trapping criteria (Paternain–Salo–Uhlmann Prop. 3.3.1), scattering relation and lens data, and acceptance examples (balls, caps, hyperbolic domains, small geodesic balls, half-spaces, exteriors, a conformal disc made strictly concave).",
  "baseline": {
   "mathlib": "1b1ccf4b088b32fa3f23f2de1127433254a81e1e",
   "tauceti": "2fd255d997f47c0b5d834ee416c7015d55444ce5"
@@ -62,7 +62,7 @@
      "id": "1.2",
      "kind": "theorem",
      "name": "outwardUnitNormal_characterization",
-     "statement": "With ν_out the outward unit normal of DifferentialGeometry 12.5 and ν_in := −ν_out: a unit vector of T_qM orthogonal to T_q∂M and outward equals ν_out(q); q ↦ (q, ν_out(q)) is a smooth map ∂M → TM; ν_in(q) = grad x⁰(q)/|grad x⁰(q)| for the normal coordinate x⁰ of any half-space chart at q; v is inward iff ⟨v, ν_in(q)⟩ > 0, tangent iff = 0, outward iff < 0, and v = v^T + ⟨v, ν_in⟩ν_in with v^T ∈ T_q∂M; isometries preserve ν_out.",
+     "statement": "With ν_out the outward unit normal of DifferentialGeometry 12.5 (exists_halfSpaceOutwardUnitNormal: smooth along ∂M, norm one, outward, g-orthogonal to dι(T∂M), these laws determining it pointwise) and ν_in := −ν_out: for Hausdorff M without second countability ν_out exists with the same laws and smoothness (DifferentialGeometry 12.5 on the second-countable chart sources, glued by pointwise uniqueness); ν_in(q) = grad x⁰(q)/|grad x⁰(q)| for the normal coordinate x⁰ of any half-space chart at q; v is inward iff ⟨v, ν_in(q)⟩ > 0, tangent iff = 0, outward iff < 0, and v = v^T + ⟨v, ν_in⟩ν_in with v^T ∈ T_q∂M, so ν_in(q) is the unique inward unit vector orthogonal to T_q∂M; isometries preserve ν_out.",
      "hypotheses": [
       "M Hausdorff topological space with ChartedSpace (EuclideanHalfSpace (n+1)) M and IsManifold (𝓡∂ (n+1)) ∞ M, n ≥ 0",
       "g a smooth Riemannian metric: Bundle.RiemannianBundle on TangentSpace (𝓡∂ (n+1)) with IsContMDiffRiemannianBundle (𝓡∂ (n+1)) ∞",
@@ -73,21 +73,15 @@
       "where": "lines 2687–2689 (inward unit normal ν); lee-riemannian2018 Ch. 8 (uncertified)"
      },
      "prerequisites": [
-      "gap:dg-outward-unit-normal",
       "roadmap:DifferentialGeometry §12.5",
       "target:1.1",
       "tauceti:TauCeti.Manifold.mgradient"
      ],
      "api": [
       {
-       "name": "outwardUnitNormal_unique",
-       "role": "characterisation",
-       "statement": "Unit, orthogonal to T_q∂M and outward determine ν_out(q)."
-      },
-      {
-       "name": "contMDiff_outwardUnitNormal",
-       "role": "regularity",
-       "statement": "q ↦ (q, ν_out(q)) : ∂M → TM is smooth."
+       "name": "outwardUnitNormal_of_chartSources",
+       "role": "extension",
+       "statement": "For Hausdorff M that is not second countable, DifferentialGeometry 12.5 applied on the chart sources (second countable open submanifolds) and pointwise uniqueness give ν_out on all of ∂M, smooth, with the three laws."
       },
       {
        "name": "inwardUnitNormal_eq_gradient",
@@ -97,7 +91,12 @@
       {
        "name": "inner_inwardUnitNormal_pos_iff",
        "role": "characterisation",
-       "statement": "v is inward iff ⟨v, ν_in(q)⟩ > 0; tangent iff = 0; outward iff < 0."
+       "statement": "v is inward iff ⟨v, ν_in(q)⟩ > 0; tangent iff = 0; outward iff < 0; v = v^T + ⟨v, ν_in⟩ν_in with v^T ∈ T_q∂M."
+      },
+      {
+       "name": "outwardUnitNormal_isometry",
+       "role": "naturality",
+       "statement": "An isometry of Riemannian manifolds with boundary carries ν_out to ν_out."
       }
      ],
      "tests": [
@@ -176,7 +175,7 @@
       {
        "name": "ratio",
        "kind": "compatibility",
-       "statement": "ρ' = (2 + x₁)(1 − |x|²) gives ratio u = 2 + x₁ ∈ [1, 3]."
+       "statement": "ρ' = (2 + x₁)(1 − |x|²), as a function on the closed ball, gives ratio u = 2 + x₁ ∈ [1, 3]."
       },
       {
        "name": "square_not_defining",
@@ -251,7 +250,7 @@
       {
        "name": "ball_radius_R",
        "kind": "computation",
-       "statement": "Ball of radius R, ρ = R² − |x|²: Hess ρ = −2g, |dρ| = 2R, II = h/R; R = 1 gives II = h."
+       "statement": "Ball of radius R > 0, ρ = R² − |x|²: Hess ρ = −2g, |dρ| = 2R, II = h/R; R = 1 gives II = h."
       },
       {
        "name": "halfspace_exterior",
@@ -339,7 +338,7 @@
      "id": "1.6",
      "kind": "theorem",
      "name": "boundarySecondFundamentalForm_conformal",
-     "statement": "For φ smooth on M and ĝ = e^{2φ}g: ν̂_out = e^{−φ}ν_out, ĥ = e^{2φ}h, II^ĝ_q(u, w) = e^{φ(q)}(II_q(u, w) − dφ_q(ν_in(q)) h_q(u, w)), κ̂ = e^{−φ}(κ − dφ(ν_in)), Ĥ = e^{−φ}(H − dφ(ν_in)); for constant c > 0, II^{c²g} = c II.",
+     "statement": "For φ smooth on M and ĝ = e^{2φ}g: ν̂_out = e^{−φ}ν_out, ĥ = e^{2φ}h, II^ĝ_q(u, w) = e^{φ(q)}(II_q(u, w) − dφ_q(ν_in(q)) h_q(u, w)), κ̂ = e^{−φ}(κ − dφ(ν_in)), and for n ≥ 1 Ĥ = e^{−φ}(H − dφ(ν_in)); for constant c > 0, II^{c²g} = c II.",
      "hypotheses": [
       "M Hausdorff topological space with ChartedSpace (EuclideanHalfSpace (n+1)) M and IsManifold (𝓡∂ (n+1)) ∞ M, n ≥ 0",
       "g a smooth Riemannian metric: Bundle.RiemannianBundle on TangentSpace (𝓡∂ (n+1)) with IsContMDiffRiemannianBundle (𝓡∂ (n+1)) ∞",
@@ -426,7 +425,7 @@
       {
        "name": "isStrictlyConvexBoundaryAt_iff_principal_pos",
        "role": "characterisation",
-       "statement": "Strictly convex at q iff all principal curvatures at q are positive; then H(q) > 0 (n ≥ 1); convex implies H ≥ 0."
+       "statement": "Strictly convex at q iff all principal curvatures at q are positive; for n ≥ 1, strict convexity at q gives H(q) > 0 and convexity at q gives H(q) ≥ 0."
       },
       {
        "name": "not_strictlyConcave_of_strictlyConvex",
@@ -448,7 +447,7 @@
       {
        "name": "ball_halfspace_exterior",
        "kind": "computation",
-       "statement": "Ball strictly convex; half-space convex, nowhere strictly; exterior strictly concave; solid cylinder convex, not strictly, H = 1/2."
+       "statement": "Ball strictly convex; half-space convex and, for n ≥ 1, nowhere strictly convex; exterior strictly concave; solid cylinder convex, not strictly, H = 1/2."
       },
       {
        "name": "cubic",
@@ -458,7 +457,7 @@
       {
        "name": "dimension_one",
        "kind": "degenerate",
-       "statement": "n = 0: both strict convexity and strict concavity hold vacuously; exclusion needs n ≥ 1."
+       "statement": "n = 0: both strict convexity and strict concavity hold vacuously, so the half-line [0, ∞) is strictly convex; exclusion needs n ≥ 1."
       },
       {
        "name": "conformal_disc",
@@ -492,7 +491,7 @@
       {
        "name": "ratio_invariance",
        "kind": "compatibility",
-       "statement": "On T∂M, Hess((2 + x₁)ρ) = (2 + x₁) Hess ρ for ρ = 1 − |x|²: the sign is preserved."
+       "statement": "On T∂M, Hess((2 + x₁)ρ) = (2 + x₁) Hess ρ for ρ = 1 − |x|², functions on the ball where 2 + x₁ ≥ 1: the sign is preserved."
       },
       {
        "name": "negated",
@@ -654,7 +653,12 @@
       {
        "name": "unit_ball",
        "kind": "computation",
-       "statement": "{1 − |x|² ≥ 0} and {(2 + x₁)(1 − |x|²) ≥ 0} give the same structure, II = h."
+       "statement": "{1 − |x|² ≥ 0} and {e^{x₁}(1 − |x|²) ≥ 0} give the same structure, II = h: the multiplier e^{x₁} is positive on all of ℝⁿ⁺¹ and scales the tangential Hessian and |dρ| alike on the sphere."
+      },
+      {
+       "name": "multiplier_positive_only_on_M",
+       "kind": "non-example",
+       "statement": "ρ' = (2 + x₁)(1 − |x|²) is positive inside the ball but equals 8 at x₁ = −3 (other coordinates 0); {ρ' ≥ 0} is the ball union the half-space {x₁ ≤ −2}, with 0 regular on the sphere and on {x₁ = −2} (dρ' = (1 − |x|²)dx₁, |x|² ≥ 4): a different regular domain, so the multiplier must be positive on all of N."
       },
       {
        "name": "cube_power",
@@ -713,150 +717,136 @@
       {
        "name": "norm_squared",
        "kind": "computation",
-       "statement": "x = |z|²: Hess x = 2g; {x ≤ c} has II = h/√c; x = −|z|² fails."
+       "statement": "x = |z|²: Hess x = 2g; for c > 0, {x ≤ c} has II = h/√c; for n ≥ 1, x = −|z|² fails."
       },
       {
        "name": "affine",
        "kind": "non-example",
-       "statement": "Affine x: Hess x = 0, hyperplane level sets are not strictly concave."
+       "statement": "For n ≥ 1, affine x: Hess x = 0, hyperplane level sets are not strictly concave from either side."
       },
       {
        "name": "suv_distance",
        "kind": "computation",
        "statement": "x(z) = |z − z₀| − sup: Hess x = (g − dx⊗dx)/|z − z₀|, positive on ker dx."
+      },
+      {
+       "name": "dimension_one",
+       "kind": "degenerate",
+       "statement": "n = 0: ker dx_y = 0, so every x with dx ≠ 0, including x(t) = t and x = −|z|², satisfies the condition vacuously."
       }
      ]
     },
     {
      "id": "3.3.1",
-     "kind": "construction",
-     "name": "collarExtension",
-     "statement": "For M Hausdorff and second countable with a smooth collar c : ∂M × [0, 1) → M (a diffeomorphism onto an open neighbourhood U of ∂M with c(q, 0) = q): int M carries the boundaryless structure over 𝓘(ℝ, ℝⁿ⁺¹) read off from M's half-space charts, with int M → M a smooth open embedding; M̃ := the compatible open gluing (Tau Ceti) of int M and the bicollar ∂M × (−1, 1) along U ∩ int M and ∂M × (0, 1) identified by c, is a Hausdorff (closed gluing relation) second-countable boundaryless manifold of dimension n + 1; the canonical maps are smooth open embeddings, c̃ : ∂M × (−1, 1) → M̃ extends c, M → M̃ is a closed embedding with image M̃ ∖ c̃(∂M × (−1, 0)), and c̃(q, t) ∈ M iff t ≥ 0; there is ρ̃ ∈ C^∞(M̃) with 0 regular, ρ̃ > 0 on int M, ρ̃ = 0 on ∂M, ρ̃ < 0 off M, ρ̃(c̃(q, t)) = t on a neighbourhood of ∂M × {0} (containing ∂M × (−1/2, 1/2) when ∂M is compact), and the identity of M is a diffeomorphism onto Tau Ceti's sublevel atlas of {ρ̃ ≥ 0}.",
+     "kind": "theorem",
+     "name": "collarExtension_isRegularDomain",
+     "statement": "For M Hausdorff and second countable with a smooth collar c (GeometricTopology 1.1), let M̃ be the collar extension, GeometricTopology 1.3's M ∪_f N for N = ∂M × [0, 1) with its product collar and f(q) = (q, 0), and c̃ : ∂M × (−1, 1) → M̃ the open embedding of the union of the two collars; then c̃(q, t) ∈ M iff t ≥ 0, and there is ρ̃ ∈ C^∞(M̃) with 0 regular, ρ̃ > 0 on int M, ρ̃ = 0 on ∂M, ρ̃ < 0 off M, ρ̃(c̃(q, t)) = t on a neighbourhood of ∂M × {0} (containing ∂M × (−1/2, 1/2) when ∂M is compact), and the identity of M is a diffeomorphism from M's atlas onto Tau Ceti's sublevel atlas of {ρ̃ ≥ 0}.",
      "hypotheses": [
       "M Hausdorff topological space with ChartedSpace (EuclideanHalfSpace (n+1)) M and IsManifold (𝓡∂ (n+1)) ∞ M, n ≥ 0",
-      "M Hausdorff and second countable"
+      "M Hausdorff and second countable",
+      "c a smooth collar of ∂M (GeometricTopology 1.1)"
      ],
      "locator": {
       "source": "paternain-salo-uhlmann2023",
       "where": "Lemma 3.1.8, lines 2749–2762; lee-smooth2012 Theorem 9.25 (collar; uncertified)"
      },
      "prerequisites": [
-      "roadmap:GeometricTopology §Layer 1",
+      "roadmap:GeometricTopology §1.1",
+      "roadmap:GeometricTopology §1.3",
       "target:3.1",
-      "tauceti:TopCat.GlueData.chartedSpace",
-      "tauceti:TopCat.GlueData.IsCompatible.isManifold",
-      "tauceti:TopCat.GlueData.IsCompatible.isLocalDiffeomorph_ι",
-      "tauceti:TopCat.GlueData.IsCompatible.partialDiffeomorphι",
-      "tauceti:TopCat.GlueData.IsCompatible.contMDiff_iff",
-      "tauceti:TopCat.GlueData.t2Space_iff_isClosed_chartRel",
-      "tauceti:TopCat.GlueData.secondCountableTopology",
       "tauceti:TauCeti.isManifold_boundary",
       "tauceti:TauCeti.scalarRegularSublevelChartedSpace",
-      "mathlib:TopCat.GlueData",
-      "mathlib:TopCat.GlueData.MkCore",
       "mathlib:ModelWithCorners.isClosed_boundary",
       "mathlib:SmoothPartitionOfUnity"
      ],
      "api": [
       {
-       "name": "interiorBoundaryless",
-       "role": "structure",
-       "statement": "int M is a boundaryless manifold over 𝓘(ℝ, ℝⁿ⁺¹) with the charts of M restricted to interior points, and int M → M is a smooth open embedding."
-      },
-      {
-       "name": "collarExtension_boundaryless",
-       "role": "structure",
-       "statement": "M̃ is boundaryless, Hausdorff (the gluing relation between int M and the bicollar is closed), second countable, of dimension n + 1."
-      },
-      {
-       "name": "collarExtension_bicollar",
-       "role": "constructor",
-       "statement": "c̃ : ∂M × (−1, 1) → M̃ smooth open embedding extending c, c̃(q, t) ∈ M iff t ≥ 0; M → M̃ is a closed embedding."
-      },
-      {
-       "name": "collarExtension_regularDomain",
+       "name": "collarExtension_mem_iff",
        "role": "compatibility",
-       "statement": "M = {ρ̃ ≥ 0} with 0 regular, ρ̃ ∘ c̃ = t near ∂M × {0}, and the identity a diffeomorphism to the sublevel atlas."
+       "statement": "c̃(q, t) ∈ M iff t ≥ 0 (the images of M and N in GeometricTopology 1.3's gluing meet only in ∂M)."
+      },
+      {
+       "name": "collarExtension_definingFunction",
+       "role": "constructor",
+       "statement": "ρ̃ ∈ C^∞(M̃) with 0 regular, positive on int M, zero on ∂M, negative off M, ρ̃ ∘ c̃ = t near ∂M × {0}."
+      },
+      {
+       "name": "collarExtension_sublevel_diffeomorph",
+       "role": "compatibility",
+       "statement": "The identity of M is a diffeomorphism from M's atlas onto Tau Ceti's sublevel atlas of {ρ̃ ≥ 0}."
       }
      ],
      "tests": [
       {
        "name": "interval",
        "kind": "computation",
-       "statement": "M = [0, 1]: (0, 1) glued to a bicollar (−1, 1) at each end gives M̃ = (−1, 2)."
+       "statement": "M = [0, 1] with c(0, t) = t/2, c(1, t) = 1 − t/2: M̃ ≅ (−1/2, 3/2) in the extended coordinate x, ρ̃ = 2x for |x| < 1/4 and 2(1 − x) for |x − 1| < 1/4, |dρ̃/dx| = 2 at both ends."
       },
       {
        "name": "halfspace",
        "kind": "computation",
-       "statement": "ℝⁿ × [0, ∞): M̃ ≅ ℝⁿ × (−1, ∞), ρ̃ = x⁰ near the boundary."
+       "statement": "{x⁰ ≥ 0} with c(q, t) = q + te₀: M̃ ≅ {x⁰ > −1} and ρ̃ = x⁰ works on all of M̃."
       },
       {
-       "name": "double_without_bicollar_not_hausdorff",
+       "name": "sign_pattern_not_regular",
        "kind": "non-example",
-       "statement": "Gluing two copies of int M along U ∩ int M alone is Tau Ceti's double along an open set, Hausdorff only when that set is closed in int M (TauCeti.t2Space_doubleGlueData_iff): for M = [0, 1] with c(0, t) = t/2, c(1, t) = 1 − t/2 the set (0, 1/2) ∪ (1/2, 1) is not closed in (0, 1) and the double has two inseparable copies of 1/2; the bicollar piece containing the seam makes M̃ Hausdorff."
+       "statement": "On (−1/2, 3/2), x³(1 − x)³ has the sign pattern of ρ̃ but zero derivative at 0 and 1; the sublevel atlas does not apply."
       },
       {
        "name": "empty_boundary",
        "kind": "degenerate",
-       "statement": "∂M = ∅: M̃ = M."
+       "statement": "∂M = ∅: empty collar, N = ∅, M̃ = int M = M with GeometricTopology 1.1's boundaryless structure, ρ̃ ≡ 1."
       }
      ]
     },
     {
      "id": "3.3.2",
-     "kind": "construction",
-     "name": "boundaryDouble",
-     "statement": "For M compact with ∂M ≠ ∅, DM := the compatible open gluing of two copies of int M and the bicollar ∂M × (−1, 1), the first copy along (q, t) ↦ c(q, t) on ∂M × (0, 1), the second along (q, t) ↦ c(q, −t) on ∂M × (−1, 0), the copies disjoint (vacuous cocycle), is a Hausdorff second-countable compact boundaryless manifold containing the first copy of M as the regular domain {ρ_D ≥ 0} of a smooth ρ_D with 0 regular and ρ_D(c̃(q, t)) = t for |t| < 1/2; DM is connected if M is.",
+     "kind": "theorem",
+     "name": "boundaryDouble_isRegularDomain",
+     "statement": "For M compact with ∂M ≠ ∅ and DM = M ∪_id M the double of GeometricTopology 1.3 (compact, connected when M is), with bicollar c̃ equal to c into the first copy for t ≥ 0 and to (q, t) ↦ c(q, −t) into the second for t ≤ 0: there is ρ_D ∈ C^∞(DM) with 0 regular, positive on the interior of the first copy, zero on the seam, negative on the interior of the second copy, ρ_D(c̃(q, t)) = t for |t| < 1/2, and the identity of the first copy of M is a diffeomorphism onto the sublevel atlas of {ρ_D ≥ 0}.",
      "hypotheses": [
       "M Hausdorff topological space with ChartedSpace (EuclideanHalfSpace (n+1)) M and IsManifold (𝓡∂ (n+1)) ∞ M, n ≥ 0",
       "M compact",
-      "∂M ≠ ∅"
+      "∂M ≠ ∅",
+      "c a smooth collar of ∂M (GeometricTopology 1.1)"
      ],
      "locator": {
       "source": "paternain-salo-uhlmann2023",
       "where": "Lemma 3.1.8 and Exercise 3.1.9, lines 2749–2762"
      },
      "prerequisites": [
-      "roadmap:GeometricTopology §Layer 1",
+      "roadmap:GeometricTopology §1.3",
       "target:3.3.1",
-      "tauceti:TopCat.GlueData.chartedSpace",
-      "tauceti:TopCat.GlueData.IsCompatible.isManifold",
-      "tauceti:TopCat.GlueData.t2Space_iff_isClosed_chartRel",
-      "tauceti:TopCat.GlueData.secondCountableTopology",
-      "mathlib:TopCat.GlueData.MkCore"
+      "tauceti:TauCeti.scalarRegularSublevelChartedSpace",
+      "mathlib:SmoothPartitionOfUnity"
      ],
      "api": [
       {
-       "name": "boundaryDouble_compact",
-       "role": "structure",
-       "statement": "DM is compact, Hausdorff, second countable and boundaryless."
+       "name": "boundaryDouble_definingFunction",
+       "role": "constructor",
+       "statement": "ρ_D ∈ C^∞(DM) with 0 regular, ρ_D > 0 on the first copy's interior, = 0 on the seam, < 0 on the second copy's interior, ρ_D ∘ c̃ = t for |t| < 1/2."
       },
       {
-       "name": "boundaryDouble_regularDomain",
+       "name": "boundaryDouble_sublevel_diffeomorph",
        "role": "compatibility",
-       "statement": "M = {ρ_D ≥ 0} in DM with 0 regular."
-      },
-      {
-       "name": "boundaryDouble_connected",
-       "role": "structure",
-       "statement": "DM is connected when M is connected."
+       "statement": "The first copy of M is the regular domain {ρ_D ≥ 0}, the identity a diffeomorphism onto the sublevel atlas."
       }
      ],
      "tests": [
       {
        "name": "interval_disc",
        "kind": "computation",
-       "statement": "D[0, 1] is a circle; the double of the closed disc is S²."
+       "statement": "D[0, 1] is a circle on which ρ_D has exactly two zeros, both regular; the double of the closed disc is S²."
       },
       {
        "name": "empty_boundary",
        "kind": "non-example",
-       "statement": "For ∂M = ∅ the double is M ⊔ M, disconnected; the hypothesis ∂M ≠ ∅ is needed."
+       "statement": "For ∂M = ∅ the double is M ⊔ M, disconnected for nonempty M; 3.5 then uses the collar extension M̃ = int M instead."
       },
       {
        "name": "annulus",
        "kind": "computation",
-       "statement": "The double of a closed annulus is a torus."
+       "statement": "The double of a closed annulus is a torus, and ρ_D vanishes exactly on the two seam circles."
       }
      ]
     },
@@ -940,7 +930,9 @@
       "target:3.1",
       "target:3.3.1",
       "target:3.3.2",
-      "target:3.4.2"
+      "target:3.4.2",
+      "roadmap:GeometricTopology §1.1",
+      "roadmap:GeometricTopology §1.3"
      ],
      "api": [],
      "tests": [
@@ -1031,12 +1023,17 @@
       {
        "name": "ball_outward",
        "kind": "non-example",
-       "statement": "Closed ball: no M-geodesic on [0, ε) from a boundary point with outward or (strictly convex) tangent velocity."
+       "statement": "Closed ball: no M-geodesic on [0, ε) from a boundary point with outward or nonzero tangent velocity (|q + tv|² = 1 + t²|v|² for v ⊥ q)."
       },
       {
        "name": "halfspace_tangent",
        "kind": "computation",
        "statement": "Half-space: tangent lines are M-geodesics on ℝ inside ∂M."
+      },
+      {
+       "name": "zero_velocity",
+       "kind": "degenerate",
+       "statement": "v = 0 at q ∈ ∂M: the constant curve at q is an M-geodesic on ℝ (the native predicate allows zero speed), matching τ(q, 0) = ∞."
       }
      ]
     },
@@ -1094,7 +1091,7 @@
       {
        "name": "exterior_halfspace",
        "kind": "non-example",
-       "statement": "Exterior: ρ = t² ≥ 0 along tangent lines; half-space: ρ ≡ 0; neither leaves."
+       "statement": "Exterior, unit v ⊥ q: ρ(q + tv) = t² ≥ 0 (t²|v|² for any v ⊥ q) along the tangent line; half-space: ρ ≡ 0; neither leaves."
       },
       {
        "name": "quartic",
@@ -1269,14 +1266,14 @@
       "target:1.4",
       "target:4.3.2",
       "target:4.3.3",
-      "roadmap:GeometricTopology §Layer 1"
+      "roadmap:GeometricTopology §1.1"
      ],
      "api": [],
      "tests": [
       {
        "name": "ball_fermi",
        "kind": "computation",
-       "statement": "Ball of radius R: h_r = (1 − r/R)²h_0, −½∂_r h_r|₀ = h_0/R."
+       "statement": "Ball of radius R > 0 centred at 0: h_r = (1 − r/R)²h_0, −½∂_r h_r|₀ = h_0/R."
       },
       {
        "name": "exterior_halfspace_fermi",
@@ -1363,12 +1360,12 @@
       {
        "name": "cap",
        "kind": "computation",
-       "statement": "Cap of radius R < π/2: M_ε = cap of radius R + ε, strictly convex iff R + ε < π/2."
+       "statement": "Cap of radius 0 < R < π/2 in S^{n+1}, n ≥ 1: M_ε = cap of radius R + ε, strictly convex iff R + ε < π/2; for n = 0 every arc M_ε is strictly convex vacuously and ε₀ is limited only by min(ε₁, 1)."
       },
       {
        "name": "halfspace",
        "kind": "non-example",
-       "statement": "Half-space enlargements stay flat: strict convexity is needed."
+       "statement": "For n ≥ 1, half-space enlargements stay flat half-spaces: strict convexity is needed."
       },
       {
        "name": "unnormalised_defining_function",
@@ -1823,12 +1820,17 @@
       {
        "name": "hemisphere",
        "kind": "non-example",
-       "statement": "Hemisphere: boundary great circle is a geodesic of M, trapped, II = 0: hypothesis not met."
+       "statement": "Hemisphere of S^{n+1}, n ≥ 1: a great circle in its boundary is a geodesic of M, trapped, II = 0: hypothesis not met. For n = 0 the half-circle is non-trapping with τ(θ, ±1) = π/2 ∓ θ and all three conditions hold."
       },
       {
        "name": "closed_manifold",
        "kind": "degenerate",
        "statement": "Closed M: all three conditions fail."
+      },
+      {
+       "name": "strictly_convex_trapped",
+       "kind": "non-example",
+       "statement": "Unit ball with e^{2φ(|x|²)}g_eucl, φ(s) = s² − 2s, n ≥ 1: strictly convex boundary (b′(1) = e^{−1}) but the sphere |x| = 1/√2 is totally geodesic and its great circles are trapped: strict convexity alone does not give non-trapping."
       }
      ]
     },
@@ -1959,7 +1961,7 @@
      "id": "6.1.1",
      "kind": "example",
      "name": "euclideanBall",
-     "statement": "Closed ball B̄(c, R) ⊆ ℝⁿ⁺¹: II = h/R, S = R⁻¹ id, H = 1/R, strictly convex, non-trapping, τ(x, v) = −⟨x − c, v⟩ + √(⟨x − c, v⟩² + R² − |x − c|²), τ̃ = −2⟨x − c, v⟩ and α(x, v) = (x − 2⟨x − c, v⟩v, v) on ∂SM, signed distance R − |x − c|.",
+     "statement": "Closed ball B̄(c, R) ⊆ ℝⁿ⁺¹: II = h/R, S = R⁻¹ id, H = 1/R for n ≥ 1, strictly convex, non-trapping, τ(x, v) = −⟨x − c, v⟩ + √(⟨x − c, v⟩² + R² − |x − c|²), τ̃ = −2⟨x − c, v⟩ and α(x, v) = (x − 2⟨x − c, v⟩v, v) on ∂SM, signed distance R − |x − c|.",
      "hypotheses": [
       "Euclidean metric on ℝⁿ⁺¹",
       "R > 0"
@@ -1983,6 +1985,11 @@
        "name": "disc_tau",
        "kind": "computation",
        "statement": "R = 1, x = (0, −1): τ = sin θ + |sin θ|."
+      },
+      {
+       "name": "radius_zero",
+       "kind": "non-example",
+       "statement": "R = 0: {−|x − c|² ≥ 0} = {c} and dρ = −2(x − c) vanishes there; 0 is a critical value and the singleton is not a regular domain."
       }
      ]
     },
@@ -2011,7 +2018,7 @@
       {
        "name": "ellipse",
        "kind": "computation",
-       "statement": "{x²/a² + y²/b² ≤ 1} at (a, 0): II = a/b²."
+       "statement": "{x²/a² + y²/b² ≤ 1}, a, b > 0, at (a, 0): |dρ| = 2/a, Hess ρ(e_y, e_y) = −2/b², II = a/b²; with a = −1, b = 1 the set is the unit disc with II = 1 ≠ a/b² = −1."
       },
       {
        "name": "cubic",
@@ -2024,9 +2031,10 @@
      "id": "6.2",
      "kind": "example",
      "name": "halfSpace_ballExterior",
-     "statement": "Closed half-space: II = 0, convex, nowhere strictly convex, tangent geodesics stay in ∂M, τ = ∞ on ∂₀SM. Closed exterior {|x − c| ≥ R}: II = −h/R, H = −1/R, strictly concave, tangent lines enter int M to second order.",
+     "statement": "Closed half-space: II = 0, convex, for n ≥ 1 nowhere strictly convex, tangent geodesics stay in ∂M, τ = ∞ on ∂₀SM. For R > 0 the closed exterior {|x − c| ≥ R}: II = −h/R, strictly concave, H = −1/R for n ≥ 1, and for q ∈ ∂M and 0 ≠ v ⊥ (q − c) the tangent line q + tv enters int M to second order, ρ(q + tv) = t²|v|² for ρ = |x − c|² − R².",
      "hypotheses": [
-      "Euclidean metric on ℝⁿ⁺¹"
+      "Euclidean metric on ℝⁿ⁺¹",
+      "R > 0 for the exterior"
      ],
      "locator": {
       "source": "paternain-salo-uhlmann2023",
@@ -2044,7 +2052,12 @@
       {
        "name": "exterior",
        "kind": "computation",
-       "statement": "Unit exterior: ρ(q + tv) = t² along tangent lines, II = −h, H = −1."
+       "statement": "Unit exterior, unit v ⊥ q: ρ(q + tv) = t² along the tangent line, II = −h, H = −1 for n ≥ 1; v = 0 gives the constant curve on ∂M, which does not enter int M."
+      },
+      {
+       "name": "halfline",
+       "kind": "degenerate",
+       "statement": "n = 0: the half-space is [0, ∞), strictly convex vacuously, with II = 0."
       }
      ]
     },
@@ -2052,7 +2065,7 @@
      "id": "6.3.1",
      "kind": "example",
      "name": "sphericalCap",
-     "statement": "In S^{n+1} with Tau Ceti's round metric, the cap C_R = {⟨x, p⟩ ≥ cos R}, 0 < R < π: II = cot R · h; strictly convex iff R < π/2, totally geodesic boundary at R = π/2, strictly concave for R > π/2; non-trapping iff R < π/2.",
+     "statement": "In S^{n+1} with Tau Ceti's round metric, the cap C_R = {⟨x, p⟩ ≥ cos R}, 0 < R < π: II = cot R · h. For n ≥ 1: strictly convex iff R < π/2, totally geodesic boundary at R = π/2, strictly concave for R > π/2; non-trapping iff R < π/2. For n = 0: C_R is the arc {|θ| ≤ R} of S¹, II is the zero form, and C_R is non-trapping for every 0 < R < π with τ(θ, ±1) = R ∓ θ.",
      "hypotheses": [
       "unit round sphere S^{n+1}",
       "0 < R < π"
@@ -2074,6 +2087,11 @@
        "name": "cap_values",
        "kind": "computation",
        "statement": "ρ = ⟨x, p⟩ − cos R: Hess ρ = −cos R · g, |dρ| = sin R, II = cot R · h; R = π/4 gives II = h."
+      },
+      {
+       "name": "arc",
+       "kind": "degenerate",
+       "statement": "n = 0, R = 3π/4: exit times 3π/4 ∓ θ ≤ 3π/2 are finite although R ≥ π/2; the cut-off π/2 needs n ≥ 1."
       }
      ]
     },
@@ -2081,9 +2099,10 @@
      "id": "6.3.2",
      "kind": "example",
      "name": "hyperbolicDomain",
-     "statement": "In TauCeti.UpperHalfSpace with hyperbolicMetric, u(x, y) = (|x|² + y² + 1)/(2y) has Hess u = u·g and u ≥ 1; every compact regular domain is non-trapping; closed balls {u ≤ cosh R} are strictly convex with II = coth R · h.",
+     "statement": "In TauCeti.UpperHalfSpace with hyperbolicMetric, u(x, y) = (|x|² + y² + 1)/(2y) has Hess u = u·g and u ≥ 1; every compact regular domain is non-trapping; closed balls {u ≤ cosh R}, R > 0, are strictly convex with II = coth R · h.",
      "hypotheses": [
-      "hyperbolic space of dimension n + 1 in the upper half-space model"
+      "hyperbolic space of dimension n + 1 in the upper half-space model",
+      "R > 0 for the balls {u ≤ cosh R}"
      ],
      "locator": {
       "source": "paternain-salo-uhlmann2023",
@@ -2108,7 +2127,7 @@
       {
        "name": "compare_R1",
        "kind": "computation",
-       "statement": "At R = 1: coth 1 ≈ 1.313 (hyperbolic), 1 (Euclidean), cot 1 ≈ 0.642 (spherical)."
+       "statement": "At R = 1: coth 1 ≈ 1.313 (hyperbolic), 1 (Euclidean), cot 1 ≈ 0.642 (spherical); for n ≥ 1 only the spherical value changes sign, at R = π/2."
       }
      ]
     },
@@ -2138,7 +2157,7 @@
       {
        "name": "sphere",
        "kind": "compatibility",
-       "statement": "Unit sphere: caps strictly convex only for R < π/2, so r_p ≤ π/2."
+       "statement": "Unit sphere S^{n+1}, n ≥ 1: caps strictly convex only for R < π/2, so r_p ≤ π/2. On S¹ every r_p ∈ (0, π] is admissible (d(p, ·)² = θ² on B(p, π), every arc non-trapping, boundary strictly convex vacuously)."
       },
       {
        "name": "flat_torus",
@@ -2151,18 +2170,21 @@
      "id": "6.5",
      "kind": "example",
      "name": "conformalBall",
-     "statement": "On the closed unit ball of ℝⁿ⁺¹ with ĝ = e^{2φ(|x|²)}g_eucl: II^ĝ = e^{φ(1)}(1 + 2φ'(1))h_eucl; strictly convex iff d/dr(r e^{φ(r²)})|_{r=1} > 0 (Herglotz–Wiechert); φ(s) = −s gives II^ĝ = −e^{−1}h_eucl, strictly concave.",
+     "statement": "On the closed unit ball of ℝⁿ⁺¹ with ĝ = e^{2φ(|x|²)}g_eucl and b(r) = r e^{φ(r²)}: for 0 < r ≤ 1 the sphere |x| = r bounding {|x| ≤ r} has II^ĝ = (b′(r)/r)h_eucl, so II^ĝ = e^{φ(1)}(1 + 2φ'(1))h_eucl = b′(1)h_eucl on the boundary. For n ≥ 1: the boundary is strictly convex iff b′(1) > 0 (the Herglotz condition restricted to the outer boundary); every sphere |x| = r ≤ 1 is strictly convex iff b′(r) > 0 on (0, 1] (the full Herglotz condition); a sphere with b′(r) = 0 is totally geodesic and its great circles are closed geodesics. φ(s) = −s gives II^ĝ = −e^{−1}h_eucl, strictly concave.",
      "hypotheses": [
-      "φ : ℝ → ℝ smooth"
+      "φ : ℝ → ℝ smooth",
+      "n ≥ 1 for the convexity equivalences"
      ],
      "locator": {
       "source": "stefanov-uhlmann-vasy2021",
-      "where": "lines 66–72 (Herglotz condition); paternain-salo-uhlmann2023 Lemma 2.5.2 and Corollary 2.5.3, lines 2462–2481"
+      "where": "condition (1.1), lines 66–72 (Herglotz condition for all radii); paternain-salo-uhlmann2023 Lemma 2.5.2 and Corollary 2.5.3(a)⇔(c), lines 2462–2481"
      },
      "prerequisites": [
       "target:1.6",
       "target:2.1",
-      "target:3.1"
+      "target:3.1",
+      "target:3.6",
+      "roadmap:RiemannianGeometry §R5a"
      ],
      "api": [],
      "tests": [
@@ -2174,12 +2196,22 @@
       {
        "name": "family",
        "kind": "computation",
-       "statement": "φ_s(t) = −st: II = e^{−s}(1 − 2s)h, threshold s = 1/2, matching Herglotz."
+       "statement": "φ_s(t) = −st: II = e^{−s}(1 − 2s)h, threshold s = 1/2; b_s′(r) = e^{−sr²}(1 − 2sr²) is positive on (0, 1] exactly when s < 1/2, so for this family the outer-boundary test and the full Herglotz condition coincide."
       },
       {
        "name": "direct",
        "kind": "compatibility",
-       "statement": "1.6 with ν_in = −x: d(φ(|x|²))(ν_in) = −2φ'(1)."
+       "statement": "1.6 with ν_in = −x/r on |x| = r: d(φ(|x|²))(ν_in) = −2rφ'(r²), II^ĝ = e^{φ(r²)}(1/r + 2rφ'(r²))h = (b′(r)/r)h."
+      },
+      {
+       "name": "outer_boundary_not_full_herglotz",
+       "kind": "non-example",
+       "statement": "φ(s) = s² − 2s: b′(r) = e^{r⁴ − 2r²}(2r² − 1)², b′(1) = e^{−1} > 0 (boundary strictly convex, n ≥ 1) but b′(1/√2) = 0: the sphere |x| = 1/√2 is totally geodesic and carries trapped geodesics; the endpoint test is not the full condition."
+      },
+      {
+       "name": "dimension_one",
+       "kind": "degenerate",
+       "statement": "n = 0: the boundary {±1} is strictly convex for every φ, also for φ(s) = −s with b′(1) = −e^{−1} < 0; the equivalence needs n ≥ 1."
       }
      ]
     }
@@ -2196,7 +2228,7 @@
     "§12.3",
     "§12.5"
    ],
-   "what": "outward-pointing interface; existence of metrics; gradient and symmetric Hessian; the outward unit normal of the boundary divergence theorem"
+   "what": "outward-pointing interface; existence of metrics; gradient and symmetric Hessian; the outward unit normal exists_halfSpaceOutwardUnitNormal (smooth, unit, outward, orthogonal to the boundary tangent space, determined pointwise)"
   },
   {
    "roadmap": "HopfRinow",
@@ -2218,9 +2250,10 @@
   {
    "roadmap": "GeometricTopology",
    "sections": [
-    "§Layer 1"
+    "§1.1",
+    "§1.3"
    ],
-   "what": "smooth collar theorem (only; the gluings of 3.3 are Tau Ceti's compatible open gluings)"
+   "what": "smooth collars and the interior as a boundaryless manifold (1.1); gluing along the boundary with collars, hence the collar extension M ∪_f (∂M × [0, 1)) and the double M ∪_id M (1.3)"
   },
   {
    "roadmap": "ComplexKahlerGeometry",
@@ -2244,7 +2277,7 @@
   },
   {
    "roadmap": "a future Lorentzian geometry roadmap (domains with boundary)",
-   "what": "regular domains, collar extension and realisation, defining-function calculus (1.3, 3.1, 3.3–3.5)"
+   "what": "regular domains, defining functions on the collar extension and the realisation, defining-function calculus (1.3, 3.1, 3.3–3.5)"
   },
   {
    "roadmap": "future geodesic X-ray transform / lens and boundary rigidity / simple manifolds roadmaps",
@@ -2255,17 +2288,5 @@
    "what": "mean-convex boundary conditions on manifolds with boundary (1.5, 2.1, 3.4)"
   }
  ],
- "gaps": [
-  {
-   "slug": "dg-outward-unit-normal",
-   "title": "Named outward unit normal of DifferentialGeometry 12.5",
-   "neededBy": [
-    "1.2"
-   ],
-   "detail": "DifferentialGeometry 12.5 states the boundary divergence theorem with the outward unit normal N but does not name it or record its defining properties; this roadmap consumes that object.",
-   "needs": "A named outward unit normal along ∂M of a Riemannian manifold with boundary over 𝓡∂ (n+1), proved to be a unit vector, g-orthogonal to dι(T∂M) and outward pointing in the sense of 5.1.",
-   "supplier": "DifferentialGeometry",
-   "section": "12.5"
-  }
- ]
+ "gaps": []
 }
