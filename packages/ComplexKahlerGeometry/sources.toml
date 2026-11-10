@@ -243,3 +243,18 @@ licence_class = "none"
 status = "uncertified"
 version_note = "paywalled; cited by its locator without the text"
 cited_for = ["4.2"]
+
+[[source]]
+id = "nomizu-nilmanifolds"
+authors = "Katsumi Nomizu"
+title = "On the cohomology of compact homogeneous spaces of nilpotent Lie groups"
+year = 1954
+venue = "Ann. of Math. (2) 59 (1954), no. 3, 531-538"
+doi = "10.2307/1969716"
+locator_scheme = "theorem"
+locator = "Theorem 1"
+url = "https://doi.org/10.2307/1969716"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text; the statement is read from angella-iwasawa, Theorem 2.1, p. 5"
+cited_for = ["8.2"]
