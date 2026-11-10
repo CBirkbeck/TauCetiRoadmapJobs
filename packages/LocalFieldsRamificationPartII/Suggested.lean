@@ -1,8 +1,6 @@
-module
-
-public import Mathlib
-public import TauCeti.RepresentationTheory.Homological.ContCohomology.CohomologicalDimension.Basic
-public import TauCeti.Topology.Algebra.Group.Profinite.ProP.Basic
+import Mathlib
+import TauCeti.RepresentationTheory.Homological.ContCohomology.CohomologicalDimension.Basic
+import TauCeti.Topology.Algebra.Group.Profinite.ProP.Basic
 
 /-!
 # Local fields and ramification, Part II: target signatures
@@ -37,12 +35,11 @@ Headline theorems not statable at the pins:
   inertia subgroup of a prolongation to the separable closure and its fixed field, which neither
   library provides (Mathlib has decomposition and inertia subgroups only);
 * the tensor decomposition `L ⊗_K Kʰ ≅ ∏ L_wʰ` and the height-one decompletion: they need the
-  henselization of a valued field, which neither library provides;
+  henselization of a valued field, which neither library provides (Tau Ceti has the henselization
+  of the valuation ring as a ring, not the valued field built on it inside a separable closure);
 * the composition criteria for unramified and tame extensions: they need the unramified and tame
   extension classes of a non-henselian field, defined through the henselization.
 -/
-
-@[expose] public section
 
 namespace TauCetiRoadmap.LocalFieldsRamificationPartII
 
