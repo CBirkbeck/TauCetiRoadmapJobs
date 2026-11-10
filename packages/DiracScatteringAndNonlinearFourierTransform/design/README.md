@@ -396,11 +396,13 @@ so `(v e^{−∫ₐᵗβ})′ ≤ αβ e^{−∫ₐᵗβ}` almost everywhere; in
 ### 1.2 The linear Carathéodory theorem
 
 Let `a ≤ b`, `t₀ ∈ [a, b]`, `y₀ ∈ E`, let `P` be a coefficient on `[a, b]` and let `F : ℝ → E` be
-integrable on `[a, b]`. Prove that there is exactly one `Y : ℝ → E`, continuous on `[a, b]`, with
-`Y(t) = y₀ + ∫_{t₀}^{t} (P(s)Y(s) + F(s)) ds` for every `t ∈ [a, b]`. Prove that this `Y` is
-absolutely continuous on `[a, b]`, has derivative `P(t)Y(t) + F(t)` at almost every `t ∈ (a, b)`, and
-satisfies `‖Y(t)‖ ≤ (‖y₀‖ + |∫_{t₀}^{t} ‖F‖|) exp|∫_{t₀}^{t} ‖P‖|`; conversely an absolutely continuous
-`Y` with `Y(t₀) = y₀` and derivative `P Y + F` almost everywhere is this solution. Route: Picard
+integrable on `[a, b]`. Prove that there is a `Y : ℝ → E`, continuous on `[a, b]`, with
+`Y(t) = y₀ + ∫_{t₀}^{t} (P(s)Y(s) + F(s)) ds` for every `t ∈ [a, b]`, and that any two such functions
+agree on `[a, b]`. Prove that every such `Y` is absolutely continuous on `[a, b]`, has derivative
+`P(t)Y(t) + F(t)` at almost every `t ∈ (a, b)`, and satisfies
+`‖Y(t)‖ ≤ (‖y₀‖ + |∫_{t₀}^{t} ‖F‖|) exp|∫_{t₀}^{t} ‖P‖|` for `t ∈ [a, b]`; conversely a `Y` that is
+absolutely continuous on `[a, b]` with `Y(t₀) = y₀` and derivative `P Y + F` at almost every
+`t ∈ (a, b)` agrees on `[a, b]` with these solutions. Route: Picard
 iteration in `C([a, b], E)`, where the `n`-th iterate moves two curves at time `t` by at most
 `(∫_{t₀}^{t}‖P‖)ⁿ/n!` times their distance, so that some iterate is a contraction; uniqueness by 1.1
 (coddingtonlevinson1955, Ch. 2 §1, waived; romanov2014 line 212–224 for the canonical-system case).
@@ -419,6 +421,9 @@ iteration in `C([a, b], E)`, where the `n`-th iterate moves two curves at time `
 - Integrability is necessary: `P(t) = 1/t` on `(0, 1]` is not integrable at `0`; from `t₀ = 0` every
   `Y(t) = ct` solves `Y′ = Y/t` with `Y(0) = 0`, so uniqueness fails, and no solution has
   `Y(0) = y₀ ≠ 0`.
+- Uniqueness holds on `[a, b]` only: for `[a, b] = [0, 1]`, `P = 0`, `F = 0`, `y₀ = 0`, both `Y ≡ 0` and
+  the indicator function of `(2, 3)` are continuous on `[0, 1]` and solve the equation there. They agree
+  on `[0, 1]` and differ at `5/2`, so a uniqueness claim for functions on all of `ℝ` is false.
 
 ### 1.3 The propagator
 
@@ -535,15 +540,21 @@ hence holomorphic, and the series converges locally uniformly.
 
 Let `t₀ ∈ I`, `x₀ ∈ E` and `F : ℝ × E → E` with `t ↦ F(t, x)` strongly measurable on `I` for each
 `x`, `‖F(t, x) − F(t, y)‖ ≤ L(t)‖x − y‖` and `‖F(t, x₀)‖ ≤ m(t)` for almost every `t ∈ I` and all
-`x, y`, where `L, m ≥ 0` are integrable on compact subintervals of `I`. Prove that there is exactly
-one `Y` continuous on `I` with `Y(t) = x₀ + ∫_{t₀}^{t} F(s, Y(s)) ds` for `t ∈ I`; that it is absolutely
-continuous on compact subintervals with `‖Y(t) − x₀‖ ≤ |∫_{t₀}^{t} m| exp|∫_{t₀}^{t} L|`; and that two
-initial values give solutions at distance at most `‖x₀ − x₀′‖ exp|∫_{t₀}^{t} L|`. Prove the local form:
-if the two bounds hold only for `x, y` in the closed ball of radius `r` about `x₀` and for `t` in
-`[t₀, t₀ + δ] ⊆ I`, there is a unique solution on `[t₀, t₀ + τ]` for every `τ ≤ δ` with
-`(∫_{t₀}^{t₀+τ} m) exp(∫_{t₀}^{t₀+τ} L) ≤ r`. The composite `s ↦ F(s, Y(s))` is strongly measurable
-because `Y` is a uniform limit of step functions and `F` is Lipschitz in `x`
-(coddingtonlevinson1955, Ch. 2 §1, waived).
+`x, y`, where `L, m ≥ 0` are integrable on compact subintervals of `I`. Prove that there is a
+`Y : ℝ → E`, continuous on `I`, with `Y(t) = x₀ + ∫_{t₀}^{t} F(s, Y(s)) ds` for `t ∈ I`, and that any two
+such functions agree on `I`; that every such `Y` is absolutely continuous on compact subintervals of `I`
+with `‖Y(t) − x₀‖ ≤ |∫_{t₀}^{t} m| exp|∫_{t₀}^{t} L|`; and that two initial values give solutions at
+distance at most `‖x₀ − x₀′‖ exp|∫_{t₀}^{t} L|` at every `t ∈ I`. Prove the local form. Let `B` be the
+closed ball of radius `r` about `x₀`, suppose the two bounds hold only for `x, y ∈ B` and almost every
+`t ∈ [t₀, t₀ + δ] ⊆ I`, and let `τ ≤ δ` satisfy `(∫_{t₀}^{t₀+τ} m) exp(∫_{t₀}^{t₀+τ} L) ≤ r`. Call a
+solution on `[t₀, t₀ + τ]` a `Y` continuous there with `s ↦ F(s, Y(s))` integrable on `[t₀, t₀ + τ]` and
+the integral equation for `t ∈ [t₀, t₀ + τ]`. Then there is a solution on `[t₀, t₀ + τ]` with values in
+`B`, and any two solutions with values in `B` agree on `[t₀, t₀ + τ]`. If the inequality is strict,
+every solution on `[t₀, t₀ + τ]` has values in `B`, so any two solutions agree there: a solution leaving
+`B` meets the sphere `‖x − x₀‖ = r` at a first time `t*`, and 1.1 on `[t₀, t*]` bounds `‖Y(t*) − x₀‖`
+by `(∫_{t₀}^{t₀+τ} m) exp(∫_{t₀}^{t₀+τ} L) < r`. The composite `s ↦ F(s, Y(s))` is strongly measurable
+for `Y` continuous with values where `F` is Lipschitz in `x`, because `Y` is a uniform limit of step
+functions (coddingtonlevinson1955, Ch. 2 §1, waived).
 
 *Needs:* §1.1, §1.2's Picard scheme; Mathlib `StronglyMeasurable` limits.
 
@@ -558,6 +569,12 @@ because `Y` is a uniform limit of step functions and `F` is Lipschitz in `x`
   which leaves every ball before `t = 1`. On the ball of radius `r = 1` the local bounds are
   `L = 2(1 + r) = 4` and `m = 1`, and `τ = 0.1` satisfies `τ e^{4τ} ≈ 0.149 ≤ 1`; the local form
   gives the solution on `[0, 0.1]`, where indeed `1/(1 − t) ≤ 1.12` stays in the ball.
+- The local uniqueness clause needs the ball or the strict inequality: `E = ℝ`, `I = [0, 2]`, `t₀ = 0`,
+  `x₀ = 0`, `r = 1`, `δ = τ = 2`, `F(t, x) = 1` for `t < 1` and `F(t, x) = 2√(max(x − 1, 0))` for
+  `t ≥ 1`. On `B = [−1, 1]` the bounds hold with `L = 0` and `m = 1_{[0, 1)}`, and
+  `(∫₀² m) e⁰ = 1 = r`. Both `min(t, 1)` and the function equal to `t` on `[0, 1]` and to `1 + (t − 1)²`
+  on `[1, 2]` solve the equation on `[0, 2]`; the second leaves `B` after `t = 1`. For `τ < 1` the
+  inequality is strict and `Y(t) = t` is the only solution on `[0, τ]`.
 
 ### Examples
 
@@ -1132,8 +1149,11 @@ For `z` in the closed upper half-plane define `r(t, z) = e^{2izt} b#(t, z)/a(t, 
 `|r(t, z)| < 1`, that `∂ₜ r = 2iz r + conj q − q r²` with `r(0, z) = 0`, that
 `a(t, z) = exp(∫₀ᵗ q(s) r(s, z) ds)`, that `|r(t, z)| ≤ 2∫₀ᵗ e^{−2 Im z (t − s)} |q(s)| ds`, and that
 `ρ(t, z) = ∫₀ᵗ q(s) e^{2izs} a(s, z)^{−2} ds`. Route: with `β = e^{2izt} b#`, the pair `(a, β)` solves
-`a′ = qβ`, `β′ = 2izβ + conj q a`, so `∂ₜ(|a|² − |β|²) = 4 Im z |β|² ≥ 0`; `∂ₜ ρ = q e^{2izt}/a²` follows from
-`det G = 1` (denisov2006 (195) line 3256–3290 for the Krein-system analogue).
+`a′ = qβ`, `β′ = 2izβ + conj q a`, so `∂ₜ(|a|² − |β|²) = 4 Im z |β|² ≥ 0`, and `r = β/a` satisfies the
+Riccati equation; `∂ₜ ρ = q e^{2izt}/a²` follows from `det G = 1`. For the Krein-system analogue, the
+Riccati equation of the Schur function of the system restricted to a tail `[s, ∞)`, see denisov2006
+§9 Lemma 9.1 (157)–(158) line 2510–2521, and Lemma 9.2 line 2544–2556 for its solution as the ratio of
+the two components of a linear system.
 
 *Needs:* §4.1, §4.3.
 
@@ -2057,7 +2077,8 @@ Layer 3, Layer 4, Layer 5 (§5.2, §5.5, §5.6), Layer 6 (§6.5, §6.8), Layer 7
   v1; the detailed account of poltoratski2024's earlier version, used for Layers 2, 3, 6 and 8 (§§2, 3.1–3.2,
   3.7), whose dictionary (line 65–87) matches the numbering.
 - **denisov2006** — S. A. Denisov, *Continuous analogs of polynomials orthogonal on the unit circle. Krein
-  systems*, IMRS 2006, Art. ID 54517; arXiv:0908.4049 v1 (§11 Theorem 11.1, (194)–(195); §13).
+  systems*, IMRS 2006, Art. ID 54517; arXiv:0908.4049 v1 (§9 Lemmas 9.1–9.2, (157)–(158); §11 Theorem
+  11.1, (194); §13).
 - **romanov2014** — R. Romanov, *Canonical systems and de Branges spaces*, arXiv:1408.6022 v1 (§0, §1 Example
   1, §3 Proposition 4 and Theorem 5, §8 Theorems 15–16).
 - **taothiele2012** — T. Tao, C. Thiele, *Nonlinear Fourier analysis*, arXiv:1201.5129 v1 (Lecture 1 Lemma 3,
