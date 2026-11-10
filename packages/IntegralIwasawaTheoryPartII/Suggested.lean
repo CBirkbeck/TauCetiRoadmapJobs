@@ -9,10 +9,14 @@ carriers are available. None of the following headlines is statable at these pin
 
 * The Gross–Stark leading-term theorem of Dasgupta–Kakde–Ventullo for every prime `p`
   (README §5.6), and its rank-zero case (§5.5), lack the Deligne–Ribet `p`-adic
-  `L`-function `L_p(χω, s)` of a totally odd character of a totally real field, the
-  complex Hecke (Artin) `L`-function `L(χ, s)` of a finite-order character of a number
-  field other than `ℚ`, and the Iwasawa logarithm on finite extensions of `ℚ_p`, through
-  which Gross's regulator is defined.
+  `L`-function `L_p(χω, s)` of a totally odd character of a totally real field and the
+  Iwasawa logarithm on finite extensions of `ℚ_p` normalized by `log_p(p) = 0`, through
+  which Gross's regulator is defined. The complex side exists at the pins: Tau Ceti's
+  `TauCeti.LFunctions.heckeLFunctionC` is the presented meromorphic continuation of the
+  Hecke `L`-series of a ray class character of any number field (zero when no
+  continuation exists). Its functional equation, the nonvanishing `L(χ, 0) ≠ 0` and the
+  identification of a Galois character with a ray class character are the LFunctions and
+  ClassFieldTheory targets the README consumes, and none of them supplies `L_p(χω, s)`.
 * The all-prime lower bound `ord_{s=0} L_p(χω, s) ≥ r` (§0.8) lacks `L_p(χω, s)` and the
   integral Sczech–Eisenstein cocycle with its measures.
 * The exact-order criterion `ord_{s=0} L_p(χω, s) = r ↔ R_p(χ) ≠ 0` and its rank-one case

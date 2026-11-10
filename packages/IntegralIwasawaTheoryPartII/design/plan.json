@@ -3484,9 +3484,21 @@
     },
     {
       "slug": "hida-family-representations-all-degrees",
-      "needs": "For every totally real F of any degree and every prime p including 2, and every cuspidal eigenfamily H of PadicFamilies §5.13 with coefficient field L_H, a continuous irreducible representation ρ_H : G_F → GL_2(L_H), L_H carrying the Λ-adic topology (that of the maximal ideal (ϖ_E, T) of Λ), unramified outside 𝔫p, with characteristic polynomial X² − c(𝔩,H)X + χε(𝔩) at Frob_𝔩 for 𝔩 ∤ 𝔫p and, at each 𝔮 | p, the ordinary shape [[χεη_{𝔮,H}⁻¹, ∗], [0, η_{𝔮,H}]] on G_𝔮 with η_{𝔮,H} : G_𝔮 → Λ_H^× unramified and η_{𝔮,H}(rec(ϖ⁻¹)) = c(𝔮,H) (Dasgupta–Kakde–Ventullo Theorem 4.1, after Hida and Wiles).",
+      "needs": "For every totally real F of any degree and every prime p including 2, and every cuspidal eigenfamily H of PadicFamilies §5.13 with coefficient field L_H, including those on the families of gap:dyadic-hilbert-hida-localization and gap:p-ramified-hilbert-hida-localization (character χ possibly ramified above p), a continuous irreducible representation ρ_H : G_F → GL_2(L_H), L_H carrying the Λ-adic topology (that of the maximal ideal (ϖ_E, T) of Λ), unramified outside 𝔫p, with characteristic polynomial X² − c(𝔩,H)X + χε(𝔩) at Frob_𝔩 for 𝔩 ∤ 𝔫p and, at each 𝔮 | p, the ordinary shape [[χεη_{𝔮,H}⁻¹, ∗], [0, η_{𝔮,H}]] on G_𝔮 with η_{𝔮,H} : G_𝔮 → Λ_H^× unramified and η_{𝔮,H}(rec(ϖ⁻¹)) = c(𝔮,H) (Dasgupta–Kakde–Ventullo Theorem 4.1, after Hida and Wiles).",
       "supplier": "OrdinaryAutomorphicFormsAndModularityLifting",
       "section": "§2.12"
+    },
+    {
+      "slug": "p-ramified-hilbert-coefficient-families",
+      "needs": "The §F.5 coefficient families M, M′, S, the operators T_𝔩 (𝔩 ∤ 𝔫p) and U_𝔮 (𝔮 | 𝔫p), the ordinary projector, ordinary control, Hecke images and pairings, and the ordinary Eisenstein family E(1,χ) (T_𝔩-eigenvalue 1 + χε(𝔩), U_𝔮-eigenvalue 1 at every 𝔮 | p, standard constants 2^(−[F:ℚ])L_p(χω, 1 − k)), for every prime p (with the dyadic conventions of gap:dyadic-hilbert-coefficient-families at p = 2) and every totally odd finite-order χ whose conductor 𝔫𝔣_p has a nontrivial part 𝔣_p above p and tame level 𝔫 prime to p, including χ = ω⁻¹ at tame level 1, with weight-k specializations of level 𝔫·lcm(𝔣_p, ∏_{𝔮|p}𝔮) and character χω^(1−k).",
+      "supplier": "NoncommutativeAndEquivariantIwasawa",
+      "section": "§F.5"
+    },
+    {
+      "slug": "p-ramified-hilbert-hida-localization",
+      "needs": "The statements of §§5.10–5.13 (Hida-family presentation, Fourier injectivity on S°(𝔫,χ)_(1), reducedness of T_(𝔪) when the prime-to-p part of the conductor of χ equals the tame level 𝔫, and the total quotient ring as a product of eigenfamily fields L_{H_i} with c(𝔩,H_i) ≡ 1 + χ(𝔩) for 𝔩 ∤ 𝔫p and c(𝔮,H_i) ≡ 1 for 𝔮 | 𝔫p modulo 𝔪_{H_i}) on the families of gap:p-ramified-hilbert-coefficient-families, for every prime p.",
+      "supplier": "PadicFamilies",
+      "section": "§§5.10–5.13"
     }
   ],
   "restructure": [],
