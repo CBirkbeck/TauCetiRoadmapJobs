@@ -1,0 +1,13 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-QuantumGroups~40",
+  "head": "4099168a8033f96ae45b394dfc4b6445cd4dcdcf",
+  "pr": 1705,
+  "folder": "QuantumGroups",
+  "date": "2026-11-10",
+  "findings": 0,
+  "blocking": 0,
+  "notes": "full review (folder changed 1800 lines since 3d02d53, mostly the merge of main 8101f2c with 35c6d30f); no findings. Gate re-run at 4099168: all counters 0, OK; depcheck 228 roadmaps, 2123 edges, 0 problems; lake env lean on Suggested.lean exit 0 with exactly five sorry warnings; no change outside the folder. #check @ on all 9 declarations matches the README (compactType_iff needs no Nontrivial: Bialgebra counit_one excludes the zero ring); one-tactic probes (infer_instance, constructor+simp, simp, exact?) fail, no padding; headline list checked against the docstring. Seeded sample: 2.2/2.3 Mathlib spectral route verified, Timmermann uncertified; 3.1 nt Thm 1.4.2 (line 447, p.9) and 1.6.6 Step 1 (line 819, p.18); 4.3 bmt Thms 2.2, 2.8, Cor 2.9, Thm 3.6 (pp.6, 10-11, 18-19); 5.1 bmt p.13 matrix and the five-relation iff recomputed; 5.2 banica Prop 1/Lemma 1, malacarne Lemma 2.1, invariance uF^t u^t=F^t derived; 6.2 malacarne Thm 1.1, Lemmas 1.2, 2.1, 2.2, 3.1, Thm 4.1; 7.1 bmt Thm 2.12 weighted shift (line 619); 7.2 banica Thm 1, Prop 2; 8.1-8.4 virelizier Prop 2.4 p.8, Ex 3.3 p.11, Prop 3.7/Cor 3.8 p.12, Thm 3.13/Cor 3.14 p.13, section 3.2; 8.6 pinned Star/InnerProduct hypotheses; 8.7 virelizier section 4.1 p.13 with the divided-power rescaling recomputed. All 152 backticked TauCeti names, 27 short names and 22 Mathlib names resolve at the pins with the stated hypotheses; supplier sections C1.7, C1.8, C4.1, C5.1, C5.2, C8.4, V13b.SpatialNorm, V10.KMS, H1-H3, LieHighestWeight Layer 0, PivotalSpherical 0-2,7 resolved on main. Adversarial table with 36 computed rows. Ownership: Layer 0 overlaps with the CategoricalOperatorAlgebras/TemperleyLiebOperatorAlgebras heads are main's assignment, correction theirs; the new 2.1 legs have no other owner. Source issues: bmt Thm 2.12 Haar display lacks q^(2n); banica Thm 1 false at n=1."
+ }
+}
