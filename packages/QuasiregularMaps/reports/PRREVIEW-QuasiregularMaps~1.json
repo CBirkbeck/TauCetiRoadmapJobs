@@ -1,0 +1,13 @@
+{
+  "review": {
+    "status": "needs_changes",
+    "reviewer": "independent-review-PRREVIEW-QuasiregularMaps~1",
+    "head": "64a7eb804e666e390197fef9747d4528cb482e17",
+    "pr": 2134,
+    "folder": "QuasiregularMaps",
+    "date": "2026-11-10",
+    "findings": 7,
+    "blocking": 6,
+    "notes": "Full read of 37 numbered sections and ten Lean declarations; all 15 seeded source targets audited, with inaccessible settled texts recorded as not verifiable. 132 computed adversarial rows. Supplied gate passes all checks; independent elaboration passes with five sorry warnings; ten signatures retain binders and five padding probes do not close. Dependency check: 235 roadmaps, 2132 edges, 0 problems. Pinned-library and main/open-roadmap ownership audited. Six Sobolev gaps remain explicit conditional contracts; obsolete orientation-descent request needs reconciliation. PR worktree and source manifests unchanged."
+  }
+}

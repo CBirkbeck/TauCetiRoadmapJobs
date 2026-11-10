@@ -177,3 +177,18 @@ licence_class = "none"
 status = "uncertified"
 version_note = "paywalled (AMS); the sources service found no legal open copy (the DOI landing page is the publisher's priced e-book); cited by its locator without the text, for the standard linear algebra of the planar map z ↦ az + b z̄ and the analytic definition of planar quasiconformality"
 cited_for = ["1.5", "2.10"]
+
+[[source]]
+id = "Lee2012"
+authors = "John M. Lee"
+title = "Introduction to Smooth Manifolds"
+year = 2012
+venue = "Graduate Texts in Mathematics"
+doi = "10.1007/978-1-4419-9982-5"
+locator_scheme = "chapter"
+locator = "Ch. 15"
+url = "https://doi.org/10.1007/978-1-4419-9982-5"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["7.5"]
