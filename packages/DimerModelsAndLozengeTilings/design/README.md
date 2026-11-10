@@ -72,9 +72,11 @@ It does not own, and does not restate:
   expectation; determinants, adjugates and inverses; the lifting criterion through covering maps;
   the Riemann–Lebesgue lemma — all in Mathlib (exact names under the supplier contracts);
 - the characterisation of ergodic invariant probability measures of a countable group action as
-  extreme points of the invariant probability measures, `ErgodicSMul.iff_mem_extremePoints`, and
-  the convex set `TauCeti.MeasureTheory.invariantMeasuresOfMeasureUnivEq` — already in Tau Ceti;
-  this roadmap applies them and adds the Gibbs-specific face property;
+  extreme points of the invariant probability measures, `ErgodicSMul.iff_mem_extremePoints`,
+  the convex set `TauCeti.MeasureTheory.invariantMeasuresOfMeasureUnivEq`, and the test of
+  ergodicity on exactly invariant events,
+  `TauCeti.MeasureTheory.ergodicSMul_iff_forall_smul_invariant` — already in Tau Ceti; this
+  roadmap applies them and adds the Gibbs-specific face property;
 - the tail σ-algebra of an ℕ-indexed process, `TauCeti.Probability.tailProcess`, with its normal
   form as the intersection of the future σ-algebras — already in Tau Ceti; the tail σ-algebra of
   4.1 differs in being indexed by an arbitrary countable set carrying a proper action of a
@@ -156,12 +158,19 @@ All conventions below are fixed.
   value and the inverse `K_R⁻¹` (rows black, columns white) do not depend on the bijection.
 - **Torus.** For `n₁, n₂ ≥ 1` the torus tilings are the plane tilings invariant under
   `n₁ℤ × n₂ℤ`. The height change is `(h₁,h₂)` with `H_M(v + (n₁,0)) − H_M(v) = h₁` and
-  `H_M(v + (0,n₂)) − H_M(v) = h₂`. The twisted Kasteleyn matrix `K_{ab}`, `(a,b) ∈ {0,1}²`, indexes
-  rows and columns by the fundamental domain `[0,n₁) × [0,n₂)` (white `W(v)` and black `B(v)` both
-  by `v`) and multiplies by `(−1)^a` the entries of type-2 lozenges crossing the vertical seam
-  (`W(v)`–`B(v+e₁)` with `v` in the last column) and by `(−1)^b` those of type-1 lozenges crossing
-  the horizontal seam (`W(v)`–`B(v−e₂)` with `v` in the first row). This is gorin2021
-  Definition 3.9 (lines 1452–1457) in these coordinates.
+  `H_M(v + (0,n₂)) − H_M(v) = h₂`. A torus lozenge is an `L`-orbit of plane edges, so it keeps its
+  direction (its type); the three torus lozenges at `W(v)` are the orbits of `(v,3)`, `(v,1)` and
+  `(v+e₁,2)`, joining `W(v)` to `B(v)`, `B(v−e₂)` and `B(v+e₁)` modulo `L`. For `(a,b) ∈ {0,1}²` the
+  signed weight of a torus lozenge is its weight, multiplied by `(−1)^a` for a type-2 lozenge
+  crossing the vertical seam (`W(v)`–`B(v+e₁)` with `v` in the last column) and by `(−1)^b` for a
+  type-1 lozenge crossing the horizontal seam (`W(v)`–`B(v−e₂)` with `v` in the first row). The
+  twisted Kasteleyn matrix `K_{ab}` indexes rows and columns by the fundamental domain
+  `[0,n₁) × [0,n₂)` (white `W(v)` and black `B(v)` both by `v`), and its entry at `(W(u), B(u'))` is
+  the sum of the signed weights of the torus lozenges joining `W(u)` to `B(u')` modulo `L`. For
+  `n₁, n₂ ≥ 2` the three black neighbours of a white face are distinct and each entry has at most
+  one summand; for `n₁ = 1` (types 2 and 3) or `n₂ = 1` (types 1 and 3) different lozenges share an
+  entry, and on the `1 × 1` torus all three do. This is gorin2021 Definition 3.9 (lines 1452–1457),
+  whose signs are attached to edges, in these coordinates.
 - **Kernels.** For type weights `w = (w₁,w₂,w₃)` put `P̂_w(θ,φ) = w₃ + w₂e^{iθ} + w₁e^{−iφ}`; `w` is
   liquid when the strict triangle inequalities hold. For liquid `w` and `d ∈ ℤ²`,
   `G_w(d) = (4π²)⁻¹ ∬_{[0,2π]²} e^{i(d₁θ + d₂φ)} / P̂_w(θ,φ) dθ dφ`, and the infinite inverse Kasteleyn
@@ -186,7 +195,7 @@ All conventions below are fixed.
 
 ### From Mathlib
 
-Pinned at Mathlib `f6090c7095e1e56b3464c1daba5f24631f1290d2`, the pin of `lake-manifest.json`.
+At the Mathlib revision pinned in `lake-manifest.json`.
 
 - `SimpleGraph`, `SimpleGraph.induce` (`Mathlib/Combinatorics/SimpleGraph/Maps.lean`, an abbrev
   giving the induced graph on a subtype), `SimpleGraph.LocallyFinite`
@@ -242,7 +251,7 @@ specifications and no tail σ-algebra of a product space (the tail σ-algebra ap
 
 ### From Tau Ceti
 
-Pinned at Tau Ceti `358314d4ab97483df4fc4cb8adcc02e74a8d9f5a`.
+At the Tau Ceti revision pinned in `lake-manifest.json`.
 
 - `TauCeti.MeasureTheory.invariantMeasuresOfMeasureUnivEq`, its convexity lemma, and
   `ErgodicSMul.iff_mem_extremePoints` (`TauCeti/MeasureTheory/Group/ErgodicExtreme.lean`): for a
@@ -250,10 +259,15 @@ Pinned at Tau Ceti `358314d4ab97483df4fc4cb8adcc02e74a8d9f5a`.
   [MeasurableConstSMul G X]`) an invariant probability measure is ergodic iff it is an extreme
   point, in `ℝ≥0∞`-convexity of measures, of the invariant measures of mass one. The statements
   are multiplicative only; the additive action of `ℤ²` is used through `Multiplicative (ℤ × ℤ)`.
-- `TauCeti.MeasureTheory.ergodicSMul_of_forall_smul_invariant` and
+- `TauCeti.MeasureTheory.ergodicSMul_iff_forall_smul_invariant` and
   `TauCeti.MeasureTheory.exists_smul_invariant_ae_eq`
-  (`TauCeti/MeasureTheory/Group/CountableAction.lean`): ergodicity of a countable action may be
-  tested on exactly invariant events.
+  (`TauCeti/MeasureTheory/Group/CountableAction.lean`, lines 68 and 53, for a countable group
+  acting measurably): an almost invariant measurable event is almost equal to an exactly invariant
+  one, with no hypothesis on the measure; and, for a measure with
+  `[SMulInvariantMeasure G X μ]`, the action is ergodic iff every measurable, exactly invariant
+  event is null or conull. Its reverse implication is the criterion used in 4.3, 5.3 and 9.4: for
+  an invariant probability measure, exactly invariant events of probability `0` or `1` give
+  ergodicity.
 - `TauCeti.MeasureTheory.isExtreme_setOf_measure_eq_zero`
   (`TauCeti/MeasureTheory/Measure/Face.lean`): measures vanishing on a fixed set form a face.
 - `TauCeti.Probability.tailFamily`, `TauCeti.Probability.tailProcess` and
@@ -263,23 +277,24 @@ Pinned at Tau Ceti `358314d4ab97483df4fc4cb8adcc02e74a8d9f5a`.
   σ-algebra `limsup (fun k => MeasurableSpace.comap (X k) _) atTop`, and its normal form
   `⨅ n, tailFamily X n`. Target 4.1 identifies its tail σ-algebra with `tailProcess` of the
   coordinate process along an enumeration of the index set. The `ℕ × ℕ`-indexed variant
-  `TauCeti.Probability.arrayTail` (`TauCeti/Probability/Exchangeability/Arrays/Tail.lean`,
-  line 73) is not used.
+  `TauCeti.Probability.arrayTail` (`TauCeti/Probability/Process/Array/Tail/Basic.lean`,
+  line 43) is not used.
 
 Tau Ceti has, at that pin, the invariant σ-algebra and mean ergodic projection for one map
 (`TauCeti/Probability/Ergodic/`) and one-sided shift ergodicity of i.i.d. laws
-(`ergodic_shift_infinitePi_const`); neither is needed, since the two-sided and proper-action
-statements of Layer 4 are proved directly. Its tail σ-algebras are indexed by `ℕ` or `ℕ × ℕ`
-and carry no group action. It has no dimers, height functions or Gibbs measures.
+(`MeasureTheory.Measure.ergodic_shift_infinitePi_const`,
+`TauCeti/Probability/Ergodic/BernoulliShift.lean`); neither is needed, since the two-sided and
+proper-action statements of Layer 4 are proved directly. Its tail σ-algebras are indexed by `ℕ`
+or `ℕ × ℕ` and carry no group action. It has no dimers, height functions or Gibbs measures.
 
 ### From TauCetiRoadmap.PadicMeasuresIwasawaAlgebras
 
 §6.4: `Matrix.compound` (the `r`-th compound matrix of `r × r` minors on increasing rows and
-columns), `Matrix.compound_mul` (Cauchy–Binet), the unit rule `C_r(1) = 1`,
-`Matrix.higherAdjugate` (entries `(−1)^{ΣS+ΣT} det A[Sᶜ,Tᶜ]`) and
-`Matrix.compound_mul_higherAdjugate` (`C_r(A) adj_r(A) = det(A) I`), over a commutative ring, for
-matrices indexed by `Fin m`. Target 3.3 uses them for an invertible matrix over a field; indexing
-by other finite types goes through an order isomorphism with `Fin m`.
+columns, for linearly ordered index types), `Matrix.compound_mul` (Cauchy–Binet), the unit rule
+`C_r(1) = 1`, `Matrix.higherAdjugate` (for square matrices indexed by `Fin m`, entries
+`(−1)^{ΣS+ΣT} det A[Sᶜ,Tᶜ]`) and `Matrix.compound_mul_higherAdjugate`
+(`C_r(A) adj_r(A) = det(A) I`), over a commutative ring. Target 3.3 uses them for an invertible
+matrix over a field; indexing by other finite types goes through an order isomorphism with `Fin m`.
 
 ## How to read the build
 
@@ -867,7 +882,8 @@ For a probability measure `ν` on `S`, the product `ν^{⊗I}` (Mathlib `Measure
 Route for tail triviality: read the coordinates along an enumeration of `I`, under which they are
 independent with law `ν`, and apply the sequential zero-one law to `𝓣 = tailProcess` (4.1).
 *Needs:* 4.1, 4.2; Mathlib `Measure.infinitePi`,
-`ProbabilityTheory.measure_zero_or_one_of_measurableSet_limsup_atTop`, `ErgodicSMul`.
+`ProbabilityTheory.measure_zero_or_one_of_measurableSet_limsup_atTop`, `ErgodicSMul`; Tau Ceti
+`TauCeti.MeasureTheory.ergodicSMul_iff_forall_smul_invariant` (reverse implication).
 
 **Checks.**
 
@@ -902,7 +918,7 @@ lines 4509–4519; aggarwal2023 lines 412–418). *Needs:* 4.1; Mathlib `Functio
 ### 4.5 Specifications and Gibbs measures
 
 A specification on `X` is a family `γ = (γ_Λ)` indexed by finite `Λ ⊆ I` of Markov kernels from
-`X` to `X` such that `γ_Λ(·|ω)` is `𝓕_{Λᶜ}`-measurable in `ω`, proper
+`X` to `X` such that `γ_Λ(·|ω)` is measurable in `ω` for the trace of `𝓕_{Λᶜ}` on `X`, proper
 (`γ_Λ(B ∩ C|ω) = 1_B(ω) γ_Λ(C|ω)` for `B ∈ 𝓕_{Λᶜ}`) and consistent (`γ_Δ γ_Λ = γ_Δ` for
 `Λ ⊆ Δ`). A probability measure μ on `X` is Gibbs for `γ` when `μγ_Λ = μ` for every finite `Λ`
 (sheffield2005 Section 1.1.2, lines 303–342). It is `Γ`-equivariant when
@@ -919,8 +935,14 @@ API:
 
 **Checks.**
 
-- The trivial specification `γ_Λ(·|ω) = δ_ω` is proper and consistent, and every probability
-  measure is Gibbs for it.
+- On the closed shift-invariant subshift `X₀ = {0̄, 1̄}` of the two constant configurations of
+  `{0,1}^ℤ`, any coordinate outside a finite `Λ` determines the configuration, so the trace of
+  `𝓕_{Λᶜ}` on `X₀` is the full σ-algebra; the identity specification `γ_Λ(·|ω) = δ_ω` is then
+  measurable, proper and consistent, and every probability measure on `X₀` is Gibbs for it.
+- The identity kernels on all of `{0,1}^ℤ` are not a specification: for `Λ = {0}` and
+  `C = {ω(0) = 1}`, two configurations differing only at `0` have the same exterior but
+  `γ_Λ(C|·)` takes the values `0` and `1`, so the measurability clause fails (under `Bern(1/2)^{⊗ℤ}`
+  the conditional expectation of `1_C` given `𝓕_{Λᶜ}` is `1/2`, not `1_C`).
 - The independent specification `γ_Λ(·|ω) = ν^{⊗Λ} ⊗ δ_{ω|Λᶜ}` on `X = Ω` has `ν^{⊗I}` as its
   only Gibbs measure: `μγ_{{i}} = μ` makes the coordinate `i` independent of the others with
   law `ν`.
@@ -945,8 +967,10 @@ Tau Ceti's `ErgodicSMul.iff_mem_extremePoints`. *Needs:* 4.2, 4.4, 4.5; Tau Ceti
 
 **Checks.**
 
-- For the trivial specification of 4.5 on `{0,1}^ℤ` with the shift, `𝒢_inv` is all of `𝔓_inv`, and
-  the face statement holds trivially.
+- For the identity specification of 4.5 on `X₀ = {0̄, 1̄}` with the shift, both points are fixed,
+  `𝒢_inv = 𝔓_inv` is the segment from `δ_{0̄}` to `δ_{1̄}`, and the face statement holds trivially;
+  its extreme points `δ_{0̄}`, `δ_{1̄}` are the ergodic elements, while the midpoint gives the
+  invariant event `{1̄}` measure `1/2`.
 - For the independent specification, `𝒢_inv = {ν^{⊗ℤ}}`, a one-point face of `𝔓_inv`, and
   `ν^{⊗ℤ}` is ergodic (4.3).
 - The tail hypothesis of (a) is needed: for the independent specification with `ν = Bern(1/2)`,
@@ -955,12 +979,14 @@ Tau Ceti's `ErgodicSMul.iff_mem_extremePoints`. *Needs:* 4.2, 4.4, 4.5; Tau Ceti
 
 ### Examples
 
-Two-sided Bernoulli shifts (4.3); the trivial and independent specifications (4.5).
+Two-sided Bernoulli shifts (4.3); the identity specification on the subshift of constant
+configurations and the independent specification (4.5).
 
 ### Dependencies
 
 Mathlib product spaces, weak topology, portmanteau, zero-one law, conditional expectation; Tau Ceti
-`TauCeti.Probability.tailProcess`, `ErgodicSMul.iff_mem_extremePoints`. No earlier layer.
+`TauCeti.Probability.tailProcess`, `ErgodicSMul.iff_mem_extremePoints`,
+`TauCeti.MeasureTheory.ergodicSMul_iff_forall_smul_invariant`. No earlier layer.
 
 ## Layer 5: dimer models on periodic graphs
 
@@ -982,15 +1008,23 @@ API:
 - `𝔛(G)` is closed, hence compact and metrisable, and `Γ`-invariant; `Γ` acts by homeomorphisms.
 - The correspondence with Mathlib's perfect matchings is a bijection.
 - For a finite set `F` of edges and `ω ∈ 𝔛(G)`, the completion set
-  `Ω_F(ω) = {ω' ∈ 𝔛(G) : ω' = ω off F}` is finite, contains `ω`, and depends only on `ω` on `F`
-  and on the edges sharing a vertex with `F`.
+  `Ω_F(ω) = {ω' ∈ 𝔛(G) : ω' = ω off F}` is finite and contains `ω`. Its set of restrictions
+  `{ω'|_F : ω' ∈ Ω_F(ω)}` is the set of `η : F → Bool` such that every endpoint of an edge of `F`
+  lies in exactly one edge that is either in `F` with value `true` under `η` or outside `F` with
+  value `true` under `ω`; it therefore depends only on `ω` on the finitely many edges outside `F`
+  sharing a vertex with an edge of `F`, and `Ω_F(ω)` is obtained by gluing these restrictions to
+  the fixed exterior `ω|_{Fᶜ}`.
 
 **Checks.**
 
 - `G = ℤ` with nearest-neighbour edges and `Γ = 2ℤ`: `𝔛(G)` has exactly two points, the even and
-  the odd edges.
-- A vertex of infinite degree breaks closedness: with `c` joined to `x₁, x₂, …`, the configurations
-  `{c x_k}` converge to `∅`, which leaves `c` uncovered.
+  the odd edges. For `F = ∅` both restriction sets are `{∅}`, while the completion sets are the
+  two different singletons: the completion set itself is not determined by `ω` near `F`, only its
+  restrictions to `F` are.
+- Local finiteness is needed for closedness (a statement about the graph alone, without a group
+  action): on the vertices `c, d, x_n, y_n` (`n ≥ 1`) with edges `c x_n`, `d y_n`, `x_n y_n`, the
+  perfect matchings `M_k = {c x_k, d y_k} ∪ {x_n y_n : n ≠ k}` converge coordinatewise to
+  `{x_n y_n : n ≥ 1}`, which leaves `c` and `d` uncovered.
 - The unit hexagon cycle `C₆`, a finite graph (5.1 and 5.2 do not use `Γ`): two points, matching
   1.5.
 
@@ -1003,7 +1037,10 @@ lines 781–809; gorin2021 Definition 13.4, lines 4534–4537). *Needs:* 4.5, 5.
 API:
 
 - `γ^w` is a proper, consistent, quasilocal specification on `𝔛(G)`; it is `Γ`-equivariant when
-  `w` is `Γ`-invariant; for `w ≡ 1` it is uniform on completion sets.
+  `w` is `Γ`-invariant; for `w ≡ 1` it is uniform on completion sets. Quasilocality comes from the
+  restriction sets of 5.1: for a cylinder event `C` on a finite edge set `E`, `γ^w_F(C|ω)` is a sum
+  over the restriction set of `ω` at `F`, so it depends only on `ω` on `E ∖ F` and on the edges
+  outside `F` sharing a vertex with an edge of `F`, and is locally constant.
 - Cylinder identities: μ is Gibbs iff for every finite `F`, all `ω, ω' ∈ 𝔛(G)` agreeing off `F`,
   and every finite `E` containing `F` and the edges sharing a vertex with `F`,
   `w(ω' ∩ F) · μ[ω]_E = w(ω ∩ F) · μ[ω']_E`, where `[ω]_E` is the cylinder of configurations
@@ -1031,7 +1068,8 @@ Gibbs measures `𝒢_inv` of `γ^w` are weakly closed convex subsets of `𝔓(�
 is extreme in `𝔓_inv`, iff every invariant event has measure `0` or `1`; conditioning on an
 invariant event of positive measure stays in `𝒢_inv` (gorin2021 Definitions 13.4–13.6 and Lemma
 13.7, lines 4534–4582; aggarwal2023 lines 413–420; kos2006 lines 195–202; kenyon2009 lines
-825–835; sheffield2005 Lemmas 3.2.1–3.2.2, lines 1352–1371). *Needs:* 4.6, 5.2.
+825–835; sheffield2005 Lemmas 3.2.1–3.2.2, lines 1352–1371). *Needs:* 4.6, 5.2; Tau Ceti
+`TauCeti.MeasureTheory.ergodicSMul_iff_forall_smul_invariant`.
 
 **Checks.**
 
@@ -1136,7 +1174,9 @@ shift-invariant event `A` has `β_s(A) = β(A) ∈ {0,1}`. *Needs:* 1.6, 2.5, 4.
 
 - `P(ε₀ = ε₁ = 1)` is `s²` under `Bern(s)^{⊗ℤ}` and `(s + s²)/2` under `β_s`; at `s = 1/2` these
   are `1/4` and `3/8`, and they agree only at `s ∈ {0,1}`.
-- The corners are the degenerate cases: at `s = 1`, `Φ₂ ∩ slope⁻¹(1,0) = {M₁}`, and the only
+- The corners are the degenerate cases: at `s = 1`, the invariant probability measures
+  concentrated on `Φ₂` with slope `(1,0)` form the singleton `{δ_{M₁}}` (the mixture
+  `(δ_{M₁} + δ_{M₃})/2` is concentrated on `Φ₂` but has slope `(1/2, 0)`), and the only
   shift-invariant measure of density `1` is the point mass at the all-ones sequence.
 - The row tiling with `ε = 1_{[0,∞)}` lies in `Φ₂`, its point mass is Gibbs by (c) and is not
   translation-invariant: Gibbs measures concentrated on `Φ₂` need not be invariant.
@@ -1262,15 +1302,20 @@ kenyon1997 Section 4.1, lines 380–390). *Needs:* 7.1; Mathlib `Matrix.det`.
 
 API:
 
-- Each row has three nonzero entries `w₃`, `±w₁`, `±w₂` (for type weights), at the columns `v`,
-  `v − e₂`, `v + e₁` taken modulo `L`.
+- The row of `W(v)` receives three edge contributions, the signed weights `w₃`, `±w₁`, `±w₂` (for
+  type weights) of its torus lozenges of types 3, 1, 2, at the columns `v`, `v − e₂`, `v + e₁` taken
+  modulo `L`; contributions whose columns coincide are added, so an entry may vanish although its
+  summands do not.
 - For type weights, `K_{ab}` commutes with the twisted translations of the torus.
-- Leibniz expansion: `det K_{ab}` is a signed sum, over torus tilings, of their weights.
+- Leibniz expansion: expanding every entry into its edge contributions, `det K_{ab}` is a signed
+  sum, over torus tilings, of their weights.
 
 **Checks.**
 
-- `n₁ = n₂ = 1`: `K_{ab} = w₃ + (−1)^b w₁ + (−1)^a w₂`, a 1 × 1 matrix, every lozenge of type 1
-  crossing the horizontal seam and every lozenge of type 2 the vertical one.
+- `n₁ = n₂ = 1`: `K_{ab} = w₃ + (−1)^b w₁ + (−1)^a w₂`, a 1 × 1 matrix whose single entry adds the
+  three edge contributions, every lozenge of type 1 crossing the horizontal seam and every lozenge
+  of type 2 the vertical one; at type weights `(1,1,2)`, `K₁₁ = 2 − 1 − 1 = 0` although its three
+  summands are nonzero.
 - `n₁ = n₂ = 2`, unit weights: `det K₀₀ = −3`, `det K₁₀ = det K₀₁ = det K₁₁ = 5` (by 8.5).
 - Reversing the convention for which seam carries `a` exchanges `K₁₀` and `K₀₁`: on the 1 × 2 torus
   (`n₁ = 1`, `n₂ = 2`) with unit weights `det K₁₀ = −1` and `det K₀₁ = 5`, so the convention is
@@ -1279,7 +1324,8 @@ API:
 
 ### 8.2 The sign of a torus tiling
 
-The term of a torus tiling `M` with height change `(h₁,h₂)` in `det K_{ab}` has sign
+The term of a torus tiling `M` with height change `(h₁,h₂)` in `det K_{ab}`, expanded into edge
+contributions (8.1), has sign
 `(−1)^{h₁h₂ + (n₂+1+b)h₁ + (n₁+1+a)h₂}`, the all-type-3 tiling having sign `+1` (kenyon2009 Lemma 5,
 lines 698–717; gorin2021 Propositions 3.7–3.8 and the proof of Theorem 3.10, lines 1416–1504).
 Route: the matching bijection of `M` relative to the all-type-3 tiling is the permutation
@@ -1321,21 +1367,29 @@ context, lines 657–666). Route: by 8.2, for every height change the four signs
 
 ### 8.4 Torus correlations
 
-For distinct lozenges `ℓ_i = (W(u_i), B(v_i))` on the torus, the Boltzmann probability that all
-occur is `(2Z)⁻¹ Σ_{ab} ε_{ab} ∏ K_{ab}(ℓ_i) · c_{ab}`, where `c_{ab}` is the signed complementary
-minor of `K_{ab}` (rows `u_i` and columns `v_i` deleted, sign as in 3.3), and when `det K_{ab} ≠ 0`,
-`c_{ab} = det K_{ab} · det[K_{ab}⁻¹(v_i, u_j)]` (gorin2021 Theorem 4.10, lines 1847–1850; kos2006
+For pairwise distinct torus lozenges `ℓ₁, …, ℓ_k`, with `ℓ_i` joining `W(u_i)` to `B(v_i)` and of
+signed weight `κ_{ab}(ℓ_i)` (8.1), the Boltzmann probability that all occur is
+`(2Z)⁻¹ Σ_{ab} ε_{ab} ∏_i κ_{ab}(ℓ_i) · c_{ab}`. Here `c_{ab} = 0` when two of the `ℓ_i` share a
+white or a black face; otherwise `c_{ab}` is the signed complementary minor of `K_{ab}`, the sum over
+bijections `σ` from the white to the black faces of the fundamental domain with `σ(u_i) = v_i` of
+`sgn(σ) ∏_{u ∉ {u_i}} K_{ab}(u, σu)` (sign as in 3.3). When `det K_{ab} ≠ 0`,
+`c_{ab} = det K_{ab} · det[K_{ab}⁻¹(v_i, u_j)]` with this convention, the determinant having two
+equal rows or columns when a face repeats (gorin2021 Theorem 4.10, lines 1847–1850; kos2006
 Theorem 4.2, lines 658–666; kenyon1997 Lemma 8, lines 401–406). The coefficients
-`ε_{ab} det K_{ab}/(2Z)` have absolute value at most `1/2` and sum to `1`. *Needs:* 3.3, 8.3.
+`ε_{ab} det K_{ab}/(2Z)` have absolute value at most `1/2` and sum to `1`. Route: expanding the
+entries into edge contributions, the tilings containing all `ℓ_i` contribute `∏_i κ_{ab}(ℓ_i) · c_{ab}`
+to `det K_{ab}`, and the sign identity of 8.3 holds tiling by tiling. *Needs:* 3.3, 8.1, 8.3.
 
 **Checks.**
 
-- `n₁ = n₂ = 1`, one lozenge of type 3: the formula gives `w₃/(w₁ + w₂ + w₃)`.
+- `n₁ = n₂ = 1`, the lozenge of type 3: `∏ κ_{ab} = w₃` and `c_{ab} = 1`, so the formula gives
+  `w₃(1 + 1 + 1 − 1)/(2(w₁ + w₂ + w₃)) = w₃/(w₁ + w₂ + w₃)`, `1/3` at unit weights; using the
+  aggregated entry `K_{ab}` in place of `κ_{ab}` would give `(3 + 1 + 1 + 1)/6 = 1` at unit weights.
 - The bound `|det K_{ab}| ≤ Z` (a signed sum of the same weights) gives `|ε_{ab} det K_{ab}/(2Z)| ≤ 1/2`;
   on the 2 × 2 torus the coefficients are `3/18, 5/18, 5/18, 5/18`, summing to `1`.
-- Two distinct lozenges sharing the white face `W(u)`: no bijection sends `W(u)` to two black faces,
-  so each signed complementary sum `c_{ab}` is empty and the formula gives `0`, as does the
-  probability.
+- On the 1 × 1 torus the lozenges of types 1 and 3 share both `W(0)` and `B(0)`: `c_{ab} = 0` and the
+  probability is `0`. Without the convention the complementary sum would be `1` and the formula
+  would give `w₁w₃(1 − 1 + 1 + 1)/(2Z) = w₁w₃/(w₁ + w₂ + w₃)`, `1/3` at unit weights.
 
 ### 8.5 Fourier diagonalisation
 
@@ -1378,7 +1432,7 @@ API:
   `(ℝ/2πℤ)²`, with `θ₀, φ₀ ∉ πℤ`, and its real Jacobian is invertible there; `1/P̂_w` is
   integrable (kenyon2009 footnote 5, lines 978–980; kos2006 lines 728–740).
 - Inverse identities: `Σ_{v'} K(W(u), B(v')) G_w(v' − v) = [u = v]` and
-  `Σ_u G_w(v' − u) K(W(u), B(v'')) = [v' = v'']`, each sum having three nonzero terms.
+  `Σ_u G_w(v' − u) K(W(u), B(v'')) = [v' = v'']`, each sum having at most three nonzero terms.
 - Decay: `G_w(d) → 0` as `|d| → ∞` (Riemann–Lebesgue applied to the integrable function
   `1_{[0,2π]²}/P̂_w` on `ℝ²`).
 - Angles: `w₁G_w(−e₂) = θ₁/π`, `w₂G_w(e₁) = θ₂/π`, `w₃G_w(0) = θ₃/π`, where `θ_k` is the angle
@@ -1443,8 +1497,9 @@ For liquid `w`, `μ^w(A ∩ τ_d B) → μ^w(A) μ^w(B)` as `|d| → ∞` for al
 and lines 85–93, mixing for the lozenge measure; kos2006 lines 732–735; kenyon2009 Section 6.2,
 lines 1011–1036). Route: for inclusion events the correlation is a block determinant whose
 off-diagonal blocks tend to `0` (9.1); inclusion–exclusion gives all cylinder events; cylinder
-events approximate measurable ones; an invariant event `A` then has `μ(A) = μ(A)²`. *Needs:* 4.4,
-9.1, 9.3.
+events approximate measurable ones; an invariant event `A` then has `μ(A) = μ(A)²`, and Tau
+Ceti's criterion turns this into ergodicity. *Needs:* 4.4, 9.1, 9.3; Tau Ceti
+`TauCeti.MeasureTheory.ergodicSMul_iff_forall_smul_invariant` (reverse implication).
 
 **Checks.**
 
@@ -1553,10 +1608,11 @@ Layers 4–8.
 
 ### 10.1 Local convergence
 
-For finite regions `R_N` with tilings, probability measures `μ_N` on `𝔈(R_N)` (viewed in
-`𝔓(TriEdge → Bool)`) and vertices `v_N`, say that the local statistics of `μ_N` around `v_N`
-converge to μ ∈ `𝔓(TriEdge → Bool)` when `τ_{−v_N *} μ_N → μ` weakly; by 4.4 this means that for
-every finite set `E₀` of edges and every `σ ⊆ E₀`,
+For regions `R_N`, finite or infinite, probability measures `μ_N` on `TriEdge → Bool` concentrated
+on `𝔈(R_N)` (a closed set: each face of `R_N` and each edge outside `E°(R_N)` imposes a clopen
+condition) and vertices `v_N`, say that the local statistics of `μ_N` around `v_N` converge to
+μ ∈ `𝔓(TriEdge → Bool)` when `τ_{−v_N *} μ_N → μ` weakly; by 4.4 this means that for every finite
+set `E₀` of edges and every `σ ⊆ E₀`,
 `μ_N{M : (M − v_N) ∩ E₀ = σ} → μ{M : M ∩ E₀ = σ}`, which is Aggarwal's convergence "in
 distribution" of `S_{v_N} μ_N` (aggarwal2023 lines 568–580; gorin2021 Section 13.2, lines
 4530–4541; kenyon2009 lines 786–793). *Needs:* 4.4, 5.4.
@@ -1569,12 +1625,14 @@ API:
 
 **Checks.**
 
-- `R_N` the set of all faces, `μ_N = μ` and `v_N = 0`: the limit is μ.
+- `R_N` the set of all faces (an infinite region), `μ_N = μ ∈ 𝔓(𝕋)` and `v_N = 0`: the limit is μ;
+  for `μ = δ_{M₃}` every type-3 edge has limiting probability `1`.
 - `R_N = R₆ + v_N` (translated unit hexagons) with uniform `μ_N`: the limit is
   `(δ_{T_a} + δ_{T_b})/2`, which is not concentrated on `𝔈(𝕋)`: without exhaustion the limit is not
   a plane tiling measure.
 - Translating by `+v_N` instead of `−v_N` makes the window recede: for `R_N = R₆ + v_N` with
-  `|v_N| → ∞` the limit is the point mass at the empty configuration.
+  `|v_N| → ∞` the limit is the point mass at the empty configuration (for `v_N = 0` both
+  conventions give the hexagon law, which is why `|v_N| → ∞` is part of this Check).
 
 ### 10.2 Limits of uniform measures are Gibbs
 
@@ -1604,7 +1662,7 @@ identifying the limit as `μ_{ξ(s,t)}`, is the content of Aggarwal's universali
 
 The lattice objects in the statement of aggarwal2023 Theorem 1.5 (lines 572–580) are defined here:
 finite simply connected tileable domains (1.3, 2.1, with 2.4 for Aggarwal's topological
-convention), their boundary height functions (2.7), uniform measures on tilings (10.1), shifts and
+convention), their boundary height functions (2.7), uniform measures on tilings (10.2), shifts and
 local convergence (10.1), and `μ_{s,t} = μ_{ξ(s,t)}` (9.7), the ergodic Gibbs measure of slope
 `(s,t)` with the kernel of (1.2). The continuum objects (admissible functions, the entropy
 functional and its maximiser, convergence of domains) and the uniqueness of the ergodic Gibbs
@@ -1616,7 +1674,9 @@ proposed Part II. *Needs:* 2.4, 2.7, 9.7, 10.2.
 - Aggarwal's `A × B × C` hexagon (aggarwal2023 Example 1.1, lines 370–375) is a finite region whose
   union of faces is a convex hexagon, simply connected by 2.4.
 - Its boundary graph is a single closed curve, so its boundary height is determined (2.7).
-- For `A = B = C = 1` it is the unit hexagon `R₆` with two tilings.
+- For `A = B = C = 1` its vertices are `(0,0), (1,0), (0,1), (1,2), (2,2), (2,1)`, centred at
+  `(1,1)`: it is the translate `R₆ + (1,1)` of the unit hexagon, with two tilings, the translates of
+  `T_a` and `T_b`; it is not `R₆` itself, which is centred at `0`.
 
 ### Examples
 
@@ -1635,9 +1695,7 @@ Layers 4, 5, 9 (for 10.3), and 2.
 - A roadmap on discrete determinantal point processes takes 3.4, 9.3 and 9.7 as its first examples
   of determinantal laws on countable sets.
 - Lattice spin systems with a finite single-site space (Ising-type models) consume Layer 4: the
-  tail lemma, Bernoulli ergodicity, specifications, the face property and closedness. The board's
-  constructive field theory design, whose single-site spaces are unbounded, shares only the
-  vocabulary.
+  tail lemma, Bernoulli ergodicity, specifications, the face property and closedness.
 - Random surfaces and Gaussian free field fluctuations of lozenge tilings (kenyon2009 Section 6.3;
   gorin2021 Lectures 11–12) consume Layers 2 and 9.
 
