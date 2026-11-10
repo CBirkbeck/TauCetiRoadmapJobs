@@ -148,22 +148,53 @@ version_note = "paywalled; cited by its locator without the text"
 cited_for = ["F2"]
 
 [[source]]
+id = "ravenel-orange"
+authors = "Douglas C. Ravenel"
+title = "Nilpotence and Periodicity in Stable Homotopy Theory"
+year = 1992
+venue = "Annals of Mathematics Studies 128"
+locator_scheme = "theorem"
+locator = "Theorem 3.4.3"
+url = "https://www.sas.rochester.edu/mth/sites/doug-ravenel/mybooks/nilpb2020.pdf"
+fetched_from = "https://www.sas.rochester.edu/mth/sites/doug-ravenel/mybooks/nilpb2020.pdf"
+fetched_at = "2026-11-08T11:07:15Z"
+sha256 = "ed63192984850847125f4c08e3d794e45d56a564f88dd5f625be90d24bbdeb66"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-08"
+version_note = "revised edition posted on the author's page; theorem numbers are those of this version"
+cited_for = ["F5", "F6.1", "F6.3", "F6.4"]
+
+[[source]]
+id = "hopkins-smith-ii"
+authors = "Michael J. Hopkins, Jeffrey H. Smith"
+title = "Nilpotence and stable homotopy theory II"
+year = 1998
+venue = "Annals of Mathematics 148"
+doi = "10.2307/120991"
+locator_scheme = "theorem"
+locator = "Theorems 7 and 9"
+url = "https://doi.org/10.2307/120991"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled (JSTOR); cited by its locator without the text"
+cited_for = ["F6.3"]
+
+[[source]]
 id = "lubin-tate-1966"
 authors = "Jonathan Lubin, John Tate"
 title = "Formal moduli for one-parameter formal Lie groups"
 year = 1966
-venue = "Bulletin de la Société mathématique de France 94"
-doi = "10.24033/bsmf.1633"
+venue = "Bulletin de la Société Mathématique de France 94"
 locator_scheme = "theorem"
 locator = "Theorem 3.1"
-url = "https://doi.org/10.24033/bsmf.1633"
-fetched_from = "https://www.numdam.org/item/10.24033/bsmf.1633.pdf"
-fetched_at = "2026-11-08T10:04:01Z"
+url = "http://www.numdam.org/item/BSMF_1966__94__49_0/"
+fetched_from = "https://www.numdam.org/item/BSMF_1966__94__49_0.pdf"
+fetched_at = "2026-11-08T11:07:24Z"
 sha256 = "11100d728ec6757e3ec44ed32962bbde9abf046462e20680df7c2cd5b987b453"
 licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-08"
-version_note = "Numdam copy of the published article; theorem numbers are those of the published version"
 cited_for = ["F5"]
 
 [[source]]
@@ -180,24 +211,6 @@ licence_class = "none"
 status = "uncertified"
 version_note = "paywalled; cited by its locator without the text"
 cited_for = ["F4"]
-
-[[source]]
-id = "ravenel-orange"
-authors = "Douglas C. Ravenel"
-title = "Nilpotence and Periodicity in Stable Homotopy Theory"
-year = 1992
-venue = "Annals of Mathematics Studies 128, Princeton University Press"
-locator_scheme = "chapter"
-locator = "Chapters 6-8"
-url = "https://www.sas.rochester.edu/mth/sites/doug-ravenel/mybooks/nilpb2020.pdf"
-fetched_from = "https://www.sas.rochester.edu/mth/sites/doug-ravenel/mybooks/nilpb2020.pdf"
-fetched_at = "2026-11-08T10:04:26Z"
-sha256 = "ed63192984850847125f4c08e3d794e45d56a564f88dd5f625be90d24bbdeb66"
-licence_class = "author-page"
-status = "certified"
-accessed = "2026-11-08"
-version_note = "digital edition dated 2020 on the author's page; theorem numbers are those of this version"
-cited_for = ["F6.3"]
 
 [[source]]
 id = "greenlees-sadofsky"
