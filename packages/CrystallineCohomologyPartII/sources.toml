@@ -44,7 +44,7 @@ title = "Hodge-Witt cohomology and Witt-rational singularities"
 year = 2011
 arxiv = "1104.2145v1"
 locator_scheme = "theorem"
-locator = "§§1.1, 1.5–1.10, 2.3, 3.2–3.7, 4.1–4.8"
+locator = "§§1.1, 1.5–1.10, 2.3–2.4, 3.2–3.7, 4.1–4.8"
 url = "https://arxiv.org/abs/1104.2145v1"
 fetched_from = "https://arxiv.org/pdf/1104.2145v1"
 fetched_at = "2026-10-25T14:48:41Z"
@@ -71,7 +71,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-25"
 version_note = "arXiv v2"
-cited_for = ["§4.3"]
+cited_for = ["§4.3", "§4.4"]
 
 [[source]]
 id = "GNT19"
