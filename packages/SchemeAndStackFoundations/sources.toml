@@ -369,3 +369,21 @@ status = "certified"
 accessed = "2026-11-10"
 version_note = "author manuscript (99 pp.); section numbers and page locators are the manuscript's, not the journal's"
 cited_for = ["1.24", "1.25"]
+
+[[source]]
+id = "poonen-2017"
+authors = "Bjorn Poonen"
+title = "Rational points on varieties"
+year = 2017
+venue = "Graduate Studies in Mathematics 186, American Mathematical Society"
+locator_scheme = "section"
+locator = "Theorem 4.5.2; §5.12.5.1–§5.12.5.3; §6.5.6"
+url = "https://math.mit.edu/~poonen/papers/Qpoints.pdf"
+fetched_from = "https://math.mit.edu/~poonen/papers/Qpoints.pdf"
+fetched_at = "2026-11-10T03:34:20Z"
+sha256 = "42e92ce4599420f6b72139e78cb9f5230e4bf81258c202e7cee4716887353579"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-10"
+version_note = "author's online copy; section and theorem numbers agree with the printed book, printed page = file page − 14"
+cited_for = ["1.15", "1.16"]
