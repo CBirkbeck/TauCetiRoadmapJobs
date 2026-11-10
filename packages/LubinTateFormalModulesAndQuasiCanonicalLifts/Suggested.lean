@@ -25,20 +25,20 @@ Not statable at the pins, with what each lacks:
 
 * the unit formula `χ_π(Art_K(π^r u)) = u⁻¹` and the isomorphism `Gal(K_π/K) ≅ O_K^×` given by
   `σ(t) = [χ_π(σ)]_f(t)` (§§2.4–2.5), and the freeness of rank `h` of the `π`-adic Tate module of a
-  formal `O_K`-module of height `h` (§2.2): there is no carrier of points of a general formal group
-  over maximal ideals of finite extensions (Mathlib's `FormalGroup.Point` is power-series valued,
-  and Tau Ceti's evaluated formal points are those of a Weierstrass curve), so `[a]_f(t)` cannot be
-  formed;
+  formal `O_K`-module of height `h` (§2.2): native evaluated points
+  `FormalGroup.TopNilpotentPoint` and evaluated formal-group homomorphisms exist, but the formal
+  `O_K`-action, its torsion and its Tate module with scalar Galois character are missing;
 * the universal deformation of a formal `O_K`-module of finite height over `B[[t₁,…,t_(h−1)]]`
-  (§3.6): there are no homomorphisms or isomorphisms of formal group laws at the pins, hence no
-  marked deformation functor;
+  (§3.6): native `TauCeti.FormalGroupHom` and `TauCeti.FormalGroupIso` exist, but the
+  action-sensitive marked formal `O_K`-module deformation functor is missing;
 * Honda's functional-equation integrality and the unramified type `p − sT²` (§§4.2–4.3): the
   Frobenius-skew power-series ring `O_σ[[T]]` is absent;
 * the classification of quasi-canonical lifts, their fields of moduli as ring class fields with
   degrees `q₀^(s−1)(q₀+1)` and `q₀^s`, and the uniformizer property of their moduli (§§6.3–7.2):
   lattice quotients of formal modules, their markings and fields of moduli are not available;
 * the BKO tower comparisons and the trace-compatible square of formal traces (§§8.4–9.3): they need
-  the quasi-canonical fields and formal traces on evaluated points.
+  the specified quasi-canonical fields and their tower comparisons, and formal traces on the
+  native evaluated points; the general point carrier alone does not construct these fields.
 -/
 
 namespace TauCetiRoadmap.LubinTateFormalModulesAndQuasiCanonicalLifts
@@ -105,7 +105,8 @@ section DivisionFields
 variable {K : Type} [Field K] [ValuativeRel K] [TopologicalSpace K]
   [IsNonarchimedeanLocalField K]
 
-/-- **Lubin–Tate division fields** (LT65, Theorem 2, pp.383–384). Let `K` be a nonarchimedean local
+/-- **Primitive-root presentation of the supplied Lubin–Tate fields** (LT65, Theorem 2,
+pp.383–384; README §2.3, compared with RelativeFarguesFontaine §2.5). Let `K` be a nonarchimedean local
 field of characteristic zero with residue cardinality `q`, `π` a uniformizer and `f` a Lubin–Tate
 polynomial for `π`. If `t ∈ K̄` is a root of the iterate `f^{∘m}`, `m ≥ 1`, but not of `f^{∘(m−1)}`,
 then `[K(t) : K] = (q − 1) q ^ (m − 1)` and every root of `f^{∘m}` lies in `K(t)`. -/
@@ -123,7 +124,8 @@ theorem finrank_adjoin_primitive_lubinTate_root [CharZero K] {π : 𝒪[K]} (hπ
 /-- **The norm group of the Lubin–Tate division fields** (LT65, §2, Theorem 3 and its corollary,
 pp.385–387). With `K`, `π` and `f` as above, `ϖ ∈ Kˣ` equal to `π`, and `m ≥ 0`: every lift to the
 absolute Galois group of the arithmetic Artin symbol `Art_K(x)` fixes every root of `f^{∘m}` if and
-only if `x ∈ ⟨ϖ⟩ · U(K, m)`, that is, the norm group of `K(f^{∘m} = 0)/K` is `π^ℤ × (1 + 𝔪_K^m)`. -/
+only if `x ∈ ⟨ϖ⟩ · U(K, m)`, that is, the norm group of `K(f^{∘m} = 0)/K` is
+`π^ℤ · U(K, m)`, where `U(K, 0) = O_K^×` and `U(K, m) = 1 + 𝔪_K^m` only for `m ≥ 1`. -/
 theorem artinMap_fixes_lubinTate_roots_iff [CharZero K] {π : 𝒪[K]} (hπ : Irreducible π)
     {f : Polynomial 𝒪[K]} (hf : IsLubinTatePolynomial π (Nat.card 𝓀[K]) f)
     (ϖ : Kˣ) (hϖ : (ϖ : K) = π) (m : ℕ) (x : Kˣ) :
