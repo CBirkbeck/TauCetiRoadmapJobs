@@ -1,0 +1,13 @@
+{
+  "review": {
+    "status": "needs_changes",
+    "reviewer": "independent-review-PRREVIEW-LocalPurity~54",
+    "head": "c2712545a4d947a7cc4a094de07f472e57eaf352",
+    "pr": 1807,
+    "folder": "LocalPurity",
+    "date": "2026-11-09",
+    "findings": 10,
+    "blocking": 4,
+    "notes": "Full review of the folder at c271254 (this pull request changes 32 README lines, re-pointing 0AFS from PurityOfBranchLocus §0.3 to SchemeAndStackFoundations §4.13; Suggested.lean unchanged). Gate (worker's and my rerun): FAIL on readme-ids-missing=4 only (outside-folder hits in my rerun are the pull request's own sibling folders); lake env lean Suggested.lean: 7 sorry warnings only; depcheck: 236 roadmaps, 2265 edges, 0 problem(s). Blocking: R01 (P2) the new 0AFS/depth/normality citations point at SchemeAndStackFoundations §4.13, which says it restates none of it (lines 5461-5463); they are pinned Tau Ceti declarations (isRegularRing_of_isRegularLocalRing, IsRegularLocalRing.depth_eq_ringKrullDim, IsRegularRing.isIntegrallyClosed). R02 (P2) Suggested.lean states 0BMA(1) and 0EY7 on private stand-ins (FEt, puncturedSpectrum, PurityHolds) of pinned TauCeti.FiniteEtaleScheme and TauCeti.IsLocalRing.PurityHolds; restated forms elaborate. R03 (P2) README presents as open, and says the libraries lack, what Tau Ceti proves at the pin (00R4, 0BJF, 0BLK, 0BM8 affine, 0BM9 full faithfulness, punctured spectrum, purity, dim-2 0BMA). R04 (P2) the 1.3 routes use Stacks 05ER/05EU/0EII/0EKP, owned by no target, supplier or pin. P3: R05 padding (4 declarations close by one exact of a pinned lemma, probed in Lean); R06 gate readme-ids-missing plus README/Lean end-theorem names; R07 false docstring claim on depth/CM; R08 missing sections and Checks; R09 locators (SGA 2 X 3.3+3.4(i), SGA 1 reference, 0BLS); R10 no stated order against #1854, which rewrites the same LocalPurity passages. Seeded sample (0.1, 0.2, 1.1-1.4, 2.1, 2.2): 38 locators read in the cached stacks-0BMA, stacks-0BQ5, stacks-00R4, stacks-0BJF, stacks-0EKS, stacks-09ZL, sga1 and sga2 texts, all agreeing except three recorded source issues (0BM9 and 0BMA(2) need torsion-free B). About 45 library declarations opened at the pins; 13 cross-roadmap citations resolved. Adversarial table: 17 rows with computed values."
+  }
+}
