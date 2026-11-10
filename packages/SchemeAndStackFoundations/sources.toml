@@ -337,3 +337,22 @@ status = "certified"
 accessed = "2026-11-09"
 version_note = "arXiv v4 read; the README cites v4 (§2.7, which applies Grothendieck, Brauer III, 11.7 with G_m coefficients)"
 cited_for = ["2.10"]
+
+[[source]]
+id = "kisin-2017"
+authors = "Mark Kisin"
+title = "Mod p points on Shimura varieties of abelian type"
+year = 2017
+venue = "Journal of the American Mathematical Society 30, 819–914"
+doi = "10.1090/jams/867"
+locator_scheme = "section"
+locator = "(3.1.1)–(3.2.1), pp. 34–40"
+url = "https://people.math.harvard.edu/~kisin/dvifiles/lr.pdf"
+fetched_from = "https://people.math.harvard.edu/~kisin/dvifiles/lr.pdf"
+fetched_at = "2026-11-10T00:16:52Z"
+sha256 = "d3c19cddc9e8b073428de559a7215aae4f793490227b6c71d87477ccdb5d994a"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-10"
+version_note = "author manuscript (99 pp.); section numbers and page locators are the manuscript's, not the journal's"
+cited_for = ["1.24", "1.25"]
