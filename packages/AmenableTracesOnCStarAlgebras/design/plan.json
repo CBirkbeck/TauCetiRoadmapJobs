@@ -3,71 +3,74 @@
   "title": "Amenable traces on C*-algebras",
   "parent": null,
   "summary": "Tracial states of arbitrary C*-algebras with their GNS data, completely positive contractions into matrix algebras measured by the normalized trace and its 2-norm, and the amenable, quasidiagonal and uniform amenable traces: the Connes–Kirchberg characterization by hypertraces, the minimal norm on A ⊙ Aᵒᵖ and completely positive extensions into π_τ(A)'', Connes's Følner condition, the injectivity characterization of uniform amenable traces, the nuclear and exact theorems, faces and permanence, the finite-dimensional, commutative, AF and group examples, quasidiagonal traces versus quasidiagonal algebras, and the necessity half of the AF-embedding theorem.",
-  "baseline": {"mathlib": "f6090c7095e1e56b3464c1daba5f24631f1290d2", "tauceti": "358314d4ab97483df4fc4cb8adcc02e74a8d9f5a"},
+  "baseline": {"mathlib": "1b1ccf4b088b32fa3f23f2de1127433254a81e1e", "tauceti": "2fd255d997f47c0b5d834ee416c7015d55444ce5"},
   "layers": [
     {"key": "1", "title": "Tracial states, their GNS data and the matrix trace",
      "targets": [
       {"id": "1.1", "kind": "definition", "name": "IsTracialState",
-       "statement": "A tracial state of a C*-algebra A is a state τ : A →P[ℂ] ℂ (norm one) with τ(ab) = τ(ba) for all a, b ∈ A; T(A) is the set of tracial states with the weak-star topology of S(A).",
+       "statement": "A tracial state of a C*-algebra A is a state τ : A →P[ℂ] ℂ (norm one) with τ(ab) = τ(ba) for all a, b ∈ A; T(A) is the set of tracial states with the weak-star topology of S(A). By Tau Ceti's isKMSState_zero_iff these are exactly the 0-KMS states of the trivial action, so T(A) = kmsStates trivial 0 in WeakDual ℂ A, and its convexity, relative weak-star closedness, unital compactness, pullback under a norm-one condition and restriction are the pinned Tau Ceti theorems. Proved here: the polarization criterion, unitary invariance for unital A, and norm one of pullbacks along unital star homomorphisms.",
        "hypotheses": ["A a NonUnitalCStarAlgebra with PartialOrder and StarOrderedRing"],
        "locator": {"source": "tikuisis-white-winter2017", "where": "§1, line 359"},
-       "prerequisites": ["roadmap:VonNeumannAlgebras V0", "mathlib:PositiveContinuousLinearMap", "mathlib:PositiveContinuousLinearMap.ofReal_opNorm_eq_map_one"],
+       "prerequisites": ["roadmap:VonNeumannAlgebras V0", "tauceti:TauCeti.CStarAction.trivial", "tauceti:TauCeti.CStarAction.isKMSState_zero_iff", "tauceti:TauCeti.CStarAction.kmsStates", "tauceti:TauCeti.CStarAction.convex_kmsStates", "tauceti:TauCeti.CStarAction.closure_kmsStates_inter_subset", "tauceti:TauCeti.CStarAction.isClosed_kmsStates", "tauceti:TauCeti.CStarAction.isCompact_kmsStates", "tauceti:TauCeti.CStarAction.IsKMSState.comp", "tauceti:TauCeti.CStarAction.IsKMSState.comp_of_surjective", "tauceti:TauCeti.CStarAction.IsKMSState.restrict", "mathlib:PositiveContinuousLinearMap", "mathlib:PositiveContinuousLinearMap.ofReal_opNorm_eq_map_one", "mathlib:CStarAlgebra.exists_sum_four_unitary"],
        "api": [
-        {"name": "ext / coercion", "role": "extensionality", "statement": "Two tracial states with equal values are equal; membership is the conjunction of the state and trace conditions."},
+        {"name": "ext / coercion", "role": "extensionality", "statement": "Two tracial states with equal values are equal; membership is the conjunction of the state and trace conditions, equivalently the 0-KMS condition for the trivial action."},
         {"name": "polarization criterion", "role": "characterisation", "statement": "A state is tracial iff τ(a*a) = τ(aa*) for all a."},
         {"name": "unitary invariance", "role": "characterisation", "statement": "For unital A a state is tracial iff τ(uau*) = τ(a) for all unitaries u."},
-        {"name": "convexity", "role": "structure", "statement": "Convex combinations of tracial states are tracial states."},
-        {"name": "closure and compactness", "role": "structure", "statement": "T(A) is weak-star closed in S(A), compact for nonzero unital A."},
-        {"name": "pullback", "role": "functoriality", "statement": "For a star homomorphism ι : A → B and τ ∈ T(B), τ ∘ ι is a tracial positive functional, a tracial state when it has norm one (ι unital or surjective)."}
+        {"name": "unital pullback", "role": "functoriality", "statement": "For a unital star homomorphism ι : A → B of unital algebras and τ ∈ T(B), ‖τ ∘ ι‖ = τ(1) = 1, so τ ∘ ι ∈ T(A); in particular restriction to a C*-subalgebra containing the unit maps T(A) to T(B)."}
        ],
        "tests": [
         {"name": "vector state not tracial", "kind": "non-example", "statement": "On M_2, x ↦ x₁₁ takes 1 at e₁₂e₂₁ and 0 at e₂₁e₁₂."},
         {"name": "unnormalized trace", "kind": "non-example", "statement": "Tr on M_2 is tracial and positive of norm 2, not a state."},
         {"name": "segment", "kind": "computation", "statement": "T(ℂ ⊕ ℂ) is the segment of t·pr₁ + (1 − t)·pr₂."},
         {"name": "B(ℓ²)", "kind": "non-example", "statement": "B(ℓ²) has no tracial state: τ(1) = τ(s₁s₁*) + τ(s₂s₂*) = 2τ(1)."},
-        {"name": "c₀", "kind": "degenerate", "statement": "T(c₀) is not weak-star compact: δ_n → 0 ∉ T(c₀)."}
+        {"name": "c₀", "kind": "degenerate", "statement": "T(c₀) is not weak-star compact: δ_n → 0 ∉ T(c₀), a limit of norm 0, so the closure statement keeps its norm-one hypothesis."},
+        {"name": "non-unital pullback", "kind": "non-example", "statement": "For ι : ℂ → M_2, λ ↦ λe₁₁, tr_2 ∘ ι = (1/2)·id has norm 1/2 and is not a state; the unital λ ↦ λ·1 pulls tr_2 back to id_ℂ."}
        ]},
       {"id": "1.2", "kind": "construction", "name": "traceKernel",
        "statement": "For τ ∈ T(A), N_τ = {a : τ(a*a) = 0} is a closed two-sided ideal equal to ker π_τ; τ̇(π_τ(a)) = τ(a) is a faithful tracial state of π_τ(A); on a simple C*-algebra every tracial state is faithful.",
        "hypotheses": ["τ ∈ T(A)"],
        "locator": {"source": "brown2006", "where": "Proposition 3.5.8, line 1338 (notation τ̇)"},
-       "prerequisites": ["target:1.1", "mathlib:PositiveLinearMap.GNS", "mathlib:PositiveLinearMap.gnsNonUnitalStarAlgHom", "mathlib:CStarAlgebra.approximateUnit"],
+       "prerequisites": ["target:1.1", "roadmap:VonNeumannAlgebras V0", "tauceti:LinearMap.traceRadical", "tauceti:LinearMap.traceRadical_ne_top", "mathlib:PositiveLinearMap.GNS", "mathlib:PositiveLinearMap.gnsNonUnitalStarAlgHom", "mathlib:CStarAlgebra.approximateUnit"],
        "api": [
         {"name": "isTwoSidedIdeal", "role": "structure", "statement": "N_τ is a closed two-sided ideal."},
         {"name": "eq_ker_gns", "role": "compatibility", "statement": "N_τ = ker π_τ."},
+        {"name": "eq_traceRadical", "role": "compatibility", "statement": "For unital A, N_τ is Tau Ceti's algebraic trace radical {x : τ(xy) = 0 for all y}, by Cauchy–Schwarz and traciality; closedness and the nonunital case are proved here."},
         {"name": "faithful iff", "role": "characterisation", "statement": "τ faithful iff τ(a*a) > 0 for a ≠ 0 iff π_τ injective."},
         {"name": "descended trace", "role": "construction", "statement": "τ̇ is a faithful tracial state of π_τ(A) with τ̇ ∘ π_τ = τ."},
         {"name": "simple ⇒ faithful", "role": "theorem", "statement": "On a C*-simple algebra every tracial state is faithful."}
        ],
        "tests": [
-        {"name": "ℂ ⊕ ℂ", "kind": "computation", "statement": "N_{pr₁} = 0 ⊕ ℂ; the midpoint trace has N = 0."},
+        {"name": "ℂ ⊕ ℂ", "kind": "computation", "statement": "N_{pr₁} = 0 ⊕ ℂ, equal to the trace radical {x : x₁y₁ = 0 for all y}; the midpoint trace has N = 0."},
+        {"name": "kernel is not the radical", "kind": "non-example", "statement": "On M_2, ker tr_2 contains e₁₂ but not e₂₁e₁₂ = e₂₂, so it is not an ideal, while N_{tr_2} = 0."},
         {"name": "M_n faithful", "kind": "computation", "statement": "tr_n(x*x) = n⁻¹Σ|x_ij|² vanishes only at 0."},
         {"name": "one-sided vector state", "kind": "non-example", "statement": "For ω(x) = x₁₁ on M_2, {a : ω(a*a) = 0} contains e₁₂ but not e₁₂e₂₁: a left ideal only."},
         {"name": "Toeplitz", "kind": "non-example", "statement": "Every tracial state of the Toeplitz algebra kills the compacts, so none is faithful."}
        ]},
       {"id": "1.3", "kind": "construction", "name": "tracialState_unitization",
-       "statement": "Every τ ∈ T(A) extends uniquely to τ̃ ∈ T(Ã), τ̃(a + λ1) = τ(a) + λ; τ̃ is faithful when τ is faithful and A has no unit. For a closed ideal I ⊆ A every τ ∈ T(I) has a unique state extension to A, which is tracial.",
+       "statement": "Every τ ∈ T(A) extends uniquely to τ̃ ∈ T(Ã), τ̃(a + λ1) = τ(a) + λ; τ̃ is faithful when τ is faithful and A has no unit. For a closed ideal I ⊆ A every τ ∈ T(I) has a unique state extension γ to A, γ(a) = lim_e τ(eae) along an increasing approximate unit e of I, and γ is tracial: γ(ab) = lim τ((ea)(be)) = lim τ((be)(ea)) = lim γ(be²a) = γ(ba), using only traciality of τ on I and π_τ(e²) → 1 strongly on L²(I,τ); no GNS von Neumann algebra (1.4) is used.",
        "hypotheses": ["τ ∈ T(A)", "for faithfulness: A has no two-sided unit", "for the ideal statement: I a closed two-sided ideal of A"],
        "locator": {"source": "tikuisis-white-winter2017", "where": "Remark 1.5 (ii)–(iii), lines 456–461; brown2006 Propositions 3.5.10 and 3.5.12, lines 1423, 1469"},
-       "prerequisites": ["target:1.1", "target:1.2", "roadmap:VonNeumannAlgebras V0", "roadmap:VonNeumannAlgebras V1", "roadmap:VonNeumannAlgebras V4", "mathlib:Unitization.instCStarAlgebra", "mathlib:CStarAlgebra.approximateUnit"],
+       "prerequisites": ["target:1.1", "target:1.2", "roadmap:VonNeumannAlgebras V0", "tauceti:PositiveLinearMap.toGNS", "tauceti:PositiveLinearMap.denseRange_toGNS", "mathlib:Unitization.instCStarAlgebra", "mathlib:CStarAlgebra.increasingApproximateUnit", "mathlib:PositiveContinuousLinearMap.tendsto_nhds_opNorm", "mathlib:PositiveLinearMap.GNS", "mathlib:PositiveLinearMap.gnsNonUnitalStarAlgHom"],
        "api": [
         {"name": "unitization_apply", "role": "evaluation", "statement": "τ̃(a + λ1) = τ(a) + λ."},
         {"name": "unitization_unique", "role": "universal property", "statement": "Every state of Ã restricting to τ equals τ̃."},
         {"name": "faithful transfer", "role": "theorem", "statement": "τ faithful and A without unit implies τ̃ faithful."},
-        {"name": "ideal extension", "role": "construction", "statement": "Unique tracial extension from a closed ideal."}
+        {"name": "ideal extension", "role": "construction", "statement": "Unique state extension γ(a) = lim_e τ(eae) from a closed ideal, tracial by the elementary computation in the statement."}
        ],
        "tests": [
         {"name": "c₀ ⊆ c", "kind": "computation", "statement": "τ = Σ 2^{-n}δ_n on c₀ gives τ̃(x) = Σ 2^{-n}x_n on c, faithful."},
         {"name": "unital ℂ", "kind": "non-example", "statement": "For A = ℂ, Ã ≅ ℂ ⊕ ℂ and τ̃ = first coordinate is not faithful."},
-        {"name": "half extension", "kind": "degenerate", "statement": "x ↦ x_1/2 + (lim x)/2 restricts to δ_1/2 on c₀, of norm 1/2, so it does not contradict uniqueness."}
+        {"name": "half extension", "kind": "degenerate", "statement": "x ↦ x_1/2 + (lim x)/2 restricts to δ_1/2 on c₀, of norm 1/2, so it does not contradict uniqueness."},
+        {"name": "ideal extension formula", "kind": "computation", "statement": "I = M_2 ⊕ 0 ⊆ M_2 ⊕ ℂ, τ = tr_2, e = (1, 0): γ(x, λ) = tr_2(x); I = c₀ ⊆ c, τ = Σ 2^{-n}δ_n, e_m = 1_{1..m}: τ(e_m x e_m) → Σ 2^{-n}x_n = τ̃(x)."},
+        {"name": "traciality used", "kind": "non-example", "statement": "For the non-tracial ω(x) = x₁₁ on I = A = M_2, e = 1, a = e₁₂, b = e₂₁: ω((ea)(be)) = 1 but ω((be)(ea)) = 0."}
        ]},
       {"id": "1.4", "kind": "construction", "name": "gnsTraceData",
-       "statement": "For unital A and τ ∈ T(A): Ω = 1̂ is cyclic for π_τ(A) and separating for M_τ = π_τ(A)''; τ''(x) = ⟪Ω, xΩ⟫ is a faithful normal tracial state of M_τ with τ'' ∘ π_τ = τ; π_τᵒᵖ(bᵒᵖ)ĉ = (cb)^ = Jπ_τ(b*)Jĉ defines a unital star homomorphism of Aᵒᵖ commuting with π_τ with π_τᵒᵖ(Aᵒᵖ)'' = JM_τJ = M_τ'; μ_τ(a ⊗ bᵒᵖ) = τ(ab) is the vector functional of π_τ × π_τᵒᵖ at Ω.",
+       "statement": "For unital A and τ ∈ T(A), with Ω = 1̂ a cyclic unit vector recovering τ and separating for M_τ = π_τ(A)'' = VonNeumannAlgebra.adjoin (range π_τ) by the pinned Tau Ceti GNS and separating-vector theorems: τ''(x) = ⟪Ω, xΩ⟫ is a faithful normal tracial state of M_τ with τ'' ∘ π_τ = τ (traciality by the von Neumann density theorem, one variable at a time); π_τᵒᵖ(bᵒᵖ)ĉ = (cb)^ = Jπ_τ(b*)Jĉ defines a unital star homomorphism of Aᵒᵖ commuting with π_τ with π_τᵒᵖ(Aᵒᵖ)'' = JM_τJ = M_τ'; μ_τ(a ⊗ bᵒᵖ) = τ(ab) is the vector functional of π_τ × π_τᵒᵖ at Ω.",
        "hypotheses": ["A unital", "τ ∈ T(A)"],
        "locator": {"source": "brown2006", "where": "Chapter 2, lines 378–384; §3.1, lines 793–801"},
-       "prerequisites": ["target:1.2", "target:1.3", "roadmap:VonNeumannAlgebras V0", "roadmap:VonNeumannAlgebras V1", "roadmap:VonNeumannAlgebras V4", "roadmap:VonNeumannAlgebras V6", "mathlib:PositiveLinearMap.GNS", "mathlib:PositiveLinearMap.gnsStarAlgHom"],
+       "prerequisites": ["target:1.1", "target:1.2", "target:1.3", "roadmap:VonNeumannAlgebras V0", "roadmap:VonNeumannAlgebras V1", "roadmap:VonNeumannAlgebras V4", "roadmap:VonNeumannAlgebras V6", "tauceti:PositiveLinearMap.gnsVector", "tauceti:PositiveLinearMap.norm_gnsVector", "tauceti:PositiveLinearMap.denseRange_gnsStarAlgHom_gnsVector", "tauceti:PositiveLinearMap.inner_gnsVector_coe", "tauceti:PositiveLinearMap.inner_gnsStarAlgHom_gnsVector", "tauceti:VonNeumannAlgebra.adjoin", "tauceti:VonNeumannAlgebra.exists_forall_norm_sub_apply_lt_of_mem_adjoin", "tauceti:TauCeti.CStarAction.IsKMSState.eq_zero_of_apply_toPreGNS_one_eq_zero", "mathlib:PositiveLinearMap.GNS", "mathlib:PositiveLinearMap.gnsStarAlgHom"],
        "api": [
-        {"name": "cyclic_separating", "role": "structure", "statement": "Ω cyclic for π_τ(A) and for π_τᵒᵖ(Aᵒᵖ), separating for M_τ."},
+        {"name": "cyclic_rightRep", "role": "structure", "statement": "Ω cyclic for π_τᵒᵖ(Aᵒᵖ); for nonunital A, transported through the unitization extension of 1.3, Ω is a cyclic unit vector separating for M_τ (unital case: Tau Ceti)."},
         {"name": "vectorTrace", "role": "construction", "statement": "τ'' faithful normal tracial on M_τ extending τ."},
         {"name": "rightRep_apply", "role": "evaluation", "statement": "π_τᵒᵖ(bᵒᵖ)ĉ = (cb)^."},
         {"name": "commutant", "role": "compatibility", "statement": "π_τᵒᵖ(Aᵒᵖ)'' = JM_τJ = M_τ'."},
@@ -83,7 +86,7 @@
        "statement": "On M_k = CStarMatrix (Fin k) (Fin k) ℂ, tr_k = k⁻¹·Matrix.trace and ‖x‖₂ = tr_k(x*x)^{1/2}; for k ≥ 1 tr_k is the unique tracial state; ‖·‖₂ is a norm with ‖x*‖₂ = ‖x‖₂, ‖xy‖₂ ≤ ‖x‖‖y‖₂, ‖xy‖₂ ≤ ‖x‖₂‖y‖, ‖x‖₂ ≤ ‖x‖, |tr_k x| ≤ ‖x‖₂, ‖x − cxc‖₂ ≤ 2‖x‖‖c − 1‖₂ for positive contractions c; M_k ⊗ M_kᵒᵖ ≅ B(L²(M_k, tr_k)) with vector state tr_k(xy).",
        "hypotheses": ["k ∈ ℕ; uniqueness for k ≥ 1"],
        "locator": {"source": "brown2006", "where": "Chapter 2, lines 403–406; Lemma 2.7, line 530; proof of Theorem 3.1.6, lines 864–874"},
-       "prerequisites": ["target:1.1", "roadmap:VonNeumannAlgebras V3", "roadmap:CStarAlgebras C5.1", "mathlib:CStarMatrix", "mathlib:Matrix.trace", "mathlib:Matrix.trace_mul_comm", "mathlib:Matrix.frobenius_norm_def"],
+       "prerequisites": ["target:1.1", "roadmap:VonNeumannAlgebras V3", "roadmap:CStarAlgebras C5.1", "tauceti:LinearMap.existsUnique_trace_mul_eq", "tauceti:Matrix.mem_range_scalar_iff_trace_mul_mul_comm", "tauceti:Matrix.frobeniusInnerProductSpace", "tauceti:Matrix.frobenius_inner_eq_trace_conjTranspose_mul", "mathlib:CStarMatrix", "mathlib:CStarMatrix.ofMatrix", "mathlib:Matrix.trace", "mathlib:Matrix.trace_mul_comm", "mathlib:Matrix.frobenius_norm_def"],
        "api": [
         {"name": "matrixTrace_unique", "role": "characterisation", "statement": "tr_k is the only tracial state of M_k (k ≥ 1)."},
         {"name": "twoNorm inequalities", "role": "estimates", "statement": "The five inequalities and the c-estimate."},
@@ -95,7 +98,8 @@
         {"name": "e₁₁", "kind": "computation", "statement": "‖e₁₁‖₂ = k^{-1/2}, ‖e₁₁‖ = 1; the unnormalized trace gives ‖1‖₂ = k^{1/2} > 1."},
         {"name": "product bound attained", "kind": "computation", "statement": "x = e₁₂, y = e₂₁ in M_2: ‖xy‖₂ = 2^{-1/2} = ‖x‖‖y‖₂, while ‖x‖₂‖y‖₂ = 1/2."},
         {"name": "k = 0", "kind": "degenerate", "statement": "M_0 = 0, tr_0 = 0 is not a state; uniqueness needs k ≥ 1."},
-        {"name": "Frobenius comparison", "kind": "compatibility", "statement": "‖x‖₂ = k^{-1/2}‖x‖_F with Matrix.frobenius_norm_def."}
+        {"name": "Frobenius comparison", "kind": "compatibility", "statement": "‖x‖₂ = k^{-1/2}‖x‖_F with Matrix.frobenius_norm_def; tr_2(e₁₁*e₁₁) = 1/2 = 2⁻¹⟪e₁₁, e₁₁⟫_F."},
+        {"name": "trace duality", "kind": "computation", "statement": "tr_2 = Tr(ρ ·) with scalar ρ = (1/2)·1; the non-tracial x ↦ x₁₁ has non-scalar ρ = e₁₁."}
        ]},
       {"id": "1.6", "kind": "theorem", "name": "exists_unital_embedding_trace_approx",
        "statement": "For a finite-dimensional C*-algebra B with tracial state γ and δ > 0 there are n and a unital injective star homomorphism ρ : B → M_n with |γ(x) − tr_n(ρ(x))| ≤ δ‖x‖. For unital A, τ ∈ T(A) and a unital finite-dimensional C*-subalgebra B ⊆ A there is a conditional expectation Φ_B : A → B with τ ∘ Φ_B = τ.",
@@ -105,7 +109,7 @@
        "api": [],
        "tests": [
         {"name": "rational weights", "kind": "computation", "statement": "γ = (1/3, 2/3) on ℂ²: ρ(a, b) = diag(a, b, b), exact."},
-        {"name": "zero weight", "kind": "degenerate", "statement": "γ = (1, 0): multiplicities (N, 1) give error 2/(N + 1)."},
+        {"name": "zero weight", "kind": "degenerate", "statement": "γ = (1, 0): multiplicities (N, 1) give error 2/(N + 1); multiplicities (N, 0) give the unital map ρ(a, b) = a·1_N with tr_N ∘ ρ = γ exactly but ker ρ = 0 ⊕ ℂ, so positive multiplicities are needed for an embedding."},
         {"name": "junk division", "kind": "non-example", "statement": "On ℂ³ with τ = (1/2, 1/2, 0), B = {(a, a, b)}, the faithful-case formula with 0⁻¹ = 0 kills (0, 0, 1); the correct Φ_B averages the first two coordinates."}
        ]},
       {"id": "1.7", "kind": "theorem", "name": "closedConvexHull_eq_stateSpace_of_norming",
@@ -611,7 +615,7 @@
   ],
   "suppliers": [
     {"roadmap": "CStarAlgebras", "sections": ["C2.1", "C2.8", "C4.1", "C4.2", "C5.1", "C5.2", "C5.4", "C6.1", "C6.5", "C7.1", "C8.1", "C8.2", "C8.3", "C9.1", "C9.7"], "what": "Completely positive maps, Kadison–Schwarz, multiplicative domains, Stinespring and Radon–Nikodym, tensor products, nuclear maps, exactness with nuclear embeddability, quasidiagonal algebras with Voiculescu's criterion and compression step, state extension, the bidual, the positive unital extension operator on C(X) for compact metrizable X (a Check of 6.4)."},
-    {"roadmap": "VonNeumannAlgebras", "sections": ["V0", "V1", "V2", "V3", "V4", "V5", "V6", "V13a", "V13b.SpatialNorm", "V13b"], "what": "States and GNS, Kaplansky density, corners, finite-dimensional algebras, normality, tracial states, the standard form with J, Arveson and Tomiyama, injectivity, the spatial norm, semidiscreteness, the commutant theorem, Powers–Størmer, injective iff hyperfinite."},
+    {"roadmap": "VonNeumannAlgebras", "sections": ["V0", "V1", "V2", "V3", "V4", "V5", "V6", "V13a", "V13b.SpatialNorm", "V13b"], "what": "States, Cauchy–Schwarz and unitary uniqueness of GNS, Kaplansky density, corners, finite-dimensional algebras, normality, tracial states, the standard form with J, Arveson and Tomiyama (for projections of norm one), injectivity as a contractive projection of norm one when M ≠ 0, the spatial norm, semidiscreteness, the commutant theorem, Powers–Størmer, injective iff hyperfinite."},
     {"roadmap": "CStarClassification", "sections": ["§2.1", "§3.5"], "what": "IsAF with its unitization criterion and unital presentations; UHF algebras simple with unique trace."},
     {"roadmap": "OperatorAlgebraDynamics", "sections": ["D2"], "what": "Reduced group C*-algebras, the canonical faithful expectation, nuclearity for amenable groups."},
     {"roadmap": "AmenableGroups", "sections": ["Layer 2", "Layer 3"], "what": "Amenability of discrete groups by invariant means on bounded functions; non-amenability of F₂."},
@@ -623,7 +627,7 @@
     {"roadmap": "FactorRigidity", "what": "Passage from amenable and uniform amenable traces to injective tracial von Neumann algebras (4.10, 5.4)."},
     {"roadmap": "TemperleyLiebOperatorAlgebras", "what": "Tracial states of its AF towers (Layer 1, 7.2)."},
     {"roadmap": "NoncommutativeIntegration", "what": "Tracial GNS data (1.4)."},
-    {"roadmap": "OperatorAlgebraDynamics, Part II", "what": "Tracial state spaces as β = 0 KMS states and group algebra examples (Layer 1, 7.4)."},
+    {"roadmap": "OperatorAlgebraDynamics, Part II", "what": "Trace kernel, extensions and tracial GNS data of the β = 0 KMS states, whose convexity and compactness are pinned Tau Ceti theorems (Layer 1), and group algebra examples (7.4)."},
     {"roadmap": "FreeProbability, Part II", "what": "Tracial state spaces of C*-probability spaces (Layer 1)."}
   ],
   "gaps": []
