@@ -1,0 +1,13 @@
+{
+  "review": {
+    "status": "needs_changes",
+    "reviewer": "independent-review-PRREVIEW-EtaleDualityAndPerverseSheavesPartII~19",
+    "head": "975ac1747567059591bf94703c9691bfab5d65fe",
+    "pr": 1743,
+    "folder": "EtaleDualityAndPerverseSheavesPartII",
+    "date": "2026-11-10",
+    "findings": 2,
+    "blocking": 1,
+    "notes": "Full review of an unchanged head. R01 (P2) carried: PurityForFlatCohomology (#1840 at d3f15fd9) still owns §§1.4-1.5 = our §§7.1, 6.11, 6.12, 7.3; repair is in that roadmap. R02 (P3) new: README:142 backticks OrientedEtaleProduct, absent from ClassicalAdicEtaleCohomology (#875 at fc1c03a) §5.4. Gate OK on this head (all checks 0; worker build=0); depcheck --movable: 235 roadmaps, 2268 edges, 0 problems; lake env lean exit 0, eight sorry warnings only; no outside-folder paths. Seeded sample 0.4, 0.5, 1.4, 2.3, 3.2, 3.3, 3.5, 4.2, 5.2, 5.8, 6.4, 6.10, 6.12, 7.3, 8.6 all verified against ILO14, ILO-final-II/XII, CS24 at line locators. 72 pinned Mathlib/Tau Ceti names #checked (0 errors); 11 signatures compared; one-tactic probe leaves all 8 theorems open; five gaps match plan.json and are precise and minimal; five source issues recorded."
+  }
+}
