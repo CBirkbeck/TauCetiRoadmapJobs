@@ -288,3 +288,21 @@ status = "certified"
 accessed = "2026-11-09"
 cited_for = ["1.7", "2.6"]
 version_note = "author's preprint; lemma and equation numbers agree with the Compositio version (Numdam CM_1996__101_3_225_0), page locators are preprint pages"
+
+[[source]]
+id = "BMS06"
+authors = "Yann Bugeaud, Maurice Mignotte, Samir Siksek"
+title = "Classical and modular approaches to exponential Diophantine equations. I. Fibonacci and Lucas perfect powers"
+year = 2004
+arxiv = "math/0403046v1"
+locator_scheme = "theorem"
+locator = "Lemma 13.1; Theorem 9.4"
+url = "https://arxiv.org/abs/math/0403046v1"
+fetched_from = "https://arxiv.org/pdf/math/0403046v1"
+fetched_at = "2026-11-10T12:34:43Z"
+sha256 = "95a781491a737c4c1cc7abe1473fa57a90c156341e79618dc4776ef035ee7a76"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-10"
+version_note = "arXiv v1"
+cited_for = ["3.6"]
