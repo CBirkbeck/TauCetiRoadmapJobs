@@ -1,0 +1,13 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-SpecialFunctionsHypergeometric~4",
+  "head": "aa1fcd0c11746b76a31c9f963ea6c06c566cc45f",
+  "pr": 2089,
+  "folder": "SpecialFunctionsHypergeometric",
+  "date": "2026-11-10",
+  "findings": 0,
+  "blocking": 0,
+  "notes": "incremental re-review of 7 changed lines since dc98666. Both r3 findings repaired (scope item 4 now excludes 15.4.21-15.4.23; the 5.5 lead-in attributes only the 15.4.21 and 15.4.22 routes to DLMF's notes), no new problem. Checked: the two changed README sentences against the ownership table, the 5.5 bullets, the Lean docstrings and DLMF-15.4 lines 643-655 (seeded sample at 4.2 and 5.5); 15.4.21-15.4.23 recomputed with mpmath including the integer case c-a-b=-2; gate rerun OK with every check 0; depcheck 234 roadmaps, 0 problems; lake env lean prints 61 sorry warnings only; Suggested.lean unchanged; no file outside the folder; overlaps and citations show nothing new. Adversarial table carried from r3 with four recomputed rows."
+ }
+}
