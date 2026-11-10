@@ -1,0 +1,13 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-IntegrableSystems~22",
+  "head": "43473404eae8a401255f45375330ec1769f6bd11",
+  "pr": 1651,
+  "folder": "SymplecticGeometry/IntegrableSystems",
+  "date": "2026-11-10",
+  "findings": 0,
+  "blocking": 0,
+  "notes": "incremental re-review of 0 changed lines since c1e867d. Previous review had no finding. Checked: folder, pins and family index unchanged; the diff of the sibling ConvexityToric and CotangentLagrangian READMEs against this roadmap's citations (C3 line 382, C3.1 line 471, chain dictionary line 510, ConvexityToric Layer 1 line 204 all resolve, cited passages untouched); gate rerun (all scanners 0, depcheck 0, outside-folder lists only the pull request's own sibling folders; worker gate passes with build=0); lake env lean gives four sorry warnings only; depcheck 0 problems; overlaps (only pin bump #1187, ordered in the description); adversarial table carried with values from the review at c1e867d, no changed statement."
+ }
+}
