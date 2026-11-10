@@ -356,7 +356,7 @@
      "id": "3.1",
      "kind": "theorem",
      "name": "sl2_adjoint_neg_one_trivial_invariants_eq_bot",
-     "statement": "For a field k, let ad⁰ be the trace-zero adjoint of the tautological representation of SL(2,k) on k², imported from ArithmeticGaloisRepresentations: §7.9 ResidualImage.adZeroRep of Matrix.SpecialLinearGroup.toGL on LinearMap.ker (LinearMap.trace k (Fin 2 → k)) with g·X = g X g⁻¹, and for finite k §7.2 ContinuousRep.adZero. Then −1 acts trivially, so ad⁰ factors through PSL₂(k); and if 2 ∈ k^× a trace-zero matrix commuting with U = [[1,1],[0,1]] and its transpose is zero, so H⁰(SL(2,k), ad⁰) = 0. The trace form, its invariance, its perfectness on ad⁰ when 2 ∈ k^× and base change are ArithmeticGaloisRepresentations §7.2.",
+     "statement": "For a field k, let ad⁰ be the trace-zero adjoint of the tautological representation of SL(2,k) on k², imported from ArithmeticGaloisRepresentations: §7.9 ResidualImage.adZeroRep of Matrix.SpecialLinearGroup.toGL on LinearMap.ker (LinearMap.trace k (Fin 2 → k)) with g·X = g X g⁻¹, and for finite k §7.2 ContinuousRep.adZero. Then −1 acts trivially, so ad⁰ factors through PSL₂(k); and if 2 ∈ k^× a trace-zero matrix commuting with U = [[1,1],[0,1]] and its transpose is zero, so H⁰(SL(2,k), ad⁰) = 0. For finite k of odd characteristic with #k ≠ 5 this vanishing is also part of ArithmeticGaloisRepresentations §7.7, which states it together with H¹(SL₂(k), ad⁰) = 0 and therefore excludes F5; the statement here differs in covering every field with 2 ∈ k^×, among them F5 (the case Layer 4 uses) and every infinite field of characteristic other than two. The trace form, its invariance, its perfectness on ad⁰ when 2 ∈ k^× and base change are ArithmeticGaloisRepresentations §7.2.",
      "hypotheses": [
       "k a field",
       "2 ∈ k^× for the vanishing of invariants"
@@ -603,12 +603,14 @@
       "where": "Lemma 3.3, lines 227-241"
      },
      "prerequisites": [
+      "target:3.1",
       "target:3.2",
       "target:3.3",
       "target:3.5",
       "roadmap:ArithmeticGaloisDuality R02.2",
       "roadmap:ArithmeticGaloisRepresentations §4.3",
-      "mathlib:Matrix.SL2.commutator_eq_top"
+      "mathlib:Matrix.SL2.commutator_eq_top",
+      "roadmap:ArithmeticGaloisRepresentations §7.7"
      ],
      "api": [],
      "tests": [
@@ -625,7 +627,7 @@
       {
        "name": "exceptional_F7",
        "kind": "compatibility",
-       "statement": "For image SL₂(F7), H¹(SL₂(F7), ad⁰) = 0 and no protection is needed."
+       "statement": "For image SL₂(F7), H¹(SL₂(F7), ad⁰) = 0 (ArithmeticGaloisRepresentations §7.7) and no protection is needed."
       }
      ]
     },
@@ -684,6 +686,7 @@
       "where": "proof of Theorem 4.2, lines 416-444"
      },
      "prerequisites": [
+      "target:3.1",
       "target:3.4",
       "target:3.5",
       "target:4.2",
@@ -691,7 +694,8 @@
       "roadmap:GlobalGaloisDeformations §3.6",
       "roadmap:GlobalGaloisDeformations §3.7",
       "roadmap:GlobalGaloisDeformations §5.1",
-      "roadmap:LocalGaloisDeformationRings §2.16"
+      "roadmap:LocalGaloisDeformationRings §2.16",
+      "roadmap:ArithmeticGaloisRepresentations §7.7"
      ],
      "api": [],
      "tests": [
@@ -1476,7 +1480,7 @@
     "§7.7",
     "§7.9"
    ],
-   "what": "Decomposition groups, subgroups of PSL₂ and perfectness, the Tate curve, the trace-zero adjoint with its trace pairing, splitting and base change (ContinuousRep.adZero, ResidualImage.adZeroRep), finite-group cohomology of SL₂ with adjoint coefficients."
+   "what": "Decomposition groups, subgroups of PSL₂ and perfectness, the Tate curve, the trace-zero adjoint with its trace pairing, splitting and base change (ContinuousRep.adZero, ResidualImage.adZeroRep), finite-group cohomology of SL₂ with adjoint coefficients (H⁰ = H¹ = 0 for SL₂(F), F finite of odd characteristic with #F ≠ 5; H¹(SL₂(F5), ad⁰) one-dimensional; coefficient change)."
   },
   {
    "roadmap": "FaltingsFinitenessAndIsogenyTheorems",
