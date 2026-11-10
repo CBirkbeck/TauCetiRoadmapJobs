@@ -1,0 +1,10 @@
+{
+  "review": {
+    "status": "needs_changes",
+    "reviewer": "independent-review-REV-PKG-KloostermanSheavesAndBesselIsocrystals~2",
+    "date": "2026-11-10",
+    "findings": 16,
+    "blocking": 10,
+    "notes": "All four previous findings repaired. Read all 65 target subsections, checked the 15 seeded source targets against cached texts, audited pinned declarations, supplier citations, ownership, seven declared gaps and internal dependencies. Report includes computed adversarial witnesses and source errata. Suggested.lean elaborates with exactly five sorry warnings; all eleven declarations checked for binders; all five theorems resist rfl/infer_instance/simp padding probes. Roadmap depcheck reports 236 roadmaps, 2146 edges, 0 problems; internal proof cycle remains a finding. Seven settled uncertified sources remain unread. No package input or manifest changed."
+  }
+}
