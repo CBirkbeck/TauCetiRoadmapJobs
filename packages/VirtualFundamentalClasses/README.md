@@ -117,14 +117,17 @@ Boundaries:
 - The Artin stack of prestable curves, the moduli stack `M̄_{g,n}(X, β)` of stable maps, its
   properness, Gromov–Witten invariants and their axioms, torus localisation and cosection
   localisation of virtual classes are downstream consumers. Layer 11 is stated for an arbitrary
-  base algebraic stack carrying a family of prestable curves.
+  base algebraic stack carrying a family of prestable curves: derived pushforward and duality along
+  the family, the Kodaira–Spencer morphism, the perfect obstruction theory `(Rπ_* F^*T_X)^∨`, its
+  global resolutions and the virtual dimension are owned here for every such base, and a roadmap on
+  stable maps verifies the hypothesis of 11.1 for its moduli stack and consumes 11.2–11.6.
 - The obstruction theories of SchemeAndStackFoundations §4.5 assign to each small extension of
   Artin local rings an obstruction in a fixed finite-dimensional space, for a deformation
   functor; those of Layer 9 here are morphisms `E → τ^{≥−1}L_{M/𝔐}` in the derived category of a
   Deligne–Mumford stack, and Layer 9.3 recovers obstruction classes of square-zero extensions from
   them.
-- The symplectic and topological virtual classes (the Gromov–Witten theory of closed symplectic
-  manifolds in GromovWittenTheory, AnalyticStableMaps, ImplicitAtlases) are different objects;
+- The symplectic and topological virtual classes (those of AnalyticStableMaps and ImplicitAtlases,
+  and the Gromov–Witten theory of closed symplectic manifolds built on them) are different objects;
   their comparison with the algebraic class is not part of this roadmap.
 
 ## Conventions
@@ -132,15 +135,38 @@ Boundaries:
 1. **Base field and stacks.** `k` is an arbitrary field; no characteristic, perfectness or
    algebraic closedness is assumed except on the statement that names it. Stacks, morphisms and
    2-morphisms are those of SchemeAndStackFoundations §§1.18–1.20 over the big fppf site of
-   schemes in a fixed universe. A *DM stack over `k`* is a stack in groupoids with
-   `IsDeligneMumford`, a morphism to `Spec k`, and of finite type over `Spec k` in the sense of
-   SchemeAndStackFoundations §1.20 (locally of finite type through a smooth atlas, and
-   quasi-compact). Morphisms of DM stacks over `k` are 1-morphisms over `Spec k`. Schemes and
-   algebraic spaces of finite type over `k` are DM stacks over `k` through
-   `IsDeligneMumford.ofSpace`. An *algebraic `k`-stack* is an algebraic stack locally of finite
-   type over `k`; it has *pure dimension `m`* if `dim_x 𝔐 = m` at every point `x ∈ |𝔐|`
+   schemes in a fixed universe. A stack is *quasi-separated* if its diagonal, which is
+   representable by algebraic spaces, is quasi-compact and quasi-separated (`RepresentableProperty`
+   of SchemeAndStackFoundations §1.19 applied to the diagonal with the property "quasi-compact and
+   quasi-separated morphism of algebraic spaces"); this is weaker than `IsSeparatedStack`, which
+   asks the diagonal to be proper. Every algebraic space and every algebraic stack in this roadmap
+   is quasi-separated, the standing hypothesis of behrend-fantechi1997 (lines 168–170) and a
+   consequence of Vistoli's (a quasi-compact separated diagonal, vistoli1989 (7.14), line 2110);
+   neither the supplier's `IsDeligneMumford` nor Tau Ceti's `Spaces.IsAlgebraicSpace` includes it.
+   A *DM stack over `k`* is a quasi-separated stack in groupoids with `IsDeligneMumford`, a
+   morphism to `Spec k`, and of finite type over `Spec k` in the sense of SchemeAndStackFoundations
+   §1.20 (locally of finite type through a smooth atlas, and quasi-compact). Witness: over an
+   algebraically closed `k`, `Bℤ` (the constant group `ℤ` acting trivially on `Spec k`) has an
+   étale point atlas and is quasi-compact and locally of finite type, but its diagonal has the
+   non-quasi-compact fibre `ℤ`, its inertia `ℤ × Bℤ → Bℤ` is infinite over every dense open, and
+   `e(Bℤ)` (1.4) would not be finite; it is not a DM stack over `k`. `B(S₃)` is one, with generic
+   stabiliser order `6`, and so is `BG` for the non-separated group scheme `G` of 1.1, whose
+   diagonal is quasi-compact and quasi-separated but not proper. Morphisms of DM stacks over `k`
+   are 1-morphisms over `Spec k`. Schemes and quasi-separated algebraic spaces of finite type over
+   `k` are DM stacks over `k` through `IsDeligneMumford.ofSpace`; schemes of finite type over a
+   field are Noetherian, hence quasi-separated, while the algebraic space `𝔸¹/ℤ` of characteristic
+   `0` (SchemeAndStackFoundations §1.9, Checks) is of finite type and not quasi-separated, and is
+   excluded. An *algebraic `k`-stack* is a quasi-separated algebraic stack locally of finite type
+   over `k`; it has *pure dimension `m`* if `dim_x 𝔐 = m` at every point `x ∈ |𝔐|`
    (stacks-properties Definition 12.2, tag 0AFN, line 1404). Witness: `B𝔾_m` over `k` has pure
    dimension `−1` (stacks-properties Example 12.5, line 1421), so `m` can be negative.
+
+   Every example built from `μ₂` acting by `x ↦ −x` (on `𝔸¹` or `ℙ¹`), and every example
+   involving `Bμ₂`, assumes `char k ≠ 2`, where `μ₂ ≅ ℤ/2` is étale. In characteristic `2`,
+   `μ₂ = Spec k[u]/((u − 1)²)` is not unramified over `k`, the stabiliser of the origin of
+   `[𝔸¹/μ₂]` is `μ₂`, and neither `[𝔸¹/μ₂]` nor `Bμ₂` is a DM stack. Characteristic-`2` tests use
+   constant groups instead, such as the `ℤ/p`-action of 1.5 with `p = 2`. In characteristic `3`
+   the sign examples keep stabiliser order `2` and `A_0([𝔸¹/μ₂]) = ℤ/2`.
 
 2. **Representable morphisms.** "Representable" without qualification means representable by
    algebraic spaces (SchemeAndStackFoundations §1.19). A morphism `f : ℱ → 𝒢` is *representable by
@@ -232,6 +258,12 @@ Boundaries:
   (`Mathlib/RingTheory/Extension/Cotangent/Basic.lean`): the naive cotangent complex
   `I/I² → Ω_P ⊗ S` of a presentation, its exactness at `Ω_S`, and `H¹`; Layer 8 compares the
   local presentations of `τ^{≥−1}L_{M/𝔐}` with it.
+- `Algebra.H1Cotangent.δ`, `Algebra.H1Cotangent.exact_map_δ`, `Algebra.H1Cotangent.exact_δ_mapBaseChange`
+  (`Mathlib/RingTheory/Kaehler/JacobiZariski.lean`) and `KaehlerDifferential.exact_mapBaseChange_map`
+  (`Mathlib/RingTheory/Kaehler/Basic.lean`): for algebras `R → S → T`, the exact Jacobi–Zariski
+  sequence `H¹(L_{T/R}) → H¹(L_{T/S}) → T ⊗_S Ω_{S/R} → Ω_{T/R} → Ω_{T/S} → 0` of naive cotangent
+  complexes; its extension on the left is proved there only for flat `S → T`. These are the last
+  five terms of the transitivity sequence of Layer 8.3 on affine charts.
 - `Algebra.FormallySmooth` (`Mathlib/RingTheory/Smooth/Basic.lean`), whose defining condition at
   the pin is that `Ω_{A/R}` is projective and `H¹(L_{A/R})` vanishes, with
   `Algebra.FormallySmooth.iff_split_injection` and `Algebra.FormallySmooth.iff_comp_surjective`
@@ -266,19 +298,24 @@ under `TauCeti/AlgebraicGeometry/`.
   function on an integral locally Noetherian scheme, with coefficients given by Mathlib's
   `Scheme.ord`; the scheme case of `div` in 2.2.
 - `gradedRelativeSpec` (`RelativeSpec/Graded.lean`), `relativeSpecBaseChangeIso`
-  (`RelativeSpec/BaseChange.lean`) and `CategoryTheory.CommMon.relativeSpecHomEquiv`
-  (`RelativeSpec/UniversalProperty.lean`): relative spectra of graded quasi-coherent algebras over
-  a scheme, their base change and the functor-of-points description of a relative spectrum; the
-  scheme case of the cones of 4.1.
+  (`RelativeSpec/BaseChange.lean`), and `relativeSpecHomIso` with
+  `CategoryTheory.CommMon.relativeSpecHomEquiv` (`RelativeSpec/UniversalProperty.lean`): relative
+  spectra of graded quasi-coherent algebras over a scheme, their base change and the
+  functor-of-points description of a relative spectrum, natural in the test scheme and with no
+  restriction on the test morphism; the scheme case of the cones of 4.1.
 - `linearSpec` (`VectorBundle/LinearScheme.lean`): `F ↦ Spec_X Sym F` on quasi-coherent sheaves,
-  contravariant in `F`, valued in graded affine schemes over `X` (Convention 6).
+  contravariant in `F`, valued in graded affine schemes over `X` (Convention 6), with its base change
+  `QuasicoherentLinearScheme.pullback` and the natural isomorphism
+  `QuasicoherentLinearScheme.linearSpecPullbackIso` (`VectorBundle/LinearScheme/BaseChange.lean`),
+  by which `linearSpec` commutes with arbitrary base change as a functor to linear schemes.
 - `totalSpace` (`VectorBundle/Geometric.lean`) with `totalSpaceHomEquiv` and
   `totalSpaceSchemeBaseChangeIso` (`VectorBundle/TotalSpace.lean`): the total space
   `Spec_X Sym E^∨` of a finite locally free sheaf `E`, covariant in `E`, whose points over
   `q : T → X` are the global sections of `q^*E`, and its base change (Convention 6).
-- `AlgebraicGeometry.Scheme.Modules.isFiniteLocallyFree` (`VectorBundle/FiniteLocallyFree.lean`)
-  and `FiniteLocallyFreeSheaf.rank` (`VectorBundle/Rank.lean`): finite locally free sheaves on a
-  scheme and their locally constant rank (Convention 7 on charts).
+- `AlgebraicGeometry.Scheme.Modules.isFiniteLocallyFree` (`VectorBundle/FiniteLocallyFree.lean`),
+  `FiniteLocallyFreeSheaf.rank` (`VectorBundle/Rank.lean`) and `FiniteLocallyFreeSheaf.isConstantRank`
+  (`VectorBundle/FixedRank.lean`): finite locally free sheaves on a scheme, their locally constant
+  rank, and the property of having rank `r` at every point (Convention 7 on charts).
 - `AlgebraicGeometry.Scheme.bigStructureSheaf` (`Sites/Big/StructureSheaf.lean`): the structure
   sheaf on the big fpqc site of schemes over a scheme, the scheme case of `O_fl` in 7.3.
 - `PrestableFamily` (`Curves/Prestable.lean`): a morphism of schemes that is proper, at worst
@@ -311,7 +348,8 @@ and 5.3.
   `IsDeligneMumford` with `IsDeligneMumford.iff_unramified_diagonal` and `IsDeligneMumford.ofSpace`.
 - §1.20: `inertia`, `automorphismGroup`, `SmoothLocal`, `IsSeparatedStack`, `Stacks.points` with
   its atlas independence and functoriality, finite type, `UniversallyClosedStack`,
-  `IsProperStack`, and `stack_presentation`.
+  `IsProperStack` with `IsProperStack.baseChange`, and `stack_presentation`. Quasi-separatedness of
+  a stack (Convention 1) is `RepresentableProperty` of §1.19 applied to the diagonal.
 - §1.21: the generic quotient stack `Stack.quotient` of a groupoid in sheaves on a site, used for
   `[C/E]` and `h¹/h⁰`; `actionQuotient G X` and `quotientStack_algebraic`.
 - §1.22: `Stacks.QCoh` with `QCoh.pullback` and `QCoh.presentationEquiv`.
@@ -323,6 +361,12 @@ and 5.3.
   higher cohomology) and `quasiCoherent_topology_comparison` (Zariski, étale and fppf cohomology of
   a quasi-coherent module agree), for the étale-local comparison of global resolutions in Layer
   10.1.
+- §2.19: on Noetherian schemes, the right adjoint `a_f` of `Rf_*` on `DQCoh` with
+  `pushforwardRightAdjoint_adj` and `globalDuality`, and the upper shriek functor on `D^+_QCoh` with
+  `upperShriek_proper` (`f^! = a_f` for proper `f`), `upperShriek_flat_baseChange` and
+  `upperShriek_lci` (`f^!K ≅ Lf^*K ⊗ f^!O`, equal to `Lf^*K ⊗ ω_{X/Y}[d]` for Gorenstein `f` of
+  relative dimension `d`), for the duality of Layer 11.2, which is stated only on these
+  quasi-coherent categories.
 - §2.20: relative dualising complexes and Serre duality for flat proper morphisms of schemes, for
   the duality of Layer 11.2.
 - §3.3: degrees of locally free sheaves on proper curves, defined so that `χ(E) = deg E + r·χ(O)`.
@@ -344,23 +388,31 @@ and 5.3.
 ### From TauCetiRoadmap.AlgebraicVectorBundles
 
 Where a Tau Ceti declaration above realises an object of AlgebraicVectorBundles, the Tau Ceti
-declaration is the one consumed. The following are consumed from AlgebraicVectorBundles.
+declaration is the one consumed; AlgebraicVectorBundles' How to read the build resolves its labels
+to them. The following are consumed through those labels.
 
-- L0B: `FiniteLocallyFreeSheafOfRank`, the locally free sheaves of constant rank `r`.
-- L1A: the relative-Spec functor with its universal property as a natural isomorphism,
-  `relativeSpecUniversalProperty`.
-- L2A: `linearSpecBaseChangeIso`, the base change of abelian cones `Spec Sym F` on schemes.
-- L2B: `totalSpaceBaseChangeIso`, the base change of total spaces as a natural isomorphism in the
-  bundle.
+- L0B: finite locally free sheaves of constant rank `r`, AlgebraicVectorBundles'
+  `isFiniteLocallyFreeOfRank`, which is Tau Ceti's `FiniteLocallyFreeSheaf.isConstantRank`.
+- L1A: the relative-Spec functor with its functor-of-points description, Tau Ceti's
+  `relativeSpecHomIso` and `CategoryTheory.CommMon.relativeSpecHomEquiv`.
+- L2A: the base change of abelian cones `Spec Sym F` on schemes, Tau Ceti's
+  `QuasicoherentLinearScheme.pullback` with `QuasicoherentLinearScheme.linearSpecPullbackIso`.
+- L2B: the base change of total spaces, AlgebraicVectorBundles' `totalSpaceBaseChangeIso`, which is
+  Tau Ceti's `totalSpaceSchemeBaseChangeIso`.
 
 ### From TauCetiRoadmap.DerivedModuleAlgebra
 
 - §0.7: the naive truncation `τ_{≥−1}L_{B/A}` represented by `[J/J² → Ω_{P/A} ⊗_P B]` for a
   polynomial presentation, and `Algebra.CotangentComplex.homologyOneIso`.
+- §0.8: the transitivity triangle `L_{B/A} ⊗^L_B C → L_{C/A} → L_{C/B} → (L_{B/A} ⊗^L_B C)[1]` of
+  composable ring maps, whose low-degree cohomology gives the transitivity sequence of Layer 8.3
+  on affine charts.
+- §0.10: for a Tor-independent square, `L_{B/A} ⊗^L_B B' ≅ L_{B'/A'}`, for the flat base change of
+  Layer 8.3 on affine charts.
 - §0.13: for a regular quotient of a smooth algebra, the two-term complex computes `L_{B/A}`.
 - §0.25: the obstruction to lifting an algebra map along a square-zero extension lies in
-  `Ext¹(L_{B/A}, J)` and lifts form a torsor under `Ext⁰`
-  (`Algebra.CotangentComplex.extensionObstruction`).
+  `Ext¹(L_{B/A}, J)` and lifts form a torsor under `Ext⁰`, stated there in prose; no declaration
+  name is consumed for it.
 
 ### From TauCetiRoadmap.EnhancedDerivedSheaves
 
@@ -418,9 +470,15 @@ Prove that a separated DM stack `𝓜` over `k` admits a proper cover `g : X →
 generically finite, with `X` quasi-projective over `k` (deligne-mumford1969 Theorem 4.12, line
 1012; vistoli1989 lines 582–584). Prove that if `𝓜` is integral, a proper cover can be chosen
 with `X` integral and `X → 𝓜` generically finite (vistoli1989 Lemma 1.10, line 299), and that the
-composite of a proper cover with a proper representable surjection, and the base change of a
-proper cover along a morphism of DM stacks, are proper covers. *Needs:* SchemeAndStackFoundations
-§1.20 (`IsProperStack`, `IsSeparatedStack`, `Stacks.points`), §1.19.
+composite of a proper cover of `𝓜` with a proper representable surjection `𝓜 → 𝓜'` is a proper
+cover of `𝓜'`. Prove that for a proper cover `X → 𝓜` and a morphism `q : 𝒩 → 𝓜` of DM stacks over
+`k`, the base change `X ×_𝓜 𝒩 → 𝒩` is proper and surjective, and that it is a proper cover of `𝒩`
+when its source `X ×_𝓜 𝒩` is a scheme, in particular when `q` is representable by schemes (then
+`X ×_𝓜 𝒩 → X` is representable by schemes, and `X ×_𝓜 𝒩` is of finite type over `k` because
+`X → 𝓜` is of finite type, `X` being quasi-compact and `𝓜` quasi-separated, and `𝒩` is of finite
+type over `k`). Along an arbitrary `q` the source of the base change
+is only a DM stack (Checks). *Needs:* SchemeAndStackFoundations §1.20 (`IsProperStack`,
+`IsProperStack.baseChange`, `IsSeparatedStack`, `Stacks.points`), §1.19.
 
 **Checks.**
 
@@ -429,13 +487,23 @@ proper cover along a morphism of DM stacks, are proper covers. *Needs:* SchemeAn
   has no open substack that is a scheme when `G ≠ 1`.
 - The identity of a scheme of finite type is a proper cover, including for the non-separated line
   with a doubled origin, so separatedness is sufficient and not necessary.
+- Base change along a morphism not representable by schemes: the base change of the proper cover
+  `id : Spec k → Spec k` along `B(ℤ/2) → Spec k` is the identity of `B(ℤ/2)`, proper and
+  surjective, but its source has a geometric point with automorphism group `ℤ/2` and is not a
+  scheme, so it is not a proper cover. `B(ℤ/2)` does have the proper cover `Spec k → B(ℤ/2)`.
 - Non-example: over `𝔸¹_k` let `G → 𝔸¹` be the group scheme obtained by doubling the origin of the
   trivial group scheme, so that its fibre over `0` is `ℤ/2` and over `t ≠ 0` is trivial. `BG` is a
-  DM stack with quasi-finite non-finite inertia. A proper `X → BG` from a scheme pulls the
-  universal torsor back to a `G_X`-torsor `P → X` that is proper over `𝔸¹`, hence separated over
-  `X`; but the unit section of `G` is not closed, so no `G`-torsor over a scheme meeting the fibre
-  over `0` is separated. Hence `BG` has no proper cover, and the hypothesis of Convention 3 is not
-  automatic.
+  DM stack with quasi-finite non-finite inertia. Suppose `X → BG` is a proper cover. It pulls the
+  universal torsor back to a `G_X`-torsor `P = X ×_BG 𝔸¹ → X` with `P → 𝔸¹` proper, so `P` is
+  separated and so is `P → X`; separatedness is étale-local on `X`, so `G_{X'} → X'` is separated
+  for an étale cover `X' → X` trivialising `P`. As `X` is proper and surjective over `BG`, the image
+  of `X → 𝔸¹` is closed and contains the generic point, so some irreducible component `X₁` of `X`
+  dominates `𝔸¹` and meets the fibre `X₁,0` over `0`, a nonempty proper closed subset of `X₁`. On
+  a component `X'₁` of `X'` over `X₁` meeting the fibre over `0`, `G_{X'₁}` is two copies of `X'₁`
+  glued along the complement of the fibre over `0`, which is not closed in the irreducible `X'₁`;
+  so `G_{X'₁}` is not separated over `X'₁`, a contradiction. Hence `BG` has no proper cover, and the
+  hypothesis of Convention 3 is not automatic. Torsors over schemes lying entirely over `0`, where
+  `G` is the constant `ℤ/2`, are separated: the argument needs the dominating component.
 
 ### 1.2 Closed substacks and integral substacks
 
@@ -635,8 +703,12 @@ Lemma 3.3, lines 940–948), that `ord_𝒲(φψ) = ord_𝒲(φ) + ord_𝒲(ψ)`
 - On `[𝔸¹/μ₂]`, `φ = x²` is a rational function and `div(φ) = 2·[Bμ₂]`, computed on the atlas
   `𝔸¹` as `ord_0(x²) = 2`; on the coarse line `𝔸¹_y`, `y = x²`, `div(y) = [0]`. The function `x` is
   not `μ₂`-invariant and is not a rational function on the stack.
-- On `BG`, `W_i(BG) = 0` for every `i` (there is no integral closed substack of dimension `≥ 1`),
-  so no rational equivalence exists.
+- On `BG` (`G` finite constant), the only integral closed substack is `BG`, of dimension `0`, so
+  `W_i(BG) = 0` for `i ≠ −1` and `W_{−1}(BG) = k(BG)^× = k^×`; for `k = ℚ` the element `2` of
+  `W_{−1}(BG) = ℚ^×` is not the identity. Its boundary lies in `Z_{−1}(BG) = 0`, so `∂ = 0` in
+  every degree and `R_i(BG) = 0` for every `i`. A statement that `W_*(BG)` vanishes confuses the
+  group of rational equivalences with its image (vistoli1989 lines 901–906, where `W_k` runs over
+  integral substacks of dimension `k + 1`).
 - For `φ` a unit on a dense open containing the generic point of `𝒲`, `ord_𝒲(φ) = 0`; the junk
   value of `ord` at points of coheight `≠ 1` is never used.
 
@@ -785,6 +857,10 @@ SchemeAndStackFoundations §5.5.
   and `[Spec K] × [Spec K] = p·[Spec K]`. Degrees over `k` multiply in both cases (`4 = 2 + 2`,
   `p² = p·p`); a definition by the reduced product gives `[Spec K]` in the second case.
 - `[BG] × [BH] = [B(G × H)]` for finite constant groups.
+- Unit and zero: `[Spec k] × [𝒲] = [𝒲]` under `Spec k ×_k 𝒢 = 𝒢` for every integral `𝒲 ⊆ 𝒢`, of
+  dimension `0 + dim 𝒲`; for `𝒲 = BG` the product is `[BG]`, not `|G|·[BG]` as a definition
+  weighting the product by the stabiliser order `e(𝒱 ×_k 𝒲)` would give. For the empty stack,
+  `Z_*(∅) = 0` and `∅ ×_k 𝒢 = ∅`, so every product with a cycle on the empty factor is `0`.
 
 ### Examples
 
@@ -818,8 +894,9 @@ cones (induced by graded algebra maps), closed subcones, fibre products of cones
 (behrend-fantechi1997 lines 229–236), and that cones commute with base change along any
 `𝒩 → 𝓜` (vistoli1989 lines 476–477). *Needs:* SchemeAndStackFoundations §1.22 (`Stacks.QCoh`,
 `QCoh.pullback`); Tau Ceti `gradedRelativeSpec`, `relativeSpecBaseChangeIso`, `linearSpec`,
-`totalSpace`, `totalSpaceHomEquiv`; AlgebraicVectorBundles L2A (`linearSpecBaseChangeIso`), L2B
-(`totalSpaceBaseChangeIso`).
+`totalSpace`, `totalSpaceHomEquiv`, `QuasicoherentLinearScheme.pullback`,
+`QuasicoherentLinearScheme.linearSpecPullbackIso`, `totalSpaceSchemeBaseChangeIso`
+(AlgebraicVectorBundles L2A, L2B).
 
 **Checks.**
 
@@ -1031,7 +1108,8 @@ Let `𝓜` admit a proper cover and let `π : E → 𝓜` be a vector bundle of 
 section `s`. Prove that flat pullback `π^* : A_i(𝓜)_ℚ → A_{i+r}(E)_ℚ` is an isomorphism with inverse
 the Gysin map `s^!` of 4.5. Route: `s^! π^* = id` by vistoli1989 Lemma 5.5 (lines 1673–1684, the
 vector-bundle case of the proof); surjectivity of `π^*` from a proper cover `X → 𝓜`, the induced
-proper surjection `E_X → E`, vistoli1989 Lemma 3.8 (line 1027), homotopy invariance on schemes
+proper cover `E_X := E ×_𝓜 X → E` (a base change along `E → 𝓜`, which is representable by
+schemes, so `E_X` is a scheme; 1.1), vistoli1989 Lemma 3.8 (line 1027), homotopy invariance on schemes
 (SchemeAndStackFoundations §5.2 `chow_affine_bundle`; stacks-chow Lemma 32.2, tag 0B74, line 2769)
 and push–pull (3.4). Consequences: for a closed subcone `C ⊆ E` of pure dimension `c`,
 `s^![C] ∈ A_{c−r}(𝓜)_ℚ`; for a surjection of vector bundles `q : E' → E` with
@@ -1310,8 +1388,14 @@ of `SheafOfModules O_X`, `D_coh(O_X)`, and:
   topoi `v : X_fl → X_ét`, the derived pullback `E_fl := Lv^*E` and the dual
   `E^∨ := RHom(E_fl, O_fl)` (behrend-fantechi1997 lines 642–669).
 
-Prove that `E` satisfying `(⋆)` admits, étale-locally, a representative `[E^{−1} → E^0]` with `E^0`
-free of finite rank and `E^{−1}` coherent (the reduction at lines 679–683), and that perfect objects
+Prove that for `E` satisfying `(⋆)` the truncation `τ^{≥−1}E` admits, étale-locally, a
+representative `[E^{−1} → E^0]` with `E^0` free of finite rank and `E^{−1}` coherent: étale-locally
+`E` has a resolution `⋯ → L^{−2} → L^{−1} → L^0` by free modules with `L^0`, `L^{−1}` of finite rank,
+and `τ^{≥−1}E` is represented by `[coker(L^{−2} → L^{−1}) → L^0]` (the reduction at lines 679–688).
+`E` itself need not have such a representative, since `h^{−2}(E)` and lower cohomology may be
+nonzero (Checks). Prove that `E → τ^{≥−1}E` induces an isomorphism
+`h¹/h⁰((τ^{≥−1}E)^∨) → h¹/h⁰(E^∨)`, so that `h¹/h⁰(E^∨)` (7.4) depends only on `τ^{≥−1}E`
+(line 669): the dual of `τ^{≤−2}E` has cohomology only in degrees `≥ 2`. Prove that perfect objects
 of amplitude `[−1, 0]` satisfy `(⋆)`. *Needs:* SchemeAndStackFoundations §§1.10, 1.19, 1.22, 2.9;
 EnhancedDerivedSheaves §0.2 and E1.4; Mathlib `SheafOfModules`, `DerivedCategory`,
 `AlgebraicGeometry.Scheme.smallEtaleTopology`.
@@ -1322,8 +1406,9 @@ EnhancedDerivedSheaves §0.2 and E1.4; Mathlib `SheafOfModules`, `DerivedCategor
   finite-dimensional
   `k`-representations of `G`, matching SchemeAndStackFoundations' `test_BG_representations`.
 - `O_X[1]` is perfect of amplitude `[−1, 0]` with rank `−1`. `O_X[2]` satisfies `(⋆)` but is not
-  perfect of amplitude `[−1, 0]`, and its `h¹/h⁰` (7.4) is trivial because only `τ^{≥−1}` matters
-  (behrend-fantechi1997 line 669). `O_X[−1]` violates `(⋆)` since `h¹ ≠ 0`.
+  perfect of amplitude `[−1, 0]`; it has `h^{−2} = O_X ≠ 0`, so no complex in degrees `−1, 0`
+  represents it, while `τ^{≥−1}(O_X[2]) = 0` is represented by the zero complex and its `h¹/h⁰`
+  (7.4) is trivial (behrend-fantechi1997 line 669). `O_X[−1]` violates `(⋆)` since `h¹ ≠ 0`.
 - On `Spec k[ε]/(ε²)`, the complex `k[0]` (the residue field) satisfies `(⋆)` and is not perfect of
   any finite amplitude.
 
@@ -1332,16 +1417,26 @@ EnhancedDerivedSheaves §0.2 and E1.4; Mathlib `SheafOfModules`, `DerivedCategor
 For a homomorphism `d : E⁰ → E¹` of abelian sheaves on a site, define `h¹/h⁰(E^•) := [E¹/E⁰]`, the
 Picard stack whose objects over `U` are an `E⁰`-torsor `P` with an `E⁰`-equivariant `P → E¹|_U`, by
 SchemeAndStackFoundations' `Stack.quotient` (behrend-fantechi1997 lines 535–544); a morphism of
-complexes induces an additive morphism and a homotopy a 2-isomorphism (lines 545–573). Prove
-Proposition 2.1 (line 574: a quasi-isomorphism induces an isomorphism of Picard stacks) and Lemma
-2.2 (line 635: morphisms in the derived category are determined by their `h¹/h⁰`, and the
-automorphisms of the zero morphism are `Hom^{−1}`). For an arbitrary complex put
-`h¹/h⁰(E^•) := h¹/h⁰([C⁰ → Z¹])` (lines 603–608) and, for `E ∈ D(O_X)` satisfying `(⋆)`,
+complexes induces an additive morphism and a homotopy a 2-isomorphism (lines 545–573), and for
+complexes of `O`-modules these are compatible with the `O`-module structures (the action of the
+multiplicative monoid `𝔸¹` on the stacks of 7.2). Prove Proposition 2.1 (line 574: a
+quasi-isomorphism induces an isomorphism of Picard stacks). For an arbitrary complex put
+`h¹/h⁰(E^•) := h¹/h⁰(τ_{[0,1]}E^•)` with `τ_{[0,1]}E^• = [C⁰ → Z¹]` (lines 603–608), so that a
+morphism in the derived category induces a morphism of Picard stacks through `τ_{[0,1]}`, unique up
+to 2-isomorphism (lines 609–628). Prove Lemma 2.2 (line 635) on complexes `E^•`, `F^•` of
+`O`-modules with cohomology only in degrees `0` and `1`: a morphism `E^• → F^•` in the derived
+category is determined by the induced `O`-linear additive morphism of Picard stacks up to `O`-linear
+2-isomorphism, and the `O`-linear 2-automorphisms of the zero morphism form
+`Hom_{D(O)}(E^•, F^•[−1]) = Hom(h¹(E^•), h⁰(F^•))`; for abelian sheaves this is Deligne's
+correspondence between two-term complexes and strictly commutative Picard stacks. On arbitrary
+complexes the construction is not faithful: `h¹/h⁰` sees only `τ_{[0,1]}`, and the source prints
+the faithfulness for all of `D(O_X)` (Checks). For `E ∈ D(O_X)` satisfying `(⋆)` put
 `h¹/h⁰(E^∨) := h¹/h⁰` of a complex representing `E^∨` on `X_fl`, well defined up to equivalence by
-Proposition 2.1 (lines 609–628). Prove Proposition 2.4 (line 674): `h¹/h⁰(E^∨)` is an abelian cone
-stack over `X`, equal to `[C(E^{−1})/C(E^0)]` for every local presentation `[E^{−1} → E^0]` with
-`E^0` locally free, hence independent of the presentation, and a vector bundle stack when `E` is
-perfect of amplitude `[−1, 0]`; in that case `h¹/h⁰(E^∨) ≅ [E_1/E_0]` with `E_i = C(E^{−i})`.
+Proposition 2.1, and depending only on `τ^{≥−1}E` (7.3). Prove Proposition 2.4 (line 674):
+`h¹/h⁰(E^∨)` is an abelian cone stack over `X`, equal to `[C(E^{−1})/C(E^0)]` for every local
+presentation `[E^{−1} → E^0]` of `τ^{≥−1}E` with `E^0` locally free (7.3), hence independent of the
+presentation, and a vector bundle stack when `E` is perfect of amplitude `[−1, 0]`; in that case
+`τ^{≥−1}E = E` and `h¹/h⁰(E^∨) ≅ [E_1/E_0]` with `E_i = C(E^{−i})`.
 *Needs:* 7.2,
 7.3; SchemeAndStackFoundations §1.21 (`Stack.quotient`).
 
@@ -1354,6 +1449,11 @@ perfect of amplitude `[−1, 0]`; in that case `h¹/h⁰(E^∨) ≅ [E_1/E_0]` w
 - `E = Ω_X[0]` for `X` smooth gives `B T_X`, the classifying stack of the tangent bundle, and
   `E = [I/I² → Ω_W|_U]` for a closed immersion `U ⊆ W` into a smooth scheme gives
   `[N_{U/W}/T_W|_U]`.
+- Faithfulness fails outside degrees `[0, 1]`. On `Spec k`, the complex `k[2]` (the field in degree
+  `−2`) has `End_{D(k)}(k[2]) = k`, while `τ_{[0,1]}(k[2]) = 0`, so `h¹/h⁰(k[2])` is the trivial
+  Picard stack and `id` and `0` induce the same morphism. For two-term complexes the correspondence
+  is bijective: for `E^• = F^• = [0 → k]` (in degrees `0, 1`), `h¹/h⁰ = 𝔸¹` and the `O`-linear
+  endomorphisms of `𝔸¹` are the scalars, matching `End_{D(k)}(k[−1]) = k`.
 
 ### 7.5 Morphisms between stacks h¹/h⁰
 
@@ -1384,7 +1484,8 @@ For `φ : E → F` in `D(O_X)` between objects satisfying `(⋆)`, let
 ### Examples
 
 - `BT_X = h¹/h⁰(Ω_X^∨)` for smooth `X`, the intrinsic normal sheaf of a smooth stack (8.4).
-- `[C(E^{−1})/C(E^0)]` for a two-term complex, the local form of every `h¹/h⁰(E^∨)`.
+- `[C(E^{−1})/C(E^0)]` for a two-term complex, the local form of every `h¹/h⁰(E^∨)` through a
+  local presentation of `τ^{≥−1}E`.
 
 ### Dependencies
 
@@ -1472,24 +1573,61 @@ this roadmap. *Needs:* 8.1, 7.3; DerivedModuleAlgebra §0.7; Mathlib
 
 ### 8.3 Functoriality, base change, products and transitivity
 
-Prove:
+In this subsection `u^*` is derived pullback; it is right t-exact, so `u^*τ^{≥−1}L_{M/𝔐}` has no
+cohomology in positive degrees and the same `h^0` and `h^{−1}` as the derived pullback of any
+complex whose truncation is `τ^{≥−1}L_{M/𝔐}`, but it can have `h^{−2} ≠ 0`. Prove:
 
 - functoriality: a 2-commutative square `M' → M` over `𝔐' → 𝔐` of morphisms of Deligne–Mumford type
-  induces `u^*τ^{≥−1}L_{M/𝔐} → τ^{≥−1}L_{M'/𝔐'}`, built from compatible relative local embeddings,
-  with identity and composition laws; it is an isomorphism when the square is 2-cartesian and
-  either `f` or `𝔐' → 𝔐` is flat (olsson2007 Theorem 8.1 (ii), line 1136);
+  induces `c : u^*τ^{≥−1}L_{M/𝔐} → τ^{≥−1}L_{M'/𝔐'}`, built from compatible relative local
+  embeddings, with identity and composition laws. Likewise, for `h : X → Z` over `𝔐` with `Z` an
+  algebraic `k`-stack smooth of Deligne–Mumford type over `𝔐` and `Ω_{Z/𝔐}` its locally free
+  relative cotangent sheaf (descended as in 8.1), there is a morphism
+  `ε_h : h^*Ω_{Z/𝔐}[0] → τ^{≥−1}L_{X/𝔐}` lifting `h^*Ω_{Z/𝔐} → Ω_{X/𝔐}`, built from relative local
+  embeddings of graph form `U → W ×_𝔐 V` with `V → Z` a smooth atlas, through
+  `h^*Ω_{Z/𝔐} → Ω_{V/𝔐}|_U` in degree `0`; it is `c` for the square `X → Z` over `𝔐 = 𝔐` when `Z` is
+  a DM stack;
+- base change: when the square is 2-cartesian, `h^0(c) : u^*Ω_{M/𝔐} → Ω_{M'/𝔐'}` is an isomorphism
+  and `h^{−1}(c)` is surjective (on affine charts, for a presentation `P → B` over `A` with kernel
+  `I` and its base change `P' = P ⊗_A A' → B' = B ⊗_A A'` with kernel `I'`, the map
+  `I/I² ⊗_B B' → I'/I'²` is surjective and `Ω_{P/A} ⊗_P B' ≅ Ω_{P'/A'} ⊗_{P'} B'`, and `h^{−1}` of
+  the derived pullback of `[I/I² → Ω_{P/A} ⊗ B]` surjects onto that of its termwise pullback because
+  the degree-`0` term is free). When moreover `f` or `𝔐' → 𝔐` is flat, `c` induces an isomorphism
+  `τ^{≥−1}(u^*τ^{≥−1}L_{M/𝔐}) ≅ τ^{≥−1}L_{M'/𝔐'}`: on affine charts the two ring maps are Tor
+  independent, and DerivedModuleAlgebra §0.10 (stacks-cotangent Lemma 6.2, tag 08QQ, line 519)
+  identifies the derived base change of the full cotangent complex with that of the base change,
+  whose truncations are the two sides (olsson2007 Theorem 8.1 (ii), line 1136, is the statement for
+  the full complex on stacks). The map `c` itself is an isomorphism when moreover `u` is flat (in
+  particular when `𝔐' → 𝔐` is flat, `u` being a base change of it) or `τ^{≥−1}L_{M/𝔐}` is perfect
+  of amplitude `[−1, 0]`, since `u^*τ^{≥−1}L_{M/𝔐}` then has no cohomology below `−1`; for `f`
+  flat and `u` not flat the truncation cannot be dropped (Checks);
 - products: for `M → 𝔐` and `M' → 𝔐'`,
   `τ^{≥−1}L_{M×M'/𝔐×𝔐'} ≅ pr^*τ^{≥−1}L_{M/𝔐} ⊕ pr'^*τ^{≥−1}L_{M'/𝔐'}` (behrend-fantechi1997
   Proposition 5.7, line 1366, and line 1373);
 - local complete intersections: if the relative local embeddings can be chosen regular (`M → 𝔐` a
   local complete intersection morphism), `τ^{≥−1}L_{M/𝔐}` is perfect of amplitude `[−1, 0]`;
-- transitivity: for morphisms of Deligne–Mumford type `M' → M → 𝔐` with `u : M' → M` a local
-  complete intersection, there is a distinguished triangle
-  `u^*τ^{≥−1}L_{M/𝔐} → τ^{≥−1}L_{M'/𝔐} → τ^{≥−1}L_{M'/M} → u^*τ^{≥−1}L_{M/𝔐}[1]`
-  (behrend-fantechi1997 lines 1045–1050; stacks-cotangent Lemma 18.8, tag 08SZ, line 1543, for the
-  untruncated triangle on a site), the truncation being exact because `h^{−2}(τ^{≥−1}L_{M'/M}) = 0`.
+- transitivity: for morphisms of Deligne–Mumford type `M' --u--> M --f--> 𝔐`, the functoriality
+  morphisms `u^*τ^{≥−1}L_{M/𝔐} → τ^{≥−1}L_{M'/𝔐} → τ^{≥−1}L_{M'/M}` have composite `0`, and with a
+  natural connecting homomorphism `∂ : h^{−1}(τ^{≥−1}L_{M'/M}) → u^*Ω_{M/𝔐}` the sequence of sheaves
+  `h^{−1}(u^*τ^{≥−1}L_{M/𝔐}) → h^{−1}(τ^{≥−1}L_{M'/𝔐}) → h^{−1}(τ^{≥−1}L_{M'/M}) → u^*Ω_{M/𝔐} → Ω_{M'/𝔐} → Ω_{M'/M} → 0`
+  is exact. On affine charts this is the low-degree part of the transitivity triangle of the full
+  cotangent complexes of the ring maps (DerivedModuleAlgebra §0.8), whose last five terms are
+  Mathlib's Jacobi–Zariski sequence (`Algebra.H1Cotangent.δ`, `Algebra.H1Cotangent.exact_map_δ`,
+  `Algebra.H1Cotangent.exact_δ_mapBaseChange`, `KaehlerDifferential.exact_mapBaseChange_map`); the
+  local sequences are sequences of sheaves and glue. The three truncated objects do not form a
+  distinguished triangle in general, even when `u` is a regular immersion (Checks), although
+  behrend-fantechi1997 asserts one for local complete intersections (lines 1045–1046), on the model
+  of the untruncated triangle (stacks-cotangent Lemma 18.8, tag 08SZ, line 1543). When `u` is
+  smooth there is a distinguished triangle
+  `u^*τ^{≥−1}L_{M/𝔐} → τ^{≥−1}L_{M'/𝔐} → Ω_{M'/M}[0] → u^*τ^{≥−1}L_{M/𝔐}[1]` whose first two arrows
+  are the functoriality morphisms: étale-locally, for a relative local embedding `(U, W)` of `M`,
+  choose an affine chart `U'` of `M'` étale over `𝔸^d_U` and put `W' := 𝔸^d_W`; then
+  `K_{U',W'} = [u^*(I/I²) → u^*Ω_{W/𝔐} ⊕ O^d]` contains `u^*K_{U,W}` as a degreewise split
+  subcomplex with quotient `Ω_{U'/U}[0]` (`u` is flat, so `u^*` is computed termwise), and with
+  covers chosen compatibly these short exact sequences assemble on the Čech models of 8.2.
 
-*Needs:* 8.2, 7.3.
+*Needs:* 8.2, 7.3; DerivedModuleAlgebra §§0.8, 0.10; Mathlib `Algebra.H1Cotangent.δ`,
+`Algebra.H1Cotangent.exact_map_δ`, `Algebra.H1Cotangent.exact_δ_mapBaseChange`,
+`KaehlerDifferential.exact_mapBaseChange_map`.
 
 **Checks.**
 
@@ -1497,13 +1635,27 @@ Prove:
   change to the origin is `M' = Spec k[y]`, smooth over `Spec k` with `h^{−1}(τ^{≥−1}L_{M'/k}) = 0`.
   Through `W = 𝔸²` over `𝔸¹`, `τ^{≥−1}L_{M/𝔐} = [A --x·dy--> A dy]`, whose derived pullback to `M'`
   is `[k[y] --0--> k[y] dy]` with `h^{−1} = k[y] ≠ 0`, so the functoriality map is not an
-  isomorphism. For the flat `t ↦ t² : 𝔸¹ → 𝔸¹` (char `k ≠ 2`), base change to the origin is an
-  isomorphism: both sides are `[A --2t--> A]`, `A = k[t]/(t²)`, with `h^{−1} ≅ h^0 ≅ k`.
+  isomorphism; it is surjective on `h^{−1}` and an isomorphism on `h^0`, as base change requires.
+  For the flat `t ↦ t² : 𝔸¹ → 𝔸¹` (char `k ≠ 2`), base change to the origin is an isomorphism: both
+  sides are `[A --2t--> A]`, `A = k[t]/(t²)`, with `h^{−1} ≅ h^0 ≅ k`.
+- The truncation in flat base change cannot be dropped. Let `A = k[x, y, z]/I` with
+  `I = (xy, xz, yz)` (the three coordinate axes), flat over `k[t]` through `t = x + y + z` (a
+  nonzerodivisor on the reduced `A`), and `B = A/(t)`. Through `W = 𝔸³` over `𝔸¹`, the class `c` of
+  `xyz` in `I/I²` is nonzero (`xyz` has degree `3`, `I²` starts in degree `4`), has `dc = 0` in
+  `Ω_{W/𝔸¹} ⊗ A` (its coefficients `yz, xz, xy` lie in `I`) and satisfies `t·c = 0` (each of
+  `x²yz, xy²z, xyz²` is a product of two generators). So `c ∈ h^{−1}(τ^{≥−1}L_{A/k[t]})` is
+  `t`-torsion, and `h^{−2}(B ⊗^L_A τ^{≥−1}L_{A/k[t]})` contains `k·c ≠ 0`, while `τ^{≥−1}L_{B/k}` has
+  no `h^{−2}`; after `τ^{≥−1}` the two agree.
+- Transitivity is an exact sequence, not a triangle of truncations. Over `k`, with `A`, `B`, `c`
+  as above (now through `W = 𝔸³` over `Spec k`) and `u : Spec B → Spec A` the regular immersion
+  `t = 0`, `τ^{≥−1}L_{B/A} = B[1]` has no cohomology in degree `−3`, so a distinguished triangle
+  `u^*τ^{≥−1}L_{A/k} → τ^{≥−1}L_{B/k} → B[1]` would force `h^{−2}(u^*τ^{≥−1}L_{A/k}) = 0`, but it
+  contains `k·c`. For the origin `u : Spec k → 𝔸¹` over `Spec k`: `u^*τ^{≥−1}L_{𝔸¹/k} = k`,
+  `τ^{≥−1}L_{pt/k} = 0` and `τ^{≥−1}L_{pt/𝔸¹} = (I/I²)[1] = k[1]`, and the exact sequence reads
+  `0 → 0 → k --∂--> k → 0 → 0 → 0` with `∂(t) = dt`, an isomorphism. For the smooth projection
+  `u : 𝔸¹ × M → M` the triangle `u^*τ^{≥−1}L_{M/𝔐} → τ^{≥−1}L_{𝔸¹×M/𝔐} → O[0]` is split.
 - Products: for `M = M' = Spec k[x]/(x²)` over `Spec k`, the product `Spec k[x, y]/(x², y²)` has
   `h^0` free of rank `2` over `k[x,y]/(x², y²)` modulo `(2x dx, 2y dy)`, the sum of the two factors.
-- Transitivity for the origin `u : Spec k → 𝔸¹` over `Spec k`: `u^*τ^{≥−1}L_{𝔸¹/k} = k`,
-  `τ^{≥−1}L_{pt/k} = 0` and `τ^{≥−1}L_{pt/𝔸¹} = (I/I²)[1] = k[1]`, giving the distinguished triangle
-  `k → 0 → k[1] --id--> k[1]`.
 
 ### 8.4 The relative intrinsic normal sheaf
 
@@ -1599,7 +1751,8 @@ Prove:
   of pure dimension, with `(i, i) : X → Y ×_𝔐 Y` a local embedding, `β(Y', X)` is invariant under
   `T_{Y'/𝔐}|_{X'}`, acting through `T_{Y'/𝔐} → T_{Y/𝔐}|_{Y'}`. Indeed, étale-locally on `Y`,
   generators `f_1, …, f_c` of the ideal of `Y'` have differentials independent in `Ω_{Y/𝔐}` along
-  `Y'`, since the transitivity triangle of 8.3 for `Y' → Y → 𝔐` gives the exact sequence
+  `Y'`, since the transitivity sequence of 8.3 for `Y' → Y → 𝔐`, with
+  `h^{−1}(τ^{≥−1}L_{Y'/𝔐}) = 0` and `Ω_{Y'/Y} = 0`, gives the exact sequence
   `0 → I/I² → Ω_{Y/𝔐}|_{Y'} → Ω_{Y'/𝔐} → 0`; so `(f_1, …, f_c) : Y → 𝔸^c × 𝔐` is smooth along `Y'`,
   `Y'` is the inverse image of `{0} × 𝔐`, and the first statement applies over `𝔅 = 𝔸^c × 𝔐`, with
   `T_{Y/𝔅}|_{Y'} = T_{Y'/𝔐}`. For `𝔐 = Spec k`, kresch1999b Theorem 3.1 (line 334) proves this
@@ -1657,7 +1810,8 @@ Prove:
 
 ### Dependencies
 
-Layers 1, 4 and 7; DerivedModuleAlgebra §0.7; Mathlib `Algebra.Extension.cotangentComplex`;
+Layers 1, 4 and 7; DerivedModuleAlgebra §§0.7, 0.8, 0.10; Mathlib
+`Algebra.Extension.cotangentComplex` and the Jacobi–Zariski sequence (`Algebra.H1Cotangent.δ`);
 SchemeAndStackFoundations §§1.1, 1.19–1.20. Within the layer, 8.1 → 8.2 → 8.3 → 8.4 → 8.5.
 
 ## Layer 9: obstruction theories
@@ -1735,7 +1889,9 @@ Prove that for `E` satisfying `(⋆)` and `φ : E → τ^{≥−1}L_{M/𝔐}` th
 4. for every such `(T, T̄, g)`, `Ext(g, T̄)` is isomorphic to the sheaf of `𝔸¹`-equivariant
    isomorphisms from `φ^∨ ∘ ob(g)` to the vertex `C(J) → g^*h¹/h⁰(E^∨)`.
 
-Route: (1) ⇔ (2) by 7.5; (2) ⇒ (4) by 9.1; (4) ⇒ (3) by Lemma 2.2 of 7.4; (3) ⇒ (1) by the
+Route: (1) ⇔ (2) by 7.5; (2) ⇒ (4) by 9.1; (4) ⇒ (3) by Lemma 2.2 of 7.4, applied on `T_fl` to
+`τ_{[0,1]}((g^*E)^∨)` and `τ_{[0,1]}((J[1])^∨) = J^∨[−1]` (whose `h¹/h⁰` is `C(J)`), complexes with
+cohomology in degrees `0` and `1`, where the lemma holds; (3) ⇒ (1) by the
 argument with trivial square-zero extensions `A ⊕ M` for `h^0` and with `T = M ⊆ T̄ ⊆ W` for
 `h^{−1}` (lines 1175–1201). *Needs:* 7.5, 9.1, 9.2.
 
@@ -1880,7 +2036,10 @@ The smoothness criterion uses Mathlib's `Algebra.FormallySmooth` on the local pr
 
 - `M = ℙ¹`, `E = [O(a) --0--> Ω_{ℙ¹}]`: `Ob = O(−a)`, `s = 1`, `deg [ℙ¹, E]^vir = −a`; for `a = 0`,
   `Ob = O` and the class is `c_1(O) ∩ [ℙ¹] = 0`, although `M` is smooth of dimension `1 > vd = 0`.
-- `M = Spec k`, `E = [O^s → 0]`: `Ob = O^s`, `vd = −s`, and `c_s(O^s) ∩ [pt] ∈ A_{−s} = 0`.
+- `M = Spec k`, `E = [O^s → 0]` (an obstruction theory, `h^{−1}(φ) : O^s → 0` being surjective):
+  `Ob = O^s`, `vd = −s` and `[M, E]^vir = c_s(O^s) ∩ [pt]`. For `s > 0` this lies in `A_{−s} = 0`;
+  for `s = 0`, `E = 0`, `vd = 0`, `c_0 = 1` and the class is `[Spec k] ≠ 0` in `A_0(Spec k)_ℚ = ℚ`,
+  as the first item requires. The degrees are `1, 0, 0` for `s = 0, 1, 2`.
 - Smoothness of `M` is needed for the second item: for `M = Spec A`, `A = k[x]/(x²)`, and
   `E = τ^{≥−1}L_M = [A --2x--> A dx]` (char `k ≠ 2`), `Ob = A/(x)` is not locally free, and
   `[M, E]^vir = [M] = 2·[pt]`, the class of a regular zero locus (9.4).
@@ -1929,11 +2088,29 @@ invariance of 8.5, whose route applies 4.4 on `W ×_𝔐 W`.
 
 ### 10.7 Functoriality
 
-For a 2-cartesian square `X' → X` over `v : Z' → Z`, of stacks over `𝔐` with finite unramified
-diagonal over `𝔐`, with `v` a local complete intersection morphism, and perfect obstruction theories
-`E` for `X/𝔐`, `F` for `X'/𝔐` with global resolutions, define a compatibility datum as a morphism of
-distinguished triangles from `u^*E → F → g^*τ^{≥−1}L_{Z'/Z}` to the transitivity triangle of 8.3
-(behrend-fantechi1997 Definition 5.8, line 1381; relative form, lines 1721–1733). Here `v^!` is the
+Consider a 2-cartesian square `u : X' → X` over `v : Z' → Z`, with `g : X' → Z'` and `h : X → Z`,
+of stacks over `𝔐` with finite unramified diagonal over `𝔐`, perfect obstruction theories
+`φ_E : E → τ^{≥−1}L_{X/𝔐}` and `φ_F : F → τ^{≥−1}L_{X'/𝔐}` with global resolutions, and `v` in one
+of two cases: (a) `v` is smooth; (b) `Z'` and `Z` are smooth over `𝔐` (then `v` is a local complete
+intersection morphism). Put `L_v := Ω_{Z'/Z}[0]` in case (a) and
+`L_v := [v^*Ω_{Z/𝔐} --dv--> Ω_{Z'/𝔐}]` (degrees `−1, 0`) in case (b). In case (b) `L_v` is perfect of
+amplitude `[−1, 0]`, it is `τ^{≥−1}L_{Z'/Z}` through the graph embedding `Z' → Z' ×_𝔐 Z` when `Z'` is
+a DM stack, and the cone of `dv` is a distinguished triangle
+`v^*Ω_{Z/𝔐} → Ω_{Z'/𝔐} → L_v --κ_v--> v^*Ω_{Z/𝔐}[1]`. Let `b : g^*L_v → τ^{≥−1}L_{X'/X}` be the
+base-change morphism (in case (a) the isomorphism `g^*Ω_{Z'/Z} ≅ Ω_{X'/X}`; in case (b) built, as
+`ε_h` in 8.3, from relative local embeddings of `X'` over `X` of graph form `U' → U ×_𝔐 V'` with
+`V' → Z'` a smooth atlas), and let `κ : g^*L_v → u^*τ^{≥−1}L_{X/𝔐}[1]` be, in case (a), the
+connecting morphism of the distinguished triangle of 8.3 for the smooth `u` composed with `b`, and,
+in case (b), `u^*ε_h[1] ∘ g^*κ_v` with `ε_h : h^*Ω_{Z/𝔐} → τ^{≥−1}L_{X/𝔐}` of 8.3. Define a
+compatibility datum as a distinguished triangle `u^*E --ψ--> F --ψ'--> g^*L_v --χ--> u^*E[1]` in
+`D(O_{X'})` with `φ_F ∘ ψ = c ∘ u^*φ_E`, `b ∘ ψ' = c' ∘ φ_F` and `u^*φ_E[1] ∘ χ = κ`, where
+`c : u^*τ^{≥−1}L_{X/𝔐} → τ^{≥−1}L_{X'/𝔐}` and `c' : τ^{≥−1}L_{X'/𝔐} → τ^{≥−1}L_{X'/X}` are the
+functoriality morphisms of 8.3. In case (a) this is a morphism from the triangle to the distinguished
+triangle of 8.3 for `u`. These three squares are what behrend-fantechi1997 Definition 5.8 (line
+1381; relative form, lines 1721–1733) asks of a morphism of triangles to the row
+`u^*τ^{≥−1}L_{X/𝔐} → τ^{≥−1}L_{X'/𝔐} → τ^{≥−1}L_{X'/X}`; that row is not a distinguished triangle in
+general (8.3, Checks), and `u`, a base change of `v`, need not be a local complete intersection, so
+the datum uses the row only through `c`, `c'`, `b` and the class `κ`. Here `v^!` is the
 Gysin map of the local complete intersection morphism `v` (4.5): flat pullback
 when `v` is smooth, and when `Z'`, `Z` are smooth over `𝔐` the composite of the Gysin map of the
 graph `Γ_v : Z' → Z' ×_𝔐 Z`, a regular local embedding, with flat pullback along the projection to
@@ -1942,9 +2119,10 @@ graph `Γ_v : Z' → Z' ×_𝔐 Z`, a regular local embedding, with flat pullbac
 smooth over `𝔐` (Proposition 5.10, line 1428; Proposition 7.5, line 1734, whose base is smooth of
 constant dimension, line 1668). The second case uses the rational equivalence of
 behrend-fantechi1997 Lemma 5.9 (line 1397), formed in the ambient of the graph so that `v` need not
-be an embedding. Put `𝔈 := h¹/h⁰(E^∨)`, `𝔉 := h¹/h⁰(F^∨)` and
-`𝔑_v := h¹/h⁰(τ^{≥−1}L_{Z'/Z}^∨) = [v^*T_{Z/𝔐}/T_{Z'/𝔐}]`; the compatibility datum gives the short
-exact sequence `g^*𝔑_v → 𝔉 → u^*𝔈` (7.5; behrend-fantechi1997 lines 1389–1392). For a relative
+be an embedding. Put `𝔈 := h¹/h⁰(E^∨)`, `𝔉 := h¹/h⁰(F^∨)` and `𝔑_v := h¹/h⁰(L_v^∨)`, which is
+`[v^*T_{Z/𝔐}/T_{Z'/𝔐}]` in case (b) and `B T_{Z'/Z}` in case (a); the distinguished triangle of the
+compatibility datum gives the short exact sequence `g^*𝔑_v → 𝔉 → u^*𝔈` (7.5; behrend-fantechi1997
+lines 1389–1392). For a relative
 local embedding `(U, W)` of `X` over `𝔐`, put `Y := Z' ×_𝔐 Z ×_𝔐 W` and `Y' := Z' ×_𝔐 W`, mapped
 to `Y` by the graph of `v` times `W`: a section of the smooth projection `Y → Y'` and a base change
 of the diagonal of `Z` over `𝔐`, hence a regular local embedding, with normal bundle `N` the
@@ -1980,8 +2158,10 @@ uses no hypothesis on `𝔐`.
 - `Z' = Z × 𝔸¹ → Z` the projection, `X' = X × 𝔸¹`, `F = E ⊞ Ω_{𝔸¹}`:
   `v^* [X, E]^vir = [X, E]^vir × [𝔸¹] = [X', F]^vir`, matching 10.5.
 - A local complete intersection that is neither smooth nor an embedding: over `𝔐 = Spec k`,
-  `v : 𝔸² → 𝔸¹`, `(s, t) ↦ st`, with `X = Z`, `E = Ω_{𝔸¹}`, `X' = Z'`, `F = Ω_{𝔸²}` and the
-  transitivity triangle as compatibility datum. The graph `{z = st} ⊆ 𝔸² × 𝔸¹` is a smooth divisor,
+  `v : 𝔸² → 𝔸¹`, `(s, t) ↦ st`, with `X = Z`, `E = Ω_{𝔸¹}`, `X' = Z'`, `F = Ω_{𝔸²}` and, as
+  compatibility datum, the cone triangle `v^*Ω_{𝔸¹} → Ω_{𝔸²} → L_v --κ_v--> v^*Ω_{𝔸¹}[1]` of case
+  (b), with `L_v = [O --(t, s)--> O ds ⊕ O dt]` (`dz ↦ t ds + s dt`); here `h = id`, so `κ = κ_v`,
+  `c = dv`, and `b` is the identity of `L_v = τ^{≥−1}L_{𝔸²/𝔸¹}`, so the three squares commute. The graph `{z = st} ⊆ 𝔸² × 𝔸¹` is a smooth divisor,
   so `v^![𝔸¹] = Γ_v^![𝔸³] = [𝔸²] = [X', F]^vir`, which is also the flat pullback. In the route, with
   `U = W = 𝔸¹`, the vector `(a, b, e)` of `T_{Y'} = T_{𝔸²} ⊕ T_W` moves the normal coordinate
   `ζ = z − w` of the diagonal `U ⊆ Z × W` by `ζ ↦ ζ + at + bs − e`, transitively with stabiliser
@@ -2006,14 +2186,18 @@ uses no hypothesis on `𝔐`.
 
 For `M` proper over `k`, define the virtual degree `∫_M α ∩ [M, E]^vir ∈ ℚ` for a class `α` of
 degree `vd` (a product of Chern classes of vector bundles on `M`), and, when `vd = 0`, the virtual
-count `∫_M [M, E]^vir ∈ ℚ` (6.3). Prove deformation invariance: let `𝔐` be reduced, `B` a smooth
-connected curve over `k`, and `M → 𝔐 × B` a morphism of Deligne–Mumford type with `M` proper over
-`B` and a perfect obstruction theory over `𝔐 × B` with a global resolution; then
-`b ↦ ∫_{M_b} [M_b, E_b]^vir` is constant on `B(k)`, where `M_b` is the fibre with the pulled-back
-theory of 10.6. Route: `[M_b, E_b]^vir = i_b^![M, E]^vir` by the regular case of 10.6 for the
-regular local embedding `𝔐 × {b} → 𝔐 × B`, whose target is reduced because it is smooth over the
-reduced `𝔐`; `i_b^!` commutes with pushforward to `B`, and the pushforward of `[M, E]^vir` to
-`A_1(B)_ℚ = ℚ·[B]` restricts to the same multiple of `[b]` for every `b`.
+count `∫_M [M, E]^vir ∈ ℚ` (6.3). Prove deformation invariance: let `𝔐` be reduced of pure
+dimension `m`, `B` a smooth connected curve over `k`, and `M → 𝔐 × B` a morphism of
+Deligne–Mumford type with `M` proper over `B` and a perfect obstruction theory `E` of rank `r` over
+`𝔐 × B` with a global resolution, such that the fibres have virtual dimension zero, `m + r = 0`
+(equivalently `[M, E]^vir ∈ A_1(M)_ℚ`); then `b ↦ ∫_{M_b} [M_b, E_b]^vir` is constant on `B(k)`,
+where `M_b` is the fibre over `b ∈ B(k)`, proper over `k`, with the pulled-back theory of 10.6, of
+virtual dimension `m + r = 0` over `𝔐`. Route: `[M_b, E_b]^vir = i_b^![M, E]^vir` by the regular case
+of 10.6 for the regular local embedding `𝔐 × {b} → 𝔐 × B`, whose target is reduced because it is
+smooth over the reduced `𝔐`; `i_b^!` commutes with pushforward to `B`, and the pushforward of
+`[M, E]^vir` to `A_1(B)_ℚ = ℚ·[B]` restricts to the same multiple of `[b]` for every `b`. Without
+`m + r = 0` the fibre classes lie in `A_{m+r}(M_b)_ℚ` and `∫` of 6.3, defined on `A_0`, does not
+apply (Checks).
 *Needs:* 6.3, 10.2, 10.6; 3.3, 4.5.
 
 **Checks.**
@@ -2022,6 +2206,13 @@ reduced `𝔐`; `i_b^!` commutes with pushforward to `B`, and the pushforward of
   count is the number of points of `Z(s)` counted with multiplicity, `∫ c_r(V) ∩ [W]`; for `W = ℙ¹`,
   `V = O(2)`, `s = x² + y²` over `ℂ`, it is `2`.
 - `M = BG` over `Spec k` with `E = 0`: `vd = 0` and the virtual count is `1/|G|`.
+- The sign of the dualisation is seen by the count: for `M = ℙ¹` over `Spec k` and
+  `E = [O(1) --0--> Ω_{ℙ¹}]` (`vd = 0`), the virtual count is `deg c_1(O(−1)) ∩ [ℙ¹] = −1` (10.2,
+  Checks); the wrong dual, the total space of `O(1)`, would give `+1`.
+- Fibre virtual dimension zero is needed in the deformation statement: for `𝔐 = Spec k`, `B = 𝔸¹`,
+  `M = ℙ¹ × B` and `E = Ω_{M/B}` (`m + r = 0 + 1 = 1`), each fibre class is `[ℙ¹] ∈ A_1`, outside the
+  domain of `∫`; for `M = B` and `E = 0` (`m + r = 0`) each fibre count is `1` and the pushforward of
+  `[M, E]^vir = [B]` is `1·[B]`.
 
 ### Examples
 
@@ -2071,11 +2262,26 @@ and the derived functors `Lπ^*` and `Rπ_*` with their adjunction (EnhancedDeri
 Prove that for a locally free `V` of finite rank on `𝒞_M`, `Rπ_*V` is perfect of amplitude
 `[0, 1]` and commutes with base change along `M' → M` (StableReduction Layer 2, cohomology and base
 change, on étale charts of `M`). Construct the relative dualising sheaf `ω_π`, invertible, by étale
-descent of StableReduction Layer 2's `ω_{𝒞_U/U}` along its base-change isomorphisms, the trace
-`R¹π_*ω_π → O_M`, and prove Serre duality `(Rπ_*V)^∨ ≅ Rπ_*(V^∨ ⊗ ω_π)[1]` and the adjunction
-`Rπ_* ⊣ π^!` with `π^! = Lπ^*(−) ⊗ ω_π[1]` on `D(O_M)`, compatible with base change
-(SchemeAndStackFoundations §2.20 on étale charts; behrend-fantechi1997 lines 1539–1545). *Needs:*
-7.3; SchemeAndStackFoundations §§1.10, 2.20; StableReduction Layer 2; EnhancedDerivedSheaves E1.4.
+descent of StableReduction Layer 2's `ω_{𝒞_U/U}` along its base-change isomorphisms, and the trace
+`R¹π_*ω_π → O_M`. Let `D_QCoh` and `D^+_QCoh` denote the full subcategories of complexes with
+quasi-coherent cohomology, bounded below for `D^+_QCoh`, and put
+`π^! := Lπ^*(−) ⊗ ω_π[1] : D^+_QCoh(O_M) → D^+_QCoh(O_{𝒞_M})`. Prove Grothendieck duality on these
+categories: for `L ∈ D_QCoh(O_{𝒞_M})` and `K ∈ D^+_QCoh(O_M)` there is a natural isomorphism
+`Rπ_*RHom(L, π^!K) ≅ RHom(Rπ_*L, K)` in `D(O_M)`, compatible with étale base change on `M`, hence
+the adjunction `Hom(Rπ_*L, K) ≅ Hom(L, π^!K)`; and Serre duality
+`(Rπ_*V)^∨ ≅ Rπ_*(V^∨ ⊗ ω_π)[1]` for `V` locally free of finite rank, compatible with base change.
+Route: on an étale chart `U → M` with `U` affine, `π_U : 𝒞_U → U` is a flat proper morphism of
+Noetherian schemes with Gorenstein fibres of dimension one, and SchemeAndStackFoundations §2.19
+gives `Rπ_{U*} ⊣ a_{π_U}` on `DQCoh` (`pushforwardRightAdjoint_adj`, `globalDuality`),
+`a_{π_U} = π_U^!` on `D^+_QCoh` (`upperShriek_proper`) and, `π_U` being a local complete
+intersection with Gorenstein fibres, `π_U^! K ≅ Lπ_U^*K ⊗ ω_{𝒞_U/U}[1]` (`upperShriek_lci`), with
+§2.20 for the dualising sheaf; the chart isomorphisms agree on overlaps
+by flat base change (`upperShriek_flat_baseChange`) and glue as isomorphisms of sheaves on `M_ét`
+(behrend-fantechi1997 lines 1539–1545). The adjunction `Lπ^* ⊣ Rπ_*` of EnhancedDerivedSheaves
+E1.4 holds on all of `D(O_M)`; the duality is stated only on the quasi-coherent subcategories,
+which contain every complex to which 11.3 applies it (locally free sheaves on `𝒞_M` and
+`τ^{≥−1}L_{M/𝔅}`, whose cohomology is coherent). *Needs:* 7.3; SchemeAndStackFoundations §§1.10,
+2.19, 2.20; StableReduction Layer 2; EnhancedDerivedSheaves E1.4.
 
 **Checks.**
 
@@ -2117,9 +2323,11 @@ with obstruction sheaf `Ob = R¹π_* F^*T_X` (behrend-fantechi1997 Proposition 6
 square-zero extension `T → T̄` over `𝔅` with ideal `J` and `g : T → M`, extensions of
 `F_T : 𝒞_T → X` to `𝒞_{T̄}` are obstructed by a class in `Ext¹(F_T^*Ω_X, π^*J)` and form a torsor
 under `Hom(F_T^*Ω_X, π^*J)` (SchemeAndStackFoundations §4.1 for smooth targets; DerivedModuleAlgebra
-§0.25 on affine pieces); duality (11.2) identifies `Ext^i_{𝒞_T}(F_T^*Ω_X, π^*J)` with
-`Ext^{i−1}_T(g^*E, J)` (behrend-fantechi1997 lines 1609–1614) compatibly with `φ^*ω(g)`; the
-hypothesis of 11.1 transports these to extensions of `g`. *Needs:* 9.3, 11.1–11.3;
+§0.25 on affine pieces); the projection formula and duality (11.2) identify
+`Ext^i_{𝒞_T}(F_T^*Ω_X, π^*J) = H^i(𝒞_T, F_T^*T_X ⊗ π^*J)` with
+`H^i(T, Rπ_*(F_T^*T_X) ⊗ J) = Ext^i_T(g^*E, J)`, in the same degree `i`, compatibly with `φ^*ω(g)`
+(behrend-fantechi1997 line 1609, whose right-hand Ext is taken over `O_T`); the hypothesis of 11.1
+transports these to extensions of `g`. *Needs:* 9.3, 11.1–11.3;
 SchemeAndStackFoundations §4.1; DerivedModuleAlgebra §0.25.
 
 **Checks.**
@@ -2148,8 +2356,13 @@ and base change).
 
 - `V = O`, a single smooth curve over `k`: the construction gives `Rπ_*O ≅ [H¹(C, H) → H¹(C, G)]`
   with Euler characteristic `1 − g`.
-- Reducedness is used: on a non-reduced curve such as a double line, `H⁰(L^{⊗−N})` need not vanish
-  for ample `L`; prestable families have reduced fibres.
+- Reducedness of the fibres is a sufficient condition for `H⁰(C_t, L^{⊗−N}) = 0` (`N > 0`), and
+  nonreducedness alone does not violate it. On the square-zero thickening `C'` of `ℙ¹` with
+  `O_{C'} = O_{ℙ¹} ⊕ k_p` (an embedded point at `p`) and `L` the pullback of `O(1)`, which is ample,
+  `L^{⊗−N} = O(−N) ⊕ k_p` has `H⁰ = k` for every `N > 0`, so the construction fails. On the plane
+  double line `D = 2ℓ ⊆ ℙ²`, nonreduced without embedded points, the sequence
+  `0 → O_ℓ(−N−1) → O_D(−N) → O_ℓ(−N) → 0` gives `H⁰(O_D(−N)) = 0` for every `N > 0`. Prestable
+  families have reduced fibres.
 
 ### 11.6 Rank and virtual dimension
 
@@ -2179,7 +2392,7 @@ StableReduction Layer 2.
 
 ### Dependencies
 
-Layers 8–10; StableReduction Layers 2–3; SchemeAndStackFoundations §§1.10, 2.20, 3.3, 4.1;
+Layers 8–10; StableReduction Layers 2–3; SchemeAndStackFoundations §§1.10, 2.19, 2.20, 3.3, 4.1;
 EnhancedDerivedSheaves E1.4; DerivedModuleAlgebra §0.25. Within the layer, 11.1 → 11.2 → 11.3 →
 11.4 → 11.5 → 11.6.
 
