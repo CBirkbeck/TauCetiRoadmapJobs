@@ -5387,8 +5387,8 @@
       "id": "gap:coherent-correspondences",
       "slug": "coherent-correspondences",
       "supplier": "AutomorphicBundlesPartII",
-      "section": "§§3.10–3.12 on the solid enhancement of §3.0a",
-      "needs": "Supply the two partial-support objects K+−(F)=RΓ(Xbar,j+_*j−_!F) and K−+(F)=RΓ(Xbar,i−_!i+_*F) of BP-Hida Definition 2.2.4 for closed D+,D− in a proper Xbar, their support-change maps of Lemma-construction 2.2.6, the comparison map K−+→K+−, the action of a cohomological correspondence with expanded D+ and contracted D− on both, and the Rlim/colim twist formulas of Corollary 2.3.11 for a coherent extension with locally principal D±.",
+      "section": "§§3.3, 3.6 and 3.10–3.12 on the solid enhancement of §3.0a",
+      "needs": "Supply the two partial-support objects K+−(F)=RΓ(Xbar,j+_*j−_!F) and K−+(F)=RΓ(Xbar,i−_!i+_*F) of BP-Hida Definition 2.2.4 for closed D+,D− in a proper Xbar, their support-change maps of Lemma-construction 2.2.6, the comparison map K−+→K+−, the action of a cohomological correspondence with expanded D+ and contracted D− on both, compatible with composition and Tor-independent base change of correspondences and with the support-change maps, and the Rlim/colim twist formulas of Corollary 2.3.11 for a coherent extension with locally principal D±.",
       "neededBy": [
         "HigherHidaAndColemanTheory:D1/ordinary-localization",
         "HigherHidaAndColemanTheory:D1/discrete-base-change",
