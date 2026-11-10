@@ -34,12 +34,12 @@ open MvPolynomial
 
 /-- A fixed ring sentence has the same truth in ℚ_p and 𝔽_p((t)) at all
 sufficiently large primes; the bound depends on the sentence (§1.5(a), the
-coefficient-free case over ℤ). -/
+coefficient-free case over ℤ). The ring-language structures are any structures
+compatible with the field operations; the ring language has no relation
+symbols, so each is the one `FirstOrder.Ring.compatibleRingOfRing` builds. -/
 theorem ax_kochen_ring (φ : FirstOrder.Language.ring.Sentence) :
-    ∃ N : ℕ, ∀ (p : ℕ) (hp : p.Prime), N < p →
-      letI : Fact p.Prime := ⟨hp⟩
-      letI := FirstOrder.Ring.compatibleRingOfRing ℚ_[p]
-      letI := FirstOrder.Ring.compatibleRingOfRing (LaurentSeries (ZMod p))
+    ∃ N : ℕ, ∀ (p : ℕ) [Fact p.Prime] [FirstOrder.Ring.CompatibleRing ℚ_[p]]
+      [FirstOrder.Ring.CompatibleRing (LaurentSeries (ZMod p))], N < p →
       (φ.Realize ℚ_[p] ↔ φ.Realize (LaurentSeries (ZMod p))) := by sorry
 
 /-! ## Layer 2: local constructible integration and geometric measure -/
