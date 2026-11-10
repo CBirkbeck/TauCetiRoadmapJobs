@@ -63,7 +63,8 @@ isomorphism criterion and the finite-field theorems.
 and bounded-Robba carriers and their finite coefficient extensions (§§RD.0.1, RD.0.17, RD.0.26);
 Kedlaya's analytic rings `Γ^ℓ`, including the trivially valued case `Γ^ℓ[π⁻¹]` that realises `E_η`
 (§RD.0.9); the Frobenius-equivariant embeddings into Witt-vector rings and the injectivity of
-overconvergent base change (§§RD.0.35, RD.0.53, RD.5.2); Taylor change of Frobenius lift and of
+overconvergent base change over the complete residue field `k((t))` (§§RD.0.35, RD.0.53, RD.5.2),
+whose extension to D'Addezio's generic pair with residue field `k(t)` is a supplier request; Taylor change of Frobenius lift and of
 coordinate (§§RD.0.37, RD.1.44); weak completions, Frobenius lifts and étale lifting
 (§§RD.0.39, RD.0.42, RD.3.38, RD.3.39); Dwork transfer (§§RD.1.13, RD.2.22); `(φ,∇)`-modules
 (§RD.1.43); Frobenius slopes, purity, the calculus of slopes, Dieudonné–Manin, stable lattices, the
@@ -86,7 +87,10 @@ gluing of overconvergent functions, and AlgebraicCurves Layers 2 and 12 (affine 
 smooth completions of curves) for the curve carriers.
 
 **Already in the library.** Mathlib's quotient-by-kernel equivalence, finite-group averaging,
-linear traces, `p`-adic norms of powers of `p` and fixed subfields; see the supplier contracts.
+linear traces, `p`-adic norms of powers of `p` and fixed subfields; Tau Ceti's rings of power series
+with bounded coefficients and of power series on the open unit disc, which underlie `K[[t]]₀` and the
+solution carriers of MS.0.2 as rings (their Frobenius lifts, derivations, `(φ,∇)`-modules and slopes
+are not in the library); see the supplier contracts.
 
 **Not in this roadmap.** D'Addezio's minimal slope theorem for smooth varieties of dimension at least
 two, his parabolicity theorem for monodromy groups, his integral models of the affine line and his
@@ -108,24 +112,42 @@ weight and Lefschetz statements listed as supplier requests.
    dagger hulls themselves are defined for the general datum. In Layer MS.6,
    `k = 𝔽_q`, `K = W(𝔽_q)[1/p]` and `σ = id_K`.
 2. **Local carriers.** `E` is the Amice field over `K` (residue field `k((t))`), `E†` the bounded
-   Robba field and `K[[t]]₀ = O_K[[t]] ⊗ K` the ring of bounded functions on the open unit disc, each
+   Robba field and `K[[t]]₀ = O_K[[t]] ⊗ K` the ring of bounded functions on the open unit disc (as a
+   ring, Tau Ceti's `PowerSeries.HasGaussNorm.subring K 1`), each
    with a Frobenius lift `φ` over `σ` and the derivation `d/dt` (PadicDifferentialEquationsAndRigidCohomology
    §§RD.0.1, RD.0.26, RD.0.36). `E†` is the bounded Robba field, not the full Robba ring. The completed
    generic field `E_η` of a smooth affine curve, and the local fields `E_α`, `E†_α`, `K_α[[x_α]]₀` at its
    closed points, are those of MS.0.1. Statements of MS.0–MS.1 marked "over `B`" hold for
    `B ∈ {E, E_η, E_α}`.
-3. **Modules.** A `(φ,∇)`-module over one of these rings is a finite free module with an integrable
+3. **Modules.** A `(φ,∇)`-module over one of the local fields `E`, `E†`, `E_η`, `E_α`, `E†_α` or over
+   the bounded-disc rings `K[[t]]₀`, `K_α[[x_α]]₀` is a finite free module with an integrable
    connection and a horizontal Frobenius structure whose linearisation is invertible
-   (PadicDifferentialEquationsAndRigidCohomology §RD.1.43). Over a dagger algebra the same notion is an
-   overconvergent F-isocrystal on the corresponding affine curve (§RD.3.32).
+   (PadicDifferentialEquationsAndRigidCohomology §RD.1.43). Over a smooth affine dagger algebra
+   `A†_(C,K)` it is a finite projective module with the same structures, not necessarily free: these
+   are the overconvergent F-isocrystals on the corresponding affine variety (§§RD.3.31, RD.3.32).
+   Global arguments use local bases or a presentation as a direct summand of a finite free module; a
+   global basis is extra data.
 4. **Slopes.** Slopes are normalised by `q`: a Frobenius eigenvector `v` with `φ(v) = c·v`, `c ∈ K`,
-   has slope `v_π(c)/v_π(q)`. Generic slopes over `E`, `E†` and `E_η` are those of §RD.1.35. The slope
+   has slope `v_π(c)/v_π(q)`. Generic slopes over `E`, `E†` and `E_η` are those of §RD.1.35 after
+   rescaling: the parent measures the slope of `c` as `v_π(c)` (`w(π) = 1`), so a slope `λ_RD` read
+   from §§RD.1.25–RD.1.41 or RD.1.72 is `λ_RD/v_π(q)` here, in the ramified case as well (for
+   D'Addezio's pair of §RD.1.72, `K = W(k)[1/p]` and `q = p`, so `v_π(q) = 1`).
+   Since `v_π(q) > 0` the rescaling keeps orderings, isoclinicity, Hom vanishing between distinct
+   slopes and the step indices of slope and reverse filtrations; numerical slopes, slope bounds and
+   slope differences are always the normalised ones. Replacing `σ` by `σ^a` and `q` by `q^a`
+   multiplies the raw valuations `v_π(c)` by `a` and leaves the normalised slopes unchanged (the
+   witness is a Check of MS.0.3). The slope
    filtration is increasing: `0 = S_0 ⊊ S_1 ⊊ ⋯ ⊊ S_m = M`, with isoclinic grades of strictly
    increasing slopes; `S_min(M) = S_1(M)` is the minimal-slope subobject and
-   `Top(M) = M/S_(m−1)(M)` the maximal-slope quotient, of slope `λmax(M)`. Duality negates slopes and
+   `Top(M) = M/S_(m−1)(M)` the maximal-slope quotient, of slope `λmax(M)`. For `M = 0` the filtration
+   has length `m = 0` and `Top(0) = S_min(0) = 0`; `λmax(M)`, the minimal slope and the slope
+   `slope(P)` of an isoclinic `P` are defined only for nonzero objects, and every statement that
+   uses them as numbers assumes the object nonzero. Duality negates slopes and
    exchanges the two: `Top(M^∨) = S_min(M)^∨`. The Tate object `O(1)` has Frobenius multiplied by
    `q⁻¹`, hence slope `−1`; for `n ∈ ℤ`, `O(n)`, `E(n)` and `E†(n)` denote the constant rank-one object
-   with Frobenius multiplied by `q^(−n)`, of slope `−n`, so the split sums `E(−1) ⊕ E(0)`,
+   with Frobenius multiplied by `q^(−n)`, of slope `−n`, as in the parent's Tate twists (§§RD.3.25,
+   RD.3.34). They are not the parent's additive twists `A(c) = L(π^c)` of §§RD.1.22–RD.1.27, whose
+   Frobenius is multiplied by `π^c` and whose slope here is `c/v_π(q)`. The split sums `E(−1) ⊕ E(0)`,
    `E†(−1) ⊕ E†(0)` and `O(−1) ⊕ O(0)` of the Checks have slopes 1 and 0 and are the `L_1 ⊕ L_0` of
    the Examples. The step-indexed `S_i` is distinct from the slope-indexed `S_(≤μ)(V)`, the part of a
    Frobenius space `V` of slopes at most `μ`, which MS.1.8–MS.1.9 use on solution spaces.
@@ -159,7 +181,7 @@ weight and Lefschetz statements listed as supplier requests.
 
 ## Exact supplier contracts
 
-### From Mathlib (pinned at `f6090c7095e1e56b3464c1daba5f24631f1290d2`)
+### From Mathlib (pinned at `1b1ccf4b088b32fa3f23f2de1127433254a81e1e`)
 
 - `LinearMap.quotKerEquivRange` (`Mathlib/LinearAlgebra/Isomorphisms.lean`): for a linear map of
   modules over a ring, the quotient by the kernel is linearly equivalent to the range. Used for the
@@ -185,10 +207,23 @@ weight and Lefschetz statements listed as supplier requests.
   carry no connection and no finiteness condition; the Dieudonné–Manin inputs here are the parent's
   §RD.1.32, not this rank-one file.
 
-### From Tau Ceti (pinned at `358314d4ab97483df4fc4cb8adcc02e74a8d9f5a`)
+### From Tau Ceti (pinned at `2fd255d997f47c0b5d834ee416c7015d55444ce5`)
 
-Nothing is consumed: Tau Ceti at the pin has no carrier for differential modules, Robba or Amice
-rings, or isocrystals.
+- `PowerSeries.HasGaussNorm.subring` and `PowerSeries.HasGaussNorm.mem_subring_one_iff`
+  (`TauCeti/RingTheory/PowerSeries/Bounded.lean`): for an ultrametric normed ring `R` and a radius
+  `R₀ > 0`, the subring of `R⟦X⟧` of series with bounded weighted coefficient norms, and at radius 1
+  membership is boundedness of the coefficient norms. For the discretely valued `K` of Convention 1,
+  `PowerSeries.HasGaussNorm.subring K 1` is the ring `K[[t]]₀ = O_K[[t]] ⊗ K` of Convention 2 (a bound
+  `|a_n| ≤ |π|^(−m)` puts the series in `π^(−m)O_K[[t]]`), and with `R = B^τ` it is the bounded carrier
+  `B^τ[[u]]₀` of MS.0.2.
+- `PowerSeries.OnOpenDisc.subring` (`TauCeti/RingTheory/PowerSeries/OpenDisc/Basic.lean`): the subring
+  of series restricted at every radius below `R₀`; with `R = B^τ` and `R₀ = 1` it is the carrier
+  `B^τ{u}` of analytic functions on the open unit disc in MS.0.2.
+
+These are rings only. Mathlib's formal derivative `PowerSeries.derivative` acts on all of `R⟦X⟧`,
+but neither library equips these subrings with a compatible Frobenius lift over `σ` making them
+coefficient rings of `(φ,∇)`-modules, and Tau Ceti at the pin has no Amice or bounded Robba field, no differential or Frobenius
+modules over them, no slopes and no isocrystals; all of these are consumed from the parent below.
 
 ### From TauCetiRoadmap.PadicDifferentialEquationsAndRigidCohomology
 
@@ -201,8 +236,11 @@ The sections are consumed with their stated hypotheses:
   field `Γ^ℓ[π⁻¹]`; with `ℓ = k(C)` this is the completed generic field `E_η` of MS.0.1.
 - §RD.0.17: finite isometric coefficient extension `E_K ⊗_K L ≅ E_L` and its analogues.
 - §RD.0.35, §RD.0.53, §RD.5.2: the `σ`-equivariant embedding into `Γ^alg` and the injectivity of
-  `Γ ⊗_(Γ_con) Γ^alg_con → Γ^alg` (after inverting `π`), under the valuation `p`-basis hypothesis of
-  §RD.0.48, which `k((t))` and `k(t)` satisfy.
+  `Γ ⊗_(Γ_con) Γ^alg_con → Γ^alg` (after inverting `π`), for the complete residue field `k((t))`,
+  which has the valuation `p`-basis `{t}` of §RD.0.48. These are the inputs of the local case of
+  MS.0.4. They do not cover D'Addezio's generic pair: its residue field `k(t)` is not complete
+  (its `t`-adic completion is `k((t))`), and §§RD.0.35, RD.0.53 and RD.5.2 assume a complete residue
+  field; the generic case is the supplier request dejong-generic-affine-line-comparison below.
 - §RD.0.37, §RD.1.44: two Frobenius lifts, or two coordinates, differ by a convergent Taylor series;
   the categories of `(φ,∇)`-modules for different lifts are canonically equivalent.
 - §RD.0.38: the series converging only on the closed disc, separating completion from
@@ -251,7 +289,6 @@ The sections are consumed with their stated hypotheses:
   weights, `ι`-realizable objects (an object pure of weight 0 is realizable), constant twists, the
   constant twist making a rank-one object unit-root, normalisation to weight zero, and Weil II: for
   `ι`-realizable `E` mixed of weight `≤ w`, `Hⁱ_(c,rig)(X, E)` is mixed of weight `≤ w + i`.
-- §RD.0.54: the ring comparison for D'Addezio's `O†_(E_alg)`, used with §RD.1.72 in MS.0.4.
 - §RD.2.28: the logarithmic Robba ring `R_log` with Frobenius, derivation and monodromy operator,
   used in MS.1.7.
 - §RD.3.15, §RD.3.19, §RD.3.40: Zariski gluing of coherent `j†O`-modules, pullback of overconvergent
@@ -279,6 +316,8 @@ What PadicDifferentialEquationsAndRigidCohomology must provide (gap:lefschetz-cu
 What PadicDifferentialEquationsAndRigidCohomology must provide (gap:docile-curve-restriction): for a smooth connected projective `X̄` of dimension at least 2 over a perfect field `k`, a strict normal crossings divisor `Z`, `X = X̄ ∖ Z` and a smooth curve `C̄` that is a complete intersection of ample divisors in good position with respect to `Z`, restriction `H⁰(X, E) → H⁰(C̄ ∩ X, E|)` is an isomorphism for every overconvergent isocrystal `E` on `X` with unipotent monodromy along `Z` (Abe–Esnault, Corollary 2.4 with Remark 2.5).
 
 What PadicDifferentialEquationsAndRigidCohomology must provide (gap:coefficient-linear-weil-ii): for an overconvergent F-isocrystal `E` on a separated `𝔽_q`-scheme with a `K`-algebra map `L → End(E)` (`L/K` finite), `ι`-mixed of weight `≤ w` for the `L`-linear Frobenius at every closed point, each `Hⁱ_(c,rig)(X, E)` with its `L`-linear Frobenius is `ι`-mixed of weight `≤ w + i` (the coefficient-linear form of §RD.6.85).
+
+What PadicDifferentialEquationsAndRigidCohomology must provide (gap:dejong-generic-affine-line-comparison): for a perfect field `k`, `K = W(k)[1/p]` and D'Addezio's generic pair of the affine line (`O_E` the `p`-adic completion of `W(k)[t]_(p)`, of residue field `k(t)`, with the Frobenius lift `t ↦ t^p` over the Witt-vector Frobenius; `E = O_E[1/p]`; `E† ⊆ E` the fraction field of the subring of elements converging on some annulus `ρ ≤ |t| < 1`) and the fields `E†_alg ⊆ E_alg` of §RD.1.72, Frobenius-equivariant injective field embeddings `E → E_alg` and `E† → E†_alg`, compatible with the inclusions `E† ⊆ E` and `E†_alg ⊆ E_alg` and inducing `k(t) ⊆ k(t)^alg` on residue fields, and injectivity of the multiplication map `E ⊗_(E†) E†_alg → E_alg` (D'Addezio, proof of Lemma 4.2.7, p. 15, citing Kedlaya, Full faithfulness, Proposition 4.1, which is stated for the complete residue field `k^alg((t))`); this extends §§RD.0.35 and RD.0.53 from a complete residue field to the residue field `k(t)`.
 
 ### From TauCetiRoadmap.RigidAnalyticGeometry
 
@@ -370,14 +409,18 @@ API:
 
 For a `(φ,∇)`-module `M` over `B ∈ {E, E_η, E_α}`, pull back along the Taylor map
 `τ : B → B^τ[[u]]₀`, `τ(a) = Σ_i ∂^i(a) u^i/i!`, and define the **solution space**
-`Sol(M) = Hom_∇(τ^*M, B^τ{u})`, with `B^τ{u}` the analytic functions on the open unit disc, and the
-**bounded solution space** `Sol_0(M) = Hom_∇(τ^*M, B^τ[[u]]₀)`, both with the induced semilinear
+`Sol(M) = Hom_∇(τ^*M, B^τ{u})`, with `B^τ{u}` the analytic functions on the open unit disc (as a
+ring, Tau Ceti's `PowerSeries.OnOpenDisc.subring` over `B^τ` at radius 1), and the
+**bounded solution space** `Sol_0(M) = Hom_∇(τ^*M, B^τ[[u]]₀)`, with `B^τ[[u]]₀` the series with
+bounded coefficients (Tau Ceti's `PowerSeries.HasGaussNorm.subring` over `B^τ` at radius 1), both with
+the induced semilinear
 Frobenius `f ↦ φ ∘ f ∘ φ_M⁻¹` (Tsuzuki §3.3 and Definition 3.5, p. 13; Proposition 3.14, p. 15).
 Boundedness is a uniform bound on all coefficients; multiplication by bounded series preserves it,
 so `Sol_0(M)` is a `B^τ`-subspace.
 
 *Needs:* MS.0.1; PadicDifferentialEquationsAndRigidCohomology §§RD.1.13, RD.1.43, RD.1.45, RD.0.37;
-Mathlib `Padic.norm_p_pow` for the Checks.
+Tau Ceti `PowerSeries.HasGaussNorm.subring`, `PowerSeries.HasGaussNorm.mem_subring_one_iff` and
+`PowerSeries.OnOpenDisc.subring` for the carrier rings; Mathlib `Padic.norm_p_pow` for the Checks.
 
 API:
 
@@ -395,6 +438,10 @@ API:
   `n = p^r` the coefficient has norm `p^r`, so this solution is unbounded and `Sol_0 ≠ Sol`.
 - For the rank-one object with Frobenius `a` and zero connection, the solution `e ↦ 1` has Frobenius
   eigenvalue `a⁻¹`: the solution space carries the negatives of the slopes of `M`.
+- The carriers are the intended rings: `Σ_n u^n` has coefficient norms 1 and lies in `B^τ[[u]]₀`;
+  `Σ_n p^(−n) u^n` has coefficient norms `p^n`, so it is not bounded, and it is not on the open unit
+  disc either (`p^n r^n → 0` only for `r < 1/p`); `log(1 + u)` lies on the open unit disc and is not
+  bounded.
 
 ### MS.0.3 Frobenius-fixed coefficient normalisation
 
@@ -422,27 +469,47 @@ gives the tensor decomposition. A rank-one `φ`-module has Frobenius eigenvalue 
 - For `K = ℚ_p(√p)` with `σ = id` (`q = p`; the residue field is `𝔽_p`, so `id` is a `p`-Frobenius),
   `K^σ = K`, and the rank-one constant object with Frobenius `√p` has slope `1/2` and is made unit-root
   by `b = √p`. Twisting only by powers of `p` cannot do this: the value group, not `|p|^ℤ`, is needed.
+  In the parent's convention (§RD.1.35) the raw slope of `√p` is `v_π(√p) = 1`; here it is
+  `1/v_π(p) = 1/2`.
+- Slope normalisation (Convention 4). For `K = ℚ_p` with `σ = id` regarded as a `q`-Frobenius for
+  `q = p²` (residue field `𝔽_p`), the constant rank-two object with Frobenius eigenvalues `1, p²` has
+  raw slopes `(0, 2)` in the parent's convention and normalised slopes `(0, 1)` here. Passing to `σ²`
+  with `q = p⁴` squares the eigenvalues to `1, p⁴`: raw slopes `(0, 4)`, normalised slopes still
+  `(0, 1)`. For `K = ℚ_p(√p)` (ramification index 2) and `q = p²`, the eigenvalue `p²` has raw slope
+  `v_π(p²) = 4` and normalised slope `4/4 = 1`. Reading the parent's numbers without dividing by
+  `v_π(q)` would give slopes 2 or 4 where the statements here mean 1.
 
 ### MS.0.4 Opposite slope rank bound
 
 Let `(E†, E)` be either the bounded Robba field and the Amice field over `K` (residue field
-`k((t))`), or D'Addezio's generic pair of the affine line (`O_E` the `p`-adic completion of
-`W(k)[t]_(p)`, residue field `k(t)`, and `E†` the functions converging on some annulus `ρ ≤ |t| < 1`),
-with `k` perfect. Let `M†` be a `φ`-module over `E†`, `M = E ⊗ M†`, `P` an isoclinic `φ`-module over
-`E`, and `f : M → P` a `φ`-morphism whose restriction to `M†` is injective. Prove that
-`λmax(M) = slope(P)` and `rank_E Top(M) ≤ rank_E P`, with equality when `E · f(M†) = P` (Tsuzuki,
-Theorems 2.13–2.14, p. 10; D'Addezio, Lemma 4.2.7, p. 15). No connection is needed, and `f` itself
-need not be injective.
+`k((t))`, `k` perfect), or D'Addezio's generic pair of the affine line (`k` perfect, `K = W(k)[1/p]`,
+`O_E` the `p`-adic completion of `W(k)[t]_(p)` with `φ(t) = t^p` over the Witt-vector Frobenius,
+residue field `k(t)`, and `E†` the fraction field of the functions converging on some annulus
+`ρ ≤ |t| < 1`). Let `M† ≠ 0` be a `φ`-module over `E†`, `M = E ⊗ M†`, `P` an isoclinic `φ`-module
+over `E`, and `f : M → P` a `φ`-morphism whose restriction to `M†` is injective (so `P ≠ 0`). Prove
+that `λmax(M) = slope(P)` and `rank_E Top(M) ≤ rank_E P`, with equality when `E · f(M†) = P`
+(Tsuzuki, Theorems 2.13–2.14, p. 10; D'Addezio, Lemma 4.2.7, p. 15). No connection is needed, and
+`f` itself need not be injective.
 
-Proof route. Base change to the algebraic overconvergent field `E†_alg`: since `E†_alg` is flat over
-`E†` and `E ⊗_(E†) E†_alg → E_alg` is injective, `f|_(M†)` stays injective. The first reverse-filtration
-step of `M†_alg` is isoclinic of slope `λmax(M)` and maps injectively into `P ⊗ E_alg`, so the slopes
-agree. After adjoining `p^(1/r)`, its Frobenius eigenvectors of slope `s/r` span a space of dimension
-`rank Top(M)` and inject into the corresponding eigenspace of `P`, of dimension `rank P`. If `f` is
-surjective it kills the lower-slope part of `M` by Hom vanishing, so it factors through `Top(M)`.
+Proof route. Base change to an algebraic overconvergent pair `E†_alg ⊆ E_alg`: in the local case
+`Γ^alg_con[π⁻¹] ⊆ Γ^alg[π⁻¹]` with the embeddings of §RD.0.35, in the generic case D'Addezio's fields
+of §RD.1.72 with the embeddings of the supplier request dejong-generic-affine-line-comparison. Since
+`E†_alg` is a field extension of `E†`, hence flat, and `E ⊗_(E†) E†_alg → E_alg` is injective
+(§RD.0.53 in the local case, the same supplier request in the generic case), `f|_(M†)` stays
+injective. The first reverse-filtration step of `M†_alg` (§RD.1.41, respectively §RD.1.72) is
+isoclinic of slope `λmax(M)` and maps injectively into `P ⊗ E_alg`, so the slopes agree by Hom
+vanishing. After the finite extension of constants of §RD.1.72 (adjoining `p^(1/r)`) in the generic
+case, or the Dieudonné–Manin normalisation of §RD.1.32 in the local case, that step has a basis of
+Frobenius eigenvectors with one common eigenvalue `c`, of normalised slope
+`v_π(c)/v_π(q) = λmax(M)` (raw slope `v_π(c)` in the parent's convention; `v_π(q) = 1` for the
+generic pair). Over the Frobenius-fixed constants these `c`-eigenvectors span a space of dimension
+`rank Top(M)`, which injects into the `c`-eigenspace of `P ⊗ E_alg`, of dimension `rank P` by
+Dieudonné–Manin. If `f` is surjective it kills the lower-slope part of `M` by Hom vanishing, so it
+factors through `Top(M)`.
 
-*Needs:* PadicDifferentialEquationsAndRigidCohomology §§RD.0.35, RD.0.53, RD.0.54, RD.1.37, RD.1.41,
-RD.1.72.
+*Needs:* PadicDifferentialEquationsAndRigidCohomology §§RD.1.32, RD.1.35, RD.1.37; for the local
+case §§RD.0.35, RD.0.53, RD.1.41; for the generic case §RD.1.72 and the supplier request
+dejong-generic-affine-line-comparison.
 
 **Checks.**
 
@@ -451,10 +518,18 @@ RD.1.72.
   one-dimensional kernel. The rank conclusion concerns `Top(M)`, not `M`.
 - For `M† = E†` with slope 0 and `P = E` with `f` the identity, both sides of the rank bound are 1.
 - For `M† = E†` of slope 0, `P = E²` of slope 0 and `f` the inclusion into the first coordinate,
-  `f|_(M†)` is injective, `rank Top(M) = 1 < 2 = rank P` and `E · f(M†) ≠ P`: the inequality can be
-  strict, and equality needs the spanning hypothesis.
+  `f|_(M†)` is injective, `λmax(M) = 0 = slope(P)`, `rank Top(M) = 1 < 2 = rank P` and
+  `E · f(M†) ≠ P`: the inequality can be strict, and equality needs the spanning hypothesis.
 - For `M† = E†(−1) ⊕ E†(0)` and `P = E(0)`, the projection onto the second summand is not injective
   on `M†`; no injective `φ`-map `M† → E(0)` exists, as the theorem predicts from `λmax(M) = 1 ≠ 0`.
+- The hypothesis `M† ≠ 0` cannot be dropped: for `M† = 0` the zero maps into `E(0)` and into
+  `E(−1)` are injective on `M†`, and the conclusion would make the maximal slope of the zero module
+  both `0` and `1`; zero has no maximal slope (Convention 4).
+- The two pairs are different inputs: for `k = 𝔽_p` the series `Σ_(n≥0) t^(n!)` lies in `k((t))` but
+  not in `k(t)`, since its coefficients satisfy no linear recurrence (the gaps between factorials
+  exceed every order). So the generic residue field `k(t)` is not complete, the local injectivity of
+  §RD.0.53 (stated for a complete residue field) does not apply to the generic pair, and replacing
+  the generic `E` by its `t`-adic completion changes the field rather than supplying the input.
 
 ### MS.0.5 The maximally bounded quotient
 
@@ -594,13 +669,15 @@ API:
 ### MS.0.10 The PBQ quotient criterion
 
 For nonzero `M` over `B ∈ {E, E_η, E_α}`, prove that `M` is PBQ if and only if every nonzero
-`(φ,∇)`-quotient `Q` of `M` has `λmax(Q) = λmax(M)`. Consequently a sum of finitely many PBQ
-submodules with the same maximal slope is PBQ, and every nonzero quotient of a PBQ module is PBQ of the
-same maximal slope (Tsuzuki, Lemma 3.17, p. 16; Ohkubo, Proposition 8.1 and Lemma 8.2, pp. 39–40).
+`(φ,∇)`-quotient `Q` of `M` has `λmax(Q) = λmax(M)`. Consequently the sum of a nonempty finite
+family of PBQ submodules with the same maximal slope is PBQ, and every nonzero quotient of a PBQ module
+is PBQ of the same maximal slope (Tsuzuki, Lemma 3.17, p. 16; Ohkubo, Proposition 8.1 and Lemma 8.2,
+pp. 39–40).
 
 If `B(M)` has two slopes, its lowest-slope summand under MS.0.7 is a quotient of smaller maximal slope.
 Conversely `B(M) → B(Q)` is surjective and `B(Q) ≠ 0`, so `B(Q)` is isoclinic of slope `λmax(M)`, which
-is `λmax(Q)`.
+is `λmax(Q)`. For a nonempty family `N_1, …, N_k` of one maximal slope, `B(⊕_i N_i) = ⊕_i B(N_i)` is
+isoclinic, so `⊕_i N_i` is PBQ, and the sum is a quotient of it that is nonzero because `N_1 ≠ 0`.
 
 *Needs:* MS.0.7; MS.0.9; PadicDifferentialEquationsAndRigidCohomology §RD.1.37.
 
@@ -610,8 +687,14 @@ is `λmax(Q)`.
   detects the failure of PBQ.
 - For the logarithmic module, its only nonzero proper quotient is the unit object, of maximal slope
   `0 = λmax`, consistent with PBQ.
-- The sum of two copies of a PBQ module is PBQ; the sum of PBQ modules of different maximal slopes is
-  not.
+- The direct sum of two copies of a PBQ module is PBQ; the direct sum of two PBQ modules of different
+  maximal slopes is not, its bounded quotient having both slopes. An internal sum of PBQ submodules of
+  different maximal slopes can still be PBQ: in the logarithmic module, `E e_1` (slope `−1`) and the
+  whole module (maximal slope 0) sum to the whole module.
+- The family must be nonempty: the empty family satisfies the membership and equal-slope hypotheses
+  vacuously, but its sum is `0`, of rank 0, which is not PBQ (MS.0.9). In `E(0)²`, one coordinate line
+  has rank 1 and bounded quotient of slope 0, and the sum of both coordinate lines has rank 2 and
+  bounded quotient of the same slope 0.
 
 ### MS.0.11 The unit-root tensor criterion
 
@@ -626,7 +709,9 @@ preserves and reflects isoclinicity.
 
 **Checks.**
 
-- For `U = 0` the reverse implication fails: `M ⊗ 0 = 0` is never PBQ.
+- For `U = 0` the forward implication fails: for `M` the unit object, `M` is PBQ (true) while
+  `M ⊗ 0 = 0` is not (false); the reverse implication holds vacuously (false implies true), so
+  `U ≠ 0` is needed for the forward direction.
 - For `U` the unit object the statement is trivial.
 - For `M = E(−1) ⊕ E(0)` and `U` any nonzero unit-root module, `M ⊗ U` is not PBQ.
 
@@ -639,7 +724,9 @@ The lacunary series separates `E_η` from a local Laurent field.
 ### Dependencies
 
 PadicDifferentialEquationsAndRigidCohomology Layers RD.0, RD.1 and RD.3 (carriers, `(φ,∇)`-modules,
-slopes, reverse filtrations, Frobenius lifts); AlgebraicCurves Layer 12; Mathlib `Padic.norm_p_pow`
+slopes, reverse filtrations, Frobenius lifts) and the supplier request
+dejong-generic-affine-line-comparison (generic case of MS.0.4); AlgebraicCurves Layer 12; Tau Ceti
+`PowerSeries.HasGaussNorm.subring` and `PowerSeries.OnOpenDisc.subring`; Mathlib `Padic.norm_p_pow`
 and `FixedPoints.subfield`. No other layer of this roadmap is used.
 
 ## Layer MS.1: Local PBQ filtrations
@@ -659,8 +746,9 @@ Definition 3.20, p. 16; Chiarellotto–Tsuzuki, Proposition 5.4 and Corollary 5.
 
 Proof route. Take the preimage in `M` of the maximal-slope summand of `B(M)` under MS.0.7; if it is
 PBQ it is `P_1`, and otherwise it is proper and its own maximally PBQ submodule, by induction on rank,
-maps onto that summand. Sums of PBQ submodules of slope `λmax(M)` are PBQ by MS.0.10, so a largest
-one exists; the quotient has strictly smaller maximal slope and induction gives the filtration.
+maps onto that summand. For `M ≠ 0` this supplies at least one PBQ submodule of maximal slope
+`λmax(M)`, and sums of nonempty finite families of such submodules are PBQ by MS.0.10, so one of
+largest rank contains all the others; the quotient has strictly smaller maximal slope and induction gives the filtration.
 Uniqueness: if `P_1`, `P′_1` are first steps of two such filtrations, the surjection `P′_1 → (P_1 + P′_1)/P_1`
 would contradict MS.0.10 unless it is zero.
 
@@ -926,6 +1014,16 @@ RigidAnalyticGeometry Layer 5; AlgebraicCurves Layer 2.
 - For `C = A¹`, (1) reduces to `k[x] = ⋂_α (k(x) ∩ k(α)[[x_α]])`: a rational function regular at every
   closed point of `A¹` is a polynomial.
 - For the rank-one free module, (3) is (2).
+- (3) is needed for modules that are not free. Let `Y` be an elliptic curve over `k = 𝔽_q` with a
+  rational point `P` of prime order `ℓ ≠ p` with `ℓ | q − 1` (for instance `y² = x³ − x` over `𝔽_5`,
+  `P = (0, 0)`, `ℓ = 2`), and `C = Y ∖ {O}`, so that `Pic(C) ≅ Pic⁰(Y) ≅ Y(𝔽_q)` and the class of
+  `O(P − O)|_C` is nonzero of order `ℓ`. A trivialisation of its `ℓ`-th power gives a cyclic étale
+  cover of degree `ℓ`, and a character of order `ℓ` of the covering group (with values in
+  `μ_ℓ ⊂ K`) gives a rank-one unit-root overconvergent F-isocrystal `M†` on `C`. The isotypic piece of
+  the lifted cover algebra is an integral form of `M†` reducing to `O(P − O)^(±1)|_C`; a free `M†`
+  would make it a lattice `π^n A†_C` in a free line (the special fibre is integral), with trivial
+  reduction. So `M†` has local rank 1 and no global basis, and (3) holds for it by the direct-summand
+  argument.
 
 ### MS.2.3 Interior and boundary gluing
 
@@ -964,8 +1062,8 @@ unit-root-correspondence-perfect-base.
 
 ### MS.2.4 PBQ sums and quotients on curves
 
-Prove that a finite sum of PBQ subobjects of an overconvergent F-isocrystal on `C` with the same
-generic maximal slope is PBQ, and that every nonzero quotient of a PBQ object is PBQ with the same
+Prove that the sum of a nonempty finite family of PBQ subobjects of an overconvergent F-isocrystal on
+`C` with the same generic maximal slope is PBQ, and that every nonzero quotient of a PBQ object is PBQ with the same
 generic maximal slope (Tsuzuki, Lemma 3.30, p. 19).
 
 Apply MS.0.10 to the generic modules; scalar extension to `E_η` is exact.
@@ -975,6 +1073,9 @@ Apply MS.0.10 to the generic modules; scalar extension to `E_η` is exact.
 **Checks.**
 
 - The sum of two copies of a PBQ object is PBQ; the sum of constant objects of slopes 1 and 0 is not.
+- The empty family has sum `0`, of rank 0, which is not PBQ; the nonemptiness hypothesis is needed. In
+  `O(0)²`, one coordinate line has rank 1 and bounded quotient of slope 0, and the sum of both lines
+  has rank 2 and bounded quotient of the same slope 0.
 - The constant quotient of the logarithmic object on `G_m` (the curve form of the module of MS.0.2) is
   PBQ of slope 0.
 
@@ -1144,8 +1245,9 @@ API:
 
 ### MS.3.3 Pure target slope detection
 
-Let `P` be isoclinic over `E`. Prove: if `θ† : N† → P` is injective and horizontal Frobenius, then
-`λmax(E ⊗ N†) = slope(P)`; and if `θ†` has surjective `E`-linearisation, then its image `L†` is
+Let `P` be isoclinic over `E`. Prove: if `N† ≠ 0` and `θ† : N† → P` is injective and horizontal
+Frobenius (so `P ≠ 0`), then `λmax(E ⊗ N†) = slope(P)`; and if `θ†` has surjective `E`-linearisation,
+then its image `L†` is
 quasi-saturated, `rank Top(E ⊗ L†) ≥ rank P`, and equality forces `Top(E ⊗ L†) ≅ P` and `L†` saturated
 (Tsuzuki, Propositions 4.4–4.6, p. 22).
 
@@ -1160,6 +1262,10 @@ top quotient, giving the inequality, and equality makes that factorisation an is
 - The injectivity hypothesis cannot be dropped: for `N† = E†(−1) ⊕ E†(0)` and `P = E(0)`, the
   projection onto the second summand is not injective and `λmax(N) = 1 ≠ 0`.
 - For `N† = E†`, `P = E` and `θ†` the inclusion, both conclusions hold with rank 1.
+- For `N† = 0` the zero map into `E(0)` and into `E(−1)` is injective, and the first conclusion would
+  give the zero module the maximal slopes 0 and 1; the hypothesis `N† ≠ 0` excludes this. In the
+  second assertion `N† = 0` forces `P = 0`, and it holds with `Top(0) = 0`: ranks `0 ≥ 0`, equality,
+  `L† = 0` saturated.
 
 ### MS.3.4 The saturated quotient
 
@@ -1180,7 +1286,7 @@ API:
 **Checks.**
 
 - For isoclinic `M`, `Sat(M†) = M†`.
-- `Sat(0) = 0`.
+- `Sat(0) = 0`, the image of `0` in `Top(0) = 0` (Convention 4); no maximal slope is assigned to `0`.
 - `Sat(E†(−1) ⊕ E†(0)) = E†(−1)`; an "enlargement" keeping both summands is the wrong construction.
 
 ### MS.3.5 The quasi-saturated rank theorem and local irreducibility
@@ -1189,7 +1295,8 @@ Prove: a quasi-saturated `N† → P` with `P` isoclinic is saturated and `Top(E
 isomorphism; and a `(φ,∇)`-module over `E†` is irreducible if and only if it is PBQ, saturated, and its
 top quotient is irreducible (Tsuzuki, Proposition 4.9 and Corollary 4.10, p. 23).
 
-Proof route. MS.0.4 gives `rank Top(E ⊗ N†) = rank P` and the slope equality, so the surjection
+Proof route. For `N† = 0` quasi-saturation forces `P = 0` and the claim is `Top(0) = 0 ≅ 0`.
+Otherwise MS.0.4 gives `rank Top(E ⊗ N†) = rank P` and the slope equality, so the surjection
 `Top(E ⊗ N†) → P` is an isomorphism. For an irreducible module, a nonzero quotient of its top receives
 an injective map from it with nonzero image, which is quasi-saturated, so the quotient is the whole
 top; PBQ follows from MS.1.4. Conversely, a nonzero submodule has the full maximal slope by MS.3.3,
@@ -1289,7 +1396,9 @@ assertion uses exactness of finite étale pushforward, which Proposition 5.6 doe
 On a dense affine open the kernel of the top map is an overconvergent F-subisocrystal (MS.3.8), so
 irreducibility excludes a nonzero proper kernel. For finite étale maps use affine lifts and the
 finite projective direct-image decomposition; finite coefficient extension is faithfully flat;
-Frobenius iteration multiplies all slopes by the same positive factor.
+replacing `σ` by `σ^a` multiplies every raw valuation `v_π(c)` by `a` and, with `q` replaced by `q^a`,
+leaves the normalised slopes, hence the top quotient and the saturation condition, unchanged
+(Convention 4).
 
 *Needs:* MS.3.8; PadicDifferentialEquationsAndRigidCohomology §§RD.0.17, RD.3.38, RD.3.39, RD.3.41.
 
@@ -1347,7 +1456,7 @@ for dagger sections inside an isoclinic convergent quotient and the specified-ma
 
 ### MS.4.1 Boundary PBQ kernel gluing
 
-In the situation of MS.4.2 (affine `C`, isoclinic convergent `P`, overconvergent `N†` with
+In the situation of MS.4.2 (affine `C`, nonzero isoclinic convergent `P`, overconvergent `N†` with
 slope-filtered `N`, a surjection `N → P` injective on dagger sections), suppose
 `rank Top(N) > rank P`. Let `H = ker(N → P)` and let `L` be its maximally PBQ convergent subobject,
 which has the same maximal slope. At each boundary point `α ∈ C̄ ∖ C` let `L†_α` be the maximally PBQ
@@ -1370,7 +1479,7 @@ PBQ filtration of the convergent kernel. No saturation of the kernels is assumed
 
 ### MS.4.2 The curve rank theorem
 
-Let `P` be an isoclinic convergent F-isocrystal on `C`, `N†` an overconvergent F-isocrystal with
+Let `P ≠ 0` be an isoclinic convergent F-isocrystal on `C`, `N†` an overconvergent F-isocrystal with
 slope-filtered `N`, and `N → P` a surjection of convergent F-isocrystals. If the induced map
 `Γ(U, N†) → Γ(U, P)` of sections is injective for one dense affine open `U`, prove that
 `λmax(N) = slope(P)` and `rank Top(N) = rank P` (Tsuzuki, Proposition 6.1, pp. 26–27).
@@ -1389,6 +1498,8 @@ convergent categories coincide and slope separation gives the claim directly.
   projection kills `O(−1)` and `λmax(N) = 1 ≠ 0`.
 - For `N†` the logarithmic object on `G_m` and `P = Top(N)` the unit, the map on sections has kernel the
   slope `−1` line, so the hypothesis fails although the ranks agree; the theorem is an implication.
+- `P ≠ 0` is needed for the numerical conclusion: for `P = 0` the surjection `0 → 0` from `N† = 0` is
+  injective on sections, and `0` has no maximal slope; the rank statement alone, `0 = 0`, would hold.
 
 ### MS.4.3 The curve irreducibility criterion
 
@@ -1483,7 +1594,7 @@ and equals its saturation, so MS.4.4 gives `g†`. Uniqueness follows from satur
 ### MS.4.7 The isoclinic quotient formulation
 
 Prove that MS.4.6 holds with the slope-filtration hypotheses replaced by convergent surjections
-`N → Q_N` and `M → Q_M` onto isoclinic objects such that, at every point of `C`, every slope of the
+`N → Q_N` and `M → Q_M` onto nonzero isoclinic objects such that, at every point of `C`, every slope of the
 kernel is strictly smaller than the slope of the quotient, with `h : Q_N → Q_M` and the same
 alternatives (i) and (ii) (Tsuzuki, Remark 6.6(2), p. 28).
 
@@ -1646,12 +1757,15 @@ Over D'Addezio's generic pair, for `(φ,∇)`-modules `N ⊆ M` over `E` with `M
 `S_min(N) = S_min(Hull†_M(N))` (D'Addezio, Proposition 4.2.2, p. 14; Lemma 4.2.7 and §4.2.8, p. 15).
 The residue field is `k(t)`, not `k((t))`.
 
-Proof route. By the generic analogue of MS.5.3 take `N` isoclinic and `M = Hull†_M(N)`. MS.5.4 gives
+Proof route. For `N = 0` both sides are `S_min(0) = 0`. Otherwise, by the generic analogue of MS.5.3,
+take `N` nonzero isoclinic and `M = Hull†_M(N)`. MS.5.4 gives
 an `E†`-injection of the dagger dual into `N^∨` with surjective linearisation; MS.0.4 (generic case)
 identifies the maximal slope of `M^∨` with the slope of `N^∨` and bounds `rank Top(M^∨) ≤ rank N`.
 Dualising, `N ⊆ S_min(M)` with `rank S_min(M) ≤ rank N`, so they coincide.
 
-*Needs:* MS.0.4; MS.5.3; MS.5.4; PadicDifferentialEquationsAndRigidCohomology §§RD.0.9, RD.1.72.
+*Needs:* MS.0.4 (generic case); MS.5.3; MS.5.4; PadicDifferentialEquationsAndRigidCohomology §§RD.0.9,
+RD.1.72 and, through the generic case of MS.0.4, the supplier request
+dejong-generic-affine-line-comparison.
 
 **Checks.**
 
@@ -1684,7 +1798,8 @@ dagger-extendable convergent `F^n`-isocrystal `M` with constant Newton polygon a
 sub-`F^n`-isocrystal `N`, `S_min(N) = S_min(Hull†_M(N))` (D'Addezio, Theorem 4.2.13, p. 17, and the
 introduction to §4.2, p. 13; Tsuzuki, Proposition 6.1, pp. 26–27).
 
-Proof route (through the curve rank theorem). By MS.5.3 take `N` isoclinic and `M = Hull†_M(N)` with
+Proof route (through the curve rank theorem). For `N = 0` both sides are `S_min(0) = 0`. Otherwise, by
+MS.5.3, take `N` nonzero isoclinic and `M = Hull†_M(N)` with
 overconvergent `M†`. On a dense affine open, the kernel of the map of dagger sections `Γ(M†^∨) → Γ(N^∨)`
 is a finitely generated module stable under connection and Frobenius; by Dwork–Berthelot it is an
 overconvergent F-subisocrystal of `M†^∨`, and minimality of the hull forces it to vanish. The map
@@ -1721,7 +1836,13 @@ the Checks) and the supplier request docile-curve-restriction.
 **Checks.**
 
 - For docile `E`, `F`, `Hom(E, F) → Hom(E|_C, F|_C)` is bijective; for `E = F` the unit isocrystal
-  (without Frobenius structure) both sides are `K`, since `X` and `C` are geometrically connected.
+  (without Frobenius structure) and `X̄` geometrically connected over `k`, both sides are `K`.
+- Connectedness alone does not make the constants `K`: for `k = 𝔽_p`, `K = W(𝔽_p)[1/p]`,
+  `X̄ = P²_(𝔽_(p²))` viewed as a connected smooth projective `𝔽_p`-scheme, `Z = ∅` and `C̄` a line
+  `P¹_(𝔽_(p²))` in it (a hyperplane section), the endomorphisms of the unit isocrystal on `X` and on
+  `C` are both `H⁰_rig = K_2`, the unramified quadratic extension of `K`, of `K`-dimension 2, and
+  restriction `K_2 → K_2` is an isomorphism: dimensions `2 = 2`, not `1 = 1`. The theorem holds; only
+  the identification of the constants with `K` needs geometric connectedness.
 - For `dim X̄ = 1` the hypothesis fails; the statement is about varieties of dimension at least 2.
 - Docility cannot be dropped: on `X̄ = P²` with `Z` the line at infinity, let `E` be the pullback along
   `x : A² → A¹` of the Dwork F-isocrystal (§RD.6.42), which is wildly ramified along `Z`, and let `C̄`
@@ -1738,7 +1859,8 @@ dropped from MS.5.8.
 
 MS.0, MS.4; PadicDifferentialEquationsAndRigidCohomology §§RD.0.9, RD.1.37, RD.1.72, RD.3.16, RD.3.31,
 RD.3.37, RD.3.41, RD.3.45, RD.5.7, RD.5.8, RD.5.8c, RD.5.100, RD.5.103, RD.5.112, RD.6.42 and the
-supplier request docile-curve-restriction (MS.5.8); Mathlib `LinearMap.quotKerEquivRange`.
+supplier requests docile-curve-restriction (MS.5.8) and dejong-generic-affine-line-comparison
+(through the generic case of MS.0.4, in MS.5.5); Mathlib `LinearMap.quotKerEquivRange`.
 
 ## Layer MS.6: Lefschetz curves and finite fields
 
@@ -1970,7 +2092,13 @@ zero case); the assumed bijection returns it to `X`, and injectivity on the tops
 
 - For `X` a curve and `i = id`, the hypothesis holds for irreducible `M†`, and the conclusion is the
   endomorphism case of MS.4.6.
-- For `M†` the unit object, all endomorphism algebras are `L` and the maps are identities.
+- For `M†` the unit object and connected `Y` (for instance a smooth curve through `α`),
+  `End(M†) = End(f^*M†) = Q̄_p` in the colimit category (`L` on a finite `L`-model) and the map is the
+  identity of `Q̄_p`, since Frobenius-fixed horizontal sections of the unit on a connected
+  `𝔽_q`-scheme are the constants.
+- For disconnected `Y = X ⨿ X` with `f` the fold map, `End(f^*1) = Q̄_p × Q̄_p` and the map is the
+  diagonal `a ↦ (a, a)`: injective, as claimed, but not surjective, since `(1, 0)` is not in the
+  image; the injectivity statement does not make it an identity.
 
 ### MS.6.9 Finite-field weight and Lefschetz inputs
 
@@ -2056,8 +2184,11 @@ with different curves for the two objects; apply MS.6.10.
 
 - For `X` a curve, `U = X` and the identity curve, the statement is weaker than MS.4.6(i), which also
   gives compatibility with `h`.
-- The conclusion is existence only: for `M† = N†` with `End(M†) = L` and `h = c · id_(Top(M))`, any
-  isomorphism `c′ · id` with `c′ ≠ c` is also an isomorphism, and only `c · id` induces `h`.
+- The conclusion is existence only: for `M† = N†` irreducible, `End(M†) = Q̄_p` in the colimit
+  category (by Schur's lemma; `L` on a finite `L`-model), and `h = c · id_(Top(M))` with `c ≠ 0`, every
+  `c′ · id` with `c′ ≠ 0` is an isomorphism `N† → M†`, and only `c′ = c` induces `h`. On a line, `c = 1`
+  and `c′ = 2` give two distinct isomorphisms, only the first inducing `h = id`; `c′ = 0` is not an
+  isomorphism.
 
 ### MS.6.13 The finite-field minimal slope theorem
 
@@ -2087,7 +2218,9 @@ and a smooth curve `i : C → X_m` through `α` such that `i^* π_m^* M†` is i
 
 Proof route. MS.6.13 gives some isomorphism `g′`. Since `π_m^* M†` is irreducible (its restriction to
 `C` is), `End(π_m^* M†)` is a division algebra, and MS.6.8 identifies it with `End(π_m^* Top(M))`; the
-nonzero endomorphism `π_m^*(h ∘ Top(g′))` is therefore invertible, so `h` is an isomorphism. MS.6.8 also
+nonzero endomorphism `π_m^*(h ∘ Top(g′)⁻¹)` of `π_m^* Top(M)` (with `Top(g′) : Top(N) → Top(M)` and
+`h : Top(N) → Top(M)`, the composite runs `Top(M) → Top(N) → Top(M)`) is therefore invertible, so
+`h = (h ∘ Top(g′)⁻¹) ∘ Top(g′)` is an isomorphism. MS.6.8 also
 gives the surjectivity required in MS.6.11, which produces the unique isomorphism inducing `h`. The
 added curve hypothesis is not a consequence of MS.6.13 alone.
 
@@ -2099,6 +2232,11 @@ added curve hypothesis is not a consequence of MS.6.13 alone.
 - Without an endomorphism hypothesis, MS.6.13 gives an isomorphism that may differ from the required
   one by an automorphism of `M†` not inducing the identity on `Top(M)`; the curve hypothesis rules this
   out.
+- Direction of the composite: for labelled lines `Top(N) = L·e_N`, `Top(M) = L·e_M`,
+  `Top(g′)(e_N) = 2e_M` and `h(e_N) = 3e_M`, the endomorphism `h ∘ Top(g′)⁻¹` sends `e_M ↦ e_N/2 ↦ 3e_M/2`,
+  multiplication by `3/2` with inverse `2/3`, and composing with `Top(g′)` recovers `h(e_N) = 3e_M`.
+  On these distinct lines `h ∘ Top(g′)` is not defined: both maps have source `Top(N)` and target
+  `Top(M)`.
 
 ### Examples
 
@@ -2212,6 +2350,10 @@ the correction.
 - **D'Addezio, Theorem 4.2.6(ii), p. 14.** The eigenbasis statement concerns the extended module
   `M†_alg`.
 - **D'Addezio, proof of Lemma 4.1.4, p. 12.** The induced first slope step is `⊕ F^(i*) S_1(N)`.
+- **D'Addezio, proof of Lemma 4.2.7, p. 15.** The injectivity of `E ⊗_(E†) E†_alg → E_alg` for the
+  generic pair is cited from Kedlaya's Proposition 4.1, which is stated for the complete residue field
+  `k^alg((t))`; for the residue field `k(t)` it is a separate input (the supplier request
+  dejong-generic-affine-line-comparison).
 - **D'Addezio, proof of Proposition 4.2.12, p. 17.** The positive lower bound for norms outside `pQ`
   fails for `A_n ⊂ W⟨u⟩` (`ū_n^j = p^j u^(nj) ∉ pA_n` has norm `p^(−j)`), and the torsion claim
   `p^(s+i) P_W ∩ f(Q) ⊆ p^i f(Q)` fails for `A_1 ⊂ W⟨u⟩` for every `s` (`p^(s+i) u^(s+i)`, `i ≥ 1`).
@@ -2231,6 +2373,8 @@ the correction.
   arXiv:1809.04065v1 (2018). Locators refer to arXiv v1.
 - **AE.** Tomoyuki Abe and Hélène Esnault, *A Lefschetz theorem for overconvergent isocrystals with
   Frobenius structure*, Ann. Sci. Éc. Norm. Supér. 52 (2019), 1243–1264; author's PDF.
+- **KED04.** Kiran S. Kedlaya, *Full faithfulness for overconvergent F-isocrystals*, in Geometric
+  Aspects of Dwork Theory, de Gruyter (2004), 819–835; arXiv:math/0110125v4. Locators refer to arXiv v4.
 - **KED05.** Kiran S. Kedlaya, *More étale covers of affine spaces in positive characteristic*,
   J. Algebraic Geom. 14 (2005), 187–192; arXiv:math/0303382v3.
 - **de Jong 1998.** A. J. de Jong, *Homomorphisms of Barsotti–Tate groups and crystals in positive

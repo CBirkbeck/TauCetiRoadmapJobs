@@ -5,12 +5,16 @@ import Mathlib
 
 The roadmap is `README.md`; this file is not the roadmap. It states the roadmap's headline
 theorems against the pinned Mathlib and Tau Ceti. No headline theorem is statable at these
-pins with only a few simple definitions on existing carriers: neither library has the Amice
-field, the bounded Robba field, the bounded-disc ring, `(φ,∇)`-modules over them, convergent
-or overconvergent F-isocrystals on a smooth `k`-scheme, slope filtrations of such objects, or
-rigid cohomology. These carriers are owned by the roadmap
-PadicDifferentialEquationsAndRigidCohomology and are heavy constructions, not definitions of a
-few lines. The headline theorems and what each lacks:
+pins with only a few simple definitions on existing carriers. Tau Ceti has the rings of power
+series with bounded coefficients (`PowerSeries.HasGaussNorm.subring`, the bounded-disc ring
+`K[[t]]₀` at radius 1) and of power series on the open disc (`PowerSeries.OnOpenDisc.subring`),
+but as rings only: Mathlib's formal derivative `PowerSeries.derivative` acts on all power series,
+and neither library equips these subrings with a compatible Frobenius lift over `σ` making them
+coefficient rings; neither has the Amice field, the bounded Robba field, `(φ,∇)`-modules over
+any of these rings, Frobenius slopes of such modules, convergent or overconvergent F-isocrystals
+on a smooth `k`-scheme, slope filtrations of such objects, or rigid cohomology. These structures
+are owned by the roadmap PadicDifferentialEquationsAndRigidCohomology and are heavy
+constructions, not definitions of a few lines. The headline theorems and what each lacks:
 
 * The specified-map theorem on curves (README MS.4.6; Tsuzuki, Corollary 6.5) lacks
   overconvergent and convergent F-isocrystals on a smooth curve, their slope filtrations and

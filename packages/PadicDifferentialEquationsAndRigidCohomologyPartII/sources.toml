@@ -17,7 +17,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-26"
 version_note = "arXiv v3"
-cited_for = ["MS.0.1-MS.0.11", "MS.1.1-MS.1.9", "MS.2.1-MS.2.8", "MS.3.1-MS.3.10", "MS.4.1-MS.4.8", "MS.5.10", "MS.6.1-MS.6.14"]
+cited_for = ["MS.0.1-MS.0.11", "MS.1.1-MS.1.9", "MS.2.1-MS.2.8", "MS.3.1-MS.3.10", "MS.4.1-MS.4.8", "MS.5.7", "MS.6.1-MS.6.14"]
 
 [[source]]
 id = "DAD"
@@ -37,7 +37,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-26"
 version_note = "arXiv v4"
-cited_for = ["MS.0.4", "MS.5.1-MS.5.11"]
+cited_for = ["MS.0.4", "MS.5.1-MS.5.8", "supplier request dejong-generic-affine-line-comparison"]
 
 [[source]]
 id = "OHK"
@@ -74,14 +74,14 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-26"
 version_note = "arXiv v3"
-cited_for = ["MS.5.9"]
+cited_for = ["MS.5.6"]
 
 [[source]]
 id = "AE"
-venue = "Ann. Sci. Éc. Norm. Supér. 52 (2019), 1243-1264; author PDF, PDF page numbering"
-year = 2019
-title = "A Lefschetz theorem for overconvergent isocrystals with Frobenius structure"
 authors = "Tomoyuki Abe, Hélène Esnault"
+title = "A Lefschetz theorem for overconvergent isocrystals with Frobenius structure"
+year = 2019
+venue = "Ann. Sci. Éc. Norm. Supér. 52 (2019), 1243-1264; author PDF, PDF page numbering"
 locator_scheme = "theorem"
 locator = "Corollary 2.4; Remark 2.5; Theorem 2.7; Theorem 3.10"
 url = "https://page.mi.fu-berlin.de/esnault/preprints/helene/123_abe_esn.pdf"
@@ -91,15 +91,15 @@ sha256 = "23b7ccf32c101e0ee7a7647b5bbcd8968f0b3184172efb0c6877fb25268bde36"
 licence_class = "author-page"
 status = "certified"
 accessed = "2026-10-26"
-cited_for = ["MS.5.11", "MS.6.9", "supplier requests irreducible-iota-purity, lefschetz-curves-irreducibility, docile-curve-restriction"]
+cited_for = ["MS.5.8", "MS.6.9", "supplier requests irreducible-iota-purity, lefschetz-curves-irreducibility, docile-curve-restriction"]
 
 [[source]]
 id = "CT11"
-doi = "10.4171/dm/326"
-venue = "Documenta Mathematica 16 (2011), 33-69"
-year = 2011
-title = "Log-growth filtration and Frobenius slope filtration of F-isocrystals at the generic and special points"
 authors = "Bruno Chiarellotto, Nobuo Tsuzuki"
+title = "Log-growth filtration and Frobenius slope filtration of F-isocrystals at the generic and special points"
+year = 2011
+venue = "Documenta Mathematica 16 (2011), 33-69"
+doi = "10.4171/dm/326"
 locator_scheme = "theorem"
 locator = "Theorem 2.2; Theorem 4.1; Propositions 4.2-4.3; Definition 5.1; Examples 5.2, 5.11; Proposition 5.4; Corollary 5.5; Theorem 5.6; Lemma 5.7; Corollary 5.10"
 url = "https://ems.press/content/serial-article-files/26106?nt=1"
@@ -140,3 +140,22 @@ licence_class = "none"
 status = "uncertified"
 version_note = "paywalled (Project MUSE); cited by its locator without the text, as quoted in TSU, proof of Lemma 3.32"
 cited_for = ["MS.2.3 (supplier request unit-root-correspondence-perfect-base)"]
+
+[[source]]
+id = "KED04"
+authors = "Kiran S. Kedlaya"
+title = "Full faithfulness for overconvergent F-isocrystals"
+year = 2004
+venue = "Geometric Aspects of Dwork Theory, de Gruyter (2004), 819-835"
+arxiv = "math/0110125v4"
+locator_scheme = "theorem"
+locator = "Proposition 4.1"
+url = "https://arxiv.org/abs/math/0110125v4"
+fetched_from = "https://arxiv.org/pdf/math/0110125v4"
+fetched_at = "2026-11-10T21:34:31Z"
+sha256 = "cfda26e769afc875b880bc71992c2e811a1a53e7322998e486e48822a18ee431"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-10"
+version_note = "arXiv v4; D'Addezio cites the published version for the same injectivity statement as Proposition 4.1, the numbering of v4"
+cited_for = ["MS.0.4 (supplier request dejong-generic-affine-line-comparison)"]
