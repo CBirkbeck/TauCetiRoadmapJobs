@@ -9,14 +9,9 @@ year = 1978
 doi = "10.1214/aop/1176995475"
 locator_scheme = "section"
 locator = "§2"
-url = "https://projecteuclid.org/journals/annals-of-probability/volume-6/issue-4/Billiards-in-Polygons/10.1214/aop/1176995475.full"
-fetched_from = "https://projecteuclid.org/journals/annals-of-probability/volume-6/issue-4/Billiards-in-Polygons/10.1214/aop/1176995475.full"
-fetched_at = "2026-11-07T19:52:54Z"
-sha256 = "4309cf03175a85e936670970ec1e9af2bb887b5c6f25f4192b10b00cd1fa78be"
-licence_class = "open-repository"
-status = "certified"
-accessed = "2026-11-07"
-resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/6012#issuecomment-6712166264"
+licence_class = "none"
+status = "waived"
+resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/6012#issuecomment-6777030446"
 
 [[source]]
 id = "Birkhoff1927"
@@ -81,3 +76,14 @@ locator = "Chapters 3, 5, 7"
 licence_class = "none"
 status = "waived"
 resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/6012#issuecomment-6712166264"
+
+[[source]]
+id = "ZemlyakovKatok1975"
+authors = "A. N. Zemlyakov, A. B. Katok"
+title = "Topological transitivity of billiards in polygons"
+year = 1975
+locator_scheme = "page"
+locator = "Mat. Zametki 18 (1975), no. 2, pp. 291–300 (English: Math. Notes 18 (1975), 760–764)"
+licence_class = "none"
+status = "waived"
+resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/6012#issuecomment-6777030446"
