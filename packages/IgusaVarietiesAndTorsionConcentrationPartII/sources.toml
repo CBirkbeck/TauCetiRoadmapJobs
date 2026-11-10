@@ -53,3 +53,39 @@ licence_class = "publisher-open"
 status = "certified"
 accessed = "2026-10-26"
 cited_for = ["Exact supplier contracts: gap auxiliary-character-finite-avoidance", "11.5"]
+
+[[source]]
+id = "Shin09"
+authors = "Sug Woo Shin"
+title = "Counting points on Igusa varieties"
+year = 2009
+doi = "10.1215/00127094-2009-004"
+version_note = "Locators refer to the author copy; Lemma 6.4 is on author page 20."
+locator_scheme = "theorem"
+locator = "Lemma 6.4, pp. 20-21"
+url = "https://math.berkeley.edu/~swshin/IgusaVar.pdf"
+fetched_from = "https://math.berkeley.edu/~swshin/IgusaVar.pdf"
+fetched_at = "2026-11-10T21:20:47Z"
+sha256 = "022defdc0ebd913cdfd96d6c37b0f583dc9dc73716c23d1577c18035ff74eff8"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-10"
+cited_for = ["Exact supplier contracts", "10.2"]
+
+[[source]]
+id = "Shin12"
+authors = "Sug Woo Shin"
+title = "On the cohomology of Rapoport-Zink spaces of EL-type"
+year = 2012
+doi = "10.1353/ajm.2012.0009"
+version_note = "Locators refer to the author copy, section 6, pages 20-26."
+locator_scheme = "section"
+locator = "Section 6 (author copy)"
+url = "https://math.berkeley.edu/~swshin/RZspacesELtype.pdf"
+fetched_from = "https://math.berkeley.edu/~swshin/RZspacesELtype.pdf"
+fetched_at = "2026-11-10T21:23:45Z"
+sha256 = "ae59594110f98b612885058e2a9199dc7d4b7ed027d08b63f8e0eca4f41983a5"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-10"
+cited_for = ["10.1"]
