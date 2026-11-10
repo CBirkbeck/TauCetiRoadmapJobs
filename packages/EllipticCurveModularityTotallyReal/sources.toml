@@ -22,7 +22,7 @@ version_note = "Hexagon v1 discussion draft dated 7 October 2026. Locators verif
 [[source]]
 id = "OpenAI26"
 locator_scheme = "theorem"
-locator = "Proposition 5.1 p.12; Proposition 5.2 and Lemma 5.3 p.13; Corollary 5.4 p.14; Proposition 8.4 p.23; Section 9.4 p.27"
+locator = "Proposition 5.1 p.12; Proposition 5.2 and Lemma 5.3 p.13; Corollary 5.4 p.14; Proposition 8.4 p.23; Section 9.4 pp.27-28"
 url = "https://raw.githubusercontent.com/openai/math/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/Modularity-of-elliptic-curves-over-imaginary-quadratic-fields-October-4-2026/paper.pdf"
 fetched_from = "https://raw.githubusercontent.com/openai/math/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/Modularity-of-elliptic-curves-over-imaginary-quadratic-fields-October-4-2026/paper.pdf"
 fetched_at = "2026-11-10T19:34:10Z"
@@ -30,7 +30,7 @@ sha256 = "c74cc37755f500be0c22ccb4d08ce81df309404a7175a7fb6cf7321330b5187c"
 licence_class = "author-page"
 status = "certified"
 accessed = "2026-11-10"
-cited_for = ["1.4", "1.5", "1.6", "3.1", "4.3"]
+cited_for = ["1.4", "1.5", "1.6", "3.1", "4.3", "Exact supplier contracts: required of ComplexMultiplicationAndExplicitReciprocity"]
 authors = "OpenAI"
 title = "Modularity of elliptic curves over imaginary quadratic fields"
 year = 2026

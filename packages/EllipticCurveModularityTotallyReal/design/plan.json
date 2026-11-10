@@ -149,17 +149,17 @@
       {
        "name": "matrix descent witness",
        "kind": "computation",
-       "statement": "R = [[0,-1],[1,-1]], W = [[0,1],[1,0]]: WRW = [[-1,1],[-1,0]] = R^-1 and W R^-1 W = R, while R^-1 != R"
+       "statement": "for delta nontrivial and g in G_L with delta(g) = -1: R = [[0,-1],[1,-1]], W = [[0,1],[1,0]]: WRW = [[-1,1],[-1,0]] = R^-1 and W R^-1 W = R, while R^-1 != R"
       },
       {
        "name": "trivial character",
        "kind": "degenerate",
-       "statement": "k = Q(sqrt -3), n = 3: delta trivial and the twist is C_3 tensor L"
+       "statement": "k = Q(sqrt -3), n = 3: delta trivial, the rotations are already L-rational and the twist is C_3 tensor L"
       },
       {
        "name": "rotation cocycle fails",
        "kind": "non-example",
-       "statement": "a rotation-valued cocycle leaves u_(zeta^-1) unchanged under conjugation, so rotations stay non-rational"
+       "statement": "for delta nontrivial, a rotation-valued cocycle leaves u_(zeta^-1) unchanged under conjugation, so rotations stay non-rational; for delta trivial L = M contains k(mu_m) and nothing needs repair"
       },
       {
        "name": "quadratic twist sign",
@@ -231,7 +231,7 @@
       {
        "name": "induction",
        "kind": "non-example",
-       "statement": "Ind from G_M to G_L of V_theta has rank four, not two"
+       "statement": "Ind from G_M to G_L of V_theta is W_theta + W_theta tensor delta, of rank 2[M:L]: four when delta is nontrivial (every totally real k), two for k = Q(sqrt -3), n = 3, where M = L"
       },
       {
        "name": "l divides n",
@@ -410,7 +410,7 @@
       {
        "name": "rational only",
        "kind": "characterisation",
-       "statement": "pullback then norm is multiplication by 3 or p; congruences use semisimplification"
+       "statement": "pullback along C^delta_n -> C^delta_d then norm is multiplication by n/d (by n along C^delta_n -> B^delta_t): 15 for n = 45, d = 3; p for n = 3p, d = 3; 3 for n = 3p, d = p; congruences use semisimplification"
       }
      ]
     }
@@ -562,8 +562,8 @@
       },
       {
        "name": "all frames",
-       "kind": "non-example",
-       "statement": "the all-frames level-3 cover has phi(3) = 2 geometric components and is not an integral Hilbert datum"
+       "kind": "characterisation",
+       "statement": "the all-frames level-3 cover P has phi(3) = 2 geometric components (one per Weil-pairing value), so is not geometrically integral; if zeta_3 is not in K (K = Q) the arithmetic monodromy GL2(F3) of order 48 exchanges them and P is integral (P_0 = P); if zeta_3 is in K (K = Q(sqrt -3)) P has two K-components of degree 24; Hilbert irreducibility needs integrality over K only"
       }
      ]
     },
@@ -878,19 +878,17 @@
      "id": "4.3",
      "kind": "theorem",
      "name": "totallyReal_cm_modularity",
-     "statement": "For any number field K and elliptic E/K with End(E_Kbar) tensor Q imaginary quadratic: [.] : End(E_Kbar) -> Kbar, alpha^* omega = [alpha] omega for omega invariant over K, is an injective ring homomorphism with [g alpha g^-1] = g([alpha]), so the kernel of G_K on End(E_Kbar) is G_KT and alpha is defined over K' exactly when [alpha] is in K'. For K totally real and E geometrically CM by T: T is not in K, H^1(E)|G_KT = psi + psi^c with psi = r_(l,iota)(theta) for an algebraic Hecke character theta of KT, psi != psi^c, H^1(E) = Ind psi, and pi_E = AI_(KT/K)(theta), unitarily normalized, is cuspidal of type (2,0) with trivial central character and rho_(pi_E,iota) = H^1(E).",
+     "statement": "For K totally real and E/K geometrically CM by T, embedded in Kbar through the action on invariant differentials: T is not in K, and with the endomorphism field KT supplied by gap:cm-elliptic-endomorphism-field, H^1(E)|G_KT = psi + psi^c with psi = r_(l,iota)(theta) for an algebraic Hecke character theta of KT, psi != psi^c, H^1(E) = Ind psi, and pi_E = AI_(KT/K)(theta), unitarily normalized, is cuspidal of type (2,0) with trivial central character and rho_(pi_E,iota) = H^1(E).",
      "hypotheses": [
-      "K a number field for the field of definition of the endomorphisms",
-      "K totally real for the rest",
+      "K totally real",
       "E geometrically CM"
      ],
      "locator": {
       "source": "LeHung26",
-      "where": "Section 5, p.9 (LeHung26 lines 364-366); OpenAI26 Section 9.4, p.27 (OpenAI26 line 1200) for the field of definition"
+      "where": "Section 5, p.9 (LeHung26 lines 364-366); OpenAI26 Section 9.4, pp.27-28 (OpenAI26 lines 1200-1215)"
      },
      "prerequisites": [
-      "roadmap:EllipticCurves Layer 0.5",
-      "roadmap:EllipticCurves Layer 1",
+      "gap:cm-elliptic-endomorphism-field",
       "roadmap:ShimuraVarieties §5.3",
       "roadmap:AbelianSchemesAndArithmeticModuli A6",
       "roadmap:AutomorphicGaloisRepresentations §3.10",
@@ -921,17 +919,17 @@
       {
        "name": "field of definition",
        "kind": "computation",
-       "statement": "on y^2 = x^3 - x, [i](x,y) = (-x, iy) pulls dx/2y back to i dx/2y; complex conjugation sends [i] to (x,y) -> (-x,-iy) = [-i], so [i] is defined over Q(i), not Q: the model with all CM endomorphisms K-rational fails over totally real K"
+       "statement": "as supplied by gap:cm-elliptic-endomorphism-field: on y^2 = x^3 - x, [i](x,y) = (-x, iy) pulls dx/2y back to i dx/2y; complex conjugation sends [i] to (x,y) -> (-x,-iy) = [-i], so [i] is defined over Q(i), not Q; the kernel of G_Q on End is G_Q(i), over Q(sqrt 2) it is G_Q(zeta_8): the model with all CM endomorphisms K-rational fails over totally real K"
       },
       {
        "name": "T inside K'",
        "kind": "degenerate",
-       "statement": "when T is in K' every geometric endomorphism is K'-rational; over Q(i) all of Z[i] acts rationally on y^2 = x^3 - x, giving the isobaric sum"
+       "statement": "when T is in K' every geometric endomorphism is K'-rational; over Q(i) all of Z[i] acts rationally on y^2 = x^3 - x, the kernel is all of G_Q(i), giving the isobaric sum"
       },
       {
        "name": "characteristic p",
        "kind": "degenerate",
-       "statement": "over F_p the p-power Frobenius pulls dx/2y back to d(x^p)/2y^p = 0, so [.] is not injective; characteristic zero is used"
+       "statement": "the invariant differential is dx/(2y + a1 x + a3); over F_2, y^2 + y = x^3 (a3 = 1, discriminant -27 = 1) has omega = dx and Frobenius (x,y) -> (x^2,y^2) pulls it back to d(x^2) = 0; over F_3, y^2 = x^3 - x (discriminant 64 = 1) has omega = dx/2y and Frobenius pulls it back to d(x^3)/2y^3 = 0; [.] is not injective in characteristic p, so the supplied statement needs characteristic zero; dx/2y is meaningless in characteristic 2"
       }
      ]
     },
@@ -1083,11 +1081,10 @@
    "roadmap": "EllipticCurves",
    "sections": [
     "Layer 0.5",
-    "Layer 1",
     "Layer 4.5a",
     "Layer 5"
    ],
-   "what": "Galois conjugation and descent, invariant differentials, models and quadratic twists"
+   "what": "Galois conjugation and descent, models and quadratic twists"
   },
   {
    "roadmap": "JacobianChallenge",
@@ -1143,7 +1140,14 @@
    "sections": [
     "§5.3"
    ],
-   "what": "CM algebra actions (the field of definition of elliptic CM endomorphisms is proved in 4.3)"
+   "what": "CM algebra actions over C (the field of definition of elliptic CM endomorphisms over a number field is gap:cm-elliptic-endomorphism-field)"
+  },
+  {
+   "roadmap": "ComplexMultiplicationAndExplicitReciprocity",
+   "sections": [
+    "Layer 1 (required section before §1.1)"
+   ],
+   "what": "the field of definition of the geometric endomorphisms of a CM elliptic curve over a field of characteristic zero, through the invariant differential"
   },
   {
    "roadmap": "EtaleCohomologyFoundations",
@@ -1189,6 +1193,17 @@
    "needs": "Residual modularity in a cohomological weight for every totally odd absolutely irreducible solvable mod-p representation of a totally real field, p odd.",
    "supplier": "GL2AutomorphicRepresentationsAndTransfer",
    "section": "R17.5, a section after R17.5.14"
+  },
+  {
+   "slug": "cm-elliptic-endomorphism-field",
+   "title": "Field of definition of the endomorphisms of a CM elliptic curve",
+   "neededBy": [
+    "4.3"
+   ],
+   "detail": "For K of characteristic zero, Kbar an algebraic closure, G_K = Gal(Kbar/K), and E/K elliptic with End(E_Kbar) an order in an imaginary quadratic field: for a nonzero invariant differential omega over K, [.] : End(E_Kbar) -> Kbar, alpha^* omega = [alpha] omega, is an injective ring homomorphism independent of omega with [g alpha g^-1] = g([alpha]) for g in G_K; with T the quadratic field generated by its image, alpha is defined over K <= K' <= Kbar exactly when [alpha] is in K', so the kernel of G_K on End(E_Kbar) is G_KT. Route: additivity and contravariance of differential pullback (EllipticCurves Layer 1; Tau Ceti TauCeti.Isogeny.Hom.pullbackDifferential, pullbackDifferential_comp, pullbackDifferential_add_invariantDifferential), separability of nonzero isogenies in characteristic zero, K-rationality of omega, descent of morphisms (EllipticCurves Layer 0.5); OpenAI26 Section 9.4, p.27 (lines 1200-1202). Gal(KT/K) has order at most 2, so g([alpha]) = g^-1([alpha]). Characteristic zero is needed: Frobenius over a finite field pulls omega back to 0. The case j = 0 over a field containing zeta_3 is a special case. The criterion over a number field K that all endomorphisms are K-rational exactly when T lies in K is its specialization.",
+   "needs": "For every field K of characteristic zero and every elliptic E/K with geometric CM, the differential embedding of End(E_Kbar) into Kbar is Galois equivariant, so an endomorphism is defined over K' exactly when its differential scalar lies in K' and the kernel of G_K on End(E_Kbar) is G_KT.",
+   "supplier": "ComplexMultiplicationAndExplicitReciprocity",
+   "section": "Layer 1, a section before §1.1"
   }
  ]
 }

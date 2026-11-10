@@ -40,9 +40,8 @@ lifting theorem to rank-two summands of abelian varieties
 mod-three and mod-five elliptic seeds over a totally real field ([FLHS15](#references),
 Corollary 5.1 and Theorem 3). Layer 3: one specialization satisfying every residual condition
 over L, the auxiliary seed over L and the three lifts. Layer 4: descent to the original curve,
-the all-place comparison over a totally real base, the CM branch over a totally real base, with
-the field of definition of the endomorphisms of a CM elliptic curve over an arbitrary number
-field, and the endpoint.
+the all-place comparison over a totally real base, the CM branch over a totally real base and the
+endpoint.
 
 **Imported from EllipticCurveModularityImaginaryQuadratic.** Layers 1–4 (the parameter open
 `switchParameterOpen`, the covers `cyclicCover m` with rotations and reflection, both
@@ -79,7 +78,13 @@ carrier is SmallRamificationAndAbelianVarietyBaseCases §5.0d with the predicate
 AutomorphicGaloisRepresentationsPartII AG2.P and PotentialModularityAndCompatibleSystems §1.6.
 The general weight-two lifting theorem over totally real fields belongs to GL2ModularityLifting.
 Residual modularity of solvable totally odd representations belongs to
-GL2AutomorphicRepresentationsAndTransfer R17.5. The two sections these roadmaps must add are
+GL2AutomorphicRepresentationsAndTransfer R17.5. The field of definition of the geometric
+endomorphisms of a CM elliptic curve over a field of characteristic zero, through their action on
+the invariant differential, belongs to ComplexMultiplicationAndExplicitReciprocity Layer 1, where
+its special case for `j = 0` over fields containing `ζ₃` is also required; it is not stated here.
+EllipticCurveModularityImaginaryQuadratic §8.6 uses the same statement over imaginary quadratic
+fields, and the criterion over a number field K that all endomorphisms are K-rational exactly
+when the CM field lies in K is its specialization. The three sections these roadmaps must add are
 specified under [Exact supplier contracts](#exact-supplier-contracts).
 
 **Outside this roadmap.** CM base fields (EllipticCurveModularityImaginaryQuadratic and its
@@ -212,11 +217,9 @@ fixed-pairing full-level curves `Y(N,ζ)` for `N ≥ 3`, used in §2.3 at levels
 
 ### From TauCetiRoadmap.EllipticCurves (on main)
 
-Layer 0.5 (Galois actions on curves and morphisms, and descent), Layer 1 (the invariant
-differential, its pullback along isogenies and endomorphisms, and the separability criterion that a
-nonzero isogeny in characteristic zero pulls ω back to a nonzero differential), Layer 4.5a (curve,
-equation and local minimal model comparisons) and Layer 5 (quadratic twists and their Galois
-action). Used in §§1.2, 1.6, 4.1, 4.2 and 4.3.
+Layer 0.5 (Galois actions on curves and morphisms, and descent), Layer 4.5a (curve, equation and
+local minimal model comparisons) and Layer 5 (quadratic twists and their Galois action). Used in
+§§1.2, 1.6, 4.1 and 4.2.
 
 ### From TauCetiRoadmap.JacobianChallenge (on main)
 
@@ -313,8 +316,8 @@ field. Used in §1.4.
 ### From TauCetiRoadmap.ShimuraVarieties
 
 §5.3 CM abelian varieties with their algebra action. Used in §4.3 for the action of the CM field.
-The field of definition of the CM endomorphisms of an elliptic curve is not taken from this
-section: it is proved in §4.3.
+This section works over ℂ; the field of definition of the CM endomorphisms over a number field is
+the contract required of ComplexMultiplicationAndExplicitReciprocity below.
 
 ### From TauCetiRoadmap.EtaleCohomologyFoundations
 
@@ -379,6 +382,37 @@ under the hypotheses of its theorem (`r̄` already modular, reducible at the pla
 projective image of `r̄(G_{F(ζ₃)})` isomorphic to `PSL₂(𝔽₃)`); it does not establish the statement
 for every odd p, and the return from `F′` to a cohomological weight over F is part of what the
 supplier must prove. The elliptic case is [FLHS15](#references), Theorem 6, p.9 (FLHS15 line 404).
+
+### Required of ComplexMultiplicationAndExplicitReciprocity: the field of definition of CM endomorphisms
+
+ComplexMultiplicationAndExplicitReciprocity §1.1 uses, for a curve over ℚ, that the action of the
+CM order on the Lie algebra, by the same scalar as on the invariant differential, is Galois
+equivariant, and a contract for the case `j = 0` over a field containing `ζ₃` is also placed there;
+no section states the general field of definition. Layer 1 of ComplexMultiplicationAndExplicitReciprocity must add, before §1.1, the following
+statement, used in §4.3.
+
+What ComplexMultiplicationAndExplicitReciprocity must provide (gap:cm-elliptic-endomorphism-field):
+let K be a field of characteristic zero with algebraic closure K̄ and `G_K = Gal(K̄/K)`, and let E/K
+be an elliptic curve whose geometric endomorphism ring `End(E_K̄)` is an order in an imaginary
+quadratic field. For a nonzero invariant differential ω of E over K define
+`[·] : End(E_K̄) → K̄` by `α^*ω = [α]ω`. Then `[·]` is an injective ring homomorphism, independent
+of ω, with `[ᵍα] = g([α])` for every `g ∈ G_K`, where `ᵍα = g ∘ α ∘ g⁻¹`. With `T ⊂ K̄` the
+quadratic field generated by its image, an endomorphism α is defined over an intermediate field
+`K ⊆ K′ ⊆ K̄` exactly when `[α] ∈ K′`; in particular the kernel of the action of `G_K` on
+`End(E_K̄)` is `G_{KT}`.
+
+A route: pullback of invariant differentials is additive and reverses composition (EllipticCurves
+Layer 1; Tau Ceti `TauCeti.Isogeny.Hom.pullbackDifferential`,
+`TauCeti.Isogeny.Hom.pullbackDifferential_comp` and
+`TauCeti.Isogeny.Hom.pullbackDifferential_add_invariantDifferential`, in
+`TauCeti/AlgebraicGeometry/EllipticCurve/Isogeny/Hom/Differential.lean`); a nonzero isogeny in
+characteristic zero is separable and so pulls ω back to a nonzero differential; ω is K-rational,
+so conjugating α by g applies g to the scalar `[α]`; and descent of morphisms (EllipticCurves
+Layer 0.5) identifies the endomorphisms defined over `K′` with those fixed by `G_{K′}`
+([OpenAI26](#references), §9.4, p.27, OpenAI26 lines 1200–1202). Since `T/ℚ` is quadratic,
+`Gal(KT/K)` has order at most two, so `g([α]) = g⁻¹([α])` and the formula does not depend on
+whether Galois acts on points through g or through g⁻¹. Characteristic zero is a hypothesis: over
+a finite field the Frobenius endomorphism is nonzero and pulls ω back to zero (§4.3, Checks).
 
 ## How to read the build
 
@@ -490,13 +524,15 @@ EllipticCurves Layer 5; Tau Ceti `WeierstrassCurve.quadraticTwist`; JacobianChal
 
 **Checks.**
 
-- Matrix witness of the descent identity: `R = [[0,−1],[1,−1]]` has order three and
-  `W = [[0,1],[1,0]]` has `WRW = [[−1,1],[−1,0]] = R⁻¹`. Hence `WR⁻¹W = R`: conjugating the
-  Galois image `R⁻¹` of a rotation by the reflection returns R. Without the twist the Galois image
-  `R⁻¹ ≠ R` shows the rotations are not L-rational.
-- For `k = ℚ(√−3)` and n = 3, δ is trivial and the twist is `C_3 ⊗ L` itself.
-- A cocycle with values in the rotations cannot replace w: rotations commute, so conjugating
-  `u_{ζ⁻¹}` by a rotation leaves `u_{ζ⁻¹}`, and the rotations stay non-rational over L.
+- Matrix witness of the descent identity, for δ nontrivial and `g ∈ G_L` with `δ(g) = −1`:
+  `R = [[0,−1],[1,−1]]` has order three and `W = [[0,1],[1,0]]` has `WRW = [[−1,1],[−1,0]] = R⁻¹`.
+  Hence `WR⁻¹W = R`: conjugating the Galois image `R⁻¹` of a rotation under g by the reflection
+  returns R. Without the twist the Galois image `R⁻¹ ≠ R` shows the rotations are not L-rational.
+- For `k = ℚ(√−3)` and n = 3, δ is trivial, the rotations are already L-rational, and the twist is
+  `C_3 ⊗ L` itself.
+- For δ nontrivial, a cocycle with values in the rotations cannot replace w: rotations commute, so
+  conjugating `u_{ζ⁻¹}` by a rotation leaves `u_{ζ⁻¹}`, and the rotations stay non-rational over L.
+  When δ is trivial there is nothing to repair: `L = M` contains `k(μ_m)`.
 - On `H¹(B_t)` the reflection acts by `[−1]^* = −1`, so the m = 1 case is the quadratic twist.
   The convention witness for `y² = x³ − x + 1` at 5, traces `−2` and `2`, fixes the sign rule.
 - Negative control for the cubic clause: for n = 5 the tower has indices 1 and 5 only. Forcing
@@ -535,8 +571,10 @@ its polynomials, semisimplicity and Hodge labels are proved.
 - For n = 3, `H¹(C^δ_3)` has dimension six, split into three two-dimensional pieces `W_1`,
   `W_η`, `W_{η⁻¹}`.
 - θ = 1 gives `W_1 = H¹(B^δ_t)`, of rank two, not a trivial or one-dimensional representation.
-- Non-example: inducing `V_θ` from `G_M` to `G_L` gives a rank-four representation; the twist is
-  what produces a rank-two `G_L`-representation.
+- Non-example: inducing `V_θ` from `G_M` to `G_L` gives `W_θ ⊗ Ind_{G_M}^{G_L} 1 = W_θ ⊕ W_θ ⊗ δ`,
+  of rank `2[M:L]`, which is four when δ is nontrivial (for instance for every totally real k); the
+  twist is what produces a rank-two `G_L`-representation. Positive control: for `k = ℚ(√−3)` and
+  n = 3, `M = L` and the induction is `V_θ` itself, of rank two.
 - For ℓ dividing n the eigenspace is still taken with characteristic-zero coefficients; the
   integral statement is §1.5 and uses no integral projector.
 
@@ -686,8 +724,10 @@ ArithmeticGaloisRepresentations §6.1.
   four-dimensional `W_η ⊕ W_{η⁻¹}` contributes two.
 - At a place v of L inert in `M/L`, `δ(Frob_v) = −1` and the traces of `W_1` and `H¹(B_t)` at
   `Frob_v` differ by sign. Omitting δ would make Layer 4 produce the twist of E by δ rather than E.
-- Pullback followed by norm is multiplication by the degree, 3 or p; the comparisons are
-  rational, and the congruences of §1.5 are applied only after semisimplification.
+- Pullback along `C^δ_n → C^δ_d` followed by the norm is multiplication by the degree `n/d`, and
+  along `C^δ_n → B^δ_t` by n: for n = 45 and d = 3 it is 15; for n = 3p it is p for d = 3 and 3 for
+  d = p. These degrees are not ℓ-adic units for ℓ dividing them, so the comparisons are rational,
+  and the congruences of §1.5 are applied only after semisimplification.
 - `W_η ≅ W_{η⁻¹}` through `w′^*`, consistent with both being `H¹(A_t)|G_L`.
 
 ### Examples
@@ -808,9 +848,9 @@ Let Y be the fixed-pairing twisted curve of `E[5]` from EllipticCurveModularityI
 elliptic curve, and the frames of its 3-torsion form a finite étale `GL₂(𝔽₃)`-torsor P → Y. Over
 `K̄`, the frames of a fixed pairing value form the fixed-pairing curve of level 15, which is
 connected; so geometric monodromy acts transitively on them and equals `SL₂(𝔽₃)`. A connected
-component `P₀` of P is integral and finite étale over Y with group `H ⊇ SL₂(𝔽₃)`. Hilbert
-irreducibility over K gives infinitely many `t ∈ Y(K)` whose fibre in `P₀` is connected; for them
-`G_K` acts on `E_t[3]` through all of H. Take `E′ = E_t`.
+component `P₀` of P (all of P when `ζ₃ ∉ K`) is integral and finite étale over Y with group
+`H ⊇ SL₂(𝔽₃)`. Hilbert irreducibility over K gives infinitely many `t ∈ Y(K)` whose fibre in `P₀`
+is connected; for them `G_K` acts on `E_t[3]` through all of H. Take `E′ = E_t`.
 
 ([FLHS15](#references), Lemma 6.1 and its proof, p.10, FLHS15 line 421 and lines 430–452.)
 
@@ -830,8 +870,13 @@ and IG.2.7; ArithmeticGaloisRepresentations §6.2; for the statement, Mathlib
   representation and is not CM.
 - Over a field containing `ζ₃`, such as `ℚ(√−3)`, the determinant is trivial and the image is at
   most `SL₂(𝔽₃)`; asking for `GL₂(𝔽₃)` would be false.
-- The cover of all frames of `E[3]` has `φ(3) = 2` geometric components; it is not an integral
-  Hilbert datum. A component is used.
+- The cover P of all frames of the 3-torsion has `φ(3) = 2` geometric components, one for each
+  value of the Weil pairing, so it is not geometrically integral; whether it is integral over K
+  depends on K. If `ζ₃ ∉ K`, as for K = ℚ, the arithmetic monodromy `GL₂(𝔽₃)`, of order 48, exchanges
+  the two components, each of degree 24 over Y, and P is integral, so `P₀ = P`. If `ζ₃ ∈ K`, as for
+  `K = ℚ(√−3)`, the determinant is trivial and P has two K-components of degree 24. The proof uses an
+  integral component `P₀` in both cases; Hilbert irreducibility asks for integrality over K, not
+  geometric integrality.
 - Genus zero alone does not give a rational point; here `(E, id)` is one, so the completion is a
   projective line rather than an anisotropic conic.
 
@@ -1092,35 +1137,29 @@ NeronModelsAndSemistableAbelianVarieties §§5.6 and 6.10.
 
 ### 4.3 CM curves over a totally real field
 
-Let K be totally real and E/K geometrically CM, with CM field T. Prove that `T ⊄ K`, that the
-endomorphisms are defined over the CM field KT, and that `H¹(E)|G_{KT} = ψ_ι ⊕ ψ^c_ι` for an
-algebraic Hecke character θ of KT with `ψ_ι = r_{ℓ,ι}(θ)` and `ψ ≠ ψ^c`. Then
-`H¹(E) ≅ Ind_{G_{KT}}^{G_K} ψ_ι`, and the quadratic automorphic induction
+Let K be totally real and E/K geometrically CM, with CM field `T ⊂ K̄` embedded through the action
+of the endomorphisms on invariant differentials. Prove that `T ⊄ K` and that
+`H¹(E)|G_{KT} = ψ_ι ⊕ ψ^c_ι` for an algebraic Hecke character θ of KT with `ψ_ι = r_{ℓ,ι}(θ)` and
+`ψ ≠ ψ^c`. Then `H¹(E) ≅ Ind_{G_{KT}}^{G_K} ψ_ι`, and the quadratic automorphic induction
 `π_E = AI_{KT/K}(θ)`, unitarily normalized, is cuspidal of type `(2,0)` with trivial central
 character and `ρ_{π_E,ι} ≅ H¹(E)`. In particular §4.2 applies.
 
-The field of definition is proved first, for an arbitrary number field K and every elliptic E/K
-whose geometric endomorphism algebra `End(E_K̄) ⊗ ℚ` is an imaginary quadratic field. Fix a
-nonzero invariant differential ω of E over K and define `[·] : End(E_K̄) → K̄` by `α^*ω = [α]ω`.
-Prove that `[·]` is an injective ring homomorphism independent of ω (pullback of invariant
-differentials is additive, reverses composition, and is nonzero on nonzero isogenies in
-characteristic zero), and that `[ᵍα] = g([α])` for `g ∈ G_K` and the conjugate
-`ᵍα = g ∘ α ∘ g⁻¹`, because ω is K-rational; hence g fixes α exactly when it fixes `[α]`. With T
-embedded in K̄ as the field generated by the image of `[·]`, the kernel of the action of `G_K` on
-`End(E_K̄)` is `G_{KT}`: every geometric endomorphism is defined over KT, and an endomorphism α is
-defined over an intermediate field `K ⊆ K′ ⊆ K̄` exactly when `[α] ∈ K′`
-([OpenAI26](#references), §9.4, p.27, OpenAI26 line 1200).
+T is imaginary quadratic and K has only real embeddings, so `T ⊄ K` and `[KT:K] = 2`. By the field
+of definition required of ComplexMultiplicationAndExplicitReciprocity
+(gap:cm-elliptic-endomorphism-field), every geometric endomorphism of E is defined over KT, and an
+element of `G_K` outside `G_{KT}` acts on `End(E_K̄)` through the nontrivial automorphism of T.
+So `T ⊗ ℚ̄_ℓ` acts `G_{KT}`-equivariantly on `H¹`, its two eigenspaces are `G_{KT}`-stable, and
+an element of `G_K` outside `G_{KT}` exchanges them. These eigenspaces are finitely ramified de Rham
+characters, hence avatars of algebraic Hecke characters. At each embedding of KT the two
+characters have different Hodge–Tate weights, 0 and 1, so `ψ ≠ ψ^c` and the induction is cuspidal.
+The good polynomials of `AI(θ)` and of `Ind ψ` agree, and recognition identifies the
+representations.
 
-T is imaginary quadratic and K has only real embeddings. The eigenspaces of `T ⊗ ℚ̄_ℓ` on `H¹` over
-KT are finitely ramified de Rham characters, hence avatars of algebraic Hecke characters. At each
-embedding of KT the two characters have different Hodge–Tate weights, 0 and 1, so `ψ ≠ ψ^c` and
-the induction is cuspidal. The good polynomials of `AI(θ)` and of `Ind ψ` agree, and recognition
-identifies the representations.
+([LeHung26](#references), §5, p.9, LeHung26 lines 364–366; [OpenAI26](#references), §9.4,
+pp.27–28, OpenAI26 lines 1200–1215.)
 
-([LeHung26](#references), §5, p.9, LeHung26 lines 364–366.)
-
-*Needs:* EllipticCurves Layers 0.5 and 1 (Galois conjugation of morphisms, the invariant
-differential and its pullback, for the field of definition); ShimuraVarieties §5.3;
+*Needs:* ComplexMultiplicationAndExplicitReciprocity Layer 1, the field of definition of CM
+endomorphisms required above (gap:cm-elliptic-endomorphism-field); ShimuraVarieties §5.3;
 AbelianSchemesAndArithmeticModuli A6; AutomorphicGaloisRepresentations §§3.10 and 3.13;
 AutomorphicGaloisRepresentationsPartII AG2.0;
 GL2AutomorphicRepresentationsAndTransfer R16.2.13 and R17.4.16; ArithmeticGaloisRepresentations
@@ -1135,17 +1174,22 @@ GL2AutomorphicRepresentationsAndTransfer R16.2.13 and R17.4.16; ArithmeticGalois
 - Over `K = ℚ(√2)` the curve `y² = x³ − x` uses induction from `ℚ(√2, i) = ℚ(ζ₈)`; over a totally
   real base the isobaric-sum branch never occurs. Over `ℚ(i)`, outside this roadmap, the same curve
   gives an isobaric sum.
-- Field of definition: on `y² = x³ − x` the endomorphism `[i](x,y) = (−x, iy)` pulls
+- Field of definition, as supplied: on `y² = x³ − x` the endomorphism `[i](x,y) = (−x, iy)` pulls
   `ω = dx/(2y)` back to `d(−x)/(2iy) = i·ω`, so `[[i]] = i`. Complex conjugation c sends `[i]` to
   `(x,y) ↦ (−x, −iy)`, which is `[−i]`, matching `c(i) = −i`; so `[i]` is defined over `ℚ(i)` and not
-  over ℚ. This excludes the model in which every CM endomorphism is already K-rational, which
-  fails over every totally real K since `T ⊄ K`.
+  over ℚ, and the kernel of the action of `G_ℚ` on the endomorphisms is `G_{ℚ(i)}`; over `ℚ(√2)` it
+  is `G_{ℚ(ζ₈)}`. This excludes the model in which every CM endomorphism is already K-rational,
+  which fails over every totally real K since `T ⊄ K`.
 - Degenerate case of the field statement: when `T ⊆ K′` every geometric endomorphism is
   `K′`-rational; over `ℚ(i)` all of `ℤ[i]` acts by `ℚ(i)`-rational endomorphisms of `y² = x³ − x`,
-  which is why that base gives the isobaric sum.
-- The characteristic-zero hypothesis is used: over `𝔽_p`, outside the statement, the p-power
-  Frobenius endomorphism `(x,y) ↦ (x^p, y^p)` pulls `dx/(2y)` back to `d(x^p)/(2y^p) = 0`, so `[·]` is
-  not injective there and cannot detect the field of definition.
+  the kernel is all of `G_{ℚ(i)}`, and that base gives the isobaric sum.
+- The characteristic-zero hypothesis of the supplied statement is needed. The invariant
+  differential of a Weierstrass model is `dx/(2y + a₁x + a₃)`. Over `𝔽₂` the curve `y² + y = x³`
+  has `a₃ = 1` and discriminant `−27 ≡ 1`, so it is smooth with `ω = dx`; its Frobenius
+  endomorphism `(x,y) ↦ (x², y²)`, of degree two, pulls ω back to `d(x²) = 2x dx = 0`. Over `𝔽₃`
+  the curve `y² = x³ − x` has discriminant `64 ≡ 1` and `ω = dx/(2y)`, with `2y ≠ 0` in its function
+  field; Frobenius pulls ω back to `d(x³)/(2y³) = 0`. So `[·]` is not injective in characteristic p.
+  The short-model formula `dx/(2y)` has no meaning in characteristic two, where `2y = 0`.
 
 ### 4.4 The endpoint
 
@@ -1184,8 +1228,9 @@ Steinberg `π_v`. For `y² = x³ − x` over the same K the route is §4.3.
 Layers 1–3; PotentialAutomorphyInfrastructure §2.3; AutomorphicGaloisRepresentations §§3.10–3.14,
 4.4 and 4.7; AutomorphicGaloisRepresentationsPartII AG2.0 and AG2.P;
 GL2AutomorphicRepresentationsAndTransfer R16.2–R16.6 and R17.4.16; ShimuraVarieties §5.3;
-EllipticCurves Layers 0.5 and 1 for the field of definition of CM endomorphisms;
-AbelianSchemesAndArithmeticModuli A6; NeronModelsAndSemistableAbelianVarieties §§5.6 and 6.10.
+ComplexMultiplicationAndExplicitReciprocity Layer 1 for the field of definition of CM endomorphisms
+(gap:cm-elliptic-endomorphism-field); AbelianSchemesAndArithmeticModuli A6;
+NeronModelsAndSemistableAbelianVarieties §§5.6 and 6.10.
 
 ## Downstream consumers
 
@@ -1222,9 +1267,10 @@ manifest; line references are to its line-numbered extractions.
   assumes the geometric inputs of OpenAI26; here they are the imported proved layers.
 - **OpenAI26.** OpenAI, *Modularity of elliptic curves over imaginary quadratic fields*, 4 October
   2026, revision `adc7f1241b42e322a6451854ab7e4b4c146bf78a`. Proposition 5.1, p.12;
-  Proposition 5.2 and Lemma 5.3, p.13; Corollary 5.4, p.14; Proposition 8.4, p.23; §9.4, p.27 (the
-  field of definition of CM endomorphisms). Used through
-  EllipticCurveModularityImaginaryQuadratic, and directly in §4.3.
+  Proposition 5.2 and Lemma 5.3, p.13; Corollary 5.4, p.14; Proposition 8.4, p.23; §9.4,
+  pp.27–28 (the field of definition of CM endomorphisms, and the induced and isobaric CM branches).
+  Used through EllipticCurveModularityImaginaryQuadratic, directly in §4.3, and in the contract
+  required of ComplexMultiplicationAndExplicitReciprocity.
 - **FLHS15.** Nuno Freitas, Bao V. Le Hung and Samir Siksek, *Elliptic curves over real quadratic
   fields are modular*, arXiv:1310.7088v4 (Invent. Math. 201 (2015), 159–206). Theorem 1, p.2;
   Theorems 2–3, p.3; §2, pp.5–6; Proposition 4.1 and Lemma 4.2, p.8; Theorem 6 and Corollary 5.1,
