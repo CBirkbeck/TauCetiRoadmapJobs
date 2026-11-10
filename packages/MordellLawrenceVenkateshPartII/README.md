@@ -13,7 +13,8 @@ forgotten, and global purity over ℚ forces the induced Hodge filtrations to be
 root-pairing estimate bounds the semibalanced filtrations with a prescribed associated graded, and
 strongly balanced monodromy distributes the estimate over independent factors in one Frobenius
 cycle. The pure Ax–Schanuel theorem for period maps, transferred to p-adic coefficients through
-analytic radicals and Krull intersection, turns the resulting codimension bounds into non-density.
+Rückert's Nullstellensatz and Krull intersection, turns the resulting codimension bounds into
+non-density.
 The end theorems are the coefficient non-density theorem (Lawrence–Sawin, Theorem 8.17), the
 higher-dimensional Lawrence–Venkatesh theorem (Theorem 10.1) with its finiteness clause, the
 non-density of integral parameters of smooth hypersurfaces of large dimension and degree in `ℙⁿ`
@@ -34,7 +35,8 @@ This roadmap owns:
 2. **Arithmetic coefficient systems** (Layer 1): H⁰-algebras and their finite étale operations,
    coefficient modules, equidimensional modules, GL, GSp and GO structures over a coefficient
    algebra, finite-order character systems, Galois-orbit cohomology systems of hypersurfaces in
-   abelian varieties with their inversion pairing, and rationality of their Frobenius polynomials.
+   abelian varieties, the inversion pairing of those whose hypersurface is inversion-symmetric up to
+   translation, and rationality of their Frobenius polynomials.
 3. **Semilinear groups and tensor filtrations** (Layer 2): the semilinear coefficient normalizer
    and its Frobenius centralizer bound, semisimplification in disconnected groups with reductive
    identity component, tensor G-structures and G-filtrations, crystalline inner forms, adjoint
@@ -42,8 +44,8 @@ This roadmap owns:
    coefficient-group types, finiteness of semisimplification geometries and finiteness of local
    nonabelian Galois cohomology.
 4. **Period orbits and transcendence transfer** (Layer 3): period maps in one monodromy orbit,
-   parabolic stabilizers, the analytic-radical step, the codimension consequence of Ax–Schanuel and
-   its transfer to p-adic non-density.
+   parabolic stabilizers, the codimension consequence of Ax–Schanuel and its transfer to p-adic
+   non-density over an arbitrary number field.
 5. **Balanced monodromy and balanced filtrations** (Layers 4–5): index classes of subdirect
    products, strong balance, torsion-orbit balance, semisimple orbit codimension, central weights,
    induced Levi filtrations, balance and semibalance, global purity over ℚ, bifiltered Frobenius
@@ -107,20 +109,29 @@ It uses, and does not redevelop:
   Lefschetz pencils (§3.4), the vanishing quotient and its pairing (§4.4), the Kazhdan–Margulis
   open-image theorem (§5.8) and the orthogonal open-or-finite alternative with the ADE description
   of finite monodromy (§5.10).
-- **ComplexKahlerGeometry** K3 owns Rückert's Nullstellensatz for convergent power series;
+- **ComplexKahlerGeometry** K3 §3.4 owns Rückert's Nullstellensatz `I(V(𝔞)) = √𝔞` for convergent
+  power series (`ruckert_nullstellensatz`: a germ vanishing on the common zero set of finitely many
+  germs has a power in their ideal); the p-adic transfer (§3.4) applies it to the period ideal
+  without restating it;
   **RestrictedPowerSeries** owns evaluation of restricted series (§2.1) and Noetherianity of Tate
   algebras (§5.2); **ComplexComparisonPartII** owns the Gauss–Manin connection (§C5.2), geometric
   Hodge theory (§C5.3), regular singular connections with Deligne's Riemann–Hilbert theory (§C5.6)
   and the Artin comparison (§C6.6).
-- **SchemeAndStackFoundations** owns spreading out (§§0.8–0.9) and Hilbert and Quot schemes
-  (§4.14); **AlgebraicModuliForArithmeticGeometry** owns Hilbert families (§2.1) and the
-  characteristic-zero resolution preserving the regular locus (§9.4).
+- **SchemeAndStackFoundations** owns spreading out (§§0.8–0.9), contracted products and twisted
+  forms (§1.16) and Hilbert and Quot schemes (§4.14); **AlgebraicModuliForArithmeticGeometry** owns
+  Hilbert families (§2.1) and the characteristic-zero resolution preserving the regular locus (§9.4).
 - **AbelianSchemesAndArithmeticModuli** owns abelian schemes (§A0.1), rigidity (§A1.2), extension
   of sections over Dedekind bases (§A1.8), ample cohomology and degrees (§A2.4), the Néron–Severi
   group (§A2.10), quotients by finite subgroups (§A3.3), theta groups and polarized descent
   (§A3.6), finite rank of Hom (§A6.7), Rosati positivity (§A6.14) and Weil restriction
   (§§A6.30–A6.32). Tau Ceti supplies abelian varieties over a field as
-  `TauCeti.AlgebraicGeometry.AbelianVariety`.
+  `TauCeti.AlgebraicGeometry.AbelianVariety`. **JacobianChallenge** Layer F owns the Abel–Jacobi map
+  of a pointed smooth proper curve and its Albanese universal property, used for curves in abelian
+  surfaces (§10.10).
+- **EtaleCohomologyFoundations** §F.3 owns lissity of the higher direct images of a smooth proper
+  morphism with finite invertible coefficients, and **ClassicalAdicEtaleCohomology** §8.2 owns
+  Huber's comparison of algebraic and analytic proper higher direct images; together they supply the
+  lisseness hypothesis of PadicHodgeTheory §7.3 for the smooth projective families of Layer 0.
 - **Chebotarev** Layer 10 owns the Chebotarev density theorem; **ArithmeticGaloisDuality** §R02.3.1 owns
   Hermite's finiteness of extensions of bounded degree unramified outside a finite set.
 - **HeightsRationalPointsAndObstructions** §§1.6–1.7 own weak Mordell–Weil and Mordell–Weil;
@@ -142,8 +153,10 @@ finiteness for the quotient of the hypersurface parameter space by `PGL_(n+1)`.
   geometrically connected `X/ℚ` of positive dimension with a model over `ℤ[S⁻¹]`. Enlarging `S` by
   a stated finite set is a harmless reduction of the arithmetic problem (it enlarges the set of
   integral points); it is kept distinct from changing the base field. A p-adic residue disk is
-  taken at a smooth point of good reduction. An abstract field isomorphism `ℚ̄_p ≅ ℂ` is used on
-  formal coefficients only, never as a continuous map.
+  taken at a smooth point of good reduction. An abstract field isomorphism `σ : ℚ̄_p ≅ ℂ` (both are
+  algebraically closed of characteristic zero and of the cardinality of the continuum), chosen to
+  restrict on `K ⊂ ℚ̄_p` to the fixed embedding `K → ℂ`, is used on formal coefficients in `K_v` and
+  its finite extensions only, never as a continuous map.
 - **Filtrations.** Hodge filtrations `F` are decreasing with `gr^a_F = F^a/F^(a+1)`. Auxiliary
   flags `f` are increasing with `gr_k^f = f_k/f_(k−1)`. A cocharacter μ with weight spaces `V_j`
   gives `F^a = ⊕_(j≥a) V_j`.
@@ -156,12 +169,18 @@ finiteness for the quotient of the hypersurface parameter space by `PGL_(n+1)`.
   `ℚ_p(1)` jumps at `−1`. Geometric Frobenius on `ℚ_p(−1)` is `q` and its de Rham jump is `+1`.
   The torsion-twist multiplicities `d·A(n, q)` of SheafConvolutionOnAbelianVarieties §3.3 occur at
   Hodge–Tate weight `−q` in the arithmetic convention and at descending de Rham degree `q`. Global
-  pure Weil weight `w` gives average de Rham weight `w/2` over ℚ; this is not embeddingwise valid
-  over an arbitrary CM field.
+  pure Weil weight `w` gives average descending de Rham degree `w/2`, equivalently arithmetic
+  Hodge–Tate average `−w/2`, over ℚ; this is not embeddingwise valid over an arbitrary CM field.
+  Witness: `ℚ_p(−1)` has Weil weight 2, de Rham jump `+1 = 2/2` and Hodge–Tate weight `−1 = −2/2`;
+  `H¹` of an elliptic curve has Weil weight 1, de Rham jumps `0, 1` and Hodge–Tate weights `0, −1`,
+  while its Tate module `V_pE = H¹(1)` has Weil weight `−1`, de Rham jumps `0, −1` and Hodge–Tate
+  weights `0, 1`.
 - **Modular character.** `δ_P⁻¹ = det(Ad | Lie P)⁻¹`. For the upper triangular Borel of `GL₂` it is
   `diag(a, b) ↦ a⁻¹b`; semibalance means that its pairing with the induced cocharacter is `≤ 0`.
 - **Dimensions.** For a hypersurface in an `n`-dimensional abelian variety the middle degree is
-  `n − 1`: the inversion pairing is alternating when `n` is even and symmetric when `n` is odd.
+  `n − 1`: when the hypersurface is inversion-symmetric up to translation, the inversion pairing is
+  alternating when `n` is even and symmetric when `n` is odd; otherwise there is no invariant pairing
+  and the coefficient structure is `GL`.
   `N = n!·d` with normalized degree `d = φ^n/n!`. In the projective application `n` is the ambient
   dimension, again with middle degree `n − 1`, and the parameter space has dimension
   `binomial(n + d, d) − 1`.
@@ -179,9 +198,9 @@ finiteness for the quotient of the hypersurface parameter space by `PGL_(n+1)`.
 - `Finsupp` (`Mathlib/Data/Finsupp/Defs.lean`): finitely supported functions, used for
   integer-indexed natural multiplicities `h^a`; `Finsupp.degree` (`Mathlib/Data/Finsupp/Weight.lean`)
   for the total degree of a monomial exponent.
-- `Ideal.iInf_pow_eq_bot_of_isLocalRing` (`Mathlib/RingTheory/Filtration.lean`, line 431): in a
+- `Ideal.iInf_pow_eq_bot_of_isLocalRing` (`Mathlib/RingTheory/Filtration.lean`, line 432): in a
   Noetherian local ring the intersection of the powers of a proper ideal is zero (Krull). It is
-  applied to localizations of quotients of Tate algebras in §3.5.
+  applied to localizations of quotients of Tate algebras in §3.4.
 - `MvPolynomial.IsHomogeneous`, `MvPolynomial.pderiv`, `MvPolynomial.aeval` and `AlgebraicClosure`:
   the carriers of `IsSmoothHypersurface` and `integralHypersurfaces_not_zariskiDense`.
 - `RingTheory.Sequence.IsRegular` (`Mathlib/RingTheory/Regular/RegularSequence.lean`): regular
@@ -192,7 +211,7 @@ finiteness for the quotient of the hypersurface parameter space by `PGL_(n+1)`.
 ### From Tau Ceti
 
 - `TauCeti.Cocharacter.parabolic` (`TauCeti/Algebra/AlgebraicGroup/Dynamic/Parabolic.lean`,
-  line 293): the dynamic parabolic subgroup functor of a cocharacter, defined by the existence of
+  line 154): the dynamic parabolic subgroup functor of a cocharacter, defined by the existence of
   the conjugation limit on Hopf-algebra points. Every Richardson parabolic `P_λ` of Layers 2 and 5
   is this functor; the Levi decompositions under `TauCeti/Algebra/AlgebraicGroup/Dynamic/LeviDecomposition`
   are used with it.
@@ -203,8 +222,22 @@ finiteness for the quotient of the hypersurface parameter space by `PGL_(n+1)`.
   reconstruction for a known group, not the torsor theorem for two arbitrary fibre functors.
 - `TauCeti.AlgebraicGeometry.AbelianVariety` (`TauCeti/AlgebraicGeometry/AbelianVariety/Basic.lean`):
   an abelian variety over a field, bundled as a proper geometrically integral group scheme, with
-  derived smoothness, geometric connectedness and commutativity. It has no ample line bundles and
-  no models over Dedekind rings at the pin.
+  derived smoothness, geometric connectedness and commutativity. There is no abelian scheme over a
+  base other than a field at the pin, so the good-reduction model of Layer 10 is not available.
+- `TauCeti.AlgebraicGeometry.LineBundleClass.IsAmple` (`TauCeti/AlgebraicGeometry/LineBundle/Ample.lean`,
+  line 71), `TauCeti.AlgebraicGeometry.Scheme.CartierDivisor`
+  (`TauCeti/AlgebraicGeometry/CartierDivisor/Basic.lean`, line 127) and
+  `TauCeti.AlgebraicGeometry.Scheme.CartierDivisor.IsEffective`
+  (`TauCeti/AlgebraicGeometry/CartierDivisor/Effective/Basic.lean`, line 45): ampleness of a
+  line-bundle class on a scheme (quasi-compactness and, at every point, an affine nonvanishing locus of
+  a section of a positive power), Cartier divisors on an integral scheme as global sections of
+  `𝒦_X^× / 𝒪_X^×`, and their effectivity (every local equation regular at its point); the underlying
+  scheme of an abelian variety over a field is integral, so both apply to it. These are the
+  carriers of the ample effective divisors of Layer 10 on the abelian variety over `K`.
+  `TauCeti.AlgebraicGeometry.LineBundleClass.intersectionNumber`
+  (`TauCeti/AlgebraicGeometry/IntersectionNumber/Basic.lean`, line 111) pairs a class only with a
+  curve over a field; numerical equivalence classes of divisors and the top self-intersection `φⁿ`
+  are not at the pin.
 
 ### From TauCetiRoadmap.MordellLawrenceVenkatesh
 
@@ -218,7 +251,7 @@ finiteness for the quotient of the hypersurface parameter space by `PGL_(n+1)`.
 - §§1.10, 1.12–1.13: global purity forces the conjugation relation on Hodge–Tate exponents, the
   weight of a filtration, and the Hodge weight `w/2` of a pure representation; consumed in §5.4.
 - §§2.5, 2.6, 2.8: residue disks with coordinates, formal horizontal sections with integral
-  coefficients, and their complex convergence; consumed in §§0.7 and 3.5.
+  coefficients, and their complex convergence; consumed in §§0.7 and 3.4.
 - §2.11: crystalline Frobenius on de Rham cohomology of fibres and its compatibility with
   Gauss–Manin transport, for abelian-by-finite families; §0.7 extends it to the geometric systems
   of §0.5 through CrystallineCohomology §CR.7.3.
@@ -234,7 +267,10 @@ finiteness for the quotient of the hypersurface parameter space by `PGL_(n+1)`.
   `e_top(H) = (−1)^(n−1)·n!·d`; so a rank-one twist whose cohomology is concentrated in degree
   `n − 1` has rank `N = n!·d` there. §3.3: for such a twist over a p-adic field the Hodge–Tate
   weight `−q` occurs with multiplicity `d·A(n, q)`, `0 ≤ q < n`. Consumed in §§1.7 and 8.1.
-- §4.8: inversion symmetry and the classical form on the twisted cohomology; consumed in §1.8.
+- §4.8: inversion symmetry and the classical form on the twisted cohomology: the image is `SL_N`
+  unless the hypersurface is a translate of its inversion, in which case the pairing is alternating
+  for even `n` (`Sp_N`) and symmetric for odd `n` (`SO_N`); the standard `SL_N` module carries no
+  invariant form. Consumed in §1.8 and, for the branch choice, in §10.5.
 - §§5.2–5.3: the exceptional Pell pairs and exceptional degrees `D_j`; consumed in §§10.5, 10.6
   and 10.9.
 - §6.7: classical convolution monodromy (`SL`, `Sp` or `SO`) for hypersurfaces outside the
@@ -270,10 +306,13 @@ finiteness for the quotient of the hypersurface parameter space by `PGL_(n+1)`.
 
 - RestrictedPowerSeries §2.1 (evaluation and substitution of restricted series) and §5.2
   (Noetherianity, factoriality and dimension of `K⟨T₁, …, T_m⟩` over a complete nonarchimedean
-  field); quotients and localizations of Tate algebras are then Noetherian. Consumed in §3.5.
-- ComplexKahlerGeometry K3 (analytic germs and subvarieties): Noetherianity of the convergent
-  power-series ring and Rückert's Nullstellensatz `I(V(𝔞)) = √𝔞` for every ideal of `ℂ{z₁, …, z_m}`.
-  Consumed in §3.3.
+  field); quotients and localizations of Tate algebras are then Noetherian. Consumed in §3.4.
+- ComplexKahlerGeometry K3 §3.4 (local algebra, the Nullstellensatz, coherence and singular loci):
+  Noetherianity of the convergent power-series ring and Rückert's Nullstellensatz `I(V(𝔞)) = √𝔞` for
+  every ideal of `ℂ{z₁, …, z_m}`, in the form `ruckert_nullstellensatz`: a germ vanishing near the
+  point on the common zero set of finitely many germs `f₁, …, f_k` has a power in `(f₁, …, f_k)`.
+  Consumed in §3.4, where the germs are the period equations and the vanishing germ is an algebraic
+  function; for `𝔞 = (z²)` it gives `z² ∈ 𝔞` although `z ∉ 𝔞`.
 
 ### From TauCetiRoadmap.ComplexComparisonPartII
 
@@ -296,7 +335,7 @@ finiteness for the quotient of the hypersurface parameter space by `PGL_(n+1)`.
 - Layer B2 §B2.6 (semirational Pila–Wilkie block counting) and Layer B3 (definable uniformization
   and the Ax–Schanuel theorem for Kuga mixed Shimura varieties) are the o-minimal machinery on
   which the following request rests.
-- What AbelianSchemesAndArithmeticModuliPartII must provide (gap:period-map-ax-schanuel): the Ax–Schanuel theorem for pure polarized integral variations of Hodge structure (Bakker–Tsimerman): for such a variation on a smooth irreducible complex algebraic variety `X` with monodromy period orbit `D_mon ⊂ Ď`, every irreducible analytic component `U` of the intersection of an algebraic subvariety `W ⊂ X × Ď` with the graph of a local lift of the period map satisfies `codim_(X×Ď) U ≥ codim W + codim_(X×Ď)(graph)` unless the projection of `U` to `X` lies in a weakly special subvariety, in the monodromy-orbit form used in §3.4.
+- What AbelianSchemesAndArithmeticModuliPartII must provide (gap:period-map-ax-schanuel): the Ax–Schanuel theorem for pure polarized integral variations of Hodge structure (Bakker–Tsimerman) in the monodromy-orbit form: for such a variation on a smooth irreducible complex algebraic variety `X`, with `D_mon` the orbit, in the flag variety of a reference fibre, of the identity component of the Zariski closure of monodromy through a Hodge filtration, every irreducible analytic component `U` of the intersection of an algebraic subvariety `W ⊂ X × D_mon` with the graph of a local lift of the period map satisfies `codim_(X×D_mon) U ≥ codim_(X×D_mon) W + codim_(X×D_mon)(graph)` unless the projection of `U` to `X` lies in a proper weakly special subvariety of `X`; all codimensions are taken in `X × D_mon`, not in the product with a larger compact dual.
 
 ### From TauCetiRoadmap.MotivesAndAlgebraicCycles
 
@@ -315,22 +354,41 @@ finiteness for the quotient of the hypersurface parameter space by `PGL_(n+1)`.
   representations. Consumed in §§0.3, 1.2, 2.6 and 7.1.
 - §5.5: the finite-type specialization of the tensor-isomorphism torsor. Consumed in §7.1.
 - §6.1: the rational Fontaine–Laffaille comparison with its signs. Consumed in §7.3.
-- §7.3: for a proper smooth morphism of smooth rigid spaces the higher direct image of a de Rham local
-  system is de Rham, with associated bundle the relative de Rham cohomology, its Hodge graded pieces and
-  its Gauss–Manin connection; on a residue disk this is the horizontality of the fibrewise de Rham
-  comparisons. Consumed in §§0.1, 0.5 and 0.7 through gap:relative-crystalline-comparison.
+- §7.3: for a proper smooth morphism `f` of smooth rigid spaces and a de Rham local system `L` whose
+  higher direct images `Rⁱf_*L` are lisse in every degree used, including every degree entering a
+  pairing, `Rⁱf_*L` is de Rham, with associated bundle the relative de Rham cohomology, its Hodge
+  graded pieces and its Gauss–Manin connection; on a residue disk this is the horizontality of the
+  fibrewise de Rham comparisons. It is applied only to the constant coefficient `L = ℤ_p` (de Rham,
+  with trivial filtration) on the analytification of a smooth projective family of `K_v`-varieties,
+  where lisseness holds in every degree: `Rⁱf_*(ℤ/pᵐ)` is lisse on the algebraic base because `p` is
+  invertible there (EtaleCohomologyFoundations §F.3), and its analytification is the analytic higher
+  direct image (ClassicalAdicEtaleCohomology §8.2). For a constant family `Y₀ × X → X` this gives the
+  constant local system `Hⁱ(Y₀)`, zero Gauss–Manin connection and identity transport. Consumed in
+  §§0.1, 0.5 and 0.7 through gap:relative-crystalline-comparison.
 - §§8.1–8.2: for proper smooth `X` with good reduction at `p`, `D_cris(H^i_et(X_C, ℚ_p))` is
   crystalline cohomology of the special fibre with its Frobenius and, over `K`, de Rham cohomology
   with its Hodge filtration; the comparisons commute with pullback, cup product and Tate twists,
   and a cohomological projector restricts them when it is given geometrically on both sides.
   Consumed in §§0.5, 0.7 and 1.2.
-- What PadicHodgeTheory must provide (gap:relative-crystalline-comparison): for a smooth projective morphism `f : 𝒴 → 𝒳` of smooth `W(k)`-schemes with `k` finite and `p` unramified, the fibrewise crystalline comparisons of §8.1 at the points of a residue disk of `𝒳`, which are horizontal for the Gauss–Manin connection on `R^i f_* Ω^•` by the proper smooth pushforward of de Rham local systems of §7.3, are compatible with the Frobenius of the convergent F-isocrystal `R^i f_crys,*` of CrystallineCohomology §CR.7.3, so that `R^i f_*ℚ_p` and that filtered F-isocrystal are associated in the sense of Faltings.
+- What PadicHodgeTheory must provide (gap:relative-crystalline-comparison): for a smooth projective morphism `f : 𝒴 → 𝒳` of smooth `W(k)`-schemes with `k` finite and `p` unramified, the fibrewise crystalline comparisons of §8.1 at the points of a residue disk of `𝒳`, which are horizontal for the Gauss–Manin connection on `R^i f_* Ω^•` by the proper smooth pushforward of de Rham local systems of §7.3 applied to the constant coefficient `ℤ_p`, whose higher direct images are lisse, are compatible with the Frobenius of the convergent F-isocrystal `R^i f_crys,*` of CrystallineCohomology §CR.7.3, so that `R^i f_*ℚ_p` and that filtered F-isocrystal are associated in the sense of Faltings.
 - What PadicHodgeTheory must provide (gap:hodge-tate-image-cocharacter): for a crystalline representation `ρ : G_K → GL(V)` of a finite unramified `K/ℚ_p` preserving a family of tensors, the Zariski closure of `ρ(G_K)` contains a torus that is conjugate over `ℚ̄_p`, inside the group fixing those tensors, to the image of the Hodge cocharacter of `D_dR(V)` (Sen; Wintenberger's tensor-compatible splitting).
 
 ### From TauCetiRoadmap.CrystallineCohomology
 
 - §CR.7.3: relative crystalline cohomology of a proper smooth morphism, its base change and its
   Gauss–Manin connection. Consumed in §0.7.
+
+### From TauCetiRoadmap.EtaleCohomologyFoundations and ClassicalAdicEtaleCohomology
+
+- EtaleCohomologyFoundations §F.3 (`VanishingCycles.lisseDirectImageTransport`): for a smooth proper
+  morphism and finite lisse coefficients whose annihilator is invertible on the base, the higher direct
+  images are lisse, with the geometric fibre stalk formula. Consumed in §§0.1, 0.5 and 0.7, for the
+  coefficients `ℤ/pᵐ` on smooth projective families over a base on which `p` is invertible.
+- ClassicalAdicEtaleCohomology §8.2 (proper algebraic comparison, Huber's Theorem 3.7.2): for a proper
+  morphism of schemes locally of finite type over a scheme and its analytification, and torsion
+  coefficients, the base-change map from the analytified algebraic higher direct images to the analytic
+  higher direct images is an isomorphism. Consumed in §§0.1, 0.5 and 0.7, to carry lisseness from the
+  algebraic family to its rigid analytification on a residue disk.
 
 ### From TauCetiRoadmap.DeligneWeightsAndPurity, WeilConjectures and PadicDifferentialEquationsAndRigidCohomology
 
@@ -370,6 +428,9 @@ finiteness for the quotient of the hypersurface parameter space by `PGL_(n+1)`.
 - SchemeAndStackFoundations §§0.8–0.9 (spreading out over Dedekind bases and Noetherian
   approximation) and §4.14 (`hilbert_quot_schemes`: Hilbert and Quot schemes of a projective
   morphism with a relatively very ample bundle). Consumed in Layers 9 and 10.
+- SchemeAndStackFoundations §1.16 (contracted products and twisting: a torsor under the automorphism
+  group of `X` contracts to a form of `X`). Consumed in §1.9, for the twisted forms of a fibre of a
+  finite multiplication cover defined by a deck element composed with Frobenius.
 - AlgebraicModuliForArithmeticGeometry §2.1 (Hilbert families as Quot functors, fixed Hilbert
   polynomial subfunctors) and §9.4 (the characteristic-zero projective birational resolution with
   smooth source preserving the entire regular locus, imported there from
@@ -383,7 +444,15 @@ finiteness for the quotient of the hypersurface parameter space by `PGL_(n+1)`.
   (quotients by finite locally free subgroups), §A3.6 (theta groups and polarized descent), §A6.7
   (Hom is free of finite rank), §A6.14 (positivity of the Rosati involution) and §§A6.30–A6.32
   (Weil restriction, its geometric splitting along separable extensions and Weil restriction of
-  abelian schemes along finite étale maps). Consumed in Layers 2 and 10.
+  abelian schemes along finite étale maps). Consumed in Layers 2 and 10. §A1.2 applies only to
+  morphisms between abelian schemes; it is not used for a curve mapping to an abelian variety.
+
+### From TauCetiRoadmap.JacobianChallenge
+
+- Layer F (Abel–Jacobi and the universal property): for a smooth proper geometrically connected curve
+  `C` over a field `k` with a `k`-point `x₀`, the Abel–Jacobi morphism `a : C → Jac C`, `x ↦ 𝒪(x − x₀)`,
+  satisfies `a(x₀) = 0`, and every pointed morphism `(C, x₀) → (A, 0)` to an abelian variety factors
+  as `h ∘ a` for a unique homomorphism `h : Jac C → A`. Consumed in §10.10.
 
 ### From TauCetiRoadmap.Chebotarev and TauCetiRoadmap.ArithmeticGaloisDuality
 
@@ -455,7 +524,8 @@ API:
   comparison cannot be an isomorphism.
 
 *Needs:* ShimuraData §§3.1, 3.3; ComplexComparisonPartII §C5.6; PadicHodgeTheory §§7.3, 8.1–8.2 with
-gap:relative-crystalline-comparison; DeligneWeightsAndPurity §§0.1, 0.7.
+gap:relative-crystalline-comparison; EtaleCohomologyFoundations §F.3; ClassicalAdicEtaleCohomology
+§8.2; DeligneWeightsAndPurity §§0.1, 0.7.
 
 ### 0.2 Integral, polarized and integral-Frobenius systems
 
@@ -556,10 +626,13 @@ integral cohomology lattice modulo torsion is a spanning lattice. Pure geometric
 and have integral Frobenius (LS, Example 5.10, p. 43; proof of Lemma 5.29, pp. 49–51).
 
 The four cohomology objects are compared with the supplied proper comparisons, including the
-connection and the filtration. The algebraic action of `Γ` gives the same projector in every
-realization; purity and integral Frobenius pass to the summand and a positive polarization restricts
-to it. Coefficient pushforward with arbitrary coefficients (LS Example 5.10 in general) is not used:
-only constant coefficients on finite covers occur.
+connection and the filtration; the relative de Rham comparison of PadicHodgeTheory §7.3 needs the
+higher direct images of `ℤ_p` to be lisse, which holds algebraically by EtaleCohomologyFoundations
+§F.3 and passes to the rigid analytification by ClassicalAdicEtaleCohomology §8.2. The algebraic
+action of `Γ` gives the same projector in every realization; purity and integral Frobenius pass to the
+summand and a positive polarization restricts to it. Coefficient pushforward with arbitrary
+coefficients (LS Example 5.10 in general) is not used: only constant coefficients on finite covers
+occur.
 
 API:
 
@@ -578,8 +651,8 @@ API:
 - The zero projector gives the rank-zero system and the identity projector the original system.
 
 *Needs:* §§0.2–0.3; ComplexComparisonPartII §§C5.2–C5.3; PadicHodgeTheory §§7.3, 8.1–8.2 with
-gap:relative-crystalline-comparison; CrystallineCohomology §CR.7.3; DeligneWeightsAndPurity §§4.3–4.4;
-WeilConjectures Layer WC.3.
+gap:relative-crystalline-comparison; EtaleCohomologyFoundations §F.3; ClassicalAdicEtaleCohomology
+§8.2; CrystallineCohomology §CR.7.3; DeligneWeightsAndPurity §§4.3–4.4; WeilConjectures Layer WC.3.
 
 ### 0.6 Differential monodromy from a tensor generator
 
@@ -639,7 +712,8 @@ API:
   MordellLawrenceVenkatesh §2.11.
 
 *Needs:* §§0.1, 0.5; MordellLawrenceVenkatesh §§2.5–2.6, 2.11; CrystallineCohomology §CR.7.3;
-PadicHodgeTheory §§7.3, 8.1 with gap:relative-crystalline-comparison.
+PadicHodgeTheory §§7.3, 8.1 with gap:relative-crystalline-comparison; EtaleCohomologyFoundations
+§F.3; ClassicalAdicEtaleCohomology §8.2.
 
 ### Examples
 
@@ -651,7 +725,8 @@ lattice.
 ### Dependencies
 
 ShimuraData §§3.1–3.4; ComplexComparisonPartII §§C5.2–C5.3, C5.6; PadicHodgeTheory §§3.3–3.5,
-7.3, 8.1–8.2; CrystallineCohomology §CR.7.3; MotivesAndAlgebraicCycles §§6.1–6.3, 6.8;
+7.3, 8.1–8.2; EtaleCohomologyFoundations §F.3; ClassicalAdicEtaleCohomology §8.2; CrystallineCohomology
+§CR.7.3; MotivesAndAlgebraicCycles §§6.1–6.3, 6.8;
 DeligneWeightsAndPurity §§0.1–0.2, 0.7, 0.9, 4.3–4.4; WeilConjectures Layer WC.3;
 MordellLawrenceVenkatesh §§2.5–2.6, 2.11.
 
@@ -881,14 +956,30 @@ algebraic-integer roots, hence lies in `ℤ[t]`. This geometric assertion is not
 of a Hodge–Deligne system; it supplies the integrality hypothesis of Faltings's lemma in §2.9 (LS,
 construction in Lemma 5.29, pp. 49–51, used in Lemma 5.49, pp. 61–62).
 
-A route: `e` commutes with the descended Frobenius. For an element `γ ∈ Γ` of finite order commuting
-with Frobenius `F`, the composite `F∘γ` is the Frobenius of a twisted form of the fibre over the same
-finite field, so its trace on cohomology is a rational integer by the point-count trace formula. Hence
-`tr(F^m e) = Σ_γ c_γ tr(F^m γ) ∈ ℚ` for every `m ≥ 1`; Newton's identities give rational coefficients,
-and integrality of the eigenvalues gives integer coefficients.
+A route: write `e = Σ_γ c_γ γ` with `c_γ ∈ ℚ`. Frobenius `F` of the fibre over a closed point of
+residue field `𝔽_q` normalizes `Γ` and fixes `e` (the orbit `I` is Frobenius-stable), but it permutes
+the individual deck elements, which need not commute with `F` and need not be defined over `𝔽_q`. For
+every `γ ∈ Γ` and `m ≥ 1`, the element `γF^m` of the finite semidirect product of `Γ` with the finite
+group through which `F^m` acts satisfies `(γF^m)^k = F^(mk)` for some `k ≥ 1`: if `F^(mr)` centralizes
+`Γ`, then `(γF^m)^r = N·F^(mr)` with `N ∈ Γ`, and `k = r·ord(N)`. So `γF^m` is a Galois descent datum
+along `𝔽_(q^(mk))/𝔽_(q^m)` and defines a twisted `𝔽_(q^m)`-form of the fibre of the cover
+(SchemeAndStackFoundations §1.16; it is quasi-projective, every finite orbit of `Γ` lying in an affine
+open), whose Frobenius acts on cohomology as `γF^m`. The point-count trace formula for that form
+(InverseGaloisAndArithmeticFundamentalGroups §IG.0.T4) makes `Σ_i (−1)^i tr(γF^m | H^i)` a rational
+integer for every `γ`, hence `Σ_i (−1)^i tr(F^m | eH^i) = Σ_γ c_γ Σ_i (−1)^i tr(γF^m | H^i) ∈ ℚ`
+(since `eF^m = F^m e` and `F^m γ = (F^m γ F^(−m))F^m`). The concentration hypothesis of §1.7 gives
+`eH^i = 0` for `i ≠ n − 1`, so `tr(F^m | V_I) ∈ ℚ` for every `m ≥ 1`; without concentration the degrees
+are separated by weight (DeligneWeightsAndPurity §4.4). Newton's identities give rational coefficients,
+and integrality of the eigenvalues gives integer coefficients. No torsion point is required to be
+rational over the residue field.
 
 **Checks.**
 
+- For `Γ = C₃ = ⟨γ⟩` with `FγF⁻¹ = γ⁻¹`, the idempotent `e = (2 − γ − γ²)/3` satisfies `e² = e` and
+  `FeF⁻¹ = e`, while neither `γ` nor `γ²` commutes with `F`; the semidirect product is `S₃` and
+  `(γF)² = γ·γ⁻¹·F² = F²`, so the twisted form defined by `γF` exists although `γ` is not fixed by
+  Frobenius. A route that assumes every deck element in the support of `e` commutes with `F` does not
+  apply to this `e`.
 - A single character summand of order three has Frobenius traces in `ℚ(μ₃)` that need not be rational;
   the full cyclotomic orbit is required.
 - For the trivial character the polynomial is the characteristic polynomial of Frobenius on
@@ -896,8 +987,8 @@ and integrality of the eigenvalues gives integer coefficients.
 - The eigenvalues of `V_I` are algebraic integers but the coefficients of an arbitrary summand are only
   algebraic integers; rationality is the content.
 
-*Needs:* §§0.5, 1.7; InverseGaloisAndArithmeticFundamentalGroups §IG.0.T4; DeligneWeightsAndPurity
-§§0.2, 0.10, 4.4.
+*Needs:* §§0.5, 1.7; InverseGaloisAndArithmeticFundamentalGroups §IG.0.T4; SchemeAndStackFoundations
+§1.16; DeligneWeightsAndPurity §§0.2, 0.10, 4.4.
 
 ### Examples
 
@@ -909,7 +1000,7 @@ why the full orbit, its idempotent and its descent are retained.
 
 Layer 0; PadicHodgeTheory §§3.3–3.5, 8.2; SheafConvolutionOnAbelianVarieties §§0.2, 3.1, 4.8, 8.3;
 AbelianSchemesAndArithmeticModuli §A3.2; InverseGaloisAndArithmeticFundamentalGroups §IG.0.T4;
-DeligneWeightsAndPurity §§0.2, 0.10, 4.4.
+SchemeAndStackFoundations §1.16; DeligneWeightsAndPurity §§0.2, 0.10, 4.4.
 
 ## Layer 2: Semilinear groups and filtered tensor objects
 
@@ -979,8 +1070,11 @@ Call `Γ` **G-completely reducible** when every `P_λ` containing `Γ` has a Lev
 that projecting `Γ` from a minimal Richardson parabolic containing it to its Levi gives a
 G-completely reducible subgroup, unique up to `G(k̄)`-conjugacy. Over a field `k` of characteristic zero
 the construction with `k`-parabolics and `k`-Levis applied to a `k`-rational `Γ` yields a `k`-rational
-subgroup, and for `k` a finite extension of ℚ_p the `G(k)`-conjugacy classes of such subgroups inside one
-geometric class are finitely many by §2.11.
+subgroup. Complete reducibility and the Levi image depend only on the Zariski closure of `Γ`, so the
+subgroups may be taken closed. For `k` a finite extension of ℚ_p, the closed `k`-subgroups inside one
+geometric conjugacy class form finitely many `G(k)`-classes (§2.11 with the normalizer), and the
+semisimplifications `G(k̄)`-conjugate to that of a given continuous representation `ρ` of a
+profinite group into `G(k)` form finitely many `G(k)`-classes of homomorphisms (§2.11 with the centralizer of the image).
 For `Γ` the image of a representation this is its **G-semisimplification** (LS, Definitions 5.34–5.36
 and Lemma 5.37, pp. 55–56; LV, Lemmas 2.4–2.5, pp. 905–906).
 
@@ -1144,23 +1238,30 @@ API:
 
 ### 2.9 Finiteness of global coefficient-group types
 
-Fix `p`, a finite set `T` of primes containing `p`, the coefficient normalizer `G/ℚ_p` of §2.1 with its
-standard representation and coefficient permutation action, a rank and an integer weight `w ≥ 0`.
-Prove that the continuous G-completely reducible representations `G_ℚ → G(ℚ_p)` unramified outside `T`
-whose Frobenius characteristic polynomials outside `T` lie in `ℤ[t]` with roots of Weil weight `w` form
-finitely many `G(ℚ_p)`-conjugacy classes (LS, Lemma 5.49 and proof, pp. 61–62; LS line 2810).
+Fix a number field `K`, a prime `p`, a finite set `T` of finite places of `K` containing the places
+above `p`, the coefficient normalizer `G/ℚ_p` of §2.1 with its standard representation
+`G → GL_(N[E:ℚ_p])` and coefficient permutation action, a rank and an integer weight `w ≥ 0`. Prove that
+the continuous G-completely reducible representations `G_K → G(ℚ_p)` unramified outside `T` whose
+Frobenius characteristic polynomials (in the standard representation) at every place `v ∉ T` lie in
+`ℤ[t]` with roots of Weil weight `w` relative to `Nv` form finitely many `G(ℚ_p)`-conjugacy classes (LS,
+Lemma 5.49 and proof, pp. 61–62; LS line 2813). The case `K = ℚ` is the one consumed in §§4.5 and 6.1.
 
-A route: the component action has bounded degree, so Hermite–Minkowski leaves finitely many extensions
-killing it; on each, the connected refinement of Faltings's lemma leaves finitely many
-`GL`-classes of the standard representation; conjugacy rigidity of a finite component group follows
-from vanishing of its characteristic-zero `H¹` on the Lie algebra; and a geometric conjugacy class
-splits into finitely many rational classes by §2.11 applied to the centralizer. The finiteness of
+A route: the component action has bounded degree, so Hermite's theorem over `K` leaves finitely many
+extensions `L/K` killing it; on each, the connected refinement of Faltings's lemma over `L` leaves
+finitely many `GL`-classes of the standard representation; conjugacy rigidity of a finite component
+group follows from vanishing of its characteristic-zero `H¹` on the Lie algebra; and a geometric
+conjugacy class of homomorphisms splits into finitely many rational classes by §2.11 applied to the
+centralizer of the image. The finiteness of
 `GL`-classes alone does not give finiteness of `G`-classes, and the coefficient-linear subgroup of a
 `GO` factor is not connected.
 
 **Checks.**
 
-- For `G = GL_N` the statement is Faltings's lemma, MordellLawrenceVenkatesh §1.2.
+- For `G = GL_N` the statement is Faltings's lemma, MordellLawrenceVenkatesh §1.2, over the same `K`.
+- For `K = ℚ(i)`, `G = GL₁` and weight `0`, every unramified finite-order character has Frobenius
+  polynomials `t − ζ` with `ζ` a root of unity, in `ℤ[t]` only when `ζ = ±1`; the trivial character
+  (polynomial `t − 1` at every `v ∉ T`) is one class. Restricting the statement to `K = ℚ` would exclude
+  this valid instance.
 - For `G = GO₂` two representations conjugate in `GL₂` need not be `G(ℚ_p)`-conjugate; finiteness
   still holds by §2.11.
 - Dropping integrality of the Frobenius polynomials (keeping only algebraic-integer eigenvalues) leaves
@@ -1195,11 +1296,21 @@ and Levi. The finite component action is tracked without identifying the parabol
 ### 2.11 Finiteness of local nonabelian Galois cohomology
 
 For a finite extension `F/ℚ_p` and a linear algebraic group `H` over `F`, prove that the pointed set
-`H¹(F, H)` of `H`-torsors is finite; consequently, for a closed subgroup `M ⊂ G` over `F`, each geometric
-`G`-conjugacy class of `F`-rational subgroups or homomorphisms with values in `G` that meets `F`-points
-splits into finitely many `G(F)`-conjugacy classes, indexed by the kernel of
-`H¹(F, Z) → H¹(F, G)` for the relevant centralizer `Z` (Borel–Serre; Serre, *Galois cohomology*, III
-§4.3, Theorem 4, and I §5.4, Corollary 1 to Proposition 36).
+`H¹(F, H)` of `H`-torsors is finite (Borel–Serre; Serre, *Galois cohomology*, III §4.3, Theorem 4).
+Consequently, for a linear algebraic group `G` over `F` (Serre, *Galois cohomology*, I §5.4,
+Corollary 1 to Proposition 36, applied to `G/N` and `G/Z`):
+
+- **Subgroups.** For a closed `F`-subgroup `M ⊂ G` with normalizer `N = N_G(M)`, the closed
+  `F`-subgroups that are `G(F̄)`-conjugate to `M` are the `F`-points of `G/N`, and their
+  `G(F)`-conjugacy classes are in bijection with `ker[H¹(F, N) → H¹(F, G)]`, a finite set: for
+  `M′ = gMg⁻¹` defined over `F`, the class is that of the cocycle `s ↦ g⁻¹s(g)`, which lies in `N`.
+- **Homomorphisms.** For a homomorphism `ρ : Γ → G(F)` from an abstract or profinite group, with
+  `Z = Z_G(ρ)` the centralizer of its image (a closed `F`-subgroup, equal to the centralizer of the
+  Zariski closure of the image), the homomorphisms `Γ → G(F)` that are `G(F̄)`-conjugate to `ρ` form
+  `G(F)`-conjugacy classes in bijection with `ker[H¹(F, Z) → H¹(F, G)]`, a finite set.
+
+The two indexing groups differ: an unmarked subgroup is classified by its normalizer, a marked
+homomorphism by its centralizer.
 
 A route: for a finite group `H` this is finiteness of extensions of bounded degree of a p-adic field;
 for connected reductive `H` it is the Kottwitz description of PadicHodgeTheory §5.5; the unipotent
@@ -1212,6 +1323,11 @@ of nonabelian cohomology with twisting.
 - `H¹(ℚ_p, μ₂) = ℚ_p^×/ℚ_p^(×2)` has four elements for `p` odd and eight for `p = 2`.
 - `H¹(ℚ_p, O_n)` classifies nondegenerate quadratic forms of dimension `n`; it is finite but not a
   single point.
+- In `G = GL₂` over `ℚ₃`, the maximal tori geometrically conjugate to the diagonal torus `T` form four
+  `GL₂(ℚ₃)`-classes, the split torus and the tori `Res_(L/ℚ₃) 𝔾_m` for `L = ℚ₃(√2)`, `ℚ₃(√3)` and
+  `ℚ₃(√6)` (one per quadratic étale `ℚ₃`-algebra, `|ℚ₃^×/ℚ₃^(×2)| = 4`). The normalizer `N = T ⋊ C₂` has
+  `ker[H¹(ℚ₃, N) → H¹(ℚ₃, GL₂)] = H¹(ℚ₃, N)` of four elements, whereas the centralizer `T` has
+  `H¹(ℚ₃, T) = 1` (Hilbert 90): indexing subgroups by the centralizer would undercount.
 
 *Needs:* PadicHodgeTheory §5.5; ReductiveGroups Layers 5, 6A.
 
@@ -1232,7 +1348,8 @@ Layers 0–1; ReductiveGroups Layers 3–7b; `TauCeti.Cocharacter.parabolic`;
 
 This layer places period maps in one orbit of the monodromy group, identifies its parabolic
 stabilizer, takes the codimension consequence of Ax–Schanuel and transfers it to p-adic non-density
-through analytic radicals and Krull intersection.
+over an arbitrary number field, through formal completion at a `K_v`-point, Rückert's Nullstellensatz
+(ComplexKahlerGeometry K3 §3.4) and Krull intersection.
 
 ### 3.1 Periods in a single monodromy orbit
 
@@ -1247,8 +1364,11 @@ Lemma 6.1, pp. 63–64).
 **Checks.**
 
 - For a constant system the period map is constant and `D_mon` is a point.
-- A flag of the right dimensions that does not respect a horizontal tensor (for instance a Hodge line
-  not isotropic for a flat symplectic form) is not in `D_mon`.
+- A flag of the right dimensions that does not respect a horizontal tensor is not in `D_mon`. For a
+  weight-one variation of rank four with flat symplectic form `B` and basis `e₁, e₂, f₁, f₂`,
+  `B(e_i, f_j) = δ_ij`, the plane `span(e₁, f₁)` has `B(e₁, f₁) = 1`, so it is not isotropic and is not
+  a Hodge filtration in `D_mon`, while `span(e₁, e₂)` is Lagrangian. A line cannot serve as this
+  negative control: every line is isotropic for an alternating form.
 - For the Legendre family `D_mon` is the full `ℙ¹` of lines in `H¹`, the Lagrangian period variety of
   MordellLawrenceVenkatesh §3.8 in rank two.
 
@@ -1274,38 +1394,23 @@ connected orbit (LS, Lemma 6.2, p. 64).
 *Needs:* §3.1; ShimuraData §§1.2, 3.4, 3.7 with gap:andre-monodromy-normality;
 `TauCeti.Cocharacter.parabolic`.
 
-### 3.3 Analytic radicals for period ideals
-
-Let `Φ` be a local holomorphic period map in smooth coordinates at a point `x`, and `I` the ideal of
-convergent germs at `x` defining `Φ⁻¹(Z)` for an algebraic `Z`. Prove that if an algebraic function `g`
-on the base vanishes on the zero germ of `I`, then `g^m ∈ I` for some `m ≥ 1`, with convergent
-coefficient germs (LV, proof of Lemma 9.3, pp. 966–968; LS, proof of Theorem 6.4, pp. 65–67).
-
-This is Rückert's Nullstellensatz `I(V(𝔞)) = √𝔞` applied to the finitely generated ideal of the
-period equations in `ℂ{z₁, …, z_m}`.
-
-**Checks.**
-
-- For `I = (z²)`, `z` vanishes on `V(I)` but `z ∉ I`; `z² ∈ I`, so the radical is essential.
-- For `I = (1)` the zero germ is empty and every `g` satisfies `g ∈ I`.
-- For `I = 0` only `g = 0` vanishes on the zero germ (the whole neighbourhood).
-
-*Needs:* ComplexKahlerGeometry K3.
-
-### 3.4 Algebraic degeneracy from period codimension
+### 3.3 Algebraic degeneracy from period codimension
 
 Let `X` be smooth irreducible over ℂ of dimension `d ≥ 1`, carrying a pure polarized integral variation
-with connected monodromy period orbit `D_mon`. Prove that if an algebraic subset `Z ⊂ D_mon` has
-codimension at least `d`, then every positive-dimensional irreducible analytic component of the inverse
-image of `Z` under a local lift of the period map is contained in a proper algebraic subvariety of `X`;
-zero-dimensional components are points and are also proper. The statement is componentwise: it does not
-say that infinitely many components share one proper algebraic closure (LS, Lemma 6.3, pp. 64–65; LV,
-Corollary 9.2, pp. 963–965).
+with connected monodromy period orbit `D_mon`: the orbit, in the flag variety of a reference fibre, of the
+identity component of the Zariski closure of monodromy through a Hodge filtration, projective by §3.2.
+Prove that if an algebraic subset `Z ⊂ D_mon` has codimension at least `d` in `D_mon`, then every
+positive-dimensional irreducible analytic component of the inverse image of `Z` under a local lift of the
+period map is contained in a proper algebraic subvariety of `X`; zero-dimensional components are points
+and are also proper. The statement is componentwise: it does not say that infinitely many components
+share one proper algebraic closure (LS, Lemma 6.3, pp. 64–65; LV, Corollary 9.2, pp. 963–965).
 
-A route: apply the pure Ax–Schanuel theorem to `W = X × Z` and the graph of the period map. If `U` is a
-component of `W ∩ graph` with Zariski-dense projection to `X`, then
-`dim U ≤ dim W + dim graph − dim(X × D_mon) = (d + dim Z) + d − (d + dim D_mon) = d − codim Z ≤ 0`, so
-a positive-dimensional component has degenerate projection.
+A route: apply the pure Ax–Schanuel theorem in the monodromy-orbit form, with all codimensions taken in
+`X × D_mon` (LS line 2965 takes the monodromy orbit as the compact dual), to `W = X × Z` and the graph of
+the period map. If `U` is a component of `W ∩ graph` whose projection to `X` is Zariski dense, that
+projection lies in no proper weakly special subvariety, so
+`dim U ≤ dim W + dim graph − dim(X × D_mon) = (d + dim Z) + d − (d + dim D_mon) = d − codim Z ≤ 0`, and a
+positive-dimensional component has degenerate projection.
 
 **Checks.**
 
@@ -1315,27 +1420,49 @@ a positive-dimensional component has degenerate projection.
 - For `X` a curve and `Z` a point of codimension `≥ 1` in `D_mon`, the inverse image is discrete, as the
   theorem predicts.
 - Only integral polarized pure variations are covered; no mixed or nonintegral extension is claimed.
+- The ambient is `X × D_mon`. On a curve `X` carrying a varying elliptic `H¹` plus a constant elliptic
+  `H¹`, `D_mon ≅ ℙ¹` has dimension 1 inside the three-dimensional Lagrangian Grassmannian of the rank-four
+  fibre. For `W = X × D_mon` and `U` the graph, the Ax–Schanuel inequality reads `1 ≥ 0 + 1` in
+  `X × D_mon`, but `3 ≥ 2 + 3`, false, in the product with the Lagrangian Grassmannian, although the
+  projection of `U` is all of `X`, which is not a proper weakly special subvariety.
 
 *Needs:* §3.2; AbelianSchemesAndArithmeticModuliPartII Layer B3 with gap:period-map-ax-schanuel.
 
-### 3.5 Transfer to p-adic non-density
+### 3.4 Transfer to p-adic non-density
 
-Let `X/ℚ` be smooth geometrically connected of dimension `d ≥ 1` with a pure polarized integral
-Hodge–Deligne system, a smooth p-adic residue disk `Ω` and its monodromy period orbit `D_mon`. Prove that
-for an algebraic `Z ⊂ D_mon` of codimension at least `d`, the set `Φ_p⁻¹(Z) ∩ Ω` is contained in a proper
-Zariski-closed subset of `X`. After shrinking to finitely many affinoid subdisks the statement involves
-finitely many minimal primes; finitely many residue disks combine by multiplying nonzero algebraic
-equations (LS, Theorem 6.4, pp. 65–67, LS line 2979; LV, Lemma 9.3, pp. 965–968).
+Let `K` be a number field with its fixed embedding `K → ℂ`, `S` a finite set of places, `p` a rational
+prime below no place of `S` and unramified in `K`, and `v | p` a place of `K`, as in §0.1. Let `𝒳` be
+smooth over `O_K[S⁻¹]` with geometrically connected generic fibre `X` of dimension `d ≥ 1`, carrying a
+pure polarized integral Hodge–Deligne system with connected monodromy period orbit `D_mon`, and let
+`Ω ⊂ 𝒳(O_(K_v))` be a residue disk with p-adic period map `Φ_p` of §0.7, valued in `D_mon` by §3.1.
+Prove that for a closed subscheme `Z ⊂ D_mon` over `K_v` of codimension at least `d`, the set
+`Φ_p⁻¹(Z) ∩ Ω` is contained in a proper Zariski-closed subset of `X_(K_v)`; consequently no set of
+`K`-points inside it is Zariski dense in `X`, since the ideal of functions vanishing on a set of
+`K`-points is defined over `K`. After shrinking to finitely many affinoid subdisks the statement involves
+finitely many irreducible components; finitely many residue disks combine by multiplying nonzero
+algebraic equations. The case `K = ℚ` is the one consumed in §§4.5, 6.1 and 7.5 (LS, Theorem 6.4,
+pp. 65–67, LS line 2979, stated there over an arbitrary number field; LV, Lemma 9.3, pp. 965–968).
 
-A route: the complex and p-adic period maps are given by one tuple of power series with coefficients in
-a number field, so formal Taylor expansions transfer through an abstract isomorphism `ℚ̄_p ≅ ℂ`, whose
-continuity is never used. For each local analytic component the complex statement §3.4 gives a nonzero
-algebraic equation `g`, and §3.3 places `g^m` in the period ideal; a norm descends `g` from a finite
-coefficient extension, and finite linear systems descend to the coefficient field. In the Tate algebra
-of an affinoid subdisk, Krull intersection in the localization at each prime turns membership modulo
-every power of the maximal ideal into membership in the ideal; the Tate algebra has finitely many
-minimal primes over the period ideal, and the product of their equations vanishes on `Φ_p⁻¹(Z) ∩ Ω`,
-nonzero because the germ map of an irreducible `X` is injective.
+A route: a residue disk lies in `𝒳′(O_(K_v))` for every affine open `𝒳′ ⊂ 𝒳` containing its reduction
+point, so `𝒳` may be taken affine and the functions below are regular on `X_(K_v)`. Cover `Ω` by
+finitely many smaller residue disks on whose images the equations of `Z` are regular, and fix one
+irreducible component `W` of the zero locus of the pulled-back equations in the
+Tate algebra `R` of such an affinoid disk, with prime ideal `I_W` and a point `x₀ ∈ W(K_v)` (only
+`K_v`-points matter). Let `X̂` be the formal completion of `X_(K_v)` at `x₀`, a formal power-series
+scheme over `K_v`. Integrating the connection gives the formal horizontal frame over `X̂`
+(MordellLawrenceVenkatesh §2.6); it is the common restriction to `X̂` of the p-adic period map and, after
+transporting its `K_v`-coefficients by the abstract `σ : ℚ̄_p ≅ ℂ` of the Conventions, of a local complex
+period map of `X_ℂ` at `σ(x₀)`, the transported series converging on a complex neighbourhood
+(MordellLawrenceVenkatesh §2.8). Applying §3.3 to `Z^σ` gives a nonzero regular function `H` on `X_ℂ`
+vanishing on the complex component, and Rückert's Nullstellensatz (ComplexKahlerGeometry K3 §3.4,
+`ruckert_nullstellensatz`) places a power `H^m` in the ideal of germs at `σ(x₀)` generated by the period
+equations. Pulled back to `X̂` and transported by `σ⁻¹`, `H^m` is a regular function on `X_(ℚ̄_p)`
+vanishing on the formal inverse image of `Z`; it is defined over a finite extension of `K_v`, and its norm
+is a nonzero regular function `H′` on `X_(K_v)` with the same vanishing (LS line 3065). After clearing
+denominators `H′ ∈ R` lies in every power of the maximal ideal of `x₀` in the Noetherian domain `R/I_W`;
+Krull intersection in the localization at that maximal ideal, into which `R/I_W` injects, gives
+`H′ ∈ I_W`, so `H′` vanishes on `W`. The product of these functions over the finitely many components and
+disks is nonzero because `X` is irreducible.
 
 **Checks.**
 
@@ -1345,20 +1472,27 @@ nonzero because the germ map of an irreducible `X` is injective.
   of points); only finite unions over components and disks are taken.
 - For `Z = D_mon` (codimension zero) and `d ≥ 1` the hypothesis fails, and indeed `Φ_p⁻¹(Z) = Ω` is
   Zariski dense.
+- At a centre `a ∈ ℚ_p` transcendental over ℚ, even the coordinate function `t` has Taylor series
+  `a + u`, whose constant coefficient lies in no number field; under `σ` it becomes `σ(a) + u`. The
+  transfer uses formal coefficients in `K_v` and its finite extensions, moved by the abstract `σ`, and
+  needs neither continuity of `σ` nor algebraicity of the centre.
+- `σ` restricts to the fixed embedding on `K`, so the transported variety is `X_ℂ` itself, whose Betti
+  realization is part of the system; a `σ` inducing another embedding of `K` would land on a conjugate
+  variety. For `K = ℚ` there is no choice.
 
-*Needs:* §§0.7, 3.3–3.4; MordellLawrenceVenkatesh §§2.5–2.6, 2.8; RestrictedPowerSeries §§2.1, 5.2;
-Mathlib `Ideal.iInf_pow_eq_bot_of_isLocalRing`.
+*Needs:* §§0.7, 3.1, 3.3; ComplexKahlerGeometry K3 §3.4; MordellLawrenceVenkatesh §§2.5–2.6, 2.8;
+RestrictedPowerSeries §§2.1, 5.2; Mathlib `Ideal.iInf_pow_eq_bot_of_isLocalRing`.
 
 ### Examples
 
 For the germ ideal `(z²)`, `z` vanishes on its zero set but lies only in the radical; the power `z²`
-supplied by Rückert's theorem is what survives the transfer to p-adic coefficients. In dimension zero a
-point is dense in itself, so positive base dimension is essential.
+supplied by Rückert's theorem (ComplexKahlerGeometry K3 §3.4) is what survives the transfer to p-adic
+coefficients. In dimension zero a point is dense in itself, so positive base dimension is essential.
 
 ### Dependencies
 
 Layers 0 and 2; ShimuraData §§1.2, 3.4–3.7; MotivesAndAlgebraicCycles §6.8;
-AbelianSchemesAndArithmeticModuliPartII Layer B3; ComplexKahlerGeometry K3; RestrictedPowerSeries
+AbelianSchemesAndArithmeticModuliPartII Layer B3; ComplexKahlerGeometry K3 §3.4; RestrictedPowerSeries
 §§2.1, 5.2; MordellLawrenceVenkatesh §§2.5–2.6, 2.8.
 
 ## Layer 4: Balanced monodromy and semisimple fibres
@@ -1477,7 +1611,7 @@ Theorem 7.3, pp. 71–72; LS line 3259).
 
 A route: §2.9 leaves finitely many semisimple G-representations; on each of finitely many residue disks a
 fixed representation gives one centralizer orbit of filtrations, of codimension at least `d` by §4.4
-with `e = d`; §3.5 and a finite union conclude.
+with `e = d`; §3.4 and a finite union conclude.
 
 **Checks.**
 
@@ -1487,7 +1621,7 @@ with `e = d`; §3.5 and a finite union conclude.
 - Enlarging `S` enlarges the set of integral points, so non-density for a larger `S` implies it for a
   smaller one.
 
-*Needs:* §§0.2, 1.9, 2.9, 3.5, 4.4.
+*Needs:* §§0.2, 1.9, 2.9, 3.4, 4.4.
 
 ### Examples
 
@@ -1582,7 +1716,14 @@ API:
   `dim F¹ = 3`, write `a₀ = dim F¹ − dim(F¹ ∩ f₁)`, `a₁ = dim(F¹ ∩ f₁) − dim(F¹ ∩ f₀)` and
   `a₂ = dim(F¹ ∩ f₀)` for the contributions of `F¹` to the top, middle and bottom blocks;
   `⟨γ_P, F_M⟩ = 4(a₀ − a₂)` and balance is `(1, 1, 1)`.
-- In the same example weak balance is `a₀ = a₂` and semibalance is `a₀ ≤ a₂`.
+- In the same example weak balance is `a₀ = a₂` and semibalance is `a₀ ≤ a₂`. Each `a_i` is a
+  dimension inside a two-dimensional block, so `a_i ≤ 2`, and `a₀ + a₁ + a₂ = 3` with `a₀ = a₂` forces
+  `(1, 1, 1)`: weak balance and balance coincide here.
+- In `GL₁₂` with an increasing `4 + 4 + 4` flag and `dim F¹ = 6`, `⟨γ_P, F_M⟩ = 8(a₀ − a₂)`. The triple
+  `(1, 4, 1)` is realized by `F¹ = ℓ_b ⊕ M ⊕ ℓ_t` (a line in `f₀`, a complement of `f₀` in `f₁`, a line
+  outside `f₁`) and is weakly balanced, but its block averages `1/4, 1, 1/4` differ from the average
+  `1/2` of `V`, so it is not balanced; the balanced triple is `(2, 2, 2)`. Weak balance is strictly
+  weaker than balance.
 - A generic `F¹` meets `f₀` trivially and `f₁` in a line, giving `(2, 1, 0)`, which is not
   semibalanced; semibalance is not automatic on the flag variety.
 - With the inverse-determinant convention the sign is `≤ 0`; with `det(Ad)` it would be `≥ 0`.
@@ -1594,8 +1735,9 @@ API:
 Let `ρ : G_ℚ → G(ℚ_p)` be crystalline at `p`, pure of integer Weil weight `w` on the faithful
 representation, with image in a Richardson parabolic `P`. Prove that the de Rham Hodge filtration induced
 on the corresponding inner Levi quotient is balanced relative to `P`. For `GL` this says that every global
-graded subquotient has Hodge–Tate average `w/2`, with the convention that the Tate object with geometric
-Frobenius `q` has de Rham weight 1. The statement is over ℚ; it is false in this form over number fields
+graded subquotient has average descending de Rham degree `w/2`, equivalently arithmetic Hodge–Tate
+average `−w/2` (Conventions: `ℚ_p(−1)`, with geometric Frobenius `q`, has Weil weight 2, de Rham jump
+`+1` and Hodge–Tate weight `−1`). The statement is over ℚ; it is false in this form over number fields
 with several embeddings (LS, Lemmas 8.1 and 8.7, pp. 73 and 76–77).
 
 A route: MordellLawrenceVenkatesh §1.13 applies to every rational character of the Levi that is trivial
@@ -1604,8 +1746,13 @@ of §2.6.
 
 **Checks.**
 
-- For `ρ` the `p`-adic Tate module of an elliptic curve over ℚ (weight 1) any one-dimensional global
-  subquotient would need Hodge–Tate weight `1/2`; there is none, consistent with irreducibility.
+- For `ρ = H¹_et(E_ℚ̄, ℚ_p)` of an elliptic curve over ℚ (Weil weight 1, de Rham jumps `0, 1`,
+  Hodge–Tate weights `0, −1`) a one-dimensional global subquotient would need de Rham degree `1/2`,
+  that is Hodge–Tate weight `−1/2`; there is none, consistent with irreducibility. For the Tate module
+  `V_pE = H¹(1)` (Weil weight `−1`, Hodge–Tate weights `0, 1`) the required values are de Rham degree
+  `−1/2` and Hodge–Tate weight `+1/2`.
+- For `ρ = ℚ_p(−1)` (Weil weight 2) the de Rham degree is `+1 = w/2` while the Hodge–Tate weight is
+  `−1`; a balance statement written with Hodge–Tate average `+w/2` would fail on it.
 - A CM Hecke character over an imaginary quadratic field has unequal embedding weights; the ℚ statement
   does not extend by notation.
 - For `w = 0` and `ρ` unramified with finite image every subquotient has weight 0.
@@ -1788,9 +1935,11 @@ product; apply §5.10 with parameter `e + dim H`, and let the graded pairs vary 
 ### Examples
 
 For a `2 + 2 + 2` auxiliary flag in `GL₆` and a three-dimensional `F¹` contributing `(a₀, a₁, a₂)` to the
-top, middle and bottom blocks, with `Σ a_i = 3`, balance is `(1, 1, 1)`, weak balance `a₀ = a₂` and semibalance `a₀ ≤ a₂`; the generic pattern
-`(2, 1, 0)` fails semibalance. Conjugation by `diag(2, 1)` multiplies an upper root group by 2, which is
-why the cyclic argument of §5.7 is restricted to `Z_U(φ^r)`.
+top, middle and bottom blocks, with `Σ a_i = 3` and each `a_i ≤ 2`, balance and weak balance both
+mean `(1, 1, 1)` and semibalance is `a₀ ≤ a₂`; the generic pattern `(2, 1, 0)` fails semibalance. In a
+`4 + 4 + 4` flag with `dim F¹ = 6` the weakly balanced `(1, 4, 1)` is not balanced. Conjugation by
+`diag(2, 1)` multiplies an upper root group by 2, which is why the cyclic argument of §5.7 is
+restricted to `Z_U(φ^r)`.
 
 ### Dependencies
 
@@ -1818,7 +1967,7 @@ pp. 83–84; LS line 3812).
 
 A route: §2.9 gives finitely many global G-semisimplifications; for each residue disk and each global
 type, §5.8 gives finitely many balanced local graded types; §5.12 with `e = d` bounds the codimension of
-each incidence locus, and §3.5 turns it into a proper Zariski-closed subset; the integral points lie in
+each incidence locus, and §3.4 turns it into a proper Zariski-closed subset; the integral points lie in
 the finite union.
 
 **Checks.**
@@ -1829,7 +1978,7 @@ the finite union.
   nothing, consistently with the cost `dim H` of a semilinear centralizer.
 - For `d = 0` the conclusion is false and the hypothesis `d ≥ 1` excludes it.
 
-*Needs:* §§1.9, 2.9, 3.5, 5.8, 5.12.
+*Needs:* §§1.9, 2.9, 3.4, 5.8, 5.12.
 
 ### Examples
 
@@ -1884,10 +2033,15 @@ shows that Levi projection preserves its conjugacy class.
 **Checks.**
 
 - The similitude-group assertion does not follow from equality of `GL` weight multiplicities alone.
-- For an elliptic curve with good ordinary reduction the Hodge cocharacter `diag(1, 0)` lies in the
-  image (the local representation is reducible with characters of Hodge–Tate weights 1 and 0).
-- For a Tate twist `ℚ_p(−1)` the Hodge cocharacter is the identity of `𝔾_m` and the image is open in
-  `ℤ_p^×`.
+- For `H¹` of an elliptic curve with good ordinary reduction the local representation is an extension
+  of a character of Hodge–Tate weight `−1` by an unramified character (Hodge–Tate weight `0`); the de
+  Rham Hodge cocharacter is `t ↦ diag(t, 1)` in a basis whose first vector spans `F¹`, and its image,
+  the torus `{diag(s, 1)}`, is `GL₂`-conjugate to `{diag(1, s)}`, a unipotent conjugate of which lies
+  in the Zariski closure of the image of inertia (inertia acts by `[[1, *], [0, χ_cyc⁻¹]]` in a basis
+  adapted to the unramified line). The singular matrix `diag(1, 0)` is not a cocharacter.
+- For a Tate twist `ℚ_p(−1)` the de Rham jump is `+1`, the Hodge cocharacter is the identity of `𝔾_m`,
+  and the Galois image `χ_cyc⁻¹(G_(ℚ_p)) = ℤ_p^×` is Zariski dense in `𝔾_m`. The image of a cocharacter
+  does not see its sign, so the Hodge–Tate cocharacter `t ↦ t⁻¹` gives the same torus.
 
 *Needs:* §§2.3, 7.1; PadicHodgeTheory §4.4 with gap:hodge-tate-image-cocharacter.
 
@@ -1923,7 +2077,7 @@ cohomology at `ℓ`.
 
 For a classical similitude space `V` of middle degree `r`, a Frobenius `φ` and prescribed filtered
 Frobenius graded objects of a φ-stable self-dual auxiliary flag, put `z = dim Z_GAut(φ^ss)`, require every
-nonzero graded object to have Hodge-weight average `r/2`, and let `e > 0`. Prove that if `A ≥ z + e` and
+nonzero graded object to have average descending de Rham degree `r/2`, and let `e > 0`. Prove that if `A ≥ z + e` and
 `B > T(z + e) + T(h⁰/2 + z + e)`, with arguments in `[0, dim GAut]`, then the self-dual Hodge filtrations
 admitting such a flag have codimension at least `e` in their flag variety. Self-dual middle pieces keep
 their pairing tensor (LV, Proposition 10.6, printed pp. 981–982, with the conclusion in §11.6, printed
@@ -1949,10 +2103,11 @@ Under the numerical inequalities of §7.6, fix `ℓ ∉ S` and a residue point w
 Frobenius centralizer has dimension at most `h⁰`. Prove that the integral points in its residue disk whose
 global ℓ-adic representations have a prescribed semisimplification form a subset that is not Zariski dense
 in the base. Global semisimplification flags are self-dual after pairing dual constituents, and every
-graded Hodge average is `r/2` by §5.4 (LV, Lemma 10.5, statement printed p. 975, proof pp. 979–981).
+graded piece has average descending de Rham degree `r/2` by §5.4 (LV, Lemma 10.5, statement printed
+p. 975, proof pp. 979–981).
 
 A route: construct paired self-dual semisimplification flags, transport their graded data through
-`D_cris`, use the small centralizer and §7.4 with `e = dim Y`, and apply §3.5 on the disk.
+`D_cris`, use the small centralizer and §7.4 with `e = dim Y`, and apply §3.4 on the disk.
 
 **Checks.**
 
@@ -1960,7 +2115,7 @@ A route: construct paired self-dual semisimplification flags, transport their gr
 - The self-duality of the flag comes from the polarization, not from semisimplicity.
 - For an irreducible semisimplification the flag is trivial and §7.4 reduces to §4.4.
 
-*Needs:* §§3.5, 5.4, 7.4; PadicHodgeTheory §§3.5, 8.1.
+*Needs:* §§3.4, 5.4, 7.4; PadicHodgeTheory §§3.5, 8.1.
 
 ### 7.6 Higher-dimensional integral-point non-density
 
@@ -2071,7 +2226,8 @@ as `eulerian`.
 ### 8.1 Classical adjoint profiles from Eulerian multiplicities
 
 For smooth ample hypersurfaces in an abelian variety of dimension `n ≥ 2` with normalized degree `d > 0`,
-take the Hodge–Tate multiplicities `m_q = d·A(n, q)`, `0 ≤ q < n`, and `N = n!·d` of
+take the multiplicities `m_q = d·A(n, q)` of descending de Rham degree `q` (Hodge–Tate weight `−q`),
+`0 ≤ q < n`, and `N = n!·d` of
 SheafConvolutionOnAbelianVarieties §3.3. The adjoint weights of `GL_N`, `GSp_N` and `GO_N` come from
 `End(V)`, `Sym²(V)` and `Λ²(V)`, with the similitude direction in degree zero. Prove that for the
 geometric choices — `GL` in either parity, `GSp` for `n` even, `GO` for `n` odd — `2h⁰ < dim H + rank H`;
@@ -2111,8 +2267,10 @@ API:
 - For `n = 2`: `β₀ = 1/2`, `β_(±1) = 1/4`.
 - For `n = 3` with Eulerian row `(1, 4, 1)`: `β₀ = 1/2`, `β_(±1) = 2/9`, `β_(±2) = 1/36`, summing to 1.
 - `β_j = 0` for `|j| ≥ n`; an infinitely supported approximation is not the definition.
-- Replacing `q − j` by `j − q` is harmless only because each row is symmetric
-  (ClassicalArithmeticCompletion §2.39).
+- Row symmetry (ClassicalArithmeticCompletion §2.39) reflects about `(n − 1)/2`, not about `0`:
+  `α_(q−j) = α_(n−1−q+j)`, so `β_j = (α ∗ α)_(n−1+j)` with `(α ∗ α)_k = Σ_q α_q α_(k−q)`. For `n = 2`,
+  `j = 0` this gives `α₀α₁ + α₁α₀ = 1/4 + 1/4 = 1/2 = β₀`, whereas replacing `q − j` by `j − q` without
+  the shift gives `Σ_q α_q α_(−q) = α₀² = 1/4`.
 
 *Needs:* ClassicalArithmeticCompletion §§2.18, 2.39.
 
@@ -2182,8 +2340,12 @@ number `h^(p, n−1−p)_prim` is the coefficient of `t^((p+1)d−n−1)` in `(1
 `0 ≤ p < n` (Batyrev–Cox, Theorems 10.6 and 10.13 and Remark 10.14, PDF pp. 30–34, specialized to
 projective space; this justifies LV (10.6), printed pp. 971–972).
 
-A route: Griffiths's residue description identifies `H^(p, n−1−p)_prim` with the graded piece of degree
-`(p+1)d − n − 1` of the Jacobian ring `ℂ[x₀, …, x_n]/(∂F/∂x_i)`; smoothness makes the partial derivatives a
+A route: Griffiths's residue description identifies the graded piece of degree `(p+1)d − n − 1` of the
+Jacobian ring `ℂ[x₀, …, x_n]/(∂F/∂x_i)` with `gr_F^(n−1−p) H^(n−1)_prim = H^(n−1−p, p)_prim`, the
+residue of `AΩ/F^(p+1)` lying in `F^(n−1−p)` (Batyrev–Cox, Theorem 10.13, PDF p. 34, BC line 1344,
+gives `H^(p, n−1−p)_prim` in degree `(n − p)d − n − 1`); Hodge symmetry
+`h^(p, n−1−p) = h^(n−1−p, p)`, equivalently the palindromic symmetry of `(1 + t + … + t^(d−2))^(n+1)`
+about `(n + 1)(d − 2)/2`, gives the stated formula. Smoothness makes the partial derivatives a
 homogeneous regular sequence of degree `d − 1` (Mathlib `RingTheory.Sequence.IsRegular`), so the Hilbert
 series is `(1 − t^(d−1))^(n+1)/(1 − t)^(n+1)`. Hodge numbers are those of ComplexComparisonPartII §C5.3.
 
@@ -2194,6 +2356,10 @@ series is `(1 − t^(d−1))^(n+1)/(1 − t)^(n+1)`. Hodge numbers are those of 
   `(1, 19, 1)`, not the full `(1, 20, 1)`.
 - A quadric (`d = 2`): `(1)^(n+1) = 1`, so only `p` with `2(p+1) = n + 1` contributes; for even `n`
   (odd-dimensional quadric) there is no primitive middle cohomology.
+- For the quartic surface and `p = 0` the Jacobian degree is `d − n − 1 = 0`, and the residue of `Ω/F`
+  is a holomorphic two-form, of type `(2, 0)`, not `(0, 2)`: degree `(p+1)d − n − 1` carries
+  `H^(n−1−p, p)`. The degrees `0, 4, 8` give `1, 19, 1`, so the numerical formula is unaffected, but the
+  residue map lands in the conjugate Hodge piece.
 
 *Needs:* ComplexComparisonPartII §C5.3; Mathlib `RingTheory.Sequence.IsRegular`.
 
@@ -2280,8 +2446,8 @@ ComplexComparisonPartII §C5.3; Mathlib `RingTheory.Sequence.IsRegular`.
 ## Layer 9: Projective hypersurface application
 
 This layer constructs the universal smooth degree-`d` family with its parameter space of the correct
-dimension, proves large connected monodromy in a safe range, and proves non-density of integral
-parameters for large ambient dimension and degree.
+dimension, proves large connected monodromy in every ambient dimension and degree except the cubic
+surfaces, and proves non-density of integral parameters for large ambient dimension and degree.
 
 ### 9.1 Universal smooth projective hypersurfaces
 
@@ -2327,31 +2493,44 @@ EtaleDualityAndPerverseSheaves §4.3; DeligneWeightsAndPurity §9.12; Layer 0; M
 
 ### 9.2 Large connected monodromy for universal hypersurfaces
 
-For the universal smooth degree-`d` hypersurfaces in `ℙⁿ_ℂ` with `n ≥ 4` and `d ≥ 4`, prove that the
-Zariski closure of the monodromy on primitive middle cohomology contains the identity component of the
-group of the intersection form: `Sp` when the middle dimension `n − 1` is odd and `SO` when it is even.
-The similitude scalars are arithmetic and need not occur in geometric monodromy (Beauville, Théorèmes 2
-and 4, printed pp. 10–12, and §1, printed pp. 8–9; LV, §10.2, printed p. 971).
+For the universal smooth degree-`d` hypersurfaces in `ℙⁿ_ℂ` with `n ≥ 2` and `d ≥ 2`, other than the
+cubic surfaces `(n, d) = (3, 3)`, prove that the Zariski closure of the monodromy on primitive middle
+cohomology `E = H^(n−1)_prim` contains the identity component of the group of the intersection form:
+`Sp(E)` when the middle dimension `n − 1` is odd and `SO(E)` when it is even. For quadrics (`d = 2`) that
+identity component is trivial (`E = 0` for `n` even, `rank E = 1` for `n` odd), so the statement holds
+with finite monodromy. The cubic surfaces are the one exception: their monodromy is the finite Weyl group
+`W(E₆)`. The similitude scalars are arithmetic and need not occur in geometric monodromy (Beauville,
+Théorèmes 2 and 4, printed pp. 10–12, and §1, printed pp. 8–9, Beauville lines 84–89 and 129–136, which
+leave quadrics and plane cubics to the reader; LV, §10.2, printed p. 971).
 
-A route: a Lefschetz pencil (LefschetzPencilsAndVanishingCycles §3.4) is a line in the parameter space, so
-the universal monodromy contains the pencil monodromy, and the vanishing space of the pencil is the
-nondegenerate primitive cohomology (§9.1, LefschetzPencilsAndVanishingCycles §4.4). For `n − 1` odd the
-Kazhdan–Margulis theorem (§5.8 there) makes the ℓ-adic monodromy open in `Sp(E)(ℚ_ℓ)`, and an open subgroup
-is Zariski dense (DeligneWeightsAndPurity §2.2). For `n − 1` even, §5.10 there gives open or finite; finite
-monodromy would make the intersection form, after the sign `(−1)^((n−1)/2)`, positive definite, but by the
-Hodge–Riemann relations its sign alternates with `p` on `H^(p, n−1−p)_prim`, and §8.6 gives nonzero primitive
-Hodge numbers at `p = (n−1)/2` and `p = (n−3)/2` once `d ≥ 2 + 4/(n − 1)`, which holds for `d ≥ 3`, `n ≥ 5`;
-so the monodromy is open in `O(E)(ℚ_ℓ)`. An open subgroup of `SO(E)(ℚ_ℓ)` has Lie algebra `𝔰𝔬(E)`
-(ReductiveGroupsPartII §RG2.0.2, analytic charts), so its Zariski closure, a closed subgroup of `SO(E)` of
-dimension `dim SO(E)`, is the connected group `SO(E)`; the intersection of the open monodromy image with
+A route: for `d = 2` there is nothing to prove. For `d ≥ 3`, a Lefschetz pencil
+(LefschetzPencilsAndVanishingCycles §3.4) is a line in the parameter space, so the universal monodromy
+contains the pencil monodromy, and the vanishing space of the pencil is the nondegenerate primitive
+cohomology (§9.1, LefschetzPencilsAndVanishingCycles §4.4). For `n − 1` odd, plane cubics included, the
+Kazhdan–Margulis theorem (§5.8 there) makes the ℓ-adic monodromy open in `Sp(E)(ℚ_ℓ)`, and an open
+subgroup is Zariski dense (DeligneWeightsAndPurity §2.2). For `n − 1` even, §5.10 there gives open or
+finite; finite monodromy would make the intersection form, after the sign `(−1)^((n−1)/2)`, definite, but
+by the Hodge–Riemann relations its sign alternates with `p` on `H^(p, n−1−p)_prim`, and §8.6 gives a
+nonzero primitive Hodge number at the central `p = (n−1)/2` (Jacobian degree `(n + 1)(d − 2)/2`) and at
+`p = (n−3)/2` exactly when `(n − 1)d/2 ≥ n + 1`, that is `d ≥ 2 + 4/(n − 1)`: `d ≥ 4` for `n = 3` and
+`d ≥ 3` for odd `n ≥ 5`, which is every case with `d ≥ 3` except the cubic surfaces. So the monodromy is
+open in `O(E)(ℚ_ℓ)`. An open subgroup of `SO(E)(ℚ_ℓ)` has Lie algebra `𝔰𝔬(E)` (ReductiveGroupsPartII
+§RG2.0.2, analytic charts), so its Zariski closure, a closed subgroup of `SO(E)` of dimension
+`dim SO(E)`, is the connected group `SO(E)`; the intersection of the open monodromy image with
 `SO(E)(ℚ_ℓ)` is such a subgroup, so the Zariski closure of the monodromy contains `SO(E)`. The Artin
 comparison (ComplexComparisonPartII §C6.6) passes between the ℓ-adic and Betti monodromy.
 
 **Checks.**
 
-- Cubic surfaces (`n = 3`, `d = 3`) have primitive Hodge numbers `(0, 6, 0)`, a definite form and finite
-  monodromy `W(E₆)`; they lie outside the stated range.
-- Quadrics (`d = 2`) have finite monodromy; they lie outside the range.
+- Cubic surfaces (`n = 3`, `d = 3`) have primitive Hodge numbers `(0, 6, 0)` (Jacobian degree
+  `(n − 1)d/2 − n − 1 = −1` at `p = 0`), a definite form and finite monodromy `W(E₆)`, whose Zariski
+  closure has dimension 0 while `dim SO₆ = 15`: the exception is necessary.
+- Quadrics (`d = 2`): for odd `n` the primitive lattice has rank 1, `O₁ = {±1}` and `SO₁` is trivial, so
+  the finite monodromy `{±1}` satisfies the statement; for even `n`, `E = 0`.
+- Plane cubics (`n = 2`, `d = 3`) are included: primitive rank 2, `Sp₂ = SL₂` of dimension 3, and the
+  monodromy `SL₂(ℤ)` is Zariski dense in it.
+- Quartic surfaces (`n = 3`, `d = 4`) are included: primitive Hodge numbers `(1, 19, 1)`, rank 21,
+  signature `(2, 19)`, and `SO₂₁` of dimension `21·20/2 = 210` is contained in the Zariski closure.
 - For `n = 5`, `d = 4` the coefficients of `(1 + t + t²)⁶` at `t²`, `t⁶`, `t^10` are `21, 141, 21`, so
   `h_prim = (0, 21, 141, 21, 0)`, and the form is indefinite.
 - For `dim E = 2` split, `SO(E) = 𝔾_m`, and an open subgroup of `ℚ_ℓ^×` is Zariski-dense in `𝔾_m` (its
@@ -2509,17 +2688,25 @@ dense (LS, proof of Theorem 9.2, pp. 86–87).
 
 A route: choose `c` by §8.5 with `e = dim X`; choose a good prime `p` and, by SheafConvolutionOnAbelianVarieties
 §8.3 with the classical monodromy of §6.7 there, a torsion character of order prime to `p` with the
-conjugate-uniform monodromy; build the orbit system of §1.7 with its lattice, polarization, inversion
-pairing (§1.8), uniform Eulerian profile (§8.1), rational Frobenius polynomials (§1.9) and strong
-c-balance (§4.3); apply §6.1.
+conjugate-uniform monodromy; build the orbit system of §1.7 with its lattice, polarization, uniform
+Eulerian profile (§8.1), rational Frobenius polynomials (§1.9) and strong c-balance (§4.3), and choose
+its coefficient structure by the branch of SheafConvolutionOnAbelianVarieties §4.8: when the generic
+hypersurface is not a translate of its inversion, the derived monodromy is `SL_N` and the structure is
+the `GL_N`-structure of §1.5, with no pairing; when it is such a translate, the inversion pairing of §1.8
+gives a `GSp_N`-structure for even `n` and a `GO_N`-structure for odd `n`. Then apply §6.1.
 
 **Checks.**
 
+- In the nonsymmetric branch no nondegenerate invariant bilinear form exists: on the standard
+  representation of `SL₆` the central element `ζI` with `ζ` a primitive cube root of unity would force
+  `B = ζ²B`, so `B = 0`. In the symmetric branch with `n = 4` the pairing is alternating, its sign being
+  `(−1)^(n−1) = −1`.
 - A family constant up to translation is excluded: its twisted cohomology has finite monodromy.
 - For `n = 3` and `d = D₁ = 8855` the classical monodromy input fails and the theorem says nothing.
 - The base is positive-dimensional; a single divisor is handled by §10.6 directly.
 
-*Needs:* §§1.7–1.9, 4.3, 6.1, 8.1, 8.5, 10.4; SheafConvolutionOnAbelianVarieties §§5.3, 6.7, 8.3.
+*Needs:* §§1.5, 1.7–1.9, 4.3, 6.1, 8.1, 8.5, 10.4; SheafConvolutionOnAbelianVarieties §§4.8, 5.3, 6.7,
+8.3.
 
 ### 10.6 Primitive hypersurface Shafarevich finiteness
 
@@ -2617,21 +2804,26 @@ For an abelian surface `A/K`, a fixed ample class `φ` and finite `S`, prove tha
 Theorem 9.6 and proof, p. 88; LS line 4041).
 
 A route: adjunction gives genus `g = 1 + φ²/2 ≥ 2`; FaltingsFinitenessAndIsogenyTheorems §R28.5.15 gives
-finitely many curves up to isomorphism. For each curve `C`, after a finite extension supplying a point, an
-embedding `C → A` is a translation plus a homomorphism from the Jacobian (AbelianSchemesAndArithmeticModuli
-§A1.2); the fixed class bounds the positive definite Rosati quadratic form `q(f) = f_*[C]·φ` (with
-pushforward multiplicity) on the finitely generated Hom group (§§A6.7, A6.14 there), leaving finitely many
-homomorphisms; §10.8 descends to `A(K)`-translations.
+finitely many curves up to isomorphism. For each curve `C`, after a finite extension supplying a point
+`x₀`, an embedding `f : C → A` is the translation by `f(x₀)` of `h ∘ a` for the Abel–Jacobi map
+`a : C → Jac C` based at `x₀` and a unique homomorphism `h : Jac C → A` (JacobianChallenge Layer F; the
+rigidity of AbelianSchemesAndArithmeticModuli §A1.2 concerns maps between abelian schemes and does not
+accept the curve `C` as source). The fixed class bounds the positive definite Rosati quadratic form
+`q(h) = h_*[C]·φ` (with pushforward multiplicity) on the finitely generated group `Hom(Jac C, A)`
+(AbelianSchemesAndArithmeticModuli §§A6.7, A6.14), leaving finitely many homomorphisms; §10.8 descends
+to `A(K)`-translations.
 
 **Checks.**
 
-- `q(m·f) = m²·q(f)` because the pushforward cycle carries multiplicity; the reduced image cycle would not
+- `q(m·h) = m²·q(h)` because the pushforward cycle carries multiplicity; the reduced image cycle would not
   scale quadratically.
 - For `φ` principal (`φ² = 2`) the genus is 2 and `C` is a theta divisor.
 - The classical hypersurface monodromy theorem (which needs `n > 2`) is not used.
+- For a genus-two curve `C` and `f = a` the Abel–Jacobi map, the factorization gives `h = id_(Jac C)`;
+  for the constant map `f = 0` it gives `h = 0`.
 
-*Needs:* §10.8; FaltingsFinitenessAndIsogenyTheorems §R28.5.15; AbelianSchemesAndArithmeticModuli §§A1.2,
-A6.7, A6.14.
+*Needs:* §10.8; FaltingsFinitenessAndIsogenyTheorems §R28.5.15; JacobianChallenge Layer F;
+AbelianSchemesAndArithmeticModuli §§A6.7, A6.14.
 
 ### Examples
 
@@ -2644,7 +2836,8 @@ divisibility. For an abelian surface, adjunction gives genus `1 + φ²/2 ≥ 2`.
 Layers 1, 4, 6 and 8; AbelianSchemesAndArithmeticModuli §§A0.1, A1.2, A1.8, A2.4, A2.10, A3.3, A3.6, A6.7,
 A6.14, A6.30–A6.32; SchemeAndStackFoundations §§0.9, 4.14; AlgebraicModuliForArithmeticGeometry §§2.1,
 9.4; HeightsRationalPointsAndObstructions §§1.6–1.7; FaltingsFinitenessAndIsogenyTheorems §R28.5.15;
-SheafConvolutionOnAbelianVarieties §§5.3, 6.7, 8.3; `TauCeti.AlgebraicGeometry.AbelianVariety`.
+JacobianChallenge Layer F; SheafConvolutionOnAbelianVarieties §§4.8, 5.3, 6.7, 8.3;
+`TauCeti.AlgebraicGeometry.AbelianVariety`.
 
 ## Downstream consumers
 
@@ -2660,8 +2853,10 @@ subvarieties as in §7.7) consumes Layers 3–7 as stated here.
 - **Top-weight sums.** For adjoint weights `2, 0, −2`: `D = 3`, `A = 1`, `B = 2`, `T(1/2) = 1`,
   `T(1) = 2 = B`, `T(2) = 2`, `T(3) = 0`.
 - **Semibalance in `GL₆`.** For a `2 + 2 + 2` flag and `dim F¹ = 3`, `⟨γ_P, F_M⟩ = 4(a₀ − a₂)` with `a₀` the top
-  and `a₂` the bottom contribution: `(1, 1, 1)` is balanced, `(1, 1, 1)` and `(0, 3, 0)` are weakly
-  balanced, `(0, 1, 2)` is semibalanced and the generic `(2, 1, 0)` is not.
+  and `a₂` the bottom contribution, each `a_i ≤ 2`: `(1, 1, 1)` is the only balanced and the only weakly
+  balanced triple, `(0, 1, 2)` is semibalanced and the generic `(2, 1, 0)` is not. For a `4 + 4 + 4` flag
+  in `GL₁₂` and `dim F¹ = 6`, `⟨γ_P, F_M⟩ = 8(a₀ − a₂)`: `(1, 4, 1)` is weakly balanced but not balanced
+  (block averages `1/4, 1, 1/4` against `1/2`), and `(2, 2, 2)` is balanced.
 - **Eulerian central mass.** Rows `(1, 1)`, `(1, 4, 1)`, `(1, 11, 11, 1)`, `(1, 26, 66, 26, 1)` give
   `β₀ = 1/2, 1/2, 244/576, 5710/14400`, all `≤ 1/2`.
 - **Projective Hodge numbers.** The quartic surface has primitive `(1, 19, 1)`; the quintic threefold
@@ -2696,8 +2891,9 @@ The following corrections to the sources are used throughout; each is fixed by a
 - **LS, proof of Lemma 5.49, p. 61, use of LV Lemma 2.3.** Faltings's lemma needs Frobenius characteristic
   polynomials in `ℤ[t]`; integral Frobenius eigenvalues only give algebraic-integer coefficients. §1.9
   supplies rationality for the orbit systems, and this roadmap uses that stronger hypothesis.
-- **LS, proof of Lemma A.5, p. 92.** The tail comparison is `<`, giving the upper bound `3/2`.
-- **LS, proof of Lemma A.4, pp. 91–92.** The propagated geometric bound at index `i` has denominator `3^i`.
+- **LS, proof of Lemma A.5, p. 91.** The tail comparison is `<`, giving the upper bound `3/2` (LS line 4303).
+- **LS, proof of Lemma A.4, p. 91.** The propagated geometric bound at index `i` has denominator `3^i`
+  (LS line 4280).
 - **LS, paragraph after the GO computation in Lemma A.1, p. 90.** The descent count has variance
   `(n + 1)/12`, standard deviation `∼ √(n/12)`, not variance `√n/12`.
 - **LS, Lemma A.1, pp. 89–90.** The strict inequality holds for the geometric parity choices (`GL` always,
