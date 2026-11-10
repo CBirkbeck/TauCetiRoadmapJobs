@@ -1,0 +1,4 @@
+{"review": {"status": "needs_changes", "reviewer": "independent-review-PRREVIEW-SpinGeometry~23",
+            "head": "a2b366bd40b6bdd6e63cf0ef1542715bc0e6c7b6", "pr": 1780, "folder": "SpinGeometry", "date": "2026-11-10",
+            "findings": 4, "blocking": 0,
+            "notes": "Full review. Previous R01 (P2, library-proved headlines) repaired. Gate rerun OK, depcheck 0 problems, Suggested.lean elaborates with two sorry warnings, one-tactic probe closes neither. 170 Tau Ceti names of G1-G2 resolve at the pin, those with a named file found in it; key statements read at pin 2fd255d9. 18 Nicolaescu locators checked (17 agree). Four P3: docstring names a carrier the pins have (principal bundle, frame bundle); the proved parity theorem is not a headline; Nicolaescu 12.1.2 cited for the trace formula; description misstates #1674's Suggested.lean. Lawson-Michelsohn and ABS uncertified."}}
