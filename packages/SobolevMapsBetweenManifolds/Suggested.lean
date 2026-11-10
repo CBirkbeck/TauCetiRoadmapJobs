@@ -4,6 +4,8 @@ import TauCeti.Analysis.Sobolev.WeakDeriv.Basic
 import TauCeti.Geometry.Manifold.Measure
 import TauCeti.Geometry.Manifold.Riemannian.VolumeDensity.Volume
 import TauCeti.Geometry.Manifold.Riemannian.VolumeForm
+import TauCeti.Geometry.Manifold.Orientation.OpenSubset
+import TauCeti.Geometry.Manifold.Riemannian.Restriction
 
 /-!
 # Sobolev maps between manifolds: target signatures
@@ -12,10 +14,12 @@ The roadmap is README.md; this file is not the roadmap. It states the roadmap's
 headline theorems against the pinned APIs. T1 is locality and the three Euclidean
 chain rules. T2 is atlas independence, existence and uniqueness of the weak
 differential, classical compatibility and the equivalence of null sets. T3 is
-the local operator-norm criterion. T4 is the oriented Jacobian, Hadamard,
-integrability and change of variables. T5 is the immersion comparison and its
-isometric norm identity. T6 is Euclidean compatibility. T7 is independence of
-embedding for compact boundaryless targets. All are statable at the pins.
+the local operator-norm criterion. T4 is the oriented Jacobian in every dimension,
+its signed chart-density formula, Hadamard, positive-dimensional integrability
+and change of variables. T5 is the immersion comparison; its isometric norm
+consequence uses the pinned linear-isometry API. T6 is Euclidean membership,
+weak-differential, flat-volume and oriented-determinant compatibility. T7 is
+independence of embedding for compact boundaryless targets. All are statable at the pins.
 
 The only new definitions are local membership predicates and the chart formula
 for a weak differential. Differential fields are quantified explicitly, so the
@@ -23,7 +27,7 @@ signatures do not require a choice of a total weak differential.
 -/
 
 open MeasureTheory Set Bundle
-open scoped ENNReal Manifold Topology Bundle
+open scoped ENNReal Manifold Topology Bundle TauCeti
 
 namespace TauCetiRoadmap.SobolevMapsBetweenManifolds
 
@@ -223,15 +227,16 @@ theorem memManifoldW1pLoc_iff_norm [LindelofSpace M]
 /-! ## Layer 6: Jacobians -/
 
 /-- The weak differential of an oriented equal-dimensional Sobolev map has
-a unique pointwise Jacobian, characterized by pullback of the volume form;
-it satisfies Hadamard and the local p/n integrability bound for positive n (T4). -/
+a unique pointwise Jacobian in every dimension, characterized by pullback of the
+volume form and its signed chart-density formula. It satisfies Hadamard, local
+p/n integrability for positive n, and local essential boundedness for n = 0 (T4). -/
 theorem jacobian_hadamard_integrability [LindelofSpace M]
     [MeasurableSpace M] [BorelSpace M]
     [RiemannianBundle (fun x : M => TangentSpace I x)]
     [RiemannianBundle (fun y : N => TangentSpace J y)]
     [IsContinuousRiemannianBundle E (fun x : M => TangentSpace I x)]
     [IsContinuousRiemannianBundle F (fun y : N => TangentSpace J y)]
-    (n : ℕ) (hn : 0 < n)
+    (n : ℕ)
     (oM : TauCeti.Manifold.Orientation I M (Fin n))
     (oN : TauCeti.Manifold.Orientation J N (Fin n))
     (p : ℝ≥0∞) (hp : 1 ≤ p) (f : M → N)
@@ -246,7 +251,27 @@ theorem jacobian_hadamard_integrability [LindelofSpace M]
           j' x • TauCeti.riemannianVolumeForm oM x) → j' = j) ∧
       (∀ x, |j x| = LinearMap.normDet (D x).toLinearMap) ∧
       (∀ x, |j x| ≤ ‖D x‖ ^ n) ∧
-      MemLpLoc (TauCeti.riemannianVolume I M) (p / (n : ℝ≥0∞)) univ j := by
+      (∀ (α : M) (β : N) (x : M),
+        x ∈ (extChartAt I α).source → f x ∈ (extChartAt J β).source →
+        ∀ (σE : Fin (Module.finrank ℝ E) ≃ Fin n)
+          (σF : Fin (Module.finrank ℝ F) ≃ Fin n),
+        let bE := (Module.finBasis ℝ E).reindex σE
+        let bF := (Module.finBasis ℝ F).reindex σF
+        let φ := extChartAt I α
+        let ψ := extChartAt J β
+        let A := (mfderiv J 𝓘(ℝ, F) ψ (f x)).comp
+          ((D x).comp (mfderiv 𝓘(ℝ, E) I φ.symm (φ x)))
+        let εM := Real.sign (TauCeti.riemannianVolumeForm oM x
+          (fun i => mfderiv 𝓘(ℝ, E) I φ.symm (φ x) (bE i)))
+        let εN := Real.sign (TauCeti.riemannianVolumeForm oN (f x)
+          (fun i => mfderiv 𝓘(ℝ, F) J ψ.symm (ψ (f x)) (bF i)))
+        let ρM := TauCeti.chartVolumeDensity (I := I) α x
+        let ρN := TauCeti.chartVolumeDensity (I := J) β (f x)
+        0 < ρM ∧ 0 < ρN ∧
+          j x = εM * εN * (LinearMap.toMatrix bE bF A.toLinearMap).det * ρN / ρM) ∧
+      (0 < n → MemLpLoc (TauCeti.riemannianVolume I M)
+        (p / (n : ℝ≥0∞)) univ j) ∧
+      (n = 0 → MemLpLoc (TauCeti.riemannianVolume I M) ∞ univ j) := by
   sorry
 
 /-- For a C1 open embedding, the density given by the absolute oriented
@@ -282,6 +307,41 @@ theorem euclidean_compatibility (μ : Measure E) [μ.IsAddHaarMeasure]
         TauCeti.HasWeakFDerivOn μ Ω u U)) := by
   sorry
 
+/-- The Riemannian measure of any open subset of a finite-dimensional real
+inner product space with its restricted flat metric is the ambient volume
+restricted to the domain, expressed on the subtype (T6). -/
+theorem euclidean_volume {V : Type*} [NormedAddCommGroup V]
+    [InnerProductSpace ℝ V] [FiniteDimensional ℝ V]
+    [MeasurableSpace V] [BorelSpace V]
+    [hflat : IsContinuousRiemannianBundle V
+      (fun x : V => TangentSpace 𝓘(ℝ, V) x)] (Ω : TopologicalSpace.Opens V) :
+    TauCeti.riemannianVolume 𝓘(ℝ, V) Ω =
+      (volume.restrict (Ω : Set V)).comap (Subtype.val : Ω → V) := by
+  sorry
+
+/-- On a flat Euclidean domain, with the same orientation on the domain and
+target, the oriented Jacobian of any weak manifold differential agrees almost
+everywhere with the determinant of any Euclidean weak derivative (T6). -/
+theorem euclidean_jacobian {V : Type*} [NormedAddCommGroup V]
+    [InnerProductSpace ℝ V] [FiniteDimensional ℝ V]
+    [MeasurableSpace V] [BorelSpace V]
+    [hflat : IsContinuousRiemannianBundle V
+      (fun x : V => TangentSpace 𝓘(ℝ, V) x)] (n : ℕ) (o : Orientation ℝ V (Fin n))
+    (ho : Fintype.card (Fin n) = Module.finrank ℝ V)
+    (Ω : TopologicalSpace.Opens V) (u : V → V) (U : V → V →L[ℝ] V)
+    (hU : TauCeti.HasWeakFDerivOn volume Ω u U)
+    (D : (x : Ω) → TangentSpace 𝓘(ℝ, V) x →L[ℝ] TangentSpace 𝓘(ℝ, V) (u x))
+    (hD : HasWeakMDeriv 𝓘(ℝ, V) 𝓘(ℝ, V) (fun x : Ω => u x) D)
+    (j : Ω → ℝ)
+    (hj : ∀ x : Ω, (TauCeti.riemannianVolumeForm
+        (TauCeti.Manifold.Orientation.model (I := 𝓘(ℝ, V)) o ho) (u x)).compContinuousLinearMap
+          (D x) =
+      j x • TauCeti.riemannianVolumeForm
+        ((TauCeti.Manifold.Orientation.model (I := 𝓘(ℝ, V)) o ho).restrict Ω) x) :
+    ∀ᵐ x : Ω ∂TauCeti.riemannianVolume 𝓘(ℝ, V) Ω,
+      j x = LinearMap.det (U x).toLinearMap := by
+  sorry
+
 /-! ## Layer 8: immersions, embeddings and the extrinsic class -/
 
 /-- A C1 immersion detects continuous local Sobolev membership and transports
@@ -295,20 +355,6 @@ theorem immersion_comparison (p : ℝ≥0∞) (hp : 1 ≤ p)
         HasWeakMDeriv I J f D →
         HasWeakMDeriv I 𝓘(ℝ, G) (ι ∘ f)
           (fun x => (mfderiv J 𝓘(ℝ, G) ι (f x)).comp (D x))) := by
-  sorry
-
-/-- For an isometric immersion the extrinsic differential has precisely the
-intrinsic Riemannian operator norm, for every weak differential (T5). -/
-theorem isometric_immersion_norm {V : Type*} [NormedAddCommGroup V]
-    [InnerProductSpace ℝ V] [FiniteDimensional ℝ V]
-    [RiemannianBundle (fun x : M => TangentSpace I x)]
-    [RiemannianBundle (fun y : N => TangentSpace J y)]
-    (ι : N → V) (hι : ContMDiff J 𝓘(ℝ, V) 1 ι)
-    (hisom : ∀ y (v w : TangentSpace J y),
-      inner ℝ (mfderiv J 𝓘(ℝ, V) ι y v) (mfderiv J 𝓘(ℝ, V) ι y w) = inner ℝ v w)
-    (f : M → N) (D : (x : M) → TangentSpace I x →L[ℝ] TangentSpace J (f x))
-    (hD : HasWeakMDeriv I J f D) :
-    ∀ x, ‖(mfderiv J 𝓘(ℝ, V) ι (f x)).comp (D x)‖ = ‖D x‖ := by
   sorry
 
 /-- For a compact boundaryless target, any two C1 embeddings define the same

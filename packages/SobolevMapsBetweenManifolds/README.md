@@ -69,7 +69,9 @@ variable with bounded derivative, `p < ∞`) and the measure-preserving chain ru
 (`TauCeti.Manifold.Orientation`), the Riemannian volume form (`TauCeti.riemannianVolumeForm`) and
 compactly supported extensions along embeddings
 (`TauCeti.SmoothEmbedding.exists_contMDiffMap_extension_hasCompactSupport`). From Mathlib it
-consumes `LinearMap.normDet` and the Whitney embedding `exists_embedding_euclidean_of_compact`.
+consumes `LinearMap.normDet`, the isometric postcomposition identity
+`LinearIsometry.norm_toContinuousLinearMap_comp` (with `LinearMap.isometryOfInner`), and the
+Whitney embedding `exists_embedding_euclidean_of_compact`.
 The local and vector-valued statements here differ by allowing arbitrary model dimensions,
 vector codomains, `p = ∞`, local bounds and non-injective local diffeomorphisms; the
 comparisons use the stated hypotheses of the global and scalar theorems. Equal-dimensional
@@ -199,9 +201,11 @@ a hypothesis (§8.2).
 - **Dimension.** `n = finrank ℝ E`. Dimension `0` is allowed and computed in the Checks: every map
   of a `0`-manifold lies in every class, `Df = 0`, and `J(A) = ±1`.
 - **Totality.** On a Lindelöf source the chosen weak differential is a total function, `0`
-  when no weak differential exists. Its existence is equivalent to continuous
-  `W^{1,1}_loc` membership. A map outside the `p`-class can still have a nonzero weak
-  differential: `|t|^{1/2}` has one but is outside the class for `p ≥ 2`. Statements
+  when no weak differential exists. Admitting a manifold-valued weak differential is equivalent
+  to continuous `W^{1,1}_loc` membership. The vector-valued choice of §4.1 requires no continuity;
+  for a continuous vector-valued map admitting a weak differential the two choices agree
+  outside a chartwise null set. They need not agree for discontinuous maps. A map outside the
+  `p`-class can still have a nonzero weak differential: `|t|^{1/2}` has one but is outside the class for `p ≥ 2`. Statements
 identifying the choice with a weak differential carry membership as a hypothesis. On the class it is
   determined only outside a null set, so a value
   of `Df`, `‖Df‖` or `J_f` computed for a particular map in a Check or an example holds almost
@@ -238,6 +242,12 @@ identifying the choice with a weak differential carry membership as a hypothesis
   (`Mathlib/MeasureTheory/Measure/Restrict.lean`); `Topology.IsOpenEmbedding.measurableEmbedding`
   (`Mathlib/MeasureTheory/Constructions/BorelSpace/Basic.lean`): between Borel spaces an open
   embedding is a measurable embedding, so it maps Borel sets to Borel sets.
+- `MeasureTheory.lintegral_withDensity_eq_lintegral_mul₀`
+  (`Mathlib/MeasureTheory/Measure/WithDensity.lean:476`) integrates nonnegative functions
+  against an a.e. measurable density. `MeasureTheory.integral_withDensity_eq_integral_toReal_smul₀`
+  (`Mathlib/MeasureTheory/Integral/Bochner/ContinuousLinearMap.lean:311`) gives the Bochner
+  formula for an a.e. measurable, a.e. finite density; its nonnegative real weights are used
+  separately for the positive and negative Jacobian parts in §6.4.
 - `ContDiffAt.toOpenPartialHomeomorph`
   (`Mathlib/Analysis/Calculus/InverseFunctionTheorem/ContDiff.lean`): the `C¹` inverse function
   theorem. `exists_contDiff_support_eq_eq_one_iff` and
@@ -280,6 +290,10 @@ identifying the choice with a weak differential carry membership as a hypothesis
   is positively oriented. `AlternatingMap.eq_smul_basis_det`
   (`Mathlib/LinearAlgebra/Determinant.lean`): an alternating form indexed by a basis's index type
   is its value on the basis times the basis determinant.
+- `LinearMap.isometryOfInner` (`Mathlib/Analysis/InnerProductSpace/LinearMap.lean:126`) and
+  `LinearIsometry.norm_toContinuousLinearMap_comp`
+  (`Mathlib/Analysis/Normed/Operator/NormedSpace.lean:53`): an inner-product-preserving linear
+  map is a linear isometry, and postcomposition by it preserves every operator norm.
 - `LinearMap.det` (`Mathlib/LinearAlgebra/Determinant.lean:164`); `LinearMap.normDet`,
   `LinearMap.normDet_eq_abs_det` and
   `LinearMap.normDet_eq_prod_singularValues` (`Mathlib/Analysis/InnerProductSpace/NormDet.lean`):
@@ -372,7 +386,11 @@ identifying the choice with a weak differential carry membership as a hypothesis
 - `TauCeti.SmoothEmbedding` (`TauCeti/Geometry/Manifold/SmoothEmbedding/Basic.lean`) and
   `TauCeti.SmoothEmbedding.exists_contMDiffMap_extension_hasCompactSupport`
   (`…/SmoothEmbedding/Extension.lean`): a `C^k` map on a compact portion of an embedded
-  boundaryless manifold extends to a compactly supported `C^k` map of the ambient manifold.
+  boundaryless manifold extends to a compactly supported `C^k` vector-valued map of the ambient
+  manifold when its model is finite-dimensional and it is smooth, Hausdorff and σ-compact
+  (`[IsManifold J ∞ N] [T2Space N] [SigmaCompactSpace N]`). In §8.4 the ambient manifolds
+  are finite-dimensional real normed vector spaces, which have these properties. The source
+  and its embedding retain regularity `C¹`; ambient smoothness does not raise their order.
 
 ### From TauCetiRoadmap.DifferentialGeometry
 
@@ -682,8 +700,11 @@ extension of `u` from a slightly larger set. The mollifications `u_ε` are diffe
 with derivative the mollified `U`
 (`TauCeti.HasWeakFDerivOn.hasFDerivAt_indicator_convolution_normed`), and `u_ε → u`,
 `Du_ε → U` in `L¹(V)` (`TauCeti.tendsto_eLpNorm_normed_convolution_sub`), almost everywhere along
-a sequence. Then `G ∘ u_ε → G ∘ u` in `L¹(V)` because `G` is `L`-Lipschitz, and
-`DG(u_ε) Du_ε → DG(u) U` in `L¹(V)` by dominated convergence with bound `2L|U|`. Conclude with
+a sequence. Then `G ∘ u_ε → G ∘ u` in `L¹(V)` because `G` is `L`-Lipschitz. Split the derivative difference as
+`DG(u_ε)(Du_ε − U) + (DG(u_ε) − DG(u))U`.
+The first term has `L¹` norm at most `L‖Du_ε − U‖₁ → 0`. The second converges to zero
+almost everywhere by continuity of `DG`, with norm bounded by `2L|U|`, so dominated
+convergence applies to that term. Thus `DG(u_ε) Du_ε → DG(u) U` in `L¹(V)`. Conclude with
 `TauCeti.hasWeakFDerivOn_of_tendsto_lintegral_enorm_sub` and
 `TauCeti.hasWeakFDerivOn_iff_forall_isCompact_closure`. The bounds
 `|G(u)| ≤ |G(0)| + L|u|` and `‖DG(u) Du‖ ≤ L ‖Du‖` give local `Lᵖ`.
@@ -693,6 +714,10 @@ a sequence. Then `G ∘ u_ε → G ∘ u` in `L¹(V)` because `G` is `L`-Lipschi
 - For `F = F' = ℝ`, `p < ∞` and `u ∈ TauCeti.W1p μ Ω p`, the derivative is the one of
   `TauCeti.W1p.hasWeakFDerivOn_comp`, `G'(u) ∇u` read through the inner product.
 - For linear `G = A`, the statement is §1.2's `D(A ∘ u) = A ∘ Du`.
+- For `G = id` and `u(x) = x³`, an even normalized mollifier of variance `σ²` gives
+  `Du_ε − U = 3σ²ε²`. The second term of the split difference is `0`; the first has
+  `L¹(−1,1)` norm `6σ²ε² → 0`. The whole difference is not bounded pointwise by
+  `2|U| = 6x²`: that fails on `|x| < σε/√2` when `σ, ε > 0`.
 - Bounded derivative is used: `G(t) = e^{t²}` and `u = log |x| ∈ W^{1,1}_loc(ℝ²)`. Then
   `G(u(x)) = e^{(log |x|)²} ≥ |x|^{−2}` when `|x| ≤ e^{−2}`, and
   `∫_{|x|<e^{−2}} |x|^{−2} dx = ∞`, so `G ∘ u ∉ L¹_loc(ℝ²)`.
@@ -1004,7 +1029,9 @@ continuous and, for every `x₀`, `y₀` and Haar measure `μ`, the field
 On a Lindelöf source the *weak differential* `Df` is a total choice: a weak differential
 when one exists, and `0` otherwise. Its definition uses existence of a weak differential,
 independently of `p`; it is not reset to zero when membership fails at a larger exponent. For
-`N = V` it is the weak differential of §4.1.
+`N = V` and continuous `f` admitting a weak differential, it agrees almost everywhere
+with the total choice of §4.1, by uniqueness. Outside this common domain the two total
+choices are distinct constructions; §4.1 still permits discontinuous maps.
 
 Route: as in §4.1, glue the chart derivatives over a countable cover of `M` by sets
 `φₖ.source ∩ f⁻¹(ψⱼ.source)`. On overlaps, and for charts of the maximal atlases, two chart
@@ -1018,7 +1045,11 @@ null sets between charts, and §1.3 glues.
 - The direction witness of the Conventions: for `M = N = ℝ`, the chart `φ(x) = 2x` and `f = id`,
   `Df = 1`.
 - `f = id_M`: `Df(x) = id` outside a null set.
-- Totality: for a discontinuous `f`, `Df = 0` everywhere.
+- Totality: for a discontinuous `f`, the manifold-valued total `Df = 0` everywhere.
+  For `u(x) = log|x|` on `ℝ²`, assigned `0` at the origin, §4.1 instead gives
+  `Du(x)h = ⟨x,h⟩/|x|²` almost everywhere. On `1 < |x| < 2` its norm lies between `1/2` and `1`,
+  while the manifold-valued total is `0` because `u` is globally discontinuous. On the
+  punctured plane `u` is continuous and both choices agree almost everywhere with that field.
 - For the map into `S¹` of §4.2 at `p < 2`, `Df(t)` is `sign(t)|t|^{−1/2}/2` times the angular unit
   vector for almost every `t`.
   Changing that field at `t = 1` gives another weak differential, so no value at a single point
@@ -1308,7 +1339,13 @@ define `J_f(x) = J(Df(x))`, computed with the tangent orientations `o_M.orientat
   `Module.finBasis ℝ F`, reindexed by `Fin n`, and `ρ_M`, `ρ_N` are `TauCeti.chartVolumeDensity` of
   the two charts. `ε_M(x) = ±1` according as the chart frame of `Module.finBasis ℝ E` at `x` is
   positively or negatively oriented, and likewise `ε_N`. In positively oriented charts both signs
-  are `1` (Lee2012 Ch. 15);
+  are `1` (Lee2012 Ch. 15).
+  For any supplied weak field `D`, take the transported coordinate field
+  `A = dψ ∘ D ∘ dφ⁻¹`. The same formula holds pointwise on the chart overlap for its
+  characterized Jacobian `j`. In `jacobian_hadamard_integrability`, the signs are
+  `Real.sign` of the oriented volume form evaluated on each inverse-chart frame;
+  the positive chart densities ensure these evaluations are nonzero. Reindexing each
+  model basis by any equivalence to `Fin n` changes the signs and matrix determinant by compensating factors.
 - for `C¹` `f`, `J_f = J(mfderiv f)` almost everywhere. If `f` is orientation preserving at `x`
   (`TauCeti.Manifold.Orientation.IsOrientationPreservingAt`), then `J(mfderiv f x) > 0`.
 
@@ -1317,6 +1354,14 @@ define `J_f(x) = J(Df(x))`, computed with the tangent orientations `o_M.orientat
 - `M = N = ℝ`, flat, standard orientations: `J_f = f'` almost everywhere. With the metric
   `4 dt²` on the target, `ρ_N = 2` and `J_f = 2f'`. A Jacobian taken as the determinant of the
   representative without densities would give `f'`, contradicting `|J_f| = normDet(Df) = 2|f'|`.
+- For `f = id` on `ℝ`, source chart `φ(x) = 2x`, target identity chart and target metric
+  `4 dt²`, read in standard unit model bases, the coordinate derivative is `1/2`, `ρ_M = 1/2`, `ρ_N = 2`, and both signs are `1`.
+  The chart formula gives `(1/2)·2/(1/2) = 2 = J_f`; dropping the source density gives `1`.
+  In model bases `a` and `b`, `a,b ≠ 0`, the determinant is `a/(2b)`, the densities are
+  `|a|/2` and `2|b|`, and the signs are `sign(a)` and `sign(b)`; their product still gives `2`.
+- For `n = 0`, both chart densities and the empty matrix determinant are `1`.
+  Matching orientations give `j = 1`, and reversing one gives `j = −1`; Hadamard is
+  `1 ≤ 0⁰ = 1`. Local essential boundedness uses `|j| = 1`, with no `p/0`.
 - The identity of `M` from `(M, o)` to `(M, −o)`, `M` non-empty: `J_f = −1` almost everywhere.
 - The fold `F(x₁, x₂) = (|x₁|, x₂)` of `ℝ²`: `J_F = sign(x₁)` almost everywhere and `‖DF‖ = 1`. An
   unsigned Jacobian would give `1`.
@@ -1328,8 +1373,9 @@ define `J_f(x) = J(Df(x))`, computed with the tangent orientations `o_M.orientat
 
 ### 6.3 Hadamard's inequality and integrability
 
-The pointwise Jacobian characterization, its uniqueness, unsigned determinant,
-Hadamard bound and positive-dimensional integrability form `jacobian_hadamard_integrability`.
+The pointwise Jacobian characterization in every dimension, its uniqueness, unsigned determinant,
+signed chart-density formula, Hadamard bound and dimension-dependent integrability form
+`jacobian_hadamard_integrability`.
 
 Prove that, in the setting of §6.2, `|J_f(x)| ≤ ‖Df(x)‖ⁿ` for every `x` (Rickman1993 Ch. I §1).
 For `n ≥ 1`, `f ∈ W^{1,p}_loc(M, N)` gives `J_f ∈ L^{p/n}_loc(M, vol_M)`,
@@ -1371,7 +1417,11 @@ The *Jacobian measure* `f^* vol_N` is the locally finite signed measure determin
 relatively compact Borel sets by this pair. It is not asserted to be a globally finite
 Mathlib signed measure. On a relatively compact Borel `A`
 it is `μ_f^+(A) − μ_f^−(A) = ∫_A J_f dvol_M`, and against a bounded Borel `g` with compact support
-it is `∫ g J_f dvol_M` (HeikkilaPankka2025 line 25–27).
+it is `∫ g J_f dvol_M`. This density-pair construction uses
+`MeasureTheory.lintegral_withDensity_eq_lintegral_mul₀` and
+`MeasureTheory.integral_withDensity_eq_integral_toReal_smul₀`; the weights are a.e. measurable
+by §6.2 and finite everywhere, and local integrability makes both compactly supported
+integrals finite. HeikkilaPankka2025 line 25–27 supplies only the determinant notation.
 
 - `μ_f^±` are locally finite and absolutely continuous with respect to `vol_M`.
 - Reversing one orientation exchanges `μ_f^+` and `μ_f^−`. If `J_f ≥ 0` almost everywhere then
@@ -1405,6 +1455,8 @@ cover.
   A real Bochner integral would have junk value `0` and give the false bound `4 ≤ 0`.
 
 *Needs:* §6.2, §6.3, §3.1; Mathlib `MeasureTheory.Measure.withDensity`,
+`MeasureTheory.lintegral_withDensity_eq_lintegral_mul₀`,
+`MeasureTheory.integral_withDensity_eq_integral_toReal_smul₀`,
 `MeasureTheory.lintegral_image_eq_lintegral_abs_det_fderiv_mul`,
 `Topology.IsOpenEmbedding.measurableEmbedding`; Tau Ceti `TauCeti.riemannianVolume`,
 `TauCeti.setLIntegral_riemannianVolume_of_subset`.
@@ -1425,7 +1477,12 @@ orientations, Riemannian volume form and chart densities.
 
 ### 7.1 Euclidean compatibility (T6)
 
-The class and weak-differential identifications are `euclidean_compatibility`.
+The class and weak-differential identifications are `euclidean_compatibility`;
+the flat-volume and oriented-determinant identifications are `euclidean_volume` and
+`euclidean_jacobian`. The volume equality is on the subtype: the comap along
+`Subtype.val : Ω → E` of ambient volume restricted to `Ω`. The determinant statement
+compares any supplied weak manifold differential and Euclidean weak derivative, using
+their a.e. uniqueness, and is valid also in dimension zero.
 
 For the membership and differential relations let `E`, `F` be finite-dimensional real normed
 spaces. For the metric, measure and determinant conclusions equip them with real inner
@@ -1442,7 +1499,8 @@ open, a manifold through `TopologicalSpace.Opens.instChartedSpace` with the rest
 - `TauCeti.riemannianVolume` of `Ω` is `volume` restricted to `Ω`, and `‖Df(x)‖ = ‖U(x)‖`, the
   operator norm for the inner product norms, almost everywhere;
 - if `F = E` has dimension `n` and an orientation `o`, and both `Ω` and `E` carry the orientation
-  `TauCeti.Manifold.Orientation.model o` (restricted to `Ω` by
+  `TauCeti.Manifold.Orientation.model o ho`, where `ho` identifies the orientation index
+  cardinality with `dim E` (restricted to `Ω` by
   `TauCeti.Manifold.Orientation.restrict`), then `J_f = det U` almost everywhere. At points where
   `f̃` is differentiable with derivative `U(x)`, this is the Jacobian `J(x, f)` of
   MartioRickmanVaisala1969 line 124.
@@ -1451,6 +1509,9 @@ open, a manifold through `TopologicalSpace.Opens.instChartedSpace` with the rest
 
 - `f = id_Ω`: `Df = id` and `J_f = 1`. The norm is `1` in positive dimension and `0`
   in dimension `0`, where the identity linear map is the zero map.
+- For `a < b` and the flat open interval `(a,b) ⊆ ℝ`, its Riemannian volume is `b − a`, the restricted
+  ambient volume; the empty domain has volume `0`. On a zero-dimensional singleton
+  the volume is `1` and the empty determinant is `1`.
 - The reflection `(x₁, x₂) ↦ (x₁, −x₂)` of `ℝ²`: `J_f = −1` with one orientation on both sides.
 - `f(z) = z²` on `ℂ = ℝ²` with the orientation of `(1, i)`: `J_f = 4|z|²`, which is
   `|∂f/∂z|² − |∂f/∂z̄|² = |2z|²`.
@@ -1500,8 +1561,9 @@ domain-chart source intersected with `ι⁻¹(t)`, in place of the embedding hyp
 Identities between the chosen differentials assume `M` Lindelöf; the membership
 equivalence and transport of any supplied weak differential require no countability.
 
-Membership and transport of any weak differential are `immersion_comparison`;
-the isometric norm identity is `isometric_immersion_norm`.
+Membership and transport of any weak differential are `immersion_comparison`.
+The norm identity follows from `LinearMap.isometryOfInner` and
+`LinearIsometry.norm_toContinuousLinearMap_comp` applied fibrewise.
 
 Let `ι : N → V` be a `C¹` immersion (`C¹` with injective `mfderiv ι y` for every `y`) and let
 `f : M → N` be continuous. Prove (Hajlasz2009 line 28; HeikkilaPankka2025 line 1328–1329):
@@ -1533,7 +1595,8 @@ HeikkilaPankka2025 line 1328, taken here as a hypothesis.
   Both `ι ∘ f` and `f` lie in the class exactly for `p < 2`.
 
 *Needs:* §2.4, §4.1, §4.2, §4.3, §4.5, §4.6, §5.1, §8.1; Mathlib `Manifold.IsSmoothEmbedding`,
-`exists_embedding_euclidean_of_compact`.
+`exists_embedding_euclidean_of_compact`, `LinearMap.isometryOfInner`,
+`LinearIsometry.norm_toContinuousLinearMap_comp`.
 
 ### 8.3 The extrinsic class of measurable maps
 
