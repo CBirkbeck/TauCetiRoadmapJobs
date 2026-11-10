@@ -35,7 +35,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-26"
 version_note = "arXiv v2"
-cited_for = ["5.1", "5.2", "5.3", "5.11", "10.4", "11.2", "11.5"]
+cited_for = ["5.1", "5.2", "5.3", "5.11", "10.3", "11.2", "11.5"]
 
 [[source]]
 id = "KP20"
@@ -53,7 +53,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-26"
 version_note = "arXiv v2"
-cited_for = ["5.9", "5.10"]
+cited_for = ["5.9", "5.9a", "5.10", "gap:curve-companions", "gap:tame-specialization"]
 
 [[source]]
 id = "CH19"
@@ -215,7 +215,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-26"
 version_note = "arXiv v1"
-cited_for = ["0.7"]
+cited_for = ["0.5"]
 
 [[source]]
 id = "Sch19"
@@ -394,7 +394,7 @@ sha256 = "bebb3032bf9021b956da3bd070eb6c67dc662cf849be9cdf6679f677560e5618"
 licence_class = "author-page"
 status = "certified"
 accessed = "2026-10-26"
-cited_for = ["0.1", "0.4"]
+cited_for = ["0.1"]
 
 [[source]]
 id = "Deb01"
@@ -454,7 +454,7 @@ url = "https://doi.org/10.1515/9781400839049"
 licence_class = "none"
 status = "uncertified"
 version_note = "paywalled; cited by its locator without the text"
-cited_for = ["0.2", "0.3", "0.4", "0.5", "0.6", "2.3", "12.8"]
+cited_for = ["0.2", "0.3", "0.4", "2.3", "12.8"]
 
 [[source]]
 id = "Tim87"
@@ -544,3 +544,39 @@ status = "certified"
 accessed = "2026-10-26"
 version_note = "arXiv v1"
 cited_for = ["12.7"]
+
+[[source]]
+id = "Dri18"
+authors = "Vladimir Drinfeld"
+title = "On the pro-semisimple completion of the fundamental group of a smooth variety over a finite field"
+year = 2015
+arxiv = "1509.06059v8"
+locator_scheme = "theorem"
+locator = "Theorem 1.4.1"
+url = "https://arxiv.org/abs/1509.06059v8"
+fetched_from = "https://arxiv.org/pdf/1509.06059v8"
+fetched_at = "2026-11-10T22:44:12Z"
+sha256 = "1faa73d6f484312ce140980234503afd7973ea2465ed8157d4285bddb10f5963"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-10"
+version_note = "arXiv v8, the version read and cited; published in Adv. Math. 327 (2018), 708–788"
+cited_for = ["5.9a"]
+
+[[source]]
+id = "Dri12"
+authors = "Vladimir Drinfeld"
+title = "On a conjecture of Deligne"
+year = 2010
+arxiv = "1007.4004v7"
+locator_scheme = "theorem"
+locator = "Theorem 1.1"
+url = "https://arxiv.org/abs/1007.4004v7"
+fetched_from = "https://arxiv.org/pdf/1007.4004v7"
+fetched_at = "2026-11-10T22:59:04Z"
+sha256 = "61ae1e59c171c9e7592d2a9068bb8fcd6fcb3a6a71e4453ae6d8c83db9c08232"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-10"
+version_note = "arXiv v7, the version read and cited; published in Moscow Math. J. 12 (2012), 515–542"
+cited_for = ["5.9a", "gap:curve-companions"]

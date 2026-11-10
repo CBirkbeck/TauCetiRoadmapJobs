@@ -4,8 +4,9 @@
 genus-`g` surface with `n` punctures is *MCG-finite* (a *canonical representation*) when its actual
 conjugacy class has finite orbit under the mapping class group. This roadmap builds the theory that
 proves Landesman and Litt's theorem: an MCG-finite representation of rank `r` with `r² < g + 1` has
-finite image, with no semisimplicity hypothesis. It starts from punctured surfaces, pure mapping
-class groups, point-pushing and the Birman exact sequence (Layer 0), group-cohomological and
+finite image, with no semisimplicity hypothesis. It starts from the pure mapping class groups of
+punctured surfaces acting on presented surface groups, with the pure Birman sequence and capping
+(Layer 0), group-cohomological and
 deformation-theoretic tools for arbitrary discrete groups (Layer 1), and étale-versal families of
 pointed curves (Layer 2). It realizes an irreducible MCG-finite representation as the fibre of a
 projective and then of a linear local system on a versal family (Layers 3–4), and it develops the
@@ -38,14 +39,14 @@ characteristic-quotient, isomonodromy and finite-total-image corollaries, arithm
 the generic curve and its Hodge characterisation, residual non-liftability, non-density of
 arithmetic representations, and the examples of Layer 12.
 
-It also owns the following foundational targets, which no roadmap on main or earlier in the merge
-order states:
+It also owns the following foundational targets:
 
 - the identification of the presented surface group with the fundamental group of a surface with
-  punctures and boundary, pure mapping class groups, the action of Dehn twists on homology,
-  point-pushing, the Birman exact sequence, capping, the finiteness of the
-  abelianization of mapping class groups in genus at least two, Nielsen generation of `Aut(F_N)`,
-  and quasi-unipotence of multitwists in finite-index subgroups (Layers 0, 7 and 9);
+  punctures and boundary, the algebraic pure mapping class group, the comparison of the twist and
+  push conventions of its suppliers with the positive twist used here, the pure form of the Birman
+  exact sequence, capping all boundary circles at once with its based actions, the finiteness of
+  the abelianization of mapping class groups in genus at least two, Nielsen generation of
+  `Aut(F_N)`, and quasi-unipotence of multitwists in finite-index subgroups (Layers 0, 7 and 9);
 - Teichmüller uniformization of the analytic moduli stack of pointed curves in the whole hyperbolic
   range `2g − 2 + n > 0`, the finite-index image of fundamental groups under dominant morphisms, and
   boundary monodromy of good compactifications of versal total spaces (Layers 2 and 7);
@@ -59,9 +60,10 @@ order states:
   geometric origin and integral PVHS, parabolic semistability of Deligne extensions,
   isomonodromic deformations and their semistability, the mixed Hodge structure on `H¹` of unitary
   local systems in families with the theorem of the fixed part, the derivative of the period map,
-  Mochizuki's deformation of local systems to variations, cohomological rigidity, integrality of
-  rigid local systems, and the unitarity theorem for low-rank variations on analytically general
-  curves (Layer 5).
+  Mochizuki's deformation of local systems to variations, cohomological rigidity, Drinfeld's
+  comparison of the pro-semisimple completions of fundamental groups of smooth varieties over
+  finite fields with its `G`-valued companions, integrality of rigid local systems, and the
+  unitarity theorem for low-rank variations on analytically general curves (Layer 5).
 
 **It leaves to named roadmaps:**
 
@@ -75,9 +77,17 @@ order states:
   `Suggested.lean` only because that file cannot import a roadmap module;
 - Jordan's theorem on finite subgroups of `GL_r(K)` in characteristic zero and its constant
   `jordanBound r`: FiniteGroupInvariants §10.5;
-- compact surfaces with boundary, their classification, the full, rel-boundary and
-  orientation-preserving mapping class groups, Dehn twists, change of coordinates, the action on
-  `H₁` and Lickorish generation: SurfaceTopology Layers 8–9;
+- compact smooth surfaces with boundary, their classification and genus, their mapping class
+  groups fixing the boundary, Dehn twists with the sign convention used here, the action of a twist
+  on `H₁` and Lickorish's twist theorem: GeometricTopology §§1.7 and 1.7.2, with §11.2.1 item 5
+  identifying smooth and topological mapping classes;
+- surfaces with boundary and punctures, their classification, the mapping class group `Mod(S)`
+  (which may permute punctures) and its marked-point form `Mod(S*)`, cutting along curves, change
+  of coordinates, Dehn twists and multitwists and their action on homology, simple closed curves
+  in primitive classes, asphericity and trivial centres, the evaluation fibration, point-pushing,
+  the Birman exact sequence and capping one boundary circle: MordellLawrenceVenkatesh Layer LV.5
+  (§§5.1, 5.4, 5.7, 5.9–5.13, 5.15–5.17, 5.19–5.21). Its positive twist turns left and is the
+  inverse of the twist used here; §0.3 compares the two;
 - Teichmüller space of closed surfaces of genus `≥ 2`, the mapping-class action and the
   Dehn–Nielsen–Baer theorem for closed surfaces: TeichmullerGeometry Layer 2 (§2.4), Layer 3
   (§§3.1–3.3) and Layer 5 (§§5.1, 5.2, 5.6). Layer 2's uniformization differs in covering punctured
@@ -101,7 +111,14 @@ order states:
   condition `Φ_p`: LocalGaloisDeformationRings §§F.1–F.2; generic fibres and valued points of
   complete local rings: DeformationAndDerivedPatchingAlgebra §§4.2 and 4.4;
 - SNC compactification of smooth quasi-projective schemes: ResolutionOfSingularitiesCharacteristicZero
-  §6.2, consumed through AlgebraicModuliForArithmeticGeometry §9.5;
+  §6.2;
+- L. Lafforgue's global Langlands correspondence for `GL_r` over function fields at every level:
+  AutomorphicLFunctionsAndLocalFactors §AL.3 (*Leveled shtukas and ramified rank induction*), with
+  the compatible systems on curves it implies requested there (gap:curve-companions); weights,
+  purity, geometric semisimplicity and monodromy of lisse sheaves over finite fields:
+  DeligneWeightsAndPurity §§5.5, 7.8, 8.14 and 8.19; tame and prime-to-`p` specialization of
+  fundamental groups: InverseGaloisAndArithmeticFundamentalGroups §§IG.1.2–IG.1.3, with the
+  surjection onto the tame group requested there (gap:tame-specialization);
 - local coefficients, relative homology, cup and cap products, Poincaré duality and the
   intersection pairing, transfer for finite covers and Serre fibrations: AlgebraicTopology
   Stages 1, 2, 5 and 6; the homotopy exact sequence of a Serre fibration: DGFloer Layer 1
@@ -121,9 +138,10 @@ groups, such as surface groups and mapping class groups, which are not profinite
 The inflation–restriction sequence in all positive degrees, projective representations of arbitrary
 monoids with their factor sets and linearizing central extensions, the socle, unitary semisimplicity
 and the degree-square identity are pinned Tau Ceti declarations (*Exact supplier contracts*). That a
-finite-image representation of a geometric étale fundamental group is arithmetic is recorded by
-InverseGaloisAndArithmeticFundamentalGroups §IG.1.4 as a check on its definition; Layer 10 states it
-as a theorem because the characterisation uses it.
+finite-image representation of a geometric étale fundamental group is arithmetic is
+InverseGaloisAndArithmeticFundamentalGroups §IG.1.4 (*Outer actions and arithmetic
+representations*), proved there by descending the finite cover and its group action; Layer 10 uses
+it without restating it.
 
 The source's open questions (Questions 10.1.1, 10.1.3, 10.1.5, 10.2.3, 10.2.6 and 10.3.1) and its
 Conjecture 10.2.8 are not targets of this roadmap.
@@ -139,6 +157,10 @@ Conjecture 10.2.8 are not targets of this roadmap.
   `PMod(g, n) = PMod(Σ_{g,n})`, and `PMod(g, b, p)` fixes boundary circles pointwise and punctures
   individually. A base point counts as an extra puncture: `PMod(g, n + 1)` acts on
   `π₁(Σ_{g,n}, x)` by automorphisms, and `PMod(g, n)` acts by outer automorphisms.
+- `T_β` is the positive Dehn twist of GeometricTopology §1.7.2: on a tube `(ℝ/ℤ) × [0, 1]` of `β`
+  oriented by `dθ ∧ dt` it turns `θ` by an increasing function of `t` from `0` to `1`. On the torus
+  with `î(a, b) = 1` it sends `[b]` to `[b] + [a]`. MordellLawrenceVenkatesh's twist is `T_β⁻¹`
+  (§0.3).
 - Fundamental groups use Mathlib's `FundamentalGroup`, whose product `p * q` traverses `q` first
   (`FundamentalGroup.mul_def`). Point-pushing along `α` acts on based loops by `γ ↦ α * γ * α⁻¹`.
   The standard presentation is `π₁(Σ_{g,n}) = ⟨a₁, b₁, …, a_g, b_g, c₁, …, c_n | ∏ᵢ [aᵢ, bᵢ] ∏ⱼ cⱼ⟩`
@@ -206,7 +228,9 @@ Conjecture 10.2.8 are not targets of this roadmap.
   library path convention, and pullback along continuous maps compatible with monodromy. No second
   local-system carrier is introduced.
 - `TauCeti.IsAspherical` (`TauCeti/AlgebraicTopology/EilenbergMacLane/Basic.lean`): vanishing of
-  the higher homotopy groups, the form in which Layer 0 states asphericity of surfaces.
+  the higher homotopy groups, the form in which the asphericity of Artin neighbourhoods (§IG.3.1)
+  is consumed in §4.1, and that of the punctured fibres of a versal family
+  (MordellLawrenceVenkatesh §5.15) by gap:local-system-direct-images.
 - `TauCeti.socle` and `TauCeti.isSemisimpleModule_socle` (`TauCeti/RingTheory/SimpleModule/Socle.lean`):
   the socle as the supremum of simple submodules, and its semisimplicity.
 - `ContRepresentation.IsUnitary.isSemisimpleRepresentation`
@@ -215,10 +239,11 @@ Conjecture 10.2.8 are not targets of this roadmap.
 - `TauCeti.sum_characterDegree_sq_eq_card` (`TauCeti/RepresentationTheory/CharacterTable/Table.lean`):
   for a finite group over an algebraically closed field of characteristic prime to its order, the
   squares of the irreducible degrees sum to the order.
-- `TauCeti.groupCohomology.infRes_exact` and `TauCeti.groupCohomology.mono_infRes_f`
+- `TauCeti.groupCohomology.HInfRes_exact` and `TauCeti.groupCohomology.mono_HInfRes_f`
   (`TauCeti/RepresentationTheory/Homological/GroupCohomology/InflationRestriction.lean`): exactness
   of inflation–restriction in degree `n + 1` and injectivity of inflation when `Hⁱ(S, A) = 0` for
-  `0 < i ≤ n`, for an arbitrary group and normal subgroup.
+  `0 < i ≤ n`, for an arbitrary group and normal subgroup; for `n = 0` the vanishing hypothesis is
+  empty and the statement is the degree-one sequence.
 - `TauCeti.IsProjectiveRep`, `TauCeti.IsProjectiveRep.toPGL`,
   `TauCeti.IsProjectiveRep.cohomologyClass`, `TauCeti.IsProjectiveRep.cohomologyClass_eq_zero_iff`
   and `TauCeti.isProjectiveRepEquivExtensionHom` (`TauCeti/RepresentationTheory/ProjectiveRepresentation/`),
@@ -236,7 +261,9 @@ the single relator `∏ [aᵢ, bᵢ] ∏ pⱼ`, commutator `x⁻¹y⁻¹xy`; the
 relator; `SurfaceGroup.abelianization`, free abelian of rank `2g` for `m = 0` and `2g + m − 1`
 for `m ≥ 1`), §6.1a (comparison with polygonal surface models and their boundary traversals) and
 §6.2 (`isFreeGroup_orientable`: for `m ≥ 1` the group is free on `a₁, …, b_g, p₁, …, p_{m−1}` and
-`p_m` is the inverse of the product of the others; the closed group is not free). Layer 0 consumes
+`p_m` is the inverse of the product of the others; for `m = 0` the closed orientable group is not
+free when `g ≥ 1`, that is `χ ≤ 0`, while for `g = 0` it is the trivial group, free of rank zero).
+Layer 0 consumes
 these through the generator inversion of *Conventions*, which is an isomorphism
 `OrientableSurfaceGroup g n ≃* surfaceGroup g n` matching `pⱼ` with `cⱼ`.
 
@@ -247,14 +274,45 @@ normal subgroup of index at most `J`, and `jordan_exists_abelian_normal_index_le
 of characteristic zero every finite subgroup of `GL_r(K)` has an abelian normal subgroup of index at
 most `jordanBound r`. Layer 1 writes `J(r)` for `jordanBound r` and uses only this bound.
 
-### From TauCetiRoadmap.SurfaceTopology
+### From TauCetiRoadmap.GeometricTopology
 
-Layer 8 (compact surfaces with boundary, their classification, `Surface.genus`) and Layer 9
-(`MappingClassGroupRel`, `MappingClassGroupPlus`, `dehnTwist`, `change_of_coordinates`,
-`MappingClassGroupFull.actH₁`, Lickorish generation `dehnTwists_generate`). Layer 0 assumes these
-for compact surfaces with boundary, homeomorphisms and isotopies fixing the boundary pointwise,
-and adds punctures and marked points on top of them; that layer excludes punctures, point-pushing
-and the Birman sequence, which are Layer 0 targets here.
+§1.7 (the classification of compact connected smooth surfaces, the genus `(2 − χ − b)/2`, and
+`rank H₁ = 2g` or `2g + b − 1`); §1.7.2 (the mapping class group `Mod(F)` of a compact connected
+smooth surface, classes of diffeomorphisms fixing `∂F` pointwise up to isotopy rel `∂F`; the Dehn
+twist `T_c`, the identity off a tube `(ℝ/ℤ) × [0, 1]` of `c` oriented by `dθ ∧ dt` and
+`([θ], t) ↦ ([θ + φ(t)], t)` on it with `φ` increasing from `0` to `1`; the formulas
+`f T_c f⁻¹ = T_{f(c)}` for orientation-preserving `f`, `Mod(D²) = 1`, `Mod(annulus) = ℤ`; the action
+`[x] ↦ [x] + (c · x)[c]` on `H₁(F; ℤ)`, with the torus matrices `[[1, 1], [0, 1]]` and
+`[[1, 0], [−1, 1]]` for `a · b = 1`; Lickorish's theorem that `Mod(F)` of a compact connected
+orientable `F` is generated by Dehn twists); §11.2.1 item 5 (the forgetful map from `Mod(F)` to
+isotopy classes of homeomorphisms fixing `∂F` is an isomorphism). Assumed for every compact
+connected oriented `F`; no punctures or marked points are treated there.
+
+### From TauCetiRoadmap.MordellLawrenceVenkatesh
+
+Layer LV.5: §5.1 (a surface is `Σ ∖ P`, `Σ` a compact connected oriented topological surface with
+boundary and `P` a finite subset of its interior), §5.4 (such a surface is determined up to
+orientation-preserving homeomorphism by its type `(g, b, n)`), §5.7 (annular neighbourhoods of
+simple closed curves and cutting along them), §5.9 (`Mod(S)`, classes of
+orientation-preserving homeomorphisms fixing `∂S` pointwise up to isotopy rel `∂S`, which may
+permute punctures; `Mod(S*)` for a marked interior point `x`; the surjection
+`Forget : Mod(S*) → Mod(S)`; the actions on `H₁(S; ℤ)` and on simple closed curves), §5.10 (change of
+coordinates for nonseparating curves and for pairs meeting once), §5.11 (the twist `T^{LV}_α`, the
+twist map `(θ, t) ↦ (θ + 2πt, t)` on a model annulus oriented by `dt ∧ dθ`), §5.12
+(`Ψ(T^{LV}_b)^k(x) = x + k · î(x, b) · [b]`, and the multitwist formula, unipotent), §5.13 (on a
+closed surface of genus `≥ 1`, or one with a single puncture or boundary circle, a nonzero class
+is represented by a simple closed curve iff it is primitive, and a simple closed curve is
+nonseparating iff its class is nonzero), §5.15 (a connected oriented surface of finite type other
+than the sphere has contractible universal cover), §5.16 (for `χ(S) < 0` centralizers of nontrivial
+elements of `π₁` are infinite cyclic), §5.17 (the evaluation map `Homeo⁺(S, ∂S) → int S` is a
+locally trivial bundle), §5.19 (`Push : π₁(S, x) → Mod(S*)`, acting on based loops by
+`γ ↦ α * γ * α⁻¹` in Mathlib's convention), §5.20 (for `χ(S) < 0` the Birman sequence
+`1 → π₁(S, x) → Mod(S*) → Mod(S) → 1` is exact, and `Push(α) = T^{LV}_a (T^{LV}_b)⁻¹` for a simple
+loop `α` with left and right push-offs `a`, `b`), §5.21 (capping a boundary circle `β` with a
+once-marked disc gives the exact sequence `1 → ⟨T_β⟩ → Mod(S) → Mod(S′, p) → 1`). Its twist is
+the inverse of the twist of GeometricTopology §1.7.2, a comparison stated in GeometricTopology's
+ownership section and proved for punctured surfaces in §0.3; every formula is consumed through
+that comparison.
 
 ### From TauCetiRoadmap.TeichmullerGeometry
 
@@ -300,13 +358,25 @@ dictionary between `TauCeti.LocalCoefficientSystem` and locally constant sheaves
 of manifolds and a locally constant sheaf `V` of finite free `A`-modules on `T` prove that
 `R^q f_* V` is locally constant with stalk `H^q(f⁻¹(s), V)`, equal to the group cohomology of the
 fibre group when the fibre is a `K(π, 1)`, together with the projection formula
-`R^q f_*(V ⊗ f^*W) ≅ R^q f_* V ⊗ W` for a local system `W` on `S`.
+`R^q f_*(V ⊗_A f^*W) ≅ R^q f_* V ⊗_A W` for a local system `W` of finite free `A`-modules on `S`.
+Freeness of `W` is needed: for `A = ℂ[x, y]/(x, y)²`, `T = ℂ^×`, `S` a point, `V = A` with
+monodromy `1 + x` and `W = A/𝔪_A`, one has `H⁰(V) = 𝔪_A` of dimension two, so
+`H⁰(V) ⊗_A W = 𝔪_A/𝔪_A²` has dimension two while `H⁰(V ⊗_A W) = ℂ` has dimension one; for
+`W = A` the comparison is the identity of `𝔪_A`.
 
 ### From TauCetiRoadmap.InverseGaloisAndArithmeticFundamentalGroups
 
-§IG.1.4, *Outer actions and arithmetic representations*: the arithmetic representations (finite
-`Γ_K`-orbit of the isomorphism class) with their conjugation, base-extension and lift-independence
-properties, and *Exactness in families and the moduli outer action* (the étale sequence
+§IG.1.2, *Tame and prime-to-`p` fundamental quotients*, and §IG.1.3, *Tame specialization with a
+relative boundary* (for `X` smooth and proper over a strictly henselian discrete valuation ring
+with geometrically connected fibres and `D` a relative strict normal crossings divisor, geometric
+specialization identifies the maximal prime-to-`p` quotients of `π₁^ét(U_η̄)` and `π₁^ét(U_s̄)`,
+`U = X ∖ D`). §IG.1.4, *Outer actions and arithmetic representations*: the arithmetic
+representations (finite `Γ_K`-orbit of the isomorphism class) with their conjugation,
+base-extension and lift-independence properties, and the finite-image criterion proved there by
+descent: a continuous representation of `π₁^ét(X_K̄)` with finite image factoring through the Galois
+group of a cover defined over a finite extension `K′/K` has orbit of at most `[K′ : K]` classes, in
+every characteristic and without finite generation; and *Exactness in families and the moduli outer
+action* (the étale sequence
 `1 → π₁^ét(C_x̄) → π₁^ét(𝓒_{g,n}) → π₁^ét(𝓜_{g,n}) → 1`, geometric and arithmetic, with compatible
 outer actions and the profinite completion of the surface group as fibre group). §IG.3.1:
 *Riemann existence for punctured curves*, *Finitely many covers of bounded degree*, *Artin
@@ -317,6 +387,14 @@ comparison chain `H^i(π₁(U(ℂ)), A) → H^i(U(ℂ), A) → H^i_ét(U, A)` fo
 and *Versal families with specified topological monodromy* (a chart dominant and étale over
 `M_{g,n}`, the `H`-cover of its universal punctured curve with prescribed topological monodromy,
 and the refinement carrying a section).
+
+What InverseGaloisAndArithmeticFundamentalGroups must provide (gap:tame-specialization): in the
+setting of §IG.1.3's *Tame specialization with a relative boundary*, prove that the specialization
+homomorphism `π₁^ét(U_η̄) → π₁^t(U_s̄)` onto the tame fundamental group of the special fibre (§IG.1.2)
+is surjective, compatibly with the prime-to-`p` identification (Klevdal–Patrikis, §5.2, footnote 3,
+KP20 line 549, and its use in §6.2, KP20 line 761). In residue characteristic zero it
+is the identification itself; for an ordinary elliptic curve over `ℤ_p^{ur}` with `U = X` it is
+surjective but not injective on maximal pro-`p` quotients (`ℤ_p² → ℤ_p`).
 
 ### From TauCetiRoadmap.ArithmeticGaloisRepresentations
 
@@ -334,13 +412,48 @@ profinite group, with fixed determinant) and §§F.2.1, F.2.3, F.2.5, F.2.9 (Maz
 DeformationAndDerivedPatchingAlgebra §4.2 (algebraic and valued integral points) and §4.4 (generic
 fibres and punctured spectra). Used only in Layer 11's conditional statement.
 
-### From TauCetiRoadmap.AlgebraicModuliForArithmeticGeometry and TauCetiRoadmap.ResolutionOfSingularitiesCharacteristicZero
+### From TauCetiRoadmap.ResolutionOfSingularitiesCharacteristicZero
 
-AlgebraicModuliForArithmeticGeometry §9.5 (`sncCompactification_open`,
-`sncCompactification_boundary`, `sncCompactification_projective`), consuming
-ResolutionOfSingularitiesCharacteristicZero §6.2 (SNC compactification): a smooth projective
-compactification with strict SNC boundary of a smooth quasi-projective variety in characteristic
-zero, retaining the open subset.
+§6.2 (SNC compactification): a smooth quasi-projective variety `U` over a field of characteristic
+zero embeds as a dense open subset of a smooth projective variety `Ū` whose complement is a reduced
+strict normal crossings divisor with labelled smooth components, every modification restricting to
+the identity on `U`; the compactification depends on a chosen projective closure. Its Check
+`𝔾_m² ⊂ ℙ¹ × ℙ¹`, with the four coordinate curves as boundary, exhibits the three properties used
+in §7.2: the open subset is retained, the boundary is strict SNC, and the compactification is
+projective.
+
+### From TauCetiRoadmap.AutomorphicLFunctionsAndLocalFactors
+
+§AL.3, *Leveled shtukas and ramified rank induction* and *The unramified pure realization
+theorem*: for a smooth projective geometrically connected curve `X` over `𝔽_q`, `ℓ ≠ char 𝔽_q`,
+every effective level divisor `D` and every `r ≥ 1`, L. Lafforgue's bijection between cuspidal
+automorphic representations of `GL_r` over `𝔽_q(X)` with finite-order central character, unramified
+outside `supp D`, and irreducible rank-`r` lisse `ℚ̄_ℓ`-sheaves on `X ∖ supp D` with finite-order
+determinant, matching Frobenius characteristic polynomials with Satake parameters and local factors
+at every place; the sheaves it constructs are pure of weight zero.
+
+What AutomorphicLFunctionsAndLocalFactors must provide (gap:curve-companions): deduce from §AL.3's
+`GL_r` correspondence that for an irreducible lisse `ℚ̄_ℓ`-sheaf `E` of rank `r ≥ 1` with
+finite-order determinant on a smooth geometrically connected curve over `𝔽_q`, the characteristic
+polynomials of the geometric Frobenius elements at closed points have coefficients in one number
+field, their roots are pure of weight zero and are units at every finite place not above `p`, and
+for every finite place `λ′ ∤ p` of `ℚ̄` and isomorphism of the coefficient fields there is an
+irreducible lisse `ℚ̄_{λ′}`-sheaf with finite-order determinant and the same Frobenius
+characteristic polynomials whose Frobenius-semisimplified Weil–Deligne representation at every
+point of the boundary is isomorphic to that of `E`, so tameness and the orders of the eigenvalues of
+local monodromy are the same (Drinfeld 2012, Remark 1.2, Dri12 line 27, for the companions on
+curves; Klevdal–Patrikis, proof of Proposition 6.2(1) and (4), KP20 lines 694–725, for the local
+compatibility at the boundary).
+
+### From TauCetiRoadmap.DeligneWeightsAndPurity
+
+§5.5 (the geometric image of a rank-one `ℓ`-adic Weil sheaf on a normal geometrically connected
+`X₀/𝔽_q` is finite, so an irreducible lisse sheaf becomes finite-determinant after a rank-one
+twist), §7.8 (`R^i f_!` of a mixed sheaf of weights `≤ n` has weights `≤ n + i`), §8.14 (geometric
+monodromy groups; with algebraically closed characteristic-zero coefficients a lisse sheaf is
+geometrically semisimple iff the identity component of the Zariski closure of its geometric
+monodromy is reductive) and §8.19 (a punctually `ι`-pure lisse sheaf on a normal `X₀` is
+geometrically semisimple). Used in §§5.9a–5.10 with `ℓ ≠ p` and rational `ℓ`-adic coefficients.
 
 ### From TauCetiRoadmap.AlgebraicTopology, TauCetiRoadmap.DGFloer, Completed/UniversalCovers and TauCetiRoadmap.ClassifyingSpaces
 
@@ -348,8 +461,8 @@ AlgebraicTopology Stage 1 (van Kampen), Stage 2 (relative singular chains and lo
 systems), Stage 5 (bundles, covers and transfer for finite covers; item 5: Serre fibrations, and
 every locally trivial map is one), Stage 6 (cup and cap products, Poincaré duality and the
 intersection pairing of closed oriented manifolds). DGFloer Layer 1 item 2: the homotopy exact
-sequence `… → π₁(F) → π₁(E) → π₁(B) → π₀(F) → π₀(E) → π₀(B)` of a Serre fibration, which Layers 0
-and 2 apply to the evaluation fibration of §0.4 and to the punctured family `C° → M` of §2.6.
+sequence `… → π₁(F) → π₁(E) → π₁(B) → π₀(F) → π₀(E) → π₀(B)` of a Serre fibration, which Layer 2
+applies to the punctured family `C° → M` of §2.6.
 Completed/UniversalCovers: based universal covers, deck groups and the covering classification.
 ClassifyingSpaces Stage 4, item 17: group cohomology of `π` agrees with cohomology of a `K(π, 1)`
 with local coefficients.
@@ -368,9 +481,10 @@ and Schur multipliers of finite groups). Schur's lemma itself is Mathlib's (*Fro
 
 ## How to read the build
 
-Layer 0 sets up punctured surfaces and their pure mapping class groups, with point-pushing, the
-Birman sequence, capping and the finite abelianization of mapping class groups; it defines the
-Lean carriers `surfaceGroup` and `pureMappingClassAut`. Layer 1 supplies the group theory used
+Layer 0 adapts the surfaces, mapping class groups, twists, point-pushing and capping of
+MordellLawrenceVenkatesh and GeometricTopology to presented surface groups, pure and based actions
+and the positive twist, and proves the finite abelianization of mapping class groups; it defines
+the Lean carriers `surfaceGroup` and `pureMappingClassAut`. Layer 1 supplies the group theory used
 throughout: the five-term sequence with transgression, lifting through finite central isogenies,
 Artinian deformations with the constancy criterion, representation schemes and the Jordan
 identity.
@@ -379,7 +493,8 @@ with mapping class groups through Teichmüller uniformization. Layers 3 and 4 re
 MCG-finite representation projectively and then linearly on a versal family and decompose Artinian
 deformations of fibre-unitary local systems. Layer 5 is the Hodge theory: variations of Hodge
 structure, isomonodromy, the mixed Hodge structure on the cohomology of unitary local systems, the
-rank bound and its Artinian vanishing form, nonabelian Hodge theory, rigidity and integrality.
+rank bound and its Artinian vanishing form, nonabelian Hodge theory, rigidity, companions over
+finite fields and integrality.
 Layer 6 deduces the higher Prym rank bound and the Putman–Wieland theorem; Layer 7 the unitary
 case; Layer 8 the semisimple case; Layer 9 the general theorem and its corollaries. Layers 10 and 11
 are arithmetic, and Layer 12 collects the examples. Layers 2–4 do not use Layer 5, and Layer 5 uses
@@ -387,16 +502,21 @@ Layer 4 only in its Artinian vanishing theorem.
 
 ## Layer 0: surfaces with punctures, pure mapping class groups and point-pushing
 
-This layer extends the compact-surface theory of SurfaceTopology to punctures and marked points.
-It fixes the standard presentation of surface groups, the pure mapping class groups and their
-actions on fundamental groups, the action of Dehn twists on homology, point-pushing with the Birman
-exact sequence, capping, and the finiteness of the abelianization of mapping class groups in genus
-at least two.
+This layer takes surfaces with boundary and punctures, their mapping class groups, Dehn twists,
+point-pushing, the Birman sequence and capping from MordellLawrenceVenkatesh Layer LV.5, and the
+compact case with its sign convention and Lickorish's theorem from GeometricTopology §1.7.2. It
+adds what the finiteness theory needs on top of them: the standard presentation of surface groups,
+the pure mapping class groups and their based actions on presented surface groups, the comparison
+of the two twist conventions with the formulas in the positive convention, the pure Birman
+sequence, capping all boundary circles at once, and the finiteness of the abelianization of mapping
+class groups in genus at least two.
 
 ### 0.1 Punctured surfaces and the standard presentation
 
-For `g, b, p ≥ 0` let `Σ_{g,b,p}` be SurfaceTopology Layer 8's compact connected oriented surface of
-genus `g` with `b` boundary circles, minus `p` interior points, and `Σ_{g,n} = Σ_{g,0,n}`.
+For `g, b, p ≥ 0` let `Σ_{g,b,p}` be MordellLawrenceVenkatesh §5.1's surface of type `(g, b, p)`, a
+compact connected oriented surface of genus `g` with `b` boundary circles minus `p` interior
+points, determined up to orientation-preserving homeomorphism by its type (§5.4), and
+`Σ_{g,n} = Σ_{g,0,n}`.
 The presented surface group is FreeGroupsAndLimitGroups §6.1's `OrientableSurfaceGroup g n`, with
 its peripheral tuple, the universal property of its presentation and its abelianization (§6.1),
 and its freeness on `a₁, …, b_g, c₁, …, c_{n−1}` for `n ≥ 1` (§6.2). The Lean carrier
@@ -417,7 +537,7 @@ point of the 2-cell and collapsing gives the punctured case, and a collar retrac
 boundary circle with a puncture (Landesman–Litt 2022, proof of Lemma 7.5.1, LL22 line 2048; Landesman–Litt,
 proof of Lemma 7.2.5, LL24 line 1500). Through the isomorphism, FreeGroupsAndLimitGroups §6.2 gives
 that `π₁(Σ_{g,b,p}, x)` is free on `a₁, …, b_g, c₁, …, c_{b+p−1}`, of rank `2g + b + p − 1`, when
-`b + p ≥ 1`. *Needs:* FreeGroupsAndLimitGroups §§6.1–6.2; SurfaceTopology Layer 8;
+`b + p ≥ 1`. *Needs:* FreeGroupsAndLimitGroups §§6.1–6.2; MordellLawrenceVenkatesh §§5.1, 5.4;
 AlgebraicTopology Stage 1; Mathlib `PresentedGroup`, `FreeGroup`, `FundamentalGroup`.
 
 - Changing the chosen loops changes the isomorphism by an automorphism sending each `cⱼ` to a
@@ -441,18 +561,20 @@ AlgebraicTopology Stage 1; Mathlib `PresentedGroup`, `FreeGroup`, `FundamentalGr
 - `(g, n) = (1, 0)`: the closed torus group `⟨a, b | aba⁻¹b⁻¹⟩ ≅ ℤ²` has no peripheral loop, and
   the isomorphism with `π₁(T²)` sends `a, b` to the two standard circles, whose classes have
   `î(a, b) = 1` in the orientation of §0.3; the inversion transport changes the sign of neither
-  intersection number since it inverts both generators.
+  intersection number since it inverts both generators. The torus group is not free, whereas the
+  closed genus-zero group `surfaceGroup 0 0` is trivial, free of rank zero: the non-freeness of
+  FreeGroupsAndLimitGroups §6.2 for closed groups needs `g ≥ 1`.
 
 ### 0.2 Pure mapping class groups and their actions on surface groups
 
-Define `PMod(g, b, p)` as the group of isotopy classes of orientation-preserving homeomorphisms of
-the compact surface `Σ_{g,b}` that fix the boundary pointwise and fix each of `p` marked interior
-points, with isotopies through such homeomorphisms; it is SurfaceTopology's
-`MappingClassGroupPlus` of `Σ_{g,b}` relative to the marked points. Write `Mod(g, b, p)` for the
-group allowing permutations of the marked points, which contains `PMod(g, b, p)` with index `p!`.
-Marking a base point `x` as an extra point, a class in `PMod(g, b, p + 1)` acts on
-`π₁(Σ_{g,b,p}, x)` by functoriality; this based action factors through isotopy because isotopies fix
-`x`, and `PMod(g, b, p)` acts by outer automorphisms.
+Write `Mod(g, b, p)` for MordellLawrenceVenkatesh §5.9's `Mod(Σ_{g,b,p})`, whose classes may
+permute the punctures, and define `PMod(g, b, p)` as its subgroup of classes fixing each puncture,
+the kernel of the permutation action on the `p` punctures; it has index `p!`, every permutation
+being realized. For `p = 0` it is GeometricTopology §1.7.2's `Mod(Σ_{g,b})` through §11.2.1 item 5.
+Marking a base point `x` as an extra puncture, `PMod(g, b, p + 1)` is the subgroup of
+MordellLawrenceVenkatesh's `Mod(Σ_{g,b,p}*)` fixing each of the other punctures. A class in it acts
+on `π₁(Σ_{g,b,p}, x)` by functoriality; this based action factors through isotopy because isotopies
+fix `x`, and `PMod(g, b, p)` acts by outer automorphisms.
 
 Define `pureMappingClassAut g n` as the subgroup of `MulAut (surfaceGroup g n)` of automorphisms
 sending each `peripheralLoop j` to a conjugate of itself. Prove that under the standard presentation
@@ -462,131 +584,119 @@ or boundary circle maps a small positively oriented loop around it to another su
 freely homotopic to `cⱼ`. By the Dehn–Nielsen–Baer theorem the image is the whole of this subgroup
 for `b + p ≥ 1` in the hyperbolic range, and the orientation-preserving part of it for `b + p = 0`
 (Farb–Margalit, §8.2); only the containment is used in this roadmap. *Needs:* §0.1;
-SurfaceTopology Layer 9; Mathlib `MulAut`.
+MordellLawrenceVenkatesh §5.9; GeometricTopology §§1.7.2, 11.2.1; Mathlib `MulAut`.
 
 - `pureMappingClassAut g n` contains every inner automorphism, and for `n = 0` it is the whole
   automorphism group.
 - It is a subgroup: closure under products and inverses follows from the conjugation formula, and
   the proof is part of the definition in the Lean file.
-- For `n ≥ 1` no element sends some `cⱼ` to a conjugate of `cⱼ⁻¹`, since the abelianization class
-  of `cⱼ` for `j < n` is a basis vector.
+- For `n ≥ 1` and `(g, n) ≠ (0, 1)` no `cⱼ` is conjugate to `cⱼ⁻¹`, so no element sends some `cⱼ`
+  to a conjugate of `cⱼ⁻¹`. For `n ≥ 2` the abelianization is free abelian of rank `2g + n − 1`, the
+  classes of `c₁, …, c_{n−1}` are basis vectors and that of `c_n` is minus their sum, so each `[cⱼ]`
+  is nonzero and `[cⱼ] ≠ −[cⱼ]`. For `n = 1` and `g ≥ 1` the class `[c₁]` is zero, but
+  `c₁ = (∏ [aᵢ, bᵢ])⁻¹` is a nontrivial element of the free group on `a₁, …, b_g`
+  (FreeGroupsAndLimitGroups §6.2), and in a free group `h w h⁻¹ = w⁻¹` forces `w = 1`: `h²`
+  commutes with `w`, centralizers of nontrivial elements are cyclic and the group is torsion-free.
+  For `(g, n) = (0, 1)` the group is trivial and `c₁ = c₁⁻¹ = 1`.
 
 **Checks.**
 
 - `(g, n) = (0, 3)`: `PMod(0, 3)` is trivial and `PMod(0, 4)` is the point-pushing group `F₂`
-  (§0.5), acting on `π₁(Σ_{0,3})` by inner automorphisms; the automorphism `c₁ ↦ c₂, c₂ ↦ c₁` lies
+  (§0.3), acting on `π₁(Σ_{0,3})` by inner automorphisms; the automorphism `c₁ ↦ c₂, c₂ ↦ c₁` lies
   in `Mod(0, 3)`'s outer image but not in `pureMappingClassAut 0 3`.
 - `(g, n) = (1, 0)`: `pureMappingClassAut 1 0 = Aut(ℤ²) = GL₂(ℤ)`, containing the
   orientation-reversing class `a ↦ b, b ↦ a` of determinant `−1`.
 - The automorphism of `surfaceGroup 0 2 ≅ ℤ` sending `c₁` to `c₁⁻¹` is not in
   `pureMappingClassAut 0 2`: in `ℤ` the element `c₁` is conjugate only to itself.
+- The once-punctured sphere is the exception to the non-inversion property: `surfaceGroup 0 1` is
+  trivial, so the identity, which lies in `pureMappingClassAut 0 1`, sends `c₁ = 1` to `c₁⁻¹ = 1`; for
+  the once-punctured torus `c₁ = [a, b]⁻¹` has abelianization class zero, so the argument there is
+  the free-group one, not the abelianization.
 
-### 0.3 Dehn twists and their action on homology
+### 0.3 Twist and push conventions and the pure Birman sequence
 
-For an oriented simple closed curve `β` in the interior of `Σ_{g,b,p}` avoiding the marked points,
-let `T_β` be SurfaceTopology's positive `dehnTwist`: in a collar `(ℝ/ℤ) × [0, 1]` of `β` with
-coordinates `([θ], t)` and orientation `dθ ∧ dt`, the map `([θ], t) ↦ ([θ + t], t)`. Prove that for
-every `x ∈ H₁(Σ_{g,b,p}; ℤ)` and `k ∈ ℤ`,
+Throughout, `T_β` is the positive twist of GeometricTopology §1.7.2 (*Conventions*), and
+`T^{LV}_β` is MordellLawrenceVenkatesh §5.11's twist, defined on a model annulus oriented by
+`dt ∧ dθ`. Prove that for every simple closed curve `β` in the interior of `Σ_{g,b,p}` avoiding the
+punctures, `T^{LV}_β = T_β⁻¹` in `Mod(Σ_{g,b,p})`, and that for `p = 0` the class `T_β` is
+GeometricTopology §1.7.2's twist under §11.2.1 item 5: the substitution `s = 1 − t` carries the model
+annulus oriented by `dt ∧ dθ` to one oriented by `dθ ∧ ds` and the map `(θ, t) ↦ (θ + 2πt, t)` to
+`([θ], s) ↦ ([θ − s], s)` in the coordinate `θ/2π`, the inverse of the positive twist up to the
+rotation by one full turn, which is the identity. Consequently MordellLawrenceVenkatesh §5.12 reads,
+for every `x ∈ H₁(Σ_{g,b,p}; ℤ)` and `k ∈ ℤ`,
 
 `T_β^k(x) = x + k · î(β, x) · [β]`, equivalently `x − k · î(x, β) · [β]`,
 
-where `î` is the algebraic intersection number, positive at a crossing where the ordered pair of
-directions agrees with the orientation; consequently a multitwist `∏ T_{βᵢ}^{mᵢ}` about pairwise
-disjoint curves acts by `x ↦ x + Σ mᵢ î(βᵢ, x)[βᵢ]` and is unipotent (Farb–Margalit,
-Proposition 6.3, stated there for the left twist, the inverse of the positive twist, so with the
-opposite sign). Prove also that on a closed surface of genus `g ≥ 1`, or on one with
-a single puncture or boundary circle, a nonzero class of `H₁(Σ; ℤ)` is represented by an oriented
-simple closed curve if and only if it is primitive, and a simple closed curve is nonseparating
-exactly when its class is nonzero (Farb–Margalit, Proposition 6.2). *Needs:* §0.1; SurfaceTopology
-Layer 9 (`dehnTwist`, `change_of_coordinates`, `MappingClassGroupFull.actH₁`); AlgebraicTopology
-Stage 6 (intersection pairing).
+with `î` the algebraic intersection number, positive at a crossing where the ordered pair of
+directions agrees with the orientation; a multitwist `∏ T_{βᵢ}^{mᵢ}` about pairwise disjoint
+curves acts by `x ↦ x + Σ mᵢ î(βᵢ, x)[βᵢ]` and is unipotent (Farb–Margalit, Proposition 6.3,
+stated for the left twist, with the opposite sign). Likewise MordellLawrenceVenkatesh §5.20's
+formula `Push(α) = T^{LV}_a (T^{LV}_b)⁻¹` for a simple loop `α` with left and right push-offs `a`,
+`b` reads `Push(α) = T_a⁻¹ T_b` (Farb–Margalit, Fact 4.7, which reads `T_a T_b⁻¹` for the left
+twist), and `Push(α)` acts on `π₁(Σ, x)` by `γ ↦ α * γ * α⁻¹` (MordellLawrenceVenkatesh §5.19).
+
+Prove the pure Birman sequence: for `χ(Σ_{g,b,p}) < 0` the sequence
+
+`1 → π₁(Σ_{g,b,p}, x) → PMod(g, b, p + 1) → PMod(g, b, p) → 1`
+
+(`Push`, then forgetting `x`) is exact; in particular
+`1 → π₁(Σ_{g,n}, x) → PMod(g, n + 1) → PMod(g, n) → 1` for `2g − 2 + n > 0`. The image of `Push` is
+the kernel of `Forget`, whose classes are isotopic to the identity on `Σ_{g,b,p}` and so fix every
+puncture; hence `PMod(g, b, p + 1)` is the preimage of `PMod(g, b, p)` under `Forget`, and the
+restriction of MordellLawrenceVenkatesh §5.20 to it is exact (Farb–Margalit, Theorem 4.6).
+*Needs:* §§0.1, 0.2; MordellLawrenceVenkatesh §§5.9, 5.11, 5.12, 5.19, 5.20; GeometricTopology
+§§1.7.2, 11.2.1; AlgebraicTopology Stage 6 (intersection pairing); Mathlib
+`FundamentalGroup.mul_def`.
 
 **Checks.**
 
 - On the torus with `î(a, b) = 1` and ordered basis `(a, b)`, `T_a` sends `[b]` to `[b] + [a]` and
   has matrix `[[1, 1], [0, 1]]`, and `T_b` sends `[a]` to `[a] − [b]` and has matrix
-  `[[1, 0], [−1, 1]]`, the table of SurfaceTopology Layer 9; the opposite twist convention
-  (Farb–Margalit's left twist) gives the inverse matrices `[[1, −1], [0, 1]]` and
-  `[[1, 0], [1, 1]]`, and the formula `x + k î(x, β)[β]` would give `T_a[b] = [b] − [a]`, the
-  wrong sign for the positive twist.
-- A separating curve on a closed surface has class zero, so its twist acts trivially on `H₁`.
-- `(2, 0) ∈ H₁(T²; ℤ)` is not primitive and is not represented by a simple closed curve, while
-  `(2, 3)` is.
-
-### 0.4 Asphericity, centres and the evaluation fibration
-
-Prove that `Σ_{g,b,p}`, when it is not a sphere, is aspherical (`TauCeti.IsAspherical`), so it is a
-`K(π₁, 1)` and its fundamental group is torsion-free; that for `χ(Σ_{g,b,p}) = 2 − 2g − b − p < 0`
-the centralizer of every nontrivial element of `π₁` is infinite cyclic, so the centre is trivial; and
-that for an interior point `x` the evaluation map `Homeo⁺(Σ, ∂Σ) → int Σ`, `φ ↦ φ(x)`, with the
-compact-open topology, is a locally trivial fibre bundle with fibre the homeomorphisms also fixing
-`x` (Farb–Margalit, Theorem 1.2 and §4.2; Hatcher, Example 1B.2 and Example 1B.14). The closed
-genus-`≥ 2` case of asphericity is TeichmullerGeometry §5.1; a surface with boundary or punctures
-deformation retracts onto a finite graph. The homotopy exact sequence of this bundle, used by
-§0.5, is the sequence of a Serre fibration: a locally trivial map is a Serre fibration
-(AlgebraicTopology Stage 5 item 5) and the sequence itself is DGFloer Layer 1 item 2. *Needs:*
-§0.1; TeichmullerGeometry §5.1; Completed/UniversalCovers; AlgebraicTopology Stage 5 item 5;
-DGFloer Layer 1 item 2; Tau Ceti `TauCeti.IsAspherical`.
-
-**Checks.**
-
-- The disc and the plane are aspherical although `χ > 0`; the sphere is excluded since
-  `π₂(S²) = ℤ`.
-- The torus has centre `ℤ²`; the hypothesis `χ < 0` is necessary for a trivial centre.
-- For the once-punctured torus, a free group of rank two, the centralizer of `a` is `⟨a⟩`.
-
-### 0.5 Point-pushing and the Birman exact sequence
-
-For an interior point `x` and a loop `α` at `x`, extend the motion of `x` along `α` to an isotopy
-fixing the boundary and the other marked points, and let `Push(α)` be the class of its end map in
-`PMod(Σ, x)`. Prove that `Push : π₁(Σ, x) → PMod(Σ, x)` is a well-defined homomorphism (the
-connecting map of the evaluation fibration of §0.4), that `Push(α)` acts on `π₁(Σ, x)` by
-`γ ↦ α * γ * α⁻¹` in Mathlib's convention, and that for `χ(Σ) < 0` the sequence
-
-`1 → π₁(Σ, x) → PMod(Σ, x) → PMod(Σ) → 1`
-
-(`Push`, then forgetting `x`) is exact (Farb–Margalit, Theorem 4.6). Injectivity uses the trivial
-centre of §0.4. For a simple loop `α`, `Push(α) = T_a⁻¹ T_b` with `a, b` the left and right
-push-offs of `α` and `T` the positive twist of §0.3 (Farb–Margalit, Fact 4.7, which reads
-`T_a T_b⁻¹` for the left twist). In particular for `2g − 2 + n > 0`,
-`1 → π₁(Σ_{g,n}, x) → PMod(g, n + 1) → PMod(g, n) → 1`. *Needs:* §§0.2–0.4; AlgebraicTopology
-Stage 5 item 5; DGFloer Layer 1 item 2; Mathlib `FundamentalGroup.mul_def`.
-
-**Checks.**
-
-- `(g, n) = (0, 3)`: the sequence is `1 → F₂ → PMod(0, 4) → 1 → 1`, so `PMod(0, 4) ≅ F₂`.
+  `[[1, 0], [−1, 1]]`, GeometricTopology §1.7.2's twist matrices; MordellLawrenceVenkatesh §5.12's
+  torus matrices `[[1, −1], [0, 1]]` and `[[1, 0], [1, 1]]` are their inverses, and applying the
+  formula `x + k î(x, β)[β]` to `T_a` would give `T_a[b] = [b] − [a]`, the wrong sign for the
+  positive twist.
+- The sign witness for the push: in a collar `(ℝ/ℤ) × [−1, 1]` of `α = {t = 0}` with orientation
+  `dθ ∧ dt`, the left push-off is `a = {t = 1/2}` and the right one `b = {t = −1/2}`, and pushing
+  `x = ([0], 0)` once along `α` ends at `([θ], t) ↦ ([θ + ψ(t)], t)` with `ψ(0) = 1` and `ψ(±1) = 0`.
+  The positive twist about `b` on `t ∈ [−1, −ε]` turns `θ` by a function rising from `0` to `1`, and
+  the inverse positive twist about `a` on `t ∈ [ε, 1]` by one falling from `1 ≡ 0` to `0`; together
+  they are such a `ψ`, so the push is `T_a⁻¹ T_b`, and `T_a T_b⁻¹` is the push along `α⁻¹`. On a
+  closed genus-two surface the two conventions give the same action
+  `x + î(a, x)[a] − î(b, x)[b] = x` on `H₁`, since `[a] = [b]`, so that computation does not fix the
+  sign.
+- `(g, n) = (0, 3)`: the pure sequence is `1 → F₂ → PMod(0, 4) → 1 → 1`, so `PMod(0, 4) ≅ F₂`, while
+  the sequence of MordellLawrenceVenkatesh §5.20 with punctures permuted has the same kernel `F₂`
+  and quotient `Mod(Σ_{0,3}) ≅ S₃`; restricting to pure classes changes the quotient, not the
+  kernel.
 - On the torus `Push` is trivial (`π₁` is abelian and translations give the isotopies), so the
   injectivity statement needs `χ < 0`.
-- On a closed genus-two surface, pushing a nonseparating simple loop gives a nontrivial mapping
-  class acting trivially on `H₁(Σ₂)`; either sign convention gives
-  `x + î(a, x)[a] − î(b, x)[b] = x` since `[a] = [b]`, so this Check does not fix the sign.
-- The sign witness: in a collar `(ℝ/ℤ) × [−1, 1]` of `α = {t = 0}` with orientation `dθ ∧ dt`, the
-  left push-off is `a = {t = 1/2}` and the right one `b = {t = −1/2}`, and pushing `x = ([0], 0)`
-  once along `α` ends at `([θ], t) ↦ ([θ + ψ(t)], t)` with `ψ(0) = 1` and `ψ(±1) = 0`. The positive
-  twist about `b` on `t ∈ [−1, −ε]` turns `θ` by a function rising from `0` to `1`, and the inverse
-  positive twist about `a` on `t ∈ [ε, 1]` by one falling from `1 ≡ 0` to `0`; together they are
-  such a `ψ`, so the push is `T_a⁻¹ T_b`. The product `T_a T_b⁻¹` of positive twists is the push
-  along `α⁻¹`.
 
-### 0.6 Capping boundary circles
+### 0.4 Capping boundary circles
 
 Prove that replacing each boundary circle of `Σ_{g,b,p}` by a puncture induces a surjection
 `PMod(g, b, p) → PMod(g, 0, b + p)` whose kernel is generated by the Dehn twists about the `b`
 boundary-parallel curves, a central free abelian group of rank `b` when `2g − 2 + b + p > 0`
-(Farb–Margalit, Theorem 3.18 and Proposition 3.19; Landesman–Litt, proof of Lemma 7.2.5). A
-boundary twist acts trivially on `π₁(Σ_{g,b,p}, v₀)` for `v₀` outside its collar, so the based
-actions of `PMod(g, b, p + 1)` and of its image in `PMod(g, 0, b + p + 1)` on the fundamental group
-have the same image. *Needs:* §§0.2, 0.5.
+(Farb–Margalit, Theorem 3.18 and Proposition 3.19; Landesman–Litt, proof of Lemma 7.2.5): cap the
+circles one at a time by MordellLawrenceVenkatesh §5.21, restrict to pure classes, note that capping
+a circle by a marked disc leaves `2g − 2 + b + p` unchanged, so every intermediate surface is
+hyperbolic and each boundary twist has infinite order, and that the twists about disjoint boundary
+curves commute and are central. A boundary twist acts trivially on `π₁(Σ_{g,b,p}, v₀)` for `v₀`
+outside its collar, so the based actions of `PMod(g, b, p + 1)` and of its image in
+`PMod(g, 0, b + p + 1)` on the fundamental group have the same image. *Needs:* §§0.2, 0.3;
+MordellLawrenceVenkatesh §5.21.
 
 **Checks.**
 
 - For `b = 0` the map is the identity.
 - For the torus with one boundary circle the kernel is generated by the boundary twist and the
   quotient is `PMod(1, 0, 1) ≅ SL₂(ℤ)`.
-- The boundary twist of `Σ_{g,1,0}` is nontrivial in `PMod(g, 1, 0)` but trivial in
-  `Aut(π₁(Σ_{g,1,0}, v₀))`.
+- For `g ≥ 1` the boundary twist of `Σ_{g,1,0}` is nontrivial in `PMod(g, 1, 0)` but trivial in
+  `Aut(π₁(Σ_{g,1,0}, v₀))`. For the disc, `g = 0`, it is trivial already in
+  `PMod(0, 1, 0) = Mod(D²) = 1` (GeometricTopology §1.7.2), outside the hyperbolic range: the kernel
+  is not free abelian of rank one there.
 
-### 0.7 Finite abelianization in genus at least two
+### 0.5 Finite abelianization in genus at least two
 
 Prove that for a connected oriented surface of genus `g` with `r` boundary circles and `n`
 punctures, the first homology `H₁(PMod; ℤ)` of its pure mapping class group (fixing boundary
@@ -594,8 +704,11 @@ pointwise and each puncture) is `ℤ/10` for `g = 2` and `0` for `g ≥ 3`, for 
 `g = 1` it is `ℤ/12` if `r = 0` and `ℤ^r` if `r ≥ 1` (Korkmaz, Theorem 5.1, Kor02 line 357). In
 particular every homomorphism from `PMod` to `ℂ^×` has finite image of order dividing `10` when
 `g ≥ 2`. The route is Gervais's presentation and the lantern relation, which express the twist about
-a nonseparating curve through twists about curves of the same type. *Needs:* §§0.3, 0.6;
-SurfaceTopology Layer 9 (Lickorish generation, change of coordinates).
+a nonseparating curve through twists about curves of the same type; generation of the pure
+mapping class groups of punctured surfaces by twists follows from Lickorish's theorem on the capped
+compact surface and the pure Birman sequence, since `Push(α) = T_a⁻¹ T_b`. *Needs:* §§0.3, 0.4;
+GeometricTopology §1.7.2 (Lickorish's twist theorem); MordellLawrenceVenkatesh §5.10 (change of
+coordinates).
 
 **Checks.**
 
@@ -607,16 +720,16 @@ SurfaceTopology Layer 9 (Lickorish generation, change of coordinates).
 ### Examples
 
 - On `Σ_{2,1}` the based action of `PMod(2, 2)` contains the point-pushing copy of the free group of
-  rank four, acting on `surfaceGroup 2 1` by inner automorphisms (§0.5), inside
+  rank four, acting on `surfaceGroup 2 1` by inner automorphisms (§0.3), inside
   `pureMappingClassAut 2 1` (§0.2).
 - On the torus, `T_a` and `T_b` act on `H₁` by the two elementary matrices of §0.3 and generate
   `SL₂(ℤ)`, the image of `PMod(1, 0)`.
 
 ### Dependencies
 
-SurfaceTopology Layers 8–9; FreeGroupsAndLimitGroups §§6.1–6.2; TeichmullerGeometry §5.1;
-AlgebraicTopology Stages 1, 5 and 6; DGFloer Layer 1 item 2; Completed/UniversalCovers; Mathlib
-`PresentedGroup`, `FreeGroup`, `MulAut`, `FundamentalGroup`; Tau Ceti `TauCeti.IsAspherical`.
+MordellLawrenceVenkatesh §§5.1, 5.4, 5.9–5.12, 5.19–5.21; GeometricTopology §§1.7.2, 11.2.1;
+FreeGroupsAndLimitGroups §§6.1–6.2; AlgebraicTopology Stages 1 and 6; Mathlib `PresentedGroup`,
+`FreeGroup`, `MulAut`, `FundamentalGroup`.
 
 ## Layer 1: group cohomology, central isogenies, Artinian deformations and representation schemes
 
@@ -643,11 +756,11 @@ spectral sequence `E₂^{p,q} = H^p(Q, H^q(N, M)) ⇒ H^{p+q}(G, M)`, natural in
   extends to `G` if and only if `tg(χ) = 0` in `H²(Q, μ)`.
 
 Exactness of inflation–restriction in every positive degree is pinned
-(`TauCeti.groupCohomology.infRes_exact`, `groupCohomology.H1InfRes_exact`); the transgression, its
+(`TauCeti.groupCohomology.HInfRes_exact`, `groupCohomology.H1InfRes_exact`); the transgression, its
 exactness and the degree-two filtration are the targets here; the profinite five-term sequence of
 ProfiniteCohomology Layer 5 is the same statement for profinite groups and closed normal subgroups,
 and does not apply to infinite discrete groups. *Needs:* Mathlib group cohomology of `Rep`; Tau Ceti
-`TauCeti.groupCohomology.infRes_exact`.
+`TauCeti.groupCohomology.HInfRes_exact`.
 
 **Checks.**
 
@@ -786,7 +899,7 @@ Mathlib `Matrix.GeneralLinearGroup`, `Subgroup.index`.
 
 ### Examples
 
-- For the extension `1 → π₁(Σ_{g,n}) → PMod(g, n + 1) → PMod(g, n) → 1` of §0.5 and `μ` finite,
+- For the extension `1 → π₁(Σ_{g,n}) → PMod(g, n + 1) → PMod(g, n) → 1` of §0.3 and `μ` finite,
   §1.1 gives the sequence used in Layer 4 to kill obstruction classes in two steps: first their
   image in `H¹(Q, H¹(N, μ))`, then the inflated class from `H²(Q, μ)`.
 - For `Γ = π₁(Σ_{g,n})`, the component of `R_r(Γ)_χ` through a point is the connected finite-type
@@ -795,7 +908,7 @@ Mathlib `Matrix.GeneralLinearGroup`, `Subgroup.index`.
 ### Dependencies
 
 Mathlib group cohomology, `Matrix.GeneralLinearGroup`, `PowerSeries`, `AlgebraicGeometry.Scheme`;
-Tau Ceti `TauCeti.groupCohomology.infRes_exact`, `TauCeti.IsProjectiveRep` and its cohomology
+Tau Ceti `TauCeti.groupCohomology.HInfRes_exact`, `TauCeti.IsProjectiveRep` and its cohomology
 class; ArithmeticGaloisRepresentations §1.11; FiniteGroupInvariants §10.5;
 RepresentationTheory/InductionRestriction Layer 7; SchemeAndStackFoundations Layer 0.
 
@@ -884,8 +997,11 @@ SchemeAndStackFoundations §4.15.
 - `(g, n) = (0, 4)`: `M_{0,4}` is the thrice-punctured line, a scheme without stabilizers, and the
   theorem gives `π₁ ≅ PMod(0, 4)`, free of rank two.
 - `(g, n) = (1, 1)`: `T(1, 1)` is the upper half-plane and `PMod(1, 1) = SL₂(ℤ)` acts through
-  `PSL₂(ℤ)` with `−1` acting trivially; the generic stabilizer `±1` is the elliptic involution, so
-  the orbifold group is `SL₂(ℤ)`, not the group `PSL₂(ℤ)` of the coarse `j`-line.
+  `PSL₂(ℤ)` with `−1` acting trivially; the generic stabilizer `±1` is the elliptic involution. Three
+  objects must be kept apart: the stack `M_{1,1}^an = [T(1, 1)/SL₂(ℤ)]` has orbifold fundamental
+  group `SL₂(ℤ)`; the effective orbifold `T(1, 1)/PSL₂(ℤ)`, which forgets the generic stabilizer
+  but keeps the cone points of orders `2` and `3`, has orbifold group `PSL₂(ℤ)`; and the coarse
+  `j`-line is `ℂ`, with trivial fundamental group. The theorem concerns the first.
 - The statement concerns the stack: whenever stabilizers are nontrivial the coarse space has a
   different fundamental group.
 
@@ -894,11 +1010,11 @@ SchemeAndStackFoundations §4.15.
 For `2g − 2 + n > 0`, a base point `m ∈ M_{g,n}` and a lift `m′ ∈ M_{g,n+1}`, prove that there are
 isomorphisms `π₁(M_{g,n}, m) ≅ PMod(g, n)` and `π₁(M_{g,n+1}, m′) ≅ PMod(g, n + 1)` under which the
 homotopy sequence of the forgetful morphism `M_{g,n+1} → M_{g,n}` (identified with the universal
-punctured curve by `Mbar.forget`) becomes the Birman exact sequence of §0.5; the fibre inclusion is
+punctured curve by `Mbar.forget`) becomes the pure Birman exact sequence of §0.3; the fibre inclusion is
 point-pushing and its conjugation action is the outer action. These are orbifold groups, not
 fundamental groups of coarse spaces (Landesman–Litt, Lemma 2.0.1, p. 12, where the second group is
 misprinted as `PMod(g, n)`). Changing the markings changes both vertical isomorphisms by the same
-inner automorphism. *Needs:* §§0.5, 2.3; SchemeAndStackFoundations §4.15 (`Mbar.forget`); Tau Ceti
+inner automorphism. *Needs:* §§0.3, 2.3; SchemeAndStackFoundations §4.15 (`Mbar.forget`); Tau Ceti
 `TauCeti.LocalCoefficientSystem.monodromyRepresentation`.
 
 **Checks.**
@@ -992,18 +1108,19 @@ non-characteristic subquotients of a nonsplit representation are not asserted to
 
 - The stabilizer of `ρ ⊕ σ` and of `ρ ⊗ σ` contains the intersection of the two finite-index
   stabilizers.
-- In the abelianization unipotent example `U` on `H ⊕ ℂ` of §12.1, the quotient by a line
-  `L ⊂ H` has conjugacy class determined by `L`, and `Sp_{2g}(ℤ)` moves a rational line to
-  infinitely many lines: non-characteristic quotients need not be MCG-finite.
-- The socle of `U` is `H`, a characteristic subrepresentation, and both it and the quotient `ℂ` are
+- In the abelianization unipotent example `U` on `H ⊕ ℂ` of §12.1 on a closed surface of genus
+  `g ≥ 1`, the quotient by a line `L ⊂ H` has conjugacy class determined by `L`, and `Sp_{2g}(ℤ)`
+  moves a rational line to infinitely many lines: non-characteristic quotients need not be
   MCG-finite.
+- For `g ≥ 1` the socle of `U` is `H`, a characteristic subrepresentation, and both it and the
+  quotient `ℂ` are MCG-finite; for `g = 0`, `H = 0` and the socle is all of `ℂ`.
 
 ### 3.2 Point-pushing restriction
 
 Prove that for `2g − 2 + n > 0`, a finite-index subgroup `Γ ⊂ PMod(g, n + 1)` containing the
 point-pushing subgroup `π₁(Σ_{g,n})` and any representation `ρ : Γ → GL_r(ℂ)`, the restriction of
 `ρ` to `π₁(Σ_{g,n})` is MCG-finite: for `γ ∈ Γ`, `n ↦ ρ(γ n γ⁻¹)` is conjugate to `ρ` by `ρ(γ)`
-(Landesman–Litt, Proposition 2.1.2, p. 13). *Needs:* §§0.5, 2.1.
+(Landesman–Litt, Proposition 2.1.2, p. 13). *Needs:* §§0.3, 2.1.
 
 **Checks.**
 
@@ -1021,7 +1138,8 @@ nonseparating curve `a` and a class `x` with `î(a, x) = 1`, a power `T_a^k` sta
 character, and §0.3 gives `χ(T_a^k x) = χ(x) χ(a)^k`, so `χ(a)^k = 1`; the standard generators are
 nonseparating, and for `n ≥ 2` a puncture loop `cⱼ` is handled through a nonseparating curve in the
 class `a₁ + cⱼ`. *Needs:*
-§§0.3, 2.1, 3.1.
+§§0.3, 2.1, 3.1; MordellLawrenceVenkatesh §5.10 (a nonseparating curve has a dual curve meeting it
+once).
 
 **Checks.**
 
@@ -1186,8 +1304,13 @@ for the freeness of `Wᵢ` and the isomorphism. *Needs:* §§4.3, 4.4; Mathlib
 
 **Checks.**
 
-- `A = ℂ` and `V` unitary on the total space with irreducible fibre restriction: one summand,
-  `U₁ = V` and `W₁` trivial of rank one.
+- `A = ℂ` and `V` unitary on the total space with irreducible fibre restriction and finite-order
+  determinant: one summand, `U₁ = V` and `W₁` trivial of rank one. Without the determinant condition
+  `U₁ = V` is excluded: on an open subset `M` of a level chart carrying a dominant regular function
+  `f : M → 𝔾_m`, let `χ` be the pullback along `f` of the unitary character of `π₁(𝔾_m) = ℤ` with
+  `1 ↦ exp(2πi√2)` and `V = π°^* χ`. The image of `π₁(M)` in `ℤ` has finite index `k ≥ 1` and
+  `exp(2πi√2 k m) ≠ 1` for `m ≠ 0`, so `det V = V` has infinite order, also after every finite
+  étale base change; the decomposition is `U₁ = ℂ`, `W₁ = χ`, with `U₁ ⊗ π°^* W₁ = V`.
 - `V = 0`: the index set is empty and the evaluation map is the unique isomorphism `0 → 0`.
 - `V = π°^* W` with `W` a nonconstant rank-one `A`-local system on `M`: `W₁ = W`, not a constant
   multiplicity module; and for `A = ℂ[ε]/ε²` a non-constant first-order deformation of a unitary
@@ -1215,8 +1338,9 @@ variations of Hodge structure and the notions of geometric origin and integral P
 of parabolic Deligne extensions, isomonodromic deformations and their semistability, the mixed
 Hodge structure on the cohomology of unitary local systems in families, the derivative of its
 period map, the rank bound for sub-local systems and its Artinian vanishing form, nonabelian Hodge
-theory, cohomological rigidity, integrality of rigid local systems, and unitarity of low-rank
-variations on analytically general curves. Throughout, `π : C → M` is a punctured étale-versal
+theory, cohomological rigidity, companions over finite fields with Drinfeld's pro-semisimple
+comparison, integrality of rigid local systems, and unitarity of low-rank variations on
+analytically general curves. Throughout, `π : C → M` is a punctured étale-versal
 `(g, n)`-family (§2.2), `D ⊂ C` the union of the sections and `π° : C° → M`.
 
 ### 5.1 Polarizable complex variations of Hodge structure
@@ -1254,21 +1378,45 @@ ComplexComparisonPartII §C5.2 (`relativeBettiLocalSystem`).
 **Checks.**
 
 - A rank-one complex PVHS has a single bidegree and is therefore unitary.
-- On a closed curve of genus `≥ 2` the uniformizing representation underlies a rank-two complex PVHS
-  of infinite monodromy (Landesman–Litt 2022, Remark 1.2.6); it is not integral, so the integrality
-  condition is not automatic.
+- On every closed curve of genus `g ≥ 2` the uniformizing representation underlies a rank-two
+  complex PVHS of infinite monodromy (Landesman–Litt 2022, Remark 1.2.6, LL22 line 108). Whether it is
+  an integral PVHS depends on the curve. For the quaternion algebra `B = (−1, 3)/ℚ` of discriminant
+  `6` the order `ℤ[1, i, j, ij]` embeds by `i ↦ diag(i, −i)`, `j ↦ [[0, 3], [1, 0]]`, and a
+  torsion-free finite-index subgroup of its norm-one group uniformizes a closed curve with integral
+  monodromy. On an analytically very general curve of genus `g ≥ 2`, Landesman–Litt 2022,
+  Theorem 1.2.5 (LL22 line 100, §5.11), would force `2 ≥ 2√(g + 1) ≥ 2√3`, which is false, so there
+  the rank-two variation is not an integral PVHS: integrality is a genuine condition.
 - A non-real character of finite order `ℤ/3 → ℂ^×` is an integral PVHS over `ℤ[ζ₃]` but preserves
   no rank-one `ℤ`-lattice; a reading of "integral" as an invariant `ℤ`-lattice would exclude this
   finite-image system.
 
 ### 5.2 Parabolic Deligne extensions and semistability
 
-For a flat bundle `(E, ∇)` with regular singularities on a smooth projective curve `C` along a
-reduced divisor `D`, let `(E⋆, ∇)` be the canonical logarithmic extension of ComplexComparisonPartII
-§C5.6 (`CanonicalLogExtension`, residue eigenvalues with real parts in `[0, 1)`; Deligne 1970,
-Remarques 5.5(i)) with the parabolic
-structure given by the residues (Landesman–Litt 2022, §3.3); parabolic degree and parabolic
-semistability are those of Landesman–Litt, §5.2.1, p. 30. Prove:
+Let `C` be a smooth projective connected curve of genus `g` and `D = x₁ + ⋯ + x_n` a reduced
+divisor. Define a *parabolic bundle* `E⋆ = (E, {E_{ij}}, {α_{ij}})` on `(C, D)` as a vector bundle
+`E` with, at each `x_j`, a strictly decreasing filtration
+`E_{x_j} = E_{1j} ⊋ E_{2j} ⊋ ⋯ ⊋ E_{n_j + 1, j} = 0` and weights `0 ≤ α_{1j} < ⋯ < α_{n_j j} < 1`, the
+weight `α_{ij}` belonging to the step `E_{ij}` (Landesman–Litt 2022, Definition 2.1.1, LL22 line 401,
+p. 10). Define its *parabolic degree*
+`par-deg(E⋆) = deg E + Σ_j Σ_i α_{ij} · dim(E_{ij}/E_{i+1,j})` and, when `rk E ≥ 1`, its *parabolic
+slope* `µ⋆(E⋆) = par-deg(E⋆)/rk E` (Definition 2.1.2, LL22 line 414, p. 11). A subbundle `F ⊂ E`
+carries the induced structure, the filtration `E_{ij} ∩ F_{x_j}` with repetitions removed and each
+step weighted by the largest `α_{kj}` producing it, and a quotient the analogous one (§2.3, LL22
+line 504, p. 13). `E⋆` is *parabolically semistable* when `µ⋆(F⋆) ≤ µ⋆(E⋆)` for every nonzero
+subbundle `F` (Definition 2.4.1, LL22 line 525, p. 14). The *coparabolic zero term* `Ê₀ ⊂ E` is the
+subsheaf of sections whose value at each `x_j` lies in the largest step of positive weight: no
+condition at `x_j` when `α_{1j} > 0`, and value in `E_{2j}` when `α_{1j} = 0`. It is the value at `0`
+of the coparabolic bundle `Ê⋆`, `Ê_α = colim_{β > α} E_β`, whose slope is by definition `µ⋆(E⋆)` and
+which is coparabolically semistable exactly when `E⋆` is semistable (Example 2.2.4 and
+Definitions 2.2.8, 2.2.9 and 2.4.2, LL22 lines 462, 490, 496 and 529; Landesman–Litt, Remark 5.2.5,
+LL24 line 1289).
+
+For a flat bundle `(E, ∇)` with regular singularities along `D`, its *parabolic Deligne extension*
+is the canonical logarithmic extension of ComplexComparisonPartII §C5.6 (`CanonicalLogExtension`,
+residue eigenvalues with real parts in `[0, 1)`; Deligne 1970, Remarques 5.5(i)) with, at `x_j`, the
+distinct real parts `λ_{1j} < ⋯ < λ_{n_j j}` of the eigenvalues of `Res_{x_j} ∇` as weights and
+`E_{ij}` the sum of the generalized eigenspaces whose eigenvalues have real part `≥ λ_{ij}`
+(Landesman–Litt 2022, Definition 3.3.1, LL22 line 742, p. 20). Prove:
 
 - for a unitary local system on `C ∖ D` the parabolic Deligne extension is parabolically polystable
   of parabolic degree zero (Mehta–Seshadri, Theorem 4.1; Simpson 1990, Theorem 5; Landesman–Litt,
@@ -1282,16 +1430,32 @@ semistability are those of Landesman–Litt, §5.2.1, p. 30. Prove:
 *Needs:* §5.1; ComplexComparisonPartII §C5.6 (`CanonicalLogExtension`, `residueStripRep`);
 ComplexKahlerGeometry K4–K5.
 
+- Parabolic degree is additive for a parabolic subbundle with the induced structure and the quotient
+  with the induced structure, so semistability may be tested on quotients: `µ⋆(E⋆) ≤ µ⋆(Q⋆)` for
+  every nonzero quotient (LL22 Lemma 2.4.5, line 541).
+- With all weights zero, `par-deg(E⋆) = deg E`, parabolic semistability is ordinary semistability
+  and `Ê₀ = E(−D)`; with all weights positive, `Ê₀ = E`.
+- Tensoring with a line bundle `L` adds `deg L` to the parabolic slope and preserves semistability;
+  dualizing negates it, so for `µ⋆(E⋆) = 0` the parabolic bundle `(E⋆)^∨ ⊗ ω_C(D)` has slope
+  `2g − 2 + n`, the case used in §5.5 (Landesman–Litt, proof of Proposition 5.2.3, LL24 line 1298).
+
 **Checks.**
 
 - The trivial rank-one system has Deligne extension `O_C` with all weights zero, parabolic degree
-  zero, and is semistable.
+  zero, and is semistable. Its coparabolic zero term is `Ê₀ = O_C(−D)`, of degree `−n`, so for
+  `n ≥ 1` one has `h⁰(Ê₀) = 0` while `h⁰(O_C) = 1`: the integer `δ` of §5.3 changes if `Ê₀` is replaced
+  by the untwisted bundle `E`.
 - On `ℙ¹ ∖ {0, ∞}` the unitary character with monodromy `exp(−2πi a)` around `0`, `0 < a < 1`,
   has canonical extension of degree `−1` (minus the sum of the residues) with residues `a` at `0`
   and `1 − a` at `∞`, so parabolic degree `−1 + a + (1 − a) = 0`; a convention attaching weights
   `−a` would give a nonzero parabolic degree.
 - The uniformizing PVHS of §5.1 has Hodge line of positive degree `g − 1` in its Deligne extension,
   which destabilizes it, consistent with the third item since its monodromy is not unitary.
+- On `ℙ¹` with `D = 0`, `E = O ⊕ O(1)` has slope `1/2` and the line `O(1)` has slope `1 > 1/2`, so it
+  is not semistable. With `D = x` and the filtration `E_x ⊋ O_x ⊋ 0` with weights `0 < a < 1`, the
+  parabolic degree is `1 + a` and the slope `(1 + a)/2 < 1`, while `O(1)` meets `O_x` in zero, gets
+  the induced weight `0` and slope `1`, and still destabilizes. The zero bundle has no slope and is
+  excluded from the Clifford bound of §5.3.
 
 ### 5.3 Isomonodromic deformations and their semistability
 
@@ -1303,13 +1467,14 @@ central fibre; its restriction to another fibre is an isomonodromic deformation 
 (Landesman–Litt 2022, Definitions 3.4.3–3.4.4, p. 22). Prove that if `rk E < 2√(g + 1)` then for
 every parabolic structure refined by the one of `∇`, the isomonodromic deformation to an
 analytically general nearby curve is parabolically semistable (Landesman–Litt 2022, Theorem 6.1.1
-and Corollary 6.1.2, pp. 34–35). Its main input is the parabolic Clifford bound: for a
-parabolically semistable `E⋆` on a genus-`g` curve and a subbundle `U ⊂ Ê₀` with
-`c = rk E − rk U` and `δ = h⁰(Ê₀) − h⁰(U)`, slope `> 2g − 2 + n` forces `rk E > gc − δ` and slope
-`= 2g − 2 + n` forces `rk E ≥ gc − δ` (Landesman–Litt 2022, Proposition 6.3.6; Landesman–Litt,
-Proposition 5.2.4). Here *analytically general* means off a nowhere dense closed analytic subset,
-and *analytically very general* off a locally countable union of such subsets (Landesman–Litt
-2022, Definition 1.2.3, p. 2). *Needs:* §§2.3, 5.2; ComplexComparisonPartII §C5.6.
+and Corollary 6.1.2, pp. 34–35). Its main input is the parabolic Clifford bound: for a nonzero
+parabolically semistable parabolic bundle `E⋆` on `(C, D)` (§5.2), a subbundle `U ⊂ Ê₀` of its
+coparabolic zero term, `c = rk E − rk U` and `δ = h⁰(Ê₀) − h⁰(U)`, the parabolic slope
+`µ⋆(E⋆) = µ⋆(Ê⋆) > 2g − 2 + n` forces `rk E > gc − δ` and `µ⋆(E⋆) = 2g − 2 + n` forces
+`rk E ≥ gc − δ` (Landesman–Litt 2022, Proposition 6.3.6, LL22 line 1538, p. 41; Landesman–Litt,
+Proposition 5.2.4, LL24 line 1283). Here *analytically general* means off a nowhere dense closed
+analytic subset, and *analytically very general* off a locally countable union of such subsets
+(Landesman–Litt 2022, Definition 1.2.3, p. 2). *Needs:* §§2.3, 5.2; ComplexComparisonPartII §C5.6.
 
 **Checks.**
 
@@ -1457,6 +1622,66 @@ gap:local-system-direct-images.
 - For `V` with reducible fibre restriction, `π°_* ad V ≠ 0` (the fibre has nonscalar
   endomorphisms), and the proof gives nothing.
 
+### 5.9a Companions over finite fields and the pro-semisimple comparison
+
+Let `X₀` be an irreducible smooth variety over a finite field `k` of characteristic `p`, with a
+universal cover, `Π = π₁^ét(X₀)` and `Π_Fr ⊂ Π` the set of positive powers of the geometric Frobenius
+elements at closed points of the universal cover (Drinfeld 2018, §1.1, Dri18 line 111). For a
+non-archimedean place `λ ∤ p` of `ℚ̄`, the `λ`-adic pro-semisimple completion `Π̂_λ` is the limit of
+the semisimple, not necessarily connected, groups `H` over `ℚ̄_λ` carrying a continuous
+homomorphism `Π → H(ℚ̄_λ)` with Zariski-dense image; it descends along `ℚ̄ ⊂ ℚ̄_λ` to an object
+`Π̂(λ)` of the groupoid `Pro-ss(ℚ̄)` of pro-semisimple groups, whose morphisms are isomorphisms
+modulo conjugation by the identity component, and `[G]` is the quotient of `G` by conjugation by
+`G°` (Drinfeld 2018, §§1.2.1–1.2.4, Dri18 lines 132–169). Call a continuous semisimple
+representation of `Π` on a finite-dimensional `ℚ̄_λ`-vector space *admissible* when each of its
+irreducible constituents has finite-order determinant. Prove:
+
+- *Weights.* The characteristic polynomials `det(1 − t F_x)` of an admissible representation at
+  closed points `x` have coefficients in `ℚ̄`, their roots are pure of weight zero, and the roots and
+  their inverses are integral over `ℤ[1/p]`, so they are units at every finite place not above `p`
+  (Drinfeld 2018, Proposition 1.3.1 and Theorem 5.1.1(i), Dri18 lines 175 and 1168; Drinfeld 2012,
+  §1.2, Dri12 lines 33–42; Klevdal–Patrikis, proof of Proposition 6.2(2), KP20 line 728). On curves
+  this is gap:curve-companions; in higher dimension it follows from the curve case by a Bertini
+  argument (Dri12 line 41).
+- *Companions.* For every non-archimedean `λ′ ∤ p` and every admissible `λ`-adic `E` there is an
+  admissible `λ′`-adic `E′` with the same Frobenius characteristic polynomials, unique up to
+  isomorphism and irreducible exactly when `E` is (Drinfeld 2018, Theorem 5.1.1(ii) and Remark 5.1.2,
+  Dri18 lines 1170–1181; Drinfeld 2012, Theorem 1.1, Dri12 line 20, deduced there from the curve case,
+  Remark 1.2, Dri12 line 27).
+- *The pro-semisimple comparison.* For non-archimedean `λ, λ′ ∤ p` there is a unique isomorphism
+  `Π̂(λ) ≅ Π̂(λ′)` in `Pro-ss(ℚ̄)` carrying the map `Π_Fr → [Π̂(λ)](ℚ̄)` to the corresponding map for
+  `λ′`, compatibly with the projections onto `Π` (Drinfeld 2018, Theorem 1.4.1, Dri18 line 182;
+  Klevdal–Patrikis, Theorem 6.1, KP20 line 666).
+- *`G`-valued companions.* Let `G` be a split connected reductive group over `ℤ` and
+  `ρ_λ : Π → G(ℚ̄_λ)` continuous with semisimple, not necessarily connected, Zariski closure `G_λ`.
+  Choose a reductive group `H` over `ℚ̄` with an isomorphism `H ⊗ ℚ̄_λ ≅ G_λ` and an embedding
+  `α : H → G_ℚ̄` whose base change is `G(ℚ̄_λ)`-conjugate to `G_λ ⊂ G`. Then `ρ_λ` induces a surjection
+  `Π̂(λ) → H` defined up to `H°`-conjugation (Drinfeld 2018, Proposition 2.3.3, Dri18 line 447), and
+  composing with the comparison gives a continuous `ρ_{λ′} : Π → G(ℚ̄_{λ′})` whose Zariski closure is
+  `α(H) ⊗ ℚ̄_{λ′}` and with `ρ_λ(F)` and `ρ_{λ′}(F)` having the same image in `[H](ℚ̄)` for every
+  `F ∈ Π_Fr` (Klevdal–Patrikis, §6.1, KP20 lines 669–681).
+
+The `G`-valued statement is not a consequence of the companions of `r ∘ ρ_λ` for one faithful
+representation `r` of `G`: equal characteristic polynomials in `r` fix neither the image of a
+Frobenius element in `[H]` nor the algebraic monodromy group. *Needs:* gap:curve-companions;
+AutomorphicLFunctionsAndLocalFactors §AL.3; DeligneWeightsAndPurity §§5.5, 8.14, 8.19;
+InverseGaloisAndArithmeticFundamentalGroups §IG.1.3.
+
+**Checks.**
+
+- `X₀ = Spec k`: `Π = ℤ̂` is abelian, so a Zariski-dense image in a semisimple group forces a finite
+  group; hence `Π̂(λ)` is the profinite group `ℤ̂` for every `λ`, the comparison is the identity and
+  sends Frobenius to Frobenius, and the companion of a finite-order character is obtained by
+  transporting its roots of unity.
+- The determinant condition is needed: the rank-one sheaf on `Spec k` with geometric Frobenius `q`
+  has Zariski closure `𝔾_m`, a torus, so it lies outside the pro-semisimple completion; its
+  Frobenius eigenvalue has weight `2` and normalized slope `v_λ(q)/v_λ(q) = 1` at a place `λ` above
+  `p`, while its twist by `q⁻¹`, of finite (trivial) determinant, has weight `0` and slope `0`.
+- Equal characteristic polynomials in a faithful representation do not give equal images in `[H]`:
+  in `SO(4)`, the rotations `R(π/2) ⊕ R(π/3)` and `R(π/2) ⊕ R(−π/3)` both have characteristic
+  polynomial `(x² + 1)(x² − x + 1)` on `ℂ⁴`, but their traces on the self-dual summand `∧²₊ℂ⁴`,
+  `1 + 2cos(θ₁ + θ₂)`, are `1 − √3` and `1 + √3`, so they are not `SO(4)`-conjugate.
+
 ### 5.10 Integrality of rigid local systems
 
 Prove: let `X°` be a connected smooth quasi-projective complex variety, `G` a split connected
@@ -1464,11 +1689,52 @@ reductive group over `ℤ`, and `ρ : π₁(X°) → G(ℂ)` `G`-irreducible and
 with quasi-unipotent local monodromy and finite image in the maximal abelian quotient of `G`; then
 the identity component of the Zariski closure of the image is semisimple and `ρ` is
 `G(ℂ)`-conjugate into `G(O_L)` for a number field `L` (Klevdal–Patrikis, Theorem 1.2, KP20 line 62;
-Esnault–Groechenig, Theorem 1.1, for `G = GL_n`). One route, that of Esnault–Groechenig and
-Klevdal–Patrikis, spreads `ρ` out over a ring of `S`-integers, specializes to finite fields and
-checks integrality at each place of `S` through Drinfeld and Lafforgue's companion
-`λ`-adic systems; the function-field inputs of that route are part of this target. *Needs:* §5.9;
-ArithmeticGaloisRepresentations §1.11; SchemeAndStackFoundations Layer 0.
+Esnault–Groechenig, Theorem 1.1, for `G = GL_n`). The route of Esnault–Groechenig and
+Klevdal–Patrikis has five steps, with these inputs.
+
+1. *Finiteness and models.* Reduce to `G` simple and adjoint through the projectivization
+   (Klevdal–Patrikis, Lemma 5.1, KP20 line 407). Fix `h ≥ 1` such that every local monodromy of `ρ`
+   is quasi-unipotent of index dividing `h`, the index being the order of the semisimple part. The
+   set `S(G, h)` of conjugacy classes of `G`-irreducible, `G`-cohomologically rigid representations
+   with local monodromy quasi-unipotent of index dividing `h` is finite, and every member is
+   represented over `O_{K,Σ}` for one number field `K` and one finite set `Σ` of finite places:
+   rigid classes are isolated points of a finite-type moduli space whose tangent space is
+   `H¹(X, j_{!*} 𝔤^{der})` (Klevdal–Patrikis, Proposition 4.7 and Lemma 5.3, KP20 lines 390 and 449;
+   §1.4 for `GL_n`). Integrality at the places of `Σ` suffices (Klevdal–Patrikis, Proposition 3.1,
+   KP20 line 184).
+2. *Spreading out and descent.* Fix a finite place `λ ∉ Σ` above a prime `ℓ`, so that each member
+   `ρ_i` takes values in `G(O_{K_λ})` and extends to `π₁^ét(X°)`. Spread `X°` and a strict normal
+   crossings compactification out over a finitely generated subring of `ℂ` and choose a closed point
+   `s` whose residue characteristic `p` is prime to `ℓ`, to the places of `Σ`, to the orders of the
+   residual images and to `h`. The `ρ_{i,λ}` factor through the prime-to-`p` quotient, which
+   §IG.1.3's tame specialization identifies with that of `X°_s̄`; after a finite extension of `k(s)`
+   each descends to `π₁^ét(X°_s)` with the same Zariski closure `G_{i,λ}` as on the geometric
+   fibre (Klevdal–Patrikis, Proposition 5.6, KP20 line 567), and `G_{i,λ}°` is semisimple, being
+   also the identity component of the geometric monodromy group of a pure lisse sheaf
+   (Klevdal–Patrikis, Corollary 5.7, KP20 line 632; DeligneWeightsAndPurity §§8.14, 8.19).
+3. *Companions.* For every finite place `λ′ ∤ p`, in particular those above `Σ`, §5.9a gives
+   companions `ρ_{i,λ′,s}` with Zariski closure the `λ′`-form of the same `ℚ̄`-group and the same
+   Frobenius images in `[G_i]`. On a curve through the boundary meeting each component
+   transversally, a faithful representation of `G_i` turns the two into compatible lisse sheaves, and
+   gap:curve-companions transfers tameness and the index of quasi-unipotence, tameness being
+   detected on such curves (Klevdal–Patrikis, Proposition 6.2(1), (4), KP20 line 682).
+4. *Rigidity of the companions.* The adjoint local systems of `ρ_{i,λ,s}` and `ρ_{i,λ′,s}` are
+   admissible because `G_{i,λ}` is semisimple, hence pure of weight zero (§5.9a), tame and
+   compatible, so their `L`-functions agree; for a tame lisse sheaf `A` pure of weight zero the
+   weight-one part of `⊕_j H^j(X̄_s̄, A)` is `H¹(X̄_s̄, j_{!*} A)` (Esnault–Groechenig, Lemma 3.4,
+   EG18 line 410, through DeligneWeightsAndPurity §7.8 and duality). Hence the companions are again
+   `G`-cohomologically rigid, `G`-irreducible and pairwise non-conjugate (Klevdal–Patrikis,
+   Proposition 6.2(2)–(3)).
+5. *Return to `ℂ`.* Pull the companions back along the tame specialization surjection
+   (gap:tame-specialization) and transport them by the Betti–étale comparison (ComplexComparisonPartII
+   §C6.3, `artinComparison`): they are `N = #S(G, h)` distinct members of `S(G, h)` with values in
+   `G(ℤ̄_{λ′})`, hence all of them, so every member is integral at `λ′` (Klevdal–Patrikis, §6.2,
+   KP20 line 761).
+
+*Needs:* §§1.4, 5.9, 5.9a; gap:curve-companions; gap:tame-specialization;
+InverseGaloisAndArithmeticFundamentalGroups §IG.1.3; DeligneWeightsAndPurity §§7.8, 8.14, 8.19;
+ComplexComparisonPartII §C6.3; ArithmeticGaloisRepresentations §1.11; SchemeAndStackFoundations
+Layer 0.
 
 **Checks.**
 
@@ -1480,6 +1746,12 @@ ArithmeticGaloisRepresentations §1.11; SchemeAndStackFoundations Layer 0.
   `GL₁`-irreducible and rigid (the derived Lie algebra of `GL₁` is zero) but violates both
   quasi-unipotence and the finite-abelianization condition, and it is not integral since `1/2` is
   not an algebraic integer.
+- Quasi-unipotence is what makes the descent of step 2 possible: the arithmetic Frobenius of
+  `k(s)`, with `q = #k(s)`, acts on the tame inertia `lim μ_m` of `𝔾_m` at `0` by the `q`-th power,
+  so it moves the specialization of the character with monodromy `2` to the character with
+  monodromy `2^q ≠ 2`, and that specialization descends over no finite extension of `k(s)`; a
+  character of finite order `m`, `p ∤ m`, goes to its `q`-th power and descends once
+  `q ≡ 1 (mod m)`.
 
 ### 5.11 Unitarity of low-rank variations on analytically general curves
 
@@ -1516,9 +1788,11 @@ least `2√(g + 1)` (Landesman–Litt 2022, Corollary 1.2.7, p. 3). *Needs:* §�
 
 ### Dependencies
 
-Layers 1–2 and 4; ComplexComparisonPartII §§C5.2, C5.6 and gap:local-system-direct-images;
+Layers 1–2 and 4; ComplexComparisonPartII §§C5.2, C5.6, C6.3 and gap:local-system-direct-images;
 Completed/HodgeStructures; ComplexKahlerGeometry K4–K5; ComplexCurveModuli D3.4;
-ArithmeticGaloisRepresentations §1.11; SchemeAndStackFoundations §2.2.
+ArithmeticGaloisRepresentations §1.11; SchemeAndStackFoundations §2.2;
+AutomorphicLFunctionsAndLocalFactors §AL.3 and gap:curve-companions; DeligneWeightsAndPurity §§5.5,
+7.8, 8.14, 8.19; InverseGaloisAndArithmeticFundamentalGroups §IG.1.3 and gap:tame-specialization.
 
 ## Layer 6: higher Prym representations and the Putman–Wieland property
 
@@ -1542,17 +1816,20 @@ elements of `pureMappingClassAut g n` with `φ ∘ γ = c_h ∘ φ` for some `h`
 `compactPrymCohomology φ` as the subspace of `Hom(ker φ, ℂ)` of homomorphisms vanishing on every
 element of `ker φ` conjugate in the surface group to a power of a peripheral loop; it is
 `H¹(Σ_{g′}, ℂ)`, since those elements are exactly the powers of the loops around the punctures of the
-cover. The image of `Γ` in `Aut(π₁)` lies in `prymStabilizer φ` for `n = b + p` (§§0.2, 0.6).
-*Needs:* §§0.1–0.6; AlgebraicTopology Stages 2, 5 and 6; Mathlib `isotypicComponent`; Tau Ceti
+cover. The image of `Γ` in `Aut(π₁)` lies in `prymStabilizer φ` for `n = b + p` (§§0.2, 0.4).
+*Needs:* §§0.1–0.4; AlgebraicTopology Stages 2, 5 and 6; Mathlib `isotypicComponent`; Tau Ceti
 `TauCeti.LocalCoefficientSystem`.
 
 - Restricting to a finite-index `Γ′ ⊂ Γ` preserves all actions and isotypic subspaces.
 - The isotypic subspace is the image of `σ ⊗ Hom_H(σ, V)` under evaluation, not the multiplicity
   space alone.
 - Open-to-compact homology and compact-to-open cohomology maps are equivariant for the chosen
-  actions; compact Poincaré duality identifies `H¹(Σ_{g′}, ℂ)` with `H₁(Σ_{g′}, ℂ)` equivariantly
-  for orientation-preserving classes, carrying the `σ`-component of one to the `σ`-component of
-  the other after dualizing `σ` to `σ^∨`.
+  actions. Two identifications are kept apart. Evaluation identifies `H¹(Σ_{g′}, ℂ)` with the dual
+  of `H₁(Σ_{g′}, ℂ)`; the actions are contragredient, and the `σ`-component of `H¹` is the dual of
+  the `σ^∨`-component of `H₁`. Compact Poincaré duality `H¹(Σ_{g′}, ℂ) ≅ H₁(Σ_{g′}, ℂ)`, cap product
+  with the fundamental class, is equivariant for orientation-preserving classes and for the deck
+  group (inverse pullback on `H¹`, push-forward on `H₁`), and carries the `σ`-component of `H¹` onto
+  the `σ`-component of `H₁`: it preserves labels.
 - `compactPrymCohomology φ` is a `ℂ`-subspace of `Hom(ker φ, ℂ)` stable under `prymStabilizer φ`.
 
 **Checks.**
@@ -1563,6 +1840,13 @@ cover. The image of `Γ` in `Aut(π₁)` lies in `prymStabilizer φ` for `n = b 
   `H₁` of dimension zero, so the two carriers must differ.
 - If `V = σ ⊕ σ`, its `σ`-isotypic subspace has dimension `2 dim σ` while `Hom_H(σ, V)` has
   dimension two.
+- Poincaré duality preserves labels: an automorphism of order three of an elliptic curve, the
+  compactified cyclic triple cover of the thrice-punctured sphere, acts on `H₁` by
+  `A = [[0, −1], [1, −1]]` (`A³ = I`, eigenvalues `ζ₃`, `ζ₃⁻¹`) and on `H¹` by
+  `A^{−T} = [[−1, −1], [1, 0]]`; with `J = [[0, 1], [−1, 0]]` one has
+  `J⁻¹A^{−T} = A J⁻¹ = [[−1, 0], [−1, −1]]`, so the duality `J⁻¹` sends a `ζ₃`-eigenvector of `H¹` to
+  a `ζ₃`-eigenvector of `H₁`, not to a `ζ₃⁻¹`-eigenvector. Dimensions agree either way, as
+  `dim σ = dim σ^∨`.
 
 ### 6.2 The Putman–Wieland property
 
@@ -1586,7 +1870,7 @@ Prove that shrinking boundary circles to punctures gives a `Γ′`-equivariant i
 `H¹(Σ_{g′,b′,p′}, ℂ)_σ ≅ H¹(Σ_{g′,0,b′+p′}, ℂ)_σ` of covers of the same genus `g′`, and that for a
 finite-index `Γ′ ⊂ Γ` its image `Γ″` in `PMod(g, 0, b + p + 1)` has finite index and the same
 invariant subspaces (Landesman–Litt, Lemma 7.2.5, p. 36, where the target cover is printed with genus
-`g`). Boundary twists act trivially on cohomology by §0.6. *Needs:* §§0.6, 6.1; AlgebraicTopology
+`g`). Boundary twists act trivially on cohomology by §0.4. *Needs:* §§0.4, 6.1; AlgebraicTopology
 Stage 2.
 
 **Checks.**
@@ -1710,9 +1994,10 @@ inclusion homomorphism. Induce `ρ ∘ ι` from the finite-index preimage of `Γ
 (`Representation.ind`); `ρ ∘ ι` is a direct summand of the restriction of the induced
 representation (the identity double coset in Mackey's formula). `T_η` is central in `PMod(Z)`, so
 its generalized eigenspaces are `PMod(Z)`-stable and the determinant on each is a character of
-`PMod(Z)`, of order dividing `10` by §0.7; hence the eigenvalues of `ρ(T_γ^m)` are roots of unity
-of bounded order. *Needs:* §§0.3, 0.6, 0.7; SurfaceTopology Layer 9 (`change_of_coordinates`);
-Mathlib `Representation.ind`.
+`PMod(Z)`, of order dividing `10` by §0.5; hence the eigenvalues of `ρ(T_γ^m)` are roots of unity
+of bounded order. *Needs:* §§0.3, 0.4, 0.5; MordellLawrenceVenkatesh §§5.7, 5.10 (cutting along a
+curve, change of coordinates); GeometricTopology §1.7.2 (twists of a cut surface are twists of the
+surface); Mathlib `Representation.ind`.
 
 **Checks.**
 
@@ -1741,8 +2026,7 @@ curves of its dual graph (Li–Litt–Salter–Srinivasan, Lemma 2.1.1, LLSS20 l
 `M̄_g`; the pointed case is the same local computation at a normal-crossings stratum); a meridian of a
 component of `C̄ ∖ C°` maps to a product of nonnegative powers of the meridians of the components of
 `M̄′ ∖ M_{g,n+1}` through its image. *Needs:* §§0.3, 2.4; SchemeAndStackFoundations §4.15
-(`Mbar_smooth`, `Mbar_algebraic_proper_DM`); AlgebraicModuliForArithmeticGeometry §9.5;
-ResolutionOfSingularitiesCharacteristicZero §6.2.
+(`Mbar_smooth`, `Mbar_algebraic_proper_DM`); ResolutionOfSingularitiesCharacteristicZero §6.2.
 
 **Checks.**
 
@@ -1831,7 +2115,7 @@ the bound gives `r ≤ 1` (and `r = 0` for `g = 0`), handled by §3.3; for `g �
 **Checks.**
 
 - On `Σ_{0,3}` the unitary character `c₁ ↦ e^{2πiθ}`, `c₂ ↦ e^{−2πiθ}` with `θ` irrational is
-  MCG-finite (the pure mapping class group acts by inner automorphisms, §0.5) with infinite image,
+  MCG-finite (the pure mapping class group acts by inner automorphisms, §0.3) with infinite image,
   which is why `g = 0` allows only rank zero.
 - Unitarity at one embedding does not suffice: the Salem character of §5.11 is integral, unitary at
   some embeddings and of infinite image.
@@ -1844,8 +2128,8 @@ the bound gives `r ≤ 1` (and `r = 0` for `g = 0`), handled by §3.3; for `g �
 
 ### Dependencies
 
-Layers 0–5; SurfaceTopology Layer 9; SchemeAndStackFoundations §4.15;
-AlgebraicModuliForArithmeticGeometry §9.5; ResolutionOfSingularitiesCharacteristicZero §6.2;
+Layers 0–5; MordellLawrenceVenkatesh §§5.7, 5.10; GeometricTopology §1.7.2;
+SchemeAndStackFoundations §4.15; ResolutionOfSingularitiesCharacteristicZero §6.2;
 Mathlib `Representation.ind`; Tau Ceti
 `ContRepresentation.IsUnitary.isSemisimpleRepresentation`.
 
@@ -1945,8 +2229,9 @@ property of the socle; finite dimension makes the filtration finite. *Needs:* §
 **Checks.**
 
 - For semisimple `ρ` the socle filtration has length one.
-- For the abelianization unipotent example of §12.1 the socle is `H` and the quotient is the
-  trivial line, both MCG-finite.
+- For the abelianization unipotent example of §12.1 with `H ≠ 0` the socle is `H` and the quotient
+  is the trivial line, both MCG-finite; with `H = 0` the representation is trivial of rank one and
+  its socle filtration has length one.
 
 ### 9.2 Splitting of low-rank extensions
 
@@ -1955,10 +2240,14 @@ Prove: let `ρ` be MCG-finite of rank `r` with `r² < g + 1`, with a characteris
 `ρ` has finite image (Landesman–Litt, Lemma 8.6.1, p. 44). With `a = dim V₁`, `b = dim V₂`,
 `ab ≤ r²/4 < (g + 1)/4`. Trivialize `V₁ ⊕ V₂` on a finite Galois cover with group `H`; the
 restricted extension class is an `H`-equivariant map from `H₁` of the open cover to `Hom(V₂, V₁)`.
-Choose a finite-index subgroup stabilizing the actual conjugacy class of `ρ`, the cover and the
-labels of the constituents: stabilizing only the constituents of `Hom(V₂, V₁)` does not suffice.
-Each isotypic piece of the image is a stable subspace of dimension `≤ ab` in an isotypic component
-labelled by `σ` with `dim σ ≤ ab`, and `2g − 2 dim σ > ab` contradicts §6.5 unless it is zero. The
+Choose a finite-index subgroup `Γ′` stabilizing the actual conjugacy class of `ρ`, the cover and the
+labels of the constituents: stabilizing only the constituents of `Hom(V₂, V₁)` does not suffice;
+the map is then `Γ′`-equivariant for the induced action on `Hom(V₂, V₁)`. Its image `I` is a
+quotient of `H₁` of the open cover, not a subspace of a cohomology group, so §6.5 does not apply to
+it directly. Dualize: the transpose of the surjection onto the `σ`-isotypic piece `I_σ` is a
+`Γ′`-equivariant injection of `I_σ^∨` into `H¹` of the open cover (evaluation), landing in the
+`σ^∨`-isotypic component, of dimension `≤ ab`, with `dim σ^∨ = dim σ ≤ ab`. Since
+`2g − 2 dim σ ≥ 2g − 2ab > ab`, because `3ab < 3(g + 1)/4 ≤ 2g`, §6.5 forces `I_σ^∨ = 0`. The
 extension is then trivial on the cover, so `ρ` has finite image and splits by averaging. *Needs:*
 §§2.1, 6.1, 6.5; RepresentationTheory/CharacterTheory Layer 2.
 
@@ -1968,6 +2257,10 @@ extension is then trivial on the cover, so `ρ` has finite image and splits by a
   MCG-finite hypothesis, not by semisimplicity of the graded pieces; with the stabilizer of the
   constituents alone, the unipotent representation of §2.1 would refute the argument.
 - For `a = b = 1` the bound reads `2g − 2 > 1`, true for `g ≥ 2`, and `r = 2` requires `g ≥ 4`.
+- The image must be dualized before §6.5 is applied: for the shear `(x, y) ↦ (x + y, y)` on `ℂ²`
+  the equivariant quotient `(x, y) ↦ y` onto the trivial line has no equivariant section, since
+  `(x, 1) ↦ (x + 1, 1)`, while its transpose embeds the trivial line as the fixed covector `e₂*`,
+  because `e₂*(x − y, y) = y`.
 
 ### 9.3 Finiteness of canonical representations
 
@@ -1987,8 +2280,8 @@ former. *Needs:* §§0.2, 8.3, 9.1, 9.2, 3.3.
 - The bound is strict: `r² < g + 1`, not `r² ≤ g + 1`; at `g = 3` it allows `r = 1` only.
 - At `g = 1` it allows `r = 1`, and the genus-one rank-two examples of §12.5 show that `r = 2`
   fails there.
-- The abelianization unipotent representation of rank `2g + 1` of §12.1 is MCG-finite with infinite
-  image, so no bound better than linear in `g` holds without semisimplicity.
+- For `g ≥ 1` the abelianization unipotent representation of rank `2g + 1` of §12.1 is MCG-finite
+  with infinite image, so no bound better than linear in `g` holds without semisimplicity.
 
 ### 9.4 Finite fibral monodromy
 
@@ -2061,8 +2354,9 @@ the mapping class group is not claimed to imply finite orbit under `Out(F_N)`. *
 
 - `N = 0` or `1`: then `g = 0` and the bound forces `r = 0`.
 - For odd `N = 2g + 1` the surface is `Σ_{g,2}`, whose fundamental group is free of rank `2g + 1`.
-- The rank-`(N + 1)` representation of §12.1 for `F_N` is `Out`-fixed with infinite image, so
-  finiteness fails in rank `N + 1`.
+- For `N ≥ 1` the rank-`(N + 1)` representation of §12.1 for `F_N` is `Out`-fixed with infinite
+  image, so finiteness fails in rank `N + 1`; for `N = 0` it is the trivial representation of rank
+  one, with image of size one, the negative control of §12.1.
 
 ### 9.8 The Nielsen-tuple criterion
 
@@ -2166,34 +2460,19 @@ whole image is that finite set. *Needs:* §§9.3, 10.1; InverseGaloisAndArithmet
   rank-two representation of infinite image, so for `g ≥ 4` (where `4 < g + 1`) such a curve is
   never generic.
 
-### 10.3 Finite monodromy is arithmetic
-
-Prove that for a smooth geometrically connected curve over `K`, every continuous geometric `ℓ`-adic
-representation with finite image is arithmetic: the geometric group is topologically finitely
-generated (§IG.3.1, *Finitely many covers of bounded degree*), so there are finitely many
-homomorphisms to a given finite group and finitely many classes in the orbit (Landesman–Litt,
-Corollary 9.1.4, implication (1) ⇒ (2), pp. 45–46). §IG.1.4 records the same fact as a check on
-its definition; it is stated here as the theorem §10.4 uses. *Needs:*
-InverseGaloisAndArithmeticFundamentalGroups §§IG.1.4, IG.3.1.
-
-**Checks.**
-
-- The trivial representation is arithmetic.
-- Finite image is sufficient but not necessary: Tate modules of abelian schemes are arithmetic of
-  infinite image.
-
-### 10.4 Geometric and Hodge characterisations
+### 10.3 Geometric and Hodge characterisations
 
 Prove that for a continuous `ρ : π₁^ét(C°_K̄) → GL_r(ℚ̄_ℓ)` with `r² < g + 1` the following are
 equivalent: (1) `ρ` has finite image; (2) `ρ` is arithmetic; (3) for every embedding `K → ℂ` and every
 field isomorphism `ℚ̄_ℓ ≅ ℂ` the complex local system on the punctured Riemann surface is of geometric
 origin; (4) for every such choice it underlies an integral PVHS in the `O_K` sense of §5.1
-(Landesman–Litt, Corollary 9.1.4, pp. 45–46). (1) ⇔ (2) is §§10.2–10.3; (1) ⇒ (3) because a finite
-local system is a summand of a push-forward of the constant sheaf; (3) ⇒ (4) is §5.1; (4) ⇒ (1):
+(Landesman–Litt, Corollary 9.1.4, pp. 45–46). (1) ⇒ (2) is the finite-image criterion of
+InverseGaloisAndArithmeticFundamentalGroups §IG.1.4 and (2) ⇒ (1) is §10.2; (1) ⇒ (3) because a
+finite local system is a summand of a push-forward of the constant sheaf; (3) ⇒ (4) is §5.1; (4) ⇒ (1):
 choose the embedding at an analytically very general point, possible because the points over the
 generic point of `M_{g,n,ℚ}` form a comeagre set and so does the very general locus, and apply §5.11
 (Landesman–Litt 2022, Theorem 1.2.5; the source cites Corollary 1.2.7 at this step), using
-`r < 2√(g + 1)`. *Needs:* §§5.1, 5.11, 10.2, 10.3; InverseGaloisAndArithmeticFundamentalGroups
+`r < 2√(g + 1)`. *Needs:* §§5.1, 5.11, 10.2; InverseGaloisAndArithmeticFundamentalGroups
 §IG.1.4.
 
 **Checks.**
@@ -2201,25 +2480,29 @@ generic point of `M_{g,n,ℚ}` form a comeagre set and so does the very general 
 - A non-real character of finite order satisfies (4) in the `O_K` sense though it has no invariant
   rank-one `ℤ`-lattice; under a `ℤ`-lattice reading (1) ⇒ (4) would fail.
 - The quantifiers in (3) and (4) range over all embeddings and all coefficient isomorphisms.
+- (1) ⇒ (2) through §IG.1.4: the trivial representation has a one-element orbit, and a finite-image
+  representation whose cover and group action descend to `C°_{K′}` with `[K′ : K] = d` has at most
+  `d` classes in its orbit; the converse fails without the rank bound, since Tate modules of
+  abelian schemes are arithmetic of infinite image.
 
-### 10.5 The wider Hodge range
+### 10.4 The wider Hodge range
 
-Prove that conditions (1), (3) and (4) of §10.4 are equivalent whenever `r < 2√(g + 1)`;
+Prove that conditions (1), (3) and (4) of §10.3 are equivalent whenever `r < 2√(g + 1)`;
 arithmeticity is not part of this wider equivalence (Landesman–Litt, Corollary 9.1.4, final
 assertion, p. 46). The implications (1) ⇒ (3) ⇒ (4) hold in every rank and (4) ⇒ (1) uses only
-`r < 2√(g + 1)` in §5.11. *Needs:* §§5.1, 5.11, 10.4.
+`r < 2√(g + 1)` in §5.11. *Needs:* §§5.1, 5.11, 10.3.
 
 **Checks.**
 
 - Arithmeticity is excluded in this range: only the relative Fontaine–Mazur conjecture would extend
   it to semisimple `ρ` with `r < 2√(g + 1)` (Landesman–Litt, Remark 9.1.5).
-- For `g = 3` the wider range allows `r ≤ 3` (`3 < 4`), while §10.4 allows only `r = 1`.
+- For `g = 3` the wider range allows `r ≤ 3` (`3 < 4`), while §10.3 allows only `r = 1`.
 
 ### Examples
 
 - For `g = 8`, every arithmetic representation of rank at most two of the geometric fundamental
   group of the generic curve of genus `8` has finite image (§10.2), and for rank at most five
-  (`5 < 2·3 = 6`) geometric origin is equivalent to finite image (§10.5).
+  (`5 < 2·3 = 6`) geometric origin is equivalent to finite image (§10.4).
 - For `g = 0` the hypothesis of §10.2 forces `r = 0`.
 
 ### Dependencies
@@ -2405,10 +2688,10 @@ extension of the Johnson homomorphism to a crossed homomorphism on the whole map
 Let `I` be the augmentation ideal of `ℚ[π₁(Σ_{g,n−1}, x)]`, with the based action of `PMod(g, n)`.
 Prove that for `n ≥ 1` and `2g − 2 + (n − 1) > 0` the sequence `0 → I²/I³ → I/I³ → I/I² → 0` of
 `PMod(g, n)`-representations does not split (Landesman–Litt, Example 10.1.6(2), p. 51). The
-point-pushing subgroup (§0.5) acts trivially on `I/I²` and on `I²/I³`, and `α` acts on `I/I³` by
+point-pushing subgroup (§0.3) acts trivially on `I/I²` and on `I²/I³`, and `α` acts on `I/I³` by
 `x ↦ x + [α − 1, x]`; an equivariant splitting would force `[α − 1, x] ∈ I³` for all `α` and `x ∈ I`,
 which fails because the commutator `I/I² × I/I² → I²/I³` is nonzero for a nonabelian surface group.
-*Needs:* §§0.1, 0.5.
+*Needs:* §§0.1, 0.3.
 
 **Checks.**
 
@@ -2426,7 +2709,7 @@ Morita's crossed homomorphism `f`, whose image under restriction to the point-pu
 (Morita 1989, Proposition 6.4, p. 804, Mor89 line 886). Over `ℚ` the corresponding non-split
 extension `0 → H₁(Σ_g, ℚ) → W → ℚ → 0` restricts on the point-pushing subgroup, after rescaling by
 `1/(2 − 2g)`, to the representation `U` of §12.1 (Landesman–Litt, Example 10.1.6(3), p. 51). The
-surface example §12.1 does not depend on this global extension. *Needs:* §§0.5, 1.1, 12.1.
+surface example §12.1 does not depend on this global extension. *Needs:* §§0.3, 1.1, 12.1.
 
 **Checks.**
 
@@ -2482,7 +2765,7 @@ and 4.4; Biswas–Koberda–Mj–Santharoubane, Theorem 5.1); composing with a f
 `PGL` gives an MCG-finite representation by §3.2, and its semisimplification is MCG-finite by §3.1
 and still of infinite image, because a nonabelian free group has no finite-index subgroup mapping
 injectively into a unipotent group. The quantum representations and the free-subgroup statement are
-part of this target. *Needs:* §§0.5, 3.1, 3.2.
+part of this target. *Needs:* §§0.3, 3.1, 3.2.
 
 **Checks.**
 
@@ -2526,11 +2809,6 @@ Layers 0–3, 5 and 9; Mathlib `FreeGroup`.
 
 ## Downstream consumers
 
-- **MordellLawrenceVenkatesh**, later in the merge order, states in its Layer LV.5 the same objects
-  as Layer 0 (punctured surfaces, Dehn twists and their action on homology, point-pushing, the
-  Birman sequence and capping) for its monodromy theorem, and is a consumer of this layer; its
-  twist formula `x ↦ x + î(x, b)[b]` is the formula of the inverse of SurfaceTopology's positive
-  twist (§0.3).
 - Roadmaps on mapping class groups and finite covers of moduli spaces use Layer 6's higher Prym
   rank bound and the Putman–Wieland theorem for small groups.
 - Roadmaps on rigid local systems and variations of Hodge structure use Layer 5's rank bound,
@@ -2538,11 +2816,12 @@ Layers 0–3, 5 and 9; Mathlib `FreeGroup`.
 
 ## Worked examples
 
-- **The unipotent example against the main theorem.** On a closed surface of genus `g`, the
+- **The unipotent example against the main theorem.** On a closed surface of genus `g ≥ 1`, the
   representation `U` of §12.1 has rank `2g + 1`, is fixed by the mapping class group and has infinite
   image. The main theorem §9.3 needs `(2g + 1)² < g + 1`, which never holds, so there is no
   contradiction; the socle of `U` is `H` and the quotient `ℂ` (§9.1), and the extension does not
-  split, the situation §9.2 excludes in low rank.
+  split, the situation §9.2 excludes in low rank. In genus zero `H = 0` and `U` is the trivial
+  representation on `ℂ`: image of size one, socle `ℂ` and a split extension.
 - **Putman–Wieland for double covers of a genus-two surface.** For `g = 2` and `H = ℤ/2`, `#H = 2 < 4`,
   so §6.7 applies: for a connected double cover `Σ₃ → Σ₂`, no nonzero class of `H₁(Σ₃, ℂ)` has finite
   orbit under the stabilizer `Γ ⊂ PMod(2, 1)`. The isotypic decomposition is
@@ -2577,7 +2856,7 @@ Layers 0–3, 5 and 9; Mathlib `FreeGroup`.
 - Landesman–Litt, Lemma 8.6.1, p. 44: the finite-index subgroup must stabilize the actual class of
   `ρ` and the covering data, not only the constituents of `Hom(ρ₂, ρ₁)` (§9.2).
 - Landesman–Litt, Corollary 9.1.4, pp. 45–46: "integral PVHS" is read in the `O_K` sense of §5.1,
-  and the step (4) ⇒ (1) uses Landesman–Litt 2022, Theorem 1.2.5 (§10.4).
+  and the step (4) ⇒ (1) uses Landesman–Litt 2022, Theorem 1.2.5 (§10.3).
 - Landesman–Litt, Example 9.2.3, pp. 48–49: surjections exist for every `p`, non-liftability only for
   `p ∤ m(r)` (§11.4; the authors' erratum restricts it).
 - Landesman–Litt, Remarks 9.2.5–9.2.6, p. 49: non-flatness does not imply failure of the
@@ -2610,6 +2889,11 @@ Layers 0–3, 5 and 9; Mathlib `FreeGroup`.
   [arXiv:2009.07350v2](https://arxiv.org/abs/2009.07350v2).
 - **EG18** H. Esnault, M. Groechenig, *Cohomologically rigid local systems and integrality*, Selecta
   Math. 24 (2018); [arXiv:1711.06436](https://arxiv.org/abs/1711.06436).
+- **Dri18** V. Drinfeld, *On the pro-semisimple completion of the fundamental group of a smooth
+  variety over a finite field*, Adv. Math. 327 (2018), 708–788;
+  [arXiv:1509.06059v8](https://arxiv.org/abs/1509.06059v8). Locators are those of the arXiv version.
+- **Dri12** V. Drinfeld, *On a conjecture of Deligne*, Moscow Math. J. 12 (2012), 515–542;
+  [arXiv:1007.4004v7](https://arxiv.org/abs/1007.4004v7). Locators are those of the arXiv version.
 - **CH19** G. Cousin, V. Heu, *Algebraic isomonodromic deformations and the mapping class group*;
   [arXiv:1612.05779v4](https://arxiv.org/abs/1612.05779v4).
 - **AS16** J. Aramayona, J. Souto, *Rigidity phenomena in the mapping class group*, Handbook of

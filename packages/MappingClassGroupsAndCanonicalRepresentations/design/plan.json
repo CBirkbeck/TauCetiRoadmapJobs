@@ -3220,9 +3220,21 @@
   "gaps": [
     {
       "slug": "local-system-direct-images",
-      "needs": "Extend the dictionary between TauCeti.LocalCoefficientSystem and locally constant sheaves to coefficients in C and in finite-dimensional commutative C-algebras, and for a smooth fibre bundle f : T -> S and a locally constant sheaf V of finite free A-modules on T prove that R^q f_* V is locally constant with stalk H^q(f^{-1}(s), V), equal to the group cohomology of the fibre group for K(pi,1) fibres, with the projection formula R^q f_*(V tensor f^*W) = R^q f_* V tensor W.",
+      "needs": "Extend the dictionary between TauCeti.LocalCoefficientSystem and locally constant sheaves to coefficients in C and in finite-dimensional commutative C-algebras A, and for a smooth fibre bundle f : T -> S and a locally constant sheaf V of finite free A-modules on T prove that R^q f_* V is locally constant with stalk H^q(f^{-1}(s), V), equal to the group cohomology of the fibre group for K(pi,1) fibres, with the projection formula R^q f_*(V tensor_A f^*W) = R^q f_* V tensor_A W for a local system W of finite free A-modules on S.",
       "supplier": "ComplexComparisonPartII",
       "section": "§C6.1"
+    },
+    {
+      "slug": "curve-companions",
+      "needs": "Deduce from the GL_r correspondence at every level that an irreducible lisse Qbar_l-sheaf of rank r >= 1 with finite-order determinant on a smooth geometrically connected curve over F_q has Frobenius characteristic polynomials with coefficients in one number field, roots pure of weight zero and units at every finite place not above p, and for every finite place lambda' not above p an irreducible lambda'-adic companion with finite-order determinant, the same Frobenius characteristic polynomials and isomorphic Frobenius-semisimplified Weil-Deligne representations at every boundary point (L. Lafforgue, Theoreme VII.6, with Deligne's local compatibility).",
+      "supplier": "AutomorphicLFunctionsAndLocalFactors",
+      "section": "§AL.3"
+    },
+    {
+      "slug": "tame-specialization",
+      "needs": "For X smooth and proper over a strictly henselian discrete valuation ring with geometrically connected fibres, D a relative strict normal crossings divisor and U = X minus D, prove that the specialization homomorphism from pi_1^et of the geometric generic fibre of U onto the tame fundamental group of the geometric special fibre of U is surjective, compatibly with the prime-to-p identification (SGA 1, Expose XIII; Lieblich-Olsson, Corollary A.12).",
+      "supplier": "InverseGaloisAndArithmeticFundamentalGroups",
+      "section": "§IG.1.3"
     }
   ],
   "sourceIssues": [
