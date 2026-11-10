@@ -1,0 +1,13 @@
+{
+  "review": {
+    "status": "needs_changes",
+    "reviewer": "independent-review-PRREVIEW-EtaleDualityAndPerverseSheavesPartII~20",
+    "head": "5a1f55ac842ea50abbd507e77055d68df9299c4c",
+    "pr": 1743,
+    "folder": "EtaleDualityAndPerverseSheavesPartII",
+    "date": "2026-11-10",
+    "findings": 1,
+    "blocking": 1,
+    "notes": "incremental re-review of 2 changed lines since 975ac17. Previous R02 repaired: README:142 now describes the oriented étale product X_ét ←×_(S_ét) Y_ét of small étale topoi in prose, matching ClassicalAdicEtaleCohomology (#875 at fc1c03a) §5.4 README:3134-3141 clause by clause; dependents :15, :672, :692, :694, :814 consistent, orientation agrees. Previous R01 (P2) not repaired and carried: PurityForFlatCohomology (#1840) still at d3f15fd9 states §1.4 (:1107) and §1.5 (:1160) = our §§7.1, 6.11, 6.12, 7.3; no repair report marks it not actionable; repair test re-run (moved PFFC #220 -> #390, 0 problems). Gate on this head: every check 0, OK (worker build=0); depcheck --movable: 234 roadmaps, 2267 edges, 0 problems; lake env lean exit 0, eight sorry warnings only; no outside-folder paths; Suggested.lean and pins unchanged. Seeded §3.6 checked against ILO14 lines 9093-9107 and ILO-final-XII lines 290-333; one v1 misprint recorded. Adversarial rows added for the changed contract and §3.6, 25 rows carried from PRREVIEW~19."
+  }
+}
