@@ -2,6 +2,90 @@ schema = "tauceti-roadmap-sources/v1"
 roadmap = "ZerosOfLFunctions"
 
 [[source]]
+id = "montgomery-vaughan2006"
+locator_scheme = "theorem"
+locator = "Theorem 10.16"
+url = "https://personal.science.psu.edu/rcv4/personal/Publications/MNTI/14.0_pp_326_357_Analytic_properties_of_the_zeta_function_and_L-functions.pdf"
+fetched_from = "https://personal.science.psu.edu/rcv4/personal/Publications/MNTI/14.0_pp_326_357_Analytic_properties_of_the_zeta_function_and_L-functions.pdf"
+fetched_at = "2026-11-08T07:56:39Z"
+sha256 = "af2079b9fd00699189523e799684251f6579b8922619385939d9296b82d5943a"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-08"
+cited_for = ["6.4d direct Dirichlet exports"]
+
+[[source]]
+id = "kadiri2012"
+authors = "Habiba Kadiri"
+title = "Explicit zero-free regions for Dedekind Zeta functions"
+year = 2011
+venue = "Int. J. of Number Theory 2 Vol. 8, No. 1 (2012) 1-23"
+arxiv = "1106.1868v1"
+locator_scheme = "theorem"
+locator = "Theorem 1.1"
+url = "https://arxiv.org/abs/1106.1868v1"
+fetched_from = "https://arxiv.org/pdf/1106.1868v1"
+fetched_at = "2026-11-08T08:19:40Z"
+sha256 = "8c20f3fc7b27d080e97b1304bcf95f54cbf5905fba59fbf1a3f0dc4d3e78d368"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-08"
+version_note = "arXiv v1"
+cited_for = ["6.2"]
+
+[[source]]
+id = "dlmf-5.4"
+locator_scheme = "equation"
+locator = "5.4.13"
+url = "https://dlmf.nist.gov/5.4"
+fetched_from = "https://dlmf.nist.gov/5.4"
+fetched_at = "2026-11-08T08:22:02Z"
+sha256 = "9e46b9de965bc2760df4eb24e29422486adf714cc0431a6890391ab7d33fac49"
+licence_class = "institutional"
+status = "certified"
+accessed = "2026-11-08"
+cited_for = ["1.4"]
+
+[[source]]
+id = "dlmf-5.5"
+locator_scheme = "equation"
+locator = "5.5.2"
+url = "https://dlmf.nist.gov/5.5"
+fetched_from = "https://dlmf.nist.gov/5.5"
+fetched_at = "2026-11-08T08:22:02Z"
+sha256 = "2102368cbdd7ddfc03af89b7113449556148fd6473229da7e39c6f33d489b87f"
+licence_class = "institutional"
+status = "certified"
+accessed = "2026-11-08"
+cited_for = ["1.4"]
+
+[[source]]
+id = "dlmf-5.11"
+locator_scheme = "equation"
+locator = "5.11.1"
+url = "https://dlmf.nist.gov/5.11"
+fetched_from = "https://dlmf.nist.gov/5.11"
+fetched_at = "2026-11-08T08:22:03Z"
+sha256 = "b2e37cf59cb1f0eedaad095e22b538fbfc7a9c8c62b4a43eb8fcb53f71fab2f4"
+licence_class = "institutional"
+status = "certified"
+accessed = "2026-11-08"
+cited_for = ["1.2"]
+
+[[source]]
+id = "dlmf-5.15"
+locator_scheme = "equation"
+locator = "5.15.1"
+url = "https://dlmf.nist.gov/5.15"
+fetched_from = "https://dlmf.nist.gov/5.15"
+fetched_at = "2026-11-08T08:22:05Z"
+sha256 = "912ff06f7c3b323a725b9a895c34717f37877f7c80b7da6551a53e6dcff5ce90"
+licence_class = "institutional"
+status = "certified"
+accessed = "2026-11-08"
+cited_for = ["1.4"]
+
+[[source]]
 id = "trudgian2015"
 authors = "T. S. Trudgian"
 title = "An improved upper bound for the error in the zero-counting formulae for Dirichlet $L$-functions and Dedekind zeta-functions"
@@ -12,13 +96,13 @@ locator_scheme = "theorem"
 locator = "Theorem 1"
 url = "https://arxiv.org/abs/1206.1844v4"
 fetched_from = "https://arxiv.org/pdf/1206.1844v4"
-fetched_at = "2026-11-08T08:07:17Z"
+fetched_at = "2026-11-08T08:22:12Z"
 sha256 = "c6e94ad46b6ce7b8e180566970093ce49cedcdc285e5d91c9db76dc410f42b20"
 licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-08"
 version_note = "arXiv v4"
-cited_for = ["7.5"]
+cited_for = ["7.6"]
 
 [[source]]
 id = "dlmf5"
@@ -32,25 +116,6 @@ licence_class = "institutional"
 status = "certified"
 accessed = "2026-11-08"
 cited_for = ["1.2"]
-
-[[source]]
-id = "kadiri2012"
-authors = "Habiba Kadiri"
-title = "Explicit zero-free regions for Dedekind Zeta functions"
-year = 2011
-venue = "Int. J. of Number Theory 2 Vol. 8, No. 1 (2012) 1-23"
-arxiv = "1106.1868v1"
-locator_scheme = "theorem"
-locator = "Theorem 1.1"
-url = "https://arxiv.org/abs/1106.1868v1"
-fetched_from = "https://arxiv.org/pdf/1106.1868v1"
-fetched_at = "2026-11-08T08:22:09Z"
-sha256 = "8c20f3fc7b27d080e97b1304bcf95f54cbf5905fba59fbf1a3f0dc4d3e78d368"
-licence_class = "open-repository"
-status = "certified"
-accessed = "2026-11-08"
-version_note = "arXiv v1"
-cited_for = ["6.2", "6.4"]
 
 [[source]]
 id = "primenumbertheoremand"
