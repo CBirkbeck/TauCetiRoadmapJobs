@@ -7,7 +7,7 @@ authors = "Bao V. Le Hung"
 title = "A geometric prime switch for elliptic curves over totally real and CM fields"
 year = 2026
 locator_scheme = "theorem"
-locator = "Theorem 1.1 p.2 (totally real part); inputs 2.1-2.2 pp.4-5; Section 3 pp.6-7; Section 5 p.9 (locators as filed, unverified)"
+locator = "Theorem 1.1 p.2; Inputs 2.1-2.2 p.4; Proposition 3.1 and Lemma 3.2 p.6; Sections 3.3-3.4 pp.6-7; Lemma 5.1 and local-global compatibility p.9"
 url = "https://hexagonmath.org/pdf/2610.00156v1"
 fetched_from = "https://hexagonmath.org/pdf/2610.00156v1"
 fetched_at = "2026-11-07T19:53:02Z"
@@ -16,3 +16,150 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-07"
 resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/3439#issuecomment-6712044815"
+cited_for = ["Scope", "Final targets 1-3", "Risks"]
+version_note = "Hexagon v1 discussion draft dated 7 October 2026. Locators verified against the operator-staged extraction. Theorem 1.1 assumes the geometric inputs from OpenAI at revision adc7f12. Filed licence: CC BY 4.0."
+
+[[source]]
+id = "OpenAI26"
+locator_scheme = "theorem"
+locator = "Lemma 3.1; Proposition 3.3; Proposition 4.2; Remark 4.3; Theorem 4.5"
+url = "https://raw.githubusercontent.com/openai/math/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/Modularity-of-elliptic-curves-over-imaginary-quadratic-fields-October-4-2026/paper.pdf"
+fetched_from = "https://raw.githubusercontent.com/openai/math/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/Modularity-of-elliptic-curves-over-imaginary-quadratic-fields-October-4-2026/paper.pdf"
+fetched_at = "2026-11-10T19:34:10Z"
+sha256 = "c74cc37755f500be0c22ccb4d08ce81df309404a7175a7fb6cf7321330b5187c"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-10"
+cited_for = ["Suppliers: imported geometric inputs"]
+authors = "OpenAI"
+title = "Modularity of elliptic curves over imaginary quadratic fields"
+year = 2026
+version_note = "Author repository revision adc7f1241b42e322a6451854ab7e4b4c146bf78a, dated 4 October 2026. Same revision as ECMIQ; no journal-numbering claim. LeHung26 groups these results as Inputs 2.1-2.2."
+
+[[source]]
+id = "FLHS15"
+authors = "Nuno Freitas, Bao V. Le Hung, Samir Siksek"
+title = "Elliptic Curves over Real Quadratic Fields are Modular"
+year = 2015
+arxiv = "1310.7088v4"
+locator_scheme = "theorem"
+locator = "Theorems 2-3 p.3; Section 2 pp.5-6"
+url = "https://arxiv.org/abs/1310.7088v4"
+fetched_from = "https://arxiv.org/pdf/1310.7088v4"
+fetched_at = "2026-11-10T19:35:20Z"
+sha256 = "aea71f7698edac25fedaf03627b7703c0ed6138e4e9c012b06b41822819d0403"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-10"
+version_note = "arXiv v4, 18 July 2014; journal publication Inventiones Mathematicae 201 (2015), 159-206. All pages and theorem numbers here refer to v4."
+cited_for = ["Final targets and totally real seed"]
+
+[[source]]
+id = "BD14"
+authors = "Christophe Breuil, Fred Diamond"
+title = "Formes modulaires de Hilbert modulo p et valeurs d'extensions galoisiennes"
+year = 2014
+arxiv = "1208.5367v3"
+locator_scheme = "theorem"
+locator = "Theoreme 3.2.2, arXiv v3 pp.36-37"
+url = "https://arxiv.org/abs/1208.5367v3"
+fetched_from = "https://arxiv.org/pdf/1208.5367v3"
+fetched_at = "2026-11-10T19:35:28Z"
+sha256 = "83fbf509af8b0d192d8f5adfcf0812c126a8bd0e128d56bcb65421eab1296a28"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-10"
+version_note = "arXiv v3, 4 September 2013; journal publication Annales scientifiques de l ENS 47 (2014), 905-974. The read preprint title is Formes modulaires de Hilbert modulo p et valeurs d extensions galoisiennes. No equality of published pagination is asserted."
+cited_for = ["Totally real weight-two lifting"]
+
+[[source]]
+id = "SW99"
+locator_scheme = "theorem"
+locator = "Theorem A, Section 4.5 p.74; Theorem B p.75"
+url = "https://www.numdam.org/item/PMIHES_1999__89__5_0.pdf"
+fetched_from = "https://www.numdam.org/item/PMIHES_1999__89__5_0.pdf"
+fetched_at = "2026-11-10T19:35:46Z"
+sha256 = "ec0697b3e9c9fa68063b19688f10347d204a8b7b86526384c9ccd6e7fe30e6f3"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-10"
+cited_for = ["Imported ordinary starting point"]
+authors = "Christopher M. Skinner, Andrew J. Wiles"
+title = "Residually reducible representations and modular forms"
+year = 1999
+doi = "10.1007/BF02698855"
+version_note = "Numdam publisher archive scan, Publ. Math. IHES 89 (1999), 5-126. Printed pages cited; archive cover shifts extraction page numbering. Theorem B assumes Hypothesis H."
+
+[[source]]
+id = "Kisin09"
+locator_scheme = "theorem"
+locator = "Theorem (3.5.5) p.1170; Theorem (3.5.7) p.1172"
+url = "https://annals.math.princeton.edu/wp-content/uploads/annals-v170-n3-p03-p.pdf"
+fetched_from = "https://annals.math.princeton.edu/wp-content/uploads/annals-v170-n3-p03-p.pdf"
+fetched_at = "2026-11-10T19:36:30Z"
+sha256 = "076f8bb6ec683633f7742d27504b97f5feaef2ddbae2bc5dc4325eb8386f4ee7"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-11-10"
+cited_for = ["Suppliers: potentially Barsotti-Tate lifting"]
+authors = "Mark Kisin"
+title = "Moduli of finite flat group schemes, and modularity"
+year = 2009
+doi = "10.4007/annals.2009.170.1085"
+version_note = "Published version, Annals of Mathematics 170 (2009), 1085-1180. Printed pagination; extraction includes archive front matter."
+
+[[source]]
+id = "BLGG12"
+authors = "Thomas Barnet-Lamb, Toby Gee, David Geraghty"
+title = "Congruences between Hilbert modular forms: constructing ordinary lifts"
+year = 2012
+venue = "Duke Math. J. 161, no. 8 (2012), 1521-1580"
+doi = "10.1215/00127094-1593326"
+arxiv = "1006.0466v1"
+locator_scheme = "theorem"
+locator = "Theorem 6.1.5 pp.41-42; Theorem 6.1.8 p.44 (arXiv v1)"
+url = "https://arxiv.org/abs/1006.0466v1"
+fetched_from = "https://arxiv.org/pdf/1006.0466v1"
+fetched_at = "2026-11-10T19:36:36Z"
+sha256 = "ca3a688bd717306f921dc5f304b7f3a5cbb62e7d1bc6921b9764a4622bf8037d"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-10"
+version_note = "Read arXiv v1 (2010); journal publication Duke Math. J. 161 (2012), 1521-1580. Locators are v1 theorem numbers and printed preprint pages; no identity with journal numbering asserted."
+cited_for = ["Suppliers: ordinary lifting"]
+
+[[source]]
+id = "BLGG13II"
+authors = "Thomas Barnet-Lamb, Toby Gee, David Geraghty"
+title = "Congruences between Hilbert modular forms: constructing ordinary lifts II"
+year = 2013
+arxiv = "1205.4491v1"
+locator_scheme = "theorem"
+locator = "Theorem 2.1.2 p.2; Theorems 3.1.1-3.1.2 pp.3-4 (arXiv v1)"
+url = "https://arxiv.org/abs/1205.4491v1"
+fetched_from = "https://arxiv.org/pdf/1205.4491v1"
+fetched_at = "2026-11-10T19:36:40Z"
+sha256 = "cce437b227af8513133b44a7e3b5ee500c8a2a19ed7235a6adad4e4d1a69c8c0"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-10"
+version_note = "Read arXiv v1 (2012); journal publication Math. Res. Lett. 20 (2013), 67-72. The arXiv metadata misspells betwen. Proposition 2.1.1 is not the ordinary-lift theorem. Locators refer to v1, not journal pagination."
+cited_for = ["Suppliers: refined ordinary lifting"]
+
+[[source]]
+id = "BCDT01"
+locator_scheme = "theorem"
+locator = "Theorem A, p.1 (author version)"
+url = "https://virtualmath1.stanford.edu/~conrad/papers/tswfinal.pdf"
+fetched_from = "https://virtualmath1.stanford.edu/~conrad/papers/tswfinal.pdf"
+fetched_at = "2026-11-10T19:37:26Z"
+sha256 = "13043cf6e9043a69dc7988882658cd92595efc88dfd4fd2f326ac3ef3cae8e06"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-10"
+cited_for = ["Suppliers: rational-field starting point"]
+authors = "Christophe Breuil, Brian Conrad, Fred Diamond, Richard Taylor"
+title = "On the modularity of elliptic curves over Q: wild 3-adic exercises"
+year = 2001
+doi = "10.1090/S0894-0347-01-00370-8"
+version_note = "Author-hosted final manuscript at Stanford, with provisional journal header. Cite Theorem A and author-version p.1; no claim about journal page offsets."
