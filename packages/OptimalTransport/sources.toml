@@ -553,3 +553,36 @@ status = "certified"
 accessed = "2026-11-10"
 version_note = "arXiv v2; theorem and page numbers are those of this version"
 cited_for = ["12.3", "12.4", "12.5"]
+
+[[source]]
+id = "leonard-schrodinger-mk"
+authors = "Christian Léonard"
+title = "From the Schrödinger problem to the Monge-Kantorovich problem"
+year = 2010
+venue = "Journal of Functional Analysis 262 (2012) 1879-1920"
+arxiv = "1011.2564v1"
+locator_scheme = "theorem"
+locator = "Proposition 3.4, p. 14; Theorem 3.6, p. 15; Theorem 3.7, pp. 15-16; Theorem 3.9, p. 17 (arXiv v1)"
+url = "https://arxiv.org/abs/1011.2564v1"
+fetched_from = "https://arxiv.org/pdf/1011.2564v1"
+fetched_at = "2026-11-10T11:27:33Z"
+sha256 = "a9c12698a14cc09ffae6382ec52361a75bbe5a818e9c021bc9798c3391bdde90"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-10"
+version_note = "arXiv v1"
+cited_for = ["13.13"]
+
+[[source]]
+id = "dembo-zeitouni"
+authors = "Amir Dembo, Ofer Zeitouni"
+title = "Large Deviations Techniques and Applications"
+year = 1998
+doi = "10.1007/978-1-4612-5320-4"
+locator_scheme = "theorem"
+locator = "Theorem 5.2.3"
+url = "https://doi.org/10.1007/978-1-4612-5320-4"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["13.13"]
