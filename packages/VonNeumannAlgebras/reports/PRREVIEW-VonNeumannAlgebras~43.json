@@ -1,0 +1,4 @@
+{"review": {"status": "accepted", "reviewer": "independent-review-PRREVIEW-VonNeumannAlgebras~43",
+            "head": "779e1be75f75d449f0530bcb1e85fb00f1009bdf", "pr": 1041, "folder": "VonNeumannAlgebras", "date": "2026-11-10",
+            "findings": 0, "blocking": 0,
+            "notes": "incremental re-review of 18 changed lines since 0621c4c; previous R01 (property Γ locator) repaired in README and the HasPropertyGamma docstring, no statement changed; read Anantharaman–Popa Theorem 15.2.3 and Remarks 15.2.2 (p. 262) and Jones Definition 16.1.1 (p. 107) at their locators; gate OK (all counters 0), depcheck 235 roadmaps / 2268 edges / 0 problems, Suggested.lean elaborates with 32 sorry warnings only, nothing changed outside the folder; seeded sample 13.1 and 13.2 untouched and carried from the previous review; adversarial table has computed rows for the changed passage and carries 19 rows forward"}}
