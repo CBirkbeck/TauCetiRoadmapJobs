@@ -1,0 +1,13 @@
+{
+  "review": {
+    "status": "accepted",
+    "reviewer": "independent-review-PRREVIEW-QuantitativeOrbitMethodAndMicrolocalAnalysisOnLieGroups~5",
+    "head": "1678559eae3bdd2506e99523a5633ab2ca6a4c74",
+    "pr": 1842,
+    "folder": "QuantitativeOrbitMethodAndMicrolocalAnalysisOnLieGroups",
+    "date": "2026-11-10",
+    "findings": 0,
+    "blocking": 0,
+    "notes": "incremental re-review of 9 changed lines since ee22726. Checked: R01 repaired (LieGroup.minSmoothness_of_isRCLikeNormedField at Tau Ceti 2fd255d Geometry/Lie/Basic.lean:45 supplies LieGroup I (minSmoothness R 3) G for mulInvariantExp; renamed at Suggested.lean:70,81 and README.md:56; negative control without the instance fails at line 103); reworded BCH docstring clause checked against the pinned lieLog, lieLocalBCH and bracket-term files (no cubic term at the pin); gate run on this head: all text checks 0, worker gate build=0; lake env lean exits 0 with 7 sorry warnings only; #check of all 13 declarations equal to signatures.md; depcheck 0 problems, no UPWARD/CYCLE/moved; overlaps and citations empty; sampled §0.5 locators verified in nv21 (§§2.2-2.4 pp. 25-26, (2.1)-(2.2), Lemma 8.8 and Prop. 8.7 p. 61); other sampled targets untouched; adversarial table: 4 new rows plus 55 carried forward."
+  }
+}
