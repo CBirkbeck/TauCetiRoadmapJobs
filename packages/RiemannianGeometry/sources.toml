@@ -82,21 +82,6 @@ version_note = "paywalled (Springer); cited by its locator without the text"
 cited_for = ["R8.3 convention bridge (isotropic basis, torus, roots, dominant weights of so_N)"]
 
 [[source]]
-id = "lee-irm"
-authors = "John M. Lee"
-title = "Introduction to Riemannian Manifolds"
-year = 2018
-venue = "Graduate Texts in Mathematics"
-doi = "10.1007/978-3-319-91755-9"
-locator_scheme = "chapter"
-locator = "Chapter 12"
-url = "https://doi.org/10.1007/978-3-319-91755-9"
-licence_class = "none"
-status = "uncertified"
-version_note = "paywalled; cited by its locator without the text"
-cited_for = ["R4.6 Synge's theorem; R4.1, R4.4, R4.5, R4.7 comparison and space forms"]
-
-[[source]]
 id = "brewin-rnc"
 authors = "Leo Brewin"
 title = "Riemann Normal Coordinate expansions using Cadabra"
@@ -132,6 +117,173 @@ licence_class = "author-page"
 status = "certified"
 accessed = "2026-11-04"
 cited_for = ["R1.4 normal coordinates; R4.4 Cartan–Hadamard; R4.5 Myers; R4.6 injectivity radius"]
+
+[[source]]
+id = "lee-irm"
+authors = "John M. Lee"
+title = "Introduction to Riemannian Manifolds"
+year = 2018
+venue = "Graduate Texts in Mathematics"
+doi = "10.1007/978-3-319-91755-9"
+locator_scheme = "chapter"
+locator = "Chapter 10, cut points"
+url = "https://doi.org/10.1007/978-3-319-91755-9"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["R4.6 cut locus"]
+
+[[source]]
+id = "wei-ricci-lower-bound"
+authors = "Guofang Wei"
+title = "Manifolds with A Lower Ricci Curvature Bound"
+year = 2006
+arxiv = "math/0612107v1"
+locator_scheme = "theorem"
+locator = "Bishop–Gromov volume comparison; Myers theorem; Lichnerowicz estimate"
+url = "https://arxiv.org/abs/math/0612107v1"
+fetched_from = "https://arxiv.org/pdf/math/0612107v1"
+fetched_at = "2026-11-08T23:13:59Z"
+sha256 = "be926e4703ee2068dec31aee7df73bdb56b64ec0271881093d7c35f017488fa5"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-08"
+version_note = "arXiv v1"
+cited_for = ["R4.1"]
+
+[[source]]
+id = "toth-ziller-spherical-minimal"
+locator_scheme = "section"
+locator = "Introduction and §1 (Takahashi's theorem, eigenmaps)"
+url = "https://ems.press/content/serial-article-files/42818?nt=1"
+fetched_from = "https://ems.press/content/serial-article-files/42818?nt=1"
+fetched_at = "2026-11-08T23:14:44Z"
+sha256 = "005233ecce0baaec4a04c44ef2e3039743866b9dc437f4df7acd2dcca1d122c5"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-11-08"
+cited_for = ["R8.4"]
+
+[[source]]
+id = "azagra-lipschitz-smoothing"
+authors = "D. Azagra, J. Ferrera, F. Lopez-Mesas, Y. Rangel"
+title = "Smooth Approximation of Lipschitz functions on Riemannian manifolds"
+year = 2006
+arxiv = "math/0602051v1"
+locator_scheme = "theorem"
+locator = "Theorem 1 (smooth approximation of Lipschitz functions)"
+url = "https://arxiv.org/abs/math/0602051v1"
+fetched_from = "https://arxiv.org/pdf/math/0602051v1"
+fetched_at = "2026-11-08T23:15:01Z"
+sha256 = "b4a875cb9a570b0dca9c67ecf5ecf76f606b81f21cbcdbf8d31402172f310484"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-08"
+version_note = "arXiv v1"
+cited_for = ["R7.8"]
+
+[[source]]
+id = "homma-bochner-weitzenboeck"
+authors = "Yasushi Homma"
+title = "Bochner-Weitzenböck formulas and curvature actions on Riemannian manifolds"
+year = 2003
+arxiv = "math/0307022v1"
+locator_scheme = "section"
+locator = "curvature actions and the Weitzenböck formula"
+url = "https://arxiv.org/abs/math/0307022v1"
+fetched_from = "https://arxiv.org/pdf/math/0307022v1"
+fetched_at = "2026-11-08T23:15:28Z"
+sha256 = "eea04664970b387fb8ddebf26b4de7b2df4e7163f4245c510cd95ca3c0e844e2"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-08"
+version_note = "arXiv v1"
+cited_for = ["R7.1–R7.8"]
+
+[[source]]
+id = "ma-csf-conic"
+authors = "Biao Ma"
+title = "Curve shortening flow on Riemann surfaces with possible ambient conic singularities"
+year = 2020
+arxiv = "2007.00089v3"
+locator_scheme = "section"
+locator = "§§2–5 (smooth surfaces)"
+url = "https://arxiv.org/abs/2007.00089v3"
+fetched_from = "https://arxiv.org/pdf/2007.00089v3"
+fetched_at = "2026-11-08T23:15:34Z"
+sha256 = "7ad5f60b0688b6a83e0c6f0128491ff617156a4dbf4ddd4a670c27e1a594b31d"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-08"
+version_note = "arXiv v3"
+cited_for = ["R4.9.6b"]
+
+[[source]]
+id = "lauer-csf-jordan-s2"
+authors = "Joseph Lauer"
+title = "The evolution of Jordan curves on $\\mathbb{S}^2$ by curve shortening flow"
+year = 2016
+arxiv = "1601.05704v1"
+locator_scheme = "section"
+locator = "round-sphere Jordan curve evolution"
+url = "https://arxiv.org/abs/1601.05704v1"
+fetched_from = "https://arxiv.org/pdf/1601.05704v1"
+fetched_at = "2026-11-08T23:15:39Z"
+sha256 = "1e50328324f68f33bf0f37c4ba44f24cb005b0883c7aa8adacd9449a3d477ed6"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-08"
+version_note = "arXiv v1"
+cited_for = ["R4.9.6a"]
+
+[[source]]
+id = "allen-layne-tsukahara-dirichlet-csf"
+authors = "Paul T. Allen, Adam Layne, Katharine Tsukahara"
+title = "The Dirichlet problem for curve shortening flow"
+year = 2012
+arxiv = "1208.3510v2"
+locator_scheme = "section"
+locator = "fixed-endpoint flow in convex domains"
+url = "https://arxiv.org/abs/1208.3510v2"
+fetched_from = "https://arxiv.org/pdf/1208.3510v2"
+fetched_at = "2026-11-08T23:15:45Z"
+sha256 = "4b61ebc3d0995cbed8470f89f93141fba5492509696ca38f1663d993e73f5ca1"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-08"
+version_note = "arXiv v2"
+cited_for = ["R4.9.6b"]
+
+[[source]]
+id = "dobbins-csf-continuous-dependence"
+authors = "Michael Gene Dobbins"
+title = "Continuous dependence of curvature flow on initial conditions"
+year = 2021
+arxiv = "2106.08907v1"
+locator_scheme = "theorem"
+locator = "Lemma 2.2"
+url = "https://arxiv.org/abs/2106.08907v1"
+fetched_from = "https://arxiv.org/pdf/2106.08907v1"
+fetched_at = "2026-11-08T23:15:51Z"
+sha256 = "57d44c79b141e4ea72903e1c2ce8dfc94d9fe2c4a18141eb25db1a8232f67595"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-08"
+version_note = "arXiv v1"
+cited_for = ["R4.9.6a"]
+
+[[source]]
+id = "gage-csf-surfaces"
+locator_scheme = "section"
+locator = "surface evolution, continuation and derivative estimates"
+url = "https://www.numdam.org/item/ASENS_1990_4_23_2_229_0/"
+fetched_from = "https://www.numdam.org/item/ASENS_1990_4_23_2_229_0.pdf"
+fetched_at = "2026-11-08T23:15:52Z"
+sha256 = "c759917f89b3825919924d29db342e2a8709ae88f8ef0e4dda70af792edfdccb"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-08"
+cited_for = ["R4.9.6b"]
 
 [[source]]
 id = "zhu-ricci-comparison"
