@@ -3550,7 +3550,7 @@
   },
   {
    "slug": "cuspidal-newton-bound",
-   "needs": "V. Lafforgue's estimate (Bull. SMF 139 (2011), Proposition 2.1): for a split reductive group over a global function field and a cuspidal Hecke eigenform with coefficients in Q̄_p, the Newton point of the Satake parameter at every unramified place v, normalized by v(q_v) = 1, is dominated by half the sum of the positive coroots of the dual group.",
+   "needs": "V. Lafforgue's estimate (Bull. SMF 139 (2011), Proposition 2.1): for a split reductive group over a global function field and a nonzero cuspidal Hecke eigenform with coefficients in Q̄_p and finite-order central character, the Newton point of the Satake parameter at every unramified place v, normalized by v(q_v) = 1, is dominated by half the sum of the positive coroots of the dual group.",
    "supplier": "GlobalShtukasAndFunctionFieldLanglands",
    "section": "Layer 0 §0.14"
   },
@@ -3582,7 +3582,19 @@
    "slug": "scalar-kloosterman-ordinarity",
    "needs": "For every prime p, every rank r ≥ 2 and every closed point a of 𝔾_m over 𝔽_q, the Frobenius eigenvalues at a of the weight-zero Kloosterman sheaf (equivalently of its p-adic companion), normalized by v(q^{deg a}) = 1, have valuations −(r−1)/2, −(r−3)/2, …, (r−1)/2, each once, with no condition relating p and r (Sperber 1980, Theorem (2.35), for p > r + 2; Wan 1993, by the boundary decomposition, in general).",
    "supplier": "KloostermanMomentsAndPotentialAutomorphy",
-   "section": "KM.1 (Kloosterman sheaves and normalized monodromy)"
+   "section": "Layer 1 §§1.1, 1.3 (normalized Kloosterman sheaves and monodromy)"
+  },
+  {
+   "slug": "dense-convergence-detection",
+   "needs": "For a smooth curve with smooth formal lift, a finite locally free module with integrable connection on its tube is convergent if its restriction over a Zariski dense open of the special fibre is convergent, without assuming Frobenius (Xu–Zhu §4.2.7, p. 45; Miyatani proof of Theorem 4.1.3, p. 30).",
+   "supplier": "PadicDifferentialEquationsAndRigidCohomology",
+   "section": "Layer RD.3 (§§RD.3.33, RD.3.37)"
+  },
+  {
+   "slug": "critical-center-rational-forms",
+   "needs": "The vacuum and completed critical centres and their oper identifications for pinned split semisimple Chevalley Lie algebras over any characteristic-zero field, with a rational form and compatibility with field extension, extending the complex centre theorems of A7–A8.",
+   "supplier": "AffineLieAlgebras",
+   "section": "A7–A8 (vacuum and completed critical centres)"
   }
  ],
  "sourceIssues": [

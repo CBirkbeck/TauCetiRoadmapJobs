@@ -37,6 +37,10 @@ The following headline theorems are not statable at the pins, and nothing is sta
   comparison (README §§7.5, 7.6): no `ℓ`-adic local systems on `𝔾_m`;
 * the characteristic-two isomorphism `Be_{2n+1}† ≅ Be†_{SO_{2n+1},Std}` (README §10.6): no
   overconvergent F-isocrystals; its trace consequence is `orthogonalSum_sub_card_eq_kloostermanSum`;
+* Miyatani's arithmetic hypergeometric construction for two rational parameter sequences with
+  nonintegral upper/lower differences, of rank the larger length, on `𝔾_m` in unequal lengths
+  and on `𝔾_m \ {1}` in equal positive lengths, with convolution and trace compatibility
+  (README §9.1): no arithmetic `D`-module or curve-isocrystal carrier;
 * adjoint cohomological rigidity and the simple-wild local parameter at `∞` (README §§6.6, 11.5):
   no rigid cohomology with coefficients and no local Weil parameters valued in `H`.
 -/
@@ -82,40 +86,42 @@ theorem signed_dwork_congruence {R K : Type*} [CommRing R] [IsDomain R]
 
 /-- The raw rank-`k` Kloosterman sum `∑_{x₁ ⋯ x_k = a} ψ(x₁ + ⋯ + x_k)` over unit tuples, with no
 normalizing factor. -/
-noncomputable def kloostermanSum {F : Type*} [Field F] [Fintype F] {K : Type*} [Field K]
+noncomputable def kloostermanSum {F : Type*} [Field F] [Finite F] {K : Type*} [Field K]
     (ψ : AddChar F K) (k : ℕ) (a : Fˣ) : K := by
   classical
-  exact ∑ x : Fin k → Fˣ with ∏ i, x i = a, ψ (∑ i, (x i : F))
+  exact ∑ᶠ x : Fin k → Fˣ, if ∏ i, x i = a then ψ (∑ i, (x i : F)) else 0
 
 /-- The even orthogonal exponential sum
 `U_n(a) = ∑_{x₁, …, x_{2n} ∈ Fˣ} ψ(x₁ + ⋯ + x_{2n} + a (x₁ + x₂) / (x₁ ⋯ x_{2n}))`,
 written with the two distinguished variables `x₁, x₂` first; it is meant for `n ≥ 1`. -/
-noncomputable def orthogonalSum {F : Type*} [Field F] [Fintype F] {K : Type*} [Field K]
+noncomputable def orthogonalSum {F : Type*} [Field F] [Finite F] {K : Type*} [Field K]
     (ψ : AddChar F K) (n : ℕ) (a : Fˣ) : K := by
   classical
-  exact ∑ x : Fin 2 → Fˣ, ∑ y : Fin (2 * n - 2) → Fˣ,
+  exact ∑ᶠ x : Fin 2 → Fˣ, ∑ᶠ y : Fin (2 * n - 2) → Fˣ,
     ψ ((x 0 : F) + x 1 + ∑ i, (y i : F)
       + (a : F) * ((x 0 : F) + x 1) * (((x 0 * x 1 * ∏ i, y i)⁻¹ : Fˣ) : F))
 
-/-- The quadratic character of a finite field, with values in `K`. -/
-noncomputable def quadraticCharIn (F : Type*) [Field F] [Fintype F] (K : Type*) [Field K] :
+/-- Mathlib's integer-valued quadratic character of a finite field, transported to `K`. -/
+noncomputable def quadraticCharIn (F : Type*) [Field F] [Finite F] (K : Type*) [Field K] :
     MulChar F K := by
   classical
+  letI := Fintype.ofFinite F
   exact (quadraticChar F).ringHomComp (Int.castRingHom K)
 
 /-- The hypergeometric sum with `N` upper parameters and one quadratic lower parameter,
 `H_N(b) = ∑_{x₁ ⋯ x_N = b y} ψ(x₁ + ⋯ + x_N − y) ρ(y)`, where `y` is eliminated as
-`(x₁ ⋯ x_N) / b`. -/
-noncomputable def quadraticHypergeometricSum {F : Type*} [Field F] [Fintype F]
+`(x₁ ⋯ x_N) / b` for `b ≠ 0`; the total expression is zero at `b = 0`. -/
+noncomputable def quadraticHypergeometricSum {F : Type*} [Field F] [Finite F]
     {K : Type*} [Field K] (ψ : AddChar F K) (N : ℕ) (b : F) : K := by
   classical
-  exact ∑ x : Fin N → Fˣ,
+  exact ∑ᶠ x : Fin N → Fˣ,
     ψ (∑ i, (x i : F) - ((∏ i, x i : Fˣ) : F) * b⁻¹)
       * quadraticCharIn F K (((∏ i, x i : Fˣ) : F) * b⁻¹)
 
 /-- The additive character `x ↦ ψ₀(Tr_{F/𝔽_p}(x))` of a finite field with a `ZMod p`-algebra
-structure. -/
-noncomputable def traceChar (p : ℕ) (F : Type*) [Field F] [Algebra (ZMod p) F]
+structure, with `p` prime. -/
+noncomputable def traceChar (p : ℕ) [Fact p.Prime] (F : Type*) [Field F] [Finite F]
+    [Algebra (ZMod p) F]
     {K : Type*} [Field K] (ψ₀ : AddChar (ZMod p) K) : AddChar F K :=
   ψ₀.compAddMonoidHom (Algebra.trace (ZMod p) F).toAddMonoidHom
 
@@ -124,10 +130,10 @@ corrected in README §11.1). Over a finite field of characteristic two and for t
 `ψ₀ ∘ Tr`, `U_n(a) − |F|` equals the raw Kloosterman sum of rank `2n + 1`; at `n = 1` this is
 Carlitz's identity `Kl₂(a)² − |F| = Kl₃(a)`. It is the trace identity of the isomorphism
 `Be_{2n+1}† ≅ Be†_{SO_{2n+1},Std}`. -/
-theorem orthogonalSum_sub_card_eq_kloostermanSum (F : Type*) [Field F] [Fintype F]
+theorem orthogonalSum_sub_card_eq_kloostermanSum (F : Type*) [Field F] [Finite F]
     [Algebra (ZMod 2) F] {K : Type*} [Field K] (ψ₀ : AddChar (ZMod 2) K) (hψ₀ : ψ₀ ≠ 1)
     (n : ℕ) (hn : 1 ≤ n) (a : Fˣ) :
-    orthogonalSum (traceChar 2 F ψ₀) n a - Fintype.card F
+    orthogonalSum (traceChar 2 F ψ₀) n a - Nat.card F
       = kloostermanSum (traceChar 2 F ψ₀) (2 * n + 1) a := by
   sorry
 
@@ -136,10 +142,10 @@ corrected in README §11.1). Over a finite field of odd characteristic, for ever
 character `ψ`, with `g = ∑_y ρ(y) ψ(−y)` the quadratic Gauss sum,
 `g · (U_n(a) − |F|) = H_{2n+1}(4a)`. At `n = 1` this is Katz's identity relating
 `Kl₂(a)² − |F|` to a quadratic hypergeometric sum. -/
-theorem gaussSum_mul_orthogonalSum_sub_card (F : Type*) [Field F] [Fintype F]
+theorem gaussSum_mul_orthogonalSum_sub_card (F : Type*) [Field F] [Finite F]
     (hF : ringChar F ≠ 2) {K : Type*} [Field K] (ψ : AddChar F K) (hψ : ψ ≠ 1)
     (n : ℕ) (hn : 1 ≤ n) (a : Fˣ) :
-    gaussSum (quadraticCharIn F K) ψ⁻¹ * (orthogonalSum ψ n a - Fintype.card F)
+    (∑ᶠ y : F, quadraticCharIn F K y * ψ (-y)) * (orthogonalSum ψ n a - Nat.card F)
       = quadraticHypergeometricSum ψ (2 * n + 1) (4 * (a : F)) := by
   sorry
 
@@ -147,10 +153,10 @@ theorem gaussSum_mul_orthogonalSum_sub_card (F : Type*) [Field F] [Fintype F]
 half twist and sign corrected in README §9.4 and §11.1). Over every finite field and for every
 nontrivial additive character, for `N ≥ 2`,
 `U_N(a) − |F| = ∑_{uv = a} (Kl₂(u)² − |F|) · Kl_{2N−2}(v)` in raw sums. -/
-theorem orthogonalSum_sub_card_eq_convolution (F : Type*) [Field F] [Fintype F]
+theorem orthogonalSum_sub_card_eq_convolution (F : Type*) [Field F] [Finite F]
     [DecidableEq F] {K : Type*} [Field K] (ψ : AddChar F K) (hψ : ψ ≠ 1) (N : ℕ) (hN : 2 ≤ N) (a : Fˣ) :
-    orthogonalSum ψ N a - Fintype.card F
-      = ∑ u : Fˣ, (kloostermanSum ψ 2 u ^ 2 - Fintype.card F)
+    orthogonalSum ψ N a - Nat.card F
+      = ∑ᶠ u : Fˣ, (kloostermanSum ψ 2 u ^ 2 - Nat.card F)
           * kloostermanSum ψ (2 * N - 2) (a * u⁻¹) := by
   sorry
 
@@ -160,14 +166,14 @@ theorem orthogonalSum_sub_card_eq_convolution (F : Type*) [Field F] [Fintype F]
 `v(β_i) = i · v(|F|)` such that for every finite extension `L/F`,
 `U_n(a) − |L| = ∑ᵢ β_i^{[L:F]}`, the sums over `L` being taken with the character `ψ₀ ∘ Tr_{L/𝔽_p}`.
 The `β_i` are `|F|^n` times the Frobenius eigenvalues of `Be†_{SO_{2n+1},Std}` at `a`. -/
-theorem orthogonalSum_ordinary (p : ℕ) [Fact p.Prime] (F : Type) [Field F] [Fintype F]
+theorem orthogonalSum_ordinary (p : ℕ) [Fact p.Prime] (F : Type) [Field F] [Finite F]
     [Algebra (ZMod p) F] (ψ₀ : AddChar (ZMod p) ℂ_[p]) (hψ₀ : ψ₀ ≠ 1)
     (n : ℕ) (hn : 1 ≤ n) (a : Fˣ) :
     ∃ β : Fin (2 * n + 1) → ℂ_[p],
-      (∀ i, ‖β i‖ = ‖(Fintype.card F : ℂ_[p])‖ ^ (i : ℕ)) ∧
-      ∀ (L : Type) [Field L] [Fintype L] [Algebra (ZMod p) L] [Algebra F L],
+      (∀ i, ‖β i‖ = ‖(Nat.card F : ℂ_[p])‖ ^ (i : ℕ)) ∧
+      ∀ (L : Type) [Field L] [Finite L] [Algebra (ZMod p) L] [Algebra F L],
         orthogonalSum (traceChar p L ψ₀) n (Units.map (algebraMap F L : F →* L) a)
-            - Fintype.card L
+            - Nat.card L
           = ∑ i, β i ^ Module.finrank F L := by
   sorry
 
