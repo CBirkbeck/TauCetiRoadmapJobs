@@ -5420,18 +5420,6 @@
       "section": "Layer 2"
     },
     {
-      "slug": "gonality-norm-and-base-change",
-      "needs": "On smooth proper geometrically connected curves over algebraically closed fields, provide gonality as the minimum positive degree of a finite map to the projective line, comparison with the minimum finite degree [K:k(f)] over transcendental f in the function field K, realization by a base-point-free pencil, invariance under algebraically closed extension, gon(D)≤gon(B) under a nonconstant finite map B→D, gon≤g+1, and gonality 1 and 2 in genera zero and one.",
-      "supplier": "AlgebraicCurves",
-      "section": "Layer 12, with Layers 3–5"
-    },
-    {
-      "slug": "singular-metric-li-yau",
-      "needs": "For a compact Riemann surface with a finite-area conformal metric smooth off finitely many cone points and cusps, prove λ_* Area≤8π gonality, where λ_* is the infimum of the nonconstant mean-zero Friedrichs energy quotient, using conformal balancing and degree-d maps to the round sphere of area 4π, including cutoff approximation at every singular point.",
-      "supplier": "RiemannianGeometry",
-      "section": "R7.0 and R8"
-    },
-    {
       "slug": "free-locus-and-relative-cycle",
       "needs": "For a finite group acting on a projective characteristic-zero scheme, prove that its finite quotient is étale over the image of the free locus, and construct the base-change-compatible norm cycle morphism of a finite flat degree-n family to the permutation quotient SymⁿZ with every fibre length retained.",
       "supplier": "SchemeAndStackFoundations",
