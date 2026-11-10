@@ -1,0 +1,13 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-IntegrableSystems~19",
+  "head": "860e384ff4b9fdbdde797d312ab93c41dc2dc5f8",
+  "pr": 1651,
+  "folder": "SymplecticGeometry/IntegrableSystems",
+  "date": "2026-11-10",
+  "findings": 0,
+  "blocking": 0,
+  "notes": "incremental re-review of 0 changed lines since c955776. Folder byte-identical; the pull request changed one docstring line in the sibling ConvexityToric/Suggested.lean. Worker gate passes (own run: only outside-folder=4 for the pull request's sibling folders); depcheck 0 problems; Suggested.lean elaborates with four sorry warnings only; #check of all six declarations equals signatures.md; one-tactic padding probe closes none; sibling anchors (ConvexityToric Layer 1, CotangentLagrangian C3/C3.1) and 13 main citations re-resolved (suppliers unchanged between main 641f296 and 08d58bb); pins unchanged (Tau Ceti 2fd255d, Mathlib 1b1ccf4); overlaps: only the pin bump #1187, ordered after this pull request; seeded sample in untouched text, adversarial rows carried with values from ~18."
+ }
+}
