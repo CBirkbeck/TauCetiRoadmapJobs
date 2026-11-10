@@ -1,0 +1,10 @@
+{
+  "review": {
+    "status": "needs_changes",
+    "reviewer": "independent-review-REV-DESIGN-GaloisActionOnEtaleCohomology~2",
+    "date": "2026-11-10",
+    "findings": 8,
+    "blocking": 4,
+    "notes": "All seven previous findings repaired. Read all 20 targets and 72 plan tests, checked all 15 seeded source targets against seven cached texts and recorded four settled uncertified works. Computed adversarial witnesses cover every target and headline family. New blockers: rationalisation topology, tensor coefficient/derived-category scope, disconnected neighbourhoods, inseparable quadratic Check. Supplier and object-ownership audit used main and indexed open heads; dependency gate: 234 roadmaps, 2115 edges, 0 problems. The proper-rigid-finiteness gap remains precise and owned. No Suggested.lean exists at design stage; elaboration not available (this lane does not elaborate), no Lean command or padding probe run. Actual supplied library pins inspected; no design or source manifest edits."
+  }
+}
