@@ -440,6 +440,14 @@ Work in the unramified setting, with n=a+b. Define ξ_F on the spherical Hecke a
 
 A proof route computes both composites on Laurent variables and descends to symmetric Laurent polynomials by injectivity of the Satake transform (Source corrections, E10).
 
+API:
+
+- ξ_F maps H_n,F=H(GL_n(F),K_n,F) to H_a,F⊗H_b,F, the spherical Hecke algebra of GL_a(F)×GL_b(F) for K_a,F×K_b,F.
+- For f∈H_n,F, ξ_F(f)(m₁,m₂)=|det m₁|_F^(b/2)|det m₂|_F^(a/2)f^P(m₁,m₂), where f^P is the δ_P^(1/2)-normalized descent along the upper parabolic P_(a,b) with vol N_(a,b)(O_F)=1 and δ_P(m₁,m₂)=|det m₁|_F^b|det m₂|_F^(−a); equivalently ξ_F(f)(m)=|det m₁|_F^b∫_N f(mu)du.
+- The normalized Satake transform of ξ_F(f) is that of f with T_i↦q^(−b/2)X_i for i≤a and T_j↦q^(−a/2)Y_j for j>a.
+- ξ_F is a unital homomorphism of complex algebras, being normalized descent followed by multiplication by an unramified character of the Levi.
+- With BC_(a,b)=BC_a⊗BC_b, the square BC_(a,b)∘ξ_E=ξ_F∘BC_n commutes.
+
 **Checks.**
 
 - For a=b=1 the first Satake variable goes by either composite to q⁻¹X²: (q^(−1/2)X)²=q⁻¹X².
@@ -565,17 +573,18 @@ Used by §§3.5 and 3.6.
 
 ### 3.5 Cyclic determinant factors and the descent Jacobian
 
-Let x=diag(x_a,x_b) with separable, disjoint block spectra, v=(v_a,v_b) cyclic in each block, Ω=Ω_a∧Ω_b and D_ab=∏_(λ_a,λ_b)(λ_a−λ_b)≠0. In the field setting, prove that ω=η(det[v,xv,…,x^(n−1)v]/Ω) satisfies ω_n=η((−1)^(ab)D_ab)ω_aω_b, every displayed cyclic determinant being nonzero. In the unramified setting, for the generalized nilpotent distribution at the truncated arguments u=(v_a,0), u*=(0,u_b*) with u_b* cyclic on the b-block, prove that additive parabolic descent satisfies G_n(f)=|D_ab|_F⁻¹G_(a,b)(f_p), with the compact average, Haar measures and surviving cyclic coordinates of §3.4. Thus in the unramified endoscopic diagram the reciprocal descent Jacobian and the cyclic factor give η(D_ab)|D_ab|_F, the rational-class correction being the imported κ(inv) (Xiao18, Lemma 5.1, pp. 21–22; proof of Theorem 6.1, p. 24; Source corrections, E14).
+Let x=diag(x_a,x_b) with separable, disjoint block spectra, v=(v_a,v_b) and v*=(v_a*,v_b*) cyclic in each block, Ω=Ω_a∧Ω_b and D_ab=∏_(λ_a,λ_b)(λ_a−λ_b)≠0. In the field setting, prove that ω=η(det[v,xv,…,x^(n−1)v]/Ω) satisfies ω_n=η((−1)^(ab)D_ab)ω_aω_b, every displayed cyclic determinant being nonzero; this identity uses the full cyclic vectors. For the descent, decompose F[x_a]=∏F_i and F[x_b]=∏F_j separately into field factors, so that F[x]=F[x_a]×F[x_b] and S₁=S₁(a)⊔S₁(b), where S₁(a) and S₁(b) are the factors of the two blocks with E⊗_F F_i a field. In the unramified setting, prove that additive parabolic descent satisfies G_(S₁(a))(f)=|D_ab|_F⁻¹G_(a,b)(f_p), where the left side is the distribution of §3.2 in rank n at (x,v,v*) with Σ=S₁(a), and G_(a,b) is the product of the §3.2 distributions G_(S₁(a)) at (x_a,v_a,v_a*) and G_∅ at (x_b,v_b,v_b*), extended from pure tensors by linearity. So the vector survives exactly on the factors in S₁(a) and the covector exactly on the factors in S₁(b), both coordinates are zero on every factor outside S₁, the mixed case with factors outside S₁ is included, and the compact average and Haar measures are those of §3.4. Thus in the unramified endoscopic diagram the reciprocal descent Jacobian and the cyclic factor give η(D_ab)|D_ab|_F, the rational-class correction being the imported κ(inv) (Xiao18, §2.1, conditions (1)–(3) before equation (2), p. 4; Lemma 5.1, pp. 21–22; proof of Theorem 6.1, p. 24; Source corrections, E14).
 
 *Needs:* §§3.1, 3.2, 3.3, 3.4; gap:jr-local-comparison; gap:unitary-factor-all-quadratic.
 
-A proof route factors the ordered Vandermonde determinant: the cross factors are λ_b−λ_a, and pulling out the two block determinants leaves (−1)^(ab)D_ab. On the off-block matrix space the map u↦x_au−ux_b has determinant D_ab, so the change of additive variables gives |D_ab|_F⁻¹. The unramified character is trivial on K_n,F, so the compact average agrees with §3.4. The normalization comparison uses the ordinary factor of gap:unitary-factor-all-quadratic.
+A proof route factors the ordered Vandermonde determinant: the cross factors are λ_b−λ_a, and pulling out the two block determinants leaves (−1)^(ab)D_ab. For the descent, write g=knm with m in the Levi; the centralizer T of x lies in the Levi, and since the surviving vector has zero b-block and the surviving covector zero a-block, both are fixed by the upper unipotent radical, so the N-integral passes to the matrix argument alone. On the off-block matrix space the map u↦x_au−ux_b has determinant D_ab, so the change of additive variables gives |D_ab|_F⁻¹. The unramified character is trivial on K_n,F, so the compact average agrees with §3.4. Since the arguments in each rank are those of §3.2, the inner values at s=0 are constant on T-cosets in both ranks; a nonzero coordinate on a factor outside S₁ breaks this (fourth Check). The normalization comparison uses the ordinary factor of gap:unitary-factor-all-quadratic.
 
 **Checks.**
 
 - For a=b=1, v_a=v_b=1 and x=diag(x_a,x_b), the cyclic determinant is x_b−x_a=−D_ab; over an unramified extension η(−1)=1, so ω_n=η(D_ab)ω_aω_b.
 - For F=ℚ₃, E=ℚ₃(√3), x_a=0, x_b=1: D_ab=−1, η(−1)=−1 and ω_n=η(1)=1. The signed formula gives η((−1)D_ab)=η(1)=1; the unsigned formula would give η(−1)=−1.
 - In the unramified a=b=1 descent with x_a−x_b=π, the off-block map is multiplication by π, of modulus q⁻¹, and the raw orbital integral acquires the factor q=|D_ab|_F⁻¹; the ordinary factor is η(π)|π|_F=−q⁻¹.
+- Mixed factors: F=ℚ₃, E=ℚ₃(√2) (unramified, 2 being a nonsquare mod 3), a=2, b=1, x=diag(x_a,1) with x_a=[[0,2],[1,0]], v=(1,0,1) and v*=e₁*+e₃*, cyclic in each block. Then F[x_a]≅E, so E⊗_F F[x_a] is split, S₁(a)=∅ and S₁(b) is the single b-factor; the prescribed arguments are the vector 0 and the covector e₃*. Here D_ab=(√2−1)(−√2−1)=−1, and the full cyclic matrix [[1,0,2],[0,1,0],[1,1,1]] has determinant −1=(−1)^(ab)D_ab·1·1. Take the test 1_(x+3M₃(ℤ₃))(z)·1_(e₁+3ℤ₃³)(u)·1_(ℤ₃²×ℤ₃^×)(u*). Keeping instead the vector e₁ on the split a-factor gives inner value 1 at g=I and 0 at g=diag(3,3,1), which lies in T and represents the same coset, so the outer integral over GL₃(F)/T is not defined. With the prescribed vector 0 both values are 0, and replacing the vector factor by 1_(3ℤ₃³) gives 1 at both.
 
 ### 3.6 From augmented Jacquet–Rallis to cyclic endoscopic transfer
 
@@ -583,13 +592,14 @@ Work in the unramified setting. Assume that for every positive rank m and every 
 
 *Needs:* §§1.4, 2.2, 2.3, 3.1, 3.3, 3.4, 3.5; SmoothRepresentationsOfLocalGroups §SR.4.3 (*parabolic-descent*); EndoscopicTransferAndUnitaryTraceComparison §§2.1, 2.4, 2.9, 2.11, 4.9; gap:jr-local-comparison; gap:unitary-factor-all-quadratic.
 
-A proof route takes the upper test (φ∗e_0)⊗1_(Λ_n), whose value at zero vector is φ∗e_0 (Source corrections, E07); applies §3.3 to the source κ-sums and the target stable sums, where the counts satisfy r_n=r_a+r_b so that the averaging factors cancel; identifies the descended linear test by §§3.4 and 2.2; and applies §3.5 with the ordinary factor contract. Only the reference/reference lower-rank test is nonzero, so no general signed four-form operator is used (Source corrections, E12).
+A proof route takes the upper test (φ∗e_0)⊗1_(Λ_n), whose value at zero vector is φ∗e_0 (Source corrections, E07); applies §3.3 to the source κ-sums and the target stable sums at the arguments of §3.5, that is with Σ=S₁(a) in rank n and with Σ=S₁(a) and Σ=∅ in the a- and b-blocks. Then κ_(S₁(a))=∏_(i∈S₁(b))η_i is the endoscopic character on the source, the a-block character is trivial, and the b-block character ∏_(i∈S₁(b))η_i(ζ_i)=η(N_(F[x_b]/F)(ζ)) is constant on each Hermitian form of rank b, since the discriminant of the form attached to ζ is that of ζ=1 times N_(F[x_b]/F)(ζ). With the nonreference lower-rank tests zero, the a-block sum is a stable sum and the b-block sum is the stable sum on the reference form times the value of that character there, which is κ_(S₁(a)) at the rank-n orbit whose two block components lie on the reference forms; basing the source κ-sum at that orbit cancels it. The counts satisfy r_n=r_a+r_b, so the averaging factors cancel. The route then identifies the descended linear test by §§3.4 and 2.2 and applies §3.5 with the ordinary factor contract. Only the reference/reference lower-rank test is nonzero, so no general signed four-form operator is used (Source corrections, E12).
 
 **Checks.**
 
 - For F[x]=F×F, a=b=1 and unramified E, r_n=2 and r_a=r_b=1; the source averaging coefficient is 1/4=(1/2)(1/2), so no factor 2 remains.
 - For a=b=1 and x−y=π the factor comparison gives −q⁻¹; omitting the descent modulus would give −1.
 - The nonreference lower-rank tests are 0, so the four-form combination is the reference/reference term plus three zero terms, and no sign convention for those terms enters.
+- For a=b=1, F[x]=F×F, v=(1,1) and v*=(c_a,c_b), the b-block form attached to ζ_b is ⟨c_bζ_b⟩, so its reference orbits have η(ζ_b)=η(c_b) and the b-block sum is η(c_b) times the stable sum; the rank-n orbit with both block components on ⟨1⟩ has κ_(S₁(a))=η(c_b) as well. For c_b a nonnorm, dropping this sign on one side only gives the negative of the correct identity.
 
 ### 3.7 The Weil action on the sum of orbital-image spaces
 
@@ -752,6 +762,15 @@ Work in the unramified setting. For d≥0 let c_n,d∈H_n,E be the indicator of 
 
 A proof route counts upper-unipotent entries in the Iwasawa decomposition: for a diagonal valuation tuple m the measure is q^(Σ2(i−1)m_i), and the normalized Satake modulus combines with it to the uniform coefficient q^(d(n−1)). The two scalings of ξ_E split total degree between the a and b blocks. For the pushforward, determinant valuation doubles under the Gram map, and §4.2 applies to c_n,d.
 
+API:
+
+- c_n,d is the indicator of the compact open set of g∈M_n(O_E) with v_E(det g)=d, a K_n,E-biinvariant element of H_n,E.
+- c_n,d is the finite sum of the 1_(Kπ^λK) over dominant λ with λ_n≥0 and |λ|=d, one term for each partition of d into at most n parts.
+- c_n,0=1_(K_n,E), the unit of H_n,E.
+- The normalized Satake transform of c_n,d is q^(d(n−1))h_d(Z₁,…,Z_n).
+- The contraction grade is c_n,d∗e_0=Φ_n,2d.
+- ξ_E(c_n,d)=Σ_(d_a+d_b=d)c_a,d_a⊗c_b,d_b, a sum of d+1 terms; on Satake transforms this is the exponent identity d(n−1)−bd_a−ad_b=d_a(a−1)+d_b(b−1).
+
 **Checks.**
 
 - For n=2, d=1, Sat(c_(2,1))=q(Z₁+Z₂), and ξ_E substitutes q⁻¹X, q⁻¹Y, giving X+Y=Sat(c_(1,1)⊗1+1⊗c_(1,1)).
@@ -821,7 +840,7 @@ API:
 - For n=2, a=b=1 and f=c_2,1∗e_0, ξ_X(f)=e_(2)⊗e_(0)+e_(0)⊗e_(2).
 - For the noncyclic f=H_n⁻¹(1_(K diag(π,1,…,1) K)), (H_a⊗H_b)(ξ_X(f)) is ξ_F of that double-coset indicator; it is not zero.
 - For f=1_(πK_n,E)∗e_0 the image is q^(−2ab) times the tensor product of the two central cyclic indicators.
-- For n=2, a=b=1 and the noncyclic f=e_(1,0): H_2(e_(1,0))=−T_(1,0),F; ξ_F sends √q(T₁+T₂) to X+Y, so ξ_F(T_(1,0),F)=T_1⊗1+1⊗T_1, and H_1⁻¹(T_1)=e_1. Hence ξ_X(e_(1,0))=−(e_1⊗e_0+e_0⊗e_1); the opposite dictionary would give the opposite sign.
+- For n=2, a=b=1 and the noncyclic f=e_(1,0): H_2(e_(1,0))=−T_(1,0),F; ξ_F sends √q(T₁+T₂) to X+Y, so ξ_F(T_(1,0),F)=T_1⊗1+1⊗T_1, and H_1⁻¹(T_1)=e_1. Hence ξ_X(e_(1,0))=−(e_1⊗e_0+e_0⊗e_1). Changing the dictionary to U_i↦T_i in every rank leaves this value unchanged: then H_2(e_(1,0))=T_(1,0),F, ξ_F gives T_1⊗1+1⊗T_1, and H_1⁻¹(T_1)=−e_1. In general the simultaneous sign substitution commutes with the two Levi scalings, so it cancels in ξ_X. The mixed convention, with U_i↦T_i in rank two and the inverses of the rank-one isomorphisms with U_i↦−T_i, gives +(e_1⊗e_0+e_0⊗e_1) and is excluded by this value.
 
 ### Examples
 
