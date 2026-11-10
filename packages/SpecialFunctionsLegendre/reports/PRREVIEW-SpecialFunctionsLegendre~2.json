@@ -1,0 +1,13 @@
+{
+  "review": {
+    "status": "needs_changes",
+    "reviewer": "independent-review-PRREVIEW-SpecialFunctionsLegendre~2",
+    "head": "2742ccd7c56a718de95e7e633561744e883742b5",
+    "pr": 2121,
+    "folder": "SpecialFunctionsLegendre",
+    "date": "2026-11-10",
+    "findings": 14,
+    "blocking": 6,
+    "notes": "incremental re-review of 0 changed lines since 9585279. The folder and the description are unchanged, so all 14 previous findings (R01 P1; R02-R06 P2; R07-R14 P3) are not repaired and are raised again; no new finding. Checked: git diff 9585279..2742ccd empty; gate rerun (tex=23 FAIL, all other checks 0); depcheck rerun (236 roadmaps, 2270 edges, 0 problems, no UPWARD or CYCLE); lake env lean on Suggested.lean (41 sorry warnings only); witnesses of R01, R02, R05, R06 recomputed; supplier citations for R03, R04, R11 re-resolved at main ed7c546, the open heads and the pins; adversarial table carried forward from the previous report. DLMF was not re-read this round."
+  }
+}
