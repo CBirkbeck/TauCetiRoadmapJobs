@@ -16,7 +16,7 @@ sha256 = "aafa0637b9df9842c381c68f7a89df85db20920cfefcd6f9d72295a682c877ae"
 licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-05"
-version_note = "arXiv v2"
+version_note = "arXiv v2; Appendix B line 1328 reverses the written order of the composite with the embedding; the type-correct order is embedding after the manifold map"
 cited_for = ["4.2 class W^{1,p}_loc(M,N) of continuous maps (lines 22–23)", "4.3 weak differential (lines 22–26)", "5.1 operator norm ‖Df‖ (line 26)", "6.2, 6.4 Jacobian J_f and Jacobian measure (lines 25–27)", "6.3 borderline p = n (line 23)", "8.2 the class through a Nash embedding (lines 1328–1329)"]
 
 [[source]]
@@ -93,7 +93,8 @@ sha256 = "431192170fd8dafa744bbbd89e59c1aff9d85dbb08c0b5dc050a01b188747850"
 licence_class = "author-page"
 status = "certified"
 accessed = "2026-11-05"
-cited_for = ["4.1 ambient vector-valued class W^{1,p}(M,R^ν) (line 28)", "5.3 all Riemannian metrics on a compact manifold are equivalent (lines 104–106)", "8.2 extrinsic description (line 28)", "8.3, 8.4 the class {u ∈ W^{1,p}(M,R^ν) : u(x) ∈ N a.e.} for closed N (lines 23–28)", "Part II scope: density of smooth maps, Theorem 2.1 for p > dim M (lines 129–130) and the case p = dim M (lines 138–141), weakly p-harmonic maps (lines 37–53)"]
+version_note = "Author-hosted chapter; numbering refers to the cached text. The source uses compact smooth manifolds and finite exponents; the local C1 and infinite-exponent extensions are targets proved from the pinned weak-derivative APIs."
+cited_for = ["4.1 ambient vector-valued class W^{1,p}(M,R^ν) (line 28)", "5.3 all Riemannian metrics on a compact manifold are equivalent (lines 104–106)", "8.2 extrinsic description (line 28)", "8.3, 8.4 the class {u ∈ W^{1,p}(M,R^ν) : u(x) ∈ N a.e.} for closed N (lines 23–28)", "Part II scope: density of smooth maps, Theorem 2.1 for dim M < p < infinity (lines 129–130) and the case p = dim M >= 1 (lines 138–141), weakly p-harmonic maps (lines 37–53)"]
 
 [[source]]
 id = "Lee2012"
