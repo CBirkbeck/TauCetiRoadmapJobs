@@ -273,3 +273,17 @@ licence_class = "none"
 status = "uncertified"
 version_note = "paywalled; cited by its locator without the text"
 cited_for = ["6.9"]
+
+[[source]]
+id = "ambrosio-gigli-savare"
+authors = "Luigi Ambrosio, Nicola Gigli, Giuseppe Savaré"
+title = "Gradient Flows in Metric Spaces and in the Space of Probability Measures"
+year = 2008
+doi = "10.1007/978-3-7643-8722-8"
+locator_scheme = "theorem"
+locator = "Lemma 9.2.1"
+url = "https://doi.org/10.1007/978-3-7643-8722-8"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["9.4"]
