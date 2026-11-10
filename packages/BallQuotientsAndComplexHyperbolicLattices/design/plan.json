@@ -4,8 +4,8 @@
   "parent": null,
   "summary": "Complex hyperbolic n-space and PU(1,n) for every n ≥ 1, lattices of every kind with cusps, finite generation and Selberg's lemma, the analytic quotient, Mok's toroidal and projective minimal compactification, a big Picard extension theorem with Borel algebraicity and uniqueness of the algebraic model, the arithmetic bridge to Shimura data and Baily–Borel, and totally geodesic subvarieties and algebraic subvarieties of the ball times S_Γ, so that Baldi–Ullmo's theorems become library statements.",
   "baseline": {
-    "mathlib": "f6090c7095e1e56b3464c1daba5f24631f1290d2",
-    "tauceti": "358314d4ab97483df4fc4cb8adcc02e74a8d9f5a"
+    "mathlib": "1b1ccf4b088b32fa3f23f2de1127433254a81e1e",
+    "tauceti": "2fd255d997f47c0b5d834ee416c7015d55444ce5"
   },
   "layers": [
     {
@@ -79,17 +79,16 @@
           "id": "1.2",
           "kind": "definition",
           "name": "BallQuotient.PU",
-          "statement": "G = PU(1,n) = U(1,n)/centre with the quotient topology, and Ad: G → GL(M_{n+1}(ℂ)), [g] ↦ (X ↦ gXg⁻¹). G is a Hausdorff locally compact second-countable connected unimodular topological group with trivial centre; SU(1,n) → G is surjective with kernel μ_{n+1}; Ad is continuous, injective, with closed image and eigenvalues λᵢ/λⱼ; G = K·{g_t}·K.",
+          "statement": "G = PU(1,n) = U(1,n)/centre with the quotient topology, and Ad: G → GL(M_{n+1}(ℂ)), [g] ↦ (X ↦ gXg⁻¹). G is a Hausdorff locally compact second-countable topological group with trivial centre; SU(1,n) → G is surjective with kernel μ_{n+1}; Ad is continuous, injective, with closed image and eigenvalues λᵢ/λⱼ. The Cartan decomposition, connectedness and unimodularity are target 1.4.",
           "hypotheses": [
             "n ≥ 1"
           ],
           "locator": {
             "source": "BaldiUllmo2023",
-            "where": "line 492 to line 496; WitteMorris2015 line 1940 to line 1944"
+            "where": "line 492 to line 496"
           },
           "prerequisites": [
-            "target:1.1",
-            "target:1.4"
+            "target:1.1"
           ],
           "api": [
             {
@@ -103,19 +102,14 @@
               "statement": "The eigenvalues of Ad([g]) are the ratios of eigenvalues of g."
             },
             {
-              "name": "cartan_decomposition",
-              "role": "structure",
-              "statement": "G = K·{g_t}·K for g_t = h_t ⊕ 1."
-            },
-            {
-              "name": "unimodular",
-              "role": "structure",
-              "statement": "The modular function of G is trivial."
-            },
-            {
               "name": "su_surjective",
               "role": "constructor",
               "statement": "SU(1,n) → G is surjective with kernel the scalars μ_{n+1}·1."
+            },
+            {
+              "name": "trivial_centre",
+              "role": "structure",
+              "statement": "The centre of G is trivial: a lift commuting with U(1,n) up to scalars is diagonal and then scalar."
             }
           ],
           "tests": [
@@ -140,7 +134,7 @@
           "id": "1.3",
           "kind": "definition",
           "name": "BallQuotient.ball",
-          "statement": "The bounded model B = open unit ball of ℂⁿ, the projective description ι(w) = [1 : w] onto {[z] : ⟨z,z⟩ > 0}, the Siegel model 𝔖 = {ρ = Im v − |u|² > 0}, and the Cayley transform C(w′,wₙ) = (w′/(1−wₙ), i(1+wₙ)/(1−wₙ)), a biholomorphism B ≅ 𝔖 with inverse (2iu/(v+i), (v−i)/(v+i)), ρ∘C = (1−|w|²)/|1−wₙ|², extending to closures with b₀ ↦ ∞.",
+          "statement": "The bounded model B = open unit ball of ℂⁿ, the projective description ι(w) = [1 : w], the restriction to B of the inverse of the standard affine chart of index 0 (Tau Ceti), an open embedding and biholomorphism onto {[z] : ⟨z,z⟩ > 0} for Mathlib's quotient topology and Tau Ceti's analytic atlas, extending to a homeomorphism of the closed ball onto {[z] : ⟨z,z⟩ ≥ 0}; the Siegel model 𝔖 = {ρ = Im v − |u|² > 0}, and the Cayley transform C(w′,wₙ) = (w′/(1−wₙ), i(1+wₙ)/(1−wₙ)), a biholomorphism B ≅ 𝔖 with inverse (2iu/(v+i), (v−i)/(v+i)), ρ∘C = (1−|w|²)/|1−wₙ|², extending to closures with b₀ ↦ ∞.",
           "hypotheses": [
             "n ≥ 1; for n = 1 the u-coordinate is absent"
           ],
@@ -150,14 +144,19 @@
           },
           "prerequisites": [
             "mathlib:Projectivization",
+            "mathlib:Projectivization.instTopologicalSpace",
             "mathlib:Metric.ball",
+            "mathlib:EuclideanSpace.equiv",
+            "tauceti:Projectivization.affineOpenPartialHomeomorph",
+            "tauceti:Projectivization.instIsManifold",
+            "tauceti:Projectivization.contMDiff_affineChart_symm",
             "roadmap:ComplexKahlerGeometry K1"
           ],
           "api": [
             {
-              "name": "iota_bijective",
+              "name": "iota_open_embedding",
               "role": "characterisation",
-              "statement": "ι is a bijection onto positive lines and extends to the closed ball onto nonnegative lines."
+              "statement": "ι is the restriction of the inverse affine chart of index 0 (after reindexing Fin 1 ⊕ Fin n ≃ Fin (n+1) and EuclideanSpace.equiv), an open embedding onto positive lines, extending to a homeomorphism of the closed ball onto nonnegative lines."
             },
             {
               "name": "cayley_inverse",
@@ -190,6 +189,11 @@
               "name": "outside_point",
               "kind": "non-example",
               "statement": "C(0,2) = (0,−3i) has ρ = −3 < 0."
+            },
+            {
+              "name": "native_chart_n1",
+              "kind": "computation",
+              "statement": "n = 1: the chart of index 0 sends [1 : 1/2] to 1/2 and its inverse sends 1/2 to [1 : 1/2]; reindexing inl 0 to the last index would send [1 : 1/2] to 2."
             }
           ]
         },
@@ -197,13 +201,13 @@
           "id": "1.4",
           "kind": "theorem",
           "name": "BallQuotient.action_faithful_transitive",
-          "statement": "g·w = (c + Dw)/(a + bᵀw) defines a continuous action of U(1,n) on B, corresponding to [z] ↦ [gz], factoring through a faithful transitive action of G by biholomorphisms; K = Stab(0) is the image of U(1) × U(n), compact, ≅ U(n) via [diag(a,D)] ↦ a⁻¹D; the orbit map G/K → B is a G-equivariant homeomorphism, with continuous section w ↦ g_w.",
+          "statement": "g·w = (c + Dw)/(a + bᵀw) defines a continuous action of U(1,n) on B, corresponding to [z] ↦ [gz], factoring through a faithful transitive action of G by biholomorphisms; K = Stab(0) is the image of U(1) × U(n), compact, ≅ U(n) via [diag(a,D)] ↦ a⁻¹D; the orbit map G/K → B is a G-equivariant homeomorphism, with continuous section w ↦ g_w. G = K·{g_t}·K for g_t = h_t ⊕ 1 with tanh|t| = |g·0|; G is connected and unimodular.",
           "hypotheses": [
             "n ≥ 1"
           ],
           "locator": {
             "source": "BaldiUllmo2023",
-            "where": "line 486 to line 496; Goldman1999 Ch. 3"
+            "where": "line 486 to line 496; Goldman1999 Ch. 3; WitteMorris2015 line 1940 and line 1944 (unimodularity)"
           },
           "prerequisites": [
             "target:1.1",
@@ -212,7 +216,23 @@
             "tauceti:TauCeti.Matrix.isCompact_unitaryGroup",
             "mathlib:MulAction.stabilizer"
           ],
-          "api": [],
+          "api": [
+            {
+              "name": "cartan_decomposition",
+              "role": "structure",
+              "statement": "G = K·{g_t}·K for g_t = h_t ⊕ 1, with tanh|t| = |g·0|."
+            },
+            {
+              "name": "connected",
+              "role": "structure",
+              "statement": "G is connected, as the image of K × ℝ × K."
+            },
+            {
+              "name": "unimodular",
+              "role": "structure",
+              "statement": "The modular function of G is trivial: trivial on K and on g_t, which [diag(1,−1,1,…,1)] ∈ K conjugates to g_{−t}."
+            }
+          ],
           "tests": [
             {
               "name": "rotation_stabiliser",
@@ -228,9 +248,24 @@
               "name": "U_not_faithful",
               "kind": "non-example",
               "statement": "i·1 ∈ U(1,n) acts trivially; its image in G is 1."
+            },
+            {
+              "name": "cartan_parameter",
+              "kind": "computation",
+              "statement": "For g_w with w = (1/2,0,…,0), |t| = artanh(1/2) = (1/2) log 3; |t| = 1/2 would give |g·0| = tanh(1/2) ≈ 0.462."
+            },
+            {
+              "name": "second_K_needed",
+              "kind": "non-example",
+              "statement": "K·{g_t} has dimension n² + 1 < n² + 2n = dim G."
+            },
+            {
+              "name": "parabolic_not_unimodular",
+              "kind": "non-example",
+              "statement": "P_∞ = MAN is not unimodular: a_s scales the Lie algebra of N by s^{2n} (s² for n = 1, as a_{1/2}T_1a_{1/2}⁻¹ = T_{1/4})."
             }
           ],
-          "proofSketch": "Denominator nonvanishing from |a|² − |b|² = 1; explicit section g_w; tangent action of K is the standard representation."
+          "proofSketch": "Denominator nonvanishing from |a|² − |b|² = 1; explicit section g_w; tangent action of K is the standard representation; Cartan decomposition from transitivity of K on spheres and g_t·0 = (−i tanh t, 0, …, 0); modular function trivial on K and on g_t."
         },
         {
           "id": "1.5",
@@ -298,7 +333,7 @@
           "id": "1.6",
           "kind": "theorem",
           "name": "BallQuotient.pu11_equiv_psl2",
-          "statement": "Conjugation by the Cayley transform is an isomorphism of topological groups PU(1,1) ≅ PSL(2,ℝ) intertwining the actions on B¹ and UpperHalfPlane; ω corresponds to (dx²+dy²)/(2y²), so ω-areas are half the hyperbolic areas of FuchsianOrbifolds Layer 2.",
+          "statement": "Conjugation by the Cayley transform is an isomorphism of topological groups PU(1,1) ≅ PSL(2,ℝ) intertwining the actions on B¹ and UpperHalfPlane. The metric comparison is target 2.2.",
           "hypotheses": [
             "n = 1"
           ],
@@ -309,7 +344,6 @@
           "prerequisites": [
             "target:1.2",
             "target:1.4",
-            "target:2.2",
             "roadmap:FuchsianOrbifolds Layer 0"
           ],
           "api": [],
@@ -320,9 +354,9 @@
               "statement": "K corresponds to PSO(2), the stabiliser of i."
             },
             {
-              "name": "modular_volume",
+              "name": "order_two_rotation",
               "kind": "computation",
-              "statement": "The ω-volume of the modular surface is π/6."
+              "statement": "[diag(1,−1)] (w ↦ −w) corresponds to z ↦ −1/z: C(−w) = −1/C(w); order 2 in PSL(2,ℝ) though [[0,−1],[1,0]] has order 4 in SL(2,ℝ)."
             },
             {
               "name": "parabolic_matches",
@@ -359,7 +393,7 @@
             {
               "name": "disc_case",
               "kind": "compatibility",
-              "statement": "For n = 1 this is the disc automorphism classification (Completed/ConformalMapping Layer 2)."
+              "statement": "For n = 1 this is the disc automorphism classification (Completed/ConformalMapping Layer 2); w ↦ (w − 1/2)/(1 − w/2) is g·w for g = [[cosh t, sinh t],[sinh t, cosh t]] ∈ SU(1,1), tanh t = −1/2 (both send 0 to −1/2), whereas h_t sends 0 to −i tanh t = i/2."
             },
             {
               "name": "derivative_hyp",
@@ -378,7 +412,7 @@
           "id": "2.2",
           "kind": "definition",
           "name": "BallQuotient.kahlerForm",
-          "statement": "ω = −i∂∂̄ log(1 − |w|²) on B: coefficients δ_{jk}/(1−|w|²) + w̄ⱼw_k/(1−|w|²)², det = (1−|w|²)^{−(n+1)}; closed, positive (Kähler), G-invariant via 1 − |g·w|² = (1 − |w|²)/|a + bᵀw|²; C pulls back i∂∂̄(−log ρ) to ω; ω^n/n! = 2^n(1−|w|²)^{−(n+1)} dLeb; ω restricts to sub-balls as their form.",
+          "statement": "ω = −i∂∂̄ log(1 − |w|²) on B: coefficients δ_{jk}/(1−|w|²) + w̄ⱼw_k/(1−|w|²)², det = (1−|w|²)^{−(n+1)}; closed, positive (Kähler), G-invariant via 1 − |g·w|² = (1 − |w|²)/|a + bᵀw|²; C pulls back i∂∂̄(−log ρ) to ω; ω^n/n! = 2^n(1−|w|²)^{−(n+1)} dLeb; ω restricts to sub-balls as their form. For n = 1, C carries ω to (dx²+dy²)/(2y²), half the curvature −1 metric, so ω-areas are half the hyperbolic areas of FuchsianOrbifolds Layer 2.",
           "hypotheses": [
             "n ≥ 1"
           ],
@@ -391,7 +425,8 @@
             "roadmap:ComplexKahlerGeometry K2",
             "roadmap:ComplexKahlerGeometry K6.0",
             "target:1.3",
-            "target:1.4"
+            "target:1.4",
+            "roadmap:FuchsianOrbifolds Layer 2"
           ],
           "api": [
             {
@@ -413,6 +448,11 @@
               "name": "restrict_subball",
               "role": "compatibility",
               "statement": "ω|_{𝔹ᵐ} is the form of 𝔹ᵐ."
+            },
+            {
+              "name": "n1_comparison",
+              "role": "compatibility",
+              "statement": "For n = 1 the transported metric is half the Poincaré metric of FuchsianOrbifolds Layer 2."
             }
           ],
           "tests": [
@@ -430,6 +470,11 @@
               "name": "euclidean_not_invariant",
               "kind": "non-example",
               "statement": "The Euclidean form and log(1+|w|²) are not invariant under h_t."
+            },
+            {
+              "name": "modular_volume",
+              "kind": "computation",
+              "statement": "The ω-volume of the modular surface is π/6, half its hyperbolic area π/3."
             }
           ]
         },
@@ -688,18 +733,18 @@
         {
           "id": "3.4",
           "kind": "theorem",
-          "name": "BallQuotient.fixedSet_elliptic_eq_subBall",
-          "statement": "Distinct sub-balls of equal dimension meet in a smaller sub-ball or not at all; the fixed set in B of an elliptic element is a single nonempty sub-ball.",
+          "name": "BallQuotient.fixedSet_eq_subBall",
+          "statement": "Distinct sub-balls of equal dimension meet in a smaller sub-ball or not at all; the fixed set in B of an element g ∈ G ∖ {1} fixing a point of B is a single proper sub-ball.",
           "hypotheses": [
-            "g ∈ G elliptic"
+            "g ∈ G ∖ {1} fixes a point of B"
           ],
           "locator": {
             "source": "Goldman1999",
             "where": "Ch. 3"
           },
           "prerequisites": [
-            "target:3.1",
-            "target:4.1"
+            "target:1.4",
+            "target:3.1"
           ],
           "api": [],
           "tests": [
@@ -839,7 +884,7 @@
           "id": "4.4",
           "kind": "theorem",
           "name": "BallQuotient.margulis_lemma",
-          "statement": "Zassenhaus: a closed L ⊂ GL_N(ℂ) has a neighbourhood U of 1 with ⟨Δ ∩ U⟩ nilpotent for every discrete Δ ⊂ L. Margulis: there are ε_n, m_n with ⟨γ ∈ Δ : d(x,γx) < ε_n⟩ having a nilpotent subgroup of index ≤ m_n for every discrete Δ ⊂ G and x ∈ B.",
+          "statement": "Zassenhaus: a closed L ⊂ GL_N(ℂ) has a neighbourhood U of 1 with ⟨Δ ∩ U⟩ nilpotent for every discrete Δ ⊂ L. Margulis: there are ε_n, m_n with ⟨γ ∈ Δ : d(x,γx) < ε_n⟩ having a nilpotent subgroup of index ≤ m_n for every discrete Δ ⊂ G and x ∈ B; the passage from U (for SU(1,n), pushed to G) to displacement is a covering argument: B₁ = {g : d(0,g·0) ≤ 1} is covered by m_n translates of V with V⁻¹V ⊂ U, ε_n = 1/m_n, and words of length ≤ m_n in the generators meet at most m_n cosets of the nilpotent subgroup. No theorem on finite linear groups is used.",
           "hypotheses": [
             "Δ discrete"
           ],
@@ -860,16 +905,22 @@
               "statement": "Δ = ⟨T_1⟩ high in a horoball: Δ ≅ ℤ nilpotent."
             },
             {
-              "name": "finite_group",
+              "name": "finite_cyclic_uniform",
               "kind": "degenerate",
-              "statement": "A finite subgroup of K at 0: all displacements 0, finite group."
+              "statement": "n = 1, C_m = ⟨[diag(1,e^{2πi/m})]⟩ ⊂ K at 0: all displacements 0; C_m is abelian, index 1 for every m, while the trivial subgroup has unbounded index m."
+            },
+            {
+              "name": "S3_virtual",
+              "kind": "computation",
+              "statement": "n = 2, S₃ ⊂ U(2) ≅ K at 0: S₃ is not nilpotent; A₃ is nilpotent of index 2, so m_2 ≥ 2."
             },
             {
               "name": "dense_free",
               "kind": "non-example",
               "statement": "A dense free subgroup of K (n ≥ 2) is not virtually nilpotent: discreteness needed."
             }
-          ]
+          ],
+          "proofSketch": "Zassenhaus for SU(1,n) ⊂ GL_{n+1}(ℂ), pushed to G through the finite kernel μ_{n+1}; B₁ compact (proper orbit map, d(0,w) = √2 artanh|w|); finite cover by translates of V with V⁻¹V ⊂ U; Schreier-graph count of cosets reached by words of length ≤ m_n."
         },
         {
           "id": "4.5",
@@ -972,7 +1023,7 @@
           "id": "5.2",
           "kind": "theorem",
           "name": "BallQuotient.properlyDiscontinuous_iff_discrete",
-          "statement": "G acts properly on B; Γ ⊂ G acts properly discontinuously iff discrete; stabilisers finite; precisely invariant neighbourhoods U_x; the free locus is open, invariant, dense.",
+          "statement": "G acts properly on B; Γ ⊂ G acts properly discontinuously iff discrete, so stabilisers are finite by Mathlib's ProperlyDiscontinuousSMul.finite_stabilizer' (no separation hypothesis); precisely invariant neighbourhoods U_x; the free locus is open, invariant, dense. Freeness holds only for torsion-free Γ (target 7.2).",
           "hypotheses": [
             "Γ ⊂ G subgroup"
           ],
@@ -985,6 +1036,7 @@
             "target:3.4",
             "target:4.1",
             "mathlib:ProperlyDiscontinuousSMul",
+            "mathlib:ProperlyDiscontinuousSMul.finite_stabilizer'",
             "mathlib:Subgroup.properlyDiscontinuousSMul_iff",
             "tauceti:TauCeti.Matrix.isCompact_unitaryGroup"
           ],
@@ -1003,7 +1055,7 @@
             {
               "name": "finite_cyclic",
               "kind": "degenerate",
-              "statement": "A finite rotation group about 0 has Γ_0 = Γ."
+              "statement": "A finite rotation group about 0 has Γ_0 = Γ; for {1,[diag(1,−1)]} (w ↦ −w) Γ_0 has 2 elements: finite, not trivial, stabilisers; torsion-free discrete Γ has stabilisers of cardinality 1."
             }
           ]
         },
@@ -1064,9 +1116,11 @@
           ],
           "locator": {
             "source": "BaldiUllmo2023",
-            "where": "Theorem 3.4.3, line 649 to line 661; Mok2012 line 309 to line 475; Raghunathan1972 Ch. XIII; SiuYau1982 pp. 363–380"
+            "where": "Theorem 3.4.3, line 649 to line 661 (Garland–Raghunathan Theorems 0.7 and 4.10, line 656 to line 658); Mok2012 line 309 to line 475 for torsion-free Γ; Raghunathan1972 Ch. XIII; SiuYau1982 pp. 363–380 for manifolds"
           },
           "prerequisites": [
+            "target:2.3",
+            "target:2.4",
             "target:4.1",
             "target:4.2",
             "target:4.3",
@@ -1091,9 +1145,19 @@
               "name": "not_lattice",
               "kind": "non-example",
               "statement": "⟨T_1⟩ (n ≥ 2) has cusp ∞ but Γ_∞ is not cocompact on horospheres."
+            },
+            {
+              "name": "cone_points",
+              "kind": "non-example",
+              "statement": "PSL(2,ℤ) at i: S fixes i, so Γ_ε(i) = {1,S} ≅ C₂ for small ε, with no parabolic or loxodromic element (likewise C₃ at e^{2πi/3}): negative control for a cusp/tube division of the points with a small-displacement element, positive control for the finite case of the trichotomy."
+            },
+            {
+              "name": "modular_siegel",
+              "kind": "computation",
+              "statement": "PSL(2,ℤ): Ξ = {1}, Siegel set {|Re z| ≤ 1/2, Im z ≥ √3/2} ⊇ standard fundamental domain, finitely many γ meet it with itself."
             }
           ],
-          "proofSketch": "Margulis lemma; compact thick part by finite volume; thin components are tubes or cusp regions; 4.5 on cusp groups."
+          "proofSketch": "(1) Trichotomy for Γ_ε(x): finite (fixing a point of B, including every elliptic fixed point), parabolic type fixing one cusp point, or loxodromic type preserving an axis (§§4.1, 4.3, 4.4, ping-pong). (2) Garland–Raghunathan reduction theory for every lattice: finite Ξ ⊂ G, a Siegel set Σ at b₀, Γ ∩ ξNξ⁻¹ lattices, ΞΣ a fundamental set, finiteness of self-meeting sets of Siegel sets; this carries the torsion, since for torsion-free Γ the volume argument suffices but finite groups Γ_ε(x) of unbounded order defeat it. (3) Deduction: cocompact ⇒ no parabolic; cusp points equivalent to ξb₀; §4.5 on cusp groups; precisely invariant horoballs from finiteness; compact complement from the fundamental set."
         },
         {
           "id": "6.2",
@@ -1126,7 +1190,7 @@
             {
               "name": "infinite_covolume",
               "kind": "non-example",
-              "statement": "An infinite-index normal subgroup of a free Fuchsian group is infinitely generated."
+              "statement": "The commutator subgroup [F,F] of the free Fuchsian group F = Γ(2)/{±1} ≅ F₂ is nontrivial, normal, of infinite index (F/[F,F] ≅ ℤ²), hence of infinite covolume, and free of countably infinite rank; the trivial subgroup, also normal of infinite index, is finitely generated."
             }
           ],
           "proofSketch": "Coarse fundamental domain from compact core and finitely many horoball pieces; WitteMorris2015 Propositions 4.7.4 and 4.7.7."
@@ -1562,14 +1626,14 @@
           "id": "8.4",
           "kind": "theorem",
           "name": "BallQuotient.logCanonical_trivial_near_boundary",
-          "statement": "E = K_{X^M} ⊗ O(D) is trivial near D with frame ν = dw′∧dq/q; |ν^ℓ|² ≍ (−log|q|)^{ℓ(n+1)}; f ν^ℓ (f holomorphic on Ω_b) is L² near T_b iff f|_{T_b} = 0.",
+          "statement": "E = K_{X^M} ⊗ O(D) is trivial near D with frame ν = dw′∧dq/q; |ν^ℓ|² ≍ (−log|q|)^{ℓ(n+1)} for ℓ ≥ 0; for every integer ℓ ≥ 1, f ν^ℓ (f holomorphic on Ω_b) is L² near T_b iff f|_{T_b} = 0.",
           "hypotheses": [
             "Γ neat lattice",
-            "ℓ ≥ 1"
+            "ℓ ≥ 1 an integer for the L² equivalence"
           ],
           "locator": {
             "source": "Mok2012",
-            "where": "line 568 to line 626"
+            "where": "line 568 to line 626 (positive power fixed at line 607)"
           },
           "prerequisites": [
             "target:8.2",
@@ -1587,12 +1651,17 @@
             {
               "name": "pole_order",
               "kind": "computation",
-              "statement": "f = q^k: integrand |q|^{2k−2}(−log|q|)^{(ℓ−1)(n+1)}, integrable iff k ≥ 1."
+              "statement": "f = q^k: integrand |q|^{2k−2}(−log|q|)^{(ℓ−1)(n+1)}; for ℓ ≥ 1 integrable iff k ≥ 1 (ℓ = 1: ∫dr/r = ∞ at k = 0, ∫r dr < ∞ at k = 1)."
             },
             {
               "name": "K_alone",
               "kind": "non-example",
               "statement": "K_{X^M}|_{T_b} = L_b^{−1}, nontrivial for n ≥ 2."
+            },
+            {
+              "name": "l_zero_excluded",
+              "kind": "non-example",
+              "statement": "ℓ = 0, f = 1: ∫_X |1|² ω^n/n! = vol(X) < ∞ (π for Γ(2)/{±1}), yet 1 does not vanish on D; locally ∫₀^δ dr/(r(−log r)²) = 1/(−log δ)."
             }
           ]
         },
@@ -1683,9 +1752,10 @@
           "id": "9.2",
           "kind": "theorem",
           "name": "BallQuotient.L2_extends_meromorphically",
-          "statement": "Holomorphic L² sections of K_X^ℓ are exactly restrictions of sections of E^ℓ on X^M vanishing on D; these spaces are finite-dimensional; for ℓ ≥ 2 and each T_b there is a section of E^ℓ nowhere zero on T_b and zero on the other components.",
+          "statement": "For every integer ℓ ≥ 1, holomorphic L² sections of K_X^ℓ are exactly restrictions of sections of E^ℓ on X^M vanishing on D; sections of E^ℓ form finite-dimensional spaces for ℓ ≥ 0; for ℓ ≥ 2 and each T_b there is a section of E^ℓ nowhere zero on T_b and zero on the other components.",
           "hypotheses": [
             "Γ neat lattice",
+            "ℓ ≥ 1 for the L² equivalence",
             "ℓ ≥ 2 for the last statement"
           ],
           "locator": {
@@ -1717,6 +1787,11 @@
               "name": "cocompact",
               "kind": "degenerate",
               "statement": "Cocompact: D = ∅, E = K_X."
+            },
+            {
+              "name": "l_zero_fails",
+              "kind": "non-example",
+              "statement": "ℓ = 0, Γ(2)/{±1}: the constant 1 is L² (integral π) but nonzero at the three cusps."
             }
           ]
         },
@@ -2109,9 +2184,13 @@
           ],
           "locator": {
             "source": "BaldiUllmo2023",
-            "where": "line 102 to line 104"
+            "where": "line 102 to line 104 (motivation only: the reduction to a torsion-free finite-index subgroup); the theorem is proved here from targets 9.5, 10.4, 10.5"
           },
           "prerequisites": [
+            "target:1.4",
+            "target:5.1",
+            "target:6.1",
+            "target:6.4",
             "target:9.5",
             "target:10.4",
             "target:10.5"
@@ -2132,8 +2211,14 @@
               "name": "effective",
               "kind": "computation",
               "statement": "Image of Γ(3): index and degree 12, versus index 24 in SL(2,ℤ)."
+            },
+            {
+              "name": "identity_inclusion",
+              "kind": "degenerate",
+              "statement": "Γ′ = Γ: degree 1, the identity of S*_Γ."
             }
-          ]
+          ],
+          "proofSketch": "Choose Γ‴ ⊂ Γ′ neat, normal in Γ, of finite index (normal core of a neat normal subgroup of Γ′); S*_{Γ′} = S*_{Γ‴}/(Γ′/Γ‴) and S*_Γ = S*_{Γ‴}/(Γ/Γ‴) by 9.5; the induced map of quotients is finite surjective of degree [Γ:Γ′] since Γ/Γ‴ acts generically freely (Baire, faithful action of G); Γ and Γ′ have the same cusp points; conjugation by g ∈ G algebraic by 10.4(b) and 10.5; composition by uniqueness."
         }
       ]
     },
@@ -2233,21 +2318,24 @@
           "id": "11.3",
           "kind": "construction",
           "name": "BallQuotient.shimuraDatum",
-          "statement": "For arithmetic Γ with ℚ-simple 𝐆: 𝐆^ad(ℝ) = G × C, h₀(z) = ([diag(1,z/z̄,…,z/z̄)], 1) with diag(1,z/z̄,…,z/z̄) ∈ U(1,n) (the class of diag(z̄,z,…,z) in PGL_{n+1}(ℂ), a matrix in U(1,n) only for |z| = 1), X the conjugacy class of h₀; (𝐆^ad, X) is a pure Shimura datum (ShimuraVarieties §P.1), X ≅ B biholomorphically (ShimuraVarieties §P.2), and components at every level K_f are Γ_a^eff\\B with Γ_a^eff commensurable with Γ, neat for neat K_f.",
+          "statement": "For arithmetic Γ with ℚ-simple 𝐆: 𝐆^ad(ℝ) = H × C (H the real points of the noncompact ℝ-simple factor, C of the compact ones), 𝐆^ad(ℝ)⁺ = G × C⁺; h₀(z) = ([diag(1,z/z̄,…,z/z̄)], 1) with diag(1,z/z̄,…,z/z̄) ∈ U(1,n) (the class of diag(z̄,z,…,z) in PGL_{n+1}(ℂ), a matrix in U(1,n) only for |z| = 1); X the full 𝐆^ad(ℝ)-conjugacy class of h₀; (𝐆^ad, X) is a pure Shimura datum (ShimuraVarieties §P.1); the component X⁺ ∋ h₀ is the G-class of h₀ with stabiliser K, so X⁺ ≅ B biholomorphically (ShimuraVarieties §P.2); X = X⁺ for n ≥ 2 and X has two components for n = 1, exchanged by H ∖ G; at every level K_f the component stabilisers Γ_a = 𝐆^ad(ℚ)₊ ∩ aK_f a⁻¹ (ShimuraVarieties §0.1) have arithmetic effective images Γ_a^eff ⊂ G commensurable with Γ, neat for neat K_f, and the level-K_f variety is the finite union of the Γ_a^eff\\X⁺ ≅ Γ_a^eff\\B (ShimuraVarieties §0.5).",
           "hypotheses": [
             "Γ arithmetic",
             "𝐆 ℚ-simple"
           ],
           "locator": {
             "source": "MilneSVI",
-            "where": "line 1686 to line 1689; BaldiUllmo2023 Remark 3.1.11 line 450 to line 454 and line 486 to line 506"
+            "where": "line 1686 to line 1689; BaldiUllmo2023 line 445 to line 449 (chosen component X⁺), Remark 3.1.11 line 450 to line 454 and line 486 to line 506"
           },
           "prerequisites": [
+            "target:1.1",
             "target:1.4",
             "target:11.1",
             "roadmap:ShimuraVarieties §P.1",
             "roadmap:ShimuraVarieties §P.2",
+            "roadmap:ShimuraVarieties §0.1",
             "roadmap:ShimuraVarieties §0.4",
+            "roadmap:ShimuraVarieties §0.5",
             "roadmap:ShimuraVarieties §1.2",
             "roadmap:AdelicAlgebraicGroups §3.4"
           ],
@@ -2260,12 +2348,12 @@
             {
               "name": "component_identification",
               "role": "compatibility",
-              "statement": "The orbit map identifies X with B biholomorphically."
+              "statement": "The orbit map gK ↦ gh₀g⁻¹ identifies B with the component X⁺ ∋ h₀ biholomorphically; X = X⁺ for n ≥ 2, two components for n = 1."
             },
             {
               "name": "component_groups",
               "role": "structure",
-              "statement": "Component groups at every level are arithmetic, commensurable with Γ."
+              "statement": "Component stabilisers 𝐆^ad(ℚ)₊ ∩ aK_f a⁻¹ of X⁺ at every level have arithmetic effective images commensurable with Γ."
             }
           ],
           "tests": [
@@ -2283,6 +2371,16 @@
               "name": "picard_pel",
               "kind": "compatibility",
               "statement": "For Picard groups: the adjoint of PELModuli §M5.5's unitary datum of signature (1,n)."
+            },
+            {
+              "name": "pgl2_components",
+              "kind": "non-example",
+              "statement": "n = 1, 𝐆 = SL₂: 𝐆^ad(ℝ) = PGL₂(ℝ), determinant sign onto {±1} with kernel PSL₂(ℝ); X = ℍ⁺ ⊔ ℍ⁻, exchanged by diag(−1,1); X⁺ = ℍ⁺ ≅ B¹."
+            },
+            {
+              "name": "no_negative_similitude",
+              "kind": "computation",
+              "statement": "n = 2: gᴴJg = −J would give |det g|² = det(−J)/det J = −1, impossible, so X = X⁺; for n = 1 the value is 1 and the swap S realises it."
             }
           ]
         },
@@ -2290,7 +2388,7 @@
           "id": "11.4",
           "kind": "theorem",
           "name": "BallQuotient.minimal_eq_bailyBorel",
-          "statement": "For every component group Γ_a^eff of 11.3, id extends to a unique S*_{Γ_a^eff} ≅ Baily–Borel component (ShimuraVarieties §2.7), restricting to the algebraization of ShimuraVarieties §§1.2, 3.3, 3.5; arbitrary arithmetic Γ are related through S*_{Γ∩Γ_c}.",
+          "statement": "For every component group Γ_a^eff of 11.3, acting on X⁺ ≅ B, id extends to a unique S*_{Γ_a^eff} ≅ Baily–Borel component (ShimuraVarieties §2.7), restricting to the algebraization of ShimuraVarieties §§1.2, 3.3, 3.5; arbitrary arithmetic Γ are related through S*_{Γ∩Γ_c}.",
           "hypotheses": [
             "Γ arithmetic"
           ],
@@ -2330,7 +2428,7 @@
           "id": "11.5",
           "kind": "theorem",
           "name": "BallQuotient.borelEmbedding",
-          "statement": "The open embedding B ⊂ ℙⁿ (chart z₀ ≠ 0) is the Borel embedding into the compact dual for the datum of 11.3, G-equivariant through PGL_{n+1}(ℂ).",
+          "statement": "The open embedding B ⊂ ℙⁿ (chart z₀ ≠ 0) is, under X⁺ ≅ B, the restriction to X⁺ of the Borel embedding of X into the compact dual for the datum of 11.3, G-equivariant through PGL_{n+1}(ℂ).",
           "hypotheses": [
             "n ≥ 1"
           ],
@@ -2348,7 +2446,7 @@
             {
               "name": "n1",
               "kind": "computation",
-              "statement": "n = 1: the disc in the Riemann sphere."
+              "statement": "n = 1: the disc in the Riemann sphere; the full X = ℍ⁺ ⊔ ℍ⁻ goes onto the complement of the circle ⟨z,z⟩ = 0, its second component outside the disc."
             },
             {
               "name": "boundary_quadric",
@@ -2555,10 +2653,11 @@
       "sections": [
         "Layer 0",
         "Layer 1",
+        "Layer 2",
         "Layer 3",
         "Layer 4"
       ],
-      "what": "The n = 1 picture: PSL(2,ℝ) action, coarse quotient, cusps, compactified quotient Riemann surface; used through §§1.6, 7.4, 9.6."
+      "what": "The n = 1 picture: PSL(2,ℝ) action, coarse quotient, the Poincaré metric and hyperbolic area (L2.1), cusps, compactified quotient Riemann surface; used through §§1.6, 2.2, 7.4, 9.6."
     },
     {
       "roadmap": "RiemannianGeometry",
@@ -2624,14 +2723,16 @@
         "§P.1",
         "§P.2",
         "§P.6",
+        "§0.1",
         "§0.4",
+        "§0.5",
         "§1.2",
         "§2.7",
         "§3.3",
         "§3.4a",
         "§3.5"
       ],
-      "what": "Pure Shimura data, Hermitian components, finite analytic quotients, arithmetic quotients, Baily–Borel, unique algebraization at neat level, finite quotients."
+      "what": "Pure Shimura data with the full conjugacy class, Hermitian components and the stabiliser of a chosen component, finite analytic quotients, arithmetic component stabilisers, proper effective action, component decomposition, arithmetic quotients, Baily–Borel, unique algebraization at neat level, finite quotients."
     },
     {
       "roadmap": "AdelicAlgebraicGroups",
@@ -2660,7 +2761,7 @@
         "§5.4",
         "§9.5"
       ],
-      "what": "Normalization; strict-SNC compactifications of smooth quasi-projective varieties."
+      "what": "Normalization (§5.4); §9.5's consumption of ResolutionOfSingularitiesCharacteristicZero §6.2: smooth projective compactifications with reduced strict-SNC boundary of smooth quasi-projective schemes over characteristic-zero fields, dense open, labelled boundary and projectivity retained separately."
     },
     {
       "roadmap": "SchemeAndStackFoundations",

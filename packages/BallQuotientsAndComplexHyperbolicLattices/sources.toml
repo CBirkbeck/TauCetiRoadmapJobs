@@ -187,7 +187,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-04"
 version_note = "arXiv v6 (7 May 2015, Arxiv Version 1.0 of April 2015 of the book published by Deductive Press, 2015), the text read and the numbering cited; the first arXiv version is of 2001."
-cited_for = ["Conventions", "1.2", "5.1", "5.2", "5.3", "6.2", "6.3", "6.4", "11.1", "11.2"]
+cited_for = ["Conventions", "1.4", "5.1", "5.2", "5.3", "6.2", "6.3", "6.4", "11.1", "11.2"]
 
 [[source]]
 id = "BailyBorel1966"
