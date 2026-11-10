@@ -1,0 +1,19 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "SmoothBundlesConnections"
+
+[[source]]
+id = "demailly-agbook"
+authors = ["Jean-Pierre Demailly"]
+title = "Complex Analytic and Differential Geometry"
+year = 2012
+version_note = "author manuscript, version of 21 June 2012"
+locator_scheme = "theorem"
+locator = "Chapter IV, Definition (4.9), Example (4.10), Example (4.12), Proposition (4.14), Theorem (4.15), pp. 204-205"
+url = "https://www-fourier.univ-grenoble-alpes.fr/~demailly/manuscripts/agbook.pdf"
+fetched_from = "https://www-fourier.univ-grenoble-alpes.fr/~demailly/manuscripts/agbook.pdf"
+fetched_at = "2026-11-10T17:08:46Z"
+sha256 = "d7c7654a7417e8322e5dcf8fe8ec818b4c1a18cf280b41f2df5a871b776d89a1"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-10"
+cited_for = ["B6.1"]
