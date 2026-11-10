@@ -1,0 +1,10 @@
+{
+  "review": {
+    "status": "needs_changes",
+    "reviewer": "independent-review-REV-PKG-ModularIwasawaMainConjecturesPartII~2",
+    "date": "2026-11-10",
+    "findings": 9,
+    "blocking": 6,
+    "notes": "Checked all eight prior repairs, the 51 README targets, all 15 seeded source targets, changed arguments and computed adversarial instances; resolved supplier sections, open ownership and pinned APIs. Lean elaboration passed with exit 0 and no warnings (zero declarations; exhaustive padding/signature audits have zero targets). Dependency check: 234 roadmaps, 2127 edges, 0 problems. Findings cover determinant/coefficient overclaim, Frobenius transport, one-variable Coleman/control, image ideals, Euler factors, central-weight parity, false Checks, a stale carrier inventory and omitted references. Existing source entries preserved; BKO21 added from a legal institutional copy. OCR limitations are recorded in the report."
+  }
+}
