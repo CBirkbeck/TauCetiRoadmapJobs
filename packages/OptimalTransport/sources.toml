@@ -517,3 +517,39 @@ status = "certified"
 accessed = "2026-11-10"
 version_note = "author-page extended preprint read; theorem number from the preprint"
 cited_for = ["14.6"]
+
+[[source]]
+id = "fkm-holder"
+authors = "Alessio Figalli, Young-Heon Kim, Robert J. McCann"
+title = "Hölder continuity and injectivity of optimal maps"
+year = 2011
+arxiv = "1107.1014v1"
+locator_scheme = "theorem"
+locator = "Theorem 2.1, Lemma 3.1"
+url = "https://arxiv.org/abs/1107.1014v1"
+fetched_from = "https://arxiv.org/pdf/1107.1014v1"
+fetched_at = "2026-11-10T09:23:30Z"
+sha256 = "f118b5be615785224a00c7d8ad001d0c8a181b38a647d9f7cce2e6546ba01787"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-10"
+version_note = "arXiv v1; theorem and page numbers are those of this version"
+cited_for = ["6.13", "6.14"]
+
+[[source]]
+id = "legouic-loubes"
+authors = "Thibaut Le Gouic, Jean-Michel Loubes"
+title = "Existence and Consistency of Wasserstein Barycenters"
+year = 2015
+arxiv = "1506.04153v2"
+locator_scheme = "theorem"
+locator = "Theorem 2, Theorem 3, Lemma 7, Theorem 8"
+url = "https://arxiv.org/abs/1506.04153v2"
+fetched_from = "https://arxiv.org/pdf/1506.04153v2"
+fetched_at = "2026-11-10T09:27:15Z"
+sha256 = "ae88b147aa519c75cf488be49cabd0e27fda945b6954e534883a63931acb86d5"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-10"
+version_note = "arXiv v2; theorem and page numbers are those of this version"
+cited_for = ["12.3", "12.4", "12.5"]
