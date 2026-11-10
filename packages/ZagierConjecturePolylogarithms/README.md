@@ -9,7 +9,7 @@ This roadmap owns:
 - the raw single and double symbol modules in weights three and four, Goncharov–Rudenko's one-parameter specialization table, the specialized presentations `L₃(F)` and `L₄(F)`, the isomorphism of `L₃(F)` with the explicit trilogarithm group and the cobrackets on both presentations (Layer 1);
 - oriented Stasheff cell complexes `K_m` as finite combinatorial complexes, the cluster two-forms of polygon triangulations and the weight-four cluster polylogarithm maps on cells of dimension at most three, with their boundary identities (Layer 2);
 - the weight-four Lie coalgebra `U ⊕ B₂ ⊕ L₃ ⊕ L₄`, its single-symbol subspace `B₄(F)`, the explicit weight-four complex `Γ(F,4)`, the extension theorem, the cyclic shuffle coalgebra of a punctured line and its special derivations, framed mixed Hodge–Tate structures with their Lie coalgebra and canonical real period, variations of mixed Hodge–Tate structures on punctured curves with their rigidity, motivic and Hodge correlators, collision continuity, base-point change, depth reduction and the realization of the combinatorial coalgebra (Layer 3);
-- the weight-four Bigrassmannian quotient, generic decorated flags of every length, the flag-to-configuration map, the acyclicity of the generic decorated-flag complex, the Grassmannian group `G₄(F)`, the normalized weight-four configuration formulas, finite symbolic Bloch modules and the configuration chain-map identities (Layer 4);
+- the weight-four Bigrassmannian quotient, the flag-to-configuration map into it with its sign comparison, the resulting maps from group homology to the dual weight-four Bigrassmannian, the Grassmannian group `G₄(F)`, the normalized weight-four configuration formulas, finite symbolic Bloch modules and the configuration chain-map identities (Layer 4);
 - the canonical weight-four period and its calibration on cycles, the normal-crossing coefficient diagram, the weight-four current regulator, the scissors-congruence groups `A₂(F)` and `A₃(F)` with Goncharov's map `a₃`, the Grassmannian tetralogarithm and its field-defined motivic lift, the generic and residue-extended Chern cocycle and its normalization (Layer 5);
 - the K-theory comparison maps `K_{8-i}(F)_ℚ → H^iΓ(F,4)`, the regulator of `κ`, the periods of every explicit cycle, the weight-four Zagier theorem, and the presentation map from `Γ(F,4)` to the inductive weight-four complex with the transfer of the theorem to inductive cycles (Layer 6).
 
@@ -17,12 +17,12 @@ It leaves to other roadmaps, by section:
 
 - **PolylogarithmFunctions** §1.1 (the classical `Liₙ`), §§4.2, 4.6–4.7 (Zagier's single-valued `Lₙ`, inversion, conjugation, continuity on `ℙ¹(ℂ)`), §§5.1–5.2 and 5.7 (the Bloch–Wigner function `D = L₂` and its five-term relation). The definitions `polylog` and `singleValued` here restate its formulas in natural weights so that the headline typechecks at the pins.
 - **K3BlochGroups** §§3.2–3.5 and 3.8: the projective cross-ratio, the admissible five-term relations, the rational pre-Bloch group `B₂(F)` and its boundary to `Λ²U(F)`.
-- **Polylogarithms** §2.1 (descent of `D` to `B₂`), §2.2 (the rational primitive Hurewicz isomorphism and the rank filtration), §3.1 (the explicit trilogarithm group `B₃(F)`, its 22-term relation and its cobracket), §3.2 (the complexes `Γ(F,n)` for `n ≤ 3` and the universal cycle predicates), §3.3 (exterior residues), §3.4 (generic vector configurations `C_m(q)` with deletion `∂` and projection `p`, and the weight-three Bigrassmannian), §3.5 (projected and triple ratios and the weight-three configuration maps `r₄,r₅,r₆`), §3.6 (Gale duality), §§4.1–4.3 (inductive Bloch groups, their complexes and analytic evaluation), §4.4 (the Zagier determinant, its three assertions and zagierPeriod_calibration), §4.5 (the explicit raw weight-four cycles and the universal weight-four cycle test), §4.6 (the cycle obstruction), §4.7 (the totally real even-weight case) and Layer 5 (currents, the normalized current dictionary, logarithmic `r` forms, raw Deligne regulators and the universal regulator comparison). The functions `unitVector`, `trilogCyclic` and `TrilogRelationFunction`, the predicate `IsCycle4` and the weight-four specialization `zagierDeterminantFour` of its normalized period restate those definitions so that the headline typechecks at the pins.
+- **Polylogarithms** §2.1 (descent of `D` to `B₂`), §2.2 (the rational primitive Hurewicz isomorphism and the rank filtration), §3.1 (the explicit trilogarithm group `B₃(F)`, its 22-term relation and its cobracket), §3.2 (the complexes `Γ(F,n)` for `n ≤ 3` and the universal cycle predicates), §3.3 (exterior residues), §3.4 (generic vector configurations `C_m(q)` with deletion `∂` and projection `p`, the weight-three Bigrassmannian, decorated flags with their genericity, the acyclic generic decorated-flag resolution and its comparison with a projective resolution), §3.5 (projected and triple ratios and the weight-three configuration maps `r₄,r₅,r₆`), §3.6 (Gale duality), §§4.1–4.3 (inductive Bloch groups, their complexes and analytic evaluation), §4.4 (the Zagier determinant, its three assertions and zagierPeriod_calibration), §4.5 (the explicit raw weight-four cycles and the universal weight-four cycle test), §4.6 (the cycle obstruction), §4.7 (the totally real even-weight case) and Layer 5 (currents, the normalized current dictionary, logarithmic `r` forms, raw Deligne regulators and the universal regulator comparison). The functions `unitVector`, `trilogCyclic` and `TrilogRelationFunction`, the predicate `IsCycle4` and the weight-four specialization `zagierDeterminantFour` of its normalized period restate those definitions so that the headline typechecks at the pins.
 - **BorelRegulators** §1.1 (Tate coordinates `Vₙ(F)`), §§2.2–2.3 (Borel's regulator and its real isomorphism), §§5.3–5.4 (the regulator lattice and its zeta covolume on every rational basis), §6.0a (the universal Deligne Chern class on the simplicial classifying variety) and §6.2 (the comparison `r_Bo = −2 r_Be`).
 - **MotivicEtaleKTheory** §§3.3–3.4 (the compactification-independent logarithmic Deligne complex) and §7.1 (the universal Deligne Chern character).
 - **PeriodsAndSpecialValues** PS.3.0 (the number-field Tate-Hom comparison with Adams-weight K-theory), PS.9.3 (tangential regularization of iterated integrals), PS.9.8–PS.9.9 (mixed Tate motives and their extension groups) and PS.9.10 (the motivic path torsor of a punctured line), with the extensions to number fields and arbitrary punctures stated as its contracts below.
-- **MotivesAndAlgebraicCycles** Layer 3 (Tannakian categories) and Layer 4 (geometric motives).
-- **HodgeStructures**, Layer L2: mixed Hodge structures and strictness. Framed mixed Hodge–Tate structures and their variations on punctured curves are built here on that layer.
+- **MotivesAndAlgebraicCycles** §3.6 (Tannakian categories and neutral fibers), §§6.1–6.3 (neutral reconstruction of the group of tensor automorphisms, its coordinate Hopf algebra and functoriality along tensor functors) and Layer 4 (geometric motives).
+- **HodgeStructures**, Layer L2: mixed Hodge structures and strictness, implemented at the pinned Tau Ceti as `TauCeti.Hodge.MixedHodgeStructure` with its abelian category and strictness theorem (supplier contracts below). Framed mixed Hodge–Tate structures, their variations on punctured curves, correlators and their periods are built here on that layer; the native structure carries no variation, framing or period map.
 
 The theorem for totally real fields, where the determinant is empty, is Polylogarithms §4.7's zagierExistence_totallyRealEven; the existence headline here covers every number field and uses that theorem when `r₂ = 0`. FukayaTheory's oriented associahedra are compactified moduli of discs; the Stasheff complexes here are the finite cellular complexes of noncrossing dissections and use none of that geometry.
 
@@ -43,7 +43,7 @@ Complexes are cohomological in degrees `1,…,n`. The explicit weight-four compl
 
 The weight-four Chevalley–Eilenberg complex `L₄ → (L₃⊗U ⊕ Λ²B₂) → B₂⊗Λ²U → Λ⁴U` carries `δ([x]₃⊗y) = [x]₂⊗x∧y`, the same rule on `D₂₁(x,y)⊗c` through §1.6, `δ([x]₂⊗y∧z) = (1−x)∧x∧y∧z`, and on `Λ²B₂` the rule `δ([x]₂∧[y]₂) = [x]₂⊗δ[y]₂ − [y]₂⊗δ[x]₂` (Goncharov–Rudenko [GR], Lemma 3.13, p. 43, GR line 1901). This complex is identified with the exterior-algebra complex `Λ•L`, `d(a∧b) = δa∧b − a∧δb`, of the graded Lie coalgebra `L = U ⊕ B₂ ⊕ L₃ ⊕ L₄` as follows: the weight-`(k,1)` part `L_k∧L₁` with `L_k⊗L₁` by `a∧b ↦ a⊗b` for `a` of weight `k > 1` and `b` of weight one; `L₂∧L₁∧L₁` with `B₂⊗Λ²U` by `a∧b∧c ↦ a⊗(b∧c)`; and `Λ²L₂` with `Λ²B₂` by `A∧B ↦ −A∧B`. The sign on `Λ²B₂` is forced by the other rules: under the natural inclusion of `Λ²L₂` the derivation rule gives `[y]₂⊗δ[x]₂ − [x]₂⊗δ[y]₂` on `[x]₂∧[y]₂`, and `d² = 0` on `δD₃₁` of §3.1 then fails (§3.1, Checks). Consequently the `Λ²L₂`-component of the Lie cobracket of `D₃₁(x,y)` is `−[x]₂∧[y]₂`, while the component `δ₂₂D₃₁(x,y)` written in §3.1 and §3.3 is `+[x]₂∧[y]₂`; the two identifications of the weight-`(k,1)` parts enter only the signs of the realization of §3.13.
 
-Periods. `Lₙ` is PolylogarithmFunctions' single-valued polylogarithm in Zagier's Bernoulli normalization with `B₁ = −1/2`, real part in odd and imaginary part in even weight; `L₄` is odd under complex conjugation and inversion. For a number field of signature `(r₁,r₂)` and degree `N = r₁ + 2r₂`, `d₄ = r₂` and the zeta-normalized determinant is `Z₄(F;y) = π^{4(r₁+r₂)} |disc F|^{−1/2} det(L₄(σᵢ(yⱼ)))`, rows indexed by complex places through their chosen embeddings, columns by symbol families; the empty determinant is one. Changing the chosen embedding of a complex place negates its row. The canonical period is `L₄*(z) = (5L₄(z) + (1/3)L₂(z)log²|z|)/16`, with `L₃* = 3L₃/8` and `L₂* = L₂/2` (Goncharov–Rudenko (191), p. 77). The real differential operator is `d^C = ∂ − ∂̄`. Borel's regulator `r_Bo` is taken in BorelRegulators' Tate-divided real coordinates; in those coordinates an `L₄`-period column is `λπ³` times a Borel column with `λ ∈ ℚˣ`, and `r_Bo = −2 r_Be` (BorelRegulators §6.2).
+Periods. `Lₙ` is PolylogarithmFunctions' single-valued polylogarithm in Zagier's Bernoulli normalization with `B₁ = −1/2`, real part in odd and imaginary part in even weight; `L₄` is odd under complex conjugation and inversion. For a number field of signature `(r₁,r₂)` and degree `N = r₁ + 2r₂`, `d₄ = r₂` and the zeta-normalized determinant is `Z₄(F;y) = π^{4(r₁+r₂)} |disc F|^{−1/2} det(L₄(σᵢ(yⱼ)))`, rows indexed by complex places through their chosen embeddings, columns by symbol families; the empty determinant is one. Changing the chosen embedding of a complex place negates its row. The canonical period is `L₄*(z) = (5L₄(z) + (1/3)L₂(z)log²|z|)/16`, with `L₃* = 3L₃/8` and `L₂* = L₂/2` (Goncharov–Rudenko (191), p. 77). The canonical real period `p` of §3.7 takes these values on single symbols and `log|f|` on a unit `f`; the numerical Hodge correlators of §3.9 are `(2πi)^{−m}p` in weight `m`, and every period statement of §§5.1–6.3 is about `p`, converted to Borel's Tate-divided coordinates only in §6.2. The real differential operator is `d^C = ∂ − ∂̄`. Borel's regulator `r_Bo` is taken in BorelRegulators' Tate-divided real coordinates; in those coordinates an `L₄`-period column is `λπ³` times a Borel column with `λ ∈ ℚˣ`, and `r_Bo = −2 r_Be` (BorelRegulators §6.2).
 
 Normal-crossing degrees. In the coefficient diagram of §5.3 a codimension-`q` stratum carries weight `4−q` and a term of internal degree `j` sits in total degree `j+2q`; pushforward of a current from codimension `q` adds ordinary degree `2q` and the factor `(2πi)^q`; the current component of a Deligne term of degree `k` has ordinary degree `k−1`.
 
@@ -51,11 +51,11 @@ Normal-crossing degrees. In the coefficient diagram of §5.3 a codimension-`q` s
 
 ### From Mathlib
 
-`Finsupp` and `Finsupp.linearCombination` (free modules on symbols and their evaluation), `Submodule.span`, `Submodule.Quotient.mk` and `Submodule.mkQ` (presentations by relations; `mk x = 0` exactly when `x` is in the submodule), `TensorProduct.lift`, `ExteriorAlgebra.exteriorPower` and `exteriorPower.ιMulti` (`Mathlib/LinearAlgebra/ExteriorAlgebra/Basic.lean`, `Mathlib/LinearAlgebra/ExteriorPower/Basic.lean`), `Additive`, `Matrix.det`, `Matrix.det_mul` and `Matrix.det_isEmpty` (rational basis change and the empty determinant), `FreeLieAlgebra` (`Mathlib/Algebra/Lie/Free.lean`) and `LieDerivation` (`Mathlib/Algebra/Lie/Derivation/Basic.lean`) for the puncture Lie algebra and its derivations, `groupHomology` (`Mathlib/RepresentationTheory/Homological/GroupHomology/Basic.lean`), `CategoryTheory.ProjectiveResolution` (`Mathlib/CategoryTheory/Preadditive/Projective/Resolution.lean`); `CategoryTheory.ProjectiveResolution.lift` (`Mathlib/CategoryTheory/Abelian/Projective/Resolution.lean`) lifts only into another projective resolution, so the comparison into the acyclic but non-projective flag complex of §4.4 is a target here. Arithmetic carriers: `NumberField.dedekindZeta` (the L-series of ideal norms, convergent at `s = 4`), `NumberField.discr`, `NumberField.InfinitePlace`, `NumberField.InfinitePlace.IsComplex`, `NumberField.InfinitePlace.embedding`, `nrRealPlaces` and `nrComplexPlaces`; `bernoulli` with `bernoulli 1 = −1/2`; `Complex.log`, `Complex.arg` and interval integrals for the polylogarithm formulas. No polylogarithm, Bloch group, configuration complex, Hodge structure, motive or higher K-group exists at the pins.
+`Finsupp` and `Finsupp.linearCombination` (free modules on symbols and their evaluation), `Submodule.span`, `Submodule.Quotient.mk` and `Submodule.mkQ` (presentations by relations; `mk x = 0` exactly when `x` is in the submodule), `TensorProduct.lift`, `ExteriorAlgebra.exteriorPower` and `exteriorPower.ιMulti` (`Mathlib/LinearAlgebra/ExteriorAlgebra/Basic.lean`, `Mathlib/LinearAlgebra/ExteriorPower/Basic.lean`), `Additive`, `Matrix.det`, `Matrix.det_mul` and `Matrix.det_isEmpty` (rational basis change and the empty determinant), `FreeLieAlgebra` (`Mathlib/Algebra/Lie/Free.lean`) and `LieDerivation` (`Mathlib/Algebra/Lie/Derivation/Basic.lean`) for the puncture Lie algebra and its derivations, `groupHomology` (`Mathlib/RepresentationTheory/Homological/GroupHomology/Basic.lean`), `CategoryTheory.ProjectiveResolution` (`Mathlib/CategoryTheory/Preadditive/Projective/Resolution.lean`); `CategoryTheory.ProjectiveResolution.lift` (`Mathlib/CategoryTheory/Abelian/Projective/Resolution.lean`) lifts only into another projective resolution, so the comparison into the acyclic but non-projective decorated-flag complex is a separate target, owned by Polylogarithms §3.4. Arithmetic carriers: `NumberField.dedekindZeta` (the L-series of ideal norms, convergent at `s = 4`), `NumberField.discr`, `NumberField.InfinitePlace`, `NumberField.InfinitePlace.IsComplex`, `NumberField.InfinitePlace.embedding`, `nrRealPlaces` and `nrComplexPlaces`; `bernoulli` with `bernoulli 1 = −1/2`; `Complex.log`, `Complex.arg` and interval integrals for the polylogarithm formulas. No polylogarithm, Bloch group, configuration complex, motive or higher K-group exists at the pins.
 
 ### From Tau Ceti
 
-Nothing from Tau Ceti is consumed directly; its function-field place API enters only through the suppliers above.
+Linear Hodge theory, consumed by §§3.6–3.7: `TauCeti.Hodge.MixedHodgeStructure` (`TauCeti/Geometry/Hodge/Mixed/Basic.lean`), a mixed Hodge structure on an integral module with rational and complex base-change models, whose fields are a bounded increasing rational weight filtration, a bounded decreasing Hodge filtration and purity of each rational graded piece; `TauCeti.Hodge.MixedHodgeStructureCat` with the instance `TauCeti.Hodge.MixedHodgeStructureCat.abelian` (`TauCeti/Geometry/Hodge/Mixed/Category.lean`, `TauCeti/Geometry/Hodge/Mixed/Abelian.lean`); strictness of morphisms for the Hodge filtration, `TauCeti.Hodge.MixedHodgeStructure.Hom.range_inf_F_eq_map_F` (`TauCeti/Geometry/Hodge/Mixed/Strictness.lean`); and the Tate structure `TauCeti.Hodge.tate` of weight `−2m` (`TauCeti/Geometry/Hodge/Tate/Basic.lean`). These carry no variation over a base, no framing, no Lie coalgebra of framed objects and no period map; those are targets of §§3.6–3.7. `Suggested.lean` uses none of them, since its headlines mention no Hodge structure.
 
 ### From TauCetiRoadmap.PolylogarithmFunctions
 
@@ -72,7 +72,7 @@ Layer 3: the projective cross-ratio (§3.2), the admissible five-term relations 
 - §3.1: trilogGroup `B₃(F) = ℚ[F]/R₃(F)` with `R₃` generated by `[0]`, inversion, the three-term relation with `[1]₃` retained and the coordinate 22-term relation; its universal property and field functoriality; the cobracket `δ₃[x]₃ = [x]₂⊗u(x)` well defined on `B₃(F)`. What Polylogarithms must provide (gap:trilog-specialization-closure): for every one-parameter family over `F(t)` of admissible parameters of the coordinate 22-term relation, the specialization at `t = 0` of the relation, with symbols specialized by the valuation-zero rule (`[f] ↦ [f(0)]` for a unit `f`, zero otherwise), lies in `R₃(F)`.
 - §3.2: the complexes `Γ(F,n)` for `n ≤ 3`, the predicates `FiveTermFunction`, `IsCycle3`, `unitVector`, and the universal test characterization of cycles.
 - §3.3: exterior residues `ΛⁿU(K) → Λⁿ⁻¹U(k)` with uniformizer first, and the weight-two and weight-three residues with their shift signs.
-- §3.4: genericVectorConfig, the modules `C_m(q)` without independent rescaling, deletion and projection, `∂²=p²=0`, `∂p+p∂=0`, the row-quotient Bigrassmannian construction at cutoff three.
+- §3.4: genericVectorConfig, the modules `C_m(q)` without independent rescaling, deletion and projection, `∂²=p²=0`, `∂p+p∂=0`, the row-quotient Bigrassmannian construction at cutoff three; decorated flags with their direct-sum genericity, the complex of generic tuples of decorated flags, its acyclicity over an infinite field and the comparison map from a projective resolution (stabilizedConfigurationComparison). What Polylogarithms must provide (gap:decorated-flag-lengths): for every infinite field `F`, every `N ≥ 1` and every flag length `1 ≤ k ≤ N`, the augmented complex of generic `m`-tuples of decorated `k`-flags in `F^N` with its alternating deletion differential is acyclic before `GL_N(F)`-coinvariants, and the comparison map from a projective `ℚ[GL_N(F)]`-resolution of `ℚ` into it exists, is unique up to chain homotopy, is natural in field embeddings and is compatible with the stabilization `GL_N → GL_{N+1}` by a standard complementary direction.
 - §3.5: the projected ratio, the triple ratio `T`, the maps `r₄ = −3Alt₄(u|123|∧u|124|∧u|134|)`, `r₅ = Alt₅([r(1|2345)]₂⊗u|345|)`, `r₆ = 18M₃`, and the seven-term relation. No identity between `r₆` and `Alt₆[T]₃` is supplied.
 - §3.6: Gale duality of generic configurations, exchanging deletion and projection.
 - §3.7: the weight-three configuration homology maps and their rank-two vanishing, used as the weight-three instance of §6.1.
@@ -101,11 +101,11 @@ What PeriodsAndSpecialValues must provide (gap:punctured-line-path-torsors): for
 
 ### From TauCetiRoadmap.MotivesAndAlgebraicCycles
 
-Layer 3: Tannakian categories and their fundamental groups. Layer 4: geometric motives and Tate objects, through PeriodsAndSpecialValues PS.9.8.
+§3.6: Tannakian categories and neutral fibers. §6.1: neutral fiber data and finite reconstruction. §6.2: the coordinate bialgebra with its antipode, the affine group scheme `G_ω` representing `Aut^⊗(ω)` and the equivalence of the category with finite-dimensional representations of `G_ω`. §6.3: finite-type quotients and the homomorphism of groups induced by a tensor functor with a marked fiber comparison. These are used for the Tannakian group of `MT(F)` and its Lie coalgebra in §3.8; the numerical-motive semisimplicity of Layer 3 is not used. Layer 4: geometric motives and Tate objects, through PeriodsAndSpecialValues PS.9.8.
 
 ### From TauCetiRoadmap.HodgeStructures
 
-Layer L2 of the completed roadmap HodgeStructures: rational mixed Hodge structures, morphisms, strictness and the abelian category they form.
+Layer L2 of the completed roadmap HodgeStructures: rational mixed Hodge structures, morphisms, strictness and the abelian category they form, implemented at the pinned Tau Ceti by the declarations listed under From Tau Ceti.
 
 ## How to read the build
 
@@ -175,7 +175,7 @@ The quotient has the following API.
 
 **Checks.**
 
-- `D₂₁(x,y) = D₂₁(y,x)` in `L₃(F)`, while in `Raw₃(F)` the two are distinct.
+- `D₂₁(x,y) = D₂₁(y,x)` in `L₃(F)`, while for `x ≠ y` the two are distinct basis vectors of `Raw₃(F)`: `D₂₁(2,3) − D₂₁(3,2)` has coefficients `+1, −1` in `Raw₃(ℚ)` and is zero in `L₃(ℚ)`. On the diagonal the two raw vectors coincide, `D₂₁(2,2)` being a single basis vector.
 - The standalone term of `Q₃` has coefficient `−4` and sits outside the cyclic sum; putting it inside `Cyc₆` multiplies it by six.
 - Specializing `Q₃` at the divisor where the first and third points collide gives relation (29) of §1.5, expressing `D₂₁(x,y)` by single symbols and `S₃(1)`.
 
@@ -252,7 +252,7 @@ Mathlib free modules, spans and quotients; K3BlochGroups §§3.3–3.4 for `B₂
 
 ## Layer 2: Stasheff polytopes and cluster polylogarithms
 
-The cluster polylogarithm map assigns to each cell of the Stasheff polytope of a polygon a weight-four element of the Chevalley–Eilenberg complex of the Lie coalgebra, so that cellular boundary goes to cobracket. Its value on the top cell of the heptagon is the relation `Q₄`, which is how the cobracket is shown to kill `Q₄`. No cluster-variety conjecture is used.
+The cluster polylogarithm map assigns to each cell of the Stasheff polytope of a polygon a weight-four element of the Chevalley–Eilenberg complex of the Lie coalgebra, so that cellular boundary goes to cobracket. The values on the seven hexagonal facets of the heptagon sum to `−2Q₄` plus elements the raw cobracket kills term by term, which is how the cobracket is shown to kill `Q₄`. No cluster-variety conjecture is used.
 
 ### 2.1 Oriented Stasheff cells
 
@@ -294,14 +294,14 @@ For cells of the Stasheff complexes attached to generic points of `ℙ¹` define
 vertex T:        L⁴(T) = W_T ∧ W_T                                          ∈ Λ⁴U
 edge T′→T:       L³(e) = [−X_e]₂ ⊗ (W_T + W_T′)                              ∈ B₂⊗Λ²U
 pentagon:        L²(P) = Σ_{k mod 5} [s(k+1,k+2,k+3,k+4)]₃ ⊗ s(k+3,k+4,k,k+1)/s(k−1,k,k+1,k+2)
-square face j:   L²(S_j) = [s(j,j+1,j+2,j+3)]₂ ∧ [s(j+3,j+4,j+5,j+6)]₂           ∈ Λ²B₂
+square face j:   L²(S_j) = 2·[s(j,j+1,j+2,j+3)]₂ ∧ [s(j+3,j+4,j+5,j+6)]₂         ∈ Λ²B₂
 ```
 
-the pentagon value lying in `L₃⊗U`; product cells carry the products of these values with the remaining `W` factors by the weight grading, and orientation reversal negates a value (Goncharov–Rudenko [GR], §4.3, items 1–3, (94)–(99), pp. 50–51; §3.4, Lemmas 3.12–3.15, pp. 42–44). The vertex value is `W_T²`, without a factor `1/2`. *Needs:* §§1.4, 1.6, 2.1–2.2; Mathlib `TensorProduct.lift`, `ExteriorAlgebra.exteriorPower`.
+the pentagon value lying in `L₃⊗U`; product cells carry the products of these values with the remaining `W` factors by the weight grading, and orientation reversal negates a value (Goncharov–Rudenko [GR], §4.3, items 1–3, (94)–(99), pp. 50–51; §3.4, Lemmas 3.12–3.15, pp. 42–44). The vertex value is `W_T²`, without a factor `1/2`. The square value carries the factor `2`, with the orientation of `S_j` fixed by its four oriented boundary edges: for a square traversed `v₁ → v₂ → v₃ → v₄ → v₁` whose first two edges have flip symbols `A` and `B` (so `δA = W_{v₂} − W_{v₁}`, `δB = W_{v₃} − W_{v₂}`), the value is `2·B∧A`. The source passes from `e^W` in its §3.4 to `W²` in its §4.3, which doubles the vertex, edge and pentagon values relative to its Lemmas 3.12–3.15, but prints the square value (99) without the corresponding factor `2`; the edge identity of §2.5 forces it. *Needs:* §§1.4, 1.6, 2.1–2.2; Mathlib `TensorProduct.lift`, `ExteriorAlgebra.exteriorPower`.
 
 The cell maps have the following API.
 
-- Vertex, edge, pentagon and square values are the displayed elements, in `Λ⁴U`, `B₂⊗Λ²U`, `L₃⊗U` and `Λ²B₂` respectively.
+- Vertex, edge, pentagon and square values are the displayed elements, in `Λ⁴U`, `B₂⊗Λ²U`, `L₃⊗U` and `Λ²B₂` respectively; the square value is twice the wedge of the two flip symbols, oriented as above.
 - Reversing the orientation of a cell negates its value.
 - Product cells use the Koszul sign and the weight grading.
 
@@ -309,7 +309,7 @@ The cell maps have the following API.
 
 - Reversing an oriented edge negates `L³(e)`, since `X` is replaced by `X⁻¹` and `[−X⁻¹]₂ = −[−X]₂`.
 - The cobracket of an edge value is `W_T² − W_T′²`: `δ[−X]₂ ∧ (W_T + W_T′) = (W_T − W_T′)∧(W_T + W_T′)`, and the cross terms cancel because two-forms commute.
-- The square value of two independent flips is `[−X]₂∧[−Y]₂`; setting square values to zero breaks the boundary identity of §2.5 on the square faces of `K₃`.
+- The square value of two independent flips with symbols `A`, `B` is `2·B∧A`: with vertex forms `W, W+δA, W+δA+δB, W+δB` the four oriented edge values sum to `A⊗(2W+δA) + B⊗(2W+2δA+δB) − A⊗(2W+δA+2δB) − B⊗(2W+δB) = 2(B⊗δA − A⊗δB) = δ(2·B∧A)`. Taking the value `B∧A` leaves the factor `2` unmatched, and setting square values to zero breaks the boundary identity of §2.5 on the square faces of `K₃`.
 
 ### 2.4 The hexagon three-cell
 
@@ -319,33 +319,41 @@ For a hexagon define
 L¹(a₁,…,a₆) = Cyc⁻₆( D₃₁(s(a₁,a₂,a₃,a₄), s(a₄,a₅,a₆,a₁)) − S₄(s(a₁,a₃,a₄,a₅)) − S₄(Z(a₁,…,a₆)) )   ∈ L₄(F),
 ```
 
-with product three-cells formed by the rule of §2.3 (Goncharov–Rudenko [GR], §4.3, item 4, Definition 4.2 with (101)–(102), p. 52; §1.2, (35)–(36), p. 13). Prove that the sum of the values on the seven hexagonal facets of the heptagon cell is `Q₄`, so that the top equation of the heptagon is `Σ_{k mod 7} L¹(a_{k+1},…,a_{k+6}) = 0`. *Needs:* §§1.1, 1.4, 2.3.
+with product three-cells formed by the rule of §2.3 (Goncharov–Rudenko [GR], §4.3, item 4, Definition 4.2 with (101)–(102), p. 52; §1.2, (35)–(36), p. 13). For seven distinct points `x₁,…,x₇` of `ℙ¹(F)` put `Z_k = Z(x_{k+1},…,x_{k+6})` and `w_k = s(x_{k+1},x_{k+2},x_{k+4},x_{k+6})`, indices mod 7. Prove the identity in `Raw₄(F)`
+
+```text
+Σ_{k mod 7} L¹(x_{k+1},…,x_{k+6}) = −2·Q₄(x₁,…,x₇) + Σ c·( D₃₁(y,z) + D₃₁(z,y) )
+                                     + Σ_{k mod 7} ( 3·(S₄(Z_k) + S₄(Z_k⁻¹)) − (S₄(w_k) + S₄(w_k⁻¹)) ),
+```
+
+the middle sum running over the 21 double-symbol terms `c·D₃₁(y,z)` of `Q₄`, `c = ±1`: the double-symbol part of the seven-facet sum is `Σ c·(D₃₁(z,y) − D₃₁(y,z))`. The two right-hand corrections are antisymmetrizers of double symbols and inversion elements of single symbols. The raw cobracket of §3.1 kills each of them: on `D₃₁(y,z) + D₃₁(z,y)` the `Λ²B₂` terms cancel and the `L₃⊗U` terms are `(D₂₁(y,z) − D₂₁(z,y))⊗(y/z) + (S₃(y/z) − S₃(z/y))⊗((1−y)/(1−z))`, zero in `L₃⊗U` by the symmetry of §1.3 and inversion in `L₃` (§1.5); on `S₄(x) + S₄(x⁻¹)` it is `(S₃(x) − S₃(x⁻¹))⊗u(x) = 0`. Hence the raw cobracket kills the seven-facet sum exactly when it kills `Q₄`. The source's form (36) of `Q₄`, and the facet sum `Σ_i (−1)^i L¹(x₁,…,x̂ᵢ,…,x₇)` of its Proposition 5.5, which is the negative of the cyclic sum above, are relations equivalent to `Q₄` only modulo these corrections; they are not equalities of vectors of `Raw₄(F)`. *Needs:* §§1.1, 1.3–1.5, 2.3; the raw weight-four cobracket formula of §3.1.
 
 The hexagon map has the following API.
 
 - The value is the displayed alternating cyclic sum, computed in `Raw₄(F)` and then in `L₄(F)`.
 - A rotation by one step negates the value, and a rotation by two fixes it.
-- The seven-facet sum of a heptagon equals `Q₄` in `Raw₄(F)`.
+- The seven-facet sum of a heptagon is `−2Q₄` plus a combination of double-symbol antisymmetrizers and single-symbol inversion elements, all killed by the raw cobracket.
 
 **Checks.**
 
 - A rotation by one negates `L¹` and a rotation by two fixes it, as `Cyc⁻₆` requires.
-- The seven-facet sum has exactly the three double-symbol terms of `Q₄`, with signs `−,+,−`.
+- For the ordered tuple `(0,1,3,7,11,17,23)` over ℚ, the seven-facet sum has 70 nonzero raw coefficients (42 double, 28 single) and `Q₄` has 35 (21 double, 14 single); the coefficient of `D₃₁(−69/8,−1/4)` is `−1` in the facet sum and `0` in `Q₄`, while `D₃₁(−1/4,−69/8)` has coefficients `+1` and `−1`. So the facet sum is not `Q₄` in `Raw₄(F)`, and the displayed identity holds exactly, with the corrections supported on 21 antisymmetrizers and 14 inversion pairs; the same holds for `(0,1,2,5,−3,1/2,9)` and `(2,3,5,7,11,13,19)`.
 - The six-point term carries a minus sign both in `Z` and in the summand; using the plain cyclic sum `Cyc₆` instead of `Cyc⁻₆` makes the rotation test fail.
 
 ### 2.5 Cluster boundary identities
 
-Prove that the maps of §§2.3–2.4 satisfy `δL^j = L^{j+1}∘d` in every cell dimension, where `δ` on three-cells is the raw weight-four cobracket of §3.1 before its descent. The edge, square and pentagon identities are Lemmas 3.12, 3.13 and 3.15; the pentagon identity uses the five-term relation of `B₂`, not `Q₃`. The hexagon identity is Proposition 4.4, which uses `Q₃` through §1.5, and the heptagon identity is the vanishing of the raw cobracket on `Q₄` (Proposition 5.5), proved from `d² = 0` on `K₄` (Goncharov–Rudenko [GR], §3.4, Lemmas 3.12–3.15, pp. 42–44; §4.3, Theorem 4.3 and Proposition 4.4, pp. 52–53; §5.2, Proposition 5.5, p. 56; Theorem 1.17, p. 21). Together they give the weight-four map from the cellular chain complex to the Chevalley–Eilenberg complex once `δ` has descended. *Needs:* §§1.5–1.6, 2.3–2.4; the raw weight-four cobracket formula of §3.1; K3BlochGroups §§3.3–3.4.
+Prove that the maps of §§2.3–2.4 satisfy `δL^j = L^{j+1}∘d` in every cell dimension, where `δ` on three-cells is the raw weight-four cobracket of §3.1 before its descent. The edge, square and pentagon identities are Lemmas 3.12, 3.13 and 3.15; the pentagon identity uses the five-term relation of `B₂`, not `Q₃`. The hexagon identity is Proposition 4.4, which uses `Q₃` through §1.5, and the heptagon identity is the vanishing of the raw cobracket on `Q₄` (Proposition 5.5): `d² = 0` on `K₄` with the hexagon identity gives the vanishing of the raw cobracket on the seven-facet sum, and the identity of §2.4 transfers it to `Q₄` (Goncharov–Rudenko [GR], §3.4, Lemmas 3.12–3.15, pp. 42–44; §4.3, Theorem 4.3 and Proposition 4.4, pp. 52–53; §5.2, Proposition 5.5, p. 56; Theorem 1.17, p. 21). The square identity holds with the doubled square value of §2.3; the edge and square identities of Lemmas 3.12–3.13 are stated there in the `e^W` normalization, in which the square value is undoubled. Together they give the weight-four map from the cellular chain complex to the Chevalley–Eilenberg complex once `δ` has descended. *Needs:* §§1.5–1.6, 2.3–2.4; the raw weight-four cobracket formula of §3.1; K3BlochGroups §§3.3–3.4.
 
 **Checks.**
 
 - On an edge the identity is the difference of squares of §2.3; dropping the factor `W_T + W_T′` from the edge value leaves `δL³ = δ[−X]₂`, which is not `W_T² − W_T′²`.
 - On a pentagon of `K₃` the identity reduces, after expanding, to a five-term relation in `B₂`; replacing the pentagon value by zero leaves the five edge contributions, which do not cancel for generic points.
-- On a square face of two independent flips both sides equal `[−X]₂⊗δ[−Y]₂ − [−Y]₂⊗δ[−X]₂`, up to the cell signs, in `B₂⊗Λ²U`: the left by the derivation rule of the Chevalley–Eilenberg differential on `Λ²B₂`, the right as the sum of the four edge values of the square.
+- On a square face whose first two oriented edges have flip symbols `A`, `B`, both sides equal `2(B⊗δA − A⊗δB)` in `B₂⊗Λ²U`: the left as `δ(2·B∧A)` by the rule `δ(x∧y) = x⊗δy − y⊗δx` of the Conventions, the right as the sum of the four edge values (§2.3, Checks). On the hexagon `(0,1,3,−3/11,2,12/11)` over ℚ the square of the long diagonal `(1,4)` has `A = [s(0,1,3,−3/11)]₂ = [−6]₂` and `B = [s(−3/11,2,12/11,0)]₂ = [−10]₂`; the functional `(ord₇∧ord₂)∘δ₂ ⊗ (ord₁₁∧ord₅)` on `B₂⊗Λ²U(ℚ)` takes the values `(1,0)` on `(A,B)` in the first slot and `(0,1)` on `(δA,δB)` in the second, hence `±1` on `δ(A∧B)` and `±2` on the edge sum; an undoubled square value fails here.
+- On the hexagon three-cell the `Λ²B₂` component of `δL¹` is `2·Σ_{k=0,1,2} (−1)^k [s(a_{k+1},…,a_{k+4})]₂∧[s(a_{k+4},…,a_{k+7})]₂`, indices mod 6: the terms of `Cyc⁻₆` at `k` and at `k+3` have the same `δ₂₂`, because the shift by three exchanges the two cross-ratios of a long diagonal and the sign `(−1)^3` compensates the exchange. Each of the three wedges is half a square value, so the hexagon identity also requires the factor `2` of §2.3.
 
 ### Examples
 
-For the hexagon with points `(∞,0,1,x,y,z)` the cluster three-cell value is the alternating sum of six double symbols with the single-symbol corrections of §2.4; its cobracket is the sum over the boundary of the hexagon cell of `K₃`, which consists of six pentagons and three squares. For the heptagon the top identity is exactly `Q₄`.
+For the hexagon with points `(∞,0,1,x,y,z)` the cluster three-cell value is the alternating sum of six double symbols with the single-symbol corrections of §2.4; its cobracket is the sum over the boundary of the hexagon cell of `K₃`, which consists of six pentagons and three squares. For the heptagon the seven hexagonal facets sum to `−2Q₄` plus antisymmetrizers and inversion elements (§2.4), so the top identity kills the raw cobracket of `Q₄`.
 
 ### Dependencies
 
@@ -363,7 +371,7 @@ Define the raw map on `Raw₄(F)` by `δS₄(x) = S₃(x)⊗u(x)` and
 δD₃₁(x,y) = D₂₁(x,y)⊗(x/y) + S₃(x/y)⊗((1−x)/(1−y)) + S₃(x)⊗(1−1/y) − S₃(y)⊗(1−1/x) + [x]₂∧[y]₂,
 ```
 
-with values in `(L₃(F)⊗U(F)) ⊕ Λ²B₂(F)`. Prove that it kills `Q₄` and all its specializations, so descends to `L₄(F)`, and that with `δ` on `B₂` and §1.6 it makes `U ⊕ B₂ ⊕ L₃ ⊕ L₄` a graded Lie coalgebra through weight four, its values read in `Λ²L` through the identifications of the Conventions: the Chevalley–Eilenberg differential squares to zero (Goncharov–Rudenko [GR], §1.2, item 3, (37)–(38) and the specialization check, pp. 13–14, GR line 573; §5.2, Proposition 5.5, p. 56; Theorem 1.14(a), p. 16). A proof route kills generic `Q₄` by §2.5 and `d² = 0` on `K₄`, checks each order case of §1.2 for the specializations, and checks co-Jacobi on single and double generators with §1.6. *Needs:* §§1.2, 1.4, 1.6, 2.5; Mathlib `TensorProduct.lift`, `ExteriorAlgebra.exteriorPower`.
+with values in `(L₃(F)⊗U(F)) ⊕ Λ²B₂(F)`. Prove that it kills `Q₄` and all its specializations, so descends to `L₄(F)`, and that with `δ` on `B₂` and §1.6 it makes `U ⊕ B₂ ⊕ L₃ ⊕ L₄` a graded Lie coalgebra through weight four, its values read in `Λ²L` through the identifications of the Conventions: the Chevalley–Eilenberg differential squares to zero (Goncharov–Rudenko [GR], §1.2, item 3, (37)–(38) and the specialization check, pp. 13–14, GR line 573; §5.2, Proposition 5.5, p. 56; Theorem 1.14(a), p. 16). A proof route kills generic `Q₄` by §2.5, that is by `d² = 0` on `K₄` and the facet identity of §2.4, checks each order case of §1.2 for the specializations, and checks co-Jacobi on single and double generators with §1.6. *Needs:* §§1.2, 1.4, 1.6, 2.5; Mathlib `TensorProduct.lift`, `ExteriorAlgebra.exteriorPower`.
 
 The cobracket has the following API.
 
@@ -441,7 +449,7 @@ For the punctured line with tangential base point at `a`, let `𝔤_S` be the fr
 
 ### 3.6 Framed mixed Hodge–Tate structures
 
-On a smooth complex variety `X`, define good variations of mixed ℚ-Hodge–Tate structures as variations of mixed Hodge structures (HodgeStructures, Layer L2, fibrewise) whose weight-graded pieces are sums of Tate structures `ℚ(n)`, with Griffiths transversality and the admissibility conditions at infinity of [G08] §5. Framings: a framed object is a triple `(H, v, f)` with `v ∈ Hom(ℚ(n), gr^W_{−2n}H)` and `f ∈ Hom(gr^W_{−2m}H, ℚ(m))`; framed objects modulo the equivalence generated by framed morphisms form a graded Hopf algebra whose indecomposables are a graded Lie coalgebra `L^HT_•(X)` with `L^HT_1(X) = O(X)ˣ_ℚ` (Goncharov–Rudenko [GR], §8.2, item 2, (183)–(184), p. 76; Goncharov [G08], §§4.1–4.2, pp. 39–44). Over a point this is the Lie coalgebra of the category of mixed ℚ-Hodge–Tate structures. *Needs:* HodgeStructures Layer L2; Mathlib `TensorProduct`, `ExteriorAlgebra.exteriorPower`.
+On a smooth complex variety `X`, define good variations of mixed ℚ-Hodge–Tate structures as variations of mixed Hodge structures (fibrewise `TauCeti.Hodge.MixedHodgeStructure`, HodgeStructures Layer L2) whose weight-graded pieces are sums of Tate structures `ℚ(n)`, with Griffiths transversality and the admissibility conditions at infinity of [G08] §5. Framings: a framed object is a triple `(H, v, f)` with `v ∈ Hom(ℚ(n), gr^W_{−2n}H)` and `f ∈ Hom(gr^W_{−2m}H, ℚ(m))`; framed objects modulo the equivalence generated by framed morphisms form a graded Hopf algebra whose indecomposables are a graded Lie coalgebra `L^HT_•(X)` with `L^HT_1(X) = O(X)ˣ_ℚ` (Goncharov–Rudenko [GR], §8.2, item 2, (183)–(184), p. 76; Goncharov [G08], §§4.1–4.2, pp. 39–44). Over a point this is the Lie coalgebra of the category of mixed ℚ-Hodge–Tate structures. *Needs:* HodgeStructures Layer L2, at the pins `TauCeti.Hodge.MixedHodgeStructure`, `TauCeti.Hodge.MixedHodgeStructureCat` and `TauCeti.Hodge.tate`; Mathlib `TensorProduct`, `ExteriorAlgebra.exteriorPower`.
 
 The construction has the following API.
 
@@ -457,7 +465,7 @@ The construction has the following API.
 
 ### 3.7 The canonical real period and rigidity
 
-Construct the commutative dg-algebra `C_H(X) = ⊕_n C_H(ℝ_X(n))` of [G08] §4, quasi-isomorphic in weight `n` to the real Deligne complex, and the canonical real period map of commutative dg-algebras `P: CE*(L^HT_•(X)) → C_H(X)`, sending `f ∈ L^HT_1(X)` to `log|f|` and, on `Λⁿ L^HT_1`, `f₁∧…∧fₙ ↦ ω_{n−1}(log|f₁|,…,log|fₙ|)` with `dω_{n−1} = πₙ(dlog f₁∧…∧dlog fₙ)` (Goncharov–Rudenko [GR], §8.2, item 2, Theorem 8.3 with (185)–(188), pp. 76–77, GR line 3520; Goncharov [G08], §2.1, pp. 28–29, §§4.2–4.3, pp. 41–52, and §5, pp. 53–63). Prove the rigidity lemma: a two-step variation `0 → ℚ(m) → L → ℚ(0) → 0` with `m ≥ 2` over a connected smooth base is constant (Goncharov–Rudenko [GR], §2, item 7, Lemma 2.7, p. 33). A proof route for rigidity uses Griffiths transversality: the derivative of the period of the extension lies in `F^{−1}` of the pure part `ℚ(m)⊗O`, which is zero for `m ≥ 2`. *Needs:* §3.6; HodgeStructures Layer L2; MotivicEtaleKTheory §§3.3–3.4 for the real Deligne complex.
+Construct the commutative dg-algebra `C_H(X) = ⊕_n C_H(ℝ_X(n))` of [G08] §4, quasi-isomorphic in weight `n` to the real Deligne complex, and the canonical real period map of commutative dg-algebras `P: CE*(L^HT_•(X)) → C_H(X)`, sending `f ∈ L^HT_1(X)` to `log|f|` and, on `Λⁿ L^HT_1`, `f₁∧…∧fₙ ↦ ω_{n−1}(log|f₁|,…,log|fₙ|)` with `dω_{n−1} = πₙ(dlog f₁∧…∧dlog fₙ)` (Goncharov–Rudenko [GR], §8.2, item 2, Theorem 8.3 with (185)–(188), pp. 76–77, GR line 3520; Goncharov [G08], §2.1, pp. 28–29, §§4.2–4.3, pp. 41–52, and §5, pp. 53–63). Prove the rigidity lemma: a two-step variation `0 → ℚ(m) → L → ℚ(0) → 0` with `m ≥ 2` over a connected smooth base is constant (Goncharov–Rudenko [GR], §2, item 7, Lemma 2.7, p. 33). A proof route for rigidity uses Griffiths transversality: the derivative of the period of the extension lies in `F^{−1}` of the pure part `ℚ(m)⊗O`, which is zero for `m ≥ 2`. *Needs:* §3.6; HodgeStructures Layer L2, at the pins `TauCeti.Hodge.MixedHodgeStructure` and its strictness `TauCeti.Hodge.MixedHodgeStructure.Hom.range_inf_F_eq_map_F`; MotivicEtaleKTheory §§3.3–3.4 for the real Deligne complex.
 
 The period has the following API.
 
@@ -473,7 +481,7 @@ The period has the following API.
 
 ### 3.8 Motivic correlators on a punctured line
 
-For a number field `F`, a point `a ∈ ℙ¹(F)`, a nonzero tangent vector `v` at `a`, and points `b₀,…,b_m ∈ ℙ¹(F)` different from `a` (repetitions allowed for `m > 1`; `b₀ ≠ b₁` when `m = 1`), define the motivic correlator `Cor_{a,v}(b₀,…,b_m)` in the weight-`m` part of the Lie coalgebra of `MT(F)` by dualizing the special-derivation action of the motivic Lie algebra on the fundamental Lie algebra of `ℙ¹ ∖ {a, b₀,…,b_m}` at the tangential base point, through §3.5 (Goncharov–Rudenko [GR], §2, items 2–5, (62)–(68), Theorem 2.2 and Definition 2.3, pp. 26–29; §1.2, item 5, pp. 14–15). Prove cyclic invariance, independence of `v` in weight `m > 1`, the cut formula (66) for the cobracket, `Cor_∞(b₀,b₁) = u(b₀ − b₁)` for the standard tangent at `∞`, and the weight-two value given by (67). *Needs:* §§3.4–3.5; PeriodsAndSpecialValues PS.9.8–PS.9.10 with the contracts mixed-tate-number-fields and punctured-line-path-torsors; MotivesAndAlgebraicCycles Layer 3.
+For a number field `F`, a point `a ∈ ℙ¹(F)`, a nonzero tangent vector `v` at `a`, and points `b₀,…,b_m ∈ ℙ¹(F)` different from `a` (repetitions allowed for `m > 1`; `b₀ ≠ b₁` when `m = 1`), define the motivic correlator `Cor_{a,v}(b₀,…,b_m)` in the weight-`m` part of the Lie coalgebra of `MT(F)` by dualizing the special-derivation action of the motivic Lie algebra on the fundamental Lie algebra of `ℙ¹ ∖ {a, b₀,…,b_m}` at the tangential base point, through §3.5 (Goncharov–Rudenko [GR], §2, items 2–5, (62)–(68), Theorem 2.2 and Definition 2.3, pp. 26–29; §1.2, item 5, pp. 14–15). Prove cyclic invariance, independence of `v` in weight `m > 1`, the cut formula (66) for the cobracket, `Cor_∞(b₀,b₁) = u(b₀ − b₁)` for the standard tangent at `∞`, and the weight-two value given by (67). *Needs:* §§3.4–3.5; PeriodsAndSpecialValues PS.9.8–PS.9.10 with the contracts mixed-tate-number-fields and punctured-line-path-torsors; MotivesAndAlgebraicCycles §3.6 and §§6.1–6.3 for the Tannakian group of `MT(F)`.
 
 The correlators have the following API.
 
@@ -485,17 +493,24 @@ The correlators have the following API.
 
 - For `u ≠ w`, `Cor_∞(u,w) = u(u − w)`, not `u(u/w)`.
 - Repeated arguments are allowed in weight `m > 1`; `bᵢ = a` lies outside the domain and is reached only through §3.11's specialization.
-- In weight two the three cuts of `(0,1,y)` give `u(−1)∧u(1−y) + u(1−y)∧u(y) + u(y)∧u(−1) = (1−y)∧y = δ[y]₂`, since `u(−1) = 0`, and by (67) with the cross-ratio `s(∞,0,1,y) = 1−y` one has `Cor_∞(0,1,y) = −Li₂^M(1−y) = Li₂^M(y)`: the correlator is the motivic dilogarithm of `y` with the plus sign. Its Hodge period is `+(1/2)(2πi)^{−2}L₂(y)`, the negative of the §3.9 value of `Cor^H(1,0,y)`: reversing the cyclic order of three points inverts the cross-ratio and negates a weight-two correlator.
+- In weight two the three cuts of `(0,1,y)` give `u(−1)∧u(1−y) + u(1−y)∧u(y) + u(y)∧u(−1) = (1−y)∧y = δ[y]₂`, since `u(−1) = 0`, and by (67) with the cross-ratio `s(∞,0,1,y) = 1−y` one has `Cor_∞(0,1,y) = −Li₂^M(1−y) = Li₂^M(y)`: the correlator is the motivic dilogarithm of `y` with the plus sign. Its canonical period is `p = L₂*(y) = L₂(y)/2` (§5.1), and its numerical Hodge correlator `Cor^H(0,1,y) = (2πi)^{−2}p = (1/2)(2πi)^{−2}L₂(y)` (§3.9) is the negative of `Cor^H(1,0,y)`: reversing the cyclic order of three points inverts the cross-ratio and negates a weight-two correlator.
 
 ### 3.9 Hodge correlators
 
-For the punctured complex line define the Hodge correlator `Cor^H_a(z₀,…,z_m)` as the sum over plane trivalent trees with `m+1` leaves decorated cyclically by the `zᵢ` of the integral over the internal vertices in `ℙ¹(ℂ)` of the form built from one Green function and `d^C` of the others, the Green function being `log|x−y|` normalized by the tangent vector at `a`, weighted by `1/|Aut T|` (Goncharov–Rudenko [GR], §2, item 6 and Figure 8, p. 31; Malkin [M20], §2.1.3, example after (16), p. 18; Goncharov [G08], §3.2, pp. 34–37). Prove local integrability of the integrand and that the result is the canonical real period of §3.7 of the Hodge realization of `Cor_{a,v}` under each complex embedding. *Needs:* §§3.7–3.8; Polylogarithms Layer 5 (currents).
+For the punctured complex line with base point `∞` and its standard tangent vector, define the numerical Hodge correlator `Cor^H(z₀,…,z_m)` of weight `m ≥ 1` as Malkin's normalized tree sum. For a plane trivalent tree `T` in a disc with leaves at `z₀,…,z_m` placed counterclockwise on the boundary, `m − 1` internal vertices and `2m − 1` edges `E₀,…,E_{2m−2}` numbered compatibly with the canonical orientation `Or_T` of the plane embedding, assign to an edge `(u,v)` the function `f = (2πi)^{−1} log|x_u − x_v|`, fix the leaf coordinates, and integrate `(−4)^{m−1} binom(2m−2, m−1)^{−1} Or_T f₀ d^C f₁∧…∧d^C f_{2m−2}` over the internal vertices in `ℂ`; `Cor^H` is the sum over all such `T` (Malkin [M20], §1.2.1, (3), p. 3). For a base point `a` with tangent vector `v` the edge function is the Green function of `(a,v)` divided by `2πi` (Goncharov–Rudenko [GR], §2, item 6 and Figure 8, p. 31; Goncharov [G08], §3.2, pp. 34–37). Prove local integrability of the integrands, so that `Cor^H` takes values in `(2πi)^{−m}ℝ`, and the period comparison: for a cyclic word `x` of weight `m`, `Cor^H(x) = (2πi)^{−m} p(Cor^Hod(x))`, where `Cor^Hod(x)` is the Hodge realization of the motivic correlator of §3.8 under the complex embedding and `p` is the canonical real period of §3.7 (Malkin [M20], §1.4.4, Theorem 6(a), p. 13, M20 line 627; Goncharov [G08], Theorem 1.12, p. 19). The source [GR] §2 item 6 writes the same tree integrals with the unscaled Green function `log|x−y|`, the full alternation over the edges and the weight `1/|Aut T|`; those numbers differ from `Cor^H` by constants depending on `m`, and the comparison with `p` is stated for the normalization above. The period `p`, not `Cor^H`, is what §§5.1–6.3 use. *Needs:* §§3.7–3.8; Polylogarithms Layer 5 (currents).
+
+The correlator function has the following API.
+
+- Each tree contributes a convergent integral, and `Cor^H(z₀,…,z_m)` is the finite sum of these over plane trivalent trees, with values in `(2πi)^{−m}ℝ`.
+- Dihedral symmetry: `Cor^H(z₀,…,z_m) = Cor^H(z₁,…,z_m,z₀) = (−1)^{m+1} Cor^H(z_m,…,z₀)` (Malkin [M20], §1.2.2, p. 4).
+- Invariance under `z ↦ z + c` in every weight and under `z ↦ cz`, `c ∈ ℂˣ`, in weight `m > 1` (Malkin [M20], §1.2.2, p. 4).
+- On cyclic words of weight `m`, `Cor^H = (2πi)^{−m}·p∘Cor^Hod`.
 
 **Checks.**
 
-- The three-leaf correlator is `Cor^H(1,0,z) = −(1/2)(2πi)^{−2}L₂(z)` (Malkin [M20], p. 18), and `Cor^H(0,1,z) = Cor^H(1,0,1−z) = +(1/2)(2πi)^{−2}L₂(z)` by the shift and rescaling invariance at the base point `∞` and `L₂(1−z) = −L₂(z)`; a normalization without the Tate factor or with the opposite sign fails these values.
-- Cyclic reordering of the leaves preserves the correlator.
-- An affine change of coordinate fixing the tangential data preserves correlators of weight greater than one.
+- Weight one: the only tree is a single edge with no internal vertex and constant `1`, so `Cor^H(z₀,z₁) = (2πi)^{−1}log|z₀ − z₁|` (Malkin [M20], Figure 1, p. 4), and `(2πi)·Cor^H(z₀,z₁) = log|z₀ − z₁|` is the Kummer period of §3.7. An edge function without the factor `(2πi)^{−1}` would make the numerical correlator equal to `p` in weight one and then off by `(2πi)²` in weight two.
+- Weight two: the example after (16) on p. 18 of [M20] gives `Cor^H(1,0,z) = −(1/2)(2πi)^{−2}L₂(z)`, hence `Cor^H(0,1,z) = +(1/2)(2πi)^{−2}L₂(z)` by the reversal sign `(−1)^3`, and `(2πi)²·Cor^H(0,1,z) = L₂(z)/2 = L₂*(z)`, the canonical period of `S₂(z) ↦ Cor_∞(0,1,z)` (§§3.13, 5.1). At `z = i`, with `D(i)` Catalan's constant `≈ 0.915966`, `p = D(i)/2 ≈ 0.457983` while `Cor^H(0,1,i) = −D(i)/(8π²) ≈ −0.011601`; reading the numerical correlator as the period is off by `(2πi)² = −4π²`. The closed formula (4) on p. 4 of [M20] gives `Cor^H(1,0,z) = (2πi)^{−2}L₂(z)`, which differs from the p. 18 value by the factor `−2` and is not used.
+- Cyclic reordering preserves `Cor^H` and reversal multiplies it by `(−1)^{m+1}`: by `+1` in weight one, where `log|z₀ − z₁|` is symmetric, and by `−1` in weight two, matching `L₂(1/w) = −L₂(w)`; a symmetric weight-two correlator would contradict `Cor^H(1,0,z) = −Cor^H(0,1,z)`.
 
 ### 3.10 Collision continuity
 
@@ -505,7 +520,7 @@ Prove that for `m > 1`, `Cor^H(z₀,…,z_m)` is continuous on `ℂ^{m+1}` minus
 
 - At a partial collision `z₁ → z₂` with `z₀` fixed the limit exists and equals the correlator with `z₁ = z₂`.
 - Three arguments collapsing to one point give direction-dependent limits such as `L₂((a−c)/(b−c))`; the full diagonal must be excluded.
-- In weight one (`m = 1`) the full diagonal is `{z₀ = z₁}` and the correlator `log|z₀ − z₁|` is continuous on its complement, so the continuity clause holds there too; but there is no partial collision, the correlator depends on the tangent vector at the base point (§3.8), and it is unbounded near the diagonal. The partial-collision clause has content only for `m > 1`, the scope of Lemma 29 of the source, where the limit is the correlator with the coincident arguments retained.
+- In weight one (`m = 1`) the full diagonal is `{z₀ = z₁}` and the correlator `(2πi)^{−1}log|z₀ − z₁|` is continuous on its complement, so the continuity clause holds there too; but there is no partial collision, the correlator depends on the tangent vector at the base point (§3.8), and it is unbounded near the diagonal. The partial-collision clause has content only for `m > 1`, the scope of Lemma 29 of the source, where the limit is the correlator with the coincident arguments retained.
 
 ### 3.11 Change of base point
 
@@ -541,15 +556,15 @@ For a number field `F` prove that `Sₘ(y) ↦ Cor_∞(0,…,0,1,y)` with `m−1
 
 ### Examples
 
-Over `F = ℚ(i)` the weight-four Lie coalgebra contains `S₄(i)`, whose image is a motivic class with Hodge period `L₄*(i) = 5L₄(i)/16` since `|i| = 1`. The correlator `Cor_∞(0,0,x,1,y)` with `x = 3, y = 5` over ℚ is the image of `D₃₁(3,5)`; the `(2,2)`-cut of its cobracket is `Cor_∞(0,3,1)∧Cor_∞(1,5,0) = −[3]₂∧[5]₂` in `Λ²L₂`, the model's `δ₂₂D₃₁(3,5) = [3]₂∧[5]₂`, and it is nonzero because `[3]₂` and `[5]₂` map to the independent vectors `2∧3` and `2(2∧5)` of `Λ²U(ℚ)` and `B₂(ℚ)` injects into `Λ²U(ℚ)`. The choice `x = 2` would be degenerate: `[2]₂ ↦ u(−1)∧u(2) = 0`, so `[2]₂ = 0` in `B₂(ℚ)` and the `(2,2)`-component vanishes.
+Over `F = ℚ(i)` the weight-four Lie coalgebra contains `S₄(i)`, whose image is a motivic class with canonical period `p = L₄*(i) = 5L₄(i)/16` since `|i| = 1`. The correlator `Cor_∞(0,0,x,1,y)` with `x = 3, y = 5` over ℚ is the image of `D₃₁(3,5)`; the `(2,2)`-cut of its cobracket is `Cor_∞(0,3,1)∧Cor_∞(1,5,0) = −[3]₂∧[5]₂` in `Λ²L₂`, the model's `δ₂₂D₃₁(3,5) = [3]₂∧[5]₂`, and it is nonzero because `[3]₂` and `[5]₂` map to the independent vectors `2∧3` and `2(2∧5)` of `Λ²U(ℚ)` and `B₂(ℚ)` injects into `Λ²U(ℚ)`. The choice `x = 2` would be degenerate: `[2]₂ ↦ u(−1)∧u(2) = 0`, so `[2]₂ = 0` in `B₂(ℚ)` and the `(2,2)`-component vanishes.
 
 ### Dependencies
 
-Layers 1–2; HodgeStructures Layer L2; MotivicEtaleKTheory §§3.3–3.4; PeriodsAndSpecialValues PS.9.8–PS.9.10 with its two contracts; MotivesAndAlgebraicCycles Layer 3; Polylogarithms §§3.1–3.2, 4.5 and Layer 5; Mathlib free Lie algebras and derivations.
+Layers 1–2; HodgeStructures Layer L2 and its pinned Tau Ceti implementation `TauCeti.Hodge.MixedHodgeStructure`; MotivicEtaleKTheory §§3.3–3.4; PeriodsAndSpecialValues PS.9.8–PS.9.10 with its two contracts; MotivesAndAlgebraicCycles §3.6 and §§6.1–6.3; Polylogarithms §§3.1–3.2, 4.5 and Layer 5; Mathlib free Lie algebras and derivations.
 
 ## Layer 4: Grassmannian configurations and decorated flags
 
-Generic configurations of vectors, their deletion and projection maps and Gale duality are Polylogarithms §§3.4 and 3.6. This layer truncates the Bigrassmannian at weight four, maps generic decorated flags to it, defines the Grassmannian group `G₄(F)`, and writes the explicit map from the dual weight-four Bigrassmannian to the weight-four Lie coalgebra complex, proving every square including the degree-eight one.
+Generic configurations of vectors, their deletion and projection maps, decorated flags with the acyclic generic decorated-flag resolution, and Gale duality are Polylogarithms §§3.4 and 3.6. This layer truncates the Bigrassmannian at weight four, maps generic decorated flags of the weight-four length to it, defines the Grassmannian group `G₄(F)`, and writes the explicit map from the dual weight-four Bigrassmannian to the weight-four Lie coalgebra complex, proving every square including the degree-eight one.
 
 ### 4.1 The weight-four Bigrassmannian
 
@@ -564,27 +579,21 @@ The quotient has the following API.
 
 - `BC₄^{(4)} = 0` and `BC₅^{(4)} = C₅(4)`, the corner in degree five.
 - The projection `C₆(4) → C₅(3)` is zero in the quotient, so `D` on `C₆(4)` is the deletion `C₆(4) → C₅(4)` alone; treating the truncation as a subcomplex would keep a spurious row-three term.
-- Two consecutive mixed faces, one deletion and one projection at different indices, cancel with the zero-based signs; one-based signs reverse one of them.
+- Mixed faces cancel in pairs with explicit coefficients: on a tuple `(v₀,…,v_{m−1})`, deleting `v₀` and then projecting along `v₁`, which has moved to position `0`, has coefficient `(+1)(+1) = +1` in `p∂`, while projecting along `v₁` at position `1` and then deleting `v₀` has coefficient `(−1)(+1) = −1` in `∂p`; both give the configuration `(v₂,…,v_{m−1})` in the quotient by `v₁`. Zero-based `(−1)^i` is the one-based `(−1)^{s−1}` with `s = i + 1`; changing both `∂` and `p` by the same global sign leaves `∂p + p∂` unchanged, so it is not a test of the convention.
 
-### 4.2 Generic decorated flags
+### 4.2 Decorated flags of weight-four length
 
-A decorated `p`-flag in an `N`-dimensional `F`-space `V` is a chain `0 = F₀ ⊂ F₁ ⊂ … ⊂ F_p` with `dim Fᵢ = i` together with nonzero vectors `fᵢ ∈ Fᵢ/F_{i−1}`. An `m`-tuple of decorated flags is generic when every sum `F_{1,a₁} + … + F_{m,a_m}` with `0 ≤ aᵢ ≤ p` and `Σaᵢ ≤ N` is direct. Let `C_m(A_N^{(p)})` be the free ℚ-module on generic `m`-tuples, with the alternating deletion differential, and its `GL_N(F)`-coinvariants (Goncharov–Rudenko [GR], §7.1, (131)–(132), p. 63). Decorations are vectors of native quotient modules, not representatives in `Fᵢ`. *Needs:* Mathlib `Submodule`, `Submodule.Quotient.mk`, `Finsupp`.
-
-The flags have the following API.
-
-- The `i`-th subspace has dimension `i` and lies in the next; the `i`-th decoration is a nonzero vector of `Fᵢ/F_{i−1}`.
-- Genericity is exactly the finite family of direct-sum conditions.
-- Linear isomorphisms transport flags, decorations and genericity; field extension preserves genericity.
+Decorated `k`-flags in an `N`-dimensional `F`-space `V` (a chain `0 = F₀ ⊂ … ⊂ F_k` with `dim Fᵢ = i` and nonzero decorations `fᵢ ∈ Fᵢ/F_{i−1}`), the genericity of an `m`-tuple of them (every sum `F_{1,a₁} + … + F_{m,a_m}` with `0 ≤ aᵢ ≤ k` and `Σaᵢ ≤ N` is direct) and the complex `C_•(A_N^{(k)})` of generic tuples with its alternating deletion differential and `GL_N(F)`-coinvariants are Polylogarithms §3.4, consumed for every flag length through the contract decorated-flag-lengths (Goncharov–Rudenko [GR], §7.1, (131)–(132), p. 63). Weight four uses, for `N ≥ 4`, the flag length `k = N − 3`: this is `p + 1` for the number `p = N − 4` of quotient steps of §4.3, the case `n = 4`, `p = N − 4` of Theorem 7.1 of the source (p. 63). Nothing about flags is constructed here. *Needs:* Polylogarithms §3.4 with the contract decorated-flag-lengths.
 
 **Checks.**
 
-- A decorated `1`-flag is a line with a nonzero vector on it, and a generic tuple of them in dimension `N` is a generic vector configuration in the sense of Polylogarithms §3.4.
-- Two flags with the same first line are not generic when `N ≥ 2`: `F_{1,1} + F_{2,1}` is not direct.
-- Changing a representative of `fᵢ` by an element of `F_{i−1}` gives the same decoration.
+- For `N = 4` the length is one: a decorated `1`-flag is a line with a nonzero vector on it, and a generic tuple of them in `F⁴` is a generic vector configuration in the sense of Polylogarithms §3.4.
+- For `N = 5` the length is two, and two flags with the same first line are not generic: `F_{1,1} + F_{2,1}` is not direct, although `1 + 1 ≤ 5`.
+- The decoration `f_{i,k}` is a vector of the quotient `F_{i,k}/F_{i,k−1}`: changing a representative by an element of `F_{i,k−1}` gives the same decoration, and the configurations of §4.3 depend only on these classes.
 
 ### 4.3 From decorated flags to configurations
 
-For `N ≥ 4` put `p = N − 4` and use decorated flags of length `p + 1`. For `m` flags and `a = (a₁,…,a_m)` with `aᵢ ≥ 0` and `Σaᵢ ≤ p`, project the decorations `f_{i,aᵢ+1}` to `V/(⊕ᵢ F_{i,aᵢ})`, a generic `m`-tuple in dimension `N − Σaᵢ`, and sum the classes over all such `a`. Prove that this is a chain map `t: C_m(A_N^{(N−3)}) → BC_m^{(4)}`, the target rows `q ≥ m` being zero, compatible with stabilization after the standard flag choices, and fix the sign comparison between the simplicial differential of the flag complex and `D = ∂ + p` by an explicit row-and-degree sign (Goncharov–Rudenko [GR], §7.1, Theorem 7.1 with (133)–(134), p. 63, GR line 2878; §9.1, items 1–3, pp. 85–87). A proof route partitions the boundary terms by whether the deleted flag has `aᵢ = 0` or `aᵢ > 0` and pairs them with deletion and projection faces; the source changes bicomplex signs without recording the conversion, so the sign is part of this target. *Needs:* §§4.1–4.2; Mathlib `Submodule.Quotient.mk`.
+For `N ≥ 4` put `p = N − 4` and use decorated flags of length `p + 1`. For `m` flags and `a = (a₁,…,a_m)` with `aᵢ ≥ 0` and `Σaᵢ ≤ p`, project the decorations `f_{i,aᵢ+1}` to `V/(⊕ᵢ F_{i,aᵢ})`, a generic `m`-tuple in dimension `N − Σaᵢ`, and sum the classes over all such `a`. Prove that this is a chain map `t: C_m(A_N^{(N−3)}) → BC_m^{(4)}`, the target rows `q ≥ m` being zero, compatible with stabilization after the standard flag choices, and fix the sign comparison between the simplicial differential of the flag complex and `D = ∂ + p` by an explicit row-and-degree sign (Goncharov–Rudenko [GR], §7.1, Theorem 7.1 with (133)–(134), p. 63, GR line 2878; §9.1, items 1–3, pp. 85–87). A proof route partitions the boundary terms by whether the deleted flag has `aᵢ = 0` or `aᵢ > 0` and pairs them with deletion and projection faces; the source changes bicomplex signs without recording the conversion, so the sign is part of this target. *Needs:* §§4.1–4.2; Polylogarithms §3.4 (decorated flags, with the contract decorated-flag-lengths); Mathlib `Submodule.Quotient.mk`.
 
 The map has the following API.
 
@@ -598,15 +607,20 @@ The map has the following API.
 - The term with `aᵢ = p` uses decoration number `p + 1`, so flags of length `p` are not enough.
 - Quotienting by `⊕F_{i,aᵢ+1}` instead of `⊕F_{i,aᵢ}` kills the vector `f_{i,aᵢ+1}` that must survive.
 
-### 4.4 The generic-flag resolution
+### 4.4 From group homology to the weight-four Bigrassmannian
 
-Over an infinite field prove that the augmented complex of generic decorated-flag tuples, before `GL_N`-coinvariants, is acyclic: a finite cycle is coned off by a flag generic to the finitely many flags in its support. Consequently a comparison map from a projective `ℚ[GL_N(F)]`-resolution of `ℚ` to this complex exists and is unique up to homotopy, and composing with §4.3 and duality gives maps `H_•(GL_N(F),ℚ)` to the homology of the dual weight-four Bigrassmannian (Goncharov–Rudenko [GR], §9.3, item 3, (240), p. 94; §9.1, items 1–3, pp. 85–87). The flag modules are not free `ℚ[GL_N]`-modules; Mathlib's `CategoryTheory.ProjectiveResolution.lift` requires a projective target, so the comparison into an acyclic target is proved here. Exactness after coinvariants is not claimed. *Needs:* §§4.2–4.3; Mathlib `groupHomology`, `CategoryTheory.ProjectiveResolution`; Polylogarithms §3.4 for the weight-three instance.
+For an infinite field `F` and `N ≥ 4`, compose the comparison map of Polylogarithms §3.4 at flag length `N − 3` (a chain map from a projective `ℚ[GL_N(F)]`-resolution of `ℚ` into the augmented generic decorated-flag complex, unique up to chain homotopy; contract decorated-flag-lengths) with `t` of §4.3, pass to `GL_N(F)`-coinvariants and apply Gale duality (§4.1), to obtain maps from `H_•(GL_N(F),ℚ)` to the homology of the dual weight-four Bigrassmannian. Prove that these maps are independent of the choices, natural in field embeddings, and compatible with `GL_N → GL_{N+1}` through the stabilized form of `t` (Goncharov–Rudenko [GR], §9.3, item 3, (240), p. 94; §9.1, items 1–3, pp. 85–87). The acyclicity of the flag complex and the comparison map are the supplier's; the flag modules are not free `ℚ[GL_N]`-modules and exactness after coinvariants is not claimed. *Needs:* §§4.1–4.3; Polylogarithms §3.4 with the contract decorated-flag-lengths; Mathlib `groupHomology`.
+
+The maps have the following API.
+
+- For every `N ≥ 4` and every degree there is a linear map from `H_•(GL_N(F),ℚ)` to the homology of the dual weight-four Bigrassmannian, depending on no choice.
+- The maps are natural in field embeddings and commute with stabilization `GL_N → GL_{N+1}`.
 
 **Checks.**
 
-- For `N = 1` with flags of length one every tuple of nonzero vectors of `F¹` is generic, and coning by any nonzero vector contracts the augmented complex, over every field.
-- Over `𝔽₂` with `N = 2` there are only three lines, so four pairwise distinct lines do not exist and the coning argument fails; the infinite-field hypothesis is needed.
-- The comparison map is natural in field embeddings and independent of choices up to homotopy; two comparisons differ by a chain homotopy built from projectivity of the source.
+- For `N = 4` the flag length is one and `t` is the identity on generic vector configurations (§4.3), so the map is the supplier's comparison followed by the row quotient of §4.1 and duality.
+- Two comparison maps differ by a chain homotopy, built from projectivity of the source, and so induce the same map on homology; a comparison chosen without this homotopy statement would make the maps depend on choices.
+- The field must be infinite: over `𝔽₂` with `N = 2` there are only three lines in `F²`, so no fourth decorated `1`-flag is generic to three given pairwise distinct ones and the supplier's coning argument fails.
 
 ### 4.5 The Grassmannian group G₄
 
@@ -622,7 +636,7 @@ The group has the following API.
 
 - Scaling one vector of an eight-tuple by `2` preserves its class in `G̃₄`, whereas in `C₈(4)` it gives a different generator.
 - All nine terms of a generic deletion boundary from `C₉(4)` sum to zero in `G₄(F)`.
-- The dual nine-term relation is not a consequence of the deletion relation in `G̃₄`; omitting it gives a larger quotient on which the cobracket of §4.6 is not defined.
+- The cobracket `δ̃` of §4.6 kills the dual nine-term relation term by term: `δ̃(π₈p x) = R₇³(p²x)` for a generic nine-tuple `x` of vectors in `F⁵`, and in `p²x` the two orders of projecting along the vectors at zero-based positions `a < b` carry the signs `(−1)^a(−1)^{b−1}` and `(−1)^b(−1)^a` and give the same configuration of `F⁵/⟨x_a,x_b⟩`, so the 72 ordered terms cancel in 36 pairs.
 
 ### 4.6 The normalized configuration formulas
 
@@ -653,6 +667,13 @@ The formulas have the following API.
 
 For the finite configuration sizes needed in §4.8, define `b₁(q,m)` as the free module on `q`-element subsets of `{1,…,m}` (determinant letters, symmetric because `u(−1) = 0`); `b₂(q,m)` generated by `[i₁,…,i_{q−2}|j₁,j₂,j₃,j₄]₂`, symmetric in the projection indices and alternating in the last four, modulo the ordinary and dual five-term relations; and `b₃(3,m)` generated by `[i|j,k,l,h]₃` and `[i,j,k,l,h,s]₃` modulo dihedral and seven-term relations, the first family with the three-term relation without constant (Goncharov–Rudenko [GR], §10.1, Definitions 10.2, 10.4 and 10.7 with Examples 10.6 and 10.8, pp. 95–97). Evaluation maps `b₁ → U(F)` and `b₂ → B₂(F)`; `b₃` evaluates to `B₃(F)/ℚ[1]₃` only, because the three-term relation holds in `B₃(F)` with the constant `[1]₃` (the source's evaluation to `B₃(F)` on p. 97 needs this quotient). Every use of `b₃` in §4.8 is after the cobracket, and `δ₃[1]₃ = [1]₂⊗u(1) = 0`, so the composite `b₃ → B₂⊗U` is well defined; `R₇³` itself is defined by its formula in `B₃(F)⊗U(F)`. *Needs:* §4.6; Polylogarithms §§3.1–3.2; Mathlib `Submodule.Quotient.mk`, `ExteriorAlgebra.exteriorPower`.
 
+The symbolic modules have the following API.
+
+- `b₁(q,m)` is free on the `q`-element subsets of `{1,…,m}`, and evaluation on a generic configuration sends a subset to the unit vector of its Plücker determinant, independent of the order of the subset because `u(−1) = 0`.
+- `b₂(q,m)` is a finite-dimensional quotient of the free module on its generators, and evaluation sends `[I|j₁,j₂,j₃,j₄]₂` to `[r(I|j₁,j₂,j₃,j₄)]₂ ∈ B₂(F)`, the cross-ratio of the four vectors projected from the span of `I`; it kills the ordinary and dual five-term relations.
+- `b₃(3,m)` evaluates to `B₃(F)/ℚ[1]₃`, and its composite with `δ₃` to `B₂(F)⊗U(F)` is well defined.
+- Exterior and tensor products of these modules evaluate factorwise, so an identity certified in `Λ²b₂` or `b₂⊗Λ²b₁` holds for every generic configuration.
+
 **Checks.**
 
 - The relation matrices give `dim b₂(2,6) = 10` and `dim b₂(3,7) = 55` (Example 10.6).
@@ -675,7 +696,7 @@ A proof route, square by square: (i) with `δb₁ = −3a₁ + 6a₃`, `δb₂ =
 
 **Checks.**
 
-- Coefficient cancellation in (iv): for a function `g` of the first seven of eight vectors, `Alt₈ g = −(Alt₇ g)∘∂` with zero-based signs, and likewise `Alt₈` of a function projected from the eighth vector is `−(Alt₇ ·)∘p`. Hence the `Λ²B₂` part of `R₇³∂` is `−(3/28)·(−X) = (3/28)X` and that of `R₇²p` is `−(1/84)·(9X) = −(3/28)X`; they cancel. With `+1/84` the sum is `(3/7)X ≠ 0`.
+- Coefficient cancellation in (iv): for a function `g` of the first seven of eight vectors, `Alt₈ g = −(Alt₇ g)∘∂` with zero-based signs, and likewise `Alt₈` of a function projected from the eighth vector is `−(Alt₇ ·)∘p`. Hence the `Λ²B₂` part of `R₇³∂` is `−(3/28)·(−X) = (3/28)X` and that of `R₇²p` is `−(1/84)·(9X) = −(3/28)X`; they cancel. With `+1/84` the sum is `(3/28)X + (9/84)X = (3/14)X ≠ 0`; at the test value `X = 14` it is `3`.
 - Evaluating both `Λ²B₂` contributions on `C₈(3)` with the alternating form `(D∘σ₁)∧(D∘σ₂)`, for two independent generic complex configurations `σ₁, σ₂` of eight vectors in `ℂ³` and `D` the Bloch–Wigner function, gives `X ≠ 0` and the ratio `−9`; this rules out the separate vanishing claimed by Lemma 7.9.
 - `d² = 0` on the source and target is a consistency test of the signs, not a proof of any constant: the zero map satisfies it.
 
@@ -685,7 +706,7 @@ For `m = 5` the map is `R₅¹` on `C₅(1)`, landing in `Λ⁴U`; on the corner
 
 ### Dependencies
 
-Polylogarithms §§3.1, 3.4–3.6; K3BlochGroups §3.4; Mathlib free modules, quotients, exterior powers and group homology. The relation to motivic correlators enters only in §5.7.
+Polylogarithms §§3.1, 3.4–3.6, with the contract decorated-flag-lengths for §§4.2–4.4; K3BlochGroups §3.4; Mathlib free modules, quotients, exterior powers and group homology. The relation to motivic correlators enters only in §5.7.
 
 ## Layer 5: periods, residues, scissors and the Chern cocycle
 
@@ -693,17 +714,20 @@ This layer evaluates the canonical period in weight four, proves that on explici
 
 ### 5.1 The canonical weight-four period
 
-Compose the weight-four part of the canonical real period of §3.7 with the Hodge realization of §3.13. Prove that its single-symbol value is `L₄*(z) = (5L₄(z) + (1/3)L₂(z)log²|z|)/16`, that `L₃* = 3L₃/8` and `L₂* = L₂/2`, that on `[x]₃⊗y` it is `(5/6)L₃*(x) d^C log|y| − (1/6)log|x| d^C L₃*(y)`, on `[x]₂⊗y∧z` the three-term expression of (192), and on `Λ⁴U` the form `ω₃ = (1/6)Alt₄(log|x₁| d^C log|x₂| ∧ d^C log|x₃| ∧ d^C log|x₄|)` (Goncharov–Rudenko [GR], §8.2, item 3, (190)–(192), pp. 77–78, GR line 3590; Goncharov [G08], §11.1, pp. 102–104). The remaining components are those of the dg-algebra map; no pointwise equality with `L₄` is asserted. *Needs:* §§3.7, 3.9, 3.13; PolylogarithmFunctions §§4.2, 5.2.
+Compose the weight-four part of the canonical real period of §3.7 with the Hodge realization of §3.13. Prove that its single-symbol value is `L₄*(z) = (5L₄(z) + (1/3)L₂(z)log²|z|)/16`, that `L₃* = 3L₃/8` and `L₂* = L₂/2`, that on `[x]₃⊗y` it is `(5/6)L₃*(x) d^C log|y| − (1/6)log|y| d^C L₃*(x)`, on `[x]₂⊗y∧z` the three-term expression of (192), and on `Λ⁴U` the form `ω₃ = (1/6)Alt₄(log|x₁| d^C log|x₂| ∧ d^C log|x₃| ∧ d^C log|x₄|)` (Goncharov–Rudenko [GR], §8.2, item 3, (190)–(192), pp. 77–78, GR line 3590; Goncharov [G08], §11.1, pp. 102–104). The `B₃⊗U` component is fixed by two requirements: on the diagonal `y = x` it is the differential equation `dL₄*(z) = (5/6)L₃*(z) d^C log|z| − (1/6)log|z| d^C L₃*(z)` (G08 §11.1, p. 105, G08 line 4628), and it is additive in the unit `y`, as a map on `B₃⊗U` must be. The display (192) of the source places the second term as `log|x| d^C L₃*(y)`, which agrees on the diagonal but is not additive in `y`, and is not used. The remaining components are those of the dg-algebra map; no pointwise equality with `L₄` is asserted. *Needs:* §§3.7, 3.9, 3.13; PolylogarithmFunctions §§4.2, 5.2.
 
 The period has the following API.
 
 - A single symbol has the value `L₄*`; four units have the value `ω₃`; exterior derivative and the Chevalley–Eilenberg differential commute under the period.
+- The `B₃⊗U` component is linear in the `B₃` factor through `L₃*` and `d^C L₃*`, and additive in the unit factor through `log|y|` and `d^C log|y|`.
 - Complex conjugation acts by the sign of even weight, so a conjugate embedding negates the `L₄*` coordinate.
 
 **Checks.**
 
 - At `|z| = 1` the correction vanishes and `L₄*(z) = 5L₄(z)/16`; at `z = i` both sides are `5L₄(i)/16`.
 - At `z = 2` one has `L₂(2) = 0` and `L₄(2) = 0` (real argument, even weight), so `L₄*(2) = 0`; at a nonreal `z` with `|z| ≠ 1`, `L₂(z)log²|z| ≠ 0` and the ratio `L₄*/L₄` is not `5/16` in general.
+- Inverse pair in the unit factor: `[2]₃⊗y + [2]₃⊗y⁻¹ = 0` in `B₃⊗U`, and the formula gives `(5/6)L₃*(2)(d^C log|y| + d^C log|y⁻¹|) − (1/6)(log|y| + log|y⁻¹|) d^C L₃*(2) = 0`. The source's placement gives `−(1/6)log 2·(d^C L₃*(y) + d^C L₃*(y⁻¹)) = −(1/3)log 2·d^C L₃*(y)` by `L₃(y⁻¹) = L₃(y)`; at `y = 1/2` on the tangent vector `∂/∂(Im y)` this is `−(1/3)log 2·i·(1/2)log²2 = −i log³2/6 ≈ −0.05550i`, using `dL₃/dy = (4/3)log²2` along the real axis at `1/2`, so it is not a map on `B₃⊗U`.
+- Constant unit: for `y = 2` and varying `x` the formula gives `−(1/6)log 2·d^C L₃*(x)`, nonzero where `L₃` is not locally constant, as additivity requires from `[x]₃⊗2y = [x]₃⊗2 + [x]₃⊗y`; the source's placement gives `−(1/6)log|x|·d^C L₃*(2) = 0`.
 - Exchanging two entries of `ω₃` negates it and a repeated entry gives zero.
 
 ### 5.2 Calibration of the classical period on cycles
@@ -719,6 +743,12 @@ Let `c = Σ q_z[z]` satisfy `IsCycle4 c` and let `σ: F → ℂ` be an embedding
 ### 5.3 The normal-crossing coefficient diagram
 
 For a smooth complex variety `X` with a finite simple-normal-crossing divisor `D`, form the finite diagram on the smooth strata `Y` of `D`: a stratum of codimension `q` carries `Γ(k(Y),4−q)` shifted to total degree `j+2q` for internal degree `j`, with `Γ(k(Y),0) = ℚ` in internal degree zero. The horizontal arrows are the differentials of the complexes `Γ(·,n)`, `n ≤ 4`; the vertical arrows are residues along the divisors, with uniformizer first on exterior powers, `θ(π∧u₁∧…) = ū₁∧…` and `θ(units) = 0`, and on symbols the specialization at valuation zero and zero otherwise. Require every symbol and residue used to have support in `D`. Prove that the totalized diagram is a complex, with the sign of each residue fixed so that two successive residues anticommute; on a normal-crossing divisor the homotopy correction of the general construction is zero (Goncharov–Rudenko [GR], §8.1, Theorem 8.1 with (171), remarks 1–3, residue maps (172)–(177), pp. 72–75; Theorem 8.6, (201)–(206), pp. 80–81; §9.2, item 1, p. 88). This is the diagram the Chern cocycle uses; it is not a Gersten resolution or a motivic quasi-isomorphism. *Needs:* §3.2; Polylogarithms §§3.2–3.3 and §5.4.
+
+The diagram has the following API.
+
+- Each smooth stratum `Y` of codimension `q`, `0 ≤ q ≤ 4`, contributes `Γ(k(Y),4−q)`, its internal degree `j` placed in total degree `j + 2q`; strata of codimension greater than four contribute nothing.
+- The horizontal arrows are the differentials of `Γ(·,n)`; the vertical arrow from a stratum to a component of its intersection with one further divisor is the residue along that divisor, uniformizer first on exterior powers and the valuation-zero specialization on symbols.
+- Residues along two transversal divisors anticommute after the incidence signs, so the total differential squares to zero with no homotopy correction.
 
 **Checks.**
 
@@ -738,19 +768,29 @@ On the diagram of §5.3 the canonical period forms of §5.1 are locally integrab
 
 ### 5.5 Scissors-congruence groups
 
-For `n = 2, 3` define `Aₙ(F)` as the rational scissors-congruence group generated by pairs `⟨L;M⟩` of ordered generic simplices in `ℙⁿ(F)`, subject to projective invariance, antisymmetry in each simplex, vanishing when a simplex is degenerate, additivity (the alternating sum over `n+2` vertices in either slot) and dual additivity (Goncharov–Rudenko [GR], §9.3, item 1, definition of `Aₙ(F)`, p. 91; Goncharov [G00], §3, item 1, (6), PDF p. 8, and §3.3, PDF pp. 11–12). Define the reduced coproduct `ν: A₃ → A₂⊗A₁ ⊕ A₁⊗A₂` and `a₂: A₂(F) → B₂(F)` by `a₂⟨l₀,l₁,l₂;m₀,m₁,m₂⟩ = Σ_{i,j}(−1)^{i+j}[r(lᵢ | l without lᵢ; m without m_j)]₂` and `a₁` by the determinant letter (Goncharov [G00], (6), PDF p. 8). No owner of scissors-congruence groups exists among the suppliers; they are built here with the five-term group of K3BlochGroups as target. *Needs:* K3BlochGroups §§3.2–3.4; Polylogarithms §3.5 (projected ratios); Mathlib `Finsupp`, `Submodule.Quotient.mk`.
+For `n = 1, 2, 3` define `Aₙ(F)` as the rational scissors-congruence group generated by pairs `⟨L;M⟩ = ⟨l₀,…,lₙ; m₀,…,mₙ⟩` of ordered simplices in `ℙⁿ(F)` in admissible position, subject to projective invariance, antisymmetry in each simplex, vanishing when a simplex lies in a hyperplane, additivity (the alternating sum over `n+2` vertices in either slot) and dual additivity (Goncharov–Rudenko [GR], §9.3, item 1, definition of `Aₙ(F)`, p. 91; Goncharov [G00], §2, item 1, PDF p. 5, and §3.3, PDF pp. 11–12). Let `A⁰ₙ(F) ⊂ Aₙ(F)` be the subspace spanned by pairs in generic position, and write `⟨x | …⟩` for the configuration obtained by projecting from the point `x`. Define the following maps.
+
+- Degree one: `a₁: A₁(F) → U(F)`, `a₁⟨l₀,l₁;m₀,m₁⟩ = u(r(l₀,l₁,m₀,m₁))`; prove that it is an isomorphism (Goncharov [G00], §2, item 1, PDF p. 5, G00 line 178).
+- The reduced coproduct: `ν_{1,1}: A⁰₂ → A₁⊗A₁` and `ν_{2,1}: A⁰₃ → A₂⊗A₁`, `ν_{1,2}: A⁰₃ → A₁⊗A₂`, by the defining formula with base vertices `l₀`, `m₀`, index sets `I, J` not containing `0` and sign `sign(I,Ī)·sign(J,J̄)` (Goncharov [G00], §2, item 2, PDF pp. 5–6, G00 lines 179–196). Prove the skew-symmetric forms `ν_{n−1,1}⟨L;M⟩ = −Σ_{i,j}(−1)^{i+j}⟨lᵢ | L∖lᵢ; M∖m_j⟩ ⊗ Δ(lᵢ, M∖m_j)` and `ν_{1,n−1}⟨L;M⟩ = −Σ_{i,j}(−1)^{i+j}Δ(m_j, L∖lᵢ) ⊗ ⟨m_j | L∖lᵢ; M∖m_j⟩`, the determinant factor read in `A₁(F) ≅ U(F)`: a single determinant depends on the chosen lifts, the alternating sum does not (Goncharov [G00], Proposition 2.3, PDF pp. 6–8).
+- Degree two: `a₂: A₂(F) → B₂(F)`, `a₂⟨l₀,l₁,l₂;m₀,m₁,m₂⟩ = Σ_{i,j}(−1)^{i+j}[r(lᵢ | L∖lᵢ; M∖m_j)]₂` (Goncharov [G00], §3, item 1, (6), PDF p. 8).
+
+Prove that `ν` is coassociative on `A⁰₃`, that is `(ν_{1,1}⊗id)∘ν_{2,1} = (id⊗ν_{1,1})∘ν_{1,2}` in `A₁^{⊗3}`, so that `A⁰₃ → A₂⊗A₁ ⊕ A₁⊗A₂ → A₁^{⊗3}` with second map `ν_{1,1}⊗id − id⊗ν_{1,1}` is a complex, and that `⟨L;M⟩ ↦ ⟨M;L⟩` is an antiautomorphism of the coalgebra (Goncharov [G00], Propositions 2.1–2.2, PDF p. 6); that `a₂` kills the relations of `A₂`; and that `δ₂∘a₂ = (a₁∧a₁)∘ν_{1,1}` on `A⁰₂`, where `(a₁∧a₁)(x⊗y) = a₁(x)∧a₁(y)` and `δ₂[x]₂ = (1−x)∧x` (Goncharov [G00], §3, item 1, PDF p. 8). The weight-three square of §5.6 uses `(a₂∧a₁)(x₂⊗x₁ + y₁⊗y₂) = a₂(x₂)⊗a₁(x₁) − a₂(y₂)⊗a₁(y₁)` on `A₂⊗A₁ ⊕ A₁⊗A₂` (Goncharov [G00], §3, item 3, PDF p. 11). No owner of scissors-congruence groups exists among the suppliers; they are built here with the five-term group of K3BlochGroups as target. *Needs:* K3BlochGroups §§3.2–3.4; Polylogarithms §3.5 (projected ratios); Mathlib `Finsupp`, `Submodule.Quotient.mk`, `TensorProduct`.
 
 The groups have the following API.
 
-- A generic simplex pair gives a class; transposing two vertices of either simplex negates it; a simplex in a hyperplane gives zero.
+- A simplex pair in admissible position gives a class; transposing two vertices of either simplex negates it; a simplex in a hyperplane gives zero.
 - The additivity and dual additivity sums vanish in each slot.
-- `a₂` kills the relations of `A₂` and satisfies `δ₂∘a₂ = (a₁∧a₁)∘ν` on `A₂`.
+- `a₁` is the cross-ratio isomorphism `A₁(F) ≅ U(F)`, invariant under rescaling the homogeneous lifts.
+- The coproduct components are the displayed alternating sums, `ν` is coassociative on `A⁰₃`, and `⟨L;M⟩ ↦ ⟨M;L⟩` is an antiautomorphism of the coalgebra.
+- `a₂` kills the relations of `A₂` and satisfies `δ₂∘a₂ = (a₁∧a₁)∘ν_{1,1}` on `A⁰₂`.
 
 **Checks.**
 
-- Transposing `l₀` and `l₁` negates `a₂`, since every term changes sign under the induced permutation of the alternating sum.
-- `a₂⟨L;M⟩ = −a₂⟨M;L⟩`, the symmetry used in the proof of G00 Theorem 3.2.
-- A quotient imposing additivity but not dual additivity does not carry the coproduct `ν`, because `ν` of a dual-additivity relation is a nonzero sum of products in `A₂⊗A₁`.
+- `a₁⟨∞,0;1,2⟩ = u(r(∞,0,1,2)) = u(2)`. With the lifts `(1,0),(0,1),(1,1),(2,1)`, replacing the lift of `2` by `(6,3)` leaves the cross-ratio `(1·(−6))/(3·(−1)) = 2` unchanged, while the single determinant `Δ(0,2)` changes from `−2` to `−6` and gains `u(3)`; a determinant letter alone is not a function on `A₁(F)`.
+- The square of `a₂` on `L` the coordinate triangle and `M = ((1,1,1),(1,2,3),(1,3,2))` in `ℙ²(ℚ)`: both `δ₂a₂⟨L;M⟩` and `(a₁∧a₁)ν_{1,1}⟨L;M⟩` equal `2·u(2)∧u(3) + 2·u(2)∧u(5) − 2·u(3)∧u(5)`; without the leading minus sign of the skew-symmetric `ν_{1,1}` the right side is the negative, which differs because the value is nonzero.
+- Additivity in `M` is respected by `ν_{1,1}`: for the same `L` and `M = ((1,1,1),(1,2,3),(1,3,2),(1,4,9))`, the four values `(a₁∧a₁)ν_{1,1}⟨L; M∖m_j⟩` are nonzero, with `u(2)∧u(3)`-coefficients `1, −9, −8, 2`, and their alternating sum is zero in every coefficient of `Λ²U(ℚ)`.
+- Coassociativity on generic pairs of tetrahedra in `ℙ³(ℚ)` with small integer coordinates: both composites, read in `U(ℚ)^{⊗3}` through `a₁`, agree term by term (several hundred nonzero terms), and changing the sign of `ν_{1,2}` alone breaks the equality.
+- Transposing `l₀` and `l₁` negates `a₂`, and `a₂⟨L;M⟩ = −a₂⟨M;L⟩`: on the triangle pair of the second Check, `δ₂` of `a₂⟨L;M⟩ + a₂⟨M;L⟩` is zero, and `δ₂` is injective on `B₂(ℚ)`.
 
 ### 5.6 The scissors-to-trilogarithm map
 
@@ -867,11 +907,31 @@ The definitions have the following API.
 
 **Checks.**
 
-- `F = ℚ`: `r₂ = 0`, `disc ℚ = 1`, the determinant is empty and `zagierDeterminantFour ℚ c = π⁴ = 90·ζ(4)`; assigning the empty determinant the value zero would make existence fail.
-- `F = ℚ(i)`: `r₁ = 0`, `r₂ = 1`, `|disc F| = 4`, so `zagierDeterminantFour F c = (π⁴/2)·Σ_z q_z L₄(z)` for a one-column family `c = Σ q_z[z]`; the column `[i] + [−i]` is a cycle ( `[−i]` is the inverse of `[i]` ) with period `L₄(i) + L₄(−i) = 0`, giving `q = 0`, allowed in the every-family statement but not as a witness of existence.
-- Replacing the chosen embedding of a complex place by its conjugate negates its row, since `L₄(z̄) = −L₄(z)`, and replaces `q` by `−q`; rationality is unaffected.
-- A family with a zero column has determinant zero and satisfies the every-family statement with `q = 0`; existence requires `q ≠ 0` because `ζ_F(4) > 0`.
-- The cycle predicate is not a numerical test: `[2]` over ℚ has `L₄(2) = 0` but is not a cycle (§3.2), and a predicate accepting every sum with zero period would make the every-family statement false for families mixing such sums with genuine cycles.
+- `polylog`, weight zero: `polylog 0 1 = 0`, the value the total division gives to `1/(1−1)`; it is a junk value that no statement uses, since `singleValued n` evaluates only `polylog (n−k)` with `n − k ≥ 1`.
+- `polylog`, weight one: `polylog 1 3 = −Complex.log(−2) = −log 2 − πi`, because the principal logarithm has argument `π` on the negative axis; this is the limit of `−log(1−z)` from `Im z < 0`, the lower boundary value, while the upper one is `−log 2 + πi`.
+- `polylog`, higher weight: since `∫₀¹ t^{k−1}(−log t)^{n−2} dt = (n−2)!/k^{n−1}`, the factor `((n−2)!)⁻¹` gives the disc coefficient `1/kⁿ` of `zᵏ`: `1/k²` for `n = 2`, with `polylog 2 1 = π²/6`, and `1/k³` for `n = 3`; normalizing by `(n−1)!` would give `1/(2k³)` at `n = 3`.
+- `singleValued`, endpoint branches: `singleValued n 0 = 0`, `singleValued 3 1 = ζ(3)` and `singleValued 4 1 = 0`, the values `L₃(1)` and `L₄(1)` of PolylogarithmFunctions §§4.6–4.7.
+- `singleValued`, the sign of `B₁`: `singleValued 4 2 = 0`. On the cut the lower boundary values have `Im Liₙ(2) = −π log^{n−1}2/(n−1)!`, so the imaginary parts of `Li₄(2)`, `−log 2·Li₃(2)` and `(1/3)log²2·Li₂(2)` are `−π log³2/6`, `+π log³2/2` and `−π log³2/3`, summing to zero; with `B₁ = +1/2` the middle term changes sign and the sum is `−π log³2 ≈ −1.0462`.
+- `singleValued 2` is the Bloch–Wigner function: its Bernoulli combination is `Li₂(z) − log|z|·Li₁(z)`, with imaginary part `Im Li₂(z) + arg(1−z)log|z|`; at `z = i`, `log|i| = 0` and `singleValued 2 i = Im Li₂(i) = Σ_k (−1)^k/(2k+1)² ≈ 0.915966`, Catalan's constant.
+- `unitVector (−1) = 0`: `2·ofMul(−1) = 0` in `Additive Fˣ`, so `1⊗ofMul(−1) = (1/2)⊗2·ofMul(−1) = 0` in `ℚ ⊗ Additive Fˣ`; without the rationalization `−1` keeps a nonzero class of order two.
+- `unitVector 6 = unitVector 2 + unitVector 3` and `unitVector (1/2) = −unitVector 2` over ℚ, and these vectors are nonzero, the vectors of distinct primes being independent.
+- `unitVector 0 = 0` is the convention `u(0) = 0`, so the symbol `[0]` contributes nothing to `IsCycle4`, matching `[0]₃ = 0`.
+- `trilogCyclic` on a constant function `b ≡ v`: the block has five terms with sign `+` and three with sign `−`, so it is `2v`, and the 22-term sum is `3·2v + v = 7v`; a sign error in one term changes `2v` to `0v` or `4v`.
+- `trilogCyclic` at `a = c = d = 1`: `A = B = 1`, the admissibility conditions hold, each block is `b(1) + b(−1)` and the 22-term relation reads `3b(1) + 4b(−1) = 0`; for `b = L₃` this is `3ζ(3) + 4·(−3/4)ζ(3) = 0`.
+- `trilogCyclic` with `b = L₃` on real arguments: the 22-term sum vanishes to within `10⁻⁹` at `(a,c,d) = (2,3,5)`, `(−2,1/2,3)` and `(3/10,−7/10,3/5)`, while exchanging the definitions of `A` and `B` gives `−0.5210` at `(2,3,5)` and changing the sign of the term `b(A/d)` gives `5.9611` there.
+- `TrilogRelationFunction`: the zero function satisfies it; a constant `v ≠ 0` fails `b 0 = 0`, and its three-term clause would read `3v = v`.
+- `TrilogRelationFunction` keeps the endpoint: for `b = L₃` the three-term clause at `x = 2` is `L₃(2) + L₃(−1) + L₃(1/2) = (7/8 − 3/4 + 7/8)ζ(3) = ζ(3) = L₃(1)`; with right-hand side `0` in place of `b 1`, `L₃` would fail the predicate.
+- `TrilogRelationFunction` has even inversion, `b x = b x⁻¹`, satisfied by `L₃(2) = L₃(1/2) = 7ζ(3)/8`; the odd clause `b x = −b x⁻¹` would exclude `L₃`.
+- `IsCycle4`: `[1]` and `[−1]` are cycles over every field, since `unitVector 1 = unitVector (−1) = 0`; `[2]` over ℚ is not, since for `V = ℝ` and the relation function `b = L₃` the test value is `(7ζ(3)/8)⊗u(2) ≠ 0` in `ℝ⊗U(ℚ)`.
+- `IsCycle4` is not a numerical test of periods: `[2]` over ℚ has `L₄(2) = 0` and is not a cycle, its obstruction `7ζ(3)/8` being nonzero; conversely over `ℚ(i)` the cycle `[i]`, a cycle because `i` is torsion, has period `L₄(i) = Σ_k (−1)^k/(2k+1)⁴ = β(4) ≈ 0.988945 ≠ 0`.
+- `IsCycle4` holds for `[x] + [x⁻¹]` for every `x ≠ 0`, since `b(x⁻¹) = b(x)` and `unitVector x⁻¹ = −unitVector x`, and for every rational multiple of it.
+- `periodMatrixFour` for `F = ℚ` is the `0×0` matrix, there being no complex place.
+- `periodMatrixFour` for `F = ℚ(i)` is `1×1` with entry `Σ_z c(z)·L₄(σ(z))` for the chosen embedding `σ`; for `c = [i]` it is `β(4)` if `σ(i) = i` and `−β(4)` otherwise.
+- `periodMatrixFour` has rows indexed by complex places, not by complex embeddings: indexing by the two embeddings of `ℚ(i)` would give a `2×1` matrix with entries `β(4)` and `−β(4)` and no determinant.
+- `zagierDeterminantFour` for `F = ℚ`: `r₂ = 0`, `disc ℚ = 1`, the determinant is empty and `zagierDeterminantFour ℚ c = π⁴ = 90·ζ(4)`; assigning the empty determinant the value zero would make existence fail.
+- `zagierDeterminantFour` for `F = ℚ(i)`: `r₁ = 0`, `r₂ = 1`, `|disc F| = 4`, so it is `(π⁴/2)·Σ_z q_z L₄(σz)` for a one-column family `c = Σ q_z[z]`. For `c = [i]` and `σ(i) = i` it is `π⁴β(4)/2 ≈ 48.166 = 45·ζ(4)β(4) = 45·ζ_{ℚ(i)}(4)`, an existence witness with `q = 45`; the column `[i] + [−i]` is a cycle with period `L₄(i) + L₄(−i) = 0` and gives `q = 0`, allowed in the every-family statement but not as a witness of existence.
+- `zagierDeterminantFour` changes sign when the chosen embedding of a complex place is replaced by its conjugate, since `L₄(z̄) = −L₄(z)`; `q` becomes `−q` and rationality is unaffected.
+- `zagierDeterminantFour` of a family with a zero column is zero and satisfies the every-family statement with `q = 0`; existence requires `q ≠ 0`, and `ζ_F(4) > 0`.
 
 ### 6.5 Inductive cycles
 
