@@ -16,25 +16,25 @@
       "slug": "zhang-level-raising",
       "supplier": "SerreWeightAndLevelOptimisation",
       "section": "§§1.1–1.3 Level-changing algebra and cohomology; §2.4 Diamond’s level-raising criterion",
-      "needs": "For the weight-two GL₂-type residual representation over k₀ satisfying Zhang’s three-clause Hypothesis ♥ and admissible primes q₁,q₂, provide the integral/rational residual structures and definite/indefinite quaternionic multiplicity-one identifications, with prescribed local types, used in Zhang Theorem 4.3; existence of a q-new form alone is insufficient."
+      "needs": "For the weight-two GL₂-type residual representation over k₀ satisfying Zhang’s three-clause Hypothesis ♥ and admissible primes q₁,q₂, provide the level-raised eigenforms with the prescribed local types and marked common residual G_ℚ representation used in Zhang Theorem 4.3."
     },
     {
       "slug": "gl2-integral-rank-zero",
       "supplier": "ModularIwasawaMainConjectures",
-      "section": "§§1.3, 1.7 Skinner–Urban and multiplicative reduction",
-      "needs": "For g and its quadratic twist g_K in Zhang Theorem 7.1, give the integral ordinary main-conjecture/Kato comparison and trivial-character GL₂-type control formula over the coefficient DVR, assuming residual image containing SL₂(𝔽_p), good ordinary p≥3 and a residually ramified prime ℓ∥N, and retain the canonical-period and local component factors without assuming full integral SL₂ image."
+      "section": "§3.9 Schneider's leading-term theorem",
+      "needs": "For g and its quadratic twist g_K in Zhang Theorem 7.1, give the trivial-character GL₂-type control formula over the coefficient DVR, assuming residual image containing SL₂(𝔽_p), good ordinary p≥3 and a residually ramified prime ℓ∥N, and retain the canonical-period and local component factors without assuming full integral SL₂ image."
     },
     {
       "slug": "integral-family-logarithm",
       "supplier": "GrossZagierAndArithmeticHeights",
       "section": "§9.20 Bloch–Kato logarithm of the Heegner Kummer class",
-      "needs": "For the ordinary split anticyclotomic Heegner family, provide the integral family logarithm and explicit reciprocity identity on the specified distinguished Tate lattice, with coefficient extension, periods and regulator cokernel, used by BCGS Lemmas 1.2.3–1.2.5; the rational finite-point identity alone does not give this contract."
+      "needs": "For the ordinary split anticyclotomic Heegner family, provide the integral family logarithm and explicit reciprocity identity on the specified distinguished Tate lattice, with coefficient extension, periods and regulator cokernel, used by BCGS Lemmas 1.2.3–1.2.5. Its domain is the positive-filtration Iwasawa cohomology, and specialization retains its H² cokernel before the map to the propagated ordinary lattice; the rational finite-point identity alone does not give this contract."
     },
     {
       "slug": "eisenstein-elliptic-unit-inputs",
       "supplier": "EulerSystemsCyclotomicMainConjecture",
       "section": "Scope and ownership",
-      "needs": "Provide an earlier elliptic-unit/Katz main-conjecture and μ input for the imaginary-quadratic finite-order character components used by CGS Theorem C under φ|G_p≠1,ω, including local and integral lattice corrections, independently of the Heegner anticyclotomic equality; the cyclotomic-unit theorem over ℚ alone is insufficient."
+      "needs": "Provide an independent elliptic-unit/Katz main-conjecture and μ input for the imaginary-quadratic finite-order character components used by CGS Theorem C under φ|G_p≠1,ω, including local and integral lattice corrections, independently of the Heegner anticyclotomic equality; the cyclotomic-unit theorem over ℚ alone is insufficient."
     },
     {
       "slug": "abelian-scalar-image",
@@ -53,6 +53,24 @@
       "supplier": "SelmerIwasawaCohomology",
       "section": "§2.3 Change of local conditions; §§2.19, 3.9–3.10 Poitou–Tate and specialization",
       "needs": "For p=3, E/ℚ good ordinary with surjective residual G_ℚ image and K satisfying (disc),(Heeg),(spl), use the actual Heegner family and integral family logarithm to prove equivalence of both integral Heegner-index and (0,∅)-Greenberg/BDP divisibilities of §8b.2, retaining height-one (3) lengths, coefficient extension, periods, involution and every finite local cokernel, without inverting 3 or assuming either divisibility."
+    },
+    {
+      "slug": "zhang-integral-realization",
+      "supplier": "HilbertModularVarietiesAndShimuraCurves",
+      "section": "§R18.4.26 Definite and indefinite Jacquet–Langlands eigenspaces",
+      "needs": "For the forms and prescribed local types supplied by gap:zhang-level-raising under Zhang’s Hypothesis ♥, provide the marked integral definite/indefinite quaternionic realizations and the G_ℚ-equivariant multiplicity-one identifications J(X_m)[𝔪]≃V≃A⁰_gm[𝔭_m,0] over the common residual field k₀, compatible with the geometric Hecke, degeneracy, specialization and Kummer maps (Zhang Lemma 3.3 and Theorem 4.3, pp.215,218–221); a characteristic-zero Jacquet–Langlands comparison does not identify these integral lattices."
+    },
+    {
+      "slug": "modified-heegner-descent",
+      "supplier": "EulerSystemsAndKolyvaginSystems",
+      "section": "§§4.18–4.19 Self-dual descent with twist-independent errors; §§5.10–5.13 Howard's bound, rigidity, profile and exact length; §§8.28, 8.31, 8.36 Self-dual Λ-adic bounds",
+      "needs": "Extend its ordinary-system results to the modified local edge maps verified in §§5.2–5.3 and 8.29, without requiring global lifts of those maps; the maps are invertible on every coefficient quotient and compatible with coefficient reduction, the cyclic tensors, conjugation and the paired local dualities, and the auxiliary sets and prime-detection hypotheses of each original theorem remain explicit. Required, each separately, are the common-multiple uniform error bounds of §§4.18–4.19, the rank/paired-module bound of §5.10, integral stub rigidity and the exact-length/profile statements of §§5.11–5.13 in their stated prime range, and the Λ-adic characteristic bounds of §§8.28, 8.31 and the augmentation-inclusive bound of §8.36, with the same uniform error constants and specialization maps."
+    },
+    {
+      "slug": "kato-distinguished-lattice",
+      "supplier": "KatoEulerSystems",
+      "section": "§6.6 Elliptic local lattice and Kato period",
+      "needs": "For a rational weight-two elliptic newform f of level N and every odd prime p of semistable reduction, construct the integral lattice T_f given by the image of H¹(Y₁(N),ℤ_p(1)) in the f-eigenspace quotient V_f of H¹(Y₁(N),ℚ_p(1)), the curve E• in the rational isogeny class and the specified maps E₁→E₀→E• from the X₁(N)- and X₀(N)-optimal curves, with the integral identification T_pE•≃T_f induced by their modular maps. The maps extend étale at p on the Néron models, retaining the Néron differential factors, the modular-symbol period lattice and the possible 2-power change of distinguished-curve convention (Wüthrich Theorem 4, p.384; BCGS §1.2.2, pp.10–12), and in the good ordinary case are isomorphisms on positive Tate lattices, compatibly with the point and Kummer maps."
     }
   ]
 }
