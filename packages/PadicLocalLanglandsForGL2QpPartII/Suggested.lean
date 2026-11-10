@@ -36,6 +36,15 @@ headline theorem, and the carrier it lacks, is listed below; the README states e
 * The topological irreducibility of `Π(π,0)` (README §2.3) and Colmez's weight change
   (README §2.4). They lack locally analytic representations of `GL₂(ℚ_p)` on spaces of compact
   type, the Robba ring with its `(φ,Γ)`-modules and the sheaf `Δ ⊠ ℙ¹(ℚ_p)`.
+* The weighted realisation and BGG row (README §7.2): for `k ≥ 0`, the row from
+  `O(−k)(Σ_r)^ρ` to `O(k+2)(Σ_r)^ρ ⊗ det^(k+1)` has quotient
+  `H¹_dR(Σ_r)^ρ ⊗ Sym^k`, and the inverse image of a period line is
+  `Π(Δ_(k+1,ℒ))′_b ⊗ det^k`, including the unramified twist inside `Π(Δ_(k+1,ℒ))`.
+  It lacks rigid functions on the Drinfeld covers, their weighted locally analytic actions,
+  the BGG differential operator `(−d/dz)^(k+1)`, de Rham cohomology with its period-line
+  quotient, and the locally analytic representation whose strong dual is that inverse image.
+  The first-cover comparison of README §7.3 is its level-one specialisation and lacks the
+  same carriers, together with the equivariant semistable model and its Hyodo–Kato comparison.
 * The Iwasawa invariants of Drinfeld functions (README §7.4): `(O(Σ_r)^ρ)^{diag(p,1)=1}` is free
   of rank two over the distribution algebra `D(Γ)` and is the space of Iwasawa classes whose
   specialisations lie in the image of the Bloch–Kato exponential. It lacks rigid analytic
