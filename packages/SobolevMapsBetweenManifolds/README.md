@@ -205,9 +205,9 @@ a hypothesis (§8.2).
   to continuous `W^{1,1}_loc` membership. The vector-valued choice of §4.1 requires no continuity;
   for a continuous vector-valued map admitting a weak differential the two choices agree
   outside a chartwise null set. They need not agree for discontinuous maps. A map outside the
-  `p`-class can still have a nonzero weak differential: `|t|^{1/2}` has one but is outside the class for `p ≥ 2`. Statements
-identifying the choice with a weak differential carry membership as a hypothesis. On the class it is
-  determined only outside a null set, so a value
+  `p`-class can still have a nonzero weak differential: `|t|^{1/2}` has one but is outside the
+  class for `p ≥ 2`. Statements identifying the choice with a weak differential carry membership
+  as a hypothesis. On the class it is determined only outside a null set, so a value
   of `Df`, `‖Df‖` or `J_f` computed for a particular map in a Check or an example holds almost
   everywhere. Pointwise identities of linear algebra, such as `|J_f| = normDet(Df)` and
   `|J_f| ≤ ‖Df‖ⁿ`, hold everywhere.
@@ -305,11 +305,13 @@ identifying the choice with a weak differential carry membership as a hypothesis
   `TauCeti.HasWeakFDerivOn.add`, `TauCeti.HasWeakFDerivOn.const_smul`,
   `TauCeti.HasWeakFDerivOn.clm_comp`, `TauCeti.HasWeakFDerivOn.congr_ae`,
   `TauCeti.HasWeakFDerivOn.congr_ae_deriv`, `TauCeti.HasWeakFDerivOn.ae_eq`,
-  `TauCeti.HasWeakFDerivOn.ae_eq_fderiv`, `Module.Basis.hasWeakFDerivOn_of_forall` and
-  `TauCeti.hasWeakFDerivOn_of_differentiableOn` (`TauCeti/Analysis/Sobolev/WeakDeriv/Basic.lean`).
-  The predicate includes completeness of the codomain and local integrability of `u` and of every
-  `x ↦ U x v`. It makes no `Lᵖ` demand, and it identifies distributional derivatives only for a
-  Haar measure.
+  `TauCeti.HasWeakFDerivOn.ae_eq_fderiv`, `TauCeti.HasWeakFDerivOn.locallyIntegrableOn`,
+  `TauCeti.HasWeakFDerivOn.locallyIntegrableOn_deriv`, `Module.Basis.hasWeakFDerivOn_of_forall`
+  and `TauCeti.hasWeakFDerivOn_of_differentiableOn`
+  (`TauCeti/Analysis/Sobolev/WeakDeriv/Basic.lean`). The predicate includes completeness of the
+  codomain and local integrability of `u` and of every `x ↦ U x v`; for finite-dimensional `E`,
+  `U` itself is then locally integrable as an operator-valued map. It makes no `Lᵖ` demand, and
+  it identifies distributional derivatives only for a Haar measure.
 - `TauCeti.hasWeakFDerivOn_iff_forall_isCompact_closure`
   (`TauCeti/Analysis/Sobolev/WeakDeriv/Local.lean`): weak derivatives are detected on relatively
   compact subdomains. `TauCeti.hasWeakFDerivOn_of_tendsto_lintegral_enorm_sub`
@@ -566,6 +568,7 @@ support, into test functions of single `Ωᵢ`. Local `Lᵖ` glues by §1.1.
   `p < 2`. For the cover `{ℝ² ∖ {0}, B(0, 1)}` of `ℝ²`, the theorem gives membership on `ℝ²`
   exactly for `p < 2`, agreeing with §1.2.
 - The empty index set: `Ω = ∅`, and both sides hold.
+
 *Needs:* §1.1, §1.2; Tau Ceti `TauCeti.hasWeakFDerivOn_iff_forall_isCompact_closure`,
 `TauCeti.HasWeakFDerivOn.ae_eq`, `TauCeti.HasWeakFDerivOn.congr_ae_deriv`; Mathlib
 `SmoothPartitionOfUnity.exists_isSubordinate`.
@@ -585,7 +588,7 @@ compact subset of `Ω`; "if" glues the derivatives of the `w` over an exhaustion
 - `E = ℝ²`, `u(x) = x₁`, `V = B(0, 1/2)`: the restriction is an element of `TauCeti.W1p μ V p`
   with gradient `e₁`, and `Du = ⟨e₁, ·⟩`.
 - `u = log |x|` on `Ω = ℝ²`, `p = 2`: on `V = B(0, 1/2)` no element of `TauCeti.W1p μ V 2` has
-  value `u`, since `∫_V |x|^{−2} dx = ∞`. This agrees with §1.2's second Check.
+  value `u`, since `∫_V |x|^{−2} dx = ∞`. This agrees with §1.2's third Check.
 - `p = ∞`, `u = |x|` on `ℝ`: on every bounded `V` the restriction lies in
   `TauCeti.W1p μ V ∞` with gradient `sign(x)`. On `V = ℝ`, which is not relatively compact, it
   does not, since `|x| ∉ L^∞(ℝ)`.
@@ -755,7 +758,7 @@ that equals `G` near `K`. Apply §2.3 to `G̃` on `V`, and glue by §1.3. Local 
 - `G = log` on `W = (0, ∞)` and `u = |x|` on `Ω = ℝ² ∖ {0}`: `G ∘ u = log |x|` lies in every
   class on `ℝ² ∖ {0}`, with `D(G ∘ u)(x) = ⟨x, ·⟩/|x|²`. On `Ω = ℝ²` the hypothesis
   `u(Ω) ⊆ W` fails at `0`, and indeed `log |x| ∉ W^{1,2}_loc(ℝ²)`.
-- Continuity is used: §2.3's third Check has `u = log |x|` discontinuous at `0` and
+- Continuity is used: §2.3's fourth Check has `u = log |x|` discontinuous at `0` and
   `G(t) = e^{t²}` smooth on `W = ℝ`, with `G ∘ u ∉ L¹_loc`.
 - For `E = ℂ`, `p > 2` and `W = F`, a member `u` has a continuous representative (PH1.2's Morrey
   embedding), and the second item for it is PseudoholomorphicCurveAnalysis PH1.2's composition
@@ -929,9 +932,8 @@ extrinsic description of Layer 8 (Hajlasz2009 line 28).
 - *Existence and uniqueness.* If `M` is Lindelöf and `u ∈ W^{1,p}_loc(M; V)`, then `u` has a weak
   differential. Two weak differentials agree outside a `TauCeti.IsNullSet`. Changing a weak
   differential on a null set gives a weak differential. A total choice of weak differential,
-`0` when no weak differential exists, is part of the API on a Lindelöf source. Route: glue the chart
-  derivatives over a countable
-  cover of `M` by chart sources, as in §1.3.
+  `0` when no weak differential exists, is part of the API on a Lindelöf source. Route: glue the
+  chart derivatives over a countable cover of `M` by chart sources, as in §1.3.
 - *Algebra.* The class is closed under sums, scalar multiples and continuous linear maps
   `A : V → V'`, with `D(A ∘ u) = A ∘ Du`. It is unchanged by modifying `u` on a null set.
 - *`C¹` functions.* A `C¹` function lies in the class for every `p`, with weak differential
@@ -949,9 +951,8 @@ extrinsic description of Layer 8 (Hajlasz2009 line 28).
 - `M = ℝ` and `u = |x|`: `u ∈ W^{1,∞}_loc(ℝ; ℝ)` with `Du = sign(x)` almost everywhere.
 - The class depends on the `C¹` structure, not only on the topology. On `ℝ` with the atlas
   `{x ↦ x³}`, which is a different smooth structure, `|x|` read in that chart is `|y|^{1/3}` with
-derivative `sign(y)|y|^{−2/3}/3`. That lies in `L^p_loc` iff `2p/3 < 1`, so `|x|` is in the class
-  of
-  that structure iff `p < 3/2`.
+  derivative `sign(y)|y|^{−2/3}/3`. That lies in `L^p_loc` iff `2p/3 < 1`, so `|x|` is in the
+  class of that structure iff `p < 3/2`.
 - Discontinuous members: `sign(x₁)` lies in every class on the open submanifold
   `ℝ² ∖ {x₁ = 0}`, with `Du = 0`, and in none on `ℝ²` (§1.3).
 - A `0`-manifold: every `u` is a member, and its weak differential is `0`.
@@ -1202,7 +1203,13 @@ For `f ∈ W^{1,p}_loc(M, N)` consider `x ↦ ‖Df(x)‖`, the operator norm fr
 
 ### 5.2 The `L^p` characterisation (T3)
 
-The equivalence is `memManifoldW1pLoc_iff_norm`, stated for any supplied weak differential.
+The equivalence is `memManifoldW1pLoc_iff_norm`, stated for any supplied weak differential `D`.
+A weak differential already gives `W^{1,1}_loc` membership: in each chart pair its transport is a
+weak derivative of the representative, so the representative and that derivative are locally
+integrable (`TauCeti.HasWeakFDerivOn.locallyIntegrableOn`,
+`TauCeti.HasWeakFDerivOn.locallyIntegrableOn_deriv`, `MeasureTheory.locallyIntegrableOn_iff`).
+That statement therefore carries no separate membership hypothesis. The hypothesis below is
+needed because `Df` is the total choice, which is `0` when no weak differential exists.
 
 Prove: if `f ∈ W^{1,1}_loc(M, N)` and `1 ≤ p ≤ ∞`, then `f ∈ W^{1,p}_loc(M, N)` iff
 `‖Df‖ ∈ L^p_loc(M, vol_M)` (Rickman1993 Ch. I §1; HeikkilaPankka2025 line 22–26). Route: the
@@ -1219,7 +1226,8 @@ local `Lᵖ` of `‖Df‖` into local `Lᵖ` of the representatives' derivatives
 - The hypothesis `f ∈ W^{1,1}_loc` is used. The Cantor function has classical derivative `0`
   almost everywhere, so a pointwise "`‖Df‖ = 0 ∈ L^p_loc`" would hold, but it is in no class.
 
-*Needs:* §3.2, §4.2, §4.3, §5.1.
+*Needs:* §3.2, §4.2, §4.3, §5.1; Tau Ceti `TauCeti.HasWeakFDerivOn.locallyIntegrableOn`,
+`TauCeti.HasWeakFDerivOn.locallyIntegrableOn_deriv`; Mathlib `MeasureTheory.locallyIntegrableOn_iff`.
 
 ### 5.3 Comparable metrics
 
@@ -1429,32 +1437,44 @@ integrals finite. HeikkilaPankka2025 line 25–27 supplies only the determinant 
 - For every Borel `A`, `μ_f^+(A) + μ_f^−(A) ≤ ∫⁻_A ENNReal.ofReal (‖Df‖ⁿ) dvol_M`.
   The right side is an extended nonnegative integral; no integrability of `‖Df‖ⁿ` is assumed.
 
-Prove: let `N` also be Lindelöf with `[MeasurableSpace N] [BorelSpace N]`, so that
-`vol_N = TauCeti.riemannianVolume` of `N` is defined. If `f` is a `C¹` open embedding (`C¹`,
-injective, with invertible differential) and is orientation preserving at every point, then
-`μ_f^− = 0` and `μ_f^+(A) = vol_N(f(A))` for every Borel `A ⊆ M`; here `f(A)` is Borel because
-`f` is an open embedding (`Topology.IsOpenEmbedding.measurableEmbedding`). If `f` is orientation
-reversing at every point, the roles of `μ_f^+` and `μ_f^−` are exchanged (Lee2012 Ch. 16).
-Route: the chart formula of §6.2, `MeasureTheory.lintegral_image_eq_lintegral_abs_det_fderiv_mul`
-in charts, `TauCeti.setLIntegral_riemannianVolume_of_subset` on `M` and on `N`, and a countable
-cover.
+Let `N` also be Lindelöf with `[MeasurableSpace N] [BorelSpace N]`, so that
+`vol_N = TauCeti.riemannianVolume` of `N` is defined. Let `f` be a `C¹` open embedding (`C¹`,
+injective, with invertible differential). Then `J_f` is locally bounded, since
+`|J_f| ≤ ‖mfderiv f‖ⁿ` almost everywhere (§6.1, §6.2) and `‖mfderiv f‖` is continuous for a
+`C¹` map and continuous metrics, so `μ_f^±` are defined. Prove that
+`μ_f^+(A) + μ_f^−(A) = ∫⁻_A ENNReal.ofReal |J_f| dvol_M = vol_N(f(A))` for every Borel `A ⊆ M`,
+with no hypothesis on orientations (Lee2012 Ch. 16); here `f(A)` is Borel because `f` is an open
+embedding (`Topology.IsOpenEmbedding.measurableEmbedding`). Consequently, if `f` is orientation
+preserving at every point, then `J_f > 0` almost everywhere (§6.2), so `μ_f^− = 0` and
+`μ_f^+(A) = vol_N(f(A))`. If `f` is orientation reversing at every point, the roles of `μ_f^+`
+and `μ_f^−` are exchanged. Route: the chart formula of §6.2,
+`MeasureTheory.lintegral_image_eq_lintegral_abs_det_fderiv_mul` in charts,
+`TauCeti.setLIntegral_riemannianVolume_of_subset` on `M` and on `N`, and a countable cover of `A`
+by disjoint Borel pieces, each inside a chart domain whose image lies in a chart domain of `N`;
+injectivity of `f` makes the images disjoint.
 
 **Checks.**
 
 - `f(x) = 2x` on `ℝ`: `μ_f^+([0, 1]) = ∫_0^1 2 dx = 2 = vol([0, 2])`.
-- `f(x) = −x` on `ℝ`: `μ_f^+ = 0` and `μ_f^−([0, 1]) = 1`. A density `|J_f|` would make the two
-  maps indistinguishable.
+- `f(x) = −x` on `ℝ`: `μ_f^+ = 0` and `μ_f^−([0, 1]) = 1`, and the sum `1` is
+  `vol([−1, 0])`. A single density `|J_f|` would make `x ↦ −x` indistinguishable from the
+  identity.
 - Injectivity is used: `f(z) = z²` on `ℂ ∖ {0}`, with `J_f = 4|z|²`, and the annulus
   `A = {1 < |z| < 2}`. Then `μ_f^+(A) = 2π ∫_1^2 4r³ dr = 30π`, while `f(A) = {1 < |w| < 4}`
   has area `15π`; the factor `2` is the multiplicity.
-
+- Orientation behaviour may change between components. Let `M = (0, 1) ∪ (2, 3) ⊆ ℝ` and
+  `N = ℝ`, flat with standard orientations, and `f(x) = x` on `(0, 1)`, `f(x) = 5 − x` on
+  `(2, 3)`. Then `f` is a `C¹` open embedding onto `(0, 1) ∪ (2, 3)` with `J_f = 1` on `(0, 1)`
+  and `J_f = −1` on `(2, 3)`, so neither orientation case applies. The absolute identity gives
+  `μ_f^+(M) + μ_f^−(M) = 1 + 1 = 2 = vol((0, 1) ∪ (2, 3))`, while the signed value
+  `μ_f^+(M) − μ_f^−(M) = 0` is not the volume of the image.
 - The extended integral is necessary even on a compact set. For
   `f(x,y) = (√|x|, y)` on `ℝ²`, `J_f = sign(x)/(2√|x|)` almost everywhere,
   so `μ_f^+([−1,1]²) + μ_f^−([−1,1]²) = 4`. But
   `‖Df‖² ≥ 1/(4|x|)` off `x = 0`, whose nonnegative integral is `∞` there.
   A real Bochner integral would have junk value `0` and give the false bound `4 ≤ 0`.
 
-*Needs:* §6.2, §6.3, §3.1; Mathlib `MeasureTheory.Measure.withDensity`,
+*Needs:* §3.1, §4.4, §6.1, §6.2, §6.3; Mathlib `MeasureTheory.Measure.withDensity`,
 `MeasureTheory.lintegral_withDensity_eq_lintegral_mul₀`,
 `MeasureTheory.integral_withDensity_eq_integral_toReal_smul₀`,
 `MeasureTheory.lintegral_image_eq_lintegral_abs_det_fderiv_mul`,
@@ -1491,9 +1511,9 @@ open, a manifold through `TopologicalSpace.Opens.instChartedSpace` with the rest
 (`TauCeti.Manifold.instRiemannianBundleOpen`). For `f : Ω → F` choose `f̃ : E → F` with
 `f = f̃ ∘ Subtype.val`. Prove (MartioRickmanVaisala1969 line 124 and lines 332–340):
 
-- `f ∈ W^{1,p}_loc(Ω, F)` iff `f̃` is continuous on `Ω` and `f̃ ∈ W^{1,p}_loc(Ω; F)` for `volume`.
-  Equivalently, `f̃` is continuous on `Ω` and has a weak derivative `U` on `Ω` with
-  `‖U‖ ∈ L^p_loc(Ω)`;
+- `f ∈ W^{1,p}_loc(Ω, F)` iff `f̃` is continuous on `Ω` and `f̃ ∈ W^{1,p}_loc(Ω; F)` for one,
+  equivalently every, additive Haar measure `μ` on `E` (§1.2). Equivalently, `f̃` is continuous
+  on `Ω` and has a weak derivative `U` on `Ω` relative to `μ` with `‖U‖ ∈ L^p_loc(Ω, μ)`;
 - then `Df(x) = U(x)` for almost every `x ∈ Ω`, since the tangent spaces of `Ω` and `F` are `E`
   and `F`;
 - `TauCeti.riemannianVolume` of `Ω` is `volume` restricted to `Ω`, and `‖Df(x)‖ = ‖U(x)‖`, the
@@ -1509,6 +1529,13 @@ open, a manifold through `TopologicalSpace.Opens.instChartedSpace` with the rest
 
 - `f = id_Ω`: `Df = id` and `J_f = 1`. The norm is `1` in positive dimension and `0`
   in dimension `0`, where the identity linear map is the zero map.
+- The membership statement needs no inner product. Let `E = F = ℝ²` with the sup norm, which
+  comes from no inner product (`e₁ = (1, 0)`, `e₂ = (0, 1)` give
+  `‖e₁ + e₂‖² + ‖e₁ − e₂‖² = 2 ≠ 4 = 2(‖e₁‖² + ‖e₂‖²)`), and let `μ` be the Haar measure of the
+  standard basis (`Module.Basis.addHaar`). Then `f = id_Ω` has representative `id` and constant
+  weak derivative `id`, of operator norm `1`, and both sides hold for every `p`; replacing `μ`
+  by `cμ` with `c > 0` changes neither side. A statement phrased through the volume of an inner
+  product would not cover this `E`.
 - For `a < b` and the flat open interval `(a,b) ⊆ ℝ`, its Riemannian volume is `b − a`, the restricted
   ambient volume; the empty domain has volume `0`. On a zero-dimensional singleton
   the volume is `1` and the empty determinant is `1`.
@@ -1656,9 +1683,8 @@ composition with §2.3 concludes. Exchange `ι₁` and `ι₂` for the converse.
   `ι₁ ∘ u = z/|z|`, which is smooth there and in every class. But `ι₂ ∘ u` jumps across the
   positive real axis and is in no class.
 - Two embeddings of `S¹`: the inclusion into `ℝ²` and `z ↦ (z, z²)` into `ℝ⁴`. For
-`u(x) = x/|x|` on the unit disc, assigned `1 ∈ S¹` at `0`, both compositions have gradients of size
-  `≍ 1/|x|`, in
-  `L^p_loc` iff `p < 2`, as the theorem predicts.
+  `u(x) = x/|x|` on the unit disc, assigned `1 ∈ S¹` at `0`, both compositions have gradients of
+  size `≍ 1/|x|`, in `L^p_loc` iff `p < 2`, as the theorem predicts.
 
 *Needs:* §2.3, §4.1, §8.3; Tau Ceti `TauCeti.SmoothEmbedding`,
 `TauCeti.SmoothEmbedding.exists_contMDiffMap_extension_hasCompactSupport`; Mathlib
@@ -1667,8 +1693,8 @@ composition with §2.3 concludes. Exchange `ι₁` and `ι₂` for the converse.
 ### Examples
 
 - Maps into the round sphere `Sᵏ ⊆ ℝ^{k+1}` through the isometric inclusion:
-`‖Du‖ = |D(ι ∘ u)|` for continuous Sobolev members `u`, and the hedgehog `x/|x|` for discontinuous
-  ones.
+  `‖Du‖ = |D(ι ∘ u)|` for continuous Sobolev members `u`, and the hedgehog `x/|x|` for
+  discontinuous ones.
 
 ### Dependencies
 

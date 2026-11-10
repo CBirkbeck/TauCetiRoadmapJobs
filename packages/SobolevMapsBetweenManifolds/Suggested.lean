@@ -208,8 +208,9 @@ theorem contMDiff_memManifoldW1pLoc (p : ℝ≥0∞) (hp : 1 ≤ p)
 
 /-! ## Layer 5: the operator norm of the differential -/
 
-/-- Given W11 membership and any weak differential, W1p membership is
-exactly local Lp membership of its Riemannian operator norm (T3). -/
+/-- Given any weak differential, W1p membership is exactly local Lp
+membership of its Riemannian operator norm (T3). The weak differential already
+gives W11 membership, so no separate membership hypothesis is carried. -/
 theorem memManifoldW1pLoc_iff_norm [LindelofSpace M]
     [MeasurableSpace M] [BorelSpace M]
     [RiemannianBundle (fun x : M => TangentSpace I x)]
@@ -217,7 +218,6 @@ theorem memManifoldW1pLoc_iff_norm [LindelofSpace M]
     [IsContinuousRiemannianBundle E (fun x : M => TangentSpace I x)]
     [IsContinuousRiemannianBundle F (fun y : N => TangentSpace J y)]
     (p : ℝ≥0∞) (hp : 1 ≤ p) (f : M → N)
-    (hf : MemManifoldW1pLoc I J 1 f)
     (D : (x : M) → TangentSpace I x →L[ℝ] TangentSpace J (f x))
     (hD : HasWeakMDeriv I J f D) :
     MemManifoldW1pLoc I J p f ↔
