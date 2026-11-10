@@ -543,3 +543,35 @@ licence_class = "none"
 status = "uncertified"
 version_note = "paywalled (AMS); the author-page copy at people.math.rochester.edu timed out three times; cited by its locator without the text"
 cited_for = ["F5"]
+
+[[source]]
+id = "bokstedt-neeman"
+authors = "Marcel Bökstedt, Amnon Neeman"
+title = "Homotopy limits in triangulated categories"
+year = 1993
+venue = "Compositio Mathematica 86"
+locator_scheme = "theorem"
+locator = "Proposition 3.2"
+url = "http://www.numdam.org/item/CM_1993__86_2_209_0/"
+fetched_from = "https://www.numdam.org/item/CM_1993__86_2_209_0.pdf"
+fetched_at = "2026-11-10T10:11:15Z"
+sha256 = "e6f876a959a0500a7cbf8b0eb035944c181851bb303ca151d40faa45d48cd759"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-10"
+cited_for = ["3.1"]
+
+[[source]]
+id = "adams-lectures-1969"
+authors = "J. F. Adams"
+title = "Lectures on generalised cohomology"
+year = 1969
+venue = "Lecture Notes in Mathematics"
+doi = "10.1007/bfb0081960"
+locator_scheme = "section"
+locator = "Lecture 4"
+url = "https://doi.org/10.1007/bfb0081960"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["3.3"]
