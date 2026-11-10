@@ -20,7 +20,8 @@ None of the headline theorems is statable at the pins, so nothing is stated here
   analytic coefficient complexes.
 * The completed-cohomology Eichler–Shimura spectral sequence and the genus-two four-piece
   filtration (§§7.5–7.8) need completed cohomology of Shimura towers, derived locally
-  analytic vectors and analytic localization on flag varieties.
+  analytic vectors, the derived analytic localization on flag varieties and the higher
+  Coleman functors with coefficients in the Levi BGG categories (§§7.1a–7.2).
 * The Sen–Cousin comparison and de Rham ordinary classicality (§§8.4–8.6) need, in addition,
   the arithmetic Sen operator on completed cohomology and supported higher Coleman cohomology.
 * The four projective Hida modules with their specializations, duality and tame

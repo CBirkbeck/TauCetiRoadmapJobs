@@ -3828,7 +3828,7 @@
     },
     {
       "slug": "partial-hasse-regularity",
-      "needs": "On the Hilbert–Siegel and Siegel normalized models, supply regularity of the partial Hasse invariants after arbitrary powers of the others on the supported special-fibre strata, relative toroidal-to-minimal acyclicity of the cuspidal coefficients, and the two-affine cover of the p-rank-at-least-one minimal special fibre (P20 Lemma 8.2.1, BCGP21 Theorem 4.2.12).",
+      "needs": "On the Hilbert–Siegel and Siegel normalized models, supply regularity of the partial Hasse invariants after arbitrary powers of the others on the supported special-fibre strata; on the mixed Klingen/Iwahori Hilbert–Siegel normalized models, the formal chart criterion of §7.21 for the cuspidal coefficients ω^κ(−D), also after base change to Z/p^n, which is the hypothesis under which AutomorphicBundlesPartII §5.2 gives their toroidal-to-minimal relative vanishing; and the two-affine cover of the p-rank-at-least-one minimal special fibre (P20 Lemma 8.2.1, BCGP21 Theorem 4.2.12). Relative vanishing itself is AutomorphicBundlesPartII §5.2 and is not requested; nothing is requested for canonical coefficients without the boundary twist.",
       "supplier": "ShimuraCompactifications",
       "section": "§7.20"
     },
@@ -3864,7 +3864,7 @@
     },
     {
       "slug": "solid-vb-sen",
-      "needs": "Supply the solid functor VB_red from G-equivariant sheaves on the flag variety to sheaves on the toroidal Shimura tower, its Chevalley–Eilenberg compatibility, and the identification of the horizontal action of the centre of the Levi Lie algebra with the arithmetic Sen operator (BCGP25 Theorems 4.5.20 and 4.5.23).",
+      "needs": "Supply the derived functor VB_red from the derived category of solid g-equivariant sheaves on opens of the flag variety to the derived category of O^sm-modules on the toroidal Shimura tower (the derived pullback-and-invariants functor VB tensored down along the augmentation of the de Rham algebra VB(O_FL)); its degree-zero functor VB^0 on g-equivariant LB-sheaves, exact on those killed by u^0_P, where VB_red = VB^0[0], with VB^0(C^la) = O^la; the (g,B)-equivariant VB^0 on LB-sheaves over the Bruhat tubes C_w^† killed by u^0_P, also exact; the Chevalley–Eilenberg compatibility VB^0(H^i(u^0_P, F)) = H^i(VB(F)) when these are LB-sheaves; and the identification of the horizontal action of the centre of the Levi Lie algebra with the arithmetic Sen operator (BCGP25 Theorem 4.5.4, Definition 4.5.17, Remark 4.5.18, Theorems 4.5.20 and 4.5.23).",
       "supplier": "PerfectoidShimuraVarieties",
       "section": "§3.6"
     },
@@ -3873,6 +3873,12 @@
       "needs": "Supply the Eichler–Shimura relation for the étale cohomology of Siegel threefolds with prime-to-p level, annihilating Frobenius at good primes by the spin Hecke polynomial, compatibly with completed cohomology (BCGP25 Theorem 1.8.29).",
       "supplier": "AutomorphicGaloisRepresentations",
       "section": "§1.1"
+    },
+    {
+      "slug": "klingen-bgg-normalization",
+      "needs": "In item 4 of §9.6, supply the intertwining of the Klingen relative BGG differential θ : F^(k,w) ⊗ ω^r → F^(−2−k,w) ⊗ ω^(k+r+1) in the form θ ∘ U = p^(k+1) U ∘ θ, so that U on the middle term corresponds to p^(k+1)U on the last term, the normalization from which its slope ranges s<k−2 and s<k+1 follow (AIP15 Proposition 7.2.3; P20 Proposition 13.3.3.1 with the sign of the exponent corrected).",
+      "supplier": "HigherHidaAndColemanTheory",
+      "section": "§9.6"
     }
   ],
   "sourceIssues": [
