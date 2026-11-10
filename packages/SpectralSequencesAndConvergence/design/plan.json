@@ -316,7 +316,7 @@
       {
        "name": "transport",
        "role": "functoriality",
-       "statement": "Assignments transport along isomorphisms and along the page shift of 6.1 (changing e)."
+       "statement": "Assignments transport along isomorphisms of spectral sequences."
       }
      ],
      "tests": [
@@ -353,6 +353,7 @@
      "prerequisites": [
       "target:1.2",
       "target:1.3",
+      "target:1.4",
       "target:2.1"
      ],
      "api": [
@@ -968,13 +969,20 @@
       "where": "line 3202–3240, Lemma 24.13, tag 0BK5 (applied); Mathlib HasSpectralSequence.lean"
      },
      "prerequisites": [
+      "target:3.6",
       "target:4.4",
       "mathlib:CategoryTheory.Abelian.SpectralObject.IsFirstQuadrant",
       "mathlib:CategoryTheory.Abelian.SpectralObject.IsThirdQuadrant",
       "mathlib:CategoryTheory.Abelian.SpectralObject.coreE₂CohomologicalNat",
       "mathlib:CategoryTheory.Abelian.SpectralObject.coreE₂HomologicalNat"
      ],
-     "api": [],
+     "api": [
+      {
+       "name": "firstQuadrant_edgeMorphisms",
+       "role": "consequence",
+       "statement": "The edge morphisms and the five-term exact sequence of 3.6 hold for every spectral object satisfying IsFirstQuadrant."
+      }
+     ],
      "tests": [
       {
        "name": "first_quadrant_hypotheses",
@@ -1121,6 +1129,7 @@
       "where": "line 3062–3106 and 3144–3151, Definition 24.5, Lemmas 24.6 and 24.10, tags 012P, 012Q, 012V"
      },
      "prerequisites": [
+      "target:3.2",
       "target:4.2",
       "target:4.3",
       "target:5.1",
@@ -1201,6 +1210,7 @@
       "where": "Theorem 5.5.1 (uncertified); stacks-012K line 3202–3210, Lemma 24.13 (variant)"
      },
      "prerequisites": [
+      "target:3.2",
       "target:4.3",
       "target:5.1",
       "target:5.2",
@@ -1245,6 +1255,7 @@
       "where": "line 2653–2686, Definition 21.1, Lemma 21.2, Definition 21.3, tags 011Q–011S; weibel1994 Definitions 5.9.1–5.9.3 (uncertified); massey1952 (uncertified)"
      },
      "prerequisites": [
+      "target:2.1",
       "roadmap:StableHomotopyKTheory §7.22",
       "mathlib:CategoryTheory.SpectralSequence",
       "mathlib:ComplexShape.up'"
@@ -1269,6 +1280,11 @@
        "name": "map",
        "role": "functoriality",
        "statement": "Morphisms of exact couples induce morphisms of spectral sequences."
+      },
+      {
+       "name": "pageShift_bidegreeAssignment",
+       "role": "transport",
+       "statement": "If (fil, deg, e) is a bidegree assignment (2.1) for E, then (fil, deg, e − k) is one for the page shift of E by k: page r of the shift carries the relation of page r + k, raising fil by r + k − e."
       }
      ],
      "tests": [
@@ -1286,6 +1302,11 @@
        "name": "couple_wrong_sign",
        "kind": "non-example",
        "statement": "Using c + b + (r−1)•a gives degree (2−r, r−1), not cohomological."
+      },
+      {
+       "name": "shift_offset_sign",
+       "kind": "computation",
+       "statement": "Shift of X.spectralSequence coreE₂Cohomological by k = 1: page r is native page r + 1, relation (p,q) → (p+r+1, q−r); classical fil = −q−1 rises by r, so e = 1 becomes 0 = 1 − 1; a model with e + k = 2 predicts r − 2."
       }
      ]
     },
@@ -1484,9 +1505,11 @@
       "where": "line 3715–3735, Definition 31.2 and Lemma 31.3, tags 02N0, 02N1; line 3720–3724 (Neeman)"
      },
      "prerequisites": [
+      "target:1.2",
       "target:7.1",
       "mathlib:CategoryTheory.EnoughProjectives",
-      "mathlib:CategoryTheory.CountableAB4Star"
+      "mathlib:CategoryTheory.CountableAB4Star",
+      "mathlib:CategoryTheory.IsArtinianObject"
      ],
      "api": [
       {
@@ -1508,6 +1531,11 @@
        "name": "moduleCat_instance",
        "role": "instance",
        "statement": "ModuleCat R (Small R) satisfies the hypothesis and CountableAB4Star."
+      },
+      {
+       "name": "cycleTower_isMittagLeffler_of_isArtinianObject",
+       "role": "vanishing",
+       "statement": "At a position whose first-page object is Artinian (IsArtinianObject; finite length suffices) the cycle tower r ↦ Z_r(pq) of 1.2 is eventually constant, hence Mittag–Leffler, and its lim¹ vanishes by 7.1."
       }
      ],
      "tests": [
