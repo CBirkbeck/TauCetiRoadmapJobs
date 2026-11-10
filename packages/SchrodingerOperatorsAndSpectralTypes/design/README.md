@@ -7,8 +7,8 @@ first layer identifies the absolutely continuous, singular continuous and pure p
 projections with the Lebesgue decomposition of every vector spectral measure, defines
 `σ_ac`, `σ_sc`, `σ_pp`, characterises `σ_ac` by local absolutely continuous mass (hence closed
 with no isolated points), proves the interval criterion for `[a, b] ⊆ σ_ac`, the min–max
-principle below the essential spectrum, the abstract wave operators and the Kato–Rosenblum
-theorem on trace-class perturbations. The second layer gives the lower bounds and cores that
+principle below the essential spectrum, the abstract wave operators, Pearson's theorem and the
+Kato–Rosenblum theorem on trace-class perturbations. The second layer gives the lower bounds and cores that
 bounded and Kato–Rellich perturbations preserve. The third layer constructs, on every smooth
 Riemannian manifold without boundary, the initial operator `Δ₀ = −div grad` on `C_c^∞` (whose
 closure is the minimal operator), its adjoint the maximal operator, the energy form and the
@@ -18,20 +18,21 @@ self-adjoint, its closure `Δ_X` is the maximal operator and the operator of the
 `H¹(X) = H¹₀(X)`. It then gives `Δ_X` its spectral vocabulary (kernel, bottom of the spectrum,
 ordered eigenvalues below the essential spectrum, the compact case, bounded potentials, and the
 threshold `[1/4, ∞) ⊆ σ_ess` forced by a hyperbolic cusp end). The fourth layer describes
-`H²(ℝ^d)` four ways, realises the free Laplacian `H₀` with domain `H²` and spectrum
-`σ_ac(H₀) = [0, ∞)` in every dimension `d ≥ 1`, and proves that `−Δ + V` with real
+`H²(ℝ^d)` four ways, takes the free Laplacian `H₀ = −Δ` on `H²(ℝ^d)` from QuantumFoundations,
+identifies its form domain `H¹(ℝ^d)` and essential spectrum `[0, ∞)` in every dimension `d ≥ 1`,
+and proves that `−Δ + V` with real
 `V ∈ L^∞(ℝ^d)` is self-adjoint on `H²`, bounded below by `ess inf V`, essentially self-adjoint on
 `C_c^∞` and on Schwartz space, with `σ_ess = [0, ∞)` when `V` vanishes at infinity; quasi-periodic
 trigonometric potentials are the model example.
 
 ## Scope and ownership
 
-This roadmap owns the measure side of spectral types, the abstract wave operators and the
-Kato–Rosenblum theorem, the general min–max principle below the essential spectrum, the lower
-bound and core clauses of the bounded and Kato–Rellich perturbation theorems, the complete
-`L²` theory of the scalar Laplace–Beltrami operator on noncompact Riemannian manifolds, the free
-Laplacian on `L²(ℝ^d)` in every dimension, and Schrödinger operators with bounded real
-potentials on `ℝ^d`. The following are owned elsewhere and consumed by section.
+This roadmap owns the measure side of spectral types, the abstract wave operators, Pearson's
+theorem and the Kato–Rosenblum theorem, the general min–max principle below the essential
+spectrum, the lower bound and core clauses of the bounded and Kato–Rellich perturbation theorems,
+the complete `L²` theory of the scalar Laplace–Beltrami operator on noncompact Riemannian
+manifolds, the form domain and essential spectrum of the free Laplacian on `L²(ℝ^d)`, and
+Schrödinger operators with bounded real potentials on `ℝ^d`. The following are owned elsewhere and consumed by section.
 
 - **Already in the library.** Projection-valued measures with their diagonal measures
   (`TauCeti.ProjValMeasure`, its field `TauCeti.ProjValMeasure.diag`); the Kato–Rellich
@@ -76,10 +77,11 @@ potentials on `ℝ^d`. The following are owned elsewhere and consumed by section
 - **Stated by TauCetiRoadmap.PDE.** Weak-derivative Sobolev spaces and their agreement with the
   Bessel scale (§1.3, A3); the heat generator on `L^p(ℝ^n)` (§6.3, F26) is compared with the free
   Laplacian as a Check.
-- **Moved here.** The free Laplacian on `H²(ℝ^d)` for every `d ≥ 1`, which QuantumFoundations
-  §8.2 also plans as `−Δ/(2m)`, is stated here (Layer 4.2) so that the automorphic consumers
-  earlier in the build order can use this roadmap; UnboundedOperators UO-E06 is its `d = 3` case,
-  recorded as a Check.
+- **Stated by TauCetiRoadmap.QuantumFoundations §8.2.** The free Hamiltonian `−Δ/(2m)` on
+  `H²(ℝⁿ)` for every `n ≥ 1`: self-adjointness, the Schwartz and `C_c^∞` cores, the Fourier
+  intertwining, the spectral measure of a state, `σ = σ_ac = [0, ∞)` and `σ_sc = σ_pp = ∅`.
+  Layer 4 uses it at `m = 1/2`, where it is `−Δ`, and adds only its form domain and essential
+  spectrum (4.2); UnboundedOperators UO-E06 is its `n = 3` case, recorded as a Check.
 - **Not in this roadmap.** Magnetic and bundle-valued Laplacians, unbounded or singular
   potentials (`L^p`, Kato class, Coulomb: UnboundedOperators UO-E06 and the physical-model
   roadmaps), heat kernels, scattering theory beyond the abstract wave operators and
@@ -104,6 +106,10 @@ potentials on `ℝ^d`. The following are owned elsewhere and consumed by section
   `μ = 2·Leb|[0,1]`, `μ.rnDeriv Leb = 2` a.e. on `[0,1]`, so `Leb.withDensity (μ.rnDeriv Leb) = μ`,
   whereas the reversed `μ.withDensity (μ.rnDeriv Leb) = 4·Leb|[0,1] ≠ μ`. The atomic part is
   `μ.restrict {x | μ{x} > 0}` (UnboundedOperators UO-C03).
+- **Resolvents.** `R_A(z) := (z − A)⁻¹` for `z ∈ ρ(A)`, SelfAdjointSpectralTheory's convention
+  (SA-E05), so `(A − z)⁻¹ = −R_A(z)`; inverses of shifted operators are written out as
+  `(A − z)⁻¹` wherever that form is meant. Witness: for `A = 2` on `ℂ`, `R_A(0) = −1/2` while
+  `(A − 0)⁻¹ = 1/2`.
 - **Unitary groups and wave operators.** `e^{itA}` is the generated unitary group of SA-E26 with
   the convention `U(t) = exp(itA)`. Wave operators are limits of `e^{itH₂} e^{−itH₁}` as
   `t → ±∞` (teschl line 10595–10609; kato57 line 25–26). Witness: for `H₁ = 0`, `H₂ = c` on `ℂ`,
@@ -220,6 +226,15 @@ extension and the square-root domain identification), UO-E01 (graph cores), UO-E
 compact perturbations preserve the essential spectrum), UO-E05 (cores of `−d²/dx²` and of the free
 Laplacian on `ℝ³`), UO-E06 (free Laplacian on `H²(ℝ³)`, for a Check).
 
+### From TauCetiRoadmap.QuantumFoundations
+
+§8.2, used at mass `m = 1/2` and ℏ = 1: for every `n ≥ 1` the free Hamiltonian `H₀ = −Δ/(2m)` on
+`L²(ℝⁿ)` with domain `{f : |ξ|²𝓕f ∈ L²} = H²(ℝⁿ)`, self-adjoint, with `𝒮(ℝⁿ)` and `C_c^∞(ℝⁿ)` as
+cores, the intertwining `𝓕H₀𝓕⁻¹ = M_{4π²|ξ|²/(2m)}` for Mathlib's transform, the spectral
+measure of a state, and `σ(H₀) = σ_ac(H₀) = [0, ∞)`, `σ_sc(H₀) = σ_pp(H₀) = ∅` for UnboundedOperators
+UO-C03's spectral subspaces. Assumed: at `m = 1/2` this is `−Δ` with Mathlib's sign of `Δ`, and its
+spectral parts are those of 1.4 (both roadmaps take the reduced restrictions of UO-C03).
+
 ### From TauCetiRoadmap.HilbertModules
 
 H6, scalar Hilbert-space specialisation: for a densely defined `T` with densely defined adjoint,
@@ -280,11 +295,12 @@ of a Fuchsian group with a parabolic element), used in Checks of Layer 3.10.
 
 Layer 1 is abstract spectral theory: it turns UnboundedOperators' type decomposition into
 statements about the Lebesgue decomposition of vector measures, defines and characterises the
-three spectral parts, proves the min–max principle, and ends with wave operators and
-Kato–Rosenblum. Layer 2 collects the semibounded perturbation statements that Layers 3 and 4
+three spectral parts, proves the min–max principle, and ends with wave operators, Pearson's
+theorem and Kato–Rosenblum. Layer 2 collects the semibounded perturbation statements that Layers 3 and 4
 both use. Layer 3 builds the Laplace–Beltrami operator of a Riemannian manifold from `C_c^∞` to
 its self-adjoint closure on complete manifolds and equips it with Layer 1's vocabulary. Layer 4
-builds the free Laplacian on `ℝ^d` and the Schrödinger operators with bounded potentials. Layers
+takes the free Laplacian on `ℝ^d` from QuantumFoundations, adds its form domain and essential
+spectrum, and builds the Schrödinger operators with bounded potentials. Layers
 3 and 4 are independent of each other; both need Layers 1 and 2. The closing section records the
 finite-area hyperbolic spectral theorem as motivation for a future roadmap.
 
@@ -359,11 +375,17 @@ in general, by UO-C03's example on `ℓ²(ℝ) ⊕ L²(ℝ)`, and is not restate
 Let `U ≤ ℋ` be a closed subspace whose orthogonal projection `Q` commutes with every `P_A(B)`.
 Prove that `U` reduces `A`, that the reduced restriction `A|_U` (SA-C12–SA-C19) is self-adjoint,
 and that its spectral measure is the compression `B ↦ P_A(B)|_U`; consequently
-`μ^{A|_U}_u = μ^A_u` for `u ∈ U` and `σ(A|_U) = {λ : P_A((λ − ε, λ + ε)) Q ≠ 0 for every ε > 0}`
-(teschl line 4420–4427). Route: the compression is a real PVM on `U`; the resolvent of `A|_U` is
-the restriction of `R_A(z)` (SA-E06), so the compression satisfies the resolvent formula and
-SA-E44 identifies it; the spectrum statement is UO-C01 applied to `A|_U`. *Needs:* 1.1;
-SelfAdjointSpectralTheory SA-C12–SA-C19, SA-E05–SA-E07, SA-E44; UnboundedOperators UO-C01.
+`μ^{A|_U}_u = μ^A_u` for `u ∈ U` and `σ(A|_U) = {λ : P_A((λ − ε, λ + ε)) Q ≠ 0 for every ε > 0}`.
+Reduction by a commuting projection is teschl line 3282–3304 (Lemma 2.24, p. 80) and line
+4945–4946 (Corollary 4.6, p. 116); the identification of the compression with the spectral measure
+of `A|_U` is deduced here. Route: `Q` commutes with every bounded integral `∫ g dP_A` (SA-B44,
+from its commutation with every `P_A(B)`), in particular with `R_A(z) = ∫ (z − s)⁻¹ dP_A(s)` for
+`Im z ≠ 0` (SA-E05 polarised), so `Q` maps `dom A = ran R_A(z)` into itself and `U` reduces `A`
+(SA-C12); for `u ∈ U`, `R_A(z) u` lies in `U ∩ dom A`, the domain of `A|_U` (SA-C14–SA-C15), and
+`(z − A|_U) R_A(z) u = u`, so `R_{A|_U}(z) = R_A(z)|_U`. The compression is a real PVM on `U`
+satisfying the resolvent formula of `A|_U`, and SA-E44 identifies it; the spectrum statement is
+UO-C01 applied to `A|_U`. *Needs:* 1.1; SelfAdjointSpectralTheory SA-B44, SA-C12–SA-C19, SA-E05,
+SA-E44; UnboundedOperators UO-C01.
 
 **Checks.**
 
@@ -509,56 +531,107 @@ UnboundedOperators UO-C03.
 
 ### 1.8 Rosenblum's lemma and trace-class square roots
 
-Call `x ∈ ℋ_ac(H)` **density-bounded with constant `m`** when `μ_x.rnDeriv Leb ≤ m²` almost
-everywhere. Prove (kato57 line 92–111, Lemma 2.1; rosenblum57 §§3–4):
+For a self-adjoint `H` and a real number `m`, call `x ∈ ℋ` **density-bounded with constant `m`**
+when `x ∈ ℋ_ac(H)` and `μ_x.rnDeriv Leb ≤ m²` Lebesgue-almost everywhere (kato57 line 92–96,
+(2.7)); only `m²` enters.
 
-- for density-bounded `x` and every Hilbert–Schmidt `C`,
+- **Monotonicity.** If `x` is density-bounded with constant `m` and `m² ≤ m'²`, it is
+  density-bounded with constant `m'`; in particular this holds for `0 ≤ m ≤ m'`. Monotonicity in
+  `m` itself fails for negative constants.
+- **Scalars and zero.** `0` is density-bounded with every constant; if `x` is density-bounded with
+  constant `m` and `c ∈ ℂ`, then `cx` is density-bounded with constant `|c|·m`, since
+  `μ_{cx} = |c|² μ_x`.
+- **Truncation and density.** For `x ∈ ℋ_ac(H)`, `h` a Borel version of `μ_x.rnDeriv Leb` and
+  `m ≥ 0`, the vector `P_H({h ≤ m²}) x` is density-bounded with constant `m` (its measure is
+  `μ_x.restrict {h ≤ m²}` by 1.1, of density `h·1_{h ≤ m²}`, and `ℋ_ac(H)` is invariant under
+  `P_H`, UO-C03), and `‖x − P_H({h ≤ m²}) x‖² = ∫_{h > m²} h dLeb → 0` as `m → +∞`; so the
+  density-bounded vectors are dense in `ℋ_ac(H)`.
+
+Prove (kato57 line 92–111, Lemma 2.1; rosenblum57 §§3–4):
+
+- for `x` density-bounded with constant `m` and every Hilbert–Schmidt `C`,
   `∫_ℝ ‖C e^{−itH} x‖² dt ≤ 2π m² ‖C‖²_HS`, with `‖C‖²_HS = ContinuousLinearMap.hilbertSchmidtEnergy C b`;
-- the density-bounded vectors are dense in `ℋ_ac(H)`: for `x ∈ ℋ_ac(H)` and `h` a version of
-  `μ_x.rnDeriv Leb`, `P_H({h ≤ m²}) x` is density-bounded with constant `m` and tends to `x`;
 - for a bounded self-adjoint trace-class `V` (`ContinuousLinearMap.nuclearENorm V ≠ ⊤`), the
   operator `|V|^{1/2}` is Hilbert–Schmidt with `‖|V|^{1/2}‖²_HS = nuclearENorm V`.
 
 Route: Parseval for the Fourier transform of `d⟪E(λ)x, C*φ_n⟫/dλ` summed over an orthonormal basis
 of the range of `C` (kato57 line 97–111); the square root through the compact self-adjoint
 eigenbasis of `V` (SA-C86) and OperatorIdeals OI-B29–OI-B36. *Needs:* 1.1, 1.2;
-SelfAdjointSpectralTheory SA-C86, SA-E26; OperatorTheory/OperatorIdeals OI-B29–OI-B36; Mathlib
-Plancherel.
+SelfAdjointSpectralTheory SA-C86, SA-E26; UnboundedOperators UO-C03;
+OperatorTheory/OperatorIdeals OI-B29–OI-B36; Mathlib Plancherel.
 
 **Checks.**
 
+- Multiplier model: for `H = M_λ` on `L²(ℝ)`, `μ_x = |x|²·Leb`, so `x` is density-bounded with
+  constant `m` iff `|x| ≤ |m|` almost everywhere.
+- The sign of the constant: for `H = M_λ` and `x = 1_{[0,1]}` (density `1_{[0,1]}`), the constants
+  `m = −1` and `m = 1` work and `m = 0` does not; so `−1 ≤ 0` does not transport the property,
+  while `m² = 1 ≤ 4 = m'²` for `m = 1`, `m' = 2` does.
+- Membership in `ℋ_ac(H)` is part of the definition: for `H = 0` on `ℂ`, `ℋ_ac(H) = 0`, so only `0`
+  is density-bounded, although every `μ_x = |x|²δ₀` has `μ_x.rnDeriv Leb = 0` almost everywhere.
+  Without the membership clause `x = 1` would have constant `0`, and the estimate below would fail:
+  for `C = 1` on `ℂ`, `∫_ℝ ‖C e^{−it·0} x‖² dt = ∞ > 0 = 2π·0²·‖C‖²_HS`.
+- `x(λ) = |λ|^{−1/4} 1_{[−1,1]}` lies in `ℋ_ac(M_λ)` with unbounded density `|λ|^{−1/2}`, so it is
+  not density-bounded for any constant; its truncations `x·1_{|λ| ≥ m^{−4}}` (for `m ≥ 1`) are
+  density-bounded with constant `m` and `‖x − x·1_{|λ| ≥ m^{−4}}‖² = 4/m² → 0`.
 - `H = M_λ` on `L²(ℝ)`, `x = m·1_{[0,1]}`, `C = ⟨φ, ·⟩φ` with `‖φ‖ = 1` supported in `[0,1]`:
   `∫ |⟨φ, e^{−itλ}x⟩|² dt = 2π ∫ |φ x|² = 2π m²`, equality in the bound; a convention without
   the factor `2π` fails here.
-- `x(λ) = |λ|^{−1/4} 1_{[−1,1]}` lies in `ℋ_ac(M_λ)` with unbounded density `|λ|^{−1/2}`, so it is
-  not density-bounded although it is a limit of density-bounded vectors.
 - `V = diag(1, −1/4, 1/9, …)` with entries `(−1)^{n+1}/n²`: `|V|^{1/2} = diag(1/n)`, whose
   Hilbert–Schmidt energy `π²/6` equals the nuclear gauge `Σ 1/n² = π²/6`.
 
-### 1.9 The Kato–Rosenblum theorem
+### 1.9 Pearson's theorem and the Kato–Rosenblum theorem
 
-Let `H₁` be self-adjoint, `V` bounded self-adjoint and trace class, and `H₂ = H₁ + V` on
-`dom H₁` (self-adjoint by SA-C54). When the wave operators of 1.7 exist on `ℋ_ac(H₁)`, write
-`W_±(H₂, H₁) := Ω_±(H₂, H₁) P_ac(H₁)` for the **compressed wave operator**: a bounded operator
-defined on all of `ℋ`, vanishing on `ℋ_ac(H₁)^⊥` and isometric on `ℋ_ac(H₁)` (1.7), the strong
-limit of `e^{itH₂} e^{−itH₁} P_ac(H₁)` (kato57 line 25–28, (1.1)); `Ω_±` of 1.7 is the
-unrestricted limit on `D_±` and need not vanish off `ℋ_ac(H₁)`. Prove that the wave operators
-`Ω_±(H₂, H₁)` and `Ω_±(H₁, H₂)` exist on the absolutely continuous subspaces and are complete, so
-that `W_±(H₂,H₁)` is a partial isometry with initial space `ℋ_ac(H₁)` and final space `ℋ_ac(H₂)`,
-`W_±(H₂,H₁)* = W_±(H₁,H₂)` (kato57 line 29–30, (1.2)), and
-`H₂ P_ac(H₂) = W_±(H₂,H₁) H₁ P_ac(H₁) W_±(H₂,H₁)*` (kato57 line 32–35, (1.3)). In particular
-the absolutely continuous parts `(H₁)_ac` and `(H₂)_ac` are unitarily equivalent and
-`σ_ac(H₁) = σ_ac(H₂)` (kato57 line 21–35, Theorem 1; rs3 §XI.3, Theorems XI.7 and XI.8; kato76
-Ch. X §4.4). Route: on density-bounded vectors (1.8) the Cauchy property of
-`e^{itH₂} e^{−itH₁} x` follows from Duhamel's formula `W(t) − W(s) = i ∫_s^t e^{iuH₂} V e^{−iuH₁} du`
-and the Cauchy–Schwarz splitting of `V = |V|^{1/2} sgn V |V|^{1/2}` (kato57 line 64–121), with
-Rosenblum's lemma bounding both factors; Pearson's argument (rs3 Theorem XI.7) replaces Kato's
-finite-rank input by weak limit points of `W(t) P_ac(H₁)` and their intertwining property, and
-strong convergence follows from weak convergence together with `‖W(t)x‖ = ‖x‖`. Density of the
-density-bounded vectors extends existence to `ℋ_ac(H₁)`; exchanging `H₁` and `H₂` gives
-completeness. The purely absolutely continuous case is rosenblum57 Theorem 1.6 (line 70–72).
-*Needs:* 1.1, 1.2, 1.4, 1.7, 1.8; SelfAdjointSpectralTheory SA-C54, SA-E26–SA-E29;
-UnboundedOperators UO-C03.
+**Pearson's theorem.** Let `H₁`, `H₂` be self-adjoint on `ℋ` and `J` a bounded operator on `ℋ`,
+and suppose there is a trace-class `C` (`ContinuousLinearMap.nuclearENorm C ≠ ⊤`) with
+`⟪H₂ψ, Jφ⟫ − ⟪ψ, J H₁φ⟫ = ⟪ψ, Cφ⟫` for all `ψ ∈ dom H₂` and `φ ∈ dom H₁`, the form sense of
+`C = H₂J − JH₁`. Prove that the strong limits
+
+    W_±(H₂, H₁; J) := s-lim_{t → ±∞} e^{itH₂} J e^{−itH₁} P_ac(H₁)
+
+exist and satisfy `e^{isH₂} W_±(H₂, H₁; J) = W_±(H₂, H₁; J) e^{isH₁}` for every real `s`
+(yafaev04 line 116–122, Definition 1.3, and line 191–198, Theorem 1.8; pearson78; rs3 Theorem
+XI.7). No isometry is asserted. Route: with `W(t) := e^{itH₂} J e^{−itH₁}`, Duhamel's formula in
+the form sense, `⟪ψ, (W(t) − W(s)) φ⟫ = i ∫_s^t ⟪e^{−iuH₂}ψ, C e^{−iuH₁}φ⟫ du` for `ψ ∈ dom H₂`,
+`φ ∈ dom H₁`, comes from differentiating `u ↦ ⟪e^{−iuH₂}ψ, J e^{−iuH₁}φ⟫` (SA-E26–SA-E29).
+Pearson's argument (pearson78; rs3 Theorem XI.7) combines it with the Schmidt expansion of `C` and
+Rosenblum's lemma 1.8, its only spectral input (yafaev04 line 195–206), to obtain the limit for
+density-bounded `φ`; since `‖W(t)‖ ≤ ‖J‖` and density-bounded vectors are dense in `ℋ_ac(H₁)`
+(1.8), the limit then exists on all of `ℋ_ac(H₁)`. The intertwining relation is the limit of
+`e^{isH₂} W(t) = W(t + s) e^{isH₁}`, as `e^{isH₁}` commutes with `P_ac(H₁)` (UO-C03).
+*Needs:* 1.2, 1.8; SelfAdjointSpectralTheory SA-E26–SA-E29; UnboundedOperators UO-C03; Tau Ceti
+`ContinuousLinearMap.nuclearENorm`.
+
+**The Kato–Rosenblum theorem.** Let `H₁` be self-adjoint, `V` bounded self-adjoint and trace
+class, and `H₂ = H₁ + V` on `dom H₁` (self-adjoint by SA-C54). When the wave operators of 1.7
+exist on `ℋ_ac(H₁)`, write `W_±(H₂, H₁) := Ω_±(H₂, H₁) P_ac(H₁)` for the **compressed wave
+operator**: a bounded operator defined on all of `ℋ`, vanishing on `ℋ_ac(H₁)^⊥` and isometric on
+`ℋ_ac(H₁)` (1.7), the strong limit of `e^{itH₂} e^{−itH₁} P_ac(H₁)` (kato57 line 25–28, (1.1)),
+that is, Pearson's `W_±(H₂, H₁; 1)`; `Ω_±` of 1.7 is the unrestricted limit on `D_±` and need not
+vanish off `ℋ_ac(H₁)`. Prove that the wave operators `Ω_±(H₂, H₁)` and `Ω_±(H₁, H₂)` exist on
+the absolutely continuous subspaces and are complete, so that `W_±(H₂,H₁)` is a partial isometry
+with initial space `ℋ_ac(H₁)` and final space `ℋ_ac(H₂)`, `W_±(H₂,H₁)* = W_±(H₁,H₂)` (kato57
+line 29–30, (1.2)), and `H₂ P_ac(H₂) = W_±(H₂,H₁) H₁ P_ac(H₁) W_±(H₂,H₁)*` (kato57 line 32–35,
+(1.3)). In particular the absolutely continuous parts `(H₁)_ac` and `(H₂)_ac` are unitarily
+equivalent and `σ_ac(H₁) = σ_ac(H₂)` (kato57 line 21–35, Theorem 1; yafaev04 line 136–140,
+Theorem 1.4; rs3 §XI.3, Theorem XI.8; kato76 Ch. X §4.4). The purely absolutely continuous case
+is rosenblum57 Theorem 1.6 (line 70–72).
+
+Route. (a) `J = 1` and `C = V` satisfy Pearson's hypothesis: `dom H₂ = dom H₁` and
+`⟪(H₁ + V)ψ, φ⟫ − ⟪ψ, H₁φ⟫ = ⟪ψ, Vφ⟫` by the symmetry of `H₁` and `V`; so `ℋ_ac(H₁) ⊆ D_±(H₂, H₁)`,
+and with `(H₁, H₂, V)` replaced by `(H₂, H₁, −V)` also `ℋ_ac(H₂) ⊆ D_±(H₁, H₂)`. (b) Each
+`e^{itH₂} e^{−itH₁}` is unitary, so the strong limit `W_±(H₂, H₁)` is isometric on `ℋ_ac(H₁)`, and
+1.7 maps `ℋ_ac(H₁)` into `ℋ_ac(H₂)`. (c) Completeness: for `y ∈ ℋ_ac(H₂)` put
+`x := Ω_±(H₁, H₂) y`, which lies in `ℋ_ac(H₁)` by (b) with the roles exchanged; then
+`‖e^{itH₂} e^{−itH₁} x − y‖ = ‖x − e^{itH₁} e^{−itH₂} y‖ → 0`, so `W_±(H₂, H₁) x = y`. (d) The adjoint
+formula: as `W_±(H₂,H₁) x ∈ ℋ_ac(H₂)` and `W_±(H₁,H₂) y ∈ ℋ_ac(H₁)`,
+`⟪W_±(H₂,H₁) x, y⟫ = lim ⟪e^{itH₂} e^{−itH₁} P_ac(H₁) x, P_ac(H₂) y⟫
+= lim ⟪P_ac(H₁) x, e^{itH₁} e^{−itH₂} P_ac(H₂) y⟫ = ⟪x, W_±(H₁,H₂) y⟫`; the conjugacy formula is
+1.7's intertwining on `dom H₁`. A weak limit of the unitaries `e^{itH₂} e^{−itH₁}` together with
+`‖e^{itH₂} e^{−itH₁} x‖ = ‖x‖` does not give strong convergence: the limit vector must itself have
+norm `‖x‖`, which rosenblum57 line 80–95 proves in the purely absolutely continuous case and which
+the strong limit of (a) provides here. *Needs:* 1.1, 1.2, 1.4, 1.7, 1.8, Pearson's
+theorem above; SelfAdjointSpectralTheory SA-C54, SA-E26–SA-E29; UnboundedOperators UO-C03.
 
 **Checks.**
 
@@ -573,6 +646,13 @@ UnboundedOperators UO-C03.
   `ℋ_ac(H₁) = 0`, so `ℋ_ac(H₂) = 0` and `W_± = 0`; for instance the trace-class `V = −diag(1/n²)`
   gives `H₂ = 0`, where `D_± = 0` because no coordinate `e^{−it/n²} c_n` with `c_n ≠ 0` converges.
   The non-trace-class `V = −diag(1/n)` is excluded although it is compact.
+- Pearson's limit need not be isometric: `J = 0` satisfies the hypothesis with `C = 0`, and
+  `W_±(H₂, H₁; 0) = 0` on the nonzero `ℋ_ac(H₁)` of `H₁ = M_x` on `L²(ℝ)`; isometry in the
+  Kato–Rosenblum theorem comes from `J = 1`.
+- Weak convergence with preserved norms is not convergence: for `H₁ = M_x`, `H₂ = 2M_x` on `L²(ℝ)`
+  and `x = 1_{[0,1]}`, `e^{itH₂} e^{−itH₁} x = e^{itx} 1_{[0,1]}` has norm `1`, tends weakly to `0`
+  (`⟪x, e^{itx} x⟫ = (e^{it} − 1)/(it) → 0`) and stays at distance `1` from `0`; here `H₂ − H₁ = M_x`
+  is unbounded and not trace class, so neither theorem applies.
 
 ### Examples
 
@@ -594,10 +674,12 @@ OperatorIdeals OI-B29–OI-B36.
 
 ### 2.1 The bottom of the spectrum
 
-For a self-adjoint `A` on a nonzero `ℋ`, bounded below, define `λ₀(A) := inf σ(A)` (the spectrum
-is nonempty, closed and bounded below). Prove: for `γ ∈ ℝ` the following are equivalent:
-`γ‖x‖² ≤ ⟪x, Ax⟫` for every `x ∈ dom A`; `σ(A) ⊆ [γ, ∞)`; `P_A((−∞, γ)) = 0`. Hence
-`λ₀(A) = inf {⟪x, Ax⟫ : x ∈ dom A, ‖x‖ = 1}`, and the infimum may be taken over any core of `A`
+For every self-adjoint `A` on `ℋ` and every `γ ∈ ℝ`, prove that the following are equivalent:
+`γ‖x‖² ≤ ⟪x, Ax⟫` for every `x ∈ dom A`; `σ(A) ⊆ [γ, ∞)`; `P_A((−∞, γ)) = 0`. No lower bound on
+`A` and no nonzero `ℋ` is assumed (on `ℋ = 0` all three hold), so the equivalence also proves
+semiboundedness. For `A` bounded below on a nonzero `ℋ`, define `λ₀(A) := inf σ(A)` (the spectrum
+is then nonempty, closed and bounded below) and prove
+`λ₀(A) = inf {⟪x, Ax⟫ : x ∈ dom A, ‖x‖ = 1}`, where the infimum may be taken over any core of `A`
 or over the form domain with the closed form of UO-D06 (teschl line 5044–5052 with `n = 1`).
 Route: form bound to spectrum by SA-D22 (for `z < γ`, `(γ − z)‖x‖ ≤ ‖(A − z)x‖`); spectrum to
 spectral support by SA-E08; spectral support to form bound by SA-E11. *Needs:*
@@ -609,9 +691,12 @@ SelfAdjointSpectralTheory SA-D18, SA-D22, SA-E08, SA-E11, SA-C39; UnboundedOpera
 **Checks.**
 
 - `A = H₀ + c` (Layer 4.2): `λ₀ = c`, attained by no eigenvector.
-- `A = 0` on the zero space: `σ(A) = ∅` and `inf ∅` is a junk value in `ℝ`; the statement requires
-  `ℋ ≠ 0`.
-- `A = M_x` on `L²(ℝ)` is not bounded below; `σ(A) = ℝ` and the definition does not apply.
+- `A = 0` on the zero space: `σ(A) = ∅` and `inf ∅` is a junk value in `ℝ`, so the definition of
+  `λ₀` requires `ℋ ≠ 0`; the three-way equivalence holds there for every `γ` (all three conditions
+  are true).
+- `A = M_x` on `L²(ℝ)` is not bounded below; `σ(A) = ℝ` and the definition does not apply, while
+  the equivalence holds with all three conditions false for every `γ`.
+- `A = 2` on `ℂ`: the three conditions hold exactly for `γ ≤ 2`, and `λ₀(A) = 2`.
 
 ### 2.2 Bounded self-adjoint perturbations
 
@@ -640,16 +725,25 @@ Let `A` be self-adjoint with `γ‖x‖² ≤ ⟪x, Ax⟫`, and `V` symmetric wi
   `(1 − b)‖Ax‖ ≤ ‖(A + V)x‖ + a‖x‖` and `‖(A + V)x‖ ≤ a‖x‖ + (1 + b)‖Ax‖`;
 - `A + V` is bounded below by `γ − max(a/(1 − b), a + b|γ|)`.
 
-Route for the bound: for `μ < γ` and `d = γ − μ`, `‖V R_A(μ)‖ ≤ a/d + b·max(1, |γ|/d)`, which is
-`< 1` once `d > max(a/(1 − b), a + b|γ|)`; then `A + V − μ = (1 + V R_A(μ))(A − μ)` is invertible,
-and 2.1 converts the spectral bound into the form bound (teschl line 5683–5720, Lemma 6.3 and
-Theorem 6.4; kato76 Ch. V §4.1; rs2 Theorem X.12). Teschl's printed bound (line
+Route for the bound: for `μ < γ` and `d = γ − μ`, the operator `(A − μ)⁻¹ = −R_A(μ)` (Conventions)
+satisfies `‖(A − μ)⁻¹‖ ≤ 1/d` and `‖A (A − μ)⁻¹‖ ≤ max(1, |γ|/d)`, so
+`‖V R_A(μ)‖ ≤ a/d + b·max(1, |γ|/d)`, which is `< 1` once `d > max(a/(1 − b), a + b|γ|)`; then
+`A + V − μ = (1 − V R_A(μ))(A − μ)` is invertible. Hence every `μ < γ − max(a/(1 − b), a + b|γ|)`
+is a resolvent point of `A + V`, SA-E08 gives `P_{A+V}((−∞, γ − max(a/(1 − b), a + b|γ|))) = 0`,
+and SA-E11 (equivalently 2.1, whose equivalence assumes no lower bound on `A + V`) turns this into
+the form bound (teschl line 5683–5720, Lemma 6.3 and Theorem 6.4; kato76 Ch. V §4.1; rs2 Theorem
+X.12). Teschl writes `R_A(z) = (A − z)⁻¹` (line 3043–3046), the opposite sign, so his factor
+`I + B R_A(·)` is this roadmap's `1 − V R_A(·)`. Teschl's printed bound (line
 5709–5711) has the denominator `b/(a − 1)` in his lettering, which makes the maximum always
 `a|γ| + b`; the resolvent argument gives the maximum with `a/(1 − b)` in this roadmap's
 lettering, the form Kato states. *Needs:* 2.1; Tau Ceti `IsSelfAdjoint.add_of_isRelativelyBounded`,
-`LinearPMap.IsRelativelyBounded`; SelfAdjointSpectralTheory SA-C39, SA-D22.
+`LinearPMap.IsRelativelyBounded`; SelfAdjointSpectralTheory SA-C39, SA-D22, SA-E05, SA-E08, SA-E11.
 
 **Checks.**
+
+- Resolvent sign: on `ℂ` take `A = 2`, `V = 1`, `γ = 2`, `a = 1`, `b = 0`, `μ = 0`, so `d = 2 > 1`.
+  Then `R_A(0) = (0 − 2)⁻¹ = −1/2`, `‖V R_A(0)‖ = 1/2 < 1`, and `(1 − V R_A(0))(A − 0) = (3/2)·2 = 3 =
+  A + V − 0`, whereas the factor with a plus sign gives `(1/2)·2 = 1`.
 
 - Lettering witness: ambient `a = 1`, relative `b = 1/2`, `γ = 0` give the bound
   `−max(1/(1 − 1/2), 1 + 0) = −2`; reading the same numbers with the letters swapped (relative
@@ -901,32 +995,81 @@ Tau Ceti `IsSelfAdjoint.hasCompactResolvent_iff_isCompactOperator_resolvent`.
 
 Let `X` be complete and `V ∈ L^∞(X)` real. Prove: `Δ_X + V` is self-adjoint on `dom Δ_X` (SA-C54),
 `Δ₀ + V` is essentially self-adjoint on `C_c^∞(X; ℂ)` with closure `Δ_X + V`, and
-`Δ_X + V ≥ ess inf V`; on compact `X` it has compact resolvent and the same eigenvalue description
-as 3.8 without the kernel clause (teschl line 5704–5711). *Needs:* 2.2, 3.6, 3.8.
+`Δ_X + V ≥ ess inf V` (teschl line 5704–5711, Theorem 6.4, with relative bound `0`; 2.2). If
+moreover `X` is compact, prove:
+
+- `Δ_X + V` has compact resolvent; its spectrum is discrete, every spectral value is an eigenvalue
+  of finite multiplicity, and `L²(X)` has an orthonormal basis of eigenfunctions of `Δ_X + V`, each
+  in `dom Δ_X = H²(X)` (3.8);
+- the eigenvalues listed with multiplicity are the min–max values `μ_n(Δ_X + V)`, `n ≥ 1`, of 1.6
+  (`+∞` once `n > dim L²(X)`), and for `X ≠ ∅`
+  `λ_{n−1}(X) + ess inf V ≤ μ_n(Δ_X + V) ≤ λ_{n−1}(X) + ess sup V` with `λ_k(X)` of 3.7;
+- if `X ≠ ∅` and `dim X ≥ 1`, every `μ_n(Δ_X + V)` is finite and `μ_n(Δ_X + V) → ∞`;
+- if `V` is moreover smooth, every eigenfunction is smooth (ComplexKahlerGeometry K5a interior
+  regularity for the Laplace-type operator `Δ + V`).
+
+For discontinuous `V` the eigenfunctions are asserted to lie in `H²(X)` only, and the lowest
+eigenvalue is `μ₁(Δ_X + V) ≥ ess inf V`, not `0`. Route: for `s > ess sup |V|`,
+`‖V (Δ_X − is)⁻¹‖ ≤ ess sup |V| / s < 1` because `Δ_X` is self-adjoint, so
+`Δ_X + V − is = (1 + V (Δ_X − is)⁻¹)(Δ_X − is)` is invertible and
+`(Δ_X + V − is)⁻¹ = (Δ_X − is)⁻¹ (1 + V (Δ_X − is)⁻¹)⁻¹` is compact, a compact operator composed
+with a bounded one (teschl line 6358–6360 for relatively compact bounded perturbations; Mathlib
+`IsCompactOperator.comp_clm`; Tau Ceti
+`IsSelfAdjoint.hasCompactResolvent_iff_isCompactOperator_resolvent`); the eigenbasis is that of the
+compact self-adjoint resolvent (SA-C86). The two-sided bound is 1.6's form-order corollary applied
+to `Δ_X + ess inf V ≤ Δ_X + V ≤ Δ_X + ess sup V` (common form domain `H¹(X)`, 3.6), with
+`μ_n(Δ_X + c) = λ_{n−1}(X) + c`; finiteness and divergence follow from 3.8. *Needs:* 1.6, 2.2, 3.6,
+3.7, 3.8; SelfAdjointSpectralTheory SA-C54, SA-C86; ComplexKahlerGeometry K5a; Mathlib
+`IsCompactOperator.comp_clm`; Tau Ceti `IsSelfAdjoint.hasCompactResolvent_iff_isCompactOperator_resolvent`.
 
 **Checks.**
 
 - `V = c` constant: `σ(Δ_X + c) = σ(Δ_X) + c`.
+- Circle of length `2π`, `V = 1`: the eigenvalues are `1, 2, 2, 5, 5, …` (`n² + 1`), so the list starts
+  at `ess inf V = 1`, not at `0`, and both sides of the min–max sandwich are equalities.
 - Circle of length `2π`, `V = 1_{[0,π)}`: `ess inf V = 0`, and the Rayleigh quotient of `1` is
-  `π/(2π) = 1/2`, so `0 ≤ λ₀(Δ_X + V) ≤ 1/2`.
+  `π/(2π) = 1/2`, so `0 ≤ λ₀(Δ_X + V) ≤ 1/2`. No eigenfunction is smooth: a smooth `u` with
+  `−u'' + Vu = λu` makes `Vu = λu + u''` continuous, so the jump of `V` at `0` forces `u(0) = 0`;
+  comparing `u''' = ((V − λ)u)'` from both sides gives `(1 − λ)u'(0) = −λu'(0)`, so `u'(0) = 0`, and
+  uniqueness for the ODE on `[0, π]` and on `[π, 2π]` gives `u = 0`. The eigenfunctions lie in `H²`.
+- A finite set of `N` points: `L² = ℂ^N`, `Δ_X + V` is multiplication by `V`, the eigenvalues are the
+  `N` values of `V` and `μ_n = +∞` for `n > N`, so divergence to `+∞` through finite values needs
+  `dim X ≥ 1`.
 - `V` unbounded is outside this section: `V = −x⁴` on `ℝ` makes `−d²/dx² + V` not essentially
   self-adjoint on `C_c^∞(ℝ)` (limit circle at `±∞`, rs2 §X.1), so boundedness is used.
 
 ### 3.10 Cusp ends and the threshold one quarter
 
 A **standard cusp end** of a Riemannian surface `X` is an open set `C ⊆ X` with an isometry
-`C ≅ (ℝ/wℤ) × (a, ∞)` for the metric `(dx² + dy²)/y²`, `w > 0`, `a > 0`; its area is `w/a`. Prove: if
+`C ≅ (ℝ/wℤ) × (a, ∞)` for the metric `(dx² + dy²)/y²`, `w > 0`, `a > 0` (width `w`, height `a`).
+
+- **Area.** `vol_g(C) = ∫_0^w ∫_a^∞ dy dx / y² = w/a`.
+- **Truncation.** For every `a' > a` the part `{y > a'}` of a standard cusp end of width `w` and
+  height `a` is a standard cusp end of width `w` and height `a'`, of area `w/a'`; so a surface with
+  one standard cusp end contains standard cusp ends of arbitrarily small area.
+- **Isometry invariance.** The image of a standard cusp end under an isometry of Riemannian
+  surfaces is a standard cusp end with the same width and height.
+
+Prove: if
 `X` is complete and contains a standard cusp end, then `[1/4, ∞) ⊆ σ_ess(Δ_X)` (lp80 line 251–256,
 equations (2.8)–(2.10), for the `x`-independent reduction `s = log y`, `v = u/√y`, and line 279–290
-for the zero Fourier mode on a cusp; iwaniec02 Ch. 7). Route: for `t ∈ ℝ`, the functions
-`u_n = y^{1/2 + it} ψ((log y − n)/n)` with a fixed `ψ ∈ C_c^∞((1, 2))`, independent of `x`, are
-supported in the cusp for large `n`, have disjoint supports along a subsequence, and satisfy
-`‖(Δ − 1/4 − t²)u_n‖ / ‖u_n‖ → 0`, because in `r = log y` the measure is `w e^{−r} dr` and
-`Δ (y^{1/2} f(log y)) = y^{1/2}(1/4 − ∂_r²) f`; Weyl's criterion (UO-C02; teschl line 6277–6281)
-concludes. *Needs:* 3.1, 3.6; UnboundedOperators UO-C02.
+for the zero Fourier mode on a cusp; iwaniec02 Ch. 7). Route: fix `t ∈ ℝ` and a **nonzero**
+`ψ ∈ C_c^∞((1, 2))`, and put `u_n = y^{1/2 + it} ψ((log y − n)/n)`, independent of `x` and extended
+by `0`. It is supported in `{e^{2n} ≤ y ≤ e^{3n}}`, inside the cusp once `e^{2n} > a`, so
+`u_n ∈ C_c^∞(X; ℂ) ⊆ dom Δ_X`. In `r = log y` the measure is `w e^{−r} dr` and
+`Δ (y^{1/2} f(log y)) = y^{1/2}(1/4 − ∂_r²) f`, so `‖u_n‖² = w n ‖ψ‖²₂ > 0` and
+`(Δ − 1/4 − t²) u_n = −y^{1/2 + it} (2it ψ'(·)/n + ψ''(·)/n²)` evaluated at `(log y − n)/n`, whence
+`‖(Δ_X − 1/4 − t²) u_n‖ / ‖u_n‖ ≤ (2|t| ‖ψ'‖₂ / n + ‖ψ''‖₂ / n²) / ‖ψ‖₂ → 0`. The normalised vectors
+`v_j := u_{2^j} / ‖u_{2^j}‖` have disjoint supports (`log y ∈ [2^{j+1}, 3·2^j]` and
+`3·2^j < 2^{j+2}`), so they are orthonormal, and Weyl's criterion (UO-C02; teschl line 6277–6281)
+gives `1/4 + t² ∈ σ_ess(Δ_X)`. *Needs:* 3.1, 3.6; UnboundedOperators UO-C02.
 
 **Checks.**
 
+- `ψ = 0` is excluded: then `u_n = 0`, `‖u_n‖ = 0` and no vector of the sequence can be normalised
+  (the junk quotient `0/0 = 0` is not a unit vector), so Weyl's criterion receives no input.
+- Truncation: the width-`1` cusp end of height `1` has area `1`; truncating at height `2` gives a
+  standard cusp end of area `1/2`, and a model with area `w·a` would instead double it.
 - `Δ y^{1/2+it} = (1/4 + t²) y^{1/2+it}`, and `∫_a^∞ |y^{1/2+it}|² w dy/y² = ∞`, so `y^{1/2+it}` is a
   generalised eigenfunction and not an `L²` eigenvector; `yˢ` is in `L²` of the cusp iff `Re s < 1/2`.
 - The parabolic cylinder `⟨z ↦ z + 1⟩\ℍ` (FuchsianOrbifolds Layer 3 cusp coordinates) contains the
@@ -983,26 +1126,33 @@ and the norm comparison are owned here, through `TemperedDistribution.laplacian_
 
 ### 4.2 The free Laplacian
 
-Define `H₀ := 𝓕⁻¹ M_{4π²‖ξ‖²} 𝓕` on `L²(ℝ^d)`, the unitary conjugate (SA-C25, by
-`MeasureTheory.Lp.fourierTransformₗᵢ`) of the maximal multiplication operator by the real function
-`4π²‖ξ‖²` (UO-A07). Prove (teschl line 7086–7136, Theorem 7.8 and Lemma 7.9):
+Let `H₀` be QuantumFoundations §8.2's free Hamiltonian `−Δ/(2m)` at `m = 1/2`, that is `−Δ` on
+`L²(ℝ^d)` with domain `H²(ℝ^d)` (4.1): it is self-adjoint with cores `𝒮(ℝ^d)` and `C_c^∞(ℝ^d)`,
+`𝓕H₀𝓕⁻¹ = M_{4π²‖ξ‖²}`, `σ(H₀) = σ_ac(H₀) = [0, ∞)` and `σ_sc(H₀) = σ_pp(H₀) = ∅`. By 1.1's
+transport law and SA-E47, `P_{H₀}(B) = 𝓕⁻¹ M_{1_B(4π²‖ξ‖²)} 𝓕` and
+`μ_ψ(B) = ∫ 1_B(4π²‖ξ‖²) |𝓕ψ(ξ)|² dξ`. Prove (teschl line 7137–7143, (7.26), p. 168):
 
-- `dom H₀ = H²(ℝ^d)` (4.1) and `H₀u = −Δu` with Mathlib's `Δ`;
-- `H₀` is self-adjoint and nonnegative, with form domain `H¹(ℝ^d)` and form `Σ ‖∂ⱼu‖²`;
-- `P_{H₀}(B) = 𝓕⁻¹ M_{1_B(4π²‖ξ‖²)} 𝓕` (SA-E47) and
-  `μ_ψ(B) = ∫ 1_B(4π²‖ξ‖²)|𝓕ψ(ξ)|² dξ`, which is absolutely continuous for `d ≥ 1`;
-- `σ(H₀) = σ_ac(H₀) = [0, ∞)`, `σ_sc(H₀) = σ_pp(H₀) = ∅`, `σ_ess(H₀) = [0, ∞)`;
-- Schwartz space `𝒮(ℝ^d)` and `C_c^∞(ℝ^d)` are cores.
+- `H₀ ≥ 0`, and its form domain in the sense of UO-D06 is
+  `H¹(ℝ^d) = {u ∈ L² : (1 + ‖ξ‖²)^{1/2} 𝓕u ∈ L²}` (`TemperedDistribution.MemSobolev 1 2`), with form
+  `q(u) = ‖H₀^{1/2} u‖² = 4π² ∫ ‖ξ‖² |𝓕u(ξ)|² dξ = Σⱼ ‖∂ⱼu‖²`;
+- `σ_ess(H₀) = [0, ∞)`: `[0, ∞)` has no isolated points, so `H₀` has no discrete spectrum (UO-C02).
 
-The case `d = 3` is UnboundedOperators UO-E06's operator, and QuantumFoundations §8.2's `−Δ/(2m)`
-is `(2m)⁻¹H₀`. *Needs:* 4.1; 1.4; UnboundedOperators UO-A07, UO-C03; SelfAdjointSpectralTheory SA-C25,
-SA-C28, SA-E47; Mathlib `MeasureTheory.Lp.fourierTransformₗᵢ`.
+Route: `H₀^{1/2} = 𝓕⁻¹ M_{2π‖ξ‖} 𝓕` by the unbounded calculus of the multiplier (UO-A07, UO-D06's
+square-root domain), `𝓕(∂ⱼu)(ξ) = 2πi ξⱼ 𝓕u(ξ)` and Plancherel. UnboundedOperators UO-E06 is the case
+`d = 3`. *Needs:* QuantumFoundations §8.2; 1.1, 4.1; UnboundedOperators UO-A07, UO-C02, UO-D06;
+SelfAdjointSpectralTheory SA-E47; Mathlib `TemperedDistribution.MemSobolev`,
+`MeasureTheory.Lp.fourierTransformₗᵢ`.
 
 **Checks.**
 
 - `d = 1`, `ψ = e^{−πx²}`: `dμ_ψ/dλ = e^{−λ/(2π)}/(2π√λ)` on `(0, ∞)`, of total mass
-  `(2π)^{−1}·Γ(1/2)·(2π)^{1/2} = 2^{−1/2} = ‖ψ‖²`.
-- `d = 0` is excluded: `ℝ⁰` is a point, `L² = ℂ`, `H₀ = 0` and `σ = σ_pp = {0}`.
+  `(2π)^{−1}·Γ(1/2)·(2π)^{1/2} = 2^{−1/2} = ‖ψ‖²`, the `n = 1` case of QuantumFoundations §8.2's
+  density `½(2π)^{−n} λ^{n/2−1} ∫_{S^{n−1}} |𝓕ψ(√λ ω/(2π))|² dω`.
+- Form normalisation: for `u = e^{−πx²}` on `ℝ`, `q(u) = ‖u'‖² = 4π² ∫ x² e^{−2πx²} dx = π/√2` and
+  `‖u‖² = 1/√2`, Rayleigh quotient `π ≥ 0 = inf σ(H₀)`; a form `∫ ‖ξ‖² |𝓕u|²` without the factor
+  `4π²` would give `1/(4π√2)`.
+- `d = 0` is excluded: `ℝ⁰` is a point, `L² = ℂ` and `−Δ = 0`, so `σ = σ_pp = {0}`, `σ_ac = ∅` and
+  `σ_ess = ∅` (`0` is an isolated eigenvalue of multiplicity `1`), so the essential-spectrum clause fails.
 - Agreement with PDE §6.3 (F26): on real functions, `−H₀` is the generator of the heat semigroup
   on `L²(ℝ^d)` (domain `{u : Δu ∈ L²} = H²`), and at `d = 3` `H₀` is UO-E06's operator with the same
   `C_c^∞` core.
@@ -1010,16 +1160,29 @@ SA-C28, SA-E47; Mathlib `MeasureTheory.Lp.fourierTransformₗᵢ`.
 ### 4.3 Local compactness
 
 Say a measurable `V : ℝ^d → ℂ` **vanishes at infinity** when for every `ε > 0` there is `R` with
-`|V| ≤ ε` almost everywhere outside the ball `B_R`. Prove: if `V ∈ L^∞` vanishes at infinity then
-`M_V (H₀ + 1)⁻¹` and `(H₀ + 1)⁻¹ M_V` are compact (teschl line 7213–7218, Lemma 7.11). Route: with
+`|V| ≤ ε` almost everywhere outside the ball `B_R` (teschl line 7213–7215).
+
+- **Linear structure.** If `V` and `W` vanish at infinity and `c ∈ ℂ`, then `V + W` and `cV`
+  vanish at infinity: for `ε > 0` take the radii of `V` and `W` for `ε/2` and their maximum.
+- **Bounded support.** An essentially bounded `V` vanishing almost everywhere outside a bounded set
+  vanishes at infinity.
+- **Bounded multipliers.** If `V` vanishes at infinity and `W` is essentially bounded, `VW`
+  vanishes at infinity (radius of `V` for `ε/(1 + ess sup |W|)`).
+
+Prove: if `V ∈ L^∞` vanishes at infinity then
+`M_V (H₀ + 1)⁻¹` and `(H₀ + 1)⁻¹ M_V` are compact (teschl line 7213–7228, Lemma 7.11, p. 170). Route: with
 `V_R = V·1_{B_R}` and `f_R(ξ) = (4π²‖ξ‖² + 1)⁻¹ 1_{‖ξ‖ ≤ R}`, `M_{V_R} 𝓕⁻¹M_{f_R}𝓕` has an `L²`
 kernel and is Hilbert–Schmidt, hence compact, and converges in norm (Mathlib
-`isCompactOperator_of_tendsto`). *Needs:* 4.2; OperatorIdeals Hilbert–Schmidt ⇒ compact; Tau Ceti
+`isCompactOperator_of_tendsto`); the second product is the adjoint of the first for `conj V`.
+*Needs:* 4.2; QuantumFoundations §8.2; OperatorIdeals Hilbert–Schmidt ⇒ compact; Tau Ceti
 `ContinuousLinearMap.hilbertSchmidtEnergy`; Mathlib `isCompactOperator_of_tendsto`.
 
 **Checks.**
 
 - `V = 1_{B_1}` and `V = (1 + ‖x‖²)^{−1/2}` vanish at infinity; `V = cos x₁` does not.
+- Sums: outside `B_R` with `R ≥ 1`, `|1_{B_1} + (1 + ‖x‖²)^{−1/2}| ≤ (1 + R²)^{−1/2}`, so the sum
+  vanishes at infinity with radius `max(1, √(ε^{−2} − 1))` for `0 < ε < 1`; the converse fails, since
+  `cos x₁ + (−cos x₁) = 0` vanishes at infinity while neither summand does.
 - `V = 1_{⋃ₙ [n, n + n^{−2}]}` on `ℝ` is in `L¹ ∩ L^∞` but does not vanish at infinity
   (`|V| = 1` on sets of positive measure arbitrarily far out).
 - `V = 1` (not vanishing): `(H₀ + 1)⁻¹` is not compact, since its spectrum is `[0, 1]`, uncountable,
@@ -1027,21 +1190,27 @@ kernel and is Hilbert–Schmidt, hence compact, and converges in norm (Mathlib
 
 ### 4.4 Schrödinger operators with bounded potentials
 
-For measurable real `V` with `ess sup |V| < ∞`, define `H_V := H₀ + M_V` on `dom H₀ = H²(ℝ^d)`. Prove
-(teschl line 9578–9589, Theorem 10.2; rs2 §X.2; cfks87 Ch. 1):
+For measurable real `V` with `ess sup |V| < ∞`, define `H_V := H₀ + M_V` on `dom H₀ = H²(ℝ^d)`. Prove:
 
-- `H_V` is self-adjoint (SA-C54), `H_V ≥ ess inf V` and `σ(H_V) ⊆ [ess inf V, ∞)` (2.2, 2.1);
+- `H_V` is self-adjoint (SA-C54), `H_V ≥ ess inf V` and `σ(H_V) ⊆ [ess inf V, ∞)` (2.2, 2.1;
+  teschl line 5704–5711, Theorem 6.4, p. 135, with relative bound `0`);
 - `C_c^∞(ℝ^d)` and `𝒮(ℝ^d)` are cores of `H_V`; equivalently `−Δ + V` is essentially self-adjoint
-  on each (2.2, 4.2);
+  on each (2.2 with the cores of `H₀` from QuantumFoundations §8.2; teschl line 7095–7136,
+  Theorem 7.8 and Lemma 7.9, p. 168, for those cores; rs2 §X.2);
 - `σ_ac(H_V)`, `σ_sc(H_V)`, `σ_pp(H_V)` are defined by 1.4 and satisfy the union formula of UO-C03;
 - if `V` vanishes at infinity, `V` is relatively compact for `H₀` (4.3) and
-  `σ_ess(H_V) = [0, ∞)` (UO-E04).
+  `σ_ess(H_V) = [0, ∞)` (UO-E04, 4.2; teschl line 9578–9589, Theorem 10.2, p. 222, whose
+  hypothesis `V ∈ L^∞_∞` is this clause's decay; cfks87 Ch. 1).
 
-*Needs:* 2.1, 2.2, 4.2, 4.3; SelfAdjointSpectralTheory SA-C54; UnboundedOperators UO-C03, UO-E04.
+Every clause but the last holds for every bounded real `V`; Theorem 10.2 of teschl covers only the
+decaying case. *Needs:* 2.1, 2.2, 4.2, 4.3; QuantumFoundations §8.2; SelfAdjointSpectralTheory
+SA-C54; UnboundedOperators UO-C03, UO-E04.
 
 **Checks.**
 
 - `V = c`: `H_V = H₀ + c`, `σ = [c, ∞)`, the lower bound `ess inf V = c` is attained as `inf σ`.
+  For `c = 1` the potential does not vanish at infinity and `σ_ess(H_V) = [1, ∞) ≠ [0, ∞)`: the
+  first three clauses hold (bounded perturbation), the decaying clause does not apply.
 - `d = 1`, `V = −1_{[−1,1]}` (vanishes at infinity): `σ_ess = [0, ∞)` and there is an eigenvalue
   `E = −κ²` with `k tan k = κ`, `k² + κ² = 1`, numerically `k ≈ 0.739`, `κ ≈ 0.674`, `E ≈ −0.454`,
   inside `[ess inf V, 0) = [−1, 0)`.
@@ -1074,8 +1243,9 @@ subinterval. That theorem is not a target.
 
 ### Dependencies
 
-Layers 1 and 2; Mathlib Sobolev, Fourier and compact-operator APIs; PDE §1.3; UnboundedOperators
-UO-A07, UO-C03, UO-E04; SelfAdjointSpectralTheory SA-C25, SA-C28, SA-C54, SA-E47; OperatorIdeals.
+Layers 1 and 2; QuantumFoundations §8.2; Mathlib Sobolev, Fourier and compact-operator APIs; PDE
+§1.3; UnboundedOperators UO-A07, UO-C02, UO-C03, UO-D06, UO-E04; SelfAdjointSpectralTheory SA-C54,
+SA-E47; OperatorIdeals.
 
 ## Downstream consumers
 
@@ -1084,8 +1254,6 @@ UO-A07, UO-C03, UO-E04; SelfAdjointSpectralTheory SA-C25, SA-C28, SA-C54, SA-E47
   (3.6), the kernel (3.7), the cusp threshold (3.10) and the spectral-type vocabulary in which the
   congruence description `σ_ac = [1/4, ∞)` is phrased (1.4, 1.5).
 - **MaassForms** Layer 0 (0.1, the hyperbolic Laplacian): the same Layer 3 statements.
-- **QuantumFoundations** §8.2 and Layers 8–9: the free Laplacian (4.2), spectral types, the interval
-  criterion and Kato–Rosenblum for physical Hamiltonians.
 - **RelativisticQuantumFieldTheory**: spectral types and Kato–Rosenblum.
 - **SpectralManifolds**, **PositiveMass**, **RicciFlow**: the Laplacian of a complete noncompact
   manifold (3.6, 3.7, 3.9).
@@ -1122,13 +1290,15 @@ congruence case. Layers 1 and 3 supply its vocabulary and 3.10 its lower inclusi
 
 - `teschl`: G. Teschl, *Mathematical Methods in Quantum Mechanics, with Applications to Schrödinger
   Operators*, GSM 99, AMS (2009), author's online edition: §2.3 (Theorems 2.12–2.13), §3.3 (Lemmas
-  3.14–3.16, 3.19, (3.83)–(3.85)), Theorem 4.10, Lemma 6.3, Theorem 6.4, Lemma 6.17, Theorem 7.8,
-  Lemmas 7.9 and 7.11, Theorem 10.2, §12.1.
+  3.14–3.16, 3.19, (3.83)–(3.85)), Lemma 2.24, Corollary 4.6, Theorem 4.10, Lemma 6.3, Theorem 6.4,
+  Lemma 6.17, Theorem 7.8, Lemmas 7.9 and 7.11, (7.26), Theorem 10.2, §12.1.
 - `bms02`: M. Braverman, O. Milatovic, M. Shubin, *Essential self-adjointness of Schrödinger type
   operators on manifolds*, Russian Math. Surveys 57 (2002), arXiv math/0201231v3: §2, Theorem 2.3,
   Corollary 2.10, Remark 2.12.
 - `kato57`: T. Kato, *Perturbation of continuous spectra by trace class operators*, Proc. Japan
-  Acad. 33 (1957): Theorem 1, Lemma 2.1, (2.6)–(2.11).
+  Acad. 33 (1957): Theorem 1, Lemma 2.1.
+- `yafaev04`: D. Yafaev, *Lectures on scattering theory*, arXiv math/0403213v1 (2004): Definitions
+  1.1–1.3, Theorem 1.4 (Kato–Rosenblum), Theorem 1.8 (Pearson) and Lemma 1.9 (Rosenblum).
 - `rosenblum57`: M. Rosenblum, *Perturbation of the continuous spectrum and unitary equivalence*,
   Pacific J. Math. 7 (1957): Theorem 1.6.
 - `hm23`: W. Hide, M. Magee, *Near optimal spectral gaps for hyperbolic surfaces*, Ann. of Math. 198
@@ -1138,7 +1308,8 @@ congruence case. Layers 1 and 3 supply its vocabulary and 3.10 its lower inclusi
   (2026), arXiv 2010.05881v3: (1.1)–(1.6), Theorem 1.1.
 - `lp80`: P. D. Lax, R. S. Phillips, *Scattering theory for automorphic functions*, Bull. AMS 2
   (1980): §2, Theorem 2.1, Corollary 2.2.
-- Cited by locator: `rs1` (§VII.2), `rs2` (Ch. IX, §X.2, Theorem X.12), `rs3` (§XI.3, Theorems
-  XI.7–XI.8), `kato76` (Ch. V §4.1, Ch. X §4.4), `grigoryan09` (Ch. 4, 11), `gaffney54`,
+- Cited by locator: `pearson78` (D. B. Pearson, *A generalization of the Birman trace theorem*,
+  J. Funct. Anal. 28 (1978), 182–186), `rs1` (§VII.2), `rs2` (Ch. IX, §X.2, Theorem X.12), `rs3`
+  (§XI.3, Theorems XI.7–XI.8), `kato76` (Ch. V §4.1, Ch. X §4.4), `grigoryan09` (Ch. 4, 11), `gaffney54`,
   `chernoff73`, `strichartz83` (Theorem 2.4), `chavel84` (Ch. I), `iwaniec02` (Ch. 4, 7, 11),
   `lp76` (Ch. 1, 8), `cfks87` (Ch. 1).
