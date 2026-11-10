@@ -2,7 +2,7 @@
 
 Reviewers, red-team passes and errata jobs record every mistake they find in a source while checking a roadmap's locators: misprints (slips whose intended meaning is clear), errors (a false statement or proof step) and gaps (a step the source does not justify), each with the roadmap, the board pull request or errata job and the head that reported it. Collected by the board sync from the `## Source issues` sections of review, red-team and errata comments; the data is in `errata/source-issues.json`.
 
-10038 mistakes recorded on the board: 5845 misprints, 2605 errors, 1139 gaps, 449 unparsed bullets.
+10054 mistakes recorded on the board: 5856 misprints, 2607 errors, 1141 gaps, 450 unparsed bullets.
 Errata jobs have read the cited sources of 60 roadmaps; in those of 2 they found no mistake.
 The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explorer/`: 1525 awaiting review, 13582 confirmed, 228 rejected.
 
@@ -457,6 +457,7 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 - **Unparsed** (YangMillsConnectionsAndCaloricGauge, #7643 at 30dfebe, 2026-11-08): Gap** in OhTataru-YMHF at Corollary 5.15, PDF page 42 (lines 1954–1955): the linearised limit is claimed in `Ḣ^σ` for `−1 < σ < 2`; its proof, Lemma 5.33(2), writes `0 ≤ σ ≤ 1`, and its argument extends to `−1 < σ < 1` but not to `1 < σ < 2`; affects a stated result (recorded in round 2; re-read).
 - **Unparsed** (YangMillsConnectionsAndCaloricGauge, #7643 at 5b101ca, 2026-11-08): Gap** in OhTataru-YMHF at Corollary 5.15, PDF page 42 (lines 1954–1955): the linearised limit is claimed in `Ḣ^σ` for `−1 < σ < 2`; its proof, Lemma 5.33(2), writes `0 ≤ σ ≤ 1` and extends to `−1 < σ < 1` but not to `1 < σ < 2`; affects a stated result.
 - **Unparsed** (YangMillsConnectionsAndCaloricGauge, #7643 at bead714, 2026-11-08): The issues recorded in round 4 (Theorem 4.6's `L¹Ḣ^σ`, the three decay gaps, Corollary 5.15's range, the misprints in (1.19), (5.11), Proposition 3.9, Lemma 3.13, and Proposition 1.6(1)) stand and are not repeated here. <!-- tauceti-roadmap-review {"agent": "claude", "head": "bead7142f27b35545b71755048ddb24ce79a82de", "job": "REV-DESIGN-YangMillsConnectionsAndCaloricGauge~5", "model": "fable", "worker": "chris-x9"} -->
+- **Unparsed** (LocalGaloisDeformationRingsPartII, #12941 at 182d8ab, 2026-11-10): Withdrawn: the round-1 entry calling BHHMS23 Lemma 3.3.1 (printed page 24) an error. The lemma says "if", not "if and only if" (R04), so it is correct as printed. <!-- tauceti-roadmap-review {"agent": "claude", "head": "182d8ab0973779be81d23d4539642f96ab40cd45", "job": "REV-PKG-LocalGaloisDeformationRingsPartII~2", "model": "fable", "worker": "chris-x17"} -->
 
 ## A
 
@@ -2048,6 +2049,7 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 - **Error** at Corollary 8.3.10, printed page 103 (BHHMS23 lines 5145–5148): the source says the endpoint lattice has all independently raised profiles in its support; it should be the baseline and single-raised profiles, f+1 profiles rather than 2^f; affects a stated result. Found by HilbertModularVarietiesAndShimuraCurvesPartII (#1119 at 3cacbea, 2026-10-27, codex gpt-6-astra).
 - **Error** at Lemma 3.3.1, printed page 24: the source says the lemma says the ideals `(x₁x₂+ϖ^d f₁)` and `(x₁x₂+ϖ^d f₂)` are distinct exactly when `f₁ ≢ f₂` modulo the maximal ideal; it should be only the "if" direction, since `f₁ = 1`, `f₂ = 1 + x₁x₂` have equal residues and distinct ideals; affects a stated result. Found by LocalGaloisDeformationRingsPartII (#2388 at 2b3a5ca, 2026-11-04, claude fable).
 - **Gap** at Lemma 4.1.2, printed page 27: the source says the "only if" direction concludes from the length `2^f` of `P̃_σ[1/p]` alone; it should be also note that the `2^f` constituents `σ(τ_w̃) ⊗ χ`, `w̃ ∈ X(σ)`, are pairwise non-isomorphic, which follows from equation (20) and the bijectivity of `θ`; affects the proof; <!-- tauceti-roadmap-review {"agent": "claude", "head": "2b3a5ca72195646409c571d5f37cabe926134632", "job": "REV-PKG-LocalGaloisDeformationRingsPartII", "model": "fable", "worker": "chris-x13"} -->. Found by LocalGaloisDeformationRingsPartII (#2388 at 2b3a5ca, 2026-11-04, claude fable).
+- **Gap** at Lemma 4.1.2, printed page 27: the source says the "only if" direction concludes from the length of the rational projective cover alone; it should be also use that the representations attached to the distinct admissible types are pairwise non-isomorphic; affects the proof. Found by LocalGaloisDeformationRingsPartII (#12941 at 182d8ab, 2026-11-10, claude fable).
 - **Misprint** at Proposition 8.2.3 proof, printed page 92 (BHHMS23 line 4655): the source says both factors of the fibre product use J₁; it should be J₁ in the first factor and J₂ in the second; affects the proof. Found by HilbertModularVarietiesAndShimuraCurvesPartII (#1119 at 3cacbea, 2026-10-27, codex gpt-6-astra).
 - **Misprint** at Proposition 8.3.7 proof, printed page 100 (BHHMS23 line 5037): the source says the modular-weight Hom dimension equals the residue degree f; it should be the common patched multiplicity r; affects the proof. Found by HilbertModularVarietiesAndShimuraCurvesPartII (#1119 at 3cacbea, 2026-10-27, codex gpt-6-astra).
 - **Misprint** at Theorem 1.8, p. 8: the source says the theorem is Corollary 8.3.9; it should be Theorem 8.3.9; affects nothing. Found by HilbertModularVarietiesAndShimuraCurvesPartII (#1119 at b299520, 2026-10-24, claude opus).
@@ -2071,6 +2073,7 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 - **Misprint** at the proof of Theorem 8.3.9, printed p. 102 (line 5107): the source says the bijection ι is indexed by types with the positive norm-determinant twist; it should be carry the inverse twist used in the index set two lines earlier and at line 5075; affects nothing. Found by HilbertModularVarietiesAndShimuraCurvesPartII (#1119 at 6d0add9, 2026-10-26, claude fable).
 - **Misprint** at the proof of Theorem 8.3.9, printed p. 102 (line 5107): the source says the bijection ι is indexed by the positive norm-determinant twist; it should be carry the inverse twist of line 5075; affects nothing. Found by HilbertModularVarietiesAndShimuraCurvesPartII (#1119 at 3cacbea, 2026-10-29, claude fable).
 - **Misprint** at the proof of Theorem 8.3.9, printed page 102: the source says the type-indexing condition twists `σ_v` by `N_{k/𝔽_p} ∘ det^{−1}` while the displayed bijection `ι` four lines later twists by `N_{k/𝔽_p} ∘ det`; it should be use one twist in both places, the inverse one of the indexing condition; affects nothing. Found by LocalGaloisDeformationRingsPartII (#2388 at 2b3a5ca, 2026-11-04, claude fable).
+- **Misprint** at the proof of Theorem 8.3.9, printed page 102: the source says the type-indexing condition twists the weight by the inverse determinant character while the displayed bijection a few lines later twists by the determinant character; it should be use the inverse twist in both places; affects nothing. Found by LocalGaloisDeformationRingsPartII (#12941 at 182d8ab, 2026-11-10, claude fable).
 - **Misprint** at §1.2, p. 4, and proof of Theorem 8.4.3, p. 106: the source says miracle flatness is Gee–Newton's Corollary A.30; it should be Proposition A.30 of GN22 (arXiv v5); affects nothing. Found by HilbertModularVarietiesAndShimuraCurvesPartII (#1119 at b299520, 2026-10-24, claude opus).
 - **Error** at §8.5 after (84), printed page 108 (BHHMS23 line 5441): the source says the patched multiplicity module specializes to the full cohomology dual; it should be the multiplicity-space dual, with the full dual containing two copies; affects a stated result. Found by HilbertModularVarietiesAndShimuraCurvesPartII (#1119 at 3cacbea, 2026-10-27, codex gpt-6-astra).
 - **Error** at §8.5, p. 108 (BHHMS23 line 5441): the source says the multiplicity-normalized patched module augments to the full completed-H¹ dual; it should be the multiplicity dual, with two copies giving full H¹ after a basis choice; affects the proof. Found by HilbertModularVarietiesAndShimuraCurvesPartII (#1119 at 6d0add9, 2026-10-26, codex gpt-6-astra).
@@ -4252,6 +4255,7 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 ## cluckers_loeser_exp
 
 - **Misprint** at Notation 9.1.1, printed p.40: the source says the class A_O is described as the p-adic completions of the number field together with all finite field extensions of the number field; it should be the finite extensions of those completions; affects nothing; <!-- tauceti-roadmap-review {"agent": "claude", "head": "972ee8e", "job": "REV-PKG-LogicAndDefinabilityInNumberTheory~7", "model": "fable", "worker": "fable-rev155"} -->. Found by LogicAndDefinabilityInNumberTheory (#164 at 972ee8e, 2026-10-25, claude fable).
+- **Misprint** at Notation 9.1.1, printed p.40: the source says the class consists of the p-adic completions of the number field and all finite extensions of the number field; it should be the finite extensions of those completions; affects nothing; <!-- tauceti-roadmap-review {"agent": "claude", "head": "8d875d1832fa27bfc71d2227ffbd15d67cee8e3a", "job": "REV-PKG-LogicAndDefinabilityInNumberTheory~8", "model": "fable", "worker": "chris-x17"} -->. Found by LogicAndDefinabilityInNumberTheory (#164 at 8d875d1, 2026-11-10, claude fable).
 - **Error** at Proposition 9.2.1, printed p.44: the source says the transfer is stated for two local fields of large residue characteristic whose residue fields are isomorphic as fields; it should be require an isomorphism compatible with the residue-field coefficients from the number field (an O-algebra isomorphism), since for O=ℤ[i] the two completions of ℚ(i) above a prime p≡5 mod 8 have the same residue field and disagree on a residue sentence with the constant i; affects a stated result. Found by LogicAndDefinabilityInNumberTheory (#164 at 972ee8e, 2026-10-25, claude fable).
 
 ## CLW
@@ -4573,6 +4577,10 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 - **Misprint** at §4.3, proof of Theorem 4, printed p. 38: the source says Algorithm 2.4.5 is applied with `δ = m = 2`; it should be `δ = 0`, `m = 2` (`δ` takes the values 0 and 1); affects nothing. Found by LevelOneAutomorphicFormsForClassicalGroups (#6082 at 2675540, 2026-11-06, claude fable).
 - **Error** at §5.3.2, the Rallis relation after (5.3.1), printed p. 51: the source says `ψ_G = ψ_F ⊕ [n − 2g₀ − 1]` for `n > 2g₀ + 1` and `ψ_F = ψ_G ⊕ [2g₀ + 1 − n]` otherwise, with `g₀` the degree; it should be use the genus `g` of `F = ϑ_g(G)` (for `G = [E₈]`, `g₀ = 0`, `g = 8`, the parameter of `ϑ₈[E₈]` has dimension 17, not 1), as Lemma 5.7 does; affects a stated result; <!-- tauceti-roadmap-review {"agent": "claude", "head": "267554043e8c1fd3d4b68638f68981850e2b2b8d", "job": "REV-PKG-LevelOneAutomorphicFormsForClassicalGroups", "model": "fable", "worker": "chris-x9"} -->. Found by LevelOneAutomorphicFormsForClassicalGroups (#6082 at 2675540, 2026-11-06, claude fable).
 
+## cutkosky2015
+
+- **Misprint** at §2.2, printed page 6, lines 275–276: the source says Pic(X) is the group of Cartier divisors; it should be Cartier divisors modulo principal divisors; affects nothing; The previously recorded source issues were checked independently, not treated as instructions. Witnesses: for V=(ℙ²×{q})∪({p}×ℙ²), A=h₁+2h₂, B=2h₁+h₂, C=h₁, the proposed global Siu comparison gives 5·2=10>2·4·1=8, even with A and B big on each component. On ℙ¹ with A=2H,B=H and m distinct points, section dimensions give m+1=(2m+1)−m, excluding a strict sign. The Fibonacci inverse is [vw:u²:uw], and both base loci contain [0:1:0]. The divisor [0]−[∞] on ℙ¹ is nonzero but its Picard class is zero. For Dinh–Sibony's normalized Kähler setting, the unadjusted-infimum issue is substantive even when ∫ω²=1: on E×E take the automorphism induced by M=[[2,1],[1,1]] and the product polarization scaled by 1/√2. Then δ₁(f)=tr(MᵀM)/2=7/2, whereas λ₁(f)=((3+√5)/2)²=(7+3√5)/2>7/2. Thus inf δ₁(fⁿ)^(1/n)≤7/2 cannot be the limit. The roadmap's adjusted formula avoids this error. None of these source mistakes is copied into its mathematical statements. <!-- tauceti-roadmap-review {"agent": "codex", "head": "27dbb08616dcf56841638d3d66eea129540edc6a", "job": "REV-DESIGN-DynamicalDegreesOfRationalMaps~4", "model": "gpt-6-astra", "worker": "chris-9"} -->. Found by DynamicalDegreesOfRationalMaps (#12938 at 27dbb08, 2026-11-10, codex gpt-6-astra).
+
 ## CW
 
 - **Misprint** at equation (2.4), p.9, CW lines 392–398: the source says the gamma factor is Γ(b) for 0≤−b<a; it should be Γ(a); a=1,b=0 otherwise introduces a pole instead of Γ(1)=1; affects a stated result. Found by AutomorphicCongruences (#129 at bfa3205, 2026-10-27, codex gpt-6-astra).
@@ -4604,6 +4612,9 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 
 ## dang2020
 
+- **Misprint** at Proposition 3.4.1 proof, printed page 17, line 857: the source says the kernel-section dimension strictly exceeds the difference of two section dimensions; it should be greater than or equal to that difference; affects the proof. Found by DynamicalDegreesOfRationalMaps (#12938 at 27dbb08, 2026-11-10, codex gpt-6-astra).
+- **Error** at Proposition 3.4.1, printed page 17, and Theorem 3.4.4, printed page 18: the source says the global-ratio Siu bound holds on every closed subscheme; it should be require irreducible support or use separate componentwise bounds; affects a stated result. Found by DynamicalDegreesOfRationalMaps (#12938 at 27dbb08, 2026-11-10, codex gpt-6-astra).
+- **Misprint** at Theorem 3.4.4 proof, printed page 18, line 883: the source says the final constant uses the ambient dimension n; it should be use support dimension r, as in the preceding factors; affects nothing. Found by DynamicalDegreesOfRationalMaps (#12938 at 27dbb08, 2026-11-10, codex gpt-6-astra).
 - **Misprint** at Theorem 3.4.4, proof, printed page 18: the source says the final display has the constant `(n − i + 1)^i`; it should be `(r − i + 1)^i` as in the statement and the telescoped factors; affects nothing; <!-- tauceti-roadmap-review {"agent": "claude", "head": "91f762e9ccdda2b72452b63de80c6da80ddea5b1", "job": "REV-DESIGN-DynamicalDegreesOfRationalMaps", "model": "fable", "worker": "chris-x10"} -->. Found by DynamicalDegreesOfRationalMaps (#6585 at 91f762e, 2026-11-05, claude fable).
 
 ## darmon-merel
@@ -4815,6 +4826,8 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 
 ## dinhsibony2005
 
+- **Misprint** at Corollaire 7 proof, printed page 7, line 259: the source says convergence is to the infimum of unadjusted roots; it should be use roots adjusted by the submultiplicativity constant; affects the proof. Found by DynamicalDegreesOfRationalMaps (#12938 at 27dbb08, 2026-11-10, codex gpt-6-astra).
+- **Misprint** at Corollaire 7 proof, printed page 7, line 263: the source says the preceding upper bound gives λ(f)≤λ(h); it should be give λ(h)≤λ(f), then apply inverse conjugacy; affects the proof. Found by DynamicalDegreesOfRationalMaps (#12938 at 27dbb08, 2026-11-10, codex gpt-6-astra).
 - **Misprint** at Corollaire 7, proof, printed page 7: the source says `[δ_l(f^n)]^{1/n}` converges to `inf_{n≥1} [δ_l(f^n)]^{1/n}`; it should be the infimum of `[c_X δ_l(f^n)]^{1/n}`, the sequence to which Fekete's lemma applies; affects nothing. Found by DynamicalDegreesOfRationalMaps (#6585 at 91f762e, 2026-11-05, claude fable).
 
 ## DiPernaLions1989
@@ -6515,6 +6528,10 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 
 - **Misprint** at §13.16, p. 46 (gubler line 2191): the source says the weight uses a source-to-target lattice index; it should be the index of the image source lattice inside the target lattice; affects a stated result. Found by TropicalAndBerkovichArithmetic (#180 at 2dd8ca6, 2026-10-24, codex gpt-6-astra).
 
+## guedj2010
+
+- **Misprint** at Théorème 2.4(a), printed page 31 (PDF page 33), line 1180: the source says the adjacent-index inequality includes l=k; it should be stop at l=k−1, since λ_(k+1) is undefined; affects a stated result. Found by DynamicalDegreesOfRationalMaps (#12938 at 27dbb08, 2026-11-10, codex gpt-6-astra).
+
 ## Guionnet–Jones–Shlyakhtenko
 
 - **Misprint** at §2.1, Remark 2, printed p.5 (Guionnet–Jones–Shlyakhtenko line 217): the source says the circle parameter δ belongs to the Jones index set; it should be δ∈{2cos(π/n):n≥3}∪[2,∞); δ² belongs to the printed set; affects a stated result. Found by Subfactors (ERRATA-Subfactors at 7b88277, 2026-10-24, codex gpt-6-astra).
@@ -6867,6 +6884,7 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 
 - **Misprint** at Appendix B, proof of Proposition B.1, line 1328 (arXiv v2): the source says the composite of the map `p : M → N` and the embedding `ι : N → ℝ^m` in the order `p ∘ ι`; it should be `ι ∘ p`, the only composable order; affects nothing; <!-- tauceti-roadmap-review {"agent": "claude", "head": "d5ab755dad8c7355dfaa8b5ce6819ec6a8f33b43", "job": "REV-DESIGN-SobolevMapsBetweenManifolds", "model": "fable", "worker": "chris-x17"} -->. Found by SobolevMapsBetweenManifolds (#7625 at d5ab755, 2026-11-07, claude fable).
 - **Misprint** at Appendix B, proof of Proposition B.1, line 1328 (arXiv v2): the source says the composite of the map `p : M → N` with the embedding `ι : N → ℝ^m` in the order `p ∘ ι`; it should be `ι ∘ p`, the only composable order; affects nothing; <!-- tauceti-roadmap-review {"agent": "claude", "head": "f9c8ebfb80decfe1fe3cc4f5d732ea155b8c858f", "job": "REV-DESIGN-SobolevMapsBetweenManifolds~2", "model": "fable", "worker": "chris-x9"} -->. Found by SobolevMapsBetweenManifolds (#7625 at f9c8ebf, 2026-11-07, claude fable).
+- **Misprint** at Appendix B, proof of Proposition B.1, printed p. 24 (line 1328): the source says the map into the target manifold is composed before the embedding in the written order; it should be the embedding applied after the map; affects nothing; <!-- tauceti-roadmap-review {"agent": "claude", "head": "1c2539704dcc3744603dbfa8412f4339ff3aed21", "job": "REV-PKG-SobolevMapsBetweenManifolds~2", "model": "fable", "worker": "chris-x10"} -->. Found by SobolevMapsBetweenManifolds (#12769 at 1c25397, 2026-11-10, claude fable).
 - **Misprint** at Appendix B, proof of Proposition B.1, printed p. 24, line 1328: the source says the map into N is composed after its Euclidean embedding; it should be the embedding composed after the map; affects nothing; <!-- tauceti-roadmap-review {"agent": "codex", "head": "5903ea72f5e6b63cdc335b87da5d98daddb903f8", "job": "REV-PKG-SobolevMapsBetweenManifolds", "model": "gpt-6-astra", "worker": "chris-4"} -->. Found by SobolevMapsBetweenManifolds (#12769 at 5903ea7, 2026-11-10, codex gpt-6-astra).
 - **Misprint** at Proof of Proposition B.1, line 1328 (printed page 24): the source says the composite of the Nash embedding and the map in the order "map after embedding"; it should be the embedding after the map, since the embedding goes out of the target; affects nothing; <!-- tauceti-roadmap-review {"agent": "claude", "head": "38117fbaa57d9fc796bf4e44b0b05b2bc073639e", "job": "REV-PKG-QuasiregularMaps", "model": "fable", "worker": "chris-x9"} -->. Found by QuasiregularMaps (#7613 at 38117fb, 2026-11-07, claude fable).
 - **Misprint** at Proof of Proposition B.1, line 1328 (printed page 24): the source says the composite of the Nash embedding and the map as the map after the embedding; it should be the embedding after the map, since the embedding goes out of the target; affects nothing; <!-- tauceti-roadmap-review {"agent": "claude", "head": "547b900fcb33dbef0c00588a2986cb391413ccc2", "job": "REV-PKG-QuasiregularMaps~3", "model": "fable", "worker": "chris-x9"} -->. Found by QuasiregularMaps (#7613 at 547b900, 2026-11-07, claude fable).
@@ -8822,6 +8840,10 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 ## Lees
 
 - **Error** at Neighborhood n-Isotopy Extension Theorem, p.530 (Lees line 48): the source says an isotopy near any closed Euclidean subset extends to a compactly supported ambient isotopy; it should be restricted to compact subsets; a translation of the whole Euclidean space contradicts the printed statement; affects a stated result. Found by FourManifolds (ERRATA-FourManifolds at d09c2c0, 2026-10-24, codex gpt-6-astra).
+
+## LeHung26
+
+- **Misprint** at §2.1, equation (5), printed p.5: the source says the source introduces the cubic quotient while the surrounding cover tower allows arbitrary odd n; it should be require 3 dividing n for that quotient; affects a stated result; <!-- tauceti-roadmap-review {"agent": "codex", "head": "900965584580c5a8ffa4cacae8856b5849141092", "job": "REV-DESIGN-EllipticCurveModularityTotallyReal~2", "model": "gpt-6-astra", "worker": "chris-32"} -->. Found by EllipticCurveModularityTotallyReal (#12848 at 9009655, 2026-11-10, codex gpt-6-astra).
 
 ## Lemke Oliver–Wang–Wood, The average size of 3-torsion in class groups of 2-extensions (Forum Math. Pi 13, 2025), publisher version,
 
@@ -11744,7 +11766,9 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 
 ## silverman2014
 
+- **Error** at Example 5, printed page 9, line 371: the source says the Fibonacci birational map is regular with disjoint indeterminacy loci; it should be note that the two loci intersect at [0:1:0]; affects nothing. Found by DynamicalDegreesOfRationalMaps (#12938 at 27dbb08, 2026-11-10, codex gpt-6-astra).
 - **Misprint** at Example 6, printed page 9: the source says the iterates of `(x, y, z) ↦ (y, z, x + yz)` have degree `F_n`; it should be `F_{n+2}` (the map has degree `2 = F_3`, its square degree `3`, its cube degree `5`); affects nothing. Found by DynamicalDegreesOfRationalMaps (#6585 at 91f762e, 2026-11-05, claude fable).
+- **Misprint** at Example 6, printed page 9, line 376: the source says the iterate has degree F_n; it should be use F_(n+2), giving degrees 2,3,5; affects nothing. Found by DynamicalDegreesOfRationalMaps (#12938 at 27dbb08, 2026-11-10, codex gpt-6-astra).
 
 ## Simon1983
 
@@ -12759,6 +12783,10 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 ## Torsion
 
 - **Error** at Remark II.2.4, p. 14, following the cited Lemma II.2.2 (Torsion line 398): the source says the universal Zariski-closed perfectoid quotient need not be a surjective ring quotient; it should be R → S is always surjective; Zariski closed and strongly Zariski closed agree; affects a stated result; corrected in print at BS22 Remark 7.5, p. 56 (BS22 line 2176). Found by PerfectoidTowers (ERRATA-PerfectoidTowers at 537fec2, 2026-10-24, codex gpt-6-astra).
+
+## towards_the_andr_oort_conjecture_for_mixed_shimura_varieties_the_
+
+- **Gap** at Theorem 13.6, printed p.49: the source says the hypothesis is the orbit bound (13.8) for the pure part, though (13.8) is stated only for A_g; it should be the bound for the Siegel factors receiving the pure part, as its proof uses; affects a stated result. Found by LogicAndDefinabilityInNumberTheory (#164 at 8d875d1, 2026-11-10, claude fable).
 
 ## Treumann–Venkatesh, Functoriality, Smith theory and the Brauer homomorphism (Annals, 2016)
 
