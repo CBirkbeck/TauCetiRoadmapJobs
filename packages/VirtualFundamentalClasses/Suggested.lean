@@ -61,8 +61,11 @@ by étale descent of cycles and rational equivalences on stacks that are not at 
    global resolution. It lacks the carriers of 4 and 5 and the Gysin map of the zero section of
    a vector bundle on a Deligne–Mumford stack.
 7. **The properties of the virtual class** (README 10.4–10.8; Behrend–Fantechi 1997,
-   Propositions 5.5, 5.6, 5.7, 5.10, 7.2–7.5). No obstructions give `[M]`; a smooth `M` over the
-   base gives `c_top(Ob) ∩ [M]`; products give exterior products; the class pulls back along a
+   Propositions 5.5, 5.6, 5.7, 5.10, 7.2–7.5), for perfect obstruction theories with global
+   resolutions. No obstructions give `[M]`; a smooth `M` over the base gives
+   `Σ_d c_{d−r}(Ob|_{M_d}) ∩ [M_d]`, the top Chern class of `Ob` on each open and closed part
+   `M_d` of relative dimension `d` (the rank of `Ob` varies with `d`); products give exterior
+   products; the class pulls back along a
    flat morphism of the base and, over a reduced base, along a regular local embedding;
    compatible obstruction theories satisfy `v^![X, E]^vir = [X', F]^vir` for a smooth `v`, and
    over a reduced base when `v` is a morphism between stacks smooth over it; over a reduced base,
