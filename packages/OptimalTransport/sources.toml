@@ -150,3 +150,126 @@ licence_class = "publisher-open"
 status = "certified"
 accessed = "2026-11-10"
 cited_for = ["6.4"]
+
+[[source]]
+id = "muratori-savare"
+authors = "Matteo Muratori, Giuseppe Savaré"
+title = "Gradient flows and Evolution Variational Inequalities in metric spaces. I: structural properties"
+year = 2018
+arxiv = "1810.03939v1"
+locator_scheme = "theorem"
+locator = "Theorem 3.5"
+url = "https://arxiv.org/abs/1810.03939v1"
+fetched_from = "https://arxiv.org/pdf/1810.03939v1"
+fetched_at = "2026-11-10T03:17:21Z"
+sha256 = "45bfeacf5437a396b90477eaa62cf0bb95431a2af6ceee3c4e49cb436196149a"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-10"
+version_note = "arXiv v1"
+cited_for = ["10.3"]
+
+[[source]]
+id = "peyre-cuturi"
+authors = "Gabriel Peyré, Marco Cuturi"
+title = "Computational Optimal Transport"
+year = 2018
+venue = "Foundations and Trends in Machine Learning, vol. 11, no. 5-6, pp. 355-607, 2019"
+arxiv = "1803.00567v4"
+locator_scheme = "theorem"
+locator = "Theorems 4.1 and 4.2"
+url = "https://arxiv.org/abs/1803.00567v4"
+fetched_from = "https://arxiv.org/pdf/1803.00567v4"
+fetched_at = "2026-11-10T03:17:41Z"
+sha256 = "5292a1fc53631ac28fdbcccecc060de8e072b3008fb8d36c22d963a8f6a06bac"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-10"
+version_note = "arXiv v4"
+cited_for = ["13.9"]
+
+[[source]]
+id = "leonard-survey"
+authors = "Christian Léonard"
+title = "A survey of the Schrödinger problem and some of its connections with optimal transport"
+year = 2013
+venue = "Discrete Contin. Dyn. Syst. A, 2014, 34(4): 1533-1574"
+arxiv = "1308.0215v1"
+locator_scheme = "theorem"
+locator = "Theorems 3.3 and 3.4, Proposition 4.1"
+url = "https://arxiv.org/abs/1308.0215v1"
+fetched_from = "https://arxiv.org/pdf/1308.0215v1"
+fetched_at = "2026-11-10T03:17:46Z"
+sha256 = "984cf900e88f24d0ac66b9b5470fba809e7c1f53f60088c606718b186f820383"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-10"
+version_note = "arXiv v1"
+cited_for = ["13.12"]
+
+[[source]]
+id = "ambrosio-gigli-guide"
+authors = "Luigi Ambrosio, Nicola Gigli"
+title = "A user's guide to optimal transport"
+year = 2013
+venue = "Modelling and Optimisation of Flows on Networks, Lecture Notes in Mathematics 2062, pp. 1-155"
+doi = "10.1007/978-3-642-32160-3_1"
+locator_scheme = "theorem"
+locator = "Lemma 2.1, Theorem 2.10, Lemma 2.11, Theorem 3.9, Corollary 3.12, Theorem 3.25"
+url = "https://cvgmt.sns.it/media/doc/paper/195/users_guide-final.pdf"
+fetched_from = "https://cvgmt.sns.it/media/doc/paper/195/users_guide-final.pdf"
+fetched_at = "2026-11-10T03:17:52Z"
+sha256 = "b220417a3071b1ca91b0a3b01bebfbbab41882851f77c3f53783339e381f2afc"
+licence_class = "institutional"
+status = "certified"
+accessed = "2026-11-10"
+version_note = "authors' version on cvgmt; page numbers are those of this version"
+cited_for = ["0.4", "8.2", "10.4", "11.6"]
+
+[[source]]
+id = "chizat-doubly"
+authors = "Lénaïc Chizat"
+title = "Doubly Regularized Entropic Wasserstein Barycenters"
+year = 2023
+arxiv = "2303.11844v2"
+locator_scheme = "section"
+locator = "1.1-1.3"
+url = "https://arxiv.org/abs/2303.11844v2"
+fetched_from = "https://arxiv.org/pdf/2303.11844v2"
+fetched_at = "2026-11-10T03:17:57Z"
+sha256 = "b8be4b73233397d346dabbbaaa18156767cee9ab2fb3474a03a8dece2ce4204f"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-10"
+version_note = "arXiv v2"
+cited_for = ["13.6"]
+
+[[source]]
+id = "kechris-descriptive"
+authors = "Alexander S. Kechris"
+title = "Classical Descriptive Set Theory"
+year = 1995
+venue = "Graduate Texts in Mathematics"
+doi = "10.1007/978-1-4612-4190-4"
+locator_scheme = "theorem"
+locator = "Theorem 18.1"
+url = "https://doi.org/10.1007/978-1-4612-4190-4"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["8.2"]
+
+[[source]]
+id = "huang-vmo-sharp"
+authors = "Qingbo Huang"
+title = "Sharp regularity results on second derivatives of solutions to the Monge-Ampère equation with VMO type data"
+year = 2009
+venue = "Comm. Pure Appl. Math. 62 (2009), 677-705"
+doi = "10.1002/cpa.20272"
+locator_scheme = "page"
+locator = "677-705"
+url = "https://doi.org/10.1002/cpa.20272"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["6.9"]
