@@ -4,8 +4,8 @@
  "parent": null,
  "summary": "Spectral functions over RCLike 𝕜 (Lewis derivative, Spruck concavity), Gårding cones and admissible pairs with the structural condition, the equation f(λ[χ + i∂∂̄φ]) = c e^F on compact Hermitian manifolds with uniqueness by the comparison principle, Yau's theorem on compact Kähler manifolds (continuity method with Calabi's third-order estimate), the uniform exponential integrability of quasi-plurisubharmonic functions, and the Guo–Phong–Tong L^∞ estimates on fixed and degenerating Kähler backgrounds.",
  "baseline": {
-  "mathlib": "f6090c7095e1e56b3464c1daba5f24631f1290d2",
-  "tauceti": "358314d4ab97483df4fc4cb8adcc02e74a8d9f5a"
+  "mathlib": "1b1ccf4b088b32fa3f23f2de1127433254a81e1e",
+  "tauceti": "2fd255d997f47c0b5d834ee416c7015d55444ce5"
  },
  "layers": [
   {
@@ -16,7 +16,7 @@
      "id": "1.1",
      "kind": "definition",
      "name": "relEigenvalues",
-     "statement": "For a Hermitian form a on a finite-dimensional inner product space E over RCLike 𝕜 of dimension n, the representing self-adjoint operator A_a with a(u,v) = ⟪u, A_a v⟫ and the decreasingly sorted eigenvalue vector λ[a] = λ(A_a) ∈ ℝⁿ; a ≤ b means A_a ≤ A_b in the Loewner order. Monotonicity and Lipschitz continuity of λ are consumed from OperatorTheory/PolarDecomposition PD-A52 and PD-A53.",
+     "statement": "For a Hermitian form a on a finite-dimensional inner product space E over RCLike 𝕜 of dimension n, the representing self-adjoint operator A_a with a(u,v) = ⟪u, A_a v⟫ and the decreasingly sorted eigenvalue vector λ[a] = λ(A_a) ∈ ℝⁿ; a ≤ b means A_a ≤ A_b in the Loewner order. Monotonicity and Lipschitz continuity of λ are the pinned Tau Ceti LinearMap.IsSymmetric.eigenvalue_mono and LinearMap.IsSymmetric.abs_eigenvalue_sub_eigenvalue_le.",
      "hypotheses": [
       "E finite-dimensional inner product space over RCLike 𝕜",
       "finrank 𝕜 E = n",
@@ -29,8 +29,8 @@
      "prerequisites": [
       "mathlib:LinearMap.IsSymmetric.eigenvalues",
       "mathlib:LinearMap.IsSymmetric.eigenvectorBasis",
-      "roadmap:OperatorTheory/PolarDecomposition PD-A52",
-      "roadmap:OperatorTheory/PolarDecomposition PD-A53"
+      "tauceti:LinearMap.IsSymmetric.eigenvalue_mono",
+      "tauceti:LinearMap.IsSymmetric.abs_eigenvalue_sub_eigenvalue_le"
      ],
      "api": [
       {
@@ -71,12 +71,12 @@
       {
        "name": "relEigenvalues_mono",
        "role": "structure",
-       "statement": "a ≤ b gives λ_i[a] ≤ λ_i[b] for every i (PD-A52)"
+       "statement": "a ≤ b gives λ_i[a] ≤ λ_i[b] for every i (LinearMap.IsSymmetric.eigenvalue_mono)"
       },
       {
        "name": "relEigenvalues_lipschitz",
        "role": "structure",
-       "statement": "|λ_i[a] − λ_i[b]| ≤ ‖A_a − A_b‖ for every i (PD-A53); a ↦ λ[a] is continuous"
+       "statement": "|λ_i[a] − λ_i[b]| ≤ ‖A_a − A_b‖ for every i (LinearMap.IsSymmetric.abs_eigenvalue_sub_eigenvalue_le); a ↦ λ[a] is continuous"
       }
      ],
      "tests": [
@@ -121,7 +121,7 @@
      "id": "1.2",
      "kind": "theorem",
      "name": "kyFan_differentiable",
-     "statement": "For T self-adjoint and 1 ≤ m ≤ n, the Ky Fan sum κ_m(T) = Σ_{i≤m} λ_i(T) is convex and subadditive; it equals max Re tr(PT) over rank-m orthogonal projections (MAJ-A27 evaluated on orthonormal bases of ranges); if λ_m(T) > λ_{m+1}(T) then the spectral projection P_T onto the top m eigenvectors is the unique maximizer and κ_m is differentiable at T with gradient P_T. The two-sided trace inequality Σ γ_i μ_i ≤ Re tr(FB) ≤ Σ γ_i μ_{n+1−i} (γ decreasing eigenvalues of F, μ increasing eigenvalues of B) is recorded as PA-B32 applied to (F,B) and (F,−B).",
+     "statement": "For T self-adjoint and 1 ≤ m ≤ n, the Ky Fan sum κ_m(T) = Σ_{i≤m} λ_i(T) is convex and subadditive; it equals max Re tr(PT) over rank-m orthogonal projections (Ky Fan's maximum principle LinearMap.IsSymmetric.sum_re_inner_apply_self_le_sum_eigenvalues evaluated on orthonormal bases of ranges); if λ_m(T) > λ_{m+1}(T) then the spectral projection P_T onto the top m eigenvectors is the unique maximizer and κ_m is differentiable at T with gradient P_T. The two-sided trace inequality Σ γ_i μ_i ≤ Re tr(FB) ≤ Σ γ_i μ_{n+1−i} (γ decreasing eigenvalues of F, μ increasing eigenvalues of B) is recorded as von Neumann's inequality LinearMap.IsSymmetric.re_trace_comp_le_sum_eigenvalues_mul_eigenvalues applied to (F,B) and (F,−B).",
      "hypotheses": [
       "F, B, T self-adjoint on a finite-dimensional inner product space over RCLike 𝕜",
       "1 ≤ m ≤ n",
@@ -132,16 +132,16 @@
       "where": "line 145–148 and Theorem 2.1, line 150–158; spruck2005 Lemma 1.5, line 11089–11091 for the lower trace bound"
      },
      "prerequisites": [
-      "roadmap:OperatorTheory/PrincipalAngles PA-B32",
-      "roadmap:OperatorTheory/Majorization MAJ-A27",
-      "roadmap:OperatorTheory/PolarDecomposition PD-A53",
+      "tauceti:LinearMap.IsSymmetric.re_trace_comp_le_sum_eigenvalues_mul_eigenvalues",
+      "tauceti:LinearMap.IsSymmetric.sum_re_inner_apply_self_le_sum_eigenvalues",
+      "tauceti:LinearMap.IsSymmetric.abs_eigenvalue_sub_eigenvalue_le",
       "mathlib:LinearMap.IsSymmetric.eigenvectorBasis"
      ],
      "tests": [
       {
        "name": "vonNeumann_two_sided_example",
        "kind": "computation",
-       "statement": "F = diag(2,1), B = diag(0,3): tr(FB) = 3 equals the lower bound 3; B' = diag(3,0) gives 6, the upper bound; the lower bound is PA-B32 at −B: −3 ≤ 2·0 + 1·(−3)"
+       "statement": "F = diag(2,1), B = diag(0,3): tr(FB) = 3 equals the lower bound 3; B' = diag(3,0) gives 6, the upper bound; the lower bound is von Neumann's inequality at −B: −3 ≤ 2·0 + 1·(−3)"
       },
       {
        "name": "kyFan_no_gap",
@@ -159,7 +159,7 @@
      "id": "1.3.1",
      "kind": "definition",
      "name": "spectralFunction",
-     "statement": "For an open permutation-invariant Ω ⊆ ℝⁿ and a symmetric f : Ω → ℝ, the spectral domain Sym_Ω(E) = {T self-adjoint : λ(T) ∈ Ω}, open in the real space of self-adjoint operators because λ is continuous (PD-A53), and the spectral function F_f(T) = f(λ(T)) on it.",
+     "statement": "For an open permutation-invariant Ω ⊆ ℝⁿ and a symmetric f : Ω → ℝ, the spectral domain Sym_Ω(E) = {T self-adjoint : λ(T) ∈ Ω}, open in the real space of self-adjoint operators because λ is continuous (LinearMap.IsSymmetric.abs_eigenvalue_sub_eigenvalue_le), and the spectral function F_f(T) = f(λ(T)) on it.",
      "hypotheses": [
       "Ω ⊆ ℝⁿ open and invariant under permutations",
       "f symmetric"
@@ -170,7 +170,7 @@
      },
      "prerequisites": [
       "target:1.1",
-      "roadmap:OperatorTheory/PolarDecomposition PD-A53"
+      "tauceti:LinearMap.IsSymmetric.abs_eigenvalue_sub_eigenvalue_le"
      ],
      "api": [
       {
@@ -243,7 +243,7 @@
      "prerequisites": [
       "target:1.2",
       "target:1.3.1",
-      "roadmap:OperatorTheory/PolarDecomposition PD-A53",
+      "tauceti:LinearMap.IsSymmetric.abs_eigenvalue_sub_eigenvalue_le",
       "mathlib:HasFDerivAt",
       "mathlib:ContDiffOn"
      ],
@@ -282,8 +282,8 @@
      "prerequisites": [
       "target:1.2",
       "target:1.3.2",
-      "roadmap:OperatorTheory/PolarDecomposition PD-A52",
-      "roadmap:OperatorTheory/PrincipalAngles PA-B32",
+      "tauceti:LinearMap.IsSymmetric.eigenvalue_mono",
+      "tauceti:LinearMap.IsSymmetric.re_trace_comp_le_sum_eigenvalues_mul_eigenvalues",
       "mathlib:ConcaveOn"
      ],
      "tests": [
@@ -360,11 +360,13 @@
      "id": "2.1",
      "kind": "theorem",
      "name": "newton_maclaurin",
-     "statement": "Identities σ_k = λ_i σ_{k−1;i} + σ_{k;i}, ∂σ_k/∂λ_i = σ_{k−1;i}, Σ_i σ_{k;i} = (n−k)σ_k, Σ_i λ_i σ_{k−1;i} = kσ_k, σ_k(λ + te) = Σ_j binom(n−j,k−j) σ_j(λ) t^{k−j}; Newton S_{k−1}S_{k+1} ≤ S_k² on ℝⁿ with equality on Γ_n only for equal entries; Maclaurin S_k^{1/k} ≥ S_l^{1/l} on Γ_l for 1 ≤ k ≤ l; generalized Newton–Maclaurin.",
+     "statement": "For 1 ≤ k ≤ n: σ_k = λ_i σ_{k−1;i} + σ_{k;i}, ∂σ_k/∂λ_i = σ_{k−1;i}, Σ_i λ_i σ_{k−1;i} = kσ_k; for 0 ≤ k ≤ n: Σ_i σ_{k;i} = (n−k)σ_k and σ_k(λ + te) = Σ_{j=0}^{k} binom(n−j,k−j) σ_j(λ) t^{k−j}; σ_0 = 1 with ∂σ_0/∂λ_i = 0. Newton S_{k−1}S_{k+1} ≤ S_k² on ℝⁿ for 1 ≤ k ≤ n−1, with equality on Γ_n only for equal entries; Maclaurin S_k^{1/k} ≥ S_l^{1/l} on Γ_l for 1 ≤ k ≤ l ≤ n; generalized Newton–Maclaurin.",
      "hypotheses": [
       "λ ∈ ℝⁿ",
-      "λ ∈ Γ_l for Maclaurin",
-      "1 ≤ k ≤ n−1 for Newton"
+      "1 ≤ k ≤ n for the recurrence, the derivative identity and the Euler identity",
+      "0 ≤ k ≤ n for the sum and shift identities",
+      "1 ≤ k ≤ n−1 for Newton",
+      "λ ∈ Γ_l and 1 ≤ k ≤ l ≤ n for Maclaurin"
      ],
      "locator": {
       "source": "spruck2005",
@@ -394,6 +396,11 @@
        "name": "shift_expansion",
        "kind": "computation",
        "statement": "n = 3, k = 2, λ = e, t = 1: both sides 12"
+      },
+      {
+       "name": "index_range",
+       "kind": "degenerate",
+       "statement": "n = 1, k = 1, λ = 1: 1 = 1·1 + 0 and 1 = 1; at k = 0 with natural subtraction they would read 1 = 1·1 + 1 and 0 = 1, so k ≥ 1 is assumed and σ_0 = 1 with derivative 0 is stated separately"
       }
      ]
     },
@@ -401,9 +408,10 @@
      "id": "2.2.1",
      "kind": "definition",
      "name": "IsHyperbolic",
-     "statement": "A homogeneous real polynomial p of degree m on ℝ^N is hyperbolic in the direction a if p(a) > 0 and t ↦ p(x + ta) has only real roots for every x; its Gårding cone is Γ(p,a) = {x : p(x + ta) ≠ 0 for all t ≥ 0}.",
+     "statement": "A homogeneous real polynomial p of degree m on ℝ^N is hyperbolic in the direction a if p(a) > 0 and t ↦ p(x + ta) has only real roots for every x; its Gårding cone is Γ(p,a) = {x : p(x + ta) ≠ 0 for all t ≥ 0}. A positive constant (m = 0) satisfies the definition with cone ℝ^N; the conclusions involving the degree assume m ≥ 1.",
      "hypotheses": [
-      "p homogeneous of degree m"
+      "p homogeneous of degree m",
+      "m ≥ 1 for the degree-dependent API"
      ],
      "locator": {
       "source": "spruck2005",
@@ -416,7 +424,7 @@
       {
        "name": "isHyperbolic_derivative",
        "role": "structure",
-       "statement": "D_a p is hyperbolic in a and Γ(p,a) ⊆ Γ(D_a p, a)"
+       "statement": "for m ≥ 1, D_a p is hyperbolic in a and Γ(p,a) ⊆ Γ(D_a p, a); for m = 1 it is the constant p(a) > 0 with cone ℝ^N"
       },
       {
        "name": "gardingCone_eq_component",
@@ -432,6 +440,16 @@
        "name": "isHyperbolic_sigma",
        "role": "constructor",
        "statement": "σ_k is hyperbolic in e"
+      },
+      {
+       "name": "isHyperbolic_roots",
+       "role": "characterisation",
+       "statement": "for m ≥ 1, t ↦ p(x + ta) has exactly m real roots with multiplicity, all negative exactly when x ∈ Γ(p,a)"
+      },
+      {
+       "name": "isHyperbolic_smul",
+       "role": "invariance",
+       "statement": "hyperbolicity in a and Γ(p,a) are unchanged by positive rescaling of p or a"
       }
      ],
      "tests": [
@@ -441,14 +459,29 @@
        "statement": "σ_n(λ + te) = ∏(λ_i + t) has the real roots −λ_i"
       },
       {
-       "name": "sum_squares_not_hyperbolic",
-       "kind": "non-example",
-       "statement": "p = x_1² + x_2² on ℝ²: p(x + t a) with x ⟂ a has no real root"
-      },
-      {
        "name": "linear_hyperbolic",
        "kind": "degenerate",
        "statement": "p = σ_1 is hyperbolic in e with cone the half-space Γ_1"
+      },
+      {
+       "name": "xy_hyperbolic",
+       "kind": "computation",
+       "statement": "p = xy, a = (1,1): roots −x_1, −x_2, at x = (2,−1) the roots −2 and 1; cone the open quadrant Γ_2"
+      },
+      {
+       "name": "sum_squares_not_hyperbolic",
+       "kind": "non-example",
+       "statement": "p = x² + y², a = (1,0): p(a) = 1 > 0 but p((0,1) + ta) = t² + 1 has roots ±i"
+      },
+      {
+       "name": "linear_derivative_constant",
+       "kind": "degenerate",
+       "statement": "p = x + y, a = (1,1): root −(x+y)/2, cone x + y > 0; D_a p = 2 is the degree-zero constant with cone ℝ² ⊇ Γ(p,a)"
+      },
+      {
+       "name": "constant_degree_zero",
+       "kind": "non-example",
+       "statement": "p = 1 satisfies the definition with cone ℝ^N ∋ −a; D_b p = 0 and p^{1/m} is undefined, so the positive-degree conclusions need m ≥ 1"
       }
      ]
     },
@@ -481,7 +514,7 @@
       {
        "name": "hessianCone_antitone",
        "role": "structure",
-       "statement": "Γ_n ⊆ Γ_k ⊆ Γ_{k−1} ⊆ Γ_1"
+       "statement": "Γ_n ⊆ Γ_k ⊆ Γ_1 for 1 ≤ k ≤ n, and Γ_k ⊆ Γ_{k−1} for 2 ≤ k ≤ n; Γ_0 is not defined"
       },
       {
        "name": "hessianCone_add_posOrthant",
@@ -491,7 +524,7 @@
       {
        "name": "sigma_pos_of_mem_hessianCone",
        "role": "evaluation",
-       "statement": "λ ∈ Γ_k ⇒ σ_{k−1;i}(λ) > 0 for every i"
+       "statement": "for 1 ≤ k ≤ n, λ ∈ Γ_k ⇒ σ_{k−1;i}(λ) > 0 for every i"
       }
      ],
      "tests": [
@@ -509,6 +542,11 @@
        "name": "Gamma_n_two",
        "kind": "degenerate",
        "statement": "n = 2: Γ_2 is the quadrant and (1,−1/2) ∈ Γ_1 \\ Γ_2"
+      },
+      {
+       "name": "no_Gamma_0",
+       "kind": "non-example",
+       "statement": "the empty conjunction would give Γ_0 = ℝⁿ, and Γ_0 ⊆ Γ_1 fails at −e"
       }
      ]
     },
@@ -516,9 +554,11 @@
      "id": "2.2.3",
      "kind": "theorem",
      "name": "garding",
-     "statement": "Γ(p,a) is an open convex cone, p is hyperbolic in every b ∈ Γ(p,a) with the same cone, p^{1/m} is concave on Γ(p,a), and D_b p > 0 on Γ(p,a) for b ∈ Γ(p,a). For symmetric p hyperbolic in e the cone contains Γ_n and lies in Γ_1. Hence Γ_k is convex and σ_k^{1/k} is concave on Γ_k with ∂_i σ_k > 0; on self-adjoint operators T ↦ σ_k(λ(T)) is hyperbolic in Id with cone Sym_{Γ_k}.",
+     "statement": "For p hyperbolic in a of degree m ≥ 1: Γ(p,a) is an open convex cone on which p > 0, p is hyperbolic in every b ∈ Γ(p,a) with the same cone, p^{1/m} is concave on Γ(p,a), and D_b p > 0 on Γ(p,a) for b ∈ Γ(p,a). For symmetric p of degree m ≥ 1 hyperbolic in e the cone contains Γ_n and lies in Γ_1. For 1 ≤ k ≤ n, Γ(σ_k, e) = Γ_k (the inclusion ⊆ by induction on k, with base σ_1(λ + te) = σ_1(λ) + nt), so Γ_k is convex with Γ_n ⊆ Γ_k ⊆ Γ_1, Γ_k ⊆ Γ_{k−1} for 2 ≤ k ≤ n, and σ_k^{1/k} is concave on Γ_k with ∂_i σ_k > 0; on self-adjoint operators T ↦ σ_k(λ(T)) is hyperbolic in Id with cone Sym_{Γ_k}.",
      "hypotheses": [
-      "p hyperbolic in a"
+      "p hyperbolic in a",
+      "deg p = m ≥ 1",
+      "1 ≤ k ≤ n"
      ],
      "locator": {
       "source": "spruck2005",
@@ -535,10 +575,11 @@
      "id": "2.3",
      "kind": "theorem",
      "name": "quotient_concave_and_tangent",
-     "statement": "For 0 ≤ l < k ≤ n, (σ_k/σ_l)^{1/(k−l)} is concave on Γ_k with positive partials; for g concave and positively 1-homogeneous on an open convex cone, g(μ) ≤ Σ μ_i ∂_i g(λ); in particular Σ μ_i σ_{k−1;i}(λ) ≥ k σ_k(μ)^{1/k} σ_k(λ)^{(k−1)/k} for λ, μ ∈ Γ_k.",
+     "statement": "For 0 ≤ l < k ≤ n, (σ_k/σ_l)^{1/(k−l)} is concave on Γ_k with positive partials; for g concave and positively 1-homogeneous on an open convex cone Γ and differentiable at λ ∈ Γ, g(μ) ≤ Σ μ_i ∂_i g(λ) for every μ ∈ Γ (supporting hyperplane at λ plus Euler's identity); in particular Σ μ_i σ_{k−1;i}(λ) ≥ k σ_k(μ)^{1/k} σ_k(λ)^{(k−1)/k} for λ, μ ∈ Γ_k, and by continuity for μ ∈ Γ̄_k.",
      "hypotheses": [
       "0 ≤ l < k ≤ n",
-      "λ, μ in the cone"
+      "g differentiable at λ for the tangent inequality",
+      "λ, μ in the cone (μ in its closure for the σ_k form)"
      ],
      "locator": {
       "source": "spruck2005",
@@ -563,6 +604,11 @@
        "name": "tangent_example",
        "kind": "computation",
        "statement": "g = σ_2^{1/2}, λ = (1,4), μ = (4,1): 2 ≤ 4.25"
+      },
+      {
+       "name": "tangent_needs_differentiability",
+       "kind": "non-example",
+       "statement": "g = min(x,y) on the open quadrant is concave and 1-homogeneous; at λ = μ = (1,1) the partials do not exist and zero values would give 1 ≤ 0; at λ = (1,2), ∇g = (1,0) and μ = (2,1) gives 1 ≤ 2"
       }
      ]
     },
@@ -1225,7 +1271,7 @@
       "where": "line 38–47"
      },
      "prerequisites": [
-      "roadmap:OperatorTheory/PolarDecomposition PD-A52",
+      "tauceti:LinearMap.IsSymmetric.eigenvalue_mono",
       "target:1.4",
       "target:3.1.3",
       "target:3.3.1"
@@ -1268,7 +1314,7 @@
       "target:1.4",
       "target:3.3.1",
       "target:4.1",
-      "roadmap:PDE Lane C item 13"
+      "roadmap:PDE §3.2 (C13)"
      ],
      "tests": [
       {
@@ -1312,7 +1358,7 @@
       "target:3.2",
       "roadmap:ComplexKahlerGeometry K6.0",
       "roadmap:DifferentialGeometry Layer 12",
-      "roadmap:PDE Lane C item 13"
+      "roadmap:PDE §3.2 (C13)"
      ],
      "tests": [
       {
@@ -1351,7 +1397,7 @@
       "roadmap:PseudodifferentialOperators §5.4",
       "roadmap:PseudodifferentialOperators §6.2",
       "roadmap:ComplexKahlerGeometry K5a",
-      "roadmap:PDE Lane E item 22",
+      "roadmap:PDE §5.6 (E25)",
       "mathlib:ArzelaAscoli.isCompact_closure_of_isClosedEmbedding"
      ],
      "tests": [
@@ -1422,7 +1468,7 @@
      },
      "prerequisites": [
       "target:3.1.2",
-      "roadmap:PDE Lane C item 12"
+      "tauceti:TauCeti.le_setAverage_ball_of_laplacian_nonneg"
      ],
      "tests": [
       {
@@ -1488,11 +1534,11 @@
      "id": "6.1",
      "kind": "theorem",
      "name": "kahler_curvature_identities",
-     "statement": "For Kähler ω and ω_φ = ω + i∂∂̄φ > 0 with h = ω⁻¹ω_φ: Ric(ω_φ) = Ric(ω) − i∂∂̄ log(ω_φ^n/ω^n); the formula for Δ_{ω_φ} tr h with nonnegative gradient terms and the bisectional curvature constant Λ; the formula for Δ_{ω_φ} S, S = |∇'h h⁻¹|².",
+     "statement": "For Kähler ω = i g_{k̄j} dz^j∧dz̄^k and ω_φ = i g'_{k̄j} dz^j∧dz̄^k with ω_φ^n = e^F ω^n, Chern connections Γ^l_{jm} = g^{lq̄}∂_j g_{q̄m}, curvature R_{k̄j}^l_m = −∂_k̄Γ^l_{jm}, Ricci R_{k̄j} = −∂_j∂_k̄ log det g, scalar curvature s_ω = g^{jk̄}R_{k̄j}, bisectional curvature B_ω and Λ(ω) = max(0, −inf B_ω); h = g⁻¹g', T = ∇'h·h⁻¹ = Γ' − Γ, S = |T|²_{ω_φ}: (i) Ric(ω_φ) = Ric(ω) − i∂∂̄F; (ii) ∇̄'T = Rm(ω) − Rm(ω_φ); (iii) Δ_{ω_φ} tr h = −s_ω + Δ_ω F + K + G with K = (h⁻¹)^p_m g^{mr̄} R_{r̄p}^j_k h^k_j ≥ −Λ(ω) tr h tr h⁻¹ and G = g'^{pq̄} tr(∇'_p h h⁻¹ ∇'_q̄ h) ≥ 0; (iv) Δ_{ω_φ} log tr h = (−s_ω + Δ_ω F + K)/tr h + Y with Y = G/tr h − |∂ tr h|²_{ω_φ}/(tr h)² ≥ 0; (v) Δ_{ω_φ} S = |∇'T|² + |∇̄'T|² + 2Re⟨Θ, T⟩ − ⟨T, Q(T)⟩ with Θ_j = g'^{pq̄}∇'_p R_{q̄j} − ∇'_j Ric(ω_φ)^♯ and Q(T)(v) = [Ric(ω_φ)^♯, T(v)] − T(Ric(ω_φ)^♯ v). All identities are homogeneous of degree −1 under (ω, ω_φ) ↦ (cω, cω_φ), so pss2012's (i/2)-normalized identities hold verbatim with its density read as e^F.",
      "hypotheses": [
       "dω = 0",
-      "φ smooth",
-      "ω_φ > 0"
+      "ω_φ Kähler with ω_φ^n = e^F ω^n",
+      "φ, F smooth"
      ],
      "locator": {
       "source": "pss2012",
@@ -1508,17 +1554,54 @@
       {
        "name": "ricci_torus",
        "kind": "degenerate",
-       "statement": "flat torus: Ric = 0 and S = 0 for φ = 0"
+       "statement": "flat torus: Ric = 0, Λ = 0, and S = 0 for φ = 0"
       },
       {
        "name": "ricci_CP1",
        "kind": "computation",
-       "statement": "ω = i∂∂̄ log(1+|z|²) on ℂP¹: Ric(ω) = 2ω, unchanged under ω ↦ 2ω"
+       "statement": "ω = i∂∂̄ log(1+|z|²) on ℂP¹: Ric(ω) = 2ω, s_ω = 2, B_ω ≡ 2, Λ = 0; relative to 2ω: Ric unchanged, s = 1, B ≡ 1"
+      },
+      {
+       "name": "hyperbolic_curve",
+       "kind": "computation",
+       "statement": "Riemann surface with Ric(ω) = −ω: B_ω ≡ −1, Λ = 1, K = −1 = −Λ tr h tr h⁻¹"
       },
       {
        "name": "trace_scaled",
        "kind": "computation",
-       "statement": "ω' = sω: tr h = ns"
+       "statement": "ω_φ = sω: tr h = ns, T = 0, G = 0, K = s_ω, and the trace identity reads 0 = −s_ω + s_ω"
+      },
+      {
+       "name": "torus_cosine_witness",
+       "kind": "computation",
+       "statement": "ℂ/(ℤ+iℤ), g_{1̄1} = 1/2, φ = (a/2π²) cos 2πx, q = 1 − a cos 2πx: at x = 0, Δ_{ω_φ} tr h = Δ_ω F = 2π²a/(1−a), G = 0; at x = 1/4, 0 = −2π²a² + 2π²a²; S = q'²/(2q³), and at x = 0 Δ_{ω_φ} S = 8π⁴a²/(1−a)⁴ = |∇'T|² + |∇̄'T|²; in pss2012's coefficients S = q'²/(4q³)"
+      }
+     ],
+     "api": [
+      {
+       "name": "ricci_sub_iddbar",
+       "role": "structure",
+       "statement": "Ric(ω_φ) = Ric(ω) − i∂∂̄F; Ric(cω) = Ric(ω) for c > 0"
+      },
+      {
+       "name": "curvature_difference",
+       "role": "structure",
+       "statement": "∇̄'T = Rm(ω) − Rm(ω_φ) as End(T^{1,0}X)-valued (1,1)-forms"
+      },
+      {
+       "name": "laplacian_trace",
+       "role": "structure",
+       "statement": "Δ_{ω_φ} tr h = −s_ω + Δ_ω F + K + G, K ≥ −Λ(ω) tr h tr h⁻¹, G ≥ 0"
+      },
+      {
+       "name": "laplacian_log_trace",
+       "role": "structure",
+       "statement": "Δ_{ω_φ} log tr h = (−s_ω + Δ_ω F + K)/tr h + Y, Y ≥ 0 (Yau–Aubin)"
+      },
+      {
+       "name": "calabi_identity",
+       "role": "structure",
+       "statement": "Δ_{ω_φ} S = |∇'T|² + |∇̄'T|² + 2Re⟨Θ, T⟩ − ⟨T, Q(T)⟩"
       }
      ]
     },
@@ -1563,7 +1646,7 @@
      "id": "6.3",
      "kind": "theorem",
      "name": "c2_estimate",
-     "statement": "0 < tr_ω ω_φ ≤ C exp(A(φ − inf φ)) with A, C depending on sup F, a lower bound of Δ_ω F, Λ and an upper bound of the scalar curvature; hence C⁻¹ω ≤ ω_φ ≤ Cω with C depending on ‖F‖_{C²} and ω.",
+     "statement": "0 < tr_ω ω_φ ≤ C exp(A(φ − inf φ)) with A, C depending on sup F, a lower bound of Δ_ω F, Λ(ω) and an upper bound of s_ω (6.1), by the maximum principle for log tr h − Aφ with the logarithmic trace identity of 6.1; hence C⁻¹ω ≤ ω_φ ≤ Cω with C depending on ‖F‖_{C²} and ω.",
      "hypotheses": [
       "dω = 0",
       "φ smooth solution"
@@ -1599,7 +1682,7 @@
      "id": "6.4",
      "kind": "theorem",
      "name": "c3_estimate",
-     "statement": "S = |∇'h h⁻¹|²_{ω_φ} is bounded by a constant depending on the C² bound, inf F, ‖F‖_{C³} and ‖Rm(ω)‖_{C¹}.",
+     "statement": "S = |∇'h h⁻¹|²_{ω_φ} is bounded by a constant depending on the C² bound, inf F, ‖F‖_{C³} and ‖Rm(ω)‖_{C¹}, by the maximum principle for S + A tr h with Calabi's identity of 6.1 (Δ_{ω_φ}S ≥ −C_1S − C_2) and G ≥ C_3 S.",
      "hypotheses": [
       "dω = 0",
       "φ smooth solution"
@@ -1629,10 +1712,11 @@
      "id": "6.5",
      "kind": "theorem",
      "name": "higher_regularity",
-     "statement": "From 6.2–6.4, ‖φ‖_{C^{2,α}} ≤ C for α < 1; ‖φ‖_{C^{k+2,α}} ≤ C_k(X, ω, ‖F‖_{C^{k+1,α}}); a C^{2,α} solution with smooth F and ω_φ > 0 is smooth.",
+     "statement": "If sup_X φ = 0: ‖φ‖_{C^{2,α}} ≤ C(X, ω, α, ‖F‖_{C³}) for α < 1, and ‖φ‖_{C^{k+2,α}} ≤ C_k(X, ω, α, ‖F‖_{C^{m,α}}) with m = max(3, k+1) for every k ≥ 0; a solution normalized by ∫ φ ω^n = 0 differs from φ − sup φ by sup φ ∈ [0, osc φ], so the bounds hold for it with the bound of 6.2 added. With no normalization, a C^{2,α} solution with smooth F and ω_φ > 0 is smooth.",
      "hypotheses": [
       "dω = 0",
-      "0 < α < 1"
+      "0 < α < 1",
+      "sup_X φ = 0 for the two quantitative bounds"
      ],
      "locator": {
       "source": "tosatti-weinkove2010",
@@ -1643,13 +1727,18 @@
       "target:6.2",
       "target:6.3",
       "target:6.4",
-      "roadmap:PDE Lane E item 22"
+      "roadmap:PDE §5.6 (E25)"
      ],
      "tests": [
       {
        "name": "regularity_zero",
        "kind": "degenerate",
-       "statement": "F = 0: φ = 0"
+       "statement": "F = 0 and sup φ = 0: φ = 0 and every norm 0"
+      },
+      {
+       "name": "regularity_needs_normalization",
+       "kind": "non-example",
+       "statement": "flat torus, F = 0, φ = M constant: ω_φ = ω and osc φ = 0 but ‖φ‖_{C^{k,α}} ≥ |M| for every M"
       },
       {
        "name": "regularity_linear",
@@ -1734,14 +1823,13 @@
       "where": "Proposition 4.22, line 1717–1731 (Green–Riesz representation and Harnack inequality); route: Jensen's formula for the Riesz mass, Jensen's inequality for the logarithmic potential"
      },
      "prerequisites": [
-      "roadmap:PDE Lane C item 12",
       "mathlib:ConvexOn.map_integral_le"
      ],
      "tests": [
       {
        "name": "disc_point_mass",
        "kind": "computation",
-       "statement": "v = log(|t − w_0|/(2R)), |w_0| = R/2: A = log 4, Riesz mass 2π ≤ 2π log 4/log(R/R'); (2R/|t−w_0|)^α integrable iff α < 2, the threshold αM < 4π"
+       "statement": "R/2 < r < R' < R, e.g. r = 3R/4, R' = 7R/8; v = log(|t − w_0|/(2R)), |w_0| = R/2: A = log 4, w_0 ∈ D(0,r), M = 2π ≤ 2π log 4/log(8/7); (2R/|t−w_0|)^α integrable on D(0,r) iff α < 2, the threshold αM < 4π; α_1 = log(8/7)/log 4 ≈ 0.096"
       },
       {
        "name": "disc_harmonic",
@@ -1751,7 +1839,7 @@
       {
        "name": "disc_centre_hypothesis",
        "kind": "non-example",
-       "statement": "v = c log(|t|/R): v(0) = −∞ so the lemma does not apply at 0; recentred at R/4 it gives α_1 = log(R/R')/(c log 4) and (R/|t|)^{αc} is integrable iff αc < 2"
+       "statement": "v = c log(|t|/R): v(0) = −∞ so the lemma does not apply at 0; recentred at R/4 on D(R/4, R/2) with radii 5R/16 < 3R/8 < R/2 it gives A = c log 4, α_1 = log(4/3)/(c log 4), and (R/|t|)^{αc} is integrable near the pole 0 ∈ D(R/4, 5R/16) iff αc < 2"
       }
      ]
     },
@@ -1759,7 +1847,7 @@
      "id": "7.1.2",
      "kind": "theorem",
      "name": "local_exp_integrable_psh",
-     "statement": "For n ≥ 1 and A > 0 there are α(n,A) = log(12/11)·vol(B(0,1/4))/A > 0 and C(n) with ∫_{B(0,1)} e^{−αu} ≤ C for every plurisubharmonic u ∈ C²(B(0,2)), B(0,2) ⊂ ℂⁿ, with u ≤ 0 and ∫_{B(0,2)} (−u) ≤ A, for 0 < α ≤ α(n,A). Route: a point x_0 ∈ B(0,1/4) with u(x_0) ≥ −A/vol(B(0,1/4)), the one-variable estimate 7.1.1 on every complex line through x_0, and polar coordinates about x_0.",
+     "statement": "For n ≥ 1 and A > 0 there are α(n,A) = log(12/11)·vol(B(0,1/4))/A > 0 and C(n) with ∫_{B(0,1)} e^{−αu} ≤ C for every plurisubharmonic u ∈ C²(B(0,2)), B(0,2) ⊂ ℂⁿ, with u ≤ 0 and ∫_{B(0,2)} (−u) ≤ A, for 0 < α ≤ α(n,A). Route: a point x_0 ∈ B(0,1/4) with u(x_0) ≥ −A/vol(B(0,1/4)), the one-variable estimate 7.1.1 on every complex line through x_0, whose slice v_ξ(t) = u(x_0 + tξ) has Δ_t v_ξ = 2H_{i∂∂̄u}(ξ, ξ) = 4Σ u_{jk̄}ξ_jξ̄_k ≥ 0, and polar coordinates about x_0.",
      "hypotheses": [
       "u plurisubharmonic and C²",
       "u ≤ 0",
@@ -1772,13 +1860,13 @@
      "prerequisites": [
       "target:3.1.2",
       "target:7.1.1",
-      "roadmap:PDE Lane C item 12"
+      "tauceti:TauCeti.le_setAverage_ball_of_laplacian_nonneg"
      ],
      "tests": [
       {
        "name": "log_example",
        "kind": "computation",
-       "statement": "u = c log(|z|²/4): e^{−αu} integrable on B(0,1) iff αc < n"
+       "statement": "u_ε = c log((|z|²+ε)/(4+ε)), 0 < ε ≤ 1: smooth psh, ≤ 0, ∫(−u_ε) ≤ cK(n); ∫_{B(0,1)} e^{−αu_ε} increases to ∫ (4/|z|²)^{αc}, finite iff αc < n, so α must shrink like 1/A"
       },
       {
        "name": "zero_function",
@@ -1786,9 +1874,14 @@
        "statement": "u = 0 gives |B(0,1)|"
       },
       {
+       "name": "slice_laplacian_factor",
+       "kind": "computation",
+       "statement": "n = 1, u = |z|² − 4, x_0 = 0, ξ = 1: H(ξ,ξ) = 2, u_{11̄} = 1, Δ_t(|t|² − 4) = 4 = 2·2 = 4·1"
+      },
+      {
        "name": "subharmonic_not_enough",
        "kind": "non-example",
-       "statement": "−|x|^{−1} on ℝ⁴ = ℂ² is subharmonic, integrable, but e^{α/|x|} is never integrable near 0: its slices along complex lines are not subharmonic"
+       "statement": "u_ε = −(|x|²+ε)^{−1/2} on ℝ⁴ = ℂ²: smooth, ≤ 0, L¹-bounded, real Laplacian (|x|²+4ε)(|x|²+ε)^{−5/2} > 0, radial complex Hessian (1/4)(2ε − |x|²)(|x|²+ε)^{−5/2} < 0 for |x|² > 2ε; ∫_{B(0,1)} e^{−αu_ε} → ∫ e^{α/|x|} = ∞ for every α > 0"
       }
      ]
     },
@@ -1993,7 +2086,7 @@
      "id": "8.5",
      "kind": "theorem",
      "name": "gpt_energy_trudinger",
-     "statement": "On compact connected Kähler (X, ω_X), for φ ∈ C² solving f(λ[ω_{X,φ}]) = e^F, sup φ = 0, λ ∈ Γ, with smooth normalized F and structural constant γ: (a) p' ∈ (0,n) ⇒ ∫ exp{c(−φ)^{n/(n−p')}} ω_X^n ≤ C; (b) p' = n ⇒ ∫ exp{c_N(−φ)^N} ω_X^n ≤ C_N for every N > 0; (c) ∫ (−φ)^N e^{nF} ω_X^n ≤ C for N = n/(n−p') when p' ∈ [1,n) and every N when p' = n; constants depending on ω_X, n, p', γ, Ent_{p'}(F), N.",
+     "statement": "On compact connected Kähler (X, ω_X), for φ ∈ C² solving f(λ[ω_{X,φ}]) = e^F, sup φ = 0, λ ∈ Γ, with smooth normalized F and structural constant γ: (a) p' ∈ (0,n) ⇒ ∫ exp{c(−φ)^{n/(n−p')}} ω_X^n ≤ C; (b) p' = n ⇒ ∫ exp{c_N(−φ)^N} ω_X^n ≤ C_N for every N > 0; (c) ∫ (−φ)^N e^{nF} ω_X^n ≤ C for N = n/(n−p') when p' ∈ [1,n) and every N when p' = n; constants depending on ω_X, n, p', γ, Ent_{p'}(F), N. The Aleksandrov–Bakelman–Pucci input is PDE §3.2 (C13) in boundary-shifted form, applied on coordinate balls to the C² cutoff Hη with the continuous positive definite real coefficient matrix of tr(G·i∂∂̄·), det a = 4^{−2n}(det Ĝ)².",
      "hypotheses": [
       "dω_X = 0",
       "F smooth normalized",
@@ -2008,7 +2101,7 @@
       "target:5.4.2",
       "target:6.6",
       "target:7.2",
-      "gap:abp-maximum-principle",
+      "roadmap:PDE §3.2 (C13)",
       "gap:weak-harnack-supersolutions"
      ],
      "tests": [
@@ -2112,29 +2205,6 @@
  ],
  "suppliers": [
   {
-   "roadmap": "OperatorTheory/PolarDecomposition",
-   "sections": [
-    "PD-A51",
-    "PD-A52",
-    "PD-A53"
-   ],
-   "what": "Courant–Fischer min–max, Loewner monotonicity and Weyl's operator-norm bound for sorted eigenvalues of symmetric endomorphisms of finite-dimensional inner product spaces over ℝ or ℂ"
-  },
-  {
-   "roadmap": "OperatorTheory/PrincipalAngles",
-   "sections": [
-    "PA-B32"
-   ],
-   "what": "von Neumann's trace inequality tr(TS) ≤ Σ λ_i(T)λ_i(S), consumed in both directions via −S"
-  },
-  {
-   "roadmap": "OperatorTheory/Majorization",
-   "sections": [
-    "MAJ-A27"
-   ],
-   "what": "Ky Fan's maximum principle: Σ Re⟪Sw_i,w_i⟫ over an orthonormal family of k vectors is at most the sum of the k largest eigenvalues"
-  },
-  {
    "roadmap": "ComplexKahlerGeometry",
    "sections": [
     "K1",
@@ -2156,12 +2226,11 @@
   {
    "roadmap": "PDE",
    "sections": [
-    "Lane C item 12",
-    "Lane C item 13",
-    "Lane E item 22",
-    "Lane E item 23"
+    "§3.2 (C13)",
+    "§5.4 (E23)",
+    "§5.6 (E25)"
    ],
-   "what": "mean value inequality, Hopf strong maximum principle, interior Schauder estimates with Hölder coefficients, weak Harnack inequality for supersolutions (gap)"
+   "what": "strong maximum principle with variable coefficients and the Aleksandrov–Bakelman–Pucci estimate (§3.2), weak Harnack inequality for supersolutions with a forcing term (§5.4, gap), interior Schauder estimate for non-divergence equations (§5.6)"
   },
   {
    "roadmap": "Yamabe",
@@ -2192,7 +2261,7 @@
  "consumers": [
   {
    "roadmap": "K3Surfaces",
-   "what": "§2.1 Ricci-flat Kähler forms: imports Yau's theorem (6.6) in dimension two"
+   "what": "§2.1's dimension-two equation (ω + i∂∂̄φ)² = cV is the case n = 2, F = log(V/ω²) of 6.6 after replacing sup φ = 0 by ∫ φ ω² = 0; K3Surfaces plans that case with its own continuity method and does not import this roadmap"
   },
   {
    "roadmap": "ComplexHessianEquationsPartII",
@@ -2213,22 +2282,10 @@
     "8.6",
     "8.7"
    ],
-   "detail": "r^{−m}‖u‖_{L¹(B_{2r})} ≤ C(inf_{B_r} u + r^{2−m/q}‖f‖_{L^q(B_{4r})}), q > m/2, for nonnegative weak supersolutions of divergence-form uniformly elliptic equations with bounded measurable coefficients (gilbarg-trudinger2001 Theorem 8.18); used on coordinate balls for −φ with Δ_ω φ ≥ −A on Kähler manifolds.",
+   "detail": "r^{−m}‖u‖_{L¹(B_{2r})} ≤ C(inf_{B_r} u + r^{2−m/q}‖f‖_{L^q(B_{4r})}), q > m/2, for nonnegative weak supersolutions of divergence-form uniformly elliptic equations with bounded measurable coefficients (gilbarg-trudinger2001 Theorem 8.18); used on coordinate balls for −φ with Δ_ω φ ≥ −A on Kähler manifolds; the homogeneous case f = 0 is pinned as TauCeti.PDE.exists_ae_setAverage_rpow_rpow_inv_le_mul_value.",
    "needs": "the weak Harnack inequality r^{−m}‖u‖_{L¹(B_{2r})} ≤ C(inf_{B_r} u + r^{2−m/q}‖f‖_{L^q(B_{4r})}), q > m/2, for nonnegative weak supersolutions u of divergence-form uniformly elliptic equations Lu ≤ f with bounded measurable coefficients on balls of ℝ^m",
    "supplier": "PDE",
-   "section": "Lane E item 23"
-  },
-  {
-   "slug": "abp-maximum-principle",
-   "title": "Aleksandrov–Bakelman–Pucci maximum principle",
-   "neededBy": [
-    "8.5",
-    "8.6"
-   ],
-   "detail": "sup_Ω u ≤ sup_{∂Ω} u + C(m) diam(Ω) ‖(Lu)^−/D^{1/m}‖_{L^m(Γ⁺)} for u ∈ C²(Ω) ∩ C⁰(Ω̄), L = a^{ij}∂_i∂_j with positive definite a, D = det a, Γ⁺ the upper contact set (gilbarg-trudinger2001 Lemma 9.2, Theorem 9.1); applied on coordinate balls of ℝ^{2n} in the energy estimate.",
-   "needs": "the Aleksandrov–Bakelman–Pucci bound sup_Ω u ≤ sup_{∂Ω} u + C(m)·diam(Ω)·‖(Lu)^−/D^{1/m}‖_{L^m(Γ⁺)} for u ∈ C²(Ω) ∩ C⁰(Ω̄) on bounded domains Ω ⊂ ℝ^m and L = a^{ij}∂_i∂_j with positive definite a, D = det a and Γ⁺ the upper contact set",
-   "supplier": "PDE",
-   "section": "proposed PDE Part II, Lane C (Aleksandrov–Bakelman–Pucci maximum principle)"
+   "section": "§5.4 (E23)"
   }
  ]
 }
