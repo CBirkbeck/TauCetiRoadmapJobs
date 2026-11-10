@@ -4,17 +4,18 @@
 
 ## Scope and ownership
 
-This roadmap owns almost `C`-representations and their arithmetic Hom and `Ext` (Layers 0–1), Topological Vector Spaces, period Modules and Pairs (Layer 2), the perfectoid disc class (Layer 3), reasonable period comparisons (Layer 4), qBC (Layer 5) and the period-valued height functor (Layer 6). It also owns the two `Suggested.lean` definitions that make Layers 0–1 statable over `ℚ_p`: `galoisAct`, the action of `Gal(ℚ̄_p/K)` on `ℂ_p`, and `SemilinearRep`, continuous semilinear `ℂ_p`-representations. No other roadmap constructs these objects.
+This roadmap owns almost `C`-representations and their arithmetic Hom and `Ext` (Layers 0–1), Topological Vector Spaces, period Modules and Pairs (Layer 2), the perfectoid disc class (Layer 3), reasonable period comparisons (Layer 4), qBC (Layer 5) and the period-valued height functor (Layer 6). It also owns `SemilinearRep`, the `Suggested.lean` structure of a continuous semilinear `ℂ_p`-representation that makes Layers 0–1 statable over `ℚ_p`; the action of `Gal(ℚ̄_p/K)` on `ℂ_p` over which it is semilinear is PadicPeriodRings §1.1's, and the Lean statements write it as `UniformSpace.Completion.map σ`.
 
 It leaves to other roadmaps:
 
 - VectorBundlesAndIsocrystals, Layer 5: sympathetic algebras and Vector Spaces, classical Banach–Colmez presentations, Dimension, the abelian BC category, curvature, HN invariants, finite-length period realizations, the Artinian property, morphism calculus and Le Bras's equivalence. These are imported by section heading.
 - LocallyAnalyticDistributions §§0.0–0.3 and Layer 1: the generic nonarchimedean locally convex category, its strict derived category and left heart, completed tensors, three-space and functional-extension theorems, locally analytic functions, continuous functions, distributions and measures. The sympathetic functor categories and their period comparisons are what this roadmap adds.
+- PadicPeriodRings §§1.1–1.2: the continuous action of `G_K` on `ℂ_p` for finite `K/ℚ_p`, by the completion map of each automorphism, with its uniqueness, isometry, composition and joint-continuity laws, and the fixed field `ℂ_p^{G_K} = K`.
 - PadicPeriodRings §§1.5, 2, 4.1–4.3: the period carriers, their topologies and Galois actions, the fixed fields and the twist invariants.
 - PadicHodgeTheory §4.4 and FiniteFlatGroupsAndIntegralPadicHodgeTheory §R07.P7.2: Sen modules and operators.
 - ArithmeticGaloisRepresentations §1.1: finite-dimensional continuous representations. ArithmeticGaloisDuality §§R02.1.3 and D7.4: rational local Tate duality.
 - PerfectoidSpaces, Layers P1, P3 and P6, and PerfectoidTowers §P9.6: the perfectoid criterion, almost purity, the pro-étale calculus and descent along towers. The normed closed-disc specialization is a target here.
-- AlgebraicVectorBundles, Layers L0–L2: generic sheaf-theoretic and geometric vector bundles and their tensors, duals and pullbacks.
+- AlgebraicVectorBundles, Scope and ownership and Layers 1–2: pullback of module sheaves along morphisms of ringed spaces with its strong monoidal (tensor) comparison, exactness of flat pullback and the base change of internal Hom; its scope names the pinned Tau Ceti vector-bundle and module-sheaf foundations it builds on.
 
 The pinned libraries already supply functors, topological modules, scalar torsion submodules, the positive and localized de Rham rings as commutative rings, abelian `Ext` and its comparison maps, Krull topologies, spectral norms, completions, and Tau Ceti's exact structures. These are reused as listed under the supplier contracts. The roadmap asserts no general abelianness or splitting of qBC, no equivalence of `Ext` for arbitrary Pairs, and no comparison of topological-module `Ext` in degrees above one.
 
@@ -24,26 +25,20 @@ Let `p` be any prime. In Layers 0–1, `K` is a field of characteristic zero, co
 
 For finite `K/ℚ_p` the Lean statements realise `K` as a finite intermediate field of Mathlib's fixed algebraic closure `PadicAlgCl p` of `ℚ_p`. Then `C` is `PadicComplex p = ℂ_[p]`, and `G_K` is `PadicAlgCl p ≃ₐ[K] PadicAlgCl p` with its Krull topology. Every finite extension of `ℚ_p` embeds in `ℚ̄_p`, and the statements are invariant under the choice of embedding, so this realization loses no generality. PadicPeriodRings §2 identifies its general-base completion with `ℂ_[p]` in this case.
 
-Define `galoisAct p σ : ℂ_[p] → ℂ_[p]` as the extension by continuity of `σ ∈ Gal(ℚ̄_p/K)` (`UniformSpace.Completion.map σ`). This is the genuine continuous extension because `σ` preserves the spectral norm (`spectralNorm_eq_of_equiv`), so it is uniformly continuous. Define `SemilinearRep p K W`, for a `ℂ_p`-module `W` with a topology, as a monoid homomorphism from `G_K` to the additive endomorphisms of `W` with two properties. Writing `σ · w` for the action, it is semilinear: `σ · (c • w) = galoisAct p σ c • (σ · w)`. It is jointly continuous on `G_K × W`. A finite-dimensional `W` carries its module topology (`IsModuleTopology`). Continuous additive maps between such spaces are automatically `ℚ_p`-linear, because they are `ℚ`-linear and `ℚ` is dense in `ℚ_p`. The Lean statements therefore quantify over continuous additive maps.
-
-API of `galoisAct`:
-
-- It restricts to `σ` on `ℚ̄_p ⊂ ℂ_p` and is continuous, by the defining property of the completion map.
-- It is a ring automorphism of `ℂ_p`, isometric, fixing the closure of `K` pointwise, and `σ ↦ galoisAct p σ` is a group action.
-- The action map `G_K × ℂ_p → ℂ_p` is jointly continuous for the Krull topology, so `ℂ_[p]` with `galoisAct` is a `SemilinearRep` of dimension one.
+Write `σ̂ : ℂ_[p] → ℂ_[p]` for the action of `σ ∈ Gal(ℚ̄_p/K)` on `ℂ_p` constructed in PadicPeriodRings §1.1: the extension by continuity `UniformSpace.Completion.map σ`, which is the continuous extension of `σ` because `σ` preserves the spectral norm (`spectralNorm_eq_of_equiv`). Its laws are PadicPeriodRings §1.1's: `σ̂` restricts to `σ` on `ℚ̄_p`, it is the unique continuous extension, an isometric ring automorphism, `σ ↦ σ̂` respects composition, and the action map `G_K × ℂ_p → ℂ_p` is jointly continuous for the Krull topology; `ℂ_p^{G_K} = K` is its §1.2. Define `SemilinearRep p K W`, for a `ℂ_p`-module `W` with a topology, as a monoid homomorphism from `G_K` to the additive endomorphisms of `W` with two properties. Writing `σ · w` for the action, it is semilinear: `σ · (c • w) = σ̂(c) • (σ · w)`. It is jointly continuous on `G_K × W`. A finite-dimensional `W` carries its module topology (`IsModuleTopology`). Continuous additive maps between such spaces are automatically `ℚ_p`-linear, because they are `ℚ`-linear and `ℚ` is dense in `ℚ_p`. The Lean statements therefore quantify over continuous additive maps, and write `σ̂` as `UniformSpace.Completion.map σ`.
 
 API of `SemilinearRep`:
 
-- `ℂ_p` itself, its Tate twists `ℂ_p(j)` (`σ` acting by `χ(σ)^j · galoisAct p σ`), finite direct sums and duals are semilinear representations.
+- `ℂ_p` with `σ` acting by `σ̂` is a semilinear representation of dimension one: semilinearity is multiplicativity of `σ̂`, and joint continuity is PadicPeriodRings §1.1. Its Tate twists `ℂ_p(j)` (`σ` acting by `χ(σ)^j · σ̂`), finite direct sums and duals are semilinear representations.
 - An equivariant `ℂ_p`-linear map between semilinear representations is a morphism. Kernels and images of such morphisms are semilinear representations.
 - The forgetful passage to Banach `ℚ_p`-representations sends a finite-dimensional semilinear representation to its underlying `ℚ_p`-Banach space with the same action.
 
 **Checks.**
 
-- For `σ` the identity, `galoisAct p σ` is the identity of `ℂ_p`. A definition by an arbitrary extension of `σ` to `ℂ_p`, ignoring continuity, would not be determined.
-- For `K = ℚ_p(ζ_p)` and `σ ∈ G_K`, `galoisAct p σ` fixes `ζ_p`. For `K = ℚ_p` and `σ` with `χ(σ) = a`, it sends `ζ_p` to `ζ_p^a`, so it is not the identity when `a ≢ 1 mod p`.
+- For `σ` the identity, `σ̂` is the identity of `ℂ_p`, so the semilinearity law at `σ = 1` reads `c • w = c • w`. A structure built over an arbitrary field automorphism of `ℂ_p` extending `σ`, ignoring continuity, would not be determined by `σ`, since `ℂ_p` has discontinuous field automorphisms.
+- For `K = ℚ_p`, odd `p` and `σ` with `χ(σ) = a ≢ 1 mod p`, `σ̂(ζ_p) = ζ_p^a ≠ ζ_p`; at `p = 2`, where `ζ_2 = −1` is fixed, take `χ(σ) ≡ 3 mod 4`, so `σ̂(i) = −i`. For `K = ℚ_p(ζ_p)` every `σ ∈ G_K` fixes `ζ_p`.
 - `ℂ_p(1)` and `ℂ_p` are both one-dimensional `SemilinearRep`s, yet the only equivariant `ℂ_p`-linear map between them is zero, since `H⁰(G_K, ℂ_p(±1)) = 0` (PadicPeriodRings §2). A notion that forgot semilinearity would make them isomorphic.
-- With the action `act σ = id` on `W = ℂ_p`, the semilinearity law fails at `c = ζ_p`, `w = 1` for any `σ` moving `ζ_p`, so the trivial action is not a `SemilinearRep` on `ℂ_p`.
+- With the action `act σ = id` on `W = ℂ_p`, the semilinearity law at `c = ζ_p`, `w = 1` and the `σ` of the second Check gives `ζ_p = ζ_p^a` (at `p = 2`, `i = −i`), which is false, so the trivial action is not a `SemilinearRep` on `ℂ_p`.
 
 The sympathetic and qBC constructions of Layers 2–6 use the parent's countability hypotheses: the residue field and `O_C/p` are countable. Fix a universe containing the sympathetic algebras and use the corresponding larger functor and `Ext` universes. No size-independent category of all algebras is assumed.
 
@@ -77,9 +72,9 @@ The pin is `1b1ccf4b088b32fa3f23f2de1127433254a81e1e`.
 | `BDeRham` — Mathlib/RingTheory/Perfectoid/BDeRham.lean:88 | Localization of the positive period ring at generators of `ker θ`. A commutative ring, without the classical topology, the DVR structure or a Galois action. |
 | `CategoryTheory.Abelian.Ext` — Mathlib/Algebra/Homology/DerivedCategory/Ext/Basic.lean:118 | `Ext` on an abelian category with `HasExt` in the selected universe. This is the `Ext` of `C(G_K)`. |
 | `CategoryTheory.Abelian.Ext.mapExactFunctor` — Mathlib/Algebra/Homology/DerivedCategory/Ext/Map.lean:126 | The comparison map on `Ext` of an additive functor between abelian categories preserving finite limits and colimits, with `HasExt` on both sides. Its bijectivity for the two inclusions of §1.2 is a target. |
-| `PadicAlgCl`, `PadicComplex` — Mathlib/NumberTheory/Padics/Complex.lean:54, 137 | The fixed algebraic closure of `ℚ_p` with its spectral norm, and its completion `ℂ_[p]`. The file defines no Galois action; `galoisAct` supplies it. |
+| `PadicAlgCl`, `PadicComplex` — Mathlib/NumberTheory/Padics/Complex.lean:54, 137 | The fixed algebraic closure of `ℚ_p` with its spectral norm, and its completion `ℂ_[p]`. The file defines no Galois action; PadicPeriodRings §1.1 supplies it, as `UniformSpace.Completion.map σ`. |
 | `krullTopology` — Mathlib/FieldTheory/KrullTopology.lean:134 | The Krull topology on `L ≃ₐ[K] L`, used as the topology of `G_K`. |
-| `spectralNorm_eq_of_equiv` — Mathlib/Analysis/Normed/Unbundled/SpectralNorm.lean:451 | `K`-algebra automorphisms preserve the spectral norm. This makes `galoisAct` a continuous extension. |
+| `spectralNorm_eq_of_equiv` — Mathlib/Analysis/Normed/Unbundled/SpectralNorm.lean:451 | `K`-algebra automorphisms preserve the spectral norm. This makes `UniformSpace.Completion.map σ` the continuous extension of `σ` (PadicPeriodRings §1.1). |
 | `UniformSpace.Completion.map` — Mathlib/Topology/UniformSpace/Completion.lean:477 | Extension of a map to completions. It restricts to the map on the dense image when the map is uniformly continuous (`UniformSpace.Completion.map_coe`, line 488). |
 | `IsModuleTopology` — Mathlib/Topology/Algebra/Module/ModuleTopology.lean:133 | The module topology, the canonical topology of a finite-dimensional `ℂ_p`-space. |
 | `AddMonoid.End` — Mathlib/Algebra/Group/Hom/Defs.lean:975 | The monoid of additive endomorphisms, the target of the action map of a `SemilinearRep`. |
@@ -106,7 +101,7 @@ What VectorBundlesAndIsocrystals must provide (gap:G-HOM): in its Layer 5, *VS H
 
 ### From TauCetiRoadmap.PadicPeriodRings
 
-Sections 1.5, 2 and 4.1–4.3 supply `B_dR⁺`, `B_dR`, `θ`, `t`, their topologies and continuous actions, the embedding of `K̄`, the fixed fields `K`, crystalline periods and the fundamental period sequence. Section 2 supplies `H⁰(G_K, C) = K` and `H⁰(G_L, C(j)) = 0` for `j ≠ 0` over every finite `L/K` in the general-base convention. The sympathetic extensions are consumed through the parent's period objects.
+Section 1.1 supplies, for finite `K/ℚ_p` inside `PadicAlgCl p`, the action of `G_K` on `ℂ_[p]` by `UniformSpace.Completion.map σ` with the laws assumed of it in the Conventions: restriction to `σ` on `ℚ̄_p`, uniqueness of the continuous extension, isometry, compatibility with composition and joint continuity of `G_K × ℂ_p → ℂ_p` for the Krull topology. Section 1.2 supplies `ℂ_p^{G_K} = K` for such `K`. Sections 1.5, 2 and 4.1–4.3 supply `B_dR⁺`, `B_dR`, `θ`, `t`, their topologies and continuous actions, the embedding of `K̄`, the fixed fields `K`, crystalline periods and the fundamental period sequence. Section 2 supplies `H⁰(G_K, C) = K` and `H⁰(G_L, C(j)) = 0` for `j ≠ 0` over every finite `L/K` in the general-base convention. The sympathetic extensions are consumed through the parent's period objects.
 
 ### From TauCetiRoadmap.PadicHodgeTheory
 
@@ -161,7 +156,7 @@ For finite `K/ℚ_p`, the forgetful functor from finite-dimensional continuous s
 
 A proof route: pass to the Sen module and operator of the source and target. A continuous equivariant map induces a map of Sen modules commuting with the Sen operators, and the semilinear structure forces linearity. For `B_dR⁺`-representations use the finite-length dévissage of Fontaine03 §3.3. The labelled rational Sen theory is imported with its finite-coefficient hypotheses.
 
-*Needs:* §0.1; PadicHodgeTheory §4.4; FiniteFlatGroupsAndIntegralPadicHodgeTheory §R07.P7.2; PadicPeriodRings §§4.1–4.3; for the Lean statement, `galoisAct` and `SemilinearRep` (Conventions).
+*Needs:* §0.1; PadicHodgeTheory §4.4; FiniteFlatGroupsAndIntegralPadicHodgeTheory §R07.P7.2; PadicPeriodRings §§4.1–4.3; for the Lean statement, PadicPeriodRings §1.1 and `SemilinearRep` (Conventions).
 
 **Checks.**
 
@@ -172,7 +167,7 @@ A proof route: pass to the Sen module and operator of the source and target. A c
 
 ### 0.3 Analyticity of fundamental extensions
 
-Let `K/ℚ_p` be finite, and let `0 → V → E → W → 0` be a strict Banach extension with `V` a finite-dimensional `ℚ_p`-representation and `W` a one-dimensional `C`-representation. Then `E` has the effective classical BC realization constructed in Fontaine03 §4, of Dimension `(1, dim_ℚ_p V)`. Every continuous equivariant `ℚ_p`-linear `η : E → C` is induced by a BC morphism from this realization to `V₁`. The construction and the analyticity use the finite-period presentation and do not assume that `η` is surjective (Fontaine03, §4, Proposition 4.2, p. 333, and Proposition 4.4, p. 336; end of the proof of Théorème 4.1, p. 340).
+Let `K/ℚ_p` be finite, and let `0 → V → E → W → 0` be a strict Banach extension with `V` a finite-dimensional `ℚ_p`-representation and `W` a one-dimensional `C`-representation. Then `E` has the effective classical BC realization constructed in Fontaine03 §4, of Dimension `(1, dim_ℚ_p V)`. Every continuous equivariant `ℚ_p`-linear `η : E → C` is induced by a BC morphism from this realization to `V₁`. The construction and the analyticity use the finite-period presentation and do not assume that `η` is surjective (Fontaine03, §4, Proposition 4.2, p. 333, and Proposition 4.4, p. 337; end of the proof of Théorème 4.1, p. 340).
 
 A proof route: use the analytic Banach construction `W ↦ W^an` of Proposition 4.2. Quotient by `ker(η|V)`, use the `B₂` presentation of Proposition 4.4 and §0.2 to identify `η` as analytic, then restore the finite constant kernel. The parent's functorial BC realization gives the sympathetic interpretation.
 
@@ -279,7 +274,7 @@ The almost presentations give height 1 for `ℚ_p` and −1 for `C/ℚ_p`. `B₂
 
 ### Dependencies
 
-`TopModuleCat`; `ContinuousLinearMap.isOpenMap`; `TauCeti.ExactStructure`; `CategoryTheory.Abelian.Ext`; `PadicComplex`; `krullTopology`; `spectralNorm_eq_of_equiv`; `UniformSpace.Completion.map`; `IsModuleTopology`; ArithmeticGaloisRepresentations §1.1; PadicHodgeTheory §4.4; FiniteFlatGroupsAndIntegralPadicHodgeTheory §R07.P7.2; PadicPeriodRings §§1.5, 2, 4.1–4.3; VectorBundlesAndIsocrystals, Layer 5, *Finite-Dimensional Banach–Colmez presentations*, *Dimension and the abelian BC category* and *Artinian property of BC*.
+`TopModuleCat`; `ContinuousLinearMap.isOpenMap`; `TauCeti.ExactStructure`; `CategoryTheory.Abelian.Ext`; `PadicComplex`; `krullTopology`; `spectralNorm_eq_of_equiv`; `UniformSpace.Completion.map`; `IsModuleTopology`; ArithmeticGaloisRepresentations §1.1; PadicHodgeTheory §4.4; FiniteFlatGroupsAndIntegralPadicHodgeTheory §R07.P7.2; PadicPeriodRings §§1.1–1.2, 1.5, 2, 4.1–4.3; VectorBundlesAndIsocrystals, Layer 5, *Finite-Dimensional Banach–Colmez presentations*, *Dimension and the abelian BC category* and *Artinian property of BC*.
 
 ## Layer 1: Arithmetic extensions and duality
 
@@ -313,9 +308,9 @@ A proof route: use §0.2 and the almost-split resolutions of §1.1 to represent 
 
 ### 1.3 Cyclotomic data and generalized invariants
 
-For finite `K/ℚ_p`, fix compatible primitive `p`-power roots of unity, `χ`, the cyclotomic `ℤ_p`-extension `K_∞/K`, a generator `γ` of its Galois group, and Fontaine's finite-character correction `π_t`. Put `t′ = t/π_t`, a uniformizer fixed by `G_{K_∞}`, with `γ(t′) = χ⁽¹⁾(γ)t′`, where `χ⁽¹⁾(γ) = exp(log χ(γ̃))` for any lift `γ̃` to `G_K`. This removes the finite-order character `ω`, and `χ⁽¹⁾` does not depend on the lift. For a finite-length period representation `W`, define `W_(0)` as the union over `r ≥ 1` of the vectors killed by every product `(g₁ − 1)⋯(g_r − 1)`. Set `W_(1) = t′((t′)^(−1)W)_(0)`, where `(t′)^(−1)W` is the period-twisted module, not an inverse operator on a torsion module. The generalized-invariant spaces are `K`-vector spaces (CN25, §2.2.2 and footnote 3, p. 10; Fontaine03, §§2.1–2.2, pp. 297–311).
+For finite `K/ℚ_p`, fix compatible primitive `p`-power roots of unity, `χ`, the cyclotomic `ℤ_p`-extension `K_∞/K`, a generator `γ` of its Galois group, and Fontaine's finite-character correction `π_t`. Put `t′ = t/π_t`, a uniformizer fixed by `G_{K_∞}`, with `γ(t′) = χ⁽¹⁾(γ)t′`, where `χ⁽¹⁾(γ) = exp(log χ(γ̃))` for any lift `γ̃` to `G_K`. This removes the finite-order character `ω`, and `χ⁽¹⁾` does not depend on the lift. For a finite-length period representation `W`, define `W_(0)` as the union over `r ≥ 1` of the vectors killed by every product `(g₁ − 1)⋯(g_r − 1)`. Set `W_(1) = t′((t′)^(−1)W)_(0)`, where `(t′)^(−1)W` is the period-twisted module, not an inverse operator on a torsion module. The generalized-invariant spaces are `K`-vector spaces (CN25, §2.2.2 and footnote 3, p. 10; Fontaine03, §2.1, p. 296, §2.3, p. 306, and §2.5, p. 308).
 
-A proof route: PadicPeriodRings §§1.5 and 4.1 give `χ` and `t`. Construct `π_t` and `t′` as in Fontaine03 §2.1, p. 297, and `χ⁽¹⁾` as on p. 306. At `p = 2` keep the sign character. Form the increasing union of simultaneous nilpotence kernels, transport it by the period twist, and verify functoriality and the `Γ`-action.
+A proof route: PadicPeriodRings §§1.5 and 4.1 give `χ` and `t`. Construct `π_t` and `t′` as in Fontaine03 §2.1, p. 296, and `χ⁽¹⁾` as in its §2.3, p. 306. At `p = 2` keep the sign character. Form the increasing union of simultaneous nilpotence kernels, transport it by the period twist, and verify functoriality and the `Γ`-action.
 
 *Needs:* §0.4; §0.5; §0.6; PadicHodgeTheory §4.4; PadicPeriodRings §§4.1–4.3.
 
@@ -395,7 +390,7 @@ Let `K/ℚ_p` be finite, `V` a continuous `ℚ_p`-representation of dimension `h
 
 A proof route: §0.3 gives a BC source of Dimension `(1, h)` and a BC map to `V₁`. If `η(E)` were finite-dimensional, the induced map `W → η(E)/η(V)` would vanish: compose with the inclusion into `C ⊗_ℚ_p (η(E)/η(V))` and apply §0.2, since a nonzero `C`-linear image cannot lie in a finite-dimensional `ℚ_p`-space. So unequal images force an infinite-dimensional image, and the parent's Artinian property makes `η` surjective. Dimension additivity gives `Dim(ker η) = (1, h) − (1, 0) = (0, h)`, and zero-dimensional BC objects are finite `ℚ_p`-spaces.
 
-*Needs:* §0.1; §0.2; §0.3; VectorBundlesAndIsocrystals, Layer 5, *Dimension and the abelian BC category*, *Banach–Colmez morphism calculus*, *Artinian property of BC* and *Height of torsion period subobjects*; for the Lean statement, `galoisAct` and `SemilinearRep`.
+*Needs:* §0.1; §0.2; §0.3; VectorBundlesAndIsocrystals, Layer 5, *Dimension and the abelian BC category*, *Banach–Colmez morphism calculus*, *Artinian property of BC* and *Height of torsion period subobjects*; for the Lean statement, PadicPeriodRings §1.1 and `SemilinearRep` (Conventions).
 
 **Checks.**
 
@@ -406,7 +401,7 @@ A proof route: §0.3 gives a BC source of Dimension `(1, h)` and a BC map to `V�
 
 ### 1.9 Equivariant analytic realization
 
-For finite `K/ℚ_p`, construct an exact faithful functor from almost `C`-representations to classical BC spaces with continuous `G_K`-action, whose evaluation at `C` is naturally the original Banach representation. The target category has BC objects with jointly continuous `G_K`-action on their Banach evaluations and equivariant BC morphisms. The functor does not depend on the almost presentation. Forgetting the action gives a faithful functor to BC, which is not full (FF18, Preface, Remark 2.26(i), p. 22; Fontaine03, Théorème 4.1, pp. 328–329, and §1.6, pp. 292–294).
+For finite `K/ℚ_p`, construct an exact faithful functor from almost `C`-representations to classical BC spaces with continuous `G_K`-action, whose evaluation at `C` is naturally the original Banach representation. The target category has BC objects with jointly continuous `G_K`-action on their Banach evaluations and equivariant BC morphisms. The functor does not depend on the almost presentation. Forgetting the action gives a faithful functor to BC, which is not full (FF18, Preface, Remark 2.26(i), p. 22; Fontaine03, Théorème 4.1, p. 329, and §1.6, pp. 292–294).
 
 A proof route: use the analytic extension construction of §0.3 and its finite-dimensional modifications, and the almost-split presentations of §1.1. Prove descent for different presentations and identify evaluation, instead of choosing a non-functorial BC lift of each object. Equivalent almost presentations give canonically isomorphic realizations satisfying the cocycle law. Exactness and the natural `C`-evaluation with its topology are part of the target.
 
@@ -431,7 +426,7 @@ For `k = 1` the `Ext` triples against `C` and `C(1)` are `(K, K, 0)` and `(0, K,
 
 ### Dependencies
 
-Layer 0; `CategoryTheory.Abelian.Ext.mapExactFunctor`; `LinearMap`; `TauCeti.ExactStructure.IsConflationExact`; PadicHodgeTheory §4.4; PadicPeriodRings §§4.1–4.3; ArithmeticGaloisDuality §§R02.1.3 and D7.4; VectorBundlesAndIsocrystals, Layer 5, *Dimension and the abelian BC category*, *Banach–Colmez morphism calculus*, *Artinian property of BC*, *Height of torsion period subobjects*, *Exact faithful Banach realization* and *Finite-Dimensional Banach–Colmez presentations*.
+Layer 0; `CategoryTheory.Abelian.Ext.mapExactFunctor`; `LinearMap`; `TauCeti.ExactStructure.IsConflationExact`; PadicHodgeTheory §4.4; PadicPeriodRings §§1.1, 4.1–4.3; ArithmeticGaloisDuality §§R02.1.3 and D7.4; VectorBundlesAndIsocrystals, Layer 5, *Dimension and the abelian BC category*, *Banach–Colmez morphism calculus*, *Artinian property of BC*, *Height of torsion period subobjects*, *Exact faithful Banach realization* and *Finite-Dimensional Banach–Colmez presentations*.
 
 ## Layer 2: Topological Vector Spaces and period Pairs
 
@@ -577,7 +572,7 @@ The dense proper diagonal injection on `c₀` has a nonzero algebraic quotient b
 
 ### 3.1 The sympathetic disc and translation characters
 
-For sympathetic `Λ`, let `Λ̃{X}` be the sympathetic closure of the closed disc algebra `Λ{X}` and `H_Λ` its group of continuous automorphisms over `Λ{X}`. Let `T_Λ` be the group of continuous `Λ`-algebra automorphisms of `Λ̃{X}` that restrict to `X ↦ X + x` with `x ∈ O_Λ`. Then `1 → H_Λ → T_Λ → (O_Λ, +) → 0` is exact. Fix `α_C` with `α_C(X) = 0`. For `a ∈ C`, choose `n` with `p^n a ∈ 2pO_C` and the compatible `p^n`-th root `E_a` of `exp(p^n aX)` normalized at zero. Its eigencharacter `χ_a : T_C → C^×` restricts on `H_C` to `μ_{p^∞}`, defining `ψ_a : H_C → ℚ_p` through the chosen `ε`. Then `ψ_a` is invariant under conjugation by `T_C` (CN25, §4.2, pp. 22–23; Colmez02, Propositions 5.20 and 5.23, pp. 30–32). The closure and the lifts are not uniquely functorial; different lifts differ by `H_Λ`. The characters `χ_a` are disc characters, distinct from the cyclotomic `χ`.
+For sympathetic `Λ`, let `Λ̃{X}` be the sympathetic closure of the closed disc algebra `Λ{X}` and `H_Λ` its group of continuous automorphisms over `Λ{X}`. Let `T_Λ` be the group of continuous `Λ`-algebra automorphisms of `Λ̃{X}` that restrict to `X ↦ X + x` with `x ∈ O_Λ`. Then `1 → H_Λ → T_Λ → (O_Λ, +) → 0` is exact. Fix `α_C` with `α_C(X) = 0`. For `a ∈ C`, choose `n` with `p^n a ∈ 2pO_C` and the compatible `p^n`-th root `E_a` of `exp(p^n aX)` normalized at zero. Its eigencharacter `χ_a : T_C → C^×` restricts on `H_C` to `μ_{p^∞}`, defining `ψ_a : H_C → ℚ_p` through the chosen `ε` by `χ_a(σ)^♭ = ε^(ψ_a(σ))`, where `χ_a(σ)^♭` is the compatible system `(χ_(a/p^k)(σ))_(k ≥ 0)` of `p`-power roots of `χ_a(σ)` given by the roots `E_(a/p^k)`. Then `ψ_a` is invariant under conjugation by `T_C` (CN25, §4.2, pp. 22–23; Colmez02, Propositions 5.20 and 5.23, pp. 30–32). The closure and the lifts are not uniquely functorial; different lifts differ by `H_Λ`. The characters `χ_a` are disc characters, distinct from the cyclotomic `χ`.
 
 A proof route: the closure and lifting theorem of Colmez02 Propositions 5.20 and 5.23, proved as an extension of the parent's sympathetic-algebra API. Take the kernel of the translation map and lift each translation to prove exactness. Use normalized compatible roots to define `χ_a` and `ψ_a`. Conjugation invariance follows because `χ_a` is a character.
 
@@ -596,6 +591,7 @@ API:
 - For `a ∈ 2pO_C`, `E_a` is the ordinary convergent exponential on the disc.
 - An automorphism lies in `H_Λ` exactly when its translation parameter is zero.
 - At `p = 2` and `a = 1`, `exp(X)` does not converge on the closed disc, so `n ≥ 2` is needed.
+- At odd `p`, `E_(1/p^k)` is a `p^(k+1)`-th root of `exp(pX)`, so `σ ∈ H_C` multiplies it by `ζ_(p^(k+1))^c` for one `c ∈ ℤ_p` (the roots of unity of `ε`) and `ψ_1(σ) = c/p`: `ψ_1` has values in `p^(−1)ℤ_p`, not `ℤ_p`. At `p = 2`, `E_1` is a fourth root of `exp(4X)`, so `ψ_1` has values in `(1/4)ℤ_2` and `ψ_2 = 2ψ_1` in `(1/2)ℤ_2`. Reading `ψ_1(σ)` as the exponent `c` of the first root of unity would rescale it by `p` (by 4 at `p = 2`).
 
 ### 3.2 The explicit perfectoid cover of the unit disc
 
@@ -625,23 +621,23 @@ At `p = 2` the completed `E_2` tower computes the same rational disc cohomology 
 
 ### 3.4 Normed descent on the completed disc
 
-Write `Ĉ{X}_∞` for the completion of the cover of §3.2, the algebra `C{X}[E_1^(1/p^n) : n ≥ 0]` (with `E_2` in place of `E_1` at `p = 2`), and `Γ = Aut(Ĉ{X}_∞/C{X})`, the Kummer group, identified with `ℤ_p` through `ψ_1`. Prove `H¹_cts(H_C, C̃{X}) = C{X}·ψ_1`: every continuous additive cocycle is `g(X)ψ_1` plus a coboundary, with `g(X)` unique; and identify this group with the pro-étale `Ô`-cohomology `H¹_proet(Sp(C{X}), Ô)` of the disc. The route has three steps, and the tower comparison is applied to a tower over `ℚ_p`, never to the sympathetic closure itself.
+Put `A = exp(pX) = E_1^p` for odd `p` and `A = exp(4X) = E_2²` at `p = 2`. Then `A` is a closed-disc series, whereas `E_1` (resp. `E_2`), formally `exp(X)` (resp. `exp(2X)`), is not in `C{X}`. Write `Ĉ{X}_∞` for the completion of the cover of §3.2, the algebra `C{X}[A^(1/p^n) : n ≥ 1]`. Its normalized root `A^(1/p^n)` is `E_(1/p^(n−1))` for odd `p` and `E_(2/2^(n−1))` at `p = 2`, so its first root is `E_1` (resp. `E_2`). Let `Γ = Aut(Ĉ{X}_∞/C{X})` be the geometric Kummer group, and `κ : Γ → ℤ_p` the isomorphism with `σ(A^(1/p^n)) = ζ_(p^n)^(κ(σ)) A^(1/p^n)` for all `n`, the roots of unity being those of `ε`. Comparing with §3.1, `ψ_1` factors through `Γ`, with `κ = pψ_1` for odd `p` and `κ = 2ψ_2 = 4ψ_1` at `p = 2` (§3.3); so `ψ_1(H_C)` is the lattice `p^(−1)ℤ_p` (resp. `(1/4)ℤ_2`). Prove `H¹_cts(H_C, C̃{X}) = C{X}·ψ_1`: every continuous additive cocycle is `λψ_1` plus a coboundary, with `λ ∈ C{X}` unique; and identify this group with the pro-étale `Ô`-cohomology `H¹_proet(Sp(C{X}), Ô)` of the disc. The route has three steps, and the tower comparison is applied to a tower over `ℚ_p`, never to the sympathetic closure itself.
 
-First, the tower step. The closed disc `Sp(ℚ_p{X})` with the tower obtained by adjoining, at level `n`, the `p^n`-th roots of unity, of `p` and of `E_1` (of `E_2` at `p = 2`) is a pro-étale Galois tower in the sense of PerfectoidTowers *profinite-galois-tower*: `E_1` lies in `1 + pℤ_p{X}` (`E_2` in `1 + 4ℤ_2{X}`), so it is a unit and each level is a finite étale Galois cover, Kummer over the cyclotomic level; the group `G` is an extension of `Gal(F_∞/ℚ_p)` by the geometric Kummer group `ℤ_p(1)`, where `F_∞ = ℚ_p(μ_{p^∞}, p^(1/p^∞))`; and the completed limit is perfectoid by the computation of §3.2 read over the integers of the perfectoid field `F̂_∞`. The base change of the tower to `C` is `Ĉ{X}_∞ × S`, with `S` the profinite set of embeddings of `F_∞` into `C`, so its integral sections modulo `p^m` form the module coinduced from `Γ` to `G`. *almost-cohomology-of-tower* (PerfectoidTowers §P9.6) and Shapiro's lemma give `H^q_proet(Sp(C{X}), O⁺/p^m)` almost isomorphic to `H^q_cts(Γ, O⁺(Ĉ{X}_∞)/p^m)` for all `m` and `q`. The degree-zero invariants are `O_C{X}/p^m` extended by a group killed by a fixed power of `p` (the torsion of `H¹_cts(Γ, O⁺(Ĉ{X}_∞))`, on which the transition maps are nilpotent), so the system is Mittag–Leffler, the derived-limit condition of P9.6 holds, and passing to the limit over `m` and inverting `p` identifies `H¹_proet(Sp(C{X}), Ô)` with `H¹_cts(Γ, Ĉ{X}_∞)`.
+First, the tower step. The closed disc `Sp(ℚ_p{X})` with the tower whose level `n ≥ 1` adjoins the `p^n`-th roots of unity, of `p` and of `A`, level 0 being the disc itself, is a pro-étale Galois tower in the sense of PerfectoidTowers *profinite-galois-tower*. The coefficients `p^k/k!` of `A` at odd `p` have valuation at least 1, and the coefficients `4^k/k!` at `p = 2` have valuation `k + s_2(k) ≥ 2`, with `s_2(k)` the binary digit sum; both tend to infinity. So `A` lies in `1 + pℤ_p{X}` (resp. `1 + 4ℤ_2{X}`), it is a unit, and each level is a finite étale Galois cover, Kummer over the cyclotomic level; the group `G` is an extension of `Gal(F_∞/ℚ_p)` by the geometric Kummer group `ℤ_p(1)`, where `F_∞ = ℚ_p(μ_{p^∞}, p^(1/p^∞))`; and the completed limit is perfectoid by the computation of §3.2 read over the integers of the perfectoid field `F̂_∞`. The base change of the tower to `C` is `Ĉ{X}_∞ × S`, with `S` the profinite set of embeddings of `F_∞` into `C`, so its integral sections modulo `p^m` form the module coinduced from `Γ` to `G`. *almost-cohomology-of-tower* (PerfectoidTowers §P9.6) and Shapiro's lemma give `H^q_proet(Sp(C{X}), O⁺/p^m)` almost isomorphic to `H^q_cts(Γ, O⁺(Ĉ{X}_∞)/p^m)` for all `m` and `q`. The degree-zero invariants are `O_C{X}/p^m` extended by a group killed by a fixed power of `p` (the torsion of `H¹_cts(Γ, O⁺(Ĉ{X}_∞))`, on which the transition maps are nilpotent), so the system is Mittag–Leffler, the derived-limit condition of P9.6 holds, and passing to the limit over `m` and inverting `p` identifies `H¹_proet(Sp(C{X}), Ô)` with `H¹_cts(Γ, Ĉ{X}_∞)`.
 
 Second, the inflation step. The sympathetic closure `C̃{X}` is the completion of the union of the elementary extensions of `C{X}`, each a Kummer extension by a `p`-th root of an element at distance less than 1 from 1, hence finite étale and Galois with group `μ_p` (Colmez02, §5.2 and §5.5, pp. 23 and 30–31); that union is `p`-closed, so every finite subextension lies in a finite Galois one. Every finite Galois subextension `L` containing a level of the Kummer tower generates with `Ĉ{X}_∞` a finite étale Galois extension of the perfectoid `Ĉ{X}_∞`, the base change of `L` over its intersection with the Kummer tower, and these are dense in `C̃{X}`. The lifting theorem of §3.1 makes `H_C → Γ` surjective, with kernel `H′ = Aut(C̃{X}/Ĉ{X}_∞)`. By almost purity (PerfectoidSpaces §P3) each of these finite stages is almost finite étale over `O⁺(Ĉ{X}_∞)`, so `H^q_cts(H′, O⁺(C̃{X})/p^m)` is almost zero for `q ≥ 1` and the invariants are almost `O⁺(Ĉ{X}_∞)/p^m`. After the limit over `m` and inverting `p`, `C̃{X}^{H′} = Ĉ{X}_∞` and `H¹_cts(H′, C̃{X}) = 0`, and inflation–restriction makes inflation `H¹_cts(Γ, Ĉ{X}_∞) → H¹_cts(H_C, C̃{X})` an isomorphism.
 
-Third, decompletion along `Γ`. The normalized traces from the levels of the Kummer tower to `C{X}` are uniformly bounded, and `γ − 1`, for a topological generator `γ` of `Γ`, is invertible with bounded inverse on their kernel, so `H¹_cts(Γ, Ĉ{X}_∞) = H¹_cts(Γ, C{X}) = Hom_cts(ℤ_p, C{X}) = C{X}·ψ_1`, the coefficient `g` being the invariant part of the cocycle's value at `γ`. For a lift `h` of `vX` in a TVS extension of `V₁` by `V₁`, construct `g` with `(σ−1)(h − g) = λ_v ψ_1(σ)` and `‖g‖ ≤ p · sup_{τ ∈ T_C} ‖τh − h − h(τ)‖`, the supremum being finite by uniform boundedness. Prove the corresponding uniform bound for Banach-valued coefficients used in Layer 4 (CN25, Proposition 4.10(i) and proof, pp. 23–24).
+Third, decompletion along `Γ`. The normalized traces from the levels of the Kummer tower to `C{X}` are uniformly bounded, and `γ − 1`, for a topological generator `γ` of `Γ`, is invertible with bounded inverse on their kernel, so `H¹_cts(Γ, Ĉ{X}_∞) = H¹_cts(Γ, C{X}) = Hom_cts(Γ, C{X}) = C{X}·κ = C{X}·ψ_1`. Take `γ` with `κ(γ) = 1`, so that `ψ_1(γ) = 1/p` (resp. `1/4`). The coefficient `λ` of a cocycle `c` is the normalized-trace component in `C{X}` of `c(γ)` divided by `ψ_1(γ)`, that is, multiplied by `p` (resp. 4). For a lift `h` of `vX` in a TVS extension of `V₁` by `V₁`, construct `g` with `(σ−1)(h − g) = λ_v ψ_1(σ)` and `‖g‖ ≤ p · sup_{τ ∈ T_C} ‖τh − h − h(τ)‖`, the supremum being finite by uniform boundedness. Prove the corresponding uniform bound for Banach-valued coefficients used in Layer 4 (CN25, Proposition 4.10(i) and proof, pp. 23–24).
 
-*Needs:* §3.1; §3.2; PerfectoidTowers §P9.6; PerfectoidSpaces §P3; PerfectoidSpaces §P6.
+*Needs:* §3.1; §3.2; §3.3; PerfectoidTowers §P9.6; PerfectoidSpaces §P3; PerfectoidSpaces §P6.
 
 **Checks.**
 
-- The zero cocycle has coefficient `g = 0` and primitive 0.
-- The normalized `ψ_1` has coefficient `g = 1` and is not a coboundary.
+- The zero cocycle has coefficient `λ = 0` and primitive 0.
+- The cocycle `ψ_1` has value `ψ_1(γ) = 1/p` at `γ` (1/4 at `p = 2`), and dividing by `ψ_1(γ)` gives coefficient `λ = 1`; it is not a coboundary. Taking the trace component of the value at `γ` unchanged as the coefficient would give `1/p` (resp. `1/4`).
 - For the constant analytic two-cocycle 1, the correcting primitive is −1, of norm `1 ≤ p`; changing the sign gives the wrong cocycle.
-- At odd `p`, the first level `F_1 = ℚ_p(ζ_p, p^(1/p))` has degree `p(p−1)`, so the base change of the first tower level to `C` is `p(p−1)` copies of `Sp(C{X}[E_1^(1/p)])`. The geometric Kummer group at that level is `μ_p`, of order `p`, while `G/G_1` has order `p²(p−1)`; the cohomology of `G` on the coinduced module is that of the geometric group, and a computation with `G/G_1` acting on a single copy would be wrong.
-- On the line `C{X}·E_1^(1/p)` inside `Ĉ{X}_∞` (odd `p`), `γ − 1` acts by `ζ − 1` for a primitive `p`-th root of unity `ζ`, with inverse of norm `p^(1/(p−1))`; at `p = 2`, on `C{X}·E_2^(1/2)`, it acts by `−2`, with inverse of norm 2. The constant `p` of the bound is at least `p^(1/(p−1))` and equals it at `p = 2`.
+- At odd `p`, the first level adjoins `ζ_p`, `p^(1/p)` and `A^(1/p) = E_1`. The constant field `F_1 = ℚ_p(ζ_p, p^(1/p))` has degree `p(p−1)`, so the base change of the first tower level to `C` is `p(p−1)` copies of `Sp(C{X}[E_1])`. The geometric Kummer group at that level is `μ_p`, of order `p`, while `G/G_1` has order `p²(p−1)`: at `p = 3` the constant, geometric and total degrees are 6, 3 and 18. Adjoining `E_1^(1/p)`, a `p²`-th root of `A`, at the first level would give geometric degree 9 and total degree 54 at `p = 3`. At `p = 2` the first level adjoins `2^(1/2)` and `A^(1/2) = E_2`, with degrees 2, 2 and 4. The cohomology of `G` on the coinduced module is that of the geometric group, and a computation with `G/G_1` acting on a single copy would be wrong.
+- On the line `C{X}·E_1` inside `Ĉ{X}_∞` (odd `p`), `γ` acts by `χ_1(γ) = ζ_p`, so `γ − 1` acts by `ζ_p − 1`, with inverse of norm `p^(1/(p−1))`, which is `3^(1/2)` at `p = 3`. At `p = 2`, on `C{X}·E_2`, `γ` acts by `χ_2(γ) = −1` and `γ − 1` by `−2`, with inverse of norm 2. On `C{X}·E_1^(1/p)` the same `γ` acts by a primitive `p²`-th root of unity, not by `ζ_p`. These inverse norms are at most the constant `p` of the bound, with equality at `p = 2`.
 - The tower comparison is applied to the Kummer–cyclotomic tower over `ℚ_p{X}` only. Applied to `C̃{X}` directly it would need a discretely valued base field and a countable tower, neither of which the closure comes with: `C̃{X}` contains a `p`-th root of `1 + cX` for every `c ∈ 𝔪_C`, and for `|c| ≥ p^(−p/(p−1))` that root is not in `C{X}`, the binomial series for `(1 + cX)^(1/p)` having coefficients of norm `p^(k + v_p(k!))|c|^k`, which do not tend to zero. The closure enters only through the inflation step.
 
 ### 3.5 Bounded denominators for additive analytic cocycles
@@ -710,7 +706,7 @@ A proof route: use the completed tower, almost purity and continuous torsor desc
 
 ### Examples
 
-At `p = 3` the first congruence is `Y_0³ = X` modulo `3^(1/3)`. At `p = 2` it is `Y_0² + Y_0 = X` modulo 2, and `exp(4X)` converges. The normalized `B₂` class has parameter 1 and the split class has parameter 0.
+At `p = 3` the first congruence is `Y_0³ = X` modulo `3^(1/3)`. At `p = 2` it is `Y_0² + Y_0 = X` modulo 2, and `exp(4X)` converges. At `p = 3` the first level of the Kummer–cyclotomic tower over `ℚ_3{X}` adjoins `ζ_3`, `3^(1/3)` and `E_1 = exp(3X)^(1/3)`, with constant, geometric and total degrees 6, 3 and 18, and a generator `γ` of `Γ` acts on `E_1` by a primitive cube root of unity, with `ψ_1(γ) = 1/3`. The normalized `B₂` class has parameter 1 and the split class has parameter 0.
 
 ### Dependencies
 
@@ -1012,7 +1008,8 @@ A proof route: the parent's HN decomposition and curvature dictionary reduce to 
 
 **Checks.**
 
-- For `P = [0 → B_m]` and `Y = U_1/ℚ_p t_x` with `x ≠ ∞`, restriction is multiplication by the unit `t_x` on `B_m`, which is injective, so the Hom group is 0. `C/ℚ_p` has curvature `< 0` and is not covered.
+- For `P = [0 → B_m]` and `Y = U_1/ℚ_p t_x` with `x ≠ ∞`, restriction is multiplication by the unit `t_x` on `B_m`, which is injective, so the Hom group is 0.
+- `C/ℚ_p = B₁/ℚ_p` has curvature `> 0` (a BC map `f : C/ℚ_p → C` composed with `C → C/ℚ_p` is multiplication by some `a ∈ C` killing 1, so `a = 0`; its height is −1, as positive curvature allows) and is covered: restriction from `Hom_TVS(B₁, P) = (M₂/M₁)[t]` to `Hom_TVS(ℚ_p, P) = M₂/M₁` is the inclusion of the `t`-torsion, so `Hom_TVS(C/ℚ_p, P) = 0`. For `P = [0 → C]` this restriction is the identity of `C`.
 - Replacing positive by zero curvature gives the nonzero identity map `B₁ → B₁`.
 - For `Y = B₂/ℚ_p^h` of curvature `> 0`, where `ℚ_p^h ⊄ tB₂`, the restriction along a vector with `θ(v) ≠ 0` is injective on `(M₂/M₁)[t²]`, so a map killing `ℚ_p^h` is 0.
 
