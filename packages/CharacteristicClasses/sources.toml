@@ -181,3 +181,59 @@ licence_class = "author-page"
 status = "certified"
 accessed = "2026-11-07"
 cited_for = ["C5a.2", "C5a.4", "C5a.5", "C5a.7"]
+
+[[source]]
+id = "mueller-wockel-smoothing"
+authors = "Christoph Müller, Christoph Wockel"
+title = "Equivalences of Smooth and Continuous Principal Bundles with Infinite-Dimensional Structure Group"
+year = 2006
+venue = "Adv. Geom. 9 (2009) 605"
+doi = "10.1515/ADVGEOM.2009.032"
+arxiv = "math/0604142v3"
+locator_scheme = "theorem"
+locator = "Proposition I.13, Theorem II.11, Theorem II.12"
+url = "https://arxiv.org/abs/math/0604142v3"
+fetched_from = "https://arxiv.org/pdf/math/0604142v3"
+fetched_at = "2026-11-10T10:05:46Z"
+sha256 = "3552f8165b9b5c515ad0d364d4cdcd342ade1bcf3c2464c07fe6566b1509c30b"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-10"
+version_note = "arXiv v3"
+cited_for = ["C1.4"]
+
+[[source]]
+id = "landweber-k-theory-elliptic"
+authors = "Gregory D. Landweber"
+title = "K-theory and elliptic operators"
+year = 2005
+arxiv = "math/0504555v1"
+locator_scheme = "section"
+locator = "1.7, 2.2"
+url = "https://arxiv.org/abs/math/0504555v1"
+fetched_from = "https://arxiv.org/pdf/math/0504555v1"
+fetched_at = "2026-11-10T10:05:53Z"
+sha256 = "f9a10ef8147201536f7ac08141ef6a4dbd1f0c307df257c1ea68d6f70f566851"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-10"
+version_note = "arXiv v1"
+cited_for = ["C6.4", "C6.5"]
+
+[[source]]
+id = "atiyah-hirzebruch-rr-1959"
+authors = "M. F. Atiyah, F. Hirzebruch"
+title = "Riemann-Roch theorems for differentiable manifolds"
+year = 1959
+venue = "Bull. Amer. Math. Soc. 65 (1959), 276--281"
+doi = "10.1090/S0002-9904-1959-10344-X"
+locator_scheme = "section"
+locator = "4, p. 281"
+url = "https://www.ams.org/journals/bull/1959-65-04/S0002-9904-1959-10344-X/S0002-9904-1959-10344-X.pdf"
+fetched_from = "https://www.ams.org/journals/bull/1959-65-04/S0002-9904-1959-10344-X/S0002-9904-1959-10344-X.pdf"
+fetched_at = "2026-11-10T10:05:54Z"
+sha256 = "6b293f07d759f39e1a7b259d200b0643a0967a2e38679deb33b46e90155cb7df"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-11-10"
+cited_for = ["C7.2"]
