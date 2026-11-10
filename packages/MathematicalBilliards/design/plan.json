@@ -201,7 +201,7 @@
      ],
      "locator": {
       "source": "BialyMironov2022",
-      "where": "lines 159–164 (the coordinates (cos δ, s))"
+      "where": "§2 p.4, lines 159–164 (coordinate setting); the comparison with C3.1 is constructed here"
      },
      "prerequisites": [
       "target:1.1",
@@ -241,7 +241,7 @@
      "hypotheses": [],
      "locator": {
       "source": "BialyMironov2022",
-      "where": "lines 154–161; ChernovMarkarian2006 Chapter 2; KatokHasselblatt1995 Section 9.2"
+      "where": "§2 p.4, lines 154–161 (positive-curvature reflection setting); the C^k construction is here; ChernovMarkarian2006 Chapter 2; KatokHasselblatt1995 §9.2"
      },
      "prerequisites": [
       "target:1.3"
@@ -391,13 +391,13 @@
      "id": "2.5",
      "kind": "theorem",
      "name": "Billiards.ConvexTable.conj_C31",
-     "statement": "For k = ∞, Ψ(s, δ) = (s, cos δ) is a homeomorphism A → AddCircle ℓ × (−1, 1) with Ψ ∘ T = β ∘ Ψ, β the next-collision map of SymplecticGeometry/CotangentLagrangian C3.1 for Complex.orthonormalBasisOneI.repr ∘ γ.",
+     "statement": "For k = ∞, Ψ(s, δ) = (s, cos δ) is a homeomorphism A → AddCircle ℓ × (−1, 1) with Ψ ∘ T = β ∘ Ψ, β the next-collision map of SymplecticGeometry/CotangentLagrangian C3.1 for Complex.orthonormalBasisOneI.repr ∘ γ. Transport C3.1’s explicit circular formula and rational-periodicity criterion through Ψ, also for the circle with any finite regularity label.",
      "hypotheses": [
       "k = ⊤"
      ],
      "locator": {
       "source": "BialyMironov2022",
-      "where": "lines 159–164"
+      "where": "§2 p.4, lines 159–164 (coordinate meaning); the comparison and transport of the C3.1 circular results are here"
      },
      "prerequisites": [
       "target:1.5",
@@ -420,28 +420,11 @@
        "name": "measure",
        "kind": "compatibility",
        "statement": "Ψ pushes μ_A to volume ⊗ Lebesgue."
-      }
-     ]
-    },
-    {
-     "id": "2.6",
-     "kind": "example",
-     "name": "Billiards.ConvexTable.circle_billiardMap",
-     "statement": "For the circle of radius R, T(s, δ) = (s + 2Rδ, δ); the orbit of (s, δ) is periodic iff δ/π ∈ ℚ, of type (p, q) for δ/π = p/q in lowest terms.",
-     "hypotheses": [],
-     "locator": {
-      "source": "Tabachnikov2005",
-      "where": "Chapter 3"
-     },
-     "prerequisites": [
-      "target:2.1"
-     ],
-     "api": [],
-     "tests": [
+      },
       {
        "name": "diameter",
        "kind": "computation",
-       "statement": "δ = π/2: type (1, 2)."
+       "statement": "δ = π/2: type (1,2); δ = 2π/3: type (2,3). At δ = π/3, v = 1/2 and the increment is 2Rπ/3, giving type (1,3)."
       },
       {
        "name": "irrational",
@@ -636,7 +619,10 @@
       "source": "Herman1983",
       "where": "Chapitre I, 1.2, lines 149–155; KatokHasselblatt1995 Section 9.2"
      },
-     "prerequisites": [],
+     "prerequisites": [
+      "mathlib:Homeomorph",
+      "mathlib:AddCircle"
+     ],
      "api": [
       {
        "name": "descends",
@@ -646,7 +632,7 @@
       {
        "name": "inverse",
        "role": "functoriality",
-       "statement": "The inverse of a positive twist lift is negative; y ↦ a + b − y exchanges signs."
+       "statement": "The inverse of a positive twist lift is negative. Conjugation by (x,y) ↦ (x,r(y)) exchanges topological twist signs for an explicitly chosen decreasing self-homeomorphism r of J; r(y)=a+b−y is available for finite endpoints. The differential condition is preserved when r is a C¹ diffeomorphism."
       },
       {
        "name": "deck",
@@ -674,6 +660,11 @@
        "name": "standard_map",
        "kind": "computation",
        "statement": "(x + y + ε sin 2πx, y + ε sin 2πx): ∂F₁/∂y = 1, det DF = 1."
+      },
+      {
+       "name": "unbounded",
+       "kind": "non-example",
+       "statement": "On J=(0,∞), F(x,y)=(x+log y,y) has derivative 1/y>0. For r(y)=1/y, its conjugate is (x−log y,y), derivative −1/y<0. The finite-endpoint expression a+b−y is unavailable."
       }
      ]
     },
@@ -681,11 +672,11 @@
      "id": "4.2",
      "kind": "definition",
      "name": "Billiards.IsExactTwist",
-     "statement": "A monotone twist map is exact for λ = g dx (g C¹, ℓ-periodic, ∂y g = ρ > 0) when F*λ − λ = dS with S ℓ-periodic C¹; equivalently a diagonal-deck-invariant generating function h with g = −∂₁h, g ∘ F = ∂₂h.",
+     "statement": "A monotone twist map is exact for λ=g dx (g C¹, ℓ-periodic, ∂y g=ρ>0) when F*λ−λ=dS with S ℓ-periodic C¹. Put Q(x,y)=(x,F₁(x,y)), a C¹ diffeomorphism from ℝ×J onto its open image D={(x,X): X∈F₁(x,J)}. Equivalently h=S∘Q⁻¹:D→ℝ, S=h∘Q, is diagonal-deck-invariant and satisfies g(x,y)=−∂₁h(x,F₁(x,y)), g(F(x,y))=∂₂h(x,F₁(x,y)). This endpoint-coordinate deduction is constructed here from the globally canonical setting.",
      "hypotheses": [],
      "locator": {
       "source": "Herman1983",
-      "where": "Chapitre I, 4.3, Remarque, lines 762–769 (globally canonical maps)"
+      "where": "Chapitre I, §4.3, Remarque, printed p.27, lines 762–769 (globally canonical setting); endpoint-coordinate construction is here"
      },
      "prerequisites": [
       "target:4.1"
@@ -711,7 +702,7 @@
       {
        "name": "shear",
        "kind": "computation",
-       "statement": "Shear exact with S = y²/2."
+       "statement": "On ℝ², S=y²/2 and Q⁻¹(x,X)=(x,X−x), so h=(X−x)²/2. At (x,X)=(1,2), −∂₁h=∂₂h=1 and S(1,1)=h(1,2)=1/2; the wrong composition gives −3,3."
       },
       {
        "name": "standard_map",
@@ -943,7 +934,7 @@
      ],
      "locator": {
       "source": "Herman1983",
-      "where": "Appendice au Chapitre I (Fathi), Théorème de Birkhoff, line 1150; proof lines 1159–1287"
+      "where": "Appendice au Chapitre I (Fathi), Théorème de Birkhoff, printed p.41, lines 1150–1154; proof printed pp.42–46, lines 1159–1287"
      },
      "prerequisites": [
       "target:4.1",
@@ -1001,7 +992,7 @@
       {
        "name": "bound",
        "kind": "computation",
-       "statement": "Circular table: 0/(2R) = 0 and 0/(−2R) = 0."
+       "statement": "Circular table: ∂δF₂=∂δ(F⁻¹)₂=1. The ratios are 1/(2R) and −1/(2R), absolute maximum 1/(2R). The optimal graph constant 0 satisfies 0≤1/(2R), or 0≤1/2 at R=1."
       },
       {
        "name": "rotation",
@@ -1185,9 +1176,10 @@
       "where": "Chapter 3"
      },
      "prerequisites": [
-      "target:2.6",
+      "target:2.5",
       "target:5.3",
-      "target:5.4"
+      "target:5.4",
+      "roadmap:SymplecticGeometry CotangentLagrangian C3.1"
      ],
      "api": [],
      "tests": [
@@ -1305,7 +1297,7 @@
      "id": "6.3",
      "kind": "theorem",
      "name": "Billiards.ConvexTable.exists_max_periodic",
-     "statement": "W attains its maximum on D̄_{p,q} only at points of D_{p,q}; every maximiser is a periodic orbit of type (p, q).",
+     "statement": "W attains its maximum on D̄_{p,q} only at points of D_{p,q}; every maximiser is a periodic orbit of type (p, q). In the boundary proof, exclude W=0 using any positive-perimeter interior configuration. If W>0, an endpoint of a maximal run of geometrically coincident vertices adjoins a nondegenerate chord: for a preceding gap 0 increase that endpoint, for a preceding gap ℓ decrease it (reverse the signs for a following gap). The collapsed chord contributes +1, and the other chord has derivative of absolute value <1, giving 1±cos δ>0 within the gap constraints.",
      "hypotheses": [
       "1 ≤ k"
      ],
@@ -1333,6 +1325,11 @@
        "name": "winding",
        "kind": "characterisation",
        "statement": "Unconstrained 4-gons: doubled diameter W = 8 (type (2,4)); on D_{1,4} the square, 4√2."
+      },
+      {
+       "name": "collapsed",
+       "kind": "computation",
+       "statement": "On the unit circle, gaps (0,0,ℓ) for (p,q)=(1,3) give W=0<3√3. Deforming them towards (ℓ/3,ℓ/3,ℓ/3) gives W′(0+)=4ℓ/3>0."
       }
      ]
     },
@@ -1340,7 +1337,7 @@
      "id": "6.4",
      "kind": "theorem",
      "name": "Billiards.ConvexTable.exists_two_periodic_orbits",
-     "statement": "For k ≥ 1 and coprime 0 < p < q there are two disjoint periodic orbits of type (p, q) on A, one a maximiser of W.",
+     "statement": "For k ≥ 1 and coprime 0 < p < q there are two disjoint periodic orbits of type (p, q) on A, one a maximiser of W. For the inward increasing field on the truncated configuration space, distinguish positive-perimeter boundary limits (run-end variations from 6.3) from wholly collapsed limits. At a collapsed limit exactly p gaps equal ℓ and q−p equal 0; d_j(t)=(1−t)d_j+t pℓ/q has right perimeter derivative 2p(q−p)ℓ/q>0. These directions persist with positive derivative nearby; add a sufficiently small equal-gap inward direction in the run-end case and combine by a partition of unity.",
      "hypotheses": [
       "1 ≤ k",
       "0 < p",
@@ -1374,6 +1371,11 @@
        "name": "marking",
        "kind": "non-example",
        "statement": "Without the quotient by σ two critical points may be one orbit marked twice."
+      },
+      {
+       "name": "collapsed",
+       "kind": "computation",
+       "statement": "For collapsed (1,3) gaps (0,0,ℓ), the equal-gap interpolation has W′(0+)=4ℓ/3; the derivatives of the nearby truncated-boundary variations tend to this positive value. Positive-perimeter run-end limits instead give 1±cos δ>0."
       }
      ]
     }
@@ -1497,8 +1499,10 @@
      "id": "7.3",
      "kind": "theorem",
      "name": "Billiards.PolygonalTable.finite_reflections",
-     "statement": "A trajectory makes finitely many reflections in every bounded time interval on which it meets no vertex; entering a corner of angle α within a disc meeting only its two sides it leaves after at most ⌈π/α⌉ reflections.",
-     "hypotheses": [],
+     "statement": "A trajectory makes finitely many reflections in every bounded time interval on which it meets no vertex. A trajectory segment entering a corner disc (angle α∈(0,2π), only the two adjacent sides meet the disc) leaves it after at most ⌈π/α⌉ reflections, provided the segment avoids the vertex and does not run along a side.",
+     "hypotheses": [
+      "For the escape clause: the segment avoids the vertex and does not run along a side."
+     ],
      "locator": {
       "source": "Tabachnikov2005",
       "where": "Chapter 7"
@@ -1523,6 +1527,11 @@
        "name": "reflex",
        "kind": "degenerate",
        "statement": "α = 3π/2: at most 1."
+      },
+      {
+       "name": "stopped_radial",
+       "kind": "non-example",
+       "statement": "In the square, from (ε,ε) with velocity −(1+i)/√2 the trajectory stops at the vertex at time √2 ε, after 0 reflections. It does not escape and is excluded by the avoiding hypothesis; it lies in Σ."
       }
      ]
     }
@@ -1560,7 +1569,7 @@
       {
        "name": "not_closed",
        "kind": "characterisation",
-       "statement": "Σ is not closed."
+       "statement": "Square: fix x=(1/2,1/4) and let v_n point to (n,n), n≥1, in the unfolding. Every v_n hits a lattice vertex. The limiting direction (1+i)/√2 has line y−x=−1/4 avoiding all lattice vertices, hence a regular limit of singular states."
       }
      ]
     },
@@ -1766,7 +1775,7 @@
       {
        "name": "infinite",
        "kind": "degenerate",
-       "statement": "Angle π/√2: G infinite, not applicable."
+       "statement": "Angle π/√2: G infinite, finite-group theorem inapplicable. Constants and the Borel indicator of a countable G-orbit are invariant; the latter equals 1 on the orbit and 0 off it, and is 0 angular-almost-everywhere."
       }
      ]
     }
@@ -1784,7 +1793,7 @@
      "hypotheses": [],
      "locator": {
       "source": "ChaikaForni2026",
-      "where": "lines 168–176 (charts obtained by integrating ω)"
+      "where": "§2 p.5, lines 168–176 (integrated translation charts); the derivative-one groupoid and equivalence are constructed here"
      },
      "prerequisites": [
       "mathlib:Pregroupoid",
@@ -1835,7 +1844,7 @@
      "hypotheses": [],
      "locator": {
       "source": "MasurTabachnikov2002",
-      "where": "§1; ChaikaForni2026 lines 168–176"
+      "where": "§1; ChaikaForni2026 §2 p.5, lines 168–176 (integrated charts); the cone-atlas formulation is constructed here"
      },
      "prerequisites": [
       "target:10.1",
@@ -1886,7 +1895,7 @@
      "hypotheses": [],
      "locator": {
       "source": "ChaikaForni2026",
-      "where": "lines 84–88"
+      "where": "§1 p.3, lines 83–88 (directional flows and invariant area); chart-measure gluing and uniqueness are constructed here"
      },
      "prerequisites": [
       "target:10.2"
@@ -1918,7 +1927,7 @@
      "hypotheses": [],
      "locator": {
       "source": "ChaikaForni2026",
-      "where": "lines 84–88"
+      "where": "§1 p.3, lines 83–88 (directional flows and invariant area); the all-time measurable representative fixing singular leaves is constructed here"
      },
      "prerequisites": [
       "target:10.2",
@@ -1967,7 +1976,7 @@
      "hypotheses": [],
      "locator": {
       "source": "MasurTabachnikov2002",
-      "where": "§1"
+      "where": "§1; the developing-map completeness route is constructed here"
      },
      "prerequisites": [
       "target:10.2",
@@ -2122,7 +2131,7 @@
      "id": "11.4",
      "kind": "theorem",
      "name": "Billiards.PolygonalTable.unfolding_conj",
-     "statement": "For θ with trivial stabiliser in G, Φ_θ(x, gθ) = [g⁻¹, x] is a bijection from M_θ ∖ Σ onto S_P minus the leaves of φ_θ through cone points, carrying Σ_g Leb_P ⊗ δ_{gθ} to area, with Φ_θ ∘ F^t = φ_θ^t ∘ Φ_θ.",
+     "statement": "For θ with trivial stabiliser in G, Φ_θ(x, gθ) = [g⁻¹, x] is a bijection from M_θ ∖ Σ onto S_P minus the leaves of φ_θ through cone points, carrying Σ_g Leb_P ⊗ δ_{gθ} to area, with Φ_θ ∘ F^t = φ_θ^t ∘ Φ_θ. Also Φ_θ carries ν_θ=(|G|area P)⁻¹Σ_g Leb_P⊗δ_(gθ), pushed to PhaseSpace, to area_(S_P)/area(S_P); both are probability measures because area(S_P)=|G|area P>0.",
      "hypotheses": [
       "MulAction.stabilizer G θ = ⊥"
      ],
@@ -2146,12 +2155,17 @@
       {
        "name": "stabiliser",
        "kind": "non-example",
-       "statement": "θ = 1 for the square: Φ two-to-one."
+       "statement": "Square, θ=1: id and conj represent the same direction, but [id,x] and [conj,x] are distinct for interior x, so Φ is not well defined. The reverse projection [h,x]↦(x,h⁻¹θ) is two-to-one over interior states. For θ=exp(iπ/6), g is unique."
       },
       {
        "name": "area",
        "kind": "computation",
        "statement": "π/8 triangle: 16 · tan(π/8)/2 = 8(√2 − 1)."
+      },
+      {
+       "name": "normalized_area",
+       "kind": "computation",
+       "statement": "Unit square: raw mass=4, normalized mass=1. Whole-space weak-mixing residual is |4−16|=12 with raw area and |1−1|=0 with normalized area."
       }
      ]
     }
@@ -2165,7 +2179,7 @@
      "id": "12.1",
      "kind": "definition",
      "name": "Billiards.IsWeaklyMixing",
-     "statement": "For an action of ℝ on a probability space with MeasurableVAdd₂ and VAddInvariantMeasure: (1/T)∫₀ᵀ |μ((t +ᵥ ·)⁻¹' A ∩ B) − μ(A)μ(B)| dt → 0 for all measurable A, B; an eigenfunction of eigenvalue a: measurable f, not a.e. zero, f ∘ F^t = exp(2πiat) f a.e. for each t.",
+     "statement": "For an action of ℝ on a probability space with MeasurableVAdd₂ and VAddInvariantMeasure: (1/T)∫₀ᵀ |μ((t +ᵥ ·)⁻¹' A ∩ B) − μ(A)μ(B)| dt → 0 for all measurable A, B; an eigenfunction of eigenvalue a: measurable f, not a.e. zero, f ∘ F^t = exp(2πiat) f a.e. for each t. Use the native complex inner product ⟨f,g⟩=∫conj(f)g, conjugate-linear in the first input, with U_t f=f∘F^t and spectral transform ⟨f,U_t f⟩=∫exp(itξ)dσ_f(ξ).",
      "hypotheses": [],
      "locator": {
       "source": "Hochman2012",
@@ -2184,7 +2198,7 @@
       {
        "name": "L2_form",
        "role": "characterisation",
-       "statement": "Equivalent L² and squared forms (Hochman2012 Theorem 6.1.7, Lemma 6.1.6)."
+       "statement": "Equivalent L² and squared forms use ⟨g,U_t f⟩−(∫f)conj(∫g) with the native conjugate-linear-first inner product (real-action adaptation of Hochman2012 Theorem 6.1.7, Lemma 6.1.6)."
       },
       {
        "name": "product",
@@ -2201,12 +2215,17 @@
       {
        "name": "torus",
        "kind": "characterisation",
-       "statement": "Horizontal flow on ℂ/(ℤ + iℤ), half-torus A = B: signed average of |1/2 − t| − 1/4 is 0, absolute average 1/8; a definition without absolute values would accept it."
+       "statement": "Horizontal flow: for A=B={Re z mod 1∈[0,1/2)}, the signed average is 0 and absolute average 1/8 for this pair only. The invariant half-y set instead has signed residual 1/4. Full real translation on AddCircle 1 is ergodic and satisfies all signed limits, but its half-circle has absolute average 1/8 and e₁ has eigenvalue 1."
       },
       {
        "name": "point",
        "kind": "degenerate",
-       "statement": "One-point space: weakly mixing."
+       "statement": "One point: all set residuals are 0; f=i,g=1 gives ⟨g,U_t f⟩−(∫f)conj(∫g)=i−i=0. The opposite native order gives −i−i=−2i."
+      },
+      {
+       "name": "complex_sign",
+       "kind": "computation",
+       "statement": "On AddCircle 1, the unit mode e₁ at t=1/4 has ⟨e₁,U_t e₁⟩=i, rather than −i; its positive-frequency atom is at 2π."
       }
      ]
     },
@@ -2218,7 +2237,7 @@
      "hypotheses": [],
      "locator": {
       "source": "Hochman2012",
-      "where": "line 2439"
+      "where": "§6.1 printed p.56, line 2439 (discrete implication); the real-action invariant-set proof is here"
      },
      "prerequisites": [
       "target:12.1",
@@ -2247,7 +2266,7 @@
      "id": "12.3",
      "kind": "theorem",
      "name": "Billiards.koopman_stronglyContinuous",
-     "statement": "For a jointly measurable measure-preserving ℝ-action on a probability space, U_t f = f ∘ F^t is a strongly continuous unitary group on L²(μ); no separability assumed.",
+     "statement": "For a jointly measurable measure-preserving ℝ-action on a probability space, U_t f = f ∘ F^t is a strongly continuous unitary group on L²(μ); no separability assumed. Use native MeasureTheory.Lp.compMeasurePreserving and its a.e.-composition, isometry and composition laws for the pullback; the new assertion is strong continuity under joint measurability.",
      "hypotheses": [],
      "locator": {
       "source": "Hochman2012",
@@ -2255,7 +2274,12 @@
      },
      "prerequisites": [
       "target:12.1",
-      "tauceti:TauCeti.Semigroups.StronglyContinuousGroup"
+      "tauceti:TauCeti.Semigroups.StronglyContinuousGroup",
+      "mathlib:MeasureTheory.Lp.compMeasurePreserving",
+      "mathlib:MeasureTheory.Lp.coeFn_compMeasurePreserving",
+      "mathlib:MeasureTheory.Lp.isometry_compMeasurePreserving",
+      "mathlib:MeasureTheory.Lp.compMeasurePreserving_comp",
+      "tauceti:TauCeti.Semigroups.StronglyContinuousGroup.IsUnitary"
      ],
      "api": [],
      "tests": [
@@ -2284,7 +2308,7 @@
      "hypotheses": [],
      "locator": {
       "source": "Hochman2012",
-      "where": "Proposition 6.6.3, lines 3099–3140 (circle version)"
+      "where": "Proposition 6.6.3, printed p.70, lines 3099–3140 (atomless discrete circle computation); the real-line all-atoms formula is proved here"
      },
      "prerequisites": [
       "mathlib:MeasureTheory.Measure.prod"
@@ -2304,7 +2328,49 @@
       {
        "name": "lebesgue",
        "kind": "computation",
-       "statement": "Lebesgue on [0,1]: (2 − 2 cos t)/t², limit 0."
+       "statement": "Lebesgue on [0,1]: for t≠0, |σ̂(t)|²=(2−2cos t)/t²; at 0 it equals 1, at π it equals 4/π². The average limit is 0; a single-point change leaves the integral unchanged."
+      }
+     ]
+    },
+    {
+     "id": "12.4.1",
+     "kind": "theorem",
+     "name": "Billiards.continuousTimeMeanErgodicProjection",
+     "statement": "For any complete complex Hilbert space H, strongly continuous unitary group U, a∈ℝ and v∈H, the Bochner averages A_T^a v=(1/T)∫₀ᵀexp(−2πiat)U_t v dt for T>0 converge in norm to the orthogonal projection P_a v onto the closed complex subspace E_a={w:∀t∈ℝ,U_t w=exp(2πiat)w}. At a=0 this is the common fixed space of all real times. No separability is assumed. For the unique finite spectral measure σ_v defined by ⟨v,U_t v⟩=∫exp(itξ)dσ_v(ξ), prove ‖P_a v‖²=σ_v({2πa}). The real-time proof uses the closed span of V_s w−w for V_t=exp(−2πiat)U_t, the bound ‖A_T(V_s w−w)‖≤2|s|‖w‖/T, and bounded convergence for ∫|K_T(ξ−2πa)|²dσ_v(ξ).",
+     "hypotheses": [
+      "H a complete complex Hilbert space",
+      "U : TauCeti.Semigroups.StronglyContinuousGroup H",
+      "U.IsUnitary",
+      "a ∈ ℝ",
+      "v ∈ H",
+      "T>0 for each displayed average"
+     ],
+     "locator": {
+      "source": "Hochman2012",
+      "where": "§6.6, Lemma 6.6.2, printed p.69, lines 3076–3096 (twisted discrete averages); the continuous-time mean-ergodic and atomic-mass adapter is constructed here"
+     },
+     "prerequisites": [
+      "tauceti:TauCeti.Semigroups.StronglyContinuousGroup",
+      "tauceti:TauCeti.Semigroups.StronglyContinuousGroup.IsUnitary",
+      "tauceti:TauCeti.bochner_charFun_real",
+      "mathlib:Submodule.orthogonalProjectionOnto"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "circle_untwisted",
+       "kind": "non-example",
+       "statement": "AddCircle 1, unit mode e₁: U₁e₁=e₁, so discrete time-one averages are e₁; A_N^0 e₁=0 for positive integers N and P₀e₁=0, spectral mass at 0=0."
+      },
+      {
+       "name": "circle_twisted",
+       "kind": "computation",
+       "statement": "A_T^1 e₁=e₁ for T>0, ‖P₁e₁‖²=1=δ_(2π)({2π}), and correlation at t=1/4 is i. The opposite exponential twist tends to 0."
+      },
+      {
+       "name": "identity_zero",
+       "kind": "degenerate",
+       "statement": "Identity group: P₀v=v and σ_v=‖v‖²δ₀; for a≠0, E_a={0} and A_T^a v=((1−exp(−2πiaT))/(2πiaT))v→0. For v=0 every projection and atomic mass is 0."
       }
      ]
     },
@@ -2312,17 +2378,19 @@
      "id": "12.5",
      "kind": "theorem",
      "name": "Billiards.isWeaklyMixing_iff",
-     "statement": "A jointly measurable measure-preserving ℝ-action on a probability space is weakly mixing iff every eigenfunction is a.e. constant (then of eigenvalue 0).",
+     "statement": "A jointly measurable measure-preserving ℝ-action on a probability space is weakly mixing iff every eigenfunction is a.e. constant (then of eigenvalue 0). Use the positive-exponential spectral convention ⟨f,U_t f⟩=∫exp(itξ)dσ_f(ξ) and 12.4.1: the negative-exponential twisted average tends to P_a f, with ‖P_a f‖²=σ_f({2πa}). Polarization gives mixed correlations. Excluding nonconstant invariant indicators gives ergodicity; then every measurable eigenfunction has a.e. constant finite modulus and lies in L².",
      "hypotheses": [],
      "locator": {
       "source": "Hochman2012",
-      "where": "Theorem 6.4.7, Lemma 6.6.2, Corollary 6.6.4, lines 2854–2855, 3076–3096, 3141–3143 (ℤ-actions); ChaikaForni2026 lines 95–100"
+      "where": "Theorem 6.4.7, Lemma 6.6.2, Corollary 6.6.4, printed pp.64,69–70, lines 2854–2855,3076–3096,3141–3143 (ℤ-actions); ChaikaForni2026 lines 95–100; real-action criterion proved here"
      },
      "prerequisites": [
+      "target:12.1",
+      "target:12.2",
       "target:12.3",
       "target:12.4",
-      "tauceti:TauCeti.bochner_charFun_real",
-      "mathlib:ContinuousLinearMap.tendsto_birkhoffAverage_orthogonalProjection"
+      "target:12.4.1",
+      "tauceti:TauCeti.bochner_charFun_real"
      ],
      "api": [],
      "tests": [
@@ -2340,6 +2408,11 @@
        "name": "nonzero",
        "kind": "characterisation",
        "statement": "a ≠ 0 forces a non-constant eigenfunction."
+      },
+      {
+       "name": "circle_sign_projection",
+       "kind": "computation",
+       "statement": "Unit e₁ on AddCircle 1: σ=δ_(2π), correlation at 1/4=i, P₀e₁=0, P₁e₁=e₁ of squared norm 1."
       }
      ]
     },
@@ -2347,7 +2420,7 @@
      "id": "12.6",
      "kind": "example",
      "name": "Billiards.not_isWeaklyMixing_examples",
-     "statement": "No linear torus flow is weakly mixing; the billiard flow of a rational table is not; if all m_v = 1, F restricted to M_θ (trivial stabiliser) is conjugate to a linear flow on the torus S_P and not weakly mixing.",
+     "statement": "No linear torus flow is weakly mixing; the billiard flow of a rational table with Liouville probability is not. If all m_v=1, the restriction to M_θ for θ of trivial stabiliser, equipped with ν_θ=(|G|area P)⁻¹Σ_g Leb_P⊗δ_(gθ), is not weakly mixing. The comparison with the ordinary linear flow on the torus S_P equipped with area/area(S_P) is on invariant conull subsets, removing the leaves through marked regular vertices fixed by 10.4.",
      "hypotheses": [],
      "locator": {
       "source": "MasurTabachnikov2002",
@@ -2371,12 +2444,17 @@
       {
        "name": "equilateral",
        "kind": "computation",
-       "statement": "S_P a torus; eigenfunctions."
+       "statement": "S_P is a torus; with normalized area and on invariant conull subsets, the linear-flow characters are nonconstant eigenfunctions."
       },
       {
        "name": "genus_two",
        "kind": "non-example",
        "statement": "Nothing is claimed for genus ≥ 2 surfaces."
+      },
+      {
+       "name": "normalized_direction",
+       "kind": "computation",
+       "statement": "Square direction class: normalized whole-space residual 0. A nonconstant torus character retains its nonzero eigenvalue on the conull complement of the marked singular leaves, hence weak mixing still fails."
       }
      ]
     }
@@ -2389,7 +2467,7 @@
    "sections": [
     "C3.1"
    ],
-   "what": "The smooth next-collision map β in (s, v), the hypotheses of exists_billiard_periodic_reflection (comparison in 1.5, 2.5), and finite-volume recurrence (4.4.1)."
+   "what": "The smooth next-collision map β in (s,v), the hypotheses of exists_billiard_periodic_reflection (1.5, 2.5), the circular formula and rational-periodicity criterion transported in 2.5 and used by 5.6, and finite-volume recurrence (4.4.1)."
   },
   {
    "roadmap": "SymplecticGeometry/IntegrableSystems",
