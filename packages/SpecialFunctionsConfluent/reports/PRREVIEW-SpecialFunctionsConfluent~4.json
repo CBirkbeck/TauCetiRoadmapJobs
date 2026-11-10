@@ -1,0 +1,13 @@
+{
+  "review": {
+    "status": "accepted",
+    "reviewer": "independent-review-PRREVIEW-SpecialFunctionsConfluent~4",
+    "head": "af5a60bdf971d11cde046c9649b4871f01da286d",
+    "pr": 1995,
+    "folder": "SpecialFunctionsConfluent",
+    "date": "2026-11-10",
+    "findings": 0,
+    "blocking": 0,
+    "notes": "incremental re-review of 20 changed lines since dc84305. Both previous findings repaired (R01: 6.2 parameter exceptions for 13.2.23 and 13.14.20, checked against DLMF-13.2 line 966 and DLMF-13.14 line 811, three new Checks recomputed; R02: Layer 5 dependencies and the 7.2 Needs edge to 5.2). Gate re-run: all counters 0, OK; depcheck 0 problems, no UPWARD or CYCLE; Suggested.lean unchanged, elaborates with 42 sorry warnings and no error; no change outside the folder; adversarial table carries the previous rows and adds 4 computed rows for the changed passages."
+  }
+}
