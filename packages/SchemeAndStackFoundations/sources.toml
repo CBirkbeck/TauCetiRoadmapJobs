@@ -177,6 +177,19 @@ version_note = "paywalled; cited by its locator without the text"
 cited_for = ["5.9"]
 
 [[source]]
+id = "milne-av"
+locator_scheme = "page"
+locator = "Chapter III, §1, pp. 86–90"
+url = "https://www.jmilne.org/math/CourseNotes/AV.pdf"
+fetched_from = "https://www.jmilne.org/math/CourseNotes/AV.pdf"
+fetched_at = "2026-11-09T02:26:53Z"
+sha256 = "f5ca4e63e5092a4b102daad1470e4cbed5fe8f82115e3a28c8881e3f67f6aaef"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-09"
+cited_for = ["3.6"]
+
+[[source]]
 id = "ega-iv-3"
 authors = "Alexander Grothendieck"
 title = "Éléments de géométrie algébrique IV, Étude locale des schémas et des morphismes de schémas, troisième partie"
@@ -264,22 +277,6 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-09"
 version_note = "arXiv v1"
-cited_for = ["3.6"]
-
-[[source]]
-id = "milne-av"
-authors = "J. S. Milne"
-title = "Abelian Varieties (v2.00)"
-year = 2008
-locator_scheme = "theorem"
-locator = "Part III, Theorem 1.6, Remarks 1.4 (e) and 1.11, Propositions 1.13–1.14"
-url = "https://www.jmilne.org/math/CourseNotes/AV.pdf"
-fetched_from = "https://www.jmilne.org/math/CourseNotes/AV.pdf"
-fetched_at = "2026-11-09T06:35:00Z"
-sha256 = "f5ca4e63e5092a4b102daad1470e4cbed5fe8f82115e3a28c8881e3f67f6aaef"
-licence_class = "open-repository"
-status = "certified"
-accessed = "2026-11-09"
 cited_for = ["3.6"]
 
 [[source]]
