@@ -523,7 +523,7 @@ One proof route is as follows. Use the Betti–Hodge isomorphism, proved using t
 - The four-class Betti image contains the factor 2; removing it before division by its unit is an error.
 - Hodge surjectivity precedes the splitting; CM generation uses that splitting and is not used to prove it.
 - At q=5,k=1, the cyclotomic Minkowski bound (4/π)²·(4!/4⁴)·√125≈1.70<2 forces Pic(O₅)=0. The bound uses `NumberField.exists_ideal_in_class_of_norm_le` in `Mathlib/NumberTheory/NumberField/ClassNumber.lean`. Hence K₂(ℤ;ℤ/5)=0 by transfer surjectivity, and the four-class Betti value is 2·0=0. Individual CM types {1,2} and {−1,2} still have Hodge values 3 and 1; each same-type four-class Hodge difference is 0.
-- At q=p=691,k=6, B₁₂=−691/2730 and m=11<691. The Bernoulli nonvanishing contract, arithmetic finite generation and coefficient comparison give a nonzero x in the finite-coefficient arithmetic kernel, of order 691. Transfer surjectivity realizes x, so the four-class Betti image is 2x≠0 and 346·2x=692x=x. A zero map fails this test. (FGV §1.2, p. 2, FGV lines 80–85; §§2.7, 5.3.)
+- At q=p=691,k=6, B₁₂=−691/2730 and m=11<691. The Bernoulli nonvanishing contract, arithmetic finite generation and coefficient comparison give a nonzero x in the finite-coefficient arithmetic kernel, of order 691. Transfer surjectivity realizes x, so the four-class Betti image is 2x≠0 and 346·2x=692x=x. A zero map fails this test. (FGV §1.1.1, p. 2, FGV lines 80–85; §§2.7, 5.3.)
 
 *Needs:* §3.2; §3.3; §2.4; §0.4; GeometryOfNumbersAndQuadraticArithmetic §§6.5–6.8a, 6.10a–6.11; §3.4. The nonzero-kernel Check also uses ArithmeticKTheory §§3.1–3.5, 7.1–7.5 and IntegralIwasawaTheory §12.3’s Bernoulli nonvanishing contract.
 
