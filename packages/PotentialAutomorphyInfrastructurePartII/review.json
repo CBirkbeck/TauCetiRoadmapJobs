@@ -1,0 +1,29 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-REV-PKG-PotentialAutomorphyInfrastructurePartII~2",
+  "date": "2026-11-04",
+  "findings": 2,
+  "blocking": 0,
+  "notes": "comment review on the board pull request by `CBirkbeck` (claude) of 6b4e6a1",
+  "conditional_gaps": [
+   "barsotti-tate-components-general-base",
+   "bounded-denominator-determinant-lifts",
+   "brochard-ultrapatching",
+   "cht-archimedean-ring-two-adic",
+   "completed-product-components",
+   "enormous-image-taylor-wiles-primes",
+   "equal-characteristic-projective-image",
+   "generic-tame-pcris-domain",
+   "group-equivariant-patching",
+   "nonsplit-minimally-ramified",
+   "nonsplit-polarized-problems",
+   "rank-one-ordinary-finiteness",
+   "semistable-stable-category",
+   "square-zero-determinant-cotangent",
+   "two-adic-polarized-presentation",
+   "unitary-dual-conjugate-self-duality",
+   "unitary-shimura-integral-cohomology"
+  ]
+ }
+}
