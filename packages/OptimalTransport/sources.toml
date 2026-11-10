@@ -409,3 +409,111 @@ licence_class = "author-page"
 status = "certified"
 accessed = "2026-11-10"
 cited_for = ["7.3", "7.4"]
+
+[[source]]
+id = "bls-general-duality"
+authors = "Mathias Beiglboeck, Christian Leonard, Walter Schachermayer"
+title = "A General Duality Theorem for the Monge--Kantorovich Transport Problem"
+year = 2009
+arxiv = "0911.4347v2"
+locator_scheme = "theorem"
+locator = "Theorem 1.2; Example 1.1; Corollaries 3.1, 3.3; Theorems 3.4, 3.5"
+url = "https://arxiv.org/abs/0911.4347v2"
+fetched_from = "https://arxiv.org/pdf/0911.4347v2"
+fetched_at = "2026-11-10T07:58:18Z"
+sha256 = "906810fb4a6063c665d30f862e130495e675b10fc88d43a07ce22b376c7d100e"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-10"
+version_note = "arXiv v2"
+cited_for = ["2.5"]
+
+[[source]]
+id = "beiglbock-schachermayer-borel"
+authors = "Mathias Beiglböck, Walter Schachermayer"
+title = "Duality for Borel measurable cost functions"
+year = 2008
+arxiv = "0807.1468v1"
+locator_scheme = "theorem"
+locator = "Theorems 1 and 2"
+url = "https://arxiv.org/abs/0807.1468v1"
+fetched_from = "https://arxiv.org/pdf/0807.1468v1"
+fetched_at = "2026-11-10T07:58:25Z"
+sha256 = "cda2e8cf352b40c6b621000a9dc2507685ec54817f8236059cf1c1e337172c79"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-10"
+version_note = "arXiv v1"
+cited_for = ["2.5"]
+
+[[source]]
+id = "figalli-gigli-semiconvexity"
+authors = "Alessio Figalli, Nicola Gigli"
+title = "Local semiconvexity of Kantorovich potentials on non-compact manifolds"
+year = 2011
+doi = "10.1051/cocv/2010011"
+locator_scheme = "theorem"
+locator = "Theorem 1"
+url = "https://people.math.ethz.ch/~afigalli/papers-pdf/Local-semiconvexity-of-Kantorovich-potentials-on-non-compact-manifolds.pdf"
+fetched_from = "https://people.math.ethz.ch/~afigalli/papers-pdf/Local-semiconvexity-of-Kantorovich-potentials-on-non-compact-manifolds.pdf"
+fetched_at = "2026-11-10T08:10:56Z"
+sha256 = "523d98cddf30cbfa14bdcf7cb55e2daf0ac5a3e3452d31694c167519837fd9c2"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-10"
+version_note = "author-page preprint read; Theorem 1 is its only numbered theorem"
+cited_for = ["7.2, 7.3"]
+
+[[source]]
+id = "fathi-figalli-noncompact"
+authors = "Albert Fathi, Alessio Figalli"
+title = "Optimal transportation on non-compact manifolds"
+year = 2007
+arxiv = "0711.4519v1"
+locator_scheme = "theorem"
+locator = "Theorems 4.2 and 4.3"
+url = "https://arxiv.org/abs/0711.4519v1"
+fetched_from = "https://arxiv.org/pdf/0711.4519v1"
+fetched_at = "2026-11-10T08:11:01Z"
+sha256 = "0a27737bf8e1104f44bc5beec727774043c824d59c138f1cafa771bcd9359114"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-10"
+version_note = "arXiv v1"
+cited_for = ["7.3"]
+
+[[source]]
+id = "sturm-mms-i"
+authors = "Karl-Theodor Sturm"
+title = "On the geometry of metric measure spaces. I"
+year = 2006
+doi = "10.1007/s11511-006-0002-8"
+locator_scheme = "theorem"
+locator = "Theorem 4.9"
+url = "https://wt.iam.uni-bonn.de/fileadmin/WT/Inhalt/people/Karl-Theodor_Sturm/papers/paper47.pdf"
+fetched_from = "https://wt.iam.uni-bonn.de/fileadmin/WT/Inhalt/people/Karl-Theodor_Sturm/papers/paper47.pdf"
+fetched_at = "2026-11-10T08:11:02Z"
+sha256 = "ad94934b9c9894f61c006cf5c81bdf671803445cd6466c2a4fd6ff3164ed4939"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-10"
+version_note = "author-page preprint (SFB 611 Preprint 203, 2004) read; theorem number from the preprint"
+cited_for = ["14.6"]
+
+[[source]]
+id = "sturm-mms-ii"
+authors = "Karl-Theodor Sturm"
+title = "On the geometry of metric measure spaces. II"
+year = 2006
+doi = "10.1007/s11511-006-0003-7"
+locator_scheme = "theorem"
+locator = "Theorem 1.7"
+url = "https://wt.iam.uni-bonn.de/fileadmin/WT/Inhalt/people/Karl-Theodor_Sturm/papers/paper50.pdf"
+fetched_from = "https://wt.iam.uni-bonn.de/fileadmin/WT/Inhalt/people/Karl-Theodor_Sturm/papers/paper50.pdf"
+fetched_at = "2026-11-10T08:11:04Z"
+sha256 = "1d4b0d86b5f531796d2401e21d5d4252c70ff57173bb8926477fae90094e765b"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-10"
+version_note = "author-page extended preprint read; theorem number from the preprint"
+cited_for = ["14.6"]
