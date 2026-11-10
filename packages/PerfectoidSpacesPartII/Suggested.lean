@@ -1,6 +1,7 @@
 module
 
 public import Mathlib
+public import TauCeti.RingTheory.Perfectoid.Basic
 public import TauCeti.RingTheory.Huber.Basic
 public import TauCeti.RingTheory.Huber.Bounded
 public import TauCeti.RingTheory.Huber.PowerBounded
@@ -19,7 +20,8 @@ Stated here:
 * Bhatt's quantitative Riemann extension theorem, both clauses (README §1.2; Bhatt, *On the
   direct summand conjecture and its derived variant*, Theorem 4.2): the kernel clause
   `bhatt_riemann_extension_ker_almostZero` and the cokernel clause with the constant `c = pᵏm`,
-  `bhatt_quantitative_riemann_extension`. They are stated on Tau Ceti's presentationwise rational
+  `bhatt_quantitative_riemann_extension`, and the kernel clause without regularity
+  `bhatt_kernel_without_regularity` (README §1.4; Bhatt, Remark 4.4). They are stated on Tau Ceti's presentationwise rational
   localisation: `A⟨tⁿ/g⟩` is `TauCeti.Huber.PairOfDefinition.completedPlusSubring` of the
   presentation `({tⁿ, g}, g)`, the structure map is `toCompletionLoc`, and the restriction from
   `n + c` to `n` is `TauCeti.ValuationSpectrum.pairHomOfRationalSubsetSubset` of the inclusion of
@@ -35,8 +37,8 @@ Stated here:
 
 Headline theorems of the README that are not statable at the pins, and what each lacks:
 
-* The almost-pro-isomorphism clause of Bhatt's theorem, its derived form, its form without
-  regularity and its limit form (README §1.2(3), §1.3–§1.5). They are statements about the tower
+* The assembled almost-pro-isomorphism of Bhatt's theorem, its derived form and its limit form
+  (README §1.2(3), §1.3, §1.5). They are statements about the tower
   of rings `A⟨tⁿ/g⟩ = O⁺(X⟨tⁿ/g⟩)` as a pro-object, about derived tensor products over its terms,
   and about its limit. Tau Ceti builds each `O⁺` of a rational subset only presentationwise, on a
   completion whose type depends on the presentation, with comparison morphisms between pairs of
@@ -46,12 +48,11 @@ Headline theorems of the README that are not statable at the pins, and what each
   nested-systems theorem (README §3.6, §3.11): the uniform Banach localisations `A{λ/g}` with
   their transition maps, uniform limits, and the 2-limit category of perfectoid algebras on the
   annuli are missing.
-* Ramified almost purity (README §4.5): the almost categories of a basic setup, almost
-  perfectoid algebras and almost finite étale algebras are missing.
+* Ramified almost purity (README §4.5): the almost-module category is native, but almost
+  perfectoid algebra and almost finite étale algebra structures are missing.
 * André's perfectoid Abhyankar lemma (README §4.7): the largest perfectoid subalgebra of a
-  finite étale `A[1/g]`-algebra needs topologies on intermediate algebras, almost finite étale
-  algebras are missing, and Mathlib's `LinearMap.trace` is zero on finite projective modules that
-  are not free, so the trace clause needs a trace that the pins lack.
+  finite étale `A[1/g]`-algebra needs topologies on intermediate algebras and almost finite étale
+  algebra structures. The finite-projective trace is native as `LinearMap.projectiveTrace`.
 * Ramified almost flatness modulo `pᵐ` for the Kummer tower (README §5.12): its carriers (the
   integral closure of the completed tower in `B ⊗_A Â_∞∞[1/g]` and almost purity in the setup of
   `K°_∞[T^{1/p^∞}]` acting through the roots of `g`) need the perfectoid completion as an algebra
@@ -73,20 +74,6 @@ section Perfectoid
 open TauCeti.Huber
 
 variable (p : ℕ) [Fact p.Prime]
-
-/-- A complete Hausdorff Tate ring `R` is a *perfectoid Tate ring* if `R°` is bounded and some
-pseudouniformizer `ϖ ∈ R°` has `ϖ ^ p ∣ p` in `R°` with Frobenius `R°/ϖ → R°/ϖ ^ p` bijective,
-written elementwise. This is the predicate of PerfectoidSpaces P1.1, restated with the same fields so
-that the headlines of Layers 1 and 3 below can be stated. -/
-class IsPerfectoidTateRing (R : Type*) [CommRing R] [UniformSpace R] [IsUniformAddGroup R]
-    [IsTopologicalRing R] [IsTateRing R] [CompleteSpace R] [T2Space R] : Prop where
-  /-- `R` is uniform: the power-bounded subring `R°` is bounded. -/
-  isBounded_powerBoundedSubring : IsBounded (powerBoundedSubring R : Set R)
-  /-- A pseudouniformizer `ϖ ∈ R°` with `ϖ ^ p ∣ p` in `R°` and bijective Frobenius. -/
-  exists_pseudoUniformizer : ∃ ϖ : powerBoundedSubring R, IsPseudoUniformizer (ϖ : R) ∧
-    ϖ ^ p ∣ (p : powerBoundedSubring R) ∧
-    (∀ x : powerBoundedSubring R, ∃ y, ϖ ^ p ∣ x - y ^ p) ∧
-    ∀ y : powerBoundedSubring R, ϖ ^ p ∣ y ^ p → ϖ ∣ y
 
 /-! ## Layer 1: the quantitative Riemann extension theorem -/
 
@@ -113,13 +100,13 @@ theorem bhatt_riemann_extension_ker_almostZero
     (hKF : Function.Surjective
       (fun x : ModP (NormedField.valuation (K := K)).integer p ↦ x ^ p))
     (R : Type u) [CommRing R] [UniformSpace R] [IsUniformAddGroup R] [IsTopologicalRing R]
-    [IsTateRing R] [CompleteSpace R] [T2Space R] [IsPerfectoidTateRing p R]
+    [IsTateRing R] [CompleteSpace R] [T2Space R] [TauCeti.Perfectoid.IsPerfectoidTateRing p R]
     [Algebra K R] (hKR : Continuous (algebraMap K R))
     (t : ℕ → K) (ht0 : 0 < ‖t 0‖) (ht1 : ‖t 0‖ < 1) (htr : ∀ l, t (l + 1) ^ p = t l)
     (g : ℕ → R) (hgA : ∀ k, g k ∈ powerBoundedSubring R) (hgr : ∀ k, g (k + 1) ^ p = g k)
     (P : PairOfDefinition R)
     (hIplus : ∀ j : P.ringOfDefinition, j ∈ P.idealOfDefinition → (j : R) ∈ powerBoundedSubring R)
-    (hden : ∀ n : ℕ, HasDenominatorPower P {algebraMap K R (t 0) ^ n, g 0} (g 0)
+    (hden : ∀ n : ℕ, HasDenominatorPower P ({algebraMap K R (t 0) ^ n, g 0} : Finset R) (g 0)
       (Localization.Away (g 0)))
     (m : ℕ)
     (hgreg : ∀ a ∈ powerBoundedSubring R,
@@ -127,17 +114,17 @@ theorem bhatt_riemann_extension_ker_almostZero
       ∀ l : ℕ, ∃ b ∈ powerBoundedSubring R,
         algebraMap K R (t l) * a = algebraMap K R (t 0) ^ m * b)
     (n : ℕ) (a : R) (ha : a ∈ powerBoundedSubring R) :
-    letI := locUniformSpace P {algebraMap K R (t 0) ^ n, g 0} (g 0)
+    let _instLocUniform := locUniformSpace P ({algebraMap K R (t 0) ^ n, g 0} : Finset R) (g 0)
       (Localization.Away (g 0)) (hden n)
-    letI := isUniformAddGroup_locUniformSpace P {algebraMap K R (t 0) ^ n, g 0} (g 0)
+    let _instLocAdd := isUniformAddGroup_locUniformSpace P ({algebraMap K R (t 0) ^ n, g 0} : Finset R) (g 0)
       (Localization.Away (g 0)) (hden n)
-    letI := isTopologicalRing_locUniformSpace P {algebraMap K R (t 0) ^ n, g 0} (g 0)
+    let _instLocRing := isTopologicalRing_locUniformSpace P ({algebraMap K R (t 0) ^ n, g 0} : Finset R) (g 0)
       (Localization.Away (g 0)) (hden n)
-    (∃ y ∈ completedPlusSubring P (powerBoundedSubring R) {algebraMap K R (t 0) ^ n, g 0} (g 0)
+    (∃ y ∈ completedPlusSubring P (powerBoundedSubring R) ({algebraMap K R (t 0) ^ n, g 0} : Finset R) (g 0)
         (Localization.Away (g 0)) (hden n),
-      toCompletionLoc P {algebraMap K R (t 0) ^ n, g 0} (g 0) (Localization.Away (g 0)) (hden n)
+      toCompletionLoc P ({algebraMap K R (t 0) ^ n, g 0} : Finset R) (g 0) (Localization.Away (g 0)) (hden n)
           a =
-        toCompletionLoc P {algebraMap K R (t 0) ^ n, g 0} (g 0) (Localization.Away (g 0)) (hden n)
+        toCompletionLoc P ({algebraMap K R (t 0) ^ n, g 0} : Finset R) (g 0) (Localization.Away (g 0)) (hden n)
           (algebraMap K R (t 0) ^ m) * y) →
     ∀ l : ℕ, ∃ b ∈ powerBoundedSubring R,
       algebraMap K R (t l) * a = algebraMap K R (t 0) ^ m * b :=
@@ -161,52 +148,94 @@ theorem bhatt_quantitative_riemann_extension
     (hKF : Function.Surjective
       (fun x : ModP (NormedField.valuation (K := K)).integer p ↦ x ^ p))
     (R : Type u) [CommRing R] [UniformSpace R] [IsUniformAddGroup R] [IsTopologicalRing R]
-    [IsTateRing R] [CompleteSpace R] [T2Space R] [IsPerfectoidTateRing p R]
+    [IsTateRing R] [CompleteSpace R] [T2Space R] [TauCeti.Perfectoid.IsPerfectoidTateRing p R]
     [Algebra K R] (hKR : Continuous (algebraMap K R))
     (t : ℕ → K) (ht0 : 0 < ‖t 0‖) (ht1 : ‖t 0‖ < 1) (htr : ∀ l, t (l + 1) ^ p = t l)
     (g : ℕ → R) (hgA : ∀ k, g k ∈ powerBoundedSubring R) (hgr : ∀ k, g (k + 1) ^ p = g k)
     (P : PairOfDefinition R)
     (hIplus : ∀ j : P.ringOfDefinition, j ∈ P.idealOfDefinition → (j : R) ∈ powerBoundedSubring R)
-    (hden : ∀ n : ℕ, HasDenominatorPower P {algebraMap K R (t 0) ^ n, g 0} (g 0)
+    (hden : ∀ n : ℕ, HasDenominatorPower P ({algebraMap K R (t 0) ^ n, g 0} : Finset R) (g 0)
       (Localization.Away (g 0)))
     (hsub : ∀ n c : ℕ,
-      rationalSubset (powerBoundedSubring R) {algebraMap K R (t 0) ^ n, g 0} (g 0) ⊆
-        rationalSubset (powerBoundedSubring R) {algebraMap K R (t 0) ^ (n + c), g 0} (g 0))
+      rationalSubset (powerBoundedSubring R) ({algebraMap K R (t 0) ^ n, g 0} : Finset R) (g 0) ⊆
+        rationalSubset (powerBoundedSubring R) ({algebraMap K R (t 0) ^ (n + c), g 0} : Finset R) (g 0))
     (m k n : ℕ) :
-    letI := locUniformSpace P {algebraMap K R (t 0) ^ (n + p ^ k * m), g 0} (g 0)
+    let _instLocUniform := locUniformSpace P ({algebraMap K R (t 0) ^ (n + p ^ k * m), g 0} : Finset R) (g 0)
       (Localization.Away (g 0)) (hden (n + p ^ k * m))
-    letI := isUniformAddGroup_locUniformSpace P {algebraMap K R (t 0) ^ (n + p ^ k * m), g 0} (g 0)
+    let _instLocAdd := isUniformAddGroup_locUniformSpace P ({algebraMap K R (t 0) ^ (n + p ^ k * m), g 0} : Finset R) (g 0)
       (Localization.Away (g 0)) (hden (n + p ^ k * m))
-    letI := isTopologicalRing_locUniformSpace P {algebraMap K R (t 0) ^ (n + p ^ k * m), g 0} (g 0)
+    let _instLocRing := isTopologicalRing_locUniformSpace P ({algebraMap K R (t 0) ^ (n + p ^ k * m), g 0} : Finset R) (g 0)
       (Localization.Away (g 0)) (hden (n + p ^ k * m))
-    letI := isHuberRing_completion_locTopology P {algebraMap K R (t 0) ^ (n + p ^ k * m), g 0}
+    let _instLocHuber := isHuberRing_completion_locTopology P ({algebraMap K R (t 0) ^ (n + p ^ k * m), g 0} : Finset R)
       (g 0) (Localization.Away (g 0)) (hden (n + p ^ k * m))
-    letI := locUniformSpace P {algebraMap K R (t 0) ^ n, g 0} (g 0)
+    let _instLocUniform := locUniformSpace P ({algebraMap K R (t 0) ^ n, g 0} : Finset R) (g 0)
       (Localization.Away (g 0)) (hden n)
-    letI := isUniformAddGroup_locUniformSpace P {algebraMap K R (t 0) ^ n, g 0} (g 0)
+    let _instLocAdd := isUniformAddGroup_locUniformSpace P ({algebraMap K R (t 0) ^ n, g 0} : Finset R) (g 0)
       (Localization.Away (g 0)) (hden n)
-    letI := isTopologicalRing_locUniformSpace P {algebraMap K R (t 0) ^ n, g 0} (g 0)
+    let _instLocRing := isTopologicalRing_locUniformSpace P ({algebraMap K R (t 0) ^ n, g 0} : Finset R) (g 0)
       (Localization.Away (g 0)) (hden n)
-    letI := isHuberRing_completion_locTopology P {algebraMap K R (t 0) ^ n, g 0} (g 0)
+    let _instLocHuber := isHuberRing_completion_locTopology P ({algebraMap K R (t 0) ^ n, g 0} : Finset R) (g 0)
       (Localization.Away (g 0)) (hden n)
     ∀ x ∈ completedPlusSubring P (powerBoundedSubring R)
-        {algebraMap K R (t 0) ^ (n + p ^ k * m), g 0} (g 0) (Localization.Away (g 0))
+        ({algebraMap K R (t 0) ^ (n + p ^ k * m), g 0} : Finset R) (g 0) (Localization.Away (g 0))
         (hden (n + p ^ k * m)),
     ∀ l : ℕ, ∃ a ∈ powerBoundedSubring R,
-    ∃ y ∈ completedPlusSubring P (powerBoundedSubring R) {algebraMap K R (t 0) ^ n, g 0} (g 0)
+    ∃ y ∈ completedPlusSubring P (powerBoundedSubring R) ({algebraMap K R (t 0) ^ n, g 0} : Finset R) (g 0)
         (Localization.Away (g 0)) (hden n),
-      toCompletionLoc P {algebraMap K R (t 0) ^ n, g 0} (g 0) (Localization.Away (g 0)) (hden n)
+      toCompletionLoc P ({algebraMap K R (t 0) ^ n, g 0} : Finset R) (g 0) (Localization.Away (g 0)) (hden n)
           (g k * algebraMap K R (t l)) *
         (pairHomOfRationalSubsetSubset P (powerBoundedSubring R) hIplus
             (fun _ h ↦ mem_powerBoundedSubring.mp h)
-            {algebraMap K R (t 0) ^ (n + p ^ k * m), g 0} (g 0) (Localization.Away (g 0))
+            ({algebraMap K R (t 0) ^ (n + p ^ k * m), g 0} : Finset R) (g 0) (Localization.Away (g 0))
             (hden (n + p ^ k * m))
-            {algebraMap K R (t 0) ^ n, g 0} (g 0) (Localization.Away (g 0)) (hden n)
+            ({algebraMap K R (t 0) ^ n, g 0} : Finset R) (g 0) (Localization.Away (g 0)) (hden n)
             (hsub n (p ^ k * m))).toRingHom x =
-      toCompletionLoc P {algebraMap K R (t 0) ^ n, g 0} (g 0) (Localization.Away (g 0)) (hden n)
+      toCompletionLoc P ({algebraMap K R (t 0) ^ n, g 0} : Finset R) (g 0) (Localization.Away (g 0)) (hden n)
           a +
-        toCompletionLoc P {algebraMap K R (t 0) ^ n, g 0} (g 0) (Localization.Away (g 0))
+        toCompletionLoc P ({algebraMap K R (t 0) ^ n, g 0} : Finset R) (g 0) (Localization.Away (g 0))
           (hden n) (algebraMap K R (t 0) ^ m) * y :=
+  sorry
+
+open TauCeti.ValuationSpectrum TauCeti.Huber.PairOfDefinition in
+open Classical in
+/-- **Bhatt's Riemann extension theorem without regularity, kernel clause** (Bhatt,
+*On the direct summand conjecture and its derived variant*, Remark 4.4, p. 7; README §1.4).
+With the perfectoid field, Tate algebra, compatible roots and rational presentations of §1.2,
+but with no regularity assumption on `g`, for every `m`, `k`, `n` some offset `c` makes every
+element of the kernel at `n + c` killed modulo `tᵐ` by `g^{1/p^k} t^{1/p^k}`. The offset
+precedes the quantified kernel element. Together with the quantitative cokernel clause this
+is the almost-pro-isomorphism for `(tg)^{1/p^∞}`. -/
+theorem bhatt_kernel_without_regularity
+    (K : Type u) [NontriviallyNormedField K] [IsUltrametricDist K] [CompleteSpace K]
+    (hK : ∀ ε : ℝ, 1 < ε → ∃ x : K, 1 < ‖x‖ ∧ ‖x‖ < ε) (hKp : ‖(p : K)‖ < 1)
+    (hKF : Function.Surjective
+      (fun x : ModP (NormedField.valuation (K := K)).integer p ↦ x ^ p))
+    (R : Type u) [CommRing R] [UniformSpace R] [IsUniformAddGroup R] [IsTopologicalRing R]
+    [IsTateRing R] [CompleteSpace R] [T2Space R] [TauCeti.Perfectoid.IsPerfectoidTateRing p R]
+    [Algebra K R] (hKR : Continuous (algebraMap K R))
+    (t : ℕ → K) (ht0 : 0 < ‖t 0‖) (ht1 : ‖t 0‖ < 1) (htr : ∀ l, t (l + 1) ^ p = t l)
+    (g : ℕ → R) (hgA : ∀ k, g k ∈ powerBoundedSubring R) (hgr : ∀ k, g (k + 1) ^ p = g k)
+    (P : PairOfDefinition R)
+    (hIplus : ∀ j : P.ringOfDefinition, j ∈ P.idealOfDefinition → (j : R) ∈ powerBoundedSubring R)
+    (hden : ∀ n : ℕ, HasDenominatorPower P ({algebraMap K R (t 0) ^ n, g 0} : Finset R) (g 0)
+      (Localization.Away (g 0)))
+    (m k n : ℕ) :
+    ∃ c : ℕ,
+    let _instLocUniform := locUniformSpace P ({algebraMap K R (t 0) ^ (n + c), g 0} : Finset R) (g 0)
+      (Localization.Away (g 0)) (hden (n + c))
+    let _instLocAdd := isUniformAddGroup_locUniformSpace P ({algebraMap K R (t 0) ^ (n + c), g 0} : Finset R) (g 0)
+      (Localization.Away (g 0)) (hden (n + c))
+    let _instLocRing := isTopologicalRing_locUniformSpace P ({algebraMap K R (t 0) ^ (n + c), g 0} : Finset R) (g 0)
+      (Localization.Away (g 0)) (hden (n + c))
+    ∀ a ∈ powerBoundedSubring R,
+    (∃ y ∈ completedPlusSubring P (powerBoundedSubring R) ({algebraMap K R (t 0) ^ (n + c), g 0} : Finset R) (g 0)
+        (Localization.Away (g 0)) (hden (n + c)),
+      toCompletionLoc P ({algebraMap K R (t 0) ^ (n + c), g 0} : Finset R) (g 0) (Localization.Away (g 0)) (hden (n + c))
+          a =
+        toCompletionLoc P ({algebraMap K R (t 0) ^ (n + c), g 0} : Finset R) (g 0) (Localization.Away (g 0)) (hden (n + c))
+          (algebraMap K R (t 0) ^ m) * y) →
+    ∃ b ∈ powerBoundedSubring R,
+      (g k * algebraMap K R (t k)) * a = algebraMap K R (t 0) ^ m * b :=
   sorry
 
 /-! ## Layer 3: the perfectoid Riemann extension theorem -/
@@ -226,7 +255,7 @@ theorem riemann_extension_completeIntegralClosure
     (hKF : Function.Surjective
       (fun x : ModP (NormedField.valuation (K := K)).integer p ↦ x ^ p))
     (R : Type u) [CommRing R] [UniformSpace R] [IsUniformAddGroup R] [IsTopologicalRing R]
-    [IsTateRing R] [CompleteSpace R] [T2Space R] [IsPerfectoidTateRing p R]
+    [IsTateRing R] [CompleteSpace R] [T2Space R] [TauCeti.Perfectoid.IsPerfectoidTateRing p R]
     [Algebra K R] (hKR : Continuous (algebraMap K R))
     (g : ℕ → powerBoundedSubring R) (hg : ∀ m, g (m + 1) ^ p = g m)
     (hreg : ((g 0 : powerBoundedSubring R) : R) ∈ nonZeroDivisors R) :
@@ -344,18 +373,13 @@ theorem kummer_isPureHom [CharP k p] [PerfectRing k p] (g : KummerBase p k n) (h
       (kummerIntegralStage_mono p k n g (le_refl j) (zero_le : (0 : ℕ∞) ≤ l))).toRingHom :=
   sorry
 
-/-- A module `N` over `V` is *almost zero* for an ideal `m` of `V` if `m · N = 0`. -/
-def IsAlmostZero {V : Type u} [CommRing V] (m : Ideal V) (N : Type*) [AddCommGroup N]
-    [Module V N] : Prop :=
-  ∀ ε ∈ m, ∀ x : N, ε • x = 0
-
 /-- A `V`-module `M` is *almost flat* for `m` if tensoring with `M` turns injective maps of
 `V`-modules into maps with almost zero kernel: `M^a ⊗ −` is exact on almost modules (Gabber–Ramero,
 *Almost ring theory*, Definition 2.4.4(i)). -/
 def IsAlmostFlat {V : Type u} [CommRing V] (m : Ideal V) (M : Type u) [AddCommGroup M]
     [Module V M] : Prop :=
   ∀ ⦃N N' : Type u⦄ [AddCommGroup N] [Module V N] [AddCommGroup N'] [Module V N']
-    (f : N →ₗ[V] N'), Function.Injective f → IsAlmostZero m (LinearMap.ker (f.lTensor M))
+    (f : N →ₗ[V] N'), Function.Injective f → Module.IsTorsionBySet V (LinearMap.ker (f.lTensor M)) (m : Set V)
 
 /-- A `V`-module `M` is *almost faithfully flat* for `m` if it is almost flat and `M ⊗_V N`
 almost zero forces `N` almost zero: `M^a ⊗ −` is exact and faithful on almost modules (Gabber–Ramero,
@@ -363,7 +387,8 @@ almost zero forces `N` almost zero: `M^a ⊗ −` is exact and faithful on almos
 def IsAlmostFaithfullyFlat {V : Type u} [CommRing V] (m : Ideal V) (M : Type u)
     [AddCommGroup M] [Module V M] : Prop :=
   IsAlmostFlat m M ∧ ∀ (N : Type u) [AddCommGroup N] [Module V N],
-    IsAlmostZero m (M ⊗[V] N) → IsAlmostZero m N
+    Module.IsTorsionBySet V (M ⊗[V] N) (m : Set V) →
+      Module.IsTorsionBySet V N (m : Set V)
 
 /-- `ζ_j` is integral over `A`. -/
 theorem isIntegral_kummerVar_zeta (g : KummerBase p k n) (j : ℕ) :
@@ -396,9 +421,15 @@ normalized Kummer tower is almost faithfully flat over the normalized coordinate
 `A°_∞0`, for the ideal `K°°_∞ · A°_∞0`. -/
 theorem kummer_almost_faithfullyFlat [CharP k p] [PerfectRing k p] (g : KummerBase p k n)
     (hg : g ≠ 0) :
-    letI : Module (kummerIntegralStage p k n g ⊤ 0) (kummerIntegralStage p k n g ⊤ ⊤) :=
+    let _instStageModule : Module (kummerIntegralStage p k n g ⊤ 0) (kummerIntegralStage p k n g ⊤ ⊤) :=
       (Subalgebra.inclusion (kummerIntegralStage_mono p k n g (le_refl ⊤)
         (zero_le : (0 : ℕ∞) ≤ ⊤))).toRingHom.toModule
+    let _instCompletionModule : Module (kummerIntegralStage p k n g ⊤ 0)
+        (AdicCompletion (Ideal.span {(p : kummerIntegralStage p k n g ⊤ 0)})
+          (kummerIntegralStage p k n g ⊤ ⊤)) :=
+      AdicCompletion.instModuleOfIsScalarTower
+        (I := Ideal.span {(p : kummerIntegralStage p k n g ⊤ 0)})
+        (M := kummerIntegralStage p k n g ⊤ ⊤)
     IsAlmostFaithfullyFlat (kummerAlmostIdeal p k n g)
       (AdicCompletion (Ideal.span {(p : kummerIntegralStage p k n g ⊤ 0)})
         (kummerIntegralStage p k n g ⊤ ⊤)) :=
