@@ -1,0 +1,4 @@
+{"review": {"status": "needs_changes", "reviewer": "independent-review-PRREVIEW-SpinGeometry~26",
+            "head": "63ffb1c8cff0a2d773484d0552aebc668dd64527", "pr": 1674, "folder": "SpinGeometry", "date": "2026-11-10",
+            "findings": 3, "blocking": 0,
+            "notes": "Full re-review. Previous R01 and R02 repaired. Gate OK (worker build=0; my lake env lean exit 0, sorry only); depcheck 0 problems; simp probe fails, no padding; #check signatures match README. Seeded sample of 15 targets verified against nicolaescu and kirby text: all supported except G2.3/G5.2 (p. 633 lacks the graded-product laws, R02). 40 pinned declarations opened; all 222 README Lean names resolved (210 at pins, 12 roadmap names on main). Overlaps: 7 items checked, none actionable. Findings (all P3): R01 Levi-Civita connection and curvature identities cited to HopfRinow L1 / RiemannianGeometry R1 though pinned; R02 G2.3/G5.2 locator; R03 G1.2 Check says norm for squared norm."}}
