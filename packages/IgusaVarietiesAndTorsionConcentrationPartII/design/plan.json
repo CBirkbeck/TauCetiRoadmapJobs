@@ -1978,7 +1978,7 @@
  "gaps": [
   {
    "slug": "division-algebra-unitary-base-change",
-   "needs": "For the unitary similitude groups of central division algebras of degree n over a CM field F = F⁺𝒦 with an involution of the second kind (arbitrary signature, every locally isomorphic inner form of the PEL decomposition) and automorphic π with π_∞ cohomological for the trivial representation, an isobaric conjugate self-dual base change Π to GL_1(𝔸_𝒦) × GL_n(𝔸_F) with Π_v ≅ BC_v(π_v) outside the ramification and at ramified places split in 𝒦 where B splits, and Galois representations r_{π,ℓ} of every rank n, unramified at every place of F outside the ramification and ℓ, with Satake Frobenius polynomials and local–global compatibility away from ℓ at those places.",
+   "needs": "For the unitary similitude groups of central division algebras of degree n over a CM field F = F⁺𝒦 with an involution of the second kind (arbitrary signature, every locally isomorphic inner form of the PEL decomposition) and automorphic π with π_∞ cohomological for the trivial representation, an isobaric conjugate self-dual base change Π to GL_1(𝔸_𝒦) × GL_n(𝔸_F) with Π_v ≅ BC_v(π_v) outside the ramification and at ramified places split in 𝒦 where B splits, and Galois representations r_{π,ℓ} of every rank n, unramified at every place of F outside the ramification and ℓ, such that at each such place v the characteristic polynomial of a geometric Frobenius is that of rec(Π⁰_v|det|^{(1−n)/2})(Frob_v), namely ∏_j (X − q_v^{(n−1)/2} x_j) in the Satake parameters x_j of Π⁰_v, with local–global compatibility away from ℓ at those places.",
    "supplier": "AutomorphicGaloisRepresentationsPartII",
    "section": "AG2.2"
   },

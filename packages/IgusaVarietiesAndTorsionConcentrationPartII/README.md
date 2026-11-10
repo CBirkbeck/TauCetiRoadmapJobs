@@ -25,7 +25,9 @@ Ordinary Igusa formal schemes of Siegel varieties over `ℤ_p` (Boxer–Pilloni)
 
 `F = F⁺𝒦` is a CM field with `F⁺` totally real and `𝒦 ⊂ F` imaginary quadratic, and `c` is complex conjugation. `Spl_{F/F⁺}` is the set of rational primes all of whose places in `F⁺` split in `F`. `Spl_{𝒦/ℚ}` is the set of rational primes split in `𝒦`. `G` is the unitary similitude group of the datum. Its signature at `τ : F ↪ ℂ` is `(p_τ, q_τ)`, with `p_τ + q_τ = n` and `(p_{τc}, q_{τc}) = (q_τ, p_τ)`. The Hodge cocharacter is `μ`, with `μ(t) = diag(t^{(p_τ)}, 1^{(q_τ)})` in the `τ`-factor, and `E` is the reflex field. The dimension is `d = Σ_{τ∈Φ} p_τq_τ = ⟨2ρ, μ⟩ = dim S_K` for any CM type `Φ` of `F`.
 
-Newton classes lie in `B(G, μ⁻¹)` with the covariant normalization of the parent roadmap (slopes in `[−1, 0]`). We write `d_b = ⟨2ρ, ν_b⟩`, and the `μ`-ordinary class is the maximal element of `B(G, μ⁻¹)`. With these conventions `ν_b` of the `μ`-ordinary class is the dominant representative of `μ⁻¹`, so `d_b = d` exactly for that class.
+Newton classes lie in `B(G, μ⁻¹)` with the covariant normalization of the parent roadmap (slopes in `[−1, 0]`). We write `d_b = ⟨2ρ, ν_b⟩` for the dominant Newton point `ν_b`. The `μ`-ordinary class is the class whose Newton point is the Hodge average `(μ⁻¹)◇` of BunGAndNewtonStrata §1.26, that is, the average of the dominant representative of `μ⁻¹` over its orbit under the Frobenius action on the based root datum of `G_{ℚ_p}`. At the primes `p ∉ S` used here `G_{ℚ_p}` is unramified, hence quasi-split, so this class exists and is the maximal element of `B(G, μ⁻¹)` (BunGAndNewtonStrata §§1.25–1.26). Frobenius preserves the based root datum and fixes `2ρ`, so `⟨2ρ, (μ⁻¹)◇⟩ = ⟨2ρ, (μ⁻¹)_dom⟩ = ⟨2ρ, μ⟩ = d`, and `d_b = d` exactly for the `μ`-ordinary class. The average equals `(μ⁻¹)_dom` exactly when the conjugacy class of `μ` is defined over `ℚ_p`, for instance when `p` splits completely in `F`; at a prime split only in `𝒦` the two differ in general (§8.3, Checks).
+
+Relative Lie algebra cohomology of a representation `π_∞` of `G(ℝ)` is taken for the reduced pair `(𝔪_G, K_∞)`, where `K_∞` is a maximal compact subgroup of `G(ℝ)`, `A_G` is the maximal `ℚ`-split torus in the centre of `G`, `A_{G,∞}^0 = A_G(ℝ)^0`, `𝔪_G = 𝔤/𝔞_G` with `𝔞_G = Lie A_G(ℝ)`, and `π_∞` has trivial central character on `A_{G,∞}^0`. This is the pair `(𝔤, K_∞A_{G,∞}^0)`, and it is the pair of AutomorphicSpectralTheory §6.19 and ArithmeticLocallySymmetricSpaces ALS.5b.4. For the unitary similitude groups here `A_G` is the scalar `𝔾_m`, so the full pair `(𝔤, K_∞)` would multiply every cohomology space by `Λ^*(𝔞_G^*)`, of Euler characteristic `1 − 1 = 0`. "Cohomological for the trivial representation" means `H^*(𝔪_G, K_∞; π_∞) ≠ 0`.
 
 `ι_ℓ : ℚ̄_ℓ ≅ ℂ` is fixed. At an auxiliary prime `p = uu^c` split in `𝒦`, `ι_p : ℚ̄_p ≅ ℂ` is compatible with a chosen prime `𝔭 | p` of `E`. The primes of `F` above `u` are `𝔭_1, …, 𝔭_m`, and `S_i = {τ : F ↪ ℂ | ι_p⁻¹ ∘ τ induces 𝔭_i}`. ([CS17] prints `ι_p ∘ τ` in Theorem 5.5.7 and Corollary 5.6.3, CS17 lines 3979 and 4103. That composite is not defined, since `τ` lands in `ℂ` and `ι_p` has source `ℚ̄_p`.)
 
@@ -83,7 +85,7 @@ Library declarations are cited at the pinned Mathlib and Tau Ceti. A `gap:` cont
 - AG2.3 «Arbitrary regular conjugate-self-dual existence»: Galois representations of regular algebraic conjugate self-dual cuspidal representations of `GL_m(𝔸_F)` of every rank.
 - AG2.5 «Caraiani's full away-prime compatibility» and «Temperedness of regular unitary-type cuspidal forms»: local–global compatibility at every place not above `ℓ`.
 - AG2.7 «Dual and character-twist Hecke comparison», «Residual representation of `π`», «Strong local decomposed genericity» and «Infinitely many decomposed generic primes».
-- What AutomorphicGaloisRepresentationsPartII must provide (gap:division-algebra-unitary-base-change). Let `G` be the unitary similitude group of a central division algebra `B` of degree `n` over a CM field `F = F⁺𝒦` with an involution of the second kind, of arbitrary signature, and each locally isomorphic inner form occurring in the PEL decomposition. For every automorphic `π` on such a group with `π_∞` cohomological for the trivial representation, it must give the following. There is an isobaric conjugate self-dual `Π` on `GL_1(𝔸_𝒦) × GL_n(𝔸_F)` with `Π_v ≅ BC_v(π_v)` at every finite place outside the ramification of `π` and `G`, and at the ramified places split in `𝒦` where `B` splits. There are Galois representations `r_{π,ℓ}` of every rank `n`, unramified at every place of `F` outside the ramification and `ℓ`, with Frobenius polynomials given by Satake parameters and local–global compatibility away from `ℓ` at those places. AG2.2's assembly is stated for rank `2n` and B = F. [Shin-BCU] Theorem 1.1, cited by [CS17] §5.6 (CS17 line 4092), is stated for a hermitian form on an `n`-dimensional `F`-space (Shin-BCU lines 13–17), that is B = F. It is needed by §10.4 and, through it, by §§10.5–10.6 and the Case 1 parts of Layer 11.
+- What AutomorphicGaloisRepresentationsPartII must provide (gap:division-algebra-unitary-base-change). Let `G` be the unitary similitude group of a central division algebra `B` of degree `n` over a CM field `F = F⁺𝒦` with an involution of the second kind, of arbitrary signature, and each locally isomorphic inner form occurring in the PEL decomposition. For every automorphic `π` on such a group with `π_∞` cohomological for the trivial representation, it must give the following. There is an isobaric conjugate self-dual `Π` on `GL_1(𝔸_𝒦) × GL_n(𝔸_F)` with `Π_v ≅ BC_v(π_v)` at every finite place outside the ramification of `π` and `G`, and at the ramified places split in `𝒦` where `B` splits. There are Galois representations `r_{π,ℓ}` of every rank `n`, unramified at every place `v` of `F` outside the ramification and `ℓ`, such that at each such `v` the characteristic polynomial of a geometric Frobenius is that of `rec(Π⁰_v|det|^{(1−n)/2})(Frob_v)`, namely `∏_j (X − q_v^{(n−1)/2}x_j)` in the Satake parameters `x_j` of `Π⁰_v`, with local–global compatibility away from `ℓ` at those places. AG2.2's assembly is stated for rank `2n` and B = F. [Shin-BCU] Theorem 1.1, cited by [CS17] §5.6 (CS17 line 4092), is stated for a hermitian form on an `n`-dimensional `F`-space (Shin-BCU lines 13–17), that is B = F. It is needed by §10.4 and, through it, by §§10.5–10.6 and the Case 1 parts of Layer 11.
 
 ### From TauCetiRoadmap.IntegralHeckeAndGaloisDeterminants
 
@@ -92,14 +94,14 @@ Library declarations are cited at the pinned Mathlib and Tau Ceti. A `gap:` cont
 ### From TauCetiRoadmap.BunGAndNewtonStrata
 
 - §1.13: the algebraic `σ`-centralizer `J_b`.
-- §§1.23, 1.25 and 1.26: acceptable classes `B(G, {μ})`, the unique maximum and the ordinary class. These sections distinguish ordinarity from maximality. For quasi-split `G` the ordinary class exists, and it is then the maximum.
+- §§1.23, 1.25 and 1.26: acceptable classes `B(G, {μ})`, the unique maximum and the ordinary class, defined by equality of the Newton point with the Hodge average `μ◇`. These sections distinguish ordinarity from maximality. For quasi-split `G` the ordinary class exists, and it is then the maximum.
 - §1.30: `B(G₁ × G₂) = B(G₁) × B(G₂)` and, for unramified `Res_{E/F} H`, the norm bijection `B(G) ≅ B(H)` with `J_b^G ≅ Res_{E/F} J^H_{Nm(b)}`. The bound on `H` is the sum of the component cocharacters.
 - §1.32: [CS17] Lemma 5.5.8. For `GL_n` over a `p`-adic field and minuscule `μ`, exactly one class of `B(GL_n, μ⁻¹)` has quasi-split `J_b`, namely the ordinary class.
 
 ### From TauCetiRoadmap.PELModuli
 
 - §§M0.2, M0.6, M0.7, M0.9, M0.13, M0.16–M0.17 and M0.27: Albert types, rational PEL data, the similitude group and `ker¹(ℚ, G)`, signatures, reflex fields and `τ`-parts at an unramified prime.
-- §M1.13: level change and the Hecke action. §§M2.8, M2.10 and M2.11: representability and smoothness, the Kodaira–Spencer isomorphism and relative dimension, and properness when `End_B(V)` is a division algebra.
+- §M1.9: the characteristic-zero adelic moduli problem at an arbitrary compact open level. §M1.13: level change and the Hecke action. §§M2.8, M2.10 and M2.11: representability and smoothness, the Kodaira–Spencer isomorphism and relative dimension, and properness when `End_B(V)` is a division algebra.
 - §§M3.1 and M3.4: forms of the skew-hermitian module classified by `ker¹(ℚ, G)`, and `S_K(ℂ) = ⊔_j Γ_j\X` over the inner forms. §M4.3: the PEL generic fibres are canonical models, with the `ker¹` decomposition over the reflex field. §M5.5: unitary PEL data with prescribed signatures. §M6.1: level-forgetting and Hecke maps are finite étale.
 
 ### From TauCetiRoadmap.ShimuraCompactifications
@@ -120,7 +122,7 @@ Library declarations are cited at the pinned Mathlib and Tau Ceti. A `gap:` cont
 
 ### From TauCetiRoadmap.AutomorphicSpectralTheory
 
-- §4.7: discrete spectral decomposition for compact quotients. §§6.17, 6.19 and 6.20: the trace formula for compact quotients, real Euler–Poincaré test functions, and Arthur's `L²`-Lefschetz traces of Hecke operators.
+- §4.7: discrete spectral decomposition for compact quotients. §§6.17, 6.19 and 6.20: the trace formula for compact quotients, real Euler–Poincaré test functions, and Arthur's `L²`-Lefschetz traces of Hecke operators. The Euler–Poincaré functions and characteristics are those of the reduced pair `(𝔪_G, K_∞)`, `𝔪_G = 𝔤/𝔞_G`, on the central quotient by `A_{G,∞}^0` with trivial central character there (Conventions).
 
 ### From TauCetiRoadmap.AutomorphicLFunctionsAndLocalFactors
 
@@ -128,7 +130,7 @@ Library declarations are cited at the pinned Mathlib and Tau Ceti. A `gap:` cont
 
 ### From TauCetiRoadmap.ArithmeticLocallySymmetricSpaces
 
-- ALS.5a.2 and ALS.5a.4: Poincaré–Verdier duality at finite level, and the Hecke adjoint `⟨x, [KgK]y⟩ = ⟨[Kg⁻¹K]x, y⟩`. ALS.5b.4: the automorphic comparison (Matsushima's formula in the compact case).
+- ALS.5a.2 and ALS.5a.4: Poincaré–Verdier duality at finite level, and the Hecke adjoint `⟨x, [KgK]y⟩ = ⟨[Kg⁻¹K]x, y⟩`. ALS.5b.4: the automorphic comparison in `(𝔪_G, K_∞)`-cohomology (Matsushima's formula in the compact case).
 
 ### From TauCetiRoadmap.EtaleDualityAndPerverseSheaves
 
@@ -167,25 +169,26 @@ Define a compact unitary PEL datum of Caraiani–Scholze type as follows. Take a
 - Case 1, Kottwitz's simple Shimura varieties. `B` is a central division algebra over `F` of degree `n`, `*` is an involution of the second kind (restricting to `c` on `F`), and `V ≅ B` is the simple left `B`-module.
 - Case 2. `B = F`, `* = c`, and `V` is an `n`-dimensional `F`-vector space with an alternating form that is hermitian for `c`. Moreover `F⁺ ≠ ℚ`, `G` is quasi-split at every finite place, and every rational prime ramified in `F` lies in `Spl_{F/F⁺}`.
 
-In both cases `G^ad` is anisotropic over `ℚ`; this is automatic in Case 1. The datum also fixes the following:
+In both cases `G^ad` is anisotropic over `ℚ`; this is automatic in Case 1. The signatures `(p_τ, q_τ)`, the Hodge cocharacter `μ` and the reflex field `E` are functions of the rational PEL datum, not further choices. The moduli problem `S_K` is defined for every neat compact open `K ⊂ G(𝔸_f)` (PELModuli §M1.9), and the Hecke algebra `𝕋^S` for every finite set `S` of primes. These are parameters, which the datum does not store. The theorems below take them with the following hypotheses, stated where they are used:
 
-- the signatures `(p_τ, q_τ)`, the Hodge cocharacter `μ` and the reflex field `E`;
 - a finite set `S` of rational primes outside which `F` and `G` are unramified, with `S ⊂ Spl_{F/F⁺}` in Case 2;
 - a neat compact open `K = K_SK^S ⊂ G(𝔸_f)` with `K^S` a product of hyperspecial maximal compact subgroups `K_q`.
+
+Thus `𝕋^S` (§8.4) depends on the datum and `S`, and `S_K` on the datum and `K`. Layers 9–11 also use other sets and levels of the same datum (`S ∪ {p}`, `S′ ⊇ S`, `K^pK′_p`, `K′ ⊂ K`).
 
 `S_K` is the PEL moduli problem over `E`. It is the disjoint union over `a ∈ ker¹(ℚ, G)` of the Shimura varieties `Sh_{K^{(a)}}(G^{(a)}, X^{(a)})`, where the `G^{(a)}` are locally isomorphic to `G` and the levels are transported through fixed local identifications. Put `d = dim S_K = Σ_{τ∈Φ} p_τq_τ`. Record the two cases as two constructors of one structure, so that every statement of Layers 9–11 names the case it uses. The rational PEL datum, its similitude group, signatures and reflex field come from PELModuli §§M0.6, M0.7, M0.13 and M0.16. Type (A) is the second-kind case of PELModuli §M0.2. The `ker¹` decomposition is PELModuli §§M3.1 and M4.3, and the dimension formula is PELModuli §M2.10.
 
 The API:
 
-- A Case 1 datum is built from a rational PEL datum with positivity and Shimura homomorphism `h`, a central division algebra over `F` with an involution of the second kind, and an isomorphism `V ≅ B`.
+- A Case 1 datum is built from a rational PEL datum with positivity and Shimura homomorphism `h`, a central division algebra over `F` with an involution of the second kind, and the condition that `V` is free of rank one as a left `B`-module.
 - A Case 2 datum is built from a rational PEL datum with `B = F`, the condition `F⁺ ≠ ℚ`, quasi-splitness at finite places, the ramification condition, and a proof that `G^ad` is anisotropic over `ℚ`.
 - The signature is a function of `τ` with `p_τ + q_τ = n` whose value at `τ ∘ c` is the swap of its value at `τ`.
 - The dimension `Σ_{τ∈Φ} p_τq_τ` does not depend on the CM type `Φ`, and it equals `⟨2ρ, μ⟩`.
 - The underlying rational PEL datum has type (A) in the classification of PELModuli §M0.2.
 - The moduli problem `S_K` is the disjoint union over `ker¹(ℚ, G)` of the Shimura varieties of the inner forms `G^{(a)}` (PELModuli §§M3.4 and M4.3).
-- Two data are equal when their underlying rational PEL data, fields `𝒦` and case tags agree, since the remaining hypotheses are propositions.
+- Two data are equal when their underlying rational PEL data (with the identification of the centre of `B` with `F`), subfields `𝒦 ⊂ F` and case tags agree, since every other field is a proposition: in Case 1, that `B` is a division algebra of degree `n` with an involution of the second kind and `V` is free of rank one over `B`; in Case 2, `B = F`, `* = c`, `F⁺ ≠ ℚ`, quasi-splitness, the ramification condition and anisotropy. The set `S` and the level `K` are parameters, not fields, and the rule says nothing about them.
 
-*Needs:* PELModuli §§M0.2, M0.6, M0.7, M0.13, M0.16, M2.10, M3.1, M3.4, M4.3, M5.5; Mathlib `NumberField.IsCMField`, `NumberField.maximalRealSubfield`.
+*Needs:* PELModuli §§M0.2, M0.6, M0.7, M0.13, M0.16, M1.9, M2.10, M3.1, M3.4, M4.3, M5.5; Mathlib `NumberField.IsCMField`, `NumberField.maximalRealSubfield`.
 
 **Checks.**
 
@@ -194,10 +197,11 @@ The API:
 - The signature at `τ ∘ c` is `(q_τ, p_τ)`. A structure storing an independent signature at `τc` would admit `(1, 2)` at both `τ` and `τc`, which corresponds to no hermitian form.
 - `F = 𝒦` (`F⁺ = ℚ`) with `B = F` is not a Case 2 datum. Without the condition `F⁺ ≠ ℚ` the trace comparison of Layer 9, which needs `[F⁺:ℚ] ≥ 2` (EndoscopicTransferAndUnitaryTraceComparison §6.15), would be applied outside its range.
 - Case 2 with `n = 3` and signature `(1, 2)` at every `τ ∈ Φ` is not compact. A hermitian space of dimension at least 3 is isotropic at every finite place, so by the Hasse principle for hermitian forms it is isotropic once it is indefinite at every real place of `F⁺`, and then `G^ad` is isotropic. A definition that omits the anisotropy hypothesis in Case 2 would admit this non-proper example.
+- Keep a Case 1 datum `D` and take `S` and `S ∪ {q}` for a prime `q ∉ S ∪ {ℓ}` split in `𝒦`. Both sets satisfy the hypotheses on `S`, the datum is the same, and the Hecke algebras differ: `𝕋^S` contains the spherical factor at `q` and `𝕋^{S∪{q}}` does not. A structure that stored `S` but left it out of the extensionality rule would identify `(D, S)` with `(D, S ∪ {q})`, hence `𝕋^S` with `𝕋^{S∪{q}}`. Likewise two distinct neat levels `K ≠ K′` give different moduli problems `S_K` and `S_{K′}` of the same datum.
 
 ### 8.2 Smooth proper integral models at good primes
 
-Let a compact unitary datum (Case 1 or 2) be given, and let `p ∉ S`, so that `F` and `G` are unramified at `p` (in Case 1, `B` splits at every place of `F` above `p`). Let `K = K_pK^p` with `K_p` hyperspecial and `K^p` neat, and let `𝔭 | p` be a prime of `E`. Prove that the PEL moduli problem is represented by a scheme `𝒮_K` over `O_{E,𝔭}` that is smooth and proper of relative dimension `d`, with generic fibre `S_K ⊗_E E_𝔭`. Prove also that the prime-to-`p` Hecke correspondences extend to finite étale correspondences of the `𝒮_K` ([CS17] §5.1, pp. 730–731; §4.4, Theorem 4.4.4, p. 729, CS17 line 3236; §6.3, p. 756). In particular every compact unitary datum satisfies the properness hypothesis of the compact fibre theorem (IgusaVarietiesAndTorsionConcentration §3.17).
+Let a compact unitary datum (Case 1 or 2) and a set `S` as in §8.1 be given, and let `p ∉ S`, so that `F` and `G` are unramified at `p` (in Case 1, `B` splits at every place of `F` above `p`). Let `K = K_pK^p` with `K_p` hyperspecial and `K^p` neat, and let `𝔭 | p` be a prime of `E`. Prove that the PEL moduli problem is represented by a scheme `𝒮_K` over `O_{E,𝔭}` that is smooth and proper of relative dimension `d`, with generic fibre `S_K ⊗_E E_𝔭`. Prove also that the prime-to-`p` Hecke correspondences extend to finite étale correspondences of the `𝒮_K` ([CS17] §5.1, pp. 730–731; §4.4, Theorem 4.4.4, p. 729, CS17 line 3236; §6.3, p. 756). In particular every compact unitary datum satisfies the properness hypothesis of the compact fibre theorem (IgusaVarietiesAndTorsionConcentration §3.17).
 
 Representability and smoothness at a good prime are PELModuli §M2.8, with relative dimension from §M2.10. Representability gives a smooth algebraic space, which is a quasi-projective scheme by ShimuraCompactifications §7.18. For properness, choose a projective admissible fan, which is a complete collection, for ShimuraCompactifications §7.3. Its toroidal compactification is proper (§7.5), and its boundary is indexed by cusp labels (§1.4), which come from rational parabolic subgroups of `G`. Anisotropy of `G^ad` leaves no proper rational parabolic, hence no boundary, so the toroidal compactification equals the moduli space. In Case 1 PELModuli §M2.11 gives properness directly, since `End_B(V) = B^op` is a division algebra. The prime-to-`p` Hecke correspondences are PELModuli §§M1.13 and M6.1.
 
@@ -230,6 +234,7 @@ The API:
 
 - If `p` splits completely in `F`, then `m = [F⁺:ℚ]` and every `S_i` is a singleton. A definition of `S_i` through the primes of `F⁺` instead of `F` would put `τ` and `τc` in the same set.
 - Take `S_i = {τ, τ′}` with `(p_τ, q_τ) = (1, 1)` and `(p_{τ′}, q_{τ′}) = (2, 0)` (`n = 2`, `c_i = 1`). The Shapiro bound is `diag(t², t) = μ_{i,τ} + z`. Its Kottwitz invariant is `−3`, while that of `μ_{i,τ}⁻¹` is `−1`. Translation by `p` (determinant valuation `2`) carries one set onto the other. Without the translation the two sets would have different `κ`, so they could not be identified.
+- In the same example `F_{𝔭_i}/ℚ_p` is unramified quadratic, `G_i ⊗ ℚ̄_p ≅ GL_2 × GL_2` with factors indexed by `τ, τ′`, and Frobenius exchanges the factors. The dominant representative of `μ_i⁻¹` is `((0, −1), (−1, −1))`, which is not Frobenius-invariant and so is the Newton point of no class. The `μ`-ordinary Newton point is its average `((−1/2, −1), (−1/2, −1))`. With `2ρ = (1, −1)` in each factor both vectors pair to `1 + 0 = 1/2 + 1/2 = 1 = p_τq_τ + p_{τ′}q_{τ′}`, so `d_b = d` survives the averaging. A convention setting `ν_b = (μ⁻¹)_dom` would leave this factor with no `μ`-ordinary class.
 - For the Harris–Taylor signature with `n ≥ 2`, exactly one `S_i` contains an embedding with `p_τq_τ ≠ 0`, namely the one containing `τ₀` or `τ₀c`, whichever lies over `u`. For `n = 1` every `B(G_i, μ_i⁻¹)` is a point.
 - The printed set `{τ | ι_p ∘ τ induces 𝔭_i}` is not defined. A definition through `ι_p ∘ τ` cannot be formed, and through `τ ∘ ι_p` it would need an embedding `F ↪ ℚ̄_p` as input instead of `τ`.
 
@@ -309,7 +314,7 @@ The API:
 - `IsStrongGenericAt r v` does not depend on the choice of `Q` above `v` or of the Frobenius at `Q`. Two choices of `Q` are conjugate, and two Frobenius elements at `Q` differ by inertia, which `r` kills.
 - `IsStrongGenericAt r v` implies the weaker condition `α_i ≠ q_vα_j` for `i ≠ j`. The converse holds when the `α_i` are pairwise distinct.
 - `IsStrongGenericAt` is preserved by `r ↦ r^∨ ⊗ χ` for every character `χ` of `Gal(L/F)` unramified at `v`. Applied to `χ = ε̄^{1−n}` (after enlarging `L` by `ζ_ℓ`), this gives the invariance under `𝔪 ↦ 𝔪^∨` of §8.5.
-- If `p` splits completely in `F` and `ρ̄` is unramified and decomposed generic at all places above `p`, then every `𝔭 | p` in `E` gives an auxiliary pair, because every `S_i` is a singleton.
+- If `p ∉ S ∪ {ℓ}` splits completely in `F` and `ρ̄` is unramified and decomposed generic at all places above `p`, then every `𝔭 | p` in `E` gives an auxiliary pair, because `p` splits in `𝒦` and every `S_i` is a singleton. The hypothesis `p ∉ S` is not implied by the others, since `S` may contain good primes.
 - If `p_τq_τ = 0` for every `τ` (definite `G_ℝ`), every `(p, 𝔭)` with `p ∈ Spl_{𝒦/ℚ} ∖ (S ∪ {ℓ})` is an auxiliary pair.
 - The auxiliary-pair condition for `ρ̄` holds if and only if it holds for `ρ̄^∨ ⊗ ε̄^{1−n}` and for `ρ̄^{ss}`.
 
@@ -317,17 +322,18 @@ The API:
 
 **Checks.**
 
-- For `n = 1` there are no pairs `i ≠ j`. `IsStrongGenericAt` then reduces to `v ∤ ℓ` and unramifiedness, and the auxiliary-pair condition reduces to the cardinality condition on the `S_i`. A definition that also asked `α_1 ≠ q_v` would wrongly exclude characters.
+- For `n = 1` there are no pairs `i ≠ j`. `IsStrongGenericAt` then reduces to `v ∤ ℓ` and unramifiedness. Every signature is `(1, 0)` or `(0, 1)`, so no `S_i` contains a `τ` with `p_τq_τ ≠ 0`, and the auxiliary-pair condition reduces to `p ∈ Spl_{𝒦/ℚ} ∖ (S ∪ {ℓ})`. A definition that also asked `α_1 ≠ q_v` would wrongly exclude characters.
 - For `n = 2`, `q_v = 7` and `ℓ = 11`, repeated eigenvalues `{3, 3}` fail strong genericity (ratio `1`). They satisfy the weaker condition, since `3 ≠ 7·3 = 21 ≡ 10`. A definition with only the weaker condition accepts this example. The weaker condition is satisfied here because `q_v ≢ 1` modulo `ℓ`.
 - For `q_v = 7`, `ℓ = 11` and eigenvalues `{1, 2}`, the ordered ratios are `2` and `2⁻¹ = 6`, neither in `{1, 7}`, so the condition holds. Eigenvalues `{1, 7}` fail it.
 - If some `S_i` contains two embeddings with `p_τq_τ ≠ 0`, the pair is not auxiliary, whatever `ρ̄` is.
+- Case 1 with `n = 1`, `B = F = 𝒦 = ℚ(i)`, `ℓ = 3`, trivial `ρ̄` and `S = {2, 5}`. The prime `5 = (2 + i)(2 − i)` splits completely in `F` and `ρ̄` is unramified and decomposed generic at both places above it (rank one, `5 ≠ 3`), but `5 ∈ S`, so `(5, 𝔭)` is not an auxiliary pair; the complete-splitting implication of the API does not apply because its hypothesis `p ∉ S ∪ {ℓ}` fails. For `p = 13 = (3 + 2i)(3 − 2i) ∉ S ∪ {3}` both the hypothesis and the conclusion hold.
 - For `v` above `ℓ` the predicate fails by definition. Without the condition `ℓ ∉ v`, [CS17] Definition 1.9 (which assumes `ℓ ≠ p`) would be applied outside its range.
 
 ### 8.8 Existence of auxiliary primes
 
 Prove the following two statements ([CS17] Remarks 6.3.2–6.3.3, p. 758, CS17 lines 4422–4434, with footnote 33; Theorem 1.1 and Remark 1.5, pp. 651–652, CS17 lines 89–112).
 
-(a) `infinite_setOf_isCompletelySplitStrongGenericPrime`: for every finite Galois realization `r`, if some rational prime satisfies `IsCompletelySplitStrongGenericPrime r`, infinitely many do. In particular such primes can be chosen outside any finite set, for example outside `S ∪ {ℓ}`. For each such `p` and every `𝔭 | p`, `(p, 𝔭)` is a CS-auxiliary pair for `ρ̄`.
+(a) `infinite_setOf_isCompletelySplitStrongGenericPrime`: for every finite Galois realization `r`, if some rational prime satisfies `IsCompletelySplitStrongGenericPrime r`, infinitely many do. In particular such primes can be chosen outside any finite set, for example outside `S ∪ {ℓ}`. For each such `p ∉ S ∪ {ℓ}` and every `𝔭 | p`, `(p, 𝔭)` is a CS-auxiliary pair for `ρ̄` (§8.7).
 
 (b) `infinite_setOf_isStrongGenericAt_degree_one`: if `IsStrongGenericAt r v₀` holds at one prime `v₀` of `𝓞 F` of any residue degree, it holds at infinitely many primes `v` with `#(𝓞 F/v)` prime. Consequently, suppose the signature of `G` is definite at all infinite places of `F⁺` but one, and `ρ̄` is unramified and decomposed generic at some finite place. Then there are infinitely many degree-one places `v` over a rational prime `p ∉ S ∪ {ℓ}` at which `ρ̄` is unramified and decomposed generic. Such a `p` is split in `𝒦`. Let `u` be the place of `𝒦` below `v`. Choose `ι_p`, hence `𝔭`, so that `ι_p⁻¹ ∘ τ₀` induces `v` for the embedding `τ₀` with `p_{τ₀}q_{τ₀} ≠ 0` lying over `u`. Then `(p, 𝔭)` is a CS-auxiliary pair.
 
@@ -347,7 +353,7 @@ The other theorems of the layer have these degenerate and boundary cases.
 
 ### Dependencies
 
-PELModuli §§M0.2, M0.6, M0.7, M0.13, M0.16, M0.27, M1.13, M2.8, M2.10, M2.11, M3.1, M3.4, M4.3, M5.5, M6.1; ShimuraCompactifications §§1.4, 7.3, 7.5, 7.18; IgusaVarietiesAndTorsionConcentration §§0.11, 1.3, 1.7, 5.1, 5.2; BunGAndNewtonStrata §§1.13, 1.23, 1.30; SmoothRepresentationsOfLocalGroups SR.1.2, SR.4.1, SR.4.3; IntegralHeckeAndGaloisDeterminants §3b.1; AutomorphicGaloisRepresentationsPartII AG2.0, AG2.7; ArithmeticGaloisRepresentations §§1.8, 5.1, 5.9; EtaleDualityAndPerverseSheaves §0.5; ArithmeticLocallySymmetricSpaces ALS.5a.2, ALS.5a.4; Mathlib `NumberField.IsCMField`, `HeckeRing`, `IsArithFrobAt`; Tau Ceti `HeckeCosetModule.instRingHeckeRing`, `HeckeAntiInvolution.ofAmbient`.
+PELModuli §§M0.2, M0.6, M0.7, M0.13, M0.16, M0.27, M1.9, M1.13, M2.8, M2.10, M2.11, M3.1, M3.4, M4.3, M5.5, M6.1; ShimuraCompactifications §§1.4, 7.3, 7.5, 7.18; IgusaVarietiesAndTorsionConcentration §§0.11, 1.3, 1.7, 5.1, 5.2; BunGAndNewtonStrata §§1.13, 1.23, 1.30; SmoothRepresentationsOfLocalGroups SR.1.2, SR.4.1, SR.4.3; IntegralHeckeAndGaloisDeterminants §3b.1; AutomorphicGaloisRepresentationsPartII AG2.0, AG2.7; ArithmeticGaloisRepresentations §§1.8, 5.1, 5.9; EtaleDualityAndPerverseSheaves §0.5; ArithmeticLocallySymmetricSpaces ALS.5a.2, ALS.5a.4; Mathlib `NumberField.IsCMField`, `HeckeRing`, `IsArithFrobAt`; Tau Ceti `HeckeCosetModule.instRingHeckeRing`, `HeckeAntiInvolution.ofAmbient`.
 
 ## Layer 9: Generic principal series and the μ-ordinary obstruction for the quasi-split datum
 
@@ -395,7 +401,7 @@ The API:
 - The class `BC^{S′}([H_c(I^b_Mant, ℚ̄_ℓ)]^{S′-ur})` is the locally finite sum of its `r`-parts over isomorphism classes of `r`.
 - The `r`-part is zero if and only if no constituent `Π^{S′}` has `r_{Π^{S′},ℓ} ≅ r`.
 - The `r`-part depends only on the isomorphism class of `r`.
-- For a constituent of the `r`-part and `v | q ∈ Spl_{𝒦/ℚ} ∖ (S′ ∪ {ℓ})`, the Satake parameters of `Π^{S′}` at `v` are, via `ι_ℓ`, the roots of the characteristic polynomial of `r(Frob_v)`.
+- For a constituent of the `r`-part and `v | q ∈ Spl_{𝒦/ℚ} ∖ (S′ ∪ {ℓ})`, the eigenvalues of `r(Frob_v)` (geometric Frobenius) are, via `ι_ℓ`, the numbers `q_v^{(n−1)/2}x_j`, where `x_1, …, x_n` are the Satake parameters of the `GL_n(F_v)`-component `Π⁰_v` of `Π^{S′}`. Equivalently they are the Satake parameters of `Π⁰_v|det|^{(1−n)/2}`, and the characteristic polynomial of `r(Frob_v)` is the Satake image `∏_j (X − q_v^{(n−1)/2}x_j)` of `P_v` from §8.4.
 - The index `r` is determined by the normalized `GL_n(𝔸_F)`-component. Two constituents that differ only in the `GL_1(𝔸_𝒦)` similitude character have the same index.
 
 *Needs:* this roadmap §9.3; AutomorphicGaloisRepresentationsPartII AG2.2 «The Caraiani–Scholze discrete normalization», AG2.7 «Unitary discrete-parameter export»; ArithmeticGaloisRepresentations §§1.8, 5.9; IgusaVarietiesAndTorsionConcentration §1.8.
@@ -405,6 +411,7 @@ The API:
 - For the zero class every `r`-part is zero, and for every class the sum of the `r`-parts is the whole class. A definition that selected a single constituent instead of the sub-sum over the index would fail the second test as soon as two constituents share `r`.
 - Replacing `BC^{S′}` by base change at the single place `p` (the printed `BC^p`) does not give a sub-sum indexed by Galois representations, since `r_{Π,ℓ}` depends on the component outside `S′`.
 - For `n = 1`, `Π = ψ ⊗ Π⁰` has a similitude factor `ψ` on `GL_1(𝔸_𝒦)` and a factor `Π⁰` on `GL_1(𝔸_F)`. Distinct `Π⁰`-components outside `S′` give distinct Galois characters. Changing only `ψ` leaves the index unchanged, so `r`-parts need not separate automorphic characters of `𝒢_1`. A definition indexing by the full character would split this `r`-part in two.
+- For `n = 2`, `q_v = 7` and `Π⁰_v` the trivial representation of `GL_2(F_v)`, with Satake parameters `(√7, 1/√7)`, the eigenvalues of `r(Frob_v)` are `√7·√7 = 7` and `√7·(1/√7) = 1`. The characteristic polynomial `(X − 7)(X − 1) = X² − 8X + 7` is the image of `P_v = X² − T_{1,v}X + 7T_{2,v}` under `S(T_1) = √7(√7 + 1/√7) = 8` and `S(T_2) = 1`. Reading the Satake parameters themselves as Frobenius eigenvalues would give `X² − (8/√7)X + 1`. For `n = 1` the scaling factor is `q_v^0 = 1`, so rank one does not detect the twist.
 
 ### 9.5 A non-μ-ordinary class has a non-quasi-split factor at a nontrivial 𝔭_i
 
@@ -448,7 +455,7 @@ Start from Shin's stable trace formula (EndoscopicTransferAndUnitaryTraceCompari
 
 Put `[H(Sh, ℚ̄_ℓ)] = Σ_i (−1)^i colim_K H^i(S_{K,Ē}, ℚ̄_ℓ) ∈ Groth(G(𝔸_f))`. Let `Red^b_n : Groth(G(ℚ_p)) → Groth(J_b(ℚ_p))` be the Newton reduction for the trivial datum: the normalized Jacquet functor, then the Langlands–Jacquet map, with the modulus twist. It is applied to the `p`-component through `G(ℚ_p) ≅ G_n(ℚ_p)`. Prove `Red^b_n([H(Sh, ℚ̄_ℓ)]) = ε_G · d(G_ℝ) · [H_c(I^b_Mant, ℚ̄_ℓ)]` in `Groth(G(𝔸_f^p) × J_b(ℚ_p))`, where `ε_G` and `d(G_ℝ)` are nonzero constants depending only on `G`. They are produced by comparing the Euler–Poincaré function of `G(ℝ)` with Shin's archimedean test function for the trivial datum ([CS17] §5.6, p. 749, CS17 lines 4073–4078).
 
-A route is the following. Since `S_K` is proper, `H^*(S_{K,Ē}, ℚ̄_ℓ) ≅ H^*(S_K(ℂ), ℂ)` through `ι_ℓ` and Artin's comparison (ComplexComparisonPartII §§C6.3–C6.4), Hecke-equivariantly. Arthur's `L²`-Lefschetz formula for a compact quotient (AutomorphicSpectralTheory §§6.17, 6.19, 6.20) gives the following for `f ∈ C_c^∞(G(𝔸_f))`. We have `tr(f | [H(Sh)]) = Σ_{a∈ker¹(ℚ,G)} Σ_{π on G^{(a)}} m_a(π) tr π_f(f) ep(π_∞) = Σ_a I^{G^{(a)}}(f^{(a)} f_EP^{(a)})`. The geometric side has only elliptic terms, because the Euler–Poincaré function is stable cuspidal. All terms use the fixed local identifications with `G`. Stabilize the elliptic terms (EndoscopicTransferAndUnitaryTraceComparison §6.18). The proper endoscopic terms vanish by the local-index argument of §10.1, leaving `ι(G, G_n) ST^{G_n}_e(f^{G_n})`. Take `f = φ^p f_p` with `f_p` the transport of `φ^{G_n}_p` to `G(ℚ_p)`. Then `tr π_p(f_p) = tr Red^b_n(π_p)(φ_p)` (EndoscopicTransferAndUnitaryTraceComparison §14.3). The archimedean test functions differ by the nonzero factor `ε_G d(G_ℝ)` (§6.10 there). Comparing with §10.1 gives the identity for acceptable `φ_p`. It extends to all `φ_p` by the Frobenius-twist argument (§8.11 there; [CS17] prints the reference as Lemma 6.4 of [Shi11], and the lemma is in Shin's *Counting points on Igusa varieties*). Nondegeneracy of the trace pairing gives the identity in the Grothendieck group.
+A route is the following. Since `S_K` is proper, `H^*(S_{K,Ē}, ℚ̄_ℓ) ≅ H^*(S_K(ℂ), ℂ)` through `ι_ℓ` and Artin's comparison (ComplexComparisonPartII §§C6.3–C6.4), Hecke-equivariantly. Arthur's `L²`-Lefschetz formula for a compact quotient (AutomorphicSpectralTheory §§6.17, 6.19, 6.20) gives the following for `f ∈ C_c^∞(G(𝔸_f))`. We have `tr(f | [H(Sh)]) = Σ_{a∈ker¹(ℚ,G)} Σ_{π on G^{(a)}} m_a(π) tr π_f(f) ep(π_∞) = Σ_a I^{G^{(a)}}(f^{(a)} f_EP^{(a)})`. Here `π` runs over the automorphic representations of `G^{(a)}(𝔸)` with trivial central character on `A_{G,∞}^0`, and `ep` and the Euler–Poincaré function `f_EP` are those of the reduced pair `(𝔪_G, K_∞)` on `G(ℝ)/A_{G,∞}^0` (Conventions; AutomorphicSpectralTheory §6.19). The geometric side has only elliptic terms, because the Euler–Poincaré function is stable cuspidal. All terms use the fixed local identifications with `G`. Stabilize the elliptic terms (EndoscopicTransferAndUnitaryTraceComparison §6.18). The proper endoscopic terms vanish by the local-index argument of §10.1, leaving `ι(G, G_n) ST^{G_n}_e(f^{G_n})`. Take `f = φ^p f_p` with `f_p` the transport of `φ^{G_n}_p` to `G(ℚ_p)`. Then `tr π_p(f_p) = tr Red^b_n(π_p)(φ_p)` (EndoscopicTransferAndUnitaryTraceComparison §14.3). The archimedean test functions differ by the nonzero factor `ε_G d(G_ℝ)` (§6.10 there). Comparing with §10.1 gives the identity for acceptable `φ_p`. It extends to all `φ_p` by the Frobenius-twist argument (§8.11 there; [CS17] prints the reference as Lemma 6.4 of [Shi11], and the lemma is in Shin's *Counting points on Igusa varieties*). Nondegeneracy of the trace pairing gives the identity in the Grothendieck group.
 
 *Needs:* ComplexComparisonPartII §§C6.3–C6.4; AutomorphicSpectralTheory §§6.17, 6.19, 6.20; EndoscopicTransferAndUnitaryTraceComparison §§1.16, 6.10, 6.18, 8.11, 14.2, 14.3; this roadmap §§8.2, 10.1.
 
@@ -457,21 +464,27 @@ A route is the following. Since `S_K` is proper, `H^*(S_{K,Ē}, ℚ̄_ℓ) ≅ H
 Prove that in `Groth(G(𝔸_f^p) × J_b(ℚ_p))`, `[ι_ℓH_c(I^b_Mant, ℚ̄_ℓ)] = (−1)^{q(G)} Σ_{π_f} c(π_f) [π_f^p] [Red^b_n(π_p)]` ([CS17] §5.6, Corollary 5.6.2, p. 749, CS17 lines 4082–4090). The sum runs over the irreducible admissible `π_f` of `G(𝔸_f)` such that `π_f ⊗ π_∞` is automorphic on some `G^{(a)}` for some `π_∞` cohomological for the trivial representation. The coefficient is `c(π_f) = (−1)^{q(G)}(ε_G d(G_ℝ))⁻¹ Σ_{a∈ker¹(ℚ,G)} Σ_{π_∞ on G^{(a)}} m_a(π_f ⊗ π_∞) ep(π_∞)`, with the following ingredients:
 
 - `m_a` is the automorphic multiplicity on the component `G^{(a)}`, with finite parts transported to `G` by the fixed local identifications;
-- `ep(π_∞) = Σ_i (−1)^i dim H^i(𝔤, K_∞; π_∞)`;
-- `q(G) = ½ dim G(ℝ)/K_∞A_{G,∞}^0`.
+- `ep(π_∞) = Σ_i (−1)^i dim H^i(𝔪_G, K_∞; π_∞)`, for the reduced pair of the Conventions, `𝔪_G = 𝔤/𝔞_G` and `K_∞` a maximal compact subgroup of `G(ℝ)`;
+- `q(G) = ½ dim G(ℝ)/K_∞A_{G,∞}^0`, which equals `d`, since `G(ℝ)/K_∞A_{G,∞}^0` has the real dimension `2d` of the hermitian symmetric domain `X`.
 
 The sum is locally finite: for each compact open subgroup only finitely many terms have invariants.
 
-Apply Matsushima's formula separately to each component `Sh_{K^{(a)}}(G^{(a)}, X^{(a)})` of `S_K`. It gives `H^*(S_K(ℂ), ℂ) = ⊕_a ⊕_{π on G^{(a)}} m_a(π) π_f^K ⊗ H^*(𝔤, K_∞; π_∞)` (ArithmeticLocallySymmetricSpaces ALS.5b.4; AutomorphicSpectralTheory §4.7). So the coefficient of `[π_f]` in `[H(Sh)]` is `Σ_a Σ_{π_∞} m_a(π_fπ_∞) ep(π_∞)`. Apply §10.2 and divide by `ε_G d(G_ℝ)`; `Red^b_n` acts only on the `p`-component. Only `π_∞` with `H^*(𝔤, K_∞; π_∞) ≠ 0` contribute.
+Apply Matsushima's formula separately to each component `Sh_{K^{(a)}}(G^{(a)}, X^{(a)})` of `S_K`. It gives `H^*(S_K(ℂ), ℂ) = ⊕_a ⊕_{π on G^{(a)}} m_a(π) π_f^K ⊗ H^*(𝔪_G, K_∞; π_∞)`, with `π` trivial on `A_{G,∞}^0` (ArithmeticLocallySymmetricSpaces ALS.5b.4; AutomorphicSpectralTheory §4.7). So the coefficient of `[π_f]` in `[H(Sh)]` is `Σ_a Σ_{π_∞} m_a(π_fπ_∞) ep(π_∞)`. Apply §10.2 and divide by `ε_G d(G_ℝ)`; `Red^b_n` acts only on the `p`-component. Only `π_∞` with `H^*(𝔪_G, K_∞; π_∞) ≠ 0` contribute.
 
-*Needs:* ArithmeticLocallySymmetricSpaces ALS.5b.4; AutomorphicSpectralTheory §4.7; ComplexComparisonPartII §§C6.3–C6.4; this roadmap §10.2.
+*Needs:* ArithmeticLocallySymmetricSpaces ALS.5b.4; AutomorphicSpectralTheory §§4.7, 6.19; ComplexComparisonPartII §§C6.3–C6.4; this roadmap §10.2.
+
+**Checks.**
+
+- Case 1 with `n = 1` and `B = F = 𝒦 = ℚ(i)`: `G(ℝ) = ℂ^×`, `K_∞ = U(1)`, `A_{G,∞}^0 = ℝ_{>0}`, so `𝔪_G = Lie U(1)` and `H^*(𝔪_G, K_∞; ℂ)` is `ℂ` in degree `0` and zero above. Hence `ep(1) = 1`, `q(G) = 0 = d`, and the trivial `π_f` has coefficient `(ε_G d(G_ℝ))⁻¹ Σ_a m_a ≠ 0`, recovering the nonzero `H^0` of the finite set `S_K` and of the zero-dimensional Igusa variety. With the full pair `(𝔤, K_∞)` the quotient `𝔤/𝔨 = 𝔞_G` is a line, the cohomology is `ℂ` in degrees `0` and `1`, `ep = 0`, and the right side of §10.3 would vanish.
+- A discrete series `π_∞` that is cohomological for the trivial representation has `H^*(𝔪_G, K_∞; π_∞)` one-dimensional and concentrated in degree `q(G)`, so `ep(π_∞) = (−1)^{q(G)}` and the two signs in `c(π_f)` cancel (Examples of this layer). The full pair would tensor this with `Λ^*(𝔞_G^*)` and give `ep = 1 − 1 = 0` for every `π_∞`.
+- For the Harris–Taylor signature, `dim G(ℝ)/K_∞ = 2(n − 1) + 1`, the extra `1` being `A_{G,∞}^0 = ℝ_{>0}`. Half of it is not an integer, while `q(G) = ½ dim G(ℝ)/K_∞A_{G,∞}^0 = n − 1 = d`, the degree in which a cohomological discrete series contributes.
 
 ### 10.4 Galois representations for the division-algebra unitary group
 
 Let `π = π_f ⊗ π_∞` be automorphic on `G(𝔸)` with `π_∞` cohomological for the trivial representation, and let `S_π` be the finite set of primes where `G` or `π` ramifies. Prove the following ([CS17] §5.6, p. 749, CS17 lines 4091–4093; [Shin-BCU] Theorem 1.1, pp. 1–2, Shin-BCU lines 41–52, for B = F).
 
 - There is an isobaric automorphic representation `Π = ψ ⊗ Π⁰` of `GL_1(𝔸_𝒦) × GL_n(𝔸_F)`, with `Π⁰ = Π_1 ⊞ ⋯ ⊞ Π_r` and each `Π_j` discrete and conjugate self-dual. It satisfies `Π_v ≅ BC_v(π_v)` at every finite place `v ∉ S_π`, and at every `v ∈ S_π` split in `𝒦` above which `B` splits. Its component `Π⁰_∞` has the infinitesimal character of the base change of the trivial representation.
-- There is a continuous semisimple `r_{π,ℓ} : Gal(F̄/F) → GL_n(ℚ̄_ℓ)`. It is unramified at every finite place of `F` above `q ∉ S_π ∪ {ℓ}`, including `q` not split in `𝒦`, and the characteristic polynomial of `r_{π,ℓ}(Frob_v)` is the image of `P_v` under the Satake parameters of `π_v`.
+- There is a continuous semisimple `r_{π,ℓ} : Gal(F̄/F) → GL_n(ℚ̄_ℓ)`, unramified at every finite place `v` of `F` above `q ∉ S_π ∪ {ℓ}`, including `q` not split in `𝒦`. At every such `v` the characteristic polynomial of `r_{π,ℓ}(Frob_v)` (geometric Frobenius) is that of `ι_ℓ⁻¹ rec(Π⁰_v |det|^{(1−n)/2})(Frob_v)`, that is `∏_j (X − ι_ℓ⁻¹(q_v^{(n−1)/2} x_j))` for the Satake parameters `x_1, …, x_n` of the unramified `Π⁰_v`. At `v` above `q ∈ Spl_{𝒦/ℚ} ∖ (S_π ∪ {ℓ})`, where §8.4 defines `T_{i,v}` and `P_v`, this polynomial is the image of `P_v` under `ι_ℓ⁻¹` of the eigencharacter of `ℤ[G(ℚ_q)//K_q]` on `π_q^{K_q}`.
 - `WD(r_{π,ℓ}|_{Gal(F̄_w/F_w)})^{F-ss} ≅ ι_ℓ⁻¹ rec(Π⁰_w |det|^{(1−n)/2})` at every place `w ∤ ℓ` of `F` above a prime split in `𝒦` at which `B` splits.
 
 The route has two steps. The first is base change, through the point-counting formula for the proper `S_K`, its stabilization against the twisted trace formula of `Res_{𝒦/ℚ} G_𝒦`, and purity to rule out cancellation. For B = F this is [Shin-BCU] Theorem 1.1. For `B` a division algebra, the group `Res_{𝒦/ℚ}(G ×_ℚ 𝒦)` has factors `(B ⊗_F F_w)^×` where `B` ramifies, so the transfer to `GL_n(𝔸_F)` also needs the global Jacquet–Langlands correspondence. The second step is Galois representations of the conjugate self-dual discrete pieces `Π_j` with their algebraic twists (AutomorphicGaloisRepresentationsPartII AG2.3 «Arbitrary regular conjugate-self-dual existence»). Local compatibility comes from AG2.5 «Caraiani's full away-prime compatibility». The base change of every locally isomorphic inner form, the assembly at every rank `n` and unramifiedness at all good places are the contract gap:division-algebra-unitary-base-change. The Hecke polynomial matching at `v | q ∈ Spl_{𝒦/ℚ} ∖ (S_π ∪ {ℓ})` uses the unramified base-change identity (EndoscopicTransferAndUnitaryTraceComparison §6.8) and the Satake normalization of §8.4.
@@ -487,7 +500,7 @@ The API:
 - The Igusa class is the locally finite sum of its `r`-parts over isomorphism classes of `r`.
 - The `r`-part depends only on the isomorphism class of `r`.
 - The `r`-part vanishes if and only if the terms `c(π_f)[π_f^p][Red^b_n(π_p)]` with `r_{π,ℓ} ≅ r` sum to zero.
-- Each `π_f` in the `r`-part has Satake parameters at `v | q ∈ Spl_{𝒦/ℚ} ∖ (S_π ∪ {ℓ})` given by the eigenvalues of `r(Frob_v)`.
+- For each `π_f` in the `r`-part and `v | q ∈ Spl_{𝒦/ℚ} ∖ (S_π ∪ {ℓ})`, the eigenvalues of `r(Frob_v)` are, via `ι_ℓ`, the numbers `q_v^{(n−1)/2}x_j` for the Satake parameters `x_1, …, x_n` of the `GL_n(F_v)`-factor of `π_q` (§8.4). Equivalently, the characteristic polynomial of `r(Frob_v)` is the image of `P_v` under the eigencharacter of `ℤ[G(ℚ_q)//K_q]` on `π_q^{K_q}`.
 
 *Needs:* this roadmap §§10.3, 10.4; ArithmeticGaloisRepresentations §§1.8, 5.9.
 
@@ -496,6 +509,7 @@ The API:
 - The `r`-part of the zero class is zero. If `Red^b_n(π_p) = 0` for every `π_f` with `r_{π,ℓ} ≅ r`, the `r`-part is zero.
 - For `n = 1` the `r`-part is the sum over the automorphic characters `π` of `G(𝔸)` whose `ℓ`-adic character is `r`. An index by the full automorphic character would separate characters that differ only on the similitude factor, which have the same `r`.
 - A single `π_f` with `c(π_f) ≠ 0` and `r_{π,ℓ} ≅ r` need not give a nonzero `r`-part. Two `π_f` with equal `π_f^p`, equal `Red^b_n(π_p)` and opposite coefficients cancel. A "pointwise" definition, asserting nonvanishing for each contributing `π_f`, fails this test.
+- For `n = 2`, `q_v = 7` and a `π_f` whose `GL_2(F_v)`-factor is trivial, with Satake parameters `(√7, 1/√7)`, the eigenvalues of `r(Frob_v)` are `7` and `1`, matching the image `X² − 8X + 7` of `P_v`. Indexing by the unscaled parameters would ask for Frobenius eigenvalues `√7` and `1/√7`, which no `r` with that Hecke polynomial has.
 
 ### 10.6 Genericity forces μ-ordinarity for simple Shimura varieties
 
@@ -651,7 +665,7 @@ Let `F⁺` be real quadratic and `n = 3`, in Case 2 with signature `(1, 2)` at `
 - If `p` splits in `F⁺`, `u` has two primes `𝔭_1, 𝔭_2` in `F` of residue degree one and each `S_i` is a singleton. Exactly one of them, say `S_1`, contains the nontrivial embedding, and the auxiliary-pair condition asks for decomposed genericity of `ρ_𝔪` at `𝔭_1` alone, with `q_{𝔭_1} = p`.
 - If `p` is inert in `F⁺`, then `m = 1`, and `S_1` contains one embedding from each conjugate pair, exactly one of them nontrivial. The condition asks for decomposed genericity at the single prime `𝔭_1` of residue degree two, with `q_{𝔭_1} = p²`. The definite embedding in `S_1` has signature `(3, 0)` or `(0, 3)`, so the central correction of §8.3 is `c_1 = 1` or `c_1 = 0` accordingly.
 
-In neither case does `p` split completely in `F`, so these auxiliary primes are not covered by the hypothesis of Theorem 1.1(2).
+In the first case `F ⊗ ℚ_p = (ℚ_p × ℚ_p) ⊗_{ℚ_p} (ℚ_p × ℚ_p) = ℚ_p⁴`, so `p` splits completely in `F`, with `(e, f, g) = (1, 1, 4)`. Theorem 1.1(2) then asks for decomposed genericity at all four primes of `F` above `p`, whereas the auxiliary-pair condition asks for it at `𝔭_1` alone: complete splitting is a condition on `p` in `F` and genericity a condition on `ρ_𝔪`, and for this `p` (outside `S ∪ {ℓ}`) the auxiliary-pair condition is strictly weaker than the hypothesis of Theorem 1.1(2). In the second case `F ⊗ ℚ_p = ℚ_{p²} × ℚ_{p²}`, with `(e, f, g) = (1, 2, 2)`, so `p` does not split completely in `F` and this auxiliary prime is not covered by the hypothesis of Theorem 1.1(2) at all.
 
 For `n = 2`, `q_v = 7`, `ℓ = 11` and residual Frobenius roots `{1, 2}`, §8.5 gives dual roots `{7, 9}`. §8.7 shows both systems are strongly generic, and the `r` of §11.6 is a sum of characters at `v` by IgusaVarietiesAndTorsionConcentration §5.5.
 
