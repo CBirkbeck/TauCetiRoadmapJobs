@@ -575,3 +575,21 @@ licence_class = "none"
 status = "uncertified"
 version_note = "paywalled; cited by its locator without the text"
 cited_for = ["3.3"]
+
+[[source]]
+id = "hovey-comodules"
+authors = "Mark Hovey"
+title = "Homotopy theory of comodules over a Hopf algebroid"
+year = 2003
+arxiv = "math/0301229v1"
+locator_scheme = "theorem"
+locator = "Proposition 1.3.4"
+url = "https://arxiv.org/abs/math/0301229v1"
+fetched_from = "https://arxiv.org/pdf/math/0301229v1"
+fetched_at = "2026-11-10T15:56:28Z"
+sha256 = "60cbe4f429ca48b46994d363a22f1e9e51c4023f2cd019d0a0de22dd71856d19"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-10"
+version_note = "arXiv v1; numbering is that of the arXiv version"
+cited_for = ["F4.3"]
