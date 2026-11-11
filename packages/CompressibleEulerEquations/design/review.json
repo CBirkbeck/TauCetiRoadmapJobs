@@ -1,10 +1,10 @@
 {
   "review": {
     "status": "needs_changes",
-    "reviewer": "independent-review-REV-DESIGN-CompressibleEulerEquations~2",
-    "date": "2026-11-10",
-    "findings": 14,
-    "blocking": 12,
-    "notes": "Checked all seven prior repairs, all 15 seeded sections, 53 plan targets, the changed statements, headline theorems and computed counterexamples; reopened pinned declarations and ownership/supplier citations. Dependency check: 234 roadmaps, 2109 edges, 0 problems. No Suggested.lean at design stage; elaboration not available (this lane does not elaborate). Settled waived/uncertified texts were not rerequested; Nirenberg and Luk formula issues were checked against rendered cached PDF pages. See the report for 14 findings, computed table, source qualifications and ownership conflict."
+    "reviewer": "independent-review-REV-DESIGN-CompressibleEulerEquations~3",
+    "date": "2026-11-11",
+    "findings": 8,
+    "blocking": 6,
+    "notes": "Checked all 14 prior findings against the repairs, all 53 plan targets and APIs, all 15 seeded sections, computed degeneracies and headline witnesses, pinned declarations, ownership and all supplier citations. Eight findings: six P2 and two P3. Dependency gate: 232 roadmaps, 2071 edges, 0 problems; no UPWARD/CYCLE. No Suggested.lean at design stage; elaboration not available (this lane does not elaborate). Settled waived/uncertified sources were not rerequested; Nirenberg p.125 was visually checked in the cached PDF. External half of prior R12 remains outside this package and is not re-raised."
   }
 }
