@@ -47,11 +47,11 @@ At the pinned Mathlib: `WittVector`, `TruncatedWittVector`, `WittVector.frobeniu
 
 ### From Tau Ceti
 
-At the pinned Tau Ceti: `TauCeti.AlgebraicGeometry.Scheme.Modules.Cohomology` in `TauCeti/AlgebraicGeometry/Cohomology/Basic.lean`, the group H^i(X, M) of a sheaf of modules M on a scheme X, defined as Mathlib's `CategoryTheory.Sheaf.H` (an Ext group from the constant sheaf ℤ) of the underlying abelian sheaf on the Zariski site; it is functorial in M. It is the sheaf cohomology of abelian groups of Conventions item 3, applied to the structure sheaf `SheafOfModules.unit` (the monoidal unit of the modules of X), and is the cohomology H^i(X, O_X) of §6.4. `AlgebraicGeometry.Scheme.Hom.cohomologyPullback` in `TauCeti/AlgebraicGeometry/Cohomology/Pullback.lean`, the pullback H^n(X, M) → H^n(Y, g^\*M) along a morphism of schemes g: Y → X, and `AlgebraicGeometry.Scheme.Modules.pullbackObjUnitIso` in `TauCeti/AlgebraicGeometry/Modules/Pullback/Basic.lean`, the canonical isomorphism g^\*O_X ≅ O_Y; their composite is the pullback H^i(Y, O_Y) → H^i(X, O_X) of §6.4 (ii). `AlgebraicGeometry.Scheme.Modules.cohomologyBaseModule` in `TauCeti/AlgebraicGeometry/Cohomology/Module/Base.lean`, the R-module structure on H^i(X, M) for X over Spec R, through which h^0 in §6.9 is `Module.finrank`. `TauCeti.AlgebraicGeometry.AbelianVariety` in `TauCeti/AlgebraicGeometry/AbelianVariety/Basic.lean`, a proper geometrically integral group scheme over Spec K, with underlying scheme `AbelianVariety.toScheme` and structure morphism the `hom` of `AbelianVariety.toOver`; `AlgebraicGeometry.Scheme.IdealSheafData.IsEffectiveCartier` and `IsEffectiveCartier.toInvertibleSheaf` in `TauCeti/AlgebraicGeometry/EffectiveCartierDivisor/Invertible.lean`, the ideal sheaf of an effective Cartier divisor as an invertible sheaf; `InvertibleSheaf.dual` in `TauCeti/AlgebraicGeometry/LineBundle/Dual.lean`; `TauCeti.AlgebraicGeometry.LineBundleClass.IsAmple` in `TauCeti/AlgebraicGeometry/LineBundle/Ample.lean` (X quasi-compact and every point in an affine nonvanishing locus of a global section of a positive power of the class). These carry the theta divisors of §6.9. `AlgebraicGeometry.Scheme.IsProjectiveOver` in `TauCeti/AlgebraicGeometry/ProjectiveSpectrum/ProjectiveOver.lean` (a closed subscheme over R of the projective spectrum of the symmetric algebra of a finite R-module), with its instance `IsProjectiveOver.isProper`; `TauCeti.AlgebraicGeometry.Chow.cyclesOfDimension` (the k-cycles, as locally finite ℤ-valued functions `AlgebraicCycle X ℤ` supported on points of dimension k) and `TauCeti.AlgebraicGeometry.Chow.RatEquiv` (the k-cycles rationally equivalent to zero) in `TauCeti/AlgebraicGeometry/Chow/Basic.lean`, for locally Noetherian X. These carry the universal CH_0-triviality of §6.10 and Esnault's point count of §6.14 (i).
+At the pinned Tau Ceti: `TauCeti.AlgebraicGeometry.Scheme.Modules.Cohomology` in `TauCeti/AlgebraicGeometry/Cohomology/Basic.lean`, the group H^i(X, M) of a sheaf of modules M on a scheme X, defined as Mathlib's `CategoryTheory.Sheaf.H` (an Ext group from the constant sheaf ℤ) of the underlying abelian sheaf on the Zariski site; it is functorial in M. It is the sheaf cohomology of abelian groups of Conventions item 3, applied to the structure sheaf `SheafOfModules.unit` (the monoidal unit of the modules of X), and is the cohomology H^i(X, O_X) of §6.4. `AlgebraicGeometry.Scheme.Hom.cohomologyPullback` in `TauCeti/AlgebraicGeometry/Cohomology/Pullback.lean`, the pullback H^n(X, M) → H^n(Y, g^\*M) along a morphism of schemes g: Y → X, and `AlgebraicGeometry.Scheme.Modules.pullbackObjUnitIso` in `TauCeti/AlgebraicGeometry/Modules/Pullback/Basic.lean`, the canonical isomorphism g^\*O_X ≅ O_Y; their composite is the pullback H^i(Y, O_Y) → H^i(X, O_X) of §6.4 (ii). `AlgebraicGeometry.Scheme.Modules.cohomologyBaseModule` in `TauCeti/AlgebraicGeometry/Cohomology/Module/Base.lean`, the R-module structure on H^i(X, M) for X over Spec R, through which h^0 in §6.9 is `Module.finrank`. `TauCeti.AlgebraicGeometry.bijective_cohomologyBaseChange` in `TauCeti/AlgebraicGeometry/Cohomology/FlatBaseChange.lean`, line 185 (flat base change: for a flat ring map R → R′, X over Spec R quasi-compact with affine diagonal and M quasi-coherent, `R′ ⊗_R H^n(X, M) → H^n(X_{R′}, g^*M)` is bijective for every n), used in §6.4 (iv) for a finite field extension, a proper scheme over a field being quasi-compact and separated. `TauCeti.AlgebraicGeometry.AbelianVariety` in `TauCeti/AlgebraicGeometry/AbelianVariety/Basic.lean`, a proper geometrically integral group scheme over Spec K, with underlying scheme `AbelianVariety.toScheme` and structure morphism the `hom` of `AbelianVariety.toOver`; `AlgebraicGeometry.Scheme.IdealSheafData.IsEffectiveCartier` and `IsEffectiveCartier.toInvertibleSheaf` in `TauCeti/AlgebraicGeometry/EffectiveCartierDivisor/Invertible.lean`, the ideal sheaf of an effective Cartier divisor as an invertible sheaf; `InvertibleSheaf.dual` in `TauCeti/AlgebraicGeometry/LineBundle/Dual.lean`; `TauCeti.AlgebraicGeometry.LineBundleClass.IsAmple` in `TauCeti/AlgebraicGeometry/LineBundle/Ample.lean` (X quasi-compact and every point in an affine nonvanishing locus of a global section of a positive power of the class). These carry the theta divisors of §6.9. `AlgebraicGeometry.Scheme.IsProjectiveOver` in `TauCeti/AlgebraicGeometry/ProjectiveSpectrum/ProjectiveOver.lean` (a closed subscheme over R of the projective spectrum of the symmetric algebra of a finite R-module), with its instance `IsProjectiveOver.isProper`; `TauCeti.AlgebraicGeometry.Chow.cyclesOfDimension` (the k-cycles, as locally finite ℤ-valued functions `AlgebraicCycle X ℤ` supported on points of dimension k) and `TauCeti.AlgebraicGeometry.Chow.RatEquiv` (the k-cycles rationally equivalent to zero) in `TauCeti/AlgebraicGeometry/Chow/Basic.lean`, for locally Noetherian X. These carry the universal CH_0-triviality of §6.10 and Esnault's point count of §6.14 (i).
 
 ### From TauCetiRoadmap.AbelianSchemesAndArithmeticModuli
 
-§A2.4, `ampleCohomologyAndDegree`.
+§A2.4, `ampleCohomologyAndDegree`; §A4.4, `exteriorCohomology` (for an abelian variety A over a field, cup product identifies H^\*(A, O_A) with the exterior algebra on H¹(A, O_A), squares of degree-one classes vanishing also in characteristic 2).
 
 ### From TauCetiRoadmap.AdicSpacesPartIII
 
@@ -59,7 +59,7 @@ At the pinned Tau Ceti: `TauCeti.AlgebraicGeometry.Scheme.Modules.Cohomology` in
 
 ### From TauCetiRoadmap.ArcTopologyAndDescent
 
-§1.1, universal descent for a scheme presheaf (for a functor F from qcqs schemes to an ∞-category with limits, the maps of universal F-descent, defined through the full Čech totalization; they are stable under base change and composition, a map with a section is one, and if g∘f is of universal descent then so is g); §1.3, the h-site and abstract blowup squares (over a qcqs base S, the h-topology on finitely presented S-schemes generated by finite families whose disjoint union is a v-cover); §1.6, affine approximation of v-covers, which applies on affine opens the finite-presentation refinement of PrismaticCohomology §2.0. The inductive level of proper surjections is EnhancedDerivedSheaves §E2.8, `properSurjective_inductiveLevel`; the abstract-blowup criterion of its §1.4 is not consumed.
+§1.1, universal descent for a scheme presheaf (for a functor F from qcqs schemes to an ∞-category with limits, the maps of universal F-descent, defined through the full Čech totalization; they are stable under base change and composition, a map with a section is one, and if g∘f is of universal descent then so is g); §1.3, the h-site and abstract blowup squares (over a qcqs base S, the h-topology on finitely presented S-schemes generated by finite families whose disjoint union is a v-cover); §1.6, affine approximation of v-covers, which applies on affine opens the finite-presentation refinement of PrismaticCohomology §2.0. The reduction of a proper surjection to a blowup uses generic flatness and flattening by blowing up (SchemeAndStackFoundations §4.12, with gap:reduced-flattening-by-blowup); the abstract-blowup criterion of its §1.4 is not consumed.
 
 ### From TauCetiRoadmap.ClassicalAdicEtaleCohomology
 
@@ -79,7 +79,7 @@ At the pinned Tau Ceti: `TauCeti.AlgebraicGeometry.Scheme.Modules.Cohomology` in
 
 ### From TauCetiRoadmap.EnhancedDerivedSheaves
 
-§E1, enhanced-derived-category; §E1, presentability-and-derived-tensor; §E2, bounded-below-hypercover-descent; §E2, proper-surjection-inductive-level; §E2.8, descendableCover_fppf; §E2.8, derivedSchemeBaseChange (derived fibre products of qcqs F_p-schemes and their iterates, glued from spectra of animated rings on affine charts, with their quasi-coherent module categories, pushforward along qcqs maps and the base-change equivalence Lg^\*Rf_\*K ≅ Rf′_\*Lg′^\*K on a derived cartesian square for unbounded quasi-coherent K); §E5:descent, moduleDescent; §E5:animation.1, animated-commutative-rings (for ordinary rings A, B, C, π_\* of B ⊗^L_A C is Tor_\*^A(B, C); π_0 is left adjoint to the inclusion of ordinary rings, so π_0 of an iterated derived tensor product is the ordinary one); §E5:animation.3, bounded-totalization-colimits; §E5:animation.2, simplicialWitt and wittFrobeniusLocalization (degreewise Witt vectors W(R) of a simplicial commutative F_p-algebra R, with π_iW(R) = ∏_ℕ π_iR for i > 0; W(R) → W(π_0R) becomes an equivalence after inverting F, and its fibre is killed by p).
+§E1, enhanced-derived-category; §E1, presentability-and-derived-tensor; §E2, bounded-below-hypercover-descent; §E2.8, descendableCover_fppf; §E2.8, derivedSchemeBaseChange (derived fibre products of qcqs F_p-schemes and their iterates, glued from spectra of animated rings on affine charts, with their quasi-coherent module categories, pushforward along qcqs maps and the base-change equivalence Lg^\*Rf_\*K ≅ Rf′_\*Lg′^\*K on a derived cartesian square for unbounded quasi-coherent K); §E5:descent, moduleDescent; §E5:animation.1, animated-commutative-rings (for ordinary rings A, B, C, π_\* of B ⊗^L_A C is Tor_\*^A(B, C); π_0 is left adjoint to the inclusion of ordinary rings, so π_0 of an iterated derived tensor product is the ordinary one); §E5:animation.3, bounded-totalization-colimits; §E5:animation.2, simplicialWitt and wittFrobeniusLocalization (degreewise Witt vectors W(R) of a simplicial commutative F_p-algebra R, with π_iW(R) = ∏_ℕ π_iR for i > 0; W(R) → W(π_0R) becomes an equivalence after inverting F, and its fibre is killed by p).
 
 ### From TauCetiRoadmap.EtaleCohomologyFoundations
 
@@ -88,6 +88,10 @@ At the pinned Tau Ceti: `TauCeti.AlgebraicGeometry.Scheme.Modules.Cohomology` in
 ### From TauCetiRoadmap.MotivesAndAlgebraicCycles
 
 §0.1, Chow correspondences; §0.1, composition of Chow correspondences; §0.6, diagonal-decomposition; §2.2, continuity of Chow groups over algebraic extensions and torsion kernel of base change to an algebraic closure (smooth projective schemes).
+
+### From TauCetiRoadmap.NeronModelsAndSemistableAbelianVarietiesPartII
+
+§1.1, ferrand geometric pushouts (the pushout of a closed immersion along a finite morphism); it is compared with the ring B′ of §1.3 in a Check of §1.3 when the blowup is finite, and no proof route consumes it.
 
 ### From TauCetiRoadmap.PadicDifferentialEquationsAndRigidCohomology
 
@@ -99,9 +103,13 @@ At the pinned Tau Ceti: `TauCeti.AlgebraicGeometry.Scheme.Modules.Cohomology` in
 
 ### From TauCetiRoadmap.SchemeAndStackFoundations
 
-§0.20, nagata normalization finite; §0.23, universal homeomorphism criteria; §0.29, relative frobenius; §2.19, upper shriek compactification independence; §2.20, cm serre duality; §2.21, scheme dualizing; §2.21, sheafified grothendieck duality; §2.21, trace_finite; §2.18, `projectionFormula` (for a qcqs morphism g: X → S and quasi-coherent complexes E on X and K on S, Rg_\*(E ⊗^L Lg^\*K) ≅ Rg_\*E ⊗^L K); §2.6, ample serre vanishing; §2.6, projective space cohomology; §2.6, qcoh higher direct images; §2.7, sheaf cohomology with supports; §4.12, modification domination; §4.14, hilbert scheme; §4.16, alteration; §4.19, de jong alteration theorem; §4.9, stein factorization; §5.1, chow group; §5.1, rational equivalence; §5.2, chow localization; §5.2, chow proper push; §5.2, degree; §5.2, flat pullback; §5.5, gysin interchange; §5.5, gysin proper flat; §5.5, refined gysin.
+§0.20, nagata normalization finite; §0.23, universal homeomorphism criteria; §0.29, relative frobenius; §2.19, upper shriek compactification independence; §2.20, cm serre duality; §2.21, scheme dualizing; §2.21, sheafified grothendieck duality; §2.21, trace_finite; §2.18, `projectionFormula` (for a qcqs morphism g: X → S and quasi-coherent complexes E on X and K on S, Rg_\*(E ⊗^L Lg^\*K) ≅ Rg_\*E ⊗^L K); §2.6, ample serre vanishing; §2.6, projective space cohomology; §2.6, qcoh higher direct images; §2.7, sheaf cohomology with supports; §4.12, modification domination; §4.12, generic flatness; §4.12, flattening by blowup; §4.14, hilbert scheme; §4.16, alteration; §4.19, de jong alteration theorem; §4.9, stein factorization; §5.1, chow group; §5.1, rational equivalence; §5.2, chow localization; §5.2, chow proper push; §5.2, degree; §5.2, flat pullback; §5.5, gysin interchange; §5.5, gysin proper flat; §5.5, refined gysin.
 
 What SchemeAndStackFoundations must provide (gap:qcqs-frobenius-factorization): For every finite finitely presented universal homeomorphism f: X → Y of qcqs F_p-schemes, provide N ≥ 0 and g: Y → X with f ∘ g = F_Y^N and g ∘ f = F_X^N. Its §0.26 covers schemes finite type over F_p; the qcqs extension is required in Layer 0 and Layer 1.
+
+What SchemeAndStackFoundations must provide (gap:reduced-flattening-by-blowup): For a reduced Noetherian scheme Y and a proper finitely presented surjection f: X → Y, provide a dense open U ⊂ Y over which f is flat and a U-admissible blowup Y_1 → Y such that the strict transform of X is flat over Y_1. Its §4.12 states generic flatness and flattening by blowing up over integral Noetherian bases; §1.5 applies them over reduced affine Noetherian bases with several irreducible components (BS17, proof of Lemma 2.6, p. 5, which cites Raynaud–Gruson for this step).
+
+What SchemeAndStackFoundations must provide (gap:quasi-coherent-kunneth): For schemes X and Y over a field k that are quasi-compact with affine diagonal, and quasi-coherent modules F on X and G on Y, the external cup product `⊕_{a+b=n} H^a(X, F) ⊗_k H^b(Y, G) → H^n(X ×_k Y, F ⊠ G)` is an isomorphism for every n, where F ⊠ G is the tensor product of the pullbacks of F and G along the two projections. This is Stacks, Lemma 33.29.1 (tag 0BED). Its §2.6 has quasi-coherent cohomology and flat base change but no Künneth formula; §6.8 uses it for A ×_k A, A an abelian variety.
 
 ## How to read the build
 
@@ -215,8 +223,6 @@ A proof route is the following.
 - For A = F_p[ε]/(ε²), W(A) ≠ ℤ_p but W(A)[1/F] = ℤ_p: inverting F kills the nilpotent Witt vectors.
 - For X = ∅, RΓ(X, WO_X)[1/F] = 0.
 - For X = Spec F_p, RΓ(X, WO_X)[1/F] = ℤ_p in degree 0, equal to Mathlib's WittVector p (ZMod p).
-- For a perfect F_p-algebra A, W(A)[1/F] = W(A).
-- For A = F_p[ε]/(ε²), W(A)[1/F] = W(F_p) = ℤ_p.
 
 These results apply to BS17, Proposition 11.41, p. 51: the h-sheaf is X ↦ RΓ(X, WO_X)[1/F]; BS17, Lemma 11.43, p. 52: W(O_X)[1/F] is insensitive to derived structure; §1.6: inverting p after F gives BBE's rational descent.
 
@@ -255,12 +261,13 @@ A proof route is the following.
 
 1. (i): By the qcqs Frobenius factorization required of SchemeAndStackFoundations §0.26 (gap:qcqs-frobenius-factorization) there are N and g: Y → X with f∘g = F_Y^N and g∘f = F_X^N; since F_X^N, F_Y^N act invertibly on Frobenius-inverted Witt cohomology, f\* is an isomorphism with inverse `(F^N)^{−1}∘g*`.
 2. (ii) ⇒: Stein factorization (SchemeAndStackFoundations §4.9, stein factorization) reduces to f finite with geometrically connected (one-point, purely inseparable residue field) fibres, i.e. a finite universal homeomorphism; by §0.4 reduce to X, Y reduced and affine, X = Spec B, Y = Spec A with A ⊂ B and `B^{p^e}` ⊂ A (GNT19 Lemma 2.22, proof); then p^e·W(B) ⊂ W(A), so W(A)_ℚ → W(B)_ℚ is an isomorphism.
-3. (ii) ⇐: after Stein factorization f is finite with W(A)_ℚ ≅ W(B)_ℚ; reducing modulo a maximal ideal m of A shows W(A/m)_ℚ → W(B/mB)_ℚ is surjective, and W(A/m)_ℚ is a field, so B/mB has a single point n and the finite extension of complete discrete valuation rings W(A/m) → W(B/n) is bijective, hence A/m = B/n.
+3. (ii) ⇐: Stein factorization f = g ∘ h, with h_\*O_X = `O_{X′}` and g: X′ → Y finite, gives h_\*W_nO_X = `W_nO_{X′}`, so `WO_{Y,ℚ}` → `g_*WO_{X′,ℚ}` is an isomorphism, and the geometric fibres of h are connected; it remains to show that g is a universal homeomorphism. By §0.4 take X′ = Spec B, Y = Spec A reduced and affine, with W(A) → W(B) an isomorphism up to bounded torsion. If a ∈ A maps to 0 in B, then [a] lies in the kernel, so `p^N[a] = V^N[a^{p^N}]` = 0 for some N, hence `a^{p^N}` = 0 and a = 0: A → B is injective. For b ∈ B, some `p^N[b] = V^N[b^{p^N}]` lies in the image of W(A); the map W(A) → W(B) acts coordinatewise, so `b^{p^N}` ∈ A. Hence A → B is finite and injective, so Spec B → Spec A is integral and surjective, and two maps B → L to a field agreeing on A agree on every `b^{p^N}`, hence on b; so g is universally injective, hence a universal homeomorphism (SchemeAndStackFoundations §0.23, universal homeomorphism criteria). Its fibre over every point of Y, closed or not, and after every base change to a field, is a single point. The proof of NT20, Lemma 2.17, argues at maximal ideals only; the p-power argument covers all points at once.
 4. (iii) is (ii) for finite f, together with the vanishing of R^if_\* for finite morphisms.
 
 **Checks.**
 
 - Spec `F_{q²}` → Spec F_q is finite surjective with connected fibre but W(F_q)_ℚ → `W(F_{q²})_ℚ` is not an isomorphism: its fibre is not geometrically connected.
+- The converse of (ii) at a non-closed point: for p odd, A = k[t] ⊂ B = k[t, s]/(s² − t) is finite and generically étale of degree 2, so the generic fibre has two geometric points. Here `s^{p^N} = t^{(p^N−1)/2}·s` ∉ A for every N, so W(A)_ℚ → W(B)_ℚ is not onto, as the p-power argument of step 3 requires. For A = F_p[t] ⊂ B = `F_p[t^{1/p}]` instead, every b ∈ B has b^p ∈ A, and Spec B → Spec A is a universal homeomorphism.
 - The normalization of a cuspidal cubic is a finite universal homeomorphism, so the cusp and P¹ have the same rational Witt cohomology.
 - For F_p(t) ⊂ `F_p(t^{1/p})`, put A = F_p(t), B = `F_p(t^{1/p})` and g\*: B → A, b ↦ b^p. Both composites with A → B are Frobenius, so N = 1 works, although neither field is finite type over F_p.
 - For the identity of the empty scheme and of Spec F_p, take g = id and N = 0; both required composites are id.
@@ -452,19 +459,20 @@ Let S be a noetherian F_p-scheme of finite Krull dimension. The functor X ↦ R�
 
 S noetherian of finite Krull dimension; the h-topology on Sch^fp_S is that of ArcTopologyAndDescent §1.3, generated by finite families whose disjoint union is a v-cover. The pushout Y′ used in the inductive step is the finite universal homeomorphism of §1.3.
 
-*Needs:* §0.3; §0.5; §1.1; §1.3; §1.4; ArcTopologyAndDescent §1.1, universal descent for a scheme presheaf; ArcTopologyAndDescent §1.3, h-site and abstract blowup squares; ArcTopologyAndDescent §1.6, affine approximation of v-covers; PrismaticCohomology §2.0, finite-presentation refinement of v-covers; EnhancedDerivedSheaves §E2.8, `properSurjective_inductiveLevel`; SchemeAndStackFoundations §0.26, qcqs Frobenius factorization (gap:qcqs-frobenius-factorization).
+*Needs:* §0.3; §0.5; §1.1; §1.3; §1.4; ArcTopologyAndDescent §1.1, universal descent for a scheme presheaf; ArcTopologyAndDescent §1.3, h-site and abstract blowup squares; ArcTopologyAndDescent §1.6, affine approximation of v-covers; PrismaticCohomology §2.0, finite-presentation refinement of v-covers; SchemeAndStackFoundations §4.12, generic flatness and flattening by blowup (gap:reduced-flattening-by-blowup); SchemeAndStackFoundations §0.26, qcqs Frobenius factorization (gap:qcqs-frobenius-factorization).
 
 A proof route is the following.
 
 1. Write F(X) = RΓ(X, WO_X)[1/F]. F inverts finite universal homeomorphisms, in particular nilimmersions (§0.5), and is an fppf sheaf (§1.1).
-2. The route follows the proof of BS17 Theorem 2.9 rather than applying an abstract-blowup criterion, because excision is needed for every self-product of the blowup. Reduce, by Rydh refinement (PrismaticCohomology §2.0, applied on affine opens as in ArcTopologyAndDescent §1.6) and the cancellation and composition laws of universal descent (ArcTopologyAndDescent §1.1; BS17 Lemma 2.10) and the inductive level (EnhancedDerivedSheaves §E2.8, `properSurjective_inductiveLevel`), to proper surjective X → Y with Y affine, and argue by induction on dim Y; dim Y = 0 is fppf descent.
-3. In the inductive step arrange X → Y to be the blowup of Y along Z with dim Z \< dim Y and, after thickening, H^i(X, O_X(−E)) = 0 for i > 0; replace Y by the pushout Y′ of §1.3 (F(Y) = F(Y′) and `F(X^{•/Y})` = `F(X^{•/Y′})` since Y′ → Y is a finite universal homeomorphism).
+2. The route follows the proof of BS17 Theorem 2.9 rather than applying an abstract-blowup criterion, because excision is needed for every self-product of the blowup. Reduce, by Rydh refinement (PrismaticCohomology §2.0, applied on affine opens as in ArcTopologyAndDescent §1.6) and the cancellation and composition laws of universal descent (ArcTopologyAndDescent §1.1; BS17 Lemma 2.10), to proper surjective X → Y with Y affine, and argue by induction on dim Y. Since F inverts nilimmersions, Y may be taken reduced; for dim Y = 0 it is then a finite disjoint union of spectra of fields, over which X → Y is a proper fppf cover, and §1.1 applies.
+3. In the inductive step (Y reduced, affine and Noetherian of dimension d ≥ 1), choose a dense open U ⊂ Y over which X → Y is flat and a U-admissible blowup Y_1 = Bl_J Y → Y, with V(J) ⊂ Y ∖ U, such that the strict transform X_1 of X is flat over Y_1 (generic flatness and flattening by blowing up, SchemeAndStackFoundations §4.12, over the reduced but possibly reducible Y: gap:reduced-flattening-by-blowup; BS17, proof of Lemma 2.6, p. 5). Since U is dense, V(J) contains no irreducible component of Y, so Z := V(J) has dim Z \< d. X_1 → Y_1 is proper and flat, and surjective because its image is closed and contains the dense preimage of U; so it is a proper fppf cover, of universal F-descent by §1.1. The composite X_1 → Y_1 → Y factors through X. By the composition and cancellation laws (ArcTopologyAndDescent §1.1) it suffices to treat the blowup Bl_J Y → Y; rename it X → Y, with exceptional divisor E over Z. After thickening, H^i(X, O_X(−E)) = 0 for i > 0; replace Y by the pushout Y′ of §1.3 (F(Y) = F(Y′) and `F(X^{•/Y})` = `F(X^{•/Y′})` since Y′ → Y is a finite universal homeomorphism).
 4. By induction F(Z) ≅ Tot `F(E^{•/Z})`; as in the proof of BS17 Theorem 2.9 it suffices that F(Y′) → `F(X^{n/Y′})` ⊕ F(Z) → `F(E^{n/Y′})` is a fibre sequence for every n, which is §1.4 applied to the structure-sheaf fibre sequence of §1.3 (iv).
 
 **Checks.**
 
 - For a closed cover Y = Y_1 ∪ Y_2, descent along Y_1 ⊔ Y_2 → Y recovers the Mayer–Vietoris sequence of §0.6 after inverting p.
-- For the normalization of a nodal curve, descent expresses F(Y) through the normalization and the two preimages of the node.
+- For the normalization of a nodal curve, descent expresses F(Y) through the normalization and the preimage of the node: two k-points for a split node, one point with residue field the quadratic extension k′ of k for a nonsplit node.
+- For Y = Spec k[x, y]/(xy), two lines meeting in a point, and X → Y the disjoint union of the two lines, X → Y is flat over the complement U of the point, and the U-admissible blowup of Y at the point is X itself, so step 3 applies with X_1 = Y_1 = X and Z the point. Y is reduced but not integral, which is why step 3 needs flattening over reducible bases.
 
 
 ### 1.6 Rational Witt vector cohomology is an h-sheaf
@@ -483,7 +491,7 @@ A proof route is the following.
 
 **Checks.**
 
-- For f: X ⊔ Z → Y with X, Z the two branches of a nodal curve Y, descent gives the Mayer–Vietoris sequence of §0.6.
+- For f: X ⊔ Z → Y with X, Z the two irreducible components of a nodal curve Y whose components are defined over k (for instance two lines meeting in a point), descent gives the Mayer–Vietoris sequence of §0.6.
 - Agreement with Berthelot–Bloch–Esnault's descent for proper hypercoverings (§2.6) in the range where both apply.
 
 ### Examples
@@ -493,11 +501,11 @@ A proof route is the following.
 - When Z is a point of a surface Y, the construction recovers a finite universal homeomorphism Y′ → Y that is an isomorphism away from Z.
 - For X → Y a closed cover Y = X ∪ Z (disjoint union X ⊔ Z → Y), the sequence is the Mayer–Vietoris sequence.
 - For a closed cover Y = Y_1 ∪ Y_2, descent along Y_1 ⊔ Y_2 → Y recovers the Mayer–Vietoris sequence of §0.6 after inverting p.
-- For f: X ⊔ Z → Y with X, Z the two branches of a nodal curve Y, descent gives the Mayer–Vietoris sequence of §0.6.
+- For f: X ⊔ Z → Y with X, Z the two irreducible components of a nodal curve Y whose components are defined over k (for instance two lines meeting in a point), descent gives the Mayer–Vietoris sequence of §0.6.
 
 ### Dependencies
 
-§0.1; §0.3; EnhancedDerivedSheaves §E5:descent, `moduleDescent`; EnhancedDerivedSheaves §E5:animation.3, bounded totalizations; EnhancedDerivedSheaves §E2.8, descendableCover_fppf; EnhancedDerivedSheaves §E5:animation.1, animated commutative rings; EnhancedDerivedSheaves §E5:animation.2, `simplicialWitt` and `wittFrobeniusLocalization`; EnhancedDerivedSheaves §E2.8, `derivedSchemeBaseChange`; EnhancedDerivedSheaves §E1.4, tensor and derived functors; SchemeAndStackFoundations §2.18, `projectionFormula`; SchemeAndStackFoundations §2.6, ample serre vanishing; SchemeAndStackFoundations §0.23, universal homeomorphism criteria; SchemeAndStackFoundations §4.12, modification domination; §1.2; §0.5; §1.1; §1.3; §1.4; ArcTopologyAndDescent §1.1, universal descent for a scheme presheaf; ArcTopologyAndDescent §1.3, h-site and abstract blowup squares; ArcTopologyAndDescent §1.6, affine approximation of v-covers; PrismaticCohomology §2.0, finite-presentation refinement of v-covers; EnhancedDerivedSheaves §E2.8, `properSurjective_inductiveLevel`; SchemeAndStackFoundations §0.26, qcqs Frobenius factorization (gap:qcqs-frobenius-factorization); §1.5.
+§0.1; §0.3; EnhancedDerivedSheaves §E5:descent, `moduleDescent`; EnhancedDerivedSheaves §E5:animation.3, bounded totalizations; EnhancedDerivedSheaves §E2.8, descendableCover_fppf; EnhancedDerivedSheaves §E5:animation.1, animated commutative rings; EnhancedDerivedSheaves §E5:animation.2, `simplicialWitt` and `wittFrobeniusLocalization`; EnhancedDerivedSheaves §E2.8, `derivedSchemeBaseChange`; EnhancedDerivedSheaves §E1.4, tensor and derived functors; SchemeAndStackFoundations §2.18, `projectionFormula`; SchemeAndStackFoundations §2.6, ample serre vanishing; SchemeAndStackFoundations §0.23, universal homeomorphism criteria; SchemeAndStackFoundations §4.12, modification domination; §1.2; §0.5; §1.1; §1.3; §1.4; ArcTopologyAndDescent §1.1, universal descent for a scheme presheaf; ArcTopologyAndDescent §1.3, h-site and abstract blowup squares; ArcTopologyAndDescent §1.6, affine approximation of v-covers; PrismaticCohomology §2.0, finite-presentation refinement of v-covers; SchemeAndStackFoundations §4.12, generic flatness and flattening by blowup (gap:reduced-flattening-by-blowup); SchemeAndStackFoundations §0.26, qcqs Frobenius factorization (gap:qcqs-frobenius-factorization); §1.5.
 
 
 
@@ -628,7 +636,7 @@ A proof route is the following.
 **Checks.**
 
 - For X smooth quasi-projective, the constant simplicial scheme X_n = X is a simplicial resolution.
-- For the nodal cubic X, the normalization P¹ → X is proper surjective and étale (an isomorphism) over the smooth locus, and its Čech nerve truncated at level 1 refines to a 1-truncated simplicial resolution with X_1 = P¹ ×_X P¹ = P¹ ⊔ two points.
+- For a split nodal cubic X (a rational node whose two branches are defined over k), the normalization P¹ → X is proper surjective and étale (an isomorphism) over the smooth locus, and its Čech nerve truncated at level 1 refines to a 1-truncated simplicial resolution with X_1 = P¹ ×_X P¹ = P¹ ⊔ two k-points. For a nonsplit rational node, whose branches are conjugate over the quadratic extension k′ of k, the off-diagonal part of P¹ ×_X P¹ is Spec k′, which becomes two points only after base change to k′; over k = F_q the split fibre product has q + 3 rational points and the nonsplit one q + 1.
 - The Čech nerve of the identity of a singular X is a proper hypercovering but not a simplicial resolution, since its terms are not smooth.
 - A simplicial resolution is a proper hypercovering in the sense of PadicDifferentialEquationsAndRigidCohomology §RD.5.74, proper hypercover descent spectral sequence, so rigid descent applies to it.
 
@@ -651,7 +659,7 @@ A proof route is the following.
 
 **Checks.**
 
-- For the normalization P¹ → X of a nodal cubic (N = 2), H^0(X, WO_K) ≅ H^0 of the descent complex = K and H^1(X, WO_K) = K is read off from the two points over the node.
+- For the normalization P¹ → X of a nodal cubic (N = 2), H^0(X, WO_K) ≅ H^0 of the descent complex = K and H^1(X, WO_K) is read off from the preimage of the node: K²/K for a split node (two k-points) and W(k′)_K/K for a nonsplit one (one point with quadratic residue field k′), one-dimensional in both cases. Over k = F_q the q-Frobenius acts on this H¹ by 1 for a split node and by −1 for a nonsplit one, matching the point counts q ≡ 1 − 1 and q + 2 ≡ 1 − (−1) mod q (for y² = x²(x − 1) over F_3 the node is nonsplit and there are 5 points).
 - For the split node, the 1-truncated unnormalized complex has C⁰ = K and C¹ = K³ with d⁰ = 0, so its H¹ is K³. At truncation N = 2, d¹ imposes a = 0 and b + c = 0, leaving H¹ = K; the comparison range q < N is essential.
 
 ### Examples
@@ -661,7 +669,7 @@ A proof route is the following.
 - H^\*_c(A¹_k, WO_K) = 0, while H^0(A¹_k, WO_K) = W(k[t])_K is infinite-dimensional.
 - H^1_c(G_m, WO_K) = K has slope 0; H^2_c(A², WO_K) = 0 although `H^4_{rig,c}(A²)` = K(−2) ≠ 0.
 - A smooth quasi-projective X is its own simplicial resolution (constant simplicial scheme).
-- For the normalization P¹ → X of a nodal cubic (N = 2), H^0(X, WO_K) ≅ H^0 of the descent complex = K and H^1(X, WO_K) = K is read off from the two points over the node.
+- For the normalization P¹ → X of a nodal cubic (N = 2), H^0(X, WO_K) ≅ H^0 of the descent complex = K and H^1(X, WO_K) is read off from the preimage of the node: K²/K for a split node (two k-points) and W(k′)_K/K for a nonsplit one (one point with quadratic residue field k′), one-dimensional in both cases. Over k = F_q the q-Frobenius acts on this H¹ by 1 for a split node and by −1 for a nonsplit one, matching the point counts q ≡ 1 − 1 and q + 2 ≡ 1 − (−1) mod q (for y² = x²(x − 1) over F_3 the node is nonsplit and there are 5 points).
 
 ### Dependencies
 
@@ -786,7 +794,7 @@ A proof route is the following.
 
 1. Take an N-truncated simplicial resolution (§2.5) and its N-coskeleton X_•.
 2. Embed each quasi-projective X_m (m ≤ N) in a smooth formal W_m with Frobenius lift F_m; form Γ_n(W_m) = `∏_{γ: [m] → [n]}` W_m with the induced simplicial structure and Frobenius ∏F_m, and P_• = P ×_W `∏_{m≤N}` Γ_•(W_m).
-3. The product of the embeddings indexed by γ gives X_• → P_•, a closed immersion in degrees ≤ N because one factor is the given embedding, and in all degrees by the coskeleton property; smoothness of the comparison maps P_n → `(cosk_{n−1} sk_{n−1} P_•)_n` is Tsuzuki's computation for such coskeletal products of smooth formal schemes (Tsu04, §7.3.3, cited by locator; CT03, Proposition 11.2.5), and the resulting (X_•, X_•, P_•) is a simplicial frame in the sense of PadicDifferentialEquationsAndRigidCohomology §RD.3.1, frame.
+3. The product of the embeddings indexed by γ gives X_• → P_•, a closed immersion in degrees ≤ N because one factor is the given embedding, and in all degrees by the coskeleton property; smoothness of the comparison maps P_n → `(cosk_{n−1} sk_{n−1} P_•)_n` is Tsuzuki's computation for such coskeletal products of smooth formal schemes (Tsu04, §7.3.3, cited by locator; CT03, Corollary 11.2.6, p. 197, which rests on the coskeleton identity of CT03, Proposition 11.2.5, pp. 196–197), and the resulting (X_•, X_•, P_•) is a simplicial frame in the sense of PadicDifferentialEquationsAndRigidCohomology §RD.3.1, frame.
 
 **Checks.**
 
@@ -830,7 +838,7 @@ A proof route is the following.
 **Checks.**
 
 - X = P¹: H⁰_rig = K ↔ H⁰(P¹, WO_K) = K and H²_rig = K(−1) has no slope \< 1 part, matching H²(P¹, WO_K) = 0.
-- X a nodal cubic over k: H¹_rig(X/K) = K of slope 0 ≅ H¹(X, WO_X)_K = K.
+- X a nodal cubic over k: H¹_rig(X/K) = K of slope 0 ≅ H¹(X, WO_X)_K = K; over F_q the q-Frobenius acts on both by 1 if the node is split and by −1 if it is not, a unit in either case.
 - X an elliptic curve: dim H¹(X, WO_X)_K = 1 if X is ordinary (H¹_rig has slopes 0, 1) and 2 if X is supersingular (slopes 1/2, 1/2), matching the slope \< 1 part of H¹_rig.
 
 
@@ -916,7 +924,7 @@ These results apply to CR12, Definition 4.4.4 (3), p. 82: Witt-rational singular
 
 ### 4.2 Pushforward on Hodge–Witt cohomology with supports
 
-Let S be a k-scheme. Let Sm\*/S be the category of pairs (X, Φ) with X an S-scheme smooth over k and Φ a family of supports on X, morphisms f: (X, Φ) → (Y, Ψ) being S-morphisms with f|_Φ proper and f(Φ) ⊂ Ψ. For f between pure-dimensional X, Y of relative dimension r = dim X − dim Y there is a pushforward f_\*: Ĥ((X, Φ)/S) → Ĥ((Y, Ψ)/S)(−r), where Ĥ((X, Φ)/S) = `⊕_{i,q}` R^i(a_X)_Φ W Ω^q_X (a_X: X → S), the twist (−r) shifting the bidegree (q, i) to (q − r, i − r). It is defined from Ekedahl duality and the trace for the compactly supported direct image, makes (X, Φ) ↦ Ĥ((X, Φ)/S) a functor, commutes with F, V and d, is compatible with restriction to opens of S, and for open immersions is the excision isomorphism. For a finite morphism f: X → Y of connected smooth k-schemes, f_\* ∘ f^\* = deg(f) on W_•Ω_Y. (CR12, §2.3, Definition 2.3.1, Proposition 2.3.3, Proposition 2.3.4, pp. 39–40; CR12, Remark 2.3.2, p. 40).
+Let S be a k-scheme. Let Sm\*/S be the category of pairs (X, Φ) with X an S-scheme smooth over k and Φ a family of supports on X, morphisms f: (X, Φ) → (Y, Ψ) being S-morphisms with f|_Φ proper and f(Φ) ⊂ Ψ. For f between pure-dimensional X, Y of relative dimension r = dim X − dim Y there is a pushforward f_\*: Ĥ((X, Φ)/S) → Ĥ((Y, Ψ)/S)(−r), where Ĥ((X, Φ)/S) = `⊕_{i,q}` R^i(a_X)_Φ W Ω^q_X (a_X: X → S), the twist (−r) shifting the bidegree (q, i) to (q − r, i − r). It is defined from Ekedahl duality and the trace for the compactly supported direct image, makes (X, Φ) ↦ Ĥ((X, Φ)/S) a functor, commutes with F, V and d, is compatible with restriction to opens of S, and for open immersions is the excision isomorphism. For a finite surjective morphism f: X → Y of connected smooth k-schemes (equivalently, f finite and dim X = dim Y, so r = 0), f_\* ∘ f^\* = deg(f) as an endomorphism of W_•Ω_Y (S = Y). (CR12, §2.3, Definition 2.3.1, Proposition 2.3.3, Proposition 2.3.4, pp. 39–40, whose statement omits the equal-dimension hypothesis; CR11, Theorem 1.2.3 (1), p. 13, which states it; CR12, Remark 2.3.2, p. 40).
 
 X, Y smooth over k (not necessarily proper); f proper on the supports. The ˆ indicates the inverse limit over n of the de Rham–Witt systems.
 
@@ -930,13 +938,13 @@ The construction has the following API.
 - f_\* commutes with F, V and d.
 - For U ⊂ S open, (f_U)_\* = (f_\*)|_U.
 - For an open immersion j: (U, Φ) → (X, Φ), j_\* is the excision isomorphism.
-- For finite f: X → Y of connected smooth k-schemes, f_\* ∘ f^\* = deg(f) · id on W_•Ω_Y.
+- For finite surjective f: X → Y of connected smooth k-schemes, f_\* ∘ f^\* = deg(f) · id on W_•Ω_Y.
 
 A proof route is the following.
 
 1. Let d_X = dim X and d_Y = dim Y, so r = d_X − d_Y (for X, Y not pure-dimensional, work on each pair of connected components). Write K_X ≅ E(W_•ω_X)(d_X)[d_X] for the Witt residual complex of §4.1 and D_X = Hom(−, K_X), and likewise for Y. For f in Sm\*/S, compose µ_X: E(W_•Ω_X) ≅ D_X(W_•Ω_X)(−d_X)[−d_X], the transformation θ_f: f_ΦD_X → Γ_ΨD_Y(f_\*−) from the trace, D(f^\*), and `µ_Y^{−1}`: D_Y(W_•Ω_Y)(−d_Y)[−d_Y] ≅ E(W_•Ω_Y); the shifts combine to (d_Y − d_X)[d_Y − d_X] = (−r)[−r], which gives Rf_ΦW_•Ω_X → RΓ_ΨW_•Ω_Y(−r)[−r] and, after Ra_\* and Rlim, f_\*.
 2. Functoriality and the compatibilities follow from those of θ_f and µ_X (CR12 Proposition 2.3.3).
-3. f_\*f^\* = deg f for finite f: Gros's computation through the trace of finite flat morphisms (SchemeAndStackFoundations §2.21, trace_finite).
+3. f_\*f^\* = deg f for finite surjective f: such an f is flat, X and Y being regular of the same dimension, and Gros's computation goes through the trace of finite flat morphisms (SchemeAndStackFoundations §2.21, trace_finite).
 
 **Checks.**
 
@@ -945,13 +953,14 @@ A proof route is the following.
 - At level n = 1, f_\* is the pushforward on Hodge cohomology with supports of Chatzistamatiou–Rülling 2011 (Grothendieck duality trace).
 - For the relative Frobenius F: A¹ → `A¹^{(1)}` (finite of degree p), F_\*F^\* = p ≠ 1 on W_•O: the pushforward is not an inverse of pullback for nontrivial finite maps.
 - For X smooth and connected, the relative Frobenius `F_{X/k}`: X → `X^{(1)}` is finite of degree `p^{dim X}` and F_\* F^\* = `p^{dim X}`; on a disconnected X the degree formula holds component by component.
+- Negative control for surjectivity: the inclusion f of a k-point x in P¹ is finite but not surjective (r = −1). Over S = Spec k, f_\*f^\* sends 1 ∈ H⁰(P¹, WO) to ĉl(x)|_P¹ ∈ H¹(P¹, WΩ¹), of bidegree (1, 1) and trace 1, not to a multiple of 1 in bidegree (0, 0); the degree formula is for finite surjective maps only.
 
 These results apply to CR12, Proposition 3.5.6 (ii), p. 64: the graph of a proper morphism acts by the pushforward; CR12, Lemmas 3.6.1–3.6.2, pp. 67–68: pushforward along a smooth alteration of a closed subset shifts bidegree by its codimension; CR12, Lemma 4.2.4, p. 77: u_\*u^\* = deg u for universal homeomorphisms between normal schemes.
 
 
 ### 4.3 Cycle classes in Hodge–Witt cohomology with supports
 
-For a smooth k-scheme T and a family Φ of supports on T, define the Chow group with supports CH(T, Φ) as the free abelian group on integral closed subsets in Φ modulo divisors of rational functions on integral closed subsets that also lie in Φ (CR11, Definition 1.1.14, p. 10); proper pushforward, flat and refined Gysin pullback and exterior products are those of SchemeAndStackFoundations §§5.1–5.5 restricted to supports. For X smooth over k and an integral closed subscheme Z ⊂ X of codimension c, Gros's cycle class ĉl(Z) ∈ H^c_Z(X, WΩ^c_X) is the image of the logarithmic cycle class cl_log(Z) ∈ H^c_Z(X_ét, `W_•Ω^c_{X,log}`) (the Gysin image of 1 on the smooth locus of Z, extended by purity). Extended linearly, these classes form the unique morphism of weak cohomology theories with supports from Chow groups with supports (CH_\*, CH^\*, ×, 1) to (PĤ_\*, PĤ^\*, T, e), where PĤ(X, Φ) = ⊕_p R^pΓ_Φ WΩ^p_X. In particular cycle classes are compatible with proper pushforward, flat and Gysin pullback, exterior products, ĉl(X) = 1, and ĉl of a divisor {0} ⊂ P¹ is c_1(O(1)). (Gro85, II, Définition 4.1.7, p. 50; CR12, 3.2.1–3.2.3 (the cycle class of Gros), pp. 50–51; CR12, Theorem 3.3.10 and Proposition 3.4.3, pp. 56–58; CR11, §1.1–1.2, Definition 1.1.1 and Theorem 1.2.3, pp. 5–15).
+For a smooth k-scheme T and a family Φ of supports on T, define the Chow group with supports CH(T, Φ) as the free abelian group on integral closed subsets in Φ modulo divisors of rational functions on integral closed subsets that also lie in Φ (CR11, Definition 1.1.14, p. 10); proper pushforward, flat and refined Gysin pullback and exterior products are those of SchemeAndStackFoundations §§5.1–5.5 restricted to supports. For X smooth over k and an integral closed subscheme Z ⊂ X of codimension c, Gros's cycle class ĉl(Z) ∈ H^c_Z(X, WΩ^c_X) is the image of the logarithmic cycle class cl_log(Z) ∈ H^c_Z(X_ét, `W_•Ω^c_{X,log}`) (the Gysin image of 1 on the smooth locus of Z, extended by purity). Extended linearly, these classes form the unique morphism of weak cohomology theories with supports from Chow groups with supports (CH_\*, CH^\*, ×, 1) to (PĤ_\*, PĤ^\*, T, e), where PĤ(X, Φ) = ⊕_p R^pΓ_Φ WΩ^p_X. In particular cycle classes are compatible with proper pushforward, flat and Gysin pullback, exterior products, and ĉl(X) = 1. The class ĉl(Z) lives in cohomology with supports in Z; write ĉl(Z)|_X for its image in H^c(X, WΩ^c_X) under the map forgetting supports. For an integral divisor D ⊂ X, ĉl(D)|_X = c_1(O(D)), the image of the class of O(D) in H¹(X, O_X^×) under d log[−] (CR12, 3.2.3 (3)); thus ĉl({0})|_P¹ = c_1(O(1)), while ĉl({0}) itself lies in H¹_Z(P¹, WΩ¹) for Z = {0}. (Gro85, II, Définition 4.1.7, p. 50; CR12, 3.2.1–3.2.3 (the cycle class of Gros), pp. 50–51; CR12, Theorem 3.3.10 and Proposition 3.4.3, pp. 56–58; CR11, §1.1–1.2, Definition 1.1.1 and Theorem 1.2.3, pp. 5–15).
 
 X smooth over k; classes live in Hodge–Witt cohomology with supports in Z; uniqueness is among morphisms of weak cohomology theories with supports.
 
@@ -966,18 +975,19 @@ The construction has the following API.
 - ĉl(f^!α) = f^\*ĉl(α) for refined Gysin pullback along morphisms of smooth schemes.
 - ĉl(α × β) = ĉl(α) × ĉl(β).
 - ĉl([X]) = 1.
+- For an integral divisor D ⊂ X, the image ĉl(D)|_X of ĉl(D) ∈ H¹_D(X, WΩ¹) in H¹(X, WΩ¹) is c_1(O(D)).
 
 A proof route is the following.
 
 1. Define cl_log by the Gysin isomorphism for smooth pairs and the purity isomorphism H^c_Z(X_ét, W_nΩ^c_log) ≅ `H^c_{Z∖Z_sing}(X∖Z_sing, W_nΩ^c_log)` (Gros), then map W_nΩ_log → W_nΩ.
-2. Hodge–Witt cohomology with supports, with pushforward (§4.2), pullback and exterior product, is a weak cohomology theory with supports (CR12 Theorem 3.3.10); the criteria of Chatzistamatiou–Rülling 2011 Theorem 1.2.3 (degree formula for finite maps, ĉl({0}) = ĉl({∞}) on P¹ via c_1(O(1)), compatibility with transversal divisors) give the unique morphism from Chow groups with supports (SchemeAndStackFoundations §5.1, chow group, SchemeAndStackFoundations §5.5, refined Gysin, SchemeAndStackFoundations §5.2, proper pushforward).
+2. Hodge–Witt cohomology with supports, with pushforward (§4.2), pullback and exterior product, is a weak cohomology theory with supports (CR12 Theorem 3.3.10); the criteria of Chatzistamatiou–Rülling 2011 Theorem 1.2.3 (degree formula for finite morphisms between smooth connected schemes of equal dimension, equality of the images of ĉl({0}) and ĉl({∞}) in H¹(P¹, WΩ¹), both being c_1(O(1)), compatibility with transversal divisors) give the unique morphism from Chow groups with supports (SchemeAndStackFoundations §5.1, chow group, SchemeAndStackFoundations §5.5, refined Gysin, SchemeAndStackFoundations §5.2, proper pushforward).
 
 **Checks.**
 
 - ĉl([X]) = 1 ∈ H⁰(X, WO_X).
 - For a k-point x of P¹, π_\*ĉl(x) = 1 ∈ W(k).
-- For an effective Cartier divisor D = div(t) on smooth X, ĉl(D) is the image of d log[t] under the boundary H⁰(X ∖ D, WΩ¹) → H¹_D(X, WΩ¹), i.e. the first Chern class of O(D).
-- ĉl does not distinguish rationally equivalent cycles: ĉl({0}) = ĉl({∞}) in H¹(P¹, WΩ¹), although {0} ≠ {∞} as cycles.
+- Supported class versus Chern class: let X be smooth and affine and D = V(t) a smooth integral divisor cut out by a global function t. At each level n, H¹_D(X, W_nΩ¹) = W_nΩ¹(X ∖ D)/W_nΩ¹(X), and ĉl(D) = i_\*(1) is the class of −d[t]/[t] = −d log[t] (CR12, Proposition 2.4.1, formula (2.4.1) with c = 1, and 3.2.3 (1)). Its image ĉl(D)|_X is c_1(O(D)) = 0, because O(D) ≅ O_X. The supported class is not zero: for X = A¹ and D = {0}, at level 1 it is the class of −dt/t in k[t, t⁻¹]dt/k[t]dt. Identifying ĉl(D) with c_1(O(D)) before forgetting supports would make it zero.
+- ĉl does not distinguish rationally equivalent cycles after forgetting supports: ĉl({0})|_P¹ = ĉl({∞})|_P¹ = c_1(O(1)) in H¹(P¹, WΩ¹), although {0} ≠ {∞} as cycles; with supports the two classes lie in the different groups H¹_Z(P¹, WΩ¹) for Z = {0} and for Z = {∞}.
 - For Φ = {∅}, CH(T, Φ) = 0, whereas for all closed supports it is CH(T).
 - For T = P¹ and support the point ∞, CH_0(T, {∞}) = ℤ; after forgetting supports its generator maps to the degree-one generator of CH_0(P¹).
 
@@ -1044,7 +1054,7 @@ A proof route is the following.
 - Ĥ([Δ_X]/S) = id.
 - For a finite flat degree-d S-morphism h between integral smooth schemes, Ĥ([Γ_h] ∘ [Γ_h^t]/S) = d·id on Ĥ(Y/S).
 - For S = Spec k and h: X → Y, Ĥ([Γ_h^t]/k) is the pullback H^q(Y, WΩ^p) → H^q(X, WΩ^p).
-- For S = Spec k, X = Y = P¹ and a k-point x: [P¹ × {x}] acts by 0 on H⁰(P¹, WO) and sends α ∈ H¹(P¹, WΩ¹) to (∫α)·ĉl(x), while [{x} × P¹] acts as the identity on H⁰(P¹, WO) = W(k) and by 0 on H¹(P¹, WΩ¹); neither is the identity, but their sum is, as [Δ] = [{x} × P¹] + [P¹ × {x}] in CH¹(P¹ × P¹).
+- For S = Spec k, X = Y = P¹ and a k-point x: [P¹ × {x}] acts by 0 on H⁰(P¹, WO) and sends α ∈ H¹(P¹, WΩ¹) to (∫α)·ĉl(x)|_P¹, while [{x} × P¹] acts as the identity on H⁰(P¹, WO) = W(k) and by 0 on H¹(P¹, WΩ¹); neither is the identity, but their sum is, as [Δ] = [{x} × P¹] + [P¹ × {x}] in CH¹(P¹ × P¹).
 
 These results apply to CR12, Theorem 4.3.3, p. 79: the correspondences α, β, γ between finite covers act on R^if_\*WO_ℚ and give inverse isomorphisms up to degree; CR12, Proposition 4.2.7, p. 78: a universal homeomorphism and a finite cover combine into a projector; CR12, Theorem 4.8.1, p. 96: a correspondence decomposing the diagonal of the generic fibre kills positive-degree WO cohomology.
 
@@ -1067,7 +1077,7 @@ A proof route is the following.
 
 - On P¹ ×_k P¹ over S = Spec k, the cycle P¹ × {x} (supported over a point of the target, r = 1) has image in H¹(P¹, WΩ¹), so it acts by zero into H⁰(P¹, WO) (N = 1).
 - The cycle {x} × P¹ (supported over a point of the source) kills H¹(P¹, WO), H⁰(P¹, WΩ¹) and H¹(P¹, WΩ¹), but not H⁰(P¹, WO).
-- Point inclusion, a correspondence of nonzero degree: X = Spec k, Y = P¹_k, S = Spec k and Z = {x} ⊂ X × Y = P¹ for a k-point x. Z lies over the codimension-one subset {x} of Y and [Z] has degree 1. Ĥ([Z]/k) sends 1 ∈ H⁰(Spec k, WO) = W(k) to ĉl(x) ∈ H¹(P¹, WΩ¹), whose trace is 1 (§4.3), so no nonzero integer kills the action on the source WO-part; its projection to H⁰(P¹, WO) ⊕ H¹(P¹, WO) is zero, as (i) with r = 1 asserts. Without the degree-zero hypothesis the WO-consequence of (iii) would be false.
+- Point inclusion, a correspondence of nonzero degree: X = Spec k, Y = P¹_k, S = Spec k and Z = {x} ⊂ X × Y = P¹ for a k-point x. Z lies over the codimension-one subset {x} of Y and [Z] has degree 1. Ĥ([Z]/k) sends 1 ∈ H⁰(Spec k, WO) = W(k) to ĉl(x)|_P¹ ∈ H¹(P¹, WΩ¹), whose trace is 1 (§4.3), so no nonzero integer kills the action on the source WO-part; its projection to H⁰(P¹, WO) ⊕ H¹(P¹, WO) is zero, as (i) with r = 1 asserts. Without the degree-zero hypothesis the WO-consequence of (iii) would be false.
 - Negative control for the codimension hypothesis: X = Y = Spec k ⊔ Spec k over S = Spec k, with points x_1, x_2 and y_1, y_2, and Z = {(x_1, y_1)}. Z is proper over Y and its projections {x_1} ⊂ X and {y_1} ⊂ Y are proper closed subsets, but each is a whole component, of codimension 0, so (iii) does not apply. Indeed [Z] has degree 0 − 0 = 0 and acts on H⁰(X, WO) = W(k)² → H⁰(Y, WO) = W(k)² (and likewise on Wω, which equals WO on a point) by diag(1, 0), and N·diag(1, 0) ≠ 0 for every N ≥ 1; with “proper closed subset” in place of positive codimension, (iii) would be false. The empty Z satisfies the hypothesis vacuously and acts by 0.
 
 ### Examples
@@ -1493,14 +1503,14 @@ A proof route is the following.
 
 (i) f proper; (ii) X, Y proper; (iii) X proper with orbits in affine opens (so X/G exists); (iv) π proper over a finite field, Γ(X, O_X) = K through π^\*, and H^i(X, O_X) the sheaf cohomology of Conventions item 3 vanishing for i ≥ 1. Part (iv) is (ii) for f = π and Y = Spec K, where H^0(Spec K, O) = K and the higher cohomology vanishes; bijectivity of π^\* on global sections is the case i = 0 of the hypothesis of (ii) and excludes, for example, X = ∅ and X = Spec of a nontrivial finite extension of K. The acceptance test states (ii); (iv) is its case Y = Spec K.
 
-*Needs:* §6.2; §6.3; §6.1; §0.1; §2.3; Tau Ceti `TauCeti.AlgebraicGeometry.Scheme.Modules.Cohomology` (statements of (ii) and (iv)); Tau Ceti `AlgebraicGeometry.Scheme.Hom.cohomologyPullback` and `AlgebraicGeometry.Scheme.Modules.pullbackObjUnitIso` (the map in (ii)); SchemeAndStackFoundations §2.6, qcoh higher direct images (flat base change, for the finite extensions in (iv)).
+*Needs:* §6.2; §6.3; §6.1; §0.1; §2.3; Tau Ceti `TauCeti.AlgebraicGeometry.Scheme.Modules.Cohomology` (statements of (ii) and (iv)); Tau Ceti `AlgebraicGeometry.Scheme.Hom.cohomologyPullback` and `AlgebraicGeometry.Scheme.Modules.pullbackObjUnitIso` (the map in (ii)); Tau Ceti `TauCeti.AlgebraicGeometry.bijective_cohomologyBaseChange` (flat base change, for the finite extensions in (iv)).
 
 A proof route is the following.
 
 1. (i) ζ^W(X) = ζ^W(Y) by the definition (§6.1, Frobenius-equivariance of f^\*), hence `ζ^{<1}(X)` = `ζ^{<1}(Y)` (§6.2), and §6.3 gives the congruences.
 2. (ii) By induction on m with 0 → `W_{m−1}O` →(V) W_mO → O → 0 and the five lemma, H^i(Y, W_mO_Y) ≅ H^i(X, W_mO_X) for all m; for proper schemes H^i(−, WO) = lim_m H^i(−, W_mO) (§0.1), so the Witt cohomologies agree after ⊗K.
 3. (iii) For the finite quotient map f: X → Y = X/G, O_Y = (f_\*O_X)^G, R^if_\*(W_mO_X) = 0 for i ≥ 1, W_mO_Y ≅ (f_\*W_mO_X)^G; invariants commute with inverse limits and ⊗ℚ and, in characteristic 0, with cohomology (BBE Lemma 6.10). For |G| prime to p, invariants are exact on k[G]-modules, so H^i(Y, O_Y) = H^i(X, O_X)^G = H^i(X, O_X) and (ii) applies (BBE Corollary 6.12).
-4. (iv) Apply (ii) to π: X → Spec K; the cohomology of Spec K is K in degree 0 and 0 above, so the hypotheses say exactly that π^\* is an isomorphism on all H^i(−, O). For a finite extension K′/K, flat base change (SchemeAndStackFoundations §2.6, `qcoh_higherDirectImages`) gives `H^i(X_{K′}, O)` = H^i(X, O) ⊗_K K′, so the hypotheses hold for `X_{K′}` → Spec K′.
+4. (iv) Apply (ii) to π: X → Spec K; the cohomology of Spec K is K in degree 0 and 0 above, so the hypotheses say exactly that π^\* is an isomorphism on all H^i(−, O). For a finite extension K′/K, flat base change along the flat ring map K → K′ (Tau Ceti `TauCeti.AlgebraicGeometry.bijective_cohomologyBaseChange`, for X quasi-compact with affine diagonal, which holds as X is proper, hence separated, over K) gives `H^i(X_{K′}, O)` = H^i(X, O) ⊗_K K′, so the hypotheses hold for `X_{K′}` → Spec K′.
 
 **Checks.**
 
@@ -1575,21 +1585,32 @@ A proof route is the following.
 
 ### 6.8 Serre’s Bockstein vanishing for abelian varieties
 
-For an abelian variety A of dimension g over a perfect field k of characteristic p and every i ≥ 1, the map V^i: H^g(A, O_A) → H^g(A, `W_{i+1}O_A`) is injective. Equivalently, the boundary `H^{g−1}(A, W_iO_A)` → H^g(A, O_A) of 0 → O_A →(V^i) `W_{i+1}O_A` → W_iO_A → 0 is zero. (BBE07, §6.5, p. 36; Ser58, Théorème 2, pp. 715–739; Ser58Top, sections 1 and 3, pp. 24–53).
+For an abelian variety A of dimension g over a perfect field k of characteristic p and every i ≥ 1, the map V^i: H^g(A, O_A) → H^g(A, `W_{i+1}O_A`) is injective. Equivalently, the boundary `H^{g−1}(A, W_iO_A)` → H^g(A, O_A) of 0 → O_A →(V^i) `W_{i+1}O_A` → W_iO_A → 0 is zero. This is the degree g − 1 case of the vanishing of all Bockstein operations of A: for every q ≥ 0 and all n ≥ j ≥ 1, the restriction H^q(A, W_nO_A) → H^q(A, W_jO_A) is surjective. (BBE07, §6.5, p. 36; Ser58, Théorème 2, pp. 715–739; Ser58Top, n° 3 (Opérations de Bockstein) of §1, pp. 27–29.)
 
-k perfect of characteristic p; A an abelian variety of dimension g; i ≥ 1; the Witt sheaves and V are those of Layer 0.
+k perfect of characteristic p; A an abelian variety of dimension g over k, with group law m: A ×_k A → A, projections p_1, p_2 and the maps i_1 = (id, 0), i_2 = (0, id): A → A ×_k A; i ≥ 1; the Witt sheaves, V and R are those of Layer 0. A class y ∈ H^1(A, W_nO_A) is primitive if m^\*y = p_1^\*y + p_2^\*y in H^1(A ×_k A, W_nO).
 
-*Needs:* §0.1.
+*Needs:* §0.1; AbelianSchemesAndArithmeticModuli §A4.4, `exteriorCohomology`; SchemeAndStackFoundations §2.6, Künneth formula for quasi-coherent cohomology over a field (gap:quasi-coherent-kunneth).
+
+The target has the following API.
+
+- Bockstein criterion, for every scheme X with p·O_X = 0 and every q ≥ 0: for n > m let `δ_{n,m}`: H^q(X, `W_{n−m}O_X`) → `H^{q+1}(X, W_mO_X)` be the boundary of 0 → W_mO_X `→(V^{n−m})` W_nO_X →(R^m) `W_{n−m}O_X` → 0. All `δ_{n,m}` vanish in degree q if and only if H^q(X, W_nO_X) → H^q(X, O_X) is surjective for every n ≥ 1 (Ser58Top, n° 3 of §1, p. 28).
+- Degree one for abelian varieties: every class of H^1(A, O_A) is primitive and lifts, for every n ≥ 1, to a primitive class of H^1(A, W_nO_A); in particular H^1(A, W_nO_A) → H^1(A, O_A) is surjective.
+- All degrees for abelian varieties: H^q(A, W_nO_A) → H^q(A, O_A) is surjective for all q ≥ 0 and n ≥ 1, so all Bockstein operations of A vanish.
 
 A proof route is the following.
 
-1. Use Serre’s Bockstein theorem for abelian varieties, Ser58 Théorème 2, and Ser58Top, sections 1 and 3, in its top-degree Witt form recorded in BBE07 §6.5, p. 36. This target is independent of the theta-divisor criterion; apply it there after establishing the Witt exact sequences.
+1. Bockstein criterion. The case m = n − 1 says that `δ_{n,n−1}` vanishes on H^q(X, O_X) exactly when H^q(X, W_nO_X) → H^q(X, O_X) is onto. Conversely, assume these maps onto and show H^q(X, W_nO_X) → H^q(X, W_jO_X) onto for n ≥ j by induction on j. For x ∈ H^q(X, W_jO_X), lift its image in H^q(X, O_X) to y ∈ H^q(X, W_nO_X); then `x − R^{n−j}y` lies in the kernel of `R^{j−1}`, which is the image V(z) of some z ∈ `H^q(X, W_{j−1}O_X)`; by induction `z = R^{n−j}w` with w ∈ `H^q(X, W_{n−1}O_X)`, and V commutes with R, so `x = R^{n−j}(y + V(w))`. Exactness of the long sequences then kills every `δ_{n,m}` in degree q.
+2. Degree one. H^0(A, O_A) = k and H^0(A ×_k A, O) = k, so H^0(−, W_nO) = W_n(k) on both, the restrictions H^0(−, `W_{n+1}O`) → H^0(−, W_nO) are onto, and V^n: H^1(−, O) → H^1(−, `W_{n+1}O`) is injective on A and on A ×_k A. The Künneth formula (gap:quasi-coherent-kunneth) gives H^1(A ×_k A, O) = p_1^\*H^1(A, O_A) ⊕ p_2^\*H^1(A, O_A) and identifies the summand p_1^\*H^1(A, O_A) ∪ p_2^\*H^1(A, O_A) of H^2(A ×_k A, O) with H^1(A, O_A) ⊗_k H^1(A, O_A). Since m ∘ i_1 = m ∘ i_2 = id, p_1 ∘ i_1 = p_2 ∘ i_2 = id and p_2 ∘ i_1, p_1 ∘ i_2 factor through Spec k, every x ∈ H^1(A, O_A) is primitive. A primitive class of H^2(A, O_A) is zero: write it as ∑_l a_l ∪ b_l with a_l, b_l ∈ H^1(A, O_A) (AbelianSchemesAndArithmeticModuli §A4.4, `exteriorCohomology`); m^\* is a ring map, so the component of m^\*(∑_l a_l ∪ b_l) in that summand is the image of ∑_l a_l ∧ b_l under a ∧ b ↦ a ⊗ b − b ⊗ a (graded commutativity of the cup product), which is injective on ∧²H^1(A, O_A) in every characteristic, and primitivity makes it zero. Induct on n: if x_n ∈ H^1(A, W_nO_A) is a primitive lift of x, the obstruction to lifting x_n to `H^1(A, W_{n+1}O_A)` is its boundary in H^2(A, O_A) for 0 → O_A →(V^n) `W_{n+1}O_A` → W_nO_A → 0; the boundary is natural for m, p_1 and p_2, so the obstruction is primitive, hence zero. Every lift y is primitive: e = m^\*y − p_1^\*y − p_2^\*y maps to zero in H^1(A ×_k A, W_nO), so e = V^n(f) with f ∈ H^1(A ×_k A, O); moreover i_1^\*e = 0 = i_2^\*e, so V^n(i_1^\*f) = 0 = V^n(i_2^\*f), whence i_1^\*f = i_2^\*f = 0 and f = 0 by the degree-one Künneth decomposition.
+3. All degrees. `R^{n−1}`: W_nO_A → O_A is a map of sheaves of rings, so a cup product of lifts of a_1, …, a_q ∈ H^1(A, O_A) lifts a_1 ∪ ⋯ ∪ a_q. These products span H^q(A, O_A) (§A4.4), and the image of H^q(A, W_nO_A) is a k-subspace because W_n(k) → k is onto; so H^q(A, W_nO_A) → H^q(A, O_A) is onto.
+4. Step 1 with q = g − 1 makes `H^{g−1}(A, W_{i+1}O_A)` → `H^{g−1}(A, W_iO_A)` onto, so the boundary `H^{g−1}(A, W_iO_A)` → H^g(A, O_A) vanishes and V^i is injective on H^g(A, O_A).
 
 **Checks.**
 
 - For g = 0, V^i: k → `W_{i+1}(k)` sends a to the Witt vector with a in coordinate i and zero elsewhere, hence has zero kernel.
 - For g = 1 and i = 1, W_2(k) → k is onto, so the boundary H^0(E, O_E) → H^1(E, O_E) is zero and V on H^1 is injective.
-- For g = 1 and any i ≥ 1, H^0(E, `W_{i+1}O_E`) = `W_{i+1}(k)` → W_i(k) is onto, so the boundary is zero; this includes supersingular E and p = 2, where Frobenius on H^1(E, O_E) can be zero.
+- For g = 1 and any i ≥ 1, H^0(E, `W_{i+1}O_E`) = `W_{i+1}(k)` → W_i(k) is onto, so the boundary is zero; this includes supersingular E and p = 2, where Frobenius on H^1(E, O_E) can be zero. For g = 1 the obstruction group H^2(E, O_E) of step 2 is already 0.
+- For A = E_1 × E_2 (g = 2), H^1(A, O_A) has the basis a_1, a_2 pulled back from the factors and H^2(A, O_A) = k·(a_1 ∪ a_2); the component of m^\*(a_1 ∪ a_2) in the summand p_1^\*H^1 ∪ p_2^\*H^1 is a_1 ⊗ a_2 − a_2 ⊗ a_1 ≠ 0, so no nonzero class of H^2(A, O_A) is primitive and the obstruction of step 2 vanishes. In characteristic 2 the same component is a_1 ⊗ a_2 + a_2 ⊗ a_1, still nonzero.
+- Every scheme X with p·O_X = 0 has vanishing Bocksteins in degree 0, since a section f of O_X lifts to the Witt vector (f, 0, …, 0); a Noetherian X of finite dimension also has none in degree dim X, since `H^{dim X + 1}` vanishes by Grothendieck vanishing (Ser58Top, n° 3 of §1, p. 28, for varieties). The abelian-variety hypothesis is needed in between: Igusa's surfaces have a nonzero Bockstein in degree 1 (Ser58Top, n° 3 of §1, p. 28), so for them H^1(X, W_nO_X) → H^1(X, O_X) is not onto for some n.
 
 
 ### 6.9 Theta divisors have congruent point counts modulo q
@@ -1617,7 +1638,7 @@ A proof route is the following.
 
 - For an elliptic curve E (g = 1) a theta divisor is a single rational point, and the statement is 1 ≡ 1.
 - Two theta divisors differing by translation by a rational point have equal point counts; the theorem covers divisors that are not translates.
-- On an elliptic curve E over F_q with distinct rational points P and Q, the divisors 2P and P + Q both have O_E(D) ample of degree 2 with h^0 = 2, so neither is a theta divisor; their point counts are 1 and 2, and 1 ≢ 2 mod q. The condition h^0(O_A(Θ)) = 1 cannot be weakened to ampleness (the analogue on an abelian variety of BBE07 Remarks 6.6 (ii), where D = 2{0} and D′ = {0} + {∞} on P¹ have q + 1 − q = 1 ≢ 0 points' difference).
+- On an elliptic curve E over F_q with distinct rational points P and Q, the divisors 2P and P + Q both have O_E(D) ample of degree 2 with h^0 = 2, so neither is a theta divisor; their point counts are 1 and 2, and 1 ≢ 2 mod q. The condition h^0(O_A(Θ)) = 1 cannot be weakened to ampleness. This is the analogue on an abelian variety of BBE07, Remarks 6.6 (ii), p. 36: on P¹ the divisors D = 2{0} and D′ = {0} + {∞} have h^0(O(D)) = h^0(O(D′)) = 3, but 1 and 2 rational points.
 - The ideal sheaf I = O_A(−Θ) in place of its dual would be a wrong model: on E, O_E(−P) has h^0 = 0 and is not ample, so no divisor would qualify, and the g = 1 Check would have no instance.
 - For dim A = 0, A = Spec F_q, the only effective Cartier ideal is the unit ideal (0 is a zero divisor), whose dual O is ample with h^0 = 1: the only theta divisor is empty and the statement reads 0 ≡ 0.
 
@@ -1765,7 +1786,7 @@ A proof route is the following.
 
 ### Dependencies
 
-§2.3; §2.4; §3.1; PadicDifferentialEquationsAndRigidCohomology §RD.6.23, lefschetz trace formula; PadicDifferentialEquationsAndRigidCohomology §RD.6.22, closed points and zeta function; §3.6; §6.1; PadicDifferentialEquationsAndRigidCohomology §RD.7.4, rational zeta descent and fatou; §6.2; §6.3; §0.1; §5.8; §5.5; §6.4; §0.2; §0.6; SchemeAndStackFoundations §2.6, projective space cohomology; §3.7; SchemeAndStackFoundations §2.20, cm serre duality; §6.7; AbelianSchemesAndArithmeticModuli §A2.4, `ampleCohomologyAndDegree`; §6.8; §5.11; SchemeAndStackFoundations §5.2, degree; SchemeAndStackFoundations §5.1, chow group; SchemeAndStackFoundations §5.2, chow proper push; SchemeAndStackFoundations §5.2, flat pullback; SchemeAndStackFoundations §4.14, hilbert scheme; §6.11; §6.10; SchemeAndStackFoundations §5.1, rational equivalence; §5.12; §5.6; §3.5; CrystallineCohomology §CR.4.7, Witt slope spectral sequence; §6.13; §6.5; §0.8.
+§2.3; §2.4; §3.1; PadicDifferentialEquationsAndRigidCohomology §RD.6.23, lefschetz trace formula; PadicDifferentialEquationsAndRigidCohomology §RD.6.22, closed points and zeta function; §3.6; §6.1; PadicDifferentialEquationsAndRigidCohomology §RD.7.4, rational zeta descent and fatou; §6.2; §6.3; §0.1; §5.8; §5.5; §6.4; §0.2; §0.6; SchemeAndStackFoundations §2.6, projective space cohomology; §3.7; SchemeAndStackFoundations §2.20, cm serre duality; §6.7; AbelianSchemesAndArithmeticModuli §A2.4, `ampleCohomologyAndDegree`; AbelianSchemesAndArithmeticModuli §A4.4, `exteriorCohomology`; SchemeAndStackFoundations §2.6, Künneth formula for quasi-coherent cohomology over a field (gap:quasi-coherent-kunneth); §6.8; §5.11; SchemeAndStackFoundations §5.2, degree; SchemeAndStackFoundations §5.1, chow group; SchemeAndStackFoundations §5.2, chow proper push; SchemeAndStackFoundations §5.2, flat pullback; SchemeAndStackFoundations §4.14, hilbert scheme; §6.11; §6.10; SchemeAndStackFoundations §5.1, rational equivalence; §5.12; §5.6; §3.5; CrystallineCohomology §CR.4.7, Witt slope spectral sequence; §6.13; §6.5; §0.8.
 
 ## Downstream consumers
 
@@ -1780,7 +1801,7 @@ The WO-rationality criteria and the point-count congruences are stated for consu
 - GNT19: Yoshinori Gongyo, Yusuke Nakamura, Hiromu Tanaka, *Rational points on log Fano threefolds over a finite field*, 2015. §2.5; Lemmas 2.18–2.25; Definition 4.5; Remark 4.6. arXiv v3
 - NT20: Yusuke Nakamura, Hiromu Tanaka, *A Witt Nadel vanishing theorem for threefolds*, 2017. §2.1; Remark 2.2; Lemmas 2.17–2.18. arXiv v2
 - ESN03: Hélène Esnault, *Varieties over a finite field with trivial Chow group of 0-cycles have a rational point*, 2002. Theorem 1.1; Corollaries 1.2–1.3; §1 p. 2. arXiv v2
-- HW23: Christopher Hacon, Jakub Witaszek, *On the relative Minimal Model Program for fourfolds in positive and mixed characteristic*, 2020. §2; Corollary 4.6 and proof (v2). Certified text: arXiv v2, Corollary 4.6. Published Corollary 4.7 is the corresponding result. Published Corollary 1.3 and pp. 19–20 are cited by locator only; they are absent from v2 and are not certified by this extraction.
+- HW23: Christopher Hacon, Jakub Witaszek, *On the relative Minimal Model Program for fourfolds in positive and mixed characteristic*, 2020. §2; Corollary 4.6 and proof (arXiv v2; Corollary 4.7 in the published version). Corollary 1.3 and pp. 19–20 are locators of the published version.
 - Tan18: Hiromu Tanaka, *Behavior of canonical divisors under purely inseparable base changes*, 2018. Remark 5.3 (1), p. 20; Proposition A.4, p. 30. arXiv:1502.01381v3, Proposition A.4, p. 30; published J. Reine Angew. Math. 744 (2018), 237–264. Locators use arXiv v3.
 - dJ97: A. J. de Jong, *Families of curves and alterations*, 1997. Theorem 5.9; Corollaries 5.10, 5.15, p. 620.
 - dJ96: A. J. de Jong, *Smoothness, semi-stability and alterations*, 1996. Corollary 7.4, p. 88.
@@ -1788,13 +1809,13 @@ The WO-rationality criteria and the point-count congruences are stated for consu
 - Eke84: Torsten Ekedahl, *On the multiplicative properties of the de Rham–Witt complex. I*, 1984. Theorem 4.1 and (2.11); CR12 Theorem 1.10.3. paywalled; cited by its locator without the text
 - Kol96: János Kollár, *Rational Curves on Algebraic Varieties*, 1996. IV.3.2.5; IV.3.6; IV.3.13.3; V.2.13. paywalled; cited by its locator without the text
 - EkeII: Torsten Ekedahl, *On the multiplicative properties of the de Rham–Witt complex. II*, 1985. CR12 Corollaries 1.10.5–1.10.6. paywalled; cited by its locator without the text
-- Ser58Top: Jean-Pierre Serre, *Sur la topologie des variétés algébriques en caractéristique p*, 1958. §§1, 3, pp. 24–53.
-- CT03: Bruno Chiarellotto; Nobuo Tsuzuki, *Cohomological descent of rigid cohomology for étale coverings*, 2003. Theorem 7.3.1; Proposition 11.2.5; §11.
+- Ser58Top: Jean-Pierre Serre, *Sur la topologie des variétés algébriques en caractéristique p*, 1958. §1, n° 3 (Opérations de Bockstein), pp. 27–29.
+- CT03: Bruno Chiarellotto; Nobuo Tsuzuki, *Cohomological descent of rigid cohomology for étale coverings*, 2003. Theorem 7.3.1; Proposition 11.2.5, pp. 196–197; Corollary 11.2.6, p. 197; §11.
 - Tsu03: Nobuo Tsuzuki, *Cohomological descent of rigid cohomology for proper coverings*, 2003. Proper hypercover descent, pp. 101–133. paywalled; cited by its locator without the text
 - Del74: Pierre Deligne, *Théorie de Hodge III*, 1974. (6.2.5), pp. 5–77.
 - Ser58: Jean-Pierre Serre, *Quelques propriétés des variétés abéliennes en caractéristique p*, 1958. Théorème 2, Amer. J. Math. 80, pp. 715–739. Uncertified publisher text; cited by locator.
-- Ax64: James Ax, *Zeroes of polynomials over finite fields*, 1964. pp. 255–261; BBE07 Proposition 6.1. Uncertified publisher text; cited by locator.
+- Ax64: James Ax, *Zeroes of polynomials over finite fields*, 1964. pp. 255–261; BBE07 Proposition 6.3, p. 35. Uncertified publisher text; cited by locator.
 - BS83: Spencer Bloch; V. Srinivas, *Remarks on correspondences and algebraic cycles*, 1983. Proposition 1, pp. 1235–1253. Uncertified publisher text; cited by locator.
 - Tsu04: Nobuo Tsuzuki, *Cohomological descent in rigid cohomology*, 2004. §7.3.3, pp. 931–981. Uncertified publisher text; cited by locator.
 - EGAIII1: Alexander Grothendieck; Jean Dieudonné, *Éléments de géométrie algébrique III, première partie*, 1961. Proposition 3.3.1 and Corollary 3.3.2, pp. 117–118.
-- Stacks: The Stacks project authors, *The Stacks project*. Lemma 45.8.2 (tag 0FH6); Lemma 42.15.2 (tag 02RH).
+- Stacks: The Stacks project authors, *The Stacks project*. Lemma 45.8.2 (tag 0FH6); Lemma 42.15.2 (tag 02RH); Lemma 33.29.1 (tag 0BED).

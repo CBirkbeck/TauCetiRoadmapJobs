@@ -4990,6 +4990,26 @@
     "CrystallineCohomologyPartII:WV.0/witt-universal-homeomorphism-invariance",
     "CrystallineCohomologyPartII:WV.1/frobenius-inverted-witt-h-descent"
    ]
+  },
+  {
+   "id": "reduced-flattening-by-blowup",
+   "slug": "reduced-flattening-by-blowup",
+   "supplier": "SchemeAndStackFoundations",
+   "section": "4.12",
+   "needs": "For a reduced Noetherian scheme Y and a proper finitely presented surjection f: X → Y, provide a dense open U ⊂ Y over which f is flat and a U-admissible blowup Y_1 → Y such that the strict transform of X is flat over Y_1.",
+   "neededBy": [
+    "CrystallineCohomologyPartII:WV.1/frobenius-inverted-witt-h-descent"
+   ]
+  },
+  {
+   "id": "quasi-coherent-kunneth",
+   "slug": "quasi-coherent-kunneth",
+   "supplier": "SchemeAndStackFoundations",
+   "section": "2.6",
+   "needs": "For schemes X and Y over a field k that are quasi-compact with affine diagonal, and quasi-coherent modules F on X and G on Y, the external cup product ⊕_{a+b=n} H^a(X, F) ⊗_k H^b(Y, G) → H^n(X ×_k Y, F ⊠ G) is an isomorphism for every n, where F ⊠ G is the tensor product of the pullbacks of F and G along the two projections.",
+   "neededBy": [
+    "CrystallineCohomologyPartII:WV.6/serre-bockstein-vanishing"
+   ]
   }
  ],
  "sourceIssues": [

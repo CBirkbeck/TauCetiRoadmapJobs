@@ -45,13 +45,30 @@ Not statable at the pins (each is a README target):
   slope `< 1` part of rigid cohomology with compact supports (§3.6), and the identity
   `ζ^{<1}(X, t) = ζ^W(X, t)` (§6.2): Mathlib and Tau Ceti have neither rigid cohomology nor
   the Witt vector sheaves `W_n 𝒪_X`, `W 𝒪_X` of a scheme and their cohomology.
+* Ax's criterion in its point-count form (§6.3): the point counts `|X(F_{q^r})|` and
+  `|Y(F_{q^r})|` are congruent modulo `q^r` for all `r` if and only if the slope `< 1` factors of
+  the zeta functions of `X` and `Y` agree. The pins have the zeta function of a Weierstrass curve
+  only, not that of a separated scheme of finite type over a finite field, and no Newton-polygon
+  slope factors. The arithmetic core of the criterion is a statement about rational power series
+  with integer coefficients that mentions none of the roadmap's objects; it stays a README target.
 * Bhatt–Scholze's h-descent for Frobenius-inverted Witt vector cohomology (§§1.5–1.6):
   no h-topology and no Witt vector sheaves of schemes.
+* Ekedahl duality for the Witt canonical system and the action of proper correspondences on
+  relative Hodge–Witt cohomology (§§4.1, 4.5): no de Rham–Witt complex or Witt canonical sheaves
+  of a scheme, no Witt dualizing complexes and no Hodge–Witt cohomology with supports.
 * The theorems on Witt-rational singularities (§§5.4, 5.6, 5.12): no Witt vector
   sheaves, no Witt canonical sheaves, no isogeny category of sheaves on schemes.
+* Serre's vanishing of the Bockstein operations of an abelian variety `A` of dimension `g`, in
+  the form of the injectivity of `V^i : H^g(A, 𝒪_A) → H^g(A, W_{i+1} 𝒪_A)` (§6.8): no sheaves
+  `W_n 𝒪_X` of a scheme and no Verschiebung on their cohomology.
 * Esnault's vanishing of Witt vector cohomology of universally `CH_0`-trivial varieties and the
   point count of their WO-rational degenerations (§6.13, §6.14 (ii)): no Witt vector cohomology
   and no Witt-rational singularities.
+* Esnault's point count for rationally chain connected, in particular Fano, smooth projective
+  varieties (§§6.11, 6.12, 6.14 (i)): no families of rational curves and no notion of rational
+  chain connectedness. `card_rationalPoints_modEq_one_of_universallyCH0Trivial` states the
+  theorem under universal `CH_0`-triviality, which §6.12 derives from rational chain
+  connectedness.
 -/
 
 @[expose] public section
