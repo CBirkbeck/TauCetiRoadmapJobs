@@ -15,11 +15,12 @@ measurable maps into a closed manifold that Hajlasz2009 (line 28) defines throug
 The roadmap is this README. `Suggested.lean` states its headline theorems on native carriers.
 The headline theorems, with the labels by which consuming roadmaps cite them:
 
-- **T1** (§1.3, §2.2–§2.4). On open subsets of finite-dimensional spaces, `W^{1,p}_loc` is a sheaf.
-  It is preserved by precomposition with `C¹` local diffeomorphisms, by postcomposition of
-  continuous members with `C¹` maps defined on an open set containing their values, and by
-  postcomposition of arbitrary members with `C¹` maps of bounded derivative. Each comes with its
-  almost-everywhere chain rule.
+- **T1** (§1.3, §2.2–§2.4). On open subsets of finite-dimensional spaces, `W^{1,p}_loc` is
+  preserved (a) by precomposition with `C¹` local diffeomorphisms (§2.2) and (b) by
+  postcomposition of continuous members with `C¹` maps defined on an open set containing their
+  values (§2.4), and (c) it is a sheaf (§1.3). It is also preserved by postcomposition of
+  arbitrary members with `C¹` maps of bounded derivative (§2.3). Each of the three preservation
+  statements comes with its almost-everywhere chain rule.
 - **T2** (§3.1, §4.2–§4.4). For continuous `f`, membership of the local representatives in one
   atlas of each manifold gives membership in all charts. The weak differential exists and is
   unique up to a chartwise null set, and these are exactly the null sets of the Riemannian
@@ -75,9 +76,11 @@ Whitney embedding `exists_embedding_euclidean_of_compact`.
 The local and vector-valued statements here differ by allowing arbitrary model dimensions,
 vector codomains, `p = ∞`, local bounds and non-injective local diffeomorphisms; the
 comparisons use the stated hypotheses of the global and scalar theorems. Equal-dimensional
-null-image preservation is Mathlib's theorem above, and increasing-dimensional null-image
-preservation is `DifferentiableOn.addHaar_image_eq_zero_of_finrank_lt_finrank`; §2.1
-uses these for different model spaces and adds null-preimage preservation. The local
+null-image preservation is Mathlib's
+`MeasureTheory.addHaar_image_eq_zero_of_differentiableOn_of_addHaar_eq_zero`, and
+increasing-dimensional null-image preservation is Tau Ceti's
+`DifferentiableOn.addHaar_image_eq_zero_of_finrank_lt_finrank`; §2.1
+uses these for different model spaces and adds null-preimage preservation. Tau Ceti's local
 retraction theorem for topological embeddings is
 `Manifold.IsImmersionAt.exists_contMDiffOn_retraction`; §8.1 differs by requiring only
 a patch in the source of an immersion, allowing self-intersections.
@@ -429,21 +432,19 @@ from linear algebra to the Jacobian measure. Layer 7 is the Euclidean compatibil
 proves the extrinsic description through immersions and the independence of the embedding for
 the class of measurable maps.
 
-Layers 1 and 3.1–3.2 can be built at once. Layer 2 needs Layer 1. §3.3 needs §2.1. Layer 4 needs
-Layers 1–3. Layer 5 needs Layers 3 and 4. Layer 6 needs Layers 4 and 5. Layer 7 needs Layers 4–6.
-Layer 8 needs Layers 2, 4 and 5.
+Layer 1 and §3.1 can be built at once. §3.2 needs §1.1 and §3.1. Layer 2 needs Layer 1. §3.3
+needs §2.1. Layer 4 needs Layers 1–3. Layer 5 needs Layers 3 and 4. Layer 6 needs §3.1 and
+Layers 4 and 5. Layer 7 needs §1.2, §3.1 and Layers 4–6. Layer 8 needs Layers 2, 4 and 5.
 
 ## Layer 1: local classes on Euclidean domains
 
 ### 1.1 Local Lebesgue classes
 
-For a topological space `X` with a measure `μ`, a set `s ⊆ X`, an exponent `p` and a map
-`g : X → B` into a normed group `B`, with any `p : ℝ≥0∞`, say that `g` is *locally `Lᵖ` on `s` *,
-written
+For a topological space `X` with a measure `μ`, a set `s ⊆ X`, an exponent `p : ℝ≥0∞` and a map
+`g : X → B` into a normed group `B`, say that `g` is *locally `Lᵖ` on `s`*, written
 `g ∈ L^p_loc(s, μ)` and expressed by `MemLpLoc`, when `g ∈ Lᵖ(μ restricted to K)` for every compact
-`K ⊆ s` (Mazya2011
-§1.1). For `X = ℂ` with Lebesgue measure this is PseudoholomorphicCurveAnalysis PH1.1's local
-`Lᵖ` condition.
+`K ⊆ s` (Mazya2011 §1.1). For `X = ℂ` with Lebesgue measure this is
+PseudoholomorphicCurveAnalysis PH1.1's local `Lᵖ` condition.
 
 - If `t ⊆ s` and `g ∈ L^p_loc(s, μ)` then `g ∈ L^p_loc(t, μ)`. Every `g` is in `L^p_loc(∅, μ)`.
 - The class is closed under sums and, for a normed vector-space codomain, scalar multiples. If
@@ -490,8 +491,7 @@ Let `μ` be an additive Haar measure on `E`, `Ω ⊆ E` open, and `1 ≤ p ≤ �
 maps `u : E → F` by
 `u ∈ W^{1,p}_loc(Ω; F)` when `u ∈ L^p_loc(Ω, μ)` and there is `U : E → (E →L[ℝ] F)` with
 `TauCeti.HasWeakFDerivOn μ Ω u U` and `U ∈ L^p_loc(Ω, μ)` (Ziemer1989 Ch. 2 §2.1; Mazya2011
-§1.1; HeikkilaPankka2025 line 22–23). The predicate accepts every extended nonnegative exponent; its
-Sobolev theory here uses
+§1.1). The predicate accepts every extended nonnegative exponent; its Sobolev theory here uses
 `1 ≤ p`. Such a `U` is a weak derivative of `u` on `Ω`, written
 `Du`. It is unique almost everywhere on `Ω` (`TauCeti.HasWeakFDerivOn.ae_eq`).
 
@@ -972,9 +972,9 @@ lies in
 `W^{1,p}_loc(M, N)` when `f` is continuous and every local representative lies in
 `W^{1,p}_loc(Ω_{x₀y₀}(f); F)` (HeikkilaPankka2025 line 22–23).
 
-Prove the independence of the atlases (T2, first half). Let `𝒜 ⊆ IsManifold.maximalAtlas I 1 M`
-and `ℬ ⊆ IsManifold.maximalAtlas J 1 N` cover `M` and `N`. For continuous `f`, the following are
-equivalent:
+Prove the independence of the atlases (the first sentence of T2). Let
+`𝒜 ⊆ IsManifold.maximalAtlas I 1 M` and `ℬ ⊆ IsManifold.maximalAtlas J 1 N` cover `M` and `N`.
+For continuous `f`, the following are equivalent:
 
 - for every `e ∈ 𝒜` and `e' ∈ ℬ`, the representative `e'.extend J ∘ f ∘ (e.extend I).symm` lies in
   `W^{1,p}_loc` on `(e.extend I)(e.source ∩ f⁻¹(e'.source))`;
@@ -1018,7 +1018,8 @@ Define `HasWeakMDeriv`: a field `D : (x : M) → (T_xM →L[ℝ] T_{f(x)}N)` is 
 *weak differential* of `f` when `f` is
 continuous and, for every `x₀`, `y₀` and Haar measure `μ`, the field
 `z ↦ dψ_{f(φ.symm z)} ∘ D(φ.symm z) ∘ d(φ.symm)_z` is a weak derivative of `ψ ∘ f ∘ φ.symm` on
-`Ω_{x₀y₀}(f)`. Prove (HeikkilaPankka2025 line 22–26):
+`Ω_{x₀y₀}(f)`. This is the weak differential `Df` that HeikkilaPankka2025 line 22–26 uses for
+maps in `W^{1,n}_loc(M, N)`. Prove:
 
 - if `M` is Lindelöf and `f ∈ W^{1,p}_loc(M, N)`, a weak differential exists;
 - two weak differentials agree outside a `TauCeti.IsNullSet`, and a field that agrees with a weak
@@ -1212,7 +1213,7 @@ That statement therefore carries no separate membership hypothesis. The hypothes
 needed because `Df` is the total choice, which is `0` when no weak differential exists.
 
 Prove: if `f ∈ W^{1,1}_loc(M, N)` and `1 ≤ p ≤ ∞`, then `f ∈ W^{1,p}_loc(M, N)` iff
-`‖Df‖ ∈ L^p_loc(M, vol_M)` (Rickman1993 Ch. I §1; HeikkilaPankka2025 line 22–26). Route: the
+`‖Df‖ ∈ L^p_loc(M, vol_M)` (Rickman1993 Ch. I §1). Route: the
 representatives are continuous, hence in every `L^p_loc`. §5.1's chart comparison and §3.2 turn
 local `Lᵖ` of `‖Df‖` into local `Lᵖ` of the representatives' derivatives. Compact subsets of
 `M` are covered by finitely many compact sets inside chart overlaps.
@@ -1490,8 +1491,8 @@ injectivity of `f` makes the images disjoint.
 
 ### Dependencies
 
-Layers 4 and 5; Mathlib's oriented volume forms and `LinearMap.normDet`; Tau Ceti's manifold
-orientations, Riemannian volume form and chart densities.
+Layers 4 and 5; §3.1; Mathlib's oriented volume forms and `LinearMap.normDet`; Tau Ceti's
+manifold orientations, Riemannian volume form and chart densities.
 
 ## Layer 7: Euclidean domains
 
@@ -1509,7 +1510,7 @@ spaces. For the metric, measure and determinant conclusions equip them with real
 products and their flat metrics. Let `Ω ⊆ E`
 open, a manifold through `TopologicalSpace.Opens.instChartedSpace` with the restricted metric
 (`TauCeti.Manifold.instRiemannianBundleOpen`). For `f : Ω → F` choose `f̃ : E → F` with
-`f = f̃ ∘ Subtype.val`. Prove (MartioRickmanVaisala1969 line 124 and lines 332–340):
+`f = f̃ ∘ Subtype.val`. Prove:
 
 - `f ∈ W^{1,p}_loc(Ω, F)` iff `f̃` is continuous on `Ω` and `f̃ ∈ W^{1,p}_loc(Ω; F)` for one,
   equivalently every, additive Haar measure `μ` on `E` (§1.2). Equivalently, `f̃` is continuous
@@ -1524,6 +1525,11 @@ open, a manifold through `TopologicalSpace.Opens.instChartedSpace` with the rest
   `TauCeti.Manifold.Orientation.restrict`), then `J_f = det U` almost everywhere. At points where
   `f̃` is differentiable with derivative `U(x)`, this is the Jacobian `J(x, f)` of
   MartioRickmanVaisala1969 line 124.
+
+On Euclidean domains MartioRickmanVaisala1969 (Definition 2.16, lines 332–340) phrase
+first-order regularity of continuous maps differently, as `ACL^p`: absolute continuity on almost
+every segment parallel to the coordinate axes, with partial derivatives in `L^p_loc`. No
+statement of this section is phrased through that description, and no proof here uses it.
 
 **Checks.**
 
@@ -1557,8 +1563,8 @@ open, a manifold through `TopologicalSpace.Opens.instChartedSpace` with the rest
 
 ### Dependencies
 
-Layers 1 and 3–6; Mathlib's flat metric and open-subset charts; Tau Ceti's open-subset metric and
-model orientation.
+§1.2, §3.1 and Layers 4–6; Mathlib's flat metric and open-subset charts; Tau Ceti's open-subset
+metric and model orientation.
 
 ## Layer 8: immersions, embeddings and the extrinsic class
 
@@ -1745,8 +1751,8 @@ extensions; Mathlib's smooth embeddings and the Whitney embedding.
 - `Hajlasz2009`: P. Hajłasz, *Sobolev mappings between manifolds and metric spaces*, in Sobolev
   Spaces in Mathematics I, Springer, 2009; lines 20–28 (the class through an embedding),
   lines 37–53 (weakly `p`-harmonic maps), lines 104–106 (all Riemannian metrics on a compact
-  manifold are equivalent), lines 129–130 (Theorem 2.1, `p > dim M`), lines 138–141 (the case
-  `p = dim M`).
+  manifold are equivalent), lines 106–107 (closed manifolds), lines 129–130 (Theorem 2.1,
+  `p > dim M`), lines 138–141 (the case `p = dim M`).
 - `MartioRickmanVaisala1969`: O. Martio, S. Rickman and J. Väisälä, *Definitions for quasiregular
   mappings*, Ann. Acad. Sci. Fenn. Ser. A I 448 (1969); line 124 (the Jacobian), lines 332–340
   (Definition 2.16, `ACL` and `ACL^p`).

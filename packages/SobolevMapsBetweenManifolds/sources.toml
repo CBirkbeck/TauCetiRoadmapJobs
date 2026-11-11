@@ -62,7 +62,7 @@ url = "https://doi.org/10.1007/978-3-642-15564-2"
 licence_class = "none"
 status = "uncertified"
 version_note = "paywalled; cited by its locator without the text"
-cited_for = ["1.1 local Lebesgue classes", "1.3, 1.4, 4.5 locality and gluing of weak derivatives", "2.2, 2.4 change of variables and composition"]
+cited_for = ["1.1 local Lebesgue classes", "1.2 the local class on a domain", "1.3, 1.4, 4.5 locality and gluing of weak derivatives", "2.2, 2.4 change of variables and composition"]
 
 [[source]]
 id = "Rickman1993"
@@ -85,7 +85,7 @@ title = "Sobolev mappings between manifolds and metric spaces"
 year = 2009
 venue = "Sobolev Spaces in Mathematics I, International Mathematical Series 8, Springer, pp. 185-222"
 locator_scheme = "section"
-locator = "Section 1, lines 20–28, 37–53 and 104–106; Section 2, Theorem 2.1, lines 129–130 (p > dim M), and lines 138–141 (p = dim M)"
+locator = "Section 1, lines 20–28, 37–53 and 104–107; Section 2, Theorem 2.1, lines 129–130 (p > dim M), and lines 138–141 (p = dim M)"
 url = "https://sites.pitt.edu/~hajlasz/OriginalPublications/Sobolev%20mappings%20between%20metric%20spaces3.pdf"
 fetched_from = "https://sites.pitt.edu/~hajlasz/OriginalPublications/Sobolev%20mappings%20between%20metric%20spaces3.pdf"
 fetched_at = "2026-11-05T05:55:31Z"
@@ -94,7 +94,7 @@ licence_class = "author-page"
 status = "certified"
 accessed = "2026-11-05"
 version_note = "Author-hosted chapter; numbering refers to the cached text. The source uses compact smooth manifolds and finite exponents; the local C1 and infinite-exponent extensions are targets proved from the pinned weak-derivative APIs."
-cited_for = ["4.1 ambient vector-valued class W^{1,p}(M,R^ν) (line 28)", "5.3 all Riemannian metrics on a compact manifold are equivalent (lines 104–106)", "8.2 extrinsic description (line 28)", "8.3, 8.4 the class {u ∈ W^{1,p}(M,R^ν) : u(x) ∈ N a.e.} for closed N (lines 23–28)", "Part II scope: density of smooth maps, Theorem 2.1 for dim M < p < infinity (lines 129–130) and the case p = dim M >= 1 (lines 138–141), weakly p-harmonic maps (lines 37–53)"]
+cited_for = ["4.1 ambient vector-valued class W^{1,p}(M,R^ν) (line 28)", "5.3 all Riemannian metrics on a compact manifold are equivalent (lines 104–106)", "Conventions: a closed manifold is compact without boundary (lines 106–107)", "8.2 extrinsic description (line 28)", "8.3, 8.4 the class {u ∈ W^{1,p}(M,R^ν) : u(x) ∈ N a.e.} for closed N (lines 23–28)", "Part II scope: density of smooth maps, Theorem 2.1 for dim M < p < infinity (lines 129–130) and the case p = dim M >= 1 (lines 138–141), weakly p-harmonic maps (lines 37–53)"]
 
 [[source]]
 id = "Lee2012"
@@ -127,4 +127,4 @@ sha256 = "e9d55447ac88457141ef813653a8051b37a0221b75fac3c89534ab5e98edf97d"
 licence_class = "institutional"
 status = "certified"
 accessed = "2026-11-05"
-cited_for = ["6.1 the Jacobian of a linear map on R^n (line 124)", "7.1 Euclidean compatibility, J_f = det Du (line 124, lines 332–340)"]
+cited_for = ["6.1 the Jacobian of a linear map on R^n (line 124)", "7.1 J_f is the Jacobian J(x,f) at points of differentiability (line 124); background: the ACL^p description of continuous maps (lines 332–340)"]
