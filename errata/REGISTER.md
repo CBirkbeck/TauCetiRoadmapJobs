@@ -2,7 +2,7 @@
 
 Reviewers, red-team passes and errata jobs record every mistake they find in a source while checking a roadmap's locators: misprints (slips whose intended meaning is clear), errors (a false statement or proof step) and gaps (a step the source does not justify), each with the roadmap, the board pull request or errata job and the head that reported it. Collected by the board sync from the `## Source issues` sections of review, red-team and errata comments; the data is in `errata/source-issues.json`.
 
-11084 mistakes recorded on the board: 6390 misprints, 2894 errors, 1336 gaps, 464 unparsed bullets.
+11088 mistakes recorded on the board: 6394 misprints, 2894 errors, 1336 gaps, 464 unparsed bullets.
 Errata jobs have read the cited sources of 60 roadmaps; in those of 2 they found no mistake.
 The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explorer/`: 1525 awaiting review, 13582 confirmed, 228 rejected.
 
@@ -823,7 +823,9 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 ## AHII05
 
 - **Misprint** at proof of Proposition 5.3, p.620: the source says the product of the plus and minus control elements is γ^(p^k)−1; it should be γ^(pⁿ)−1 by the definitions on p.618; affects nothing. Found by InertAnticyclotomicCMMainConjecture (#2421 at 9a38446, 2026-11-05, claude fable).
+- **Misprint** at proof of Proposition 5.3, p.620: the source says the control-product exponent uses p^k; it should be p^n for the fixed level n; affects nothing. Found by InertAnticyclotomicCMMainConjecture (#13122 at b47b3cd, 2026-11-11, codex gpt-6-astra).
 - **Misprint** at proof of Theorem 4.1, p.616: the source says the symmetry step is Lemma 2.1.2 of the authors' 2006 paper; it should be Lemma 1.2.1 there (that paper has only a Remark 2.1.2); affects nothing. Found by InertAnticyclotomicCMMainConjecture (#2421 at 9a38446, 2026-11-05, claude fable).
+- **Misprint** at proof of Theorem 4.1, p.616: the source says the symmetry input is AHI06 Lemma 2.1.2; it should be Lemma 1.2.1; affects nothing. Found by InertAnticyclotomicCMMainConjecture (#13122 at b47b3cd, 2026-11-11, codex gpt-6-astra).
 
 ## AHK07
 
@@ -1810,6 +1812,7 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 - **Misprint** at proof of Lemma 1.3, arXiv v1 p.8 (lines 286–288): the source says the degree-one map and exact sequence run from S₁ to S′₁; it should be use 0→S′₁→S₁→E→0; affects the proof. Found by VirtualFundamentalClasses (#13006 at 6d3102e, 2026-11-10, codex gpt-6-astra).
 - **Gap** at proof of Proposition 2.4, arXiv v1 p.20 (line 679): the source says the source assumes a local free resolution from coherence only in degrees zero and minus one; it should be truncate first and resolve the bounded coherent truncation; affects the proof. Found by VirtualFundamentalClasses (#13006 at 6d3102e, 2026-11-10, codex gpt-6-astra).
 - **Misprint** at proof of Proposition 6.2, arXiv v1 p.48 (line 1609): the source says the base Ext group over O_C; it should be place it over O_T with unchanged Ext degree; affects the proof. Found by VirtualFundamentalClasses (#13006 at 6d3102e, 2026-11-10, codex gpt-6-astra).
+- **Misprint** at proof of Proposition 6.2, arXiv v1 p.48 (line 1609): the source says the base Ext group is over the curve; it should be over the test scheme T, in the same degree; affects the proof; <!-- tauceti-roadmap-review {"agent": "codex", "head": "091edb729a4f14af37fb3c990c7485372406be4c", "job": "REV-PKG-VirtualFundamentalClasses~4", "model": "gpt-6-astra", "worker": "chris-4"} -->. Found by VirtualFundamentalClasses (#13006 at 091edb7, 2026-11-11, codex gpt-6-astra).
 - **Misprint** at remark after Definition 1.2, arXiv v1 p.8 (lines 272–276): the source says the sheaf sequence yields a cone sequence with F and F′ interchanged; it should be C(E)→C(F)→C(F′); affects a stated result. Found by VirtualFundamentalClasses (#13006 at 6d3102e, 2026-11-10, codex gpt-6-astra).
 - **Misprint** at the remark after Definition 1.2, printed page 8 (line 275): the source says the dual of `0 → F' → F → E → 0` runs `C(E) → C(F') → C(F)`; it should be `C(E) → C(F) → C(F')` (the functor is contravariant); affects nothing. Found by VirtualFundamentalClasses (#7642 at 0e4f62e, 2026-11-07, claude fable).
 - **Misprint** at the remark after Definition 1.2, printed page 8 (line 275): the source says the dual sequence runs `C(E) → C(F') → C(F)`; it should be `C(E) → C(F) → C(F')` (the functor is contravariant); affects nothing. Found by VirtualFundamentalClasses (#7642 at cfc932d, 2026-11-07, claude fable).
@@ -2315,6 +2318,7 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 ## BIL86
 
 - **Misprint** at Introduction, p.342: the source says the pseudo-isomorphism and the characteristic-series equality are Theorems 3.24 and 3.25; it should be Theorems 3.23 and 3.24 (3.25 is a lemma); affects nothing; <!-- tauceti-roadmap-review {"agent": "claude", "head": "9a38446ae0f3367997850e2f11c5709d76345e8e", "job": "REV-PKG-InertAnticyclotomicCMMainConjecture", "model": "fable", "worker": "chris-x18"} -->. Found by InertAnticyclotomicCMMainConjecture (#2421 at 9a38446, 2026-11-05, claude fable).
+- **Misprint** at Introduction, p.342: the source says the pseudo-isomorphism and characteristic-series results are Theorems 3.24 and 3.25; it should be Theorems 3.23 and 3.24; affects nothing; <!-- tauceti-roadmap-review {"agent": "codex", "head": "b47b3cddd394e958cdf2d316db4ac55f288e57cd", "job": "REV-PKG-InertAnticyclotomicCMMainConjecture~3", "model": "gpt-6-astra", "worker": "chris-10"} -->. Found by InertAnticyclotomicCMMainConjecture (#13122 at b47b3cd, 2026-11-11, codex gpt-6-astra).
 
 ## bilu-parent-rebolledo
 
