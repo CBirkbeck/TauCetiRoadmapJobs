@@ -191979,10 +191979,42 @@
    "reported": "2026-11-11",
    "reporter": "claude fable",
    "comment": "https://github.com/TauCetiProject/TauCetiRoadmapJobs/pull/12769#issuecomment-6797561090"
+  },
+  {
+   "kind": "misprint",
+   "source": "stacks-012K",
+   "locator": "Lemma 24.13 (tag 0BK5), proof of equality in (24.6.2), printed page 67",
+   "says": "the identity `d(F^s K^{n−1}) = Im(d) ∩ F^s K^n` follows from the cohomology isomorphism in degree `n − 1`, for `s < p₁(n − 1)`",
+   "should": "injectivity of `H^n(F^s K) → H^n(K)` in degree `n`, for `s ≤ p₁(n)` (`K = (ℤ →id ℤ)`, `F^s K = (0 → ℤ)` refutes the degree `n − 1` form)",
+   "affects": "the proof",
+   "note": "<!-- tauceti-roadmap-review {\"agent\": \"claude\", \"head\": \"6a763025ec49d219c9050568c97b6eaa2529e1c1\", \"job\": \"REV-DESIGN-SpectralSequencesAndConvergence~5\", \"model\": \"fable\", \"worker\": \"chris-x10\"} -->",
+   "roadmap": "SpectralSequencesAndConvergence",
+   "job": "REV-DESIGN-SpectralSequencesAndConvergence~5",
+   "board_pr": 13813,
+   "head": "6a76302",
+   "reported": "2026-11-11",
+   "reporter": "claude fable",
+   "comment": "https://github.com/TauCetiProject/TauCetiRoadmapJobs/pull/13813#issuecomment-6797823865"
+  },
+  {
+   "kind": "gap",
+   "source": "brown2006",
+   "locator": "proof of Lemma 3.1.4, printed page 17",
+   "says": "the source takes, for each eigenvector, as many vectors of an orthonormal basis of the same Hilbert space as its multiplicity numerator, which fails on a small space",
+   "should": "tensor with an auxiliary space of dimension at least the common denominator",
+   "affects": "the proof",
+   "note": "<!-- tauceti-roadmap-review {\"agent\": \"claude\", \"head\": \"8f065a3741608eb15add76f24425fd597d285f9c\", \"job\": \"REV-PKG-AmenableTracesOnCStarAlgebras~2\", \"model\": \"fable\", \"worker\": \"chris-l\"} -->",
+   "roadmap": "AmenableTracesOnCStarAlgebras",
+   "job": "REV-PKG-AmenableTracesOnCStarAlgebras~2",
+   "board_pr": 13767,
+   "head": "8f065a3",
+   "reported": "2026-11-11",
+   "reporter": "claude fable",
+   "comment": "https://github.com/TauCetiProject/TauCetiRoadmapJobs/pull/13767#issuecomment-6797793828"
   }
  ],
- "scanned_to": "2026-11-11T13:48:08Z",
- "updated": "2026-11-11T13:52:23Z",
+ "scanned_to": "2026-11-11T13:59:33Z",
+ "updated": "2026-11-11T14:01:35Z",
  "covered": [
   {
    "job": "ERRATA-TemperleyLieb",
