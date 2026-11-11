@@ -1386,7 +1386,7 @@
    "neededBy": [
     "4.4"
    ],
-   "detail": "ClassicalAdicEtaleCohomology §9.7 proves finiteness of H^i(X, L) for proper smooth rigid X over an algebraically closed complete rank-one C and n invertible in 𝒪_C (Berkovich 7.4.4). §11.1 proves finiteness for qcqs X locally algebraically of finite type over C (Huber, Proposition 6.1.1), with constructible coefficients killed by n prime to the residue characteristic. Case (d) of 4.4 needs the same for proper X that need not be smooth; the gap is the proper spaces without a locally algebraically finite-type presentation.",
+   "detail": "ClassicalAdicEtaleCohomology §9.7 proves finiteness of H^i(X, L) for proper smooth rigid X over an algebraically closed complete rank-one C and n invertible in 𝒪_C (Berkovich 7.4.4). §11.1 proves finiteness for qcqs X locally algebraically of finite type over C (Huber, Proposition 6.1.1), with constructible coefficients killed by n prime to the residue characteristic. Case (d) of 4.4 needs the same for proper X that need not be smooth; the gap is the proper spaces without a locally algebraically finite-type presentation. The statement is Huber, A finiteness result for the compactly supported cohomology of rigid analytic varieties II, Ann. Inst. Fourier 57 (2007), Corollary 5.6 (with Corollary 5.4 for compact supports), with no hypothesis on the characteristic of C.",
    "needs": "Finiteness of H^i(X, ℤ/n) for every proper rigid space X over an algebraically closed complete rank-one field C and every n invertible in 𝒪_C, without smoothness.",
    "supplier": "ClassicalAdicEtaleCohomology",
    "section": "§9.7"

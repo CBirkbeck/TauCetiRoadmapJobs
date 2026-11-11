@@ -76,7 +76,7 @@ year = 1977
 venue = "Lecture Notes in Mathematics"
 doi = "10.1007/BFb0091516"
 locator_scheme = "chapter"
-locator = "Arcata"
+locator = "Arcata; Rapport"
 url = "https://doi.org/10.1007/BFb0091516"
 licence_class = "none"
 status = "uncertified"
@@ -90,7 +90,7 @@ title = "Lectures on Étale Cohomology (v2.21)"
 year = 2013
 venue = "author's course notes, 202 pages"
 locator_scheme = "section"
-locator = "Section 12; Section 17, Corollary 17.8; Section 19, Theorem 19.2"
+locator = "Corollary 12.2; Theorem 14.9; Remark 14.10; Section 14 (page 99); Theorem 15.1; Corollary 17.8; Section 19, Theorem 19.1, Theorem 19.2"
 url = "https://www.jmilne.org/math/CourseNotes/LEC.pdf"
 fetched_from = "https://www.jmilne.org/math/CourseNotes/LEC.pdf"
 fetched_at = "2026-11-04T20:59:58Z"
@@ -107,7 +107,7 @@ title = "The Stacks Project, chapter Étale Cohomology (Tag 03N1)"
 year = 2026
 venue = "stacks.math.columbia.edu"
 locator_scheme = "tag"
-locator = "03Q9 (Theorem 53.1); 03QW (Section 56); 03QQ (Section 59, Example 59.3)"
+locator = "03Q9 (Theorem 53.1); 03QW (Section 56); 03QQ (Section 59); 03QU (Lemma 59.2); 03QV (Example 59.3)"
 url = "https://stacks.math.columbia.edu/download/etale-cohomology.pdf#nameddest=03N1"
 fetched_from = "https://stacks.math.columbia.edu/download/etale-cohomology.pdf#nameddest=03N1"
 fetched_at = "2026-11-04T21:00:06Z"
@@ -115,7 +115,7 @@ sha256 = "71b2eb78422e599bedadb929b22812daac27c0c35510b880acb6c4489a5ea363"
 licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-04"
-cited_for = ["Conventions", "0.3", "1.4", "2.2", "2.4", "4.1"]
+cited_for = ["Conventions", "0.3", "1.4", "2.2", "2.4", "2.5", "4.1"]
 
 [[source]]
 id = "serreGC1997"
@@ -159,7 +159,7 @@ title = "Étale cohomology of rigid analytic spaces"
 year = 1996
 venue = "Documenta Mathematica 1, 1-56"
 locator_scheme = "section"
-locator = "Section 3.6; Theorem 3.7.3; Corollary 3.7.5"
+locator = "Lemma 3.3.1; Corollary 3.3.2; Section 3.6; Theorem 3.7.3; Corollary 3.7.5"
 url = "https://ems.press/content/serial-article-files/25781?nt=1"
 fetched_from = "https://ems.press/content/serial-article-files/25781?nt=1"
 fetched_at = "2026-11-04T21:03:33Z"
@@ -186,3 +186,38 @@ status = "certified"
 accessed = "2026-11-04"
 version_note = "arXiv v2"
 cited_for = ["3.1", "3.3", "4.3", "4.4"]
+
+[[source]]
+id = "stacks01FQ"
+authors = "The Stacks Project Authors"
+title = "The Stacks Project, chapter Cohomology on Sites (Tag 01FQ)"
+year = 2026
+venue = "stacks.math.columbia.edu"
+locator_scheme = "tag"
+locator = "07A4 (Lemma 21.18.4); 0G7E (Lemma 21.18.1); 0D6D (Lemma 21.18.3)"
+url = "https://stacks.math.columbia.edu/download/sites-cohomology.pdf#nameddest=01FQ"
+fetched_from = "https://stacks.math.columbia.edu/download/sites-cohomology.pdf#nameddest=01FQ"
+fetched_at = "2026-11-11T14:46:56Z"
+sha256 = "f1af633f357c96051dabe6e6c26e0d62a16685bdc7ff81a195dfd75c5e0b2c2a"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-11"
+cited_for = ["1.1"]
+
+[[source]]
+id = "huber2007"
+authors = "Roland Huber"
+title = "A finiteness result for the compactly supported cohomology of rigid analytic varieties, II"
+year = 2007
+venue = "Annales de l'Institut Fourier 57 (2007), no. 3, 973-1017"
+doi = "10.5802/aif.2283"
+locator_scheme = "theorem"
+locator = "Corollary 5.4; Corollary 5.6 (page 996)"
+url = "https://www.numdam.org/item/AIF_2007__57_3_973_0.pdf"
+fetched_from = "https://www.numdam.org/item/AIF_2007__57_3_973_0.pdf"
+fetched_at = "2026-11-11T14:50:48Z"
+sha256 = "851df5f1c7587d41d31ce984aed8c944890d0d816a74bf81969557fb6c8d2de6"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-11"
+cited_for = ["4.4", "Exact supplier contracts (gap:proper-rigid-finiteness)"]

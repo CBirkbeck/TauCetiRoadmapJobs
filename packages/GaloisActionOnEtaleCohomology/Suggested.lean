@@ -93,8 +93,9 @@ end SpectralAlgClosure
 
 /-- The completed algebraic closure `C` of a complete non-archimedean field `K`: the uniform
 completion of `K̄` for the spectral norm, a complete normed field and normed `K`-algebra
-(README §0.1). For `K = ℚ_p` it is Mathlib's `PadicComplex p` up to an isometric
-`ℚ_p`-isomorphism. -/
+(README §0.1). For `K = ℚ_p` it agrees with Mathlib's `PadicComplex p`: Mathlib's
+`PadicAlgCl p` is `AlgebraicClosure ℚ_[p]` with the same spectral norm, so the two completions
+are the same normed field. -/
 abbrev CompletedAlgClosure (K : Type u) [NontriviallyNormedField K] [CompleteSpace K]
     [IsUltrametricDist K] : Type u :=
   UniformSpace.Completion (SpectralAlgClosure K)
