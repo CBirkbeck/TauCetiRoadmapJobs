@@ -39,7 +39,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-25"
 version_note = "arXiv v1"
-cited_for = ["Layer 9"]
+cited_for = ["Layer 5", "Layer 9"]
 
 [[source]]
 id = "BW20"
@@ -59,7 +59,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-25"
 version_note = "arXiv v3"
-cited_for = ["Layer 4"]
+cited_for = ["Layer 1", "Layer 5", "Layer 6", "Layer 9"]
 
 [[source]]
 id = "EKM"
@@ -125,7 +125,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-25"
 version_note = "arXiv v2"
-cited_for = ["Layer 5", "Layer 6"]
+cited_for = ["Layer 2", "Layer 4", "Layer 6"]
 
 [[source]]
 id = "VOI06"
@@ -278,7 +278,7 @@ url = "https://doi.org/10.1007/978-3-540-30615-3"
 licence_class = "none"
 status = "uncertified"
 version_note = "paywalled; cited by its locator without the text"
-cited_for = ["Layer 5"]
+cited_for = ["Layer 4"]
 
 [[source]]
 id = "SCH94"
@@ -323,7 +323,7 @@ url = "https://doi.org/10.1007/978-1-4612-0647-7"
 licence_class = "none"
 status = "uncertified"
 version_note = "paywalled; cited by its locator without the text"
-cited_for = ["Layer 5"]
+cited_for = ["Layer 4"]
 
 [[source]]
 id = "DIM85"
