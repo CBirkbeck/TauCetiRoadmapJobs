@@ -83,3 +83,15 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-26"
 cited_for = ["3.1", "3.5", "Exact supplier contracts"]
+
+[[source]]
+id = "BRU67"
+authors = "A. Brumer"
+title = "On the units of algebraic number fields"
+year = 1967
+doi = "10.1112/s0025579300003703"
+locator_scheme = "page"
+locator = "pp.121–124; exact theorem locator unverified"
+licence_class = "none"
+status = "waived"
+resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/13188#issuecomment-6787957246"
