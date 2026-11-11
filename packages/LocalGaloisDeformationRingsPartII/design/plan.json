@@ -3053,7 +3053,7 @@
       "slug": "relative-monodromy-criterion",
       "supplier": "FiniteFlatGroupsAndIntegralPadicHodgeTheory",
       "section": "§R07.4.6",
-      "needs": "for a `p`-adically complete `𝒪`-flat `𝒪`-algebra `R` topologically of finite type and a Kisin module of height `≤ h` over `𝔖_{L′,R}` with tame descent data, the relative open-disc ring `𝒪^rig_R = lim_n R⟦u′, (u′)^n/p⟧[1/p]` with its Frobenius, base change along continuous maps of such `R`, and the theorem that the monodromy derivation of 2.1 preserves `𝔐^rig` exactly when every specialization of `V*(𝔐[1/p])` at a finite `E`-algebra point extends to a potentially crystalline `G_K`-representation of the descent type with weights in `[0,h]`, compatibly with the potentially crystalline quotient of `LocalGaloisDeformationRings` §3.5."
+      "needs": "for a `p`-adically complete `𝒪`-flat `𝒪`-algebra `R` that is topologically of finite type or complete Noetherian local with residue field `𝔽` and a Kisin module of height `≤ h` over `𝔖_{L′,R}` with tame descent data, the relative open-disc ring `𝒪^rig_R = lim_n R⟦u′, (u′)^n/p⟧[1/p]` with its Frobenius, base change along continuous `𝒪`-algebra maps between such rings, in particular to the ring of integers of a finite extension of `E`, and the theorem that the monodromy derivation of 2.1 preserves `𝔐^rig` exactly when every specialization of `V*(𝔐[1/p])` at a finite `E`-algebra point extends to a potentially crystalline `G_K`-representation of the descent type with weights in `[0,h]`, compatibly with the potentially crystalline quotient of `LocalGaloisDeformationRings` §3.5."
     },
     {
       "slug": "kummer-restriction-invariants",

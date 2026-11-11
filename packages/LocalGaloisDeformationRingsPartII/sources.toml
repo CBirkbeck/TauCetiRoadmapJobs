@@ -82,7 +82,7 @@ year = 2015
 venue = "Invent. Math. 212 (2018), no. 1, 1-107"
 arxiv = "1512.06380v3"
 locator_scheme = "theorem"
-locator = "§2.3, p. 23; Definition 3.8 and Proposition 3.9, p. 29; Lemmas 3.10-3.11, pp. 29-31; Proposition 3.12, p. 31; Proposition 5.3; Proposition 5.11 and Theorem 5.12, p. 53; Theorem 6.14"
+locator = "§2.3, p. 23; Definition 3.8 and Proposition 3.9, p. 29; Lemmas 3.10-3.11, pp. 29-31; Proposition 3.12, p. 31; Proposition 5.3; §5.1 and Theorem 5.6, p. 48; Proposition 5.11 and Theorem 5.12, p. 53; Theorem 6.14"
 url = "https://arxiv.org/abs/1512.06380v3"
 fetched_from = "https://arxiv.org/pdf/1512.06380v3"
 fetched_at = "2026-11-10T21:13:52Z"
@@ -91,7 +91,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-10"
 version_note = "arXiv v3; the numbering of the cited statements agrees with BHHMS23's citations of the published version"
-cited_for = ["2.2", "3.7", "3.8", "3.10", "5.7", "7.3", "gap:kummer-restriction-invariants", "gap:rank-two-descent-kisin-modules"]
+cited_for = ["2.1", "2.2", "3.7", "3.8", "3.10", "5.7", "7.3", "gap:kummer-restriction-invariants", "gap:rank-two-descent-kisin-modules"]
 
 [[source]]
 id = "LLHL19"
@@ -102,7 +102,7 @@ venue = "Duke Math. J. 168, no. 13 (2019), 2433-2506"
 doi = "10.1215/00127094-2019-0015"
 arxiv = "1610.04819v4"
 locator_scheme = "theorem"
-locator = "Proposition 2.2.16, p. 14; §3.1 and Proposition 3.1.2, p. 16"
+locator = "Proposition 2.2.16, p. 14; §3.1 and Proposition 3.1.2, p. 16; Proposition 3.2.22, Definition 3.2.23 and Remark 3.2.25, pp. 25-26"
 url = "https://arxiv.org/abs/1610.04819v4"
 fetched_from = "https://arxiv.org/pdf/1610.04819v4"
 fetched_at = "2026-11-10T21:18:02Z"
@@ -111,7 +111,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-10"
 version_note = "arXiv v4"
-cited_for = ["0.4", "3.3", "3.4"]
+cited_for = ["0.4", "1.3", "1.4", "3.3", "3.4", "4.2"]
 
 [[source]]
 id = "LLHLM23"
