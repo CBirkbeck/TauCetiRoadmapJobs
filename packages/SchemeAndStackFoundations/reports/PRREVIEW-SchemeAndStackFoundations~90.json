@@ -1,0 +1,13 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-SchemeAndStackFoundations~90",
+  "head": "85395e040a2d23b5541e2d32f1dc0c83dd9d9dd4",
+  "pr": 1656,
+  "folder": "SchemeAndStackFoundations",
+  "date": "2026-11-11",
+  "findings": 1,
+  "blocking": 0,
+  "notes": "incremental re-review of 62 changed lines since 31b1931. README only (§2.8 Cousin complexes); Suggested.lean unchanged. Previous R02 (Kempf locator on degree concentration) repaired: the new depth route below i and affine-strata induction above i were checked step by step, with BCGP Theorem 3.9.6, (3.9.8), Remark 3.9.7 and Stacks 47.11.1, 51.2.6 read at their locators, and the three new or extended Checks recomputed. Previous R01 (stale generated roadmap-summary and merge-order description blocks) not repaired, carried as the one P3; no roadmap or Lean edit is needed. Seeded sample has no target in the changed passage. Gate rerun OK (all counters 0), depcheck 235 roadmaps / 2133 edges / 0 problems, lake env lean exit 0 with 48 sorry warnings only. Adversarial table: 4 new rows with values, the rest carried from r89."
+ }
+}
