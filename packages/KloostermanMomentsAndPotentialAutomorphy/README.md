@@ -196,7 +196,10 @@ keeps the reductive-group Bessel constructions and the `F`-isocrystal companion 
 - `PowerSeries`, `PowerSeries.exp`, `PowerSeries.subst` (substitution of a series with zero constant
   coefficient), the inverse of a power series with nonzero constant coefficient over a field,
   `Polynomial.roots` and the coercion of polynomials to power series.
-- `LSeries`, `LSeriesSummable`, `MeromorphicNFOn` (meromorphic functions in normal form, whose
+- `LSeries`, `LSeries.term` (the term `f n·n^{−s}` for `n ≥ 1`, defined to be `0` at `n = 0`),
+  `LSeriesSummable` (summability of `LSeries.term f s`), `summable_norm_iff` (in a
+  finite-dimensional real normed space a family is summable exactly when its norms are),
+  `Complex.natCast_mul_natCast_cpow`, `MeromorphicNFOn` (meromorphic functions in normal form, whose
   values are determined by the germs), `Complex.Gamma`, `legendreSym` and `padicValNat`.
 - `EulerProduct.eulerProduct_tprod`: for `f : ℕ → R` into a complete normed commutative ring with
   `f 0 = 0`, `f 1 = 1`, `f` multiplicative on coprime arguments and `‖f‖` summable,
@@ -230,9 +233,13 @@ keeps the reductive-group Bessel constructions and the `F`-isocrystal companion 
 - §RD.6.52a: over a field of characteristic zero, the finite-ramification formal normal form of a
   differential module over the Laurent series field, slopes, ramified descent and Malgrange's
   irregularity, zero exactly for regular singular modules.
-- §RD.6.53: for a connection `E` of rank `r` on a smooth affine curve `U` with smooth completion,
-  `dim H⁰_dR − dim H¹_dR = r·χ(U) − Σ_z Irr_z(E)`; on `𝔾_m`, for `E` regular at `0`, this is the index
-  formula `dim H¹_dR(𝔾_m, E) − dim H⁰_dR(𝔾_m, E) = irr_∞(E)`.
+- §RD.6.53: let `C` be a smooth proper geometrically connected curve of genus `g` over a field `F` of
+  characteristic zero, `Z` a nonempty finite set of closed points, `U = C ∖ Z` (affine) and `E` a
+  connection of rank `r` on `U`, meromorphic along `Z`. Then `H²_dR(U, E) = 0` and
+  `dim H⁰_dR(U, E) − dim H¹_dR(U, E) = r·χ(U) − Σ_{z ∈ Z} [κ(z) : F]·Irr_z(E)`, where
+  `χ(U) = 2 − 2g − Σ_{z ∈ Z} [κ(z) : F]` and `Irr_z` is the irregularity of the formal connection at
+  `z` (§RD.6.52a). On `𝔾_m = ℙ¹ ∖ {0, ∞}`, where both boundary points are rational and `χ = 0`, for
+  `E` regular at `0` this is the index formula `dim H¹_dR(𝔾_m, E) − dim H⁰_dR(𝔾_m, E) = irr_∞(E)`.
 - §§RD.6.94–RD.6.98 as listed in Scope and ownership, used at odd `p` in rank two (`p ∤ 2`).
 - §RD.7.20 (Mieda), §RD.7.21 and §RD.7.21a, §RD.7.22: the `p`-adic realization of `M_k`, the
   odd-prime boundary factorization and Newton above Hodge, each with its stated hypotheses. Layer 9
@@ -263,10 +270,13 @@ keeps the reductive-group Bessel constructions and the `F`-isocrystal companion 
 - §§4.3, 4.6 and 5.1–5.4: pure and mixed Hodge modules, their operations, weight bounds, Hodge
   nearby and vanishing cycles, and the curve costalk formula.
 - §§6.1–6.6, 7.1, 7.5–7.6 and 8.1–8.2: exponential mixed Hodge structures, `Π` with its unit and
-  constant kernel and cokernel, the exponential weight filtration, the de Rham fibre, the Fourier
-  description `Π ∘ FT⁻¹ ≅ FT⁻¹ ∘ j_{0,+}j₀⁺` on regular inputs (§6.6), the irregular Hodge filtration
-  and its strict bifiltered realization, and the agreement of the irregular and classical
-  filtrations on classical objects (FSY Proposition A.13).
+  constant kernel and cokernel, the exponential weight filtration, the de Rham fibre, the irregular
+  Hodge filtration and its strict bifiltered realization, and the agreement of the irregular and
+  classical filtrations on classical objects (FSY Proposition A.13). From §6.6 this roadmap uses the
+  Fourier description `FT ΠN ≅ (FT N)(∗0) = j_{0,+}j₀⁺FT N` for regular holonomic `N`. Equivalently,
+  `Π ∘ FT⁻¹ ≅ FT⁻¹ ∘ j_{0,+}j₀⁺` on modules whose inverse Fourier transform is regular holonomic. The
+  regularity is a condition on `N`, not on the transform `FT N`, which is irregular at `∞` in every
+  use here.
 - §§9.1–9.5 and 10.1–10.2: ordinary, compact and middle exponential cohomology of a pair with its de
   Rham fibre, Künneth and duality, the middle-degree weight statement, divisor sequences, the
   classicality of `t·g` on `𝔸¹ × V` and its `*0`/`!0` variants (FSY Theorem A.24), and the zero-locus
@@ -786,6 +796,12 @@ recursion follow from the Fourier description with kernel `E^{tτ}`.
 - For odd `r` the dual requires `z ↦ −z`; for even `r` the connection is self-dual.
 - The index formula of PadicDifferentialEquationsAndRigidCohomology §RD.6.53 gives
   `dim H¹_dR(𝔾_m, Kl_r) − dim H⁰_dR(𝔾_m, Kl_r) = 1`.
+- The index formula weights each boundary point by its residue degree. Over `ℚ`, on
+  `U = ℙ¹ ∖ {x² + 1 = 0}`, the rank-one connection `E^{1/(x²+1)}` has `χ(U) = 2 − 0 − 2 = 0` and
+  irregularity one at the degree-two point, so `dim H⁰_dR − dim H¹_dR = 0 − 2·1 = −2`. This is the
+  value after base change to `ℚ(i)`, where there are two rational poles `±i` of irregularity one.
+  Without the residue degree the formula would give `−1`. On `𝔾_m` both boundary points are rational,
+  so the Kloosterman index above is unaffected.
 
 *Needs:* §§2.1–2.2; PadicDifferentialEquationsAndRigidCohomology §§RD.6.52a–RD.6.53 (formal
 decomposition, index); MixedHodgeModulesAndIrregularHodgeTheory §§2.2, 2.4–2.5 (Fourier transform,
@@ -1021,20 +1037,31 @@ its de Rham fibre, Künneth and duality).
 
 On the dual line `𝔸¹_τ` let `M = FT⁻¹(j_{0,!*}Sym^k K̃l_r)`, the inverse Fourier transform of the
 intermediate extension at `0`, and let `Π` be the exponential projector of
-MixedHodgeModulesAndIrregularHodgeTheory §6.2 with unit `η : N → ΠN`. Prove that
-`ΠM ≅ FT⁻¹(j_{0,+}Sym^k K̃l_r)` and that `η` gives an exact sequence `0 → M → ΠM → M′ → 0` of regular
-holonomic modules with `M′` constant (FSY (2.18)–(2.20), pp. 16–17). Let
+MixedHodgeModulesAndIrregularHodgeTheory §6.2 with unit `η : N → ΠN`. Prove that `M` is regular
+holonomic, that `ΠM ≅ FT⁻¹(j_{0,+}Sym^k K̃l_r)` and that `η` gives an exact sequence
+`0 → M → ΠM → M′ → 0` of regular holonomic modules with `M′` constant (FSY (2.17)–(2.20),
+pp. 16–17). Let
 `G_{r,k} = im(H⁰g_{r,k,!}O → H⁰g_{r,k,+}O)` be the middle Gauss–Manin module of
 `g_{r,k} : 𝔾_m^{nk} → 𝔸¹_τ` of §3.1, with its `S_k`-action. The identification
 `Sym^k K̃l_r ≅ (j₀⁺FT H⁰g_{r,k,+}O)^{S_k,χ_n}` gives a morphism `G_{r,k}^{S_k,χ_n} → ΠM` whose kernel
 and cokernel are constant; prove that `M` is its image, equivalently the quotient of
 `G_{r,k}^{S_k,χ_n}` by its maximal constant submodule, which is a direct summand. Prove that `M`
-underlies an irreducible pure Hodge module `M^H` of weight `nk` with `M^H = W_{nk}ΠM^H`, and that `M′`
-is constant with weights `≥ nk + 1`, pure of weight `2k + 1` when `r = 2` (FSY (2.22)–(2.23),
-Proposition 2.21 and Lemma 2.24, pp. 16–18). The API proves the following facts.
+underlies an irreducible pure Hodge module `M^H` of weight `nk` with `M^H = W_{nk}ΠM^H`. Prove also
+that `M′` underlies a constant mixed Hodge module `M′^H` on `𝔸¹` with weights `≥ nk + 1`, pure of
+weight `2k + 1` when `r = 2` (FSY (2.22)–(2.23), Proposition 2.21 and Lemma 2.24, pp. 16–18). The API
+proves the following facts.
 
-- `ΠM ≅ FT⁻¹(j_{0,+}Sym^k K̃l_r)`, by the Fourier description `Π ∘ FT⁻¹ ≅ FT⁻¹ ∘ j_{0,+}j₀⁺` of
-  MixedHodgeModulesAndIrregularHodgeTheory §6.6 applied to `j_{0,!*}Sym^k K̃l_r`.
+- `M` is regular holonomic. The Gauss–Manin module `N = H⁰g_{r,k,+}O` and its projection `ΠN`
+  underlie the mixed Hodge modules `H⁰g_{r,k,*}pℚ^H_{𝔾_m^{nk}}` and `Π(H⁰g_{r,k,*}pℚ^H_{𝔾_m^{nk}})`
+  (MixedHodgeModulesAndIrregularHodgeTheory §§4.6, 5.1, 6.2), so both are regular holonomic, also at
+  `∞`. §6.6 applied to `N`, followed by the `χ_n`-isotypic projection, gives
+  `FT⁻¹(j_{0,+}Sym^k K̃l_r) ≅ (ΠN)^{S_k,χ_n}`. Since `FT⁻¹` is exact, `M` is a submodule of this
+  regular holonomic module. Regular holonomic modules are closed under subquotients
+  (SpringerResolutionAndCharacteristicCycles §9.7).
+- `ΠM ≅ FT⁻¹(j_{0,+}Sym^k K̃l_r)`. MixedHodgeModulesAndIrregularHodgeTheory §6.6 applied to the
+  regular holonomic input `M` gives `FT ΠM ≅ (FT M)(∗0) = (j_{0,!*}Sym^k K̃l_r)(∗0) = j_{0,+}Sym^k K̃l_r`.
+  Then apply `FT⁻¹`. The transform `j_{0,!*}Sym^k K̃l_r` is irregular at `∞` and is not an input of
+  §6.6.
 - The inclusion `M → ΠM` is the unit of `Π`, and its cokernel is constant.
 - The kernel and cokernel of `H⁰g_{r,k,!}O → H⁰g_{r,k,+}O` are constant, since `g_{r,k}` is a
   convenient Newton-nondegenerate Laurent polynomial (MixedHodgeModulesAndIrregularHodgeTheory
@@ -1047,14 +1074,24 @@ Proposition 2.21 and Lemma 2.24, pp. 16–18). The API proves the following fact
   contains the constant summand `O_{𝔸¹}` given by the trace; `M` has rank `1`, `ΠM` rank `2` and `M′`
   rank `1`. Identifying `ΠM` with `M`, or `M` with the whole Gauss–Manin image, fails by one rank.
 - For `r = 2` and every `k ≥ 1`, `ΠM` has rank `k + 1` and `M` rank `k` (§5.4).
+- `r = 2`, `k = 1`: `M` has rank `1` and is regular. Its transform `FT M = j_{0,!*}K̃l₂` has the
+  formal factors `E^{±2t}` at `∞` (§2.3), so slopes `1, 1` and irregularity `2`. So §6.6 applies with
+  input `M`, not with input `j_{0,!*}K̃l₂`, and gives `ΠM` of rank `2`.
 - The pure Hodge module `M^H` has weight `nk`, not `nk + 1`.
-- For `r = 2` the quotient `M′` is pure of weight `2k + 1` as an exponential structure, while `ΠM` is
-  not pure as an ordinary mixed Hodge module.
+- For `r = 2` the quotient `M′^H` is pure of weight `2k + 1` as a mixed Hodge module on `𝔸¹`, being
+  `a^*V[1]` for a constant variation `V` of weight `2k`. In contrast `ΠM^H` is not pure, having the
+  weights `k` and `2k + 1`.
+- `M′^H` is not an exponential mixed Hodge structure. At `r = 2`, `k = 1` it is the nonzero constant
+  object `a^*ℚ(−1)[1]`, so `RΓ(𝔸¹, M′^H) = ℚ(−1)[1] ≠ 0` and `ΠM′^H = 0`
+  (MixedHodgeModulesAndIrregularHodgeTheory §§6.1–6.2). Its weights at `k = 1` are `3` as a Hodge
+  module and `2` for the variation. Its contribution `H¹(𝔸¹_t, FT M′^H)` to `H¹(𝔾_m, Sym¹ K̃l₂)` has
+  weight `4`, the top class `(2, 2)` of §6.4.
 
-*Needs:* §§3.1, 3.2, 3.5; MixedHodgeModulesAndIrregularHodgeTheory §§2.2, 6.2, 6.6 (Fourier
-transform, projector, Fourier localization), §§4.3, 5.1–5.2 (pure Hodge modules, direct images and
-weights), §11.4 (constant correction) and §12.8 (constant boundary of a Laurent Gauss–Manin system);
-SpringerResolutionAndCharacteristicCycles §9.6 (intermediate extension).
+*Needs:* §§3.1, 3.2, 3.5; MixedHodgeModulesAndIrregularHodgeTheory §§2.2, 6.1, 6.2, 6.6 (Fourier
+transform, exponential structures, projector, Fourier localization), §§4.3, 4.6, 5.1–5.2 (pure and
+mixed Hodge modules, direct images and weights), §11.4 (constant correction) and §12.8 (constant
+boundary of a Laurent Gauss–Manin system); SpringerResolutionAndCharacteristicCycles §§9.6–9.7
+(intermediate extension, regular holonomic modules).
 
 ### Examples
 
@@ -1644,24 +1681,43 @@ normal form) and §6.6 (isolated singularities); SchemeAndStackFoundations §4.1
 
 ### 7.3 Resolution of the even moment hypersurfaces
 
-For even `k ≥ 4`, blow up the ambient torus and its toric compactification at the balanced sign
-points and take the strict transform `K′` of `K̄` (SchemeAndStackFoundations §4.11). Prove: over `ℚ`,
-`K′` is smooth with strict normal crossings boundary and exceptional divisors smooth quadrics; the
-`χ`-isotypic compact-support cohomology in degree `k − 1` is unchanged by the modification; at odd
-primes the remaining interior singularities are the positive-`b` ordinary quadratic points; the
-weight-`(k − 2)` boundary correction in the `χ`-part has dimension `δ_{4∣k}`. The case `k = 2` is
-handled directly, since its middle motive vanishes (FSY proof of Theorem 5.17, (5.18)–(5.21),
-pp. 45–48). The API proves the following facts.
+Let `k ≥ 4` be even. Over `ℤ[1/2]`, let `S ⊂ 𝔾_m^k` be the disjoint union of the `binom(k, k/2)`
+sections given by the balanced sign vectors (`yᵢ = ±1`, `Σᵢ yᵢ = 0`). Distinct sign vectors stay
+distinct modulo every odd prime, and over `ℚ` the set `S` is the singular locus of `K` (§7.2, `b = 0`).
+Blow up `𝔾_m^k` and `X_k` along `S`. Since `S` lies in the torus, `Bl_S 𝔾_m^k` is an open subscheme
+of `Bl_S X_k` (SchemeAndStackFoundations §4.11). Define two resolutions:
 
-- The strict transform comes with an `S_k × μ₂`-equivariant proper map to `K̄`.
-- The resolved boundary and its strata are strict normal crossings over `ℚ`.
-- The map on `χ`-isotypic `H^{k−1}_c` is an isomorphism in the Betti, de Rham and `ℓ`-adic
-  realizations.
-- The `χ`-part of the weight-`(k − 2)` boundary correction has dimension `δ_{4∣k}`.
+- the open resolution `π : K′ → K`, where `K′` is the strict transform of `K` in `Bl_S 𝔾_m^k`, with
+  exceptional locus `T = π⁻¹(S)`;
+- the proper resolution `π̄ : K̄′ → K̄`, where `K̄′` is the strict transform of `K̄` in `Bl_S X_k`,
+  equal to the closure of `K′`.
+
+Both maps are `S_k × μ₂`-equivariant and are isomorphisms away from `S`. So `π̄` is an isomorphism over
+a neighbourhood of `D = K̄ ∖ K`, and `K̄′ ∖ K′ = π̄⁻¹(D) ≅ D`. Thus `π̄` is a morphism `Y → K̄` as in
+the boundary localization of §7.1, with `U = K′` and the boundary strata `D^{(i)}`, `i ≥ 1`, of `K̄`.
+The case `k = 2` is handled directly, since its middle motive vanishes. The API proves the following
+facts (FSY proof of Theorem 5.17, (5.18)–(5.21), pp. 45–48).
+
+- Over `ℚ`, `K′` and `K̄′` are smooth and `K̄′` is projective. `T` is a disjoint union of smooth
+  quadrics of dimension `k − 2`, and `K̄′ ∖ K′` is a strict normal crossings divisor.
+- Open comparison: `π` induces an isomorphism `H^{k−1}_c(K′)^χ ≅ H^{k−1}_c(K)^χ` on `χ`-isotypic
+  parts. This holds in the Betti, de Rham and `ℓ`-adic realizations over `ℚ`, and `ℓ`-adically over
+  `𝔽_p` for odd `p ≠ ℓ` (FSY (5.18)).
+- Proper closure: §7.1 (c) for `Y = K̄′_ℚ` gives
+  `gr^W_{k−1}H^{k−1}_c(K′) = im(H^{k−1}_c(K′) → H^{k−1}(K̄′)) = ker(H^{k−1}(K̄′) → H^{k−1}(D^{(1)}))`
+  (FSY (5.19)). It also gives `gr^W_{k−2}H^{k−1}_c(K′)` as the `E₂^{1,k−2}` term
+  `ker(H^{k−2}(D^{(1)}) → H^{k−2}(D^{(2)})) / im(H^{k−2}(K̄′) → H^{k−2}(D^{(1)}))` (FSY (5.20)).
+- With the open comparison, the `χ`-part of this weight-`(k − 2)` boundary correction has dimension
+  `δ_{4∣k}`.
+- At an odd prime `p`, `K̄′_{𝔽_p}` is smooth along `K̄′ ∖ K′`. Its singular points are the
+  positive-`b` ordinary quadratic points of §7.2, all lying in `K′_{𝔽_p}`.
 
 **Checks.**
 
-- `k = 4`: the boundary correction has dimension one while the middle dimension is zero.
+- `k = 4`: for the open resolution, `gr^W₂H³_c(K′_{ℚ̄})^χ` has dimension one, as for `K` by the open
+  comparison. For the smooth projective closure, `H³(K̄′_{ℚ̄})` is pure of weight `3`, so its `gr^W₂`
+  is zero. The middle part `gr^W₃H³_c(K′_{ℚ̄})^χ` has dimension `d₄ = 0`. A single space standing
+  for both `K′` and `K̄′` would lose the weight-two class.
 - `k = 6`: the boundary correction has dimension zero.
 - `k = 6`, `p = 3`: the `b = 2` orbit survives the resolution, so the integral model is not smooth
   everywhere.
@@ -1679,8 +1735,10 @@ continuous action `r_{k,ℓ}` of `Gal(ℚ̄/ℚ)`, and `V_{1,ℓ} = 0` (FSY (5.5
 - It carries a perfect `Gal(ℚ̄/ℚ)`-equivariant pairing to `ℚ_ℓ(−k − 1)`, symmetric for odd `k` and
   alternating for even `k`.
 - For odd `k`, `V_{k,ℓ}(1)` is the `χ`-part of `ker(H^{k−1}(K̄_{ℚ̄}) → H^{k−1}(D^{(1)}_{ℚ̄}))`, by the
-  boundary localization of §7.1 (c) applied to the smooth projective compactification `K̄_ℚ`; for
-  even `k` the same holds for `K̄′_ℚ` of §7.3.
+  boundary localization of §7.1 (c) applied to the smooth projective compactification `K̄_ℚ`. For
+  even `k ≥ 4`, `V_{k,ℓ}(1)` is the `χ`-part of `ker(H^{k−1}(K̄′_{ℚ̄}) → H^{k−1}(D^{(1)}_{ℚ̄}))` for the
+  proper resolution `K̄′ → K̄` of §7.3. This follows from its open comparison
+  `H^{k−1}_c(K′)^χ ≅ H^{k−1}_c(K)^χ` and §7.1 (c) for `Y = K̄′_ℚ` (FSY (5.19)).
 - Its de Rham and Betti realizations are the filtered middle cohomology of §4.1.
 
 **Checks.**
@@ -1833,7 +1891,8 @@ inertia acts trivially on `V/U`. After adjoining `ζ_p`, `V^{I_p}` is the quotie
 `ℚ_ℓ(−k/2)` by `ℚ_ℓ(0)` if `4 ∣ k` (FSY Theorem 5.17, pp. 45–48). This is a quotient, not a direct-sum
 splitting.
 
-*Proof sketch.* Use the resolution of §7.3, the boundary localization of §7.1 for `Y = K̄′` (part (b)
+*Proof sketch.* Use the resolutions of §7.3, the boundary localization of §7.1 for the proper
+resolution `Y = K̄′ → K̄` with `U = K′` (part (b)
 on the special fibre, which keeps its positive-`b` quadratic points, and part (c) over `ℚ̄_p`), and the
 odd-dimensional Picard–Lefschetz transvection formula of LefschetzPencilsAndVanishingCycles §2.8 at
 the positive-`b` points; the weights of §8.2 show that the inclusions of invariant and vanishing subspaces are
@@ -1929,8 +1988,8 @@ PadicDifferentialEquationsAndRigidCohomology, EtaleCohomologyFoundations. Librar
 
 **Theorem.** For every `k ≥ 2` and every prime `p`, the geometric hypotheses of
 PadicDifferentialEquationsAndRigidCohomology §RD.7.21 hold for `V_{k,p}`: the toric compactification
-`K̄`, for even `k` the resolution `K′` and its compactification `K̄′`, their boundary strata, the
-projector `e_χ` and the identification of `V_{k,p}(1)` with the `χ`-part of the weight-`(k − 1)` boundary
+`K̄`, for even `k` the open resolution `K′ → K` and its proper closure `K̄′ → K̄` of §7.3, their
+boundary strata, the projector `e_χ` and the identification of `V_{k,p}(1)` with the `χ`-part of the weight-`(k − 1)` boundary
 kernel (§§6.1, 7.1, 7.3–7.4), together with the rigid analogues of PadicDifferentialEquationsAndRigidCohomology
 §RD.6.98. The comparison hypothesis `(C_dR)` holds by CohomologyComparisons §2.13, and `D_dR(V_{k,p})`
 is the filtered middle de Rham cohomology of §4.1 over `ℚ_p`. Consequently `V_{k,p}` is de Rham for
@@ -2102,8 +2161,13 @@ The API proves the following facts.
   `n = 0` is `1`, a junk value that `LSeries` ignores.
 - Euler product: if `[T⁰]L(p; T) = 1` for every prime `p` and `LSeriesSummable (eulerCoeff L) s`, then
   for every prime `p` the series `Σ_j [T^j]L(p; T)·p^{−js}` converges absolutely, and
-  `LSeries (eulerCoeff L) s = Π_p Σ_j [T^j]L(p; T)·p^{−js}`, the product converging; this is Mathlib's
-  `EulerProduct.eulerProduct_tprod` applied to `n ↦ eulerCoeff L n·n^{−s}`. When `L(p; T)` is the
+  `LSeries (eulerCoeff L) s = Π_p Σ_j [T^j]L(p; T)·p^{−js}`, the product converging. This is Mathlib's
+  `EulerProduct.eulerProduct_tprod` applied to `f = LSeries.term (eulerCoeff L) s`, not to the raw
+  `n ↦ eulerCoeff L n·n^{−s}`, whose value at `n = 0` is `eulerCoeff L 0·0^{−s}` and equals `1` at
+  `s = 0`. The function `f` satisfies `f 0 = 0` by definition and `f 1 = 1`. It is multiplicative
+  on coprime arguments by `Complex.natCast_mul_natCast_cpow`, and `‖f‖` is summable by
+  `LSeriesSummable` and `summable_norm_iff`. Its value at `p^j` is `[T^j]L(p; T)·p^{−js}`, for
+  `j = 0` by the normalization. When `L(p; T)` is the
   expansion at `0` of a rational function and `|p^{−s}|` is smaller than its radius of convergence,
   the `p`-th factor is the value `L(p; p^{−s})`.
 - Neither hypothesis can be dropped, and absolute convergence of the product of the evaluated
@@ -2120,6 +2184,11 @@ The API proves the following facts.
   have constant coefficient `1`.
 - Without normalization: `L(2; T) = 2` and `L(p; T) = 1` for `p ≠ 2` give `eulerCoeff L n = 1` for
   `n = 1` and `0` for `n > 1`, so the Dirichlet series is `1` while the product of the factors is `2`.
+- The `n = 0` term: for the normalized constant family `L(p; T) = 1` and `s = 0`, `eulerCoeff L n` is
+  `1` at `n = 0, 1` and `0` for `n ≥ 2`. The Dirichlet terms, which are `0` at `n = 0` by convention,
+  sum to `1`, as does the Euler product `Π_p 1`. The raw summands `eulerCoeff L n·n^{−s}` take the
+  value `1·0⁰ = 1` at `n = 0` and sum to `2`, so they violate the hypothesis `f 0 = 0` of the Euler
+  product theorem.
 - Without summability: `L(p; T) = 1 + T − T²` for every `p` is normalized and `L(p; 1) = 1`, so at
   `s = 0` the product of the evaluated factors converges absolutely to `1`, but `eulerCoeff L p = 1` for
   every prime and the Dirichlet series does not converge.
@@ -2127,7 +2196,8 @@ The API proves the following facts.
 - `k = 3`: the reflection is `s ↦ 5 − s` with centre `5/2`, and `Λ₃(s) = 3^{s/2}π^{−s/2}Γ((s − 1)/2)L(s − 2, χ_{−3})`.
 - `k = 6`: the factor of `Λ′₆` at `3` is `(1 + 27·3^{−s})⁻¹`, and no factor at `2` occurs in `Λ′₆`.
 
-*Needs:* §§8.5–8.6, 10.2; Mathlib `LSeries`, `LSeriesSummable`, `EulerProduct.eulerProduct_tprod`.
+*Needs:* §§8.5–8.6, 10.2; Mathlib `LSeries`, `LSeries.term`, `LSeriesSummable`, `summable_norm_iff`,
+`Complex.natCast_mul_natCast_cpow`, `EulerProduct.eulerProduct_tprod`.
 
 ### Examples
 
