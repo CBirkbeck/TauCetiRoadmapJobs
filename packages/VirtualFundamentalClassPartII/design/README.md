@@ -8,33 +8,36 @@ its sections and from the scheme intersection theory of SchemeAndStackFoundation
 widens them in three directions. First, it builds the integral Chow groups `A_i(ℳ)` of
 Deligne–Mumford stacks of finite type over an arbitrary field with no separatedness assumed,
 with their degrees, integral operations (flat pullback, proper representable pushforward,
-localisation, exterior products and refined Gysin maps with algebraic-space sources), and, for
-stacks admitting a proper cover by a scheme, the rational pushforward along every proper
-morphism, Gysin maps acting on stacks, homotopy invariance and Chern classes (Layers 1–4). It
+localisation, exterior products and refined Gysin maps with algebraic-space sources), and,
+through the finite cover by a scheme that every such stack has, the rational pushforward along
+every proper morphism, Gysin maps acting on stacks, homotopy invariance and Chern classes
+(Layers 1–4). It
 identifies `A_i(ℳ) ⊗ ℚ` with VirtualFundamentalClass's group for separated `ℳ`, and the integral
 groups of algebraic spaces with those of the Stacks Project. Second, it proves the comparisons:
 the intersection ring of a smooth stack with Poincaré duality for bivariant classes, the
 isomorphism `p_* : A_*(ℳ)_ℚ ≅ A_*(M)_ℚ` for a moduli space `M` that is an algebraic space, the
 ring structure of the Edidin–Graham comparison for Deligne–Mumford quotient stacks, and the
 degree `∫[𝒢_x] = [κ(x) : k]/|Aut(x̄)|` of a closed point (Layer 5). Third, it removes the
-resolution property and separatedness from the virtual class (any stack with a proper cover
-whose obstruction theory has one global resolution), proves the relative obstruction class and
-the relative characterisation of obstruction theories, the no-obstruction and
-obstruction-bundle formulas over any base of pure dimension, invariance of Vistoli's rational
-equivalence along relative tangent directions, regular-immersion pullback and functoriality over
-reduced bases, deformation invariance of virtual counts in families over a curve, and the
-perfect relative obstruction theory `(Rπ_* F^*T_X)^∨ → L_{M/𝔅}` of every relative space of maps
-from a family of prestable curves over a pure-dimensional algebraic stack to a smooth
-quasi-projective variety, with its global resolutions and virtual dimension
-`b + δ + dim X · (1 − g)` (Layers 6–9).
+resolution property and separatedness from the virtual class (any stack whose obstruction
+theory has one global resolution), proves the relative obstruction class and the relative
+characterisation of obstruction theories, the no-obstruction and obstruction-bundle formulas
+over any base of pure dimension, invariance of the canonical rational equivalence along
+relative tangent directions on ambients that need be neither smooth nor reduced,
+regular-immersion pullback and functoriality over bases of pure dimension, deformation
+invariance of virtual counts in families over a curve, and the perfect relative obstruction
+theory `(Rπ_* F^*T_X)^∨ → L_{M/𝔅}` of every relative space of maps from a family of prestable
+curves over a pure-dimensional algebraic stack to a smooth quasi-projective variety, with its
+global resolutions and virtual dimension `b + δ + dim X · (1 − g)` for a target of pure
+dimension (Layers 6–9).
 
 ## Scope and ownership
 
 This roadmap owns:
 
-- proper covers of Deligne–Mumford stacks and proper coverings of integral ones, function fields,
-  the generic stabiliser order `e(𝒱)` and Vistoli's rational degree of a separated dominant
-  morphism of integral stacks, for stacks that need not be separated (Layer 1);
+- proper covers of Deligne–Mumford stacks, their existence (a finite cover by a scheme) and
+  proper coverings of integral ones, function fields, the generic stabiliser order `e(𝒱)` and
+  Vistoli's rational degree of a separated dominant morphism of integral stacks, for stacks that
+  need not be separated (Layer 1);
 - the integral cycle groups, orders of rational functions, rational equivalence and integral
   Chow groups `A_i(ℳ)` of such stacks, the cycle of a closed substack, and the comparisons with
   the scheme groups of Tau Ceti, with the Chow groups of algebraic spaces of the Stacks Project
@@ -42,23 +45,23 @@ This roadmap owns:
 - integral flat pullback, integral pushforward along proper representable morphisms, the
   integral push–pull formula and localisation sequence, integral exterior products, and integral
   refined Gysin maps of regular local immersions with algebraic-space sources (Layer 3);
-- for stacks with a proper cover: rational pushforward along every proper morphism, the action of
-  Gysin maps of regular local immersions and of flat pullback on Chow groups of stacks,
-  homotopy invariance for vector bundles, Chern classes, and their agreement with
-  VirtualFundamentalClass §§2.2–2.5 on separated stacks (Layer 4);
-- the intersection product on smooth stacks with a proper cover and Poincaré duality for the
-  bivariant groups of a smooth separated stack; the comparison with moduli spaces that are
+- on all such stacks: rational pushforward along every proper morphism, the action of Gysin maps
+  of regular local immersions and of flat pullback on Chow groups of stacks, homotopy invariance
+  for vector bundles, Chern classes, and their agreement with VirtualFundamentalClass §§2.2–2.5
+  on separated stacks (Layer 4);
+- the intersection product on smooth stacks and Poincaré duality for the bivariant groups of a
+  smooth separated stack with separated sources; the comparison with moduli spaces that are
   algebraic spaces; the compatibility of the Edidin–Graham comparison with products; and the
-  degree of a closed point (Layer 5);
-- the comparison bundle of two global resolutions, the virtual class of a stack with a proper
-  cover whose obstruction theory has a global resolution, and the relative no-obstruction and
+  closed formula for the degree of a closed point (Layer 5);
+- the comparison bundle of two global resolutions, the virtual class of a stack, separated or
+  not, whose obstruction theory has a global resolution, and the relative no-obstruction and
   obstruction-bundle formulas over a base of pure dimension (Layer 6);
 - the relative obstruction class of square-zero extensions over an algebraic stack and the
   relative characterisations of obstruction theories (Layer 7);
-- Vistoli's canonical rational equivalence on a reduced pure-dimensional ambient with its
-  invariance along relative tangent directions, regular-immersion pullback and functoriality of
-  virtual classes over reduced bases for stacks with a proper cover, and deformation invariance
-  of virtual counts (Layer 8);
+- the canonical rational equivalence on an arbitrary ambient algebraic stack locally of finite
+  type, with its invariance along relative tangent directions, regular-immersion pullback and
+  functoriality of virtual classes over bases of pure dimension, and deformation invariance of
+  virtual counts (Layer 8);
 - derived pushforward and Grothendieck duality along prestable families over Deligne–Mumford
   stacks, the Kodaira–Spencer morphism, the perfect relative obstruction theory of every relative
   space of maps from a family of prestable curves to a smooth quasi-projective variety, its global
@@ -68,14 +71,16 @@ Imported, not restated:
 
 - **VirtualFundamentalClass** owns the Behrend–Fantechi construction: stack dimension (§§0.2–0.3);
   cones and normal cones of local immersions and the smooth-ambient tangent actions (§§1.4–1.6);
-  Vistoli's rational Chow groups of separated Deligne–Mumford stacks with proper pushforward, flat
+  Vistoli's rational Chow groups of separated Deligne–Mumford stacks with the degree of proper
+  zero-cycles, proper pushforward, flat
   pullback, localisation, exterior products, homotopy invariance, Chern classes, refined Gysin
   maps, bivariant groups, the canonical rational equivalence with its compatibilities and its
   invariance under the restricted tangent action of Kresch's Theorem 3.1, the plane example in
   which a transverse translation moves it, and the cap action with the projection formula
   (§§2.1–2.5); the relative cotangent complex of a morphism of algebraic stacks and absolute
   square-zero lifting (§§3.1–3.5); cone stacks and `h¹/h⁰` (§§4.1–4.5); the absolute and relative
-  intrinsic normal sheaf and cone (§§5.1–5.5, 9.1); obstruction theories, their absolute
+  intrinsic normal sheaf and cone, the relative cone presented on charts by normal cones and the
+  relative tangent action (§§5.1–5.5, 9.1); obstruction theories, their absolute
   closed-immersion and lifting characterisations, perfectness and global resolutions (§§6.1–6.6);
   the virtual class of a separated stack with the resolution property, its independence, formulas
   and virtual degree (§§7.1–7.7); compatible obstruction theories, pullback and functoriality over
@@ -148,13 +153,15 @@ GromovWittenTheory and ImplicitAtlases.
    qualification means representable by algebraic spaces (SchemeAndStackFoundations §1.19).
 
 3. **Proper covers.** A *proper cover* of a stack `ℳ` is a scheme `X` of finite type over `k` with a
-   proper surjective morphism `X → ℳ` (1.1). Rational pushforward along non-representable proper
-   morphisms, the action of Gysin maps and Chern classes on Chow groups of stacks, homotopy
-   invariance on stacks, and everything built on them are stated for stacks with a proper cover.
-   This is Vistoli's standing hypothesis (vistoli1989 lines 887–890) and the condition that
-   behrend-fantechi1997 allows in place of separatedness for the virtual class (lines 1261–1262).
-   Every separated stack has a proper cover (1.1); the line with a doubled origin is its own proper
-   cover.
+   proper surjective morphism `X → ℳ` (1.1). Every stack has one, indeed a finite one (1.1, from
+   rydh2015 Theorem B, lines 81–85), so a proper cover is never a hypothesis here: it is the tool
+   through which rational pushforward along non-representable proper morphisms, the action of Gysin
+   maps and Chern classes on Chow groups of stacks, homotopy invariance on stacks, and everything
+   built on them are constructed and proved. Vistoli's standing hypothesis (vistoli1989 lines
+   887–890) and the condition that behrend-fantechi1997 allows in place of separatedness for the
+   virtual class (lines 1261–1262) therefore hold for every stack of Convention 1. Witnesses: the
+   line with a doubled origin is its own proper cover; the stack `B_{𝔸¹}G` of 1.1, not separated
+   and with inertia that is not finite, has the finite étale cover of degree `2` by that line.
 
 4. **Grading and coefficients.** Cycles and Chow groups are graded by dimension, `Z_i`, `A_i`, with
    dimension that of VirtualFundamentalClass §0.2. `A_i(ℳ)_ℚ := A_i(ℳ) ⊗_ℤ ℚ`; for separated `ℳ`
@@ -196,8 +203,8 @@ GromovWittenTheory and ImplicitAtlases.
 7. **Relative setting.** In Layers 6–8, `𝔜` is an algebraic stack (SchemeAndStackFoundations §1.19),
    locally of finite type and quasi-separated over `k`, of pure dimension `d` (VirtualFundamentalClass
    §0.2), where `d` may be negative; `f : X → 𝔜` is of Deligne–Mumford type (its relative diagonal is
-   unramified, behrend-fantechi1997 lines 1645–1651); `X` is a stack in the sense of 1 with a proper
-   cover; and `φ : E → L_{X/𝔜}` is a perfect relative obstruction theory of constant rank `r`. The
+   unramified, behrend-fantechi1997 lines 1645–1651); `X` is a stack in the sense of 1, separated or
+   not; and `φ : E → L_{X/𝔜}` is a perfect relative obstruction theory of constant rank `r`. The
    absolute case is `𝔜 = Spec k`, `d = 0`. Witness: `Spec k → B𝔾_m` is of Deligne–Mumford type and
    smooth of relative dimension `1`, and with `E = Ω_{pt/B𝔾_m}` the virtual dimension is
    `−1 + 1 = 0`.
@@ -259,12 +266,13 @@ The pin has no algebraic stacks, no Chow groups of stacks and no cotangent compl
   closed immersions and of local immersions with flat base change, and the action of `T_M|_X` on
   `C_{X/M}` for a smooth ambient `M`.
 - §2.1: the rational groups `A_i(ℳ)_ℚ` of a separated stack, generated by integral closed
-  substacks with Vistoli's degree factors; §2.2: proper pushforward, flat pullback, localisation and
+  substacks with Vistoli's degree factors, and the degree of proper zero-cycles with the generic
+  stabiliser weight; §2.2: proper pushforward, flat pullback, localisation and
   exterior products on them; §2.3: homotopy invariance, the zero-section Gysin inverse and Chern
   classes; §2.4: refined Gysin maps of representable regular local immersions; §2.5: rational
-  bivariant groups for morphisms of relative Deligne–Mumford type to algebraic stacks with
-  separated test stacks, the flat and regular-local-immersion orientations, the canonical rational
-  equivalence with its compatibility with smooth base change and smooth refinement
+  bivariant groups for morphisms of relative Deligne–Mumford type to algebraic stacks, acting
+  after base change to separated test stacks whose pullbacks are separated, the flat and
+  regular-local-immersion orientations, the canonical rational equivalence with its compatibility with smooth base change and smooth refinement
   (behrend-fantechi1997 Propositions 3.3–3.4), its invariance under the restricted tangent action
   `T_{Y′}|_{X′}` of kresch1999b Theorem 3.1, the plane example in which a transverse translation
   moves it, and the cap action with the projection formula.
@@ -276,8 +284,9 @@ The pin has no algebraic stacks, no Chow groups of stacks and no cotangent compl
 - §§4.1–4.5: cone stacks, `h¹/h⁰`, the abelian cone stack `h¹/h⁰(E^∨)` of a complex with the
   condition of §4.4, the presentation `h¹/h⁰(E^∨) ≅ [F_1/F_0]` of a global resolution functorial up to
   specified 2-isomorphism, and the closed-immersion criterion.
-- §§5.1–5.5 and 9.1: the absolute and relative intrinsic normal sheaf and cone; for `𝔜` of pure
-  dimension `d`, `𝔠_{X/𝔜}` is pure of dimension `d`.
+- §§5.1–5.5 and 9.1: the absolute and relative intrinsic normal sheaf and cone; the relative cone
+  presented on charts by normal cones and the relative tangent action, with comparison under
+  refinement (§9.1); for `𝔜` of pure dimension `d`, `𝔠_{X/𝔜}` is pure of dimension `d`.
 - §§6.1–6.6: obstruction theories, the obstruction cone, the absolute lifting criterion,
   perfectness, global resolutions, pullback of relative theories under cartesian base change.
 - §§7.1–7.7: the resolved cone `C(F•) := 𝔠_X ×_𝔈 F_1`, the class `0^!_{F_1}[C(F•)]` of a separated
@@ -298,8 +307,7 @@ and integral closed substacks (vistoli1989 (1.6), lines 245–250); for every cl
 `|ℳ|` (SchemeAndStackFoundations §1.20 `Stacks.points`) a unique reduced closed substack with that
 support, so that integral closed substacks correspond bijectively to irreducible closed subsets;
 base change of closed substacks; and the image of an integral closed substack under a proper
-morphism with a proper cover of its source, or under a proper representable or flat morphism
-(vistoli1989 (1.7), lines 254–269). None of this depends on separatedness.
+morphism or a flat morphism (vistoli1989 (1.7), lines 254–269). None of this depends on separatedness.
 
 ### From TauCetiRoadmap.SchemeAndStackFoundations
 
@@ -363,14 +371,14 @@ stack sites of VirtualFundamentalClass §3.1.
 
 Layers 1–4 are the Chow lane. Layer 1 supplies proper covers, function fields, generic stabiliser
 orders and degrees on stacks that need not be separated; Layer 2 the integral cycle and Chow
-groups and their three comparisons; Layer 3 the operations that exist integrally; Layer 4, for
-stacks with a proper cover, the rational operations, and their agreement with
+groups and their three comparisons; Layer 3 the operations that exist integrally; Layer 4, built
+on proper covers, the rational operations on all stacks, and their agreement with
 VirtualFundamentalClass on separated stacks. Layer 5 uses Layers 2–4 for the products and
 comparisons. Layer 6 uses Layer 4 and VirtualFundamentalClass Layers 4–7 and 9 to define the
 virtual class without the resolution property and to prove the relative formulas. Layer 7 is
 independent of the Chow lane: it needs only VirtualFundamentalClass Layers 3–4 and 6 and
 DerivedModuleAlgebra §0.25. Layer 8 combines Layers 4, 6 and VirtualFundamentalClass §2.5 for base
-change, functoriality and deformation invariance over reduced bases, and Layer 9 combines Layer 7
+change, functoriality and deformation invariance over bases of pure dimension, and Layer 9 combines Layer 7
 with StableReduction and SchemeAndStackFoundations duality for spaces of maps from curves; its
 virtual class is Layer 6's. Each target's *Needs:* line lists what its statement and its route
 use, item by item.
@@ -389,12 +397,19 @@ SchemeAndStackFoundations §1.20's `IsProperStack`. For integral `ℳ`, a *prope
 proper cover with `X` integral and `X → ℳ` generically finite (vistoli1989 Lemma 1.10 and (1.11),
 lines 299–328). Prove:
 
-- every stack with a separated morphism of finite type to a Noetherian scheme has a proper cover,
-  which can be taken generically finite with `X` quasi-projective over that scheme; in particular
+- every stack `ℳ` has a finite, finitely presented and surjective morphism `Z → ℳ` from a scheme
+  `Z`, of finite type over `k`, that is étale over a dense open substack of `ℳ`; in particular every
+  stack has a proper cover (rydh2015 Theorem B, lines 81–85, whose hypotheses, quasi-compactness
+  and a quasi-compact separated diagonal, are part of Convention 1; for Noetherian Deligne–Mumford
+  stacks the statement is attributed there, lines 86–87, to Laumon and Moret-Bailly; kresch1999b
+  Remark 2.6, lines 307–315);
+- every stack with a separated morphism of finite type to a Noetherian scheme has a proper cover
+  that can be taken generically finite with `X` quasi-projective over that scheme; in particular
   every separated stack has one (deligne-mumford1969 Theorem 4.12, lines 1012–1019; vistoli1989
   lines 582–584);
-- if an integral `ℳ` has a proper cover, it has a proper covering (vistoli1989 Lemma 1.10, lines
-  299–327);
+- every integral `ℳ` has a proper covering: the reduced structure on an irreducible component of
+  `Z` that dominates `ℳ` is one (vistoli1989 Lemma 1.10, lines 299–327, gives one from any proper
+  cover);
 - proper covers pass to closed substacks, to open substacks, along morphisms `𝒩 → ℳ`
   representable by schemes (the base change `X ×_ℳ 𝒩` is a scheme proper and surjective over `𝒩`),
   to vector bundles over `ℳ`, to products `ℳ ×_k ℳ′`, and from a stack `ℳ′` to `ℳ` along a proper
@@ -408,7 +423,7 @@ lines 299–328). Prove:
 - A proper cover of `ℳ` restricts to a proper cover of every closed or open substack and of every
   stack representable by schemes over `ℳ`, and composes with a proper representable surjection onto
   `ℳ`.
-- For integral `ℳ` with a proper cover there is a proper covering, and any two proper coverings
+- For integral `ℳ` there is a proper covering, and any two proper coverings
   `Y, Y′ → ℳ` are dominated by an integral closed subscheme of `Y ×_ℳ Y′` surjecting onto both
   (vistoli1989 lines 1610–1613).
 
@@ -426,13 +441,19 @@ lines 299–328). Prove:
 - Base change along a morphism that is not representable by schemes does not preserve proper
   covers: the base change of `id : Spec k → Spec k` along `BG → Spec k` is `id : BG → BG`, proper and
   surjective, whose source is not a scheme when `|G| > 1`.
-- The hypothesis is not automatic. Let `G` be the étale group scheme over `𝔸¹` obtained from the
-  constant `ℤ/2` by deleting the non-identity point over `0`, so its fibres are `ℤ/2` over `t ≠ 0` and
-  trivial over `0`. The classifying stack `B_{𝔸¹}G` is a stack (its diagonal has fibres twisted forms
-  of `G`, separated and quasi-compact) and is not separated. It has no proper cover by a separated
-  scheme `X`: the torsor `P := X ×_{BG} 𝔸¹ → X` would be finite étale (proper over `𝔸¹` and étale over
-  the separated `X`), of degree `2` over points above `t ≠ 0` and `1` over points above `0`, while a
-  component of `X` dominating `𝔸¹` meets both fibres.
+- A proper cover need not be separated, and a non-separated stack with inertia that is not finite
+  still has a finite one. Let `G` be the étale group scheme over `𝔸¹` obtained from the constant
+  `ℤ/2` by deleting the non-identity point over `0`, so its fibres are `ℤ/2` over `t ≠ 0` and trivial
+  over `0`. The classifying stack `B_{𝔸¹}G` is a stack (its diagonal has fibres twisted forms of
+  `G`, separated and quasi-compact) and is not separated. The two charts `Q = 𝔸¹ ⊔ 𝔸¹ → L` of the
+  line with a doubled origin form a `G_L`-torsor, `G` exchanging the copies over `t ≠ 0`
+  (`Q ×_L Q = Q ⊔ Q|_{t≠0} ≅ Q ×_{𝔸¹} G`), so they define `L → B_{𝔸¹}G`, whose base change along the
+  atlas `𝔸¹ → B_{𝔸¹}G` is `Q → 𝔸¹`. Hence `L → B_{𝔸¹}G` is finite étale of degree
+  `2 = (e(B_{𝔸¹}G)/e(L)) · [k(t) : k(t)]` (1.3), a proper cover. No separated scheme `X` is one: the
+  torsor `P := X ×_{BG} 𝔸¹ → X` would be finite étale (proper over `𝔸¹` and étale over the separated
+  `X`), of degree `2` over points above `t ≠ 0` and `1` over points above `0`, while a component of
+  `X` dominating `𝔸¹` meets both fibres; so a definition asking for a separated `X` would exclude
+  this stack.
 
 ### 1.2 Function fields and the generic stabiliser
 
@@ -455,7 +476,9 @@ algebraic space (vistoli1989 lines 424–425; SchemeAndStackFoundations `setoid_
   functorial in `f`; an open immersion induces an isomorphism.
 - For a finite étale group `G` acting on an integral scheme `X`, `k([X/G]) = k(X)^G` (vistoli1989
   lines 351–353).
-- `e(𝒱) = deg(I_𝒱/𝒱)` in the sense of 1.3, and `e` is unchanged by passing to a dense open substack.
+- `e(𝒱)` is the sum of the degrees `deg(ℐ/𝒱)` of 1.3 over the irreducible components `ℐ` of
+  `(I_𝒱)_red` that dominate `𝒱` (each with its reduced, integral structure; `I_𝒱 → 𝒱` is
+  representable and separated), and `e` is unchanged by passing to a dense open substack.
 
 **Checks.**
 
@@ -465,6 +488,13 @@ algebraic space (vistoli1989 lines 424–425; SchemeAndStackFoundations `setoid_
 - For `B_{𝔸¹}G` of 1.1, `e = 2` although the stabiliser at the closed point `0` is trivial: the
   generic stabiliser can be larger than a special one when the inertia is quasi-finite and not
   finite.
+- The inertia formula counts degrees, not components. For `G = ℤ/2` constant, `I_{BG} = BG ⊔ BG`,
+  and `1 + 1 = 2 = e(BG)`. For `G = S₃` constant, `I_{BG}` is the disjoint union of the `B Z(c)` over
+  the conjugacy classes, of degrees `[S₃ : Z(c)] = 1, 3, 2`, with sum `6`. Over `k = ℚ`,
+  `I_{Bμ₃} = Bμ₃ ⊔ (Spec ℚ(ζ₃) ×_ℚ Bμ₃)`, two components of degrees `1` and
+  `(3/3) · [ℚ(ζ₃) : ℚ] = 2`, with sum `3 = e(Bμ₃)`, while the number of components is `2`. On
+  `[𝔸¹/μ₂]` the component of `I` carrying the non-identity element lies over the origin and does not
+  dominate, and the sum is `1 = e`.
 - Over `ℝ`, let `ℤ/4` act on `Spec ℂ` through `ℤ/4 → ℤ/2 = Gal(ℂ/ℝ)`. The gerbe
   `𝒢 = [Spec ℂ/(ℤ/4)]` is integral with `k(𝒢) = ℂ^{ℤ/4} = ℝ` and `e(𝒢) = 2`, the order of the kernel;
   a definition by the order of the acting group gives `4`.
@@ -517,12 +547,14 @@ No separatedness of `ℱ` or `𝒢` is assumed. *Needs:* 1.2; SchemeAndStackFoun
 - `[𝔸¹/μ₂]` and its coarse map `x ↦ x²`: trivial generic stabiliser, stabiliser `μ₂` at the origin.
 - The `ℤ/p`-quotient of 1.3 in characteristic `p`, where the function field of the image of an
   integral substack is not perfect.
-- `B_{𝔸¹}G` of 1.1: a non-separated stack whose inertia is not finite.
+- `B_{𝔸¹}G` of 1.1: a non-separated stack whose inertia is not finite, with the finite étale cover
+  `L → B_{𝔸¹}G` of degree `2`.
 
 ### Dependencies
 
 gap:closed-substacks-of-stacks; SchemeAndStackFoundations §§1.19–1.20; VirtualFundamentalClass §0.2;
-deligne-mumford1969 Theorem 4.12 for 1.1. Within the layer, 1.1 and 1.2 precede 1.3.
+deligne-mumford1969 Theorem 4.12 and rydh2015 Theorem B for 1.1. Within the layer, 1.1 and 1.2
+precede 1.3.
 
 ## Layer 2: integral cycles and Chow groups
 
@@ -537,8 +569,8 @@ the length of the local ring of `𝒵 ×_ℳ U` at the generic point of a compon
 on `U` or on the component (stacks-chow-spaces Lemma 4.3, line 169, and Lemma 10.3, line 516, for
 étale invariance of lengths), and étale descent of cycles: for an étale surjection `U → ℳ` from a
 scheme, pullback `Z_i(ℳ) → Z_i(U)`, `[𝒱] ↦ [𝒱 ×_ℳ U]`, is injective with image the cycles whose two
-pullbacks to `U ×_ℳ U` agree (vistoli1989 lines 953–957). No separatedness or proper cover is
-assumed. *Needs:* gap:closed-substacks-of-stacks; VirtualFundamentalClass §0.2; Tau Ceti
+pullbacks to `U ×_ℳ U` agree (vistoli1989 lines 953–957). No separatedness is assumed, and no
+proper cover is used. *Needs:* gap:closed-substacks-of-stacks; VirtualFundamentalClass §0.2; Tau Ceti
 `TauCeti.AlgebraicGeometry.Chow.cyclesOfDimension`.
 
 **API.**
@@ -569,8 +601,8 @@ is the generic point of a component of `𝒲 ×_𝒱 U` (a point of coheight one
 (3.2)–(3.4), lines 901–966; gillet1984 §4). Prove that `ord_𝒲(φ)` does not depend on the choices
 (stacks-chow-spaces Lemma 13.2, line 667; vistoli1989 Lemma 3.3, lines 940–948), is additive in `φ`,
 and is nonzero for finitely many `𝒲`; equivalently `∂` is the morphism of étale sheaves
-`W_* → Z_*` of vistoli1989 lines 953–959 on global sections. No separatedness or proper cover is
-assumed. *Needs:* 1.2, 2.1; Mathlib `AlgebraicGeometry.Scheme.ord`.
+`W_* → Z_*` of vistoli1989 lines 953–959 on global sections. No separatedness is assumed, and no
+proper cover is used. *Needs:* 1.2, 2.1; Mathlib `AlgebraicGeometry.Scheme.ord`.
 
 **API.**
 
@@ -640,10 +672,22 @@ A morphism `f : ℱ → 𝒢` is flat of relative dimension `d` if for étale at
 SchemeAndStackFoundations §1.20). Define *flatPullback* `f^* : Z_i(𝒢) → Z_{i+d}(ℱ)` by
 `f^*[𝒱] := [𝒱 ×_𝒢 ℱ]` (vistoli1989 (3.6)(i), lines 974–979). Prove that it carries `∂W_i(𝒢)` into
 `∂W_{i+d}(ℱ)`, through the pullback of rational equivalences built on atlases (vistoli1989 (3.7),
-lines 989–997, and lines 1012–1025), and so induces `f^* : A_i(𝒢) → A_{i+d}(ℱ)`, with
-`(g ∘ f)^* = f^* ∘ g^*`, `id^* = id`, and restriction for open immersions. This extends
+lines 989–997, and lines 1012–1025), and so induces `f^* : A_i(𝒢) → A_{i+d}(ℱ)`. This extends
 VirtualFundamentalClass §2.2's flat pullback from rational to integral coefficients and drops
 separatedness. *Needs:* Layer 2; SchemeAndStackFoundations §§1.20, 5.2.
+
+**API.**
+
+- For `f` flat of relative dimension `d` and `g : 𝒢 → ℋ` flat of relative dimension `e`, `g ∘ f` is
+  flat of relative dimension `d + e` and `(g ∘ f)^* = f^* ∘ g^*` on cycles and on Chow groups;
+  `id^* = id`.
+- For an open immersion `j : 𝒰 → ℳ`, flat of relative dimension `0`, `j^*[𝒱] = [𝒱 ∩ 𝒰]` is restriction
+  of cycles, zero on cycles supported off `𝒰`; it is the second map of the localisation sequence of
+  3.3.
+- For every closed substack `𝒵 ⊆ 𝒢`, integral or not, `f^*[𝒵] = [𝒵 ×_𝒢 ℱ]` with the cycles of closed
+  substacks of 2.1.
+- For an étale surjection `U → ℳ` from a scheme, flat pullback on cycles is the descent injection of
+  2.1, and on schemes flat pullback is SchemeAndStackFoundations §5.2's.
 
 **Checks.**
 
@@ -659,11 +703,31 @@ separatedness. *Needs:* Layer 2; SchemeAndStackFoundations §§1.20, 5.2.
 For `f : ℱ → 𝒢` proper and representable, define *properPushforward*
 `f_*[𝒱] := deg(𝒱/f(𝒱))[f(𝒱)]`, with `f(𝒱)` the image (gap:closed-substacks-of-stacks) and the integral
 degree of 1.3, which is `0` when `dim f(𝒱) < dim 𝒱` (vistoli1989 (3.6)(ii), lines 980–984). Prove that it
-carries `∂W_i(ℱ)` into `∂W_i(𝒢)` through the norm on rational functions (vistoli1989 (3.7), lines
-989–1011), so that `f_* : A_i(ℱ) → A_i(𝒢)` is defined, and that `(g ∘ f)_* = g_* ∘ f_*`. No proper cover
-is needed. This extends VirtualFundamentalClass §2.2's proper pushforward, for representable
-morphisms, to integral coefficients and to stacks that are not separated. *Needs:* 1.3, Layer 2;
+carries `∂W_i(ℱ)` into `∂W_i(𝒢)`, so that `f_* : A_i(ℱ) → A_i(𝒢)` is defined: for an integral `𝒱 ⊆ ℱ`
+of dimension `i + 1` and `φ ∈ k(𝒱)^×`,
+
+    f_* div(φ) = (e(f(𝒱))/e(𝒱)) · div(N(φ))   if dim f(𝒱) = dim 𝒱,
+    f_* div(φ) = 0                             if dim f(𝒱) < dim 𝒱,
+
+with `N` the norm of the finite extension `k(𝒱)/k(f(𝒱))` (vistoli1989 (3.7), lines 989–1011, where
+the pushforward of rational equivalences is formed on étale atlases; there the generic degree is
+`deg(𝒱/f(𝒱))` of 1.3, which exceeds `[k(𝒱) : k(f(𝒱))]` by the factor `e(f(𝒱))/e(𝒱)`). The factor is
+an integer because a representable `f` embeds the automorphism group of a geometric generic point
+of `𝒱` into that of its image. The construction is integral and uses no proper cover. This extends
+VirtualFundamentalClass §2.2's proper pushforward, for representable morphisms, to integral
+coefficients and to stacks that are not separated. *Needs:* 1.2–1.3, Layer 2;
 SchemeAndStackFoundations §5.2; Mathlib `AlgebraicGeometry.AlgebraicCycle.map`.
+
+**API.**
+
+- For proper representable `f : ℱ → 𝒢` and `g : 𝒢 → ℋ`, `(g ∘ f)_* = g_* ∘ f_*` on cycles and on Chow
+  groups, and `id_* = id`.
+- For a closed immersion `i : 𝒵 → ℳ`, `i_*[𝒱] = [𝒱]` identifies `Z_*(𝒵)` with the cycles of `ℳ`
+  supported on `𝒵`; it is the first map of the localisation sequence of 3.3.
+- `f_*[𝒱]` is `0` exactly when `dim f(𝒱) < dim 𝒱`, and otherwise a positive integer multiple of
+  `[f(𝒱)]`.
+- On schemes, `f_*` is SchemeAndStackFoundations §5.2's proper pushforward, with the weights
+  `[k(V) : k(f(V))]` of Mathlib `AlgebraicGeometry.AlgebraicCycle.map`.
 
 **Checks.**
 
@@ -673,6 +737,11 @@ SchemeAndStackFoundations §5.2; Mathlib `AlgebraicGeometry.AlgebraicCycle.map`.
   this pushforward functorially to `BG → Spec k`: functoriality for `Spec k → BG → Spec k`, the
   identity, would give `|G| · c([BG]) = 1`. For `G` trivial, `BG = Spec k` and the identity is the
   pushforward, with `1 · 1 = 1`.
+- The stabiliser factor in the divisor formula is needed. For a finite étale `G` with `|G| > 1` and
+  `f : 𝔸¹ → 𝔸¹ × BG` (the identity times `Spec k → BG`), finite étale of degree `|G|`, and `φ = t`:
+  `f_* div(t) = f_*[0] = |G|·[0 × BG]`, while `k(𝔸¹ × BG) = k(t) = k(𝔸¹)`, so `N(t) = t` and
+  `div(N(t)) = [0 × BG]`; the factor `e(𝔸¹ × BG)/e(𝔸¹) = |G|` restores the equality, and the norm alone
+  is off by it.
 - For `ℙ¹ → Spec k`, `f_*[P] = [κ(P) : k]·[Spec k]`, the residue degree of SchemeAndStackFoundations
   §5.2.
 
@@ -684,7 +753,7 @@ representable, `ψ : 𝒢′ → 𝒢` flat of relative dimension `d`, `f′ : �
 localisation sequence: for a closed substack `i : 𝒵 → ℳ` with open complement `j : 𝒰 → ℳ`,
 `A_i(𝒵) → A_i(ℳ) → A_i(𝒰) → 0` is exact, by closures of integral substacks of `𝒰` and of their rational
 functions (stacks-chow-spaces Lemma 15.2, lines 813–818, for algebraic spaces; fulton1998
-Proposition 1.8 for schemes). Both statements are integral and need no proper cover.
+Proposition 1.8 for schemes). Both statements are integral and use no proper cover.
 *Needs:* 3.1, 3.2; gap:closed-substacks-of-stacks.
 
 **Checks.**
@@ -701,10 +770,16 @@ Proposition 1.8 for schemes). Both statements are integral and need no proper co
 
 Define *exteriorProduct* `× : Z_i(ℱ) ⊗ Z_j(𝒢) → Z_{i+j}(ℱ ×_k 𝒢)` by `[𝒱] × [𝒲] := [𝒱 ×_k 𝒲]`, the cycle
 of the closed substack (vistoli1989 lines 1706–1708; fulton1998 §1.10). Prove that it passes to
-rational equivalence, is associative, commutative up to the exchange of factors, has unit
-`[Spec k]`, and commutes with flat pullback and with proper representable pushforward in each factor;
-on schemes it is SchemeAndStackFoundations §5.5's exterior product. This is integral and needs no
+rational equivalence, giving `× : A_i(ℱ) ⊗ A_j(𝒢) → A_{i+j}(ℱ ×_k 𝒢)`. This is integral and uses no
 proper cover. *Needs:* 3.1–3.3; SchemeAndStackFoundations §5.5.
+
+**API.**
+
+- The product is bilinear and associative, commutative up to the exchange isomorphism
+  `ℱ ×_k 𝒢 ≅ 𝒢 ×_k ℱ`, and has unit `[Spec k]` under `Spec k ×_k 𝒢 = 𝒢`, on cycles and on Chow groups.
+- For flat `f : ℱ′ → ℱ` and `g : 𝒢′ → 𝒢`, `(f × g)^*(α × β) = f^*α × g^*β`; for proper representable
+  `f`, `g`, `(f × g)_*(α × β) = f_*α × g_*β`.
+- On schemes of finite type over `k` the product is SchemeAndStackFoundations §5.5's exterior product.
 
 **Checks.**
 
@@ -727,19 +802,9 @@ the normal cone `C_{U/T}` of the local immersion `U → T` inside `N := N_{ℱ/�
 `(ℱ · T) := s^*[C_{U/T}] ∈ A_{i−c}(U)`, where `s^*` is the inverse of the flat pullback
 `A_{i−c}(U) → A_i(N)`, an isomorphism on algebraic spaces (stacks-chow-spaces Lemma 27.3, lines
 1986–1990). Define *refinedGysin* `f^! : Z_i(Y) → A_{i−c}(X)` by `f^![T] := (U → X)_*(ℱ · T)`
-(vistoli1989 (3.10), lines 1081–1100). Prove, integrally:
-
-- `f^!` passes to rational equivalence, giving `f^! : A_i(Y) → A_{i−c}(X)` (vistoli1989 Theorem 3.11,
-  lines 1101–1109);
-- for a morphism `q : Y′ → Y` of such algebraic spaces and the induced `p : X′ → X`, `f^! q_* = p_* f^!`
-  for `q` proper and `f^! q^* = p^* f^!` for `q` flat (vistoli1989 Theorem 3.12, lines 1110–1117, and
-  Lemma 3.20, lines 1206–1207);
-- for regular local immersions `f_j : ℱ_j → 𝒢_j` and morphisms `Y → 𝒢_1`, `Y → 𝒢_2`,
-  `f_1^! f_2^! = f_2^! f_1^!` in the Chow group of the common fibre product (vistoli1989 Theorem 3.13,
-  lines 1118–1123);
-- for `Y` equidimensional, `f^![Y] = s^*[C_{X/Y}]` (vistoli1989 Lemma 3.19, lines 1197–1202);
-- when `f` is a regular immersion of schemes and `Y` a scheme, `f^!` is SchemeAndStackFoundations §5.5's
-  refined Gysin map.
+(vistoli1989 (3.10), lines 1081–1100). Prove, integrally, that `f^!` passes to rational
+equivalence, giving `f^! : A_i(Y) → A_{i−c}(X)` (vistoli1989 Theorem 3.11, lines 1101–1109), with the
+compatibilities of the API below.
 
 Route: vistoli1989 §§3–4 for schemes, which avoid blowing up a stack along a substack that is only
 locally immersed and use the rational equivalence of its Lemma 3.16 (lines 1172–1174) on reduced
@@ -749,6 +814,18 @@ to algebraic-space sources is étale descent of cycles and rational equivalences
 cones and the classes `(ℱ · T)` being étale local on `Y`. This extends VirtualFundamentalClass §2.4's
 refined Gysin maps, for algebraic-space sources, to integral coefficients. *Needs:* Layer 2, 3.1–3.3;
 VirtualFundamentalClass §1.5; SchemeAndStackFoundations §5.5.
+
+**API.**
+
+- For a morphism `q : Y′ → Y` of such algebraic spaces and the induced `p : X′ → X`, `f^! q_* = p_* f^!`
+  for `q` proper and `f^! q^* = p^* f^!` for `q` flat (vistoli1989 Theorem 3.12, lines 1110–1117, and
+  Lemma 3.20, lines 1206–1207); in particular `f^!` commutes with restriction to open subspaces of `Y`.
+- For regular local immersions `f_j : ℱ_j → 𝒢_j` and morphisms `Y → 𝒢_1`, `Y → 𝒢_2`,
+  `f_1^! f_2^! = f_2^! f_1^!` in the Chow group of the common fibre product (vistoli1989 Theorem 3.13,
+  lines 1118–1123).
+- For `Y` equidimensional, `f^![Y] = s^*[C_{X/Y}]` (vistoli1989 Lemma 3.19, lines 1197–1202).
+- When `f` is a regular immersion of schemes and `Y` a scheme, `f^!` is SchemeAndStackFoundations §5.5's
+  refined Gysin map.
 
 **Checks.**
 
@@ -772,24 +849,30 @@ Layers 1–2; SchemeAndStackFoundations §§1.20, 5.2, 5.5; VirtualFundamentalCl
 `AlgebraicGeometry.AlgebraicCycle.map`. Within the layer, 3.1 and 3.2 precede 3.3; 3.4 and 3.5 use
 3.1–3.3.
 
-## Layer 4: rational intersection theory on stacks with a proper cover
+## Layer 4: rational intersection theory on stacks
 
 ### 4.1 Pushforward along proper morphisms
 
-For `f : ℱ → 𝒢` proper, with `ℱ` admitting a proper cover, define *rationalPushforward*
-`f_* : Z_i(ℱ)_ℚ → Z_i(𝒢)_ℚ` by the formula of 3.2 with Vistoli's rational degree (vistoli1989 (3.6)(iii),
-lines 985–987). Prove:
+For `f : ℱ → 𝒢` proper, define *rationalPushforward* `f_* : Z_i(ℱ)_ℚ → Z_i(𝒢)_ℚ` by the formula of 3.2
+with Vistoli's rational degree (vistoli1989 (3.6)(iii), lines 985–987). Prove:
 
 - for `f` proper and surjective, `f_*` is surjective on `Z_*(·)_ℚ`, and every cycle of `Z_*(𝒢)_ℚ`
   rationally equivalent to `0` is `f_*` of a cycle rationally equivalent to `0` (vistoli1989 Lemma 3.8,
   lines 1027–1044);
-- `f_*` induces `f_* : A_i(ℱ)_ℚ → A_i(𝒢)_ℚ` (vistoli1989 (3.7), lines 989–997 and 1045–1048), with
-  `(g ∘ f)_* = g_* ∘ f_*`, equal to 3.2 tensored with `ℚ` when `f` is representable;
-- push–pull `ψ^* f_* = f′_* ψ′^*` on `A_*(ℱ)_ℚ` for a flat `ψ` (vistoli1989 Lemma 3.9 (ii), lines
-  1066–1074).
+- `f_*` induces `f_* : A_i(ℱ)_ℚ → A_i(𝒢)_ℚ` (vistoli1989 (3.7), lines 989–997 and 1045–1048).
 
-This extends VirtualFundamentalClass §2.2's proper pushforward from separated stacks to stacks with a
-proper cover. *Needs:* 1.1, 1.3, Layer 3.
+Route: Lemma 3.8 is applied to a proper cover of `ℱ` (1.1), which every stack has. This extends
+VirtualFundamentalClass §2.2's proper pushforward from separated stacks to all stacks of
+Convention 1. *Needs:* 1.1, 1.3, Layer 3.
+
+**API.**
+
+- For proper `f : ℱ → 𝒢` and `g : 𝒢 → ℋ`, `(g ∘ f)_* = g_* ∘ f_*` on `A_*(·)_ℚ`, and `f_*` is 3.2
+  tensored with `ℚ` when `f` is representable.
+- Push–pull: for a 2-cartesian square with `f` proper and `ψ : 𝒢′ → 𝒢` flat, `ψ^* f_* = f′_* ψ′^*` on
+  `A_*(ℱ)_ℚ` (vistoli1989 Lemma 3.9 (ii), lines 1066–1074).
+- For integral `𝒱 ⊆ ℱ` and `φ ∈ k(𝒱)^×`, `f_* div(φ) = (e(f(𝒱))/e(𝒱)) · div(N(φ))` when
+  `dim f(𝒱) = dim 𝒱` and `0` otherwise, now with a rational factor, as in 3.2.
 
 **Checks.**
 
@@ -797,32 +880,35 @@ proper cover. *Needs:* 1.1, 1.3, Layer 3.
   `|G| · (1/|G|) = 1`, as functoriality for the identity requires.
 - For the coarse map `p : [𝔸¹/μ₂] → 𝔸¹`, `p_*(2·[Bμ₂]) = 2 · (1/2)·[0] = [0] = div(y)`, so `p_*` carries the
   relation `div(y) = 2·[Bμ₂]` upstairs to the relation `div(y) = [0]` downstairs.
-- On the non-separated `L × B(ℤ/2)` (`L` the line with a doubled origin, `ℤ/2` constant), which has the
-  proper cover `L → L × B(ℤ/2)`, the projection to `L` is proper and not representable, and sends
+- On the non-separated `L × B(ℤ/2)` (`L` the line with a doubled origin, `ℤ/2` constant), whose proper
+  cover `L → L × B(ℤ/2)` is finite étale of degree `2`, the projection to `L` is proper and not representable, and sends
   `[0₁ × B(ℤ/2)]` to `(1/2)·[0₁]`; `A_0(L × B(ℤ/2))_ℚ ≅ ℚ` maps isomorphically onto `A_0(L)_ℚ ≅ ℚ`. This
   stack is outside VirtualFundamentalClass §2.2.
 
 ### 4.2 Gysin maps and flat pullback acting on stacks
 
 Let `f : ℱ → 𝒢` be a regular local immersion of codimension `c` of algebraic stacks locally of finite
-type over `k`, `𝒢′ → 𝒢` a morphism from a stack `𝒢′` with a proper cover, and `ℱ′ := ℱ ×_𝒢 𝒢′`. Define
+type over `k`, `𝒢′ → 𝒢` a morphism from a stack `𝒢′`, and `ℱ′ := ℱ ×_𝒢 𝒢′`. Define
 *stackGysin* `f^! : A_i(𝒢′)_ℚ → A_{i−c}(ℱ′)_ℚ` by `f^![𝒱] := deg(Y/𝒱)^{−1} · r_*(f^![Y])` for an integral
-`𝒱 ⊆ 𝒢′` with a proper covering `Y → 𝒱`, where `f^![Y]` is 3.5's class on the scheme `ℱ ×_𝒢 Y` and
+`𝒱 ⊆ 𝒢′` with a proper covering `Y → 𝒱` (1.1), where `f^![Y]` is 3.5's class on the algebraic space
+`ℱ ×_𝒢 Y` (an algebraic space because `f` is representable; it need not be a scheme) and
 `r : ℱ ×_𝒢 Y → ℱ′` the induced proper representable morphism, extended linearly (vistoli1989 lines
-1603–1620 and 1665–1670; behrend-fantechi1997 lines 1617–1643 for algebraic stacks). Prove:
+1603–1620 and 1665–1670; behrend-fantechi1997 lines 1617–1643 for algebraic stacks). Prove that the
+definition does not depend on the proper covering and passes to rational equivalence (vistoli1989
+Lemma 5.3, lines 1621–1657). This extends the action of VirtualFundamentalClass §2.5's orientation
+classes from separated test stacks to all test stacks of Convention 1. *Needs:* 1.1, 1.3, 3.5, 4.1;
+VirtualFundamentalClass §§1.5, 2.5.
 
-- the definition does not depend on the proper covering, passes to rational equivalence, and commutes
-  with proper pushforward and with pullback along flat representable morphisms (vistoli1989 Lemma 5.3,
-  lines 1621–1657);
-- for `𝒢′` an algebraic space it is 3.5 tensored with `ℚ`; two such Gysin maps commute;
+**API.**
+
+- `f^!` commutes with proper pushforward and with pullback along flat representable morphisms
+  `𝒢″ → 𝒢′` (vistoli1989 Lemma 5.3, lines 1621–1657); in particular with restriction to open substacks.
+- For `𝒢′` an algebraic space, `f^!` is 3.5 tensored with `ℚ`; for two regular local immersions
+  `f_1`, `f_2`, `f_1^! f_2^! = f_2^! f_1^!`.
 - `f^![𝒢] = [ℱ]` when `𝒢` is a stack, `𝒢′ = 𝒢`, and `𝒢` is equidimensional (vistoli1989 Lemma 5.5, lines
-  1671–1704);
-- the same construction with flat pullback of 3.1 in place of `f^!` recovers flat pullback, so flat
-  pullback and Gysin maps of regular local immersions act compatibly on stacks with a proper cover.
-
-This extends the action of VirtualFundamentalClass §2.5's orientation classes from separated test
-stacks to test stacks with a proper cover. *Needs:* 1.1, 1.3, 3.5, 4.1; VirtualFundamentalClass
-§§1.5, 2.5.
+  1671–1704).
+- The same construction with flat pullback of 3.1 in place of `f^!` recovers flat pullback, so flat
+  pullback and Gysin maps of regular local immersions act compatibly on stacks.
 
 **Checks.**
 
@@ -830,24 +916,30 @@ stacks to test stacks with a proper cover. *Needs:* 1.1, 1.3, 3.5, 4.1; VirtualF
 - For the étale `π : Spec k → BG`, `π^![BG] = [Spec k]`, the flat pullback; the covering formula with
   `Y = Spec k`, `deg(Y/BG) = |G|` and `f^![Y] = [G]` gives `|G|^{−1}·|G|·[Spec k] = [Spec k]`, not
   `|G|·[Spec k]`.
-- For the zero section `s : ℳ → E` of a vector bundle on a stack with a proper cover, `s^![E] = [ℳ]`.
+- For the zero section `s : ℳ → E` of a vector bundle on a stack, `s^![E] = [ℳ]`.
+- The fibre product `ℱ ×_𝒢 Y` need not be a scheme: over `ℝ`, the algebraic space `X` obtained from
+  `𝔸¹_ℂ` by identifying `z` with `z̄` for `z ≠ 0` is étale over `𝔸¹_ℝ`, so `X → 𝔸¹_ℝ` is a regular local
+  immersion of codimension `0`, and its base change along `id : 𝔸¹_ℝ → 𝔸¹_ℝ` is `X`. Its point over the
+  origin has residue field `ℂ`, while every function on a neighbourhood of that point pulls back to a
+  conjugation-invariant function on the chart `𝔸¹_ℂ` and so takes a real value at the origin; hence no
+  affine open contains the point and `X` is not a scheme. 3.5 applies to it, with `f^![𝔸¹_ℝ] = [X]`.
 
 ### 4.3 Homotopy invariance and Chern classes
 
-Let `ℳ` have a proper cover and `π : E → ℳ` be a vector bundle of constant rank `r` with zero section
+Let `ℳ` be a stack and `π : E → ℳ` a vector bundle of constant rank `r` with zero section
 `s`. Prove that `π^* : A_i(ℳ)_ℚ → A_{i+r}(E)_ℚ` is an isomorphism with inverse `s^!` of 4.2. Route:
 `s^!π^* = id` by the vector-bundle case of vistoli1989 Lemma 5.5 (lines 1673–1684); surjectivity from a
 proper cover `X → ℳ`, the proper cover `E_X := E ×_ℳ X → E`, Lemma 3.8, homotopy invariance on schemes
 (SchemeAndStackFoundations §5.2 `chow_affine_bundle`) and push–pull (4.1). For a vector bundle `E` on
-`ℳ`, define *stackChernClass* `c_i(E)`, acting on `A_*(𝒢′)_ℚ` for every `𝒢′ → ℳ` from a stack with a proper
-cover, by the Chern classes of SchemeAndStackFoundations §5.4 on proper coverings of the integral
+`ℳ`, define *stackChernClass* `c_i(E)`, acting on `A_*(𝒢′)_ℚ` for every morphism `𝒢′ → ℳ` from a stack,
+by the Chern classes of SchemeAndStackFoundations §5.4 on proper coverings of the integral
 substacks of `𝒢′`, as in 4.2 (vistoli1989 lines 96–99 and 1570–1602; fulton1998 Chapter 3). Prove that
 the operation is well defined; that `c_0 = 1`, `c_i(E) = 0` for `i > r`, the Whitney formula for short
 exact sequences, additivity of `c_1` on tensor products of line bundles, commutation with proper
 pushforward (projection formula), flat representable pullback and the Gysin maps of 4.2; and the
 self-intersection formula `s^! s_* α = c_r(E) ∩ α` for `α ∈ A_*(ℳ)_ℚ` (fulton1998 Corollary 6.3;
 SchemeAndStackFoundations `gysin_self_intersection` through a proper cover). This extends
-VirtualFundamentalClass §2.3 from separated stacks to stacks with a proper cover. *Needs:* 1.1,
+VirtualFundamentalClass §2.3 from separated stacks to all stacks of Convention 1. *Needs:* 1.1,
 4.1–4.2; SchemeAndStackFoundations §§5.2, 5.4–5.5.
 
 **API.**
@@ -888,7 +980,7 @@ pushforward. *Needs:* 2.3, Layer 3, 4.1–4.3; VirtualFundamentalClass §§2.1�
 ### Examples
 
 - Homotopy invariance on `BG × 𝔸^r`: `A_r(BG × 𝔸^r)_ℚ = ℚ`.
-- The localised top Chern class `s^![C]` of a cone `C` in a vector bundle on a stack with a proper cover,
+- The localised top Chern class `s^![C]` of a cone `C` in a vector bundle on a stack,
   the operation that defines virtual classes in Layer 6.
 
 ### Dependencies
@@ -900,22 +992,27 @@ the layer, 4.1 → 4.2 → 4.3 → 4.4.
 
 ### 5.1 Intersection products on smooth stacks
 
-Let `ℳ` be smooth over `k` of pure dimension `n` with a proper cover. Its diagonal `Δ : ℳ → ℳ × ℳ` is a
+Let `ℳ` be a stack smooth over `k` of pure dimension `n`. Its diagonal `Δ : ℳ → ℳ × ℳ` is a
 regular local immersion of codimension `n` (vistoli1989 lines 506–507). Define *intersectionProduct*
 `x · y := Δ^!(x × y) ∈ A_{i+j−n}(ℳ)_ℚ` for `x ∈ A_i(ℳ)_ℚ`, `y ∈ A_j(ℳ)_ℚ`, with the exterior product of 3.4
 and the Gysin map of 4.2, and more generally, for `f : ℱ → 𝒢` with `𝒢` smooth of pure dimension `n` and
-stacks `ℱ′ → ℱ`, `𝒢′ → 𝒢` with proper covers, `x ·_f y := γ_f^!(x × y) ∈ A_{i+j−n}(ℱ′ ×_𝒢 𝒢′)_ℚ` with
+stacks `ℱ′ → ℱ`, `𝒢′ → 𝒢`, `x ·_f y := γ_f^!(x × y) ∈ A_{i+j−n}(ℱ′ ×_𝒢 𝒢′)_ℚ` with
 `γ_f : ℱ → ℱ × 𝒢` the graph (vistoli1989 lines 1705–1718). Prove the formal properties of fulton1998
 Proposition 8.1.1, as vistoli1989 lines 1717–1718 asserts for stacks: `A^*(ℳ)_ℚ := ⊕_c A_{n−c}(ℳ)_ℚ` is a
 commutative, associative graded `ℚ`-algebra with unit `[ℳ]`; for a flat representable morphism
-`g : ℳ′ → ℳ` of smooth stacks with proper covers, `g^*` is a ring homomorphism; for any morphism
-`g : ℳ′ → ℳ` of smooth stacks with proper covers, with `g^*x := [ℳ′] ·_g x`, the projection formula
+`g : ℳ′ → ℳ` of smooth stacks, `g^*` is a ring homomorphism; for any morphism
+`g : ℳ′ → ℳ` of smooth stacks, with `g^*x := [ℳ′] ·_g x`, the projection formula
 `g_*(g^*x · y) = x · g_*y` holds when `g` is proper and representable; and on smooth schemes the product is
 SchemeAndStackFoundations §5.6's intersection product tensored with `ℚ`. For a smooth separated stack
-`ℳ` of pure dimension and a representable `t : T → ℳ`, prove Poincaré duality for the bivariant groups
+`ℳ` of pure dimension and a representable `t : T → ℳ` with `T` separated (equivalently `t` separated,
+as `ℳ` is separated), prove Poincaré duality for the bivariant groups
 of VirtualFundamentalClass §2.5: every class of `A^*(T → ℳ)` commutes with all bivariant classes, and
 evaluation `α ↦ α[ℳ]` is an isomorphism `A^*(T → ℳ) ≅ A_*(T)_ℚ` (vistoli1989 Proposition 5.6, lines
-1719–1750). This states for stacks with a proper cover, and with no separatedness, the product that
+1719–1750). Separatedness of `T` is forced by the groups used: VirtualFundamentalClass §2.5's
+bivariant classes act only after base change to separated test stacks whose pullbacks are separated,
+and the evaluation tests on `id_ℳ`, whose pullback is `T`; vistoli1989 Proposition 5.6 has no such
+restriction because its bivariant groups are tested on all schemes. This states for all smooth
+stacks of Convention 1, with no separatedness, the product that
 VirtualFundamentalClass §2.4's Gysin maps define on separated stacks. *Needs:* 3.4, 4.2–4.3;
 SchemeAndStackFoundations §5.6; VirtualFundamentalClass §2.5.
 
@@ -936,10 +1033,15 @@ SchemeAndStackFoundations §5.6; VirtualFundamentalClass §2.5.
 - On the line `L` with a doubled origin, `[0₁] · [L] = [0₁]`, the SchemeAndStackFoundations §5.6 Check,
   computed there through the extended Gysin map of the non-closed diagonal.
 - `A^*(ℙ^n)_ℚ = ℚ[h]/(h^{n+1})`.
+- Poincaré duality needs `T` separated: `t : L → 𝔸¹` from the line with a doubled origin is
+  representable and étale, but the pullback of the test morphism `id_{𝔸¹}` along `t` is `L`, which is
+  not separated, so the bivariant classes of VirtualFundamentalClass §2.5 do not act on it and
+  `α[𝔸¹]` is not defined; for the separated `T = 𝔸¹ ⊔ 𝔸¹ → 𝔸¹` (the two charts), evaluation gives
+  `A^*(T → 𝔸¹) ≅ A_*(𝔸¹ ⊔ 𝔸¹)_ℚ`, which is `ℚ²` in dimension `1` and `0` in dimension `0`.
 
 ### 5.2 Moduli spaces
 
-Let `ℳ` have a proper cover and let `p : ℳ → M` be a proper morphism to a quasi-separated algebraic space
+Let `ℳ` be a stack and let `p : ℳ → M` be a proper morphism to a quasi-separated algebraic space
 of finite type over `k` inducing, for every algebraically closed field `Ω`, a bijection between
 isomorphism classes of `ℳ(Spec Ω)` and `M(Spec Ω)`: a *moduliSpace* in the sense of vistoli1989 (2.1)
 (lines 542–545), there with `M` a scheme. Prove:
@@ -1004,29 +1106,33 @@ groups are integral and the stack groups rational; the integral torsion of the l
 
 ### 5.4 Degrees of points
 
-Let `ℳ` be proper over `k`; it is separated and so has a proper cover. Define *pointDegree*
-`∫_ℳ : A_0(ℳ)_ℚ → ℚ` as the pushforward of 4.1 along `ℳ → Spec k` followed by `A_0(Spec k)_ℚ = ℚ`. For a
-closed point `x ∈ |ℳ|` let `𝒢_x` be the integral closed substack with `|𝒢_x| = {x}`
-(gap:closed-substacks-of-stacks), `κ(x) := k(𝒢_x)` its function field, and `Aut(x̄)` the automorphism
-group of a geometric point over `x`, so that `e(𝒢_x) = |Aut(x̄)|`. Prove:
+Let `ℳ` be proper over `k`, hence separated. The degree `∫_ℳ : A_0(ℳ)_ℚ → ℚ` is VirtualFundamentalClass
+§2.1's degree of proper zero-cycles, which under 2.3 and 4.4 is the pushforward of 4.1 along
+`ℳ → Spec k` followed by `A_0(Spec k)_ℚ = ℚ`; it is not defined again here. What this section adds is
+the closed formula for the degree of a closed point over an arbitrary field, with the residue degree
+`[κ(x) : k]` beside the stabiliser order, its agreement with the degree of zero-cycles on proper
+algebraic spaces, and its computation on a moduli space. For a closed point `x ∈ |ℳ|` let `𝒢_x` be the
+integral closed substack with `|𝒢_x| = {x}` (gap:closed-substacks-of-stacks), `κ(x) := k(𝒢_x)` its
+function field, and `Aut(x̄)` the automorphism group of a geometric point over `x`, so that
+`e(𝒢_x) = |Aut(x̄)|`. Prove:
 
 - `κ(x)` is finite over `k` and `∫_ℳ [𝒢_x] = [κ(x) : k]/|Aut(x̄)|` (vistoli1989 Proposition 1.17, lines
   426–452, applied to `𝒢_x → Spec k`, and lines 372–376);
-- the `ℚ`-linear map on `Z_0(ℳ)_ℚ` with these values vanishes on rational equivalences, and agrees on
-  proper schemes and proper algebraic spaces with the degree of zero-cycles (SchemeAndStackFoundations
-  §5.2; stacks-chow-spaces Definition 32.1, line 2224);
-- `∫_𝒩 ∘ f_* = ∫_ℳ` for a morphism `f : ℳ → 𝒩` of proper stacks (vistoli1989 (3.6)–(3.7), lines 974–997),
-  and `∫_ℳ = ∫_M ∘ p_*` for a moduli space `p : ℳ → M` as in 5.2;
-- consequently the virtual degree of VirtualFundamentalClass §7.7 is `∫_M p_*[X, φ]^vir`, computed on a
-  moduli space.
+- on proper schemes and proper algebraic spaces `∫` is the degree of zero-cycles
+  (SchemeAndStackFoundations §5.2; stacks-chow-spaces Definition 32.1, line 2224);
+- `∫_ℳ = ∫_M ∘ p_*` for a moduli space `p : ℳ → M` as in 5.2, `M` being then proper over `k`;
+  consequently the virtual degree of VirtualFundamentalClass §7.7 is `∫_M p_*[X, φ]^vir`, computed on
+  a moduli space.
 
-*Needs:* 1.2–1.3, 4.1, 5.2; gap:closed-substacks-of-stacks; SchemeAndStackFoundations §§1.20, 5.2;
-VirtualFundamentalClass §7.7.
+*Needs:* 1.2–1.3, 2.3, 4.1, 4.4, 5.2; gap:closed-substacks-of-stacks; SchemeAndStackFoundations §§1.20,
+5.2; VirtualFundamentalClass §§2.1–2.2, 7.7.
 
 **API.**
 
 - `∫_ℳ` is `ℚ`-linear, additive over disjoint unions, and zero on the empty stack.
-- For a proper representable `f` between proper stacks, `∫ ∘ f_* = ∫` already on the integral groups of 3.2.
+- `∫_𝒩 ∘ f_* = ∫_ℳ` for a morphism `f : ℳ → 𝒩` of proper stacks, by functoriality of
+  VirtualFundamentalClass §2.2's pushforward (vistoli1989 (3.6)–(3.7), lines 974–997); for a proper
+  representable `f` it already holds on the integral groups of 3.2.
 
 **Checks.**
 
@@ -1049,13 +1155,13 @@ VirtualFundamentalClass §7.7.
 ### Dependencies
 
 Layers 1–4; SchemeAndStackFoundations §§1.20, 1.23, 5.2, 5.6; EquivariantIntersectionTheory §§2.1–2.2;
-StableReductionPartII §5.15; VirtualFundamentalClass §§2.5, 7.7. Within the layer, 5.1 precedes 5.3,
+StableReductionPartII §5.15; VirtualFundamentalClass §§2.1–2.2, 2.5, 7.7. Within the layer, 5.1 precedes 5.3,
 and 5.2 precedes 5.4.
 
 ## Layer 6: virtual classes without the resolution property
 
 The relative setting of Convention 7 is in force: `𝔜` of pure dimension `d`, `X → 𝔜` of
-Deligne–Mumford type, `X` with a proper cover, and `φ : E → L_{X/𝔜}` a perfect relative obstruction
+Deligne–Mumford type, `X` a stack that need not be separated, and `φ : E → L_{X/𝔜}` a perfect relative obstruction
 theory of constant rank `r` (VirtualFundamentalClass §§6.4, 9.2) with `𝔈 := h¹/h⁰(E^∨)` and the
 relative intrinsic normal cone `𝔠_{X/𝔜} ⊆ 𝔈` of pure dimension `d` (VirtualFundamentalClass §9.1).
 
@@ -1095,18 +1201,20 @@ provide. *Needs:* VirtualFundamentalClass §§3.2, 4.3–4.5, 6.5; SchemeAndStac
 - For `H• = F• ⊕ [G --id--> G]`, `P ≅ F_1 ⊕ G_1 ⊕ F_0` with `G_1` the bundle of `G^∨`, of rank
   `rk F_1 + rk H_0`, `H_0 = F_0 ⊕ G_1`.
 
-### 6.2 The virtual class on stacks with a proper cover
+### 6.2 The virtual class on stacks that need not be separated
 
 Define *virtualClass* `[X/𝔜, E]^vir := 0^!_{F_1}[C(F•)] ∈ A_{d+r}(X)_ℚ` for a global resolution `F•`, with
-`C(F•) := 𝔠_{X/𝔜} ×_𝔈 F_1` a closed subcone of `F_1` of pure dimension `d + rk F_0` and `0^!` the
+`C(F•) := 𝔠_{X/𝔜} ×_𝔈 F_1` a closed subcone of `F_1`, of pure dimension `d + rk F_0` over each open and
+closed substack of `X` on which `rk F_0` is constant, and `0^!` the
 zero-section Gysin map of 4.3 (behrend-fantechi1997 Definition 5.2, lines 1282–1298, and lines
 1664–1667). Prove that it does not depend on `F•`: for a second resolution `H•` and `P` of 6.1,
 `0^!_{F_1} = 0^!_P ∘ α^*` and `0^!_{H_1} = 0^!_P ∘ α′^*` (4.3), and both pullbacks of the cones are the same
 cone in `P`. Prove that it depends only on the isomorphism class of `(E, φ)` and is invariant under
 equivalence of `X` over `𝔜`; that for `𝔜 = Spec k` it is the absolute class; and that when `X` is separated
 with the resolution property it is the class of VirtualFundamentalClass §§7.4 and 9.2 under 4.4. This
-removes the resolution property from VirtualFundamentalClass §7.3 and replaces separatedness by a
-proper cover (behrend-fantechi1997 lines 1261–1262). *Needs:* 4.3–4.4, 6.1; VirtualFundamentalClass
+removes the resolution property from VirtualFundamentalClass §7.3, and removes separatedness: every
+stack has a proper cover (1.1), the condition behrend-fantechi1997 allows in place of separatedness
+(lines 1261–1262). *Needs:* 4.3–4.4, 6.1; VirtualFundamentalClass
 §§7.1–7.4, 9.1–9.2.
 
 **API.**
@@ -1136,15 +1244,21 @@ proper cover (behrend-fantechi1997 lines 1261–1262). *Needs:* 4.3–4.4, 6.1; 
 ### 6.3 Relative formulas over a base of pure dimension
 
 Assume moreover that `H⁰(E)` is locally free. Prove: if `H^{−1}(E) = 0`, then `X → 𝔜` is smooth and
-`[X/𝔜, E]^vir = [X]`; if `X → 𝔜` is smooth, then `Ob = H¹(E^∨)` is locally free of rank
-`s := dim X − d − r` and `[X/𝔜, E]^vir = c_s(Ob) ∩ [X]` (behrend-fantechi1997 Proposition 7.3, lines
-1702–1711, in the setting of lines 1645–1651, whose base is of pure dimension; Propositions 5.5–5.6,
-lines 1353–1365, for the absolute case). Route: in the first case `L_{X/𝔜}` has `H^{−1} = 0` and `H⁰`
+`[X/𝔜, E]^vir = [X]`; if `X → 𝔜` is smooth, then `Ob = H¹(E^∨)` is locally free, and with `s := rk Ob`, a
+locally constant function on `X`,
+
+    [X/𝔜, E]^vir = Σ_s c_s(Ob|_{X_s}) ∩ [X_s]
+
+over the open and closed substacks `X_s ⊆ X` on which `Ob` has rank `s`; when `X` has pure dimension,
+`s = dim X − d − r` is constant and the class is `c_s(Ob) ∩ [X]` (behrend-fantechi1997 Proposition 7.3,
+lines 1702–1711, whose exponent is the rank of `h¹(E^∨)`, line 1710, in the setting of lines
+1645–1651, whose base is of pure dimension; Propositions 5.5–5.6, lines 1353–1365, for the absolute
+case). Route: in the first case `L_{X/𝔜}` has `H^{−1} = 0` and `H⁰`
 locally free, so `X → 𝔜` is smooth, `𝔠_{X/𝔜} = 𝔈 = B T_{X/𝔜}` and `C(F•) = F_1`; in the second,
 `𝔠_{X/𝔜} = B T_{X/𝔜}`, `C(F•)` is the subbundle `im(F_0 → F_1)` with quotient `Ob`, and
-`0^!_{F_1}[K] = c_s(F_1/K) ∩ [X]` for a subbundle `K` (4.3). Neither uses smoothness of `𝔜`. This extends
-VirtualFundamentalClass §9.4's formulas from smooth bases to bases of pure dimension and to stacks with
-a proper cover. *Needs:* 4.3, 6.2; VirtualFundamentalClass §§3.3, 9.1.
+`0^!_{F_1}[K] = c_s(F_1/K) ∩ [X]` for a subbundle `K` of corank `s` (4.3), applied on each `X_s`. Neither
+uses smoothness of `𝔜`. This extends VirtualFundamentalClass §9.4's formulas from smooth bases to bases
+of pure dimension and to stacks that need not be separated. *Needs:* 4.3, 6.2; VirtualFundamentalClass §§3.3, 9.1.
 
 **Checks.**
 
@@ -1157,12 +1271,17 @@ a proper cover. *Needs:* 4.3, 6.2; VirtualFundamentalClass §§3.3, 9.1.
   is `[pt] ∈ A_0`, of dimension `−1 + 1 = 0`.
 - Smoothness of `X → 𝔜` is needed in the second formula even when `H⁰(E)` and `Ob` are locally free: in
   characteristic `p`, for `X = Spec A`, `A = k[x]/(x^p)`, over `Spec k` and `E = L_X = [A --0--> A dx]`
-  (`d(x^p) = 0`), `H⁰(E) = A dx` and `Ob = A` are free, `rk Ob = 1` while `dim X − d − r = 0`, and the class is
-  `[X] = p·[pt]` (VirtualFundamentalClass §7.6), not `c_1(Ob) ∩ [X] = 0`.
+  (`d(x^p) = 0`), `H⁰(E) = A dx` and `Ob = A` are free, `s = rk Ob = 1` while `dim X − d − r = 0`, and the
+  class is `[X] = p·[pt]` (VirtualFundamentalClass §7.6), not `c_1(Ob) ∩ [X] = 0`.
+- The exponent is the rank of `Ob`, not `dim X − d − r`, when `X` is not of pure dimension: for
+  `X = pt ⊔ 𝔸¹` over `Spec k` with `E = 0` on `pt` and `E = [O --0--> Ω_{𝔸¹}]` on `𝔸¹` (rank `0` on both),
+  `Ob` is `0` on `pt` and `O` on `𝔸¹`, so `s = 0` on `pt` and `s = 1` on `𝔸¹`, and the class is
+  `c_0(0) ∩ [pt] + c_1(O) ∩ [𝔸¹] = [pt]`, as the first formula gives on `pt`; the single exponent
+  `dim X − d − r = 1` would give `c_1(Ob) ∩ [X] = 0`.
 
 ### Examples
 
-- Zero loci of sections of vector bundles on smooth stacks with a proper cover, with
+- Zero loci of sections of vector bundles on smooth stacks, with
   `E = [V^∨|_X → Ω_W|_X]`: the class pushes forward to `c_r(V) ∩ [W]`.
 - The two resolutions of 6.1 on `ℙ¹`, which give the same class through `P`.
 
@@ -1225,12 +1344,17 @@ lines 1657–1663):
    `φ^*ω(g) ∈ Ext¹(g^*E, J)` of 7.1's class vanishes exactly when `g` extends to `T̄` over `𝔜`, and the
    extensions then form a torsor under `Hom(g^*H⁰(E), J)`.
 
-Route: (1) ⇔ (2) by VirtualFundamentalClass §4.5 applied to `L_{X/𝔜}`; (1) ⇒ (3) because the cone `C` of `φ`
-has `Hⁱ(C) = 0` for `i ≥ −1`, so that `Ext¹(g^*C, J) = Hom(g^*C, J) = 0` and `φ^*` is injective on `Ext¹` and
-bijective on `Hom`; (3) ⇒ (1) by trivial square-zero extensions `A ⊕ M` for `H⁰` and by an extension `T̄`
-of a chart of `X` inside a scheme smooth over an atlas of `𝔜` for `H^{−1}` (behrend-fantechi1997 lines
-1172–1201). This extends VirtualFundamentalClass §§6.1 and 6.3 from `𝔜 = Spec k` to an algebraic stack
-`𝔜`. *Needs:* 7.1; VirtualFundamentalClass §§4.4–4.5, 5.1, 9.1.
+Condition 3 for affine `T̄` alone already implies condition 1, so the three conditions are also
+equivalent to condition 3 restricted to affine `T̄`, which is the form 9.3 verifies. Route: (1) ⇔ (2)
+by VirtualFundamentalClass §4.5 applied to `L_{X/𝔜}`; (1) ⇒ (3) for every `T̄` because the cone `C` of
+`φ` has `Hⁱ(C) = 0` for `i ≥ −1`, so that `Ext¹(g^*C, J) = Hom(g^*C, J) = 0` and `φ^*` is injective on
+`Ext¹` and bijective on `Hom`; (3) for affine `T̄` ⇒ (1) by the trivial square-zero extensions
+`Spec(A ⊕ M)` of affine `T = Spec A` over `𝔜` for `H⁰`, and for `H^{−1}` by the affine extension `T̄` of
+an affine chart of `X` inside an affine scheme smooth over an affine atlas of `𝔜`
+(behrend-fantechi1997 lines 1172–1201, which use only these affine extensions; its Proposition 6.2,
+lines 1605–1614, likewise checks condition 3 on affine `T`). This extends VirtualFundamentalClass
+§§6.1 and 6.3 from `𝔜 = Spec k` to an algebraic stack `𝔜`. *Needs:* 7.1; VirtualFundamentalClass
+§§4.4–4.5, 5.1, 9.1.
 
 **Checks.**
 
@@ -1256,31 +1380,44 @@ of a chart of `X` inside a scheme smooth over an atlas of `𝔜` for `H^{−1}` 
 VirtualFundamentalClass §§3.1, 3.3, 3.5, 4.4–4.5, 5.1, 9.1; DerivedModuleAlgebra §§0.7, 0.25;
 SchemeAndStackFoundations §4.1. Within the layer, 7.1 → 7.2.
 
-## Layer 8: base change and deformation invariance over reduced bases
+## Layer 8: base change and deformation invariance over bases of pure dimension
 
 ### 8.1 The canonical rational equivalence along relative tangent directions
 
-Let `Y` be a reduced algebraic stack of pure dimension, locally of finite type over `k` (formed on smooth
-charts and descended, behrend-fantechi1997 lines 843–846), `i : X → Y` a local immersion, `v : Y′ → Y` a regular local immersion with normal
-bundle `N`, `X′ := X ×_Y Y′` with `j : X′ → Y′`, `u : X′ → X`, and `C := C_{X/Y}`. Prove:
+Let `Y` be an algebraic stack locally of finite type over `k`, neither reducedness nor pure dimension
+being assumed (cycles and rational equivalences on `Y` and its cones formed on smooth charts and
+descended, kresch1999b lines 192–204 and Remark 2.5, lines 250–256), `i : X → Y` a local immersion,
+`v : Y′ → Y` a regular local immersion with normal bundle `N`, `X′ := X ×_Y Y′` with `j : X′ → Y′`,
+`u : X′ → X`, and `C := C_{X/Y}`. Prove:
 
-- the canonical rational equivalence `β(Y′, X) ∈ W_*(N ×_Y C)` of VirtualFundamentalClass §2.5, with
-  `∂β(Y′, X) = [C_{u^*C/C}] − [ρ^*C_{X′/Y′}]`, is defined for this reduced pure-dimensional ambient
-  (vistoli1989 Lemma 3.16, lines 1172–1174, and Lemma 4.6, lines 1451–1464, whose construction normalises
-  a blow-up of `Y`, lines 1465–1470), and commutes with smooth base change and with smooth factorisations
-  `X → Ỹ → Y` (behrend-fantechi1997 Propositions 3.3–3.4, lines 834–888, whose diagram (7) assumes `Y`
-  smooth, line 812);
-- *relative invariance*: if `p : Y → 𝔅` is smooth of Deligne–Mumford type to a reduced algebraic stack of
-  pure dimension and `Y′ = Y ×_𝔅 𝔅′` for a regular local immersion `𝔅′ → 𝔅`, then `β(Y′, X)` is invariant
-  under the action of `T_{Y/𝔅}|_{X′}` on `N ×_Y C` through the `T_{Y/𝔅}`-action on `C`
-  (VirtualFundamentalClass §1.6), and so descends to `j^*N ×_{X′} u^*[C/T_{Y/𝔅}|_X]`;
-- for a regular local immersion `Y′ → Y` of stacks smooth of Deligne–Mumford type over a reduced
-  algebraic stack `𝔐` of pure dimension, `β(Y′, X)` is invariant under `T_{Y′/𝔐}|_{X′}`, acting through
-  `T_{Y′/𝔐} → T_{Y/𝔐}|_{Y′}`.
+- the canonical rational equivalence `β(Y′, X) ∈ W_*(N ×_Y C)`, with
+  `∂β(Y′, X) = [C_{u^*C/C}] − [ρ^*C_{X′/Y′}]`, is defined for this ambient: it is the rational
+  equivalence built in the proof of kresch1999b Proposition 2.3 (statement lines 242–243, construction
+  lines 259–304) from the double deformation space `M°_X Y ×_Y M°_{Y′}Y → ℙ¹ × ℙ¹` and the
+  intersection of its two `P`-divisors (kresch1999b Corollary 1.10, lines 182–190), which makes no use
+  of reducedness; on a smooth ambient it is the rational equivalence to which VirtualFundamentalClass
+  §2.5 applies kresch1999b Theorem 3.1 (lines 334–336 name the rational equivalence of this proof),
+  and on a reduced equidimensional scheme vistoli1989 Lemmas 3.16 and 4.6 (lines 1172–1174 and
+  1451–1470) give one with the same boundary by normalising a blow-up;
+- `β(Y′, X)` commutes with smooth base change `Y_1 → Y` (kresch1999b Proposition 2.1, lines 205–207, and
+  lines 202–204: the formation of the rational equivalence commutes with smooth pullback) and with
+  smooth factorisations `X → Ỹ → Y`, `Ỹ → Y` smooth of Deligne–Mumford type: under the
+  `T_{Ỹ/Y}`-bundle `α : C_{X/Ỹ} → C`, `α^*β(Y′, X) = β(Ỹ ×_Y Y′, X)` (behrend-fantechi1997 Proposition 3.4,
+  lines 884–888, for Vistoli's construction on a smooth `Y`);
+- *relative invariance*: if `p : Y → 𝔅` is smooth of Deligne–Mumford type to an algebraic stack locally
+  of finite type over `k` and `Y′ = Y ×_𝔅 𝔅′` for a regular local immersion `𝔅′ → 𝔅`, then `β(Y′, X)` is
+  invariant under the action of `T_{Y/𝔅}|_{X′}` on `N ×_Y C` through the `T_{Y/𝔅}`-action on `C`
+  (VirtualFundamentalClass §§1.6, 9.1), and so descends to `j^*N ×_{X′} u^*[C/T_{Y/𝔅}|_X]`;
+- for a regular local immersion `Y′ → Y` of stacks smooth of Deligne–Mumford type over an algebraic
+  stack `𝔐` locally of finite type over `k`, `β(Y′, X)` is invariant under `T_{Y′/𝔐}|_{X′}`, acting
+  through `T_{Y′/𝔐} → T_{Y/𝔐}|_{Y′}`.
 
-Route: the two projections `p_1, p_2 : Y ×_𝔅 Y → Y` are smooth of Deligne–Mumford type and pull `Y′`
-back to the same closed substack `(Y ×_𝔅 Y) ×_𝔅 𝔅′`, because `Y′` comes from `𝔅`; compatibility with
-smooth factorisations, applied to `(i, i) : X → Y ×_𝔅 Y` (a local immersion, as the relative diagonal of
+Route: compatibility with smooth factorisations follows from compatibility with smooth base change,
+because the double deformation space of `(X → Ỹ, Ỹ ×_Y Y′ → Ỹ)` is the base change of that of
+`(X → Y, Y′ → Y)` along `M°_X Ỹ → M°_X Y`, which is smooth (étale locally `Ỹ = Y × 𝔸^n` with `X` inside
+`Y × 0`, where `M°_X Ỹ = M°_X Y × 𝔸^n`), compatibly with both `P`-divisors. Then the two projections
+`p_1, p_2 : Y ×_𝔅 Y → Y` are smooth of Deligne–Mumford type and pull `Y′` back to the same closed
+substack `(Y ×_𝔅 Y) ×_𝔅 𝔅′`, because `Y′` comes from `𝔅`; compatibility with smooth factorisations, applied to `(i, i) : X → Y ×_𝔅 Y` (a local immersion, as the relative diagonal of
 `p` is unramified) through `p_1` and through `p_2`, gives `p_1^*β = p_2^*β`, and under
 `C_{X/Y×_𝔅Y} = i^*T_{Y/𝔅} ×_X C` these two pullbacks are the projection and the action
 (behrend-fantechi1997 lines 781–809 and the proof of Proposition 3.5, lines 894–897, whose two inverse
@@ -1290,9 +1427,10 @@ smooth along `Y′`, `Y′` is pulled back from `{0} × 𝔐`, and the second st
 `𝔅 = 𝔸^c × 𝔐` with `T_{Y/𝔅}|_{Y′} = T_{Y′/𝔐}`. For `𝔐 = Spec k` this is kresch1999b Theorem 3.1 (lines
 334–343), owned by VirtualFundamentalClass §2.5, whose statement prints the acting bundle as `T_{Y′}` in
 its own notation while its proof (lines 390–405) translates along the regularly embedded smooth stack.
-The reducedness of the ambient is used by Vistoli's construction. This extends VirtualFundamentalClass
-§2.5's invariance from smooth ambients over `k` to relative tangent directions over a reduced base.
-*Needs:* VirtualFundamentalClass §§1.5–1.6, 2.5; Layer 2; SchemeAndStackFoundations §5.5.
+No step uses reducedness or pure dimension of `Y`, `𝔅` or `𝔐`. This extends VirtualFundamentalClass
+§2.5's invariance from smooth ambients over `k` to relative tangent directions, on ambients that need
+be neither smooth nor reduced. *Needs:* VirtualFundamentalClass §§1.5–1.6, 2.5, 9.1; Layer 2;
+SchemeAndStackFoundations §5.5.
 
 **Checks.**
 
@@ -1301,32 +1439,35 @@ The reducedness of the ambient is used by Vistoli's construction. This extends V
   `𝔅 = 𝔸¹` through `p = y`, `Y′ = p^{−1}(0)`, `T_{Y/𝔅}` is the `x`-direction acting by `ξ ↦ ξ + a`, which fixes
   `c·ν/η`. Through `p = x`, `Y′` is not pulled back from `𝔅`, `T_{Y/𝔅}` is the `y`-direction acting by
   `η ↦ η + b`, and `c·ν/(η + b) ≠ c·ν/η`.
-- A singular reduced base: for the node `𝔐 = Spec k[a, b]/(ab)`, `W = 𝔐 × 𝔸¹` and the regular local
+- A singular base: for the node `𝔐 = Spec k[a, b]/(ab)`, `W = 𝔐 × 𝔸¹` and the regular local
   immersion `𝔐′ = V(a + b) → 𝔐` (`a + b` is a nonzerodivisor, `𝔐′ = Spec k[a]/(a²)`), `W` is not smooth over
   `k` while `T_{W/𝔐} = O_W`; both projections of `W ×_𝔐 W = 𝔐 × 𝔸²` pull `W′ = 𝔐′ × 𝔸¹` back to `𝔐′ × 𝔸²`, so
   the relative invariance applies to `W′ ⊆ W`.
-- Reducedness is used by the construction: for `Y = 𝔸¹ × Spec k[ε]/(ε²)` (coordinate `t`) and `X` the
-  origin, `I = (t, ε)` has `I^n/I^{n+1}` spanned by `t^n, t^{n−1}ε`, so `[C_{X/Y}] = 2·[𝔸¹]`, while the
-  normalisation of a blow-up only sees `Y_red = 𝔸¹`, where the cone of the origin is `𝔸¹` with
-  multiplicity `1`.
+- A non-reduced ambient keeps its multiplicities: for `Y = 𝔸¹ × Spec k[ε]/(ε²)` (coordinate `t`), `X` the
+  origin and `Y′ = {t = 0} = Spec k[ε]/(ε²)` (`t` is a nonzerodivisor), `I = (t, ε)` has `I^n/I^{n+1}`
+  spanned by `t^n, t^{n−1}ε`, so `C = Spec k[T, E]/(E²)` with `[C] = 2·[T-line]`; `X′ = X`, `N` is the trivial
+  line with coordinate `ν`, `C_{u^*C/C} = {ν = 0} × C` and `ρ^*C_{X′/Y′} = 𝔸¹_ν × Spec k[E]/(E²)`, so
+  `∂β = 2·[ν = 0] − 2·[T = 0]` on the plane `(N ×_Y C)_red = 𝔸²_{ν,T}` and `β = 2·(ν/T)`, twice the
+  rational equivalence `ν/T` of `Y_red = 𝔸¹`. A construction that only sees `Y_red`, as the
+  normalisation of a blow-up does, gives `[ν = 0] − [T = 0]`, which is not the boundary required for `Y`.
 - Degenerate cases: for `p` étale, `T_{Y/𝔅} = 0` and the statement is empty; for `𝔅′ = 𝔅`, `Y′ = Y`, the
   ideal of `Y′` is zero and `β = 0`.
 
-### 8.2 Regular-immersion pullback over a reduced base
+### 8.2 Regular-immersion pullback over a base of pure dimension
 
 Let `v : 𝔜′ → 𝔜` be a regular local immersion of codimension `c` of algebraic stacks of pure dimensions
-`d` and `d − c` with `𝔜` reduced, `X′ := X ×_𝔜 𝔜′` with `u : X′ → X`, and assume `X′` has a proper cover
-(it inherits one from `X` when `v` is representable by schemes, in particular when `v` is a closed
-immersion, 1.1). Prove that `u^*E` is a perfect relative obstruction theory for `X′/𝔜′` with a global
-resolution (VirtualFundamentalClass §6.4) and that `v^![X/𝔜, E]^vir = [X′/𝔜′, u^*E]^vir` in
-`A_{d−c+r}(X′)_ℚ`, with `v^!` the Gysin map of 4.2 (behrend-fantechi1997 Proposition 7.2 (2), lines
+`d` and `d − c`, and `X′ := X ×_𝔜 𝔜′` with `u : X′ → X`, a stack in the sense of Convention 1 because `u`
+is a representable local immersion. No reducedness of `𝔜` is assumed. Prove that `u^*E` is a perfect
+relative obstruction theory for `X′/𝔜′` with a global resolution (VirtualFundamentalClass §6.4) and
+that `v^![X/𝔜, E]^vir = [X′/𝔜′, u^*E]^vir` in `A_{d−c+r}(X′)_ℚ`, with `v^!` the Gysin map of 4.2 (behrend-fantechi1997 Proposition 7.2 (2), lines
 1682–1699, stated for smooth bases at lines 1668–1670). Route: for a relative local embedding of `X` into
-`W` smooth over an atlas of `𝔜`, `W` is reduced of pure dimension, `β(W′, U)` of 8.1 is defined and
-invariant under `T_{W/𝔜}|_{U′}` because `W′ := W ×_𝔜 𝔜′` is pulled back from `𝔜`, so it descends to the
-relative cone stacks, glues over the relative local embeddings and pulls back to `F_1`, giving
+`W` smooth over an atlas of `𝔜` (`W → 𝔜` is representable, `W` being an algebraic space, hence of
+Deligne–Mumford type), `β(W′, U)` of 8.1 is defined and invariant under `T_{W/𝔜}|_{U′}` because
+`W′ := W ×_𝔜 𝔜′` is pulled back from `𝔜`, so it descends to the relative cone stacks, glues over the relative local embeddings and pulls back to `F_1`, giving
 `v^![C(F•)] = [C(u^*F•)]` (behrend-fantechi1997 lines 1690–1699 and Lemma 5.9, line 1397); then apply
 `0^!_{F_1}` and 4.3. This extends VirtualFundamentalClass §9.4's regular base change from smooth bases to
-reduced bases and from separated stacks with the resolution property to stacks with a proper cover.
+bases of pure dimension, reduced or not, and from separated stacks with the resolution property to
+all stacks of Convention 1 whose theory has a global resolution.
 *Needs:* 4.2–4.3, 6.2, 8.1; VirtualFundamentalClass §§6.4, 9.1, 9.3.
 
 **Checks.**
@@ -1337,29 +1478,53 @@ reduced bases and from separated stacks with the resolution property to stacks w
 - Over the node `𝔜 = Spec k[a, b]/(ab)` with `𝔜′ = V(a + b) = Spec k[a]/(a²)` and `X = 𝔜 × ℙ¹`,
   `E = [O(1) --0--> Ω_{X/𝔜}]` (6.3): `v^!(−[𝔜 × pt]) = −[𝔜′ × pt] = −2·[pt × pt]`, and directly
   `[X′/𝔜′, u^*E]^vir = c_1(O(−1)) ∩ [𝔜′ × ℙ¹] = −2·[pt × pt]`; the base is reduced and not smooth.
-- Over the non-reduced `𝔜 = Spec k[ε]/(ε²)` no regular local immersion of positive codimension exists into
-  `𝔜` (`ε` is a zero divisor), and every `W` smooth over `𝔜` is non-reduced, so 8.1 constructs no `β`; the
-  flat case is VirtualFundamentalClass §9.3 and needs no condition on `𝔜`.
+- A non-reduced base: for `𝔜 = 𝔸¹ × Spec k[ε]/(ε²)` (pure dimension `1`), `𝔜′ = {t = 0} = Spec k[ε]/(ε²)`
+  (`t` is a nonzerodivisor, so `v` is regular of codimension `1`), `X = 𝔜` and `E = 0`: the class is
+  `[X/𝔜, 0]^vir = [𝔜] = 2·[𝔸¹]` (6.3), `v^!(2·[𝔸¹]) = 2·[pt]`, and directly `[X′/𝔜′, 0]^vir = [𝔜′] = 2·[pt]`,
+  the length of `k[ε]/(ε²)`. A theory that replaced `𝔜` by `𝔜_red` would give `[pt]` on the right.
 
-### 8.3 Functoriality over reduced bases
+### 8.3 Functoriality over bases of pure dimension
 
 Let `X′ → X` be the base change of a local complete intersection morphism `v : Z′ → Z` of algebraic stacks
-over `𝔜` with finite unramified diagonal over `𝔜`, with `g : X′ → Z′` and `h : X → Z`, `X` and `X′` stacks with
-proper covers, and `E`, `F` perfect obstruction theories for `X/𝔜`, `X′/𝔜` with global resolutions that are
-compatible over `v` in the sense of VirtualFundamentalClass §§8.1 and 9.5 (behrend-fantechi1997 lines
+over `𝔜` with finite unramified diagonal over `𝔜`, with `g : X′ → Z′` and `h : X → Z`, `X` and `X′`
+stacks in the sense of Convention 1, and `E`, `F` perfect obstruction theories for `X/𝔜`, `X′/𝔜` with
+global resolutions that are compatible over `v` in the sense of VirtualFundamentalClass §§8.1 and 9.5 (behrend-fantechi1997 lines
 1721–1733). Prove `v^![X/𝔜, E]^vir = [X′/𝔜, F]^vir` (behrend-fantechi1997 Proposition 7.5, lines 1734–1739)
-when `v` is smooth, over any `𝔜` of pure dimension, and when `𝔜` is reduced and `Z′`, `Z` are smooth over
-`𝔜`; here `v^!` is flat pullback in the first case, and in the second the composite of the Gysin map of the
+when `v` is smooth, and when `Z′`, `Z` are smooth over `𝔜`, in both cases over any `𝔜` of pure dimension;
+here `v^!` is flat pullback in the first case, and in the second the composite of the Gysin map of the
 graph `Z′ → Z′ ×_𝔜 Z`, a regular local immersion, with flat pullback along the projection to `Z` (4.2).
 Route: in the first case the compatibility datum gives the exact sequence `B T_{X′/X} → 𝔉 → u^*𝔈` of
 vector-bundle stacks (VirtualFundamentalClass §8.1) and `C_{X′/𝔜}` is the `T_{X′/X}`-torsor over
 `u^*C_{X/𝔜}`, so the class is computed through a comparison bundle `F_1 ×_{u^*𝔈} u^*E_1` as in 6.1; in the
 second, the rational equivalence of behrend-fantechi1997 Lemma 5.9 (line 1397) is formed in the ambient
 `Z′ ×_𝔜 Z ×_𝔜 W` of the graph, with the invariance of 8.1's third statement for
-`T_{Z′/𝔜} ⊕ T_{W/𝔜}`, so that only the compatibility over `v` is used. This extends
-VirtualFundamentalClass §9.5 from separated stacks with the resolution property to stacks with a proper
-cover, and states the second case over a reduced base. *Needs:* 4.2–4.3, 6.1–6.2, 8.1–8.2;
-VirtualFundamentalClass §§8.1, 9.1, 9.5.
+`T_{Z′/𝔜} ⊕ T_{W/𝔜}`, and carried into `N × 𝔉` by the comparison of the API below, so that only the
+compatibility over `v` is used. No compatibility datum over the graph is used: one would need a lift of
+`g^*Ω_{Z′/𝔜} → g^*L_{Z′/Z}` to `F`, whose obstruction lies in `Ext¹(g^*Ω_{Z′/𝔜}, u^*E)` and is killed only
+in `Ext¹(g^*Ω_{Z′/𝔜}, u^*L_{X/𝔜})`. This extends VirtualFundamentalClass §9.5, which states both cases
+under the hypotheses of behrend-fantechi1997 Proposition 7.5 for separated stacks with the resolution
+property, to stacks that need not be separated. *Needs:* 4.2–4.3, 6.1–6.2, 8.1–8.2;
+VirtualFundamentalClass §§1.6, 8.1, 9.1, 9.5.
+
+**API.**
+
+- The comparison of the second case. On a chart where `X → Z ×_𝔜 W` is a local immersion with `W` smooth
+  over an atlas of `𝔜`, put `C := C_{X/Z ×_𝔜 W}` and `N := g^*v^*T_{Z/𝔜}`, the normal bundle of the graph
+  `Z′ → Z′ ×_𝔜 Z` pulled back to `X′`, and let `T_{Z′/𝔜} ⊕ T_{W/𝔜}` act trivially on `N` and on `u^*C`
+  through `dv : T_{Z′/𝔜} → v^*T_{Z/𝔜}` and the tangent actions of VirtualFundamentalClass §§1.6, 9.1. Then
+  the compatibility datum over `v` gives an isomorphism of cone stacks over `X′`
+
+      [u^*C/(T_{Z′/𝔜} ⊕ T_{W/𝔜})] ≅ 𝔉 ×_{u^*𝔈} u^*𝔠_{X/𝔜}
+
+  over the identity of `u^*𝔠_{X/𝔜} = [u^*C/(v^*T_{Z/𝔜} ⊕ T_{W/𝔜})]`, equivariant for
+  `g^*𝔑_{Z′/Z} = [v^*T_{Z/𝔜}/T_{Z′/𝔜}]` acting through the exact sequence `g^*𝔑_{Z′/Z} → 𝔉 → u^*𝔈` of
+  VirtualFundamentalClass §8.1, and carrying the closed substack
+  `[C_{X′/Z′ ×_𝔜 W}/(T_{Z′/𝔜} ⊕ T_{W/𝔜})] = 𝔠_{X′/𝔜}` to its image under `𝔠_{X′/𝔜} → 𝔉`; these
+  isomorphisms agree on overlaps of charts (behrend-fantechi1997 Lemma 5.9, lines 1416–1421, for
+  `𝔜 = Spec k`, `Z′`, `Z` smooth and `v` regular). Through it the rational equivalence of 8.1 descends to
+  `N × 𝔉` with boundary `[φ^*C_{u^*𝔠_{X/𝔜}/𝔠_{X/𝔜}}] − [N × 𝔠_{X′/𝔜}]`, and after pulling back to the
+  global resolutions as in 8.2 the zero-section Gysin maps of the two terms are `v^![X/𝔜, E]^vir` and
+  `[X′/𝔜, F]^vir`.
 
 **Checks.**
 
@@ -1367,16 +1532,20 @@ VirtualFundamentalClass §§8.1, 9.1, 9.5.
 - `v : 𝔸¹ × Z → Z` the projection, `X′ = 𝔸¹ × X`, `F = E ⊞ Ω_{𝔸¹}`: `v^![X]^vir = [𝔸¹] × [X]^vir`, of dimension one
   more.
 - Two successive smooth pullbacks `Z′′ → Z′ → Z` with compatible theories give the class of the composite.
+- The comparison of the API in two degenerate cases. For `Z = 𝔜` and `v : Z′ → 𝔜` smooth, `N = 0`,
+  `T_{Z′/𝔜}` acts trivially on `u^*C`, and the left side is `u^*𝔠_{X/𝔜} × B T_{Z′/𝔜}`, matching
+  `g^*𝔑_{Z′/𝔜} = B T_{Z′/𝔜}` in `B T_{Z′/𝔜} → 𝔉 → u^*𝔈`. For `𝔜 = Spec k` and `v : {0} → 𝔸¹`, `T_{Z′} = 0` and
+  `[u^*C/T_W] → u^*𝔠_X` has fibre `[T_{𝔸¹}/0] = 𝔸¹`, the normal bundle `𝔑_{0/𝔸¹}`, while `N` is a second,
+  separate copy of the trivial line: behrend-fantechi1997 Lemma 5.9 with `Y = 𝔸¹`, `Y′ = {0}`, `M = W`.
 
 ### 8.4 Deformation invariance of virtual counts
 
-Let `B` be a smooth connected separated curve over `k`, `𝔐` a reduced algebraic stack of pure dimension
-`m` (`𝔐 = Spec k` allowed), `X → 𝔐 × B` of Deligne–Mumford type with `X` proper over `B`, and `E` a perfect
+Let `B` be a smooth connected separated curve over `k`, `𝔐` an algebraic stack of pure dimension `m`,
+reduced or not (`𝔐 = Spec k` allowed), `X → 𝔐 × B` of Deligne–Mumford type with `X` proper over `B`, and `E` a perfect
 relative obstruction theory for `X/𝔐 × B` of rank `r` with a global resolution and `m + r = 0`. For a
 closed point `b ∈ B`, let `X_b := X ×_B {b}` with the pulled-back theory over `𝔐 × {b} = 𝔐_{κ(b)}`. Prove that
-`deg_{κ(b)}[X_b/𝔐_{κ(b)}]^vir ∈ ℚ` does not depend on `b`. Route: `X` is separated, so it and every `X_b` has
-a proper cover; `{b} → B` is a regular immersion of codimension one, and 8.2 for
-`𝔐 × {b} → 𝔐 × B` (reduced, pure dimension `m + 1`) gives `[X_b]^vir = η_b^![X]^vir` with
+`deg_{κ(b)}[X_b/𝔐_{κ(b)}]^vir ∈ ℚ` does not depend on `b`. Route: `{b} → B` is a regular immersion of
+codimension one, and 8.2 for `𝔐 × {b} → 𝔐 × B` (pure dimension `m + 1`) gives `[X_b]^vir = η_b^![X]^vir` with
 `[X]^vir ∈ A_1(X)_ℚ`; pushing forward to `B` (4.1) gives `n·[B] ∈ A_1(B)_ℚ = ℚ·[B]`, and compatibility of
 `η_b^!` with proper pushforward (4.2) gives `deg_{κ(b)}[X_b]^vir = n` (li-tian1998 Theorem 4.2, lines
 1472–1474, and its proof, line 1566; fulton1998 Proposition 10.2). The `k`-degree is
@@ -1408,8 +1577,12 @@ SchemeAndStackFoundations §5.5. Within the layer, 8.1 → 8.2 → 8.3, and 8.2 
 ### 9.1 Relative spaces of maps
 
 Let `𝔅` be an algebraic stack of pure dimension `b`, locally of finite type over `k`, and `𝒞 → 𝔅` a
-representable morphism whose base change to every scheme `T → 𝔅` is a prestable family
-(`TauCeti.AlgebraicGeometry.PrestableFamily`; StableReduction Layer 3). Let `X` be a smooth
+representable morphism (Convention 2) that is a prestable family étale locally on the base: for every
+scheme `T → 𝔅` there is an étale covering `{T_i → T}` such that each `𝒞_{T_i} := 𝒞 ×_𝔅 T_i` is a scheme and
+`𝒞_{T_i} → T_i` is a prestable family (`TauCeti.AlgebraicGeometry.PrestableFamily`, a class on morphisms of
+schemes; StableReduction Layer 3). The étale-local form, rather than representability by schemes, is
+what 9.2–9.4 use, since they work on étale charts of `M`; it contains the case of `𝒞 → 𝔅`
+representable by schemes. Let `X` be a smooth
 quasi-projective `k`-scheme, `M` a stack (Convention 1) with a morphism `M → 𝔅` of Deligne–Mumford type,
 `π : 𝒞_M := 𝒞 ×_𝔅 M → M` the base change and `F : 𝒞_M → X` a morphism. Define *RelativeSpaceOfMaps*:
 `(M, F)` is a relative space of maps from `𝒞` to `X` if for every square-zero extension `T → T̄` over `𝔅`
@@ -1452,8 +1625,9 @@ cohomology bounded below, induced by `tr`, compatibly with étale base change on
 free, compatible with base change. Route: on an affine étale chart `U → M`, `𝒞_U → U` is a flat proper
 morphism of Noetherian schemes with Gorenstein fibres of dimension one, and SchemeAndStackFoundations
 §2.19 (`pushforwardRightAdjoint_adj`, `globalDuality`, `upperShriek_proper`, `upperShriek_lci`) and §2.20
-give these statements there; the chart isomorphisms agree on overlaps by flat base change and glue as
-isomorphisms of objects of `D(O_M)`. The duality is not used for the unbounded complex `L_{M/𝔅}`: 9.3
+give these statements there, the charts being chosen fine enough that `𝒞_U` is a scheme (9.1); the
+chart isomorphisms agree on overlaps by flat base change and glue as isomorphisms of objects of
+`D(O_M)`. The duality is not used for the unbounded complex `L_{M/𝔅}`: 9.3
 builds its morphism into `L_{M/𝔅}` from the projection formula and `tr`, which are defined for every complex,
 and uses the adjunction only against the bounded complexes `J[1]` of square-zero extensions.
 *Needs:* VirtualFundamentalClass §3.1; StableReduction Layer 2; SchemeAndStackFoundations §§1.10,
@@ -1485,10 +1659,12 @@ projection formula `Rπ_*(π^*L_{M/𝔅} ⊗ ω_π[1]) ≅ L_{M/𝔅} ⊗ Rπ_*(
 adjoint of `e ⊗ ω_π[1] : F^*Ω_X ⊗ ω_π[1] → π^!L_{M/𝔅}` wherever the adjunction applies
 (behrend-fantechi1997 lines 1583–1599; behrend1997 lines 148–153 for the relative form). Prove: if `(M, F)` is a relative space of maps, `φ` is a perfect
 relative obstruction theory for `M/𝔅`, with obstruction sheaf `Ob = R¹π_*F^*T_X` (behrend-fantechi1997
-Proposition 6.2, lines 1602–1614, for `𝔅 = Spec k` and a fixed curve). Route: condition 3 of 7.2. For a
+Proposition 6.2, lines 1602–1614, for `𝔅 = Spec k` and a fixed curve). Route: condition 3 of 7.2 for
+affine `T̄`, which suffices by 7.2. For a
 square-zero extension `T → T̄` over `𝔅` with `T̄` affine and `g : T → M`, the extensions of
 `F_T : 𝒞_T → X` to `𝒞_{T̄}` are obstructed by a class in `Ext¹_{𝒞_T}(F_T^*Ω_X, π^*J)` and form a torsor
-under `Hom(F_T^*Ω_X, π^*J)` (SchemeAndStackFoundations §4.1 for the smooth `X`); the projection formula and
+under `Hom(F_T^*Ω_X, π^*J)` (SchemeAndStackFoundations §4.1 for the smooth `X` on affine étale charts of
+the algebraic space `𝒞_{T̄}`, the local obstructions and torsors glued as in 7.1); the projection formula and
 base change (9.2) identify `Ext^i_{𝒞_T}(F_T^*Ω_X, π^*J) = H^i(𝒞_T, F_T^*T_X ⊗ π^*J)` with
 `H^i(T, Rπ_*(F_T^*T_X) ⊗ J) = Ext^i_T(g^*E, J)` in the same degree, the right side over `O_T` (where
 behrend-fantechi1997 line 1609 writes `O_C`), compatibly with `φ^*ω(g)`; the hypothesis of 9.1 transports
@@ -1538,22 +1714,27 @@ global resolution `[(R¹π_*G)^∨ → (R¹π_*H)^∨]` for `V = F^*T_X`, and `[
 
 ### 9.5 Rank and virtual dimension
 
-Prove that on the open and closed substack of `M` where the fibres of `π` have arithmetic genus `g` and
-`F^*T_X` has fibre degree `δ` (`TauCeti.AlgebraicGeometry.FiniteLocallyFreeSheaf.FixedRank.vectorBundleDegree`),
-`rk E = χ(C_t, F_t^*T_X) = δ + dim X · (1 − g)`, by Riemann–Roch on proper curves (SchemeAndStackFoundations
-§3.3, with `χ(O_{C_t}) = 1 − g` from StableReduction Layer 2), so that the virtual dimension is
-`b + δ + dim X · (1 − g)` (behrend1997 lines 157–161 and 193–197; li-tian1998 Theorem 4.3 (1), lines
-1585–1586). For `𝔅` the stack of prestable `n`-pointed curves of genus `g`, of dimension `3g − 3 + n`, and
-`δ = c_1(T_X) · β`, this is `(1 − g)(dim X − 3) + n + c_1(T_X) · β`, the virtual dimension of
-AlgebraicGromovWittenTheory §4.3. *Needs:* 9.3–9.4; SchemeAndStackFoundations §3.3; StableReduction
-Layer 2; Tau Ceti `TauCeti.AlgebraicGeometry.FiniteLocallyFreeSheaf.FixedRank.vectorBundleDegree`.
+Prove that on the open and closed substack of `M` where the fibres of `π` have arithmetic genus `g`,
+`F^*T_X` has fibre degree `δ` (`TauCeti.AlgebraicGeometry.FiniteLocallyFreeSheaf.FixedRank.vectorBundleDegree`)
+and `F^*T_X` has rank `ℓ` (each `C_t` is connected, so `F_t` lands in one connected component of `X`,
+of dimension `ℓ`), `rk E = χ(C_t, F_t^*T_X) = δ + ℓ · (1 − g)`, by Riemann–Roch on proper curves
+(SchemeAndStackFoundations §3.3, with `χ(O_{C_t}) = 1 − g` from StableReduction Layer 2), so that the
+virtual dimension there is `b + δ + ℓ · (1 − g)`; when `X` has pure dimension, `ℓ = dim X` everywhere
+and the virtual dimension is `b + δ + dim X · (1 − g)` (behrend1997 lines 157–161 and 193–197;
+li-tian1998 Theorem 4.3 (1), lines 1585–1586). For `X` of pure dimension, `𝔅` the stack of prestable
+`n`-pointed curves of genus `g`, of dimension `3g − 3 + n`, and `δ = c_1(T_X) · β`, this is
+`(1 − g)(dim X − 3) + n + c_1(T_X) · β`, the virtual dimension of AlgebraicGromovWittenTheory §4.3.
+*Needs:* 9.3–9.4; SchemeAndStackFoundations §3.3; StableReduction Layer 2; Tau Ceti `TauCeti.AlgebraicGeometry.FiniteLocallyFreeSheaf.FixedRank.vectorBundleDegree`.
 
 **Checks.**
 
 - `X = ℙ^r`, `g = 0`, degree `d`, `b = n − 3`: the virtual dimension is `(r + 1)d + r + n − 3`, which for
   `r = 2`, `d = 1`, `n = 0` is `2`, the dimension of the space of lines in `ℙ²`.
-- `X` with `c_1(T_X) = 0` and `dim X = 3`: the virtual dimension is `n` for every `g` and `β`.
+- `X` with `c_1(T_X) = 0` and of pure dimension `3`: the virtual dimension is `n` for every `g` and `β`.
 - `X = Spec k`: `δ = 0`, `dim X = 0`, and the virtual dimension is `b`.
+- The rank is that of `F^*T_X`, not `dim X`, when `X` is not of pure dimension: for `X = Spec k ⊔ ℙ¹`,
+  `𝔅 = Spec k`, `C = ℙ¹` and `F` constant onto the point `Spec k`, `F^*T_X = 0`, so `ℓ = 0`, `δ = 0` and
+  `rk E = χ(0) = 0 = δ + ℓ · (1 − 0)`, while `δ + dim X · (1 − g) = 1`.
 
 ### Examples
 
@@ -1600,6 +1781,8 @@ EnhancedDerivedSheaves §0.3, E1.4, E1.8; DerivedModuleAlgebra §0.12; VirtualFu
   [arXiv:math/9810166](https://arxiv.org/abs/math/9810166).
 - [deligne-mumford1969] P. Deligne, D. Mumford, *The irreducibility of the space of curves of given genus*,
   Publ. Math. IHÉS 36 (1969), 75–109, [Numdam](https://www.numdam.org/item/PMIHES_1969__36__75_0/).
+- [rydh2015] D. Rydh, *Noetherian approximation of algebraic spaces and stacks*, J. Algebra 422 (2015),
+  105–147, [arXiv:0904.0227](https://arxiv.org/abs/0904.0227); read in the arXiv v4 numbering.
 - [stacks-chow] The Stacks Project, *Chow homology and Chern classes*, [Tag 02P3](https://stacks.math.columbia.edu/tag/02P3).
 - [stacks-chow-spaces] The Stacks Project, *Chow groups of spaces*, [Tag 0EDQ](https://stacks.math.columbia.edu/tag/0EDQ).
 - [gillet1984] H. Gillet, *Intersection theory on algebraic stacks and Q-varieties*, J. Pure Appl. Algebra 34

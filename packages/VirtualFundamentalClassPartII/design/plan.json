@@ -2,7 +2,7 @@
  "roadmap": "VirtualFundamentalClassPartII",
  "title": "Virtual fundamental classes, part II: integral and non-separated Chow theory of Deligne–Mumford stacks and virtual classes over general bases",
  "parent": "VirtualFundamentalClass",
- "summary": "Integral Chow groups of Deligne–Mumford stacks of finite type over any field without separatedness, their degrees and integral operations; for stacks with a proper cover, rational pushforward, Gysin maps and Chern classes on stacks; comparisons with the scheme, algebraic-space and separated rational groups; intersection rings, moduli spaces, the ring structure of the Edidin–Graham comparison and degrees of points; the virtual class without the resolution property and for stacks with a proper cover, the relative obstruction class and characterisations, relative formulas over pure-dimensional bases, relative invariance of Vistoli's rational equivalence, regular pullback and functoriality over reduced bases, deformation invariance, and the perfect relative obstruction theory of relative spaces of maps from prestable curves.",
+ "summary": "Integral Chow groups of Deligne–Mumford stacks of finite type over any field without separatedness, their degrees and integral operations; through the finite cover by a scheme that every such stack has, rational pushforward, Gysin maps and Chern classes on stacks; comparisons with the scheme, algebraic-space and separated rational groups; intersection rings, moduli spaces, the ring structure of the Edidin–Graham comparison and the closed formula for degrees of points; the virtual class without the resolution property or separatedness, the relative obstruction class and characterisations, relative formulas over pure-dimensional bases, relative invariance of the canonical rational equivalence on ambients neither smooth nor reduced, regular pullback and functoriality over bases of pure dimension, deformation invariance, and the perfect relative obstruction theory of relative spaces of maps from prestable curves.",
  "baseline": {
   "mathlib": "1b1ccf4b088b32fa3f23f2de1127433254a81e1e",
   "tauceti": "2fd255d997f47c0b5d834ee416c7015d55444ce5"
@@ -16,13 +16,13 @@
      "id": "1.1",
      "kind": "definition",
      "name": "StackChow.ProperCover",
-     "statement": "A proper cover of a stack M is a scheme X of finite type over k with a proper surjective (hence representable) morphism X -> M; for integral M a proper covering is one with X integral and X -> M generically finite. Every stack with a separated finite-type morphism to a Noetherian scheme (in particular every separated stack) has a proper cover, generically finite with X quasi-projective; an integral stack with a proper cover has a proper covering; proper covers pass to closed and open substacks, along morphisms representable by schemes, to vector bundles and products, and from M' to M along a proper representable surjection M' -> M.",
+     "statement": "A proper cover of a stack M is a scheme X of finite type over k with a proper surjective (hence representable) morphism X -> M; for integral M a proper covering is one with X integral and X -> M generically finite. Every stack M has a finite, finitely presented surjective morphism Z -> M from a scheme of finite type over k, etale over a dense open substack, so every stack has a proper cover and every integral stack a proper covering; a stack with a separated finite-type morphism to a Noetherian scheme (in particular every separated stack) has a generically finite proper cover by a quasi-projective scheme; proper covers pass to closed and open substacks, along morphisms representable by schemes, to vector bundles and products, and from M' to M along a proper representable surjection M' -> M.",
      "hypotheses": [
       "M a Deligne-Mumford stack of finite type over a field k with quasi-compact separated diagonal representable by schemes (Convention 1)"
      ],
      "locator": {
-      "source": "vistoli1989",
-      "where": "Lemma 1.10 and (1.11), lines 299-328; lines 582-584"
+      "source": "rydh2015",
+      "where": "Theorem B, lines 81-85 (attribution lines 86-87); vistoli1989 Lemma 1.10 and (1.11), lines 299-328, and lines 582-584; deligne-mumford1969 Theorem 4.12, lines 1012-1019; kresch1999b Remark 2.6, lines 307-315"
      },
      "prerequisites": [
       "roadmap:SchemeAndStackFoundations §1.19",
@@ -32,6 +32,11 @@
      ],
      "api": [
       {
+       "name": "ProperCover.finite_exists",
+       "role": "theorem",
+       "statement": "Every stack of Convention 1 has a finite, finitely presented surjective morphism from a scheme of finite type over k, etale over a dense open substack (rydh2015 Theorem B, lines 81-85)."
+      },
+      {
        "name": "ProperCover.restrict",
        "role": "lemma",
        "statement": "A proper cover of M restricts to closed and open substacks and to stacks representable by schemes over M, and composes with a proper representable surjection onto M."
@@ -39,7 +44,7 @@
       {
        "name": "ProperCover.covering_exists",
        "role": "lemma",
-       "statement": "An integral M with a proper cover has a proper covering; two proper coverings are dominated by an integral closed subscheme of their fibre product surjecting onto both (vistoli1989 lines 1610-1613)."
+       "statement": "Every integral M has a proper covering (a dominating component of a finite cover, reduced); two proper coverings are dominated by an integral closed subscheme of their fibre product surjecting onto both (vistoli1989 lines 1610-1613)."
       },
       {
        "name": "ProperCover.of_separated",
@@ -64,9 +69,9 @@
        "statement": "Base change of id_{Spec k} along BG -> Spec k is id_BG, proper surjective but with non-scheme source."
       },
       {
-       "name": "BG_nonseparatedGroup_noSeparatedCover",
-       "kind": "non-example",
-       "statement": "For G the etale group over A^1 obtained from Z/2 by deleting the non-identity point over 0, B_{A^1}G has no proper cover by a separated scheme: the torsor would be finite etale of degree 2 over t != 0 and 1 over 0 on a connected component."
+       "name": "BG_nonseparatedGroup_finiteCover",
+       "kind": "computation",
+       "statement": "For G the etale group over A^1 obtained from Z/2 by deleting the non-identity point over 0, the two charts Q = A^1 + A^1 -> L of the doubled-origin line form a G_L-torsor (Q x_L Q = Q + Q|_{t!=0} = Q x_{A^1} G), so L -> B_{A^1}G is finite etale of degree 2 = (e(BG)/e(L))[k(t):k(t)]: a proper cover of a non-separated stack with non-finite inertia. No separated scheme is a proper cover (the torsor would be finite etale of degree 2 over t != 0 and 1 over 0), so requiring X separated would exclude it."
       }
      ]
     },
@@ -99,9 +104,9 @@
        "statement": "For a finite etale group G acting on an integral scheme X, k([X/G]) = k(X)^G."
       },
       {
-       "name": "genericStabiliserOrder.eq_deg_inertia",
+       "name": "genericStabiliserOrder.eq_sum_deg_inertia",
        "role": "lemma",
-       "statement": "e(V) = deg(I_V/V), unchanged on dense open substacks."
+       "statement": "e(V) is the sum of deg(I/V) (1.3) over the irreducible components I of (I_V)_red dominating V; e is unchanged on dense open substacks."
       }
      ],
      "tests": [
@@ -119,6 +124,11 @@
        "name": "nonseparatedGroup_genericLarger",
        "kind": "computation",
        "statement": "For B_{A^1}G of 1.1, e = 2 though the stabiliser at 0 is trivial."
+      },
+      {
+       "name": "inertia_sumOfDegrees",
+       "kind": "computation",
+       "statement": "I_{BG} = BG + BG for G = Z/2 (1+1 = 2); for S_3 the components B Z(c) have degrees 1, 3, 2 (sum 6); over Q, I_{B mu_3} has components of degrees 1 and (3/3)[Q(zeta_3):Q] = 2 (sum 3, two components); on [A^1/mu_2] the non-identity component lies over 0, does not dominate, and the sum is 1."
       },
       {
        "name": "realGerbe",
@@ -339,7 +349,7 @@
      "id": "3.1",
      "kind": "construction",
      "name": "StackChow.flatPullback",
-     "statement": "For f : F -> G flat of relative dimension d (atlas-wise, SmoothLocal), f^*[V] := [V x_G F] carries dW_i(G) into dW_{i+d}(F) and induces f^* : A_i(G) -> A_{i+d}(F), functorial, restriction for open immersions; integral, no separatedness.",
+     "statement": "For f : F -> G flat of relative dimension d (atlas-wise, SmoothLocal), f^*[V] := [V x_G F] carries dW_i(G) into dW_{i+d}(F) and induces f^* : A_i(G) -> A_{i+d}(F); integral, no separatedness.",
      "hypotheses": [
       "f flat of constant relative dimension d"
      ],
@@ -362,6 +372,16 @@
        "name": "flatPullback.open",
        "role": "lemma",
        "statement": "For an open immersion, f^* is restriction."
+      },
+      {
+       "name": "flatPullback.closedSubstack",
+       "role": "lemma",
+       "statement": "f^*[Z] = [Z x_G F] for every closed substack Z, integral or not."
+      },
+      {
+       "name": "flatPullback.descent",
+       "role": "lemma",
+       "statement": "Along an etale surjection from a scheme, flat pullback on cycles is the descent injection of 2.1; on schemes it is SchemeAndStackFoundations §5.2's flat pullback."
       }
      ],
      "tests": [
@@ -386,7 +406,7 @@
      "id": "3.2",
      "kind": "construction",
      "name": "StackChow.properPushforward",
-     "statement": "For f : F -> G proper representable, f_*[V] := deg(V/f(V)) [f(V)] (integer, 0 when the dimension drops) carries dW_i(F) into dW_i(G) through norms and induces f_* : A_i(F) -> A_i(G), functorial; integral, no proper cover.",
+     "statement": "For f : F -> G proper representable, f_*[V] := deg(V/f(V)) [f(V)] (integer, 0 when the dimension drops) carries dW_i(F) into dW_i(G), with f_* div(phi) = (e(f(V))/e(V)) div(N(phi)) when dim f(V) = dim V (N the norm of k(V)/k(f(V)); the factor an integer for representable f) and 0 otherwise, and induces f_* : A_i(F) -> A_i(G); integral.",
      "hypotheses": [
       "f proper and representable"
      ],
@@ -395,6 +415,7 @@
       "where": "(3.6)(ii), lines 980-984; (3.7), lines 989-1011"
      },
      "prerequisites": [
+      "target:1.2",
       "target:1.3",
       "target:2.2",
       "roadmap:SchemeAndStackFoundations §5.2",
@@ -411,6 +432,16 @@
        "name": "properPushforward.closedImmersion",
        "role": "lemma",
        "statement": "For a closed immersion, i_*[V] = [V]."
+      },
+      {
+       "name": "properPushforward.div",
+       "role": "lemma",
+       "statement": "f_* div(phi) = (e(f(V))/e(V)) div(N(phi)) if dim f(V) = dim V, and 0 otherwise."
+      },
+      {
+       "name": "properPushforward.schemes",
+       "role": "lemma",
+       "statement": "On schemes, f_* is SchemeAndStackFoundations §5.2's proper pushforward with the weights of AlgebraicGeometry.AlgebraicCycle.map."
       }
      ],
      "tests": [
@@ -428,6 +459,11 @@
        "name": "P1_residueDegree",
        "kind": "compatibility",
        "statement": "For P^1 -> Spec k, f_*[P] = [k(P):k][Spec k], SchemeAndStackFoundations §5.2."
+      },
+      {
+       "name": "stabiliserFactor_div",
+       "kind": "non-example",
+       "statement": "For f : A^1 -> A^1 x BG (|G| > 1) and phi = t, f_* div(t) = |G|[0 x BG] while div(N(t)) = [0 x BG] since k(A^1 x BG) = k(t); the factor e(A^1 x BG)/e(A^1) = |G| is needed."
       }
      ]
     },
@@ -435,7 +471,7 @@
      "id": "3.3",
      "kind": "theorem",
      "name": "StackChow.pushPull_and_localisation",
-     "statement": "For a 2-cartesian square with f proper representable and psi flat of relative dimension d, psi^* f_* = f'_* psi'^* on cycles and on A_*; for a closed substack Z with open complement U, A_i(Z) -> A_i(M) -> A_i(U) -> 0 is exact. Integral, no proper cover.",
+     "statement": "For a 2-cartesian square with f proper representable and psi flat of relative dimension d, psi^* f_* = f'_* psi'^* on cycles and on A_*; for a closed substack Z with open complement U, A_i(Z) -> A_i(M) -> A_i(U) -> 0 is exact. Integral.",
      "hypotheses": [
       "f proper representable, psi flat",
       "Z closed substack, U its complement"
@@ -472,7 +508,7 @@
      "id": "3.4",
      "kind": "construction",
      "name": "StackChow.exteriorProduct",
-     "statement": "[V] x [W] := [V x_k W] passes to rational equivalence, is associative, commutative up to exchange, has unit [Spec k], and commutes with flat pullback and proper representable pushforward in each factor; on schemes it is SchemeAndStackFoundations §5.5's exterior product.",
+     "statement": "[V] x [W] := [V x_k W] passes to rational equivalence, giving A_i(F) (x) A_j(G) -> A_{i+j}(F x_k G); integral.",
      "hypotheses": [
       "F, G stacks over k"
      ],
@@ -488,6 +524,11 @@
      ],
      "api": [
       {
+       "name": "exteriorProduct.assoc_comm",
+       "role": "lemma",
+       "statement": "Bilinear, associative, commutative up to the exchange isomorphism."
+      },
+      {
        "name": "exteriorProduct.unit",
        "role": "lemma",
        "statement": "[Spec k] x a = a."
@@ -496,6 +537,11 @@
        "name": "exteriorProduct.pushPull",
        "role": "lemma",
        "statement": "Commutes with flat pullback and proper representable pushforward in each factor."
+      },
+      {
+       "name": "exteriorProduct.schemes",
+       "role": "lemma",
+       "statement": "On schemes it is SchemeAndStackFoundations §5.5's exterior product."
       }
      ],
      "tests": [
@@ -552,6 +598,16 @@
        "name": "refinedGysin.comm",
        "role": "lemma",
        "statement": "f_1^! f_2^! = f_2^! f_1^!."
+      },
+      {
+       "name": "refinedGysin.normalCone",
+       "role": "lemma",
+       "statement": "For Y equidimensional, f^![Y] = s^*[C_{X/Y}] (vistoli1989 Lemma 3.19)."
+      },
+      {
+       "name": "refinedGysin.schemes",
+       "role": "lemma",
+       "statement": "For a regular immersion of schemes and Y a scheme, f^! is SchemeAndStackFoundations §5.5's refined Gysin map."
       }
      ],
      "tests": [
@@ -576,16 +632,15 @@
   },
   {
    "key": "4",
-   "title": "Rational intersection theory on stacks with a proper cover",
+   "title": "Rational intersection theory on stacks",
    "targets": [
     {
      "id": "4.1",
      "kind": "construction",
      "name": "StackChow.rationalPushforward",
-     "statement": "For f : F -> G proper with F admitting a proper cover, f_* : Z_i(F)_Q -> Z_i(G)_Q with Vistoli's rational degree induces f_* : A_i(F)_Q -> A_i(G)_Q, functorial, equal to 3.2 (x) Q for representable f; for proper surjective f, f_* is surjective on rational cycles and on rational equivalences; push-pull with flat morphisms holds rationally.",
+     "statement": "For f : F -> G proper, f_* : Z_i(F)_Q -> Z_i(G)_Q with Vistoli's rational degree induces f_* : A_i(F)_Q -> A_i(G)_Q, functorial, equal to 3.2 (x) Q for representable f; for proper surjective f, f_* is surjective on rational cycles and on rational equivalences (applied to a proper cover of F, 1.1); push-pull with flat morphisms holds rationally.",
      "hypotheses": [
-      "f proper",
-      "F has a proper cover"
+      "f proper"
      ],
      "locator": {
       "source": "vistoli1989",
@@ -608,6 +663,16 @@
        "name": "rationalPushforward.surjective",
        "role": "lemma",
        "statement": "For proper surjective f, f_* is surjective on Z_*(.)_Q and on rational equivalences."
+      },
+      {
+       "name": "rationalPushforward.pushPull",
+       "role": "lemma",
+       "statement": "psi^* f_* = f'_* psi'^* on A_*(F)_Q for flat psi (vistoli1989 Lemma 3.9 (ii))."
+      },
+      {
+       "name": "rationalPushforward.div",
+       "role": "lemma",
+       "statement": "f_* div(phi) = (e(f(V))/e(V)) div(N(phi)) if dim f(V) = dim V, and 0 otherwise, with a rational factor."
       }
      ],
      "tests": [
@@ -632,10 +697,10 @@
      "id": "4.2",
      "kind": "construction",
      "name": "StackChow.stackGysin",
-     "statement": "For a regular local immersion f : F -> G of codimension c of algebraic stacks and G' -> G from a stack with a proper cover, f^![V] := deg(Y/V)^{-1} r_*(f^![Y]) over proper coverings defines f^! : A_i(G')_Q -> A_{i-c}(F x_G G')_Q, independent of coverings, compatible with rational equivalence, proper pushforward and flat representable pullback, equal to 3.5 (x) Q on algebraic spaces, commuting for two regular local immersions, with f^![G] = [F] for equidimensional G; flat pullback acts compatibly.",
+     "statement": "For a regular local immersion f : F -> G of codimension c of algebraic stacks and any G' -> G from a stack, f^![V] := deg(Y/V)^{-1} r_*(f^![Y]) over proper coverings Y -> V, with f^![Y] 3.5's class on the algebraic space F x_G Y, defines f^! : A_i(G')_Q -> A_{i-c}(F x_G G')_Q, independent of coverings and compatible with rational equivalence; compatible with proper pushforward and flat representable pullback, equal to 3.5 (x) Q on algebraic spaces, commuting for two regular local immersions, with f^![G] = [F] for equidimensional G; flat pullback acts compatibly.",
      "hypotheses": [
       "f a representable regular local immersion of codimension c",
-      "G' has a proper cover"
+      "G' a stack (Convention 1)"
      ],
      "locator": {
       "source": "vistoli1989",
@@ -664,6 +729,11 @@
        "name": "stackGysin.fundamentalClass",
        "role": "lemma",
        "statement": "f^![G] = [F] for G equidimensional."
+      },
+      {
+       "name": "stackGysin.algebraicSpace",
+       "role": "lemma",
+       "statement": "For G' an algebraic space, f^! is 3.5 (x) Q; two such Gysin maps commute."
       }
      ],
      "tests": [
@@ -680,7 +750,12 @@
       {
        "name": "zeroSection_fundamental",
        "kind": "computation",
-       "statement": "For the zero section of a vector bundle on a stack with a proper cover, s^![E] = [M]."
+       "statement": "For the zero section of a vector bundle on a stack, s^![E] = [M]."
+      },
+      {
+       "name": "nonSchemeFibreProduct",
+       "kind": "non-example",
+       "statement": "Over R, the algebraic space X obtained from A^1_C by identifying z with its conjugate for z != 0 is etale over A^1_R (a regular local immersion of codimension 0) and is not a scheme (the residue field at the origin is C, while functions near it pull back to conjugation-invariant functions on A^1_C and take real values there); F x_G Y = X for Y = A^1_R, and f^![A^1_R] = [X]."
       }
      ]
     },
@@ -688,9 +763,9 @@
      "id": "4.3",
      "kind": "construction",
      "name": "StackChow.stackChernClass",
-     "statement": "For M with a proper cover and a vector bundle E of rank r with zero section s, pi^* : A_i(M)_Q -> A_{i+r}(E)_Q is an isomorphism with inverse s^!; Chern classes c_i(E), acting on A_*(G')_Q for G' -> M with a proper cover through scheme Chern classes on proper coverings, satisfy c_0 = 1, vanishing above r, Whitney, additivity of c_1, the projection formula, commutation with flat representable pullback and Gysin maps, and s^! s_* = c_r(E) cap.",
+     "statement": "For a stack M and a vector bundle E of rank r with zero section s, pi^* : A_i(M)_Q -> A_{i+r}(E)_Q is an isomorphism with inverse s^!; Chern classes c_i(E), acting on A_*(G')_Q for every G' -> M from a stack through scheme Chern classes on proper coverings, satisfy c_0 = 1, vanishing above r, Whitney, additivity of c_1, the projection formula, commutation with flat representable pullback and Gysin maps, and s^! s_* = c_r(E) cap.",
      "hypotheses": [
-      "M has a proper cover",
+      "M a stack (Convention 1)",
       "E a vector bundle of constant rank r"
      ],
      "locator": {
@@ -802,10 +877,10 @@
      "id": "5.1",
      "kind": "definition",
      "name": "StackChow.intersectionProduct",
-     "statement": "For M smooth of pure dimension n with a proper cover, x . y := Delta^!(x x y) (Delta a regular local immersion of codimension n), and x ._f y := gamma_f^!(x x y) for f : F -> G with G smooth; A^*(M)_Q is a commutative associative graded Q-algebra with unit [M], flat representable pullback between smooth stacks with proper covers is a ring map, g_*(g^*x . y) = x . g_*y for proper representable g, and on smooth schemes this is SchemeAndStackFoundations §5.6's product (x) Q. For smooth separated M of pure dimension and representable T -> M, every class in VirtualFundamentalClass §2.5's A^*(T -> M) commutes with all bivariant classes and evaluation on [M] is an isomorphism A^*(T -> M) = A_*(T)_Q.",
+     "statement": "For M smooth of pure dimension n, x . y := Delta^!(x x y) (Delta a regular local immersion of codimension n), and x ._f y := gamma_f^!(x x y) for f : F -> G with G smooth; A^*(M)_Q is a commutative associative graded Q-algebra with unit [M], flat representable pullback between smooth stacks is a ring map, g_*(g^*x . y) = x . g_*y for proper representable g, and on smooth schemes this is SchemeAndStackFoundations §5.6's product (x) Q. For smooth separated M of pure dimension and representable t : T -> M with T separated (equivalently t separated), every class in VirtualFundamentalClass §2.5's A^*(T -> M) commutes with all bivariant classes and evaluation on [M] is an isomorphism A^*(T -> M) = A_*(T)_Q.",
      "hypotheses": [
-      "M smooth over k of pure dimension n with a proper cover",
-      "for Poincare duality: M separated, T -> M representable"
+      "M smooth over k of pure dimension n",
+      "for Poincare duality: M separated, T -> M representable with T separated"
      ],
      "locator": {
       "source": "vistoli1989",
@@ -855,6 +930,11 @@
        "name": "Pn_ring",
        "kind": "computation",
        "statement": "A^*(P^n)_Q = Q[h]/(h^{n+1})."
+      },
+      {
+       "name": "doubledOrigin_dualityExcluded",
+       "kind": "non-example",
+       "statement": "t : L -> A^1 from the doubled-origin line is representable and etale, but the pullback of the test id_{A^1} is L, not separated, so VirtualFundamentalClass §2.5's classes do not act and alpha[A^1] is undefined; for T = A^1 + A^1 -> A^1, A_*(T)_Q is Q^2 in dimension 1."
       }
      ]
     },
@@ -862,9 +942,9 @@
      "id": "5.2",
      "kind": "theorem",
      "name": "StackChow.moduliSpace_pushforward_iso",
-     "statement": "Let M have a proper cover and p : M -> M0 be proper onto a quasi-separated algebraic space of finite type inducing bijections on isomorphism classes of geometric points (a moduli space). Then V -> p(V) is a dimension-preserving bijection of integral closed substacks with integral closed subspaces (inverse N -> (N x M)_red); k(p(V)) in k(V) is purely inseparable; deg(V/p(V)) = [k(V):k(p(V))]/e(V), equal to 1/e(V) if k(p(V)) is perfect; p_* : A_i(M)_Q -> A_i(M0)_Q is an isomorphism; Keel-Mori coarse spaces of separated stacks are moduli spaces.",
+     "statement": "Let M be a stack and p : M -> M0 be proper onto a quasi-separated algebraic space of finite type inducing bijections on isomorphism classes of geometric points (a moduli space). Then V -> p(V) is a dimension-preserving bijection of integral closed substacks with integral closed subspaces (inverse N -> (N x M)_red); k(p(V)) in k(V) is purely inseparable; deg(V/p(V)) = [k(V):k(p(V))]/e(V), equal to 1/e(V) if k(p(V)) is perfect; p_* : A_i(M)_Q -> A_i(M0)_Q is an isomorphism; Keel-Mori coarse spaces of separated stacks are moduli spaces.",
      "hypotheses": [
-      "M has a proper cover",
+      "M a stack (Convention 1)",
       "p proper, bijective on geometric points up to isomorphism",
       "M0 quasi-separated algebraic space of finite type"
      ],
@@ -966,9 +1046,9 @@
     },
     {
      "id": "5.4",
-     "kind": "definition",
-     "name": "StackChow.pointDegree",
-     "statement": "For M proper over k, the degree map is pushforward to Spec k; for a closed point x with integral substack G_x, kappa(x) := k(G_x) is finite over k and the degree of [G_x] is [kappa(x):k]/|Aut(x-bar)|; the Q-linear map on Z_0(M)_Q with these values vanishes on rational equivalences and agrees with degrees on proper schemes and algebraic spaces; it is compatible with proper pushforward and with moduli spaces, so VirtualFundamentalClass §7.7's virtual degree is computed on a moduli space.",
+     "kind": "theorem",
+     "name": "StackChow.degree_closedPoint",
+     "statement": "For M proper over k, the degree on A_0(M)_Q is VirtualFundamentalClass §2.1's degree of proper zero-cycles (under 2.3 and 4.4 the pushforward of 4.1 to Spec k), not defined again; for a closed point x with integral substack G_x, kappa(x) := k(G_x) is finite over k and the degree of [G_x] is [kappa(x):k]/|Aut(x-bar)| over an arbitrary field; on proper schemes and algebraic spaces it is the degree of zero-cycles; it factors through a moduli space, so VirtualFundamentalClass §7.7's virtual degree is computed on a moduli space.",
      "hypotheses": [
       "M proper over k"
      ],
@@ -979,23 +1059,27 @@
      "prerequisites": [
       "target:1.2",
       "target:1.3",
+      "target:2.3",
       "target:4.1",
+      "target:4.4",
       "target:5.2",
       "gap:closed-substacks-of-stacks",
       "roadmap:SchemeAndStackFoundations §1.20",
       "roadmap:SchemeAndStackFoundations §5.2",
+      "roadmap:VirtualFundamentalClass §2.1",
+      "roadmap:VirtualFundamentalClass §2.2",
       "roadmap:VirtualFundamentalClass §7.7"
      ],
      "api": [
       {
-       "name": "pointDegree.linear",
+       "name": "degree.linear",
        "role": "lemma",
        "statement": "Q-linear, additive over disjoint unions, zero on the empty stack."
       },
       {
-       "name": "pointDegree.pushforward",
+       "name": "degree.pushforward",
        "role": "lemma",
-       "statement": "Compatible with proper (representable or not) pushforward between proper stacks."
+       "statement": "Compatible with proper pushforward between proper stacks, by functoriality of VirtualFundamentalClass §2.2's pushforward; already integrally for proper representable morphisms."
       }
      ],
      "tests": [
@@ -1083,10 +1167,10 @@
      "id": "6.2",
      "kind": "definition",
      "name": "VirtualFundamentalClass.virtualClass",
-     "statement": "For X -> Y of Deligne-Mumford type over Y of pure dimension d, X with a proper cover, and a perfect relative obstruction theory E of rank r with a global resolution F, [X/Y, E]^vir := 0^!_{F_1}[C(F)] in A_{d+r}(X)_Q, C(F) := c_{X/Y} x_E F_1; independent of F (through 6.1 and 4.3), of the isomorphism class of (E, phi) and of X up to equivalence; equal to the absolute class for Y = Spec k and to VirtualFundamentalClass §§7.4, 9.2's class when X is separated with the resolution property.",
+     "statement": "For X -> Y of Deligne-Mumford type over Y of pure dimension d, X a stack (Convention 1), separated or not, and a perfect relative obstruction theory E of rank r with a global resolution F, [X/Y, E]^vir := 0^!_{F_1}[C(F)] in A_{d+r}(X)_Q, C(F) := c_{X/Y} x_E F_1 (pure of dimension d + rk F_0 where rk F_0 is constant); independent of F (through 6.1 and 4.3), of the isomorphism class of (E, phi) and of X up to equivalence; equal to the absolute class for Y = Spec k and to VirtualFundamentalClass §§7.4, 9.2's class when X is separated with the resolution property.",
      "hypotheses": [
       "Y algebraic stack locally of finite type, pure dimension d",
-      "X -> Y of Deligne-Mumford type, X with a proper cover",
+      "X -> Y of Deligne-Mumford type, X a stack (Convention 1)",
       "E perfect relative obstruction theory of constant rank r with a global resolution"
      ],
      "locator": {
@@ -1153,11 +1237,11 @@
      "id": "6.3",
      "kind": "theorem",
      "name": "VirtualFundamentalClass.relativeFormulas",
-     "statement": "With H^0(E) locally free: if H^{-1}(E) = 0 then X -> Y is smooth and [X/Y, E]^vir = [X]; if X -> Y is smooth then Ob is locally free of rank s = dim X - d - r and [X/Y, E]^vir = c_s(Ob) cap [X]; Y of pure dimension, not necessarily smooth; X with a proper cover.",
+     "statement": "With H^0(E) locally free: if H^{-1}(E) = 0 then X -> Y is smooth and [X/Y, E]^vir = [X]; if X -> Y is smooth then Ob is locally free and, with s := rk Ob (locally constant), [X/Y, E]^vir = sum_s c_s(Ob|X_s) cap [X_s] over the open and closed substacks X_s where Ob has rank s; s = dim X - d - r when X has pure dimension; Y of pure dimension, not necessarily smooth; X need not be separated.",
      "hypotheses": [
       "H^0(E) locally free",
       "Y of pure dimension d",
-      "X with a proper cover"
+      "X a stack (Convention 1)"
      ],
      "locator": {
       "source": "behrend-fantechi1997",
@@ -1189,7 +1273,12 @@
       {
        "name": "smoothnessNeeded",
        "kind": "non-example",
-       "statement": "In char p, X = Spec k[x]/(x^p) with E = L_X = [A -0-> A dx]: H^0(E) and Ob = A free, rk Ob = 1 != dim X - d - r = 0, class [X] = p[pt], not c_1(Ob) cap [X] = 0."
+       "statement": "In char p, X = Spec k[x]/(x^p) with E = L_X = [A -0-> A dx]: H^0(E) and Ob = A free, s = rk Ob = 1 != dim X - d - r = 0, class [X] = p[pt], not c_1(Ob) cap [X] = 0."
+      },
+      {
+       "name": "nonPureDimension_rank",
+       "kind": "non-example",
+       "statement": "X = pt + A^1 over k with E = 0 on pt and [O -0-> Omega] on A^1: s = 0 on pt and 1 on A^1, class [pt]; the single exponent dim X - d - r = 1 would give 0."
       }
      ]
     }
@@ -1259,14 +1348,14 @@
      "id": "7.2",
      "kind": "theorem",
      "name": "ObstructionTheory.relative_characterisations",
-     "statement": "For E with the condition of VirtualFundamentalClass §4.4 and phi : E -> L_{X/Y}, equivalent: (1) H^0(phi) iso and H^{-1}(phi) surjective; (2) N_{X/Y} -> h1/h0(E^v) a closed immersion; (3) for every square-zero extension over Y and g, phi^*omega(g) vanishes exactly when g extends over Y, and extensions form a torsor under Hom(g^*H^0(E), J).",
+     "statement": "For E with the condition of VirtualFundamentalClass §4.4 and phi : E -> L_{X/Y}, equivalent: (1) H^0(phi) iso and H^{-1}(phi) surjective; (2) N_{X/Y} -> h1/h0(E^v) a closed immersion; (3) for every square-zero extension over Y and g, phi^*omega(g) vanishes exactly when g extends over Y, and extensions form a torsor under Hom(g^*H^0(E), J). Condition (3) restricted to affine Tbar already implies (1), so the equivalence holds with (3) for affine Tbar.",
      "hypotheses": [
       "X -> Y of Deligne-Mumford type",
       "E satisfies VirtualFundamentalClass §4.4's condition"
      ],
      "locator": {
       "source": "behrend-fantechi1997",
-      "where": "Theorem 4.5, lines 1162-1201; relative form lines 1657-1663"
+      "where": "Theorem 4.5, lines 1162-1201; relative form lines 1657-1663; (3) => (1) through affine extensions only, lines 1175-1201; Proposition 6.2, lines 1605-1614"
      },
      "prerequisites": [
       "target:7.1",
@@ -1303,27 +1392,28 @@
   },
   {
    "key": "8",
-   "title": "Base change and deformation invariance over reduced bases",
+   "title": "Base change and deformation invariance over bases of pure dimension",
    "targets": [
     {
      "id": "8.1",
      "kind": "theorem",
      "name": "StackChow.canonicalRationalEquivalence_relativeInvariance",
-     "statement": "On a reduced pure-dimensional ambient Y, with X -> Y a local immersion and Y' -> Y a regular local immersion, the canonical rational equivalence beta(Y', X) of VirtualFundamentalClass §2.5 is defined and commutes with smooth base change and smooth factorisations; if Y -> B is smooth of Deligne-Mumford type to a reduced pure-dimensional algebraic stack and Y' = Y x_B B', beta is invariant under T_{Y/B}|_{X'}; for a regular local immersion Y' -> Y of stacks smooth over a reduced pure-dimensional M, beta is invariant under T_{Y'/M}|_{X'}.",
+     "statement": "For an algebraic stack Y locally of finite type over k (neither reduced nor pure-dimensional), X -> Y a local immersion and Y' -> Y a regular local immersion, the canonical rational equivalence beta(Y', X) in W_*(N x_Y C), built from the double deformation space as in kresch1999b Proposition 2.3, is defined and commutes with smooth base change and with smooth factorisations; if Y -> B is smooth of Deligne-Mumford type and Y' = Y x_B B', beta is invariant under T_{Y/B}|_{X'}; for a regular local immersion Y' -> Y of stacks smooth over any M, beta is invariant under T_{Y'/M}|_{X'}.",
      "hypotheses": [
-      "Y reduced of pure dimension",
+      "Y an algebraic stack locally of finite type over k",
       "i : X -> Y a local immersion, v : Y' -> Y a regular local immersion",
-      "for invariance: Y' pulled back from a reduced pure-dimensional base along a smooth morphism of Deligne-Mumford type"
+      "for invariance: Y' pulled back from a base B along a smooth morphism Y -> B of Deligne-Mumford type"
      ],
      "locator": {
-      "source": "vistoli1989",
-      "where": "Lemma 3.16, lines 1172-1174; Lemma 4.6, lines 1451-1470; behrend-fantechi1997 Propositions 3.3-3.5, lines 781-897; kresch1999b Theorem 3.1, lines 334-343 and 390-405"
+      "source": "kresch1999b",
+      "where": "Proposition 2.3, lines 242-243, construction lines 259-304; Corollary 1.10, lines 182-190; Proposition 2.1, lines 202-207; Remark 2.5, lines 250-256; Theorem 3.1, lines 334-343 and 390-405; vistoli1989 Lemmas 3.16 and 4.6, lines 1172-1174 and 1451-1470; behrend-fantechi1997 Propositions 3.3-3.5, lines 781-897"
      },
      "prerequisites": [
       "target:2.2",
       "roadmap:VirtualFundamentalClass §1.5",
       "roadmap:VirtualFundamentalClass §1.6",
       "roadmap:VirtualFundamentalClass §2.5",
+      "roadmap:VirtualFundamentalClass §9.1",
       "roadmap:SchemeAndStackFoundations §5.5"
      ],
      "api": [],
@@ -1339,9 +1429,9 @@
        "statement": "Over the node M, W = M x A^1 is not smooth over k, T_{W/M} = O, and both projections pull W' back to M' x A^2."
       },
       {
-       "name": "reducednessUsed",
-       "kind": "non-example",
-       "statement": "For Y = A^1 x Spec k[e]/(e^2) and X the origin, [C_{X/Y}] = 2[A^1] while the normalised blow-up sees multiplicity 1."
+       "name": "nonreducedAmbient_multiplicity",
+       "kind": "computation",
+       "statement": "Y = A^1 x Spec k[e]/(e^2), X the origin, Y' = {t = 0}: C = Spec k[T,E]/(E^2) with [C] = 2[T-line], dbeta = 2[nu = 0] - 2[T = 0] and beta = 2(nu/T), twice the beta of Y_red; a construction seeing only Y_red gives [nu = 0] - [T = 0]."
       },
       {
        "name": "degenerate_cases",
@@ -1353,11 +1443,11 @@
     {
      "id": "8.2",
      "kind": "theorem",
-     "name": "VirtualFundamentalClass.regularPullback_reducedBase",
-     "statement": "For a regular local immersion v : Y' -> Y of codimension c of pure-dimensional algebraic stacks with Y reduced, and X' = X x_Y Y' with a proper cover, u^*E is a perfect relative obstruction theory with a global resolution and v^![X/Y, E]^vir = [X'/Y', u^*E]^vir.",
+     "name": "VirtualFundamentalClass.regularPullback_pureDimensionalBase",
+     "statement": "For a regular local immersion v : Y' -> Y of codimension c of algebraic stacks of pure dimensions d and d - c (reduced or not), and X' = X x_Y Y' (a stack of Convention 1), u^*E is a perfect relative obstruction theory with a global resolution and v^![X/Y, E]^vir = [X'/Y', u^*E]^vir.",
      "hypotheses": [
-      "Y reduced of pure dimension d, Y' of pure dimension d - c",
-      "X, X' with proper covers"
+      "Y of pure dimension d, Y' of pure dimension d - c",
+      "X a stack (Convention 1); X' is then one"
      ],
      "locator": {
       "source": "behrend-fantechi1997",
@@ -1391,25 +1481,25 @@
       },
       {
        "name": "nonreducedBase",
-       "kind": "non-example",
-       "statement": "Over Spec k[e]/(e^2) there is no regular local immersion of positive codimension and no beta; the flat case is VirtualFundamentalClass §9.3."
+       "kind": "computation",
+       "statement": "Y = A^1 x Spec k[e]/(e^2), Y' = {t = 0}, X = Y, E = 0: v^!(2[A^1]) = 2[pt] = [Y'] = [X'/Y', 0]^vir; replacing Y by Y_red would give [pt]."
       }
      ]
     },
     {
      "id": "8.3",
      "kind": "theorem",
-     "name": "VirtualFundamentalClass.functoriality_reducedBase",
-     "statement": "For a cartesian square X' -> X over a local complete intersection morphism v : Z' -> Z of algebraic stacks over Y with finite unramified diagonal over Y, X and X' with proper covers, and perfect obstruction theories E, F with global resolutions compatible over v (VirtualFundamentalClass §§8.1, 9.5), v^![X/Y, E]^vir = [X'/Y, F]^vir when v is smooth (any pure-dimensional Y), and when Y is reduced and Z, Z' are smooth over Y.",
+     "name": "VirtualFundamentalClass.functoriality_pureDimensionalBase",
+     "statement": "For a cartesian square X' -> X over a local complete intersection morphism v : Z' -> Z of algebraic stacks over Y with finite unramified diagonal over Y, X and X' stacks of Convention 1, and perfect obstruction theories E, F with global resolutions compatible over v (VirtualFundamentalClass §§8.1, 9.5), v^![X/Y, E]^vir = [X'/Y, F]^vir when v is smooth, and when Z, Z' are smooth over Y, over any Y of pure dimension; the second case uses a cone comparison through the compatibility over v only, without a compatibility datum over the graph.",
      "hypotheses": [
-      "Y of pure dimension; reduced in the second case",
+      "Y of pure dimension",
       "v lci; smooth, or Z, Z' smooth over Y",
       "E, F compatible over v, with global resolutions",
-      "X, X' with proper covers"
+      "X, X' stacks (Convention 1)"
      ],
      "locator": {
       "source": "behrend-fantechi1997",
-      "where": "Proposition 7.5 and compatibility, lines 1721-1739; Lemma 5.9 and Proposition 5.10, lines 1397-1428"
+      "where": "Proposition 7.5 and compatibility, lines 1721-1739; Lemma 5.9 and Proposition 5.10, lines 1397-1428; cone comparison at lines 1416-1421"
      },
      "prerequisites": [
       "target:4.2",
@@ -1418,11 +1508,18 @@
       "target:6.2",
       "target:8.1",
       "target:8.2",
+      "roadmap:VirtualFundamentalClass §1.6",
       "roadmap:VirtualFundamentalClass §8.1",
       "roadmap:VirtualFundamentalClass §9.1",
       "roadmap:VirtualFundamentalClass §9.5"
      ],
-     "api": [],
+     "api": [
+      {
+       "name": "functoriality.graphComparison",
+       "role": "lemma",
+       "statement": "On a chart X -> Z x_Y W, with C = C_{X/Z x W}, N = g^*v^*T_{Z/Y} and T_{Z'/Y} + T_{W/Y} acting trivially on N and on u^*C through dv and the tangent actions, the compatibility datum over v gives [u^*C/(T_{Z'} + T_W)] = F x_{u^*E} u^*c_{X/Y} over u^*c_{X/Y} = [u^*C/(v^*T_Z + T_W)], equivariant for g^*N_{Z'/Z} = [v^*T_Z/T_{Z'}] through g^*N_{Z'/Z} -> F -> u^*E, carrying c_{X'/Y} to its image in F, and agreeing on overlaps; through it the rational equivalence of 8.1 descends to N x F."
+      }
+     ],
      "tests": [
       {
        "name": "identity",
@@ -1438,6 +1535,11 @@
        "name": "composite",
        "kind": "compatibility",
        "statement": "Two successive compatible smooth pullbacks give the class of the composite."
+      },
+      {
+       "name": "graphComparison_degenerate",
+       "kind": "computation",
+       "statement": "For Z = Y and v smooth, N = 0 and the left side is u^*c_{X/Y} x B T_{Z'/Y}, matching B T_{Z'/Y} -> F -> u^*E; for v : {0} -> A^1 over k, [u^*C/T_W] -> u^*c_X has fibre A^1 = N_{0/A^1}, with N a separate trivial line (behrend-fantechi1997 Lemma 5.9)."
       }
      ]
     },
@@ -1445,10 +1547,10 @@
      "id": "8.4",
      "kind": "theorem",
      "name": "VirtualFundamentalClass.deformationInvariance",
-     "statement": "Let B be a smooth connected separated curve, M a reduced algebraic stack of pure dimension m, X -> M x B of Deligne-Mumford type with X proper over B, and E a perfect relative obstruction theory of rank r with a global resolution and m + r = 0. Then deg_{kappa(b)} [X_b/M_{kappa(b)}]^vir is independent of the closed point b in B.",
+     "statement": "Let B be a smooth connected separated curve, M an algebraic stack of pure dimension m, reduced or not, X -> M x B of Deligne-Mumford type with X proper over B, and E a perfect relative obstruction theory of rank r with a global resolution and m + r = 0. Then deg_{kappa(b)} [X_b/M_{kappa(b)}]^vir is independent of the closed point b in B.",
      "hypotheses": [
       "B smooth connected separated curve over k",
-      "M reduced of pure dimension m",
+      "M of pure dimension m",
       "X proper over B",
       "m + r = 0"
      ],
@@ -1492,10 +1594,10 @@
      "id": "9.1",
      "kind": "definition",
      "name": "ObstructionTheory.RelativeSpaceOfMaps",
-     "statement": "For B an algebraic stack of pure dimension b, C -> B representable with prestable base changes to schemes, X a smooth quasi-projective k-scheme, M a stack with M -> B of Deligne-Mumford type and F : C_M -> X, (M, F) is a relative space of maps if for every square-zero extension T -> Tbar over B with Tbar affine and g : T -> M over B, restriction is a bijection from extensions of g onto extensions of F o C_g to C_Tbar.",
+     "statement": "For B an algebraic stack of pure dimension b, C -> B representable and etale locally on the base a prestable family (for every scheme T -> B an etale covering T_i -> T with C_{T_i} a scheme prestable over T_i), X a smooth quasi-projective k-scheme, M a stack with M -> B of Deligne-Mumford type and F : C_M -> X, (M, F) is a relative space of maps if for every square-zero extension T -> Tbar over B with Tbar affine and g : T -> M over B, restriction is a bijection from extensions of g onto extensions of F o C_g to C_Tbar.",
      "hypotheses": [
       "B algebraic stack locally of finite type, pure dimension b",
-      "C -> B representable, prestable after base change to schemes",
+      "C -> B representable, a prestable family etale locally on every scheme over B",
       "X smooth quasi-projective",
       "M -> B of Deligne-Mumford type"
      ],
@@ -1688,10 +1790,10 @@
      "id": "9.5",
      "kind": "theorem",
      "name": "ObstructionTheory.maps_virtualDimension",
-     "statement": "Where the fibres have arithmetic genus g and F^*T_X has fibre degree delta, rk E = delta + dim X (1 - g), so the virtual dimension is b + delta + dim X (1 - g); for B the stack of prestable n-pointed genus-g curves (dimension 3g - 3 + n) and delta = c_1(T_X).beta this is (1 - g)(dim X - 3) + n + c_1(T_X).beta.",
+     "statement": "Where the fibres have arithmetic genus g, F^*T_X has fibre degree delta and rank l (the dimension of the component of X receiving F_t), rk E = delta + l (1 - g), so the virtual dimension is b + delta + l (1 - g), equal to b + delta + dim X (1 - g) for X of pure dimension; for X of pure dimension, B the stack of prestable n-pointed genus-g curves (dimension 3g - 3 + n) and delta = c_1(T_X).beta this is (1 - g)(dim X - 3) + n + c_1(T_X).beta.",
      "hypotheses": [
       "the setting of 9.1",
-      "constant genus g and fibre degree delta"
+      "constant genus g, fibre degree delta and rank l of F^*T_X"
      ],
      "locator": {
       "source": "behrend1997",
@@ -1714,12 +1816,17 @@
       {
        "name": "calabiYau",
        "kind": "computation",
-       "statement": "c_1 = 0 and dim X = 3 give n."
+       "statement": "c_1 = 0 and X of pure dimension 3 give n."
       },
       {
        "name": "pointTarget",
        "kind": "degenerate",
        "statement": "X = Spec k gives b."
+      },
+      {
+       "name": "nonPureTarget_rank",
+       "kind": "non-example",
+       "statement": "X = Spec k + P^1, C = P^1, F constant onto the point: F^*T_X = 0, rk E = 0 = delta + l(1 - g) with l = 0, while dim X (1 - g) = 1."
       }
      ]
     }
@@ -1871,7 +1978,7 @@
     "5.2",
     "5.4"
    ],
-   "detail": "VirtualFundamentalClass §2.1 builds its cycles on integral closed substacks but its contract does not state their theory. Needed, with no separatedness: closed substacks as representable closed immersions up to equivalence, equivalently invariant closed subschemes of an étale presentation (vistoli1989 (1.5), lines 232–244); reduced, irreducible, integral ones (vistoli1989 (1.6), lines 245–250); the unique reduced closed substack on a closed subset of |M| (SchemeAndStackFoundations §1.20 Stacks.points) and the bijection of integral closed substacks with irreducible closed subsets; base change; images under proper morphisms with a proper cover of the source, under proper representable morphisms and under flat morphisms (vistoli1989 (1.7), lines 254–269).",
+   "detail": "VirtualFundamentalClass §2.1 builds its cycles on integral closed substacks but its contract does not state their theory. Needed, with no separatedness: closed substacks as representable closed immersions up to equivalence, equivalently invariant closed subschemes of an étale presentation (vistoli1989 (1.5), lines 232–244); reduced, irreducible, integral ones (vistoli1989 (1.6), lines 245–250); the unique reduced closed substack on a closed subset of |M| (SchemeAndStackFoundations §1.20 Stacks.points) and the bijection of integral closed substacks with irreducible closed subsets; base change; images under proper morphisms and under flat morphisms (vistoli1989 (1.7), lines 254–269).",
    "needs": "VirtualFundamentalClass §2.1 must state the theory of closed, reduced and integral closed substacks of a Deligne–Mumford stack, with reduced induced structures, the support bijection, base change and images, without separatedness.",
    "supplier": "VirtualFundamentalClass",
    "section": "§2.1"
