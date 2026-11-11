@@ -2,7 +2,7 @@
 
 Reviewers, red-team passes and errata jobs record every mistake they find in a source while checking a roadmap's locators: misprints (slips whose intended meaning is clear), errors (a false statement or proof step) and gaps (a step the source does not justify), each with the roadmap, the board pull request or errata job and the head that reported it. Collected by the board sync from the `## Source issues` sections of review, red-team and errata comments; the data is in `errata/source-issues.json`.
 
-11826 mistakes recorded on the board: 6777 misprints, 3089 errors, 1496 gaps, 464 unparsed bullets.
+11857 mistakes recorded on the board: 6791 misprints, 3103 errors, 1499 gaps, 464 unparsed bullets.
 Errata jobs have read the cited sources of 60 roadmaps; in those of 2 they found no mistake.
 The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explorer/`: 1525 awaiting review, 13582 confirmed, 228 rejected.
 
@@ -600,6 +600,8 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 ## aggarwal2023
 
 - **Error** at Section 1.3, printed page 10 (lines 465–467): the source says a tiling `M` of `R` is determined by the set `X(M)` of its type-1 lozenges unless `R = T` and `X(M)` is empty; it should be require that no two consecutive rows lack type-1 lozenges (two plane tilings with heights `1_{x>0}` below row `1` and `1` resp. `y` on rows `≥ 1` share `X(M) = {(0,y) : y ≤ 0}`); affects nothing; (the roadmap's 9.7(f) carries the correct statement). <!-- tauceti-roadmap-review {"agent": "claude", "head": "229fbb7fde2b1c7b2018fb8c9c495046a09e2a59", "job": "REV-DESIGN-DimerModelsAndLozengeTilings", "model": "fable", "worker": "chris-x18"} -->. Found by DimerModelsAndLozengeTilings (#6570 at 229fbb7, 2026-11-05, claude fable).
+- **Error** at equation (1.2), preprint p. 11 (lines 491–505): the source says the inclusion determinant applies to arbitrary lists of positions; it should be require distinct positions, since repetition makes the determinant zero while preserving a positive singleton event; affects a stated result. Found by DimerModelsAndLozengeTilings (#13737 at a6c889e, 2026-11-11, codex gpt-6-astra).
+- **Error** at §1.3, preprint p. 10 (lines 465–467): the source says nonempty type-1 positions determine a plane tiling; it should be impose a reconstruction condition, for example no two consecutive rows without type-1 lozenges; affects nothing. Found by DimerModelsAndLozengeTilings (#13737 at a6c889e, 2026-11-11, codex gpt-6-astra).
 
 ## AGLR
 
@@ -861,7 +863,10 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 
 ## aizenman-duminilcopin-2021
 
+- **Error** at (5.6), preprint p.24: the source says the pair Hamiltonian equals the Laplacian-symbol quadratic sum; it should be include the J/2 factor and subtract dJ times the spin-square sum; affects a stated result. Found by ConstructiveFieldTheoryPhi4 (#13733 at eb93042, 2026-11-11, codex gpt-6-astra).
+- **Error** at (5.9), preprint p.24: the source says the infrared constant is 1/(2|J|β) with |J| the coupling row sum; it should be 1/(βJ) for per-bond nearest-neighbour J and its displayed symbol; affects a stated result. Found by ConstructiveFieldTheoryPhi4 (#13733 at eb93042, 2026-11-11, codex gpt-6-astra).
 - **Error** at (5.9), printed page 24: the source says the infrared bound is `E(p)Ŝ^{(L)}(p) ≤ 1/(2|J|β)` with `|J| = Σ_y J_{0y} = 2dJ`; it should be `≤ 1/(βJ)` for the nearest-neighbour coupling J per bond, the sharp value attained by the Gaussian lattice field as its single-site mass tends to dβJ (and exceeded, under the printed constant, by φ⁴ models with small λ); affects a stated result; ((5.9); the constants of Section 5.3 absorb it). Found by ConstructiveFieldTheoryPhi4 (#6567 at 6ddf991, 2026-11-05, claude fable).
+- **Error** at Definition 2.1(1), preprint p.8, and §7.1 sampling weights, p.45: the source says arbitrary signed block coefficients support its ferromagnetic transfer; it should be require nonnegative coefficients for that transfer; affects a stated result. Found by ConstructiveFieldTheoryPhi4 (#13733 at eb93042, 2026-11-11, codex gpt-6-astra).
 - **Gap** at Definition 2.1, printed page 8: the source says the source allows block weights b_n of any real sign; the Lebowitz inequality fails for b = (1, −1) with coupling K > (ln 2)/2, and the transfer argument at page 45 (the sampling weights `Q_iQ_j⟨σ_{x,i}σ_{y,j}⟩/⟨τ_xτ_y⟩`) needs Q_i ≥ 0; it should be require b_n ≥ 0; affects the proof; (of the Section 7 extension for the class as literally defined). <!-- tauceti-roadmap-review {"agent": "claude", "head": "6ddf9915bac49d94fa9532911d43cd1bf2d56e01", "job": "REV-DESIGN-ConstructiveFieldTheoryPhi4", "model": "fable", "worker": "chris-x9"} -->. Found by ConstructiveFieldTheoryPhi4 (#6567 at 6ddf991, 2026-11-05, claude fable).
 
 ## akn-delta
@@ -1934,6 +1939,10 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 
 - **Misprint** at Theorem 1.6(1), preprint p.4, and Theorem 1.10(1), p.5 (BdJ2003 lines 168,209): the source says the target Adams weight is r; it should be n, as in the adjacent diagrams; affects nothing. Found by PadicHodgeRegulators (#168 at 5eff35d, 2026-10-24, codex gpt-6-astra).
 - **Misprint** at equation (4.4), preprint p.24 (BdJ2003 line 1081): the source says truncated forms vanish when n<j; it should be when j<n, consistently with the preceding degree-at-least-n complex; affects nothing. Found by PadicHodgeRegulators (#168 at 5eff35d, 2026-10-24, codex gpt-6-astra).
+
+## becker-kechris-bams
+
+- **Error** at §2, arXiv page 4 (lines 159–160): the source says every nonempty countable relational language has Cantor coding space; it should be require infinitely many relation queries, excluding finitely many nullary symbols only; affects a stated result. Found by CountableStructureSpacesPartII (#13739 at 4f171c3, 2026-11-11, codex gpt-6-astra).
 
 ## behrend-fantechi1997
 
@@ -3291,6 +3300,8 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 ## brown2006
 
 - **Misprint** at Proposition 3.5.3, proof (arXiv v2 line 1285, printed page 29): the source says the projections `P_i` in the bicommutant `π_γ(A)''`; it should be the commutant `π_γ(A)'`, as Lemma 3.5.2 supplies them (and as the compression argument needs); affects nothing; <!-- tauceti-roadmap-review {"agent": "claude", "head": "3e331041a4f8316e913ca0a55b01dc3dfdef3b5d", "job": "REV-DESIGN-AmenableTracesOnCStarAlgebras", "model": "fable", "worker": "chris-x18"} -->. Found by AmenableTracesOnCStarAlgebras (#6537 at 3e33104, 2026-11-05, claude fable).
+- **Gap** at proof of Lemma 3.1.4, printed page 17: the source says the source picks, for each eigenvector, as many orthonormal vectors of the same Hilbert space as its multiplicity numerator, without ensuring the space is large enough; it should be tensor with an auxiliary space of dimension at least the common denominator; affects the proof; <!-- tauceti-roadmap-review {"agent": "claude", "head": "6b8f660d1af7df5a72d67f146660d081944ee3dd", "job": "REV-PKG-AmenableTracesOnCStarAlgebras", "model": "fable", "worker": "chris-x10"} -->. Found by AmenableTracesOnCStarAlgebras (#13767 at 6b8f660, 2026-11-11, claude fable).
+- **Misprint** at proof of Proposition 3.5.3, printed page 29: the source says the projections lie in the double commutant of the GNS image and writes the representation of the wrong trace; it should be the commutant, as in Lemma 3.5.2, and the representation of the combined trace; affects nothing. Found by AmenableTracesOnCStarAlgebras (#13767 at 6b8f660, 2026-11-11, claude fable).
 
 ## Bruinier–Funke, On two geometric theta lifts, arXiv math/0212286v4
 
@@ -3814,6 +3825,10 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 ## Calmès et al., Hermitian K-theory for stable ∞-categories III, arXiv:2009.07225v4
 
 - **Error** at Proposition 3.1.14 and its proof, printed p. 54: the source says L(R;Q^{≥m})[x⁻¹] ≃ L(R;Q^s) integrally for every m in ℤ ∪ {±∞}; it should be stated only for m ≠ +∞, since at m = +∞ for R = ℤ the comparison is multiplication by 8, an equivalence only after inverting 2; affects the proof. Found by  (? at , 2026-10-23, backfill from earlier reviews (claude opus)).
+
+## camerlo-gao-boolean
+
+- **Error** at rooted binary tree definition, printed page 496 (lines 257–263, 276): the source says root, unique parents and at most two children suffice for sequence-tree representation; it should be require finite linearly ordered principal down-sets; affects a stated result. Found by CountableStructureSpacesPartII (#13739 at 4f171c3, 2026-11-11, codex gpt-6-astra).
 
 ## CannasDaSilva
 
@@ -5009,6 +5024,10 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 - **Misprint** at Chapter 3 §4.2, normal-bundle decomposition, p. 105 (Cohen line 3576): the source says the ambient tangent bundle has subscript ℝ^(nk); it should be use ℝ^(n+k), matching the immersion and the trivial bundle rank; affects a stated result. Found by CharacteristicClasses (ERRATA-CharacteristicClasses at d077cb4, 2026-10-24, codex gpt-6-astra).
 - **Misprint** at Chapter 3 §4.2, stable normal class, p. 106 (Cohen line 3616): the source says the stable normal class lies in reduced KO(X), although the base is M; it should be use reduced KO(M) in both occurrences; affects a stated result. Found by CharacteristicClasses (ERRATA-CharacteristicClasses at d077cb4, 2026-10-24, codex gpt-6-astra).
 
+## cohn-kenyon-propp2001
+
+- **Misprint** at §1.4, preprint p. 9 (lines 374–377): the source says bisecting edges have absolute height difference one; it should be use absolute difference three; affects the proof. Found by DimerModelsAndLozengeTilings (#13737 at a6c889e, 2026-11-11, codex gpt-6-astra).
+
 ## Coleman, p-adic Banach spaces and families of modular forms (Invent. Math., 1997)
 
 - **Error** at Appendix A3.1: the source says H may be any restricted power series in A⟨T⟩; it should be required that H be entire (in A{{T}}), since the statement fails for G = 1 − pT, H = Σ pⁿTⁿ; affects a stated result. Found by  (? at , 2026-10-23, backfill from earlier reviews (claude opus)).
@@ -5330,6 +5349,7 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 
 ## cutkosky2015
 
+- **Misprint** at §2.2, printed page 6: the source says Pic(X) is the group of Cartier divisors; it should be Cartier divisors modulo principal divisors; affects nothing; Short independent witnesses: the two-plane Siu test gives 5>2. On ℙ¹, A=2H, B=H and m distinct points give kernel dimension m+1=(2m+1)−m, not a strict inequality. For Dinh–Sibony's normalized setting, on E×E take automorphism matrix [[2,1],[1,1]] and polarization H/√2: volume 1, first degree 7/2, limiting first dynamical degree (7+3√5)/2>7/2, so the unadjusted infimum cannot equal the limit. The Fibonacci inverse is [vw:u²:uw]; both base loci contain [0:1:0]. The nonzero Cartier divisor [0]−[∞] has zero Picard class. <!-- tauceti-roadmap-review {"agent": "codex", "head": "ec0e4c6111e993a8b2e6060d00a684b4b8e3ce23", "job": "REV-DESIGN-DynamicalDegreesOfRationalMaps~6", "model": "gpt-6-astra", "worker": "chris-9"} -->. Found by DynamicalDegreesOfRationalMaps (#12938 at ec0e4c6, 2026-11-11, codex gpt-6-astra).
 - **Misprint** at §2.2, printed page 6, lines 275–276: the source says Pic(X) is the group of Cartier divisors; it should be Cartier divisors modulo principal divisors; affects nothing; The previously recorded source issues were checked independently, not treated as instructions. Witnesses: for V=(ℙ²×{q})∪({p}×ℙ²), A=h₁+2h₂, B=2h₁+h₂, C=h₁, the proposed global Siu comparison gives 5·2=10>2·4·1=8, even with A and B big on each component. On ℙ¹ with A=2H,B=H and m distinct points, section dimensions give m+1=(2m+1)−m, excluding a strict sign. The Fibonacci inverse is [vw:u²:uw], and both base loci contain [0:1:0]. The divisor [0]−[∞] on ℙ¹ is nonzero but its Picard class is zero. For Dinh–Sibony's normalized Kähler setting, the unadjusted-infimum issue is substantive even when ∫ω²=1: on E×E take the automorphism induced by M=[[2,1],[1,1]] and the product polarization scaled by 1/√2. Then δ₁(f)=tr(MᵀM)/2=7/2, whereas λ₁(f)=((3+√5)/2)²=(7+3√5)/2>7/2. Thus inf δ₁(fⁿ)^(1/n)≤7/2 cannot be the limit. The roadmap's adjusted formula avoids this error. None of these source mistakes is copied into its mathematical statements. <!-- tauceti-roadmap-review {"agent": "codex", "head": "27dbb08616dcf56841638d3d66eea129540edc6a", "job": "REV-DESIGN-DynamicalDegreesOfRationalMaps~4", "model": "gpt-6-astra", "worker": "chris-9"} -->. Found by DynamicalDegreesOfRationalMaps (#12938 at 27dbb08, 2026-11-10, codex gpt-6-astra).
 
 ## CW
@@ -5370,9 +5390,11 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 
 ## dang2020
 
+- **Misprint** at Proposition 3.4.1 proof, printed page 17: the source says the kernel dimension strictly exceeds the difference of section dimensions; it should be allow equality; affects the proof. Found by DynamicalDegreesOfRationalMaps (#12938 at ec0e4c6, 2026-11-11, codex gpt-6-astra).
 - **Misprint** at Proposition 3.4.1 proof, printed page 17, line 857: the source says the kernel-section dimension strictly exceeds the difference of two section dimensions; it should be greater than or equal to that difference; affects the proof. Found by DynamicalDegreesOfRationalMaps (#12938 at 27dbb08, 2026-11-10, codex gpt-6-astra).
 - **Misprint** at Proposition 3.4.1 proof, printed page 17, line 857: the source says the kernel dimension strictly exceeds the difference of section dimensions; it should be greater than or equal to that difference; affects the proof. Found by DynamicalDegreesOfRationalMaps (#12938 at 10f7e29, 2026-11-11, codex gpt-6-astra).
 - **Error** at Proposition 3.4.1, printed page 17, and Theorem 3.4.4, printed page 18: the source says the global-ratio Siu bound holds on every closed subscheme; it should be require irreducible support or use separate componentwise bounds; affects a stated result. Found by DynamicalDegreesOfRationalMaps (#12938 at 27dbb08, 2026-11-10, codex gpt-6-astra).
+- **Misprint** at Theorem 3.4.4 proof, printed page 18: the source says the final constant uses ambient dimension n; it should be use support dimension r in the telescoped expression; affects nothing. Found by DynamicalDegreesOfRationalMaps (#12938 at ec0e4c6, 2026-11-11, codex gpt-6-astra).
 - **Misprint** at Theorem 3.4.4 proof, printed page 18, line 883: the source says the final constant uses the ambient dimension n; it should be use support dimension r, as in the preceding factors; affects nothing. Found by DynamicalDegreesOfRationalMaps (#12938 at 27dbb08, 2026-11-10, codex gpt-6-astra).
 - **Misprint** at Theorem 3.4.4 proof, printed page 18, line 883: the source says the final constant uses ambient dimension n; it should be use support dimension r as in the preceding factors; affects nothing. Found by DynamicalDegreesOfRationalMaps (#12938 at 10f7e29, 2026-11-11, codex gpt-6-astra).
 - **Misprint** at Theorem 3.4.4, proof, printed page 18: the source says the final display has the constant `(n − i + 1)^i`; it should be `(r − i + 1)^i` as in the statement and the telescoped factors; affects nothing; <!-- tauceti-roadmap-review {"agent": "claude", "head": "91f762e9ccdda2b72452b63de80c6da80ddea5b1", "job": "REV-DESIGN-DynamicalDegreesOfRationalMaps", "model": "fable", "worker": "chris-x10"} -->. Found by DynamicalDegreesOfRationalMaps (#6585 at 91f762e, 2026-11-05, claude fable).
@@ -5685,6 +5707,8 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 
 ## dinhsibony2005
 
+- **Misprint** at Corollaire 7 proof, printed page 7: the source says the limit equals the infimum of unadjusted degree roots; it should be use roots adjusted by the submultiplicativity constant; affects the proof. Found by DynamicalDegreesOfRationalMaps (#12938 at ec0e4c6, 2026-11-11, codex gpt-6-astra).
+- **Misprint** at Corollaire 7 proof, printed page 7: the source says the preceding upper bound gives λ(f)≤λ(h); it should be first give λ(h)≤λ(f), then apply inverse conjugacy; affects the proof. Found by DynamicalDegreesOfRationalMaps (#12938 at ec0e4c6, 2026-11-11, codex gpt-6-astra).
 - **Misprint** at Corollaire 7 proof, printed page 7, line 259: the source says convergence is to the infimum of unadjusted roots; it should be use roots adjusted by the submultiplicativity constant; affects the proof. Found by DynamicalDegreesOfRationalMaps (#12938 at 27dbb08, 2026-11-10, codex gpt-6-astra).
 - **Misprint** at Corollaire 7 proof, printed page 7, line 263: the source says the preceding upper bound gives λ(f)≤λ(h); it should be give λ(h)≤λ(f), then apply inverse conjugacy; affects the proof. Found by DynamicalDegreesOfRationalMaps (#12938 at 27dbb08, 2026-11-10, codex gpt-6-astra).
 - **Misprint** at Corollaire 7, proof, printed page 7: the source says `[δ_l(f^n)]^{1/n}` converges to `inf_{n≥1} [δ_l(f^n)]^{1/n}`; it should be the infimum of `[c_X δ_l(f^n)]^{1/n}`, the sequence to which Fekete's lemma applies; affects nothing. Found by DynamicalDegreesOfRationalMaps (#6585 at 91f762e, 2026-11-05, claude fable).
@@ -7555,7 +7579,11 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 
 ## gorin2021
 
+- **Error** at Lecture 1 before Theorem 1.4, prepublication printed p. 17 (lines 511–514): the source says simple connectivity guarantees consistent boundary heights without tileability; it should be require zero boundary circulation, as the theorem's first condition does; affects a stated result; <!-- tauceti-roadmap-review {"agent": "codex", "head": "a6c889ed03ce9e5f3583ae550b2410e12e143462", "job": "REV-DESIGN-DimerModelsAndLozengeTilings~4", "model": "gpt-6-astra", "worker": "chris-8"} -->. Found by DimerModelsAndLozengeTilings (#13737 at a6c889e, 2026-11-11, codex gpt-6-astra).
+- **Error** at Lemma 4.7, prepublication printed p. 45 (line 1766): the source says a large size or its successor by two avoids the critical mesh; it should be use successor by one, since π/2 meets every even mesh; affects the proof. Found by DimerModelsAndLozengeTilings (#13737 at a6c889e, 2026-11-11, codex gpt-6-astra).
 - **Error** at Lemma 4.7, printed page 74 (lines 1766–1780): the source says for large `n` either `n` or `n+2` lies in `W_θ`; it should be `n` or `n+1` (for `θ = π/2` every even `n` has `θ = πj/n` with `j = n/2`, and the proof's `O(1/n)` difference can be `0`); affects the proof; (the roadmap's 9.2(a) uses `n+1`). Found by DimerModelsAndLozengeTilings (#6570 at 229fbb7, 2026-11-05, claude fable).
+- **Gap** at Theorem 4.10, prepublication printed p. 46 (lines 1847–1849): the source says inverse-matrix correlations cover arbitrary torus weights; it should be include singular twists using signed complementary minors or qualify inverse terms by invertibility; affects a stated result. Found by DimerModelsAndLozengeTilings (#13737 at a6c889e, 2026-11-11, codex gpt-6-astra).
+- **Misprint** at the proof of Theorem 4.11, prepublication printed p. 47 (lines 1891–1893): the source says eigenvector columns give the inverse by the reversed conjugation order; it should be use QΛ⁻¹Q⁻¹ when Q contains the eigenvector columns; affects the proof. Found by DimerModelsAndLozengeTilings (#13737 at a6c889e, 2026-11-11, codex gpt-6-astra).
 
 ## gorsky
 
@@ -7780,6 +7808,7 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 
 ## guedj2010
 
+- **Misprint** at Théorème 2.4(a), printed page 31: the source says the adjacent-index inequality includes l=k; it should be stop at l=k−1 because λ_(k+1) is undefined; affects a stated result. Found by DynamicalDegreesOfRationalMaps (#12938 at ec0e4c6, 2026-11-11, codex gpt-6-astra).
 - **Misprint** at Théorème 2.4(a), printed page 31 (PDF page 33), line 1180: the source says the adjacent-index inequality includes l=k; it should be stop at l=k−1, since λ_(k+1) is undefined; affects a stated result. Found by DynamicalDegreesOfRationalMaps (#12938 at 27dbb08, 2026-11-10, codex gpt-6-astra).
 
 ## Guionnet–Jones–Shlyakhtenko
@@ -9600,6 +9629,8 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 ## kenyon2009
 
 - **Gap** at Section 5.4, printed page 29 (lines 862–866): the source says ergodicity of a torus limit follows because the slope fibre of translation-invariant Gibbs measures is convex with the ergodic measures as its extreme points; it should be note that the fibre over a non-corner slope is not a face (the measure `(δ_{M₁}+δ_{M₂}+δ_{M₃})/3` is extreme in the fibre over `(1/3,1/3)` and not ergodic), so ergodicity needs another argument; affects the proof. Found by DimerModelsAndLozengeTilings (#6570 at 229fbb7, 2026-11-05, claude fable).
+- **Error** at Theorem 6, preprint p. 28 (lines 836–839): the source says each realizable slope has a unique ergodic Gibbs measure; it should be restrict uniqueness to interior slopes, since Bernoulli and randomized block rows give different boundary laws; affects a stated result. Found by DimerModelsAndLozengeTilings (#13737 at a6c889e, 2026-11-11, codex gpt-6-astra).
+- **Gap** at §5.4, preprint p. 29 (lines 863–866): the source says extremality within a fixed-slope fibre implies ergodicity; it should be justify ergodicity separately, since the equal frozen mixture is fibre-extreme and nonergodic; affects the proof. Found by DimerModelsAndLozengeTilings (#13737 at a6c889e, 2026-11-11, codex gpt-6-astra).
 
 ## KervaireMilnor
 
@@ -11280,8 +11311,14 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 - **Misprint** at §1.1 equation (1), line 144 (printed p. 4): the source says the dot product a′·z′ is written as the bilinear sum of products; it should be the sum with the first factor conjugated, as the preservation of Im zₙ − ‖z′‖² and the commutator formula (12) at line 450 require; affects nothing. Found by BallQuotientsAndComplexHyperbolicLattices (#6540 at 541ded3, 2026-11-05, claude fable).
 - **Error** at §1.3 structure (II), line 373 to line 377, and equation (6), line 175 (printed pp. 5 and 9): the source says every element of Γ_b over a′ ∈ Λ_b has vertical component a multiple of τ, and the multiplier (6) carries no constant factor; it should be a coset t_{a′} + τℤ with a unitary factor e^{2πi t_{a′}/τ} in (6) (the derivation at line 404 to line 438 proves only that the image of Γ_b in ℂ^{n−1} is a lattice; for the lattice generated by n_{(λ,0)} and n_{(iλ,0)} the element over (1+i)λ has vertical component −2λ² with τ = 4λ²); affects a stated result; ((II) and (6)); the Main Theorem is unaffected because the factor is unitary. Found by BallQuotientsAndComplexHyperbolicLattices (#6540 at 541ded3, 2026-11-05, claude fable).
 
+## montalban-cst1
+
+- **Error** at Lemma VI.18 proof, printed page 91 (line 4254): the source says finite rational sequences in lexicographic order form a copy of ℚ; it should be retain their least element under the prefix-first convention; affects a stated result. Found by CountableStructureSpacesPartII (#13739 at 4f171c3, 2026-11-11, codex gpt-6-astra).
+
 ## montalban-cst2
 
+- **Error** at Lemma II.37, printed pages 35–36 (lines 2322–2330): the source says corresponding open intervals suffice for weakly increasing tuples; it should be also require matching equality patterns, or strictly increasing tuples; affects a stated result. Found by CountableStructureSpacesPartII (#13739 at 4f171c3, 2026-11-11, codex gpt-6-astra).
+- **Misprint** at XI.2 discussion, printed page 208 (line 9039): the source says the graph theorem has an unresolved Part 1 theorem number; it should be Part 1 Theorem VI.27; affects nothing. Found by CountableStructureSpacesPartII (#13739 at 4f171c3, 2026-11-11, codex gpt-6-astra).
 - **Misprint** at XI.2, printed page 208 (line 9039): the source says the source cites the graph result as "[Part 1, Theorem ??]", an unresolved cross-reference; it should be Part 1, Theorem VI.27; affects nothing; <!-- tauceti-roadmap-review {"agent": "claude", "head": "7791b62063ab7a9787f02dd674229570ed690c43", "job": "REV-DESIGN-CountableStructureSpacesPartII", "model": "fable", "worker": "chris-x17"} -->. Found by CountableStructureSpacesPartII (#6568 at 7791b62, 2026-11-05, claude fable).
 
 ## Montgomery1987
@@ -12008,6 +12045,10 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 
 - **Misprint** at §2.1.1, p.11 (PAN22 lines 463–465): the source says translations by G₀ preserve functions on G_n; it should be translations by G_n, since translating 0 by 1 leaves 3ℤ₃; affects a stated result. Found by LocallyAnalyticRepresentationsOfLocalGroups (#13169 at cd885b3, 2026-11-11, codex gpt-6-astra).
 
+## paolini-shelah-tfab
+
+- **Error** at introduction item (iii), arXiv page 3 (line 127): the source says class-two exponent-p groups are Borel complete for every prime p; it should be exclude p=2, since exponent-two groups are abelian; affects a stated result; These are reverified source issues, not six additional design findings. Witnesses: `1+ℤ` satisfies the displayed root/parent/child conditions but has infinite ancestor sets; `(0,0)` and `(0,1)` in ℤ have interval types ω*,0,ω but different equality patterns; `[]` is least in the list order; one nullary symbol gives two codes; exponent two gives `ab=(ab)⁻¹=b⁻¹a⁻¹=ba` (and on countably infinite elementary abelian 2-groups there is one isomorphism type). The roadmap's actual constructions avoid these defects. <!-- tauceti-roadmap-review {"agent": "codex", "head": "4f171c396ae03b5a8ca8d896576540ab2561d11b", "job": "REV-DESIGN-CountableStructureSpacesPartII~4", "model": "gpt-6-astra", "worker": "chris-3"} -->. Found by CountableStructureSpacesPartII (#13739 at 4f171c3, 2026-11-11, codex gpt-6-astra).
+
 ## parshin
 
 - **Error** at §2.1, printed p. 7, parshin line 298: the source says unshifted divisor-lattice indicators span all compactly supported locally constant functions; it should be their translates span that space; affects nothing. Found by FunctionFieldArithmetic (#142 at 2812784, 2026-10-23, codex gpt-6-astra).
@@ -12030,6 +12071,10 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 
 - **Misprint** at Lemma 2.5 (p. 6, line 160): the source says the hypothesis asks for four continuous derivatives; the proof uses the third derivative only (through the mean value theorem for `f″`), as Hiary's Lemma 1.2 assumes; it should be three; affects a stated result; (a needlessly strong hypothesis). Found by ExplicitCharacterSumsAndSieves (#8420 at b9a1276, 2026-11-07, claude fable).
 - **Misprint** at Lemma 3.1, statement (arXiv v1 p. 7, line 196): the source says the constant `β₄` is printed with the factor `18/20`; the proof's displays (33) and (35) produce `18/10 = 9/5`; it should be `(9/5)√(β̃₃η₃)η₄^{−1/3}`; affects a stated result. Found by ExplicitCharacterSumsAndSieves (#8420 at b9a1276, 2026-11-07, claude fable).
+
+## peled-spinka-2017
+
+- **Misprint** at the Fourier-correlation display after (52), preprint p.35: the source says the Fourier correlation equals the sum of unnormalized squared-mode expectations; it should be divide that sum by the torus volume; affects a stated result. Found by ConstructiveFieldTheoryPhi4 (#13733 at eb93042, 2026-11-11, codex gpt-6-astra).
 
 ## Penneys
 
@@ -13612,8 +13657,10 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 
 ## silverman2014
 
+- **Error** at Example 5, printed page 9: the source says the Fibonacci birational map has disjoint indeterminacy loci from its inverse; it should be note their common point [0:1:0]; affects nothing. Found by DynamicalDegreesOfRationalMaps (#12938 at ec0e4c6, 2026-11-11, codex gpt-6-astra).
 - **Error** at Example 5, printed page 9, line 371: the source says the Fibonacci birational map is regular with disjoint indeterminacy loci; it should be note that the two loci intersect at [0:1:0]; affects nothing. Found by DynamicalDegreesOfRationalMaps (#12938 at 27dbb08, 2026-11-10, codex gpt-6-astra).
 - **Misprint** at Example 6, printed page 9: the source says the iterates of `(x, y, z) ↦ (y, z, x + yz)` have degree `F_n`; it should be `F_{n+2}` (the map has degree `2 = F_3`, its square degree `3`, its cube degree `5`); affects nothing. Found by DynamicalDegreesOfRationalMaps (#6585 at 91f762e, 2026-11-05, claude fable).
+- **Misprint** at Example 6, printed page 9: the source says the nth iterate has degree F_n; it should be use F_(n+2), with initial degrees 2,3,5; affects nothing. Found by DynamicalDegreesOfRationalMaps (#12938 at ec0e4c6, 2026-11-11, codex gpt-6-astra).
 - **Misprint** at Example 6, printed page 9, line 376: the source says the iterate has degree F_n; it should be use F_(n+2), giving degrees 2,3,5; affects nothing. Found by DynamicalDegreesOfRationalMaps (#12938 at 27dbb08, 2026-11-10, codex gpt-6-astra).
 
 ## Simon1983
@@ -13685,6 +13732,11 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 
 - **Error** at the choice of the auxiliary CM quadratic field H (Propositions 5.3.1, 5.4.1 and §5.5, pp. 16–18): the source says H need only split ℓ, which does not give H ⊄ F(ζ_ℓ) (ℓ = 3, F = ℚ(√6), H = ℚ(√−2)); it should be also require H ⊄ F(ζ_ℓ), always possible since only finitely many quadratic fields lie in F(ζ_ℓ); affects the proof. Found by  (? at , 2026-10-23, backfill from earlier reviews (claude opus)).
 - **Misprint** at the proof of Proposition 5.3.1: the source says the abelian variety has dimension 2[K:ℚ] while specifying rank-two torsion over K; it should be dimension [K:ℚ] (a Hilbert–Blumenthal abelian variety), consistent with dim V_ℓ(A) = 2 dim A; affects the proof. Found by  (? at , 2026-10-23, backfill from earlier reviews (claude opus)).
+
+## sokal-1982
+
+- **Misprint** at (2.24), printed p.327: the source says to multiply the pair-products over all pairings; it should be sum them over pairings; affects a stated result. Found by ConstructiveFieldTheoryPhi4 (#13733 at eb93042, 2026-11-11, codex gpt-6-astra).
+- **Misprint** at the infrared display after (2.31), printed p.328: the source says its equation number is (2.23); it should be (2.32) in this sequence; affects nothing; Explicit controls for the two additional Fourier source issues: a constant Ising configuration on the four-cycle at J=1 has pair energy −4 but Laplacian-mode energy 0. For the four-cycle at j=(log 3)/2, Ŝ(0)=45/17 while E|σ̂(0)|²=180/17; dividing by four restores the identity. The roadmap uses the correct gradient identity and normalized Fourier second moment, so neither source slip was imported. <!-- tauceti-roadmap-review {"agent": "codex", "head": "eb930422dcb2fc24937924fe6cc0cf700b153647", "job": "REV-DESIGN-ConstructiveFieldTheoryPhi4~4", "model": "gpt-6-astra", "worker": "chris-6"} -->. Found by ConstructiveFieldTheoryPhi4 (#13733 at eb93042, 2026-11-11, codex gpt-6-astra).
 
 ## SOM
 
