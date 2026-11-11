@@ -1147,26 +1147,26 @@
       "title": "principal series types",
       "supplier": "SmoothRepresentationsOfLocalGroups",
       "section": "§SR.5.2",
-      "needs": "Provide the EP §3.3 family Vχ with its conductor conditions, coefficient descent, distinct-isomorphism indexing and the principal-series occurrence equivalence of Proposition 3.7.",
+      "needs": "For n₀>d with the Iwahori-type subgroup `I_{n₀}` (unipotent upper triangular modulo `𝔭_F^{n₀}`) torsion free, every n with n−d+1≥n₀, and every tuple χ=(χ_1,…,χ_d) of smooth characters of `U_F^{n₀}` with χ_i of conductor n−i+1, the representation `Vχ=Ind_{T^{n₀}J_{n+1}}^{I_{n₀}}χ`, defined over a finite extension of L, is irreducible of dimension `[I_{n₀}:T^{n₀}J_{n+1}]`, is fixed by the congruence subgroup `K_{n+1}` and has no nonzero K_n-invariants, satisfies Vχ≇Vχ′ for χ≠χ′, and has `Hom_{I_{n₀}}(Vχ,π)≠0` for an irreducible smooth π exactly when π is an irreducible principal series `Ind_B^G ψ` with `ψ|_{T^{n₀}}=χ`.",
       "neededBy": [
         "3.3",
         "5.3"
       ],
-      "detail": "EP §3.3, pp. 352–354; Proposition 3.7, p. 353 (EP lines 657–709)."
+      "detail": "EP §3.3, Lemma 3.6, Proposition 3.7, Lemma 3.9 and proof of Lemma 3.10, pp. 352–354 (EP lines 657–746)."
     },
     {
       "slug": "minimal-stratum-types",
       "title": "minimal stratum types",
       "supplier": "SmoothRepresentationsOfLocalGroups",
       "section": "§SR.5.2",
-      "needs": "Provide hereditary-order simple characters and the EP §3.4 representations V(α,θ), with intertwiners, dimensions, finite coefficient models and Proposition 3.19 occurrence recognition, including its tame induced-character equivalence.",
+      "needs": "For an embedded degree-d extension E/F containing an element minimal over F, the hereditary order 𝔄 of the chain (𝔭_E^i) and integers m≥1 and n>2m, and for each α∈E minimal over F with v_E(α)=−n, the set C(m,α) of simple characters of `H^{m+1}(α)`, the representation η(θ) of `J^{m+1}(α)` and `V(α,θ)=Ind_{J^{m+1}(α)}^{U^{m+1}(𝔄)}η(θ)`, defined over a finite extension of L, satisfy: V(α,θ) is irreducible, fixed by `U^{n+1}(𝔄)`, without nonzero U^n(𝔄)-invariants, of dimension `[U^{m+1}(𝔄):J^{m+1}(α)]·dim η(θ)` with `(dim η(θ))²=[J^{m+1}(α):H^{m+1}(α)]`; `|C(m,α)|=[U_E^{m+1}:U_E^{[n/2]+1}]`; the number of isomorphism classes of such V(α,θ) at depth n lies between two positive constant multiples of q_E^n, independent of n, at every depth n for which a minimal element of valuation −n exists, and is zero at every other depth; and `Hom_{U^{m+1}(𝔄)}(V(α,θ),π)≠0` for an irreducible smooth π exactly when `π≅c-Ind_{E^×J^0(α)}^G Λ` for an irreducible Λ whose restriction to `H^{m+1}(α)` is a multiple of θ, which for tame E/F is equivalent to the Langlands parameter of π being `Ind_{W_E}^{W_F}ψ` with `ψ|U_E^{m+1}=θ|U_E^{m+1}`.",
       "neededBy": [
         "3.3",
         "5.4",
         "6.4",
         "6.5"
       ],
-      "detail": "EP Definition 3.17, p. 355, Proposition 3.19, p. 356, Lemmas 3.20–3.24, pp. 356–357, and Proposition 3.25, p. 358 (EP lines 783–916)."
+      "detail": "EP Definition 3.17, p. 355, Lemma 3.18 and Proposition 3.19, p. 356, Lemmas 3.20–3.24, pp. 356–357, and Proposition 3.25, p. 358 (EP lines 783–916), with the count of Proposition 3.25 restricted to the depths at which a minimal element exists."
     },
     {
       "slug": "projective-products",
@@ -1218,16 +1218,14 @@
       "title": "algebraic capture",
       "supplier": "CompletedCohomologyAndLocalGlobalCompatibility",
       "section": "§5.3",
-      "needs": "Provide capture in the compact continuous category (EP Definition 2.1 and Lemmas 2.2–2.10), algebraic capture for a split connected reductive generic fibre (Proposition 3.1), and tensor stability with a finite-dimensional continuous W≠0 (Lemma 2.9).",
+      "needs": "For an affine finite-type group scheme 𝐆 over ℤ_p whose generic fibre over L is split connected reductive, the irreducible rational representations of 𝐆_L, viewed on 𝐆(ℤ_p)⊂𝐆(L), capture every projective compact O[[𝐆(ℤ_p)]]-module.",
       "neededBy": [
         "3.1",
-        "3.3",
-        "5.1",
         "5.2",
         "6.1",
         "6.3"
       ],
-      "detail": "EP pp. 342–345, 351 (EP lines 266–354, 612–621); W=0 is excluded as in the Check of §3.1."
+      "detail": "EP Proposition 3.1, p. 351 (EP lines 612–617)."
     },
     {
       "slug": "crystalline-lift-prescribed-determinant",
@@ -1268,12 +1266,54 @@
       "title": "berthelot points components",
       "supplier": "AdicSpacesPartIII",
       "section": "§R2.9",
-      "needs": "For a complete local Noetherian O-algebra A with residue field finite over k, the points of (Spf A)^rig correspond bijectively to the maximal ideals of A[1/p], with canonical local maps inducing isomorphisms of completions, and when A is O-flat the irreducible components of (Spf A)^rig are the generic fibres of the connected components of the normalization of Spf A.",
+      "needs": "For a complete local Noetherian O-algebra A with residue field finite over k, the points of (Spf A)^rig correspond bijectively to the maximal ideals of A[1/p], with canonical local maps inducing isomorphisms of completions, and when A is O-flat the irreducible components of (Spf A)^rig, with their reduced structures, are the images under the normalization map of the rigid generic fibres of the connected components of the normalization of Spf A.",
       "neededBy": [
         "5.2",
         "6.1"
       ],
       "detail": "DEJ Lemma 7.1.9, p. 78 (DEJ lines 2553–2560); CON Theorem 2.3.1, pp. 500–501 (CON lines 1053–1070); applied in BIPD §3, p. 8, and Lemma 5.1, p. 11 (BIPD lines 329–339, 454–461)."
+    },
+    {
+      "slug": "capture-formalism",
+      "title": "capture formalism",
+      "supplier": "CompletedCohomologyAndLocalGlobalCompatibility",
+      "section": "§5.3",
+      "needs": "For a compact group H with an open pro-p subgroup and a family (V_i) of finite-dimensional continuous L-representations of H, capture of a compact O[[H]]-module M is equivalent to the vanishing of the common kernel of all continuous H-maps M→V_i*; captured modules are O-torsion free; for O-torsion-free M, capture is equivalent to density of the evaluation map ⊕_i Hom_H(V_i,Π(M))⊗V_i→Π(M); a product is captured exactly when every factor is; an endomorphism of a captured M that kills every Hom(M,V_i*) is zero; capture of O[[H]] is equivalent to capture of every projective; a family of representations over finite extensions L_i of L captures M exactly when the family obtained by any further finite extension of each L_i does; and if (V_i) captures every projective and W≠0 is a finite-dimensional continuous representation, then (V_i⊗W) captures every projective.",
+      "neededBy": [
+        "3.1",
+        "3.3",
+        "5.1",
+        "5.3",
+        "5.4",
+        "6.3",
+        "6.5"
+      ],
+      "detail": "EP Definition 2.1, Lemmas 2.2–2.5 and 2.7–2.9, pp. 342–344, and Lemmas 2.14–2.17, pp. 346–347 (EP lines 266–354, 404–442); W=0 is excluded as in the Check of §3.1, since EP Lemmas 2.6 and 2.9 fail for W=0."
+    },
+    {
+      "slug": "smooth-test-quotients",
+      "title": "smooth test quotients",
+      "supplier": "CompletedCohomologyAndLocalGlobalCompatibility",
+      "section": "§5.2",
+      "needs": "For every compact open subgroup H of K, every irreducible algebraic ξ of `(Res_{F/ℚ_p}GL_d)_L` with K-stable lattice ξ° and every finite-dimensional smooth representation V of H over L with H-stable O-lattice Θ, the quotient of R∞ acting faithfully on M∞,H(ξ°⊗Θ) is reduced and O-flat, and at every closed point of its generic fibre, with image x in Spec R□_ρ̄[1/p], ρ_x is potentially semistable with the labelled Hodge–Tate weights attached to ξ in §1.1, `WD(ρ_x)|_{I_F}≅r_p(π)|_{I_F}` for some irreducible smooth π with Hom_H(V,π)≠0, and WD(ρ_x) has N=0 whenever every such π has N=0 on r_p(π).",
+      "neededBy": [
+        "3.2",
+        "5.3",
+        "5.4",
+        "6.5"
+      ],
+      "detail": "EP proof of Theorem 5.3, p. 365 (EP lines 1204–1209), which takes this from part 1 of CEGGPS Lemma 4.17; CEGGPS Lemmas 4.17(1) and 4.18, pp. 62–66 (CEGGPS lines 2596–2615, 2650–2660); by the induction comparison of §3.2 the statement is the parent's §5.2(1) for the K-representation ξ⊗Ind_H^K V in place of a K-type σ(τ)."
+    },
+    {
+      "slug": "torsion-free-iwasawa-domain",
+      "title": "torsion-free iwasawa domain",
+      "supplier": "NoncommutativeAndEquivariantIwasawa",
+      "section": "§0.11",
+      "needs": "For every torsion-free compact p-adic analytic group H and the integers O and residue field k of every finite extension of ℚ_p, the completed group algebras O[[H]] and k[[H]] have no zero divisors.",
+      "neededBy": [
+        "3.3"
+      ],
+      "detail": "Ardakov–Brown §4.3, Theorem, p. 10 (AB lines 382–390), for ℤ_p and 𝔽_p coefficients: a torsion-free such H is pro-p, so these algebras are scalar local and noetherian, they are semiprime (AB §4.2, Theorem, p. 10, AB lines 368–373) and of finite global dimension (§0.11), and Walker's theorem applies; used for O and k in EP §2.5, p. 349 (EP lines 540–541)."
     }
   ]
 }

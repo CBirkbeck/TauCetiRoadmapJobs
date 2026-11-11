@@ -217,3 +217,21 @@ status = "certified"
 accessed = "2026-10-25"
 version_note = "Ann. Inst. Fourier 49 (1999), no. 2, pp. 473–541; printed pagination, Theorem 2.3.1 on pp. 500–501."
 cited_for = ["gap:berthelot-points-components"]
+
+[[source]]
+id = "AB"
+authors = "K. Ardakov, K. A. Brown"
+title = "Ring-theoretic properties of Iwasawa algebras: a survey"
+year = 2005
+arxiv = "math/0511345v1"
+locator_scheme = "theorem"
+locator = "§4.3, Theorem (p. 10); §4.2, Theorem (p. 10)"
+url = "https://arxiv.org/abs/math/0511345v1"
+fetched_from = "https://arxiv.org/pdf/math/0511345v1"
+fetched_at = "2026-11-11T11:25:12Z"
+sha256 = "a665d599485fdbf33a550393731f51fdf733bbd0d5be5c71e443e55ae8d81668"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-11"
+version_note = "arXiv:math/0511345v1; locators use that version and its pagination. The domain theorem is the unnumbered Theorem of §4.3, cited by EP as Theorem 4.3."
+cited_for = ["3.3", "gap:torsion-free-iwasawa-domain"]
