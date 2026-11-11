@@ -1,10 +1,10 @@
 {
   "review": {
     "status": "needs_changes",
-    "reviewer": "independent-review-REV-DESIGN-RiemannianManifoldsWithConvexBoundary~2",
-    "date": "2026-11-10",
-    "findings": 7,
-    "blocking": 6,
-    "notes": "Checked all six previous repairs, all 49 plan targets and 114 Checks, all fifteen seeded source sections, three certified cached texts and three settled uncertified entries; computed adversarial rows for sampled targets, headlines, changed passages and finding targets. Resolved suppliers on current main/open heads and library declarations at pinned Mathlib/Tau Ceti. Dependency gate: 234 roadmaps, 2110 edges, 0 problems; no UPWARD/CYCLE. Found current-main ownership duplication, an obsolete normal gap, dimension-one counterexamples, a false global-domain Check, missing speed/radius hypotheses and endpoint/full Herglotz terminology. No Suggested.lean at design stage; elaboration not available (this lane does not elaborate); zero one-tactic candidates."
+    "reviewer": "independent-review-REV-DESIGN-RiemannianManifoldsWithConvexBoundary~3",
+    "date": "2026-11-11",
+    "findings": 5,
+    "blocking": 4,
+    "notes": "Checked all seven prior repairs, all 49 targets and 123 Checks, all 15 seeded source sections, the three certified cache texts, six manifest entries, named suppliers and closest open scopes, and 71 pinned declarations. Computed adversarial table included. Internal graph: 136 edges, acyclic. Dependency gate: 229 roadmaps, 2057 edges, zero problems. Findings: whole-tube distance claim, unit-speed omission, empty closed-manifold Checks, dimension-zero sharpness Check, nonzero slanted-normal parameter. No Suggested.lean at design stage; elaboration not available (this lane does not elaborate). Three uncertified books remain settled; no source requested."
   }
 }
