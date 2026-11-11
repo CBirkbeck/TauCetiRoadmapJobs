@@ -4,7 +4,7 @@
 
 ## Scope and ownership
 
-This roadmap owns: theorems about the reduced ramification divisor and the Higman invariant of an elliptic admissible G-cover; the branch cycles of the level cover over j = 0, 1728, ∞; boundary deformation and density; the properness, surjectivity, fibre description and functoriality in G of the quotient-cover maps, and absolute level structures; cofinality; the finite description of cusps (gluing data, precuspidal data, cusp graphs, the invariant set I(G), the standard cusp, classification and inversion); cusp automorphism groups and the representability criterion; the obstruction pair m′_c, d′_c and the combinatorial congruence; the square-subgroup lemma and the simple-group congruence; the integral rank-two character scheme, the outer action in trace coordinates over every commutative ring, the matrix-algebra criterion, trace strata, admissible traces, the diagonal outer group and normalizers of SL_n(𝔽_q); the epimorphic trace loci over every finite field, the branch cycles in trace coordinates, rotation slices at arbitrary level over every finite field, the exact rotation order and the vertical automorphisms of SL₂(𝔽_q)-level structures; and the trace −2 Markoff modular geometry of Layer 7, including the alternating containment at primes congruent to 3 modulo 4 and the composition factors of congruence quotients used for noncongruence.
+This roadmap owns: theorems about the reduced ramification divisor and the Higman invariant of an elliptic admissible G-cover; the branch cycles of the level cover over j = 0, 1728, ∞; boundary deformation and density; the properness, surjectivity, fibre description and functoriality in G of the quotient-cover maps, and absolute level structures; cofinality; the finite description of cusps (gluing data, precuspidal data, cusp graphs, the invariant set I(G), the standard cusp, classification and inversion); cusp automorphism groups and the representability criterion; the obstruction pair m′_c, d′_c and the combinatorial congruence; the square-subgroup lemma and the simple-group congruence; the integral rank-two character scheme, the outer action in trace coordinates over every commutative ring, the matrix-algebra criterion, trace strata, admissible traces, the diagonal outer group and normalizers of SL_n(𝔽_q); the epimorphic trace loci over every finite field, the branch cycles in trace coordinates, rotation slices at arbitrary level over every finite field, the exact rotation order and the vertical automorphisms of SL₂(𝔽_q)-level structures; and the trace −2 Markoff modular geometry of Layer 7: the two components, their branch data and genus, finiteness of j-invariants, the projective absolute quotient, its large monodromy and the noncongruence of the associated subgroups of SL₂(ℤ).
 
 It leaves the following to named roadmaps.
 
@@ -14,6 +14,7 @@ It leaves the following to named roadmaps.
 - StableReduction owns nodes, normalization and dual graphs with loops (Layer 1), the relative dualizing sheaf of nodal curves (Layer 2), and prestable and stable pointed curves with external and self-clutching (Layer 3).
 - SchemeAndStackFoundations owns Deligne–Mumford stacks (§1.19), quotient stacks (§1.21), coarse moduli spaces (§1.23), Riemann–Hurwitz for curves (§3.2), versal deformation of a node (§4.6) and the stack of stable pointed curves (§4.15). AlgebraicModuliForArithmeticGeometry §5.1 owns rigidification along inertia subgroups and its vertical-kernel representability criterion, and §8.3 the comparison of framed deformations with completed local rings and atlas presentations. ModularCurvesPartII owns full level structures and the Deligne–Rapoport level stacks (§§3.1, 3.12) and the compactified coarse j-line (§3.11).
 - ArithmeticGaloisRepresentations owns absolute irreducibility in Burnside's form (§1.7), normal subgroups and automorphisms of PSL₂ and PGL₂ (§4.3) and Dickson's classification (§4.4). ClassicalArithmeticCompletion owns the Markoff level surfaces V_k and the trace-coordinate surface X (§4.58), the Markoff–Hurwitz moves with permutations and even sign changes (§4.57) and the finite-field point count (§4.76). Tau Ceti owns the Fricke identity `Matrix.SpecialLinearGroup.trace_commutatorElement_fin_two`.
+- NoncongruenceModularForms owns the monodromy group PSL₂(ℤ)/core(Γ̄) of a finite-index subgroup Γ̄ ≤ PSL₂(ℤ) (§1.1) and the composition-factor obstruction (§3.5): when the preimage of Γ̄ in SL₂(ℤ) is a congruence subgroup, every nonabelian simple composition factor of that monodromy group is PSL₂(𝔽_ℓ) for a prime ℓ ≥ 5 dividing the level, so a subgroup of index n ≥ 6 with monodromy group A_n or S_n is noncongruence. §7.7 consumes it, and proves only the passage from point stabilizers in SL₂(ℤ) to their images in PSL₂(ℤ).
 - MappingClassGroupsAndCanonicalRepresentations owns the analytic orbifold fundamental group of the moduli stack of pointed curves (§2.3, "Teichmüller uniformization of the pointed moduli stack"). HeightsRationalPointsAndObstructions §4.6 owns Faltings's finiteness theorem. BelyiMaps Layer 10 §10.4 owns Belyi's theorem, implemented in Tau Ceti as `TauCeti.IsFunctionField.exists_isAlgebraicBelyiPair`. CFSGBasicProperties owns the properties of the groups on the CFSG list (A0); Vdovin's bound on abelian subgroups of every nonabelian finite simple group other than PSL₂(𝔽_q), which rests on the classification of finite simple groups, is requested from it as gap:vdovin-abelian-subgroups and is not proved here.
 
 The stack Hodge degree deg λ = 1/24 and the conormal power isomorphism along a ramified section enter only the proof of Chen's Theorem 3.5.1, which ArithmeticDynamicsPartII §6.0 states; they belong to that proof and are not separate targets here.
@@ -41,7 +42,7 @@ Convention witnesses.
 
 ### From Mathlib
 
-`commutatorElement` (`Mathlib/Algebra/Group/Commutator.lean`) is x y x⁻¹ y⁻¹. `orderOf` (`Mathlib/GroupTheory/OrderOfElement.lean`) is zero for elements of infinite order, which do not occur in the finite groups here. `Subgroup.centralizer` (`Mathlib/GroupTheory/Subgroup/Centralizer.lean`) has membership `h * g = g * h` for every h of the given set; the centralizer of a generating set equals that of the generated subgroup. `Subgroup.zpowers` and `Subgroup.closure` are the cyclic and generated subgroups. `Equiv.prodShear`, `Equiv.prodComm` (`Mathlib/Logic/Equiv/Prod.lean`), `Equiv.mulLeft` (`Mathlib/Algebra/Group/Units/Equiv.lean`) and `Equiv.inv` (`Mathlib/Algebra/Group/Equiv/Basic.lean`) give the permutations of pairs used in §3.1. `MulAction.toPermHom` (`Mathlib/Algebra/Group/Action/End.lean`) and the diagonal action of `ConjAct G` on `G × G` give simultaneous conjugation; `MulAction.orbit`, `MulAction.orbitRel` and `MulAction.orbitRel.Quotient` (`Mathlib/GroupTheory/GroupAction/Defs.lean`) give orbits and orbit spaces; an orbit is the range of the orbit map and carries no transitivity assertion. `Finset.lcm` is 1 on the empty finset (`Finset.lcm_empty`, `Mathlib/Algebra/GCDMonoid/Finset.lean`). `Nat.factorization` (`Mathlib/Data/Nat/Factorization/Defs.lean`) is used only on positive integers. `IsSimpleGroup` (`Mathlib/GroupTheory/Subgroup/Simple.lean`) includes nontriviality but not nonabelianness. `Matrix.SpecialLinearGroup`, `Matrix.trace` and `Matrix.ProjectiveSpecialLinearGroup` (`Mathlib/LinearAlgebra/Matrix/ProjectiveSpecialLinearGroup.lean`, the quotient of SL by its center) are the native matrix groups. `FreeGroup`, `Nat.totient`, `Function.minimalPeriod`, `Monoid.exponent` and `Algebra.adjoin` keep their library meanings. `alternatingGroup.isSimpleGroup` (`Mathlib/GroupTheory/SpecificGroups/Alternating/Simple.lean`) requires at least five points; `nat_card_alternatingGroup` (`Mathlib/GroupTheory/SpecificGroups/Alternating.lean`) requires a nontrivial type. `CongruenceSubgroup.Gamma` and `CongruenceSubgroup.IsCongruenceSubgroup` (`Mathlib/NumberTheory/ModularForms/CongruenceSubgroups.lean`) are the principal congruence subgroups and the predicate that a subgroup of SL₂(ℤ) contains one of nonzero level; they are used unchanged.
+`commutatorElement` (`Mathlib/Algebra/Group/Commutator.lean`) is x y x⁻¹ y⁻¹. `orderOf` (`Mathlib/GroupTheory/OrderOfElement.lean`) is zero for elements of infinite order, which do not occur in the finite groups here. `Subgroup.centralizer` (`Mathlib/GroupTheory/Subgroup/Centralizer.lean`) has membership `h * g = g * h` for every h of the given set; the centralizer of a generating set equals that of the generated subgroup. `Subgroup.zpowers` and `Subgroup.closure` are the cyclic and generated subgroups. `Equiv.prodShear`, `Equiv.prodComm` (`Mathlib/Logic/Equiv/Prod.lean`), `Equiv.mulLeft` (`Mathlib/Algebra/Group/Units/Equiv.lean`) and `Equiv.inv` (`Mathlib/Algebra/Group/Equiv/Basic.lean`) give the permutations of pairs used in §3.1. `MulAction.toPermHom` (`Mathlib/Algebra/Group/Action/End.lean`) and the diagonal action of `ConjAct G` on `G × G` give simultaneous conjugation; `MulAction.orbit`, `MulAction.orbitRel` and `MulAction.orbitRel.Quotient` (`Mathlib/GroupTheory/GroupAction/Defs.lean`) give orbits and orbit spaces; an orbit is the range of the orbit map and carries no transitivity assertion. `orbit_subgroup_eq_rightCoset` (`Mathlib/GroupTheory/Coset/Basic.lean`) identifies the orbit of g under left multiplication by a subgroup H with the right coset H g, the coset convention of §§1.3 and 1.7. `Finset.lcm` is 1 on the empty finset (`Finset.lcm_empty`, `Mathlib/Algebra/GCDMonoid/Finset.lean`). `Nat.factorization` (`Mathlib/Data/Nat/Factorization/Defs.lean`) is used only on positive integers. `IsSimpleGroup` (`Mathlib/GroupTheory/Subgroup/Simple.lean`) includes nontriviality but not nonabelianness. `Matrix.SpecialLinearGroup`, `Matrix.trace` and `Matrix.ProjectiveSpecialLinearGroup` (`Mathlib/LinearAlgebra/Matrix/ProjectiveSpecialLinearGroup.lean`, the quotient of SL by its center) are the native matrix groups. `FreeGroup`, `Nat.totient`, `Function.minimalPeriod`, `Monoid.exponent` and `Algebra.adjoin` keep their library meanings. `alternatingGroup.isSimpleGroup` (`Mathlib/GroupTheory/SpecificGroups/Alternating/Simple.lean`) requires at least five points. `CongruenceSubgroup.Gamma` and `CongruenceSubgroup.IsCongruenceSubgroup` (`Mathlib/NumberTheory/ModularForms/CongruenceSubgroups.lean`) are the principal congruence subgroups and the predicate that a subgroup of SL₂(ℤ) contains one of nonzero level; they are used unchanged.
 
 ### From Tau Ceti
 
@@ -112,6 +113,10 @@ What MappingClassGroupsAndCanonicalRepresentations must provide (gap:asada-cofin
 ### From TauCetiRoadmap.BelyiMaps
 
 Layer 10, §10.4, "A curve over ℚ̄ admits a Belyi map": for a function field F/ℚ̄ there is a nonconstant β ∈ F with F/ℚ̄(β) finite separable and branched over at most 0, 1, ∞; its function-field form over any algebraic extension of ℚ is the Tau Ceti declaration `TauCeti.IsFunctionField.exists_isAlgebraicBelyiPair` listed above.
+
+### From TauCetiRoadmap.NoncongruenceModularForms
+
+§1.1, "The modular triple": for a finite-index subgroup Γ̄ ≤ PSL₂(ℤ) of index n with a labelling of PSL₂(ℤ)/Γ̄ by n points, the monodromy group is the image of PSL₂(ℤ) in the permutations of the cosets, isomorphic to PSL₂(ℤ)/core(Γ̄). §3.5, "The order obstruction", its composition-factor obstruction `compositionFactor_of_isCongruenceSubgroup`: if the preimage of Γ̄ in SL₂(ℤ) is a congruence subgroup (Mathlib `CongruenceSubgroup.IsCongruenceSubgroup`), every nonabelian simple composition factor of that monodromy group is isomorphic to PSL₂(𝔽_ℓ) for a prime ℓ ≥ 5 dividing the level of Γ̄; and its consequence that, A_n for n ≥ 6 being isomorphic to no PSL₂(𝔽_ℓ), a subgroup of index n ≥ 6 whose monodromy group is A_n or S_n is noncongruence. Both are consumed as stated, for subgroups of PSL₂(ℤ); the comparison with point stabilizers in SL₂(ℤ) is proved in §7.7.
 
 ### From TauCetiRoadmap.CFSGBasicProperties
 
@@ -304,22 +309,23 @@ One proof route: apply StableReduction Layer 3 self- and external clutching to t
 
 ### 1.3 Finite precuspidal data
 
-A precuspidal G-datum is a finite set F with a continuous left Π-action and a commuting free transitive right G-action, together with a G-equivariant bijection α : ⟨γ₀⟩∖F → ⟨γ∞^δ⟩∖F. For x ∈ F define φ_x : Π → G by γ x = x φ_x(γ), and H_(δ,x) = {h : α([x]₀) = [x]∞ h}, a left coset ⟨φ_x(γ∞^δ)⟩h rather than a chosen element. The tangential fibre functor at t₀ is an equivalence from gluing data to precuspidal G-data. (Chen, Definition 4.6.1, p. 373; Proposition 4.4.3, pp. 367–369; §4.5, pp. 371–373.) In Chen's Proposition 4.4.3(d) the loop on the left is based at t₀.
+A precuspidal G-datum is a finite set F with a continuous left Π-action and a commuting free transitive right G-action, together with a G-equivariant bijection α : ⟨γ₀⟩∖F → ⟨γ∞^δ⟩∖F. For x ∈ F define φ_x : Π → G by γ x = x φ_x(γ), and H_(δ,x) = {h : α([x]₀) = [x]∞ h}, a right coset ⟨φ_x(γ∞^δ)⟩h (an orbit of left multiplication by ⟨φ_x(γ∞^δ)⟩) rather than a chosen element. The tangential fibre functor at t₀ is an equivalence from gluing data to precuspidal G-data. (Chen, Definition 4.6.1, p. 373; Proposition 4.4.3, pp. 367–369; §4.5, pp. 371–373.) In Chen's Proposition 4.4.3(d) the loop on the left is based at t₀.
 
 The defining API is:
 
 - A datum bundles the commuting actions and the equivariant bijection of inertia orbit sets.
 - φ_x is continuous, and replacing x by x g replaces φ_x by g⁻¹ φ_x g.
-- H_(δ,x) is a nonempty left coset of ⟨φ_x(γ∞^δ)⟩.
+- H_(δ,x) is a nonempty right coset of ⟨φ_x(γ∞^δ)⟩, of the form ⟨φ_x(γ∞^δ)⟩h.
 - The tangential fibre functor is an equivalence from gluing data to these finite data.
 
 **Checks.**
 
-- For F = G with γ∞^δ acting by left multiplication by u, the γ∞^δ-orbit set is ⟨u⟩∖G, a set of left cosets.
+- For F = G with γ∞^δ acting by left multiplication by u, the γ∞^δ-orbit set is ⟨u⟩∖G, the set of right cosets ⟨u⟩g; calling these left cosets would name the quotient G/⟨u⟩ by right multiplication instead.
+- The coset side is visible in S₃ (product read right to left): for H = ⟨(1 2)⟩ and h = (1 2 3), the right coset H h = {(1 2 3), (2 3)} differs from the left coset h H = {(1 2 3), (1 3)}; both have two elements, so a cardinality test cannot tell them apart, and only H h is an orbit of left multiplication by H, as the gluing set H_(δ,x) must be.
 - G = 1 gives the singleton datum with its unique α.
 - Dropping free transitivity of the right G-action admits disconnected non-torsor generic fibres, as in the last Check of §1.1, and must fail the constructor.
 
-*Needs:* §1.1; AnabelianGeometryAndNonabelianChabauty §1.1 (tangential fibre functors) and §1.2 (local inertia orbits on branches, good paths); Mathlib `Subgroup.zpowers`.
+*Needs:* §1.1; AnabelianGeometryAndNonabelianChabauty §1.1 (tangential fibre functors) and §1.2 (local inertia orbits on branches, good paths); Mathlib `Subgroup.zpowers`, `orbit_subgroup_eq_rightCoset`.
 
 ### 1.4 The graph of a glued cover
 
@@ -394,7 +400,7 @@ The defining API is:
 - For cyclic G generated by h and u = 1, M_(u,h) = 1 and the cover is a |G|-gon.
 - For G = S₃, u a 3-cycle and h a transposition, M_(u,h) = C₃ and the normalization has two components.
 
-One proof route: define the two finite left permutations by the free profinite universal property; check that α is well defined on left cosets by conjugation with h; balance is built in and §1.4 gives connectedness.
+One proof route: define the two finite left permutations by the free profinite universal property; check that α is well defined on the right cosets ⟨h⁻¹u⁻¹h⟩x by conjugation with h; balance is built in and §1.4 gives connectedness.
 
 *Needs:* §1.5; §1.6.
 
@@ -965,33 +971,22 @@ One proof route: the block group Q_p of the full Γ-action on Y* contains A_(d_p
 
 *Needs:* §7.5; §7.1; ArithmeticDynamicsPartII §§4.2, 6.1, 7.2, 7.3, 7.4, 7.4a and gap:markoff-alternating-three-mod-four; Mathlib `alternatingGroup.isSimpleGroup`.
 
-### 7.7 Composition factors of congruence quotients
-
-For every n ≥ 1, every nonabelian simple composition factor of SL₂(ℤ/n) is isomorphic to PSL₂(𝔽_ℓ) for a prime ℓ ≥ 5 dividing n. Consequently, if a subgroup of SL₂(ℤ) contains the principal congruence subgroup of level n (Mathlib `CongruenceSubgroup.Gamma`), every nonabelian simple composition factor of the permutation group of SL₂(ℤ) on its cosets is of this form. (Chen, proof of Corollary 5.6.8, p. 421.)
-
-One proof route: by the Chinese remainder theorem SL₂(ℤ/n) is the product of the SL₂(ℤ/ℓ^k) over the prime powers dividing n; the kernel of SL₂(ℤ/ℓ^k) → SL₂(𝔽_ℓ) is an ℓ-group; SL₂(𝔽₂) and SL₂(𝔽₃) are solvable, and for ℓ ≥ 5 the composition factors of SL₂(𝔽_ℓ) are C₂ and PSL₂(𝔽_ℓ); composition factors of a quotient occur among those of the group.
-
-**Checks.**
-
-- n = 1: the trivial group has no composition factors.
-- n = 6: SL₂(ℤ/6) ≅ SL₂(𝔽₂) × SL₂(𝔽₃) is solvable.
-- n = 25: the nonabelian composition factors are a single PSL₂(𝔽₅) ≅ A₅, the kernel to SL₂(𝔽₅) being a 5-group of order 125.
-
-*Needs:* Mathlib `CongruenceSubgroup.Gamma`; ArithmeticGaloisRepresentations §4.3 (simplicity of PSL₂(𝔽_ℓ) for ℓ ≥ 5).
-
-### 7.8 Noncongruence of Markoff levels
+### 7.7 Noncongruence of Markoff levels
 
 For p ∈ P_MP, the finite-index subgroup of SL₂(ℤ) ≅ Out⁺(F₂) stabilizing a point of the fibre of either trace −2 component of M(SL₂(𝔽_p)) is not a congruence subgroup, in the sense of Mathlib `CongruenceSubgroup.IsCongruenceSubgroup`. The obstruction is already visible on N_p, whose monodromy has A_(d_p) as a composition factor with d_p ≥ 10. (Chen, Corollary 5.6.8, pp. 420–421; Definition 5.6.5, p. 419.)
 
-One proof route: if the subgroup were congruence, of level n, the permutation monodromy of the cover and every quotient of it would factor through SL₂(ℤ/n), so A_(d_p), simple by `alternatingGroup.isSimpleGroup`, would be a composition factor of SL₂(ℤ/n) and by §7.7 isomorphic to PSL₂(𝔽_ℓ) with ℓ ≥ 5; equal orders give d_p! = ℓ(ℓ² − 1) (using `nat_card_alternatingGroup`); ℓ divides d_p!, so ℓ ≤ d_p and d_p! < ℓ³ ≤ d_p³, which is false for d_p ≥ 6. The SL₂ level cover has the projective quotient as a quotient, so the conclusion transfers.
+Prove also the comparison with subgroups of PSL₂(ℤ) on which the obstruction of NoncongruenceModularForms §3.5 is stated. For p ∈ P_MP let Γ_y ≤ SL₂(ℤ) be the stabilizer of a point y of Y* (§7.5) and Γ̄_y its image in PSL₂(ℤ). Then −I ∈ Γ_y, so Γ_y is the full preimage of Γ̄_y; the index of Γ̄_y in PSL₂(ℤ) equals that of Γ_y in SL₂(ℤ), namely d_p; and g Γ̄_y ↦ y · g⁻¹ identifies the left coset set PSL₂(ℤ)/Γ̄_y with Y*, equivariantly for left multiplication and for the left action in which g sends y′ to y′ · g⁻¹, induced by the right precomposition action (Conventions), so that the monodromy group of Γ̄_y (NoncongruenceModularForms §1.1) is isomorphic, as a permutation group, to the geometric monodromy group of N_p → P¹_j. The stabilizer of a point x of the fibre of a trace −2 component of M(SL₂(𝔽_p)) is contained in Γ_y for y the image of x under the equivariant maps to X* (§7.1) and to Y* (§7.5).
+
+One proof route: γ₋ᵢ maps to −I and fixes every trace triple, since tr A⁻¹ = tr A for A ∈ SL₂ and tr(A⁻¹B⁻¹) = tr((BA)⁻¹) = tr(BA) = tr(AB), so −I lies in every point stabilizer of X* and of Y*; by §7.1 and the free sign action of §7.5, Out⁺(F₂) is transitive on Y*, which has d_p elements; the permutation groups of SL₂(ℤ) and of PSL₂(ℤ) on Y* are the same subgroup of the permutations of Y*, which is the geometric monodromy group of N_p by gap:punctured-torus-nielsen. If the stabilizer of x contained a principal congruence subgroup Γ(n) (Mathlib `CongruenceSubgroup.Gamma`), so would its overgroup Γ_y, which is the preimage of Γ̄_y; NoncongruenceModularForms §3.5 would then make every nonabelian simple composition factor of the monodromy group of Γ̄_y a PSL₂(𝔽_ℓ) with ℓ prime. By §7.6 that group is S_(d_p) or A_(d_p), and A_(d_p) is a nonabelian simple composition factor of it (Mathlib `alternatingGroup.isSimpleGroup`); since d_p ≥ 10 ≥ 6, NoncongruenceModularForms §3.5 excludes A_(d_p) ≅ PSL₂(𝔽_ℓ), a contradiction.
 
 **Checks.**
 
-- The argument needs d ≥ 6: A₅ ≅ PSL₂(𝔽₅) shows that d = 5 gives no obstruction.
-- For d = 6, 6! = 720 is not ℓ(ℓ² − 1) for any prime ℓ ≤ 6 (the values are 6, 24, 120), consistent with A₆ ≅ PSL₂(𝔽₉), which is not a prime-field PSL₂.
+- The obstruction needs d ≥ 6: A₅ ≅ PSL₂(𝔽₅), both of order 60, and the stabilizer of a point under PSL₂(ℤ) → PSL₂(𝔽₅) ≅ A₅ acting on five points is a subgroup of index 5 with monodromy group A₅ that contains the image of Γ(5), hence whose preimage in SL₂(ℤ) is congruence. At p = 5, d_p = 10 and |A₁₀| = 10!/2 = 1 814 400, while the prime-field candidates with 5 ≤ ℓ ≤ 10 have |PSL₂(𝔽₅)| = 60 and |PSL₂(𝔽₇)| = 168.
+- The passage to PSL₂(ℤ) uses −I ∈ Γ_y: for the unit unipotents A = `[[1, 1], [0, 1]]`, B = `[[1, 0], [1, 1]]` the triples of (A, B) and (A⁻¹, B⁻¹) are both (2, 2, 3), since A⁻¹B⁻¹ = `[[2, −1], [−1, 1]]` has trace 3. For a subgroup without −I the indices differ: Γ₁(3) has index 8 in SL₂(ℤ), its image in PSL₂(ℤ) has index 4, and the preimage of that image is Γ₀(3) = ±Γ₁(3); reading d_p off the image of a stabilizer that omitted −I would halve it.
+- The transfer runs from the overgroup to the subgroup: Γ(n) ≤ Γ_x ≤ Γ_y makes Γ_y congruence, so noncongruence of Γ_y gives that of Γ_x; the converse inference fails, since SL₂(ℤ) is congruence and contains the noncongruence subgroups of this target.
 - Γ₁(n) and Γ(n) are congruence subgroups by Mathlib's definition, so the conclusion must fail for abelian levels; for G = (ℤ/n)² the monodromy factors through SL₂(ℤ/n).
 
-*Needs:* §7.6; §7.7; Mathlib `CongruenceSubgroup.IsCongruenceSubgroup`, `CongruenceSubgroup.Gamma`, `alternatingGroup.isSimpleGroup`, `nat_card_alternatingGroup`; gap:punctured-torus-nielsen.
+*Needs:* §7.6; §7.1; §7.5; NoncongruenceModularForms §1.1 (the monodromy group of a finite-index subgroup of PSL₂(ℤ)) and §3.5 (the composition-factor obstruction and its alternating consequence); Mathlib `CongruenceSubgroup.IsCongruenceSubgroup`, `CongruenceSubgroup.Gamma`, `alternatingGroup.isSimpleGroup`; gap:punctured-torus-nielsen.
 
 ### Examples
 
@@ -1013,7 +1008,7 @@ The genus column is (2 + D − c₀ − c₁₇₂₈ − c∞)/2 for the cycle 
 
 ### Dependencies
 
-§§0.6, 5.5, 5.6, 6.2; ArithmeticDynamicsPartII §§2.3, 2.4, 4.2, 6.0, 6.1, 6.6, 7.2, 7.3, 7.4, 7.4a and gap:markoff-alternating-three-mod-four; ClassicalArithmeticCompletion §4.57; ArithmeticGaloisRepresentations §4.3; InverseGaloisAndArithmeticFundamentalGroups §IG.1.3; SchemeAndStackFoundations §3.2; HeightsRationalPointsAndObstructions §4.6; gap:punctured-torus-nielsen; Tau Ceti `TauCeti.PermutationTriple`, `TauCeti.PermutationTriple.genus`, `TauCeti.PermutationTriple.IsConnected.two_sub_two_mul_genus`; Mathlib `CongruenceSubgroup.IsCongruenceSubgroup`, `CongruenceSubgroup.Gamma`, `alternatingGroup.isSimpleGroup`, `nat_card_alternatingGroup`, `Nat.totient`.
+§§0.6, 5.5, 5.6, 6.2; ArithmeticDynamicsPartII §§2.3, 2.4, 4.2, 6.0, 6.1, 6.6, 7.2, 7.3, 7.4, 7.4a and gap:markoff-alternating-three-mod-four; ClassicalArithmeticCompletion §4.57; ArithmeticGaloisRepresentations §4.3; NoncongruenceModularForms §§1.1, 3.5; InverseGaloisAndArithmeticFundamentalGroups §IG.1.3; SchemeAndStackFoundations §3.2; HeightsRationalPointsAndObstructions §4.6; gap:punctured-torus-nielsen; Tau Ceti `TauCeti.PermutationTriple`, `TauCeti.PermutationTriple.genus`, `TauCeti.PermutationTriple.IsConnected.two_sub_two_mul_genus`; Mathlib `CongruenceSubgroup.IsCongruenceSubgroup`, `CongruenceSubgroup.Gamma`, `alternatingGroup.isSimpleGroup`, `Nat.totient`.
 
 ## Downstream consumers
 

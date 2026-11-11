@@ -36,7 +36,7 @@ Headline theorems that are not statable at the pins:
 * Finiteness of the `j`-invariants over a number field admitting a rational point on a trace
   `−2` level component (README §7.4): the coarse level curve and its rational points are missing.
 * The symmetric or alternating geometric monodromy of the projective absolute level curve and
-  the noncongruence of the associated subgroups of `SL₂(ℤ)` (README §§7.6, 7.8): the monodromy
+  the noncongruence of the associated subgroups of `SL₂(ℤ)` (README §§7.6, 7.7): the monodromy
   group of a finite cover of the `j`-line and the identification `Out⁺(F₂) ≅ SL₂(ℤ)` are missing.
 * Cofinality of elliptic nonabelian levels among finite étale covers of `𝓜(1)` over `ℚ̄`
   (README §0.7): the étale fundamental group of the moduli stack is missing.

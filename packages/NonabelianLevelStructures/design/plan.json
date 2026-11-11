@@ -4891,7 +4891,7 @@
         "0.3",
         "3.1",
         "5.2",
-        "7.8"
+        "7.7"
       ],
       "detail": "§2.3 identifies the orbifold fundamental group of the pointed moduli stack with the pure mapping class group for 2g−2+n>0, which is SL₂(ℤ) with generic stabilizer ±1 in genus one, but does not state Nielsen's isomorphism Out(F₂)≅GL₂(ℤ), the punctured-torus boundary loop [b,a] for a positively oriented basis, or the images of the j-line loops around 0, 1728, ∞; Chen Theorem 2.5.2(5), pp. 336–337, uses these (citing Osborne–Zieschang, Theorem 3.1).",
       "needs": "Nielsen's isomorphism Out(F₂) ≅ GL₂(ℤ) through abelianization with Out⁺(F₂) the preimage of SL₂(ℤ), the identification of the orbifold fundamental group of 𝓜(1,1)^an with Out⁺(F₂) for a positively oriented basis (a, b) of the punctured torus with boundary loop [b, a], and the images in Out⁺(F₂) of the standard loops of the j-line around j = 0, 1728, ∞, namely the classes of (a, b) ↦ (a b⁻¹, a), (a, b) ↦ (b⁻¹, a) and (a, b) ↦ (a, a b).",
@@ -4969,7 +4969,7 @@
       "title": "Alternating containment of the Markoff block group at primes 3 mod 4",
       "neededBy": [
         "7.6",
-        "7.8"
+        "7.7"
       ],
       "detail": "§7.4a proves A(Y*(p))≤Q_p for p≡1 mod 4 and at p=11, and its scope places Meiri–Puder Theorem 1.4 outside; Chen Theorem 5.6.6, p. 420, needs the case p≡3 mod 4 under MP(p), which follows from the primitivity of §7.4 and Guralnick–Magaard, Theorem 1 (Meiri–Puder §4.3).",
       "needs": "for primes p ≡ 3 (mod 4) with Q_p transitive on Y*(p) and MP(p), the block group Q_p contains the alternating group of Y*(p) (Meiri–Puder, Theorem 1.4, from the primitivity of ArithmeticDynamicsPartII §7.4 and the Guralnick–Magaard classification of primitive groups containing an element with at least half the points fixed).",
