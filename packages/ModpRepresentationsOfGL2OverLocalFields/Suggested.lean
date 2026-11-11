@@ -12,7 +12,9 @@ Stated here:
 * coherence: the kernel of a map between finitely presented smooth torsion representations of
   `GL₂(F)/ϖ^ℤ` is finitely presented, for every finite extension `F/ℚ_p` (Layer 0);
 * finite length and the subobject property for admissible finitely presented torsion
-  representations of `GL₂(F)` (Layer 2);
+  representations of `GL₂(F)`, and, for `F ≠ ℚ_p`, the approximation of an admissible Banach
+  lattice by the continuous induction from the lower Borel of a representation of the torus on a
+  finite `𝒪_L`-module, with finite kernel and cokernel (Layer 2);
 * for `F = ℚ_p`: finite type implies finite presentation, finite cosocle implies finite length,
   and finite length is equivalent to finite dimension of the smooth dual (Layer 1).
 
@@ -28,9 +30,9 @@ Not statable at the pins, with what each lacks:
   commutativity of its endomorphism ring and the relative projectivity of its quotients
   (Layers 8–9): Serre weights, projective covers in the pseudocompact `k[[K/Z₁]]`-module category
   and the gluing lattice;
-* the finite-error counit `Ind_{B̄}^G Ord_B(π) → π` and its Banach version for `F ≠ ℚ_p`
-  (Layer 2): Emerton's ordinary-parts functor `Ord_B`; the induced module itself is Mathlib's
-  continuous coinduction `ContRepresentation.coind`, with discrete coefficients in the smooth case;
+* the finite-error counit `Ind_{B̄}^G Ord_B(π) → π` for `F ≠ ℚ_p` (Layer 2): Emerton's
+  ordinary-parts functor `Ord_B`, which the statement specifies as the source of the counit (the
+  Banach approximation stated below asserts only the existence of some induced map);
 * the absence of supersingular constituents in admissible finitely presented representations for
   `F ≠ ℚ_p` (Layer 2): the supersingular notion and an API of smooth principal series (Borel
   induction of torus characters with its constituents); `ContRepresentation.coind` supplies only
@@ -183,6 +185,48 @@ theorem isFinitelyPresented_subrepresentation_of_admissible {F L : Type u}
     (hadm : IsTorsionAdmissible p ρ)
     (hfp : IsFinitelyPresented ρ) (W : Subrepresentation ρ) :
     IsFinitelyPresented W.toRepresentation := by
+  sorry
+
+/-- **Induced approximation of an admissible Banach lattice** (Colmez–Dospinescu–Nizioł,
+Corollaire 1.34). Let `F/ℚ_p` be finite with `F ≠ ℚ_p`, that is `ef ≥ 2`: `p` is not a
+uniformiser of `𝒪_F` or the residue field of `F` is larger than `𝔽_p`. Let `E` be an `L`-Banach
+space and `Θ ⊆ E` an open bounded `𝒪_L`-submodule (a lattice) with a jointly continuous
+`𝒪_L`-linear action of `GL₂(F)` whose reduction `Θ/ϖ_LΘ` is torsion-admissible and finitely
+presented. (The action extends `L`-linearly to a unitary Banach representation on `E = L·Θ`, which
+is admissible because its reduction is.) Then there are a finite `𝒪_L`-module `M` with its
+canonical (`ϖ_L`-adic) topology, a jointly continuous representation `σ` of the lower Borel `B̄`
+on `M` that is trivial on the lower unipotent matrices (a representation of the diagonal torus
+inflated to `B̄`), and a continuous `GL₂(F)`-equivariant map from the continuous induction
+`Ind_{B̄}^{GL₂(F)} σ = {f ∈ C(GL₂(F), M) | f(b̄g) = σ(b̄) f(g)}`, with `GL₂(F)` acting by right
+translation, to `Θ`, whose kernel and cokernel are finite `𝒪_L`-modules. -/
+theorem exists_coind_approximation_of_lattice {F L : Type u}
+    [Field F] [ValuativeRel F] [TopologicalSpace F] [IsNonarchimedeanLocalField F] [CharZero F]
+    [NontriviallyNormedField L] [ValuativeRel L] [IsNonarchimedeanLocalField L] [CharZero L]
+    (p : ℕ) [Fact p.Prime] [CharP 𝓀[F] p] [CharP 𝓀[L] p]
+    (hF : ¬ (Irreducible (p : 𝒪[F]) ∧ Nat.card 𝓀[F] = p))
+    (ϖ : 𝒪[L]) (hϖ : Irreducible ϖ)
+    (B : Subgroup (GL (Fin 2) F))
+    (hB : ∀ g, g ∈ B ↔ (g : Matrix (Fin 2) (Fin 2) F) 0 1 = 0)
+    {E : Type u} [NormedAddCommGroup E] [NormedSpace L E] [CompleteSpace E]
+    (Θ : Submodule 𝒪[L] E) (hopen : IsOpen (Θ : Set E))
+    (hbdd : Bornology.IsBounded (Θ : Set E))
+    (ρ : ContRepresentation 𝒪[L] (GL (Fin 2) F) Θ)
+    (hρ : Continuous fun x : GL (Fin 2) F × Θ => ρ x.1 x.2)
+    (S : Subrepresentation ρ.toRepresentation)
+    (hS : S.toSubmodule = Ideal.span {ϖ} • (⊤ : Submodule 𝒪[L] Θ))
+    (hadm : IsTorsionAdmissible p S.quotient)
+    (hfp : IsFinitelyPresented S.quotient) :
+    ∃ (M : Type u) (_ : AddCommGroup M) (_ : Module 𝒪[L] M) (_ : TopologicalSpace M)
+      (_ : IsTopologicalAddGroup M) (_ : ContinuousSMul 𝒪[L] M) (_ : IsModuleTopology 𝒪[L] M),
+      Module.Finite 𝒪[L] M ∧
+      ∃ σ : ContRepresentation 𝒪[L] B M,
+        (Continuous fun x : B × M => σ x.1 x.2) ∧
+        (∀ b : B, ((b : GL (Fin 2) F) : Matrix (Fin 2) (Fin 2) F) 0 0 = 1 →
+          ((b : GL (Fin 2) F) : Matrix (Fin 2) (Fin 2) F) 1 1 = 1 → σ b = 1) ∧
+        ∃ f : ContIntertwiningMap
+            (σ.coind (⟨B.subtype, continuous_subtype_val⟩ : B →ₜ* GL (Fin 2) F)) ρ,
+          Module.Finite 𝒪[L] (LinearMap.ker f.toContinuousLinearMap.toLinearMap) ∧
+          Module.Finite 𝒪[L] (Θ ⧸ LinearMap.range f.toContinuousLinearMap.toLinearMap) := by
   sorry
 
 end TauCetiRoadmap.ModpRepresentationsOfGL2OverLocalFields
