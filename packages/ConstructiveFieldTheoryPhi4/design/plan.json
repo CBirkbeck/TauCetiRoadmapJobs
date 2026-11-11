@@ -27,7 +27,8 @@
      "prerequisites": [
       "mathlib:ProbabilityTheory.integrableExpSet",
       "mathlib:MeasureTheory.Measure.IsNegInvariant",
-      "mathlib:MeasureTheory.Measure.pi"
+      "mathlib:MeasureTheory.Measure.pi",
+      "mathlib:MeasureTheory.Integrable.mono'"
      ],
      "api": [
       {
@@ -38,7 +39,7 @@
       {
        "name": "integrable_exp_quadratic",
        "role": "lemma",
-       "statement": "Admissible rho integrates exp(c phi^2 + h phi) for all real c, h, hence every polynomial."
+       "statement": "Admissible rho integrates exp(c phi^2 + h phi) for all real c, h, hence every polynomial; every rho-a.e. measurable F : R -> R with |F(phi)| <= C exp(c phi^2) for rho-a.e. phi, for some C >= 0 and real c, is rho-integrable (domination alone does not give measurability)."
       },
       {
        "name": "closure",
@@ -86,6 +87,11 @@
        "name": "biased_ising_not_even",
        "kind": "non-example",
        "statement": "(2 delta_{-1} + delta_1)/3 is admissible but not even (mean -1/3)."
+      },
+      {
+       "name": "measurability_needed",
+       "kind": "non-example",
+       "statement": "rho uniform on [0,1] (admissible): F = indicator of [0,1/2] has |F| <= 1 and integral 1/2; the indicator of a Vitali subset of [0,1] has the same bound but is not rho-a.e. measurable, hence not integrable."
       }
      ]
     },
@@ -216,7 +222,7 @@
      "id": "1.1",
      "kind": "definition",
      "name": "gibbsMeasure",
-     "statement": "For a finite type V, a symmetric J : V -> V -> R and a probability measure rho on R, H_{V,J}(phi) = -(1/2) sum_{x != y} J_{xy} phi_x phi_y, Z_{V,J}(rho) = integral of exp(-H) d rho^{tensor V} in (0, infinity], the triple is stable if Z < infinity, and mu_{V,J,rho} = Z^{-1} exp(-H) rho^{tensor V}.",
+     "statement": "For a finite type V, a symmetric J : V -> V -> R and a probability measure rho on R, H_{V,J}(phi) = -sum over unordered pairs {x,y} of distinct sites of J_{xy} phi_x phi_y = -(1/2) sum_{x != y} J_{xy} phi_x phi_y, Z_{V,J}(rho) = integral of exp(-H) d rho^{tensor V} in (0, infinity], the triple is stable if Z < infinity, and mu_{V,J,rho} = Z^{-1} exp(-H) rho^{tensor V}.",
      "hypotheses": [
       "V finite",
       "J symmetric (diagonal ignored)",
@@ -267,7 +273,7 @@
       {
        "name": "two_site_ising",
        "kind": "computation",
-       "statement": "Two Ising sites: Z = cosh J and <sigma_x sigma_y> = tanh J (ordered-pair convention would give tanh 2J)."
+       "statement": "Two Ising sites: H(1,1) = -J, Z = cosh J and <sigma_x sigma_y> = tanh J (2/sqrt 3 and 1/2 at J = (log 3)/2); omitting the factor 1/2 from the ordered-pair sum would give cosh 2J and tanh 2J (4/5)."
       },
       {
        "name": "three_site_ising",
@@ -497,9 +503,14 @@
        "statement": "N = 2, q = (1/2,1/2), K12 = (ln 2)/2 gives the uniform measure on {-1,0,1}."
       },
       {
+       "name": "mixed_signs_K0",
+       "kind": "degenerate",
+       "statement": "q = (1,-1), K = 0: eps = 1/2, law delta_0/2 + (delta_2 + delta_{-2})/4, equal to the nonnegative-weight block q = (1,1), K = 0, hence in the class; for 0 <= K <= (ln 2)/2, eps >= 1/3 and the Lebowitz test excludes nothing. A mixed-sign representation alone does not exclude membership."
+      },
+      {
        "name": "mixed_signs",
        "kind": "non-example",
-       "statement": "q = (1,-1), coupling K: law (1-eps) delta_0 + (eps/2)(delta_2 + delta_{-2}) with eps = 1/(1+e^{2K}); for K > (ln 2)/2, eps < 1/3 and the single-site Lebowitz inequality fails."
+       "statement": "q = (1,-1), ferromagnetic coupling K >= 0: law (1-eps) delta_0 + (eps/2)(delta_2 + delta_{-2}) with eps = 1/(1+e^{2K}) in (0,1/2]; for K > (ln 2)/2, 0 < eps < 1/3 and the single-site Lebowitz inequality fails (K = (ln 3)/2: eps = 1/4, 4 > 3)."
       },
       {
        "name": "block_two_site",
@@ -561,7 +572,7 @@
       {
        "name": "lebowitz_test",
        "kind": "non-example",
-       "statement": "(1-eps) delta_0 + (eps/2)(delta_1 + delta_{-1}) with eps < 1/3 is even admissible but not in the class (fails integral phi^4 <= 3 (integral phi^2)^2)."
+       "statement": "(1-eps) delta_0 + (eps/2)(delta_1 + delta_{-1}) with 0 < eps < 1/3 is even admissible but not in the class (fails integral phi^4 <= 3 (integral phi^2)^2: eps > 3 eps^2; at eps = 1/4, 1/4 > 3/16). At eps = 0 it is delta_0, a member (0 = 0); at eps = 1/3 both sides are 1/3 and the test decides nothing."
       },
       {
        "name": "phi4_member",
@@ -708,7 +719,7 @@
      "id": "3.3",
      "kind": "theorem",
      "name": "fkg_gibbs",
-     "statement": "For finite V, ferromagnetic J, admissible rho and bounded measurable coordinatewise non-decreasing F, G: <FG> >= <F><G>; also for polynomially bounded non-decreasing F, G.",
+     "statement": "For finite V, ferromagnetic J, admissible rho and bounded measurable coordinatewise non-decreasing F, G: <FG> >= <F><G>; also for measurable polynomially bounded non-decreasing F, G.",
      "hypotheses": [
       "J >= 0",
       "rho admissible"
