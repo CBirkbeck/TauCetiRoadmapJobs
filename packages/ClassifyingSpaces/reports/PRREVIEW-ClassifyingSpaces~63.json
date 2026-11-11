@@ -1,0 +1,22 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-ClassifyingSpaces~63",
+  "head": "8a250a2ed48e22f4d3204e143b9527a549a66a53",
+  "pr": 1807,
+  "folder": "ClassifyingSpaces",
+  "date": "2026-11-11",
+  "findings": 2,
+  "blocking": 1,
+  "notes": "incremental re-review of 0 changed lines since 806b373. The folder, Suggested.lean and the pins are unchanged; the seven commits since touch sibling folders only. AlgebraicTopology's diff does not touch 8.8, and CharacteristicClasses' diff leaves the C1.1b and C1.5a citations of this README valid. R01 (P2) is not repaired and is carried: this pull request's AlgebraicTopology README lines 4275-4277 still prove [X,Bpi]_* = Hom(pi_1 X, pi) itself; line 149 still says nothing of ClassifyingSpaces is consumed; Needs line 4243 names none of it. The repair was tested on a scratch copy: AlgebraicTopology depcheck shows 0 problems before and after. New R02 (P3): the description gives no account of this roadmap's rewrite (Stages to Layers, the AlgebraicTopology and GeometricTopology suppliers dropped, 26 named Suggested.lean declarations dropped). Gate: the worker's gate passes, build included; my run has every content counter 0 and outside-folder=24, exactly the 12 sibling folders (diff without them empty). depcheck: 207 roadmaps, 1915 edges, 0 problems. lake env lean exits 0 with four sorry warnings; #check @ of all four matches signatures.md. 8 Hatcher locators re-read in hatcher-at (1B.8, 1B.9, 2.2, 3.H, 3H.1, 0.16, 4.22, A.4); 3 pinned declarations opened; 9 cross-roadmap citations resolved at this head; merge-tree with main is clean.",
+  "deferred": [
+   {
+    "id": "D01",
+    "severity": "P2",
+    "title": "The nerve-target case of Hatcher 1B.9 still has two owners (carried from r62 R01)",
+    "where": "AlgebraicTopology README, item 8.8 and its ClassifyingSpaces bullet, in this pull request",
+    "raised": "PRREVIEW-ClassifyingSpaces~63"
+   }
+  ]
+ }
+}
