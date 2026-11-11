@@ -158,7 +158,7 @@
       {
        "name": "stackDegree.id",
        "role": "lemma",
-       "statement": "deg(V/V) = 1 and deg of an etale surjection from an integral scheme U is e(V)[k(U):k(V)]."
+       "statement": "deg(V/V) = 1, and deg of a separated etale morphism from an integral scheme U to V is e(V)[k(U):k(V)]; such a morphism is dominant (open), and separated whenever U is (for instance U affine), since the composite U -> U x_V U -> U x U is a closed immersion and the second map, a base change of the diagonal of V, is separated, so the diagonal of U -> V is a closed immersion."
       },
       {
        "name": "stackDegree.representable_int",
@@ -191,6 +191,11 @@
        "name": "frobenius",
        "kind": "compatibility",
        "statement": "Frobenius t -> t^p on A^1 is representable of degree p."
+      },
+      {
+       "name": "separatedMorphism_notStacks",
+       "kind": "non-example",
+       "statement": "A chart A^1 -> L of the line L with a doubled origin is an open immersion, separated, of degree 1 = e(L)[k(t):k(t)] although L is not separated; the etale surjection L -> A^1 is not separated, so deg(L/A^1) is outside the definition and the formula, which would give 1, does not apply."
       }
      ]
     }
@@ -581,6 +586,7 @@
       "target:3.2",
       "target:3.3",
       "roadmap:VirtualFundamentalClass §1.5",
+      "gap:normal-cones-of-local-immersions",
       "roadmap:SchemeAndStackFoundations §5.5"
      ],
      "api": [
@@ -651,13 +657,19 @@
       "target:1.3",
       "target:3.1",
       "target:3.2",
-      "target:3.3"
+      "target:3.3",
+      "target:3.4"
      ],
      "api": [
       {
        "name": "rationalPushforward.comp",
        "role": "lemma",
        "statement": "(g f)_* = g_* f_*."
+      },
+      {
+       "name": "rationalPushforward.exteriorProduct",
+       "role": "lemma",
+       "statement": "For proper f : F' -> F and g : G' -> G, representable or not, (f x g)_*(a x b) = f_*a x g_*b on A_*(.)_Q with the exterior product of 3.4: write [V] x [W] = (deg(Y/V) deg(Y'/W))^{-1} (p x p')_*([Y] x [Y']) for proper coverings p : Y -> V, p' : Y' -> W (by 3.2 and 3.4; the degrees are positive), and apply 3.4 to the proper representable f p and g p' with functoriality."
       },
       {
        "name": "rationalPushforward.surjective",
@@ -712,7 +724,8 @@
       "target:3.5",
       "target:4.1",
       "roadmap:VirtualFundamentalClass §1.5",
-      "roadmap:VirtualFundamentalClass §2.5"
+      "roadmap:VirtualFundamentalClass §2.5",
+      "gap:normal-cones-of-local-immersions"
      ],
      "api": [
       {
@@ -877,7 +890,7 @@
      "id": "5.1",
      "kind": "definition",
      "name": "StackChow.intersectionProduct",
-     "statement": "For M smooth of pure dimension n, x . y := Delta^!(x x y) (Delta a regular local immersion of codimension n), and x ._f y := gamma_f^!(x x y) for f : F -> G with G smooth; A^*(M)_Q is a commutative associative graded Q-algebra with unit [M], flat representable pullback between smooth stacks is a ring map, g_*(g^*x . y) = x . g_*y for proper representable g, and on smooth schemes this is SchemeAndStackFoundations §5.6's product (x) Q. For smooth separated M of pure dimension and representable t : T -> M with T separated (equivalently t separated), every class in VirtualFundamentalClass §2.5's A^*(T -> M) commutes with all bivariant classes and evaluation on [M] is an isomorphism A^*(T -> M) = A_*(T)_Q.",
+     "statement": "For M smooth of pure dimension n, x . y := Delta^!(x x y) (Delta a regular local immersion of codimension n), and x ._f y := gamma_f^!(x x y) for f : F -> G with G smooth; A^*(M)_Q is a commutative associative graded Q-algebra with unit [M], flat representable pullback between smooth stacks is a ring map, g_*(g^*x . y) = x . g_*y for every proper g, with the pushforward of 4.1 (through (id x g)_* of exterior products, 4.1, and the commutation of 4.2's Gysin maps with proper pushforward), and on smooth schemes this is SchemeAndStackFoundations §5.6's product (x) Q. For smooth separated M of pure dimension and representable t : T -> M with T separated (equivalently t separated), every class in VirtualFundamentalClass §2.5's A^*(T -> M) commutes with all bivariant classes and evaluation on [M] is an isomorphism A^*(T -> M) = A_*(T)_Q.",
      "hypotheses": [
       "M smooth over k of pure dimension n",
       "for Poincare duality: M separated, T -> M representable with T separated"
@@ -888,6 +901,7 @@
      },
      "prerequisites": [
       "target:3.4",
+      "target:4.1",
       "target:4.2",
       "target:4.3",
       "roadmap:SchemeAndStackFoundations §5.6",
@@ -915,6 +929,11 @@
        "name": "BG_ring",
        "kind": "degenerate",
        "statement": "A^*(BG)_Q = Q in degree 0."
+      },
+      {
+       "name": "projectionFormula_nonRepresentable",
+       "kind": "computation",
+       "statement": "For g : BG -> Spec k (G finite etale, |G| > 1), x = [Spec k], y = [BG]: g^*x = [BG], g^*x . y = Delta^![BG x BG] = [BG], g_*(g^*x . y) = (1/|G|)[Spec k] = x . g_*y; a product weighted by the degree |G| of the finite etale diagonal, [BG].[BG] = |G|[BG], would give [Spec k] on the left."
       },
       {
        "name": "P1modMu2",
@@ -1414,6 +1433,7 @@
       "roadmap:VirtualFundamentalClass §1.6",
       "roadmap:VirtualFundamentalClass §2.5",
       "roadmap:VirtualFundamentalClass §9.1",
+      "gap:normal-cones-of-local-immersions",
       "roadmap:SchemeAndStackFoundations §5.5"
      ],
      "api": [],
@@ -1514,7 +1534,8 @@
       "roadmap:VirtualFundamentalClass §5.5",
       "roadmap:VirtualFundamentalClass §8.1",
       "roadmap:VirtualFundamentalClass §9.1",
-      "roadmap:VirtualFundamentalClass §9.5"
+      "roadmap:VirtualFundamentalClass §9.5",
+      "gap:normal-cones-of-local-immersions"
      ],
      "api": [
       {
@@ -1564,7 +1585,7 @@
      ],
      "locator": {
       "source": "li-tian1998",
-      "where": "Theorem 4.2, lines 1472-1474; proof, line 1566; fulton1998 Proposition 10.2"
+      "where": "Theorem 4.2, lines 1472-1474; its proof, lines 1486-1552, with the reduction by conservation of number to eta^![M_{X_T/T}]^vir = [M_{X_t}]^vir at lines 1501-1503, restated componentwise at lines 1565-1566 (proof of Theorem 4.2'); fulton1998 Proposition 10.2"
      },
      "prerequisites": [
       "target:4.1",
@@ -1895,7 +1916,7 @@
     "§9.5",
     "§9.6"
    ],
-   "what": "The base roadmap: stack dimension, cones and normal cones, Vistoli's rational Chow theory of separated stacks with bivariant groups and the canonical rational equivalence, relative cotangent complexes, cone stacks and h1/h0, intrinsic normal cones, obstruction theories, the virtual class of separated stacks with the resolution property, compatible pullback and functoriality over smooth bases, and the relative class; through gap:closed-substacks-of-stacks, the integral closed substacks of its §2.1."
+   "what": "The base roadmap: stack dimension, cones and normal cones, Vistoli's rational Chow theory of separated stacks with bivariant groups and the canonical rational equivalence, relative cotangent complexes, cone stacks and h1/h0, intrinsic normal cones, obstruction theories, the virtual class of separated stacks with the resolution property, compatible pullback and functoriality over smooth bases, and the relative class; through gap:closed-substacks-of-stacks, the integral closed substacks of its §2.1, and through gap:normal-cones-of-local-immersions, the normal cones and normal bundles of local immersions of its §1.5."
   },
   {
    "roadmap": "SchemeAndStackFoundations",
@@ -1990,6 +2011,20 @@
    "needs": "VirtualFundamentalClass §2.1 must state the theory of closed, reduced and integral closed substacks of a Deligne–Mumford stack, with reduced induced structures, the support bijection, base change and images, without separatedness.",
    "supplier": "VirtualFundamentalClass",
    "section": "§2.1"
+  },
+  {
+   "slug": "normal-cones-of-local-immersions",
+   "title": "Normal cones of local immersions of algebraic stacks",
+   "neededBy": [
+    "3.5",
+    "4.2",
+    "8.1",
+    "8.3"
+   ],
+   "detail": "VirtualFundamentalClass §1.5 forms normal cones of representable closed immersions only; its §2.4 and 3.5, 4.2, 8.1 and 8.3 here use the normal cone of a local immersion (representable, unramified, of finite type) that need not be closed, such as Spec k -> BG or the diagonal BG -> BG x BG for a finite etale G with |G| > 1. Needed: the normal cone C_{X/Y} of a local immersion X -> Y of algebraic stacks locally of finite type over k, by descent from charts U -> V that are closed immersions of schemes with V -> Y and U -> X smooth surjective and U -> X x_Y V etale (kresch1999b Lemma 2.2 and the paragraph after it, lines 218-237; vistoli1989 Lemma 1.19 and lines 508-526), equal to §1.5's cone for closed immersions; for Y' -> Y, a closed embedding C_{X'/Y'} in C_{X/Y} x_X X', an isomorphism for flat Y' -> Y (vistoli1989 lines 529-535); the closed embedding in the normal sheaf; and, for a regular local immersion of codimension d, the equality with the normal bundle N_{X/Y} of rank d (vistoli1989 lines 527-528; kresch1999b lines 236-237).",
+   "needs": "VirtualFundamentalClass §1.5 must state the normal cone C_{X/Y} of a local immersion X -> Y of algebraic stacks locally of finite type over k, obtained by descent from charts on which it is a closed immersion of schemes, with its closed embedding under base change (an isomorphism under flat base change), its closed embedding in the normal sheaf, and the normal bundle of a regular local immersion.",
+   "supplier": "VirtualFundamentalClass",
+   "section": "§1.5"
   }
  ]
 }
