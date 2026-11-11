@@ -8,7 +8,7 @@ title = "${\\rm Spin}(7)$ is unacceptable"
 year = 2023
 arxiv = "2303.15897v1"
 locator_scheme = "theorem"
-locator = "Lemma 3.10; Proposition 3.12; Example 1; Proposition 4.7; Corollary 4.8"
+locator = "Lemma 3.10; Proposition 3.12; Example 1; Proposition 4.7; Corollary 4.8; Lemma 5.9; Proposition 5.10; Lemma 8.2; Proposition 8.3; Proposition 8.4"
 url = "https://arxiv.org/abs/2303.15897v1"
 fetched_from = "https://arxiv.org/pdf/2303.15897v1"
 fetched_at = "2026-10-26T20:42:19Z"
@@ -17,7 +17,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-26"
 version_note = "arXiv v1"
-cited_for = ["0.7", "0.8"]
+cited_for = ["0.6", "0.7", "0.8"]
 
 [[source]]
 id = "GF"

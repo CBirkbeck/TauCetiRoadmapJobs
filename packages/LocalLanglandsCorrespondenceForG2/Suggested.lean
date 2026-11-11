@@ -14,8 +14,11 @@ Statable and stated here:
   two homomorphisms from a group into it whose octonion representations are completely reducible
   and isomorphic are conjugate by one automorphism;
 * the unacceptability of `Spin₇(ℂ)` (README §0.8): there are two homomorphisms from a finite
-  group to `Spin₇(ℂ)` that are conjugate element by element but not by one element. This is the
-  reason the PGSp₆ correspondence of Layer 10 takes values in weak parameter classes.
+  group to `Spin₇(ℂ)` that are conjugate element by element but not by one element. With its
+  local form (README §0.8: two `Spin₇`-valued parameters of `W_F × SL₂(ℂ)`, of finite image on
+  `W_F`, elementwise conjugate and not conjugate, for every `F`; Chenevier–Gan, Proposition 8.3),
+  which needs the `Spin₇`-valued parameters that the pins lack (see below), this is the reason
+  the PGSp₆ correspondence of Layer 10 takes values in weak parameter classes.
 
 Not statable at the pins, with what each lacks:
 
