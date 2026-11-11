@@ -59,6 +59,10 @@ def parabolic (K : Type*) [Field K] (d : ℕ) (J : Set (Fin d)) : Subgroup (GL (
       (flagSubspace K (d + 1) (k.val + 1))).comap
       (Matrix.GeneralLinearGroup.toLin (n := Fin (d + 1)) (R := K)).toMonoidHom
 
+/-- The standard parabolic subgroups increase with the set of simple reflections: `J ⊆ J'`
+implies `P_J ≤ P_{J'}`, since `P_{J'}` stabilizes fewer flag subspaces. This gives the projection
+`G/P_J → G/P_{J'}` along which the relation submodule of `generalizedSteinberg` is formed
+(README §0.3). -/
 theorem parabolic_mono (K : Type*) [Field K] (d : ℕ) {J J' : Set (Fin d)} (h : J ⊆ J') :
     parabolic K d J ≤ parabolic K d J' :=
   iInf_mono fun _ => iInf_mono' fun hk => ⟨fun hJ => hk (h hJ), le_rfl⟩
@@ -85,6 +89,10 @@ noncomputable def steinbergRelations (K : Type*) [Field K] [TopologicalSpace K]
     ⟨Subgroup.quotientMapOfLE (parabolic_mono K d (Set.subset_insert i J)),
       (QuotientGroup.isQuotientMap_mk _).continuous_iff.2 QuotientGroup.continuous_mk⟩)
 
+/-- The relation submodule `Σ_{i ∉ J} LC(G/P_{J ∪ {i}}, A)` of `LC(G/P_J, A)` is stable under the
+translation action of every `g ∈ GL_{d+1}(K)`: translating a function pulled back from
+`G/P_{J ∪ {i}}` gives the pullback of its translate, the projection being `G`-equivariant. This is
+the invariance needed to form the quotient representation `generalizedSteinberg` (README §0.3). -/
 theorem steinbergRelations_le_comap (K : Type*) [Field K] [TopologicalSpace K]
     [IsTopologicalRing K] (A : Type*) [CommRing A] (d : ℕ) (J : Set (Fin d))
     (g : GL (Fin (d + 1)) K) :

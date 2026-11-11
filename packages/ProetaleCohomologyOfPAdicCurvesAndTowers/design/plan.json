@@ -2333,7 +2333,7 @@
     "5.3"
    ],
    "detail": "CohomologyComparisonsPartII §§4.4–4.5 state the bounded period comparison for log schemes; CDN-STEIN Corollary 3.46 and Proposition 6.1 use it for p-adic formal and weak formal semistable schemes.",
-   "needs": "The bounded comparison H^q(S′_n(r))→R^qΨ(L_EN(r)/p^n), q≤r, with exponent A(e,p,r), for p-adic formal and weak formal semistable schemes over O_K.",
+   "needs": "The bounded comparison H^q(S′_n(r))→R^qΨ(L_EN(r)/p^n), q≤r, for p-adic formal and weak formal semistable schemes over O_K and their base changes to the integers of finite extensions of K, with exponent A(e,p,r) and, when the base field has enough roots, the refined exponent Nr+c_p.",
    "supplier": "CohomologyComparisonsPartII",
    "section": "§§4.4–4.5"
   },
