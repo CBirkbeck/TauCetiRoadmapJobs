@@ -329,7 +329,7 @@ sha256 = "0bed3a87534ac17a31cd9bd897c57d81910ac28be21df5a0d80465b6766da57a"
 licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-05"
-cited_for = ["1.2 closed and integral substacks", "1.3 dimension", "8.5 dimension of a stack smooth over a base of pure dimension"]
+cited_for = ["1.2 closed and integral substacks", "1.3 dimension", "7.2 pointwise dimension of a cone stack and its supremum", "8.5 dimension of a stack smooth over a base of pure dimension"]
 
 [[source]]
 id = "deligne-mumford1969"

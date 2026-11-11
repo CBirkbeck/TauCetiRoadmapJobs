@@ -1406,10 +1406,21 @@ from a cone and derives the form `[C/E]` from its Proposition 1.4, which needs t
 vector bundle stacks (Definition 1.9, line 482); the abelian hull
 (Proposition 1.10, line 487); `E`-cone stacks and their actions (Definition 1.11, line 492);
 short exact sequences of cone stacks and their local description (Definition 1.12, line 505;
-Proposition 1.13, line 515). Define the dimension of a cone stack through a local presentation,
-`dim 𝒞 := dim C − rk E` (stacks-properties Definition 12.2), and pure dimension. Prove: for a
-vector bundle stack `ℰ ≅ [E_1/E_0]` with a global presentation and a closed subcone stack
-`𝒞 ⊆ ℰ` of pure dimension `c`, the fibre product `C := 𝒞 ×_ℰ E_1` is a closed subcone of `E_1`,
+Proposition 1.13, line 515). Define the dimension of a cone stack `𝒞` at a point `z ∈ |𝒞|`
+through a local presentation `[C/E] ≅ 𝒞|_U` over an étale `U → X`: for a point `ξ ∈ C` mapping to
+`z` and lying over `y ∈ U`, `dim_z 𝒞 := dim_ξ C − rk_y E`. This is the dimension of the locally
+Noetherian stack `𝒞` at `z` in the sense of stacks-properties Definition 12.2 (tag 0AFN, line
+1404): local presentations over an étale covering `{U_α → X}` give a smooth surjection
+`∐_α C_α → 𝒞` (each `C_α → 𝒞|_{U_α}` is an `E_α`-torsor and `𝒞|_{U_α} → 𝒞` is étale), and the
+fibre at `ξ` of its groupoid has an open and closed part through the identity point isomorphic to
+the affine space `E_y ⊗ κ(ξ)`, of dimension `rk_y E`; so `dim_z 𝒞` depends neither on the
+presentation nor on `ξ` (Lemma 12.1, tag 0AFM, line 1374). Define `dim 𝒞 := sup_z dim_z 𝒞` over
+`z ∈ |𝒞|` (Definition 12.3, tag 0AFP, line 1413), and say that `𝒞` has *pure dimension `c`* if
+`dim_z 𝒞 = c` at every `z ∈ |𝒞|`. Where `rk E` is constant on `U` and `C` has pure dimension `n`,
+`𝒞|_U` has pure dimension `n − rk E`; neither a global difference `dim C − rk E` with varying rank
+nor a single presentation whose image misses a component of `X` computes `dim 𝒞` (Checks).
+Prove: for a vector bundle stack `ℰ ≅ [E_1/E_0]` with a global presentation and a closed subcone
+stack `𝒞 ⊆ ℰ` of pure dimension `c`, the fibre product `C := 𝒞 ×_ℰ E_1` is a closed subcone of `E_1`,
 stable under `E_0`, of dimension `c + rk E_0` at every point, hence of pure dimension `c + a` over
 each open and closed part of `X` on which the locally constant `rk E_0` equals `a`
 (behrend-fantechi1997 lines 1289–1298).
@@ -1417,8 +1428,15 @@ each open and closed part of `X` on which the locally constant `rk E_0` equals `
 
 **Checks.**
 
-- For a vector bundle `E`, the classifying stack `BE = [X/E]` is a vector bundle stack of dimension
-  `dim X − rk E`, with local presentation the zero cone `X` (behrend-fantechi1997 lines 478–481).
+- For a vector bundle `E` on `X`, the classifying stack `BE = [X/E]` is a vector bundle stack with
+  local presentation the zero cone `X` (behrend-fantechi1997 lines 478–481); `|BE| = |X|`,
+  `dim_x BE = dim_x X − rk_x E` at every point and `dim BE = sup_x (dim_x X − rk_x E)`, which is
+  `n − r` when `X` has pure dimension `n` and `E` constant rank `r` (for `X = Spec k`, `E = 𝔾_a`:
+  `dim B𝔾_a = −1`). On `X = Spec k ⊔ ℙ¹` with `E = 0` on the point and `E = T_{ℙ¹}` on `ℙ¹`, the
+  local dimensions are `0 − 0 = 0` and `1 − 1 = 0`, so `BE` has pure dimension `0` and
+  `dim BE = 0`, while the global `dim X = 1` minus the local rank would give `1` on the point and
+  `0` on `ℙ¹`. For `E = 0` on the same `X`, `BE = X`, and the presentation over the open point
+  alone sees only the local dimension `0`, not `dim BE = 1`.
 - A smooth surjective equivariant morphism from a cone does not make a cone stack. Over
   `X = Spec k`, let `𝔸¹` act on `B𝔾_a` through the endomorphisms `x ↦ λ²x` of `𝔾_a`. The zero cone
   `Spec k → B𝔾_a` (the trivial torsor) is smooth, surjective and equivariant, so this stack meets
@@ -1785,7 +1803,9 @@ over a non-reduced base (Checks). Prove that `N_{M/𝔐} = B T_{M/𝔐}` when `M
 **Checks.**
 
 - `M → 𝔐` étale: `N_{M/𝔐} = M` (the zero cone stack).
-- `M` smooth over `Spec k` of dimension `n`: `N_M = B T_M`, of dimension `n − n = 0`.
+- `M` smooth over `Spec k`: `N_M = B T_M`, of dimension `dim_x M − rk_x T_M = 0` at every point
+  (7.2), hence of pure dimension `0` also when `M` is not of pure dimension (for
+  `M = Spec k ⊔ ℙ¹`, `0 − 0` and `1 − 1`).
 - `M = Spec k[x, y]/(x, y)² ⊆ 𝔸²`: `N_M = [C(I/I²)/T_{𝔸²}|_M]` has a fibre `[𝔸³/𝔸²]` over the point,
   of dimension `1`; `I/I²` needs `3` generators over `A = k[x, y]/(x, y)²` but has length `7`,
   not `3 · length(A) = 9`, so it is not free, `τ^{≥−1}L_M` is not perfect and `N_M` is not a vector
@@ -1809,9 +1829,12 @@ embedding (Corollary 3.9, line 972; Definition 3.10, line 983), the relative int
 Prove:
 
 - `C_{M/𝔐}` has pure dimension `m` and abelian hull `N_{M/𝔐}` (Theorem 3.11, line 985, relative
-  form line 1656), since `C_{U/W}` has pure dimension `dim W` (4.2) and
-  `C_{U/W} → [C_{U/W}/T_{W/𝔐}|_U]`
-  is smooth of relative dimension `dim W − m`;
+  form line 1656), since on the open and closed part `W_d ⊆ W` where `W → 𝔐` has relative
+  dimension `d`, `W_d` has pure dimension `m + d` (through a smooth atlas of `𝔐`,
+  stacks-properties Lemma 12.1, line 1374), so `C_{U_d/W_d}`, with `U_d := U ×_W W_d`, has pure
+  dimension `m + d` (4.2), and it presents `C_{M/𝔐}|_{U_d}` as its quotient by `T_{W/𝔐}|_{U_d}`, of
+  rank `d`, giving `dim_z C_{M/𝔐} = (m + d) − d = m` at every point `z` (7.2); a single difference
+  `dim W − m` would be wrong when the relative dimension of `W` varies;
 - for a closed immersion `U → W` of locally Noetherian schemes with ideal `I`, the normal cone
   `C_{U/W}` is a vector bundle over `U` iff the immersion is regular: "if" is
   SchemeAndStackFoundations §5.5 (`conormal_regular`, `normalCone_eq_normalBundle`); for "only
@@ -2190,8 +2213,9 @@ so that each summand lies in `A_{m+a−(a−r)}(M_a)_ℚ` and `vd = m + rk F^0 �
 **Checks.**
 
 - `M` smooth over `𝔐` and `E = Ω_{M/𝔐}[0]` with `F^• = [0 → Ω_{M/𝔐}]`: `F_1 = M`,
-  `C_{M/𝔐} = B T_{M/𝔐} = h¹/h⁰(E^∨)`, `C(F^•) = M`, and `[M, E]^vir = [M] ∈ A_{dim M}`, with
-  `dim M = m + rk Ω_{M/𝔐}`.
+  `C_{M/𝔐} = B T_{M/𝔐} = h¹/h⁰(E^∨)`, `C(F^•) = M`, and `[M, E]^vir = [M] ∈ A_{m+r}(M)_ℚ`:
+  `Ω_{M/𝔐}` has the constant rank `r` of this layer, so `M` has dimension `m + r = vd` at every
+  point.
 - `M = ℙ¹`, `E = [O(1) --0--> Ω_{ℙ¹}]` over `Spec k`: `F_1 = C(O(1))`, the total space of `O(−1)`,
   `C(F^•)` is its zero section, and `[ℙ¹, E]^vir = 0^!0_*[ℙ¹] = c_1(O(−1)) ∩ [ℙ¹]`, of degree `−1`.
   With `F_1` taken as the total space of `O(1)` (the wrong dualisation) the degree would be `+1`.
@@ -2527,8 +2551,16 @@ lines 1583–1599; behrend1997 lines 148–153, the relative form). *Needs:* 8.3
 **Checks.**
 
 - `X = Spec k`: `E = 0` and `φ = 0`.
-- `𝔅 = Spec k`, `M = Mor(C, X)`: at a point `[F]`, `h^0(φ)` is dual to the tangent map
-  `H⁰(C, F^*T_X) → T_{[F]}Mor(C, X)`, which is the classical isomorphism.
+- `𝔅 = Spec k`, `M = Mor(C, X)`: at a point `[F]`, the fibre `H⁰(C, F^*T_X)^∨ → T^*_{[F]}M` of
+  `h^0(φ)` is dual to the tangent map `T_{[F]}M → H⁰(C, F^*T_X)` obtained by differentiating the
+  universal map (a tangent vector `Spec k[ε] → M` gives a first-order deformation of `F`, whose
+  difference from the trivial one is a section of `F^*T_X`), which is the classical isomorphism.
+- A scaled coordinate pins the direction. Over `ℚ`, every map `ℙ¹ → 𝔸¹` is constant, so
+  `M = Mor(ℙ¹, 𝔸¹) ≅ 𝔸¹`; take the coordinate `t` on `M` for which the universal map is `x = 2t`.
+  Then `e` sends `F^*dx` to `2 dt`, and the fibre of `h^0(φ)` is `dx ↦ 2 dt`, the dual of the
+  tangent map `∂_t ↦ 2 ∂_x`. The inverse isomorphism `∂_x ↦ (1/2) ∂_t` dualises to
+  `dt ↦ (1/2) dx`, a map out of the cotangent space of `M`, in the direction opposite to `h^0(φ)`
+  and with the coefficient `1/2` in place of `2`. The comparison of 11.4 is then `φ_g(c) = 2c`.
 - The composite `F^*Ω_X → π^*Ω_{M/𝔅}` on `h^0` is the differential of `F` in the direction of the
   base; for `M → 𝔅` étale and `X = Spec k` it is `0 → 0`.
 
