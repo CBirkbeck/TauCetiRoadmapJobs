@@ -2,7 +2,7 @@
 
 Reviewers, red-team passes and errata jobs record every mistake they find in a source while checking a roadmap's locators: misprints (slips whose intended meaning is clear), errors (a false statement or proof step) and gaps (a step the source does not justify), each with the roadmap, the board pull request or errata job and the head that reported it. Collected by the board sync from the `## Source issues` sections of review, red-team and errata comments; the data is in `errata/source-issues.json`.
 
-11908 mistakes recorded on the board: 6825 misprints, 3110 errors, 1509 gaps, 464 unparsed bullets.
+11911 mistakes recorded on the board: 6827 misprints, 3110 errors, 1510 gaps, 464 unparsed bullets.
 Errata jobs have read the cited sources of 60 roadmaps; in those of 2 they found no mistake.
 The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explorer/`: 1525 awaiting review, 13582 confirmed, 228 rejected.
 
@@ -5513,6 +5513,8 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 ## dejongvanderput1996
 
 - **Misprint** at the proof of Corollary 3.7.5, printed page 39: the source says the identification of the cohomology of `Sp(k)` with Galois cohomology uses a Lemma 3.3.2; it should be Corollary 3.3.2, since §3.3 has Lemma 3.3.1 and Corollary 3.3.2 only; affects nothing. Found by GaloisActionOnEtaleCohomology (#13862 at bce80bd, 2026-11-11, claude fable).
+- **Gap** at the proof of Corollary 3.7.5, printed page 39: the source says the cohomology of the geometric fibre equals the stalk of the direct image when the sheaf is overconvergent, while the corollary is stated for any abelian sheaf; it should be either an overconvergence hypothesis in the statement or an argument for general sheaves; affects the proof. Found by GaloisActionOnEtaleCohomology (#13862 at b8df66d, 2026-11-11, claude fable).
+- **Misprint** at the proof of Corollary 3.7.5, printed page 39: the source says the comparison with Galois cohomology uses a Lemma 3.3.2; it should be Corollary 3.3.2, since §3.3 has Lemma 3.3.1 and Corollary 3.3.2 only; affects nothing. Found by GaloisActionOnEtaleCohomology (#13862 at b8df66d, 2026-11-11, claude fable).
 
 ## Deligne
 
@@ -14240,6 +14242,7 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 
 ## stacks03N1
 
+- **Misprint** at Example 59.3 (Tag 03QV), items (3) and (4): the source says the sheaves `𝔾_a` and `μ_n` are restricted to the spectrum of the separable closure; it should be the small étale site of `Spec(K)`, as in item (2); affects nothing; <!-- tauceti-roadmap-review {"agent": "claude", "head": "b8df66d78d4d0543435058f136cc7df58ff0e0c4", "job": "REV-PKG-GaloisActionOnEtaleCohomology~3", "model": "fable", "worker": "chris-x8"} -->. Found by GaloisActionOnEtaleCohomology (#13862 at b8df66d, 2026-11-11, claude fable).
 - **Misprint** at Example 59.3 (Tag 03QV), items (3) and (4), page 92: the source says the sheaves `𝔾_a` and `μ_n` are restricted to the spectrum of the separable closure; it should be the small étale site of `Spec(K)`, as in item (2); affects nothing; <!-- tauceti-roadmap-review {"agent": "claude", "head": "bce80bd54e706a21c8c887212191ff6e6edfbfb7", "job": "REV-PKG-GaloisActionOnEtaleCohomology~2", "model": "fable", "worker": "chris-x10"} -->. Found by GaloisActionOnEtaleCohomology (#13862 at bce80bd, 2026-11-11, claude fable).
 - **Misprint** at Example 59.3 (Tag 03QV), printed page 92, lines 4240–4241: the source says the additive and roots-of-unity sheaves are restricted to the separable closure's spectrum; it should be restriction to the base field's étale site, followed by evaluation at the separable geometric stalk; affects nothing; <!-- tauceti-roadmap-review {"agent": "codex", "head": "ca121b80941bc80073319e6745737f2ed6644aae", "job": "REV-DESIGN-GaloisActionOnEtaleCohomology~4", "model": "gpt-6-astra", "worker": "chris-4"} -->. Found by GaloisActionOnEtaleCohomology (#13766 at ca121b8, 2026-11-11, codex gpt-6-astra).
 
