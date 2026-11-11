@@ -313,6 +313,13 @@ At Tau Ceti `2fd255d997f47c0b5d834ee416c7015d55444ce5`:
   with the counting measure on a discrete group this is an invariant mean on `ℓ∞(Γ)`.
   `TauCeti.not_amenable_freeGroup` (`TauCeti/GroupTheory/Amenable/FreeGroup.lean`): a free group
   on a nontrivial basis, with the discrete topology, is not amenable.
+- `LinearMap.exists_isFiniteMeasure_integral_characterSpace_eq`
+  (`TauCeti/Analysis/CStarAlgebra/CharacterSpaceMeasure.lean`): on a unital commutative
+  C*-algebra `A` (`CommCStarAlgebra`) with the Borel structure on its character space `Ω`, a
+  linear functional `τ` that is nonnegative on every `a*a` is `a ↦ ∫ ω(a) dμ(ω)` for a finite
+  inner regular measure `μ` on `Ω`; evaluating at `1` gives total mass `τ(1)`, so `μ` is a
+  probability measure when `τ` is a state. Nothing is asserted for nonunital algebras or about
+  the uniqueness of `μ`.
 
 Neither Tau Ceti nor Mathlib supplies the normalized trace `tr_k` or the 2-norm on `CStarMatrix`,
 the closed trace kernel of a nonunital algebra, the vector trace on `M_τ`, the right
@@ -1784,15 +1791,17 @@ Prove that every tracial state of a finite-dimensional C*-algebra is quasidiagon
 amenable, with approximants the unital embeddings `ρ_n` of §1.6, which are star homomorphisms with
 `‖tr ∘ ρ_n − τ‖ → 0` (brown2006, Lemma 2.5, line 486). Prove that every tracial state of a
 commutative C*-algebra is quasidiagonal and uniform amenable
-(`isQuasidiagonalTrace_of_commute`): for unital `A ≅ C(Ω)` (`gelfandStarTransform`), a state is a
-regular Borel probability measure `μ` (`RealRMK.rieszMeasure`), which is a weak-star limit of
-finitely supported measures with rational weights (a partition of unity `(h_i)` subordinate to a
-cover on which given functions oscillate by less than `ε`, points `x_i`, and weights near
-`μ(h_i)`), and such a measure is `tr_n ∘ φ` for the star homomorphism
-`φ(f) = diag(f(x_{i(1)}), …, f(x_{i(n)}))` with repetitions; uniform amenability holds because
-commutative algebras are nuclear (§5.3; CStarAlgebras C6.5); nonunital commutative algebras pass
-through the unitization (§3.2). *Needs:* §1.6, §3.2–§3.3, §5.3; CStarAlgebras C6.5; Mathlib
-`gelfandStarTransform`, `RealRMK.rieszMeasure`, `PartitionOfUnity`.
+(`isQuasidiagonalTrace_of_commute`): for unital `A`, a state is `a ↦ ∫ ω(a) dμ(ω)` for a
+probability measure `μ` on the character space `Ω` (Tau Ceti
+`LinearMap.exists_isFiniteMeasure_integral_characterSpace_eq`; `A ≅ C(Ω)` by
+`gelfandStarTransform`), which is a weak-star limit of finitely supported measures with rational
+weights (a partition of unity `(h_i)` subordinate to a cover on which given functions oscillate by
+less than `ε`, points `x_i`, and weights near `μ(h_i)`), and such a measure is `tr_n ∘ φ` for the
+star homomorphism `φ(f) = diag(f(x_{i(1)}), …, f(x_{i(n)}))` with repetitions; uniform
+amenability holds because commutative algebras are nuclear (§5.3; CStarAlgebras C6.5); nonunital
+commutative algebras pass through the unitization (§3.2). *Needs:* §1.6, §3.2–§3.3, §5.3; CStarAlgebras C6.5; Tau Ceti
+`LinearMap.exists_isFiniteMeasure_integral_characterSpace_eq`; Mathlib `gelfandStarTransform`,
+`PartitionOfUnity`.
 
 **Checks.**
 
@@ -1896,8 +1905,9 @@ API:
 
 CStarAlgebras C2.1, C6.5; CStarClassification CL2 (§2.1), CL3 (§3.4, §3.5);
 OperatorAlgebraDynamics D2, D2.FreeGroups; VonNeumannAlgebras V0; Tau Ceti `TauCeti.Amenable`,
-`TauCeti.Amenable.of_lpTop`, `TauCeti.not_amenable_freeGroup`; Mathlib `gelfandStarTransform`,
-`RealRMK.rieszMeasure`, `PartitionOfUnity`, `lp`, `FreeGroup`. Within this roadmap: Layers 1–6.
+`TauCeti.Amenable.of_lpTop`, `TauCeti.not_amenable_freeGroup`,
+`LinearMap.exists_isFiniteMeasure_integral_characterSpace_eq`; Mathlib `gelfandStarTransform`,
+`PartitionOfUnity`, `lp`, `FreeGroup`. Within this roadmap: Layers 1–6.
 
 ## Layer 8: Quasidiagonality and subalgebras of simple AF algebras
 
