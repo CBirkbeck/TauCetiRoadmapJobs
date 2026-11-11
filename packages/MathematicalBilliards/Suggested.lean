@@ -21,9 +21,10 @@ Stated here:
 * Layer 6: Birkhoff's theorem that every convex table of class `C^k`, `k ≥ 1`, has two
   geometrically distinct periodic billiard trajectories of every rotation type `(p, q)`
   (`ConvexTable.exists_two_periodic_orbits`);
-* Layer 12: the continuous-time mean ergodic projection theorem for strongly continuous unitary
-  groups, with the atomic-mass identity (`exists_tendsto_twistedAverage`), and the eigenfunction
-  criterion for weak mixing of measure-preserving actions of `ℝ` (`isWeaklyMixing_iff`).
+* Layer 12: Wiener's lemma for finite measures on `ℝ` (`tendsto_average_norm_charFun_sq`), the
+  continuous-time mean ergodic projection theorem for strongly continuous unitary groups, with the
+  atomic-mass identity (`exists_tendsto_twistedAverage`), and the eigenfunction criterion for weak
+  mixing of measure-preserving actions of `ℝ` (`isWeaklyMixing_iff`).
 
 Not statable at the pins, and therefore absent:
 
@@ -213,16 +214,17 @@ theorem ConvexTable.exists_lipschitzWith_of_isRotationalInvariantCurve {k : ℕ�
 
 /-! ## Layer 6: Birkhoff periodic orbits -/
 
-/-- A periodic configuration of type `(p, q)` of a convex table: a sequence of parameters
-`s : ℤ → ℝ` with `s (j + q) = s j + p ℓ` and `0 < s (j + 1) − s j < ℓ`, satisfying the reflection
-law at every vertex: the unit chords `u (j − 1)` and `u j`, where `u j` points from `γ (s j)` to
-`γ (s (j + 1))`, have equal components along the tangent `γ' (s j)`. These are the vertex
-sequences of the billiard trajectories of rotation type `(p, q)`. -/
+/-- A periodic configuration of type `(p, q)` of a convex table: for `q ≥ 1`, a sequence of
+parameters `s : ℤ → ℝ` with `s (j + q) = s j + p ℓ` and `0 < s (j + 1) − s j < ℓ` (which force
+`0 < p < q`), satisfying the reflection law at every vertex: the unit chords `u (j − 1)` and `u j`,
+where `u j` points from `γ (s j)` to `γ (s (j + 1))`, have equal components along the tangent
+`γ' (s j)`. These are the vertex sequences of the billiard trajectories of rotation type
+`(p, q)`. -/
 def ConvexTable.IsPeriodicConfiguration {k : ℕ∞} {ℓ : ℝ} [Fact (0 < ℓ)] (T : ConvexTable k ℓ)
     (p q : ℕ) (s : ℤ → ℝ) : Prop :=
   let u : ℤ → ℂ := fun j =>
     ‖T.toFun (s (j + 1)) - T.toFun (s j)‖⁻¹ • (T.toFun (s (j + 1)) - T.toFun (s j))
-  (∀ j : ℤ, s (j + q) = s j + p * ℓ) ∧
+  0 < q ∧ (∀ j : ℤ, s (j + q) = s j + p * ℓ) ∧
     (∀ j : ℤ, s j < s (j + 1) ∧ s (j + 1) < s j + ℓ) ∧
     ∀ j : ℤ, inner ℝ (u (j - 1)) (deriv T.toFun (s j)) = inner ℝ (u j) (deriv T.toFun (s j))
 
@@ -237,6 +239,25 @@ theorem ConvexTable.exists_two_periodic_orbits {k : ℕ∞} {ℓ : ℝ} [Fact (0
   sorry
 
 /-! ## Layer 12: Weak mixing of flows -/
+
+/-- Weak mixing of an action of `ℝ` on a measure space: for all measurable `A` and `B`, the time
+average over `[0, T]` of `|μ((t +ᵥ ·)⁻¹' A ∩ B) − μ(A) μ(B)|` tends to `0` as `T → ∞` (Hochman2012,
+Theorem 6.1.7, for `ℤ`-actions; ChaikaForni2026, abstract and Theorem 1.1, p. 1, for billiard
+flows). -/
+def IsWeaklyMixing {X : Type*} [MeasurableSpace X] [AddAction ℝ X] (μ : Measure X) : Prop :=
+  ∀ A B : Set X, MeasurableSet A → MeasurableSet B →
+    Tendsto (fun T : ℝ => T⁻¹ * ∫ t in (0 : ℝ)..T,
+        |μ.real ((fun x => t +ᵥ x) ⁻¹' A ∩ B) - μ.real A * μ.real B|) atTop (𝓝 0)
+
+/-- Wiener's lemma on the line: for a finite Borel measure `σ` on `ℝ`, the time averages
+`T⁻¹ ∫₀ᵀ |charFun σ t|² dt` of the squared modulus of its characteristic function
+`charFun σ t = ∫ exp(itξ) dσ(ξ)` converge, as `T → ∞`, to the sum `Σ_ξ σ({ξ})²` of the squared
+masses of its atoms; all but countably many terms of the sum vanish and it is at most `σ(ℝ)²`
+(Hochman2012, Proposition 6.6.3, for the atomless discrete analogue on the circle). -/
+theorem tendsto_average_norm_charFun_sq (σ : Measure ℝ) [IsFiniteMeasure σ] :
+    Tendsto (fun T : ℝ => T⁻¹ * ∫ t in (0 : ℝ)..T, ‖charFun σ t‖ ^ 2)
+      atTop (𝓝 (∑' ξ : ℝ, σ.real {ξ} ^ 2)) := by
+  sorry
 
 /-- The continuous-time mean ergodic projection theorem: for a strongly continuous unitary group
 `U` on a complex Hilbert space, a frequency `a` and a vector `v`, the twisted averages
@@ -257,15 +278,6 @@ theorem exists_tendsto_twistedAverage {H : Type*} [NormedAddCommGroup H] [InnerP
         (∀ t : ℝ, ⟪v, U t v⟫_ℂ = charFun σ t) →
         ‖w‖ ^ 2 = σ.real {2 * Real.pi * a} := by
   sorry
-
-/-- Weak mixing of an action of `ℝ` on a measure space: for all measurable `A` and `B`, the time
-average over `[0, T]` of `|μ((t +ᵥ ·)⁻¹' A ∩ B) − μ(A) μ(B)|` tends to `0` as `T → ∞` (Hochman2012,
-Theorem 6.1.7, for `ℤ`-actions; ChaikaForni2026, abstract and Theorem 1.1, p. 1, for billiard
-flows). -/
-def IsWeaklyMixing {X : Type*} [MeasurableSpace X] [AddAction ℝ X] (μ : Measure X) : Prop :=
-  ∀ A B : Set X, MeasurableSet A → MeasurableSet B →
-    Tendsto (fun T : ℝ => T⁻¹ * ∫ t in (0 : ℝ)..T,
-        |μ.real ((fun x => t +ᵥ x) ⁻¹' A ∩ B) - μ.real A * μ.real B|) atTop (𝓝 0)
 
 /-- The eigenfunction criterion: a jointly measurable measure-preserving action of `ℝ` on a
 probability space is weakly mixing exactly when every measurable eigenfunction, a function `f`

@@ -1,6 +1,6 @@
 # Roadmap: mathematical billiards
 
-**Summary.** This roadmap builds the two classical planar billiard systems as dynamical systems. For a strictly convex table of class `C^k` (`k ≥ 1`, curvature allowed to vanish) it constructs the billiard ball map on the phase cylinder `A = (ℝ/ℓℤ) × (0, π)`, proves that it is a homeomorphism (a `C^{k−1}` diffeomorphism for `k ≥ 2`) extending to the closed cylinder, an exact area-preserving monotone twist map with the chord length as generating function and `sin δ dδ ds` as invariant measure, and identifies it, for smooth tables, with the map of SymplecticGeometry/CotangentLagrangian C3.1. On top of a general theory of twist maps of the annulus it proves Birkhoff's theorem that every rotational invariant curve is the graph of a function, Lipschitz for the billiard map (by Fathi's topological argument from non-wandering), defines rotation numbers through Mathlib's `CircleDeg1Lift.translationNumber`, and proves Birkhoff's theorem that every table has two geometrically distinct periodic orbits of each rotation type `(p, q)`. For a polygonal table, possibly with polygonal holes, it constructs the phase space, the singular set, the almost-everywhere billiard flow as an honest measure-preserving action of `ℝ`, the finite reflection group of a rational table and the resulting non-ergodicity, translation surfaces with their directional flows, the Katok–Zemlyakov surface with its cone angles and genus, and the conjugacy of the billiard flow in a fixed direction class with a straight-line flow. It closes with weak mixing of measure-preserving flows: Wiener's lemma on `ℝ`, the continuous-time mean ergodic projection with its spectral atomic mass, and the eigenfunction criterion. The end theorems are invariance of `sin δ dδ ds` under the billiard map, Birkhoff's graph theorem for rotational invariant curves, the existence of two Birkhoff orbits of every type `(p, q)`, measure preservation and reversibility of the polygonal billiard flow, the unfolding theorem for rational polygons and the eigenfunction criterion for weak mixing.
+**Summary.** This roadmap builds the two classical planar billiard systems as dynamical systems. For a strictly convex table of class `C^k` (`k ≥ 1`, curvature allowed to vanish) it constructs the billiard ball map on the phase cylinder `A = (ℝ/ℓℤ) × (0, π)` and proves that it is a homeomorphism extending to a homeomorphism of the closed cylinder whose lift is a positive topological twist; for `k ≥ 2` it proves that the map is a `C^{k−1}` diffeomorphism and an exact area-preserving monotone twist map with the chord length as generating function and `sin δ dδ ds` as invariant measure (at `k = 1` the map need not be differentiable, §2.2); and it identifies the map, for smooth tables, with the map of SymplecticGeometry/CotangentLagrangian C3.1. On top of a general theory of twist maps of the annulus it proves Birkhoff's theorem that every rotational invariant curve is the graph of a function, Lipschitz for the billiard map of a table of class `C^k`, `k ≥ 2` (by Fathi's topological argument from non-wandering), defines rotation numbers through Mathlib's `CircleDeg1Lift.translationNumber`, and proves Birkhoff's theorem that every table has two geometrically distinct periodic orbits of each rotation type `(p, q)`. For a polygonal table, possibly with polygonal holes, it constructs the phase space, the singular set, the almost-everywhere billiard flow as an honest measure-preserving action of `ℝ`, the finite reflection group of a rational table and the resulting non-ergodicity, translation surfaces with their directional flows, the Katok–Zemlyakov surface with its cone angles and genus, and the conjugacy of the billiard flow in a fixed direction class with a straight-line flow. It closes with weak mixing of measure-preserving flows: Wiener's lemma on `ℝ`, the continuous-time mean ergodic projection with its spectral atomic mass, and the eigenfunction criterion. The end theorems are invariance of `sin δ dδ ds` under the billiard map of a table of class `C^k`, `k ≥ 2`, Birkhoff's graph theorem for rotational invariant curves, the existence of two Birkhoff orbits of every type `(p, q)`, measure preservation and reversibility of the polygonal billiard flow, the unfolding theorem for rational polygons and the eigenfunction criterion for weak mixing.
 
 ## Scope and ownership
 
@@ -89,7 +89,7 @@ Not part of this roadmap: caustics, the string construction, the elliptic table 
 
 Layer 1 fixes convex tables and their elementary geometry; Layer 2 constructs the billiard ball map and Layer 3 its generating function and invariant measure. Layer 4 is the general theory of twist maps of the annulus, which the billiard map instantiates. Layer 5 proves Birkhoff's graph theorem and builds rotation numbers; Layer 6 proves the existence of two Birkhoff orbits of each type. Layers 7–8 construct polygonal tables, the singular set and the billiard flow; Layer 9 treats rational tables. Layer 10 is a self-contained theory of translation surfaces and Layer 11 the Katok–Zemlyakov surface with the unfolding conjugacy. Layer 12 is weak mixing of flows. Layers 1–6 and 7–11 are independent of each other; Layer 12 depends only on the measure-theoretic conventions and is applied to Layers 9–11 in §12.6. The acceptance test `Suggested.lean` states the headline theorems of Layers 3, 5, 6 and 12 on native carriers; the polygonal billiard flow, the translation surfaces with their directional flows and the Katok–Zemlyakov surface are constructions of Layers 7–11, specified below with their intended signatures, so the polygonal headline theorems are targets of this README alone.
 
-The Lean names in backticks below that are not Mathlib, Tau Ceti or supplier declarations are the declarations of `Suggested.lean`, in the namespace `TauCetiRoadmap.MathematicalBilliards`: the definitions `ConvexTable`, `ConvexTable.billiardLift`, `ConvexTable.billiardMap`, `phaseMeasure`, `IsTwistLift`, `nonwanderingSet`, `IsRotationalInvariantCurve`, `ConvexTable.IsPeriodicConfiguration` and `IsWeaklyMixing`, and the theorems `ConvexTable.measurePreserving_billiardMap` (§3.3), `isGraph_of_isRotationalInvariantCurve` and `ConvexTable.exists_lipschitzWith_of_isRotationalInvariantCurve` (§5.3), `ConvexTable.exists_two_periodic_orbits` (§6.4), `exists_tendsto_twistedAverage` (§12.4.1) and `isWeaklyMixing_iff` (§12.5).
+The Lean names in backticks below that are not Mathlib, Tau Ceti or supplier declarations are the declarations of `Suggested.lean`, in the namespace `TauCetiRoadmap.MathematicalBilliards`: the definitions `ConvexTable`, `ConvexTable.billiardLift`, `ConvexTable.billiardMap`, `phaseMeasure`, `IsTwistLift`, `nonwanderingSet`, `IsRotationalInvariantCurve`, `ConvexTable.IsPeriodicConfiguration` and `IsWeaklyMixing`, and the theorems `ConvexTable.measurePreserving_billiardMap` (§3.3), `isGraph_of_isRotationalInvariantCurve` and `ConvexTable.exists_lipschitzWith_of_isRotationalInvariantCurve` (§5.3), `ConvexTable.exists_two_periodic_orbits` (§6.4), `tendsto_average_norm_charFun_sq` (§12.4), `exists_tendsto_twistedAverage` (§12.4.1) and `isWeaklyMixing_iff` (§12.5).
 
 ## Layer 1: Convex billiard tables
 
@@ -137,7 +137,13 @@ Prove: for a table, a parameter `s` and `δ ∈ (0, π)`, the ray `{γ(s) + r ex
 
 ### 1.4 Oriented lines
 
-Represent an oriented line by `(e, c) ∈ Circle × ℝ`, the line `{z : e × z = c}` oriented by `e`. Prove that `(s, δ) ↦ (exp(iδ)τ(s), exp(iδ)τ(s) × γ(s))` is a homeomorphism from `A` onto the set of oriented lines meeting the interior of `Ω`; its inverse sends a line to its entry point into `Ω` and the angle there (BialyMironov2022 lines 154–157). *Needs:* §1.3.
+Represent an oriented line by `(e, c) ∈ Circle × ℝ`, the line `{z : e × z = c}` oriented by `e`, and identify the phase cylinder `A` with the oriented lines meeting the interior of `Ω` (BialyMironov2022 lines 154–157 and 172–176, for the space of oriented lines as a cylinder and its coordinates). *Needs:* §1.3.
+
+API:
+
+- Every oriented line of `ℂ` has exactly one representation `(e, c)`: `e` is its direction and `c = e × z` for any point `z` on it. Reversing the orientation sends `(e, c)` to `(−e, −c)`, the same point set; this involution of `Circle × ℝ` preserves the set of lines meeting the interior of `Ω`.
+- The map `(s, δ) ↦ (exp(iδ)τ(s), exp(iδ)τ(s) × γ(s))` is a homeomorphism from `A` onto the open set of oriented lines meeting the interior of `Ω` (BialyMironov2022 lines 154–157).
+- Its inverse sends such a line to its entry state: the point `γ(s)` where the oriented line enters `Ω`, and the angle `δ ∈ (0, π)` from `τ(s)` to its direction `e`. The line leaves `Ω` at the exit point `γ(s₁)` of §1.3 for the state `(s, δ)`.
 
 **Checks.**
 
@@ -194,7 +200,7 @@ Prove that for `k ≥ 2` the restriction of the lift to the open strip is `C^{k�
 
 - Circle: `∂s₁/∂δ = 2R sin δ / sin δ = 2R` and `∂s₁/∂s = (2 sin δ − sin δ)/sin δ = 1`, matching `F(s, δ) = (s + 2Rδ, δ)`.
 - The nondegeneracy `∂Φ/∂s₁ = sin δ₁` vanishes only for tangent chords, which are excluded from the open strip; at `δ₁ → 0` the bound `∂s₁/∂δ = L/sin δ₁` stays finite because `L → 0` at the same rate on the circle (`L/sin δ₁ = 2R`).
-- For the `C¹` circle–ellipse table the lift is a homeomorphism, but by the formula `∂s₁/∂s = (κ(s)L − sin δ)/sin δ₁` its derivative jumps at the parameters `s` of the points `(±1, 0)`, where `κ(s)` jumps between `1` and `4`: `k ≥ 2` is needed for `C¹`.
+- For the `C¹` circle–ellipse table the lift is a homeomorphism, but by the formula `∂s₁/∂s = (κ(s)L − sin δ)/sin δ₁` its derivative jumps at the parameters `s` of the points `(±1, 0)`, where `κ(s)` jumps between `1` and `4`: `k ≥ 2` is needed for `C¹`. At the diameter state from `(1, 0)` with `δ = π/2` one has `L = 2` and `sin δ = sin δ₁ = 1`, so the one-sided values of `∂s₁/∂s` are `2 · 1 − 1 = 1` on the circle side and `2 · 4 − 1 = 7` on the ellipse side; the closed-cylinder extension and the topological twist of §§2.3 and 4.3 still hold for this table, while the differentiable twist, exactness and invariant measure of §§3.2–3.3 and 4.3 are claimed only for `k ≥ 2`.
 
 ### 2.3 The closed cylinder
 
@@ -241,7 +247,14 @@ Layer 1; SymplecticGeometry/CotangentLagrangian C3.1 (comparison and circular ex
 
 ### 3.1 The chord length
 
-Define `L(s, s₁) = |γ(s₁) − γ(s)|` on `{(s, s₁) : s < s₁ < s + ℓ}`. Prove that it is `C^k` there, invariant under `(s, s₁) ↦ (s + ℓ, s₁ + ℓ)`, and that at `s₁ = F₁(s, δ)`: `∂L/∂s = −cos δ` and `∂L/∂s₁ = cos δ₁`; for `k ≥ 2`, `∂²L/∂s∂s₁ = sin δ sin δ₁ / L > 0` (BialyMironov2022 lines 159–161 and 182–185; Tabachnikov2005, Chapter 3). *Needs:* §2.1.
+Define the chord length `L(s, s₁) = |γ(s₁) − γ(s)|` on the open set `{(s, s₁) : s < s₁ < s + ℓ}` (BialyMironov2022 lines 159–161 and 182–185; Tabachnikov2005, Chapter 3). *Needs:* §2.1.
+
+API:
+
+- `L` is positive and of class `C^k` on its domain, since `γ(s₁) ≠ γ(s)` there and the norm is smooth off `0`; it is invariant under the diagonal translation `(s, s₁) ↦ (s + ℓ, s₁ + ℓ)`.
+- First derivatives along the graph of the lift: at `s₁ = F₁(s, δ)`, `∂L/∂s = −cos δ` and `∂L/∂s₁ = cos δ₁` (BialyMironov2022 lines 182–185, the identity `cos δ₁ ds₁ − cos δ ds = dL`).
+- Mixed derivative: for `k ≥ 2`, at `s₁ = F₁(s, δ)`, `∂²L/∂s∂s₁ = sin δ sin δ₁ / L > 0`, computed here by differentiating `∂L/∂s₁ = ⟨u, τ(s₁)⟩`, `u` the unit chord, in `s` and using `τ(s₁) = exp(i(δ + δ₁))τ(s)`.
+- Boundary behaviour: `L` extends continuously by `0` to the lines `s₁ = s` and `s₁ = s + ℓ`, where it is not differentiable; by unit speed its one-sided derivative in `s₁` is `+1` at `s₁ = s` and `−1` at `s₁ = s + ℓ`. This is the rate used for collapsed chords in §6.3.
 
 **Checks.**
 
@@ -369,7 +382,8 @@ Define `IsRotationalInvariantCurve f C` for a self-map `f` of an annulus `AddCir
 API:
 
 - Let `Y` be an interval containing `(a, b)` and `C ⊆ AddCircle ℓ × (a, b)`. Then `C` is compact, contained in `AddCircle ℓ × [a′, b′]` for some `a < a′ ≤ b′ < b`, and its first coordinate has degree `±1`.
-- In the same setting, the complement of `C` in the open annulus has exactly two components, the lower one containing `AddCircle ℓ × Ioo a a′` and the upper one, both with frontier `C`; when `f` preserves each end (as the maps of §4.1 do) both components are `f`-invariant. Route: embed the annulus in `ℂ ∖ {0}` by `(x, y) ↦ (1 + y − a) exp(2πix/ℓ)` and use the Jordan curve theorem.
+- In the same setting, the complement of `C` in the open annulus has exactly two components, the lower one containing `AddCircle ℓ × Ioo a a′` and the upper one, both with frontier `C`. Route: embed the annulus in `ℂ ∖ {0}` by `(x, y) ↦ (1 + y − a) exp(2πix/ℓ)` and use the Jordan curve theorem.
+- If `f` is a homeomorphism of the annulus with `f(C) = C` that preserves each end (each boundary circle when `Y = [a, b]`; `f(x, y) → a` as `y → a` and `→ b` as `y → b` uniformly in `x` when `Y` is open), as the maps of §4.1 and the billiard map do, then `f` maps each of the two components onto itself. Route: `f` and `f⁻¹` map the complement of `C` into itself, so they permute its components, and the component containing points near the lower end goes to the one containing their images, again near the lower end. The definition of a rotational invariant curve itself asks only `f(C) = C` of an arbitrary self-map.
 - If `C` is invariant under `f`, then `I(C)` is invariant under `I ∘ f ∘ I`, for every fibre reflection `I`.
 
 **Checks.**
@@ -377,6 +391,7 @@ API:
 - Every circle `δ = c` is a rotational invariant curve of the circular billiard.
 - A small circle around a point of the annulus is null-homotopic and is not rotational.
 - The union of two circles `δ = c₁` and `δ = c₂` is invariant but is not the image of an injective map of `Circle`.
+- Component invariance needs a homeomorphism: on `AddCircle 1 × (−1, 1)` let `f(x, y) = (x, h(y))` with `h` piecewise linear through `(−1, −1)`, `(−1/2, 1/2)`, `(0, 0)`, `(1, 1)`. Then `f` is continuous, preserves both ends and maps `C = {y = 0}` onto itself, so `C` is a rotational invariant curve of `f`; but `h(−1/2) = h(1/2) = 1/2`, so `f` is not injective, and it sends the point `(0, −1/2)` of the lower component to `(0, 1/2)` in the upper one.
 
 *Needs:* Mathlib `ContinuousMap.Nullhomotopic`; Tau Ceti `TauCeti.IsJordanCurve.natCard_connectedComponents_compl_eq_two`, `TauCeti.IsJordanCurve.frontier_connectedComponentIn`.
 
@@ -470,7 +485,7 @@ API:
 
 ### 6.2 The billiard chain dictionary at regularity `C^k`
 
-Define `ConvexTable.IsPeriodicConfiguration γ p q s`, for a table `γ`, natural numbers `p`, `q` and `s : ℤ → ℝ`: `s_{j+q} = s_j + pℓ` and `s_j < s_{j+1} < s_j + ℓ` for every `j`, and the reflection law holds at every vertex: writing `u_j = (γ(s_{j+1}) − γ(s_j))/|γ(s_{j+1}) − γ(s_j)|` for the unit chord, `⟨u_{j−1}, τ(s_j)⟩ = ⟨u_j, τ(s_j)⟩`. For coprime `0 < p < q` the first two conditions say `s ∈ D_{p,q}`. Since `u_{j−1}` points out of `Ω` at `γ(s_j)` and `u_j` into it (strict convexity), equal tangential components make `u_j` the mirror image of `u_{j−1}` in the tangent line (KatokHasselblatt1995, Section 9.3; this finite-regularity dictionary uses §3.1).
+Define `ConvexTable.IsPeriodicConfiguration γ p q s`, for a table `γ`, natural numbers `p`, `q` and `s : ℤ → ℝ`: `q ≥ 1`, `s_{j+q} = s_j + pℓ` and `s_j < s_{j+1} < s_j + ℓ` for every `j`, and the reflection law holds at every vertex: writing `u_j = (γ(s_{j+1}) − γ(s_j))/|γ(s_{j+1}) − γ(s_j)|` for the unit chord, `⟨u_{j−1}, τ(s_j)⟩ = ⟨u_j, τ(s_j)⟩`. With `q ≥ 1` the gap conditions force `0 < p < q`, since `pℓ = s_{j+q} − s_j` is a sum of `q` gaps in `(0, ℓ)`; for coprime `p`, `q` the period and gap conditions say `s ∈ D_{p,q}`. Since `u_{j−1}` points out of `Ω` at `γ(s_j)` and `u_j` into it (strict convexity), equal tangential components make `u_j` the mirror image of `u_{j−1}` in the tangent line (KatokHasselblatt1995, Section 9.3; this finite-regularity dictionary uses §3.1).
 
 *Needs:* §3.1, §6.1.
 
@@ -486,6 +501,7 @@ API:
 - Unit circle, `(1, 3)`: the equilateral configuration `s_j = 2πj/3` has, at the vertex `1`, tangential components `⟨u_{−1}, i⟩ = ⟨u_0, i⟩ = 1/2`, so it is a periodic configuration; the configuration `(0, π/2, π)` has gaps `π/2, π/2, π` and at `s = 0` components `0` (incoming chord from `−1`, a diameter) and `1/√2`, with angles `π/2` and `π/4`: not a periodic configuration and not critical.
 - The diameter configuration `s_j = jπ` of type `(1, 2)` on the unit circle has both components `0` at every vertex: the chord is orthogonal to the tangent at both ends.
 - The strict gap conditions are what exclude collapsed configurations: for `(1, 3)` the sequence with `s₀ = s₁ = s₂ = 0`, `s₃ = ℓ` has all three chords `0` (`γ(ℓ) = γ(0)`), the totalised normalisation reads each `u_j` as the zero vector, and the reflection law alone would hold as `0 = 0` at every vertex.
+- The condition `q ≥ 1` is what excludes non-periodic sequences: on the unit circle `s_j = jπ√2` has gaps `π√2 ∈ (0, 2π)` and equal tangential components `cos(π/√2)` at every vertex, and with `p = q = 0` the period equation reads `s_j = s_j`; without `q ≥ 1` this would be a configuration of type `(0, 0)`, although its rotation number `1/√2` is irrational and no state of its orbit is periodic.
 - Least period: if `F^m(x₀) = x₀ + (jℓ, 0)` with `m < q`, then `m | q` and `(q/m) j = p`, contradicting coprimality.
 - Without the identification by `Γ`, the configuration and its shift `σ(s)` would be counted as two orbits.
 
@@ -561,7 +577,14 @@ API:
 
 ### 7.3 Trajectories and the corner bound
 
-Define the trajectory of a state as the curve moving at unit speed along its direction, replacing `v` by `σ_S v` at relative interior points of sides, and stopping at a vertex or when it runs along a side. Prove: a trajectory makes finitely many reflections in every bounded time interval on which it meets no vertex; and a trajectory segment entering a corner of angle `α ∈ (0, 2π)`, within a disc around the vertex meeting only the two sides at it, leaves that disc after at most `⌈π/α⌉` reflections provided it avoids the vertex and does not run along a side (Tabachnikov2005, Chapter 7). Route: unfold the corner into a fan of copies of angle `α`; the unfolded straight line avoids the vertex and sees it under a total angle `π`, so it crosses at most the number of fan rays in an open interval of length `π`; away from corners consecutive reflections are on sides at distance bounded below. *Needs:* §7.1, §7.2.
+Define the forward trajectory of a state `(x, v)` as the curve moving at unit speed along its direction, replacing `v` by `σ_S v` at relative interior points of sides, and stopping at a vertex or when it runs along a side; the backward trajectory is the forward trajectory of `J(x, v)` with time reversed (Tabachnikov2005, Chapter 7). *Needs:* §7.1, §7.2.
+
+API:
+
+- Domain: the forward trajectory is defined on `[0, t₊]`, where `t₊ ∈ [0, ∞]` is the first time at which the position is a vertex or the trajectory begins to run along a side (`t₊ = 0` when `x` is a vertex, or lies on a side with `v` parallel to it), and on `[0, ∞)` when `t₊ = ∞`.
+- Reflection continuation: between reflections the position moves along a straight segment at unit speed with constant direction; at a time when the position lies in the relative interior of a side `S` and the direction points out of `P`, the direction is replaced by `σ_S v`, which points into `P`, and the state in `Z_P` is unchanged because the quotient identifies `v` with `σ_S v` there.
+- Finite reflections: on every bounded interval `[0, t]` with `t < t₊` the trajectory makes finitely many reflections. Route: near a point of the relative interior of a side a straight segment meets the side at most once before leaving a half-disc, and near a vertex the corner bound below applies.
+- Corner bound: a trajectory segment entering a corner of angle `α ∈ (0, 2π)`, within a disc around the vertex meeting only the two sides at it, leaves that disc after at most `⌈π/α⌉` reflections provided it avoids the vertex and does not run along a side (Tabachnikov2005, Chapter 7). Route: unfold the corner into a fan of copies of angle `α`; the unfolded straight line avoids the vertex and sees it under a total angle `π`, so it crosses at most the number of fan rays in an open interval of length `π`.
 
 **Checks.**
 
@@ -850,11 +873,11 @@ Prove that for a jointly measurable measure-preserving action of `ℝ` on a prob
 
 - Translation flow on `AddCircle 1`: `U_t e_n = exp(2πint) e_n` for `e_n(x) = exp(2πinx)`, continuous in `t`.
 - The identity action gives `U_t = 1`.
-- For `ℝ` acting on itself by translation with an infinite measure the statement is not claimed (probability spaces only).
+- Strong continuity fails without a finiteness hypothesis on `μ`: let `ℝ` act on itself by `t +ᵥ x = x + t`, with the Borel σ-algebra and counting measure, which is invariant and not σ-finite, the action being jointly measurable. Then `U_t 1_{0} = 1_{−t}`, so `‖U_t 1_{0} − 1_{0}‖₂ = √2` for every `t ≠ 0` and `0` at `t = 0`: the orbit of `1_{0}` is discontinuous at `0`. (Lebesgue measure, infinite but σ-finite, gives a strongly continuous group; the statement here is for probability measures.)
 
 ### 12.4 Wiener's lemma
 
-Prove Wiener's lemma on the line: for a finite Borel measure `σ` on `ℝ` with characteristic function `MeasureTheory.charFun σ t = ∫ exp(itξ) dσ(ξ)`, `T⁻¹ ∫₀ᵀ |charFun σ t|² dt → Σ_ξ σ({ξ})²` as `T → ∞`, the sum over the (countably many) atoms; Hochman2012, Proposition 6.6.3, printed p. 70, lines 3099–3140, supplies the atomless discrete circle computation; the real-line formula including atoms is proved here. Route: Fubini turns the average into `∫∫ K_T(ξ − η) dσ dσ` with `K_T(u) = T⁻¹∫₀ᵀ exp(itu) dt`, which tends to the indicator of `u = 0` boundedly. *Needs:* Mathlib `MeasureTheory.charFun`, `MeasureTheory.charFun_apply_real`, Fubini and dominated convergence.
+Prove `tendsto_average_norm_charFun_sq`, Wiener's lemma on the line: for a finite Borel measure `σ` on `ℝ` with characteristic function `MeasureTheory.charFun σ t = ∫ exp(itξ) dσ(ξ)`, `T⁻¹ ∫₀ᵀ |charFun σ t|² dt → Σ_ξ σ({ξ})²` as `T → ∞`, the sum over all `ξ ∈ ℝ` of the squared masses `σ({ξ})²` read as real numbers, of which only the countably many atoms contribute (the sum is at most `σ(ℝ)²`, so it converges); Hochman2012, Proposition 6.6.3, printed p. 70, lines 3099–3140, supplies the atomless discrete circle computation; the real-line formula including atoms is proved here. Route: Fubini turns the average into `∫∫ K_T(ξ − η) dσ dσ` with `K_T(u) = T⁻¹∫₀ᵀ exp(itu) dt`, which tends to the indicator of `u = 0` boundedly. *Needs:* Mathlib `MeasureTheory.charFun`, `MeasureTheory.charFun_apply_real`, Fubini and dominated convergence.
 
 **Checks.**
 
@@ -881,7 +904,7 @@ Prove `isWeaklyMixing_iff`: for an action of `ℝ` on `X` with `MeasurableVAdd�
 **Checks.**
 
 - Torus flow `z ↦ z + tθ` on `ℂ/Λ`: `f(z) = exp(2πi⟨λ*, z⟩)` for a dual lattice vector `λ*` with `⟨λ*, θ⟩ ≠ 0` is an eigenfunction with eigenvalue `⟨λ*, θ⟩`.
-- A constant function is an eigenfunction with eigenvalue `0` and is excluded by "almost everywhere constant".
+- A nonzero constant function is an eigenfunction with eigenvalue `0` and is permitted by the criterion, being almost everywhere constant; the zero function satisfies the eigenfunction equation for every `a` but is not an eigenfunction, being almost everywhere zero. On the one-point probability space `f = 1` is an eigenfunction for `a = 0` only, and `f = 0` for no `a`; the criterion's quantification over all measurable `f`, zero included, is harmless because `0` is constant.
 - An eigenvalue `a ≠ 0` forces a non-constant eigenfunction: `|f|` is invariant and `f` cannot be constant unless it vanishes.
 - On `AddCircle 1`, the unit eigenfunction `e₁` has spectral measure `δ_{2π}` and correlation `i` at `t = 1/4`; §12.4.1 gives untwisted projection `0` and eigenvalue-`1` projection `e₁`, of squared norm `1`.
 
@@ -924,4 +947,4 @@ Mathlib; Tau Ceti Bochner theorem and strongly continuous groups; Layers 9–11 
 - `ZemlyakovKatok1975`: A. N. Zemlyakov, A. B. Katok, *Topological transitivity of billiards in polygons*, Mat. Zametki 18 (1975), pp. 291–300.
 - `MasurTabachnikov2002`: H. Masur, S. Tabachnikov, *Rational billiards and flat structures*, Handbook of Dynamical Systems 1A, Chapter 13, §1.
 - `KerckhoffMasurSmillie1986`: S. Kerckhoff, H. Masur, J. Smillie, *Ergodicity of billiard flows and quadratic differentials*, Ann. of Math. 124 (1986), Theorem 1.
-- `Birkhoff1927`: G. D. Birkhoff, *On the periodic motions of dynamical systems*, Acta Math. 50 (1927), background for the periodic orbits of Layer 6.
+- `Birkhoff1927`: G. D. Birkhoff, *On the periodic motions of dynamical systems*, Acta Math. 50 (1927), §§1–3, background for the periodic orbits of Layer 6; cited by its locator.
