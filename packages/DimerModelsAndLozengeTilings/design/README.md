@@ -203,20 +203,32 @@ At the Mathlib revision pinned in `lake-manifest.json`.
   `SimpleGraph.Subgraph.IsMatching`, `SimpleGraph.Subgraph.IsPerfectMatching` and
   `SimpleGraph.Subgraph.isPerfectMatching_iff` (`Mathlib/Combinatorics/SimpleGraph/Matching.lean`:
   a perfect matching is a spanning subgraph in which every vertex has exactly one neighbour).
-- `Pi.topologicalSpace`, `Function.compactSpace` and `Pi.compactSpace`
-  (`Mathlib/Topology/Compactness/Compact.lean`); `MeasurableSpace.pi`
-  (`Mathlib/MeasureTheory/MeasurableSpace/Constructions.lean`); `Pi.borelSpace`
-  (`Mathlib/MeasureTheory/Constructions/BorelSpace/Basic.lean`: countable index, second-countable
-  factors); `MeasureTheory.Measure.infinitePi` (`Mathlib/Probability/ProductMeasure.lean`).
+- `Pi.topologicalSpace` (`Mathlib/Topology/Constructions.lean`), `Function.compactSpace` and
+  `Pi.compactSpace` (`Mathlib/Topology/Compactness/Compact.lean`); `MeasurableSpace.pi`
+  (`Mathlib/MeasureTheory/MeasurableSpace/Constructions.lean`); `MeasureTheory.Measure.infinitePi`
+  (`Mathlib/Probability/ProductMeasure.lean`).
+- `Pi.borelSpace` (`Mathlib/MeasureTheory/Constructions/BorelSpace/Basic.lean`, line 645: for a
+  countable index type and factors that are second-countable Borel spaces, the product σ-algebra
+  is the Borel σ-algebra of the product topology; a factor whose σ-algebra is not its Borel
+  σ-algebra is not covered); `DiscreteMeasurableSpace`
+  (`Mathlib/MeasureTheory/MeasurableSpace/Defs.lean`: every subset is measurable) and
+  `DiscreteMeasurableSpace.toBorelSpace` (the same Borel file: a space with the discrete topology
+  and the discrete σ-algebra is a Borel space); `Subtype.borelSpace` (the same Borel file: a subset
+  of a Borel space, with the subspace topology and the trace σ-algebra, is a Borel space);
+  `Bool.instMeasurableSpace` (defined as `⊤`,
+  `Mathlib/MeasureTheory/MeasurableSpace/Instances.lean`) and `Bool.borelSpace`. These are the
+  Borel structures of 4.4–4.6 and Layers 5–10.
 - `MeasureTheory.ProbabilityMeasure` and its weak topology
-  (`Mathlib/MeasureTheory/Measure/ProbabilityMeasure.lean`); the instance
-  `CompactSpace (ProbabilityMeasure E)` for a compact Hausdorff Borel space `E`
-  (`Mathlib/MeasureTheory/Measure/Prokhorov.lean`, line 176);
+  (`Mathlib/MeasureTheory/Measure/ProbabilityMeasure.lean`: the topology instance is stated for an
+  `OpensMeasurableSpace`); the instance `CompactSpace (ProbabilityMeasure E)` for a compact
+  Hausdorff Borel space `E` (`Mathlib/MeasureTheory/Measure/Prokhorov.lean`, line 176);
   `MeasureTheory.ProbabilityMeasure.tendsto_measure_of_isClopen_of_tendsto` and
   `IsPiSystem.tendsto_probabilityMeasure_of_tendsto_of_mem`
-  (`Mathlib/MeasureTheory/Measure/Portmanteau.lean`: the second needs second countability, a
-  π-system of measurable sets containing arbitrarily small neighbourhoods of every point, and a
-  countably generated filter).
+  (`Mathlib/MeasureTheory/Measure/Portmanteau.lean`: the first needs `OpensMeasurableSpace` and
+  `HasOuterApproxClosed`, which Mathlib provides for every pseudo-metrisable space in
+  `Mathlib/MeasureTheory/Measure/HasOuterApproxClosed.lean`; the second needs
+  `OpensMeasurableSpace`, second countability, a π-system of measurable sets containing
+  arbitrarily small neighbourhoods of every point, and a countably generated filter).
 - `MeasureTheory.exists_measure_symmDiff_lt_of_generateFrom_isSetRing`
   (`Mathlib/MeasureTheory/Measure/MeasuredSets.lean`: approximation of measurable sets by a
   generating ring of sets, for a finite measure).
@@ -824,8 +836,16 @@ Layers 1–2; PadicMeasuresIwasawaAlgebras §6.4; Mathlib determinants and inver
 
 Throughout this layer `Γ` is a countable infinite group acting on a countable set `I`, and the
 action is proper: for finite `F, F' ⊆ I` only finitely many `γ ∈ Γ` have `γF ∩ F' ≠ ∅`. `S` is a
-measurable space (for 4.4–4.6 a finite set with the discrete topology), `Ω = I → S` carries the
-product σ-algebra and topology, and `Γ` acts on `Ω` by `(γω)(i) = ω(γ⁻¹i)`.
+measurable space, `Ω = I → S` carries the product σ-algebra, and `Γ` acts on `Ω` by
+`(γω)(i) = ω(γ⁻¹i)`. For 4.4–4.6 `S` is moreover finite and carries both the discrete topology and
+the discrete σ-algebra (every subset measurable, Mathlib `DiscreteMeasurableSpace`); `Ω` carries
+the product topology, and a subset `X ⊆ Ω` carries the subspace topology and the trace σ-algebra.
+Then `S` is a Borel space (`DiscreteMeasurableSpace.toBorelSpace`), so is `Ω` (`Pi.borelSpace`:
+`I` is countable and the finite discrete `S` is second-countable), and so is `X`
+(`Subtype.borelSpace`): the product σ-algebra of `Ω` and its trace on `X` are the Borel
+σ-algebras. The discrete topology alone does not force this; with the trivial σ-algebra on
+`{0,1}` the product σ-algebra is trivial (4.4, Checks). `Bool`, the alphabet of Layers 5–10,
+carries both discrete structures natively (`Bool.instMeasurableSpace` is `⊤`; `Bool.borelSpace`).
 
 ### 4.1 Outside and tail σ-algebras
 
@@ -894,13 +914,16 @@ independent with law `ν`, and apply the sequential zero-one law to `𝓣 = tail
 
 ### 4.4 The weak topology on a finite-alphabet subshift
 
-Let `S` be finite and `X ⊆ Ω` closed and `Γ`-invariant. Then `X` is compact and metrisable,
-cylinder events are clopen, `𝔓(X)` (Mathlib `ProbabilityMeasure X`) is compact, `Γ` acts on
-`𝔓(X)` by affine homeomorphisms, and `μ_n → μ` iff `μ_n(C) → μ(C)` for every cylinder event `C`.
+Let `S` be finite with the discrete topology and the discrete σ-algebra, and `X ⊆ Ω` closed and
+`Γ`-invariant, with the subspace topology and the trace σ-algebra. Then `X` is a compact
+metrisable Borel space, the traces on `X` of cylinder events are clopen and measurable, `𝔓(X)`
+(Mathlib `ProbabilityMeasure X`) is compact, `Γ` acts on `𝔓(X)` by affine homeomorphisms, and
+`μ_n → μ` iff `μ_n(C) → μ(C)` for every cylinder event `C`.
 For `S = Bool` the correlation functions `ρ_F(μ) = μ{ω : ω = 1 on F}`, `F ⊆ I` finite, determine
 `μ`, and convergence of all of them is weak convergence (gorin2021 Definition 13.1 and Lemma 13.2,
 lines 4509–4519; aggarwal2023 lines 412–418). *Needs:* 4.1; Mathlib `Function.compactSpace`,
-`Pi.borelSpace`, the compact-space instance of `ProbabilityMeasure`,
+`DiscreteMeasurableSpace.toBorelSpace`, `Pi.borelSpace`, `Subtype.borelSpace`, the compact-space
+instance of `ProbabilityMeasure`,
 `ProbabilityMeasure.tendsto_measure_of_isClopen_of_tendsto`,
 `IsPiSystem.tendsto_probabilityMeasure_of_tendsto_of_mem`.
 
@@ -914,6 +937,15 @@ lines 4509–4519; aggarwal2023 lines 412–418). *Needs:* 4.1; Mathlib `Functio
 - The set of finitely supported configurations is not closed, and the point masses at the
   indicators of `[0,n]` converge to the point mass at the indicator of `[0,∞)`: closedness of `X`
   is needed for the limit to stay in `𝔓(X)`.
+- The discrete σ-algebra on `S` is needed, not only the discrete topology: take `Γ = I = ℤ` with
+  the shift, `S = {0,1}` with the discrete topology but the trivial σ-algebra `{∅, S}`, and
+  `X = {0̄, 1̄}`. The product σ-algebra of `Ω` is `{∅, Ω}`, so its trace on `X` has 2 sets while
+  the Borel σ-algebra of the discrete two-point space `X` has 4; the clopen set
+  `{1̄} = X ∩ {ω(0) = 1}` is not measurable, the Borel-factor hypothesis of `Pi.borelSpace` and the
+  `OpensMeasurableSpace` hypothesis of the weak topology fail, and the only probability measure on
+  `X` gives `X` mass 1, so `δ_{0̄} = δ_{1̄}`. With the discrete σ-algebra the trace and the Borel
+  σ-algebra both have the 4 sets `∅, {0̄}, {1̄}, X`, and `(δ_{0̄} + δ_{1̄})/2` gives `{1̄}` mass
+  `1/2`.
 
 ### 4.5 Specifications and Gibbs measures
 
@@ -936,9 +968,10 @@ API:
 **Checks.**
 
 - On the closed shift-invariant subshift `X₀ = {0̄, 1̄}` of the two constant configurations of
-  `{0,1}^ℤ`, any coordinate outside a finite `Λ` determines the configuration, so the trace of
-  `𝓕_{Λᶜ}` on `X₀` is the full σ-algebra; the identity specification `γ_Λ(·|ω) = δ_ω` is then
-  measurable, proper and consistent, and every probability measure on `X₀` is Gibbs for it.
+  `{0,1}^ℤ`, `{0,1}` with its discrete σ-algebra, any coordinate outside a finite `Λ` determines
+  the configuration, so the trace of `𝓕_{Λᶜ}` on `X₀` is the full σ-algebra; the identity
+  specification `γ_Λ(·|ω) = δ_ω` is then measurable, proper and consistent, and every probability
+  measure on `X₀` is Gibbs for it.
 - The identity kernels on all of `{0,1}^ℤ` are not a specification: for `Λ = {0}` and
   `C = {ω(0) = 1}`, two configurations differing only at `0` have the same exterior but
   `γ_Λ(C|·)` takes the values `0` and `1`, so the measurability clause fails (under `Bern(1/2)^{⊗ℤ}`
@@ -984,7 +1017,8 @@ configurations and the independent specification (4.5).
 
 ### Dependencies
 
-Mathlib product spaces, weak topology, portmanteau, zero-one law, conditional expectation; Tau Ceti
+Mathlib product spaces, the Borel structure of a discrete finite alphabet and its products and
+subspaces, weak topology, portmanteau, zero-one law, conditional expectation; Tau Ceti
 `TauCeti.Probability.tailProcess`, `ErgodicSMul.iff_mem_extremePoints`,
 `TauCeti.MeasureTheory.ergodicSMul_iff_forall_smul_invariant`. No earlier layer.
 
