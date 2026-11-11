@@ -5850,6 +5850,12 @@
       "needs": "For a number field F, an integer r ≥ 3 and a continuous ρ : G_F → GL₂(ℤ/r) with determinant the mod-r cyclotomic character, the twisted curve Y(ρ)/F with its universal elliptic curve, its geometric connectedness, a smooth model with good reduction of the universal curve over O_F[1/r], and for every prime p ∤ r the equality of the geometric mod-p monodromy of the universal curve with SL₂(𝔽_p).",
       "supplier": "ModularCurvesPartII",
       "section": "5.14 Compactified twisted curves X(ρ)"
+    },
+    {
+      "slug": "cm-hecke-characters-with-prescribed-infinity-type",
+      "needs": "For an imaginary CM number field L and integers a_σ indexed by the embeddings σ : L ↪ ℂ such that `a_σ + a_(cσ) = w` does not depend on σ, an algebraic Hecke character of L (Weil type A₀) whose restriction to the identity component of `(L ⊗ ℝ)^×` is `x ↦ ∏_σ σ(x)^(−a_σ)`, with no condition on its finite conductor (the converse of the purity of algebraic infinity types; Barnet-Lamb–Gee–Geraghty–Taylor, Lemma A.2.4, arXiv v4 p. 88).",
+      "supplier": "GlobalNumberFields",
+      "section": "Layer 10: archimedean characters, infinity types, and cyclotomic arithmetic"
     }
   ],
   "sourceIssues": [

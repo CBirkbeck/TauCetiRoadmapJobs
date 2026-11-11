@@ -41,8 +41,9 @@ Not statable at the pins, for want of the carriers named:
   `p`-adic fields, no Weil–Deligne, `D_cris` or Hyodo–Kato realizations of their cohomology, and no
   weakly compatible systems of Galois representations.
 * The switching theorems of Qian, of Barnet-Lamb–Gee–Geraghty–Taylor and of
-  Boxer–Calegari–Gee–Newton–Thorne (§§9.3, 9.4, 9.10, 9.11): besides the above, the
-  level-structure torsors over the Dwork parameter line and Moret-Bailly's theorem are missing.
+  Boxer–Calegari–Gee–Newton–Thorne (§§9.3, 9.4, 9.10–9.12): besides the above, the
+  level-structure torsors over the Dwork parameter line, the twisted modular curves over number
+  fields and Moret-Bailly's theorem are missing.
 -/
 
 namespace TauCetiRoadmap.PotentialAutomorphyDworkMotivesPartII
