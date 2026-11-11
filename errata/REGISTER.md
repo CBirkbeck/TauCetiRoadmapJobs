@@ -2,7 +2,7 @@
 
 Reviewers, red-team passes and errata jobs record every mistake they find in a source while checking a roadmap's locators: misprints (slips whose intended meaning is clear), errors (a false statement or proof step) and gaps (a step the source does not justify), each with the roadmap, the board pull request or errata job and the head that reported it. Collected by the board sync from the `## Source issues` sections of review, red-team and errata comments; the data is in `errata/source-issues.json`.
 
-11872 mistakes recorded on the board: 6804 misprints, 3103 errors, 1501 gaps, 464 unparsed bullets.
+11874 mistakes recorded on the board: 6805 misprints, 3103 errors, 1502 gaps, 464 unparsed bullets.
 Errata jobs have read the cited sources of 60 roadmaps; in those of 2 they found no mistake.
 The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explorer/`: 1525 awaiting review, 13582 confirmed, 228 rejected.
 
@@ -3301,6 +3301,7 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 
 - **Misprint** at Proposition 3.5.3, proof (arXiv v2 line 1285, printed page 29): the source says the projections `P_i` in the bicommutant `π_γ(A)''`; it should be the commutant `π_γ(A)'`, as Lemma 3.5.2 supplies them (and as the compression argument needs); affects nothing; <!-- tauceti-roadmap-review {"agent": "claude", "head": "3e331041a4f8316e913ca0a55b01dc3dfdef3b5d", "job": "REV-DESIGN-AmenableTracesOnCStarAlgebras", "model": "fable", "worker": "chris-x18"} -->. Found by AmenableTracesOnCStarAlgebras (#6537 at 3e33104, 2026-11-05, claude fable).
 - **Gap** at proof of Lemma 3.1.4, printed page 17: the source says the source picks, for each eigenvector, as many orthonormal vectors of the same Hilbert space as its multiplicity numerator, without ensuring the space is large enough; it should be tensor with an auxiliary space of dimension at least the common denominator; affects the proof; <!-- tauceti-roadmap-review {"agent": "claude", "head": "6b8f660d1af7df5a72d67f146660d081944ee3dd", "job": "REV-PKG-AmenableTracesOnCStarAlgebras", "model": "fable", "worker": "chris-x10"} -->. Found by AmenableTracesOnCStarAlgebras (#13767 at 6b8f660, 2026-11-11, claude fable).
+- **Gap** at proof of Lemma 3.1.4, printed page 17: the source says the source takes, for each eigenvector, as many vectors of an orthonormal basis of the same Hilbert space as its multiplicity numerator, which fails on a small space; it should be tensor with an auxiliary space of dimension at least the common denominator; affects the proof; <!-- tauceti-roadmap-review {"agent": "claude", "head": "8f065a3741608eb15add76f24425fd597d285f9c", "job": "REV-PKG-AmenableTracesOnCStarAlgebras~2", "model": "fable", "worker": "chris-l"} -->. Found by AmenableTracesOnCStarAlgebras (#13767 at 8f065a3, 2026-11-11, claude fable).
 - **Misprint** at proof of Proposition 3.5.3, printed page 29: the source says the projections lie in the double commutant of the GNS image and writes the representation of the wrong trace; it should be the commutant, as in Lemma 3.5.2, and the representation of the combined trace; affects nothing. Found by AmenableTracesOnCStarAlgebras (#13767 at 6b8f660, 2026-11-11, claude fable).
 
 ## Bruinier–Funke, On two geometric theta lifts, arXiv math/0212286v4
@@ -14177,6 +14178,10 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 ## STACKS
 
 - **Misprint** at Duality for Schemes, Lemma 48.29.1, printed p.77 (STACKS line 3647): the source says the presentation matrix has rank r=r₀−r₁ when its determinant map is invertible; it should be have rank r₁; for ranks (r₁,r₀)=(1,3), the required rank is 1, not 2; affects the proof; <!-- tauceti-roadmap-review {"agent": "codex", "head": "fef173649da81183d384ef317d5c9cdae1617236", "job": "RT-DirectSummandsAndBigCohenMacaulay~2a", "model": "gpt-6-astra", "worker": "chris-3"} -->. Found by DirectSummandsAndBigCohenMacaulay (#1452 at fef1736, 2026-10-27, codex gpt-6-astra).
+
+## stacks-012K
+
+- **Misprint** at Lemma 24.13 (tag 0BK5), proof of equality in (24.6.2), printed page 67: the source says the identity `d(F^s K^{n−1}) = Im(d) ∩ F^s K^n` follows from the cohomology isomorphism in degree `n − 1`, for `s < p₁(n − 1)`; it should be injectivity of `H^n(F^s K) → H^n(K)` in degree `n`, for `s ≤ p₁(n)` (`K = (ℤ →id ℤ)`, `F^s K = (0 → ℤ)` refutes the degree `n − 1` form); affects the proof; <!-- tauceti-roadmap-review {"agent": "claude", "head": "6a763025ec49d219c9050568c97b6eaa2529e1c1", "job": "REV-DESIGN-SpectralSequencesAndConvergence~5", "model": "fable", "worker": "chris-x10"} -->. Found by SpectralSequencesAndConvergence (#13813 at 6a76302, 2026-11-11, claude fable).
 
 ## stacks-04XE
 
