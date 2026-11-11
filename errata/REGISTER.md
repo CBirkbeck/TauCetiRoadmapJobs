@@ -2,7 +2,7 @@
 
 Reviewers, red-team passes and errata jobs record every mistake they find in a source while checking a roadmap's locators: misprints (slips whose intended meaning is clear), errors (a false statement or proof step) and gaps (a step the source does not justify), each with the roadmap, the board pull request or errata job and the head that reported it. Collected by the board sync from the `## Source issues` sections of review, red-team and errata comments; the data is in `errata/source-issues.json`.
 
-11884 mistakes recorded on the board: 6808 misprints, 3108 errors, 1504 gaps, 464 unparsed bullets.
+11887 mistakes recorded on the board: 6810 misprints, 3108 errors, 1505 gaps, 464 unparsed bullets.
 Errata jobs have read the cited sources of 60 roadmaps; in those of 2 they found no mistake.
 The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explorer/`: 1525 awaiting review, 13582 confirmed, 228 rejected.
 
@@ -621,6 +621,7 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 ## AgnolettoCorreaHoyosDaSilvaNardulli2025
 
 - **Gap** at Theorem 2.32 (proof), arXiv v3 page 17–18: the source says the proof asserts that locally bounded first variation and positive density are preserved by pushing a varifold forward through a bi-Lipschitz smooth chart, with no argument; it should be compare the first variations for the pulled-back metric and the Euclidean metric (a C¹-closeness estimate, which this design proves as 4.5); affects the proof. Found by Varifolds (#7602 at f19ba8b, 2026-11-07, claude fable).
+- **Gap** at proof of Theorem 2.32, arXiv v3 page 17: the source says locally bounded first variation is preserved by a bi-Lipschitz chart push-forward, without argument; it should be supplying a metric comparison, since the change of metric adds a term in the derivative of the test field; affects the proof; <!-- tauceti-roadmap-review {"agent": "claude", "head": "ee860484e081b389b3f30d7230cb82ecaa83f754", "job": "REV-DESIGN-Varifolds~4", "model": "fable", "worker": "chris-x10"} -->. Found by Varifolds (#13845 at ee86048, 2026-11-11, claude fable).
 
 ## AGV08
 
@@ -13705,8 +13706,10 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 
 ## Simon1983
 
+- **Misprint** at 40.4, printed page 236: the source says the weighted radial identity carries the first variation with a plus sign; it should be a minus sign, as 18.1 with δV(X) = −∫H·X gives; affects a stated result. Found by Varifolds (#13845 at ee86048, 2026-11-11, claude fable).
 - **Misprint** at 42.8 (proof), printed page 250: the source says the text says that max{ψ_i, N} converges in L¹(B_1(0)) to θ_0 for an integer N > θ_0; it should be min{ψ_i, N} (the truncation at N), since max{ψ_i, N} ≥ N > θ_0 cannot converge to θ_0; affects nothing; (the intended step is the one 7.6's route states). Found by Varifolds (#7602 at 333c24e, 2026-11-07, claude fable).
 - **Misprint** at 42.9, printed page 262: the source says the constant is written ε = ε(δ, Λ, n), while the remark that follows (42.10) and the induction bound depend on n, k and Λ; it should be ε(δ, Λ, n, k); affects nothing; <!-- tauceti-roadmap-review {"agent": "claude", "head": "f19ba8bb16867c5f0f482b8b345632607ddc44af", "job": "REV-DESIGN-Varifolds", "model": "fable", "worker": "chris-x9"} -->. Found by Varifolds (#7602 at f19ba8b, 2026-11-07, claude fable).
+- **Misprint** at proof of 42.8, printed page 250: the source says the maximum of the fibre multiplicity and N converges to the limit multiplicity; it should be the minimum, since a maximum with N above the limit cannot converge to it; affects the proof. Found by Varifolds (#13845 at ee86048, 2026-11-11, claude fable).
 
 ## skinner-2020
 
