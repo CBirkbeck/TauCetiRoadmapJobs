@@ -143,7 +143,7 @@ sha256 = "b035a1f02104906a1820636cd332a0d7962fef3318d207a056634cb14dc86947"
 licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-26"
-cited_for = ["Q6.2", "Q7.1", "Q7.2", "Q7.3", "Q7.4", "Q7.5", "Q7.6", "Q8.4", "Q9.2", "Q9.3"]
+cited_for = ["Q6.2", "Q7.1", "Q7.2", "Q7.3", "Q7.4", "Q7.5", "Q7.6", "Q8.4", "Q9.2", "Q9.3", "Q9.5"]
 
 [[source]]
 id = "Bha18"

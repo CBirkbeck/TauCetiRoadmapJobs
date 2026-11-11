@@ -1370,9 +1370,10 @@ API:
 - a `p`-adically complete ring is `p`-Zariski (Mathlib `IsAdicComplete.le_jacobson_bot`), and so is
   every `A` with `(A, pA)` henselian;
 - quotients of `p`-Zariski rings are `p`-Zariski;
-- for `p`-Zariski `A`, a flat `A`-algebra `B` with `B_{1+pB}` faithfully flat over `A` is faithfully
-  flat after `p`-Zariskization, and `p`-Zariskization of a faithfully flat `A`-algebra stays
-  faithfully flat.
+- for `p`-Zariski `A` and a faithfully flat `A`-algebra `B`, the `p`-Zariskization `B_{1+pB}` is
+  faithfully flat over `A`: it is flat as a localization of `B`, and for a maximal ideal `𝔪` of `A`
+  a maximal ideal of `B` containing `𝔪B` contains `p ∈ 𝔪`, so it meets no `1 + pb` and survives in
+  `B_{1+pB}`; the nonzero-fibre criterion (Stacks Lemma 10.39.15) concludes.
 
 **Checks.**
 
@@ -1380,6 +1381,12 @@ API:
 - The `p`-Zariskization of `ℤ` is `ℤ_(p)`: every `n` prime to `p` has `n^{p−1} ∈ 1 + pℤ`.
 - `ℚ` is not `p`-Zariski: `1 + p · (−1/p) = 0`.
 - `ℤ` is not `p`-Zariski: `1 + p` is not a unit.
+- Faithful flatness of `B`, not flatness alone: over `A = ℤ_p` the flat algebra `B = ℚ_p` has
+  `p`-Zariskization `0` (as `1 + p · (−1/p) = 0`), which is not faithfully flat; for `B = ℤ_p[T]`
+  every `1 + pb` is `1` modulo `p`, so `B_{1+pB}/p = 𝔽_p[T] ≠ 0` and `B_{1+pB}` is faithfully flat
+  over the local ring `ℤ_p`.
+- The `p`-Zariski hypothesis on `A` is needed: `B = A = ℤ` is faithfully flat over `ℤ`, but its
+  `p`-Zariskization `ℤ_(p)` is not, since `ℓ · ℤ_(p) = ℤ_(p)` for a prime `ℓ ≠ p`.
 
 ### Q9.6 Semiperfectoid covers of `p`-Zariski rings
 
@@ -1534,8 +1541,9 @@ closed in `R⁺[1/p]`, `completion_integrally_closed_perfectoid` (PerfectoidQuot
 
 Let `(R, 𝔪)` be a complete regular local ring of mixed characteristic `(0, p)` whose residue field
 `k` is `F`-finite, that is, `k` is a finite module over its subfield `k^p` of `p`-th powers. Write
-`R = A/(f)` with `A = W⟦x_1, …, x_d⟧` and the δ-structure `φ_A` of Q10.2 (`φ_A` extends the
-Frobenius lift `φ_W` of the Cohen ring `W` and sends each `x_i` to `x_i^p`), and let
+`R = A/(f)` with `A = W⟦x_1, …, x_d⟧`, the presentation of Q10.2 (after its change of variables
+when `a_0 = 0`, so that `f(0)` has `p`-adic valuation one) and its δ-structure `φ_A` (`φ_A` extends
+the Frobenius lift `φ_W` of the Cohen ring `W` and sends each `x_i` to `x_i^p`), and let
 `R_n := A/(φ_A^n(f))`, an `R`-algebra through `φ_A^n`. Prove: (1) `W` is a finite free module over
 `φ_W^n(W)` of rank `[k : k^p]^n`, hence `A` is finite free over `φ_A^n(A)` with basis the products
 `w·x^a` of a basis `w` of `W` over `φ_W^n(W)` and the monomials `x^a` with `0 ≤ a_i < pⁿ`, and
@@ -1555,9 +1563,13 @@ As `k` is finite over `k^p`, the complete form of Nakayama's lemma makes `W` fin
 a lift of a `k^p`-basis of `k` generates, and the kernel `K` of the surjection from the free
 module satisfies `K = pK` because `W` is `p`-torsion-free, so `K = 0` by Nakayama. The monomial
 decomposition `W⟦x⟧ = ⊕_a W⟦x^{pⁿ}⟧ x^a` gives (1), and base change of `R = A/(f)` along the finite
-free map `φ_A^n : A → A` is `A/(φ_A^n(f))`. For (2), if `f(0)` has `p`-adic valuation one so does
-`φ_W^n(f(0))`, and if `f = x_1 − p` then `φ_A^n(f) = x_1^{pⁿ} − p`; in both cases the class of
-`φ_A^n(f)` in `𝔪_A/𝔪_A²` is a unit multiple of the class of `p`. For (3), the transition maps
+free map `φ_A^n : A → A` is `A/(φ_A^n(f))`. For (2), at `n = 0` the element `φ_A^0(f) = f` is not
+in `𝔪_A²` by the choice of presentation; its class `a_0 p + Σ a_i x_i` need not be a multiple of the
+class of `p`. For `n ≥ 1`, `φ_A^n` sends each `x_i` to `x_i^{pⁿ} ∈ 𝔪_A²`, so
+`φ_A^n(f) ≡ φ_W^n(f(0))` modulo `𝔪_A²`. In both cases of Q10.2 `f(0)` has `p`-adic valuation one
+(`a_0 ≠ 0`, or `f = x_1 − p` with `f(0) = −p`), hence so does `φ_W^n(f(0))`, and the class of
+`φ_A^n(f)` in `𝔪_A/𝔪_A²` is a unit multiple of the class of `p`, which is nonzero because
+`p, x_1, …, x_d` is a regular system of parameters of `A`. For (3), the transition maps
 `R_n → R_{n+1}` are injective (finite free, hence faithfully flat), so `R_∞` is a filtered union of
 normal domains finite over `R`; an element of `R_∞ ∩ pⁿR⁺` is `pⁿ` times an element of `Frac(R_m)`
 integral over `R`, which lies in `R_m`. For (4), `(colim_{φ_A} A)/(f) = colim_n R_n` because the
@@ -1575,6 +1587,16 @@ Mathlib `Module.FaithfullyFlat`, `Module.Finite`, `integralClosure`, `IsIntegral
 
 - For `R = ℤ_p` (`k = 𝔽_p`, `f = p − x_1`): `R_n = ℤ_p⟦x_1⟧/(p − x_1^{pⁿ}) = ℤ_p[p^{1/pⁿ}]`, of rank
   `pⁿ`, `R_∞ = ℤ_p[p^{1/p^∞}] ⊆ ℤ̄_p` and `R̂_∞ ⊆ 𝒪_{ℂ_p}`.
+- Regularity of the stages in the same example: in the basis `([p], [x_1])` of the `𝔽_p`-vector
+  space `𝔪_A/𝔪_A²` the class of `f = p − x_1` is `(1, −1)`, and for `n ≥ 1` the class of
+  `φ_A^n(f) = p − x_1^{pⁿ}` is `(1, 0)` (for `p = 2`: `(1, 1)` and `(1, 0)`). Both are nonzero, but
+  only the second is a multiple of `[p]`: the stage `n = 0` is regular by the choice of `f`, not by
+  the computation that serves `n ≥ 1`.
+- The normalisation of Q10.2 is needed for (2): `ℤ_p = ℤ_p⟦x_1⟧/(p² − x_1)` is a presentation with
+  `f ∉ 𝔪_A²` but `a_0 = 0` and `f(0) = p²`; for it `φ_A(f) = p² − x_1^p ∈ 𝔪_A²`, and
+  `ℤ_p⟦x_1⟧/(x_1^p − p²)` is not regular (its maximal ideal `(p, x_1)` needs two generators in
+  dimension one; for `p = 2` it is not a domain, as `(x_1 − 2)(x_1 + 2) = 0`). Q10.2 replaces this
+  presentation by `f = x_1 − p`.
 - The intersection formula: for `R = ℤ_p`, `p^{1/p} ∈ R_∞` is not in `pR⁺` (its valuation is
   `1/p < 1`), and `p^{1+1/p} ∈ pR⁺ ∩ R_∞` equals `p · p^{1/p} ∈ pR_∞`, as normality of `R_∞` predicts.
 - An `F`-finite imperfect residue field: `k = 𝔽_p(t)`, `W` the `p`-adic completion of `ℤ_p[t]_{(p)}`
