@@ -957,14 +957,15 @@ API:
 
 ### 2.4 Matrix maps with prescribed trace
 
-Prove Ozawa's lemma (brown2006, Lemma 3.1.4, line 662): let `h` be a positive finite-rank operator
-on `H` with `Tr(h) = 1` and rational eigenvalues `p_j/q` (`p_j ∈ ℕ`, `Σ p_j = q`) for orthonormal
-eigenvectors `v_j`; let `P` be the projection of `H ⊗ ℂ^q` onto the span of `v_j ⊗ w_r` for
-`r ≤ p_j`, with `(w_r)` the standard basis of `ℂ^q`. Then `φ(T) = P(T ⊗ 1)P` is a normal u.c.p.
-map `B(H) → B(P(H ⊗ ℂ^q)) ≅ M_q` with `tr_q ∘ φ = Tr(h ·)` and
-`tr_q(φ(uu*) − φ(u)φ(u)*) ≤ 2‖uhu* − h‖₁^{1/2}` for every unitary `u`. The auxiliary factor `ℂ^q`
-supplies the `p_j` orthonormal vectors in each eigendirection even when `H` is
-finite-dimensional. The proof computes `tr_q(φ(T)φ(T*)) = q⁻¹Σ_{ij}|⟪v_i, Tv_j⟫|² min(p_i, p_j)`
+Prove Ozawa's lemma (brown2006, Lemma 3.1.4, line 662; line 658 credits its proof to Ozawa): let
+`h` be a positive finite-rank operator on `H` with `Tr(h) = 1` and rational eigenvalues `p_j/q`
+(`p_j ∈ ℕ`, `Σ p_j = q`) for orthonormal eigenvectors `v_j`; let `P` be the projection of
+`H ⊗ ℂ^q` onto the span of `v_j ⊗ w_r` for `r ≤ p_j`, with `(w_r)` the standard basis of `ℂ^q`.
+Then `φ(T) = P(T ⊗ 1)P` is a normal u.c.p. map `B(H) → B(P(H ⊗ ℂ^q)) ≅ M_q` with
+`tr_q ∘ φ = Tr(h ·)` and `tr_q(φ(uu*) − φ(u)φ(u)*) ≤ 2‖uhu* − h‖₁^{1/2}` for every unitary `u`.
+The auxiliary factor `ℂ^q` supplies the `p_j` orthonormal vectors in each eigendirection even
+when `H` is finite-dimensional. The proof computes
+`tr_q(φ(T)φ(T*)) = q⁻¹Σ_{ij}|⟪v_i, Tv_j⟫|² min(p_i, p_j)`
 and `Tr(h^{1/2}Th^{1/2}T*) = q⁻¹Σ_{ij}|⟪v_i, Tv_j⟫|²(p_ip_j)^{1/2}`, bounds their difference by
 `‖Th^{1/2}‖_HS‖h^{1/2}T − Th^{1/2}‖_HS` with the Cauchy–Schwarz inequality, and for unitary `T`
 applies the Powers–Størmer inequality `‖uh^{1/2}u* − h^{1/2}‖_HS ≤ ‖uhu* − h‖₁^{1/2}`
@@ -1254,7 +1255,8 @@ API:
 
 ### 4.2 From a hypertrace to matrix approximations
 
-Prove (brown2006, proof of Theorem 3.1.6 (1) ⇒ (2), lines 817–850, due to Connes and Ozawa): let
+Prove (brown2006, proof of Theorem 3.1.6 (1) ⇒ (2), lines 817–850, whose footnote 3, line 822,
+credits its main idea to Connes (connes1976); its matrix step is Ozawa's lemma, §2.4): let
 `A ⊆ B(H)` be a unital C*-subalgebra, `ψ` a hypertrace for the inclusion and `τ = ψ|_A`. Then for
 every finite `F ⊆ A` and `ε > 0` there are `q` and a normal u.c.p. map `Φ : B(H) → M_q` whose
 restriction `φ` to `A` satisfies `‖φ(ab) − φ(a)φ(b)‖₂ < ε` and `|tr_q φ(a) − τ(a)| < ε` for
@@ -1330,8 +1332,8 @@ API:
 
 ### 4.4 The Connes–Kirchberg theorem
 
-Prove (brown2006, Theorem 3.1.6, line 804, with footnote 2, line 819; brown-ozawa2008, Ch. 6, for
-nets; Kirchberg's and Connes's origin as background): for a unital C*-algebra `A` and
+Prove (brown2006, Theorem 3.1.6, line 804, where it is credited to Kirchberg, with footnote 2,
+line 819; brown-ozawa2008, Ch. 6, for nets): for a unital C*-algebra `A` and
 `τ ∈ T(A)` the following are equivalent:
 
 - (a) `τ ∈ AT(A)`;
@@ -1518,8 +1520,9 @@ API:
 
 ### 5.2 Uniform amenable traces and injective GNS algebras
 
-Prove (brown2006, Theorem 3.2.2, line 973, with Ozawa's condition (6); there for separable unital
-`A`, with hyperfiniteness): for a C*-algebra `A` and `τ ∈ T(A)` the following are equivalent:
+Prove (brown2006, Theorem 3.2.2, line 973, with condition (6), credited to Ozawa at line 971; there
+for separable unital `A`, with hyperfiniteness): for a C*-algebra `A` and `τ ∈ T(A)` the
+following are equivalent:
 
 - (i) `τ ∈ UAT(A)`;
 - (ii) `M_τ = π_τ(A)''` (`gnsVonNeumannAlgebra`) is injective;
@@ -1659,12 +1662,13 @@ API:
 ### 6.2 Faces
 
 Prove that `AT(A)` and `UAT(A)` are faces of `T(A)` (brown2006, Propositions 3.5.3 and 3.5.4,
-lines 1283 and 1291; Kirchberg's observation): if `γ = sτ₁ + (1 − s)τ₂` with `0 < s < 1`,
-`τ₁, τ₂ ∈ T(A)` and `γ ∈ AT(A)` (resp. `UAT(A)`), then `τ₁, τ₂ ∈ AT(A)` (resp. `UAT(A)`). With
-the convexity of §3.3 this is `isAmenableTrace_convexCombination_iff` and
-`isUniformAmenableTrace_convexCombination_iff`: `γ` is amenable (resp. uniform amenable) iff both
-`τ₁` and `τ₂` are. For `AT`, compose the map `Φ` of §4.4 (f) for `γ` with the normal star
-homomorphism `x ↦ U(xP)U*` of §6.1 onto `M_{τ_i}` and apply (f) ⇒ (a); for `UAT`, `M_{τ_i}` is a
+lines 1283 and 1291; line 1282 credits the face property of `AT(A)` to Kirchberg): if
+`γ = sτ₁ + (1 − s)τ₂` with `0 < s < 1`, `τ₁, τ₂ ∈ T(A)` and `γ ∈ AT(A)` (resp. `UAT(A)`), then
+`τ₁, τ₂ ∈ AT(A)` (resp. `UAT(A)`). With the convexity of §3.3 this is
+`isAmenableTrace_convexCombination_iff` and `isUniformAmenableTrace_convexCombination_iff`: `γ`
+is amenable (resp. uniform amenable) iff both `τ₁` and `τ₂` are. For `AT`, compose the map `Φ`
+of §4.4 (f) for `γ` with the normal star homomorphism `x ↦ U(xP)U*` of §6.1 onto `M_{τ_i}` and
+apply (f) ⇒ (a); for `UAT`, `M_{τ_i}` is a
 reduced algebra of the injective `M_γ` by a projection of its commutant, hence normally
 isomorphic to a central summand of `M_γ`, and injective (VonNeumannAlgebras V13a), so §5.2
 applies. Nonunital algebras pass through the affine unitization map of §1.3. Whether `AT_QD(A)` is

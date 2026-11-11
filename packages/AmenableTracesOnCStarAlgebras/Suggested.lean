@@ -59,7 +59,7 @@ namespace TauCetiRoadmap.AmenableTracesOnCStarAlgebras
 
 universe u
 
-/-! ## Layer 1: tracial states and the normalized matrix trace -/
+/-! ## Layer 1: tracial states, their GNS data and the matrix trace -/
 
 section TracialStates
 
@@ -377,7 +377,7 @@ theorem isAmenableTrace_of_comp_ideal {B : Type*} [NonUnitalCStarAlgebra B] [Par
 
 end Faces
 
-/-! ## Layer 7: commutative, AF and reduced group C*-algebras -/
+/-! ## Layer 7: examples: finite-dimensional, commutative, AF and group algebras -/
 
 section Examples
 
