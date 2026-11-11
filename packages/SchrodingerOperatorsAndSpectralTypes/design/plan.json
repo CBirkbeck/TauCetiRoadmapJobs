@@ -116,7 +116,8 @@
       "roadmap:OperatorTheory SelfAdjointSpectralTheory SA-C12-SA-C19",
       "roadmap:OperatorTheory SelfAdjointSpectralTheory SA-E05",
       "roadmap:OperatorTheory SelfAdjointSpectralTheory SA-E44",
-      "roadmap:UnboundedOperators UO-C01"
+      "roadmap:UnboundedOperators UO-C01",
+      "tauceti:LinearPMap.IsReducing.isSelfAdjoint_restrict"
      ],
      "api": [],
      "tests": [
@@ -1431,7 +1432,9 @@
       "roadmap:OperatorTheory SelfAdjointSpectralTheory SA-C86",
       "roadmap:ComplexKahlerGeometry K5a",
       "mathlib:IsCompactOperator.comp_clm",
-      "tauceti:IsSelfAdjoint.hasCompactResolvent_iff_isCompactOperator_resolvent"
+      "tauceti:IsSelfAdjoint.hasCompactResolvent_iff_isCompactOperator_resolvent",
+      "tauceti:IsSelfAdjoint.exists_hilbertBasis_forall_apply_eq_smul_of_hasCompactResolvent",
+      "tauceti:LinearPMap.resolvent_sub_resolvent"
      ],
      "api": [],
      "tests": [
@@ -1454,6 +1457,11 @@
        "name": "points",
        "kind": "degenerate",
        "statement": "N points: Delta_X + V = multiplication by V on C^N, N eigenvalues, mu_n = +infinity for n > N."
+      },
+      {
+       "name": "normal_resolvent",
+       "kind": "non-example",
+       "statement": "One-point X, V = 0, s = 1: T = (Delta_X + V - i)^{-1} = i, T* = -i /= T, T T* = T* T = 1, T - T* = 2i = 2i T T*; the resolvent is compact normal, not self-adjoint; its eigenvector 1 for nu = i is the eigenvector of Delta_X + V = 0 for i + 1/i = 0."
       },
       {
        "name": "unbounded",
@@ -1533,7 +1541,8 @@
      "prerequisites": [
       "target:3.10a",
       "target:3.6",
-      "roadmap:UnboundedOperators UO-C02"
+      "roadmap:UnboundedOperators UO-C02",
+      "gap:weyl-criterion"
      ],
      "api": [],
      "tests": [
@@ -1551,6 +1560,11 @@
        "name": "orthonormal_subsequence",
        "kind": "computation",
        "statement": "n = 2^j: supports log y in [2^{j+1}, 3 2^j], disjoint since 3 2^j < 2^{j+2}."
+      },
+      {
+       "name": "weak_null_needed",
+       "kind": "non-example",
+       "statement": "A = 0 on C with u_n = 1: residual 0, weak limit 1, sigma_ess = empty; A = 0 on l^2 with u_n = e_n: residual 0, weak limit 0, sigma_ess = {0}. Weyl's criterion needs the orthonormal (weakly null) sequence, which the disjointly supported v_j provide."
       }
      ]
     }
@@ -1711,7 +1725,7 @@
      "id": "4.3b",
      "kind": "theorem",
      "name": "isCompactOperator_mul_resolvent",
-     "statement": "If V in L^infinity vanishes at infinity then M_V (H_0 + 1)^{-1} and (H_0 + 1)^{-1} M_V are compact.",
+     "statement": "If V in L^infinity vanishes at infinity then M_V (H_0 + 1)^{-1} and (H_0 + 1)^{-1} M_V are compact; consequently M_V (H_0 - i)^{-1} = M_V (H_0 + 1)^{-1} [I + (1 + i)(H_0 - i)^{-1}] is compact and, as dom H_0 is contained in L^2 = dom M_V, M_V is H_0-compact in the sense of UnboundedOperators UO-E04.",
      "hypotheses": [
       "d >= 1",
       "R^d = EuclideanSpace R (Fin d) with Lebesgue measure",
@@ -1727,7 +1741,10 @@
       "target:4.3a",
       "tauceti:ContinuousLinearMap.hilbertSchmidtEnergy",
       "roadmap:OperatorTheory OperatorIdeals OI-B32-OI-B41",
-      "mathlib:isCompactOperator_of_tendsto"
+      "mathlib:isCompactOperator_of_tendsto",
+      "mathlib:IsCompactOperator.comp_clm",
+      "tauceti:LinearPMap.resolvent_sub_resolvent",
+      "roadmap:UnboundedOperators UO-E04"
      ],
      "api": [],
      "tests": [
@@ -1735,6 +1752,11 @@
        "name": "constant_not_compact",
        "kind": "non-example",
        "statement": "V = 1: (H_0 + 1)^{-1} has spectrum [0,1], not compact."
+      },
+      {
+       "name": "change_of_point",
+       "kind": "computation",
+       "statement": "On a spectral value s >= 0 of H_0: (s - i)^{-1} = (s + 1)^{-1}(1 + (1 + i)/(s - i)); s = 0 gives i on both sides, s = 1 gives (1 + i)/2; the bracket has modulus (s + 1)/sqrt(s^2 + 1) <= sqrt 2; the sign slip 1 - (1 + i)/(s - i) gives 2 - i at s = 0."
       }
      ]
     },
@@ -1801,7 +1823,7 @@
      "id": "4.4b",
      "kind": "theorem",
      "name": "schrodingerOperator_spectrum",
-     "statement": "H_V is self-adjoint, H_V >= ess inf V, sigma(H_V) subset [ess inf V, infinity), C_c^infinity and Schwartz space are cores (-Delta + V essentially self-adjoint on each); sigma_ac, sigma_sc, sigma_pp of H_V are defined by 1.4a; if V vanishes at infinity, V is H_0-compact and sigma_ess(H_V) = [0, infinity).",
+     "statement": "H_V is self-adjoint, H_V >= ess inf V, sigma(H_V) subset [ess inf V, infinity), C_c^infinity and Schwartz space are cores (-Delta + V essentially self-adjoint on each); sigma_ac, sigma_sc, sigma_pp of H_V are defined by 1.4a; if V vanishes at infinity, M_V is H_0-compact in the sense of UO-E04 (4.3b) and sigma_ess(H_V) = [0, infinity). For d = 3 the self-adjointness on H^2 and the C_c^infinity core are the case V_2 = 0, V_inf = V of UnboundedOperators UO-E06 (which also gives the relative compactness under decay); this theorem extends them to every d >= 1 and adds the lower bound and the Schwartz core.",
      "hypotheses": [
       "d >= 1",
       "R^d = EuclideanSpace R (Fin d) with Lebesgue measure",
@@ -1820,7 +1842,8 @@
       "target:4.3b",
       "roadmap:QuantumFoundations S8.2",
       "roadmap:UnboundedOperators UO-E04",
-      "roadmap:UnboundedOperators UO-C03"
+      "roadmap:UnboundedOperators UO-C03",
+      "roadmap:UnboundedOperators UO-E06"
      ],
      "api": [],
      "tests": []
@@ -1934,7 +1957,7 @@
     "SA-E44",
     "SA-E47"
    ],
-   "what": "spectral PVM, resolvent formula and uniqueness, reduced restrictions, unitary conjugation, bounded Kato-Rellich, spectrum, form bounds, generated unitary group, cyclic decompositions"
+   "what": "spectral PVM, resolvent formula and uniqueness, reduced restrictions and their self-adjointness (SA-C19), unitary conjugation, bounded Kato-Rellich, compact normal spectral decomposition (SA-C86), spectrum, form bounds, generated unitary group and its commutation with spectral projections (SA-E30), cyclic decompositions"
   },
   {
    "roadmap": "UnboundedOperators",
@@ -1952,7 +1975,7 @@
     "UO-E05",
     "UO-E06"
    ],
-   "what": "unbounded spectral integral and multipliers, spectral support, essential spectrum, the pp/ac/sc reducing decomposition, closed forms and Friedrichs extension, cores, relatively compact perturbations"
+   "what": "unbounded spectral integral and multipliers, spectral support, essential spectrum (Weyl criterion requested as gap weyl-criterion), the pp/ac/sc reducing decomposition, closed forms and Friedrichs extension, cores, relatively compact perturbations (V A-compact when V(A - i)^{-1} is compact), real L^2 + L^infinity potentials on R^3 (UO-E06, the d = 3 case of 4.4b)"
   },
   {
    "roadmap": "QuantumFoundations",
@@ -2072,5 +2095,25 @@
    "what": "Laplacian of complete noncompact manifolds"
   }
  ],
- "gaps": []
+ "gaps": [
+  {
+   "slug": "weyl-criterion",
+   "title": "Weyl's criterion for the essential spectrum",
+   "supplier": "UnboundedOperators",
+   "section": "UO-C02 (§3.2)",
+   "neededBy": [
+    "3.10b"
+   ],
+   "needs": "State Weyl's criterion as an item of UO-C02: for self-adjoint A on a complex Hilbert space and real lambda, lambda lies in the essential spectrum of A iff there are u_n in dom A with ||u_n|| = 1, u_n -> 0 weakly and ||(A - lambda) u_n|| -> 0, the sequence then being choosable orthonormal (Teschl Lemma 6.17, p. 145, which UO-C02 already uses in its proof of the Fredholm characterisation).",
+   "detail": "UO-C02 states the two definitions, their equivalence, unitary invariance and the finite-rank-window characterisation, but not the criterion; 3.10b uses the direction from an orthonormal sequence with vanishing residuals to membership in the essential spectrum."
+  },
+  {
+   "slug": "spectral-integral-resolvent",
+   "title": "Resolvent of the identity integral of a bare projection-valued measure",
+   "supplier": "UnboundedOperators",
+   "section": "UO-A02 (§1.2)",
+   "needs": "For every normalized projection-valued measure P on R (TauCeti.ProjValMeasure R H) and every z with Im z /= 0, the bounded integral of (z - s)^{-1} against P maps H into dom id[P] and is a two-sided inverse of z - id[P] on the actual domains, so that SA-E44 identifies the spectral measure of the self-adjoint id[P] with P.",
+   "detail": "UO-A02 proves self-adjointness of real-symbol integrals and A = id[P_A] for a given self-adjoint A, but the resolvent formula for id[P] is stated only when P is already the spectral measure of an operator. The Conventions use the gap to apply Layer 1 to a bare projection-valued measure through A_P = id[P]; domain inclusion follows from |s/(z - s)| <= 1 + |z|/|Im z|."
+  }
+ ]
 }
