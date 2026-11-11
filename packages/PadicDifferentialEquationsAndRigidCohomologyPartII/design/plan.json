@@ -3999,13 +3999,13 @@
     },
     {
       "slug": "irreducible-iota-purity",
-      "needs": "for every smooth connected `X` over `𝔽_q`, `K` with residue field `𝔽_q` and `σ_K = id`, and every field embedding `ι : K^alg → ℂ`, every irreducible overconvergent F-isocrystal on `X/K` is `ι`-pure of some real weight (Abe–Esnault, Theorem 2.7, restricted to F-`Isoc†`), extending §RD.6.77 beyond `ι`-real objects on curves.",
+      "needs": "for every smooth connected `X` over `𝔽_q`, `K` with residue field `𝔽_q` and `σ_K = id`, every finite extension `L ⊂ K^alg` of `K`, every overconvergent F-isocrystal `M` on `X/K` with a `K`-algebra map `L → End(M)` whose scalar extension `M ⊗_L L′` is irreducible among objects with `L′`-structure for every finite extension `L′ ⊂ K^alg` of `L`, and every field embedding `ι : K^alg → ℂ`, there is a real `w` such that at every closed point `x` of `X`, of degree `d`, every eigenvalue in `K^alg` of the Frobenius `F_x` of §RD.6.2, taken as an `L`-linear endomorphism of the fibre `M_x`, has `|ι(·)| = q^(wd/2)` (Abe–Esnault, Theorem 2.7, p. 13, in their `Q̄_p`-coefficient category of §1.1, p. 4; Tsuzuki, Definition 7.14, p. 34, and Theorem 7.18, p. 37); this is the purity predicate of §RD.6.28 for the `L`-linear Frobenius, the counterpart of §RD.6.77 on smooth `X` of any dimension for objects that stay irreducible after every coefficient extension, and it asserts nothing of the `K`-object obtained by forgetting `L`, which need not be `ι`-pure.",
       "supplier": "PadicDifferentialEquationsAndRigidCohomology",
       "section": "RD.6.77"
     },
     {
       "slug": "lefschetz-curves-irreducibility",
-      "needs": "for smooth connected `X` over `𝔽_q`, a finite extension `L` of `K`, an overconvergent F-isocrystal `M` on `X/K` with a `K`-algebra map `L → End(M)` that is irreducible among such objects, and a finite set `S` of closed points of `X`, there is a smooth curve `C → X` through every point of `S` (with a `k(α)`-rational point over each `α ∈ S`) on which `M|_C` is irreducible among objects with `L`-structure (Abe–Esnault, Theorem 3.10).",
+      "needs": "for smooth connected `X` over `𝔽_q`, a finite extension `L ⊂ K^alg` of `K`, an overconvergent F-isocrystal `M` on `X/K` with a `K`-algebra map `L → End(M)` whose scalar extension `M ⊗_L L′` is irreducible among objects with `L′`-structure for every finite extension `L′ ⊂ K^alg` of `L`, and a finite set `S` of closed points of `X`, there is a smooth irreducible curve `C` over `𝔽_q` with a morphism `C → X` and a `k(α)`-rational point of `C` over each `α ∈ S` such that `M|_C ⊗_L L′` is irreducible among objects with `L′`-structure for every such `L′` (Abe–Esnault, Theorem 3.10, p. 17, in their `Q̄_p`-coefficient category of §1.1, p. 4).",
       "supplier": "PadicDifferentialEquationsAndRigidCohomology",
       "section": "Layer RD.6"
     },

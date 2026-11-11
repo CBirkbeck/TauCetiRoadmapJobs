@@ -172,8 +172,9 @@ weight and Lefschetz statements listed as supplier requests.
    after completion. That map can have a kernel even though its `E`-linearisation is surjective;
    definitions keep both carriers.
 10. **Finite-field coefficients.** In MS.6, `Q̄_p` is a fixed algebraic closure of `K`, coefficient
-    objects are modelled on finite extensions `L ⊂ Q̄_p` of `K`, traces and determinants are
-    computed on these finite models, and `ι : Q̄_p → ℂ` is a field isomorphism. Weights are real
+    objects are modelled on finite extensions `L ⊂ Q̄_p` of `K`, traces, determinants and `ι`-weights
+    are computed on these finite models with their `L`-linear Frobenius, never on the `K`-object
+    obtained by forgetting `L` (MS.6.9), and `ι : Q̄_p → ℂ` is a field isomorphism. Weights are real
     numbers: a constant rank-one object can have non-integral weight.
 11. **Categories.** All categories here are `K^σ`-linear abelian categories with tensor products and
     duals; isomorphisms are isomorphisms in the stated category (overconvergent, convergent or
@@ -309,9 +310,9 @@ What PadicDifferentialEquationsAndRigidCohomology must provide (gap:unit-root-co
 
 What PadicDifferentialEquationsAndRigidCohomology must provide (gap:legendre-kummer-extension): for `p ≡ 1 mod 4`, `C = P¹_(𝔽_p) ∖ {0, 1, ∞}`, `L†` the rank-two `H¹` of the Legendre family and `χ` the quadratic character of `w² = z(z − 1)`, the space `H¹_rig(C, L†(χ))` is two-dimensional with Frobenius slopes 0 and 2, its unit-root eigenvalue is `π_p²` for the unit root `π_p` of `y² = x³ − x`, and extensions of the constant line `O(π_p²)` by `L†(χ)` in F-`Isoc†(C)` are classified by the `π_p²`-eigenspace of Frobenius on `H¹_rig(C, L†(χ))`, equivalently by `H¹_rig(C, L†(χ) ⊗ O(π_p²)^∨)^(F=1)` (the `H⁰` of this twist vanishes, `L†(χ)` being irreducible of rank two), which is one-dimensional (Tsuzuki §3.9, pp. 21–22).
 
-What PadicDifferentialEquationsAndRigidCohomology must provide (gap:irreducible-iota-purity): for every smooth connected `X` over `𝔽_q`, `K` with residue field `𝔽_q` and `σ_K = id`, and every field embedding `ι : K^alg → ℂ`, every irreducible overconvergent F-isocrystal on `X/K` is `ι`-pure of some real weight (Abe–Esnault, Theorem 2.7, restricted to F-`Isoc†`), extending §RD.6.77 beyond `ι`-real objects on curves.
+What PadicDifferentialEquationsAndRigidCohomology must provide (gap:irreducible-iota-purity): for every smooth connected `X` over `𝔽_q`, `K` with residue field `𝔽_q` and `σ_K = id`, every finite extension `L ⊂ K^alg` of `K`, every overconvergent F-isocrystal `M` on `X/K` with a `K`-algebra map `L → End(M)` whose scalar extension `M ⊗_L L′` is irreducible among objects with `L′`-structure for every finite extension `L′ ⊂ K^alg` of `L`, and every field embedding `ι : K^alg → ℂ`, there is a real `w` such that at every closed point `x` of `X`, of degree `d`, every eigenvalue in `K^alg` of the Frobenius `F_x` of §RD.6.2, taken as an `L`-linear endomorphism of the fibre `M_x`, has `|ι(·)| = q^(wd/2)` (Abe–Esnault, Theorem 2.7, p. 13, in their `Q̄_p`-coefficient category of §1.1, p. 4; Tsuzuki, Definition 7.14, p. 34, and Theorem 7.18, p. 37); this is the purity predicate of §RD.6.28 for the `L`-linear Frobenius, the counterpart of §RD.6.77 on smooth `X` of any dimension for objects that stay irreducible after every coefficient extension, and it asserts nothing of the `K`-object obtained by forgetting `L`, which need not be `ι`-pure.
 
-What PadicDifferentialEquationsAndRigidCohomology must provide (gap:lefschetz-curves-irreducibility): for smooth connected `X` over `𝔽_q`, a finite extension `L` of `K`, an overconvergent F-isocrystal `M` on `X/K` with a `K`-algebra map `L → End(M)` that is irreducible among such objects, and a finite set `S` of closed points of `X`, there is a smooth curve `C → X` through every point of `S` (with a `k(α)`-rational point over each `α ∈ S`) on which `M|_C` is irreducible among objects with `L`-structure (Abe–Esnault, Theorem 3.10).
+What PadicDifferentialEquationsAndRigidCohomology must provide (gap:lefschetz-curves-irreducibility): for smooth connected `X` over `𝔽_q`, a finite extension `L ⊂ K^alg` of `K`, an overconvergent F-isocrystal `M` on `X/K` with a `K`-algebra map `L → End(M)` whose scalar extension `M ⊗_L L′` is irreducible among objects with `L′`-structure for every finite extension `L′ ⊂ K^alg` of `L`, and a finite set `S` of closed points of `X`, there is a smooth irreducible curve `C` over `𝔽_q` with a morphism `C → X` and a `k(α)`-rational point of `C` over each `α ∈ S` such that `M|_C ⊗_L L′` is irreducible among objects with `L′`-structure for every such `L′` (Abe–Esnault, Theorem 3.10, p. 17, in their `Q̄_p`-coefficient category of §1.1, p. 4).
 
 What PadicDifferentialEquationsAndRigidCohomology must provide (gap:docile-curve-restriction): for a smooth connected projective `X̄` of dimension at least 2 over a perfect field `k`, a strict normal crossings divisor `Z`, `X = X̄ ∖ Z` and a smooth curve `C̄` that is a complete intersection of ample divisors in good position with respect to `Z`, restriction `H⁰(X, E) → H⁰(C̄ ∩ X, E|)` is an isomorphism for every overconvergent isocrystal `E` on `X` with unipotent monodromy along `Z` (Abe–Esnault, Corollary 2.4 with Remark 2.5).
 
@@ -1891,8 +1892,13 @@ API:
   mapping to `α`.
 - For a rank-one `M†`, every smooth connected curve through `α` with a `k(α)`-rational point over `α`
   is a witness, since every nonzero rank-one object is irreducible.
-- Separate witnesses for `M†` and `N†` do not give one curve on which both stay irreducible; proofs
-  must allow two curves.
+- A curve whose image contains `α` need not be a witness. For `X = A¹_(𝔽_p)`, `α` the origin
+  (`k(α) = 𝔽_p`) and `M†` the unit object, the curve `C = A¹_(𝔽_(p²)) = Spec 𝔽_(p²)[s]`, smooth and
+  connected over `𝔽_p`, with `i : C → X` given by `x ↦ s`, has `i^*M†` of rank one, hence irreducible,
+  and its image contains `α`; but the fibre of `i` over `α` is `Spec 𝔽_(p²)`, which has no `𝔽_p`-point,
+  so `C` carries 0 `k(α)`-rational points over `α` (the identity curve carries 1) and is not a witness.
+  A definition asking only that the image contain `α` would accept it. `LC(X, α, M†)` still holds,
+  through the identity curve.
 
 ### MS.6.2 Lefschetz rank maps
 
@@ -1992,7 +1998,8 @@ API:
 - The fibre at `α` is an `L`-space of dimension `Q̄_p-rank(M†)` with `L`-linear `F^n`, and its
   characteristic polynomial does not depend on `L`.
 - An irreducible object represented over `L` is, as an overconvergent F-isocrystal over `K`, a finite
-  direct sum of copies of one irreducible object (Lemma 7.7).
+  direct sum of copies of one irreducible object (Lemma 7.7); that `K`-object need not stay
+  irreducible after a coefficient extension and need not be `ι`-pure (MS.6.9).
 - MS.4.2–MS.4.6 and MS.6.2–MS.6.4 hold for objects with `L`-structure, with irreducibility taken among
   such objects and `h` `L`-linear: the kernels in their proofs are `L`-stable, and the unique lifts are
   `L`-linear by uniqueness.
@@ -2103,24 +2110,63 @@ zero case); the assumed bijection returns it to `X`, and injectivity on the tops
 ### MS.6.9 Finite-field weight and Lefschetz inputs
 
 For smooth connected `X` over `𝔽_q`, prove: (a) every irreducible `Q̄_p`-object is `ι`-pure of some real
-weight for every `ι`; (b) for every irreducible `Q̄_p`-object `M†` and every finite set of closed points of
-`X` there is a witness curve through them on which `M†` stays irreducible, so `LC_(Q̄_p)(X, α, M†)` holds
-at every closed point `α` (Tsuzuki, Theorems 7.18–7.19, p. 37, quoting Abe–Esnault, Theorem 2.7, p. 13,
-and Theorem 3.10, pp. 17–18). Weights are real: integrality would exclude constant twists.
+weight for every `ι`; (b) for every irreducible `Q̄_p`-object `M†` and every finite set of closed points
+of `X` there is a witness curve through them on which `M†` stays irreducible, so `LC_(Q̄_p)(X, α, M†)`
+holds at every closed point `α` (Tsuzuki, Theorems 7.18–7.19, p. 37, quoting Abe–Esnault, Theorem 2.7,
+p. 13, and Theorem 3.10, pp. 17–18). A `Q̄_p`-object is **`ι`-pure of weight `w`** if at every closed
+point `α`, of degree `n`, every eigenvalue of the `L`-linear Frobenius fibre `F^n` of MS.6.5, on a
+finite model over some `L ⊇ K_α`, has `|ι(·)| = q^(nw/2)` (Tsuzuki, Definition 7.14, p. 34); the
+characteristic polynomial of that fibre does not depend on `L`, so neither does the condition. Weights
+are real: integrality would exclude constant twists.
 
-(a) By MS.6.5 the underlying object over `K` is a sum of copies of one irreducible overconvergent
-F-isocrystal, which is `ι`-pure by the supplier request irreducible-iota-purity; the `L`-linear
-eigenvalues are among the `K`-linear ones. (b) is the supplier request lefschetz-curves-irreducibility
-applied to a finite model on which `M†` is absolutely irreducible.
+(a) Choose a finite model of `M†` over `L` that stays irreducible after every finite extension of `L`
+(MS.6.5) and apply the supplier request irreducible-iota-purity to it, with its `L`-structure. Its
+`L`-linear Frobenius `F_x` at a closed point `x` of degree `n` (§RD.6.2) has the eigenvalues of the
+Frobenius fibre of MS.6.5, each with `n` times the multiplicity: after enlarging `L` to contain `K_x`,
+`F` permutes cyclically the `n` summands of `M_x` cut out by `K_x ⊗_K L ≅ L^n` and conjugates `F^n` on
+one summand to `F^n` on the next. The underlying `K`-object is not used: forgetting `L` replaces each
+`L`-linear eigenvalue by all of its conjugates over `K`, whose absolute values under `ι` can differ. (b)
+Apply the supplier request lefschetz-curves-irreducibility to the same model and the given finite set of
+points. Its conclusion, that the restriction to the curve stays irreducible after every finite extension
+of `L`, is irreducibility of the restriction in the `Q̄_p`-category (MS.6.5), so the curve witnesses
+`LC_(Q̄_p)` at each of the points.
 
-*Needs:* MS.6.1; MS.6.5; PadicDifferentialEquationsAndRigidCohomology §§RD.6.28, RD.6.82 and the
-supplier requests irreducible-iota-purity and lefschetz-curves-irreducibility.
+*Needs:* MS.6.1; MS.6.5; PadicDifferentialEquationsAndRigidCohomology §§RD.6.2, RD.6.28, RD.6.82 and
+the supplier requests irreducible-iota-purity and lefschetz-curves-irreducibility.
+
+API:
+
+- `ι`-purity of a `Q̄_p`-object does not depend on its finite model: the scalar extension `θ_(L,L′)` keeps
+  the characteristic polynomial of every Frobenius fibre.
+- If `M†` and `N†` are `ι`-pure of weights `w` and `w′`, then `N†^∨ ⊗ M†`, with dual and tensor product
+  over `L`, is `ι`-pure of weight `w − w′`: its fibre eigenvalues at a closed point are the quotients
+  `a/b` of the fibre eigenvalues `a` of `M†` and `b` of `N†` there.
+- Twisting by the constant `L`-line with Frobenius `c ∈ L^×` adds `2 log_q |ι(c)|` to the weight, since its
+  fibre eigenvalue at a closed point of degree `n` is `c^n`.
 
 **Checks.**
 
 - On `Spec 𝔽_3`, the rank-one object with Frobenius 2 has weight `2 log_3 2`, which is not an integer;
   restricting to integral weights rejects a valid irreducible object.
 - A constant twist by `c` with `|ι(c)| = q^(w/2)` moves the weight by `w` (§RD.6.82).
+- Forgetting the coefficients loses purity. On `Spec 𝔽_3` with `K = ℚ_3`, let `L = ℚ_3(√5)` (unramified
+  quadratic, 5 not being a square mod 3) and let `M†` be the `L`-line with Frobenius `a = (1 + √5)/2`.
+  As an `L`-object it has rank one, so it stays irreducible after every extension of `L`; its `L`-linear
+  Frobenius has the single eigenvalue `a`, of weight `w = 2 log_3 |ι(a)|`, and `3^(w/2) = |ι(a)|`. The
+  underlying `ℚ_3`-object has rank two and Frobenius with characteristic polynomial `T² − T − 1`, whose
+  values at `0, 1, 2` are `2, 2, 1` mod 3; it is therefore irreducible over `ℚ_3`, and the object is
+  irreducible among `ℚ_3`-objects. Its eigenvalues `a` and `1 − a` have absolute values `1.618…` and
+  `0.618…` under `ι`, of weights `0.876…` and `−0.876…`, so it is not `ι`-pure of any weight. A
+  definition of weights through the forgotten `K`-object, or a purity input for irreducible `K`-objects,
+  is refuted by this object; its constant pullback to `A¹_(𝔽_3)` gives the same failure on a curve
+  (eigenvalues `a^n` and `(1 − a)^n` at a closed point of degree `n`).
+- Irreducibility among `L`-objects is weaker than irreducibility in the `Q̄_p`-category, so the Lefschetz
+  input must conclude irreducibility after every coefficient extension. With `L = K = ℚ_3`, the
+  constant rank-two object on `A¹_(𝔽_3)` with Frobenius of characteristic polynomial `T² − T − 1` is
+  irreducible among `ℚ_3`-objects (on the geometrically connected `A¹_(𝔽_3)` its subobjects are
+  constant, and no `ℚ_3`-line is Frobenius-stable), but over `ℚ_3(√5)` it splits into the two lines
+  with Frobenius `a` and `1 − a`: a restriction that is only `L`-irreducible can still be reducible in
+  the `Q̄_p`-category.
 
 ### MS.6.10 The fibrewise isomorphism criterion
 
@@ -2240,7 +2286,10 @@ added curve hypothesis is not a consequence of MS.6.13 alone.
 
 ### Examples
 
-On `Spec 𝔽_3`, the rank-one object with Frobenius 2 has weight `2 log_3 2`. For `m = 2`, the average
+On `Spec 𝔽_3`, the rank-one object with Frobenius 2 has weight `2 log_3 2`. With `L = ℚ_3(√5)`, the
+`L`-line with Frobenius `(1 + √5)/2` is `ι`-pure for its `L`-linear Frobenius, while its underlying
+`ℚ_3`-object, irreducible of rank two, has eigenvalues of absolute values `1.618…` and `0.618…` and is
+not pure. For `m = 2`, the average
 `(f + T(f))/2` preserves a map `h` induced by both summands, and on `L²` the primitive projector gives
 total trace 2 while the unprojected unit gives 4.
 
