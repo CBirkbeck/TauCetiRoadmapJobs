@@ -233,7 +233,8 @@ resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/6488#i
 
 [[source]]
 id = "DG70"
-title = "Michel Demazure Pierre Gabriel Groupes Algebriques 1970"
+authors = "Michel Demazure, Pierre Gabriel"
+title = "Groupes algébriques. Tome I"
 year = 1970
 locator_scheme = "section"
 locator = "II §6.1.5"
