@@ -73,3 +73,14 @@ cited_for = ["Layers 0 and 7"]
 additional_fetched_from = "https://stacks.math.columbia.edu/download/homology.pdf#nameddest=012K"
 additional_sha256 = "f3d73df1c27a6d88f9e4dd0f01697b3dd8553b88e3ea078539a9b512dc4d9576"
 additional_url = "https://stacks.math.columbia.edu/tag/012K"
+
+[[source]]
+id = "LEE13"
+authors = "S.-I. A. Lee"
+title = "S.-I. A. Lee, On the applications of the circle method to function fields, and related topics, 2013"
+year = 2013
+locator_scheme = "theorem"
+locator = "Lemma 3.3.5"
+licence_class = "none"
+status = "waived"
+resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/12839#issuecomment-6787957617"
