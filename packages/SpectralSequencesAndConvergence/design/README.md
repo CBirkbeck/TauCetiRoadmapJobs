@@ -107,14 +107,18 @@ part of this roadmap.
 - **Meets and joins of subobjects.** `Subobject X` is Mathlib's poset of subobjects. The meet of
   a family is its greatest lower bound and the join its least upper bound in that poset. Their
   existence is either a hypothesis or a theorem; it is never assumed silently.
-- **Convergence dictionary.** *Weak convergence* means isomorphisms from the limit page to the
-  graded pieces (stacks-012K "weakly converges"). *Convergence* adds that each filtration is
-  exhaustive and separated (stacks-012K "abuts"; Helle–Rognes and Boardman "converges"). *Strong
-  convergence* adds completeness (Helle–Rognes and Boardman "converges strongly"; stacks-012K
-  "converges" additionally requires regularity, which here is a separate property of the
-  spectral sequence). Helle–Rognes include exhaustiveness in "converges weakly"; here it is not
-  included. Helle–Rognes and Boardman call a filtration *complete* when `lim¹_p F^p = 0` and
-  *Hausdorff* when its meet `lim_p F^p` is `0` (helle-rognes2024 line 81–84, Definition 2.5).
+- **Convergence dictionary.** *Weak convergence* means given isomorphisms `β` from the limit page
+  to the graded pieces, as in helle-rognes2024 line 94–96, Definition 2.7. stacks-012K "weakly
+  converges" (line 3131–3136, Definition 24.9 (1)) asks instead that the canonical comparison of
+  its Lemma 24.6 be an isomorphism; for a filtered complex that is the structure of 5.2 whose `β`
+  are those comparisons, and it is strictly stronger (5.2, fourth Check). *Convergence* adds that
+  each filtration is exhaustive and separated (stacks-012K "abuts"; Helle–Rognes and Boardman
+  "converges"). *Strong convergence* adds completeness (Helle–Rognes and Boardman "converges
+  strongly"; stacks-012K "converges" additionally requires regularity, which here is a separate
+  property of the spectral sequence). Helle–Rognes include exhaustiveness in "converges weakly";
+  here it is not included. Helle–Rognes and Boardman call a filtration *complete* when
+  `lim¹_p F^p = 0` and *Hausdorff* when its meet `lim_p F^p` is `0` (helle-rognes2024 line 81–84,
+  Definition 2.5).
   Here *complete* is the limit-cone condition of 3.1. It implies separated (3.1) and, with
   countable products, `lim¹_p F^p = 0`; under `CountableAB4Star` it is equivalent to Hausdorff
   together with `lim¹_p F^p = 0` (7.1). A filtration with `lim¹_p F^p = 0` and nonzero meet is
@@ -184,8 +188,11 @@ part of this roadmap.
   coproducts. The countable meets and joins used here are built in Layer 1 from countable
   products and coproducts.
 - `HasCountableProducts`, `HasCountableCoproducts`, `CountableAB4Star`, `HasExactColimitsOfShape`,
-  `AB5`, `EnoughProjectives`, `IsGrothendieckAbelian`, with the module-category instances `AB5`,
-  `AB4Star` and `EnoughProjectives` for `ModuleCat R`
+  `AB5`, `EnoughProjectives`, `IsGrothendieckAbelian`, with the module-category instances `AB5`
+  and `AB4Star` for `ModuleCat.{u} R` with `R : Type u` only, and `EnoughProjectives` for
+  `ModuleCat.{v} R` under `Small.{v} R`. `CountableAB4Star` follows from `AB4Star` by the
+  instance after its definition, and exact sequential colimits follow from `AB5` by the lemma
+  `AB5OfSize_shrink`
   (`Mathlib/CategoryTheory/Limits/Shapes/Countable.lean`,
   `Mathlib/CategoryTheory/Limits/HasExactLimitsOfShape.lean`,
   `Mathlib/CategoryTheory/Abelian/GrothendieckAxioms/Basic.lean`,
@@ -593,8 +600,9 @@ of filtered objects is a Mathlib `CategoryTheory.FilteredObject.Hom`. Define its
 
 Fix `E : SpectralSequence C c r₀`, a bidegree assignment `(fil, deg, e)`, a set `I ⊆ ℤ` of total
 degrees and an abutment `H : ℤ → FilteredObject C ℤᵒᵖ`. Define
-(stacks-012K line 3131–3143, Definition 24.9, tag 012U, in its filtered-complex form;
-helle-rognes2024 line 94–98, Definition 2.7; weibel1994 Definition 5.2.11, uncertified):
+(helle-rognes2024 line 94–98, Definition 2.7; stacks-012K line 3131–3143, Definition 24.9, tag
+012U, in its filtered-complex form, whose isomorphisms are the canonical comparisons of its
+Lemma 24.6; weibel1994 Definition 5.2.11, uncertified):
 
 - *weak convergence in `I`*: `E` has a limit page at every position of total degree in `I`. For
   every `n ∈ I` and every `s ∈ ℤ` there is an isomorphism `β : E_∞(pq) ≅ gr^s H^n` when
@@ -994,11 +1002,17 @@ cohomological reindexing. *Needs:* 2.1; Tau Ceti `CochainComplex.filtrationFunct
 The induced filtration `F^p H^n(K) = im(H^n(F^p K) → H^n(K))` (stacks-012K line 3062–3071,
 Definition 24.5, tag 012P) is the filtered object of 4.2 transported along Tau Ceti's
 `filtrationAbutmentIso`, by `toFiltrationAbutmentFiltration_comp_filtrationAbutmentIso_hom`, with
-the classical index `p` in place of the E₂ index `p + n + 1`. Prove: when the limit page exists,
-`gr^p H^n(K)` is a subquotient of `E_∞^{p,n−p}`. The spectral sequence converges weakly at
-`(p, n − p)` if and only if the classical inclusions (24.6.1) and (24.6.2) are equalities
-(stacks-012K line 3072–3106 and 3144–3151, Lemmas 24.6 and 24.10, tags 012Q and 012V). *Needs:*
-3.2, 4.2, 4.3, 5.1; Tau Ceti `CochainComplex.filtrationAbutmentIso`,
+the classical index `p` in place of the E₂ index `p + n + 1`. Prove: when the limit page exists
+at `(p, n − p)`, the comparison of 4.3 presents `gr^p H^n(K)` as a subquotient of
+`E_∞^{p,n−p}`: the inclusion `Zᵗ/B_∞ ↪ E_∞^{p,n−p}` and the projection
+`Zᵗ/B_∞ ↠ Zᵗ/Bᵗ ≅ gr^p H^n(K)`. In the classical indexing `Zᵗ` and `Bᵗ` are the images in
+`E_1^{p,n−p}` of `Ker(d) ∩ F^p K^n + F^{p+1} K^n` and `Im(d) ∩ F^p K^n + F^{p+1} K^n`. The
+inclusion is an isomorphism if and only if (24.6.1) is an equality at `(p, n − p)`, and the
+projection if and only if (24.6.2) is. When both are equalities at every position of total
+degree in `I`, these comparisons are the `β` of a weak convergence structure in `I` (3.2); this
+is stacks-012K's weak convergence (stacks-012K line 3072–3106 and 3131–3151, Lemma 24.6,
+Definition 24.9 (1) and Lemma 24.10, tags 012Q, 012U and 012V). *Needs:* 3.2, 4.2, 4.3, 5.1; Tau
+Ceti `CochainComplex.filtrationAbutmentIso`,
 `CochainComplex.toFiltrationAbutmentFiltration_comp_filtrationAbutmentIso_hom`.
 
 - The induced filtration is functorial in filtered morphisms.
@@ -1009,6 +1023,14 @@ the classical index `p` in place of the E₂ index `p + n + 1`. Prove: when the 
 - The non-exhaustive complex of 4.3 has `gr^0 H^0 = 0`, a proper subquotient of
   `E_∞^{0,0} = ℤ`.
 - For the trivial filtration, `F^0 H^n = H^n` and `F^1 H^n = 0`.
+- *The criterion is about the comparison, not about some `β`.* In `ModuleCat ℤ` let
+  `K^{−1} = ℤ`, `K^0 = ℤ^(ℕ) ⊕ ℤ`, `d(x) = (0, x)`, `F^p K^0 = K^0` for `p ≤ 0` and `0` for
+  `p ≥ 1`, and `F^p K^{−1} = 0` for all `p`. Then `E_1^{0,0} = E_∞^{0,0} = ℤ^(ℕ) ⊕ ℤ`, every
+  other `E_1` is `0`, `H^0(K) = ℤ^(ℕ)` with `F^0 H^0 = H^0` and `F^1 H^0 = 0`, and `H^n(K) = 0`
+  for `n ≠ 0`. Since `ℤ^(ℕ) ⊕ ℤ ≅ ℤ^(ℕ)`, abstract isomorphisms give a weak, and by 3.4 a
+  strong, convergence structure in `I = ℤ`. Yet the comparison at `(0, 0)` is the projection
+  `ℤ^(ℕ) ⊕ ℤ ↠ ℤ^(ℕ)` with kernel `0 ⊕ ℤ`: (24.6.2) is strict there (`0 ⊊ 0 ⊕ ℤ`, so
+  `B_∞ = 0 ≠ Bᵗ`). A criterion stated for the existence of some `β` would be false.
 
 ### 5.3 Convergence under cohomological boundedness
 
@@ -1052,16 +1074,19 @@ degree `n`, hence an isomorphism on cycles in degree `n − 1`; cohomology commu
 sequential colimits, so `colim_j H^{n−1}(G_j / G_{q+1}) → H^{n−1}(K / G_{q+1})` is an epimorphism.
 Exhaustiveness on `K^n` makes the induced filtration of `H^n` exhaustive, and bounded below on
 `K^n` makes it vanish from `p₀(n)` on. *Needs:* 3.2, 4.3, 5.1, 5.2; Mathlib
-`HasExactColimitsOfShape`.
+`HasExactColimitsOfShape`; Mathlib's `AB5` instance for `ModuleCat` and `AB5OfSize_shrink` for
+the module bullet.
 
-- For complexes of modules (`ModuleCat R` is `AB5`) this contains Tau Ceti's
-  `CochainComplex.exists_mem_range_filtrationAbutmentFiltrationι` and DGFloer Layer 1 item 3's
-  classical convergence theorem.
+- For complexes in `ModuleCat.{u} R` over a ring `R : Type u`, which has exact sequential
+  colimits by Mathlib's `AB5` instance and `AB5OfSize_shrink`, this contains Tau Ceti's
+  `CochainComplex.exists_mem_range_filtrationAbutmentFiltrationι` in that universe and DGFloer
+  Layer 1 item 3's classical convergence theorem.
 
 **Checks.**
 
-- For `ModuleCat R`, exhaustiveness of a filtration of `K^m` by submodules means every element
-  lies in some step. The theorem then gives Tau Ceti's exhaustive-filtration statement.
+- For `ModuleCat.{u} R` with `R : Type u`, exhaustiveness of a filtration of `K^m` by submodules
+  means every element lies in some step. The theorem then gives Tau Ceti's exhaustive-filtration
+  statement for these complexes.
 - *Exhaustiveness on `K^{n−1}` is needed.* The non-exhaustive complex of 4.3 is bounded below
   and exhaustive on `K^0`, but not on `K^{−1}`, which is `K^{n−1}` for `n = 0`; weak convergence
   fails at `(0, 0)` (`E_∞^{0,0} = ℤ`, `H^0(K) = 0`).
@@ -1248,10 +1273,12 @@ groups). The route: the stable images form an epimorphic subtower with pro-zero 
 7.1 applies. stacks-012K line 3720–3724 records Neeman's theorem that in an abelian category
 with exact products the Mittag–Leffler condition alone does not force `lim¹ = 0`. That theorem
 is why the epimorphic-tower hypothesis is part of the statement. *Needs:* 7.1; Mathlib
-`EnoughProjectives`, `CountableAB4Star`; 1.2 and Mathlib `IsArtinianObject` for the
-cycle-tower bullet.
+`EnoughProjectives`, `CountableAB4Star`; Mathlib's `AB4Star` and `EnoughProjectives` instances
+for `ModuleCat` for the module bullet; 1.2 and Mathlib `IsArtinianObject` for the cycle-tower
+bullet.
 
-- `ModuleCat R` (for `Small R`) has lim-acyclic epimorphic towers and `CountableAB4Star`.
+- `ModuleCat.{u} R` for a ring `R : Type u` has lim-acyclic epimorphic towers and
+  `CountableAB4Star`, from Mathlib's `EnoughProjectives` and `AB4Star` instances.
 - The cycle tower `r ↦ Z_r(pq)` of 1.2 at a position whose first-page object
   `(E.page r₀).X pq` is Artinian (descending chains of subobjects stabilise; every object of
   finite length is Artinian) is eventually constant, hence Mittag–Leffler. Its `lim¹` vanishes
@@ -1329,10 +1356,13 @@ uncertified, in the indexing `s ↦ −s`; and line 185–247 for Lemmas 3.13–
   (helle-rognes2024 line 13–25, summarising boardman1999 Theorems 7.1 and 8.2, uncertified).
 - A regular position has `RE_∞ = 0` (helle-rognes2024 line 78–80, Remark 2.4).
 
-*Needs:* 1.4, 3.2, 6.1, 6.2, 7.1–7.3.
+*Needs:* 1.4, 3.2, 6.1, 6.2, 7.1–7.3; Mathlib's `AB5` instance for `ModuleCat` and
+`AB5OfSize_shrink` for the module bullet.
 
-- On `ModuleCat R` these are Helle–Rognes's statements for graded modules, and on abelian groups
-  the algebraic content of StableHomotopyKTheory §7.26.
+- On `ModuleCat.{u} R` with `R : Type u`, which satisfies the hypotheses on `C` (7.2, and
+  Mathlib's `AB5` instance with `AB5OfSize_shrink` for sequential colimits), these are
+  Helle–Rognes's statements for graded modules, and on abelian groups the algebraic content of
+  StableHomotopyKTheory §7.26.
 
 **Checks.**
 
@@ -1376,8 +1406,8 @@ isomorphism on `∏_s F^s K`, so `lim_s H^n(F^s K) = lim¹_s H^n(F^s K) = 0`, wh
 conditional convergence to the colimit for the couple of 6.3. Exhaustiveness and exact
 sequential colimits give `A^{−∞} = H^n(K)`, and 7.4 applies. *Needs:* 5.1, 5.2, 6.3, 7.1, 7.2, 7.4.
 
-- For `ModuleCat R` this contains DGFloer Layer 1 item 3's complete convergence theorem for
-  module complexes.
+- For `ModuleCat.{u} R` with `R : Type u` this contains DGFloer Layer 1 item 3's complete
+  convergence theorem for module complexes.
 
 **Checks.**
 

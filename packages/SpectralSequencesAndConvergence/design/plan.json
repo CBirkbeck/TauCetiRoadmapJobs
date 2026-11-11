@@ -527,7 +527,7 @@
      "id": "3.2",
      "kind": "definition",
      "name": "CategoryTheory.SpectralSequence.WeakConvergence",
-     "statement": "Given E, a bidegree assignment, I ⊆ ℤ and H : ℤ → FilteredObject C ℤᵒᵖ: weak convergence in I (limit pages at all positions of total degree in I; isomorphisms β : E_∞(pq) ≅ gr^s H^n when (fil pq, deg pq) = (s, n); gr^s H^n = 0 when (s,n) is not in the image); convergence in I (plus exhaustive and separated for n ∈ I); strong convergence in I (plus complete for n ∈ I).",
+     "statement": "Given E, a bidegree assignment, I ⊆ ℤ and H : ℤ → FilteredObject C ℤᵒᵖ: weak convergence in I (limit pages at all positions of total degree in I; given isomorphisms β : E_∞(pq) ≅ gr^s H^n, not required to be canonical, when (fil pq, deg pq) = (s, n); gr^s H^n = 0 when (s,n) is not in the image); convergence in I (plus exhaustive and separated for n ∈ I); strong convergence in I (plus complete for n ∈ I).",
      "hypotheses": [
       "C abelian",
       "a bidegree assignment",
@@ -535,7 +535,7 @@
      ],
      "locator": {
       "source": "stacks-012K",
-      "where": "line 3131–3143, Definition 24.9, tag 012U, in its filtered-complex form; helle-rognes2024 line 94–98, Definition 2.7; weibel1994 Definition 5.2.11 (uncertified)"
+      "where": "line 3131–3143, Definition 24.9, tag 012U, in its filtered-complex form, whose isomorphisms are the canonical comparisons of its Lemma 24.6; helle-rognes2024 line 94–98, Definition 2.7 (given isomorphisms); weibel1994 Definition 5.2.11 (uncertified)"
      },
      "prerequisites": [
       "target:1.4",
@@ -1119,14 +1119,14 @@
      "id": "5.2",
      "kind": "theorem",
      "name": "CochainComplex.inducedFiltration_gr_subquotient_limitPage",
-     "statement": "The induced filtration F^pH^n(K) = im(H^n(F^pK) → H^n(K)) is the filtered object of 4.2 transported by filtrationAbutmentIso with classical index p; when the limit page exists gr^pH^n(K) is a subquotient of E_∞^{p,n−p}; weak convergence at (p, n−p) iff equality in Stacks (24.6.1) and (24.6.2).",
+     "statement": "The induced filtration F^pH^n(K) = im(H^n(F^pK) → H^n(K)) is the filtered object of 4.2 transported by filtrationAbutmentIso with classical index p. When the limit page exists at (p, n−p), the comparison of 4.3 presents gr^pH^n(K) as a subquotient of E_∞^{p,n−p}: the inclusion Zᵗ/B_∞ ↪ E_∞^{p,n−p} and the projection Zᵗ/B_∞ ↠ Zᵗ/Bᵗ ≅ gr^pH^n(K), where classically Zᵗ and Bᵗ are the images in E_1^{p,n−p} of Ker(d) ∩ F^pK^n + F^{p+1}K^n and Im(d) ∩ F^pK^n + F^{p+1}K^n. The inclusion is an isomorphism iff (24.6.1) is an equality at (p, n−p), the projection iff (24.6.2) is. When both are equalities at every position of total degree in I, these comparisons are the β of a weak convergence structure in I (3.2): Stacks' weak convergence.",
      "hypotheses": [
       "C abelian",
       "F antitone"
      ],
      "locator": {
       "source": "stacks-012K",
-      "where": "line 3062–3106 and 3144–3151, Definition 24.5, Lemmas 24.6 and 24.10, tags 012P, 012Q, 012V"
+      "where": "line 3062–3106 and 3131–3151, Definition 24.5, Lemma 24.6, Definition 24.9 (1), Lemma 24.10, tags 012P, 012Q, 012U, 012V"
      },
      "prerequisites": [
       "target:3.2",
@@ -1152,6 +1152,11 @@
        "name": "induced_trivial",
        "kind": "degenerate",
        "statement": "Trivial filtration: F^0H^n = H^n, F^1H^n = 0."
+      },
+      {
+       "name": "comparison_not_abstract_iso",
+       "kind": "non-example",
+       "statement": "In ModuleCat ℤ, K^{−1} = ℤ, K^0 = ℤ^(ℕ) ⊕ ℤ, d(x) = (0, x), F^pK^0 = K^0 (p ≤ 0), 0 (p ≥ 1), F^pK^{−1} = 0: E_1^{0,0} = E_∞^{0,0} = ℤ^(ℕ) ⊕ ℤ, all other E_1 zero, H^0 = ℤ^(ℕ) with F^0 = H^0, F^1 = 0, H^n = 0 (n ≠ 0). Abstract isomorphisms give a weak (by 3.4 strong) convergence structure in ℤ, but the comparison at (0,0) is the projection ℤ^(ℕ) ⊕ ℤ ↠ ℤ^(ℕ) with kernel 0 ⊕ ℤ, and (24.6.2) is strict (0 ⊊ 0 ⊕ ℤ, B_∞ = 0 ≠ Bᵗ)."
       }
      ]
     },
@@ -1214,14 +1219,16 @@
       "target:4.3",
       "target:5.1",
       "target:5.2",
-      "mathlib:CategoryTheory.HasExactColimitsOfShape"
+      "mathlib:CategoryTheory.HasExactColimitsOfShape",
+      "mathlib:CategoryTheory.AB5",
+      "mathlib:CategoryTheory.AB5OfSize_shrink"
      ],
      "api": [],
      "tests": [
       {
        "name": "modules_instance",
        "kind": "compatibility",
-       "statement": "ModuleCat R is AB5; the statement contains Tau Ceti exists_mem_range_filtrationAbutmentFiltrationι and DGFloer's classical convergence."
+       "statement": "ModuleCat.{u} R for R : Type u has exact sequential colimits (Mathlib's AB5 instance and AB5OfSize_shrink); there exhaustiveness by submodules means every element lies in a step, and the statement contains Tau Ceti exists_mem_range_filtrationAbutmentFiltrationι in that universe and DGFloer's classical convergence."
       },
       {
        "name": "exhaustive_needed",
@@ -1509,7 +1516,8 @@
       "target:7.1",
       "mathlib:CategoryTheory.EnoughProjectives",
       "mathlib:CategoryTheory.CountableAB4Star",
-      "mathlib:CategoryTheory.IsArtinianObject"
+      "mathlib:CategoryTheory.IsArtinianObject",
+      "mathlib:CategoryTheory.AB4Star"
      ],
      "api": [
       {
@@ -1530,7 +1538,7 @@
       {
        "name": "moduleCat_instance",
        "role": "instance",
-       "statement": "ModuleCat R (Small R) satisfies the hypothesis and CountableAB4Star."
+       "statement": "ModuleCat.{u} R for a ring R : Type u satisfies the hypothesis and CountableAB4Star, from Mathlib's EnoughProjectives and AB4Star instances (Mathlib's AB4Star instance exists only for ModuleCat.{u} R with R : Type u)."
       },
       {
        "name": "cycleTower_isMittagLeffler_of_isArtinianObject",
@@ -1617,7 +1625,9 @@
       "target:6.2",
       "target:7.1",
       "target:7.2",
-      "target:7.3"
+      "target:7.3",
+      "mathlib:CategoryTheory.AB5",
+      "mathlib:CategoryTheory.AB5OfSize_shrink"
      ],
      "api": [
       {
