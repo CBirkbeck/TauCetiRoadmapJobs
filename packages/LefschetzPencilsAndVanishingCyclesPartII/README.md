@@ -28,7 +28,7 @@ the generality of a smooth chart of finite type over an arbitrary field.
 
 ```text
 Mathlib + Tau Ceti → Layer 1 → Layer 2
-SchemeAndStackFoundations §0.8 (etale_coordinates, 054L; rational_point_component, 04KV) ──→ Layer 2 §2.2, §2.4
+SchemeAndStackFoundations §0.8 (rational_point_component, 04KV) ──→ Layer 2 §2.2
 ```
 
 The end theorems are `exists_marked_etale_curve` (§2.3) and `exists_same_field_curve` (§2.4); the
@@ -67,15 +67,16 @@ explicit (first coordinate `T`, so for `m > 0` a closed immersion, through the o
 weight on the box of exponent vectors with entries `< B`. Mathlib's Noether normalisation
 (`Mathlib/RingTheory/NoetherNormalization.lean`) uses the same digit argument only inside private
 lemmas about the different substitution `X_i ↦ X_i + X_0^(r_i)`. The boundary polynomial (§2.1)
-is owned here because SchemeAndStackFoundations §0.8 states étale coordinates without any
-statement about images of closed subsets; the route of §2.1 is algebraic and needs no dimension
-theory.
+is owned here because neither Tau Ceti's étale coordinates nor SchemeAndStackFoundations §0.8
+makes any statement about images of closed subsets; the route of §2.1 is algebraic and needs no
+dimension theory.
 
 **Owned elsewhere and consumed here.** Each object has one owner; this roadmap builds no second
 carrier.
 
-- *Étale coordinates at a smooth point*: SchemeAndStackFoundations §0.8, `etale_coordinates`
-  (Stacks, Lemma 29.37.21 (054L)).
+- *Étale coordinates at a smooth point*: Tau Ceti `AlgebraicGeometry.Smooth.exists_etale_affineSpace`
+  and `AlgebraicGeometry.SmoothOfRelativeDimension.exists_etale_affineSpace` (module
+  `TauCeti.AlgebraicGeometry.Morphisms.Smooth.EtaleCoordinates`; Stacks, Lemma 29.37.21 (054L)).
 - *Connected smooth schemes with a rational point are geometrically integral*:
   SchemeAndStackFoundations §0.8, `rational_point_component` (Stacks, Lemmas 33.7.14 (04KV),
   33.25.4 (056T) and 33.25.10 (0CDW); Properties, Lemma 28.7.7 (033N)). The step "smooth and
@@ -121,8 +122,13 @@ universal hypersurface families; semistable potential maps.
 1. `k` is a field unless a statement says "commutative ring". Schemes and morphisms are Mathlib's
    `Scheme` and its homs, in one universe `u`; `k : Type u`.
 2. **Affine spaces.** `𝔸^m_k` is written `Spec k[X_0, …, X_{m-1}]` (Mathlib
-   `MvPolynomial (Fin m) k`) and `𝔸¹_k` is `Spec k[T]` (`Polynomial k`); Mathlib's
-   `AffineSpace.SpecIso` identifies these with `AffineSpace (Fin m) (Spec k)`. The structure
+   `MvPolynomial (Fin m) k`) and `𝔸¹_k` is `Spec k[T]` (`Polynomial k`). Mathlib's affine space
+   `𝔸(n; S)` takes its index type `n` in the universe `u` of `S`, so `Fin m` enters lifted:
+   `AffineSpace.SpecIso`, followed by the isomorphism induced by `MvPolynomial.renameEquiv` along
+   `Equiv.ulift`, identifies `𝔸(ULift.{u} (Fin m); Spec k)` with `Spec k[X_0, …, X_{m-1}]`, and
+   `Spec k[T]` is identified with `Spec (MvPolynomial (ULift.{u} (Fin 1)) k)` by
+   `MvPolynomial.uniqueAlgEquiv`; all these isomorphisms are over `Spec k`
+   (`AffineSpace.SpecIso_inv_over`). The structure
    morphisms are the spectra of the algebra maps from `k`. The origin of `𝔸^m_k` is the spectrum of
    `MvPolynomial.constantCoeff`, and the origin of `𝔸¹_k` the spectrum of
    `Polynomial.constantCoeff`.
@@ -164,9 +170,17 @@ universal hypersurface families; semistable potential maps.
   (`Mathlib/RingTheory/EssentialFiniteness.lean`); `AlgebraicGeometry.SmoothOfRelativeDimension`
   and the composition instance `AlgebraicGeometry.smoothOfRelativeDimension_comp`, which adds
   relative dimensions (`Mathlib/AlgebraicGeometry/Morphisms/Smooth.lean`); the instance
-  `AlgebraicGeometry.AffineSpace.smoothOfRelativeDimension` (`𝔸(n; S) → S` is smooth of relative
-  dimension `Nat.card n`) and `AlgebraicGeometry.AffineSpace.SpecIso`
+  `AlgebraicGeometry.AffineSpace.smoothOfRelativeDimension_fin` (`𝔸(ULift.{u} (Fin n); S) → S` is
+  smooth of relative dimension `n`), `AlgebraicGeometry.AffineSpace.SpecIso`
+  (`𝔸(σ; Spec R) ≅ Spec (MvPolynomial σ R)`) and `AlgebraicGeometry.AffineSpace.SpecIso_inv_over`
+  (under it the structure morphism becomes the spectrum of `MvPolynomial.C`)
   (`Mathlib/AlgebraicGeometry/AffineSpace.lean`).
+- `MvPolynomial.uniqueAlgEquiv` (for a variable type with one element, `MvPolynomial σ R ≅ R[X]` as
+  `R`-algebras; `Mathlib/Algebra/MvPolynomial/Equiv.lean`), `MvPolynomial.renameEquiv` (renaming
+  variables along an equivalence is an `R`-algebra isomorphism;
+  `Mathlib/Algebra/MvPolynomial/Rename.lean`) and `Equiv.ulift`. With these, `Spec k[T] → Spec k` is
+  the composite of an isomorphism over `Spec k` with `𝔸(ULift.{u} (Fin 1); Spec k) → Spec k`, so it
+  is smooth of relative dimension one.
 - `AlgebraicGeometry.Flat.generalizingMap`, `AlgebraicGeometry.isOpenMap_of_generalizingMap` and
   `AlgebraicGeometry.Scheme.Hom.isOpenMap`: a flat morphism locally of finite presentation is
   open (`Mathlib/AlgebraicGeometry/Morphisms/UniversallyOpen.lean`).
@@ -196,6 +210,14 @@ universal hypersurface families; semistable potential maps.
   `e = (i ↦ B^i)` and `S` the box of vectors with entries `< B`.
 - `MvPolynomial.injOn_aeval_X_pow` (same module): with `e` and `S` as above, the substitution is
   injective on the polynomials supported in `S`. Used in §1.2.
+- `AlgebraicGeometry.Smooth.exists_etale_affineSpace` (module
+  `TauCeti.AlgebraicGeometry.Morphisms.Smooth.EtaleCoordinates`): for a smooth `f : X → S`, every
+  point of `X` has an affine open neighbourhood `V` with an étale `S`-morphism
+  `V → 𝔸(ULift.{u} (Fin n); S)` for some `n`, compatible with the structure morphisms to `S`
+  (Stacks, Lemma 29.37.21 (054L)). Used in §2.4 with `S = Spec k`; there the target is carried to
+  `Spec k[X_0, …, X_{n-1}]` by `AffineSpace.SpecIso` and the isomorphism induced by
+  `MvPolynomial.renameEquiv` along `Equiv.ulift`, both compatible with the structure morphisms to
+  `Spec k`.
 - `TauCeti.AlgebraicGeometry.Smooth.geometricallyIntegral` (module
   `TauCeti.AlgebraicGeometry.Morphisms.Smooth.GeometricallyIntegral`): a smooth, geometrically
   connected morphism is geometrically integral.
@@ -206,9 +228,6 @@ universal hypersurface families; semistable potential maps.
 
 ### From TauCetiRoadmap.SchemeAndStackFoundations
 
-- §0.8 `etale_coordinates`: a morphism `X → S` smooth at `x` admits, on an open neighbourhood of
-  `x`, an étale `S`-morphism to `𝔸^d_S`. Assumed in the form of Stacks, Lemma 29.37.21 (054L): with
-  `S` affine the neighbourhood can be taken affine. Used in §2.4 with `S = Spec k`.
 - §0.8 `rational_point_component`: a connected scheme smooth over a field with a rational point is
   geometrically integral. Used in §2.2 for the marked component.
 
@@ -448,7 +467,9 @@ give non-isomorphic curves. For `m = 0`, `a_B` is the structure morphism of `�
 construction needs no case distinction, and the closed immersion of §1.3 is not used. *Needs:*
 §1.2, §2.1; SchemeAndStackFoundations §0.8
 `rational_point_component`; Mathlib `TopologicalSpace.NoetherianSpace.finite_irreducibleComponents`,
-`isClosed_connectedComponent`, `AlgebraicGeometry.Etale.etale_isStableUnderBaseChange`.
+`isClosed_connectedComponent`, `AlgebraicGeometry.Etale.etale_isStableUnderBaseChange`,
+`AffineSpace.smoothOfRelativeDimension_fin`, `AffineSpace.SpecIso_inv_over`,
+`MvPolynomial.uniqueAlgEquiv`.
 
 API (each a target of this subsection):
 
@@ -463,8 +484,10 @@ API (each a target of this subsection):
 - The section `w` factors uniquely through `j`, giving `c ∈ C(k)` with `g(c) = y`, `q(c) = 0` and
   `s_C ∘ c = id`.
 - `q` is étale, and `s_C = (𝔸¹_k → Spec k) ∘ q` is smooth of relative dimension `0 + 1 = 1`
-  (`Etale.iff_smoothOfRelativeDimension_zero`, `smoothOfRelativeDimension_comp`,
-  `AffineSpace.smoothOfRelativeDimension`).
+  (`Etale.iff_smoothOfRelativeDimension_zero`, `smoothOfRelativeDimension_comp`; that
+  `Spec k[T] → Spec k` has relative dimension one is `AffineSpace.smoothOfRelativeDimension_fin`
+  for `n = 1`, transported along `AffineSpace.SpecIso` and `MvPolynomial.uniqueAlgEquiv` as in
+  Convention 2, the isomorphisms being étale of relative dimension `0`).
 - `s_C` is geometrically integral, by `rational_point_component` applied to the connected smooth
   `k`-scheme `C` with its rational point `c` (Stacks, Lemma 33.25.10 (0CDW), for the variety `C`
   smooth at `c`).
@@ -538,8 +561,10 @@ a section `c` of `s_C` with `g ∘ c = y`, such that `g⁻¹(U)` is nonempty and
 density may be asked only on the irreducible component of `V` through `y`, after shrinking `V`
 into it. *Proof sketch.*
 
-1. *Chart.* By SchemeAndStackFoundations §0.8 `etale_coordinates` (Stacks, Lemma 29.37.21 (054L)),
-   shrink `V` to an affine open `V₀ ∋ y` with an étale `k`-morphism `π : V₀ → 𝔸^m_k`. Since `V₀` is
+1. *Chart.* By Tau Ceti `AlgebraicGeometry.Smooth.exists_etale_affineSpace` (Stacks, Lemma
+   29.37.21 (054L)), applied to the smooth `V → Spec k` at `y`, shrink `V` to an affine open
+   `V₀ ∋ y` with an étale `k`-morphism `π : V₀ → 𝔸^m_k` (Convention 2 carries its target
+   `𝔸(ULift.{u} (Fin m); Spec k)` to `Spec k[X_0, …, X_{m-1}]`). Since `V₀` is
    smooth over `k` it is normal (Stacks, Lemma 33.25.4 (056T)), and as it is Noetherian it is a
    disjoint union of integral open subschemes (Properties, Lemma 28.7.7 (033N)); replace `V₀` by an
    affine open of the one through `y`. Compose `π` with the translation of `𝔸^m_k` by `−π(y)`,
@@ -554,9 +579,10 @@ into it. *Proof sketch.*
    morphism through `y` and `g⁻¹(U) = C`. This is why the conclusion asks for a morphism and not an
    immersion.
 
-*Needs:* §2.3; SchemeAndStackFoundations §0.8 `etale_coordinates`; Mathlib
-`Algebra.FormallyEtale.iff_exists_algEquiv_prod`, `AffineSpace.smoothOfRelativeDimension`; Stacks
-056T and 033N for the shrinking step.
+*Needs:* §2.3; Tau Ceti `AlgebraicGeometry.Smooth.exists_etale_affineSpace`; Mathlib
+`Algebra.FormallyEtale.iff_exists_algEquiv_prod`, `AffineSpace.SpecIso`, `MvPolynomial.renameEquiv`,
+`Equiv.ulift`, and for the curve `𝔸¹_k` of step 3 `AffineSpace.smoothOfRelativeDimension_fin`
+transported as in §2.2; Stacks 056T and 033N for the shrinking step.
 
 **The marked residue fields.** In the situation of `exists_same_field_curve`, the residue fields
 `κ(c)` and `κ(y)` are both `k` and the map `κ(y) → κ(c)` induced by `g` is the identity of `k`
@@ -603,11 +629,15 @@ degree one geometry. *Needs:* Tau Ceti `TauCeti.AlgebraicGeometry.RationalPoint.
 
 ### Dependencies
 
-Layer 1; SchemeAndStackFoundations §0.8 (`etale_coordinates`, `rational_point_component`); Mathlib
+Layer 1; SchemeAndStackFoundations §0.8 (`rational_point_component`); Mathlib
 étale, smooth, flat and geometrically integral morphisms, the `HasRingHomProperty @Etale RingHom.Etale`
 instance, `Algebra.Etale.baseChange`, `Algebra.FormallyEtale.iff_exists_algEquiv_prod`,
-`Ideal.under_ne_bot_of_algebraic_mem`; Tau Ceti `TauCeti.AlgebraicGeometry.Smooth.geometricallyIntegral`
-and `TauCeti.AlgebraicGeometry.RationalPoint.Basic`.
+`Ideal.under_ne_bot_of_algebraic_mem`, `AffineSpace.SpecIso`, `AffineSpace.SpecIso_inv_over`,
+`AffineSpace.smoothOfRelativeDimension_fin`, `MvPolynomial.uniqueAlgEquiv`,
+`MvPolynomial.renameEquiv`; Tau Ceti `AlgebraicGeometry.Smooth.exists_etale_affineSpace` (module
+`TauCeti.AlgebraicGeometry.Morphisms.Smooth.EtaleCoordinates`),
+`TauCeti.AlgebraicGeometry.Smooth.geometricallyIntegral` and
+`TauCeti.AlgebraicGeometry.RationalPoint.Basic`.
 
 ## Downstream consumers
 
@@ -656,7 +686,8 @@ and `TauCeti.AlgebraicGeometry.RationalPoint.Basic`.
 - [Stacks-Varieties] The Stacks Project, Chapter 33 (Varieties), Lemmas 33.7.14 (04KV), 33.25.4
   (056T) and 33.25.10 (0CDW).
 - [Stacks-Properties] The Stacks Project, Chapter 28 (Properties of Schemes), Lemma 28.7.7 (033N).
-- Mathlib: `Mathlib/Algebra/MvPolynomial/Eval.lean`, `Mathlib/Data/Nat/Digits/Defs.lean`,
+- Mathlib: `Mathlib/Algebra/MvPolynomial/Eval.lean`, `Mathlib/Algebra/MvPolynomial/Equiv.lean`,
+  `Mathlib/Algebra/MvPolynomial/Rename.lean`, `Mathlib/Data/Nat/Digits/Defs.lean`,
   `Mathlib/Data/Nat/Digits/Lemmas.lean`, `Mathlib/Data/Finsupp/Weight.lean`,
   `Mathlib/AlgebraicGeometry/AffineSpace.lean`, `Mathlib/AlgebraicGeometry/Morphisms/Etale.lean`,
   `Mathlib/AlgebraicGeometry/Morphisms/Smooth.lean`,
@@ -667,5 +698,6 @@ and `TauCeti.AlgebraicGeometry.RationalPoint.Basic`.
   `Mathlib/RingTheory/EssentialFiniteness.lean`, `Mathlib/RingTheory/Ideal/GoingUp.lean`,
   `Mathlib/Topology/Irreducible.lean`.
 - Tau Ceti: `TauCeti/RingTheory/MvPolynomial/Kronecker.lean`,
+  `TauCeti/AlgebraicGeometry/Morphisms/Smooth/EtaleCoordinates.lean`,
   `TauCeti/AlgebraicGeometry/Morphisms/Smooth/GeometricallyIntegral.lean`,
   `TauCeti/AlgebraicGeometry/RationalPoint/Basic.lean`.
