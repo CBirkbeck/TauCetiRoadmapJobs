@@ -823,8 +823,8 @@ API:
 
 ### Dependencies
 
-VonNeumannAlgebras V0, V1, V3, V4, V6, V13a, V13b.SpatialNorm; CStarAlgebras C5.1; Tau Ceti
-`TauCeti.CStarAction.trivial`, `TauCeti.CStarAction.isKMSState_zero_iff`,
+VonNeumannAlgebras V0, V1, V3, V4, V6, V13a, V13b.SpatialNorm; CStarAlgebras C5.1, C8.4 (a
+Check); Tau Ceti `TauCeti.CStarAction.trivial`, `TauCeti.CStarAction.isKMSState_zero_iff`,
 `TauCeti.CStarAction.kmsStates` with its convexity, closure and compactness theorems,
 `TauCeti.CStarAction.IsKMSState.comp`, `TauCeti.CStarAction.IsKMSState.eq_zero_of_apply_toPreGNS_one_eq_zero`,
 the GNS module (`PositiveLinearMap.toGNS`, `PositiveLinearMap.gnsVector` and their API),
@@ -1033,7 +1033,7 @@ API:
 
 ### Dependencies
 
-CStarAlgebras C2.8, C4.1, C4.2, C5.2; VonNeumannAlgebras V1, V4, V13b; Mathlib
+CStarAlgebras C2.8, C4.1, C4.2, C5.2, C8.3 (a Check); VonNeumannAlgebras V1, V4, V13b; Mathlib
 `CompletelyPositiveMap`, `CStarMatrix`, `IsStarProjection`, `Orthonormal`. Within this roadmap:
 Layer 1.
 
@@ -1904,8 +1904,9 @@ API:
 ### Dependencies
 
 CStarAlgebras C2.1, C6.5; CStarClassification CL2 (§2.1), CL3 (§3.4, §3.5);
-OperatorAlgebraDynamics D2, D2.FreeGroups; VonNeumannAlgebras V0; Tau Ceti `TauCeti.Amenable`,
-`TauCeti.Amenable.of_lpTop`, `TauCeti.not_amenable_freeGroup`,
+OperatorAlgebraDynamics D2, D2.FreeGroups; VonNeumannAlgebras V0, V13b (the remark on condition
+(v) of §7.3); FactorRigidity §2.2 (the same remark; no statement depends on it); Tau Ceti
+`TauCeti.Amenable`, `TauCeti.Amenable.of_lpTop`, `TauCeti.not_amenable_freeGroup`,
 `LinearMap.exists_isFiniteMeasure_integral_characterSpace_eq`; Mathlib `gelfandStarTransform`,
 `PartitionOfUnity`, `lp`, `FreeGroup`. Within this roadmap: Layers 1–6.
 
