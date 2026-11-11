@@ -1,0 +1,2515 @@
+{
+ "roadmap": "MathematicalBilliards",
+ "title": "Mathematical billiards",
+ "parent": null,
+ "summary": "Convex billiard tables of class C^k in ℂ, the billiard ball map on the phase cylinder (regularity, closed-cylinder extension, time reversal, comparison with SymplecticGeometry/CotangentLagrangian C3.1), its generating function and invariant measure, twist maps of the annulus, rotational invariant curves with Birkhoff's Lipschitz graph theorem (Fathi's topological proof) and rotation numbers, two Birkhoff periodic orbits of every type (p, q); polygonal tables with holes, the singular set, the almost-everywhere billiard flow as a measure-preserving ℝ-action, rational tables and non-ergodicity, translation surfaces with directional flows, the Katok–Zemlyakov surface (cone angles, genus, unfolding conjugacy), and weak mixing of flows with its eigenfunction criterion.",
+ "baseline": {
+  "mathlib": "1b1ccf4b088b32fa3f23f2de1127433254a81e1e",
+  "tauceti": "2fd255d997f47c0b5d834ee416c7015d55444ce5"
+ },
+ "layers": [
+  {
+   "key": "1",
+   "title": "Convex billiard tables",
+   "targets": [
+    {
+     "id": "1.1",
+     "kind": "definition",
+     "name": "Billiards.ConvexTable",
+     "statement": "A convex billiard table of class C^k (k : ℕ∞, k ≥ 1): ℓ > 0 and γ : ℝ → ℂ, C^k, ℓ-periodic, ‖γ′‖ = 1, injective on [0, ℓ), with τ(s) × (γ t − γ s) > 0 whenever t − s ∉ ℓℤ, where τ = γ′ and a × b = Im(conj a · b). Ω is the closed convex hull of the image.",
+     "hypotheses": [
+      "1 ≤ k"
+     ],
+     "locator": {
+      "source": "Tabachnikov2005",
+      "where": "Chapter 3"
+     },
+     "prerequisites": [
+      "mathlib:StrictConvex",
+      "mathlib:convexHull",
+      "tauceti:TauCeti.IsJordanCurve",
+      "tauceti:TauCeti.isJordanCurve_frontier_of_convex"
+     ],
+     "api": [
+      {
+       "name": "isJordanCurve_range",
+       "role": "structure",
+       "statement": "The image of γ is a Jordan curve; γ descends to a homeomorphism of AddCircle ℓ onto it; γ s = γ t iff t − s ∈ ℓℤ."
+      },
+      {
+       "name": "strictConvex_hull",
+       "role": "structure",
+       "statement": "Ω is compact with nonempty interior, StrictConvex ℝ Ω, frontier Ω = range γ, and Ω minus γ(s) lies in the open half-plane left of the tangent at γ(s)."
+      },
+      {
+       "name": "shift_rigid",
+       "role": "functoriality",
+       "statement": "s ↦ γ(s + c) and z ↦ a z + b (|a| = 1) preserve tables; s ↦ γ(−s) never gives a table."
+      },
+      {
+       "name": "curvature_nonneg",
+       "role": "evaluation",
+       "statement": "For k ≥ 2 the signed curvature κ = τ × τ′ is ≥ 0."
+      },
+      {
+       "name": "mono",
+       "role": "structure",
+       "statement": "A table of class C^k is a table of class C^j for j ≤ k."
+      }
+     ],
+     "tests": [
+      {
+       "name": "circle",
+       "kind": "computation",
+       "statement": "γ s = R exp(is/R): the defining quantity at t − s = πR equals 2R > 0."
+      },
+      {
+       "name": "clockwise",
+       "kind": "non-example",
+       "statement": "R exp(−is/R): value −2R at t − s = πR; orientation is part of the carrier."
+      },
+      {
+       "name": "superellipse",
+       "kind": "characterisation",
+       "statement": "x⁴ + y⁴ = 1 by arclength is a C^∞ table with κ = 0 at (±1,0), (0,±1)."
+      },
+      {
+       "name": "stadium",
+       "kind": "non-example",
+       "statement": "The stadium is C¹ and convex but the tangent line along a flat side contains the side: not a table."
+      },
+      {
+       "name": "circle_ellipse",
+       "kind": "degenerate",
+       "statement": "Upper unit half-circle glued to lower half of x² + 4y² = 1: a C¹ table, not C² (κ jumps 1 → 4 at (±1, 0))."
+      }
+     ]
+    },
+    {
+     "id": "1.2",
+     "kind": "theorem",
+     "name": "Billiards.convexTable_of_curvature_pos",
+     "statement": "If γ : ℝ → ℂ is C², ℓ-periodic, unit speed, injective on [0, ℓ) and κ > 0 everywhere, then γ is a table of class C².",
+     "hypotheses": [
+      "ℓ > 0",
+      "ContDiff ℝ 2 γ",
+      "Function.Periodic γ ℓ",
+      "∀ s, ‖deriv γ s‖ = 1",
+      "Set.InjOn γ (Set.Ico 0 ℓ)",
+      "∀ s, 0 < κ s"
+     ],
+     "locator": {
+      "source": "BialyMironov2022",
+      "where": "lines 96–98 and 149–153 (setting); Tabachnikov2005 Chapter 3"
+     },
+     "prerequisites": [
+      "roadmap:RiemannianGeometry Surfaces §3.1",
+      "target:1.1"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "ellipse",
+       "kind": "computation",
+       "statement": "(a cos u, b sin u), a > b > 0: κ > 0, curvature a/b² at (a, 0); a table."
+      },
+      {
+       "name": "turning_two",
+       "kind": "non-example",
+       "statement": "exp(2iu) + exp(iu): Im(conj γ′ γ″) = 9 + 6 cos u > 0, total turning 4π, not injective."
+      },
+      {
+       "name": "converse_fails",
+       "kind": "characterisation",
+       "statement": "The superellipse is a table with κ vanishing at four points."
+      }
+     ]
+    },
+    {
+     "id": "1.3",
+     "kind": "theorem",
+     "name": "Billiards.ConvexTable.exists_unique_exit",
+     "statement": "For s and δ ∈ (0, π) the ray from γ(s) in direction exp(iδ)τ(s) meets range γ in exactly one point γ(s₁) with s < s₁ < s + ℓ, the open chord lies in interior Ω; s₁ is continuous on the strip, strictly increasing in δ, s₁ → s as δ → 0 and s₁ → s + ℓ as δ → π locally uniformly.",
+     "hypotheses": [
+      "δ ∈ Set.Ioo 0 π"
+     ],
+     "locator": {
+      "source": "Tabachnikov2005",
+      "where": "Chapter 3"
+     },
+     "prerequisites": [
+      "target:1.1"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "unit_circle",
+       "kind": "computation",
+       "statement": "(0, π/2) exits at π; (0, π/3) exits at 2π/3."
+      },
+      {
+       "name": "stadium",
+       "kind": "non-example",
+       "statement": "From the midpoint of a flat side, s₁ does not tend to s as δ → 0."
+      },
+      {
+       "name": "ellipse_axis",
+       "kind": "computation",
+       "statement": "Ellipse (2 cos u, sin u) from (2,0) at δ = π/2 exits at (−2, 0)."
+      }
+     ]
+    },
+    {
+     "id": "1.4",
+     "kind": "theorem",
+     "name": "Billiards.ConvexTable.orientedLineHomeomorph",
+     "statement": "(s, δ) ↦ (exp(iδ)τ(s), exp(iδ)τ(s) × γ(s)) is a homeomorphism from AddCircle ℓ × Ioo 0 π onto the oriented lines (e, c), {z : e × z = c}, meeting interior Ω.",
+     "hypotheses": [],
+     "locator": {
+      "source": "BialyMironov2022",
+      "where": "lines 154–157 and 172–181"
+     },
+     "prerequisites": [
+      "target:1.3"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "unit_circle",
+       "kind": "computation",
+       "statement": "(0, π/2) ↦ (e, c) = (−1, 0)."
+      },
+      {
+       "name": "tangent_lines",
+       "kind": "degenerate",
+       "statement": "δ = 0, π give lines meeting Ω only on its frontier; excluded."
+      },
+      {
+       "name": "reversal",
+       "kind": "characterisation",
+       "statement": "The reversed line of the state (s, δ) is the state I(T(s, δ))."
+      }
+     ]
+    },
+    {
+     "id": "1.5",
+     "kind": "theorem",
+     "name": "Billiards.ConvexTable.isC31Table",
+     "statement": "For a table of class C^∞, Complex.orthonormalBasisOneI.repr ∘ γ is smooth, ℓ-periodic, unit speed, injective on [0, ℓ), positively oriented, and meets each tangent line only at its point of tangency (the hypotheses of SymplecticGeometry/CotangentLagrangian C3.1 and of exists_billiard_periodic_reflection).",
+     "hypotheses": [
+      "k = ⊤"
+     ],
+     "locator": {
+      "source": "BialyMironov2022",
+      "where": "§2 p.4, lines 159–164 (coordinate setting); the comparison with C3.1 is constructed here"
+     },
+     "prerequisites": [
+      "target:1.1",
+      "mathlib:Complex.orthonormalBasisOneI",
+      "roadmap:SymplecticGeometry CotangentLagrangian C3.1"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "unit_circle",
+       "kind": "computation",
+       "statement": "s ↦ (cos s, sin s) meets x = 1 only at s ≡ 0."
+      },
+      {
+       "name": "stadium",
+       "kind": "non-example",
+       "statement": "C3.1's tangent-line hypothesis fails on the flat sides."
+      },
+      {
+       "name": "superellipse",
+       "kind": "compatibility",
+       "statement": "Both hypotheses hold though κ vanishes at four points."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "key": "2",
+   "title": "The billiard ball map",
+   "targets": [
+    {
+     "id": "2.1",
+     "kind": "construction",
+     "name": "Billiards.ConvexTable.billiardLift",
+     "statement": "F(s, δ) = (s₁, δ₁) on ℝ × Ioo 0 π with s₁ the exit parameter of 1.3 and cos δ₁ = ⟨exp(iδ)τ(s), τ(s₁)⟩, δ₁ ∈ (0, π); billiardMap T is its quotient on A = AddCircle ℓ × Ioo 0 π.",
+     "hypotheses": [],
+     "locator": {
+      "source": "BialyMironov2022",
+      "where": "§2 p.4, lines 154–161 (positive-curvature reflection setting); the C^k construction is here; ChernovMarkarian2006 Chapter 2; KatokHasselblatt1995 §9.2"
+     },
+     "prerequisites": [
+      "target:1.3"
+     ],
+     "api": [
+      {
+       "name": "equivariant",
+       "role": "structure",
+       "statement": "F(s + ℓ, δ) = F(s, δ) + (ℓ, 0) and s < s₁ < s + ℓ."
+      },
+      {
+       "name": "reflection_law",
+       "role": "evaluation",
+       "statement": "γ(s₁) − γ(s) = L exp(iδ)τ(s) with L > 0, and τ(s₁) = exp(iδ₁) exp(iδ) τ(s)."
+      },
+      {
+       "name": "homeomorph",
+       "role": "structure",
+       "statement": "F is a homeomorphism of the strip and T of A for every k ≥ 1."
+      },
+      {
+       "name": "naturality",
+       "role": "functoriality",
+       "statement": "Rigid motions leave F unchanged; shifting γ conjugates F by (s, δ) ↦ (s − c, δ)."
+      }
+     ],
+     "tests": [
+      {
+       "name": "circle",
+       "kind": "computation",
+       "statement": "Circle of radius R: F(s, δ) = (s + 2Rδ, δ)."
+      },
+      {
+       "name": "ellipse_axis",
+       "kind": "computation",
+       "statement": "Ellipse (2 cos u, sin u): (2,0), δ = π/2 goes to (−2,0), δ₁ = π/2."
+      },
+      {
+       "name": "wrong_angle",
+       "kind": "non-example",
+       "statement": "Measuring δ₁ from −τ(s₁) gives I ∘ T, whose square on the circle is (s + ℓ, δ): an involution."
+      }
+     ]
+    },
+    {
+     "id": "2.2",
+     "kind": "theorem",
+     "name": "Billiards.ConvexTable.contDiffOn_billiardLift",
+     "statement": "For k ≥ 2 the lift is C^{k−1} on the strip with C^{k−1} inverse; ∂s₁/∂δ = L/sin δ₁ and ∂s₁/∂s = (κ(s)L − sin δ)/sin δ₁.",
+     "hypotheses": [
+      "2 ≤ k"
+     ],
+     "locator": {
+      "source": "KatokHasselblatt1995",
+      "where": "Section 9.2; ChernovMarkarian2006 Chapter 2"
+     },
+     "prerequisites": [
+      "target:2.1",
+      "mathlib:ContDiffAt.contDiffAt_implicitFunction",
+      "mathlib:ContDiffAt.hasStrictFDerivAt_implicitFunction"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "circle",
+       "kind": "computation",
+       "statement": "∂s₁/∂δ = 2R, ∂s₁/∂s = 1."
+      },
+      {
+       "name": "nondegeneracy",
+       "kind": "degenerate",
+       "statement": "∂Φ/∂s₁ = sin δ₁ > 0 on the open strip."
+      },
+      {
+       "name": "C1_table",
+       "kind": "non-example",
+       "statement": "Circle–ellipse table: ∂s₁/∂s jumps where κ jumps; not C¹."
+      }
+     ]
+    },
+    {
+     "id": "2.3",
+     "kind": "theorem",
+     "name": "Billiards.ConvexTable.billiardLift_extend",
+     "statement": "The lift extends to a homeomorphism of ℝ × Icc 0 π, identity on δ = 0 and (s, π) ↦ (s + ℓ, π); T extends to Ā fixing both boundary circles; s₁(s, ·) strictly increasing on [0, π].",
+     "hypotheses": [],
+     "locator": {
+      "source": "KatokHasselblatt1995",
+      "where": "Section 9.2"
+     },
+     "prerequisites": [
+      "target:1.3",
+      "target:2.1"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "circle",
+       "kind": "computation",
+       "statement": "(s, δ) ↦ (s + 2Rδ, δ) on [0, π]."
+      },
+      {
+       "name": "flat_point",
+       "kind": "non-example",
+       "statement": "Superellipse at a flat point: s₁ − s ≈ (4δ)^{1/3}, not differentiable at δ = 0."
+      },
+      {
+       "name": "C31_coords",
+       "kind": "compatibility",
+       "statement": "In v = cos δ the boundary circles are v = 1 (identity) and v = −1 (translation by ℓ)."
+      }
+     ]
+    },
+    {
+     "id": "2.4",
+     "kind": "theorem",
+     "name": "Billiards.ConvexTable.billiardMap_symm",
+     "statement": "T⁻¹ = I ∘ T ∘ I on A for I(s, δ) = (s, π − δ); on the strip I ∘ F ∘ I = τ_ℓ ∘ F⁻¹.",
+     "hypotheses": [],
+     "locator": {
+      "source": "KatokHasselblatt1995",
+      "where": "Section 9.2"
+     },
+     "prerequisites": [
+      "target:2.1"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "circle",
+       "kind": "computation",
+       "statement": "I(T(I(s, δ))) = (s + ℓ − 2Rδ, δ) ≡ T⁻¹(s, δ)."
+      },
+      {
+       "name": "deck",
+       "kind": "non-example",
+       "statement": "Without τ_ℓ the lift identity fails: normalisations differ."
+      },
+      {
+       "name": "measure",
+       "kind": "compatibility",
+       "statement": "I preserves μ_A since sin(π − δ) = sin δ."
+      }
+     ]
+    },
+    {
+     "id": "2.5",
+     "kind": "theorem",
+     "name": "Billiards.ConvexTable.conj_C31",
+     "statement": "For k = ∞, Ψ(s, δ) = (s, cos δ) is a homeomorphism A → AddCircle ℓ × (−1, 1) with Ψ ∘ T = β ∘ Ψ, β the next-collision map of SymplecticGeometry/CotangentLagrangian C3.1 for Complex.orthonormalBasisOneI.repr ∘ γ. Transport C3.1’s explicit circular formula and rational-periodicity criterion through Ψ, also for the circle with any finite regularity label.",
+     "hypotheses": [
+      "k = ⊤"
+     ],
+     "locator": {
+      "source": "BialyMironov2022",
+      "where": "§2 p.4, lines 159–164 (coordinate meaning); the comparison and transport of the C3.1 circular results are here"
+     },
+     "prerequisites": [
+      "target:1.5",
+      "target:2.1",
+      "roadmap:SymplecticGeometry CotangentLagrangian C3.1"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "circle",
+       "kind": "compatibility",
+       "statement": "Ψ(T(s, δ)) = (s + 2Rδ, cos δ) = β(s, cos δ) with β(s, v) = (s + 2R arccos v, v)."
+      },
+      {
+       "name": "orientation",
+       "kind": "characterisation",
+       "statement": "δ ↦ cos δ decreasing: C3.1's ∂s∂tS < 0 matches ∂²L/∂s∂s₁ > 0."
+      },
+      {
+       "name": "measure",
+       "kind": "compatibility",
+       "statement": "Ψ pushes μ_A to volume ⊗ Lebesgue."
+      },
+      {
+       "name": "diameter",
+       "kind": "computation",
+       "statement": "δ = π/2: type (1,2); δ = 2π/3: type (2,3). At δ = π/3, v = 1/2 and the increment is 2Rπ/3, giving type (1,3)."
+      },
+      {
+       "name": "irrational",
+       "kind": "non-example",
+       "statement": "δ = π√2/2: no periodic orbit."
+      },
+      {
+       "name": "perimeter",
+       "kind": "computation",
+       "statement": "(1, 3) orbit perimeter 3√3 R."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "key": "3",
+   "title": "Generating function and invariant measure",
+   "targets": [
+    {
+     "id": "3.1",
+     "kind": "theorem",
+     "name": "Billiards.ConvexTable.chordLength_deriv",
+     "statement": "L(s, s₁) = |γ(s₁) − γ(s)| is C^k on s < s₁ < s + ℓ, invariant under the diagonal deck translation; at s₁ = F₁(s, δ), ∂L/∂s = −cos δ and ∂L/∂s₁ = cos δ₁; for k ≥ 2, ∂²L/∂s∂s₁ = sin δ sin δ₁ / L > 0.",
+     "hypotheses": [],
+     "locator": {
+      "source": "BialyMironov2022",
+      "where": "lines 159–161 and 182–185; Tabachnikov2005 Chapter 3"
+     },
+     "prerequisites": [
+      "target:2.1"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "circle",
+       "kind": "computation",
+       "statement": "L = 2R sin((s₁ − s)/(2R)), mixed derivative sin δ/(2R) = sin²δ/L."
+      },
+      {
+       "name": "sign",
+       "kind": "compatibility",
+       "statement": "C3.1's generator −L has mixed derivative −sin δ sin δ₁/L < 0."
+      },
+      {
+       "name": "diagonal",
+       "kind": "degenerate",
+       "statement": "On s₁ = s, L behaves like |s₁ − s|, one-sided derivative +1."
+      }
+     ]
+    },
+    {
+     "id": "3.2",
+     "kind": "theorem",
+     "name": "Billiards.ConvexTable.exact_jacobian",
+     "statement": "For k ≥ 2: ∂s(L(s, F₁)) = cos δ₁ ∂sF₁ − cos δ, ∂δ(L(s, F₁)) = cos δ₁ ∂δF₁, det DF = sin δ / sin δ₁; in (s, y = −cos δ), F*(y ds) − y ds = −d(L ∘ (s, F₁)).",
+     "hypotheses": [
+      "2 ≤ k"
+     ],
+     "locator": {
+      "source": "BialyMironov2022",
+      "where": "lines 182–185"
+     },
+     "prerequisites": [
+      "target:3.1",
+      "target:2.2",
+      "roadmap:SymplecticGeometry IntegrableSystems I5.0"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "circle",
+       "kind": "computation",
+       "statement": "det DF = 1."
+      },
+      {
+       "name": "ellipse_offaxis",
+       "kind": "computation",
+       "statement": "Ellipse (2 cos u, sin u), (2,0), δ = π/4: exit (6/5, 4/5), cos δ₁ = 11/√146, det DF = √73/5 ≈ 1.709."
+      },
+      {
+       "name": "wrong_jacobian",
+       "kind": "non-example",
+       "statement": "sin δ₁/sin δ would give 5/√73 ≈ 0.585 at that state."
+      }
+     ]
+    },
+    {
+     "id": "3.3",
+     "kind": "definition",
+     "name": "Billiards.phaseMeasure",
+     "statement": "μ_A = (volume on AddCircle ℓ) ⊗ (sin δ dδ restricted to (0, π)) on A.",
+     "hypotheses": [
+      "0 < ℓ"
+     ],
+     "locator": {
+      "source": "BialyMironov2022",
+      "where": "lines 159–164 (the form cos δ ds and its differential)"
+     },
+     "prerequisites": [
+      "mathlib:AddCircle.measure_univ"
+     ],
+     "api": [
+      {
+       "name": "mass",
+       "role": "evaluation",
+       "statement": "μ_A(A) = 2ℓ; finite and of full support."
+      },
+      {
+       "name": "image_cos",
+       "role": "compatibility",
+       "statement": "Its image under (s, δ) ↦ (s, cos δ) is volume ⊗ Lebesgue on AddCircle ℓ × (−1, 1)."
+      },
+      {
+       "name": "reflection",
+       "role": "structure",
+       "statement": "Invariant under I(s, δ) = (s, π − δ) and under rotations of AddCircle ℓ."
+      }
+     ],
+     "tests": [
+      {
+       "name": "mass",
+       "kind": "computation",
+       "statement": "μ_A(A) = ℓ ∫₀^π sin δ dδ = 2ℓ."
+      },
+      {
+       "name": "half",
+       "kind": "computation",
+       "statement": "μ_A(AddCircle ℓ × (0, π/2)) = ℓ."
+      },
+      {
+       "name": "lebesgue_wrong",
+       "kind": "non-example",
+       "statement": "dδ ds is not invariant for the ellipse (Jacobian √73/5 at one state)."
+      }
+     ]
+    },
+    {
+     "id": "3.3.1",
+     "kind": "theorem",
+     "name": "Billiards.ConvexTable.measurePreserving_billiardMap",
+     "statement": "For k ≥ 2, MeasureTheory.MeasurePreserving T μ_A μ_A.",
+     "hypotheses": [
+      "2 ≤ k"
+     ],
+     "locator": {
+      "source": "BialyMironov2022",
+      "where": "lines 182–185; KatokHasselblatt1995 Section 9.2"
+     },
+     "prerequisites": [
+      "target:3.2",
+      "target:3.3",
+      "mathlib:MeasureTheory.lintegral_image_eq_lintegral_abs_det_fderiv_mul",
+      "mathlib:AddCircle.measurePreserving_mk",
+      "mathlib:AddCircle.measure_univ"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "circle",
+       "kind": "computation",
+       "statement": "Shear (s + 2Rδ, δ) preserves sin δ dδ ds."
+      },
+      {
+       "name": "ellipse",
+       "kind": "computation",
+       "statement": "sin δ₁ · √73/5 = 1/√2 = sin δ at the off-axis state."
+      },
+      {
+       "name": "smooth_case",
+       "kind": "compatibility",
+       "statement": "For k = ∞ this is C3.1's measure statement through 2.5."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "key": "4",
+   "title": "Twist maps of the annulus",
+   "targets": [
+    {
+     "id": "4.1",
+     "kind": "definition",
+     "name": "Billiards.IsTwistLift",
+     "statement": "F a homeomorphism of ℝ × Icc a b (or of ℝ × J, J open interval, ends preserved uniformly) with F(x + ℓ, y) = F(x, y) + (ℓ, 0), preserving each boundary line (end), y ↦ F₁(x, y) strictly increasing (positive) or decreasing (negative); monotone twist map: C¹ diffeomorphism with ∂F₁/∂y > 0.",
+     "hypotheses": [
+      "0 < ℓ",
+      "a < b"
+     ],
+     "locator": {
+      "source": "Herman1983",
+      "where": "Chapitre I, 1.2, lines 149–155; KatokHasselblatt1995 Section 9.2"
+     },
+     "prerequisites": [
+      "mathlib:Homeomorph",
+      "mathlib:AddCircle"
+     ],
+     "api": [
+      {
+       "name": "descends",
+       "role": "structure",
+       "statement": "A twist lift descends to an orientation-preserving homeomorphism of the annulus isotopic to the identity."
+      },
+      {
+       "name": "inverse",
+       "role": "functoriality",
+       "statement": "The inverse of a positive twist lift is negative. Conjugation by (x,y) ↦ (x,r(y)) exchanges topological twist signs for an explicitly chosen decreasing self-homeomorphism r of J; r(y)=a+b−y is available for finite endpoints. The differential condition is preserved when r is a C¹ diffeomorphism."
+      },
+      {
+       "name": "deck",
+       "role": "functoriality",
+       "statement": "Composition with τ_ℓ^m keeps the twist property."
+      },
+      {
+       "name": "deviates",
+       "role": "compatibility",
+       "statement": "A positive topological twist lift deviates the verticals in Fathi's sense (Herman1983, line 1130)."
+      }
+     ],
+     "tests": [
+      {
+       "name": "shear",
+       "kind": "computation",
+       "statement": "(x + y, y) on ℝ × [0,1] is positive; (x − y, y) negative."
+      },
+      {
+       "name": "rotation",
+       "kind": "non-example",
+       "statement": "(x + 1/4, y): F₁ constant in y, not a twist."
+      },
+      {
+       "name": "standard_map",
+       "kind": "computation",
+       "statement": "(x + y + ε sin 2πx, y + ε sin 2πx): ∂F₁/∂y = 1, det DF = 1."
+      },
+      {
+       "name": "unbounded",
+       "kind": "non-example",
+       "statement": "On J=(0,∞), F(x,y)=(x+log y,y) has derivative 1/y>0. For r(y)=1/y, its conjugate is (x−log y,y), derivative −1/y<0. The finite-endpoint expression a+b−y is unavailable."
+      }
+     ]
+    },
+    {
+     "id": "4.2",
+     "kind": "definition",
+     "name": "Billiards.IsExactTwist",
+     "statement": "A monotone twist map is exact for λ=g dx (g C¹, ℓ-periodic, ∂y g=ρ>0) when F*λ−λ=dS with S ℓ-periodic C¹. Put Q(x,y)=(x,F₁(x,y)), a C¹ diffeomorphism from ℝ×J onto its open image D={(x,X): X∈F₁(x,J)}. Equivalently h=S∘Q⁻¹:D→ℝ, S=h∘Q, is diagonal-deck-invariant and satisfies g(x,y)=−∂₁h(x,F₁(x,y)), g(F(x,y))=∂₂h(x,F₁(x,y)). This endpoint-coordinate deduction is constructed here from the globally canonical setting.",
+     "hypotheses": [],
+     "locator": {
+      "source": "Herman1983",
+      "where": "Chapitre I, §4.3, Remarque, printed p.27, lines 762–769 (globally canonical setting); endpoint-coordinate construction is here"
+     },
+     "prerequisites": [
+      "target:4.1"
+     ],
+     "api": [
+      {
+       "name": "area",
+       "role": "structure",
+       "statement": "Exactness implies preservation of ρ dx dy (ω = −dλ = ρ dx ∧ dy)."
+      },
+      {
+       "name": "coords",
+       "role": "functoriality",
+       "statement": "Invariant under fibre-preserving coordinate changes transporting λ."
+      },
+      {
+       "name": "flux",
+       "role": "characterisation",
+       "statement": "Area preservation does not imply exactness: (x + y, y + c), c ≠ 0, has flux c."
+      }
+     ],
+     "tests": [
+      {
+       "name": "shear",
+       "kind": "computation",
+       "statement": "On ℝ², S=y²/2 and Q⁻¹(x,X)=(x,X−x), so h=(X−x)²/2. At (x,X)=(1,2), −∂₁h=∂₂h=1 and S(1,1)=h(1,2)=1/2; the wrong composition gives −3,3."
+      },
+      {
+       "name": "standard_map",
+       "kind": "computation",
+       "statement": "F*(y dx) − y dx = ε sin(2πx) dx + d(Y²/2); S = −ε cos(2πx)/(2π) + Y²/2."
+      },
+      {
+       "name": "shifted_shear",
+       "kind": "non-example",
+       "statement": "(x + y, y + c): integral over y = 0, x ∈ [0,1] equals c ≠ 0."
+      }
+     ]
+    },
+    {
+     "id": "4.3",
+     "kind": "theorem",
+     "name": "Billiards.ConvexTable.isTwistLift_billiardLift",
+     "statement": "The billiard lift is a positive twist lift on ℝ × Icc 0 π for every k ≥ 1; for k ≥ 2 an exact area-preserving monotone twist map in (s, δ) (ρ = sin δ, g = −cos δ, S = −L ∘ (s, F₁)) and in (s, −cos δ) (ρ = 1); a negative twist in (s, cos δ).",
+     "hypotheses": [],
+     "locator": {
+      "source": "KatokHasselblatt1995",
+      "where": "Section 9.2"
+     },
+     "prerequisites": [
+      "target:2.2",
+      "target:2.3",
+      "target:3.2",
+      "target:4.1",
+      "target:4.2"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "circle",
+       "kind": "computation",
+       "statement": "∂s₁/∂δ = 2R, ∂s₁/∂y = 2R/sin δ, ∂s₁/∂v = −2R/sin δ."
+      },
+      {
+       "name": "exact_circle",
+       "kind": "computation",
+       "statement": "S = −2R sin δ, ∂δS = −2R cos δ = g(F)∂δF₁."
+      },
+      {
+       "name": "normalisation",
+       "kind": "characterisation",
+       "statement": "τ_ℓ⁻¹ ∘ F is a twist lift with boundary maps τ_ℓ⁻¹ and id."
+      }
+     ]
+    },
+    {
+     "id": "4.4",
+     "kind": "definition",
+     "name": "Billiards.nonwanderingSet",
+     "statement": "For a homeomorphism f of a topological space, the points x such that every neighbourhood V of x meets f^n(V) for some n ≥ 1.",
+     "hypotheses": [],
+     "locator": {
+      "source": "Herman1983",
+      "where": "Chapitre I, 3.4.3, lines 425–432"
+     },
+     "prerequisites": [],
+     "api": [
+      {
+       "name": "closed_invariant",
+       "role": "structure",
+       "statement": "Closed, f-invariant, contains periodic points."
+      },
+      {
+       "name": "inv",
+       "role": "structure",
+       "statement": "nonwanderingSet f⁻¹ = nonwanderingSet f."
+      },
+      {
+       "name": "closure",
+       "role": "structure",
+       "statement": "Non-wandering points of a dense invariant open set make every point of its closure non-wandering."
+      }
+     ],
+     "tests": [
+      {
+       "name": "billiard",
+       "kind": "computation",
+       "statement": "For a table of class C^k, k ≥ 2, every point of Ā is non-wandering."
+      },
+      {
+       "name": "dissipative",
+       "kind": "non-example",
+       "statement": "(x, y) ↦ (x, y²) on AddCircle 1 × [0,1]: only the boundary circles."
+      },
+      {
+       "name": "translation",
+       "kind": "degenerate",
+       "statement": "x ↦ x + 1 on ℝ: empty."
+      }
+     ]
+    },
+    {
+     "id": "4.4.1",
+     "kind": "theorem",
+     "name": "Billiards.nonwanderingSet_eq_univ_of_measurePreserving",
+     "statement": "If f preserves a finite Borel measure of full support on a second-countable space, nonwanderingSet f = univ.",
+     "hypotheses": [],
+     "locator": {
+      "source": "Herman1983",
+      "where": "Chapitre I, 3.4.4, line 434"
+     },
+     "prerequisites": [
+      "target:4.4",
+      "roadmap:SymplecticGeometry CotangentLagrangian C3.1",
+      "mathlib:MeasureTheory.MeasurePreserving.conservative",
+      "mathlib:MeasureTheory.Conservative.ae_frequently_mem_of_mem_nhds"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "rotation",
+       "kind": "computation",
+       "statement": "Irrational rotation of AddCircle 1: every point non-wandering."
+      },
+      {
+       "name": "full_support",
+       "kind": "non-example",
+       "statement": "(δ_0 + δ_1)/2 for a circle map with two fixed points is not of full support; other points wander."
+      },
+      {
+       "name": "billiard",
+       "kind": "compatibility",
+       "statement": "Applies to T with μ_A (3.3.1)."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "key": "5",
+   "title": "Rotational invariant curves",
+   "targets": [
+    {
+     "id": "5.1",
+     "kind": "definition",
+     "name": "Billiards.IsRotationalInvariantCurve",
+     "statement": "For a homeomorphism f of AddCircle ℓ × Ioo a b: f(C) = C and C is the image of a continuous injective c : Circle → AddCircle ℓ × Ioo a b that is not ContinuousMap.Nullhomotopic.",
+     "hypotheses": [],
+     "locator": {
+      "source": "BialyMironov2022",
+      "where": "lines 103–104"
+     },
+     "prerequisites": [
+      "mathlib:ContinuousMap.Nullhomotopic"
+     ],
+     "api": [
+      {
+       "name": "compact",
+       "role": "structure",
+       "statement": "C compact, contained in AddCircle ℓ × Icc a′ b′ with a < a′ ≤ b′ < b; first coordinate of degree ±1."
+      },
+      {
+       "name": "two_components",
+       "role": "structure",
+       "statement": "Complement has two components, lower and upper, both with frontier C; f-invariant when f preserves ends."
+      },
+      {
+       "name": "reflect",
+       "role": "functoriality",
+       "statement": "I(C) is invariant under I ∘ f ∘ I."
+      }
+     ],
+     "tests": [
+      {
+       "name": "circle_table",
+       "kind": "computation",
+       "statement": "δ = c is a rotational invariant curve of the circular billiard."
+      },
+      {
+       "name": "small_circle",
+       "kind": "non-example",
+       "statement": "A small circle around a point is null-homotopic."
+      },
+      {
+       "name": "two_circles",
+       "kind": "non-example",
+       "statement": "δ = c₁ ∪ δ = c₂ is invariant, not an injective image of Circle."
+      }
+     ]
+    },
+    {
+     "id": "5.1.1",
+     "kind": "theorem",
+     "name": "Billiards.IsRotationalInvariantCurve.compl_components",
+     "statement": "The complement of an essential simple closed curve C in AddCircle ℓ × Ioo a b has exactly two components, containing the lower and upper ends, both with frontier C.",
+     "hypotheses": [],
+     "locator": {
+      "source": "Herman1983",
+      "where": "Chapitre I, 3.2, lines 355–359"
+     },
+     "prerequisites": [
+      "target:5.1",
+      "tauceti:TauCeti.IsJordanCurve.natCard_connectedComponents_compl_eq_two",
+      "tauceti:TauCeti.IsJordanCurve.frontier_connectedComponentIn"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "circle",
+       "kind": "computation",
+       "statement": "δ = c separates δ < c from δ > c."
+      },
+      {
+       "name": "embedding",
+       "kind": "compatibility",
+       "statement": "Via (x, y) ↦ (1 + y − a) exp(2πix/ℓ), C winds once around 0."
+      },
+      {
+       "name": "null",
+       "kind": "non-example",
+       "statement": "A null-homotopic curve bounds a disc: no end in its inside."
+      }
+     ]
+    },
+    {
+     "id": "5.2",
+     "kind": "theorem",
+     "name": "Billiards.frontier_isGraph_of_invariant",
+     "statement": "H orientation-preserving homeomorphism of AddCircle ℓ × Ico a b preserving the boundary circle, lift deviating verticals; U open, relatively compact, homeomorphic to AddCircle ℓ × Ico 0 1, H(U) = U, U ⊆ nonwanderingSet H. Then frontier U is the graph of a continuous AddCircle ℓ → Ioo a b.",
+     "hypotheses": [
+      "U relatively compact",
+      "U ≃ₜ AddCircle ℓ × Ico 0 1",
+      "H '' U = U",
+      "U ⊆ nonwanderingSet H"
+     ],
+     "locator": {
+      "source": "Herman1983",
+      "where": "Appendice au Chapitre I (Fathi), Théorème de Birkhoff, printed p.41, lines 1150–1154; proof printed pp.42–46, lines 1159–1287"
+     },
+     "prerequisites": [
+      "target:4.1",
+      "target:4.4",
+      "tauceti:TauCeti.IsJordanCurve.exists_homeomorph_image_sphere",
+      "tauceti:Path.IsCrosscut.natCard_connectedComponents_sdiff_range_eq_two"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "shear",
+       "kind": "computation",
+       "statement": "Shear on [0,2), U = [0,1): frontier = graph of 1."
+      },
+      {
+       "name": "rotation",
+       "kind": "non-example",
+       "statement": "(x + 1/4, y) preserves the region below t ↦ (t + 0.1 sin 8πt, 1 + 0.1 sin 8πt), a non-graph; not a twist."
+      },
+      {
+       "name": "not_rel_compact",
+       "kind": "degenerate",
+       "statement": "U = AddCircle 1 × [0,2): empty frontier."
+      }
+     ]
+    },
+    {
+     "id": "5.3",
+     "kind": "theorem",
+     "name": "Billiards.isGraph_of_isRotationalInvariantCurve",
+     "statement": "H homeomorphism of AddCircle ℓ × Icc a b with positive or negative twist lift, every point of the open annulus non-wandering, C rotational invariant curve: C is the graph of continuous ψ : AddCircle ℓ → Ioo a b; if H is a monotone twist map on the open annulus, ψ is Lipschitz with constant ≤ max over q ∈ C of |∂yF₂/∂yF₁|(q) and |∂y(F⁻¹)₂/∂y(F⁻¹)₁|(q).",
+     "hypotheses": [
+      "IsTwistLift F",
+      "∀ x ∈ open annulus, x ∈ nonwanderingSet H",
+      "IsRotationalInvariantCurve H C"
+     ],
+     "locator": {
+      "source": "Herman1983",
+      "where": "Chapitre I, 2.2 and 5.2, lines 188–251 and 803–807; KatokHasselblatt1995 Chapter 13"
+     },
+     "prerequisites": [
+      "target:5.1",
+      "target:5.1.1",
+      "target:5.2",
+      "target:4.4",
+      "roadmap:GeometricTopology §2.3"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "circle_table",
+       "kind": "computation",
+       "statement": "δ = c: constant graphs, constant 0."
+      },
+      {
+       "name": "bound",
+       "kind": "computation",
+       "statement": "Circular table: ∂δF₂=∂δ(F⁻¹)₂=1. The ratios are 1/(2R) and −1/(2R), absolute maximum 1/(2R). The optimal graph constant 0 satisfies 0≤1/(2R), or 0≤1/2 at R=1."
+      },
+      {
+       "name": "rotation",
+       "kind": "non-example",
+       "statement": "The 1/4-rotation-invariant non-graph curve shows the twist is needed."
+      }
+     ]
+    },
+    {
+     "id": "5.3.1",
+     "kind": "theorem",
+     "name": "Billiards.ConvexTable.isGraph_of_invariantCurve",
+     "statement": "For a table of class C^k, k ≥ 2, every rotational invariant curve of T is the graph of a Lipschitz function of s in (s, δ) and in (s, cos δ).",
+     "hypotheses": [
+      "2 ≤ k"
+     ],
+     "locator": {
+      "source": "BialyMironov2022",
+      "where": "lines 261–263"
+     },
+     "prerequisites": [
+      "target:5.3",
+      "target:2.3",
+      "target:4.3",
+      "target:4.4.1",
+      "target:3.3.1"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "circle",
+       "kind": "computation",
+       "statement": "δ = c."
+      },
+      {
+       "name": "coords",
+       "kind": "compatibility",
+       "statement": "The graph property is unchanged by (s, δ) ↦ (s, cos δ)."
+      },
+      {
+       "name": "hypotheses",
+       "kind": "compatibility",
+       "statement": "For k ≥ 2 the non-wandering hypothesis of 5.3 holds by 4.4.1 and 3.3.1, and the twist by 4.3."
+      }
+     ]
+    },
+    {
+     "id": "5.4",
+     "kind": "definition",
+     "name": "Billiards.rotationNumber",
+     "statement": "For an invariant graph C = graph ψ of a twist lift F, g(x) = F₁(x, ψ x); x ↦ g(ℓx)/ℓ is a continuous strictly increasing CircleDeg1Lift; ρ(C) is its translationNumber.",
+     "hypotheses": [],
+     "locator": {
+      "source": "Herman1983",
+      "where": "Chapitre I, 2.1, lines 180–187"
+     },
+     "prerequisites": [
+      "target:5.3",
+      "mathlib:CircleDeg1Lift",
+      "mathlib:CircleDeg1Lift.translationNumber"
+     ],
+     "api": [
+      {
+       "name": "limit",
+       "role": "evaluation",
+       "statement": "(F₁ⁿ(x, ψ x) − x)/(nℓ) → ρ(C) for every x (CircleDeg1Lift.tendsto_translationNumber)."
+      },
+      {
+       "name": "billiard_range",
+       "role": "evaluation",
+       "statement": "For the normalised billiard lift ρ(C) ∈ (0, 1)."
+      },
+      {
+       "name": "reversal",
+       "role": "functoriality",
+       "statement": "ρ(I(C)) = 1 − ρ(C)."
+      },
+      {
+       "name": "monotone",
+       "role": "structure",
+       "statement": "Positive twist, ψ₁ < ψ₂ ⇒ ρ(C₁) ≤ ρ(C₂), strict under an invariant measure of positive continuous density."
+      }
+     ],
+     "tests": [
+      {
+       "name": "circle",
+       "kind": "computation",
+       "statement": "ρ(δ = c) = c/π; δ = π/3 gives 1/3."
+      },
+      {
+       "name": "reversal",
+       "kind": "computation",
+       "statement": "δ = 2π/3 has ρ = 2/3 = 1 − 1/3."
+      },
+      {
+       "name": "normalisation",
+       "kind": "non-example",
+       "statement": "With τ_ℓ⁻¹ ∘ F the values lie in (−1, 0)."
+      }
+     ]
+    },
+    {
+     "id": "5.4.1",
+     "kind": "theorem",
+     "name": "Billiards.rotationNumber_properties",
+     "statement": "The four API statements of 5.4: limit formula, ρ ∈ (0,1) for the billiard, ρ(I(C)) = 1 − ρ(C), monotonicity.",
+     "hypotheses": [],
+     "locator": {
+      "source": "Herman1983",
+      "where": "Chapitre I, 2.4.2 and 2.4.4, lines 277–319"
+     },
+     "prerequisites": [
+      "target:5.4",
+      "target:2.4",
+      "mathlib:CircleDeg1Lift.tendsto_translationNumber",
+      "mathlib:CircleDeg1Lift.translationNumber_units_inv",
+      "mathlib:CircleDeg1Lift.translationNumber_mono",
+      "mathlib:CircleDeg1Lift.translationNumber_le_of_le_add",
+      "mathlib:CircleDeg1Lift.le_translationNumber_of_add_le"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "bounds",
+       "kind": "computation",
+       "statement": "g(x) − x ∈ [εℓ, (1 − ε)ℓ] gives ρ ∈ [ε, 1 − ε]."
+      },
+      {
+       "name": "circle",
+       "kind": "computation",
+       "statement": "Nested circles δ = c₁ < c₂: c₁/π < c₂/π."
+      },
+      {
+       "name": "reversal",
+       "kind": "compatibility",
+       "statement": "I ∘ F ∘ I = τ_ℓ ∘ F⁻¹."
+      }
+     ]
+    },
+    {
+     "id": "5.5",
+     "kind": "theorem",
+     "name": "Billiards.rotationNumber_rat",
+     "statement": "If ρ(C) = p/q in lowest terms, C contains a periodic orbit of type (p, q); if T|C preserves a full-support Borel probability measure on C, every orbit on C is periodic of type (p, q).",
+     "hypotheses": [],
+     "locator": {
+      "source": "BialyMironov2022",
+      "where": "lines 116–119"
+     },
+     "prerequisites": [
+      "target:5.4",
+      "mathlib:CircleDeg1Lift.translationNumber_eq_rat_iff"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "diameters",
+       "kind": "computation",
+       "statement": "Circular table, δ = π/2: every point of type (1, 2)."
+      },
+      {
+       "name": "irrational",
+       "kind": "non-example",
+       "statement": "δ = π√2/2: none."
+      },
+      {
+       "name": "support",
+       "kind": "non-example",
+       "statement": "Rotation number 0 with two fixed points: (δ_{x₁} + δ_{x₂})/2 invariant, not full support."
+      }
+     ]
+    },
+    {
+     "id": "5.6",
+     "kind": "example",
+     "name": "Billiards.circle_foliation",
+     "statement": "The circular table's phase cylinder is foliated by δ = c with ρ = c/π, and these are all its rotational invariant curves.",
+     "hypotheses": [],
+     "locator": {
+      "source": "Tabachnikov2005",
+      "where": "Chapter 3"
+     },
+     "prerequisites": [
+      "target:2.5",
+      "target:5.3",
+      "target:5.4",
+      "roadmap:SymplecticGeometry CotangentLagrangian C3.1"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "homeomorphism",
+       "kind": "computation",
+       "statement": "c ↦ c/π is a homeomorphism (0, π) → (0, 1)."
+      },
+      {
+       "name": "perturbed",
+       "kind": "non-example",
+       "statement": "δ = c + ε sin(2πs/ℓ): the point (ℓ/4, c + ε) moves to height c + ε above parameter where the curve has height c + ε cos(2(c + ε))."
+      },
+      {
+       "name": "measure",
+       "kind": "computation",
+       "statement": "μ_A(δ < π/2) = ℓ."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "key": "6",
+   "title": "Birkhoff periodic orbits",
+   "targets": [
+    {
+     "id": "6.1",
+     "kind": "definition",
+     "name": "Billiards.ConvexTable.perimeter",
+     "statement": "For coprime 0 < p < q: D_{p,q} = {(s_j) : s_{j+q} = s_j + pℓ, 0 < s_{j+1} − s_j < ℓ} ⊆ ℝ^q, Γ = ⟨σ, d⟩ ≅ ℤ acting freely and properly, W(s) = Σ_{j<q} L(s_j, s_{j+1}).",
+     "hypotheses": [
+      "0 < p",
+      "p < q",
+      "Nat.Coprime p q"
+     ],
+     "locator": {
+      "source": "KatokHasselblatt1995",
+      "where": "Section 9.3"
+     },
+     "prerequisites": [
+      "target:3.1"
+     ],
+     "api": [
+      {
+       "name": "gamma",
+       "role": "structure",
+       "statement": "σ^q = d^p and Γ ≅ ℤ acts freely and properly; D_{p,q}/Γ ≃ S¹."
+      },
+      {
+       "name": "invariant",
+       "role": "structure",
+       "statement": "W is Γ-invariant, continuous on D̄_{p,q}, C^k on D_{p,q}."
+      },
+      {
+       "name": "compact",
+       "role": "structure",
+       "statement": "D̄_{p,q}/⟨d⟩ is compact."
+      }
+     ],
+     "tests": [
+      {
+       "name": "half",
+       "kind": "computation",
+       "statement": "p/q = 1/2: W = 2L(s₀, s₁)."
+      },
+      {
+       "name": "two_thirds",
+       "kind": "computation",
+       "statement": "Unit circle, s_j = 4πj/3: gaps 4π/3, W = 3√3."
+      },
+      {
+       "name": "p_eq_q",
+       "kind": "non-example",
+       "statement": "p = q forces all gaps ℓ: degenerate."
+      }
+     ]
+    },
+    {
+     "id": "6.2",
+     "kind": "theorem",
+     "name": "Billiards.ConvexTable.isCritical_iff_periodic",
+     "statement": "For k ≥ 1, s ∈ D_{p,q} is critical for W iff the chord states x_j satisfy F(x_j) = x_{j+1}; then x₀ is periodic of type (p, q) with least period q on A; two critical configurations give the same orbit iff they differ by Γ.",
+     "hypotheses": [
+      "1 ≤ k"
+     ],
+     "locator": {
+      "source": "KatokHasselblatt1995",
+      "where": "Section 9.3"
+     },
+     "prerequisites": [
+      "target:3.1",
+      "target:6.1"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "equilateral",
+       "kind": "computation",
+       "statement": "Unit circle (1,3): equal gaps critical, δ′ = δ = π/3."
+      },
+      {
+       "name": "not_critical",
+       "kind": "non-example",
+       "statement": "(0, π/2, π): at s = 0 cosines 0 and 1/√2."
+      },
+      {
+       "name": "least_period",
+       "kind": "characterisation",
+       "statement": "m | q and (q/m) j = p contradict coprimality."
+      }
+     ]
+    },
+    {
+     "id": "6.3",
+     "kind": "theorem",
+     "name": "Billiards.ConvexTable.exists_max_periodic",
+     "statement": "W attains its maximum on D̄_{p,q} only at points of D_{p,q}; every maximiser is a periodic orbit of type (p, q). In the boundary proof, exclude W=0 using any positive-perimeter interior configuration. If W>0, an endpoint of a maximal run of geometrically coincident vertices adjoins a nondegenerate chord: for a preceding gap 0 increase that endpoint, for a preceding gap ℓ decrease it (reverse the signs for a following gap). The collapsed chord contributes +1, and the other chord has derivative of absolute value <1, giving 1±cos δ>0 within the gap constraints.",
+     "hypotheses": [
+      "1 ≤ k"
+     ],
+     "locator": {
+      "source": "KatokHasselblatt1995",
+      "where": "Section 9.3"
+     },
+     "prerequisites": [
+      "target:6.1",
+      "target:6.2"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "circle",
+       "kind": "computation",
+       "statement": "Max on D_{1,3} is 3√3; on D_{1,2} is 4."
+      },
+      {
+       "name": "ellipse",
+       "kind": "computation",
+       "statement": "Ellipse (2 cos u, sin u), (1,2): max 8 at the major axis."
+      },
+      {
+       "name": "winding",
+       "kind": "characterisation",
+       "statement": "Unconstrained 4-gons: doubled diameter W = 8 (type (2,4)); on D_{1,4} the square, 4√2."
+      },
+      {
+       "name": "collapsed",
+       "kind": "computation",
+       "statement": "On the unit circle, gaps (0,0,ℓ) for (p,q)=(1,3) give W=0<3√3. Deforming them towards (ℓ/3,ℓ/3,ℓ/3) gives W′(0+)=4ℓ/3>0."
+      }
+     ]
+    },
+    {
+     "id": "6.4",
+     "kind": "theorem",
+     "name": "Billiards.ConvexTable.exists_two_periodic_orbits",
+     "statement": "For k ≥ 1 and coprime 0 < p < q there are two disjoint periodic orbits of type (p, q) on A, one a maximiser of W. For the inward increasing field on the truncated configuration space, distinguish positive-perimeter boundary limits (run-end variations from 6.3) from wholly collapsed limits. At a collapsed limit exactly p gaps equal ℓ and q−p equal 0; d_j(t)=(1−t)d_j+t pℓ/q has right perimeter derivative 2p(q−p)ℓ/q>0. These directions persist with positive derivative nearby; add a sufficiently small equal-gap inward direction in the run-end case and combine by a partition of unity.",
+     "hypotheses": [
+      "1 ≤ k",
+      "0 < p",
+      "p < q",
+      "Nat.Coprime p q"
+     ],
+     "locator": {
+      "source": "KatokHasselblatt1995",
+      "where": "Section 9.3"
+     },
+     "prerequisites": [
+      "target:2.3",
+      "target:6.1",
+      "target:6.2",
+      "target:6.3",
+      "roadmap:SymplecticGeometry IntegrableSystems I5.4"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "circle",
+       "kind": "computation",
+       "statement": "Unit circle: circle of critical configurations."
+      },
+      {
+       "name": "ellipse",
+       "kind": "computation",
+       "statement": "Ellipse (1,2): major axis W = 8, minor axis W = 4."
+      },
+      {
+       "name": "marking",
+       "kind": "non-example",
+       "statement": "Without the quotient by σ two critical points may be one orbit marked twice."
+      },
+      {
+       "name": "collapsed",
+       "kind": "computation",
+       "statement": "For collapsed (1,3) gaps (0,0,ℓ), the equal-gap interpolation has W′(0+)=4ℓ/3; the derivatives of the nearby truncated-boundary variations tend to this positive value. Positive-perimeter run-end limits instead give 1±cos δ>0."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "key": "7",
+   "title": "Polygonal tables",
+   "targets": [
+    {
+     "id": "7.1",
+     "kind": "definition",
+     "name": "Billiards.PolygonalTable",
+     "statement": "Finitely many simple polygons P₀, …, P_h in ℂ (TauCeti.SimplePolygon ℝ ℂ) with pairwise disjoint boundaries and a compact P ⊆ ℂ with connected nonempty interior, P = closure (interior P), frontier P = ⋃ boundary Pᵢ; vertices V, sides the edges, interior angles α_v ∈ (0, 2π).",
+     "hypotheses": [],
+     "locator": {
+      "source": "ChernovMarkarian2006",
+      "where": "Chapter 2; BoldrighiniKeaneMarchetti1978 §2"
+     },
+     "prerequisites": [
+      "tauceti:Polygon.IsSimple",
+      "tauceti:TauCeti.SimplePolygon",
+      "tauceti:Polygon.IsSimple.isJordanCurve_boundary",
+      "mathlib:Polygon"
+     ],
+     "api": [
+      {
+       "name": "outer",
+       "role": "structure",
+       "statement": "Exactly one boundary component bounds a region containing P; the others bound the holes."
+      },
+      {
+       "name": "angle_sum",
+       "role": "evaluation",
+       "statement": "Σ_v α_v = (n − 2 + 2h)π."
+      },
+      {
+       "name": "sides",
+       "role": "structure",
+       "statement": "Relative interiors of distinct sides are disjoint; near a non-vertex frontier point P is a half-disc."
+      },
+      {
+       "name": "simple",
+       "role": "compatibility",
+       "statement": "A simple polygon gives a table with h = 0."
+      }
+     ],
+     "tests": [
+      {
+       "name": "square",
+       "kind": "computation",
+       "statement": "Unit square: n = 4, h = 0, angle sum 2π."
+      },
+      {
+       "name": "holed_square",
+       "kind": "computation",
+       "statement": "[0,3]² minus (1,2)²: n = 8, h = 1, sum 8π."
+      },
+      {
+       "name": "touching",
+       "kind": "non-example",
+       "statement": "Two squares meeting at a corner: frontier components not disjoint."
+      },
+      {
+       "name": "flat_vertex",
+       "kind": "degenerate",
+       "statement": "A simple polygon with an angle π is a table."
+      }
+     ]
+    },
+    {
+     "id": "7.2",
+     "kind": "construction",
+     "name": "Billiards.PolygonalTable.PhaseSpace",
+     "statement": "(P × Circle)/∼ with (x, v) ∼ (x, σ_S v), σ_S(v) = d² conj v for x in the relative interior of a side S of unit direction d; quotient topology and σ-algebra; μ_P the image of (2π area P)⁻¹ Leb_P ⊗ dθ.",
+     "hypotheses": [],
+     "locator": {
+      "source": "ChernovMarkarian2006",
+      "where": "Chapter 2; BoldrighiniKeaneMarchetti1978 §2"
+     },
+     "prerequisites": [
+      "target:7.1",
+      "mathlib:AddCircle.homeomorphCircle'"
+     ],
+     "api": [
+      {
+       "name": "equivalence",
+       "role": "structure",
+       "statement": "∼ is an equivalence relation identifying at most two points; J(x, v) = (x, −v) descends."
+      },
+      {
+       "name": "probability",
+       "role": "evaluation",
+       "statement": "μ_P is a probability measure; frontier states are null."
+      },
+      {
+       "name": "reflection",
+       "role": "structure",
+       "statement": "σ_S is an involution of Circle preserving dθ and depending on the direction of S up to sign."
+      }
+     ],
+     "tests": [
+      {
+       "name": "horizontal_vertical",
+       "kind": "computation",
+       "statement": "Horizontal: σ v = conj v; vertical: σ v = −conj v, exp(iπ/4) ↦ exp(3iπ/4)."
+      },
+      {
+       "name": "diagonal",
+       "kind": "computation",
+       "statement": "d = exp(iπ/4): σ(1) = i."
+      },
+      {
+       "name": "quarter",
+       "kind": "computation",
+       "statement": "Unit square: μ_P(position in [0,1/2]²) = 1/4."
+      }
+     ]
+    },
+    {
+     "id": "7.3",
+     "kind": "theorem",
+     "name": "Billiards.PolygonalTable.finite_reflections",
+     "statement": "A trajectory makes finitely many reflections in every bounded time interval on which it meets no vertex. A trajectory segment entering a corner disc (angle α∈(0,2π), only the two adjacent sides meet the disc) leaves it after at most ⌈π/α⌉ reflections, provided the segment avoids the vertex and does not run along a side.",
+     "hypotheses": [
+      "For the escape clause: the segment avoids the vertex and does not run along a side."
+     ],
+     "locator": {
+      "source": "Tabachnikov2005",
+      "where": "Chapter 7"
+     },
+     "prerequisites": [
+      "target:7.1",
+      "target:7.2"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "right_angle",
+       "kind": "computation",
+       "statement": "α = π/2: at most 2."
+      },
+      {
+       "name": "two_thirds",
+       "kind": "computation",
+       "statement": "α = 2π/3: at most 2 = ⌈3/2⌉."
+      },
+      {
+       "name": "reflex",
+       "kind": "degenerate",
+       "statement": "α = 3π/2: at most 1."
+      },
+      {
+       "name": "stopped_radial",
+       "kind": "non-example",
+       "statement": "In the square, from (ε,ε) with velocity −(1+i)/√2 the trajectory stops at the vertex at time √2 ε, after 0 reflections. It does not escape and is excluded by the avoiding hypothesis; it lies in Σ."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "key": "8",
+   "title": "The singular set and the billiard flow",
+   "targets": [
+    {
+     "id": "8.1",
+     "kind": "theorem",
+     "name": "Billiards.PolygonalTable.singularSet_null",
+     "statement": "The set Σ of states whose forward or backward trajectory reaches a vertex or runs along a side is Borel and μ_P-null, and X_P = PhaseSpace ∖ Σ is invariant under trajectories.",
+     "hypotheses": [],
+     "locator": {
+      "source": "ChernovMarkarian2006",
+      "where": "Chapter 2; BoldrighiniKeaneMarchetti1978 §2"
+     },
+     "prerequisites": [
+      "target:7.3"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "square_vertex",
+       "kind": "computation",
+       "statement": "((1/2,1/2), exp(iπ/4)) reaches (1,1): singular."
+      },
+      {
+       "name": "square_regular",
+       "kind": "computation",
+       "statement": "((1/2,1/4), exp(iπ/4)): unfolded line y − x = −1/4 avoids ℤ²: regular."
+      },
+      {
+       "name": "not_closed",
+       "kind": "characterisation",
+       "statement": "Square: fix x=(1/2,1/4) and let v_n point to (n,n), n≥1, in the unfolding. Every v_n hits a lattice vertex. The limiting direction (1+i)/√2 has line y−x=−1/4 avoiding all lattice vertices, hence a regular limit of singular states."
+      }
+     ]
+    },
+    {
+     "id": "8.2",
+     "kind": "construction",
+     "name": "Billiards.PolygonalTable.flow",
+     "statement": "The ℝ-action on PhaseSpace moving states of X_P along their trajectories and fixing Σ; F^{s+t} = F^s ∘ F^t, F⁰ = id, MeasurableVAdd₂, continuity on ℝ × X_P.",
+     "hypotheses": [],
+     "locator": {
+      "source": "ChernovMarkarian2006",
+      "where": "Chapter 2; BoldrighiniKeaneMarchetti1978 §2"
+     },
+     "prerequisites": [
+      "target:8.1",
+      "mathlib:MeasurableVAdd₂"
+     ],
+     "api": [
+      {
+       "name": "group_law",
+       "role": "structure",
+       "statement": "An AddAction ℝ PhaseSpace."
+      },
+      {
+       "name": "measurable",
+       "role": "structure",
+       "statement": "MeasurableVAdd₂ ℝ PhaseSpace."
+      },
+      {
+       "name": "continuous",
+       "role": "structure",
+       "statement": "(t, x) ↦ F^t x continuous on ℝ × X_P."
+      }
+     ],
+     "tests": [
+      {
+       "name": "square",
+       "kind": "computation",
+       "statement": "((1/2,1/2), 1) at t = 1 is ((1/2,1/2), −1), at t = 2 back."
+      },
+      {
+       "name": "not_flow",
+       "kind": "non-example",
+       "statement": "Not a Mathlib Flow: discontinuous at Σ."
+      },
+      {
+       "name": "singular",
+       "kind": "degenerate",
+       "statement": "A state reaching a vertex is fixed at every time."
+      }
+     ]
+    },
+    {
+     "id": "8.3",
+     "kind": "theorem",
+     "name": "Billiards.PolygonalTable.vaddInvariantMeasure_flow",
+     "statement": "VAddInvariantMeasure ℝ PhaseSpace μ_P and F^{−t} = J ∘ F^t ∘ J.",
+     "hypotheses": [],
+     "locator": {
+      "source": "ChernovMarkarian2006",
+      "where": "Chapter 2; BoldrighiniKeaneMarchetti1978 §2"
+     },
+     "prerequisites": [
+      "target:8.2",
+      "mathlib:VAddInvariantMeasure"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "free",
+       "kind": "computation",
+       "statement": "(x, v) ↦ (x + tv, v) preserves Leb ⊗ dθ."
+      },
+      {
+       "name": "reversal",
+       "kind": "computation",
+       "statement": "J F¹ J ((1/2,1/2), 1) = ((1/2,1/2), −1) = F⁻¹((1/2,1/2), 1)."
+      },
+      {
+       "name": "dirac",
+       "kind": "non-example",
+       "statement": "Leb_P ⊗ δ_{v₀} is not invariant."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "key": "9",
+   "title": "Rational tables",
+   "targets": [
+    {
+     "id": "9.1",
+     "kind": "definition",
+     "name": "Billiards.PolygonalTable.reflectionGroup",
+     "statement": "The subgroup of ℂ ≃ₗᵢ[ℝ] ℂ generated by the σ_S; rational when finite; a finite one is dihedral of order 2N, N ≥ 2, its rotations generated by rotations through 2θ, θ the angles between side directions.",
+     "hypotheses": [],
+     "locator": {
+      "source": "MasurTabachnikov2002",
+      "where": "§1"
+     },
+     "prerequisites": [
+      "target:7.2",
+      "mathlib:DihedralGroup"
+     ],
+     "api": [
+      {
+       "name": "dihedral",
+       "role": "structure",
+       "statement": "Finite ⇒ isomorphic to DihedralGroup N, N ≥ 2."
+      },
+      {
+       "name": "rotations",
+       "role": "evaluation",
+       "statement": "Rotation subgroup generated by rotations through twice the angles between side directions."
+      },
+      {
+       "name": "invariance",
+       "role": "functoriality",
+       "statement": "Similarities conjugate the reflection group."
+      }
+     ],
+     "tests": [
+      {
+       "name": "square",
+       "kind": "computation",
+       "statement": "{±1, ±conj}, order 4."
+      },
+      {
+       "name": "equilateral",
+       "kind": "computation",
+       "statement": "Order 6."
+      },
+      {
+       "name": "irrational",
+       "kind": "non-example",
+       "statement": "A triangle with angle π/√2: infinite."
+      }
+     ]
+    },
+    {
+     "id": "9.2",
+     "kind": "theorem",
+     "name": "Billiards.PolygonalTable.reflectionGroup_finite_iff",
+     "statement": "For h = 0, finite iff every interior angle is in πℚ; then of order 2N, N = lcm n_v for α_v = π m_v/n_v in lowest terms; for h > 0 finite iff all side-direction differences lie in πℚ.",
+     "hypotheses": [],
+     "locator": {
+      "source": "MasurTabachnikov2002",
+      "where": "§1; ZemlyakovKatok1975"
+     },
+     "prerequisites": [
+      "target:9.1",
+      "target:7.1"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "pi_eighths",
+       "kind": "computation",
+       "statement": "π/2, π/8, 3π/8: N = 8, order 16."
+      },
+      {
+       "name": "L_shape",
+       "kind": "computation",
+       "statement": "N = 2, order 4."
+      },
+      {
+       "name": "rotated_hole",
+       "kind": "non-example",
+       "statement": "Square with a hole rotated by θ ∉ πℚ: angles rational, group infinite."
+      }
+     ]
+    },
+    {
+     "id": "9.3",
+     "kind": "theorem",
+     "name": "Billiards.PolygonalTable.not_ergodic_of_finite",
+     "statement": "If G is finite of order 2N and d a side direction, f(x, v) = Re((conj d · v)^N) is measurable, F-invariant and not a.e. constant, so ¬ ErgodicVAdd ℝ PhaseSpace μ_P; M_θ = {direction ∈ G·θ} is F-invariant.",
+     "hypotheses": [
+      "Finite reflectionGroup"
+     ],
+     "locator": {
+      "source": "MasurTabachnikov2002",
+      "where": "§1; ZemlyakovKatok1975"
+     },
+     "prerequisites": [
+      "target:9.1",
+      "target:8.3",
+      "mathlib:ErgodicVAdd"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "square",
+       "kind": "computation",
+       "statement": "f = cos 2φ, arcsine law on [−1, 1]."
+      },
+      {
+       "name": "wrong_exponent",
+       "kind": "non-example",
+       "statement": "N = 1: Re v changes sign under v ↦ −conj v."
+      },
+      {
+       "name": "infinite",
+       "kind": "degenerate",
+       "statement": "Angle π/√2: G infinite, finite-group theorem inapplicable. Constants and the Borel indicator of a countable G-orbit are invariant; the latter equals 1 on the orbit and 0 off it, and is 0 angular-almost-everywhere."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "key": "10",
+   "title": "Translation surfaces",
+   "targets": [
+    {
+     "id": "10.1",
+     "kind": "definition",
+     "name": "Billiards.translationGroupoid",
+     "statement": "The StructureGroupoid ℂ (via Pregroupoid.groupoid) of partial homeomorphisms with open source and complex derivative 1 at every point of the source.",
+     "hypotheses": [],
+     "locator": {
+      "source": "ChaikaForni2026",
+      "where": "§2 p.5, lines 168–176 (integrated translation charts); the derivative-one groupoid and equivalence are constructed here"
+     },
+     "prerequisites": [
+      "mathlib:Pregroupoid",
+      "mathlib:Pregroupoid.groupoid",
+      "mathlib:StructureGroupoid",
+      "mathlib:contDiffGroupoid"
+     ],
+     "api": [
+      {
+       "name": "closure",
+       "role": "structure",
+       "statement": "Closed under restriction, composition, inversion; local."
+      },
+      {
+       "name": "smooth",
+       "role": "compatibility",
+       "statement": "Contained in contDiffGroupoid ⊤ for the model ℂ."
+      },
+      {
+       "name": "translations",
+       "role": "evaluation",
+       "statement": "On connected open sets its members are z ↦ z + c."
+      }
+     ],
+     "tests": [
+      {
+       "name": "translation",
+       "kind": "computation",
+       "statement": "z ↦ z + 3i is a member; z ↦ 2z and z ↦ conj z are not."
+      },
+      {
+       "name": "components",
+       "kind": "characterisation",
+       "statement": "id on Re z < 0 and z + 1 on Re z > 0 together: a member."
+      },
+      {
+       "name": "half_translation",
+       "kind": "non-example",
+       "statement": "z ↦ −z is not a member."
+      }
+     ]
+    },
+    {
+     "id": "10.2",
+     "kind": "definition",
+     "name": "Billiards.TranslationSurface",
+     "statement": "For X compact connected Hausdorff: finite Σ_X, a charted space on Σ_Xᶜ modelled on ℂ with HasGroupoid translationGroupoid, and at each p ∈ Σ_X an integer k_p ≥ 1 and a homeomorphism φ from a neighbourhood onto a disc, φ p = 0, with z ↦ φ(z)^{k_p}/k_p locally in the maximal translation atlas off p.",
+     "hypotheses": [],
+     "locator": {
+      "source": "MasurTabachnikov2002",
+      "where": "§1; ChaikaForni2026 §2 p.5, lines 168–176 (integrated charts); the cone-atlas formulation is constructed here"
+     },
+     "prerequisites": [
+      "target:10.1",
+      "mathlib:ChartedSpace",
+      "mathlib:HasGroupoid",
+      "mathlib:StructureGroupoid.maximalAtlas"
+     ],
+     "api": [
+      {
+       "name": "smooth",
+       "role": "structure",
+       "statement": "Translation and cone charts form a complex-analytic atlas; X is an orientable compact surface."
+      },
+      {
+       "name": "cone_angle",
+       "role": "evaluation",
+       "statement": "Cone angle 2πk_p; marked points (k = 1) do not change the surface."
+      },
+      {
+       "name": "directions",
+       "role": "structure",
+       "statement": "The constant direction field θ is globally defined."
+      }
+     ],
+     "tests": [
+      {
+       "name": "torus",
+       "kind": "computation",
+       "statement": "ℂ/(ℤ + iℤ) with Σ = ∅, and with one marked point."
+      },
+      {
+       "name": "octagon",
+       "kind": "computation",
+       "statement": "Regular octagon with opposite sides glued: one cone point, angle 6π, k = 3."
+      },
+      {
+       "name": "pillowcase",
+       "kind": "non-example",
+       "statement": "Cone angle π (k = 1/2) excluded: half-translation."
+      }
+     ]
+    },
+    {
+     "id": "10.3",
+     "kind": "theorem",
+     "name": "Billiards.TranslationSurface.exists_unique_area",
+     "statement": "There is a unique finite Borel measure area_X with area_X(Σ_X) = 0 whose pullback by every translation chart is Lebesgue measure.",
+     "hypotheses": [],
+     "locator": {
+      "source": "ChaikaForni2026",
+      "where": "§1 p.3, lines 83–88 (directional flows and invariant area); chart-measure gluing and uniqueness are constructed here"
+     },
+     "prerequisites": [
+      "target:10.2"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "torus",
+       "kind": "computation",
+       "statement": "area(ℂ/Λ) = covolume Λ."
+      },
+      {
+       "name": "octagon",
+       "kind": "computation",
+       "statement": "Side 1: 2(1 + √2)."
+      },
+      {
+       "name": "atoms",
+       "kind": "non-example",
+       "statement": "Without area(Σ) = 0, atoms at cone points are allowed."
+      }
+     ]
+    },
+    {
+     "id": "10.4",
+     "kind": "construction",
+     "name": "Billiards.TranslationSurface.directionalFlow",
+     "statement": "For θ ∈ Circle, the flow z ↦ z + tθ in charts, defined for all time off the leaves through Σ_X, extended by the identity on those leaves (area-null); group law, MeasurableVAdd₂, invariance of area_X.",
+     "hypotheses": [],
+     "locator": {
+      "source": "ChaikaForni2026",
+      "where": "§1 p.3, lines 83–88 (directional flows and invariant area); the all-time measurable representative fixing singular leaves is constructed here"
+     },
+     "prerequisites": [
+      "target:10.2",
+      "target:10.3"
+     ],
+     "api": [
+      {
+       "name": "complete",
+       "role": "structure",
+       "statement": "Leaves avoiding Σ_X are defined for all time."
+      },
+      {
+       "name": "measure",
+       "role": "structure",
+       "statement": "area_X is invariant."
+      },
+      {
+       "name": "rotation",
+       "role": "functoriality",
+       "statement": "Changing θ by a rotation corresponds to rotating the atlas."
+      }
+     ],
+     "tests": [
+      {
+       "name": "torus_closed",
+       "kind": "computation",
+       "statement": "ℂ/(ℤ + iℤ), θ = exp(iπ/4): φ^{√2}(0) = 1 + i ≡ 0."
+      },
+      {
+       "name": "octagon",
+       "kind": "computation",
+       "statement": "Leaves through the cone point along a side direction are saddle connections."
+      },
+      {
+       "name": "convention",
+       "kind": "degenerate",
+       "statement": "Identity on singular leaves keeps the group law."
+      }
+     ]
+    },
+    {
+     "id": "10.5",
+     "kind": "theorem",
+     "name": "Billiards.TranslationSurface.flatTorus",
+     "statement": "ℂ/Λ is a translation surface with Σ = ∅ whose directional flows are linear; every translation surface whose cone points all have k = 1 is isomorphic to some ℂ/Λ with marked points.",
+     "hypotheses": [],
+     "locator": {
+      "source": "MasurTabachnikov2002",
+      "where": "§1; the developing-map completeness route is constructed here"
+     },
+     "prerequisites": [
+      "target:10.2",
+      "target:10.4"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "area",
+       "kind": "computation",
+       "statement": "Λ = 2ℤ + 2iℤ: area 4."
+      },
+      {
+       "name": "closed_leaves",
+       "kind": "computation",
+       "statement": "θ = 1 on ℂ/(ℤ + iℤ): closed leaves of length 1."
+      },
+      {
+       "name": "marked",
+       "kind": "degenerate",
+       "statement": "A torus with one marked point is ℂ/Λ with that point marked."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "key": "11",
+   "title": "The Katok–Zemlyakov surface",
+   "targets": [
+    {
+     "id": "11.1",
+     "kind": "construction",
+     "name": "Billiards.PolygonalTable.unfoldingSurface",
+     "statement": "For a rational table with group G, S_P = (G × P)/∼ generated by (g, x) ∼ (g σ_S, x) for x ∈ S; compact, connected; a vertex v gives |G|/(2n_v) points.",
+     "hypotheses": [
+      "Finite reflectionGroup"
+     ],
+     "locator": {
+      "source": "MasurTabachnikov2002",
+      "where": "§1; ZemlyakovKatok1975"
+     },
+     "prerequisites": [
+      "target:9.1",
+      "target:7.1"
+     ],
+     "api": [
+      {
+       "name": "connected",
+       "role": "structure",
+       "statement": "The gluing graph is the Cayley graph of G for the σ_S."
+      },
+      {
+       "name": "vertex_classes",
+       "role": "evaluation",
+       "statement": "Classes of (g, v): cosets of the dihedral subgroup of order 2n_v."
+      },
+      {
+       "name": "copies",
+       "role": "structure",
+       "statement": "Each copy {g} × P embeds."
+      }
+     ],
+     "tests": [
+      {
+       "name": "square",
+       "kind": "computation",
+       "statement": "4 copies, 1 class per vertex."
+      },
+      {
+       "name": "equilateral",
+       "kind": "computation",
+       "statement": "6 copies, 1 class per vertex."
+      },
+      {
+       "name": "pi_eighths",
+       "kind": "computation",
+       "statement": "16 copies; classes 4, 1, 1."
+      }
+     ]
+    },
+    {
+     "id": "11.2",
+     "kind": "theorem",
+     "name": "Billiards.PolygonalTable.unfoldingSurface_translation",
+     "statement": "S_P is a translation surface: charts x ↦ gx on copy g and gσ_S x + g(x₀ − σ_S x₀) across a side; cone points the vertex classes with k = m_v.",
+     "hypotheses": [],
+     "locator": {
+      "source": "MasurTabachnikov2002",
+      "where": "§1"
+     },
+     "prerequisites": [
+      "target:11.1",
+      "target:10.2"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "independence",
+       "kind": "computation",
+       "statement": "σ_S x₀ − x₀ = σ_S a − a for x₀ = a + rd."
+      },
+      {
+       "name": "L_shape",
+       "kind": "computation",
+       "statement": "3π/2 vertex: one class, angle 6π."
+      },
+      {
+       "name": "holed_square",
+       "kind": "computation",
+       "statement": "Four classes of angle 6π, four regular points."
+      }
+     ]
+    },
+    {
+     "id": "11.3",
+     "kind": "theorem",
+     "name": "Billiards.PolygonalTable.genus_unfoldingSurface",
+     "statement": "χ(S_P) = |G|(1 − h) + Σ_v |G|/(2n_v) − |G|n/2 and 2g − 2 = Σ_v (|G|/(2n_v))(m_v − 1); for h = 0, g = 1 + (N/2)Σ_v (m_v − 1)/n_v.",
+     "hypotheses": [],
+     "locator": {
+      "source": "MasurTabachnikov2002",
+      "where": "§1; ZemlyakovKatok1975 pp. 291–300"
+     },
+     "prerequisites": [
+      "target:11.2",
+      "target:7.1",
+      "tauceti:TauCeti.eulerChar",
+      "tauceti:TauCeti.eulerChar_union_add_eulerChar_inter",
+      "roadmap:GeometricTopology §1.7"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "square",
+       "kind": "computation",
+       "statement": "χ = 4 + 4 − 8 = 0, genus 1, torus of side 2."
+      },
+      {
+       "name": "pi_eighths",
+       "kind": "computation",
+       "statement": "χ = 16 + 6 − 24 = −2, genus 2."
+      },
+      {
+       "name": "holed_square",
+       "kind": "computation",
+       "statement": "χ = 0 + 8 − 16 = −8, genus 5, Σ(k − 1) = 8."
+      }
+     ]
+    },
+    {
+     "id": "11.4",
+     "kind": "theorem",
+     "name": "Billiards.PolygonalTable.unfolding_conj",
+     "statement": "For θ with trivial stabiliser in G, Φ_θ(x, gθ) = [g⁻¹, x] is a bijection from M_θ ∖ Σ onto S_P minus the leaves of φ_θ through cone points, carrying Σ_g Leb_P ⊗ δ_{gθ} to area, with Φ_θ ∘ F^t = φ_θ^t ∘ Φ_θ. Also Φ_θ carries ν_θ=(|G|area P)⁻¹Σ_g Leb_P⊗δ_(gθ), pushed to PhaseSpace, to area_(S_P)/area(S_P); both are probability measures because area(S_P)=|G|area P>0.",
+     "hypotheses": [
+      "MulAction.stabilizer G θ = ⊥"
+     ],
+     "locator": {
+      "source": "MasurTabachnikov2002",
+      "where": "§1; KerckhoffMasurSmillie1986 Theorem 1 (the ergodicity theorem built on it)"
+     },
+     "prerequisites": [
+      "target:11.2",
+      "target:10.4",
+      "target:9.3",
+      "target:8.2"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "square_slope",
+       "kind": "computation",
+       "statement": "θ = exp(iπ/6): slope 1/√3 on the torus of side 2."
+      },
+      {
+       "name": "stabiliser",
+       "kind": "non-example",
+       "statement": "Square, θ=1: id and conj represent the same direction, but [id,x] and [conj,x] are distinct for interior x, so Φ is not well defined. The reverse projection [h,x]↦(x,h⁻¹θ) is two-to-one over interior states. For θ=exp(iπ/6), g is unique."
+      },
+      {
+       "name": "area",
+       "kind": "computation",
+       "statement": "π/8 triangle: 16 · tan(π/8)/2 = 8(√2 − 1)."
+      },
+      {
+       "name": "normalized_area",
+       "kind": "computation",
+       "statement": "Unit square: raw mass=4, normalized mass=1. Whole-space weak-mixing residual is |4−16|=12 with raw area and |1−1|=0 with normalized area."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "key": "12",
+   "title": "Weak mixing of flows",
+   "targets": [
+    {
+     "id": "12.1",
+     "kind": "definition",
+     "name": "Billiards.IsWeaklyMixing",
+     "statement": "For an action of ℝ on a probability space with MeasurableVAdd₂ and VAddInvariantMeasure: (1/T)∫₀ᵀ |μ((t +ᵥ ·)⁻¹' A ∩ B) − μ(A)μ(B)| dt → 0 for all measurable A, B; an eigenfunction of eigenvalue a: measurable f, not a.e. zero, f ∘ F^t = exp(2πiat) f a.e. for each t. Use the native complex inner product ⟨f,g⟩=∫conj(f)g, conjugate-linear in the first input, with U_t f=f∘F^t and spectral transform ⟨f,U_t f⟩=∫exp(itξ)dσ_f(ξ).",
+     "hypotheses": [],
+     "locator": {
+      "source": "Hochman2012",
+      "where": "Theorem 6.1.7, lines 2483–2487 (ℤ-actions); ChaikaForni2026 lines 99–100"
+     },
+     "prerequisites": [
+      "mathlib:MeasurableVAdd₂",
+      "mathlib:VAddInvariantMeasure"
+     ],
+     "api": [
+      {
+       "name": "iso",
+       "role": "functoriality",
+       "statement": "Invariant under isomorphism and time rescaling t ↦ ct, c ≠ 0."
+      },
+      {
+       "name": "L2_form",
+       "role": "characterisation",
+       "statement": "Equivalent L² and squared forms use ⟨g,U_t f⟩−(∫f)conj(∫g) with the native conjugate-linear-first inner product (real-action adaptation of Hochman2012 Theorem 6.1.7, Lemma 6.1.6)."
+      },
+      {
+       "name": "product",
+       "role": "structure",
+       "statement": "Weakly mixing × ergodic is ergodic (Hochman2012 Proposition 6.2.1)."
+      }
+     ],
+     "tests": [
+      {
+       "name": "two_point",
+       "kind": "non-example",
+       "statement": "Trivial action on two points: integrand 1/4."
+      },
+      {
+       "name": "torus",
+       "kind": "characterisation",
+       "statement": "Horizontal flow: for A=B={Re z mod 1∈[0,1/2)}, the signed average is 0 and absolute average 1/8 for this pair only. The invariant half-y set instead has signed residual 1/4. Full real translation on AddCircle 1 is ergodic and satisfies all signed limits, but its half-circle has absolute average 1/8 and e₁ has eigenvalue 1."
+      },
+      {
+       "name": "point",
+       "kind": "degenerate",
+       "statement": "One point: all set residuals are 0; f=i,g=1 gives ⟨g,U_t f⟩−(∫f)conj(∫g)=i−i=0. The opposite native order gives −i−i=−2i."
+      },
+      {
+       "name": "complex_sign",
+       "kind": "computation",
+       "statement": "On AddCircle 1, the unit mode e₁ at t=1/4 has ⟨e₁,U_t e₁⟩=i, rather than −i; its positive-frequency atom is at 2π."
+      }
+     ]
+    },
+    {
+     "id": "12.2",
+     "kind": "theorem",
+     "name": "Billiards.IsWeaklyMixing.ergodicVAdd",
+     "statement": "A weakly mixing action is ErgodicVAdd.",
+     "hypotheses": [],
+     "locator": {
+      "source": "Hochman2012",
+      "where": "§6.1 printed p.56, line 2439 (discrete implication); the real-action invariant-set proof is here"
+     },
+     "prerequisites": [
+      "target:12.1",
+      "mathlib:ErgodicVAdd"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "torus",
+       "kind": "non-example",
+       "statement": "Irrational linear flow: ergodic, not weakly mixing."
+      },
+      {
+       "name": "half",
+       "kind": "computation",
+       "statement": "Invariant set of measure 1/2: constant integrand 1/4."
+      },
+      {
+       "name": "complement",
+       "kind": "computation",
+       "statement": "B = Aᶜ: integrand μ(A)μ(Aᶜ)."
+      }
+     ]
+    },
+    {
+     "id": "12.3",
+     "kind": "theorem",
+     "name": "Billiards.koopman_stronglyContinuous",
+     "statement": "For a jointly measurable measure-preserving ℝ-action on a probability space, U_t f = f ∘ F^t is a strongly continuous unitary group on L²(μ); no separability assumed. Use native MeasureTheory.Lp.compMeasurePreserving and its a.e.-composition, isometry and composition laws for the pullback; the new assertion is strong continuity under joint measurability.",
+     "hypotheses": [],
+     "locator": {
+      "source": "Hochman2012",
+      "where": "§6.6 (the ℤ case needs no continuity; the continuity for ℝ is this roadmap's lemma)"
+     },
+     "prerequisites": [
+      "target:12.1",
+      "tauceti:TauCeti.Semigroups.StronglyContinuousGroup",
+      "mathlib:MeasureTheory.Lp.compMeasurePreserving",
+      "mathlib:MeasureTheory.Lp.coeFn_compMeasurePreserving",
+      "mathlib:MeasureTheory.Lp.isometry_compMeasurePreserving",
+      "mathlib:MeasureTheory.Lp.compMeasurePreserving_comp",
+      "tauceti:TauCeti.Semigroups.StronglyContinuousGroup.IsUnitary"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "circle",
+       "kind": "computation",
+       "statement": "U_t e_n = exp(2πint) e_n on AddCircle 1."
+      },
+      {
+       "name": "identity",
+       "kind": "degenerate",
+       "statement": "Trivial action: U_t = 1."
+      },
+      {
+       "name": "infinite",
+       "kind": "non-example",
+       "statement": "Infinite-measure translation on ℝ is outside the statement."
+      }
+     ]
+    },
+    {
+     "id": "12.4",
+     "kind": "theorem",
+     "name": "Billiards.wiener_lemma",
+     "statement": "For a finite Borel measure σ on ℝ, (1/T)∫₀ᵀ |σ̂(t)|² dt → Σ_ξ σ({ξ})², σ̂(t) = ∫ exp(itξ) dσ(ξ).",
+     "hypotheses": [],
+     "locator": {
+      "source": "Hochman2012",
+      "where": "Proposition 6.6.3, printed p.70, lines 3099–3140 (atomless discrete circle computation); the real-line all-atoms formula is proved here"
+     },
+     "prerequisites": [
+      "mathlib:MeasureTheory.Measure.prod"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "dirac",
+       "kind": "computation",
+       "statement": "σ = δ₀: limit 1."
+      },
+      {
+       "name": "two_atoms",
+       "kind": "computation",
+       "statement": "(δ₀ + δ₁)/2: (1 + cos t)/2, limit 1/2."
+      },
+      {
+       "name": "lebesgue",
+       "kind": "computation",
+       "statement": "Lebesgue on [0,1]: for t≠0, |σ̂(t)|²=(2−2cos t)/t²; at 0 it equals 1, at π it equals 4/π². The average limit is 0; a single-point change leaves the integral unchanged."
+      }
+     ]
+    },
+    {
+     "id": "12.4.1",
+     "kind": "theorem",
+     "name": "Billiards.continuousTimeMeanErgodicProjection",
+     "statement": "For any complete complex Hilbert space H, strongly continuous unitary group U, a∈ℝ and v∈H, the Bochner averages A_T^a v=(1/T)∫₀ᵀexp(−2πiat)U_t v dt for T>0 converge in norm to the orthogonal projection P_a v onto the closed complex subspace E_a={w:∀t∈ℝ,U_t w=exp(2πiat)w}. At a=0 this is the common fixed space of all real times. No separability is assumed. For the unique finite spectral measure σ_v defined by ⟨v,U_t v⟩=∫exp(itξ)dσ_v(ξ), prove ‖P_a v‖²=σ_v({2πa}). The real-time proof uses the closed span of V_s w−w for V_t=exp(−2πiat)U_t, the bound ‖A_T(V_s w−w)‖≤2|s|‖w‖/T, and bounded convergence for ∫|K_T(ξ−2πa)|²dσ_v(ξ).",
+     "hypotheses": [
+      "H a complete complex Hilbert space",
+      "U : TauCeti.Semigroups.StronglyContinuousGroup H",
+      "U.IsUnitary",
+      "a ∈ ℝ",
+      "v ∈ H",
+      "T>0 for each displayed average"
+     ],
+     "locator": {
+      "source": "Hochman2012",
+      "where": "§6.6, Lemma 6.6.2, printed p.69, lines 3076–3096 (twisted discrete averages); the continuous-time mean-ergodic and atomic-mass adapter is constructed here"
+     },
+     "prerequisites": [
+      "tauceti:TauCeti.Semigroups.StronglyContinuousGroup",
+      "tauceti:TauCeti.Semigroups.StronglyContinuousGroup.IsUnitary",
+      "tauceti:TauCeti.bochner_charFun_real",
+      "mathlib:Submodule.orthogonalProjectionOnto"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "circle_untwisted",
+       "kind": "non-example",
+       "statement": "AddCircle 1, unit mode e₁: U₁e₁=e₁, so discrete time-one averages are e₁; A_N^0 e₁=0 for positive integers N and P₀e₁=0, spectral mass at 0=0."
+      },
+      {
+       "name": "circle_twisted",
+       "kind": "computation",
+       "statement": "A_T^1 e₁=e₁ for T>0, ‖P₁e₁‖²=1=δ_(2π)({2π}), and correlation at t=1/4 is i. The opposite exponential twist tends to 0."
+      },
+      {
+       "name": "identity_zero",
+       "kind": "degenerate",
+       "statement": "Identity group: P₀v=v and σ_v=‖v‖²δ₀; for a≠0, E_a={0} and A_T^a v=((1−exp(−2πiaT))/(2πiaT))v→0. For v=0 every projection and atomic mass is 0."
+      }
+     ]
+    },
+    {
+     "id": "12.5",
+     "kind": "theorem",
+     "name": "Billiards.isWeaklyMixing_iff",
+     "statement": "A jointly measurable measure-preserving ℝ-action on a probability space is weakly mixing iff every eigenfunction is a.e. constant (then of eigenvalue 0). Use the positive-exponential spectral convention ⟨f,U_t f⟩=∫exp(itξ)dσ_f(ξ) and 12.4.1: the negative-exponential twisted average tends to P_a f, with ‖P_a f‖²=σ_f({2πa}). Polarization gives mixed correlations. Excluding nonconstant invariant indicators gives ergodicity; then every measurable eigenfunction has a.e. constant finite modulus and lies in L².",
+     "hypotheses": [],
+     "locator": {
+      "source": "Hochman2012",
+      "where": "Theorem 6.4.7, Lemma 6.6.2, Corollary 6.6.4, printed pp.64,69–70, lines 2854–2855,3076–3096,3141–3143 (ℤ-actions); ChaikaForni2026 lines 95–100; real-action criterion proved here"
+     },
+     "prerequisites": [
+      "target:12.1",
+      "target:12.2",
+      "target:12.3",
+      "target:12.4",
+      "target:12.4.1",
+      "tauceti:TauCeti.bochner_charFun_real"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "torus",
+       "kind": "computation",
+       "statement": "exp(2πi⟨λ*, z⟩) is an eigenfunction with eigenvalue ⟨λ*, θ⟩."
+      },
+      {
+       "name": "constant",
+       "kind": "degenerate",
+       "statement": "Constants have eigenvalue 0 and are allowed."
+      },
+      {
+       "name": "nonzero",
+       "kind": "characterisation",
+       "statement": "a ≠ 0 forces a non-constant eigenfunction."
+      },
+      {
+       "name": "circle_sign_projection",
+       "kind": "computation",
+       "statement": "Unit e₁ on AddCircle 1: σ=δ_(2π), correlation at 1/4=i, P₀e₁=0, P₁e₁=e₁ of squared norm 1."
+      }
+     ]
+    },
+    {
+     "id": "12.6",
+     "kind": "example",
+     "name": "Billiards.not_isWeaklyMixing_examples",
+     "statement": "No linear torus flow is weakly mixing; the billiard flow of a rational table with Liouville probability is not. If all m_v=1, the restriction to M_θ for θ of trivial stabiliser, equipped with ν_θ=(|G|area P)⁻¹Σ_g Leb_P⊗δ_(gθ), is not weakly mixing. The comparison with the ordinary linear flow on the torus S_P equipped with area/area(S_P) is on invariant conull subsets, removing the leaves through marked regular vertices fixed by 10.4.",
+     "hypotheses": [],
+     "locator": {
+      "source": "MasurTabachnikov2002",
+      "where": "§1"
+     },
+     "prerequisites": [
+      "target:12.2",
+      "target:12.5",
+      "target:9.3",
+      "target:10.5",
+      "target:11.3",
+      "target:11.4"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "square",
+       "kind": "computation",
+       "statement": "Re(v²) invariant, non-constant."
+      },
+      {
+       "name": "equilateral",
+       "kind": "computation",
+       "statement": "S_P is a torus; with normalized area and on invariant conull subsets, the linear-flow characters are nonconstant eigenfunctions."
+      },
+      {
+       "name": "genus_two",
+       "kind": "non-example",
+       "statement": "Nothing is claimed for genus ≥ 2 surfaces."
+      },
+      {
+       "name": "normalized_direction",
+       "kind": "computation",
+       "statement": "Square direction class: normalized whole-space residual 0. A nonconstant torus character retains its nonzero eigenvalue on the conull complement of the marked singular leaves, hence weak mixing still fails."
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "suppliers": [
+  {
+   "roadmap": "SymplecticGeometry/CotangentLagrangian",
+   "sections": [
+    "C3.1"
+   ],
+   "what": "The smooth next-collision map β in (s,v), the hypotheses of exists_billiard_periodic_reflection (1.5, 2.5), the circular formula and rational-periodicity criterion transported in 2.5 and used by 5.6, and finite-volume recurrence (4.4.1)."
+  },
+  {
+   "roadmap": "SymplecticGeometry/IntegrableSystems",
+   "sections": [
+    "I5.0",
+    "I5.4"
+   ],
+   "what": "The generating-function sign convention (3.2) and the compact-pair Čech continuity and cup-length bound for flows with a Lyapunov function (6.4)."
+  },
+  {
+   "roadmap": "RiemannianGeometry/Surfaces",
+   "sections": [
+    "§3.1"
+   ],
+   "what": "The turning theorem for piecewise C² Jordan curves (1.2)."
+  },
+  {
+   "roadmap": "GeometricTopology",
+   "sections": [
+    "§1.7",
+    "§2.3"
+   ],
+   "what": "The genus of compact orientable surfaces (11.3) and the annulus theorem in dimension two (5.3)."
+  }
+ ],
+ "consumers": [
+  {
+   "roadmap": "a roadmap on the Birkhoff–Poritsky theorem for centrally symmetric tables",
+   "what": "Layers 1–5: C² tables of positive curvature, the billiard map, its generating function, Birkhoff's graph theorem and rotation numbers (BialyMironov2022 Theorem 1.1)."
+  },
+  {
+   "roadmap": "a roadmap on weakly mixing polygonal billiards",
+   "what": "Layers 7–12: the billiard flow, rational tables, translation surfaces, the unfolding and the eigenfunction criterion (ChaikaForni2026 Theorems 1.1–1.3)."
+  },
+  {
+   "roadmap": "a roadmap on translation surfaces and Teichmüller dynamics",
+   "what": "Layers 10–11 (KerckhoffMasurSmillie1986 Theorem 1)."
+  },
+  {
+   "roadmap": "a roadmap on dispersing billiards",
+   "what": "The almost-everywhere flow shape of Layer 8."
+  }
+ ],
+ "gaps": []
+}
