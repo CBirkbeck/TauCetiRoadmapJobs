@@ -1490,18 +1490,20 @@
      "id": "8.3",
      "kind": "theorem",
      "name": "VirtualFundamentalClass.functoriality_pureDimensionalBase",
-     "statement": "For a cartesian square X' -> X over a local complete intersection morphism v : Z' -> Z of algebraic stacks over Y with finite unramified diagonal over Y, X and X' stacks of Convention 1, and perfect obstruction theories E, F with global resolutions compatible over v (VirtualFundamentalClass §§8.1, 9.5), v^![X/Y, E]^vir = [X'/Y, F]^vir when v is smooth, and when Z, Z' are smooth over Y, over any Y of pure dimension; the second case uses a cone comparison through the compatibility over v only, without a compatibility datum over the graph.",
+     "statement": "For a cartesian square X' -> X over a local complete intersection morphism v : Z' -> Z of algebraic stacks over Y with finite unramified diagonal over Y, X and X' stacks of Convention 1, and perfect obstruction theories E, F with global resolutions compatible over v (VirtualFundamentalClass §§8.1, 9.5), v^![X/Y, E]^vir = [X'/Y, F]^vir when v is smooth, and when Z, Z' are smooth over Y, over any Y of pure dimension; v^! is flat pullback along u in the first case, and in the second flat pullback along Z'_0 x_Y X -> X followed by the Gysin map of the graph of v restricted to a quasi-compact open substack Z'_0 of Z' containing the image of X' (Z'_0 x_Y X is then a stack of Convention 1, which Z' x_Y X need not be), the composite being independent of Z'_0; the second case uses a cone comparison through the compatibility over v only, without a compatibility datum over the graph.",
      "hypotheses": [
       "Y of pure dimension",
       "v lci; smooth, or Z, Z' smooth over Y",
       "E, F compatible over v, with global resolutions",
-      "X, X' stacks (Convention 1)"
+      "X, X' stacks (Convention 1)",
+      "second case: Z'_0 a quasi-compact open substack of Z' containing g(X'); Y quasi-separated (Convention 7)"
      ],
      "locator": {
       "source": "behrend-fantechi1997",
       "where": "Proposition 7.5 and compatibility, lines 1721-1739; the exact sequence g^*N_{Z'/Z} -> F -> u^*E, lines 1389-1392; Proposition 3.14, lines 1040-1044 (B T_{X'/X} -> c_{X'} -> u^*c_X for smooth u); Lemma 5.9 and Proposition 5.10, lines 1397-1428 and 1456-1460; cone comparison at lines 1416-1421"
      },
      "prerequisites": [
+      "target:3.1",
       "target:4.2",
       "target:4.3",
       "target:6.1",
@@ -1541,6 +1543,11 @@
        "name": "graphComparison_degenerate",
        "kind": "computation",
        "statement": "For Z = Y and v smooth, N = 0 and the left side is u^*c_{X/Y} x B T_{Z'/Y}, matching B T_{Z'/Y} -> F -> u^*E; for v : {0} -> A^1 over k, [u^*C/T_W] -> u^*c_X has fibre A^1 = N_{0/A^1}, with N a separate trivial line (behrend-fantechi1997 Lemma 5.9)."
+      },
+      {
+       "name": "nonQuasiCompactSource",
+       "kind": "degenerate",
+       "statement": "Y = Spec k, Z = pt + pt, Z' = pt + (countably many points) with the first point over the first and the others over the second, X the first point, E = F = 0: Z' x_Y X = Z' is not quasi-compact; for Z'_0 the first point, or the first point with finitely many others, the composite gives [pt] = [X'/Y, F]^vir."
       }
      ]
     },

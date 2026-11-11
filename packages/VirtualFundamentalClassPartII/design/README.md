@@ -1474,10 +1474,14 @@ Let `v : 𝔜′ → 𝔜` be a regular local immersion of codimension `c` of al
 is a representable local immersion. No reducedness of `𝔜` is assumed. Prove that `u^*E` is a perfect
 relative obstruction theory for `X′/𝔜′` with a global resolution (VirtualFundamentalClass §6.4) and
 that `v^![X/𝔜, E]^vir = [X′/𝔜′, u^*E]^vir` in `A_{d−c+r}(X′)_ℚ`, with `v^!` the Gysin map of 4.2 (behrend-fantechi1997 Proposition 7.2 (2), lines
-1682–1699, stated for smooth bases at lines 1668–1670). Route: for a relative local embedding of `X` into
-`W` smooth over an atlas of `𝔜` (`W → 𝔜` is representable, `W` being an algebraic space, hence of
-Deligne–Mumford type), `β(W′, U)` of 8.1 is defined and invariant under `T_{W/𝔜}|_{U′}` because
-`W′ := W ×_𝔜 𝔜′` is pulled back from `𝔜`, so it descends to the relative cone stacks, glues over the relative local embeddings and pulls back to `F_1`, giving
+1682–1699, stated for smooth bases at lines 1668–1670). Route: take a relative local embedding of `X`
+(Convention 2 and VirtualFundamentalClass §9.1), that is, an étale morphism `U → X` from an affine scheme
+and a closed immersion `U → W` over `𝔜` into a scheme `W` smooth over an atlas of `𝔜`, so that `W → 𝔜` is
+smooth and representable, hence of Deligne–Mumford type; put `W′ := W ×_𝔜 𝔜′`, a regular local immersion
+into `W` of codimension `c`, and `U′ := U ×_W W′ = U ×_X X′`, an étale chart of `X′`. Then `β(W′, U)` of 8.1,
+for the closed immersion `U → W`, is defined and invariant under `T_{W/𝔜}|_{U′}` by 8.1's relative
+invariance over `𝔅 = 𝔜`, because `W′` is pulled back from `𝔜`; so it descends to the relative cone stacks,
+glues over the relative local embeddings and pulls back to `F_1`, giving
 `v^![C(F•)] = [C(u^*F•)]` (behrend-fantechi1997 lines 1690–1699 and Lemma 5.9, line 1397); then apply
 `0^!_{F_1}` and 4.3. This extends VirtualFundamentalClass §9.4's regular base change from smooth bases to
 bases of pure dimension, reduced or not, and from separated stacks with the resolution property to
@@ -1509,22 +1513,41 @@ datum gives the exact sequence of vector-bundle stacks `g^*𝔑_{Z′/Z} → �
 second map. Prove
 `v^![X/𝔜, E]^vir = [X′/𝔜, F]^vir` (behrend-fantechi1997 Proposition 7.5, lines 1734–1739) when `v` is smooth,
 and when `Z′`, `Z` are smooth over `𝔜`, in both cases over any `𝔜` of pure dimension; here `v^!` is flat
-pullback in the first case, and in the second the composite of the Gysin map of the graph
-`Z′ → Z′ ×_𝔜 Z`, a regular local immersion, with flat pullback along the projection to `Z` (4.2).
-Route: in the first case `g^*𝔑_{Z′/Z} = B T_{X′/X}`, and `B T_{X′/X} → 𝔠_{X′/𝔜} → u^*𝔠_{X/𝔜}` is a short
-exact sequence of cone stacks (VirtualFundamentalClass §5.5 and behrend-fantechi1997 Proposition 3.14,
-lines 1040–1044, over `Spec k`; over `𝔜` on the charts of VirtualFundamentalClass §9.1, on which `u` is
+pullback along `u` in the first case (3.1), and in the second the composite of flat pullback along the
+projection `Z′_0 ×_𝔜 X → X` with the Gysin map of the graph `Z′_0 → Z′_0 ×_𝔜 Z` of `v|_{Z′_0}`, a regular
+local immersion (3.1, 4.2), for a quasi-compact open substack `Z′_0 ⊆ Z′` containing the image of `X′`;
+prove that this composite does not depend on `Z′_0`. Both maps are taken on each of the finitely many
+open and closed substacks of `Z′_0` on which the relative dimensions of `Z′` at `z′` and of `Z` at `v(z′)`
+over `𝔜` are constant; on `X′` their difference is `rk F − rk E`.
+
+Route for `Z′_0`: it exists because `X′` is quasi-compact and `|Z′|` has a basis of quasi-compact opens.
+`Z′_0 ×_𝔜 X` is a stack of Convention 1, which `Z′ ×_𝔜 X` need not be (fifth Check). It is locally of
+finite type over `k`, being smooth over `X`, and quasi-compact, as `Z′_0 ×_k X` is quasi-compact and
+`Z′_0 ×_𝔜 X → Z′_0 ×_k X` is a base change of the quasi-compact diagonal of `𝔜` (Convention 7). It is
+Deligne–Mumford with diagonal representable by schemes, quasi-compact and separated, because that
+diagonal factors through a base change of the finite unramified diagonal of `Z′` over `𝔜` and a base
+change of the diagonal of `X`. Two choices of `Z′_0` contain their intersection, which is quasi-compact because
+`Z′` is quasi-separated (its diagonal factors through the finite diagonal over `𝔜` and a base change of
+the diagonal of `𝔜`). For `Z′_0 ⊆ Z′_1` the two composites agree: flat pullback is compatible with
+restriction to the open `Z′_0 ×_𝔜 X` (3.1), the Gysin maps of 4.2 commute with restriction to open
+substacks, and the graph of `v|_{Z′_0}` is the restriction of that of `v|_{Z′_1}` over `Z′_0 ×_𝔜 Z`, with
+fibre product `X′` in both cases.
+
+Route for the equality: in the first case `g^*𝔑_{Z′/Z} = B T_{X′/X}`, and
+`B T_{X′/X} → 𝔠_{X′/𝔜} → u^*𝔠_{X/𝔜}` is a short exact sequence of cone stacks (VirtualFundamentalClass
+§5.5 and behrend-fantechi1997 Proposition 3.14, lines 1040–1044, over `Spec k`; over `𝔜` on the charts of VirtualFundamentalClass §9.1, on which `u` is
 étale locally a projection `X × 𝔸^n → X`). So `𝔠_{X′/𝔜}` is a torsor over `u^*𝔠_{X/𝔜}` under `B T_{X′/X}`,
 the kernel of `q`, and `𝔠_{X′/𝔜} = 𝔉 ×_{u^*𝔈} u^*𝔠_{X/𝔜}` (behrend-fantechi1997 lines 1456–1460), so the
 class is computed through a comparison bundle `F_1 ×_{u^*𝔈} u^*E_1` as in 6.1; in the second, the
-rational equivalence of behrend-fantechi1997 Lemma 5.9 (line 1397) is formed in the ambient
-`Z′ ×_𝔜 Z ×_𝔜 W` of the graph, with the invariance of 8.1's fourth statement for
-`T_{Z′/𝔜} ⊕ T_{W/𝔜}`, and carried into `N × 𝔉` by the comparison of the API below, so that only the
+rational equivalence of behrend-fantechi1997 Lemma 5.9 (line 1397) is formed, on a chart `X → Z ×_𝔜 W`
+as in the API below, in the ambient `Z′_0 ×_𝔜 Z ×_𝔜 W` of the graph of `v|_{Z′_0}` (the normal bundles and
+normal cones along `X′` of the API are the same for `Z′` and for `Z′_0`), with the invariance of 8.1's
+fourth statement for `T_{Z′/𝔜} ⊕ T_{W/𝔜}`, and carried into `N × 𝔉` by the comparison of the API below, so that only the
 compatibility over `v` is used. No compatibility datum over the graph is used: one would need a lift of
 `g^*Ω_{Z′/𝔜} → g^*L_{Z′/Z}` to `F`, whose obstruction lies in `Ext¹(g^*Ω_{Z′/𝔜}, u^*E)` and is killed only
 in `Ext¹(g^*Ω_{Z′/𝔜}, u^*L_{X/𝔜})`. This extends VirtualFundamentalClass §9.5, which states both cases
 under the hypotheses of behrend-fantechi1997 Proposition 7.5 for separated stacks with the resolution
-property, to stacks that need not be separated. *Needs:* 4.2–4.3, 6.1–6.2, 8.1–8.2;
+property, to stacks that need not be separated. *Needs:* 3.1, 4.2–4.3, 6.1–6.2, 8.1–8.2;
 VirtualFundamentalClass §§1.6, 5.5, 8.1, 9.1, 9.5.
 
 **API.**
@@ -1562,6 +1585,14 @@ VirtualFundamentalClass §§1.6, 5.5, 8.1, 9.1, 9.5.
   `g^*𝔑_{Z′/𝔜} = B T_{Z′/𝔜}` in `B T_{Z′/𝔜} → 𝔉 → u^*𝔈`. For `𝔜 = Spec k` and `v : {0} → 𝔸¹`, `T_{Z′} = 0` and
   `[u^*C/T_W] → u^*𝔠_X` has fibre `[T_{𝔸¹}/0] = 𝔸¹`, the normal bundle `𝔑_{0/𝔸¹}`, while `N` is a second,
   separate copy of the trivial line: behrend-fantechi1997 Lemma 5.9 with `Y = 𝔸¹`, `Y′ = {0}`, `M = W`.
+- A source `Z′` that is not quasi-compact: `𝔜 = Spec k`, `Z = pt ⊔ pt`, `Z′ = pt ⊔ ⊔_ℕ pt` with `v` étale
+  sending the first point of `Z′` to the first point of `Z` and every other point to the second, `X` the
+  first point of `Z` with `E = 0`, so that `X′ = pt` with `F = 0` (`L_{Z′/Z} = 0`). Here `Z′ ×_𝔜 X = Z′` is not
+  quasi-compact, so it is not a stack of Convention 1 and the composite cannot be formed on it. For `Z′_0`
+  the first point, flat pullback gives `[pt]` and the graph, open and closed of codimension `0`, keeps it:
+  `v^![pt] = [pt] = [X′/𝔜, F]^vir`. For `Z′_0` the first point with finitely many others, flat pullback gives
+  the sum of their classes, the graph meets `Z′_0 ×_𝔜 X` only over the first point, and the result is again
+  `[pt]`, as is flat pullback along `u = id_pt` in the first case.
 
 ### 8.4 Deformation invariance of virtual counts
 
@@ -1570,7 +1601,8 @@ reduced or not (`𝔐 = Spec k` allowed), `X → 𝔐 × B` of Deligne–Mumford
 relative obstruction theory for `X/𝔐 × B` of rank `r` with a global resolution and `m + r = 0`. For a
 closed point `b ∈ B`, let `X_b := X ×_B {b}` with the pulled-back theory over `𝔐 × {b} = 𝔐_{κ(b)}`. Prove that
 `deg_{κ(b)}[X_b/𝔐_{κ(b)}]^vir ∈ ℚ` does not depend on `b`. Route: `{b} → B` is a regular immersion of
-codimension one, and 8.2 for `𝔐 × {b} → 𝔐 × B` (pure dimension `m + 1`) gives `[X_b]^vir = η_b^![X]^vir` with
+codimension one, hence so is its flat base change `η_b : 𝔐 × {b} → 𝔐 × B`, and 8.2 for `η_b` (bases of pure
+dimensions `m + 1` and `m`) gives `[X_b]^vir = η_b^![X]^vir`, with `η_b^!` the Gysin map of 4.2 and
 `[X]^vir ∈ A_1(X)_ℚ`; pushing forward to `B` (4.1) gives `n·[B] ∈ A_1(B)_ℚ = ℚ·[B]`, and compatibility of
 `η_b^!` with proper pushforward (4.2) gives `deg_{κ(b)}[X_b]^vir = n` (li-tian1998 Theorem 4.2, lines
 1472–1474, and its proof, line 1566; fulton1998 Proposition 10.2). The `k`-degree is
@@ -1594,7 +1626,7 @@ codimension one, and 8.2 for `𝔐 × {b} → 𝔐 × B` (pure dimension `m + 1`
 
 ### Dependencies
 
-Layers 2, 4 and 6; VirtualFundamentalClass §§1.5–1.6, 2.5, 5.5, 6.4, 8.1, 9.1, 9.3, 9.5;
+Layers 2–4 and 6; VirtualFundamentalClass §§1.5–1.6, 2.5, 5.5, 6.4, 8.1, 9.1, 9.3, 9.5;
 SchemeAndStackFoundations §5.5. Within the layer, 8.1 → 8.2 → 8.3, and 8.2 → 8.4.
 
 ## Layer 9: obstruction theories of spaces of maps from curves
@@ -1718,10 +1750,10 @@ target and every field the obstruction theory of AlgebraicGromovWittenTheory §4
 ### 9.4 Global resolutions
 
 Prove: if `𝒞_M` carries an invertible sheaf `L` ample on the fibres of `π`, then for every locally free `V`
-of finite rank on `𝒞_M` (`M` being quasi-compact by Convention 1, one `N` serves for all of `M`), `Rπ_*V` is isomorphic to a two-term complex
+of finite rank on `𝒞_M`, `Rπ_*V` is isomorphic to a two-term complex
 `[R¹π_*H → R¹π_*G]` of locally free sheaves in degrees `0, 1`, built from
-`G := π^*π_*(V ⊗ L^{⊗N}) ⊗ L^{⊗−N}` and the kernel `H` of `G → V` for `N` large (behrend1997 Proposition 5,
-lines 165–187, using that `H⁰(C_t, L^{⊗−N}) = 0` on every fibre because the fibres are reduced connected
+`G := π^*π_*(V ⊗ L^{⊗N}) ⊗ L^{⊗−N}` and the kernel `H` of `G → V` for `N` large (one `N` serves for all
+of `M`, which is quasi-compact by Convention 1; behrend1997 Proposition 5, lines 165–187, using that `H⁰(C_t, L^{⊗−N}) = 0` on every fibre because the fibres are reduced connected
 curves on which `L` has positive degree on every component); hence the obstruction theory of 9.3 has the
 global resolution `[(R¹π_*G)^∨ → (R¹π_*H)^∨]` for `V = F^*T_X`, and `[M/𝔅, E]^vir` is defined (6.2).
 *Needs:* 6.2, 9.2–9.3; StableReduction Layer 2.
