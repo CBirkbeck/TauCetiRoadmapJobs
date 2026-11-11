@@ -347,7 +347,10 @@ geometrically connected. Used in §2.3 with N = 15.
 
 §5.0d, the shared raw compatible-system carrier over an arbitrary number field and rank. The
 descended systems are assembled on it at the end of §1.4, from the eigenspaces of §1.3 and the
-properties proved in §1.4.
+properties proved in §1.4. Its finite base-field restriction is used in §1.4 as supplied: it raises
+Frobenius roots to residue degrees, restricts the Hodge labels and replaces the bad set by the
+places above it together with the places ramified in the extension, so it stores no polynomial at
+a ramified place.
 
 ### From TauCetiRoadmap.PotentialModularityAndCompatibleSystems
 
@@ -690,7 +693,9 @@ ArithmeticGaloisRepresentations §4.1.
   and `G_L`-equivariantly onto the second.
 - Restriction to M: through `φ^*`, the restriction of `W_θ` to `G_M` on the carrier has as members
   those of EllipticCurveModularityImaginaryQuadratic §4.1 `characterSystem θ` at t over `F = M`,
-  with the same Hodge multisets `{0,1}`. At a place w of M above `v ∉ S` its polynomial, whose
+  with the same Hodge multisets `{0,1}`. The finite places of L ramified in `M = L(ζ)` lie above n,
+  hence in S, so the restricted bad set is the set of places of M above S and every place w of M
+  above `v ∉ S` lies outside it. At such w the stored polynomial, whose
   roots are the `f(w|v)`-th powers of the roots of `P_{θ,v}`, is the characteristic polynomial of
   geometric Frobenius at w on the members of `characterSystem θ`. The two bad sets are not
   compared: that of `characterSystem θ` is only asserted to be finite.
@@ -698,9 +703,16 @@ ArithmeticGaloisRepresentations §4.1.
   linearly over `M_{0,λ}` and `G_L`-equivariantly. The two systems have the same bad set S and the
   same Hodge multisets, and `P_{θ,v} = P_{θ⁻¹,v}` for `v ∉ S`.
 - Base change: for a finite extension `L′/L`, the restriction of `W_θ` to `G_{L′}` on the carrier
-  has as members the θ-eigenspaces of `H¹` of `C^δ_n ⊗_L L′` under the transported rotations, and
-  at a place `v′|v` with `v ∉ S` its polynomial is the one whose roots are the `f(v′|v)`-th powers of
-  the roots of `P_{θ,v}`.
+  has as members the θ-eigenspaces of `H¹` of `C^δ_n ⊗_L L′` under the transported rotations. Its
+  bad set `S_res` is the one the restriction of §5.0d assigns: the places of `L′` above S together
+  with the places of `L′` ramified over L. Write `f = f(v′|v)` and α, β for the roots of `P_{θ,v}`.
+  At `v′ ∉ S_res` above v, the stored polynomial has roots `α^f` and `β^f`. More generally, for
+  every `v ∉ S` and every `v′|v`, ramified or not, the member at a place λ of `M₀` not above the
+  residue characteristic of v is unramified at v′, and the characteristic polynomial of geometric
+  Frobenius at v′ on it has roots `α^f`, `β^f` and constant term `q_v^f = q_{v′}`: the inertia
+  group at v′ lies in that at v, and modulo the latter a geometric Frobenius at v′ is the f-th power
+  of one at v. At a ramified v′ this second statement concerns the members only: v′ lies in
+  `S_res`, and the restricted carrier stores no polynomial there.
 - Duality: the pairing `[,]_θ` identifies the dual of each member of `W_θ` with the corresponding
   member of the Tate twist `W_θ ⊗ ε_ℓ`, `G_L`-equivariantly. On polynomials this is the equality
   of root multisets `{α⁻¹, β⁻¹} = {α/q_v, β/q_v}` for the roots α, β of `P_{θ,v}`, since `αβ = q_v`;
@@ -723,6 +735,15 @@ ArithmeticGaloisRepresentations §4.1.
   `X² + 6X + 25`: the polynomial of the same curve over `𝔽₂₅`, which has 32 points
   (`a = 26 − 32 = −6`). Keeping the roots unsquared would give `X² − 2X + 5` and retain the sign δ,
   which is trivial on `G_M`.
+- Ramified base-change witness: in the same setting take `L′ = ℚ(√5)`, in which 5 is ramified, so
+  the place v′ above 5 has `e = 2`, `f = 1` and `q_{v′} = 5`. Then v′ lies in `S_res` and the
+  restricted carrier stores no polynomial there, while the restricted members at every λ not above
+  5 are unramified at v′ with geometric Frobenius polynomial `X² − 2X + 5`, that is `P_{1,5}` itself
+  since `f = 1`; the sign δ stays `−1` at v′, because 2 ≡ −3 is not a square in the residue field
+  `𝔽₅` of v′. Using e in place of f would square the roots and give `X² + 6X + 25`, which is the
+  correct answer only at the unramified place of `M = ℚ(√−3)` above 5 (outside `S_res`, where the
+  stored and the member polynomial agree); requiring a stored polynomial at every place above the
+  complement of S would ask for data at v′ that the restriction does not record.
 
 ### 1.5 Integral lattices and the congruence chain
 
