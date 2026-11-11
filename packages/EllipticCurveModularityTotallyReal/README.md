@@ -125,7 +125,8 @@ lack.
 - Number fields carry fixed algebraic closures and `G_F` is the absolute Galois group. An
   elliptic curve E is a smooth proper genus-one curve with origin O, presented in
   characteristic zero as `y² = h(x)` with h a separable cubic; local reduction types are read on
-  local minimal models (EllipticCurves Layer 4.5a). No global minimal model is assumed.
+  local minimal models (EllipticCurves Layer 4, at each finite place through the localizations of
+  Layer 4.5a). No global minimal model is assumed.
 - `H¹(X)` means `H¹_ét(X_F̄, ℚ̄_ℓ)`. The cyclotomic character `ε_ℓ` has Hodge–Tate weight `−1`,
   so `det H¹(E) = ε_ℓ⁻¹` and `H¹(E)` has labelled weights `{0,1}`. The rational Tate module
   `V_ℓ(E) = H¹(E)^∨` has determinant `ε_ℓ`, which is Tau Ceti's
@@ -216,7 +217,12 @@ discriminant) and `WeierstrassCurve.j`, defined as `Δ⁻¹c₄³`
 (`Mathlib/FieldTheory/IsAlgClosed/AlgebraicClosure.lean`), `Module.Basis` and its coordinate
 isomorphism `Module.Basis.equivFun` (`Mathlib/LinearAlgebra/Basis/Defs.lean`) and
 `Matrix.SpecialLinearGroup` (`Mathlib/LinearAlgebra/Matrix/SpecialLinearGroup.lean`), carry the
-statement `three_five_switch` of §2.3.
+statement `three_five_switch` of §2.3. `WeierstrassCurve.IsMinimal`, `WeierstrassCurve.minimal`
+and the predicates `WeierstrassCurve.HasGoodReduction`, `WeierstrassCurve.HasMultiplicativeReduction`,
+`WeierstrassCurve.HasSplitMultiplicativeReduction` and `WeierstrassCurve.HasAdditiveReduction` on a
+Weierstrass equation over the fraction field of a discrete valuation ring, each of which includes
+minimality of the equation (`Mathlib/AlgebraicGeometry/EllipticCurve/Reduction.lean`), carry the
+reduction types of the Conventions and of §4.2.
 
 ### From Tau Ceti
 
@@ -251,14 +257,22 @@ fixed-pairing full-level curves `Y(N,ζ)` for `N ≥ 3`, used in §2.3 at levels
 
 ### From TauCetiRoadmap.EllipticCurves (on main)
 
-Layer 0.5 (Galois actions on curves and morphisms, and descent), Layer 4.5a (curve, equation and
-local minimal model comparisons) and Layer 5 (quadratic twists and their Galois action). Used in
-§§1.2, 1.6, 4.1 and 4.2.
+Layer 4 (the reduction types of a minimal Weierstrass equation over a discrete valuation ring, on
+Mathlib's reduction predicates, potential good reduction and the Tate curve with its split
+multiplicative reduction) and Layer 4.5a (Layer 4's local minimal data at every height-one prime
+of the integers of a number field, independent of the chosen equation): the reduction types of the
+Conventions and of §4.2, items 5, 7 and 8. Layer 5 (quadratic twists and their Galois action):
+§§1.2 and 1.6. Layer 0.5 (Galois actions on points and isogenies, and descent of morphisms): the
+action of `G_K` on `End(E_K̄)` in §4.3 and in the contract required of
+ComplexMultiplicationAndExplicitReciprocity below, whose route also names Layer 1 (the invariant
+differential and its pullback along isogenies).
 
 ### From TauCetiRoadmap.JacobianChallenge (on main)
 
-Layers D–F: the Jacobian `Pic⁰` of a smooth proper curve without a rational point and its
-abelian-variety structure. Used for `J^δ_n = Pic⁰(C^δ_n)` in §§1.3–1.4.
+Layers D–F: the Jacobian `Pic⁰` of a smooth proper geometrically connected curve over a field
+with a rational point, as an abelian variety, with its Abel–Jacobi map. The rational point is one
+of that roadmap's standing hypotheses; the curves `C^δ_m` have one, `φ⁻¹(O, 1)` of §1.2(6). Used
+for `J^δ_m = Pic⁰(C^δ_m)` in §§1.2–1.4.
 
 ### From TauCetiRoadmap.EllipticCurveModularityImaginaryQuadratic
 
@@ -569,6 +583,13 @@ For m = 1 put `C^δ_1 = B^δ_t`, the quadratic twist of `B_t ⊗_k L` by δ. Pro
    `u_ζ^*` to `u′_ζ^*` and `w^*` to `w′^*`, under which `g ∈ G_L` acts on the source by
    `(w^*)^{e(g)}ρ(g)`. This is the rule `(a_g⁻¹)^* ∘ ρ(g)` of the Conventions, since
    `a_g = w^{e(g)}` is its own inverse.
+6. `C^δ_m` has an L-rational point. The principal function `f_t` of
+   EllipticCurveModularityImaginaryQuadratic §1.2 has value 1 at O, and O lies outside the support
+   `{±S, ±R}` of its divisor (§1.1 there), so `C_m → B_t` is étale over O with fiber
+   `{(O, ζ) : ζ ∈ μ_m}`, and `(O, 1)` is a k-rational point of `C_m`. Since
+   `w(O, 1) = (−O, 1⁻¹) = (O, 1)`, the twisted action fixes it,
+   `g ⋆ (O, 1) = w^{e(g)}(O, 1) = (O, 1)` for every `g ∈ G_L`, so `φ⁻¹(O, 1) ∈ C^δ_m(L)`. The
+   quotient maps of item 3 send these points to one another, and to the origin of `B^δ_t`.
 
 ([LeHung26](#references), §3.2, (9) and Lemma 3.2 with proof, p.6, LeHung26 lines 237–240 and
 line 245.)
@@ -605,6 +626,13 @@ EllipticCurves Layer 5; Tau Ceti `WeierstrassCurve.quadraticTwist`; JacobianChal
   3, so the cubic cover of `B_t` has four branch points, `2g − 2 = 4·(3 − 1) = 8` and genus 5, not
   the genus-three curve the endpoint uses. For n = 15 the valuations `∓15` at `±R` are divisible by
   3, there are two branch points, `2g − 2 = 4` and genus 3.
+- The L-rational points of `C^δ_m` are the points fixed by `g ⋆ x = w^{e(g)}(gx)`, not those of
+  `C_m` fixed by Galois. Take δ nontrivial and `g ∈ G_L` with `δ(g) = −1`. The branch points
+  `(S, 0)` and `(−S, ∞)` of `C_m` are k-rational, but `w(S, 0) = (−S, ∞)`, so g exchanges them
+  under ⋆: on `C^δ_m` they form one orbit of size two, defined over M and not over L. Conversely,
+  for `ζ ∈ μ_m` with `ζ ≠ 1`, the point `(O, ζ)` is not L-rational on `C_m ⊗ L`, since
+  `g(O, ζ) = (O, ζ⁻¹) ≠ (O, ζ)`, while `g ⋆ (O, ζ) = w(O, ζ⁻¹) = (O, ζ)`, so `φ⁻¹(O, ζ)` is an
+  L-rational point of the twist. The point `(O, 1)` of §1.2(6) is rational on both.
 
 ### 1.3 The descended character systems
 
@@ -1233,8 +1261,18 @@ R16.6.3–R16.6.4.
 
 **Checks.**
 
-- Descent needs irreducibility of the restriction: a representation induced from a quadratic
-  subextension of `L/K` would have reducible restriction and several descents.
+- Descent needs irreducibility of the restriction, and it is irreducibility that controls the
+  descents. If `ρ|G_L` is irreducible and `ρ′|G_L ≅ ρ|G_L`, then `Hom_{G_L}(ρ, ρ′)` is a line on
+  which `G_K` acts through a character ψ of `Gal(L/K)`, and `ρ′ ≅ ρ ⊗ ψ`; the `[L:K]` twists are
+  pairwise non-isomorphic, because `G_K` fixes the scalars `End_{G_L}(ρ)`. A reducible
+  restriction lies outside the supplied theorem, and its descents are not counted by reducibility.
+  Let F be the splitting field of `x³ − 4x + 1` over ℚ (no rational root, discriminant 229, so
+  `Gal(F/ℚ) ≅ S₃` and F is totally real) and `L₀ = ℚ(√229)`, with sign character `sgn` of
+  `Gal(L₀/ℚ)`. The induction to `G_ℚ` of a nontrivial character χ of `Gal(F/L₀) ≅ C₃` restricts
+  to `χ ⊕ χ⁻¹` and is its only descent: a descent is trivial on `G_F`, the two characters of S₃
+  restrict trivially to C₃, and the standard representation is isomorphic to its twist by `sgn`.
+  In contrast `1 ⊕ 1` over `L₀` has the three descents `1 ⊕ 1`, `1 ⊕ sgn` and `sgn ⊕ sgn`, and
+  `1 ⊕ sgn` is not a twist of `1 ⊕ 1`.
 - At a quadratic step the two descents differ by the quadratic character; PotentialAutomorphyInfrastructure
   §2.3 selects the one matching `H¹(B_t)` itself, not merely its restriction.
 - Twisting twice by `χ_{h(t)}` is the identity since `h(t) ≠ 0`; when `h(t)` is a square in K the
@@ -1274,7 +1312,10 @@ FLHS15 lines 66–77.)
 *Needs:* §2.1; AutomorphicGaloisRepresentations §§3.10, 3.14, 4.4 and 4.7;
 AutomorphicGaloisRepresentationsPartII AG2.0; GL2AutomorphicRepresentationsAndTransfer R16.2,
 R16.3.2, R16.3.5, R16.3.6 and R16.4.4; ArithmeticGaloisRepresentations Layers 2–3 and §6.2;
-NeronModelsAndSemistableAbelianVarieties §§5.6 and 6.10.
+NeronModelsAndSemistableAbelianVarieties §§5.6 and 6.10; EllipticCurves Layers 4 and 4.5a and
+Mathlib `WeierstrassCurve.HasGoodReduction`, `WeierstrassCurve.HasMultiplicativeReduction`,
+`WeierstrassCurve.HasSplitMultiplicativeReduction` and `WeierstrassCurve.HasAdditiveReduction`
+(reduction types and the Tate curve, for items 5, 7 and 8).
 
 **Checks.**
 
@@ -1323,8 +1364,8 @@ pp.27–28, OpenAI26 lines 1200–1215.)
 *Needs:* ComplexMultiplicationAndExplicitReciprocity Layer 1, the field of definition of CM
 endomorphisms required above (gap:cm-elliptic-endomorphism-field);
 ComplexMultiplicationAndExplicitReciprocity §4.1 (the Hecke character over KT and the Tate-module
-components); ShimuraVarieties §5.3;
-AbelianSchemesAndArithmeticModuli A6; AutomorphicGaloisRepresentations §§3.10 and 3.13;
+components); ShimuraVarieties §5.3; EllipticCurves Layer 0.5 (the action of `G_K` on
+`End(E_K̄)`); AbelianSchemesAndArithmeticModuli A6; AutomorphicGaloisRepresentations §§3.10 and 3.13;
 AutomorphicGaloisRepresentationsPartII AG2.0;
 GL2AutomorphicRepresentationsAndTransfer R16.2.13 and R17.4.16; ArithmeticGaloisRepresentations
 §5.3; §4.2.
@@ -1395,7 +1436,8 @@ GL2AutomorphicRepresentationsAndTransfer R16.2–R16.6 and R17.4.16; ShimuraVari
 ComplexMultiplicationAndExplicitReciprocity Layer 1 for the field of definition of CM endomorphisms
 (gap:cm-elliptic-endomorphism-field) and §4.1 for the Hecke character of a CM elliptic curve over
 KT; AbelianSchemesAndArithmeticModuli A6;
-NeronModelsAndSemistableAbelianVarieties §§5.6 and 6.10.
+NeronModelsAndSemistableAbelianVarieties §§5.6 and 6.10; EllipticCurves Layer 0.5 for the Galois
+action on endomorphisms and Layers 4 and 4.5a for the reduction types.
 
 ## Downstream consumers
 
