@@ -23,9 +23,9 @@ It also owns one abstract statement about Tits systems that Tau Ceti lacks: an e
 The following are already in the library or stated by other roadmaps, and are imported:
 
 - **Already in the library.** Tau Ceti has the abstract Bruhat decomposition of a Tits system, its standard parabolic subgroups `P_J`, the classification of subgroups containing `B`, self-normalization of `P_J` and the double cosets `P_J \ G / P_K`. These are consumed in Layers 4 and 6. The finite root-system facts used for the indivisible subsystem (simple transitivity on bases, stabilizers of chamber points) are in Tau Ceti for reduced systems.
-- **Stated by LieGroups.** Layers 0–3 supply the exponential map, `Ad`, the closed-subgroup theorem and the Lie functor; Layer 4 integrates Lie-algebra homomorphisms; Layer 7 supplies complexification. Layer 9 owns finite central matrix-cover models, the global polar diffeomorphism, compactness and maximality of `K`, conjugacy and exhaustion by maximal abelian subspaces of `𝔭`, the Cartan decomposition `𝔤 = 𝔨 ⊕ 𝔭`, the Iwasawa decomposition `iwasawaDecomposition`, the KAK decomposition `kakDecomposition` and the restricted root system with its root spaces. They are not restated here.
+- **Stated by LieGroups.** Layers 0–3 supply the exponential map, `Ad`, the closed-subgroup theorem and the Lie functor; Layer 4 integrates Lie-algebra homomorphisms; Layer 7 supplies complexification. Layer 9 owns finite central matrix-cover models, the global polar diffeomorphism, compactness and maximality of `K`, conjugacy and exhaustion by maximal abelian subspaces of `𝔭`, the Cartan decomposition `𝔤 = 𝔨 ⊕ 𝔭`, the Iwasawa decomposition `iwasawaDecomposition`, the KAK decomposition `kakDecomposition`, the restricted root system with its root spaces, and the restricted Weyl group `N_K(𝔞)/Z_K(𝔞)` with its compact normalizer representatives of the restricted reflections and the coverage of `𝔞` by normalizer translates of the closed positive chamber. They are not restated here; §2.3 adds only the comparison with `W(Σ)` through `K⁰`.
 - **Recorded by RootSystems.** Its section "Exact supplier contracts" records the Mathlib and Tau Ceti declarations on root systems, bases, positive roots, chambers and Weyl groups that §2.1 consumes. None of its own targets (geometric roots, faithfulness, the Weyl presentation) is used.
-- **Stated by ReductiveGroups.** Layer 7 supplies parabolic `k`-subgroups, the dynamic description `P_𝐇(λ)`, `U_𝐇(λ)`, `Z_𝐇(λ)`, maximal split tori, relative root systems and the algebraic Bruhat decomposition over a field. Layer 9 compares with it but does not re-prove it.
+- **Stated by ReductiveGroups.** Layer 7 supplies parabolic `k`-subgroups of a connected reductive group over a field, the dynamic description `P_𝐇(λ)`, `U_𝐇(λ)`, `Z_𝐇(λ)`, and the possibly non-reduced relative root system of a maximal `k`-split torus. Layer 9 compares with them but does not re-prove them. Its Bruhat decomposition and Tits system of `𝐇(k)` assume a split maximal torus and a Borel subgroup containing it and are not used: the Tits system of §4.3 is constructed analytically.
 - **Stated by ArithmeticLocallySymmetricSpaces.** ALS.F.1 and ALS.0.1–ALS.0.3 supply real points of linear algebraic groups, algebraic Cartan involutions and transpose-stable realizations.
 - **Stated by MordellLawrenceVenkatesh.** §3.10 supplies connectedness, in the analytic topology, of the complex points of a connected scheme of finite type over `ℂ`; it is used once, in §9.1, for `𝐇(ℂ)`.
 
@@ -36,7 +36,7 @@ The roadmap does not own:
 - Cartan subgroups;
 - the algebraic and rational parabolics over arbitrary fields, horospherical decompositions and the Borel–Serre compactification;
 - the nonarchimedean Iwasawa, Cartan and Iwahori–Bruhat decompositions;
-- the complex Bruhat decomposition and Schubert cells of `G_ℂ/B`, which belong to LieGroups Layer 8 and ReductiveGroups Layer 7.
+- the complex Bruhat decomposition and Schubert cells of `G_ℂ/B`, which belong to LieGroups Layer 8 and to ReductiveGroups Layer 7 (the split Bruhat decomposition) and Layer 7C (the cells).
 
 AutomorphicFormsOnReductiveGroups §2.3a owns the minimal parabolic subgroup, its Langlands decomposition, conjugacy and the minimal-parabolic Borel–Tits comparison for its real-algebraic class. These are inputs here. Layers 1–7 extend the Lie-group theory to finite central covers and compatible disconnected extensions without algebraicity or the component condition unless stated; §9.2 adds the comparison on chamber walls. AutomorphicFormsOnReductiveGroups and NoncompactQuantumSymmetry are earlier suppliers or independent users of the common foundations, not consumers of this roadmap.
 
@@ -52,7 +52,7 @@ AutomorphicFormsOnReductiveGroups §2.3a owns the minimal parabolic subgroup, it
 - `𝔫 = ⨁_{β ∈ Σ⁺} 𝔤^β`, `𝔫̄ = dθ 𝔫`, `A = lieExp 𝔞`, `N = lieExp 𝔫`, `N̄ = θ(N)`;
 - `P = MAN`;
 - `Π` is the set of simple roots of `Σ⁺`, and `W = W(Σ)` is the Weyl group of `Σ` acting on `𝔞`;
-- `W_G = N_K(𝔞)/Z_K(𝔞)` acts on `𝔞` by `Ad`, and `n_w ∈ N_K(𝔞)` denotes a representative of `w`;
+- `W_G = N_K(𝔞)/Z_K(𝔞)` is LieGroups Layer 9's restricted Weyl group, acting on `𝔞` by `Ad`, and `n_w ∈ N_K(𝔞)` denotes a representative of `w`;
 - for `Π' ⊆ Π`: `Σ_{Π'} = Σ ∩ span(Π')` and `W_{Π'} = ⟨s_α : α ∈ Π'⟩`.
 
 **Sign conventions, with witnesses.**
@@ -100,7 +100,7 @@ The baseline is Mathlib `1b1ccf4b088b32fa3f23f2de1127433254a81e1e` and Tau Ceti 
 ### From TauCetiRoadmap.LieGroups
 
 - Layers 0–3: `lieExp`, `oneParameterSubgroup`, `Ad`, the identity `Ad(lieExp X) = exp(ad X)` (`conj_lieExp` and the Layer 1 conjugation formulas), `lieSubalgebraOfSubgroup`, `isEmbeddedLieSubgroup_of_isClosed`, `lieMap`; exponential naturality and faithfulness are the native Tau Ceti declarations above. Layer 4: `exists_monoidHom_of_lieHom`, used to integrate `𝔰𝔩(2, ℝ)`-triples. Layer 7: the complexification `𝔤 ⊗_ℝ ℂ`.
-- Layer 9: the structures `CartanInvolution`, `IsRealReductive` and `IwasawaData`, and the theorems `iwasawaDecomposition` and `kakDecomposition`. Layer 9 also supplies the restricted root system: the eigenvalues of `ad 𝔞` are real, `𝔤 = 𝔤_0 ⊕ ⨁_{β ∈ Σ} 𝔤^β` with `𝔤_0 = 𝔪 ⊕ 𝔞`, `dθ 𝔤^β = 𝔤^{−β}`, `⁅𝔤^β, 𝔤^γ⁆ ⊆ 𝔤^{β+γ}`, and `Σ` is a possibly non-reduced finite crystallographic root system in the span of `Σ` inside `𝔞*`.
+- Layer 9: the structures `CartanInvolution`, `IsRealReductive` and `IwasawaData`, and the theorems `iwasawaDecomposition` and `kakDecomposition`. Layer 9 also supplies the restricted root system: the eigenvalues of `ad 𝔞` are real, `𝔤 = 𝔤_0 ⊕ ⨁_{β ∈ Σ} 𝔤^β` with `𝔤_0 = 𝔪 ⊕ 𝔞`, `dθ 𝔤^β = 𝔤^{−β}`, `⁅𝔤^β, 𝔤^γ⁆ ⊆ 𝔤^{β+γ}`, and `Σ` is a possibly non-reduced finite crystallographic root system in the span of `Σ` inside `𝔞*`. It also supplies the restricted Weyl group `W_G = N_K(𝔞)/Z_K(𝔞)`, the actual normalizer quotient acting faithfully on `𝔞` by `Ad`; for each `β ∈ Σ`, an element of `N_K(𝔞)` acting on `𝔞` as the reflection `s_β`; and chamber coverage: every `Ad(N_K(𝔞))`-orbit in `𝔞` meets the closed positive chamber, walls and the zero-root case included. Nothing there places the reflection representatives in `K⁰` or compares `W_G` with `W(Σ)`; that is §2.3.
 - Layer 9: `CartanInvolution` retains `global_model : FiniteCartanMatrixModel G θ`: a finite central covering onto a closed transpose-stable matrix subgroup with finitely many components, compatible with transpose-inverse, fixing the entire compact preimage pointwise. It also requires compact fixed group and the centre/semisimple-derived splitting. Its `cartan_polar_decomposition` and README polar diffeomorphism, compactness/maximality, central periods, maximal-abelian conjugacy and exhaustion are consumed directly. The nontrivial involution of `SU(2)` and inversion of the circle fail this base datum already.
 - `IwasawaData` includes exact nonzero restricted roots and their simultaneous eigenspaces, positive-root sign and addition laws, closed connected exponential `N`, injectivity on `𝔞`, the Lie complement, a separate closed connected root-generated `Nplus`, and the closed chamber defined by positive-root inequalities, spanning `𝔞`, covered by the compact normalizer action and containing the full split centre as lineality. Section 2.6 sets `N = Nplus`.
 
@@ -110,7 +110,7 @@ Only its section "Exact supplier contracts" is consumed, as the record of the ro
 
 ### From TauCetiRoadmap.ReductiveGroups
 
-- Layer 7 supplies parabolic `k`-subgroups of a connected reductive group over a field, their unipotent radicals and Levi decompositions, and the cocharacter description `P = P_𝐇(λ)`, `U = U_𝐇(λ)`, `L = Z_𝐇(λ)`. It also supplies maximal split tori, the relative root system `Φ(𝐇, 𝐒)` with its relative Weyl group, and the Bruhat decomposition and Tits system of `𝐇(k)`. Layer 7 also supplies the Bruhat/Weyl double-coset theorem; Layer 7b concerns additional algebraic Levi-intersection and finite-field comparisons.
+- Layer 7 supplies parabolic `k`-subgroups of a connected reductive group `𝐇` over a field `k`, their unipotent radicals and Levi decompositions, and the cocharacter description `P = P_𝐇(λ)`, `U = U_𝐇(λ)`, `L = Z_𝐇(λ)`, every parabolic `k`-subgroup being some `P_𝐇(λ)`. For a maximal `k`-split torus `𝐒` it supplies the relative root system `Φ(𝐇, 𝐒)`, possibly non-reduced, whose Weyl group is the relative Weyl group used below. Layer 7's Bruhat decomposition and Tits system `(𝐇(k), 𝐁(k), 𝐍(k), S)` are stated for a split maximal torus `𝐓` and a Borel subgroup `𝐁 ⊇ 𝐓`; they are not consumed. The anisotropic real form `SU(2)` of `SL_2`, of real rank `0` and absolute rank `1`, has no Borel subgroup over `ℝ`; with `θ = id`, §4.3 gives its Tits system, `P = G` and `S = ∅`, without these inputs.
 - What ReductiveGroups must provide (`gap:minimal-parabolic-orderings`): for a connected reductive group `𝐇` over a field `k` and a maximal `k`-split torus `𝐒 ⊆ 𝐇`, the minimal parabolic `k`-subgroups containing `𝐒` are the `P_𝐇(λ)` for cocharacters `λ` of `𝐒` that are regular for `Φ(𝐇, 𝐒)`. Two such `λ` give the same subgroup iff they lie in the same open chamber, and the relative Weyl group permutes these subgroups simply transitively (Borel–Tits 1965, Théorème 4.15 and Corollaire 5.9, pp. 90–91 and 98).
 - What ReductiveGroups must provide (`gap:real-compactness-criterion`): for a connected linear algebraic group `𝐇` over `ℝ`, a closed `ℝ`-subgroup `𝐋` with `𝐇(ℝ)/𝐋(ℝ)` compact contains a maximal connected `ℝ`-trigonalizable subgroup of `𝐇` (Borel–Tits 1965, Proposition 9.3, p. 126).
 
@@ -132,7 +132,7 @@ These are consumed in Layer 9 only.
 
 ## How to read the build
 
-Layer 1 adds the compatible form to the full base Cartan datum and proves conjugacy of its involutions with the same split centre. Layer 2 handles restricted roots: positive systems of a possibly non-reduced `Σ`, conjugacy of maximal abelian subspaces, the two Weyl groups and the component condition that equates them, conjugacy of Iwasawa triples, and the bridge to the base's `IwasawaData`. Layer 3 builds `M`, `N` and `P = MAN`, proves that centralizers of subspaces of `𝔞` inherit the datum, and proves the Langlands decomposition of `P`. Layer 4 proves the Bruhat decomposition with cell coordinates by the dynamics of a regular one-parameter subgroup of `A`, and builds the Tits system. Layer 5 classifies standard parabolic subalgebras. Layer 6 identifies `N_G(𝔮_{Π'})` with Tau Ceti's `P_J` and proves the Langlands decompositions. Layer 7 treats general parabolics and the dynamical description. Layer 8 is the self-adjoint matrix model and its pinned statements. Layer 9 extends the supplied minimal algebraic comparison to chamber walls and proves the complexification criterion. Layers 1–7 depend only on the base roadmap, Mathlib and Tau Ceti (RootSystems is cited only as the record of the root-system declarations). Layer 8 depends on Layers 1–7, and Layer 9 adds the algebraic suppliers.
+Layer 1 adds the compatible form to the full base Cartan datum and proves conjugacy of its involutions with the same split centre. Layer 2 handles restricted roots: positive systems of a possibly non-reduced `Σ`, the imported conjugacy of maximal abelian subspaces, the comparison of the base restricted Weyl group `W_G` with `W(Σ)` and the component condition that equates them, conjugacy of Iwasawa triples, and the bridge to the base's `IwasawaData`. Layer 3 builds `M`, `N` and `P = MAN`, proves that centralizers of subspaces of `𝔞` inherit the datum, and proves the Langlands decomposition of `P`. Layer 4 proves the Bruhat decomposition with cell coordinates by the dynamics of a regular one-parameter subgroup of `A`, and builds the Tits system. Layer 5 classifies standard parabolic subalgebras. Layer 6 identifies `N_G(𝔮_{Π'})` with Tau Ceti's `P_J` and proves the Langlands decompositions. Layer 7 treats general parabolics and the dynamical description. Layer 8 is the self-adjoint matrix model and its pinned statements. Layer 9 extends the supplied minimal algebraic comparison to chamber walls and proves the complexification criterion. Layers 1–7 depend only on the base roadmap, Mathlib and Tau Ceti (RootSystems is cited only as the record of the root-system declarations). Layer 8 depends on Layers 1–7, and Layer 9 adds the algebraic suppliers.
 
 ## Layer 1: Reductive Cartan data and their conjugacy
 
@@ -223,6 +223,8 @@ Let `Φ` be a finite crystallographic root system in a real vector space `V`, po
 - `W(Φ)` acts simply transitively on positive systems, by `RootPairing.Base.existsUnique_map_eq` applied to `Φ_ind`.
 - The stabilizer in `W(Φ)` of a point of the closed chamber, or of a subspace pointwise, is generated by the reflections it contains, by `TauCeti.stabilizer_eq_closure_wallReflections` applied to `Φ_ind` in its span.
 
+*Needs:* LieGroups Layer 9 (the possibly non-reduced finite crystallographic restricted root system, the instance of `Φ`); Mathlib `RootPairing`, `RootPairing.Base`, `RootPairing.IsReduced`, `RootPairing.weylGroup`; Tau Ceti `RootPairing.Base.existsUnique_map_eq` (finite, crystallographic, reduced), `TauCeti.stabilizer_eq_closure_wallReflections` (strict ordered ring, finite, crystallographic, pairing and flip reduced).
+
 API:
 
 - Positive systems exist and are exactly the sets `{β : β(v) > 0}` for `v` in an open chamber. `Φ⁺ ⊔ (−Φ⁺) = Φ`.
@@ -246,26 +248,27 @@ Use LieGroups Layer 9's maximal-abelian conjugacy and exhaustion: maximal abelia
 
 ### 2.3 The two Weyl groups
 
-For an Iwasawa triple, define `W_G = N_K(𝔞)/Z_K(𝔞)` with its action on `𝔞` by `Ad`. Prove the following (Knapp 2002, Ch. VI §5):
+For an Iwasawa triple, let `W_G = N_K(𝔞)/Z_K(𝔞)` be LieGroups Layer 9's restricted Weyl group, acting faithfully on `𝔞` by `Ad`, with its normalizer representatives of the reflections `s_β` (exact supplier contracts). This section compares it with `W(Σ)`. Prove the following (Knapp 2002, Ch. VI §5):
 
-- `W_G` acts faithfully on `𝔞` and preserves `Σ`, and the multiplicities `dim 𝔤^β`.
-- For each `β ∈ Σ` and non-zero `X ∈ 𝔤^β`, a suitable `k = lieExp(c(X + dθX)) ∈ K⁰` normalizes `𝔞` and acts as `s_β`.
-- `N_{K⁰}(𝔞)/Z_{K⁰}(𝔞) = W(Σ)`, and `W(Σ)` is a normal subgroup of `W_G`.
+- The reflections have representatives in `K⁰` of an explicit form; the base representatives lie in `N_K(𝔞)`, possibly outside `K⁰`. For each `β ∈ Σ` and non-zero `X ∈ 𝔤^β` there is `c ∈ ℝ` such that `k = lieExp(c(X + dθX)) ∈ K⁰` normalizes `𝔞` and acts on it as `s_β`.
+- `N_{K⁰}(𝔞)/Z_{K⁰}(𝔞) = W(Σ)` as groups of linear maps of `𝔞`.
+- `W_G` permutes `Σ`, preserving the multiplicities `dim 𝔤^β`, and `W(Σ)` is a normal subgroup of `W_G`.
 - `N_G(𝔞) = N_K(𝔞)·A` and `Z_G(𝔞) = M·A` with `M ∩ A = 1`, so `N_G(𝔞)/Z_G(𝔞) ≅ W_G`.
 
 Proof sketch:
 
-- The reflections come from the `𝔰𝔩(2, ℝ)`-triple through `X`, integrated by LieGroups Layer 4.
+- `X + dθX` lies in `𝔨`. In the `𝔰𝔩(2, ℝ)`-triple through `X`, integrated by LieGroups Layer 4, it is a rotation generator, and by `Ad(lieExp Y) = exp(ad Y)` a quarter turn negates the `B`-dual of `β` and fixes `ker β`, so it acts on `𝔞` as `s_β`.
 - For `N_{K⁰}(𝔞) ⊆ W(Σ)·Z_{K⁰}(𝔞)`: correct `k` by `W(Σ)` so that it fixes the positive chamber. Then `Ad(k)` is an inner automorphism of `𝔤_ℂ` fixing a Cartan subalgebra containing `𝔞` and a compatible Borel subalgebra, so it acts trivially on `𝔞`.
+- For normality: for `n ∈ N_K(𝔞)`, `Ad(n)` carries `𝔤^β` onto `𝔤^{β ∘ Ad(n)⁻¹}`, so `n s_β n⁻¹ = s_{β ∘ Ad(n)⁻¹}`.
 - For `N_G(𝔞)`: write `g = k·lieExp X`. Then `θ(g)` also normalizes `𝔞`, so `e^{−2 ad X}` preserves `𝔞`. Hence `ad X` preserves `𝔞`, `⁅X, 𝔞⁆ ⊆ 𝔞 ∩ 𝔨 = 0` and `X ∈ 𝔞`.
 
-*Needs:* §§1.1, 2.1–2.2; LieGroups Layer 4 (`exists_monoidHom_of_lieHom`), Layer 7 (complexification), Layer 9.
+*Needs:* §§1.1, 2.1–2.2; LieGroups Layer 1 (`Ad(lieExp X) = exp(ad X)`), Layer 4 (`exists_monoidHom_of_lieHom`), Layer 7 (complexification), Layer 9 (the restricted Weyl group `N_K(𝔞)/Z_K(𝔞)`, root spaces, polar decomposition).
 
 **Checks.**
 
 - For `GL_n(ℝ)`, `W_G ≅ S_n`, agreeing with `TauCeti.unitaryNormalizerPosDiagonalQuotientMulEquivPerm`. Here `N_G(𝔞)` is the monomial matrices and `Z_G(𝔞)` the invertible diagonal ones.
-- For `SL_2(ℝ)`, `W_G` has order two, generated by the class of `((0, −1), (1, 0))`. That element acts on `𝔞 = ℝ·diag(1, −1)` by `−1`.
-- For `O(1,1) = {g ∈ GL_2(ℝ) : gᵀ J g = J}`, `J = diag(1, −1)`: `𝔤 = 𝔞 = ℝ·((0, 1), (1, 0))`, `Σ = ∅` and `W(Σ) = 1`. But `diag(1, −1) ∈ K` acts on `𝔞` by `−1`, so `W_G ≅ ℤ/2 ≠ W(Σ)`. Without a hypothesis the base README's identification of `N_K(𝔞)/Z_K(𝔞)` with the restricted Weyl group fails.
+- For `SL_2(ℝ)`, `W_G` has order two, generated by the class of `((0, −1), (1, 0))`. That element acts on `𝔞 = ℝ·diag(1, −1)` by `−1`. With `X = E₁₂`, `dθX = −E₂₁` and `c = −π/2`, it is `lieExp(c(X + dθX)) ∈ SO(2) = K⁰`. The value `c = −π/4` gives the rotation through `π/4`, which sends `diag(1, −1)` to `((0, 1), (1, 0)) ∉ 𝔞`, so not every `c` normalizes `𝔞`.
+- For `O(1,1) = {g ∈ GL_2(ℝ) : gᵀ J g = J}`, `J = diag(1, −1)`: `𝔤 = 𝔞 = ℝ·((0, 1), (1, 0))`, `Σ = ∅` and `W(Σ) = 1`. But `diag(1, −1) ∈ K` acts on `𝔞` by `−1`, so `W_G ≅ ℤ/2` and `W(Σ)` is a proper normal subgroup. Here `K = {diag(±1, ±1)}` and `K⁰ = {1}`, so `N_{K⁰}(𝔞)/Z_{K⁰}(𝔞) = 1 = W(Σ)`, as the comparison says; `W_G = W(Σ)` needs the component condition of §2.4.
 
 ### 2.4 The component condition
 
@@ -313,9 +316,9 @@ Prove every field:
 - `⁅𝔞, 𝔫⁆ ⊆ 𝔫`;
 - `𝔤 = (𝔨 ⊕ 𝔞) ⊕ 𝔫`;
 - the chamber lies in `𝔞`, has exactly the positive-root inequalities, is closed in the canonical tangent-space topology, is closed under addition and nonnegative scaling, and spans `𝔞`;
-- every `H ∈ 𝔞` has an `N_K(𝔞)`-translate in the chamber, using §§2.1, 2.3; adding any `Z ∈ 𝔷 ∩ 𝔞` preserves it, since every root vanishes on `Z`.
+- every `H ∈ 𝔞` has an `N_K(𝔞)`-translate in the chamber, by LieGroups Layer 9's chamber coverage; adding any `Z ∈ 𝔷 ∩ 𝔞` preserves the chamber, since every root vanishes on `Z`.
 
-Consequently `iwasawaDecomposition` and `kakDecomposition` of the base apply to `(K, A, N)` and to this chamber (Knapp 2002, Ch. VI §4). *Needs:* §§1.1, 2.1–2.3; LieGroups Layer 9 (`IwasawaData`, `iwasawaDecomposition`, `kakDecomposition`, the Lie-algebra Iwasawa decomposition and the closedness of `N`).
+Consequently `iwasawaDecomposition` and `kakDecomposition` of the base apply to `(K, A, N)` and to this chamber (Knapp 2002, Ch. VI §4). *Needs:* §§1.1, 2.1; LieGroups Layer 9 (`IwasawaData`, `iwasawaDecomposition`, `kakDecomposition`, the Lie-algebra Iwasawa decomposition, the closedness of `N` and the chamber coverage by `N_K(𝔞)`).
 
 **Checks.**
 
@@ -331,7 +334,7 @@ Consequently `iwasawaDecomposition` and `kakDecomposition` of the base apply to 
 
 ### Dependencies
 
-Layer 1; LieGroups Layers 4, 7, 9; Tau Ceti `RootPairing.Base.existsUnique_map_eq`, `TauCeti.stabilizer_eq_closure_wallReflections`; Mathlib `RootPairing`, `RootPairing.Base`, `RootPairing.IsReduced`, `RootPairing.weylGroup` (recorded in RootSystems, "Exact supplier contracts").
+Layer 1; LieGroups Layers 1, 4, 7, 9; Tau Ceti `RootPairing.Base.existsUnique_map_eq`, `TauCeti.stabilizer_eq_closure_wallReflections`; Mathlib `RootPairing`, `RootPairing.Base`, `RootPairing.IsReduced`, `RootPairing.weylGroup` (recorded in RootSystems, "Exact supplier contracts").
 
 ## Layer 3: The minimal parabolic subgroup
 
@@ -364,6 +367,8 @@ For an Iwasawa triple define:
 - `M = Z_K(𝔞) = {k ∈ K : Ad(k)H = H for all H ∈ 𝔞}`;
 - `N = lieExp 𝔫`, the subgroup of §2.6;
 - the **minimal parabolic subgroup** `P = M·A·N`.
+
+(Knapp 2002, Ch. VI §4; Ch. VII §7.) *Needs:* §1.1 (polar coordinates, for `Z(G) ⊆ MA`), §2.3 (`Z_G(𝔞) = M·A`, `M ∩ A = 1`), §2.6 (`N = Nplus = lieExp 𝔫`); LieGroups Layer 0 (`lieExp`), Layer 2 (`isEmbeddedLieSubgroup_of_isClosed`, `lieSubalgebraOfSubgroup`), Layer 9 (compactness of `K`, closedness and connectedness of `N`, injectivity of `lieExp` on `𝔞`, `iwasawaDecomposition`); Mathlib `Subgroup.centralizer`.
 
 API:
 
@@ -408,7 +413,7 @@ Proof sketch:
 
 ### 3.4 Minimal parabolic subgroups form one conjugacy class
 
-Call a subgroup a **minimal parabolic subgroup** of `(G, D)` if it is `P(D', 𝔞, Σ⁺)` for some Iwasawa triple whose datum `D'` has the same split central part as `D`. Prove that these form a single `G⁰`-conjugacy class. For a fixed `D`, prove that they form a single `K⁰`-conjugacy class. *Needs:* §§2.5, 3.2.
+Call a subgroup a **minimal parabolic subgroup** of `(G, D)` if it is `P(D', 𝔞, Σ⁺)` for some Iwasawa triple whose datum `D'` has the same split central part as `D`. Prove that these form a single `G⁰`-conjugacy class. For a fixed `D`, prove that they form a single `K⁰`-conjugacy class (Knapp 2002, Ch. VI §5; Ch. VII §7). *Needs:* §§2.5, 3.2.
 
 **Checks.**
 
@@ -422,7 +427,7 @@ Call a subgroup a **minimal parabolic subgroup** of `(G, D)` if it is `P(D', �
 
 ### Dependencies
 
-Layers 1–2; LieGroups Layers 2, 9; Mathlib `Subgroup.normalizer`, `Subgroup.centralizer`.
+Layers 1–2; LieGroups Layers 0, 2, 9; Mathlib `Subgroup.normalizer`, `Subgroup.centralizer`.
 
 ## Layer 4: The Bruhat decomposition and the Tits system
 
@@ -516,6 +521,8 @@ For an Iwasawa triple and `Π' ⊆ Π` define:
 - `𝔩_{Π'} = 𝔪 ⊕ 𝔞 ⊕ ⨁_{β ∈ Σ_{Π'}} 𝔤^β`;
 - `𝔫_{Π'} = ⨁_{β ∈ Σ⁺ ∖ Σ_{Π'}} 𝔤^β`.
 
+The root-sum formula for `𝔮_{Π'}` is Brown–Rodriguez Hertz–Wang 2022, §1.2, equation (1), p. 3, stated there for a connected semisimple group with finite centre; for a reductive Cartan datum the same formula is read in the root-space decomposition of LieGroups Layer 9, with the form `B` of §1.1 for the orthogonality statements below. *Needs:* §1.1 (`B`, `dθ`), §2.1 (`Π`, `Σ_{Π'}`), §2.2 (`𝔷_𝔭 ⊆ 𝔞`); LieGroups Layer 9 (root spaces `𝔤^β`, `𝔤_0 = 𝔪 ⊕ 𝔞`, `dθ 𝔤^β = 𝔤^{−β}`, `⁅𝔤^β, 𝔤^γ⁆ ⊆ 𝔤^{β+γ}`).
+
 API:
 
 - `𝔮_∅ = 𝔪 ⊕ 𝔞 ⊕ 𝔫` and `𝔮_Π = 𝔤`.
@@ -572,7 +579,7 @@ Let `X ∈ 𝔞` lie in the closed positive chamber (`β(X) ≥ 0` for `β ∈ �
 
 ### Dependencies
 
-Layer 2; LieGroups Layer 9.
+Layers 1–2; LieGroups Layer 9.
 
 ## Layer 6: Standard parabolic subgroups and their Langlands decompositions
 
@@ -767,6 +774,12 @@ For `G` and a matrix `X`, define:
 - `dynamicUnipotent G X`: those for which this tends to `1` as `t → +∞`;
 - `dynamicLevi G X`: those commuting with `X`.
 
+API, for an arbitrary subgroup `G` and matrix `X` unless stated, with `θG = {θ(g) : g ∈ G}`:
+
+- `dynamicLevi G X` is a subgroup, closed when `G` is closed. `dynamicUnipotent G X` and `dynamicLevi G X` lie in `dynamicParabolic G X`: a convergent family is bounded, and an element commuting with `X` has constant conjugates.
+- Transport: `θ` maps `dynamicParabolic G X` onto `dynamicParabolic (θG) (−Xᵀ)`, `dynamicUnipotent G X` onto `dynamicUnipotent (θG) (−Xᵀ)` and `dynamicLevi G X` onto `dynamicLevi (θG) Xᵀ`. The first two use `θ(exp(−tX) g exp(tX)) = exp(tXᵀ) θ(g) exp(−tXᵀ)` (Mathlib `Matrix.exp_transpose`) and the conjugates of `g⁻¹`: the matrices whose conjugate family is bounded form a unital subalgebra of `Matrix (Fin n) (Fin n) ℝ`, which contains the inverse of each of its invertible elements by the Cayley–Hamilton theorem, and inversion is continuous at `1`. The third transposes `gX = Xg`.
+- When `G` is transpose-stable and `X` is symmetric, `θG = G` and `−Xᵀ = −X`: `θ` maps `dynamicParabolic G X` onto `dynamicParabolic G (−X)` and `dynamicUnipotent G X` onto `dynamicUnipotent G (−X)`, and `dynamicLevi G X` is `θ`-stable. Neither hypothesis can be dropped from these same-`G`, `±X` forms (Checks).
+
 Prove `dynamicLevi_decomposition`. Let `G` be closed in `GL (Fin n) ℝ` and transpose-stable, and let `X` be symmetric. At this generality the following subgroup assertions hold; for the factorization also assume `exp(tX) G exp(−tX) = G` for every real `t` (sufficiently, `X ∈ linearLieAlgebra G`). Finitely many components is not required:
 
 - the three sets are closed subgroups;
@@ -774,7 +787,7 @@ Prove `dynamicLevi_decomposition`. Let `G` be closed in `GL (Fin n) ℝ` and tra
 - under the normalization hypothesis, every element of `dynamicParabolic G X` factors uniquely as `l·u` with `l ∈ dynamicLevi G X` and `u ∈ dynamicUnipotent G X`;
 - `dynamicParabolic G X ∩ θ(dynamicParabolic G X) = dynamicLevi G X`.
 
-Proof sketch: in an orthonormal eigenbasis of `X`, an element of `dynamicParabolic G X` is block upper triangular, an element of `dynamicUnipotent G X` block unipotent and an element of `dynamicLevi G X` block diagonal, so the three sets are `G` intersected with closed subgroups of `GL (Fin n) ℝ`. The block-diagonal part `l = lim_{t→+∞} exp(−tX) g exp(tX)` of `g ∈ dynamicParabolic G X` is invertible and, under the normalization hypothesis, lies in `G`: the entire convergent family belongs to `G` and `G` is closed; `θ` interchanges block upper and block lower triangular. The subgroup, normality and intersection assertions use only intersections with the ambient block groups. The factorization uses normalization to keep the limit in `G`; then `u = l⁻¹g ∈ G`. Section 8.3 applies the theorem to `X ∈ 𝔞 ⊆ linearLieAlgebra G` only. This is the matrix form of §§6.3 and 7.3, and the analogue of Tau Ceti's `TauCeti.Cocharacter.limit`. *Needs:* §8.1; Mathlib `NormedSpace.exp`, `Matrix.exp_conj`, `Bornology.IsBounded`, `Filter.Tendsto`.
+Proof sketch: in an orthonormal eigenbasis of `X`, an element of `dynamicParabolic G X` is block upper triangular, an element of `dynamicUnipotent G X` block unipotent and an element of `dynamicLevi G X` block diagonal, so the three sets are `G` intersected with closed subgroups of `GL (Fin n) ℝ`. The block-diagonal part `l = lim_{t→+∞} exp(−tX) g exp(tX)` of `g ∈ dynamicParabolic G X` is invertible and, under the normalization hypothesis, lies in `G`: the entire convergent family belongs to `G` and `G` is closed; `θ` interchanges block upper and block lower triangular. The subgroup, normality and intersection assertions use only intersections with the ambient block groups. The factorization uses normalization to keep the limit in `G`; then `u = l⁻¹g ∈ G`. Section 8.3 applies the theorem to `X ∈ 𝔞 ⊆ linearLieAlgebra G` only. This is the matrix form of §§6.3 and 7.3 (Knapp 2002, Ch. VII §7), and the analogue of Tau Ceti's `TauCeti.Cocharacter.limit`. *Needs:* §8.1; Mathlib `NormedSpace.exp`, `Matrix.exp_conj`, `Bornology.IsBounded`, `Filter.Tendsto`.
 
 **Checks.**
 
@@ -783,6 +796,8 @@ Proof sketch: in an orthonormal eigenbasis of `X`, an element of `dynamicParabol
 - `X = diag(0, 1)` in `GL_2(ℝ)` gives the lower triangular, lower unitriangular and diagonal groups. Reversing the direction of `t` in the definitions would interchange the upper and lower groups.
 - `G = GL_2(ℝ)` with the skew `X = ((0, 1), (−1, 0))`: the conjugates `exp(−tX) g exp(tX)` are rotations of `g`, bounded for every `g`, so the bounded set is all of `G`. But `dynamicUnipotent = {1}` and the centralizer of `X` is `{aI + bX}`, so `l·u` covers only that centralizer. The symmetry hypothesis is necessary.
 - `G = SL_2(ℝ)` with `X = diag(1, 0)`, which is symmetric but not in `𝔰𝔩_2(ℝ)`: the three groups are the upper triangular, upper unitriangular and diagonal subgroups of `SL_2(ℝ)`, `((a, b), (0, a⁻¹)) = diag(a, a⁻¹)·((1, b/a), (0, 1))`, and all four conclusions hold. Although `X ∉ linearLieAlgebra G`, diagonal conjugation preserves determinant and normalizes `SL_2(ℝ)`, so the normalization hypothesis includes this instance.
+- Transport without symmetry: `G = GL_2(ℝ)`, `X = ((1, 1), (0, 0))` and `g = I + X = ((2, 1), (0, 1))`. Then `gX = Xg = ((2, 2), (0, 0))`, so `g ∈ dynamicLevi G X ⊆ dynamicParabolic G X`. In the eigenbasis `S = ((1, −1), (0, 1))`, with `S⁻¹XS = diag(1, 0)`, the image `θ(g) = ((1/2, 0), (−1/2, 1))` becomes `S⁻¹θ(g)S = ((0, 1), (−1/2, 3/2))`, so the conjugates `exp(tX)·θ(g)·exp(−tX)` have upper-right entry `e^t` in that basis and are unbounded: `θ(g) ∉ dynamicParabolic G (−X)`. But `θ(g)` commutes with `Xᵀ = ((1, 0), (1, 0))`, so it lies in `dynamicParabolic G (−Xᵀ)`, as the general transport says. For the symmetric `X = diag(1, 0)`, `θ` carries the upper triangular group onto the lower triangular group `dynamicParabolic G (−X)`.
+- Transport without transpose stability: `G = {((1, s), (0, 1)) : s ∈ ℝ}`, closed but not transpose-stable, and the symmetric `X = 0`. Then `dynamicLevi G 0 = G`, while `θ((1, 1), (0, 1)) = ((1, 0), (−1, 1)) ∉ G`. It lies in `θG`, the lower unitriangular group, which is `dynamicLevi (θG) 0`.
 - Let `O = ½[[√3,−1],[1,√3]]`, `G = OᵀSL_2(ℤ)O` and `X = diag(1,0)`. This closed transpose-stable discrete group contains `g = [[2+√3,2],[0,2−√3]]`. Its ambient conjugation limit is `l = diag(2+√3,2−√3)`, but `(OlOᵀ)₁₂ = 3/2`, so `l ∉ G`. Hence normalization fails, and any factorization `g = l'u` would force `l' = l`, which is impossible. The subgroup and intersection assertions still hold.
 
 ### 8.3 The component condition and the minimal parabolic
@@ -798,19 +813,19 @@ Assume now `LinearComponentCondition G 𝔞`.
 - `eq_dynamicParabolic_of_le`: every subgroup `Q` with `P ≤ Q ≤ G` equals `dynamicParabolic G X` for some `X ∈ 𝔞`. For `X, Y ∈ 𝔞` with `P` contained in both dynamic parabolics, the two parabolics are equal iff `X` and `Y` have the same centralizer in `linearLieAlgebra G` (§§6.1, 7.3).
 - `exists_titsSystem_linear`: there is a `TauCeti.TitsSystem G` whose `subgroupB` is `P` and whose `subgroupN` is `N_G(𝔞) = {g ∈ G : g𝔞g⁻¹ = 𝔞}` (§4.3).
 
-*Needs:* §§2.2, 2.4, 3.2–3.3, 4.2–4.3, 5.2–5.3, 6.1, 7.3, 8.1–8.2; Tau Ceti `TauCeti.TitsSystem`; Mathlib `connectedComponentIn`, `DoubleCoset.doubleCoset`, `Module.End.eigenspace`.
+These are the matrix forms of Knapp 2002, Ch. VII §§2, 4–5, 7, and Bourbaki, Ch. IV §2 for the Tits system. *Needs:* §§2.2, 2.4, 3.2–3.3, 4.2–4.3, 5.2–5.3, 6.1, 7.3, 8.1–8.2; Tau Ceti `TauCeti.TitsSystem`; Mathlib `connectedComponentIn`, `DoubleCoset.doubleCoset`, `Module.End.eigenspace`.
 
 **Checks.**
 
 - `GL_n(ℝ)` for `n ≥ 1`, `𝔞` diagonal, `H₀ = diag(n, n − 1, …, 1)`: `P` is `TauCeti.upperTriangularGroup` and the condition holds. The Bruhat representatives are the signed permutation matrices, identified with `S_n` modulo diagonal signs. The Tits system is `TauCeti.glTitsSystem ℝ (n − 1)`, and the subalgebras containing `𝔮₀`, the upper triangular matrices, are the `2^{n−1}` block upper triangular algebras, each the non-negative eigenspace sum of a block-scalar diagonal `Y`. At `n = 0`, `G = P = 1`, `𝔞 = 0` and the sole subalgebra is `0`; no `n − 1` indexing is used.
 - `O(1,1)` with `𝔞 = ℝY`, `Y = ((0, 1), (1, 0))`, and `H₀ = Y`: `M = {±1}`, `N = {1}`, `P = {±exp(tY)}`, and `K = {±1, ±d}` with `d = diag(1, −1)`, all of whose elements normalize `𝔞`. `G = P ⊔ dP`, so `bruhat_decomposition_linear` holds: `P k P` meets `P k' P` only if `k⁻¹k' ∈ P ∩ K = {±1}`, which commutes with `𝔞`. But `d·exp(tY)·d = exp(−tY)`, so `exp(−tY)·d·exp(tY) = exp(−2tY)·d` is unbounded, `dynamicParabolic G Y = P` has index two, and `dynamicParabolic G 0 = G`. `LinearComponentCondition` fails, `P` is normal and not self-normalizing, and `0` and `Y` have the same centralizer `𝔤` but different dynamic parabolics. This is the negative control for `minimalParabolic_langlands`, for the "iff" of `eq_dynamicParabolic_of_le` and for `exists_titsSystem_linear` (`P` is normal in `G`, so `s P s⁻¹ ≠ P` fails for every candidate reflection), not for `bruhat_decomposition_linear`.
 - `Aut(𝔰𝔩_3(ℝ))` in `GL_8(ℝ)` with `𝔞 = ad(diagonal)` and `H₀ = ad(diag(1, 0, −1))`: `σ·Ad(w₀) ∈ K` fixes `H₀` (§7.3, Checks), so it lies in `dynamicParabolic G H₀` but not in `P`, since `P ∩ K = M` and it acts on `𝔞` by `−w₀`. With `dynamicParabolic G H₀` in place of `P`, the uniqueness clause of `bruhat_decomposition_linear` fails: `k = 1` and `k' = σ·Ad(w₀)` give the same double coset, and `k⁻¹k'` does not commute with `𝔞`. The hypothesis-free statement needs `P = M·exp(𝔞)·N`.
-- `O(p, q)` with `p > q ≥ 1` and `𝔞` spanned by the `E_{i, p+i} + E_{p+i, i}`, `i ≤ q`: `M` contains `diag(ε, k', ε)` with `ε ∈ {±1}^q` and `k' ∈ O(p − q)`. Its block determinants `(Πε·det k', Πε)` take all four values, so `M` meets all four components and `LinearComponentCondition` holds. For `p = q` there is no `k'`, only two of the four values occur, and the condition fails.
+- `O(p, q)` with `p > q ≥ 1` and `𝔞` spanned by the `E_{i, p+i} + E_{p+i, i}`, `i ≤ q`: `M` contains `diag(ε, k', ε)` with `ε ∈ {±1}^q` and `k' ∈ O(p − q)`. Its block determinants `(Πε·det k', Πε)` take all four values, so `M` meets all four components and `LinearComponentCondition` holds. For `p = q ≥ 1` there is no `k'`, only the two values `(1, 1)` and `(−1, −1)` occur, and the condition fails. For `p = q = 0`, `O(0, 0) = 1`, `𝔞 = 0` and `M = G`, so its single component meets `M` and the condition holds.
 - `SL_3(ℝ)` with `X = diag(1, 1, −2)` and `Y = diag(2, 2, −4)`: these have the same centralizer, the same dynamic parabolic and the same non-negative eigenspace sum, the `(2, 1)`-block upper triangular algebra. `X` and `diag(1, 0, −1)` have different centralizers and different parabolics. In `GL_2(ℝ)`, `Y = 0` and the scalar `Y = 1` have the same centralizer and the same eigenspace sum `𝔤`.
 
 ### Examples
 
-`GL_n(ℝ)`, `SL_n(ℝ)`, `Sp_{2n}(ℝ)`, `O(p, q)` for `p ≠ q` (component condition holds) and `O(p, p)` (fails), `O(1,1)` (fails), `Aut(𝔰𝔩_3(ℝ))` in `GL_8(ℝ)` (fails).
+`GL_n(ℝ)`, `SL_n(ℝ)`, `Sp_{2n}(ℝ)`, `O(p, q)` for `p ≠ q` (component condition holds), `O(p, p)` for `p ≥ 1` (fails) and `O(0, 0) = 1` (holds), `O(1,1)` (fails), `Aut(𝔰𝔩_3(ℝ))` in `GL_8(ℝ)` (fails).
 
 ### Dependencies
 

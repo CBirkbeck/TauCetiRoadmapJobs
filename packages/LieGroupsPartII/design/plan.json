@@ -197,7 +197,8 @@
       "mathlib:RootPairing.IsReduced",
       "tauceti:RootPairing.Base.existsUnique_map_eq",
       "tauceti:TauCeti.stabilizer_eq_closure_wallReflections",
-      "mathlib:RootPairing.weylGroup"
+      "mathlib:RootPairing.weylGroup",
+      "roadmap:LieGroups Layer 9"
      ],
      "api": [
       {
@@ -236,9 +237,9 @@
     },
     {
      "id": "2.3",
-     "kind": "definition",
-     "name": "IwasawaTriple.groupWeyl",
-     "statement": "W_G = N_K(𝔞)/Z_K(𝔞) acting on 𝔞 by Ad. Theorem: W_G acts faithfully and preserves Σ and multiplicities; for β ∈ Σ and nonzero X ∈ 𝔤^β some lieExp(c(X + dθX)) ∈ K⁰ normalizes 𝔞 and acts by s_β; N_{K⁰}(𝔞)/Z_{K⁰}(𝔞) = W(Σ), normal in W_G; N_G(𝔞) = N_K(𝔞)·A, Z_G(𝔞) = M·A with M ∩ A = 1, so N_G(𝔞)/Z_G(𝔞) ≅ W_G.",
+     "kind": "theorem",
+     "name": "IwasawaTriple.restrictedWeyl_comparison",
+     "statement": "Let W_G = N_K(𝔞)/Z_K(𝔞) be LieGroups Layer 9's restricted Weyl group (the actual normalizer quotient acting faithfully on 𝔞 by Ad, with normalizer representatives of the reflections s_β); it is consumed, not constructed. Prove the comparison with W(Σ): for β ∈ Σ and nonzero X ∈ 𝔤^β some lieExp(c(X + dθX)) ∈ K⁰ normalizes 𝔞 and acts by s_β (the base representatives lie in N_K(𝔞), not necessarily in K⁰); N_{K⁰}(𝔞)/Z_{K⁰}(𝔞) = W(Σ); W_G permutes Σ preserving multiplicities and W(Σ) is normal in W_G; N_G(𝔞) = N_K(𝔞)·A, Z_G(𝔞) = M·A with M ∩ A = 1, so N_G(𝔞)/Z_G(𝔞) ≅ W_G.",
      "hypotheses": [
       "G is a real finite-dimensional C^infinity Lie group (LieGroup I ∞ G, FiniteDimensional ℝ E, T2Space G, BoundarylessManifold I G), 𝔤 = LeftInvariantDerivation I G",
       "D = (C, B), with the full base Cartan datum C (including global model) and involution θ, is a reductive Cartan datum on G (target 1.1)",
@@ -252,29 +253,30 @@
       "target:1.1",
       "target:2.1",
       "roadmap:LieGroups Layer 9",
+      "roadmap:LieGroups Layer 1",
       "roadmap:LieGroups Layer 4",
       "roadmap:LieGroups Layer 7"
      ],
      "api": [
       {
-       "name": "faithful",
-       "role": "structure",
-       "statement": "W_G acts faithfully on 𝔞 and preserves Σ and dim 𝔤^β"
-      },
-      {
-       "name": "reflection_realized",
+       "name": "reflection_mem_identityComponent",
        "role": "constructor",
-       "statement": "each s_β is realized by an element of N_{K⁰}(𝔞)"
+       "statement": "for β ∈ Σ and nonzero X ∈ 𝔤^β, some lieExp(c(X + dθX)) ∈ K⁰ normalizes 𝔞 and acts by s_β"
       },
       {
        "name": "connected_part",
        "role": "characterisation",
-       "statement": "N_{K⁰}(𝔞)/Z_{K⁰}(𝔞) = W(Σ), a normal subgroup of W_G"
+       "statement": "N_{K⁰}(𝔞)/Z_{K⁰}(𝔞) = W(Σ) as groups of linear maps of 𝔞"
+      },
+      {
+       "name": "normal",
+       "role": "structure",
+       "statement": "W_G permutes Σ preserving dim 𝔤^β, and W(Σ) is a normal subgroup of W_G"
       },
       {
        "name": "normalizer_G",
        "role": "structure",
-       "statement": "N_G(𝔞) = N_K(𝔞)·A and Z_G(𝔞) = M·A"
+       "statement": "N_G(𝔞) = N_K(𝔞)·A and Z_G(𝔞) = M·A with M ∩ A = 1"
       }
      ],
      "tests": [
@@ -286,12 +288,12 @@
       {
        "name": "SL2",
        "kind": "computation",
-       "statement": "SL_2(ℝ): W_G = {1, s}, s the class of ((0,−1),(1,0)), acting on ℝ·diag(1,−1) by −1"
+       "statement": "SL_2(ℝ): W_G = {1, s}, s the class of ((0,−1),(1,0)) acting on ℝ·diag(1,−1) by −1; with X = E₁₂, dθX = −E₂₁ and c = −π/2 it is lieExp(c(X + dθX)) ∈ SO(2) = K⁰; c = −π/4 gives the rotation through π/4, sending diag(1,−1) to ((0,1),(1,0)) ∉ 𝔞"
       },
       {
        "name": "O11",
        "kind": "non-example",
-       "statement": "O(1,1): Σ = ∅, W(Σ) = 1, but diag(1,−1) ∈ K acts on 𝔞 by −1, so W_G ≅ ℤ/2 ≠ W(Σ)"
+       "statement": "O(1,1): Σ = ∅, W(Σ) = 1, but diag(1,−1) ∈ K acts on 𝔞 by −1, so W_G ≅ ℤ/2 ≠ W(Σ); K = {diag(±1,±1)}, K⁰ = {1}, so N_{K⁰}(𝔞)/Z_{K⁰}(𝔞) = 1 = W(Σ) as the comparison says"
       }
      ]
     },
@@ -402,7 +404,7 @@
      "id": "2.6",
      "kind": "construction",
      "name": "IwasawaTriple.toIwasawaData",
-     "statement": "Construct IwasawaData I G with the full underlying CartanInvolution, K=G^θ, maximal abelian 𝔞⊆𝔭, A=lieExp 𝔞, exact restrictedRoots=Σ, positiveRestrictedRoots=Σ⁺ and restrictedRootSpace β=𝔤^β; N=Nplus=lieExp 𝔫 and chamber={H∈𝔞:β(H)≥0 for β∈Σ⁺}. Prove exact nonzero-weight and eigenspace fields, positivity/sign/addition laws, closedness/connectedness/exponentiality of N, A exponential injectivity, normalization and Lie complement, positive-root generation of Nplus, chamber inequalities, containment, addition, scaling, span, tangent-topology closedness, normalizer coverage and full split-central lineality. Then apply the base iwasawaDecomposition and kakDecomposition.",
+     "statement": "Construct IwasawaData I G with the full underlying CartanInvolution, K=G^θ, maximal abelian 𝔞⊆𝔭, A=lieExp 𝔞, exact restrictedRoots=Σ, positiveRestrictedRoots=Σ⁺ and restrictedRootSpace β=𝔤^β; N=Nplus=lieExp 𝔫 and chamber={H∈𝔞:β(H)≥0 for β∈Σ⁺}. Prove exact nonzero-weight and eigenspace fields, positivity/sign/addition laws, closedness/connectedness/exponentiality of N, A exponential injectivity, normalization and Lie complement, positive-root generation of Nplus, chamber inequalities, containment, addition, scaling, span, tangent-topology closedness and full split-central lineality; normalizer coverage is LieGroups Layer 9's chamber coverage. Then apply the base iwasawaDecomposition and kakDecomposition.",
      "hypotheses": [
       "G is a real finite-dimensional C^infinity Lie group (LieGroup I ∞ G, FiniteDimensional ℝ E, T2Space G, BoundarylessManifold I G), 𝔤 = LeftInvariantDerivation I G",
       "D = (C, B), with the full base Cartan datum C (including global model) and involution θ, is a reductive Cartan datum on G (target 1.1)",
@@ -415,8 +417,7 @@
      "prerequisites": [
       "target:1.1",
       "target:2.1",
-      "roadmap:LieGroups Layer 9",
-      "target:2.3"
+      "roadmap:LieGroups Layer 9"
      ],
      "api": [],
      "tests": [
@@ -512,7 +513,10 @@
       "target:2.6",
       "roadmap:LieGroups Layer 0",
       "roadmap:LieGroups Layer 2",
-      "mathlib:Subgroup.centralizer"
+      "mathlib:Subgroup.centralizer",
+      "target:1.1",
+      "target:2.3",
+      "roadmap:LieGroups Layer 9"
      ],
      "api": [
       {
@@ -809,11 +813,12 @@
      ],
      "locator": {
       "source": "brown-rodriguezhertz-wang2022",
-      "where": "§1.2, equation (1), arXiv v2 lines 132–144"
+      "where": "§1.2, equation (1), p. 3 (connected semisimple, finite centre)"
      },
      "prerequisites": [
       "target:2.1",
-      "roadmap:LieGroups Layer 9"
+      "roadmap:LieGroups Layer 9",
+      "target:1.1"
      ],
      "api": [
       {
@@ -1424,7 +1429,7 @@
      ],
      "locator": {
       "source": "brown-rodriguezhertz-wang2022",
-      "where": "§1.2 (dynamical conventions); knapp2002 Ch. VII §7"
+      "where": "§1.2 (restricted roots and exponential coordinates on A and N, p. 4); knapp2002 Ch. VII §7"
      },
      "prerequisites": [
       "mathlib:NormedSpace.exp",
@@ -1439,7 +1444,7 @@
       {
        "name": "transpose",
        "role": "compatibility",
-       "statement": "θ maps dynamicParabolic G X onto dynamicParabolic G (−X)"
+       "statement": "for every subgroup G and matrix X, θ maps dynamicParabolic G X onto dynamicParabolic (θG) (−Xᵀ), θG = {θ g : g ∈ G}; when G is transpose-stable and X is symmetric this is dynamicParabolic G (−X)"
       },
       {
        "name": "zero",
@@ -1462,6 +1467,11 @@
        "name": "sign",
        "kind": "non-example",
        "statement": "X = diag(0,1) gives the lower triangular group; reversing t would swap them"
+      },
+      {
+       "name": "transport_nonsymmetric",
+       "kind": "non-example",
+       "statement": "GL_2(ℝ), X = ((1,1),(0,0)), g = I + X: gX = Xg, so g ∈ dynamicParabolic G X; in the eigenbasis S = ((1,−1),(0,1)) θ(g) becomes ((0,1),(−1/2,3/2)), whose −X-conjugates have entry e^t, so θ(g) ∉ dynamicParabolic G (−X); θ(g) commutes with Xᵀ and lies in dynamicParabolic G (−Xᵀ)"
       }
      ]
     },
@@ -1476,7 +1486,7 @@
      ],
      "locator": {
       "source": "brown-rodriguezhertz-wang2022",
-      "where": "§1.2; knapp2002 Ch. VII §7"
+      "where": "§1.2 (restricted roots and exponential coordinates on A and N, p. 4); knapp2002 Ch. VII §7"
      },
      "prerequisites": [
       "mathlib:NormedSpace.exp",
@@ -1497,6 +1507,11 @@
        "name": "zero",
        "role": "simp",
        "statement": "dynamicUnipotent G 0 = 1"
+      },
+      {
+       "name": "transpose",
+       "role": "compatibility",
+       "statement": "for every subgroup G and matrix X, θ maps dynamicUnipotent G X onto dynamicUnipotent (θG) (−Xᵀ); when G is transpose-stable and X is symmetric this is dynamicUnipotent G (−X)"
       }
      ],
      "tests": [
@@ -1537,7 +1552,7 @@
       {
        "name": "subgroup",
        "role": "structure",
-       "statement": "a closed subgroup"
+       "statement": "a subgroup, closed when G is closed"
       },
       {
        "name": "le_parabolic",
@@ -1547,7 +1562,7 @@
       {
        "name": "transpose",
        "role": "structure",
-       "statement": "θ-stable when X is symmetric"
+       "statement": "for every subgroup G and matrix X, θ maps dynamicLevi G X onto dynamicLevi (θG) Xᵀ; θ-stable when G is transpose-stable and X is symmetric"
       }
      ],
      "tests": [
@@ -1565,6 +1580,11 @@
        "name": "scalar",
        "kind": "degenerate",
        "statement": "X scalar gives G"
+      },
+      {
+       "name": "transport_not_stable",
+       "kind": "non-example",
+       "statement": "G = {((1,s),(0,1))}, closed and not transpose-stable, X = 0 symmetric: dynamicLevi G 0 = G but θ((1,1),(0,1)) = ((1,0),(−1,1)) ∉ G; it lies in dynamicLevi (θG) 0, θG the lower unitriangular group"
       }
      ]
     },
@@ -1657,7 +1677,7 @@
       {
        "name": "GL_n",
        "kind": "computation",
-       "statement": "GL_n(ℝ), 𝔞 diagonal: diag(−1,1,…,1) witnesses the determinant-negative component"
+       "statement": "For n ≥ 1, GL_n(ℝ), 𝔞 diagonal: diag(−1,1,…,1) ∈ M witnesses the determinant-negative component; at n = 0, GL_0(ℝ) = 1 has a single component, 𝔞 = 0 and the condition holds with no sign matrix"
       },
       {
        "name": "O11",
@@ -1667,7 +1687,7 @@
       {
        "name": "O_pq",
        "kind": "computation",
-       "statement": "O(p,q), p > q ≥ 1: M ∋ diag(ε, k', ε), ε ∈ {±1}^q, k' ∈ O(p−q), block determinants (Πε·det k', Πε) take all four values, so the condition holds; for p = q it fails"
+       "statement": "O(p,q), p > q ≥ 1: M ∋ diag(ε, k', ε), ε ∈ {±1}^q, k' ∈ O(p−q), block determinants (Πε·det k', Πε) take all four values, so the condition holds; for p = q ≥ 1 only (1,1) and (−1,−1) occur and it fails; O(0,0) = 1 has one component meeting M = G, so it holds"
       }
      ]
     },
@@ -1905,7 +1925,7 @@
       {
        "name": "GL_n_axiom_v",
        "kind": "computation",
-       "statement": "GL_n(ℂ) is connected and Ad(diag(−1,1,…,1)) = Ad(exp(iπE₁₁)) ∈ Int(𝔤𝔩_n(ℂ)); for O(1,1), Ad(diag(1,−1)) = −1 on 𝔰𝔬(1,1)_ℂ ∉ Int = {1}, as O(1,1)(ℂ) = O_2(ℂ) is disconnected"
+       "statement": "For n ≥ 1, GL_n(ℂ) is connected and Ad(diag(−1,1,…,1)) = Ad(exp(iπE₁₁)) ∈ Int(𝔤𝔩_n(ℂ)); at n = 0 the group and its Lie algebra are trivial, Ad is trivial and no matrix unit is used; for O(1,1), Ad(diag(1,−1)) = −1 on 𝔰𝔬(1,1)_ℂ ∉ Int = {1}, as O(1,1)(ℂ) = O_2(ℂ) is disconnected"
       }
      ]
     },
@@ -2024,7 +2044,7 @@
     "Layer 7",
     "Layer 9"
    ],
-   "what": "Full CartanInvolution with finite central matrix-cover model, polar diffeomorphism and compact maximal K, maximal-abelian conjugacy/exhaustion, exact IwasawaData, iwasawaDecomposition, kakDecomposition and restricted roots; LieGroups Layers 0–4,7 for Lie foundations and complexification. Native map_lieExp and lieMap_injective supply naturality and faithfulness."
+   "what": "Full CartanInvolution with finite central matrix-cover model, polar diffeomorphism and compact maximal K, maximal-abelian conjugacy/exhaustion, exact IwasawaData, iwasawaDecomposition, kakDecomposition, restricted roots, and the restricted Weyl group N_K(𝔞)/Z_K(𝔞) with normalizer representatives of the restricted reflections and chamber coverage; LieGroups Layers 0–4,7 for Lie foundations and complexification. Native map_lieExp and lieMap_injective supply naturality and faithfulness."
   },
   {
    "roadmap": "RootSystems",
@@ -2036,10 +2056,9 @@
   {
    "roadmap": "ReductiveGroups",
    "sections": [
-    "Layer 7",
-    "Layer 7b"
+    "Layer 7"
    ],
-   "what": "Layer 7: parabolic k-subgroups, cocharacter P_H(λ), U_H(λ), Z_H(λ), maximal split tori, relative root system and Weyl group, Bruhat/Weyl double-coset theorem; Layer 7b: additional Levi-intersection comparisons"
+   "what": "Layer 7: parabolic k-subgroups of a connected reductive group over a field with unipotent radicals and Levi decompositions, the cocharacter description P_H(λ), U_H(λ), Z_H(λ) (every parabolic k-subgroup is some P_H(λ)), and the possibly non-reduced relative root system of a maximal k-split torus. Layer 7's Bruhat decomposition and Tits system of H(k) assume a split maximal torus and a Borel subgroup containing it and are not consumed."
   },
   {
    "roadmap": "ArithmeticLocallySymmetricSpaces",
