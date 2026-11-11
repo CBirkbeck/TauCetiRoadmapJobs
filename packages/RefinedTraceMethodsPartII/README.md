@@ -45,7 +45,7 @@ Big Witt vectors use QWittVectors' coordinate model on a truncation set S. `W_S(
 
 Prismatic conventions follow PrismaticCohomologyPartII and PrismaticCohomologyPartIII. `Δ_R{i}` is the Breuil–Kisin twisted absolute prismatic cohomology, `N^{≥i}Δ̂_R{i}` its Nygaard filtration, and `ℤ_p(i)(R) = fib(can − φ_i : N^{≥i}Δ̂_R{i} → Δ̂_R{i})`. Cohomological degrees are written `H^j`, with `H^j(C) = π_{−j}(C)`. For a δ-ring A and an A-algebra R, `Δ_{R/A}` is the prismatic package of Layer 8.
 
-A finite chain ring is `R = O_K/ϖ^n` with K/ℚ_p finite, `e = v_K(p)`, residue field `𝔽_q` with q = p^f, and n ≥ 1. Put `j = ⌈n/e⌉` (the exponent of the additive group of R) and `[j]_p = 1 + p + ⋯ + p^{j−1}`. The class `v₁ ∈ H⁰(𝔽_p(p−1)(ℤ_p))` is akn24's; for p odd it is the image of the Adams class.
+A finite chain ring is `R = O_K/ϖ^n` with K/ℚ_p finite, `e = v_K(p)`, residue field `𝔽_q` with q = p^f, and n ≥ 1. Put `j = ⌈n/e⌉`, the least integer with `p^jR = 0`, so that the additive group of R has exponent `p^j`, and `[j]_p = 1 + p + ⋯ + p^{j−1}`. The class `v₁ ∈ H⁰(𝔽_p(p−1)(ℤ_p))` is akn24's; for p odd it is the image of the Adams class.
 
 **Pinned witnesses.**
 
@@ -230,13 +230,14 @@ For a finite chain ring with invariants (p, e, f, n) put `j = ⌈n/e⌉`, `[j]_p
 
 **Checks.**
 
+- The additive exponent of R is `p^j`, not j. Since `p = uϖ^e` with u a unit, `p^jR = 0` exactly when ej ≥ n, so `⌈n/e⌉` is the least such j and the additive exponent is `p^j`. For ℤ/4, j = 2 and 2·1 ≠ 0 = 4·1, so the exponent is 4; for 𝔽_2 (n = 1), j = 1 and the exponent is 2. For `ℤ_2[√2]/(√2)³` (e = 2, n = 3), j = 2: `2 = (√2)²` is nonzero while `4 = (√2)⁴` vanishes, so the exponent is 4 = 2^j, whereas the unramified reading j = n would give 8.
 - For ℤ/4 (p = 2, e = 1, n = 2): j = 2, [2]_2 = 3 and B = 2·(2·3 − 4·0) = 12. The even vanishing theorem therefore applies from i = 13.
 - For 𝔽_2[z]/z³, viewed as `O_K/ϖ³` with e = 3: j = 1 and B = 4·3/3 = 4, so i ≥ 5. As e → ∞ the threshold tends to 0. The weaker bound p²(p^j − 1)/(p − 1)² = 4 does not tend to 0.
 - For i = 2 and n = 2, the indices 1 ≤ j′ ≤ 3 not divisible by 2 are {1,3}, so the count is 2 = 2·1. For n = 1 every j′ is divisible by n and the count is 0 = i·0. This is consistent with `|K_{2i−1}(𝔽_q)|/|K_{2i−2}(𝔽_q)| = q^i − 1` being prime to p.
 
 ### Examples
 
-For (a,b) = (2,3) the truncation sets are S(2,3,0) = {1,2,3,4,6} and S(2,3,1) = {1,…,10,12}, with coprime parts {1} and {1,5,7}. For d = 3 the first word counts are cyc_3(2), …, cyc_3(6) = 3, 2, 3, 6, 9. For ℤ/p^n the exponent is j = n and the threshold is p²(p^n − 1)/(p−1)².
+For (a,b) = (2,3) the truncation sets are S(2,3,0) = {1,2,3,4,6} and S(2,3,1) = {1,…,10,12}, with coprime parts {1} and {1,5,7}. For d = 3 the first word counts are cyc_3(2), …, cyc_3(6) = 3, 2, 3, 6, 9. For ℤ/p^n, j = n, the additive group has exponent p^n, and the threshold is p²(p^n − 1)/(p−1)².
 
 ### Dependencies
 
@@ -489,7 +490,7 @@ Prove the following for every ring k.
 
 ### 4.3 Relative versus birelative K-theory
 
-Prove the following. If `NK_n(k) = 0` for every integer n, then `K(A_d,I_d) ≃ K(A_d,B_d,I_d)`, and for the cusp `K(A,(x,y)) ≃ fib(IK(A) → IK(k[t]))`. Here `A → A/(x,y) = k` and `A_d → k` are split by the inclusion of constants, so `IK_q(A) = IK_q(k) ⊕ K_q(A,(x,y))`. The hypothesis holds for every regular noetherian ring k (SchemeKTheoryOperations §5.2), and for every ind-smooth ℚ-algebra, because NK commutes with filtered colimits. For a perfect 𝔽_p-algebra it is gap `perfect-homotopy-invariance` (amm-perfectoid Proposition 5.1, line 558; hn-cusp line 101; speirs-axes line 128; hesselholt-axes line 55).
+Prove the following. If `NK_n(k) = 0` for every integer n, then `K(A_d,I_d) ≃ K(A_d,B_d,I_d)`, and for the cusp `K(A,(x,y)) ≃ fib(IK(A) → IK(k[t]))`. Here `A → A/(x,y) = k` and `A_d → k` are split by the inclusion of constants, so `IK_q(A) = IK_q(k) ⊕ K_q(A,(x,y))`. The hypothesis holds for every regular noetherian ring k (SchemeKTheoryOperations §5.2), and for every ind-smooth ℚ-algebra, because NK commutes with filtered colimits. For a perfect 𝔽_p-algebra it is gap `perfect-homotopy-invariance` (amm-perfectoid Proposition 5.1, line 558; hn-cusp line 101; riggenbach-cusp line 152; speirs-axes line 128; hesselholt-axes line 55).
 
 *Needs:* §4.1; SchemeKTheoryOperations §5.2; GeneralAlgebraicKTheory §10.5; gap `perfect-homotopy-invariance` (perfect 𝔽_p-algebras that are not regular noetherian).
 
@@ -700,7 +701,8 @@ For a bounded δ-ring A, define first the ∞-category G_A of quadruples (H, N, 
 
 **Checks.**
 
-- For A = R = ℤ_p in weight 0: `Δ̂_{ℤ_p} = ℤ_p` with φ = id and `N^{≥0}` everything, so `ℤ_p(0)(ℤ_p) = fib(0 : ℤ_p → ℤ_p) = ℤ_p ⊕ ℤ_p[−1]`. This matches `H^*_ét(Spec ℤ_p; ℤ_p)`. A definition using can alone would give `fib(id) = 0`.
+- For A = ℤ_p and R = 𝔽_p in weight 0: the package is the absolute one of 𝔽_p (§8.3 (3)), with `Δ̂_{𝔽_p} = ℤ_p` in degree 0, `N^{≥0}` everything and φ = id, the Frobenius of `W(𝔽_p) = ℤ_p`, which is an isomorphism (PrismaticCohomologyPartII §§4.18 and 4.31, Checks). So `ℤ_p(0)(𝔽_p) = fib(0 : ℤ_p → ℤ_p) = ℤ_p ⊕ ℤ_p[−1]`. This matches `H^*_ét(Spec 𝔽_p; ℤ_p)`, and `TC_{−1}(𝔽_p) = ℤ_p` (§9.1 Checks) through `gr^0TC = ℤ_p(0)`. A definition using can alone would give `fib(id) = 0`.
+- Negative control: the absolute package of ℤ_p is not of this form. `Δ_{ℤ_p}` is Nygaard-complete, because ℤ_p is p-torsion free and `ℤ_p/p = 𝔽_p` is regular noetherian (PrismaticCohomologyPartII §4.29), and its Frobenius is not an isomorphism: its cofibre is `ℤ_p[−1]` (PrismaticCohomologyPartII §4.31, Checks). A model `Δ̂_{ℤ_p} = ℤ_p` with φ = id has cofibre 0 and is excluded; in particular the unit package of `C_{ℤ_p}` below is not the prismatic package of ℤ_p.
 - For the absolute package of 𝔽_2 (`Δ̂ = ℤ_2`, `N^{≥n} = 2^nℤ_2`, `cφ = φ/2`) and i = 1, the map `can − cφ` sends 2a to a, so `ℤ_2(1)(𝔽_2) = 0`, as it must be since `𝔽_2^×` is trivial. With j = 3 (so (p−1)j = 3 > pi = 2), `can : N^{≥3}/2 → N^{≥2}/2` is zero (`8b ∈ 2·4ℤ_2`). The mod-p cφ factors through `can : N^{≥4}/2 → N^{≥2}/2`, which is also zero, so `can − cφ = 0 = can ∘ id` there. The top row of the comparison square is an automorphism with zero fibre, and the finite-stage formula gives 0 again. The naive reduction of the integral divided Frobenius `8ℤ_2 → 4ℤ_2`, `8b ↦ 4b`, is nonzero in `N^{≥2}/2 = 4ℤ_2/8ℤ_2` for b odd, and no automorphism α makes `can ∘ α = 0` equal to it. So the factorization needs the filtered structure of c, and fails for a package whose c is only a map `H^{≥0} → N^{≥0}`. With j = 1, allowed by the printed bound (p−1)j ≥ i, it gives `fib(0 → (ℤ_2/2ℤ_2) ⊗^L 𝔽_2) = 𝔽_2 ⊕ 𝔽_2[−1] ≠ 0`.
 - For the Breuil–Kisin pair `(ℤ_2⟦z⟧, ℤ_2)` with z ↦ 2, E(z) = z − 2, p = 2 and i = 1, `ℤ_2(1) = fib(E·ℤ_2⟦z⟧ → ℤ_2⟦z⟧, fE ↦ fE − φ(f))` (akn24 line 2337, with p − 1 = 1), which modulo 2 is `fz ↦ fz + f²` on `k⟦z⟧`, k = 𝔽_2. Directly: H⁰ = k (from f = z) and H¹ = k², since the image is cut out by b₀ = b₁ and b₂ = 0. The formula with j = 3 has source `⟨z, z²⟩`, target `k⟦z⟧/z³`, and sends z ↦ 1 + z, z² ↦ 0, so H⁰ = k and H¹ = k², as it must. With j = 2, allowed by the printed bound but not by (p−1)j > pi, the source `⟨z⟩` maps injectively into `k⟦z⟧/z²`, giving H⁰ = 0 and H¹ = k, which is wrong. A target quotient by `N^{≥j−i}` instead of `N^{≥j}` gives, for j = 3, the map `⟨z, z²⟩ → k⟦z⟧/z²` with H⁰ = k and H¹ = k, also wrong.
 - For the zero object of G_A (all objects zero), every syntomic complex is zero, as preservation of the empty colimit requires; the zero package is also the terminal object of C_A, consistent with preservation of the empty limit. The unit package of `C_{ℤ_p}` (the trivial filtration on ℤ_p in weight 0, c the canonical map, φ = id) is initial in `C_{ℤ_p}`, and `ℤ_p(0)` sends it to `fib(id − id = 0 : ℤ_p → ℤ_p) = ℤ_p ⊕ ℤ_p[−1] ≠ 0`. So the syntomic functors do not preserve all colimits on C_A, only the sifted ones.
@@ -783,7 +785,7 @@ Prove the comparison of completions (akn24 Theorem 2.20, line 457). For a filter
 
 ### Examples
 
-For R = ℤ/p^n over the Breuil–Kisin pair (ℤ_p⟦z⟧, z ↦ p), the relative prismatic cohomology `Δ_{R/ℤ_p⟦z⟧}` is the prismatic envelope `ℤ_p⟦z⟧{z^n/E(z)}^∧` with E(z) = z − p. Its filtered version is discrete with an explicit W(k)-basis (Layer 9, §9.5).
+For R = ℤ/p^n over the Breuil–Kisin pair (ℤ_p⟦z⟧, z ↦ p), the relative prismatic cohomology `Δ_{R/ℤ_p⟦z⟧}` is the prismatic envelope `ℤ_p⟦z⟧{z^n/E(z)}^∧` with E(z) = z − p. Its filtered version is discrete with an explicit W(k)-basis (§9.4).
 
 ### Dependencies
 
