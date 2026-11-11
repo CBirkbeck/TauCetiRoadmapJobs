@@ -257,6 +257,7 @@
      "prerequisites": [
       "gap:sigma-finite-hilbert-schmidt-kernels",
       "roadmap:AutomorphicSpectralTheory §0.8",
+      "roadmap:AutomorphicSpectralTheory §0.9",
       "roadmap:OperatorIdeals OI-B32",
       "roadmap:OperatorIdeals OI-B36",
       "roadmap:OperatorIdeals OI-B41",
@@ -274,7 +275,7 @@
       {
        "name": "kernel_isometry",
        "role": "isometry",
-       "statement": "A -> k_A is linear with ||k_A||_{L2} = ||A||_2 and <k_A, k_B> = Tr(A* B)"
+       "statement": "A -> k_A is linear with ||k_A||_{L2} = ||A||_2 and, for A, B in S_2(L2(nu), L2(mu)), <k_A, k_B>_{L2(mu x nu)} = Tr(A* B): polarise ||k_A||_2^2 = ||A||_2^2 = sum_j ||A e_j||^2 (OperatorIdeals OI-B32-OI-B35) and use the basis formula Tr(A* B) = sum_j <A e_j, B e_j> (AutomorphicSpectralTheory §0.9)"
       },
       {
        "name": "kernel_finite",
@@ -314,7 +315,7 @@
      "id": "2.2",
      "kind": "theorem",
      "name": "SchattenClasses.kernel_calculus",
-     "statement": "For A in S_2(L2(nu), L2(mu)), B in S_2(L2(lambda), L2(nu)), u in L2(mu), v in L2(nu), f in Linf(mu), g in Linf(nu): k_{u (x) v*}(x,y) = u(x) conj v(y); k_{A*}(y,x) = conj k_A(x,y); AB in S_1 with k_{AB}(x,z) = int k_A(x,y) k_B(y,z) dnu(y) a.e.; k_{D_f A D_g}(x,y) = f(x) k_A(x,y) g(y); and Tr(A C) = int int k_A(x,y) k_C(y,x) for C in S_2(L2(mu), L2(nu)), obtained from the one-space formula of the gap on the disjoint union of (Omega, mu) and (Omega', nu) applied to the extensions of A and C by zero.",
+     "statement": "For A in S_2(L2(nu), L2(mu)), B in S_2(L2(lambda), L2(nu)), u in L2(mu), v in L2(nu), f in Linf(mu), g in Linf(nu): k_{u (x) v*}(x,y) = u(x) conj v(y); k_{A*}(y,x) = conj k_A(x,y); AB in S_1 with k_{AB}(x,z) = int k_A(x,y) k_B(y,z) dnu(y) a.e.; k_{D_f A D_g}(x,y) = f(x) k_A(x,y) g(y); and, for C in S_2(L2(mu), L2(nu)), Tr(A C) = int int k_A(x,y) k_C(y,x) dmu(x) dnu(y) with integrable integrand and |Tr(AC)| <= ||A||_2 ||C||_2, obtained from Tr(AC) = <k_{A*}, k_C>_{L2(nu x mu)} (the polarised kernel isometry of target 2.1 for the pair (A*, C)) and the adjoint kernel.",
      "hypotheses": [
       "sigma-finite measure spaces"
      ],
@@ -325,8 +326,8 @@
      "prerequisites": [
       "target:2.1",
       "gap:sigma-finite-hilbert-schmidt-kernels",
+      "roadmap:AutomorphicSpectralTheory §0.8",
       "roadmap:AutomorphicSpectralTheory §0.9",
-      "roadmap:AutomorphicSpectralTheory §0.10",
       "roadmap:VonNeumannAlgebras V4.Core",
       "mathlib:MeasureTheory.integral_prod"
      ],
@@ -841,9 +842,9 @@
      "id": "5.2",
      "kind": "theorem",
      "name": "SchattenClasses.schurMultiplier_martingale",
-     "statement": "For a directed family (B_alpha) of sub-sigma-algebras, mu sigma-finite on each, generating B, and f in Linf(B x B) with f_alpha = E[f | B_alpha x B_alpha] (target 2.5): ||f||_{S_p(L2(B))} = sup_alpha ||f_alpha||_{S_p(L2(B_alpha))}, the net nondecreasing; the same for cb norms.",
+     "statement": "For a nonempty directed family (B_alpha) of sub-sigma-algebras, mu sigma-finite on each, generating B, and f in Linf(B x B) with f_alpha = E[f | B_alpha x B_alpha] (target 2.5): ||f||_{S_p(L2(B))} = sup_alpha ||f_alpha||_{S_p(L2(B_alpha))}, the net nondecreasing; the same for cb norms.",
      "hypotheses": [
-      "directed family generating B",
+      "nonempty directed family generating B",
       "mu sigma-finite on each B_alpha"
      ],
      "locator": {
@@ -853,7 +854,7 @@
      "prerequisites": [
       "target:2.5",
       "target:3.3",
-      "target:3.5",
+      "target:3.6",
       "target:5.1",
       "mathlib:MeasureTheory.lpMeas",
       "mathlib:MeasureTheory.condExpL2"
@@ -877,7 +878,7 @@
      "prerequisites": [
       "target:2.5",
       "target:3.3",
-      "target:3.5",
+      "target:3.6",
       "target:3.7",
       "target:5.1",
       "mathlib:MeasureTheory.Integrable.tendsto_ae_condExp",
@@ -1207,8 +1208,8 @@
      "prerequisites": [
       "target:3.1",
       "target:3.3",
+      "target:3.5",
       "target:3.7",
-      "target:6.4",
       "mathlib:MeasureTheory.MeasurePreserving"
      ],
      "api": [
@@ -1237,7 +1238,7 @@
       {
        "name": "toeplitz_cos",
        "kind": "computation",
-       "statement": "m = cos(2 pi <a,.>): xi(x) = eta(x) = (e_a(x), e_{-a}(x))/sqrt 2 gives <xi(x),eta(y)> = cos(2 pi <a, x - y>), so ||S_{M_m}||_infinity = 1"
+       "statement": "m = cos(2 pi <a,.>): M_m = (M_{e_a} + M_{e_{-a}})/2, each S_{M_{e_{+-a}}} a conjugation by the diagonal unitary D_{e_{+-a}} with norm and cb norm at most 1, so ||S_{M_m}||_p <= ||S_{M_m}||_{cb,p} <= (1 + 1)/2 = 1 for every p; equality for every p, since for u the normalised indicator of a small ball about 0, S_{M_m}(u (x) u*) = (cu) (x) (cu)* + (su) (x) (su)* (c = cos, s = sin of 2 pi <a,.>) is positive with operator norm >= ||cu||^2 -> 1 while ||u (x) u*||_p = 1"
       },
       {
        "name": "toeplitz_null",
@@ -1317,7 +1318,7 @@
      "id": "9.3",
      "kind": "construction",
      "name": "SchattenClasses.folnerCompression",
-     "statement": "For g in L2(R^n; F_k) and bounded measurable F of positive measure, Lambda_F(g) is the Hilbert-Schmidt operator on L2(F) (x) C^k with kernel 1_F(s) (F^{-1} g)(s - t) 1_F(t). Then ||Lambda_F(g)||_p <= |F|^(1/p) ||g||_{Lp(S_p^k)} for g in L1 cap Linf; |Q_R|^{-1} Tr(Lambda_{Q_R}(g) Lambda_{Q_R}(h)) -> int tr(g h); ||g||_{Lp(S_p^k)} <= liminf |Q_R|^{-1/p} ||Lambda_{Q_R}(g)||_p for g in L2, with equality and a limit for g in L1 cap Linf; and Lambda_F(F(m F^{-1} g)) = S_{M_m}(Lambda_F(g)).",
+     "statement": "For g in L2(R^n; F_k) and bounded measurable F of positive measure, Lambda_F(g) is the Hilbert-Schmidt operator on L2(F) (x) C^k with kernel 1_F(s) (F^{-1} g)(s - t) 1_F(t). Then ||Lambda_F(g)||_p <= |F|^(1/p) ||g||_{Lp(S_p^k)} for g in L2 cap Lp(R^n; S_p^k) (L2 cap Linf at p = infinity), first for g in L1 cap Linf by the endpoints and noncommutative Riesz-Thorin, then by the truncations g_j = g 1_{||g|| <= j} 1_{|xi| <= j}, ||Lambda_F(h)||_2 <= |F|^(1/2) ||h||_2 and lower semicontinuity of the gauge; |Q_R|^{-1} Tr(Lambda_{Q_R}(g) Lambda_{Q_R}(h)) -> int tr(g h); ||g||_{Lp(S_p^k)} <= liminf |Q_R|^{-1/p} ||Lambda_{Q_R}(g)||_p for g in L2, with equality and a limit when also g in Lp(R^n; S_p^k); and Lambda_F(F(m F^{-1} g)) = S_{M_m}(Lambda_F(g)).",
      "hypotheses": [
       "n >= 1",
       "Q_R = [-R, R]^n",
@@ -1328,6 +1329,7 @@
       "where": "Theorem 5.1, line 529; Theorem 5.2, line 543"
      },
      "prerequisites": [
+      "target:1.1",
       "target:3.5",
       "target:4.1",
       "target:9.1",
@@ -1340,7 +1342,7 @@
       {
        "name": "folner_upper",
        "role": "upper bound",
-       "statement": "||Lambda_F(g)||_p <= |F|^(1/p) ||g||_p"
+       "statement": "||Lambda_F(g)||_p <= |F|^(1/p) ||g||_p for g in L2 cap Lp(R^n; S_p^k) (L2 cap Linf at p = infinity)"
       },
       {
        "name": "folner_pairing",
@@ -1350,7 +1352,7 @@
       {
        "name": "folner_lower",
        "role": "asymptotic isometry",
-       "statement": "||g||_p <= liminf |Q_R|^{-1/p} ||Lambda_{Q_R}(g)||_p"
+       "statement": "||g||_p <= liminf |Q_R|^{-1/p} ||Lambda_{Q_R}(g)||_p for g in L2, with equality and a limit when also g in Lp"
       },
       {
        "name": "folner_intertwine",
@@ -1929,10 +1931,9 @@
    "roadmap": "AutomorphicSpectralTheory",
    "sections": [
     "§0.8",
-    "§0.9",
-    "§0.10"
+    "§0.9"
    ],
-   "what": "The L2 kernel operator with kernel_apply, kernel_unique, kernel_norm; the complex trace; kernel_trace_diagonal; requested at the generality of arbitrary sigma-finite measure spaces (gap sigma-finite-hilbert-schmidt-kernels)."
+   "what": "The L2 kernel operator with kernel_apply, kernel_unique, kernel_norm (§0.8), requested at the generality of arbitrary sigma-finite measure spaces (gap sigma-finite-hilbert-schmidt-kernels); the complex trace with its basis formula Tr(BC) = sum_j <B* e_j, C e_j> for Hilbert-Schmidt B, C (§0.9). The trace formula is derived in target 2.2."
   },
   {
    "roadmap": "CStarAlgebras",
@@ -1977,10 +1978,10 @@
     "2.2",
     "2.4"
    ],
-   "detail": "AutomorphicSpectralTheory §0.8 states the kernel operator T_K, kernel_apply, kernel_unique and kernel_norm on sigma-finite standard Borel spaces with separable L2, and §0.10 the trace formula Tr(T_1 T_2) = int int K_1(x,y) K_2(y,x). Layers 2, 5 and 7 need them for arbitrary sigma-finite measure spaces, including sub-sigma-algebras of a standard Borel space, which are not standard Borel. A route without countable orthonormal bases: VonNeumannAlgebras V2.RectangularL2 composed with the unitary S_2(L2(nu), L2(mu)) = L2(mu) (x) conj(L2(nu)) of V4.Core, identified with the integral formula on rank-one kernels and extended by continuity.",
-   "needs": "For arbitrary sigma-finite measure spaces (X, mu) and (Y, nu), with no standard Borel or separability hypothesis: the kernel operator T_K : L2(Y, nu) -> L2(X, mu), T_K f(x) = int K(x, y) f(y) dnu(y) for almost every x, of every K in L2(mu x nu), with K -> T_K a linear embedding of L2(mu x nu) into the bounded operators, isometric for the Hilbert-Schmidt norm: ||T_K||_HS = ||K||_2 (§0.8: kernel_apply, kernel_unique, kernel_norm), and Tr(T_1 T_2) = int int K_1(x, y) K_2(y, x) dmu(x) dmu(y) for K_1, K_2 in L2(mu x mu) (§0.10, first assertion).",
+   "detail": "AutomorphicSpectralTheory §0.8 states the kernel operator T_K, kernel_apply, kernel_unique and kernel_norm on sigma-finite standard Borel spaces with separable L2. Layers 2, 5 and 7 need it for arbitrary sigma-finite measure spaces, including sub-sigma-algebras of a standard Borel space, which are not standard Borel. The trace formula Tr(AC) = int int k_A(x,y) k_C(y,x) is not requested: target 2.2 derives it from the polarised kernel isometry of target 2.1 applied to (A*, C) and the adjoint kernel. A route without countable orthonormal bases: VonNeumannAlgebras V2.RectangularL2 composed with the unitary S_2(L2(nu), L2(mu)) = L2(mu) (x) conj(L2(nu)) of V4.Core, identified with the integral formula on rank-one kernels and extended by continuity.",
+   "needs": "For arbitrary sigma-finite measure spaces (X, mu) and (Y, nu), with no standard Borel or separability hypothesis: the kernel operator T_K : L2(Y, nu) -> L2(X, mu), T_K f(x) = int K(x, y) f(y) dnu(y) for almost every x, of every K in L2(mu x nu), with K -> T_K a linear embedding of L2(mu x nu) into the bounded operators, isometric for the Hilbert-Schmidt norm: ||T_K||_HS = ||K||_2 (§0.8: kernel_apply, kernel_unique, kernel_norm).",
    "supplier": "AutomorphicSpectralTheory",
-   "section": "§0.8 (and §0.10)"
+   "section": "§0.8"
   },
   {
    "slug": "semifinite-martingale-bmo-interpolation",

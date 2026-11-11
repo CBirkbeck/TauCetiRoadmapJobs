@@ -80,11 +80,14 @@ It leaves to named roadmaps, and consumes from them by section:
   space and its interpolation inequality with the sharp order `O(p)` are requested of
   NoncommutativeIntegration, Part II (gap `semifinite-martingale-bmo-interpolation`).
 - **AutomorphicSpectralTheory** owns the kernel operator `T_k` of an `L²` kernel with
-  `kernel_apply`, `kernel_unique` and `kernel_norm` (§0.8), the complex operator trace (§0.9) and
-  the trace formula `Tr(T₁T₂) = ∫∫ K₁(x, y)K₂(y, x)` (§0.10). Its §0.8 is stated for standard
-  Borel spaces; the arbitrary σ-finite version that Layers 2, 5 and 7 need (sub-σ-algebras of a
+  `kernel_apply`, `kernel_unique` and `kernel_norm` (§0.8) and the complex operator trace with its
+  basis formula for Hilbert–Schmidt products (§0.9). Its §0.8 is stated for standard Borel
+  spaces; the arbitrary σ-finite version that Layers 2, 5 and 7 need (sub-σ-algebras of a
   standard Borel space are not standard Borel) is requested of AutomorphicSpectralTheory §0.8
-  (gap `sigma-finite-hilbert-schmidt-kernels`).
+  (gap `sigma-finite-hilbert-schmidt-kernels`). Its trace formula
+  `Tr(T₁T₂) = ∫∫ K₁(x, y)K₂(y, x)` (§0.10) is stated on one space at the generality of its §0.8;
+  §2.2 proves it for two arbitrary σ-finite spaces from the kernel isometry and the adjoint
+  kernel.
 - **CStarAlgebras** owns the C*-algebra of compact operators (C1.6) and completely bounded maps of
   operator spaces with Smith's lemma (C3.2); Layer 1 compares its amplification norm at `p = ∞`
   with C3.2.
@@ -229,6 +232,31 @@ differences, which belong to SchattenClassesAndSchurMultipliers, Part II (Downst
   `WeaklyLocallyCompactSpace` and `μ.Regular` (the last holds for a finite Radon measure on a
   Hausdorff space with its Borel σ-algebra). A locally compact Hausdorff space need not be
   normal, so this covers only the normal (for instance second-countable) case of §8.2.
+- `WithLp` (`Mathlib/Analysis/Normed/Lp/WithLp.lean`) with `PiLp.innerProductSpace`
+  (`Mathlib/Analysis/InnerProductSpace/PiL2.lean`): `WithLp 2 (Fin m → H)` is the Hilbert sum `H^m`
+  of `m` copies of `H`, with inner product `Σ_i ⟨x_i, y_i⟩`; the bare type synonym carries no norm
+  (§1.4).
+- `MeasureTheory.integral_prod` (`Mathlib/MeasureTheory/Integral/Prod.lean`): Fubini's theorem, the
+  integral of a `μ.prod ν`-integrable function equals the iterated integral, for s-finite `μ` and
+  `ν` (`MeasureTheory.SFinite`, implied by σ-finiteness) (§2.1, §2.2).
+- `MeasureTheory.Measure.withDensity` (`Mathlib/MeasureTheory/Measure/WithDensity.lean`): the
+  measure `w · μ` with `(w · μ)(A) = ∫⁻_A w dμ` for measurable `A` and `w : Ω → [0, ∞]` (§2.5).
+- `Matrix.toEuclideanCLM` (`Mathlib/Analysis/CStarAlgebra/Matrix.lean`): the star-algebra
+  isomorphism between `Matrix ι ι ℂ` and the bounded operators on `EuclideanSpace ℂ ι` given by the
+  standard orthonormal basis; `Matrix.kroneckerMap` (`Mathlib/LinearAlgebra/Matrix/Kronecker.lean`):
+  the Kronecker product `(A ⊗ B)_{(i,k),(j,l)} = f(A_{ij}, B_{kl})`; `Matrix.transpose`
+  (`Mathlib/LinearAlgebra/Matrix/Defs.lean`) (§2.3, §3.4).
+- `lp` (`Mathlib/Analysis/Normed/Lp/lpSpace.lean`) with its inner product at exponent `2`
+  (`Mathlib/Analysis/InnerProductSpace/l2Space.lean`): the Hilbert space `ℓ²(ℕ)` (§6.2).
+- `geometric_hahn_banach_point_closed` (`Mathlib/Analysis/LocallyConvex/Separation.lean`): in a real
+  locally convex topological vector space, a point outside a closed convex set is strictly
+  separated from it by a continuous real-linear functional (§6.3, applied to a finite-dimensional
+  real space).
+- `ContDiffBump.ae_convolution_tendsto_right_of_locallyIntegrable`
+  (`Mathlib/Analysis/Calculus/BumpFunction/Convolution.lean`): on a finite-dimensional real normed
+  space with an additive Haar measure, for normalised smooth bumps `φ_i` whose outer radius tends
+  to `0` with outer radius at most a fixed multiple of the inner radius, `φ_i ⋆ g → g` almost
+  everywhere for every locally integrable `g` with values in a complete real normed space (§9.5).
 - `MeasureTheory.NullSingletonClass`: null singletons (used only in a Check).
 - `UnitAddTorus`: the torus `𝕋ⁿ = Fin n → UnitAddCircle` with its Haar probability measure.
 - `iteratedFDeriv`, `ContDiffOn`, `MeasureTheory.eLpNorm`, `MeasureTheory.AEStronglyMeasurable`.
@@ -357,14 +385,14 @@ semifinite operator-valued filtrations (gap `semifinite-martingale-bmo-interpola
   linear embedding of `L²(X × Y)` into the bounded operators, isometric for the Hilbert–Schmidt
   norm) and `kernel_norm`
   (`‖T_K‖_{HS} = ‖K‖₂`).
-- §0.9: the complex trace on the trace class with `Tr(BC) = Σ_j ⟨B* e_j, C e_j⟩` for
-  Hilbert–Schmidt `B, C`.
-- §0.10: `kernel_trace_diagonal`, `Tr(T₁T₂) = ∫∫ K₁(x, y) K₂(y, x) dμ(x) dμ(y)` for
-  `K₁, K₂ ∈ L²(X × X)`.
+- §0.9: the complex trace on the trace class with the absolutely convergent basis formula
+  `Tr(BC) = Σ_j ⟨B* e_j, C e_j⟩` and `‖BC‖₁ ≤ ‖B‖_HS ‖C‖_HS` for Hilbert–Schmidt `B, C`, on
+  arbitrary complex Hilbert spaces.
 
-AutomorphicSpectralTheory must provide §0.8 and the first assertion of §0.10 for arbitrary
-σ-finite measure spaces `X`, `Y`, with no standard Borel or separability hypothesis on the
-measurable spaces or on `L²` (gap `sigma-finite-hilbert-schmidt-kernels`). A route that needs no
+AutomorphicSpectralTheory must provide §0.8 for arbitrary σ-finite measure spaces `X`, `Y`, with
+no standard Borel or separability hypothesis on the measurable spaces or on `L²` (gap
+`sigma-finite-hilbert-schmidt-kernels`). The trace formula is not part of the request: §2.2
+derives it from §0.8, §0.9 and the adjoint kernel. A route that needs no
 countable orthonormal basis is the composite of VonNeumannAlgebras V2.RectangularL2 with the
 unitary `S₂(L²(ν), L²(μ)) ≅ L²(μ) ⊗̂ conj(L²(ν))` of V4.Core, identified with the integral formula
 on rank-one kernels and extended by continuity.
@@ -399,10 +427,11 @@ Layer 9 proves Fourier–Schur transference on `ℝⁿ`. Layer 10 builds the ope
 BMO seminorms and the interpolation inequality between matrix BMO and `S₂`; Layer 11 proves the
 Hörmander–Mikhlin–Schur theorem.
 
-Layers 1 and 2 can be built at once. Layer 3 needs both; Layer 4 needs Layer 3; Layer 5 needs
-Layers 3 and 4. Layer 6 needs Layers 4 and 5 (§6.1–6.3 need only Layers 3–4). Layer 7 needs
-Layers 4 and 5. Layer 8 needs Layers 4 and 5. Layer 9 needs Layers 4 and 8. Layer 10 needs
-Layers 1 and 3. Layer 11 needs Layers 4, 7 and 10.
+Layers 1 and 2 can be built at once, except that §2.3 and §2.4 use §1.1 and §1.4. Layer 3 needs
+Layers 1 and 2; Layer 4 needs Layers 1–3; Layer 5 needs Layers 2 and 3. Layer 6 needs Layers 1, 3,
+4 and 5 (§6.1–6.3 need only Layers 1, 3 and 4). Layer 7 needs Layers 3 and 5. Layer 8 needs
+Layers 1, 3 and 5. Layer 9 needs Layers 1, 3, 4 and 8. Layer 10 needs Layers 1 and 3. Layer 11 needs
+Layers 2, 3, 4, 7 and 10.
 
 ## Layer 1: the Schatten scale with its compact endpoint
 
@@ -609,8 +638,10 @@ column model). Hence `k ↦ T_k` is a unitary `L²(μ ⊗ ν) ≅ S₂(L²(ν), 
 `k_A ∈ L²(μ ⊗ ν)` of `A ∈ S₂` as the inverse image of `A` (lafforgue-delasalle-2011 lines 226–232;
 reed-simon-1-1980 §VI.6).
 
-- `T_{k_A} = A` and `k_{T_k} = k`; `A ↦ k_A` is linear with `‖k_A‖_{L²} = ‖A‖₂` and
-  `⟨k_A, k_B⟩_{L²} = Tr(A* B)`.
+- `T_{k_A} = A` and `k_{T_k} = k`; `A ↦ k_A` is linear with `‖k_A‖_{L²} = ‖A‖₂` and, for
+  `A, B ∈ S₂(L²(ν), L²(μ))`, `⟨k_A, k_B⟩_{L²(μ ⊗ ν)} = Tr(A* B)`: polarise `‖k_A‖₂² = ‖A‖₂²`, whose
+  right side is `Σ_j ‖A e_j‖²` for a Hilbert basis `(e_j)` (OperatorIdeals OI-B32–OI-B35), and use
+  the basis formula `Tr(A* B) = Σ_j ⟨A e_j, B e_j⟩` (AutomorphicSpectralTheory §0.9).
 - For finite index sets with counting measure, `k_A(i, j) = ⟨δ_i, A δ_j⟩` is the matrix of `A`.
 - `k_A` is an almost-everywhere class: two operators with kernels equal off a `μ ⊗ ν`-null set
   coincide.
@@ -628,7 +659,7 @@ reed-simon-1-1980 §VI.6).
   is null.
 - For the zero measure all spaces are zero.
 
-*Needs:* AutomorphicSpectralTheory §0.8 (gap `sigma-finite-hilbert-schmidt-kernels`);
+*Needs:* AutomorphicSpectralTheory §0.8 (gap `sigma-finite-hilbert-schmidt-kernels`), §0.9;
 OperatorIdeals OI-B32–OI-B41, OI-C01–OI-C13; Mathlib `MeasureTheory.Measure.prod`,
 `MeasureTheory.integral_prod`.
 
@@ -644,19 +675,23 @@ Prove, for `A ∈ S₂(L²(ν), L²(μ))`, `B ∈ S₂(L²(λ), L²(ν))`, `u �
 - `k_{D_f A D_g}(x, y) = f(x) k_A(x, y) g(y)`, where `D_f` is multiplication by `f`;
 - the trace formula: for `A ∈ S₂(L²(ν), L²(μ))` and `C ∈ S₂(L²(μ), L²(ν))`,
   `Tr(A C) = ∫∫ k_A(x, y) k_C(y, x) dμ(x) dν(y)`, the integrand being integrable with integral
-  bounded by `‖A‖₂ ‖C‖₂` (AutomorphicSpectralTheory §0.10, `kernel_trace_diagonal`, at the
-  generality of the gap, which states it on one σ-finite space). For two spaces apply the
-  one-space formula on the disjoint union `Ω ⊔ Ω'`, with the measure equal to `μ` on `Ω` and to
-  `ν` on `Ω'`, to the extensions of `A` and `C` by zero: their product is `AC ⊕ 0`, of trace
-  `Tr(AC)`, and their kernels vanish off `Ω × Ω'`, respectively off `Ω' × Ω`.
+  bounded by `‖A‖₂ ‖C‖₂`. Route: `A*` and `C` are Hilbert–Schmidt operators `L²(μ) → L²(ν)` and
+  `A C = (A*)* C`, so the polarised kernel isometry of §2.1 gives
+  `Tr(A C) = ⟨k_{A*}, k_C⟩_{L²(ν ⊗ μ)}`; the adjoint kernel of the second bullet,
+  `conj k_{A*}(y, x) = k_A(x, y)`, turns the inner product into the integral, and Cauchy–Schwarz in
+  `L²(ν ⊗ μ)` gives integrability and the bound.
 
-On `{1, 2}`: `Tr(E₁₂ E₂₁) = 1 = Σ_{x,y} k_{E₁₂}(x, y) k_{E₂₁}(y, x)`; the Hilbert–Schmidt inner
-product `Tr(E₁₂* E₂₁)` is `0`, so the bilinear and the sesquilinear pairings differ. Read on
-`{1} ⊔ {2}`, with `A = E₁₂` from `L²({2})` to `L²({1})` and `C = E₂₁`, the same computation is the
-two-space formula: `Tr(AC) = 1 = k_A(1, 2) k_C(2, 1)`.
+On `{1, 2}`: `Tr(E₁₂ E₂₁) = 1 = Σ_{x,y} k_{E₁₂}(x, y) k_{E₂₁}(y, x)`, and along the route
+`k_{E₁₂*} = 1_{(2,1)}` and `⟨k_{E₁₂*}, k_{E₂₁}⟩ = 1`; the Hilbert–Schmidt inner product
+`Tr(E₁₂* E₂₁)` is `0`, so the bilinear and the sesquilinear pairings differ. For `A = i E₁₂`,
+`k_{A*} = −i·1_{(2,1)}` and `⟨k_{A*}, k_{E₂₁}⟩ = conj(−i) = i = Tr(A E₂₁) = k_A(1, 2) k_{E₂₁}(2, 1)`;
+an adjoint kernel without the conjugation would give `−i`. With `Ω = {1}` and `Ω' = {2}` as two
+different spaces, `A = E₁₂ : L²({2}) → L²({1})` and `C = E₂₁ : L²({1}) → L²({2})`, the same
+computation is the two-space formula: `Tr(AC) = 1 = k_A(1, 2) k_C(2, 1)`.
 
-*Needs:* §2.1; AutomorphicSpectralTheory §0.9, §0.10 (gap `sigma-finite-hilbert-schmidt-kernels`);
-VonNeumannAlgebras V4.Core (Hölder at `p = q = 2`, cyclicity); Mathlib `MeasureTheory.integral_prod`.
+*Needs:* §2.1; AutomorphicSpectralTheory §0.8 (`kernel_apply`, gap
+`sigma-finite-hilbert-schmidt-kernels`), §0.9; VonNeumannAlgebras V4.Core (Hölder at `p = q = 2`,
+cyclicity); Mathlib `MeasureTheory.integral_prod`.
 
 ### 2.3 Transposition
 
@@ -792,7 +827,7 @@ measure with the null sets of `μ`. For `φ ∈ L^∞(Ω, 𝓑, μ)` define `E[�
 
 ### Dependencies
 
-Layer 1 (§1.1, §1.4); AutomorphicSpectralTheory §0.8–§0.10; OperatorIdeals Parts A–C;
+Layer 1 (§1.1, §1.4); AutomorphicSpectralTheory §0.8, §0.9; OperatorIdeals Parts A–C;
 VonNeumannAlgebras V2.RectangularL2, V4.Core; Mathlib measure theory, measures with density and
 conditional expectations.
 
@@ -1065,8 +1100,8 @@ the zero multiplier and the pairing identity would read `1 = 0`.
 
 ### 5.2 Martingale limits
 
-Let `(𝓑_α)` be a directed family of sub-σ-algebras of `𝓑`, each with `μ` σ-finite on it, generating
-`𝓑`. For `f ∈ L^∞(𝓑 ⊗ 𝓑)` let `f_α = E[f | 𝓑_α ⊗ 𝓑_α]`. Prove that
+Let `(𝓑_α)` be a nonempty directed family of sub-σ-algebras of `𝓑`, each with `μ` σ-finite on it,
+generating `𝓑`. For `f ∈ L^∞(𝓑 ⊗ 𝓑)` let `f_α = E[f | 𝓑_α ⊗ 𝓑_α]`. Prove that
 `‖f‖_{S_p(L²(𝓑))} = sup_α ‖f_α‖_{S_p(L²(𝓑_α))}`, the net being nondecreasing, and the same for the
 completely bounded norms (lafforgue-delasalle-2011 Lemma 1.11, line 383, and Remark 1.12, line 393).
 Route: monotonicity and `≤` by §5.1 and the tower property of §2.5; `≥` by the pairing formula of
@@ -1079,7 +1114,10 @@ For the dyadic filtration of `[0, 1]` and `f = 1_{x<y}`: `f₀` is the constant 
 σ-algebra, with norm `1/2`; `f₁` is the `2 × 2` symbol `[[1/2, 1], [0, 1/2]]` on two atoms of mass
 `1/2`, with norm at least `1` (its off-diagonal entry); the net is nondecreasing, as the lemma
 asserts. On `ℕ` with counting measure, the family consisting of `𝓑` alone and `f = 1`, both
-sides are `1`; with `MeasureTheory.condExp` in place of §2.5 the right side would be `0`.
+sides are `1`; with `MeasureTheory.condExp` in place of §2.5 the right side would be `0`. The
+family must be nonempty (Mathlib's `Directed` does not require it): the empty family generates the
+trivial σ-algebra, and for `𝓑 = {∅, Ω}`, `μ(Ω) = 1` and `f = 1` the left side is `1` while the
+supremum over the empty family is `0`; the one-member family `𝓑₀ = 𝓑` gives `1 = 1`.
 
 *Needs:* §2.5, §3.3, §3.6, §5.1; Mathlib `MeasureTheory.lpMeas`, `MeasureTheory.condExpL2`.
 
@@ -1115,7 +1153,7 @@ both completely bounded norms are `2`.
 
 ### Dependencies
 
-Layers 2–4; Mathlib conditional expectations and Lévy's upward theorem.
+Layers 2 and 3; Mathlib conditional expectations and Lévy's upward theorem.
 
 ## Layer 6: positive symbols and the Grothendieck–Haagerup characterisation
 
@@ -1241,7 +1279,7 @@ Mathlib `MeasureTheory.Integrable.tendsto_ae_condExp`, `ContinuousLinearMap.comp
 
 ### Dependencies
 
-Layers 3–5; Mathlib matrix order and completely positive maps, the separation theorem;
+Layers 1 (§1.4) and 3–5; Mathlib matrix order and completely positive maps, the separation theorem;
 VonNeumannAlgebras V13b; BanachSpaceTheory B4.0.
 
 ## Layer 7: atomless measure spaces
@@ -1299,7 +1337,8 @@ for the constant symbol acting on `M₂`, the same numbers as §5.1.
 Prove that for an atomless σ-finite `(Ω, μ)`, every `M ∈ L^∞(Ω × Ω, μ ⊗ μ)` and every `1 ≤ p ≤ ∞`,
 `‖S_M‖_p = ‖S_M‖_{cb,p}` (lafforgue-delasalle-2011 Theorem 1.18, line 505, proof lines 508–520;
 cgpt-2023 §1.1 property i), line 231). Route: pass to an equivalent probability measure (§3.7,
-§7.1); by §5.2 along the directed family of finite sub-σ-algebras it suffices that
+§7.1); by §5.2 along the directed family of finite sub-σ-algebras (nonempty: it contains the
+trivial σ-algebra) it suffices that
 `‖E[M | 𝒜 ⊗ 𝒜]‖_{cb, S_p(L²(𝒜))} ≤ ‖M‖_{S_p(L²(𝓑))}` for finite `𝒜`; for each `n` split every
 minimal set of `𝒜` into `n` sets of equal measure (§7.1), generating `𝓑'`; then the `n`-th
 amplification norm of `E[M | 𝒜 ⊗ 𝒜]` on `L²(𝒜)` is its norm on `L²(𝓑') ≅ L²(𝒜) ⊗ ℓ²_n` (§3.6), at
@@ -1311,8 +1350,11 @@ most `‖E[M | 𝓑' ⊗ 𝓑']‖_{S_p(L²(𝓑'))}` by §7.2, at most `‖M‖
   triangular truncation `1_{x<y}` both are `1` at `p = 2`.
 - The theorem is not stated under `MeasureTheory.NullSingletonClass`: the disjoint union of two
   copies of the countable–cocountable space has null singletons and `L² ≅ ℂ²`, so its Schur
-  multipliers are those of `M₂`, and whether norm and completely bounded norm agree for all of
-  them at `1 < p < ∞`, `p ≠ 2`, is not known (lafforgue-delasalle-2011 lines 281–285).
+  multipliers are those of `M₂`, to which the proof does not apply (a two-point space cannot be
+  refined into sets of equal positive measure); the source records that no Schur multiplier on
+  `S_p^n` with different norm and completely bounded norm is known, and conjectures that one
+  exists on `S_p(ℓ²)` for `1 < p < ∞`, `p ≠ 2` (lafforgue-delasalle-2011 Conjecture 1.8,
+  lines 281–285).
 - Counting measure on `{1, 2}` is excluded; at `p ∈ {1, ∞}` equality holds there by §6.3, and at
   `p = 2` by §3.5, independently of this theorem.
 
@@ -1321,11 +1363,12 @@ most `‖E[M | 𝓑' ⊗ 𝓑']‖_{S_p(L²(𝓑'))}` by §7.2, at most `‖M‖
 ### Examples
 
 - Lebesgue measure on `ℝⁿ` and on `[0, 1]`; Gaussian measures; any atomless σ-finite space.
-- Counting measure on `{1, …, n}`: excluded, and the source of the open question.
+- Counting measure on `{1, …, n}`: excluded; no Schur multiplier on `S_p^n` with different norm
+  and completely bounded norm is known (lafforgue-delasalle-2011 lines 283–285).
 
 ### Dependencies
 
-Layers 3–5; Tau Ceti `MeasureTheory.Measure.IsAtom`.
+Layers 3 and 5; Tau Ceti `MeasureTheory.Measure.IsAtom`.
 
 ## Layer 8: continuous symbols on Radon measure spaces
 
@@ -1405,7 +1448,7 @@ support.
 
 ### Dependencies
 
-Layers 1 and 3–5; Mathlib measure support, inner and outer regularity, and Urysohn's lemma for
+Layers 1, 3 and 5; Mathlib measure support, inner and outer regularity, and Urysohn's lemma for
 locally compact Hausdorff spaces.
 
 ## Layer 9: Toeplitz symbols and Fourier–Schur transference on `ℝⁿ`
@@ -1431,12 +1474,17 @@ lines 59–66; caspers-delasalle-2015 lines 28–30; lafforgue-delasalle-2011 No
 
 - `m = e_a`: `M_m(x, y) = e_a(x) conj e_a(y)` and `S_{M_m}(A) = D_{e_a} A D_{e_a}*`, of norm and
   completely bounded norm `1` for every `p`.
-- `m = cos(2π⟨a, ·⟩)`: `ξ(x) = η(x) = (e_a(x), e_{−a}(x))/√2` give
-  `⟨ξ(x), η(y)⟩ = cos(2π⟨a, x − y⟩)`, so `‖S_{M_m}‖_∞ ≤ 1` (§6.4), with equality from the diagonal.
+- `m = cos(2π⟨a, ·⟩)`: `M_m = (M_{e_a} + M_{e_{−a}})/2`, and each `S_{M_{e_{±a}}}` is the
+  conjugation by the diagonal unitary `D_{e_{±a}}` (§3.1), with norm and completely bounded norm at
+  most `1` (§3.3, §3.5), so `‖S_{M_m}‖_p ≤ ‖S_{M_m}‖_{cb,p} ≤ (1 + 1)/2 = 1` for every `p`. Equality
+  holds for every `p`: for `u` the normalised indicator of the ball of radius `r` about `0`,
+  `S_{M_m}(u ⊗ u*) = (c u) ⊗ (c u)* + (s u) ⊗ (s u)*` with `c = cos(2π⟨a, ·⟩)` and
+  `s = sin(2π⟨a, ·⟩)`, a positive operator of operator norm at least `‖c u‖²`, which tends to `1`
+  as `r → 0`, while `‖u ⊗ u*‖_p = 1` (§1.1: `‖X‖_p ≥ ‖X‖`).
 - `m = 1_{{0}}` is `0` almost everywhere, so `M_m = 0` and `S_{M_m} = 0`; reading `M_m` pointwise
   on the diagonal would give the identity's "diagonal part", which is not a Schur multiplier.
 
-*Needs:* §3.1, §3.3, §3.7, §6.4; Mathlib `MeasureTheory.MeasurePreserving`.
+*Needs:* §3.1, §3.3, §3.5, §3.7; Mathlib `MeasureTheory.MeasurePreserving`.
 
 ### 9.2 Fourier multipliers on `Lᵖ(ℝⁿ)` and their completely bounded norms
 
@@ -1484,17 +1532,23 @@ when `g` is bounded, `Λ_F(g) = P_F T_g P_F`, the compression of the Fourier mul
 `g` (a convolution operator) to `L²(F)`. Prove, with `Q_R = [−R, R]ⁿ` (caspers-delasalle-2015
 Theorem 5.1, line 529, and Theorem 5.2, line 543, for `G = ℝⁿ`):
 
-- for `g ∈ L¹ ∩ L^∞(ℝⁿ; F_k)` and `1 ≤ p ≤ ∞`, `‖Λ_F(g)‖_p ≤ |F|^{1/p} ‖g‖_{Lᵖ(S_p^k)}`: at `p = ∞`
-  from `‖T_g‖ ≤ ‖g‖_∞`; at `p = 1` by writing `g = u v` with `|u|² = |v|² = |g|` (polar decomposition
-  for matrices), so `Λ_F(g)` is a product of two Hilbert–Schmidt operators of norms
-  `|F|^{1/2} ‖u‖₂` and `|F|^{1/2} ‖v‖₂`; in between by NoncommutativeIntegration §2.6 for the couples
-  `(L¹, L^∞)(ℝⁿ; F_k)` (through §1.5) and `(S₁, B)(L²(F) ⊗ ℂ^k)`;
+- for `1 ≤ p ≤ ∞` and `g ∈ L² ∩ Lᵖ(ℝⁿ; S_p^k)`, `‖Λ_F(g)‖_p ≤ |F|^{1/p} ‖g‖_{Lᵖ(S_p^k)}`. For
+  `g ∈ L¹ ∩ L^∞`: at `p = ∞` from `‖T_g‖ ≤ ‖g‖_∞`; at `p = 1` by writing `g = u v` with
+  `|u|² = |v|² = |g|` (polar decomposition for matrices), so `Λ_F(g)` is a product of two
+  Hilbert–Schmidt operators of norms `|F|^{1/2} ‖u‖₂` and `|F|^{1/2} ‖v‖₂`; in between by
+  NoncommutativeIntegration §2.6 for the couples `(L¹, L^∞)(ℝⁿ; F_k)` (through §1.5) and
+  `(S₁, B)(L²(F) ⊗ ℂ^k)`. For general `g ∈ L² ∩ Lᵖ` (at `p = ∞`, `g ∈ L² ∩ L^∞`) the truncations
+  `g_j = g · 1_{‖g‖ ≤ j} · 1_{|ξ| ≤ j}` lie in `L¹ ∩ L^∞` with `‖g_j‖_{Lᵖ(S_p^k)} ≤ ‖g‖_{Lᵖ(S_p^k)}`
+  and `g_j → g` in `L²` (dominated convergence); since
+  `‖Λ_F(h)‖₂² = ∫ ‖ȟ(u)‖₂² |F ∩ (F + u)| du ≤ |F| ‖h‖₂²` for every `h ∈ L²` (Plancherel),
+  `Λ_F(g_j) → Λ_F(g)` in `S₂`, hence in operator norm, and the lower semicontinuity of the gauge
+  (§1.1) gives the bound;
 - the pairing `|Q_R|⁻¹ Tr(Λ_{Q_R}(g) Λ_{Q_R}(h)) → ∫ tr(g(ξ) h(ξ)) dξ` for `g ∈ L²` and
   `h ∈ L¹ ∩ L^∞`, from `Tr(Λ_F(g) Λ_F(h)) = ∫ tr(ǧ(u) ȟ(−u)) |F ∩ (F + u)| du` (with `ǧ = 𝓕⁻¹ g`),
   `|Q_R ∩ (Q_R + u)|/|Q_R| → 1` and Parseval;
 - for `g ∈ L²(ℝⁿ; F_k)`, `‖g‖_{Lᵖ(S_p^k)} ≤ liminf_R |Q_R|^{−1/p} ‖Λ_{Q_R}(g)‖_p`, by the pairing,
-  Hölder for the trace and the first bound for `h`; with equality and a limit when
-  `g ∈ L¹ ∩ L^∞`;
+  Hölder for the trace and the first bound for `h`; with equality and a limit when also
+  `g ∈ Lᵖ(ℝⁿ; S_p^k)`, by the first bound for `g`;
 - intertwining: `Λ_F(𝓕(m · 𝓕⁻¹ g)) = S_{M_m}(Λ_F(g))`, with the amplified symbol of §3.5 for
   `k > 1`, by comparing kernels.
 
@@ -1509,7 +1563,7 @@ Theorem 5.1, line 529, and Theorem 5.2, line 543, for `G = ℝⁿ`):
   `e_a(s) [1_F(s) ǧ(s − t) 1_F(t)] conj e_a(t)` and `Λ_F(g(· − a)) = D_{e_a} Λ_F(g) D_{e_a}*`: every
   bound is invariant under translation of the symbol, as `‖g(· − a)‖_p = ‖g‖_p` requires.
 
-*Needs:* §3.5, §4.1, §9.1; NoncommutativeIntegration §1.4, §1.5, §2.6; Mathlib
+*Needs:* §1.1, §3.5, §4.1, §9.1; NoncommutativeIntegration §1.4, §1.5, §2.6; Mathlib
 `MeasureTheory.Lp.fourierTransformₗᵢ`.
 
 ### 9.4 Approximate identities on the Fourier side
@@ -1571,7 +1625,7 @@ every level `k`. Schur side: by §9.1 and §9.2 replace `m` by `m * ρ_ε` (cont
 
 ### Dependencies
 
-Layers 3, 4, 6 (§6.4 in a Check), 8; Tau Ceti `L²` Fourier multipliers; NoncommutativeIntegration
+Layers 1 (§1.1), 3, 4 and 8; Tau Ceti `L²` Fourier multipliers; NoncommutativeIntegration
 §1.5, §2.6; Mathlib Plancherel and mollifiers.
 
 ## Layer 10: operator-valued and matrix BMO
@@ -1945,7 +1999,7 @@ for `p > 2` apply the operator form of §10.4 to `T = S_M` with `C₂ = ‖M‖_
 
 ### Dependencies
 
-Layers 3, 4, 7 and 10; Mathlib Plancherel and Fréchet derivatives; Tau Ceti Littlewood–Paley
+Layers 2 (§2.1), 3, 4, 7 and 10; Mathlib Plancherel and Fréchet derivatives; Tau Ceti Littlewood–Paley
 pieces and `L²` Fourier multipliers.
 
 ## Downstream consumers
