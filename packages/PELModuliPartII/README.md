@@ -86,7 +86,15 @@ quasi-compactness and the p-adic topology are not presumed.
 2n means absolute p-height 2n[K:ℚ_p], and the strict object then has dimension n; forgetting the
 O_K-action keeps the Lie algebra, so the underlying p-divisible group also has dimension n. The relative dual of
 §0.1 depends on the chosen uniformizer and is not the Cartier dual. For a hermitian Hom pairing
-h(x,y) the first argument is L-linear and the second conjugate-linear. Exact preservation of a
+h(x,y) the first argument is L-linear and the second conjugate-linear. GeometryOfNumbersAndQuadraticArithmetic
+§§2.7 and 2.9 write forms conjugate-linear in the first argument; every result imported from them is
+applied to the transposed form H(x,y)=h(y,x), which equals ε times the conjugate of h(x,y) when h is
+ε-hermitian (ε=±1). H is conjugate-linear in x, linear in y and ε-hermitian for the same ε. H and h
+have the same isometries and the same adjoint of endomorphisms (h(ax,y)=h(x,a*y) exactly when
+H(ax,y)=H(x,a*y)); since O_L is stable under conjugation they have the same dual lattice
+{x : h(x,Λ)⊆O_L}={x : H(x,Λ)⊆O_L}, hence the same invariant factors; and their Gram matrices on a
+basis are transposes of each other, so their Gram determinants are equal and define the same
+determinant class. Exact preservation of a
 polarization, preservation up to an O_K-unit, and a common rational scalar on a pair are three
 separately specified arrow conventions.
 
@@ -135,6 +143,11 @@ discrete valuation ring.
 8. In the exotic global setting at n=2 the global and local forms on the same Hom space differ by
    u²/ϖ: with val_u(ϖ)=1 this is a unit and lattice duality agrees; with val_u(ϖ)=0 the dual of a
    self-dual lattice moves by one valuation.
+9. For L=ℚ₃(u) with u²=3 and the rank-one form h(x,y)=xȳ of this roadmap's convention, h(u,1)=u,
+   while the unit form x̄y of GeometryOfNumbersAndQuadraticArithmetic §2.7 takes the value ū=−u at
+   (u,1); the latter is the transposed form H, with H(u,1)=h(1,u)=−u. On the diagonal both give the
+   norm xx̄, so norms, Gram determinants and dual lattices do not detect the convention; since H is
+   the conjugate of h, a value outside K, such as h(u,1)=u, does.
 
 ## Exact supplier contracts
 
@@ -242,7 +255,9 @@ Layer 1 (descent, algebraic spaces and stacks) for the algebraic integral models
 ### From TauCetiRoadmap.GeometryOfNumbersAndQuadraticArithmetic
 
 §§2.7, 2.9 (hermitian lattices, duals and invariant factors; signed hermitian forms over local fields of
-odd residue characteristic).
+odd residue characteristic). Their forms are conjugate-linear in the first argument; they are applied
+here to the transposed form H(x,y)=h(y,x) of the Conventions, which has the same isometries, adjoints,
+dual lattices, invariant factors and determinant class as h (Conventions, item 9).
 
 ### From TauCetiRoadmap.PadicHodgeTheory
 
@@ -387,7 +402,7 @@ Suppose L/K is unramified quadratic and ℚ_p⊂K₀⊂K. A hermitian O_L–O_K�
 - An absolute Lie action satisfying only multiplicity ranks but violating the structural-action clause is not an input to C.
 - The comparison applies when K/ℚ_p is ramified; this is distinct from the exotic comparison in Layer 4.
 - On the relative side the height is 2n, not the absolute height.
-- A μ-ordinary object is not an input of C. At K₀=K=ℚ_p, `L=ℚ_{p²}` and n=2, the μ-ordinary principally polarized p-divisible group with O_L-action of signature (1,1) is the product of an étale and a multiplicative O_L-module of O_L-height 1: its slopes are 0,0,1,1 and its étale part has height 2, so it is not formal, has no nilpotent O-display (§0.1) and is not supersingular. The ordinary and μ-ordinary points of the global models of Layer 7, where §6.5 imposes the same condition P(r,s), are handled by the local model of §0.6 with K₀=ℚ_p through the Grothendieck–Messing local-model diagram of §7.6, which uses P(r,s) and not C.
+- The domain of C is cut out by supersingularity, not by failure of μ-ordinarity, so whether a μ-ordinary object is an input of C depends on the signature. Take K₀=K=ℚ_p and `L=ℚ_{p²}`, where C is the identity. For signature (r,s) the Hodge cocharacters at the two embeddings of L are (1^r,0^s) and (1^s,0^r); Frobenius interchanges them, and the μ-ordinary slopes are their average: slope 1 with multiplicity min(r,s), slope 1/2 with multiplicity |r−s| and slope 0 with multiplicity min(r,s), each slope taken twice, 2n slopes in all. So the μ-ordinary object is supersingular, hence an input of C, exactly when rs=0. At n=1 and signature (1,0) the average is 1/2: the μ-ordinary object is the supersingular module 𝔈 of §1.3, of height 2 and dimension 1, and C(𝔈)=𝔈. At n=2, the μ-ordinary principally polarized p-divisible group with O_L-action of signature (1,1) is the product of an étale and a multiplicative O_L-module of O_L-height 1: its slopes are 0,0,1,1 and its étale part has height 2, so it is not formal, has no nilpotent O-display (§0.1) and is not supersingular. The ordinary and μ-ordinary points of the global models of Layer 7, where §6.5 imposes the same condition P(r,s), are handled by the local model of §0.6 with K₀=ℚ_p through the Grothendieck–Messing local-model diagram of §7.6, which uses P(r,s) and not C.
 - C changes the dimension, which forgetting an action never does: for K₀=ℚ_p, K/ℚ_p totally ramified of degree 2 and n=1, a hermitian O_L–ℤ_p-module has height 4 and dimension 2, while C(X) has relative height 2 and dimension 1 and its underlying p-divisible group has height 4 and dimension 1.
 
 *Needs:* §0.3; §0.1; FiniteFlatGroupsAndIntegralPadicHodgeTheory §R07.2.10; AbelianSchemesAndArithmeticModuli §A4.7.
@@ -1263,7 +1278,7 @@ Hypotheses for this target: F/F⁺ CM, Φ a CM type, a a nonzero ideal of `O_{F�
 **Checks.**
 
 - A non-integral ideal is not a polarization type: for F⁺=ℚ, F=ℚ(i) and a=(1/2)ℤ the lattice condition would ask for Λ₀^∨=2Λ₀, a proper sublattice of Λ₀, whereas a polarization makes ⟨,⟩₀ integral on Λ₀ and so Λ₀⊆Λ₀^∨. For a=ℤ the condition Λ₀^∨=Λ₀ is met by a principally polarized elliptic curve with CM by ℤ[i], and for a=2ℤ the condition Λ₀^∨=(1/2)Λ₀ is met by twice that polarization, whose kernel is A₀[2].
-- Arrows pull λ₀ back exactly. For F⁺=ℚ(√2), F=F⁺(i) and any object (A₀,ι₀,λ₀), the unit c=1+√2 of `O_{F⁺}` gives an O_F-linear automorphism ι₀(c) of (A₀,ι₀), and, c being fixed by the CM involution, ι₀(c)^∨∘λ₀∘ι₀(c)=λ₀∘ι₀(c²) with c²=3+2√2≠1 totally positive; so ι₀(c) is not an automorphism of the triple but an arrow to (A₀,ι₀,λ₀∘ι₀(3+2√2)). A groupoid whose arrows allowed `O_{F⁺}^×`-similitudes would count it as an automorphism and define a different stack.
+- Arrows pull λ₀ back exactly. For F⁺=ℚ(√2), F=F⁺(i) and any object (A₀,ι₀,λ₀), the unit c=1+√2 of `O_{F⁺}` gives an O_F-linear automorphism ι₀(c) of (A₀,ι₀), and, c being fixed by the CM involution, ι₀(c)^∨∘λ₀∘ι₀(c)=λ₀∘ι₀(c²) with c²=3+2√2≠1 totally positive. By the arrow law of the first API bullet, ι₀(c) is therefore an arrow from (A₀,ι₀,λ₀∘ι₀(3+2√2)) to (A₀,ι₀,λ₀); the source is an object, its polarization being the pullback of λ₀ along the automorphism ι₀(c), with the same kernel A₀[a] and the same Rosati involution. It is not an automorphism of (A₀,ι₀,λ₀), since it pulls λ₀ back to λ₀∘ι₀(3+2√2)≠λ₀, and it is not an arrow in the opposite labelling, from (A₀,ι₀,λ₀) to (A₀,ι₀,λ₀∘ι₀(3+2√2)), since it pulls the latter back to λ₀∘ι₀(c⁴)=λ₀∘ι₀(17+12√2)≠λ₀; the arrow in that labelling is ι₀(c⁻¹)=ι₀(√2−1). A groupoid whose arrows allowed `O_{F⁺}^×`-similitudes would count ι₀(c) as an automorphism of (A₀,ι₀,λ₀) and define a different stack.
 - For F imaginary quadratic, Φ={φ} and p ramified in F, the p-divisible group of A₀ is a strict `O_{F_p}-module` of relative height 1, whose deformation is unique; so M₀^a is étale at p, a case excluded by the hypothesis that p is unramified in PELModuli §M4.7.
 - Over R=k[ε] with k of characteristic p, the x-stable submodules of R[x]/(x²) with free rank-one quotient are exactly the ideals (x+εc), c∈k, since (x+α) contains x² only when α²=0. The Kottwitz condition prescribes the characteristic polynomial T+εc of x on the quotient and so fixes c, whereas the condition rank Lie=|Φ| alone allows every c: rank conditions do not give étaleness.
 - Emptiness is allowed: a pair moduli problem built on `M₀^{a,ξ}` is empty when `M₀^{a,ξ}` is, and nonemptiness is a separate hypothesis wherever it is used.
