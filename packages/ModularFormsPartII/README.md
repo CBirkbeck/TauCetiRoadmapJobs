@@ -9,7 +9,7 @@ This roadmap owns: the cusp-germ characterization of weak forms on finite-index 
 The following are imported and are not planned again.
 
 - ModularForms (main): characters and parity (Layer 0), eigenforms, newforms and oldform decomposition (Layer 4), the η transformation (Worked examples, `η²⁴ = Δ`) and the complex modular curve (Layer 10).
-- QSeriesPartitionsAndMockModularForms §8.1 owns the general carrier: the spaces `A_k(Γ, ρ)` of functions with at most exponential cusp growth, for a finite-index `Γ ≤ Mp₂(ℤ)` and a finite-dimensional representation `ρ`, with their weakly holomorphic subspaces. Section 1.1 here proves that for integral weight and trivial multiplier this space equals the native predicate `IsWeakForm` of [Suggested.lean](Suggested.lean). Section 7.3's vector-valued forms are the elements of the exponential-growth holomorphic part of `A_k(Mp₂(ℤ), ρ)` for `ρ` factoring through `PSL₂(ℤ)` with `ρ(T)` semisimple; they differ from the §8.1 carrier only by that semisimplicity and the projective representation. QSeries §5.2 supplies the η multiplier.
+- QSeriesPartitionsAndMockModularForms §8.1 owns the general carrier: the spaces `A_k(Γ, ρ)` of functions with at most exponential cusp growth, for a finite-index `Γ ≤ Mp₂(ℤ)` and a finite-dimensional representation `ρ`, with their weakly holomorphic subspaces. Section 1.1 here proves that for integral weight and trivial multiplier this space equals the native predicate `IsWeakForm` of [Suggested.lean](Suggested.lean). Section 7.3's vector-valued forms are the elements of the exponential-growth holomorphic part of `A_k(Mp₂(ℤ), ρ)` for `ρ` factoring through `PSL₂(ℤ)` with `ρ(T)` semisimple; they differ from the §8.1 carrier only by that semisimplicity and the projective representation. QSeries §8.4a owns the Fourier expansion at a cusp with general parabolic monodromy; its holomorphic case with semisimple monodromy is the expansion of the components of these forms without logarithmic terms (CDT, Remark 7.3.2, p.689), used in §§7.8 and 8.5. QSeries §5.2 supplies the η multiplier.
 - ModularCurvesPartII Layer 15 owns the principal-level `SL₂` amalgam (§15.2), the congruence subgroup property of `SL₂(ℤ[1/p])` (§15.3), congruence classes in ordinary `H¹` (§15.5), principal-level Ihara modulo congruence classes (§15.6), congruence invariance of ordinary characters with the whole cohomological calculation of CDT §4.5 (§15.9), and the enhanced principal-level kernel bound (§15.10). Its §5.14 (twisted curves `X(ρ)`), §§6.3–6.5 (cusp fields, twisted analytic comparison, geometric irreducibility), §8.1 (descent of sections from a split rational cusp) and Layer 11 (regular models of modular fibres) are the arithmetic models used in Layers 5 and 9.
 - DiophantineApproximationAndTranscendencePartII Layer 4 owns integral holonomic germs `H(U, χ, ℤ)` with meromorphic local bases (§4.1), their ring structure (§4.2), the two scalar spans `V` and `W` (§4.3), pole clearing (§4.4), the holonomic rank bound for `W` (§4.5) and its finiteness corollaries (§§4.6–4.7).
 - ConformalMappingPartII owns the continuation of linear ODE solutions and meromorphic local bases (§§0.3, 0.5), the extremality of the pointed cover (§1.4), the normalized covering `F_N : 𝔻 → ℂ ∖ μ_N` (§1.8), the Gamma radius `γ_N`, the conformal radius `|F_N′(0)| = γ_N` with the values at `N = 2, 3` (§§5.1, 5.5), its positive expansion (§5.8) and the uniform mean growth of `F_N^N` (§9.19).
@@ -68,7 +68,7 @@ FuchsianOrbifolds Layer 2 item 5 applied to the level-one group of Layer 6 item 
 
 ### From TauCetiRoadmap.QSeriesPartitionsAndMockModularForms
 
-§8.1: for a finite-index `Γ ≤ Mp₂(ℤ)`, a finite-dimensional `ρ` and `k ∈ ½ℤ`, the space `A_k(Γ, ρ)` with exponential cusp growth and its weakly holomorphic subspace (holomorphy and finite principal parts at every cusp). Assumed: integral weight is the case where the metaplectic factor is `(cτ + d)^k`, and trivial `ρ` gives scalar forms. §5.2: the η multiplier `ν_η`, with `η(τ + 1) = exp(πi/12)η(τ)` and `η(−1/τ) = √(−iτ) η(τ)`.
+§8.1: for a finite-index `Γ ≤ Mp₂(ℤ)`, a finite-dimensional `ρ` and `k ∈ ½ℤ`, the space `A_k(Γ, ρ)` with exponential cusp growth and its weakly holomorphic subspace (holomorphy and finite principal parts at every cusp). Assumed: integral weight is the case where the metaplectic factor is `(cτ + d)^k`, and trivial `ρ` gives scalar forms. §8.4a: at a cusp of width w whose translation acts by M, with `A` the logarithm `exp(2πiA) = M` whose eigenvalues have real part in `[0, 1)`, a holomorphic cusp slash f with `f(τ + w) = Mf(τ)` and uniform exponential growth has no complementary modes and is `Σ_n exp(2πi(nI + A)τ/w) a_n`, with `a_n = 0` for all sufficiently negative n; polynomial τ-factors occur only on Jordan blocks of M, and no unitarity or finite-order hypothesis is imposed. Assumed in the case `Γ = Mp₂(ℤ)`, `w = 1`, `M = ρ(T)` semisimple: in an eigenbasis of `ρ(T)` each component is `Q^μ Σ_{m ≥ m₀} a_m Q^m` with `exp(2πiμ)` its eigenvalue, μ complex, and no logarithmic term. §5.2: the η multiplier `ν_η`, with `η(τ + 1) = exp(πi/12)η(τ)` and `η(−1/τ) = √(−iτ) η(τ)`.
 
 ### From TauCetiRoadmap.GeometryOfNumbersAndQuadraticArithmetic
 
@@ -389,7 +389,7 @@ For every `N ≥ 1`, `M₂N ⊆ R₂N` (CDT, Lemma 4.2.2, p.655).
 
 Let `U_N = ℂ ∖ 16^(−1/N)μ_N`, let `χ = x_N(t)` be the Kummer coordinate of §2.5, and let `p(u) = u^N`, so that `p(χ(t)) = x(t^N) = λ/16` is integral and `ℚ(p) = ℚ(λ)`. Read through the formal inverse of χ, every element of `R₂N` lies in the `ℚ(p)`-span `W(U_N, χ, p)` of the integral holonomic ring `H(U_N, χ, ℤ)` of DiophantineApproximationAndTranscendencePartII §§4.1, 4.3. Each generator enters H after multiplication by a nonzero integer clearing its denominators and a power of p clearing its pole at `∞`; both multipliers lie in `ℚ(p)^×` (CDT, proof of Proposition 3.0.1, pp.650–651; Definition 2.0.4, pp.635–636). CDT (3.0.5) places `R₂N` in the larger `ℚ(u)`-span `V` and bounds `dim_{ℚ(p)} V`; for the nonintegral coordinate χ that bound can fail by the factor `[ℚ(u) : ℚ(p)] = N` (DiophantineApproximationAndTranscendencePartII §4.8), which would spoil the bound of §3.8, so the containment is stated for W.
 
-*Proof sketch.* A generator f of `R₂N` is invariant under a finite-index H containing `−I` with `L(H) ∣ 2N`. H need not lie in `Γ(2)`, so replace it by `H₂ = H ∩ Γ(2)`: f is still invariant, `−I ∈ H₂`, H₂ has finite index, and §1.5 gives `L(H₂) = lcm(L(H), 2)`, which divides `2N`. Then f is a rational function on the algebraic curve `Y(H₂)`, finite étale over `Y(2)` (§2.2; BelyiMaps Layer 9). Its continuations along paths in `ℂ ∖ {0, 1}` are the finitely many conjugate functions on `Y(H₂)`, so its minimal operator over `ℚ̄(λ)` has a full meromorphic local basis at every point of `ℂ ∖ {0, 1}` in the sense of ConformalMappingPartII §0.5. Pull back along `u ↦ 16u^N`: since every signed width of H₂ divides `2N`, a local coordinate at each cusp above `λ = 0` is a power of u, so the pulled-back operator has a full meromorphic local basis at `u = 0` as well; its remaining finite singularities lie in `16^(−1/N)μ_N`, outside `U_N`. Clearing denominators and the pole gives an element of `H(U_N, χ, ℤ)`.
+*Proof sketch.* A generator f of `R₂N` is invariant under a finite-index H containing `−I` with `L(H) ∣ 2N`. H need not lie in `Γ(2)`, so replace it by `H₂ = H ∩ Γ(2)`: f is still invariant, `−I ∈ H₂`, H₂ has finite index, and §1.5 gives `L(H₂) = lcm(L(H), 2)`, which divides `2N`. Then f is a rational function on the algebraic curve `Y(H₂)`, finite étale over `Y(2)` (§2.2; BelyiMaps Layer 9). Its continuations along paths in `ℂ ∖ {0, 1}` are the finitely many conjugate functions on `Y(H₂)`, so its minimal operator over `ℚ̄(λ)` has a full meromorphic local basis at every point of `ℂ ∖ {0, 1}` in the sense of ConformalMappingPartII §0.5. Pull back along `u ↦ 16u^N`, which maps `U_N ∖ {0}` onto `ℂ ∖ {0, 1}` by a local biholomorphism, so the pulled-back operator keeps a full meromorphic (indeed holomorphic) local basis at every point of `U_N ∖ {0}`. Such points can still be singular points of the scalar operator: zeros of the Wronskian of the conjugates are apparent singularities, and they can lie in `U_N`. Since every signed width of H₂ divides `2N`, a local coordinate at each cusp above `λ = 0` is a power of u, so the pulled-back operator has a full meromorphic local basis at `u = 0` as well. The genuine finite singularities, where some local solution fails to be meromorphic, therefore lie in `16^(−1/N)μ_N`, above `λ = 1` and outside `U_N`. This is the membership condition of DiophantineApproximationAndTranscendencePartII §4.1, which allows singular points in U that carry a full meromorphic local basis. Clearing denominators and the pole gives an element of `H(U_N, χ, ℤ)`.
 
 *Needs:* §§1.5, 2.2, 2.5, 3.2; BelyiMaps Layer 9; DiophantineApproximationAndTranscendencePartII §§4.1–4.3; ConformalMappingPartII §0.5.
 
@@ -429,6 +429,7 @@ Let `F_N : 𝔻 → ℂ ∖ μ_N` be the normalized coverings of ConformalMappin
 
 - `M₂ = R₂ = ℚ(λ)` once Layer 6 is complete; the basis `{1}` shows why §3.7 must intersect with `Γ(2)`.
 - The proof of §3.4 must also intersect with `Γ(2)`. For `N = 1`, `f = j` is a generator with `H = SL₂(ℤ)` and `L(H) = 1`, but λ is not a function on `Y(1)`: `λ(i) = 1/2` while `λ(Ti) = λ(i)/(λ(i) − 1) = −1`. With `H₂ = Γ(2)`, of level 2, the cover of `Y(2)` is the identity and `j = 256(1 − λ + λ²)³/(λ²(1 − λ)²)` is regular on `ℂ ∖ {0, 1}`.
+- The scalar operator of §3.4 can have singular points inside `U_N`; they are apparent. For `N = 1` take `H = Γ(2)` and the generator `f = λ − 1/2`: it has rational coefficients, denominator 2, and `L(Γ(2)) = 2`. In `u = λ/16`, `f = 16u − 1/2` spans the solution space of its minimal monic operator `∂ − 1/(u − 1/32)`, since `16 − (16u − 1/2)/(u − 1/32) = 0`. The coefficient has a pole with residue −1 at `u = 1/32`, the image of `τ = i` (`λ(i) = 1/2`), which lies in `U₁ = ℂ ∖ {1/16}`. The solution `16u − 1/2` is holomorphic there, so the full-meromorphic-basis condition holds and `2f = 32u − 1` lies in `H(U₁, χ, ℤ)`. Requiring no singular point of the operator in `U_N` would reject this generator, and clearing the denominator does not remove the pole.
 - For `N = 3`, `χ = x₃ = t − (8/3)t⁴ + ⋯` is not integral while `p(χ) = x(t³)` is; the rank bound runs on W and not on V.
 - At `N = 2`, `γ₂ ≈ 4.37688 > 4`, so §3.5 applies with `r` slightly below 1, for instance `r = 0.95` gives `|φ′(0)| ≈ 1.0395`.
 - A function with a single analytic branch but an essential singularity, such as `exp(1/x)` at `x = 0`, has trivial topological monodromy but no meromorphic basis; the meromorphic-basis condition of ConformalMappingPartII §0.5 excludes it from H.
@@ -670,14 +671,6 @@ API:
 - `F = (1, 0, 0)` with `ρ = 1 ⊕ σ` (§7.13) is a vector-valued form although its values span a line.
 - For `n = 1` and ρ a character of finite order, the definition gives the classical forms on `SL₂(ℤ)` with that character.
 
-### 7.4 Generalized expansions without logarithms
-
-In a basis diagonalizing `ρ(T)`, each component has a convergent expansion `Q^μ Σ_{m ≥ m₀} a_m Q^m` with `exp(2πiμ)` its eigenvalue and μ complex; conversely such expansions with finite lower support have moderate growth in vertical strips. There are no logarithmic terms; rationality of μ and finiteness of the order of `ρ(T)` are not asserted (CDT, Remark 7.3.2, p.689).
-
-*Proof sketch.* Twist an eigencomponent by `exp(−2πiμτ)` to make it 1-periodic, descend to a punctured disc and bound its pole order by the growth; conversely a finite principal part and a convergent remainder give the growth.
-
-*Needs:* §7.3; Mathlib `UpperHalfPlane.cuspFunction`.
-
 ### 7.5 Inducing a scalar weak form
 
 For a finite-index Γ containing `−I` and even k, a scalar weak form f on Γ gives a vector-valued form whose components are `f ∣[k] γ_i` for coset representatives `γ_i`, with the finite coset permutation representation, and whose identity component is f. Groups without `−I` and odd weights use the central-character convention of ModularForms Layer 0 (CDT, Remark 7.3.2, p.689).
@@ -730,9 +723,9 @@ API:
 
 With `x = λ/16`, `W_j` is the full solution space near an ordinary point of a unique monic operator `L_j ∈ ℂ(x)[∂]` of order `dim W_j`, the minimal operator of the germ f. `L_j` is regular singular, has no genuine singularities outside `{0, 1/16, ∞}`, and its apparent singularities lie at points of `ℍ` where all local solutions are holomorphic; its local monodromies are those of `W_j`, hence semisimple (CDT, proof of Theorem 7.3.3, pp.690–691).
 
-*Proof sketch.* Write `Wr(f₁, …, f_r) = det(f_j^(i−1))` for the Wronskian in x, with rows indexed by the derivative order `i − 1` and the empty Wronskian equal to 1. For a basis `w₁, …, w_m` of `W_j` put `L_j(y) = Wr(w₁, …, w_m, y)/Wr(w₁, …, w_m)`; expanding along the last column, the coefficient of `y^(m)` is 1. Continuation multiplies both Wronskians by the same determinant, so the coefficients are single-valued on `Y(2)` and meromorphic on `ℍ`, where x is a local coordinate (§2.2). The `w_i` have moderate growth at the cusps (§7.4), so the coefficients extend meromorphically to `X(2) ≅ ℙ¹`, lie in `ℂ(x)`, and Fuchs' criterion gives regular singularities. Every operator killing f kills all its continuations, so `L_j` right-divides it. Zeros of the Wronskian on `ℍ` are apparent singularities.
+*Proof sketch.* Write `Wr(f₁, …, f_r) = det(f_j^(i−1))` for the Wronskian in x, with rows indexed by the derivative order `i − 1` and the empty Wronskian equal to 1. For a basis `w₁, …, w_m` of `W_j` put `L_j(y) = Wr(w₁, …, w_m, y)/Wr(w₁, …, w_m)`; expanding along the last column, the coefficient of `y^(m)` is 1. Continuation multiplies both Wronskians by the same determinant, so the coefficients are single-valued on `Y(2)` and meromorphic on `ℍ`, where x is a local coordinate (§2.2). At a cusp `g∞` the weight-zero law gives `F(gτ) = ρ(g)F(τ)`, and in an eigenbasis of the semisimple `ρ(T)` every component is a generalized expansion `Q^μ Σ_{m ≥ m₀} a_m Q^m` without logarithms (QSeriesPartitionsAndMockModularForms §8.4a, holomorphic case with semisimple monodromy). So the Wronskians are finite sums of such expansions in the local parameter of each cusp of `Γ(2)`, the single-valued coefficients have finite principal parts there, and they extend meromorphically to `X(2) ≅ ℙ¹`, lie in `ℂ(x)`, and Fuchs' criterion gives regular singularities. Every operator killing f kills all its continuations, so `L_j` right-divides it. Zeros of the Wronskian on `ℍ` are apparent singularities.
 
-*Needs:* §§2.2, 7.4, 7.7; ConformalMappingPartII §0.3.
+*Needs:* §§2.2, 7.7; QSeriesPartitionsAndMockModularForms §8.4a; ConformalMappingPartII §0.3.
 
 ### 7.9 Arithmetic descent and finite component monodromy
 
@@ -795,6 +788,9 @@ Let h be a nonzero congruence form of weight `k ≥ 1` on `Γ′`, put `G = Γ�
 - The series `K₀` of §2.6 is integral and transcendental; its full local solution space has infinite unipotent monodromy at `0`, so §7.1 does not apply. This is the case `k = 1` of §7.14 for `θ₃²` with its character.
 - Odd-weight cusp monodromy need not be unipotent. Take `h = θ₃²`, `k = 1` and `Γ′ = H′` (§§1.3, 2.6), so `G = H′` and `Y(H′) = Y(2)`. At the cusp `1 = g∞`, `g = [[1, 0], [1, 1]]`, the stabilizer in H′ is generated by `−gT²g⁻¹ = [[1, −2], [2, −3]]`. On the basis `(h, τh)` continuation along it sends h to `(2τ − 3)h` and τh to `(τ − 2)h`, the matrix `B = [[−3, −2], [2, 1]]` of trace `−2` and determinant 1, with `B ≠ −I`: its eigenvalue is `−1` twice, it is not unipotent, and `B² = [[5, 4], [−4, −3]]` is unipotent and nonidentity. In x this cusp is `x = ∞`, where the equation of §2.6 has the double exponent `1/2`. At the cusp `∞` the stabilizer contains `T²` itself, and the monodromy at `x = 0` is unipotent.
 - For Δ (`k = 12`) the minimal operator on `Y(2)` has order 13 and no apparent singularities on `ℍ`.
+- The component expansions used in §§7.8 and 8.5 are the holomorphic case of QSeriesPartitionsAndMockModularForms §8.4a at the cusp `∞`, of width 1 with monodromy `ρ(T)`. For `n = 1`, `k = 2`, `F = η⁴` and `ρ = ν_η⁴` (QSeries §5.2), `ρ(−I) = 1` and `ρ(T) = exp(πi/3)`, so `μ = 1/6` and `η⁴ = Q^(1/6)(1 − 4Q + 2Q² + 8Q³ − 5Q⁴ + ⋯)`; a Laurent series in Q with integral exponents would have multiplier 1 under T, not `exp(πi/3)`.
+- The eigenvalue `i` gives `μ = 1/4`; it occurs for the coset representation of `Γ₀(4)`, whose cusps have widths 1, 4 and 1, so `ρ(T)` has a 4-cycle with eigenvalues `1, i, −1, −i`.
+- An eigenvalue that is not a root of unity gives a nonreal exponent. For `σ(T)` of §7.13, with eigenvalues `e₊ ≈ 5.19258` and `e₋ = −1/e₊ ≈ −0.19258`, put `c = log(e₊)/(2π) ≈ 0.26216`; then `μ₊ = −ic` and `μ₋ = 1/2 + ic`, with `exp(2πiμ₊) = exp(2πc) = e₊` and `exp(2πiμ₋) = −exp(−2πc) = e₋`. §8.4a needs no unitarity or finite-order hypothesis for this, and the definition of §7.3 imposes none.
 - For `F = 1` the minimal operator is `∂`, of order one; the proof of §7.11 never forces the ambient system to be irreducible.
 - The Wronskian quotient of §7.8 is monic: `W = span{1}` gives `Wr(1, y)/Wr(1) = y′`, while the reversed order `Wr(y, 1) = −y′` would not be monic; `W = span{1, x}` gives `y″`; `W = 0` gives the identity operator, whose only solution is `0`.
 - In §7.13 the effective representation on `V_F` is trivial while `σ` has infinite image; §7.12 applies to `V_F` and says nothing about σ.
@@ -802,7 +798,7 @@ Let h be a nonzero congruence form of weight `k ≥ 1` on `Γ′`, put `G = Γ�
 
 ### Dependencies
 
-Layers 1–3 and 6; DiophantineApproximationAndTranscendencePartII §§4.1, 4.2, 4.5; DiophantineApproximationAndTranscendence §§5.2–5.3; ConformalMappingPartII §§0.3, 0.5, 1.8, 5.8; QSeriesPartitionsAndMockModularForms §§5.2, 8.1; ModularForms Layer 0; UniversalCovers Stage 2; FuchsianOrbifolds Layers 2, 6.
+Layers 1–3 and 6; DiophantineApproximationAndTranscendencePartII §§4.1, 4.2, 4.5; DiophantineApproximationAndTranscendence §§5.2–5.3; ConformalMappingPartII §§0.3, 0.5, 1.8, 5.8; QSeriesPartitionsAndMockModularForms §§5.2, 8.1, 8.4a; ModularForms Layer 0; UniversalCovers Stage 2; FuchsianOrbifolds Layers 2, 6.
 
 ## Layer 8: Quasimodular forms and arithmetic growth
 
@@ -856,7 +852,7 @@ The series `I₁(x) = Σ C(2n, n)² x^(n+1)/(n + 1)` and `I₂(x) = Σ C_n² x^(
 
 Fix a number field `K ⊆ ℂ` and a representation ρ as in §7.3. Let `S_k(ρ; K)` be the K-space of vector-valued forms of weight k for ρ whose components all have expansions in `tK[[t]]` with `t = q^(1/N)` for a common N. A place v of K is deficient for ρ if for some k some component `Σ_{m≥1} a_m t^m` of an element of `S_k(ρ; K)` has `|a_m|_v` unbounded (v finite), or `|a_m|_v/m^((k−1)/2+ε)` unbounded for some `ε > 0` (v archimedean, with the usual modulus, not its square) (CDT, §7.4.8, pp.694–695). CDT takes `K = ℚ`.
 
-*Needs:* §§1.2, 7.3, 7.4.
+*Needs:* §§1.2, 7.3; QSeriesPartitionsAndMockModularForms §8.4a.
 
 API:
 
@@ -897,7 +893,7 @@ Let f be a component of an element of `S_k(ρ; K)` that is not a weak form on an
 
 ### Dependencies
 
-Layers 1, 2, 6 and 7; ModularForms Layers 0 and 4; AlgebraicModularFormsAndSerreWeights §2.9 (All-prime bounded denominators, Layer R15.2); AutomorphicGaloisRepresentations §4.2; GeometryOfNumbersAndQuadraticArithmetic §4.3; Mathlib derivative and Eisenstein API.
+Layers 1, 2, 6 and 7; QSeriesPartitionsAndMockModularForms §8.4a; ModularForms Layers 0 and 4; AlgebraicModularFormsAndSerreWeights §2.9 (All-prime bounded denominators, Layer R15.2); AutomorphicGaloisRepresentations §4.2; GeometryOfNumbersAndQuadraticArithmetic §4.3; Mathlib derivative and Eisenstein API.
 
 ## Layer 9: The arithmetic fundamental group of the cuspidal model
 
