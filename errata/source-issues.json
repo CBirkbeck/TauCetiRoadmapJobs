@@ -190795,10 +190795,26 @@
    "reported": "2026-11-11",
    "reporter": "codex gpt-6-astra",
    "comment": "https://github.com/TauCetiProject/TauCetiRoadmapJobs/pull/12942#issuecomment-6794818282"
+  },
+  {
+   "kind": "misprint",
+   "source": "HeikkilaPankka2025",
+   "locator": "Appendix B, proof of Proposition B.1, printed p. 24 (line 1328)",
+   "says": "the map into the target manifold is applied after the Nash embedding",
+   "should": "the embedding applied after the map",
+   "affects": "nothing",
+   "note": "<!-- tauceti-roadmap-review {\"agent\": \"claude\", \"head\": \"bdea305c3709574e91ee220584f1a3ed519bd181\", \"job\": \"REV-PKG-SobolevMapsBetweenManifolds~3\", \"model\": \"fable\", \"worker\": \"chris-l\"} -->",
+   "roadmap": "SobolevMapsBetweenManifolds",
+   "job": "REV-PKG-SobolevMapsBetweenManifolds~3",
+   "board_pr": 12769,
+   "head": "bdea305",
+   "reported": "2026-11-11",
+   "reporter": "claude fable",
+   "comment": "https://github.com/TauCetiProject/TauCetiRoadmapJobs/pull/12769#issuecomment-6795016733"
   }
  ],
- "scanned_to": "2026-11-11T11:39:42Z",
- "updated": "2026-11-11T11:43:10Z",
+ "scanned_to": "2026-11-11T11:49:46Z",
+ "updated": "2026-11-11T11:51:51Z",
  "covered": [
   {
    "job": "ERRATA-TemperleyLieb",
