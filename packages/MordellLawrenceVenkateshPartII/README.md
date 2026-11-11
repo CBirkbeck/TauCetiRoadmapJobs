@@ -8,8 +8,8 @@ representation whose restriction to a decomposition group is read off, on a p-ad
 from the value of a p-adic period map. Coefficient algebras, their semilinear normalizer groups and
 tensor filtrations on these groups make Frobenius and arithmetic descent part of one algebraic group.
 Faltings's finiteness lemma leaves finitely many global semisimplifications; a fixed
-semisimplification gives finitely many local graded types once the auxiliary flag indices are
-forgotten, and global purity over ℚ forces the induced Hodge filtrations to be balanced. A
+semisimplification gives finitely many local graded types, which record the auxiliary flag only
+through its parabolic, and global purity over ℚ forces the induced Hodge filtrations to be balanced. A
 root-pairing estimate bounds the semibalanced filtrations with a prescribed associated graded, and
 strongly balanced monodromy distributes the estimate over independent factors in one Frobenius
 cycle. The pure Ax–Schanuel theorem for period maps, transferred to p-adic coefficients through
@@ -111,8 +111,9 @@ It uses, and does not redevelop:
   of finite monodromy (§5.10).
 - **ComplexKahlerGeometry** K3 §3.4 owns Rückert's Nullstellensatz `I(V(𝔞)) = √𝔞` for convergent
   power series (`ruckert_nullstellensatz`: a germ vanishing on the common zero set of finitely many
-  germs has a power in their ideal); the p-adic transfer (§3.4) applies it to the period ideal
-  without restating it;
+  germs has a power in their ideal) and the locally finite decomposition of analytic sets into
+  irreducible components; the p-adic transfer (§3.4) applies both to the period ideal without
+  restating them;
   **RestrictedPowerSeries** owns evaluation of restricted series (§2.1) and Noetherianity of Tate
   algebras (§5.2); **ComplexComparisonPartII** owns the Gauss–Manin connection (§C5.2), geometric
   Hodge theory (§C5.3), regular singular connections with Deligne's Riemann–Hilbert theory (§C5.6)
@@ -134,7 +135,12 @@ It uses, and does not redevelop:
   lisseness hypothesis of PadicHodgeTheory §7.3 for the smooth projective families of Layer 0.
 - **Chebotarev** Layer 10 owns the Chebotarev density theorem; **ArithmeticGaloisDuality** §R02.3.1 owns
   Hermite's finiteness of extensions of bounded degree unramified outside a finite set.
-- **HeightsRationalPointsAndObstructions** §§1.6–1.7 own weak Mordell–Weil and Mordell–Weil;
+- **HeightsRationalPointsAndObstructions** §§1.6–1.7 own weak Mordell–Weil and Mordell–Weil, and §5.2
+  owns the scheme-theoretic translation stabilizer of a closed subscheme of an abelian variety over a
+  field, as a subgroup functor on all test schemes (nilpotent ones included) with membership, action and
+  base change; `Stab(H)` of §10.1 is its specialization to a divisor `H`, while the finiteness of the
+  stabilizer of an ample divisor, good reduction, primitivity and the finite primitive quotients of §10.7
+  are owned here;
   **FaltingsFinitenessAndIsogenyTheorems** §R28.5.15 owns Shafarevich finiteness for curves of
   genus at least two.
 - **AbelianSchemesAndArithmeticModuliPartII** Layer B3 owns the o-minimal Ax–Schanuel machinery for
@@ -235,9 +241,14 @@ finiteness for the quotient of the hypersurface parameter space by `PGL_(n+1)`.
   scheme of an abelian variety over a field is integral, so both apply to it. These are the
   carriers of the ample effective divisors of Layer 10 on the abelian variety over `K`.
   `TauCeti.AlgebraicGeometry.LineBundleClass.intersectionNumber`
-  (`TauCeti/AlgebraicGeometry/IntersectionNumber/Basic.lean`, line 111) pairs a class only with a
-  curve over a field; numerical equivalence classes of divisors and the top self-intersection `φⁿ`
-  are not at the pin.
+  (`TauCeti/AlgebraicGeometry/IntersectionNumber/Basic.lean`, line 111) pairs a class `a` on `X` with
+  any scheme `C` over a field `k` and morphism `ι : C → X`, as the Euler-characteristic degree
+  `TauCeti.AlgebraicGeometry.LineBundleClass.eulerDegree` (`TauCeti/AlgebraicGeometry/LineBundle/Degree.lean`,
+  line 130, built on the line-74 degree of an invertible sheaf) of `ι^* a`, computed with the truncation
+  `dim H⁰ − dim H¹`. When `C` is a proper curve it is the usual degree of the restriction; for
+  `C = X = Spec k` and `ι = id` it is defined and vanishes on the trivial class. It is not a
+  numerical-equivalence carrier: numerical equivalence classes of divisors and the top self-intersection
+  `φⁿ` are not at the pin.
 
 ### From TauCetiRoadmap.MordellLawrenceVenkatesh
 
@@ -310,9 +321,12 @@ finiteness for the quotient of the hypersurface parameter space by `PGL_(n+1)`.
 - ComplexKahlerGeometry K3 §3.4 (local algebra, the Nullstellensatz, coherence and singular loci):
   Noetherianity of the convergent power-series ring and Rückert's Nullstellensatz `I(V(𝔞)) = √𝔞` for
   every ideal of `ℂ{z₁, …, z_m}`, in the form `ruckert_nullstellensatz`: a germ vanishing near the
-  point on the common zero set of finitely many germs `f₁, …, f_k` has a power in `(f₁, …, f_k)`.
-  Consumed in §3.4, where the germs are the period equations and the vanishing germ is an algebraic
-  function; for `𝔞 = (z²)` it gives `z² ∈ 𝔞` although `z ∉ 𝔞`.
+  point on the common zero set of finitely many germs `f₁, …, f_k` has a power in `(f₁, …, f_k)`; and the
+  locally finite decomposition of a reduced analytic subset into irreducible components, so that a small
+  neighbourhood of a point meets only finitely many components, all passing through it. Consumed in
+  §3.4, where the germs are the period equations and the vanishing germ is the product of algebraic
+  functions vanishing on the finitely many components through the point; for `𝔞 = (z²)` it gives
+  `z² ∈ 𝔞` although `z ∉ 𝔞`.
 
 ### From TauCetiRoadmap.ComplexComparisonPartII
 
@@ -465,6 +479,11 @@ finiteness for the quotient of the hypersurface parameter space by `PGL_(n+1)`.
 
 - HeightsRationalPointsAndObstructions §1.6 (`A(K)/mA(K)` finite for `m ≥ 1`) and §1.7 (Mordell–Weil).
   Consumed in §10.8.
+- HeightsRationalPointsAndObstructions §5.2 (scheme-theoretic stabilizers): for a closed subscheme `X` of
+  an abelian variety `A` over a field `k`, the subgroup functor `T ↦ {a ∈ A(T) : X_T + a = X_T}` on all
+  `k`-schemes `T`, nilpotent ones included, represented by a closed subgroup scheme of `A`, with
+  membership, translation action and base change; `Stab(A) = A` and `Stab({x}) = 0`. Consumed in §10.1,
+  with `X = H` a smooth ample divisor, and through it in §10.7.
 - FaltingsFinitenessAndIsogenyTheorems §R28.5.15 (`finite_curves_goodReduction`: finitely many
   isomorphism classes of smooth projective geometrically connected curves of genus `g ≥ 2` over `K`
   with good reduction outside `S`). Consumed in §10.10.
@@ -755,6 +774,8 @@ API:
 - `ℚ[ε]/(ε²)` is an H⁰-algebra but not étale.
 - The rank-two permutation algebra of a quadratic field is constant on `X` but is not `O_(ℚ×ℚ)`: its
   Galois action swaps the factors.
+- The zero algebra (the empty finite étale algebra, with `1 = 0`) is an étale H⁰-algebra with no
+  geometric points; ranks of modules over it are not determined, so §§1.5 and 2.1 require `E ≠ 0`.
 
 *Needs:* §§0.3–0.4.
 
@@ -828,17 +849,24 @@ API:
 - For `E = ℚ × ℚ`, ranks `(2, 2)` give `N = 2`.
 - Ranks `(1, 3)` have total dimension four but are not equidimensional; the total dimension alone does
   not decide.
-- The zero module is equidimensional of rank zero; positivity of `N` is a separate hypothesis.
+- Over `E ≠ 0` the zero module is equidimensional of rank zero only; positivity of `N` is a separate
+  hypothesis.
+- Over the zero algebra `E = 0` there are no embeddings `τ`, so `V = 0` is equidimensional of every rank
+  `N` (and free of every rank, `0^N = 0`); the rank of an equidimensional module is unique only for
+  `E ≠ 0`.
 
 *Needs:* §1.3.
 
 ### 1.5 General linear, symplectic and orthogonal structures
 
-For an equidimensional `E`-module `V` of rank `N > 0`, a **`GL_N`-structure** is its `E`-linear
-structure. A **`GSp_N`-structure** is a perfect alternating `E`-bilinear pairing `V ⊗_E V → L` with `L`
-invertible of `E`-rank one, so `N` is even. A **`GO_N`-structure** is a perfect symmetric pairing into
-such an `L`. Isomorphisms include a compatible similitude of `L`. The orthogonal similitude group is
-kept whole, with its two components when `N` is even (LS, Definition 5.27, p. 48).
+Let `E` be a nonzero finite étale coefficient algebra, so that the rank of an equidimensional module is
+determined. For an equidimensional `E`-module `V` of rank `N > 0`, a **`GL_N`-structure** is its
+`E`-linear structure. A **`GSp_N`-structure** is a perfect alternating `E`-bilinear pairing
+`V ⊗_E V → L` with `L` invertible of `E`-rank one, so `N` is even: on each field factor of a realization
+of `E` (there is at least one) it is a perfect alternating form on an `N`-dimensional space. A
+**`GO_N`-structure** is a perfect symmetric pairing into such an `L`. Isomorphisms include a compatible
+similitude of `L`. The orthogonal similitude group is kept whole, with its two components when `N` is
+even (LS, Definition 5.27, p. 48).
 
 API:
 
@@ -850,7 +878,12 @@ API:
 **Checks.**
 
 - A symplectic rank-two module gives `GSp₂ = GL₂` with multiplier the determinant.
-- No perfect alternating form exists in odd rank in characteristic zero.
+- Over `E = ℚ`, rank `N = 1` admits no perfect alternating form (the only alternating form on a line is
+  zero), while `N = 2` with Gram matrix `((0, 1), (−1, 0))`, of determinant 1, is a `GSp₂`-structure.
+- Over the zero algebra `E = 0`, `V = 0` is vacuously equidimensional of rank 1, `L = E` is invertible,
+  and the zero pairing induces the isomorphism `0 → Hom_E(0, E) = 0`, so it is perfect and alternating
+  in odd rank; `N > 0` alone does not supply nontriviality, and the hypothesis `E ≠ 0` is what makes the
+  parity conclusion true.
 - For `E = ℚ × ℚ` the value line of a perfect `E`-valued symmetric form has ℚ-dimension two; a line of
   ℚ-dimension one is the wrong carrier.
 - Split `GO_(2r)` has two components; no connectedness follows from its reductive identity component.
@@ -889,7 +922,8 @@ Let `Y ⊂ X_K × A` be a smooth projective family of hypersurfaces in an abelia
 `n`, with `X` smooth over ℚ and with an integral model, and `O_K[S⁻¹]` finite étale over `ℤ[S′⁻¹]`.
 Let `I` be a finite orbit of pairs `(ι, χ)` under `Gal(ℚ̄/ℚ) × Gal(ℚ^cyc/ℚ)`, with `χ` of order prime to
 `p`, such that the twisted cohomology vanishes outside degree `n − 1`. Construct a constant finite
-étale H⁰-algebra `E_I` on `X` with geometric idempotents indexed by `I`, and an `E_I`-module system
+étale H⁰-algebra `E_I` on `X` with geometric idempotents indexed by `I` (nonzero, as an orbit is
+nonempty), and an `E_I`-module system
 `V_I` whose geometric coefficient fibres are `R^(n−1) f_(ι)* g_(ι)^* L_χ`. Prove that `V_I` has `E_I`-rank
 `N = n!·d`, `d = [H]^n/n!`, and ℚ-rank `|I|·N`, and that it is integral, polarized pure of weight
 `n − 1` and has integral Frobenius (LS, Lemma 5.29 and proof, pp. 49–51; LS line 2261).
@@ -1010,9 +1044,9 @@ finiteness statements for global types, semisimplification geometries and local 
 
 ### 2.1 Semilinear coefficient normalizers
 
-Let `E/E₀` be finite étale in characteristic zero, `V` free over `E` of rank `N > 0`, and `H = GL_N`,
-`GSp_N` or `GO_N` in its standard representation (with a perfect `E`-valued form after trivializing the
-value line in the paired cases). Put `B = Res_(E/E₀) H` and define the **semilinear coefficient
+Let `E/E₀` be nonzero finite étale in characteristic zero, `V` free over `E` of rank `N > 0`, and
+`H = GL_N`, `GSp_N` or `GO_N` in its standard representation (with a perfect `E`-valued form after
+trivializing the value line in the paired cases). Put `B = Res_(E/E₀) H` and define the **semilinear coefficient
 normalizer** `G = N_(GL_(E₀)(V))(B)`. Prove that `G` is the group of invertible `E`-semilinear maps,
 preserving the form up to a semilinear similitude in the paired cases, and that
 `1 → B → G → Aut_(E₀)(E) → 1` is exact as a sequence of group schemes, with fppf-local lifts of
@@ -1134,21 +1168,34 @@ For `G` in characteristic zero with reductive identity component, define a **G-f
 tensor-compatible filtration of the forgetful functor `Rep_fd(G) → Vect`, with its associated graded
 tensor structure. A splitting cocharacter `μ` gives `F^aV = ⊕_(j≥a) V_j`. Prove that two cocharacters
 define the same filtration exactly when their dynamic parabolics agree and they are conjugate in that
-parabolic, and that restriction to `G°` identifies G-filtrations with `G°`-filtrations; a parabolic
-alone determines a filtration only up to reindexing (LS, Definitions 5.40–5.41 and Lemma 5.42,
-pp. 56–58).
+parabolic, and that restriction to `G°` identifies G-filtrations with `G°`-filtrations (LS,
+Definitions 5.40–5.41 and Lemma 5.42, pp. 56–58). The dynamic parabolic `P_μ` is the stabilizer of the
+filtration of `μ` in every representation; it does not determine the filtration, not even the chain of
+subspaces once the indices are forgotten, so the conjugacy condition in the criterion cannot be dropped
+(see Source corrections).
 
 API:
 
 - A cocharacter induces a decreasing weight filtration on every representation.
 - Two cocharacters give equal filtrations exactly when they have the same parabolic and are conjugate
   in it.
+- `P_μ` is the subgroup preserving the filtration of `μ` on every representation; equality of
+  parabolics alone gives neither equal filtrations nor equal unindexed chains.
 - The associated graded is `F^a/F^(a+1)` as a tensor functor, and restriction to `G°` preserves it.
 
 **Checks.**
 
 - In `GL₂`, weights `(1, 0)` and `(2, 0)` have the same upper triangular parabolic but different indexed
   filtrations.
+- For `G = 𝔾_m` acting on `V = ℚe₊ ⊕ ℚe₋` through the characters `t` and `t⁻¹`, the cocharacters
+  `μ(t) = t` and `ν(t) = t⁻¹` both have dynamic parabolic `G` (the group is commutative), but
+  `F¹_μ V = ℚe₊` and `F¹_ν V = ℚe₋`: the chains `0 ⊂ ℚe₊ ⊂ V` and `0 ⊂ ℚe₋ ⊂ V` differ even with the
+  indices forgotten. The criterion separates them, since `μ ≠ ν` are not conjugate in the commutative
+  group `G`.
+- In `SL₃` the regular cocharacters `diag(t, 1, t⁻¹)` and `diag(t², t, t⁻³)` both have the upper triangular
+  Borel as dynamic parabolic; on the adjoint representation the root vectors `E₁₂, E₂₃, E₁₃` have weights
+  `1, 1, 2` for the first and `1, 4, 5` for the second, so the second chain contains `span(E₁₃, E₂₃)` and
+  the first does not. Semisimplicity of `G` does not make the parabolic determine the unindexed chain.
 - The trivial cocharacter gives the filtration concentrated in degree zero.
 - In `GL₂² ⋊ C₂` a cocharacter with unequal component weights is not stabilized by the swap.
 - Filtered vector spaces form an exact category, not an abelian one.
@@ -1335,7 +1382,8 @@ of nonabelian cohomology with twisting.
 
 For the weight list `(2, 0, −2)`, `T(1/2) = 1`, `T(1) = 2` and `T(2) = 2`. In `GL₂`, cocharacters
 `(1, 0)` and `(2, 0)` define the same triangular parabolic and different indexed filtrations, so a
-filtration is not determined by its parabolic.
+filtration is not determined by its parabolic; on `𝔾_m` the cocharacters `t` and `t⁻¹` share the
+parabolic `𝔾_m` and give different chains even with the indices forgotten.
 
 ### Dependencies
 
@@ -1453,13 +1501,21 @@ scheme over `K_v`. Integrating the connection gives the formal horizontal frame 
 (MordellLawrenceVenkatesh §2.6); it is the common restriction to `X̂` of the p-adic period map and, after
 transporting its `K_v`-coefficients by the abstract `σ : ℚ̄_p ≅ ℂ` of the Conventions, of a local complex
 period map of `X_ℂ` at `σ(x₀)`, the transported series converging on a complex neighbourhood
-(MordellLawrenceVenkatesh §2.8). Applying §3.3 to `Z^σ` gives a nonzero regular function `H` on `X_ℂ`
-vanishing on the complex component, and Rückert's Nullstellensatz (ComplexKahlerGeometry K3 §3.4,
-`ruckert_nullstellensatz`) places a power `H^m` in the ideal of germs at `σ(x₀)` generated by the period
-equations. Pulled back to `X̂` and transported by `σ⁻¹`, `H^m` is a regular function on `X_(ℚ̄_p)`
-vanishing on the formal inverse image of `Z`; it is defined over a finite extension of `K_v`, and its norm
-is a nonzero regular function `H′` on `X_(K_v)` with the same vanishing (LS line 3065). After clearing
-denominators `H′ ∈ R` lies in every power of the maximal ideal of `x₀` in the Noetherian domain `R/I_W`;
+(MordellLawrenceVenkatesh §2.8). The period equations, the pullbacks of finitely many equations of `Z^σ`
+along that local period map, cut out the inverse image of `Z^σ`; after shrinking to a small ball `B`
+around `σ(x₀)` this inverse image is the union of finitely many irreducible analytic components
+`U₁, …, U_r` of it in `B`, each through `σ(x₀)` (the locally finite irreducible decomposition of
+ComplexKahlerGeometry K3 §3.4). Applying §3.3 to `Z^σ` and each `U_j` gives a nonzero regular function
+`H_j` on the affine irreducible `X_ℂ` vanishing on `U_j` (for `U_j = {σ(x₀)}`, any nonzero regular function
+vanishing at that point, which exists as `d ≥ 1`). The product `H = H₁⋯H_r` is nonzero because `X_ℂ` is
+irreducible, and it vanishes on the entire common zero set of the period equations in `B`; only then does
+Rückert's Nullstellensatz (ComplexKahlerGeometry K3 §3.4, `ruckert_nullstellensatz`) place a power `H^m`
+in the ideal of germs at `σ(x₀)` generated by the period equations. A function vanishing on one component
+only need not have any power in that ideal. Pulled back to `X̂` and transported by `σ⁻¹`, `H^m` is a
+regular function on `X_(ℚ̄_p)` vanishing on the formal inverse image of `Z`; it is defined over a finite
+extension of `K_v`, and its norm is a nonzero regular function `H′` on `X_(K_v)` with the same vanishing
+(LS line 3065). After clearing denominators `H′ ∈ R` lies in every power of the maximal ideal of `x₀` in
+the Noetherian domain `R/I_W`;
 Krull intersection in the localization at that maximal ideal, into which `R/I_W` injects, gives
 `H′ ∈ I_W`, so `H′` vanishes on `W`. The product of these functions over the finitely many components and
 disks is nonzero because `X` is irreducible.
@@ -1468,6 +1524,10 @@ disks is nonzero because `X` is irreducible.
 
 - Formal vanishing at a point is not ideal membership in the Tate algebra; Krull intersection is the
   step that closes this, and it needs a Noetherian local ring.
+- For the germ ideal `(xy)` of `ℂ{x, y}`, whose zero germ has the two components `x = 0` and `y = 0`, the
+  function `x` vanishes on the first component, but `(xy)` maps to zero in `ℂ{x, y}/(y) = ℂ{x}` while `x^m`
+  maps to `x^m ≠ 0`, so no power of `x` lies in `(xy)`; the product `xy` over both components does.
+  Rückert's theorem is applied only to the product over all components through the point.
 - An infinite union of nondense subsets can be dense (the rational points of `𝔸¹` are a countable union
   of points); only finite unions over components and disks are taken.
 - For `Z = D_mon` (codimension zero) and `d ≥ 1` the hypothesis fails, and indeed `Φ_p⁻¹(Z) = Ω` is
@@ -1763,14 +1823,17 @@ of §2.6.
 
 A **bifiltered coefficient Frobenius object** is `(V, φ, F, f)` with Hodge G-filtration `F`, φ-stable
 auxiliary G-filtration `f` and the given semilinear coefficient structure. Its **graded type** is the
-`G`-conjugacy class of `(P_f, φ_M, F_M)`, where the numerical indexing of `f` is forgotten and the full
-indexing of `F_M` is kept (LS, Definition 8.8 and Remark 8.9, pp. 77–78).
+`G`-conjugacy class of `(P_f, φ_M, F_M)`, where `f` enters only through its parabolic `P_f` (so its
+numerical indexing, and whatever else of `f` the parabolic does not record by §2.5, is forgotten) and the
+full indexing of `F_M` is kept (LS, Definition 8.8 and Remark 8.9, pp. 77–78).
 
 API:
 
 - A bifiltered object packages two compatible filtrations with φ-stability of the auxiliary one.
 - The graded type is the parabolic with the filtered Frobenius Levi data up to `G`-conjugacy.
-- Strictly order-preserving reindexing of `f` leaves the graded type unchanged.
+- The graded type depends on `f` only through `P_f`: replacing `f` by the filtration of a positive power
+  of a splitting cocharacter, or by any φ-stable auxiliary filtration with the same parabolic, leaves it
+  unchanged.
 
 **Checks.**
 
@@ -1824,8 +1887,9 @@ in Source corrections; LS line 3668).
 
 Prove that for a fixed global coefficient-group semisimplification `ρ^ss` and fixed residue Frobenius
 data, the local bifiltered objects obtained from global semisimplification flags have finitely many
-graded types, and their induced Hodge filtrations are balanced. The finiteness concerns types with the
-auxiliary indices forgotten, not flags or extensions (LS, Lemma 8.10, pp. 78–79).
+graded types, and their induced Hodge filtrations are balanced. The finiteness concerns types, which
+record the auxiliary filtration only through its parabolic, not flags or extensions (LS, Lemma 8.10,
+pp. 78–79).
 
 A route: §2.10 gives finitely many allowable parabolic and Levi pairs up to centralizer conjugacy; the
 crystalline comparison for the fixed global quotient representation and §5.4 give balance; unipotent
@@ -1983,8 +2047,8 @@ the finite union.
 ### Examples
 
 For a nonsplit integral Galois representation with fixed semisimplification there can be infinitely
-many extension classes; after the auxiliary indices are forgotten they have finitely many local graded
-types, which is what the codimension estimate consumes.
+many extension classes; recording the auxiliary filtration only through its parabolic, they have
+finitely many local graded types, which is what the codimension estimate consumes.
 
 ### Dependencies
 
@@ -2253,7 +2317,7 @@ and ranks `N`, `N/2 + 1`, `N/2 + 1`, the inequality reduces to `2Σ_q A(n, q)² 
 
 For `n ≥ 2` put `α_q = A(n, q)/n!`, extended by zero outside `0 ≤ q < n`, and define the **Eulerian
 difference law** `β_j = Σ_q α_q α_(q−j)` for `j ∈ ℤ`: the law of the difference of two independent
-descent counts (LS, Lemma A.2, p. 90; LV, §10.2, printed pp. 972–974). It is the normalized `GL` adjoint
+descent counts (LS, Lemma A.2, p. 91; LV, §10.2, printed pp. 972–974). It is the normalized `GL` adjoint
 multiplicity profile of §8.1.
 
 API:
@@ -2277,7 +2341,7 @@ API:
 ### 8.3 Second moment and log-concavity
 
 Prove that for `n ≥ 2` the Eulerian difference law has mean zero, second moment `Σ_j j² β_j = (n + 1)/6`
-and log-concave masses on its contiguous support `−(n − 1) ≤ j ≤ n − 1` (LS, Lemmas A.2–A.3, pp. 90–91,
+and log-concave masses on its contiguous support `−(n − 1) ≤ j ≤ n − 1` (LS, Lemmas A.2–A.3, p. 91,
 LS line 4245; LV, (10.9)–(10.10), printed pp. 972–973).
 
 A route: the descent count has variance `(n + 1)/12`, and the difference of two independent copies has
@@ -2587,14 +2651,17 @@ abelian-surface case goes through curves.
 
 Fix a number field `K`, a finite set `S`, an abelian variety `A/K` with abelian scheme model `𝒜` over
 `O_K[S⁻¹]`, and a smooth ample effective divisor `H ⊂ A`. `H` has **good reduction outside `S`** when its
-schematic closure in `𝒜` is smooth over `O_K[S⁻¹]`. The **translation stabilizer** `Stab(H)` is the group
-scheme of `a` with `H + a = H`; `H` is **primitive** when `Stab(H)(K̄) = {0}` (LS, Definition 9.1, p. 85,
-with the zero translation treated as in Source corrections).
+schematic closure in `𝒜` is smooth over `O_K[S⁻¹]`. The **translation stabilizer** `Stab(H)` is the
+scheme-theoretic stabilizer of HeightsRationalPointsAndObstructions §5.2 for `X = H`: the closed subgroup
+scheme of `A` whose `T`-points, for every `K`-scheme `T`, are the `a ∈ A(T)` with `H_T + a = H_T`; `H` is
+**primitive** when `Stab(H)(K̄) = {0}` (LS, Definition 9.1, p. 85, with the zero translation treated as in
+Source corrections).
 
 API:
 
 - Good reduction is smoothness of the closure in the chosen abelian scheme model.
-- `Stab(H)` is a finite subgroup scheme of `A` (ampleness), reduced in characteristic zero.
+- `Stab(H)` is a finite subgroup scheme of `A`, reduced in characteristic zero: it lies in the kernel of
+  `φ_(𝒪(H))`, which is finite because `𝒪(H)` is ample (AbelianSchemesAndArithmeticModuli §A2.4).
 - `H` is primitive exactly when every geometric stabilizing translation is zero.
 - Translation by a `K`-point preserves good reduction, since the point extends to a section of `𝒜`.
 
@@ -2602,11 +2669,17 @@ API:
 
 - Translation by zero fixes every `H` and does not make `H` nonprimitive.
 - The pullback of a divisor under a nontrivial étale isogeny is stabilized by the nonzero points of its
-  kernel, so it is not primitive.
+  kernel, so it is not primitive: for `A = E₁ × E₂` and `H = ([2] × id)⁻¹(H′)` with `H′` primitive,
+  `H_T + a = H_T` exactly when `([2] × id)(a)` stabilizes `H′_T`, so `Stab(H) = ker([2] × id) = E₁[2] × 0`,
+  of order four, as functors on all test schemes and not only on geometric points.
+- The specialization agrees with the general stabilizer of HeightsRationalPointsAndObstructions §5.2 on
+  its basic cases: on an elliptic curve a point `{x}` is a smooth ample divisor with `Stab({x}) = 0`, so it
+  is primitive; `A` itself has stabilizer `A` but is not a divisor, and ampleness is what makes `Stab(H)`
+  finite.
 - For `a ∈ A(K)` properness extends `a` to `𝒜`, and `H + a` again has smooth closure.
 
-*Needs:* AbelianSchemesAndArithmeticModuli §§A0.1, A1.2, A1.8, A2.4, A2.10; SchemeAndStackFoundations
-§4.14; `TauCeti.AlgebraicGeometry.AbelianVariety`.
+*Needs:* HeightsRationalPointsAndObstructions §5.2; AbelianSchemesAndArithmeticModuli §§A0.1, A1.2, A1.8,
+A2.4, A2.10; SchemeAndStackFoundations §4.14; `TauCeti.AlgebraicGeometry.AbelianVariety`.
 
 ### 10.2 A parameter space for smooth ample divisors
 
@@ -2736,7 +2809,7 @@ Prove that every smooth ample hypersurface `H ⊂ A` is the inverse image of a p
 `H′ ⊂ A/T`, where `T = Stab(H)` is finite and the quotient isogeny has degree `|T|`; that
 `d(H) = |T|·d(H′)`; and that for a fixed numerical class only finitely many kernels `T` occur, since their
 orders divide `d(H)` and all lie in `A[m]` for a common `m`. The quotient and `H′` descend to `K` (LS,
-Corollary 9.3 and proof, p. 87; LS line 4013).
+Corollary 9.3 and proof, pp. 87–88; LS line 4013).
 
 A route: AbelianSchemesAndArithmeticModuli §A3.3 gives the quotient by a finite subgroup and §A3.6 descent
 of a `T`-invariant divisor along the étale isogeny; the projection formula compares top self-intersections.
@@ -2835,7 +2908,7 @@ divisibility. For an abelian surface, adjunction gives genus `1 + φ²/2 ≥ 2`.
 
 Layers 1, 4, 6 and 8; AbelianSchemesAndArithmeticModuli §§A0.1, A1.2, A1.8, A2.4, A2.10, A3.3, A3.6, A6.7,
 A6.14, A6.30–A6.32; SchemeAndStackFoundations §§0.9, 4.14; AlgebraicModuliForArithmeticGeometry §§2.1,
-9.4; HeightsRationalPointsAndObstructions §§1.6–1.7; FaltingsFinitenessAndIsogenyTheorems §R28.5.15;
+9.4; HeightsRationalPointsAndObstructions §§1.6–1.7, 5.2; FaltingsFinitenessAndIsogenyTheorems §R28.5.15;
 JacobianChallenge Layer F; SheafConvolutionOnAbelianVarieties §§4.8, 5.3, 6.7, 8.3;
 `TauCeti.AlgebraicGeometry.AbelianVariety`.
 
@@ -2880,6 +2953,10 @@ The following corrections to the sources are used throughout; each is fixed by a
   `gr_k = f_k/f_(k−1)` is the image of `F^j ∩ f_k`; a quotient by `f_(k+1)` cannot be the graded piece.
 - **LV, end of the proof of Lemma 11.4, printed p. 993.** The forward map is `β ↦ −wβ` and the inverse is
   `α ↦ −w⁻¹α`; the minus signs are needed because the root sets consist of negative roots.
+- **LS, §5.8.2 after Definition 5.40, p. 57.** A parabolic does not determine a filtration up to
+  reindexing, even for reductive `G`: on `𝔾_m` the cocharacters `t` and `t⁻¹` share the parabolic `𝔾_m`
+  but give the chains `0 ⊂ ℚe₊ ⊂ V` and `0 ⊂ ℚe₋ ⊂ V` on `V = ℚe₊ ⊕ ℚe₋` (LS line 2645). The criterion
+  of the same passage (equal parabolics and conjugacy in them) is the one used in §2.5.
 - **LS, Definition 5.44, p. 60.** The associated graded of a decreasing filtration is `F^a/F^(a+1)`.
 - **LS, Definition 9.1, p. 85.** Primitivity excludes nonzero stabilizing translations: translation by zero
   fixes every divisor.
