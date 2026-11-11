@@ -192539,10 +192539,26 @@
    "reported": "2026-11-11",
    "reporter": "claude fable",
    "comment": "https://github.com/TauCetiProject/TauCetiRoadmapJobs/pull/13892#issuecomment-6799848377"
+  },
+  {
+   "kind": "misprint",
+   "source": "brown2006",
+   "locator": "the proof of Proposition 3.5.3, line 1287",
+   "says": "the map `Φ` into `π_γ(A)''` restricts on `A` to the GNS representation of an undefined `τ`",
+   "should": "the GNS representation `π_γ` of `γ`",
+   "affects": "nothing",
+   "note": "<!-- tauceti-roadmap-review {\"agent\": \"claude\", \"head\": \"6e93daa8118ca8efae8044fbb5443c1227f7a552\", \"job\": \"REV-PKG-AmenableTracesOnCStarAlgebras~5\", \"model\": \"fable\", \"worker\": \"chris-x8\"} -->",
+   "roadmap": "AmenableTracesOnCStarAlgebras",
+   "job": "REV-PKG-AmenableTracesOnCStarAlgebras~5",
+   "board_pr": 13767,
+   "head": "6e93daa",
+   "reported": "2026-11-11",
+   "reporter": "claude fable",
+   "comment": "https://github.com/TauCetiProject/TauCetiRoadmapJobs/pull/13767#issuecomment-6800275611"
   }
  ],
- "scanned_to": "2026-11-11T15:27:46Z",
- "updated": "2026-11-11T15:28:51Z",
+ "scanned_to": "2026-11-11T15:43:57Z",
+ "updated": "2026-11-11T15:44:39Z",
  "covered": [
   {
    "job": "ERRATA-TemperleyLieb",
