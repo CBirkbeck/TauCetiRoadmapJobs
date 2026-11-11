@@ -8,7 +8,7 @@ SchemeAndStackFoundations stops at the ordinary scheme, site, torsor, Brauer and
 
 PerfectoidQuotientsPartII Layer Q7 owns ind-fppf and ind-syntomic ring maps (§Q7.1, §Q7.2) and their stability under composition, base change, finite products and filtered colimits (§Q7.3). They are imported; the pro-fppf site of §0.1 and the split refinements of §3.1 are built on them.
 
-PrismaticCohomologyPartIII §6.0 owns the perfect-base classification, the Hom/Ext description, the perfect pro-fppf comparison, the V−1 sequence and the perfect-base cohomology triangle through `Prismatic.FlatCohomology.perfectDieudonneComparison`, as well as p-adic continuity `Prismatic.FlatCohomology.pContinuity` and principal excision `Prismatic.FlatCohomology.excision`. Its proof routes also construct Bégueri resolutions, animated fppf cohomology, the cohomology deformation triangle and perfection of pro-fppf covers; the exports needed here are the supplier contracts below. Layer 1 here proves the animated-point cotangent interfaces.
+PrismaticCohomologyPartIII §6.0 owns the perfect-base classification, the Hom/Ext description, the perfect pro-fppf comparison, the V−1 sequence and the perfect-base cohomology triangle through `Prismatic.FlatCohomology.perfectDieudonneComparison`, as well as p-adic continuity `Prismatic.FlatCohomology.pContinuity` and principal excision `Prismatic.FlatCohomology.excision`. Its proof routes also construct Bégueri resolutions, animated fppf cohomology, the cohomology deformation triangle and perfection of pro-fppf covers; the exports needed here are the supplier contracts below. Layer 2 here proves the animated-point cotangent interfaces.
 
 PurityForFlatCohomology owns fppf cohomology with supports on schemes (§0.2) and its continuity along cofiltered limits (§0.3); the vanishing of H^i_fppf(A,G) for i≥2 over a perfect 𝔽_p-algebra A and a commutative finite locally free A-group G of p-power order (§2.1); and, for animated algebras, cohomology with supports, the étale equivalence with π₀, fppf hyperdescent and Postnikov convergence (§3.2), invariance under classical truncation and across nil ideals (§3.3), the primary cohomological-dimension bound and invariance under derived mod-p equivalence (§3.4), the derived residue condition, finite-ideal excision and the comparison of a Noetherian local ring with its completion (§3.5), and fpqc hyperdescent with primary descent modulo p (§3.6). It also owns Gabber's comparison Br_Az(X)≃H²_et(X,𝔾_m)_tors for a scheme with an ample invertible sheaf, with its twisted-bundle route (§7.10). These are imported and not restated here.
 
@@ -164,7 +164,7 @@ Layer RG2.0a §§RG2.0a.1–RG2.0a.3: affine Weil restriction along finite local
 
 ## How to read the build
 
-Layer 0 gives the pro-fppf site on top of the imported ind-flat maps. Layer 1 builds the animated points of an ordinary group, its identity cotangent complex and the deformation sequence of points. Layer 2 develops flat animated modules and algebras, their sites, the henselization of an animated ring and cohomology along increasingly accurate towers, on top of the animated flat cohomology of PrismaticCohomologyPartIII §6.0 and the Postnikov theory of PurityForFlatCohomology §3.2. Layer 3 proves the ring-theoretic inputs of the complete theory: split ind-fppf refinements, derived Beauville–Laszlo glueing, the square-zero defect of completed π₀ and perfection across an unchanged derived divisor. Layer 4 starts with the independent henselian H² lemma, then bounded continuity, principal complete descent and full finite-ideal continuity, in that order, using the primary comparisons and fpqc hyperdescent of PurityForFlatCohomology §§3.4 and 3.6. Layer 5 fixes the ordinary flat-cohomology carrier of the acceptance test, then proves henselian invariance and algebraization through the finitary completion comparison. Layer 6 ends with adic descent with supports, using the finite-ideal excision of PurityForFlatCohomology §3.5. Each *Needs:* line lists both the inputs of the statement and those of the displayed proof route.
+Layer 0 gives the pro-fppf site on top of the imported ind-flat maps. Layer 1 develops the sites on which the cohomology lives: flat animated modules and algebras, the big étale, fppf and fpqc sites of an animated ring with their restriction to ordinary algebras, the henselization of an animated ring and cohomology along increasingly accurate towers, on top of the animated flat cohomology of PrismaticCohomologyPartIII §6.0 and the Postnikov theory of PurityForFlatCohomology §3.2. Layer 2 builds the coefficients evaluated on those sites: the animated points of an ordinary group, its identity cotangent complex and the deformation sequence of points. Layer 3 proves the ring-theoretic inputs of the complete theory: split ind-fppf refinements, derived Beauville–Laszlo glueing, the square-zero defect of completed π₀ and perfection across an unchanged derived divisor. Layers 1, 2 and 3 use none of one another's targets; they meet in Layer 4, where bounded continuity combines the tower comparison of §1.6, the cotangent amplitude of §2.3 and the completed π₀ of §3.3, and principal complete descent uses the henselization of §1.5. Layer 4 starts with the independent henselian H² lemma, then bounded continuity, principal complete descent and full finite-ideal continuity, in that order, using the primary comparisons and fpqc hyperdescent of PurityForFlatCohomology §§3.4 and 3.6. Layer 5 fixes the ordinary flat-cohomology carrier of the acceptance test, then proves henselian invariance and algebraization through the finitary completion comparison. Layer 6 ends with adic descent with supports, using the finite-ideal excision of PurityForFlatCohomology §3.5. Each *Needs:* line lists both the inputs of the statement and those of the displayed proof route.
 
 ## Layer 0: The pro-fppf site
 
@@ -201,91 +201,9 @@ Over ℤ/4 the polynomial algebra (ℤ/4)[X] is faithfully flat and finitely pre
 
 PerfectoidQuotientsPartII §§Q7.1, Q7.3; `Algebra.FinitePresentation`; `AlgebraicGeometry.Scheme.fpqcTopology`; SchemeAndStackFoundations §2.10.
 
-## Layer 1: Animated group points and cotangent deformation
+## Layer 1: Flat animated algebras, henselization and towers
 
-### 1.1 Animated points of a classical group
-
-Construct the following object and comparisons. Fix an ordinary commutative ring R and a commutative flat affine R-group G=Spec B. On animated R-algebras put G(A)=Map_(AnimAlg_R)(B,A), with the ℤ-module-object structure induced by the classical group law. This is an animated abelian group, equivalently an object of D(ℤ) in cohomological degrees ≤0. The definition evaluates a classical group on animated algebras; it does not define finite flat group schemes over an arbitrary animated base. (CS24, §5.1.11, p.52; Examples 5.1.6(2)–(3), p.49).
-
-The API consists of the following laws and comparisons.
-
-- A→A′ gives G(A)→G(A′), preserving the ℤ-module structure and identities/composition.
-- For ordinary A, G(A) is the discrete classical A-point group.
-- G sends all limits of animated R-algebras to limits of animated abelian groups.
-- For an ordinary R-algebra S, evaluation of G_S on animated S-algebras agrees with evaluation of G.
-- The Dold–Kan image lies in D^(≤0)(ℤ); π_i corresponds to H^(−i).
-
-**Checks.**
-
-- For G=G_a, G(A) is the underlying animated additive group of A, including its higher homotopy.
-- For G=𝔾_m and discrete A, π₀G(A)=A^× and π_iG(A)=0 for i>0.
-- For A=k⊕k[1], G_a(A) has π₁=k; replacing A by π₀A would lose this value.
-
-**Proof route.** Use representability to preserve limits; transport the classical commutative group law and coherent ℤ-action through animation. Use gap:animation-composition and Dold–Kan to distinguish animated abelian groups from arbitrary grouplike E∞ spaces.
-
-*Needs:* EnhancedDerivedSheaves E5:animation.1 `animatedAlgebras`; EnhancedDerivedSheaves E5:animation.1–.4; EnhancedDerivedSheaves E1.3; SchemeAndStackFoundations Layer 1 §§1.13–1.15; gap:animation-composition; gap:classical-affine-group-adapter.
-
-### 1.2 The cotangent at the identity
-
-Construct the following object and comparisons. For a classical commutative flat affine R-group G and animated R-algebra A, the module-object cotangent corepresenting M↦fib(G(A⊕M)→G(A)) has underlying A-module C_G⊗^L_R A, where C_G=e*L_(G/R) and e is the identity section. The linearization carries the canonical ℤ-action coming from the group law. For finite-presentation G, this agrees with the ordinary R-linear action, rather than extra action data. (CS24, §5.1.11 and Proposition 5.1.12, p.52).
-
-The API consists of the following laws and comparisons.
-
-- The underlying complex is precisely e*L_(G/R).
-- Maps from C_G⊗A to M identify naturally with fib(G(A⊕M)→G(A)).
-- Ordinary base change and animated scalar extension preserve this identification.
-- A group homomorphism G→H induces C_H→C_G and the corresponding natural transformation of tangent point-fibres.
-- For finite-presentation G the group-object ℤ-action agrees with restriction of the R-module structure.
-
-**Checks.**
-
-- For G_a, C_G≃R in degree zero.
-- For 𝔾_m, C_G≃R in degree zero, with its generator represented by dlog at 1.
-- For G=μ_p over 𝔽_p, C_G≃[𝔽_p --0→ 𝔽_p] in degrees −1,0; using only the tangent space would lose the degree −1 term.
-
-**Proof route.** Identify the point-fibre over the identity with derivations B→R⊕M at the augmentation B→R. Apply the cotangent universal property and base change; corepresentability in module objects supplies the coherent ℤ-action.
-
-*Needs:* §1.1 animated points of a classical group; EnhancedDerivedSheaves E5:cotangent-export.1 `cotangentComplex`; EnhancedDerivedSheaves E5:cotangent-export.1 `cotangentComplex_ordinary`; EnhancedDerivedSheaves E5:animation.4 `animatedModules`; EnhancedDerivedSheaves E3.2.
-
-### 1.3 Amplitude of the group cotangent
-
-Prove the following statement. For a flat affine commutative R-group G of finite presentation, C_G=e*L_(G/R) is perfect of cohomological amplitude [−1,0]; for smooth G it is finite projective in degree zero. If G is finite locally free of p-power order, C_G[1/p]=0, so on affine base a power p^k kills C_G in D(R). (CS24, §5.1.11, p.52; proof of Theorem 5.3.5, pp.59–60).
-
-**Checks.**
-
-- For μ_p over 𝔽_p the complex is [𝔽_p→0 𝔽_p] in degrees −1,0, so both endpoints of the amplitude occur.
-- For μ_p over ℤ it is [ℤ→p ℤ], and multiplication by p is null-homotopic; after inverting p it is acyclic.
-- For G_a the complex is R in degree 0, including characteristic 2.
-
-**Proof route.** Use the finite-presentation flat group cotangent theorem (CS24 §5.1.11), whose precise adapter is gap:flat-group-cotangent-amplitude, rather than inferring amplitude from flatness of an arbitrary algebra. A p-primary finite flat group becomes finite étale after inverting p; localization of the perfect cotangent is zero. Compactness gives a finite p-power annihilator.
-
-*Needs:* §1.2 the cotangent at the identity; DerivedModuleAlgebra §§0.10–0.13, 1.E.0; SchemeAndStackFoundations Layer 1 §§1.13–1.15; gap:flat-group-cotangent-amplitude.
-
-### 1.4 Deformation of group-valued points
-
-Prove the following statement. Let G be flat affine commutative of finite presentation over an ordinary ring R. If A′→A is a square-zero extension of animated R-algebras with connective ideal M, there is a functorial fibre sequence G(A′)→G(A)→Map_R(C_G,M[1]) in animated abelian groups. The last object is the connective realization of RHom_R(C_G,M[1]). This need not be a fibre sequence of untruncated D(ℤ)-objects: the obstruction map can fail to be surjective on π₀. (CS24, Theorem 5.1.13 and Remark 5.1.14, pp.52–53).
-
-**Checks.**
-
-- For 𝔾_m over k[ε]/ε²→k, the fibre is 1+εk≃k, while the obstruction target is the connective realization of k[1].
-- For μ_p over 𝔽_p[ε]/ε²→𝔽_p the point fibre is 1+ε𝔽_p; the map to the degree-zero obstruction group 𝔽_p is not surjective. Thus an untruncated D(ℤ) fibre sequence of point objects would be false.
-- For an extension with zero ideal the point map is an equivalence and its deformation target is 0.
-
-**Proof route.** Apply G to the defining square-zero pullback and split the projection G(A⊕M[1])→G(A). Use cotangent corepresentability to identify its fibre; retain the connective-cover qualification.
-
-*Needs:* §1.2 the cotangent at the identity; §1.3 amplitude of the group cotangent; EnhancedDerivedSheaves E5:cotangent-export.1; gap:general-square-zero; DerivedModuleAlgebra §0.5.
-
-### Examples
-
-For μ_p over 𝔽_p the linearized cotangent complex is [𝔽_p→0 𝔽_p] in degrees −1,0. For 𝔾_m it is a single copy of the base ring in degree 0; both are needed by the deformation comparison.
-
-### Dependencies
-
-EnhancedDerivedSheaves E5:animation.1 `animatedAlgebras`; EnhancedDerivedSheaves E5:animation.1–.4; EnhancedDerivedSheaves E1.3; SchemeAndStackFoundations Layer 1 §§1.13–1.15; gap:animation-composition; gap:classical-affine-group-adapter; EnhancedDerivedSheaves E5:cotangent-export.1 `cotangentComplex`; EnhancedDerivedSheaves E5:cotangent-export.1 `cotangentComplex_ordinary`; EnhancedDerivedSheaves E5:animation.4 `animatedModules`; EnhancedDerivedSheaves E3.2; DerivedModuleAlgebra §§0.10–0.13, 1.E.0; gap:flat-group-cotangent-amplitude; EnhancedDerivedSheaves E5:cotangent-export.1; gap:general-square-zero; DerivedModuleAlgebra §0.5.
-
-## Layer 2: Flat animated algebras, henselization and towers
-
-### 2.1 Flat animated modules and maps
+### 1.1 Flat animated modules and maps
 
 Define the following predicate or object. A connective animated A-module M is flat if π₀M is flat over π₀A and each canonical π_iA⊗_(π₀A)π₀M→π_iM is an isomorphism for i≥0. It is faithfully flat when it is flat and π₀M is faithfully flat. A map of animated rings is (faithfully) flat when its target is so as a module over its source. Flatness of π₀ alone is insufficient. (CS24, §5.2.1, p.53).
 
@@ -309,7 +227,7 @@ The API consists of the following laws and comparisons.
 
 *Needs:* EnhancedDerivedSheaves E5:animation.4 `animatedModules`; `Module.FaithfullyFlat`.
 
-### 2.2 Tensor products with flat animated modules
+### 1.2 Tensor products with flat animated modules
 
 Prove the following statement. For a flat connective animated A-module M and every connective animated A-module N, π_*(N⊗^L_A M)≃π_*N⊗_(π₀A)π₀M, naturally and as graded modules. Flatness and faithful flatness are preserved by arbitrary derived base change; composites of flat (respectively faithfully flat) animated ring maps have the same property. (CS24, §5.2.1, p.53).
 
@@ -321,9 +239,9 @@ Prove the following statement. For a flat connective animated A-module M and eve
 
 **Proof route.** Use the homotopy Tor spectral sequence: graded flatness kills all positive Tor columns. Apply the resulting formula to the new base and ordinary faithfulness on π₀.
 
-*Needs:* §2.1 flat animated modules and maps; EnhancedDerivedSheaves E5:animation.4 `animatedModules`.
+*Needs:* §1.1 flat animated modules and maps; EnhancedDerivedSheaves E5:animation.4 `animatedModules`.
 
-### 2.3 Flatness after a nilpotent thickening
+### 1.3 Flatness after a nilpotent thickening
 
 Prove the following statement. Let A→B induce a surjection π₀A→π₀B with nilpotent kernel, and let M be a connective animated A-module. Then M is flat, respectively faithfully flat, if and only if B⊗^L_A M is so over B. Also M=0 if and only if B⊗^L_A M=0. The nilpotent-kernel condition is uniform; a general localization is not a detection map. (CS24, Lemma 5.2.2, pp.53–54).
 
@@ -335,33 +253,37 @@ Prove the following statement. Let A→B induce a surjection π₀A→π₀B wit
 
 **Proof route.** First reduce the source to π₀ by induction through its square-zero Postnikov layers, using the homotopy tensor calculation. For ordinary rings reduce the nilpotent ideal to square-zero steps and apply the derived local flatness criterion; derived Nakayama detects zero for connective modules.
 
-*Needs:* §2.1 flat animated modules and maps; §2.2 tensor products with flat animated modules; EnhancedDerivedSheaves E5:cotangent-export.1; gap:general-square-zero.
+*Needs:* §1.1 flat animated modules and maps; §1.2 tensor products with flat animated modules; EnhancedDerivedSheaves E5:cotangent-export.1; gap:general-square-zero.
 
-### 2.4 Étale, fppf and fpqc sites of animated rings
+### 1.4 Étale, fppf and fpqc sites of animated rings
 
-Define the following predicate or object. Fix an animated ring A. On animated A-algebras use flat maps; étale maps are flat maps with étale π₀, and fppf maps are flat maps with finitely presented π₀. Covering families are jointly faithfully flat on π₀, with the usual finite quasi-compact refinement convention for fpqc. Fix a cardinal bound when forming the big fpqc site. The spectra and opens below are those of π₀, but the algebras and tensor products in these sites retain higher homotopy. (CS24, §5.2.3, p.54; §5.2.5, p.55).
+Define the following sites. Fix an animated ring A. The big étale, fppf and fpqc sites of A have as objects all animated A-algebras (in the fixed universe, and below a fixed cardinal bound for fpqc) and as morphisms all maps of animated A-algebras; no flatness is asked of the structure map A→B of an object. A map B→B′ of animated rings is flat when B′ is a flat animated B-module (§1.1), étale when it is flat and π₀B→π₀B′ is étale, and fppf when it is flat and π₀B→π₀B′ is finitely presented. The flatness conditions bear on covering families only: a covering family of an object B is a family of étale (respectively fppf, flat) maps B→B_i that is jointly faithfully flat on π₀, that is, the images of the Spec π₀B_i cover Spec π₀B, and for fpqc some finite subfamily already does. The spectra and opens below are those of π₀, but the algebras and tensor products in these sites retain higher homotopy. CS24 forms the topoi of A on the full subcategories of A-algebras étale, fppf or flat over A; the restriction comparison below gives the same values at their objects. (CS24, §5.2.3, p.54; §5.2.5, p.55).
 
 The API consists of the following laws and comparisons.
 
 - A flat map with faithfully flat finitely presented π₀ is a singleton fppf cover.
 - Derived tensor products compute base change of covers.
-- For discrete A the three sites recover their ordinary counterparts; the affine fppf topology matches TauCeti.CommAlgCat.fppfTopology.
 - An étale cover is fppf, and an fppf cover is fpqc.
 - Every covering family gives the corresponding covering family of π₀ rings.
+- For every object B, the slice of the big site at B is the big site of B, and its full subcategory of animated B-algebras étale (respectively fppf, flat) over B contains every covering family of each of its objects together with the derived tensor products of the terms of that family. Restriction of presheaves to this subcategory therefore commutes with sheafification, and the value at B of the sheafification of a presheaf on the big site is computed on it; for B=A these are the sites of CS24 §5.2.5.
+- A map from A to a discrete ring factors uniquely through π₀A, so the discrete objects are the ordinary π₀A-algebras. A flat algebra over a discrete ring is discrete (§1.1), so every covering family of a discrete object, and every derived tensor product of its terms, is discrete. The topology induced on the full subcategory of ordinary π₀A-algebras, in which a family covers exactly when it covers in the big site, is therefore the ordinary big étale, fppf or fpqc topology on affine π₀A-schemes; in the fppf case it is `TauCeti.CommAlgCat.fppfTopology` of π₀A (of A itself when A is discrete), the topology induced from `AlgebraicGeometry.Scheme.fppfTopology` over Spec π₀A.
+- For an ordinary π₀A-algebra C and a presheaf F on the big site, the two preceding comparisons identify the value at C of the étale, fppf or fpqc sheafification of F with the value at C of the sheafification, on the ordinary big site, of the restriction of F to ordinary algebras; for a presheaf of abelian groups placed in degree 0 this is the classical étale, fppf or fpqc cohomology of C with coefficients in its sheafification (CS24 §5.2.5, p.55). For the coefficient groups of this roadmap, the resulting identification of RΓ(C,G) with classical fppf cohomology and with the cohomology of `TauCeti.HopfAlgebra.pointsFppfSheaf` is the ordinary-algebra comparison of gap:animated-flat-cohomology, which §5.0 records on the pinned carrier.
+- These comparisons concern the subcategory of ordinary algebras and the values at its objects, not the whole site. If B→B′ is faithfully flat, the flat tensor formula of §1.2 gives π_iB′≅π_iB⊗_(π₀B)π₀B′, which is nonzero whenever π_iB is, by faithfulness; so a covering family of a non-discrete object always has a non-discrete term, and the ordinary algebras do not cover the big site.
 - The chosen fpqc cardinal bound is part of the site construction and may be enlarged compatibly.
 
 **Checks.**
 
-- Every fppf algebra over ℤ/4 is discrete; ordinary fpqc cohomology is unchanged by the animated site.
-- For A=k⊕k[1], A→k has étale π₀ but is not an animated étale map because it is not flat.
+- Over A=ℤ/4 every fppf algebra is discrete, being flat over a discrete ring, so the covering families of ℤ/4 in the big site are exactly its ordinary fppf covering families, and the value at ℤ/4 of the fppf sheafification of G_a is ℤ/4 in degree 0, its classical fppf cohomology.
+- Negative control. Over A=k, the animated k-algebra B=k⊕k[1] is an object of the big site, with π₁B=k, and is not an ordinary k-algebra. For every faithfully flat B→B′, π₁B′≅π₁B⊗_kπ₀B′=π₀B′≠0, so every covering family of B has a non-discrete term. Evaluation at B keeps H^(−1)(B,G_a)=π₁B=k, whereas RΓ(C,G_a)=C sits in degree 0 at every ordinary C, including C=k. A description of the whole big site of k by ordinary k-algebras would lose this value.
+- For A=k⊕k[1], the discrete ring k is an object of the big site of A, as an ordinary π₀A-algebra, but A→k is not a covering map: its π₀ is étale, yet it is not flat, since π₁A⊗_kk=k while π₁k=0.
 - Over k×k, the two component projections give a jointly faithful cover; a single component does not.
 - For A=ℤ/p² and the element p, A/^Lp has π₀=𝔽_p and π₁=𝔽_p. It is not the discrete ring A/(p); all cover and continuity formulas keep this higher group.
 
-**Proof route.** Verify the pretopology axioms from derived flat base change and the ordinary π₀ covering conditions. A flat algebra over a discrete source is discrete, giving the exact comparison with classical sites.
+**Proof route.** Verify the pretopology axioms from derived flat base change, composition of flat maps (§1.2) and the ordinary π₀ covering conditions. For the restriction to algebras flat over B, observe that covers of an object flat over B are flat over B by composition, and the derived tensor products of their terms by base change, so the inclusion is continuous and cocontinuous. A flat algebra over a discrete ring is discrete (§1.1), which gives the comparison on the ordinary subcategory; compare its fppf covering sieves with those of `TauCeti.CommAlgCat.fppfTopology` through affine open covers of flat locally finitely presented schemes. The flat tensor formula shows that non-discrete objects are not covered by discrete ones.
 
-*Needs:* §2.1 flat animated modules and maps; §2.2 tensor products with flat animated modules; `AlgebraicGeometry.Scheme.fppfTopology`; `AlgebraicGeometry.Scheme.fpqcTopology`; `TauCeti.CommAlgCat.fppfTopology`.
+*Needs:* §1.1 flat animated modules and maps; §1.2 tensor products with flat animated modules; `AlgebraicGeometry.Scheme.fppfTopology`; `AlgebraicGeometry.Scheme.fpqcTopology`; `TauCeti.CommAlgCat.fppfTopology`; gap:animated-flat-cohomology.
 
-### 2.5 Henselization of an animated ring
+### 1.5 Henselization of an animated ring
 
 Construct the following object and comparisons. For an animated ring A and I⊂π₀A, construct A^h_I as the filtered colimit of the unique étale lifts to A of the pointed étale neighborhoods defining (π₀A)^h_I. Then π₀(A^h_I)≃(π₀A)^h_I and π_i(A^h_I)≃π_iA⊗_(π₀A)(π₀A)^h_I; A→A^h_I is ind-étale. This fixes the notation used by principal complete descent in §4.4. (CS24, Proof of Lemma 5.6.5, p.74; §5.2.4, p.54).
 
@@ -383,7 +305,7 @@ The API consists of the following laws and comparisons.
 
 *Needs:* PurityForFlatCohomology §3.2 (étale algebras see π₀); SchemeAndStackFoundations §0.12; SchemeAndStackFoundations §0.14 `henselian_pair_characterisations`.
 
-### 2.6 Cohomology of increasingly accurate ring towers
+### 1.6 Cohomology of increasingly accurate ring towers
 
 Prove the following statement. For an ordinary ring R, an affine commutative R-group G that is smooth or finite locally free, an animated R-algebra A and a tower of animated A-algebras A_n with τ≤n A≃τ≤n A_n compatibly, RΓ(A,G)≃Rlim_n RΓ(A_n,G). No completeness for an ideal is assumed; this is increasing Postnikov accuracy. (CS24, Corollary 5.2.7, p.56).
 
@@ -399,11 +321,93 @@ Prove the following statement. For an ordinary ring R, an affine commutative R-g
 
 ### Examples
 
-Over A=k⊕k[1], the quotient module k is not A-flat although π₀A→π₀k is an isomorphism, since π₁A⊗k=k while π₁k=0. The henselization of A along I=0 is A itself, with π₁=k. The Postnikov tower τ≤nA is constant equal to A from n=1, so the tower formula of §2.6 returns RΓ(A,G_a)=A, with H^(−1)=k and H⁰=k.
+Over A=k⊕k[1], the quotient module k is not A-flat although π₀A→π₀k is an isomorphism, since π₁A⊗k=k while π₁k=0. The henselization of A along I=0 is A itself, with π₁=k. The Postnikov tower τ≤nA is constant equal to A from n=1, so the tower formula of §1.6 returns RΓ(A,G_a)=A, with H^(−1)=k and H⁰=k. Over the base k, the same ring k⊕k[1] is an object of the big fppf site of k that no family of ordinary k-algebras covers, while the covers of k itself are ordinary and give RΓ(k,G_a)=k in degree 0.
 
 ### Dependencies
 
-EnhancedDerivedSheaves E5:animation.4 `animatedModules`; `Module.FaithfullyFlat`; EnhancedDerivedSheaves E5:cotangent-export.1; gap:general-square-zero; `AlgebraicGeometry.Scheme.fppfTopology`; `AlgebraicGeometry.Scheme.fpqcTopology`; `TauCeti.CommAlgCat.fppfTopology`; PurityForFlatCohomology §3.2; SchemeAndStackFoundations §0.12; SchemeAndStackFoundations §0.14 `henselian_pair_characterisations`.
+EnhancedDerivedSheaves E5:animation.4 `animatedModules`; `Module.FaithfullyFlat`; EnhancedDerivedSheaves E5:cotangent-export.1; gap:general-square-zero; `AlgebraicGeometry.Scheme.fppfTopology`; `AlgebraicGeometry.Scheme.fpqcTopology`; `TauCeti.CommAlgCat.fppfTopology`; gap:animated-flat-cohomology; PurityForFlatCohomology §3.2; SchemeAndStackFoundations §0.12; SchemeAndStackFoundations §0.14 `henselian_pair_characterisations`.
+
+## Layer 2: Animated group points and cotangent deformation
+
+### 2.1 Animated points of a classical group
+
+Construct the following object and comparisons. Fix an ordinary commutative ring R and a commutative flat affine R-group G=Spec B. On animated R-algebras put G(A)=Map_(AnimAlg_R)(B,A), with the ℤ-module-object structure induced by the classical group law. This is an animated abelian group, equivalently an object of D(ℤ) in cohomological degrees ≤0. The definition evaluates a classical group on animated algebras; it does not define finite flat group schemes over an arbitrary animated base. (CS24, §5.1.11, p.52; Examples 5.1.6(2)–(3), p.49).
+
+The API consists of the following laws and comparisons.
+
+- A→A′ gives G(A)→G(A′), preserving the ℤ-module structure and identities/composition.
+- For ordinary A, G(A) is the discrete classical A-point group.
+- G sends all limits of animated R-algebras to limits of animated abelian groups.
+- For an ordinary R-algebra S, evaluation of G_S on animated S-algebras agrees with evaluation of G.
+- The Dold–Kan image lies in D^(≤0)(ℤ); π_i corresponds to H^(−i).
+
+**Checks.**
+
+- For G=G_a, G(A) is the underlying animated additive group of A, including its higher homotopy.
+- For G=𝔾_m and discrete A, π₀G(A)=A^× and π_iG(A)=0 for i>0.
+- For A=k⊕k[1], G_a(A) has π₁=k; replacing A by π₀A would lose this value.
+
+**Proof route.** Use representability to preserve limits; transport the classical commutative group law and coherent ℤ-action through animation. Use gap:animation-composition and Dold–Kan to distinguish animated abelian groups from arbitrary grouplike E∞ spaces.
+
+*Needs:* EnhancedDerivedSheaves E5:animation.1 `animatedAlgebras`; EnhancedDerivedSheaves E5:animation.1–.4; EnhancedDerivedSheaves E1.3; SchemeAndStackFoundations Layer 1 §§1.13–1.15; gap:animation-composition; gap:classical-affine-group-adapter.
+
+### 2.2 The cotangent at the identity
+
+Construct the following object and comparisons. For a classical commutative flat affine R-group G and animated R-algebra A, the module-object cotangent corepresenting M↦fib(G(A⊕M)→G(A)) has underlying A-module C_G⊗^L_R A, where C_G=e*L_(G/R) and e is the identity section. The linearization carries the canonical ℤ-action coming from the group law. For finite-presentation G, this agrees with the ordinary R-linear action, rather than extra action data. (CS24, §5.1.11 and Proposition 5.1.12, p.52).
+
+The API consists of the following laws and comparisons.
+
+- The underlying complex is precisely e*L_(G/R).
+- Maps from C_G⊗A to M identify naturally with fib(G(A⊕M)→G(A)).
+- Ordinary base change and animated scalar extension preserve this identification.
+- A group homomorphism G→H induces C_H→C_G and the corresponding natural transformation of tangent point-fibres.
+- For finite-presentation G the group-object ℤ-action agrees with restriction of the R-module structure.
+
+**Checks.**
+
+- For G_a, C_G≃R in degree zero.
+- For 𝔾_m, C_G≃R in degree zero, with its generator represented by dlog at 1.
+- For G=μ_p over 𝔽_p, C_G≃[𝔽_p --0→ 𝔽_p] in degrees −1,0; using only the tangent space would lose the degree −1 term.
+
+**Proof route.** Identify the point-fibre over the identity with derivations B→R⊕M at the augmentation B→R. Apply the cotangent universal property and base change; corepresentability in module objects supplies the coherent ℤ-action.
+
+*Needs:* §2.1 animated points of a classical group; EnhancedDerivedSheaves E5:cotangent-export.1 `cotangentComplex`; EnhancedDerivedSheaves E5:cotangent-export.1 `cotangentComplex_ordinary`; EnhancedDerivedSheaves E5:animation.4 `animatedModules`; EnhancedDerivedSheaves E3.2.
+
+### 2.3 Amplitude of the group cotangent
+
+Prove the following statement. For a flat affine commutative R-group G of finite presentation, C_G=e*L_(G/R) is perfect of cohomological amplitude [−1,0]; for smooth G it is finite projective in degree zero. If G is finite locally free of p-power order, C_G[1/p]=0, so on affine base a power p^k kills C_G in D(R). (CS24, §5.1.11, p.52; proof of Theorem 5.3.5, pp.59–60).
+
+**Checks.**
+
+- For μ_p over 𝔽_p the complex is [𝔽_p→0 𝔽_p] in degrees −1,0, so both endpoints of the amplitude occur.
+- For μ_p over ℤ it is [ℤ→p ℤ], and multiplication by p is null-homotopic; after inverting p it is acyclic.
+- For G_a the complex is R in degree 0, including characteristic 2.
+
+**Proof route.** Use the finite-presentation flat group cotangent theorem (CS24 §5.1.11), whose precise adapter is gap:flat-group-cotangent-amplitude, rather than inferring amplitude from flatness of an arbitrary algebra. A p-primary finite flat group becomes finite étale after inverting p; localization of the perfect cotangent is zero. Compactness gives a finite p-power annihilator.
+
+*Needs:* §2.2 the cotangent at the identity; DerivedModuleAlgebra §§0.10–0.13, 1.E.0; SchemeAndStackFoundations Layer 1 §§1.13–1.15; gap:flat-group-cotangent-amplitude.
+
+### 2.4 Deformation of group-valued points
+
+Prove the following statement. Let G be flat affine commutative of finite presentation over an ordinary ring R. If A′→A is a square-zero extension of animated R-algebras with connective ideal M, there is a functorial fibre sequence G(A′)→G(A)→Map_R(C_G,M[1]) in animated abelian groups. The last object is the connective realization of RHom_R(C_G,M[1]). This need not be a fibre sequence of untruncated D(ℤ)-objects: the obstruction map can fail to be surjective on π₀. (CS24, Theorem 5.1.13 and Remark 5.1.14, pp.52–53).
+
+**Checks.**
+
+- For 𝔾_m over k[ε]/ε²→k, the fibre is 1+εk≃k, while the obstruction target is the connective realization of k[1].
+- For μ_p over 𝔽_p[ε]/ε²→𝔽_p the point fibre is 1+ε𝔽_p; the map to the degree-zero obstruction group 𝔽_p is not surjective. Thus an untruncated D(ℤ) fibre sequence of point objects would be false.
+- For an extension with zero ideal the point map is an equivalence and its deformation target is 0.
+
+**Proof route.** Apply G to the defining square-zero pullback and split the projection G(A⊕M[1])→G(A). Use cotangent corepresentability to identify its fibre; retain the connective-cover qualification.
+
+*Needs:* §2.2 the cotangent at the identity; §2.3 amplitude of the group cotangent; EnhancedDerivedSheaves E5:cotangent-export.1; gap:general-square-zero; DerivedModuleAlgebra §0.5.
+
+### Examples
+
+For μ_p over 𝔽_p the linearized cotangent complex is [𝔽_p→0 𝔽_p] in degrees −1,0. For 𝔾_m it is a single copy of the base ring in degree 0; both are needed by the deformation comparison.
+
+### Dependencies
+
+EnhancedDerivedSheaves E5:animation.1 `animatedAlgebras`; EnhancedDerivedSheaves E5:animation.1–.4; EnhancedDerivedSheaves E1.3; SchemeAndStackFoundations Layer 1 §§1.13–1.15; gap:animation-composition; gap:classical-affine-group-adapter; EnhancedDerivedSheaves E5:cotangent-export.1 `cotangentComplex`; EnhancedDerivedSheaves E5:cotangent-export.1 `cotangentComplex_ordinary`; EnhancedDerivedSheaves E5:animation.4 `animatedModules`; EnhancedDerivedSheaves E3.2; DerivedModuleAlgebra §§0.10–0.13, 1.E.0; gap:flat-group-cotangent-amplitude; EnhancedDerivedSheaves E5:cotangent-export.1; gap:general-square-zero; DerivedModuleAlgebra §0.5.
 
 ## Layer 3: Split refinements, derived glueing and perfection
 
@@ -513,7 +517,7 @@ Prove the following statement. Let A be a derived a-complete animated R-algebra,
 
 **Proof route.** Use the bounds to reduce continuity to H⁰, H¹, H² and the low-degree tower Milnor sequence. The henselian H² lemma identifies the degree-two systems. Classical complete torsor effectivity and control of the automorphism tower handle H¹; affine point evaluation handles nonpositive degrees. The deformation triangle controls the square-zero completion defect and the animated Postnikov error.
 
-*Needs:* §4.2 H² invariance over a henselian pair; §4.1 derived completeness implies henselianity; gap:cohomology-deformation; §1.3 amplitude of the group cotangent; §3.3 the square-zero defect of completed π₀; §2.6 cohomology of increasingly accurate ring towers; SchemeAndStackFoundations Layer 4; EnhancedDerivedSheaves E2:towers.1; gap:complete-torsor-effectivity.
+*Needs:* §4.2 H² invariance over a henselian pair; §4.1 derived completeness implies henselianity; gap:cohomology-deformation; §2.3 amplitude of the group cotangent; §3.3 the square-zero defect of completed π₀; §1.6 cohomology of increasingly accurate ring towers; SchemeAndStackFoundations Layer 4; EnhancedDerivedSheaves E2:towers.1; gap:complete-torsor-effectivity.
 
 ### 4.4 Faithfully flat descent after principal completion
 
@@ -527,7 +531,7 @@ Prove the following statement. Fix an ordinary ring R, a commutative finite loca
 
 **Proof route.** Separate primary coefficients and the locus where that prime is invertible. For the primary piece, use prime continuity and the restricted complete-continuity lemma, whose required dimension bound holds in characteristic p. Compare the error with the étale extension by zero j_!G from the prime-invertible locus, using excision and henselian étale proper base change. Étale complete-arc hyperdescent handles that error. This order uses no general complete-continuity theorem.
 
-*Needs:* §4.3 continuity with a cohomological bound; PrismaticCohomologyPartIII §6.0 `Prismatic.FlatCohomology.pContinuity`; PurityForFlatCohomology §3.4 (cohomological dimension in the primary case); PurityForFlatCohomology §3.6 (fpqc hyperdescent); PrismaticCohomologyPartIII §6.0 `Prismatic.FlatCohomology.excision`; §2.5 henselization of an animated ring; SchemeAndStackFoundations §2.15 `gabber_affine_proper_base_change`; ArcTopologyAndDescent §11.5.
+*Needs:* §4.3 continuity with a cohomological bound; PrismaticCohomologyPartIII §6.0 `Prismatic.FlatCohomology.pContinuity`; PurityForFlatCohomology §3.4 (cohomological dimension in the primary case); PurityForFlatCohomology §3.6 (fpqc hyperdescent); PrismaticCohomologyPartIII §6.0 `Prismatic.FlatCohomology.excision`; §1.5 henselization of an animated ring; SchemeAndStackFoundations §2.15 `gabber_affine_proper_base_change`; ArcTopologyAndDescent §11.5.
 
 ### 4.5 Continuity over complete animated rings
 
@@ -577,7 +581,7 @@ Over ℤ[[t]], t lies in π₀ of the animated ℤ-algebra without lying in the 
 
 ### Dependencies
 
-§3.3 the square-zero defect of completed π₀; DerivedModuleAlgebra §1.6; SchemeAndStackFoundations §0.14 `henselian_pair_permanence`; `HenselianRing`; gap:begueri-resolution; HeightsRationalPointsAndObstructions §2.6c `Brauer.affine_comparison`; SchemeAndStackFoundations §2.22 `SchemeBrauerGroup`; SchemeAndStackFoundations §2.22 `CohomologicalBrauer`; SchemeAndStackFoundations Layer 1 §§1.13–1.15; SchemeAndStackFoundations §2.11 `fppf_kummer_sequence`; gap:henselian-stack-lifting; gap:henselian-torsor-cohomology; gap:cohomology-deformation; §1.3 amplitude of the group cotangent; §2.6 cohomology of increasingly accurate ring towers; SchemeAndStackFoundations Layer 4; EnhancedDerivedSheaves E2:towers.1; gap:complete-torsor-effectivity; PrismaticCohomologyPartIII §6.0 `Prismatic.FlatCohomology.pContinuity`; PurityForFlatCohomology §3.4; PurityForFlatCohomology §3.6; PrismaticCohomologyPartIII §6.0 `Prismatic.FlatCohomology.excision`; §2.5 henselization of an animated ring; SchemeAndStackFoundations §2.15 `gabber_affine_proper_base_change`; ArcTopologyAndDescent §11.5; PurityForFlatCohomology §3.2; §3.1 ind-fppf refinements splitting all covers; PurityForFlatCohomology §3.3; SchemeAndStackFoundations §0.12.
+§3.3 the square-zero defect of completed π₀; DerivedModuleAlgebra §1.6; SchemeAndStackFoundations §0.14 `henselian_pair_permanence`; `HenselianRing`; gap:begueri-resolution; HeightsRationalPointsAndObstructions §2.6c `Brauer.affine_comparison`; SchemeAndStackFoundations §2.22 `SchemeBrauerGroup`; SchemeAndStackFoundations §2.22 `CohomologicalBrauer`; SchemeAndStackFoundations Layer 1 §§1.13–1.15; SchemeAndStackFoundations §2.11 `fppf_kummer_sequence`; gap:henselian-stack-lifting; gap:henselian-torsor-cohomology; gap:cohomology-deformation; §2.3 amplitude of the group cotangent; §1.6 cohomology of increasingly accurate ring towers; SchemeAndStackFoundations Layer 4; EnhancedDerivedSheaves E2:towers.1; gap:complete-torsor-effectivity; PrismaticCohomologyPartIII §6.0 `Prismatic.FlatCohomology.pContinuity`; PurityForFlatCohomology §3.4; PurityForFlatCohomology §3.6; PrismaticCohomologyPartIII §6.0 `Prismatic.FlatCohomology.excision`; §1.5 henselization of an animated ring; SchemeAndStackFoundations §2.15 `gabber_affine_proper_base_change`; ArcTopologyAndDescent §11.5; PurityForFlatCohomology §3.2; §3.1 ind-fppf refinements splitting all covers; PurityForFlatCohomology §3.3; SchemeAndStackFoundations §0.12.
 
 ## Layer 5: Henselian invariance and algebraization
 
@@ -710,7 +714,7 @@ Prove the following statement. Let A be an integral perfectoid ring, derived com
 
 **Proof route.** Use perfectoid p-complete arc hypercovers by products of complete rank-at-most-one valuation rings and descend M from its flat Koszul reductions. After completing and splitting the valuation products, reduce I to a principal element with compatible p-power roots. Compare M with the ordinary inverse limit of π₀M/a^n; the complete flat-system theorem identifies its reductions. The compatible-root annihilator identity makes (a) weakly proregular; adic flatness gives derived reduction discreteness. Derived Nakayama identifies M with that ordinary limit.
 
-*Needs:* §2.1 flat animated modules and maps; §2.3 flatness after a nilpotent thickening; DerivedModuleAlgebra §1.6; DerivedModuleAlgebra §§1.2–1.4; ArcTopologyAndDescent §11.2; ArcTopologyAndDescent §12.7; PerfectoidQuotients Layer 0 §0.1; PerfectoidQuotients Layer 0 §0.4; DerivedModuleAlgebra §§0.K.1, 1.1–1.9; gap:adic-flat-module-limits; gap:complete-module-hyperdescent; DerivedModuleAlgebra §§1.7–1.9.
+*Needs:* §1.1 flat animated modules and maps; §1.3 flatness after a nilpotent thickening; DerivedModuleAlgebra §1.6; DerivedModuleAlgebra §§1.2–1.4; ArcTopologyAndDescent §11.2; ArcTopologyAndDescent §12.7; PerfectoidQuotients Layer 0 §0.1; PerfectoidQuotients Layer 0 §0.4; DerivedModuleAlgebra §§0.K.1, 1.1–1.9; gap:adic-flat-module-limits; gap:complete-module-hyperdescent; DerivedModuleAlgebra §§1.7–1.9.
 
 ### 6.2 Adically faithfully flat descent with supports
 
@@ -724,7 +728,7 @@ Prove the following statement. Fix ordinary R, commutative finite locally free G
 
 **Proof route.** Excision permits completing every term. General continuity and fpqc descent already give full affine descent in the complete case; the support triangle reduces the new assertion to punctured descent. Separate primary coefficients. Étale complete-arc hyperdescent treats the prime-invertible contribution and its j_! error. Prime continuity reduces the remaining punctured functor to characteristic-p quotients. Use complete module descent and the cohomology deformation triangle to make the assertion invariant under square-zero extensions; Postnikov convergence reduces to discrete 𝔽_p-algebras. Use ind-fppf semiperfect refinements, nilpotent approximation, and completion to reach perfect A. Perfectoid complete-flat discreteness makes the completed cover terms discrete, so cohomological connectiveness reduces hyperdescent to Čech descent. Establish universal Čech descent, allowing refinement of the cover by its perfection; repeat the reductions after arbitrary animated base change. This makes every Čech algebra perfect. Apply the perfect-base Dieudonné fibre formula. Remove V−1 by the fibre triangle and M by its finite projective dimension and base-change compatibility. For J=(p,[a₁],…,[a_r]) in W(A), use geometric supports as colim_n RHom(K_J^n,−), with the finite Koszul complex, instead of ordinary J-power quotients. Each dual Koszul complex on an ordinary Witt ring occupies [0,r+1], so filtered colimits commute with the cosimplicial totalization. Derived complete faithful-flat module descent identifies W(A) with the totalization of its Witt terms. Finite-projective Koszul base change and commutation of RHom with limits prove each fixed-n equivalence, then its filtered colimit. Witt rings are derived J-complete: p is regular, reduction modulo p is the I-complete perfect ring, and complete derived Nakayama lifts completeness along the finite Teichmüller tuple. The same argument applies to every cover term.
 
-*Needs:* PurityForFlatCohomology §3.5 (finite-ideal derived excision); §4.5 continuity over complete animated rings; PurityForFlatCohomology §3.6 (fpqc hyperdescent); PurityForFlatCohomology §3.3 (cohomology across nil ideals); §3.1 ind-fppf refinements splitting all covers; PrismaticCohomologyPartIII §6.0 `Prismatic.FlatCohomology.pContinuity`; gap:cohomology-deformation; §2.6 cohomology of increasingly accurate ring towers; §6.1 discreteness of completely flat perfectoid modules; PrismaticCohomologyPartIII §6.0 `Prismatic.FlatCohomology.perfectDieudonneComparison`; gap:perfection-covers; §4.1 derived completeness implies henselianity; DerivedModuleAlgebra §§0.K.1, 1.1–1.9; SchemeAndStackFoundations §2.15 `gabber_affine_proper_base_change`; ArcTopologyAndDescent §11.5; EnhancedDerivedSheaves E5:animation.2; SchemeAndStackFoundations Layer 2 §§2.1–2.6; DerivedModuleAlgebra §§1.2–1.4; DerivedModuleAlgebra §0.K.1; DerivedDeRhamCohomology §1.22 `DerivedDeRham.completionExchanges`; PurityForFlatCohomology §0.3; gap:torsor-limit-descent; gap:complete-module-hyperdescent; gap:koszul-geometric-support; DerivedModuleAlgebra §1.9; EnhancedDerivedSheaves E5:animation.3 `tot_filteredColimit_of_bounded`.
+*Needs:* PurityForFlatCohomology §3.5 (finite-ideal derived excision); §4.5 continuity over complete animated rings; PurityForFlatCohomology §3.6 (fpqc hyperdescent); PurityForFlatCohomology §3.3 (cohomology across nil ideals); §3.1 ind-fppf refinements splitting all covers; PrismaticCohomologyPartIII §6.0 `Prismatic.FlatCohomology.pContinuity`; gap:cohomology-deformation; §1.6 cohomology of increasingly accurate ring towers; §6.1 discreteness of completely flat perfectoid modules; PrismaticCohomologyPartIII §6.0 `Prismatic.FlatCohomology.perfectDieudonneComparison`; gap:perfection-covers; §4.1 derived completeness implies henselianity; DerivedModuleAlgebra §§0.K.1, 1.1–1.9; SchemeAndStackFoundations §2.15 `gabber_affine_proper_base_change`; ArcTopologyAndDescent §11.5; EnhancedDerivedSheaves E5:animation.2; SchemeAndStackFoundations Layer 2 §§2.1–2.6; DerivedModuleAlgebra §§1.2–1.4; DerivedModuleAlgebra §0.K.1; DerivedDeRhamCohomology §1.22 `DerivedDeRham.completionExchanges`; PurityForFlatCohomology §0.3; gap:torsor-limit-descent; gap:complete-module-hyperdescent; gap:koszul-geometric-support; DerivedModuleAlgebra §1.9; EnhancedDerivedSheaves E5:animation.3 `tot_filteredColimit_of_bounded`.
 
 ### Examples
 
@@ -732,11 +736,11 @@ For I=(1), supported descent compares two zero complexes. For I=(0), support is 
 
 ### Dependencies
 
-§2.1 flat animated modules and maps; §2.3 flatness after a nilpotent thickening; DerivedModuleAlgebra §1.6; DerivedModuleAlgebra §§1.2–1.4; ArcTopologyAndDescent §11.2; ArcTopologyAndDescent §12.7; PerfectoidQuotients Layer 0 §0.1; PerfectoidQuotients Layer 0 §0.4; DerivedModuleAlgebra §§0.K.1, 1.1–1.9; gap:adic-flat-module-limits; gap:complete-module-hyperdescent; DerivedModuleAlgebra §§1.7–1.9; PurityForFlatCohomology §3.5; §4.5 continuity over complete animated rings; PurityForFlatCohomology §3.6; PurityForFlatCohomology §3.3; §3.1 ind-fppf refinements splitting all covers; PrismaticCohomologyPartIII §6.0 `Prismatic.FlatCohomology.pContinuity`; gap:cohomology-deformation; §2.6 cohomology of increasingly accurate ring towers; PrismaticCohomologyPartIII §6.0 `Prismatic.FlatCohomology.perfectDieudonneComparison`; gap:perfection-covers; §4.1 derived completeness implies henselianity; SchemeAndStackFoundations §2.15 `gabber_affine_proper_base_change`; ArcTopologyAndDescent §11.5; EnhancedDerivedSheaves E5:animation.2; SchemeAndStackFoundations Layer 2 §§2.1–2.6; DerivedModuleAlgebra §0.K.1; DerivedDeRhamCohomology §1.22 `DerivedDeRham.completionExchanges`; PurityForFlatCohomology §0.3; gap:torsor-limit-descent; gap:koszul-geometric-support; DerivedModuleAlgebra §1.9; EnhancedDerivedSheaves E5:animation.3 `tot_filteredColimit_of_bounded`.
+§1.1 flat animated modules and maps; §1.3 flatness after a nilpotent thickening; DerivedModuleAlgebra §1.6; DerivedModuleAlgebra §§1.2–1.4; ArcTopologyAndDescent §11.2; ArcTopologyAndDescent §12.7; PerfectoidQuotients Layer 0 §0.1; PerfectoidQuotients Layer 0 §0.4; DerivedModuleAlgebra §§0.K.1, 1.1–1.9; gap:adic-flat-module-limits; gap:complete-module-hyperdescent; DerivedModuleAlgebra §§1.7–1.9; PurityForFlatCohomology §3.5; §4.5 continuity over complete animated rings; PurityForFlatCohomology §3.6; PurityForFlatCohomology §3.3; §3.1 ind-fppf refinements splitting all covers; PrismaticCohomologyPartIII §6.0 `Prismatic.FlatCohomology.pContinuity`; gap:cohomology-deformation; §1.6 cohomology of increasingly accurate ring towers; PrismaticCohomologyPartIII §6.0 `Prismatic.FlatCohomology.perfectDieudonneComparison`; gap:perfection-covers; §4.1 derived completeness implies henselianity; SchemeAndStackFoundations §2.15 `gabber_affine_proper_base_change`; ArcTopologyAndDescent §11.5; EnhancedDerivedSheaves E5:animation.2; SchemeAndStackFoundations Layer 2 §§2.1–2.6; DerivedModuleAlgebra §0.K.1; DerivedDeRhamCohomology §1.22 `DerivedDeRham.completionExchanges`; PurityForFlatCohomology §0.3; gap:torsor-limit-descent; gap:koszul-geometric-support; DerivedModuleAlgebra §1.9; EnhancedDerivedSheaves E5:animation.3 `tot_filteredColimit_of_bounded`.
 
 ## Downstream consumers
 
-The exports are complete continuity (§4.5) and its ordinary-quotient form (§4.6), henselian invariance (§5.2), algebraization over topological rings and on Laurent punctures (§§5.3–5.4), the punctured and Noetherian-neighbourhood comparisons (§§5.5–5.6), adic descent with supports (§6.2), and the animated point and cotangent interfaces of Layer 1. They serve later work on torsors over complete and henselian rings in the setting of BC22 §2 and on flat cohomology of perfectoid and prismatic rings. PurityForFlatCohomology, PrismaticCohomologyPartIII and ArcTopologyAndDescent supply this roadmap and take nothing from it.
+The exports are complete continuity (§4.5) and its ordinary-quotient form (§4.6), henselian invariance (§5.2), algebraization over topological rings and on Laurent punctures (§§5.3–5.4), the punctured and Noetherian-neighbourhood comparisons (§§5.5–5.6), adic descent with supports (§6.2), and the animated point and cotangent interfaces of Layer 2. They serve later work on torsors over complete and henselian rings in the setting of BC22 §2 and on flat cohomology of perfectoid and prismatic rings. PurityForFlatCohomology, PrismaticCohomologyPartIII and ArcTopologyAndDescent supply this roadmap and take nothing from it.
 
 ## Worked examples
 
