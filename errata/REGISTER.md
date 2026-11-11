@@ -2,7 +2,7 @@
 
 Reviewers, red-team passes and errata jobs record every mistake they find in a source while checking a roadmap's locators: misprints (slips whose intended meaning is clear), errors (a false statement or proof step) and gaps (a step the source does not justify), each with the roadmap, the board pull request or errata job and the head that reported it. Collected by the board sync from the `## Source issues` sections of review, red-team and errata comments; the data is in `errata/source-issues.json`.
 
-11857 mistakes recorded on the board: 6791 misprints, 3103 errors, 1499 gaps, 464 unparsed bullets.
+11871 mistakes recorded on the board: 6803 misprints, 3103 errors, 1501 gaps, 464 unparsed bullets.
 Errata jobs have read the cited sources of 60 roadmaps; in those of 2 they found no mistake.
 The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explorer/`: 1525 awaiting review, 13582 confirmed, 228 rejected.
 
@@ -3863,6 +3863,10 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 
 - **Misprint** at the proof of the Eisenstein-ideal bound, §8, p. 78: the source says the order inequality with ≤; it should be ≥, since E ⊂ P^m gives ord_P ≥ m; affects nothing. Found by  (#129 at , 2026-10-23, backfill from earlier reviews (claude opus)).
 
+## castilloDuarteLeytonLiendo2026
+
+- **Misprint** at Introduction, printed p. 1: the source says the normalised Nash blowup is the pair with the map η followed after ν; it should be ν applied after the normalisation map η; affects nothing. Found by NashBlowups (#13795 at 63c2853, 2026-11-11, claude fable).
+
 ## CBK22
 
 - **Misprint** at Introduction, definition before Proposition 1.8, arXiv v3 printed p.4 (CBK22 line 158): the source says excluded root decompositions need only have equal parameter pairings; it should be λ·β=λ·γ=⋯=0; equality alone is insufficient over the allowed positive-characteristic fields; affects a stated result. Found by McKaySkewGroup (ERRATA-McKaySkewGroup at a9ef22a, 2026-10-23, codex gpt-6-astra).
@@ -4770,7 +4774,9 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 ## CianchiFuscoMaggiPratelli2011
 
 - **Misprint** at Lemma 4.4, equation (4.8), printed page 12: the source says the section weights `e^{−y²/2}` of `H⁰_γ` make the right side `√(2π)` times the derivative of `v_E = γ_1(E_z)` (a tilted half-plane gives `√(2π) b φ(a + bz)` against `v_E′ = b φ(a + bz)`); it should be carry `(2π)^{−1/2}`, or `v_E` should be weighted by `e^{−y²/2} dy`; affects the proof; (the same convention must be read through (4.6), (4.10) and (4.14)). <!-- tauceti-roadmap-review {"agent": "claude", "head": "9be68dd34fa60e3f38584a9e68e40301612408be", "job": "REV-DESIGN-GaussianIsoperimetryAndClusters", "model": "fable", "worker": "chris-x19"} -->. Found by GaussianIsoperimetryAndClusters (#6596 at 9be68dd, 2026-11-05, claude fable).
+- **Misprint** at Lemma 4.4, equation (4.8), printed page 12 (cvgmt preprint): the source says probability-normalized section mass has a derivative using unnormalized boundary weights; it should be include the factor (2π)^(−1/2); affects the proof; The new Lemma 3.4 misprint was confirmed on the rendered p.21: with one unit edge and a=(1,−1)/√2 the defined quadratic form is 2, whereas the printed ordered-pair sum is 4. Positive definiteness is unaffected. R01 is an error in the roadmap's locator, not in Bobkov's theorem. The previously withdrawn complaint about Milman–Neeman (3.6) is not reinstated: its closure interpretation is retained. <!-- tauceti-roadmap-review {"agent": "codex", "head": "002ce129af36f3c0614d7687f53b7fa6b5baddbc", "job": "REV-DESIGN-GaussianIsoperimetryAndClusters~4", "model": "gpt-6-astra", "worker": "chris-9"} -->. Found by GaussianIsoperimetryAndClusters (#13761 at 002ce12, 2026-11-11, codex gpt-6-astra).
 - **Misprint** at equation (2.5), printed page 5: the source says the supremum formula integrates `div φ − x·φ` against the probability measure `γ_n`, which is `(2π)^{−1/2}` times the perimeter `H^{n−1}_γ(∂^M E)` of (2.4); it should be carry the factor `√(2π)`; affects nothing; (only lower semicontinuity is drawn from it). Found by GaussianIsoperimetryAndClusters (#6596 at 9be68dd, 2026-11-05, claude fable).
+- **Misprint** at equation (2.5), printed page 5 (cvgmt preprint): the source says its surface-normalized perimeter equals the probability-weighted divergence supremum; it should be multiply that supremum by √(2π); affects nothing. Found by GaussianIsoperimetryAndClusters (#13761 at 002ce12, 2026-11-11, codex gpt-6-astra).
 
 ## CiF4
 
@@ -6043,6 +6049,10 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 - **Gap** at Lemma 7.4, preprint p.31 (DPS23 line 1401): the source says every smooth torsion input has a Galois-equivariant twist comparison; it should be assert Weil equivariance generally and Galois equivariance when the actions extend, in particular for locally admissible inputs; affects a stated result. Found by ScholzeFunctorAndModpCohomologyOfTheLubinTateTower (#1702 at 6b357b6, 2026-10-27, codex gpt-6-astra).
 - **Gap** at Lemma 7.4, printed p. 31 (lines 1401–1404): the source says a Galois-equivariant twist isomorphism for every smooth torsion representation although the Galois action exists only for locally admissible ones; it should be Weil-equivariant in general; affects a stated result; <!-- tauceti-roadmap-review {"agent": "claude", "head": "90f788e", "job": "RT-ScholzeFunctorAndModpCohomologyOfTheLubinTateTower~1b", "model": "fable", "worker": "fable-rt235"} -->. Found by ScholzeFunctorAndModpCohomologyOfTheLubinTateTower (#1702 at 90f788e, 2026-10-26, claude fable).
 - **Gap** at Lemma 7.4, printed p. 31 (lines 1401–1404): the source says a Gal_F-equivariant twist isomorphism for every smooth torsion representation although its Gal_F-action (line 1337) is defined only on the locally admissible dual category; it should be Weil-equivariant in general; affects a stated result; <!-- tauceti-roadmap-review {"agent": "claude", "head": "6b357b62725a4219955d447d367883577ad180b2", "job": "RT-ScholzeFunctorAndModpCohomologyOfTheLubinTateTower~2b", "model": "fable", "worker": "chris-x8"} -->. Found by ScholzeFunctorAndModpCohomologyOfTheLubinTateTower (#1702 at 6b357b6, 2026-10-29, claude fable).
+
+## duarteNunezBetancourt2020
+
+- **Misprint** at Theorem 3.10 proof, printed p. 6: the source says the second sum for δ_t(x_j) uses coefficients indexed by k; it should be indexed by t; affects nothing; <!-- tauceti-roadmap-review {"agent": "claude", "head": "63c2853a11113a661fb5c933a4144387d99a0de5", "job": "REV-DESIGN-NashBlowups~5", "model": "fable", "worker": "chris-l"} -->. Found by NashBlowups (#13795 at 63c2853, 2026-11-11, claude fable).
 
 ## Duke–Imamoḡlu–Tóth (DIT16), Ann. of Math. 184 (2016)
 
@@ -8028,6 +8038,10 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 ## ham17
 
 - **Misprint** at proof preceding Corollary 2.7, PDF p. 6 (ham17 line 242): the source says the final projection of the GL_n Newton vector is pr_β; it should be pr_i, matching the chosen GL_n breakpoint; affects the proof. Found by HeckeStacksAndLocalShtukasPartII (#1138 at 41e8611, 2026-10-29, codex gpt-6-astra).
+
+## hamann2003
+
+- **Misprint** at Lemma 0.1 proof, printed p. 2: the source says the radical J is the annihilator of an element outside J; it should be that P is the ideal quotient of J by such an element; affects the proof. Found by NashBlowups (#13795 at 63c2853, 2026-11-11, claude fable).
 
 ## Hamhalter2014
 
@@ -11171,7 +11185,11 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 ## MilmanNeeman2022
 
 - **Gap** at Lemma 2.1, printed page 11 (arXiv v3): the source says the injectivity step asserts that for `y ≠ x` some open cell `x + Ω^m_i` contains `y`, which fails when `y − x` has a tied maximal coordinate; it should be take `i` with `(y − x)_i` maximal, for which `y + Ω^m_i ⊊ x + Ω^m_i` still holds; affects the proof. Found by GaussianIsoperimetryAndClusters (#6596 at 9be68dd, 2026-11-05, claude fable).
+- **Gap** at Lemma 2.1, printed page 11 (arXiv v3): the source says every nonzero displacement belongs to an open model cell; it should be select a maximal coordinate and justify strict translated-cell inclusion even when maxima tie; affects the proof. Found by GaussianIsoperimetryAndClusters (#13761 at 002ce12, 2026-11-11, codex gpt-6-astra).
+- **Misprint** at equation (1.1), printed page 5 (arXiv v3): the source says the reciprocal-profile differential identity holds on the closed interval; it should be restrict differentiation to (0,1), where the profile is nonzero; affects nothing. Found by GaussianIsoperimetryAndClusters (#13761 at 002ce12, 2026-11-11, codex gpt-6-astra).
 - **Error** at equation (3.6), printed page 18: the source says claims `∂*Ω_i` equals the union of the interfaces `Σ_ij` as sets, via equality of supports; it should be assert equality of closures (a cluster of half-annuli gives a point of `∂*Ω_1` on no interface); affects nothing; (used only up to null sets). Found by GaussianIsoperimetryAndClusters (#6596 at 9be68dd, 2026-11-05, claude fable).
+- **Misprint** at proof of Lemma 2.3, printed page 14 (arXiv v3): the source says the cell comparison uses a minimum and a final threshold minus C′; it should be use a maximum and a final threshold plus C′ in that inclusion; affects the proof. Found by GaussianIsoperimetryAndClusters (#13761 at 002ce12, 2026-11-11, codex gpt-6-astra).
+- **Misprint** at proof of Lemma 3.4, printed page 21 (arXiv v3): the source says the quadratic form sums A_ij(v_i−v_j)² over ordered distinct pairs; it should be sum over i<j, or halve the ordered-pair sum; affects the proof. Found by GaussianIsoperimetryAndClusters (#13761 at 002ce12, 2026-11-11, codex gpt-6-astra).
 
 ## milne
 
@@ -11481,11 +11499,15 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 
 ## nashModificationNotes2024
 
+- **Misprint** at Section 1, printed p. 3: the source says the closure of the graph is taken in the Grassmannian; it should be in the product of X with the Grassmannian; affects nothing. Found by NashBlowups (#13795 at 63c2853, 2026-11-11, claude fable).
 - **Error** at Section 2, printed p. 4 (lines 157–160) and Section 3, p. 6 (lines 226–229): the source says the universal property is asserted for every morphism `h : Z → X` carrying a rank-`d` locally free quotient of `h*Ω`; it should be require `Z` reduced with `h⁻¹(U)` dense (a closed point of the cusp with the quotient `[0:1]` does not factor); affects a stated result. Found by NashBlowups (#7586 at df807c1, 2026-11-07, claude fable).
+- **Gap** at Section 3, printed p. 6: the source says every morphism with a rank-d quotient factors through the closure; it should be require a reduced source with dense preimage of the open; affects a stated result. Found by NashBlowups (#13795 at 63c2853, 2026-11-11, claude fable).
 - **Error** at Section 3, printed p. 6 (lines 226–229): the source says the universal property is asserted for every `h : T → S` carrying a rank-`d` locally free quotient of `h*F`; it should be require `T` reduced with `h⁻¹(U)` dense (a closed point of the cusp with the quotient `[0:1]` does not factor); affects a stated result; <!-- tauceti-roadmap-review {"agent": "claude", "head": "71f8325227779f917251dc3b2fdaaf7c537ec3a8", "job": "REV-DESIGN-NashBlowups~2", "model": "fable", "worker": "chris-x10"} -->. Found by NashBlowups (#7586 at 71f8325, 2026-11-07, claude fable).
 - **Gap** at Section 5, p. 11 (line 428) and in duarteNunezBetancourt2020 at the proof of Theorem 3.10, p. 7 (lines 286–287): the source says a splitting of `R_Q → R_Q^{1/p}` is deduced from freeness of `R_Q^{1/p}` alone; it should be use that the cokernel is torsion-free because `R_Q` is integrally closed; affects the proof; <!-- tauceti-roadmap-review {"agent": "claude", "head": "df807c164b4bb91e53fc018044c2dd62a03c729a", "job": "REV-DESIGN-NashBlowups", "model": "fable", "worker": "chris-x10"} -->. Found by NashBlowups (#7586 at df807c1, 2026-11-07, claude fable).
+- **Misprint** at Theorem 5.1, printed p. 10: the source says the Nash map of a normal variety is an isomorphism exactly when the variety is singular; it should be nonsingular; affects a stated result. Found by NashBlowups (#13795 at 63c2853, 2026-11-11, claude fable).
 - **Misprint** at Theorem 5.1, printed p. 10 (line 364): the source says the Nash modification of a normal variety in characteristic `p` is an isomorphism iff the variety is singular; it should be nonsingular; affects a stated result. Found by NashBlowups (#7586 at df807c1, 2026-11-07, claude fable).
 - **Misprint** at Theorem 6.2, printed p. 12 (line 512): the source says the normalised `n`-th Nash modification is an isomorphism iff `X` is an isomorphism; it should be iff `X` is nonsingular; affects nothing. Found by NashBlowups (#7586 at df807c1, 2026-11-07, claude fable).
+- **Misprint** at Theorem 6.2, printed p. 13: the source says the normalised map is an isomorphism exactly when X is an isomorphism; it should be exactly when X is nonsingular; affects a stated result. Found by NashBlowups (#13795 at 63c2853, 2026-11-11, claude fable).
 
 ## native_multiplicative_heights
 
@@ -14167,6 +14189,10 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 ## stacks-projective-picard-review
 
 - **Error** at Lemma 31.29.5, tag 0BXJ, printed pp.70–71 (stacks-projective-picard-review line 3204): the source says Pic(ℙⁿ_R)=ℤ for a UFD without restricting n; it should be restricted to n≥1; Pic(ℙ⁰_k)=0; affects a stated result. Found by StableReductionPartII (#1599 at ef5dd78, 2026-10-27, codex gpt-6-astra).
+
+## stacks03N1
+
+- **Misprint** at Example 59.3 (Tag 03QV), printed page 92, lines 4240–4241: the source says the additive and roots-of-unity sheaves are restricted to the separable closure's spectrum; it should be restriction to the base field's étale site, followed by evaluation at the separable geometric stalk; affects nothing; <!-- tauceti-roadmap-review {"agent": "codex", "head": "ca121b80941bc80073319e6745737f2ed6644aae", "job": "REV-DESIGN-GaloisActionOnEtaleCohomology~4", "model": "gpt-6-astra", "worker": "chris-4"} -->. Found by GaloisActionOnEtaleCohomology (#13766 at ca121b8, 2026-11-11, codex gpt-6-astra).
 
 ## Stein, Modular Forms: A Computational Approach (2007)
 
