@@ -23,23 +23,27 @@ headlines can be stated here without importing another roadmap. A C*-algebra is 
 when a faithful representation of it is a nuclear map (CStarAlgebras C7.1); the exact case below
 takes such a representation as its hypothesis.
 
-Stated here: the Connes–Kirchberg theorem in its hypertrace, completely positive extension and
-spatial tensor norm forms, and Connes's Følner condition (Layer 4), with the tracial von Neumann
-algebra form; the characterization of uniform amenable traces by injectivity of the GNS von
-Neumann algebra, every tracial state of a nuclear C*-algebra being uniform amenable, and the
-equivalence of amenability, uniform amenability, nuclearity of the GNS representation and
-injectivity on an algebra with a nuclear faithful representation (Layer 5); the face property
-of the amenable and of the uniform amenable traces (Layer 6); the traces of commutative and of
-AF algebras and the characterization of amenable discrete groups by the traces of their reduced
-group C*-algebras (Layer 7); quasidiagonal traces on quasidiagonal algebras, quasidiagonality
-from a faithful quasidiagonal trace, Rosenberg's theorem and the necessary conditions for a
-C*-algebra to embed in a simple unital AF algebra (Layer 8).
+Stated here: the passage of the amenable, quasidiagonal and uniform amenable properties between a
+tracial state and its extension to the unitization (Layer 3); the Connes–Kirchberg theorem in its
+hypertrace, completely positive extension and spatial tensor norm forms, and Connes's Følner
+condition (Layer 4), with the tracial von Neumann algebra form; the characterization of uniform
+amenable traces by injectivity of the GNS von Neumann algebra, every tracial state of a nuclear
+C*-algebra being uniform amenable, and the equivalence of amenability, uniform amenability,
+nuclearity of the GNS representation and injectivity on an algebra with a nuclear faithful
+representation (Layer 5); the face property of the amenable and of the uniform amenable traces,
+their permanence under normalized restriction along star homomorphisms (restriction to
+C*-subalgebras, corners and closed ideals, and lifting from quotients) and under extension from
+closed ideals (Layer 6); the traces of commutative and of AF algebras and the characterization of
+amenable discrete groups by the traces of their reduced group C*-algebras (Layer 7);
+quasidiagonal traces on quasidiagonal algebras, quasidiagonality from a faithful quasidiagonal
+trace, Rosenberg's theorem and the necessary conditions for a C*-algebra to embed in a simple
+unital AF algebra (Layer 8).
 
 Headline theorems of the README that are not statable at the pins, and the carrier each lacks:
 
-* Connes–Kirchberg, the bimodule form: boundedness of `π_τ × π_τᵒᵖ` on `A ⊙ Aᵒᵖ` for the minimal
-  norm. The right GNS representation `π_τᵒᵖ` of `Aᵒᵖ` on the GNS space is a construction of the
-  README (§1.4) with no counterpart at the pins.
+* Connes–Kirchberg, the bimodule form (brown2006, Theorem 3.1.6 (4)): boundedness of
+  `π_τ × π_τᵒᵖ` on `A ⊙ Aᵒᵖ` for the minimal norm. The right GNS representation `π_τᵒᵖ` of
+  `Aᵒᵖ` on the GNS space is a construction of the README (§1.4) with no counterpart at the pins.
 * The uniform amenable characterization, the clause that the vector trace `τ''` of `π_τ(A)''` is
   an amenable trace: the vector trace as a positive functional on the GNS von Neumann algebra is
   a construction of the README (§1.4).
@@ -134,6 +138,18 @@ def AdmitsFaithfulAmenableTrace (A : Type*) [NonUnitalCStarAlgebra A] [PartialOr
     [StarOrderedRing A] : Prop :=
   ∃ τ : A →P[ℂ] ℂ, IsTracialState τ ∧ IsFaithfulTrace τ ∧ IsAmenableTrace τ
 
+/-- **Unitization.** For a tracial state `τ` of `A` and its extension `τ̃(λ1 + a) = λ + τ(a)` to
+the unitization `Ã = Unitization ℂ A`, ordered by its spectral order, `τ̃` is amenable,
+quasidiagonal or uniform amenable exactly when `τ` is, for unital and nonunital `A` alike
+(README §3.2; brown2006, Proposition 3.5.10, there for nonunital `A`). -/
+theorem isAmenableTrace_unitization_iff (τ : A →P[ℂ] ℂ) (hτ : IsTracialState τ)
+    (τ' : Unitization ℂ A →P[ℂ] ℂ)
+    (hτ' : ∀ (z : ℂ) (a : A), τ' (Unitization.inl z + (a : Unitization ℂ A)) = z + τ a) :
+    (IsAmenableTrace τ' ↔ IsAmenableTrace τ) ∧
+      (IsQuasidiagonalTrace τ' ↔ IsQuasidiagonalTrace τ) ∧
+      (IsUniformAmenableTrace τ' ↔ IsUniformAmenableTrace τ) := by
+  sorry
+
 end ApproximationClasses
 
 /-! ## Layer 4: hypertraces and the Connes–Kirchberg theorem -/
@@ -162,7 +178,8 @@ theorem isAmenableTrace_iff_exists_isHypertrace (π : A →⋆ₐ[ℂ] (H →L[�
 /-- **Connes–Kirchberg, extension form.** For a faithful representation `π` of a unital
 C*-algebra, a tracial state `τ` is amenable exactly when the GNS representation `π_τ` extends
 along `π` to a unital completely positive map `B(H) → π_τ(A)''`, the generated von Neumann algebra
-on the GNS space (README §4.4; brown2006, Theorem 3.1.6 (1) ⇔ (3)). -/
+on the GNS space (README §4.4; brown2006, Theorem 3.1.6 (2) ⇔ (5), with footnote 2 for a
+single faithful representation). -/
 theorem isAmenableTrace_iff_exists_ucp_extension (π : A →⋆ₐ[ℂ] (H →L[ℂ] H))
     (hπ : Function.Injective π) (τ : A →P[ℂ] ℂ) (hτ : IsTracialState τ) :
     IsAmenableTrace τ ↔
@@ -175,7 +192,7 @@ theorem isAmenableTrace_iff_exists_ucp_extension (π : A →⋆ₐ[ℂ] (H →L[
 /-- **Connes–Kirchberg, tensor form.** For faithful representations `π` of `A` and `ρ` of the
 opposite algebra `Aᵐᵒᵖ`, a tracial state is amenable exactly when the functional
 `μ_τ(a ⊗ bᵒᵖ) = τ(ab)` on `A ⊙ Aᵒᵖ` is bounded by the spatial norm, computed on the Hilbert tensor
-product `H ⊗ K` (README §4.4; brown2006, Theorem 3.1.6 (1) ⇔ (4)). -/
+product `H ⊗ K` (README §4.4; brown2006, Theorem 3.1.6 (2) ⇔ (3)). -/
 theorem isAmenableTrace_iff_norm_sum_le (π : A →⋆ₐ[ℂ] (H →L[ℂ] H))
     (hπ : Function.Injective π) {K : Type*} [NormedAddCommGroup K] [InnerProductSpace ℂ K]
     [CompleteSpace K] (ρ : Aᵐᵒᵖ →⋆ₐ[ℂ] (K →L[ℂ] K)) (hρ : Function.Injective ρ)
@@ -308,7 +325,7 @@ theorem isAmenableTrace_tfae_of_isNuclearMap {H : Type*} [NormedAddCommGroup H]
 
 end Injectivity
 
-/-! ## Layer 6: faces -/
+/-! ## Layer 6: faces, normalized restrictions, quotients and ideals -/
 
 section Faces
 
@@ -330,6 +347,32 @@ theorem isUniformAmenableTrace_convexCombination_iff (τ₁ τ₂ γ : A →P[�
     (h₁ : IsTracialState τ₁) (h₂ : IsTracialState τ₂) {s : ℝ} (hs₀ : 0 < s) (hs₁ : s < 1)
     (hγ : ∀ a, γ a = (s : ℂ) * τ₁ a + (1 - (s : ℂ)) * τ₂ a) :
     IsUniformAmenableTrace γ ↔ IsUniformAmenableTrace τ₁ ∧ IsUniformAmenableTrace τ₂ := by
+  sorry
+
+/-- **Normalized restriction.** Let `ι : A → B` be a star homomorphism, `τ` a tracial state of
+`B` and `c > 0` such that `γ = c⁻¹ · τ ∘ ι` is a tracial state of `A` (which forces
+`c = ‖τ ∘ ι‖`). If `τ` is amenable, resp. uniform amenable, so is `γ`. This contains
+restriction to C*-subalgebras, corners and closed ideals and, with `c = 1`, lifting from
+quotients (README §6.3; brown2006, Propositions 3.5.5, 3.5.6 and 3.5.11). -/
+theorem isAmenableTrace_of_normalized_comp {B : Type*} [NonUnitalCStarAlgebra B]
+    [PartialOrder B] [StarOrderedRing B] (ι : A →⋆ₙₐ[ℂ] B) (τ : B →P[ℂ] ℂ)
+    (hτ : IsTracialState τ) (γ : A →P[ℂ] ℂ) (hγ : IsTracialState γ) {c : ℝ} (hc : 0 < c)
+    (hγτ : ∀ a, γ a = (c : ℂ)⁻¹ * τ (ι a)) :
+    (IsAmenableTrace τ → IsAmenableTrace γ) ∧
+      (IsUniformAmenableTrace τ → IsUniformAmenableTrace γ) := by
+  sorry
+
+/-- **Extension from closed ideals.** Let `ι : A → B` be an injective star homomorphism onto a
+two-sided ideal of `B` (closed, `ι` being isometric), `τ` a tracial state of `A` and `γ` a
+tracial state of `B` with `γ ∘ ι = τ`, the unique state extension of `τ`. If `τ` is amenable,
+resp. uniform amenable, so is `γ` (README §6.5; brown2006, Proposition 3.5.12). -/
+theorem isAmenableTrace_of_comp_ideal {B : Type*} [NonUnitalCStarAlgebra B] [PartialOrder B]
+    [StarOrderedRing B] (ι : A →⋆ₙₐ[ℂ] B) (hι : Function.Injective ι)
+    (hideal : ∀ (b : B) (x : A), b * ι x ∈ Set.range ι ∧ ι x * b ∈ Set.range ι)
+    (γ : B →P[ℂ] ℂ) (hγ : IsTracialState γ) (τ : A →P[ℂ] ℂ) (hτ : IsTracialState τ)
+    (hτγ : ∀ x, τ x = γ (ι x)) :
+    (IsAmenableTrace τ → IsAmenableTrace γ) ∧
+      (IsUniformAmenableTrace τ → IsUniformAmenableTrace γ) := by
   sorry
 
 end Faces
@@ -427,8 +470,7 @@ def IsQuasidiagonal (A : Type*) [NonUnitalCStarAlgebra A] : Prop :=
     (π : A →⋆ₙₐ[ℂ] (K →L[ℂ] K)), Function.Injective π ∧ IsQuasidiagonalSet (Set.range π)
 
 /-- **Quasidiagonal algebras have quasidiagonal traces.** A nonzero unital quasidiagonal
-C*-algebra has a quasidiagonal tracial state (README §8.1; brown2006, Proposition 3.3.2;
-tikuisis-white-winter2017, Proposition 1.4). -/
+C*-algebra has a quasidiagonal tracial state (README §8.1; brown2006, Proposition 3.3.2). -/
 theorem exists_isQuasidiagonalTrace_of_isQuasidiagonal {A : Type*} [CStarAlgebra A]
     [PartialOrder A] [StarOrderedRing A] [Nontrivial A] (hA : IsQuasidiagonal.{u} A) :
     ∃ τ : A →P[ℂ] ℂ, IsTracialState τ ∧ IsQuasidiagonalTrace τ := by
@@ -436,7 +478,9 @@ theorem exists_isQuasidiagonalTrace_of_isQuasidiagonal {A : Type*} [CStarAlgebra
 
 /-- **Faithful quasidiagonal traces.** A separable C*-algebra with a faithful quasidiagonal
 tracial state is quasidiagonal (README §8.3; brown2006, proof of Proposition 4.1.3;
-tikuisis-white-winter2017, Proposition 1.4 and Remark 1.5 (iii)). -/
+tikuisis-white-winter2017, final assertion of Proposition 1.4, there for separable unital nuclear
+algebras, with its footnote 3 for the non-nuclear case and Remark 1.5 (iii) for the nonunital
+case). -/
 theorem isQuasidiagonal_of_isQuasidiagonalTrace {A : Type*} [NonUnitalCStarAlgebra A]
     [PartialOrder A] [StarOrderedRing A] [TopologicalSpace.SeparableSpace A] (τ : A →P[ℂ] ℂ)
     (hτ : IsTracialState τ) (hf : IsFaithfulTrace τ) (hqd : IsQuasidiagonalTrace τ) :

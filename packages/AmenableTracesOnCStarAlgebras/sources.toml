@@ -5,7 +5,7 @@ roadmap = "AmenableTracesOnCStarAlgebras"
 [[source]]
 id = "connes1976"
 authors = "A. Connes"
-title = "Classification of Injective Factors Cases II 1 , II ∞ , III λ , λ � 1"
+title = "Classification of injective factors. Cases II₁, II∞, III_λ, λ ≠ 1"
 year = 1976
 doi = "10.2307/1971057"
 locator_scheme = "theorem"
@@ -18,7 +18,7 @@ cited_for = ["4.1 (background: origin of hypertraces)"]
 [[source]]
 id = "brown-ozawa2008"
 authors = "Nathanial Brown, Narutaka Ozawa"
-title = "𝐶*-Algebras and Finite-Dimensional Approximations"
+title = "C*-Algebras and Finite-Dimensional Approximations"
 year = 2008
 doi = "10.1090/gsm/088"
 locator_scheme = "chapter"
@@ -44,8 +44,9 @@ cited_for = ["2.2 (background: Schwarz inequality)"]
 [[source]]
 id = "pedersen2018"
 authors = "G. K. Pedersen"
-title = "G. K. Pedersen, C*-Algebras and Their Automorphism Groups, 2nd ed., 2018"
+title = "C*-Algebras and Their Automorphism Groups"
 year = 2018
+version_note = "2nd edition (2018)"
 locator_scheme = "chapter"
 locator = "Ch. 3"
 licence_class = "none"
@@ -107,19 +108,19 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-04"
 version_note = "arXiv v2 numbering and cached line numbers"
-cited_for = ["1.1", "1.3", "1.5", "3.1", "8.1", "8.3"]
+cited_for = ["1.1", "1.3", "1.5", "3.1", "8.3"]
 
 [[source]]
 id = "kirchberg1993"
 authors = "Eberhard Kirchberg"
-title = "On non-semisplit extensions, tensor products and exactness of groupC *-algebras"
+title = "On non-semisplit extensions, tensor products and exactness of group C*-algebras"
 year = 1993
 venue = "Inventiones Mathematicae 112"
 doi = "10.1007/BF01232444"
-locator_scheme = "section"
-locator = "§3"
+locator_scheme = "theorem"
+locator = "Theorem 7.5; Proposition 7.1"
 url = "https://doi.org/10.1007/BF01232444"
 licence_class = "none"
 status = "uncertified"
 version_note = "paywalled; cited by its locator without the text"
-cited_for = ["5.4 (origin of the exact case)"]
+cited_for = ["5.4 (background: the group case relating local reflexivity of C*(Γ) and amenability, as recorded in brown2006, lines 1910–1913)"]

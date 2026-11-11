@@ -7,20 +7,21 @@ tensor-product, nuclearity, exactness and quasidiagonality layers of CStarAlgebr
 state, standard-form and injectivity layers of VonNeumannAlgebras. The roadmap develops tracial
 states of an arbitrary (unital or nonunital, separable or not) C*-algebra with their GNS
 representations, the toolkit of completely positive contractions into full matrix algebras with
-the normalized trace and its 2-norm, and the three approximation classes of traces: amenable,
-quasidiagonal and uniform amenable. The end theorems are the Connes–Kirchberg characterization
-of amenable traces by hypertraces, by the minimal tensor norm on `A ⊙ Aᵒᵖ` and by completely
-positive extensions into the GNS von Neumann algebra, together with Connes's Følner condition
-and the tracial von Neumann algebra form; the characterization of uniform amenable traces by
-injectivity of `π_τ(A)''`; the theorems that every tracial state of a nuclear C*-algebra is
-uniform amenable and that on an exact C*-algebra a tracial state is amenable exactly when
-`π_τ(A)''` is injective; convexity, closure, the face property and the permanence of these
-classes under subalgebras, quotients, ideals, unitization and minimal tensor products; the
-examples (finite-dimensional, commutative, AF and UHF algebras, and the theorem that a discrete
-group is amenable exactly when its reduced C*-algebra has an amenable trace); the passage between
-quasidiagonal traces and quasidiagonal algebras with Rosenberg's theorem; and the necessity half
-of the AF-embedding theorem: every nonzero C*-subalgebra of a simple unital AF algebra is
-separable, exact and admits a faithful amenable trace.
+the normalized trace and its 2-norm, and the three approximation classes of traces (amenable,
+quasidiagonal and uniform amenable) with their convexity and closure. The end theorems are the
+Connes–Kirchberg characterization of amenable traces by hypertraces, by the minimal tensor norm
+on `A ⊙ Aᵒᵖ` and by completely positive extensions into the GNS von Neumann algebra, together
+with Connes's Følner condition and the tracial von Neumann algebra form; the characterization of
+uniform amenable traces by injectivity of `π_τ(A)''`; the theorems that every tracial state of a
+nuclear C*-algebra is uniform amenable and that on an exact C*-algebra a tracial state is
+amenable exactly when `π_τ(A)''` is injective; the face property of the amenable and of the
+uniform amenable traces and the permanence of the classes under subalgebras, quotients, ideals,
+unitization and minimal tensor products; the examples (finite-dimensional, commutative, AF and
+UHF algebras, and the theorem that a discrete group is amenable exactly when its reduced
+C*-algebra has an amenable trace); the passage between quasidiagonal traces and quasidiagonal
+algebras with Rosenberg's theorem; and the necessity half of the AF-embedding theorem: every
+nonzero C*-subalgebra of a simple unital AF algebra is separable, exact and admits a faithful
+amenable trace.
 
 ## Scope and ownership
 
@@ -75,7 +76,7 @@ Left to named roadmaps and consumed from them by section:
   matrix-map criterion and its compression step (C8.1–C8.3), state extension (C2.1) and the
   bidual (C2.8). Nothing here re-proves a general completely positive or tensor-product theorem;
   the toolkit of Layer 2 is about maps into matrix algebras measured by the normalized trace. The
-  predicates `IsNuclearMap` and `IsQuasidiagonal` of this roadmap's acceptance file restate the
+  predicates `IsNuclearMap` and `IsQuasidiagonal` of this roadmap's `Suggested.lean` restate the
   finite-set nuclearity of C6.1 and the quasidiagonality of C8.1 on native carriers.
 - **VonNeumannAlgebras** owns states, GNS and the faithful Gelfand–Naimark representation (V0),
   operator topologies, the bicommutant theorem and Kaplansky density (V1), corners and central
@@ -91,7 +92,7 @@ Left to named roadmaps and consumed from them by section:
   C*-algebraic hypertraces of Layer 4 live on `B(H)` for an arbitrary faithful representation of
   a C*-algebra, and the Følner condition of §4.5 is the projection form with a trace clause for a
   C*-algebra in general position. They are different objects, compared with V13b's in §4.5 and
-  §4.6. The predicates `IsInjective` and `IsNormalState` of this roadmap's acceptance file restate
+  §4.6. The predicates `IsInjective` and `IsNormalState` of this roadmap's `Suggested.lean` restate
   V13a's injectivity and V4's normality.
 - **CStarClassification** owns AF and UHF algebras: the definition `IsAF`, its unitization
   criterion and unital presentations (CL2, §2.1), the identification of the tracial state space
@@ -135,8 +136,8 @@ brown2006 §3.4 are outside this roadmap.
   `TauCeti.CStarAction.kmsStates TauCeti.CStarAction.trivial 0` of `0`-KMS states of the trivial
   action in `WeakDual ℂ A` (§1.1). The zero algebra has no state, so `T(0) = ∅`.
 - **Matrices.** `M_k` is `CStarMatrix (Fin k) (Fin k) ℂ` with its operator norm, the abbreviation
-  `Mat` of the acceptance file. The
-  normalized trace is `tr_k(x) = k⁻¹ · Matrix.trace x` and the 2-norm is `‖x‖₂ = tr_k(x*x)^{1/2}`.
+  `Mat` of `Suggested.lean`. The normalized trace is `tr_k(x) = k⁻¹ · Matrix.trace x` and the
+  2-norm is `‖x‖₂ = tr_k(x*x)^{1/2}`.
   For `k = 0`, `M_0` is the zero algebra and `tr_0 = 0`; an approximant into `M_0` never recovers
   a nonzero value of a trace, so it is harmless in every definition. Witness: in `M_2`,
   `tr_2(1) = 1`, `tr_2(e₁₁) = 1/2` and `‖e₁₁‖₂ = 2^{-1/2}`, while the unnormalized trace gives
@@ -220,7 +221,10 @@ At Mathlib `1b1ccf4b088b32fa3f23f2de1127433254a81e1e`:
   (`Mathlib/Topology/Algebra/Group/Basic.lean`) and `VonNeumannAlgebra.centralizer_centralizer`
   (`Mathlib/Analysis/VonNeumannAlgebra/Basic.lean`); `ContinuousLinearMap.instStarOrderedRing`
   (`Mathlib/Analysis/InnerProductSpace/StarOrder.lean`), the operator order on `H →L[ℂ] H`.
-- `Unitization.instCStarAlgebra` (`Mathlib/Analysis/CStarAlgebra/Unitization.lean`) and
+- `Unitization.instCStarAlgebra` (`Mathlib/Analysis/CStarAlgebra/Unitization.lean`),
+  `Unitization.inl`, `Unitization.instPartialOrder` and `Unitization.instStarOrderedRing`
+  (`Mathlib/Analysis/CStarAlgebra/ContinuousFunctionalCalculus/Order.lean`), the spectral order on
+  `Unitization ℂ A`, which restricts to the order of `A` (`Unitization.inr_le_inr_iff`), and
   `Unitization.starLift` (`Mathlib/Algebra/Algebra/Unitization.lean`), the unital extension of a
   nonunital star homomorphism into a unital algebra.
 - `CStarAlgebra.approximateUnit`, `CStarAlgebra.increasingApproximateUnit` and
@@ -1103,12 +1107,16 @@ Prove the following reformulations, for each of the three properties.
   `‖·‖_{2,γ}`, by brown2006, Lemma 2.5 (line 486), as in §1.6 (brown2006, footnote 13, line 1250,
   and proof of Proposition 3.5.1, lines 1235–1261).
 - **Unitization.** `τ ∈ AT(A)` iff `τ̃ ∈ AT(Ã)`, and likewise for `AT_QD` and `UAT` (brown2006,
-  Proposition 3.5.10, line 1423): restrict approximants of `τ̃` to `A`; conversely the unital
-  extension `φ̃(a + λ1) = φ(a) + λ1` of §2.1 has the same multiplicativity defects, recovers
-  `τ̃`, and satisfies `‖tr ∘ φ̃ − τ̃‖_{Ã*} ≤ 2‖tr ∘ φ − τ‖_{A*}` because `|λ| ≤ ‖a + λ1‖`.
+  Proposition 3.5.10, line 1423, for nonunital `A`; the argument below covers every `A`, unital or
+  not, `isAmenableTrace_unitization_iff`, with `Ã = Unitization ℂ A` ordered by its spectral order
+  and `τ̃` given by its values `τ̃(λ1 + a) = λ + τ(a)`): restrict approximants of `τ̃` to `A`;
+  conversely the unital extension `φ̃(a + λ1) = φ(a) + λ1` of §2.1 has the same multiplicativity
+  defects, recovers `τ̃`, and satisfies `‖tr ∘ φ̃ − τ̃‖_{Ã*} ≤ 2‖tr ∘ φ − τ‖_{A*}` because
+  `|λ| ≤ ‖a + λ1‖`, hence `‖a‖ ≤ 2‖a + λ1‖`.
 
 *Needs:* §1.3, §1.6, §2.1, §3.1; CStarAlgebras C4.1 (unital extension); Mathlib
-`TopologicalSpace.SeparableSpace`.
+`TopologicalSpace.SeparableSpace`, `Unitization.instCStarAlgebra`,
+`Unitization.instStarOrderedRing`.
 
 **Checks.**
 
@@ -1119,6 +1127,12 @@ Prove the following reformulations, for each of the three properties.
   approximant of `τ̃` to `A` is again `x ↦ x_1`.
 - For the u.c.p. reduction the algebra must be nonzero: the zero algebra is unital with `1 = 0`
   and has no u.c.p. map into `M_k` for `k ≥ 1`; it has no tracial state either, so nothing is lost.
+- The factor `2` of the unitization estimate is attained, and unital `A` is covered although
+  `Ã ≠ A`: for `A = ℂ`, `Ã ≅ ℂ ⊕ ℂ` by `a + λ1 ↦ (a + λ, λ)`, and `τ̃` for `τ = id_ℂ` is the
+  first-coordinate evaluation, amenable as `τ` is. The c.p.c. map `φ(a) = (1 − δ)a` into `M_1`
+  has `tr ∘ φ − τ = −δ·id` of norm `δ` in `A*`, while its unitized difference `a + λ1 ↦ −δa`
+  takes the value `−δ` at `a = 1`, `λ = −1/2`, an element of norm `max(1/2, 1/2) = 1/2`, so it
+  has norm `2δ` in `Ã*`.
 
 ### 3.3 Inclusions, convexity and closure
 
@@ -1195,7 +1209,8 @@ extends trace recovery from their span. For `UAT` use
 ### Dependencies
 
 CStarAlgebras C4.1, C5.1, C5.2; Mathlib `CompletelyPositiveMap`, `CStarMatrix`,
-`TopologicalSpace.SeparableSpace`. Within this roadmap: Layers 1–2.
+`TopologicalSpace.SeparableSpace`, `Unitization.instCStarAlgebra`,
+`Unitization.instStarOrderedRing`. Within this roadmap: Layers 1–2.
 
 ## Layer 4: Hypertraces and the Connes–Kirchberg theorem
 
@@ -1333,7 +1348,7 @@ nets; Kirchberg's and Connes's origin as background): for a unital C*-algebra `A
 The cycle is (a) ⇒ (d) ⇒ (e) ⇒ (f) ⇒ (g) ⇒ (c) ⇒ (a) by §4.3 and §4.2, and (b) ⇔ (c) by §4.1,
 a faithful representation existing by VonNeumannAlgebras V0; the concrete form of (d) is the
 spatial norm with its representation independence (VonNeumannAlgebras V13b.SpatialNorm). For a
-fixed faithful `π` (and `ρ`), the acceptance file states (a) ⇔ hypertrace for `π` as
+fixed faithful `π` (and `ρ`), `Suggested.lean` states (a) ⇔ hypertrace for `π` as
 `isAmenableTrace_iff_exists_isHypertrace`, (a) ⇔ (f) for `π`, with `π_τ(A)''` the algebra
 `gnsVonNeumannAlgebra`, as `isAmenableTrace_iff_exists_ucp_extension`, and (a) ⇔ (d) as
 `isAmenableTrace_iff_norm_sum_le`; since `π` is arbitrary these contain (b), (c), (f) and (g).
@@ -1568,21 +1583,25 @@ and C2.8 (`π(A)''` is a central summand of `A**`). The trace statement is
 ### 5.4 Exact C*-algebras
 
 Prove (brown2006, Corollary 4.3.6, line 1925, stated there for separable unital `A`; the route
-below needs no separability; kirchberg1993, §3, uncertified, as the origin): if `A` is exact
-(CStarAlgebras C7.1) and `τ ∈ T(A)`, then the following are equivalent: `τ ∈ AT(A)`;
-`τ ∈ UAT(A)`; `π_τ`, as a map `A → M_τ` into its GNS von Neumann algebra, is nuclear; `M_τ` is
-injective; and, for separable `A`, `M_τ` is hyperfinite. By CStarAlgebras C7.1, `A` is exact iff a
-faithful representation `A → B(H)` is a nuclear map, and the acceptance file states the first four
-equivalences under that hypothesis as `isAmenableTrace_tfae_of_isNuclearMap`. Nuclearity of `π_τ`
-must be measured with values in `M_τ`: as a map into `B(L²(A,τ))` every representation of an
-exact algebra is nuclear, since it extends along a faithful nuclear representation by Arveson's
-theorem. Route: for unital `A` and a faithful representation `A ⊆ B(H)`, the inclusion is a
+below needs no separability): if `A` is exact (CStarAlgebras C7.1) and `τ ∈ T(A)`, then the
+following are equivalent: `τ ∈ AT(A)`; `τ ∈ UAT(A)`; `π_τ`, as a map `A → M_τ` into its GNS von
+Neumann algebra, is nuclear; `M_τ` is injective; and, for separable `A`, `M_τ` is hyperfinite.
+By CStarAlgebras C7.1, `A` is exact iff a faithful representation `A → B(H)` is a nuclear map,
+and `Suggested.lean` states the first four equivalences under that hypothesis as
+`isAmenableTrace_tfae_of_isNuclearMap`. Nuclearity of `π_τ` must be measured with values in
+`M_τ`: as a map into `B(L²(A,τ))` every representation of an exact algebra is nuclear, since it
+extends along a faithful nuclear representation by Arveson's theorem. Route: for unital `A` and a faithful representation `A ⊆ B(H)`, the inclusion is a
 nuclear map (CStarAlgebras C7.1), and (f) of §4.4 gives `Φ : B(H) → M_τ` with `π_τ = Φ|_A`, so
 `π_τ : A → M_τ` is nuclear (if `β ∘ α` approximates the inclusion on a finite set, `(Φ ∘ β) ∘ α`
 approximates `π_τ` there, with `Φ ∘ β : M_n → M_τ` c.p.c.); nuclear maps into `M_τ` are weakly
 nuclear, so §5.1 gives injectivity of `M_τ`, §5.2 gives uniform amenability and §3.3 returns to
 amenability. Nonunital exact algebras have exact unitization (CStarAlgebras C7.1, unitization
-variants), and `M_τ = M_τ̃` (§1.4).
+variants), and `M_τ = M_τ̃` (§1.4). The related group statement, that a discrete group with
+Kirchberg's factorization property is amenable exactly when its full group C*-algebra is locally
+reflexive, is kirchberg1993, Theorem 7.5, with Proposition 7.1 on exactness and tensor products
+(uncertified; brown2006, Corollary 4.3.5, lines 1910–1915, records it and rederives it from
+Corollary 4.3.4, line 1908, the locally reflexive analogue of this theorem); it is background and
+lies outside this roadmap.
 *Needs:* §3.3, §4.4, §5.1–§5.2; CStarAlgebras C6.1, C7.1; VonNeumannAlgebras V13a (Arveson).
 
 **Checks.**
@@ -1674,7 +1693,11 @@ has no unit (§3.2), let `ι̃ : Ã → B` be the unital extension (`Unitization
 `χ₀(a + λ1) = λ`; for `c = 1` this is `γ̃` itself, and for `0 < c < 1` the face property (§6.2)
 gives `γ̃ ∈ AT(Ã)`, hence `γ ∈ AT(A)` by §3.2. This contains the normalized restriction to a
 closed ideal (brown2006, Proposition 3.5.11, line 1452), to hereditary subalgebras and to
-corners. *Needs:* §1.3, §3.2, §3.4, §6.2; Mathlib `Unitization.starLift`.
+corners. `Suggested.lean` states the two implications as `isAmenableTrace_of_normalized_comp`,
+for `c > 0` such that `c⁻¹·τ ∘ ι` is a tracial state, which forces `c = ‖τ ∘ ι‖`; with `c = 1`
+it contains the pullback of §3.4 for `AT` and `UAT`, in particular restriction to unital
+C*-subalgebras and lifting from quotients (brown2006, Propositions 3.5.5–3.5.6, lines 1306 and
+1312). *Needs:* §1.3, §3.2, §3.4, §6.2; Mathlib `Unitization.starLift`.
 
 **Checks.**
 
@@ -1684,6 +1707,9 @@ corners. *Needs:* §1.3, §3.2, §3.4, §6.2; Mathlib `Unitization.starLift`.
 - `ι : ℂ → ℂ ⊕ ℂ`, `λ ↦ (0, λ)`, with `τ = pr₁`: `τ ∘ ι = 0`, so `c = 0` and there is nothing to
   normalize; the hypothesis `c > 0` is needed.
 - `I = c₀ ⊆ B = c` with `τ(x) = (x_1 + lim x)/2`: `c = 1/2` and `c⁻¹τ|_{c₀} = δ_1`, amenable.
+- The constant is pinned by the normalized functional being a state: for the corner
+  `ι : M_3 → M_4` and `τ = tr_4`, the choice `c = 1/2` gives `2·tr_4 ∘ ι = (3/2)·tr_3`, of norm
+  `3/2` and value `3/2` at the unit of `M_3`, not a state; only `c = 3/4` gives one.
 
 ### 6.4 Passage to the image of the GNS representation
 
@@ -1716,7 +1742,11 @@ Arveson's theorem on the unitizations, and estimate, with an approximate unit `e
 `τ(e)` is close to `1`, `‖ψ(ab) − ψ(a)ψ(b)‖₂` by `ψ(a(eb))` and the defects of `eb ∈ I` (§2.2),
 using `‖ψ(x − ex)‖₂² ≤ tr ψ(x*(1 − e)²x)`, which is close to
 `γ((1 − e)xx*(1 − e)) ≤ ‖x‖²(1 − τ(e))`; Brown's route through the strict continuity of `Φ` is an
-alternative. *Needs:* §1.3, §2.2, §3.2, §5.2; VonNeumannAlgebras V13a (Arveson).
+alternative. `Suggested.lean` states the two implications as `isAmenableTrace_of_comp_ideal`,
+with the ideal given by an injective star homomorphism `ι : I → A` whose range is a two-sided
+ideal (closed, `ι` being isometric) and `γ` any tracial state of `A` with `γ ∘ ι = τ`, which is
+the extension of §1.3 by its uniqueness. *Needs:* §1.3, §2.2, §3.2, §5.2; VonNeumannAlgebras
+V13a (Arveson).
 
 **Checks.**
 
@@ -1726,6 +1756,10 @@ alternative. *Needs:* §1.3, §2.2, §3.2, §5.2; VonNeumannAlgebras V13a (Arves
   the truncations by the indicators of `{1, …, m}` omit mass `2^{-m}`.
 - `I = M_2 ⊕ 0 ⊆ A = M_2 ⊕ ℂ`, `τ = tr_2`: `γ = tr_2 ∘ pr₁`, vanishing on `0 ⊕ ℂ`, amenable, and
   the other tracial states of `A` restrict to non-normalized functionals on `I`.
+- Injectivity of `ι` is needed: the quotient map `q : C*(F₂) → C*_r(F₂)` is surjective, so its
+  range is an ideal, and `γ = τ_{F₂}` satisfies `γ ∘ q = τ` for the regular trace `τ` of
+  `C*(F₂)`, which is amenable (§5.2, Check), while `τ_{F₂}` is not (§7.3); the non-injective
+  map carries an amenable trace to a non-amenable one, as in §6.4.
 
 ### Examples
 
@@ -1778,7 +1812,7 @@ multiplicative on elements near `B_n`, and `‖tr ∘ φ_n − τ‖ ≤ ‖tr �
 §3.4, line 1192, and Lemmas 2.4–2.5); nonunital AF algebras have AF unitization
 (CStarClassification CL2, §2.1) and pass through §3.2. A UHF algebra has a unique tracial state
 (CStarClassification CL3, §3.5), which is faithful because the algebra is simple (§1.2),
-quasidiagonal and uniform amenable. The predicate `IsAF` of the acceptance file restates
+quasidiagonal and uniform amenable. The predicate `IsAF` of `Suggested.lean` restates
 CStarClassification's. *Needs:* §1.2, §1.6, §3.2; CStarAlgebras C2.1; CStarClassification CL2
 (§2.1), CL3 (§3.5); VonNeumannAlgebras V0 (weak-star compactness of states).
 
@@ -1869,8 +1903,7 @@ A set `Ω ⊆ B(H)` is quasidiagonal (`IsQuasidiagonalSet`) when every finite su
 commutes with a finite-rank projection that almost fixes any given finite set of vectors, and a
 C*-algebra is quasidiagonal (`IsQuasidiagonal`) when it has a faithful representation with
 quasidiagonal image; these restate CStarAlgebras C8.1. Prove (brown2006, Proposition 3.3.2, first
-part, lines 1097–1121; tikuisis-white-winter2017, Proposition 1.4, line 418): if `A` is a nonzero
-unital quasidiagonal C*-algebra, then `AT_QD(A) ≠ ∅`
+part, lines 1097–1121): if `A` is a nonzero unital quasidiagonal C*-algebra, then `AT_QD(A) ≠ ∅`
 (`exists_isQuasidiagonalTrace_of_isQuasidiagonal`); more precisely every weak-star cluster point
 of the normalized traces of compressions of a faithful quasidiagonal representation `π` is a
 quasidiagonal tracial state. Route: for finite `F`, `ε` and a unit vector `ξ ∈ π(1)H`, a
@@ -1916,8 +1949,10 @@ realized by block sums of late terms, which stay asymptotically multiplicative. 
 
 ### 8.3 Faithful quasidiagonal traces
 
-Prove (brown2006, proof of Proposition 4.1.3, lines 1554–1566; tikuisis-white-winter2017,
-Proposition 1.4, line 431, and Remark 1.5 (iii), line 461): if `A` is separable and admits a
+Prove (brown2006, proof of Proposition 4.1.3, lines 1554–1566; tikuisis-white-winter2017, the
+final assertion of Proposition 1.4, line 431, stated there for separable unital nuclear `A`, with
+footnote 3, line 471, for the non-nuclear case, and Remark 1.5 (iii), line 461, for the nonunital
+case): if `A` is separable and admits a
 faithful quasidiagonal trace `τ`, then `A` is quasidiagonal
 (`isQuasidiagonal_of_isQuasidiagonalTrace`, the representation being chosen on a separable
 Hilbert space in any universe). Route: a sequence of c.p.c. norm-asymptotically multiplicative
@@ -2024,7 +2059,7 @@ VonNeumannAlgebras V0; Mathlib `TwoSidedIdeal`. Within this roadmap: Layers 1–
   Proposition 3.1.2, Proposition 3.1.3, Lemmas 3.1.4–3.1.5, Theorems 3.1.6, 3.1.7, 3.2.2,
   Proposition 3.3.2, Lemma 3.5.2, Propositions 3.5.1, 3.5.3–3.5.8, 3.5.10–3.5.12, Proposition 4.1.1,
   Corollary 4.1.2, Proposition 4.1.3, Propositions 4.1.4, 4.1.6, Remark 4.1.7, Theorem 4.2.1,
-  Corollaries 4.3.6, 4.3.8, Proposition 4.3.7.
+  Corollaries 4.3.4–4.3.6, 4.3.8, Proposition 4.3.7.
 - C. Schafhauser, *Subalgebras of simple AF-algebras*, Ann. of Math. 192 (2020), 309–352;
   arXiv:1807.07381v2 (`schafhauser2020`): Introduction and Theorem A.
 - A. Tikuisis, S. White, W. Winter, *Quasidiagonality of nuclear C*-algebras*, Ann. of Math. 185
@@ -2034,8 +2069,9 @@ VonNeumannAlgebras V0; Mathlib `TwoSidedIdeal`. Within this roadmap: Layers 1–
   Mathematics 88, AMS 2008, doi:10.1090/gsm/088 (`brown-ozawa2008`): Ch. 6, amenable traces in net
   form.
 - E. Kirchberg, *On non-semisplit extensions, tensor products and exactness of group
-  C*-algebras*, Invent. Math. 112 (1993), 449–489, doi:10.1007/BF01232444 (`kirchberg1993`): §3,
-  amenable traces on exact algebras (cited by locator).
+  C*-algebras*, Invent. Math. 112 (1993), 449–489, doi:10.1007/BF01232444 (`kirchberg1993`):
+  Theorem 7.5 and Proposition 7.1, the group case relating local reflexivity of `C*(Γ)` and
+  amenability (cited by locator, as recorded in brown2006, lines 1910–1913; background).
 - A. Connes, *Classification of injective factors. Cases II₁, II∞, IIIλ, λ ≠ 1*, Ann. of Math. 104
   (1976), 73–115, doi:10.2307/1971057 (`connes1976`): Theorem 5.1, the origin of hypertraces
   (background).
