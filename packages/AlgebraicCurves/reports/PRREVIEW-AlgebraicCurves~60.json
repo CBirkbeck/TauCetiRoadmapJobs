@@ -1,0 +1,13 @@
+{
+  "review": {
+    "status": "accepted",
+    "reviewer": "independent-review-PRREVIEW-AlgebraicCurves~60",
+    "head": "c8821a449d8e8b611744ce95847a452f61dc8c78",
+    "pr": 1807,
+    "folder": "AlgebraicCurves",
+    "date": "2026-11-11",
+    "findings": 0,
+    "blocking": 0,
+    "notes": "incremental re-review of 0 changed lines since 27be4b9; no previous open findings; unchanged folder and pins; all 15 sampled targets untouched; prior adversarial rows carried with provenance and sample computations displayed; worker PR-aware gate passes, standalone outside-folder=26 consists solely of authorized siblings; dependency check 236 roadmaps, 2159 edges, 0 problems; targeted build, direct elaboration and both fresh #check signatures pass; supplier contracts and overlap merge order checked; uncertified sources retained by locator."
+  }
+}
