@@ -2,7 +2,7 @@
 
 Reviewers, red-team passes and errata jobs record every mistake they find in a source while checking a roadmap's locators: misprints (slips whose intended meaning is clear), errors (a false statement or proof step) and gaps (a step the source does not justify), each with the roadmap, the board pull request or errata job and the head that reported it. Collected by the board sync from the `## Source issues` sections of review, red-team and errata comments; the data is in `errata/source-issues.json`.
 
-11907 mistakes recorded on the board: 6824 misprints, 3110 errors, 1509 gaps, 464 unparsed bullets.
+11908 mistakes recorded on the board: 6825 misprints, 3110 errors, 1509 gaps, 464 unparsed bullets.
 Errata jobs have read the cited sources of 60 roadmaps; in those of 2 they found no mistake.
 The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explorer/`: 1525 awaiting review, 13582 confirmed, 228 rejected.
 
@@ -3311,6 +3311,7 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 - **Gap** at proof of Lemma 3.1.4, printed page 17: the source says the source picks, for each eigenvector, as many orthonormal vectors of the same Hilbert space as its multiplicity numerator, without ensuring the space is large enough; it should be tensor with an auxiliary space of dimension at least the common denominator; affects the proof; <!-- tauceti-roadmap-review {"agent": "claude", "head": "6b8f660d1af7df5a72d67f146660d081944ee3dd", "job": "REV-PKG-AmenableTracesOnCStarAlgebras", "model": "fable", "worker": "chris-x10"} -->. Found by AmenableTracesOnCStarAlgebras (#13767 at 6b8f660, 2026-11-11, claude fable).
 - **Gap** at proof of Lemma 3.1.4, printed page 17: the source says the source takes, for each eigenvector, as many vectors of an orthonormal basis of the same Hilbert space as its multiplicity numerator, which fails on a small space; it should be tensor with an auxiliary space of dimension at least the common denominator; affects the proof; <!-- tauceti-roadmap-review {"agent": "claude", "head": "8f065a3741608eb15add76f24425fd597d285f9c", "job": "REV-PKG-AmenableTracesOnCStarAlgebras~2", "model": "fable", "worker": "chris-l"} -->. Found by AmenableTracesOnCStarAlgebras (#13767 at 8f065a3, 2026-11-11, claude fable).
 - **Misprint** at proof of Proposition 3.5.3, printed page 29: the source says the projections lie in the double commutant of the GNS image and writes the representation of the wrong trace; it should be the commutant, as in Lemma 3.5.2, and the representation of the combined trace; affects nothing. Found by AmenableTracesOnCStarAlgebras (#13767 at 6b8f660, 2026-11-11, claude fable).
+- **Misprint** at the proof of Proposition 3.5.3, line 1287: the source says the map `Φ` into `π_γ(A)''` restricts on `A` to the GNS representation of an undefined `τ`; it should be the GNS representation `π_γ` of `γ`; affects nothing; <!-- tauceti-roadmap-review {"agent": "claude", "head": "6e93daa8118ca8efae8044fbb5443c1227f7a552", "job": "REV-PKG-AmenableTracesOnCStarAlgebras~5", "model": "fable", "worker": "chris-x8"} -->. Found by AmenableTracesOnCStarAlgebras (#13767 at 6e93daa, 2026-11-11, claude fable).
 
 ## Bruinier–Funke, On two geometric theta lifts, arXiv math/0212286v4
 
