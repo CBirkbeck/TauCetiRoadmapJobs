@@ -412,9 +412,12 @@ pp. 17–18; Proposition 3.8 and (3.17), pp. 38–39; (3.38), p. 47). *Needs:* L
 **Checks.**
 
 - n = 1: C = Q_1, and both maps are isomorphisms identifying Q with H_T = Hom(K^×, E).
-- Replacing Q_w by Ext¹_w(D,D) and Q by Ext¹(D,D) breaks the presentation: R_D (through κ_w) kills
-  the summand Ext¹_0(D,D) ⊂ Ext¹_w(D,D), but s_D does not, so no map t_D with t_D ∘ R_D = s_D could
-  exist. At n = 3, d_K = 1, Ext¹_0(D,D) is a line (Q has dimension 9, Ext¹(D,D) dimension 10).
+- When Ext¹_0(D,D) ≠ 0, replacing Q_w by Ext¹_w(D,D) and Q by Ext¹(D,D) breaks the presentation:
+  R_D (through κ_w) kills the summand Ext¹_0(D,D) ⊂ Ext¹_w(D,D), but s_D does not, so no map t_D with
+  t_D ∘ R_D = s_D could exist. Since dim Ext¹_0(D,D) = (n − 1)(n·d_K − 2)/2
+  (TriangulineVarietyAndItsLocalModel §11.4), this happens exactly for n ≥ 3 and for n = 2 with
+  d_K ≥ 2; at n = 3, d_K = 1, Ext¹_0(D,D) is a line (Q has dimension 9, Ext¹(D,D) dimension 10). For
+  n = 1, and for n = 2 with K = ℚ_p, Ext¹_0(D,D) = 0 and the replacement changes nothing.
 - Two summands carrying the same class of Q have difference in Ker s_D; whether that difference
   lies in Ker R_D is exactly what Theorem 1.4 decides.
 - An element of a summand with κ_w-image zero is zero, since κ_w is injective on Q_w.
@@ -647,8 +650,10 @@ H_T ≅ 𝔈_w^min with t_D^min ∘ ζ_w^min = a_w ∘ `κ_w^{−1}`.
 
 - The g-images have dimension n and the w-images dimension n(1 + d_K) on both sides.
 - n = 3, K = ℚ_p: 𝔈^min has dimension 9 = dim Q, and every 𝔈_w^min still has dimension 6.
-- The images are taken in the quotient Q; in the full Ext¹(D,D) the g-space would have dimension
-  1 + n(n−1)d_K/2, not n.
+- The images are taken in the quotient Q: the full de Rham space Ext¹_g(D,D) has dimension
+  1 + n(n−1)d_K/2, exceeding n by dim Ext¹_0(D,D) = (n − 1)(n·d_K − 2)/2, for instance 4 against 3 at
+  n = 3, K = ℚ_p, and 3 against 2 at n = 2, d_K = 2. At n = 1, and at n = 2 with K = ℚ_p,
+  Ext¹_0(D,D) = 0 and both dimensions equal n, so there the two readings agree.
 
 ### 2.4 Intrinsic characterisation
 
@@ -861,8 +866,9 @@ injective and that its image is the maximal `g_{Σ_K∖{σ}}`-algebraic subrepre
 - K = ℚ_p: π_min(D)_σ = π_min(D).
 - n = 2: π_min(D)_σ = `π_{1,σ}(φ,h)`, which is all of V only when d_K = 1.
 - n = 3: for every σ the quotient is one copy of A.
-- For d_K > 1, replacing `π_{1,σ}` by V would include constituents `C(I,s_{i,τ})` with τ ≠ σ, which are
-  not `g_{Σ_K∖{σ}}`-algebraic, violating maximal partial algebraicity.
+- For n ≥ 2 and d_K > 1, replacing `π_{1,σ}` by V would include constituents `C(I,s_{i,τ})` with
+  τ ≠ σ, which are not `g_{Σ_K∖{σ}}`-algebraic, violating maximal partial algebraicity. For n = 1 there
+  are no labels I, V = A = `π_{1,σ}` for every d_K, and the replacement changes nothing.
 
 ### 3.5 Decomposition over the embeddings
 
@@ -881,7 +887,9 @@ LocallyAnalyticRepresentationsOfLocalGroups §§8.7, 10.2, 10.5.
 **Checks.**
 
 - n = 3, d_K = 2: two σ-kernel lines spanning the 2-dimensional kernel.
-- The shared 𝔈_g must be divided out first: 𝔈_σ ∩ 𝔈_τ ⊃ 𝔈_g ≠ 0, so ⊕_σ 𝔈_σ → 𝔈 is not injective.
+- For d_K ≥ 2 the shared 𝔈_g must be divided out first: for σ ≠ τ, 𝔈_σ ∩ 𝔈_τ ⊃ 𝔈_g ≠ 0 (dimension n),
+  so ⊕_σ 𝔈_σ → 𝔈 is not injective. For K = ℚ_p there is one embedding, 𝔈_σ = 𝔈, and the sum map is
+  the identity.
 - Quotient multiplicities add (c_n per embedding, c_n d_K in total) while A is counted once; the
   direct sum of the π_min(D)_σ would have socle `A^{⊕d_K}`.
 
@@ -1161,9 +1169,15 @@ LocallyAnalyticRepresentationsOfLocalGroups §§7.3, 8.10–8.12.
 - n = 1: PS_1 = A = δ_1 = `φ_1z^{h_1}`, the closed induction is δ̃_1^univ itself, and U_1 = U.
 - Universality is what forces the subobject to be all of PS_1: a proper V′ would leave the classes of
   Ext¹(A, PS_1) not pushed forward from V′ unrealised.
-- The closed induction `I_{B⁻}^G` is used, not the full locally analytic induction, whose quotient by
-  PS_1(w(φ),h) contains the constituents of PS(w(φ),h)/PS_1(w(φ),h) and whole copies of PS(w(φ),h),
-  not only copies of A.
+- For n ≥ 2 the closed induction `I_{B⁻}^G` is used, not the full locally analytic induction: the
+  latter is an extension of `PS(w(φ),h)^{⊕n(1+d_K)}` by PS(w(φ),h), so its quotient by PS_1(w(φ),h)
+  has as constituents those of PS(w(φ),h)/PS_1(w(φ),h) and n(1 + d_K) copies of every constituent
+  C(w,u) of PS(w(φ),h), including those with u ≠ 1, which are not A
+  (LocallyAnalyticRepresentationsOfLocalGroups §8.4 (1)–(2)); the closed induction modulo
+  PS_1(w(φ),h) is `A^{⊕n(1+d_K)}`. For n = 2, K = ℚ_p, PS_1 = PS and the two quotients have
+  constituents 4A + 4C(w,s) against 4A. For n = 1, G = B⁻ = T(K) = K^×, both induction functors are
+  the identity and both quotients are `A^{⊕(1+d_K)}`: rank one is the equality case, not a negative
+  control.
 
 ### 5.4 Ding's universal Artinian action
 
@@ -1253,8 +1267,9 @@ modules, and only for K = ℚ_p does the single modification equal D.
 All entries paraphrase the published version of DING25.
 
 - **(3.43), proof of Theorem 3.21, p. 49.** The full character space is not the direct sum of the
-  maximal-Levi-centre character spaces and the centre character space: each two-block space contains
-  the constant tuples, and the dimensions are (2n − 1)(1 + d_K) against n(1 + d_K). The proof on p. 50
+  maximal-Levi-centre character spaces and the centre character space when n ≥ 2: each two-block
+  space contains the constant tuples, and the dimensions are (2n − 1)(1 + d_K) against n(1 + d_K)
+  (equal only at n = 1, where there are no block spaces). The proof on p. 50
   uses only the spanning, which §0.3 proves by telescoping.
 - **Definition of χ_D, before Proposition 3.26, p. 51.** The exponent |λ| is an element of `ℤ^{Σ_K}`,
   |λ|_σ = Σ_i `λ_{i,σ}`, not a sum over both i and σ (§2.5; witness: λ_σ = (2,0), λ_τ = (5,1) gives
