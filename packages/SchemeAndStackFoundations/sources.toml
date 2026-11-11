@@ -387,3 +387,70 @@ status = "certified"
 accessed = "2026-11-10"
 version_note = "author's online copy; section and theorem numbers agree with the printed book, printed page = file page − 14"
 cited_for = ["1.15", "1.16"]
+
+[[source]]
+id = "kempf-1978"
+authors = "George Kempf"
+title = "The Grothendieck-Cousin complex of an induced representation"
+year = 1978
+venue = "Advances in Mathematics 29"
+doi = "10.1016/0001-8708(78)90021-X"
+locator_scheme = "theorem"
+locator = "Theorem 10.9; p. 358"
+url = "https://doi.org/10.1016/0001-8708(78)90021-X"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["2.8"]
+
+[[source]]
+id = "rydh-2013"
+authors = "David Rydh"
+title = "Existence and properties of geometric quotients"
+year = 2013
+venue = "Journal of Algebraic Geometry 22"
+locator_scheme = "theorem"
+locator = "Theorems (4.1), (4.4), (6.10), (6.12) of the 2012-05-04 author manuscript, pp. 19-20, 27-28"
+url = "https://davidrydh.se/papers/quotients20120504.pdf"
+fetched_from = "https://davidrydh.se/papers/quotients20120504.pdf"
+fetched_at = "2026-11-11T01:37:47Z"
+sha256 = "4a83ffdbe147370dc2a7d97d63dd2fb583a8b77d360db1580583663f131345b0"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-11"
+cited_for = ["1.23"]
+
+[[source]]
+id = "abramovich-olsson-vistoli-2008"
+authors = "Dan Abramovich, Martin Olsson, Angelo Vistoli"
+title = "Tame stacks in positive characteristic"
+year = 2007
+arxiv = "math/0703310v1"
+locator_scheme = "theorem"
+locator = "Definition 3.1, Theorem 3.2, Corollaries 3.3-3.5, Proposition 3.6 (arXiv v1)"
+url = "https://arxiv.org/abs/math/0703310v1"
+fetched_from = "https://arxiv.org/pdf/math/0703310v1"
+fetched_at = "2026-11-11T01:37:53Z"
+sha256 = "081c9b056b9bd60c87393529793bdc7796134056064f79a8d7ba7b31f7b36462"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-11"
+version_note = "arXiv v1"
+cited_for = ["1.23"]
+
+[[source]]
+id = "boxer-calegari-gee-pilloni-2021"
+authors = "George Boxer, Frank Calegari, Toby Gee, Vincent Pilloni"
+title = "Abelian surfaces over totally real fields are potentially modular"
+year = 2021
+arxiv = "1812.09269"
+locator_scheme = "theorem"
+locator = "Section 3.9.5, Theorem 3.9.6, Remark 3.9.7, pp. 63-64 of the author copy"
+url = "https://www.math.uchicago.edu/~fcale/papers/surfaces.pdf"
+fetched_from = "https://www.math.uchicago.edu/~fcale/papers/surfaces.pdf"
+fetched_at = "2026-11-11T01:38:02Z"
+sha256 = "95b4591978ed4c8d680aa8dcfdb29f3c8fa4fc8c91cb9ff43178c0ec726ae143"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-11"
+cited_for = ["2.8"]
