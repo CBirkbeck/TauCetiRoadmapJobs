@@ -16,11 +16,14 @@ uniqueness on domains of dependence; local well-posedness in `Hᵏ`, `k > n/2 + 
 continuous dependence and the continuation criterion; and the theory of developments of
 Cauchy data. The end theorems are the local well-posedness of compressible Euler for
 non-vacuum `Hᵏ` data, uniqueness on lens-shaped domains, the uniqueness, compatibility and
-existence theory of developments (every development lies below a maximal one; developments
-that extend a common classical solution are unique), and the nullity of the regular boundary
-of every maximal development. The classical claim that all developments of the same data agree
-on their common domain is false for compressible Euler on a fixed Galilean background; the
-roadmap states the correct uniqueness theorems and records an explicit counterexample.
+existence theory of developments (any two developments of the same data have a largest
+common development below both, and are compatible exactly when they have a common upper
+bound; every development lies below a maximal one; if the data extend to a classical solution
+on the whole future half-space, the maximal development is unique), and the nullity of the
+regular boundary of every maximal development. The classical claim that all developments of
+the same data agree on their common domain is false for compressible Euler on a fixed Galilean
+background; the roadmap states the correct uniqueness theorems and records an explicit
+counterexample.
 
 ## Scope and ownership
 
@@ -34,8 +37,10 @@ This roadmap owns:
   make both Euler systems instances;
 - the acoustical quadratic form `g = −c² dt² + Σᵢ (dxⁱ − vⁱ dt)²` of a state, stated concretely
   on `ℝ × E`, its inverse, determinant, signature, causal character of vectors and covectors and
-  the identification of its null covectors with the characteristic covectors of the Euler
-  symbol; sound-cone fields, their locally Lipschitz causal curves parametrised by time,
+  the identification of its null covectors with the sound sheet of the characteristic variety
+  of the Euler symbol (the material sheet `ζ₀ + v·ζ′ = 0`, `ζ′ ≠ 0`, is characteristic when
+  its multiplicity is positive but is never null, and it is absent for the barotropic system
+  with `n = 1`); sound-cone fields, their locally Lipschitz causal curves parametrised by time,
   past-inextendibility, causal pasts and future domains of dependence on relatively open
   subsets of a half-space, with the limit-curve compactness that makes them work;
 - Sobolev spaces `Hᵏ_Λ` of Λ-periodic functions for a discrete period group `Λ ⊆ E`, their
@@ -202,7 +207,15 @@ on `E`, no Lorentzian quadratic form with a time orientation and no causal curve
   nonnegative) as a contraction in the `Wkp` norm, commuting with the lower-order projection and
   with the iterated gradient, and converging strongly to the identity as the bump radii tend to
   `0`; `TauCeti.W1p.normedBumpL` (`TauCeti/Analysis/Sobolev/W1p/Mollification.lean:87`) is the
-  order-one case. These are the `Λ = 0` statements of §4.4.
+  order-one case. These are the `Λ = 0` statements of §4.4 for the normalised-bump kernels
+  only; a general even nonnegative kernel (§4.4) need not be of this form, and its statements
+  are proved in §4.4 from the translations below.
+- `TauCeti.Wkp.translate`, `TauCeti.Wkp.lowerOrder_translate`,
+  `TauCeti.Wkp.iteratedGradient_translate`, `TauCeti.Wkp.continuous_translate`,
+  `TauCeti.Wkp.norm_translate` and `TauCeti.Wkp.translateLIE`
+  (`TauCeti/Analysis/Sobolev/Wkp/Translation.lean:104,137,130,182,193,229`): translation of
+  `W^{k,p}(ℝⁿ)` acts on the value and every weak derivative, is a linear isometric equivalence,
+  and for finite `p` is continuous in the translation vector for each fixed element.
 - `TauCeti.HasWeakLineDerivOn.contDiffOn_smul`, `TauCeti.HasWeakFDerivOn.contDiffOn_smul` and
   `TauCeti.HasWeakLineDerivOn.lipschitzOnWith_smul`
   (`TauCeti/Analysis/Sobolev/Leibniz.lean:112,168,317`): the Leibniz rule for the weak derivative
@@ -447,6 +460,12 @@ symmetric hyperbolic system; Dafermos2016, Ch. V, §5.1).
 - Dominance at `(ρ, v) = (1, 3)` with `c = 2`: `(2, 3)` dominates, `(2, 0)` does not
   (`ζ = (2, −1)`: `ζ₀ + 0 = 2 ≥ 2·1`, but `ζ₀ + vζ₁ − c|ζ₁| = 2 − 3 − 2 = −3 < 0`), and `(5, 0)`
   dominates, matching `c′ ≥ c + |v − w| = 5`.
+- Constant state, material sheet: at a constant state the barotropic system has constant
+  coefficients, and for unit `ω` its speeds are `v·ω ± c` and the material speed `v·ω` with
+  multiplicity `n − 1`. For `n = 2`, `ρ = c = 1`, `v = 0` and `ζ = (0, 1, 0)` the symbol is
+  `A¹ = [[0, 1, 0], [1, 0, 0], [0, 0, 0]]`, with determinant `0` and eigenvalues `−1, 0, 1`: `ζ` is
+  characteristic (material sheet) although `g⁻¹(ζ, ζ) = 1`, so it is not null. For `n = 1` at the
+  same state the speeds are `−1, 1` only. The full system has material multiplicity `n`.
 
 *Needs:* Layers 1.1–1.3, 2.1; Mathlib `Matrix.PosDef`, `Matrix.det`.
 
@@ -520,7 +539,9 @@ Lipschitz on `J`, with `(t, x(t)) ∈ D` for `t ∈ J`, such that for almost eve
 `x` is differentiable at `t` within `J` and `|ẋ(t) − v(t, x(t))| ≤ c(t, x(t))`. Causal curves are
 parametrised by time and are future-directed by construction (Minguzzi2019 lines 1359–1363,
 Theorem 2.12, for the Lipschitz parametrisation of continuous causal curves; Chrusciel2011
-line 534, §2.3; MinguzziCone2019 lines 1735–1740 for causal curves of a closed cone structure).
+line 534, §2.3; MinguzziCone2019 lines 680–697, §2.1, p. 17, for the locally absolutely
+continuous solutions of the differential inclusion (2.2) of a closed cone structure, and
+Remark 2.3, lines 698–718, p. 17, for their Lipschitz reparametrisation).
 
 Prove:
 
@@ -778,13 +799,24 @@ Prove, for `u, f, g ∈ L^∞ ∩ Hᵏ_Λ` and multi-indices `α`:
   line 1612, Lemma 6.8, for `Φ(0) = 0`, which the centring at `Ū` reduces to; Majda1984, Ch. 2,
   §2.1).
 
-The constants depend on `n`, `k`, `Λ` and, for the composition, on `Φ` through its
-derivatives up to order `k` on `K`. Every constant is independent of `u`, `f`, `g`.
+The constants depend on `n`, `k`, `Λ` and, for the composition, on `K`, on a `δ > 0` such that
+the closed `δ`-neighbourhood `K_δ` of `K` lies in `G`, and on `Φ` through its derivatives of
+order at most `max(1, k)` on `K_δ`. At order `0` the composition constant is a Lipschitz
+constant of `Φ` on `K`: for `a, b ∈ K`,
+`|Φ(a) − Φ(b)| ≤ max(sup_{K_δ} |DΦ|, 2δ^{−1} sup_K |Φ|) |a − b|`, by the mean value theorem on
+the segment `[a, b] ⊆ K_δ` when `|a − b| ≤ δ` and trivially when `|a − b| > δ`; this secant
+bound is what the order-zero part of every order uses, also when `K` is not convex and the
+segment from `Ū` leaves `G`. Every constant is independent of `u`, `f`, `g`.
 
 **Checks.**
 
-- Scaling witness for Gagliardo–Nirenberg on `E`: for `u_λ(x) = u(λx)`, both sides scale as
-  `λ^{i − ni/(2k)}`; the wrong exponent `L^{k/i}` scales differently and is refuted as `λ → ∞`.
+- Scaling witness for the homogeneous (`Λ = 0`) Gagliardo–Nirenberg inequality: for
+  `u_λ(x) = u(λx)`, `‖Dⁱu_λ‖_{L^{2k/i}}` and `‖u_λ‖_∞^{1−i/k}‖Dᵏu_λ‖_{L²}^{i/k}` both scale as
+  `λ^{i − ni/(2k)}`. The wrong exponent `L^{k/i}` gives a left side scaling as `λ^{i − ni/k}`, so
+  the ratio of the wrong left side to the right side scales as `λ^{−ni/(2k)}`: it is unbounded
+  as `λ → 0` and tends to `0` as `λ → ∞`, so the refutation is by spreading `u` out, not by
+  concentrating it. For `n = 1`, `k = 2`, `i = 1` the wrong left side scales as `λ^{1/2}` and
+  the right side as `λ^{3/4}`; the ratio `λ^{−1/4}` is `2` at `λ = 1/16` and `1/2` at `λ = 16`.
 - The `L^∞` factors are needed: on `ℝⁿ`, `u = |x|^{−n/3}` on the unit ball (zero outside) is in
   `L²`, but `u² = |x|^{−2n/3}` has `∫ u⁴ = ∞` near `0`, so `L² = H⁰` is not an algebra.
 - Composition with `Φ(u) = u²`, `n = 1`, `k = 1`: `‖(u²)′‖₂ = ‖2uu′‖₂ ≤ 2‖u‖_∞‖u′‖₂`, the constant
@@ -793,6 +825,13 @@ derivatives up to order `k` on `K`. Every constant is independent of `u`, `f`, `
   bound at `k = 0` would read `‖Φ(u)‖_{L²(E)} ≤ C‖u‖_{L²(E)}`, with left side `∞` (the constant `1`
   is not in `L²(E)`) and right side `0`; the centred bound gives `‖Φ(u) − Φ(Ū)‖ = 0 ≤ 0`. This is
   why the top-derivative form is stated for `k ≥ 1` only.
+- Order zero, constant dependence: `Λ = 0`, `n = N = 1`, `K = [0, 1]`, `Ū = 0`,
+  `Φ_m(s) = sin(ms)` and `u_m = m^{−1}1_{[0,1]}`, with values in `{0, 1/m} ⊆ K`. Then
+  `sup_K |Φ_m| = 1` for `m ≥ 2`, `‖u_m‖_{L²} = 1/m` and `‖Φ_m(u_m) − Φ_m(0)‖_{L²} = sin 1 ≈ 0.8415`,
+  so the order-zero constant is at least `m sin 1` (`8.41`, `84.1`, `841` at `m = 10, 100, 1000`)
+  while every order-zero bound of `Φ_m` on `K` stays `1`: a constant controlled by `sup_K |Φ|`
+  alone does not exist. With the first derivative (`K` is convex here, so the Lipschitz
+  constant on `K` is `sup_K |Φ_m′| = m`) the bound reads `sin 1 ≤ m · m^{−1} = 1`.
 - Order zero, interpolation: at `k = i = 0` the Gagliardo–Nirenberg exponents `2k/i` and `i/k`
   are `0/0`, and at `k = j = 0` the interpolation exponent `j/k` of §4.2 is `0/0`; the statements
   start at `k ≥ 1`, `i ≥ 1`, and the `k = 0` case of §4.2 is the identity on `L²_Λ`. At `k = 1`,
@@ -818,13 +857,28 @@ for `k ≥ 1` and every `ε > 0`, `‖J_εu − u‖_{Hᵏ⁻¹_Λ} ≤ Cε‖u�
 `‖J_ε(a∂ᵢu) − a∂ᵢJ_εu‖_{L²_Λ} ≤ C(‖a‖_∞ + Lip a)‖u‖_{L²_Λ}` for `u ∈ H¹_Λ` and every `ε > 0`, the
 commutator extends to `L²_Λ` with the same bound and tends to `0` strongly as `ε → 0`
 (Majda1984, Ch. 2, §2.1; Friedrichs1954). Periodicity of `a` is what makes `a∂ᵢu` and the
-commutator Λ-periodic. For `Λ = 0` the contraction, the commutation with
-derivatives and the convergence `J_εu → u` are, in Tau Ceti's `Wkp` norm,
-`TauCeti.Wkp.norm_normedBumpL_le_one`, `TauCeti.Wkp.lowerOrder_normedBumpL` with
-`TauCeti.Wkp.iteratedGradient_normedBumpL`, and `TauCeti.Wkp.tendsto_normedBumpL` at `p = 2`, and
-are cited, not reproved (in the multi-index norm of §4.1 the contraction is Young's inequality
-applied to each `∂^αu`); proved here are the Λ-periodic transfer through the localisation of
-§4.1, the `ε^{−1}` gain and `ε` loss bounds, the `L²_Λ` symmetry and Friedrichs' lemma.
+commutator Λ-periodic.
+
+The kernel class is the general one above. Tau Ceti's mollifiers are the special case of
+normalised bumps (`φ` the normalisation of a `ContDiffBump`, which is radial and positive at
+`0`), for which, at `Λ = 0` and in Tau Ceti's `Wkp` norm, the contraction, the commutation with
+derivatives and the convergence `J_εu → u` are `TauCeti.Wkp.norm_normedBumpL_le_one`,
+`TauCeti.Wkp.lowerOrder_normedBumpL` with `TauCeti.Wkp.iteratedGradient_normedBumpL`, and
+`TauCeti.Wkp.tendsto_normedBumpL` at `p = 2`. This section owns the extension of these three
+statements to every admissible kernel and every period group. Route: write
+`J_εu = ∫ φ(y) τ_{−εy}u dy`, a Bochner integral of the translates `τ_h = TauCeti.Wkp.translate h`
+(the sign convention of `τ` is immaterial because `φ` is even), which depend continuously on
+`y` (`TauCeti.Wkp.continuous_translate` at `p = 2`) and are isometries
+(`TauCeti.Wkp.norm_translate`, `TauCeti.Wkp.translateLIE`). The contraction follows from
+`φ ≥ 0` and `∫ φ = 1`, and in the multi-index norm of §4.1 from Young's inequality applied to
+each `∂^αu`; the commutation with derivatives from `TauCeti.Wkp.lowerOrder_translate` and
+`TauCeti.Wkp.iteratedGradient_translate`, because continuous linear maps commute with Bochner
+integrals; the strong convergence from `‖J_εu − u‖ ≤ ∫ φ(y)‖τ_{−εy}u − u‖ dy`, whose integrand is
+at most `2φ(y)‖u‖` and tends to `0` for each `y`, by dominated convergence. For `Λ ≠ 0` the same
+route runs in `Hᵏ_Λ`, with the translation isometries of §4.1 and their continuity in the
+translation vector obtained through the localisation of §4.1. On a normalised bump the route
+recovers the cited Tau Ceti statements. Proved here as well are the `ε^{−1}` gain and `ε` loss
+bounds, the `L²_Λ` symmetry and Friedrichs' lemma.
 
 **Checks.**
 
@@ -850,12 +904,22 @@ applied to each `∂^αu`); proved here are the Λ-periodic transfer through the
   on `ℝ` (only its Lipschitz constant enters) it equals `ψ′ ⋆ u` with `ψ(z) = −zφ_ε(z)`, and
   `‖ψ′‖_{L¹} = ∫ |φ(w) + wφ′(w)| dw` does not depend on `ε`, as the lemma predicts; a bound of
   the form `Cε^{−1}` would be the trivial one.
+- The kernel class is wider than the normalised bumps: on `ℝ`, with `η` even, nonnegative,
+  smooth, of integral `1` and supported in `(−1/4, 1/4)`, the kernel
+  `φ(x) = (η(x − 2) + η(x + 2))/2` is even, nonnegative, smooth, compactly supported, of
+  integral `1`, and has `φ(0) = 0`, while every normalised `ContDiffBump` is positive at `0`; so
+  `J_ε` for this `φ` is not one of Tau Ceti's `TauCeti.Wkp.normedBumpL`. The translation route
+  still applies: `J_εu = ½(τ_{2ε} + τ_{−2ε})(η_ε ⋆ u)`, a contraction, and
+  `‖J_εu − u‖ ≤ ∫ φ(y)‖τ_{−εy}u − u‖ dy → 0`.
 
-*Needs:* §4.1; Mathlib `MeasureTheory.convolution`, `ContDiffBump`, Young's inequality for
-convolution; Tau Ceti `TauCeti.Wkp.normedBumpL`, `TauCeti.Wkp.norm_normedBumpL_le_one`,
+*Needs:* §4.1; Mathlib `MeasureTheory.convolution`, `ContDiffBump`, the Bochner integral and
+dominated convergence, Young's inequality for convolution; Tau Ceti `TauCeti.Wkp.translate`,
+`TauCeti.Wkp.continuous_translate`, `TauCeti.Wkp.norm_translate`, `TauCeti.Wkp.translateLIE`,
+`TauCeti.Wkp.lowerOrder_translate` and `TauCeti.Wkp.iteratedGradient_translate` for the
+general kernel; `TauCeti.Wkp.normedBumpL`, `TauCeti.Wkp.norm_normedBumpL_le_one`,
 `TauCeti.Wkp.lowerOrder_normedBumpL`, `TauCeti.Wkp.iteratedGradient_normedBumpL`,
-`TauCeti.Wkp.tendsto_normedBumpL` and `TauCeti.Wkp.dense_contDiff_representatives` for the
-statements on `Λ = 0`.
+`TauCeti.Wkp.tendsto_normedBumpL` for the normalised-bump case, and
+`TauCeti.Wkp.dense_contDiff_representatives`.
 
 ### Examples
 
@@ -872,17 +936,22 @@ Tau Ceti's Sobolev spaces and Mathlib; no earlier layer.
 ### 5.1 Linear symmetric hyperbolic operators and the energy identity
 
 Define a *linear symmetric hyperbolic operator* on `[0, T] × E` (Λ-periodic coefficients) as
-`LW = A⁰∂_tW + Σᵢ Aⁱ∂ᵢW + BW` with `A^μ : [0, T] × E → Sym_N` of class `C¹` with bounded
-derivatives, `A⁰ ≥ λ₀I` for some `λ₀ > 0`, and `B` continuous and bounded. Define its energy
+`LW = A⁰∂_tW + Σᵢ Aⁱ∂ᵢW + BW` with `A⁰ : [0, T] × E → Sym_N` bounded and of class `C¹` with
+bounded first derivatives, `Aⁱ : [0, T] × E → Sym_N` bounded and continuous with bounded
+continuous spatial derivatives `∂ⱼAⁱ` (no time derivative of `Aⁱ` enters), `A⁰ ≥ λ₀I` for some
+`λ₀ > 0`, and `B` continuous and bounded. The bound on `A⁰` makes `E` below finite and
+comparable to `‖W‖²_{L²_Λ}`, and the bounds on `A^μ` and `B` put `LW` in `C([0, T]; L²_Λ)` for
+every `W` in the class below; bounded derivatives alone do neither on a non-compact quotient
+`E/Λ` (Check below). Define its energy
 `E(t) = ∫_F ⟨A⁰(t)W(t), W(t)⟩`. Prove the Friedrichs energy identity for
 `W ∈ C¹([0, T]; L²_Λ) ∩ C([0, T]; H¹_Λ)`:
 
     dE/dt = ∫_F ⟨(∂_tA⁰ + Σᵢ ∂ᵢAⁱ − B − Bᵀ)W, W⟩ + 2∫_F ⟨LW, W⟩
 
 and the `L²` estimate `‖W(t)‖_{L²_Λ} ≤ Ce^{Ct}(‖W(0)‖_{L²_Λ} + ∫₀ᵗ ‖LW(s)‖_{L²_Λ} ds)` with `C`
-depending on `λ₀`, `sup‖A⁰‖`, `sup|∂A^μ|` and `sup‖B‖`; hence uniqueness for the linear Cauchy
-problem in this class (Friedrichs1954, pp. 345–392; Majda1984, Ch. 2, §2.1; LukNotes line 679,
-Proposition 4.1, for the wave equation).
+depending on `λ₀`, `sup‖A⁰‖`, `sup|∂_tA⁰|`, `sup|∂ᵢAⁱ|` and `sup‖B‖`; hence uniqueness for the
+linear Cauchy problem in this class (Friedrichs1954, pp. 345–392; Majda1984, Ch. 2, §2.1;
+LukNotes line 679, Proposition 4.1, for the wave equation).
 
 - The identity is invariant under multiplying `L` by a positive constant and under Λ-translation.
 - The estimate holds backwards in time with the same constant.
@@ -896,6 +965,12 @@ Proposition 4.1, for the wave equation).
 - The non-symmetric `A¹ = [[0, 1], [0, 0]]` with `A⁰ = I`, `B = 0` has solutions
   `W = (g(x) − tf′(x), f(x))` whose `L²` norm grows like `t‖f′‖₂`, so no `L²` estimate in terms of
   `‖W(0)‖₂` holds: symmetry is necessary.
+- Bounded coefficients are needed, not only bounded derivatives: `n = N = 1`, `Λ = 0`,
+  `A⁰(x) = √(1 + x²)`, `A¹ = B = 0` and the stationary `W(t, x) = (1 + x²)^{−1/2}`. Then
+  `A⁰ ≥ 1`, `|∂ₓA⁰| ≤ 1`, `LW = 0`, `‖W‖₂² = π` and `‖∂ₓW‖₂² = π/8`, so `W` is in the class, but
+  `∫_{−R}^{R} A⁰W² = 2 asinh R → ∞`: the energy is infinite and the estimate in terms of
+  `sup‖A⁰‖ = ∞` is empty. The bound on `A⁰` excludes it; with `A⁰ = 1` instead, `E = π` and both
+  sides of the identity are `0`.
 
 *Needs:* §4.1 (integration by parts on `F`); Tau Ceti `TauCeti.le_mul_exp_of_le_add_mul_integral`.
 
@@ -1186,12 +1261,13 @@ Layers 2, 3 and 5.
 ### 7.1 Local well-posedness for quasilinear symmetric hyperbolic systems
 
 Prove: let a quasilinear symmetric hyperbolic system be given, `Ū ∈ G` with `F(Ū) = 0`, a
-period group `Λ`, `k ∈ ℕ` with `2k > n + 2`, a compact `K ⊆ G` and `M > 0`. There is
-`T = T(M, K) > 0` such that for every `U₀ : E → G` with `U₀ − Ū ∈ Hᵏ_Λ`,
+period group `Λ`, `k ∈ ℕ` with `2k > n + 2`, a compact `K ⊆ G` and `M > 0`. There are
+`T = T(M, K) > 0` and `R = R(M, K)` such that for every `U₀ : E → G` with `U₀ − Ū ∈ Hᵏ_Λ`,
 `‖U₀ − Ū‖_{Hᵏ_Λ} ≤ M` and `U₀(E) ⊆ K`:
 
 - *existence:* there is a Λ-periodic `U` with `U − Ū ∈ C([0, T]; Hᵏ_Λ) ∩ C¹([0, T]; Hᵏ⁻¹_Λ)`,
-  which is `C¹` on `[0, T] × E` and a classical solution with `U(0) = U₀`;
+  which is `C¹` on `[0, T] × E` and a classical solution with `U(0) = U₀`, and
+  `‖U(t) − Ū‖_{Hᵏ_Λ} ≤ R` for `t ∈ [0, T]`;
 - *uniqueness:* `U` is the only such solution, and the only classical solution on
   `[0, T) × E` with this data and bounded cone field on each `[0, t₂] × E` (§6.2);
 - *continuous dependence:* if `U₀^m → U₀` in `Ū + Hᵏ_Λ` with values in `K`, the solutions
@@ -1211,7 +1287,8 @@ order `k − 1`, where `2(k − 1) > n`);
 boundedness `‖U^m − Ū‖_{Hᵏ_Λ} ≤ R` on a uniform interval `[0, T]`, with `R` and `T` depending only
 on `M` and `K`, by §5.3 (whose coefficients depend on this bound; the forcing is
 `F(U^m) − F(Ū)`), contraction in `C([0, T]; L²_Λ)` by §5.1,
-convergence in `C([0, T]; Hᵏ⁻¹_Λ)` by §4.2, top-order continuity and continuous dependence by the
+convergence in `C([0, T]; Hᵏ⁻¹_Λ)` by §4.2 with the bound `R` passing to the limit by the lower
+semicontinuity of §4.2, top-order continuity and continuous dependence by the
 Bona–Smith regularisation of the data; continuation by the tame estimate of §5.3 and Grönwall.
 
 - The solution of `Λ`-periodic data is unique among all solutions, hence Λ-periodic, by
@@ -1263,27 +1340,95 @@ applied to the symmetrisers of §2.2, with `F = 0`; the bound `ρ ≥ ρ_*/2` fr
 
 ### 7.3 Uniformly local data
 
-Prove: let `G` contain the segments `[Ū, U]` for `U ∈ K` (for the Euler systems with convex `I` or
-convex `𝒪` this holds), fix `χ ∈ C_c^∞(E)` equal to `1` on the unit ball, and let `U₀ : E → K`
-satisfy `sup_{y∈E} ‖χ(· − y)(U₀ − Ū)‖_{Hᵏ(E)} ≤ M`. Then there are `T = T(M, K) > 0` and a unique
-classical solution on `[0, T] × E` with data `U₀` and `sup_y ‖χ(· − y)(U(t) − Ū)‖_{Hᵏ(E)}`
-bounded on `[0, T]`; it commutes with every translation that fixes `U₀`, so Λ-periodic data give
-Λ-periodic solutions for every period group (Kato1975, Theorem I). Route: solve §7.1 for the
-localised data `Ū + χ(·/r − y/r)(U₀ − Ū)`, glue by §6.2 on the cones of speed
-`sup_K` of the maximal speed (§2.1), and use slab uniqueness.
+Fix a quasilinear symmetric hyperbolic system `(G, A⁰, …, Aⁿ, F)` with an arbitrary smooth
+source `F` (no equilibrium is assumed), a state `Ū ∈ G`, a compact `K ⊆ G` such that `G`
+contains the segment `[Ū, U]` for every `U ∈ K`, `k ∈ ℕ` with `2k > n + 2`, `M > 0`, and a cutoff
+`χ ∈ C_c^∞(E)` with `0 ≤ χ ≤ 1` and `χ = 1` on the unit ball. For the barotropic Euler system
+`G = I × E` is convex, and for the full system the segment condition holds whenever `𝒪` is
+convex. Prove: there is `T > 0`, depending only on the system, `n`, `k`, `χ`, `Ū`, `K` and `M`,
+such that for every `U₀ : E → K` with `U₀ − Ū ∈ Hᵏ_loc(E)` and
+`sup_{y∈E} ‖χ(· − y)(U₀ − Ū)‖_{Hᵏ(E)} ≤ M` there is a unique classical solution `U` on
+`[0, T] × E` with `U(0) = U₀`. Its values lie in a compact subset of `G` depending only on `G`,
+`Ū` and `K`; `sup_y ‖χ(· − y)(U(t) − Ū)‖_{Hᵏ(E)}` is bounded on `[0, T]`; and `U` commutes with
+every translation of `E` that fixes `U₀`, so Λ-periodic data give Λ-periodic solutions for every
+period group (Kato1975, Theorem I).
+
+The localisation uses the *source-switched system* of the given system: the system on `G × ℝ`
+with states `(U, a)`, coefficient matrices `diag(A⁰(U), 1)` and `diag(Aⁱ(U), 0)`, and source
+`(aF(U), 0)`.
+
+- It is a quasilinear symmetric hyperbolic system of size `N + 1`, and `(Ū, 0)` is an
+  equilibrium of it whatever the value `F(Ū)` is.
+- Every classical solution `(U, a)` has `∂_ta = 0`, so `a(t, x) = a(0, x)`; on every open set
+  where `a = 1`, `U` is a classical solution of the given system.
+- A round cone `(c, w)` with `c ≥ |w|` dominates the switched system at `(U, a)` iff it dominates
+  the given system at `U`: on the cone `ζ₀ + w·ζ′ ≥ c|ζ′|` the added entry `ζ₀` of the symbol is
+  at least `(c − |w|)|ζ′| ≥ 0`.
+
+Route. The segment hull `K′ = {Ū + θ(U − Ū) : θ ∈ [0, 1], U ∈ K}` is compact and lies in `G`. Fix
+`δ > 0` such that the closed `δ`-neighbourhood `K₁` of `K′` lies in `G`, the continuous
+dominating cone map `κ = (c_κ, w_κ)` of §2.1, and `m ≥ sup_{K₁} (c_κ + |w_κ|)`; then
+`κ_m = (max(m, c_κ + |w_κ|), 0)` is a continuous dominating cone map (§2.1, monotonicity) equal
+to `(m, 0)` on `K₁`. For `y ∈ E` the cut-off data `(Ū + χ(· − y)(U₀ − Ū), χ(· − y))` of the
+switched system take values in the compact `K′ × [0, 1]` because `0 ≤ χ ≤ 1`, lie within
+`M + ‖χ‖_{Hᵏ(E)}` of `(Ū, 0)` in `Hᵏ(E)`, and equal `(U₀, 1)` on the ball `B(y, 1)`. Section 7.1
+with `Λ = 0`, applied to the switched system at the equilibrium `(Ū, 0)`, gives solutions
+`(U^y, a^y)` on a common interval `[0, T₀]` with a common bound `R` in `Hᵏ(E)`. While `U^y` takes
+values in `K₁`, `∂_tU^y = A⁰(U^y)^{−1}(a^yF(U^y) − Σᵢ Aⁱ(U^y)∂ᵢU^y)` is bounded in terms of `K₁`
+and `R` (§4.2), so the values stay within `δ` of `K′` on a common `[0, T₁]`. On the cone
+`C_y = {(t, x) : 0 ≤ t < min(T₀, T₁), |x − y| < 1 − mt}`, a domain, one has `a^y = 1`, so `U^y`
+solves the given system there, and its causal curves for `κ_m` have speed at most `m`; for
+`p ∈ C_y ∩ C_{y′}`, §6.2 with `D = C_y`, `S = {0} × B(y, 1)`, `O = C_{y′}` and the cone map `κ_m` gives
+`U^y = U^{y′}` at `p`, because both data equal `U₀` on `B(y, 1) ∩ B(y′, 1)` and `J⁻_{C_y}(p)` lies
+in `C_{y′}`. For `T = min(T₀, T₁, 1/m)/2` each point `(t, x)` of `[0, T] × E` lies in `C_x`, and
+`U(t, x) = U^x(t, x)` is a classical solution; the uniformly local bound follows from `R` by
+covering the support of `χ(· − y)` with finitely many balls of radius `1/2` (§4.3, products
+with smooth cutoffs). Uniqueness among all classical solutions with data `U₀` is §6.2 with
+`D = O = [0, T) × E`, in which only the cone field `κ_m ∘ U = (m, 0)` of the constructed solution
+enters, together with the slab statement of §3.3 and continuity at `t = T`.
 
 - Data equal to two different constant states outside a compact set are uniformly local.
 
 **Checks.**
 
 - The data `v̄ = 2` for `x ≤ −1`, `v̄ = −2` for `x ≥ 1`, smooth in between, `ρ̄ ≡ 1/2`
-  (`p = ρ²`) are uniformly local but not in `Ū + H¹(ℝ)` for any constant `Ū`.
-- Periodic data in all directions (full-rank `Λ`) are uniformly local, and the solution of §7.1
-  for full-rank `Λ` agrees with the one here.
+  (`p = ρ²`) are uniformly local but not in `Ū + H¹(ℝ)` for any constant `Ū`; their values
+  `(1/2, v)`, `|v| ≤ 2`, form a compact subset of the convex `G = I × ℝ`.
+- Periodic data in all directions (full-rank `Λ`) are uniformly local, and when `F(Ū) = 0` the
+  solution of §7.1 for full-rank `Λ` agrees with the one here, by uniqueness.
 - Without the segment hypothesis the localised data may leave `G`; for the barotropic system
   `G = I × E` is convex, so no condition arises.
+- The order hypothesis is needed: for `∂_tu = 0` (`N = n = 1`, `G = ℝ`, `A⁰ = 1`, `A¹ = 0`,
+  `F = 0`), `K = [0, 1]`, `Ū = 0` and `k = 0`, the step `U₀ = 1_{[0, ∞)}` has
+  `sup_y ‖χ(· − y)U₀‖_{L²} ≤ ‖χ‖_{L²}`, but its one-sided limits at `0` are `0` and `1`, so no
+  `C¹` solution attains it; `2k > n + 2` (here `k ≥ 2`) excludes it.
+- Compactness of `K` is needed: `N = n = 1`, `G = (−∞, 1)`, `A⁰ = 1`, `A¹ = 0`,
+  `F(u) = u/(1 − u)` (so `F(0) = 0`), `Ū = 0` and `U₀(x) = 1 − 1/(2 + √(1 + x²))`, with values in
+  `[2/3, 1)`, every segment `[0, U₀(x)]` inside `G`, and every uniformly local `Hᵏ` norm finite.
+  The solution of `u′ = u/(1 − u)` from `U₀(x)` reaches the edge `u = 1` at time
+  `−log U₀(x) − (1 − U₀(x))`, which is `≈ 0.0721` at `x = 0`, `≈ 0.00365` at `x = 10`,
+  `≈ 0.0000484` at `x = 100`, and tends to `0` as `|x| → ∞`: there is no uniform existence time.
+  The range `[2/3, 1)` has non-compact closure in `G`.
+- The cutoff must take values in `[0, 1]`: with `G = (0, 2)`, `Ū = 1` and `K = {3/2}` the segment
+  `[1, 3/2]` lies in `G`, but a smooth cutoff equal to `1` on the unit ball that takes the value
+  `3` somewhere gives the localised value `1 + 3 · 1/2 = 5/2 ∉ G`; for `0 ≤ θ ≤ 1` the value
+  `1 + θ/2` lies in `[1, 3/2]`.
+- General sources: for `N = 1`, `G = ℝ`, `A⁰ = 1`, `Aⁱ = 0` and `F ≡ 1`, the given system has no
+  equilibrium and §7.1 does not apply to it (the Check of §7.1); the source-switched system has
+  source `(a, 0)`, which vanishes at `(Ū, 0)`, and on `{a = 1}` it gives `∂_tU = 1`, so constant
+  data `Ū` give `U = Ū + t`, the solution of the given system, whose uniformly local norms
+  `t‖χ‖_{Hᵏ(E)}` stay bounded on `[0, T]`.
+- The stationary component of the switched system has speed `0`, so a cone `(c, w)` with
+  `c < |w|` can dominate the given system without dominating the switched one: for transport
+  with `a = 3`, `(1, 3)` dominates the given equation, but at `ζ = (−2, 1)` the cone condition
+  `−2 + 3 = 1 ≥ 1` holds while the added entry is `ζ₀ = −2 < 0`. The gluing uses cones `(m, 0)`.
+- Switching off: with `a ≡ 0` the `U`-equation of the switched system is the homogeneous system
+  `A⁰(U)∂_tU + Σᵢ Aⁱ(U)∂ᵢU = 0`, of which every constant state is a solution, and on
+  `{0 < a < 1}` the source is `aF(U)`. A switched solution therefore solves the given system only
+  where `a = 1`; this is why only the cones `C_y` over `B(y, 1)`, where `χ(· − y) = 1`, are glued.
 
-*Needs:* §2.1, §6.2, §7.1.
+*Needs:* §2.1 (maximal speed, monotonicity, the continuous dominating cone map), §3.3 (slabs),
+§4.2, §4.3, §6.2, §7.1.
 
 ### Examples
 

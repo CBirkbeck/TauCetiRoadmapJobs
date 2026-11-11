@@ -2,7 +2,7 @@
  "roadmap": "CompressibleEulerEquations",
  "title": "Compressible Euler equations, symmetric hyperbolic systems and maximal developments",
  "parent": null,
- "summary": "The barotropic and full compressible Euler systems with a general equation of state on the Galilean carrier ℝ × ℝⁿ (partially periodic carriers as Λ-periodic lifts); quasilinear symmetric hyperbolic systems with the Euler symmetrisers; the acoustical form, Lipschitz causal curves of sound-cone fields and future domains of dependence; Hᵏ_Λ calculus (Gagliardo–Nirenberg, Moser, mollifiers); Friedrichs energy estimates; local uniqueness on lenses and on domains of dependence; local well-posedness in Hᵏ_Λ, k > n/2 + 1; developments, maximal common developments, maximal developments (non-unique in general, with an explicit counterexample), existence of developments, and nullity of the regular boundary of every maximal development.",
+ "summary": "The barotropic and full compressible Euler systems with a general equation of state on the Galilean carrier ℝ × ℝⁿ (partially periodic carriers as Λ-periodic lifts); quasilinear symmetric hyperbolic systems with the Euler symmetrisers; the acoustical form, Lipschitz causal curves of sound-cone fields and future domains of dependence; Hᵏ_Λ calculus (Gagliardo–Nirenberg, Moser, mollifiers); Friedrichs energy estimates; local uniqueness on lenses and on domains of dependence; local well-posedness in Hᵏ_Λ, k > n/2 + 1; developments, maximal common developments, maximal developments (non-unique in general, with an explicit counterexample; unique when the data extend to a classical solution on the whole future half-space), existence of developments, and nullity of the regular boundary of every maximal development.",
  "baseline": {
   "mathlib": "1b1ccf4b088b32fa3f23f2de1127433254a81e1e",
   "tauceti": "2fd255d997f47c0b5d834ee416c7015d55444ce5"
@@ -402,7 +402,7 @@
       {
        "name": "constant_state",
        "kind": "degenerate",
-       "statement": "at a constant state the system is constant-coefficient with speeds v·ω, v·ω ± c"
+       "statement": "at a constant state the system is constant-coefficient; for unit ω its speeds are v·ω ± c and the material speed v·ω with multiplicity n − 1, absent for n = 1 (n = 1, ρ = c = 1, v = 0: speeds −1, 1 only); for n = 2, ρ = c = 1, v = 0, ζ = (0,1,0) the symbol [[0,1,0],[1,0,0],[0,0,0]] is singular (material sheet) although g⁻¹(ζ,ζ) = 1, not null; the full system 2.2.1 has material multiplicity n"
       }
      ]
     },
@@ -604,7 +604,7 @@
      ],
      "locator": {
       "source": "Minguzzi2019",
-      "where": "lines 1359–1363, Theorem 2.12; Chrusciel2011 line 534, §2.3; MinguzziCone2019 lines 1735–1740"
+      "where": "lines 1359–1363, Theorem 2.12 (§2.5); Chrusciel2011 line 534, §2.3; MinguzziCone2019 §2.1, lines 680–697, p. 17 (locally absolutely continuous solutions of the inclusion (2.2)) and Remark 2.3, lines 698–718, p. 17 (Lipschitz reparametrisation)"
      },
      "prerequisites": [
       "mathlib:LocallyLipschitzOn",
@@ -982,7 +982,7 @@
       {
        "name": "scaling",
        "kind": "characterisation",
-       "statement": "both sides scale as λ^{i − ni/(2k)} under u(λx); L^{k/i} does not"
+       "statement": "homogeneous Λ = 0 form: under u(λx) both ‖Dⁱu‖_{L^{2k/i}} and ‖u‖_∞^{1−i/k}‖Dᵏu‖_{L²}^{i/k} scale as λ^{i − ni/(2k)}; the wrong L^{k/i} left side scales as λ^{i − ni/k}, ratio λ^{−ni/(2k)}, unbounded as λ → 0 (not as λ → ∞); n = 1, k = 2, i = 1: wrong side λ^{1/2}, right side λ^{3/4}, ratio 2 at λ = 1/16 and 1/2 at λ = 16"
       },
       {
        "name": "order_zero_exponents",
@@ -1018,11 +1018,12 @@
      "id": "4.3.2",
      "kind": "theorem",
      "name": "PeriodicSobolev.moser_composition",
-     "statement": "For Φ smooth on open G ⊆ ℝ^N, compact K ⊆ G, Ū ∈ K and u with values in K and u − Ū ∈ Hᵏ_Λ: Φ(u) − Φ(Ū) ∈ Hᵏ_Λ with ‖Φ(u) − Φ(Ū)‖_{Hᵏ_Λ} ≤ C(Φ,K,k)‖u − Ū‖_{Hᵏ_Λ}; for Λ = 0 and k ≥ 1, ‖DᵏΦ(u)‖_{L²} ≤ C(Φ,K,k)‖Dᵏu‖_{L²}; and u ↦ Φ(u) is continuous in Hᵏ_Λ.",
+     "statement": "For Φ smooth on open G ⊆ ℝ^N, compact K ⊆ G, Ū ∈ K and u with values in K and u − Ū ∈ Hᵏ_Λ: Φ(u) − Φ(Ū) ∈ Hᵏ_Λ with ‖Φ(u) − Φ(Ū)‖_{Hᵏ_Λ} ≤ C‖u − Ū‖_{Hᵏ_Λ}; for Λ = 0 and k ≥ 1, ‖DᵏΦ(u)‖_{L²} ≤ C‖Dᵏu‖_{L²}; and u ↦ Φ(u) is continuous in Hᵏ_Λ. C depends on n, k, Λ, K, a δ > 0 with the closed δ-neighbourhood K_δ ⊆ G, and the derivatives of Φ of order ≤ max(1, k) on K_δ; at order 0 it is the secant bound |Φ(a) − Φ(b)| ≤ max(sup_{K_δ}|DΦ|, 2δ⁻¹ sup_K|Φ|)|a − b| for a, b ∈ K.",
      "hypotheses": [
       "Φ smooth on G",
       "values of u in compact K",
-      "Ū ∈ K"
+      "Ū ∈ K",
+      "δ > 0 with closed δ-neighbourhood K_δ of K contained in G"
      ],
      "locator": {
       "source": "LukNotes",
@@ -1042,6 +1043,11 @@
        "name": "order_zero_uncentred",
        "kind": "non-example",
        "statement": "Λ = 0, K = {0}, u = Ū = 0, Φ ≡ 1, k = 0: the uncentred bound ‖Φ(u)‖_{L²} ≤ C‖u‖_{L²} has sides ∞ and 0; the centred bound gives 0 ≤ 0"
+      },
+      {
+       "name": "order_zero_lipschitz",
+       "kind": "non-example",
+       "statement": "Λ = 0, n = N = 1, K = [0,1], Ū = 0, Φ_m(s) = sin(ms), u_m = m⁻¹1_{[0,1]}: sup_K|Φ_m| = 1 (m ≥ 2), ‖u_m‖ = 1/m, ‖Φ_m(u_m) − Φ_m(0)‖ = sin 1 ≈ 0.8415, so the k = 0 constant is ≥ m sin 1 and no bound by sup_K|Φ| alone exists; with Lip Φ_m = m the bound reads sin 1 ≤ 1"
       }
      ]
     },
@@ -1067,13 +1073,19 @@
       "tauceti:TauCeti.Wkp.lowerOrder_normedBumpL",
       "tauceti:TauCeti.Wkp.iteratedGradient_normedBumpL",
       "tauceti:TauCeti.Wkp.tendsto_normedBumpL",
-      "tauceti:TauCeti.Wkp.dense_contDiff_representatives"
+      "tauceti:TauCeti.Wkp.dense_contDiff_representatives",
+      "tauceti:TauCeti.Wkp.translate",
+      "tauceti:TauCeti.Wkp.continuous_translate",
+      "tauceti:TauCeti.Wkp.norm_translate",
+      "tauceti:TauCeti.Wkp.translateLIE",
+      "tauceti:TauCeti.Wkp.lowerOrder_translate",
+      "tauceti:TauCeti.Wkp.iteratedGradient_translate"
      ],
      "api": [
       {
        "name": "bounds",
        "role": "structure",
-       "statement": "preserves Λ-periodicity; ‖J_εu‖_{Hᵏ} ≤ ‖u‖_{Hᵏ}; symmetric for the L²_Λ pairing; commutes with ∂ᵢ; J_εu → u in Hᵏ_Λ (for Λ = 0 these are TauCeti.Wkp.norm_normedBumpL_le_one, lowerOrder_normedBumpL, iteratedGradient_normedBumpL and tendsto_normedBumpL at p = 2)"
+       "statement": "preserves Λ-periodicity; ‖J_εu‖_{Hᵏ} ≤ ‖u‖_{Hᵏ}; symmetric for the L²_Λ pairing; commutes with ∂ᵢ; J_εu → u in Hᵏ_Λ. Owned here for every admissible kernel and every Λ: J_εu = ∫φ(y)τ_{−εy}u dy as a Bochner integral of the translates TauCeti.Wkp.translate (continuous in y by TauCeti.Wkp.continuous_translate, isometric by TauCeti.Wkp.norm_translate / translateLIE); contraction from φ ≥ 0, ∫φ = 1 (Young coordinatewise in the multi-index norm); commutation from TauCeti.Wkp.lowerOrder_translate and iteratedGradient_translate; strong convergence by dominated convergence of ‖τ_{−εy}u − u‖ ≤ 2‖u‖. For Λ = 0 and a normalised ContDiffBump kernel these are TauCeti.Wkp.norm_normedBumpL_le_one, lowerOrder_normedBumpL, iteratedGradient_normedBumpL and tendsto_normedBumpL at p = 2, which the route recovers"
       },
       {
        "name": "gain_loss",
@@ -1116,6 +1128,11 @@
        "name": "nonperiodic_coefficient",
        "kind": "non-example",
        "statement": "Λ = 2πℤ, u = sin x, a = sin(x/2): the commutator ½[(φ̂(3ε/2) − φ̂(ε))sin(3x/2) − (φ̂(ε/2) − φ̂(ε))sin(x/2)] equals μ₂ε²/8 + o(ε²) at x = π and its negative at 3π, so it is not in L²_Λ; a = sin x gives a periodic commutator, constant a gives 0"
+      },
+      {
+       "name": "two_bump_kernel",
+       "kind": "non-example",
+       "statement": "φ(x) = (η(x−2) + η(x+2))/2 with η even, nonnegative, ∫η = 1, supp η ⊆ (−1/4,1/4) is admissible (even, ∫φ = 1) with φ(0) = 0, while every normalised ContDiffBump is positive at 0, so J_ε is not a TauCeti.Wkp.normedBumpL; J_εu = ½(τ_{2ε} + τ_{−2ε})(η_ε ⋆ u) is still a contraction and ∫φ(y)‖τ_{−εy}u − u‖ → 0"
       }
      ]
     }
@@ -1129,9 +1146,11 @@
      "id": "5.1",
      "kind": "definition",
      "name": "SymmetricHyperbolic.LinearOperator",
-     "statement": "A linear symmetric hyperbolic operator LW = A⁰∂_tW + Σᵢ Aⁱ∂ᵢW + BW on [0,T] × E with Λ-periodic coefficients, A^μ C¹ with bounded derivatives and symmetric values, A⁰ ≥ λ₀I (λ₀ > 0), B continuous bounded; its energy E(t) = ∫_F ⟨A⁰W, W⟩.",
+     "statement": "A linear symmetric hyperbolic operator LW = A⁰∂_tW + Σᵢ Aⁱ∂ᵢW + BW on [0,T] × E with Λ-periodic coefficients and symmetric values: A⁰ bounded, C¹ with bounded first derivatives, A⁰ ≥ λ₀I (λ₀ > 0); Aⁱ bounded, continuous, with bounded continuous spatial derivatives (no time derivative of Aⁱ enters); B continuous bounded; its energy E(t) = ∫_F ⟨A⁰W, W⟩ (finite and comparable to ‖W‖²_{L²_Λ} because A⁰ is bounded).",
      "hypotheses": [
-      "A^μ symmetric, C¹, bounded derivatives",
+      "A^μ symmetric",
+      "A⁰ bounded, C¹ with bounded first derivatives",
+      "Aⁱ bounded, continuous, with bounded continuous spatial derivatives",
       "A⁰ ≥ λ₀I, λ₀ > 0",
       "B continuous and bounded"
      ],
@@ -1170,6 +1189,11 @@
        "name": "jordan_block",
        "kind": "non-example",
        "statement": "A¹ = [[0,1],[0,0]]: ‖W(t)‖ grows like t‖f′‖, no L² estimate"
+      },
+      {
+       "name": "unbounded_A0",
+       "kind": "non-example",
+       "statement": "n = N = 1, Λ = 0, A⁰ = √(1+x²) (A⁰ ≥ 1, |∂ₓA⁰| ≤ 1), A¹ = B = 0, W = (1+x²)^{−1/2}: LW = 0, ‖W‖² = π, ‖∂ₓW‖² = π/8, but ∫_{−R}^{R}A⁰W² = 2 asinh R → ∞; excluded by the bound on A⁰; with A⁰ = 1, E = π and both sides of the identity are 0"
       }
      ]
     },
@@ -1177,9 +1201,10 @@
      "id": "5.1.1",
      "kind": "theorem",
      "name": "SymmetricHyperbolic.LinearOperator.energy_identity",
-     "statement": "For W ∈ C¹([0,T];L²_Λ) ∩ C([0,T];H¹_Λ): dE/dt = ∫_F⟨(∂_tA⁰ + Σ∂ᵢAⁱ − B − Bᵀ)W,W⟩ + 2∫_F⟨LW,W⟩, and ‖W(t)‖ ≤ Ce^{Ct}(‖W(0)‖ + ∫₀ᵗ‖LW‖).",
+     "statement": "For W ∈ C¹([0,T];L²_Λ) ∩ C([0,T];H¹_Λ): dE/dt = ∫_F⟨(∂_tA⁰ + Σ∂ᵢAⁱ − B − Bᵀ)W,W⟩ + 2∫_F⟨LW,W⟩, and ‖W(t)‖ ≤ Ce^{Ct}(‖W(0)‖ + ∫₀ᵗ‖LW‖) with C depending on λ₀, sup‖A⁰‖, sup|∂_tA⁰|, sup|∂ᵢAⁱ| and sup‖B‖, all finite by the hypotheses of 5.1.",
      "hypotheses": [
-      "W ∈ C¹([0,T];L²_Λ) ∩ C([0,T];H¹_Λ)"
+      "W ∈ C¹([0,T];L²_Λ) ∩ C([0,T];H¹_Λ)",
+      "L as in 5.1: A⁰ bounded, C¹ with bounded first derivatives, A⁰ ≥ λ₀I; Aⁱ bounded with bounded spatial derivatives; B continuous and bounded"
      ],
      "locator": {
       "source": "Friedrichs1954",
@@ -1445,7 +1470,7 @@
      "id": "7.1",
      "kind": "theorem",
      "name": "SymmetricHyperbolic.localWellPosedness",
-     "statement": "For a quasilinear symmetric hyperbolic system, Ū ∈ G with F(Ū) = 0, a period group Λ, 2k > n + 2, a compact K ⊆ G and M > 0, there is T(M,K) > 0 such that every U₀ with U₀ − Ū ∈ Hᵏ_Λ, ‖U₀ − Ū‖ ≤ M and U₀(E) ⊆ K has a unique Λ-periodic classical solution U on [0,T] × E with U − Ū ∈ C([0,T];Hᵏ_Λ) ∩ C¹([0,T];Hᵏ⁻¹_Λ); it is unique among classical solutions with bounded cone fields, depends continuously on the data in C([0,T];Hᵏ_Λ), and persists in Hᵏ′_Λ for k′ > k on the same maximal interval.",
+     "statement": "For a quasilinear symmetric hyperbolic system, Ū ∈ G with F(Ū) = 0, a period group Λ, 2k > n + 2, a compact K ⊆ G and M > 0, there are T(M,K) > 0 and R(M,K) such that every U₀ with U₀ − Ū ∈ Hᵏ_Λ, ‖U₀ − Ū‖ ≤ M and U₀(E) ⊆ K has a unique Λ-periodic classical solution U on [0,T] × E with U − Ū ∈ C([0,T];Hᵏ_Λ) ∩ C¹([0,T];Hᵏ⁻¹_Λ) and ‖U(t) − Ū‖_{Hᵏ_Λ} ≤ R on [0,T]; it is unique among classical solutions with bounded cone fields, depends continuously on the data in C([0,T];Hᵏ_Λ), and persists in Hᵏ′_Λ for k′ > k on the same maximal interval.",
      "hypotheses": [
       "F(Ū) = 0",
       "2k > n + 2",
@@ -1541,14 +1566,69 @@
      ]
     },
     {
+     "id": "7.3.1",
+     "kind": "construction",
+     "name": "SymmetricHyperbolic.QuasilinearSystem.sourceSwitched",
+     "statement": "For a quasilinear symmetric hyperbolic system (G, A⁰, …, Aⁿ, F), the source-switched system on G × ℝ with states (U, a), coefficient matrices diag(A⁰(U), 1), diag(Aⁱ(U), 0) and source (aF(U), 0).",
+     "hypotheses": [
+      "(G, A^μ, F) quasilinear symmetric hyperbolic system"
+     ],
+     "locator": {
+      "source": "Kato1975",
+      "where": "Theorem I (the uniformly local existence theorem that 7.3 states); the switching construction is not taken from it"
+     },
+     "prerequisites": [
+      "target:2.1"
+     ],
+     "api": [
+      {
+       "name": "isSymmetricHyperbolic",
+       "role": "structure",
+       "statement": "the switched data form a quasilinear symmetric hyperbolic system of size N + 1, and (Ū, 0) is an equilibrium for every Ū ∈ G, whatever F(Ū) is"
+      },
+      {
+       "name": "stationary_switch",
+       "role": "structure",
+       "statement": "every classical solution (U, a) has ∂_ta = 0, so a(t,x) = a(0,x); on every open set where a = 1, U is a classical solution of the given system"
+      },
+      {
+       "name": "dominates_iff",
+       "role": "characterisation",
+       "statement": "a round cone (c, w) with c ≥ |w| dominates the switched system at (U, a) iff it dominates the given system at U"
+      }
+     ],
+     "tests": [
+      {
+       "name": "constant_source",
+       "kind": "computation",
+       "statement": "N = 1, A⁰ = 1, Aⁱ = 0, F ≡ 1: switched source (a, 0) vanishes at (Ū, 0); on a = 1, ∂_tU = 1 and U = Ū + t"
+      },
+      {
+       "name": "slow_cone",
+       "kind": "non-example",
+       "statement": "transport a = 3: (1,3) dominates the given equation, but at ζ = (−2,1) the cone condition 1 ≥ 1 holds and the added entry ζ₀ = −2 < 0, so it does not dominate the switched system; c ≥ |w| is needed"
+      },
+      {
+       "name": "switch_off",
+       "kind": "degenerate",
+       "statement": "a ≡ 0: the U-equation is the homogeneous system A⁰(U)∂_tU + ΣAⁱ(U)∂ᵢU = 0, of which every constant state is a solution"
+      }
+     ]
+    },
+    {
      "id": "7.3",
      "kind": "theorem",
      "name": "SymmetricHyperbolic.localWellPosedness_uniformlyLocal",
-     "statement": "If G contains the segments [Ū,U] for U ∈ K and sup_y‖χ(·−y)(U₀ − Ū)‖_{Hᵏ(E)} ≤ M with U₀(E) ⊆ K, there are T(M,K) > 0 and a unique classical solution on [0,T] × E with bounded uniformly local Hᵏ norm; it commutes with translations fixing U₀, so periodic data give periodic solutions.",
+     "statement": "Let (G, A^μ, F) be a quasilinear symmetric hyperbolic system with arbitrary smooth F, Ū ∈ G, K ⊆ G compact with [Ū,U] ⊆ G for U ∈ K, 2k > n + 2, M > 0, χ ∈ C_c^∞(E) with 0 ≤ χ ≤ 1 and χ = 1 on the unit ball. There is T > 0 (depending on the system, n, k, χ, Ū, K, M) such that every U₀ : E → K with U₀ − Ū ∈ Hᵏ_loc and sup_y‖χ(·−y)(U₀ − Ū)‖_{Hᵏ(E)} ≤ M has a unique classical solution on [0,T] × E with U(0) = U₀; its values lie in a compact subset of G depending on G, Ū, K, its uniformly local Hᵏ norm is bounded on [0,T], and it commutes with translations fixing U₀, so periodic data give periodic solutions. Route: 7.1 (Λ = 0) for the source-switched system 7.3.1 at the equilibrium (Ū,0) with data (Ū + χ(·−y)(U₀ − Ū), χ(·−y)), a compact neighbourhood K₁ ⊆ G of the segment hull for a uniform short time, cones of speed m = sup_{K₁} of the maximal speed, gluing by 6.2, uniqueness by 6.2 with 3.3.3.",
      "hypotheses": [
+      "quasilinear symmetric hyperbolic system with smooth F (F(Ū) = 0 not assumed)",
+      "Ū ∈ G",
+      "K ⊆ G compact",
       "segments [Ū,U] ⊆ G for U ∈ K",
-      "uniformly local Hᵏ bound M",
-      "2k > n + 2"
+      "2k > n + 2",
+      "M > 0",
+      "χ ∈ C_c^∞(E), 0 ≤ χ ≤ 1, χ = 1 on the unit ball",
+      "U₀(E) ⊆ K, U₀ − Ū ∈ Hᵏ_loc, uniformly local Hᵏ bound M"
      ],
      "locator": {
       "source": "Kato1975",
@@ -1557,13 +1637,37 @@
      "prerequisites": [
       "target:7.1",
       "target:6.2",
-      "target:2.1"
+      "target:2.1",
+      "target:7.3.1",
+      "target:3.3.3",
+      "target:4.2",
+      "target:4.3.1"
      ],
      "tests": [
       {
        "name": "counterflow_data",
        "kind": "computation",
        "statement": "ρ̄ = 1/2, v̄ = 2 on x ≤ −1 and −2 on x ≥ 1 (p = ρ²) is uniformly local but not in Ū + H¹ for any constant Ū"
+      },
+      {
+       "name": "order_needed",
+       "kind": "non-example",
+       "statement": "∂_tu = 0, G = ℝ, K = [0,1], Ū = 0, k = 0: U₀ = 1_{[0,∞)} has sup_y‖χ(·−y)U₀‖_{L²} ≤ ‖χ‖_{L²} but one-sided limits 0 and 1, so no C¹ solution; excluded by 2k > n + 2"
+      },
+      {
+       "name": "compact_K_needed",
+       "kind": "non-example",
+       "statement": "G = (−∞,1), A⁰ = 1, A¹ = 0, F(u) = u/(1−u), Ū = 0, U₀ = 1 − 1/(2 + √(1+x²)) ∈ [2/3,1): finite uniformly local norms, but the ODE reaches u = 1 at −log U₀ − (1 − U₀) ≈ 0.0721, 0.00365, 0.0000484 at x = 0, 10, 100, tending to 0: no uniform time"
+      },
+      {
+       "name": "cutoff_range",
+       "kind": "non-example",
+       "statement": "G = (0,2), Ū = 1, K = {3/2}: a cutoff with value 3 gives 1 + 3/2 = 5/2 ∉ G; with 0 ≤ θ ≤ 1 the value 1 + θ/2 ∈ [1, 3/2]"
+      },
+      {
+       "name": "general_source",
+       "kind": "computation",
+       "statement": "A⁰ = 1, Aⁱ = 0, F ≡ 1: the switched source (a,0) vanishes at (Ū,0); on a = 1, U = Ū + t, with uniformly local norm t‖χ‖_{Hᵏ}"
       }
      ]
     }
