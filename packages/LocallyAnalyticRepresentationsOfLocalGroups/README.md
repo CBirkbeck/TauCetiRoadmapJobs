@@ -282,7 +282,7 @@ The proof route combines compact-type/nuclear Fréchet duality (PadicLocalLangla
 
 Let W be a locally F-analytic representation of G on a space of compact type and λ ∈ W′. Prove that F_λ : W → C^(F-an)(G, E), w ↦ (g ↦ λ(g·w)), is well defined, continuous, and G-equivariant for the right regular action (Dospinescu–Le Bras, Lemme 5.9 and its proof, pp. 28–29).
 
-The proof route works coset by coset: for compact open H, C^an(H, E) is of compact type and reflexive, so transposition and the continuity of μ ↦ μ ∗ w (0.5) give continuity of W → C^an(gH, E); the product over G/H gives continuity into C^an(G, E), which for non-compact G is neither of compact type nor reflexive.
+The proof route works coset by coset: for compact open H, C^an(H, E) is of compact type and reflexive, so transposition and the continuity of μ ↦ μ ∗ w (0.5) give continuity of W → C^an(gH, E) for each coset; since C^an(G, E) = ∏_(gH∈G/H) C^an(gH, E) carries the product topology (0.4 (i)), the universal property of the product gives continuity into C^an(G, E). Only the product topology of C^an(G, E) is used, no duality property of it; for non-compact G it is not of compact type, its strong dual ⊕_(gH) D(gH, E) being an infinite locally convex direct sum of nonzero spaces and so not metrisable.
 
 *Needs:* 0.5, 0.6.
 
@@ -291,6 +291,7 @@ The proof route works coset by coset: for compact open H, C^an(H, E) is of compa
 - For compact G, W = C^an(G, E) with the right regular action and λ = evaluation at 1, F_λ is the identity.
 - Degenerate case: λ = 0 gives the zero map.
 - For W = E with character χ and λ = 1, F_λ(1) = χ, a locally analytic function; for the non-locally-analytic translation representation on C(ℤ_p, E) the analogous map lands outside C^an(ℤ_p, E), which is why compact type and local analyticity are hypotheses.
+- Non-example to non-reflexivity: for G = ℤ with its zero-dimensional analytic structure and H = {0}, C^an(G, E) = E^ℤ with the product topology; its continuous linear forms have finite support, its strong dual is E^(ℤ) with the finest locally convex topology, whose bounded sets have uniformly finite support and bounded coefficients, so the strong bidual is E^ℤ with the topology of the finite-coordinate seminorms max_(|j|≤N) |x_j|, the product topology again. So C^an(G, E) is reflexive here although G is not compact; it is not of compact type, since E^(ℤ) is not metrisable. For W = E with the trivial action and λ = 1, F_λ(1) is the constant function 1 and each coordinate w ↦ λ(j·w) is continuous, as the coset-by-coset route gives.
 
 ### 0.8 Weakly null sequences are null over a spherically complete field
 
@@ -426,16 +427,16 @@ The proof route identifies the strong dual with M_1 ⊗̂_E M_2 (0.9). For compa
 
 ### 1.6 Locally algebraic representations
 
-Let 𝐆 be split reductive over L, G = 𝐆(L), and W a finite-dimensional algebraic representation of (Res_(L/ℚ_p)𝐆) ×_(ℚ_p) E ≅ ∏_(σ∈Σ_L) 𝐆 ×_(L,σ) E, restricted to G. For a smooth admissible representation π of G over E, π ⊗_E W with the diagonal action and the finest locally convex topology is an admissible locally ℚ_p-analytic representation, called locally algebraic. Define the locally W-algebraic vectors of a locally analytic V as the image of Hom_g(W, V) ⊗ W → V, and V_lalg as their sum over irreducible W; V is locally algebraic if V = V_lalg. Prove: (i) π ⊗ W is admissible when π is admissible; (ii) if π and W are absolutely irreducible then π ⊗ W is topologically irreducible, even simple as an E[G]-module (Schneider–Teitelbaum 2001, Proposition 3.4, p. 13); (iii) every admissible locally W-algebraic representation is U ⊗_(End(W)) W with U admissible smooth (Emerton's memoir, Proposition 6.3.10, p. 124); (iv) on π ⊗ W the action of g ⊗_(ℚ_p) E is 1 ⊗ (differential of W) (Schneider–Teitelbaum 2003, Theorem 6.6, p. 35; Emerton's memoir, Propositions 6.1.5, 6.3.2, 6.3.6, pp. 112–123).
+Let 𝐆 be split connected reductive over L, G = 𝐆(L), and W a finite-dimensional algebraic representation of (Res_(L/ℚ_p)𝐆) ×_(ℚ_p) E ≅ ∏_(σ∈Σ_L) 𝐆 ×_(L,σ) E, restricted to G. For a smooth admissible representation π of G over E, π ⊗_E W with the diagonal action and the finest locally convex topology is an admissible locally ℚ_p-analytic representation, called locally algebraic. Define the locally W-algebraic vectors of a locally analytic V as the image of Hom_g(W, V) ⊗ W → V, and V_lalg as their sum over irreducible W; V is locally algebraic if V = V_lalg. Prove: (i) π ⊗ W is admissible when π is admissible; (ii) if π and W are absolutely irreducible then π ⊗ W is topologically irreducible, even simple as an E[G]-module (Schneider–Teitelbaum 2001, Proposition 3.4, p. 13); (iii) every admissible locally W-algebraic representation is U ⊗_(End(W)) W with U admissible smooth (Emerton's memoir, Proposition 6.3.10, p. 124); (iv) on π ⊗ W the action of g ⊗_(ℚ_p) E is 1 ⊗ (differential of W) (Schneider–Teitelbaum 2003, Theorem 6.6, p. 35; Emerton's memoir, Propositions 6.1.5, 6.3.2, 6.3.6, pp. 112–123).
 
-The proof route for (i) uses that π is admissible with trivial Lie action and that the tensor product of an admissible representation with a finite-dimensional one is admissible; for (ii), any nonzero vector can be moved by a small unipotent subgroup into E_λ ⊗ π^U for the highest-weight line E_λ of W, which generates; for an absolutely irreducible algebraic representation W of the split group this line is one-dimensional and generates W (ReductiveGroups §10B).
+The proof route for (i) uses that π is admissible with trivial Lie action and that the tensor product of an admissible representation with a finite-dimensional one is admissible; for (ii), write a nonzero x = Σ_j e_j ⊗ v_j with weight vectors e_j ∈ W and v_j ∈ π, choose an open subgroup U fixing every v_j, and put N_0 = U ∩ N for the unipotent radical N of a Borel subgroup. If N_0 fixes x, then x ∈ W^(N_0) ⊗ π^U = E_λ ⊗ π^U, where E_λ = W^N = W^(N_0) is the highest-weight line, one-dimensional for absolutely irreducible W of the split group (ReductiveGroups §10B; N_0 is Zariski dense in N). Otherwise replace x by n·x − x ≠ 0 for some n ∈ N_0: each n·e_j − e_j has only weights strictly higher than that of e_j, so after finitely many such differences one reaches a nonzero vector e_λ ⊗ v of E_λ ⊗ π^U in the E[N_0]-submodule generated by x. This is a linear combination of translates of x, not in general a single translate. Then E[U_v]·e_λ = W for the open stabiliser U_v of v: the Zariski closure of U_v in Res_(L/ℚ_p)𝐆 is a smooth algebraic subgroup (characteristic zero) whose ℚ_p-points contain the open subset U_v of G, so it has dimension d_L·dim 𝐆 (0.1 (i)) and, Res_(L/ℚ_p)𝐆 being connected, it is the whole group; hence the stabiliser of the subspace E[U_v]·e_λ is the whole group and irreducibility of W applies; so the E[G]-module generated by x contains W ⊗ v, hence W ⊗ g·v for all g, hence W ⊗ π by irreducibility of π (Schneider–Teitelbaum 2001, Proposition 3.4 and its proof, pp. 13–14).
 
 API:
 
 - V ↦ V_lalg is a left exact subfunctor of the identity on Rep^(la)_E(G). For V of compact type, V_(W-lalg) is a closed subspace of V (Emerton's memoir, Proposition 4.2.10, p. 85); for V admissible, the topology it inherits from V is its finest locally convex topology and V_(W-lalg) is admissible (Emerton's memoir, Proposition 6.3.6, p. 123).
 - π ⊗ W is functorial in π and W.
 
-*Needs:* 0.2, 0.3, 1.2; SmoothRepresentationsOfLocalGroups SR.0.4 (*admissible*, *smooth-character*); ReductiveGroups Layer 1 and §10B (highest-weight lines of algebraic representations of split groups).
+*Needs:* 0.1, 0.2, 0.3, 1.2; SmoothRepresentationsOfLocalGroups SR.0.4 (*admissible*, *smooth-character*); ReductiveGroups Layer 1 and §10B (highest-weight lines of algebraic representations of split groups); ReductiveGroupsPartII RG2.0.2 (*smooth-group-analytic-charts*, for the dimension of the ℚ_p-points of the Zariski closure).
 
 **Checks.**
 
@@ -443,6 +444,7 @@ API:
 - Non-example: if π = π_1 ⊕ π_2 is reducible then π ⊗ W ≅ (π_1 ⊗ W) ⊕ (π_2 ⊗ W) is reducible.
 - Non-example to the finest-topology clause without admissibility: V = c_0(ℕ, E) with the trivial action of GL_2(ℚ_p) and W = E has V_(W-lalg) = V, closed, but its Banach topology is not the finest locally convex topology: a linear form with e_n ↦ p^(−n), extended along a Hamel basis, takes the value 1 on p^n e_n, which tends to 0 in norm, so it is continuous for the finest topology and not for the norm. V is excluded by the admissibility hypothesis, its invariants under every compact open subgroup being infinite-dimensional.
 - For GL_2(ℚ_p), Sym^k E² ⊗ St is an irreducible infinite-dimensional locally algebraic representation.
+- Non-example to reaching the highest-weight line by a single translate: for W = Sym²(E²), π = 1 and v = e_1e_2, the upper unipotent u(t) = (1 t; 0 1) gives u(t)·v = e_1e_2 + t e_1², whose e_1e_2-coefficient stays 1, so no translate of v lies in the highest-weight line E e_1², however small the subgroup containing t and also for p = 2; the difference (u(t) − 1)·v = t e_1² is a nonzero highest-weight vector for t ≠ 0, as the route of (ii) requires.
 - For GL_2(ℚ_p) and dominant λ = (k, 0), the locally algebraic vectors of (Ind_B⁻^G χ_sm z^λ)^an are (Ind_B⁻^G χ_sm)^∞ ⊗ Sym^k E².
 - Compatibility: for G = GL_2(ℚ_p) and V = Π^an the locally analytic vectors of an admissible unitary Banach representation Π, V_lalg is the space Π^alg of PadicLocalLanglandsForGL2Qp §2.4, and the sum defining it is the direct sum ⊕_W W ⊗ Hom_g(W, V)^sm over W = Sym^(k−1) E² ⊗ det^a; a definition retaining a single algebraic type W would recover only the summand of that type, and for Π = E² with trivial action it would have to recover the trivial type with multiplicity two.
 
@@ -519,7 +521,7 @@ The proof route for (1): the centre of U(g ⊗ E) acts on F_λ ⊗ W through the
 
 ### Dependencies
 
-Layer 0; PadicLocalLanglandsForGL2Qp §0.1 with gap:frechet-stein-general and gap:radius-algebras; LocallyAnalyticDistributions §§0.0, 0.2 with gap:compact-type-tensor; SmoothRepresentationsOfLocalGroups SR.0.4, SR.0d.2; ReductiveGroups Layer 1 and §10B; LieHighestWeight Layers 5, 7, 9; Mathlib `Ext`, `CategoryTheory.Abelian.Ext`, `ModuleCat`, `DualNumber`.
+Layer 0; PadicLocalLanglandsForGL2Qp §0.1 with gap:frechet-stein-general and gap:radius-algebras; LocallyAnalyticDistributions §§0.0, 0.2 with gap:compact-type-tensor; SmoothRepresentationsOfLocalGroups SR.0.4, SR.0d.2; ReductiveGroups Layer 1 and §10B; ReductiveGroupsPartII RG2.0.2; LieHighestWeight Layers 5, 7, 9; Mathlib `Ext`, `CategoryTheory.Abelian.Ext`, `ModuleCat`, `DualNumber`.
 
 ## Layer 2: Admissible Banach representations and derived locally analytic vectors
 
@@ -631,6 +633,13 @@ This layer develops the representation theory of p-adic Lie groups and locally p
 
 Let E be a finite extension of ℚ_p and Mod(E) the solid E-vector spaces (VStackSheavesAndLisseCategories §VS2.2, *Solid nonarchimedean coefficients*). Define a Smith space as Hom_E(V, E) for V a Banach space (the dual of a Banach space with its compact-open topology), an LS space as a countable filtered colimit of Smith spaces with injective transitions, and LB spaces as countable colimits of Banach spaces with injective transitions. Prove: (i) the functor from complete locally convex E-spaces to Mod(E) is fully faithful on metrizable, more generally compactly generated, spaces, in particular on Banach and Fréchet spaces (Rodrigues Jacinto–Rodríguez Camargo, §1.2.1, p. 3); (ii) V ↦ V^∨ = Hom_E(V, E) is an exact anti-equivalence between Fréchet spaces and LS spaces, extending Banach–Smith duality, with Hom_E(V, V′) = Hom_E(V′^∨, V^∨), and V is Fréchet of compact type if and only if V^∨ is LS of compact type; it restricts to the classical duality of nuclear Fréchet spaces and LB spaces of compact type (Rodrigues Jacinto–Rodríguez Camargo, Theorem 3.40, p. 25; Boxer–Calegari–Gee–Pilloni, Proposition 2.2.9, p. 20); (iii) for V Banach and W Smith, Hom_E(V, W) = V^∨ ⊗_(E_■) W and Hom_E(W, V) = W^∨ ⊗_(E_■) V (Rodrigues Jacinto–Rodríguez Camargo, Corollary 3.17, p. 16); (iv) Smith, Banach, LB and LS spaces, and Fréchet spaces of compact type, are flat in Mod(E) (Boxer–Calegari–Gee–Pilloni, Lemma 2.2.14, p. 21). VStackSheavesAndLisseCategories §VS2.2 assigns this comparison with classical spaces to its functional-analysis consumer; it is stated here because Layer 3 is that consumer.
 
+API:
+
+- Full faithfulness: on complete compactly generated locally convex E-spaces, in particular Banach and Fréchet spaces, continuous E-linear maps are the same as maps of the associated solid E-vector spaces.
+- Duality: V ↦ V^∨ = Hom_E(V, E) is an exact anti-equivalence between Fréchet spaces and LS spaces with Hom_E(V, V′) = Hom_E(V′^∨, V^∨); it restricts to Banach–Smith duality and to the classical duality of nuclear Fréchet spaces with LB spaces of compact type, and V is of compact type if and only if V^∨ is.
+- Internal Hom: for V Banach and W Smith, Hom_E(V, W) = V^∨ ⊗_(E_■) W and Hom_E(W, V) = W^∨ ⊗_(E_■) V.
+- Flatness: Smith, Banach, LB and LS spaces and Fréchet spaces of compact type are flat for ⊗_(E_■) in Mod(E).
+
 *Needs:* VStackSheavesAndLisseCategories §VS2.2 (*Solid nonarchimedean coefficients*), §VS2.1 (*derived-solid-tensor*); LocallyAnalyticDistributions §0.0; PadicLocalLanglandsForGL2Qp §0.1 (classical compact-type duality).
 
 **Checks.**
@@ -731,14 +740,14 @@ With the cardinal bound κ, prove that Mod^sm_M(E) is a Grothendieck abelian cat
 
 Assume M = 𝔾(ℚ_p) for an analytic group 𝔾 over Spa(ℚ_p, ℤ_p) with a fundamental system of quasi-compact open polydisc subgroups 𝔾_r, given by an ordered-basis chart of a uniform open subgroup (Rodrigues Jacinto–Rodríguez Camargo, Remark 1.4, p. 4; NoncommutativeAndEquivariantIwasawa §§0.6–0.7), and M_r := 𝔾_r(ℚ_p). For V ∈ Mod_M(E), O_(𝔾_r,E) ⊗_E V carries three commuting actions of M_r: left translation ∗_l, right translation ∗_r and the action ∗_V. Define V^(M_r-an) := H^0(M_r, O_(𝔾_r,E) ⊗_E V) for ∗_l ⊗ ∗_V, with residual action ∗_r, and V^la := colim_r V^(M_r-an) ∈ Mod_M(E); evaluation at e at the same radius r gives injections V^sm → V^la → V. Define the derived functor V^Rla := hocolim_r RHom_(E_■[M_r])(E, V ⊗^L_E O_(𝔾_r,E)) with H^0(V^Rla) = V^la (Boxer–Calegari–Gee–Pilloni, §2.2.27 and Remark 2.2.28, p. 23; Rodrigues Jacinto–Rodríguez Camargo, Definition 4.40, p. 39, and §1.2.3, p. 5). Prove: (i) V ↦ V^la is left exact and M-equivariant for the conjugation of the 𝔾_r; (ii) for V a Banach representation, V^la is the space of CompletedCohomologyPartII F.4 and H^i(V^Rla) = R^iLA(V) of 2.3; (iii) for V an admissible Banach representation, V^Rla is concentrated in degree 0 (Rodrigues Jacinto–Rodríguez Camargo, Proposition 4.48, p. 41).
 
-The proof route for (ii): for Banach V, O_(𝔾_r,E) ⊗_E V is the completed projective tensor product, solid cohomology of M_0 agrees with continuous cohomology on complete locally convex coefficients (Rodrigues Jacinto–Rodríguez Camargo, §1.2.3, p. 5), O_(𝔾_r) restricted to M_0 is the finite induction from M_r of C^an(M_r, ℚ_p), so Shapiro's lemma identifies RHom_(E_■[M_0])(E, V ⊗ O_(𝔾_r,E)) with continuous M_r-cohomology of V ⊗̂ C^an(M_r, ℚ_p), and cohomology commutes with the homotopy colimit. For (iii), V^∨ is a finite E_■[M_0]-module and the distribution algebras of the 𝔾_r are flat over E_■[M_0], algebraically.
+The proof route for (ii) works with the group M_r alone at stage r. For Banach V, O_(𝔾_r,E) ⊗_E V is the completed projective tensor product V ⊗̂_(ℚ_p) O(𝔾_r) (Rodrigues Jacinto–Rodríguez Camargo, §1.2.2, p. 4), and for M_r = G_n in the ordered-basis chart of 2.3, restriction to the rational points identifies O(𝔾_r) with Pan's C^an(G_n, ℚ_p), the power series with p^(n|k|)b_k → 0, with M_r acting by left translation. Solid cohomology of the compact group M_r with coefficients in a Banach representation is its continuous cohomology (Rodrigues Jacinto–Rodríguez Camargo, §1.2.3, p. 5), so H^i RHom_(E_■[M_r])(E, V ⊗ O_(𝔾_r,E)) = H^i_cont(G_n, V ⊗̂ C^an(G_n, ℚ_p)), the stage n of 2.3, and cohomology commutes with the filtered homotopy colimit over r. The larger group M_0 does not act on O(𝔾_r), since its translations move the polydisc 𝔾_r off itself, so no Shapiro argument is applied to O(𝔾_r). The definition agrees with that of Rodrigues Jacinto–Rodríguez Camargo, whose affinoid neighbourhoods M_0·𝔾_r have the full group M_0 of rational points (Definition 4.4, p. 29, and Remark 1.4, p. 4): the functions on M_0·𝔾_r, a disjoint union of the translates g·𝔾_r for g ∈ M_0/M_r, form the finite induction from M_r to M_0 of O(𝔾_r), and Shapiro's lemma for this induced module identifies their stage RHom_(E_■[M_0])(E, V ⊗ O(M_0·𝔾_r) ⊗ E) with the stage r here. For (iii), (ii) and 2.5 give H^i(V^Rla) = R^iLA(V) = 0 for i ≥ 1, V being admissible; Rodrigues Jacinto–Rodríguez Camargo prove it on the neighbourhoods M_0·𝔾_r from the algebraic flatness of their distribution algebras over E_■[M_0] (Proposition 4.48 and its proof, pp. 41–42).
 
 API:
 
 - The residual action ∗_r on V^(M_r-an) agrees there with (∗_l ∘ ∗_r) ⊗ ∗_V, since ∗_l ⊗ ∗_V is trivial on invariants; evaluation at e intertwines it with the action on V.
 - V^Rla is functorial and exact as a functor to the derived category of E_■[M]-modules.
 
-*Needs:* 3.1, 3.4, 3.5; 2.3; CompletedCohomologyPartII F.4; NoncommutativeAndEquivariantIwasawa §§0.6–0.7; PadicLocalLanglandsForGL2Qp §0.1 (faithful flatness of E[[H]] → D(H, E)); LocallyAnalyticDistributionsPartII §2.5 (distribution algebras of the polydisc subgroups).
+*Needs:* 3.1, 3.4, 3.5; 2.3, 2.5; CompletedCohomologyPartII F.4; NoncommutativeAndEquivariantIwasawa §§0.6–0.7; Mathlib `continuousCohomology`.
 
 **Checks.**
 
@@ -746,6 +755,7 @@ API:
 - Degenerate case: for the trivial representation E, V^(M_r-an) = E for every r.
 - For B = C(ℤ_p, E) with translation, V^la = C^la(ℤ_p, E), and V^la → V is not surjective.
 - For an analytic character χ of M_r, the invariant function with value v at e is f(g) = χ(g)v; right translation by h gives χ(h)v at e, whereas the model ∗_r ⊗ ∗_V would give χ(h)²v.
+- Action domain: for M_0 = ℤ_2 and M_1 = 2ℤ_2 with 𝔾_1 = 2𝔻 the closed disc of radius 1/2, translation by 1 ∈ M_0 sends 0 ∈ 𝔾_1 to 1 ∉ 𝔾_1, so M_0 does not act on O(𝔾_1) = E⟨T/2⟩, an integral domain whose only idempotents are 0 and 1. The neighbourhood M_0·𝔾_1 = 2𝔻 ⊔ (1 + 2𝔻) has functions E⟨T/2⟩ × E⟨T/2⟩ with the idempotent (1, 0), and this is the induction of O(𝔾_1) from 2ℤ_2 to ℤ_2, on which ℤ_2 acts. Identifying O(𝔾_1) itself with the induction would equate a ring with two idempotents with one with four.
 
 ### 3.9 Continuous cohomology of locally analytic vectors
 
@@ -783,7 +793,7 @@ API:
 
 ### Dependencies
 
-Layers 0 and 2; VStackSheavesAndLisseCategories §§VS2.1–VS2.2; AdicSpacesPartIII §R3.4; PadicMeasuresIwasawaAlgebras §1.7; LocallyAnalyticDistributionsPartII §2.5; NoncommutativeAndEquivariantIwasawa §§0.6–0.7; PadicLocalLanglandsForGL2Qp §0.1; CompletedCohomologyPartII F.4; SmoothRepresentationsOfLocalGroups SR.0.1, SR.0d.1, SR.2.1; ReductiveGroups Layer 1; `TauCeti.completedGroupAlgebra`.
+Layers 0 and 2; VStackSheavesAndLisseCategories §§VS2.1–VS2.2; AdicSpacesPartIII §R3.4; PadicMeasuresIwasawaAlgebras §1.7; LocallyAnalyticDistributionsPartII §2.5; NoncommutativeAndEquivariantIwasawa §§0.6–0.7; PadicLocalLanglandsForGL2Qp §0.1; CompletedCohomologyPartII F.4; SmoothRepresentationsOfLocalGroups SR.0.1, SR.0d.1, SR.2.1; ReductiveGroups Layer 1; Mathlib `continuousCohomology`; `TauCeti.completedGroupAlgebra`.
 
 ## Layer 4: Category O for split reductive Lie algebras
 
@@ -804,7 +814,7 @@ Prove: (i) for μ ∈ 𝔥^*, the Verma module M(μ) = U(𝔤) ⊗_(U(𝔟)) k_�
 
 ### 4.2 The categories O, O^p and O^p_alg
 
-Define O as the full subcategory of U(𝔤)-modules that are finitely generated, decompose as direct sums of one-dimensional 𝔥-modules, and on which 𝔟 acts locally finitely; O_alg ⊆ O the modules whose weights lie in X. For a standard parabolic 𝔭 = 𝔩_P ⊕ 𝔲_P ⊇ 𝔟, define O^p as the modules in O that are direct sums of finite-dimensional simple 𝔩_P-modules and locally finite under 𝔲_P, and O^p_alg = O_alg ∩ O^p (Orlik–Strauch, §2.5, Definition 2.6, pp. 7–9). Prove: (i) O, O_alg, O^p and O^p_alg are k-linear abelian, noetherian and artinian, closed under submodules, quotients and finite direct sums, and every object has a finite Jordan–Hölder series, the same in O and in O^p_alg; (ii) O^q ⊆ O^p for standard q ⊇ p, O^b = O, and O^g consists of the finite-dimensional semisimple 𝔤-modules; (iii) a module of O^p lies in O^p_alg if and only if it lies in O_alg, i.e. its 𝔩_P-isotypic pieces come from algebraic L_P-representations (Orlik–Strauch, Lemma 2.8, p. 9). The same definitions with 𝔟⁻ and the lower parabolics 𝔭⁻ give the categories used for Verma modules M⁻(μ) = U(𝔤) ⊗_(U(𝔟⁻)) μ in Layers 6–10.
+Define O as the full subcategory of U(𝔤)-modules that are finitely generated, decompose as direct sums of one-dimensional 𝔥-modules, and on which 𝔟 acts locally finitely; O_alg ⊆ O the modules whose weights lie in X. For a standard parabolic 𝔭 = 𝔩_P ⊕ 𝔲_P ⊇ 𝔟, define O^p as the modules in O that are direct sums of finite-dimensional simple 𝔩_P-modules and locally finite under 𝔲_P, and O^p_alg = O_alg ∩ O^p (Orlik–Strauch, §2.5, Definition 2.6, pp. 7–9). Prove: (i) O, O_alg, O^p and O^p_alg are k-linear abelian, noetherian and artinian, closed under submodules, quotients and finite direct sums, and every object has a finite Jordan–Hölder series, the same in O and in O^p_alg; (ii) O^q ⊆ O^p for standard q ⊇ p, O^b = O, and O^g consists of the finite-dimensional 𝔤-modules on which 𝔥 acts diagonalisably with eigenvalues in k, that is, the finite-dimensional objects of O; these are semisimple by 4.1 (iii), since 𝔷(𝔤) ⊆ 𝔥 then acts semisimply, and are the finite direct sums of the L(μ) with ⟨μ, α^∨⟩ ∈ ℤ_(≥0) for all α ∈ Δ; a finite-dimensional semisimple 𝔤-module on which 𝔥 has an eigenvalue outside k is not an object of O, hence not of O^g; (iii) a module of O^p lies in O^p_alg if and only if it lies in O_alg, i.e. its 𝔩_P-isotypic pieces come from algebraic L_P-representations (Orlik–Strauch, Lemma 2.8, p. 9). The same definitions with 𝔟⁻ and the lower parabolics 𝔭⁻ give the categories used for Verma modules M⁻(μ) = U(𝔤) ⊗_(U(𝔟⁻)) μ in Layers 6–10.
 
 API:
 
@@ -818,10 +828,18 @@ API:
 - Degenerate case: for 𝔭 = 𝔤, O^g_alg is the category of finite-dimensional algebraic 𝔤-modules; for gl_2 the module det ⊕ Sym² lies in it.
 - The Verma module M(μ) lies in O_alg if and only if μ ∈ X (Orlik–Strauch, Example 2.7, p. 8): for gl_2 over ℚ_p, μ = (1/2, 0) gives an object of O but not of O_alg.
 - Non-example: for gl_2 the infinite-dimensional module U(gl_2) ⊗_(U(𝔥)) k_0 is not in O, since 𝔫 does not act locally finitely.
+- Non-example to "finite-dimensional semisimple" as the endpoint: for k = ℚ_3 and 𝔤 = 𝔥 = Lie(𝔾_m), let the generator t act on k² by (0 3; 1 0). Its characteristic polynomial X² − 3 has no root in ℚ_3, a root having valuation 1/2, so k² ≅ k[t]/(t² − 3) is a simple, hence semisimple, two-dimensional 𝔤-module whose sum of k-weight spaces is 0, not 2-dimensional; it is not in O, and so not in O^g. After extension to ℚ_3(√3) it splits into the two weight lines t = ±√3. For 𝔤 = 𝔥, O^g consists exactly of the finite direct sums of one-dimensional modules k_μ, μ ∈ 𝔥^*.
 
 ### 4.3 Generalised Verma modules and simple objects
 
-For a finite-dimensional simple algebraic 𝔩_P-module W, inflated to 𝔭, define the generalised Verma module M_P(W) = U(𝔤) ⊗_(U(𝔭)) W. Prove: (i) M_P(W) lies in O^p_alg and has a unique simple quotient L(λ_W), λ_W the highest weight of W; (ii) the simple objects of O^p_alg are the L(λ) with λ ∈ X dominant for 𝔩_P, pairwise non-isomorphic; (iii) for λ ∈ X let I = {α ∈ Δ : ⟨λ, α^∨⟩ ∈ ℤ_(≥0)}; then P_I is the largest standard parabolic with L(λ) ∈ O^(p_I)_alg, the maximal parabolic of L(λ), and the kernel of M(λ) → M_(P_I)(V_I(λ)) is the image of ⊕_(α∈I) M(s_α·λ) (Orlik–Strauch, Example 2.10, p. 9, and Introduction, p. 4; Humphreys, BGG category O, §§9.3–9.4); (iv) every object of O^p has a unique maximal parabolic.
+For a finite-dimensional simple algebraic 𝔩_P-module W, inflated to 𝔭, define the generalised Verma module M_P(W) = U(𝔤) ⊗_(U(𝔭)) W. Prove: (i) M_P(W) lies in O^p_alg and has a unique simple quotient L(λ_W), λ_W the highest weight of W; (ii) the simple objects of O^p_alg are the L(λ) with λ ∈ X dominant for 𝔩_P, pairwise non-isomorphic; (iii) for λ ∈ X let I = {α ∈ Δ : ⟨λ, α^∨⟩ ∈ ℤ_(≥0)}; then P_I is the largest standard parabolic with L(λ) ∈ O^(p_I)_alg, the maximal parabolic of L(λ), and the kernel of M(λ) → M_(P_I)(V_I(λ)) is the image of ⊕_(α∈I) M(s_α·λ) (Orlik–Strauch, Example 2.10, p. 9, and Introduction, p. 3; Humphreys, BGG category O, §§9.3–9.4); (iv) every object of O^p has a unique maximal parabolic.
+
+API:
+
+- For a finite-dimensional simple algebraic 𝔩_P-module W inflated to 𝔭, M_P(W) is an object of O^p_alg generated by W and has a unique simple quotient, L(λ_W) with λ_W the highest weight of W.
+- Every simple object of O^p_alg is L(λ) for exactly one λ ∈ X dominant for 𝔩_P.
+- For λ ∈ X and I = {α ∈ Δ : ⟨λ, α^∨⟩ ∈ ℤ_(≥0)}, L(λ) lies in O^q_alg for a standard parabolic subalgebra q exactly when q ⊆ p_I (by (iii) and 4.2 (ii)), and the kernel of M(λ) → M_(P_I)(V_I(λ)) is the image of ⊕_(α∈I) M(s_α·λ).
+- Every object of O^p has a unique maximal standard parabolic.
 
 *Needs:* 4.1, 4.2.
 
@@ -834,6 +852,11 @@ For a finite-dimensional simple algebraic 𝔩_P-module W, inflated to 𝔭, def
 ### 4.4 The restricted BGG duality
 
 Let τ be the anti-involution of U(𝔤) that is the identity on 𝔥 and maps each root space 𝔤_α to 𝔤_(−α). For M ∈ O define M^∨ := ⊕_μ Hom_k(M_μ, k) with x ∈ 𝔤 acting by (x·f)(m) = f(τ(x)m). Prove that M ↦ M^∨ is an exact contravariant involutive functor on O preserving O^p_alg and characters, and that L^∨ ≅ L for every simple L; so M^∨ has the composition factors of M in reverse order (Breuil, socle II, §4, p. 14, quoting Humphreys, BGG category O, §3.2, Theorem 3.3 and Proposition 9.3). This duality is distinct from the contragredient W ↦ W′ = Hom_k(W, k) of a finite-dimensional module, which negates weights.
+
+API:
+
+- M ↦ M^∨ is an exact contravariant functor from O to O with a natural isomorphism M ≅ (M^∨)^∨; it preserves O^p_alg and the dimension of every weight space.
+- L^∨ ≅ L for every simple object L; hence a composition series of M dualises to one of M^∨ with the same factors in reverse order, and soc M^∨ ≅ M/rad M.
 
 *Needs:* 4.2, 4.3.
 
@@ -907,6 +930,13 @@ Let 𝐆 be split reductive over L with split maximal torus 𝐓 ⊆ 𝐁 = 𝐓
 
 The proof route for (ii): for dominant λ the highest-weight line of L(λ) is the unique B⁻-stable quotient line, on which B⁻ acts by z^λ, and Frobenius reciprocity identifies (Ind χ_sm)^∞ ⊗ L(λ) with the locally algebraic induction of 5.1 (iv).
 
+API:
+
+- PS(χ) is a very strongly admissible locally ℚ_p-analytic representation of G.
+- For χ = χ_sm z^λ with χ_sm smooth and λ dominant algebraic for 𝐁, the locally algebraic vectors of PS(χ) are (Ind_B⁻^G χ_sm)^∞ ⊗_E L(λ).
+- For 𝐆 = GL_n and a locally analytic character ψ of L^×, PS(χ ⊗ (ψ ∘ det)) ≅ PS(χ) ⊗ (ψ ∘ det).
+- For ψ ∈ Hom(T, E), PS(χ(1 + ψε)), the induction of the self-extension χ(1 + ψε) of χ (1.9), is a self-extension of PS(χ).
+
 *Needs:* 5.1, 1.6, 2.2; Layer 4.1; ReductiveGroups Layer 7; SmoothRepresentationsOfLocalGroups SR.2.1.
 
 **Checks.**
@@ -937,6 +967,12 @@ The proof route: (1) D(T, E) is commutative and some δ_t − χ(t), or some x �
 For a locally analytic N-representation V, define H_q(N, V) as the homology, with its subquotient topology, of Kohlhaase's topological bar complex B_•(N, V) ⊗̃_(D(N,E),ι) E, the standard simplicial resolution of the cotriple X ↦ D(N, E) ⊗̂_(E,ι) X with the alternating sum of faces (Schraen, §3, Remark 3.9, p. 68). These spaces need not be Hausdorff. Prove: (i) H_0(N, V) = V_N with the quotient topology; (ii) if V is of compact type and a P = M_P N_P-representation and the H_q(N_P, V) are Hausdorff, they are compact-type locally analytic M_P-representations (Schraen, the paragraph before Corollaire 4.9, p. 82); (iii) for V = W ⊗ π locally algebraic (W finite-dimensional algebraic, π smooth admissible with its finest topology), H_q(N_P, V) ≅ H_q(n_P, W) ⊗_E J_(N_P)(π), with J the unnormalised smooth Jacquet module, and these are Hausdorff (Schraen, (4.40)–(4.42), p. 82); H_q(n_P, W) is computed by 4.6. No identification with the dual of abstract Tor on V′ is made.
 
 The proof route for (iii): N acts smoothly on π, the homology splits as Lie algebra homology of W tensored with the coinvariants of the smooth part, which are the Jacquet module by exactness of J_N (SmoothRepresentationsOfLocalGroups SR.2.2, *jacquet-lemma*).
+
+API:
+
+- H_q(N, −) is functorial for continuous N-equivariant maps, and H_0(N, V) = V_N with the quotient topology.
+- For a P-representation V of compact type whose homology groups H_q(N_P, V) are Hausdorff, these are locally analytic M_P-representations of compact type.
+- For V = W ⊗ π locally algebraic, H_q(N_P, V) ≅ H_q(n_P, W) ⊗_E J_(N_P)(π) as M_P-representations, Hausdorff, with H_q(n_P, W) given by 4.6.
 
 *Needs:* 0.4, 1.6, 1.7; 4.6; SmoothRepresentationsOfLocalGroups SR.2.2 (*jacquet-module*, *jacquet-lemma*).
 
@@ -971,11 +1007,11 @@ Layers 0–2 and 4; ReductiveGroupsPartII RG2.4.4; ReductiveGroups Layer 7; Smoo
 
 ## Layer 6: Orlik–Strauch functors
 
-This layer builds the Orlik–Strauch representations F^G_P(M, π_P) in Breuil's locally ℚ_p-analytic form, their exactness, transitivity, irreducibility criterion and uniqueness, Jordan–Hölder series and socles, their extension to products of groups over different fields, and the vanishing of Ext¹ into inductions from weights of length at least two. Standing hypotheses: 𝐆 split connected reductive over L, B = TN ⊆ P = L_P N_P a Borel and a parabolic (standard or opposite), E/ℚ_p finite splitting L, and O^p_alg the category of 4.2 for g ⊗_(ℚ_p) E = ∏_σ g_σ. The irreducibility statements in this ℚ_p-analytic form assume p > 3 when 𝐆 has a simple factor not of type A (Breuil, socle I, §1, p. 6); there is no restriction for GL_n. In Orlik–Strauch's original locally L-analytic theorem the bounds are p > 2 for types B, C, F_4 and p > 3 for G_2 (Orlik–Strauch, §5, Assumption 5.1, p. 25). These bounds are hypotheses of the only known proofs, entering through results on highest-weight modules (Orlik–Strauch, §5, the paragraph after Assumption 5.1, p. 26, and §8), and no example is known where the irreducibility criterion fails for p ≤ 3 (Orlik–Strauch, the remark after the main theorem, p. 4); the construction, exactness and transitivity (6.1–6.3) carry no such hypothesis, and the groups to which Layers 8–10 apply the irreducibility statements, GL_n(L), its Levi subgroups and their products, have only simple factors of type A.
+This layer builds the Orlik–Strauch representations F^G_P(M, π_P) in Breuil's locally ℚ_p-analytic form, their exactness, transitivity, irreducibility criterion and uniqueness, Jordan–Hölder series and socles, their extension to products of groups over different fields, and the vanishing of Ext¹ into inductions from weights of length at least two. Standing hypotheses: 𝐆 split connected reductive over L, B = TN ⊆ P = L_P N_P a Borel and a parabolic (standard or opposite), E/ℚ_p finite splitting L, and O^p_alg the category of 4.2 for g ⊗_(ℚ_p) E = ∏_σ g_σ. The irreducibility statements in this ℚ_p-analytic form assume p > 3 when 𝐆 has a simple factor not of type A (Breuil, socle I, §2, p. 6); there is no restriction for GL_n. In Orlik–Strauch's original locally L-analytic theorem the bounds are p > 2 for types B, C, F_4 and p > 3 for G_2 (Orlik–Strauch, §5, Assumption 5.1, p. 25). These bounds are hypotheses of the only known proofs, entering through results on highest-weight modules (Orlik–Strauch, §5, the paragraph after Assumption 5.1, p. 26, and §8), and no example is known where the irreducibility criterion fails for p ≤ 3 (Orlik–Strauch, the remark after the main theorem, p. 4); the construction, exactness and transitivity (6.1–6.3) carry no such hypothesis, and the groups to which Layers 8–10 apply the irreducibility statements, GL_n(L), its Levi subgroups and their products, have only simple factors of type A.
 
 ### 6.1 The Orlik–Strauch functor
 
-Let M ∈ O^p_alg and π_P a smooth admissible representation of L_P(L) over E inflated to P(L). Choose a finite-dimensional U(p ⊗_(ℚ_p) E)-stable subspace W ⊆ M generating M, giving 0 → ker(φ) → U(g ⊗ E) ⊗_(U(p ⊗ E)) W → M → 0; W carries the unique algebraic action of (Res_(L/ℚ_p)P) ×_(ℚ_p) E lifting the p ⊗ E-action (4.2 (iii)), restricted to P(L), and W′ = Hom_E(W, E) the dual action. An element x ⊗ w of U(g ⊗ E) ⊗_E W acts on C^(ℚ_p-an)(G, W′ ⊗ π_P) by f ↦ (g ↦ (x·f)(g)(w)), with the derived action of 0.3, and on the induction this factors through U(g ⊗ E) ⊗_(U(p⊗E)) W (Breuil, socle I, Lemma 2.1, p. 9). Define F^G_P(M, π_P) := (Ind_(P(L))^(G(L)) W′ ⊗_E π_P)^(ker(φ)), the closed subspace of the locally ℚ_p-analytic induction of 5.1 annihilated by ker(φ), and F^G_P(M) := F^G_P(M, 1) (Orlik–Strauch, Introduction, p. 3, and §4.1, p. 18; Breuil, socle I, §2, Lemmas 2.1–2.2 and Theorem 2.3(i), pp. 7–10). Prove that it is a closed G(L)-stable subspace, independent of W, admissible, strongly admissible when π_P has finite length (Orlik–Strauch, Proposition 4.8, p. 22, and Proposition 3.3(i), p. 11), and very strongly admissible when π_P is (5.1 (ii), via the finite-dimensional algebraic tensor identity).
+Let M ∈ O^p_alg and π_P a smooth admissible representation of L_P(L) over E inflated to P(L). Choose a finite-dimensional U(p ⊗_(ℚ_p) E)-stable subspace W ⊆ M generating M, giving 0 → ker(φ) → U(g ⊗ E) ⊗_(U(p ⊗ E)) W → M → 0; W carries the unique algebraic action of (Res_(L/ℚ_p)P) ×_(ℚ_p) E lifting the p ⊗ E-action (4.2 (iii)), restricted to P(L), and W′ = Hom_E(W, E) the dual action. An element x ⊗ w of U(g ⊗ E) ⊗_E W acts on C^(ℚ_p-an)(G, W′ ⊗ π_P) by f ↦ (g ↦ (x·f)(g)(w)), with the derived action of 0.3, and on the induction this factors through U(g ⊗ E) ⊗_(U(p⊗E)) W (Breuil, socle I, Lemma 2.1, p. 8). Define F^G_P(M, π_P) := (Ind_(P(L))^(G(L)) W′ ⊗_E π_P)^(ker(φ)), the closed subspace of the locally ℚ_p-analytic induction of 5.1 annihilated by ker(φ), and F^G_P(M) := F^G_P(M, 1) (Orlik–Strauch, Introduction, p. 3, and §4.1, p. 18; Breuil, socle I, §2, Lemmas 2.1–2.2 and Theorem 2.3(i), pp. 7–10). Prove that it is a closed G(L)-stable subspace, independent of W, admissible, strongly admissible when π_P has finite length (Orlik–Strauch, Proposition 4.8, p. 22, and Proposition 3.3(i), p. 11), and very strongly admissible when π_P is (5.1 (ii), via the finite-dimensional algebraic tensor identity).
 
 The proof route: G-stability holds because the left-derivative action commutes with right translation; independence of W and admissibility follow from the analytic norm-completion presentations of Orlik–Strauch §4 and Breuil Theorem 2.3(i), with the closed annihilator relations in the completed induction dual (5.1 (v)); the dual of F^G_P(M, π_P) is the Hausdorff quotient of D(G, E) ⊗̂_(D(P,E)) (W ⊗ π_P′) by the closed D(G, E)-span of the induced relations, the algebraic tensor product mapping into it with dense image.
 
@@ -1195,6 +1231,12 @@ This layer computes the extension groups of the locally algebraic representation
 
 Fix n ≥ 1. Define: (i) θ := (0, −1, …, 1 − n); for a standard parabolic P ⊇ B with Levi GL_(n_1) × ⋯ × GL_(n_r), θ^P := (0^(n_1), (−n_1)^(n_2), …, (−(n_1 + ⋯ + n_(r−1)))^(n_r)), with θ^B = θ; P_i is the maximal parabolic with Levi L_i ≅ GL_i × GL_(n−i); (ii) for φ = φ_1 ⊠ ⋯ ⊠ φ_n and w ∈ S_n, w(φ) := φ_(w⁻¹(1)) ⊠ ⋯ ⊠ φ_(w⁻¹(n)); φ is generic if φ_iφ_j⁻¹ ∉ {1, |·|_L} for i ≠ j; (iii) δ_B, η = |·|_L⁻¹ ∘ θ and ε as in Convention 7; (iv) h ∈ ℤ^(Σ_L × {1,…,n}) is strictly dominant if h_(σ,1) > ⋯ > h_(σ,n) for every σ, and then λ := h − θ, λ_(σ,i) = h_(σ,i) + i − 1, is dominant; W_Σ := S_n^(Σ_L) acts by the dot action, lg(u) = Σ_σ lg(u_σ), s_(i,σ) the simple reflection (i, i+1) in the σ-factor; (v) Hom(T(L), E), Hom_sm(T(L), E) and Hom_σ(T(L), E) as in Convention 7, Hom_(g′)(T(L), E) as in 5.3 (4), and Hom_(σ,g′) := Hom_g′ ∩ Hom_σ (Ding, §3.1.1, arXiv v2 pp. 36–37; §2.1, p. 10; §2.3.1, (2.17), p. 19). Prove (w_1w_2)(φ) = w_1(w_2(φ)), ηz^λ = z^h(ε⁻¹ ∘ θ), dim_E Hom_(g′)(T(L), E) = n + d_L (5.3 (4)), and that λ is dominant: h_(σ,i) ≥ h_(σ,i+1) + 1 gives λ_(σ,i) = h_(σ,i) + i − 1 ≥ h_(σ,i+1) + i = λ_(σ,i+1).
 
+API:
+
+- The permutation action on characters is a left action, (w_1w_2)(φ) = w_1(w_2(φ)), and φ is generic if and only if w(φ) is, the condition being symmetric in i ≠ j.
+- For strictly dominant h, λ = h − θ is dominant, and ηz^λ = z^h(ε⁻¹ ∘ θ) as characters of T(L).
+- For n ≥ 1, dim_E Hom_(g′)(T(L), E) = n + d_L.
+
 *Needs:* 5.3; SmoothRepresentationsOfLocalGroups SR.0.4 (*smooth-character*), SR.2.2 (*modulus-character*); Layer 4.1; ReductiveGroups Layer 7.
 
 **Checks.**
@@ -1226,6 +1268,11 @@ API:
 
 For w ∈ S_n define PS(w(φ), h) := (Ind_(B⁻(L))^(GL_n(L)) w(φ)ηz^λ)^(ℚ_p-an) = (Ind_(B⁻(L))^(GL_n(L)) w(φ)z^h(ε⁻¹ ∘ θ))^(ℚ_p-an) (5.2), and for u ∈ W_Σ, C(w, u) := F^(GL_n)_(B⁻)(L⁻(−u·λ), w(φ)η) (6.1), where M⁻(μ) = U(gl_(n,Σ_L)) ⊗_(U(b⁻_(Σ_L))) μ and L⁻(μ) is its simple quotient (4.5). Prove that the two expressions for PS agree, that PS(w(φ), h) = F^(GL_n)_(B⁻)(M⁻(−λ), w(φ)η), and that π_alg(φ, h) = C(w, 1) ⊆ PS(w(φ), h) through the fixed isomorphisms (Ding, §3.1.1, p. 36, DING25 lines 1442–1448; §3.1.2, p. 37). The proof route: on diag(t_1, …, t_n), z^θ(t) = ∏_i N_(L/ℚ_p)(t_i)^(1−i) and (ε⁻¹ ∘ θ)(t) = ∏_i (N_(L/ℚ_p)(t_i)|t_i|_L)^(i−1), so z^θ(ε⁻¹ ∘ θ) = ∏_i |t_i|_L^(i−1) = η and z^h(ε⁻¹ ∘ θ) = z^λη; the Orlik–Strauch identification is 6.1 for a Verma module with generating weight −λ, so W′ = z^λ; C(w, 1) ≅ L(λ) ⊗ I_sm(w(φ)) by 6.3 with Q = G.
 
+API:
+
+- The two expressions for the inducing character of PS(w(φ), h) agree, and PS(w(φ), h) = F^(GL_n)_(B⁻)(M⁻(−λ), w(φ)η).
+- C(w, u) is the Orlik–Strauch representation of the simple module L⁻(−u·λ) with smooth argument w(φ)η; for u = 1 it is π_alg(φ, h), which embeds in PS(w(φ), h) through the fixed isomorphisms.
+
 *Needs:* 8.2, 5.2, 6.1, 6.3; 4.5.
 
 **Checks.**
@@ -1253,6 +1300,13 @@ The proof route: (1) and (4) from 6.5 (1) and 6.4 (uniqueness) with 4.5 (i): for
 For 1 ≤ i ≤ n − 1, σ ∈ Σ_L and I ⊆ {1, …, n} with #I = i, all C(w, s_(i,σ)) with w⁻¹({1, …, i}) = I are isomorphic by 8.4 (4), because w(w′)⁻¹ ∈ W_i if and only if w and w′ lie in the same coset W_iw, if and only if w⁻¹({1, …, i}) = (w′)⁻¹({1, …, i}); define C(I, s_(i,σ)) as their common class. Prove: the C(I, s_(i,σ)) are pairwise distinct for distinct (I, σ); C(I, s_(i,σ)) ≅ soc_G (Ind_(B⁻(L))^(GL_n(L)) z^(s_(i,σ)·λ)w(φ)η)^(ℚ_p-an) for any w with w⁻¹({1, …, i}) = I, the inducing weight being +s_(i,σ)·λ because C(w, s_(i,σ)) = F(L⁻(−s_(i,σ)·λ), w(φ)η) and F negates the generating weight (6.1); and the labels run over all nonempty proper subsets I ⊂ {1, …, n}, giving (2^n − 2)d_L constituents (Ding, the paragraph after Proposition 3.1 and (3.1), arXiv v2 p. 37, DING25 lines 1504–1509, with the corrections listed under Source corrections).
 
 The proof route for the socle realisation: 6.5 (2) gives soc (Ind z^(s·λ)w(φ)η)^an = F^G_(P_i⁻)(L⁻(−s_(i,σ)·λ), soc i^(L_i)(w(φ)η)) = C(w, s_(i,σ)). Count: Σ_(i=1)^(n−1) binom(n, i) = 2^n − 2 subsets, times d_L embeddings.
+
+API:
+
+- C(I, s_(i,σ)) is well defined: C(w, s_(i,σ)) depends only on w⁻¹({1, …, i}).
+- Distinct pairs (I, σ) give non-isomorphic representations C(I, s_(i,σ)).
+- For every w with w⁻¹({1, …, i}) = I, C(I, s_(i,σ)) is the socle of (Ind_(B⁻(L))^(GL_n(L)) z^(s_(i,σ)·λ)w(φ)η)^(ℚ_p-an).
+- The labels are the nonempty proper subsets I of {1, …, n}, with i = #I, so there are (2^n − 2)d_L representations C(I, s_(i,σ)).
 
 *Needs:* 8.4, 6.1, 6.5.
 
@@ -1282,6 +1336,12 @@ Let w ∈ S_n with w⁻¹({1, …, i}) = I. Prove: (1) Hom_(T(L))(z^(s_(i,σ)·�
 Define PS_1(w(φ), h) ⊆ PS(w(φ), h) as the unique subrepresentation with socle π_alg(φ, h) and cosocle ⊕_(i,σ) C(w, s_(i,σ)): the preimage of soc(PS/π_alg) (8.4 (2)–(3)). Using the fixed embeddings π_alg ↪ PS_1(w(φ), h), define π_1(φ, h) as the unique quotient with socle π_alg(φ, h) of the amalgamated sum ⊕^(w∈S_n)_(π_alg) PS_1(w(φ), h). Prove that π_1(φ, h) exists and is unique, is an extension of ⊕_((I, i, σ)) C(I, s_(i,σ)) ((2^n − 2)d_L constituents, each once) by π_alg(φ, h), with injections π_alg ↪ π_1 and PS_1(w(φ), h) ↪ π_1, depends only on (φ, h), and that restriction to the socle gives End_G(π_1) ≅ End_G(π_alg) = E (Ding, (3.2)–(3.3) and the paragraph before them, arXiv v2 p. 38; Breuil–Herzig, Proposition 5.9 and its proof, pp. 27–28).
 
 The proof route: in the finite amalgam M, A = π_alg has composition multiplicity one; subrepresentations disjoint from A have no A constituent and so do their finite sums, so finite length gives a largest one R, A embeds essentially into M/R, and a quotient keeping A with that socle kills exactly R. The repeated constituents C(w, s_(i,σ)) for w in one coset W_iw are identified in M/R through the compatible embeddings of Breuil–Herzig, Proposition 5.9, leaving each C(I, s_(i,σ)) once. For End: an endomorphism minus its scalar on the socle kills the socle, so its image is a quotient of π_1/π_alg = ⊕ C(I, s) embedded in π_1, which has socle π_alg; hence it is zero.
+
+API:
+
+- PS_1(w(φ), h) is the preimage in PS(w(φ), h) of soc(PS(w(φ), h)/π_alg(φ, h)), an extension of ⊕_(i,σ) C(w, s_(i,σ)) by π_alg(φ, h).
+- π_1(φ, h) is an extension of ⊕ C(I, s_(i,σ)), each constituent once, by π_alg(φ, h); it receives injections PS_1(w(φ), h) ↪ π_1(φ, h) restricting to the fixed embeddings of π_alg for every w, and up to isomorphism it depends only on (φ, h).
+- Restriction to the socle gives End_G(π_1(φ, h)) = End_G(π_alg(φ, h)) = E.
 
 *Needs:* 8.4, 8.5, 1.4.
 
@@ -1365,6 +1425,11 @@ Prove: (1) the sequence 0 → Ext¹(π_alg, π_alg) → Ext¹(π_alg, π_1(φ, h
 
 Define π(φ, h) as the unique quotient with socle π_alg(φ, h) of the amalgamated sum ⊕^(w∈S_n)_(π_alg) PS(w(φ), h) over the fixed embeddings; it is the representation π(ρ)^fs of Breuil–Herzig in this setting (Breuil–Herzig, Definition 5.7(i)–(iv), pp. 26–27). Prove that it exists, is unique and admissible, that π_1(φ, h) is the subrepresentation formed by the first two layers of its socle filtration, and that push-forward Ext¹(π_alg, π_1) → Ext¹(π_alg, π(φ, h)) is an isomorphism (Ding, Remark 3.9 and (3.16), arXiv v2 p. 42). The proof route: as in 8.7 for existence and uniqueness; the socle filtration begins with π_alg and ⊕ C(I, s) by 8.4 (2)–(3); the constituents of π/π_1 are C(w, u) with lg(u) ≥ 2, for which Hom(π_alg, −) and Ext¹(π_alg, −) vanish (6.7).
 
+API:
+
+- π(φ, h) is admissible with socle π_alg(φ, h), and π_1(φ, h) is its subrepresentation formed by the first two layers of the socle filtration.
+- Push-forward along π_1(φ, h) ↪ π(φ, h) is an isomorphism Ext¹(π_alg, π_1) ≅ Ext¹(π_alg, π(φ, h)).
+
 *Needs:* 8.7, 8.4, 6.7.
 
 **Checks.**
@@ -1376,7 +1441,13 @@ Define π(φ, h) as the unique quotient with socle π_alg(φ, h) of the amalgama
 
 ### 8.14 The filtration Ext¹_g ⊆ Ext¹_g′ ⊆ Ext¹_w
 
-Inside Ext¹(π_alg, π_1(φ, h)) define Ext¹_g, Ext¹_g′ and Ext¹_w as the images of Ext¹_lalg(π_alg, π_alg), of Ext¹(π_alg, π_alg) and of ζ_w. Prove: ζ_w : Hom(T(L), E) ≅ Ext¹_w ((3.17)); Ext¹_g ⊆ Ext¹_g′ ⊆ Ext¹_w for every w, of dimensions n, n + d_L and n(1 + d_L); Ext¹_g′ is independent of w; Σ_w Ext¹_w = Ext¹(π_alg, π_1); and ζ_(w_2) ∘ (w_2w_1⁻¹) = ζ_(w_1) on Hom_(g′)(T(L), E) ((3.18)) (Ding, (3.17)–(3.18), arXiv v2 p. 42). The proof route: push-forward Ext¹(π_alg, π_alg) → Ext¹(π_alg, π_1) is injective since Hom(π_alg, π_1/π_alg) = 0; 8.11 (2) gives Ext¹_g′ ⊆ Ext¹_w; ζ_w is injective because it factors through the bijection of 8.11 followed by the push-forward PS_1 ↪ π_1, injective by dévissage; (3.18) is 8.8 (2).
+Inside Ext¹(π_alg, π_1(φ, h)) define Ext¹_g, Ext¹_g′ and Ext¹_w as the images of Ext¹_lalg(π_alg, π_alg), of Ext¹(π_alg, π_alg) and of ζ_w. Prove: ζ_w : Hom(T(L), E) ≅ Ext¹_w ((3.17)); Ext¹_g ⊆ Ext¹_g′ ⊆ Ext¹_w for every w, of dimensions n, n + d_L and n(1 + d_L); Ext¹_g′ is independent of w; Σ_w Ext¹_w = Ext¹(π_alg, π_1); and ζ_(w_2) ∘ (w_2w_1⁻¹) = ζ_(w_1) on Hom_(g′)(T(L), E) ((3.18)) (Ding, the definitions before (3.17) and (3.17)–(3.18), arXiv v2 pp. 42–43). The proof route: push-forward Ext¹(π_alg, π_alg) → Ext¹(π_alg, π_1) is injective since Hom(π_alg, π_1/π_alg) = 0; 8.11 (2) gives Ext¹_g′ ⊆ Ext¹_w; ζ_w is injective because it factors through the bijection of 8.11 followed by the push-forward PS_1 ↪ π_1, injective by dévissage; (3.18) is 8.8 (2).
+
+API:
+
+- For every w ∈ S_n, Ext¹_g ⊆ Ext¹_g′ ⊆ Ext¹_w inside Ext¹(π_alg, π_1), of dimensions n, n + d_L and n(1 + d_L), and ζ_w : Hom(T(L), E) → Ext¹_w is an isomorphism.
+- Ext¹_g′ does not depend on w, and the Ext¹_w, w ∈ S_n, together span Ext¹(π_alg, π_1).
+- On Hom_(g′)(T(L), E), ζ_(w_2) ∘ (w_2w_1⁻¹) = ζ_(w_1) for all w_1, w_2 ∈ S_n.
 
 *Needs:* 8.12, 8.11, 8.8.
 
@@ -1432,6 +1503,12 @@ Prove that for 1 ≤ i ≤ n − 1, σ ∈ Σ_L and #I = i, C(I, s_(i,σ)) is a 
 
 Let S_(F_P) be the set of C(I, s_(i,σ)) satisfying 9.2; #S_(F_P) = (Σ_(i=1)^r (2^(n_i) − 2) + (r − 1))d_L ((3.21)). Define π_(F_P)(φ, h) as the unique subrepresentation of the induction (3.19) with socle π_alg(φ, h) and π_(F_P)/π_alg ≅ ⊕_(C∈S_(F_P)) C. Prove that for P = B and F_P = T_w, π_(F_P) ≅ PS_1(w(φ), h); that π_alg ↪ π_(F_P) extends uniquely to π_(F_P) ↪ π_1(φ, h); and define Ext¹_(F_P)(π_alg, π_1) as the image of the injective push-forward Ext¹(π_alg, π_(F_P)) → Ext¹(π_alg, π_1) and Ext¹_(F_P,g′) := ζ_(F_P)(∏_i Ext¹_(g′)(π_alg(φ_(F_P,i), h^i), π_1(φ_(F_P,i), h^i))) (9.5) (Ding, (3.21), the definition of π_(F_P)(φ, h) and the remarks after it, arXiv v2 pp. 44–45, and the definitions after Propositions 3.11 and 3.12, pp. 45–47). The proof route: existence and uniqueness from 9.2 by taking a preimage; count within block k over i between consecutive filtration steps, giving 2^(n_k) − 2, plus one label at each of the r − 1 block boundaries, times d_L; the extension to π_1 because both have socle π_alg and the constituents of π_(F_P)/π_alg occur once in π_1/π_alg.
 
+API:
+
+- π_(F_P)(φ, h) has socle π_alg(φ, h) and π_(F_P)/π_alg ≅ ⊕_(C∈S_(F_P)) C, with #S_(F_P) = (Σ_(i=1)^r (2^(n_i) − 2) + (r − 1))d_L.
+- For P = B and F_P = T_w, π_(F_P)(φ, h) ≅ PS_1(w(φ), h).
+- The inclusion π_alg ↪ π_(F_P) extends uniquely to an injection π_(F_P) ↪ π_1(φ, h), and Ext¹_(F_P)(π_alg, π_1) is the image of push-forward along it, injective by 9.4.
+
 *Needs:* 9.2, 8.7, 1.4.
 
 **Checks.**
@@ -1455,7 +1532,13 @@ Prove that dim_E Ext¹_(GL_n(L))(π_alg(φ, h), π_(F_P)(φ, h)) = n + d_L·r + 
 
 ### 9.5 The parabolic induction map ζ_(F_P)
 
-Write A_i = π_alg(φ_(F_P,i), h^i) and B_i = π_1(φ_(F_P,i), h^i). Locally analytic induction twisted by ε⁻¹ ∘ θ^P and pull-back along (3.19) give Ext¹_(L_P)(⊠_i A_i, ⊗̂_i B_i) → Ext¹_G(π_alg, (Ind …)^an) ≅ Ext¹_G(π_alg, π_(F_P)) ((3.25)), the last isomorphism because the constituents of the induction modulo π_(F_P) have lg ≥ 2 (6.7). For extensions 0 → B_i → X_i → A_i → 0, filter ⊗̂_i X_i by the number of B-factors; the quotient by filtration degree ≥ 2 is an extension 0 → ⊕_i (B_i ⊠ ⊗̂_(j≠i) A_j) → V → ⊠_i A_i → 0; push it out along ⊕_i (B_i ⊠ ⊗̂_(j≠i) A_j) → ⊗̂_i B_i, given on each summand by the embeddings A_j ↪ B_j, and sum ((3.26)). Define ζ_(F_P) : ∏_i Ext¹(A_i, B_i) → Ext¹_(F_P)(π_alg, π_1) as push-forward ∘ (3.25) ∘ (3.26) ((3.27)) (Ding, (3.25)–(3.27) and the construction between them, arXiv v2 p. 46, with the corrected kernel). Prove that ζ_(F_P) is E-linear (additive in the tuple of classes, not multilinear), that the quotient and push-out stay admissible (1.5, 1.4), and that for P = B, ζ_(F_P) = ζ_w for the w with T_w = F_P.
+Write A_i = π_alg(φ_(F_P,i), h^i) and B_i = π_1(φ_(F_P,i), h^i). Locally analytic induction twisted by ε⁻¹ ∘ θ^P and pull-back along (3.19) give Ext¹_(L_P)(⊠_i A_i, ⊗̂_i B_i) → Ext¹_G(π_alg, (Ind …)^an) ≅ Ext¹_G(π_alg, π_(F_P)) ((3.25)), the last isomorphism because the constituents of the induction modulo π_(F_P) have lg ≥ 2 (6.7). For extensions 0 → B_i → X_i → A_i → 0, filter ⊗̂_i X_i by the number of B-factors; the quotient by filtration degree ≥ 2 is an extension 0 → ⊕_i (B_i ⊠ ⊗̂_(j≠i) A_j) → V → ⊠_i A_i → 0; push it out along ⊕_i (B_i ⊠ ⊗̂_(j≠i) A_j) → ⊗̂_i B_i, given on each summand by the embeddings A_j ↪ B_j, and sum ((3.26)). Define ζ_(F_P) : ∏_i Ext¹(A_i, B_i) → Ext¹_(F_P)(π_alg, π_1) as push-forward ∘ (3.25) ∘ (3.26) ((3.27)) (Ding, (3.25)–(3.27) and the construction between them, arXiv v2 pp. 45–46, with the corrected kernel). Prove that ζ_(F_P) is E-linear (additive in the tuple of classes, not multilinear), that the quotient and push-out stay admissible (1.5, 1.4), and that for P = B, ζ_(F_P) = ζ_w for the w with T_w = F_P.
+
+API:
+
+- ζ_(F_P) is E-linear: additive in the tuple of classes and compatible with scalars, not multilinear.
+- The quotient V of ⊗̂_i X_i and its push-out are admissible representations of L_P(L), so (3.25) applies to them.
+- For P = B, ζ_(F_P) = ζ_w for the w with T_w = F_P.
 
 *Needs:* 9.3, 9.1, 0.9, 1.4, 1.5, 5.1, 6.7.
 
@@ -1523,6 +1606,12 @@ API:
 ### 10.2 The parts π_(1,σ)(φ, h) and PS_(1,σ)(w(φ), h)
 
 For σ ∈ Σ_L define π_(1,σ)(φ, h) ⊆ π_1(φ, h) as the subrepresentation which is an extension of ⊕_(i, #I=i) C(I, s_(i,σ)) (fixed σ, all I) by π_alg(φ, h), and PS_(1,σ)(w(φ), h) ⊆ PS_1(w(φ), h) as the subrepresentation with constituents π_alg and C(w, s_(i,σ)), 1 ≤ i ≤ n − 1. Prove: PS_(1,σ)(w(φ), h) = PS_1(w(φ), h) ∩ ((Ind_B⁻ w(φ)ηz^(λ_σ))^(σ-an) ⊗_E L(λ^σ)) with λ_σ the σ-component of λ and λ^σ = (λ_τ)_(τ≠σ); C(I, s_(i,σ)) ≅ F^(GL_n)_(B⁻)(L⁻(−s_(i,σ)·λ_σ), w(φ)η) ⊗_E L(λ^σ) with the first factor inside (Ind_B⁻ w(φ)ηz^(s_(i,σ)·λ_σ))^(σ-an); π_(1,σ)(φ, h) is the unique quotient with socle π_alg of the amalgam of the PS_(1,σ)(w(φ), h), and it is the maximal g_(Σ∖σ)-algebraic subrepresentation of π_1(φ, h); for a P-filtration, π_(F_P,σ)(φ, h) := π_(F_P)(φ, h) ∩ π_(1,σ)(φ, h) is the maximal g_(Σ∖σ)-algebraic subrepresentation of π_(F_P) (Ding, §3.1.4, arXiv v2 pp. 48–49, and the paragraph before Proposition 3.19, p. 50). The proof route: L⁻(−s_(i,σ)·λ) = L⁻_σ(−s_(i,σ)·λ_σ) ⊠ ⊠_(τ≠σ) L⁻_τ(−λ_τ) with finite-dimensional factors for τ ≠ σ gives the tensor decomposition; the C(I, s_(i,τ)) with τ ≠ σ are not g_(Σ∖σ)-algebraic since their τ-component is infinite-dimensional.
+
+API:
+
+- PS_(1,σ)(w(φ), h) = PS_1(w(φ), h) ∩ ((Ind_B⁻ w(φ)ηz^(λ_σ))^(σ-an) ⊗_E L(λ^σ)), with constituents π_alg(φ, h) and the C(w, s_(i,σ)), 1 ≤ i ≤ n − 1.
+- C(I, s_(i,σ)) ≅ F^(GL_n)_(B⁻)(L⁻(−s_(i,σ)·λ_σ), w(φ)η) ⊗_E L(λ^σ), the first factor lying in (Ind_B⁻ w(φ)ηz^(s_(i,σ)·λ_σ))^(σ-an).
+- π_(1,σ)(φ, h) is the maximal g_(Σ∖σ)-algebraic subrepresentation of π_1(φ, h) and the unique quotient with socle π_alg(φ, h) of the amalgam of the PS_(1,σ)(w(φ), h); π_(F_P,σ)(φ, h) is the maximal g_(Σ∖σ)-algebraic subrepresentation of π_(F_P)(φ, h).
 
 *Needs:* 10.1, 8.7, 9.3, 6.1, 6.6.
 
@@ -1627,6 +1716,7 @@ The following corrections are made to the sources at the places cited; each is f
 - Schraen, Proposition 4.7(2): the spectral sequence of the proof gives Ext^n_(G,λ)(F_λ ⊗ W_1, F_λ ⊗ W_2) ≅ Ext^n_∞(W_1, W_2) for n ≤ 2; concentration in the least nonvanishing degree holds only when smooth Ext is concentrated in one degree (1.10).
 - Boxer–Calegari–Gee–Pilloni, §2.2.27: evaluation at e is on O_(𝔾_r) ⊗ V at the radius r of the analytic vectors being defined (3.8).
 - Dospinescu–Le Bras, Lemme 5.10, is stated without proof; 0.8 gives the route.
+- Orlik–Strauch, §2.5, the paragraph after Example 2.7, p. 8: their coefficient field K is a finite extension of ℚ_p (notation and conventions, p. 4), not algebraically closed. With O^p defined by their conditions (1)–(3) alone, the module ℚ_3[t]/(t² − 3) of 𝔤 = Lie(𝔾_m) over ℚ_3 is a finite-dimensional semisimple object of O^g but not of O, so the stated inclusion O^p ⊆ O fails. O^p must also require the Cartan subalgebra to act diagonalisably with eigenvalues in K, as 4.2 does; then O^p ⊆ O, and O^g consists of the finite-dimensional modules with K-valued weights, not of all finite-dimensional semisimple modules. Semisimplicity alone is not split semisimplicity (4.2).
 - Breuil, socle I, Corollary 2.7, p. 12: the recovery of (M_1, π_(Q_1)) from F^G_(Q_1)(M_1, π_(Q_1)) needs nonzero smooth arguments; with π_(Q_1) = π_(Q_2) = 0 both sides vanish for any simple M_1, M_2, and the proof reads the highest weight of M_i off H^0(n, F′) ≅ Ev⁺_i ⊗ π′_(Q_i), which is then zero (6.4).
 - Emerton, Jacquet I, Theorem 0.6, p. 778: an irreducible very strongly admissible V with J_P(V) ≠ 0 is a quotient of I_P⁻^G(U) for a finite-dimensional U over the coefficient field (Emerton, Jacquet II, Corollary 0.14), but in general not a subquotient of the induction of a character over that field; the character exists after a finite extension of scalars, and U is its restriction of scalars (7.5).
 
