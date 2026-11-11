@@ -33,8 +33,6 @@ Not part of this roadmap: caustics, the string construction, the elliptic table 
 
 ### From Mathlib
 
-Every declaration below was read at the pinned Mathlib.
-
 - `CircleDeg1Lift`, `CircleDeg1Lift.translationNumber`, `CircleDeg1Lift.tendsto_translationNumber`, `CircleDeg1Lift.translationNumber_eq_rat_iff`, `CircleDeg1Lift.translationNumber_units_inv`, `CircleDeg1Lift.translationNumber_mono`, `CircleDeg1Lift.translationNumber_le_of_le_add`, `CircleDeg1Lift.le_translationNumber_of_add_le` (`Mathlib/Dynamics/Circle/RotationNumber/TranslationNumber.lean`): a lift is a monotone map `ℝ → ℝ` with `f(x + 1) = f x + 1` (no continuity is assumed); `((f^n) x − x)/n` tends to the translation number for every `x`; for a continuous lift, the translation number is `m/n` (`n > 0`) exactly when some `x` has `(f^n) x = x + m`; inversion negates it; it is monotone in `f` and bounded by uniform bounds on `f x − x`.
 - `AddCircle`, `AddCircle.measure_univ`, `AddCircle.measurePreserving_mk`, `AddCircle.homeomorphCircle'` (`Mathlib/MeasureTheory/Integral/IntervalIntegral/Periodic.lean`, `Mathlib/Analysis/SpecialFunctions/Complex/Circle.lean`): the Haar measure of `AddCircle T` has total mass `T`, the quotient map restricted to a fundamental interval is measure preserving, and `AddCircle (2π)` is homeomorphic to `Circle`.
 - `MeasureTheory.MeasurePreserving`, `MeasureTheory.lintegral_image_eq_lintegral_abs_det_fderiv_mul` (`Mathlib/MeasureTheory/Function/Jacobian.lean`): change of variables for a map injective on a measurable set with derivatives within it.
@@ -52,11 +50,7 @@ Every declaration below was read at the pinned Mathlib.
 - `inner_smul_left` (`Mathlib/Analysis/InnerProductSpace/Basic.lean`): the complex inner product conjugates the first scalar, fixing the convention of Layer 12.
 - `Homeomorph` and `AddCircle` (`Mathlib/Topology/Homeomorph/Defs.lean`, `Mathlib/Topology/Instances/AddCircle/Defs.lean`): homeomorphisms and the topological quotient `ℝ/ℓℤ`; §4.1 uses equivariance to descend to the quotient and interval order to control the ends.
 
-Mathlib has no billiard map, no twist map, no non-wandering set, no weak mixing, no translation groupoid and no Wiener lemma; this was checked by searching the pinned sources for the objects.
-
 ### From Tau Ceti
-
-Every declaration below was read at the pinned Tau Ceti.
 
 - `Polygon.IsSimple`, `TauCeti.SimplePolygon`, `Polygon.boundaryParamCircle`, `Polygon.IsSimple.isJordanCurve_boundary` (`TauCeti/Geometry/Polygon/Simple.lean`): edges nondegenerate and distinct edges meeting only at the common vertex of consecutive edges; consecutive collinear edges are allowed, so a vertex may have angle `π`; the boundary of a simple real polygon is a Jordan curve.
 - `TauCeti.IsJordanCurve`, `TauCeti.isJordanCurve_frontier_of_convex` (`TauCeti/Topology/JordanCurve/Basic.lean`): a set homeomorphic to `Circle`; the frontier of a bounded convex subset of `ℂ` with nonempty interior is one.
