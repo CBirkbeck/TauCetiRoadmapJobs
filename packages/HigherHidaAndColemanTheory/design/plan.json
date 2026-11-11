@@ -5361,7 +5361,7 @@
       "slug": "projective-banach-cohomology",
       "supplier": "AdicSpacesPartIII",
       "section": "§§R3.4, R3.6",
-      "needs": "Extend coherent quasi-Stein cohomology to locally projective Banach coefficients on finite quasi-Stein covers, with compact restrictions, the finite-dimensional projected-lattice lemma and bounded-p-torsion integral Čech comparison of BP-Coleman §§2.4–2.6 and Lemma 5.9.10.",
+      "needs": "Extend coherent quasi-Stein cohomology to locally projective Banach coefficients on finite quasi-Stein covers, represented by countable projective systems of bounded projective Banach Čech complexes over affinoid exhaustions (BP-Coleman Lemma 2.5.19), with compact restrictions, the finite-dimensional projected-lattice lemma and bounded-p-torsion integral Čech comparison of BP-Coleman §§2.4–2.6 and Lemma 5.9.10.",
       "neededBy": [
         "HigherHidaAndColemanTheory:C4/allowed-support",
         "HigherHidaAndColemanTheory:C4/analytic-continuation",
@@ -5412,7 +5412,7 @@
       "id": "gap:abelian-subcanonical-vanishing",
       "slug": "abelian-subcanonical-vanishing",
       "supplier": "AutomorphicBundlesPartII",
-      "section": "§IC.5, relative-subcanonical-vanishing (abelian-type extension)",
+      "section": "§5.2 (abelian-type extension)",
       "needs": "Extend the PEL formally subcanonical vanishing to abelian-type toroidal-to-minimal maps and the locally trivialized projective Banach coefficient situation of BP-Coleman Theorem 4.1.7 and Lemma 6.6.2 with its bounded-torsion reductions.",
       "neededBy": [
         "HigherHidaAndColemanTheory:C4/geometric-vanishing",
