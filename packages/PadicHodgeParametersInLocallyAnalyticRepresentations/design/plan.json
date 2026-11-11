@@ -2324,7 +2324,7 @@
   "gaps": [
     {
       "slug": "principal-series-bernstein-completion",
-      "needs": "Over a finite E/ℚ_p, the Bernstein centre ℋ of the principal-series block of π_sm(φ), its completion Ĥ_φ at π_sm(φ), and for generic φ and each w∈S_n the isomorphism 𝒥_w:Ĥ_φ≅R_{w(φ),g} onto the completed local ring of ∏_i Spec ℋ_{w⁻¹(i)} at w(φ), with tangent maps compatible under reordering (CEGGPS Lemma 3.22; Ding §3.2.2).",
+      "needs": "Over a finite E/ℚ_p, the Bernstein centre ℋ of the principal-series block of π_sm(φ), its completion Ĥ_φ at π_sm(φ), and for generic φ and each w∈S_n that the ordered-character map 𝒥_w (the one LocallyAnalyticRepresentationsOfLocalGroups requests from the same section, with its reordering identity) induces an isomorphism Ĥ_φ≅R_{w(φ),g} onto the completed local ring of ∏_i Spec ℋ_{w⁻¹(i)} at w(φ) (CEGGPS Lemma 3.22; Ding §3.2.2).",
       "supplier": "SmoothRepresentationsOfLocalGroups",
       "section": "Layer SR.3, §SR.3.2 The Bernstein decomposition and centre"
     }
