@@ -103,7 +103,7 @@ title = "On two variable p-adic L-functions"
 year = 1981
 venue = "PhD thesis, Australian National University"
 locator_scheme = "chapter"
-locator = "Chapters 3-8; Theorem 1"
+locator = "Introduction (standing hypotheses); Chapters 3-8; Theorem 1"
 url = "https://openresearch-repository.anu.edu.au/items/7c4519f4-e0eb-49ce-a2d9-e5777fa9483d/full"
 fetched_from = "https://openresearch-repository.anu.edu.au/server/api/core/bitstreams/dc8127c5-6584-444c-a408-a6e1c0d39f12/content"
 fetched_at = "2026-10-26T18:05:11Z"
@@ -120,7 +120,7 @@ title = "The main conjectures of Iwasawa theory for imaginary quadratic fields"
 year = 1991
 venue = "Inventiones Mathematicae 103 (1991), 25-68"
 locator_scheme = "theorem"
-locator = "§1 pp.27-29; §4, Theorem 4.1 and Remarks (1)-(2), pp.36-37; §5, Theorems 5.1 and 5.3, pp.38-40"
+locator = "§1 pp.27-29; §4, Theorem 4.1 and Remarks (1)-(2), pp.36-37; §5, Theorems 5.1 and 5.3, pp.38-40; proof of Theorem 11.2, p.59"
 url = "https://gdz.sub.uni-goettingen.de/download/pdf/PPN356556735_0103/LOG_0009.pdf"
 fetched_from = "https://gdz.sub.uni-goettingen.de/download/pdf/PPN356556735_0103/LOG_0009.pdf"
 fetched_at = "2026-10-26T18:06:44Z"
@@ -129,7 +129,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-26"
 version_note = "GDZ image scan, text recognised by OCR; journal pagination."
-cited_for = ["4.7", "4.8", "5.1", "5.2", "5.3"]
+cited_for = ["2.3", "4.7", "4.8", "5.1", "5.2", "5.3"]
 
 [[source]]
 id = "CGLS"
