@@ -1,0 +1,13 @@
+{
+  "review": {
+    "status": "needs_changes",
+    "reviewer": "independent-review-PRREVIEW-AlgebraicCurves~61",
+    "head": "9eacb1788d15fa990d68e56cbab5111a27309c9f",
+    "pr": 1807,
+    "folder": "AlgebraicCurves",
+    "date": "2026-11-11",
+    "findings": 1,
+    "blocking": 0,
+    "notes": "incremental re-review of 49 changed lines since c8821a4. The folder change is the progress bot's PROGRESS.md/STATUS.md, identical to main. README.md, Suggested.lean and the pins are unchanged, and the diff that excludes the thirteen PR folders is empty. The previous review had no findings to account for. One P3 finding (R01): the merge of main brings in SchemeAndStackFoundations, which now says AlgebraicCurves is not an input, and AlgebraicVectorBundles, which no longer names it as a supplier, so README lines 74-75, 2397-2399 and 2401-2402 wrongly call them consumers. Checked: the worker's PR-aware gate passes; the standalone rerun shows outside-folder=23, all files in the PR's own sibling folders; dependency check 236 roadmaps, 2159 edges, 0 problems; lake env lean shows only the two sorry warnings; the #check signatures are unchanged; one-tactic probes fail on both headlines; every declaration in the new progress report exists at the Tau Ceti pin and none contradicts the README; new citations from BelyiMaps (12B.0a/b/d, 8.1 item 2), ModularCurves, ModularForms and FuchsianOrbifolds resolve; Rosenlicht1955 locators verified (lines 54, 107, 140, 188-212). Adversarial rows A1-A17 were computed for all 15 seeded targets, both headlines and R01; review ~60's rows are carried. Stichtenoth and the other uncertified sources are kept by locator."
+  }
+}
