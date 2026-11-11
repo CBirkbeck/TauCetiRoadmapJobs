@@ -454,3 +454,19 @@ licence_class = "author-page"
 status = "certified"
 accessed = "2026-11-11"
 cited_for = ["2.8"]
+
+[[source]]
+id = "deligne-1985"
+authors = "Pierre Deligne"
+title = "Le lemme de Gabber"
+year = 1985
+locator_scheme = "section"
+locator = "Lemme 1.6, pp. 133-134; §2, p. 136; §§3.3-3.7, pp. 138-141 (printed pages, Astérisque 127, pp. 131-150)"
+url = "https://www.numdam.org/item/AST_1985__127__131_0.pdf"
+fetched_from = "https://www.numdam.org/item/AST_1985__127__131_0.pdf"
+fetched_at = "2026-11-11T05:12:53Z"
+sha256 = "acb2b2838de638d0c80706bdb0f24e6504ad0ce105a45186ed75ceed2c9ca324"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-11"
+cited_for = ["4.15"]
