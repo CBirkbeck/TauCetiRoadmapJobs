@@ -926,7 +926,7 @@ Choose μ in the coefficient Witt units satisfying `F^f(μ)/μ=∏_{i=1}^{f−1}
 
 ### 4.4 Exotic display equivalence
 
-The functor rel is an equivalence of the supersingular exotic module categories on noetherian nilpotent bases. A quasi-inverse reconstructs the banal components, and the equivalence identifies endomorphisms, adjoints and polarized rational Hom spaces. The hypotheses K/ℚ_p unramified and the noetherian nilpotent base are retained. (LL22, §2.8, Proposition 2.62 and Lemma 2.63, pp. 40–42; Remark 2.68, p. 43.)
+The functor rel is an equivalence of the supersingular exotic module categories on noetherian nilpotent bases. A quasi-inverse reconstructs the banal components, and the equivalence identifies endomorphisms, adjoints and polarized rational Hom spaces. The hypotheses K/ℚ_p unramified and the noetherian nilpotent base are retained. (LL22, §2.8, Proposition 2.62 and Lemma 2.63, pp. 40–42; Remark 2.68, p. 44.)
 
 *Route.* Use a normal decomposition of the retained display to reconstruct each omitted component. Check the unit and counit are integral display isomorphisms. Descend endomorphisms through the component equations and check compatibility of the pairing.
 
@@ -1079,7 +1079,7 @@ Let N be the relative covariant rational Dieudonné module of the framing, Π=i(
 
 ### 5.5 Krämer framing parity
 
-The two determinant signs `χ((−1)^{n(n−1)/2} det C)` give the two framing polarization classes. Their resulting ramified unitary formal moduli spaces are isomorphic for n odd; for n even they are not isomorphic. Keep a specified sign when comparing them to a global basic locus; a self-dual lattice alone does not select the sign at a ramified place. (HLSY23, §2.1–2.2, pp. 11–12; RSZ21 Remark 6.9, p. 33.)
+The two determinant signs `χ((−1)^{n(n−1)/2} det C)` give the two framing polarization classes. Their resulting ramified unitary formal moduli spaces are isomorphic for n odd; for n even they are not isomorphic. Keep a specified sign when comparing them to a global basic locus; a self-dual lattice alone does not select the sign at a ramified place. (HLSY23, §2.2, p. 11; RSZ21 Remark 6.9, p. 33.)
 
 *Route.* Apply ramified Hermitian determinant classification. Check the effect of unit rescaling on the determinant sign in odd and even rank. Compare the framing categories, retaining the selected sign in the global input.
 
@@ -1106,7 +1106,7 @@ Over the natural ramified coefficient DVR with p odd, the principal Krämer loca
 
 ### 5.7 Krämer regularity theorem
 
-N_n^Kra is flat, regular and locally formally of finite type over O_L̆, of relative dimension n−1, and has semistable reduction over this natural coefficient ring. Its forgetful map to the wedge-model framed functor is proper and an isomorphism on the generic fibre. Global models after a ramified coefficient extension require a separate regularity check; the global n=2 case is not obtained from RSZ21 Theorem 6.7(ii). (HLSY23, §2.1, p. 11; Howard19 Proposition 2.2, p. 6; RSZ21 Theorem 6.7 and Remark 6.8, pp. 32–33.)
+N_n^Kra is flat, regular and locally formally of finite type over O_L̆, of relative dimension n−1, and has semistable reduction over this natural coefficient ring. Its forgetful map to the wedge-model framed functor is proper and an isomorphism on the generic fibre. Global models after a ramified coefficient extension require a separate regularity check; the global n=2 case is not obtained from RSZ21 Theorem 6.7(ii). (HLSY23, §2.1, p. 10; Howard19 Proposition 2.2, p. 6; RSZ21 Theorem 6.7 and Remark 6.8, pp. 32–33.)
 
 Hypotheses for this target: L/K ramified quadratic, p>2, ū=−u, n≥2; fixed supersingular principal hermitian framing of signature (1,n−1).
 
@@ -1727,26 +1727,32 @@ Hypotheses for this target: K, A, A′ as stated; at every place 𝔭 of K above
 
 ### 9.2 Quotients of formal schemes by discrete groups
 
-Let 𝔐 be a formal scheme locally formally of finite type over Spf O_Ĕ and Γ a group acting on 𝔐 over Spf O_Ĕ such that (i) every quasi-compact open subset of 𝔐_red meets only finitely many of its Γ-translates and (ii) every point of 𝔐 has an open neighbourhood U with γU∩U=∅ for every γ≠1 in Γ; in particular Γ acts freely on all points of 𝔐_red, generic points of components included. Construct the quotient Γ\𝔐: the fpqc quotient sheaf is represented by a formal scheme locally formally of finite type over Spf O_Ĕ and 𝔐→Γ\𝔐 is a Γ-torsor and a local isomorphism. Hypothesis (ii) is what makes the quotient a formal scheme rather than the formal algebraic space of RZ96 Proposition 2.37: Γ\𝔐 is then locally isomorphic to 𝔐. For the unitary uniformization data of Layer 9 — the group I(ℚ) of polarized self-quasi-isogenies of a basic pair, acting on 𝔐×G(𝔸_f^p)/K^p — conditions (i) and (ii) hold when K^p is small enough that every intersection of I(ℚ) with a conjugate of J(ℚ_p)×K^p is torsion free, as in RZ96 Theorem 6.30; for general K^p the quotient is a formal Deligne–Mumford stack with finite stabilizers. The quotient is used as a sheaf on `Nilp_{O_Ĕ}`, not only through its geometric points. (RZ96, Propositions 2.34–2.37, pp. 64–67; Theorem 6.23 and its proof, p. 289; Theorem 6.30, p. 293.)
+Let 𝔐 be a formal scheme locally formally of finite type over Spf O_Ĕ and Γ a group acting on 𝔐 over Spf O_Ĕ such that (i) for every quasi-compact open U of 𝔐_red the set {γ∈Γ : U∩γU≠∅} is finite and (ii) every point of 𝔐 has an open neighbourhood U with U∩γU=∅ for every γ≠1. Construct the quotient Γ∖𝔐: the fpqc quotient sheaf is represented by a formal scheme locally formally of finite type over Spf O_Ĕ, and 𝔐→Γ∖𝔐 is a Γ-torsor and a Zariski local isomorphism. This conclusion uses the disjoint neighbourhoods of (ii). Freeness on points, including generic points of components, does not imply (ii). (RZ96, proof of Proposition 2.37, pp. 66–67, applied when these neighbourhoods exist.)
 
-Hypotheses for this target: 𝔐, Γ as stated; for the unitary application K^p sufficiently small as stated.
+For a framed space 𝔐 of §0.2, with structure-preserving framing quasi-isogeny group J(ℚ_p), and a discrete, torsion-free subgroup Γ⊂J(ℚ_p) separated in its profinite topology, construct the étale quotient sheaf Γ∖𝔐 as a formal algebraic space locally formally of finite type, and prove that 𝔐→Γ∖𝔐 is an étale Γ-torsor. Profinite separation means that for every γ≠1 there is a finite-index normal subgroup not containing γ. This theorem does not assume (ii). (RZ96, Propositions 2.34–2.37, pp. 64–67.)
 
-*Route.* Choose a covering of 𝔐 by opens U with U∩γU=∅ for γ≠1, as (ii) allows. Glue the images of these opens along the Γ-action to obtain Γ\𝔐, and check that it represents the quotient sheaf. For the unitary application, use that I(ℚ) is discrete in J(ℚ_p)×G(𝔸_f^p) (proof of RZ96 Theorem 6.23) and that the stabilizers in J(ℚ_p) of points and of irreducible components of 𝔐_red are compact, so stabilizers in I(ℚ) are finite and trivial when the stated intersections are torsion free; local finiteness follows from discreteness in the same way (RZ96 Proposition 2.34).
+For the unitary uniformization data of Layer 9, let I(ℚ) be the polarized self-quasi-isogeny group of the basic pair, acting on 𝔐×G(𝔸_f^p)/K^p. Decompose its quotient sheaf over tame double cosets into Γ_g∖𝔐, where Γ_g is the image in J(ℚ_p) of I(ℚ)∩(J(ℚ_p)×gK^pg⁻¹). For sufficiently small K^p these projections are injective and each Γ_g is discrete, torsion-free and profinitely separated, so the formal algebraic-space theorem applies. For general K^p retain the quotient formal Deligne–Mumford stack with finite stabilizers. The arithmetic application asserts no disjoint Zariski neighbourhoods; formal-scheme representability at sufficiently small level is established together with Θ in §9.5. All quotients are sheaves, or the indicated quotient stack, on `Nilp_{O_Ĕ}`. (RZ96, proof of Theorem 6.23, pp. 289–290; Theorem 6.30, p. 293.)
+
+Hypotheses for the first theorem: 𝔐, Γ and (i)–(ii) as stated. For the algebraic-space theorem: the framed space of §0.2 and discrete, torsion-free, profinitely separated Γ⊂J(ℚ_p); the arithmetic application verifies these hypotheses for Γ_g at sufficiently small K^p.
+
+*Route.* Under (ii), glue the images of disjoint-translate neighbourhoods along the action to represent the quotient by a formal scheme. For the arithmetic application prove discreteness of I(ℚ) in J(ℚ_p)×G(𝔸_f^p), then discreteness and local finiteness for each Γ_g by RZ96 Proposition 2.34. Compact stabilizers give finite stabilizers, and small tame level excludes torsion by the polarized-automorphism argument of RZ96 Theorem 6.23. To prove profinite separation, fix a tame prime ℓ≠p and a faithful linear realization of I over ℚ_ℓ. The compact tame-level image preserves a ℤ_ℓ-lattice; reduction modulo ℓ^r separates every nonidentity γ for some r. Apply RZ96 Proposition 2.37: local finiteness and separation supply finite-index normal subgroups avoiding the finitely many nonidentity translates meeting a chosen bounded chart. Glue the resulting finite free quotients in the étale topology. Freeness identifies the fibre product of 𝔐 with itself over Γ_g∖𝔐 with Γ_g×𝔐, giving the étale torsor. This construction does not use Θ.
 
 **API.**
 
-- For a free, locally finite action the quotient Γ\𝔐 is a formal scheme locally formally of finite type.
-- 𝔐→Γ\𝔐 is a Γ-torsor and a local isomorphism.
-- A Γ-invariant morphism from 𝔐 to a formal scheme factors uniquely through Γ\𝔐.
-- For K′^p⊂K^p the level-forgetful map of quotients is finite étale.
+- Under (i)–(ii), Γ∖𝔐 is a formal scheme locally formally of finite type and the projection is a Γ-torsor and a Zariski local isomorphism.
+- For a discrete, torsion-free, profinitely separated Γ⊂J(ℚ_p) acting on the framed space, Γ∖𝔐 is a formal algebraic space locally formally of finite type and the projection is an étale Γ-torsor; in particular this applies to the arithmetic Γ_g.
+- In either sheaf quotient, a Γ-invariant morphism from 𝔐 to a formal scheme factors uniquely through the quotient.
+- For sufficiently small tame levels K′^p⊂K^p the level-forgetful map of arithmetic quotients is finite étale.
 
 **Checks.**
 
-- For Γ trivial the quotient is 𝔐.
-- For Γ=ℤ acting on `𝔐=⊔_{h∈ℤ}𝔑` by translating the index, the action is free and locally finite and Γ\𝔐≅𝔑.
-- The scalar −1∈U(V)(K) fixes every point of N_n, since −1 is an automorphism of every (X,ι,λ) carrying ρ to −ρ; the quotient sheaf by {±1} is N_n itself and N_n→N_n is not a {±1}-torsor, so freeness must be checked for the group modulo the elements acting trivially.
+- For Γ trivial the quotient is 𝔐 and the torsor has one sheet.
+- For Γ=ℤ acting on `𝔐=⊔_{h∈ℤ}𝔑` by translating the index, a neighbourhood in one copy is disjoint from every nontrivial translate, so (ii) holds and Γ∖𝔐≅𝔑. For Γ=mℤ⊂ℤ the map between quotients has m sheets, for m≥1.
+- For the unramified quadratic L/ℚ₃ take the rank-three hermitian form with Gram matrix H having rows (0,1,0), (1,0,0), (0,0,3). Its determinant is −3. Put Λ₊=O_L(3e)+O_Lf+O_La, Λ₋=O_Le+O_L(3f)+O_La and Σ=Λ₊+Λ₋. Their duals are O_Le+O_L(f/3)+O_L(a/3), O_L(e/3)+O_Lf+O_L(a/3), and O_Le+O_Lf+O_L(a/3), respectively. Thus 3Λ♯⊆Λ⊆Λ♯ in all three cases and the dual-quotient lengths are 3,3,1. In the rank-three unramified unitary space the first two lattices label irreducible curves C₊, C₋ meeting in the single point x=V(Σ); the dimensions are (3−1)/2=1 and (1−1)/2=0. (LZ22, §§2.5–2.7, p. 12.)
+- In that example g=diag(3,1/3,1) satisfies g*Hg=H and gΛ₋=Λ₊. Its powers have valuations (m,−m,0), so Γ=⟨g⟩ is discrete infinite cyclic, torsion-free and profinitely separated. RZ96 Propositions 2.34–2.37 apply. Every open U containing x contains both generic points η₊ and η₋, and gη₋=η₊, so η₊∈U∩gU. The algebraic-space theorem applies to this framed action, while (ii) fails. This tests the proposed implication from discreteness and freeness; it does not prescribe a global CM pair with Γ as its arithmetic subgroup.
+- The scalar −1∈U(V)(K) fixes every point of N_n, since −1 is an automorphism of every (X,ι,λ) carrying ρ to −ρ; the quotient sheaf by {±1} is N_n itself and N_n→N_n has one sheet, not two, so it is not a {±1}-torsor. The quotient stack retains this stabilizer; an effective action alone still needs its point stabilizers checked.
 
-*Needs:* §0.2; AdicSpacesPartIII Layer F0; SchemeAndStackFoundations Layer 1.
+*Needs:* §0.2; §9.1 (faithful realizations of the arithmetic self-quasi-isogeny group); AdicSpacesPartIII Layer F0; SchemeAndStackFoundations Layer 1.
 
 ### 9.3 Nearby unitary framing datum
 
@@ -1792,24 +1798,27 @@ In the RSZ uniformization hypotheses, the full absolute p-local framed space N�
 
 ### 9.5 Unitary uniformization morphism
 
-For a chosen basic global CM pair and sufficiently small integral level, construct Θ from the arithmetic quotient G̃′(ℚ)∖(N′×G̃(𝔸_f^p)/K^p) to the completion of the integral model along the basic isogeny component. Starting from the framed p-divisible deformation and the away-p lattice/level data, use Serre–Tate effectivity and the quasi-isogeny pushout construction to recover the polarized abelian pair. Descent through quasi-isogenies makes the map independent of representatives. RZ96 Theorem 6.30 identifies the image with an open-and-closed basic sublocus Z′; equality with the full basic locus Z requires its Hasse hypothesis or a disjoint union over framing classes. (RZ96, §§6.13–6.16, pp. 282–284; Theorems 6.24, 6.27 and 6.30, pp. 291–295.)
+For a chosen basic global CM pair and sufficiently small integral level, construct Θ from the arithmetic quotient sheaf Q=G̃′(ℚ)∖(N′×G̃(𝔸_f^p)/K^p), represented initially by the formal algebraic space of §9.2, to the completion of the integral model along the basic isogeny component. Starting from the framed p-divisible deformation and the away-p lattice/level data, use Serre–Tate effectivity and the quasi-isogeny pushout construction to recover the polarized abelian pair. Descent through quasi-isogenies makes the map independent of representatives. Prove that Θ is an isomorphism of étale sheaves onto the completion along an open-and-closed basic sublocus Z′; thus Q is represented by that formal scheme. Equality with the full basic locus Z requires the Hasse hypothesis of RZ96 Theorem 6.30 or a disjoint union over framing classes. (RZ96, §§6.13–6.16, pp. 282–284; Theorem 6.23 and its proof, pp. 289–290; Theorems 6.24, 6.27 and 6.30, pp. 291–295.)
 
-*Route.* Construct the polarized abelian quasi-isogeny pushout for every finite locally closed framed chart; retain the exact CM factor. Use Serre–Tate (AbelianSchemesAndArithmeticModuli §A4.9) and effectivity of polarized formal lifts (§A4.8) to identify its infinitesimal functor with the local p-divisible deformation functor. Show fully faithful descent modulo the global quasi-isogeny group and compatibility with the tame level torsor. Use the basic rational comparison and Hasse partition for essential surjectivity; apply §9.2 to obtain an isomorphism onto the indicated completion.
+*Route.* Construct the polarized abelian quasi-isogeny pushout for every finite locally closed framed chart; retain the exact CM factor. Use Serre–Tate (AbelianSchemesAndArithmeticModuli §A4.9) and effectivity of polarized formal lifts (§A4.8) to compare the infinitesimal functors. Descend the construction to the quotient sheaf of §9.2. Prove full faithfulness modulo global quasi-isogenies, compatibility with the tame level torsor, and essential surjectivity onto the selected completion, using the basic rational comparison and the Hasse partition. These give the sheaf isomorphism and therefore formal-scheme representability. Alternatively, the quasi-finite representability argument of RZ96 Theorem 6.23, pp. 289–290, first makes Q a formal scheme using Θ; formal étaleness, radiciality, surjectivity and properness on the reduced loci then give the isomorphism. Neither route requires condition (ii) of §9.2 for the arithmetic action.
 
 **API.**
 
-- Θ is defined on a framed deformation together with its discrete and tame level data.
+- Θ is defined on a framed deformation together with its discrete and tame level data and descends to Q.
 - Changing by G̃′(ℚ) yields canonically isomorphic polarized abelian data.
-- On formal deformation rings Θ is the Serre–Tate/local-model comparison.
+- On infinitesimal deformation functors Θ is the Serre–Tate/local-model comparison.
+- Θ identifies Q with the indicated completed basic component as an étale sheaf; that completion represents Q by a formal scheme.
 - Θ commutes with permitted tame Hecke maps and the associated changes of level.
 
 **Checks.**
 
-- The RZ96 framing convention points from the fixed object to the deformation; use inversion to compare with the local ρ:X→𝕏 convention.
-- Without the Hasse hypothesis the theorem concludes Z′⊂Z open and closed, rather than equality with all Z.
-- Forgetting the CM torus coset before descent changes the source of Θ.
+- The RZ96 framing convention points from the fixed object to the deformation; use inversion to compare with the local ρ:X→𝕏 convention. For g=diag(3,1/3), gg⁻¹=id whereas g²=diag(9,1/9)≠id.
+- Without the Hasse hypothesis the theorem concludes Z′⊂Z open and closed, rather than equality with all Z: one chosen framing class among two accounts for one component of the partition.
+- When the CM quotient class set has two elements, the source of Θ retains both labelled fibres; deleting that class factor leaves one fibre instead of two.
+- The map Spec k→Spec(k[ε]/(ε²)) is bijective on geometric points but kills the one-dimensional tangent direction ε; the deformation comparison must therefore be an isomorphism on nilpotent bases, not merely on geometric points.
+- For the intersecting-component action in §9.2 the quotient map remains an étale torsor although every neighbourhood U of x has η₊∈U∩gU. The arithmetic uniformization proof obtains a formal scheme from Θ and its completed target, without asserting (ii) for such actions.
 
-*Needs:* §9.3; §9.4; AbelianSchemesAndArithmeticModuli §A4.9; AbelianSchemesAndArithmeticModuli §A4.8; §0.2; §9.2; §9.1.
+*Needs:* §9.3; §9.4; AbelianSchemesAndArithmeticModuli §A4.9; AbelianSchemesAndArithmeticModuli §A4.8; §0.2; §9.2 (the formal algebraic-space quotient and étale torsor); §9.1; the completed integral models of Layers 7–8, using AdicSpacesPartIII Layer F0.
 
 ### 9.6 Exotic basic-locus uniformization
 
@@ -1881,7 +1890,7 @@ The completion of the corrected mixed integral isogeny model at its chosen basic
 
 ### Examples
 
-- Discrete quotients. For Γ=ℤ acting on `𝔐=⊔_{h∈ℤ}𝔑` by shifting the index, the action is free and locally finite and Γ\𝔐≅𝔑; for Γ={±1} acting on N_n through U(V)(K), the element −1 fixes every point, so the quotient must be taken by the image of Γ in the automorphisms of N_n.
+- Discrete quotients. For Γ=ℤ acting on `𝔐=⊔_{h∈ℤ}𝔑` by shifting the index, (i)–(ii) of §9.2 hold and Γ∖𝔐≅𝔑. The rank-three intersecting-component action of §9.2 instead gives a formal algebraic-space quotient and an étale torsor without (ii). For Γ={±1} acting on N_n through U(V)(K), −1 fixes every point: the quotient sheaf is N_n, while the quotient stack retains the order-two stabilizer.
 - Tate–Dieudonné for a supersingular curve. For A=A′ a supersingular elliptic curve over F̄_p and K=ℚ, End⁰A⊗ℚ_ℓ=M₂(ℚ_ℓ) has dimension 4 for ℓ≠p, and at p both sides are the quaternion division algebra over ℚ_p of invariant 1/2.
 - Exotic normalization at n=2. On the same Hom space h′=(u²/ϖ)·h^exo; with val_u(ϖ)=1 the factor is a unit and a lattice self-dual for h^exo is self-dual for h′, while with val_u(ϖ)=0 the h′-dual of a self-dual lattice Λ is (u²/ϖ)⁻¹Λ≠Λ.
 
