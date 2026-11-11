@@ -2,7 +2,7 @@
 
 Reviewers, red-team passes and errata jobs record every mistake they find in a source while checking a roadmap's locators: misprints (slips whose intended meaning is clear), errors (a false statement or proof step) and gaps (a step the source does not justify), each with the roadmap, the board pull request or errata job and the head that reported it. Collected by the board sync from the `## Source issues` sections of review, red-team and errata comments; the data is in `errata/source-issues.json`.
 
-11874 mistakes recorded on the board: 6805 misprints, 3103 errors, 1502 gaps, 464 unparsed bullets.
+11884 mistakes recorded on the board: 6808 misprints, 3108 errors, 1504 gaps, 464 unparsed bullets.
 Errata jobs have read the cited sources of 60 roadmaps; in those of 2 they found no mistake.
 The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explorer/`: 1525 awaiting review, 13582 confirmed, 228 rejected.
 
@@ -1604,6 +1604,10 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 ## BCG25
 
 - **Misprint** at the proof of Theorem 3.1, printed p. 10: the source says "[Tho17, Thm. 7.1]"; it should be cite Tho17 Corollary 7.3 (or Theorem 5.1), there being no Theorem 7.1 in Tho17; affects nothing. Found by PotentialAutomorphyInfrastructurePartII (#2224 at 6b4e6a1, 2026-11-04, claude fable).
+
+## BCGGO2024
+
+- **Error** at §2.3, lines 471–472, printed p. 10: the source says the real form `SO_{p,q}` has two components whenever `p` or `q` is nonzero; it should be whenever both `p` and `q` are nonzero; affects nothing; <!-- tauceti-roadmap-review {"agent": "claude", "head": "fac7e2805c4378fe4b32170dcd537cae13bb3b6e", "job": "REV-DESIGN-SurfaceGroupCharacterVarieties~5", "model": "fable", "worker": "chris-x10"} -->. Found by SurfaceGroupCharacterVarieties (#13837 at fac7e28, 2026-11-11, claude fable).
 
 ## BCGNT25
 
@@ -3860,6 +3864,10 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 - **Error** at Remark 6.6, p. 30 (Carey-Johnson-Murray-Stevenson-Wang line 1382): the source says the matrix-valued Chern–Simons expression has cubic coefficient 1/3; it should be the cubic coefficient is 2/3, so its exterior derivative is Tr(F∧F); affects a stated result. Found by StringOrientation (ERRATA-StringOrientation at 4397700, 2026-10-24, codex gpt-6-astra).
 - **Misprint** at Theorem 6.7 proof, p. 31 (Carey-Johnson-Murray-Stevenson-Wang line 1407): the source says the classifying map is ψ composed after the target bundle’s classifying map; it should be compose in the opposite order: f₁=f₂∘ψ on base spaces; affects nothing. Found by StringOrientation (ERRATA-StringOrientation at 4397700, 2026-10-24, codex gpt-6-astra).
 
+## caspers-delasalle-2015
+
+- **Error** at Theorem 3.1, printed p. 6 (lines 282–287): the source says the strict bound `K` globally is equivalent to the strict bound `K` on every restriction; it should be use non-strict bounds, by the same example; affects a stated result. Found by SchattenClassesAndSchurMultipliers (#13838 at 29ae8c8, 2026-11-11, claude fable).
+
 ## Castella–Liu–Wan (CLW), Iwasawa–Greenberg main conjecture for non-ordinary modular forms and Eisenstein congruences on GU(3,1)
 
 - **Misprint** at the proof of the Eisenstein-ideal bound, §8, p. 78: the source says the order inequality with ≤; it should be ≥, since E ⊂ P^m gives ord_P ≥ m; affects nothing. Found by  (#129 at , 2026-10-23, backfill from earlier reviews (claude opus)).
@@ -4510,6 +4518,7 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 
 ## cgpt-2023
 
+- **Gap** at §1.2 before Lemma 1.3, printed p. 8 (lines 375–378): the source says the periodised operator has mean zero for every `k`; it should be require `4^k ≥ √n`, since two points of one grid cube can be at distance `≥ 2^{−k}` when `n ≥ 2`; affects the proof. Found by SchattenClassesAndSchurMultipliers (#13838 at 29ae8c8, 2026-11-11, claude fable).
 - **Error** at §1.2, lines 375–378, printed p. 8: the source says `π_k ∘ J_k(A)` has mean zero on `𝕋ⁿ` for every `k`, because `J_k(A)_{xy} ≠ 0` forces `m_k(x) ≠ m_k(y)`; for `n = 2`, `k = 0`, `x = (0.05, 0.05)`, `y = (0.95, 0.95)` one has `|x − y| = 0.9√2 ≥ 1` and `m₀(x) = m₀(y)`; it should be asserted for `4^k ≥ √n`; affects the proof; (only large `k` is used, so the conclusion stands). <!-- tauceti-roadmap-review {"agent": "claude", "head": "039bca4b4f8af8d2eb0028f8e6cfbf908754f79e", "job": "REV-DESIGN-SchattenClassesAndSchurMultipliers", "model": "fable", "worker": "chris-x10"} -->. Found by SchattenClassesAndSchurMultipliers (#7622 at 039bca4, 2026-11-07, claude fable).
 - **Error** at §1.2, lines 375–378, printed p. 8: the source says `π_k ∘ J_k(A)` has mean zero on `𝕋ⁿ` for every `k`, because `J_k(A)_{xy} ≠ 0` forces `m_k(x) ≠ m_k(y)`; for `n = 2`, `k = 0`, `x = (0.05, 0.05)`, `y = (0.95, 0.95)` one has `|x − y| ≥ 1` with `m₀(x) = m₀(y)`; it should be asserted for `4^k ≥ √n`; affects the proof; (only large `k` is used, so the conclusion stands). <!-- tauceti-roadmap-review {"agent": "claude", "head": "ba5db01a912a9e5521272685dd489ad3e3e5da71", "job": "REV-DESIGN-SchattenClassesAndSchurMultipliers~2", "model": "fable", "worker": "chris-x10"} -->. Found by SchattenClassesAndSchurMultipliers (#7622 at ba5db01, 2026-11-07, claude fable).
 
@@ -10260,8 +10269,14 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 - **Misprint** at Lemma 1.9, proof, line 348, printed p. 8: the source says the source names the target of `A ↦ UAU*` as `S_p(L²(X, ν))`; it should be `S_p(L²(X, μ))`; affects nothing. Found by SchattenClassesAndSchurMultipliers (#7622 at 039bca4, 2026-11-07, claude fable).
 - **Misprint** at Remark 1.4, line 249, printed p. 6: the source says `S_q = [S_p, S_{p'}]_θ` with `1/q = θ/p' + (1−θ)/p` for `2 ≤ p ≤ q`, whose right side lies in `[1/p, 1/p']` and cannot equal `1/q < 1/p`; it should be `S_p = [S_q, S_{q'}]_θ` with `1/p = θ/q' + (1−θ)/q`; affects nothing; (the inequality `‖φ‖_{M S_p} ≤ ‖φ‖_{M S_q}` stands). Found by SchattenClassesAndSchurMultipliers (#7622 at 039bca4, 2026-11-07, claude fable).
 - **Misprint** at Remark 1.4, line 249, printed p. 6: the source says the interpolation identity with `1/q = θ/p' + (1−θ)/p` for `2 ≤ p ≤ q`, whose right side lies between `1/p` and `1/p'` and cannot equal `1/q < 1/p` unless `p = q`; it should be `S_p = [S_q, S_{q'}]_θ` with `1/p = θ/q' + (1−θ)/q`; affects nothing. Found by SchattenClassesAndSchurMultipliers (#7622 at ba5db01, 2026-11-07, claude fable).
+- **Misprint** at Remark 1.4, printed p. 6 (line 249): the source says `S_q` is the interpolation space between `S_p` and `S_{p'}` for `2 ≤ p ≤ q`; it should be `S_p` between `S_q` and `S_{q'}`, with `1/p = θ/q' + (1 − θ)/q`; affects nothing. Found by SchattenClassesAndSchurMultipliers (#13838 at 29ae8c8, 2026-11-11, claude fable).
+- **Error** at Remark 1.6, printed p. 7 (lines 262–266): the source says the completely bounded norm is unchanged for every auxiliary σ-finite space; it should be require a nonzero auxiliary measure, the zero measure giving norm zero; affects a stated result. Found by SchattenClassesAndSchurMultipliers (#13838 at 29ae8c8, 2026-11-11, claude fable).
+- **Error** at Theorem 1.19, printed p. 13 (lines 524–531): the source says norm strictly below `C` globally is equivalent to norm strictly below `C` on every finite subset of the support; it should be use non-strict bounds (on `ℕ`, `M(i, j) = 1 − 1/(i + 1)`, `C = 1`); affects a stated result. Found by SchattenClassesAndSchurMultipliers (#13838 at 29ae8c8, 2026-11-11, claude fable).
 - **Gap** at Theorem 1.7, proof, lines 312–313, printed p. 8: the source says a filtration of finite σ-algebras whose martingale converges almost surely to `φ` without justifying its existence when the σ-algebra is not countably generated; it should be first pass to a countably generated sub-σ-algebra carrying `φ`; affects the proof. Found by SchattenClassesAndSchurMultipliers (#7622 at 039bca4, 2026-11-07, claude fable).
+- **Error** at the opening of §2, printed p. 15 (lines 590–593): the source says a Haar measure is σ-finite exactly when the group is second countable; it should be second countability suffices (an uncountable product of two-element groups is compact, with finite Haar measure); affects nothing; <!-- tauceti-roadmap-review {"agent": "claude", "head": "29ae8c8293c41d0f9064f98e5fbde156112ee785", "job": "REV-DESIGN-SchattenClassesAndSchurMultipliers~4", "model": "fable", "worker": "chris-l"} -->. Found by SchattenClassesAndSchurMultipliers (#13838 at 29ae8c8, 2026-11-11, claude fable).
+- **Misprint** at the proof of Lemma 1.9, printed p. 8 (line 348): the source says the conjugation embeds into the Schatten class of the `ν`-space; it should be the Schatten class of the `μ`-space; affects nothing. Found by SchattenClassesAndSchurMultipliers (#13838 at 29ae8c8, 2026-11-11, claude fable).
 - **Gap** at §1.4, lines 487–488, printed p. 12: the source says an atom as a measurable set that cannot be split into two sets of positive measure, so every null set is an atom and the hypothesis "no atom" of Theorem 1.18 is never satisfied; it should be require the atom to have positive measure; affects a stated result; (the hypothesis of Theorem 1.18 must be read with positive measure). Found by SchattenClassesAndSchurMultipliers (#7622 at 039bca4, 2026-11-07, claude fable).
+- **Gap** at §1.4, printed p. 12 (lines 487–488): the source says an atom is a measurable set that cannot be split into two sets of positive measure; it should be also require positive measure, or every null set is an atom; affects a stated result. Found by SchattenClassesAndSchurMultipliers (#13838 at 29ae8c8, 2026-11-11, claude fable).
 
 ## Lagarias–Li, arXiv:1506.06161v1
 
@@ -13670,6 +13685,7 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 ## Sikora2012
 
 - **Misprint** at §11, line 836, printed p. 18: the source says the source refers to "Proposition 30" for the closed-orbit characterization; it should be Theorem 30 (line 572); affects nothing; <!-- tauceti-roadmap-review {"agent": "claude", "head": "19b9aa348ffab45dc1c17c8587cb7f7998a08a70", "job": "REV-DESIGN-SurfaceGroupCharacterVarieties~2", "model": "fable", "worker": "chris-x17"} -->. Found by SurfaceGroupCharacterVarieties (#9066 at 19b9aa3, 2026-11-08, claude fable).
+- **Misprint** at §11, line 836, printed p. 18: the source says the source refers to a Proposition 30 for the closed-orbit characterization; it should be Theorem 30 (line 572); affects nothing. Found by SurfaceGroupCharacterVarieties (#13837 at fac7e28, 2026-11-11, claude fable).
 
 ## Silliman, arXiv:2009.14353v2
 
