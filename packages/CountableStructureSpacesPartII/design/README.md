@@ -25,9 +25,11 @@ This roadmap continues CountableStructureSpaces, which stops at the isomorphism 
 single class (its Layers 4 and 6) and names Borel completeness of graphs and linear orders as
 outside its scope. This Part II owns:
 
-- the restriction `classIso K` of isomorphism to a class `K`, the restriction and corestriction
-  laws for Borel reductions between classes, and set reducibility `SetReducible` with the
-  implication from Borel reducibility (Layer 0);
+- the restriction `classIso K` of isomorphism to a set `K` of codes on any carrier (it differs
+  from CountableModelCounting Layer 0's `isoSetoidOn α φ`, the restriction to the models of one
+  sentence, in allowing arbitrary, possibly non-invariant, sets, as Layers 0.1 and 5 need), the
+  restriction and corestriction laws for Borel reductions between classes, and set reducibility
+  `SetReducible` with the implication from Borel reducibility (Layer 0);
 - carrier relabelling of codes as a homeomorphism compatible with decoding (the underlying map is
   Tau Ceti's `RelationalConfiguration.restrict`), the definition `BorelComplete` with its transfer
   laws, and the functional coding space of a language with function symbols with its comparison
@@ -95,12 +97,14 @@ Layer 5 and Layer 6.4; nothing below depends on them.
 2. **Classes and their isomorphism relations.** Codes on a carrier `α` are Tau Ceti's
    `RelationalConfiguration L α`, read by `c.eval (atom R v)`; codes on ℕ are written
    `RelationalConfiguration L ℕ`, with no abbreviation. A class is a set
-   `K : Set (RelationalConfiguration L ℕ)`. It is *invariant Borel* when `MeasurableSet K` and Tau
-   Ceti's `RelationalConfiguration.IsomorphismInvariant K` hold (equivalently
-   `MulAction.IsInvariantBlock (Equiv.Perm ℕ) K`, Tau Ceti
-   `isomorphismInvariant_iff_isInvariantBlock`). `classIso K` is Tau Ceti's `isoSetoid L ℕ`
-   pulled back to the subtype `K`, written ≅_K; `K` carries the subtype σ-algebra. A Borel
-   reduction between classes is `Setoid.BorelReducible (classIso K') (classIso K)`.
+   `K : Set (RelationalConfiguration L α)`; where no carrier is named, `α = ℕ`, and Borel
+   completeness is defined for classes on ℕ only. A class is *invariant Borel* when
+   `MeasurableSet K` and Tau Ceti's `RelationalConfiguration.IsomorphismInvariant K` hold
+   (equivalently `MulAction.IsInvariantBlock (Equiv.Perm α) K`, Tau Ceti
+   `isomorphismInvariant_iff_isInvariantBlock`). For relational `L` and every carrier `α`,
+   `classIso K` is Tau Ceti's `isoSetoid L α` pulled back to the subtype `K`, written ≅_K; `K`
+   carries the subtype σ-algebra. A Borel reduction between classes is
+   `Setoid.BorelReducible (classIso K') (classIso K)`.
 3. **Continuity.** Every reduction constructed in Layers 2 and 3 is continuous on the whole coding
    space; the theorems state this strengthening where it holds.
 4. **The logic action.** Tau Ceti's relabelling action, `σ • c = c.restrict σ⁻¹`
@@ -299,26 +303,31 @@ Ceti's `BFEquiv` and Mathlib's ordinals and can be built in parallel with Layers
 
 ### 0.1 Isomorphism restricted to a class
 
-Define `classIso K : Setoid K` for `K : Set (RelationalConfiguration L ℕ)` as `Setoid.comap` of
-Tau Ceti's `isoSetoid L ℕ` along the inclusion `K → RelationalConfiguration L ℕ`, with `K` carrying
-the subtype σ-algebra (paolini-shelah-tfab Definition 1.4, line 83; camerlo-gao-boolean
-lines 106–110). API:
+For a relational language `L` (`[L.IsRelational]`; no countability is needed) and any carrier
+`α`, define `classIso K : Setoid K` for `K : Set (RelationalConfiguration L α)` as
+`Setoid.comap Subtype.val (isoSetoid L α)`, the pullback of Tau Ceti's `isoSetoid L α` along the
+inclusion `K → RelationalConfiguration L α`, with `K` carrying the subtype σ-algebra
+(paolini-shelah-tfab Definition 1.4, line 83; camerlo-gao-boolean lines 106–110, where the
+carrier is ℕ; the other carriers are used for relabelling in Layer 1.1). API:
 
 - Unfolding: for `x y : K`, `classIso K x y` holds exactly when the decoded structures of `x` and
   `y` are isomorphic (`isoSetoid_apply`), and exactly when `x` and `y` lie in one orbit of the
-  logic action (`isoSetoid_eq_orbitRel`).
+  logic action of `Equiv.Perm α` (`isoSetoid_eq_orbitRel`).
 - Whole space: for `K = Set.univ` the inclusion is a measurable equivalence, so `classIso univ`
-  and `isoSetoid L ℕ` are Borel reducible to each other.
-- Restriction: if `A ⊆ K` then `classIso A` is `Setoid.comap` of `classIso K` along the inclusion
-  `A → K`, which is measurable for every `A` (`measurable_subtype_coe`, `Measurable.subtype_mk`),
-  so `classIso A` is Borel reducible to `classIso K` (`Setoid.borelReducible_comap`); hence, if
-  `classIso K'` is Borel reducible to `classIso K` and `A ⊆ K'`, then `classIso A` is Borel
-  reducible to `classIso K` (paolini-shelah-tfab Definition 1.6, lines 95–101).
-- Corestriction: if `f : RelationalConfiguration L' ℕ → RelationalConfiguration L ℕ` is
-  measurable, maps `K'` into `K`, and for all `x y ∈ K'` the codes `x, y` are isomorphic exactly
-  when `f x, f y` are, then `classIso K'` is Borel reducible to `classIso K`, by the corestriction
-  of `f` (`Setoid.borelReducible_iff_exists_eq_comap`). Every reduction constructed in this
-  roadmap is produced this way.
+  and `isoSetoid L α` are Borel reducible to each other.
+- Restriction: if `A ⊆ K` are sets of codes on one carrier, then `classIso A` is `Setoid.comap`
+  of `classIso K` along the inclusion `A → K`, which is measurable for every `A`
+  (`measurable_subtype_coe`, `Measurable.subtype_mk`), so `classIso A` is Borel reducible to
+  `classIso K` (`Setoid.borelReducible_comap`); hence, if `classIso K'` is Borel reducible to
+  `classIso K` and `A ⊆ K'`, then `classIso A` is Borel reducible to `classIso K`
+  (paolini-shelah-tfab Definition 1.6, lines 95–101).
+- Corestriction: for relational `L'` and carriers `β`, `α`, if
+  `f : RelationalConfiguration L' β → RelationalConfiguration L α` is measurable, maps
+  `K' : Set (RelationalConfiguration L' β)` into `K : Set (RelationalConfiguration L α)`, and for
+  all `x y ∈ K'` the codes `x, y` are isomorphic exactly when `f x, f y` are, then `classIso K'`
+  is Borel reducible to `classIso K`, by the corestriction of `f`
+  (`Setoid.borelReducible_iff_exists_eq_comap`). Every reduction constructed in this roadmap is
+  produced this way.
 - Quotients: a reduction of `classIso K'` to `classIso K` induces an injection of the set of
   isomorphism types of `K'` into that of `K` (`BorelReducible.exists_measurable_injective_quotient`,
   not restated); the reduction itself need not be injective on codes.
@@ -340,6 +349,10 @@ lines 106–110). API:
   `classIso K`, and is not injective on codes: reductions are not injective in general.
 - With `A` the codes with `P = {0}` (not invariant) inside `K` the codes with `|P| = 1`, the
   inclusion reduces `classIso A` to `classIso K`; `classIso A` has one class, as `K` does.
+- On the finite carrier `Fin 2`, with one unary predicate, `classIso univ` has three classes on
+  the four codes (`|P| = 0, 1, 2`): the codes `P = {0}` and `P = {1}` are related, by the
+  transposition, so `classIso univ` is not equality on codes, and `P = ∅`, `P = {0}` are not, so
+  it is not the trivial relation.
 
 ### 0.2 Set reducibility and the comparison with Borel reducibility
 
@@ -417,13 +430,19 @@ lines 159–164). API:
   at `atom R w`, by `eval_restrict` and `eval_encodeVia`); so `c` and its relabelling decode to
   isomorphic structures (`Equiv.nonempty_equiv_encodeVia`), and two codes on `α` are isomorphic
   exactly when their relabellings are (`Equiv.isoSetoid_encodeVia_iff`).
-- Relabelling maps invariant Borel classes to invariant Borel classes, and `classIso` of a class
-  and of its image are Borel reducible to each other.
+- For relational `L` and any `K : Set (RelationalConfiguration L α)`, with image
+  `K₂ : Set (RelationalConfiguration L β)` under relabelling along `e`: if `K` is invariant Borel
+  then so is `K₂` (relabelling is a measurable equivalence that preserves and reflects
+  isomorphism); and `classIso K` and `classIso K₂` (Layer 0.1, on the carriers `α` and `β`) are
+  Borel reducible to each other, by the Layer 0.1 corestriction of relabelling along `e` and of
+  relabelling along `e.symm`, which restrict to mutually inverse measurable bijections between
+  `K` and `K₂`.
 
-*Needs:* Tau Ceti `RelationalConfiguration`, `restrict`, `eval_restrict`, `restrict_id`,
-`restrict_comp`, `measurable_restrict`, `continuous_restrict`, `perm_smul_def`,
-`Equiv.encodeVia`, `eval_encodeVia`, `Equiv.nonempty_equiv_encodeVia`,
-`Equiv.isoSetoid_encodeVia_iff`.
+*Needs:* Layer 0.1 (`classIso` on arbitrary carriers and its corestriction law); Tau Ceti
+`RelationalConfiguration`, `restrict`, `eval_restrict`, `restrict_id`, `restrict_comp`,
+`measurable_restrict`, `continuous_restrict`, `perm_smul_def`, `Equiv.encodeVia`,
+`eval_encodeVia`, `Equiv.nonempty_equiv_encodeVia`, `Equiv.isoSetoid_encodeVia_iff`,
+`IsomorphismInvariant`.
 
 **Checks.**
 
@@ -432,7 +451,16 @@ lines 159–164). API:
   transposition.
 - For `α = Fin 0`, the space of codes in a language with no nullary symbols is a single point and
   relabelling along `Fin 0 ≃ Fin 0` is the identity; with one nullary symbol it is two points,
-  both fixed.
+  both fixed. For `K` the whole coding space on `Fin 0`, `classIso K` has one class in the first
+  case and two in the second (the nullary symbol holds in one code and fails in the other, so no
+  isomorphism of the empty structures exists), and the identity reduces it to itself in both
+  directions.
+- In the language of one unary predicate on `Fin 3`, with `e` the 3-cycle `0 ↦ 1 ↦ 2 ↦ 0`, the
+  one-code class `A` of `P = {0}` relabels to the one-code class of `P = {1}`, since the new
+  predicate is `e(P)`; the reverse convention (relabelling by `restrict e`) would give
+  `P = {2}`. Both classes have one `classIso` class. The class `K` of all eight codes is
+  invariant and is its own image; `classIso K` has four classes (`|P| = 0, 1, 2, 3`), each mapped
+  onto itself.
 - Relabelling along `e` followed by relabelling along `e.symm` is the identity on codes;
   relabelling along `e` twice is not the identity when `e` is a 3-cycle of `ℕ` and the code is
   `P = {0}`.

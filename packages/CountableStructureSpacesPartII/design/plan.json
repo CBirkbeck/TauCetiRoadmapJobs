@@ -137,9 +137,10 @@
      "id": "0.1",
      "kind": "definition",
      "name": "classIso",
-     "statement": "For K : Set (RelationalConfiguration L ℕ), classIso K : Setoid K is Setoid.comap of Tau Ceti's isoSetoid L ℕ along the inclusion K → RelationalConfiguration L ℕ; K carries the subtype σ-algebra.",
+     "statement": "For any carrier α and K : Set (RelationalConfiguration L α), classIso K : Setoid K := Setoid.comap Subtype.val (isoSetoid L α), the pullback of Tau Ceti's isoSetoid L α along the inclusion K → RelationalConfiguration L α; K carries the subtype σ-algebra. BorelComplete (1.2) uses it on ℕ; relabelling (1.1) uses it on arbitrary carriers.",
      "hypotheses": [
-      "L is a relational first-order language ([L.IsRelational]) (no countability needed for the definition)"
+      "L is a relational first-order language ([L.IsRelational]) (no countability needed for the definition)",
+      "α : Type w an arbitrary carrier (finite, empty or infinite)"
      ],
      "locator": {
       "source": "paolini-shelah-tfab",
@@ -155,12 +156,12 @@
       {
        "name": "classIso_iff",
        "role": "unfolding",
-       "statement": "For x y : K, classIso K x y holds iff the decoded structures of x and y are isomorphic (isoSetoid_apply), iff x and y lie in one orbit of the logic action (isoSetoid_eq_orbitRel)."
+       "statement": "For x y : K, classIso K x y holds iff the decoded structures of x and y are isomorphic (isoSetoid_apply), iff x and y lie in one orbit of the logic action of Equiv.Perm α (isoSetoid_eq_orbitRel)."
       },
       {
        "name": "borelReducible_classIso_univ",
        "role": "compatibility",
-       "statement": "classIso Set.univ and isoSetoid L ℕ are Borel reducible to each other, the inclusion of univ being a measurable equivalence."
+       "statement": "On every carrier α, classIso (Set.univ : Set (RelationalConfiguration L α)) and isoSetoid L α are Borel reducible to each other, the inclusion of univ being a measurable equivalence."
       },
       {
        "name": "quotient_injection",
@@ -188,6 +189,11 @@
        "name": "noninvariant_subclass",
        "kind": "compatibility",
        "statement": "For A the single code P = {0} inside the class |P| = 1, the inclusion reduces classIso A to classIso K; both have one class."
+      },
+      {
+       "name": "finite_carrier",
+       "kind": "computation",
+       "statement": "On the carrier Fin 2 with one unary predicate, classIso univ has three classes on four codes (|P| = 0, 1, 2): P = {0} and P = {1} are related (not equality on codes), P = ∅ and P = {0} are not (not the trivial relation)."
       }
      ]
     },
@@ -195,10 +201,10 @@
      "id": "0.2",
      "kind": "theorem",
      "name": "borelReducible_classIso_of_subset",
-     "statement": "If A ⊆ K then classIso A is Borel reducible to classIso K; hence if classIso K' is Borel reducible to classIso K and A ⊆ K', then classIso A is Borel reducible to classIso K. Route: classIso A is Setoid.comap of classIso K along the measurable inclusion A → K, and Tau Ceti's Setoid.borelReducible_comap applies.",
+     "statement": "For sets A ⊆ K of codes on one carrier α, classIso A is Borel reducible to classIso K; hence if classIso K' is Borel reducible to classIso K and A ⊆ K', then classIso A is Borel reducible to classIso K. Route: classIso A is Setoid.comap of classIso K along the measurable inclusion A → K, and Tau Ceti's Setoid.borelReducible_comap applies.",
      "hypotheses": [
       "L is a relational first-order language ([L.IsRelational])",
-      "A, K, K' arbitrary sets of codes (no Borelness needed)"
+      "A, K, K' arbitrary sets of codes of relational languages on arbitrary carriers (no Borelness needed); the two sides of each inclusion are codes of one language on one carrier"
      ],
      "locator": {
       "source": "paolini-shelah-tfab",
@@ -224,10 +230,11 @@
      "id": "0.3",
      "kind": "theorem",
      "name": "borelReducible_classIso_of_measurable",
-     "statement": "If f : RelationalConfiguration L' ℕ → RelationalConfiguration L ℕ is measurable, maps K' into K, and for all x y ∈ K' the codes x, y are isomorphic iff f x, f y are, then classIso K' is Borel reducible to classIso K. Route: the corestriction K' → K of f is measurable and Tau Ceti's Setoid.borelReducible_iff_exists_eq_comap applies.",
+     "statement": "For carriers β and α, if f : RelationalConfiguration L' β → RelationalConfiguration L α is measurable, maps K' : Set (RelationalConfiguration L' β) into K : Set (RelationalConfiguration L α), and for all x y ∈ K' the codes x, y are isomorphic iff f x, f y are, then classIso K' is Borel reducible to classIso K. Route: the corestriction K' → K of f is measurable and Tau Ceti's Setoid.borelReducible_iff_exists_eq_comap applies.",
      "hypotheses": [
-      "L is a relational first-order language ([L.IsRelational]) with countably many relation symbols ([∀ n, Countable (L.Relations n)])",
+      "L is a relational first-order language ([L.IsRelational]) (no countability needed)",
       "L' relational",
+      "α, β arbitrary carriers",
       "f measurable"
      ],
      "locator": {
@@ -366,14 +373,16 @@
      "name": "relabelHomeomorph",
      "statement": "For any language L and e : α ≃ β, relabelling along e is Tau Ceti's RelationalConfiguration.restrict e.symm : RelationalConfiguration L α → RelationalConfiguration L β (value c.eval (atom R (e.symm ∘ w)) at atom R w). Bundle it as a homeomorphism and measurable equivalence with inverse restrict e. The library has the unbundled map with restrict_id, restrict_comp, measurable_restrict and continuous_restrict, and identifies relabelling with transport of the decoded structure only for permutations (perm_smul_eq_encodeVia); the bundled equivalence and the identification for an arbitrary bijection are new.",
      "hypotheses": [
-      "any language L",
-      "e : α ≃ β"
+      "any language L (relational, [L.IsRelational], for the decoding, isomorphism and classIso statements)",
+      "e : α ≃ β for arbitrary carriers α, β"
      ],
      "locator": {
       "source": "becker-kechris-bams",
       "where": "lines 159–164 (the logic action as relabelling of structures on ℕ)"
      },
      "prerequisites": [
+      "target:0.1",
+      "target:0.3",
       "tauceti:TauCeti.RelationalConfiguration.restrict",
       "tauceti:TauCeti.RelationalConfiguration.restrict_comp",
       "tauceti:TauCeti.RelationalConfiguration.continuous_restrict",
@@ -399,7 +408,7 @@
       {
        "name": "relabelHomeomorph_iso_iff",
        "role": "characterisation",
-       "statement": "Two codes on α are isomorphic iff their relabellings are (Equiv.isoSetoid_encodeVia_iff); invariant Borel classes map to invariant Borel classes, and classIso of a class and of its image are Borel reducible to each other."
+       "statement": "For relational L, two codes on α are isomorphic iff their relabellings are (Equiv.isoSetoid_encodeVia_iff). For any K : Set (RelationalConfiguration L α) with image K₂ : Set (RelationalConfiguration L β): K invariant Borel implies K₂ invariant Borel; classIso K and classIso K₂ (0.1 on the carriers α and β) are Borel reducible to each other, by the corestriction law 0.3 applied to relabelling along e and along e.symm, which restrict to mutually inverse measurable bijections K ≃ K₂."
       }
      ],
      "tests": [
@@ -411,7 +420,12 @@
       {
        "name": "fin_zero",
        "kind": "degenerate",
-       "statement": "On Fin 0 the coding space of a language without nullary symbols is one point and relabelling is the identity; with one nullary symbol, two fixed points."
+       "statement": "On Fin 0 the coding space of a language without nullary symbols is one point and relabelling is the identity; with one nullary symbol, two fixed points. For K the whole coding space on Fin 0, classIso K has one class, respectively two (the nullary symbol separates the two codes), and the identity reduces it to itself both ways."
+      },
+      {
+       "name": "fin_three_direction",
+       "kind": "computation",
+       "statement": "One unary predicate on Fin 3, e the 3-cycle 0 ↦ 1 ↦ 2 ↦ 0: the class {P = {0}} relabels to {P = {1}} (new predicate e(P)); the reverse convention restrict e would give {P = {2}}. Both have one classIso class. The class of all eight codes is invariant, its own image, and classIso of it has four classes (|P| = 0, 1, 2, 3), each mapped onto itself."
       },
       {
        "name": "three_cycle_twice",
