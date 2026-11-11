@@ -299,3 +299,115 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-10"
 cited_for = ["a smooth algebraic space over a field is regular (Lemma 72.16.1, Tag 06M1): the supplier contract gap:reduced-regular-smooth-local of targets 3.1, 3.4"]
+
+[[source]]
+id = "stacks-morphisms-spaces"
+authors = "The Stacks Project Authors"
+title = "The Stacks Project, Morphisms of Algebraic Spaces"
+year = 2026
+locator_scheme = "theorem"
+locator = "Morphisms of Spaces, Lemma 67.10.8 and Proposition 67.32.1"
+url = "https://stacks.math.columbia.edu/download/spaces-morphisms.pdf"
+fetched_from = "https://stacks.math.columbia.edu/download/spaces-morphisms.pdf"
+fetched_at = "2026-11-11T12:45:19Z"
+sha256 = "46497665981806a93d5b2f315314555ba457aaed3d967bf2d8f0cd4a2310e161"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-11"
+cited_for = ["0.2; gap:generic-flatness-spaces"]
+
+[[source]]
+id = "stacks-properties-spaces"
+authors = "The Stacks Project Authors"
+title = "The Stacks Project, Properties of Algebraic Spaces"
+year = 2026
+locator_scheme = "theorem"
+locator = "Properties of Spaces, Proposition 66.13.3"
+url = "https://stacks.math.columbia.edu/download/spaces-properties.pdf"
+fetched_from = "https://stacks.math.columbia.edu/download/spaces-properties.pdf"
+fetched_at = "2026-11-11T12:45:22Z"
+sha256 = "7f71f8371bd2040b4cd3ec6171420ef6a1ce14f7a0a334d32c6d04821e1741bc"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-11"
+cited_for = ["gap:quasi-separated-space-schematic-locus"]
+
+[[source]]
+id = "stacks-groupoids-spaces"
+authors = "The Stacks Project Authors"
+title = "The Stacks Project, Groupoids in Algebraic Spaces"
+year = 2026
+locator_scheme = "theorem"
+locator = "Groupoids in Spaces, Lemmas 78.25.1 and 78.27.1-78.27.2"
+url = "https://stacks.math.columbia.edu/download/spaces-groupoids.pdf"
+fetched_from = "https://stacks.math.columbia.edu/download/spaces-groupoids.pdf"
+fetched_at = "2026-11-11T12:45:24Z"
+sha256 = "530a97af19dd13c53cddd32663181e19c535623a6898ad3dfb8192b750a49b56"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-11"
+cited_for = ["gap:flat-groupoid-quotients"]
+
+[[source]]
+id = "stacks-more-groupoids-spaces"
+authors = "The Stacks Project Authors"
+title = "The Stacks Project, More on Groupoids in Spaces"
+year = 2026
+locator_scheme = "theorem"
+locator = "More on Groupoids in Spaces, Lemma 79.9.4 and Proposition 79.10.3"
+url = "https://stacks.math.columbia.edu/download/spaces-more-groupoids.pdf"
+fetched_from = "https://stacks.math.columbia.edu/download/spaces-more-groupoids.pdf"
+fetched_at = "2026-11-11T12:45:25Z"
+sha256 = "5345c7115ed66a84a3ebfd92a468c4aa5f3c0aa8ec9f0b89cb57482065058971"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-11"
+cited_for = ["gap:group-spaces-over-fields"]
+
+[[source]]
+id = "stacks-artin"
+authors = "The Stacks Project Authors"
+title = "The Stacks Project, Artin’s Axioms"
+year = 2026
+locator_scheme = "theorem"
+locator = "Artin Axioms, Lemma 98.5.2 and Section 98.8"
+url = "https://stacks.math.columbia.edu/download/artin.pdf"
+fetched_from = "https://stacks.math.columbia.edu/download/artin.pdf"
+fetched_at = "2026-11-11T12:45:30Z"
+sha256 = "c90df80ae07d0b1a1bc5a886c5deea52fe07dcc2623e5903099333a144628bb2"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-11"
+cited_for = ["gap:algebraic-stacks-satisfy-rs"]
+
+[[source]]
+id = "stacks-algebraic-stacks"
+authors = "The Stacks Project Authors"
+title = "The Stacks Project, Algebraic Stacks"
+year = 2026
+locator_scheme = "theorem"
+locator = "Lemma 94.16.1 and Remark 94.16.3"
+url = "https://stacks.math.columbia.edu/tag/04T3"
+fetched_from = "https://stacks.math.columbia.edu/download/algebraic.pdf#nameddest=04T3"
+fetched_at = "2026-11-11T12:46:35Z"
+sha256 = "057f76954c64c7d41533316738ee5710efc452486c1d48ab688f5a1c59296689"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-11"
+cited_for = ["gap:flat-groupoid-quotients"]
+
+[[source]]
+id = "stacks-formal-defos"
+authors = "The Stacks Project Authors"
+title = "The Stacks Project, Formal Deformation Theory"
+year = 2026
+locator_scheme = "section"
+locator = "Section 90.29, Change of residue field"
+url = "https://stacks.math.columbia.edu/download/formal-defos.pdf"
+fetched_from = "https://stacks.math.columbia.edu/download/formal-defos.pdf"
+fetched_at = "2026-11-11T12:47:20Z"
+sha256 = "f6549caab0fa380254eb316265ce14357794224c0e01c517bb0365c708a4c2ea"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-11"
+cited_for = ["gap:algebraic-stacks-satisfy-rs; 7.3"]
