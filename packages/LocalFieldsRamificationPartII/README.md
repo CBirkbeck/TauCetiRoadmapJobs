@@ -445,18 +445,27 @@ module; everything below is arranged so that no module finiteness is used.
 
 Let `V` be a valuation subring of `K` and `L/K` a finite extension. Prove that the integral closure
 `B` of `V` in `L` is semilocal, that its maximal ideals are in bijection with the prolongations of
-`V` to `L`, the prolongation at `𝔪` being `B_𝔪`, and that every localization of an integrally closed
-`V`-subalgebra `A ⊆ L` is a valuation ring of `Frac A` (Aïd 2025, Propositions 3.3 and 3.6 and
-Theorem 3.7, pp. 5–9, and Proposition 4.1 and Theorem 4.4, pp. 10–13; Temkin 2017, Lemma 2.3.4,
-p. 105). Route: a polynomial relation normalized at a coefficient of least value shows that `x` or
-`x⁻¹` lies in `B_𝔪`; `dim_κ B/J(B) ≤ [L : K]` makes `B/J(B)` a finite product of fields; for `A`
-integrally closed, each localization contains a localization of the normalization and is therefore a
-valuation ring. *Needs:* Mathlib `ValuationSubring`, `integralClosure`, `ValuationSubring.ofLE`.
+`V` to `L`, the prolongation at `𝔪` being `B_𝔪`, and that for a `V`-subalgebra `A ⊆ L` integrally
+closed in `Frac A` and every prime ideal `𝔮` of `A` the localization `A_𝔮` is a valuation ring of
+`Frac A`, so that `A` is a Prüfer domain (Aïd 2025, Propositions 3.3 and 3.6 and Theorem 3.7,
+pp. 5–9, and Proposition 4.1 and Theorem 4.4, pp. 10–13; Temkin 2017, Lemma 2.3.4, p. 105, whose
+proof works with `A_𝔮`). `A` itself need not be local. Route: a polynomial relation normalized at a
+coefficient of least value shows that `x` or `x⁻¹` lies in `B_𝔪`; `dim_κ B/J(B) ≤ [L : K]` makes
+`B/J(B)` a finite product of fields; for `A` integrally closed in `Frac A`, `A` contains the
+normalization `B_A` of `V` in the finite extension `Frac A` of `K`, so `A_𝔮` contains the
+localization of `B_A` at the prime `𝔮 ∩ B_A`, an overring in `Frac A` of a localization of `B_A` at a
+maximal ideal and hence a valuation ring of `Frac A`; every subring of `Frac A` containing a valuation
+ring of `Frac A` is one. *Needs:* Mathlib `ValuationSubring`, `integralClosure`, `ValuationSubring.ofLE`.
 
 **Checks.**
 - For `V` a field (trivial valuation) `B = L` has one maximal ideal `0` and one prolongation.
 - For `ℚ(√2)/ℚ` and `V = ℤ_(7)`, `B = ℤ[√2]_(7)` has two maximal ideals, over `3 ± √2`, and there
   are two prolongations; for `V = ℤ_(3)` there is one (`2` is not a square modulo `3`).
+- The Prüfer statement concerns localizations at primes, not arbitrary localizations: for
+  `V = ℤ_(7)` and `A = ℤ[√2]_(7)` (integrally closed, and its own localization at `{1}`), the element
+  `x = (3 − √2)/(3 + √2)` has normalized value `1` at the prime over `3 − √2` and `−1` at the prime
+  over `3 + √2`, so neither `x` nor `x⁻¹` lies in `A` and `A` is not a valuation ring, while each of
+  the two localizations of `A` at its maximal ideals contains `x` or `x⁻¹`.
 - For a nondiscrete valuation ring and a finite extension the normalization need not be a finite
   `V`-module; the statement assumes nothing about finiteness.
 
@@ -1138,8 +1147,14 @@ For `K` of height one, prove that `E/K` is a maximal separable purely wild exten
 2.5.3, p. 110). *Needs:* §2.5, §2.6, §4.2.
 
 **Checks.**
-- The reverse implication requires `E/K` to be henselian: `ℚ(√2)/ℚ` at `7` has `ℚ(√2)ʰ = ℚ_7ʰ` but is
-  not henselian.
+- The reverse implication requires `E/K` to be henselian. For `K = ℚ(t)` with the `t`-adic valuation
+  (`p = 1`) and `E = Kʰ`, `Eʰ/Kʰ` is the identity, which at `p = 1` is the maximal separable purely
+  wild extension of `Kʰ`; but `√(1 + t)` lies in `Kʰ` (the residue polynomial `X² − 1` has the simple
+  root `1`) and not in `ℚ(t)` (`1 + t` has a zero of order one at `t = −1`), so `K(√(1 + t)) ⊆ Kʰ ⊆ Kᵗ`
+  makes `E/K` neither henselian (two prolongations to `K(√(1 + t))`) nor purely wild. The analogous
+  `ℚ(√2)/ℚ` at `7` tests nothing: there `Eʰ/Kʰ` is the identity of `ℚ_7ʰ`, which is not maximal,
+  since the Eisenstein polynomial `X⁷ − 7` gives a separable purely wild extension of degree `7`, so
+  both sides are false.
 - For `p = 1` both sides say `E = K` in characteristic zero.
 - Pure wildness is reflected by henselization only for henselian extensions. For a prime `ℓ ≠ p`,
   `E = ℚ(p^{1/ℓ})` over `ℚ` with the `p`-adic valuation is a henselian extension (`X^ℓ − p` is
@@ -1294,7 +1309,17 @@ one, scaling coarse generators into the fine ring and adding residue generators 
 - For the composite valuation on `ℚ_p((t))`, the constant extension by an unramified extension of
   `ℚ_p` is unramified at both steps.
 - The extension `s^ℓ = t`, `ℓ > 1`, is ramified already at the coarse step.
-- For `i = 0` or `i = d` one of the two steps is the identity and the statement is tautological.
+- At the endpoints neither step need be an identity extension. For `i = 0` the coarse extension is
+  `L/K` with the trivial valuations, unramified exactly when `L/K` is separable (`Kᵘ = Kˢ` for the
+  trivial valuation, §2.2), and the residual one is `L/K` with its own valuations; for `i = d` the
+  coarse extension is `L/K` itself and the residual one is `κ_L/κ_K` with the trivial valuations,
+  unramified exactly when `κ_L/κ_K` is separable. The criterion there reduces to the §2.3 facts that
+  an unramified extension is separable with separable residue extension. For `K = 𝔽₂((t))`,
+  `L = 𝔽₄((t))`, `d = 1`, both steps have degree `2` at `i = 0` and at `i = 1`, and both
+  trivial-valuation steps are separable, agreeing with `e = 1`, `f = 2`. For
+  `𝔽_p(u^{1/p})((t))/𝔽_p(u)((t))` at `i = 1` the residual step `𝔽_p(u^{1/p})/𝔽_p(u)` with the
+  trivial valuation is inseparable, hence not unramified, as is the whole extension: a trivially
+  valued step is not automatically unramified.
 
 ### 5.5 Tame extensions and composition
 
@@ -1494,6 +1519,9 @@ when perfect and is always separably tame (§2.7).
   results of Layers 4 and 6 use only the field form.
 - Temkin 2017, Lemma 2.3.2, p. 104, lists the valued extensions with underlying field `l` up to
   isomorphism; the decomposition counts distinct prolongations on the fixed field (§1.4).
+- Temkin 2017, Lemma 2.3.4, p. 105, speaks of all localizations of `A`; its proof and its gloss
+  "Prüfer" concern the localizations at prime ideals, and a semilocal `A` is not itself a valuation
+  ring (§1.1).
 - Temkin 2017, proof of Lemma 2.6.3(ii), pp. 111–112: in the last step `p` is the final residue
   characteristic exponent, not the characteristic of the coarse residue field (§5.5).
 - Temkin 2017, proof of Theorem 2.6.6, p. 112, refers to "Corollary 2.5.6(ii)"; Corollary 2.5.6,
