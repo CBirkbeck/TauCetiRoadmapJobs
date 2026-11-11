@@ -1,0 +1,29 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-TopologicalKTheory~60",
+  "head": "ed37e7d66db39cdde764135728204896031bc1d7",
+  "pr": 1807,
+  "folder": "TopologicalKTheory",
+  "date": "2026-11-11",
+  "findings": 1,
+  "blocking": 1,
+  "notes": "incremental re-review of 76 changed lines since 2faed4d. The previous R01, R03, R04, R05, R07 and R08 are repaired; R02 and R06 are deferred as D01 and D02, which stand. New finding R01 (P2): T1.6d's RP∞/CP∞ comparison on Mathlib's topology needs Tau Ceti's Stabilization.lean (ambientStabilization) and the Plucker.lean T2 instance, and both fail to import with Mathlib (probe). The repair through Map.lean and the Tautological starProjection T2 was tested (exit 0). Recomputed: the new T4 Checks (pencil, beta-coefficients, projector), the T6.6 and T7.1 Checks, and T1.5's naturality; 15 pinned declarations and 6 cross-roadmap citations resolved. Gate re-run: all checks 0 except outside-folder=24, the PR's own 12 folders; the worker's gate passed with build=0. Depcheck: 0 problems. Suggested.lean elaborates with only sorry. The seeded T2.0 and T7.0 are untouched and stand from 2faed4d.",
+  "deferred": [
+   {
+    "id": "D01",
+    "severity": "P2",
+    "title": "DGFloerPartII and HomotopySpheres still own O, SO, the stable range and π_i(SO), which T7.1 owns",
+    "where": "DGFloerPartII 4.2a–4.2c and HomotopySpheres §4A–4B cite TopologicalKTheory T7.1",
+    "raised": "PRREVIEW-TopologicalKTheory~59"
+   },
+   {
+    "id": "D02",
+    "severity": "P3",
+    "title": "AlgebraicTopology still lists only T1.5 as a consumer of §5.5's homotopy sequence",
+    "where": "AlgebraicTopology README line 2522 and its TopologicalKTheory consumer bullet (lines 5334–5336)",
+    "raised": "PRREVIEW-TopologicalKTheory~59"
+   }
+  ]
+ }
+}
