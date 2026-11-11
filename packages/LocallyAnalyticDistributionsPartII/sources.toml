@@ -169,7 +169,6 @@ id = "KOH07"
 authors = "Jan Kohlhaase"
 title = "Invariant distributions on p-adic analytic groups"
 year = 2007
-version_note = "author's copy; §1.4 summarises Frommer, Münster SFB 478 preprint 265 (2003)"
 locator_scheme = "section"
 locator = "§1.4"
 url = "https://www.esaga.uni-due.de/f/jan.kohlhaase/Kohlhaase_Invariant_Distributions.pdf"
@@ -179,6 +178,7 @@ sha256 = "61681026a5ddbbad31361aa470dd2911cae708aaa2ee03400f39aa3a6f4400b2"
 licence_class = "author-page"
 status = "certified"
 accessed = "2026-10-26"
+version_note = "author's copy; §1.4 summarises Frommer, Münster SFB 478 preprint 265 (2003)"
 cited_for = ["§2.2", "§2.3"]
 
 [[source]]
@@ -195,3 +195,48 @@ licence_class = "none"
 status = "uncertified"
 version_note = "paywalled; cited by its locator without the text"
 cited_for = ["§0.1", "§3.2"]
+
+[[source]]
+id = "FROM03"
+authors = "H. Frommer"
+title = "H. Frommer, The locally analytic principal series of split reductive groups, Münster SFB 478 preprint 265, 2003"
+year = 2003
+locator_scheme = "section"
+locator = "1.4 Lemma 3"
+licence_class = "none"
+status = "waived"
+resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/6488#issuecomment-6787957984"
+
+[[source]]
+id = "DDMS99"
+authors = "J. D. Dixon, M. P. F. Du Sautoy, A. Mann, D. Segal"
+title = "Analytic Pro-P Groups"
+year = 1999
+doi = "10.1017/cbo9780511470882"
+locator_scheme = "theorem"
+locator = "Theorem 4.30"
+licence_class = "none"
+status = "waived"
+resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/6488#issuecomment-6787957984"
+
+[[source]]
+id = "MR01"
+authors = "J. McConnell, J. Robson"
+title = "Noncommutative Noetherian Rings"
+year = 2001
+doi = "10.1090/gsm/030"
+locator_scheme = "section"
+locator = "§1.5.8"
+licence_class = "none"
+status = "waived"
+resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/6488#issuecomment-6787957984"
+
+[[source]]
+id = "DG70"
+title = "Michel Demazure Pierre Gabriel Groupes Algebriques 1970"
+year = 1970
+locator_scheme = "section"
+locator = "II §6.1.5"
+licence_class = "none"
+status = "waived"
+resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/6488#issuecomment-6787957984"
