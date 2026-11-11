@@ -10,15 +10,19 @@ headline theorem, and the carrier it lacks, is listed below; the README states e
 
 * The Galois-socle theorem (README §4.14): for an absolutely irreducible continuous
   representation `V` of `Gal(ℚ̄_p/ℚ_p)`, the multiplicity of `V` in the p-adic étale cohomology
-  `H¹_ét(M^p_{n,C}, L(1))` of the p-central Drinfeld tower is `Π(V)′ ⊗ JL(M)` when
-  `V ≅ V_{M,ℒ}` for a supercuspidal type `M`, `(St^cont ⊗ δ)′ ⊗ δ∘Nrd` for a character `δ` of
-  Steinberg type, and `0` otherwise, in particular `0` when `dim V ≥ 3`. It lacks the Drinfeld
+  `H¹_ét(M^p_{n,C}, L(1))` of the p-central Drinfeld tower is `Π(V)* ⊗ JL(M)` when
+  `V ≅ V_{M,ℒ}` for a supercuspidal type `M`, `(St^cont ⊗ δ)* ⊗ δ∘Nrd` for a character `δ` of
+  Steinberg type, and `0` otherwise, in particular `0` when `dim V ≥ 3`. Here `W*` is the
+  continuous dual of a Banach space `W` with the topology of uniform convergence on compact
+  subsets, on which `G` acts continuously; it does not act continuously on the norm dual. It lacks the Drinfeld
   tower as a rigid analytic space over `ℚ_p` with its `GL₂(ℚ_p) × D^× × Gal`-action, étale
   cohomology of rigid analytic spaces, admissible unitary Banach representations of `GL₂(ℚ_p)`
   and the correspondence `V ↦ Π(V)`.
 * The Banach multiplicities (README §§4.12–4.13) of an absolutely irreducible admissible
-  unitary Banach representation `Π` in differentials and in étale cohomology of the tower. They
-  lack the same carriers, and the strong dual of a Banach representation as a representation.
+  unitary Banach representation `Π` in differentials and in étale cohomology of the tower,
+  counted by continuous `G`-maps out of `Π*`. They lack the same carriers, and the continuous
+  dual of a Banach representation with the topology of compact convergence as a topological
+  representation.
 * The factorisation of the arithmetic completed cohomology (README §6.6): for `p > 3`,
   `H¹_ét(M^p_{n,ℚ̄_p}, L(1))` is the finite sum over types `M` of the completed sums over blocks
   `B` of `Π*(ρ_{B,M}) ⊗ ρ_{B,M} ⊗ Ř_{B,M}`, tensored with `JL(M)`. It lacks, besides the

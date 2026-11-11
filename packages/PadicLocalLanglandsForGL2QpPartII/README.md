@@ -2,7 +2,7 @@
 
 **Summary.** PadicLocalLanglandsForGL2Qp builds the p-adic local Langlands correspondence for G = GL₂(ℚ_p). Its §6.9 identifies the analytic quotient Π^an/π with the strong dual of functions on a Drinfeld cover. It does this for a supercuspidal π with trivial central character, conditionally on a global nonzero map and global de Rham data. This Part II starts from that comparison and the correspondence. It discharges the global hypotheses and extends the comparison to every supercuspidal type on which p acts trivially. It refines the comparison by the P-finite Kirillov model, the embedded common dual and the homographic covariance of the coordinate operator. It then extracts the Galois and Banach multiplicities of the geometric p-adic étale cohomology of the Drinfeld tower, and factors the arithmetic completed cohomology at a fixed level over blocks and full Weil–Deligne type rings. The end theorems are:
 
-- the Galois-socle theorem: the multiplicity of V_(M,ℒ) in H¹_ét is Π(V_(M,ℒ))′_b⊗JL(M), and every absolutely irreducible V of dimension at least three has zero multiplicity (Dospinescu–Le Bras, Colmez–Dospinescu–Nizioł);
+- the Galois-socle theorem: the multiplicity of V_(M,ℒ) in H¹_ét is Π(V_(M,ℒ))*⊗JL(M), with Π(V_(M,ℒ))* the Banach dual in the topology of compact convergence, and every absolutely irreducible V of dimension at least three has zero multiplicity (Dospinescu–Le Bras, Colmez–Dospinescu–Nizioł);
 - the factorisation of the arithmetic completed cohomology H¹_ét(M^p_(n,ℚ̄_p), L(1)) for p > 3;
 - the weighted, Iwasawa, primitive and filtered derived consequences of Dospinescu–Le Bras §§11–12.
 
@@ -42,9 +42,9 @@ The tower, its period maps, commuting actions, Weil descent and central quotient
 
 Let p be a prime, L/ℚ_p a finite extension, O = O_L with uniformiser ϖ and residue field k_L. Enlarge L whenever a splitting or absolute-irreducibility hypothesis needs it. Write G = GL₂(ℚ_p), Z for its centre, P for the mirabolic subgroup (∗ ∗; 0 1), B for the upper Borel subgroup, w = (0 1; 1 0), u(b) = (1 b; 0 1), and Γ = ℤ_p^× for the cyclotomic group. Write D for the quaternion division algebra over ℚ_p, O_D for its maximal order, ϖ_D for a uniformiser with ϖ_D² = pu for a unit u, and Ǧ = D^×. Let Ω = ℙ¹ ∖ ℙ¹(ℚ_p) be the Drinfeld half-plane over ℚ_p, with coordinate z, and let g = (a b; c d) act by z ↦ (az+b)/(cz+d).
 
-**Levels.** Put K_D(0) = O_D^× and K_D(n) = 1+ϖ_D^nO_D for n ≥ 1. Colmez–Dospinescu–Nizioł (CDN20, CDN23) write M^p_n for the p-central quotient at level K_D(n), for n ≥ 0. For r ≥ 1, Dospinescu–Le Bras (DLB17) writes Σ_r for the model over ℚ_p of the quotient by p^ℤ of the cover of level 1+p^rO_D. Its Galois group over Σ₀ is O_D^×/(1+p^rO_D) (DLB17 lines 104–106). Since 1+p^rO_D = K_D(2r) for r ≥ 1, the DLB level r is the CDN level 2r; Σ₀ is M^p_0 at level K_D(0). EndoscopicTransferAndUnitaryTraceComparison §12.4 indexes positive levels by ϖ_E-power level m, which is ϖ_D-level 2m for E = ℚ_p; its level zero is read separately as K_D(0). For odd n ≥ 1, the cover of ϖ_D-level n is the quotient of the cover of ϖ_D-level 2m ≥ n by the finite group K_D(n)/K_D(2m), so every level is finite étale over level zero. The first cover of level 1+ϖ_DO_D is a different space from Σ_1. Σ₀ consists of two copies of Ω, exchanged by ϖ_D, on which O_D^× acts trivially (DLB17 lines 115–116).
+**Levels.** Put K_D(0) = O_D^× and K_D(n) = 1+ϖ_D^nO_D for n ≥ 1. Colmez–Dospinescu–Nizioł (CDN20, CDN23) write M^p_n for the p-central quotient at level K_D(n), for n ≥ 0. For r ≥ 1, Dospinescu–Le Bras (DLB17) writes Σ_r for the model over ℚ_p of the quotient by p^ℤ of the cover of level 1+p^rO_D. Its Galois group over Σ₀ is O_D^×/(1+p^rO_D) (DLB17 lines 104–106). Since 1+p^rO_D = K_D(2r) for r ≥ 1, the DLB level r is the CDN level 2r; Σ₀ is M^p_0 at level K_D(0). EndoscopicTransferAndUnitaryTraceComparison §12.4 indexes positive levels by ϖ_E-power level m, which is ϖ_D-level 2m for E = ℚ_p; its level zero is read separately as K_D(0). For odd n ≥ 1, the cover of ϖ_D-level n is the quotient of the cover of ϖ_D-level 2m ≥ n by the finite group K_D(n)/K_D(2m), so every level is finite étale over level zero. The first cover of level 1+ϖ_DO_D is a different space from Σ_1. Σ₀ and M^p_0 are the same ℚ_p-space, the descent of the p^ℤ-quotient of the level-zero space by the same Weil descent datum. Geometrically Σ₀ consists of two copies of Ω, its two height classes, exchanged by ϖ_D, on which O_D^× acts trivially (DLB17 lines 114–116). The descent datum exchanges them as well: a Frobenius translates the height by ±1, while p translates it by 2 (CDN23 lines 220–229; EndoscopicTransferAndUnitaryTraceComparison §12.19). Since the map to Ω is equivariant for the descent datum and inertia fixes the height classes, Σ₀ → Ω is the base change of Spec ℚ_p² → Spec ℚ_p, where ℚ_p² is the unramified quadratic extension of ℚ_p. So Σ₀ is connected over ℚ_p and splits as Ω⊔Ω only over a field containing ℚ_p² (source correction E20).
 
-**Actions and duals.** Groups act on functions by inverse pullback: (gf)(z) = f(g⁻¹z). With this convention the Lie algebra acts on O(Ω) by u⁺f = −f′, a⁺f = −zf′, a⁻f = zf′ and u⁻f = z²f′. This is the case k = 0 of DLB17 Lemme 3.5 (DLB17 line 759). The strong dual E′_b of a locally convex space E carries the topology of uniform convergence on bounded sets and the action (gℓ)(v) = ℓ(g⁻¹v). In particular a central element acting on E by a scalar χ(z) acts on E′_b by χ(z)⁻¹.
+**Actions and duals.** Groups act on functions by inverse pullback: (gf)(z) = f(g⁻¹z). With this convention the Lie algebra acts on O(Ω) by u⁺f = −f′, a⁺f = −zf′, a⁻f = zf′ and u⁻f = z²f′. This is the case k = 0 of DLB17 Lemme 3.5 (DLB17 line 759). The strong dual E′_b of a locally convex space E carries the topology of uniform convergence on bounded subsets. It is used for spaces of compact type (analytic vectors, smooth representations of countable dimension with their finest locally convex topology) and for the Fréchet spaces of functions, differentials and de Rham cohomology of the tower. For a Banach space W, write W* for its continuous dual with the topology of uniform convergence on compact subsets of W (CDN23, footnote 8, lines 182–184). Its bounded subsets are the norm-bounded ones (Banach–Steinhaus), on them this topology is that of pointwise convergence, which CDN20 §1.3.2 (lines 633–644) uses for the dual of St^cont, and the polar of the unit ball, the dual lattice of the Schikhof duality of the base roadmap §0.1, is compact. If Π is a Banach representation of G, then G acts continuously on Π*. It does not act continuously on the norm dual Π′_b in general (§4.2, Checks), so Π′_b is never used as a representation. On a space E of compact type every bounded subset lies and is bounded in one Banach stage (LocallyAnalyticDistributions §0.0), hence is relatively compact in the next, so compact convergence on E′ is the strong topology: CDN23's (Π^an)* and LL(M)* are (Π^an)′_b and LL(M)′_b. Both kinds of dual carry the action (gℓ)(v) = ℓ(g⁻¹v). In particular a central element acting on E by a scalar χ(z) acts on E′_b, and on E* when E is Banach, by χ(z)⁻¹.
 
 **Multiplicity spaces.** For a topological G×Ǧ-representation X and a finite-dimensional smooth representation ρ of Ǧ, write X^ρ = Hom_Ǧ^cont(ρ, X), as in the base roadmap §6.9. For a type M, write X[M] = X^(JL(M)). The multiplicity X[M] and the isotypic summand X[M]⊗JL(M) are different spaces when dim JL(M) > 1.
 
@@ -103,7 +103,7 @@ The Banach radius algebras D_r(H,L), their coordinate norms ‖·‖_r, noetheri
 
 All statements are used at F = ℚ_p, ϖ = p, so that M_n^ϖ there is the p-central quotient M^p_n here, and G′ = G/p^ℤ.
 
-- §§0.3–0.4: the generalised Steinberg representations Sp_J(A), Sp^cont_J(Λ) and their duals. For GL₂(ℚ_p) and d = 1, Sp_1(L) = C^sm(ℙ¹(ℚ_p), L)/L is St^sm and Sp^cont_1(L) = C⁰(ℙ¹(ℚ_p), L)/L is St^cont. §0.4(c) gives that St^cont is the universal unitary completion of St^sm and that the G-bounded vectors of (St^sm)′ form (St^cont)′.
+- §§0.3–0.4: the generalised Steinberg representations Sp_J(A), Sp^cont_J(Λ) and their duals. For GL₂(ℚ_p) and d = 1, Sp_1(L) = C^sm(ℙ¹(ℚ_p), L)/L is St^sm and Sp^cont_1(L) = C⁰(ℙ¹(ℚ_p), L)/L is St^cont. §0.4(c) gives that St^cont is the universal unitary completion of St^sm and that the G-bounded vectors of (St^sm)′ form (St^cont)*. That roadmap gives duals the weak topology, which on bounded subsets of (St^cont)* is the topology of compact convergence of Conventions.
 - §6.2 at d = 1: H¹_dR(Ω) ≅ (St^sm)′ through the regulator μ ↦ ∫ dlog((z−x)/(z−x₀)) μ(x). §6.5 at d = 1: the strictly exact sequence 0 → O(Ω_C)/C → H¹_proét(Ω_C, ℚ_p(1)) → (St^sm_(ℚ_p))′ → 0 mapping to the de Rham sequence. §6.9 at d = 1: H¹_ét(Ω_C, ℤ_p(1)) ≅ Sp_1(ℤ_p)^* and H¹_ét(Ω_C, 𝔽_p(1)) ≅ Sp_1(𝔽_p)^*, with H¹_ét(Ω_C, ℚ_p(1)) the G-bounded vectors of H¹_proét. The identification with ℤ/p^k-coefficients follows from the integral one, since Sp_1(ℤ_p) is free.
 - §7.1: at finite level the geometric connected components of height zero are a torsor under (ℤ/p^m)^×, π₀ of the infinite-level tower is a principal homogeneous space under ℚ_p^×, and G, Ǧ and W_ℚ_p act on it through det, Nrd and reciprocity. Hence Ǧ acts on locally constant functions on M^p_(n,C) through characters factoring through Nrd.
 - §7.2: for every n ≥ 0, a G×Ǧ×G_ℚ_p-equivariant semistable formal model of M^p_n over the integers of a finite extension, whose special-fibre components form finitely many G-orbits, each fixed by an open subgroup.
@@ -178,6 +178,7 @@ Its API:
 - At r = 1, 1+pO_D = 1+ϖ_D²O_D, which is strictly smaller than 1+ϖ_DO_D. Identifying DLB level r with CDN level r would put the first ϖ_D-cover in place of Σ_1.
 - For special M = Sp⊗δ, JL(M) = δ∘Nrd is one-dimensional and N ≠ 0. A construction that requires a rank-two absolutely irreducible Galois family rejects it.
 - Take a supercuspidal π₀ with trivial central character and the unramified character χ with χ(p) = 1+p, and put M = M(π₀⊗χ∘det). Then JL(M) = JL(π₀)⊗χ∘Nrd, so p acts on JL(M) by χ(p²) = (1+p)² ≠ 1. Hence M has the level of π₀ but does not lie in ΦNᵖ, and every Ǧ-map from JL(M) into the p-central quotient vanishes.
+- H⁰_ét(Σ₀⊗C, L) = L², one factor per height class, and G_K acts on it through Gal(ℚ_p²/ℚ_p), whose generator swaps the factors (Conventions). The G_K-invariants have dimension 1 for K = ℚ_p, 2 for K = ℚ_p² and 1 for a ramified quadratic K; in general the dimension is 2 exactly when the residue degree of K/ℚ_p is even. Two split copies of Ω over ℚ_p would give dimension 2 already for K = ℚ_p. The coefficients have characteristic zero, so the swap sends (1,−1) to (−1,1) ≠ (1,−1) also at p = 2.
 
 *Needs:* GL2AutomorphicRepresentationsAndTransfer R16.3; PadicLocalLanglandsForGL2Qp §6.9 (Jacquet–Langlands); EndoscopicTransferAndUnitaryTraceComparison §§12.4, 12.14 and 12.19.
 
@@ -191,7 +192,7 @@ Its API:
 
 - Evaluation ⊕_M Z[M]⊗JL(M) → Z is a topological isomorphism. Only finitely many M have Z[M] ≠ 0.
 - A continuous G×Ǧ-map Z → Z′ induces G-maps Z[M] → Z′[M] that respect identity and composition.
-- On strong duals Ǧ acts by (dℓ)(v) = ℓ(d⁻¹v). A central element acting on Z[M] by a scalar acts on the dual by its inverse.
+- On duals Ǧ acts by (dℓ)(v) = ℓ(d⁻¹v). A central element acting on Z[M] by a scalar acts on the dual by its inverse.
 - Finite extension L′/L commutes with Z[M] and with the decomposition.
 - For supercuspidal M ∈ ΦNᵖ_n, the M-multiplicities of functions, differentials and first cohomology of M^p_(n,C), of M_(n′,C) for n′ ≥ n and of M_∞ agree under pullback.
 
@@ -199,7 +200,7 @@ Its API:
 
 - For Z = W⊗JL(M) with trivial Ǧ-action on W, Z[M] = W⊗End(JL(M)) = W, not W⊗JL(M). When dim JL(M) = 2 the second space has twice the dimension.
 - For absolutely irreducible JL(M) ≇ JL(M′), Hom_Ǧ(JL(M), JL(M′)) = 0 over a splitting field. Taking the full isotypic projector in place of the multiplicity space would keep a nonscalar End(JL(M)) acting.
-- If z ∈ Z(G) acts on E by χ(z), it acts on E′_b by χ(z)⁻¹. Omitting the inverse in the dual action fails this computation.
+- If z ∈ Z(G) acts on E by χ(z), it acts on E′_b, and on E* for Banach E, by χ(z)⁻¹. Omitting the inverse in the dual action fails this computation.
 - At full level zero the height components are indexed by ℤ, p shifts height by two, and H⁰ = ∏_(h∈ℤ)L has a nonzero Sp-multiplicity. Nevertheless H¹(p^ℤ,H⁰) = coker(T−1) = 0: choose f_0 = f_1 = 0 and solve f_(h+2)−f_h = a_h separately in the two parities. Every f_h is a finite signed sum of the a_h; if |a_h| ≤ C then |f_h| ≤ C by the ultrametric inequality. Nonzero H⁰ alone gives no obstruction to extending the supercuspidal level-reading statement. That statement does require the p-central condition: for the twist χ(p) = 1+p, the central-quotient multiplicity is zero while the full-tower multiplicity is nonzero.
 
 *Needs:* §0.1; PadicLocalLanglandsForGL2Qp §6.9 (multiplicity spaces); SmoothRepresentationsOfLocalGroups SR.0; EndoscopicTransferAndUnitaryTraceComparison §§12.7 and 12.14; ProetaleCohomologyOfPAdicCurvesAndTowers §7.1.
@@ -591,9 +592,9 @@ N = 0 on supercuspidal M, so B_st may be replaced by B_cris in X⁺_st(M). This 
 
 ### 4.2 The analytic Steinberg representation and the special types
 
-Write St^sm = Sp_1(L) = C^sm(ℙ¹(ℚ_p), L)/L and St^cont = Sp^cont_1(L) = C⁰(ℙ¹(ℚ_p), L)/L for the Steinberg representations of ProetaleCohomologyOfPAdicCurvesAndTowers §0.3 at GL₂(ℚ_p). Define St^an = C^an(ℙ¹(ℚ_p), L)/L with the inverse-pullback G-action and the quotient topology. The strong duals of the three are the functionals of total mass zero (CDN20, §1.3, line 614). Prove that St^an → St^cont has dense image and that St^cont is the universal unitary completion of St^an (base roadmap §2.5); for St^sm this is §0.4(c) of ProetaleCohomologyOfPAdicCurvesAndTowers. Prove that μ ↦ ∫ dz/(z−x) μ(x) gives a G-isomorphism Ω¹(Ω_C) ≅ (St^an_C)′ (CDN20, Proposition 1.6 and Théorème 1.7, lines 659–680). The cohomology of Ω is ProetaleCohomologyOfPAdicCurvesAndTowers §§6.2, 6.5 and 6.9 at d = 1: f ↦ df/f gives C⊗̂(O(Ω)^×/C^×) ≅ H¹_dR(Ω_C) ≅ C⊗̂(St^sm)′, and H¹_ét(Ω_C, ℤ/p^k(1)) ≅ (St^sm_(ℤ/p^k))^∨ compatibly with G×G_ℚ_p.
+Write St^sm = Sp_1(L) = C^sm(ℙ¹(ℚ_p), L)/L and St^cont = Sp^cont_1(L) = C⁰(ℙ¹(ℚ_p), L)/L for the Steinberg representations of ProetaleCohomologyOfPAdicCurvesAndTowers §0.3 at GL₂(ℚ_p). Define St^an = C^an(ℙ¹(ℚ_p), L)/L with the inverse-pullback G-action and the quotient topology. Their duals (St^sm)′_b, (St^an)′_b and (St^cont)* are the functionals of total mass zero (CDN20, §1.3.2, lines 633–644); (St^cont)* carries the topology of compact convergence of Conventions. Prove that St^an → St^cont has dense image and that St^cont is the universal unitary completion of St^an (base roadmap §2.5); for St^sm this is §0.4(c) of ProetaleCohomologyOfPAdicCurvesAndTowers. Prove that μ ↦ ∫ dz/(z−x) μ(x) gives a G-isomorphism Ω¹(Ω_C) ≅ (St^an_C)′ (CDN20, Proposition 1.6 and Théorème 1.7, lines 659–680). The cohomology of Ω is ProetaleCohomologyOfPAdicCurvesAndTowers §§6.2, 6.5 and 6.9 at d = 1: f ↦ df/f gives C⊗̂(O(Ω)^×/C^×) ≅ H¹_dR(Ω_C) ≅ C⊗̂(St^sm)′, and H¹_ét(Ω_C, ℤ/p^k(1)) ≅ (St^sm_(ℤ/p^k))^∨ compatibly with G×G_ℚ_p.
 
-For special M = Sp⊗δ ∈ ΦNᵖ_n, prove that the M-multiplicities of the tower are obtained from these by twisting with δ_G = δ∘det on G, δ_Ǧ = δ∘Nrd on Ǧ and δ on G_ℚ_p through the reciprocity convention. In particular H¹_ét[M] ≅ (St^cont⊗δ_G)′_b⊗δ (CDN23, Théorème 5.1 and Remarque 5.2, lines 2357–2371).
+For special M = Sp⊗δ ∈ ΦNᵖ_n, prove that the M-multiplicities of the tower are obtained from these by twisting with δ_G = δ∘det on G, δ_Ǧ = δ∘Nrd on Ǧ and δ on G_ℚ_p through the reciprocity convention. In particular H¹_ét[M] ≅ (St^cont⊗δ_G)*⊗δ (CDN23, Théorème 5.1 and Remarque 5.2, lines 2357–2371).
 
 Its API:
 
@@ -606,6 +607,7 @@ Its API:
 - A constant function represents zero in all three quotients. δ_x − δ_y has total mass zero and is a nonzero element of each dual for x ≠ y, while δ_x alone does not vanish on the constants and is not in the dual.
 - The function z ↦ (z−a)/(z−b) has symbol mapped to δ_a − δ_b (CDN20, Proposition 1.5, line 650). Its residues at a and b are opposite, matching total mass zero.
 - The scalar aI₂ acts on St^cont⊗δ_G by δ(a²), and a ∈ ℚ_p^× ⊂ Ǧ acts by δ(Nrd a) = δ(a²). Both sides agree, and δ(p)² = 1 is exactly the ΦNᵖ condition.
+- Take μ = δ₀ − δ_∞ in (St^cont)* and g_n = u(pⁿ), so g_n → 1. Then g_nμ − μ = δ_(pⁿ) − δ₀. Its norm is 1 for every n: |f(pⁿ) − f(0)| is at most the quotient norm of f modulo constants, and the indicator of the compact open pⁿℤ_p^× has quotient norm at most 1 and pairs to 1 with it. For every continuous f, f(pⁿ) − f(0) → 0, and the family is norm-bounded, so g_nμ − μ → 0 uniformly on compact subsets. So the orbit map of μ is not continuous at 1 for the norm topology of (St^cont)′_b, while along g_n it converges in (St^cont)*, as the continuity of the action on (St^cont)* (Conventions) requires. The computation is the same at p = 2 and p = 3.
 
 *Needs:* PadicLocalLanglandsForGL2Qp §§0.1 and 2.5; ProetaleCohomologyOfPAdicCurvesAndTowers §§0.3, 0.4, 6.2, 6.5 and 6.9; SmoothRepresentationsOfLocalGroups SR.2; EndoscopicTransferAndUnitaryTraceComparison §12.14.
 
@@ -734,16 +736,18 @@ The route for the p-central quotient: p^ℤ acts freely on M_n with quotient M^p
 
 Prove the following (CDN23, Lemme 5.3, line 2381; CDN20, Corollaire 2.13, line 1078):
 
-- (a) If Π is a unitary Banach representation of G, then (Π′_b)^b = Π′_b.
-- (b) If π₀ is smooth admissible of finite length, then (π₀′_b)^b ≅ (π̂₀)′_b, where π̂₀ is its universal unitary completion.
-- (c) If Π is admissible unitary of finite length, then ((Π^an)′_b)^b = Π′_b.
+- (a) If Π is a unitary Banach representation of G, then (Π*)^b = Π*.
+- (b) If π₀ is smooth admissible of finite length, then (π₀′_b)^b ≅ (π̂₀)*, where π̂₀ is its universal unitary completion.
+- (c) If Π is admissible unitary of finite length, then ((Π^an)′_b)^b = Π*.
 
-Consequently Hom_(G_ℚ_p)(V_(M,ℒ), H¹_ét[M]) ≅ Π_(M,ℒ)′_b for supercuspidal M ∈ ΦNᵖ_n. The route proves (a) and (b) by the Banach–Steinhaus theorem (Mathlib `WithSeminorms.banach_steinhaus`), the gauge of O_L[G]v₁+⋯+O_L[G]v_r and the invariant Banach norm. It proves (c) by the analytic universal-completion theorem of the base roadmap §2.5. The consequence follows from §§4.7 and 4.9.
+In (b) and (c) the identification is the G-equivariant linear bijection induced by the transpose of π₀ → π̂₀, resp. Π^an → Π. The Banach dual keeps its own topology of compact convergence (Conventions), not the subspace topology of the ambient dual as a whole. On every norm-bounded subset of the Banach dual the two topologies agree: by equicontinuity both induce there the topology of pointwise convergence on the dense subspace π₀, resp. Π^an. Likewise H¹_ét[M] = (H¹_proét[M])^b of §4.9 keeps the topology of L⊗_(O_L) of its integral étale lattice, whose p^(−N)-multiples are compact and carry the subspace topology of H¹_proét[M].
+
+Consequently Hom_(G_ℚ_p)(V_(M,ℒ), H¹_ét[M]) ≅ Π_(M,ℒ)* for supercuspidal M ∈ ΦNᵖ_n. The route proves (a) and (b) by the Banach–Steinhaus theorem (Mathlib `WithSeminorms.banach_steinhaus`), the gauge of O_L[G]v₁+⋯+O_L[G]v_r and the invariant Banach norm. It proves (c) by the analytic universal-completion theorem of the base roadmap §2.5. The consequence follows from §§4.7 and 4.9.
 
 **Checks.**
 
-- For Π = L trivial, Π′_b = L and every vector is bounded.
-- For π₀ = St^sm, (b) gives (St^cont)′_b by §4.2.
+- For Π = L trivial, Π* = L and every vector is bounded.
+- For π₀ = St^sm, (b) gives (St^cont)* by §4.2. The vectors δ_(pⁿ) − δ₀ of the Check of §4.2 are G-bounded and tend to 0 both in (St^sm)′_b and in (St^cont)*, but not in the norm: the norm topology is not the topology on the bounded vectors.
 - (c) fails without finite length or admissibility hypotheses on Π; they are part of the statement.
 
 *Needs:* §§4.7–4.9; PadicLocalLanglandsForGL2Qp §§0.1, 2.5 and 3.11; Mathlib `WithSeminorms.banach_steinhaus`.
@@ -767,35 +771,35 @@ No exactness of V ↦ Π_M(V) is asserted. The route treats the case where no qu
 
 ### 4.12 Banach multiplicities in differentials
 
-Let Π be an absolutely irreducible admissible unitary Banach L-representation of G. Prove that Hom_G(Π′_b, L⊗Ω¹(M^p_(n,ℚ_p))) is:
+Let Π be an absolutely irreducible admissible unitary Banach L-representation of G. Prove that Hom_G(Π*, L⊗Ω¹(M^p_(n,ℚ_p))), the continuous G-maps out of the Banach dual Π* of Conventions, is:
 
 - ℒ⊗JL(M) if Π ≅ Π_(M,ℒ) for a supercuspidal M ∈ ΦNᵖ_n;
 - δ_Ǧ if Π ≅ St^cont⊗δ_G with Sp⊗δ ∈ ΦNᵖ_n, that is, δ(p)² = 1 and δ∘Nrd trivial on K_D(n);
 - 0 otherwise.
 
-The line ℒ is part of the answer, not an unnamed one-dimensional space. Source: CDN23, Proposition 5.7 (line 2424), whose proof decomposes over M ∈ ΦNᵖ (line 2434). The statement prints the condition as level ≤ n (source correction E15). The route has three steps. For supercuspidal M, apply Hom_G(Π′_b, −) to 0 → (Π^an_(M,ℒ))′_b → Ω¹[M]^(G_ℚ_p) → (M_dR/ℒ)⊗LL(M)′_b → 0 from §3.3(ii). A second line ℒ′ bounds the dimension by one. For special M, use §4.2.
+The line ℒ is part of the answer, not an unnamed one-dimensional space. Source: CDN23, Proposition 5.7 (line 2424), whose proof decomposes over M ∈ ΦNᵖ (line 2434). The statement prints the condition as level ≤ n (source correction E15). The route has three steps. For supercuspidal M, apply Hom_G(Π*, −) to 0 → (Π^an_(M,ℒ))′_b → Ω¹[M]^(G_ℚ_p) → (M_dR/ℒ)⊗LL(M)′_b → 0 from §3.3(ii). A second line ℒ′ bounds the dimension by one. For special M, use §4.2.
 
 **Checks.**
 
-- Let π₀ have trivial central character and χ be unramified with χ(p) = 1+p, and put M = M(π₀⊗χ∘det). Then M has level at most n but M ∉ ΦNᵖ, and Hom_G(Π′_(M,ℒ), L⊗Ω¹(M^p_(n,ℚ_p))) = 0. The printed condition "level ≤ n" would predict ℒ⊗JL(M).
-- For an ordinary absolutely irreducible Π, Hom_G(Π′_b, (Π^an_(M,ℒ))′_b) = 0 and Hom_G(Π′_b, LL(M)′_b) = 0, so the multiplicity vanishes.
-- For Π = Π_(M,ℒ), Hom_G(Π′_b, (Π^an_(M,ℒ′))′_b) = 0 for ℒ′ ≠ ℒ, which bounds the dimension by one.
+- Let π₀ have trivial central character and χ be unramified with χ(p) = 1+p, and put M = M(π₀⊗χ∘det). Then M has level at most n but M ∉ ΦNᵖ, and Hom_G(Π_(M,ℒ)*, L⊗Ω¹(M^p_(n,ℚ_p))) = 0. The printed condition "level ≤ n" would predict ℒ⊗JL(M).
+- For an ordinary absolutely irreducible Π, Hom_G(Π*, (Π^an_(M,ℒ))′_b) = 0 and Hom_G(Π*, LL(M)′_b) = 0, so the multiplicity vanishes.
+- For Π = Π_(M,ℒ), Hom_G(Π*, (Π^an_(M,ℒ′))′_b) = 0 for ℒ′ ≠ ℒ, which bounds the dimension by one.
 
 *Needs:* §§0.1, 3.3, 4.2 and 4.10; PadicLocalLanglandsForGL2Qp §§3.8 and 4.2.
 
 ### 4.13 Banach multiplicities in étale cohomology
 
-With Π as in §4.12, prove that Hom_G(Π′_b, H¹_ét(M^p_(n,C), L(1))) is G_ℚ_p×Ǧ-equivariantly and topologically isomorphic to:
+With Π as in §4.12, prove that Hom_G(Π*, H¹_ét(M^p_(n,C), L(1))) is G_ℚ_p×Ǧ-equivariantly and topologically isomorphic to:
 
 - V_(M,ℒ)⊗JL(M) for Π ≅ Π_(M,ℒ) with supercuspidal M ∈ ΦNᵖ_n;
 - δ⊗δ_Ǧ for Π ≅ St^cont⊗δ_G with Sp⊗δ ∈ ΦNᵖ_n;
 - 0 otherwise.
 
-Source: CDN23, Théorème 5.8 (line 2465), with the condition corrected as in §4.12 (source correction E15). Prove first that restriction gives an isomorphism Hom_G((Π^an)′_b, H¹_proét) ≅ Hom_G(Π′_b, H¹_ét) (CDN23, Lemme 5.9, line 2481). Injectivity uses density of Π′ in (Π^an)′. Surjectivity extends a map along Π′⊗_(Λ(K))D(K) ≅ (Π^an)′, the Schneider–Teitelbaum identification of the base roadmap §0.1. Then apply Hom_G((Π^an)′_b, −) to the exact sequence 0 → H¹_proét[M] → Ω¹[M] → ((C⊗M_dR)/X⁺_st(M))⊗̂LL(M)′_b → 0 derived from §4.1. The completed tensor-Hom identity Hom(E, F⊗̂D) ≅ Hom(E,F)⊗̂D for nuclear Fréchet E and Fréchet F, D (CDN23, Lemme 5.4, line 2401) and §4.12 give the kernel X⁺_st(M) ∩ (ℒ⊗C) = V_(M,ℒ).
+Source: CDN23, Théorème 5.8 (line 2465), with the condition corrected as in §4.12 (source correction E15). Prove first that restriction gives an isomorphism Hom_G((Π^an)′_b, H¹_proét) ≅ Hom_G(Π*, H¹_ét) (CDN23, Lemme 5.9, line 2481). Injectivity uses density of Π* in (Π^an)′_b. Surjectivity extends a map along Π*⊗_(Λ(K))D(K) ≅ (Π^an)′_b, the Schneider–Teitelbaum identification of the base roadmap §0.1. Then apply Hom_G((Π^an)′_b, −) to the exact sequence 0 → H¹_proét[M] → Ω¹[M] → ((C⊗M_dR)/X⁺_st(M))⊗̂LL(M)′_b → 0 derived from §4.1. The completed tensor-Hom identity Hom(E, F⊗̂D) ≅ Hom(E,F)⊗̂D for nuclear Fréchet E and Fréchet F, D (CDN23, Lemme 5.4, line 2401) and §4.12 give the kernel X⁺_st(M) ∩ (ℒ⊗C) = V_(M,ℒ).
 
 **Checks.**
 
-- The Hom is from Π′_b into cohomology. Reversing the direction would replace V_(M,ℒ) by its dual.
+- The Hom is from Π* into cohomology. Reversing the direction would replace V_(M,ℒ) by its dual.
 - For Π = Π_(M,ℒ) the answer is two-dimensional over L times JL(M), not one-dimensional as in §4.12. The Galois factor V_(M,ℒ) replaces the line ℒ.
 - For the unramified twist of §4.12 the answer is 0.
 
@@ -805,8 +809,8 @@ Source: CDN23, Théorème 5.8 (line 2465), with the condition corrected as in §
 
 For an absolutely irreducible continuous L-representation V of G_ℚ_p, prove that Hom_(W_ℚ_p)(V, H¹_ét(M^p_(n,C), L(1))) is:
 
-- Π(V)′_b⊗JL(M) if V ≅ V_(M,ℒ) with supercuspidal M ∈ ΦNᵖ_n;
-- (St^cont⊗δ_G)′_b⊗δ_Ǧ if V = δ is a character with Sp⊗δ ∈ ΦNᵖ_n;
+- Π(V)*⊗JL(M) if V ≅ V_(M,ℒ) with supercuspidal M ∈ ΦNᵖ_n;
+- (St^cont⊗δ_G)*⊗δ_Ǧ if V = δ is a character with Sp⊗δ ∈ ΦNᵖ_n;
 - 0 otherwise.
 
 In particular the multiplicity is 0 for dim V ≥ 3. Sources: CDN20, Théorème 0.2 (line 130) and Corollaire 2.16 (line 1108); CDN23, Théorème 5.1 (line 2357) and Théorème 5.10 (line 2541). On the full tower M_n the source condition is level ≤ n (CDN23, Théorème 5.1); on the p-central quotient it is membership in ΦNᵖ_n (source correction E15). Weil equivariance extends to G_ℚ_p-equivariance by continuity of the descended action.
@@ -828,11 +832,11 @@ For dimension two the route uses §§4.6 and 4.10, and for dimension one §4.2. 
 
 For supercuspidal M ∈ ΦNᵖ_n and ℒ ⊂ M_dR, the three multiplicities are as follows:
 
-- of Π_(M,ℒ)′ in Ω¹: ℒ⊗JL(M), of dimension dim JL(M);
-- of Π_(M,ℒ)′ in H¹_ét: V_(M,ℒ)⊗JL(M), of dimension 2·dim JL(M);
-- of V_(M,ℒ) in H¹_ét: Π_(M,ℒ)′⊗JL(M).
+- of Π_(M,ℒ)* in Ω¹: ℒ⊗JL(M), of dimension dim JL(M);
+- of Π_(M,ℒ)* in H¹_ét: V_(M,ℒ)⊗JL(M), of dimension 2·dim JL(M);
+- of V_(M,ℒ) in H¹_ét: Π_(M,ℒ)*⊗JL(M).
 
-For the Steinberg type Sp, H¹_ét[Sp] is (St^cont)′_b with trivial Galois action.
+For the Steinberg type Sp, H¹_ét[Sp] is (St^cont)* with trivial Galois action.
 
 ### Dependencies
 
@@ -963,21 +967,21 @@ Let M be supercuspidal. Choose a G_ℚ_p-stable R⁺_(B,M)-lattice ρ^(⋄,+) in
 
 - Π*(ρ_(B,M)) is independent of the lattice up to compatible canonical isomorphism.
 - It agrees with the rationalisation of D(ρ^(⋄,+))^♮⊠ℙ¹, and with Hom^cont_(R_(B,M))(LL_B(M), R_(B,M)) for the B-adic completion LL_B(M) of the base §5.12.
-- κ(x)⊗_(R_(B,M))Π*(ρ_(B,M)) ≅ Π(ρ_x)′_b at every closed point x.
+- κ(x)⊗_(R_(B,M))Π*(ρ_(B,M)) ≅ Π(ρ_x)* at every closed point x, Π(ρ_x)* being the Banach dual of Conventions.
 
-The fibre property is a theorem about the construction, not its definition. For absolutely irreducible ρ̄_B, compare with the universal family Π^univ of the base §5.8. Its fibre at x is Π(ρ_x(ε)), whose strong dual relates to Π(ρ_x)′_b by the cyclotomic twist ε and the duality of §0.2.
+The fibre property is a theorem about the construction, not its definition. For absolutely irreducible ρ̄_B, compare with the universal family Π^univ of the base §5.8. Its fibre at x is Π(ρ_x(ε)), whose Banach dual relates to Π(ρ_x)* by the cyclotomic twist ε and the duality of §0.2.
 
 Its API:
 
 - Π*(ρ) = L⊗lim_iΠ(V_i)^∨ from the stable dual lattice and its finite quotients.
-- For closed x, κ(x)⊗Π*(ρ) ≅ Π(ρ_x)′_b, G-equivariantly.
+- For closed x, κ(x)⊗Π*(ρ) ≅ Π(ρ_x)*, G-equivariantly.
 - Commensurable stable lattices give the same rational object.
 - Π*(ρ) ≅ Hom^cont_(R_(B,M))(LL_B(M), R_(B,M)), with the B-adic topology.
 - If R_(B,M) = 0, then Π*(ρ) = 0.
 
 **Checks.**
 
-- At a closed point x the fibre is Π(V_(M,ℒ_x))′_b, with ℒ_x the line of the Galois fibre ρ_x (§0.3).
+- At a closed point x the fibre is Π(V_(M,ℒ_x))*, with ℒ_x the line of the Galois fibre ρ_x (§0.3).
 - An empty type locus gives zero, not a residual constant family.
 - Two R_(B,M)-modules can have the same closed fibres and differ by non-separated or non-finite pieces, so the construction must keep the integral limit. Using a lattice in ρ rather than in its dual, with the same integral correspondence, reverses the duality convention.
 
@@ -985,19 +989,20 @@ Its API:
 
 ### 6.2 The special-type convention
 
-For special M = Sp⊗η, put R_(B,M) = L. If B is the block of St⊗η̄_G, put ρ_(B,M) = η, a character of G_ℚ_p through reciprocity, and Π*(ρ_(B,M)) = (St^cont⊗η_G)′_b. For every other block put ρ_(B,M) = 0 and Π*(ρ_(B,M)) = 0 (CDN23, §5.2, lines 2553–2557).
+For special M = Sp⊗η, put R_(B,M) = L. If B is the block of St⊗η̄_G, put ρ_(B,M) = η, a character of G_ℚ_p through reciprocity, and Π*(ρ_(B,M)) = (St^cont⊗η_G)*. For every other block put ρ_(B,M) = 0 and Π*(ρ_(B,M)) = 0 (CDN23, §5.2, lines 2553–2557).
 
 Its API:
 
 - R_(B,M) = L for special M.
-- In the Steinberg block the Galois factor is η, of rank one, and the G-factor is (St^cont⊗η_G)′_b.
+- In the Steinberg block the Galois factor is η, of rank one, and the G-factor is (St^cont⊗η_G)*.
 - In all other blocks the contribution is zero.
 
 **Checks.**
 
 - For η = 1 the Galois factor is L with trivial action, not a rank-two semistable extension.
 - A block not containing St⊗η̄_G contributes zero.
-- Replacing η by ηχ twists the Galois factor by χ, the G-factor by χ_G and JL(M) by χ_Ǧ. This matches §4.14.
+- Replacing η by ηχ twists the Galois factor by χ, JL(M) by χ_Ǧ and the G-factor by χ_G⁻¹, since (St^cont⊗η_Gχ_G)* = (St^cont⊗η_G)*⊗χ_G⁻¹ for the dual action of Conventions. When the reduction of χ is nontrivial the Steinberg block moves to that of St⊗η̄_Gχ̄_G. This matches §4.14.
+- At p = 7 let χ be a character of ℚ_7^× of order three with χ(7) = 1, trivial on 1+7ℤ_7, and a ∈ ℤ_7^× with χ(a) = ζ₃. Then (ηχ)(7)² = η(7)², so Sp⊗ηχ stays in ΦNᵖ. The scalar aI₂ acts on St^cont⊗η_Gχ_G by η(a²)ζ₃², hence on its dual by η(a²)⁻¹ζ₃, which is its scalar on (St^cont⊗η_G)*⊗χ_G⁻¹; twisting the dual by χ_G would give η(a²)⁻¹ζ₃². A quadratic χ equals its inverse and cannot detect the error.
 
 *Needs:* §§4.2 and 5.6; PadicLocalLanglandsForGL2Qp §§5.1–5.2.
 
@@ -1018,7 +1023,7 @@ Let A be a principal ideal domain with infinitely many prime ideals, or a finite
 
 For p > 2 and supercuspidal M ∈ ΦNᵖ_n, prove that R_B^(ps,δ_M)[1/p] acts on m_(B,M) through its quotient R_(B,M). Equivalently, I_(B,M) = ker(R_B^(ps,δ_M)[1/p] → R_(B,M)) kills the whole module, not only its closed fibres (CDN23, Théorème 5.24(i), lines 2779–2800). The route has four steps:
 
-- Since O[M]^b = 0 (§4.9), bounded vectors in §4.1 embed H¹_ét[M] into X⁺_st(M)⊗̂(LL(M)^∧)′_b.
+- Since O[M]^b = 0 (§4.9), bounded vectors in §4.1 embed H¹_ét[M] into X⁺_st(M)⊗̂(LL(M)^∧)*, by §4.10(b) for the universal unitary completion LL(M)^∧.
 - Choose a G-stable O_L-lattice in LL(M), complete it p-adically and take its B-adic quotient. This is the B-adic completion of the base §5.12.
 - The B-adic quotient is p-torsion-free and complete, and is killed by J = Z_B^(δ_M) ∩ I_(B,M), where Z_B^(δ_M) is the lattice R_B^(ps,δ_M)/O_L-torsion. Its reduction maps are surjective.
 - Every map from the compact P_B factors through a finite-length block quotient, so the two actions of R_B^ps agree and I_(B,M) kills Hom_G(P_B, H¹_ét[M]).
@@ -1045,7 +1050,7 @@ The special case is §6.2. The formula concerns the rational module; no formula 
 
 **Checks.**
 
-- For R_(B,M) = L (one closed point), Ř = L and the formula reads m_(B,M) ≅ m_B(Π(ρ_x)′_b)⊗ρ_x.
+- For R_(B,M) = L (one closed point), Ř = L and the formula reads m_(B,M) ≅ m_B(Π(ρ_x)*)⊗ρ_x.
 - Ř_(B,M) is the continuous L-dual of R_(B,M). The source formula Ř = Hom(Ř, L) refers to the object being defined (source correction E11).
 - A comparison of Galois modules alone, without the E_B-action, is weaker than the statement and does not determine the isomorphism.
 
@@ -1061,15 +1066,16 @@ The left side is the arithmetic completion of §5.1, not all of H¹_ét(M^p_(n,C
 
 **Checks.**
 
-- At a closed supercuspidal point x the multiplicity recovers Π(ρ_x)′_b⊗ρ_x⊗JL(M), in agreement with §4.14.
-- For the Steinberg block and M = Sp the summand is (St^cont)′_b⊗1⊗1, in agreement with §4.2.
+- At a closed supercuspidal point x the multiplicity at x is the 𝔪_x-torsion of the summand of B, as in the proof of CDN23 Théorème 5.24(ii) (lines 2837–2847). It is (κ(x)⊗Π*(ρ))⊗_κ(x)ρ_x⊗_κ(x)Hom_L(κ(x), L) ≅ Π(ρ_x)*⊗_κ(x)ρ_x, tensored with JL(M) (Layer 6, Examples). For κ(x) = L this is the multiplicity Π(ρ_x)*⊗JL(M) of §4.14 at V = ρ_x, tensored with ρ_x. The ordinary fibre κ(x)⊗_(R_(B,M))(−) of the summand is a different operation.
+- Test the two operations on A = L⟨T⟩ at x: T = 0. Its continuous dual Ǎ is the space of bounded sequences (ℓ(Tⁿ))_(n≥0), on which T acts by the left shift, since (Tℓ)(Tⁿ) = ℓ(Tⁿ⁺¹). The shift is surjective with kernel L·ev₀, so Ǎ/TǍ = 0 while Ǎ[T] = L·ev₀. Hence κ(x)⊗_A(P⊗_AǍ) = 0 for every A-module P, while the T-torsion of P⊗_AǍ is P/TP⊗L·ev₀ for torsion-free P. Reading the closed point as an ordinary fibre would lose the whole multiplicity.
+- For the Steinberg block and M = Sp the summand is (St^cont)*⊗1⊗1, in agreement with §4.2.
 - Modulo p^k each integral vector has finite block support, so the unrestricted product over B is not the left side.
 
 *Needs:* §§5.4, 5.6, 6.2 and 6.5; PadicLocalLanglandsForGL2Qp §§5.3 and 5.12.
 
 ### Examples
 
-If ρ̄_B is absolutely irreducible and the type locus of M in B is a single PID factor A with fraction field K, then the summand of B is a rank-two A-family Π*(ρ)⊗ρ⊗Ǎ whose fibre at each closed point x of A is Π(ρ_x)′_b⊗ρ_x.
+If ρ̄_B is absolutely irreducible and the type locus of M in B is a single principal ideal domain factor A, then ρ = ρ_(B,M) is free of rank two over A and the summand of B is S = Π*(ρ)⊗_Aρ⊗_AǍ. Let x be a closed point of A with residue field κ(x). The module Π*(ρ)⊗_Aρ is torsion-free, since Π*(ρ) ≅ Hom^cont_A(LL_B(M), A) (§6.1) and ρ is free, hence flat over A, and Ǎ[𝔪_x] = Hom_L(κ(x), L), so the 𝔪_x-torsion of S is (κ(x)⊗_AΠ*(ρ))⊗_κ(x)ρ_x⊗_κ(x)Hom_L(κ(x), L). By §6.1 and the trace form Hom_L(κ(x), L) ≅ κ(x), it is Π(ρ_x)*⊗_κ(x)ρ_x. The ordinary fibre κ(x)⊗_AS is not this space: it vanishes whenever Ǎ is 𝔪_x-divisible, as for the test ring of §6.6, Checks. Only ρ has rank two over A; Π*(ρ) is not finitely generated, its fibres Π(ρ_x)* being infinite-dimensional.
 
 ### Dependencies
 
@@ -1102,7 +1108,7 @@ For k ≥ 0, prove the strict exact sequence of G-Fréchet spaces 0 → O(−k)(
 **Checks.**
 
 - For k = 0 the row is the de Rham sequence of §3.3, with O(2)⊗det = Ω¹ (DLB17, Lemme 3.5).
-- For k = 1, (u⁺)² sends O(−1) to O(3)⊗det². Its cokernel is H¹_dR(Σ_r)^ρ⊗Sym¹ ≅ π′⊗M*_dR⊗Sym¹, which is four copies of π′, and the weights become {0,2}. The preimage is Π(Δ_(2,ℒ))′_b⊗det, where Π(Δ_(2,ℒ)) = Π(V⁽²⁾_(M,ℒ))^an⊗δ_2⁻¹ and δ_2(p)² = p⁻¹ (§2.4). For aI₂ with a = p, the middle term has scalar p⁻³p⁴ = p and the preimage has scalar p⁻¹p² = p. Without det the scalar would be p⁻¹; reading it as Π(V)^an for a V with D_rig(V) = Δ_(2,ℒ) names a representation that does not exist.
+- For k = 1, (u⁺)² sends O(−1) to O(3)⊗det². Its cokernel is H¹_dR(Σ_r)^ρ⊗Sym¹ ≅ π′⊗M*_dR⊗Sym¹, where G acts trivially on the two-dimensional M*_dR and through the standard algebraic action on Sym¹. After a basis of M*_dR it is two copies of π′⊗Sym¹, not four copies of π′: pI₂ acts on it by p, as on the middle term, but on four copies of π′ by 1. The weights become {0,2}. The preimage is Π(Δ_(2,ℒ))′_b⊗det, where Π(Δ_(2,ℒ)) = Π(V⁽²⁾_(M,ℒ))^an⊗δ_2⁻¹ and δ_2(p)² = p⁻¹ (§2.4). For aI₂ with a = p, the middle term has scalar p⁻³p⁴ = p and the preimage has scalar p⁻¹p² = p. Without det the scalar would be p⁻¹; reading it as Π(V)^an for a V with D_rig(V) = Δ_(2,ℒ) names a representation that does not exist.
 - The determinant power in the row is k+1: its middle term has scalar a⁻ᵏ⁻²a²ᵏ⁺² = a^k. The preimage has scalar a⁻ᵏa²ᵏ = a^k, and at k = 0 its det^k twist is trivial. The identity (Sym^k)∨⊗det^k ≅ Sym^k sends the dual of the two weights a and b at k = 1 to b and a, since a⁻¹ab = b and b⁻¹ab = a.
 
 *Needs:* §§2.2, 2.4, 3.1, 3.3 and 7.1; PadicLocalLanglandsForGL2Qp §§4.1–4.2 and 6.9.
@@ -1152,7 +1158,7 @@ A function f ∈ O(Σ_n) is infinitely primitivable when it lies in ∩_(j≥0) 
 
 **Checks.**
 
-- On Σ₀ = Ω⊔Ω, f = (1, −1) has the primitives (z^j/j!, −z^j/j!) for every j, but is not a pullback from Ω. So the printed conclusion fails, and the corrected one holds.
+- Over ℚ_p², where Σ₀ splits as Ω⊔Ω (Conventions), f = (1, −1) has the primitives (z^j/j!, −z^j/j!) for every j, but is not a pullback from Ω. So the printed conclusion fails, and the corrected one holds.
 - For a nontrivial supercuspidal ρ, the infinitely primitivable part of O(Σ_n)^ρ is 0.
 - The statement is a containment. Not every function of H⁰_dR·O(Ω) is infinitely primitivable, since d/dz is not surjective on O(Ω): H¹_dR(Ω) ≠ 0 (§4.2).
 
@@ -1191,7 +1197,7 @@ Its API:
 
 ### Examples
 
-On Σ₀ = Ω⊔Ω every locally constant function is infinitely primitivable, and so is every product of one with an infinitely primitivable function on Ω. For k = 0 the BGG row of §7.2 is the de Rham sequence.
+Over ℚ_p², where Σ₀ splits as Ω⊔Ω, every locally constant function is infinitely primitivable, and so is every product of one with an infinitely primitivable function on Ω. For k = 0 the BGG row of §7.2 is the de Rham sequence.
 
 ### Dependencies
 
@@ -1224,6 +1230,7 @@ All statements below are in our own words.
 - **E17** (gap, CDN23, proof of Théorème 5.24(ii); affects the proof). Local freeness of the dual multiplicities over each PID factor is asserted without argument. §6.5.
 - **E18** (misprint, DLB17, Théorème 1.9, line 434; affects nothing). n denotes both the cover level and the cyclotomic level. §7.4.
 - **E19** (gap, DLB17, proof of Théorème 1.10, §12.1, line 2785; affects the proof). Théorème 1.2 is applied to every nontrivial Ǧ-type, including one-dimensional types and nontrivial central characters. §7.5.
+- **E20** (error, DLB17, lines 114–116; affects nothing). Σ₀, defined over ℚ_p (line 104), is described as two copies of Ω. That holds over ℚ_p²; over ℚ_p the Weil descent datum exchanges the two height classes and Σ₀ is connected. Conventions, §0.1.
 
 ## References
 
