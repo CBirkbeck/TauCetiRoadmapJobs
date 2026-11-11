@@ -12,8 +12,8 @@ proves, each with `sorry`, together with the few simple definitions those statem
 
 Stated here:
 
-* Layer 3: the billiard ball map of a convex table of class `C^k`, `k ≥ 2`, preserves the measure
-  `sin δ dδ ds` (`ConvexTable.measurePreserving_billiardMap`);
+* Layer 3: the billiard ball map of every convex table (of class `C^k`, `k ≥ 1`) preserves the
+  measure `sin δ dδ ds` (`ConvexTable.measurePreserving_billiardMap`);
 * Layer 5: Birkhoff's theorem that a rotational invariant curve of a twist homeomorphism of the
   closed annulus all of whose interior points are non-wandering is the graph of a continuous
   function (`isGraph_of_isRotationalInvariantCurve`), and its billiard form, with the Lipschitz
@@ -21,7 +21,10 @@ Stated here:
 * Layer 6: Birkhoff's theorem that every convex table of class `C^k`, `k ≥ 1`, has two
   geometrically distinct periodic billiard trajectories of every rotation type `(p, q)`
   (`ConvexTable.exists_two_periodic_orbits`);
-* Layer 12: Wiener's lemma for finite measures on `ℝ` (`tendsto_average_norm_charFun_sq`), the
+* Layer 12: strong continuity of the Koopman representation on `L²` of a jointly measurable
+  measure-preserving action of `ℝ` on a probability space, with no topology on the space
+  (`continuous_compMeasurePreserving_vadd`), Wiener's lemma for finite measures on `ℝ`
+  (`tendsto_average_norm_charFun_sq`), the
   continuous-time mean ergodic projection theorem for strongly continuous unitary groups, with the
   atomic-mass identity (`exists_tendsto_twistedAverage`), and the eigenfunction criterion for weak
   mixing of measure-preserving actions of `ℝ` (`isWeaklyMixing_iff`).
@@ -35,9 +38,11 @@ Not statable at the pins, and therefore absent:
   simple definition over native data;
 * Layer 9, non-ergodicity of the billiard flow of a rational polygon: it lacks the same flow;
 * Layer 11, the Katok–Zemlyakov unfolding conjugacy between the billiard flow of a rational
-  polygon in a direction class and the directional flow of its translation surface: it lacks the
-  polygonal billiard flow, the glued translation surface of the polygon with its atlas, and the
-  directional flows of translation surfaces (Layer 10), all constructions of this roadmap;
+  polygon in a direction class and the directional flow of its translation surface (for a
+  direction fixed by a reflection of the reflection group, of the quotient of that surface by the
+  reflection): it lacks the polygonal billiard flow, the glued translation surface of the polygon
+  with its atlas, and the directional flows of translation surfaces (Layer 10), all constructions
+  of this roadmap;
 * Layer 11, the Euler characteristic and genus of the Katok–Zemlyakov surface: Tau Ceti's
   `TauCeti.eulerChar` needs a finite CW type on the glued surface, whose construction is part of
   the target.
@@ -148,11 +153,14 @@ noncomputable def phaseMeasure (ℓ : ℝ) [Fact (0 < ℓ)] : Measure (AddCircle
   (volume : Measure (AddCircle ℓ)).prod
     ((volume.restrict (Set.Ioo 0 Real.pi)).withDensity fun δ => ENNReal.ofReal (Real.sin δ))
 
-/-- The billiard ball map of a convex table of class `C^k`, `k ≥ 2`, preserves the measure
-`sin δ dδ ds` on the phase cylinder (KatokHasselblatt1995, Section 9.2; BialyMironov2022,
-Section 2, p. 4, for smooth tables of positive curvature). -/
+/-- The billiard ball map of every convex table (of class `C^k`, `k ≥ 1`, so possibly not
+differentiable) preserves the measure `sin δ dδ ds` on the phase cylinder: through the oriented
+lines it is a reversal of orientation composed with the time reversal `(s, δ) ↦ (s, π − δ)`, and
+`sin δ dδ ds` is the invariant measure `dθ dc` on the space of oriented lines
+(KatokHasselblatt1995, Section 9.2; BialyMironov2022, Section 2, p. 4, for smooth tables of
+positive curvature). -/
 theorem ConvexTable.measurePreserving_billiardMap {k : ℕ∞} {ℓ : ℝ} [Fact (0 < ℓ)]
-    (T : ConvexTable k ℓ) (hk : 2 ≤ k) :
+    (T : ConvexTable k ℓ) :
     MeasurePreserving T.billiardMap (phaseMeasure ℓ) (phaseMeasure ℓ) := by
   sorry
 
@@ -169,8 +177,9 @@ def IsTwistLift (ℓ : ℝ) {a b : ℝ} (F : ℝ × Set.Icc a b ≃ₜ ℝ × Se
   ∀ x : ℝ, StrictMono fun y : Set.Icc a b => (F (x, y)).1
 
 /-- The non-wandering set of a self-map `f` of a topological space: the points `x` such that every
-neighbourhood `U` of `x` meets its image under some iterate `f^[n]`, `n ≥ 1` (Herman1983,
-Chapitre I, 3.4.3). -/
+neighbourhood `U` of `x` meets its image under some iterate `f^[n]`, `n ≥ 1` (the standard
+definition; Herman1983, Chapitre I, 3.4.3, works under the hypothesis that every point is
+non-wandering). -/
 def nonwanderingSet {X : Type*} [TopologicalSpace X] (f : X → X) : Set X :=
   {x | ∀ U ∈ 𝓝 x, ∃ n : ℕ, 0 < n ∧ (f^[n] '' U ∩ U).Nonempty}
 
@@ -228,12 +237,14 @@ def ConvexTable.IsPeriodicConfiguration {k : ℕ∞} {ℓ : ℝ} [Fact (0 < ℓ)
     (∀ j : ℤ, s j < s (j + 1) ∧ s (j + 1) < s j + ℓ) ∧
     ∀ j : ℤ, inner ℝ (u (j - 1)) (deriv T.toFun (s j)) = inner ℝ (u j) (deriv T.toFun (s j))
 
-/-- Birkhoff's theorem on periodic orbits: for a convex table of class `C^k`, `k ≥ 1`, and coprime
+/-- Birkhoff's theorem on periodic orbits: for a convex table of class `C^k`, `k ≥ 1`, and integers
 `0 < p < q`, there are two periodic configurations of type `(p, q)` that are not related by a shift
 of the index and a translation by a multiple of `ℓ`, that is, two geometrically distinct periodic
-billiard orbits of rotation type `(p, q)` (KatokHasselblatt1995, Section 9.3). -/
+billiard orbits of rotation type `(p, q)` (KatokHasselblatt1995, Section 9.3, for coprime `p`,
+`q`). The coprime case is the content: for `d = gcd(p, q)` a configuration of type
+`(p / d, q / d)` is one of type `(p, q)`. -/
 theorem ConvexTable.exists_two_periodic_orbits {k : ℕ∞} {ℓ : ℝ} [Fact (0 < ℓ)]
-    (T : ConvexTable k ℓ) {p q : ℕ} (hp : 0 < p) (hpq : p < q) (hcop : p.Coprime q) :
+    (T : ConvexTable k ℓ) {p q : ℕ} (hp : 0 < p) (hpq : p < q) :
     ∃ s s' : ℤ → ℝ, T.IsPeriodicConfiguration p q s ∧ T.IsPeriodicConfiguration p q s' ∧
       ∀ m n : ℤ, ∃ j : ℤ, s' j ≠ s (j + m) + n * ℓ := by
   sorry
@@ -248,6 +259,19 @@ def IsWeaklyMixing {X : Type*} [MeasurableSpace X] [AddAction ℝ X] (μ : Measu
   ∀ A B : Set X, MeasurableSet A → MeasurableSet B →
     Tendsto (fun T : ℝ => T⁻¹ * ∫ t in (0 : ℝ)..T,
         |μ.real ((fun x => t +ᵥ x) ⁻¹' A ∩ B) - μ.real A * μ.real B|) atTop (𝓝 0)
+
+/-- Strong continuity of the Koopman representation: for a jointly measurable action of `ℝ` on a
+probability space preserving the measure, and every `f` in complex `L²(μ)`, the map
+`t ↦ f ∘ (t +ᵥ ·)`, the pullback of `f` along the measure-preserving translate, is continuous from
+`ℝ` to `L²(μ)`. No topology on the space and no separability of `L²(μ)` is assumed; for counting
+measure on `ℝ` acting on itself the statement fails (Hochman2012, Section 6.6, for `ℤ`-actions,
+where no continuity is needed). -/
+theorem continuous_compMeasurePreserving_vadd {X : Type*} [MeasurableSpace X] [AddAction ℝ X]
+    [MeasurableVAdd₂ ℝ X] (μ : Measure X) [IsProbabilityMeasure μ] [VAddInvariantMeasure ℝ X μ]
+    (f : Lp ℂ 2 μ) :
+    Continuous fun t : ℝ =>
+      Lp.compMeasurePreserving (fun x : X => t +ᵥ x) (measurePreserving_vadd t μ) f := by
+  sorry
 
 /-- Wiener's lemma on the line: for a finite Borel measure `σ` on `ℝ`, the time averages
 `T⁻¹ ∫₀ᵀ |charFun σ t|² dt` of the squared modulus of its characteristic function
