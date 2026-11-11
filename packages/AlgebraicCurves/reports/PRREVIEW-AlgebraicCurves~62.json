@@ -1,0 +1,22 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-AlgebraicCurves~62",
+  "head": "a87771649d4304b5af64fa650ef10670eb09ffcf",
+  "pr": 1807,
+  "folder": "AlgebraicCurves",
+  "date": "2026-11-11",
+  "findings": 1,
+  "blocking": 0,
+  "notes": "incremental re-review of 80 changed lines since 9eacb17. Previous R01 (consumer sentences) repaired: checked against main 7740b1c, SchemeAndStackFoundations 139-143 and 5716-5863, AlgebraicVectorBundles 157. Changed passages checked: scope bullets, the §6.4 Check in characteristic 2, the §9.3 chain rule and trace residues, the §10.6 Kummer local data, the §11.2 and §11.5 Checks. 10 pinned Tau Ceti declarations were opened, and the adversarial rows A1-A8 have computed values. Of the seeded sample, only §11.2 falls in the changed lines; its locator is Stichtenoth (uncertified). One P3 finding: the description does not state the AlgebraicCurves rewrite or the Suggested.lean drops, and its summary sentence misstates main's theorem. Gate: my standalone rerun is 0 on every scanner except outside-folder=24; those are exactly the 12 sibling folders this pull request owns, the known scope false positive. The worker's PR-aware gate passes, with build=0. depcheck: 223 roadmaps, 1992 edges, 0 problems. Suggested.lean elaborates, with sorry the only warning (lines 80, 104).",
+  "carried": {
+   "from": "a87771649d4304b5af64fa650ef10670eb09ffcf",
+   "head": "99794975312f1c3c7fe9b551d7d170d87cda4c9c",
+   "findings": 1,
+   "lines": 3,
+   "folders": [
+    "AlgebraicCurves"
+   ]
+  }
+ }
+}
