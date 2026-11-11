@@ -239,7 +239,7 @@ authors = "The Stacks project authors"
 title = "The Stacks project, Commutative Algebra, Varieties and Resolution of Surfaces"
 year = 2026
 locator_scheme = "tag"
-locator = "Lemma 10.157.6 (tag 031T); Theorem 10.160.8 (tag 032A); Lemma 10.160.10 (tag 0C0S); Lemma 33.25.7 (tag 056V); chapter Resolution of Surfaces (tag 0ADX)"
+locator = "Lemmas 10.106.2–10.106.3 (tags 00NP–00NQ); Lemma 10.119.7 (tag 00PD); Lemma 10.140.3 (tag 00TT); Lemma 10.157.6 (tag 031T); Theorem 10.160.8 (tag 032A); Lemma 10.160.10 (tag 0C0S); Lemma 33.25.7 (tag 056V); chapter Resolution of Surfaces (tag 0ADX)"
 url = "https://stacks.math.columbia.edu/tag/056V"
 fetched_from = "https://stacks.math.columbia.edu/download/varieties.pdf#nameddest=056V"
 fetched_at = "2026-11-10T23:59:06Z"
@@ -247,7 +247,7 @@ sha256 = "ed339c312c86721e3f830876da14cabe89a96e83e454a78b7cd355555f4bca45"
 licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-10"
-cited_for = ["0.5; 1.4; 1.5; 5.4; 6.3", "0.8a"]
+cited_for = ["0.5; 1.4; 1.5; 5.4; 6.3", "0.8a", "0.6"]
 
 [[source]]
 id = "serre_albanese"
