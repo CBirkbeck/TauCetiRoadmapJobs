@@ -5736,15 +5736,15 @@
   "gaps": [
     {
       "slug": "geometric-weak-primitive-auxiliary-finiteness",
-      "needs": "the finiteness theorem \"Finiteness with an unobstructed auxiliary place\" of §8.20 (Layer 8), which there keeps the strong-primitivity hypotheses of §8.7, in the geometric weak-primitive setting of Newton–Thorne 2026 Proposition 3.9 (nt26 pp. 20–21), applied twice (with and then without an auxiliary Steinberg place), including the comparison of the non-scalar unobstructed auxiliary local ring with the Hecke algebra at auxiliary level.",
+      "needs": "extend §8.16 (Layer 8), retaining the geometric weak-primitivity and all other §8.7 hypotheses, to the two deformation problems in Newton–Thorne 2026 Proposition 3.9 (nt26 pp. 20–21): finiteness first with the extra Steinberg condition at `v_2` and then with that condition replaced by the unrestricted one, without assuming that the cyclotomic restricted residual image has no nontrivial `l`-power quotient; §8.16 already supplies the non-scalar unobstructed auxiliary local/Hecke comparison, and only this hypothesis removal and two-application extension are requested.",
       "supplier": "PotentialAutomorphyInfrastructurePartII",
-      "section": "§8.20 (Layer 8)"
+      "section": "§8.16 (Layer 8)"
     },
     {
       "slug": "dyadic-definite-unitary-forms",
-      "needs": "the Layer 3 constructions for `l = 2` used by Newton–Thorne II §2 and Newton–Thorne 2026 §4 at `p = 2`: algebraic modular forms on the definite unitary group, exactness and group-ring freeness at sufficiently small level, Taylor–Wiles level structures, and the Hecke-valued determinant of the localized Hecke algebra (the `𝒢_n`-valued lift is not needed), together with the potential diagonalizability of two-dimensional potentially Barsotti–Tate representations for `l = 2` in Layer 1 (§1.6).",
+      "needs": "the Layer 3 constructions for `l = 2` used by Newton–Thorne II §2 and Newton–Thorne 2026 §4 at `p = 2`: algebraic modular forms on the definite unitary group, exactness and group-ring freeness at sufficiently small level, Taylor–Wiles level structures, and the Hecke-valued determinant of the localized Hecke algebra (the `𝒢_n`-valued lift is not needed), together with the potential diagonalizability of two-dimensional potentially Barsotti–Tate representations for `l = 2` in Layer 1 (§1.4).",
       "supplier": "PotentialAutomorphyInfrastructurePartII",
-      "section": "Layer 3"
+      "section": "Layer 3 and §1.4"
     },
     {
       "slug": "components-under-field-extension",
@@ -5760,7 +5760,7 @@
     },
     {
       "slug": "formal-torus-patching",
-      "needs": "in §5.4 and Layer 6, the two additions to the formal quotient and the dyadic determinant torsor of GlobalGaloisDeformations §§4.6, 4.11 (imported, not restated: a free action of the formal torus `Ĝ_m^γ` on `Sp R′`, a map `δ` to `Ĝ_m^γ` equivariant for the square action, and the `Ĝ_m^γ[2]`-torsor `Sp R → Sp (R′)^{Ĝ_m^γ}` with `Sp R = δ^{−1}(1)`, finite flat of degree `2^γ` at `p = 2`) used by Newton–Thorne II Proposition 2.8 and Newton–Thorne 2026 Proposition 4.9 (after Khare–Wintenberger, kw09 Proposition 9.3): (i) patched actions: when the finite-level patching data carry compatible twisting actions of the finite groups `Ĝ_m^γ[2^N]` on the rings `R′_N` with square-equivariant determinant maps of fibre `R_N`, compatible actions of `Ĝ_m^γ[2]` on the pseudodeformation rings `P_N` making `P_N → R_N` equivariant, and actions of `Ĝ_m^γ[2](𝒪)` on finite-level modules `H_{D,N}` over `R_N` and `H_{G,N}` over `P_N` lifting the ring actions, the patched limit carries the free `Ĝ_m^γ`-action on `Sp R′_∞` with square-equivariant `δ` and `δ^{−1}(1) = Sp R_∞`, a `Ĝ_m^γ[2]`-action on `Sp P_∞` making `Sp R_∞ → Sp P_∞` equivariant, and actions of `Ĝ_m^γ[2](𝒪)` on both patched modules lifting those on `R_∞` and `P_∞`; (ii) component transitivity: if `R′_∞` is a domain flat over `𝒪`, then `Ĝ_m^γ[2](𝒪) = {±1}^γ` acts transitively on the irreducible components of `Spec R_∞`. The torsor is the formal one of GlobalGaloisDeformations §4.11, on represented complete-local functors.",
+      "needs": "in §5.4 and Layer 6, extend the rank-two free patched torus action of GL2ModularityLifting §§6.1, 6.6 and its determinant-one fibre and torsor of §6.7 and GlobalGaloisDeformations §4.11 to simultaneous patching with the pseudodeformation rings and both modules in Newton–Thorne II Proposition 2.8 and Newton–Thorne 2026 Proposition 4.9 (kw09 Proposition 9.3): assume the supplied compatible free action chunks on cofinal Artinian truncations of `Sp R′_N`, detecting every stabilizer on an Artinian test algebra, square-equivariant determinant maps whose fibre comparison kernels tend to zero, compatible `Ĝ_m^γ[2]`-actions on `Sp P_N` making `Sp R_N → Sp P_N` equivariant, and semilinear `Ĝ_m^γ[2](𝒪)`-actions on both finite-level modules commuting with their scalar and transition maps; retain these actions on `P_∞`, `H_{D,∞}` and `H_{G,∞}` in the simultaneous limit, and prove that if `R′_∞` is an `𝒪`-flat domain then `{±1}^γ` acts transitively on the irreducible components of `Spec R_∞`; the free rank-two action and its torsor are supplied inputs, not conclusions from square-equivariance alone.",
       "supplier": "DeformationAndDerivedPatchingAlgebra",
       "section": "§5.4 and Layer 6"
     },
