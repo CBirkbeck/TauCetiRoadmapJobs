@@ -1,0 +1,29 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-TopologicalKTheory~59",
+  "head": "2faed4de96cc7856b72e0c8a4cff3ebfcae6df27",
+  "pr": 1807,
+  "folder": "TopologicalKTheory",
+  "date": "2026-11-11",
+  "findings": 8,
+  "blocking": 2,
+  "notes": "Full review of 2faed4d. Gate re-run: all 0 except outside-folder=24 (the 12 folders named as this PR's own; filtered diff empty); worker gate passed with build=0; depcheck 236 roadmaps, 2156 edges, 0 problems; Suggested.lean elaborates (exit 0, sorry only), padding probe fails simp/infer_instance/refl. Seeded sample: T2.0 verified against hatcher-vbkt lines 1515-1549 (pp. 39-40); T7.0 rests on uncertified sibson-1969, AlgebraicTopology names resolved. 16 source locators checked (Hatcher, Mitchell, Kolar-Michor-Slovak, Debray-Freed, Kriz-May); Atiyah 1966 not legally readable. Previous R01 (DGFloerPartII ownership) not repaired, carried as R02; previous R02 partly repaired, carried as R06. New: R01 Tau Ceti projectivizationHomeomorph/Plucker/Stabilization cannot be imported with Mathlib's projectivization topology (repair compiled); R03 false T7.1 Check; R04 T4 has no Checks; R05 vacuous T6.6 Check; R07 description omits 21 removed Lean declarations; R08 typo.",
+  "deferred": [
+   {
+    "id": "D01",
+    "severity": "P2",
+    "title": "DGFloerPartII and HomotopySpheres still own O, SO, the stable range and π_i(SO), which T7.1 owns",
+    "where": "DGFloerPartII 4.2a–4.2c and HomotopySpheres §4A–4B cite TopologicalKTheory T7.1",
+    "raised": "PRREVIEW-TopologicalKTheory~59"
+   },
+   {
+    "id": "D02",
+    "severity": "P3",
+    "title": "AlgebraicTopology still lists only T1.5 as a consumer of §5.5's homotopy sequence",
+    "where": "AlgebraicTopology README line 2522 and its TopologicalKTheory consumer bullet (lines 5334–5336)",
+    "raised": "PRREVIEW-TopologicalKTheory~59"
+   }
+  ]
+ }
+}
