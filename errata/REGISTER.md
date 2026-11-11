@@ -2,7 +2,7 @@
 
 Reviewers, red-team passes and errata jobs record every mistake they find in a source while checking a roadmap's locators: misprints (slips whose intended meaning is clear), errors (a false statement or proof step) and gaps (a step the source does not justify), each with the roadmap, the board pull request or errata job and the head that reported it. Collected by the board sync from the `## Source issues` sections of review, red-team and errata comments; the data is in `errata/source-issues.json`.
 
-11081 mistakes recorded on the board: 6388 misprints, 2893 errors, 1336 gaps, 464 unparsed bullets.
+11084 mistakes recorded on the board: 6390 misprints, 2894 errors, 1336 gaps, 464 unparsed bullets.
 Errata jobs have read the cited sources of 60 roadmaps; in those of 2 they found no mistake.
 The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explorer/`: 1525 awaiting review, 13582 confirmed, 228 rejected.
 
@@ -5004,8 +5004,10 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 ## dang2020
 
 - **Misprint** at Proposition 3.4.1 proof, printed page 17, line 857: the source says the kernel-section dimension strictly exceeds the difference of two section dimensions; it should be greater than or equal to that difference; affects the proof. Found by DynamicalDegreesOfRationalMaps (#12938 at 27dbb08, 2026-11-10, codex gpt-6-astra).
+- **Misprint** at Proposition 3.4.1 proof, printed page 17, line 857: the source says the kernel dimension strictly exceeds the difference of section dimensions; it should be greater than or equal to that difference; affects the proof. Found by DynamicalDegreesOfRationalMaps (#12938 at 10f7e29, 2026-11-11, codex gpt-6-astra).
 - **Error** at Proposition 3.4.1, printed page 17, and Theorem 3.4.4, printed page 18: the source says the global-ratio Siu bound holds on every closed subscheme; it should be require irreducible support or use separate componentwise bounds; affects a stated result. Found by DynamicalDegreesOfRationalMaps (#12938 at 27dbb08, 2026-11-10, codex gpt-6-astra).
 - **Misprint** at Theorem 3.4.4 proof, printed page 18, line 883: the source says the final constant uses the ambient dimension n; it should be use support dimension r, as in the preceding factors; affects nothing. Found by DynamicalDegreesOfRationalMaps (#12938 at 27dbb08, 2026-11-10, codex gpt-6-astra).
+- **Misprint** at Theorem 3.4.4 proof, printed page 18, line 883: the source says the final constant uses ambient dimension n; it should be use support dimension r as in the preceding factors; affects nothing. Found by DynamicalDegreesOfRationalMaps (#12938 at 10f7e29, 2026-11-11, codex gpt-6-astra).
 - **Misprint** at Theorem 3.4.4, proof, printed page 18: the source says the final display has the constant `(n − i + 1)^i`; it should be `(r − i + 1)^i` as in the statement and the telescoped factors; affects nothing; <!-- tauceti-roadmap-review {"agent": "claude", "head": "91f762e9ccdda2b72452b63de80c6da80ddea5b1", "job": "REV-DESIGN-DynamicalDegreesOfRationalMaps", "model": "fable", "worker": "chris-x10"} -->. Found by DynamicalDegreesOfRationalMaps (#6585 at 91f762e, 2026-11-05, claude fable).
 
 ## darmon-merel
@@ -8035,6 +8037,10 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 
 - **Misprint** at Definition 2.6, printed p. 257: the source says the tame-character sheaf on the `(0,2)` stack; it should be use the `(1,2)` stack and its dimension shift; affects nothing. Found by KloostermanSheavesAndBesselIsocrystals (#13150 at 967bf39, 2026-11-11, codex gpt-6-astra).
 - **Misprint** at Remark 2.5, printed p. 257: the source says the affine factor as `I(1)/I(0)`; it should be write `I(1)/I(2)`; affects nothing. Found by KloostermanSheavesAndBesselIsocrystals (#13150 at 967bf39, 2026-11-11, codex gpt-6-astra).
+
+## Hochman2012
+
+- **Error** at Theorem 6.6.1 proof, printed p.69 (Hochman2012 line 3065 and line 3073): the source says nonnegative-power polynomials are dense in the spectral L² space; it should be Laurent polynomials, since for Haar measure the unit vector z⁻¹ is orthogonal to every nonnegative power; affects the proof; The witness is `⟨z⁻¹,zⁿ⟩=∫z^(n+1)=0` for every `n≥0`, while `‖z⁻¹‖₂=1`; therefore `‖z⁻¹−p‖₂²=1+‖p‖₂²≥1` for every polynomial used in that passage. This does not affect the roadmap: its real-time construction uses the closed span of coboundaries and Bochner's theorem, not that polynomial-density claim. <!-- tauceti-roadmap-review {"agent": "codex", "head": "293b4299e4c4c5ad9ee4c71ec58a22aa99a97398", "job": "REV-DESIGN-MathematicalBilliards~3", "model": "gpt-6-astra", "worker": "chris-4"} -->. Found by MathematicalBilliards (#12907 at 293b429, 2026-11-11, codex gpt-6-astra).
 
 ## HOCHSTER02
 
