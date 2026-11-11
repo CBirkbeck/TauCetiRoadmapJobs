@@ -4039,7 +4039,7 @@
     },
     {
       "slug": "quaternionic-rational-model",
-      "needs": "For a quaternion algebra D over a number field F and an irreducible admissible representation π′_f of D^×(𝔸_{F,f}) with trivial central character, construct a D^×(𝔸_{F,f})-stable model of π′_f over every subfield L ⊂ ℂ containing ℚ(π′_f), unique up to homothety, whose K-invariants are for every compact open K the H_ℚ(D^×(𝔸_{F,f}), K)-stable L-structure of (π′_f)^K, generated locally by newvector lines at split places and by torus-fixed lines at ramified places, where the trivial central character cannot be dropped (Waldspurger 1985, Lemmas I.1, I.2.1–I.2.2 and §II.1, pp. 123–124, 147–148; IP23, §3.2, p. 19).",
+      "needs": "For a quaternion algebra D over a number field F and an irreducible admissible representation π′_f of D^×(𝔸_{F,f}) with trivial central character, construct a D^×(𝔸_{F,f})-stable model of π′_f over every subfield L ⊂ ℂ containing ℚ(π′_f), unique up to homothety, whose K-invariants are for every compact open K the H_ℚ(D^×(𝔸_{F,f}), K)-stable L-structure of (π′_f)^K, given locally, at a split place, by the character line L when the local component is one-dimensional (a ramified character composed with the determinant has no newvector) and by the L-span of the translates of a newvector when it is infinite-dimensional, and at a ramified place by the L-span of the translates of a torus-fixed vector, where the trivial central character cannot be dropped (Waldspurger 1985, Lemmas I.1, I.2.1–I.2.2 and §II.1, pp. 123–124, 147–148; IP23, §3.2, p. 19).",
       "supplier": "GL2AutomorphicRepresentationsAndTransfer",
       "section": "§R17.3.8"
     }
