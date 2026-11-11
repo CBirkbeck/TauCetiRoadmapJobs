@@ -359,6 +359,7 @@ formal traces between them. Layers 3–4 depend only on Layers 0–2, and Layer 
 Layers 6–9 depend on their predecessors as listed in each layer's dependencies. No section requires
 a later one: a consequence of an early construction for objects built later is stated with those
 objects (the coordinate comparison of §1.4 in §§2.1–2.4, the logarithm of a formal trace in §9.1,
+the comparison of the quadratic levels of the §6.2 lattice quotients with the supplied lifts in §6.5,
 the Artin action on marked lattice classes in §6.6, the signs of traces between differently indexed
 generators in §9.3), and the remaining forward references are pointers only.
 
@@ -1032,7 +1033,8 @@ symmetric correction `Δ(X,Y)` of the law and corrections `δ_a(X)` of every act
 satisfy the linearized associativity, additivity and multiplicativity identities and leave every
 linear coefficient fixed. A coordinate correction `ψ(X)` with zero constant term induces a
 coboundary; its linear coefficient need not vanish. Define `H²_O(G₀; I)` as cocycles modulo
-coboundaries (VZ07, §3, equations (3.1)–(3.7), p.62; LT66, §2, Propositions 2.4–2.6, pp.52–55).
+coboundaries (VZ07, §3, equations (3.1)–(3.7), p.62; LT66, §2, Proposition 2.4, Remark 2.5 and
+Proposition 2.6, pp.52–55).
 
 API:
 
@@ -1538,11 +1540,9 @@ For an `O₀`-lattice `L` in `V = T ⊗ F₀ ≅ F` containing `T`, define `H_L`
 §5.2, with its marking to the `q₀^N`-Frobenius twist of the special fibre when `[L:T] = q₀^N`. Extend
 to all lattices by multiplying by a power of `π_F` and comparing markings through
 `[π_F] ≡ X^(#k_F)`; the invariant is the `π_F^ℤ`-class of `L` with its Frobenius-twist component.
-Its endomorphism order is `O_L = {a ∈ F : aL ⊂ L}`. In the quadratic case a quasi-canonical lift of
-level `s` has `O_L = O_s` (§6.4). Prove that in the quadratic case its completed strict-base
-extension and the degree-`q₀^s` quotient map for `L_s` identify with the marked lift and isogeny
-of GrossZagierAndArithmeticHeights §7.2; the comparison is the unique one preserving the
-special-fibre marking (Y95, §4, pp.296–298; G86, §5, pp.324–325).
+Its endomorphism order is `O_L = {a ∈ F : aL ⊂ L}` (Y95, §4, pp.296–298; G86, §5, pp.324–325).
+The quadratic levels and their comparison with the supplied strict-base lifts are stated in §6.5,
+with the quadratic orders of §6.4.
 
 API:
 
@@ -1556,13 +1556,11 @@ API:
 **Checks.**
 
 - `L = T` gives the canonical lift.
-- For quadratic `F` the level-one quotient has the proper order `O₀ + ϖ₀ O_F`.
 - Multiplication by `π_F` shifts the Frobenius exponent by the residue degree `[k_F : k_(F₀)]`.
 - A unit `a ∈ O_F^×` with `aL ≠ L` gives an isomorphic underlying quotient but a different marked
   deformation.
 
-*Needs:* §§6.1, 5.2, 5.3; §6.4 for the quadratic orders `O_s`; GrossZagierAndArithmeticHeights §7.2
-for the quadratic comparison.
+*Needs:* §§6.1, 5.2, 5.3.
 
 ### 6.3 Marked and unmarked classification
 
@@ -1612,29 +1610,46 @@ API:
 
 ### 6.5 Quadratic level classification
 
-For quadratic `F/F₀`, prove the lattice-algebra assertion that every proper `O_s`-lattice in
-`F` is free of rank one over `O_s` (Y95, §5, Proposition 4, p.300). Use it to identify the
-finite-residue marked lattice classes of §6.3 in each twist
-component with the supplied `O_F^×/O_s^×`-orbit of
-GrossZagierAndArithmeticHeights §7.2 after completed strict base change. Prove that this map is
-equivariant and bijective and that it identifies the unmarked level class and the multiplier
-order. Use `L_s = ϖ₀^(−s) O₀ t + T`, with multiplier order `O_s`, as its finite-residue
-representative (G86, §5, Proposition 5.3, p.325). A proof route: quadratic orders are
+For quadratic `F/F₀`, write `T = O_F t` with `t` a basis of the Tate module of §6.1, and for
+`s ≥ 0` put `L_s = ϖ₀^(−s) O₀ t + T = ϖ₀^(−s) O_s t`, with `O_s` of §6.4. It contains `T`, with
+`L_s/T ≅ O₀/ϖ₀^s O₀` cyclic of order `q₀^s`, and its multiplier order is `O_s`; so the
+quasi-canonical lift `H_(L_s)` of level `s`, the lattice quotient of §6.2, has endomorphism order
+`O_s` and is marked to the `q₀^s`-Frobenius twist of the special fibre (G86, §5, Proposition 5.3,
+p.325). Prove that the completed strict-base extension of `H_(L_s)`, with this marking, and the
+base change of the degree-`q₀^s` quotient isogeny `g_(L_s) : H → H_(L_s)` of §5.2 identify with a
+marked level-`s` lift of GrossZagierAndArithmeticHeights §7.2 and its canonical-to-quasi-canonical
+isogeny; the comparison is the unique one preserving the special-fibre marking (Y95, §4,
+pp.296–298; G86, §5, pp.324–325). Prove the lattice-algebra assertion that every proper
+`O_s`-lattice in `F` is free of rank one over `O_s` (Y95, §5, Proposition 4, p.300). Use these to
+identify the finite-residue marked lattice classes of §6.3 in each twist component with the
+supplied `O_F^×/O_s^×`-orbit of GrossZagierAndArithmeticHeights §7.2 after completed strict base
+change. Prove that this map is equivariant and bijective and that it identifies the unmarked level
+class and the multiplier order. A proof route: by §6.1 the base change of `H` is the supplied
+canonical lift with its marking; the lattice quotient, its marking and its order commute with
+coefficient extension (§§5.2, 6.2), so the base change of `H_(L_s)` is the quotient of the supplied
+canonical lift by a cyclic `O₀`-stable kernel of order `q₀^s` whose stabilizer in `O_F` is `O_s`,
+and the rigidity of §3.4 makes a marking-preserving comparison unique. Quadratic orders are
 Gorenstein and Yu's Proposition 4 gives the lattice freeness; the rank-two integral-basis
-calculation identifies the stabilizer with `O_s^×`; the marked
-comparison of §6.2 then identifies the two orbits.
+calculation identifies the stabilizer with `O_s^×`; the level comparison then identifies the two
+orbits.
 
 **Checks.**
 
 - Level zero is the canonical lift, with a single marked class in its component; the lattice
   `ϖ₀O_s` has the same multiplier order as `O_s` and is free on generator `ϖ₀`.
-- For `L_s`, `a ∈ O_F` preserves `L_s` exactly when `a ∈ O_s`; at `s = 1`, `a = α` (a generator of
-  `O_F` over `O₀`) does not.
+- For `L_s`, `a ∈ O_F` preserves `L_s` exactly when `a ∈ O_s`, so the level-one quotient has the
+  proper order `O_1 = O₀ + ϖ₀O_F`, of index `q₀` in `O_F`, not `O_F`: for `a = α` (a generator of
+  `O_F` over `O₀`), `αL_1 = ϖ₀^(−1)αO_1 t` is not contained in `L_1`, since `α ∉ O_1`.
+- At `q₀ = 2`, `s = 1`, `L_1/T` has `2` elements, so the compared isogeny has degree `2`, whereas
+  `ϖ₀^(−1)T/T` has `4`: the level-one kernel is a line, not the whole `ϖ₀`-torsion.
 - At `q₀ = 2`, `s = 1`, the comparison identifies the supplied strict-base orbit with `3`
   finite-residue marked classes when unramified and `2` when ramified. An orbit with one class
   would forget the marking.
 
-*Needs:* §§6.4, 6.3, 6.1; GrossZagierAndArithmeticHeights §7.2 (marked quadratic orbit).
+*Needs:* §§6.4, 6.3, 6.2 (lattice quotients, markings and orders), 6.1 (comparison of the canonical
+lift), 5.2 (the quotient isogeny and its coefficient extension), 3.4 (uniqueness of a marked
+comparison); GrossZagierAndArithmeticHeights §7.2 (marked quadratic lifts, their isogenies and
+orbit).
 
 ### 6.6 The field of moduli of a marked quasi-canonical lift
 

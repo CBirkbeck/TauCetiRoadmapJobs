@@ -146,8 +146,8 @@ section Elliptic
 BKO21, Lemma 5.1, with the sign `p − sT²` of README §4.3). Let `p` be prime, `O = W(𝔽_(p²))` and `W`
 a Weierstrass curve over `O` with unit discriminant whose reduction has `p² + 1 − 2sp` points over
 `𝔽_(p²)`, `s = ±1`. Then the formal group law of `W` has an endomorphism which is a Lubin–Tate
-series for `s p` (namely `[s p]`, whose reduction is the `p²`-power Frobenius), so by the Lubin–Tate
-theorem it is the Lubin–Tate formal `O`-module for `s p`. -/
+series for `s p` (namely `[s p]`, whose reduction is the `p²`-power Frobenius), so by the
+Lubin–Tate theorem it is the Lubin–Tate formal `O`-module for `s p`. -/
 theorem exists_lubinTate_endomorphism_formalGroup (p : ℕ) [Fact p.Prime] (s : ℤ)
     (hs : s = 1 ∨ s = -1) (W : WeierstrassCurve (WittVector p (GaloisField p 2)))
     (hΔ : IsUnit W.Δ)
