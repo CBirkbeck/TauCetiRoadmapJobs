@@ -1,0 +1,29 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-BordismFormalGroups~69",
+  "head": "8d8b243b676b5a14b5d71e5be7e3d42d8577ea81",
+  "pr": 1807,
+  "folder": "BordismFormalGroups",
+  "date": "2026-11-11",
+  "findings": 1,
+  "blocking": 0,
+  "notes": "incremental re-review of 0 changed lines since 78bda3b. Previous R01 deferred as D01 (stands: main TangentialBordism lines 76-77, HomotopySpheres line 3316 unchanged); R02 repaired in the description. New P3 R01: the description's BordismFormalGroups paragraph omits the house-shape rewrite of the README on main (+2296/-1309, new ids F1.1-F5.5) and Suggested.lean dropping all eight of main's declarations. Checked: 11 description claims against the head; gate (worker's passes, build=0; rerun differs only in outside-folder=24 for the 12 sibling folders the brief names); depcheck 0 problems; lake env lean 3 sorry warnings only; #check @name on 4 declarations matches signatures.md; adversarial rows for F1.5 generators, the right unit, the F3.1 BP summand and splitting, the F3.2 Honda law and the Lazard classification headline; overlap check against ChromaticHomotopyTheory, GeneralAlgebraicKTheoryPartII, StableHomotopyKTheoryPartII, EllipticCohomology, TangentialBordism, GeneralizedCohomology.",
+  "deferred": [
+   {
+    "id": "D01",
+    "severity": "P2",
+    "title": "Steenrod algebras, Adams towers, MO splitting, James construction and Toda brackets have two owners on main",
+    "where": "TangentialBordism and HomotopySpheres on main, citing F2.2, F2.4, F4.1, F6.2",
+    "raised": "PRREVIEW-BordismFormalGroups~68"
+   }
+  ],
+  "carried": {
+   "from": "8d8b243b676b5a14b5d71e5be7e3d42d8577ea81",
+   "head": "8d8b243b676b5a14b5d71e5be7e3d42d8577ea81",
+   "findings": 1,
+   "lines": 0,
+   "folders": []
+  }
+ }
+}
