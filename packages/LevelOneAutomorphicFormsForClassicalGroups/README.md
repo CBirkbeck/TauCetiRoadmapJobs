@@ -449,15 +449,25 @@ representation.
 - The rank is the common dimension of the Weil parameter `L(π∞)` and of the Satake classes.
 - The contragredient preserves `Π_alg`, the rank and the level, and is an involution on classes.
 - For every prime `p`, `π_p` is spherical, and `c_p(π)` is an unordered multiset of `m` nonzero complex
-  numbers of absolute value one by purity (§1.5), without a chosen order.
+  numbers, without a chosen order, whose product is `1` (the central character is trivial) and each of
+  which satisfies the Jacquet–Shalika bound `p^{−1/2} < |α| < p^{1/2}` (AutomorphicLFunctionsAndLocalFactors
+  §AL.3.3.8). By unitarity `π^∨ ≅ π̄`, so `c_p(π^∨)` is both the multiset of inverses and the multiset of
+  complex conjugates of `c_p(π)`. No finite-place temperedness is asserted: the purity of §1.5 concerns
+  the archimedean parameter only.
 - The adelic description and the description by level-one cuspidal functions on
   `PGL_m(ℤ)\PGL_m(ℝ)` give the same set.
 
-*Needs:* AutomorphicFormsOnReductiveGroups §§2.5, 3.5, 4.2 and 5.1.
+*Needs:* AutomorphicFormsOnReductiveGroups §§2.5, 3.5, 4.2 and 5.1; AutomorphicLFunctionsAndLocalFactors
+§AL.3.3.8.
 
 **Checks.**
 
 - The trivial representation of `PGL₁` belongs to `Π_alg`, has rank one and is self-dual.
+- Negative control for reading unitarity as temperedness: the unramified complementary series of
+  `PGL₂(ℚ₂)` with Satake roots `2^{1/4}, 2^{−1/4}` is unitary and generic with product of roots `1`, yet
+  its larger root has absolute value `2^{1/4} ≈ 1.1892`, not `1`. It satisfies the Jacquet–Shalika bound
+  `2^{−1/2} ≈ 0.7071 < 1.1892 < 1.4142 ≈ 2^{1/2}`, and for two such local components the roots `α_i^{−1}β_j`
+  of the Rankin–Selberg Euler factor have absolute value at most `2^{1/2} < 2 = p`, as §2.6 needs.
 - The representation attached to `Δ ∈ S₁₂(SL₂(ℤ))` has `L(π∞) = I₁₁` and unitary weights `±11/2`;
   the unnormalized weights `0` and `11` belong to the twist by `|·|^{11/2}`, which is not unitary
   and is not in `Π_alg`.
@@ -624,13 +634,18 @@ requested there; AutomorphicLFunctionsAndLocalFactors §AL.3.6.2.
 For dominant integral `λ` of a permitted `G` define `w(λ) ∈ W_{m_G}` with positive coordinates
 `λ_i + n + 1 − i` (and an extra `0`) for `Sp_{2n}`, `λ_i + n + 1/2 − i` for `SO_{2n+1}`, and
 `|λ_i| + n − i` for `SO_{2n}` (only `λ_n` may be negative there), completed by their negatives (CT20
-§1.4). Prove that `w(λ)` is regular, and that the map has an inverse exactly on three images: integral
-vectors of odd length `m ≥ 3` (from `Sp_{m−1}`), non-integral vectors of even length (from `SO_{m+1}`),
-and integral vectors of length divisible by four (from `SO_m`, normalizing `λ_n ≥ 0`); rank one is
-treated separately.
+§1.4). Prove that `w(λ)` is regular, and that the three images are exactly the following sets of
+**regular** vectors of `W_m`, on which the map has an inverse: the regular integral vectors of odd length
+`m ≥ 3` (from `Sp_{m−1}`), the regular non-integral vectors of even length (from `SO_{m+1}`), and the
+regular integral vectors of length divisible by four (from `SO_m`, on outer orbits, normalizing
+`λ_n ≥ 0`); rank one is treated separately. For such a regular vector the first `n` coordinates
+`w₁, …, w_n` (`n` the rank of `G`) decrease by at least one at each step and `w_n` is at least `1`, `1/2`
+or `0` in the three cases, so subtracting `(n, n − 1, …, 1)`, `(n − 1/2, …, 1/2)` or
+`(n − 1, …, 1, 0)` gives a dominant `λ`.
 
 - `w(λ)` is regular.
 - On each of the three images the inverse is explicit; in type `D` it is defined on outer orbits.
+- A nonregular vector of `W_m` is not in any image, whatever its integrality and length.
 - `(d_G, m_G)` takes the three values of the Conventions.
 
 *Needs:* §§1.3 and 1.6; LieHighestWeight Layer 6; ClassicalGroups Layer 3.
@@ -640,6 +655,11 @@ treated separately.
 - For `Sp₂` and `λ = k`, `w = (k + 1, 0, −k − 1)` and `d_G = 2`.
 - For `SO₃` and `λ = k`, `w = (k + 1/2, −k − 1/2)`.
 - `(1, −1) ∈ W₂` has no inverse; the `SO₄` weights `(1, 1)` and `(1, −1)` have the same image.
+- Negative control for regularity: `(0, 0, 0) ∈ W₃` is integral of odd length but not regular; the `Sp₂`
+  inverse formula would give `λ₁ = 0 − 1 = −1`, not dominant, while `λ = 0` has image `(1, 0, −1)`.
+  Likewise `(1/2, 1/2, −1/2, −1/2) ∈ W₄` is non-integral of even length but not regular, and the `SO₅`
+  formula would give `λ = (1/2 − 3/2, 1/2 − 1/2) = (−1, 0)`; and `(1, 1, −1, −1) ∈ W₄` would give the
+  `SO₄` weight `(1 − 1, 1) = (0, 1)`, which violates `λ₁ ≥ |λ₂|`.
 
 ### Examples
 
@@ -651,7 +671,7 @@ weight 22, which is `Sym²Δ₁₁`.
 ### Dependencies
 
 AutomorphicFormsOnReductiveGroups §§2.5, 3.5, 4.2, 5.1, 5.5; AutomorphicLFunctionsAndLocalFactors
-§§AL.1.4, AL.3.6; AutomorphicSpectralTheory §4.5; ModularityAndLanglandsExtensions §3.4;
+§§AL.1.4, AL.3.3.8, AL.3.6; AutomorphicSpectralTheory §4.5; ModularityAndLanglandsExtensions §3.4;
 ReductiveGroups Layer 9; LieHighestWeight Layer 6; ClassicalGroups Layer 3; Tau Ceti's symplectic
 group scheme.
 
@@ -847,9 +867,11 @@ semidefinite on signed vectors.
 
 ### 2.8 The multiplicity bound
 
-Prove: if `F` satisfies (POS) and `π₁, …, π_m ∈ Π_alg` are distinct with common archimedean parameter
-`U`, then `J_F(U²) ≤ A_F/m`; in particular `J_F(U²) ≤ A_F` for every represented `U` (CT20 Corollary
-2.3, (2.4.1)–(2.4.2)). Apply §2.7 to `x = m⁻¹ Σ π_i`; the `e⊥` contribution is nonpositive. If `B∞^F` is
+Prove: if `F` satisfies (POS), `m ≥ 1` is an integer and `π₁, …, π_m ∈ Π_alg` are distinct with common
+archimedean parameter `U`, then `J_F(U²) ≤ A_F/m`; in particular `J_F(U²) ≤ A_F` for every represented `U`
+(CT20 Corollary 2.3, (2.4.1)–(2.4.2)). Apply §2.7 to `x = m⁻¹ Σ π_i`, which is nonzero with
+`C^F(x, x) = A_F/m − J_F(U²) − (B_F/(2m²)) Σ_{i,j} e⊥(π_i, π_j)` because `L(π_i,∞) = U` for every `i`;
+the `e⊥` contribution is nonpositive. If `B∞^F` is
 positive definite on a finite-dimensional effective subgroup of `K∞`, the effective integral
 parameters satisfying the bound form a finite set.
 
@@ -859,6 +881,10 @@ parameters satisfying the bound form a finite set.
 
 - With `m = 2` the bound is `A_F/2`; this is what distinguishes the fibre of `I₂₃`, which contains
   the two classes `Δ₂₃^a`, `Δ₂₃^b`.
+- Negative control for `m ≥ 1`: the empty family `m = 0` carries no information about `U`, the
+  averaging vector `m⁻¹ Σ π_i` is undefined (or the zero vector, under a totalized inverse), and §2.7 at
+  `x = 0` gives only `0 ≥ 0`; the quotient `A_F/0` is undefined, and its totalized value `0` would turn
+  the conclusion into `J_F(U²) ≤ 0` for every `U ∈ K∞`, which nothing proves.
 - `m` counts classes, including distinct classes with identical weights, not distinct weight vectors.
 - Finiteness of the candidate set needs a proved positive-definite lower bound for `B∞^F`, not an
   approximate eigenvalue.
@@ -1027,8 +1053,9 @@ Prove (CT20 §2.4.5): let `S ⊂ Π_alg` be a finite set of distinct classes, gr
 Prove: on `K∞^{≤w}`, let `B` be a rational positive definite matrix with `B ≤ (J_{F_ℓ}(UV))` entrywise on
 the effective cone. Then every represented `U` with `J_{F_ℓ}(U²) ≤ c` lies in the finite set of
 effective integral vectors with `xᵀBx ≤ c`, and an exact ellipsoid cover of that set (ComputationalNumberTheory
-§§4.26 and 4.31) contains every such `U` (CT20 Remark 2.11 and §4.1). The bound `c = A_F/m` is replaced
-by a rational upper bound for it, and the cover is then a cover at that enlarged bound.
+§§4.26 and 4.31) contains every such `U` (CT20 Remark 2.11 and §4.1). The bound `c = A_F/m` of §2.8, for an
+integer `m ≥ 1`, is replaced by a rational upper bound for it, and the cover is then a cover at that
+enlarged bound.
 
 *Needs:* §2.8; ComputationalNumberTheory §§4.26 and 4.31.
 
@@ -1400,15 +1427,25 @@ For a permitted `G` and dominant `λ`, let `A²` be the `K`-finite square-integr
 
 ### 3.15 The packet contribution to the Euler–Poincaré characteristic
 
-For algebraic `ψ` with infinitesimal character `λ + ρ` define
-`EP_ψ(G; λ) = Σ_ρ m_disc(ψ, ρ) EP(ρ ⊗ V_λ^∨)` over the real packet, with the outer-orbit convention of
-ModularityAndLanglandsExtensions in even `SO`. Prove that it equals
-`|S_ψ|⁻¹ Σ_{s ∈ S_ψ} ε_ψ(s) Σ_ρ ⟨s, ρ⟩ EP(ρ ⊗ V_λ^∨)`, and evaluate the inner sum by the compact-torus
-character identity with sign `(−1)^{q(G) − q(L₀)}` (Tai17 §4.1.2 and §4.2.2, Theorem 4.2.3 and Corollary
-4.2.4). Nontempered parameters are included.
+For a discrete parameter `ψ = ⊕ π_i[d_i]` of `G` with level-one constituents (`n_i = rank(π_i)`) and
+infinitesimal character `λ + ρ`, define `EP_ψ(G; λ)` as the contribution of the `ψ`-part of `A²` to
+`EP(G; λ)` of §3.14, so that `EP(G; λ) = Σ_ψ EP_ψ(G; λ)`. Let `m_ψ` be Arthur's global multiplicity of
+ModularityAndLanglandsExtensions §3.17: `m_ψ = 2` when `G` is even orthogonal and every `n_id_i` is even,
+and `m_ψ = 1` otherwise. In even `SO` the real packet `Π̃_ψ,∞` consists of outer orbits, and an orbit
+`{X₁, X₂}` of two non-isomorphic modules has the averaged Euler–Poincaré characteristic
+`EP({X₁, X₂} ⊗ V_λ^∨) = (1/2) EP((X₁ ⊕ X₂) ⊗ V_λ^∨)` (Tai17, the display after (4.1.2)). Prove that
+`EP_ψ(G; λ) = m_ψ |S_ψ|⁻¹ Σ_{s ∈ S_ψ} ε_ψ(s) Σ_{ρ ∈ Π̃_ψ,∞} ⟨s, ρ⟩ EP(ρ ⊗ V_λ^∨)` (Tai17 Theorem 4.1.2 and
+(4.1.2)), and evaluate the inner sum by the compact-torus character identity with sign
+`(−1)^{q(G) − q(L₀)}` (Tai17 §4.2.2, Theorem 4.2.3 and Corollary 4.2.4). Nontempered parameters are
+included.
 
-- Averaging against `ε_ψ` selects the packet members whose character equals `ε_ψ`.
-- In `SO_{4n}` the contribution does not depend on the representative of an outer orbit.
+- Averaging against `ε_ψ` selects the packet members whose character equals `ε_ψ`, and each selected
+  member is counted `m_ψ` times.
+- In `SO_{4n}` the two members of an outer orbit have the same multiplicity in the level-one discrete
+  spectrum, since the outer automorphism can be chosen to preserve `G(Ẑ)` (Tai17 §4.1.1, after Theorem
+  4.1.2); so `m_ψ` times the averaged value is the sum of the Euler–Poincaré characteristics of the
+  members with their multiplicities, and the contribution does not depend on the representative of an
+  outer orbit.
 - The value is an integer computed from finitely many signs, Weyl-group sums and cohomological
   degrees.
 
@@ -1416,25 +1453,43 @@ character identity with sign `(−1)^{q(G) − q(L₀)}` (Tai17 §4.1.2 and §4.
 
 **Checks.**
 
-- For trivial `S_ψ` the formula is the total packet Euler–Poincaré characteristic.
+- For trivial `S_ψ` the contribution is `m_ψ` times the total outer-averaged packet Euler–Poincaré
+  characteristic.
+- Negative control for `m_ψ`: the simple class `O^even(24,18,10,4)` gives the parameter `ψ = π[1]` of
+  `SO₈` with one block of even dimension `8`, so `S_ψ` is trivial and `m_ψ = 2`; its weights
+  `(12, 9, 5, 2)` give `λ = (12 − 3, 9 − 2, 5 − 1, 2 − 0) = (9, 7, 4, 2)`. In an outer pair `{X₁, X₂}` of its
+  real packet only `X₁` has infinitesimal character `λ + ρ`, since `λ₄ ≠ 0`; so
+  `EP(X₁ ⊗ V_λ^∨) = (−1)^{q(SO(4,4))} = (−1)^8 = 1` and `EP(X₂ ⊗ V_λ^∨) = 0`, the averaged value is `1/2`,
+  and the pair contributes `m_ψ · 1/2 = 1`, the contribution of `X₁` with multiplicity one. The character
+  average without `m_ψ` gives `1/2`.
 - A packet member whose character differs from `ε_ψ` contributes `0`, not `1/2`.
-- In the `SO₃` base case the simple cuspidal contribution is `−N`.
+- In the `SO₃` base case `m_ψ = 1` (the dual group is `Sp₂`) and the simple cuspidal contribution is
+  `−N`.
 
 ### 3.16 Triangular recovery of self-dual cuspidal counts
 
 Prove: for a permitted `G`, dominant `λ` and `w = w(λ)`, `EP(G; λ) = κ(G, λ) N⊥(w) + R(G, λ)`, where
-`κ(G, λ) ≠ 0` is the signed cardinality of the real packet of a simple parameter `π[1]`, with Tai17's
-outer convention in even `SO`, and `R(G, λ)` is the sum of the contributions of all nonsimple
-parameters; `R(G, λ)` is determined by the `N⊥(v)` with `rank(v) < m_G` and largest weight at most `w₁`
-(Tai17 §4.1.2; CT20 Key fact 2). A simple parameter has trivial component group and all its real
-packet members are discrete series with Euler–Poincaré characteristic `(−1)^{q(G)}`; every block of a
-nonsimple parameter has smaller rank, and the same class may occur with several `d`.
+`κ(G, λ)` is the full contribution `EP_ψ(G; λ)` of §3.15 of one simple parameter `ψ = π[1]` with
+infinitesimal character `λ + ρ`, namely `κ(G, λ) = m_ψ Σ_{ρ ∈ Π̃_ψ,∞} EP(ρ ⊗ V_λ^∨)` with Tai17's
+outer-averaged Euler–Poincaré characteristic in even `SO`, `m_ψ = 2` for `SO_{4n}` and `m_ψ = 1` for
+`Sp_{2n}` and `SO_{2n+1}`; and `R(G, λ)` is the sum of the contributions of all nonsimple parameters.
+`R(G, λ)` is determined by the `N⊥(v)` with `rank(v) < m_G` and largest weight at most `w₁` (Tai17 §4.1.2;
+CT20 Key fact 2). A simple parameter has trivial component group, and its archimedean component is the
+discrete parameter with infinitesimal character `λ + ρ`, so `κ(G, λ)` depends only on `G` and `λ`. Its real
+packet consists of discrete series; a member with infinitesimal character `λ + ρ` has Euler–Poincaré
+characteristic `(−1)^{q(G)}`, and in even `SO` every outer orbit contains such a member while the other
+member, if any, has `(−1)^{q(G)}` or `0` according as `λ` is outer-invariant or not. So every summand of
+`κ(G, λ)` has the sign `(−1)^{q(G)}`, and `κ(G, λ) ≠ 0`. Every block of a nonsimple parameter has smaller
+rank, and the same class may occur with several `d`.
 
 *Needs:* §§1.9, 3.14, 3.15.
 
 **Checks.**
 
 - `SO₃`: `κ = −1` and `R(SO₃; k) = δ_{k,0}`.
+- `SO₈`, `λ = (9, 7, 4, 2)`: `m_ψ = 2`, and each outer pair of the real packet contributes `2 · (1/2) = 1`
+  to `κ`, which is therefore the number of outer pairs, with the sign `(−1)^8 = 1`; reading `κ` as the
+  outer-averaged packet sum without `m_ψ` halves it and miscounts `N⊥(w)` by a factor two.
 - The induction is on `m_G`, the dual standard dimension, not on the motivic weight.
 - The nonsimple parameter `Δ₁₇[2] ⊕ Δ₁₇[4] ⊕ [1]` of `Sp₁₂` (dimension `4 + 8 + 1 = 13`) uses one
   class at two lengths; it is enumerated once with that class, not as two independent classes.

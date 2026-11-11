@@ -105,10 +105,11 @@ def invariantAlternatingForms {V : Type*} [AddCommGroup V] [Module ℚ V]
     change r • ω (fun i => e (v i)) = r • ω v
     rw [hω e v]
 
-/-- The Fourier coefficient at the matrix `T` of the theta series
-`Σ_{x ∈ Lᵍ} ω(x) exp(πi tr(Gram(x) τ))` attached to an alternating `g`-form `ω`: the sum of
-`ω(x)` over the `g`-tuples `x` of lattice vectors with Gram matrix `T` (README §8.6). For a
-positive definite lattice the summation set is finite. -/
+/-- The Fourier coefficient at `T/2`, indexed here by its integral Gram matrix `T`, of the theta
+series `Σ_{x ∈ Lᵍ} ω(x) exp(πi tr(Gram(x) τ)) = Σ_{x ∈ Lᵍ} ω(x) exp(2πi tr((Gram(x)/2) τ))`
+attached to an alternating `g`-form `ω`: the sum of `ω(x)` over the `g`-tuples `x` of lattice
+vectors with Gram matrix `T` (README §8.6). For a positive definite lattice the summation set is
+finite. -/
 noncomputable def thetaCoefficient {V : Type*} [AddCommGroup V] [Module ℚ V]
     (L : IntegralLattice V) {g : ℕ} (ω : V [⋀^Fin g]→ₗ[ℚ] ℚ)
     (T : Matrix (Fin g) (Fin g) ℚ) : ℚ :=
