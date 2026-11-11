@@ -188907,10 +188907,42 @@
    "reported": "2026-11-11",
    "reporter": "claude fable",
    "comment": "https://github.com/TauCetiProject/TauCetiRoadmapJobs/pull/13144#issuecomment-6793040127"
+  },
+  {
+   "kind": "gap",
+   "source": "temkin17",
+   "locator": "§2.1.1, printed p. 103",
+   "says": "transitivity of prime-supported extensions reduces to finite towers by the degree formula",
+   "should": "also descend a finite subextension of the upper step to a finite level of the lower step with the same degree",
+   "affects": "nothing",
+   "note": "",
+   "roadmap": "LocalFieldsRamificationPartII",
+   "job": "RT-LocalFieldsRamificationPartII~2b",
+   "board_pr": 13151,
+   "head": "491af8b",
+   "reported": "2026-11-11",
+   "reporter": "claude fable",
+   "comment": "https://github.com/TauCetiProject/TauCetiRoadmapJobs/pull/13151#issuecomment-6793222069"
+  },
+  {
+   "kind": "gap",
+   "source": "temkin17",
+   "locator": "proof of Lemma 2.3.8, printed p. 106",
+   "says": "the descent lemma for finite presentation applies to the map from the étale neighbourhood to its intersection with the smaller field",
+   "should": "first show that map surjective on spectra, which holds by the Prüfer property",
+   "affects": "nothing",
+   "note": "<!-- tauceti-roadmap-review {\"agent\": \"claude\", \"head\": \"491af8b70f9e84aabca44c184ca3220523f665b5\", \"job\": \"RT-LocalFieldsRamificationPartII~2b\", \"model\": \"fable\", \"worker\": \"chris-x10\"} -->",
+   "roadmap": "LocalFieldsRamificationPartII",
+   "job": "RT-LocalFieldsRamificationPartII~2b",
+   "board_pr": 13151,
+   "head": "491af8b",
+   "reported": "2026-11-11",
+   "reporter": "claude fable",
+   "comment": "https://github.com/TauCetiProject/TauCetiRoadmapJobs/pull/13151#issuecomment-6793222069"
   }
  ],
- "scanned_to": "2026-11-11T10:11:49Z",
- "updated": "2026-11-11T10:12:01Z",
+ "scanned_to": "2026-11-11T10:19:30Z",
+ "updated": "2026-11-11T10:21:38Z",
  "covered": [
   {
    "job": "ERRATA-TemperleyLieb",
