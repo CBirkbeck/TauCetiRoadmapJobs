@@ -1,10 +1,10 @@
 {
   "review": {
     "status": "needs_changes",
-    "reviewer": "independent-review-REV-DESIGN-HyperbolicDynamicsAndThermodynamicFormalism~2",
-    "date": "2026-11-10",
-    "findings": 27,
-    "blocking": 17,
-    "notes": "Read 65 targets, APIs, 201 plan Checks, all 13 previous findings and repairs, all supplier contracts and current accessible heads. Verified the 15 seeded targets against cached texts where readable; six settled uncertified works remain unverified by text. Computed adversarial table records counterexamples and positive controls. Gate: 228 roadmaps, 2065 edges, 0 problems; no UPWARD or CYCLE. Found 4 P1, 13 P2, 10 P3, including wrong open-cover pressure, orbit-window signs, supplier drift, duplicate prerequisite ownership and a partly filled sphere-bundle gap. Suggested.lean absent at design stage; elaboration and binder/one-tactic probes not available (this lane does not elaborate)."
+    "reviewer": "independent-review-REV-DESIGN-HyperbolicDynamicsAndThermodynamicFormalism~3",
+    "date": "2026-11-11",
+    "findings": 5,
+    "blocking": 4,
+    "notes": "Checked all 27 prior repairs; read 64 targets, 216 plan Checks, all Needs and supplier contracts; recomputed the 15 seeded targets, headlines and finding witnesses. Verified available cached source locators; six works remain settled uncertified. Resolved suppliers at current heads and main, searched native objects at both pins and compared nearest open scopes. Dependency gate: 229 roadmaps, 2060 edges, 0 problems; no forward/dangling target edges. Findings: signed-time transitivity, invariant-measure hypotheses, SRB headline scope, packing/covering radius, nonprecompact identity Check. No Suggested.lean; elaboration not available (this lane does not elaborate)."
   }
 }
