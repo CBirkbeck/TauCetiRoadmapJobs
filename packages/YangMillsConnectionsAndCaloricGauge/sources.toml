@@ -8,7 +8,7 @@ title = "The Yang--Mills heat flow and the caloric gauge"
 year = 2017
 arxiv = "1709.08599v2"
 locator_scheme = "section"
-locator = "§1 (lines 92–261), §2 (Theorems 2.1–2.23), §3 (the norms ℓ^pX of §3.2, Definitions 3.2–3.4, Lemma 3.5), §4 (Theorems 4.1–4.8), §5 (Definitions 5.1, 5.3, Proposition 5.6–5.7, Theorems 5.9–5.11, Corollaries 5.12–5.15, Lemmas 5.16–5.33), §6 (Theorems 6.1, 6.6, 6.10, Lemma 6.7, 6.9), §7.1–7.2 (Definition 7.1, Propositions 7.2–7.9, Theorem 7.8, Remark 7.10)"
+locator = "§1 (lines 92–261), §2 (Theorems 2.1–2.23), §3 (the norms ℓ^pX of §3.2, Definitions 3.2–3.4, Lemma 3.5, lines 884–954), §4 (Theorems 4.1–4.8, including the variational sign at line 974, the dyadic L1 bound at lines 1288–1320, and the endpoint trace at line 1356), §5 (Definitions 5.1, 5.3, Proposition 5.6–5.7, Theorems 5.9–5.11, Corollaries 5.12–5.15, Lemmas 5.16–5.33), §6 (Theorems 6.1, 6.6, 6.10, Lemma 6.7, 6.9; characteristic-integral balance in the proof of Theorem 6.6, lines 2942–2988), §7.1–7.2 (Definition 7.1, Propositions 7.2–7.9, Theorem 7.8, Remark 7.10)"
 url = "https://arxiv.org/abs/1709.08599v2"
 fetched_from = "https://arxiv.org/pdf/1709.08599v2"
 fetched_at = "2026-11-05T21:14:40Z"
@@ -16,7 +16,7 @@ sha256 = "ceb366fb13b58da275dde920d96a6bf777400521961bdd626a5431fb5becc8ec"
 licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-05"
-version_note = "arXiv v2"
+version_note = "Numbering refers to the arXiv v2 text, rather than an asserted comparison with the published numbering."
 cited_for = ["Conventions", "1.3", "1.4", "1.5", "3.2", "6.3", "6.4", "7.1", "7.2", "7.3", "7.5", "7.7", "8.1", "8.2", "8.3", "8.4", "9.1", "9.2", "9.3", "9.4", "9.5", "9.6", "9.7", "10.1", "10.2", "10.3", "10.4", "10.5"]
 
 [[source]]
@@ -27,7 +27,7 @@ year = 2017
 doi = "10.1007/s00220-018-3205-x"
 arxiv = "1709.08604v2"
 locator_scheme = "section"
-locator = "§1.1–1.4 (Theorems 1.3–1.5, Proposition 1.6, Definition 1.8, Proposition 1.9, Corollaries 1.10–1.11), §1.8 (Lemma 1.31, Theorems 1.29–1.32), §2 (notation), §3.1–3.6 (Lemmas 3.1–3.5, Propositions 3.9–3.10, Theorems 3.11–3.12, Lemmas 3.13–3.22), §6 (Lemma 6.4, Claims 6.2–6.3)"
+locator = "§1.1–1.4 (Theorems 1.3–1.5, Proposition 1.6, Definition 1.8, Proposition 1.9, Corollaries 1.10–1.11), §1.8 (Lemma 1.31, Theorems 1.29–1.32), §2 (notation), §3.1–3.6 (Lemmas 3.1–3.5, with p=d/k>1 at line 991 and the top-order adjoint-action qualification at lines 1116–1123, Propositions 3.9–3.10, Theorems 3.11–3.12, Lemmas 3.13–3.22), §6 (Lemma 6.4, Claims 6.2–6.3)"
 url = "https://arxiv.org/abs/1709.08604v2"
 fetched_from = "https://arxiv.org/pdf/1709.08604v2"
 fetched_at = "2026-11-05T21:15:34Z"
@@ -35,7 +35,7 @@ sha256 = "35f6731270783b0c5260f0ad3b8592ef179bdc18382c33df62dcf0fd0fc5b999"
 licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-05"
-version_note = "arXiv v2"
+version_note = "Numbering refers to the arXiv v2 text, rather than an asserted comparison with the published numbering."
 cited_for = ["Conventions", "1.1", "1.2", "1.3", "1.4", "1.5", "1.6", "2.1", "2.2", "2.3", "2.4", "2.5", "3.1", "3.2", "3.3", "3.4", "4.1", "4.2", "4.3", "4.4", "5.1", "5.2", "5.3", "5.4", "5.5", "6.1", "6.2", "6.3", "6.4", "7.1", "7.3", "7.5", "7.6", "7.7", "10.1"]
 
 [[source]]
@@ -53,7 +53,7 @@ sha256 = "b2b4acfe7200dba0524ff69da334f73b3d6f5b49a20263eaaefade1f8015476c"
 licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-05"
-version_note = "arXiv v2"
+version_note = "Numbering refers to the arXiv v2 text, rather than an asserted comparison with the published numbering."
 cited_for = ["Conventions", "5.2", "5.5", "5.6", "6.3", "7.1", "7.2", "7.7", "10.3", "10.5", "Downstream consumers"]
 
 [[source]]
@@ -73,7 +73,7 @@ sha256 = "65a5e999cfcd9d91519766804085d29b0f7716ff1cf98f45b8d73d5a4e5249c0"
 licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-05"
-version_note = "arXiv v2"
+version_note = "Numbering refers to the arXiv v2 text, rather than an asserted comparison with the published numbering."
 cited_for = ["Scope and ownership", "Downstream consumers"]
 
 [[source]]
@@ -198,5 +198,20 @@ sha256 = "ddc6dc6ed4a06c976ef5884c7ba78624dba8afeca05b69ee92e458484c34b8bd"
 licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-05"
-version_note = "arXiv v3"
+version_note = "Numbering refers to the arXiv v3 text; form and inner-product normalisations are converted explicitly in the roadmap."
 cited_for = ["1.6", "7.4", "7.5", "7.6", "Downstream consumers"]
+
+[[source]]
+id = "BahouriCheminDanchin-FourierAnalysis"
+authors = "H. Bahouri, J.-Y. Chemin, R. Danchin"
+title = "Fourier Analysis and Nonlinear Partial Differential Equations"
+year = 2011
+venue = "Grundlehren der mathematischen Wissenschaften"
+doi = "10.1007/978-3-642-16830-7"
+locator_scheme = "theorem"
+locator = "§2.3, Definition 2.15 and the completeness theorem (homogeneous Besov spaces on S'_h); §2.6 (homogeneous paraproduct and remainder estimates)"
+url = "https://doi.org/10.1007/978-3-642-16830-7"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["8.1"]
