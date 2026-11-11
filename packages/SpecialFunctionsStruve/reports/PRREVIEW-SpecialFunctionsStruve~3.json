@@ -1,0 +1,13 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-SpecialFunctionsStruve~3",
+  "head": "3c308f7dd64820d65b96192a4fd1ecfcefc58b86",
+  "pr": 2129,
+  "folder": "SpecialFunctionsStruve",
+  "date": "2026-11-11",
+  "findings": 3,
+  "blocking": 1,
+  "notes": "incremental re-review of 39 changed lines since e5efb18 (Suggested.lean only). Previous R01/R02 (roadmap import) repaired by faithful local copies of eulerIntegral, IsEulerContinuation, gaussHypergeometric, compared with SpecialFunctionsHypergeometric on main; previous R03 (11.11.8 sector, P1) and R04 (11.10.4 case, P3) untouched and carried; new P3: the two new declarations are not named in the README. Gate re-run with --build: all checks 0, OK; lake env lean: 26 sorry warnings only; depcheck 0 problems; padding probe and Laplace representation recomputed numerically on the copied definitions; repairs of the carried findings elaborate on a scratch copy."
+ }
+}
