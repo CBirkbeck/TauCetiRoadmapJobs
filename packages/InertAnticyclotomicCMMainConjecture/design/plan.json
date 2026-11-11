@@ -2449,6 +2449,12 @@
       "needs": "For a finite character ρ of Γ≅ℤ_p with values in a finite extension of Frac(R) and the height-one prime P_ρ=ker(R⟦Γ⟧→ρ(R⟦Γ⟧)), the coefficient of P_ρ in charDivisor(M) of a finitely generated torsion module M equals the order of vanishing at T=ρ(γ)−1 of a generator of char(M).",
       "supplier": "PadicMeasuresIwasawaAlgebras",
       "section": "§4.6"
+    },
+    {
+      "slug": "leopoldt-abelian-over-imaginary-quadratic",
+      "needs": "For every imaginary quadratic field k, every finite abelian extension F/k and every prime ℓ, the field-level Leopoldt defect δ(F,ℓ) of §2.2 vanishes, that is, the localisation map from O_F^×⊗ℤ_ℓ to the product over v|ℓ of the pro-ℓ completions of the local unit groups is injective (the Ax–Brumer theorem), extending §4.4 from abelian extensions of ℚ.",
+      "supplier": "IntegralIwasawaTheory",
+      "section": "§4.4"
     }
   ],
   "sourceIssues": [

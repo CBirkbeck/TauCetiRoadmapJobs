@@ -8,7 +8,7 @@ title = "Rubin’s conjecture on local units in the anticyclotomic tower at iner
 year = 2021
 doi = "10.4007/annals.2021.194.3.8"
 locator_scheme = "theorem"
-locator = "Theorem 2.1, Corollary 2.2, p.949; §3.0.2 and Proposition 3.3, pp.950–953; §6, Theorems 6.1–6.2, pp.960–963"
+locator = "Theorem 2.1, Corollary 2.2, p.949; §§3.0.1–3.0.2 and Proposition 3.3, pp.950–953; §6, Theorems 6.1–6.2, pp.960–963"
 url = "https://authors.library.caltech.edu/records/8svwt-jn031"
 fetched_from = "https://authors.library.caltech.edu/records/8svwt-jn031/files/annals.2021.194.3.8.pdf?download=1"
 fetched_at = "2026-10-23T17:44:21Z"
@@ -83,3 +83,14 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-26"
 cited_for = ["3.1", "3.5", "Exact supplier contracts"]
+
+[[source]]
+id = "BRU67"
+authors = "A. Brumer"
+title = "On the units of algebraic number fields"
+year = 1967
+locator_scheme = "page"
+locator = "pp.121–124"
+licence_class = "none"
+status = "waived"
+cited_for = ["4.3", "Exact supplier contracts"]
