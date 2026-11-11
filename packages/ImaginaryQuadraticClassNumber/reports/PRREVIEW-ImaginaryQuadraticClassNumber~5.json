@@ -1,0 +1,22 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-ImaginaryQuadraticClassNumber~5",
+  "head": "aabc5768710fd57a4d0bd75f837e40b51651577c",
+  "pr": 2201,
+  "folder": "ImaginaryQuadraticClassNumber",
+  "date": "2026-11-11",
+  "findings": 5,
+  "blocking": 0,
+  "notes": "Full review. Gate re-run: all counters 0, OK; depcheck 0 problems; Suggested.lean elaborates with six sorry warnings only; padding probe closes none. Seeded sample (Already in the pinned Mathlib and Tau Ceti): 162 #check lines for every backticked library name elaborated at the pins and read against the README. Shin locators (7) checked against the cached text. Cross-roadmap citations and the 19 consumers resolved. Five P3 findings: README targets the pinned Tau Ceti already proves (H3.1 Weierstrass curve of a lattice; H3.1 F_1=Q(j) and the coefficient subfield; H1.2 h(Q(sqrt-5))=2; H2.2 unit-order specializations of the class-number formula; H1.3 root of a form and its SL2(Z)-equivariance). The one-line change of the pull request itself is correct. Davenport, Stark and Cox not read (uncertified or not in the cache).",
+  "carried": {
+   "from": "aabc5768710fd57a4d0bd75f837e40b51651577c",
+   "head": "e2a2e769958926897d77941958bb4723609f242d",
+   "findings": 5,
+   "lines": 17,
+   "folders": [
+    "ImaginaryQuadraticClassNumber"
+   ]
+  }
+ }
+}
