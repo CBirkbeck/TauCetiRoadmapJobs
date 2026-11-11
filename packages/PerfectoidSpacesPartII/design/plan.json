@@ -4072,7 +4072,14 @@
    ]
   }
  ],
- "gaps": [],
+ "gaps": [
+  {
+   "slug": "complete-almost-nakayama",
+   "needs": "For a basic setup (V, m), an ideal I ⊆ V and a morphism f : M → N of I-adically complete almost V-modules (M → lim_n M/IⁿM and N → lim_n N/IⁿN isomorphisms), if f ⊗_V V/I : M/IM → N/IN is an epimorphism then f is an epimorphism.",
+   "supplier": "PerfectoidSpaces",
+   "section": "P0.26"
+  }
+ ],
  "sourceIssues": [
   {
    "id": "PerfectoidSpacesPartII/E1",
