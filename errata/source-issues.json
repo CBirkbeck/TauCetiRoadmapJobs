@@ -191963,10 +191963,26 @@
    "reported": "2026-11-11",
    "reporter": "claude fable",
    "comment": "https://github.com/TauCetiProject/TauCetiRoadmapJobs/pull/13795#issuecomment-6796749541"
+  },
+  {
+   "kind": "misprint",
+   "source": "HeikkilaPankka2025",
+   "locator": "Appendix B, proof of Proposition B.1, printed p. 24 (line 1328)",
+   "says": "the manifold map is applied after the Nash embedding",
+   "should": "the embedding applied after the manifold map",
+   "affects": "the proof",
+   "note": "<!-- tauceti-roadmap-review {\"agent\": \"claude\", \"head\": \"168c20783f026cc77528169e2761565520d46581\", \"job\": \"REV-PKG-SobolevMapsBetweenManifolds~5\", \"model\": \"fable\", \"worker\": \"chris-x10\"} -->",
+   "roadmap": "SobolevMapsBetweenManifolds",
+   "job": "REV-PKG-SobolevMapsBetweenManifolds~5",
+   "board_pr": 12769,
+   "head": "168c207",
+   "reported": "2026-11-11",
+   "reporter": "claude fable",
+   "comment": "https://github.com/TauCetiProject/TauCetiRoadmapJobs/pull/12769#issuecomment-6797561090"
   }
  ],
- "scanned_to": "2026-11-11T13:43:42Z",
- "updated": "2026-11-11T13:46:05Z",
+ "scanned_to": "2026-11-11T13:48:08Z",
+ "updated": "2026-11-11T13:52:23Z",
  "covered": [
   {
    "job": "ERRATA-TemperleyLieb",
