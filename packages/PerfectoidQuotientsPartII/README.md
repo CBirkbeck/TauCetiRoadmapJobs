@@ -288,7 +288,7 @@ At the Tau Ceti revision pinned by the repository's `lake-manifest.json`.
   `cohen_equalCharacteristic` of a complete regular local ring.
 - P7.17: `RegularTower.exists_perfectoidTower`: for a complete regular local ring of mixed
   characteristic with perfect residue field `k`, the tower `R_m` (`W(k)[p^{1/p^m}]⟦x^{1/p^m}⟧` if
-  `p ∉ 𝔪²`, `W(k)⟦x^{1/p^m}⟧/(p − f)` with `f ∈ (p, x)²` otherwise) of finite flat regular local
+  `p ∉ 𝔪²`, `W(k)⟦x^{1/p^m}⟧/(p − g)` with `g ∈ (p, x)²` otherwise) of finite flat regular local
   `R`-algebras of `p`-power rank whose colimit has integral perfectoid `p`-adic completion.
 - P0.1–P0.2 and P0.11: the basic setup, the root setup of compatible `p`-power roots and almost
   flatness, used to phrase the almost conclusions of Q10.5.
@@ -958,9 +958,13 @@ flatness: closed points of `Spec A` lie in `V(f)` or in `D(f)`.
   over `ℤ`.
 - The regularity of `f` on `M` is needed: `M = ℤ/p` over `ℤ` with `f = p` has `M[1/p] = 0` and
   `M/pM = 𝔽_p` flat, but `M` is not flat.
-- The regularity of `f` on `A` is needed: `A = 𝔽_p[ε]/(ε²)`, `f = ε`, `M = 𝔽_p = A/ε` has `M[1/ε] = 0`
-  and `M/εM = 𝔽_p` flat over `A/ε = 𝔽_p`, but `M` is not flat over `A`; here `ε` is a zero divisor of
-  `A` (and of `M`).
+- The regularity of `f` on `A` is needed, even when `f` is regular on `M`: let `N = ℤ[1/p]/ℤ` and
+  `A = ℤ ⊕ N` with `N² = 0` (a non-noetherian square-zero extension of `ℤ`), `f = p`, `M = A/N = ℤ`.
+  Then `p` kills the nonzero `(0, [1/p])`, so it is a zero divisor of `A`, but it is regular on
+  `M`; `A[1/p] = ℤ[1/p] = M[1/p]` because `N` is `p`-power torsion; `pA = pℤ ⊕ N` because `N` is
+  `p`-divisible, so `A/pA = 𝔽_p = M/pM`. Both fibre conditions hold, yet tensoring
+  `0 → N → A → M → 0` with `M` gives `Tor_1^A(M, M) = N ⊗_A M = N/N² = N ≠ 0` (the map to `M` is
+  zero as `N` kills `M`), so `M` is not flat over `A`.
 
 ### Q7.5 Affine blowup algebras along a regular pair
 
@@ -1739,10 +1743,15 @@ DerivedDeRhamCohomology §1.10; Tau Ceti `TauCeti.Perfectoid.IsIntegralPerfectoi
   specializes to a characteristic-`p` identity.
 - `𝒪_C/(p^{1/p^∞}) = k̄` and products of perfectoid valuation rings show that integral perfectoid
   rings may have `p`-torsion and need not be domains (Q5.4, Q6.4).
-- `W(k)⟦x_1^{1/p^∞}, …, x_d^{1/p^∞}⟧/(p − f)` with `f = x_1` (unramified) or `f ∈ (p, x)²` (ramified)
+- `W(k)⟦x_1^{1/p^∞}, …, x_d^{1/p^∞}⟧/(p − g)` with `g = x_1` (unramified) or `g ∈ (p, x)²` (ramified)
   is the tower of PerfectoidSpaces P7.17 for perfect `k`; its `p`-adic completion is perfectoid, and
-  inside `R⁺` it is the cover of Q10.4, whose stages `A/(φ_A^n(f))` are defined for every `F`-finite
-  `k`.
+  inside `R⁺` it is the cover of Q10.4 for the defining element `f := p − g` of `R = A/(f)` (for
+  `g = x_1` this is Q10.4's `x_1 − p` up to sign), whose stages `A/(φ_A^n(p − g))` are defined for
+  every `F`-finite `k`. For `p = 2`, `d = 1`: with `g = x` the first stage is
+  `ℤ₂⟦x⟧/(2 − x²) ≅ ℤ₂[√2]`, of rank two over `R = ℤ₂`, and the class of `2 − x²` in the basis
+  `([2], [x])` of `𝔪_A/𝔪_A²` is `(1, 0)`; with `g = x²` it is `ℤ₂⟦x⟧/(2 − x⁴) ≅ ℤ₂[2^{1/4}]`,
+  again Eisenstein. Applying `φ_A` to `g` alone instead would give `ℤ₂⟦x⟧/(x²)` and
+  `ℤ₂⟦x⟧/(x⁴)`, which have nonzero nilpotents.
 
 ## Downstream consumers
 
