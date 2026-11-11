@@ -1,10 +1,10 @@
 {
   "review": {
     "status": "needs_changes",
-    "reviewer": "independent-review-REV-DESIGN-HardSphereDynamicsAndKineticLimits~2",
-    "date": "2026-11-10",
-    "findings": 13,
-    "blocking": 10,
-    "notes": "Verified repairs F01\u2013F06; read all 45 design targets and 145 planned Checks; verified all 15 seeded source targets against cached versioned texts, with six original references settled uncertified. Computed adversarial table and pinned-library/object ownership audit included in the report. Dependency gate: 224 roadmaps, 2036 edges, 0 problems, no UPWARD/CYCLE. Thirteen repair findings (3 P1, 7 P2, 3 P3). No Suggested.lean exists; elaboration not available (this lane does not elaborate; say so in the report). No Lean commands run; source manifest and design files unchanged."
+    "reviewer": "independent-review-REV-DESIGN-HardSphereDynamicsAndKineticLimits~3",
+    "date": "2026-11-11",
+    "findings": 7,
+    "blocking": 4,
+    "notes": "Reviewed all 45 targets and 159 planned Checks, all 13 prior repairs (11 repaired, 2 partly repaired), all 15 seeded source targets, 9 manifest entries, pinned supplier declarations, overlap/ownership leads and dependency order. Gate: 230 roadmaps, 2063 edges, 0 problems, no UPWARD/CYCLE. Computed adversarial table in report. No Suggested.lean at design stage; elaboration not available (this lane does not elaborate; say so in the report). Six original sources remain settled uncertified; no renewed requests. No supplier gaps."
   }
 }
