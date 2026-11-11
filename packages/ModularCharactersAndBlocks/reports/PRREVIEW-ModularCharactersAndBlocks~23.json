@@ -1,0 +1,13 @@
+{
+  "review": {
+    "status": "needs_changes",
+    "reviewer": "independent-review-PRREVIEW-ModularCharactersAndBlocks~23",
+    "head": "11fcc6f5d939d3d402f33555beabd54ddf845cd7",
+    "pr": 1775,
+    "folder": "RepresentationTheory/ModularCharactersAndBlocks",
+    "date": "2026-11-11",
+    "findings": 10,
+    "blocking": 3,
+    "notes": "Full review of the unchanged head. Ten findings, three P2: (1) the §6.2 defect-zero characterization drops its sources' splitting hypothesis and is false for C3 over F2; (2) the central-character description of the blocks of O[G] is statable at the pins (a scratch statement elaborates) but the docstring says it is not; (3) the p'-core is also owned by OddOrderTheorem §1.1 (#1777). The P3 findings: GlaubermanZStar (#1778) still cites the renumbered M ids, and the M8 inflation law it consumes is not stated here; the family-index ownership sentence (re-raised H02); §2.3 cites SemisimpleAlgebras Layer 0 for a fact the Tau Ceti pin proves; the §6.2 Br_D bullet exceeds its source's hypotheses; §4.1 has no locator; the §6.1 locator; process remarks in References. Seeded sample: all 15 targets checked against webb, martinez, sambale and craven, with every printed page correct; navarro and serre are uncertified. Worker gate passes; the generic re-run shows only the default-order and permitted-index exceptions. Depcheck with the candidate order: 0 problems. Elaboration exit 0 with 12 sorry warnings; 17/17 #check signatures match; padding probe closed none of the 12 theorems."
+  }
+}
