@@ -22,22 +22,22 @@ Stated here:
 * Layer 2: existence and uniqueness of the normalized finite Weil representation in the
   Schrödinger model of a full polarization `X × X*`, characterized by Egorov covariance and the
   parity-determinant identity `det W(g) = (det W(g)|S⁺)²`; this includes `Sp₂(𝔽₃)`.
-* Layer 3: the isotropic-invariants theorem for fully ramified characters: the `U`-invariants of
-  the unique representation form an irreducible representation of the orthogonal `Q` of
-  dimension `√[Q : HU]`.
+* Layer 3: the corrected Gérardin induction formula: for a group `P` of isometries stabilizing an
+  isotropic `I`, the restriction of the Weil–Heisenberg representation to `H(V) ⋊ P` is induced
+  from the subgroup `H(I^⊥) ⋊ P` by the Weil–Heisenberg representation of `I^⊥/I` twisted by the
+  quadratic character of the determinant on `I`; and the isotropic-invariants theorem for fully
+  ramified characters: the `U`-invariants of the unique representation form an irreducible
+  representation of the orthogonal `Q` of dimension `√[Q : HU]`.
 * Layer 4: on the line fixed by a Lagrangian `L`, an element of `Sp` stabilizing `L` acts through
   the quadratic character of its determinant on `L`; and the normalized Weil representation of a
   finite product polarization restricts on blockwise elements to the tensor product of the
   normalized Weil representations of the factors.
 
-Not statable at the pins:
-
-* Layer 3, the corrected Gérardin induction formula
-  `Ω_{ψ,V}|_{P ⋉ H(V)} ≅ Ind_{P ⋉ H(I^⊥)}^{P ⋉ H(V)} ((χ ∘ det_I) ⊗ Ω_{ψ,I^⊥/I})`: its groups
-  need the action of `Sp(V)` on `H(V)` by automorphisms, which is not a carrier at the pins
-  (Tau Ceti's factor-set extensions carry no action of an isometry group; the action is
-  MetaplecticAutomorphicForms §0.8), so neither `P ⋉ H(V)` nor its subgroup `P ⋉ H(I^⊥)`, from
-  which the twisted Weil–Heisenberg representation of `I^⊥/I` is induced, exists as a group.
+Every headline theorem of the roadmap is stated. The groups of the Gérardin formula are built
+from the coordinate action `heisenbergAction` of the isometry group on `H(V)` with Mathlib's
+`SemidirectProduct`; the quotient `I^⊥/I` enters through a linear map onto a polarized space
+that is onto and form-preserving on `I^⊥` with kernel `I`, and the Weil–Heisenberg
+representations through the formulas `π(h) W(g)` that characterize them.
 -/
 
 @[expose] public section
@@ -54,9 +54,11 @@ attribute [local instance] TauCeti.trivialMulDistribMulAction
 
 variable {k V : Type*} [Field k] [AddCommGroup V] [Module k V]
 
-/-- The half-form factor set `(v, w) ↦ ω(v, w)/2` of an alternating form, for the trivial action
-of `V` on `k`. Its Tau Ceti extension is the Heisenberg group `H(V)` with law
-`(t, v)(s, w) = (t + s + ω(v, w)/2, v + w)` and commutator `(ω(v, w), 0)` (README §1.1). -/
+/-- The factor set `(v, w) ↦ ω(v, w)/2` of `V` with values in `k`, for the trivial action, defined
+for every bilinear form `ω`. Its Tau Ceti extension has law
+`(t, v)(s, w) = (t + s + ω(v, w)/2, v + w)`. When `ω` is alternating and `ringChar k ≠ 2` this is
+the Heisenberg group `H(V)`, and the commutator of `(t, v)` and `(s, w)` is `(ω(v, w), 0)`; in
+characteristic `2` the division takes the value `0` and the extension is abelian (README §1.1). -/
 def heisenbergFactorSet (ω : LinearMap.BilinForm k V) :
     TauCeti.FactorSet (Multiplicative V) (Multiplicative k) where
   toFun p := ofAdd (ω p.1.toAdd p.2.toAdd / 2)
@@ -71,10 +73,37 @@ def heisenbergFactorSet (ω : LinearMap.BilinForm k V) :
 abbrev Heisenberg (ω : LinearMap.BilinForm k V) : Type _ :=
   (heisenbergFactorSet ω).Extension
 
+/-- The action of the isometry group `Sp(V)` of `ω` on `H(V)` by automorphisms,
+`g · (t, v) = (t, g v)`, fixing the centre. It is multiplicative because `g` preserves `ω`. This is
+the action of MetaplecticAutomorphicForms §0.8 for the form `ω/2`, whose isometry group is that of
+`ω` (README §1.1). -/
+def heisenbergAction (ω : LinearMap.BilinForm k V) :
+    TauCeti.BilinForm.isometryGroup ω →* MulAut (Heisenberg ω) where
+  toFun g :=
+    { toFun := fun x => ⟨x.left, ofAdd ((g : V ≃ₗ[k] V) x.right.toAdd)⟩
+      invFun := fun x => ⟨x.left, ofAdd ((g : V ≃ₗ[k] V).symm x.right.toAdd)⟩
+      left_inv := fun x => by ext <;> simp
+      right_inv := fun x => by ext <;> simp
+      map_mul' := fun x y => by
+        have hg := TauCeti.BilinForm.mem_isometryGroup_iff.mp g.2
+        apply TauCeti.FactorSet.Extension.ext
+        · show x.left * x.right • y.left * heisenbergFactorSet ω (x.right, y.right) =
+            x.left * _ • y.left * heisenbergFactorSet ω (_, _)
+          simp only [TauCeti.trivialMulDistribMulAction_smul]
+          congr 1
+          show ofAdd (ω (toAdd x.right) (toAdd y.right) / 2) =
+            ofAdd (ω ((g : V ≃ₗ[k] V) (toAdd x.right)) ((g : V ≃ₗ[k] V) (toAdd y.right)) / 2)
+          rw [hg]
+        · show ofAdd ((g : V ≃ₗ[k] V) (toAdd (x.right * y.right))) = _ * _
+          simp }
+  map_one' := by ext x <;> rfl
+  map_mul' g h := by ext x <;> rfl
+
 /-- **Finite Stone–von Neumann theorem, existence** (README §1.3). Over a finite field of odd
 characteristic, a nondegenerate alternating space has an irreducible complex representation of
 its Heisenberg group on which the centre acts through a given nontrivial additive character `ψ`
-(the Schrödinger model). (N02, Lemma 2.1, p. 16; FS25, Lemma 3.3.1, p. 14.) -/
+(the Schrödinger model). (N02, §2 and Lemma 2.1, p. 16, with the irreducibility shown in its
+proof, p. 17; FS25, Lemma 3.3.1, p. 14.) -/
 theorem finite_stoneVonNeumann_exists [Finite k] [FiniteDimensional k V] (hk : ringChar k ≠ 2)
     (ω : LinearMap.BilinForm k V) (hω : ω.IsAlt) (hnd : ω.Nondegenerate)
     (ψ : AddChar k ℂ) (hψ : ψ ≠ 1) :
@@ -110,8 +139,10 @@ variable {J : Type*} [Group J] [Finite J]
 /-- **Fully ramified characters, existence** (README §1.4). Let `H` be normal in the finite group
 `J` with `J/H` abelian, and `θ` a `J`-invariant character of `H` such that every `g ∉ H` has a
 commutator `[g, x]` on which `θ` is nontrivial. Then some irreducible complex representation of
-`J` restricts to `H` as the scalar character `θ`. (S08, Proposition 3.5, p. 14; F21, Lemma 7.8,
-p. 31.) -/
+`J` restricts to `H` as the scalar character `θ`. This general finite-group statement is proved by
+the route of README §1.4; S08, Proposition 3.5, p. 14 (for `J¹ ⊇ H¹` of a skew semisimple
+stratum), and F21, Lemma 7.7 and the proof of Lemma 7.8, pp. 30–31 (for a Heisenberg `p`-group
+with centre of order `p`), are instances. -/
 theorem fullyRamified_exists (H : Subgroup J) [hH : H.Normal]
     (hcomm : ∀ g x : J, g * x * g⁻¹ * x⁻¹ ∈ H) (θ : H →* ℂˣ)
     (hinv : ∀ (g : J) (h : H), θ ⟨g * h * g⁻¹, hH.conj_mem h h.2 g⟩ = θ h)
@@ -125,7 +156,8 @@ theorem fullyRamified_exists (H : Subgroup J) [hH : H.Normal]
 irreducible representation on which `H` acts by `θ` has dimension `d` with `d² = [J : H]`, its
 character vanishes off `H`, and any two such representations are equivalent. No exponent-`p`
 or special-isomorphism hypothesis is made: the centre `H / ker θ` may be cyclic of any order.
-(S08, Proposition 3.5, p. 14; F21, Lemma 7.8, p. 31.) -/
+This general statement is proved by the route of README §1.4; S08, Proposition 3.5, p. 14, and
+F21, Lemma 7.7 and the proof of Lemma 7.8, pp. 30–31, are instances in their settings. -/
 theorem fullyRamified_unique (H : Subgroup J) [hH : H.Normal]
     (hcomm : ∀ g x : J, g * x * g⁻¹ * x⁻¹ ∈ H) (θ : H →* ℂˣ)
     (hinv : ∀ (g : J) (h : H), θ ⟨g * h * g⁻¹, hH.conj_mem h h.2 g⟩ = θ h)
@@ -207,6 +239,81 @@ end Weil
 
 /-! ## Layer 3: Parabolic restriction and isotropic induction -/
 
+section ParabolicInduction
+
+attribute [local instance] TauCeti.trivialMulDistribMulAction
+
+variable {k : Type*} [Field k]
+
+/-- For a subspace `I` and a group `P` of isometries of `ω`, the subgroup `Q = H(I^⊥) ⋊ P` of
+`H(V) ⋊ P`, generated by the Heisenberg elements `(t, v)` with `v ∈ I^⊥` and by `P`. When `P`
+stabilizes `I` it consists of the pairs `((t, v), g)` with `v ∈ I^⊥` (README §3.3). -/
+def parabolicSubgroup {V : Type*} [AddCommGroup V] [Module k V] (ω : LinearMap.BilinForm k V)
+    (I : Submodule k V) (P : Subgroup (TauCeti.BilinForm.isometryGroup ω)) :
+    Subgroup (Heisenberg ω ⋊[(heisenbergAction ω).comp P.subtype] P) :=
+  ((AddSubgroup.toSubgroup (ω.orthogonal I).toAddSubgroup).comap
+      (TauCeti.FactorSet.rightHom (heisenbergFactorSet ω))).map SemidirectProduct.inl ⊔
+    SemidirectProduct.inr.range
+
+/-- **The corrected Gérardin induction formula** (README §3.3). Let `W` be the normalized Weil
+representation of `V = X × X*`, `I ≤ V` isotropic and `P ≤ Sp(V)` a subgroup stabilizing `I`.
+Present `I^⊥/I` by a linear map `r : V → X₀ × X₀*` that on `I^⊥` is onto, has kernel `I` and
+preserves the forms, and let `p₂ : P → Sp(X₀ × X₀*)` be the induced action, `r(g v) = p₂(g)(r v)`
+on `I^⊥`. Let `Ω` be the Weil–Heisenberg representation `((t, v), g) ↦ π(t, v) W(g)` of
+`H(V) ⋊ P`, and `σ` the representation of `Q = H(I^⊥) ⋊ P` given by
+`((t, v), g) ↦ χ(det(g|_I)) π₀(t, r v) W₀(p₂ g)`, with `χ(d) = 1` for a square `d` and `−1`
+otherwise. Then `Ω ≅ Ind_Q^{H(V) ⋊ P} σ`. The quadratic determinant character is the correction
+of Gerardin77, Theorem 2.4(b), reported in F21, footnote 3, p. 33; the proof of F21, Lemma 7.10,
+pp. 32–33, uses the corrected form. -/
+theorem weilHeisenberg_parabolic_induction {X : Type*} [AddCommGroup X] [Module k X] [Finite k]
+    [FiniteDimensional k X] (hk : ringChar k ≠ 2) (ψ : AddChar k ℂ) (hψ : ψ ≠ 1)
+    (W : TauCeti.BilinForm.isometryGroup (polarizationForm k X) →* ((X → ℂ) ≃ₗ[ℂ] (X → ℂ)))
+    (hW : IsNormalizedWeil ψ W)
+    (I : Submodule k (X × Module.Dual k X)) (hI : I ≤ (polarizationForm k X).orthogonal I)
+    (P : Subgroup (TauCeti.BilinForm.isometryGroup (polarizationForm k X)))
+    (hP : ∀ (g : P), ∀ v ∈ I,
+      ((g : TauCeti.BilinForm.isometryGroup (polarizationForm k X)) :
+        (X × Module.Dual k X) ≃ₗ[k] (X × Module.Dual k X)) v ∈ I)
+    {X₀ : Type*} [AddCommGroup X₀] [Module k X₀] [FiniteDimensional k X₀]
+    (W₀ : TauCeti.BilinForm.isometryGroup (polarizationForm k X₀) →* ((X₀ → ℂ) ≃ₗ[ℂ] (X₀ → ℂ)))
+    (hW₀ : IsNormalizedWeil ψ W₀)
+    (r : (X × Module.Dual k X) →ₗ[k] (X₀ × Module.Dual k X₀))
+    (hr : ((polarizationForm k X).orthogonal I).map r = ⊤)
+    (hrI : ∀ v ∈ (polarizationForm k X).orthogonal I, r v = 0 ↔ v ∈ I)
+    (hrω : ∀ v ∈ (polarizationForm k X).orthogonal I, ∀ w ∈ (polarizationForm k X).orthogonal I,
+      polarizationForm k X₀ (r v) (r w) = polarizationForm k X v w)
+    (p₂ : P →* TauCeti.BilinForm.isometryGroup (polarizationForm k X₀))
+    (hp₂ : ∀ (g : P), ∀ v ∈ (polarizationForm k X).orthogonal I,
+      r (((g : TauCeti.BilinForm.isometryGroup (polarizationForm k X)) :
+        (X × Module.Dual k X) ≃ₗ[k] (X × Module.Dual k X)) v) =
+        ((p₂ g : TauCeti.BilinForm.isometryGroup (polarizationForm k X₀)) :
+          (X₀ × Module.Dual k X₀) ≃ₗ[k] (X₀ × Module.Dual k X₀)) (r v))
+    (Ω : Representation ℂ
+      (Heisenberg (polarizationForm k X) ⋊[(heisenbergAction (polarizationForm k X)).comp
+        P.subtype] P) (X → ℂ))
+    (hΩ : ∀ (h : Heisenberg (polarizationForm k X)) (g : P),
+      Ω ⟨h, g⟩ = schrodingerOp ψ (toAdd h.left) (toAdd h.right) ∘ₗ (W g).toLinearMap)
+    (σ : Representation ℂ (parabolicSubgroup (polarizationForm k X) I P) (X₀ → ℂ))
+    (hσ : ∀ x : parabolicSubgroup (polarizationForm k X) I P,
+      (IsSquare (LinearMap.det (M := I) (A := k)
+          (((x.1.right : TauCeti.BilinForm.isometryGroup (polarizationForm k X)) :
+            (X × Module.Dual k X) →ₗ[k] (X × Module.Dual k X)).restrict
+              (hP x.1.right))) →
+        σ x = schrodingerOp ψ (toAdd x.1.left.left)
+            (r (toAdd x.1.left.right)) ∘ₗ
+          (W₀ (p₂ x.1.right)).toLinearMap) ∧
+      (¬ IsSquare (LinearMap.det (M := I) (A := k)
+          (((x.1.right : TauCeti.BilinForm.isometryGroup (polarizationForm k X)) :
+            (X × Module.Dual k X) →ₗ[k] (X × Module.Dual k X)).restrict
+              (hP x.1.right))) →
+        σ x = -(schrodingerOp ψ (toAdd x.1.left.left)
+            (r (toAdd x.1.left.right)) ∘ₗ
+          (W₀ (p₂ x.1.right)).toLinearMap))) :
+    Nonempty (Ω.Equiv (σ.ind (parabolicSubgroup (polarizationForm k X) I P).subtype)) := by
+  sorry
+
+end ParabolicInduction
+
 section IsotropicInvariants
 
 variable {J : Type*} [Group J] [Finite J]
@@ -217,8 +324,10 @@ the set of `q ∈ J` with `θ([q, u]) = 1` for all `u ∈ U` (the inverse image 
 the image of `U`). Then the `U`-invariants `E^U` of the irreducible representation `ρ` are stable
 under `Q`, irreducible under `Q`, and `(dim E^U)² · |HU| = |Q|`. Together with the dimension
 count this identifies `E^U` with the fully ramified representation of `Q` attached to
-`θ_U(hu) = θ(h)`, whose induction to `J` is `ρ`. (S08, Lemma 5.6, Corollary 5.7, pp. 29–30, and
-Lemma 5.12, p. 33; FS25, Lemma 3.3.4, p. 15.) -/
+`θ_U(hu) = θ(h)`, whose induction to `J` is `ρ`. This general finite-group statement is derived
+from §1.4 by the route of README §3.4; S08, Lemma 5.6, Corollary 5.7, pp. 29–30, and Lemma 5.12,
+p. 33 (for the groups `J¹_P` of a skew semisimple stratum), and FS25, Lemma 3.3.4(b), p. 15 (for
+Heisenberg `𝔽_p`-groups), are instances. -/
 theorem fullyRamified_isotropicInvariants (H : Subgroup J) [hH : H.Normal]
     (hcomm : ∀ g x : J, g * x * g⁻¹ * x⁻¹ ∈ H) (θ : H →* ℂˣ)
     (hinv : ∀ (g : J) (h : H), θ ⟨g * h * g⁻¹, hH.conj_mem h h.2 g⟩ = θ h)

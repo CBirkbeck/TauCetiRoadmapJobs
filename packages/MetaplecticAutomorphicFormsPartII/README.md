@@ -8,16 +8,16 @@ This roadmap owns the finite-field theory: the adapted coordinates of a finite s
 
 It leaves to MetaplecticAutomorphicForms, Layer 0, the arbitrary bilinear Heisenberg extension over a commutative ring (§0.1), its inverse and commutator formulas (§§0.2–0.5), the centre of the half-form extension (§0.6), the extension isomorphism and isometry action (§§0.7–0.8), the quadratic change between the half-form and polarized cocycles (§§0.9–0.10) and Lagrangian complements, adapted bases and transitivity on Lagrangians over every field (§0.9a). These are stated there over a commutative ring with 2 invertible, so they apply verbatim to a finite field of odd characteristic; this roadmap only specializes them. The local and adelic theory of that roadmap (smooth and unitary Stone–von Neumann, the oscillator normalizer, the metaplectic double cover, theta correspondences) is not used here. Its §4.7 finite Weil representation is the representation of `Mp₂(ℤ)` on the group algebra of the discriminant module of an even lattice; it is a different object from the representation of `Sp(V)` for a symplectic space over a finite field built here, and stays with its owner.
 
-Prescribed-basis extension of a Lagrangian and the dimension criterion for Lagrangians are MordellLawrenceVenkatesh, Layer LV.3, §§3.1–3.2. General symplectic bases and the even dimension of a nondegenerate alternating space are Tau Ceti's `LinearMap.BilinForm.IsAlt.exists_basis_toMatrix_eq_J` and `LinearMap.BilinForm.IsAlt.even_finrank`. The rank-one Heisenberg group over a ring with its group law, cardinality and commutator is Tau Ceti's `TauCeti.HeisenbergGroup` with `TauCeti.HeisenbergGroup.card_eq` and `TauCeti.HeisenbergGroup.commutatorElement_eq`; §1.1 records the coordinate change to it. Finite-index induction, Frobenius reciprocity, Mackey and Clifford theory and projective representations of finite groups are RepresentationTheory/InductionRestriction, Layers 0–7, and characters, Maschke, Schur and orthogonality of characters are RepresentationTheory/CharacterTheory; both are used here through the Mathlib and Tau Ceti declarations listed in the supplier contracts, together with the isometry groups of bilinear forms. No replacement carrier is introduced.
+The dimension criterion for Lagrangians is MordellLawrenceVenkatesh, Layer LV.3, §3.1; the prescribed-basis extension of a Lagrangian planned there as §3.2 is at the pin as Tau Ceti's `LinearMap.BilinForm.IsAlt.exists_basis_toMatrix_eq_J_inl_eq`, in every characteristic, and is used in that form. General symplectic bases and the even dimension of a nondegenerate alternating space are Tau Ceti's `LinearMap.BilinForm.IsAlt.exists_basis_toMatrix_eq_J` and `LinearMap.BilinForm.IsAlt.even_finrank`. The rank-one Heisenberg group over a ring with its group law, cardinality and commutator is Tau Ceti's `TauCeti.HeisenbergGroup` with `TauCeti.HeisenbergGroup.card_eq` and `TauCeti.HeisenbergGroup.commutatorElement_eq`; §1.1 records the coordinate change to it. Finite-index induction, Frobenius reciprocity, Mackey and Clifford theory and projective representations of finite groups are RepresentationTheory/InductionRestriction, Layers 0–7, and characters, Maschke, Schur and orthogonality of characters are RepresentationTheory/CharacterTheory; both are used here through the Mathlib and Tau Ceti declarations listed in the supplier contracts, together with the isometry groups of bilinear forms. No replacement carrier is introduced.
 
 The p-adic groups, their Moy–Prasad filtration quotients, the existence of special isomorphisms equivariant for the relevant compact groups, the lifts of isotropic subspaces to subgroups and the identification of the resulting characters belong to the roadmaps that construct types; they consume the finite statements of Layers 1–4 once they have verified the hypotheses stated there.
 
 ## Conventions
 
-- `k` is a finite field of odd characteristic `p` with `q` elements. All representations are finite-dimensional over `ℂ`. Every sum is finite.
+- From Layer 1 on, `k` is a finite field of odd characteristic `p` with `q` elements. Layer 0 is linear algebra over an arbitrary field `k`, of any characteristic; the odd-characteristic hypothesis enters with the half-form Heisenberg group of §1.1. All representations are finite-dimensional over `ℂ`. Every sum is finite.
 - `ψ : k → ℂˣ` is a nontrivial additive character (`AddChar k ℂ` with `ψ ≠ 1`). It need not be injective when `k` is not a prime field; every nonzero linear functional `λ` on a `k`-space is still detected, because `z ↦ ψ(cλ(z))` is nontrivial for a suitable `c ∈ k` (Mathlib `AddChar.IsPrimitive.of_ne_one`).
 - `V` is a finite-dimensional `k`-space with an alternating nondegenerate form `ω`; `dim V = 2n`. `Sp(V)` is Tau Ceti's `TauCeti.BilinForm.isometryGroup ω`, a subgroup of `V ≃ₗ[k] V` whose multiplication is composition, `(gh)v = g(hv)`.
-- The Heisenberg group `H(V)` has coefficient-first coordinates `(t, v)` and law `(t, v)(s, w) = (t + s + ω(v, w)/2, v + w)`; its commutator `ghg⁻¹h⁻¹` is `(ω(v, w), 0)`. This is MetaplecticAutomorphicForms §0.1 for the form `ω/2`, the convention of Fintzen (F21 line 1320) and of Fintzen–Schwein (FS25 line 395). `Sp(V)` acts by `g·(t, v) = (t, gv)`.
+- The Heisenberg group `H(V)` has coefficient-first coordinates `(t, v)` and law `(t, v)(s, w) = (t + s + ω(v, w)/2, v + w)`; its commutator `ghg⁻¹h⁻¹` is `(ω(v, w), 0)`. This is MetaplecticAutomorphicForms §0.1 for the form `ω/2`, the convention of Fintzen (F21 line 1320) and of Fintzen–Schwein (FS25 line 395). `Sp(V)` acts by `g·(t, v) = (t, gv)` (`heisenbergAction`, §1.1).
 - A full polarization is `V = X × X*` with `X* = Module.Dual k X` and the form `((x, y), (x′, y′)) ↦ y′(x) − y(x′)`, written `polarizationForm k X`. In coordinates `X = kⁿ`, `y(z)` is the dot product. In block form `J = (0, I; −I, 0)` sends `(x, y)` to `(y, −x)`; it is the negative of Mathlib's `Matrix.J`, so the two are never identified by name.
 - The Schrödinger operator is `(π(t, x, y) f)(z) = ψ(t + y(z) + y(x)/2) f(z + x)` on `X → ℂ`. Translation by `x` is `π(0, x, 0)`, modulation by `y` is `π(0, 0, y)`.
 - Parity is `(Rf)(z) = f(−z)`; `S⁺` and `S⁻` are the even and odd functions, of dimensions `(qⁿ + 1)/2` and `(qⁿ − 1)/2`.
@@ -31,14 +31,15 @@ The p-adic groups, their Moy–Prasad filtration quotients, the existence of spe
 
 - Bilinear forms: `LinearMap.BilinForm.IsAlt`, `LinearMap.BilinForm.Nondegenerate`, `LinearMap.BilinForm.orthogonal`, `LinearMap.BilinForm.finrank_orthogonal` (for nondegenerate `B` on a finite-dimensional space, `dim W^⊥ = dim V − dim W`), `LinearMap.mk₂`, `Module.Dual`.
 - Characters of finite fields: `AddChar`, `AddChar.IsPrimitive.of_ne_one` (a nontrivial additive character of a field is primitive), `AddChar.sum_mulShift` (the sum of a primitive character over a scaled finite ring is the cardinality at scale zero and zero otherwise), `quadraticChar`, `quadraticChar_neg_one`, `quadraticChar_two`, `quadraticChar_one_iff_isSquare` (at nonzero `a`, the value is `1` exactly when `a` is a square) and `quadraticChar_neg_one_iff_not_isSquare` (the value is `−1` exactly when `a` is not a square), all for a finite field with a `Fintype` structure and decidable equality.
-- Representations: `Representation`, `Representation.IsIrreducible`, `Representation.Equiv`, `Representation.character`, `Representation.char_orthonormal` and `FDRep.char_orthonormal` (orthonormality of irreducible characters over an algebraically closed field of characteristic not dividing the group order), `FDRep.simple_iff_char_is_norm_one`, `FDRep.simple_iff_end_is_rank_one` (Schur), `MonoidAlgebra.Submodule.exists_isCompl` (Maschke), `Representation.invariants`, `Rep.indResHomEquiv` (Frobenius reciprocity). Over `ℂ` every finite group order is invertible and the algebraic-closure hypotheses hold.
-- Linear algebra and groups: `LinearMap.det`, `LinearEquiv.det`, `LinearMap.trace`, `LinearMap.restrict`, `LinearMap.single` (the coordinate inclusion `Xᵢ → ∏ⱼ Xⱼ`, through which a functional on a finite product restricts to each factor), `SemidirectProduct`, `Subgroup.index`, `Subgroup.Normal.conj_mem`.
+- Representations: `Representation`, `Representation.IsIrreducible`, `Representation.Equiv`, `Representation.character`, `Representation.char_orthonormal` and `FDRep.char_orthonormal` (orthonormality of irreducible characters over an algebraically closed field of characteristic not dividing the group order), `FDRep.simple_iff_char_is_norm_one`, `FDRep.simple_iff_end_is_rank_one` (Schur), `MonoidAlgebra.Submodule.exists_isCompl` (Maschke), `Representation.invariants`, `Representation.ind` (the representation induced along a group homomorphism, on the coinvariants of `k[H] ⊗ A`, with no universe or finiteness restriction), `Rep.indResHomEquiv` (Frobenius reciprocity). Over `ℂ` every finite group order is invertible and the algebraic-closure hypotheses hold.
+- Linear algebra and groups: `LinearMap.det`, `LinearEquiv.det`, `LinearMap.trace`, `LinearMap.restrict`, `LinearMap.single` (the coordinate inclusion `Xᵢ → ∏ⱼ Xⱼ`, through which a functional on a finite product restricts to each factor), `SemidirectProduct` (the group `N ⋊[φ] G` of a homomorphism `φ : G →* MulAut N`, with `⟨n, g⟩⟨n′, g′⟩ = ⟨n · φ(g)(n′), g g′⟩`), `SemidirectProduct.inl`, `SemidirectProduct.inr`, `MulAut`, `AddSubgroup.toSubgroup` (an additive subgroup of `A` as a subgroup of `Multiplicative A`), `Subgroup.index`, `Subgroup.Normal.conj_mem`.
 
 ### From Tau Ceti
 
-- `TauCeti.FactorSet`, `TauCeti.FactorSet.Extension` (the twisted product `M × G` with `⟨a, g⟩⟨b, h⟩ = ⟨a · g•b · α(g, h), gh⟩`), `TauCeti.FactorSet.inl`, `TauCeti.trivialMulDistribMulAction`: the carrier of `H(V)`.
+- `TauCeti.FactorSet`, `TauCeti.FactorSet.Extension` (the twisted product `M × G` with `⟨a, g⟩⟨b, h⟩ = ⟨a · g•b · α(g, h), gh⟩`), `TauCeti.FactorSet.inl`, `TauCeti.FactorSet.rightHom` (the projection `⟨a, g⟩ ↦ g`), `TauCeti.trivialMulDistribMulAction`: the carrier of `H(V)`.
 - `TauCeti.BilinForm.isometryGroup` and `TauCeti.BilinForm.mem_isometryGroup_iff` (membership is `B(gx, gy) = B(x, y)` for all `x, y`): the carrier of `Sp(V)`.
 - `LinearMap.BilinForm.IsAlt.exists_basis_toMatrix_eq_J` and `LinearMap.BilinForm.IsAlt.even_finrank` (`TauCeti.LinearAlgebra.BilinearForm.SymplecticBasis`): symplectic bases with matrix `Matrix.J` and even dimension, for a nondegenerate alternating form over a field.
+- `LinearMap.BilinForm.IsAlt.exists_basis_toMatrix_eq_J_inl_eq` (`TauCeti.LinearAlgebra.BilinearForm.LagrangianBasis`): over any field, of any characteristic, a basis `(eᵢ)` of a Lagrangian `U = U^⊥` of a finite-dimensional nondegenerate alternating space extends to a basis `(eᵢ, fᵢ)` with Gram matrix `Matrix.J`, so `B(fᵢ, eⱼ) = δᵢⱼ` and `B(eᵢ, fⱼ) = −δᵢⱼ`; the partners `−fᵢ` give this roadmap's sign `ω(eᵢ, fᵢ) = 1`.
 - `TauCeti.HeisenbergGroup`, `TauCeti.HeisenbergGroup.card_eq`, `TauCeti.HeisenbergGroup.commutatorElement_eq`: the rank-one polarized Heisenberg group `(x, y, z)(x′, y′, z′) = (x + x′, y + y′, z + z′ + x y′)`.
 - `FDRep.ofLinearCharacter` (the one-dimensional representation of a homomorphism to units), `TauCeti.indFDRep`, `TauCeti.finrank_indFDRep` (dimension of finite-index induction is index times dimension), `TauCeti.Rep.indSubtypeEquivPi_ρ_apply` (the right-coset function model of induction), `TauCeti.indFDRepForgetEquiv` (comparison of `TauCeti.indFDRep` with Mathlib's induction).
 - `TauCeti.IsProjectiveRep` and `TauCeti.IsProjectiveRep.rescale`: normalized projective representations with their factor sets, and the coboundary change under rescaling.
@@ -54,25 +55,25 @@ Layer 0, over a commutative ring `R` with 2 invertible, applied with `R = k`:
 - §0.1 `bilinearFactorSet`: the extension `E_B` of `W` by `C` with law `(t, x)(s, y) = (t + s + B(x, y), x + y)`. Here `B = ω/2`; `heisenbergFactorSet ω` below is this factor set.
 - §§0.3, 0.5 `halfForm_commutator`: for alternating `ω`, the commutator `pqp⁻¹q⁻¹` in `E_{ω/2}` is `inl(ω(x, y))`.
 - §0.6 `halfForm_center`: for alternating nondegenerate `ω`, the centre of `E_{ω/2}` is the image of `inl`.
-- §§0.7–0.8 `extensionIsometry`, `extensionIsometryAction`: an isometry `e` acts by `(t, x) ↦ (t, e x)`, fixing the centre, as a homomorphism from `TauCeti.BilinForm.isometryGroup` to the automorphisms of the extension.
+- §§0.7–0.8 `extensionIsometry`, `extensionIsometryAction`: an isometry `e` acts by `(t, x) ↦ (t, e x)`, fixing the centre, as a homomorphism from `TauCeti.BilinForm.isometryGroup B` to the automorphisms of `E_B`. For `B = ω/2` its domain is `TauCeti.BilinForm.isometryGroup (ω/2)`, which equals `TauCeti.BilinForm.isometryGroup ω` because `1/2` is a unit (§1.1); `heisenbergAction ω` below is this action on `Sp(V)`.
 - §§0.9–0.10 `polarization_cocycle`, `polarizationEquiv`: the isomorphism `E_{(B − Bᵀ)/2} ≃ E_B`, `(t, x) ↦ (t + B(x, x)/2, x)`.
 - §0.9a `exists_lagrangianComplement`: over every field, a Lagrangian `X` has a Lagrangian complement `Y` with `Y ≅ X^∨` through `ω`, and `Sp(W)` is transitive on Lagrangians.
 
 ### From TauCetiRoadmap.MordellLawrenceVenkatesh
 
-Layer LV.3: §3.1 (an isotropic subspace of a `2d`-dimensional symplectic space has dimension at most `d`, with equality exactly for Lagrangians) and §3.2 (a prescribed basis `(eᵢ)` of a Lagrangian extends to a symplectic basis `(eᵢ, fᵢ)`), over every field.
+Layer LV.3, §3.1: an isotropic subspace of a `2d`-dimensional symplectic space has dimension at most `d`, with equality exactly for Lagrangians, over every field. The statement of its §3.2 (a prescribed basis `(eᵢ)` of a Lagrangian extends to a symplectic basis `(eᵢ, fᵢ)`) is consumed from the pin, as Tau Ceti's `LinearMap.BilinForm.IsAlt.exists_basis_toMatrix_eq_J_inl_eq` above.
 
 ## How to read the build
 
-`Suggested.lean` states the finite Stone–von Neumann theorem (§1.3), the fully ramified theorem (§1.4), the existence and uniqueness of the normalized Weil representation (§2.2), the isotropic-invariants theorem (§3.4), the Lagrangian fixed-line theorem (§4.1) and tensor compatibility of normalized Weil representations for a finite product polarization (§4.2), with the definitions `heisenbergFactorSet`, `Heisenberg`, `polarizationForm`, `schrodingerOp`, `evenPart` and `IsNormalizedWeil`; its docstring names the corrected Gérardin formula (§3.3) as not statable at the pins, because the action of `Sp(V)` on `H(V)`, and with it the group `P ⋉ H(V)`, is not a carrier there. Layer 0 fixes coordinates adapted to an isotropic subspace. Layer 1 builds the Heisenberg group of a finite symplectic space, the Schrödinger model, its character and the uniqueness theorems, and the intertwiners between polarized models. Layer 2 builds the projective Weil action, normalizes it by the parity determinant, computes it on generators and assembles the Weil–Heisenberg representation and its transport along special isomorphisms. Layer 3 builds mixed models, computes the parabolic fixed space with its determinant twist, deduces the corrected induction formula and proves isotropic induction for fully ramified characters. Layer 4 proves the Lagrangian fixed-line formula and tensor compatibility, the finite inputs consumed by type constructions. Each target names what its statement and its route need, so a different proof is not blocked behind an unrelated layer.
+`Suggested.lean` states the finite Stone–von Neumann theorem (§1.3), the fully ramified theorem (§1.4), the existence and uniqueness of the normalized Weil representation (§2.2), the corrected Gérardin induction formula (§3.3), the isotropic-invariants theorem (§3.4), the Lagrangian fixed-line theorem (§4.1) and tensor compatibility of normalized Weil representations for a finite product polarization (§4.2), with the definitions `heisenbergFactorSet`, `Heisenberg`, `heisenbergAction`, `polarizationForm`, `schrodingerOp`, `evenPart`, `IsNormalizedWeil` and `parabolicSubgroup`. Layer 0 fixes coordinates adapted to an isotropic subspace. Layer 1 builds the Heisenberg group of a finite symplectic space, the Schrödinger model, its character and the uniqueness theorems, and the intertwiners between polarized models. Layer 2 builds the projective Weil action, normalizes it by the parity determinant, computes it on generators and assembles the Weil–Heisenberg representation and its transport along special isomorphisms. Layer 3 builds mixed models, computes the parabolic fixed space with its determinant twist, deduces the corrected induction formula and proves isotropic induction for fully ramified characters. Layer 4 proves the Lagrangian fixed-line formula and tensor compatibility, the finite inputs consumed by type constructions. Each target names what its statement and its route need, so a different proof is not blocked behind an unrelated layer.
 
 ## Layer 0: Finite symplectic coordinates
 
 ### 0.1 Adapted coordinates for an isotropic subspace
 
-Let `V` be a finite-dimensional space over a field `k` of characteristic not 2 with an alternating nondegenerate form `ω`, and let `I ≤ V` be isotropic. Construct subspaces `V₀` and `J` with `V = I ⊕ V₀ ⊕ J`, `I^⊥ = I ⊕ V₀`, `V₀ ⊥ (I ⊕ J)`, `ω|_{V₀}` nondegenerate, and `J → I*`, `j ↦ ω(·, j)|_I` an isomorphism; equivalently a linear isometry `I ⊕ V₀ ⊕ I* ≃ V` carrying the form `ω|_{V₀}` orthogonally summed with `((x, y), (x′, y′)) ↦ y′(x) − y(x′)` on `I ⊕ I*`. Then `dim V = 2 dim I + dim V₀`, and `I^⊥ → V₀` (projection along `I`) induces an isometry `I^⊥/I ≅ V₀` (FS25, Lemma 3.3.4 and the paragraph before it, p. 15; N02, §2, p. 16).
+Let `V` be a finite-dimensional space over a field `k`, of any characteristic, with an alternating nondegenerate form `ω`, and let `I ≤ V` be isotropic. Construct subspaces `V₀` and `J`, with `J` isotropic, such that `V = I ⊕ V₀ ⊕ J`, `I^⊥ = I ⊕ V₀`, `V₀ ⊥ (I ⊕ J)`, `ω|_{V₀}` nondegenerate, and `J → I*`, `j ↦ ω(·, j)|_I` an isomorphism; equivalently a linear isometry `I ⊕ V₀ ⊕ I* ≃ V` carrying the form `ω|_{V₀}` orthogonally summed with `((x, y), (x′, y′)) ↦ y′(x) − y(x′)` on `I ⊕ I*`. Then `dim V = 2 dim I + dim V₀`, and `I^⊥ → V₀` (projection along `I`) induces an isometry `I^⊥/I ≅ V₀` (FS25, Lemma 3.3.4 and the paragraph before it, p. 15, and N02, §2, p. 16, in odd characteristic; in every characteristic by the route below).
 
-A proof route: extend `I` to a maximal isotropic subspace `L`; a vector of `L^⊥` outside `L` would enlarge it isotropically (the form is alternating), so `L = L^⊥` and `dim L = n` by `LinearMap.BilinForm.finrank_orthogonal`. Extend a basis of `I` to a basis of `L`, extend that basis to a symplectic basis `(eᵢ, fᵢ)` by MordellLawrenceVenkatesh §3.2, let `J` be spanned by the `fᵢ` paired with the basis of `I` and `V₀` by the remaining `eᵢ, fᵢ`. The symplectic-basis equations give every claim.
+A proof route: extend `I` to a maximal isotropic subspace `L`; a vector of `L^⊥` outside `L` would enlarge it isotropically (the form is alternating), so `L = L^⊥` and `dim L = n` by `LinearMap.BilinForm.finrank_orthogonal`. Extend a basis of `I` to a basis of `L`, extend that basis to a symplectic basis by Tau Ceti's `LinearMap.BilinForm.IsAlt.exists_basis_toMatrix_eq_J_inl_eq` and negate its second half, so that `ω(eᵢ, fⱼ) = δᵢⱼ` while `ω(eᵢ, eⱼ) = ω(fᵢ, fⱼ) = 0`; let `J` be spanned by the `fᵢ` paired with the basis of `I` and `V₀` by the remaining `eᵢ, fᵢ`. The symplectic-basis equations give every claim, with no division by 2; `J` is isotropic because the `fᵢ` pair to zero with each other.
 
 Its API, on these carriers and hypotheses:
 
@@ -87,8 +88,10 @@ Its API, on these carriers and hypotheses:
 - In the plane `k²` with `ω((x, y), (x′, y′)) = xy′ − yx′` and `I = k(1, 0)`, `J = k(0, 1)` and `V₀ = 0`; `dim V = 2 = 2·1 + 0`.
 - In the orthogonal sum of two planes with `I` the first `x`-axis, `V₀` is the second plane, of dimension 2, and `4 = 2·1 + 2`; a formula `dim V₀ = dim V − dim I` would give 3.
 - The whole nonzero plane is not isotropic (`ω((1, 0), (0, 1)) = 1`), so it is not an admissible `I`.
+- In `𝔽₃⁴` with symplectic basis `e₁, e₂, f₁, f₂` (`ω(eᵢ, fⱼ) = δᵢⱼ`) and `I = ⟨e₁, e₂⟩`, the complement `J = ⟨f₁ + e₂, f₂⟩` with `V₀ = 0` satisfies every condition except isotropy (`j ↦ ω(·, j)|_I` sends `f₁ + e₂, f₂` to the dual basis), but `ω(f₁ + e₂, f₂) = 1` while the standard form vanishes on `I* × I*`, so the coordinate map is not an isometry; `J = ⟨f₁, f₂⟩` has internal pairing 0 and is admissible.
+- Over `𝔽₂`, the plane with `ω((x, y), (x′, y′)) = xy′ + yx′` and `I = 𝔽₂(1, 0)` has `J = 𝔽₂(0, 1)`, `V₀ = 0`, `ω((1, 0), (0, 1)) = 1` and `2 = 2·1 + 0`: the construction uses no division by 2 and holds in characteristic 2.
 
-*Needs:* Mathlib `LinearMap.BilinForm.IsAlt`, `LinearMap.BilinForm.Nondegenerate`, `LinearMap.BilinForm.orthogonal`, `LinearMap.BilinForm.finrank_orthogonal`; MordellLawrenceVenkatesh §§3.1–3.2.
+*Needs:* Mathlib `LinearMap.BilinForm.IsAlt`, `LinearMap.BilinForm.Nondegenerate`, `LinearMap.BilinForm.orthogonal`, `LinearMap.BilinForm.finrank_orthogonal`; Tau Ceti `LinearMap.BilinForm.IsAlt.exists_basis_toMatrix_eq_J_inl_eq`; MordellLawrenceVenkatesh §3.1.
 
 ### 0.2 The standard polarized space
 
@@ -115,20 +118,21 @@ In the plane over `𝔽₃` with `I = 𝔽₃(1, 0)`, §0.1 gives `J = 𝔽₃(0
 
 ### Dependencies
 
-Within this roadmap: none. From other roadmaps: MordellLawrenceVenkatesh §§3.1–3.2. Mathlib and Tau Ceti as in the supplier contracts.
+Within this roadmap: none. From other roadmaps: MordellLawrenceVenkatesh §3.1. Mathlib and Tau Ceti as in the supplier contracts.
 
 ## Layer 1: Finite Heisenberg representations
 
 ### 1.1 The Heisenberg group of a finite symplectic space
 
-Define `heisenbergFactorSet ω` as the factor set `(v, w) ↦ ω(v, w)/2` of `Multiplicative V` with values in `Multiplicative k` for the trivial action, and `Heisenberg ω` as its Tau Ceti extension. This is MetaplecticAutomorphicForms §0.1 for the bilinear form `ω/2`; the theorems of §§0.2–0.8 there are used for it without change.
+Define `heisenbergFactorSet ω` as the factor set `(v, w) ↦ ω(v, w)/2` of `Multiplicative V` with values in `Multiplicative k` for the trivial action, for every bilinear form `ω` over a field `k`, and `Heisenberg ω` as its Tau Ceti extension; for alternating `ω` and `ringChar k ≠ 2` this is the Heisenberg group `H(V)`. This is MetaplecticAutomorphicForms §0.1 for the bilinear form `ω/2`; the theorems of §§0.2–0.8 there are used for it without change, the isometry group of `ω/2` being that of `ω`. Define `heisenbergAction ω`, a homomorphism from `Sp(V) = TauCeti.BilinForm.isometryGroup ω` to `MulAut (Heisenberg ω)`, by `g · (t, v) = (t, g v)`; each `g` acts by a group automorphism because it preserves `ω`. It is the action `extensionIsometryAction` of MetaplecticAutomorphicForms §0.8 for `ω/2`, read on `Sp(V)`.
 
 Its API (from MetaplecticAutomorphicForms §§0.3–0.8 when 2 is invertible):
 
 - The product of `(t, v)` and `(s, w)` is `(t + s + ω(v, w)/2, v + w)`, and the inverse of `(t, v)` is `(−t, −v)` because `ω(v, v) = 0`.
 - For alternating `ω` the commutator of `(t, v)` and `(s, w)` is `(ω(v, w), 0)`.
 - For nondegenerate alternating `ω` the centre is `{(t, 0)}`, isomorphic to `k`; `H(V)` has order `q^{2n+1}`.
-- `Sp(V)` acts by automorphisms `(t, v) ↦ (t, gv)` fixing the centre.
+- `heisenbergAction ω g` sends `(t, v)` to `(t, g v)`; it is a group automorphism fixing every central element `(t, 0)`, and `heisenbergAction ω (g h)` is `heisenbergAction ω g` composed with `heisenbergAction ω h`.
+- For a unit `c` of `k`, `TauCeti.BilinForm.isometryGroup (c • ω) = TauCeti.BilinForm.isometryGroup ω`, by `TauCeti.BilinForm.mem_isometryGroup_iff` after cancelling `c`. With `c = 1/2` this identifies `Sp(V)` with the domain of `extensionIsometryAction` for `E_{ω/2}`, and `heisenbergAction ω` is that action composed with the identification.
 - For `V = k²` with the standard form, `(t, x, y) ↦ (x, y, t + xy/2)` is an isomorphism onto `TauCeti.HeisenbergGroup k`.
 
 **Checks.**
@@ -137,8 +141,12 @@ Its API (from MetaplecticAutomorphicForms §§0.3–0.8 when 2 is invertible):
 - For `V = 0` the group is `k` itself, abelian of order `q`.
 - In characteristic 2 the division by 2 is not available; with the junk value `1/2 = 0` the extension is the abelian group `k × V`, so the odd-characteristic hypothesis of the theorems below cannot be dropped.
 - Under `(t, x, y) ↦ (x, y, t + xy/2)`, the product `(0, 1, 0)(0, 0, 1) = (1/2, 1, 1)` maps to `(1, 1, 1)`, which is `(1, 0, 0)(0, 1, 0)` in `TauCeti.HeisenbergGroup`; without the correction `xy/2` the map is not multiplicative.
+- In `𝔽₃²` with `g = J`, `J(1, 0) = (0, −1)` and `J(0, 1) = (1, 0)`: `heisenbergAction` sends `(0, (1, 0))(0, (0, 1)) = (2, (1, 1))` to `(2, (1, −1))`, and the product of the images `(0, (0, −1))(0, (1, 0))` is `(ω((0, −1), (1, 0))/2, (1, −1)) = (2, (1, −1))`.
+- For the non-isometry `g = diag(2, 1)` of `𝔽₃²` (`ω(ge₁, ge₂) = 2`), the coordinate map sends `(2, (1, 1))` to `(2, (2, 1))`, while `(0, (2, 0))(0, (0, 1)) = (1, (2, 1))`: without the isometry condition the map is not a homomorphism.
+- With the lower shear `u(1)(x, y) = (x, x + y)`, the element `J u(1)` sends `(0, (1, 0))` to `(0, J(1, 1)) = (0, (1, −1))`, the same as acting by `u(1)` and then by `J`. The convention `g · (t, v) = (t, g⁻¹v)` gives `(0, (0, 1))` for `J u(1)` but `(0, (1, 1))` for the two steps, so it is not a homomorphism on `Sp(V)`.
+- In characteristic 2 the scalar `1/2` takes the junk value `0`, which is not a unit, and `TauCeti.BilinForm.isometryGroup 0` is all of `V ≃ₗ[k] V`: the identification of isometry groups needs `c` to be a unit.
 
-*Needs:* MetaplecticAutomorphicForms §§0.1–0.8; Tau Ceti `TauCeti.FactorSet.Extension`, `TauCeti.trivialMulDistribMulAction`, `TauCeti.HeisenbergGroup`.
+*Needs:* MetaplecticAutomorphicForms §§0.1–0.8; Tau Ceti `TauCeti.FactorSet.Extension`, `TauCeti.trivialMulDistribMulAction`, `TauCeti.HeisenbergGroup`, `TauCeti.BilinForm.isometryGroup`, `TauCeti.BilinForm.mem_isometryGroup_iff`; Mathlib `MulAut`.
 
 ### 1.2 The Schrödinger representation
 
@@ -165,7 +173,7 @@ Its API:
 
 ### 1.3 The character and the finite Stone–von Neumann theorem
 
-Prove that the character of `S_ψ` at `(t, v)` is `qⁿψ(t)` for `v = 0` and `0` otherwise, for every nontrivial `ψ`, injective or not (N02, Lemma 2.1 and its proof, p. 16).
+Prove that the character of `S_ψ` at `(t, v)` is `qⁿψ(t)` for `v = 0` and `0` otherwise, for every nontrivial `ψ`, injective or not (N02, Lemma 2.1, p. 16, and its proof, p. 17).
 
 Prove `finite_stoneVonNeumann_exists` and `finite_stoneVonNeumann`: for `k` finite of characteristic not 2, `ω` alternating and nondegenerate on `V` and `ψ` nontrivial, there is an irreducible complex representation of `Heisenberg ω` on which `(t, 0)` acts by `ψ(t)`; every such representation has dimension `d` with `d² = |V| = q^{2n}`, its character vanishes off the centre, and any two are equivalent. In an arbitrary finite-dimensional representation on which `(t, 0)` acts by `ψ(t)`, every irreducible constituent is `S_ψ`, so the representation is `S_ψ`-isotypic, and the endomorphisms of `S_ψ` are scalars (N02, Lemma 2.1 and the remark after it, pp. 16–17; FS25, Lemma 3.3.1, p. 14).
 
@@ -188,7 +196,7 @@ Statement API:
 
 ### 1.4 Fully ramified characters (Stone–von Neumann with a cyclic centre)
 
-Prove `fullyRamified_exists` and `fullyRamified_unique`. Let `J` be a finite group, `H` a normal subgroup containing every commutator, `θ : H → ℂˣ` a character with `θ(ghg⁻¹) = θ(h)` for `g ∈ J`, `h ∈ H`, and assume that every `g ∉ H` has some `x ∈ J` with `θ(gxg⁻¹x⁻¹) ≠ 1`. Then there is an irreducible representation `η` of `J` with `η(h) = θ(h) · id` for `h ∈ H`; every such representation has dimension `d` with `d² = [J : H]`, its character is `dθ` on `H` and zero off `H`, and any two are equivalent. Every finite-dimensional representation of `J` is `η`-isotypic on its `θ`-isotypic part. No exponent-`p` hypothesis and no special isomorphism with a standard Heisenberg group is assumed: `H/ker θ` is cyclic of any order (S08, Proposition 3.5, p. 14; F21, Lemmas 7.7–7.8, pp. 30–31).
+Prove `fullyRamified_exists` and `fullyRamified_unique`. Let `J` be a finite group, `H` a normal subgroup containing every commutator, `θ : H → ℂˣ` a character with `θ(ghg⁻¹) = θ(h)` for `g ∈ J`, `h ∈ H`, and assume that every `g ∉ H` has some `x ∈ J` with `θ(gxg⁻¹x⁻¹) ≠ 1`. Then there is an irreducible representation `η` of `J` with `η(h) = θ(h) · id` for `h ∈ H`; every such representation has dimension `d` with `d² = [J : H]`, its character is `dθ` on `H` and zero off `H`, and any two are equivalent. Every finite-dimensional representation of `J` is `η`-isotypic on its `θ`-isotypic part. No exponent-`p` hypothesis and no special isomorphism with a standard Heisenberg group is assumed: `H/ker θ` is cyclic of any order. This general finite-group theorem is proved here by the route below, from induction, Maschke and orthogonality of characters; S08, Proposition 3.5, p. 14 (for `J¹ ⊇ H¹` of a skew semisimple stratum), and F21, Lemma 7.7 and the proof of Lemma 7.8, pp. 30–31 (for a Heisenberg `p`-group with centre of order `p`), are instances in their settings.
 
 A proof route: induce the character `θ` (`FDRep.ofLinearCharacter`, `TauCeti.indFDRep`); `J`-invariance makes `H` act by `θ` on it, and Maschke gives an irreducible constituent `η`. For `g ∉ H` choose `x` as in the hypothesis; `η(xgx⁻¹) = θ(xgx⁻¹g⁻¹) η(g)`, and invariance of the trace under conjugation forces `tr η(g) = 0`. The character norm is `|H| d²/|J| = 1`, and the same computation for two such representations gives inner product 1, hence an isomorphism by `Representation.char_orthonormal`.
 
@@ -210,7 +218,7 @@ Statement API:
 
 ### 1.5 Intertwiners between polarized models
 
-For a Lagrangian `A ≤ V` let `S_A` be the space of functions `F : H(V) → ℂ` with `F((t, a)h) = ψ(t)F(h)` for `a ∈ A`, with `H(V)` acting by right translation; it is a model of `S_ψ` by §§1.2–1.3. For Lagrangians `A, B` define `T_{BA} : S_A → S_B` by `(T_{BA}F)(h) = Σ_{b ∈ B} F((0, b)h)`. Prove that `T_{BA}` is a nonzero intertwiner, hence an isomorphism, that `T_{AA} = |A| · id` and that `T_{AB} ∘ T_{BA} = |A| · |A ∩ B| · id` (FS25, Lemma 3.3.4 and its proof, pp. 15–16; N02, Theorem 4.1, pp. 19–20, for the transverse case as a finite Fourier transform; the averaging normalization here is chosen independently).
+For a Lagrangian `A ≤ V` let `S_A` be the space of functions `F : H(V) → ℂ` with `F((t, a)h) = ψ(t)F(h)` for `a ∈ A`, with `H(V)` acting by right translation; it is a model of `S_ψ` by §§1.2–1.3. For Lagrangians `A, B` define `T_{BA} : S_A → S_B` by `(T_{BA}F)(h) = Σ_{b ∈ B} F((0, b)h)`. Prove that `T_{BA}` is a nonzero intertwiner, hence an isomorphism, that `T_{AA} = |A| · id` and that `T_{AB} ∘ T_{BA} = |A| · |A ∩ B| · id` (N02, Theorem 4.1, pp. 19–20, for the transverse case as a finite Fourier transform; FS25, Lemma 3.3.4, p. 15, for the induced models `S_A`; the operators `T_{BA}`, their averaging normalization and their composition law are derived here by the route below).
 
 A proof route: isotropy of `B` gives `(0, b)(0, b′) = (0, b + b′)`, so reindexing proves left covariance, and left averaging commutes with right translation. Since `(0, b)(0, a) = (ω(b, a), 0)(0, a)(0, b)`, the composite at `h` is `Σ_{b ∈ B} (Σ_{a ∈ A} ψ(ω(b, a))) F((0, b)h)`; the inner sum is `|A|` for `b ∈ A^⊥ = A` and `0` otherwise by primitivity of `ψ`.
 
@@ -256,9 +264,9 @@ Its API:
 
 **Checks.**
 
-- `μ(1) = id`, so `c(1, g) = c(g, 1) = 1`.
+- In the `𝔽₃` plane choose `μ(J) = F_ψ` and `μ(−1) = R`. Since `J² = −1` and `F_ψ² = R` (§2.3), `c(J, J) = 1`. Replacing `μ(J)` by `2F_ψ` changes `c(J, J)` to `4`, which is the coboundary `a(J)a(J)/a(J²)` for `a(J) = 2`, `a(−1) = 1`.
 - In the `𝔽₃` plane let `g = u(1)`, of order 3. Rescaling only `μ(g)` by `ζ` multiplies `c(g, g)` by `ζ² ≠ 1` and preserves Egorov covariance: the factor set is not determined by covariance.
-- For `V = 0` the intertwiners are the nonzero scalars; §2.2 removes the choice.
+- On the `𝔽₃` model, `Rδ₀ = δ₀` and `Rδ₁ = δ₂`, so `tr R = 1`. A conjugate `μ(g)Rμ(g)⁻¹` equal to `−R` would have trace `−1`, and the zero operator is not invertible, so parity commutes with every `μ(g)` exactly, not up to a sign.
 
 *Needs:* §§1.2–1.3; MetaplecticAutomorphicForms §0.8; Tau Ceti `TauCeti.BilinForm.isometryGroup`, `TauCeti.IsProjectiveRep`, `TauCeti.IsProjectiveRep.rescale`.
 
@@ -308,7 +316,7 @@ Its API:
 
 ### 2.4 The Weil–Heisenberg representation
 
-On `H(V) ⋊ Sp(V)`, built with Mathlib's `SemidirectProduct` from the action of MetaplecticAutomorphicForms §0.8, define `Ω(h, g) = π(h) W(g)`. Prove that `Ω` is a representation, that its restrictions to `H(V)` and `Sp(V)` are `S_ψ` and `W`, that the centre acts by `ψ`, and that conjugating by an isometry of polarized models and a Schrödinger intertwiner carries `Ω` to the Weil–Heisenberg representation of the image (FS25, Construction 3.4.2, p. 17; F21, proof of Lemma 7.10, pp. 32–33).
+On `H(V) ⋊ Sp(V)`, built with Mathlib's `SemidirectProduct` from `heisenbergAction ω` (§1.1, the action of MetaplecticAutomorphicForms §0.8), define `Ω(h, g) = π(h) W(g)`. Prove that `Ω` is a representation, that its restrictions to `H(V)` and `Sp(V)` are `S_ψ` and `W`, that the centre acts by `ψ`, and that conjugating by an isometry of polarized models and a Schrödinger intertwiner carries `Ω` to the Weil–Heisenberg representation of the image (FS25, Construction 3.4.2, p. 17; F21, proof of Lemma 7.10, pp. 32–33).
 
 A proof route: `π(h)W(g)π(h′)W(g′) = π(h)π(g·h′)W(g)W(g′) = π(h(g·h′))W(gg′)` by Egorov covariance. Conjugation by a nonzero intertwiner preserves Egorov covariance and the determinant identity, so the conjugated Weil representation is the normalized one by uniqueness (§2.2).
 
@@ -324,25 +332,27 @@ Its API:
 - For `V = 0`, `Sp(V)` is trivial and `Ω` is `ψ` on the centre.
 - The reversed formula `Ω′(h, g) = W(g)π(h)` fails multiplicativity for `g = J`, `h = (0, (1, 0))`: `Ω′((h, 1)(1, J)) = Ω′(h, J) = W(J)π(h)`, while `Ω′(h, 1)Ω′(1, J) = π(h)W(J) = W(J)π(J⁻¹h)` with `J⁻¹h = (0, (0, 1)) ≠ h`.
 
-*Needs:* §1.2; §2.2; MetaplecticAutomorphicForms §0.8; Mathlib `SemidirectProduct`.
+*Needs:* §1.1; §1.2; §2.2; MetaplecticAutomorphicForms §0.8; Mathlib `SemidirectProduct`.
 
 ### 2.5 Transport through equivariant special isomorphisms
 
-Let `P` be a finite group with an isomorphism `j : P ≃ H(V)` inducing the identity of `V` on `P/Z(P)` (a special isomorphism), let a group `K` act on `P` by automorphisms and let `s : K → Sp(V)` be a homomorphism with `j(k·a) = s(k)·j(a)` for all `k ∈ K`, `a ∈ P`. Prove that `(a, k) ↦ (j(a), s(k))` is a homomorphism `P ⋊ K → H(V) ⋊ Sp(V)`, and that the pullback of `Ω` restricts on `P` to `S_ψ ∘ j` and on `K` to `W ∘ s`. A compatible change of `(j, s)` gives an isomorphic pullback (FS25, Definitions 3.4.4–3.4.5, pp. 17–18; Remark 3.4.3, p. 17).
+Let `P` be a finite group with a group isomorphism `j : P ≃* H(V)` (in the applications a special isomorphism, FS25, Definition 3.4.4, that is, one compatible with a given identification of `P/Z(P)` with `V`; that condition is the consumer's and is not used here), let a group `K` act on `P` by automorphisms and let `s : K → Sp(V)` be a homomorphism with `j(k·a) = s(k)·j(a)` for all `k ∈ K`, `a ∈ P`. Prove that `(a, k) ↦ (j(a), s(k))` is a homomorphism `P ⋊ K → H(V) ⋊ Sp(V)`, and that the pullback of `Ω` restricts on `P` to `S_ψ ∘ j` and on `K` to `W ∘ s`. Prove two changes of data: if `w ∈ V` is fixed by `s(K)`, then `j′ = Ad(0, w) ∘ j` is again `s`-equivariant and `π(0, w)` intertwines the pullbacks along `(j, s)` and `(j′, s)`; and for `g₀ ∈ Sp(V)` the pair `(g₀ · j, g₀ s g₀⁻¹)` is equivariant and `W(g₀)` intertwines the pullbacks along `(j, s)` and `(g₀ · j, g₀ s g₀⁻¹)` (FS25, Definitions 3.4.4–3.4.5, pp. 17–18; Remark 3.4.3, p. 17).
 
-A proof route: the semidirect multiplication is respected exactly when the equivariance holds; restrict `Ω` along the homomorphism.
+A proof route: the semidirect multiplication is respected exactly when the equivariance holds; restrict `Ω` along the homomorphism. For `j′`, `s(k)·((0, w) j(a) (0, −w)) = (0, s(k)w)(s(k)·j(a))(0, −s(k)w)`, which is `j′(k·a)` when `s(k)w = w`, and `W(s(k))` commutes with `π(0, w)` by Egorov covariance. For `g₀`, `j(k·a) = s(k)·j(a)` gives `g₀·j(k·a) = (g₀ s(k) g₀⁻¹)·(g₀·j(a))`, and `π(g₀·h) W(g₀ g g₀⁻¹) = W(g₀) π(h) W(g) W(g₀)⁻¹`.
 
 Its API:
 
 - The equivariance hypothesis gives the homomorphism `(a, k) ↦ (j(a), s(k))` of semidirect products.
 - Restriction of the pullback to `P` is `S_ψ ∘ j`; `K` acts through `W ∘ s`.
-- An isomorphism of data `(j, s)` intertwines the pullbacks.
+- For `w ∈ V` fixed by `s(K)`, the pair `(Ad(0, w) ∘ j, s)` is equivariant and `π(0, w)` intertwines its pullback with that of `(j, s)`.
+- For `g₀ ∈ Sp(V)`, the pair `(g₀ · j, g₀ s g₀⁻¹)` is equivariant and `W(g₀)` intertwines its pullback with that of `(j, s)`.
 
 **Checks.**
 
 - For `P = H(V)`, `j = id`, `K = Sp(V)` and `s = id`, the pullback is `Ω`.
 - For `V` a nonzero `𝔽₃` plane, conjugation by `(0, w)` with `w ≠ 0` is the identity on `V` but sends `(t, v)` to `(t + ω(w, v), v)`; with `s = 1` the equivariance fails, so the inner automorphism group is not covered with `j = id` (the obstruction of FS25, Remark 3.4.3).
-- The group of order `p³` and exponent `p²` admits no special isomorphism to `H(V)`, which has exponent `p`; it is handled by §1.4 instead.
+- The group of order `p³` and exponent `p²` admits no group isomorphism to `H(V)` for the `𝔽_p` plane, which has exponent `p` since `(t, v)ᵐ = (mt, mv)`; it is handled by §1.4 instead.
+- On the `𝔽₃` plane with `K = ⟨u(1)⟩`, `s` the inclusion and `j = id`: `w = (0, 1)` is fixed by `u(1)` and `Ad(0, w)` is again equivariant. For `w = (1, 0)`, `u(1)w = (1, 1)`, and at `a = (0, (1, 0))` the two sides of the equivariance for `Ad(0, w)` have central coordinates `ω(w, u(1)(1, 0)) = 1` and `ω(w, (1, 0)) = 0`: the fixed-vector hypothesis is needed.
 
 *Needs:* §2.4; Mathlib `SemidirectProduct`.
 
@@ -379,7 +389,7 @@ Its API:
 
 ### 3.2 The parabolic fixed space
 
-Let `I` be isotropic and `P ≤ Sp(V)` a subgroup stabilizing `I`, with `p₁ : P → GL(I)` and `p₂ : P → Sp(V̄)`, `V̄ = I^⊥/I`. Prove that `S_{ψ,V}^I` is stable under `P ⋉ H(I^⊥)` and that there is an isomorphism of representations of `P ⋉ H(I^⊥)`
+Let `I` be isotropic and `P ≤ Sp(V)` a subgroup stabilizing `I`, with `p₁ : P → GL(I)` and `p₂ : P → Sp(V̄)`, `V̄ = I^⊥/I`. Prove that `S_{ψ,V}^I` is stable under `H(I^⊥) ⋊ P` and that there is an isomorphism of representations of `H(I^⊥) ⋊ P`
 `S_{ψ,V}^I ≅ (χ ∘ det ∘ p₁) ⊗ (Ω_{ψ,V̄} pulled back along p₂ × (H(I^⊥) → H(V̄)))`,
 where `H(I^⊥) → H(V̄)` is the quotient by `{(0, i)}` and `χ` is the quadratic character (F21, proof of Lemma 7.10, p. 33, and footnote 3; Gerardin77, Theorem 2.4(b), as corrected there).
 
@@ -400,26 +410,34 @@ Statement API:
 
 ### 3.3 The corrected Gérardin induction formula
 
-With `P, I, V̄` as in §3.2, let `Q = P ⋉ H(I^⊥) ≤ P ⋉ H(V)` and inflate `(χ ∘ det p₁) ⊗ Ω_{ψ,V̄}` to `Q` through `H(I^⊥) → H(V̄)`. Prove that the restriction of `Ω_{ψ,V}` to `P ⋉ H(V)` is isomorphic to `Ind_Q^{P ⋉ H(V)}` of this inflation; the index is `q^{dim I}` and both sides have dimension `qⁿ`. The quadratic character is part of the inducing representation (F21, proof of Lemma 7.10 and footnote 3, p. 33, reporting the correction of Gerardin77, Theorem 2.4(b)).
+Take `I`, `P` and `V̄` as in §3.2 and `V = X × X*` with `ω = polarizationForm k X`; §2.4 transports the result to every nondegenerate alternating space. Define `parabolicSubgroup ω I P` as the subgroup of `H(V) ⋊ P`, built from `heisenbergAction ω` restricted to `P`, generated by the elements `((t, v), 1)` with `v ∈ I^⊥` and by `P`. Since `P` is a group stabilizing `I`, it stabilizes `I^⊥`, so `Q = parabolicSubgroup ω I P` is the set of pairs `((t, v), g)` with `v ∈ I^⊥`, that is, `H(I^⊥) ⋊ P`. Present `V̄` by a polarized space: a finite-dimensional `X₀` and a linear map `r : V → X₀ × X₀*` that on `I^⊥` is onto, has kernel `I` and preserves the forms (it exists by §0.1 and §0.2), together with the homomorphism `p₂ : P → Sp(X₀ × X₀*)` determined by `r(g v) = p₂(g)(r v)` for `v ∈ I^⊥`. Let `σ` be the representation of `Q` on `X₀ → ℂ` given by `((t, v), g) ↦ χ(det(g|_I)) π₀(t, r v) W₀(p₂ g)`, where `π₀` and `W₀` are the Schrödinger operators and the normalized Weil representation of `X₀ × X₀*`; it is `(χ ∘ det p₁) ⊗ Ω_{ψ,V̄}` inflated along `H(I^⊥) → H(V̄)`. Prove `weilHeisenberg_parabolic_induction`: the Weil–Heisenberg representation `((t, v), g) ↦ π(t, v) W(g)` of `H(V) ⋊ P`, that is, the restriction of `Ω_{ψ,V}`, is isomorphic to `Representation.ind` of `σ` along the inclusion of `Q`; the index is `q^{dim I}` and both sides have dimension `qⁿ`. Since `g|_I` is invertible, `χ(det(g|_I))` is `1` or `−1` according as `det(g|_I)` is or is not a square in `k`, the form in which the target is stated. The quadratic character is part of the inducing representation (F21, proof of Lemma 7.10 and footnote 3, pp. 32–33, reporting the correction of Gerardin77, Theorem 2.4(b)).
 
-A proof route: §3.2 makes the invariant space a `Q`-subrepresentation of the stated type; Frobenius reciprocity (`Rep.indResHomEquiv`) gives a nonzero map from the induced representation to `Ω_{ψ,V}`; its image is `H(V)`-stable, hence everything by irreducibility of `S_{ψ,V}`; and the dimensions `q^{dim I} · q^{dim V̄/2} = qⁿ` agree.
+A proof route: §3.2 makes the invariant space `S_{ψ,V}^I` a `Q`-subrepresentation isomorphic to `σ` (evaluation at `0` in the mixed model of §3.1, transported along `r`); Frobenius reciprocity (`Rep.indResHomEquiv`) gives a nonzero map from the induced representation to `Ω_{ψ,V}`; its image is `H(V)`-stable, hence everything by irreducibility of `S_{ψ,V}`; and the dimensions `q^{dim I} · q^{dim V̄/2} = qⁿ` agree (`TauCeti.finrank_indFDRep` with `TauCeti.indFDRepForgetEquiv` for `Representation.ind`).
+
+Its API, for the subgroup:
+
+- `parabolicSubgroup ω I P` is defined for every subspace `I` and every subgroup `P` of `Sp(V)`, as the join of the image under `SemidirectProduct.inl` of the inverse image of `I^⊥` under `TauCeti.FactorSet.rightHom`, and the range of `SemidirectProduct.inr`.
+- When `P` stabilizes `I`, `((t, v), g)` lies in `parabolicSubgroup ω I P` exactly when `v ∈ I^⊥`; its index in `H(V) ⋊ P` is `q^{dim I}`.
 
 Statement API:
 
-- `Ω_{ψ,V}|_{P ⋉ H(V)} ≅ Ind_Q^{P ⋉ H(V)} ((χ ∘ det p₁) ⊗ Ω_{ψ,V̄})`.
+- `Ω_{ψ,V}|_{H(V) ⋊ P} ≅ Ind_Q^{H(V) ⋊ P} σ` with `σ = (χ ∘ det p₁) ⊗ Ω_{ψ,V̄}` inflated to `Q` (`weilHeisenberg_parabolic_induction`).
 - The isomorphism restricts on `H(V)` to the mixed model of §3.1.
+- Another presentation `r′`, equal to `e ∘ r` on `I^⊥` for some `e ∈ Sp(X₀ × X₀*)`, replaces `p₂` by `e p₂ e⁻¹` and `σ` by its conjugate under `W₀(e)`, so the isomorphism class of `σ` does not depend on `r`.
 
 **Checks.**
 
 - Dimensions: for `n = 2` and `dim I = 1` over `𝔽₃`, the index is 3 and the inducing representation has dimension 3, giving 9.
 - Omitting `χ(det p₁)` fails the `𝔽₅` Lagrangian test of §3.2: the induced representation would contain a vector fixed by `m(2)` in the `δ₀`-line, where `W(m(2))δ₀ = −δ₀`.
-- For `I = 0`, `Q = P ⋉ H(V)` and the formula is the identity.
+- For `I = 0`, `Q` is all of `H(V) ⋊ P`, the determinant on the zero space is 1, `r` is an isometry `V ≅ X₀ × X₀*` with `p₂(g) = r g r⁻¹`, and the statement is the transport of `Ω` along `r` (§2.4).
+- For `I` Lagrangian, `X₀ = 0` and `X₀ → ℂ` is a line on which `((t, v), g)` acts by `χ(det(g|_I)) ψ(t)`; inducing it from `Q`, of index `qⁿ`, gives dimension `qⁿ`.
+- For `I` the `x`-axis of the `𝔽₃` plane and `P = ⟨J⟩`, which does not stabilize `I`, `parabolicSubgroup ω I P` contains `(0, (1, 0))` and its conjugate `(0, (0, −1))` under `J`, hence all of `H(V)`; it is not the set of pairs with `v ∈ I^⊥ = I`, so that description needs `P` to stabilize `I`.
 
-*Needs:* §3.2; §1.3; Tau Ceti `TauCeti.indFDRep`, `TauCeti.finrank_indFDRep`, `TauCeti.indFDRepForgetEquiv`; Mathlib `Rep.indResHomEquiv`.
+*Needs:* §0.1; §0.2; §1.1 (`heisenbergAction`); §1.3; §2.4; §3.2; Tau Ceti `TauCeti.FactorSet.rightHom`, `TauCeti.indFDRep`, `TauCeti.finrank_indFDRep`, `TauCeti.indFDRepForgetEquiv`; Mathlib `SemidirectProduct`, `SemidirectProduct.inl`, `SemidirectProduct.inr`, `AddSubgroup.toSubgroup`, `Representation.ind`, `Rep.indResHomEquiv`.
 
 ### 3.4 Isotropic induction for fully ramified characters
 
-In the situation of §1.4, let `U ≤ J` be a subgroup with `θ` trivial on `U ∩ H`, let `Q = {q ∈ J : θ(quq⁻¹u⁻¹) = 1 for all u ∈ U}` (the inverse image of the orthogonal of the image `Ū` of `U` in `J/H`), and let `η` be the representation of §1.4 on `E`. Prove `fullyRamified_isotropicInvariants`: the `U`-invariants `E^U` are stable under `Q`, irreducible under `Q`, and `(dim E^U)² · |HU| = |Q|`. Moreover `θ_U(hu) = θ(h)` is a well-defined `Q`-invariant character of `HU`, the pair `(Q, HU, θ_U)` satisfies the hypotheses of §1.4, `E^U` is its fully ramified representation `η_U`, and `Ind_Q^J η_U ≅ η` (S08, Lemma 5.6, p. 29, Corollary 5.7, p. 30, and Lemma 5.12, p. 33; FS25, Lemma 3.3.4(b), p. 15, for the Heisenberg case).
+In the situation of §1.4, let `U ≤ J` be a subgroup with `θ` trivial on `U ∩ H`, let `Q = {q ∈ J : θ(quq⁻¹u⁻¹) = 1 for all u ∈ U}` (the inverse image of the orthogonal of the image `Ū` of `U` in `J/H`), and let `η` be the representation of §1.4 on `E`. Prove `fullyRamified_isotropicInvariants`: the `U`-invariants `E^U` are stable under `Q`, irreducible under `Q`, and `(dim E^U)² · |HU| = |Q|`. Moreover `θ_U(hu) = θ(h)` is a well-defined `Q`-invariant character of `HU`, the pair `(Q, HU, θ_U)` satisfies the hypotheses of §1.4, `E^U` is its fully ramified representation `η_U`, and `Ind_Q^J η_U ≅ η`. This general finite-group theorem is derived here from §1.4 by the route below; S08, Lemma 5.6, pp. 29–30, Corollary 5.7, p. 30, and Lemma 5.12, p. 33 (for the groups `J¹_P` of a skew semisimple stratum), and FS25, Lemma 3.3.4(b), p. 15 (for Heisenberg `𝔽_p`-groups), are instances.
 
 A proof route: well-definedness of `θ_U` is triviality of `θ` on `U ∩ H`, multiplicativity is invariance of `θ`, and `Q`-invariance is the definition of `Q`. The image `Ū` is isotropic for the commutator pairing because commutators of `U` lie in `U ∩ H`. The pairing is perfect on the finite group `J/H`, so `Q/H = Ū^⊥`, `Ū^{⊥⊥} = Ū`, and `Q/HU = Ū^⊥/Ū` carries a nondegenerate pairing. By §1.4 applied to `(Q, HU, θ_U)`, induction of `η_U` has central character `θ` and dimension `[J : Q] · [Q : HU]^{1/2} = [J : H]^{1/2}`, hence is `η`. In the coset model indexed by `J/Q`, `U` acts on the summand at a coset `gQ ≠ Q` through the nontrivial character `u ↦ θ([g⁻¹, u])`, so only the identity coset contributes `U`-invariants. `Q` is normal in `J` because it contains `H` and `J/H` is abelian, and `HU ≤ Q`; `Q` stabilizes `E^U` because `ρ(u)ρ(q) = ρ(q)ρ(u)θ([u⁻¹, q⁻¹])` and `θ([u⁻¹, q⁻¹]) = 1` for `q ∈ Q`, `u ∈ U`.
 
@@ -441,11 +459,11 @@ Statement API:
 
 ### Examples
 
-In `𝔽₃⁴` with `I` a line: `S_ψ` has dimension 9, the `I`-invariants have dimension 3 and form the Schrödinger representation of the plane `I^⊥/I`, the Levi factor `GL(I) = 𝔽₃ˣ` acts on them through `χ₃(det)` (so `−1 ∈ 𝔽₃ˣ` acts by `−1` times the Weil operator of the plane), and inducing from the index-3 subgroup `P ⋉ H(I^⊥)` returns the 9-dimensional representation.
+In `𝔽₃⁴` with `I` a line: `S_ψ` has dimension 9, the `I`-invariants have dimension 3 and form the Schrödinger representation of the plane `I^⊥/I`, the Levi factor `GL(I) = 𝔽₃ˣ` acts on them through `χ₃(det)` (so `−1 ∈ 𝔽₃ˣ` acts by `−1` times the Weil operator of the plane), and inducing from the index-3 subgroup `H(I^⊥) ⋊ P` returns the 9-dimensional representation.
 
 ### Dependencies
 
-Within this roadmap: §0.1, Layer 1, Layer 2. From other roadmaps: MetaplecticAutomorphicForms §0.5. Mathlib and Tau Ceti as in the supplier contracts.
+Within this roadmap: Layer 0, Layer 1, Layer 2. From other roadmaps: MetaplecticAutomorphicForms §0.5. Mathlib and Tau Ceti as in the supplier contracts.
 
 ## Layer 4: Fixed vectors and tensor products
 
@@ -475,7 +493,7 @@ Statement API:
 
 ### 4.2 Tensor compatibility along orthogonal sums
 
-For a finite orthogonal sum `V = ⊥ᵢ Vᵢ` of nondegenerate alternating spaces over the same `k`, with a common `ψ`, pull `S_{ψ,V}` back along `∏ᵢ H(Vᵢ) → H(V)`, `(tᵢ, vᵢ) ↦ (Σ tᵢ, Σ vᵢ)`. Prove that it is isomorphic to `⊗ᵢ S_{ψ,Vᵢ}` (central tuples with `Σ tᵢ = 0` act trivially), that this isomorphism intertwines the normalized Weil representations along `∏ᵢ Sp(Vᵢ) → Sp(V)` and hence the Weil–Heisenberg representations, that dimensions multiply to `q^{Σ dim Vᵢ/2}`, and that for a group acting through the factors, a pure tensor of nonzero fixed vectors `vᵢ` is a nonzero fixed vector. The empty family gives the trivial one-dimensional representation (F21, the tensor description before Lemma 7.6, p. 30, and Lemmas 7.8, 7.10, pp. 31–34; S08, Proposition 3.5, p. 14, Corollary 5.7, p. 30, Lemma 5.12, p. 33).
+For a finite orthogonal sum `V = ⊥ᵢ Vᵢ` of nondegenerate alternating spaces over the same `k`, with a common `ψ`, pull `S_{ψ,V}` back along `∏ᵢ H(Vᵢ) → H(V)`, `(tᵢ, vᵢ) ↦ (Σ tᵢ, Σ vᵢ)`. Prove that it is isomorphic to `⊗ᵢ S_{ψ,Vᵢ}` (central tuples with `Σ tᵢ = 0` act trivially), that this isomorphism intertwines the normalized Weil representations along `∏ᵢ Sp(Vᵢ) → Sp(V)` and hence the Weil–Heisenberg representations, that dimensions multiply to `q^{Σ dim Vᵢ/2}`, and that for a group acting through the factors, a pure tensor of nonzero fixed vectors `vᵢ` is a nonzero fixed vector. The empty family gives the trivial one-dimensional representation (F21, the tensor description before Lemma 7.6, p. 30, and the proof of Lemma 7.10, p. 32; S08, Lemma 5.6(ii), p. 30, and the restriction formula after Lemma 5.12, p. 33).
 
 Prove `isNormalizedWeil_pi_tensor`, the Weil part in product Schrödinger coordinates. Let `k` be finite of odd characteristic, `ψ` nontrivial, `(Xᵢ)` a finite family of finite-dimensional `k`-spaces and `X = ∏ᵢ Xᵢ`; then `X × X*` is the orthogonal sum of the `Xᵢ × Xᵢ*`, a functional `y` on `X` being the family of its restrictions `y ∘ single i` along the coordinate inclusions. Let `W` and the `Wᵢ` satisfy `IsNormalizedWeil ψ`, and let `g ∈ Sp(X × X*)` act blockwise through `gᵢ ∈ Sp(Xᵢ × Xᵢ*)`: for every `v` and `i`, the `i`-th block `((gv)₁(i), (gv)₂ ∘ single i)` of `gv` is `gᵢ` applied to the `i`-th block of `v`. Then `W(g)` sends `x ↦ ∏ᵢ fᵢ(xᵢ)` to `x ↦ ∏ᵢ (Wᵢ(gᵢ)fᵢ)(xᵢ)`. The indicator of a point of `X` is the product of the indicators of its coordinates, so pure tensors span `X → ℂ` and the statement is the equality `W|_{∏ Sp(Xᵢ × Xᵢ*)} = ⊗ᵢ Wᵢ`; for the empty family both sides are the constant function 1. The statement for an arbitrary orthogonal sum follows by transport along isometries with polarized spaces (§0.2) and the corresponding Schrödinger intertwiners (§2.4).
 
@@ -495,7 +513,7 @@ Statement API:
 - The empty family gives `ℂ` with trivial action, of dimension `q⁰ = 1`.
 - For two `𝔽₃` planes with `ψ(1) = ζ` and `g = J ⊕ J` (the `J` of `X = 𝔽₃²`), the left side on `δ₀ ⊗ δ₀ = δ_{(0,0)}` is `W(J)δ_{(0,0)} = κ · 3⁻¹ · 1` with `κ = det(F_ψ ⊗ F_ψ) = (det F_ψ)⁶ = (−i)⁶ = −1`, since `(F_ψ ⊗ F_ψ)² = R` makes the even-part factor 1; the right side is `(−i · 3^{−1/2})² · 1 = −3⁻¹ · 1`. They agree; normalizing the sum with `κ = 1` would give `+3⁻¹ · 1` and break the equality.
 
-*Needs:* §1.3; §2.2; §2.4; §2.5 (for pullbacks through special isomorphisms); §4.1; Mathlib `LinearMap.single`.
+*Needs:* §0.2 (transport to polarized coordinates); §1.3; §2.2; §2.4; Mathlib `LinearMap.single`.
 
 ### Examples
 
@@ -517,7 +535,7 @@ Constructions of supercuspidal types use these statements as their finite inputs
 
 ## References
 
-- **F21.** Jessica Fintzen, *Types for tame p-adic groups*, Annals of Mathematics 193 (2021), 303–346; cited from arXiv:1810.04198v2, whose page numbers are used. Lemma 7.6 (F21 line 1187), Lemma 7.7 (F21 line 1197), Lemma 7.8 (F21 line 1234), Lemma 7.10 and its proof (F21 lines 1262–1345), footnote 3 on p. 33 (F21 line 1346).
+- **F21.** Jessica Fintzen, *Types for tame p-adic groups*, Annals of Mathematics 193 (2021), 303–346; cited from arXiv:1810.04198v2, whose page numbers are used. the tensor description before Lemma 7.6 (F21 lines 1178–1186), Lemma 7.6 (F21 line 1187), Lemma 7.7 (F21 line 1197), Lemma 7.8 (F21 line 1234), Lemma 7.10 and its proof (F21 lines 1262–1345), footnote 3 on p. 33 (F21 line 1346).
 - **S08.** Shaun Stevens, *The supercuspidal representations of p-adic classical groups*, Inventiones mathematicae 172 (2008), 289–352; cited from arXiv:math/0607622v2, whose page numbers are used. Proposition 3.5 (S08 line 572), Lemma 5.6 (S08 line 1247), Corollary 5.7 (S08 line 1272), Lemma 5.12 (S08 line 1392).
 - **N02.** Markus Neuhauser, *An explicit construction of the metaplectic representation over a finite field*, Journal of Lie Theory 12 (2002), 15–30; journal page numbers. Lemma 2.1 (N02 line 81), Theorem 3.3 (N02 line 131), Theorem 4.1 (N02 line 185), Theorem 4.2 (N02 line 230), Theorem 4.3 (N02 line 298), Example 4.4 (N02 line 351).
 - **FS25.** Jessica Fintzen and David Schwein, *Construction of tame supercuspidal representations in arbitrary residue characteristic*, author manuscript (2025), also arXiv:2501.18553; only the odd-characteristic parts are used. Example 3.1.6 (FS25 line 391), Lemma 3.3.1 (FS25 line 509), Lemma 3.3.4 (FS25 line 544), Construction 3.4.2 (FS25 line 626), Remark 3.4.3 (FS25 line 633), Definitions 3.4.4–3.4.5 (FS25 lines 649–651).
