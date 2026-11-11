@@ -745,7 +745,7 @@ Prove that there is a unique finite Borel measure `area_X` on `X` with `area_X(�
 API:
 
 - `area_X` is finite and gives positive mass to every nonempty open set; in particular `area_X(X) > 0`. Route: a nonempty open set minus the finite set `Σ_X` is nonempty, since `X` is a surface, so it contains a nonempty open part of the source of a translation chart, whose image under the chart is a nonempty open subset of `ℂ`, of positive Lebesgue measure.
-- In a cone chart `φ` at `p` with `k = k_p`, and for `r` at most the radius of the disc onto which `φ` maps, the set `{|φ| < r}` has area `π r^{2k}/k`. Route: off `p`, `w ↦ w^k/k` is a translation chart in the coordinate `w = φ`, so the area is `|w|^{2(k−1)}` times Lebesgue measure in `w`, and `∫₀^r 2πρ^{2k−1} dρ = πr^{2k}/k`.
+- In a cone chart `φ` at `p` with `k = k_p` whose target is the disc of radius `R` centred at `0`, for every real `r` with `0 ≤ r ≤ R` the set `{x ∈ source φ : |φ(x)| < r}` has area `π r^{2k}/k`. Route: off `p`, `w ↦ w^k/k` is a translation chart in the coordinate `w = φ`, so the area is `|w|^{2(k−1)}` times Lebesgue measure in `w`, and `∫₀^r 2πρ^{2k−1} dρ = πr^{2k}/k`.
 - A homeomorphism `X → Y` of translation surfaces that maps `Σ_X` onto `Σ_Y` and is a translation in translation charts carries `area_X` to `area_Y`.
 - If `X` is obtained from finitely many compact polygonal regions `P_i ⊂ ℂ` (holes allowed) by identifying their sides in pairs by translations, so that the interior of each `P_i` is the target of a translation chart, then `area_X(X)` is the sum of the areas of the `P_i`: the images of the sides and vertices are null.
 
@@ -753,8 +753,9 @@ API:
 
 - Torus `ℂ/Λ`: `area = covolume Λ`, the area of one fundamental parallelogram glued by the two lattice translations.
 - Octagon surface of side `1`: area `2(1 + √2)`.
-- Cone disc of the octagon surface (`k = 3`): the points at flat distance less than `ρ` from the cone point are those with `|φ|^3/3 < ρ`, so `r = (3ρ)^{1/3}` and the formula gives `π(3ρ)^2/3 = 3πρ²`, the area of eight sectors of angle `3π/4` and radius `ρ`. The plausible wrong formulas `πr²` and `π r^{2k}` give `π(3ρ)^{2/3}` and `9πρ²`.
+- Cone disc of the octagon surface (`k = 3`), in a cone chart onto the disc of radius `R`: for `0 ≤ ρ ≤ R³/3` the points at flat distance less than `ρ` from the cone point are those with `|φ|^3/3 < ρ` (a path leaving the chart has flat length at least `R³/3`), so `r = (3ρ)^{1/3}` lies in `[0, R]` and the formula gives `π(3ρ)^2/3 = 3πρ²`, the area of eight sectors of angle `3π/4` and radius `ρ`. The plausible wrong formulas `πr²` and `π r^{2k}` give `π(3ρ)^{2/3}` and `9πρ²`.
 - The flat torus `ℂ/(2ℤ + 2iℤ)` glued from four unit squares by translations: area `4 · 1 = 4`, the covolume of `2ℤ + 2iℤ`.
+- Range of the radius in the cone-chart formula: on `ℂ/(ℤ + iℤ)` with one marked point (`k = 1`) and the cone chart given by the translation coordinate onto the disc of radius `R = 1/2` (injective, since two of its points are less than `1` apart), the formula gives `0`, `π/16` and `π/4` at `r = 0`, `1/4` and `1/2`, the areas of the corresponding flat discs. At `r = −1/4` the set is empty, of area `0`, while `π r²` is `π/16`, so `0 ≤ r` is needed; at `r = 1` the set is the whole chart source, of area `π/4`, not `π`, so `r ≤ R` is needed.
 - The chart condition alone, without `area(Σ) = 0`, allows adding atoms at the cone points.
 
 ### 10.4 Directional flows
