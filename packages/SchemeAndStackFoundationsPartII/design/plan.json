@@ -3281,6 +3281,16 @@
       "source": "CS24 §§5.1.9–5.1.10, pp.51–52"
     },
     {
+      "slug": "animated-tensor-spectral-sequence",
+      "supplier": "EnhancedDerivedSheaves",
+      "section": "E5:animation.4",
+      "needs": "For an animated ring A and connective animated A-modules N and M, construct the natural convergent first-quadrant spectral sequence E²_(s,t)=Tor_s^(π_*A)(π_*N,π_*M)_t ⇒ π_(s+t)(N⊗^L_A M), Tor of graded modules over the graded ring π_*A in internal degree t, whose edge map π_*N⊗_(π_*A)π_*M→π_*(N⊗^L_A M) is the canonical multiplication map.",
+      "nodes": [
+        "SchemeAndStackFoundationsPartII:FC.3/flat-tensor-base-change"
+      ],
+      "source": "CS24 §5.2.1, p.53"
+    },
+    {
       "slug": "finite-group-ext",
       "supplier": "SchemeAndStackFoundations",
       "section": "Layer 2 §2.4",
@@ -3359,7 +3369,7 @@
         "SchemeAndStackFoundationsPartII:FC.9/topological-algebraization",
         "SchemeAndStackFoundationsPartII:FC.10/adic-support-hyperdescent"
       ],
-      "source": "CS24 Lemma 5.3.1, Claim 5.3.5.3 and Corollary 5.2.10, pp.57–60; DJ §3.1, p.4"
+      "source": "CS24 Lemma 5.3.1, Claim 5.3.5.3 and Corollary 5.2.10, pp.57–59"
     },
     {
       "slug": "complete-torsor-effectivity",
@@ -3396,7 +3406,7 @@
       "slug": "classical-affine-group-adapter",
       "supplier": "SchemeAndStackFoundations",
       "section": "Layer 1 §1.15",
-      "needs": "For ordinary rings, connect the native affine Hopf-algebra group-point functors and finite locally free Cartier duality with the smooth affine commutative group-scheme category, including smoothness of Res_(X/S)𝔾_m for finite locally free X/S.",
+      "needs": "For ordinary rings, connect the native affine Hopf-algebra group-point functors and finite locally free Cartier duality with the smooth affine commutative group-scheme category.",
       "nodes": [
         "SchemeAndStackFoundationsPartII:FC.2/animated-group-points",
         "gap:begueri-resolution"
