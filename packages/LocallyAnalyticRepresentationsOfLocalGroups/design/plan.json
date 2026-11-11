@@ -7371,7 +7371,7 @@
    "slug": "ordered-character-map",
    "supplier": "SmoothRepresentationsOfLocalGroups",
    "section": "SR.3.2",
-   "needs": "Over a finite extension E of ℚ_p and for generic φ, the Bernstein-centre maps 𝒥_w of the block of (Ind_{B⁻} φη)^∞ satisfy 𝒥_{w_2} ∘ p_{w_2w_1⁻¹} = 𝒥_{w_1}, and their differentials identify Hom_sm(T(L), E) with first-order smooth deformations (Caraiani–Emerton–Gee–Geraghty–Paškūnas–Shin, Lemma 3.22)."
+   "needs": "Over a finite extension E of ℚ_p and for generic φ, with 𝒵 the Bernstein centre over E of the block of π_sm = (Ind_{B⁻} φη)^∞, x its point and X_w = ∏_i Spec 𝒵_{w⁻¹(i)} the torus of ordered unramified twists (φ′_i) of w(φ): the morphisms 𝒥_w : X_w → Spec 𝒵, (φ′_i) ↦ the point of (Ind_{B⁻} (⊠_i φ′_i)η)^∞, satisfy 𝒥_{w_2} ∘ p_u = 𝒥_{w_1} for u = w_2w_1⁻¹ and p_u : X_{w_1} → X_{w_2}, (φ′_i) ↦ (φ′_{u⁻¹(i)}), which sends w_1(φ) to w_2(φ) (on rings 𝒥_{w_1}^* = p_u^* ∘ 𝒥_{w_2}^*), and the map θ from Ext¹_sm(π_sm, π_sm) to the tangent space of Spec 𝒵 at x recording the action of 𝒵 on self-extensions is injective and sends the class of (Ind_{B⁻} w(φ)η(1 + ψε))^∞ to d𝒥_w(ψ) at w(φ) (Caraiani–Emerton–Gee–Geraghty–Paškūnas–Shin, Lemma 3.22)."
   },
   {
    "slug": "frechet-stein-general",
