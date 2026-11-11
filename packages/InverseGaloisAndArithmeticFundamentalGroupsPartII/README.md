@@ -39,9 +39,10 @@ This roadmap owns:
 - the nonsplitting property of a conjugacy class and its basic example, the involution class of a
   group of order `2s` with `s` odd (Layer 0);
 - the Hurwitz representation of `TauCeti.BraidGroup n` on the fibres of the marked and unmarked
-  Hurwitz covers, the block inclusion of braid groups, the gluing maps, the identification of
-  Hurwitz homology with braid-group homology with permutation coefficients, the component ring,
-  the central stabilization sum and its stability on components (Layer 0);
+  Hurwitz covers, the gluing maps along the block inclusion of braid groups (extended to the
+  trivial group `B_0`), the identification of Hurwitz homology with braid-group homology with
+  permutation coefficients, the component ring, the central stabilization sum and its stability on
+  components (Layer 0);
 - graded support degrees, central torsion and its defects, the change-of-rings estimates, graded
   Nakayama with support control, the K-complex, its generator homotopies, and the theorem that low
   K-homology controls stabilization, all for the component ring (Layer 1);
@@ -85,9 +86,11 @@ It does not own, and consumes by name:
   Hurewicz and Whitehead: AlgebraicTopology Stages 2, 4, 5 and 8;
 - collars, tubular neighbourhoods, diffeomorphism groups of compact manifolds relative to the
   boundary and Smale's disc theorem: GeometricTopology Layers 1 and 3 (§3.4);
-- the diffeomorphism group `TauCeti.DiscDiff 2` of the disc fixing its boundary pointwise, the
-  abelian category `TauCeti.GradedModuleCat` of internally graded modules over a graded algebra,
-  its shifts and graded free modules, and the graded balanced tensor product: Tau Ceti;
+- the block inclusion `TauCeti.BraidGroup.natAdd` of a braid group on the last strands of a larger
+  one, with its value on generators `TauCeti.BraidGroup.natAdd_sigma`; the diffeomorphism group
+  `TauCeti.DiscDiff 2` of the disc fixing its boundary pointwise, the abelian category
+  `TauCeti.GradedModuleCat` of internally graded modules over a graded algebra, its shifts and
+  graded free modules, and the graded balanced tensor product: Tau Ceti;
 - the long exact sequences and spectral sequences of graded `Tor`: DGAInfinity Layer 5;
 - group homology, representations, monoid algebras and their gradings, graded objects and
   spectral-sequence pages: Mathlib.
@@ -195,6 +198,11 @@ time.
   `TauCeti.BraidGroup.strandSucc`, `TauCeti.BraidGroup.permHom` and
   `TauCeti.BraidGroup.pureSubgroup`, all in the module
   `TauCeti.GroupTheory.SpecificGroups.Braid.Basic`. `BraidGroup 0` and `BraidGroup 1` are trivial.
+- `TauCeti.BraidGroup.natAdd` and `TauCeti.BraidGroup.natAdd_sigma` (same module): for
+  `m, n ≥ 0`, the homomorphism
+  `TauCeti.BraidGroup.natAdd m : TauCeti.BraidGroup (n + 1) →* TauCeti.BraidGroup (m + n + 1)`
+  places a braid on the last `n + 1` strands and sends `σ_i` to `σ_(m+i)`. It is defined only on
+  braid groups with at least one strand, and neither its injectivity nor its image is pinned.
 - `TauCeti.DiscDiff 2` (`TauCeti/Geometry/Diffeomorphism/Disc.lean`): the group of smooth
   diffeomorphisms of the closed unit disc of `ℝ²` fixing the unit circle pointwise, the fixing
   subgroup `TauCeti.RelativeDiff` of the boundary, closed by `Diffeomorph.isClosed_fixingSubgroup`,
@@ -472,19 +480,23 @@ Hurwitz braid action*.
 
 ### 0.4 The block inclusion and gluing
 
-Define the block inclusion `shiftHom m n : TauCeti.BraidGroup n →* TauCeti.BraidGroup (m + n)`
-sending `σ_i` to `σ_(m+i)` (`shiftHom_sigma`), and prove that concatenation with a fixed prefix of
-length `m` is equivariant along it (`hurwitzAction_shift`). Define `glue c full m g`, which
-prepends the constant block `(g, …, g)` of length `m` to a fibre point; it preserves the class
+The block inclusion `B_n → B_(m+n)` on the last `n` strands, `σ_i ↦ σ_(m+i)`, is Tau Ceti's
+`TauCeti.BraidGroup.natAdd m` for `n ≥ 1` (`TauCeti.BraidGroup.natAdd_sigma`). Define
+`shiftHom m n : TauCeti.BraidGroup n →* TauCeti.BraidGroup (m + n)` as
+`TauCeti.BraidGroup.natAdd m` for `n ≥ 1` and as the trivial homomorphism out of `B_0 = 1` for
+`n = 0`, so that gluing and stabilization are defined for every `n`; it sends `σ_i` to `σ_(m+i)`
+(`shiftHom_sigma`). Prove that concatenation with a fixed prefix of length `m` is equivariant along
+it (`hurwitzAction_shift`). Define `glue c full m g`, which prepends the constant block
+`(g, …, g)` of length `m` to a fibre point; it preserves the class
 condition and generation, is equivariant along the block inclusion (`glue_smul`), and satisfies
 `glue g (h s h⁻¹) = h · glue (h⁻¹ g h) s · h⁻¹` (`glue_conjFibre`). Geometrically, for a fixed
 point `t ∈ c^m` the map `Hur_n → Hur_(m+n)` induced on Borel constructions by
 `(shiftHom m n, t ++ −)` glues the cover with monodromy `t` to the left; the general gluing
 `Hur_m × Hur_n → Hur_(m+n)` from the block inclusion `B_m × B_n → B_(m+n)` and concatenation is
 associative and unital up to coherent homotopy and equivariant for simultaneous conjugation
-(EVW16 §2.6, pp. 11–12; EVW16 line 509). *Needs:* §0.3; Tau Ceti `TauCeti.BraidGroup.lift`;
-§IG.5.2 *Marked topological Hurwitz spaces*; AlgebraicTopology Stage 5 (gap:algtop-borel-construction)
-for the gluing of spaces.
+(EVW16 §2.6, pp. 11–12; EVW16 line 509). *Needs:* §0.3; Tau Ceti `TauCeti.BraidGroup.natAdd`,
+`TauCeti.BraidGroup.natAdd_sigma`; §IG.5.2 *Marked topological Hurwitz spaces*; AlgebraicTopology
+Stage 5 (gap:algtop-borel-construction) for the gluing of spaces.
 
 - The glued tuple has boundary product `∂t · ∂s`, in this order, and generated subgroup
   `⟨⟨t⟩, ⟨s⟩⟩`.
@@ -496,8 +508,12 @@ for the gluing of spaces.
 
 - Gluing the empty tuple on the left is the identity on tuples, and `shiftHom 0 n` is the identity
   of `B_n`.
-- For `m = 1`, `shiftHom 1 2` sends the generator of `B_2` to `σ_2` of `B_3`, not `σ_1`: the block
-  sits on the last strands.
+- For `m = 1`, `shiftHom 1 2` sends the generator `σ_1` of `B_2` (native index `0`) to `σ_2` of
+  `B_3` (native index `1`), not `σ_1`: the block sits on the last strands, whereas the inclusion
+  that adds a strand at the end keeps the index.
+- For `n = 0`, `shiftHom m 0` is the trivial homomorphism out of `B_0 = 1`, the one length the
+  pinned block inclusion does not cover; gluing `(g, …, g)` then sends the empty tuple to the
+  constant tuple of length `m`, which is a point of `HurwitzFibre c false m`.
 - Gluing a tuple generating a proper subgroup `H` with an element outside `H` leaves the stratum of
   exact image `H`, so gluing does not preserve exact-image strata.
 
@@ -1103,11 +1119,14 @@ Define, for `0 ≤ q < n`, the subgroup `L_(n,q) ≤ B_n` generated by the class
 `q ≥ n`; faces `∂_i(b L_q) = b s_(q,i) L_(q−1)` with `s_(q,i) = σ_(i+1) ⋯ σ_q`, `s_(q,q) = 1`, for
 `0 ≤ i ≤ q`, and the augmentation `A(n)_0 → pt` (EVW16 §5.2, p. 23; EVW16 lines 1062–1069, with the
 truncation of *Notes on the sources*). The shifted-strand inclusion `B_(n−q−1) → B_n`,
-`σ_j ↦ σ_(j+q+1)`, is injective with image `L_(n,q)`. *Proof sketch for injectivity.* Place the
+`σ_j ↦ σ_(j+q+1)`, is Tau Ceti's block inclusion `TauCeti.BraidGroup.natAdd (q + 1)` for
+`q ≤ n − 2` and the trivial homomorphism out of `B_0` for `q = n − 1`; prove that it is injective
+with image `L_(n,q)`. *Proof sketch for injectivity.* Place the
 `m = n − q − 1` moving points in a smaller disc and keep the first `q + 1` points outside; lift a
 null-homotopy in `Conf_n` to the finite cover that records which `m` points form the moving block,
 forget the other block, and shrink the small disc; for `m = 0, 1` both groups are trivial.
-*Needs:* Tau Ceti `TauCeti.BraidGroup.sigma`; Mathlib `Subgroup.closure`; §IG.5.1; AlgebraicTopology
+*Needs:* Tau Ceti `TauCeti.BraidGroup.sigma`, `TauCeti.BraidGroup.natAdd`,
+`TauCeti.BraidGroup.natAdd_sigma`; Mathlib `Subgroup.closure`; §IG.5.1; AlgebraicTopology
 Stage 5 (gap:algtop-borel-construction).
 
 - `L_(n,q)` is the closure of the native generators with index at least `q + 1`.
@@ -1258,8 +1277,13 @@ Stage 5.
 - At `q = 0` the term is `k[c] ⊗ H_p(Hur_(n−1))`, not `H_p(Hur_n)`.
 - For `q = 1` the two faces send `(g_0, g_1; x)` to `(g_1; g_0^(g_1), x)` and `(g_0; g_1, x)`, matching
   `d((g_0, g_1) ⊗ m) = (g_1) ⊗ r(g_0^(g_1)) m − (g_0) ⊗ r(g_1) m`.
-- Using `s_(q,i)` instead of its inverse on tuples gives the conjugation `g_i^((g_(i+1) ⋯ g_q)⁻¹)`,
-  which does not match §1.11.
+- Using `s_(q,i)` instead of its inverse on tuples changes which entry leaves the first block, not
+  only the conjugation. For `q = 1`, `i = 0` and `(g_0, g_1) = ((12), (23))` in `S₃`, the face by
+  `s_(1,0)⁻¹ = σ_1⁻¹` gives `((23); (13), x)`, keeping `g_1` and prefixing `g_0^(g_1) = (13)`, while
+  `σ_1` gives `((13); (12), x)`, keeping `g_0 g_1 g_0⁻¹ = (13)` and prefixing `g_0` itself. In
+  general, for `i < q`, `s_(q,i)` puts `(g_i ⋯ g_(q−1)) g_q (g_i ⋯ g_(q−1))⁻¹` in position `i`,
+  shifts `g_i, …, g_(q−2)` one place to the right and prefixes `g_(q−1)` itself to the rest, which
+  does not match §1.11.
 
 ### 3.4 The arc spectral sequence
 
@@ -1371,9 +1395,14 @@ homology and `H_p(X/G; k) ≅ H_p(X; k)_G`. The stabilizer of a point of exact i
 and on `CHur_n` it is `Z(G)` (EVW16 proof of Corollary 6.2, p. 29; EVW16 lines 1347–1360). *Proof
 sketch.* Group the exact-image strata into conjugacy classes of subgroups; on each block the Borel
 comparison has fibre `BC_G(H)`, acyclic over `k`, and the Cartan–Leray sequence collapses to
-coinvariants. In braid-group homology this is `H_p(B_n; k[X/G]) ≅ H_p(B_n; k[X])_G`, as coinvariants
-of a finite group of invertible order are exact. *Needs:* §IG.5.2 *Forgetting the boundary
-marking*; AlgebraicTopology Stages 2, 5; §0.5.
+coinvariants. In braid-group homology, let `F` be the fibre of `X` over the base configuration:
+`c^n` for `Hur_n` and the generating tuples in `c^n` for `CHur_n`, that is `HurwitzFibre c full n`,
+with the Hurwitz action of `B_n` and the commuting action of `G` by simultaneous conjugation. Then
+`F/G` is `UnmarkedFibre c full n`, `k[F]_G = k[F/G]` as `B_n`-modules, and
+`H_p(B_n; k[F/G]) ≅ H_p(B_n; k[F])_G`, as coinvariants of a finite group of invertible order are
+exact and commute with `H_p(B_n; −)`; §0.5 identifies the two sides with `H_p(X/G; k)` and
+`H_p(X; k)_G`. *Needs:* §IG.5.2 *Forgetting the boundary marking*; AlgebraicTopology Stages 2, 5;
+§0.3, §0.5.
 
 **Checks.**
 
@@ -1382,6 +1411,11 @@ marking*; AlgebraicTopology Stages 2, 5; §0.5.
   free.
 - The invertibility of `|G|` is needed: for `C₂` acting antipodally on `S²` and `k = 𝔽₂`,
   `H_1(ℝP²; 𝔽₂) = 𝔽₂` while `H_1(S²; 𝔽₂)_(C₂) = 0`.
+- The coefficients are the permutation module of the fibre `F`, not of the total space: for `G`
+  trivial and `n = 1`, `F` is a point and `H_0(B_1; k[F]) = k = H_0(Conf_1; k)`, whereas the
+  permutation module on the points of `X = Conf_1(int D)` has uncountable dimension. For `S₃`, its
+  transpositions and `n = 2`, `H_0(B_2; k[F])` has dimension five, its conjugation coinvariants
+  dimension two, and `H_0(B_2; k[F/G])` dimension two.
 
 ### 4.5 Unmarked homological stability
 

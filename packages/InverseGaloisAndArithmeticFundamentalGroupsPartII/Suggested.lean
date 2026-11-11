@@ -7,9 +7,10 @@ import TauCeti.GroupTheory.SpecificGroups.Braid.Basic
 The roadmap is `README.md`; this file is not the roadmap. It states the roadmap's headline
 theorems against the pinned Mathlib and Tau Ceti, with the few definitions they need: the
 Hurwitz action of the pinned Artin braid group `TauCeti.BraidGroup n` on branch tuples, the fibres
-of the marked and unmarked Hurwitz covers over the base configuration, the block inclusion of
-braid groups, and the stabilization operator `U` (the sum over `g ∈ c` of gluing the constant
-block `(g, …, g)`) on the permutation representations. Since `Conf_n` is a `K(B_n, 1)` and a
+of the marked and unmarked Hurwitz covers over the base configuration, the extension to every
+`n` of Tau Ceti's block inclusion `TauCeti.BraidGroup.natAdd` of braid groups, and the
+stabilization operator `U` (the sum over `g ∈ c` of gluing the constant block `(g, …, g)`) on the
+permutation representations. Since `Conf_n` is a `K(B_n, 1)` and a
 Hurwitz space is the covering space of `Conf_n` with fibre `X`, its homology with coefficients in
 a field `k` is the group homology `H_p(B_n; k[X])`; the stability statements below are written in
 that form (README, Layer 0, §0.5, *Hurwitz homology as braid-group homology*).
@@ -180,17 +181,19 @@ theorem hurwitzAction_comm {m : ℕ} (φ : (Fin n → G) → (Fin m → G))
     rw [map_inv, map_inv, Equiv.Perm.inv_eq_iff_eq, hb]
     simp
 
-/-- The block inclusion `B_n → B_(m+n)` on the last `n` strands: `σ_i ↦ σ_(m+i)`. -/
-def shiftHom (m n : ℕ) : BraidGroup n →* BraidGroup (m + n) :=
-  lift (fun i => sigma ⟨m + i, by have := i.isLt; omega⟩)
-    (fun {i j} h => sigma_mul_sigma_comm
-      (show m + (i : ℕ) + 2 ≤ m + j ∨ m + (j : ℕ) + 2 ≤ m + i by omega))
-    (fun {i j} h => sigma_braid (show m + (i : ℕ) + 1 = m + j ∨ m + (j : ℕ) + 1 = m + i by omega))
+/-- The block inclusion `B_n → B_(m+n)` on the last `n` strands, `σ_i ↦ σ_(m+i)`, for every `n`:
+Tau Ceti's `TauCeti.BraidGroup.natAdd m` for `n ≥ 1`, and the trivial homomorphism out of the
+trivial group `B_0`. -/
+def shiftHom (m : ℕ) : (n : ℕ) → BraidGroup n →* BraidGroup (m + n)
+  | 0 => 1
+  | _ + 1 => natAdd m
 
 /-- The block inclusion on generators. -/
 theorem shiftHom_sigma (m : ℕ) (i : Fin (n - 1)) :
     shiftHom m n (sigma i) = sigma ⟨m + i, by have := i.isLt; omega⟩ := by
-  simp [shiftHom]
+  cases n with
+  | zero => exact Fin.elim0 i
+  | succ n => exact (natAdd_sigma m i).trans (congrArg sigma (Fin.ext rfl))
 
 /-- Concatenation with a fixed prefix of length `m` is equivariant along the block inclusion. -/
 theorem hurwitzAction_shift (m : ℕ) (t : Fin m → G) (b : BraidGroup n) (s : Fin n → G) :
