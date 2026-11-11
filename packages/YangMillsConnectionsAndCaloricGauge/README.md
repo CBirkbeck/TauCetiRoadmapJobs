@@ -1,4 +1,4 @@
-# Roadmap: yang–mills connections on Euclidean space and the caloric gauge
+# Roadmap: Yang–Mills connections on Euclidean space and the caloric gauge
 
 **Summary.** Build the analytic theory of connections on Euclidean space with values in a compact
 Lie group at the critical regularity, from the matrix-group and Sobolev material of Mathlib and
@@ -116,6 +116,10 @@ It leaves to named roadmaps:
   (Coulomb gauge and removability) and §7.6 (the BPST potential on `ℝ⁴` needed by the heat flow).
   The unit-ball statement for `SU(2)` is the case `G = SU(2)`, `d = 4` of §4.1;
   FourManifolds' `S⁴` carrier, moduli spaces and compactification belong there.
+  The energy identity `ℰ_e = 8π²c₂ + 2‖F⁺‖²` is stated here on `ℝ⁴` for finite-energy rough
+  connections (pointwise in §1.5, integrated in §6.3); its closed-manifold form
+  `E(A) = 8π²k + 2‖F_A⁺‖²` and the BPST solution on `S⁴` (FourManifolds Layer 5, introduction),
+  which SmoothBundlesConnections' scope assigns to FourManifolds, stay there.
 
 Not owned here and owned by no roadmap this one consumes: the hyperbolic Yang–Mills equation, its
 initial data sets, the constraint equation and the caloric form of the wave equation, together
@@ -193,7 +197,13 @@ with equivalent norms: 8.1 proves this for `Ḣ¹`, and its cut-off and mollific
 `|D| = (−Δ)^{1/2}` is the multiplier `2π|ξ|`, and for `σ < 4/p` the realised homogeneous space
 `Ẇ^{σ,p}(ℝ⁴; V)`, with norm `‖|D|^σ u‖_{L^p}`, and its heat-continuity subspace `Ẇ^{σ,∞}_c` are
 defined in 8.1;
-`ℋ = {a ∈ Ḣ¹ : ∂^ℓ a_ℓ ∈ ℓ¹L²}` with norm `‖a‖_{Ḣ¹} + ‖∂^ℓ a_ℓ‖_{ℓ¹L²}`. The heat-time variable is
+`ℋ = {a ∈ Ḣ¹ : ∂^ℓ a_ℓ ∈ ℓ¹L²}` with norm `‖a‖_{Ḣ¹} + ‖∂^ℓ a_ℓ‖_{ℓ¹L²}`. For `σ ≥ 2 = 4/2` the
+space `Ḣ^σ` is realised only modulo polynomials (8.1), so for every `σ > 1` the intersection
+`Ḣ¹ ∩ Ḣ^σ` (resp. `ℋ ∩ Ḣ^σ`) means the set of `u ∈ Ḣ¹` (resp. `u ∈ ℋ`) with
+`‖u‖_{Ḣ^σ} = (Σ_k 2^{2kσ}‖P_k u‖²_{L²})^{1/2} < ∞`, normed by the sum of the two norms; its elements are
+functions in `L⁴`, so no polynomial ambiguity arises, and for `1 < σ < 2` it is the intersection of the
+realised spaces. It is complete: a Cauchy sequence converges in `Ḣ¹` (resp. `ℋ`), its blocks converge in
+`L²`, and Fatou's lemma in `ℓ²` bounds the `Ḣ^σ` distance to the limit. The heat-time variable is
 `s ≥ 0`; weighted `ds/s` norms are over `s > 0`, with the initial trace stated
 separately. In endpoint exponent formulas `1/∞ = 0`. Here `J ⊆ [0, ∞)` is an interval, and `L^p(J; X)` is Mathlib's Bochner space with values in the
 Banach space `X`. For such a space-time norm `Y = L^q(J; Ḣ^σ)`, `ℓ^pY` is the norm
@@ -213,6 +223,12 @@ At the pinned Mathlib; paths under `Mathlib/`.
   one).
 - `NormedSpace.exp` and `NormedSpace.exp_add_of_commute` (`Analysis/Normed/Algebra/Exponential.lean`),
   `Matrix.isUnit_exp` (`Analysis/Normed/Algebra/MatrixExponential.lean`).
+- `LieAlgebra.IsKilling.instSemisimple` (`Algebra/Lie/Killing.lean`: a finite-dimensional Lie algebra
+  over a field whose Killing form is nondegenerate is `LieAlgebra.IsSemisimple`, that is, the
+  independent supremum of its atomic ideals, none of them abelian) and
+  `LieAlgebra.IsSemisimple.isSimple_of_isAtom` (`Algebra/Lie/Semisimple/Basic.lean`: each atomic
+  ideal is a simple Lie algebra). Used in §1.6 for the real Lie algebra `[𝔤, 𝔤]`, whose Killing form is
+  negative-definite by LieGroups Layer 5A and hence nondegenerate.
 - `ContinuousMap.Homotopic` with `ContinuousMap.Homotopic.equivalence` (`Topology/Homotopy/Basic.lean`)
   for free homotopy classes; `HomotopyGroup` (`Topology/Homotopy/HomotopyGroup.lean`, defined through
   cubes, not spheres).
@@ -275,10 +291,12 @@ At the pinned Tau Ceti; paths under `TauCeti/`.
 - §1.5: the Poincaré inequality on balls, `‖u − u_B‖_{L^p(B)} ≤ C(d, p) r ‖∇u‖_{L^p(B)}` for a ball `B`
   of radius `r` and `1 ≤ p < ∞`, with the constant scaling linearly in `r` (§2.2).
 - §1.6: the trace operator and the extension operator on bounded Lipschitz domains (§§2.2, 4.1).
-- §2.2 and §2.3: interpolation, Calderón–Zygmund operators, the Riesz transforms and the
-  Mihlin–Hörmander theorem, for the whole-space div–curl estimate `‖∇u‖_p ≲ ‖div u‖_p + ‖curl u‖_p`,
-  `1 < p < ∞` (§§4.3, 5.2, 8.2).
-- §3.2: the weak maximum principle for weak subsolutions of the Laplacian on balls (§10.4).
+- §2.2 and §2.3: interpolation, Calderón–Zygmund operators, the Riesz transforms `R_j` with
+  multiplier `−iξ_j/|ξ|` and their `L^p` bounds for `1 < p < ∞`, and the Mihlin–Hörmander theorem.
+  §4.3 derives from the Riesz transforms the whole-space div–curl estimate
+  `‖∇u‖_p ≲ ‖div u‖_p + ‖du‖_p`, `1 < p < ∞` (used in §4.3, and
+  through §4.4 in §5.2).
+- §3.2: the weak maximum principle for weak subsolutions of the Laplacian on balls (§§8.2, 10.4).
 - §6.1: Bochner spaces; §6.3: the heat semigroup `e^{sΔ}` on `L^p(ℝ^d)`, its generator, Duhamel's
   formula and the smoothing estimates (Layers 8–9).
 - §7.1: the homogeneous blocks `P_k`, Bernstein and Littlewood–Paley estimates, and the heat-block
@@ -359,8 +377,10 @@ and have no such omission.
   subgroup of a Lie group is an embedded Lie subgroup with the Lie algebra above): §1.1.
 - Layer 5A: the invariant real metric, skew-adjointness of `ad`, and the orthogonal centre/derived
   decomposition for compact connected groups, applied to the identity component of `G`. Starting
-  its averaging with the prescribed invariant metric returns that metric. Its semisimple derived
-  ideal, decomposed into simple ideals, supplies the orthogonal factors used in §1.6.
+  its averaging with the prescribed invariant metric returns that metric. Its derived ideal
+  `[𝔤, 𝔤]` is centreless and semisimple with negative-definite Killing form; Layer 5A does not
+  decompose it further. Mathlib decomposes it into simple ideals (From Mathlib), and §1.6 proves
+  that these ideals and the centre are mutually orthogonal for the prescribed metric.
 - Layer 6, “Compact real roots and the Weyl comparison” and “Rank-one representatives”: the
   real root planes, coroots, normalised compact rank-one Lie subalgebras and integrated
   `SU(2) → G` maps. §7.7 consumes them; the remaining metric extremality is the following gap.
@@ -574,8 +594,18 @@ self-dual, and for self-dual `ω`, `|⟨ω, 𝔉_ω(ω)⟩| ≤ (2√6/3) γ₀ 
 this roadmap; OhTataru-TopClass Lemma 6.4 and line 2404).
 
 - The closed-ball maximum is attained; for `c > 0` it scales as
-  `γ₀(𝔤, c⟨·,·⟩) = c^{−1/2} γ₀(𝔤, ⟨·,·⟩)`. It is the maximum over the simple ideals from LieGroups
-  Layer 5A, with value `0` when that family is empty. It vanishes exactly when the bracket is zero.
+  `γ₀(𝔤, c⟨·,·⟩) = c^{−1/2} γ₀(𝔤, ⟨·,·⟩)`. It vanishes exactly when the bracket is zero.
+- Orthogonality of the factors: decompose the semisimple ideal `[𝔤, 𝔤]` of LieGroups Layer 5A into its
+  simple ideals by Mathlib (`LieAlgebra.IsKilling.instSemisimple`,
+  `LieAlgebra.IsSemisimple.isSimple_of_isAtom`; the atomic ideals of `[𝔤, 𝔤]` are ideals of `𝔤`
+  because the centre brackets trivially). For every `ad`-invariant inner product, distinct simple
+  ideals `I`, `J` are orthogonal: for `X, Y ∈ I` and `Z ∈ J`, `⟨[X, Y], Z⟩ = −⟨Y, [X, Z]⟩ = 0` since
+  `[I, J] ⊆ I ∩ J = 0`, and `I = [I, I]` because `I` is simple; the same computation with `Z` central
+  gives `[𝔤, 𝔤] ⊥ z(𝔤)`.
+- Hence `γ₀(𝔤, ⟨·,·⟩)` is the maximum of `γ₀(I, ⟨·,·⟩|_I)` over the simple ideals `I` of `[𝔤, 𝔤]`, with
+  value `0` when `[𝔤, 𝔤] = 0`: writing `X = X_z + Σ_m X_m`, `Y = Y_z + Σ_m Y_m`, one has
+  `|[X, Y]|² = Σ_m |[X_m, Y_m]|² ≤ max_m γ_m² Σ_m |X_m|²|Y_m|² ≤ max_m γ_m² |X|²|Y|²`, with equality for
+  a maximising pair inside one ideal.
 - In an orthonormal basis `e₁, e₂, e₃` of self-dual 2-forms, `ω = Σ ω^a e_a`,
   `⟨ω, 𝔉_ω(ω)⟩ = ±6√2 ⟨ω¹, [ω², ω³]⟩`.
 
@@ -591,8 +621,18 @@ this roadmap; OhTataru-TopClass Lemma 6.4 and line 2404).
   the signed cubic is `−24√2 λ³`.
 - For commutative `𝔤` both sides vanish; for `𝔤 = 0` the maximum is `0` at `(0,0)`,
   while a maximum over nonzero pairs would have no attaining pair.
+- `𝔰𝔲(2) ⊕ 𝔰𝔲(2)` with `−tr` on the first factor and `−4 tr` on the second: the scaling law gives
+  `γ₀ = √2` and `4^{−1/2}√2 = √2/2` on the factors, so `γ₀ = max(√2, √2/2) = √2`; a sum or a
+  root-mean-square of the factor constants would give `3√2/2` or `√5/2`.
+- On `𝔰𝔲(2) ⊕ 𝔰𝔲(2)` add to `−tr ⊕ −tr` the cross term `⟨(X, 0), (0, Y)⟩ = −c tr(XY)` with
+  `0 < |c| < 1` (still positive definite). Then `⟨[(j, 0), (k, 0)], (0, i)⟩ = ⟨(2i, 0), (0, i)⟩ = −2c tr(i²) = 4c`,
+  while `−⟨(k, 0), [(j, 0), (0, i)]⟩ = 0`, so the form is not `ad`-invariant: orthogonality of the simple
+  ideals is forced by invariance, not assumed.
+- `𝔲(2) = iℝ·1 ⊕ 𝔰𝔲(2)` with `−tr`: the centre is orthogonal to `𝔰𝔲(2)` (`−tr(i·1 · X) = −i tr X = 0`
+  for traceless `X`), the bracket ignores the central components, and `γ₀(𝔲(2)) = γ₀(𝔰𝔲(2)) = √2`.
 
-*Needs:* LieGroups Layer 5A; 1.1, 1.5.
+*Needs:* Mathlib `LieAlgebra.IsKilling.instSemisimple`, `LieAlgebra.IsSemisimple.isSimple_of_isAtom`;
+LieGroups Layer 5A; 1.1, 1.5.
 
 ### Examples
 
@@ -819,12 +859,31 @@ Prove: for `A ∈ W^{1,d/2}_loc(X; 𝔤 ⊗ (ℝ^d)*)` and `O ∈ G^{2,d/2}_loc(
 ### 3.3 Patching to a global gauge
 
 Prove: every `G^{2,d/2}_loc` bundle on `X = B_R` or `X = ℝ^d` admits a global gauge, and every connection
-on it has a global potential in `W^{1,d/2}_loc(X)`; for `B_R`, `R ≥ 1`, covered by
-unit balls `B_α` whose centres are pairwise at distance at least `c(d) > 0`
-(and hence with overlap multiplicity at most `C(d)`), transition maps and local potentials with `‖O_(αβ);x‖_{W^{1,d/2}} ≤ M` and
-`‖A_(α)‖_{W^{1,d/2}} ≤ M` give a global potential with `‖A‖_{W^{1,d/2}(B_R)} ≲_{R,M} 1`
-(OhTataru-TopClass Propositions 3.9–3.10 and Scenarios (1)–(3), lines 1165–1347; Proposition 3.9 writes
-`W^{k,d/k}` for the potential, which should read `W^{k−1,d/k}`).
+on it has a global potential in `W^{1,d/2}_loc(X)`. Quantitatively, fix `R ≥ 1` and a covering margin
+`0 < ℓ ≤ 1`, and cover `B_R` by the traces `B_α ∩ B_R` of unit balls `B_α` centred in `B_R` such that for every
+`x ∈ B_R` the set `B_ℓ(x) ∩ B_R` lies in some `B_α` (a Lebesgue number `ℓ` for the cover). Then transition
+maps and local potentials with `‖O_(αβ);x‖_{W^{1,d/2}(B_α ∩ B_β ∩ B_R)} ≤ M` and
+`‖A_(α)‖_{W^{1,d/2}(B_α ∩ B_R)} ≤ M` give a global potential with `‖A‖_{W^{1,d/2}(B_R)} ≤ C(d, G, R, M, ℓ)`
+(OhTataru-TopClass Propositions 3.9–3.10 and Scenarios (1)–(3), lines 1165–1347). The constant
+depends on `ℓ` because the reduction of Scenario (2) to the cube scenario chooses the refining
+cube scale from the Lebesgue number (lines 1265–1281); no bound on the number of balls or on their
+overlap is needed. Proposition 3.9 writes `W^{k,d/k}` for the potential, which should read `W^{k−1,d/k}`,
+and Remark 3.8 infers a Lebesgue number of order `1` from the separation of the unit-ball centres,
+which the second Check refutes. In applications the cover is chosen so that the balls of radius `½`
+with the same centres already cover `B_R`; then `ℓ = ½`.
+
+**Checks.**
+
+- If the balls `B_{1/2}(x_α)` cover `B_R`, then `ℓ = ½` works: for `x ∈ B_{1/2}(x_α)` and `y ∈ B_{1/2}(x)`,
+  `|y − x_α| < ½ + ½ = 1`, so `B_{1/2}(x) ⊆ B_1(x_α)`.
+- Separation does not give a margin. In `ℝ⁴` put `a = 1 − ε`, `0 < ε < ½`, and take the eight unit balls
+  centred at `±a e_j`. They cover `B₁`: for `|x| = r < 1` pick `j` with `|x_j| ≥ r/2` and the matching sign;
+  the squared distance to that centre is at most `r² − ar + a² ≤ max(a², 1 − a + a²) < 1`. Their centres are
+  at mutual distance at least `√2 a ≥ √2/2`, yet `B_ℓ(0)` lies in one of them only for `ℓ ≤ 1 − a = ε`.
+  A bound depending only on `d`, the separation, `R` and `M` would be uniform in `ε`; the statement above
+  keeps `ℓ`.
+- A single ball, `R = 1` and the cover `{B₁}`: `ℓ = 1`, the bundle is trivial on the one set, and the global
+  potential is `A_(1)` with norm at most `M`.
 
 *Needs:* 2.2–2.5, 3.1.
 
@@ -958,6 +1017,15 @@ lines 1487–1496. For `O ∈ G^{2,d/2}(B)`, prove that `O;x ∈ ℓ¹W^{1,d/2}(
 has a continuous representative on `B` (same locator). The proof estimates differences of
 `O` using any extension of `O;x` and then takes the infimum; it does not extend `O;x` by zero.
 
+The interior estimates above rest on the whole-space div–curl estimate, which this section proves
+(it is the input of the interior argument of OhTataru-TopClass Lemma 3.13, lines 1428–1433). For
+`d ≥ 2`, a 1-form `u ∈ C_c^∞(ℝ^d; V ⊗ (ℝ^d)*)` with values in a finite-dimensional real inner product space `V`,
+and PDE §2.3's Riesz transforms `R_j` (multiplier `−iξ_j/|ξ|`, applied componentwise), prove the identity
+`∂_i u_j = −R_iR_j(∂^k u_k) − Σ_k R_iR_k(∂_k u_j − ∂_j u_k)` (compare symbols: with `∂_j ↦ 2πiξ_j` and
+`R_iR_k ↦ −ξ_iξ_k/|ξ|²`, the right side has symbol `2πiξ_i û_j`), and hence, for `1 < p < ∞`,
+`‖∇u‖_{L^p} ≤ C(d, p, dim V)(‖∂^k u_k‖_{L^p} + ‖du‖_{L^p})`, where `(du)_{kj} = ∂_k u_j − ∂_j u_k`. The bound
+extends to the closure of `C_c^∞` in the norm `‖∇u‖_{L^p}`, in particular to `Ẇ^{1,d/2}` and to `Ḣ¹`.
+
 **Checks.**
 
 - An abelian constant-curvature Coulomb potential has constant first derivatives and all
@@ -979,8 +1047,17 @@ has a continuous representative on `B` (same locator). The proof estimates diffe
 - Two smooth compactly supported extensions that differ only outside `B` restrict to the
   same element; their difference has quotient norm `0`, while a nonzero constant on `B`
   has positive quotient norm, since the quotient norm controls its `L^p(B)` norm.
+- Div–curl identity on a gradient `u = ∇φ`: `du = 0`, and `−R_iR_j Δφ` has symbol
+  `(ξ_iξ_j/|ξ|²)(−4π²|ξ|²)φ̂ = −4π²ξ_iξ_jφ̂`, the symbol of `∂_i∂_jφ`. On a divergence-free field the first
+  term vanishes and the curl term alone reconstructs `∇u`. With the opposite sign convention
+  `R_iR_j ↦ +ξ_iξ_j/|ξ|²` the identity would return `−∂_i u_j`.
+- The estimate needs `p > 1`. Let `Γ` be the Newtonian potential (`ΔΓ = δ`), `f_ε ≥ 0` radial of mass `1`
+  supported in `B_ε`, `χ` a cut-off equal to `1` on `B₁` and `0` off `B₂`, and `u_ε = ∇(χ · (Γ * f_ε))`.
+  Then `du_ε = 0`, and `div u_ε = χf_ε + 2∇χ·∇(Γ * f_ε) + (Γ * f_ε)Δχ` has `L¹` norm bounded independently
+  of `ε`, since `Γ * f_ε = Γ` off `B_ε` (Newton's theorem). But `|∇²Γ(x)| = c_d|x|^{−d}` with `c_d > 0`, so
+  `‖∇u_ε‖_{L¹} ≥ c_d|S^{d−1}| log(1/(2ε)) → ∞`: no `L¹` version holds.
 
-*Needs:* PDE §2.3 (whole-space div–curl estimate), §1.4, §7.1–7.2; gap `inhomogeneous-besov-partition` (PDE); 2.4.
+*Needs:* PDE §2.3 (Riesz transforms and their `L^p` bounds), §1.4, §7.1–7.2; gap `inhomogeneous-besov-partition` (PDE); 2.4.
 
 ### 4.4 The good gauge on a ball
 
@@ -989,7 +1066,9 @@ lines 1497–1561): for `D ∈ A^{1,d/2}_loc(B_R)` with `F ∈ L^{d/2}(B_R)` and
 global gauge whose potential satisfies `‖A‖_{Ẇ^{1,d/2}(B_R)} ≲_{ε_*, R/r} 1`; if moreover
 `D^{(n)}F ∈ L^p(B_R)` for an integer `n ≥ 0` and `p ∈ (1, ∞)` with `p ≥ d/(n+2)`, then `A ∈ W^{n+1,p}(B_R)`.
 The norm `‖·‖_{Ẇ^{1,d/2}(B_R)}` is `‖∂A‖_{L^{d/2}} + ‖A‖_{L^d}` (OhTataru-TopClass line 957–963). Route:
-4.1 on balls of radius `≈ r`, patching (3.3) on a ball of comparable size, exhaustion `R_n ↗ R`, and 4.3.
+4.1 on balls of radius `≈ r`, with centres chosen so that the balls of half that radius already cover,
+which after rescaling to unit balls gives 3.3 the covering margin `ℓ = ½`; patching (3.3) on a ball of
+comparable size, exhaustion `R_n ↗ R`, and 4.3.
 
 **Checks.**
 
@@ -1199,9 +1278,13 @@ For `d = 2k ≥ 4`, an `Ad(G)`-invariant symmetric `k`-linear form `f` on `𝔤`
 - The integral converges absolutely, `|χ_f(A)| ≤ C_f ‖F‖_{L^{d/2}}^k`, and `χ_f` is gauge invariant and
   dilation invariant.
 - `|χ_f(A) − χ_f(A')| ≤ C_f (‖F[A]‖_{L^{d/2}} + ‖F[A']‖_{L^{d/2}})^{k−1} ‖F[A] − F[A']‖_{L^{d/2}}`, and for a good
-  representative `(O_(∞), B)` of `A`,
-  `‖F[A + b] − F[A]‖_{L^{d/2}} ≲ ‖b‖_{Ẇ^{1,d/2}}(1 + ‖B‖_{Ẇ^{1,d/2}} + ‖O_(∞)‖_{C¹(S^{d−1})} + ‖b‖_{Ẇ^{1,d/2}})`,
-  through Hardy's inequality for the term `[O_(∞);x, b]`.
+  representative `(O_(∞), B)` of `A` written with its cut-off as `A = −η' O_(∞);x + B` (5.1) and every
+  `b ∈ Ẇ^{1,d/2}`,
+  `‖F[A + b] − F[A]‖_{L^{d/2}} ≲ ‖b‖_{Ẇ^{1,d/2}}(1 + ‖B‖_{Ẇ^{1,d/2}} + ‖η'‖_{L^∞}‖O_(∞)‖_{C¹(S^{d−1})} + ‖b‖_{Ẇ^{1,d/2}})`,
+  from `F[A + b] − F[A] = db + [A ∧ b] + ½[b ∧ b]`, Hölder for `[B ∧ b]` and `[b ∧ b]`, and Hardy's inequality
+  `‖b/|x|‖_{L^{d/2}} ≤ ‖∇b‖_{L^{d/2}}` (`p = d/2`, `p/(d − p) = 1`) for the term `η'[O_(∞);x ∧ b]`, with
+  `|O_(∞);x| ≤ C ‖O_(∞)‖_{C¹(S^{d−1})}|x|^{−1}`. For a cut-off with values in `[0, 1]`, such as the `η` of this
+  layer, the factor `‖η'‖_{L^∞}` is `1`.
 - For `d = 4` and `f = −⟨·,·⟩`, `χ_f = χ` of the Conventions.
 
 **Checks.**
@@ -1210,6 +1293,13 @@ For `d = 2k ≥ 4`, an `Ad(G)`-invariant symmetric `k`-linear form `f` on `𝔤`
   finite-energy `α` (all abelian connections are in the trivial class, 5.4).
 - `G = SU(2)`, `f(X, Y) = tr(XY)`: `χ_f = χ = 8π² c₂` (6.4).
 - Dilation: `f(F[A_λ] ∧ F[A_λ])(x) = λ⁴ f(F ∧ F)(λx)` in `d = 4`, so `χ_f(A_λ) = χ_f(A)`.
+- The cut-off size enters the perturbation bound. Take `G = SU(2)`, `O_(∞)(x) = exp(i x₁/|x|)`, `B = 0`, a cut-off
+  `η'_M` equal to `M` on a ball `B_ρ(3e₂)` (and, as 5.1 requires, `0` near `0` and `1` outside a compact set),
+  and `b = jβ dx²` with `β` smooth, nonzero and supported in `B_ρ(3e₂)`. Then `O_(∞);x = i d(x₁/|x|)` and the
+  `k`-component of `(F[A + b] − F[A])₁₂` is `−2Mβ ∂₁(x₁/|x|)`; at `3e₂`, `∂₁(x₁/|x|) = 1/|x| − x₁²/|x|³ = 1/3`,
+  so for small `ρ` its `L^{d/2}` norm is at least a positive multiple of `M`, while `b`, `B` and `O_(∞)` do not
+  depend on `M`. The bound without the factor `‖η'‖_{L^∞}` would fail as `M → ∞`; with it, both sides grow
+  linearly in `M`.
 
 *Needs:* gap `hardy-inequality` (PDE); 1.4, 3.2, 5.1.
 
@@ -1500,8 +1590,9 @@ representative in `𝒮'_h`, given by `Σ_k P_k u`. Indeed, its low-frequency ta
 functions. Two representatives differ by a polynomial, and the low-frequency condition kills it.
 Use these representatives whenever the indices satisfy this range; outside it the Besov space
 remains a quotient. This supplies the realisation used below (PDE §7.2's reconstruction,
-with this low-frequency argument; BahouriCheminDanchin-FourierAnalysis, Definition 2.68 and
-Proposition 2.71, cited by locator).
+with this low-frequency argument; BahouriCheminDanchin-FourierAnalysis, Definition 2.15 in §2.3, of the
+homogeneous Besov spaces as subspaces of `𝒮'_h`, and the completeness theorem of that section for
+`s < d/p`, or `s = d/p` and `r = 1`; cited by locator).
 
 Prove also the heat-block estimate for every `k ∈ ℤ` and `1 ≤ p ≤ ∞`:
 `‖e^{tΔ}P_k f‖_p ≤ C exp(−c4^k t)‖P_k f‖_p` for `t ≥ 0` and `P_k f ∈ L^p`.
@@ -1545,7 +1636,8 @@ that product is defined. Prove
 `‖uv‖_{ℓ¹L²} ≲ ‖u‖_{Ḣ¹}‖v‖_{Ḣ¹}` for `u, v ∈ Ḣ¹`.
 They apply componentwise to any fixed bilinear map between finite-dimensional coefficient
 spaces, in particular the Lie bracket. Their source is homogeneous Bony calculus
-(BahouriCheminDanchin-FourierAnalysis, Theorems 2.82 and 2.85, cited by locator;
+(BahouriCheminDanchin-FourierAnalysis, the homogeneous paraproduct and remainder theorems of §2.6,
+cited by locator; Theorems 2.82 and 2.85 of §2.8 are the nonhomogeneous analogues that PDE §7.3 uses;
 OhTataru-YMHF lines 2287–2301 use the bilinear theory).
 
 A route is the homogeneous trichotomy
@@ -1619,6 +1711,10 @@ Prove: every `u ∈ Ḣ^σ` has a `(−σ₁, σ₂)`-admissible envelope with `
 - `ℋ ⊊ Ḣ¹`: a gradient field `a = ∇φ` with `‖P_k(∂^ℓ a_ℓ)‖_{L²} = 1/k` for `k ≥ 1` and `0` otherwise is in `Ḣ¹`
   but `Σ_k 1/k = ∞`, so `a ∉ ℋ`; a divergence-free `a ∈ Ḣ¹` has `‖a‖_ℋ = ‖a‖_{Ḣ¹}`; for `λ = 2^m`,
   `‖λa(λ·)‖_ℋ = ‖a‖_ℋ`.
+- `Ḣ¹ ∩ Ḣ³` (Conventions): the polynomial `x₁` has every block `P_k x₁ = 0`, so its `Ḣ³` quantity is `0`,
+  but it is not in `L⁴` and hence not an element; without the `Ḣ¹` anchor the `Ḣ³` quantity would vanish
+  on a nonzero function and would not be a norm. A test function `φ` has
+  `Σ_k 2^{6k}‖P_k φ‖²_{L²} ≈ ‖|D|³φ‖²_{L²} < ∞` and lies in `Ḣ¹ ∩ Ḣ³`.
 - `Ḣ¹` against Tau Ceti's space: a test function `φ` maps to itself under the Sobolev embedding and has
   norm `‖∇φ‖_{L²}` there, while the Conventions' norm adds `‖φ‖_{L⁴} ≤ C‖∇φ‖_{L²}`: equivalent, not equal.
   The constant `1` has `∇1 = 0 ∈ L²` but is not in `L⁴`, so it is not an element; the condition `u ∈ L⁴`
@@ -1657,12 +1753,25 @@ PDE §6.3, §7.1–7.3 (the decomposition pattern and Bernstein, with the homoge
 
 For `A ∈ Ḣ¹` put `Δ_A = D^ℓ D_ℓ`. Prove (OhTataru-YMHF Theorems 4.1–4.2, lines 955–1175): for
 `0 < σ < 2` and `F ∈ Ḣ^{σ−2}` there is a unique `B ∈ Ḣ^σ` with `Δ_A B = F` and
-`‖B‖_{Ḣ^σ} ≲_{‖A‖_{Ḣ¹}} ‖F‖_{Ḣ^{σ−2}}`; if moreover `∂^j A_j ∈ ℓ¹L²`, then `‖B‖_{ℓ¹Ḣ²} ≲ ‖F‖_{ℓ¹L²}` with a
-constant depending on `‖A‖_{Ḣ¹}` and `‖∂^j A_j‖_{ℓ¹L²}`; and if `c_k` is a `(−1, S)` envelope for `A` in
+`‖B‖_{Ḣ^σ} ≲_{‖A‖_{Ḣ¹}} ‖F‖_{Ḣ^{σ−2}}`; if moreover `∂^j A_j ∈ ℓ¹L²`, then for every `F ∈ ℓ¹L²` there is a
+unique `B ∈ ℓ¹Ḣ²` with `Δ_A B = F` (an identity in `L²`: each term of `Δ_A B` lies there for `A ∈ Ḣ¹`,
+`B ∈ ℓ¹Ḣ²`), where `ℓ¹Ḣ² = Ḃ²_{2,1}` is realised in `𝒮'_h` by 8.1 (endpoint `s = 4/p`, `q = 1`) and lies in
+`C₀`, since `‖P_k B‖_{L^∞} ≲ 2^{2k}‖P_k B‖_{L²}` (Bernstein); it satisfies `‖B‖_{ℓ¹Ḣ²} ≲ ‖F‖_{ℓ¹L²}` with a
+constant depending on `‖A‖_{Ḣ¹}` and `‖∂^j A_j‖_{ℓ¹L²}`, and it is the `Ḣ^σ` solution whenever `F` also lies in
+`Ḣ^{σ−2}`, `0 < σ < 2`. This `ℓ¹L²` clause is not a corollary of the first: `ℓ¹L² ⊂ L² = Ḣ⁰` corresponds
+to the excluded `σ = 2` (Checks). And if `c_k` is a `(−1, S)` envelope for `A` in
 `Ḣ¹` and `d_k` a `(−1, S)` envelope for `F` in `Ḣ^{−1}` that is `1`-compatible with `c_k`, then
 `‖P_k B‖_{Ḣ¹} ≲ d_k`. Route: at `σ = 1`, the minimiser of `∫ ½|DB|² + ⟨B, F⟩` with the diamagnetic inequality `|∂|B|| ≤ |DB|` and
 `‖B‖_{L⁴} + ‖B‖_{Ḣ¹} ≲ (1 + ‖A‖_{Ḣ¹})‖DB‖_{L²}`; `σ < 1` by duality; `σ > 1` and the envelope bounds by the
-paradifferential decomposition with `[P_{<k}, Δ_A]`.
+paradifferential decomposition with `[P_{<k}, Δ_A]`. For the `ℓ¹L²` clause, the a priori bound
+(OhTataru-YMHF (4.3), line 966–967) applies to the finite block sums `F_N = Σ_{|k|≤N} P_k F`, which lie in
+every `Ḣ^{σ−2}` and converge to `F` in `ℓ¹L²`; their solutions are Cauchy in `ℓ¹Ḣ²`, and the limit solves
+the equation, since `ΔB_N`, `∂B_N` and `B_N` converge in `L²`, `L⁴` and `L^∞` against the coefficients
+`A ∈ L⁴`, `∂A ∈ L²`. If `F ∈ Ḣ^{σ−2}` as well, `F_N → F` there too and both limits agree in `𝒮'`.
+Uniqueness: a solution `z ∈ ℓ¹Ḣ²` of `Δ_A z = 0` lies in `C₀`, has `∂z ∈ L⁴` and `∂²z ∈ L²`, and satisfies
+`Δ|z|² = 2|Dz|² + 2⟨z, Δ_A z⟩ = 2|Dz|² ≥ 0` weakly, because `ad(A_j)` is skew; the weak maximum principle
+on large balls (PDE §3.2) and `z → 0` at infinity give `z = 0`. The source states (4.3) as a bound only;
+existence and the uniqueness class for forcing in no `Ḣ^{σ−2}` are supplied here.
 
 **Checks.**
 
@@ -1674,8 +1783,14 @@ paradifferential decomposition with `[P_{<k}, Δ_A]`.
   the negative linear term would instead give `Δ_A B = −F`.
 - A pure gauge `A = −O;x` with `O;x ∈ Ḣ¹`: `Δ_A(Ad(O)B) = Ad(O)ΔB`, so the solution is `Ad(O)Δ⁻¹(Ad(O⁻¹)F)`.
 - The diamagnetic inequality at a point where `B ≠ 0`: `∂_j|B| = ⟨B, D_j B⟩/|B|` since `⟨B, [A_j, B]⟩ = 0`.
+- The `ℓ¹L²` clause is needed separately: let `‖P_k F‖_{L²} = k^{−2}` for `k ≤ −1` and `P_k F = 0` for `k ≥ 0`.
+  Then `‖F‖_{ℓ¹L²} = Σ_{k≥1} k^{−2} = π²/6`, but `‖F‖²_{Ḣ^{σ−2}} = Σ_{k≥1} 2^{2k(2−σ)}k^{−4} = ∞` for every
+  `σ < 2`, so the first clause gives no solution, while the `ℓ¹L²` clause does.
+- Uniqueness needs the class `ℓ¹Ḣ² ⊂ C₀`: for `A = 0` the constant `1` and the linear function `x₁` solve
+  `ΔB = 0`; both have every block `P_k = 0`, so their realised representative in `𝒮'_h` is `0`, and
+  neither tends to `0` at infinity.
 
-*Needs:* PDE §7.1–7.3; 8.1.
+*Needs:* PDE §3.2 (weak maximum principle), §7.1–7.3; 8.1.
 
 ### 8.3 The covariant heat operator: `L²` theory
 
@@ -1780,7 +1895,7 @@ the step `|D| sign(x₁)` in `Ẇ^{−1,∞}` outside the heat-continuity subspa
 
 ### Dependencies
 
-PDE §6.1, §6.3, §7.1–7.3; Tau Ceti's `TauCeti.D1p0`; Mathlib's Fourier multipliers on tempered
+PDE §3.2 (8.2), §6.1, §6.3, §7.1–7.3; Tau Ceti's `TauCeti.D1p0`; Mathlib's Fourier multipliers on tempered
 distributions; Layer 1.
 
 ## Layer 9: the Yang–Mills heat flow on `ℝ⁴`
@@ -1886,7 +2001,9 @@ Corollaries 5.12–5.14, lines 1878–1948):
 - if `‖F‖_{L³(J;L³)} ≤ Q` on `J = [0, s₀)` and `‖a‖_{Ḣ¹} ≤ M₁`, then
   `‖A‖_{L^∞Ḣ¹} + ‖F‖_{L^∞L² ∩ L²Ḣ¹} + ‖∂_s A‖_{L²L²} ≲_Q ‖a‖_{Ḣ¹}`, the linearised bounds
   `‖B‖_{L^∞Ḣ^σ} + ‖curl_A B‖_{L²Ḣ^σ} ≲_{Q,M₁} ‖b‖_{Ḣ^σ}` for `−2 < σ < 2`, the higher-regularity bounds for
-  `a ∈ Ḣ^σ`, `σ > 1`, the analogous `ℋ` bounds, and the envelope bounds of Theorem 5.11;
+  `a ∈ Ḣ¹ ∩ Ḣ^σ`, `σ > 1`, including for linearised data `b ∈ Ḣ¹ ∩ Ḣ^σ` the tame bound
+  `‖B‖_{L^∞Ḣ^σ} + ‖curl_A B‖_{L²Ḣ^σ} ≲_{Q,M₁} ‖b‖_{Ḣ^σ} + ‖b‖_{Ḣ¹}‖a‖_{Ḣ^σ}` (Theorem 5.10(3), (5.33),
+  line 1893), the analogous `ℋ` bounds, and the envelope bounds of Theorem 5.11;
 - under the same hypothesis the limit `A(s₀) = lim_{s→s₀} A(s)` exists in `Ḣ¹` (in `ℋ`, in `Ḣ¹ ∩ Ḣ^σ` for such
   data). If `s₀ < ∞` and `Q > 0`, there are `s̃₀ > s₀` and `ε > 0` such that
   `‖ã − a‖_{Ḣ¹} < ε` gives a solution on `[0,s̃₀)` with `L³L³` norm at most `2Q`;
@@ -1911,7 +2028,13 @@ Prove (OhTataru-YMHF Corollary 5.15 and Lemma 5.33, lines 1952–1957 and 2509�
 solution with `Q(a) ≤ Q < ∞` the limit `A_∞ = lim_{s→∞} A(s)` exists in `Ḣ¹` (in `ℋ` for `a ∈ ℋ`) and is flat;
 the linearised solution with data `b ∈ Ḣ^σ`, `−1 < σ ≤ 1` (resp. `b ∈ ℋ`), has a limit `B_∞` in `Ḣ^σ`
 (resp. `ℋ`), with `‖B_∞‖_{Ḣ^σ} ≲_{Q,M₁} ‖b‖_{Ḣ^σ}` when `‖a‖_{Ḣ¹} ≤ M₁` and
-`D(A_∞)_k B_{∞,j} − D(A_∞)_j B_{∞,k} = 0`; the map `a ↦ A_∞` is Lipschitz in `Ḣ¹`, `ℋ` and `Ḣ¹ ∩ Ḣ^σ` (`σ > 1`)
+`D(A_∞)_k B_{∞,j} − D(A_∞)_j B_{∞,k} = 0`; if moreover `a, b ∈ Ḣ¹ ∩ Ḣ^{σ'}` with `σ' > 1` (Conventions), the
+limit `B_∞` exists in `Ḣ¹ ∩ Ḣ^{σ'}`, with `‖B_∞‖_{Ḣ^{σ'}} ≲_{Q,M₁} ‖b‖_{Ḣ^{σ'}} + ‖b‖_{Ḣ¹}‖a‖_{Ḣ^{σ'}}`
+(Lemma 5.33(2), line 2520, proof line 2550–2551: the `Ḣ¹` case together with the tame bound of 9.4 and
+its envelope bounds (Theorem 5.11, (5.36); Lemma 5.24, lines 2242–2245, with `G = H = 0`), which make the
+high-frequency `Ḣ^{σ'}` tails of `B(s)` uniformly small in `s`, so that
+`Ḣ¹` convergence upgrades to `Ḣ^{σ'}` convergence, and lower semicontinuity of the `Ḣ^{σ'}` norm passes the
+tame bound to the limit); the map `a ↦ A_∞` is Lipschitz in `Ḣ¹`, `ℋ` and `Ḣ¹ ∩ Ḣ^σ` (`σ > 1`)
 on bounded convex subsets of the respective space on which `Q` is uniformly bounded.
 For each `X = Ḣ¹`, `ℋ`, or `Ḣ¹ ∩ Ḣ^σ` with `σ > 1` (intersection norm), prove that
 `Ω_X = {a ∈ X : Q(a) < ∞}` is open, `Q` is locally bounded there, and
@@ -1966,6 +2089,10 @@ neither place gives a proof, and that range is not stated here.
 
 - `G = U(1)`: `A_∞ = ∇φ`, the gradient part of `a`, and `a ↦ A_∞` is the bounded linear Helmholtz projection.
 - Pure gauge data `a = −O;x` with `O;x ∈ Ḣ¹`: `A_∞ = a`.
+- `G = U(1)`, `b ∈ Ḣ¹ ∩ Ḣ³`: `B_∞` is the gradient part of `b`, and the Helmholtz projection acts on each block
+  by an orthogonal projection, so `‖P_k B_∞‖_{L²} ≤ ‖P_k b‖_{L²}` for every `k`, hence `B_∞ ∈ Ḣ¹ ∩ Ḣ³` with
+  `‖B_∞‖_{Ḣ³} ≤ ‖b‖_{Ḣ³}`: the first term of the tame bound already suffices when the bracket vanishes.
+  This is the clause that makes `L_X(a)` map `X = Ḣ¹ ∩ Ḣ^σ` into itself.
 - In the abelian case `L_X(a)` is the gradient projection for every `a`, so
   `‖L_X(ã) − L_X(a)‖_{X→X} = 0` and the Fréchet remainder is `0`.
 - For `N(u) = sin u` on `L²(0,1)`, curve derivatives are `cos(u)h`, but take
@@ -2299,7 +2426,8 @@ Layers 8–9; Layers 3–4 for 10.1; Layer 7 for the subthreshold existence of `
   Ch. 2–4; cited by locator.
 - `BahouriCheminDanchin-FourierAnalysis`: H. Bahouri, J.-Y. Chemin, R. Danchin,
   *Fourier Analysis and Nonlinear Partial Differential Equations*, Springer 2011,
-  Definition 2.68, Proposition 2.71 and Theorems 2.82, 2.85; cited by locator.
+  §2.3 (Definition 2.15 and the completeness theorem) and §2.6 (homogeneous paradifferential calculus);
+  cited by locator.
 - `Bogomolnyi-Stability`: E. B. Bogomol'nyi, *The stability of classical solutions*, Sov. J. Nucl. Phys. 24
   (1976); cited by locator.
 - `MimuraToda-TopologyLieGroups`: M. Mimura, H. Toda, *Topology of Lie Groups, I and II*, AMS 1991,
