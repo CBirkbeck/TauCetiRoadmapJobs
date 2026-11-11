@@ -51,8 +51,9 @@ It leaves to named roadmaps, by section:
   6.8, 7.2, 7.2a, 7.4 and 7.5.
 - Archimedean gamma and epsilon factors, Rankin–Selberg `L`-functions, their unramified Euler
   factors, the Jacquet–Shalika bound on Satake roots, their poles, functional equations and boundary
-  nonvanishing, and strong multiplicity one for isobaric sums: AutomorphicLFunctionsAndLocalFactors,
-  Conventions, §§AL.1.4, AL.3.2.3, AL.3.3.8, AL.3.6, AL.3.7 and AL.3.9.
+  nonvanishing, the bounds of completed pair `L`-functions on vertical strips, and strong multiplicity
+  one for isobaric sums: AutomorphicLFunctionsAndLocalFactors, Conventions, §§AL.1.4, AL.3.2.3,
+  AL.3.3.8, AL.3.6, AL.3.7, AL.3.9.2 and AL.3.9.4.
 - Weil's explicit formula in Mestre's formalism, for an arbitrary pair of completed functions with
   products of gamma factors: AnalyticNumberTheoryPartI §§1.3 and 1.8.
 - The Odlyzko kernel `g = 2(u ∗ u)`, the test functions `g(x/b)/cosh(x/2)` and the nonnegativity of
@@ -247,7 +248,10 @@ sets of classes are counted as natural numbers only after their finiteness is pr
   representation at an unramified place; it does not assert temperedness.
 - §AL.3.6: continuation of `Λ(s, π × π′)`, simple poles exactly at `s = 0, 1` when `π′ ≅ π^∨` up to
   a unitary norm twist (§AL.3.6.1), the functional equation (§AL.3.6.2) and boundary nonvanishing
-  (§AL.3.6.3); §AL.3.9.2: boundedness in vertical strips; §AL.3.7: strong multiplicity one for
+  (§AL.3.6.3); §AL.3.9.2: the predicate of boundedness on vertical strips of finite width, which a
+  function with a pole in the strip fails; §AL.3.9.4, its Rankin–Selberg instance: for unitary
+  cuspidal `π, π′` of any ranks the completed `Λ(s, π × π′)` is bounded on every vertical strip of
+  finite width outside fixed neighbourhoods of its poles; §AL.3.7: strong multiplicity one for
   cuspidal representations and for isobaric sums.
 
 ### From TauCetiRoadmap.AnalyticNumberTheoryPartI
@@ -826,15 +830,19 @@ Prove that for every test function of §2.1, `B_f^F + B∞^F + (1/2) Z^F = A_F �
 unramified, so by AutomorphicLFunctionsAndLocalFactors §AL.3.2.3 the Euler factor of `Λ₁` at `p` has
 the roots `α_i^{−1}β_j` (`α_i`, `β_j` the Satake roots of `π_p`, `π′_p`), each of absolute value below
 `p^{1/2} · p^{1/2} = p` by the Jacquet–Shalika bound §AL.3.3.8; the Euler products then converge
-absolutely on `Re s > 2`. The zeros and poles that §1.8 sums are those with `−1 ≤ Re s ≤ 2`: by the
-boundary nonvanishing §AL.3.6.3, the functional equation §AL.3.6.2 and the absence of zeros of the
+absolutely on `Re s > 2`. Hypothesis (iii) of §1.8, boundedness of each `Λ_i` minus its singular parts
+on vertical strips of finite width, comes from §AL.3.9.4: on such a strip `Λ_i` is bounded outside fixed
+discs around its poles, which lie in `{0, 1}`; its principal parts are bounded off those discs; and on the
+closed discs `Λ_i` minus its principal parts is holomorphic, hence bounded. When `π′ ≇ π` there is no
+pole and §AL.3.9.4 bounds `Λ_i` on the whole strip. The zeros and poles that §1.8 sums are those with
+`−1 ≤ Re s ≤ 2`: by the boundary nonvanishing §AL.3.6.3, the functional equation §AL.3.6.2 and the absence of zeros of the
 gamma factors, every zero of `Λ₁` lies in `0 < Re s < 1`, so the zero sum is the sum over the critical
 strip; the poles of `Λ(s, π^∨ × π′)` contribute exactly `δ(π, π′)` at `s = 0` and `s = 1`, the norm
 twists allowed by the pole theorem §AL.3.6.1 being excluded by the fixed unitary algebraic infinity
 types; then extend bilinearly.
 
 *Needs:* §§2.1, 2.5; AnalyticNumberTheoryPartI §§1.3 and 1.8; AutomorphicLFunctionsAndLocalFactors
-§§AL.3.2.3, AL.3.3.8, AL.3.6 and AL.3.9.2.
+§§AL.3.2.3, AL.3.3.8, AL.3.6, AL.3.9.2 and AL.3.9.4.
 
 **Checks.**
 
@@ -844,6 +852,10 @@ types; then extend bilinearly.
   `Λ₁`, once for `Λ₂`, complex conjugate to each other for even `F`), and the poles at `s = 0, 1`
   contribute `Φ_F(0) + Φ_F(1) = 2A_F δ`, while the zeros of `Λ₁` are counted once.
 - `F = 0` makes every term vanish.
+- For `π = π′ = 1`, `Λ₁(s) = Γ_ℝ(s)ζ(s)` has the principal parts `−1/s` at `0` and `1/(s − 1)` at `1`
+  (`Γ_ℝ(s) ∼ 2/s` and `ζ(0) = −1/2`; `Γ_ℝ(1) = 1`). It is unbounded on every strip containing `0` or `1`, so
+  it fails the strip predicate of §AL.3.9.2 itself; the bound needed is the one of §AL.3.9.4 away from the
+  poles, and `Λ₁(s) + 1/s − 1/(s − 1)` is entire and bounded on every vertical strip of finite width.
 
 ### 2.7 The Stark–Odlyzko cone inequality
 
@@ -1133,7 +1145,7 @@ is the smallest case where the normalized minima differ.
 ### Dependencies
 
 AnalyticNumberTheoryPartI §§1.3, 1.8; SmallRamificationAndAbelianVarietyBaseCases §§1.5–1.7;
-AutomorphicLFunctionsAndLocalFactors §§AL.1.4, AL.3.2.3, AL.3.3.8, AL.3.6, AL.3.9.2;
+AutomorphicLFunctionsAndLocalFactors §§AL.1.4, AL.3.2.3, AL.3.3.8, AL.3.6, AL.3.9.2, AL.3.9.4;
 AutomorphicFormsOnReductiveGroups §7.2; ModularForms Layers 3–4; ComputationalNumberTheory §§4.17,
 4.17a, 4.26, 4.29–4.34; Mathlib's Rayleigh quotient and level-one dimension formula; Layer 1.
 
@@ -1496,10 +1508,26 @@ rank, and the same class may occur with several `d`.
 
 ### Examples
 
-For `Sp₄` and scalar weight `k ≥ 3`, the regular holomorphic parameters are `Δ_w[2] ⊕ [1]` with
-`w = 2k − 3` and the parameters `Δ_{w₁,w₂} ⊕ [1]` with `w₁ = 2k − 2`, `w₂ = 2k − 4`; the first contributes
-exactly when `k` is even. For `g = 1` a holomorphic parameter of weight `k` is a simple parameter of rank
-three with weights `0, ±(k − 1)`, the adjoint `Sym²Δ_{k−1}` of an elliptic eigenform of weight `k`; at
+For `Sp₄` and scalar weight `k ≥ 3` the infinitesimal weights are `0, ±(k − 1), ±(k − 2)`. By §3.5 a
+parameter whose real packet contains `ρ_k` has exactly one odd block, of length one, and its other blocks
+have dimensions divisible by four. An odd block of rank three would leave a remainder of dimension two;
+`[4] ⊕ [1]` has the half-integral weights `±3/2, ±1/2`; and the trivial parameter `[5]`, whose weights
+`0, ±1, ±2` are those of `k = 3`, has an odd block of length five. So packet membership leaves three
+shapes, and global occurrence is then decided by the multiplicity test of §3.3 and by which classes
+exist:
+
+- `π[1]` with `π` a simple orthogonal class of rank five with weights `0, ±(k − 1), ±(k − 2)`: `C_ψ` is
+  trivial, so each such class gives one eigenline, for every `k`;
+- `Δ_w[2] ⊕ [1]` with `w = 2k − 3`: `χ(s₁) = (−1)^{4/4} = −1` and `ε_ψ(s₁) = i^{w+1} = (−1)^{k−1}`, so it
+  occurs exactly when `k` is even, once for each normalized eigenform of `S_{2k−2}(SL₂(ℤ))` (the
+  Saito–Kurokawa lifts);
+- `π′ ⊕ [1]` with `π′` an orthogonal class of rank four with weights `±(k − 1), ±(k − 2)`: both `k₁ − 1` and
+  `k₂ − 2` are weights of `π′` and only the position `1` is odd, so `χ(s₁) = −1`, while
+  `ε_ψ(s₁) = ε(π′ × 1) = 1` because both constituents are orthogonal (§1.8); it never occurs.
+
+At `k = 20` the three shapes give `dim S₂₀(Γ₂) = 1 + 2 + 0 = 3` (§7.2, Checks); omitting the simple shape
+gives `2`. For `g = 1` a holomorphic parameter of weight `k` is a simple parameter of rank three with
+weights `0, ±(k − 1)`, the adjoint `Sym²Δ_{k−1}` of an elliptic eigenform of weight `k`; at
 `k = 12` it is `Sym²Δ₁₁`, the genus-one row of §7.9.
 
 ### Dependencies
@@ -2483,7 +2511,16 @@ the multiplicity factor of each assignment is exact.
 - At `g = 1` the formula counts the classes `π` of rank three with weights `0, ±(k − 1)`, recovering
   `dim S_k(SL₂(ℤ))`.
 - At `g = 2` and scalar `k = 10`, the parameter `Δ₁₇[2] ⊕ [1]` passes (`k` even) and contributes the
-  Saito–Kurokawa line; at `k = 11` no parameter passes and `S₁₁(Γ₂) = 0`.
+  Saito–Kurokawa line. At `k = 11` the candidate `Δ₁₉[2] ⊕ [1]` fails (`k` odd) and the rank-four shape
+  of the Layer 3 Examples fails for every `k`; since `S₁₁(Γ₂) = 0` (Igusa's theorem, vdG08 Theorem 9.1
+  and its proof, pp. 19–20: the first nonzero odd weight is `35`), the formula forces that no simple
+  orthogonal class of rank five with weights `0, ±9, ±10` exists.
+- Negative control for the candidate list, `g = 2` and scalar `k = 20`: by Igusa's theorem (vdG08
+  Theorem 9.1, p. 19) `M₂₀(Γ₂)` has the basis `E₄⁵, E₄²E₆², E₄²χ₁₂, E₄E₆χ₁₀, χ₁₀²`, and the Siegel
+  operator maps it onto `M₂₀(SL₂(ℤ))`, of dimension `2`, killing exactly the last three, so
+  `dim S₂₀(Γ₂) = 3`. The Saito–Kurokawa shape gives the two classes `Δ₃₇` from `S₃₈(SL₂(ℤ))` and the
+  rank-four shape gives `0`, so exactly one simple orthogonal class of rank five with weights
+  `0, ±18, ±19` exists: `3 = 1 + 2 + 0`. A candidate list without the simple shape counts `2`.
 - Treating `Δ₂₃^a` and `Δ₂₃^b` as one class undercounts the candidates, even where both are then rejected.
 
 ### 7.3 Dimensions in genus at most eight
@@ -2746,10 +2783,13 @@ Prove (CT20 Remark 5.11): for `k = 4, 8, 12` and every `g`, `dim M_k(Γ_g) = Σ_
 
 ### 8.3 An orbit basis of exterior invariants
 
-Prove (CT19a Fact 1.2): let a finite group `H` act on a finite set `Ω`, and call a subset `S` orientable when its
-stabilizer acts on `S` by even permutations. For each orbit of orientable `g`-subsets choose a representative
-`S` with an orientation `s`, and put `σ_S = Σ_{γ ∈ H/H_S} γ(s(1) ∧ ⋯ ∧ s(g))`. These `σ_S` form a basis of the
-`H`-invariants of `⋀^g ℚ^Ω`; a non-orientable orbit contributes nothing.
+Prove (CT19a Fact 1.2): let a group `H`, not necessarily finite, act on a finite set `Ω`, and call a subset `S`
+orientable when its stabilizer `H_S` acts on `S` by even permutations. For each orbit of orientable `g`-subsets
+choose a representative `S` with an orientation `s`, and put `σ_S = Σ_{γ ∈ H/H_S} γ(s(1) ∧ ⋯ ∧ s(g))`. These
+`σ_S` form a basis of the `H`-invariants of `⋀^g ℚ^Ω`; a non-orientable orbit contributes nothing. The sum is
+finite because `H/H_S` is in bijection with the orbit of `S` in the finite set of `g`-subsets, and `H` acts
+through its finite image in the permutations of `Ω`, which has the same invariants and the same orientable
+orbits; no averaging over `H` is used.
 
 *Needs:* Mathlib exterior powers.
 
@@ -2761,6 +2801,10 @@ stabilizer acts on `S` by even permutations. For each orbit of orientable `g`-su
 - The dimension counts orientable orbits, not all orbits: for `H = S₃` and `g = 2` there is one orbit of
   2-subsets, not orientable (the transposition in the stabilizer swaps the two points), and
   `(⋀²ℚ³)^{S₃} = 0`.
+- An infinite group: `H = ℤ` acting on `Ω = {1, 2, 3}` through the cycle `1 ↦ 2 ↦ 3 ↦ 1`. In degree two the
+  one orbit of 2-subsets has stabilizer `3ℤ`, acting trivially, and `σ = e₁∧e₂ + e₂∧e₃ + e₃∧e₁`; in degree
+  three the stabilizer `ℤ` acts by an even 3-cycle and `e₁∧e₂∧e₃` is fixed. The invariant dimensions in
+  degrees `0, …, 4` are `1, 1, 1, 1, 0`, those of the finite image `A₃`.
 
 ### 8.4 The Mathieu forms on the Leech lattice
 
@@ -3044,6 +3088,8 @@ AutomorphicLFunctionsAndLocalFactors §AL.1.4; Tau Ceti's lattice carrier and Go
   companion note to [CT20], 2019.
 - [Mil02] S. D. Miller, *The highest lowest zero and other applications of positivity*,
   arXiv:math/0112196v1.
+- [vdG08] G. van der Geer, *Siegel modular forms and their applications*, in *The 1-2-3 of modular forms*,
+  Universitext, Springer (2008); cited in arXiv:math/0605346v2, whose theorem and page numbering is used.
 - [KT87] K. Koike, I. Terada, *Young-diagrammatic methods for the representation theory of the classical groups
   of type B, C, D*, J. Algebra 107 (1987), 466–511.
 
