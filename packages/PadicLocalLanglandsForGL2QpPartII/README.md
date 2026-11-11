@@ -104,7 +104,7 @@ The Banach radius algebras D_r(H,L), their coordinate norms ‖·‖_r, noetheri
 All statements are used at F = ℚ_p, ϖ = p, so that M_n^ϖ there is the p-central quotient M^p_n here, and G′ = G/p^ℤ.
 
 - §§0.3–0.4: the generalised Steinberg representations Sp_J(A), Sp^cont_J(Λ) and their duals. For GL₂(ℚ_p) and d = 1, Sp_1(L) = C^sm(ℙ¹(ℚ_p), L)/L is St^sm and Sp^cont_1(L) = C⁰(ℙ¹(ℚ_p), L)/L is St^cont. §0.4(c) gives that St^cont is the universal unitary completion of St^sm and that the G-bounded vectors of (St^sm)′ form (St^cont)*. That roadmap gives duals the weak topology, which on bounded subsets of (St^cont)* is the topology of compact convergence of Conventions.
-- §6.2 at d = 1: H¹_dR(Ω) ≅ (St^sm)′ through the regulator μ ↦ ∫ dlog((z−x)/(z−x₀)) μ(x). §6.5 at d = 1: the strictly exact sequence 0 → O(Ω_C)/C → H¹_proét(Ω_C, ℚ_p(1)) → (St^sm_(ℚ_p))′ → 0 mapping to the de Rham sequence. §6.9 at d = 1: H¹_ét(Ω_C, ℤ_p(1)) ≅ Sp_1(ℤ_p)^* and H¹_ét(Ω_C, 𝔽_p(1)) ≅ Sp_1(𝔽_p)^*, with H¹_ét(Ω_C, ℚ_p(1)) the G-bounded vectors of H¹_proét. The identification with ℤ/p^k-coefficients follows from the integral one, since Sp_1(ℤ_p) is free.
+- §6.2 at d = 1: H¹_dR(Ω) ≅ (St^sm)′ through the regulator μ ↦ ∫ dlog((z−x)/(z−x₀)) μ(x). §6.5 at d = 1: the strictly exact sequence 0 → O(Ω_C)/C → H¹_proét(Ω_C, ℚ_p(1)) → (St^sm_(ℚ_p))′ → 0 mapping to the de Rham sequence. §6.9 at d = 1: topological G×G_ℚ_p-isomorphisms H¹_ét(Ω_C, ℤ_p(1)) ≅ Sp_1(ℤ_p)^* and H¹_ét(Ω_C, 𝔽_p(1)) ≅ Sp_1(𝔽_p)^*, with G_ℚ_p acting trivially on the right and the duals carrying the weak topology, that is, pointwise convergence on Sp_1, and with H¹_ét(Ω_C, ℚ_p(1)) the G-bounded vectors of H¹_proét. The identification with ℤ/p^k-coefficients follows from the integral one, since Sp_1(ℤ_p) is free.
 - §7.1: at finite level the geometric connected components of height zero are a torsor under (ℤ/p^m)^×, π₀ of the infinite-level tower is a principal homogeneous space under ℚ_p^×, and G, Ǧ and W_ℚ_p act on it through det, Nrd and reciprocity. Hence Ǧ acts on locally constant functions on M^p_(n,C) through characters factoring through Nrd.
 - §7.2: for every n ≥ 0, a G×Ǧ×G_ℚ_p-equivariant semistable formal model of M^p_n over the integers of a finite extension, whose special-fibre components form finitely many G-orbits, each fixed by an open subgroup.
 - §7.3: the levelwise fundamental diagram of M^p_(n,C), equivariant for G×Ǧ×W_ℚ_p; finiteness of π₀(M^p_(n,C)); and, for the full level M_(n,C), the injectivity of H¹_ét(M_(n,C), L(1)) → H¹_proét(M_(n,C), L(1)) with image the G-bounded vectors (CDN20 Proposition 2.12).
@@ -115,7 +115,7 @@ Here LL(M)* is the strong dual LL(M)′_b of this roadmap's notation, and the mu
 
 ### From TauCetiRoadmap.ScholzeFunctorAndModpCohomologyOfTheLubinTateTower
 
-§5.4, *Finite length of arithmetic Drinfeld cohomology* (CDN23 Théorème 4.1): for p > 2, n ≥ 0, K/ℚ_p finite and k ≥ 1, H¹_ét(M^p_(n,K), O_L/ϖ_L^k)^∨ is a smooth admissible G′-representation of finite length, and Hom^cont_(k_L[G′])(π^∨, H¹_ét(M^p_(n,ℂ_p), k_L)) is finite-dimensional for every smooth admissible k_L[G′]-module π with a central character. Layer 5 of this roadmap uses it for the twisted coefficients (O_L/p^k)(1) and for the invariants (H¹_ét(M^p_(n,C), (O_L/p^k)(1)))^(G_K): over a finite extension K′ of K containing μ_(p^k) the twist is trivial; the Hochschild–Serre sequence of G_K′ compares H¹_ét(M^p_(n,K′), −) with the G_K′-invariants of the geometric group up to the finite groups H¹(G_K′, H⁰) and H²(G_K′, H⁰), H⁰ being finite by ProetaleCohomologyOfPAdicCurvesAndTowers §7.3; and the G_K-invariants form a closed G′-submodule of the G_K′-invariants, whose Pontryagin dual is a quotient of a representation of finite length.
+§5.4, *Finite length of arithmetic Drinfeld cohomology* (CDN23 Théorème 4.1): for p > 2, n ≥ 0, K/ℚ_p finite and k ≥ 1, H¹_ét(M^p_(n,K), O_L/ϖ_L^k), with its profinite topology, is the compact dual of the smooth admissible G′-representation of finite length H¹_ét(M^p_(n,K), O_L/ϖ_L^k)^∨, and Hom^cont_(k_L[G′])(π^∨, H¹_ét(M^p_(n,ℂ_p), k_L)) is finite-dimensional for every smooth admissible k_L[G′]-module π with a central character. Layer 5 of this roadmap uses it for the twisted coefficients (O_L/p^k)(1) and for the invariants (H¹_ét(M^p_(n,C), (O_L/p^k)(1)))^(G_K): over a finite extension K′ of K containing μ_(p^k) the twist is trivial; the Hochschild–Serre sequence of G_K′ compares H¹_ét(M^p_(n,K′), −) with the G_K′-invariants of the geometric group up to the finite groups H¹(G_K′, H⁰) and H²(G_K′, H⁰), H⁰ being finite by ProetaleCohomologyOfPAdicCurvesAndTowers §7.3; and the G_K-invariants form a closed G′-submodule of the G_K′-invariants, whose Pontryagin dual is a quotient of a representation of finite length.
 
 ### From TauCetiRoadmap.LocallyAnalyticRepresentationsOfLocalGroups
 
@@ -477,7 +477,7 @@ The route for local analyticity follows DLB17 §3.3 (lines 665–749). M^p_n is 
 
 **Checks.**
 
-- At level zero and on one copy of Ω the derivations are those of Conventions: u⁺z = −1, a⁺z = −z, a⁻z = z and u⁻z = z². A locally constant function is killed by gl₂ and fixed by G, as a smooth vector must be, while u⁺ kills no nonconstant function on a connected Stein curve.
+- At level zero and on one copy of Ω the derivations are those of Conventions: u⁺z = −1, a⁺z = −z, a⁻z = z and u⁻z = z². A locally constant function is killed by gl₂ and fixed by an open subgroup of G, which is what smoothness requires, but it need not be fixed by G. On the geometric level-zero space, two copies of Ω exchanged by every g with v_p(det g) odd (ProetaleCohomologyOfPAdicCurvesAndTowers §7.1), f = (1, −1) has zero Lie derivatives and is fixed by the open subgroup {g : v_p(det g) even}. But diag(p,1)f = (−1, 1) = −f ≠ f, also at p = 2, since L has characteristic zero. A constant on one copy of Ω, under its natural G-action, is the special case fixed by G. Finally, u⁺ kills no nonconstant function on a connected Stein curve.
 - For a point x ∈ Ω(K), K ⊂ C finite over ℚ_p and L ⊇ K, the evaluation functional δ_x ∈ O(Ω)′_b has orbit map g ↦ δ_(gx), whose pairing with f is g ↦ f(gx), a locally analytic function of g; its derivative along u⁺ is f ↦ f′(x), which is 1 on f = z. So δ_x is a locally analytic vector that is not smooth: f(u(b)x) = f(x+b) is not locally constant in b.
 - The smoothness statement concerns Ω¹(M^p_n)′_b and not O(M^p_n)′_b. On O(M^p_n)′_b the u⁺-kernel is also H¹_dR(M^p_n)′ as a vector space, the annihilator of (d/dz)O(M^p_n), but a⁺ = ∂u⁺−1 acts on it by −1, so it contains no nonzero vector killed by gl₂. The weight shift by two and the determinant twist in Ω¹ = O(2)⊗det remove the −1.
 - At level zero, H¹_dR,c(Ω) is the strong dual of H¹_dR(Ω) ≅ (St^sm)′ (ProetaleCohomologyOfPAdicCurvesAndTowers §6.2), which is St^sm by reflexivity of a countable-dimensional space with its finest locally convex topology: smooth and irreducible. H¹_dR(Ω) itself is not smooth, its smooth vectors forming the countable-dimensional smooth dual of St^sm inside a space of uncountable dimension.
@@ -848,11 +848,14 @@ Fix n. Write H^(1,+)_(k,K) = H¹_ét(M^p_(n,K), (O_L/p^k)(1)) for finite K/ℚ_p
 
 ### 5.1 Arithmetic completed cohomology at fixed level
 
-Define H^(1,+)_(ℚ̄_p) = lim_k colim_([K:ℚ_p]<∞) H^(1,+)_(k,K) with its p-adic topology, and H¹_(ℚ̄_p) = L⊗_(O_L)H^(1,+)_(ℚ̄_p). The level n stays fixed; only K and k vary (CDN23, §5.3.1, lines 2627–2634). Prove that H^(1,+)_(ℚ̄_p) → H^(1,+)_C := H¹_ét(M^p_(n,C), O_L(1)) is injective. Its image is the set of almost-smooth classes: those whose reduction modulo p^k is fixed by an open subgroup of G_ℚ_p for every k, the subgroup depending on k (CDN23, Proposition 5.16, line 2635). The route uses the Hochschild–Serre sequence for G_K acting on H^(1,+)_(k,C). H⁰ of the geometric fibre is finite because M^p_(n,C) has finitely many connected components (ProetaleCohomologyOfPAdicCurvesAndTowers §7.3), so colim_K H^j(G_K, H⁰) = 0 for j = 1, 2.
+Define H^(1,+)_(k,ℚ̄_p) = colim_([K:ℚ_p]<∞) H^(1,+)_(k,K), H^(1,+)_(ℚ̄_p) = lim_k H^(1,+)_(k,ℚ̄_p) and H¹_(ℚ̄_p) = L⊗_(O_L)H^(1,+)_(ℚ̄_p). The level n stays fixed; only K and k vary (CDN23, §5.3.1, lines 2627–2634). The topologies are those of the stages, not the p-adic topology. Each H^(1,+)_(k,K) is profinite: it is the projective limit of the discrete groups H¹_ét(U_i⊗K, (O_L/p^k)(1)) over the increasing affinoid covering (U_i) of M^p_n by the preimages of the balls of the Bruhat–Tits tree (EndoscopicTransferAndUnitaryTraceComparison §§12.4–12.5, as in §3.1), and the compact dual of a smooth representation of finite length (ScholzeFunctorAndModpCohomologyOfTheLubinTateTower §5.4, transported to the twisted coefficients as in the supplier contract; CDN23, Théorème 2.1, line 1064, and §2.1.3, lines 1262–1271). H^(1,+)_(k,C) carries the projective limit topology over the same covering, and H^(1,+)_C := H¹_ét(M^p_(n,C), O_L(1)) = lim_k H^(1,+)_(k,C) the projective limit topology. H^(1,+)_(k,ℚ̄_p) carries the inductive limit topology along a cofinal increasing sequence of finite extensions K of ℚ_p, H^(1,+)_(ℚ̄_p) the projective limit topology over k (CDN23, Remarque 5.20, line 2691), and H¹_(ℚ̄_p) = ∪_N p^(−N)H^(1,+)_(ℚ̄_p) the inductive limit topology.
+
+Prove that H^(1,+)_(ℚ̄_p) → H^(1,+)_C is injective. Its image is the set of almost-smooth classes: those whose reduction modulo p^k is fixed by an open subgroup of G_ℚ_p for every k, the subgroup depending on k (CDN23, Proposition 5.16, line 2635). The route uses the Hochschild–Serre sequence for G_K acting on H^(1,+)_(k,C). H⁰ of the geometric fibre is finite because M^p_(n,C) has finitely many connected components (ProetaleCohomologyOfPAdicCurvesAndTowers §7.3), so colim_K H^j(G_K, H⁰) = 0 for j = 1, 2, and H^(1,+)_(k,ℚ̄_p) → H^(1,+)_(k,C) is injective with image the G_ℚ_p-smooth classes (CDN23 line 2644). Each H^(1,+)_(k,K) → H^(1,+)_(k,C) is induced by a map of projective systems of discrete groups, hence continuous, so H^(1,+)_(k,ℚ̄_p) injects continuously into a Hausdorff space and is Hausdorff. Hence p^kH^(1,+)_(ℚ̄_p), the kernel of the projection to H^(1,+)_(k,ℚ̄_p) (§5.2), is closed. It is not open in general (Checks): p-adic separatedness and completeness (§5.2) are algebraic properties of a module whose topology is coarser than the p-adic one.
 
 Its API:
 
-- H^(1,+)_(ℚ̄_p) and H¹_(ℚ̄_p) are defined by the stated limits. The prime p is inverted after both limits.
+- H^(1,+)_(ℚ̄_p) and H¹_(ℚ̄_p) are defined by the stated limits, with the stated topologies. The prime p is inverted after both limits.
+- Each finite-K stage is profinite. G and Ǧ act continuously on it. G_ℚ_p acts smoothly on H^(1,+)_(k,ℚ̄_p) and maps the image of each finite-K stage onto the image of a conjugate stage. Hence G×Ǧ×G_ℚ_p acts continuously on H^(1,+)_(ℚ̄_p).
 - The map to H^(1,+)_C is G×Ǧ×G_ℚ_p-equivariant, continuous and injective, with image the almost-smooth classes.
 - Restriction and corestriction in n commute with the arithmetic and geometric maps; the definition keeps n fixed.
 
@@ -861,16 +864,21 @@ Its API:
 - An almost-smooth class may need a smaller open subgroup for each k. Requiring one open subgroup for the whole integral class gives a strictly smaller set in general.
 - L⊗lim_k is not lim_k(L⊗−): the latter vanishes on the p^k-torsion groups H^(1,+)_(k,K).
 - Replacing the fixed level by a limit over n gives a different object. No limit over n enters the factorisation.
+- The topology is not the p-adic one. Take p = 5, L = ℚ_5, n = 0 and a finite K containing ℚ_25, over which M^p_0 splits as two copies of Ω (Conventions). On one copy take the integral mass-zero measures μ_j = δ_(5^j) − δ₀ on ℙ¹(ℚ_5), for j ≥ 0. They are classes of H¹_ét(Ω_C, ℤ_5(1)) ≅ Sp_1(ℤ_5)^* on which G_K acts trivially (ProetaleCohomologyOfPAdicCurvesAndTowers §6.9), so they are almost smooth and lie in H^(1,+)_(ℚ̄_p). The indicator of 5^jℤ_5^× pairs to 1 with μ_j and to 0 with μ_l for l ≠ j, so the reductions of the μ_j modulo 5 are pairwise distinct points of (H^(1,+)_(ℚ̄_p)/5)^(G_K). In the topology above μ_j → 0, since every locally constant f has f(5^j) = f(0) for large j, and this invariant piece is an infinite profinite group, as §5.2 asserts. In the p-adic topology it would be an infinite discrete space, hence not compact. Moreover u(5^j)(δ₀ − δ_∞) − (δ₀ − δ_∞) = μ_j never lies in 5H^(1,+)_C, so G would not act continuously although u(5^j) → 1.
 
-*Needs:* EndoscopicTransferAndUnitaryTraceComparison §12.19; ProetaleCohomologyOfPAdicCurvesAndTowers §7.3.
+*Needs:* EndoscopicTransferAndUnitaryTraceComparison §§12.4, 12.5 and 12.19; ProetaleCohomologyOfPAdicCurvesAndTowers §7.3; ScholzeFunctorAndModpCohomologyOfTheLubinTateTower §5.4.
 
 ### 5.2 Saturation and finite-K pieces
 
-Prove that H^(1,+)_(ℚ̄_p) is p-torsion-free, p-adically complete and p-saturated in H^(1,+)_C, and that each H^(1,+)_(ℚ̄_p)/p^k is a smooth G_ℚ_p-module (CDN23, Corollaire 5.17, line 2658). Prove that for every finite K/ℚ_p and k ≥ 1, (H^(1,+)_(ℚ̄_p)/p^k)^(G_K) with its induced topology is the Pontryagin dual of a smooth O_L[G′]-representation of finite length, where G′ = G/p^ℤ (CDN23, Proposition 5.19, line 2673). The route embeds it continuously into (H^(1,+)_(k,C))^(G_K), which is profinite and dual to a representation of finite length by ScholzeFunctorAndModpCohomologyOfTheLubinTateTower §5.4, transported to these invariants and coefficients as in the supplier contract. For compact open H ⊂ G the induced O_L[[H]]-module is finitely generated and separated, so its given topology is the compact module topology.
+Prove that H^(1,+)_(ℚ̄_p) is p-torsion-free, p-adically complete and p-saturated in H^(1,+)_C, that the reduction H^(1,+)_(ℚ̄_p)/p^k → H^(1,+)_(k,ℚ̄_p) is injective, and that each H^(1,+)_(ℚ̄_p)/p^k is a smooth G_ℚ_p-module (CDN23, Corollaire 5.17, line 2658, with the factorisation of the reduction through H^(1,+)_C/p^k, line 2649). Completeness is the algebraic statement H^(1,+)_(ℚ̄_p) = lim_k H^(1,+)_(ℚ̄_p)/p^k. Give H^(1,+)_(ℚ̄_p)/p^k the topology induced from H^(1,+)_(k,ℚ̄_p) of §5.1. The identification is then also topological, since a projective limit carries the limit topology of its images in the stages, each with the topology induced from its stage (CDN23, Remarque 5.20, line 2691).
+
+Prove that for every finite K/ℚ_p and k ≥ 1, (H^(1,+)_(ℚ̄_p)/p^k)^(G_K) with its induced topology is the Pontryagin dual of a smooth O_L[G′]-representation of finite length, where G′ = G/p^ℤ (CDN23, Proposition 5.19, line 2673). The route embeds it continuously into (H^(1,+)_(k,C))^(G_K), which is profinite and dual to a representation of finite length by ScholzeFunctorAndModpCohomologyOfTheLubinTateTower §5.4, transported to these invariants and coefficients as in the supplier contract. For compact open H ⊂ G the induced O_L[[H]]-module is finitely generated and separated, so its given topology is the compact module topology.
+
+Prove finally that H^(1,+)_(ℚ̄_p)/p^k carries the inductive limit topology of these compact pieces along a cofinal increasing sequence of finite extensions K. The route has two steps. The intersection of H^(1,+)_(ℚ̄_p)/p^k with the image of each H^(1,+)_(k,K) is closed (CDN23, Remarque 5.20, lines 2697–2715). So H^(1,+)_(ℚ̄_p)/p^k is closed in the countable inductive limit H^(1,+)_(k,ℚ̄_p) of compact Hausdorff spaces, and a closed subspace of such a limit carries the inductive limit topology of its intersections with the stages. These intersections and the invariant pieces are mutually cofinal: the image of H^(1,+)_(k,K) is G_K-fixed, and by the finite Hochschild–Serre error terms of §5.1 the G_K-invariants lie in the image of H^(1,+)_(k,K′) for a finite extension K′ of K.
 
 **Checks.**
 
-- The invariant piece is compact in its induced topology. Algebraic finite generation over O_L[[H]] alone is not the topological assertion.
+- The invariant piece is compact in the topology induced from the stages of §5.1. In the p-adic topology it would be discrete, and in the level-zero example of §5.1, Checks, it is infinite. Algebraic finite generation over O_L[[H]] alone is not the topological assertion.
 - p-saturation means that x ∈ H^(1,+)_C with px ∈ H^(1,+)_(ℚ̄_p) lies in H^(1,+)_(ℚ̄_p). The sublattice p·H^(1,+)_(ℚ̄_p) is also p-torsion-free and p-adically complete but is not saturated when nonzero: an x outside it has px inside it.
 - For k = 1 the pieces are duals of finite-length smooth (O_L/p)[G′]-modules, with k_L-valued composition factors. For L = ℚ_p(ϖ) with ϖ² = p, ϖ·1 ≠ 0 in O_L/p = O_L/ϖ², whereas ϖ kills k_L. The filtration 0 ⊂ ϖO_L/ϖ² ⊂ O_L/ϖ² has two k_L factors. Reduction modulo ϖ, rather than p, gives k_L coefficients.
 
@@ -880,8 +888,8 @@ Prove that H^(1,+)_(ℚ̄_p) is p-torsion-free, p-adically complete and p-satura
 
 Use the base roadmap's projective envelope P_B of a block B, E_B = End(P_B) with ordinary composition, and R_B^ps (§§5.1–5.4). Define the following (CDN23 lines 2716–2745 and 2757–2769):
 
-- m_(n,B) = Hom^cont_G(P_B, H^(1,+)_(ℚ̄_p)), with its p-adic topology;
-- its continuous O_L-dual m̌_(n,B) = Hom^cont_(O_L)(m_(n,B), O_L);
+- m_(n,B) = Hom^cont_G(P_B, H^(1,+)_(ℚ̄_p)), continuity being for the compact topology of P_B and the topology of §5.1 on the target. As a module m_(n,B) is p-torsion-free, separated and complete for its own p-adic topology (CDN23 lines 2743–2745), by §5.2: m_(n,B)/p^k injects into Hom_G(P_B, H^(1,+)_(ℚ̄_p)/p^k), and m_(n,B) = lim_k Hom_G(P_B, H^(1,+)_(ℚ̄_p)/p^k) because H^(1,+)_(ℚ̄_p) = lim_k H^(1,+)_(ℚ̄_p)/p^k topologically. This p-adic topology is a topology on the multiplicity module, not on H^(1,+)_(ℚ̄_p);
+- its continuous O_L-dual m̌_(n,B) = Hom^cont_(O_L)(m_(n,B), O_L) for the p-adic topology of m_(n,B), which is the module of all O_L-linear maps, with the topology of pointwise convergence;
 - after inverting p and taking the M-part, m_(B,M) = Hom^cont_G×Ǧ(P_B⊗JL(M), H¹_(ℚ̄_p)).
 
 Hom(P_B, −) is a right E_B-module, so evaluation m_B(X)⊗̂_(E_B)P_B → X is balanced (base roadmap, Conventions).
@@ -889,8 +897,8 @@ Hom(P_B, −) is a right E_B-module, so evaluation m_B(X)⊗̂_(E_B)P_B → X is
 Its API:
 
 - Evaluation sends f⊗x to f(x), with f·e ⊗ x and f ⊗ e·x identified for e ∈ E_B.
-- m̌_(n,B) is a compact p-torsion-free O_L-module. It is the O_L-dual of m_(n,B), not m_(n,B) itself.
-- m_B(H¹_(ℚ̄_p)) = L⊗m_(n,B), by compactness of P_B.
+- m̌_(n,B) is a compact p-torsion-free O_L-module, being closed in the product of copies of O_L indexed by m_(n,B). It is the O_L-dual of m_(n,B), not m_(n,B) itself.
+- m_B(H¹_(ℚ̄_p)) = L⊗m_(n,B), by compactness of P_B: a compact subset of the inductive limit H¹_(ℚ̄_p) of the Hausdorff spaces p^(−N)H^(1,+)_(ℚ̄_p) lies in one of them.
 - G_ℚ_p acts on m_(n,B) by postcomposition and commutes with E_B and with R_B^ps.
 - m_(B,M) = Hom_G(P_B, H¹_(ℚ̄_p)[M]).
 
@@ -898,16 +906,16 @@ Its API:
 
 - If X lies in a block B′ ≠ B, Hom(P_B, X) = 0.
 - For X = Y⊗JL(M) with Ǧ acting only on the second factor, m_(B,M)(X) ≅ Hom_G(P_B, Y).
-- The O_L-valued dual m̌_(n,B) is compact, while the Pontryagin dual into L/O_L is discrete. Confusing the two changes the finiteness statement of §5.5.
+- The O_L-valued dual m̌_(n,B) is compact and p-torsion-free. The Pontryagin dual Hom^cont(m_(n,B), L/O_L) is p-power torsion: each of its elements kills some p^k·m_(n,B). For m_(n,B) = O_L the first is O_L, finitely generated, and the second is L/O_L, which is not finitely generated over O_L. Confusing the two changes the finiteness statement of §5.5.
 
 *Needs:* §§0.2 and 5.1; PadicLocalLanglandsForGL2Qp §§5.1–5.4.
 
 ### 5.4 Integral block evaluation
 
-Prove that evaluation identifies H^(1,+)_(ℚ̄_p) with the p-adic completion of ⊕_B m_(n,B)⊗_(E_B)P_B, and that m_(n,B)/p^k ≅ Hom_G(P_B, H^(1,+)_(ℚ̄_p)/p^k) (CDN23, Proposition 5.21, line 2716). The route has four steps:
+Prove that evaluation identifies H^(1,+)_(ℚ̄_p) with the p-adic completion of ⊕_B m_(n,B)⊗_(E_B)P_B, and that m_(n,B)/p^k ≅ Hom_G(P_B, H^(1,+)_(ℚ̄_p)/p^k) (CDN23, Proposition 5.21, line 2716). The completion is the algebraic one, the projective limit of the reductions modulo p^k. The topologies are those of the stages of §5.1, not the p-adic topology and not the discrete topology on the reductions. Modulo p^k, evaluation is the inductive limit over K of the evaluation isomorphisms of the compact finite-K pieces. Each of these is a homeomorphism, being a continuous bijection of compact Hausdorff spaces. So, by §5.2, the evaluation modulo p^k is a topological isomorphism onto H^(1,+)_(ℚ̄_p)/p^k when its source carries the inductive limit topology of the finite-K pieces, and the identification is topological in the limit over k. The route has four steps:
 
 - On each finite-K piece of §5.2, which is compact of finite length, apply the Gabriel–Morita decomposition of the base roadmap §§5.1 and 5.3.
-- Pass through colim_K using compactness of P_B.
+- Pass through colim_K using compactness of P_B. By §5.2, H^(1,+)_(ℚ̄_p)/p^k is the inductive limit of a countable increasing family of compact pieces, so the image of a continuous map from P_B lies in one of them (CDN23 line 2729).
 - For surjectivity of reduction, finite length puts a map P_B → (X/p^j)^(G_K) into the image of one (X/pʲ⁺¹)^(G_K′), and projectivity of P_B lifts it.
 - Pass to the p-adic limit.
 
@@ -918,6 +926,7 @@ This extends the base roadmap's compact Morita evaluation to the noncompact p-ad
 - Modulo p^k each vector has finite block support, but the finite set of blocks may grow with k.
 - The completed sum is neither the algebraic direct sum nor the product over all blocks. An element with nonzero components in infinitely many blocks, tending to zero p-adically, lies in it.
 - m_(n,B) is p-torsion-free, so m_(n,B)/p^k → Hom(P_B, X/p^k) is injective. Surjectivity is the content of the lifting step.
+- With the discrete topology on X/p^k a continuous map out of the compact P_B would have finite image. At level zero, over a finite K containing ℚ_(p²), (X/p)^(G_K) contains a copy of Sp_1(k_L)^*. It is the reduction of the integral Steinberg classes Sp_1(O_L)^* on one copy of Ω, which are almost smooth as in §5.1, Checks (ProetaleCohomologyOfPAdicCurvesAndTowers §6.9). Since Sp_1(k_L) is irreducible and infinite-dimensional, Sp_1(k_L)^* has no nonzero finite G-stable subgroup. For the block B containing Sp_1(k_L), P_B maps onto Sp_1(k_L)^*, and this map is continuous for the topology of §5.2 but not for the discrete one. So the discrete topology would lose this part of m_(n,B)/p.
 
 *Needs:* §§5.2–5.3; PadicLocalLanglandsForGL2Qp §§5.1 and 5.3.
 
@@ -929,7 +938,7 @@ Prove that m̌_(n,B) is a finitely generated R_B^ps-module (CDN23, Théorème 5.
 
 - The residual Hom is finite-dimensional. Finite length of the arithmetic invariants alone does not bound this geometric multiplicity.
 - For a block with no constituent in the cohomology, m̌_(n,B) = 0, which is finitely generated.
-- Topological Nakayama applies because m̌_(n,B) is compact. For the discrete Pontryagin dual it would not.
+- Topological Nakayama applies because m̌_(n,B) is compact. For the p-power-torsion Pontryagin dual it fails: L/O_L = ϖ·(L/O_L) has zero reduction modulo the maximal ideal of O_L but is not zero.
 
 *Needs:* §§5.3–5.4; PadicLocalLanglandsForGL2Qp §§5.4 and 6.7; ScholzeFunctorAndModpCohomologyOfTheLubinTateTower §5.4.
 
@@ -955,7 +964,7 @@ For a block B containing no constituent of H¹_ét(M^p_(n,C), k_L), m_(n,B) = 0.
 
 ### Dependencies
 
-Layers 0 and 4; PadicLocalLanglandsForGL2Qp §§5.1–5.4 and 6.7; EndoscopicTransferAndUnitaryTraceComparison §§12.14 and 12.19; ProetaleCohomologyOfPAdicCurvesAndTowers §7.3; ScholzeFunctorAndModpCohomologyOfTheLubinTateTower §5.4.
+Layers 0 and 4; PadicLocalLanglandsForGL2Qp §§5.1–5.4 and 6.7; EndoscopicTransferAndUnitaryTraceComparison §§12.4, 12.5, 12.14 and 12.19; ProetaleCohomologyOfPAdicCurvesAndTowers §7.3; ScholzeFunctorAndModpCohomologyOfTheLubinTateTower §5.4.
 
 ## Layer 6: Interpolated factorisation over type rings
 
@@ -1062,7 +1071,7 @@ Let p > 3, fix n, and let L contain the fields of definition of all JL(M) of lev
 
     H¹_ét(M^p_(n,ℚ̄_p), L(1)) ≅ ⊕_(M∈ΦNᵖ_n) ( ⊕̂_B Π*(ρ_(B,M)) ⊗_(R_(B,M)) ρ_(B,M) ⊗_(R_(B,M)) Ř_(B,M) ) ⊗_L JL(M).
 
-The left side is the arithmetic completion of §5.1, not all of H¹_ét(M^p_(n,C), L(1)). The outer sum is finite. The inner completion is p-adic for the lattices of §5.4, after which p is inverted. Ř_(B,M) is the continuous L-dual of R_(B,M). Sources: CDN23, Théorème 0.1 (line 121) and Théorème 5.15 (line 2620), with the hypothesis p > 3 of line 93. The route combines §5.4 after inverting p, §5.6 and §6.5, recovering Π*(ρ) through the base roadmap's Morita evaluation.
+The left side is the arithmetic completion of §5.1, not all of H¹_ét(M^p_(n,C), L(1)), with the topology of §5.1. The outer sum is finite. The inner completion is the algebraic p-adic completion of the sum of the natural G_ℚ_p×G×Ǧ-stable lattices of the summands, the lattices of §5.4, after which p is inverted (CDN23, footnote 6, line 178). The isomorphism is topological for the topology that §§5.4, 5.6 and 6.5 transport from the stages of §5.1. In that topology the reductions of the lattices modulo p^k are inductive limits of compact pieces, not discrete modules; neither side carries the p-adic topology of its lattice. Ř_(B,M) is the continuous L-dual of R_(B,M). Sources: CDN23, Théorème 0.1 (line 121) and Théorème 5.15 (line 2620), with the hypothesis p > 3 of line 93. The route combines §5.4 after inverting p, §5.6 and §6.5, recovering Π*(ρ) through the base roadmap's Morita evaluation.
 
 **Checks.**
 
@@ -1070,6 +1079,7 @@ The left side is the arithmetic completion of §5.1, not all of H¹_ét(M^p_(n,C
 - Test the two operations on A = L⟨T⟩ at x: T = 0. Its continuous dual Ǎ is the space of bounded sequences (ℓ(Tⁿ))_(n≥0), on which T acts by the left shift, since (Tℓ)(Tⁿ) = ℓ(Tⁿ⁺¹). The shift is surjective with kernel L·ev₀, so Ǎ/TǍ = 0 while Ǎ[T] = L·ev₀. Hence κ(x)⊗_A(P⊗_AǍ) = 0 for every A-module P, while the T-torsion of P⊗_AǍ is P/TP⊗L·ev₀ for torsion-free P. Reading the closed point as an ordinary fibre would lose the whole multiplicity.
 - For the Steinberg block and M = Sp the summand is (St^cont)*⊗1⊗1, in agreement with §4.2.
 - Modulo p^k each integral vector has finite block support, so the unrestricted product over B is not the left side.
+- Take p = 5, n = 0, L = ℚ_5 and the Steinberg summand (St^cont)*⊗1⊗1 of M = Sp. With μ_j = δ_(5^j) − δ₀ as in §5.1, Checks, the diagonal classes (μ_j, μ_j) on the two copies of Ω are G_ℚ_5-invariant, since Frobenius only exchanges the copies, and Ǧ-invariant, since ϖ_D does the same. They tend to 0 on the left by §5.1, and in (St^cont)* for the topology of compact convergence of Conventions. Yet each has norm 1, and any two are incongruent modulo 5. So the isomorphism is topological for these topologies, and would fail for the norm topology on (St^cont)* or the p-adic topology of the lattices.
 
 *Needs:* §§5.4, 5.6, 6.2 and 6.5; PadicLocalLanglandsForGL2Qp §§5.3 and 5.12.
 
