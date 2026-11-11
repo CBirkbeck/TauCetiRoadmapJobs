@@ -19,8 +19,9 @@ purity along an arbitrary ideal, which for `F`-finite residue fields is Heitmann
 (Layer Q10). The end theorems are the
 ind-syntomic André lemma (Q9.3), semiperfectoid covers of `p`-Zariski rings (Q9.6), fibre products
 of perfectoid rings (Q5.6), tilting of perfectoid valuation rings (Q6.4, Q6.7), torsion-free
-presentations (Q6.8), perfectoid covers of regular local rings (Q10.2) and the almost vanishing of
-`Tor` (Q10.5–Q10.6).
+presentations (Q6.8), perfectoid covers of regular local rings (Q10.2), such a cover inside the
+completed absolute integral closure for an `F`-finite residue field (Q10.4), and the almost
+vanishing of `Tor` (Q10.5–Q10.6).
 
 ## Scope and ownership
 
@@ -63,6 +64,9 @@ Bhatt–Scholze Remark 10.13.
 - From EnhancedDerivedSheaves: Kunz's theorem that Frobenius of a regular `𝔽_p`-algebra is flat
   (§E1.6, `frobenius_flat_of_isRegular`).
 - From DerivedDeRhamCohomology: Bhatt's ordinary flatness criterion over a noetherian base (§1.10).
+- From DeformationAndDerivedPatchingAlgebra: Cohen rings, their truncated formal smoothness and the
+  lifting of a residue map from a Cohen ring to a complete local ring (§1.10), which gives the
+  Frobenius lifts of the Cohen rings used in Q10.2 and Q10.4.
 - From StableReduction: syntomic morphisms (Layer 1), whose affine local model is Tau Ceti's
   `TauCeti.Algebra.IsStandardSyntomicOfRelativeDimension`.
 - From PerfectoidSpaces, the Tate-ring forms of Q5.1 (1) and Q5.3 (P1.4–P1.6); Q5.1 and Q5.3 state
@@ -94,9 +98,11 @@ Frobenius lift. For a residue field that is not `F`-finite no cover inside `(R�
 here or by a supplier: Q10.2 gives a faithfully flat perfectoid cover of `R` with no map to
 `(R⁺)^∧`, and Q10.5 takes a cover together with such a map as hypotheses.
 
-**Not owned here.** Purity for flat cohomology, the pro-fppf site, arc covers and the algebraic
-tilting of étale cohomology (Česnavičius–Scholze §§2.2, 3–6) are consumers of this roadmap and
-are listed under "Downstream consumers".
+**Not owned here.** Purity for flat cohomology (Česnavičius–Scholze §§3–6), the pro-fppf site
+(§4.1.1) and the algebraic tilting of étale cohomology (Theorem 2.2.7, EtaleDualityAndPerverseSheavesPartII
+§8.5) are consumers of this roadmap and are listed under "Downstream consumers". Arc covers and
+the tilting of complete arc covers (Česnavičius–Scholze Lemma 2.2.2) belong to
+ArcTopologyAndDescent §12.6, which does not use this roadmap.
 
 ## Conventions
 
@@ -323,6 +329,18 @@ At the Tau Ceti revision pinned by the repository's `lake-manifest.json`.
   `A`, `B` both `π`-torsion-free and `π`-adically complete, (faithful) flatness of `A/π → B/π`
   gives (faithful) flatness of `A → B` (Bhatt, Proposition 5.1).
 
+### From TauCetiRoadmap.DeformationAndDerivedPatchingAlgebra
+
+- §1.10: Cohen rings (characteristic-zero complete discrete valuation rings with maximal ideal
+  `(p)` and a labelled residue field), the formal smoothness of `ℤ/pⁿ → C/pⁿ` for every `n ≥ 1`,
+  and compatible coefficient lifting: for a Cohen ring `C` and a complete local ring `R` with
+  residue field of characteristic `p`, every unital ring map `C/p → R/𝔪_R` lifts to a ring map
+  `C → R`, by lifting along the square-zero surjections `R/𝔪_R^{n+1} → R/𝔪_R^n` (Stacks
+  Lemmas 10.160.6–10.160.7). Taking `R = C` and the map `x ↦ x^p` of the residue field gives a
+  *Frobenius lift* of `C`: a ring endomorphism `φ_C` with `φ_C(c) ≡ c^p mod p` for every `c ∈ C`.
+  No perfectness of the residue field is assumed. Supplier checks: for `C = ℤ_p` the only
+  Frobenius lift is the identity; for `C = W(k)` with `k` perfect it is the Witt vector Frobenius.
+
 ### From TauCetiRoadmap.StableReduction
 
 - Layer 1: syntomic morphisms (flat, locally finitely presented, with local complete intersection
@@ -351,7 +369,9 @@ presentations (`exists_surjective_of_isSMulRegular`, `exists_surjective_of_isSMu
 `exists_surjective_of_isSMulRegular_p`), the approximation lemma (`exists_approximation`), the
 nilpotence criterion (`isTopologicallyNilpotent_iff_forall_lt_one`), the ind-syntomic André lemma
 (`exists_indSyntomic_andre`), semiperfectoid covers (`exists_semiperfectoid_cover`), perfectoid
-covers of regular local rings (`exists_faithfullyFlat_isIntegralPerfectoid`) and the almost vanishing
+covers of regular local rings (`exists_faithfullyFlat_isIntegralPerfectoid`) and, for `F`-finite
+residue fields, inside the completed absolute integral closure
+(`exists_faithfullyFlat_isIntegralPerfectoid_injective_completion`), and the almost vanishing
 of `Tor`, given a cover (`tor_map_mul_root_eq_zero_of_cover`) and for `F`-finite residue fields
 (`tor_map_mul_root_eq_zero`), with the definitions `IsSyntomic`, `IsIndSyntomic` and `IsPZariski`;
 integral perfectoidness is Tau Ceti's `TauCeti.Perfectoid.IsIntegralPerfectoid`. Its module docstring names the relative tilting equivalence (Q6.1)
@@ -410,8 +430,8 @@ Prove:
 
 1. For any family `(A_i)_{i∈I}` of rings, `(∏ A_i)♭ ≅ ∏ A_i♭` by the projections; if the `A_i` are
    `p`-adically complete, so is `∏ A_i`, and `A_inf(∏ A_i) ≅ ∏ A_inf(A_i)` compatibly with `θ`.
-   This is the kept variant of the product clause of PerfectoidQuotients §0.6
-   (`integralPerfectoid_pi_iff`): no perfectoid hypothesis.
+   This is the product clause of PerfectoidQuotients §0.6 (`integralPerfectoid_pi_iff`) without
+   its perfectoid hypothesis.
 2. Let `A → A' ← B` be maps of `p`-adically complete rings with `A'[p^∞] = A'[p]`. Then
    `C = A ×_{A'} B` is `p`-adically complete, `p^{n+1}(A × B) ∩ C ⊆ pⁿC` for all `n`, and the
    induced maps `C♭ → A♭ ×_{A'♭} B♭` and `A_inf(C) → A_inf(A) ×_{A_inf(A')} A_inf(B)` are ring
@@ -448,8 +468,8 @@ Let `A` be integral perfectoid and `ϖ ∈ A` with `ϖ^p | p` and `A` `ϖ`-adica
 2. consequently `(ϖ♭)^p | p♭`, the ideals `(ϖ♭)` and `(p♭)` of `A♭` do not depend on the choices,
    and `A♭` is `ϖ♭`-adically complete
 
-(Česnavičius–Scholze (2.1.2.2), p. 11; BMS1 proof of Lemma 3.10 (i), pp. 22–23). This is the kept
-variant, for integral perfectoid rings with torsion and possibly without a Tate structure, of the
+(Česnavičius–Scholze (2.1.2.2), p. 11; BMS1 proof of Lemma 3.10 (i), pp. 22–23). This is the form,
+for integral perfectoid rings with torsion and possibly without a Tate structure, of the
 isomorphism `R♭°/ϖ♭ ≅ R°/ϖ` for perfectoid Tate rings in PerfectoidSpaces P1.4–P1.6.
 
 *Proof route.* Modulo `ϖ^p`, `x ↦ x♯` is the projection of `lim_F A/ϖ` (Q5.1 (1)) to the
@@ -500,7 +520,10 @@ For (2), `[ϖ♭]` acts on `A[p]` through `(ϖ♭)♯` and on `A♭[p♭]` throu
 - For `A = 𝒪_C` both sides of (1) vanish.
 - For a perfect `𝔽_p`-algebra, `ξ = p`, `p♭ = 0`, and (1) says `A♭[0] = A ≅ A[p] = A`.
 - For `A = 𝒪_C × 𝔽̄_p` (integral perfectoid by PerfectoidQuotients §0.6) and `ϖ = (p^{1/p}, 0)`:
-  `A[ϖ] = 0 × 𝔽̄_p` and `A♭[ϖ♭] = 0 × 𝔽̄_p`, matching (2); for `ϖ = (p^{1/p}, 1)` both sides are 0.
+  `A[ϖ] = 0 × 𝔽̄_p` and `A♭[ϖ♭] = 0 × 𝔽̄_p`, matching (2), and the same holds for the root
+  `ϖ = (p^{1/p²}, 0)`, whose `p`-th power `(p^{1/p}, 0)` divides `p = (p, 0)`. The element
+  `(p^{1/p}, 1)` also has `p`-th power dividing `p`, but it is not admissible in (2):
+  `⋂_n (p^{1/p}, 1)ⁿA = 0 × 𝔽̄_p ≠ 0`, so `A` is not `(p^{1/p}, 1)`-adically separated.
 - The perfectoid hypothesis is needed: for the semiperfect but nonreduced `A = 𝔽_p[t^{1/p^∞}]/(t)`
   with `ϖ = 0`, `A♭ = lim_F A` is the `t`-adic completion of `B = 𝔽_p[t^{1/p^∞}]`: Frobenius of `B`
   is an automorphism carrying `(t)` to `(t^p)`, and `(x_n)_n ↦ (F^n(x_n))_n` identifies `lim_F B/(t)`
@@ -538,7 +561,7 @@ the quotients by `p`-power torsion (`perfectoid_torsion_free_quotient`).
 perfectoid rings and `g : B → A'` any map from an integral perfectoid ring. Then
 `C = A ×_{A'} B` (the subring of `A × B` on which `f` and `g` agree) is integral perfectoid, and the
 projections induce `C♭ ≅ A♭ ×_{A'♭} B♭` (Česnavičius–Scholze Proposition 2.1.4, second part, and
-proof, second paragraph, pp. 12–13).
+proof, second paragraph, p. 12).
 
 `Suggested.lean` states integral perfectoidness of `C`; the tilt identification is Q5.2 (2).
 
@@ -667,8 +690,11 @@ the tilt is used. Mathlib's `PreTilt.isDomain` is the rank-one valued-field case
 
 *Proof route.* By `Perfection.quotientMulEquiv`, `V♭` is multiplicatively the monoid of compatible
 sequences `(x_n)` of `V` with `x♯ = x_0`. If `x♯ = 0` then every `x_n^{pⁿ} = 0`, so `x = 0`. If
-`x♯ | y♯` with `x ≠ 0`, then `v(x_n) ≤ v(y_n)` for each `n`, so `z_n = y_n/x_n ∈ V` is a compatible
-sequence with `xz = y`. Totality of the order on values gives the valuation-ring property.
+`x♯ | y♯` with `x ≠ 0`, then for each `n` the element `x_n ≠ 0` has `x_n^{pⁿ} = x♯` dividing
+`y♯ = y_n^{pⁿ}`; for the valuation `|·|` of `V`, written multiplicatively, this says
+`|y_n|^{pⁿ} ≤ |x_n|^{pⁿ}`, hence `|y_n| ≤ |x_n|` in the torsion-free ordered value group, that is,
+`x_n | y_n`. So `z_n = y_n/x_n ∈ V` is a compatible sequence with `xz = y`. Totality of the order on
+values gives the valuation-ring property.
 
 *Needs:* Mathlib `ValuationRing`, `ValuationRing.ValueGroup`, `PreTilt`, `Perfection.quotientMulEquiv`.
 
@@ -679,6 +705,9 @@ sequence with `xz = y`. Totality of the order on values gives the valuation-ring
   value-group map `{1} → ℤ` is not surjective.
 - For `V = 𝔽_p⟦t⟧` (`p = 0`), `V♭ = lim_F 𝔽_p⟦t⟧ = ⋂ 𝔽_p⟦t^{pⁿ}⟧ = 𝔽_p`: the tilt can lose the whole
   value group.
+- Divisibility reverses the multiplicative valuation: in `V = 𝒪_C`, `x = 1` and
+  `y = p♭ = (p^{1/pⁿ})_n` have `x♯ = 1` dividing `y♯ = p`, with `|y_n| = |p|^{1/pⁿ} ≤ 1 = |x_n|` and
+  quotient `z = p♭`; the opposite inequality `|x_n| ≤ |y_n|` would make `p` a unit of `𝒪_C`.
 
 ### Q6.4 Tilting of perfectoid valuation rings
 
@@ -717,11 +746,16 @@ Let `V` be a valuation ring and `a ∈ V` with `V` `a`-adically complete. Prove 
 topology then so is `V_𝔮` for every prime `𝔮` (Česnavičius–Scholze proof of Proposition 2.1.9, last
 paragraph and footnote 8, p. 15). `a = 0` is allowed.
 
-*Proof route.* Every element of `V ∖ 𝔮` divides every element of `𝔮`, so `𝔮 ≅ 𝔮V_𝔮` and `𝔮` kills
-`V_𝔮/V`. In the inverse system of exact sequences `0 → V_𝔮/V → V/aⁿ → V_𝔮/aⁿ → V_𝔮/V → 0` the
-transition maps on the left copy are multiplication by `a`, hence zero; the snake lemma in the
-limit gives completeness of `V_𝔮`. For the valuation topology, completeness of `V` is completeness of
-the nonunital ring `𝔮` with its principal ideals open, which `𝔮 ≅ 𝔮V_𝔮` does not change.
+*Proof route.* For `a = 0` there is nothing to prove: every ring is complete for the zero ideal.
+Let `a ≠ 0`, so that multiplication by `aⁿ` is injective on the domains `V` and `V_𝔮`. Every
+element of `V ∖ 𝔮` divides every element of `𝔮`, so `𝔮 ≅ 𝔮V_𝔮` and `𝔮` kills `V_𝔮/V`. The snake
+lemma for multiplication by `aⁿ` on `0 → V → V_𝔮 → V_𝔮/V → 0` gives exact sequences
+`0 → V_𝔮/V → V/aⁿ → V_𝔮/aⁿ → V_𝔮/V → 0` (the outer terms are the kernel and cokernel of `aⁿ` on
+`V_𝔮/V`, which `a ∈ 𝔮` kills); in this inverse system the transition maps on the left copy are
+multiplication by `a`, hence zero, and passing to the limit gives completeness of `V_𝔮`. For the
+valuation topology: if `𝔮 = 0`, `V_𝔮 = Frac(V)` carries the trivial valuation, whose topology is
+discrete, hence complete; if `𝔮 ≠ 0`, completeness of `V` is completeness of the nonunital ring `𝔮`
+with its principal ideals open, which `𝔮 ≅ 𝔮V_𝔮` does not change.
 
 *Needs:* Mathlib `ValuationRing`, `Localization.AtPrime`, `IsAdicComplete`.
 
@@ -729,7 +763,9 @@ the nonunital ring `𝔮` with its principal ideals open, which `𝔮 ≅ 𝔮V_
 
 - For `V = 𝒪_C` and `𝔮 = 𝔪`, `V_𝔮 = V`.
 - The prime `𝔮 = 0` is excluded for `a ≠ 0`: `Frac(V)` is not `a`-adically separated (`a` is a unit).
-- For `a = 0`, `0`-adic completeness holds for every ring and the statement is empty.
+- For `a = 0`, `0`-adic completeness holds for every ring and the statement is empty. The exact
+  sequence of the proof route needs `a ≠ 0`: for `V = ℤ_p`, `𝔮 = 0` and `a = 0` it would embed the
+  torsion module `ℚ_p/ℤ_p` into the torsion-free `ℤ_p`.
 
 ### Q6.6 Localizations of perfectoid valuation rings
 
@@ -990,12 +1026,15 @@ is regular, so `R[X]/(aX − g)` embeds in its localization at `a`, which is `R[
 
 ### Q7.6 Fibrewise nonzero hypersurfaces are syntomic
 
-Let `A` be a ring and `g ∈ A[x_1, …, x_n]`. Prove: if the image of `g` in `κ(𝔭)[x_1, …, x_n]` is
-nonzero for every prime `𝔭` of `A`, then `A[x]/(g)` is standard syntomic of relative dimension
-`n − 1` over `A`; in particular it is flat and finitely presented (Stacks Lemma 10.136.13, case of
-one equation; Česnavičius–Scholze §2.3.6, last paragraph, p. 28). The case `n = 0` is allowed:
-then `g ∈ A` is a unit in every residue field, hence a unit, and `A[x]/(g) = 0` is standard syntomic
-with empty fibres.
+Let `A` be a ring, `n ≥ 1` and `g ∈ A[x_1, …, x_n]`. Prove: if the image of `g` in
+`κ(𝔭)[x_1, …, x_n]` is nonzero for every prime `𝔭` of `A`, then `A[x]/(g)` is standard syntomic of
+relative dimension `n − 1` over `A`; in particular it is flat and finitely presented (Stacks
+Lemma 10.136.13, case of one equation; Česnavičius–Scholze §2.3.6, last paragraph, p. 28). For
+`n = 0` the hypothesis says that `g ∈ A` lies in no prime ideal, hence is a unit, and `A/(g) = 0`;
+the zero algebra is standard syntomic of every relative dimension `m`, through the presentation
+`A[x_1, …, x_{m+1}]/(1)` with `m + 1` generators and one relation, as it is flat and has no
+nontrivial fibre. (Tau Ceti's presentation has `m + c` generators and `c` relations, so no
+presentation with `0` generators and the relation `g` has a relative dimension.)
 
 *Proof route.* Each fibre `κ(𝔭)[x]/(ḡ)` is empty (`ḡ` a unit) or a hypersurface of dimension
 `n − 1`, so `A[x]/(g)` is a relative global complete intersection; it is flat by Stacks
@@ -1252,8 +1291,11 @@ paragraphs, (2.3.6.1)–(2.3.6.10), pp. 26–28).
 *Proof route.* `Â_0` is integral perfectoid (`perfectoid_completed_root_polynomial`). By Q8.3 there is
 `Q ∈ Â_0` with compatible roots and `|P − Q| < max(|Q|, |ϖᵐ|)` for every continuous valuation on
 `Â_0[1/ϖ]` bounded on `Â_0`; then the continuous valuations of `Â_0[P/ϖᵐ]` and `Â_0[Q/ϖᵐ]` agree and,
-by Q8.4, a power of `P/ϖᵐ − Q/ϖᵐ` lies in `ϖ` times either algebra; also `P − Q ∈ ϖ^{1/p^t}Â_0` by the
-iterated Frobenius bijections (`perfectoid_compatible_roots_iterated_frobenius`). So `Q^{1/pʲ}` is
+by Q8.4, a power of `P/ϖᵐ − Q/ϖᵐ` lies in `ϖ` times either algebra; also `P − Q ∈ ϖ^{1/p^t}Â_0`, by
+iterating the bijection `x ↦ x^p : Â_0/π → Â_0/π^p` of PerfectoidSpaces P1.24 at `π = ϖ^{1/pʲ}`,
+`1 ≤ j ≤ t` (each `π^p = ϖ^{1/p^{j−1}}` divides `p`, `Â_0` is `π`-adically complete as `π^{pʲ} = ϖ`,
+and no torsion-freeness is assumed, so `p = 0` is allowed; Česnavičius–Scholze (2.1.2.4),
+p. 11). So `Q^{1/pʲ}` is
 monic modulo `ϖ^{1/p^{j+t}}`, `ϖ^{m/pʲ}, Q^{1/pʲ}` is regular (Stacks Lemma 10.68.9), Q7.5 describes
 `Â_0[Q^{1/pʲ}/ϖ^{m/pʲ}]`, and the union over `j` has perfectoid completion, hence is `p`-integrally
 closed; it is the `p`-integral closure of both `Â_0[P/ϖᵐ]` and `Â_0[Q/ϖᵐ]`. Descend to `A_0` with
@@ -1480,10 +1522,16 @@ rings with uniformizer `p` finite flat over `W`; in each stage `p` is a regular 
 
 **Theorem** (`exists_faithfullyFlat_isIntegralPerfectoid`). Every regular local ring `R` with
 `p ∈ 𝔪_R` admits a faithfully flat map `R → R_∞` to an integral perfectoid ring (Bhatt–Scholze
-Remark 3.11, pp. 32–33, for complete `R`; Bhatt Proposition 5.2, p. 8).
+Remark 3.11, pp. 32–33, for complete `R` of mixed characteristic; Bhatt Proposition 5.2 with
+modification (a) of the paragraph following its statement, p. 8, for `p`-torsion-free `R`; in
+equal characteristic `p` the cover is the perfection of `R`, faithfully flat by Kunz's theorem).
 
 For complete `R` of mixed characteristic `(0, p)` with residue field `k` (not necessarily perfect),
-the cover is the following. Choose a Cohen ring `W` for `k` with a Frobenius lift `φ_W` and write
+the cover is the following. Choose a Cohen ring `W` for `k` (PerfectoidSpaces P7.16a) and a
+Frobenius lift `φ_W` of `W`, a ring endomorphism with `φ_W(w) ≡ w^p mod p`; it exists by the
+compatible coefficient lifting of DeformationAndDerivedPatchingAlgebra §1.10 applied to the
+complete local ring `W` and the residue map `x ↦ x^p` of `k`, and it is not unique when `k` is
+imperfect (Bhatt–Scholze Remark 3.11, p. 32, chooses one). Write
 `R = A/(f)` with `A = W⟦x_1, …, x_d⟧`, `d = dim R`, and `f ∈ 𝔪_A ∖ 𝔪_A²`. Writing
 `f ≡ a_0 p + Σ a_i x_i` in `𝔪_A/𝔪_A²`: if `a_0 ≠ 0`, the δ-structure on `A` extending `φ_W` with
 `φ(x_i) = x_i^p` makes `f` distinguished; if `a_0 = 0`, after a change of variables `f = x_1 − p` and
@@ -1504,7 +1552,8 @@ faithfully flat. Since `p` is regular on `R` and `R_∞[p] = 0`, both are `p`-to
 `p`-complete, and DerivedDeRhamCohomology §1.10 gives ordinary faithful flatness.
 
 *Needs:* PerfectoidSpaces P4.15.2 and P7.16a (`cohen_unramified`, `cohen_ramified`,
-`cohen_equalCharacteristic`); PrismaticCohomology §§0.61–0.63, §0.79; EnhancedDerivedSheaves §E1.6;
+`cohen_equalCharacteristic`); DeformationAndDerivedPatchingAlgebra §1.10 (the Frobenius lift
+`φ_W`); PrismaticCohomology §§0.61–0.63, §0.79; EnhancedDerivedSheaves §E1.6;
 DerivedDeRhamCohomology §1.10; Mathlib `IsRegularLocalRing`, `PowerSeries`, `AdicCompletion`.
 
 **Checks.**
@@ -1517,13 +1566,19 @@ DerivedDeRhamCohomology §1.10; Mathlib `IsRegularLocalRing`, `PowerSeries`, `Ad
 - For `R = 𝔽_p⟦t⟧` (equal characteristic), `R_∞ = colim_F R = ⋃ 𝔽_p⟦t^{1/pⁿ}⟧`, perfect and
   faithfully flat over `R`.
 - For `R` a field of characteristic `p` (`d = 0`), `R_∞` is its perfect closure.
+- The Frobenius lift is a choice when `k` is imperfect: for `k = 𝔽_p(t)` and `W` the `p`-adic
+  completion of `ℤ_p[t]_{(p)}`, both `t ↦ t^p` and `t ↦ t^p + p` extend to Frobenius lifts (an
+  element of `ℤ_p[t]` outside `pℤ_p[t]` goes to one whose residue is a nonzero element of `𝔽_p[t]`,
+  a unit of `W`), while the identity of `W` is not one, as `t ≢ t^p mod p`. For `k = 𝔽_{p²}`,
+  `W = W(𝔽_{p²})` and the identity is again not a lift: a primitive `(p² − 1)`-st root of unity
+  `ζ` has `ζ^p ≢ ζ mod p`; the Witt vector Frobenius, `ζ ↦ ζ^p`, is the only lift.
 
 ### Q10.3 The completed absolute integral closure is perfectoid
 
 Let `R` be a domain whose fraction field has characteristic `0`, with `p` a nonunit of `R`. Prove
 that `R⁺` is `p`-torsion-free, every monic polynomial of positive degree over `R⁺` has a root in
 `R⁺`, every element of `R⁺` has compatible `p`-power roots in `R⁺`, and `(R⁺)^∧` is integral
-perfectoid (Bhatt–Scholze Remark 10.13, p. 84; Česnavičius Lemma 4.7, p. 8). `R` need not be
+perfectoid (Bhatt–Scholze Remark 10.13, p. 83; Česnavičius Lemma 4.7, p. 8). `R` need not be
 noetherian or complete.
 
 *Proof route.* `R⁺` is a domain of characteristic `0`, integrally closed in its algebraically closed
@@ -1547,7 +1602,8 @@ Let `(R, 𝔪)` be a complete regular local ring of mixed characteristic `(0, p)
 `k` is `F`-finite, that is, `k` is a finite module over its subfield `k^p` of `p`-th powers. Write
 `R = A/(f)` with `A = W⟦x_1, …, x_d⟧`, the presentation of Q10.2 (after its change of variables
 when `a_0 = 0`, so that `f(0)` has `p`-adic valuation one) and its δ-structure `φ_A` (`φ_A` extends
-the Frobenius lift `φ_W` of the Cohen ring `W` and sends each `x_i` to `x_i^p`), and let
+the Frobenius lift `φ_W` of the Cohen ring `W` chosen in Q10.2, which exists by
+DeformationAndDerivedPatchingAlgebra §1.10, and sends each `x_i` to `x_i^p`), and let
 `R_n := A/(φ_A^n(f))`, an `R`-algebra through `φ_A^n`. Prove: (1) `W` is a finite free module over
 `φ_W^n(W)` of rank `[k : k^p]^n`, hence `A` is finite free over `φ_A^n(A)` with basis the products
 `w·x^a` of a basis `w` of `W` over `φ_W^n(W)` and the monomials `x^a` with `0 ≤ a_i < pⁿ`, and
@@ -1559,8 +1615,14 @@ Q10.2, hence integral perfectoid, `R → R̂_∞` is faithfully flat, and `R̂_�
 `R`-algebra map. For perfect `k` and the presentations `f = x_1 − p` (unramified) and `f = p − g`
 with `g ∈ (p, x)²` (ramified), `R_n` is the stage `W(k)[p^{1/pⁿ}]⟦x_2^{1/pⁿ}, …, x_d^{1/pⁿ}⟧`,
 resp. `W(k)⟦x^{1/pⁿ}⟧/(p − g)`, of PerfectoidSpaces P7.17 after identifying `W(k)` with itself
-through the automorphism `φ_W^n` (Bhatt–Scholze Remark 3.11, pp. 32–33, and Remark 10.13, p. 84;
+through the automorphism `φ_W^n` (Bhatt–Scholze Remark 3.11, pp. 32–33, and Remark 10.13, p. 83;
 Česnavičius Lemma 5.2 and proof, p. 12).
+
+**Theorem** (`exists_faithfullyFlat_isIntegralPerfectoid_injective_completion`). In particular,
+a complete regular local ring `R` of mixed characteristic `(0, p)` with `F`-finite residue field
+admits a faithfully flat map `R → R'` to an integral perfectoid ring together with an injective
+`R`-algebra map `R' → (R⁺)^∧`; by (4), `R' = R̂_∞` works. This is the cover that Q10.6 feeds into
+Q10.5. Q10.2 alone gives a faithfully flat perfectoid cover with no map to `(R⁺)^∧`.
 
 *Proof route.* `W` is `p`-adically complete and `p`-torsion-free with `W/p = k` and `φ_W(p) = p`.
 As `k` is finite over `k^p`, the complete form of Nakayama's lemma makes `W` finite over `φ_W(W)`;
@@ -1583,9 +1645,10 @@ filtered colimit of finite free maps, `R/p → R̂_∞/p` is faithfully flat, an
 `p`-torsion-free and `p`-complete, so DerivedDeRhamCohomology §1.10 gives faithful flatness;
 injectivity of the completed map follows from (3).
 
-*Needs:* Q10.2, Q10.3; PerfectoidSpaces P4.15.2, P7.16a and P7.17; DerivedDeRhamCohomology §1.10;
-Mathlib `Module.FaithfullyFlat`, `Module.Finite`, `integralClosure`, `IsIntegrallyClosed`,
-`IsRegularLocalRing`, `Subfield`.
+*Needs:* Q10.2, Q10.3; PerfectoidSpaces P4.15.2, P7.16a and P7.17; DeformationAndDerivedPatchingAlgebra
+§1.10 (the Frobenius lift `φ_W`); DerivedDeRhamCohomology §1.10; Mathlib `Module.FaithfullyFlat`,
+`Module.Finite`, `integralClosure`, `IsIntegrallyClosed`, `IsRegularLocalRing`, `Subfield`,
+`AdicCompletion`.
 
 **Checks.**
 
@@ -1712,8 +1775,11 @@ of `F`-finite residue fields.
   `ℤ_p`, so the source `Tor` vanishes and the statement is empty. The same holds for every
   one-dimensional `R`, since finite torsion-free modules over a discrete valuation ring are free.
 - Over a two-dimensional `R` every finite normal `S` is Cohen–Macaulay, hence free over `R`
-  (Auslander–Buchsbaum), so again the source vanishes; the statement has content for
-  non-Cohen–Macaulay `S`, which occur once `dim R ≥ 3`.
+  (Auslander–Buchsbaum), so the source vanishes for normal `S`. For non-normal `S` it need not:
+  for `R = ℤ_p⟦x⟧`, `S = R ⊕ (p, x)·√x ⊆ R[√x]` (a subring, as `(p, x)²·x ⊆ R`) and `c = px`,
+  `S[1/c] = R[1/c][√x]` is finite étale over `R[1/c]`, and since `S ≅ R ⊕ 𝔪` is `p`-torsion-free,
+  `Tor_1^{R/pⁿ}(S/pⁿ, k) ≅ Tor_1^R(𝔪, k) ≅ Tor_2^R(k, k) ≅ k ≠ 0`. For normal `S` a nonzero source
+  needs `dim R ≥ 3`, where normal domains need not be Cohen–Macaulay.
 - The cover used is that of Q10.4: for `R = ℤ_p⟦x⟧` it is the `p`-adic completion of
   `colim_m ℤ_p[p^{1/p^m}]⟦x^{1/p^m}⟧`, embedded in `(R⁺)^∧` by compatible roots of `p` and `x`.
 - The hypothesis is Heitmann–Ma's: `[k : k^p] = 1` for perfect `k` and `[k : k^p] = p` for
@@ -1729,7 +1795,8 @@ of `F`-finite residue fields.
 
 *Needs:* Layers Q5, Q7 and Q9; PerfectoidQuotients §§0.4–0.5; PerfectoidSpaces P0.1–P0.2, P0.11,
 P4.15.2, P7.16a and P7.17; PrismaticCohomology §§0.61–0.63, §0.79 and §§2.30–2.31; EnhancedDerivedSheaves §E1.6;
-DerivedDeRhamCohomology §1.10; Tau Ceti `TauCeti.Perfectoid.IsIntegralPerfectoid`.
+DeformationAndDerivedPatchingAlgebra §1.10; DerivedDeRhamCohomology §1.10; Tau Ceti
+`TauCeti.Perfectoid.IsIntegralPerfectoid`.
 
 ## Worked examples
 
@@ -1755,14 +1822,16 @@ DerivedDeRhamCohomology §1.10; Tau Ceti `TauCeti.Perfectoid.IsIntegralPerfectoi
 
 ## Downstream consumers
 
-- PurityForFlatCohomology (Česnavičius–Scholze §§3–6) uses the residue towers (Q10.1 with
-  PerfectoidSpaces P7.16a–P7.17), the ind-syntomic André lemma (Q9.3–Q9.4) and the semiperfectoid
-  covers (Q9.6).
+- PurityForFlatCohomology (Česnavičius–Scholze §§3–6) uses the tilts and torsion of products
+  (Q5.2, Q5.4), the tilting of valuation rings and of their localizations (Q6.3–Q6.7), the ind-fppf
+  ring maps (Q7.1, Q7.3) and the unramified residue towers (Q10.1 with PerfectoidSpaces
+  P7.16a–P7.17).
 - SchemeAndStackFoundationsPartII (flat cohomology and the pro-fppf site of Česnavičius–Scholze
   §4.1.1) uses the ind-fppf and ind-syntomic ring maps of Q7.1–Q7.3.
-- ArcTopologyAndDescent uses the valuation-ring results of Q6.4 and Q6.7 for tilting complete arc
-  covers of arbitrary rank (Česnavičius–Scholze Lemma 2.2.2); Česnavičius–Scholze §2.2 (algebraic
-  tilting of étale cohomology) belongs there.
+- EtaleDualityAndPerverseSheavesPartII uses the tilting identities (Q5.1–Q5.3), the transfer of
+  completeness (Q6.2) and the tilting of valuation rings (Q6.3–Q6.7) for its algebraic tilting of
+  étale cohomology of henselian perfectoid pairs (its §§8.1–8.5; Česnavičius–Scholze
+  Theorem 2.2.7).
 
 ## References
 
@@ -1771,7 +1840,7 @@ DerivedDeRhamCohomology §1.10; Tau Ceti `TauCeti.Perfectoid.IsIntegralPerfectoi
   §1.4, p. 8; §2.1, pp. 9–18; §2.3, pp. 22–29; Lemma 3.1.1, p. 29.
 - **BS22**: Bhargav Bhatt and Peter Scholze, *Prisms and prismatic cohomology*, Annals of
   Mathematics 196 (2022); read in [arXiv:1905.08229v4](https://arxiv.org/abs/1905.08229v4).
-  Remark 3.11, pp. 32–33; Theorem 7.4 and its proof, pp. 61–62; Theorems 10.9 and 10.11 and
+  Remark 3.11, pp. 32–33; Theorem 7.4, p. 56, and its proof, p. 62; Theorems 10.9 and 10.11 and
   Remark 10.13, pp. 80–84.
 - **BMS1**: Bhargav Bhatt, Matthew Morrow and Peter Scholze, *Integral p-adic Hodge theory*,
   Publ. Math. IHÉS 128 (2018); read in [arXiv:1602.03148v3](https://arxiv.org/abs/1602.03148v3).
@@ -1794,4 +1863,5 @@ DerivedDeRhamCohomology §1.10; Tau Ceti `TauCeti.Perfectoid.IsIntegralPerfectoi
   Lemma 10.96.10 (031A),
   Lemma 10.99.16 (0H7N), Lemma 10.127.4 (07C3), Definition 10.136.1 (00SL), Lemma 10.136.4 (00SO),
   Lemmas 10.136.12–10.136.13 (00SV, 00SW), Lemma 10.136.15 (00SY), Lemma 10.136.17 (00SZ),
-  Lemma 10.168.9 (0C33), Lemma 15.32.2 (0BIQ).
+  Lemmas 10.160.6–10.160.7 (0328, 0329), Lemma 10.168.9 (0C33),
+  Lemma 15.32.2 (0BIQ).

@@ -28,11 +28,13 @@ of the fraction field along tilting (Proposition 2.1.9); torsion-free perfectoid
 (Proposition 2.1.12); the integral approximation lemma (Lemma 2.3.1); the valuative criterion for
 topological nilpotence in a Tate ring (Lemma 2.3.2); the ind-syntomic André lemma (Theorem 2.3.4);
 semiperfectoid covers of `p`-Zariski rings (Corollary 2.3.7); perfectoid faithfully flat covers of
-regular local rings (Bhatt–Scholze Remark 3.11, in the generality of Bhatt's Proposition 5.2); and
-the almost vanishing of `Tor` along finite subextensions of `R⁺` for a complete regular local ring,
-given a faithfully flat perfectoid cover mapping to the completion of `R⁺`, and unconditionally for
-an `F`-finite residue field, the generality of Heitmann–Ma Theorem 1.3 (Bhatt–Scholze
-Remark 10.13).
+regular local rings (Bhatt–Scholze Remark 3.11 and Bhatt, Proposition 5.2, in mixed
+characteristic; the perfection in equal characteristic `p`), and, for an `F`-finite residue field,
+such a cover inside the completion of the absolute integral closure `R⁺` (Bhatt–Scholze
+Remarks 3.11 and 10.13); and the almost vanishing of `Tor` along finite subextensions of `R⁺` for a
+complete regular local ring, given a faithfully flat perfectoid cover mapping to the completion of
+`R⁺`, and unconditionally for an `F`-finite residue field, the generality of Heitmann–Ma
+Theorem 1.3 (Bhatt–Scholze Remark 10.13).
 
 Not statable at the pins:
 
@@ -150,10 +152,11 @@ theorem exists_surjective_of_isSMulRegular (A : Type u) [CommRing A] [IsIntegral
       Function.Surjective f ∧ f ϖ' = ϖ :=
   sorry
 
-/-- **Torsion-free presentations with compatible roots** (README Q6.8 (2), made explicit in the
-proof of Česnavičius–Scholze Proposition 2.1.12, pp. 17–18, and used in the proof of Theorem 2.3.4,
-p. 25). If moreover `ϖ` has a compatible system of `p`-power roots, the presentation can be chosen
-so that `ϖ̃` has a compatible system of `p`-power roots lifting the given one. -/
+/-- **Torsion-free presentations with compatible roots** (README Q6.8, second theorem; made explicit
+in the proof of Česnavičius–Scholze Proposition 2.1.12, pp. 17–18, and used in the proof of
+Theorem 2.3.4, p. 25). If moreover `ϖ` has a compatible system of `p`-power roots, the
+presentation can be chosen so that `ϖ̃` has a compatible system of `p`-power roots lifting the given
+one. -/
 theorem exists_surjective_of_isSMulRegular_of_roots (A : Type u) [CommRing A]
     [IsIntegralPerfectoid p A] (ϖ : A) (hϖ : ϖ ^ p ∣ (p : A))
     (hc : IsAdicComplete (Ideal.span {ϖ}) A) (r : ℕ → A) (hr₀ : r 0 = ϖ)
@@ -261,12 +264,33 @@ variable (p : ℕ) [Fact p.Prime]
 open IsLocalRing CategoryTheory
 
 /-- **Perfectoid faithfully flat covers of regular local rings** (Bhatt–Scholze Remark 3.11,
-pp. 32–33, for complete rings; Bhatt, Proposition 5.2, p. 8). Every regular local ring whose maximal
-ideal contains `p` admits a faithfully flat map to an integral perfectoid ring (README Q10.2). -/
+pp. 32–33, for complete rings of mixed characteristic; Bhatt, Proposition 5.2 with modification (a)
+of the paragraph after its statement, p. 8, for `p`-torsion-free rings; the perfection, faithfully
+flat by Kunz's theorem, in characteristic `p`). Every regular local ring whose maximal ideal
+contains `p` admits a faithfully flat map to an integral perfectoid ring (README Q10.2). -/
 theorem exists_faithfullyFlat_isIntegralPerfectoid (R : Type u) [CommRing R]
     [IsRegularLocalRing R] (hp : (p : R) ∈ maximalIdeal R) :
     ∃ (R' : Type u) (_ : CommRing R') (_ : Algebra R R'),
       Module.FaithfullyFlat R R' ∧ IsIntegralPerfectoid p R' :=
+  sorry
+
+/-- **A perfectoid cover inside the completed absolute integral closure** (Bhatt–Scholze
+Remark 3.11, pp. 32–33, and Remark 10.13, p. 83; README Q10.4). Let `R` be a complete regular local
+ring of characteristic zero whose residue field `k` has characteristic `p` and is `F`-finite (a
+finite module over its subfield of `p`-th powers, the field range of `frobenius k p`), and `R⁺` its
+integral closure in an algebraic closure of its fraction field. Then `R` admits a faithfully flat
+map `R → R∞` to an integral perfectoid ring together with an injective `R`-algebra map from `R∞` to
+the `p`-adic completion `(R⁺)^∧`. -/
+theorem exists_faithfullyFlat_isIntegralPerfectoid_injective_completion (R : Type u) [CommRing R]
+    [IsDomain R] [IsRegularLocalRing R] [IsAdicComplete (maximalIdeal R) R] [CharZero R]
+    [CharP (ResidueField R) p]
+    [Module.Finite (frobenius (ResidueField R) p).fieldRange (ResidueField R)] :
+    ∃ (R' : Type u) (_ : CommRing R') (_ : Algebra R R'),
+      Module.FaithfullyFlat R R' ∧ IsIntegralPerfectoid p R' ∧
+      ∃ φ : R' →ₐ[R] AdicCompletion
+          (Ideal.span {(p : integralClosure R (AlgebraicClosure (FractionRing R)))})
+          (integralClosure R (AlgebraicClosure (FractionRing R))),
+        Function.Injective φ :=
   sorry
 
 /-- **Almost vanishing of `Tor` along finite subextensions of `R⁺`, given a cover inside `(R⁺)^∧`**

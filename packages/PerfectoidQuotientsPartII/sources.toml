@@ -8,7 +8,7 @@ title = "Purity for flat cohomology"
 year = 2019
 arxiv = "1912.10932v3"
 locator_scheme = "theorem"
-locator = "Proposition 2.1.4; Proposition 2.1.9; Proposition 2.1.12; Lemmas 2.3.1-2.3.2; Theorem 2.3.4; Corollary 2.3.7; Lemma 3.1.1"
+locator = "(2.1.2.4); Proposition 2.1.4; Proposition 2.1.9; Proposition 2.1.12; Lemmas 2.3.1-2.3.2; Theorem 2.3.4; Corollary 2.3.7; Lemma 3.1.1"
 url = "https://arxiv.org/abs/1912.10932v3"
 fetched_from = "https://arxiv.org/pdf/1912.10932v3"
 fetched_at = "2026-10-26T15:23:02Z"
@@ -135,7 +135,7 @@ authors = "The Stacks Project Authors"
 title = "The Stacks Project"
 year = 2026
 locator_scheme = "tag"
-locator = "00E0, 00FK, 00HP, 00IA, 07DV, 090T, 031A, 0H7N, 07C3, 00SL, 00SO, 00SV, 00SW, 00SY, 00SZ, 0C33, 0BIQ"
+locator = "00E0, 00FK, 00HP, 00IA, 07DV, 090T, 031A, 0H7N, 07C3, 00SL, 00SO, 00SV, 00SW, 00SY, 00SZ, 0328, 0329, 0C33, 0BIQ"
 url = "https://stacks.math.columbia.edu/tag/07C3"
 fetched_from = "https://stacks.math.columbia.edu/download/algebra.pdf#nameddest=07C3"
 fetched_at = "2026-10-26T15:23:58Z"
@@ -143,7 +143,7 @@ sha256 = "b035a1f02104906a1820636cd332a0d7962fef3318d207a056634cb14dc86947"
 licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-26"
-cited_for = ["Q6.2", "Q7.1", "Q7.2", "Q7.3", "Q7.4", "Q7.5", "Q7.6", "Q8.4", "Q9.2", "Q9.3", "Q9.5"]
+cited_for = ["Q6.2", "Q7.1", "Q7.2", "Q7.3", "Q7.4", "Q7.5", "Q7.6", "Q8.4", "Q9.2", "Q9.3", "Q9.5", "Exact supplier contracts"]
 
 [[source]]
 id = "Bha18"
