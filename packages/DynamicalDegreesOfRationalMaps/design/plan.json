@@ -270,7 +270,7 @@
      "statement": "Normalization: for ν : X̃ -> X and f̃ = ν^{-1}∘f∘ν, ν×ν maps Γ_{f̃} properly and birationally onto Γ_f, and (f^n)~ = f̃^n. Field extension: (Γ_f)_{K'} is the scheme-theoretic image of γ_f ×_K K'; for X, Y geometrically integral, f_{K'} is dominant, e(f_{K'}) = e(f), (g∘f)_{K'} = g_{K'}∘f_{K'}, Γ_{f_{K'}} = (Γ_f)_{K'}. The degree equality is proved by cases: if dim X = dim Y, a basis of K(X) over f^*K(Y) of e(f) ≥ 1 elements stays a basis after ⊗_K K' and localization; if dim X > dim Y, K(X) is infinite-dimensional over f^*K(Y), no finite basis is used, and invariance of dimension gives e(f_{K'}) = 0 = e(f).",
      "hypotheses": [
       "X projective variety, f dominant self-map for the normalization part",
-      "K'/K any field extension",
+      "K'/K any field extension; Spec K' -> Spec K is flat, and γ_f is quasi-compact with Noetherian source, which is what flat base change of scheme-theoretic images needs",
       "X, Y geometrically integral for the statements on f_{K'}",
       "no equal-dimension hypothesis for e(f_{K'}) = e(f): the case dim X > dim Y is the junk value 0 on both sides"
      ],
@@ -282,6 +282,12 @@
       "mathlib:AlgebraicGeometry.Scheme.PartialIso",
       "mathlib:AlgebraicGeometry.Scheme.PartialIso.symm",
       "mathlib:AlgebraicGeometry.Scheme.Hom.image",
+      "mathlib:AlgebraicGeometry.IsSchemeTheoreticallyDominant.of_isPullback",
+      "mathlib:AlgebraicGeometry.Scheme.Hom.ker_comp",
+      "mathlib:AlgebraicGeometry.Scheme.IdealSheafData.map_bot",
+      "mathlib:AlgebraicGeometry.Scheme.IdealSheafData.ker_fst_of_isClosedImmersion",
+      "tauceti:AlgebraicGeometry.Scheme.Hom.isSchemeTheoreticallyDominant_toImage",
+      "roadmap:AlgebraicModuliForArithmeticGeometry §5.4",
       "target:1.1",
       "target:1.2",
       "roadmap:SchemeAndStackFoundations §0.7",
@@ -311,6 +317,11 @@
        "name": "real_complex_line",
        "kind": "non-example",
        "statement": "P^1_C over R: base change of Γ_id is two diagonals, not a graph of an integral rational map"
+      },
+      {
+       "name": "nonflat_image_control",
+       "kind": "non-example",
+       "statement": "G_m -> A^1 has scheme-theoretic image A^1; after the non-flat base change along the origin Spec K -> A^1 the source and its image are empty, while the inverse image of A^1 is Spec K; field extensions are flat, so §1.4 avoids this"
       },
       {
        "name": "cremona_Q_C",
@@ -1578,9 +1589,10 @@
   {
    "roadmap": "AlgebraicModuliForArithmeticGeometry",
    "sections": [
-    "§1.4"
+    "§1.4",
+    "§5.4"
    ],
-   "what": "very ampleness; high powers of an ample line bundle are very ample, very ample implies ample"
+   "what": "very ampleness; high powers of an ample line bundle are very ample, very ample implies ample; the scheme case of the schematic image of a quasi-compact morphism (Mathlib's Scheme.Hom.image) and its compatibility with flat base change of locally Noetherian schemes"
   },
   {
    "roadmap": "ArakelovGeometryAndAbelianHeightsPartII",
