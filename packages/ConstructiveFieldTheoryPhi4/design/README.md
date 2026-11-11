@@ -278,7 +278,7 @@ Layers 0 and 1. No other roadmap; Griffiths–Simon 1973 is cited by locator.
 
 ### 3.1 Griffiths' first and second inequalities
 
-Prove that for a finite set V, a ferromagnetic coupling J and an even admissible ρ, every multi-index A satisfies `⟨φ_A⟩_{V,J,ρ} ≥ 0` (Griffiths I) and every pair of multi-indices satisfies `⟨φ_A φ_B⟩ ≥ ⟨φ_A⟩⟨φ_B⟩` (Griffiths II) (Peled–Spinka, Theorems 2.1 and 2.3, lines 334 and 515, for Ising spins; Sokal (2.20)–(2.21), lines 414–415, for φ⁴; Simon, Twelve Tales, lines 977–984; Glimm–Jaffe, Chapter 4; Friedli–Velenik, Section 3.6). A proof route: for Griffiths I, expand `e^{−H}` as a power series with nonnegative coefficients in the monomials `φ_xφ_y` and use that every moment of an even measure is nonnegative; for Griffiths II, Ginibre's duplication: with an independent copy φ′, put `s = φ + φ′` and `t = φ − φ′`; then `H(φ) + H(φ′)` is `−¼Σ_{x≠y} J_{xy}(s_xs_y + t_xt_y)`, `φ_A − φ′_A` and `φ_B − φ′_B` are polynomials in (s, t) with nonnegative coefficients, and Ginibre's lemma gives the nonnegativity of every monomial.
+Prove that for a finite set V, a ferromagnetic coupling J and an even admissible ρ, every multi-index A satisfies `⟨φ_A⟩_{V,J,ρ} ≥ 0` (Griffiths I) and every pair of multi-indices satisfies `⟨φ_A φ_B⟩ ≥ ⟨φ_A⟩⟨φ_B⟩` (Griffiths II) (Peled–Spinka, Theorems 2.1 and 2.3, lines 334 and 515, for Ising spins; Sokal (2.19)–(2.20), p. 327, lines 414–415, for φ⁴; Simon, Twelve Tales, lines 977–984; Glimm–Jaffe, Chapter 4; Friedli–Velenik, Section 3.6). A proof route: for Griffiths I, expand `e^{−H}` as a power series with nonnegative coefficients in the monomials `φ_xφ_y` and use that every moment of an even measure is nonnegative; for Griffiths II, Ginibre's duplication: with an independent copy φ′, put `s = φ + φ′` and `t = φ − φ′`; then `H(φ) + H(φ′)` is `−¼Σ_{x≠y} J_{xy}(s_xs_y + t_xt_y)`, `φ_A − φ′_A` and `φ_B − φ′_B` are polynomials in (s, t) with nonnegative coefficients, and Ginibre's lemma gives the nonnegativity of every monomial.
 
 The API consists of the following facts.
 
@@ -369,13 +369,15 @@ Prove that the hypotheses hold for the nearest-neighbour coupling on every finit
 
 ### 3.7 Uniform moment bounds
 
-Prove the integration-by-parts identity for φ⁴ measures: for λ > 0, b ∈ ℝ, a finite set V, any coupling J and x ∈ V, `4λ⟨φ_x⁴⟩ = 1 + 2b⟨φ_x²⟩ + Σ_{y≠x} J_{xy}⟨φ_xφ_y⟩` under `μ_{V,J,ρ_{λ,b}}`, and more generally `⟨∂_xF⟩ = ⟨F · (4λφ_x³ − 2bφ_x − Σ_{y≠x}J_{xy}φ_y)⟩` for continuously differentiable F of polynomial growth with polynomially growing derivative (Sokal, Section 3.1, lines 846–853). Prove the uniform bound `max_{x∈V} ⟨φ_x²⟩ ≤ M(λ, b, ‖J‖) = [(2b₊ + ‖J‖) + √((2b₊ + ‖J‖)² + 16λ)]/(8λ)`, independent of V, from the identity, Jensen's inequality `⟨φ_x⁴⟩ ≥ ⟨φ_x²⟩²` and the Cauchy–Schwarz inequality, evaluated at a site where `⟨φ_x²⟩` is maximal. Prove Newman's exponential bound: for ρ in the Griffiths–Simon class, a ferromagnetic J and t ∈ [0, ∞)^V, `⟨exp(Σ_x t_xφ_x)⟩ ≤ exp(½⟨(Σ_x t_xφ_x)²⟩)`, hence `⟨e^{a|φ_x|}⟩ ≤ 2e^{a²⟨φ_x²⟩/2}` for real a (Sokal, item (j), lines 434–435), by summing the Gaussian inequality of 3.5 against `1/(2n)!`.
+Prove the integration-by-parts identity for φ⁴ measures: for λ > 0, b ∈ ℝ, a finite set V, any coupling J and x ∈ V, `4λ⟨φ_x⁴⟩ = 1 + 2b⟨φ_x²⟩ + Σ_{y≠x} J_{xy}⟨φ_xφ_y⟩` under `μ_{V,J,ρ_{λ,b}}`, and more generally `⟨∂_xF⟩ = ⟨F · (4λφ_x³ − 2bφ_x − Σ_{y≠x}J_{xy}φ_y)⟩` for every continuously differentiable F : ℝ^V → ℝ with `|F(φ)| + |∂_xF(φ)| ≤ C(1 + Σ_y φ_y²)^k` for some C and k; the diagonal entry `J_{xx}` enters neither side (Sokal, Section 3.1, lines 846–853). Prove the uniform bound `max_{x∈V} ⟨φ_x²⟩ ≤ M(λ, b, ‖J‖) = [(2b₊ + ‖J‖) + √((2b₊ + ‖J‖)² + 16λ)]/(8λ)`, independent of V, from the identity, Jensen's inequality `⟨φ_x⁴⟩ ≥ ⟨φ_x²⟩²` and the Cauchy–Schwarz inequality, evaluated at a site where `⟨φ_x²⟩` is maximal. Prove Newman's exponential bound: for ρ in the Griffiths–Simon class, a ferromagnetic J and t ∈ [0, ∞)^V, `⟨exp(Σ_x t_xφ_x)⟩ ≤ exp(½⟨(Σ_x t_xφ_x)²⟩)`, hence `⟨e^{a|φ_x|}⟩ ≤ 2e^{a²⟨φ_x²⟩/2}` for real a (Sokal, item (j), lines 434–435), by summing the Gaussian inequality of 3.5 against `1/(2n)!`.
 
 *Needs:* 0.2; 1.1; 1.2; 2.3; 3.5.
 
 **Checks.**
 
 - One site, J = 0, b = 0: the identity gives `⟨φ⁴⟩ = 1/(4λ)`, matching the Gamma-function value of 0.2.
+- The diagonal is excluded from the general identity: one site, λ = 1, b = 0, `J_{xx} = 1` and F = φ give `⟨∂F⟩ = 1` and, since the sum over y ≠ x is empty, right side `4⟨φ⁴⟩ = 1`; a sum over all y would give `4⟨φ⁴⟩ − ⟨φ²⟩ = 1 − Γ(3/4)/Γ(1/4) ≈ 0.662`.
+- The growth bound on `∂_xF` is needed: one site, λ = 1, b = 0, J = 0 and `F(φ) = φ + sin(exp(φ⁴))`, which is smooth and bounded by 1 + |φ|. The right side is `4⟨φ⁴⟩ + 4⟨φ³ sin(exp(φ⁴))⟩ = 1 + 0` (odd integrand), but `|F′|` times the density has infinite integral (substituting `t = exp(φ⁴)` turns the oscillating part into `∫_1^∞ |cos t|/t dt = ∞`), so `⟨∂F⟩` is not a Lebesgue expectation.
 - The bound gives `M(λ, 0, 0) = 1/(2√λ)`, above the exact `Γ(3/4)/(Γ(1/4)√λ) ≈ 0.338/√λ`.
 - For ρ_I, Newman's bound reads `cosh a ≤ e^{a²/2}`, true. For the non-member `(1 − ε)δ₀ + ½ε(δ₁ + δ₋₁)` with ε = ¼ it fails for every small a > 0, because the coefficients of a⁴ are ε/24 on the left and ε²/8 on the right and ε/24 > ε²/8 for ε < 1/3; numerically, at a = 2 the left side is 1.691 and the right side `e^{1/2}` is 1.649.
 
@@ -446,7 +448,8 @@ The API consists of the following facts.
 
 - d = 1, nearest-neighbour Ising with t = tanh J: `χ = (1 + t)/(1 − t) < ∞` for all J, so `β_c = ∞`.
 - For ρ = δ₀, S ≡ 0, χ = 0 and β_c = ∞; for J = 0, χ = ∫φ²dρ.
-- Ising on ℤ^d with nearest-neighbour coupling J: Simon–Lieb with Λ = {0}, applied in the boxes V_R to `max_v Σ_{y∈V_R} ⟨σ_vσ_y⟩_{V_R}`, gives `χ ≤ 1/(1 − 2dJ)` for 2dJ < 1, so `β_c(ρ_I, J) ≥ 1/(2dJ)`.
+- Ising on ℤ^d with nearest-neighbour coupling J, 0 ≤ 2dJ < 1: Simon–Lieb with Λ = {0}, applied in the boxes V_R to `max_v Σ_{y∈V_R} ⟨σ_vσ_y⟩_{V_R}`, gives `χ(ρ_I, J) ≤ 1/(1 − 2dJ)`; at d = 1, J = ¼ this reads `e^{1/2} ≈ 1.649 ≤ 2`. For J > 0, applying the estimate to βJ with 2dβJ < 1 gives `β_c(ρ_I, J) ≥ 1/(2dJ)`; for J = 0, β_c = ∞.
+- The susceptibility estimate is not asserted outside 2dJ < 1: at d = 1, J = 1, `χ(ρ_I, 1) = e² ≈ 7.389` while `1/(1 − 2dJ) = −1`, and at J = ½ the denominator vanishes; the bound `β_c ≥ 1/(2dJ)` still holds there.
 
 ### 4.4 Axis monotonicity of the two-point function
 
@@ -641,7 +644,8 @@ The API consists of the following facts.
 
 **Checks.**
 
-- J = 0, ρ = ρ_I: `Σ^{(R)}_L = (2L + 1)^d` and `⟨T_{f,L}²⟩ = Σ_x f(x/L)²/(2L + 1)^d → 2^{−d} ∫ f²`, the white-noise normalisation.
+- J = 0, ρ = ρ_I, f ∈ C_c(ℝ^d): `Σ^{(R)}_L = (2L + 1)^d` and `⟨T_{f,L}²⟩_{V_R} = Σ_{x∈V_R} f(x/L)²/(2L + 1)^d`. As L → ∞ with R = R(L) ≥ L chosen so that V_{R(L)} eventually contains every x ∈ ℤ^d with x/L ∈ supp f (for instance R(L)/L → ∞), this tends to `2^{−d} ∫ f²`, the white-noise normalisation; the volume-first limit of 7.2 gives the same value.
+- The volume condition is needed: d = 1, R = L and the tent `f(u) = max(0, 1 − |u − 3|)` sample only x/L ∈ [−1, 1], where f vanishes, so the second moment is 0 for every L, whereas `½∫f² = 1/3`. With R = 4L the sampled sum is `(2L² + 1)/(3L)` and the normalised second moment `(2L² + 1)/(3L(2L + 1)) → 1/3`.
 - d = 1, L = R = 1, nearest-neighbour Ising with t = tanh J: `Σ^{(1)}_1 = 3 + 4t + 2t²` (open chain of three sites).
 - ρ = δ₀: Σ = 0 and T ≡ 0 by the junk convention of the Conventions.
 - The direction of the W_d action: d = 2, L = 1, Σ = 1, `V = {0, ±e₁, ±e₂}`, g the rotation `(x₁, x₂) ↦ (−x₂, x₁)` (of order 4, so g ≠ g⁻¹) and `f = 1_{e₁}` on V. Then `T_{f∘g}(φ) = φ_{g⁻¹e₁} = φ_{−e₂}`, which agrees with `T_f(φ ∘ g⁻¹) = φ_{−e₂}`; the identity with g on both sides would give `T_f(φ ∘ g) = φ_{ge₁} = φ_{e₂}`, which differs for `φ = 1_{e₂}`. The two identities cannot be separated when g² = id; the quarter-turn and the selected f and φ separate them. For the half-turn g = −I, f = 1_{e₁} and φ = 1_{−e₁}, both candidate right sides and the left side are 1.
