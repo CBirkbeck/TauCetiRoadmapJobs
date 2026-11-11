@@ -31,6 +31,13 @@ Not statable at the pins, with what each lacks:
   (Whittaker functionals) for `G₂(F)`;
 * the characterization by `G₂ × GL_r` gamma factors (README §§3.12–3.13): local gamma factors of
   smooth representations and of Weil–Deligne representations;
+* detection of the discrete parameters coming from `PGL₃` by a pole at `s = 0` of the standard
+  `L`-factor, with component groups `μ₃` and `S₃` (README §0.2), and spin detection: a discrete
+  `Spin₇`-valued parameter whose spin `L`-factor has a pole at `s = 0` comes from a unique
+  diamond discrete `G₂`-valued parameter, with `S_φ` the component group of its `Spin₇`-image
+  modulo the centre (README §0.3): the parameters above with their discreteness (Levi subgroups
+  of the complex dual groups), the `L`-factors of Weil–Deligne representations, the component
+  groups of centralizers of parameters, and the inclusions `SL₃(ℂ) → G₂(ℂ) → Spin₇(ℂ)`;
 * standard injectivity and quadratic-twist rigidity for `G₂`-valued parameters (README
   §§0.4–0.5): the parameters above, and the embedding `G₂(ℂ) → Spin₇(ℂ)` as the stabilizer of a
   nonisotropic spinor (Mathlib has `spinGroup` and Tau Ceti has the octonions, but no comparison
@@ -51,9 +58,11 @@ Not statable at the pins, with what each lacks:
 * the Kret–Shin parameters of generic discrete series of `PGSp₆` and of discrete heart
   representations (README §§5.1–5.3, 8.2): `Spin₇`-valued Weil–Deligne parameters, automorphic
   representations of `PGSp₆` and the `GSpin₇`-valued Galois representations attached to them;
-* the exceptional spin identity for generic discrete series (README §5.6) and the partial
-  enhanced `PGSp₆` correspondence on diamond orbits (README §7.3): smooth representations of
-  `PGSp₆(F)` and `GL₈(F)`, the classical theta correspondence and Xu's packets;
+* the exceptional spin identity for generic discrete series (README §5.6), the identification of
+  each diamond discrete fibre with a distinguished one of Xu's packets (README §6.6) and the
+  partial enhanced `PGSp₆` correspondence on diamond orbits (README §7.3): smooth representations
+  of `G₂(F)`, `PGSp₆(F)` and `GL₈(F)`, the classical and exceptional theta correspondences and
+  Xu's packets;
 * the weak local Langlands correspondence for `PGSp₆` (README §10.1) and the description of its
   fibres as unions of Xu packets (README §10.9): the same carriers and the Spin₇-valued
   parameters of `W_F × SL₂(ℂ)`;
