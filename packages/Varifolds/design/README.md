@@ -284,8 +284,12 @@ trace of an endomorphism A of E along P is tr(P ∘ A).
   when k ≥ 1).
 - P ↦ 1 − P is a homeomorphism G(E, k) → G(E, dim E − k), the passage to orthogonal complements;
   for P ∈ G(E, k), tr P = k.
-- A linear isometry U : E → F induces the homeomorphism P ↦ U P U⁻¹ of G(E, k) onto G(F, k),
-  functorial in U; in particular the orthogonal group of E acts continuously.
+- A surjective linear isometry U : E → F induces the homeomorphism P ↦ U P U⁻¹ of G(E, k) onto
+  G(F, k), functorial in U; in particular the orthogonal group of E acts continuously. Any linear
+  isometry U : E → F has U*U = 1 and UU* the projection onto range U, and P ↦ U P U* is a
+  homeomorphism of G(E, k) onto the closed subset of G(F, k) of projections whose range lies in
+  range U (the image-plane map below for L = U); this subset is all of G(F, k) only when U is
+  surjective.
 - For each endomorphism A of E, P ↦ tr(P ∘ A) is continuous (indeed linear) on G(E, k), and
   |tr(P ∘ A)| ≤ k‖A‖.
 - For a finite-dimensional real inner product space F, the pairs (L, P) of a linear map L : E → F
@@ -304,6 +308,9 @@ trace of an endomorphism A of E along P is tr(P ∘ A).
 - diag(1, 1, 0) belongs to G(ℝ³, 2) and not to G(ℝ³, 1): the rank condition is on the range, and
   its trace 2 is the dimension.
 - Under the complement map, the line ℓ_0 of ℝ² goes to ℓ_{π/2}, and tr(P_{ℓ_0} ∘ diag(a, b)) = a.
+- The inclusion U : ℝ → ℝ², t ↦ (t, 0), is a linear isometry that is not surjective: G(ℝ, 1) = {1}
+  and U 1 U* = diag(1, 0) = P_{ℓ_0}, so the image misses P_{ℓ_{π/2}} = diag(0, 1) and U⁻¹ does not
+  exist; for a rotation R_φ of ℝ², R_φ P_{ℓ_θ} R_φ⁻¹ = P_{ℓ_{θ+φ}} reaches every line.
 - For L_s = diag(1, s) on ℝ², L_s(ℓ_θ) is spanned by (cos θ, s sin θ): along s = 0, θ → π/2 the image
   line is ℓ_0 and along θ = π/2, s → 0 it is ℓ_{π/2}, so the image-plane projection has no
   continuous extension to (diag(1, 0), P_{ℓ_{π/2}}), where L kills the line. At (diag(1, 0), P_{ℓ_0})
@@ -329,8 +336,9 @@ and π(x, P) = x. For M = E with the flat metric, G_k(W) is W × G(E, k) with th
   (x, P_S) is a homeomorphism onto G_k(W) commuting with the projections; through it G6's
   compactness over compact base regions gives the properness of π, and G6's Radon compactness is
   transported to G_k(W) (used in 1.4).
-- An isometry f from an open set of (M, g) onto an open set of (M', g') induces the homeomorphism
-  (x, P) ↦ (f(x), df_x P df_x⁻¹), functorial in f.
+- An isometry f from an open set of (M, g) onto an open set of (M', g') (a C¹ diffeomorphism with
+  f*g' = g, so that each df_x : T_xM → T_{f(x)}M' is a surjective linear isometry, 1.1) induces the
+  homeomorphism (x, P) ↦ (f(x), df_x P df_x⁻¹), functorial in f.
 - For two Riemannian metrics g, h on W, the canonical homeomorphism G_k^g(W) → G_k^h(W) sends
   (x, P^g_S) to (x, P^h_S) for every subspace S; it is the identity when h = c²g with c > 0
   constant.
@@ -541,7 +549,9 @@ frames) (Simon1983 line 7443–7454, 39.1; AgnolettoCorreaHoyosDaSilvaNardulli20
   equality when f is an immersion.
 - id_# V = V, and (h ∘ f)_# V = h_#(f_#V) when f is proper on spt‖V‖ and h on f(spt‖V‖) (chain rule
   J_S(h ∘ f)(x) = J_{df_x S} h(f(x)) · J_S f(x)).
-- For an isometry f, J_S f = 1 and f_#V is the measure push-forward along 1.2's homeomorphism.
+- For an isometry f of W onto W' (1.2), J_S f = 1 and f_#V is the measure push-forward along 1.2's
+  homeomorphism; for an isometric immersion f (each df_x a linear isometry, as for the inclusion of
+  5.2), J_S f = 1 and f_#V is the measure push-forward along (x, P) ↦ (f(x), df_x P df_x*) (1.1).
 - ‖f_#V‖(A) ≤ (sup_{f⁻¹(A) ∩ spt‖V‖} ‖df‖)^k ‖V‖(f⁻¹(A)).
 - If f is proper on a closed set F containing spt‖V_j‖ for all j and spt‖V‖, then V_j → V implies
   f_#V_j → f_#V (the integrand J_S f · (φ ∘ F) extends continuously by 0 to {J = 0}).
@@ -704,33 +714,7 @@ L_X g, with (L_X g)(u, v) = g(∇_u X, v) + g(u, ∇_v X) for the Levi-Civita co
 `TauCeti.contMDiff_globalFlow_uncurry`, `TauCeti.isCompleteVectorField_of_isCompact_of_eq_zero_off`,
 `TauCeti.Manifold.divergence`.
 
-### 4.2 Stationary varifolds and locally bounded first variation
-
-V is stationary in W when δV(X) = 0 for every C¹ vector field X with compact support in W. V has
-locally bounded first variation in W when for each compact K ⊆ W there is C_K with
-|δV(X)| ≤ C_K sup |X| for every such X with spt X ⊆ K (Simon1983 line 7474–7486, 39.3;
-AgnolettoCorreaHoyosDaSilvaNardulli2025 line 264–268). Prove:
-
-- If V has locally bounded first variation, δV extends uniquely to a linear functional on compactly
-  supported continuous vector fields with the same local bounds, and the total variation ‖δV‖
-  given by 4.3 is a Radon measure with ‖δV‖(U) = sup{δV(X) : |X| ≤ 1, spt X ⊆ U} for open U ⊆ W.
-- spt‖δV‖ ⊆ spt‖V‖; the extended δV(X) depends only on X restricted to spt‖V‖; ‖δ(V + V')‖ ≤
-  ‖δV‖ + ‖δV'‖; ‖δ(cV)‖ = c‖δV‖; restriction to open W' gives the restriction of ‖δV‖.
-- Lower semicontinuity: if V_j → V and lim inf_j ‖δV_j‖(U) < ∞ for every open U with compact
-  closure in W, then V has locally bounded first variation and ‖δV‖(U) ≤ lim inf_j ‖δV_j‖(U) for
-  such U (Simon1983 line 7580–7583, 40.7(1)); limits of stationary varifolds are stationary.
-
-**Checks.**
-
-- v(L, 1) for a line L of ℝ^N is stationary; for the unit circle, ‖δ[C]‖ = H¹⌞C.
-- The vertical lift V of H¹⌞(x-axis) does not have locally bounded first variation: X_n =
-  n⁻¹ψ(y) sin(n y_2) e_2 has sup |X_n| ≤ n⁻¹ and δV(X_n) = ∫ ψ(t, 0) dt for all n.
-- The Riemannian volume of W (k = N) is stationary; Lebesgue measure on ℝ² lifted with a constant
-  line P (k = 1) is stationary, since δV(X) = ∫ tr(P DX) dy = 0 by integration by parts.
-
-(Simon1983 line 7474–7486, 7580–7583.) *Needs:* Layer 4.1, Layer 4.3.
-
-### 4.3 Riesz representation for vector fields
+### 4.2 Riesz representation for vector fields
 
 Let L be a linear functional on the compactly supported continuous vector fields on W such that
 sup{L(X) : |X| ≤ 1, spt X ⊆ K} < ∞ for each compact K ⊆ W. Then there are a unique Radon measure ‖L‖
@@ -746,7 +730,9 @@ respect to ‖L‖); uniqueness glues the local constructions over a countable c
 
 **Checks.**
 
-- On ℝ^N, L(X) = ⟨X(0), v⟩ gives ‖L‖ = |v| δ_0 and η(0) = v/|v|.
+- On ℝ^N let L(X) = ⟨X(0), v⟩. For v ≠ 0, ‖L‖ = |v| δ_0 and η(0) = v/|v|; for v = 2e_1 this is
+  ‖L‖ = 2δ_0 and η(0) = e_1. For v = 0, L = 0 and ‖L‖ = 0, and no value of η is determined (every
+  point is ‖L‖-null): η is unique only ‖L‖-a.e., and a formula v/|v| would be 0/0.
 - L(X) = ∫_0^1 X^1(t, 0) dt − ∫_0^1 X^1(t, 0) dt is zero, so ‖L‖ = 0; adding the total variations of
   the two terms would give 2H¹⌞([0, 1] × {0}).
 - L(X) = ∫ (X^1 + X^2) dy on ℝ² gives ‖L‖ = √2 times Lebesgue measure and η = (e_1 + e_2)/√2; a
@@ -755,6 +741,32 @@ respect to ‖L‖); uniqueness glues the local constructions over a countable c
 (Simon1983 line 857–882; Federer1969 2.5.) *Needs:* Tau Ceti `TauCeti.RealRMK.posPart`, `TauCeti.RealRMK.negPart`,
 `TauCeti.RealRMK.integral_rieszMeasure_posPart_sub_integral_rieszMeasure_negPart`; Mathlib
 `RealRMK.rieszMeasure`, `Measure.rnDeriv`.
+
+### 4.3 Stationary varifolds and locally bounded first variation
+
+V is stationary in W when δV(X) = 0 for every C¹ vector field X with compact support in W. V has
+locally bounded first variation in W when for each compact K ⊆ W there is C_K with
+|δV(X)| ≤ C_K sup |X| for every such X with spt X ⊆ K (Simon1983 line 7474–7486, 39.3;
+AgnolettoCorreaHoyosDaSilvaNardulli2025 line 264–268). Prove:
+
+- If V has locally bounded first variation, δV extends uniquely to a linear functional on compactly
+  supported continuous vector fields with the same local bounds, and the total variation ‖δV‖
+  given by 4.2 is a Radon measure with ‖δV‖(U) = sup{δV(X) : |X| ≤ 1, spt X ⊆ U} for open U ⊆ W.
+- spt‖δV‖ ⊆ spt‖V‖; the extended δV(X) depends only on X restricted to spt‖V‖; ‖δ(V + V')‖ ≤
+  ‖δV‖ + ‖δV'‖; ‖δ(cV)‖ = c‖δV‖; restriction to open W' gives the restriction of ‖δV‖.
+- Lower semicontinuity: if V_j → V and lim inf_j ‖δV_j‖(U) < ∞ for every open U with compact
+  closure in W, then V has locally bounded first variation and ‖δV‖(U) ≤ lim inf_j ‖δV_j‖(U) for
+  such U (Simon1983 line 7580–7583, 40.7(1)); limits of stationary varifolds are stationary.
+
+**Checks.**
+
+- v(L, 1) for a line L of ℝ^N is stationary; for the unit circle, ‖δ[C]‖ = H¹⌞C.
+- The vertical lift V of H¹⌞(x-axis) does not have locally bounded first variation: X_n =
+  n⁻¹ψ(y) sin(n y_2) e_2 has sup |X_n| ≤ n⁻¹ and δV(X_n) = ∫ ψ(t, 0) dt for all n.
+- The Riemannian volume of W (k = N) is stationary; Lebesgue measure on ℝ² lifted with a constant
+  line P (k = 1) is stationary, since δV(X) = ∫ tr(P DX) dy = 0 by integration by parts.
+
+(Simon1983 line 7474–7486, 7580–7583.) *Needs:* Layer 4.1, Layer 4.2.
 
 ### 4.4 The Riesz decomposition of the first variation
 
@@ -771,12 +783,14 @@ is unique, η_V is unique σ_V-a.e. H_V is the generalised mean curvature, Z_V a
 - V is stationary in W if and only if H_V = 0 ‖V‖-a.e. and σ_V = 0.
 - |H_V| ≤ Λ ‖V‖-a.e. and σ_V = 0 hold if and only if |δV(X)| ≤ Λ ∫ |X| d‖V‖ for all X; then
   ‖δV‖ ≤ Λ‖V‖.
-- Isometries: for an isometry f, H_{f_#V}(f(x)) = df_x(H_V(x)), σ_{f_#V} = f_*σ_V and η is transported
-  by df.
+- Isometries: for an isometry f of W onto an open W' (1.2), H_{f_#V}(f(x)) = df_x(H_V(x)),
+  σ_{f_#V} = f_*σ_V and η is transported by df. For an isometric embedding into a space of higher
+  dimension this fails (the volume V of M = S¹ has H_V = 0, while its image in ℝ² is the unit circle
+  with H = −x), and 5.2's formula, with its term in B_M, replaces it.
 - Dilations in E: δ(V_{x,λ})(Y) = λ^{1−k} δV(Y ∘ η_{x,λ}), ‖δV_{x,λ}‖(A) = λ^{1−k}‖δV‖(x + λA),
   H_{V_{x,λ}}(η_{x,λ}(y)) = λ H_V(y), σ_{V_{x,λ}}(A) = λ^{1−k} σ_V(x + λA), and η is unchanged.
 
-Route: 4.3 applied to δV, then the Lebesgue decomposition ‖δV‖ = f‖V‖ + σ_V of ‖δV‖ with respect
+Route: 4.2 applied to δV, then the Lebesgue decomposition ‖δV‖ = f‖V‖ + σ_V of ‖δV‖ with respect
 to ‖V‖ (`Measure.rnDeriv`, `Measure.singularPart`, a ‖V‖-null Borel set carrying the singular part);
 put H_V = −f η and η_V = η on Z_V.
 
@@ -822,8 +836,16 @@ onto (B_{r/λ}(0), g̃_λ); for R > 0 and λ < r/R:
 
 **Checks.**
 
-- For h = c²g with c > 0 constant, V^h = c^k V and div^h = div^g, so the left side is
-  |c^k − 1| |δ_g V(X)|, bounded by k|c^k − 1| sup|DX| ‖V‖(K), of the form of the right side.
+- For h = c²g with c > 0 constant, V^h = c^k V and div^h = div^g (the Levi-Civita connection is
+  unchanged), so the left side is |c^k − 1| |δ_g V(X)|. For the flat metric g = e this is at most
+  k|c^k − 1| sup|DX| ‖V‖(K), of the form of the right side.
+- For a non-flat g the connection term cannot be dropped from that bound: on Ω = ℝ (N = k = 1) let
+  g = e^{4t} dt², h = 4g (c = 2), V = δ_{(0,1)}, K = [−1, 1] and X(t) = (1 − t²)² on K, 0 outside.
+  Both metrics have Christoffel symbol 2, so div_g X(0) = X'(0) + 2X(0) = 2, δ_g V(X) = 2 and
+  δ_h V^h(X) = 2·2 = 4: the left side is 2, while k|c^k − 1| sup|DX| ‖V‖(K) = sup|X'| = 8/(3√3) < 2.
+  The derivative-only bound drops the Christoffel term of ∇X = DX + Γ_g X; the general estimate,
+  with its metric-dependent constant and its term ‖h − g‖_{C¹} sup|X|, is unaffected (here
+  ‖h − g‖_{C⁰(K)} = 3e⁴).
 - The term in sup|DX| is necessary: for the Dirac varifold V = δ_{(0,P)} and X(y) = ψ(y) A y
   with ψ = 1 near 0, X(0) = 0 and DX(0) = A, the left side is |tr((J P^h − P^g) A)|, of order
   |h(0) − g(0)| |A|, while sup|X| can be made arbitrarily small relative to |A| by shrinking spt ψ.
@@ -873,7 +895,7 @@ for C² Σ it is the same identity in C² charts of Σ, by a partition of unity 
   σ ≠ 0.
 - Hypersurfaces (k = N − 1) with unit normal ν: tr B = (tr S_ν) ν (R5a: ⟨S_ν X, Y⟩ = ⟨B(X, Y), ν⟩);
   for the outward normal of S^{N−1}, S_ν = −id and H_{[S^{N−1}]} = −(N − 1) x.
-- For k = N and Σ = W, B = 0 and [W] is stationary, as in 4.2.
+- For k = N and Σ = W, B = 0 and [W] is stationary, as in 4.3.
 
 (Simon1983 line 1950–1973, 2979–2988.) *Needs:* Layer 2.3, Layer 4.1–4.4; RiemannianGeometry R5a,
 R5a.2; Tau Ceti `TauCeti.Manifold.integral_divergence_eq_zero`,
@@ -1046,11 +1068,19 @@ either V = 0, or Σ is closed in W, Hᵏ(Σ ∩ K) < ∞ for every compact K ⊆
 Route: for a C² function f vanishing on Σ, div_S(f∇f) = |P_S ∇f|² on spt V, so stationarity forces
 P_S ∇f = 0 on spt V; with local defining functions whose gradients span the normal spaces, S = T_xΣ
 on spt V. The density exists everywhere (6.3) and equals 1 for Hᵏ⌞Σ, so V = v(Σ, θ) with
-θ = Θ^k(‖V‖, ·). Stationarity against fields tangent to Σ says that, in a C² chart of Σ, the
-distributional derivatives of θ times the volume density vanish against all test functions, and
-GeometricCurrents G1's constancy criterion makes θ locally constant, hence equal to a constant θ_0 on
-the connected Σ. If θ_0 = 0, V = 0. If θ_0 > 0, Hᵏ⌞Σ = θ_0⁻¹‖V‖ is a Radon measure, so Σ has
-locally finite area, and the closure of Σ in W is spt‖V‖ (2.3), which lies in Σ: Σ is closed in W.
+θ = Θ^k(‖V‖, ·). In a C² chart t = (t_1, …, t_k) of Σ, let w = √det(g_Σ) be the coordinate
+density of the induced metric g_Σ (a positive C¹ function) and θ̃ the multiplicity θ in these
+coordinates, so that ‖V‖ = θ̃ w dt there. For X tangent to Σ with components X^i, div_{T_xΣ} X is the
+divergence of X along (Σ, g_Σ) (the normal part of ∇X does not enter the trace), that is
+w⁻¹ Σ_i ∂_i(w X^i), so stationarity gives ∫ θ̃ Σ_i ∂_i(w X^i) dt = 0. The choice
+X^i = φ/w, the other components 0, for φ ∈ C¹_c of the chart domain (extended to a compactly
+supported C¹ field on W through a C² chart of W in which Σ is a coordinate plane) gives
+∫ θ̃ ∂_i φ dt = 0: the distributional derivatives of θ̃ itself, with respect to coordinate Lebesgue
+measure dt and not to θ̃ w, vanish (Simon1983 line 7720–7732). GeometricCurrents G1's constancy
+criterion makes θ̃ a.e. constant on each connected chart domain, hence θ equal Hᵏ-a.e. to a
+constant θ_0 on the connected Σ. If θ_0 = 0, V = 0. If θ_0 > 0, Hᵏ⌞Σ = θ_0⁻¹‖V‖ is a Radon
+measure, so Σ has locally finite area, and the closure of Σ in W is spt‖V‖ (2.3), which lies in Σ:
+Σ is closed in W.
 
 **Checks.**
 
@@ -1061,13 +1091,18 @@ locally finite area, and the closure of Σ in W is spt‖V‖ (2.3), which lies 
   volume.
 - [half-line] has support in a line Σ but is not a constant multiple of [Σ]; consistently it is not
   stationary (σ = δ_0 at its endpoint).
+- The coordinate multiplicity, not its product with the volume density, is the constant: on
+  W = Σ = ℝ (k = N = 1) with g = e^{2t} dt², the volume density is w = e^t and
+  div_g X = e^{−t}(e^t X)', so V = [W] has δV(X) = ∫ (e^t X)' dt = 0 for compactly supported X and
+  is stationary with θ̃ = 1, while (θ̃ w)' = e^t ≠ 0; a route asking the derivatives of θ̃ w to vanish
+  would exclude this stationary varifold.
 - The graph Σ of t ↦ sin(1/t) over (0, 1) is a connected C² embedded curve in ℝ² of infinite length
   inside B̄_2(0) (its length is at least ∫_0^1 |cos(1/t)| t⁻² dt = ∫_1^∞ |cos u| du = ∞), and it is
   not closed (its closure contains {0} × [−1, 1]). V = 0 is stationary with support in Σ and takes
   the first alternative, and the theorem says it is the only such V; a conclusion "V = θ_0 [Σ] in
   every case" would use [Σ], which 2.3 does not define for this Σ.
 
-(Simon1983 line 7664–7732.) *Needs:* Layer 2.3, Layer 3.3, Layer 4.2, Layer 6.3; GeometricCurrents G1
+(Simon1983 line 7664–7732.) *Needs:* Layer 2.3, Layer 3.3, Layer 4.3, Layer 6.3; GeometricCurrents G1
 (constancy criterion).
 
 ### 6.5 The convex hull property
@@ -1102,13 +1137,15 @@ Layers 1–5; RiemannianGeometry R4 item 1; HopfRinow Layer 2; GeometricCurrents
 ## Layer 7: varifold tangents, rectifiability and compactness
 
 **Standing setting for varying metrics.** g_i and g are smooth Riemannian metrics on W with
-g_i → g in C² on compact subsets (in charts); V_i is a varifold for g_i, regarded on G_k^g(W)
-through 1.2's canonical homeomorphism (which leaves the weights unchanged), and V_i → V there. The
-case g_i = g is the fixed-metric case, and g_i = g = e on W ⊆ E is Simon's setting.
+g_i → g in C² on compact subsets (in charts); each V_i is a varifold for g_i, regarded on G_k^g(W)
+through 1.2's canonical homeomorphism (which leaves the weights unchanged). Convergence of the V_i
+is not part of the setting: 7.1 assumes it and 7.4 produces it along a subsequence. The case
+g_i = g is the fixed-metric case, and g_i = g = e on W ⊆ E is Simon's setting.
 
 ### 7.1 Semicontinuity of lower density bounds
 
-In the standing setting, suppose each V_i has locally bounded g_i-first variation,
+In the standing setting, suppose V_i → V on G_k^g(W), each V_i has locally bounded g_i-first
+variation,
 lim inf_i ‖δ_{g_i} V_i‖(U) < ∞ for every open U with compact closure in W, and
 Θ^k_{g_i}(‖V_i‖, y) ≥ 1 for ‖V_i‖-a.e. y ∈ W ∖ B_i, where ‖V_i‖(B_i ∩ K) → 0 for every compact K ⊆ W.
 Then V has locally bounded g-first variation, ‖δ_g V‖(U) ≤ lim inf_i ‖δ_{g_i} V_i‖(U) for such U, and
@@ -1136,7 +1173,7 @@ bound to V.
 - For g_i = (1 + 1/i)² e on ℝ² and V_i the g_i-varifold of a line with multiplicity 1, Θ_{g_i} = 1 and
   the limit, the Euclidean varifold of the line, has Θ = 1.
 
-(Simon1983 line 7566–7660; Federer1969 2.8 for coverings.) *Needs:* Layer 1.2, Layer 1.4, Layer 4.2, Layer 4.5, Layer 6.2–6.3; Mathlib
+(Simon1983 line 7566–7660; Federer1969 2.8 for coverings.) *Needs:* Layer 1.2, Layer 1.4, Layer 4.3, Layer 4.5, Layer 6.2–6.3; Mathlib
 `HasBesicovitchCovering`.
 
 ### 7.2 Varifold tangents
@@ -1151,9 +1188,16 @@ consists of the limits of (η_{x,λ_j})_#V (Simon1983 line 7733–7774, 42.1–4
 
 Route: 3.2 and 6.3 bound ‖V_{x,λ}‖(B_R(0)) uniformly; 1.4 gives subsequential limits; 4.5's blow-up form
 and the hypothesis on ‖δV‖ give δ_{g_x}C = 0; the mass of C on balls about 0 is the limit of the
-density ratios (3.2); the stationary identity 6.1 for C at 0 forces P_{S^⊥}(y) = 0 C-a.e.; the
-weighted identity 6.1 with h(y) = f(|y|)-type weights gives dilation invariance of the weight, as in
-Simon1983 19.3.
+density ratios (3.2), so ρ^{−k}‖C‖(B_ρ(0)) = ω_k Θ^k(‖V‖, x) for every ρ > 0, and the stationary
+identity 6.1 for C at 0 forces P_{S^⊥}(y) = 0 for C-a.e. (y, S). Dilation invariance of the weight
+uses non-radial tests: for a C¹ function h with compact support in T_xM, the field X(y) = h(y) y
+has div_S X = k h(y) + y·∇h(y) for C-a.e. (y, S), so stationarity gives ∫ (k h + y·∇h) d‖C‖ = 0.
+Applied to y ↦ h(y/λ), this says that λ ↦ λ^{−k} ∫ h(y/λ) d‖C‖(y) has derivative 0 on (0, ∞), so
+the measure A ↦ λ^{−k}‖C‖(λA) has the same integrals as ‖C‖ against C¹, hence against all
+compactly supported continuous functions, and equals ‖C‖
+(`MeasureTheory.Measure.ext_of_integral_eq_on_compactlySupported`). Radial tests h(|y|) give only
+the ball masses, which do not determine the measure (Check below); Simon1983 line 3461–3481 (19.3)
+uses arbitrary homogeneous weights of degree zero for the same step.
 
 **Checks.**
 
@@ -1163,8 +1207,16 @@ Simon1983 19.3.
   line (k = 1, stationary, Θ = 0), VarTan(V, x) = {0}.
 - On the round S², V a great circle through x: V_{x,λ} is the varifold of a diameter of the disc of
   radius r/λ, and VarTan(V, x) = {v(T_xC, 1)}.
+- Ball masses do not give dilation invariance: the measure μ on ℝ² with density
+  1 + ½ sin(log r) cos ϑ with respect to dr dϑ (polar coordinates) has μ(B_ρ(0)) = 2πρ for every ρ,
+  as the weight of a dilation-invariant 1-cone would, but λ⁻¹ ∫_{B_λ(0)} cos ϑ dμ =
+  (π/4)(sin log λ − cos log λ) is −π/4 at λ = 1 and π/4 at λ = e^π. Every radial test gives the
+  value of the invariant measure dr dϑ and the angular test cos ϑ separates them. The theorem is not
+  contradicted: by the stationary identity and the step above, μ is not the weight of any stationary
+  1-varifold on ℝ².
 
-(Simon1983 line 7733–7774, 3414–3450.) *Needs:* Layer 1.4, Layer 3.2, Layer 4.5, Layer 6.1, Layer 6.3.
+(Simon1983 line 7733–7774, 3414–3481.) *Needs:* Layer 1.4, Layer 3.2, Layer 4.5, Layer 6.1, Layer 6.3;
+Mathlib `MeasureTheory.Measure.ext_of_integral_eq_on_compactlySupported`.
 
 ### 7.3 Allard's rectifiability theorem
 
@@ -1190,27 +1242,39 @@ AgnolettoCorreaHoyosDaSilvaNardulli2025's proof is not used.
 - The triple junction and v(L, 1/2) are rectifiable, with θ = Θ equal to 1 off the junction and to
   1/2 respectively.
 - The vertical lift of H¹⌞(x-axis) has positive density and is not rectifiable; consistently it does
-  not have locally bounded first variation (4.2).
+  not have locally bounded first variation (4.3).
 
 (Simon1983 line 7775–7881; Allard1972 Section 5.) *Needs:* Layer 3.3, Layer 4.5, Layer 6.1, Layer 6.3–6.4, Layer 7.1–7.2.
 
 ### 7.4 Compactness of rectifiable varifolds
 
-In the standing setting let the V_i be rectifiable with locally bounded g_i-first variation,
-sup_i (‖V_i‖(U) + ‖δ_{g_i}V_i‖(U)) < ∞ for every open U with compact closure in W, and
-Θ^k_{g_i}(‖V_i‖, ·) ≥ 1 ‖V_i‖-a.e. outside sets B_i with ‖V_i‖(B_i ∩ K) → 0 for compact K. Then a
-subsequence converges to a rectifiable varifold V with locally bounded g-first variation,
-Θ^k_g(‖V‖, ·) ≥ 1 ‖V‖-a.e., and ‖δ_g V‖(U) ≤ lim inf ‖δ_{g_i}V_i‖(U); stationarity passes to the limit
-(Simon1983 line 7882–7898, 42.7).
+In the standing setting let (V_i) be any sequence of rectifiable varifolds with locally bounded
+g_i-first variation, sup_i (‖V_i‖(U) + ‖δ_{g_i}V_i‖(U)) < ∞ for every open U with compact closure in
+W, and Θ^k_{g_i}(‖V_i‖, ·) ≥ 1 ‖V_i‖-a.e. outside sets B_i with ‖V_i‖(B_i ∩ K) → 0 for compact K.
+Then there are a strictly increasing sequence i_1 < i_2 < … and a varifold V on G_k^g(W) with
+V_{i_j} → V, and every such subsequential limit V is rectifiable, has locally bounded g-first
+variation and Θ^k_g(‖V‖, ·) ≥ 1 ‖V‖-a.e., and satisfies
+‖δ_g V‖(U) ≤ lim inf_j ‖δ_{g_{i_j}}V_{i_j}‖(U) for every open U with compact closure in W; if every
+V_i is stationary for g_i, V is stationary for g (Simon1983 line 7886–7898, 42.7).
 
-Route: 1.4 for a convergent subsequence, 7.1 for the density bound and the first variation, 7.3 for
-rectifiability.
+Route: 1.4 for a convergent subsequence; 7.1, applied to that subsequence, for the density bound
+and the first variation; 7.3 for rectifiability.
 
 **Checks.**
 
-- Zigzag graphs of slopes ±1 and amplitude 1/i over [0, 1] are integral with Θ = 1, but ‖δV_i‖ is
-  √2 times the number of corners, which tends to ∞; their limit has weight √2 H¹⌞([0, 1] × {0}) and
-  planes at ±45°, so it is not rectifiable: the first variation bound is necessary.
+- The full sequence need not converge: in ℝ² let V_i be the varifold of the line {y_2 = 0} for even
+  i and of {y_2 = 1} for odd i. Each is stationary with Θ = 1 and ‖V_i‖(B_R(0)) ≤ 2R, so the
+  hypotheses hold; a nonnegative test function supported in B_{1/2}(0) × G(ℝ², 1) with integral 1
+  against the first line has integrals alternating between 1 and 0, while the even and odd
+  subsequences converge to two different stationary rectifiable limits. A version assuming V_i → V
+  would not apply to this sequence.
+- Zigzag graphs over [0, 1] with slopes ±1 and amplitude 1/i (i segments of horizontal length 1/i)
+  are integral with Θ = 1 and H = 0 on the segments, but ‖δV_i‖ has an atom of mass √2 at each of
+  the i − 1 interior corners (the two unit co-normals (1, ±1)/√2 there add up to a vector of length
+  √2) and an atom of mass 1 at each endpoint, so ‖δV_i‖(ℝ²) = √2(i − 1) + 2 → ∞; for i = 2, the
+  graph through (0, 0), (1/2, 1/2), (1, 0), it is √2 + 2. Their limit has weight
+  √2 H¹⌞([0, 1] × {0}) and fibre measure ½δ_{P_+} + ½δ_{P_−} for the lines P_± at ±45°, so it is not
+  rectifiable: the first variation bound is necessary.
 - Circles of radius 1/i about 0: masses 2π/i → 0, ‖δV_i‖ = 2π, the limit is 0, which is rectifiable.
 - Varifolds of the lines y_2 = 1/i converge to the varifold of the x-axis, with all first variations 0.
 
@@ -1218,37 +1282,62 @@ rectifiability.
 
 ### 7.5 Allard's multiplicity lemma
 
-Let p and q be the orthogonal projections of ℝ^N onto ℝ^k × {0} and {0} × ℝ^{N−k}. For δ ∈ (0, 1) and
-Λ ≥ 1 there is ε = ε(δ, Λ, k, N) ∈ (0, δ²) such that, for every integral varifold W on the ball B_3(0)
-of ℝ^N for a metric h with ‖h − e‖_{C²(B_3(0))} ≤ ε satisfying the mass, first variation and tilt
-hypotheses of Simon1983 42.9 (mass at most Λ, ‖δ_h W‖ at most ε and ∫ ‖P_S − p‖ dW at most ε on
-B_3(0)), there is a Borel set A ⊆ ℝ^k × {0} of Lebesgue measure at most δ such that for
-x ∈ (B_1(0) ∩ ℝ^k × {0}) ∖ A the sum of Θ^k(‖W‖, y) over the points y ∈ p⁻¹(x) ∩ spt‖W‖ with |q(y)| < ε
-is at most (1 + δ)(ω_k 2^k)⁻¹‖W‖(B_2(x)) + δ (Simon1983 line 7986–8151, 42.9–42.10, for h = e).
+Let p and q be the orthogonal projections of ℝ^N onto ℝ^k × {0} and {0} × ℝ^{N−k}, let B_ρ(y) be
+Euclidean balls, and for a k-plane S let P_S be its Euclidean orthogonal projection. For δ ∈ (0, 1)
+and Λ ≥ 1 there is ε = ε(δ, Λ, k, N) ∈ (0, δ²) with the following property. Let h be a smooth metric
+on B_3(0) ⊆ ℝ^N with ‖h − e‖_{C²(B_3(0))} < ε², and W an integral varifold on B_3(0) for h (regarded
+on B_3(0) × G(ℝ^N, k) through 1.2) with locally bounded h-first variation and
 
-Route: Simon's proof (induction on the number of points of a fibre) uses the first variation only
-through the identity and the weighted identity of 6.1, tested with fields X satisfying
-|DX| ≤ C(1 + ρ/T) on the balls B_ρ used, T the slab width; by 4.5 the metric h adds errors
-Cε(1 + ρ/T)‖W‖(B_ρ), of the same form as the terms Cερ/T already present, and 6.2 replaces the
-Euclidean mass lower bounds.
+`‖W‖(B_3(0)) ≤ Λ,   ‖δ_h W‖(B_3(0)) < ε²,   ∫_{G_k(B_3(0))} ‖P_S − p‖ dW(y, S) < ε²`.
+
+Then there is a Borel set A ⊆ B_1(0) ∩ (ℝ^k × {0}) of k-dimensional Lebesgue measure less than δ
+such that for every x ∈ (B_1(0) ∩ ℝ^k × {0}) ∖ A the sum of Θ^k(‖W‖, y) (the density for h) over the
+points y ∈ p⁻¹(x) ∩ spt‖W‖ with |q(y)| < ε is at most (1 + δ)(ω_k 2^k)⁻¹‖W‖(B_2(x)) + δ. For h = e
+this is Simon1983 line 7991–8000 (42.9, printed p. 250): the thresholds ε² for the first variation
+and for the tilt, and the slab half-width ε, are the source's. The case h ≠ e, with the threshold ε²
+for the metric, is this roadmap's.
+
+Route: Simon's proof (Simon1983 line 8001–8151, 42.10 and the proof of 42.9) has three steps.
+(i) The set of points y at which ‖δW‖(B_ρ(y)) ≤ ε‖W‖(B_ρ(y)) or
+∫_{G_k(B_ρ(y))} ‖P_S − p‖ dW ≤ ερ^k fails for some ρ ∈ (0, 1) has, by Besicovitch's covering theorem,
+‖W‖-measure at most cε⁻¹ times the sum of the two ε²-small quantities, hence at most cε (line
+8014–8046); this is where the squares are used. (ii) At the remaining points the identity and the
+weighted identity of 6.1, with weights f(|q(z − y)|), f = 1 on [0, τ] and f = 0 on [2τ, ∞), bound
+the masses of the slabs U^τ_σ(y) = B_σ(y) ∩ {|q(z − y)| < τ} with errors cεσ/τ (line 8052–8083).
+(iii) An induction on the number of points of a fibre, at slab scale τ comparable to δ² times the
+least vertical separation of the points, concludes (line 8084–8151). For h ≠ e, steps (ii)–(iii)
+are run at each centre y in linear coordinates that make h(y) Euclidean (a linear map within Cε²
+of the identity). On B_ρ(y) the metric then differs from the constant metric h(y) by at most Cε²ρ
+in C⁰ and Cε² in C¹, so by 4.5 the first variation of each test field used (|X| ≤ ρ,
+|DX| ≤ C(1 + ρ/τ)) changes by at most Cε²ρ(1 + ρ/τ)‖W‖(B_ρ(y)). Against the factor ρ^{−k−1} of 6.1,
+and with the mass-ratio bound of 6.2, this integrates over (τ, σ) to at most
+Cε²σ(1 + σ/τ) ≤ 2Cεσ/τ, an error of the source's form. The linear change of coordinates moves
+slabs, projections, balls and densities by factors 1 + O(ε²), which shrinking ε absorbs.
 
 **Checks.**
 
-- W = m v(ℝ^k × {0}, 1)⌞B_3(0) with integer m ≥ 1: tilt 0, δW = 0 in B_3(0), each fibre has the single
-  point x with density m, and the bound m ≤ (1 + δ)m + δ holds with A = ∅.
+- W = m v(ℝ^k × {0}, 1)⌞B_3(0) with integer m ≥ 1 and Λ ≥ m ω_k 3^k, h = e: tilt 0, δW = 0 in B_3(0),
+  ‖W‖(B_2(x)) = m ω_k 2^k, each fibre has the single point x with density m, and the bound
+  m ≤ (1 + δ)m + δ holds with A = ∅.
 - Two parallel planes ℝ^k × {±ε/2} with multiplicity 1: fibre sum 2 and mass ratio about 2.
-- A plane tilted by angle α has tilt excess of order α‖W‖(B_3), so for α large the hypotheses fail;
-  the tilted plane through 0 still satisfies the conclusion, showing that the tilt hypothesis is used
-  for the slab, not for single planes.
+- A plane through 0 tilted by angle α has tilt excess |sin α| ‖W‖(B_3(0)) (the operator-norm
+  distance of 1.1), so the hypotheses fail once |sin α| ‖W‖(B_3(0)) ≥ ε²; the tilted plane through 0
+  still satisfies the conclusion, showing that the tilt hypothesis is used for the slab, not for
+  single planes.
+- Parameter accounting (h = e): if ε = 1/10 (possible only when δ² > 1/10), the hypotheses ask for
+  first variation and tilt below 1/100 while the counted slab is {|q| < 1/10}. Step (i) bounds the
+  exceptional set by cε⁻¹(ε² + ε²) = 2cε = c/5; with unsquared thresholds ε the same bound would be
+  cε⁻¹(ε + ε) = 2c, which does not become small with ε, and the measure bound on A would be lost.
 
 (Simon1983 line 7986–8151.) *Needs:* Layer 4.5, Layer 6.1–6.3.
 
 ### 7.6 Integral compactness
 
-If, in 7.4, the V_i are integral, then the limit V is integral (Simon1983 line 7899–7912, 42.8;
-Allard1972, Section 6).
+If, in 7.4, the V_i are integral, then every subsequential limit V given by 7.4 is integral
+(Simon1983 line 7899–7912, 42.8; Allard1972, Section 6).
 
-Route (Simon1983 line 7916–7985): Besicovitch in charts gives, for ‖V‖-a.e. x, lim inf_i
+Route (Simon1983 line 7916–7985), with the convergent subsequence relabelled V_i: Besicovitch in
+charts gives, for ‖V‖-a.e. x, lim inf_i
 ‖δ_{g_i}V_i‖(B_ρ(x)) ≤ c(x)ρ^k for small ρ; at ‖V‖-a.e. x the varifold V = v(Γ, θ) has tangent space
 T_x with multiplicity θ(x) (7.4, 3.3); in g-normal coordinates at x a diagonal choice λ_i ↓ 0 gives
 integral varifolds W_i for metrics h_i → g_x in C² with W_i → θ(x) v(T_x, 1), first variation → 0 and
@@ -1363,8 +1452,9 @@ Layer 3.1, Layer 6.4.
 Every notion of Layers 1–8 commutes with restriction to an open W' ⊆ W: weight, mass, support,
 convergence, rectifiability and integrality, tangent spaces and fibre measures, δV, ‖δV‖, H_V, σ_V,
 η_V, stationarity and locally bounded first variation, densities, VarTan(V, x) for x ∈ W', and
-reg^r, sing^r. Every notion commutes with push-forward by an isometry f between open subsets of
-Riemannian manifolds, with H, η transported by df; it is independent of charts because no chart
+reg^r, sing^r. Every notion commutes with push-forward by an isometry f of an open subset of a
+Riemannian manifold onto an open subset of another (1.2), with H, η transported by df; it is
+independent of charts because no chart
 enters the definitions. Euclidean dilations preserve stationarity, rectifiability, integrality,
 reg^r and sing^r, satisfy Θ^k(‖V_{x,λ}‖, η_{x,λ}(y)) = Θ^k(‖V‖, y) and VarTan(V_{x,λ}, η_{x,λ}(y)) =
 VarTan(V, y), and scale H_V, ‖δV‖ and σ_V as in 4.4 (this roadmap; Simon1983 line 7443–7454).
@@ -1410,7 +1500,9 @@ ones the literature uses.
 - Simon's theorem (Simon2023 line 84–96, Theorem 1.1, and line 432–441, Theorem 3.7). Let n ≥ 3,
   m ≥ 2, n + m ≥ 8, ℓ ≥ 1 and K ⊆ ℝ^ℓ closed. For every sufficiently small τ ∈ (0, 1) there are a
   smooth f(x, y) on ℝ^n × ℝ^ℓ with sup|f − 1| < τ and sup|D^j f| < C(ℓ, m, n, j)τ for j ≥ 1, and a
-  smooth embedded hypersurface Σ ⊆ ℝ^{n+m+ℓ} with locally finite area, such that for the metric
+  smooth embedded hypersurface Σ ⊆ ℝ^{n+m+ℓ} with locally finite area and Σ = reg^∞[Σ] (Σ is the
+  whole regular set of its closure, Simon's standing convention, Simon2023 line 77–83; then
+  sing^∞[Σ] is the closure of Σ minus Σ), such that for the metric
   g = Σ dx_i² + f(x, y) Σ dξ_j² + Σ dy_k² the varifold [Σ] for g is stationary in (ℝ^{n+m+ℓ}, g) and
   sing^∞[Σ] = {0} × {0} × K. Simon's theorem also asserts strict stability, a second-variation
   statement of RiemannianGeometry R5b's kind, which is not restated here.
@@ -1427,14 +1519,17 @@ ones the literature uses.
 
 **Checks.**
 
-- Each notion used is defined above: [Σ] for a metric (2.3), stationarity for a metric (4.2),
+- Each notion used is defined above: [Σ] for a metric (2.3), stationarity for a metric (4.3),
   sing^∞ (9.1), integral varifolds and multiplicity one (2.2, 6.3), varifold convergence (1.4) and
   tangent cones (7.2, 8.2).
-- In Simon's theorem with K = ∅, sing^∞[Σ] = ∅ and Σ is closed.
+- In Simon's theorem with K = ∅, sing^∞[Σ] = ∅, so the closure of Σ is reg^∞[Σ] = Σ and Σ is
+  closed. The convention Σ = reg^∞[Σ] is what gives closedness: for n = 3, m = 5, ℓ = 1, f = 1 and
+  Σ = (ℝ⁸ × {0}) ∖ {0} in ℝ⁹, [Σ] = [ℝ⁸ × {0}] is stationary with empty singular set, but Σ is not
+  closed; it violates the convention, since reg^∞[Σ] = ℝ⁸ × {0} contains the missing origin.
 - V = v(C_{p,q}, 1) itself, with V_i = V, satisfies the conclusion of the second statement with
   y_i = 0.
 
-*Needs:* Layer 1.4, Layer 2.2–2.3, Layer 3.1, Layer 4.2, Layer 6.3, Layer 7.2, Layer 8.2,
+*Needs:* Layer 1.4, Layer 2.2–2.3, Layer 3.1, Layer 4.3, Layer 6.3, Layer 7.2, Layer 8.2,
 Layer 9.1.
 
 ### Examples
