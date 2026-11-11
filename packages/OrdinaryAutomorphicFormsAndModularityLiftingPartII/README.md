@@ -288,7 +288,7 @@ The route: semisimplicity and admissibility come from the automorphic realizatio
 **Checks.**
 
 - For n = 1 the constituents are algebraic Hecke characters of weight λ and all are ordinary.
-- A maximal ideal of `T^{T,ord}_λ` is non-Eisenstein exactly when the attached residual representation is absolutely irreducible; for λ = 0 the constant functions span a constituent whose residual representation is a sum of characters, so its maximal ideal is Eisenstein and it is not RACSDC.
+- A maximal ideal of `T^{T,ord}_λ` is non-Eisenstein exactly when the attached residual representation is absolutely irreducible (Ger19 §2.7, definition preceding Proposition 2.7.4, p. 25). For λ = 0 and n ≥ 2 the constant-functions constituent has a residual representation that is a sum of n characters, so its maximal ideal is Eisenstein and its base change is not RACSDC. At n = 1 the constant constituent instead has residual character 1, with no proper nonzero invariant subspace even after scalar extension; its maximal ideal is non-Eisenstein and its GL₁ base change is cuspidal, since GL₁ has no proper parabolic. At n = 2 the sum is `1 ⊕ ε̄^{−1}`, with an invariant line even when both characters coincide in characteristic 2.
 - A RACSDC π whose local components above 2 are not ι-ordinary contributes to A_λ but meets no `S^{ord}_λ(U(l^{b,b}), ℚ̄₂)`.
 - For n = 1, r_2(π) is the 2-adic character of the algebraic Hecke character x ↦ π(x/x^c) of 𝔸_F^×, and (ii) reads `r^c = r^{−1}`, since `ε^{1−n} = 1`; for λ = 0 and n ≥ 2 the constituent spanned by the constant functions has the non-cuspidal base change Speh(1, n) up to twist, and r_2(π) is a sum of n characters, consistent with its maximal ideal being Eisenstein (second Check). PotentialAutomorphyInfrastructurePartII §3.6 states neither case at l = 2.
 
@@ -600,7 +600,7 @@ Its API:
 
 - If `ρ̄|G_{F⁺_v}` is residually p-distinguished, condition (4) holds automatically, since Spec R^△_v[1/p] is irreducible (BCGP25 Remark 6.3.2).
 - For p = 3 a place v ∈ R must have q_v ≡ 1 mod 9: q_v = 19 is allowed and q_v = 7 is not.
-- A place w₀ with `q_{w₀} ≡ 1` mod p is excluded: every eigenvalue has ratio `1 = q_{w₀}` with itself, so `H⁰(G_{F⁺_{w₀}}, ad⁰ρ̄(1)) ⊇ 𝔱 ≠ 0`.
+- A place w₀ with `q_{w₀} ≡ 1` mod p is excluded by (6), since every eigenvalue has ratio 1 with itself. At an unramified place w₀ ∤ p with this congruence, put `h = ρ̄(Frob_{w₀})`; the cyclotomic twist is trivial, so `H⁰(G_{F⁺_{w₀}}, ad⁰ρ̄(1)) = ker(Ad(h) − 1 : 𝔰𝔭₄ → 𝔰𝔭₄)`. For h = I₄ this has dimension 10. It need not contain the standard Cartan: over 𝔽₃ with q = 7, take `U = [[1,1],[0,1]]`, `h = diag(U,U^{−t})`, `J = [[0,I₂],[−I₂,0]]` and `X = diag(1,0,−1,0)`. Then h³ = I₄, h · J · ᵗh = J, and X ∈ 𝔰𝔭₄ but `[h,X] = 2E₁₂ + E₄₃ ≠ 0`, where Eᵢⱼ are the matrix units. Nevertheless `Z = h − h^{−1} = 2E₁₂ + E₄₃` is a nonzero invariant: `ᵗZJ + JZ = 0` and `[h,Z] = 0`. Thus unramifiedness does not imply semisimplicity of h.
 - If π is unramified at every prime-to-p place, R may be empty and S = S_p ∪ {w₀}.
 
 *Needs:* 5.2; ArithmeticGaloisRepresentations §7.11; LocalGaloisDeformationRings §§1.4, 1.17, 6.29; ModularityAndLanglandsExtensions §3.9; gap:gsp4-galois-representations-totally-real.
