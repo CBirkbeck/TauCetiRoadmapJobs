@@ -580,8 +580,9 @@ decomposition from Serre's *Arbres, amalgames, SL₂*, Chapter II, cited by SHOT
 - For `H` compact (a degenerate amalgam with `U₁ = U₀`), `𝒪⟨H⟩ = 𝒪[[H]]` is noetherian, and
   coherence is the familiar statement for finitely generated modules.
 - For `G′` the cokernel statement is formal (§0.4); the content is the kernel: for `σ` a Serre
-  weight and `T` the Hecke operator, the kernel of `T : c-Ind_{KZ}^{G} σ → c-Ind_{KZ}^{G} σ` is zero
-  (freeness over `k[T]`), finitely presented as required.
+  weight defined over `k` and `T` the Hecke operator, the kernel of
+  `T : c-Ind_{KZ}^{G} σ → c-Ind_{KZ}^{G} σ` is zero (freeness over `k̄[T]` after extending scalars),
+  finitely presented as required.
 - Shotton's statement for `G` itself is restricted to locally `Z`-finite representations
   (SHOTTON20, Corollary 5.2). Every smooth representation of `G′` is locally `Z`-finite, because
   `Z/(Z ∩ K)ϖ^ℤ` is finite; this is why the headline is stated on `G′`. The hypothesis that `ϖ` is a
@@ -676,8 +677,11 @@ PadicLocalLanglandsForGL2Qp §§2.3 and 2.9 for Checks.
 
 Throughout, `F = ℚ_p`, `G′ = GL₂(ℚ_p)/p^ℤ`, `k` is a finite field of characteristic `p`, and a
 Serre weight `σ` is extended to `KZ` by letting `p` act trivially, so that
-`I(σ) = c-Ind_{KZ}^G σ = c-Ind_K^{G′} σ` (CDN23, §1.4.2, p. 16). Representations are smooth
-`k[G′]`-modules.
+`I(σ) = c-Ind_{KZ}^G σ = c-Ind_K^{G′} σ` (CDN23, §1.4.2, p. 16). The Serre weights
+`Sym^r ⊗ det^s` of `GL₂(𝔽_p)` (FiniteFlatGroupsAndIntegralPadicHodgeTheory R07.5.15) are defined
+over `𝔽_p ⊆ k`, so for `F = ℚ_p` the irreducible smooth `k[K]`-modules are exactly the Serre
+weights defined over `k` (§1.2), and Serre weights and their compact inductions are taken over `k`.
+Representations are smooth `k[G′]`-modules.
 
 ### 1.1 Proper quotients of Serre-weight compact inductions
 
@@ -700,26 +704,59 @@ gap:barthel-livne-finite-codimension); PadicLocalLanglandsForGL2Qp §2.7; §0.6.
   (PadicLocalLanglandsForGL2Qp §2.9), and CDN23, Remarque 1.18 records only Emerton's conjecture
   that admissible nonzero quotients have finite length.
 
-### 1.2 A filtration by Serre-weight inductions
+### 1.2 A filtration by compact inductions of irreducible K-modules
 
-Prove, for every finite `F/ℚ_p` and `G′ = GL₂(F)/ϖ^ℤ`, that a smooth `k[G′]`-module is of finite
-type exactly when it has a finite filtration whose graded pieces are quotients of Serre-weight
-inductions `I(σ_i)` (CDN23, Proposition 1.19, p. 17). Route: the `K`-span `W` of finitely many
-generators is finite-dimensional, `c-Ind_K^{G′} W → V` is onto, and a composition series of `W`
-induces the filtration. *Needs:* §0.3; FiniteFlatGroupsAndIntegralPadicHodgeTheory R07.5.15;
-SmoothRepresentationsOfLocalGroups *induction-exactness*.
+Prove, for every finite `F/ℚ_p`, `G′ = GL₂(F)/ϖ^ℤ` and every finite field `k` of characteristic
+`p`, that a smooth `k[G′]`-module `V` is of finite type exactly when it has a finite filtration
+`0 = V_0 ⊆ V_1 ⊆ ⋯ ⊆ V_r = V` with `G′`-equivariant surjections `c-Ind_K^{G′} W_i → V_i/V_{i−1}`,
+each `W_i` an irreducible smooth `k[K]`-module, extended to `KZ` by letting `ϖ` act trivially so
+that `c-Ind_K^{G′} W_i = c-Ind_{KZ}^G W_i` (CDN23, Proposition 1.19, p. 17, and the remark after
+its proof that the proof holds for `F ≠ ℚ_p`). Route: the `K`-span `W` of finitely many generators
+is finite-dimensional, `c-Ind_K^{G′} W → V` is onto, and a composition series of `W` induces the
+filtration, compact induction being exact; conversely compact inductions of finite-dimensional
+modules are of finite type, and finite type is stable under quotients and extensions (§0.4).
+
+The `W_i` are finite-dimensional with `1 + ϖM₂(𝒪_F)` acting trivially, and over a general finite
+`k` they are `k`-forms that need not be absolutely irreducible: by §0.6, `End_K(W_i)` is a finite
+field `k_i` and `W_i ⊗_k k̄` is the sum of `[k_i : k]` pairwise nonisomorphic Serre weights over `k̄`
+(FiniteFlatGroupsAndIntegralPadicHodgeTheory R07.5.15), conjugate under `Gal(k̄/k)`. Prove that
+when `k` contains the image of an embedding `k_F → k̄` (in particular for `F = ℚ_p` and every `k`),
+every irreducible smooth `k[K]`-module is absolutely irreducible, a Serre weight `σ_i` defined over
+`k`, so that the graded pieces are quotients of the `I(σ_i)`: the Serre weights of `GL₂(k_F)` are
+tensor products of Frobenius twists of `Sym^{r_j}` through the embeddings and a character `η ∘ det`,
+`η` a character of `k_F^×`, all defined over that image (BP12, equation (2), pp. 13–14), hence
+fixed by `Gal(k̄/k)`, which forces `k_i = k`. This split form is the one used in §§1.3, 1.5 and
+1.6. *Needs:* §§0.3, 0.4, 0.6; FiniteFlatGroupsAndIntegralPadicHodgeTheory R07.5.15;
+SmoothRepresentationsOfLocalGroups *compact-induction*, *frobenius-reciprocity*,
+*induction-exactness*.
 
 **Checks.**
 
 - The zero module has the empty filtration.
-- For `V = I(σ)` the filtration has one step.
+- For `V = I(σ)`, `σ` a Serre weight defined over `k`, the filtration has one step.
 - For `V` irreducible, any such filtration has exactly one nonzero graded piece, and `V` is a
-  quotient of some `I(σ)` with `σ ⊆ V|_K` (Frobenius reciprocity).
+  quotient of `c-Ind_K^{G′} W` for an irreducible `K`-submodule `W ⊆ V|_K`, which exists because the
+  `K`-span of a nonzero vector is finite-dimensional (Frobenius reciprocity); `W` is a Serre weight
+  defined over `k` when `k` contains the image of `k_F`, but not in general.
+- Negative control for the split form: `F = ℚ_{25}` the unramified quadratic extension of `ℚ₅`,
+  `ϖ = 5`, `k = 𝔽₅`, and `V = 𝔽₂₅` on which `g` acts by multiplication by `ac(det g)`, where
+  `ac(5^n u) = ū ∈ k_F^× = 𝔽₂₅^×` for `u ∈ 𝒪_F^×`. The scalar `5` has determinant `25` and
+  `ac(25) = 1`, so `V` is a smooth `k[G′]`-module, and `K` acts through `det` onto `𝔽₂₅^×`. In
+  `𝔽₂₅ = 𝔽₅[t]/(t² − 2)` the element `diag(t̃, 1)`, `t̃` a lift of `t`, acts in the basis `(1, t)` by
+  the matrix `(0 2; 1 0)`, whose characteristic polynomial `X² − 2` has no root in `𝔽₅` (the squares
+  are `0, 1, 4`); so `V|_K` is irreducible with `End_K(V) = 𝔽₂₅` of dimension `2` over `𝔽₅`. A
+  nonzero `K`-map from an absolutely irreducible `k[K]`-module to `V` would be an isomorphism, which
+  the endomorphism dimensions `1 ≠ 2` exclude; so `Hom_{G′}(I(σ), V) = Hom_K(σ, V) = 0` for every
+  Serre weight `σ` defined over `𝔽₅`, and `V` has no filtration by quotients of such `I(σ)`. The
+  filtration of the statement has the one step `c-Ind_K^{G′}(V|_K) → V`. Over `𝔽₂₅`,
+  `V ⊗ 𝔽₂₅ = χ ⊕ χ⁵` with `χ = ac∘det`, two distinct characters (`t⁵ = −t`), each a quotient of
+  `I(χ|_K)`: dimension `2` over `𝔽₅` against `1 + 1` over `𝔽₂₅`.
 
 ### 1.3 Finite type implies finite presentation
 
 Prove `isFinitelyPresented_of_finite`: every smooth `k[G′]`-module of finite type is finitely
-presented (CDN23, Proposition 1.20, p. 17). Route: each graded piece of the filtration of §1.2 is
+presented (CDN23, Proposition 1.20, p. 17). Route: in the filtration of §1.2 the `W_i` are Serre
+weights `σ_i` defined over `k`, `F` being `ℚ_p`, and each graded piece is
 either `I(σ_i)`, finitely presented by §0.3, or a proper quotient, of finite length by §1.1 and
 then finitely presented because irreducible smooth representations of `GL₂(ℚ_p)` are finitely
 presented (PadicLocalLanglandsForGL2Qp §2.7); conclude by extension stability (§0.4). *Needs:*
@@ -945,11 +982,14 @@ SR.0d.1, *smooth-induction*, *mackey-filtration*; Tau Ceti `TauCeti.ContCohomolo
 Let `k` be a finite field of characteristic `p`, `V` a smooth `k[G]`-module of finite type with
 central character, and `W ⊆ V` a finite-dimensional `KZ`-stable generating subspace. Prove that the
 kernel of `c-Ind_{KZ}^G W → V` is finitely generated exactly when the obstruction space `Δ(W,V)` of
-§0.8 is finite-dimensional; that this property does not depend on `W`; and that if `σ` is an
-irreducible `KZ`-weight and `V` a nonzero admissible proper quotient of `c-Ind_{KZ}^G σ` with
-`Δ(σ,V)` finite-dimensional, then `V` has finite length (HU12, Théorème 4.3, Proposition 4.4 and
-Lemme 4.5, pp. 33–36; Proposition 3.30 and Corollaire 3.31, pp. 30–31; VIGNERAS11, §5,
-Proposition 8 for torsion coefficients). In the proof of HU12 Proposition 4.4 the first displayed
+§0.8 is finite-dimensional; that this property does not depend on `W`; and that if `σ` is a
+Serre weight defined over `k` (an absolutely irreducible smooth `k[KZ]`-module with central
+character, as in the admissible form of §0.8) and `V` a nonzero admissible proper quotient of
+`c-Ind_{KZ}^G σ` with `Δ(σ,V)` finite-dimensional, then `V` has finite length (HU12, Théorème 4.3,
+Proposition 4.4 and Lemme 4.5, pp. 33–36; Proposition 3.30 and Corollaire 3.31, pp. 30–31;
+VIGNERAS11, §5, Proposition 8 for torsion coefficients). An irreducible `k[KZ]`-module that is not
+absolutely irreducible, such as the `k`-form of the negative control of §1.2, is first split by a
+finite extension of `k`, as §2.4 does. In the proof of HU12 Proposition 4.4 the first displayed
 intersection is between the positive and the negative cell, as in the next display and in
 Lemme 4.5. Route for the last clause: an irreducible subrepresentation of `V` is admissible and so
 has nonzero obstruction (§0.8, the admissible form), which injects (HU12, Proposition 3.30(i)),
@@ -975,13 +1015,13 @@ category of finite-length smooth torsion representations, since irreducibles are
 finitely presented (PadicLocalLanglandsForGL2Qp §2.7). For `F ≠ ℚ_p`, every object killed by `𝔪`
 has, after a finite extension of `k`, only characters, twists of Steinberg and principal series as
 constituents (CDN23, Lemme 1.29, p. 20). Route: reduce modulo `ϖ_L` (finite presentation bounds the
-exponent), extend scalars so that a generating `KZ`-module has a central-character composition
-series, apply §2.3 to the graded pieces (VIGNERAS11, §5, Proposition 8, p. 21, and Théorème 6,
-pp. 19–21), and for `F ≠ ℚ_p` exclude supersingular constituents by PadicLocalLanglandsForGL2Qp
-§2.9 and the Barthel–Livné classification (FiniteFlatGroupsAndIntegralPadicHodgeTheory R07.5.15).
-*Needs:*
-§§0.1, 0.3, 0.4, 0.6, 2.3; PadicLocalLanglandsForGL2Qp §§2.7, 2.9;
-FiniteFlatGroupsAndIntegralPadicHodgeTheory R07.5.15.
+exponent), extend scalars to a finite field containing the image of `k_F` and the eigenvalues of
+`ϖ` on a generating `KZ`-module, so that its composition factors are Serre weights defined over
+that field (absolutely irreducible with central character, §1.2), apply §2.3 to the graded pieces
+(VIGNERAS11, §5, Proposition 8, p. 21, and Théorème 6, pp. 19–21), and for `F ≠ ℚ_p` exclude
+supersingular constituents by PadicLocalLanglandsForGL2Qp §2.9 and the Barthel–Livné classification
+(FiniteFlatGroupsAndIntegralPadicHodgeTheory R07.5.15). *Needs:* §§0.1, 0.3, 0.4, 0.6, 1.2, 2.3;
+PadicLocalLanglandsForGL2Qp §§2.7, 2.9; FiniteFlatGroupsAndIntegralPadicHodgeTheory R07.5.15.
 
 API:
 
@@ -1255,8 +1295,19 @@ API:
 - `D₀(∅) = 0` and `D₁` of it is zero.
 - If `𝒟` is the set of all Serre weights, `D₀(𝒟) = ⊕_𝒟 σ`: any extra constituent would repeat a
   member of `𝒟`.
-- `I₁` acts trivially on `D₁(ρ̄)`, while the characters of `H` on it are those of the `I₁`-invariant
-  lines of the constituents, so `D₁(ρ̄)` is not a trivial `I`-module in general.
+- `I₁` acts trivially on `D₁(ρ̄)` and `H` need not, and `D₁(ρ̄)` is not the space of invariants of
+  the semisimplification. For `f = 1`, `p = 17`, `s = −1` and `μ − η = (5,0)`, `ρ̄` is irreducible
+  with `ρ̄|_I = ω₂^6 ⊕ ω₂^{102}` (`k ⊇ 𝔽_{289}`), `W(ρ̄) = {Sym^5, Sym^{11} ⊗ det^5}` (§3.4), and
+  `D₀(ρ̄)` is the sum of two nonsplit extensions, with socle `Sym^5` and cosocle `Sym^9 ⊗ det^6`, and
+  with socle `Sym^{11} ⊗ det^5` and cosocle `Sym^3 ⊗ det`, of total dimension `6 + 10 + 12 + 4 = 32`
+  (BP12, §16, case (iii) with `r₀ = 5`, p. 92). Here `dim D₁(ρ̄) = 2 = 3^f − 1` (BP12, Proposition
+  14.7, p. 83, and §16, p. 92), so `D₁(ρ̄)` is the sum of the invariant lines of the two socle
+  weights. With the `I₁`-invariant line of `Sym^r ⊗ det^b` spanned by `x^r`, on which `diag(a,d)`
+  acts by `a^{r+b} d^b`, its two characters have exponents `(5,0)` and `(0,5)` modulo `16`, with
+  values `5` and `1` at `diag(3,1)`, so `D₁(ρ̄)` is not the trivial `I`-module. The invariant lines
+  of the two cosocle constituents, with exponents `(15,6)` and `(4,1)` and values `6` and `13` at
+  `diag(3,1)`, do not lift through the nonsplit extensions; invariants of the semisimplification
+  would give dimension `4` and the four values `5, 6, 1, 13`.
 
 ### Examples
 
