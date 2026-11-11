@@ -392,9 +392,9 @@ must add, after §5.10, the following theorem, used in §2.2.
 
 What GL2ModularityLifting must provide (gap:totally-real-weight-two-lifting): let F be totally
 real, ℓ an odd prime and `r : G_F → GL₂(ℚ̄_ℓ)` continuous and unramified outside finitely many
-places, with `det r = ε_ℓ⁻¹ψ` for a finite-order ψ and with r potentially semistable of labelled
-Hodge–Tate weights `{0,1}` at every `v|ℓ`. Suppose `r̄` is residually modular and `r̄|G_{F(ζ_ℓ)}` is
-absolutely irreducible. When ℓ = 5, suppose also one of the following: (a) the image of
+places, with `det r = ε_ℓ⁻¹ν` for a finite-order character ν and with r potentially semistable
+of labelled Hodge–Tate weights `{0,1}` at every `v|ℓ`. Suppose `r̄` is residually modular and
+`r̄|G_{F(ζ_ℓ)}` is absolutely irreducible. When ℓ = 5, suppose also one of the following: (a) the image of
 `r̄(G_{F(ζ₅)})` in `PGL₂(𝔽̄₅)` is not isomorphic to `PSL₂(𝔽₅)`; (b) `r̄` is the extension of scalars
 of a representation `r̄₀ : G_F → GL₂(𝔽₅)` with `det r̄₀ = ε̄₅⁻¹`. Then r is modular. No condition
 relates the local types of r at places above ℓ to those of the residual witness.
@@ -421,7 +421,7 @@ statement.
 §4.1, "The algebraic Hecke character of a CM abelian variety" and "One-dimensional CM components
 of the Tate module": for an abelian variety A of dimension g over a number field k with a CM field
 of degree 2g in `End⁰_k(A)` and every endomorphism defined over k, the algebraic Hecke character
-`ψ_A` of k and the decomposition of `V_ℓ(A) ⊗ ℚ̄_ℓ` into the rank-one realizations of its
+of k attached to A and the decomposition of `V_ℓ(A) ⊗ ℚ̄_ℓ` into the rank-one realizations of its
 coefficient components. Used in §4.3 for `E ⊗_K KT`, with g = 1.
 
 §1.1 uses, for a curve over ℚ, that the action of the CM order on the Lie algebra, by the same
@@ -674,10 +674,37 @@ integers independent of ℓ. Oddness is `ε_ℓ⁻¹(c) = −1`.
 [OpenAI26](#references), Proposition 5.1 and proof, pp.12–13, OpenAI26 line 480.)
 
 *Needs:* §1.3; EtaleCohomologyFoundations §0.11; EllipticCurveModularityImaginaryQuadratic §4.1
-`character_system_properties`; FaltingsFinitenessAndIsogenyTheorems R28.4;
+`characterSystem θ` and `character_system_properties`; FaltingsFinitenessAndIsogenyTheorems R28.4;
 AbelianSchemesAndArithmeticModuli A4.1 and A6.11; NeronModelsAndSemistableAbelianVarieties §§5.1
-and 5.3; SmallRamificationAndAbelianVarietyBaseCases §5.0d (the carrier, for the assembly);
-AutomorphicGaloisRepresentationsPartII AG2.P; ArithmeticGaloisRepresentations §4.1.
+and 5.3; SmallRamificationAndAbelianVarietyBaseCases §5.0d (the carrier with its restriction, dual
+and Tate twist, for the assembly and its API); AutomorphicGaloisRepresentationsPartII AG2.P;
+ArithmeticGaloisRepresentations §4.1.
+
+**API.**
+
+- Members: the member of `W_θ` at a place λ of `M₀` above ℓ is the θ-eigenspace of
+  `H¹(C^δ_{n,L̄}, ℚ_ℓ) ⊗_{ℚ_ℓ} M_{0,λ}`, on which `u′^*_ζ` acts by the image of `θ(ζ)` in `M_{0,λ}`.
+  It depends only on λ, and its extension of scalars along any embedding `j_ℓ` inducing λ is the
+  eigenspace `W_{θ,ℓ}` formed with that `j_ℓ`. Two embeddings inducing λ differ by some
+  `σ ∈ Gal(ℚ̄_ℓ/ℚ_ℓ)`, `j′_ℓ = σ ∘ j_ℓ`, and `1 ⊗ σ` carries the first eigenspace σ-semilinearly
+  and `G_L`-equivariantly onto the second.
+- Restriction to M: through `φ^*`, the restriction of `W_θ` to `G_M` on the carrier has as members
+  those of EllipticCurveModularityImaginaryQuadratic §4.1 `characterSystem θ` at t over `F = M`,
+  with the same Hodge multisets `{0,1}`. At a place w of M above `v ∉ S` its polynomial, whose
+  roots are the `f(w|v)`-th powers of the roots of `P_{θ,v}`, is the characteristic polynomial of
+  geometric Frobenius at w on the members of `characterSystem θ`. The two bad sets are not
+  compared: that of `characterSystem θ` is only asserted to be finite.
+- Reflection: `w′^*` carries each member of `W_θ` onto the member of `W_{θ⁻¹}` at the same place,
+  linearly over `M_{0,λ}` and `G_L`-equivariantly. The two systems have the same bad set S and the
+  same Hodge multisets, and `P_{θ,v} = P_{θ⁻¹,v}` for `v ∉ S`.
+- Base change: for a finite extension `L′/L`, the restriction of `W_θ` to `G_{L′}` on the carrier
+  has as members the θ-eigenspaces of `H¹` of `C^δ_n ⊗_L L′` under the transported rotations, and
+  at a place `v′|v` with `v ∉ S` its polynomial is the one whose roots are the `f(v′|v)`-th powers of
+  the roots of `P_{θ,v}`.
+- Duality: the pairing `[,]_θ` identifies the dual of each member of `W_θ` with the corresponding
+  member of the Tate twist `W_θ ⊗ ε_ℓ`, `G_L`-equivariantly. On polynomials this is the equality
+  of root multisets `{α⁻¹, β⁻¹} = {α/q_v, β/q_v}` for the roots α, β of `P_{θ,v}`, since `αβ = q_v`;
+  on Hodge multisets it is `−{0,1} = {0,1} − 1`.
 
 **Checks.**
 
@@ -689,6 +716,13 @@ AutomorphicGaloisRepresentationsPartII AG2.P; ArithmeticGaloisRepresentations §
   only for totally real k.
 - A member with determinant `ε_ℓ` (Tate-module convention) or weights `{0,2}` is excluded; the
   cup-product target has weight one, matching `0 + 1`.
+- Restriction witness: for k = ℚ and n = 3, L = ℚ and `M = ℚ(√−3)`; suppose `5 ∉ S` and `B_t`
+  reduces modulo 5 to `y² = x³ − x + 1`, with 8 points and `a₅ = −2`. Since 5 is inert in M,
+  `δ(Frob₅) = −1` and `P_{1,5} = X² − 2X + 5`, with roots `1 ± 2i`. At the place w above 5,
+  `f(w|5) = 2`, and the restricted polynomial has roots `(1 ± 2i)² = −3 ± 4i`, that is
+  `X² + 6X + 25`: the polynomial of the same curve over `𝔽₂₅`, which has 32 points
+  (`a = 26 − 32 = −6`). Keeping the roots unsquared would give `X² − 2X + 5` and retain the sign δ,
+  which is trivial on `G_M`.
 
 ### 1.5 Integral lattices and the congruence chain
 
@@ -901,7 +935,7 @@ above (gap:totally-real-weight-two-lifting); NeronModelsAndSemistableAbelianVari
   is why the second alternative asks for an `𝔽₅`-model.
 - At ℓ = 5 for an elliptic curve E, `r̄` is the dual of `E[5]`, defined over `𝔽₅` with determinant
   `ε̄₅⁻¹`: the second alternative holds and no projective-image hypothesis is needed.
-- Non-example: a summand with determinant `ε_ℓ⁻¹ψ` for a nontrivial finite-order ψ is outside this
+- Non-example: a summand with determinant `ε_ℓ⁻¹ν` for a nontrivial finite-order ν is outside this
   statement, though inside the supplier's theorem; a weight-one Artin representation, with weights
   `{0,0}`, is outside both.
 
@@ -1068,7 +1102,7 @@ affine line. It gives these statements for `V_θ` on `G_{M(ζ_ℓ)}`, with M = `
 to `G_M` identifies `W_θ` with `V_θ` (§1.3); `L(ζ_ℓ) = M` for ℓ ∈ {3, p} (§1.1); and
 `G_{M(ζ₅)} ⊆ G_{L(ζ₅)}`, while absolute irreducibility on a subgroup implies it on the group.
 
-([LeHung26](#references), §3.3, pp.6–7, LeHung26 lines 250–260; [OpenAI26](#references),
+([LeHung26](#references), §3.3, p.6, LeHung26 lines 250–260; [OpenAI26](#references),
 Proposition 8.4, p.23, OpenAI26 line 990.)
 
 *Needs:* §§1.1, 1.3 and 1.6; EllipticCurveModularityImaginaryQuadratic §5.1
@@ -1077,9 +1111,14 @@ Proposition 8.4, p.23, OpenAI26 line 990.)
 
 **Checks.**
 
-- For the pair `(3,5)` the coefficient `c(λ) = 2 − λ − λ⁻¹` at a primitive cube root λ is 3, nonzero
-  modulo 5; for `(p,3)` a failure would put λ of order p > 100 in `𝔽_{3^a}` with `a ≤ 4`, whose
-  unit groups have order at most 80.
+- The coefficient `c(λ) = 2 − λ − λ⁻¹ = −(λ − 1)²/λ` of EllipticCurveModularityImaginaryQuadratic
+  §7.1 is 3 at a primitive cube root λ, nonzero modulo 5 for the pair `(3,5)` and modulo `p ≠ 3`
+  for `(3,p)`. For `(p,3)` it vanishes modulo 3 only if the reduction of λ is 1, impossible for λ
+  of order `p ≠ 3`: for p = 101 the reduction has order 101 in `𝔽_{3^{100}}^×`, and for p = 7,
+  below the bound, it has order 7 in `𝔽_{3^6}^×`, so c is nonzero in both. The bound `p > 100`, a
+  hypothesis of §7.4 there, serves its regular word (`c² ≠ ±4`, which would put λ in `𝔽_{3^a}`
+  with `a ≤ 4`, whose unit groups have order at most 80) and through it decomposed genericity,
+  which the totally real lifting of §2.2 does not use; the nonvanishing of c needs only `p ≠ 3`.
 - `p > 100` excludes 3 and 5, so the three primes 3, 5 and p are distinct.
 - Item 3 needs no condition on t: `E[p]` has image containing `SL₂(𝔽_p)` on the normal closure,
   `SL₂(𝔽_p)` is perfect for `p > 3`, and the abelian extension `K(μ_{15p})/K` preserves it; the
@@ -1233,9 +1272,9 @@ NeronModelsAndSemistableAbelianVarieties §§5.6 and 6.10.
 
 Let K be totally real and E/K geometrically CM, with CM field `T ⊂ K̄` embedded through the action
 of the endomorphisms on invariant differentials. Prove that `T ⊄ K` and that
-`H¹(E)|G_{KT} = ψ_ι ⊕ ψ^c_ι` for an algebraic Hecke character θ of KT with `ψ_ι = r_{ℓ,ι}(θ)` and
-`ψ ≠ ψ^c`. Then `H¹(E) ≅ Ind_{G_{KT}}^{G_K} ψ_ι`, and the quadratic automorphic induction
-`π_E = AI_{KT/K}(θ)`, unitarily normalized, is cuspidal of type `(2,0)` with trivial central
+`H¹(E)|G_{KT} = ξ_ι ⊕ ξ^c_ι` for an algebraic Hecke character ξ of KT with `ξ_ι = r_{ℓ,ι}(ξ)` and
+`ξ_ι ≠ ξ^c_ι`. Then `H¹(E) ≅ Ind_{G_{KT}}^{G_K} ξ_ι`, and the quadratic automorphic induction
+`π_E = AI_{KT/K}(ξ)`, unitarily normalized, is cuspidal of type `(2,0)` with trivial central
 character and `ρ_{π_E,ι} ≅ H¹(E)`. In particular §4.2 applies.
 
 T is imaginary quadratic and K has only real embeddings, so `T ⊄ K` and `[KT:K] = 2`. By the field
@@ -1246,15 +1285,16 @@ So `T ⊗ ℚ̄_ℓ` acts `G_{KT}`-equivariantly on `H¹`, its two eigenspaces a
 an element of `G_K` outside `G_{KT}` exchanges them. Over KT every endomorphism of E is defined, so
 ComplexMultiplicationAndExplicitReciprocity §4.1, "The algebraic Hecke character of a CM abelian
 variety" and "One-dimensional CM components of the Tate module", applied to `E ⊗_K KT` with
-`g = 1` and CM field T, supplies the algebraic Hecke character θ of KT and splits
-`V_ℓ(E) ⊗ ℚ̄_ℓ` over `G_{KT}` into the two rank-one realizations of θ; their duals are the two
-eigenspaces of `H¹(E) = V_ℓ(E)^∨`, written `ψ_ι` and `ψ^c_ι`. Geometric Frobenius at a good place v
-of KT acts on them by the two conjugates of `θ(v) ∈ T`, the arithmetic Frobenius values of that
-section. An implementer may instead observe that the eigenspaces are finitely ramified de Rham
-characters and apply AutomorphicGaloisRepresentations §3.13. At each embedding of KT the two
-characters have different Hodge–Tate weights, 0 and 1, so `ψ ≠ ψ^c` and the induction is cuspidal.
-The good polynomials of `AI(θ)` and of `Ind ψ` agree, and recognition identifies the
-representations.
+`g = 1` and CM field T, supplies the algebraic Hecke character ξ of KT and splits
+`V_ℓ(E) ⊗ ℚ̄_ℓ` over `G_{KT}` into the two rank-one realizations of ξ, which in the
+geometric-Frobenius normalization of AutomorphicGaloisRepresentationsPartII AG2.0 are
+`r_{ℓ,ι}(ξ⁻¹)` and its conjugate; their duals are the two eigenspaces of `H¹(E) = V_ℓ(E)^∨`,
+written `ξ_ι = r_{ℓ,ι}(ξ)` and `ξ^c_ι`. Geometric Frobenius at a good place v of KT acts on them by
+the two conjugates of `ξ(v) ∈ T`, the arithmetic Frobenius values of that section. An implementer
+may instead observe that the eigenspaces are finitely ramified de Rham characters and apply
+AutomorphicGaloisRepresentations §3.13. At each embedding of KT the two characters have different
+Hodge–Tate weights, 0 and 1, so `ξ_ι ≠ ξ^c_ι` and the induction is cuspidal. The good polynomials
+of `AI(ξ)` and of `Ind ξ_ι` agree, and recognition identifies the representations.
 
 ([LeHung26](#references), §5, p.9, LeHung26 lines 364–366; [OpenAI26](#references), §9.4,
 pp.27–28, OpenAI26 lines 1200–1215.)
@@ -1272,7 +1312,7 @@ GL2AutomorphicRepresentationsAndTransfer R16.2.13 and R17.4.16; ArithmeticGalois
 
 - `y² = x³ − x` over ℚ has CM by `ℚ(i)`. At 3, inert, there are 4 points over `𝔽₃` and `a₃ = 0`,
   the trace of an induced representation at an inert Frobenius. At 5, split, there are 8 points,
-  `a₅ = −2 = ψ + ψ̄` with `ψ = −1 ± 2i` of norm 5.
+  `a₅ = −2 = ξ(𝔭) + ξ(𝔭̄)` with `ξ(𝔭) = −1 ± 2i` of norm 5.
 - `y² = x³ + 1` has CM by `ℚ(√−3)`; at 5, inert, there are 6 points and `a₅ = 0`.
 - Over `K = ℚ(√2)` the curve `y² = x³ − x` uses induction from `ℚ(√2, i) = ℚ(ζ₈)`; over a totally
   real base the isobaric-sum branch never occurs. Over `ℚ(i)`, outside this roadmap, the same curve
@@ -1366,8 +1406,8 @@ manifest; line references are to its line-numbered extractions.
 
 - **LeHung26.** Bao V. Le Hung, *A geometric prime switch for elliptic curves over totally real
   and CM fields*, discussion draft, 7 October 2026, hexagon:2610.00156v1. Theorem 1.1, p.2;
-  conventions, p.4; §§2.1–2.4, p.5; §3.1 Proposition 3.1, §3.2 Lemma 3.2 with (9)–(11), §3.3,
-  pp.6–7; §3.4, p.7; §5 Lemma 5.1 and the compatibility and CM paragraphs, p.9. Its Theorem 1.1
+  conventions, p.4; §§2.1–2.4, p.5; §3.1 Proposition 3.1, §3.2 Lemma 3.2 with (9)–(11) and
+  §3.3, p.6; §3.4, p.7; §5 Lemma 5.1 and the compatibility and CM paragraphs, p.9. Its Theorem 1.1
   assumes the geometric inputs of OpenAI26; here they are the imported proved layers.
 - **OpenAI26.** OpenAI, *Modularity of elliptic curves over imaginary quadratic fields*, 4 October
   2026, revision `adc7f1241b42e322a6451854ab7e4b4c146bf78a`. Proposition 5.1, p.12;
