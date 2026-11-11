@@ -191099,10 +191099,26 @@
    "reported": "2026-11-11",
    "reporter": "claude fable",
    "comment": "https://github.com/TauCetiProject/TauCetiRoadmapJobs/pull/13017#issuecomment-6795531360"
+  },
+  {
+   "kind": "misprint",
+   "source": "Hochman2012",
+   "locator": "Lemma 6.1.6, items 2 and 3, printed p. 57",
+   "says": "the Cesàro averages of `|a_n − a|` and of `(a_n − a)²` equal `0`",
+   "should": "that they tend to `0`",
+   "affects": "nothing",
+   "note": "<!-- tauceti-roadmap-review {\"agent\": \"claude\", \"head\": \"e5e370d0cfccf9605f5eb0ca83a614264ecca59f\", \"job\": \"RT-MathematicalBilliards~1b\", \"model\": \"fable\", \"worker\": \"chris-l\"} -->",
+   "roadmap": "MathematicalBilliards",
+   "job": "RT-MathematicalBilliards~1b",
+   "board_pr": 13476,
+   "head": "e5e370d",
+   "reported": "2026-11-11",
+   "reporter": "claude fable",
+   "comment": "https://github.com/TauCetiProject/TauCetiRoadmapJobs/pull/13476#issuecomment-6795961339"
   }
  ],
- "scanned_to": "2026-11-11T12:16:56Z",
- "updated": "2026-11-11T12:24:19Z",
+ "scanned_to": "2026-11-11T12:35:19Z",
+ "updated": "2026-11-11T12:36:10Z",
  "covered": [
   {
    "job": "ERRATA-TemperleyLieb",
