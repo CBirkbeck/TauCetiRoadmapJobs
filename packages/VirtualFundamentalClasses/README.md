@@ -17,15 +17,15 @@ space, agreement with the Edidin–Graham equivariant Chow groups of a Deligne�
 and the rational degree `∫_𝓜 : A_0(𝓜)_ℚ → ℚ` of a proper stack, with
 `∫[𝒱_x] = [κ(x) : k]/|Aut(x̄)|`. Layers 7–10 build cone stacks, the stacks `h¹/h⁰(E^∨)`, the
 truncated relative cotangent complex `τ^{≥−1}L_{M/𝔐}` of a morphism of Deligne–Mumford type from a
-Deligne–Mumford stack to an algebraic stack of pure dimension, the relative intrinsic normal cone `C_{M/𝔐}`, obstruction
-theories and the virtual class `[M]^vir ∈ A_vd(M)_ℚ` with its independence of the global
-resolution and its basic properties (no obstructions, locally free obstructions, products,
-pullback, functoriality). Layer 11 proves that the relative space of maps from a family of
-prestable curves to a smooth quasi-projective variety carries the perfect relative obstruction
-theory `(Rπ_* F^*T_X)^∨` of the universal map `F`, with a global resolution when the family
-carries an invertible sheaf ample on its fibres, and virtual dimension `χ(F^*T_X) + dim 𝔅` (the
-Euler characteristic taken on a fibre); for the stack of prestable `n`-pointed curves of genus `g`
-and maps into the part of `X` where `T_X` has rank `ρ` this is
+Deligne–Mumford stack with affine diagonal to an algebraic stack of pure dimension, the relative
+intrinsic normal cone `C_{M/𝔐}`, obstruction theories and the virtual class `[M]^vir ∈ A_vd(M)_ℚ`
+with its independence of the global resolution and its basic properties (no obstructions, locally
+free obstructions, products, pullback, functoriality). Layer 11 proves that the relative space of
+maps from a family of prestable curves to a smooth quasi-projective variety carries the perfect
+relative obstruction theory `(Rπ_* F^*T_X)^∨` of the universal map `F`, with a global resolution
+when the family carries an invertible sheaf ample on its fibres, and virtual dimension
+`χ(F^*T_X) + dim 𝔅` (the Euler characteristic taken on a fibre); for the stack of prestable
+`n`-pointed curves of genus `g` and maps into the part of `X` where `T_X` has rank `ρ` this is
 `∫_β c₁(T_X) + (ρ − 3)(1 − g) + n`, with `ρ = dim X` for `X` of pure dimension, the virtual
 dimension of Gromov–Witten theory. The end theorems are the coarse-space comparison, the
 degree of zero-cycles, the intrinsic normal cone of pure dimension `dim 𝔐`, the equivalent
@@ -57,8 +57,9 @@ This roadmap owns:
 - cones and cone stacks over a Deligne–Mumford stack, the small étale site of a Deligne–Mumford
   stack with its structure sheaf and complexes of `O`-modules, Condition `(⋆)`, and the stacks
   `h¹/h⁰(E^∨)` (Layer 7);
-- the truncated relative cotangent complex of a morphism of Deligne–Mumford type, the relative
-  intrinsic normal sheaf and the relative intrinsic normal cone (Layer 8);
+- the truncated relative cotangent complex of a morphism of Deligne–Mumford type from a DM stack
+  with affine diagonal, the relative intrinsic normal sheaf and the relative intrinsic normal cone
+  (Layer 8);
 - obstruction theories in the sense of Behrend–Fantechi and their deformation-theoretic
   characterisation (Layer 9);
 - virtual fundamental classes and their properties (Layer 10);
@@ -261,6 +262,9 @@ Boundaries:
   cycles on a scheme as locally finitely supported functions `X → R`, and the pushforward along a
   quasi-compact morphism with residue-degree weights. Layer 2.4 compares the stack cycle groups
   of a scheme with these through Tau Ceti's `Chow.cyclesOfDimension`.
+- `topologicalKrullDim` (`Mathlib/Topology/KrullDimension.lean`): the Krull dimension of a
+  topological space, valued in `WithBot ℕ∞`, the dimension of a scheme through which
+  SchemeAndStackFoundations §0.7 is stated and which Layer 1.3 evaluates on étale charts.
 - `AlgebraicGeometry.Scheme.ord` (`Mathlib/AlgebraicGeometry/OrderOfVanishing.lean`): the order of
   an element of the function field of a locally Noetherian integral scheme at a point; its junk
   value is `0` when the point does not have coheight `1` or the function is `0`. Layer 2.2
@@ -367,10 +371,12 @@ and 5.3.
   site-level stackification `Stack.stackification`.
 - §1.19: `IsRepresentableBySpaces`, `RepresentableProperty`, `IsAlgebraicStack`,
   `IsDeligneMumford` with `IsDeligneMumford.iff_unramified_diagonal` and `IsDeligneMumford.ofSpace`.
-- §1.20: `inertia`, `automorphismGroup`, `SmoothLocal`, `IsSeparatedStack`, `Stacks.points` with
-  its atlas independence and functoriality, finite type, `UniversallyClosedStack`,
-  `IsProperStack` with `IsProperStack.baseChange`, and `stack_presentation`. Quasi-separatedness of
-  a stack (Convention 1) is `RepresentableProperty` of §1.19 applied to the diagonal.
+- §1.20: `inertia`, `automorphismGroup`, `setoid_criterion` (an algebraic stack with trivial
+  inertia is an algebraic space, for the characterisation of `e(𝒱) = 1` in Layer 1.4),
+  `SmoothLocal`, `IsSeparatedStack`, `Stacks.points` with its atlas independence and
+  functoriality, finite type, `UniversallyClosedStack`, `IsProperStack` with
+  `IsProperStack.baseChange`, and `stack_presentation`. Quasi-separatedness of a stack
+  (Convention 1) is `RepresentableProperty` of §1.19 applied to the diagonal.
 - §1.21: the generic quotient stack `Stack.quotient` of a groupoid in sheaves on a site, used for
   `[C/E]` and `h¹/h⁰`; `actionQuotient G X` and `quotientStack_algebraic`.
 - §1.22: `Stacks.QCoh` with `QCoh.pullback` and `QCoh.presentationEquiv`.
@@ -382,6 +388,10 @@ and 5.3.
   higher cohomology) and `quasiCoherent_topology_comparison` (Zariski, étale and fppf cohomology of
   a quasi-coherent module agree), for the étale-local comparison of global resolutions in Layer
   10.1.
+- §2.18: `DQCoh` (the full triangulated subcategory of the derived category of `O_X`-modules of
+  complexes with quasi-coherent cohomology) and `DQCoh.affineEquiv` (for `X = Spec A`, an
+  equivalence `D(ModuleCat A) ≌ DQCoh (Spec A)` compatible with the standard t-structures), for
+  the local two-term representatives of Layer 7.3.
 - §2.19: on Noetherian schemes, the right adjoint `a_f` of `Rf_*` on `DQCoh` with
   `pushforwardRightAdjoint_adj` and `globalDuality`, and the upper shriek functor on `D^+_QCoh` with
   `upperShriek_proper` (`f^! = a_f` for proper `f`), `upperShriek_flat_baseChange` and
@@ -401,8 +411,10 @@ and 5.3.
   proper scheme with `deg f_* = deg`.
 - §5.4: projective bundles, `Chow.chernClass`, the splitting principle and Whitney sum.
 - §5.5: `normalCone`, `conormal`, `normalBundle` with `conormal_regular` and
-  `normalCone_eq_normalBundle` for regular immersions, `Chow.IsRegularImmersion`, `Chow.gysin` with
-  its compatibilities (`pushforward_compat`, `pullback_compat`, `excess_intersection`,
+  `normalCone_eq_normalBundle` for regular immersions, `deformationToNormalCone` and the
+  specialisation homomorphism `specialization` to the normal cone (for the rational equivalence
+  of Layer 4.4), `Chow.IsRegularImmersion`, `Chow.gysin` with its compatibilities
+  (`pushforward_compat`, `pullback_compat`, `commutes_with_c1`, `excess_intersection`,
   `functoriality`, `gysin_self_intersection`), `homotopy_invariance`, and `Chow.externalProduct`.
 - §5.6: `Chow.intersect` and `Chow.graphPullback` on smooth schemes.
 
@@ -2480,17 +2492,55 @@ type, `π : 𝒞_M := 𝒞 ×_𝔅 M → M` the base change and `F : 𝒞_M → 
 relative space of maps from `𝒞` to `X`* if for every
 square-zero extension `T → T̄` over `𝔅` (9.1) and every `g : T → M` over `𝔅`, restriction is a
 bijection from the extensions of `g` to `T̄` onto the extensions of `F ∘ 𝒞_g : 𝒞_T → X` to `𝒞_{T̄}`.
-Every open substack of the stack of morphisms `Mor_𝔅(𝒞, X)`, when that stack is a DM stack, is such
-a space (behrend1997 line 135 and Proposition 4, line 139); the hypothesis ties `M` to the moduli
-problem, and without it the statement of 11.4 is false (Checks). *Needs:* 9.1; Tau Ceti
-`PrestableFamily`; StableReduction Layer 3; SchemeAndStackFoundations §1.19.
+Let `Mor_𝔅(𝒞, X)` be the stack over `𝔅` whose objects over a scheme `T → 𝔅` are the morphisms
+`𝒞_T → X`, so that its fibre over each `T → 𝔅` is a set. Every open substack
+`M ⊆ Mor_𝔅(𝒞, X)` that is a separated DM stack over `k` (Convention 1: in particular of finite
+type), with `F` the restriction of the universal map, is a relative space of maps. Indeed
+`M → 𝔅` is of Deligne–Mumford type: the diagonal of `M`, unramified by
+`IsDeligneMumford.iff_unramified_diagonal`, is the relative diagonal `M → M ×_𝔅 M` followed by a
+base change of the diagonal of `𝔅`, so the relative diagonal is unramified. And an extension
+`T̄ → Mor_𝔅(𝒞, X)` of `g` over `𝔅` factors through the open `M`, because `T` and `T̄` have the same
+underlying space, so the restriction bijection is the definition of `Mor_𝔅(𝒞, X)`. No condition
+is put on `Mor_𝔅(𝒞, X)` itself, which over the stack of prestable curves is not a DM stack
+(Checks). For a smooth projective `X` and `𝔅` the stack of prestable curves, the stack of stable
+maps of class `β` is open in `Mor_𝔅(𝒞, X)` (behrend1997 line 135 and Proposition 4, line 139), and
+it is such an `M` whenever it is a DM stack, which holds in characteristic `0` and, in
+characteristic `p`, when the degree of `β` against a fixed very ample sheaf on `X` is less than `p`
+(behrend-manin1996 Theorem 3.14, line 1018, with lines 1014–1017); it is then proper. The
+hypothesis ties `M` to the moduli problem, and without it the statement of 11.4 is false
+(Checks). *Needs:* 9.1; Tau Ceti `PrestableFamily`; StableReduction Layer 3;
+SchemeAndStackFoundations §1.19 (`IsDeligneMumford.iff_unramified_diagonal`).
 
 **Checks.**
 
 - `X = Spec k`: `(M, F)` is a relative space of maps iff `M → 𝔅` is formally étale, hence étale
   (`f` is of finite type and of Deligne–Mumford type).
-- `𝔅 = Spec k`, `𝒞 = C` a fixed smooth projective curve and `M` an open subscheme of the scheme of
-  morphisms `Mor(C, X)`: this is the setting of behrend-fantechi1997 Proposition 6.2 (line 1602).
+- `𝔅 = Spec k`, `𝒞 = C` a fixed smooth projective curve and `M` a quasi-compact open subscheme of
+  the scheme of morphisms `Mor(C, X)`, which is separated because `X` is: this is the setting of
+  behrend-fantechi1997 Proposition 6.2 (line 1602), which takes all of `Mor(C, V)` for a
+  projective `V` (line 1583).
+- The condition sits on `M`, not on `Mor_𝔅(𝒞, X)`. Let `𝔅` be the affine line with doubled origin
+  (a smooth scheme of finite type over `k`, of pure dimension `1`, not separated), `𝒞 = ℙ¹ × 𝔅` and
+  `X = Spec k`. Every `𝒞_T` has exactly one map to `Spec k`, so `Mor_𝔅(𝒞, X) → 𝔅` is an isomorphism
+  and `Mor_𝔅(𝒞, X)` is a DM stack. Its open substack `M = 𝔅` is not separated and is excluded,
+  although the restriction bijection holds for it. Its open substack `M = 𝔸¹`, one of the two
+  charts, is separated, `M → 𝔅` is an open immersion, hence étale, and it is a relative space of
+  maps, as the first Check requires.
+- Quasi-compactness is a condition. For `𝔅 = Spec k` and `C = X = ℙ¹`, `Mor(ℙ¹, ℙ¹)` is the
+  disjoint union over `d ≥ 0` of the schemes `Mor_d` of maps of degree `d`, each the open subscheme
+  of `ℙ^{2d+1}` of pairs of binary forms of degree `d` without common zero (`Mor_0 = ℙ¹`). It is a
+  separated scheme locally of finite type but not quasi-compact, so it is not a DM stack over `k`
+  in the sense of Convention 1. Each `Mor_d` is one, of dimension `2d + 1`, which is `(r + 1)d + r`
+  at `r = 1`, as in the second Check of 11.4.
+- Over the stack `𝔅` of prestable curves of genus `0` without markings (smooth of pure dimension
+  `−3`, behrend1997 Proposition 2, line 99) and `X = ℙ^r`, the object of `Mor_𝔅(𝒞, X)` given by
+  `ℙ¹` with a constant map has automorphism group `PGL_2`, which is not unramified over `k`, so
+  `Mor_𝔅(𝒞, X)` is not a DM stack. The open substack of stable maps of degree `d ≥ 1` is a proper
+  DM stack in characteristic `0` and in characteristic `p > d`, hence a relative space of maps; a
+  hypothesis that `Mor_𝔅(𝒞, X)` be a DM stack would exclude it. In characteristic `p` with
+  `d = p` it is not one: the stable map `x ↦ [x^p : 1 : 0 : ⋯ : 0]` is fixed by the translations
+  `x ↦ x + a` with `a^p = 0`, a copy of the non-reduced group `α_p` inside its automorphism group,
+  which is therefore not unramified.
 - Without the hypothesis the conclusion of 11.4 fails: for `𝔅 = Spec k`, `C = ℙ¹`, `X = ℙ¹` and `M`
   a single point `Spec k` carrying the identity map `F = id : ℙ¹ → ℙ¹`,
   `h^0(E) = H⁰(ℙ¹, T_{ℙ¹})^∨ ≅ k³`
@@ -2660,10 +2710,12 @@ StableReduction Layer 2.
 
 ### Examples
 
-- The space of morphisms from a fixed curve to a smooth projective variety, with the obstruction
-  theory of behrend-fantechi1997 Proposition 6.2.
-- Over the stack of prestable curves, an open substack of the relative space of maps whose points
-  are stable maps carries the Gromov–Witten obstruction theory of Behrend.
+- A quasi-compact open part of the scheme of morphisms from a fixed curve to a smooth projective
+  variety, with the obstruction theory of behrend-fantechi1997 Proposition 6.2.
+- Over the stack of prestable curves and for a smooth projective `X`, the open substack of
+  `Mor_𝔅(𝒞, X)` of stable maps of class `β`, when it is a DM stack (characteristic `0`, or `β`
+  bounded by the characteristic) a proper one and so a relative space of maps (11.1), carries the
+  Gromov–Witten obstruction theory of Behrend.
 
 ### Dependencies
 
@@ -2679,7 +2731,8 @@ EnhancedDerivedSheaves E1.4; DerivedModuleAlgebra §0.25. Within the layer, 11.1
   6.3).
 - A roadmap on the stacks of stable maps and algebraic Gromov–Witten invariants: the Artin stack
   `𝔐_{g,n}` of prestable curves (behrend1997 Proposition 2), the proper DM stack `M̄_{g,n}(X, β)`
-  (behrend-manin1996 Theorem 3.14, line 1018; fulton-pandharipande1997 Theorem 1, line 581), its
+  in characteristic `0` or for `β` bounded by the characteristic (behrend-manin1996 Theorem 3.14,
+  line 1018, with lines 1014–1017; fulton-pandharipande1997 Theorem 1, line 581), its
   virtual class from Layers 10–11, the Gromov–Witten axioms (behrend1997 Theorem 6, line 198;
   li-tian1998 Theorem 4.3, line 1585) and the quintic invariants `N_{g,d}` of
   chang-guo-li2021 (Remark 0.2, lines 165–174), all consumers of Layers 10–11.

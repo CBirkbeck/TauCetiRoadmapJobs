@@ -44,18 +44,18 @@ by étale descent of cycles and rational equivalences on stacks that are not at 
    Chow groups of stacks.
 4. **The relative intrinsic normal cone has pure dimension `m`** (README 8.5;
    Behrend–Fantechi 1997, Theorem 3.11). For a morphism `M → 𝔐` of Deligne–Mumford type from a
-   Deligne–Mumford stack to an algebraic stack of pure dimension `m`, the cone stack `C_{M/𝔐}`
-   is of pure dimension `m` with abelian hull `N_{M/𝔐}`, and it is a vector bundle stack exactly
-   when `M → 𝔐` is a local complete intersection. It lacks algebraic stacks and their
-   dimension, cone stacks, the small étale site of a Deligne–Mumford stack with its derived
-   category of modules, and the truncated cotangent complex `τ^{≥−1}L_{M/𝔐}` of a morphism of
-   stacks (Mathlib's `Algebra.Extension.cotangentComplex` is the naive complex of a ring
-   presentation).
+   Deligne–Mumford stack `M` with affine diagonal (README, Convention 8) to an algebraic stack of
+   pure dimension `m`, the cone stack `C_{M/𝔐}` is of pure dimension `m` with abelian hull
+   `N_{M/𝔐}`, and it is a vector bundle stack exactly when `M → 𝔐` is a local complete
+   intersection. It lacks algebraic stacks and their dimension, cone stacks, the small étale
+   site of a Deligne–Mumford stack with its derived category of modules, and the truncated
+   cotangent complex `τ^{≥−1}L_{M/𝔐}` of a morphism of stacks (Mathlib's
+   `Algebra.Extension.cotangentComplex` is the naive complex of a ring presentation).
 5. **The characterisations of an obstruction theory** (README 9.3; Behrend–Fantechi 1997,
-   Theorem 4.5). For `φ : E → τ^{≥−1}L_{M/𝔐}`, being an obstruction theory, `φ^∨` being a
-   closed immersion of cone stacks, and the two deformation-theoretic conditions on square-zero
-   extensions are equivalent. In those two conditions the comparison maps are the ones induced
-   by `φ`: precomposition with the pullback of `φ`, from `Hom(g^*Ω_{M/𝔐}, J)` to
+   Theorem 4.5). For `M → 𝔐` as in 4 and `φ : E → τ^{≥−1}L_{M/𝔐}`, being an obstruction theory,
+   `φ^∨` being a closed immersion of cone stacks, and the two deformation-theoretic conditions
+   on square-zero extensions are equivalent. In those two conditions the comparison maps are the
+   ones induced by `φ`: precomposition with the pullback of `φ`, from `Hom(g^*Ω_{M/𝔐}, J)` to
    `Ext⁰(Lg^*E, J)`, is bijective whenever `g` extends, and the canonical isomorphism from
    extensions to 2-isomorphisms `ob(g) ⇒ 0(g)`, followed by composition with `φ^∨`, is an
    isomorphism; abstract torsor structures or isomorphisms would also admit `φ = 0` on the

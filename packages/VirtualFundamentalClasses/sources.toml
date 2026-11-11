@@ -200,7 +200,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-05"
 version_note = "arXiv v2"
-cited_for = ["downstream consumers: stacks of stable maps"]
+cited_for = ["11.1 stable maps are a DM stack in characteristic 0 or bounded by the characteristic", "downstream consumers: stacks of stable maps"]
 
 [[source]]
 id = "chang-guo-li2021"
