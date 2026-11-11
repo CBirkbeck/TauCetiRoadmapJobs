@@ -54,7 +54,12 @@ by étale descent of cycles and rational equivalences on stacks that are not at 
 5. **The characterisations of an obstruction theory** (README 9.3; Behrend–Fantechi 1997,
    Theorem 4.5). For `φ : E → τ^{≥−1}L_{M/𝔐}`, being an obstruction theory, `φ^∨` being a
    closed immersion of cone stacks, and the two deformation-theoretic conditions on square-zero
-   extensions are equivalent. It lacks the same carriers as 4, and the stacks `h¹/h⁰(E^∨)`.
+   extensions are equivalent. In those two conditions the comparison maps are the ones induced
+   by `φ`: precomposition with the pullback of `φ`, from `Hom(g^*Ω_{M/𝔐}, J)` to
+   `Ext⁰(Lg^*E, J)`, is bijective whenever `g` extends, and the canonical isomorphism from
+   extensions to 2-isomorphisms `ob(g) ⇒ 0(g)`, followed by composition with `φ^∨`, is an
+   isomorphism; abstract torsor structures or isomorphisms would also admit `φ = 0` on the
+   affine line. It lacks the same carriers as 4, and the stacks `h¹/h⁰(E^∨)`.
 6. **The virtual fundamental class** (README 10.2–10.3; Behrend–Fantechi 1997, Definition 5.2
    and Proposition 5.3). For a separated `M` and a perfect obstruction theory of rank `r` with a
    global resolution, `[M, E]^vir = 0^!_{F_1}[C(F^•)] ∈ A_{m+r}(M)_ℚ` does not depend on the
@@ -77,7 +82,9 @@ by étale descent of cycles and rational equivalences on stacks that are not at 
    Behrend–Fantechi 1997, Proposition 6.2; Behrend 1997, Proposition 5). For a relative space of
    maps `F : 𝒞_M → X` from a family of prestable curves over an algebraic stack `𝔅` to a smooth
    quasi-projective `X`, `(Rπ_* F^*T_X)^∨ → τ^{≥−1}L_{M/𝔅}` is a perfect obstruction theory of
-   rank `χ(F^*T_X)` on fibres, with a global resolution when `𝒞_M` carries an invertible sheaf
+   rank `χ(F^*T_X)` on fibres, which is `deg F^*T_X + ρ(1 − g)` on the part of `M` mapping into
+   the part of `X` where `T_X` has rank `ρ` (`X` need not have pure dimension), with a global
+   resolution when `𝒞_M` carries an invertible sheaf
    ample on the fibres of `π`. It lacks the carriers of 4 and 5, derived
    pushforward along a representable morphism of Deligne–Mumford stacks and relative duality for
    it; Tau Ceti's `TauCeti.AlgebraicGeometry.PrestableFamily` is the prestable family over a

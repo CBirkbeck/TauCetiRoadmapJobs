@@ -241,7 +241,7 @@ authors = "The Stacks Project Authors"
 title = "Chow Homology and Chern Classes (The Stacks Project, Tag 02P3)"
 year = 2026
 locator_scheme = "tag"
-locator = "Lemma 19.3 (02RX), Lemma 36.3 (02TY), Definition 33.1 (0B76), Definition 41.1 (0AZ1)"
+locator = "Definition 8.1 (02QR), Definition 19.1 (02RW), Lemma 19.3 (02RX), Lemma 36.3 (02TY), Definition 33.1 (0B76), Definition 41.1 (0AZ1)"
 url = "https://stacks.math.columbia.edu/download/chow.pdf"
 fetched_from = "https://stacks.math.columbia.edu/download/chow.pdf"
 fetched_at = "2026-11-05T19:53:35Z"
@@ -249,7 +249,7 @@ sha256 = "28aaf3c7a76d359c3be56f1c86167ab42fcb40bc35b1ae6ef3b47cb41f9a41f5"
 licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-05"
-cited_for = ["2.4, 3.4 localisation on schemes", "5.1 homotopy invariance on schemes", "4.5 bivariant formalism on schemes", "6.3 degree of zero-cycles on schemes"]
+cited_for = ["2.4 cycles, rational equivalence and Chow groups of schemes (Definitions 8.1, 19.1)", "3.4 localisation on schemes (Lemma 19.3)", "5.1 homotopy invariance on schemes", "4.5 bivariant formalism on schemes", "6.3 degree of zero-cycles on schemes"]
 
 [[source]]
 id = "stacks-chow-spaces"
