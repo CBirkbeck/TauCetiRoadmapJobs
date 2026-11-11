@@ -1335,9 +1335,12 @@ Mathlib `WeierstrassCurve.HasGoodReduction`, `WeierstrassCurve.HasMultiplicative
 Let K be totally real and E/K geometrically CM, with CM field `T ⊂ K̄` embedded through the action
 of the endomorphisms on invariant differentials. Prove that `T ⊄ K` and that
 `H¹(E)|G_{KT} = ξ_ι ⊕ ξ^c_ι` for an algebraic Hecke character ξ of KT with `ξ_ι = r_{ℓ,ι}(ξ)` and
-`ξ_ι ≠ ξ^c_ι`. Then `H¹(E) ≅ Ind_{G_{KT}}^{G_K} ξ_ι`, and the quadratic automorphic induction
-`π_E = AI_{KT/K}(ξ)`, unitarily normalized, is cuspidal of type `(2,0)` with trivial central
-character and `ρ_{π_E,ι} ≅ H¹(E)`. In particular §4.2 applies.
+`ξ_ι ≠ ξ^c_ι`. Then `H¹(E) ≅ Ind_{G_{KT}}^{G_K} ξ_ι`. Write `ξ(w) = ξ_w(ϖ_w)` at a good place w
+of KT, the eigenvalue of geometric Frobenius on `ξ_ι`, and let `ξ^u = ξ·‖·‖_{KT}^{1/2}` be the
+unitary Hecke character attached to ξ: since `‖ϖ_w‖ = q_w⁻¹`, `ξ^u(ϖ_w) = ξ(w)q_w^{−1/2}`. Prove
+that the quadratic automorphic induction `π_E = AI_{KT/K}(ξ^u) = AI_{KT/K}(ξ) ⊗ ‖det‖_K^{1/2}` is
+cuspidal of type `(2,0)` with trivial central character and `ρ_{π_E,ι} ≅ H¹(E)`. In particular
+§4.2 applies.
 
 T is imaginary quadratic and K has only real embeddings, so `T ⊄ K` and `[KT:K] = 2`. By the field
 of definition required of ComplexMultiplicationAndExplicitReciprocity
@@ -1351,12 +1354,26 @@ variety" and "One-dimensional CM components of the Tate module", applied to `E �
 `V_ℓ(E) ⊗ ℚ̄_ℓ` over `G_{KT}` into the two rank-one realizations of ξ, which in the
 geometric-Frobenius normalization of AutomorphicGaloisRepresentationsPartII AG2.0 are
 `r_{ℓ,ι}(ξ⁻¹)` and its conjugate; their duals are the two eigenspaces of `H¹(E) = V_ℓ(E)^∨`,
-written `ξ_ι = r_{ℓ,ι}(ξ)` and `ξ^c_ι`. Geometric Frobenius at a good place v of KT acts on them by
-the two conjugates of `ξ(v) ∈ T`, the arithmetic Frobenius values of that section. An implementer
+written `ξ_ι = r_{ℓ,ι}(ξ)` and `ξ^c_ι`. Geometric Frobenius at a good place w of KT acts on them by
+the two conjugates of `ξ(w) ∈ T`, the arithmetic Frobenius values of that section. An implementer
 may instead observe that the eigenspaces are finitely ramified de Rham characters and apply
 AutomorphicGaloisRepresentations §3.13. At each embedding of KT the two characters have different
-Hodge–Tate weights, 0 and 1, so `ξ_ι ≠ ξ^c_ι` and the induction is cuspidal. The good polynomials
-of `AI(ξ)` and of `Ind ξ_ι` agree, and recognition identifies the representations.
+Hodge–Tate weights, 0 and 1, so `ξ_ι ≠ ξ^c_ι`, hence `ξ^u ≠ (ξ^u)^c`, and the induction is
+cuspidal (GL2AutomorphicRepresentationsAndTransfer R17.4.16). The same weights make ξ of weight
+one in the sense of AG2.0, `|ξ| = ‖·‖_{KT}^{−1/2}`, so `ξ^u` is unitary. By R17.4.16 the local
+parameter of `π_{E,v}` is `Ind ξ^u_w`, the sum over the two places above a split v. Since
+`|·|_v ∘ N_{KT_w/K_v} = |·|_w`, `rec(π_{E,v} ⊗ |det|_v^{−1/2}) = Ind(ξ^u_w·|·|_w^{−1/2}) = Ind ξ_w`,
+which through the reciprocity map of AG2.0 (uniformizers to geometric Frobenius) is the
+restriction of `Ind ξ_ι` to the decomposition group at v. So the good polynomials of `π_E` and of
+`Ind ξ_ι` agree, and recognition identifies the representations. At a real place of K the
+archimedean component of `ξ^u` is `z ↦ (z/|z|)^{±1}`, whose induction to `W_ℝ` is the parameter of
+`D_{2,0}` (R16.2.13); that of ξ, `z ↦ z^{−1}` or `z̄^{−1}`, would give `D_{2,0} ⊗ |det|^{−1/2}`.
+By R17.4.16 the central character is `η_{KT/K}·ξ^u|_{𝔸_K^×}`, with `η_{KT/K}` the quadratic
+character of K attached to KT. The determinant of an induced character is `η_{KT/K}` times its
+composite with the transfer, which corresponds to restriction to `𝔸_K^×`; so
+`det Ind ξ_ι = ε_ℓ⁻¹ = r_{ℓ,ι}(‖·‖_K⁻¹)` gives `ξ|_{𝔸_K^×} = η_{KT/K}‖·‖_K⁻¹`, and
+`‖·‖_{KT}^{1/2}` restricts to `‖·‖_K` on `𝔸_K^×`. The central character is therefore
+`η_{KT/K}² = 1`.
 
 ([LeHung26](#references), §5, p.9, LeHung26 lines 364–366; [OpenAI26](#references), §9.4,
 pp.27–28, OpenAI26 lines 1200–1215.)
@@ -1375,6 +1392,14 @@ GL2AutomorphicRepresentationsAndTransfer R16.2.13 and R17.4.16; ArithmeticGalois
 - `y² = x³ − x` over ℚ has CM by `ℚ(i)`. At 3, inert, there are 4 points over `𝔽₃` and `a₃ = 0`,
   the trace of an induced representation at an inert Frobenius. At 5, split, there are 8 points,
   `a₅ = −2 = ξ(𝔭) + ξ(𝔭̄)` with `ξ(𝔭) = −1 ± 2i` of norm 5.
+- The half twist in `π_E`, on the same curve with `KT = ℚ(i)` and η the character of `ℚ(i)`. At
+  the split prime 5, `AI(ξ)` would have Satake parameters `−1 ± 2i`, of product 5, so central
+  character `‖·‖⁻¹` there, and `rec(π₅ ⊗ |det|^{−1/2})` would have Frobenius trace
+  `√5·(−2) = −2√5 ≠ a₅`; `AI(ξ^u)` has parameters `(−1 ± 2i)/√5`, of product 1, and shifted trace
+  `−2 = a₅`. At the inert prime 3 the residue field is `𝔽₉` and `Frob₃` has eigenvalues `±√−3` on
+  `H¹(E)`, so `Frob₃²` acts on each line by −3 and `ξ(3𝒪) = −3`; this equals
+  `η(3)·‖3‖₃⁻¹ = (−1)·3`, as `ξ|_{𝔸_ℚ^×} = η‖·‖⁻¹` requires. With `‖3‖_{ℚ₉}^{1/2} = 1/3`, the
+  central character of `AI(ξ^u)` at 3 is `η(3)·ξ(3𝒪)/3 = (−1)(−3)/3 = 1`.
 - `y² = x³ + 1` has CM by `ℚ(√−3)`; at 5, inert, there are 6 points and `a₅ = 0`.
 - Over `K = ℚ(√2)` the curve `y² = x³ − x` uses induction from `ℚ(√2, i) = ℚ(ζ₈)`; over a totally
   real base the isobaric-sum branch never occurs. Over `ℚ(i)`, outside this roadmap, the same curve
