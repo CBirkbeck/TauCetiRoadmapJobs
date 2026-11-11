@@ -1,10 +1,6 @@
-{
-  "review": {
-    "status": "needs_changes",
-    "reviewer": "independent-review-REV-DESIGN-ModularCharactersAndBlocksPartII~4",
-    "date": "2026-11-10",
-    "findings": 7,
-    "blocking": 5,
-    "notes": "Verified both previous repairs; reviewed all 35 targets, 110 Checks, all 15 seeded source targets, pinned declarations, supplier contracts, ownership and overlaps. Computed adversarial table and exact repair witnesses are in the report. Dependency gate: 234 roadmaps, 2113 edges, 0 problems, no UPWARD or CYCLE. Seven findings: two P1, three P2, two P3. Existing clifford-multiplicity-dvd-index gap is precise and owned. Five settled uncertified works remain unread; available source versions are identified. No Suggested.lean exists at design stage; elaboration not available (this lane does not elaborate); no build or one-tactic probe was run."
-  }
-}
+{"review": {"status": "needs_changes",
+            "reviewer": "independent-review-REV-DESIGN-ModularCharactersAndBlocksPartII~5",
+            "date": "2026-11-11",
+            "findings": 3,
+            "blocking": 1,
+            "notes": "All seven round-4 findings are repaired (passages quoted in the report). Read the whole README and plan (35 targets, 9 layers, 1 declared gap). Sources: all 15 sampled targets checked at their cited lines in the cached texts (glauberman, hartley-turull, spath-vallejo, martinez, reynolds, sambale, mnst, kessar-malle, ruhstorfer); five uncertified books cited by locator only. Adversarial table with computed values for the sampled targets, the headlines and the repaired passages. Pinned Mathlib and Tau Ceti declarations opened by file and line; cross-roadmap citations resolved at main and at the open heads of ModularCharactersAndBlocks and InverseGaloisAndArithmeticFundamentalGroups. Dependency gate: no UPWARD, no CYCLE. Findings: R01 (P2) the block strand quantifies over every splitting p-modular system while the base supplies its Layers 2-8, and the second main theorem in particular, for the system of its section 1.1; R02 (P3) the compatibility law of 4.5 needs the invariance clause to be well-formed for an arbitrary family; R03 (P3) two descriptions of the base (where the central character of a block is introduced, the field over which the product form of the first main theorem is stated) no longer match its head. Elaboration: not available (this lane does not elaborate); the package has no Suggested.lean at the design stage."}}
