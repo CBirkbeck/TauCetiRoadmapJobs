@@ -229,6 +229,7 @@ AlgebraicTopologyPartII
 RealSurfacePeriodIndex
 CategoricalOperatorAlgebras
 CStarClassification
+AmenableTracesOnCStarAlgebras
 SpectralManifolds
 FactorRigidity
 ColemanIntegrationPartII
