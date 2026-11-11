@@ -1,10 +1,10 @@
 {
   "review": {
     "status": "needs_changes",
-    "reviewer": "independent-review-REV-DESIGN-ComplexHessianEquations~2",
-    "date": "2026-11-10",
-    "findings": 12,
-    "blocking": 8,
-    "notes": "Checked all nine prior repairs, the eight-layer 48-target design, 12 definitions, 19 manifest entries, all 15 seeded source targets and the revised local integrability proof. Read all 11 certified source texts; eight settled uncertified works remain unread. Computed adversarial witnesses, inspected pinned declarations, resolved main/open-head suppliers and overlaps, and audited headline/shape requirements. Dependency gate: 228 roadmaps, 2065 edges, 0 problems; internal DAG: 48 targets, 101 edges, acyclic. No Suggested.lean exists at design stage; elaboration not available (this lane does not elaborate); no Lean commands or one-tactic executions were run. Eight blocking findings and four P3 findings require repair; design and manifest unchanged."
+    "reviewer": "independent-review-REV-DESIGN-ComplexHessianEquations~3",
+    "date": "2026-11-11",
+    "findings": 7,
+    "blocking": 5,
+    "notes": "Reviewed all 48 plan targets and APIs, all 12 prior findings, the repaired passages, all 15 seeded source sections, 11 readable certified texts and 8 settled uncertified references. Computed adversarial witnesses, resolved supplier citations and pinned declarations, and audited ownership against main, indexed board packages and the supplied open heads. Dependency check: 232 roadmaps, 2077 edges, 0 problems; no UPWARD or CYCLE. Two P1, three P2 and two P3 findings require repair. The existing weak-Harnack supplier contract needs precision, not a new owner. K3's previously settled external-action disposition is respected. No Suggested.lean exists in this design package. Elaboration: not available (this lane does not elaborate; say so in the report). No Lean commands were run; zero sorried theorems were available for a one-tactic probe. Design and source-manifest files were not changed."
   }
 }
