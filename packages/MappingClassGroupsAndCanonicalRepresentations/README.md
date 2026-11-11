@@ -105,8 +105,13 @@ It also owns the following foundational targets:
   `K(π, 1)` spaces with their cohomology comparisons, density of topological fundamental groups of
   curves, and versal families of `φ`-covers: InverseGaloisAndArithmeticFundamentalGroups §§IG.1.4,
   IG.3.1 and IG.5.4;
-- reductive quotients of affine varieties and the closed-tuple criterion for complete
-  reducibility: ArithmeticGaloisRepresentations §1.11;
+- the closed-tuple criterion for complete reducibility, with semisimplicity for `GL(V)`:
+  ArithmeticGaloisRepresentations §1.11, *Complete reducibility and closed tuples*;
+- reductive quotients of affine schemes of finite type over a field, reducible and nonreduced
+  ones included (finite generation of invariants, closed images and separation of invariant
+  closed subsets, a unique closed orbit in every geometric fibre): LanglandsParameterStacks §2.2,
+  extending the integral case of ArithmeticGaloisRepresentations §1.11, *Reductive quotients over
+  fields and DVRs*;
 - deformation functors and universal deformation rings of profinite groups satisfying Mazur's
   condition `Φ_p`: LocalGaloisDeformationRings §§F.1–F.2; generic fibres and valued points of
   complete local rings: DeformationAndDerivedPatchingAlgebra §§4.2 and 4.4;
@@ -398,11 +403,24 @@ surjective but not injective on maximal pro-`p` quotients (`ℤ_p² → ℤ_p`).
 
 ### From TauCetiRoadmap.ArithmeticGaloisRepresentations
 
-§1.11, *Reductive quotients over fields and DVRs* (finite generation, the affine universal property,
-closed-orbit classification) and *Complete reducibility and closed tuples* (over an algebraically
-closed field the simultaneous conjugation orbit of a tuple in `G(k)ⁿ` is closed exactly when the
-Zariski closure of the generated subgroup is completely reducible; for `GL(V)` complete
-reducibility is semisimplicity).
+§1.11, *Complete reducibility and closed tuples* (over an algebraically closed field the
+simultaneous conjugation orbit of a tuple in `G(k)ⁿ` is closed exactly when the Zariski closure of
+the generated subgroup is completely reducible; for `GL(V)` complete reducibility is
+semisimplicity). This needs no integrality: an orbit in a closed `G`-stable subscheme of `G(k)ⁿ` is
+closed there exactly when it is closed in `G(k)ⁿ`. Its *Reductive quotients over fields and DVRs*
+is stated for integral affine varieties and is used here only through LanglandsParameterStacks
+§2.2.
+
+### From TauCetiRoadmap.LanglandsParameterStacks
+
+§2.2 (*Reductive quotients over fields and DVRs*): for a connected reductive group acting on an
+affine scheme of finite type over a field, with no integrality or reducedness hypothesis, the
+invariant algebra is finitely generated, so `X//G = Spec O(X)^G` is of finite type, invariant closed
+subsets of `X` have closed images, disjoint ones have disjoint images, and each geometric fibre of
+`X → X//G` contains a unique closed orbit; integrality and normality of `X//G` are asserted
+only under the corresponding hypotheses on `X`. Its Checks include the trivial action on
+`Spec k[ε]/(ε²)`. Used for the representation schemes `R_r(Γ)_χ` of §1.4, which can be reducible
+and nonreduced.
 
 ### From TauCetiRoadmap.LocalGaloisDeformationRings and TauCetiRoadmap.DeformationAndDerivedPatchingAlgebra
 
@@ -419,8 +437,8 @@ zero embeds as a dense open subset of a smooth projective variety `Ū` whose com
 strict normal crossings divisor with labelled smooth components, every modification restricting to
 the identity on `U`; the compactification depends on a chosen projective closure. Its Check
 `𝔾_m² ⊂ ℙ¹ × ℙ¹`, with the four coordinate curves as boundary, exhibits the three properties used
-in §7.2: the open subset is retained, the boundary is strict SNC, and the compactification is
-projective.
+in §§5.10 and 7.2: the open subset is retained, the boundary is strict SNC, and the compactification
+is projective.
 
 ### From TauCetiRoadmap.AutomorphicLFunctionsAndLocalFactors
 
@@ -821,20 +839,28 @@ matrix congruent to the identity modulo `I`. Prove:
 - for `1 → N → G → Q → 1` with `H⁰(Q, H¹(N, ad ρ|_N)) = 0`, every constant-determinant deformation
   of `ρ` to `A[ε]/ε²` restricts on `N` to the constant deformation (Landesman–Litt, Lemma 3.1.2,
   by §1.1);
-- **the constancy criterion**: put `B_n = ℂ[t]/(t^{n+1})`, `R_n = B_{n−1}[ε]/ε²` and
-  `d_n : B_n → R_n`, `f ↦ f + ε f′`. If for every `n` and every deformation `γ : G → GL_r(B_n)` of
-  `ρ₀` with `γ|_N` constant one has `H⁰(Q, H¹(N, ad γ|_N)) = 0`, then every `ρ_∞ : G → GL_r(ℂ[[t]])`
-  with `ρ_∞ ≡ ρ₀ (mod t)` and constant determinant has `ρ_∞|_N` conjugate over `ℂ[[t]]` to a
-  constant representation (Landesman–Litt, Proposition 3.2.1, pp. 21–23). The conjugators are built
-  as a convergent product of compatible corrections `id + C t^n / n`; a separate conjugator at each
-  order without compatibility does not suffice.
+- **the constancy criterion**: put `B_n = ℂ[t]/(t^{n+1})` for `n ≥ 0`, and for `n ≥ 1` put
+  `R_n = B_{n−1}[ε]/ε² = ℂ[t, ε]/(t^n, ε²)` and `d_n : B_n → R_n`, `f ↦ f + ε f′` (well defined
+  since `(t^{n+1})′ = (n + 1) t^n` vanishes in `B_{n−1}`). If for every `n ≥ 0` and every
+  deformation `γ : G → GL_r(B_n)` of `ρ₀` with `γ|_N` constant one has
+  `H⁰(Q, H¹(N, ad γ|_N)) = 0`, then every `ρ_∞ : G → GL_r(ℂ[[t]])` with `ρ_∞ ≡ ρ₀ (mod t)` and
+  constant determinant has `ρ_∞|_N` conjugate over `ℂ[[t]]` to a constant representation
+  (Landesman–Litt, Proposition 3.2.1, pp. 21–23). The conjugators are built as a convergent product
+  of compatible corrections `id + C t^n / n`, one for each `n ≥ 1`, each obtained from `d_n` at that
+  order; a separate conjugator at each order without compatibility does not suffice.
 
 *Needs:* §1.1; Mathlib `PowerSeries`, `Matrix.GeneralLinearGroup`.
 
 **Checks.**
 
-- `d_n` is injective: `f + ε f′ = 0` forces `f = 0` modulo `t^n` and then `f′ = 0`, so `f` is a
-  constant multiple of `t^n` with vanishing derivative, hence zero.
+- `d_n` is injective for `n ≥ 1`: `f + ε f′ = 0` forces `f = c t^n` in `B_n` and then
+  `f′ = n c t^{n−1} = 0` in `B_{n−1}`, so `n c = 0` and `c = 0`. For `n = 1`, `a + bt ↦ a + bε`; for
+  `n = 2`, `a + bt + ct² ↦ a + bt + ε(b + 2ct)`; both have kernel `0`.
+- No `d₀` is used: the formula would give `R₀ = B_{−1}[ε]/ε² = 0` (from `ℂ[t]/(t⁰) = 0`), and
+  `d₀ : ℂ → 0` is not injective, while the correction `id + C t^n / n` has no meaning at `n = 0`.
+  Reading `B_{0−1}` as `B₀` by truncated subtraction does not help either: `f ↦ f + ε f′` would not
+  be well defined on `B₀`, since `t = 0` there while `t′ = 1`. The hypothesis still quantifies
+  over `B₀ = ℂ`, where it reads `H⁰(Q, H¹(N, ad ρ₀|_N)) = 0`.
 - `r = 1`: `ad ρ₀ = 0`, so the hypothesis holds, and a constant-determinant `ρ_∞` of rank one is
   constant, as the criterion asserts.
 - `G = N = ℤ`, `ρ₀` trivial of rank two, `ρ_∞(1) = [[1, t], [0, 1]]`: the determinant is constant,
@@ -855,15 +881,16 @@ For a finitely presented group `Γ = ⟨s₁, …, s_k | w₁, …, w_l⟩`, `r 
 - the `GL_r(ℂ)`-orbit of a `ℂ`-point is closed if and only if the representation is semisimple
   (ArithmeticGaloisRepresentations §1.11, *Complete reducibility and closed tuples*; Sikora,
   Theorem 30, Sik12 line 572), and each fibre of `π` over a `ℂ`-point contains exactly one closed
-  orbit, that of the semisimplification;
+  orbit (LanglandsParameterStacks §2.2), that of the semisimplification;
 - `π` is surjective, connected components of `R_r(Γ)_χ` are `GL_r`-stable, and `π` induces a
   bijection between connected components of `R_r(Γ)_χ` and of `M_r(Γ)_χ`: images of disjoint closed
   invariant subsets are disjoint and closed, and every fibre is connected because each orbit closure
   in it contains its unique closed orbit.
 
-*Needs:* ArithmeticGaloisRepresentations §1.11 (*Reductive quotients over fields and DVRs*,
-*Complete reducibility and closed tuples*); SchemeAndStackFoundations Layer 0; Mathlib
-`AlgebraicGeometry.Scheme`.
+*Needs:* LanglandsParameterStacks §2.2 (finite generation, closed images, separation of invariant
+closed subsets and the unique closed orbit for arbitrary affine schemes of finite type over a field);
+ArithmeticGaloisRepresentations §1.11 (*Complete reducibility and closed tuples*);
+SchemeAndStackFoundations Layer 0; Mathlib `AlgebraicGeometry.Scheme`.
 
 **Checks.**
 
@@ -873,7 +900,10 @@ For a finitely presented group `Γ = ⟨s₁, …, s_k | w₁, …, w_l⟩`, `r 
 - `Γ = ℤ/2`, `r = 2`, `χ` trivial: an involution of determinant one is `±I`, so `R_2(Γ)_χ` has
   the two points `±I`, two components, and `M_2(Γ)_χ = R_2(Γ)_χ`, matching the bijection on
   components; for `χ` trivial and `r = 1` the scheme is the single point `1`, since fixing the
-  determinant fixes a rank-one representation.
+  determinant fixes a rank-one representation. The coordinate ring `ℂ × ℂ` of `R_2(Γ)_χ` has the
+  idempotents `(1, 0)`, `(0, 1)` with product `0`, so it is not a domain: a quotient theorem for
+  integral affine varieties alone does not cover it, and the general one of LanglandsParameterStacks
+  §2.2 is what keeps both components.
 
 ### 1.5 The Jordan identity and two-generation of finite general linear groups
 
@@ -909,8 +939,8 @@ Mathlib `Matrix.GeneralLinearGroup`, `Subgroup.index`.
 
 Mathlib group cohomology, `Matrix.GeneralLinearGroup`, `PowerSeries`, `AlgebraicGeometry.Scheme`;
 Tau Ceti `TauCeti.groupCohomology.HInfRes_exact`, `TauCeti.IsProjectiveRep` and its cohomology
-class; ArithmeticGaloisRepresentations §1.11; FiniteGroupInvariants §10.5;
-RepresentationTheory/InductionRestriction Layer 7; SchemeAndStackFoundations Layer 0.
+class; ArithmeticGaloisRepresentations §1.11; LanglandsParameterStacks §2.2; FiniteGroupInvariants
+§10.5; RepresentationTheory/InductionRestriction Layer 7; SchemeAndStackFoundations Layer 0.
 
 ## Layer 2: finite orbits and surface monodromy
 
@@ -1464,10 +1494,52 @@ singularities at the `xᵢ`, the *isomonodromic deformation* over the universal 
 `M_{g,n}^an` (§2.3) is the unique flat bundle with regular singularities along the sections of the
 universal curve extending the local system of `(E, ∇)|_{C∖{xᵢ}}` and restricting to `(E, ∇)` on the
 central fibre; its restriction to another fibre is an isomonodromic deformation to a nearby curve
-(Landesman–Litt 2022, Definitions 3.4.3–3.4.4, p. 22). Prove that if `rk E < 2√(g + 1)` then for
-every parabolic structure refined by the one of `∇`, the isomonodromic deformation to an
-analytically general nearby curve is parabolically semistable (Landesman–Litt 2022, Theorem 6.1.1
-and Corollary 6.1.2, pp. 34–35). Its main input is the parabolic Clifford bound: for a nonzero
+(Landesman–Litt 2022, Definitions 3.4.3–3.4.4, p. 22). The *parabolic structure of `∇`* on the
+given lattice `E` has at `x_j` the distinct fractional parts `λ_{ij}` of the real parts of the
+eigenvalues of `Res_{x_j} ∇` as weights and, as `E_{ij}`, the sum of the generalized eigenspaces
+whose eigenvalues have fractional real part `≥ λ_{ij}` (Landesman–Litt 2022, Definition 3.3.1, LL22
+line 742); on the canonical lattice it is the parabolic Deligne extension of §5.2. A parabolic
+structure on `E` is *refined by* it when each of its steps is a step of that structure carrying the
+same weight, so that it arises by deleting steps together with their weights, a point where only
+`E_{x_j}` with weight `0` is kept counting as a point with trivial structure (Definition 3.4.8 and
+Remark 3.4.9, LL22 lines 871–882). Such a structure deforms with `(E, ∇)`, with constant weights and
+constant ranks of the graded pieces of the filtrations (Remark 3.4.7, LL22 line 861). Prove:
+
+- *Irreducible monodromy.* If the monodromy of `(E, ∇)` is irreducible and `rk E < 2√(g + 1)`, then
+  for every parabolic structure `E⋆` refined by the one of `∇`, the isomonodromic deformation of `E⋆`
+  to an analytically general nearby curve is parabolically semistable (Landesman–Litt 2022,
+  Theorem 6.1.1(1), LL22 line 1296, pp. 34–35, with the inequality of arithmetic and geometric
+  means: a nonsemistable deformation has two Harder–Narasimhan pieces of ranks `a`, `b` with
+  `ab ≥ g + 1` and `a + b ≤ rk E`, whence `rk E ≥ 2√(g + 1)`).
+- *Equal-slope filtrations.* Let `rk E < 2√(g + 1)` and `E⋆` be refined by the parabolic structure of
+  `∇`. Suppose `E` has a filtration `0 = F₀ ⊊ F₁ ⊊ ⋯ ⊊ F_k = E` by `∇`-stable subbundles such that
+  each `G_i = F_i/F_{i−1}` with its induced connection has irreducible monodromy, the parabolic
+  structure `G_i⋆` induced from `E⋆` is refined by the parabolic structure of that connection, and
+  `µ⋆(G_i⋆) = µ⋆(E⋆)` for every `i`. Then the isomonodromic deformation of `E⋆` to an analytically
+  general nearby curve is parabolically semistable: the filtration deforms with `(E, ∇)`, each
+  deformed `G_i⋆` is semistable by the first item (off a finite union of nowhere dense closed
+  analytic subsets), parabolic slopes are constant along the deformation, and an iterated
+  extension of semistable parabolic bundles of one slope is semistable by additivity of parabolic
+  degree (§5.2).
+- *The parabolic Deligne extension.* The parabolic Deligne extension of §5.2 (the canonical lattice
+  with the full parabolic structure of `∇`) satisfies these hypotheses for every filtration by
+  `∇`-stable subbundles with irreducible graded pieces, and such a filtration exists (a composition
+  series of the local system, saturated in `E`). Indeed the structure induced on a `∇`-stable
+  subbundle `F`, and on a quotient, is the full parabolic structure of the induced connection, whose
+  weights are the real parts of its residue eigenvalues (they lie in `[0, 1)`), so
+  `par-deg(F⋆) = deg F + Σ_j Re tr Res_{x_j}(∇|_F) = 0` by the residue theorem
+  `deg F = −Σ_j tr Res_{x_j}(∇|_F)`; all graded pieces and `E⋆` have parabolic slope `0`. Hence for
+  `rk E < 2√(g + 1)` and every flat bundle with regular singularities along `D`, the isomonodromic
+  deformation of its parabolic Deligne extension to an analytically general nearby curve is
+  parabolically semistable. This is the case used in §5.11 (Landesman–Litt 2022, proof of
+  Theorem 1.2.12, LL22 line 1896).
+
+Without the equal-slope hypothesis the conclusion fails for reducible monodromy, both on
+noncanonical lattices and for coarsened structures on the canonical lattice (Checks):
+Landesman–Litt 2022, Corollary 6.1.2 (LL22 line 1310), and its special case Corollary 1.3.6 (LL22
+line 252) assert it for every refined structure, and the reduction to irreducible monodromy in their
+proof (§6.4.10, LL22 line 1834) presupposes that the graded pieces have equal slopes (Corrections to
+the sources). The main input of the irreducible case is the parabolic Clifford bound: for a nonzero
 parabolically semistable parabolic bundle `E⋆` on `(C, D)` (§5.2), a subbundle `U ⊂ Ê₀` of its
 coparabolic zero term, `c = rk E − rk U` and `δ = h⁰(Ê₀) − h⁰(U)`, the parabolic slope
 `µ⋆(E⋆) = µ⋆(Ê⋆) > 2g − 2 + n` forces `rk E > gc − δ` and `µ⋆(E⋆) = 2g − 2 + n` forces
@@ -1478,8 +1550,30 @@ analytic subset, and *analytically very general* off a locally countable union o
 
 **Checks.**
 
-- A unitary flat bundle has semistable parabolic Deligne extension on every curve (§5.2), so its
-  isomonodromic deformations are semistable in every rank.
+- A unitary flat bundle has a polystable parabolic Deligne extension of parabolic degree zero on
+  every curve (§5.2); residues are constant along the deformation, so the isomonodromic deformation
+  of that extension is the parabolic Deligne extension of the same unitary local system on the
+  nearby curve, semistable in every rank and without the bound.
+- A noncanonical lattice: on a curve of genus one with one marked point `p` (hyperbolic, since
+  `2g − 2 + n = 1`), `E = O(p) ⊕ O(−p)` with the connection `d` of trivial monodromy has residue `−1`
+  on `O(p)` (local frame `z⁻¹`, `d(z⁻¹) = −z⁻¹ dz/z`) and `+1` on `O(−p)` (frame `z`). Both fractional
+  parts are `0`, so its parabolic structure has the single weight `0`, `par-deg(E⋆) = deg E = 0`, and
+  `O(p)` of slope `1 > 0` destabilizes it. The splitting deforms with `(E, ∇)` over the universal
+  pointed genus-one family with degrees `1` and `−1` on every fibre, so no deformation is semistable
+  although `rk E = 2 < 2√2`. Every `∇`-stable line subbundle is `O(p)` (degree `1`) or isomorphic to
+  `O(−p)` (degree `−1`), so the graded pieces of every flat filtration have slopes `{1, −1}` and the
+  equal-slope hypothesis fails; the parabolic Deligne extension of the same trivial local system is
+  `O ⊕ O` with slopes `0, 0`, semistable on every fibre.
+- A coarsened structure on the canonical lattice: on a genus-one curve with marked points `x₁, x₂`,
+  let `L` be the canonical extension of the unitary character with local monodromies `exp(−2πi a)`
+  at `x₁` and `exp(2πi a)` at `x₂`, `0 < a < 1` (their product is `1`, since a character kills the
+  commutator); `L` has residues `a`, `1 − a` and degree `−1`. For `E = L ⊕ O` the full structure has
+  `par-deg = −1 + a + (1 − a) = 0` and is polystable. Deleting the weight `a` at `x₁` gives a refined
+  structure with `par-deg(E⋆) = −a`, induced slopes `−a` on `L` and `0` on `O`, and `O` destabilizes
+  (`0 > −a/2`); the trivial structure, also refined, gives `deg E = −1` with `O` of slope `0 > −1/2`.
+  Both splittings persist on every nearby curve and `rk E = 2 < 2√2`, so "every refined structure"
+  fails even for unitary monodromy; the unequal graded slopes (`−a, 0` and `−1, 0`) exclude both from
+  the equal-slope item.
 - The bound cannot be dropped: Landesman–Litt 2022, Theorem 1.3.2, gives, for `g ≥ 2`, flat bundles
   with semisimple monodromy on the fibres of `M_{g,1} → M_g` whose isomonodromic deformations are
   never semistable.
@@ -1585,7 +1679,7 @@ pure imaginary harmonic bundle, flows its Higgs field by `t → 0` in the Betti 
 the limit to the same component by §1.4. Prove also that a semisimple `ρ` with finite determinant and
 `H¹(X°, ad ρ) = 0` itself underlies a complex PVHS (Landesman–Litt, Lemma 4.3.2, p. 27; Mochizuki,
 Lemma 10.13, Moc06 line 4821). *Needs:* §§1.4, 5.1; ComplexComparisonPartII §C5.6;
-ComplexKahlerGeometry K4–K5; ArithmeticGaloisRepresentations §1.11.
+ComplexKahlerGeometry K4–K5; ArithmeticGaloisRepresentations §1.11; LanglandsParameterStacks §2.2.
 
 **Checks.**
 
@@ -1689,8 +1783,9 @@ reductive group over `ℤ`, and `ρ : π₁(X°) → G(ℂ)` `G`-irreducible and
 with quasi-unipotent local monodromy and finite image in the maximal abelian quotient of `G`; then
 the identity component of the Zariski closure of the image is semisimple and `ρ` is
 `G(ℂ)`-conjugate into `G(O_L)` for a number field `L` (Klevdal–Patrikis, Theorem 1.2, KP20 line 62;
-Esnault–Groechenig, Theorem 1.1, for `G = GL_n`). The route of Esnault–Groechenig and
-Klevdal–Patrikis has five steps, with these inputs.
+Esnault–Groechenig, Theorem 1.1, for `G = GL_n`). Fix a strict normal crossings compactification
+`j : X° → X` (ResolutionOfSingularitiesCharacteristicZero §6.2); rigidity is read on `X` as in §5.9.
+The route of Esnault–Groechenig and Klevdal–Patrikis has five steps, with these inputs.
 
 1. *Finiteness and models.* Reduce to `G` simple and adjoint through the projectivization
    (Klevdal–Patrikis, Lemma 5.1, KP20 line 407). Fix `h ≥ 1` such that every local monodromy of `ρ`
@@ -1703,15 +1798,16 @@ Klevdal–Patrikis has five steps, with these inputs.
    §1.4 for `GL_n`). Integrality at the places of `Σ` suffices (Klevdal–Patrikis, Proposition 3.1,
    KP20 line 184).
 2. *Spreading out and descent.* Fix a finite place `λ ∉ Σ` above a prime `ℓ`, so that each member
-   `ρ_i` takes values in `G(O_{K_λ})` and extends to `π₁^ét(X°)`. Spread `X°` and a strict normal
-   crossings compactification out over a finitely generated subring of `ℂ` and choose a closed point
-   `s` whose residue characteristic `p` is prime to `ℓ`, to the places of `Σ`, to the orders of the
-   residual images and to `h`. The `ρ_{i,λ}` factor through the prime-to-`p` quotient, which
-   §IG.1.3's tame specialization identifies with that of `X°_s̄`; after a finite extension of `k(s)`
-   each descends to `π₁^ét(X°_s)` with the same Zariski closure `G_{i,λ}` as on the geometric
-   fibre (Klevdal–Patrikis, Proposition 5.6, KP20 line 567), and `G_{i,λ}°` is semisimple, being
-   also the identity component of the geometric monodromy group of a pure lisse sheaf
-   (Klevdal–Patrikis, Corollary 5.7, KP20 line 632; DeligneWeightsAndPurity §§8.14, 8.19).
+   `ρ_i` takes values in `G(O_{K_λ})` and extends to `π₁^ét(X°)`. Spread `j : X° → X` out over a
+   finitely generated subring of `ℂ`, keeping the boundary strict normal crossings, write
+   `j_s : X°_s → X_s` for its fibre at a closed point `s` and `s̄` for a geometric point over `s`, and
+   choose `s` so that its residue characteristic `p` is prime to `ℓ`, to the places of `Σ`, to the
+   orders of the residual images and to `h`. The `ρ_{i,λ}` factor through the prime-to-`p`
+   quotient, which §IG.1.3's tame specialization identifies with that of `X°_s̄`; after a finite
+   extension of `k(s)` each descends to `π₁^ét(X°_s)` with the same Zariski closure `G_{i,λ}` as
+   on the geometric fibre (Klevdal–Patrikis, Proposition 5.6, KP20 line 567), and `G_{i,λ}°` is
+   semisimple, being also the identity component of the geometric monodromy group of a pure lisse
+   sheaf (Klevdal–Patrikis, Corollary 5.7, KP20 line 632; DeligneWeightsAndPurity §§8.14, 8.19).
 3. *Companions.* For every finite place `λ′ ∤ p`, in particular those above `Σ`, §5.9a gives
    companions `ρ_{i,λ′,s}` with Zariski closure the `λ′`-form of the same `ℚ̄`-group and the same
    Frobenius images in `[G_i]`. On a curve through the boundary meeting each component
@@ -1720,10 +1816,15 @@ Klevdal–Patrikis has five steps, with these inputs.
    detected on such curves (Klevdal–Patrikis, Proposition 6.2(1), (4), KP20 line 682).
 4. *Rigidity of the companions.* The adjoint local systems of `ρ_{i,λ,s}` and `ρ_{i,λ′,s}` are
    admissible because `G_{i,λ}` is semisimple, hence pure of weight zero (§5.9a), tame and
-   compatible, so their `L`-functions agree; for a tame lisse sheaf `A` pure of weight zero the
-   weight-one part of `⊕_j H^j(X̄_s̄, A)` is `H¹(X̄_s̄, j_{!*} A)` (Esnault–Groechenig, Lemma 3.4,
-   EG18 line 410, through DeligneWeightsAndPurity §7.8 and duality). Hence the companions are again
-   `G`-cohomologically rigid, `G`-irreducible and pairwise non-conjugate (Klevdal–Patrikis,
+   compatible, so their `L`-functions agree. For a tame lisse sheaf `A` on the open `X°_s`, pure of
+   weight zero, the natural map `H¹(X_s̄, j_{s̄,!*} A) → H¹(X°_s̄, A)` (intermediate extension of the
+   sheaf placed in degree zero, unshifted, as in §5.9) is injective with cokernel of weights `≥ 2`,
+   and its image is the weight-one part of `⊕_i H^i(X°_s̄, A)`, which lies in degree one because
+   `H^i(X°_s̄, A)` has weights `≥ i`. The cokernel is a boundary term: on the complement `U_s` of the
+   singular locus of the boundary, `j_{s,!*} A` restricts to `a_{s,*} A` for `a_s : X°_s → U_s`, and
+   `R¹a_{s̄,*} A` has weights `≥ 2`, as seen on curves where `A` is tame (Esnault–Groechenig,
+   Lemma 3.4, EG18 line 410, through DeligneWeightsAndPurity §7.8 and duality). Hence the companions
+   are again `G`-cohomologically rigid, `G`-irreducible and pairwise non-conjugate (Klevdal–Patrikis,
    Proposition 6.2(2)–(3)).
 5. *Return to `ℂ`.* Pull the companions back along the tame specialization surjection
    (gap:tame-specialization) and transport them by the Betti–étale comparison (ComplexComparisonPartII
@@ -1733,8 +1834,8 @@ Klevdal–Patrikis has five steps, with these inputs.
 
 *Needs:* §§1.4, 5.9, 5.9a; gap:curve-companions; gap:tame-specialization;
 InverseGaloisAndArithmeticFundamentalGroups §IG.1.3; DeligneWeightsAndPurity §§7.8, 8.14, 8.19;
-ComplexComparisonPartII §C6.3; ArithmeticGaloisRepresentations §1.11; SchemeAndStackFoundations
-Layer 0.
+ComplexComparisonPartII §C6.3; ArithmeticGaloisRepresentations §1.11; LanglandsParameterStacks
+§2.2; ResolutionOfSingularitiesCharacteristicZero §6.2; SchemeAndStackFoundations Layer 0.
 
 **Checks.**
 
@@ -1752,13 +1853,26 @@ Layer 0.
   monodromy `2^q ≠ 2`, and that specialization descends over no finite extension of `k(s)`; a
   character of finite order `m`, `p ∤ m`, goes to its `q`-th power and descends once
   `q ≡ 1 (mod m)`.
+- The coefficient sheaf of step 4 lives on the open variety: on `X°_s = 𝔾_m` over `k(s)` of odd
+  characteristic, the quadratic Kummer sheaf has inertia `−1` at `0` and `∞`, so it extends to no
+  lisse sheaf on `ℙ¹`; its open cohomology vanishes in every degree and `H¹(ℙ¹_s̄, j_{!*} A) = 0`,
+  so the comparison reads `0 = 0`. On an elliptic curve `E` minus two points with `A` trivial,
+  `H¹` of the open curve has dimension `3` (weights `1, 1, 2`), and its weight-one part has
+  dimension `2 = dim H¹(E_s̄, ℚ̄_{ℓ′})`: the comparison is with the compactification, not with the
+  whole open `H¹`.
 
 ### 5.11 Unitarity of low-rank variations on analytically general curves
 
 Prove: for an `n`-pointed hyperbolic curve of genus `g` and a flat bundle `(E, ∇)` with regular
 singularities and `rk E < 2√(g + 1)`, if an isomonodromic deformation of `(E, ∇)` to an analytically
 general nearby curve underlies a complex PVHS, then `(E, ∇)` has unitary monodromy (Landesman–Litt
-2022, Theorem 1.2.12, pp. 4–5, by §§5.2–5.3). Prove that a representation `Γ → GL_m(O_K)` which is
+2022, Theorem 1.2.12, pp. 4–5). Route: the statement depends only on the local system, so replace
+`(E, ∇)` by its parabolic Deligne extension, whose isomonodromic deformations are again parabolic
+Deligne extensions; by the parabolic Deligne extension case of §5.3 the deformed extension is
+semistable on an analytically general nearby curve, where it underlies a complex PVHS, and the
+third item of §5.2 makes its monodromy, which is that of `(E, ∇)`, unitary. Only the canonical
+lattice with its full parabolic structure enters, never a coarsened structure or another lattice.
+Prove that a representation `Γ → GL_m(O_K)` which is
 unitary at every complex embedding of `K` has finite image, since its image is discrete in a
 compact group (Landesman–Litt 2022, Lemma 7.2.1, p. 51). Deduce: on an analytically very general
 hyperbolic pointed curve of genus `g`, an `O_K`-local system with infinite monodromy all of whose
@@ -1790,9 +1904,10 @@ least `2√(g + 1)` (Landesman–Litt 2022, Corollary 1.2.7, p. 3). *Needs:* §�
 
 Layers 1–2 and 4; ComplexComparisonPartII §§C5.2, C5.6, C6.3 and gap:local-system-direct-images;
 Completed/HodgeStructures; ComplexKahlerGeometry K4–K5; ComplexCurveModuli D3.4;
-ArithmeticGaloisRepresentations §1.11; SchemeAndStackFoundations §2.2;
-AutomorphicLFunctionsAndLocalFactors §AL.3 and gap:curve-companions; DeligneWeightsAndPurity §§5.5,
-7.8, 8.14, 8.19; InverseGaloisAndArithmeticFundamentalGroups §IG.1.3 and gap:tame-specialization.
+ArithmeticGaloisRepresentations §1.11; LanglandsParameterStacks §2.2; SchemeAndStackFoundations
+§2.2; ResolutionOfSingularitiesCharacteristicZero §6.2; AutomorphicLFunctionsAndLocalFactors §AL.3
+and gap:curve-companions; DeligneWeightsAndPurity §§5.5, 7.8, 8.14, 8.19;
+InverseGaloisAndArithmeticFundamentalGroups §IG.1.3 and gap:tame-specialization.
 
 ## Layer 6: higher Prym representations and the Putman–Wieland property
 
@@ -2147,9 +2262,9 @@ Prove: for a punctured étale-versal family, a base point `c ∈ C°` over `m` a
 `ρ₀ = ρ_∞ mod t` restricts to a unitary representation of `π₁(C°_m, c)`, then `ρ_∞|_{π₁(C°_m, c)}` is
 conjugate over `ℂ[[t]]` to a constant representation (Landesman–Litt, Lemma 8.5.1, p. 42). Apply the
 constancy criterion of §1.3 to `1 → π₁(C°_m) → π₁(C°) → π₁(M) → 1` (§2.6): for a deformation `γ`
-over `B_n` with constant fibre restriction, `ad γ` has rank `r² − 1 < g` and its fibre restriction is
-the constant deformation of the unitary `ad ρ₀`, so `H⁰(M, R¹π°_* ad γ) = 0` by §5.7. *Needs:* §§1.3,
-2.6, 5.7.
+over `B_n`, `n ≥ 0`, with constant fibre restriction, `ad γ` has rank `r² − 1 < g` and its fibre
+restriction is the constant deformation of the unitary `ad ρ₀`, so `H⁰(M, R¹π°_* ad γ) = 0` by §5.7.
+*Needs:* §§1.3, 2.6, 5.7.
 
 **Checks.**
 
@@ -2849,6 +2964,8 @@ Layers 0–3, 5 and 9; Mathlib `FreeGroup`.
   survives (the authors' erratum gives the pointed form).
 - Landesman–Litt, Lemma 2.4.2, pp. 19–20: the hypothesis `g ≥ 1` is needed, since the proof uses
   Corollary 2.3.5 (§4.5; the authors' erratum adds it).
+- Landesman–Litt, §3.2, p. 21: the auxiliary map `d_n` is defined and injective only for `n ≥ 1`,
+  the range in which the proof of Proposition 3.2.1 uses it (§1.3).
 - Landesman–Litt, Lemma 7.2.5, p. 36: the boundary-replaced cover has genus `g′`, not `g` (§6.3).
 - Landesman–Litt, Theorem 8.5.3, p. 43: Lemma 8.5.2 needs a connected finite-type family of actual
   fixed-determinant representations; §8.3 takes the connected component of the representation scheme
@@ -2871,6 +2988,14 @@ Layers 0–3, 5 and 9; Mathlib `FreeGroup`.
   representations for every `g ≥ 2`, not only `g = 2, 3` (§12.6).
 - Aramayona–Souto, proof of Lemma 2.5, p. 11: the restriction of the induced representation contains
   `ρ` as a direct summand; it is not a sum of copies of `ρ` (§7.1, with the `A₃ ⊂ S₃` check).
+- Landesman–Litt 2022, Corollary 6.1.2, p. 35, and its special case Corollary 1.3.6, p. 7: for
+  reducible monodromy the deformed parabolic bundle need not be semistable; the conclusion needs
+  irreducible monodromy or a flat filtration with irreducible graded pieces of equal parabolic slope,
+  which the parabolic Deligne extension always has. `O(p) ⊕ O(−p)` with the connection `d` on a
+  once-pointed genus-one curve, and a coarsened structure on the canonical lattice of a sum of two
+  unitary characters, are counterexamples in rank two (§5.3). The reduction to irreducible
+  monodromy in the proof (§6.4.10, p. 49) assumes equal slopes; Theorem 1.2.12 uses only the
+  parabolic Deligne extension and stands (§5.11).
 - Landesman–Litt 2022, Lemma 7.5.1, p. 53: the statement needs a nonabelian fundamental group,
   since torsion characters of the torus and of the annulus are dense; §11.5 states it in the
   hyperbolic range.
