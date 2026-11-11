@@ -2134,8 +2134,19 @@
       "title": "Lower bound on the components of the dyadic flag-image ring",
       "supplier": "LocalGaloisDeformationRings",
       "section": "§6.24 The flag image ring for trivial residual representation",
-      "needs": "For v | 2 and any residual ρ̄|G_{F_ṽ} with a stable full flag, every irreducible component of Spec R^△_v has dimension at least 1 + n² + [F_ṽ:ℚ₂]n(n+1)/2, and every irreducible component of Spec R^△_v/ϖ lies on an irreducible component of Spec R^△_v on which the torsion subgroup of I^{ab}_{F_ṽ}(2)^n acts, through Λ_v, by the trivial character.",
-      "detail": "§6.24 gives the dimension only for trivial residual representation and [F_ṽ:ℚ_p] > n(n−1)/2 + 1; BCGP25 Lemma 5.7.7 is applied at the unprepared field (p. 139). Ger19 Lemma 3.2.3 (lines 1582–1587) gives the bound at closed points of the generic fibre of the flag scheme and is a route.",
+      "needs": "For v | 2 and any residual ρ̄|G_{F_ṽ} with a stable full flag, every irreducible component of Spec R^△_v has dimension at least 1 + n² + [F_ṽ:ℚ₂]n(n+1)/2.",
+      "detail": "§6.24 gives the dimension only for trivial residual representation and [F_ṽ:ℚ_p] > n(n−1)/2 + 1; BCGP25 Lemma 5.7.7 is applied at the unprepared field (p. 139). Ger19 Lemma 3.2.3 (lines 1582–1587) gives the bound at closed points of the generic fibre of the flag scheme and is a route. Used by the obstruction count 3.2(a) and the dimension counts of Layer 4.",
+      "neededBy": [
+        "OrdinaryAutomorphicFormsAndModularityLiftingPartII:OL.2/ordinary-dimension-bound"
+      ]
+    },
+    {
+      "slug": "dyadic-flag-ring-special-fibre",
+      "title": "Special-fibre components of the dyadic flag-image ring lie on torsion-trivial components",
+      "supplier": "LocalGaloisDeformationRings",
+      "section": "§6.24 The flag image ring for trivial residual representation",
+      "needs": "For v | 2 and any residual ρ̄|G_{F_ṽ} with a stable full flag, every irreducible component of Spec R^△_v/ϖ lies on an irreducible component of Spec R^△_v on which the torsion subgroup of I^{ab}_{F_ṽ}(2)^n acts, through Λ_v, by the trivial character.",
+      "detail": "For trivial residual representation and [F_ṽ:ℚ₂] > n(n−1)/2 + 1 this follows from §6.24, whose components R^△_v/Q are O-flat and irreducible with a common special fibre for all minimal primes Q of Λ_v; no source states it in general. Used only by input (C) of 3.2(b) at an unprepared field.",
       "neededBy": [
         "OrdinaryAutomorphicFormsAndModularityLiftingPartII:OL.2/ordinary-dimension-bound"
       ]
@@ -2204,11 +2215,23 @@
       "title": "GSp₄ Galois representations of cuspidal representations over totally real fields",
       "supplier": "AutomorphicGaloisRepresentationsPartII",
       "section": "GSp₄ construction and normalization",
-      "needs": "For F⁺ totally real and π cuspidal of general type on GSp₄(𝔸_{F⁺}) with weights ((k_v, l_v; 2)), k_v ≥ l_v ≥ 2, including ordinary parallel weight 2 (BCGP25 Theorem 1.8.17), a continuous ρ_{π,p} : G_{F⁺} → GSp₄(ℚ̄_p) with the spin Hecke polynomials at good places, similitude ε^{−1} times the central character, and ordinary at v | p with the stabilization of an ordinary π_v.",
-      "detail": "The supplier section constructs these for F⁺ = ℚ through the GL₄ transfer. BCGP25 Hypothesis 6.3.1 allows regular weights while Theorem 1.8.17 is stated for weight 2 only (BCGP25 lines 641–659, 6642).",
+      "needs": "For F⁺ totally real and π cuspidal of general type on GSp₄(𝔸_{F⁺}) with central character |·|², either regular algebraic (π_∞ essentially discrete series, weights λ_v = (k_v, l_v; 2) ∈ X*(T)⁺, i.e. 0 ≥ k_v ≥ l_v and k_v + l_v even in the conventions of BCGP25 §§1.8.7–1.8.8, 1.8.12; BCGP25 Theorem 1.8.13) or of weight 2 in the sense of BCGP25 Definition 1.8.16 (λ_v = (1, 1; 2), π_∞ a non-degenerate limit of discrete series; BCGP25 Theorem 1.8.17), a continuous ρ_{π,p} : G_{F⁺} → GSp₄(ℚ̄_p) with the spin Hecke polynomials at good places, similitude ε^{−1} times the central character, and ordinary at v | p with the stabilization of an ordinary π_v.",
+      "detail": "The supplier section constructs these for F⁺ = ℚ through the GL₄ transfer. BCGP25 Hypothesis 6.3.1 allows regular weights, whose construction is BCGP25 Theorem 1.8.13, while §6.3 cites Theorem 1.8.17, stated for weight 2 only (BCGP25 lines 600–659, 6642). In BCGP25's coordinates G-dominance is 0 ≥ k₁ ≥ k₂, so the weight-two seed (1, 1; 2) is not dominant (Definition 1.8.16, lines 636–638).",
       "neededBy": [
         "OrdinaryAutomorphicFormsAndModularityLiftingPartII:OL.4/ordinary-seed-datum",
         "OrdinaryAutomorphicFormsAndModularityLiftingPartII:OL.4/gsp4-hida-galois-representation"
+      ]
+    },
+    {
+      "slug": "two-adic-polarized-presentation",
+      "title": "Polarized deformation theory at p = 2 with O-coefficients",
+      "supplier": "GlobalGaloisDeformations",
+      "section": "§8.4 Presentations of polarized deformation rings",
+      "needs": "For p = 2, F/F⁺ unramified at every finite place and every place above 2 split in F, the O-coefficient polarized theory of Thorne 2017 §2.1 and Lemmas 2.8–2.15: representability with strict equivalence by Ĝ_n, the framed torsor of relative dimension (n² + 1)#T − 1, Thorne's complex with h² = h¹_{𝒮^⊥,T} and h³ = h⁰(F(S)/F⁺, ad r̄(1)), its Euler characteristic (Corollary 2.14) and the generator count over R^loc (Lemma 2.12).",
+      "detail": "GlobalGaloisDeformations §8.1 fixes p odd. PotentialAutomorphyInfrastructurePartII declares the same request under the same slug. Layer 1 of this roadmap states only the forms over a weight algebra Λ and deduces them from this contract.",
+      "neededBy": [
+        "OrdinaryAutomorphicFormsAndModularityLiftingPartII:OL.0/lambda-polarized-deformation-problem",
+        "OrdinaryAutomorphicFormsAndModularityLiftingPartII:OL.0/dyadic-dual-selmer-group"
       ]
     }
   ],
