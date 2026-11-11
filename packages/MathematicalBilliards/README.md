@@ -117,7 +117,7 @@ API:
 
 ### 1.2 The curvature criterion
 
-Prove the curvature criterion: if `γ : ℝ → ℂ` is `C²`, `ℓ`-periodic with `ℓ > 0`, of unit speed, injective on `[0, ℓ)` and has signed curvature `κ > 0` everywhere, then `γ` is a table of class `C²` (BialyMironov2022 lines 96–98 and 149–153 for this setting; Tabachnikov2005, Chapter 3). Route: the image is a `C²` Jordan curve; by the turning theorem its total curvature is `2π` if it is positively oriented and `−2π` otherwise, and `κ > 0` forces `+2π`; so the tangent angle `θ` is strictly increasing with `θ(s + ℓ) = θ(s) + 2π`. For fixed `s` the height `h(t) = τ(s) × (γ(t) − γ(s))` has critical points exactly where `τ(t) = ±τ(s)`, which are `t ≡ s` and the unique `t ≡ s′` with `θ(s′) = θ(s) + π`; `h(s) = 0` and `h″(s) = κ(s) > 0`, so `s` is the minimum and `s′` the maximum, and `h > 0` off `s + ℓℤ`. *Needs:* RiemannianGeometry/Surfaces §3.1; §1.1.
+Prove the curvature criterion: if `γ : ℝ → ℂ` is `C²`, `ℓ`-periodic with `ℓ > 0`, of unit speed, injective on `[0, ℓ)` and has signed curvature `κ > 0` everywhere, then `γ` is a table of class `C²` (BialyMironov2022, Section 1.3, p. 2, lines 96–98, and Section 2, p. 4, lines 149–153, for this setting; Tabachnikov2005, Chapter 3). Route: the image is a `C²` Jordan curve; by the turning theorem its total curvature is `2π` if it is positively oriented and `−2π` otherwise, and `κ > 0` forces `+2π`; so the tangent angle `θ` is strictly increasing with `θ(s + ℓ) = θ(s) + 2π`. For fixed `s` the height `h(t) = τ(s) × (γ(t) − γ(s))` has critical points exactly where `τ(t) = ±τ(s)`, which are `t ≡ s` and the unique `t ≡ s′` with `θ(s′) = θ(s) + π`; `h(s) = 0` and `h″(s) = κ(s) > 0`, so `s` is the minimum and `s′` the maximum, and `h > 0` off `s + ℓℤ`. *Needs:* RiemannianGeometry/Surfaces §3.1; §1.1.
 
 **Checks.**
 
@@ -137,12 +137,12 @@ Prove: for a table, a parameter `s` and `δ ∈ (0, π)`, the ray `{γ(s) + r ex
 
 ### 1.4 Oriented lines
 
-Represent an oriented line by `(e, c) ∈ Circle × ℝ`, the line `{z : e × z = c}` oriented by `e`, and identify the phase cylinder `A` with the oriented lines meeting the interior of `Ω` (BialyMironov2022 lines 154–157 and 172–176, for the space of oriented lines as a cylinder and its coordinates). *Needs:* §1.3.
+Represent an oriented line by `(e, c) ∈ Circle × ℝ`, the line `{z : e × z = c}` oriented by `e`, and identify the phase cylinder `A` with the oriented lines meeting the interior of `Ω` (BialyMironov2022, Section 2, p. 4, lines 154–157 and 172–176, for the space of oriented lines as a cylinder and its coordinates). *Needs:* §1.3.
 
 API:
 
 - Every oriented line of `ℂ` has exactly one representation `(e, c)`: `e` is its direction and `c = e × z` for any point `z` on it. Reversing the orientation sends `(e, c)` to `(−e, −c)`, the same point set; this involution of `Circle × ℝ` preserves the set of lines meeting the interior of `Ω`.
-- The map `(s, δ) ↦ (exp(iδ)τ(s), exp(iδ)τ(s) × γ(s))` is a homeomorphism from `A` onto the open set of oriented lines meeting the interior of `Ω` (BialyMironov2022 lines 154–157).
+- The map `(s, δ) ↦ (exp(iδ)τ(s), exp(iδ)τ(s) × γ(s))` is a homeomorphism from `A` onto the open set of oriented lines meeting the interior of `Ω` (BialyMironov2022, Section 2, p. 4, lines 154–157).
 - Its inverse sends such a line to its entry state: the point `γ(s)` where the oriented line enters `Ω`, and the angle `δ ∈ (0, π)` from `τ(s)` to its direction `e`. The line leaves `Ω` at the exit point `γ(s₁)` of §1.3 for the state `(s, δ)`.
 
 **Checks.**
@@ -241,18 +241,18 @@ The circle (explicit map), the ellipse (2-periodic orbits along the axes) and th
 
 ### Dependencies
 
-Layer 1; SymplecticGeometry/CotangentLagrangian C3.1 (comparison and circular examples in §2.5).
+Layer 1; Mathlib (implicit function theorem in §2.2, `AddCircle.equivIco` in §2.1); SymplecticGeometry/CotangentLagrangian C3.1 (comparison and circular examples in §2.5).
 
 ## Layer 3: Generating function and invariant measure
 
 ### 3.1 The chord length
 
-Define the chord length `L(s, s₁) = |γ(s₁) − γ(s)|` on the open set `{(s, s₁) : s < s₁ < s + ℓ}` (BialyMironov2022 lines 159–161 and 182–185; Tabachnikov2005, Chapter 3). *Needs:* §2.1.
+Define the chord length `L(s, s₁) = |γ(s₁) − γ(s)|` on the open set `{(s, s₁) : s < s₁ < s + ℓ}` (BialyMironov2022, Section 2, p. 4, lines 159–161 and 182–185; Tabachnikov2005, Chapter 3). *Needs:* §2.1.
 
 API:
 
 - `L` is positive and of class `C^k` on its domain, since `γ(s₁) ≠ γ(s)` there and the norm is smooth off `0`; it is invariant under the diagonal translation `(s, s₁) ↦ (s + ℓ, s₁ + ℓ)`.
-- First derivatives along the graph of the lift: at `s₁ = F₁(s, δ)`, `∂L/∂s = −cos δ` and `∂L/∂s₁ = cos δ₁` (BialyMironov2022 lines 182–185, the identity `cos δ₁ ds₁ − cos δ ds = dL`).
+- First derivatives along the graph of the lift: at `s₁ = F₁(s, δ)`, `∂L/∂s = −cos δ` and `∂L/∂s₁ = cos δ₁` (BialyMironov2022, Section 2, p. 4, lines 182–185, the identity `cos δ₁ ds₁ − cos δ ds = dL`).
 - Mixed derivative: for `k ≥ 2`, at `s₁ = F₁(s, δ)`, `∂²L/∂s∂s₁ = sin δ sin δ₁ / L > 0`, computed here by differentiating `∂L/∂s₁ = ⟨u, τ(s₁)⟩`, `u` the unit chord, in `s` and using `τ(s₁) = exp(i(δ + δ₁))τ(s)`.
 - Boundary behaviour: `L` extends continuously by `0` to the lines `s₁ = s` and `s₁ = s + ℓ`, where it is not differentiable; by unit speed its one-sided derivative in `s₁` is `+1` at `s₁ = s` and `−1` at `s₁ = s + ℓ`. This is the rate used for collapsed chords in §6.3.
 
@@ -264,7 +264,7 @@ API:
 
 ### 3.2 Exactness and the Jacobian
 
-Prove, for `k ≥ 2`, that along the graph of the lift `cos δ₁ ds₁ − cos δ ds = d(L ∘ (s, F₁))`, that is `∂_s(L(s, F₁)) = cos δ₁ ∂_s F₁ − cos δ` and `∂_δ(L(s, F₁)) = cos δ₁ ∂_δ F₁`, and that `det DF(s, δ) = sin δ / sin δ₁` (BialyMironov2022 lines 182–185). In the coordinates `(s, y)`, `y = −cos δ`, this is `F*(y ds) − y ds = −d(L ∘ (s, F₁))`, so the generator in IntegrableSystems I5.0's convention is `−L`. *Needs:* §3.1, §2.2; SymplecticGeometry/IntegrableSystems I5.0 (sign convention only).
+Prove, for `k ≥ 2`, that along the graph of the lift `cos δ₁ ds₁ − cos δ ds = d(L ∘ (s, F₁))`, that is `∂_s(L(s, F₁)) = cos δ₁ ∂_s F₁ − cos δ` and `∂_δ(L(s, F₁)) = cos δ₁ ∂_δ F₁`, and that `det DF(s, δ) = sin δ / sin δ₁` (BialyMironov2022, Section 2, p. 4, lines 182–185). In the coordinates `(s, y)`, `y = −cos δ`, this is `F*(y ds) − y ds = −d(L ∘ (s, F₁))`, so the generator in IntegrableSystems I5.0's convention is `−L`. *Needs:* §3.1, §2.2; SymplecticGeometry/IntegrableSystems I5.0 (sign convention only).
 
 **Checks.**
 
@@ -274,7 +274,7 @@ Prove, for `k ≥ 2`, that along the graph of the lift `cos δ₁ ds₁ − cos 
 
 ### 3.3 The invariant measure
 
-Define `phaseMeasure ℓ`, the measure `μ_A` on `AddCircle ℓ × ℝ`: the product of the Haar measure `volume` of `AddCircle ℓ` with the restriction of Lebesgue measure to `(0, π)` with density `sin δ`. Prove `ConvexTable.measurePreserving_billiardMap`: for a table `γ` of class `C^k` with `k ≥ 2`, `MeasureTheory.MeasurePreserving (ConvexTable.billiardMap γ) μ_A μ_A`. This includes measurability of the total map, which is continuous on `A` and, off `A`, continuous on each of the Borel pieces `δ ∈ (π, 2π) ∪ {0}` modulo `2π` (exit parameter `s`) and `δ ≡ π` (exit parameter `0`) (BialyMironov2022, Section 2, p. 4, lines 159–164 and 182–185, gives the smooth invariant form; the finite-regularity measure transport is constructed here). Route: the Jacobian identity of §3.2 and change of variables on the fundamental domain `[0, ℓ) × (0, π)`, with `AddCircle.measurePreserving_mk`; `μ_A` does not see the values off `A`. *Needs:* §3.2; Mathlib `MeasureTheory.lintegral_image_eq_lintegral_abs_det_fderiv_mul`, `AddCircle.measurePreserving_mk`, `AddCircle.measure_univ`, `MeasureTheory.Measure.withDensity`.
+Define `phaseMeasure ℓ`, the measure `μ_A` on `AddCircle ℓ × ℝ`: the product of the Haar measure `volume` of `AddCircle ℓ` with the restriction of Lebesgue measure to `(0, π)` with density `sin δ`. Prove `ConvexTable.measurePreserving_billiardMap`: for a table `γ` of class `C^k` with `k ≥ 2`, `MeasureTheory.MeasurePreserving (ConvexTable.billiardMap γ) μ_A μ_A`. This includes measurability of the total map, which is continuous on `A` and, off `A`, continuous on each of the Borel pieces `δ ∈ (π, 2π) ∪ {0}` modulo `2π` (exit parameter `s`), `δ ≡ π` (exit parameter `0`), and `δ ∈ (0, π) + 2πm` for each integer `m ≠ 0`, where the lift depends on `δ` only through `exp(iδ)` and equals the map on `A` precomposed with `δ ↦ δ − 2πm` (BialyMironov2022, Section 2, p. 4, lines 159–164 and 182–185, gives the smooth invariant form; the finite-regularity measure transport is constructed here). Route: the Jacobian identity of §3.2 and change of variables on the fundamental domain `[0, ℓ) × (0, π)`, with `AddCircle.measurePreserving_mk`; `μ_A` does not see the values off `A`. *Needs:* §3.2; Mathlib `MeasureTheory.lintegral_image_eq_lintegral_abs_det_fderiv_mul`, `AddCircle.measurePreserving_mk`, `AddCircle.measure_univ`, `MeasureTheory.Measure.withDensity`.
 
 API:
 
@@ -287,6 +287,7 @@ API:
 - `μ_A(A) = ℓ · ∫₀^π sin δ dδ = 2ℓ`.
 - Lebesgue measure `dδ ds` is not invariant for the ellipse `(2 cos u, sin u)`: at the state at `(2, 0)` with `δ = π/4` the Jacobian is `√73/5 ≈ 1.709 ≠ 1` (§3.2), while `sin δ dδ ds` is preserved because `sin δ₁ · √73/5 = (5/√146)(√73/5) = 1/√2 = sin δ`.
 - For `k = ∞` this is C3.1's measure statement read through §2.5.
+- The pieces off `A` cover its whole complement: on the unit circle the state `(0, 5π/2)` is neither in `A` nor in the pieces `δ ∈ (π, 2π) ∪ {0}`, `δ ≡ π` modulo `2π`; it lies in the piece `m = 1`, where `e = exp(5πi/2) · i = −1` and the total map sends it to `(π, π/2)`, the image of `(0, π/2)`. These values carry no meaning and `μ_A` does not charge them.
 
 ### Examples
 
@@ -294,13 +295,13 @@ The circle, where every computation is explicit; the ellipse at its axes.
 
 ### Dependencies
 
-Layers 1–2.
+Layers 1–2; Mathlib (change of variables, the Haar measure of `AddCircle`, densities); SymplecticGeometry/IntegrableSystems I5.0 (sign convention in §3.2).
 
 ## Layer 4: Twist maps of the annulus
 
 ### 4.1 Twist lifts
 
-Fix `ℓ > 0` and real numbers `a < b`. Define `IsTwistLift ℓ F` for a homeomorphism `F` of the closed strip `ℝ × [a, b]` (a homeomorphism of `ℝ × Set.Icc a b`): `F(x + ℓ, y) = F(x, y) + (ℓ, 0)`; `F` maps each boundary line `y = a`, `y = b` into itself; and `y ↦ F₁(x, y)` is strictly increasing for every `x` (positive topological twist). A negative twist lift is the same with strictly decreasing; for an open interval `J` with endpoints `−∞ ≤ a < b ≤ ∞`, the twist condition on the open strip `ℝ × J` replaces the boundary lines by the ends: `F₂(x, y) → a` as `y → a` and `→ b` as `y → b`, uniformly in `x`. A monotone twist map is a `C¹` diffeomorphism of an open strip with these properties and `∂F₁/∂y > 0` everywhere (KatokHasselblatt1995, Section 9.2; Herman1983, Chapitre I, 1.2, lines 149–155, for the derivative form, a diffeomorphism turning the vertical).
+Fix `ℓ > 0` and real numbers `a < b`. Define `IsTwistLift ℓ F` for a homeomorphism `F` of the closed strip `ℝ × [a, b]` (a homeomorphism of `ℝ × Set.Icc a b`): `F(x + ℓ, y) = F(x, y) + (ℓ, 0)`; `F` maps each boundary line `y = a`, `y = b` into itself; and `y ↦ F₁(x, y)` is strictly increasing for every `x` (positive topological twist). A negative twist lift is the same with strictly decreasing; for an open interval `J` with endpoints `−∞ ≤ a < b ≤ ∞`, the twist condition on the open strip `ℝ × J` replaces the boundary lines by the ends: `F₂(x, y) → a` as `y → a` and `F₂(x, y) → b` as `y → b`, uniformly in `x`. A monotone twist map is a `C¹` diffeomorphism of an open strip with these properties and `∂F₁/∂y > 0` everywhere (KatokHasselblatt1995, Section 9.2; Herman1983, Chapitre I, 1.2, lines 149–155, for the derivative form, a diffeomorphism turning the vertical).
 
 *Needs:* Mathlib `Homeomorph`, `AddCircle` and the quotient topology; elementary order properties of intervals.
 
@@ -309,7 +310,7 @@ API:
 - A twist lift descends to a homeomorphism of the annulus `AddCircle ℓ × [a, b]` isotopic to the identity, hence orientation preserving; it maps each boundary line onto itself (its restriction there is an equivariant injective continuous map of `ℝ`).
 - The inverse of a positive twist lift is a negative twist lift, and conversely; so a homeomorphism is a negative twist lift exactly when its inverse satisfies `IsTwistLift`. For an explicitly chosen decreasing homeomorphism `r : J ≃ₜ J`, conjugating by `I_r(x, y) = (x, r(y))` exchanges positive and negative topological twists. For finite endpoints one may take `r(y) = a + b − y`; preservation of the differentiable twist condition additionally requires `r` to be a `C¹` diffeomorphism.
 - Composition with a deck translation `τ_ℓ^m` keeps the twist property; the composite of two positive twist lifts is not in general a twist lift.
-- A positive topological twist lift deviates the verticals in the sense of Herman1983, Appendice, line 1130: the image of every vertical crosses every vertical it meets in its interior transversally, from left to right.
+- A positive topological twist lift deviates the verticals in the sense of Herman1983, Appendice, §2, printed p. 40, line 1130: the image of every vertical crosses every vertical it meets in its interior transversally, from left to right.
 
 **Checks.**
 
@@ -377,13 +378,13 @@ Mathlib; Layers 2–3 for §4.3; SymplecticGeometry/CotangentLagrangian C3.1 for
 
 ### 5.1 Definition
 
-Define `IsRotationalInvariantCurve f C` for a self-map `f` of an annulus `AddCircle ℓ × Y`, `Y` a topological space (in the applications an interval, `[a, b]` or `ℝ`): `f(C) = C` and `C` is the image of a continuous injective map `c : Circle → AddCircle ℓ × Y` that is not `ContinuousMap.Nullhomotopic` (BialyMironov2022 lines 103–104). The curves of interest lie in an open annulus `AddCircle ℓ × (a, b)` inside `AddCircle ℓ × Y`; null-homotopy in `AddCircle ℓ × Y` and in that open annulus agree, since both deformation retract onto a circle `AddCircle ℓ × {y₀}`.
+Define `IsRotationalInvariantCurve f C` for a self-map `f` of an annulus `AddCircle ℓ × Y`, `Y` a topological space (in the applications an interval, `[a, b]` or `ℝ`): `f(C) = C` and `C` is the image of a continuous injective map `c : Circle → AddCircle ℓ × Y` that is not `ContinuousMap.Nullhomotopic` (BialyMironov2022, Theorem 1.1, p. 3, lines 103–104). The curves of interest lie in an open annulus `AddCircle ℓ × (a, b)` inside `AddCircle ℓ × Y`; null-homotopy in `AddCircle ℓ × Y` and in that open annulus agree, since both deformation retract onto a circle `AddCircle ℓ × {y₀}`.
 
 API:
 
 - Let `Y` be an interval containing `(a, b)` and `C ⊆ AddCircle ℓ × (a, b)`. Then `C` is compact, contained in `AddCircle ℓ × [a′, b′]` for some `a < a′ ≤ b′ < b`, and its first coordinate has degree `±1`.
 - In the same setting, the complement of `C` in the open annulus has exactly two components, the lower one containing `AddCircle ℓ × Ioo a a′` and the upper one, both with frontier `C`. Route: embed the annulus in `ℂ ∖ {0}` by `(x, y) ↦ (1 + y − a) exp(2πix/ℓ)` and use the Jordan curve theorem.
-- If `f` is a homeomorphism of the annulus with `f(C) = C` that preserves each end (each boundary circle when `Y = [a, b]`; `f(x, y) → a` as `y → a` and `→ b` as `y → b` uniformly in `x` when `Y` is open), as the maps of §4.1 and the billiard map do, then `f` maps each of the two components onto itself. Route: `f` and `f⁻¹` map the complement of `C` into itself, so they permute its components, and the component containing points near the lower end goes to the one containing their images, again near the lower end. The definition of a rotational invariant curve itself asks only `f(C) = C` of an arbitrary self-map.
+- If `f` is a homeomorphism of the annulus with `f(C) = C` that preserves each end (each boundary circle when `Y = [a, b]`; when `Y` is open, `f₂(x, y) → a` as `y → a` and `f₂(x, y) → b` as `y → b`, uniformly in `x`, for the second coordinate `f₂`), as the maps of §4.1 and the billiard map do, then `f` maps each of the two components onto itself. Route: `f` and `f⁻¹` map the complement of `C` into itself, so they permute its components, and the component containing points near the lower end goes to the one containing their images, again near the lower end. The definition of a rotational invariant curve itself asks only `f(C) = C` of an arbitrary self-map.
 - If `C` is invariant under `f`, then `I(C)` is invariant under `I ∘ f ∘ I`, for every fibre reflection `I`.
 
 **Checks.**
@@ -409,7 +410,7 @@ Let `H` be an orientation-preserving homeomorphism of `AddCircle ℓ × Ico a b`
 
 Prove `isGraph_of_isRotationalInvariantCurve`: let `ℓ > 0`, `a < b`, and let `H` be a homeomorphism of the closed annulus `AddCircle ℓ × [a, b]` with a lift `F`, a homeomorphism of `ℝ × [a, b]` with `H(x mod ℓ, y) = (F₁(x, y) mod ℓ, F₂(x, y))`, such that `F` is a positive twist lift or a negative one (that is, `IsTwistLift ℓ F` or `IsTwistLift ℓ F⁻¹`), and such that every point of the open annulus is non-wandering for `H`. Then every rotational invariant curve `C` of `H` contained in the open annulus `AddCircle ℓ × (a, b)` is the graph `{y = ψ(x)}` of a continuous `ψ : AddCircle ℓ → (a, b)` (Herman1983, Appendice au Chapitre I, Théorème de Birkhoff, printed p. 41, lines 1150–1154; KatokHasselblatt1995, Chapter 13). Route: for a negative twist apply the positive case to `H⁻¹`, which has the same invariant curves and the same non-wandering set; the boundary circles are non-wandering too, since the non-wandering set is closed. Apply §5.2 to `H` on `AddCircle ℓ × [a, b)` and the lower component `U` of §5.1, which is `H`-invariant because `H` preserves `C` and the lower boundary circle; `U` is homeomorphic to `AddCircle ℓ × [0, 1)` by the annulus theorem in dimension two (the embedded circle `C` is locally flat by Schoenflies), and its frontier is `C`. *Needs:* §4.1, §4.4, §5.1, §5.2; GeometricTopology §2.3.
 
-Prove the Lipschitz refinement: if moreover `F` restricts to a monotone twist map on the open strip, `ψ` is Lipschitz, with Lipschitz constant at most the maximum over the points `q` of `C` of `|∂_yF₂(q)/∂_yF₁(q)|` and `|∂_y(F⁻¹)₂(q)/∂_y(F⁻¹)₁(q)|` (Herman1983, Chapitre I, 2.2 and 5.2, lines 188–251 and 803–807; used in BialyMironov2022 lines 261–263). Route: at `p ∈ C` the curve `F(vertical through F⁻¹(p))` crosses `C` only at `p` and is tangent there to a line of slope `∂_yF₂/∂_yF₁`; `C` lies below it to the right of `p`, which bounds the upper right Dini derivative of `ψ`; the same with `F⁻¹` bounds the lower one, and a continuous function with bounded Dini derivatives is Lipschitz. *Needs:* the graph theorem above; §4.1.
+Prove the Lipschitz refinement: if moreover `F` restricts to a monotone twist map on the open strip, `ψ` is Lipschitz, with Lipschitz constant at most the maximum over the points `q` of `C` of `|∂_yF₂(q)/∂_yF₁(q)|` and `|∂_y(F⁻¹)₂(q)/∂_y(F⁻¹)₁(q)|` (Herman1983, Chapitre I, 2.2 and 5.2, lines 188–251 and 803–807; used in BialyMironov2022, Section 3, p. 6, lines 261–263). Route: at `p ∈ C` the curve `F(vertical through F⁻¹(p))` crosses `C` only at `p` and is tangent there to a line of slope `∂_yF₂/∂_yF₁`; `C` lies below it to the right of `p`, which bounds the upper right Dini derivative of `ψ`; the same with `F⁻¹` bounds the lower one, and a continuous function with bounded Dini derivatives is Lipschitz. *Needs:* the graph theorem above; §4.1.
 
 Prove `ConvexTable.exists_lipschitzWith_of_isRotationalInvariantCurve`: for a table `γ` of class `C^k`, `k ≥ 2`, every rotational invariant curve `C ⊆ A` of `ConvexTable.billiardMap γ` is the graph `{δ = ψ(s)}` of a Lipschitz function `ψ : AddCircle ℓ → ℝ` (BialyMironov2022, Section 3, p. 6, lines 261–263, which also uses the graph property in the coordinate `cos δ`). Route: by §4.4 every point of `Ā` is non-wandering for `T̄`; apply the graph theorem and its Lipschitz refinement to `T̄` with the twist lift of §4.3. Since `cos` is bi-Lipschitz on each compact subinterval of `(0, π)` and `ψ` takes values in one, `C` is also the graph of a Lipschitz function in the coordinates `(s, cos δ)`. *Needs:* §2.3, §4.3, §4.4, and the two theorems above.
 
@@ -421,7 +422,7 @@ Prove `ConvexTable.exists_lipschitzWith_of_isRotationalInvariantCurve`: for a ta
 
 ### 5.4 Rotation numbers
 
-For a rotational invariant curve `C` that is the graph of `ψ`, and the twist lift `F`, define `g(x) = F₁(x, ψ(x))`. Prove that `x ↦ g(ℓx)/ℓ` is a continuous strictly increasing `CircleDeg1Lift`, and define the rotation number `ρ(C)` as its `translationNumber`. Prove: `(F₁ⁿ(x, ψ(x)) − x)/(nℓ) → ρ(C)` for every `x`; for the normalised billiard lift `ρ(C) ∈ (0, 1)` (strictly); `ρ(I(C)) = 1 − ρ(C)` for the time reversal of §2.4; and, for a positive twist, if `ψ₁ < ψ₂` are two invariant graphs then `ρ(C₁) ≤ ρ(C₂)`, strictly when `F` preserves a measure with continuous positive density (Herman1983, Chapitre I, 2.4.2 and 2.4.4, lines 277–319, for Lebesgue measure). Route: `ρ ∈ (0, 1)` because `g(x) − x` is continuous, `ℓ`-periodic and valued in `(0, ℓ)`, hence in `[εℓ, (1 − ε)ℓ]`; time reversal from `I ∘ F ∘ I = τ_ℓ ∘ F⁻¹` and `CircleDeg1Lift.translationNumber_units_inv`; monotonicity from `∂_yF₁ > 0` and `CircleDeg1Lift.translationNumber_mono`. *Needs:* §5.3, §2.4; Mathlib `CircleDeg1Lift.tendsto_translationNumber`, `CircleDeg1Lift.translationNumber_units_inv`, `CircleDeg1Lift.translationNumber_mono`, `CircleDeg1Lift.translationNumber_le_of_le_add`, `CircleDeg1Lift.le_translationNumber_of_add_le`.
+For a rotational invariant curve `C` that is the graph of `ψ`, and the twist lift `F`, define `g(x) = F₁(x, ψ(x))`. Prove that `x ↦ g(ℓx)/ℓ` is a continuous strictly increasing `CircleDeg1Lift`, and define the rotation number `ρ(C)` as its `translationNumber`. Prove: `(F₁ⁿ(x, ψ(x)) − x)/(nℓ) → ρ(C)` for every `x`; for the normalised billiard lift `ρ(C) ∈ (0, 1)` (strictly); `ρ(I(C)) = 1 − ρ(C)` for the time reversal of §2.4; and, for a positive twist lift, if `ψ₁ < ψ₂` are two invariant graphs then `ρ(C₁) ≤ ρ(C₂)`; if moreover `F` restricts to a monotone twist map (`C¹`, `∂_yF₁ > 0`) on the open strip and preserves a measure with a continuous positive density there (§4.2), the inequality is strict (Herman1983, Chapitre I, 2.4.2 and 2.4.4, printed pp. 10–11, lines 277–319, for diffeomorphisms deviating the vertical and Lebesgue measure). Route: `ρ ∈ (0, 1)` because `g(x) − x` is continuous, `ℓ`-periodic and valued in `(0, ℓ)`, hence in `[εℓ, (1 − ε)ℓ]`; time reversal from `I ∘ F ∘ I = τ_ℓ ∘ F⁻¹` and `CircleDeg1Lift.translationNumber_units_inv`; the weak inequality from the strict increase of `y ↦ F₁(x, y)`, which gives `g₁(x) = F₁(x, ψ₁(x)) < F₁(x, ψ₂(x)) = g₂(x)`, and `CircleDeg1Lift.translationNumber_mono`; strictness by Herman's region argument when both rotation numbers equal `p/q`: two vertical segments and arcs of `C₁` and `C₂` bound a disc that `τ_ℓ^{−p} ∘ F^q` maps into itself with the open segments going into its interior, which leaves a nonempty open part of the disc uncovered, against preservation of a measure charging every nonempty open set and no curve. The argument runs in the compact annulus between `C₁` and `C₂`, where the continuous `∂_yF₁ > 0` deviates the vertical uniformly, and it uses the `C¹` twist to keep the images of the segments inside the disc. *Needs:* §5.3, §2.4, §4.2 (for the strict form); Mathlib `CircleDeg1Lift.tendsto_translationNumber`, `CircleDeg1Lift.translationNumber_units_inv`, `CircleDeg1Lift.translationNumber_mono`, `CircleDeg1Lift.translationNumber_le_of_le_add`, `CircleDeg1Lift.le_translationNumber_of_add_le`.
 
 API:
 
@@ -433,11 +434,12 @@ API:
 
 - Circular table: `ρ(δ = c) = 2Rc/ℓ = c/π`; `δ = π/3` gives `1/3`.
 - Time reversal: `δ = π/3` goes to `δ = 2π/3`, with rotation number `2/3 = 1 − 1/3`.
+- Monotonicity on the circular table: the graphs `δ = π/3 < δ = π/2` have `g₁(s) = s + 2πR/3 < s + πR = g₂(s)` and rotation numbers `1/3 < 1/2`; the lift is a monotone twist (`∂_δF₁ = 2R > 0`) preserving `sin δ dδ ds`, so the strict form applies.
 - With the lift `τ_ℓ^{−1} ∘ F` instead of the normalised one, the rotation numbers shift by `−1` into `(−1, 0)`; the statement `ρ ∈ (0, 1)` pins the normalisation.
 
 ### 5.5 Rational invariant curves
 
-Prove: if `ρ(C) = p/q` in lowest terms (`q ≥ 1`), then `C` contains a periodic orbit of type `(p, q)`; and if the restriction of `T` to `C` preserves a Borel probability measure on `C` of full support, every orbit on `C` is periodic of type `(p, q)` (BialyMironov2022 lines 116–119). Route: `CircleDeg1Lift.translationNumber_eq_rat_iff` for the first statement; for the second, every invariant probability measure of a circle homeomorphism with rotation number `p/q` is supported on the closed set of solutions of `g^q(x) = x + pℓ`, since on each complementary interval the map `g^q − pℓ` moves points monotonically and the fundamental intervals of that motion are disjoint of equal measure. *Needs:* §5.4; Mathlib `CircleDeg1Lift.translationNumber_eq_rat_iff`.
+Prove: if `ρ(C) = p/q` in lowest terms (`q ≥ 1`), then `C` contains a periodic orbit of type `(p, q)`; and if the restriction of `T` to `C` preserves a Borel probability measure on `C` of full support, every orbit on `C` is periodic of type `(p, q)` (BialyMironov2022, Section 1.3, p. 3, lines 116–119, the remark after Corollary 1.3). Route: `CircleDeg1Lift.translationNumber_eq_rat_iff` for the first statement; for the second, every invariant probability measure of a circle homeomorphism with rotation number `p/q` is supported on the closed set of solutions of `g^q(x) = x + pℓ`, since on each complementary interval the map `g^q − pℓ` moves points monotonically and the fundamental intervals of that motion are disjoint of equal measure. *Needs:* §5.4; Mathlib `CircleDeg1Lift.translationNumber_eq_rat_iff`.
 
 **Checks.**
 
@@ -461,7 +463,7 @@ The circular table (all curves explicit); for the ellipse the curves are the con
 
 ### Dependencies
 
-Layers 2–4; GeometricTopology §2.3; Tau Ceti plane topology.
+Mathlib (translation numbers, null-homotopy); Layers 2–4; GeometricTopology §2.3; Tau Ceti plane topology; SymplecticGeometry/CotangentLagrangian C3.1 (circular formula in §5.6).
 
 ## Layer 6: Birkhoff periodic orbits
 
@@ -693,7 +695,7 @@ The square, the equilateral triangle, the `π/8` right triangle, the L-shaped he
 
 ### Dependencies
 
-Layers 7–8.
+Layers 7–8; Mathlib (`DihedralGroup` in §9.1, `ErgodicVAdd` in §9.3).
 
 ## Layer 10: Translation surfaces
 
@@ -774,7 +776,7 @@ Flat tori and the regular octagon surface.
 
 ### Dependencies
 
-Mathlib manifolds; GeometricTopology §1.7 (genus).
+Mathlib manifolds.
 
 ## Layer 11: The Katok–Zemlyakov surface
 
@@ -839,7 +841,7 @@ Layers 7–10; GeometricTopology §1.7; Tau Ceti Euler characteristic.
 
 ### 12.1 Definition
 
-For an action of `ℝ` on a measurable space `X` (`AddAction ℝ X`) and a measure `μ`, define `IsWeaklyMixing μ`: for all measurable `A`, `B`, `T⁻¹ ∫₀ᵀ |μ((t +ᵥ ·)⁻¹' A ∩ B) − μ(A)μ(B)| dt → 0` as `T → ∞`, with the measures read as real numbers. It is used for probability measures and actions with `MeasurableVAdd₂ ℝ X` and `VAddInvariantMeasure ℝ X μ`, where the integrand is measurable in `t` (Fubini) and bounded by `1`. An eigenfunction with eigenvalue `a ∈ ℝ` is a measurable `f : X → ℂ`, not almost everywhere zero, with `f(t +ᵥ x) = exp(2πiat) f(x)` for almost every `x`, for every `t` (ChaikaForni2026 lines 9–17 and 99–100; Hochman2012, Theorem 6.1.7, lines 2483–2487, for the equivalent forms in the case of `ℤ`-actions).
+For an action of `ℝ` on a measurable space `X` (`AddAction ℝ X`) and a measure `μ`, define `IsWeaklyMixing μ`: for all measurable `A`, `B`, `T⁻¹ ∫₀ᵀ |μ((t +ᵥ ·)⁻¹' A ∩ B) − μ(A)μ(B)| dt → 0` as `T → ∞`, with the measures read as real numbers. It is used for probability measures and actions with `MeasurableVAdd₂ ℝ X` and `VAddInvariantMeasure ℝ X μ`, where the integrand is measurable in `t` (Fubini) and bounded by `1`. An eigenfunction with eigenvalue `a ∈ ℝ` is a measurable `f : X → ℂ`, not almost everywhere zero, with `f(t +ᵥ x) = exp(2πiat) f(x)` for almost every `x`, for every `t` (ChaikaForni2026, abstract, p. 1, lines 9–17, and Theorem 1.3, p. 3, lines 99–100; Hochman2012, Theorem 6.1.7, lines 2483–2487, for the equivalent forms in the case of `ℤ`-actions).
 
 *Needs:* Mathlib `MeasurableVAdd₂`, `VAddInvariantMeasure` on an `AddAction ℝ X`, `IsProbabilityMeasure μ`, complex `L²` and integration.
 
@@ -847,7 +849,7 @@ API:
 
 - Invariance under measure-preserving isomorphism of actions and under time rescaling `t ↦ ct`, `c ≠ 0`.
 - Equivalent forms: the same limit for `L²` functions `⟨g, U_t f⟩ − (∫f) conj(∫g)`, and with the square of the absolute value (the flow form of Hochman2012, Theorem 6.1.7 and Lemma 6.1.6, lines 2474–2487).
-- The product of a weakly mixing action with an ergodic one is ergodic (ChaikaForni2026 lines 95–98; Hochman2012, Proposition 6.2.1, line 2627, for `ℤ`-actions).
+- The product of a weakly mixing action with an ergodic one is ergodic (Hochman2012, Proposition 6.2.1, printed p. 59, line 2627, for `ℤ`-actions; ChaikaForni2026, Section 1, p. 3, lines 95–98, uses the related spectral criterion that two ergodic flows without a common nonzero eigenvalue have an ergodic product).
 
 **Checks.**
 
@@ -899,7 +901,7 @@ The same theorem states the spectral atomic-mass identity: for every finite Bore
 
 ### 12.5 The eigenfunction criterion
 
-Prove `isWeaklyMixing_iff`: for an action of `ℝ` on `X` with `MeasurableVAdd₂ ℝ X` and a probability measure `μ` with `VAddInvariantMeasure ℝ X μ`, `IsWeaklyMixing μ` holds exactly when every measurable `f : X → ℂ` satisfying, for some `a ∈ ℝ` and every `t`, `f(t +ᵥ x) = exp(2πiat) f(x)` for almost every `x`, is almost everywhere constant. Equivalently every eigenfunction is almost everywhere constant, in which case its eigenvalue is `0` (an almost everywhere zero `f` is constant and is not an eigenfunction) (the form in which ChaikaForni2026 works, lines 95–100; Hochman2012, Theorem 6.4.7, Lemma 6.6.2 and Corollary 6.6.4, printed pp. 64, 69–70, lines 2854–2855, 3076–3096 and 3141–3143, for `ℤ`-actions; the real-action criterion is proved here). Route: by §12.3 and Bochner's theorem each `f ⊥ 1` has a spectral measure `σ_f` with `⟨f, U_t f⟩ = ∫ exp(itξ) dσ_f(ξ)`, an eigenfunction of eigenvalue `a` giving an atom at `ξ = 2πa`; weak mixing is equivalent to `(1/T)∫₀ᵀ |⟨f, U_t f⟩|² dt → 0` for all `f ⊥ 1`, which by §12.4 means that no `σ_f` has an atom; an atom at `2πa` gives the eigenfunction `lim (1/T)∫₀ᵀ exp(−2πiat) U_t f dt ≠ 0` (§12.4.1, with squared projection norm `σ_f({2πa})`), and an eigenfunction gives an atom of its own spectral measure. Polarization gives the mixed correlations from the diagonal ones. To pass between this `L²` argument and measurable eigenfunctions, first obtain ergodicity by excluding nonconstant invariant indicator functions; then `|f|` is almost everywhere a finite constant, so every measurable eigenfunction belongs to `L²`. *Needs:* §12.1, §12.2, §12.3, §12.4, §12.4.1; Tau Ceti `TauCeti.bochner_charFun_real`.
+Prove `isWeaklyMixing_iff`: for an action of `ℝ` on `X` with `MeasurableVAdd₂ ℝ X` and a probability measure `μ` with `VAddInvariantMeasure ℝ X μ`, `IsWeaklyMixing μ` holds exactly when every measurable `f : X → ℂ` satisfying, for some `a ∈ ℝ` and every `t`, `f(t +ᵥ x) = exp(2πiat) f(x)` for almost every `x`, is almost everywhere constant. Equivalently every eigenfunction is almost everywhere constant, in which case its eigenvalue is `0` (an almost everywhere zero `f` is constant and is not an eigenfunction) (the form in which ChaikaForni2026 works, Section 1, p. 3, Theorem 1.3, lines 95–100; Hochman2012, Theorem 6.4.7, Lemma 6.6.2 and Corollary 6.6.4, printed pp. 64, 69–70, lines 2854–2855, 3076–3096 and 3141–3143, for `ℤ`-actions; the real-action criterion is proved here). Route: by §12.3 and Bochner's theorem each `f ⊥ 1` has a spectral measure `σ_f` with `⟨f, U_t f⟩ = ∫ exp(itξ) dσ_f(ξ)`, an eigenfunction of eigenvalue `a` giving an atom at `ξ = 2πa`; weak mixing is equivalent to `(1/T)∫₀ᵀ |⟨f, U_t f⟩|² dt → 0` for all `f ⊥ 1`, which by §12.4 means that no `σ_f` has an atom; an atom at `2πa` gives the eigenfunction `lim (1/T)∫₀ᵀ exp(−2πiat) U_t f dt ≠ 0` (§12.4.1, with squared projection norm `σ_f({2πa})`), and an eigenfunction gives an atom of its own spectral measure. Polarization gives the mixed correlations from the diagonal ones. To pass between this `L²` argument and measurable eigenfunctions, first obtain ergodicity by excluding nonconstant invariant indicator functions; then `|f|` is almost everywhere a finite constant, so every measurable eigenfunction belongs to `L²`. *Needs:* §12.1, §12.2, §12.3, §12.4, §12.4.1; Tau Ceti `TauCeti.bochner_charFun_real`.
 
 **Checks.**
 
@@ -929,8 +931,8 @@ Mathlib; Tau Ceti Bochner theorem and strongly continuous groups; Layers 9–11 
 
 ## Downstream consumers
 
-- A roadmap on the Birkhoff–Poritsky theorem for centrally symmetric tables (BialyMironov2022 lines 96–109, Theorem 1.1) consumes Layers 1–5: the carrier of `C²` tables of positive curvature (§1.2), the billiard map and its generating function (§§2–3), Birkhoff's graph theorem and rotation numbers (§§5.3–5.5).
-- A roadmap on weakly mixing polygonal billiards (ChaikaForni2026 line 28, Theorem 1.1, and lines 89–100, Theorems 1.2 and 1.3) consumes Layers 7–12: the billiard flow, rational tables, translation surfaces with their directional flows, the Katok–Zemlyakov unfolding and the eigenfunction criterion.
+- A roadmap on the Birkhoff–Poritsky theorem for centrally symmetric tables (BialyMironov2022, Section 1.3 and Theorem 1.1, pp. 2–3, lines 96–109) consumes Layers 1–5: the carrier of `C²` tables of positive curvature (§1.2), the billiard map and its generating function (§§2–3), Birkhoff's graph theorem and rotation numbers (§§5.3–5.5).
+- A roadmap on weakly mixing polygonal billiards (ChaikaForni2026, Theorem 1.1, p. 1, line 28, and Theorems 1.2 and 1.3, p. 3, lines 89–100) consumes Layers 7–12: the billiard flow, rational tables, translation surfaces with their directional flows, the Katok–Zemlyakov unfolding and the eigenfunction criterion.
 - A roadmap on translation surfaces and Teichmüller dynamics (strata, the `SL₂(ℝ)` action, KerckhoffMasurSmillie1986, Theorem 1) consumes Layers 10–11.
 - A roadmap on dispersing billiards would consume the almost-everywhere flow shape of Layer 8 (a trajectory map off an invariant null set, the identity on it), the shape also used for hard-sphere flows.
 
