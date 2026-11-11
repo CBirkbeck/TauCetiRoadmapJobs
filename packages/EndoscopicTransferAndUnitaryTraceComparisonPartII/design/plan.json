@@ -2802,7 +2802,7 @@
       "id": "jr-local-comparison",
       "supplier": "EndoscopicTransferAndUnitaryTraceComparison",
       "section": "Part II relative comparison continuation (local Jacquet–Rallis theory)",
-      "needs": "Supply the augmented and block/group Jacquet–Rallis invariant quotients, regular matching across all pure forms, η(det)-twisted orbital distributions, the cyclic factors (4.1) and (4.6), local smooth transfer with partial Fourier compatibility, and the product-to-conjugation identities (7.5)–(7.7), with the measures and unmatched-zero clauses of Leslie25 §§4.1 and 7.1–7.2.",
+      "needs": "Supply the augmented and block/group Jacquet–Rallis invariant quotients, regular matching across all pure forms, η(det)-twisted orbital distributions, the cyclic factors (4.1) and (4.6), the transfer relations (4.3) and (4.7) as relations between test functions, and the product-to-conjugation identities (7.5)–(7.7) with Definition 7.4, with the measures and unmatched-zero clauses of Leslie25 §§4.1 and 7.1–7.2.",
       "neededBy": [
         "EndoscopicTransferAndUnitaryTraceComparisonPartII:FJ.3/pure-form-orbit-torsor",
         "EndoscopicTransferAndUnitaryTraceComparisonPartII:FJ.3/generalized-nilpotent-integral",
@@ -2812,7 +2812,8 @@
         "EndoscopicTransferAndUnitaryTraceComparisonPartII:FJ.3/weil-orbital-sum",
         "EndoscopicTransferAndUnitaryTraceComparisonPartII:FJ.3/group-to-augmented",
         "EndoscopicTransferAndUnitaryTraceComparisonPartII:FJ.4/product-group-contraction",
-        "EndoscopicTransferAndUnitaryTraceComparisonPartII:FJ.4/rank-shifted-fundamental-lemma"
+        "EndoscopicTransferAndUnitaryTraceComparisonPartII:FJ.4/rank-shifted-fundamental-lemma",
+        "EndoscopicTransferAndUnitaryTraceComparisonPartII:FJ.4/augmented-fundamental-lemma"
       ]
     },
     {

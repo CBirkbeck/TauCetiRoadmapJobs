@@ -4,7 +4,7 @@
 
 ## Scope and ownership
 
-EndoscopicTransferAndUnitaryTraceComparison supplies ordinary unitary Lie-algebra endoscopy: crossed-module Galois cohomology (§1.1), abelianized cohomology (§1.5), rational classes in a stable class (§1.14), centralizers, matching and the endoscopic character for unitary Lie algebras (§1.17), endoscopic data (§1.4), the characteristic-coefficient quotient (§3.3), orbital integrals and κ-sums (§§2.1, 2.4), Lie transfer factors and transfer classes (§§2.9, 2.11), the unitary factor formula (§2.12), Waldspurger's smooth transfer (§4.7) and unramified spherical base change (§4.9(b)). It stops before symmetric-space endoscopy, and this Part II begins there. This roadmap owns the relative symmetric-space geometry and the relative transfer relation, the Hermitian spherical module on X_n with Hironaka's transform, the germ and descent reductions, the Friedberg–Jacquet unit theorem and the Fourier-defined full-module operator. The local Jacquet–Rallis inputs it consumes are supplier contracts of the base roadmap, stated below.
+EndoscopicTransferAndUnitaryTraceComparison supplies ordinary unitary Lie-algebra endoscopy: crossed-module Galois cohomology (§1.1), abelianized cohomology (§1.5), rational classes in a stable class (§1.14), centralizers, matching and the endoscopic character for unitary Lie algebras (§1.17), endoscopic data (§1.4), the characteristic-coefficient quotient (§3.3), orbital integrals and κ-sums (§§2.1, 2.4), Lie transfer factors and transfer classes (§§2.9, 2.11), the unitary factor formula (§2.12) and Waldspurger's smooth transfer (§4.7). It stops before symmetric-space endoscopy, and this Part II begins there. This roadmap owns the relative symmetric-space geometry and the relative transfer relation, the unramified spherical base-change homomorphism BC_n for GL_n, defined by its Satake substitution (§2.2), the Hermitian spherical module on X_n with Hironaka's transform, the germ and descent reductions, the Friedberg–Jacquet unit theorem and the Fourier-defined full-module operator. The local Jacquet–Rallis inputs it consumes are supplier contracts of the base roadmap, stated below.
 
 Signed Hermitian carriers and their adjoint belong to GeometryOfNumbersAndQuadraticArithmetic §2.9, integral Hermitian lattices and their duals to its §2.7, and local Hermitian representation densities to its §3.2; that roadmap's §3.2 also owns Hironaka's spherical functions on U(2n)/(U(n)×U(n)) and the Hermitian Siegel series, which live on a different space from the X_n of Layer 2 here. The finite self-dual-overlattice count and its normalization against the density are the relative adapter of §4.7. Quotient measures belong to AdelicAlgebraicGroups §2.2; the spherical Satake isomorphism and the determinant-twisted spherical parabolic descent for GL_n(E) belong to SmoothRepresentationsOfLocalGroups §§SR.4.1 and SR.4.3; the Weil index and Weil operators belong to MetaplecticAutomorphicForms §§2.1 and 2.5; and the split étale Hermitian carrier A⊕A∨ over E=F×F, with its pairing and the identification of its isometry group with GL(A), belongs to MetaplecticAutomorphicForms §3.2a. None is constructed a second time; on the split carrier Layer 0 adds only the paired-map description of Hom maps between two such carriers, their exchange adjoint and the off-diagonal block. The matrix Hermitian-product and characteristic-polynomial identities used in coordinates are in the pinned Mathlib (`Matrix.isHermitian_mul_conjTranspose_self`, `Matrix.charpoly_mul_comm`) and are used, not restated. Tau Ceti's Hecke rings for GL_n (`TauCeti/NumberTheory/HeckeRing/GLn/PolynomialRing/Basic.lean`) are the arithmetic p-local Hecke rings over ℤ; they are not the analytic spherical Hecke algebras of compactly supported K-biinvariant functions used here.
 
@@ -28,7 +28,7 @@ The quadratic character is η=η_E/F (trivial for split E). The cyclic determina
 
 **Checks.**
 
-- With standard rank-one forms and X=1, δ²=−I and r_i(1)=−1. A unit c with N(c)=−1 gives r₋(c)=1=r₊(1); in the unramified setting such a unit exists in every residue characteristic, including two.
+- With standard rank-one forms and X=1, δ²=−I and r_i(1)=−1. In the unramified setting a unit c with N(c)=−1 gives r₁(c)=−N(c)=1, the value at 1 of the unsigned Gram map z↦N(z) (the map r₊ of §4.1); such a unit exists in every residue characteristic, including two.
 - For a=b=1 and λ_a−λ_b=π, the unramified nice-match factor is η(π)|π|_F=−q⁻¹. Reversing the order of the cyclic columns instead contributes η(−1), which is −1 for E=ℚ₃(√3).
 - For q=2, q_E=4 and |π|_E=1/4; rescaling the stabilizer measure from 1 to 2 changes a unit orbital value from 1 to 1/2. These distinguish the field and measure normalizations.
 
@@ -36,17 +36,23 @@ The quadratic character is η=η_E/F (trivial for split E). The cyclic determina
 
 ### From Mathlib
 
-At the pinned Mathlib, consume `Matrix.conjTranspose` (`Mathlib/LinearAlgebra/Matrix/ConjTranspose.lean`), `Matrix.IsHermitian`, `Matrix.isHermitian_mul_conjTranspose_self` and `Matrix.isHermitian_conjTranspose_mul_self` (`Mathlib/LinearAlgebra/Matrix/Hermitian.lean`), `Matrix.charpoly` and `Matrix.charpoly_mul_comm` (`Mathlib/LinearAlgebra/Matrix/Charpoly/Basic.lean`), `MvPolynomial.hsymm` (`Mathlib/RingTheory/MvPolynomial/Symmetric/Defs.lean`) and `MvPolynomial.bind₁` (`Mathlib/Algebra/MvPolynomial/Monad.lean`). Conjugate transpose transposes and applies star entrywise; `Matrix.IsHermitian A` means Aᴴ=A and carries no arithmetic or measure structure. `Matrix.charpoly_mul_comm` is the identity charpoly(AB)=charpoly(BA) for square matrices over a commutative ring. `HasStrictFDerivAt.implicitFunction` (`Mathlib/Analysis/Calculus/Implicit.lean`, in its finite-dimensional section) applies over a complete nontrivially normed field to a map from a complete space to a finite-dimensional space whose strict derivative is surjective; the complement of the kernel is then supplied automatically. Applying it over F uses a complete absolute value on F extending the normalized one on ℚ_p.
+At the pinned Mathlib, consume `Matrix.conjTranspose` (`Mathlib/LinearAlgebra/Matrix/ConjTranspose.lean`), `Matrix.IsHermitian`, `Matrix.isHermitian_mul_conjTranspose_self` and `Matrix.isHermitian_conjTranspose_mul_self` (`Mathlib/LinearAlgebra/Matrix/Hermitian.lean`), `Matrix.charpoly` and `Matrix.charpoly_mul_comm` (`Mathlib/LinearAlgebra/Matrix/Charpoly/Basic.lean`), `MvPolynomial.hsymm` (`Mathlib/RingTheory/MvPolynomial/Symmetric/Defs.lean`) and `MvPolynomial.bind₁` (`Mathlib/Algebra/MvPolynomial/Monad.lean`). Conjugate transpose transposes and applies star entrywise; `Matrix.IsHermitian A` means Aᴴ=A and carries no arithmetic or measure structure. `Matrix.charpoly_mul_comm` is the identity charpoly(AB)=charpoly(BA) for square matrices over a commutative ring. `HasStrictFDerivAt.implicitFunction` (`Mathlib/Analysis/Calculus/Implicit.lean`, in its finite-dimensional section) applies over a complete nontrivially normed field to a map from a complete space to a finite-dimensional space whose strict derivative is surjective; the complement of the kernel is then supplied automatically. That implicit function is the one of the datum `HasStrictFDerivAt.implicitFunctionDataOfComplemented` (same file), whose left function is the given map and whose right function is the affine continuous projection x↦P(x−a) onto the kernel; the Mathlib statements assert strict differentiability, not analyticity. Applying it over F uses a complete absolute value on F extending the normalized one on ℚ_p.
 
 ### From Tau Ceti
 
 At the pinned Tau Ceti, consume `TauCeti.map_normUnits_unitFiltration` and `TauCeti.mem_normGroup_iff_dvd_normalizedValuation` (`TauCeti/NumberTheory/LocalField/Norm/Unramified/Basic.lean`). For a finite-dimensional unramified extension of nonarchimedean local fields with compatible valuations, the first says that the norm maps the i-th unit filtration subgroup of the top field onto that of the bottom field, for every i; the second says that a nonzero element of the bottom field is a norm exactly when the inertia degree divides its normalized valuation. At i=0 the first gives N(O_E^×)=O_F^×. Neither asserts anything about ramified extensions.
 
+Consume `ImplicitFunctionData.analyticAt_implicitFunction` (`TauCeti/Analysis/Analytic/Inverse.lean`): over any nontrivially normed field, with complete source, target and parameter spaces, the implicit function of an `ImplicitFunctionData` whose left and right functions are analytic at the base point is analytic there. It supplies the analyticity of the local sections of §0.6, which the Mathlib implicit function alone does not.
+
+Consume `TauCeti.ClassFieldTheory.artinMap_norm` (`TauCeti/NumberTheory/ClassFieldTheory/Local/ArtinMap.lean`) and `TauCeti.index_normGroup_of_isCyclic` (`TauCeti/NumberTheory/ClassFieldTheory/Brauer/LocalH2Bound.lean`). For a finite extension L/K of nonarchimedean local fields, the first says that the absolute local Artin symbol of N_(L/K)(x) is the image of the Artin symbol of x under the inclusion of absolute Galois groups; the second says that for a cyclic extension L/K of nonarchimedean local fields the norm group has index [L:K] in K^×. Together they give, for a finite extension F_i/F not containing E, that η_(E/F)∘N_(F_i/F) is the quadratic character of the field E⊗_F F_i over F_i and is nontrivial; §3.2 uses this.
+
 ### From TauCetiRoadmap.EndoscopicTransferAndUnitaryTraceComparison
 
-Consume §1.1 (Galois cohomology with crossed-module coefficients), §1.5 (abelianized cohomology), §1.14 (rational classes inside a stable class), §1.17(a)–(c) (centralizers, the matching relation, the isometry torsor and inv across pure forms, and the endoscopic character, in norm coordinates), §1.4 with §1.17(c) (local unitary elliptic endoscopic data), §3.3 (the characteristic-coefficient quotient for GL_n), §§2.1 and 2.4 (centralizer normalization, convergent normalized orbital integrals, stable and κ sums and their basepoint change), §§2.9 and 2.11 (Lie transfer factors and transfer classes, including vanishing at unmatched orbits), §4.7 (Waldspurger's Lie smooth transfer in characteristic zero, any residue characteristic) and §4.9(b) (unramified spherical base change for GL_n). For split E the GL_n specializations are used, not a two-form unitary classification. The unitary factor formula of §2.12 is stated there for unramified E and odd p; its larger scope is the gap below, not an import.
+Consume §1.1 (Galois cohomology with crossed-module coefficients), §1.5 (abelianized cohomology), §1.14 (rational classes inside a stable class), §1.17(a)–(c) (centralizers, the matching relation, the isometry torsor and inv across pure forms, and the endoscopic character, in norm coordinates), §1.4 with §1.17(c) (local unitary elliptic endoscopic data), §3.3 (the characteristic-coefficient quotient for GL_n), §§2.1 and 2.4 (centralizer normalization, convergent normalized orbital integrals, stable and κ sums and their basepoint change), §§2.9 and 2.11 (Lie transfer factors and transfer classes, including vanishing at unmatched strongly G-regular orbits) and §4.7 (Waldspurger's Lie smooth transfer in characteristic zero, any residue characteristic). The spherical base-change homomorphism BC_n is defined in §2.2 here by its Satake substitution; the orbital association of §4.9(b) is not an input of any target here. For split E the GL_n specializations are used, not a two-form unitary classification. The unitary factor formula of §2.12 is stated there for unramified E and odd p; its larger scope is the gap below, not an import.
 
-What EndoscopicTransferAndUnitaryTraceComparison must provide (gap:jr-local-comparison): Supply the augmented and block/group Jacquet–Rallis invariant quotients, regular matching across all pure forms, η(det)-twisted orbital distributions, the cyclic factors (4.1) and (4.6), local smooth transfer with partial Fourier compatibility, and the product-to-conjugation identities (7.5)–(7.7), with the measures and unmatched-zero clauses of Leslie25 §§4.1 and 7.1–7.2.
+What EndoscopicTransferAndUnitaryTraceComparison must provide (gap:jr-local-comparison): Supply the augmented and block/group Jacquet–Rallis invariant quotients, regular matching across all pure forms, η(det)-twisted orbital distributions, the cyclic factors (4.1) and (4.6), the transfer relations (4.3) and (4.7) as relations between test functions, and the product-to-conjugation identities (7.5)–(7.7) with Definition 7.4, with the measures and unmatched-zero clauses of Leslie25 §§4.1 and 7.1–7.2.
+
+Its parts have the following consumers here: the augmented and block invariant quotients with regular matching across both forms (Leslie25 §4.1.3, (4.2), p. 33) in §§3.1, 3.7, 3.8, 4.4 and 4.5; the η(det)-twisted orbital distributions with the factor (4.1) and the relation (4.3) in §§3.2, 3.3, 3.5, 3.6, 3.7, 3.8 and 4.5; the block relation (4.7) with the factor (4.6) in §§3.8 and 4.4; and the identities (7.5)–(7.7) with Definition 7.4 in §4.3. Every consumer takes the transfer relation as a hypothesis on named test functions or proves it; the existence of Jacquet–Rallis smooth transfer (Leslie25 Theorem 4.2, p. 34) and its compatibility with partial Fourier transforms are not inputs of any target here.
 
 What EndoscopicTransferAndUnitaryTraceComparison must provide (gap:jr-weil-descent): Descend the Weil operators supplied by MetaplecticAutomorphicForms §§2.1 and 2.5 to the linear and unitary orbital-image spaces and prove agreement on their intersection, with self-dual trace-pairing measures as in BP21 Proposition 1, p. 7.
 
@@ -56,7 +62,7 @@ What EndoscopicTransferAndUnitaryTraceComparison must provide (gap:unitary-facto
 
 ### From TauCetiRoadmap.GeometryOfNumbersAndQuadraticArithmetic
 
-Consume §2.7 `IntegralHermitianLattice.ofCarrier` (integral Hermitian lattices in a finite space over a field with involution) and `IntegralHermitianLattice.dual` (the dual lattice over a Dedekind domain, integrality being L⊆L∨), §2.9 `SignedHermitianSpace` with `signedHermitianAdjoint` (the carrier and its adjoint over any commutative field with involution and finite-dimensional space), and §3.2 (local Hermitian representation densities over an unramified quadratic extension, dyadic residue fields allowed). The classification theorems of §2.9 are stated for odd residue characteristic. Generic densities do not by themselves supply the congruence-orbit or unit-vector transitivity contracts below.
+Consume §2.7 `IntegralHermitianLattice.ofCarrier` (integral Hermitian lattices in a finite space over a field with involution) and `IntegralHermitianLattice.dual` (the dual lattice over a Dedekind domain, integrality being L⊆L∨), §2.9 `SignedHermitianSpace` with `signedHermitianAdjoint`, `signedHermitianAdjoint_comp` and `signedHermitianAdjoint_involutive` (the carrier and the adjoint of an endomorphism of one space, with composition reversal and involutivity, over any commutative field with involution and finite-dimensional space; the adjoint between two different spaces is constructed from it in §0.1), and §3.2 (local Hermitian representation densities over an unramified quadratic extension, dyadic residue fields allowed). The classification theorems of §2.9 are stated for odd residue characteristic. Generic densities do not by themselves supply the congruence-orbit or unit-vector transitivity contracts below.
 
 What GeometryOfNumbersAndQuadraticArithmetic must provide (gap:hermitian-field-classification): Classify nondegenerate Hermitian spaces over every quadratic extension of characteristic-zero local fields by dimension and discriminant, including dyadic and ramified extensions, as used in Xiao18 §2.2, p. 5, and Leslie19 Lemma 4.6, p. 16.
 
@@ -86,6 +92,10 @@ What GeometryOfNumbersAndQuadraticArithmetic must provide (gap:unramified-unit-v
 
 Consume §2.2 (parabolic modulus and homogeneous integration): its invariant measure on a coset space (*quotient-measure*), its Weil formula for integrable functions, and its quotient measures in stages. The groups there are second countable, locally compact and Hausdorff, the subgroups closed, and the restricted modular characters agree. Local reductive groups and their regular centralizer tori are unimodular, so these hypotheses hold for every quotient used here. Local sections and surjectivity on compact test functions are proved in §0.6.
 
+### From TauCetiRoadmap.AutomorphicLFunctionsAndLocalFactors
+
+Consume AL.1.1.2 (the local Tate zeta integral z(s,ω;f) of a unitary character ω of K^× and a Schwartz–Bruhat function f on a local field K, absolutely convergent and holomorphic on Re(s)>0, with the multiplicative measure giving O_K^× volume one), AL.1.2.1 (for unramified ω, z(s,ω;f)=L(s,ω)z₀(s,ω;f) with z₀ entire and L(s,ω)=(1−ω(ϖ)q_K^(−s))⁻¹, which continues z meromorphically to all s) and AL.1.2.3 (for ramified ω, z(s,ω;f) is entire). These are applied over each finite extension F_i/F, a nonarchimedean local field, to the nontrivial quadratic character η∘N_(F_i/F) of §3.2. For it, ω(ϖ)=−1 in the unramified case, so L(s,ω)=(1+q_i^(−s))⁻¹, with q_i the residue cardinality of F_i, is holomorphic and nonzero at s=0, and in the ramified case z is entire; either way the continued integral has a value at s=0. For the trivial character the factor (1−q_i^(−s))⁻¹ has a pole at s=0, so the nontriviality is load-bearing.
+
 ### From TauCetiRoadmap.SmoothRepresentationsOfLocalGroups
 
 Consume §SR.4.1 (*satake-isomorphism*) and §SR.4.3 (*parabolic-descent*). For E/F unramified quadratic, the latter supplies normalized spherical descent on GL_n(E) to GL_a(E)×GL_b(E) and Leslie's twisted Levi map ξ_E, which twists the two determinants by |det m₁|_E^(b/2) and |det m₂|_E^(a/2) and acts on normalized Satake variables by Z_i↦q⁻ᵇX_i, Z_j↦q⁻ᵃY_j. Its statement is for GL_n(E) only; the analogous map ξ_F on GL_n(F), with |·|_F twists and substitution T_i↦q^(−b/2)X_i, T_j↦q^(−a/2)Y_j, is defined in §2.2 here by the same construction. Layer 3 constructs additive Lie descent and compares it with these group maps.
@@ -106,7 +116,7 @@ Consume §3.2a `splitHermitianOscillator` with sign ε=+1, for the carrier only:
 
 ## How to read the build
 
-Layer 0 constructs the off-diagonal representation, the two contractions, the invariant quotients and the contraction torsor, establishes local sections and fibre integration, and proves that contraction preserves orbital integrals. Layer 1 pulls the supplied ordinary endoscopic data back through contraction, defines the relative transfer relation and proves transfer for tests supported away from singular Hom maps. Layer 2 builds the full spherical module on invertible Hermitian matrices, compares the base-change and Levi Satake substitutions and fixes Hironaka's normalized Fourier isomorphism. Layer 3 proves the germ inversion, Lie descent and Weil reductions that turn an augmented Jacquet–Rallis comparison into cyclic endoscopic transfer. Layer 4 takes the independent product-group comparison through its supplier contract, derives the adjacent-rank and augmented comparisons and cyclic endoscopy, and recovers the full relative lattice-unit theorem from compact determinant grades. Layer 5 transports the Levi map to the whole spherical module through Hironaka's transform. The supplier gaps are prerequisites of their individual consumers only, and the product-group comparison never consumes the relative lattice-unit theorem.
+Layer 0 constructs the off-diagonal representation, the two contractions, the invariant quotients and the contraction torsor, establishes local sections and fibre integration, and proves that contraction preserves orbital integrals. Layer 1 pulls the supplied ordinary endoscopic data back through contraction, defines the relative transfer relation and proves transfer for tests supported away from singular Hom maps. Layer 2 builds the full spherical module on invertible Hermitian matrices, defines spherical base change by its Satake substitution, compares it with the Levi maps and fixes Hironaka's normalized Fourier isomorphism. Layer 3 proves the germ inversion, Lie descent and Weil reductions that turn an augmented Jacquet–Rallis comparison into cyclic endoscopic transfer. Layer 4 takes the independent product-group comparison through its supplier contract, derives the adjacent-rank and augmented comparisons and cyclic endoscopy, and recovers the full relative lattice-unit theorem from compact determinant grades. Layer 5 transports the Levi map to the whole spherical module through Hironaka's transform. The supplier gaps are prerequisites of their individual consumers only, and the product-group comparison never consumes the relative lattice-unit theorem.
 
 ## Layer 0: the symmetric representation and contraction
 
@@ -114,21 +124,23 @@ Construct the off-diagonal representation, its invariant quotients and stabilize
 
 ### 0.1 The off-diagonal unitary representation
 
-Work in the étale setting. For nondegenerate Hermitian E-modules W₁,W₂ of the same rank n, put W=W₁⊕W₂ and θ=Ad(1,−1). Identify the (−1)-eigenspace of θ in Lie U(W) with Hom_E(W₂,W₁) by sending X to the block matrix δ(X)=[[0,X],[−X^τ,0]], where h₁(Xv,w)=h₂(v,X^τw); the fixed group U(W₁)×U(W₂) acts by (g₁,g₂)·X=g₁Xg₂⁻¹ (Leslie25, §2.1, pp. 13–14; §1.2, pp. 3–4). For split E=F×F, take each Hermitian module to be the split carrier M_i⊕M_i∨ of MetaplecticAutomorphicForms §3.2a with sign +1, pairing h((v,ℓ),(w,m))=(ℓ(w),m(v)) and unitary group GL(M_i), with g acting on M_i∨ by the transpose of g⁻¹. On these carriers an E-linear Hom map is a pair of maps A:M₂→M₁ and B:M₁→M₂ (B the transpose of the M₂∨→M₁∨ component), and the adjoint exchanges them: (A,B)^τ=(B,A). For nonsplit E the carrier is `SignedHermitianSpace` of GeometryOfNumbersAndQuadraticArithmetic §2.9 with its adjoint.
+Work in the étale setting. For nondegenerate Hermitian E-modules W₁,W₂ of the same rank n, put W=W₁⊕W₂ and θ=Ad(1,−1). Identify the (−1)-eigenspace of θ in Lie U(W) with Hom_E(W₂,W₁) by sending X to the block matrix δ(X)=[[0,X],[−X^τ,0]], where h₁(Xv,w)=h₂(v,X^τw); the fixed group U(W₁)×U(W₂) acts by (g₁,g₂)·X=g₁Xg₂⁻¹ (Leslie25, §2.1, pp. 13–14; §1.2, pp. 3–4). For split E=F×F, take each Hermitian module to be the split carrier M_i⊕M_i∨ of MetaplecticAutomorphicForms §3.2a with sign +1, pairing h((v,ℓ),(w,m))=(ℓ(w),m(v)) and unitary group GL(M_i), with g acting on M_i∨ by the transpose of g⁻¹. On these carriers an E-linear Hom map is a pair of maps A:M₂→M₁ and B:M₁→M₂ (B the transpose of the M₂∨→M₁∨ component), and the adjoint exchanges them: (A,B)^τ=(B,A). For nonsplit E each W_i is a `SignedHermitianSpace` of GeometryOfNumbersAndQuadraticArithmetic §2.9 with sign +1. Its `signedHermitianAdjoint` is the adjoint of an endomorphism of one space, so the adjoint between the two spaces is constructed here: on W=W₁⊕W₂ with the orthogonal sum form h₁⊕h₂, which is nondegenerate, X^τ is the W₁→W₂ block of `signedHermitianAdjoint` applied to the endomorphism (v₁,v₂)↦(Xv₂,0), whose adjoint is (w₁,w₂)↦(0,X^τw₁).
 
-*Needs:* GeometryOfNumbersAndQuadraticArithmetic §2.9 (`SignedHermitianSpace`, `signedHermitianAdjoint`); MetaplecticAutomorphicForms §3.2a (`splitHermitianOscillator`); Mathlib `Matrix.conjTranspose`.
+*Needs:* GeometryOfNumbersAndQuadraticArithmetic §2.9 (`SignedHermitianSpace`, `signedHermitianAdjoint`, `signedHermitianAdjoint_comp`, `signedHermitianAdjoint_involutive`); MetaplecticAutomorphicForms §3.2a (`splitHermitianOscillator`); Mathlib `Matrix.conjTranspose`.
 
-A proof route solves the skew-adjoint block equations with the field adjoint for nonsplit E and, for split E, on the imported split carrier, where the adjoint of (A,B) is (B,A); the fixed-group action is transported through the block identification.
+A proof route reads off X^τ from the endomorphism adjoint on W₁⊕W₂, obtains (X^τ)^τ=X from involutivity and the transformation law from composition reversal and g*=g⁻¹ for unitary g, and solves the skew-adjoint block equations with this adjoint for nonsplit E and, for split E, on the imported split carrier, where the adjoint of (A,B) is (B,A); the fixed-group action is transported through the block identification.
 
 API:
 
+- For X∈Hom_E(W₂,W₁), X^τ is the unique E-linear map W₁→W₂ with h₁(Xv,w)=h₂(v,X^τw) for all v∈W₂ and w∈W₁, and (X^τ)^τ=X.
 - The block embedding X↦[[0,X],[−X^τ,0]] lands in the (−1)-eigenspace of θ in Lie U(W).
 - The top-right projection and the block embedding are mutually inverse F-linear isomorphisms between that eigenspace and Hom_E(W₂,W₁).
 - The formula (g₁,g₂)·X=g₁Xg₂⁻¹ is an F-linear algebraic representation of U(W₁)×U(W₂), and the block embedding intertwines it with conjugation by diag(g₁,g₂).
-- The adjoint of g₁Xg₂⁻¹ is g₂X^τg₁⁻¹.
+- For g₁∈U(W₁) and g₂∈U(W₂), the adjoint of g₁Xg₂⁻¹ is g₂X^τg₁⁻¹.
 
 **Checks.**
 
+- For W₁=⟨1⟩, W₂=⟨π⟩ and X=z, the block of the adjoint of (v₁,v₂)↦(zv₂,0) on ⟨1⟩⊕⟨π⟩ is π⁻¹z̄, since conj(zv)w=conj(v)·π·(π⁻¹z̄w); at z=1 this is π⁻¹, whereas the conjugate z̄ alone, the adjoint for equal forms, gives 1 and violates h₁(Xv,w)=h₂(v,X^τw).
 - For standard rank one, X=1 gives δ=[[0,1],[−1,0]] with δ*=−δ; a positive lower-left entry would give δ*=δ, a self-adjoint rather than skew-adjoint matrix.
 - In the split model the two GL_n actions become (A,B)↦(gAh⁻¹,hBg⁻¹); for n=1 and (g,h)=(2,1), (A,B)=(1,1) goes to (2,1/2), preserving AB=1. An action g·B·h⁻¹ on the second component would give (2,2) and change AB.
 - For n=2 and standard X=diag(1,π), δ²=diag(−1,−π²,−1,−π²); the unsigned off-diagonal model [[0,X],[X^τ,0]] gives the opposite square.
@@ -206,9 +218,9 @@ A proof route checks that the geometric fibres are free transitive right U(W₂)
 
 Work in the étale setting. For the contraction torsor r:Iso_E(W₂,W₁)(F)→Ω(W₁,W₂), prove that every point of Ω has an open neighbourhood with an analytic section, and that integration over the right U(W₂)(F)-fibres maps compactly supported locally constant functions onto C_c^∞(Ω). Prove that for every closed regular orbit O and every f∈C_c^∞(Hom_E(W₂,W₁)) there is a compactly supported locally constant function supported on invertible maps that agrees with f on an open neighbourhood of O (Leslie25, §2.1, p. 16, before Lemma 2.5; Leslie19, Appendix A, Proposition A.3, pp. 25–26).
 
-*Needs:* §§0.3, 0.4, 0.5; ReductiveGroupsPartII RG2.0 (*smooth-group-analytic-charts*); Mathlib `HasStrictFDerivAt.implicitFunction`; AdelicAlgebraicGroups §2.2 (*quotient-measure*).
+*Needs:* §§0.3, 0.4, 0.5; ReductiveGroupsPartII RG2.0 (*smooth-group-analytic-charts*); Mathlib `HasStrictFDerivAt.implicitFunction`, `HasStrictFDerivAt.implicitFunctionDataOfComplemented`; Tau Ceti `ImplicitFunctionData.analyticAt_implicitFunction`; AdelicAlgebraicGroups §2.2 (*quotient-measure*).
 
-A proof route: in local analytic coordinates the torsor projection has surjective differential, so the implicit function theorem gives local analytic sections on the F-point image, the split algebra included. Cover the compact support of a target function by finitely many compact open trivializing sets and refine to disjoint compact open pieces; on each product chart B×J, with J a compact open subgroup of the fibre group, lift h to h(b)1_J(u)/vol(J). Since 0<vol(J)<∞, the fibre integral is exactly h. For the cutoff, let χ be the invariant quotient map of §0.3 and choose a compact open B containing χ(O) inside the locus where the contracted characteristic polynomial is separable with nonzero constant term; U=χ⁻¹(B) is open and closed and lies in the regular invertible locus by §0.4, and f·1_U is the required function. U itself need not be compact.
+A proof route: in local analytic coordinates the torsor projection has surjective differential, so the implicit function theorem gives local sections on the F-point image, the split algebra included. They are analytic: the implicit function is that of the datum `HasStrictFDerivAt.implicitFunctionDataOfComplemented`, whose left function is the polynomial contraction and whose right function is an affine continuous projection onto the kernel of the differential, both analytic, so `ImplicitFunctionData.analyticAt_implicitFunction` applies; the spaces are finite-dimensional over the complete field F, hence complete. Cover the compact support of a target function by finitely many compact open trivializing sets and refine to disjoint compact open pieces; on each product chart B×J, with J a compact open subgroup of the fibre group, lift h to h(b)1_J(u)/vol(J). Since 0<vol(J)<∞, the fibre integral is exactly h. For the cutoff, let χ be the invariant quotient map of §0.3 and choose a compact open B containing χ(O) inside the locus where the contracted characteristic polynomial is separable with nonzero constant term; U=χ⁻¹(B) is open and closed and lies in the regular invertible locus by §0.4, and f·1_U is the required function. U itself need not be compact.
 
 **Checks.**
 
@@ -245,7 +257,7 @@ Work in the étale setting. For T=r₁(X)∈Ω(W₁,W₂) set r_!f(T)=∫_U(W₂
 
 *Needs:* §§0.5, 0.6; AdelicAlgebraicGroups §2.2 (*quotient-measure*; Weil's formula for integrable functions).
 
-A proof route compares two lifts by right multiplication and Haar invariance, proves local constancy and surjectivity with the local sections and compact partitions of §0.6, and treats arbitrary f by the orbitwise cutoff of §0.6.
+A proof route compares two lifts by right multiplication and Haar invariance, and proves local constancy and surjectivity for compactly supported f on invertible maps with the local sections and compact partitions of §0.6. For arbitrary f and an invertible T, regular or not, it chooses a compact open neighbourhood B of T inside the invertible locus of Herm(W₁) and replaces f by f·1_(r₁⁻¹(B)): the set r₁⁻¹(B) is open and closed, the support of the product is a closed subset of supp f on which det r₁ lies in the compact set det(B)⊂F^×, so the product is compactly supported in the invertible Hom locus, and it has the same fibre integrals as f at every point of B, because the right U(W₂)-action preserves r₁. The regular-orbit cutoff of §0.6 is needed only in §0.9.
 
 API:
 
@@ -260,6 +272,7 @@ API:
 - For unramified rank one and f=1_O_E, r_!f(t)=1 if v_F(−t) is even and nonnegative and 0 otherwise, with vol U(1)=1.
 - That pushforward is not compactly supported in F^×: its support accumulates at 0 in F.
 - For f=1_O_E^× it is the indicator of O_F^×, since −1 is the norm of a unit in the unramified case.
+- For unramified standard rank two, f=1_(M₂(O_E)) and the invertible but not regular point T=−I₂, the cutoff by B=−I₂+πHerm₂(O_E) keeps exactly the integral X with XX* in I₂−πHerm₂(O_E), all of which lie in GL₂(O_E). Every T′∈B is −XX* for some X∈GL₂(O_E), and its fibre integral is vol U(Λ₂)=1, so r_!f is constant equal to 1 near −I₂; a cutoff built only around regular orbits gives no statement at −I₂.
 
 Used by §§0.9, 1.5, 4.1, 4.2 and 4.7.
 
@@ -283,7 +296,7 @@ In unramified standard rank one the whole layer is explicit. The representation 
 
 ### Dependencies
 
-Mathlib `Matrix.conjTranspose`, `Matrix.IsHermitian`, `Matrix.isHermitian_mul_conjTranspose_self`, `Matrix.isHermitian_conjTranspose_mul_self`, `Matrix.charpoly`, `Matrix.charpoly_mul_comm`, `HasStrictFDerivAt.implicitFunction`; GeometryOfNumbersAndQuadraticArithmetic §2.9; MetaplecticAutomorphicForms §3.2a; SchemeAndStackFoundations §1.24; ReductiveGroupsPartII RG2.0; AdelicAlgebraicGroups §2.2; EndoscopicTransferAndUnitaryTraceComparison §§1.1, 1.5, 1.14, 1.17, 2.1, 2.4, 3.3; gap:hermitian-field-classification.
+Mathlib `Matrix.conjTranspose`, `Matrix.IsHermitian`, `Matrix.isHermitian_mul_conjTranspose_self`, `Matrix.isHermitian_conjTranspose_mul_self`, `Matrix.charpoly`, `Matrix.charpoly_mul_comm`, `HasStrictFDerivAt.implicitFunction`, `HasStrictFDerivAt.implicitFunctionDataOfComplemented`; Tau Ceti `ImplicitFunctionData.analyticAt_implicitFunction`; GeometryOfNumbersAndQuadraticArithmetic §2.9; MetaplecticAutomorphicForms §3.2a; SchemeAndStackFoundations §1.24; ReductiveGroupsPartII RG2.0; AdelicAlgebraicGroups §2.2; EndoscopicTransferAndUnitaryTraceComparison §§1.1, 1.5, 1.14, 1.17, 2.1, 2.4, 3.3; gap:hermitian-field-classification.
 
 ## Layer 1: relative endoscopic data and transfer
 
@@ -313,7 +326,7 @@ Used by §1.2.
 
 ### 1.2 Relative matching and the pullback factor
 
-Work in the étale setting. Regular semisimple δ and (δ_a,δ_b) match for Ξ exactly when r₁(δ) and r_α,β(δ_a,δ_b) match in the sense of EndoscopicTransferAndUnitaryTraceComparison §1.17(b). Define Δ_rel(δ_H,δ)=Δ(r_α,β(δ_H),r₁(δ)), with Δ the normalized factor of EndoscopicTransferAndUnitaryTraceComparison §§2.9, 2.11, and Δ_rel=0 on nonmatching pairs. The character κ on D(H_δ,U(W₁)×U(W₂);F) is the pullback through the kernel isomorphism of §0.5 of the ordinary character of §1.17(c), trivial on the a-components and nontrivial on the b-components (Leslie25, §2.3, p. 20; §§2.2.2–2.2.3, pp. 18–19).
+Work in the étale setting. A regular semisimple element δ_H=(δ_a,δ_b) of the representation of Ξ is source-regular when r₁(δ_a) and r₁(δ_b) have coprime characteristic polynomials, equivalently when the cross-resultant D_ab=∏(λ_a−λ_b) over their eigenvalues is nonzero. Each contracted block is already invertible with separable characteristic polynomial by §0.4, so source-regularity says exactly that the product polynomial is separable; it is the strong G-regularity of EndoscopicTransferAndUnitaryTraceComparison §2.11 read through contraction, and for these unitary Lie algebras, whose regular centralizers are tori, strong and ordinary G-regularity agree. Regular semisimple δ and (δ_a,δ_b) match for Ξ exactly when r₁(δ) and r_α,β(δ_a,δ_b) match in the sense of EndoscopicTransferAndUnitaryTraceComparison §1.17(b); the target of a matching pair is then source-regular, since matching preserves the characteristic polynomial and that of r₁(δ) is separable. Define Δ_rel(δ_H,δ)=Δ(r_α,β(δ_H),r₁(δ)), with Δ the normalized factor of EndoscopicTransferAndUnitaryTraceComparison §§2.9, 2.11, and Δ_rel=0 on nonmatching pairs. The character κ on D(H_δ,U(W₁)×U(W₂);F) is the pullback through the kernel isomorphism of §0.5 of the ordinary character of §1.17(c), trivial on the a-components and nontrivial on the b-components (Leslie25, §2.3, p. 20; §§2.2.2–2.2.3, pp. 18–19).
 
 *Needs:* §§0.5, 1.1; EndoscopicTransferAndUnitaryTraceComparison §§1.17, 2.1, 2.4, 2.9, 2.11; gap:unitary-factor-all-quadratic.
 
@@ -321,7 +334,8 @@ A proof route pulls the ordinary factor back along the pair of contractions and 
 
 API:
 
-- Relative matching is ordinary matching of the contractions, with source regularity and disjoint cross-block spectra.
+- A regular target element is source-regular exactly when its two contracted blocks have no common eigenvalue.
+- Relative matching is ordinary matching of the contractions; both members of a matching pair are regular, and the target is source-regular.
 - Δ_rel(δ_H,δ)=Δ(r_α,β(δ_H),r₁(δ)).
 - κ is the pullback of the ordinary endoscopic character to D(H_δ,U(W₁)×U(W₂);F).
 - Changing the source rational orbit multiplies the factor by the ordinary κ(inv) correction, in the orientation fixed by the base roadmap.
@@ -330,7 +344,7 @@ API:
 
 - For a=b=1 with distinct nonzero contracted scalars x,y and a nice match, Δ=η(x−y)|x−y|_F; for unramified E and x−y=π this is −q⁻¹, also at q=2.
 - For two blocks whose characteristic polynomials do not multiply to the source polynomial, matching fails and Δ=0 even if each block is separately regular.
-- For x−y a unit in the unramified case, Δ=1; for x=y the cross-resultant vanishes, the pair is not regular in the ambient group, and the nonzero formula is not invoked.
+- For x−y a unit in the unramified case, Δ=1; for x=y the cross-resultant vanishes, the pair is not source-regular, and the nonzero formula is not invoked.
 
 Used by §§1.3 and 1.4.
 
@@ -359,7 +373,7 @@ Used by §1.4.
 
 ### 1.4 The relative smooth-transfer relation
 
-Work in the étale setting. Compactly supported locally constant functions f on the source representation and f_Ξ on the representation of Ξ are transfers if SRO(f_Ξ,δ_H)=Δ_rel(δ_H,δ)RO^κ(f,δ) for every matching regular pair, and SRO(f_Ξ,δ_H)=0 for every regular δ_H with no source match (Leslie25, Definition 2.10, p. 21). This is a relation between functions, well defined on orbital-integral classes; no preferred representative is selected.
+Work in the étale setting. Compactly supported locally constant functions f on the source representation and f_Ξ on the representation of Ξ are transfers if SRO(f_Ξ,δ_H)=Δ_rel(δ_H,δ)RO^κ(f,δ) for every matching regular pair, and SRO(f_Ξ,δ_H)=0 for every source-regular δ_H (§1.2) with no regular source match (Leslie25, Definition 2.10, p. 21; Source corrections, E17). Target orbits that are regular but not source-regular are not tested, as in the ordinary relation of EndoscopicTransferAndUnitaryTraceComparison §2.11. This is a relation between functions, well defined on orbital-integral classes; no preferred representative is selected.
 
 *Needs:* §§0.9, 1.2, 1.3.
 
@@ -367,16 +381,17 @@ A proof route shows that the identity is independent of the source rational repr
 
 API:
 
-- The relation is the conjunction of the matching identity and the unmatched-vanishing condition.
+- The relation is the conjunction of the matching identity and the unmatched-vanishing condition at source-regular targets.
 - The sum of two transfer pairs is a transfer pair.
 - Multiplying both members by one complex scalar preserves the relation.
-- Changing the target by a function all of whose stable relative orbital integrals vanish preserves the relation.
+- Changing the target by a function whose stable relative orbital integrals vanish at every source-regular target orbit preserves the relation.
 
 **Checks.**
 
 - At one matching orbit with Δ=−q⁻¹ and source κ-integral A, the target stable integral must be −A/q; the value A is a different relation whenever A≠0.
-- At an unmatched target orbit, target stable integral 1 violates transfer of the zero source, which requires 0.
-- For the same source, targets with orbital values B and B+C, where C=0 at every regular target orbit, define the same transfer class; C≠0 at one orbit changes it.
+- At an unmatched source-regular target orbit, target stable integral 1 violates transfer of the zero source, which requires 0.
+- For the same source, targets with orbital values B and B+C, where C=0 at every source-regular target orbit, define the same transfer class; C≠0 at one source-regular orbit changes it.
+- Unramified, a=b=1, reference labels, c∈O_E^× with N(c)=−1: the target (c,c) has contracted blocks (1,1), each regular, with cross-resultant 0, so it is not source-regular and no regular source element matches it; the tensor lattice unit 1_(End(Λ₁))⊗1_(End(Λ₁)) has stable value 1·1=1 there. Imposing the zero clause at every regular unmatched target would contradict §4.10 by 1≠0. Replacing the second block by c′ with −N(c′)=1+π gives resultant −π: that target is source-regular, matched, with factor η(−π)|π|_F=−q⁻¹.
 
 Used by §§1.5, 3.6, 4.9 and 4.10.
 
@@ -386,7 +401,7 @@ Work in the étale setting. Prove that if f has compact support inside the inver
 
 *Needs:* §§0.6, 0.8, 0.9, 1.4; EndoscopicTransferAndUnitaryTraceComparison §4.7.
 
-A proof route pushes f to the ordinary Hermitian space and extends by zero from the invertible locus; applies EndoscopicTransferAndUnitaryTraceComparison §4.7; multiplies the ordinary transfer by a compact open cutoff on the characteristic-coefficient base equal to one on the invariant support of the source and zero near determinant zero, which preserves every transfer identity; restricts to the stable component Ω(V_a,V_α)×Ω(V_b,V_β) of the target contraction; and lifts by fibre integration (§0.6). Matching and unmatched vanishing follow from §0.9.
+A proof route pushes f to the ordinary Hermitian space and extends by zero from the invertible locus; applies EndoscopicTransferAndUnitaryTraceComparison §4.7; multiplies the ordinary transfer by a compact open cutoff on the characteristic-coefficient base equal to one on the invariant support of the source and zero near determinant zero, which preserves every transfer identity; restricts to the stable component Ω(V_a,V_α)×Ω(V_b,V_β) of the target contraction; and lifts by fibre integration (§0.6). Matching and unmatched vanishing at source-regular targets follow from §0.9 and the ordinary relation at G-regular targets.
 
 **Checks.**
 
@@ -396,7 +411,7 @@ A proof route pushes f to the ordinary Hermitian space and extends by zero from 
 
 ### Examples
 
-For a=b=1 over an unramified quadratic field extension, the four relative data on one ordinary datum have labels (1,1),(1,π),(π,1),(π,π). For the first, a source orbit with contraction diag(x,y), v(x)=2, v(y)=0, matches the target pair (x,y), with Δ_rel=η(x−y)|x−y|_F=1 since x−y is a unit; for the label (π,1) every target contraction (x,y) has v(x) odd and v(y) even, so it lies outside the image of every even-valuation source contraction, and transfer imposes only the unmatched-vanishing clause there.
+For a=b=1 over an unramified quadratic field extension, the four relative data on one ordinary datum have labels (1,1),(1,π),(π,1),(π,π). For the first, a source orbit with contraction diag(x,y), v(x)=2, v(y)=0, matches the target pair (x,y), with Δ_rel=η(x−y)|x−y|_F=1 since x−y is a unit; for the label (π,1) every target contraction (x,y) has v(x) odd and v(y) even, so x≠y, the target is source-regular, and its determinant xy has odd valuation. Every source contraction has determinant of even valuation, although its eigenvalues may each have odd valuation, as for the regular element z=diag(π,πu) with u∈O_F^× different from 1: the form −h₁(·,z⁻¹·) has determinant π⁻²u⁻¹, of even valuation, so it is isometric to the standard rank-two form and z∈Ω(V₂,V₂). Hence no source orbit matches, and transfer imposes only the unmatched-vanishing clause there.
 
 ### Dependencies
 
@@ -434,14 +449,16 @@ Used by §§2.3, 3.7, 3.8, 4.2, 4.3, 4.7 and 4.8.
 
 ### 2.2 Quadratic base change commutes with the twisted Levi maps
 
-Work in the unramified setting, with n=a+b. Define ξ_F on the spherical Hecke algebra of GL_n(F) by the construction of ξ_E in SmoothRepresentationsOfLocalGroups §SR.4.3 with |·|_F in both twists and in normalized descent; on normalized Satake variables it substitutes T_i↦q^(−b/2)X_i for i≤a and T_j↦q^(−a/2)Y_j for j>a. Prove that BC_(a,b)∘ξ_E=ξ_F∘BC_n, where BC_n is unramified base change of EndoscopicTransferAndUnitaryTraceComparison §4.9(b), which on normalized Satake variables sends each Z_i to T_i²; both composites substitute q⁻ᵇX_i² and q⁻ᵃY_j² (Leslie25, proof of Proposition 4.8, p. 39; Lemma 3.2, p. 24). The identity does not imply that base change is supported on coweights with all entries even.
+Work in the unramified setting, with n=a+b. For every m≥0 define BC_m:H_m,E→H_m,F as the unique complex-algebra homomorphism whose composite with the normalized Satake isomorphisms of SmoothRepresentationsOfLocalGroups §SR.4.1, over E and over F, is the substitution Z_i↦T_i² of symmetric Laurent polynomials, Z_i being the normalized E-Satake variables and T_i the normalized F-Satake variables, with the positive square roots of q_E=q² and q. The substitution maps symmetric Laurent polynomials in Z to symmetric Laurent polynomials in T and distinct monomials to distinct monomials, so BC_m exists, is unital and is injective; it is the unramified base-change homomorphism of spherical Hecke algebras, whose orbital association EndoscopicTransferAndUnitaryTraceComparison §4.9(b) states and no target here uses. Define ξ_F on the spherical Hecke algebra of GL_n(F) by the construction of ξ_E in SmoothRepresentationsOfLocalGroups §SR.4.3 with |·|_F in both twists and in normalized descent; on normalized Satake variables it substitutes T_i↦q^(−b/2)X_i for i≤a and T_j↦q^(−a/2)Y_j for j>a. Prove that BC_(a,b)∘ξ_E=ξ_F∘BC_n; both composites substitute q⁻ᵇX_i² and q⁻ᵃY_j² (Leslie25, proof of Proposition 4.8, p. 39; Lemma 3.2, p. 24). The identity does not imply that base change is supported on coweights with all entries even.
 
-*Needs:* SmoothRepresentationsOfLocalGroups §§SR.4.1 (*satake-isomorphism*), SR.4.3 (*parabolic-descent*); EndoscopicTransferAndUnitaryTraceComparison §4.9.
+*Needs:* SmoothRepresentationsOfLocalGroups §§SR.4.1 (*satake-isomorphism*), SR.4.3 (*parabolic-descent*).
 
-A proof route computes both composites on Laurent variables and descends to symmetric Laurent polynomials by injectivity of the Satake transform (Source corrections, E10).
+A proof route defines BC_m by transporting the substitution through the two Satake isomorphisms, computes both composites of the square on Laurent variables and descends to symmetric Laurent polynomials by injectivity of the Satake transform (Source corrections, E10).
 
 API:
 
+- BC_m:H_m,E→H_m,F is a unital injective homomorphism of complex algebras, and the normalized F-Satake transform of BC_m(φ) is that of φ with each Z_i replaced by T_i².
+- For m=1 and d∈ℤ, BC_1 sends 1_(π^dO_E^×) to 1_(π^(2d)O_F^×); BC_0 is the identity of ℂ.
 - ξ_F maps H_n,F=H(GL_n(F),K_n,F) to H_a,F⊗H_b,F, the spherical Hecke algebra of GL_a(F)×GL_b(F) for K_a,F×K_b,F.
 - For f∈H_n,F, ξ_F(f)(m₁,m₂)=|det m₁|_F^(b/2)|det m₂|_F^(a/2)f^P(m₁,m₂), where f^P is the δ_P^(1/2)-normalized descent along the upper parabolic P_(a,b) with vol N_(a,b)(O_F)=1 and δ_P(m₁,m₂)=|det m₁|_F^b|det m₂|_F^(−a); equivalently ξ_F(f)(m)=|det m₁|_F^b∫_N f(mu)du.
 - The normalized Satake transform of ξ_F(f) is that of f with T_i↦q^(−b/2)X_i for i≤a and T_j↦q^(−a/2)Y_j for j>a.
@@ -453,6 +470,7 @@ API:
 - For a=b=1 the first Satake variable goes by either composite to q⁻¹X²: (q^(−1/2)X)²=q⁻¹X².
 - The central monomial Z₁Z₂ goes under ξ_E to q⁻²XY; at q=2 the coefficient 1/4 excludes untwisted Levi restriction.
 - For n=2, BC(T_(1,0),E)=T_(2,0),F−(q−1)T_(1,1),F; at q=2 the coefficient −1 of the odd coweight (1,1) is nonzero, although the Satake substitution squares the variables.
+- For m=1, BC_1(1_(πO_E^×))=1_(π²O_F^×): the E-Satake transform Z goes to T², the transform of 1_(π²O_F^×). The unsquared substitution Z↦T would give 1_(πO_F^×), supported on non-norms, where the base-change image of a GL_1(E) function must vanish.
 
 ### 2.3 Hironaka's normalized spherical Fourier isomorphism
 
@@ -460,7 +478,7 @@ Work in the unramified setting. Fix the invariant measure dμ(y)=C|det y|_F^(−
 
 The dictionary is part of the definition. It sends U_i² to T_i², the base-change substitution; since ê_λ is homogeneous of degree |λ| in U, the opposite dictionary U_i↦T_i has the same unit, module law and cyclic values but changes the sign of H_n(e_λ) for every λ with |λ| odd, which is the whole nonreference orbit.
 
-*Needs:* §§2.1, 2.2; SmoothRepresentationsOfLocalGroups §SR.4.1 (*satake-isomorphism*); EndoscopicTransferAndUnitaryTraceComparison §4.9.
+*Needs:* §§2.1, 2.2; SmoothRepresentationsOfLocalGroups §SR.4.1 (*satake-isomorphism*).
 
 A proof route uses Hironaka's Theorem 2 with q and the reference orbit matched: Hironaka's (2.6) gives ê_λ as a multiple of the Hall–Littlewood polynomial P_λ(U;−q⁻¹), and (2.7) the orbit volumes. The dictionary is an automorphism of the symmetric Laurent algebra sending U_i² to T_i²; composing with the inverse normalized F-Satake transform gives H_n. The symmetric Laurent algebra is free of rank 2^n over its squared-variable subalgebra, which gives freeness and cyclic injectivity.
 
@@ -491,7 +509,7 @@ In rank one everything is explicit: X_1=F^×, the orbits are π^jO_F^× (j even 
 
 ### Dependencies
 
-§2.1 for §§2.2–2.3; GeometryOfNumbersAndQuadraticArithmetic §2.9; SmoothRepresentationsOfLocalGroups §§SR.4.1, SR.4.3; AdelicAlgebraicGroups §2.2; EndoscopicTransferAndUnitaryTraceComparison §4.9; gap:hermitian-field-classification; gap:unramified-hermitian-lattice-orbits.
+§2.1 for §§2.2–2.3; GeometryOfNumbersAndQuadraticArithmetic §2.9; SmoothRepresentationsOfLocalGroups §§SR.4.1, SR.4.3; AdelicAlgebraicGroups §2.2; gap:hermitian-field-classification; gap:unramified-hermitian-lattice-orbits.
 
 ## Layer 3: local comparison reductions
 
@@ -515,9 +533,9 @@ A proof route imports the torsor from EndoscopicTransferAndUnitaryTraceCompariso
 
 Work in the field setting; all torus maximal compact subgroups have volume one, and quotient measures are transported through the fixed stabilizer identifications. Fix regular semisimple x∈gl_n(F), cyclic v and v*, and F[x]=∏F_i and S₁ as in §3.1. Let T=F[x]^× and T₁=∏_(i∈S₁)F_i^×. For Σ⊆S₁ let v_Σ have components v_i for i∈Σ and 0 otherwise, and v*_(S₁∖Σ) analogously, with every component outside S₁ zero. Define G_Σ(f) as the integral over GL_n(F)/T of the value at s=0 of the meromorphic continuation of the T₁-integral of f(gxg⁻¹, gtv_Σ, v*_(S₁∖Σ)t⁻¹g⁻¹)η(det t)η(det g)∏_(i∈Σ)|t_i|^s∏_(i∈S₁∖Σ)|t_i|^(−s) (Leslie25, §4.2, p. 36; Xiao18, §2.1, equation (2) and Lemma 2.1, pp. 3–5, and §4.1, p. 15). This is the raw regularized integral; the finite-Fourier averaging enters only in §3.3.
 
-*Needs:* §3.1; AdelicAlgebraicGroups §2.2 (*quotient-measure*; Weil's formula for integrable functions); EndoscopicTransferAndUnitaryTraceComparison §§2.1, 2.4; gap:jr-local-comparison.
+*Needs:* §3.1; AdelicAlgebraicGroups §2.2 (*quotient-measure*; Weil's formula for integrable functions); AutomorphicLFunctionsAndLocalFactors AL.1.1.2, AL.1.2.1, AL.1.2.3; Tau Ceti `TauCeti.ClassFieldTheory.artinMap_norm`, `TauCeti.index_normGroup_of_isCyclic`; EndoscopicTransferAndUnitaryTraceComparison §§2.1, 2.4; gap:jr-local-comparison.
 
-A proof route factors compactly supported functions near the orbit into finite sums of pure tensors, applies Tate's continuation in each nonsplit factor (the nontrivial quadratic character removes the pole at s=0), checks that the value at s=0 is independent of the T-coset representative, and uses compactness on GL_n(F)/T for the outer integral.
+A proof route factors compactly supported functions near the orbit into finite sums of pure tensors in the coordinates t_i∈F_i^×, i∈S₁. For i∈S₁ the character η_i=η∘N_(F_i/F) of F_i^× is the quadratic character of the field E⊗_F F_i over F_i, by norm functoriality of local reciprocity (`TauCeti.ClassFieldTheory.artinMap_norm`), and it is nontrivial because that norm group has index 2 (`TauCeti.index_normGroup_of_isCyclic`). Each factor integral is then a local Tate zeta integral over F_i with the nontrivial character η_i, after t_i↦t_i⁻¹ for the covector factors (AutomorphicLFunctionsAndLocalFactors AL.1.1.2); its continuation is regular at s=0, being L(s,η_i)z₀ with L(s,η_i)=(1+q_i^(−s))⁻¹, q_i the residue cardinality of F_i, when η_i is unramified (AL.1.2.1) and entire when η_i is ramified (AL.1.2.3). The route then checks that the value at s=0 is independent of the T-coset representative, and uses compactness on GL_n(F)/T for the outer integral.
 
 API:
 
@@ -590,7 +608,7 @@ A proof route factors the ordered Vandermonde determinant: the cross factors are
 
 Work in the unramified setting. Assume that for every positive rank m and every φ∈H_m,E, the augmented tests BC_m(φ)⊗1_(L_m) and {(φ∗e_0)⊗1_(Λ_m),0} are Jacquet–Rallis transfers. Prove that then for every n=a+b with a,b>0 and every φ∈H_n,E, the functions φ∗e_0 on Herm(V_n) and ξ_E(φ)∗e_0 on Herm(V_a)⊕Herm(V_b) are ordinary endoscopic transfers in the sense of EndoscopicTransferAndUnitaryTraceComparison §2.11, with the factor of §2.12 and the unmatched-vanishing clause (Leslie25, Proposition 4.8, pp. 37–39). The hypothesis is needed in all ranks used by the two Levi blocks, not only in rank n.
 
-*Needs:* §§1.4, 2.2, 2.3, 3.1, 3.3, 3.4, 3.5; SmoothRepresentationsOfLocalGroups §SR.4.3 (*parabolic-descent*); EndoscopicTransferAndUnitaryTraceComparison §§2.1, 2.4, 2.9, 2.11, 4.9; gap:jr-local-comparison; gap:unitary-factor-all-quadratic.
+*Needs:* §§1.4, 2.2, 2.3, 3.1, 3.3, 3.4, 3.5; SmoothRepresentationsOfLocalGroups §SR.4.3 (*parabolic-descent*); EndoscopicTransferAndUnitaryTraceComparison §§2.1, 2.4, 2.9, 2.11; gap:jr-local-comparison; gap:unitary-factor-all-quadratic.
 
 A proof route takes the upper test (φ∗e_0)⊗1_(Λ_n), whose value at zero vector is φ∗e_0 (Source corrections, E07); applies §3.3 to the source κ-sums and the target stable sums at the arguments of §3.5, that is with Σ=S₁(a) in rank n and with Σ=S₁(a) and Σ=∅ in the a- and b-blocks. Then κ_(S₁(a))=∏_(i∈S₁(b))η_i is the endoscopic character on the source, the a-block character is trivial, and the b-block character ∏_(i∈S₁(b))η_i(ζ_i)=η(N_(F[x_b]/F)(ζ)) is constant on each Hermitian form of rank b, since the discriminant of the form attached to ζ is that of ζ=1 times N_(F[x_b]/F)(ζ). With the nonreference lower-rank tests zero, the a-block sum is a stable sum and the b-block sum is the stable sum on the reference form times the value of that character there, which is κ_(S₁(a)) at the rank-n orbit whose two block components lie on the reference forms; basing the source κ-sum at that orbit cancels it. The counts satisfy r_n=r_a+r_b, so the averaging factors cancel. The route then identifies the descended linear test by §§3.4 and 2.2 and applies §3.5 with the ordinary factor contract. Only the reference/reference lower-rank test is nonzero, so no general signed four-form operator is used (Source corrections, E12).
 
@@ -635,7 +653,7 @@ In unramified rank one with the augmented lattice unit 1_(O_F)⊗1_(L_1) and a u
 
 ### Dependencies
 
-§§1.4, 2.1, 2.2, 2.3; GeometryOfNumbersAndQuadraticArithmetic §2.7; MetaplecticAutomorphicForms §§2.1, 2.5; SmoothRepresentationsOfLocalGroups §§SR.4.1, SR.4.3; AdelicAlgebraicGroups §2.2; EndoscopicTransferAndUnitaryTraceComparison §§1.1, 1.14, 1.17, 2.1, 2.4, 2.9, 2.11, 4.9; Tau Ceti `TauCeti.map_normUnits_unitFiltration`; gap:hermitian-field-classification; gap:jr-local-comparison; gap:jr-weil-descent; gap:unitary-factor-all-quadratic; gap:unramified-hermitian-lattice-orbits; gap:unramified-unit-vector-transitivity.
+§§1.4, 2.1, 2.2, 2.3; GeometryOfNumbersAndQuadraticArithmetic §2.7; MetaplecticAutomorphicForms §§2.1, 2.5; SmoothRepresentationsOfLocalGroups §§SR.4.1, SR.4.3; AdelicAlgebraicGroups §2.2; AutomorphicLFunctionsAndLocalFactors AL.1.1.2, AL.1.2.1, AL.1.2.3; EndoscopicTransferAndUnitaryTraceComparison §§1.1, 1.14, 1.17, 2.1, 2.4, 2.9, 2.11; Tau Ceti `TauCeti.map_normUnits_unitFiltration`, `TauCeti.ClassFieldTheory.artinMap_norm`, `TauCeti.index_normGroup_of_isCyclic`; gap:hermitian-field-classification; gap:jr-local-comparison; gap:jr-weil-descent; gap:unitary-factor-all-quadratic; gap:unramified-hermitian-lattice-orbits; gap:unramified-unit-vector-transitivity.
 
 ## Layer 4: the unit fundamental lemma
 
@@ -675,7 +693,7 @@ Used by §§4.3, 4.8.
 
 Work in the unramified setting. Put m=n−1 and embed GL_m in GL_n by h↦diag(h,1). For φ∈H_n,E take Φ=1_(K_m,E)⊗φ on GL_m(E)×GL_n(E). Prove that its left contraction Φ̃(g)=∫_(GL_m(E))Φ(h⁻¹,diag(h⁻¹,1)g)dh equals φ; that the corresponding Hermitian contraction at the reference pair (I_m,I_n) equals φ∗e_0; that the F-linear contraction of BC_(m,n)(Φ) equals BC_n(φ); that the product transfer factor is Ω(γ)=ω(diag(γ₁⁻¹,1)γ₂); and that, with compatible quotient measures, product relative orbital integrals become the rank-shifted GL_m and U(V_m) orbital integrals (Leslie25, §11.2, p. 86; equations (7.5)–(7.7) and Definition 7.4, pp. 50–51).
 
-*Needs:* §§2.1, 2.3, 4.2; AdelicAlgebraicGroups §2.2 (quotient measures in stages); EndoscopicTransferAndUnitaryTraceComparison §4.9; gap:jr-local-comparison; gap:jr-product-base-change.
+*Needs:* §§2.1, 2.2, 2.3, 4.2; AdelicAlgebraicGroups §2.2 (quotient measures in stages); gap:jr-local-comparison; gap:jr-product-base-change.
 
 A proof route applies the supplied product-group contraction formulas with n there replaced by n−1; K-invariance and vol K_m,E=1 give Φ̃=φ; §4.2 gives the Hermitian contraction; base change preserves the two units, and the factor comparison is the cyclic determinant formula.
 
@@ -703,7 +721,7 @@ A proof route imports the product-group base-change fundamental lemma in ranks (
 
 Work in the unramified setting. Prove that in every positive rank n and for every φ∈H_n,E, the test BC_n(φ)⊗1_(L_n) transfers to the family {(φ∗e_0)⊗1_(Λ_n),0} in the augmented Jacquet–Rallis comparison of gl_n(F)×F^n×(F^n)* with Herm(V)×V, the zero entry being the other Hermitian isometry class (Leslie25, Proposition 5.2 and Theorem 5.3, pp. 42–43).
 
-*Needs:* §§3.8, 4.4.
+*Needs:* §§3.8, 4.4; gap:jr-local-comparison.
 
 A proof route applies §3.8 in each rank, with hypothesis supplied by §4.4, keeping the self-dual vector lattices and the form labels.
 
@@ -779,11 +797,11 @@ API:
 
 ### 4.9 The lattice theorem is equivalent to compact graded transfer
 
-Work in the unramified setting. Fix n=a+b with a,b>0 and an ordinary elliptic datum (U(V_a)×U(V_b),s,ξ). Prove that the relative unit fundamental lemma of §4.10 for all relative data Ξ=(U(V_a)×U(V_b),s,ξ,α,β) on this ordinary datum, that is for every pair (α,β) of Hermitian isometry classes in ranks a and b simultaneously, is equivalent to the following family of ordinary transfer identities: for every d≥0, Φ_n,2d on Herm(V_n) and Σ_(d_a+d_b=d)Φ_a,2d_a⊗Φ_b,2d_b on Herm(V_a)⊕Herm(V_b) are ordinary smooth transfers, with the matching identity and the unmatched-vanishing clause at every regular target orbit (Leslie25, Corollary 3.10, p. 29; Lemma 2.5, p. 16). The invertible locus of Herm(V_a)⊕Herm(V_b) is the disjoint union of the open and closed contraction images Ω(V_a,V_α)×Ω(V_b,V_β) over the four pairs (α,β); the displayed target is supported in the (I_a,I_b) image and vanishes on the other three. For a single Ξ, the relative assertion is equivalent only to these ordinary identities at the target orbits of its own image. Matching preserves the product of characteristic polynomials and hence determinant valuation, so each regular matching pair tests exactly one total grade.
+Work in the unramified setting. Fix n=a+b with a,b>0 and an ordinary elliptic datum (U(V_a)×U(V_b),s,ξ). Prove that the relative unit fundamental lemma of §4.10 for all relative data Ξ=(U(V_a)×U(V_b),s,ξ,α,β) on this ordinary datum, that is for every pair (α,β) of Hermitian isometry classes in ranks a and b simultaneously, is equivalent to the following family of ordinary transfer identities: for every d≥0, Φ_n,2d on Herm(V_n) and Σ_(d_a+d_b=d)Φ_a,2d_a⊗Φ_b,2d_b on Herm(V_a)⊕Herm(V_b) are ordinary smooth transfers, with the matching identity and the unmatched-vanishing clause at every G-regular target orbit, that is every regular target orbit whose two blocks have no common eigenvalue, as in EndoscopicTransferAndUnitaryTraceComparison §2.11 (Leslie25, Corollary 3.10, p. 29; Lemma 2.5, p. 16; Source corrections, E17). Through contraction these are exactly the source-regular relative target orbits of §1.2. The invertible locus of Herm(V_a)⊕Herm(V_b) is the disjoint union of the open and closed contraction images Ω(V_a,V_α)×Ω(V_b,V_β) over the four pairs (α,β); the displayed target is supported in the (I_a,I_b) image and vanishes on the other three. For a single Ξ, the relative assertion is equivalent only to these ordinary identities at the target orbits of its own image. Matching preserves the product of characteristic polynomials and hence determinant valuation, so each regular matching pair tests exactly one total grade.
 
 *Needs:* §§0.9, 1.4, 4.1, 4.7.
 
-A proof route compares, for each pair (α,β), relative and ordinary orbital integrals by §0.9 on both sides, with target lift 1_(End(Λ_a))⊗1_(End(Λ_b)) for (I_a,I_b) and 0 otherwise, which gives the equivalence on that image; every invertible regular target orbit lies in exactly one image. Source orbits outside the norm component and target orbits with a zero eigenvalue give 0=0, all functions being supported in the invertible norm components.
+A proof route compares, for each pair (α,β), relative and ordinary orbital integrals by §0.9 on both sides, with target lift 1_(End(Λ_a))⊗1_(End(Λ_b)) for (I_a,I_b) and 0 otherwise, which gives the equivalence on that image; every invertible regular target orbit lies in exactly one image, and contraction matches source-regular relative targets with G-regular ordinary ones. Source orbits outside the norm component and target orbits with a zero eigenvalue give 0=0, all functions being supported in the invertible norm components.
 
 **Checks.**
 
@@ -805,6 +823,7 @@ A proof route applies §4.6 to each determinant-shell function c_n,d, identifies
 - For a=b=1 the targets are the tensor unit at (I_1,I_1) and 0 at (I_1,π),(π,I_1),(π,π); the last pair has the same total discriminant class as the reference pair but still receives 0.
 - At an unramified dyadic place with x−y=π and a nice regular match, the factor is −q⁻¹; at q=2 it is −1/2, which the positive resultant alone would get wrong.
 - For total grade 2 and a=b=1, contraction gives the two terms e_2⊗e_0 and e_0⊗e_2 with coefficient 1; a single ungraded compact unit on X_1 would omit e_2.
+- For a=b=1 at the reference labels and c∈O_E^× with N(c)=−1, the target (c,c) contracts to (1,1); the tensor unit has stable value 1 there, and the theorem asserts nothing at this orbit because its block spectra collide and it is not source-regular. A target with contracted blocks (1,1+π) is source-regular and nicely matched by a source element δ with r₁(δ)=diag(1,1+π), and the theorem reads 1=−q⁻¹·RO^κ(1_(End(Λ₂)),δ), so that κ-integral is −q, the value the ordinary unit fundamental lemma gives at diag(1,1+π) through §0.9.
 
 ### Examples
 
@@ -812,7 +831,7 @@ For n=2, a=b=1 the chain is explicit. The determinant-degree function c_2,1 has 
 
 ### Dependencies
 
-§§0.2, 0.8, 0.9, 1.4, 2.1, 2.3, 3.6, 3.8; GeometryOfNumbersAndQuadraticArithmetic §§2.7, 3.2; SmoothRepresentationsOfLocalGroups §§SR.4.1, SR.4.3; AdelicAlgebraicGroups §2.2; EndoscopicTransferAndUnitaryTraceComparison §4.9; Mathlib `MvPolynomial.hsymm`; Tau Ceti `TauCeti.map_normUnits_unitFiltration`; gap:jr-local-comparison; gap:jr-product-base-change; gap:unitary-factor-all-quadratic; gap:unramified-hermitian-lattice-orbits.
+§§0.2, 0.8, 0.9, 1.4, 2.1, 2.3, 3.6, 3.8; GeometryOfNumbersAndQuadraticArithmetic §§2.7, 3.2; SmoothRepresentationsOfLocalGroups §§SR.4.1, SR.4.3; AdelicAlgebraicGroups §2.2; EndoscopicTransferAndUnitaryTraceComparison §§1.17, 2.11, 2.12; Mathlib `MvPolynomial.hsymm`; Tau Ceti `TauCeti.map_normUnits_unitFiltration`; gap:jr-local-comparison; gap:jr-product-base-change; gap:unitary-factor-all-quadratic; gap:unramified-hermitian-lattice-orbits.
 
 ## Layer 5: the full spherical operator
 
@@ -889,6 +908,8 @@ The following corrections refer to the versions listed in References.
 **E15 (gap), Leslie25, Proposition 4.8, pp. 37–38.** The hypothesis is stated in rank n only, but the proof invokes it again in the block ranks a and b; §3.6 assumes it in every positive rank.
 
 **E16 (error), Leslie25, §2.3, p. 20.** Two orbit representatives are asserted in every rank; at n=0 there is one (§2.1).
+
+**E17 (gap), Leslie25, §2.2.3, p. 19, and Definition 2.10, p. 21.** The vanishing clauses for unmatched targets are stated for every regular semisimple target element, without requiring the blocks to have disjoint spectra. Read literally they contradict Theorem 2.12: for a=b=1, the reference labels and a unit c with N(c)=−1, the relative target (c,c) contracts to (1,1), has no regular source match, and the tensor lattice unit has stable value 1 there; the ordinary target (1,1) and e_0⊗e_0 behave the same way. Restrict both clauses to G-regular ordinary targets and source-regular relative targets, as in §§1.2, 1.4 and 4.9 and in the strongly regular convention of EndoscopicTransferAndUnitaryTraceComparison §2.11.
 
 ## References
 
