@@ -34,8 +34,8 @@ Not statable at the pins, with the carrier each one lacks:
   microlocalisation of a filtered ring, `Û(g_R)` as a ring, and the locally analytic distribution
   algebra `D(G, K)` with its Banach steps, none of which exists at the pins.
 * The faithfulness of affinoid Verma modules over Iwasawa algebras (Ardakov–Wadsley 2014,
-  Theorem 5.4; README §4.13): it needs `Û(𝔤)_{n,K}`, affinoid Verma modules and the action of
-  `K[[G]]` through the microlocalisation.
+  Theorem 5.4; README §4.13): it needs the affinoid enveloping algebras `Û(p^n 𝔤)_K`, affinoid
+  Verma modules and the action of `K[[G]]` through the microlocalisation.
 * Frommer's theorem and the crossed-product decomposition `D_{r_n} = U_{r_n} ∗ (G/G^{p^n})`
   (README §§2.3–2.4), and the domain and normal-form theorems for central quotients
   (README §§4.7–4.10): they need the Banach steps `D_r(G, K)` of the distribution algebra.
