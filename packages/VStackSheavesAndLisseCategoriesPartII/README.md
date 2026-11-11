@@ -598,7 +598,7 @@ In the sources it enters as follows: Input I of the first iteration of DESCENT (
 - At X = Spa(C, O_C)^♢ the value is the derived ∞-category of Λ-modules.
 - For a map of separated spatial diamonds that is compactifiable of finite dim.trg, the !-functor is Scholze's Rf_!.
 - For the surjective smooth map from the perfectoid unit ball over Spa C to Spa C, !-codescent holds: D_ét(Spa C, Λ) is the limit of the !-pullback diagram on the Čech nerve.
-- For an infinite profinite set T, the surjection T × Spa C → Spa C is weakly compactifiable but not cohomologically smooth (with F_ℓ coefficients its dualizing object is the noninvertible sheaf of distributions), so the codescent statement does not cover it; a version requiring only surjectivity would be wrong.
+- For an infinite profinite set T, the surjection f : T × Spa C → Spa C is weakly compactifiable (proper of dim.trg 0) but not cohomologically smooth, so the smooth-surjection statement above does not apply to it: with Λ = F_ℓ its dualizing object is the sheaf of distributions (VS10.4), whose stalk at a non-isolated point t₀ is not of rank one, since along a clopen neighbourhood basis U_0 ⊋ U_1 ⊋ ⋯ of t₀ with points x_n ≠ y_n in U_n ∖ U_(n+1), the germ of δ_(t₀) and the germ of V ↦ Σ_n (1_V(x_n) − 1_V(y_n)) are independent (the first gives 1 on every U_n, the second 0 on every U_n and 1 on a clopen subset of U_n ∖ U_(n+1) containing x_n and not y_n). It is nonetheless of universal !-codescent, as a positive control outside the smooth class: the section s = (t₀, id) is a closed immersion with f ∘ s = id, so s^!f^! ≅ id, and inserting t₀ as an extra first coordinate gives extra degeneracies of the Čech nerve of f augmented to Spa C; a split augmented cosimplicial diagram of ∞-categories is a limit diagram, and the splitting survives every base change. Cohomological smoothness is a sufficient condition for !-codescent here, not a necessary one.
 
 *Needs:* VS7.3; VS7.1; EnhancedDerivedSheaves §E3.4; EnhancedDerivedSheaves §E5:abstract.1; EnhancedDerivedSheaves §E3.2; EnhancedDerivedSheaves §E2.6; DiamondSixOperations §S4.1; gap:vs-pii-enhanced-operation-map; gap:vs-pii-partial-adjoints; gap:vs-pii-restricted-nerves; gap:vs-pii-descent.
 
@@ -654,7 +654,17 @@ Throughout this subsection, f : X → Y is a proper fine map of decent v-stacks 
 
 For a proper fine f the relative diagonal Δ_f : X → X ×_Y X is a closed immersion, and there is a natural transformation c_f : Rf_! → Rf_*, adjoint to the composite f^*Rf_! ≅ Rpr₂!pr₁^* → Rpr₂!RΔ_f*Δ_f^*pr₁^* = Rpr₂!RΔ_f! ≅ id, built from (BC1) for the square X ×_Y X, the unit of Δ_f^* ⊣ RΔ_f*, the identification RΔ_f* = RΔ_f! for the closed immersion Δ_f and pr₂ ∘ Δ_f = id. The transformations c_f are pseudo-natural on the (2,1)-category of decent v-stacks with proper fine maps: under the composition isomorphisms of VS7.5 (2) and of pushforward, c_(g∘f) = c_g ∘ c_f, and for every 2-morphism α : f ⇒ f′ of proper fine maps, c_(f′) ∘ α_! = α_* ∘ c_f, with α_! from VS7.5 (2) and α_* from VS6.10; α is arbitrary, and α_!, α_* are in general nontrivial automorphisms. c_f is compatible with base change: for a Cartesian square with f proper fine and g : Y′ → Y a map of decent v-stacks, g^*c_f corresponds to c_(f′)g̃^* under (BC1) and the base change map g^*Rf_* → Rf′_*g̃^*. (a) If f is proper nice, c_f is an isomorphism, and it is Scholze's identification of Rf_! with Rf_* for proper maps. (b) If for one chart a : V → Y the base change X ×_Y V → V is representable in locally spatial diamonds, c_f is an isomorphism. A proper fine map is cohomologically proper if c_(f′) is an isomorphism for every base change f′ of f along a map of decent v-stacks. Cohomologically proper maps include the proper nice maps and the maps of (b), in particular identities and closed immersions, and are stable under composition and under base change along maps of decent v-stacks. For cohomologically proper p, Rp_*Rp^! ≅ Rp_!Rp^! and the counit Rp_!Rp^! → id gives a trace map Rp_*Rp^! → id.
 
-Hansen–Kaletha–Weinstein, Theorem 4.1.8, p. 24, asserts a pseudo-natural isomorphism Rf_! → Rf_* on proper morphisms, used throughout §4.3 for 2-morphisms of correspondences, and attributes it to Gulotta–Hansen–Weinstein, Theorem 1.4, pp. 3–4, whose list of properties contains no comparison of Rf_! with Rf_*. In Scholze, Étale cohomology of diamonds, Definition 10.7, Remark 10.8, Definition 18.1, pp. 51–52 and 100: proper maps of v-stacks are 0-truncated with closed-immersion diagonal, which the construction of c_f uses. Whether every proper fine map is cohomologically proper is not settled by the sources (Corrections to the sources); by (b) and VS6.11 it holds for f as soon as, for one chart V → Y, every point of X ×_Y V is hit by a quasi-pro-étale map from a geometric point.
+Hansen–Kaletha–Weinstein, Theorem 4.1.8, p. 24, asserts a pseudo-natural isomorphism Rf_! → Rf_* on proper morphisms, used throughout §4.3 for 2-morphisms of correspondences, and attributes it to Gulotta–Hansen–Weinstein, Theorem 1.4, pp. 3–4, whose list of properties contains no comparison of Rf_! with Rf_*. In Scholze, Étale cohomology of diamonds, Definition 10.7, Remark 10.8, Definition 18.1, pp. 51–52 and 100: proper maps of v-stacks are 0-truncated with closed-immersion diagonal, which the construction of c_f uses. Whether every proper fine map is cohomologically proper is not settled by the sources (Corrections to the sources); by (b) and VS6.11 it holds for f as soon as, for one chart V → Y, every point of X ×_Y V is hit by a quasi-pro-étale map from a geometric point. That point condition is a representability question of the kind the sources leave open: Scholze does not know whether the canonical compactification of a compactifiable map of spatial diamonds is spatial (Sch17, proof of Theorem 22.5, p. 130), Gulotta–Hansen–Weinstein introduce prespatial diamonds for that reason (GHW22 §3.1, p. 12) and leave a related representability question open (GHW22 Warning 4.2, pp. 19–20), and the condition fails for decent v-sheaves without a diamond base, since the closed point of Spd Z_p is hit by no quasi-pro-étale map from a geometric point (VS6.11).
+
+The API of the construction:
+
+- For a proper fine f : X → Y, the relative diagonal Δ_f is a closed immersion, and c_f : Rf_! → Rf_* is a natural transformation of functors D_ét(X, Λ) → D_ét(Y, Λ).
+- For composable proper fine maps f and g, c_(g∘f) = c_g ∘ c_f under the composition isomorphisms of exceptional and of ordinary pushforward.
+- For every 2-morphism α : f ⇒ f′ of proper fine maps, c_(f′) ∘ α_! = α_* ∘ c_f.
+- For a Cartesian square of decent v-stacks with f proper fine and g : Y′ → Y, g^*c_f corresponds to c_(f′)g̃^* under (BC1) and the base change map g^*Rf_* → Rf′_*g̃^*.
+- If f is proper nice, or if its base change along one chart of Y is representable in locally spatial diamonds, then c_f is an isomorphism.
+- A proper fine map is cohomologically proper iff c_(f′) is an isomorphism for every base change f′ along a map of decent v-stacks. Proper nice maps, and in particular identities and closed immersions, are cohomologically proper, and the class is stable under composition and under base change along maps of decent v-stacks.
+- For a cohomologically proper p, c_p and the counit of Rp_! ⊣ Rp^! give a trace map Rp_*Rp^! → id.
 
 *Proof sketch.*
 
@@ -1425,6 +1435,16 @@ Let R be the sheaf of rings U ↦ C(U, Λ) on T. For an R-module sheaf F and com
 
 Hansen–Kaletha–Weinstein, Appendix B.2, Lemmas B.2.4–B.2.5, p. 74, shows restriction to compact opens is surjective with 1_U·F(S) ≅ F(U), F(S) = lim F(U), and that smooth or complete modules are equivalent to R-module sheaves with F_M(S) = M^c.
 
+The API of the construction:
+
+- For an R-module sheaf F and a compact open U ⊂ T, restriction F(T) → F(U) is surjective, its kernel is (1 − 1_U)·F(T), and it induces an isomorphism 1_U·F(T) ≅ F(U).
+- For an R-module sheaf F, F(T) = lim_U F(U) over compact opens U ordered by inclusion, with restrictions as transition maps.
+- For a smooth C(T, Λ)-module M, the assignment U ↦ 1_U·M on compact opens U, with multiplication by 1_V as restriction to V ⊂ U, extends uniquely to an R-module sheaf F_M on T.
+- The compactly supported sections colim_U F_M(U) of F_M are M, and its global sections F_M(T) are M^c.
+- F ↦ colim_U F(U) and M ↦ F_M are mutually inverse equivalences between R-module sheaves on T and smooth C(T, Λ)-modules; F ↦ F(T) and M ↦ F_M are mutually inverse equivalences between R-module sheaves and complete C(T, Λ)-modules; the two are intertwined by M ↦ M^c and M ↦ M^s of VS10.1.
+- R is the constant sheaf Λ on T, so R-module sheaves are the sheaves of Λ-modules on T; the constant sheaf Λ corresponds to the smooth module C_c(T, Λ) and to the complete module C(T, Λ).
+- If T is compact, compactly supported and global sections agree, and F ↦ F(T) is an equivalence with all C(T, Λ)-modules.
+
 *Proof sketch.*
 
 1. Compact opens form a basis closed under finite unions and intersections, so sheaves on T are sheaves on that basis.
@@ -1435,6 +1455,10 @@ Hansen–Kaletha–Weinstein, Appendix B.2, Lemmas B.2.4–B.2.5, p. 74, shows r
 
 - For T finite discrete, sheaves are Λ^T-modules.
 - The constant sheaf Λ corresponds to the smooth module C_c(T, Λ), with global sections C(T, Λ) = C_c(T, Λ)^c.
+- For T = {a, b}, Λ = F₃ and M = 1_a·M ⊕ 1_b·M with 1_a·M = F₃² and 1_b·M = F₃, the sheaf F_M has F_M({a}) of dimension 2, F_M({b}) of dimension 1 and F_M(T) = M of dimension 3 = 2 + 1, as the sheaf condition on the cover {a} ⊔ {b} requires. The model that gives every compact open U the whole module M would assign dimension 3 to each point and violate that condition.
+- For T = ℕ, Λ ≠ 0 and the constant sheaf Λ, the compactly supported sections are Λ^(ℕ) and the global sections are Λ^ℕ. The all-ones sequence is a global section that is not compactly supported, and it is not a smooth vector of Λ^ℕ (VS10.1), so the inverse to M ↦ F_M on smooth modules is F ↦ colim_U F(U), not F ↦ F(T); on complete modules the inverse is F ↦ F(T) = Λ^ℕ = C(ℕ, Λ).
+- For T empty, C(T, Λ) = 0, the only module is 0 and the only sheaf is 0, so both equivalences are between zero categories.
+- For T = Z_p (compact) and the constant sheaf Λ, the compactly supported and the global sections are both C(Z_p, Λ), and M^s = M^c = M for every C(Z_p, Λ)-module M.
 
 *Needs:* VS10.1; Mathlib `TopologicalSpace.CompactOpens`.
 
@@ -1774,7 +1798,7 @@ In the sources it enters as follows: the Künneth pairing of sections of dualizi
 
 - For U = T = S and f_i = id, κ is the identity of A₁ ⊠_S A₂.
 - For S = T = Spd C, U = [S/G_S] with G = Z_p and Y_i = U, κ_(U/S) : K_(U/S) ⊗ K_(U/S) → K_(U/S) ⊗ K_(U/S) is an isomorphism of free rank-one twists by Haar(Z_p, Λ)^∗.
-- Without the twist by g^*K_(U/T), there is no natural map f₁^!A₁ ⊠_U f₂^!A₂ → f^!(A₁ ⊠_T A₂) when U → T is smooth of nonzero dimension and Λ ≠ 0: for U = T × B (B a perfectoid ball) the two sides differ by Λ(1)[2].
+- The twist by g^*K_(U/T) cannot be dropped from the target of κ. Take S = T = X₁ = X₂ = Spd C, U = Y₁ = Y₂ the perfectoid closed unit ball over T (cohomologically smooth of dimension one, K_(U/T) ≅ Λ(1)[2]), f_i the structure maps (so f : U → T and g = id_U) and A₁ = A₂ = Λ ≠ 0. The source f₁^!A₁ ⊠_U f₂^!A₂ is Λ(2)[4], while the untwisted object f^!(A₁ ⊠_T A₂) is Λ(1)[2]: at a geometric stalk H^(−4) is Λ against 0 and H^(−2) is 0 against Λ, so the two are not isomorphic. The zero map between them exists, so what fails without the twist is an isomorphism, not the existence of a map. With the twist both sides are Λ(2)[4], and κ_(U/T) is an isomorphism.
 - For U = T, κ agrees with the Künneth map used to define tensor products in CoCorr_S.
 
 *Needs:* VS7.6; VS7.11; VS7.8; VS7.9.
@@ -1830,7 +1854,7 @@ In the sources it enters as follows: dualizability and traces of fibre products 
 - 𝔅 and 𝔖 send the unit (S → S, Λ_S, Λ_S) to (S, Λ_S).
 - For T = S and B = Λ, 𝔛₁ ⊠_𝔗 𝔛₂ = (X₁ ×_S X₂, A₁ ⊠_S A₂), the tensor product of CoCorr_S.
 - For 𝔛_i = (X_i → T, A_i, Λ_T), 𝔛₁ ⊠_𝔗 𝔛₂ has sheaf A₁ ⊠_T A₂, with no twist.
-- Without the invertible object B, the naive fibre product (X₁ ×_T X₂, A₁ ⊠_T A₂) is not functorial in morphisms lying over a morphism of bases, because of the twist g^*K_(U/T) in the modified Künneth map (HKW22 p. 38).
+- Without the invertible object B, the composite (4.5.7) does not define a morphism (X₁ ×_T X₂, A₁ ⊠_T A₂) → (X′₁ ×_(T′) X′₂, A′₁ ⊠_(T′) A′₂) of naive fibre products over a morphism of bases (HKW22 p. 38). Its Künneth step κ_(U/T′) lands in (c′)^!(A′₁ ⊠_(T′) A′₂) ⊗ q^*K_(U/T′), and with no factor ((u′)^!B′)^(−1) to absorb K_(U/T′) this object is not isomorphic to (c′)^!(A′₁ ⊠_(T′) A′₂) when U → T′ has positive dimension and Λ ≠ 0. For S = T = T′ = X_i = X′_i = Spd C, U = C₁ = C₂ the perfectoid closed unit ball over S and A_i = A′_i = Λ, the two objects are Λ(2)[4] and Λ(1)[2], with H^(−4) equal to Λ and 0 (VS11.5).
 
 *Needs:* VS8.7; VS8.3; VS11.5; VS7.10; VS6.8.
 
