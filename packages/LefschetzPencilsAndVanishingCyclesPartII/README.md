@@ -100,14 +100,17 @@ carrier.
 
 **Not in this roadmap.** Lefschetz pencils and Bertini theorems over finite fields. Poonen,
 *Bertini theorems over finite fields*, Corollary 3.4 (p. 10), gives inside a smooth projective
-geometrically integral variety over `𝔽_q` a smooth projective geometrically integral curve
-containing any finite set of closed points; adding to that set a closed point of a dense open `U`
-makes the curve meet `U`, and densely, since the curve is integral. What it does not reach is a
-smooth chart of a stack, which is in general affine and not projective, and whose closure in a
-projective space need not be smooth. Poonen's Theorem 3.3 (p. 10) does apply to a smooth
-quasi-projective `X`, giving a smooth hypersurface section `H ∩ X` through finitely many closed
-points, but for non-projective `X` it does not assert that `H ∩ X` is connected, so cutting down to
-a curve in this way need not put the marked point and the added point of `U` on one component.
+geometrically integral variety `X` over `𝔽_q` with `dim X ≥ 1` a smooth projective geometrically
+integral curve containing any finite set of closed points; adding to that set a closed point of a
+dense open `U` makes the curve meet `U`, and densely, since the curve is integral. For
+`dim X = 0` there is no curve inside `X` (then `X = Spec 𝔽_q`); §2.4 covers that case with a
+constant morphism from `𝔸¹`. What Corollary 3.4 does not reach is a smooth chart of a stack, which
+is in general affine and not projective, and whose closure in a projective space need not be
+smooth. Poonen's Theorem 3.3 (p. 10) does apply to a smooth quasi-projective `X ⊆ ℙⁿ` with
+`dim X ≥ 1`, giving a hypersurface `H` with `H ∩ X` smooth of dimension `dim X − 1` and containing
+finitely many prescribed closed points, but for non-projective `X` it does not assert that `H ∩ X`
+is connected, so cutting down to a curve in this way need not put the marked point and the added
+point of `U` on one component.
 Also not here:
 curves through singular points of local models; lifting rational points to smooth atlases of
 algebraic stacks; lisse sheaves, their stalks and Frobenius conjugacy classes; monodromy of
@@ -568,6 +571,12 @@ degree one geometry. *Needs:* Tau Ceti `TauCeti.AlgebraicGeometry.RationalPoint.
 
 - *A point.* `Y = Spec k`, `U = V = Y`: `m = 0`, and the output is `C = 𝔸¹_k` with the constant map and
   `c = 0`. A theorem demanding an immersion `C → Y` is false here.
+- *Dimension zero, outside Poonen's range (negative control).* `Y = Spec 𝔽_2` is smooth, projective
+  and geometrically integral of dimension `0`; its only nonempty closed subscheme is `Y` itself, so
+  it contains no curve, and Poonen's Corollary 3.4 (p. 10), which assumes dimension at least one,
+  says nothing about it. It still receives the curve morphism required here: `C = 𝔸¹_{𝔽_2}`,
+  `g = s_C`, `c = 0`, good open `C`. A synopsis of Corollary 3.4 without the dimension hypothesis
+  would put a curve inside `Spec 𝔽_2`.
 - *Rational lines fail.* `Y = 𝔸²_{𝔽_2}`, `y = 0`, `U = D(X_0² X_1 − X_0 X_1²)`: the output is the graph
   `T ↦ (T, T³)` with good open `D(T⁵ + T⁷)`, while every `𝔽_2`-line through `0` misses `U`.
 - *No rational point in the good open.* `Y = 𝔸¹_{𝔽_q}`, `y = 0`, `U = D(T^q − T)`: `C = 𝔸¹`, `g = id`,
@@ -606,11 +615,12 @@ and `TauCeti.AlgebraicGeometry.RationalPoint.Basic`.
   Proposition 5.3.5 (p. 54) of arXiv:2103.09945v2 apply a curve through a rational point of a smooth
   chart of an integral model of a Shimura variety, over the same finite field, meeting a dense
   stratum. Their citation of Poonen's Corollary 3.4 for this step requires a smooth projective
-  geometrically integral ambient variety, which a smooth chart does not supply; in that projective
-  setting Corollary 3.4 would also give the meeting with the stratum, by adding one of its closed
-  points to the finite set. Poonen's Theorem 3.3, which does apply to the quasi-projective chart,
-  does not assert that its hypersurface sections are connected, so it does not by itself keep the
-  marked point and the stratum on one component. `exists_same_field_curve` gives the needed curve
+  geometrically integral ambient variety of dimension at least one, which a smooth chart does not
+  supply; in that projective setting Corollary 3.4 would also give the meeting with the stratum, by
+  adding one of its closed points to the finite set. Poonen's Theorem 3.3, which does apply to the
+  quasi-projective chart when it has dimension at least one, does not assert that its hypersurface
+  sections are connected, so it does not by itself keep the marked point and the stratum on one
+  component. `exists_same_field_curve` gives the needed curve
   directly, without projectivity. Roadmaps formalising Shimura varieties and their local models consume
   it there; the singular local-model curve of Kisin–Zhou, Proposition 5.2.3, and the rational lift
   to a smooth atlas are theirs.
