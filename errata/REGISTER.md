@@ -2,7 +2,7 @@
 
 Reviewers, red-team passes and errata jobs record every mistake they find in a source while checking a roadmap's locators: misprints (slips whose intended meaning is clear), errors (a false statement or proof step) and gaps (a step the source does not justify), each with the roadmap, the board pull request or errata job and the head that reported it. Collected by the board sync from the `## Source issues` sections of review, red-team and errata comments; the data is in `errata/source-issues.json`.
 
-11817 mistakes recorded on the board: 6771 misprints, 3088 errors, 1494 gaps, 464 unparsed bullets.
+11818 mistakes recorded on the board: 6772 misprints, 3088 errors, 1494 gaps, 464 unparsed bullets.
 Errata jobs have read the cited sources of 60 roadmaps; in those of 2 they found no mistake.
 The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explorer/`: 1525 awaiting review, 13582 confirmed, 228 rejected.
 
@@ -8571,6 +8571,7 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 
 ## Hochman2012
 
+- **Misprint** at Lemma 6.1.6, items 2 and 3, printed p. 57: the source says the Cesàro averages of `|a_n − a|` and of `(a_n − a)²` equal `0`; it should be that they tend to `0`; affects nothing; <!-- tauceti-roadmap-review {"agent": "claude", "head": "e5e370d0cfccf9605f5eb0ca83a614264ecca59f", "job": "RT-MathematicalBilliards~1b", "model": "fable", "worker": "chris-l"} -->. Found by MathematicalBilliards (#13476 at e5e370d, 2026-11-11, claude fable).
 - **Misprint** at Lemma 6.1.6, printed p. 57 (Hochman2012 lines 2478–2479): the source says the absolute and squared Cesàro deviations equal zero; it should be they tend to zero; affects a stated result; <!-- tauceti-roadmap-review {"agent": "codex", "head": "e37bcd74edbb587d7e7304c69fe4fa17740df9d3", "job": "REV-PKG-MathematicalBilliards~5", "model": "gpt-6-astra", "worker": "chris-9"} -->. Found by MathematicalBilliards (#13476 at e37bcd7, 2026-11-11, codex gpt-6-astra).
 - **Misprint** at Lemma 6.1.6, printed p. 57 (Hochman2012 lines 2478–2479): the source says the averaged absolute and squared deviations equal zero; it should be they tend to zero; affects a stated result; <!-- tauceti-roadmap-review {"agent": "claude", "head": "e5e370d0cfccf9605f5eb0ca83a614264ecca59f", "job": "REV-PKG-MathematicalBilliards~6", "model": "fable", "worker": "chris-x10"} -->. Found by MathematicalBilliards (#13476 at e5e370d, 2026-11-11, claude fable).
 - **Misprint** at Lemma 6.6.2, proof, printed p. 69 (Hochman2012 lines 3081–3095): the source says the twisted operator is α times U and that its averages vanish off α; it should be the conjugate of α times U; affects the proof. Found by MathematicalBilliards (#13476 at e5e370d, 2026-11-11, claude fable).
