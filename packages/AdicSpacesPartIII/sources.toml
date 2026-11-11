@@ -1,0 +1,69 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "AdicSpacesPartIII"
+
+[[source]]
+id = "Kiehl-E"
+authors = "Reinhardt Kiehl"
+title = "Der Endlichkeitssatz für eigentliche Abbildungen in der nichtarchimedischen Funktionentheorie"
+year = 1967
+venue = "Inventiones Mathematicae 2"
+doi = "10.1007/bf01425513"
+locator_scheme = "theorem"
+locator = "Satz 2.6; Theorems 3.3, 3.4, 3.7; Satz 3.5"
+url = "https://gdz.sub.uni-goettingen.de/download/pdf/PPN356556735_0002/LOG_0024.pdf"
+fetched_from = "https://gdz.sub.uni-goettingen.de/download/pdf/PPN356556735_0002/LOG_0024.pdf"
+fetched_at = "2026-11-11T05:07:21Z"
+sha256 = "da0b09fc42d8ad89911f8a901774241f55e69f46801d9cbc621d335239c52fd0"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-11"
+cited_for = ["R3.6"]
+
+[[source]]
+id = "EGA-III-1"
+authors = "Alexander Grothendieck, Jean Dieudonné"
+title = "Éléments de géométrie algébrique III. Étude cohomologique des faisceaux cohérents, première partie"
+year = 1961
+venue = "Publications Mathématiques de l'IHÉS 11"
+locator_scheme = "section"
+locator = "Ch. III, 3.4.1, 4.1.7, 5.1.4"
+url = "https://www.numdam.org/item/PMIHES_1961__11__5_0.pdf"
+fetched_from = "https://www.numdam.org/item/PMIHES_1961__11__5_0.pdf"
+fetched_at = "2026-11-11T05:07:24Z"
+sha256 = "3ed59fe81da07f1ab685ddc54a93128a364419d4ddafbc7affcd8abc8b401605"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-11"
+cited_for = ["F0.4, F0.6, F0.7"]
+
+[[source]]
+id = "EGA-I"
+authors = "Alexander Grothendieck, Jean Dieudonné"
+title = "Éléments de géométrie algébrique I. Le langage des schémas"
+year = 1960
+venue = "Publications Mathématiques de l'IHÉS 4"
+locator_scheme = "section"
+locator = "Ch. 0, §7; Ch. I, §10"
+url = "https://www.numdam.org/item/PMIHES_1960__4__5_0.pdf"
+fetched_from = "https://www.numdam.org/item/PMIHES_1960__4__5_0.pdf"
+fetched_at = "2026-11-11T05:08:03Z"
+sha256 = "9aba23020217535977e279bdd06a0413f48da703086865ba4c00766c85df4ae6"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-11"
+cited_for = ["F0"]
+
+[[source]]
+id = "BL-II"
+authors = "Siegfried Bosch, Werner Lütkebohmert"
+title = "Formal and rigid geometry. II. Flattening techniques"
+year = 1993
+venue = "Mathematische Annalen 296"
+doi = "10.1007/bf01445112"
+locator_scheme = "theorem"
+locator = "Prop. 1.8; Lemma 2.5"
+url = "https://doi.org/10.1007/bf01445112"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["R2.7"]
