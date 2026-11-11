@@ -86,8 +86,9 @@ It leaves to other roadmaps, by section:
   duality, the Grothendieck–Ogg–Shafarevich formula, Tannakian generation, weights and the scalar
   Kloosterman F-isocrystal at every prime and every rank: **PadicDifferentialEquationsAndRigidCohomology**
   Layers RD.0–RD.6;
-  arithmetic `D`-module operations, Baldassarri's slope comparison and D'Addezio's monodromy
-  comparison are supplier gaps there; the minimal-slope reconstruction on curves:
+  arithmetic `D`-module operations, Baldassarri's slope comparison, D'Addezio's monodromy
+  comparison, the Adolphson–Sperber degree and Hodge bound and Wan's facial and diagonal ordinarity
+  criteria for exponential sums of nondegenerate Laurent polynomials are supplier gaps there; the minimal-slope reconstruction on curves:
   **PadicDifferentialEquationsAndRigidCohomologyPartII** MS.4;
 - Newton orbit spaces and rational dominance: **BunGAndNewtonStrata** §§1.5, 1.22;
 - neutral Tannakian reconstruction: **MotivesAndAlgebraicCycles** Layer 6;
@@ -187,6 +188,12 @@ categories live in one fixed universe; `Suggested.lean` places the extension fie
   over a commutative Hopf algebra and the reconstruction of an affine group from its tensor
   automorphisms; consumed through PadicDifferentialEquationsAndRigidCohomology §RD.6.64. No
   Kloosterman, Bessel, isocrystal or Hecke-eigensheaf declaration exists at the pin.
+- `TauCeti.LocalFieldsRamification.map_restrictNormalHom_lowerRamificationGroupReal` (Herbrand's theorem: for a
+  finite normal extension `M/K` of nonarchimedean local fields and a normal subextension `L`, the image of the
+  lower ramification group `G_u` in `Gal(L/K)` is the lower group at `φ_{M/L}(u)`) and
+  `TauCeti.LocalFieldsRamification.map_restrictNormalHom_upperRamificationGroup` (for a Galois tower, the upper
+  filtration maps onto the upper filtration of the quotient): the change of lower numbering under a central lift
+  in §6.5.
 
 ### From TauCetiRoadmap.CongruenceSpectralGap
 
@@ -315,6 +322,29 @@ categories live in one fixed universe; `Suggested.lean` places the extension fie
   split reductive group `G₀` over `E` with a faithful representation `ρ₀` such that each member's
   neutral monodromy component, with its tautological representation, is `G₀ ⊗ E_λ` with `ρ₀ ⊗ E_λ`,
   together with the equality of the component groups (D'Addezio, Theorem 1.2.1 and §4.3).
+- What PadicDifferentialEquationsAndRigidCohomology must provide (gap:toric-exponential-sum-hodge-bound):
+  the Adolphson–Sperber theorem. Let `𝔽_q` have characteristic `p`, let `ψ` be a nontrivial additive character
+  of `𝔽_p` with values in a `p`-adic field, and let `f ∈ 𝔽_q[x₁^{±1}, …, x_N^{±1}]` have Newton polyhedron `Δ(f)`, the
+  convex hull of the origin and the exponents of `f`, of dimension `N`. Suppose `f` nondegenerate: for every face
+  `σ` of `Δ(f)` not containing the origin, the logarithmic derivatives `x_i ∂f_σ/∂x_i` of the restriction `f_σ` have
+  no common zero on `(𝔽̄_q^×)^N`. Then, with `S*_m(f) = Σ_{x ∈ (𝔽_{q^m}^×)^N} ψ(Tr f(x))`, the function
+  `exp(Σ_m S*_m(f) T^m/m)^{(−1)^{N−1}}` is a polynomial of degree `N! · Vol(Δ(f))` whose Newton polygon, for
+  `v(q) = 1`, lies on or above the Hodge polygon `HP(Δ(f))`, for every `p`. Here the weight `w(u)` of a lattice point
+  `u` of the cone over `Δ(f)` is the least `c ≥ 0` with `u ∈ cΔ(f)`, `D` is the least positive integer with
+  `D w(u) ∈ ℤ` for all such `u`, `W(k)` is the number of such `u` with `w(u) = k/D`, and `HP(Δ(f))` has slope `k/D` with
+  multiplicity `Σ_{i=0}^{N} (−1)^i C(N, i) W(k − iD)` (Adolphson–Sperber, Corollary 3.11, by the concentration of the
+  Dwork complex of `f` in top degree).
+- What PadicDifferentialEquationsAndRigidCohomology must provide (gap:toric-exponential-sum-ordinarity):
+  Wan's ordinarity criteria for `f` as in gap:toric-exponential-sum-hodge-bound, ordinary meaning that its
+  Newton polygon equals `HP(Δ(f))`. (a) Facial decomposition: `f` is ordinary if and only if, for every
+  codimension-one face `δ` of `Δ(f)` not containing the origin, the restriction `f^δ` is ordinary with respect to the
+  convex hull of the origin and `δ`. (b) Diagonal criterion: if `f` is diagonal, that is, has exactly `N` monomials,
+  all with nonzero coefficients and with linearly independent exponent vectors `V₁, …, V_N`, then `f` is
+  nondegenerate exactly when `p ∤ det(V₁, …, V_N)`; the group `S(Δ) = {r ∈ (ℚ ∩ [0, 1))^N : Σ_i r_i V_i ∈ ℤ^N}` is finite
+  abelian of order `|det(V₁, …, V_N)|`; and `f` is ordinary when `p ≡ 1` modulo the exponent of `S(Δ)` (Wan 2004,
+  Theorem 3.1 and Corollary 2.6; Wan 1993, boundary decomposition and diagonal criterion). The index condition
+  in (b) and the faces in (a) are codimension-one data; nondegeneracy is a condition on all faces not containing
+  the origin.
 
 ### From TauCetiRoadmap.PadicDifferentialEquationsAndRigidCohomologyPartII
 
@@ -1411,23 +1441,52 @@ KloostermanMomentsAndPotentialAutomorphy §1.3 (monodromy) is an independent che
 
 ### 6.5 Simple wild parameters
 
-Let `k_∞` be a local field of characteristic `p` with finite residue field, `W_{k_∞}` its Weil group and
-`H` almost simple of rank `ℓ`. For a discrete parameter `ϕ : W_{k_∞} → H` (finite image on inertia, Frobenius
-included) with `(Lie H)^{ϕ(I)} = 0` and Swan conductor `b(Ad ∘ ϕ) = ℓ`, and with `p ∤ |W_H|`, prove that the wild
-image `D₁` lies in a unique maximal torus, that the tame image acts through a Coxeter element of order `h`,
-that `D₂ = 1` and `D₁` is a simple `𝔽_p[w]`-submodule of `Ť[p]`, and that the upper breaks of `ϕ(W)` are `0` and
-`1/h` (Gross–Reeder Proposition 5.6, p. 34). Define a *simple wild parameter* as a discrete parameter
-with `(Lie H)^{ϕ(I)} = 0` and `b(Ad ∘ ϕ) = ℓ` (Gross–Reeder §6, p. 35). *Needs:* ReductiveGroups Layer 7;
-§RD.6.51.
+Let `k_∞` be a local field of characteristic `p` with finite residue field, `W_{k_∞}` its Weil group with inertia
+subgroup `I` and wild inertia `I⁺`, and `H` almost simple of rank `ℓ`, with centre `Z(H)`, adjoint quotient
+`π_ad : H → H_ad` and `Ť_ad = π_ad(Ť)`. A *discrete parameter* is a homomorphism `ϕ : W_{k_∞} → H` with finite image
+on inertia, defined on the whole Weil group (Frobenius included), whose image has finite centralizer in `H`.
+Define a *simple wild parameter* as a discrete parameter with `(Lie H)^{ϕ(I)} = 0` and adjoint Swan conductor
+`b(Ad ∘ ϕ) = ℓ` (Gross–Reeder §6, p. 35). Since `Ad` factors through `H_ad`, the composite `ϕ_ad = π_ad ∘ ϕ` is again
+a simple wild parameter. The finite groups `D = ϕ(I)` and `D^ad = ϕ_ad(I)` are the inertia groups of finite Galois
+extensions of `k_∞` cut out by `ϕ` and `ϕ_ad`, with lower filtrations `D_u`, `D^ad_u` and upper filtrations; `D₁ = ϕ(I⁺)`
+is the wild image.
 
-- The adjoint Swan conductor of a parameter with `(Lie H)^{ϕ(I)} = 0` is at least `ℓ` (Gross–Reeder §5).
+Assume `p ∤ |W_H|`. For the adjoint parameter prove (Gross–Reeder Proposition 5.6, p. 34, where the dual group is
+adjoint by the standing assumption of Gross–Reeder §5.3, p. 31): `D^ad_1` lies in a unique maximal torus of `H_ad`,
+after conjugation `Ť_ad`, and `ϕ_ad(W_{k_∞})` lies in its normalizer; the tame quotient `D^ad/D^ad_1` maps onto the
+subgroup of `W_H` generated by a Coxeter element `w` of order `h`; `D^ad_2 = 1` and `D^ad_1` is a simple
+`𝔽_p[w]`-submodule of `Ť_ad[p]` of order `p^a`, with `a` the order of `p` in `(ℤ/h)^×`; and the upper breaks of
+`ϕ_ad(W_{k_∞})` are `0` and `1/h`. For `ϕ` itself, with `C = D ∩ Z(H)` of order `c`, prove: `p ∤ c`, because `|Z(H)|`
+divides the index of the root lattice in the weight lattice, which divides `|W_H|`; `π_ad` maps `D₁` isomorphically
+onto `D^ad_1`, so `D₁` lies in the unique maximal torus `Ť = π_ad^{−1}(Ť_ad)` and is a simple `𝔽_p[w]`-submodule of
+`Ť[p] ≅ Ť_ad[p]`; the upper breaks of `D` are `0` and `1/h`; and the lower filtration of `D` jumps at `c`:
+`D₁ = D_c` and `D_{c+1} = 1`. In particular `D₂ = 1` holds for `ϕ` exactly when `C = 1`; the lower numbering is not
+invariant under a central lift, and the conclusion `D₂ = 1` of Gross–Reeder belongs to the adjoint parameter.
+Route: `D/C = D^ad`; the upper filtration passes to quotients, and `C` meets no upper ramification group of
+positive index, these being `p`-groups; the subextension cut out by `C` is tame of degree `c`, so its Herbrand
+function is `u ↦ u/c`, and Herbrand's theorem for the quotient carries the lower break `1` of `D^ad` to the lower
+break `c` of `D`. *Needs:* ReductiveGroups Layers 7, 9; §RD.6.51; Tau Ceti
+`TauCeti.LocalFieldsRamification.map_restrictNormalHom_lowerRamificationGroupReal` and
+`TauCeti.LocalFieldsRamification.map_restrictNormalHom_upperRamificationGroup`.
+
+- If `p ∤ |W_H|`, every discrete parameter with `(Lie H)^{ϕ(I)} = 0` has `b(Ad ∘ ϕ) ≥ ℓ` (Gross–Reeder
+  Proposition 5.4, pp. 31–33, applied to `ϕ_ad`); without that hypothesis the inequality is Gross–Reeder
+  Conjecture 5.2, p. 30, and is not asserted here.
 - Under `p ∤ |W_H|`, all nonzero adjoint upper breaks of a simple wild parameter equal `1/h`.
 - A bare inertia homomorphism without the Frobenius element is not a discrete parameter in this sense.
 
 **Checks.**
 
-- For `H = SL₂` (`ℓ = 1`, `h = 2`, `|W| = 2`) and `p` odd: `D₁` is a subgroup of order `p` of `Ť[p] = μ_p`, the tame
-  image acts on it by inversion (the Coxeter element), and the upper breaks are `0` and `1/2`.
+- For `H = SL₂` (`ℓ = 1`, `h = 2`, `|W| = 2`) and `p` odd: `D₁` is the subgroup `μ_p = Ť[p]`, the tame image acts on it by
+  inversion (the Coxeter element), and the upper breaks are `0` and `1/2`. Every element of `N(Ť) − Ť` squares to `−1`,
+  so `C = {±1}`, `c = 2` and `D₁ = D₂ ≠ D₃ = 1` for every simple wild parameter of `SL₂`; for `PGL₂`, `c = 1` and `D₂ = 1`.
+- Negative control for a central lift. Over `k_∞ = 𝔽₅((t))` put `u⁴ = t` and `z⁵ − z = u^{−2}`: a totally ramified
+  Galois extension of degree `20` with `σ : (u, z) ↦ (u, z + 1)` of order `5` and `τ : (u, z) ↦ (2u, −z)` of order `4`
+  (`(2u)^{−2} = −u^{−2}` in `𝔽₅`), and `τστ^{−1} = σ^{−1}`. Sending `σ ↦ diag(ζ₅, ζ₅^{−1})` and `τ ↦ [[0, 1], [−1, 0]]`
+  gives a parameter into `SL₂` with centralizer `{±1}` and `(Lie SL₂)^{ϕ(I)} = 0`. With `v(u) = 5`, `v(z) = −2`, the
+  uniformizer `uz²` has `v(σ(uz²) − uz²) = v(u(2z + 1)) = 3`, so `|D| = 20`, `D₁ = D₂ = C₅` and `D₃ = 1`; the upper break
+  is `2 · 5/20 = 1/2`, and `b(Ad ∘ ϕ) = 2 · 1/2 = 1 = ℓ` with `5 ∤ 2`. Every hypothesis holds and `D₂ ≠ 1`, as
+  `c = |⟨τ²⟩| = 2` predicts; the adjoint image in `PGL₂` has order `10`, lower break `2/c = 1` and `D^ad_2 = 1`.
 - For `p = 2` and `H = SO₃` the hypothesis `p ∤ |W|` fails, and the inertia image `A₄` of §11.5 has breaks that the
   proposition does not describe.
 - The tamely ramified principal parameter has `b = 0 < ℓ` only because `(Lie H)^{ϕ(I)} ≠ 0`; the lower bound needs
@@ -1465,7 +1524,9 @@ PadicDifferentialEquationsAndRigidCohomology §§RD.5.76, RD.5.89, RD.6.51–RD.
 Layers 2, 4; PadicDifferentialEquationsAndRigidCohomology §§RD.1.17–RD.1.19, RD.2.51, RD.5.76, RD.5.89,
 RD.6.51–RD.6.52, RD.6.55, RD.6.64–RD.6.65; MotivesAndAlgebraicCycles §§6.1–6.3, 6.5;
 gap:formal-slope-comparison; gap:principal-sl2-subgroups; KloostermanMomentsAndPotentialAutomorphy §§1.1, 1.3;
-DeligneWeightsAndPurity §8.19.
+DeligneWeightsAndPurity §8.19; ReductiveGroups Layers 1, 7, 9; Tau Ceti
+`TauCeti.LocalFieldsRamification.map_restrictNormalHom_lowerRamificationGroupReal`,
+`TauCeti.LocalFieldsRamification.map_restrictNormalHom_upperRamificationGroup`.
 
 ## Layer 7: Functoriality and companions
 
@@ -1818,17 +1879,30 @@ irreducible object (§9.1); the zero spectrum fixes the scalar. *Needs:* §§4.3
 
 ### 9.4 The normalized Bessel convolution
 
-For `p > 2` and `n ≥ 2`, prove `Be†_{SO_{2n+1}, Std} ≅ (Be†_{SO₃, Std} ⋆ Be†_{2n−2})(1/2)`, where `⋆` is `Rμ_!` of the
-exterior product under multiplication `μ : 𝔾_m × 𝔾_m → 𝔾_m` and `Be†_r = Be†_{SL_r, Std}`. On traces over `𝔽_Q` this reads
-`T_{SO_{2n+1}}(a) = −Q^{−1/2} Σ_{uv=a} T_{SO₃}(u) K_{2n−2}(v)` with `K_r` the normalized scalar trace (Xu–Zhu §5.3.9 and
-Corollary 5.3.11(i), p. 61, with the half twist and sign corrected; Miyatani Main theorem (ii), p. 3, and
-Proposition 3.3.3, p. 26). The case `n = 1` is `Sym²` of `SL₂` and uses no rank-zero object. Route: multiplicative
-convolution of hypergeometric objects with explicit shifts; compare quadratic hypergeometric objects in
-odd characteristic; fix the twist and sign by the zero spectrum. *Needs:* §§8.1, 9.1–9.3;
-gap:arithmetic-d-module-operations.
+Overconvergent F-isocrystals on `𝔾_m` are placed in the heart of the constructible t-structure (Xu–Zhu §§2.3.4–2.3.5,
+(2.3.4.1), p. 15), so that their closed-point traces are the traces of the isocrystals, and `M ⋆ N = Rμ_!(M ⊠ N)` is the
+unshifted multiplicative convolution under `μ : 𝔾_m × 𝔾_m → 𝔾_m` (Miyatani Definition 2.1.1, p. 14; Xu–Zhu (5.2.1.2),
+p. 56), whose trace at `a` is `+Σ_{uv=a}` of the products of traces (Miyatani Proposition 2.1.3, p. 15). Write
+`Be†_r = Be†_{SL_r, Std}`. For `p > 2` and `n ≥ 2`, prove that `Be†_{SO₃, Std} ⋆ Be†_{2n−2}` has constructible
+cohomology only in degree `1`, that this cohomology is smooth of rank `2n + 1`, and that
+`Be†_{SO_{2n+1}, Std} ≅ (Be†_{SO₃, Std} ⋆ Be†_{2n−2})[1](1/2)`.
+On traces over `𝔽_Q` the shift `[1]` gives the sign: `T_{SO_{2n+1}}(a) = −Q^{−1/2} Σ_{uv=a} T_{SO₃}(u) K_{2n−2}(v)` with `K_r`
+the normalized scalar trace (Xu–Zhu §5.3.9, (5.3.9.1), and Corollary 5.3.11(i), p. 61, with the shift and half
+twist added; Miyatani Main theorem (ii), p. 3, and Proposition 3.3.3, p. 26). The case `n = 1` is `Sym²` of `SL₂`
+and uses no rank-zero object. Route: along each fibre `uv = a`, a punctured line, the smooth object
+`Be†_{SO₃, Std} ⊗ inv_a^* Be†_{2n−2}` (with `inv_a(u) = a/u`) has no compactly supported cohomology in degree `0`, being
+smooth on an affine curve, nor in degree `2`, since a geometrically constant quotient would give a common
+constituent of `Be†_{SO₃, Std}`, tame at `0`, and the dual of `inv_a^* Be†_{2n−2}`, totally wild at `0`; the
+Grothendieck–Ogg–Shafarevich formula gives rank `Sw_∞ + Sw_0 = (2n − 2) + 3 = 2n + 1`; then multiplicative
+convolution of hypergeometric objects with explicit shifts, comparison of quadratic hypergeometric objects in
+odd characteristic, and the zero spectrum fix the twist. *Needs:* §§8.1, 9.1–9.3;
+gap:arithmetic-d-module-operations; PadicDifferentialEquationsAndRigidCohomology §RD.6.55.
 
 **Checks.**
 
+- Object against trace, over `𝔽₃`, `n = 2`, `a = 1`: `R₂(1) = −1`, `R₂(2) = 2`, `U₂(1) = 7`; the `SO₃` traces are `−2/3`
+  and `1/3`, the normalized rank-two traces `1/√3` and `−2/√3`, and `Σ_{uv=1} T_{SO₃}(u) K₂(v) = −4/(3√3)`. The unshifted
+  twisted convolution has trace `−4/9`, while `T_{SO₅}(1) = (U₂(1) − 3)/3² = 4/9`; the shift `[1]` supplies the sign.
 - The trace formula carries both the cohomological sign and `Q^{−1/2}`; in raw sums it is
   `U_n(a) − Q = Σ_{uv=a} (R₂(u)² − Q) R_{2n−2}(v)`, which holds over `𝔽₃`, `𝔽₅`, `𝔽₇`, `𝔽₉` for `n = 2, 3` by direct computation.
 - The printed form `−Q^{−1/2}(U_n − Q^{n−1})` of Xu–Zhu (1.2.9.2) fails over `𝔽₂` at `n = 2`, `a = 1`: the left side is
@@ -1842,7 +1916,7 @@ gap:arithmetic-d-module-operations.
 ### Dependencies
 
 Layers 0, 1, 4, 8; CharacterSumsOverFiniteFields §3.3; gap:arithmetic-d-module-operations;
-PadicDifferentialEquationsAndRigidCohomology §§RD.6.42, RD.6.47.
+PadicDifferentialEquationsAndRigidCohomology §§RD.6.42, RD.6.47, RD.6.55.
 
 ## Layer 10: The characteristic-two comparison
 
@@ -2079,24 +2153,43 @@ agree with the usual sums over any finite enumeration. No enumeration is part of
 
 ### 11.2 Toric hypergeometric slopes
 
-For odd `p`, `n ≥ 1`, `d | p − 1` and `a ∈ 𝔽_q^×`, let `f_d = Σ_{i=1}^{2n} x_i − z^d + a z^d/∏_{i=1}^{2n} x_i` on `𝔾_m^{2n+1}`. Prove
-that `f_d` is nondegenerate, that its Newton polytope has dimension `2n + 1` and volume `d/(2n)!`, that its
-`L`-function `exp(Σ_m S_m(f_d) T^m/m)` is a polynomial of degree `d(2n + 1)`, and that its Hodge and Newton slopes
-are `j/d`, `0 ≤ j < d(2n + 1)`, each once; and that `S_m(f₂) − S_m(f₁)` is the raw quadratic hypergeometric sum
-`H_{ψ,m}(2n + 1; ρ)(a)` (Xu–Zhu Lemma 5.4.3, (5.4.3.1)–(5.4.3.2), pp. 62–63; Adolphson–Sperber, Corollary 3.11;
-Wan 2004, Corollary 2.6 and Theorem 3.1; Wan 1993, boundary decomposition). Hence the unnormalized
-quadratic hypergeometric object of §9.1 with `2n + 1` upper parameters has slopes `1/2, 3/2, …, 2n + 1/2` at every
-`a`. Route: every face not containing the origin is diagonal with lattice quotient of order `d`, ordinary because
-`d | p − 1`; Wan's boundary decomposition gives ordinarity of `f_d`; divide the two `L`-polynomials, keeping the
-sign: the unnormalized trace of the hypergeometric object is minus the raw sum (§9.1 with `n + m − 1 = 2n + 1` odd).
-*Needs:* §9.1; PadicDifferentialEquationsAndRigidCohomology §§RD.6.4, RD.6.25.
+For odd `p`, `n ≥ 1`, `d | p − 1` and `a ∈ 𝔽_q^×`, let `f_d = Σ_{i=1}^{2n} x_i − z^d + a z^d/∏_{i=1}^{2n} x_i` on `𝔾_m^{2n+1}`, and
+let `Δ(f_d)` be its Newton polyhedron, the convex hull of the origin and the exponent vectors. Prove that `f_d` is
+nondegenerate on every face of `Δ(f_d)` not containing the origin, that `Δ(f_d)` has dimension `2n + 1` and volume
+`d/(2n)!`, that the `L`-function `exp(Σ_m S_m(f_d) T^m/m)` of the toric sums `S_m` over `(𝔽_{q^m}^×)^{2n+1}` is a polynomial
+of degree `d(2n + 1)`, and that its Hodge and Newton slopes are `j/d`, `0 ≤ j < d(2n + 1)`, each once; and that
+`S_m(f₂) − S_m(f₁)` is the raw quadratic hypergeometric sum `H_{ψ,m}(2n + 1; ρ)(a)` (Xu–Zhu Lemma 5.4.3,
+(5.4.3.1)–(5.4.3.2), pp. 62–63; Adolphson–Sperber, Corollary 3.11; Wan 2004, Corollary 2.6 and Theorem 3.1;
+Wan 1993, boundary decomposition). Hence the unnormalized quadratic hypergeometric object of §9.1 with
+`2n + 1` upper parameters has slopes `1/2, 3/2, …, 2n + 1/2` at every `a`. Route: `Δ(f_d)` has vertices `0`, `e₁, …, e_{2n}`, `d e_z` and
+`(−1, …, −1, d)`; its codimension-one faces not containing the origin are the `2n + 1` simplices
+`{e₁, …, e_{2n}, d e_z}` and `{e_i (i ≠ j), d e_z, (−1, …, −1, d)}` for `1 ≤ j ≤ 2n`, each with vertex determinant `±d`, and every face
+not containing the origin lies in one of them. Since `p ∤ d`, the restriction of `f_d` to each such simplex is a
+diagonal Laurent polynomial that is nondegenerate on all its faces (gap:toric-exponential-sum-ordinarity), so
+`f_d` is nondegenerate; gap:toric-exponential-sum-hodge-bound gives the polynomiality, the degree
+`(2n + 1)! · d/(2n)! = d(2n + 1)` and Newton above Hodge; counting the lattice points of the cone over `Δ(f_d)` by
+weight gives the Hodge numbers `1` at each `j/d`, `0 ≤ j < d(2n + 1)`. For each codimension-one face `δ` not containing
+the origin the group `S(δ)` has order `d`, so its exponent divides `p − 1`, and the diagonal criterion of
+gap:toric-exponential-sum-ordinarity makes the restriction `f_d^δ` ordinary; the facial decomposition there gives
+ordinarity of `f_d`. The index `d` is a property of the codimension-one faces only, while nondegeneracy is needed on
+every face not containing the origin. Divide the two `L`-polynomials, keeping the sign: the unnormalized trace of
+the hypergeometric object is minus the raw sum (§9.1 with `n + m − 1 = 2n + 1` odd).
+*Needs:* §9.1; gap:toric-exponential-sum-hodge-bound; gap:toric-exponential-sum-ordinarity;
+PadicDifferentialEquationsAndRigidCohomology §§RD.6.4, RD.6.25.
 
 **Checks.**
 
 - `d = 1` gives slopes `0, 1, …, 2n`; `d = 2` gives `0, 1/2, 1, …, 2n + 1/2`; the quotient keeps the half-integers.
 - `S_m(f₂) − S_m(f₁)` is the raw sum, minus the unnormalized trace; the sign has valuation zero and does not move
   the polygon, but it fixes the quotient `L(f₂)/L(f₁)` as the hypergeometric determinant.
-- For `n = 1`, `p = 3`, `d = 2` the degree is `6` and the slopes are `0, 1/2, 1, 3/2, 2, 5/2`.
+- For `n = 1`, `p = 3`, `d = 2`: `Δ(f₂)` has dimension `3` and volume `1`, the degree is `3! · 1 = 6` and the slopes are
+  `0, 1/2, 1, 3/2, 2, 5/2`; for `d = 1` the volume is `1/2`, the degree `3` and the slopes `0, 1, 2`, so the quotient keeps
+  `1/2, 3/2, 5/2`.
+- Codimension-one faces only: for `n = 1`, `d = 2` the face with vertices `(1, 0, 0)`, `(0, 1, 0)`, `(0, 0, 2)` has determinant
+  `2` and `S(δ)` of order `2`, while the vertex `(1, 0, 0)`, a face of dimension `0` not containing the origin, is primitive
+  in its saturated span and has index `1`, not `2`; "every face has index `d`" is false.
+- At `p = 2`, `d = 2` the hypotheses fail twice: `d ∤ p − 1 = 1`, and on the vertex `(0, …, 0, 2)` the restriction `−z²` has
+  logarithmic derivative `z ∂_z(−z²) = −2z²`, identically zero in characteristic `2`, so `f₂` is degenerate there.
 
 ### 11.3 Everywhere ordinarity
 
@@ -2145,7 +2238,8 @@ After §11.4, prove that the companion monodromy comparison (§7.6), the central
 the local statements of §6.6 hold for type `A_{2n}` at `p = 2` as well: `H^i(ℙ¹, j_{!+} Ad(Be_H†)) = 0` and
 `Irr_∞ = rank H` for every almost-simple `H` at every `p`, and if `p ∤ |W_H|` the only nonzero adjoint upper break at
 `∞` is `1/h`; and that the normalized convolution of §9.4 and the identity (iii) of §11.1 hold at `p = 2` with the
-same half twist (Xu–Zhu Corollaries 4.5.6–4.5.7 and Remark 4.5.8(iv), pp. 53–54; §§5.3.9–5.3.11, p. 61). Route:
+same shift and half twist, `Be†_{SO_{2n+1}, Std} ≅ (Be†_{SO₃, Std} ⋆ Be†_{2n−2})[1](1/2)` for `n ≥ 2` (Xu–Zhu
+Corollaries 4.5.6–4.5.7 and Remark 4.5.8(iv), pp. 53–54; §§5.3.9–5.3.11, p. 61). Route:
 repeat the localization computation of §6.6 with the known group, without identifying adjoint representations
 through the standard comparison; apply gap:companion-monodromy; transport the convolution through §10.6.
 *Needs:* §§6.6, 7.1, 7.3, 7.6, 9.4, 10.6, 11.4; gap:companion-monodromy.
@@ -2156,6 +2250,8 @@ through the standard comparison; apply gap:companion-monodromy; transport the co
   not identify the adjoint functors of `SL_{2n+1}` and `SO_{2n+1}`.
 - For `SO₃` at `p = 2` the inertia image at `∞` is `A₄`, compatible with `Sym²` of the rank-two object.
 - `p = 2` divides `|W_H|` for every almost-simple `H`, so the `1/h` statement is never applied at `p = 2`.
+- The shift at `p = 2`, over `𝔽₂`, `n = 2`, `a = 1`: `T_{SO₃}(1) = −1/2` and `K₂(1) = −1/√2`, so the unshifted twisted
+  convolution has trace `(1/√2) · (1/(2√2)) = 1/4`, while `T_{SO₅}(1) = (U₂(1) − 2)/2² = −1/4`; `[1]` gives `−1/4`.
 
 ### Examples
 
@@ -2166,7 +2262,8 @@ through the standard comparison; apply gap:companion-monodromy; transport the co
 
 Layers 5–10; KloostermanMomentsAndPotentialAutomorphy §§1.1, 1.3 and gap:scalar-kloosterman-ordinarity;
 CongruenceSpectralGap §4.2a; gap:companion-monodromy; PadicDifferentialEquationsAndRigidCohomology
-§§RD.6.4, RD.6.25; Mathlib `gaussSum`, `quadraticChar`, `AddChar`, `PadicComplex`.
+§§RD.6.4, RD.6.25; gap:toric-exponential-sum-hodge-bound; gap:toric-exponential-sum-ordinarity;
+Mathlib `gaussSum`, `quadraticChar`, `AddChar`, `PadicComplex`.
 
 ## Downstream consumers
 

@@ -3595,6 +3595,18 @@
    "needs": "The vacuum and completed critical centres and their oper identifications for pinned split semisimple Chevalley Lie algebras over any characteristic-zero field, with a rational form and compatibility with field extension, extending the complex centre theorems of A7–A8.",
    "supplier": "AffineLieAlgebras",
    "section": "A7–A8 (vacuum and completed critical centres)"
+  },
+  {
+   "slug": "toric-exponential-sum-hodge-bound",
+   "needs": "Adolphson–Sperber (Ann. of Math. 130 (1989), Corollary 3.11): for a Laurent polynomial f in N variables over 𝔽_q, nondegenerate on every face not containing the origin of its N-dimensional Newton polyhedron Δ(f) (the convex hull of the origin and its exponents), and a nontrivial additive character of 𝔽_p, the toric L-function exp(Σ_m S*_m(f) T^m/m)^{(−1)^{N−1}} is a polynomial of degree N!·Vol(Δ(f)) whose Newton polygon for v(q) = 1 lies on or above the Hodge polygon HP(Δ(f)) defined by the weight function of Δ(f), for every p.",
+   "supplier": "PadicDifferentialEquationsAndRigidCohomology",
+   "section": "Layer RD.6 (§§RD.6.4–RD.6.7, RD.6.25: L-functions, Dwork operators, rationality)"
+  },
+  {
+   "slug": "toric-exponential-sum-ordinarity",
+   "needs": "Wan's ordinarity criteria (Asian J. Math. 8 (2004), Theorem 3.1 and Corollary 2.6; Ann. of Math. 137 (1993)): for f as in toric-exponential-sum-hodge-bound, f is ordinary (Newton polygon equal to HP(Δ(f))) if and only if its restriction to every codimension-one face of Δ(f) not containing the origin is ordinary, and a diagonal f with exponent matrix V is nondegenerate exactly when p ∤ det V and is ordinary when p ≡ 1 modulo the exponent of the group S(Δ) = {r ∈ (ℚ ∩ [0,1))^N : Vr ∈ ℤ^N} of order |det V|.",
+   "supplier": "PadicDifferentialEquationsAndRigidCohomology",
+   "section": "Layer RD.6 (§§RD.6.4–RD.6.7, RD.6.25: L-functions, Dwork operators, rationality)"
   }
  ],
  "sourceIssues": [
