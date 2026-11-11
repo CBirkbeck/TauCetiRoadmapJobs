@@ -19,7 +19,7 @@ licence_class = "publisher-open"
 status = "certified"
 accessed = "2026-10-26"
 version_note = "One work in two versions: the recorded text is the published article (Annals 2018), whose pagination the locators use; the arXiv v1 preprint (2016, fetched from https://arxiv.org/pdf/1605.08169v1 with sha256 0bc900e2c7c16fa9aff1147ec138d121b4798fab3b4deb76eed415ba7f409a99, open repository) is cited only where marked as the preprint, for the normalized Theorem 3.2, p. 16."
-cited_for = ["0.1", "0.2", "0.3", "0.4", "0.5", "0.8", "0.9", "1.1", "1.2", "1.3", "1.4", "1.5", "1.6", "1.7", "1.8", "1.9", "2.1", "2.2", "2.3", "2.4", "2.5", "2.6", "3.1", "3.2", "3.3", "3.4", "3.5", "3.6", "3.7", "3.8", "3.9", "3.10", "4.1", "4.2", "4.3", "4.4", "4.5", "4.6", "4.7", "4.8", "4.9", "5.1", "5.2", "5.3", "5.4", "5.5", "5.6", "5.7", "5.8", "Corrections to the sources"]
+cited_for = ["Exact supplier contracts", "0.1", "0.2", "0.3", "0.4", "0.5", "0.8", "0.9", "1.1", "1.2", "1.3", "1.4", "1.5", "1.6", "1.7", "1.8", "1.9", "2.1", "2.2", "2.2b", "2.3", "2.4", "2.5", "2.6", "3.1", "3.2", "3.3", "3.4", "3.5", "3.6", "3.7", "3.8", "3.9", "3.10", "4.1", "4.2", "4.3", "4.4", "4.5", "4.6", "4.7", "4.8", "4.9", "5.1", "5.2", "5.3", "5.4", "5.5", "5.6", "5.7", "5.8", "Corrections to the sources"]
 
 [[source]]
 id = "DDP11"
@@ -28,7 +28,7 @@ title = "Hilbert modular forms and the Gross-Stark conjecture"
 year = 2011
 doi = "10.4007/annals.2011.174.1.12"
 locator_scheme = "theorem"
-locator = "Proposition 1.4 and Lemma 1.5, pp. 455-456; Lemma 2.9 and Corollary 2.10, pp. 469-470; Propositions 3.3-3.4 and Lemma 3.5, pp. 472-474"
+locator = "Proposition 1.4 and Lemma 1.5, pp. 455-456; Proposition 2.1 and (48)-(51), pp. 459-460; (58) and Propositions 2.3-2.5, pp. 462-465; (68), (71) and Propositions 2.6-2.7, pp. 465-467; (79), Lemma 2.9 and Corollary 2.10, pp. 469-470; Propositions 3.3-3.4 and Lemma 3.5, pp. 472-474"
 url = "https://annals.math.princeton.edu/wp-content/uploads/annals-v174-n1-p12-p.pdf"
 fetched_from = "https://annals.math.princeton.edu/wp-content/uploads/annals-v174-n1-p12-p.pdf"
 fetched_at = "2026-10-26T22:26:26Z"
@@ -36,7 +36,7 @@ sha256 = "ea435711bca5526cdc06e57ae33fa485eebf486274b0899dc808b83bff567854"
 licence_class = "publisher-open"
 status = "certified"
 accessed = "2026-10-26"
-cited_for = ["1.2", "1.7", "2.2a", "2.6"]
+cited_for = ["Exact supplier contracts", "1.2", "1.7", "2.2a", "2.2b", "2.4", "2.5a", "2.6", "Corrections to the sources"]
 
 [[source]]
 id = "CD14"
@@ -44,7 +44,7 @@ authors = "Pierre Charollois, Samit Dasgupta"
 title = "Integral Eisenstein cocycles on GL_n, I: Sczech's cocycle and p-adic L-functions of totally real fields"
 year = 2014
 locator_scheme = "theorem"
-locator = "Theorems 2-4, pp. 3-6; Theorem 1.1, p. 9; Theorem 3.1, p. 22; Proposition 4.1 and Theorem 4.2, p. 23; Proposition 4.3, p. 26; (79)-(81), pp. 28-29; Theorems 5.1-5.2 and Lemma 5.3, pp. 30-31; proof of Theorem 5.2, (87)-(88), pp. 31-32"
+locator = "Theorems 2-4, pp. 3-6; Theorem 1.1, p. 9; Theorem 3.1 and (61), p. 22; §4.1 (the group Γ_{ℓ,p} and the measure module M_p), Proposition 4.1 and Theorem 4.2, p. 23; Proposition 4.3, p. 26; (79)-(81) and §5.2, pp. 28-29; Theorems 5.1-5.2 and Lemma 5.3, pp. 30-31; proof of Theorem 5.2, (87)-(88), pp. 31-32"
 url = "https://sites.math.duke.edu/~dasgupta/papers/Charollois-Dasgupta.pdf"
 fetched_from = "https://sites.math.duke.edu/~dasgupta/papers/Charollois-Dasgupta.pdf"
 fetched_at = "2026-10-26T22:26:29Z"

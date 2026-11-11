@@ -3499,6 +3499,24 @@
       "needs": "The statements of §§5.10–5.13 (Hida-family presentation, Fourier injectivity on S°(𝔫,χ)_(1), reducedness of T_(𝔪) when the prime-to-p part of the conductor of χ equals the tame level 𝔫, and the total quotient ring as a product of eigenfamily fields L_{H_i} with c(𝔩,H_i) ≡ 1 + χ(𝔩) for 𝔩 ∤ 𝔫p and c(𝔮,H_i) ≡ 1 for 𝔮 | 𝔫p modulo 𝔪_{H_i}) on the families of gap:p-ramified-hilbert-coefficient-families, for every prime p.",
       "supplier": "PadicFamilies",
       "section": "§§5.10–5.13"
+    },
+    {
+      "slug": "reversed-ordinary-eisenstein-family",
+      "needs": "For odd p and a totally odd finite-order χ of conductor 𝔫 prime to p with χ(𝔮) = 1 for every 𝔮 | p, the reversed ordinary Eisenstein family E(χ,1) ∈ M(𝔫,χ) ⊗_Λ Frac(Λ), regular at every integer k ≥ 1, whose weight-k specialization for k ≥ 2 is the ordinary member E_k(χ, ω^(1−k)) of the pair (χ, ω^(1−k)), with T_𝔩-eigenvalue χ(𝔩) + ε(𝔩) for 𝔩 ∤ 𝔫p, U_𝔩-eigenvalue ε(𝔩) for 𝔩 | 𝔫 and 1 for 𝔮 | p, weight-one specialization E_1(1, χ_S), and standard constants 0 when 𝔫 ≠ 1 and 2^(−[F:ℚ])χ⁻¹(λ)ℒ_(χ⁻¹) when 𝔫 = 1 (Dasgupta–Kakde–Ventullo §3.1 and (30); Dasgupta–Darmon–Pollack Proposition 2.1).",
+      "supplier": "NoncommutativeAndEquivariantIwasawa",
+      "section": "§F.5"
+    },
+    {
+      "slug": "weight-one-hilbert-eisenstein-series",
+      "needs": "For every totally real F and every totally odd narrow ray class character η of modulus 𝔟 (possibly imprimitive), the holomorphic Hilbert modular form E_1(1,η) of parallel weight one, level 𝔟 and character η, defined as the value at s = 0 of Hecke's regularized series, with normalized coefficients Σ_(𝔯 | 𝔪, (𝔯,𝔟) = 1) η(𝔯) and standard constants 2^(−[F:ℚ])L_𝔟(η,0) when 𝔟 ≠ 1 and 2^(−[F:ℚ])(L(η,0) + η⁻¹(λ)L(η⁻¹,0)) when 𝔟 = 1 (Dasgupta–Darmon–Pollack Proposition 2.1, (48), (50)–(51); Dasgupta–Kakde–Ventullo §3.1 and footnote 6).",
+      "supplier": "OrdinaryAutomorphicFormsAndModularityLifting",
+      "section": "§2.12"
+    },
+    {
+      "slug": "weight-one-hilbert-forms-and-products",
+      "needs": "The §F.5 classical Hilbert form spaces hilbertForms with hilbertQExpansion at every cusp of every narrow-class component, normalized ideal coefficients, standard constants, q-expansion principle and Hecke and level-dividing operators also in parallel weight one; and, for parallel weights k, k′ ≥ 1, the multiplication M_k(𝔟,η) × M_k′(𝔠,ψ) → M_(k+k′)(lcm(𝔟,𝔠), ηψ) of classical forms, compatible with the slash action, whose expansion at every cusp of every component is the product of the two expansions.",
+      "supplier": "NoncommutativeAndEquivariantIwasawa",
+      "section": "§F.5"
     }
   ],
   "restructure": [],
