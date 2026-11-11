@@ -93,8 +93,9 @@ What is stated elsewhere is consumed by section:
   7.5–7.6), the classical subcategory and the agreement of filtrations (§§8.1–8.2), exponential
   pair cohomology with its de Rham fibre, Künneth, duality, middle-degree weights and divisor
   sequences (§§9.1–9.5), the classicality of `t·g` and the zero-locus comparison (§§10.1–10.2),
-  Fourier costalks, pure-input Hodge numbers, the constant correction of `Π`, regular stationary
-  phase and the weights at infinity (§§11.2–11.6), and the logarithmic and Newton descriptions of
+  the Fourier cohomology of a mixed Hodge module on the line, Fourier costalks, pure-input Hodge
+  numbers, the constant correction of `Π`, regular stationary phase and the weights at infinity
+  (§§11.1–11.6), and the logarithmic and Newton descriptions of
   the irregular filtration with the constant boundary correction of a Laurent Gauss–Manin system
   (§§12.1–12.8).
 - ComplexComparisonPartII §§C5.6–C5.7 owns regular singular connections, the canonical logarithmic
@@ -281,9 +282,10 @@ keeps the reductive-group Bessel constructions and the `F`-isocrystal companion 
   Rham fibre, Künneth and duality, the middle-degree weight statement, divisor sequences, the
   classicality of `t·g` on `𝔸¹ × V` and its `*0`/`!0` variants (FSY Theorem A.24), and the zero-locus
   comparison `H_c^a(𝔸¹ × V, tg) ≅ H_c^{a−2}(K)(−1)`, `H^a(𝔸¹ × V, tg) ≅ H_K^a(V)` (FSY Example A.27).
-- §§11.2–11.6: the Fourier costalk and pure-input Hodge-number formulas, the constant correction of
-  `Π`, regular stationary phase at eigenvalue one and the monodromy weights at infinity (FSY
-  Theorem A.30, Corollary A.31).
+- §§11.1–11.6: the mixed Hodge structures `H^j(𝔸¹_t, FT M^H)` and `H^j_c(𝔸¹_t, FT M^H)` of a mixed
+  Hodge module on `𝔸¹_τ` with their long exact sequences (FSY Notation A.29), the Fourier costalk
+  and pure-input Hodge-number formulas, the constant correction of `Π`, regular stationary phase at
+  eigenvalue one and the monodromy weights at infinity (FSY Theorem A.30, Corollary A.31).
 - §§12.1–12.8: the logarithmic filtration on good and nondegenerate compactifications, filtered
   invariance under the explicit blow-ups, model independence and `E₁` degeneration, the Newton
   filtration of a Newton-nondegenerate Laurent polynomial with its agreement with the irregular
@@ -1035,9 +1037,9 @@ its de Rham fibre, Künneth and duality).
 
 ### 3.6 Inverse Fourier Kloosterman objects
 
-On the dual line `𝔸¹_τ` let `M = FT⁻¹(j_{0,!*}Sym^k K̃l_r)`, the inverse Fourier transform of the
-intermediate extension at `0`, and let `Π` be the exponential projector of
-MixedHodgeModulesAndIrregularHodgeTheory §6.2 with unit `η : N → ΠN`. Prove that `M` is regular
+Let `r = n + 1 ≥ 2` and `k ≥ 1`. On the dual line `𝔸¹_τ` let `M = FT⁻¹(j_{0,!*}Sym^k K̃l_r)`, the
+inverse Fourier transform of the intermediate extension at `0`, and let `Π` be the exponential
+projector of MixedHodgeModulesAndIrregularHodgeTheory §6.2 with unit `η : N → ΠN`. Prove that `M` is regular
 holonomic, that `ΠM ≅ FT⁻¹(j_{0,+}Sym^k K̃l_r)` and that `η` gives an exact sequence
 `0 → M → ΠM → M′ → 0` of regular holonomic modules with `M′` constant (FSY (2.17)–(2.20),
 pp. 16–17). Let
@@ -1066,7 +1068,29 @@ proves the following facts.
 - The kernel and cokernel of `H⁰g_{r,k,!}O → H⁰g_{r,k,+}O` are constant, since `g_{r,k}` is a
   convenient Newton-nondegenerate Laurent polynomial (MixedHodgeModulesAndIrregularHodgeTheory
   §12.8).
-- `M^H` forgets to `M` and has weight `nk`; the degree-one de Rham fibre has weight `nk + 1`.
+- `M^H` forgets to `M` and is pure of weight `nk`. Its exponential de Rham fibre
+  `ω(M) = H¹_dR(𝔸¹_τ, M ⊗ E^τ)` is identified by `ω(η)` with `ω(ΠM)` and is the fibre at `t = 1` of
+  `FT M = j_{0,!*}Sym^k K̃l_r`, of dimension `binomial(r − 1 + k, k)`. With `W_jω(ΠM) = ω(W_jM^H)`
+  it is pure of exponential weight `nk`: a pure input gives its own weight, with no shift
+  (MixedHodgeModulesAndIrregularHodgeTheory §§6.4–6.5; FSY Remark A.6 and (A.8)–(A.9), p. 64).
+- The Fourier cohomology `H¹(𝔸¹_t, FT M^H)` of MixedHodgeModulesAndIrregularHodgeTheory §11.1 is a
+  different object from this fibre. `M` is irreducible and not punctual, so it has no section
+  supported at `τ = 0`, and §11.3 there gives
+  `H¹(𝔸¹_t, FT M^H) ≅ coker(N : ψ_{τ,1}M^H → ψ_{τ,1}M^H(−1))`. The weight filtration of
+  `ψ_{τ,1}M^H` is the monodromy filtration of `N` centred at `nk − 1` (§5.3
+  there). Let `P_i ⊂ gr^W_{nk−1+i}ψ_{τ,1}M^H`, `i ≥ 0`, be its primitive parts. Then
+  `gr^W_{nk+1+i}H¹(𝔸¹_t, FT M^H) ≅ P_i(−1)`. So the weights are `≥ nk + 1`, and the space is pure of
+  weight `nk + 1` exactly when `N = 0` on `ψ_{τ,1}M^H`, for instance when `M` is smooth at `τ = 0`
+  (FSY Corollary A.31(1)–(2), p. 72; proof of Theorem 3.2, p. 20).
+- Fourier cohomology applied to `0 → M^H → ΠM^H → M′^H → 0` gives an exact sequence of mixed Hodge
+  structures `0 → H¹(𝔸¹_t, FT M^H) → H¹(𝔸¹_t, FT ΠM^H) → H¹(𝔸¹_t, FT M′^H) → 0`. The outer zeros hold
+  because `H⁰` of the Fourier cohomology of a constant module vanishes, and so does ordinary Fourier
+  cohomology in degree two (§11.1 there). By §11.4 there the quotient has weights `≥ nk + 2`. The
+  middle term is `H^{nk+1}(𝔾_m^{nk+1}, t·g_{r,k})^{S_k,χ_n}`, the structure realizing
+  `H¹(𝔾_m, Sym^k K̃l_r)` in §3.5; its de Rham fibre is `H¹_dR(𝔸¹_t, j_{0,+}Sym^k K̃l_r)`. Indeed, as pair
+  cohomology (§9.1 there) the fibre `t = 0` contributes `RΓ(𝔸¹_τ, ΠM^H) = 0`, constant objects in `τ`
+  contribute nothing over `t ≠ 0`, and `(t·g_{r,k})_* = (tτ)_* ∘ (id × g_{r,k})_*` (FSY proof of
+  Theorem 3.2, p. 20, and of Proposition 4.20, p. 32).
 
 **Checks.**
 
@@ -1078,6 +1102,18 @@ proves the following facts.
   formal factors `E^{±2t}` at `∞` (§2.3), so slopes `1, 1` and irregularity `2`. So §6.6 applies with
   input `M`, not with input `j_{0,!*}K̃l₂`, and gives `ΠM` of rank `2`.
 - The pure Hodge module `M^H` has weight `nk`, not `nk + 1`.
+- Negative control for a weight shift, `r = 2`, `k = 2`. The exponential fibre `ω(M)` is the fibre of
+  `Sym² K̃l₂` at `t = 1`, of dimension `3` and exponential weight `2 = nk`. `M` has rank `2` and is
+  singular at `0` (§5.4), with local monodromy one Jordan block of size two. So `P₀ = 0` and `P₁` is
+  one-dimensional, and `H¹(𝔸¹_t, FT M^H) = P₁(−1) = ℚ(−2)` has dimension `1`, type `(2, 2)` and weight
+  `4 = nk + 2`. Together with the class `(3, 3)` of `H¹(𝔸¹_t, FT M′^H)` this gives the two classes of
+  §6.4. Neither the fibre nor the Fourier cohomology has weight `nk + 1 = 3`.
+- `r = 2`, `k = 3`. `M` is smooth at `0` (§5.4), so `H¹(𝔸¹_t, FT M^H) = ψ_τM^H(−1)` has dimension
+  `rank M = 3` and is pure of weight `4 = nk + 1`. These are the middle classes `(1, 3), (2, 2), (3, 1)`
+  of §6.4. The fibre `ω(M)` has dimension `4` and exponential weight `3`.
+- `k = 0` is excluded. There `j_{0,!*}O_{𝔾_m} = O_{𝔸¹}` and `M = FT⁻¹O = δ_0` is punctual, so §11.3 of
+  MixedHodgeModulesAndIrregularHodgeTheory does not apply, and indeed
+  `H⁰_dR(𝔸¹_t, FT δ_0) = H⁰_dR(𝔸¹_t, O) = ℂ ≠ 0`.
 - For `r = 2` the quotient `M′^H` is pure of weight `2k + 1` as a mixed Hodge module on `𝔸¹`, being
   `a^*V[1]` for a constant variation `V` of weight `2k`. In contrast `ΠM^H` is not pure, having the
   weights `k` and `2k + 1`.
@@ -1088,10 +1124,12 @@ proves the following facts.
   weight `4`, the top class `(2, 2)` of §6.4.
 
 *Needs:* §§3.1, 3.2, 3.5; MixedHodgeModulesAndIrregularHodgeTheory §§2.2, 6.1, 6.2, 6.6 (Fourier
-transform, exponential structures, projector, Fourier localization), §§4.3, 4.6, 5.1–5.2 (pure and
-mixed Hodge modules, direct images and weights), §11.4 (constant correction) and §12.8 (constant
-boundary of a Laurent Gauss–Manin system); SpringerResolutionAndCharacteristicCycles §§9.6–9.7
-(intermediate extension, regular holonomic modules).
+transform, exponential structures, projector, Fourier localization), §§6.4–6.5 (exponential weight
+filtration, de Rham fibre), §§4.3, 4.6, 5.1–5.3 (pure and mixed Hodge modules, direct images, weights,
+nearby cycles), §9.1 (pair cohomology), §§11.1–11.4 (Fourier cohomology, costalk, pure-input
+formula, constant correction) and §12.8 (constant boundary of a Laurent Gauss–Manin system);
+SpringerResolutionAndCharacteristicCycles §§9.6–9.7 (intermediate extension, regular holonomic
+modules).
 
 ### Examples
 
@@ -1123,9 +1161,19 @@ the maps on `gr^W_{nk+1}` identify both extreme graded pieces with the middle co
 *Proof sketch.* The potential on the cover is `t·g_{r,k}` on `𝔸¹ × 𝔾_m^{nk}` after adding the constant
 `𝔸¹`-factor, so MixedHodgeModulesAndIrregularHodgeTheory §10.1 (the classical `t·g` criterion)
 applies; its §8.2 identifies the filtrations. Transfer to `Sym^k K̃l_r` through `e^S_χ` and to
-`Sym^k Kl_r` through `e_χ` (§§3.2, 3.5), which is the finite cyclic descent of §2.2. The pure
-Gauss–Manin subobject of §3.6 and strictness of weights identify the lowest weight with the middle
-cohomology (its §9.4, the middle-degree weight statement).
+`Sym^k Kl_r` through `e_χ` (§§3.2, 3.5), which is the finite cyclic descent of §2.2. The weight bounds
+are those of MixedHodgeModulesAndIrregularHodgeTheory §9.4 in the central degree `nk + 1`. For
+`H¹_mid = W_{nk+1}H¹` on the cover, that is for `Sym^k K̃l_r`, use the Fourier-cohomology facts of
+§3.6. They put `W_{nk+1}H¹` inside `H¹(𝔸¹_t, FT M^H)`, where it has dimension `dim P₀`, and the pure
+middle space `H¹(ℙ¹_t, j_{!*}Sym^k K̃l_r)` (§3.4) lies there too. The codimension of the middle space
+in `H¹(𝔸¹_t, FT M^H)`, whose dimension is `Σ_{i≥0} dim P_i`, is the dimension of the cokernel of the
+monodromy logarithm on the unipotent nearby cycles of the regular formal part of `FT M` at `∞`, since
+the irregular part contributes nothing. Stationary phase at the origin
+(gap:irregular-stationary-phase) matches this with the cokernel of `N` on `φ_{τ,1}M`, which has
+dimension `Σ_{i≥1} dim P_i` because `M` is an intermediate extension at `0`. So the middle space has
+dimension `dim P₀` and equals `W_{nk+1}H¹`, and the criterion of
+MixedHodgeModulesAndIrregularHodgeTheory §9.4 gives the isomorphism on `gr^W_{nk+1}`; taking
+`μ_r`-invariants gives the statement for `Sym^k Kl_r` (FSY proof of Theorem 3.2, pp. 20–21).
 
 **Checks.**
 
@@ -1135,8 +1183,11 @@ cohomology (its §9.4, the middle-degree weight statement).
 - For `r = 2`, `k = 3` the full `H¹` has dimension two with weights `4` and `8` (§6.6), so `H¹` is not
   pure and `W₄H¹` is the one-dimensional middle part.
 
-*Needs:* §§2.2, 3.2, 3.5–3.6; MixedHodgeModulesAndIrregularHodgeTheory §§8.1–8.2, 9.1–9.4 and 10.1;
-Tau Ceti `TauCeti.Hodge.MixedHodgeStructure` and its strictness theorems.
+*Needs:* §§2.2–2.3, 3.2, 3.4–3.6; MixedHodgeModulesAndIrregularHodgeTheory §§8.1–8.2, 9.1–9.4,
+10.1 and 11.1–11.4, and §11.5 with its irregular stationary phase (gap:irregular-stationary-phase);
+PadicDifferentialEquationsAndRigidCohomology §RD.6.52a (formal decomposition at `∞`);
+SpringerResolutionAndCharacteristicCycles §9.6 (intermediate extension); Tau Ceti
+`TauCeti.Hodge.MixedHodgeStructure` and its strictness theorems.
 
 ### 4.2 The moment hypersurfaces
 
@@ -1252,7 +1303,8 @@ F.6; DeligneWeightsAndPurity §7.12.
 ### Dependencies
 
 Layers 1–3. Other roadmaps: MixedHodgeModulesAndIrregularHodgeTheory, MotivesAndAlgebraicCycles,
-CongruenceSpectralGap, EtaleCohomologyFoundations, DeligneWeightsAndPurity, SchemeAndStackFoundations.
+CongruenceSpectralGap, EtaleCohomologyFoundations, DeligneWeightsAndPurity, SchemeAndStackFoundations,
+PadicDifferentialEquationsAndRigidCohomology, SpringerResolutionAndCharacteristicCycles.
 Libraries: Tau Ceti.
 
 ## Layer 5: rank-two explicit structure
