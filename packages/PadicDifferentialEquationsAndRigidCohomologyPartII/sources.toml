@@ -17,7 +17,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-26"
 version_note = "arXiv v3"
-cited_for = ["MS.0.1-MS.0.11", "MS.1.1-MS.1.9", "MS.2.1-MS.2.8", "MS.3.1-MS.3.10", "MS.4.1-MS.4.8", "MS.5.7", "MS.6.1-MS.6.14"]
+cited_for = ["MS.0.1-MS.0.11", "MS.1.1-MS.1.9", "MS.2.1-MS.2.9", "MS.3.1-MS.3.10", "MS.4.1-MS.4.8", "MS.5.7", "MS.6.1-MS.6.14"]
 
 [[source]]
 id = "DAD"
