@@ -867,14 +867,14 @@ CrystallineCohomology §CR.4.7, isocrystal slope decomposition; PadicDifferentia
 
 ## Layer 4: Hodge–Witt cohomology with supports and the action of correspondences
 
-To compare the Witt cohomology of different resolutions of a singularity without resolution of singularities, Chatzistamatiou and Rülling let algebraic correspondences act on relative Hodge–Witt cohomology. This needs pushforwards along proper maps of smooth schemes, which come from Ekedahl's duality theory for the de Rham–Witt complex, and Gros's cycle classes; together they make Hodge–Witt cohomology with supports a weak cohomology theory with supports, and Chow groups with supports map to it uniquely. A degree-zero correspondence supported over a proper closed subset of its target acts by zero on the WO-part, and a correspondence supported over a proper closed subset of its source acts by zero on the Wω-part, up to a bounded integer coming from an alteration.
+To compare the Witt cohomology of different resolutions of a singularity without resolution of singularities, Chatzistamatiou and Rülling let algebraic correspondences act on relative Hodge–Witt cohomology. This needs pushforwards along proper maps of smooth schemes, which come from Ekedahl's duality theory for the de Rham–Witt complex, and Gros's cycle classes; together they make Hodge–Witt cohomology with supports a weak cohomology theory with supports, and Chow groups with supports map to it uniquely. A degree-zero correspondence supported over a closed subset of positive codimension in its target (one containing no irreducible component of the target) acts by zero on the WO-part, and a correspondence supported over a closed subset of positive codimension in its source acts by zero on the Wω-part, up to a bounded integer coming from an alteration.
 
 Finite-type k-schemes in this layer, including bases and auxiliary schemes, are quasi-projective over k, as in CR12 §§2–4. A generic fibre or scalar extension is quasi-projective over its own ground field. Point-count applications use projective schemes.
 
 
 ### 4.1 The Witt canonical system and Ekedahl duality
 
-Let k be a perfect field and X a k-scheme of finite type of pure dimension d with structure map π: X → Spec k. For n ≥ 1 let `K_{X,n}` := W_n(π)^!(W_n(k)) be the dualizing complex of the W_n(k)-scheme W_nX (upper shriek of the finite type morphism W_nX → Spec W_n(k)); the `K_{X,n}` form a projective system (a Witt dualizing system) with Frobenius, Verschiebung and restriction. The Witt canonical system is W_nω_X := `H^{−d}(K_{X,n})` and Wω_X := lim_n W_nω_X. Properties: (1) W_1ω_X = `H^{−d}(π^!k)` is the canonical sheaf ω_X of X, defined for every such X as the (−d)-th cohomology sheaf of the dualizing complex π^!k (SchemeAndStackFoundations §2.21); when X is Cohen–Macaulay it is the dualizing module of SchemeAndStackFoundations §2.20, and when X is normal it is j_\*Ω^d_U for the inclusion j of the smooth locus U; (2) `K_{X,n}` is concentrated in degrees [−d, 0], and W_nω_X[d] → `K_{X,n}` is a quasi-isomorphism when X is Cohen–Macaulay; (3) W_nω_X is a coherent S2 sheaf on W_nX; (4) for X smooth, use W_•ω_X ≅ W_•Ω^d_X from CrystallineCohomology §CR.3:duality.1 (proper smooth crystalline trace: Tr^Ek is an isomorphism compatible with étale maps), and W_•Ω^•_X is self-dual: the product pairing W_nΩ^i ⊗ `W_nΩ^{d−i}` → W_nΩ^d induces an isomorphism of the Cousin complex of W_•Ω_X with its dual (Ekedahl); (5) for a proper morphism f: X → Y between k-schemes of the same pure dimension there is a trace f_\*: f_\*W_•ω_X → W_•ω_Y, compatible with composition and localization; (6) 0 → `W_{n−1}ω_X` →(p) W_nω_X `→(F^{n−1})` ω_X is exact, and right exact if X is CM. (CR12, Definition 4.1.2, Remark 4.1.3, Proposition 4.1.4 and proof, pp. 73–75; CR12, §1.6–1.10, in particular Corollaries 1.10.5–1.10.6, pp. 16–33; CR12, Introduction 0.3, p. 4; Eke84, Theorem 4.1 and (2.11), and EkeII, both cited by locator).
+Let k be a perfect field and X a k-scheme of finite type of pure dimension d with structure map π: X → Spec k. For n ≥ 1 let `K_{X,n}` := W_n(π)^!(W_n(k)) be the dualizing complex of the W_n(k)-scheme W_nX (upper shriek of the finite type morphism W_nX → Spec W_n(k)); the `K_{X,n}` form a projective system (a Witt dualizing system) with Frobenius, Verschiebung and restriction. The Witt canonical system is W_nω_X := `H^{−d}(K_{X,n})` and Wω_X := lim_n W_nω_X. Properties: (1) W_1ω_X = `H^{−d}(π^!k)` is the canonical sheaf ω_X of X, defined for every such X as the (−d)-th cohomology sheaf of the dualizing complex π^!k (SchemeAndStackFoundations §2.21); when X is Cohen–Macaulay it is the dualizing module of SchemeAndStackFoundations §2.20, and when X is normal it is j_\*Ω^d_U for the inclusion j of the smooth locus U; (2) `K_{X,n}` is concentrated in degrees [−d, 0], and W_nω_X[d] → `K_{X,n}` is a quasi-isomorphism when X is Cohen–Macaulay; (3) W_nω_X is a coherent S2 sheaf on W_nX; (4) for X smooth, use W_•ω_X ≅ W_•Ω^d_X from CrystallineCohomology §CR.3:duality.1 (proper smooth crystalline trace: Tr^Ek is an isomorphism compatible with étale maps), and W_•Ω^•_X is self-dual: let E(−) be the Cousin complex for the codimension filtration on X and K_X = ((W_nπ)^Δ W_n(k))_n the Witt residual complex of X, the residual complex representing the dualizing system (`K_{X,n}`)_n, concentrated in de Rham–Witt degree 0; then K_X ≅ E(W_•ω_X)(d)[d], and the product pairing W_nΩ^i ⊗ `W_nΩ^{d−i}` → W_nΩ^d induces µ_X: E(W_•Ω_X) ≅ Hom(W_•Ω_X, K_X)(−d)[−d], where (m) shifts the de Rham–Witt grading and [m] the cohomological degree (Ekedahl); (5) for a proper morphism f: X → Y between k-schemes of the same pure dimension there is a trace f_\*: f_\*W_•ω_X → W_•ω_Y, compatible with composition and localization; (6) 0 → `W_{n−1}ω_X` →(p) W_nω_X `→(F^{n−1})` ω_X is exact, and right exact if X is CM. (CR12, Definition 4.1.2, Remark 4.1.3, Proposition 4.1.4 and proof, pp. 73–75; CR12, §1.6–1.10, in particular Corollaries 1.10.5–1.10.6, pp. 16–33; CR12, Introduction 0.3, p. 4; Eke84, Theorem 4.1 and (2.11), and EkeII, both cited by locator).
 
 k perfect; X of finite type and pure dimension d; duality for the finite type W_n(k)-schemes W_nX. The smooth top-form trace identification is imported from CrystallineCohomology §CR.3:duality.1; full product self-duality uses CR12 §1.10.
 
@@ -888,7 +888,7 @@ The construction has the following API.
 - If X is Cohen–Macaulay, W_nω_X[d] ≅ `K_{X,n}`.
 - Proper f: X → Y of the same pure dimension gives f_\*: f_\*W_•ω_X → W_•ω_Y, with (g ∘ f)_\* = g_\* ∘ g_\*(f_\*) and compatibility with restriction to opens.
 - 0 → `W_{n−1}ω_X` →(p) W_nω_X `→(F^{n−1})` ω_X is exact, and surjective on the right for X CM.
-- For X smooth, the product pairing induces E(W_•Ω_X) ≅ Hom(W_•Ω_X, K_X)(−N)[−N].
+- For X smooth of pure dimension d, with E the Cousin complex for the codimension filtration and K_X the Witt residual complex representing (`K_{X,n}`)_n: K_X ≅ E(W_•ω_X)(d)[d], and the product pairing induces µ_X: E(W_•Ω_X) ≅ Hom(W_•Ω_X, K_X)(−d)[−d], compatibly with étale base change.
 
 A proof route is the following.
 
@@ -906,6 +906,7 @@ A proof route is the following.
 - For the affine cone X over an abelian surface A in a projectively normal embedding, X is normal of dimension 3 but not Cohen–Macaulay (H¹(A, O_A) has dimension 2 ≠ 0), so the Cohen–Macaulay dualizing module of SchemeAndStackFoundations §2.20 is not defined on X; ω_X = `H^{−3}(π^!k)` still exists and equals j_\*Ω³_U on the smooth locus U = X minus the vertex, while π^!k has cohomology outside degree −3. A definition of W_1ω_X through the Cohen–Macaulay module would exclude this normal X.
 - For X smooth of dimension d, W_1ω_X = Ω^d_X.
 - For X = P¹, the point cycle has trace 1 and the product pairs H⁰(WO) = W(k) with H¹(WΩ¹) = W(k); this agrees with the parent’s top-form trace, whose dimension-one sign is (−1)^0 = 1.
+- The shifts in µ_X are by the dimension d of X. For X = Spec k (d = 0) there is no shift: E(W_n(k)) = W_n(k) = `K_{X,n}` in degree 0 and µ_X is the identification W_n(k) ≅ Hom(W_n(k), W_n(k)). For X = P¹ (d = 1) and n = 1, `K_{X,1}` ≅ E(Ω¹)[1] has its cohomology Ω¹ in degree −1; in de Rham–Witt degree 0, µ_X identifies E(O_X), a resolution of O_X in degrees 0 and 1, with Hom(Ω¹, `K_{X,1}`)[−1] = Hom(Ω¹, E(Ω¹)), also in degrees 0 and 1. Without the shift [−1] the right side would sit in degrees −1 and 0.
 
 These results apply to CR12, Definition 4.4.4 (3), p. 82: Witt-rational singularities ask `R^if_*Wω_{X,ℚ}` = 0 for quasi-resolutions; CR12, §2.3, (2.3.1)–(2.3.4), p. 39: Ekedahl's self-duality defines the pushforward on Hodge–Witt cohomology with supports; §4.2: the duality isomorphism µ_X.
 
@@ -930,7 +931,7 @@ The construction has the following API.
 
 A proof route is the following.
 
-1. Write K_X ≅ E(W_•ω_X)(N)[N] (§4.1) and D_X = Hom(−, K_X). For f in Sm\*/S, compose µ_X: E(W_•Ω_X) ≅ D_X(W_•Ω_X)(−N)[−N], the transformation θ_f: f_ΦD_X → Γ_ΨD_Y(f_\*−) from the trace, D(f^\*), and `µ_Y^{−1}`; this gives Rf_ΦW_•Ω_X → RΓ_ΨW_•Ω_Y(−r)[−r] and, after Ra_\* and Rlim, f_\*.
+1. Let d_X = dim X and d_Y = dim Y, so r = d_X − d_Y (for X, Y not pure-dimensional, work on each pair of connected components). Write K_X ≅ E(W_•ω_X)(d_X)[d_X] for the Witt residual complex of §4.1 and D_X = Hom(−, K_X), and likewise for Y. For f in Sm\*/S, compose µ_X: E(W_•Ω_X) ≅ D_X(W_•Ω_X)(−d_X)[−d_X], the transformation θ_f: f_ΦD_X → Γ_ΨD_Y(f_\*−) from the trace, D(f^\*), and `µ_Y^{−1}`: D_Y(W_•Ω_Y)(−d_Y)[−d_Y] ≅ E(W_•Ω_Y); the shifts combine to (d_Y − d_X)[d_Y − d_X] = (−r)[−r], which gives Rf_ΦW_•Ω_X → RΓ_ΨW_•Ω_Y(−r)[−r] and, after Ra_\* and Rlim, f_\*.
 2. Functoriality and the compatibilities follow from those of θ_f and µ_X (CR12 Proposition 2.3.3).
 3. f_\*f^\* = deg f for finite f: Gros's computation through the trace of finite flat morphisms (SchemeAndStackFoundations §2.21, trace_finite).
 
@@ -940,7 +941,7 @@ A proof route is the following.
 - id_\* = id.
 - At level n = 1, f_\* is the pushforward on Hodge cohomology with supports of Chatzistamatiou–Rülling 2011 (Grothendieck duality trace).
 - For the relative Frobenius F: A¹ → `A¹^{(1)}` (finite of degree p), F_\*F^\* = p ≠ 1 on W_•O: the pushforward is not an inverse of pullback for nontrivial finite maps.
-- For the Frobenius-twisted `F_{X/k}`: X → `X^{(1)}` of degree `p^{dim X}`, F_\* F^\* = `p^{dim X}`.
+- For X smooth and connected, the relative Frobenius `F_{X/k}`: X → `X^{(1)}` is finite of degree `p^{dim X}` and F_\* F^\* = `p^{dim X}`; on a disconnected X the degree formula holds component by component.
 
 These results apply to CR12, Proposition 3.5.6 (ii), p. 64: the graph of a proper morphism acts by the pushforward; CR12, Lemmas 3.6.1–3.6.2, pp. 67–68: pushforward along a smooth alteration of a closed subset shifts bidegree by its codimension; CR12, Lemma 4.2.4, p. 77: u_\*u^\* = deg u for universal homeomorphisms between normal schemes.
 
@@ -1047,7 +1048,7 @@ These results apply to CR12, Theorem 4.3.3, p. 79: the correspondences α, β, �
 
 ### 4.6 Correspondences supported in positive codimension kill WO- and Wω-cohomology up to bounded torsion
 
-Let S be a k-scheme, X → S and Y → S in C_S, Z ⊂ X ×_S Y a closed subset proper over Y, and r ≥ 0. (i) If every point of Z maps to a point of codimension ≥ r in Y, there is N ≥ 1 with N · image(Ĥ([Z]/S)) ⊂ `⊕_{p ≥ r, q ≥ r}` R^qg_\*WΩ^p_Y. (ii) If X is equidimensional of dimension d and every point of Z maps to a point of codimension ≥ r in X, there is N ≥ 1 with N · `⊕_{p > d−r or q > d−r}` R^qf_\*WΩ^p_X ⊂ ker Ĥ([Z]/S). Write i = (codimension of Z in X × Y) − dim X for the degree of [Z] (X, Y connected); Ĥ([Z]/S) raises both p and q by i (§4.5). (iii) In particular, let r ≥ 1. If Z lies over a proper closed subset of Y, the composite of Ĥ([Z]/S) with the projection onto the target WO-part ⊕_q R^qg_\*WO_Y is killed by N; if moreover [Z] has degree 0, then Ĥ([Z]/S) maps ⊕_q R^qf_\*WO_X into ⊕_q R^qg_\*WO_Y and N kills this restriction. If Z lies over a proper closed subset of X (equidimensional of dimension d), N kills the restriction of Ĥ([Z]/S) to the source Wω-part ⊕_q R^qf_\*Wω_X = ⊕_q R^qf_\*WΩ^d_X, whatever the degree of [Z]. A correspondence of nonzero degree lying over a proper closed subset of Y need not act by a torsion map on the source WO-part (the point Check below). (CR12, Lemma 3.6.1 and Lemma 3.6.2 with proofs, Remark 3.6.3, pp. 67–68).
+Let S be a k-scheme, X → S and Y → S in C_S, Z ⊂ X ×_S Y a closed subset proper over Y, and r ≥ 0. (i) If every point of Z maps to a point of codimension ≥ r in Y, there is N ≥ 1 with N · image(Ĥ([Z]/S)) ⊂ `⊕_{p ≥ r, q ≥ r}` R^qg_\*WΩ^p_Y. (ii) If X is equidimensional of dimension d and every point of Z maps to a point of codimension ≥ r in X, there is N ≥ 1 with N · `⊕_{p > d−r or q > d−r}` R^qf_\*WΩ^p_X ⊂ ker Ĥ([Z]/S). Write i = (codimension of Z in X × Y) − dim X for the degree of [Z] (X, Y connected; on each pair of connected components otherwise); Ĥ([Z]/S) raises both p and q by i (§4.5). (iii) In particular, take r = 1. The hypothesis of (i) with r = 1 says that the projection of Z to Y contains no irreducible component of Y (positive codimension on every component); for connected Y this means that the projection is a proper closed subset, but for disconnected Y a whole connected component is a proper closed subset of codimension 0. If every point of Z maps to a point of codimension ≥ 1 in Y, the composite of Ĥ([Z]/S) with the projection onto the target WO-part ⊕_q R^qg_\*WO_Y is killed by N; if moreover [Z] has degree 0, then Ĥ([Z]/S) maps ⊕_q R^qf_\*WO_X into ⊕_q R^qg_\*WO_Y and N kills this restriction. If X is equidimensional of dimension d and every point of Z maps to a point of codimension ≥ 1 in X, N kills the restriction of Ĥ([Z]/S) to the source Wω-part ⊕_q R^qf_\*Wω_X = ⊕_q R^qf_\*WΩ^d_X, whatever the degree of [Z]. A correspondence of nonzero degree whose projection to Y has positive codimension need not act by a torsion map on the source WO-part (the point Check below). (CR12, Lemma 3.6.1 and Lemma 3.6.2 with proofs, Remark 3.6.3, pp. 67–68).
 
 Z proper over Y; N is the degree of a field extension coming from an alteration (N = 1 under resolution of singularities). The degree-zero hypothesis in the WO-consequence of (iii) is what the consumers use: the error cycles in §5.4 and §5.12 have the dimension of the target.
 
@@ -1057,13 +1058,14 @@ A proof route is the following.
 
 1. (i) Choose by an alteration (SchemeAndStackFoundations §4.19, de jong alteration theorem) a smooth equidimensional D of dimension dim Y − r with π: D → Y proper and π(D) ⊃ pr_2(Z), and Z_D ⊂ X ×_S D of the same dimension mapping onto Z; with N = [k(Z_D) : k(Z)], N·[Z] = [Γ_π] ∘ [Z_D] in C_S, so N·Ĥ([Z]/S) factors through π_\*, which raises both p and q by r (§4.2).
 2. (ii) Symmetrically N·[Z] = [Z_D] ∘ [Γ_π^t] with D → X of dimension d − r, and pullback to D kills degrees above d − r.
-3. (iii) For r ≥ 1 the target WO-part p = 0 lies in the complement of `⊕_{p ≥ r, q ≥ r}`, so (i) kills its projection; a degree-zero correspondence preserves p, so the source WO-part p = 0 lands in the target WO-part. The source Wω-part p = d lies in `⊕_{p > d−r}`, so (ii) applies to it with no condition on the degree.
+3. (iii) With r = 1 the target WO-part p = 0 lies in the complement of `⊕_{p ≥ r, q ≥ r}`, so (i) kills its projection; a degree-zero correspondence preserves p, so the source WO-part p = 0 lands in the target WO-part. The source Wω-part p = d lies in `⊕_{p > d−r}`, so (ii) applies to it with no condition on the degree.
 
 **Checks.**
 
 - On P¹ ×_k P¹ over S = Spec k, the cycle P¹ × {x} (supported over a point of the target, r = 1) has image in H¹(P¹, WΩ¹), so it acts by zero into H⁰(P¹, WO) (N = 1).
 - The cycle {x} × P¹ (supported over a point of the source) kills H¹(P¹, WO), H⁰(P¹, WΩ¹) and H¹(P¹, WΩ¹), but not H⁰(P¹, WO).
 - Point inclusion, a correspondence of nonzero degree: X = Spec k, Y = P¹_k, S = Spec k and Z = {x} ⊂ X × Y = P¹ for a k-point x. Z lies over the codimension-one subset {x} of Y and [Z] has degree 1. Ĥ([Z]/k) sends 1 ∈ H⁰(Spec k, WO) = W(k) to ĉl(x) ∈ H¹(P¹, WΩ¹), whose trace is 1 (§4.3), so no nonzero integer kills the action on the source WO-part; its projection to H⁰(P¹, WO) ⊕ H¹(P¹, WO) is zero, as (i) with r = 1 asserts. Without the degree-zero hypothesis the WO-consequence of (iii) would be false.
+- Negative control for the codimension hypothesis: X = Y = Spec k ⊔ Spec k over S = Spec k, with points x_1, x_2 and y_1, y_2, and Z = {(x_1, y_1)}. Z is proper over Y and its projections {x_1} ⊂ X and {y_1} ⊂ Y are proper closed subsets, but each is a whole component, of codimension 0, so (iii) does not apply. Indeed [Z] has degree 0 − 0 = 0 and acts on H⁰(X, WO) = W(k)² → H⁰(Y, WO) = W(k)² (and likewise on Wω, which equals WO on a point) by diag(1, 0), and N·diag(1, 0) ≠ 0 for every N ≥ 1; with “proper closed subset” in place of positive codimension, (iii) would be false. The empty Z satisfies the hypothesis vacuously and acts by 0.
 
 ### Examples
 
@@ -1114,7 +1116,8 @@ A proof route is the following.
 - For p odd, the quadric cone Spec k[x², xy, y²] = A²/{±1} is a tame finite quotient (degree 2).
 - The affine cone over a smooth plane cubic is normal but not a topological finite quotient: finite quotients are WO-rational (§5.6), while the cone is not (§5.10), since H¹(E, `WO_{E,ℚ}`) ≠ 0 for every elliptic curve E.
 - If X is a finite quotient then `X^{(1)}` is one, and the relative Frobenius X → `X^{(1)}` is a universal homeomorphism of degree `p^{dim X}`.
-- Every smooth k-scheme is a finite quotient.
+- Every smooth equidimensional k-scheme of finite type is a finite quotient: it is normal, and its identity is a finite surjective cover of degree 1 by a smooth scheme.
+- Negative control for equidimensionality: Spec k ⊔ A¹_k is smooth and normal, but its components have dimensions 0 and 1, so it is not equidimensional and is not a finite quotient in the sense above; each of its two components is one.
 - A^n_k/G for a finite group G acting linearly is a finite quotient.
 
 These results apply to CR12, Definition 4.3.1, p. 79: the source of a quasi-resolution is a topological finite quotient; CR12, Theorem 4.3.3, p. 79: Witt cohomology of a quasi-resolution of a topological finite quotient; CR12, Corollary 4.4.7, p. 83: topological finite quotients have Witt-rational singularities.
@@ -1146,7 +1149,8 @@ A proof route is the following.
 **Checks.**
 
 - The blowup of the quadric cone at its vertex (a smooth surface) is a quasi-resolution.
-- For X smooth projective, the relative Frobenius `F_{X/k}`: X → `X^{(1)}` is a quasi-resolution (finite, surjective, purely inseparable of degree `p^{dim X}`).
+- For X smooth projective and integral, the relative Frobenius `F_{X/k}`: X → `X^{(1)}` is a quasi-resolution (finite, surjective, purely inseparable of degree `p^{dim X}`, with source a finite quotient through its identity).
+- Negative control for integrality: X = P¹_k ⊔ P¹_k is smooth projective but not integral, so `F_{X/k}` is not a quasi-resolution, although its restriction to each component, of degree p, is one.
 - The identity of a smooth integral scheme is a quasi-resolution.
 - For p odd, a degree-2 map from an elliptic curve to P¹ is projective, surjective, generically finite, but not a quasi-resolution: k(P¹) ⊂ k(E) is separable.
 - A resolution of singularities X → Y (projective birational with X smooth) is a quasi-resolution.
@@ -1171,7 +1175,8 @@ A proof route is the following.
 
 **Checks.**
 
-- For the Frobenius twist u = `F_{X/k}` of a smooth X, u_\*u^\* = `p^{dim X}` on `WO_{X^{(1)}}`.
+- For the Frobenius twist u = `F_{X/k}` of a smooth integral X, u_\*u^\* = `p^{dim X}` on `WO_{X^{(1)}}`.
+- For X = Spec k ⊔ A¹_k, which is smooth but neither integral nor equidimensional, (i) applies on each component: the degree of `F_{X/k}` is the locally constant function with values 1 on Spec k and p on A¹, so u_\*u^\* acts by (1, p) on `WO_{X^{(1)}}` = W(k) × `WO_{A^1}`, not by `p^{dim X}` = p.
 
 
 ### 5.4 Witt cohomology of a quasi-resolution of a topological finite quotient
@@ -1186,13 +1191,13 @@ A proof route is the following.
 
 1. Reduce to X, Y integral of dimension d and (by §5.3 (i)) finite quotients, with finite surjective a: X′ → X, b: Y′ → Y from smooth integral schemes; factor f = u ∘ π with π projective birational onto a normal X_1 and u a universal homeomorphism; choose a dense smooth open U_0 ⊂ Y over which all maps are flat and π is an isomorphism.
 2. With α = [X′ ×_X X′], β = [Y′ ×_Y Y′], γ = [X′ ×_Y Y′] in C_Y, the relations deg b·(γ∘α) − deg a·(β∘γ), deg a·(γ^t∘β) − deg b·(α∘γ^t), (γ^t∘γ∘α) − deg a·deg b·deg u·α and (γ∘γ^t∘β) − deg a·deg b·deg u·β hold up to cycles supported over Y ∖ U_0, by the localization sequence and [Γ_u]∘[Γ_u^t] = deg u·[Δ] over U_0 (SchemeAndStackFoundations §5.2, chow localization).
-3. The error cycles have degree 0 and lie over the proper closed subset Y ∖ U_0, hence over proper closed subsets of both source and target, so by §4.6 (iii) they act by bounded torsion on the WO- and the Wω-parts. Hence Ĥ(γ/Y) and Ĥ(γ^t/Y) are inverse isomorphisms up to the nonzero integer deg a·deg b·deg u between the images of the projectors Ĥ(α/Y) and Ĥ(β/Y); §5.3 (ii) identifies these images with R^if_\*(WO_X ⊕ Wω_X)_ℚ and (WO_Y ⊕ Wω_Y)_ℚ, so the higher direct images vanish.
+3. The error cycles have degree 0 and lie over the proper closed subset Y ∖ U_0 of the integral Y. The sources and targets X′ and Y′ are integral and surject onto Y, so the preimage of Y ∖ U_0 in each contains no component: the error cycles lie over closed subsets of positive codimension of both source and target, and by §4.6 (iii) they act by bounded torsion on the WO- and the Wω-parts. Hence Ĥ(γ/Y) and Ĥ(γ^t/Y) are inverse isomorphisms up to the nonzero integer deg a·deg b·deg u between the images of the projectors Ĥ(α/Y) and Ĥ(β/Y); §5.3 (ii) identifies these images with R^if_\*(WO_X ⊕ Wω_X)_ℚ and (WO_Y ⊕ Wω_Y)_ℚ, so the higher direct images vanish.
 4. In degree 0: π^\*: `WO_{X_1}` → π_\*WO_X is an isomorphism (X_1 normal, π birational), and u^\* is an isomorphism up to isogeny; for Wω, the pushforward is an isomorphism up to isogeny once f^\* is (CR12 Lemma 4.3.4, via duality for W_nY).
 
 **Checks.**
 
 - For the minimal resolution X → Y of the quadric cone A²/{±1} (p odd), `R¹f_*WO_{X,ℚ}` = 0; the exceptional curve is a P¹, consistent with §2.2 (H¹(P¹, WO_ℚ) = 0).
-- For X smooth and f = `F_{X/k}`, the statement is the isogeny f_\*f^\* = `p^{dim X}`.
+- For X smooth integral and f = `F_{X/k}` (a quasi-resolution of `X^{(1)}`, §5.2), the statement is the isogeny f_\*f^\* = `p^{dim X}`.
 
 
 ### 5.5 WO-rational and Witt-rational singularities
@@ -1223,14 +1228,14 @@ A proof route is the following.
 - The cone over an elliptic curve E is not WO-rational: R¹f_\*WO_ℚ = H¹(E, `WO_{E,ℚ}`) ≠ 0 at the vertex (dimension 1 of slope 0 if E is ordinary, dimension 2 of slope 1/2 if supersingular).
 - WO-rational does not imply Cohen–Macaulay: for G = ℤ/p^n acting linearly on V with dim V > dim V^G + 2 over algebraically closed k, A(V)/G is a finite quotient (hence Witt-rational) but not CM, hence not a rational singularity.
 - For a resolution with proper exceptional fibre E over an isolated singularity, the isogeny condition R¹f_\*WO_ℚ = 0 agrees with H¹(E, WO_E) ⊗ ℚ = 0 (§0.8, proper case).
-- Smooth schemes and topological finite quotients are Witt-rational (§5.6).
+- Smooth integral schemes and integral topological finite quotients are Witt-rational (§5.6); a disconnected one is not integral, and the definition applies to each of its connected components.
 
 These results apply to HW23, Corollary 4.6 and proof, p. 21 (arXiv v2; Corollary 4.7 in the published version): Q-factorial klt fourfolds with log resolutions have WO-rational singularities; HW23, proof of Corollary 1.3, pp. 19–20: WO-rationality of X and BBE Proposition 6.9 give |X(F_q)| ≡ |Y(F_q)| mod q for a resolution Y; GNT19, Theorem 3.16, p. 26: klt threefolds (p > 5) have WO-rational singularities; CR12, Corollary 4.4.16, p. 85: point counts of quasi-birational WO-rational projective schemes agree mod q; §5.7: the intrinsic characterization, S is WO-rational iff `WO_{S,ℚ}` → `WS_{0,S}` is an isomorphism; §6.5: the point-count consequence.
 
 
 ### 5.6 Topological finite quotients are Witt-rational; invariance under universal homeomorphisms
 
-(i) Every topological finite quotient over k has Witt-rational singularities. (ii) If u: Y → Y′ is a universal homeomorphism between normal schemes, Y has Witt-rational (resp. WO-rational) singularities iff Y′ has. (CR12, Theorem 3 (introduction), p. 4; Corollary 4.4.7, Remark 4.4.8, Proposition 4.4.9 with proof, p. 83).
+(i) Every integral topological finite quotient over k has Witt-rational singularities; a topological finite quotient is normal, hence the disjoint union of its connected components, each of which is an integral topological finite quotient. (ii) If u: Y → Y′ is a universal homeomorphism between normal schemes, Y has Witt-rational (resp. WO-rational) singularities iff Y′ has. (CR12, Theorem 3 (introduction), p. 4; Corollary 4.4.7, Remark 4.4.8, Proposition 4.4.9 with proof, p. 83).
 
 k perfect; Y, Y′ normal integral in (ii).
 
@@ -1243,7 +1248,7 @@ A proof route is the following.
 
 **Checks.**
 
-- The normalization of a smooth scheme in a purely inseparable extension of its function field is Witt-rational.
+- The normalization of a smooth integral scheme in a purely inseparable extension of its function field is Witt-rational.
 
 
 ### 5.7 The Witt singularity complexes of an integral scheme
@@ -1294,7 +1299,7 @@ A proof route is the following.
 
 **Checks.**
 
-- A smooth projective X and its blowup along a smooth center have the same H^i(−, WO_ℚ).
+- A smooth projective integral X and its blowup along a smooth closed subscheme C ≠ X have the same H^i(−, WO_ℚ): both are smooth integral, hence Witt-rational, and the blowup is a quasi-resolution of X. For C = X the blowup is empty and H⁰ drops from H⁰(X, WO_ℚ) ≠ 0 to 0.
 
 
 ### 5.9 Rational singularities are Witt-rational
@@ -1370,31 +1375,31 @@ A proof route is the following.
 1. Choose X′ → X′/G → X″ → X as in §5.2 (X′ smooth, G finite acting, X″ → X a universal homeomorphism) and the Stein factorization Y″ → Y of X″ → Y, a universal homeomorphism; put f′: X′ → Y and n = dim X′ = dim X.
 2. The averaging correspondence P = `∑_{g∈G}[Γ(g)]` on X′ ×_Y X′ has degree 0 and P² = |G|·P. Its image on `⊕_i R^if′_*(WO ⊕ Wω)_{X′,ℚ}` is `⊕_i R^if_*(WO ⊕ Wω)_{X,ℚ}`, degree by degree and including i = 0, because X is Witt-rational and X′/G → X is a quasi-resolution (CR12 Lemma 4.8.3 and its proof; §5.3, §5.5).
 3. CH_0(X′_η ×_η L)^G ⊗ ℚ = ℚ for all L by push-pull along X′_η → X_η; §5.11 gives nonzero integers N_1, N_2, M_1, M_2 and a closed point α of X′_η such that N_1P + N_2[A_1] is supported over a divisor of the target X′ or over a divisor of Y, and M_1P + M_2[A_2] over a divisor of the source X′ or over a divisor of Y, with A_1, A_2 the closures of α × X′_η and X′_η × α in X′ ×_Y X′. All these cycles have dimension n, hence degree 0.
-4. By §4.6 (iii), on `⊕_{i>0}` R^if′_\*WO_ℚ the operator Ĥ(P/Y) is a nonzero rational multiple of Ĥ([A_1]/Y) (degree-zero error cycles over proper closed subsets of the target), and on all of `⊕_{i≥0}` R^if′_\*Wω_ℚ it is a nonzero rational multiple of Ĥ([A_2]/Y) (error cycles over proper closed subsets of the source); so the images of P and of A_1, resp. A_2, agree on these parts.
-5. Let ı: Ỹ → X′ be an alteration of the closure of α with Ỹ smooth of dimension dim Y, so that f′ı is an alteration of Y. The graph of ı, the closure Z of X′_η ×_η Ỹ_η in X′ ×_Y Ỹ, and the closure Q of Ỹ_η ×_η Ỹ_η satisfy [Γ(ı)] ∘ [Z] = d·[A_2], [Z] ∘ [Γ(ı)] = [Q], [A_2] ∘ [A_2] = e·[A_2] and [Q] ∘ [Q] = g·[Q] with d, e, g nonzero, up to cycles over a proper closed subset of Y, which act by bounded torsion on the source Wω-parts (§4.6 (iii)). Ĥ([Γ(ı)]/Y) is the pushforward ı_\*, which raises p and q by r = dim X′ − dim Ỹ (§4.2); so Ĥ([Z]/Y) and Ĥ([Γ(ı)]/Y) are inverse isomorphisms up to nonzero integers between the image of Ĥ([A_2]/Y) in `R^if′_*Wω_{X′,ℚ}` and the image of Ĥ([Q]/Y) in `R^{i−r}(f′ı)_*Wω_{Ỹ,ℚ}`, for every i. For WO the same argument with the transposes uses the pullback ı^\*, which preserves degrees, and gives the image of Ĥ([Q]/Y) in `R^i(f′ı)_*WO_{Ỹ,ℚ}` for i > 0 (CR12 Proposition 4.8.4).
+4. By §4.6 (iii), on `⊕_{i>0}` R^if′_\*WO_ℚ the operator Ĥ(P/Y) is a nonzero rational multiple of Ĥ([A_1]/Y) (degree-zero error cycles over a divisor of the target X′ or over the preimage of a divisor of Y, which has positive codimension in X′ because X′ is integral and dominates Y), and on all of `⊕_{i≥0}` R^if′_\*Wω_ℚ it is a nonzero rational multiple of Ĥ([A_2]/Y) (error cycles over closed subsets of positive codimension of the source X′, by the same argument); so the images of P and of A_1, resp. A_2, agree on these parts.
+5. Let ı: Ỹ → X′ be an alteration of the closure of α with Ỹ smooth integral of dimension dim Y, so that f′ı is an alteration of Y. The graph of ı, the closure Z of X′_η ×_η Ỹ_η in X′ ×_Y Ỹ, and the closure Q of Ỹ_η ×_η Ỹ_η satisfy [Γ(ı)] ∘ [Z] = d·[A_2], [Z] ∘ [Γ(ı)] = [Q], [A_2] ∘ [A_2] = e·[A_2] and [Q] ∘ [Q] = g·[Q] with d, e, g nonzero, up to cycles over a proper closed subset of the integral Y; their projections to the sources X′ and Ỹ, which are integral and dominate Y, have positive codimension, so they act by bounded torsion on the source Wω-parts (§4.6 (iii)). Ĥ([Γ(ı)]/Y) is the pushforward ı_\*, which raises p and q by r = dim X′ − dim Ỹ (§4.2); so Ĥ([Z]/Y) and Ĥ([Γ(ı)]/Y) are inverse isomorphisms up to nonzero integers between the image of Ĥ([A_2]/Y) in `R^if′_*Wω_{X′,ℚ}` and the image of Ĥ([Q]/Y) in `R^{i−r}(f′ı)_*Wω_{Ỹ,ℚ}`, for every i. For WO the same argument with the transposes uses the pullback ı^\*, which preserves degrees, and gives the image of Ĥ([Q]/Y) in `R^i(f′ı)_*WO_{Ỹ,ℚ}` for i > 0 (CR12 Proposition 4.8.4).
 6. For an alteration Ỹ → Y with smooth source, the projector given by Q divided by the degree has image `H^j(WS_{0,Y})` on `R^j(f′ı)_*WO_{Ỹ,ℚ}` for j > 0 and `H^j(WS_{dim Y,Y})` on `R^j(f′ı)_*Wω_{Ỹ,ℚ}` for every j ≥ 0: the proof of CR12 Theorem 4.5.6 factors the projector through `R^jg_*` of a quasi-resolution g in each degree j ≥ 0, and the comparison of two alterations (CR12 Proposition 4.5.3 (3)) consists of degree-zero correspondences, which preserve every degree. Combining steps 2–6 gives (i) and (ii); the vanishing for Witt-rational Y is §5.7 (`H^j(WS_{0,Y})` = 0 and `H^j(WS_{dim Y,Y})` = 0 for j ≥ 1).
 
 **Checks.**
 
-- For X = P^n_Y → Y with Y smooth, r = n: R^if_\*WO_ℚ = 0 for i > 0, and the projective-bundle formula `Rf_*W_mΩ_X` ≅ `⊕_{j=0}^{n}` `W_mΩ_Y(−j)[−j]` (CR12 Lemma 2.4.3 and (2.4.2)) gives `R^if_*Wω_X` = 0 for i ≠ n and `R^nf_*Wω_X` ≅ `Wω_Y(−n)`, as (ii) asserts with `WS_{dim Y,Y}` = `Wω_{Y,ℚ}`.
+- For X = P^n_Y → Y with Y smooth integral, r = n: R^if_\*WO_ℚ = 0 for i > 0, and the projective-bundle formula `Rf_*W_mΩ_X` ≅ `⊕_{j=0}^{n}` `W_mΩ_Y(−j)[−j]` (CR12 Lemma 2.4.3 and (2.4.2)) gives `R^if_*Wω_X` = 0 for i ≠ n and `R^nf_*Wω_X` ≅ `Wω_Y(−n)`, as (ii) asserts with `WS_{dim Y,Y}` = `Wω_{Y,ℚ}`.
 - For f: P¹_k → Spec k, r = 1: H⁰(P¹, `Wω_ℚ`) = 0 = `H^{−1}(WS_{0,k})`, H¹(P¹, `Wω_ℚ`) = W(k)_ℚ (the trace of §4.1) ≅ `H^0(WS_{0,k})` = W(k)_ℚ, and H^i = 0 for i ≥ 2. The unshifted formula `⊕_{i>0}` `R^if_*Wω_{X,ℚ}` ≅ `⊕_{i>0}` `H^i(WS_{0,k})` would give W(k)_ℚ ≅ 0.
 - For the identity of a smooth integral Y, r = 0: `R^0id_*Wω_{Y,ℚ}` = `Wω_{Y,ℚ}` = `H^0(WS_{dim Y,Y})` and all higher terms vanish on both sides.
 - For Y = Spec k and X a smooth projective rational (or rationally chain connected) variety of dimension n, H^i(X, `WO_{X,ℚ}`) = 0 for i > 0 and H^i(X, `Wω_{X,ℚ}`) = 0 for i ≠ n, while H^n(X, `Wω_{X,ℚ}`) ≅ W(k)_ℚ by the trace.
 
 ### Examples
 
-- Every smooth k-scheme is a finite quotient.
+- Every smooth equidimensional k-scheme of finite type is a finite quotient; Spec k ⊔ A¹_k, whose components have dimensions 0 and 1, is not.
 - A resolution of singularities X → Y (projective birational with X smooth) is a quasi-resolution.
-- For the Frobenius twist u = `F_{X/k}` of a smooth X, u_\*u^\* = `p^{dim X}` on `WO_{X^{(1)}}`.
+- For the Frobenius twist u = `F_{X/k}` of a smooth integral X, u_\*u^\* = `p^{dim X}` on `WO_{X^{(1)}}`; on Spec k ⊔ A¹_k it acts by (1, p) componentwise.
 - For the minimal resolution X → Y of the quadric cone A²/{±1} (p odd), `R¹f_*WO_{X,ℚ}` = 0; the exceptional curve is a P¹, consistent with §2.2 (H¹(P¹, WO_ℚ) = 0).
-- Smooth schemes and topological finite quotients are Witt-rational (§5.6).
-- The normalization of a smooth scheme in a purely inseparable extension of its function field is Witt-rational.
-- For S smooth, `WS_{0,S}` = `WO_{S,ℚ}` and `WS_{d,S}` = `Wω_{S,ℚ}`.
-- A smooth projective X and its blowup along a smooth center have the same H^i(−, WO_ℚ).
+- Smooth integral schemes and integral topological finite quotients are Witt-rational (§5.6).
+- The normalization of a smooth integral scheme in a purely inseparable extension of its function field is Witt-rational.
+- For S smooth integral of dimension d, `WS_{0,S}` = `WO_{S,ℚ}` and `WS_{d,S}` = `Wω_{S,ℚ}`.
+- A smooth projective integral X and its blowup along a smooth closed subscheme C ≠ X have the same H^i(−, WO_ℚ).
 - A rational surface singularity (e.g. a du Val singularity in characteristic p with a rational resolution) is Witt-rational.
 - The cone over a smooth plane conic is WO-rational; the cone over a smooth plane curve of genus g ≥ 1 is not, since H¹(C, WO_C)_K, the slope-[0, 1) part of H¹_crys(C), has dimension ≥ g.
 - For X = P^d: [Δ] = [pt × P^d] + Γ with Γ supported on P^d × H for a hyperplane H (N = 1).
-- For X = P^n_Y → Y with Y smooth, R^if_\*WO_ℚ = 0 for i > 0, while `R^if_*Wω_X` vanishes for i ≠ n and `R^nf_*Wω_X` ≅ `Wω_Y(−n)`.
+- For X = P^n_Y → Y with Y smooth integral, R^if_\*WO_ℚ = 0 for i > 0, while `R^if_*Wω_X` vanishes for i ≠ n and `R^nf_*Wω_X` ≅ `Wω_Y(−n)`.
 - For f: P¹_k → Spec k, H¹(P¹, `Wω_ℚ`) = W(k)_ℚ ≅ `H^0(WS_{0,k})`: the Wω-comparison is shifted by the relative dimension.
 
 ### Dependencies
