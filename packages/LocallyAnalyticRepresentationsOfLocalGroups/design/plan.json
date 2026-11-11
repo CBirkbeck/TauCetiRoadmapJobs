@@ -7335,13 +7335,13 @@
    "slug": "barrelled-banach-steinhaus",
    "supplier": "LocallyAnalyticDistributions",
    "section": "§0.0",
-   "needs": "Barrelled nonarchimedean locally convex spaces (every closed O_E-lattice open), with Banach, Fréchet, compact-type spaces and locally convex inductive limits of barrelled spaces barrelled, and the Banach–Steinhaus theorem that pointwise bounded families of continuous linear maps out of a barrelled space are equicontinuous."
+   "needs": "For nonarchimedean locally convex E-spaces, the comparison of barrelledness in the lattice sense (every closed O_E-lattice is open) with Mathlib's BarrelledSpace over E and of lattice-sense pointwise boundedness and equicontinuity with the hypothesis and conclusion of PolynormableSpace.banach_steinhaus, together with the barrelledness of compact-type spaces and of locally convex inductive limits of barrelled spaces; Banach and Fréchet barrelledness and Banach–Steinhaus itself are Mathlib's."
   },
   {
    "slug": "compact-type-tensor",
    "supplier": "LocallyAnalyticDistributions",
    "section": "§0.0",
-   "needs": "For spaces V_1, V_2 of compact type over a finite extension of ℚ_p, the completed inductive and projective tensor products agree, are of compact type, have strong dual the completed tensor product of the nuclear Fréchet duals, and are functorial and strictly exact in each variable (Emerton's memoir, Propositions 1.1.31–1.1.32)."
+   "needs": "For spaces of compact type over a finite extension of ℚ_p, the completed tensor product of §0.0's compact-type tensor comparison is functorial in each variable and exact in each variable on strict short exact sequences of spaces of compact type, equivalently completed projective tensor product with a nuclear Fréchet space is exact on strict short exact sequences of nuclear Fréchet spaces."
   },
   {
    "slug": "kostant-split-reductive",
@@ -7372,6 +7372,18 @@
    "supplier": "SmoothRepresentationsOfLocalGroups",
    "section": "SR.3.2",
    "needs": "Over a finite extension E of ℚ_p and for generic φ, the Bernstein-centre maps 𝒥_w of the block of (Ind_{B⁻} φη)^∞ satisfy 𝒥_{w_2} ∘ p_{w_2w_1⁻¹} = 𝒥_{w_1}, and their differentials identify Hom_sm(T(L), E) with first-order smooth deformations (Caraiani–Emerton–Gee–Geraghty–Paškūnas–Shin, Lemma 3.22)."
+  },
+  {
+   "slug": "frechet-stein-general",
+   "supplier": "PadicLocalLanglandsForGL2Qp",
+   "section": "§0.1",
+   "needs": "The coadmissible-module theory of §0.1 for an arbitrary left Fréchet–Stein algebra over a discretely valued field, in particular for D(H, E): Theorems A and B with the base-change isomorphisms, flatness of the Banach stages, the canonical Fréchet topology with continuity and strictness of module maps, coadmissible submodules being exactly the closed ones, coadmissibility of finitely generated submodules and finitely presented modules, closedness of finitely generated left ideals, and change of ring along a map A → B with B coadmissible over A (Schneider–Teitelbaum 2003, §3, Corollaries 3.1–3.5, Lemmas 3.6 and 3.8)."
+  },
+  {
+   "slug": "radius-algebras",
+   "supplier": "PadicLocalLanglandsForGL2Qp",
+   "section": "§0.1",
+   "needs": "For a compact group H with a saturated finite-rank p-valuation and an ordered basis satisfying (HYP), the ordered-coordinate expansion of distributions, the norms ‖·‖_r for 1/p ≤ r < 1, the noetherian Banach algebras D_r(H, E) as completions, and their identification with the Banach stages of the Fréchet–Stein structure of §0.1 (Schneider–Teitelbaum 2003, §4, Lemma 4.1 to Theorem 4.5)."
   }
  ],
  "sourceIssues": [

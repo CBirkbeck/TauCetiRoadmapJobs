@@ -1,6 +1,6 @@
 # Roadmap: locally analytic representations of p-adic reductive groups
 
-**Summary.** This roadmap builds the representation theory of p-adic Lie groups on locally convex vector spaces over a finite extension E of ℚ_p, and in particular of the groups G = 𝐆(L) of rational points of reductive groups over a finite extension L of ℚ_p, that the locally analytic p-adic Langlands programme runs on. It starts from the compact distribution algebras, coadmissible modules and admissibility of PadicLocalLanglandsForGL2Qp §0.1 and LocallyAnalyticDistributionsPartII, the locally analytic vectors of CompletedCohomologyPartII F.4, the Jacquet modules of OverconvergentAutomorphicForms §0.6 and the smooth theory of SmoothRepresentationsOfLocalGroups. The foundations (Layers 0–3) construct the distribution algebra D(G, E) of a non-compact group and its module structure on locally analytic representations, the Schneider–Teitelbaum anti-equivalence between admissible representations and coadmissible D(G, E)-modules, locally algebraic representations, the Ext groups Ext^i_G(V_1, V_2) = Ext^i_(D(G,E))(V_2′, V_1′) with Breuil's identification of Ext¹ with admissible extensions, very strong admissibility, Pan's derived functors of locally analytic vectors with the strong LA-acyclicity of admissible Banach representations, and the solid representation theory of Boxer–Calegari–Gee–Pilloni. Layer 4 develops the parabolic BGG categories O^p_alg over the split Lie algebra g ⊗_(ℚ_p) E that the later layers need. The structure theory (Layers 5–7) builds locally analytic parabolic induction and Schraen's spectral sequence for Ext into an induction, the Orlik–Strauch functors F^G_P(M, π_P) in Breuil's locally ℚ_p-analytic form with their exactness, irreducibility criterion and Jordan–Hölder series, and Emerton's closed induction with the adjunction theorems of Emerton and Breuil. The application (Layers 8–10) is Ding's computation of the extension groups of the locally analytic principal series of GL_n(L): the representations π_alg(φ, h) ⊆ π_1(φ, h) ⊆ π(φ, h), the bijections ζ_w : Hom(T(L), E) ≅ Ext¹_w, the formula dim_E Ext¹(π_alg(φ, h), π_1(φ, h)) = n + (2^n − 1)[L:ℚ_p], their compatibility with parabolic induction and their decomposition over the embeddings of L into E. These are the GL_n-side inputs of PadicHodgeParametersInLocallyAnalyticRepresentations.
+**Summary.** This roadmap builds the representation theory of p-adic Lie groups on locally convex vector spaces over a finite extension E of ℚ_p, and in particular of the groups G = 𝐆(L) of rational points of reductive groups over a finite extension L of ℚ_p, that the locally analytic p-adic Langlands programme runs on. It starts from the compact distribution algebras, coadmissible modules, admissibility and Banach duality of PadicLocalLanglandsForGL2Qp §0.1, the enveloping algebra inside the distribution algebra of LocallyAnalyticDistributionsPartII §1.1, the uniform groups and p-valuations of NoncommutativeAndEquivariantIwasawa Layer 0, the locally analytic vectors of CompletedCohomologyPartII F.4, the Jacquet modules of OverconvergentAutomorphicForms §0.6 and the smooth theory of SmoothRepresentationsOfLocalGroups. The foundations (Layers 0–3) construct the distribution algebra D(G, E) of a non-compact group and its module structure on locally analytic representations, the Schneider–Teitelbaum anti-equivalence between admissible representations and coadmissible D(G, E)-modules, locally algebraic representations, the Ext groups Ext^i_G(V_1, V_2) = Ext^i_(D(G,E))(V_2′, V_1′) with Breuil's identification of Ext¹ with admissible extensions, very strong admissibility, Pan's derived functors of locally analytic vectors with the strong LA-acyclicity of admissible Banach representations, and solid representations of p-adic Lie groups and locally profinite groups with their solid locally analytic vectors. Layer 4 develops the parabolic BGG categories O^p_alg over the split Lie algebra g ⊗_(ℚ_p) E that the later layers need. The structure theory (Layers 5–7) builds locally analytic parabolic induction and Schraen's spectral sequence for Ext into an induction, the Orlik–Strauch functors F^G_P(M, π_P) in Breuil's locally ℚ_p-analytic form with their exactness, irreducibility criterion and Jordan–Hölder series, and Emerton's closed induction with the adjunction theorems of Emerton and Breuil. The application (Layers 8–10) is Ding's computation of the extension groups of the locally analytic principal series of GL_n(L): the representations π_alg(φ, h) ⊆ π_1(φ, h) ⊆ π(φ, h), the bijections ζ_w : Hom(T(L), E) ≅ Ext¹_w, the formula dim_E Ext¹(π_alg(φ, h), π_1(φ, h)) = n + (2^n − 1)[L:ℚ_p], their compatibility with parabolic induction and their decomposition over the embeddings of L into E. These are the GL_n-side inputs of PadicHodgeParametersInLocallyAnalyticRepresentations.
 
 ## Scope and ownership
 
@@ -9,16 +9,18 @@ This roadmap owns:
 - the restriction of scalars of the L-analytic group 𝐆(L) to a ℚ_p-analytic group and the decomposition of its Lie algebra over the embeddings Σ_L; locally analytic representations of locally analytic groups on barrelled spaces, the action of U(g ⊗_F E) by derivation and its decomposition over Σ_L; the distribution algebra D(G, E) of a non-compact group, its module structure on locally analytic representations, the duality between representations of compact type and nuclear Fréchet D(G, E)-modules, matrix coefficients, the theorem that weakly null sequences are null over a spherically complete field, and completed external tensor products (Layer 0);
 - coadmissible D(G, E)-modules for non-compact G, strongly admissible and topologically irreducible representations, the anti-equivalence of admissible representations of a non-compact group with coadmissible D(G, E)-modules and its abelian category, admissibility of completed external tensor products, locally algebraic representations, the Ext groups of admissible representations, Breuil's identification of Ext¹ with extensions, dual-number structures on self-extensions and tautological and universal extensions, and Schraen's Ext between locally algebraic representations (Layer 1);
 - admissible Banach representations that are not required to be unitary, very strongly admissible representations, Pan's derived functors R^iLA of locally analytic vectors on Banach representations, their long exact sequences and the strong LA-acyclicity of admissible Banach representations (Layer 2);
-- the comparison of classical Banach, Smith, Fréchet and LB spaces with solid E-vector spaces, and the solid representation theory of Boxer–Calegari–Gee–Pilloni §2.2: solid representations of Stein analytic groups and of locally profinite groups, smooth and λ-smooth objects, solid locally analytic vectors and their derived functor, integrable LB Lie representations (Layer 3);
-- highest-weight theory over a split reductive Lie algebra over a field of characteristic zero by descent from an algebraic closure, the parabolic BGG categories O^p_alg, generalised Verma modules, the restricted BGG duality, the low-length Verma multiplicities for products of gl_n, and Kostant homology of nilradicals (Layer 4);
+- the comparison of classical Banach, Smith, Fréchet and LB spaces with solid E-vector spaces, and solid representation theory: solid representations of Stein analytic groups and of locally profinite groups, smooth and λ-smooth objects, solid locally analytic vectors and their derived functor, integrable LB Lie representations (Layer 3);
+- highest-weight theory over a split reductive Lie algebra over a field of characteristic zero by descent from an algebraic closure, the parabolic BGG categories O^p_alg, generalised Verma modules, the restricted BGG duality, the low-length Verma multiplicities for products of gl_n, and Kostant homology of nilradicals (Layer 4). This roadmap is the single owner of category O over split reductive Lie algebras over a field of characteristic zero: Verma and generalised Verma modules with their simple quotients, the classification of the simple objects of O^p_alg and the finite length of its objects, for every block and every standard parabolic. A roadmap working in a single block imports these objects from Layer 4 and owns only its block-specific statements: SpringerResolutionAndCharacteristicCycles owns the strict central reduction of the principal block, its orbit labels and the Beilinson–Bernstein localisation, not the modules themselves. For sl_2 this places M(0), M(−2), their simple quotients and the length-two composition series of M(0) here, and the localisation of these modules on ℙ¹ there;
 - locally analytic parabolic induction and principal series, Ext between locally analytic characters of a split torus, homology of locally analytic representations under a unipotent radical, and Schraen's spectral sequence (Layer 5);
 - the Orlik–Strauch functors in their locally ℚ_p-analytic form with exactness, transitivity, irreducibility, Jordan–Hölder series and socles, their extension to products of groups over different fields, and the vanishing of Ext¹ into inductions from weights of length at least two (Layer 6);
 - the compact-support adjunction for Emerton's Jacquet module, the Jacquet modules of very strongly admissible representations, Emerton's closed induction, balanced maps and the adjunction theorems of Emerton and Breuil (Layer 7);
-- Ding's §3.1 for GL_n(L): §3.1.1–3.1.2 (Layer 8), §3.1.3 (Layer 9), §3.1.4 (Layer 10).
+- for GL_n(L) and a generic smooth character φ with a strictly dominant weight h: the extension groups of the locally algebraic representation π_alg(φ, h) by the locally analytic principal series, its constituents and the amalgam π_1(φ, h), the maps ζ_w : Hom(T(L), E) → Ext¹(π_alg, π_1) and the dimension n + (2^n − 1)[L:ℚ_p] (Layer 8); their compatibility with parabolic induction from Levi blocks and the amalgamation of the two endpoint parabolics (Layer 9); and their decomposition over the embeddings σ ∈ Σ_L by locally σ-analytic representations (Layer 10).
 
 It leaves the following to the roadmaps named, and does not restate them.
 
-- **Compact distribution algebras.** The Fréchet algebra D(H, E) of a compact locally analytic group, the embedding of U(g), the rational Iwasawa algebra inside it and its finite free decomposition over an open subgroup (LocallyAnalyticDistributionsPartII ND.1); Fréchet–Stein algebras, coadmissible modules, Theorems A and B, the Banach steps D_r(H, E), the Fréchet–Stein property of D(H, E) and its faithful flatness over the Iwasawa algebra (ND.2); the Arens–Michael envelope of g (ND.3); p-valued groups and ordered-basis charts (ND.0); the duality between admissible Banach representations of compact groups and finitely generated Iwasawa modules (ND.6).
+- **Compact distribution algebras.** The Fréchet algebra D(H, E) of a compact locally analytic group with its Dirac distributions, convolution and open-subgroup comparisons (D(H, E) is free over D(H′, E) on the Dirac distributions of coset representatives), the F-analytic quotient D_(ℚ_p)(H, E) → D_F(H, E), the Fréchet–Stein property of D(H, E) with Banach stages and flat transitions, its coadmissible modules, the faithful flatness of E[[H]] → D(H, E), and the duality between admissible Banach representations of compact groups and finitely generated E[[H]]-modules (PadicLocalLanglandsForGL2Qp §0.1); the coadmissible-module theory of a general Fréchet–Stein algebra and the explicit Banach radius algebras D_r(H, E), requested from the same section as supplier gaps; the embedding x ↦ x̃ of U(g ⊗ E) into D(H, E) (LocallyAnalyticDistributionsPartII §1.1), crossed products over open normal subgroups (§1.2) and the Arens–Michael envelope 𝒰(g) (§2.5).
+- **Uniform groups and p-valuations.** Uniform pro-p groups, compact p-adic analytic groups with an open normal uniform subgroup, freeness of completed group algebras over open subgroups, ordered coordinates, p-valuations with ordered bases and saturation (NoncommutativeAndEquivariantIwasawa §§0.1–0.3, 0.6–0.7).
+- **Already in the libraries.** Tau Ceti's `TauCeti.AnalyticStage` (`TauCeti/NumberTheory/Padics/Distribution/AnalyticStage.lean`) and `TauCeti.LocallyAnalytic` (`TauCeti/NumberTheory/Padics/Distribution/LocallyAnalytic.lean`) are the Banach analytic coefficient stages on ℤ_p with values in a complete ultrametric ℤ_p-module and their algebraic direct limit, with evaluation into C(ℤ_p, E); no topology is put on the limit, and nothing for a general locally analytic manifold or a non-commutative group is defined there. They are the one-variable case of the function spaces of PadicLocalLanglandsForGL2Qp §0.1 at the level of underlying vector spaces; Layer 0 uses the latter.
 - **Admissibility and analytic vectors of admissible Banach representations.** Admissible locally analytic representations of a locally analytic group, defined by restriction to a compact open subgroup and independent of it, the anti-equivalence of admissible representations of a compact group with coadmissible D(H, E)-modules, compact-type/nuclear Fréchet duality, the category of admissible unitary Banach representations with its Schikhof duality, and the density, exactness, admissibility and dual base change D(H, E) ⊗_(E[[H]]) B′ of the locally analytic vectors of an admissible unitary Banach representation (PadicLocalLanglandsForGL2Qp §0.1, after Schneider–Teitelbaum 2003, Theorems 6.3 and 7.1). For an admissible Banach representation of a non-compact group that is not unitary, these statements are applied after restriction to a compact open subgroup, on which every continuous Banach representation has a bounded open invariant lattice.
 - **Locally analytic vectors.** The locally ℚ_p-analytic vectors V^la of a continuous representation, with their topology from the fixed-radius analytic stages, compact-open restriction, the differentiated Lie algebra action, the locally F_v-analytic variant, and the derived functor RLA(V) = RΓ_cts(H, C^la(H, V)) on general continuous representations (CompletedCohomologyPartII F.4); the admissible unitary Banach category with its compact-open test (CompletedCohomologyPartII F.1).
 - **Character spaces and Emerton's Jacquet module.** The rigid character space Ẑ of a topologically finitely generated abelian locally analytic group with its product decomposition and Mellin map, essentially admissible representations, the finite-slope part, the averaged Hecke operators and the locally analytic Jacquet module J_P with its M-action, independence of N_0, left exactness, preservation of essential admissibility, the smooth comparison J_P(V) = V_N, the locally algebraic comparison J_P(X ⊗_B W) ≅ X_N ⊗_B W^N and the coherent sheaf on T̂ attached to J_B of an admissible representation (OverconvergentAutomorphicForms §0.6, after Emerton's Jacquet I, §§3–4, and Emerton's memoir, §6.4).
@@ -46,7 +48,8 @@ Not in this roadmap: the trianguline variety and its local model (TriangulineVar
 
 ### From Mathlib
 
-- `CategoryTheory.Abelian.Ext` (`Mathlib/CategoryTheory/Abelian/Ext.lean`) and the derived-category `CategoryTheory.Abelian.Ext` of `Mathlib/Algebra/Homology/DerivedCategory/Ext/Basic.lean`: Ext in an abelian category with enough projectives, here `ModuleCat` over D(G, E), with its long exact sequences.
+- `Ext` (`Mathlib/CategoryTheory/Abelian/Ext.lean`, in the root namespace): the Ext functors of an R-linear abelian category with enough projectives, as left derived functors of Hom through projective resolutions, here on `ModuleCat` over D(G, E); and `CategoryTheory.Abelian.Ext` (`Mathlib/Algebra/Homology/DerivedCategory/Ext/Basic.lean`): the Ext groups of an abelian category with `HasExt`, as shifted morphisms in the derived category, with their long exact sequences. Either computes the Ext groups of 1.7.
+- `BarrelledSpace`, `BaireSpace.instBarrelledSpace`, `WithSeminorms.banach_steinhaus` and `PolynormableSpace.banach_steinhaus` (`Mathlib/Analysis/LocallyConvex/Barrelled.lean`): barrelled spaces over a nontrivially normed field, defined by continuity of every lower semicontinuous seminorm, the barrelledness of every topological vector space that is a Baire space (in particular Banach and Fréchet spaces over E), and the Banach–Steinhaus theorem that a pointwise bounded family of continuous linear maps from a barrelled space to a space with a generating family of seminorms is equicontinuous. These hold over the nonarchimedean field E; what remains to be supplied is gap:barrelled-banach-steinhaus below.
 - `DualNumber` and `DualNumber.eps` (`Mathlib/Algebra/DualNumber.lean`): the coefficient ring E[ε]/(ε²) of self-extensions.
 - `UniversalEnvelopingAlgebra` and `UniversalEnvelopingAlgebra.lift` (`Mathlib/Algebra/Lie/UniversalEnveloping.lean`): U(g) and its universal property.
 - `continuousCohomology` (`Mathlib/RepresentationTheory/Homological/ContCohomology/Basic.lean`): continuous group cohomology with coefficients in a `TopRep`; used for compact groups with Banach coefficients.
@@ -59,19 +62,27 @@ Not in this roadmap: the trianguline variety and its local model (TriangulineVar
 
 ### From TauCetiRoadmap.LocallyAnalyticDistributions
 
-§0.0 (*Locally convex spaces and separation*, *Locally convex limits*, *Strict maps and the quasi-abelian categories*, *Projective tensor and separated completion*, *Inductive tensor and Fréchet comparison*): nonarchimedean locally convex spaces as spaces with a basis of open O_E-lattices, their limits, strict morphisms and completed tensor products. §0.2 (*The nonarchimedean Hahn–Banach theorem*, *Fréchet open mapping*, *Extensions of spaces of compact type*): norm-preserving extension of functionals over a spherically complete field, openness of surjections between Fréchet spaces, and the three-space property for compact type. §0.3 (*F-analytic against ℚ_p-analytic functions*): the closed embedding of L-analytic into ℚ_p-analytic functions and the dual quotient of distribution algebras.
+§0.0 (*Locally convex spaces and separation*, *Locally convex limits*, *Strict maps and the quasi-abelian categories*, *Projective tensor and separated completion*, *Inductive tensor and Fréchet comparison*, *Compact-type tensor comparison*): nonarchimedean locally convex spaces as spaces with a basis of open O_E-lattices, their limits, strict morphisms and completed tensor products; for spaces V_1, V_2 of compact type over a spherically complete field, the agreement of the completed inductive and projective tensor products, the compact-type limit V_1 ⊗̂ V_2 = lim_n V_(1,n) ⊗̂ V_(2,n), and its strong dual V_1′_b ⊗̂ V_2′_b, a nuclear Fréchet space (Emerton's memoir, Propositions 1.1.31–1.1.32, pp. 18–19). §0.2 (*The nonarchimedean Hahn–Banach theorem*, *Fréchet open mapping*, *Extensions of spaces of compact type*): norm-preserving extension of functionals over a spherically complete field, openness of surjections between Fréchet spaces, and the three-space property for compact type.
 
-What LocallyAnalyticDistributions must provide (gap:barrelled-banach-steinhaus): barrelled nonarchimedean locally convex spaces (every closed O_E-lattice is open), with Banach, Fréchet and compact-type spaces and locally convex inductive limits of barrelled spaces barrelled, and the Banach–Steinhaus theorem that a pointwise bounded family of continuous linear maps from a barrelled space to a locally convex space is equicontinuous (Schneider, Nonarchimedean functional analysis, §6).
+What LocallyAnalyticDistributions must provide (gap:barrelled-banach-steinhaus): for nonarchimedean locally convex E-spaces in the sense of §0.0, the comparison of barrelledness in the lattice sense (every closed O_E-lattice is open) with Mathlib's `BarrelledSpace` over E, and of pointwise boundedness and equicontinuity of families of continuous linear maps in the lattice sense with the hypothesis and the conclusion of `PolynormableSpace.banach_steinhaus`; and the barrelledness of spaces of compact type and of locally convex inductive limits of barrelled spaces (Schneider, Nonarchimedean functional analysis, §6). Barrelledness of Banach and Fréchet spaces and the Banach–Steinhaus theorem itself are Mathlib's, listed above.
 
-What LocallyAnalyticDistributions must provide (gap:compact-type-tensor): for spaces V_1, V_2 of compact type over a finite extension of ℚ_p, the completed inductive and projective tensor products agree, are of compact type, and their strong dual is the completed projective tensor product of the nuclear Fréchet duals, functorially and strictly exact in each variable (Emerton's memoir, Propositions 1.1.31–1.1.32).
+What LocallyAnalyticDistributions must provide (gap:compact-type-tensor): for spaces of compact type over a finite extension of ℚ_p, the completed tensor product of §0.0 (*Compact-type tensor comparison*) is functorial in each variable and exact in each variable on strict short exact sequences of spaces of compact type, equivalently the completed projective tensor product with a nuclear Fréchet space is exact on strict short exact sequences of nuclear Fréchet spaces.
 
 ### From TauCetiRoadmap.LocallyAnalyticDistributionsPartII
 
-ND.0 (*p-valued-analytic-structure*, *ordered-basis-chart*): integral p-valued groups with ordered bases and their analytic coordinates, giving the subgroups G_n = G_0^(p^n) and the Banach spaces C^an(G_n, ℚ_p). ND.1 (*distribution-algebra*, *lie-algebra-in-distributions*, *iwasawa-to-distributions*, *open-subgroup-decomposition*): D(H, E) for compact H, the embedding x ↦ x̃ of g, the injection E[[H]] ⊆ D(H, E), and the finite free decomposition over an open subgroup. ND.2 (*frechet-stein-algebra*, *coadmissible-module*, *coadmissible-theorems*, *frechet-stein-distribution*, *faithful-flatness*): coadmissible modules, their canonical Fréchet topology, the abelian category, coadmissibility along finite ring extensions, and faithful flatness of D(H, E) over E[[H]]. ND.3 (*arens-michael-envelope*): the Arens–Michael envelope Û(g) and its pairing with distributions of a group germ. ND.6 (*banach-iwasawa-duality*): admissible Banach representations of a compact group and finitely generated E[[H]]-modules.
+§1.1 (*The enveloping algebra inside D(G, K)*): for x ∈ g the distribution x̃ (f ↦ (d/dt) f(exp(tx))|_(t=0)), the injective E-algebra map U(g ⊗ E) → D(H, E) extending x ↦ x̃, its independence of the uniform subgroup, the conjugation formula δ_g ∗ x̃ ∗ δ_(g⁻¹) = (Ad(g)x)~ and the density of the span of Dirac distributions. §1.2: D(H, E) as the crossed product D(H′, E) ∗ (H/H′) over an open normal subgroup H′. §2.5: the Arens–Michael envelope 𝒰(g), a Fréchet–Stein algebra and the strong dual of the germs at e of analytic functions, with injective dense U(g) → 𝒰(g) and the cofinal comparisons of 𝒰(g) with the distribution algebras of a shrinking system of polydisc subgroups.
+
+### From TauCetiRoadmap.NoncommutativeAndEquivariantIwasawa
+
+§0.1: uniform pro-p groups and their lower p-series. §0.2: compact p-adic analytic groups as profinite groups with an open normal uniform subgroup, every compact ℚ_p-analytic group having one. §0.3: for H′ ⊆ H open, the completed group algebra of H is free of rank [H : H′] over that of H′, so finite generation over E[[H]] and over E[[H′]] agree. §0.6: the ordered coordinates c : ℤ_p^d → U of a uniform group, with U^(p^n) = c(p^nℤ_p^d). §0.7: p-valuations of finite rank, ordered bases, saturation and the explicit valuation ω_U of a uniform group; these give the compact open subgroup G_0 with an integral saturated p-valuation and an ordered basis, the subgroups G_n = G_0^(p^n) and the coordinates in which the Banach spaces C^an(G_n, ℚ_p) of Layer 2 are defined.
 
 ### From TauCetiRoadmap.PadicLocalLanglandsForGL2Qp
 
-§0.1: locally analytic functions LA(X, E) on locally analytic manifolds, including non-compact ones through compact charts, with their strong duals; compact-type/nuclear Fréchet duality; D(H, E) for compact H with Dirac, convolution and open-subgroup comparisons; admissibility of a locally analytic representation of a locally analytic group G, tested on a compact open subgroup and independent of it; the anti-equivalence of admissible representations of compact H with coadmissible D(H, E)-modules; the category of admissible unitary Banach representations and its Schikhof duality; and, for an admissible unitary Banach representation Π, density of Π^an in Π, exactness of Π ↦ Π^an, admissibility of Π^an and (Π^an)′ ≅ D(H, E) ⊗_(E[[H]]) Π′ (Schneider–Teitelbaum 2003, Theorem 7.1).
+§0.1: locally analytic functions LA(X, E) on locally analytic manifolds, including non-compact ones through compact charts, with their strong duals; compact-type/nuclear Fréchet duality; D(H, E) for compact H with Dirac, convolution, pushforward, completed projective tensor (D(H_1 × H_2, E) = D(H_1, E) ⊗̂ D(H_2, E)) and open-subgroup comparisons, the latter making D(H, E) free over D(H′, E) on the Dirac distributions of coset representatives; for locally F-analytic functions the F-linear chart condition and the quotient D_(ℚ_p)(H, E) → D_F(H, E) of the underlying ℚ_p-analytic distribution algebra; the Fréchet–Stein property of D(H, E), with noetherian Banach stages and flat transitions; coadmissible D(H, E)-modules with independence of the cofinal sequence and the abelian and exact finite-stage theory; faithful flatness on both sides of E[[H]] → D(H, E), which contains its injectivity and the density of its image; admissibility of a locally analytic representation of a locally analytic group G, tested on a compact open subgroup and independent of it; the anti-equivalence of admissible representations of compact H with coadmissible D(H, E)-modules; the category of admissible unitary Banach representations and the Schikhof duality between admissible Banach representations of a compact H and finitely generated E[[H]]-modules; and, for an admissible unitary Banach representation Π, density of Π^an in Π, exactness of Π ↦ Π^an, admissibility of Π^an and (Π^an)′ ≅ D(H, E) ⊗_(E[[H]]) Π′ (Schneider–Teitelbaum 2003, Theorem 7.1).
+
+What PadicLocalLanglandsForGL2Qp must provide (gap:frechet-stein-general): the coadmissible-module theory of §0.1 for an arbitrary left K-Fréchet–Stein algebra A over a discretely valued K, in particular for D(H, E): Theorems A and B with the base-change isomorphisms A_n ⊗_A M ≅ M_n, flatness of the Banach stages A_n over A, the canonical Fréchet topology of a coadmissible module, continuity and strictness of A-linear maps between coadmissible modules, the criterion that a submodule of a coadmissible module is coadmissible if and only if it is closed, if and only if the quotient is coadmissible, coadmissibility of finitely generated submodules and of finitely presented modules, closedness of finitely generated left ideals, and the statement that along a continuous map A → B of Fréchet–Stein algebras with B coadmissible over A a B-module is coadmissible over B exactly when it is over A (Schneider–Teitelbaum 2003, §3, Corollaries 3.1–3.5, Lemma 3.6 and Lemma 3.8, pp. 9–12).
+
+What PadicLocalLanglandsForGL2Qp must provide (gap:radius-algebras): for a compact group H with a saturated p-valuation of finite rank and an ordered basis satisfying Schneider–Teitelbaum's condition (HYP), the expansion λ = Σ d_α b^α of every distribution in the ordered coordinates b_i = h_i − 1, the norms ‖λ‖_r = sup_α |d_α| r^(τ_α) for 1/p ≤ r < 1, the Banach algebras D_r(H, E) as their completions, their noetherianity, and the statement that the D_r(H, E) with r ∈ p^ℚ ∩ (1/p, 1) are the Banach stages of the Fréchet–Stein structure of §0.1 (Schneider–Teitelbaum 2003, §4, Lemma 4.1 to Theorem 4.5, pp. 17–22).
 
 ### From TauCetiRoadmap.CompletedCohomologyPartII
 
@@ -99,7 +110,7 @@ What SmoothRepresentationsOfLocalGroups must provide (gap:ordered-character-map)
 
 ### From TauCetiRoadmap.ReductiveGroups and TauCetiRoadmap.RepresentationTheory.LieHighestWeight
 
-ReductiveGroups Layer 1 (finite-dimensional algebraic representations as comodules), Layer 2 (the Lie algebra and the adjoint representation) and Layer 7 (parabolic subgroups, Levi decompositions and Weyl groups of split reductive groups). LieHighestWeight Layer 3 (PBW, Verma modules M(μ) and their simple quotients L(μ)), Layer 4 (classification of finite-dimensional irreducibles by dominant integral highest weight), Layer 5 (complete reducibility), Layer 7 (the centre of U(g), the Harish-Chandra isomorphism and the dot action) and Layer 9 (reductive Lie algebras and gl_n), all over an algebraically closed field of characteristic zero; Layer 4.1 here descends them to split algebras over E.
+ReductiveGroups Layer 1 (finite-dimensional algebraic representations as comodules), Layer 2 (the Lie algebra and the adjoint representation), Layer 7 (parabolic subgroups, Levi decompositions and Weyl groups of split reductive groups) and Layer 10, §10B (for a split connected reductive group over a field: the induced modules ∇(λ), the one-dimensional highest-weight line of weight λ, the simple socle L(λ) for dominant λ, and the classification of the simple rational modules by their dominant highest weights). LieHighestWeight Layer 3 (PBW, Verma modules M(μ) and their simple quotients L(μ)), Layer 4 (classification of finite-dimensional irreducibles by dominant integral highest weight), Layer 5 (complete reducibility), Layer 7 (the centre of U(g), the Harish-Chandra isomorphism and the dot action) and Layer 9 (reductive Lie algebras and gl_n), all over an algebraically closed field of characteristic zero; Layer 4.1 here descends them to split algebras over E.
 
 ### From TauCetiRoadmap.ArithmeticLocallySymmetricSpaces
 
@@ -117,7 +128,38 @@ AdicSpacesPartIII §R3.4 (*quasi-stein-space*, *quasi-stein-theorems-a-b*): quas
 
 ## How to read the build
 
-Layer 0 makes locally analytic representations of a non-compact group into modules over D(G, E); Layer 1 isolates the admissible ones, identifies them with coadmissible modules and defines their Ext groups; Layer 2 relates them to Banach representations and their locally analytic vectors; Layer 3 is the solid version used in higher Coleman theory and is not needed by Layers 4–10. Layer 4 is pure Lie algebra and can be built in parallel with Layers 0–3. Layer 5 builds parabolic induction and the spectral sequence that computes Ext into an induction; Layer 6 cuts the Orlik–Strauch representations out of inductions; Layer 7 relates maps into a representation to its Jacquet module. Layers 8–10 assemble these into Ding's extension groups for GL_n(L): the principal series and its constituents, the maps ζ_w and their images, the parabolic structure and the embedding-wise decomposition.
+Layer 0 makes locally analytic representations of a non-compact group into modules over D(G, E); Layer 1 isolates the admissible ones, identifies them with coadmissible modules and defines their Ext groups; Layer 2 relates them to Banach representations and their locally analytic vectors; Layer 3 is the solid version used in higher Coleman theory and is not needed by Layers 4–10. Layer 4 is pure Lie algebra over E: it uses none of Layers 0–3 and none of them uses it (the algebraic representations of Layer 1 come from ReductiveGroups §10B and LieHighestWeight directly), so it can be built alongside them, and Layers 5–10 use it. Layer 5 builds parabolic induction and the spectral sequence that computes Ext into an induction; Layer 6 cuts the Orlik–Strauch representations out of inductions; Layer 7 relates maps into a representation to its Jacquet module, in the order compact-support adjunction (7.1), closed induction (7.2), balanced maps (7.3), Emerton's adjunction theorem (7.4), its consequences for Jacquet modules of very strongly admissible representations (7.5) and Breuil's adjunction (7.6). Layers 8–10 assemble these into Ding's extension groups for GL_n(L): Layer 8 builds the principal series, its constituents, the maps ζ_w and their images; Layer 9 needs Layer 8 for each Levi block of a parabolic and transports it by parabolic induction; Layer 10 specialises the constructions of Layers 8 and 9 along the splitting g ⊗ E = ∏_σ g_σ.
+
+Identifiers of the former numbering, used by citing roadmaps, correspond to the sections here as follows.
+
+| Former numbering | Here |
+|---|---|
+| LR.0 | Layer 0 |
+| LR.1 | Layer 1 |
+| LR.2 | Layer 2 |
+| LR.3 | Layer 3 |
+| LR.4 | Layer 5 |
+| LR.4/locally-analytic-induction | §5.1 |
+| LR.4/principal-series | §5.2 |
+| LR.4/torus-ext | §5.3 |
+| LR.4/unipotent-homology | §5.4 |
+| LR.4/schraen-spectral-sequence | §5.5 |
+| LR.5 | Layer 6 |
+| LR.5/orlik-strauch-functor | §6.1 |
+| LR.5/orlik-strauch-exactness | §6.2 |
+| LR.5/orlik-strauch-transitivity | §6.3 |
+| LR.5/orlik-strauch-irreducibility | §6.4 |
+| LR.5/orlik-strauch-jordan-holder | §6.5 |
+| LR.5/orlik-strauch-products | §6.6 |
+| LR.5/ext-vanishing-long-weyl | §6.7 |
+| LR.6 | Layer 7 |
+| LR.7 | Layer 8 |
+| LR.8 | Layer 9 |
+| LR.9 | Layer 10 |
+| §7.2 (Jacquet modules of very strongly admissible representations) | §7.5 |
+| §7.3 (closed induction) | §7.2 |
+| §7.4 (balanced maps) | §7.3 |
+| §7.5 (Emerton's adjunction theorem) | §7.4 |
 
 ## Layer 0: Locally analytic representations and the distribution algebra of a non-compact group
 
@@ -144,14 +186,14 @@ Let G be a locally F-analytic group (by 0.1 when F = ℚ_p) and E a finite exten
 
 API:
 
-- For barrelled V the action map G × V → V is jointly continuous: each g acts continuously, orbit maps are continuous, and the operators of a compact subset of G are equicontinuous by Banach–Steinhaus (gap:barrelled-banach-steinhaus; Schneider–Teitelbaum 2002, §3, p. 12).
+- For barrelled V the action map G × V → V is jointly continuous: each g acts continuously, orbit maps are continuous, and the operators of a compact subset of G are equicontinuous by Banach–Steinhaus (Mathlib `PolynormableSpace.banach_steinhaus` through the lattice comparison of gap:barrelled-banach-steinhaus; Schneider–Teitelbaum 2002, §3, p. 12).
 - Morphisms form an additive E-linear category; closed G-stable subspaces of a representation of compact type, and the quotients by them, are again locally analytic representations of compact type.
 - Restriction along a locally analytic homomorphism H → G, in particular to a closed analytic subgroup, is a functor Rep^(la)_E(G) → Rep^(la)_E(H).
 - A locally L-analytic representation is locally ℚ_p-analytic, and the inclusion of categories is full.
 - A smooth representation of G (SmoothRepresentationsOfLocalGroups SR.0.1, *is-smooth*) of countable dimension, with its finest locally convex topology, is locally analytic with locally constant orbit maps.
 - A finite-dimensional algebraic representation of 𝐆 ×_L E (ReductiveGroups Layer 1), restricted to G, is locally L-analytic: its orbit maps are polynomial in matrix entries.
 
-*Needs:* 0.1; LocallyAnalyticDistributions §0.0; gap:barrelled-banach-steinhaus; CompletedCohomologyPartII F.4 (V-valued locally analytic functions and locally analytic vectors); PadicLocalLanglandsForGL2Qp §0.1 (spaces of compact type); SmoothRepresentationsOfLocalGroups SR.0.1; ReductiveGroups Layer 1.
+*Needs:* 0.1; LocallyAnalyticDistributions §0.0; Mathlib `BarrelledSpace`, `PolynormableSpace.banach_steinhaus` with gap:barrelled-banach-steinhaus; CompletedCohomologyPartII F.4 (V-valued locally analytic functions and locally analytic vectors); PadicLocalLanglandsForGL2Qp §0.1 (spaces of compact type); SmoothRepresentationsOfLocalGroups SR.0.1; ReductiveGroups Layer 1.
 
 **Checks.**
 
@@ -160,10 +202,11 @@ API:
 - Non-example: translation of ℤ_p on the Banach space C(ℤ_p, E) is continuous but not locally analytic; the orbit map of f = Σ_(n≥1) p^n 1_(p^n+p^(2n)ℤ_p) is not locally analytic, since f is continuous, vanishes at points accumulating at 0 and equals p^n at p^n, so it is given by no power series near 0 (a power series with infinitely many zeros in a closed disc vanishes there).
 - Non-example: for L ≠ ℚ_p and an embedding σ : L → E different from the chosen inclusion, the character x ↦ σ(x) of L^× on E is locally ℚ_p-analytic, but its derivative at 1 is σ, not L-linear for the chosen L-structure on E, so it is not locally L-analytic.
 - Compatibility: for a smooth representation π of countable dimension with its finest locally convex topology, the locally analytic structure has the same underlying G-module and locally constant orbit maps.
+- Banach–Steinhaus over a nonarchimedean field: for E = ℚ_2 and the operators x ↦ ax of E, a ∈ ℤ_2, both formulations give the same answer, sup_a |ax| = |x| pointwise and operator bound 1, the lattice ℤ_2 being mapped into itself; the operators x ↦ 2^(−n)x, n ≥ 0, are not pointwise bounded (|2^(−n)| = 2^n at x = 1) and not equicontinuous. A formulation that changed the answer between lattices and seminorms on this Banach space would be wrong.
 
 ### 0.3 The action of the enveloping algebra and its decomposition over embeddings
 
-Let V be a locally F-analytic representation of G with F-Lie algebra g. The differentiated action x·v = (d/dt)(exp(tx)·v)|_(t=0) of g on V is the one of CompletedCohomologyPartII F.4. Prove: (i) x ↦ (v ↦ x·v) is an F-linear Lie algebra homomorphism g → End_cont(V) and extends uniquely to an E-algebra homomorphism U(g ⊗_F E) → End_cont(V) (Mathlib `UniversalEnvelopingAlgebra.lift`); (ii) g(x·v) = (Ad(g)x)·(g·v) for g ∈ G; (iii) morphisms of locally analytic representations commute with this action; (iv) for F = ℚ_p, U(g ⊗_(ℚ_p) E) = ⊗_σ U(g_σ) by 0.1 (iv), so the action splits into commuting actions of the g_σ, σ ∈ Σ_L; (v) after 0.5, x acts as the distribution x̃ ∈ D(G, E) of LocallyAnalyticDistributionsPartII ND.1 (*lie-algebra-in-distributions*). On spaces of functions with the left regular action the convention is (x·f)(g) = (d/dt) f(exp(−tx)g)|_(t=0) (Breuil, socle I, §2, (5), p. 8; Schneider–Teitelbaum 2002, §§2–3, pp. 9–13).
+Let V be a locally F-analytic representation of G with F-Lie algebra g. The differentiated action x·v = (d/dt)(exp(tx)·v)|_(t=0) of g on V is the one of CompletedCohomologyPartII F.4. Prove: (i) x ↦ (v ↦ x·v) is an F-linear Lie algebra homomorphism g → End_cont(V) and extends uniquely to an E-algebra homomorphism U(g ⊗_F E) → End_cont(V) (Mathlib `UniversalEnvelopingAlgebra.lift`); (ii) g(x·v) = (Ad(g)x)·(g·v) for g ∈ G; (iii) morphisms of locally analytic representations commute with this action; (iv) for F = ℚ_p, U(g ⊗_(ℚ_p) E) = ⊗_σ U(g_σ) by 0.1 (iv), so the action splits into commuting actions of the g_σ, σ ∈ Σ_L; (v) after 0.5, x acts as the distribution x̃ ∈ D(G, E) of LocallyAnalyticDistributionsPartII §1.1. On spaces of functions with the left regular action the convention is (x·f)(g) = (d/dt) f(exp(−tx)g)|_(t=0) (Breuil, socle I, §2, (5), p. 8; Schneider–Teitelbaum 2002, §§2–3, pp. 9–13).
 
 The proof route differentiates analytic orbit maps: for fixed x the difference quotients are pointwise bounded continuous operators on the barrelled V, so Banach–Steinhaus gives continuity of their limit; differentiating the commutator and conjugation identities gives (i) and (ii). These steps use only the analytic charts; (v) is a later compatibility, proved from the integration formula of 0.5.
 
@@ -174,7 +217,7 @@ API:
 - Naturality: every morphism f of locally analytic representations satisfies f(x·v) = x·f(v).
 - For F = ℚ_p, the components g_σ act by commuting operators and U(g_σ) for different σ commute.
 
-*Needs:* 0.1, 0.2; CompletedCohomologyPartII F.4 (differentiated Lie action); LocallyAnalyticDistributionsPartII ND.1; Mathlib `UniversalEnvelopingAlgebra`, `UniversalEnvelopingAlgebra.lift`; gap:barrelled-banach-steinhaus.
+*Needs:* 0.1, 0.2; CompletedCohomologyPartII F.4 (differentiated Lie action); LocallyAnalyticDistributionsPartII §1.1 (for (v)); Mathlib `UniversalEnvelopingAlgebra`, `UniversalEnvelopingAlgebra.lift`, `PolynormableSpace.banach_steinhaus`; gap:barrelled-banach-steinhaus.
 
 **Checks.**
 
@@ -185,19 +228,19 @@ API:
 
 ### 0.4 The distribution algebra of a non-compact locally analytic group
 
-Let G be a locally F-analytic group, not necessarily compact, and H ⊆ G a compact open subgroup. Define D(G, E) := C^(F-an)(G, E)′_b, the strong dual of the space of locally analytic functions of PadicLocalLanglandsForGL2Qp §0.1, with convolution λ ∗ μ = m_*(λ ⊗ μ). Prove: (i) C^(F-an)(G, E) = ∏_(gH ∈ G/H) C^(F-an)(gH, E) and D(G, E) = ⊕_(gH∈G/H) δ_g ∗ D(H, E) as locally convex spaces, with D(H, E) the Fréchet algebra of LocallyAnalyticDistributionsPartII ND.1 (*distribution-algebra*); (ii) D(G, E) is an associative unital E-algebra with unit δ_1 and separately continuous multiplication, δ_g ∗ δ_h = δ_gh, and E[G] → D(G, E) is injective with dense image; (iii) for an open subgroup H′, D(H′, E) is a subalgebra, D(G, E) is free as a right D(H′, E)-module on δ_g for g in a set of representatives of G/H′, and free as a left module on δ_g for representatives of H′\G; (iv) U(g ⊗_F E) ⊂ D(H, E) ⊂ D(G, E); (v) g ↦ g⁻¹ induces an anti-involution of D(G, E); (vi) for F = ℚ_p and L ≠ ℚ_p, the transpose of C^(L-an) ⊂ C^(ℚ_p-an) is a surjective algebra map D_(ℚ_p)(G, E) → D_L(G, E) (Schneider–Teitelbaum 2002, Proposition 2.3, p. 9, and Lemma 3.1, p. 13; Breuil, socle I, proof of Lemma 2.2, p. 9; LocallyAnalyticDistributions §0.3, *F-analytic against ℚ_p-analytic functions*). Unless named otherwise D(G, E) is the ℚ_p-analytic algebra. Multiplication is separately but not in general jointly continuous when G/H is infinite; nothing below uses joint continuity.
+Let G be a locally F-analytic group, not necessarily compact, and H ⊆ G a compact open subgroup. Define D(G, E) := C^(F-an)(G, E)′_b, the strong dual of the space of locally analytic functions of PadicLocalLanglandsForGL2Qp §0.1, with convolution λ ∗ μ = m_*(λ ⊗ μ). Prove: (i) C^(F-an)(G, E) = ∏_(gH ∈ G/H) C^(F-an)(gH, E) and D(G, E) = ⊕_(gH∈G/H) δ_g ∗ D(H, E) as locally convex spaces, with D(H, E) the Fréchet algebra of PadicLocalLanglandsForGL2Qp §0.1; (ii) D(G, E) is an associative unital E-algebra with unit δ_1 and separately continuous multiplication, δ_g ∗ δ_h = δ_gh, and E[G] → D(G, E) is injective with dense image; (iii) for an open subgroup H′, D(H′, E) is a subalgebra, D(G, E) is free as a right D(H′, E)-module on δ_g for g in a set of representatives of G/H′, and free as a left module on δ_g for representatives of H′\G; (iv) U(g ⊗_F E) ⊂ D(H, E) ⊂ D(G, E); (v) g ↦ g⁻¹ induces an anti-involution of D(G, E); (vi) for F = ℚ_p and L ≠ ℚ_p, the transpose of C^(L-an) ⊂ C^(ℚ_p-an) is a surjective algebra map D_(ℚ_p)(G, E) → D_L(G, E), the F-analytic quotient of PadicLocalLanglandsForGL2Qp §0.1 on each compact open subgroup (Schneider–Teitelbaum 2002, Proposition 2.3, p. 9, and Lemma 3.1, p. 13; Breuil, socle I, proof of Lemma 2.2, p. 9). Unless named otherwise D(G, E) is the ℚ_p-analytic algebra. Multiplication is separately but not in general jointly continuous when G/H is infinite; nothing below uses joint continuity.
 
-The proof route reduces everything to the compact pieces: products of function spaces dualise to locally convex direct sums, convolution is defined coset by coset from the compact case, and freeness over D(H′, E) is LocallyAnalyticDistributionsPartII ND.1 (*open-subgroup-decomposition*) applied to H ∩ H′.
+The proof route reduces everything to the compact pieces: products of function spaces dualise to locally convex direct sums, convolution is defined coset by coset from the compact case, and freeness over D(H′, E) is the open-subgroup comparison of PadicLocalLanglandsForGL2Qp §0.1 applied to H ∩ H′ ⊆ H and H ∩ H′ ⊆ H′; (iv) is LocallyAnalyticDistributionsPartII §1.1 for H.
 
 API:
 
 - The Dirac map g ↦ δ_g is a group homomorphism G → D(G, E)^×.
 - The decomposition D(G, E) ≅ ⊕_gH δ_g ∗ D(H, E) holds for every compact open H, as locally convex spaces and as right D(H, E)-modules.
 - For an open subgroup H′ the inclusion D(H′, E) → D(G, E) is an injective algebra map, compatible with composition of inclusions.
-- For compact G, D(G, E) is the Fréchet algebra of LocallyAnalyticDistributionsPartII ND.1.
-- For x ∈ g and g ∈ G, δ_g ∗ x̃ ∗ δ_g⁻¹ = (Ad(g)x)~.
+- For compact G, D(G, E) is the Fréchet algebra of PadicLocalLanglandsForGL2Qp §0.1.
+- For x ∈ g and g ∈ G, δ_g ∗ x̃ ∗ δ_g⁻¹ = (Ad(g)x)~ (LocallyAnalyticDistributionsPartII §1.1 on a compact open subgroup containing g, and by translation otherwise).
 
-*Needs:* PadicLocalLanglandsForGL2Qp §0.1 (locally analytic functions on non-compact manifolds and strong duals); LocallyAnalyticDistributionsPartII ND.1 (*distribution-algebra*, *lie-algebra-in-distributions*, *open-subgroup-decomposition*); LocallyAnalyticDistributions §§0.0, 0.3; 0.1.
+*Needs:* PadicLocalLanglandsForGL2Qp §0.1 (locally analytic functions on non-compact manifolds, strong duals, D(H, E), open-subgroup comparisons, the F-analytic quotient); LocallyAnalyticDistributionsPartII §1.1 (x̃ and its conjugation formula); LocallyAnalyticDistributions §0.0; 0.1.
 
 **Checks.**
 
@@ -212,7 +255,7 @@ Let V be a locally F-analytic representation of G over E. Prove that there is a 
 
 The proof route integrates orbit maps chartwise: for fixed v and a compact chart meeting the support of μ, the orbit map factors through a BH-subspace of V, where its convergent power series is integrated against μ; finitely many charts suffice and the result is independent of choices. No identity C^an(G, V) = C^an(G, E) ⊗̂ V for arbitrary barrelled V is used. Uniqueness follows from Hahn–Banach (LocallyAnalyticDistributions §0.2), and the module axioms hold on Dirac distributions and extend by density of E[G] (0.4 (ii)).
 
-*Needs:* 0.2, 0.3, 0.4; gap:barrelled-banach-steinhaus; LocallyAnalyticDistributions §0.2 (*The nonarchimedean Hahn–Banach theorem*).
+*Needs:* 0.2, 0.3, 0.4; Mathlib `PolynormableSpace.banach_steinhaus` with gap:barrelled-banach-steinhaus; LocallyAnalyticDistributions §0.2 (*The nonarchimedean Hahn–Banach theorem*).
 
 **Checks.**
 
@@ -265,9 +308,9 @@ The proof route reduces to the seminormed quotients V_q = V/ker q for the contin
 
 ### 0.9 Completed external tensor products of representations
 
-Let V_i be a locally F-analytic representation of G_i on a space of compact type, i = 1, 2. Prove: the completed tensor product V_1 ⊗̂_E V_2 (inductive and projective completions agree here, gap:compact-type-tensor) is of compact type and a locally analytic representation of G_1 × G_2 with (g_1, g_2)(v_1 ⊗ v_2) = g_1v_1 ⊗ g_2v_2; its strong dual is V_1′_b ⊗̂_E V_2′_b as a module over D(G_1 × G_2, E) ⊇ D(G_1, E) ⊗_E D(G_2, E), with D(H_1 × H_2, E) = D(H_1, E) ⊗̂_E D(H_2, E) for compact open H_i; the construction is functorial and exact in each variable on strict short exact sequences of spaces of compact type; restriction along the diagonal G → G × G gives the internal completed tensor product, in particular the twist V ⊗ χ by a locally analytic character χ (Emerton's memoir, Propositions 1.1.31–1.1.32, pp. 18–19, and Proposition 3.6.18, p. 74; Ding, §3.1.3, (3.19), arXiv v2 p. 43; Breuil–Hellmann–Schraen, §5.2, p. 390). Admissibility of external products is 1.5.
+Let V_i be a locally F-analytic representation of G_i on a space of compact type, i = 1, 2. Prove: the completed tensor product V_1 ⊗̂_E V_2 (inductive and projective completions agree here, LocallyAnalyticDistributions §0.0, *Compact-type tensor comparison*) is of compact type and a locally analytic representation of G_1 × G_2 with (g_1, g_2)(v_1 ⊗ v_2) = g_1v_1 ⊗ g_2v_2; its strong dual is V_1′_b ⊗̂_E V_2′_b as a module over D(G_1 × G_2, E) ⊇ D(G_1, E) ⊗_E D(G_2, E), with D(H_1 × H_2, E) = D(H_1, E) ⊗̂_E D(H_2, E) for compact open H_i; the construction is functorial and exact in each variable on strict short exact sequences of spaces of compact type; restriction along the diagonal G → G × G gives the internal completed tensor product, in particular the twist V ⊗ χ by a locally analytic character χ (Emerton's memoir, Propositions 1.1.31–1.1.32, pp. 18–19, and Proposition 3.6.18, p. 74; Ding, §3.1.3, (3.19), arXiv v2 p. 43; Breuil–Hellmann–Schraen, §5.2, p. 390). Admissibility of external products is 1.5.
 
-The proof route takes the compact-type and dual statements from gap:compact-type-tensor and gets local analyticity of the product action from Emerton's tensor compatibility of analytic vectors (Proposition 3.6.18, via 3.5.15 and 3.6.12) on compact-type Banach presentations; density of elementary tensors alone would not give it, since analytic vectors need not form a closed subspace.
+The proof route takes the compact-type and dual statements from LocallyAnalyticDistributions §0.0 (*Compact-type tensor comparison*), exactness in each variable from gap:compact-type-tensor, and gets local analyticity of the product action from Emerton's tensor compatibility of analytic vectors (Proposition 3.6.18, via 3.5.15 and 3.6.12) on compact-type Banach presentations; density of elementary tensors alone would not give it, since analytic vectors need not form a closed subspace.
 
 API:
 
@@ -275,7 +318,7 @@ API:
 - The dual identification (V_1 ⊗̂ V_2)′_b ≅ V_1′_b ⊗̂ V_2′_b as D(G_1 × G_2, E)-modules.
 - The twist V ⊗ χ := restriction of V ⊗̂ χ along the diagonal, for a locally analytic character χ.
 
-*Needs:* 0.2, 0.6; gap:compact-type-tensor; LocallyAnalyticDistributions §0.0 (completed tensors); PadicLocalLanglandsForGL2Qp §0.1 (D(H_1 × H_2) and products of charts).
+*Needs:* 0.2, 0.6; LocallyAnalyticDistributions §0.0 (completed tensors, *Compact-type tensor comparison*) with gap:compact-type-tensor; PadicLocalLanglandsForGL2Qp §0.1 (D(H_1 × H_2) and products of charts).
 
 **Checks.**
 
@@ -292,7 +335,7 @@ API:
 
 ### Dependencies
 
-ReductiveGroupsPartII RG2.0.2; ReductiveGroups Layers 1–2; LocallyAnalyticDistributions §§0.0, 0.2, 0.3 with gap:barrelled-banach-steinhaus and gap:compact-type-tensor; LocallyAnalyticDistributionsPartII ND.1; PadicLocalLanglandsForGL2Qp §0.1; CompletedCohomologyPartII F.4; SmoothRepresentationsOfLocalGroups SR.0.1; Mathlib `UniversalEnvelopingAlgebra`, `LieGroup`.
+ReductiveGroupsPartII RG2.0.2; ReductiveGroups Layers 1–2; LocallyAnalyticDistributions §§0.0, 0.2 with gap:barrelled-banach-steinhaus and gap:compact-type-tensor; LocallyAnalyticDistributionsPartII §1.1; PadicLocalLanglandsForGL2Qp §0.1; CompletedCohomologyPartII F.4; SmoothRepresentationsOfLocalGroups SR.0.1; Mathlib `UniversalEnvelopingAlgebra`, `LieGroup`, `PolynormableSpace.banach_steinhaus`.
 
 ## Layer 1: Coadmissible modules, admissibility, locally algebraic representations and Ext groups
 
@@ -300,36 +343,36 @@ Admissibility of a locally analytic representation is the notion of PadicLocalLa
 
 ### 1.1 Coadmissible modules over D(G, E) for non-compact G
 
-Let G be a locally F-analytic group. Define a left D(G, E)-module M to be coadmissible if for one compact open subgroup H ⊆ G its restriction to D(H, E) is a coadmissible module over the Fréchet–Stein algebra D(H, E) (LocallyAnalyticDistributionsPartII ND.2, *coadmissible-module*, *frechet-stein-distribution*); write 𝒞_G for the full subcategory of Mod(D(G, E)). Prove that the condition does not depend on H, that M then carries the canonical Fréchet topology of its D(H, E)-module structure, independent of H, for which D(G, E) acts separately continuously, and that D(G, E)-linear maps between coadmissible modules are continuous and strict (Schneider–Teitelbaum 2003, §6, p. 31, with Lemma 3.8, p. 12).
+Let G be a locally F-analytic group. Define a left D(G, E)-module M to be coadmissible if for one compact open subgroup H ⊆ G its restriction to D(H, E) is a coadmissible module over the Fréchet–Stein algebra D(H, E) (PadicLocalLanglandsForGL2Qp §0.1); write 𝒞_G for the full subcategory of Mod(D(G, E)). Prove that the condition does not depend on H, that M then carries the canonical Fréchet topology of its D(H, E)-module structure, independent of H, for which D(G, E) acts separately continuously, and that D(G, E)-linear maps between coadmissible modules are continuous and strict (Schneider–Teitelbaum 2003, §6, p. 31, with Lemma 3.8, p. 12).
 
-The proof route uses that for compact open H ⊆ H′ the algebra D(H′, E) is finite free over D(H, E) (LocallyAnalyticDistributionsPartII ND.1, *open-subgroup-decomposition*), so coadmissibility over D(H′, E) and over D(H, E) agree by the change-of-ring statement of ND.2 (*coadmissible-theorems*), and canonical topologies agree because D(H ∩ H′, E)-linear maps between coadmissible modules are continuous and strict.
+The proof route uses that for compact open H ⊆ H′ the algebra D(H′, E) is finite free over D(H, E) (the open-subgroup comparison of PadicLocalLanglandsForGL2Qp §0.1), hence coadmissible as a D(H, E)-module, so coadmissibility over D(H′, E) and over D(H, E) agree by the change of ring along D(H, E) → D(H′, E) (gap:frechet-stein-general; Schneider–Teitelbaum 2003, Lemma 3.8, p. 12), and canonical topologies agree because D(H ∩ H′, E)-linear maps between coadmissible modules are continuous and strict.
 
 API:
 
 - Independence: M is coadmissible for one compact open H if and only if for every compact open H.
 - 𝒞_G is an abelian full subcategory of Mod(D(G, E)) closed under finite direct sums, kernels, cokernels and images.
-- For N ⊆ M with M coadmissible: N is coadmissible if and only if M/N is, if and only if N is closed for the canonical topology (Schneider–Teitelbaum 2003, Lemma 3.6, p. 11).
+- For N ⊆ M with M coadmissible: N is coadmissible if and only if M/N is, if and only if N is closed for the canonical topology (Schneider–Teitelbaum 2003, Lemma 3.6, p. 11, for D(H, E); gap:frechet-stein-general).
 
-*Needs:* 0.4; LocallyAnalyticDistributionsPartII ND.1, ND.2.
+*Needs:* 0.4; PadicLocalLanglandsForGL2Qp §0.1 (D(H, E), open-subgroup comparisons, coadmissible modules) with gap:frechet-stein-general.
 
 **Checks.**
 
-- Compatibility: for compact G, 𝒞_G is the category of coadmissible D(G, E)-modules of ND.2.
+- Compatibility: for compact G, 𝒞_G is the category of coadmissible D(G, E)-modules of PadicLocalLanglandsForGL2Qp §0.1.
 - Degenerate case: for G discrete (H = {1}, D(H, E) = E) the coadmissible E[G]-modules are exactly the finite-dimensional ones.
 - Non-example: for non-compact G the regular module D(G, E) is not coadmissible: over D(H, E) it is free of infinite rank, one generator per coset of H.
 - For a locally analytic character χ of G, the line E on which δ_g acts by χ(g⁻¹) is coadmissible; it is the dual of χ.
 
 ### 1.2 Strongly admissible and topologically irreducible representations
 
-Admissibility of a locally analytic representation V of G (compact type, strong dual coadmissible over D(H, E) for a compact open H) is that of PadicLocalLanglandsForGL2Qp §0.1; write Rep^a_E(G). Define V to be strongly admissible if V′ is finitely generated over D(H, E) for a compact open H (Emerton's memoir, Definition 6.2.1, p. 117), and topologically irreducible if V ≠ 0 and its only closed G-stable subspaces are 0 and V. Prove: (i) a strongly admissible representation of compact type is admissible: a finite generating set gives a continuous surjection D(H, E)^m → V′, strict with closed kernel by the Fréchet open mapping theorem, hence V′ is a coadmissible quotient (Emerton's memoir, Proposition 6.2.4, p. 118); (ii) strong admissibility is independent of H; (iii) for admissible V, V is topologically irreducible if and only if V′ is a simple D(G, E)-module; (iv) for an admissible unitary Banach representation B of a compact open subgroup H (PadicLocalLanglandsForGL2Qp §0.1) the locally analytic vectors B^la are strongly admissible, since (B^la)′ ≅ D(H, E) ⊗_(E[[H]]) B′ (PadicLocalLanglandsForGL2Qp §0.1) is finitely generated; (v) a smooth representation with its finest locally convex topology is admissible as a locally analytic representation if and only if it is admissible in the sense of SmoothRepresentationsOfLocalGroups SR.0.4 (*admissible*), and an admissible representation on which g acts trivially is of this form (Schneider–Teitelbaum 2003, Theorem 6.6, p. 35).
+Admissibility of a locally analytic representation V of G (compact type, strong dual coadmissible over D(H, E) for a compact open H) is that of PadicLocalLanglandsForGL2Qp §0.1; write Rep^a_E(G). Define V to be strongly admissible if V′ is finitely generated over D(H, E) for a compact open H (Emerton's memoir, Definition 6.2.1, p. 117), and topologically irreducible if V ≠ 0 and its only closed G-stable subspaces are 0 and V. Prove: (i) a strongly admissible representation of compact type is admissible: a finite generating set gives a continuous surjection D(H, E)^m → V′, strict with closed kernel by the Fréchet open mapping theorem, hence V′ is a coadmissible quotient (Emerton's memoir, Proposition 6.2.2, p. 117); (ii) strong admissibility is independent of H; (iii) for admissible V, V is topologically irreducible if and only if V′ is a simple object of 𝒞_G, that is, V′ ≠ 0 and its only coadmissible D(G, E)-submodules, equivalently (1.1) its only D(G, E)-submodules closed for the canonical topology, are 0 and V′; for compact G this is equivalent to simplicity of V′ as an abstract D(G, E)-module, because a nonzero cyclic submodule of a coadmissible module is coadmissible (Schneider–Teitelbaum 2003, Corollary 3.4 (iv), p. 10, and Lemma 3.9 with its proof, p. 14), while for non-compact G abstract simplicity is strictly stronger and is not asserted; (iv) for an admissible unitary Banach representation B of a compact open subgroup H (PadicLocalLanglandsForGL2Qp §0.1) the locally analytic vectors B^la are strongly admissible, since (B^la)′ ≅ D(H, E) ⊗_(E[[H]]) B′ (PadicLocalLanglandsForGL2Qp §0.1) is finitely generated; (v) a smooth representation with its finest locally convex topology is admissible as a locally analytic representation if and only if it is admissible in the sense of SmoothRepresentationsOfLocalGroups SR.0.4 (*admissible*), and an admissible representation on which g acts trivially is of this form (Schneider–Teitelbaum 2003, Theorem 6.6, p. 35).
 
 API:
 
 - Strong admissibility can be tested on one compact open subgroup and is preserved by restriction to open subgroups.
 - Every finite-dimensional locally analytic representation is strongly admissible.
-- Topological irreducibility of admissible V is equivalent to simplicity of V′ over D(G, E).
+- Topological irreducibility of admissible V is equivalent to simplicity of V′ in 𝒞_G: V′ ≠ 0 has no nonzero proper closed D(G, E)-submodule. For compact G it is equivalent to simplicity of V′ as a D(G, E)-module.
 
-*Needs:* 1.1; PadicLocalLanglandsForGL2Qp §0.1; LocallyAnalyticDistributions §0.2 (*Fréchet open mapping*); SmoothRepresentationsOfLocalGroups SR.0.4.
+*Needs:* 1.1; PadicLocalLanglandsForGL2Qp §0.1 with gap:frechet-stein-general (for (iii)); LocallyAnalyticDistributions §0.2 (*Fréchet open mapping*); SmoothRepresentationsOfLocalGroups SR.0.4.
 
 **Checks.**
 
@@ -337,6 +380,7 @@ API:
 - Degenerate case: the zero representation is strongly admissible and not topologically irreducible.
 - Non-example: for non-compact G, the compact induction c-Ind_H^G 1 with its finest locally convex topology is not admissible: its H-invariants are infinite-dimensional.
 - Compatibility: for π smooth with the finest topology, admissibility in the two senses agrees; for G = GL_2(ℚ_p) the smooth Steinberg representation is admissible and topologically irreducible.
+- Non-example to abstract simplicity of the dual: for G = GL_2(ℚ_p) and the smooth Steinberg representation V = C^sm(ℙ¹(ℚ_p), E)/E with its finest topology, V′ is the full linear dual with the topology of pointwise convergence (Schneider–Teitelbaum 2003, proof of Theorem 6.6, p. 36). The smooth contragredient V^∨ ⊆ V′ is a nonzero D(G, E)-submodule (on a functional fixed by an open normal subgroup N of H, D(H, E) acts through E[H/N]), and it is proper: the functional f ↦ f(0) − f(∞) lies in V′, but its stabiliser is the split torus fixing the two points 0 and ∞ of ℙ¹(ℚ_p), which is not open, so it is not smooth. V^∨ separates the points of V, so it is dense in V′; the closed submodules of V′ are 0 and V′, as (iii) requires, while abstract simplicity would make V reducible.
 
 ### 1.3 The Schneider–Teitelbaum anti-equivalence for non-compact groups
 
@@ -358,7 +402,7 @@ Prove: (i) Rep^a_E(G) is abelian, with kernels and images the algebraic ones wit
 
 The proof route transports the abelian structure of 𝒞_G (1.1) through 1.3; strictness follows from the duality of strict morphisms between spaces of compact type and their duals (LocallyAnalyticDistributions §0.0, *Strict maps and the quasi-abelian categories*). Finite generation and finite presentation in (iv) are over the compact-open algebra D(H, E); finite presentation over the non-compact D(G, E) does not imply coadmissibility, as the regular module shows.
 
-*Needs:* 1.1, 1.3; LocallyAnalyticDistributionsPartII ND.2 (*coadmissible-theorems*); LocallyAnalyticDistributions §0.0.
+*Needs:* 1.1, 1.3; PadicLocalLanglandsForGL2Qp §0.1 with gap:frechet-stein-general; LocallyAnalyticDistributions §0.0.
 
 **Checks.**
 
@@ -372,7 +416,7 @@ Let V_i be admissible locally F-analytic representations of G_i, i = 1, 2. Prove
 
 The proof route identifies the strong dual with M_1 ⊗̂_E M_2 (0.9). For compatible radii, D_r(H_1 × H_2, E) = D_r(H_1, E) ⊗̂_E D_r(H_2, E) by the product chart and the power-series norm, and the module at radius r is M_(1,r) ⊗̂_E M_(2,r), finitely generated over the product Banach algebra by products of generators. Flat transition base changes identify the radius transitions, and the inverse limit recovers M_1 ⊗̂ M_2 by nuclearity; this is a coadmissible system, and 1.3 concludes. The admissibility assertion is derived from these inputs.
 
-*Needs:* 0.9, 1.3; LocallyAnalyticDistributionsPartII ND.2 (*banach-steps*, *frechet-stein-distribution*, *coadmissible-theorems*); gap:compact-type-tensor.
+*Needs:* 0.9, 1.3; PadicLocalLanglandsForGL2Qp §0.1 (Fréchet–Stein structure of D(H, E), D(H_1 × H_2, E) = D(H_1, E) ⊗̂ D(H_2, E)) with gap:radius-algebras and gap:frechet-stein-general; LocallyAnalyticDistributions §0.0 (*Compact-type tensor comparison*) with gap:compact-type-tensor.
 
 **Checks.**
 
@@ -384,26 +428,27 @@ The proof route identifies the strong dual with M_1 ⊗̂_E M_2 (0.9). For compa
 
 Let 𝐆 be split reductive over L, G = 𝐆(L), and W a finite-dimensional algebraic representation of (Res_(L/ℚ_p)𝐆) ×_(ℚ_p) E ≅ ∏_(σ∈Σ_L) 𝐆 ×_(L,σ) E, restricted to G. For a smooth admissible representation π of G over E, π ⊗_E W with the diagonal action and the finest locally convex topology is an admissible locally ℚ_p-analytic representation, called locally algebraic. Define the locally W-algebraic vectors of a locally analytic V as the image of Hom_g(W, V) ⊗ W → V, and V_lalg as their sum over irreducible W; V is locally algebraic if V = V_lalg. Prove: (i) π ⊗ W is admissible when π is admissible; (ii) if π and W are absolutely irreducible then π ⊗ W is topologically irreducible, even simple as an E[G]-module (Schneider–Teitelbaum 2001, Proposition 3.4, p. 13); (iii) every admissible locally W-algebraic representation is U ⊗_(End(W)) W with U admissible smooth (Emerton's memoir, Proposition 6.3.10, p. 124); (iv) on π ⊗ W the action of g ⊗_(ℚ_p) E is 1 ⊗ (differential of W) (Schneider–Teitelbaum 2003, Theorem 6.6, p. 35; Emerton's memoir, Propositions 6.1.5, 6.3.2, 6.3.6, pp. 112–123).
 
-The proof route for (i) uses that π is admissible with trivial Lie action and that the tensor product of an admissible representation with a finite-dimensional one is admissible; for (ii), any nonzero vector can be moved by a small unipotent subgroup into E_λ ⊗ π^U for the highest-weight line E_λ, which generates. Absolute irreducibility of W over E uses Layer 4.1.
+The proof route for (i) uses that π is admissible with trivial Lie action and that the tensor product of an admissible representation with a finite-dimensional one is admissible; for (ii), any nonzero vector can be moved by a small unipotent subgroup into E_λ ⊗ π^U for the highest-weight line E_λ of W, which generates; for an absolutely irreducible algebraic representation W of the split group this line is one-dimensional and generates W (ReductiveGroups §10B).
 
 API:
 
-- V ↦ V_lalg is a left exact subfunctor of the identity on Rep^(la)_E(G), and V_(W-lalg) is closed in V with its finest topology.
+- V ↦ V_lalg is a left exact subfunctor of the identity on Rep^(la)_E(G). For V of compact type, V_(W-lalg) is a closed subspace of V (Emerton's memoir, Proposition 4.2.10, p. 85); for V admissible, the topology it inherits from V is its finest locally convex topology and V_(W-lalg) is admissible (Emerton's memoir, Proposition 6.3.6, p. 123).
 - π ⊗ W is functorial in π and W.
 
-*Needs:* 0.2, 0.3, 1.2; Layer 4.1 (split highest-weight theory over E); SmoothRepresentationsOfLocalGroups SR.0.4 (*admissible*, *smooth-character*); ReductiveGroups Layer 1.
+*Needs:* 0.2, 0.3, 1.2; SmoothRepresentationsOfLocalGroups SR.0.4 (*admissible*, *smooth-character*); ReductiveGroups Layer 1 and §10B (highest-weight lines of algebraic representations of split groups).
 
 **Checks.**
 
 - Degenerate case: for W trivial, π ⊗ W = π is smooth; for π the trivial character, π ⊗ W = W is finite-dimensional algebraic.
 - Non-example: if π = π_1 ⊕ π_2 is reducible then π ⊗ W ≅ (π_1 ⊗ W) ⊕ (π_2 ⊗ W) is reducible.
+- Non-example to the finest-topology clause without admissibility: V = c_0(ℕ, E) with the trivial action of GL_2(ℚ_p) and W = E has V_(W-lalg) = V, closed, but its Banach topology is not the finest locally convex topology: a linear form with e_n ↦ p^(−n), extended along a Hamel basis, takes the value 1 on p^n e_n, which tends to 0 in norm, so it is continuous for the finest topology and not for the norm. V is excluded by the admissibility hypothesis, its invariants under every compact open subgroup being infinite-dimensional.
 - For GL_2(ℚ_p), Sym^k E² ⊗ St is an irreducible infinite-dimensional locally algebraic representation.
 - For GL_2(ℚ_p) and dominant λ = (k, 0), the locally algebraic vectors of (Ind_B⁻^G χ_sm z^λ)^an are (Ind_B⁻^G χ_sm)^∞ ⊗ Sym^k E².
 - Compatibility: for G = GL_2(ℚ_p) and V = Π^an the locally analytic vectors of an admissible unitary Banach representation Π, V_lalg is the space Π^alg of PadicLocalLanglandsForGL2Qp §2.4, and the sum defining it is the direct sum ⊕_W W ⊗ Hom_g(W, V)^sm over W = Sym^(k−1) E² ⊗ det^a; a definition retaining a single algebraic type W would recover only the summand of that type, and for Π = E² with trivial action it would have to recover the trivial type with multiplicity two.
 
 ### 1.7 Ext groups of admissible representations
 
-For admissible V_1, V_2 put Ext^i_G(V_1, V_2) := Ext^i_(D(G,E))(V_2′, V_1′), Ext in the abelian category of all left D(G, E)-modules (Mathlib `CategoryTheory.Abelian.Ext` over `ModuleCat`, which has enough projectives). Variants: for a character χ of the centre Z of G through which Z acts on V_1 and V_2, Ext^i_(G,χ) is computed over D(G, E) ⊗_(D(Z,E)) χ⁻¹, the inverse because Z acts on V′ by χ⁻¹ (Convention 3); for locally algebraic V_1, V_2, Ext¹_lalg(V_1, V_2) ⊆ Ext¹_G(V_1, V_2) is the subspace of classes whose extension (1.8) is locally algebraic (Ding, §3.1.1, arXiv v2 p. 36, DING25 line 1453; Schraen, Définition 3.1 and (3.2), p. 65). Ext^i_G is E-linear, contravariant in V_1 and covariant in V_2. Ext is taken among all D(G, E)-modules; 1.8 shows that Ext¹ nevertheless classifies admissible extensions.
+For admissible V_1, V_2 put Ext^i_G(V_1, V_2) := Ext^i_(D(G,E))(V_2′, V_1′), Ext in the abelian category of all left D(G, E)-modules (Mathlib's root `Ext` on `ModuleCat`, which has enough projectives, or equivalently `CategoryTheory.Abelian.Ext`). Variants: for a character χ of the centre Z of G through which Z acts on V_1 and V_2, Ext^i_(G,χ) is computed over D(G, E) ⊗_(D(Z,E)) χ⁻¹, the inverse because Z acts on V′ by χ⁻¹ (Convention 3); for locally algebraic V_1, V_2, Ext¹_lalg(V_1, V_2) ⊆ Ext¹_G(V_1, V_2) is the subspace of classes whose extension (1.8) is locally algebraic (Ding, §3.1.1, arXiv v2 p. 36, DING25 line 1453; Schraen, Définition 3.1 and (3.2), p. 65). Ext^i_G is E-linear, contravariant in V_1 and covariant in V_2. Ext is taken among all D(G, E)-modules; 1.8 shows that Ext¹ nevertheless classifies admissible extensions.
 
 API:
 
@@ -412,7 +457,7 @@ API:
 - A short exact sequence 0 → U → V → W → 0 in Rep^a_E(G) gives long exact sequences 0 → Hom(X, U) → Hom(X, V) → Hom(X, W) → Ext¹(X, U) → ⋯ and the analogous sequence in the first variable, since it dualises to a short exact sequence of coadmissible modules (1.4).
 - The natural map Ext^i_(G,χ) → Ext^i_G.
 
-*Needs:* 1.3, 1.4, 0.4; Mathlib `CategoryTheory.Abelian.Ext`, `ModuleCat`.
+*Needs:* 1.3, 1.4, 0.4; Mathlib `Ext`, `CategoryTheory.Abelian.Ext`, `ModuleCat`.
 
 **Checks.**
 
@@ -427,7 +472,7 @@ For admissible locally ℚ_p-analytic V_1, V_2 of G over E, prove that Ext¹_G(V
 
 The proof route dualises an admissible extension to a coadmissible one. Conversely, restrict an abstract extension of the duals to D(H, E) for compact open H, apply the flat base changes to the Banach steps, and compare with the inverse limit of the resulting finitely generated extensions: exactness of the coadmissible inverse-limit rows and a diagram chase recover the middle module with its canonical topology. Dualise with 1.3 and strictness. Finite generation at each step alone would not justify this recovery.
 
-*Needs:* 1.4, 1.7; LocallyAnalyticDistributionsPartII ND.2 (*coadmissible-theorems*, *banach-steps*); LocallyAnalyticDistributions §0.2 (*Extensions of spaces of compact type*).
+*Needs:* 1.4, 1.7; PadicLocalLanglandsForGL2Qp §0.1 (Banach stages with flat transitions) with gap:frechet-stein-general; LocallyAnalyticDistributions §0.2 (*Extensions of spaces of compact type*).
 
 **Checks.**
 
@@ -457,9 +502,9 @@ API:
 
 Let G = 𝐆(L) with 𝐆 split reductive, F_λ, F_μ irreducible algebraic representations of (Res_(L/ℚ_p)𝐆) ×_(ℚ_p) E of dominant highest weights λ, μ, and W_1, W_2 smooth admissible representations of G. Prove: (1) if λ ≠ μ then Ext^n_G(F_λ ⊗ W_1, F_μ ⊗ W_2) = 0 for all n; (2) if W_1 and W_2 have the same smooth central character ω, then Ext^n_(G,λω)(F_λ ⊗ W_1, F_λ ⊗ W_2) ≅ Ext^n_(∞,ω)(W_1, W_2) for n ≤ 2, smooth Ext with fixed central character on the right; in particular Ext¹_(lalg,Z)(π_alg, π_alg) → Ext¹_(G,Z)(π_alg, π_alg) is an isomorphism for π_alg = π ⊗ F_λ (Schraen, Proposition 4.7, pp. 79–80, stated there for ω trivial; Ding, proof of Proposition 3.3, (3.6), arXiv v2 p. 39).
 
-The proof route for (1): the centre of U(g ⊗ E) acts on F_λ ⊗ W through the infinitesimal character of λ (Layer 4.1, Harish-Chandra), distinct dominant weights have distinct infinitesimal characters, and an element of the centre acting by different scalars kills Ext (as in SmoothRepresentationsOfLocalGroups SR.0d.2, *central-ext-vanishing*). For (2), Schraen's spectral sequence Ext^p_(D(G)_∞,ω)(W_2′, H^q(g′, End(F_λ)) ⊗ W_1′) ⇒ Ext^(p+q)_(G,λω), with g′ the derived Lie algebra, has H¹ = H² = 0 on finite-dimensional modules (Whitehead), so in total degrees n ≤ 2 only the row q = 0 contributes, and that row is smooth Ext; the row q = 3 first contributes in degree 3. The source states the conclusion as concentration in the least degree i_0 with Ext^(i_0)_∞ ≠ 0; that form holds when smooth Ext is concentrated in one degree, as for the generalised Steinberg representations it is applied to, and is replaced here by the form the spectral sequence gives.
+The proof route for (1): the centre of U(g ⊗ E) acts on F_λ ⊗ W through the infinitesimal character of λ, and distinct dominant weights have distinct infinitesimal characters: the centre is the kernel of the E-linear map u ↦ (x ↦ [x, u]), so its formation commutes with the base change to an algebraic closure Ē, where Harish-Chandra's theorem separates the dot-orbits of λ ≠ μ (LieHighestWeight Layers 7 and 9), and two distinct dominant weights lie in distinct dot-orbits; and an element of the centre acting by different scalars kills Ext (as in SmoothRepresentationsOfLocalGroups SR.0d.2, *central-ext-vanishing*). For (2), Schraen's spectral sequence Ext^p_(D(G)_∞,ω)(W_2′, H^q(g′, End(F_λ)) ⊗ W_1′) ⇒ Ext^(p+q)_(G,λω), with g′ the derived Lie algebra, has H¹ = H² = 0 on finite-dimensional modules (Whitehead), so in total degrees n ≤ 2 only the row q = 0 contributes, and that row is smooth Ext; the row q = 3 first contributes in degree 3. The source states the conclusion as concentration in the least degree i_0 with Ext^(i_0)_∞ ≠ 0; that form holds when smooth Ext is concentrated in one degree, as for the generalised Steinberg representations it is applied to, and is replaced here by the form the spectral sequence gives.
 
-*Needs:* 1.6, 1.7; Layer 4.1; SmoothRepresentationsOfLocalGroups SR.0d.2 (*central-ext-vanishing*).
+*Needs:* 1.6, 1.7; LieHighestWeight Layers 5, 7 and 9 (complete reducibility, the Harish-Chandra isomorphism over an algebraically closed field, reductive Lie algebras); ReductiveGroups §10B (dominant highest weights of F_λ, F_μ); SmoothRepresentationsOfLocalGroups SR.0d.2 (*central-ext-vanishing*).
 
 **Checks.**
 
@@ -474,25 +519,25 @@ The proof route for (1): the centre of U(g ⊗ E) acts on F_λ ⊗ W through the
 
 ### Dependencies
 
-Layer 0; Layer 4.1; PadicLocalLanglandsForGL2Qp §0.1; LocallyAnalyticDistributionsPartII ND.1, ND.2; LocallyAnalyticDistributions §§0.0, 0.2 with gap:compact-type-tensor; SmoothRepresentationsOfLocalGroups SR.0.4, SR.0d.2; ReductiveGroups Layer 1; Mathlib `CategoryTheory.Abelian.Ext`, `ModuleCat`, `DualNumber`.
+Layer 0; PadicLocalLanglandsForGL2Qp §0.1 with gap:frechet-stein-general and gap:radius-algebras; LocallyAnalyticDistributions §§0.0, 0.2 with gap:compact-type-tensor; SmoothRepresentationsOfLocalGroups SR.0.4, SR.0d.2; ReductiveGroups Layer 1 and §10B; LieHighestWeight Layers 5, 7, 9; Mathlib `Ext`, `CategoryTheory.Abelian.Ext`, `ModuleCat`, `DualNumber`.
 
 ## Layer 2: Admissible Banach representations and derived locally analytic vectors
 
-The locally analytic vectors B^la of a Banach representation are those of CompletedCohomologyPartII F.4, and their density, exactness, admissibility and dual base change on admissible unitary Banach representations are PadicLocalLanglandsForGL2Qp §0.1. This layer adds admissible Banach representations that need not be unitary (the Banach targets of Emerton's very strong admissibility), very strongly admissible representations, and Pan's stagewise derived functors R^iLA on Banach representations with their long exact sequences and the strong LA-acyclicity of admissible Banach representations. Throughout, G is a locally ℚ_p-analytic group, G_0 ⊆ G a compact open subgroup carrying an integral saturated p-valuation with an ordered basis (LocallyAnalyticDistributionsPartII ND.0, *p-valued-analytic-structure*, *ordered-basis-chart*), G_n = G_0^(p^n), and C^an(G_n, ℚ_p) is the Banach space of functions given in the coordinates of the ordered basis by power series Σ b_k x^k with p^(n|k|)b_k → 0, normed by sup |p^(n|k|)b_k| (Pan, §2.1.1, pp. 10–11).
+The locally analytic vectors B^la of a Banach representation are those of CompletedCohomologyPartII F.4, and their density, exactness, admissibility and dual base change on admissible unitary Banach representations are PadicLocalLanglandsForGL2Qp §0.1. This layer adds admissible Banach representations that need not be unitary (the Banach targets of Emerton's very strong admissibility), very strongly admissible representations, and Pan's stagewise derived functors R^iLA on Banach representations with their long exact sequences and the strong LA-acyclicity of admissible Banach representations. Throughout, G is a locally ℚ_p-analytic group, G_0 ⊆ G a compact open subgroup carrying an integral saturated p-valuation with an ordered basis (NoncommutativeAndEquivariantIwasawa §§0.2, 0.6–0.7), G_n = G_0^(p^n), and C^an(G_n, ℚ_p) is the Banach space of functions given in the coordinates of the ordered basis by power series Σ b_k x^k with p^(n|k|)b_k → 0, normed by sup |p^(n|k|)b_k| (Pan, §2.1.1, pp. 10–11).
 
 ### 2.1 Admissible Banach representations that need not be unitary
 
-Define a Banach representation of G over E to be an E-Banach space B with an action of G by continuous linear maps such that G × B → B is continuous; it is admissible if its restriction to one compact open subgroup H is admissible in the sense of LocallyAnalyticDistributionsPartII ND.6 (*banach-iwasawa-duality*), that is, B′ is finitely generated over E[[H]] = E ⊗_(O_E) O_E[[H]] (`TauCeti.completedGroupAlgebra`); write Ban^adm_E(G). No G-invariant lattice is required: this differs from the admissible unitary category of PadicLocalLanglandsForGL2Qp §0.1 and CompletedCohomologyPartII F.1 exactly by dropping the G-stable open bounded lattice. Prove: (i) admissibility is independent of H, because for H′ ⊆ H open E[[H]] is finite free over E[[H′]]; (ii) the restriction of B to a compact open H has an H-stable open bounded lattice (the unit ball of the H-invariant norm sup_(h∈H) ‖h·v‖, finite by Banach–Steinhaus since H is compact), so B|_H lies in the admissible unitary category of PadicLocalLanglandsForGL2Qp §0.1; (iii) Ban^adm_E(G) is abelian and every morphism is strict (Schneider–Teitelbaum 2002, Israel J., §3, Lemma 3.4, pp. 14–15; Schneider–Teitelbaum 2003, §7, p. 38; Emerton's memoir, Proposition 6.2.4, p. 118).
+Define a Banach representation of G over E to be an E-Banach space B with an action of G by continuous linear maps such that G × B → B is continuous; it is admissible if its restriction to one compact open subgroup H is admissible in the sense of the Schikhof duality of PadicLocalLanglandsForGL2Qp §0.1, that is, B′ is finitely generated over E[[H]] = E ⊗_(O_E) O_E[[H]] (`TauCeti.completedGroupAlgebra`); write Ban^adm_E(G). No G-invariant lattice is required: this differs from the admissible unitary category of PadicLocalLanglandsForGL2Qp §0.1 and CompletedCohomologyPartII F.1 exactly by dropping the G-stable open bounded lattice. Prove: (i) admissibility is independent of H, because for H′ ⊆ H open E[[H]] is finite free over E[[H′]] (NoncommutativeAndEquivariantIwasawa §0.3); (ii) the restriction of B to a compact open H has an H-stable open bounded lattice (the unit ball of the H-invariant norm sup_(h∈H) ‖h·v‖, finite by Banach–Steinhaus since H is compact), so B|_H lies in the admissible unitary category of PadicLocalLanglandsForGL2Qp §0.1; (iii) Ban^adm_E(G) is abelian and every morphism is strict (Schneider–Teitelbaum 2002, Israel J., §3, Lemma 3.4, pp. 14–15; Schneider–Teitelbaum 2003, §7, p. 38; Emerton's memoir, Proposition 6.2.9, pp. 119–120, and Corollary 6.2.16, p. 121, E being discretely valued).
 
-The proof route for (iii) applies the duality of ND.6 for a compact open H and the open mapping theorem (LocallyAnalyticDistributions §0.2, *Fréchet open mapping*). By (ii), the statements of PadicLocalLanglandsForGL2Qp §0.1 on B^la (density, exactness, admissibility, (B^la)′ ≅ D(H, E) ⊗_(E[[H]]) B′) apply to every admissible Banach representation of G after restriction to H.
+The proof route for (iii) applies the Schikhof duality of PadicLocalLanglandsForGL2Qp §0.1 for a compact open H and the open mapping theorem (LocallyAnalyticDistributions §0.2, *Fréchet open mapping*). By (ii), the statements of PadicLocalLanglandsForGL2Qp §0.1 on B^la (density, exactness, admissibility, (B^la)′ ≅ D(H, E) ⊗_(E[[H]]) B′) apply to every admissible Banach representation of G after restriction to H.
 
 API:
 
 - Admissibility for G holds for one compact open subgroup if and only if for every compact open subgroup.
-- For compact G, Ban^adm_E(G) is the category of ND.6 and coincides with the admissible unitary category.
+- For compact G, Ban^adm_E(G) is the category of admissible Banach representations of the Schikhof duality of PadicLocalLanglandsForGL2Qp §0.1 and coincides with the admissible unitary category.
 - The functor B ↦ B^la is exact on Ban^adm_E(G) with dense image (from PadicLocalLanglandsForGL2Qp §0.1 through (ii)).
 
-*Needs:* LocallyAnalyticDistributionsPartII ND.6; PadicLocalLanglandsForGL2Qp §0.1; CompletedCohomologyPartII F.1; LocallyAnalyticDistributions §0.2; gap:barrelled-banach-steinhaus; `TauCeti.completedGroupAlgebra`.
+*Needs:* PadicLocalLanglandsForGL2Qp §0.1 (Schikhof duality, analytic vectors); NoncommutativeAndEquivariantIwasawa §0.3; CompletedCohomologyPartII F.1; LocallyAnalyticDistributions §0.2; Mathlib `BaireSpace.instBarrelledSpace`, `PolynormableSpace.banach_steinhaus`; `TauCeti.completedGroupAlgebra`.
 
 **Checks.**
 
@@ -531,7 +576,7 @@ API:
 - The construction is functorial in B and E-linear.
 - For n ≥ 1 and x ∈ g, x acts on B^(G_n-an) by a bounded operator (Pan, Lemma 2.1.8, p. 12).
 
-*Needs:* CompletedCohomologyPartII F.4; LocallyAnalyticDistributionsPartII ND.0; LocallyAnalyticDistributions §0.0 (completed projective tensor); Mathlib `continuousCohomology`.
+*Needs:* CompletedCohomologyPartII F.4; NoncommutativeAndEquivariantIwasawa §§0.2, 0.6–0.7; LocallyAnalyticDistributions §0.0 (completed projective tensor); Mathlib `continuousCohomology`.
 
 **Checks.**
 
@@ -560,7 +605,7 @@ Prove that every admissible Banach representation B of G is strongly LA-acyclic,
 
 The proof route: embed B G_0-equivariantly into C(G_0, E)^(⊕d) with admissible quotient C (admissibility). As G_n-representations C(G_0, E) ≅ C(G_n, E)^(⊕d_n), so its H¹ with coefficients in ⊗̂ C^an(G_n, ℚ_p) vanishes by Shapiro's lemma, and 2.4 (1) gives an exact sequence (C(G_0, E)^(⊕d))^(G_n-an) → C^(G_n-an) → H¹_cont(G_n, B ⊗̂ C^an(G_n, ℚ_p)) → 0. Colmez–Dospinescu's functor Π ↦ Π^((h)) of Mahler-analytic vectors is exact on admissible Banach representations of a uniform group (Colmez–Dospinescu, Corollaire IV.14, arXiv v1 p. 43), and C^(G_n-an) ⊆ C^((n+2)) ⊆ C^(G_(n+1)-an); hence the image of (C(G_0, E)^(⊕d))^(G_(n+1)-an) in C^(G_(n+1)-an) contains C^(G_n-an), the transition H¹ at level n → level n + 1 is zero, and induction on i finishes. For B ⊗̂ M, H^•_cont(G_n, B ⊗̂ M) = H^•_cont(G_n, B) ⊗̂ M because the cochain complex of B is strict, the cohomology of the unit ball being finitely generated over ℤ_p.
 
-*Needs:* 2.1, 2.3, 2.4; LocallyAnalyticDistributionsPartII ND.6; Mathlib `continuousCohomology`.
+*Needs:* 2.1, 2.3, 2.4; PadicLocalLanglandsForGL2Qp §0.1 (Schikhof duality); Mathlib `continuousCohomology`.
 
 **Checks.**
 
@@ -576,11 +621,11 @@ The proof route: embed B G_0-equivariantly into C(G_0, E)^(⊕d) with admissible
 
 ### Dependencies
 
-Layers 0–1; LocallyAnalyticDistributionsPartII ND.0, ND.6; PadicLocalLanglandsForGL2Qp §0.1; CompletedCohomologyPartII F.1, F.4; LocallyAnalyticDistributions §§0.0, 0.2; Mathlib `continuousCohomology`; `TauCeti.completedGroupAlgebra`.
+Layers 0–1; NoncommutativeAndEquivariantIwasawa §§0.2–0.3, 0.6–0.7; PadicLocalLanglandsForGL2Qp §0.1; CompletedCohomologyPartII F.1, F.4; LocallyAnalyticDistributions §§0.0, 0.2; Mathlib `continuousCohomology`, `BaireSpace.instBarrelledSpace`, `PolynormableSpace.banach_steinhaus`; `TauCeti.completedGroupAlgebra`.
 
 ## Layer 3: Solid representations of p-adic groups
 
-This layer develops the solid representation theory of Boxer–Calegari–Gee–Pilloni §2.2, after Rodrigues Jacinto–Rodríguez Camargo, on the solid E-vector spaces of VStackSheavesAndLisseCategories §VS2.2 (Convention 8): the comparison of classical spaces with solid ones, representations of Stein analytic groups by coactions and the distribution algebra D(𝔾), the Banach comparison, representations of locally profinite groups through the solidified group ring, smooth and λ-smooth representations with the comparison with the discrete group and enough injectives, solid locally analytic vectors with their derived functor and its comparison with Pan's R^iLA, continuous cohomology of locally analytic vectors, and integrable LB representations of Lie algebras. Four notions of action are kept apart: an analytic coaction of 𝔾 (3.2), a continuous action of the locally profinite group 𝔾(E) (3.4), analyticity at a Banach stage (3.8) and an algebraic coaction (ReductiveGroups Layer 1).
+This layer develops the representation theory of p-adic Lie groups and locally profinite groups on the solid E-vector spaces of VStackSheavesAndLisseCategories §VS2.2 (Convention 8), which higher Coleman theory uses: the comparison of classical spaces with solid ones, representations of Stein analytic groups by coactions and the distribution algebra D(𝔾), the Banach comparison, representations of locally profinite groups through the solidified group ring, smooth and λ-smooth representations with the comparison with the discrete group and enough injectives, solid locally analytic vectors with their derived functor and its comparison with Pan's R^iLA, continuous cohomology of locally analytic vectors, and integrable LB representations of Lie algebras. Four notions of action are kept apart: an analytic coaction of 𝔾 (3.2), a continuous action of the locally profinite group 𝔾(E) (3.4), analyticity at a Banach stage (3.8) and an algebraic coaction (ReductiveGroups Layer 1).
 
 ### 3.1 Classical locally convex spaces as solid E-vector spaces
 
@@ -632,7 +677,7 @@ Let M be a locally profinite group, viewed as a condensed group, E[M] its conden
 API:
 
 - A continuous representation of M on a complete locally convex E-space, compactly generated, gives an object of Mod_M(E) through 3.1 (i).
-- For a continuous Banach representation of compact M, the E_■[M]-module structure restricts on E[M] to the given action and on the Iwasawa algebra to the action of LocallyAnalyticDistributionsPartII ND.6.
+- For a continuous Banach representation of compact M, the E_■[M]-module structure restricts on E[M] to the given action and on the Iwasawa algebra to the module structure of the Schikhof duality of PadicLocalLanglandsForGL2Qp §0.1.
 
 *Needs:* 3.1; PadicMeasuresIwasawaAlgebras §1.7; `TauCeti.completedGroupAlgebra`; VStackSheavesAndLisseCategories §VS2.2.
 
@@ -684,7 +729,7 @@ With the cardinal bound κ, prove that Mod^sm_M(E) is a Grothendieck abelian cat
 
 ### 3.8 Locally analytic vectors of solid representations
 
-Assume M = 𝔾(ℚ_p) for an analytic group 𝔾 over Spa(ℚ_p, ℤ_p) with a fundamental system of quasi-compact open polydisc subgroups 𝔾_r, given by an ordered-basis chart of a uniform open subgroup (Rodrigues Jacinto–Rodríguez Camargo, Remark 1.4, p. 4; LocallyAnalyticDistributionsPartII ND.0), and M_r := 𝔾_r(ℚ_p). For V ∈ Mod_M(E), O_(𝔾_r,E) ⊗_E V carries three commuting actions of M_r: left translation ∗_l, right translation ∗_r and the action ∗_V. Define V^(M_r-an) := H^0(M_r, O_(𝔾_r,E) ⊗_E V) for ∗_l ⊗ ∗_V, with residual action ∗_r, and V^la := colim_r V^(M_r-an) ∈ Mod_M(E); evaluation at e at the same radius r gives injections V^sm → V^la → V. Define the derived functor V^Rla := hocolim_r RHom_(E_■[M_r])(E, V ⊗^L_E O_(𝔾_r,E)) with H^0(V^Rla) = V^la (Boxer–Calegari–Gee–Pilloni, §2.2.27 and Remark 2.2.28, p. 23; Rodrigues Jacinto–Rodríguez Camargo, Definition 4.40, p. 39, and §1.2.3, p. 5). Prove: (i) V ↦ V^la is left exact and M-equivariant for the conjugation of the 𝔾_r; (ii) for V a Banach representation, V^la is the space of CompletedCohomologyPartII F.4 and H^i(V^Rla) = R^iLA(V) of 2.3; (iii) for V an admissible Banach representation, V^Rla is concentrated in degree 0 (Rodrigues Jacinto–Rodríguez Camargo, Proposition 4.48, p. 41).
+Assume M = 𝔾(ℚ_p) for an analytic group 𝔾 over Spa(ℚ_p, ℤ_p) with a fundamental system of quasi-compact open polydisc subgroups 𝔾_r, given by an ordered-basis chart of a uniform open subgroup (Rodrigues Jacinto–Rodríguez Camargo, Remark 1.4, p. 4; NoncommutativeAndEquivariantIwasawa §§0.6–0.7), and M_r := 𝔾_r(ℚ_p). For V ∈ Mod_M(E), O_(𝔾_r,E) ⊗_E V carries three commuting actions of M_r: left translation ∗_l, right translation ∗_r and the action ∗_V. Define V^(M_r-an) := H^0(M_r, O_(𝔾_r,E) ⊗_E V) for ∗_l ⊗ ∗_V, with residual action ∗_r, and V^la := colim_r V^(M_r-an) ∈ Mod_M(E); evaluation at e at the same radius r gives injections V^sm → V^la → V. Define the derived functor V^Rla := hocolim_r RHom_(E_■[M_r])(E, V ⊗^L_E O_(𝔾_r,E)) with H^0(V^Rla) = V^la (Boxer–Calegari–Gee–Pilloni, §2.2.27 and Remark 2.2.28, p. 23; Rodrigues Jacinto–Rodríguez Camargo, Definition 4.40, p. 39, and §1.2.3, p. 5). Prove: (i) V ↦ V^la is left exact and M-equivariant for the conjugation of the 𝔾_r; (ii) for V a Banach representation, V^la is the space of CompletedCohomologyPartII F.4 and H^i(V^Rla) = R^iLA(V) of 2.3; (iii) for V an admissible Banach representation, V^Rla is concentrated in degree 0 (Rodrigues Jacinto–Rodríguez Camargo, Proposition 4.48, p. 41).
 
 The proof route for (ii): for Banach V, O_(𝔾_r,E) ⊗_E V is the completed projective tensor product, solid cohomology of M_0 agrees with continuous cohomology on complete locally convex coefficients (Rodrigues Jacinto–Rodríguez Camargo, §1.2.3, p. 5), O_(𝔾_r) restricted to M_0 is the finite induction from M_r of C^an(M_r, ℚ_p), so Shapiro's lemma identifies RHom_(E_■[M_0])(E, V ⊗ O_(𝔾_r,E)) with continuous M_r-cohomology of V ⊗̂ C^an(M_r, ℚ_p), and cohomology commutes with the homotopy colimit. For (iii), V^∨ is a finite E_■[M_0]-module and the distribution algebras of the 𝔾_r are flat over E_■[M_0], algebraically.
 
@@ -693,7 +738,7 @@ API:
 - The residual action ∗_r on V^(M_r-an) agrees there with (∗_l ∘ ∗_r) ⊗ ∗_V, since ∗_l ⊗ ∗_V is trivial on invariants; evaluation at e intertwines it with the action on V.
 - V^Rla is functorial and exact as a functor to the derived category of E_■[M]-modules.
 
-*Needs:* 3.1, 3.4, 3.5; 2.3; CompletedCohomologyPartII F.4; LocallyAnalyticDistributionsPartII ND.0, ND.2 (*faithful-flatness*).
+*Needs:* 3.1, 3.4, 3.5; 2.3; CompletedCohomologyPartII F.4; NoncommutativeAndEquivariantIwasawa §§0.6–0.7; PadicLocalLanglandsForGL2Qp §0.1 (faithful flatness of E[[H]] → D(H, E)); LocallyAnalyticDistributionsPartII §2.5 (distribution algebras of the polydisc subgroups).
 
 **Checks.**
 
@@ -716,14 +761,14 @@ For a compact p-adic Lie group M and C in the derived category of E_■[M]-modul
 
 ### 3.10 Integrable LB representations of a Lie algebra
 
-Let g be the E-Lie algebra of the analytic group germ 𝔾_e and Û(g) its Arens–Michael envelope (LocallyAnalyticDistributionsPartII ND.3, *arens-michael-envelope*). Define an LB representation of g as a continuous Û(g)-module V presented by an increasing sequence of g-stable Banach subspaces V_r with injective transitions; it is integrable if, after a cofinal reindexing, each V_r carries an analytic action of a shrinking analytic subgroup 𝔾_r whose derivative is the given action and whose restrictions agree at later stages (Boxer–Calegari–Gee–Pilloni, Definition 3.4.2 and Proposition 3.4.3, p. 53). The result is an action of the group germ: each stage integrates on its own neighbourhood; no fixed 𝔾_r acts on all of V.
+Let g be the E-Lie algebra of the analytic group germ 𝔾_e and 𝒰(g) its Arens–Michael envelope (LocallyAnalyticDistributionsPartII §2.5). Define an LB representation of g as a continuous 𝒰(g)-module V presented by an increasing sequence of g-stable Banach subspaces V_r with injective transitions; it is integrable if, after a cofinal reindexing, each V_r carries an analytic action of a shrinking analytic subgroup 𝔾_r whose derivative is the given action and whose restrictions agree at later stages (Boxer–Calegari–Gee–Pilloni, Definition 3.4.2 and Proposition 3.4.3, p. 53). The result is an action of the group germ: each stage integrates on its own neighbourhood; no fixed 𝔾_r acts on all of V.
 
 API:
 
 - Two integrations with the same differentiated action agree after shrinking on each Banach stage, by 3.3 and the local isomorphism given by the exponential.
 - Every vector lies in a Banach stage analytic for a suitable neighbourhood.
 
-*Needs:* 3.3, 3.8, 0.3; LocallyAnalyticDistributionsPartII ND.3.
+*Needs:* 3.3, 3.8, 0.3; LocallyAnalyticDistributionsPartII §2.5.
 
 **Checks.**
 
@@ -738,7 +783,7 @@ API:
 
 ### Dependencies
 
-Layers 0 and 2; VStackSheavesAndLisseCategories §§VS2.1–VS2.2; AdicSpacesPartIII §R3.4; PadicMeasuresIwasawaAlgebras §1.7; LocallyAnalyticDistributionsPartII ND.0, ND.2, ND.3, ND.6; CompletedCohomologyPartII F.4; SmoothRepresentationsOfLocalGroups SR.0.1, SR.0d.1, SR.2.1; ReductiveGroups Layer 1; `TauCeti.completedGroupAlgebra`.
+Layers 0 and 2; VStackSheavesAndLisseCategories §§VS2.1–VS2.2; AdicSpacesPartIII §R3.4; PadicMeasuresIwasawaAlgebras §1.7; LocallyAnalyticDistributionsPartII §2.5; NoncommutativeAndEquivariantIwasawa §§0.6–0.7; PadicLocalLanglandsForGL2Qp §0.1; CompletedCohomologyPartII F.4; SmoothRepresentationsOfLocalGroups SR.0.1, SR.0d.1, SR.2.1; ReductiveGroups Layer 1; `TauCeti.completedGroupAlgebra`.
 
 ## Layer 4: Category O for split reductive Lie algebras
 
@@ -874,16 +919,16 @@ The proof route for (ii): for dominant λ the highest-weight line of L(λ) is th
 
 ### 5.3 Ext between locally analytic characters of a split torus
 
-Let T = 𝐓(L) with 𝐓 ≅ 𝔾_m^n and χ, χ′ : T → E^× locally ℚ_p-analytic characters. Prove: (1) if χ ≠ χ′ then Ext^i_T(χ, χ′) = 0 for all i; (2) ψ ↦ χ(1 + ψε) is an isomorphism Hom(T, E) ≅ Ext¹_T(χ, χ) (1.9); (3) dim_E Hom(L^×, E) = 1 + d_L, dim_E Hom_sm(L^×, E) = 1 and dim_E Hom_σ(L^×, E) = 2 for σ ∈ Σ_L, where Hom_σ consists of the characters whose derivative factors through Lie(L^×) ⊗_(L,σ) E; hence dim Hom(T, E) = n(1 + d_L) and dim Hom_sm(T, E) = n; (4) Hom_(g′)(T, E) := {ψ ∈ Hom(T, E) : ψ − ψ_0 ∘ det ∈ Hom_sm(T, E) for some ψ_0 ∈ Hom(L^×, E)} has dimension n + d_L (Ding, proof of Lemma 3.5, arXiv v2 p. 40; §2.1, p. 10, DING25 line 416; §2.3.1, (2.17), p. 19).
+Let T = 𝐓(L) with 𝐓 ≅ 𝔾_m^n and χ, χ′ : T → E^× locally ℚ_p-analytic characters. Prove: (1) if χ ≠ χ′ then Ext^i_T(χ, χ′) = 0 for all i; (2) ψ ↦ χ(1 + ψε) is an isomorphism Hom(T, E) ≅ Ext¹_T(χ, χ) (1.9); (3) dim_E Hom(L^×, E) = 1 + d_L, dim_E Hom_sm(L^×, E) = 1 and dim_E Hom_σ(L^×, E) = 2 for σ ∈ Σ_L, where Hom_σ consists of the characters whose derivative factors through Lie(L^×) ⊗_(L,σ) E; hence dim Hom(T, E) = n(1 + d_L) and dim Hom_sm(T, E) = n; (4) Hom_(g′)(T, E) := {ψ ∈ Hom(T, E) : ψ − ψ_0 ∘ det ∈ Hom_sm(T, E) for some ψ_0 ∈ Hom(L^×, E)} has dimension n + d_L for n ≥ 1 and dimension 0 for n = 0 (Ding, proof of Lemma 3.5, arXiv v2 p. 40; §2.1, p. 10, DING25 line 416; §2.3.1, (2.17), p. 19).
 
-The proof route: (1) D(T, E) is commutative and some δ_t − χ(t), or some x ∈ t with dχ(x) ≠ dχ′(x), acts by 0 on χ and invertibly on χ′; (2) a self-extension of χ is upper triangular with a locally analytic additive character in the corner; (3) L^× ≅ ϖ^ℤ × μ × (1 + ϖ^mO_L) with 1 + ϖ^mO_L ≅ ℤ_p^(d_L) for m large, and the additive characters are the valuation and the E-linear combinations of σ ∘ log; (4) Hom_g′ = Hom_sm(T, E) + det^*Hom(L^×, E), the two meeting in det^*Hom_sm(L^×, E).
+The proof route: (1) D(T, E) is commutative and some δ_t − χ(t), or some x ∈ t with dχ(x) ≠ dχ′(x), acts by 0 on χ and invertibly on χ′; (2) a self-extension of χ is upper triangular with a locally analytic additive character in the corner; (3) L^× ≅ ϖ^ℤ × μ × (1 + ϖ^mO_L) with 1 + ϖ^mO_L ≅ ℤ_p^(d_L) for m large, and the additive characters are the valuation and the E-linear combinations of σ ∘ log; (4) Hom_g′ = Hom_sm(T, E) + det^*Hom(L^×, E), the two meeting in det^*Hom_sm(L^×, E); for n ≥ 1, det : T → L^× is surjective, so det^* is injective and the dimension is n + (1 + d_L) − 1, while for n = 0, T = 1 and det^* = 0.
 
 *Needs:* 1.7, 1.9, 0.3, 0.4.
 
 **Checks.**
 
 - For n = 1 and L = ℚ_p, Ext¹_(ℚ_p^×)(1, 1) is two-dimensional, spanned by the valuation and log_p.
-- Degenerate case: for n = 0, T = 1, Hom(T, E) = 0 and Ext^i = 0 for i > 0.
+- Degenerate case: for n = 0, T = 1, Hom(T, E) = 0 and Ext^i = 0 for i > 0; Hom_(g′)(T, E) = 0 as well, not of dimension n + d_L = d_L, because det^* : Hom(L^×, E) → Hom(T, E) is the zero map, so the count n + (1 + d_L) − 1 applies only for n ≥ 1 (for n = 1 and L = ℚ_p it gives 2 = dim Hom(ℚ_p^×, E)).
 - For L = ℚ_p(√p) (d_L = 2) and n = 2: dim Hom(T, E) = 6, dim Hom_sm(T, E) = 2, dim Hom_(g′)(T, E) = 2 + 2 = 4, and dim Hom_σ(L^×, E) = 2 for each of the two σ.
 - Non-example: χ′ = χ|·|_L has the same weight as χ, since |·|_L is smooth, yet Ext^i_T(χ, χ′) = 0 by (1); a vanishing criterion through dχ ≠ dχ′ alone would miss this case, which is why (1) also uses the elements δ_t − χ(t).
 
@@ -926,7 +971,7 @@ Layers 0–2 and 4; ReductiveGroupsPartII RG2.4.4; ReductiveGroups Layer 7; Smoo
 
 ## Layer 6: Orlik–Strauch functors
 
-This layer builds the Orlik–Strauch representations F^G_P(M, π_P) in Breuil's locally ℚ_p-analytic form, their exactness, transitivity, irreducibility criterion and uniqueness, Jordan–Hölder series and socles, their extension to products of groups over different fields, and the vanishing of Ext¹ into inductions from weights of length at least two. Standing hypotheses: 𝐆 split connected reductive over L, B = TN ⊆ P = L_P N_P a Borel and a parabolic (standard or opposite), E/ℚ_p finite splitting L, and O^p_alg the category of 4.2 for g ⊗_(ℚ_p) E = ∏_σ g_σ. The irreducibility statements in this ℚ_p-analytic form assume p > 3 when 𝐆 has a simple factor not of type A (Breuil, socle I, §1, p. 6); there is no restriction for GL_n. In Orlik–Strauch's original locally L-analytic theorem the bounds are p > 2 for types B, C, F_4 and p > 3 for G_2 (Orlik–Strauch, §5, Assumption 5.1, p. 25).
+This layer builds the Orlik–Strauch representations F^G_P(M, π_P) in Breuil's locally ℚ_p-analytic form, their exactness, transitivity, irreducibility criterion and uniqueness, Jordan–Hölder series and socles, their extension to products of groups over different fields, and the vanishing of Ext¹ into inductions from weights of length at least two. Standing hypotheses: 𝐆 split connected reductive over L, B = TN ⊆ P = L_P N_P a Borel and a parabolic (standard or opposite), E/ℚ_p finite splitting L, and O^p_alg the category of 4.2 for g ⊗_(ℚ_p) E = ∏_σ g_σ. The irreducibility statements in this ℚ_p-analytic form assume p > 3 when 𝐆 has a simple factor not of type A (Breuil, socle I, §1, p. 6); there is no restriction for GL_n. In Orlik–Strauch's original locally L-analytic theorem the bounds are p > 2 for types B, C, F_4 and p > 3 for G_2 (Orlik–Strauch, §5, Assumption 5.1, p. 25). These bounds are hypotheses of the only known proofs, entering through results on highest-weight modules (Orlik–Strauch, §5, the paragraph after Assumption 5.1, p. 26, and §8), and no example is known where the irreducibility criterion fails for p ≤ 3 (Orlik–Strauch, the remark after the main theorem, p. 4); the construction, exactness and transitivity (6.1–6.3) carry no such hypothesis, and the groups to which Layers 8–10 apply the irreducibility statements, GL_n(L), its Levi subgroups and their products, have only simple factors of type A.
 
 ### 6.1 The Orlik–Strauch functor
 
@@ -948,7 +993,7 @@ API:
 - For the Verma module M⁻(μ) = U(g ⊗ E) ⊗_(U(b⁻⊗E)) μ and a smooth character χ of T, F^G_(B⁻)(M⁻(μ), χ) = (Ind_B⁻^G z^(−μ)χ)^an, the principal series of 5.2; the weight is negated because W′ is the dual of the generating line.
 - For λ dominant, F^G_(B⁻)(L⁻(−λ), χ) = F^G_(B⁻)(L(λ)′, χ) ≅ L(λ) ⊗ (Ind_B⁻^G χ)^∞, locally algebraic.
 - Compatibility: for L = ℚ_p the construction is Orlik–Strauch's F^G_P(M, π_P) for the L-analytic group G(ℚ_p).
-- Non-example: F^G_(B⁻)(L⁻(−λ), χ) is a proper closed subrepresentation of (Ind_B⁻^G z^λχ)^an when λ is dominant.
+- Non-example: when 𝐆 has positive semisimple rank and λ is dominant, F^G_(B⁻)(L⁻(−λ), χ) is a proper closed subrepresentation of (Ind_B⁻^G z^λχ)^an = F^G_(B⁻)(M⁻(−λ), χ), since the kernel K of M⁻(−λ) → L⁻(−λ) is nonzero and F(K, χ) ≠ 0 is the quotient (6.2). For a split torus G = T = B⁻ there is no root, M⁻(−λ) = L⁻(−λ) is the character −λ and both sides are the one-dimensional representation z^λχ: the inclusion is an equality.
 
 ### 6.2 Exactness and functoriality
 
@@ -972,13 +1017,13 @@ For parabolics Q ⊇ P and M ∈ O^q_alg ⊆ O^p_alg, prove F^G_P(M, π_P) ≅ F
 
 - For P = B, Q = G and M = L(λ)′ finite-dimensional: F^G_B(L(λ)′, χ) ≅ L(λ) ⊗ (Ind_B^G χ)^∞.
 - Degenerate case: Q = P gives the identity.
-- For GL_3, P = B⁻, Q = P_1⁻ with Levi GL_1 × GL_2 and M simple with maximal parabolic Q, the smooth argument becomes the GL_2-induction of the GL_1 × GL_1 character, which is irreducible exactly when its ratio is not in {|·|^(±1)}.
+- For GL_3, P = B⁻, Q = P_1⁻ with Levi GL_1 × GL_2 and M simple with maximal parabolic Q, the smooth argument becomes χ_1 ⊠ (Ind_(B⁻_2)^(GL_2(L)) χ_2 ⊠ χ_3)^∞, an unnormalised induction from the lower Borel B⁻_2 of the GL_2-factor, which is irreducible exactly when χ_2χ_3⁻¹ ∉ {1, |·|_L^(−2)}. Indeed, after adjoining to E a square root of p^f = |ϖ_L|_L⁻¹ (Convention 1), Ind_(B⁻_2)(χ_2 ⊠ χ_3) is the normalised induction of χ_2|·|_L^(1/2) ⊠ χ_3|·|_L^(−1/2), and the normalised criterion excludes the ratio (χ_2χ_3⁻¹)|·|_L from {|·|_L^(±1)} (Bernstein–Zelevinsky, §1.8, p. 444, for the normalisation and §4.2, Theorem and Remark (2), p. 454): for χ_2 = χ_3 the induction contains χ_2 ∘ det, and for χ_2χ_3⁻¹ = |·|_L^(−2) it is the contragredient of such an induction and has a one-dimensional quotient. Applying the normalised set {|·|_L^(±1)} to the unnormalised ratio would declare the reducible (Ind 1 ⊠ 1)^∞ irreducible.
 
 ### 6.4 The Orlik–Strauch irreducibility theorem
 
-For M ∈ O^p_alg and π_P smooth admissible, prove that F^G_P(M, π_P) is topologically irreducible if and only if M is simple and, for the maximal parabolic Q ⊇ P of M (4.3), the smooth induction i^(L_Q)_(P∩L_Q)(π_P) is irreducible; in particular F^G_P(M, π_P) is irreducible for M simple with maximal parabolic P and π_P irreducible. Moreover, for simple M_i with maximal parabolics Q_i and finite-length π_(Q_i), F^G_(Q_1)(M_1, π_(Q_1)) ≅ F^G_(Q_2)(M_2, π_(Q_2)) if and only if M_1 ≅ M_2, hence Q_1 = Q_2, and π_(Q_1) ≅ π_(Q_2) (Orlik–Strauch, Introduction, main theorem (iv) and the remark after it, pp. 3–4, Theorem 5.8, p. 37; Breuil, socle I, Theorem 2.3(iii) and Corollary 2.7, pp. 10–12), under the residue-characteristic hypothesis of the layer.
+For M ∈ O^p_alg and π_P smooth admissible, prove that F^G_P(M, π_P) is topologically irreducible if and only if M is simple and, for the maximal parabolic Q ⊇ P of M (4.3), the smooth induction i^(L_Q)_(P∩L_Q)(π_P) is irreducible; in particular F^G_P(M, π_P) is irreducible for M simple with maximal parabolic P and π_P irreducible. Moreover, for simple M_i with maximal parabolics Q_i and nonzero finite-length π_(Q_i), F^G_(Q_1)(M_1, π_(Q_1)) ≅ F^G_(Q_2)(M_2, π_(Q_2)) if and only if M_1 ≅ M_2, hence Q_1 = Q_2, and π_(Q_1) ≅ π_(Q_2); both smooth arguments must be nonzero, since F^G_Q(M, 0) = 0 for every M (Orlik–Strauch, Introduction, main theorem (iv) and the remark after it, pp. 3–4, Theorem 5.8, p. 37; Breuil, socle I, Theorem 2.3(iii) and Corollary 2.7, pp. 10–12), under the residue-characteristic hypothesis of the layer.
 
-The proof route: reduce to P maximal for M by 6.3; then D(G_0) ⊗_(D(g,P_0)) M is a simple D(G_0)-module for a compact open G_0 (Orlik–Strauch, Theorems 5.3, 5.5, 5.8), and irreducibility under G follows; uniqueness recovers M and π_Q from the n-invariants of the dual (Breuil, socle I, Proposition 2.4).
+The proof route: reduce to P maximal for M by 6.3; then D(G_0) ⊗_(D(g,P_0)) M is a simple D(G_0)-module for a compact open G_0 (Orlik–Strauch, Theorems 5.3, 5.5, 5.8), and irreducibility under G follows; uniqueness recovers M and π_Q from the n-invariants of the dual, H^0(n, F^G_Q(M, π_Q)′) ≅ Ev⁺ ⊗ π_Q′ for a highest-weight vector v⁺ of M, whose torus weight is the highest weight of M only when π_Q ≠ 0 (Breuil, socle I, Proposition 2.4 and the proof of Corollary 2.7, pp. 11–12).
 
 *Needs:* 6.2, 6.3; 4.3; gap:finite-length-finite-coefficients.
 
@@ -986,7 +1031,9 @@ The proof route: reduce to P maximal for M by 6.3; then D(G_0) ⊗_(D(g,P_0)) M 
 
 - For GL_2(ℚ_p), λ dominant and s the simple reflection, F^G_(B⁻)(L⁻(−s·λ), χ) is irreducible: it is the non-locally-algebraic constituent of PS(z^λχ).
 - Non-example: for M = M⁻(−λ) not simple, F^G_(B⁻)(M, χ) = PS(z^λχ) is reducible.
-- Non-example: for GL_2, M = L⁻(−λ) finite-dimensional (maximal parabolic G) and χ = χ_1 ⊠ χ_2 with χ_1χ_2⁻¹ = |·|_L, so that (Ind_B⁻ χ)^∞ is reducible, F(M, χ) = L(λ) ⊗ (Ind χ)^∞ is reducible although M is simple.
+- Non-example: for GL_2, M = L⁻(−λ) finite-dimensional (maximal parabolic G) and χ = χ_1 ⊠ χ_2 with χ_1 = χ_2, for instance χ = 1 ⊠ 1, the unnormalised induction (Ind_B⁻ χ)^∞ contains χ_1 ∘ det with the twisted Steinberg representation as quotient, so F(M, χ) = L(λ) ⊗ (Ind χ)^∞ has length 2 although M is simple.
+- Control: for χ_1χ_2⁻¹ = |·|_L the normalised ratio is |·|_L², outside {|·|_L^(±1)}, so (Ind_B⁻ χ)^∞ and F(L⁻(−λ), χ) are irreducible; the exceptional ratios of the unnormalised lower-Borel induction are 1 and |·|_L^(−2) (6.3).
+- Non-example to uniqueness with a zero smooth argument: for G = 𝔾_m(ℚ_p) = ℚ_p^× (B = Q = G), M_0 and M_1 the one-dimensional modules of weights 0 and 1, F(M_0, 0) = F(M_1, 0) = 0 although M_0 ≇ M_1; with the trivial character the outputs are 1 and z^(−1), of weights 0 and −1, as uniqueness requires.
 
 ### 6.5 Jordan–Hölder series and socles
 
@@ -1000,7 +1047,7 @@ The proof route: (1) from 6.2, 6.3 and 6.4; (2)–(3) from the computation of N_
 
 - For GL_2(ℚ_p), λ dominant and (Ind χ)^∞ irreducible, PS(z^λχ) has length 2 with socle L(λ) ⊗ (Ind χ)^∞ and cosocle F(L⁻(−s·λ), χ).
 - Degenerate case: for M simple and π_P irreducible with i^(L_Q)(π_P) irreducible, the series has length 1.
-- For GL_3(ℚ_p), PS(z^λχ) with χ generic has 6 constituents, one for each u ∈ S_3, each with multiplicity [M⁻(−λ) : L⁻(−u·λ)] = 1.
+- For GL_3(ℚ_p), PS(z^λχ) with χ = φη and φ generic (8.1) has 6 constituents, one for each u ∈ S_3, each with multiplicity [M⁻(−λ) : L⁻(−u·λ)] = 1.
 
 ### 6.6 Orlik–Strauch theory for products of groups over different fields
 
@@ -1011,7 +1058,7 @@ Let G = G_1(L_1) × G_2(L_2) with 𝐆_i split reductive over finite extensions 
 **Checks.**
 
 - Degenerate case: for G_2 = 1 the statement is 6.1–6.5 for G_1(L_1).
-- For G = GL_2(ℚ_p) × GL_2(ℚ_p(√p)) and simple M_i, the constituents of F^G_(B⁻)(M⁻(−λ_1) ⊠ M⁻(−λ_2), χ_1 ⊠ χ_2) number 2 · 4 = 8, products of constituents of the factors.
+- For G = GL_2(ℚ_p) × GL_2(ℚ_p(√p)), dominant λ_1, λ_2 and χ_i = φ_iη with φ_i generic (8.1), the constituents of F^G_(B⁻)(M⁻(−λ_1) ⊠ M⁻(−λ_2), χ_1 ⊠ χ_2) number 2 · 4 = 8, products of the constituents of the factors. For the non-generic χ_1 = 1 ⊠ 1 the first factor has 3 constituents, L(λ_1) ⊗ 1, L(λ_1) ⊗ St and F(L⁻(−s·λ_1), 1), and the product has 3 · 4 = 12.
 - Non-example: a non-split extension of M_1 ⊠ M_2 by M_1′ ⊠ M_2′ in O^p_alg is not a pure tensor; the product formula is stated for pure tensors and extended by exactness.
 
 ### 6.7 Vanishing of Ext¹ into inductions from weights of length at least two
@@ -1026,11 +1073,11 @@ The proof route: for the lower radical of P_I⁻, 4.6 gives the degree-r Levi we
 
 - For n = 2 and L = ℚ_p there is no s with lg(s) > 1, so the statement is empty; it has content for n ≥ 3 or d_L ≥ 2.
 - For n = 2 and L = ℚ_p(√p), s = (s, s) has length 2, and Ext¹(W, F(L⁻(−s·μ), π)) = 0 for this s.
-- Non-example: for lg(s) = 1 the conclusion fails: for GL_2(ℚ_p) and generic π, Ext¹(π_alg, F(L⁻(−s·λ), χ)) is one-dimensional (8.9).
+- Non-example: for lg(s) = 1 the conclusion fails: for GL_2(ℚ_p), φ generic, π_alg = π_sm(φ) ⊗ L(λ) and χ = φη, Ext¹(π_alg, F(L⁻(−s·λ), χ)) is one-dimensional (8.9).
 
 ### Examples
 
-- For GL_2(ℚ_p), λ dominant and generic χ, PS(z^λχ) is a nonsplit extension of the irreducible F(L⁻(−s·λ), χ) by L(λ) ⊗ (Ind χ)^∞, and F(L⁻(−s·λ), χ) = (Ind z^(s·λ)χ)^an is a full principal series.
+- For GL_2(ℚ_p), λ dominant and χ = φη with φ generic (8.1), PS(z^λχ) is a nonsplit extension of the irreducible F(L⁻(−s·λ), χ) by L(λ) ⊗ (Ind χ)^∞, and F(L⁻(−s·λ), χ) = (Ind z^(s·λ)χ)^an is a full principal series.
 
 ### Dependencies
 
@@ -1038,7 +1085,7 @@ Layers 0–2, 4 and 5; SmoothRepresentationsOfLocalGroups SR.2.1 with gap:finite
 
 ## Layer 7: Jacquet modules, closed induction and the adjunction theorems
 
-The character space Ẑ, essentially admissible representations, the finite-slope part, the averaged Hecke operators and Emerton's Jacquet module J_P(V) = (V^(N_0))_fs with its basic properties are those of OverconvergentAutomorphicForms §0.6. This layer adds the compact-support adjunction that characterises J_P, the finiteness and principal-series statements for Jacquet modules of very strongly admissible representations, Emerton's closed induction I_P⁻^G, balanced maps, and the adjunction theorems of Emerton and Breuil. Throughout, G is the group of L-points of a connected reductive group, P = MN a parabolic with opposite P⁻, N_0 ⊆ N compact open, M⁺ = {m ∈ M : mN_0m⁻¹ ⊆ N_0}, Z_M⁺ = Z_M ∩ M⁺, the Hecke action is averaged (Convention 5), and Rep^(zla.c)(M) denotes the locally analytic representations of M of compact type whose Z_M-action admits a Z_M-stable exhaustion by BH-subspaces.
+The character space Ẑ, essentially admissible representations, the finite-slope part, the averaged Hecke operators and Emerton's Jacquet module J_P(V) = (V^(N_0))_fs with its basic properties are those of OverconvergentAutomorphicForms §0.6. This layer adds the compact-support adjunction that characterises J_P, Emerton's closed induction I_P⁻^G, balanced maps, Emerton's adjunction theorem with its consequences for the Jacquet modules of very strongly admissible representations, and Breuil's adjunction. Throughout, G is the group of L-points of a connected reductive group, P = MN a parabolic with opposite P⁻, N_0 ⊆ N compact open, M⁺ = {m ∈ M : mN_0m⁻¹ ⊆ N_0}, Z_M⁺ = Z_M ∩ M⁺, the Hecke action is averaged (Convention 5), and Rep^(zla.c)(M) denotes the locally analytic representations of M of compact type whose Z_M-action admits a Z_M-stable exhaustion by BH-subspaces.
 
 ### 7.1 The compact-support adjunction for Emerton's Jacquet module
 
@@ -1054,19 +1101,7 @@ The proof route uses the universal property of the finite-slope part of Overconv
 - For G = GL_2(ℚ_p), P = B, N_0 = N(ℤ_p), m = diag(p, 1) and V = E trivial: the index is p, δ_B(m) = p⁻¹, the averaged operator is the identity, J_B(1) = 1 and the adjunction gives Hom_B(C^sm_c(N, δ_B⁻¹), 1) ≅ E; with the unaveraged sum, J_B(1) would be the twist by p.
 - For π smooth admissible, J_P(π) = π_N (OverconvergentAutomorphicForms §0.6) and the adjunction is the smooth adjunction between compact induction from N and coinvariants.
 
-### 7.2 Jacquet modules of very strongly admissible representations
-
-For G quasi-split and P a Borel, prove: (i) a topologically irreducible very strongly admissible representation V with J_P(V) ≠ 0 is a subquotient, indeed a quotient of I_P⁻^G(U) for a finite-dimensional U (7.3), of the locally analytic induction of a locally analytic character of the torus; (ii) an admissible representation of finite length whose constituents are very strongly admissible has finite-dimensional J_P(V) (Emerton, Jacquet I, Introduction, Theorem 0.6, p. 778; Emerton, Jacquet II, Introduction, Corollaries 0.14–0.15, p. 4). The proof route goes through the adjunction 7.5.
-
-*Needs:* 7.1, 7.3, 7.5; 2.2; 5.2.
-
-**Checks.**
-
-- For π_alg = I_sm(φ) ⊗ L(λ) of GL_n(L) with φ generic (8.2), J_B(π_alg) ≅ J_N(I_sm(φ)) ⊗ L(λ)^N is a direct sum of n! distinct characters of T (OverconvergentAutomorphicForms §0.6 and gap:principal-series-jacquet-finite-coefficients), finite-dimensional as (ii) predicts.
-- Degenerate case: J_P(0) = 0.
-- Non-example: for a smooth supercuspidal π of GL_2(ℚ_p), J_B(π) = 0, so (i) gives no principal-series embedding, consistent with π not being a subquotient of a principal series.
-
-### 7.3 Emerton's closed induction
+### 7.2 Emerton's closed induction
 
 For U ∈ Rep^(zla.c)(M) there is a closed M-equivariant embedding U(δ_P) → J_P((Ind_P⁻^G U)^an) (Emerton, Jacquet II, Introduction, Lemma 0.3, p. 2). Define I_P⁻^G(U) ⊆ (Ind_P⁻^G U)^an as the closed G-subrepresentation generated by the image of U under this embedding followed by evaluation into (Ind U)^an (7.1). Prove: (i) equivalently, I_P⁻^G(U) is the closed G-subrepresentation generated by the functions supported on the big cell P⁻N whose restriction to N is locally constant with compact support (Emerton, Jacquet II, §2.8, Lemma 2.8.3, pp. 44–45); (ii) when G is quasi-split and P is a Borel, J_P(I_P⁻^G(U)) ≅ J_P((Ind_P⁻^G U)^an) (Emerton, Jacquet II, §5.1, Corollary 5.1.4, p. 60); no version for an arbitrary parabolic is asserted; (iii) for U = χ_sm z^λ with λ dominant, I(U) = (Ind χ_sm)^∞ ⊗ L(λ); (iv) for a deformed character U = δ(1 + ψε) with δ = w(φ)ηz^λ and ψ = ψ_1 + ψ_0 ∘ det, ψ_1 smooth, I(U) is an E[ε]-module and I(U) ≅ (Ind w(φ)η(1 + ψ_1ε))^∞ ⊗ L(λ) ⊗_(E[ε]) (1 + εψ_0 ∘ det) (Ding, §3.1.2, Lemma 3.2(2), Proposition 3.3 and Remark 3.7, arXiv v2 pp. 37–41). The conventions match Ding: induction from P⁻ = B⁻, Jacquet modules for P = B.
 
@@ -1079,11 +1114,11 @@ API:
 
 **Checks.**
 
-- For U a smooth character χ, I_B⁻^G(χ) = (Ind_B⁻^G χ)^∞, a proper subspace of the locally analytic induction.
+- For U a smooth character χ, I_B⁻^G(χ) = (Ind_B⁻^G χ)^∞; when G has positive semisimple rank this is a proper subspace of the locally analytic induction, while for G = T a split torus (B⁻ = T, N = 1) induction and closed induction are both the character χ, of dimension 1, and the inclusion is an equality.
 - For U = z^λ with λ dominant, I_B⁻^G(U) = (Ind 1)^∞ ⊗ L(λ).
 - Non-example to "non-dominant implies proper": for GL_2(ℚ_p), λ = (1, 1), s·λ = (0, 2) and U = z^(s·λ)χ_sm, the lower Verma module M⁻(−s·λ) is simple (4.5), so I(U) = F^G_(B⁻)(L⁻(−s·λ), χ_sm) is the whole locally analytic induction, whereas I(z^λχ_sm) is the proper locally algebraic subrepresentation.
 
-### 7.4 Balanced maps into a Jacquet module
+### 7.3 Balanced maps into a Jacquet module
 
 Let U ∈ Rep^(zla.c)(M) and V a locally analytic representation of G. Define a continuous M-equivariant map U(δ_P) → J_P(V) to be balanced if the kernel of the induced (g, P)-map U(g) ⊗_(U(p)) U → U(g) ⊗_(U(p)) J_P(V) → V (through evaluation) contains the kernel of the natural map U(g) ⊗_(U(p)) U → (Ind_P⁻^G U)^an; write L_M(U(δ_P), J_P(V))^bal for the balanced maps. Define U to be allowable if, for all finite-dimensional algebraic M-representations W_1, W_2, every A[M]-linear map U ⊗ W_1 → U ⊗ W_2 is strict, A = End_M(U) (Emerton, Jacquet II, Introduction, Definitions 0.8 and 0.11 and Question 0.9, p. 3). Prove that the balanced condition does not depend on N_0, that maps in the image of Hom_G(I_P⁻^G(U), V) are balanced, and that if U(g) ⊗_(U(p)) U → I(U) is injective then every equivariant map is balanced.
 
@@ -1092,7 +1127,7 @@ API:
 - Finite-dimensional U, in particular characters, are allowable.
 - If U and V are smooth, every map U(δ_P) → J_P(V) is balanced; this recovers smooth Frobenius reciprocity.
 
-*Needs:* 7.1, 7.3, 0.3.
+*Needs:* 7.1, 7.2, 0.3.
 
 **Checks.**
 
@@ -1100,13 +1135,13 @@ API:
 - For GL_2 with upper positive roots and U = z^((0,2)), the relevant lower Verma module is simple, so every equivariant map is balanced.
 - Non-example to automatic balancedness: for U = z^((1,1)) (dominant) the map U(g) ⊗_(U(b)) U = M(λ) → (Ind_B⁻^G U)^an has image L(λ) = det and nonzero kernel, the sum of the images of M(s·λ); so for U = z^((1,1)) balancedness is a genuine condition, unlike for U = z^((0,2)).
 
-### 7.5 Emerton's adjunction theorem
+### 7.4 Emerton's adjunction theorem
 
 Prove that if U ∈ Rep^(zla.c)(M) is allowable and V is very strongly admissible, the map Hom_G(I_P⁻^G(U), V) → L_M(U(δ_P), J_P(V))^bal induced by J_P is an isomorphism; in particular, for a locally analytic character δ of T and P = B, Hom_G(I_B⁻^G(δ), V) ≅ Hom_T(δδ_B, J_B(V))^bal (Emerton, Jacquet II, Introduction, Theorem 0.13 and its sketch of proof, p. 4; §4.3, Corollary 4.3.3, p. 58).
 
 The proof route: injectivity because I(U) is generated by the image of U, determined by its Jacquet-module image; surjectivity because a balanced map defines a (g, P)-map on U(g) ⊗ C^sm_c(N, U) factoring through the image I(U)^(lp)(N), which Corollary 4.3.3 extends continuously using very strong admissibility, and G-equivariance spreads to I(U).
 
-*Needs:* 7.3, 7.4, 2.2.
+*Needs:* 7.2, 7.3, 2.2.
 
 **Checks.**
 
@@ -1114,23 +1149,38 @@ The proof route: injectivity because I(U) is generated by the image of U, determ
 - Degenerate case: V = 0.
 - Non-example: without very strong admissibility the extension step fails; the theorem is not asserted for essentially admissible V that are not very strongly admissible.
 
+### 7.5 Jacquet modules of very strongly admissible representations
+
+For G quasi-split and P a Borel, prove: (i) a topologically irreducible very strongly admissible representation V with J_P(V) ≠ 0 is a quotient of I_P⁻^G(U) ⊆ (Ind_P⁻^G U)^an (7.2) for some finite-dimensional locally analytic representation U of the torus M over E, hence a subquotient of (Ind_P⁻^G U)^an; (ii) an admissible representation of finite length whose constituents are very strongly admissible has finite-dimensional J_P(V) (Emerton, Jacquet II, Introduction, Corollaries 0.14–0.15, p. 4, proved in §5.3, p. 69). In (i), U is in general not a character over E: the proof produces, over a finite extension E′ of E, an E′-valued character χ̃ of M occurring in J_P(V ⊗_E E′), and U is the line E′ with M acting by χ̃δ_P⁻¹, regarded as an E-representation of dimension [E′ : E]; when χ̃ can be chosen E-valued, U is a character of M over E and V is a subquotient of the locally analytic induction of a character. Emerton, Jacquet I, Introduction, Theorem 0.6, p. 778, states (i) with a character of M over the coefficient field; that form needs this rationality.
+
+The proof route goes through the adjunction 7.4: choose E′ and an eigencharacter χ of M in J_P(V ⊗_E E′); among the weights of the n-invariants of the (g, P)-module generated by the corresponding vectors choose one, λ = dχ̃, such that no weight λ − μ with μ a nonzero element of the positive cone of the root lattice occurs among them, so that the inclusion of χ̃ into J_P(V ⊗_E E′) is balanced (7.3); 7.4 gives a nonzero E′-linear map I_P⁻^G(χ̃δ_P⁻¹) → V ⊗_E E′; regarded E-linearly its source is I_P⁻^G(U) and its target a finite direct sum of copies of V, and a nonzero component is the required surjection (Emerton, Jacquet II, §5.3, proof of Corollary 0.14, p. 69). For (ii), J_P is left exact (OverconvergentAutomorphicForms §0.6), so it suffices to treat V topologically irreducible with J_P(V) ≠ 0; then (i) gives I_P⁻^G(U) ↠ V, J_P(I_P⁻^G(U)) → J_P(V) is surjective and its source is finite-dimensional (Emerton, Jacquet II, Theorem 5.2.18, p. 69, and Proposition 5.1.5, p. 60).
+
+*Needs:* 7.1, 7.2, 7.3, 7.4; 2.2; 5.2; OverconvergentAutomorphicForms §0.6.
+
+**Checks.**
+
+- For π_alg = I_sm(φ) ⊗ L(λ) of GL_n(L) with φ generic (8.2), J_B(π_alg) ≅ J_N(I_sm(φ)) ⊗ L(λ)^N is a direct sum of n! distinct characters of T (OverconvergentAutomorphicForms §0.6 and gap:principal-series-jacquet-finite-coefficients), finite-dimensional as (ii) predicts.
+- Degenerate case: J_P(0) = 0.
+- Non-example: for a smooth supercuspidal π of GL_2(ℚ_p), J_B(π) = 0, so (i) gives no principal-series embedding, consistent with π not being a subquotient of a principal series.
+- Non-example to an E-valued character in (i): for G = M = P = ℚ_3^× (N = 1) over E = ℚ_3, let ℤ_3^× act trivially on V = E² and 3 act by the matrix (0 3; 1 0). V is very strongly admissible, being a finite-dimensional Banach representation, and topologically irreducible, since X² − 3 has no root in ℚ_3; J_G(V) = V ≠ 0, while the induction of any character of ℚ_3^× is that character, of dimension 1, so V is a subquotient of no such induction. With E′ = E(√3) and χ̃(3) = √3, χ̃ trivial on ℤ_3^×, the line E′ regarded over E has basis (1, √3), on which 3 acts by (0 3; 1 0): U = V, as (i) asserts.
+
 ### 7.6 Breuil's adjunction for Orlik–Strauch representations
 
 Let Q = MN be the Jacquet parabolic, Q⁻ its opposite (the inducing parabolic), W a finite-dimensional algebraic M-representation inflated to Q⁻, and π a smooth admissible finite-length M-representation. Prove that for very strongly admissible Π there is a natural isomorphism Hom_G(F^G_(Q⁻)((U(g_E) ⊗_(U(q⁻_E)) W)^∨, πδ_Q⁻¹), Π) ≅ Hom_M(W′ ⊗ π, J_Q(Π)), with ∨ the restricted BGG duality of 4.4; equivalently the right side is Hom_(M⁺)(W′ ⊗ π, Π^(N_0)) for the averaged Hecke action; the σ-analytic variant holds; for products of groups (6.6) and category-O modules M_0, Hom_G(F^G_(B⁻)(Hom_E(M_0, E)^u∞, Vδ_B⁻¹), Π) ≅ Hom_(T⁺)(V, Hom_(U(g))(M_0, Π)^(U_0)) for smooth finite-length admissible T-representations V (Breuil, socle II, §4, (18), p. 13, Proposition 4.2 and Théorème 4.3, pp. 13–15, Remarque 4.4(i)–(ii), pp. 15–16; Breuil–Hellmann–Schraen, §5.2, Lemma 5.2.1 and its proof, pp. 391–392).
 
 Breuil's positive-monoid Hom uses the unaveraged Hecke sum, so his smooth argument π corresponds to πδ_Q⁻¹ here; Breuil–Hellmann–Schraen's (5.9), p. 391, writes δ_B times the sum and their Lemma 5.2.1 already contains the inverse-modulus twist. The proof route: identify the compactly supported locally polynomial vectors of the differential-equation kernel with the restricted dual tensored with C^∞_c(N, π) (Breuil, socle II, Proposition 4.2), polynomially generated in bounded degree; extend the resulting (g, Q)-map into Π continuously by Emerton, Jacquet II, Corollary 4.3.3; conclude with 7.1. For products, run the argument on the factors of 6.6.
 
-*Needs:* 7.1, 7.5, 6.1, 6.6; 4.4.
+*Needs:* 7.1, 7.4, 6.1, 6.6; 4.4.
 
 **Checks.**
 
 - For Q = B, W of weight −s_(i,σ)·λ, π = w(φ)ηδ_B and Π = C(I, s_(i,σ)) (8.5), the formula gives Hom_T(z^(s_(i,σ)·λ)w(φ)ηδ_B, J_B(Π)) ≅ E (8.6): the negative weight belongs to the category-O input and the positive weight to the inducing character.
-- When U(g_E) ⊗_(U(q⁻_E)) W is simple, its BGG dual is itself, F of it is the full induction, which equals I_Q⁻^G(W′ ⊗ πδ_Q⁻¹), and the formula reduces to 7.5 with automatic balancedness.
+- When U(g_E) ⊗_(U(q⁻_E)) W is simple, its BGG dual is itself, F of it is the full induction, which equals I_Q⁻^G(W′ ⊗ πδ_Q⁻¹), and the formula reduces to 7.4 with automatic balancedness.
 - Degenerate case: π = 0 gives 0 on both sides.
 
 ### Examples
 
-- For U = δ a smooth character of T and V smooth admissible, 7.5 is the smooth reciprocity Hom_G((Ind δ)^∞, V) ≅ Hom_T(δδ_B, V_N).
+- For U = δ a smooth character of T and V smooth admissible, 7.4 is the smooth reciprocity Hom_G((Ind δ)^∞, V) ≅ Hom_T(δδ_B, V_N).
 - For U = z^λχ_sm with λ dominant, I_B⁻^G(U) is the locally algebraic subrepresentation (Ind χ_sm)^∞ ⊗ L(λ) of the principal series.
 
 ### Dependencies
@@ -1139,7 +1189,7 @@ Layers 0–2, 4–6; OverconvergentAutomorphicForms §0.6; ReductiveGroupsPartII
 
 ## Layer 8: Ext groups of the locally analytic principal series of GL_n
 
-This layer is Ding's §3.1.1–§3.1.2 (Ding, arXiv v2 pp. 36–42). Standing setting: L/ℚ_p finite (Ding's K), d_L = [L:ℚ_p], E/ℚ_p finite containing all embeddings Σ_L; G = GL_n(L) with upper Borel B = TN and lower Borel B⁻ = TN⁻; inductions locally ℚ_p-analytic and unnormalised; φ a generic smooth character of T(L), h strictly dominant and λ = h − θ. All Ext groups are those of 1.7. The label and sign conventions of Conventions 6 are used; where Ding's printed formulas differ, the correction is listed under Source corrections.
+This layer computes the extension groups of the locally algebraic representation π_alg(φ, h) of GL_n(L) by the representations cut out of the locally analytic principal series: the constituents C(w, u) and C(I, s_(i,σ)) of PS(w(φ), h) (8.3–8.6), the representations PS_1 and π_1 (8.7), the self-extensions of π_alg (8.8) and the lines Ext¹(π_alg, C(I, s)) (8.9), which together give the maps ζ_w (8.10), the isomorphism Hom(T(L), E) ≅ Ext¹(π_alg, PS_1) (8.11), the dimension n + (2^n − 1)d_L of Ext¹(π_alg, π_1) (8.12) and the filtration of 8.14. It uses the Orlik–Strauch constituents of Layer 6, the closed induction and adjunctions of Layer 7 and the Ext theory of Layers 1 and 5. Standing setting: L/ℚ_p finite (Ding's K), d_L = [L:ℚ_p], E/ℚ_p finite containing all embeddings Σ_L; G = GL_n(L) with upper Borel B = TN and lower Borel B⁻ = TN⁻; inductions locally ℚ_p-analytic and unnormalised; φ a generic smooth character of T(L), h strictly dominant and λ = h − θ. All Ext groups are those of 1.7. The label and sign conventions of Conventions 6 are used; where Ding's printed formulas differ, the correction is listed under Source corrections.
 
 ### 8.1 Weights, twists and parameter spaces for GL_n(L)
 
@@ -1217,9 +1267,9 @@ The proof route for the socle realisation: 6.5 (2) gives soc (Ind z^(s·λ)w(φ)
 
 ### 8.6 Jacquet modules and closed inductions of the constituents
 
-Let w ∈ S_n with w⁻¹({1, …, i}) = I. Prove: (1) Hom_(T(L))(z^(s_(i,σ)·λ)w(φ)ηδ_B, J_B(C(I, s_(i,σ)))) ≅ E; (2) I_(B⁻(L))^(GL_n(L))(z^(s_(i,σ)·λ)w(φ)η) ≅ C(I, s_(i,σ)) (Ding, Lemma 3.2 and its proof, arXiv v2 pp. 37–38, DING25 lines 1510–1524, with the torus T(L) and the positive weight). The proof route: each constituent of PS embeds into a locally analytic principal series (6.5 (2)), hence is very strongly admissible (5.1, 2.2); (1) is 7.6 with Q = B, computing the left side as Hom_G(C(I, s), C(I, s)) = E; for (2), the T-eigenline of (1) lies in J_B(C(I, s)) ⊆ J_B((Ind z^(s·λ)w(φ)η)^an) because the corresponding Hom into J_B of every other constituent vanishes, and by definition (7.3) its G-span is the socle C(I, s).
+Let w ∈ S_n with w⁻¹({1, …, i}) = I. Prove: (1) Hom_(T(L))(z^(s_(i,σ)·λ)w(φ)ηδ_B, J_B(C(I, s_(i,σ)))) ≅ E; (2) I_(B⁻(L))^(GL_n(L))(z^(s_(i,σ)·λ)w(φ)η) ≅ C(I, s_(i,σ)) (Ding, Lemma 3.2 and its proof, arXiv v2 pp. 37–38, DING25 lines 1510–1524, with the torus T(L) and the positive weight). The proof route: each constituent of PS embeds into a locally analytic principal series (6.5 (2)), hence is very strongly admissible (5.1, 2.2); (1) is 7.6 with Q = B, computing the left side as Hom_G(C(I, s), C(I, s)) = E; for (2), the T-eigenline of (1) lies in J_B(C(I, s)) ⊆ J_B((Ind z^(s·λ)w(φ)η)^an) because the corresponding Hom into J_B of every other constituent vanishes, and by definition (7.2) its G-span is the socle C(I, s).
 
-*Needs:* 8.5, 7.3, 7.6, 2.2, 5.1.
+*Needs:* 8.5, 7.2, 7.6, 2.2, 5.1.
 
 **Checks.**
 
@@ -1244,11 +1294,11 @@ The proof route: in the finite amalgam M, A = π_alg has composition multiplicit
 
 ### 8.8 Self-extensions of π_alg(φ, h)
 
-Prove: (1) for w ∈ S_n and ψ ∈ Hom_(g′)(T(L), E), I_(B⁻)(w(φ)ηz^λ(1 + ψε)) (7.3) is a self-extension of π_alg(φ, h), and ζ_w : Hom_(g′)(T(L), E) → Ext¹_(GL_n(L))(π_alg, π_alg), ψ ↦ I_(B⁻)(w(φ)ηz^λ(1 + ψε)), is bijective and restricts to Hom_sm(T(L), E) ≅ Ext¹_lalg(π_alg, π_alg); hence dim Ext¹_lalg = n and dim Ext¹_(GL_n(L))(π_alg, π_alg) = n + d_L; for ψ = ψ_1 + ψ_0 ∘ det with ψ_1 smooth, I(w(φ)ηz^λ(1 + ψε)) ≅ (Ind_B⁻ w(φ)η(1 + ψ_1ε))^∞ ⊗ L(λ) ⊗_(E[ε]) (1 + εψ_0 ∘ det); (2) for w_1, w_2 ∈ S_n, ζ_(w_2) ∘ (w_2w_1⁻¹) = ζ_(w_1) on Hom_(g′)(T(L), E), with the action of Convention 6; ζ_w does not depend on the isomorphisms (3.2) (Ding, Proposition 3.3, (3.4)–(3.6), its proof and Remark 3.4, arXiv v2 pp. 38–40).
+Prove: (1) for w ∈ S_n and ψ ∈ Hom_(g′)(T(L), E), I_(B⁻)(w(φ)ηz^λ(1 + ψε)) (7.2) is a self-extension of π_alg(φ, h), and ζ_w : Hom_(g′)(T(L), E) → Ext¹_(GL_n(L))(π_alg, π_alg), ψ ↦ I_(B⁻)(w(φ)ηz^λ(1 + ψε)), is bijective and restricts to Hom_sm(T(L), E) ≅ Ext¹_lalg(π_alg, π_alg); hence dim Ext¹_lalg = n and dim Ext¹_(GL_n(L))(π_alg, π_alg) = n + d_L; for ψ = ψ_1 + ψ_0 ∘ det with ψ_1 smooth, I(w(φ)ηz^λ(1 + ψε)) ≅ (Ind_B⁻ w(φ)η(1 + ψ_1ε))^∞ ⊗ L(λ) ⊗_(E[ε]) (1 + εψ_0 ∘ det); (2) for w_1, w_2 ∈ S_n, ζ_(w_2) ∘ (w_2w_1⁻¹) = ζ_(w_1) on Hom_(g′)(T(L), E), with the action of Convention 6; ζ_w does not depend on the isomorphisms (3.2) (Ding, Proposition 3.3, (3.4)–(3.6), its proof and Remark 3.4, arXiv v2 pp. 38–40).
 
-The proof route: the canonical embedding of w(φ)ηz^λ(1 + ψε)δ_B into J_B of the deformed induction factors through the displayed E[ε]-module, which by 7.3 (iv) is the closed induction, a self-extension of π_alg. With central character fixed, Ext¹_(lalg,Z) ≅ Ext¹_(G,Z) (1.10 (2)), and smooth theory gives Hom_sm(T/Z, E) ≅ Ext¹_(lalg,Z) of dimension n − 1; comparing 0 → Hom_sm(T(L)/Z, E) → Hom_(g′)(T(L), E) → Hom(Z(L), E) → 0 with 0 → Ext¹_Z → Ext¹ → Hom(Z(L), E) → 0 shows ζ_w bijective. For (2), the Bernstein-centre maps satisfy 𝒥_(w_2) ∘ p_(w_2w_1⁻¹) = 𝒥_(w_1) (gap:ordered-character-map; Caraiani–Emerton–Gee–Geraghty–Paškūnas–Shin, Lemma 3.22); their differentials give the identity on Hom_sm, and determinant twists are permutation-invariant.
+The proof route: the canonical embedding of w(φ)ηz^λ(1 + ψε)δ_B into J_B of the deformed induction factors through the displayed E[ε]-module, which by 7.2 (iv) is the closed induction, a self-extension of π_alg. With central character fixed, Ext¹_(lalg,Z) ≅ Ext¹_(G,Z) (1.10 (2)), and smooth theory gives Hom_sm(T/Z, E) ≅ Ext¹_(lalg,Z) of dimension n − 1; comparing 0 → Hom_sm(T(L)/Z, E) → Hom_(g′)(T(L), E) → Hom(Z(L), E) → 0 with 0 → Ext¹_Z → Ext¹ → Hom(Z(L), E) → 0 shows ζ_w bijective. For (2), the Bernstein-centre maps satisfy 𝒥_(w_2) ∘ p_(w_2w_1⁻¹) = 𝒥_(w_1) (gap:ordered-character-map; Caraiani–Emerton–Gee–Geraghty–Paškūnas–Shin, Lemma 3.22); their differentials give the identity on Hom_sm, and determinant twists are permutation-invariant.
 
-*Needs:* 8.2, 7.3, 1.9, 1.10, 8.1; gap:ordered-character-map; SmoothRepresentationsOfLocalGroups SR.0d.2 (*central-ext-vanishing*), SR.3.2 (*bernstein-centre-blocks*).
+*Needs:* 8.2, 7.2, 1.9, 1.10, 8.1; gap:ordered-character-map; SmoothRepresentationsOfLocalGroups SR.0d.2 (*central-ext-vanishing*), SR.3.2 (*bernstein-centre-blocks*).
 
 **Checks.**
 
@@ -1279,7 +1329,7 @@ API:
 - On Hom_(g′)(T(L), E), ζ_w is the composite of the bijection of 8.8 with push-forward along π_alg ↪ π_1.
 - ζ_w(0) is the split extension.
 
-*Needs:* 8.7, 8.8, 6.7, 7.3, 1.9.
+*Needs:* 8.7, 8.8, 6.7, 7.2, 1.9.
 
 **Checks.**
 
@@ -1347,7 +1397,7 @@ Layers 1, 2, 4–7; SmoothRepresentationsOfLocalGroups SR.0.4, SR.0d.2, SR.2.1, 
 
 ## Layer 9: Parabolic induction and the amalgamation of π_1
 
-This layer is Ding's §3.1.3 (Ding, arXiv v2 pp. 43–48), in the setting of Layer 8: the Levi data of a P-filtration and the induction (3.19), the constituents C(I, s_(i,σ)) of a parabolic induction, the representations π_(F_P)(φ, h), the extension groups Ext¹(π_alg, π_(F_P)), the maps ζ_(F_P) and their bijectivity, and the amalgamation of the two endpoint parabolics into π_1(φ, h).
+This layer relates the extension groups of Layer 8 to parabolic induction, in the setting of Layer 8. Its input is Layer 8 applied to each Levi block GL_(n_i)(L) of a standard parabolic P, transported to GL_n(L) by parabolic induction (5.1) and completed tensor products (0.9, 1.5); this is why it follows Layer 8. It builds the Levi data of a P-filtration and the parabolic induction of the blocks' π_1, the constituents C(I, s_(i,σ)) of a parabolic induction, the representations π_(F_P)(φ, h), the extension groups Ext¹(π_alg, π_(F_P)), the maps ζ_(F_P) and their bijectivity, and the amalgamation of the two endpoint parabolics into π_1(φ, h).
 
 ### 9.1 Levi data of a P-filtration and the parabolic induction
 
@@ -1450,7 +1500,7 @@ Layers 0, 1, 5, 6, 8.
 
 ## Layer 10: Locally σ-analytic theory
 
-This layer is Ding's §3.1.4 (Ding, arXiv v2 pp. 48–51), in the setting of Layer 8: locally σ-analytic and g_(Σ_L∖{σ})-algebraic representations, the representations π_(1,σ)(φ, h) and PS_(1,σ)(w(φ), h), σ-analytic self-extensions and extension groups, the decomposition of Ext¹(π_alg, π_1) modulo Ext¹_g over the embeddings, and the σ-analytic forms of 9.6 and 9.7. Algebraic factors away from σ keep their own highest weights, and the σ-analytic inducing weight is positive.
+This layer decomposes the extension groups of Layers 8 and 9 over the embeddings σ ∈ Σ_L, in the setting of Layer 8. Every construction of those layers is specialised along the splitting g ⊗_(ℚ_p) E = ∏_σ g_σ (0.1, 0.3) by keeping the action of g_σ analytic and requiring the other factors to act algebraically; this is why it follows Layers 8 and 9. It builds locally σ-analytic and g_(Σ_L∖{σ})-algebraic representations, the representations π_(1,σ)(φ, h) and PS_(1,σ)(w(φ), h), σ-analytic self-extensions and extension groups, the decomposition of Ext¹(π_alg, π_1) modulo Ext¹_g over the embeddings, and the σ-analytic forms of 9.6 and 9.7. Algebraic factors away from σ keep their own highest weights, and the σ-analytic inducing weight is positive.
 
 ### 10.1 Locally σ-analytic and g_(Σ_L∖{σ})-algebraic representations
 
@@ -1497,9 +1547,9 @@ Prove dim_E Ext¹_σ(π_alg(φ, h), π_alg(φ, h)) = n + 1, and that 8.8's ζ_w 
 
 ### 10.4 Ext¹_σ(π_alg, PS_(1,σ)) is Hom_σ(T(L), E)
 
-For w ∈ S_n prove that (3.10) induces an isomorphism Hom_σ(T(L), E) ≅ Ext¹_σ(π_alg(φ, h), PS_(1,σ)(w(φ), h)), both of dimension 2n; that the last map of 0 → Ext¹_σ(π_alg, π_alg) → Ext¹_σ(π_alg, PS_(1,σ)(w(φ), h)) → ⊕_(i=1)^(n−1) Ext¹_σ(π_alg, C(w, s_(i,σ))) is surjective; and that Ext¹_σ(π_alg, C(w, s_(i,σ))) = Ext¹(π_alg, C(w, s_(i,σ))) (Ding, Proposition 3.16, (3.31)–(3.32), its proof and Remark 3.17, arXiv v2 p. 49). The proof route: for ψ ∈ Hom_σ, I(w(φ)ηz^λ(1 + ψε)) lies in (Ind w(φ)ηz^(λ_σ)(1 + ψε))^(σ-an) ⊗ L(λ^σ) and is g_(Σ∖σ)-algebraic (7.3, 10.2), so (3.10) restricts, injectively by 8.11; dévissage bounds the target by (n + 1) + (n − 1) (10.3, 8.9), forcing bijectivity and the surjectivity.
+For w ∈ S_n prove that (3.10) induces an isomorphism Hom_σ(T(L), E) ≅ Ext¹_σ(π_alg(φ, h), PS_(1,σ)(w(φ), h)), both of dimension 2n; that the last map of 0 → Ext¹_σ(π_alg, π_alg) → Ext¹_σ(π_alg, PS_(1,σ)(w(φ), h)) → ⊕_(i=1)^(n−1) Ext¹_σ(π_alg, C(w, s_(i,σ))) is surjective; and that Ext¹_σ(π_alg, C(w, s_(i,σ))) = Ext¹(π_alg, C(w, s_(i,σ))) (Ding, Proposition 3.16, (3.31)–(3.32), its proof and Remark 3.17, arXiv v2 p. 49). The proof route: for ψ ∈ Hom_σ, I(w(φ)ηz^λ(1 + ψε)) lies in (Ind w(φ)ηz^(λ_σ)(1 + ψε))^(σ-an) ⊗ L(λ^σ) and is g_(Σ∖σ)-algebraic (7.2, 10.2), so (3.10) restricts, injectively by 8.11; dévissage bounds the target by (n + 1) + (n − 1) (10.3, 8.9), forcing bijectivity and the surjectivity.
 
-*Needs:* 10.2, 10.3, 8.10, 8.11, 8.9, 7.3.
+*Needs:* 10.2, 10.3, 8.10, 8.11, 8.9, 7.2.
 
 **Checks.**
 
@@ -1553,7 +1603,7 @@ Layers 0, 1, 5–9.
 
 ## Downstream consumers
 
-- **PadicHodgeParametersInLocallyAnalyticRepresentations** takes its locally analytic inputs from here: admissible representations, the anti-equivalence, Ext groups, Ext¹ as extensions, dual-number self-extensions, tautological and universal extensions and completed external tensor products (1.2–1.9, 0.9); π_alg(φ, h), PS(w(φ), h), its constituents and socles, the C(I, s_(i,σ)), PS_1, π_1, π(φ, h), the lines Ext¹(π_alg, C(I, s)), the self-extensions and Ext¹(π_alg, π_1) (8.2–8.9, 8.12, 8.13); the maps ζ_w, Ext¹(π_alg, PS_1) and the filtration Ext¹_g ⊆ Ext¹_g′ ⊆ Ext¹_w (8.10, 8.11, 8.14); the parabolic structure (9.1–9.7, 7.3, 0.9, 1.5); the σ-analytic theory (10.1–10.7); and the closed induction and the adjunctions of Emerton and Breuil (7.3, 7.5, 7.6).
+- **PadicHodgeParametersInLocallyAnalyticRepresentations** takes its locally analytic inputs from here: admissible representations, the anti-equivalence, Ext groups, Ext¹ as extensions, dual-number self-extensions, tautological and universal extensions and completed external tensor products (1.2–1.9, 0.9); π_alg(φ, h), PS(w(φ), h), its constituents and socles, the C(I, s_(i,σ)), PS_1, π_1, π(φ, h), the lines Ext¹(π_alg, C(I, s)), the self-extensions and Ext¹(π_alg, π_1) (8.2–8.9, 8.12, 8.13); the maps ζ_w, Ext¹(π_alg, PS_1) and the filtration Ext¹_g ⊆ Ext¹_g′ ⊆ Ext¹_w (8.10, 8.11, 8.14); the parabolic structure (9.1–9.7, 7.2, 0.9, 1.5); the σ-analytic theory (10.1–10.7); and the closed induction and the adjunctions of Emerton and Breuil (7.2, 7.4, 7.6).
 - **TriangulineVarietyAndItsLocalModel** takes the locally analytic principal series, the Orlik–Strauch constituents and their Jordan–Hölder multiplicities (5.2, 6.1–6.6), very strong admissibility (2.2) and Breuil's adjunction (7.6).
 
 ## Worked examples
@@ -1577,6 +1627,8 @@ The following corrections are made to the sources at the places cited; each is f
 - Schraen, Proposition 4.7(2): the spectral sequence of the proof gives Ext^n_(G,λ)(F_λ ⊗ W_1, F_λ ⊗ W_2) ≅ Ext^n_∞(W_1, W_2) for n ≤ 2; concentration in the least nonvanishing degree holds only when smooth Ext is concentrated in one degree (1.10).
 - Boxer–Calegari–Gee–Pilloni, §2.2.27: evaluation at e is on O_(𝔾_r) ⊗ V at the radius r of the analytic vectors being defined (3.8).
 - Dospinescu–Le Bras, Lemme 5.10, is stated without proof; 0.8 gives the route.
+- Breuil, socle I, Corollary 2.7, p. 12: the recovery of (M_1, π_(Q_1)) from F^G_(Q_1)(M_1, π_(Q_1)) needs nonzero smooth arguments; with π_(Q_1) = π_(Q_2) = 0 both sides vanish for any simple M_1, M_2, and the proof reads the highest weight of M_i off H^0(n, F′) ≅ Ev⁺_i ⊗ π′_(Q_i), which is then zero (6.4).
+- Emerton, Jacquet I, Theorem 0.6, p. 778: an irreducible very strongly admissible V with J_P(V) ≠ 0 is a quotient of I_P⁻^G(U) for a finite-dimensional U over the coefficient field (Emerton, Jacquet II, Corollary 0.14), but in general not a subquotient of the induction of a character over that field; the character exists after a finite extension of scalars, and U is its restriction of scalars (7.5).
 
 ## References
 

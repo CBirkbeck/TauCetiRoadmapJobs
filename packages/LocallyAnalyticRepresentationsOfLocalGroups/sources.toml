@@ -27,7 +27,7 @@ year = 2002
 doi = "10.1007/s00222-002-0284-1"
 arxiv = "math/0206056v1"
 locator_scheme = "theorem"
-locator = "Lemma 3.6; Lemma 3.8; Lemma 6.1; Theorem 6.3; Proposition 6.4; Theorem 6.6; Theorem 7.1"
+locator = "Corollaries 3.1-3.5; Lemma 3.6; Lemma 3.8; Lemma 3.9; §4, Lemma 4.1 to Theorem 4.5; Lemma 6.1; Theorem 6.3; Proposition 6.4; Theorem 6.6; Theorem 7.1"
 url = "https://arxiv.org/abs/math/0206056v1"
 fetched_from = "https://arxiv.org/pdf/math/0206056v1"
 fetched_at = "2026-10-26T20:26:52Z"
@@ -36,7 +36,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-26"
 version_note = "arXiv v1"
-cited_for = ["1.1", "1.2", "1.3", "1.4", "1.6", "2.1"]
+cited_for = ["1.1", "1.2", "1.3", "1.4", "1.6", "2.1", "Exact supplier contracts"]
 
 [[source]]
 id = "ST02B"
@@ -80,7 +80,7 @@ authors = "Matthew Emerton"
 title = "Locally analytic vectors in representations of locally p-adic analytic groups"
 year = 2017
 locator_scheme = "theorem"
-locator = "Propositions 1.1.31-1.1.32; Definition 3.6.9; Propositions 6.1.5, 6.2.4, 6.3.2, 6.3.10, 6.5.9"
+locator = "Propositions 1.1.31-1.1.32; Definition 3.6.9; Proposition 3.6.18; Proposition 4.2.10; Theorem 6.1.20; Propositions 6.1.5, 6.2.2, 6.2.9, 6.3.2, 6.3.6, 6.3.10, 6.5.9; Corollary 6.2.16"
 url = "http://www.math.uchicago.edu/~emerton/pdffiles/analytic.pdf"
 fetched_from = "http://www.math.uchicago.edu/~emerton/pdffiles/analytic.pdf"
 fetched_at = "2026-10-26T20:27:11Z"
@@ -104,7 +104,7 @@ sha256 = "c7d6eceaab1b49357851c0431838ad5ef2595b7db68d85d1d719fd2a7319206e"
 licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-26"
-cited_for = ["7.1", "7.2"]
+cited_for = ["7.1", "7.5", "Source corrections"]
 
 [[source]]
 id = "EMJ2"
@@ -112,7 +112,7 @@ authors = "Matthew Emerton"
 title = "Jacquet modules of locally analytic representations of p-adic reductive groups II. The relation to parabolic induction"
 year = 2007
 locator_scheme = "theorem"
-locator = "Lemma 0.3; Definitions 0.8, 0.11, 0.12; Theorem 0.13; Corollaries 0.14-0.15; Proposition 2.1.2; Lemma 2.8.3; Corollary 4.3.3; Corollary 5.1.4"
+locator = "Lemma 0.3; Definitions 0.8, 0.11, 0.12; Theorem 0.13; Corollaries 0.14-0.15; Proposition 2.1.2; Lemma 2.8.3; Corollary 4.3.3; Corollary 5.1.4; Proposition 5.1.5; Theorem 5.2.18"
 url = "http://www.math.uchicago.edu/~emerton/pdffiles/jacquet-two.pdf"
 fetched_from = "http://www.math.uchicago.edu/~emerton/pdffiles/jacquet-two.pdf"
 fetched_at = "2026-10-26T20:27:15Z"
@@ -129,7 +129,7 @@ title = "On Jordan-Hölder series of some locally analytic representations"
 year = 2010
 arxiv = "1001.0323v4"
 locator_scheme = "theorem"
-locator = "Propositions 4.8-4.9; Theorem 5.8; (6.2.1)"
+locator = "Remark after the main theorem, p. 4; Propositions 4.8-4.9; Assumption 5.1; Theorem 5.8; (6.2.1)"
 url = "https://arxiv.org/abs/1001.0323v4"
 fetched_from = "https://arxiv.org/pdf/1001.0323v4"
 fetched_at = "2026-10-26T20:27:19Z"
@@ -138,7 +138,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-26"
 version_note = "arXiv v4"
-cited_for = ["4.2", "4.3", "4.5", "6.1", "6.2", "6.3", "6.4", "6.5"]
+cited_for = ["4.2", "4.3", "4.5", "Layer 6", "6.1", "6.2", "6.3", "6.4", "6.5"]
 
 [[source]]
 id = "OS10"
@@ -192,7 +192,7 @@ sha256 = "255c1a768ef63646d5b1467cdf6d2df4756ce807d073e322916b1d526f071666"
 licence_class = "author-page"
 status = "certified"
 accessed = "2026-10-26"
-cited_for = ["0.1", "0.3", "0.4", "5.1", "5.2", "6.1", "6.2", "6.3", "6.4", "6.5"]
+cited_for = ["0.1", "0.3", "0.4", "5.1", "5.2", "6.1", "6.2", "6.3", "6.4", "6.5", "Source corrections"]
 
 [[source]]
 id = "BR15"
@@ -401,7 +401,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-26"
 version_note = "arXiv v2"
-cited_for = ["Layer 8", "Layer 9", "Layer 10", "0.9", "1.5", "1.7", "1.8", "1.9", "1.10", "5.2", "5.3", "6.7", "7.3"]
+cited_for = ["Layer 8", "Layer 9", "Layer 10", "0.9", "1.5", "1.7", "1.8", "1.9", "1.10", "5.2", "5.3", "6.7", "7.2"]
 
 [[source]]
 id = "CD14"
@@ -446,7 +446,7 @@ year = 1977
 venue = "Annales scientifiques de l'École normale supérieure 10"
 doi = "10.24033/asens.1333"
 locator_scheme = "theorem"
-locator = "§§2–4 (induction and Jacquet modules of GL_n)"
+locator = "§§2–4 (induction and Jacquet modules of GL_n); §1.8, p. 444; §4.2, Theorem and Remark (2), p. 454"
 url = "https://doi.org/10.24033/asens.1333"
 fetched_from = "https://www.numdam.org/item/10.24033/asens.1333.pdf"
 fetched_at = "2026-10-26T20:55:42Z"
@@ -454,7 +454,7 @@ sha256 = "8424600228ab72c5937e45edceefcae410a2a0b8f5ebf282185691542aa89092"
 licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-26"
-cited_for = ["Exact supplier contracts"]
+cited_for = ["Exact supplier contracts", "6.3", "6.4"]
 
 [[source]]
 id = "STACKS"
