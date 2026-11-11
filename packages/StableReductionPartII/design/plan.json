@@ -32520,12 +32520,6 @@
     "section": "§3.4"
   },
   {
-    "slug": "stack-chow-grr",
-    "needs": "Provide rational codimension-one Chow and Picard comparison, proper pushforward, Chern and projection laws and Grothendieck–Riemann–Roch on the smooth Deligne–Mumford moduli stack needed by the Noether computation.",
-    "supplier": "SchemeAndStackFoundations",
-    "section": "§§5.1–5.8"
-  },
-  {
     "slug": "stack-topology-boundary",
     "needs": "Provide analytic/algebraic torsion-line and finite-cover comparison for the proper stable curve stack, together with Teichmüller contractibility and the boundary Dehn-twist monodromy comparison used for torsion freeness.",
     "supplier": "ComplexComparisonPartII",
