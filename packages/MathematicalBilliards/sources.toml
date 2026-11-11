@@ -160,7 +160,7 @@ sha256 = "304923d23c41f760886f774f9c02e3a6a63271ca362664000aa1ff04c8e19cb7"
 licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-10"
-cited_for = ["4.1", "4.2", "4.4", "5.1", "5.2", "5.3", "5.4"]
+cited_for = ["4.1", "4.2", "4.4", "5.2", "5.3", "5.4"]
 
 [[source]]
 id = "Hochman2012"
