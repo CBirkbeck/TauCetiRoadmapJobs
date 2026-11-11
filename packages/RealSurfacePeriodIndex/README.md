@@ -7,7 +7,7 @@
 This roadmap owns everything specific to Benoist's argument: the ramified double covers and their topology, the corrected evaluation term on the avoided set with the exact criteria that replace the source's Propositions 4.4 and 4.5 for a given cover, the source's Proposition 6.6, the Noether–Lefschetz locus of the double-cover family, the real-locus control by branch sections with prescribed signs, the degree-two splitting, the induction on the period, the obstruction for covers of even degree, the real Enriques criterion and the Puiseux counterexample. It also owns the inputs no other roadmap states:
 
 - the real-function-field theory of Layer 0 (the space of orderings with the Harrison topology, real closures at an ordering, the signature as a function of a varying ordering, the clopen survival locus of a Brauer class, the Elman–Lam u-invariant), the Tsen–Lang theorem (§0.7: C_i fields, the Lang–Nagata theorem for systems of forms, closure under algebraic and transcendental extensions), the period and index of a Brauer class of a field (§0.12), and the classical theorems of Witt, Springer, Amer–Brumer, Albert, Elman–Lam and Pfister's criterion; Layer 0 never imports Layers 1–9;
-- the Kummer and topological Brauer sequences of real varieties with the real class of a two-torsion line bundle (the source's Lemma 2.1), invariance of period and index under extension of algebraically closed fields, and de Jong's reduction to unramified classes;
+- the Kummer and topological Brauer sequences of real varieties with the real class of a two-torsion line bundle (the source's Lemma 2.1), invariance of period and index under extension of algebraically closed fields, and de Jong's reduction to unramified classes with its two local inputs: Azumaya models of prescribed degree over regular schemes of dimension at most two, and Saltman's local form of a class whose ramification has normal crossings on a two-dimensional excellent regular local ring;
 - the weight-two variation of a family of surfaces with Griffiths' formula, Voisin's open cone, open cones meeting lattice cosets, the Kodaira–Spencer factorisation through normal bundles, Green's criterion over ℝ and the stratification of the double-cover family;
 - the anticanonical model of degree-four del Pezzo surfaces, and the classical real-geometric inputs of Bochnak–Coste–Roy (Nash approximation), Bröcker (real divisors with prescribed signs) and Colliot-Thélène–Parimala (prescribed evaluation functions).
 
@@ -15,11 +15,11 @@ The following material has other owners and is consumed through their interfaces
 
 - **Equivariant and real-locus cohomology.** Borel equivariant Betti and semialgebraic cohomology of real varieties, the real–complex exact sequences, the canonical real-locus decompositions, Krasnov's equivariant cycle class cl and the Borel–Haefliger class cl_R, equivariant purity and pushforward are MotivesAndAlgebraicCycles §§7.6a–7.6b; the complex and real Lefschetz (1,1) theorems are §7.8; the real Picard image and cl_R(K) = w₁ on real Enriques surfaces are §7.10; Gersten complexes and residues are §0.5b.
 - **Double-cover topology.** Free descent above twice the dimension is AlgebraicTopologyPartII Layer 6 (consumed there from MotivesAndAlgebraicCycles §7.6a); the twisted Bockstein in canonical coordinates is §7.4; the self-intersection class γ and the canonical splitting are §§9.2–9.3; the corrected localisation sequence and its self-duality are §§10.3 and 10.5; γ = w and the surface identities for w₁ are §12.1; embedded loop representatives are §12.2; sign local systems, the double-cover extension and the ramified trace triangle are §§14.1–14.3; permutation quotients, the trace-zero operator, trace-quotient lifts, the corrected integral lift, cyclic reduction and the circle extension are §§15.1–15.6, the circle extension obtaining the vanishing of the positive equivariant Ext stalks of a free permutation stalk on a fixed circle, its truncation input, from MotivesAndAlgebraicCycles §7.6a; equivariant Ehresmann transport, stratified pair transport, the finite-index equivariant lattice and the double-cover chase are §§16.1–16.4.
-- **Brauer groups of schemes and fields.** Brauer groups of schemes with `brauer_field`, the Kummer sequence, Hilbert 90 and Tsen's theorem for one-variable function fields are SchemeAndStackFoundations §§2.11, 2.16 and 2.22; Brauer residues, purity and residues of pullbacks are HeightsRationalPointsAndObstructions §2.16b; the corestriction of Brauer classes along a finite locally free morphism, with cor ∘ res equal to multiplication by the degree, is HeightsRationalPointsAndObstructions §2.19a (`finiteFlatBrauerCorestriction`), applied here to Spec L → Spec K for finite field extensions L/K. The index of a central simple algebra and a splitting field of that degree are Tau Ceti's `TauCeti.Algebra.index` and `TauCeti.Algebra.exists_isSplittingField_finrank_eq_index`; the index through maximal subfields is SemisimpleAlgebras Layer 6.
+- **Brauer groups of schemes and fields.** Brauer groups of schemes with `brauer_field`, the Kummer sequence, Hilbert 90 and Tsen's theorem for one-variable function fields are SchemeAndStackFoundations §§2.11, 2.16 and 2.22; Brauer residues, purity and residues of pullbacks are HeightsRationalPointsAndObstructions §2.16b; the corestriction of Brauer classes along a finite locally free morphism, with cor ∘ res equal to multiplication by the degree, is HeightsRationalPointsAndObstructions §2.19a (`finiteFlatBrauerCorestriction`), applied here to Spec L → Spec K for finite field extensions L/K. The index of a central simple algebra and a splitting field of that degree are Tau Ceti's `TauCeti.Algebra.index` and `TauCeti.Algebra.exists_isSplittingField_finrank_eq_index`; the index through maximal subfields is SemisimpleAlgebras Layer 6. The coniveau spectral sequence of étale cohomology with supports is PurityForFlatCohomology §8.4 and Gabber's absolute purity is LefschetzPencilsAndVanishingCycles §0.10; together they give the residue complex and purity of a two-dimensional excellent regular local ring used in §1.7. Reflexive hulls are SchemeAndStackFoundations §0.6, and freeness of reflexive modules over regular local rings of dimension at most two is Tau Ceti's `TauCeti.IsRegularLocalRing.free_of_isReflexive`.
 - **General geometry.** Principalization, SNC compactification and resolution are ResolutionOfSingularitiesCharacteristicZero §§5.1, 6.2 and 7.8; projective bundles and ample powers are AlgebraicModuliForArithmeticGeometry §§1.1 and 1.4; the remaining scheme theory (relative Spec, depth, Noetherian approximation, Leray, quasi-coherent and Serre duality, Picard groups, formal functions, blow-ups, Bertini, SNC divisors, projective bundles, intersection numbers on surfaces) is SchemeAndStackFoundations by section; blow-ups of surfaces are StableReduction Layer 4; miracle flatness is ModularCurves 4D; purity of the branch locus is PurityOfBranchLocus §2.3.
 - **Complex geometry.** Ehresmann's theorem, Gauss–Manin connections, relative Hodge bundles, Riemann existence and the Artin comparison over ℂ are ComplexComparisonPartII §§C5.2, C5.3, C6.2 and C6.3; the carrier of variations of Hodge structure is ShimuraData §3.1; integral weak Lefschetz and the cohomological dimension of affine varieties are AffineMorseLefschetz §§A5 and A3; singular cohomology with products and duality is AlgebraicTopology Stage 6.
 - **Quadratic forms and real algebra.** Square classes, diagonal calculus, hyperbolic planes, Witt theory, quaternion algebras, the Witt ring and the Brauer-valued invariants are QuadraticFormInvariants Layers 0, 1, 2, 4 and 5. The signature over an ordered field (inertia indices, isometry invariance, additivity and multiplicativity, Sylvester's law over real closed fields) is Mathlib's `sigPos` and `sigNeg` with Tau Ceti's `TauCeti.RegularFormClass.signature`; this roadmap adds only its dependence on a varying ordering (§0.4). Real closures of ordered fields and the extension of preorderings to orderings are Tau Ceti's `TauCeti.RealClosure.exists_realClosure` and `Subsemiring.IsPreordering.exists_le_isOrdering`, the formal form of RealAlgebraicGeometry Layer 1, which also supplies the algebraic closedness of R(√−1) for real closed R.
-- **Enriques surfaces and Puiseux series.** The Enriques condition (a smooth proper geometrically connected surface with numerically trivial canonical bundle and χ(O) = 1, stable under field extension) is WeilConjectures WC.7; the characteristic-zero invariants of Enriques surfaces are EnriquesSurfaces §§1.1, 1.3 and 1.4; the Puiseux field and its algebraic closedness are FormalLaurentPuiseux L4 (`puiseuxField`, `ramifiedEmbedding`, `puiseuxField_isAlgClosed`); only its order and its real closedness are planned here (§9.11).
+- **Enriques surfaces and Puiseux series.** The Enriques condition (a smooth proper geometrically connected surface with numerically trivial canonical bundle and χ(O) = 1, stable under field extension) is WeilConjectures WC.7; the characteristic-zero invariants of Enriques surfaces are EnriquesSurfaces §§1.1, 1.3 and 1.4; the Puiseux field and its ramified levels are FormalLaurentPuiseux L4 (`puiseuxField`, `ramifiedEmbedding`), and its algebraic closedness over an algebraically closed field of characteristic zero is FormalLaurentPuiseux L5 (`puiseuxField_isAlgClosed`); only its order and its real closedness are planned here (§9.11).
 
 The avoided set Ψ ⊃ Θ is allowed to contain components where the class evaluates to 0, and the printed computation of the source omits the factor [α̃]₀ in the boundary component on Ψ (§5.4, source correction E3). For a given double cover, the source's Propositions 4.4 and 4.5 are replaced by exact criteria under their own hypotheses: the topological obstruction vanishes if and only if the corrected term ([α̃]₀ ∪ cl_R(L(R)))|_Ψ is the restriction to Ψ of the degree-one real component [ξ]₁ of a class ξ ∈ H²_G(S(ℂ), ℤ(1)) (§5.5), and the integral pushforward adjustment exists if and only if that term is the Borel–Haefliger class of a line bundle (§5.8). Both hold when the evaluation is constant on Ψ or cl_R(L(R)) vanishes on Ψ, and the first fails for a cover of a real Enriques surface with mixed evaluation (§5.5), so the unconditional form of Proposition 4.4 is false and is not planned. The source's Proposition 6.6, which constructs the cover, is planned in its stated generality (§6.13): taking the auxiliary ample bundle of §4.9 to be a square makes cl_R(L(R)) = 0. The Tsen–Lang theory of §0.7 has this roadmap as its single owner; QuadraticFormInvariantsPartII, later in the merge order, imports it for its Layer 5. Lang's conjecture (function fields of i-dimensional real varieties without real points are C_i) and Pfister's conjecture (u ≤ 2^i in transcendence degree i) are the context of Theorems 0.10 and 0.12 and are not used; Lieblich's bound ind | per² over finite fields (the source's Theorem 0.2) is background.
 
@@ -45,6 +45,7 @@ Mathlib at the pin of the content repository's lake manifest; file and line loca
 - `IsSemireal` (Algebra/Ring/Semireal/Defs.lean:38) and `IsRealClosed` (FieldTheory/IsRealClosed/Basic.lean:52): a real closed field is semireal, has x or −x a square for every x, and has a root of every odd-degree polynomial; the class does not fix an order relation. `IsRealClosed.isSquare_neg_of_not_isSquare` (line 80).
 - Quadratic forms: `QuadraticMap.Anisotropic` (LinearAlgebra/QuadraticForm/Basic.lean:1054), `QuadraticForm.baseChange` (LinearAlgebra/QuadraticForm/TensorProduct.lean:128, which assumes 2 invertible in the base ring), the diagonalisation `QuadraticForm.equivalent_weightedSumSquares_units_of_nondegenerate'` (LinearAlgebra/QuadraticForm/IsometryEquiv.lean:177) and Sylvester's law over ℝ `QuadraticForm.equivalent_signType_weighted_sum_squared` (LinearAlgebra/QuadraticForm/Real.lean:78); `CliffordAlgebra.even`.
 - `QuadraticAlgebra` and `QuadraticAlgebra.basis` (Algebra/QuadraticAlgebra/Defs.lean:44, 387), used for the local model of the finite double cover.
+- `ModuleCat.matrixEquivalence` (RingTheory/Morita/Matrix.lean:187): for a ring R and a nonempty finite index type, R-modules and modules over the matrix ring over R are equivalent categories (Morita), used to compute commutants of Azumaya algebras in §1.6.
 - Field theory: `Algebra.trdeg` (RingTheory/AlgebraicIndependent/Basic.lean:45, a cardinal), `Algebra.EssFiniteType` (RingTheory/EssentialFiniteness.lean:40), `Algebra.IsAlgebraic`, `RatFunc`, `PowerSeries`, `HahnSeries`, `HenselianLocalRing`, `IsDiscreteValuationRing`, `IsLocalRing.maximalIdeal`, `MvPolynomial.IsHomogeneous`, and Krull's height theorem `Ideal.height_le_spanFinrank` (RingTheory/Ideal/KrullsHeightTheorem.lean:282).
 - Topology and schemes: `TopologicalSpace.generateFrom`, `isCompact_univ_pi` (Topology/Compactness/Compact.lean:1172), `IsClosed`, `AlgebraicGeometry.Scheme`, `AlgebraicGeometry.Scheme.functionField`, `Equiv.Perm.sign`, `ENat`, `TensorProduct`; `Module.finrank` and `Metric.ball` (finite-dimensional real vector spaces and their balls, §2.6).
 
@@ -59,6 +60,7 @@ Tau Ceti at the pin of the content repository's lake manifest; file and line loc
 - `TauCeti.BrauerGroup.exists_eq_mk_centralDivisionRing` (Algebra/BrauerGroup/Division.lean:69): every class has a finite-dimensional central division representative.
 - `TauCeti.Algebra.index` (Algebra/CentralSimple/Index.lean:99), the degree of the central division algebra in a Wedderburn presentation, with `TauCeti.Algebra.index_eq_deg_of_algEquiv_matrix` (line 112) and `TauCeti.Algebra.exists_isSplittingField_finrank_eq_index` (line 255). The index of a central simple algebra is not the index of its Brauer class as the gcd of splitting degrees; §0.12 proves that they agree.
 - `TauCeti.Quaternion.brauerGroupMulEquiv` (Algebra/BrauerGroup/Real.lean:102): Br(ℝ) ≃ ℤ/2.
+- `TauCeti.IsRegularLocalRing.free_of_isReflexive` (RingTheory/RegularLocalRing/DimensionTwo.lean:202): over a regular local ring of Krull dimension at most 2, a finite reflexive module is free.
 - `TauCeti.brauerCohomologyEquiv` (Algebra/CrossedProduct/Comparison.lean:274), the crossed-product comparison Br(K) ≃ H²(G_K, K_s^×), with `TauCeti.brauerCohomologyEquiv_unique` (line 317).
 - `TauCeti.hyperbolicPlane` (LinearAlgebra/QuadraticForm/Hyperbolic.lean:76) and `QuadraticForm.not_anisotropic_baseChange` (LinearAlgebra/QuadraticForm/BaseChange.lean:389).
 - Signature over a field with `LinearOrder` and `IsStrictOrderedRing`: `TauCeti.RegularFormClass.signature` (LinearAlgebra/QuadraticForm/RegularFormClass/Signature.lean:52) on isometry classes of nondegenerate forms, with `TauCeti.signature_formClass` (line 66: the signature of the class of a nondegenerate form is `sigPos − sigNeg`, for 2 invertible), `TauCeti.RegularFormClass.signatureHom` (line 140: a semiring homomorphism to ℤ, so additive under orthogonal sums and multiplicative under tensor products), `TauCeti.RegularFormClass.signature_hyperbolicClass` (line 111: the hyperbolic plane has signature 0), and Sylvester's law over an ordered real closed field `TauCeti.RegularFormClass.eq_iff_rank_eq_and_signature_eq` (LinearAlgebra/QuadraticForm/Witt/Signature.lean:133).
@@ -66,7 +68,7 @@ Tau Ceti at the pin of the content repository's lake manifest; file and line loc
 
 ### From TauCetiRoadmap.SchemeAndStackFoundations
 
-§0.1 (quasi-coherent algebras and relative Spec), §0.9 (Noetherian approximation and spreading out), §0.17 (depth, Cohen–Macaulay modules; a hypersurface in a regular scheme is Cohen–Macaulay), §2.2 (Leray and Čech spectral sequences), §2.6 (quasi-coherent cohomology, `ample_serre_vanishing`, `projectiveSpace_cohomology`), §2.11 (Kummer sequence and Hilbert 90), §2.16 (`tsen_theorem`), §2.20 (Serre duality), §2.22 (Brauer groups of schemes: `brauer_field`, `brauer_regular_injectivity`, `brauer_kummer_sequence`, `brauer_henselian_local`), §3.4 (Picard groups through Cartier and Weil divisors, `cartierClass_picard_equiv`, hence surjectivity of Pic(S) → Pic(V) for a dense open V of a smooth S), §4.9 (formal functions and Stein factorisation), §4.11 (modifications, blow-ups, strict transforms), §4.13 (regular schemes, Serre's normality criterion, Bertini), §4.17 (strict normal crossings divisors), §5.4 (projective bundles and Chern classes), §5.10 (adjunction, Riemann–Roch and intersection numbers on smooth projective surfaces). Each is used as stated there.
+§0.1 (quasi-coherent algebras and relative Spec), §0.6 (reflexive sheaves on locally Noetherian schemes, `isReflexive_iff_forall_stalk`, and on normal integral ones the reflexive hull `reflexiveHull` with `reflexiveHull.lift`), §0.9 (Noetherian approximation and spreading out), §0.17 (depth, Cohen–Macaulay modules; a hypersurface in a regular scheme is Cohen–Macaulay), §2.2 (Leray and Čech spectral sequences), §2.6 (quasi-coherent cohomology, `ample_serre_vanishing`, `projectiveSpace_cohomology`), §2.11 (Kummer sequence and Hilbert 90), §2.16 (`tsen_theorem`), §2.20 (Serre duality), §2.22 (Azumaya algebras, étale locally matrix algebras of locally constant degree, and Brauer groups of schemes: `mk_opposite`, `mk_tensor`, `mk_eq_zero_iff`, `brauer_field`, `brauer_regular_injectivity`, `brauer_kummer_sequence`, `brauer_henselian_local`), §3.4 (Picard groups through Cartier and Weil divisors, `cartierClass_picard_equiv`, hence surjectivity of Pic(S) → Pic(V) for a dense open V of a smooth S), §4.9 (formal functions and Stein factorisation), §4.11 (modifications, blow-ups, strict transforms), §4.13 (regular schemes, Serre's normality criterion, Bertini), §4.17 (strict normal crossings divisors), §5.4 (projective bundles and Chern classes), §5.10 (adjunction, Riemann–Roch and intersection numbers on smooth projective surfaces). Each is used as stated there.
 
 ### From TauCetiRoadmap.ResolutionOfSingularitiesCharacteristicZero
 
@@ -78,7 +80,11 @@ Tau Ceti at the pin of the content repository's lake manifest; file and line loc
 
 ### From TauCetiRoadmap.HeightsRationalPointsAndObstructions
 
-§2.16b: `smoothBrauer_residueExact` (finitely many nonzero residues, exactness of 0 → Br X → Br U → ⊕ H¹(k(D), ℚ/ℤ), removal of codimension two) and `pullbackMultiplicity` (pullback multiplies residues by the ramification index), for smooth varieties in characteristic zero. §2.19a: `finiteFlatBrauerCorestriction` for a finite locally free morphism of rank d, with `pullback_comp` (corestriction after pullback is multiplication by d); for Spec L → Spec K and Br(Spec K) = Br(K) (SchemeAndStackFoundations §2.22, `brauer_field`) this is the corestriction `cor_{L/K}` with `cor_{L/K}(α_L) = [L : K]·α`.
+§2.16b: `smoothBrauer_residueExact` (finitely many nonzero residues, exactness of 0 → Br X → Br U → ⊕ H¹(k(D), ℚ/ℤ), removal of codimension two) and `pullbackMultiplicity` (pullback multiplies residues by the ramification index), for smooth varieties in characteristic zero; `brauerResidue_henselianFormula` (for a henselian discrete valuation ring, n invertible, an unramified character χ and a uniformiser t, the residue of (χ, t) is χ). §2.19a: `finiteFlatBrauerCorestriction` for a finite locally free morphism of rank d, with `pullback_comp` (corestriction after pullback is multiplication by d); for Spec L → Spec K and Br(Spec K) = Br(K) (SchemeAndStackFoundations §2.22, `brauer_field`) this is the corestriction `cor_{L/K}` with `cor_{L/K}(α_L) = [L : K]·α`.
+
+### From TauCetiRoadmap.PurityForFlatCohomology and TauCetiRoadmap.LefschetzPencilsAndVanishingCycles
+
+PurityForFlatCohomology §8.4 (for a Noetherian scheme X of finite dimension, a closed Z ⊂ X and an abelian sheaf F on X_ét, the convergent coniveau spectral sequence `E_1^{a,b} = ⊕_{z ∈ Z, dim O_{X,z} = a} H^{a+b}_z(Spec O_{X,z}, F) ⇒ H^{a+b}_Z(X, F)`). LefschetzPencilsAndVanishingCycles §0.10 (Gabber's absolute purity: for a regular Noetherian scheme X, a closed immersion i : Z → X with Z regular of pure codimension c and n invertible on X, `Ri^!(ℤ/n) ≅ ℤ/n(−c)[−2c]` through the fundamental class of Z, with the localisation sequences and their boundaries). Both are used, with F = μ_l^⊗2 on the spectrum of a two-dimensional excellent regular local ring, in §1.7.
 
 ### From TauCetiRoadmap.MotivesAndAlgebraicCycles
 
@@ -116,7 +122,7 @@ QuadraticFormInvariants Layer 0 (square classes, diagonal calculus and chain equ
 
 ### From TauCetiRoadmap.RealAlgebraicGeometry and TauCetiRoadmap.FormalLaurentPuiseux
 
-RealAlgebraicGeometry Layer 1 (adjoining √−1 to a real closed field gives an algebraically closed field; its real closures and preordering extension are consumed in their Tau Ceti form, `TauCeti.RealClosure.exists_realClosure` and `Subsemiring.IsPreordering.exists_le_isOrdering`). FormalLaurentPuiseux L4 (`puiseuxField K`, `ramifiedEmbedding`, and, for K algebraically closed of characteristic zero, `puiseuxField_isAlgClosed`).
+RealAlgebraicGeometry Layer 1 (adjoining √−1 to a real closed field gives an algebraically closed field; its real closures and preordering extension are consumed in their Tau Ceti form, `TauCeti.RealClosure.exists_realClosure` and `Subsemiring.IsPreordering.exists_le_isOrdering`). FormalLaurentPuiseux L4 (`puiseuxField K`, `ramifiedEmbedding`, the common level of a finite family and the algebraicity of each level) and L5 (for K algebraically closed of characteristic zero, the root theorem and `puiseuxField_isAlgClosed`).
 
 ### From TauCetiRoadmap.StableReduction, TauCetiRoadmap.ModularCurves and TauCetiRoadmap.PurityOfBranchLocus
 
@@ -530,7 +536,7 @@ HeightsRationalPointsAndObstructions §2.19a (`finiteFlatBrauerCorestriction`); 
 
 ## Layer 1: period, index and real evaluation on real surfaces
 
-The unramified locus U_α of a class of Br(ℝ(S)), with residues and purity from HeightsRationalPointsAndObstructions §2.16b; the complex and real Kummer and topological Brauer sequences and the real class of a two-torsion line bundle (the source's Lemma 2.1); real evaluation, the clopen nonzero-evaluation locus Θ(α) and the degree-zero component of Kummer lifts; invariance of period and index under extension of algebraically closed fields and de Jong's reduction to unramified classes; extension of line bundles from dense opens and injectivity of H¹ under removal of finitely many points.
+The unramified locus U_α of a class of Br(ℝ(S)), with residues and purity from HeightsRationalPointsAndObstructions §2.16b; the complex and real Kummer and topological Brauer sequences and the real class of a two-torsion line bundle (the source's Lemma 2.1); real evaluation, the clopen nonzero-evaluation locus Θ(α) and the degree-zero component of Kummer lifts; invariance of period and index under extension of algebraically closed fields; Azumaya models of prescribed degree over regular schemes of dimension at most two and Saltman's local form of a class with normal-crossings ramification, the two local inputs of de Jong's reduction to unramified classes; extension of line bundles from dense opens and injectivity of H¹ under removal of finitely many points.
 
 ### 1.1 Unramified locus of a Brauer class
 
@@ -659,28 +665,73 @@ A proof can proceed as follows.
 
 *Needs:* §0.12; SchemeAndStackFoundations §0.9.
 
-### 1.6 De Jong's reduction to unramified classes
+### 1.6 Azumaya models of prescribed degree over regular schemes of dimension at most two
 
-char k = 0; X connected smooth projective; α possibly ramified, of prime period l. Index and period as in §0.12.
+X regular, integral and Noetherian of dimension at most 2, with function field K. Br(X) is the Brauer group of Azumaya algebras up to stabilised equivalence of SchemeAndStackFoundations §2.22; an Azumaya algebra on the connected X has constant degree. The degree of a central simple algebra A is the integer d with dim A = d².
 
-Let k be an algebraically closed field of characteristic 0, X a connected smooth projective surface over k, α ∈ Br(k(X)) of prime period l, and Ω an algebraic closure of k(t). There are a connected smooth projective surface Y over Ω and a dominant generically finite morphism r : Y → X_Ω such that r*α_Ω ∈ Br(Ω(Y)) lies in Br(Y) and ind(α) divides ind(r*α_Ω). (CT05, §3.6, Theorem 3.14 and proof, Lemma 3.15, pp. 400–403; CT05, Theorem 2.5 and Proposition 2.6, pp. 385–386; B19, §0.6, p. 68)
+Let X be a regular integral Noetherian scheme of dimension at most 2 with function field K, β ∈ Br(X), and A a central simple K-algebra of degree d whose class in Br(K) is the restriction β_K of β. Then there is an Azumaya O_X-algebra 𝒜 of degree d and class β with an isomorphism of K-algebras `𝒜 ⊗_{O_X} K ≅ A`. Consequently, at every point x of X the fibre 𝒜 ⊗ κ(x) is a central simple κ(x)-algebra of degree d whose class is the restriction β(x) of β, and ind(β(x)) divides d. (CT05, Theorem 2.5, first assertion, p. 385; its dimension-one case is the step that ends the proof of Theorem 3.14, CT05 p. 401)
+
+A proof can proceed as follows.
+
+1. Let 𝒞 be an Azumaya O_X-algebra of class −β, the opposite algebra of a representative of β (SchemeAndStackFoundations §2.22, `mk_opposite`), and c its degree. Let D be the central division K-algebra of class β_K and e its degree; then 𝒞_K ≅ M_r(D^op) with c = re, and A ≅ M_m(D) with d = me (Wedderburn). For V the sum of m copies of the simple left 𝒞_K-module (D^op)^r, whose endomorphism algebra is D, `End_{𝒞_K}(V)` ≅ M_m(D) ≅ A and dim_K V = mre².
+2. Let N₀ be the 𝒞-submodule of the constant sheaf V generated by a K-basis of V, a torsion-free coherent sheaf with generic fibre V, and N its reflexive hull (SchemeAndStackFoundations §0.6, `reflexiveHull`; the 𝒞-action extends by `reflexiveHull.lift`). The stalks of N are finitely generated reflexive modules over regular local rings of dimension at most 2 (`isReflexive_iff_forall_stalk`), hence free (Tau Ceti `TauCeti.IsRegularLocalRing.free_of_isReflexive`), so N is a locally free O_X-module of rank mre² with a structure of 𝒞-module.
+3. Let 𝒜 = End_𝒞(N) be the commutant of 𝒞 in `End_{O_X}(N)`; it is coherent and its formation commutes with flat base change. Étale locally 𝒞 ≅ M_c(O) (the definition of an Azumaya algebra in SchemeAndStackFoundations §2.22), and Morita theory for matrix algebras (Mathlib `ModuleCat.matrixEquivalence`) writes N ≅ O^c ⊗ P with P locally free of rank mre²/c = d, so that 𝒜 ≅ End_O(P). Hence 𝒜 is Azumaya of degree d; the natural map 𝒞 ⊗ 𝒜 → `End_{O_X}(N)` is an isomorphism, being one étale locally, and `End_{O_X}(N)` has class 0, so [𝒜] = −[𝒞] = β (`mk_eq_zero_iff`, `mk_tensor`); and 𝒜_K = `End_{𝒞_K}(V)` ≅ A.
+4. The fibre at x is a central simple κ(x)-algebra of degree d and class β(x), so its index divides d (§0.12).
+
+**Checks.**
+
+- Over the discrete valuation ring ℝ[t]_(t), with β the constant Hamilton class and A = ℍ ⊗ ℝ(t) (d = 2), the model is ℍ ⊗ ℝ[t]_(t), whose fibre at t = 0 is ℍ, of index 2 = d: the divisibility ind(β(x)) | d is sharp.
+- With the same β and A = M_2(ℍ ⊗ ℝ(t)) (d = 4), the model M_2(ℍ ⊗ ℝ[t]_(t)) has degree 4 and its fibre at t = 0 has index 2: the degree prescribed by A is kept, not replaced by the index of β_K.
+- The class (−1, t) over ℝ(t) has residue at t = 0 the class of −1 in ℝˣ/ℝˣ², which is nonzero (HeightsRationalPointsAndObstructions §2.16b), so it does not come from Br(ℝ[t]_(t)) and has no Azumaya model of any degree over ℝ[t]_(t): the hypothesis on the class cannot be dropped.
+- Over R = ℂ[t]_(t), the order of M_2(ℂ(t)) of matrices with entries in R and lower-left entry in tR has generic fibre M_2(ℂ(t)), but its fibre at t = 0 is the algebra of upper triangular 2 × 2 matrices, which is not simple: an order with generic fibre A need not be Azumaya, and the construction produces End_𝒞(N) (here 𝒞 = R, N = R² and 𝒜 = M_2(R)).
+
+*Needs:* SchemeAndStackFoundations §2.22 (`mk_opposite`); SchemeAndStackFoundations §2.22 (`mk_eq_zero_iff`); SchemeAndStackFoundations §2.22 (`mk_tensor`); SchemeAndStackFoundations §0.6 (`reflexiveHull`); Tau Ceti `TauCeti.IsRegularLocalRing.free_of_isReflexive`; Mathlib `ModuleCat.matrixEquivalence`; §0.12.
+
+### 1.7 Saltman's local form of a class whose ramification has normal crossings
+
+R excellent regular local of dimension 2, with maximal ideal 𝔪, residue field κ and fraction field K; l a prime invertible in R. For a, b ∈ Kˣ, (a, b) ∈ H²(K, μ_l^⊗2) is the cup product of their Kummer classes. For a height-one prime 𝔭, R_𝔭 is a discrete valuation ring whose residue field κ(𝔭) has characteristic different from l.
+
+Let R be as above and α ∈ H²(K, μ_l^⊗2). For a height-one prime 𝔭 let ∂_𝔭(α) ∈ H¹(κ(𝔭), μ_l) be the residue of α at R_𝔭; it is nonzero for only finitely many 𝔭, and the ramification locus of α is the union of the corresponding closed sets V(𝔭). Suppose that this locus is a strict normal crossings divisor of Spec R: it is empty, or V(s) for an s ∈ 𝔪 with R/s regular, or V(st) for s, t generating 𝔪. Then (i) if the locus is empty, α lies in the image of H²_ét(Spec R, μ_l^⊗2) → H²(K, μ_l^⊗2); (ii) if it is V(s), there is u ∈ Rˣ with α − (u, s) in that image; (iii) if it is V(st), there are u, v ∈ Rˣ and r ∈ ℤ/l with α − (u, s) − (v, t) − r(s, t) in that image. When R contains a primitive l-th root of unity, a choice of it identifies H²(K, μ_l^⊗2) with Br(K)[l] and (a, b) with the class of a cyclic algebra, and the image of H²_ét(Spec R, μ_l^⊗2) with the image of Br(R)[l] (Kummer sequence, with Pic R = 0). (CT05, Proposition 2.6 and proof, p. 386; the residue complex and purity it uses are CT05, Proposition 2.3, pp. 384–385)
+
+A proof can proceed as follows.
+
+1. Residue complex and purity. The coniveau spectral sequence of Spec R for the sheaf μ_l^⊗2 (PurityForFlatCohomology §8.4), with Gabber's absolute purity applied at each point z to the closed point of Spec `O_{R,z}`, a regular closed subscheme of codimension dim `O_{R,z}` (LefschetzPencilsAndVanishingCycles §0.10), has the row `H²(K, μ_l^⊗2) → ⊕_𝔭 H¹(κ(𝔭), μ_l) → H⁰(κ, ℤ/l)` on its first page. This row is a complex; its first map is the residue, and on the summand of a prime 𝔭 = (s) with R/s regular its second map is the valuation of the discrete valuation ring R/s, taken modulo l on κ(𝔭)ˣ/l = H¹(κ(𝔭), μ_l). The only later differential leaving the H²(K) term lands in a subquotient of H³_𝔪(Spec R, μ_l^⊗2), which vanishes by purity (H^q_𝔪 = 0 for q < 4), and Spec R has no points of codimension above 2, so the image of H²_ét(Spec R, μ_l^⊗2) in H²(K, μ_l^⊗2) is the kernel of the residue map.
+2. Residues of symbols. For 𝔭 = (π) and units u, u′ of R_𝔭, ∂_𝔭(u, π) is the Kummer class of the image ū of u and ∂_𝔭(u, u′) = 0, with a sign fixed once for all: the boundary of the Kummer class of π is the fundamental class of V(π) (LefschetzPencilsAndVanishingCycles §0.10) and the boundary is linear over classes coming from R_𝔭; when R contains the l-th roots of unity this is HeightsRationalPointsAndObstructions §2.16b, `brauerResidue_henselianFormula`, applied after henselisation of R_𝔭, which does not change residues.
+3. (i) is the exactness of step 1.
+4. (ii): the residue ξ = ∂_s(α) has valuation divisible by l at 𝔪, because V(s) is the only branch of the ramification locus through 𝔪 and step 1 is a complex; so ξ is the class of a unit of R/s, which lifts to u ∈ Rˣ since R is local. By step 2, α − (u, s) has zero residue along s = 0 and along every other height-one prime, at which u and s are units; apply (i).
+5. (iii): the residue of (s, t) along s = 0 is the class of ±t̄, of valuation ±1 at 𝔪, so for one r ∈ ℤ/l the residue of α − r(s, t) along s = 0 has valuation divisible by l at 𝔪, and by the complex property of step 1 so does its residue along t = 0. The argument of (ii) on each branch gives u, v ∈ Rˣ, and α − r(s, t) − (u, s) − (v, t) has zero residue at every height-one prime (t is a unit at (s) and s at (t)); apply (i).
+
+**Checks.**
+
+- Crossing term: on R = ℂ[s, t]_(s,t) with l = 2 and α = (s, t), the ramification locus is V(st), and (iii) holds with u = v = 1 and r = 1. The value r = 0 is impossible: for units u, v the residue of α − (u, s) − (v, t) along s = 0 is the class of t̄·ū⁻¹, of valuation 1 at 𝔪. After adjoining √(st) the crossing term vanishes: (s, t) = (s, st) + (s, −1) = (s, st) = 0, by (s, −s) = 0, since −1 is a square in ℂ and st becomes a square.
+- One branch: on the same R, α = (1 + t, s) has ramification locus V(s) and residue the class of 1 + t̄, a unit at 𝔪, and (ii) holds with u = 1 + t. No class of H²(K, μ_2) is ramified along V(s) alone with residue the class of t̄, whose valuation at 𝔪 is 1, with no second branch to cancel it in the complex of step 1; the class (t, s), which has this residue along s = 0, is ramified along t = 0 as well.
+- Empty locus: on R = ℝ[s, t]_(s,t) with l = 2, α = (−1, 1 + s² + t²) has zero residue at every height-one prime, both entries being units of R, so it comes from H²_ét(Spec R, μ_2), and its restriction to the residue field ℝ is (−1, 1) = 0. It is nonzero: otherwise 1 + s² + t² would be a sum of two squares in ℝ(s)(t), hence of two squares (a + bt)² + (c + dt)² with a, b, c, d ∈ ℝ(s) (EKM, Corollary 17.6, p. 72, over ℝ(s), with degrees bounded because ℝ(s) is real), and b² + d² = 1, ab + cd = 0 force a² + c² = 1 + s² to be a square in ℝ(s), which it is not. So (i) does not say that α vanishes.
+
+*Needs:* PurityForFlatCohomology §8.4; LefschetzPencilsAndVanishingCycles §0.10; HeightsRationalPointsAndObstructions §2.16b (`brauerResidue_henselianFormula`); SchemeAndStackFoundations §2.22 (`brauer_kummer_sequence`).
+
+### 1.8 De Jong's reduction to unramified classes
+
+char k = 0; X connected smooth projective; α possibly ramified, of prime period l. Index and period as in §0.12. As k is algebraically closed, a primitive l-th root of unity identifies Br(F)[l] with H²(F, μ_l^⊗2) for every field F ⊃ k, so §1.7 applies to α at the local rings of a smooth surface over such a field.
+
+Let k be an algebraically closed field of characteristic 0, X a connected smooth projective surface over k, α ∈ Br(k(X)) of prime period l, and Ω an algebraic closure of k(t). There are a connected smooth projective surface Y over Ω and a dominant generically finite morphism r : Y → X_Ω such that r*α_Ω ∈ Br(Ω(Y)) lies in Br(Y) and ind(α) divides ind(r*α_Ω). (CT05, §3.6, Theorem 3.14 and proof, Lemma 3.15, pp. 400–403, with source correction E26; CT05, Theorem 2.5 and Proposition 2.6, pp. 385–386; B19, §0.6, p. 68)
 
 A proof can proceed as follows.
 
 1. Blow up X so that the ramification divisor D of α is a strict normal crossings divisor (ResolutionOfSingularitiesCharacteristicZero §5.1, principalization).
-2. Choose smooth effective divisors E, E′ with D + E linearly equivalent to l(D + E′) and D + E + E′ normal crossings (Bertini, SchemeAndStackFoundations §4.13); with sections s₀ of O(D + E) and s₁ of O(D + E′), form s_t = t^l s₁^l + (1 − t)^l s₀ on X × 𝔸¹ and the generically cyclic degree-l cover of X × 𝔸¹ extracting an l-th root of s_t (CT05 Lemma 3.15).
-3. Its generic fibre has only `A_{l−1}` singularities; resolving them by blowing up a coherent ideal gives an open W of the blow-up with f : W → 𝔸¹ smooth, geometric generic fibre Y := W_Ω connected smooth projective, and fibre over 0 containing a component birational to X (CT05 properties (i)–(iii)).
-4. r*α_Ω is unramified on Y: over components of D the residue is multiplied by the ramification index l (HeightsRationalPointsAndObstructions §2.16b, `pullbackMultiplicity`); over closed points of D use Saltman's local form of α at a smooth point or a crossing of D (CT05 Proposition 2.6) and the l-th root of s_t (CT05 pp. 402–403).
-5. Specialisation: a central simple algebra of degree d = ind(r*α_Ω) representing the pullback is defined over L(W_L) for a finite L/k(t) inside Ω; it extends to an Azumaya algebra over the discrete valuation ring of `W ×_{𝔸¹} C` at the generic point of its fibre over a k-point of C above 0 (C the normalisation of 𝔸¹ in L; CT05 Theorem 2.5), whose residue algebra has degree d and class α. Hence ind(α) | d.
+2. Choose smooth effective divisors E, E′ with D + E linearly equivalent to l(D + E′), no two of D, E, E′ with a common component, and D + E + E′ normal crossings (Bertini, SchemeAndStackFoundations §4.13); with sections s₀ of O(D + E) and s₁ of O(D + E′), form s_t = t^l s₁^l + (1 − t)^l s₀ on X × 𝔸¹ and the generically cyclic degree-l cover of X × 𝔸¹ extracting an l-th root of s_t (CT05 Lemma 3.15).
+3. Over t = 1 the cover is z^l = s₁^l, the union of the l components z = ζ^i s₁ (ζ a primitive l-th root of unity), each of multiplicity one and isomorphic to X; over t = 0 it is z^l = s₀, which is irreducible and of degree l over X because s₀ vanishes to order one along D (source correction E26). Since the zero locus D + E of s₀ has strict normal crossings, so has the zero locus of s_t for general t (Bertini), and the generic fibre has only `A_{l−1}` singularities. Blowing up a coherent ideal whose zero locus has dimension at most one resolves them without changing anything above the generic points of the fibre components, and gives an open W of the blow-up with f : W → 𝔸¹ smooth, geometric generic fibre Y := W_Ω connected smooth projective, and fibre over 1 containing a multiplicity-one component birational to X (CT05 properties (i)–(iii), with the fibre over 1 in (iii)).
+4. r*α_Ω is unramified on Y. Over components of D the residue is multiplied by the ramification index l (HeightsRationalPointsAndObstructions §2.16b, `pullbackMultiplicity`). Over a closed point N of D_Ω, §1.7 applies at the local ring of X_Ω at N, which is excellent and regular of dimension 2. If N lies on a single component s = 0 of D, then α = (u, s) + (a class from the local ring), and the residue of (u, s) along a divisor of Y over N is a power of the image of u in its residue field, trivial because it factors through the algebraically closed residue field of N. If N is a crossing s = s′ = 0 of D, then N lies neither on E′ nor on the residual divisor E_t of the zero locus D + E_t of s_t (at most two branches of a normal crossings divisor on a surface pass through a point), so s_t/s₁^l = c·s·s′·h^l with c a unit at N and h = (ss′)⁻¹; then (s, s′) = (s, s_t/s₁^l) + (s, −c⁻¹), by (s, −s) = 0, the first term vanishes on Y, which extracts an l-th root of s_t/s₁^l, and the remaining terms (u, s), (v, s′) and (s, −c⁻¹) have trivial residues over N as before (CT05 pp. 402–403).
+5. Specialisation. A central simple algebra B of degree d = ind(r*α_Ω) and class r*α_Ω is defined over the function field of the generic fibre of W base-changed to a finite extension L/k(t) inside Ω, with class there the pullback of α. Let C be the normalisation of 𝔸¹ in L and M a k-point of C above 1 (k is algebraically closed). `Z = W ×_{𝔸¹} C` is smooth over C, so the local ring O of Z at the generic point ξ of a component of the fibre Z_M lying over a component of the fibre over 1 birational to X is a discrete valuation ring with residue field κ(ξ) ≅ k(X); Spec O → X factors through the generic point of X, so the pullback of α is a class β ∈ Br(O) whose restriction to κ(ξ) is α. By §1.6 in dimension one, B is the generic fibre of an Azumaya O-algebra of degree d and class β, whose fibre at ξ is a central simple k(X)-algebra of degree d and class α. Hence ind(α) | d.
 
 **Checks.**
 
 - If α is unramified, Y = X_Ω and r = id satisfy the statement, which then reads ind(α) | ind(α_Ω), an equality by §1.5.
 - For α = (x, y) on ℙ² over ℂ, of period 2 and ramified along the two axes and the line at infinity, the construction extracts a square root of a function vanishing to order one along the ramification, after which the pulled-back class is unramified.
+- The fibre used for specialisation is the one over 1: for l = 2 and local equations s₀ = s₁ = x of D near a point of D off E ∪ E′, the fibre over 0 is z² = x, irreducible over k(x, y) and of degree 2 over X, while the fibre over 1 is (z − x)(z + x) = 0, with two components of degree 1 over X. Specialising at a point above 0 would give a residue algebra over the quadratic extension k(X)(√x), hence only ind(α) | 2d by §0.12.
 
-*Needs:* ResolutionOfSingularitiesCharacteristicZero §5.1 (principalization); SchemeAndStackFoundations §4.13; HeightsRationalPointsAndObstructions §2.16b (`pullbackMultiplicity`); §1.1; §0.12.
+*Needs:* ResolutionOfSingularitiesCharacteristicZero §5.1 (principalization); SchemeAndStackFoundations §4.13; HeightsRationalPointsAndObstructions §2.16b (`pullbackMultiplicity`); §1.1; §1.6; §1.7; §0.12.
 
-### 1.7 Removing finitely many points and extending line bundles
+### 1.9 Removing finitely many points and extending line bundles
 
 S smooth, so Weil and Cartier divisors agree; Σ a surface (two-dimensional manifold) and Z finite.
 
@@ -705,7 +756,7 @@ For α = (x, y) over ℝ(x, y), the unramified locus in 𝔸² is the complement
 
 ### Dependencies
 
-Layer 0; AlgebraicTopology Stage 6; AlgebraicTopologyPartII §7.4; ComplexComparisonPartII §C6.3 (`artinComparison`); ComplexComparisonPartII §C6.3 (gap:real-artin-comparison); HeightsRationalPointsAndObstructions §2.16b (`pullbackMultiplicity`); HeightsRationalPointsAndObstructions §2.16b (`smoothBrauer_residueExact`); Mathlib `AlgebraicGeometry.Scheme.functionField`; Mathlib `AlgebraicGeometry.Scheme`; MotivesAndAlgebraicCycles §7.6b; ResolutionOfSingularitiesCharacteristicZero §5.1 (principalization); SchemeAndStackFoundations §0.9; SchemeAndStackFoundations §2.11; SchemeAndStackFoundations §2.22 (`brauer_kummer_sequence`); SchemeAndStackFoundations §2.22 (`brauer_regular_injectivity`); SchemeAndStackFoundations §3.4; SchemeAndStackFoundations §4.13; Tau Ceti `TauCeti.Quaternion.brauerGroupMulEquiv`.
+Layer 0; AlgebraicTopology Stage 6; AlgebraicTopologyPartII §7.4; ComplexComparisonPartII §C6.3 (`artinComparison`); ComplexComparisonPartII §C6.3 (gap:real-artin-comparison); HeightsRationalPointsAndObstructions §2.16b (`brauerResidue_henselianFormula`); HeightsRationalPointsAndObstructions §2.16b (`pullbackMultiplicity`); HeightsRationalPointsAndObstructions §2.16b (`smoothBrauer_residueExact`); LefschetzPencilsAndVanishingCycles §0.10; Mathlib `AlgebraicGeometry.Scheme.functionField`; Mathlib `AlgebraicGeometry.Scheme`; Mathlib `ModuleCat.matrixEquivalence`; MotivesAndAlgebraicCycles §7.6b; PurityForFlatCohomology §8.4; ResolutionOfSingularitiesCharacteristicZero §5.1 (principalization); SchemeAndStackFoundations §0.6 (`reflexiveHull`); SchemeAndStackFoundations §0.9; SchemeAndStackFoundations §2.11; SchemeAndStackFoundations §2.22 (`brauer_kummer_sequence`); SchemeAndStackFoundations §2.22 (`brauer_regular_injectivity`); SchemeAndStackFoundations §2.22 (`mk_eq_zero_iff`); SchemeAndStackFoundations §2.22 (`mk_opposite`); SchemeAndStackFoundations §2.22 (`mk_tensor`); SchemeAndStackFoundations §3.4; SchemeAndStackFoundations §4.13; Tau Ceti `TauCeti.IsRegularLocalRing.free_of_isReflexive`; Tau Ceti `TauCeti.Quaternion.brauerGroupMulEquiv`.
 
 ## Layer 2: unramified classes on complex surfaces and de Jong's theorem
 
@@ -903,7 +954,7 @@ Let k be an algebraically closed field of characteristic 0 and S a connected smo
 A proof can proceed as follows.
 
 1. Prime-power reduction: α is the sum of its primary components and its index is the product of theirs (a central division algebra is the tensor product of division algebras of coprime prime-power degrees), so assume per(α) = l^r with l prime. For r ≥ 2, β = lα has period `l^{r−1}`; a splitting field E of β of degree `l^{r−1}` is the function field of a connected smooth projective surface Y (ResolutionOfSingularitiesCharacteristicZero §7.8, field resolution), and the prime-period case on Y splits α_E by an extension of degree l, so ind(α) divides l^r (CT05 §3.6, p. 400).
-2. Prime period: §1.6 gives a connected smooth projective surface Y over an algebraic closure Ω of k(t) and an unramified class β ∈ Br(Y) with ind(α) dividing ind(β); since lβ = 0, the unramified case over Ω gives ind(β) dividing l, so ind(α) = l.
+2. Prime period: §1.8 gives a connected smooth projective surface Y over an algebraic closure Ω of k(t) and an unramified class β ∈ Br(Y) with ind(α) dividing ind(β); since lβ = 0, the unramified case over Ω gives ind(β) dividing l, so ind(α) = l.
 3. Unramified case over an algebraically closed field K of characteristic 0: the surface and the class are defined over a countable algebraically closed subfield K₀ ⊂ K, which embeds into ℂ; unramified classes stay unramified under base change, and §1.5 for K₀ ⊂ K and for K₀ ⊂ ℂ reduces to K = ℂ, where §2.8 gives ind = per.
 
 **Checks.**
@@ -912,7 +963,7 @@ A proof can proceed as follows.
 - Every class of Br(ℂ(x, y)) of period 2 is a quaternion class.
 - Over k = ℚ̄ the class (x, y) ∈ Br(ℚ̄(x, y)) has period and index 2, as over ℂ.
 
-*Needs:* §2.8; §1.5; §1.6; §0.12; ResolutionOfSingularitiesCharacteristicZero §7.8 (field resolution).
+*Needs:* §2.8; §1.5; §1.8; §0.12; ResolutionOfSingularitiesCharacteristicZero §7.8 (field resolution).
 
 ### 2.10 Norm bound over a real closed field
 
@@ -1485,7 +1536,7 @@ Under these hypotheses the following are equivalent: (a) for every β ∈ H²_G(
 A proof can proceed as follows.
 
 1. §5.6 gives δ|_V = η + p_*γ₀ + cl(μ|_V) with p_*β = 2δ + cl(θ₁).
-2. Real components on Ψ ∩ V(ℝ): [p_*γ₀]₁ = p_*[γ₀]₁ vanishes on Ψ because Ψ has no real preimage (Assumption 4.1 (i)); the component computation of §5.4 applied to α̃ = η mod 2 − φ(ζ) gives [η]₁ = [α̃]₁ + [α̃]₀ ∪ [e]₁ = [α̃]₀ ∪ cl_R(M) on Ψ ∩ V(ℝ); so [δ − cl(μ)]₁ = c_Ψ on Ψ ∩ V(ℝ), hence on Ψ by §1.7.
+2. Real components on Ψ ∩ V(ℝ): [p_*γ₀]₁ = p_*[γ₀]₁ vanishes on Ψ because Ψ has no real preimage (Assumption 4.1 (i)); the component computation of §5.4 applied to α̃ = η mod 2 − φ(ζ) gives [η]₁ = [α̃]₁ + [α̃]₀ ∪ [e]₁ = [α̃]₀ ∪ cl_R(M) on Ψ ∩ V(ℝ); so [δ − cl(μ)]₁ = c_Ψ on Ψ ∩ V(ℝ), hence on Ψ by §1.9.
 3. (c) ⇒ (a): δ′ = δ − cl(μ) − cl(φ_Ψ) has [δ′]₁ = 0 on Ψ; §5.7 gives ν and γ with δ′ − cl(ν) = p_*γ, and p_*(β − 2γ) = 2δ + cl(θ₁) − 2(δ − cl(μ) − cl(φ_Ψ) − cl(ν)) = cl(θ) with θ = θ₁ + 2μ + 2φ_Ψ + 2ν.
 4. (a) ⇒ (b) because β exists; (b) ⇒ (c): from p_*(β − 2γ) = cl(θ) and p_*β = 2δ + cl(θ₁), 2(δ − p_*γ) = cl(θ − θ₁); the cokernel of cl : Pic(S) → H²_G(S(ℂ), ℤ(1)) being torsion-free (gap:picard-cokernel-torsion-free), δ − p_*γ = cl(θ₂) with θ₂ ∈ Pic(S). Restricting first components to Ψ, [p_*γ]₁|_Ψ = 0 by Assumption 4.1 (i), so c_Ψ = [δ − cl(μ)]₁|_Ψ = cl_R(θ₂ − μ)|_Ψ.
 
@@ -1495,7 +1546,7 @@ A proof can proceed as follows.
 - For constant evaluation t = 1 and φ_Ψ = M, θ = θ₁ + 2μ + 2M + 2ν, the source's correction.
 - Criterion (c) asks for an algebraic class, whereas τ = 0 (§5.5) only asks for c_Ψ ∈ J|_Ψ; when H²(S, O_S) = 0 the real Lefschetz (1,1) theorem (MotivesAndAlgebraicCycles §7.8) gives J = cl_R(Pic(S)) and the two agree. On the real Enriques surface of the §5.5 Checks with Θ = N₁ ⊔ N₂ and cl_R(L) = h₁ + h₂, (c) holds with φ_Ψ = L although the evaluation is not constant on Ψ.
 
-*Needs:* §5.6; §5.4; §5.7; §1.7; §5.5; MotivesAndAlgebraicCycles §7.8 (gap:picard-cokernel-torsion-free).
+*Needs:* §5.6; §5.4; §5.7; §1.9; §5.5; MotivesAndAlgebraicCycles §7.8 (gap:picard-cokernel-torsion-free).
 
 ### Examples
 
@@ -1852,7 +1903,7 @@ Let α ∈ Br(ℝ(S)) have even period n, with Θ(α) a union of components of S
 
 A proof can proceed as follows.
 
-1. a = (n/2)α has unramified locus U_a ⊃ U_α; lift a on U_a and compare with ξ on U_α: the difference is the reduction of a Picard class of U_α, which extends to U_a (§1.7); subtract it to get a lift ã on U_a restricting to ξ.
+1. a = (n/2)α has unramified locus U_a ⊃ U_α; lift a on U_a and compare with ξ on U_α: the difference is the reduction of a Picard class of U_α, which extends to U_a (§1.9); subtract it to get a lift ã on U_a restricting to ξ.
 2. Ψ = Θ(α) is a union of components inside U_α(ℝ) ⊂ U_a(ℝ), and Θ(a) ⊂ Ψ by density of U_α and local constancy, a evaluating to 0 off Ψ (§7.1); §6.13 needs no more of the evaluation on Ψ.
 3. §6.13 with Ξ = S(ℝ) ∖ Ψ gives p : T → S of degree 2 with `a_{ℝ(T)}` = 0 and p(T(ℝ)) ∩ Ψ = ∅.
 4. Period: m = per(`α_{ℝ(T)}`) divides n/2 since (n/2)α_T = a_T = 0; corestriction (HeightsRationalPointsAndObstructions §2.19a) gives cor(α_T) = 2α, of period n/2, so n/2 divides m.
@@ -1862,7 +1913,7 @@ A proof can proceed as follows.
 
 - For n = 2, `α_{ℝ(T)}` = 0.
 
-*Needs:* §7.1; §6.13; §1.7; §1.4; HeightsRationalPointsAndObstructions §2.19a (`finiteFlatBrauerCorestriction`); §1.2.
+*Needs:* §7.1; §6.13; §1.9; §1.4; HeightsRationalPointsAndObstructions §2.19a (`finiteFlatBrauerCorestriction`); §1.2.
 
 ### 7.3 Sufficient condition for period equals index
 
@@ -2106,7 +2157,7 @@ The definition has the following API.
 
 - If p is finite étale over U, U₀ = U and Θ₀ = Θ.
 - At an isolated point where p is not finite (a contracted curve), U₀ ≠ U.
-- Θ₀ is dense in Θ and H¹(Θ) ↪ H¹(Θ₀) (§1.7).
+- Θ₀ is dense in Θ and H¹(Θ) ↪ H¹(Θ₀) (§1.9).
 
 *Needs:* §1.4; §1.1; ModularCurves 4D.
 
@@ -2226,7 +2277,7 @@ A proof can proceed as follows.
 
 ### 8.7 The line bundle correcting the obstruction
 
-Pic(S) → Pic(V) onto (§1.7); υ(ê) ∈ Pic(V)[2] extended to S.
+Pic(S) → Pic(V) onto (§1.9); υ(ê) ∈ Pic(V)[2] extended to S.
 
 Let ê ∈ H¹_G(V(ℂ), 𝔽₂) be the class of the alternating double cover over V. By §1.3 there is ϕ ∈ Pic(S) with [ê]₁ = `cl_R(ϕ)|_{V(ℝ)}`; put θ = ϕ ⊗ `O(Σ_{4 ∤ m_i} Δ_i)` ∈ Pic(S). (B19, Proof of Proposition 7.4, pp. 102–103)
 
@@ -2249,7 +2300,7 @@ The construction has the following API.
 - cl_R(υ(ê)) = [ê]₁ is §1.3 (Lemma 2.1 of the source).
 - For n = 2 the alternating cover is p itself over S*, every m_i equals 1, and every branch component contributes to θ.
 
-*Needs:* §8.2; §1.7; §1.3; SchemeAndStackFoundations §3.4.
+*Needs:* §8.2; §1.9; §1.3; SchemeAndStackFoundations §3.4.
 
 ### 8.8 Algebraicity of the quotient component
 
@@ -2279,13 +2330,13 @@ A proof can proceed as follows.
 1. §8.4: `p*α̃|_{U₀}` = (p*η − ψ(ζ)) mod n; `p*α|_{U₀}` = 0 gives p*η − ψ(ζ) = nγ + cl(ϕ) on `T_{U₀}` (real topological Brauer sequence, §1.2).
 2. Push forward: p_*ψ(ζ) = 0, so n(η − p_*γ) = cl(p_*ϕ); torsion-freeness of the cokernel of cl on Pic(U₀) (gap:picard-cokernel-torsion-free) and extension to S give μ with η − p_*γ = cl(`μ|_{U₀}`), hence [η]₁ − p_*[γ]₁ = cl_R(μ) on U₀(ℝ).
 3. p_*[γ]₁ vanishes on Θ₀ (no real preimages); with §8.8, [ξ]₁ = [η]₁ + [φ(ζ)]₁ = cl_R(μ + θ) on Θ₀.
-4. H¹(Θ) → H¹(Θ₀) is injective (§1.7), so the identity holds on Θ.
+4. H¹(Θ) → H¹(Θ₀) is injective (§1.9), so the identity holds on Θ.
 
 **Checks.**
 
 - If T(ℝ) = ∅ and Θ = S(ℝ), the conclusion says [ξ]₁ is algebraic on all of S(ℝ).
 
-*Needs:* §8.4; §8.8; §8.1; §1.7; §1.2; MotivesAndAlgebraicCycles §7.8 (gap:picard-cokernel-torsion-free); MotivesAndAlgebraicCycles §7.6b.
+*Needs:* §8.4; §8.8; §8.1; §1.9; §1.2; MotivesAndAlgebraicCycles §7.8 (gap:picard-cokernel-torsion-free); MotivesAndAlgebraicCycles §7.6b.
 
 ### 8.10 Unramified classes: the obstruction half of Theorem 0.5
 
@@ -2516,7 +2567,7 @@ A construction can proceed as follows.
 
 1. The leading-coefficient order is a linear order compatible with addition and multiplication (the leading coefficient of a product is the product of leading coefficients), so K is an ordered field and in particular semireal.
 2. Squares: write f = a t^q (1 + ε) with a ∈ Rˣ, q ∈ ℚ and ε of positive order, all at a single level R((`t^{1/n}`)) (FormalLaurentPuiseux L4). If a > 0 then `f = (√a · t^{q/2} · (1 + ε)^{1/2})²`, the binomial series converging t-adically at level 2n; if a < 0 the same applies to −f.
-3. Odd-degree roots: R(√−1) is algebraically closed of characteristic 0 (RealAlgebraicGeometry Layer 1), so `puiseuxField` (R(√−1)) = K(√−1) is algebraically closed (FormalLaurentPuiseux L4, `puiseuxField_isAlgClosed`). Coefficientwise conjugation is a K-automorphism of order 2; the roots in K(√−1) of an odd-degree f ∈ K[X] are permuted in pairs, so one of them is fixed and lies in K.
+3. Odd-degree roots: R(√−1) is algebraically closed of characteristic 0 (RealAlgebraicGeometry Layer 1), so `puiseuxField` (R(√−1)) = K(√−1) is algebraically closed (FormalLaurentPuiseux L5, `puiseuxField_isAlgClosed`). Coefficientwise conjugation is a K-automorphism of order 2; the roots in K(√−1) of an odd-degree f ∈ K[X] are permuted in pairs, so one of them is fixed and lies in K.
 4. t − r has leading coefficient −r for r > 0 in R, so 0 < t < r; for R = ℝ, n·t < 1 for every natural n, so K is non-archimedean.
 
 The definition has the following API.
@@ -2535,7 +2586,7 @@ The definition has the following API.
 - X² − t has the two roots `±t^{1/2}` in K.
 - X³ − t has the root `t^{1/3}` in K and two further roots in K(√−1) ∖ K.
 
-*Needs:* FormalLaurentPuiseux L4 (`puiseuxField`); FormalLaurentPuiseux L4 (`puiseuxField_isAlgClosed`); RealAlgebraicGeometry Layer 1; Mathlib `HahnSeries`; Mathlib `IsRealClosed`; MotivesAndAlgebraicCycles §7.6a.
+*Needs:* FormalLaurentPuiseux L4 (`puiseuxField`); FormalLaurentPuiseux L5 (`puiseuxField_isAlgClosed`); RealAlgebraicGeometry Layer 1; Mathlib `HahnSeries`; Mathlib `IsRealClosed`; MotivesAndAlgebraicCycles §7.6a.
 
 ### 9.12 The sextic double plane and its K3 resolution
 
@@ -2634,14 +2685,14 @@ Two disjoint copies of ℝℙ² have deg(w₁²) = 1 + 1 = 0, as the real locus 
 
 ### Dependencies
 
-Layer 0; Layer 1; Layer 2; Layer 7; Layer 8; AlgebraicTopology Stage 6; AlgebraicTopologyPartII §10.3; AlgebraicTopologyPartII §10.5; AlgebraicTopologyPartII §12.1; AlgebraicTopologyPartII §9.2; AlgebraicTopologyPartII §9.3; EnriquesSurfaces §1.1; EnriquesSurfaces §1.3; EnriquesSurfaces §1.4; FormalLaurentPuiseux L4 (`puiseuxField_isAlgClosed`); FormalLaurentPuiseux L4 (`puiseuxField`); HeightsRationalPointsAndObstructions §2.19a (`finiteFlatBrauerCorestriction`); Mathlib `HahnSeries`; Mathlib `IsRealClosed`; MotivesAndAlgebraicCycles §7.10; MotivesAndAlgebraicCycles §7.6a; MotivesAndAlgebraicCycles §7.6b; RealAlgebraicGeometry Layer 1; SchemeAndStackFoundations §5.10; StableReduction Layer 4; WeilConjectures WC.7.
+Layer 0; Layer 1; Layer 2; Layer 7; Layer 8; AlgebraicTopology Stage 6; AlgebraicTopologyPartII §10.3; AlgebraicTopologyPartII §10.5; AlgebraicTopologyPartII §12.1; AlgebraicTopologyPartII §9.2; AlgebraicTopologyPartII §9.3; EnriquesSurfaces §1.1; EnriquesSurfaces §1.3; EnriquesSurfaces §1.4; FormalLaurentPuiseux L4 (`puiseuxField`); FormalLaurentPuiseux L5 (`puiseuxField_isAlgClosed`); HeightsRationalPointsAndObstructions §2.19a (`finiteFlatBrauerCorestriction`); Mathlib `HahnSeries`; Mathlib `IsRealClosed`; MotivesAndAlgebraicCycles §7.10; MotivesAndAlgebraicCycles §7.6a; MotivesAndAlgebraicCycles §7.6b; RealAlgebraicGeometry Layer 1; SchemeAndStackFoundations §5.10; StableReduction Layer 4; WeilConjectures WC.7.
 
 ## Downstream consumers
 
 QuadraticFormInvariantsPartII, later in the merge order, consumes §0.7: its C_i fields, Lang–Nagata theorem for systems, algebraic-extension step and Tsen–Lang theorem (its §§5.1, 5.4, 5.5 and 5.6) are imported from §0.7, which is their single owner, while its finite-field and Kronecker-dimension applications (its §§5.3 and 5.7) stay there; there is no supply edge from it to this roadmap. Layer 0 is general real-function-field theory (orderings, signatures at a varying ordering, the Elman–Lam invariant, the Tsen–Lang theorem, the period and index of a Brauer class) for any roadmap on quadratic forms over function fields, and for the real-function-field applications of Benoist–Wittenberg, which import Layer 0 by section. Layers 3–8 are the natural input for period-index and integral Hodge questions on other real varieties (Benoist–Wittenberg, BW20 and BW20II); Theorems 0.3, 0.4, 0.10, 0.12 and 0.13 are stated in field-theoretic form in `Suggested.lean` for direct use.
 
 ## Source corrections
-Each entry records what B19 (published version) has at the locator and the corrected statement the targets of this roadmap use. The targets cite these entries as source corrections.
+Each entry records what the source has at the locator (B19, published version, unless the entry names another source) and the corrected statement the targets of this roadmap use. The targets cite these entries as source corrections.
 
 - **E1** (error, §3.1, p. 76). The surface T = {rv² = sw²} is called a finite double cover of S ramified over Δ. *Correction:* The incidence model is proper and generically of degree 2 but has ℙ¹ fibres over R ∩ D; it is finite flat only over S₀. The finite flat model is Spec_S(O_S ⊕ L⁻¹(−R)) with multiplication by rs (§3.1). *Reason:* Over a crossing x of R and D both r and s vanish, so the fibre equation rv² = sw² is identically zero and the fibre is all of ℙ¹. *Affects:* a stated result.
 - **E2** (gap, Lemma 1.4, p. 70). The proof uses that the reduction of p*β modulo n is p*p*α̃ for an integral β lifting p*α. *Correction:* Choose β with β mod n = p*α̃ before Lemma 1.4; Lemma 1.3 kills the Bockstein of p*α̃, so such β exists (§2.4). *Reason:* An integral lift of p*α in (1.2) is determined only up to n·H² + cl(Pic), so its reduction need not be p*α̃. *Affects:* the proof.
@@ -2666,6 +2717,7 @@ Each entry records what B19 (published version) has at the locator and the corre
 - **E23** (misprint, Proof of Proposition 4.5, p. 85). [p_*ε]₁ = 0 in H¹(S(ℝ)). *Correction:* [p_*ε]₁ ∈ H¹(U(ℝ)) vanishes on Ψ. *Reason:* ε lives over T_U; only its restriction to Ψ, which has no real preimage, vanishes. *Affects:* nothing.
 - **E24** (misprint, Proof of Lemma 6.5, p. 92). p(T(ℝ)) is said to be disjoint from Θ. *Correction:* Disjoint from Ψ = S(ℝ) ∖ Ξ, the set to avoid in Assumption 4.1. *Reason:* Lemma 6.5 concerns Assumption 4.1 with Ψ = S(ℝ) ∖ Ξ; Θ does not occur in its statement. *Affects:* nothing.
 - **E25** (error, Theorem 0.6 (ii), p. 65, and its proof, p. 107). If exactly one half of S is nonempty and S(ℝ) has an odd number of components of odd Euler characteristic, the lift with components (1, w₁) gives a class of index 4. *Correction:* This case never occurs: w₁ = cl_R(K_S) lies in im cl_R = w₁^⊥, so deg(w₁²) = 0 and the number of components of odd Euler characteristic is even (§9.8). Theorem 0.6 stays true; its condition (ii) is equivalent to S(ℝ) being nonorientable with both halves nonempty. *Reason:* Kahn's cl_R(K_S) = w₁ and Mangolte–van Hamel's description of im cl_R as the orthogonal of w₁. *Affects:* the proof.
+- **E26** (misprint, CT05, Proof of Theorem 3.14 and Lemma 3.15, pp. 400–402). Property (iii) and the requirement that the specialisation be an l-th power put the fibre with a multiplicity-one component birational to X over 0 ∈ 𝔸¹, while the family is s_t = t^l s₁^l + (1 − t)^l s₀. *Correction:* For this family that fibre lies over t = 1, where the cover has l components isomorphic to X, as property (c) of the same proof records; the specialisation is taken at a point above 1 (§1.8). Equivalently, exchange t and 1 − t in the family. *Reason:* At t = 0 the equation is z^l = s₀, and s₀ vanishes to order one along D, so that fibre is irreducible of degree l over X; at t = 1 it is z^l = s₁^l, a product of l factors z − ζ^i s₁. *Affects:* the proof.
 
 ## References
 
