@@ -160,6 +160,16 @@ carry_accept = true
 # (`tauceti-roadmap-chore-review {head, status}`), the AI review of the whole change (owner request 2026-11-05).
 chore_review = true
 small_change_lines = 150
+# A review whose findings are all P3 ends with its repair: the repaired head keeps or gains `ai-approved` and the folder
+# gets no further review, while the repair changed at most small_change_lines lines of it (owner decision 2026-11-11).
+carry_minor = true
+# A finding the repair cannot act on because it lies outside the folder under review is recorded once in the verdict
+# record; later reviews of the folder are told of it and do not raise it again (owner decision 2026-11-11).
+defer_outside = true
+# Reviews of these authors' pull requests rank after every other job, except the pull requests listed in late_except,
+# which other roadmaps depend on (owner decision 2026-11-11).
+late_authors = ["mycaule"]
+late_except = [1522, 1747, 1782]
 
 [agents]
 # Default agent for every lane: "codex" or "claude". Operators override per run with --agent.
