@@ -93,7 +93,9 @@ Imported, not restated:
 - **SchemeAndStackFoundations** owns algebraic spaces, stacks in groupoids, algebraic and
   Deligne–Mumford stacks, inertia, the underlying topological space, separated and proper stacks,
   quotient stacks, quasi-coherent modules on stacks, coarse moduli spaces and the Keel–Mori theorem
-  (§§1.3, 1.9–1.10, 1.18–1.23), derived categories of quasi-coherent complexes, the upper shriek
+  (§§1.3, 1.9–1.10, 1.18–1.23), the vanishing of higher quasi-coherent cohomology on affine schemes
+  and its agreement in the Zariski, étale and fppf topologies (§§2.6, 2.10), used in 6.1 to split
+  extensions on affine charts, derived categories of quasi-coherent complexes, the upper shriek
   functor and relative dualising complexes (§§2.18–2.20), Riemann–Roch on curves (§3.3), the
   lifting criterion and torsors of lifts for smooth morphisms (§4.1), and the intersection theory of
   schemes (§§5.1–5.6). Every stack-level statement here restricts on schemes to those sections and
@@ -320,6 +322,11 @@ morphism or a flat morphism (vistoli1989 (1.7), lines 254–269). None of this d
   modules on stacks and their description on a presentation), §1.23 (`IsCoarseModuliSpace`,
   `keel_mori`: an algebraic stack with finite inertia has a coarse space `π : ℳ → M` with `π` proper
   and quasi-finite, bijective on geometric points).
+- §2.6 (`serre_affineness_criterion`, whose direction from affineness gives `H^q(X, F) = 0` for every
+  `q > 0` and every quasi-coherent `F` on an affine scheme `X`) and §2.10
+  (`quasiCoherent_topology_comparison`: for quasi-coherent `F`,
+  `H^q(X_Zar, F) = H^q(X_ét, F^a) = H^q(X_fppf, F^a)`), used in 6.1 to split, on each affine étale
+  chart, an extension of a finite locally free module by a quasi-coherent one.
 - §2.18 (derived categories of quasi-coherent complexes on schemes), §2.19 (the right adjoint
   `a_f` of `Rf_*`, `pushforwardRightAdjoint_adj`, `globalDuality`, the upper shriek functor and its
   local complete intersection formula), §2.20 (relative dualising complexes of flat finitely
@@ -974,7 +981,7 @@ pushforward. *Needs:* 2.3, Layer 3, 4.1–4.3; VirtualFundamentalClass §§2.1�
 - The fundamental class of `B(ℤ/2)` pushes forward to `(1/2)·[Spec k]` under both theories, the
   VirtualFundamentalClass §2.1 Check.
 - The zero-section self-intersection of `O(1)` on `ℙ¹` is a point class under both theories, the
-  VirtualFundamentalClass §2.5 Check.
+  Check in the Examples of VirtualFundamentalClass Layer 2.
 - `A_0(Spec k)_ℚ = ℚ` in both theories, with `[Spec k] ↦ 1`.
 
 ### Examples
@@ -1390,13 +1397,20 @@ descended, kresch1999b lines 192–204 and Remark 2.5, lines 250–256), `i : X 
 `v : Y′ → Y` a regular local immersion with normal bundle `N`, `X′ := X ×_Y Y′` with `j : X′ → Y′`,
 `u : X′ → X`, and `C := C_{X/Y}`. Prove:
 
-- the canonical rational equivalence `β(Y′, X) ∈ W_*(N ×_Y C)`, with
-  `∂β(Y′, X) = [C_{u^*C/C}] − [ρ^*C_{X′/Y′}]`, is defined for this ambient: it is the rational
-  equivalence built in the proof of kresch1999b Proposition 2.3 (statement lines 242–243, construction
-  lines 259–304) from the double deformation space `M°_X Y ×_Y M°_{Y′}Y → ℙ¹ × ℙ¹` and the
-  intersection of its two `P`-divisors (kresch1999b Corollary 1.10, lines 182–190), which makes no use
-  of reducedness; on a smooth ambient it is the rational equivalence to which VirtualFundamentalClass
-  §2.5 applies kresch1999b Theorem 3.1 (lines 334–336 name the rational equivalence of this proof),
+- the canonical rational equivalence `β(Y′, X) ∈ W_*(N ×_Y C)`, on `N ×_Y C = j^*N ×_{X′} u^*C`, with
+  `∂β(Y′, X) = [C_{u^*C/C}] − [j^*N ×_{X′} C_{X′/Y′}]`, is defined for this ambient. Here `C_{u^*C/C}` is
+  the normal cone of `u^*C = C ×_X X′` in `C`; `C_{X′/Y′}` is a closed subcone of `u^*C`, because étale
+  locally the ideal of `X′` in `Y′` is the image of the ideal of `X` in `Y`; and `j^*N ×_{X′} C_{X′/Y′}`
+  is the normal cone of `j^*N` in `N`, as `N → Y′` is flat. `β(Y′, X)` is `−ω` for the rational
+  equivalence `ω` built in the proof of kresch1999b Proposition 2.3 (statement lines 242–243,
+  construction lines 259–304, with the boundary of the opposite sign at line 304) from the double
+  deformation space `M°_X Y ×_Y M°_{Y′}Y → ℙ¹ × ℙ¹` and the intersection of its two `P`-divisors:
+  kresch1999b Corollary 1.10 (lines 182–190), stated for a variety, is applied to each irreducible
+  component of the double deformation space that dominates `ℙ¹ × ℙ¹`, with its reduced structure, and
+  the results are summed with the multiplicities of these components, so that no reducedness of `Y` is
+  used and its multiplicities enter `β`; on a smooth ambient it is the rational equivalence to which
+  VirtualFundamentalClass §2.5 applies kresch1999b Theorem 3.1 (lines 334–336 name the rational
+  equivalence of this proof),
   and on a reduced equidimensional scheme vistoli1989 Lemmas 3.16 and 4.6 (lines 1172–1174 and
   1451–1470) give one with the same boundary by normalising a blow-up;
 - `β(Y′, X)` commutes with smooth base change `Y_1 → Y` (kresch1999b Proposition 2.1, lines 205–207, and
@@ -1415,15 +1429,15 @@ descended, kresch1999b lines 192–204 and Remark 2.5, lines 250–256), `i : X 
 Route: compatibility with smooth factorisations follows from compatibility with smooth base change,
 because the double deformation space of `(X → Ỹ, Ỹ ×_Y Y′ → Ỹ)` is the base change of that of
 `(X → Y, Y′ → Y)` along `M°_X Ỹ → M°_X Y`, which is smooth (étale locally `Ỹ = Y × 𝔸^n` with `X` inside
-`Y × 0`, where `M°_X Ỹ = M°_X Y × 𝔸^n`), compatibly with both `P`-divisors. Then the two projections
-`p_1, p_2 : Y ×_𝔅 Y → Y` are smooth of Deligne–Mumford type and pull `Y′` back to the same closed
-substack `(Y ×_𝔅 Y) ×_𝔅 𝔅′`, because `Y′` comes from `𝔅`; compatibility with smooth factorisations, applied to `(i, i) : X → Y ×_𝔅 Y` (a local immersion, as the relative diagonal of
+`Y × 0`, where `M°_X Ỹ = M°_X Y × 𝔸^n`), compatibly with both `P`-divisors. For the third
+statement, the two projections `p_1, p_2 : Y ×_𝔅 Y → Y` are smooth of Deligne–Mumford type and pull `Y′`
+back to the same closed substack `(Y ×_𝔅 Y) ×_𝔅 𝔅′`, because `Y′` comes from `𝔅`; compatibility with smooth factorisations, applied to `(i, i) : X → Y ×_𝔅 Y` (a local immersion, as the relative diagonal of
 `p` is unramified) through `p_1` and through `p_2`, gives `p_1^*β = p_2^*β`, and under
 `C_{X/Y×_𝔅Y} = i^*T_{Y/𝔅} ×_X C` these two pullbacks are the projection and the action
 (behrend-fantechi1997 lines 781–809 and the proof of Proposition 3.5, lines 894–897, whose two inverse
-images of `Y′` in `Y × Y` differ). For the third statement, generators `f_1, …, f_c` of the ideal of `Y′`
+images of `Y′` in `Y × Y` differ). For the fourth statement, generators `f_1, …, f_c` of the ideal of `Y′`
 étale locally have differentials independent in `Ω_{Y/𝔐}` along `Y′`, so `(f_1, …, f_c) : Y → 𝔸^c × 𝔐` is
-smooth along `Y′`, `Y′` is pulled back from `{0} × 𝔐`, and the second statement applies over
+smooth along `Y′`, `Y′` is pulled back from `{0} × 𝔐`, and the third statement applies over
 `𝔅 = 𝔸^c × 𝔐` with `T_{Y/𝔅}|_{Y′} = T_{Y′/𝔐}`. For `𝔐 = Spec k` this is kresch1999b Theorem 3.1 (lines
 334–343), owned by VirtualFundamentalClass §2.5, whose statement prints the acting bundle as `T_{Y′}` in
 its own notation while its proof (lines 390–405) translates along the regularly embedded smooth stack.
@@ -1446,7 +1460,7 @@ SchemeAndStackFoundations §5.5.
 - A non-reduced ambient keeps its multiplicities: for `Y = 𝔸¹ × Spec k[ε]/(ε²)` (coordinate `t`), `X` the
   origin and `Y′ = {t = 0} = Spec k[ε]/(ε²)` (`t` is a nonzerodivisor), `I = (t, ε)` has `I^n/I^{n+1}`
   spanned by `t^n, t^{n−1}ε`, so `C = Spec k[T, E]/(E²)` with `[C] = 2·[T-line]`; `X′ = X`, `N` is the trivial
-  line with coordinate `ν`, `C_{u^*C/C} = {ν = 0} × C` and `ρ^*C_{X′/Y′} = 𝔸¹_ν × Spec k[E]/(E²)`, so
+  line with coordinate `ν`, `C_{u^*C/C} = {ν = 0} × C` and `j^*N ×_{X′} C_{X′/Y′} = 𝔸¹_ν × Spec k[E]/(E²)`, so
   `∂β = 2·[ν = 0] − 2·[T = 0]` on the plane `(N ×_Y C)_red = 𝔸²_{ν,T}` and `β = 2·(ν/T)`, twice the
   rational equivalence `ν/T` of `Y_red = 𝔸¹`. A construction that only sees `Y_red`, as the
   normalisation of a blow-up does, gives `[ν = 0] − [T = 0]`, which is not the boundary required for `Y`.
@@ -1485,26 +1499,33 @@ all stacks of Convention 1 whose theory has a global resolution.
 
 ### 8.3 Functoriality over bases of pure dimension
 
-Let `X′ → X` be the base change of a local complete intersection morphism `v : Z′ → Z` of algebraic stacks
+Let `u : X′ → X` be the base change of a local complete intersection morphism `v : Z′ → Z` of algebraic stacks
 over `𝔜` with finite unramified diagonal over `𝔜`, with `g : X′ → Z′` and `h : X → Z`, `X` and `X′`
 stacks in the sense of Convention 1, and `E`, `F` perfect obstruction theories for `X/𝔜`, `X′/𝔜` with
 global resolutions that are compatible over `v` in the sense of VirtualFundamentalClass §§8.1 and 9.5 (behrend-fantechi1997 lines
-1721–1733). Prove `v^![X/𝔜, E]^vir = [X′/𝔜, F]^vir` (behrend-fantechi1997 Proposition 7.5, lines 1734–1739)
-when `v` is smooth, and when `Z′`, `Z` are smooth over `𝔜`, in both cases over any `𝔜` of pure dimension;
-here `v^!` is flat pullback in the first case, and in the second the composite of the Gysin map of the
-graph `Z′ → Z′ ×_𝔜 Z`, a regular local immersion, with flat pullback along the projection to `Z` (4.2).
-Route: in the first case the compatibility datum gives the exact sequence `B T_{X′/X} → 𝔉 → u^*𝔈` of
-vector-bundle stacks (VirtualFundamentalClass §8.1) and `C_{X′/𝔜}` is the `T_{X′/X}`-torsor over
-`u^*C_{X/𝔜}`, so the class is computed through a comparison bundle `F_1 ×_{u^*𝔈} u^*E_1` as in 6.1; in the
-second, the rational equivalence of behrend-fantechi1997 Lemma 5.9 (line 1397) is formed in the ambient
-`Z′ ×_𝔜 Z ×_𝔜 W` of the graph, with the invariance of 8.1's third statement for
+1721–1733). With `𝔈 := h¹/h⁰(E^∨)`, `𝔉 := h¹/h⁰(F^∨)` and `𝔑_{Z′/Z} := h¹/h⁰(L_{Z′/Z}^∨)`, the compatibility
+datum gives the exact sequence of vector-bundle stacks `g^*𝔑_{Z′/Z} → 𝔉 → u^*𝔈`
+(VirtualFundamentalClass §8.1; behrend-fantechi1997 lines 1389–1392), and `q : 𝔉 → u^*𝔈` denotes its
+second map. Prove
+`v^![X/𝔜, E]^vir = [X′/𝔜, F]^vir` (behrend-fantechi1997 Proposition 7.5, lines 1734–1739) when `v` is smooth,
+and when `Z′`, `Z` are smooth over `𝔜`, in both cases over any `𝔜` of pure dimension; here `v^!` is flat
+pullback in the first case, and in the second the composite of the Gysin map of the graph
+`Z′ → Z′ ×_𝔜 Z`, a regular local immersion, with flat pullback along the projection to `Z` (4.2).
+Route: in the first case `g^*𝔑_{Z′/Z} = B T_{X′/X}`, and `B T_{X′/X} → 𝔠_{X′/𝔜} → u^*𝔠_{X/𝔜}` is a short
+exact sequence of cone stacks (VirtualFundamentalClass §5.5 and behrend-fantechi1997 Proposition 3.14,
+lines 1040–1044, over `Spec k`; over `𝔜` on the charts of VirtualFundamentalClass §9.1, on which `u` is
+étale locally a projection `X × 𝔸^n → X`). So `𝔠_{X′/𝔜}` is a torsor over `u^*𝔠_{X/𝔜}` under `B T_{X′/X}`,
+the kernel of `q`, and `𝔠_{X′/𝔜} = 𝔉 ×_{u^*𝔈} u^*𝔠_{X/𝔜}` (behrend-fantechi1997 lines 1456–1460), so the
+class is computed through a comparison bundle `F_1 ×_{u^*𝔈} u^*E_1` as in 6.1; in the second, the
+rational equivalence of behrend-fantechi1997 Lemma 5.9 (line 1397) is formed in the ambient
+`Z′ ×_𝔜 Z ×_𝔜 W` of the graph, with the invariance of 8.1's fourth statement for
 `T_{Z′/𝔜} ⊕ T_{W/𝔜}`, and carried into `N × 𝔉` by the comparison of the API below, so that only the
 compatibility over `v` is used. No compatibility datum over the graph is used: one would need a lift of
 `g^*Ω_{Z′/𝔜} → g^*L_{Z′/Z}` to `F`, whose obstruction lies in `Ext¹(g^*Ω_{Z′/𝔜}, u^*E)` and is killed only
 in `Ext¹(g^*Ω_{Z′/𝔜}, u^*L_{X/𝔜})`. This extends VirtualFundamentalClass §9.5, which states both cases
 under the hypotheses of behrend-fantechi1997 Proposition 7.5 for separated stacks with the resolution
 property, to stacks that need not be separated. *Needs:* 4.2–4.3, 6.1–6.2, 8.1–8.2;
-VirtualFundamentalClass §§1.6, 8.1, 9.1, 9.5.
+VirtualFundamentalClass §§1.6, 5.5, 8.1, 9.1, 9.5.
 
 **API.**
 
@@ -1522,15 +1543,19 @@ VirtualFundamentalClass §§1.6, 8.1, 9.1, 9.5.
   `[C_{X′/Z′ ×_𝔜 W}/(T_{Z′/𝔜} ⊕ T_{W/𝔜})] = 𝔠_{X′/𝔜}` to its image under `𝔠_{X′/𝔜} → 𝔉`; these
   isomorphisms agree on overlaps of charts (behrend-fantechi1997 Lemma 5.9, lines 1416–1421, for
   `𝔜 = Spec k`, `Z′`, `Z` smooth and `v` regular). Through it the rational equivalence of 8.1 descends to
-  `N × 𝔉` with boundary `[φ^*C_{u^*𝔠_{X/𝔜}/𝔠_{X/𝔜}}] − [N × 𝔠_{X′/𝔜}]`, and after pulling back to the
-  global resolutions as in 8.2 the zero-section Gysin maps of the two terms are `v^![X/𝔜, E]^vir` and
-  `[X′/𝔜, F]^vir`.
+  `N × 𝔉` with boundary `[q^*C_{u^*𝔠_{X/𝔜}/(Z′ ×_𝔜 𝔠_{X/𝔜})}] − [N × 𝔠_{X′/𝔜}]`. Here
+  `u^*𝔠_{X/𝔜} = Z′ ×_Z 𝔠_{X/𝔜}` is embedded in `Z′ ×_𝔜 𝔠_{X/𝔜}` by the base change of the graph of `v`, so
+  that its normal cone lies in `N × u^*𝔠_{X/𝔜} ⊆ N × u^*𝔈`, and `q^*` is the inverse image along
+  `id_N × q`. After pulling back to the global resolutions as in 8.2 the zero-section Gysin maps of the
+  two terms are `v^![X/𝔜, E]^vir` and `[X′/𝔜, F]^vir`.
 
 **Checks.**
 
 - `v = id_Z` with `F = E`: both sides are `[X/𝔜, E]^vir`.
 - `v : 𝔸¹ × Z → Z` the projection, `X′ = 𝔸¹ × X`, `F = E ⊞ Ω_{𝔸¹}`: `v^![X]^vir = [𝔸¹] × [X]^vir`, of dimension one
-  more.
+  more. For `X = Z = 𝔜 = Spec k` and `E = 0`, `𝔠_{X′/𝔜} = B T_{𝔸¹}` has dimension `1 − 1 = 0` over
+  `u^*𝔠_{X/𝔜} = 𝔸¹` of dimension `1`, the relative dimension `−1` of a `B T_{𝔸¹}`-torsor; a torsor under the
+  vector bundle `T_{𝔸¹}` would have dimension `2`.
 - Two successive smooth pullbacks `Z′′ → Z′ → Z` with compatible theories give the class of the composite.
 - The comparison of the API in two degenerate cases. For `Z = 𝔜` and `v : Z′ → 𝔜` smooth, `N = 0`,
   `T_{Z′/𝔜}` acts trivially on `u^*C`, and the left side is `u^*𝔠_{X/𝔜} × B T_{Z′/𝔜}`, matching
@@ -1569,7 +1594,7 @@ codimension one, and 8.2 for `𝔐 × {b} → 𝔐 × B` (pure dimension `m + 1`
 
 ### Dependencies
 
-Layers 2, 4 and 6; VirtualFundamentalClass §§1.5–1.6, 2.5, 6.4, 8.1, 9.1, 9.3, 9.5;
+Layers 2, 4 and 6; VirtualFundamentalClass §§1.5–1.6, 2.5, 5.5, 6.4, 8.1, 9.1, 9.3, 9.5;
 SchemeAndStackFoundations §5.5. Within the layer, 8.1 → 8.2 → 8.3, and 8.2 → 8.4.
 
 ## Layer 9: obstruction theories of spaces of maps from curves

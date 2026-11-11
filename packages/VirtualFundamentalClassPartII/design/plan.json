@@ -1398,7 +1398,7 @@
      "id": "8.1",
      "kind": "theorem",
      "name": "StackChow.canonicalRationalEquivalence_relativeInvariance",
-     "statement": "For an algebraic stack Y locally of finite type over k (neither reduced nor pure-dimensional), X -> Y a local immersion and Y' -> Y a regular local immersion, the canonical rational equivalence beta(Y', X) in W_*(N x_Y C), built from the double deformation space as in kresch1999b Proposition 2.3, is defined and commutes with smooth base change and with smooth factorisations; if Y -> B is smooth of Deligne-Mumford type and Y' = Y x_B B', beta is invariant under T_{Y/B}|_{X'}; for a regular local immersion Y' -> Y of stacks smooth over any M, beta is invariant under T_{Y'/M}|_{X'}.",
+     "statement": "For an algebraic stack Y locally of finite type over k (neither reduced nor pure-dimensional), X -> Y a local immersion and Y' -> Y a regular local immersion, the canonical rational equivalence beta(Y', X) in W_*(N x_Y C), with boundary [C_{u^*C/C}] - [j^*N x_{X'} C_{X'/Y'}], the negative of the rational equivalence built from the double deformation space in kresch1999b Proposition 2.3 with Corollary 1.10 applied to each dominating irreducible component (reduced structure) and summed with multiplicities, is defined and commutes with smooth base change and with smooth factorisations; if Y -> B is smooth of Deligne-Mumford type and Y' = Y x_B B', beta is invariant under T_{Y/B}|_{X'}; for a regular local immersion Y' -> Y of stacks smooth over any M, beta is invariant under T_{Y'/M}|_{X'}.",
      "hypotheses": [
       "Y an algebraic stack locally of finite type over k",
       "i : X -> Y a local immersion, v : Y' -> Y a regular local immersion",
@@ -1406,7 +1406,7 @@
      ],
      "locator": {
       "source": "kresch1999b",
-      "where": "Proposition 2.3, lines 242-243, construction lines 259-304; Corollary 1.10, lines 182-190; Proposition 2.1, lines 202-207; Remark 2.5, lines 250-256; Theorem 3.1, lines 334-343 and 390-405; vistoli1989 Lemmas 3.16 and 4.6, lines 1172-1174 and 1451-1470; behrend-fantechi1997 Propositions 3.3-3.5, lines 781-897"
+      "where": "Proposition 2.3, lines 242-243, construction lines 259-304, boundary line 304; Corollary 1.10, lines 182-190, stated for a variety and applied componentwise with multiplicities; Proposition 2.1, lines 202-207; Remark 2.5, lines 250-256; Theorem 3.1, lines 334-343 and 390-405; vistoli1989 Lemmas 3.16 and 4.6, lines 1172-1174 and 1451-1470; behrend-fantechi1997 Propositions 3.3-3.5, lines 781-897"
      },
      "prerequisites": [
       "target:2.2",
@@ -1499,7 +1499,7 @@
      ],
      "locator": {
       "source": "behrend-fantechi1997",
-      "where": "Proposition 7.5 and compatibility, lines 1721-1739; Lemma 5.9 and Proposition 5.10, lines 1397-1428; cone comparison at lines 1416-1421"
+      "where": "Proposition 7.5 and compatibility, lines 1721-1739; the exact sequence g^*N_{Z'/Z} -> F -> u^*E, lines 1389-1392; Proposition 3.14, lines 1040-1044 (B T_{X'/X} -> c_{X'} -> u^*c_X for smooth u); Lemma 5.9 and Proposition 5.10, lines 1397-1428 and 1456-1460; cone comparison at lines 1416-1421"
      },
      "prerequisites": [
       "target:4.2",
@@ -1509,6 +1509,7 @@
       "target:8.1",
       "target:8.2",
       "roadmap:VirtualFundamentalClass §1.6",
+      "roadmap:VirtualFundamentalClass §5.5",
       "roadmap:VirtualFundamentalClass §8.1",
       "roadmap:VirtualFundamentalClass §9.1",
       "roadmap:VirtualFundamentalClass §9.5"
@@ -1517,7 +1518,7 @@
       {
        "name": "functoriality.graphComparison",
        "role": "lemma",
-       "statement": "On a chart X -> Z x_Y W, with C = C_{X/Z x W}, N = g^*v^*T_{Z/Y} and T_{Z'/Y} + T_{W/Y} acting trivially on N and on u^*C through dv and the tangent actions, the compatibility datum over v gives [u^*C/(T_{Z'} + T_W)] = F x_{u^*E} u^*c_{X/Y} over u^*c_{X/Y} = [u^*C/(v^*T_Z + T_W)], equivariant for g^*N_{Z'/Z} = [v^*T_Z/T_{Z'}] through g^*N_{Z'/Z} -> F -> u^*E, carrying c_{X'/Y} to its image in F, and agreeing on overlaps; through it the rational equivalence of 8.1 descends to N x F."
+       "statement": "On a chart X -> Z x_Y W, with C = C_{X/Z x W}, N = g^*v^*T_{Z/Y} and T_{Z'/Y} + T_{W/Y} acting trivially on N and on u^*C through dv and the tangent actions, the compatibility datum over v gives [u^*C/(T_{Z'} + T_W)] = F x_{u^*E} u^*c_{X/Y} over u^*c_{X/Y} = [u^*C/(v^*T_Z + T_W)], equivariant for g^*N_{Z'/Z} = [v^*T_Z/T_{Z'}] through g^*N_{Z'/Z} -> F -> u^*E, carrying c_{X'/Y} to its image in F, and agreeing on overlaps; through it the rational equivalence of 8.1 descends to N x F with boundary [q^*C_{u^*c_{X/Y}/(Z' x_Y c_{X/Y})}] - [N x c_{X'/Y}], u^*c_{X/Y} embedded by the base change of the graph of v and q : F -> u^*E the second map of the exact sequence."
       }
      ],
      "tests": [
@@ -1529,7 +1530,7 @@
       {
        "name": "lineTimes",
        "kind": "computation",
-       "statement": "For the projection A^1 x Z -> Z with F = E + Omega_{A^1}, v^![X]^vir = [A^1] x [X]^vir."
+       "statement": "For the projection A^1 x Z -> Z with F = E + Omega_{A^1}, v^![X]^vir = [A^1] x [X]^vir; for X = Z = Y = Spec k and E = 0, c_{X'/Y} = B T_{A^1} of dimension 0 over u^*c_{X/Y} = A^1 of dimension 1, a B T_{A^1}-torsor (a T_{A^1}-torsor would have dimension 2)."
       },
       {
        "name": "composite",
