@@ -192747,10 +192747,26 @@
    "reported": "2026-11-11",
    "reporter": "claude fable",
    "comment": "https://github.com/TauCetiProject/TauCetiRoadmapJobs/pull/13862#issuecomment-6802225273"
+  },
+  {
+   "kind": "error",
+   "source": "behrend-fantechi1997",
+   "locator": "Proposition 3.5, as used in Lemma 5.9, lines 1416–1417",
+   "says": "the rational equivalence is invariant under the whole pulled-back ambient tangent bundle",
+   "should": "invariance under the tangent bundle of the regularly embedded smooth stack only",
+   "affects": "the proof",
+   "note": "corrected in print at kresch1999b Theorem 3.1 and lines 340–343",
+   "roadmap": "VirtualFundamentalClassPartII",
+   "job": "REV-DESIGN-VirtualFundamentalClassPartII~4",
+   "board_pr": 13892,
+   "head": "290cb5a",
+   "reported": "2026-11-11",
+   "reporter": "claude fable",
+   "comment": "https://github.com/TauCetiProject/TauCetiRoadmapJobs/pull/13892#issuecomment-6803012912"
   }
  ],
- "scanned_to": "2026-11-11T17:08:33Z",
- "updated": "2026-11-11T17:13:00Z",
+ "scanned_to": "2026-11-11T17:43:23Z",
+ "updated": "2026-11-11T17:44:16Z",
  "covered": [
   {
    "job": "ERRATA-TemperleyLieb",
