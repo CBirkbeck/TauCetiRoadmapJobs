@@ -29,9 +29,12 @@ Not statable at the pins, with what each lacks:
   (Layers 8–9): Serre weights, projective covers in the pseudocompact `k[[K/Z₁]]`-module category
   and the gluing lattice;
 * the finite-error counit `Ind_{B̄}^G Ord_B(π) → π` and its Banach version for `F ≠ ℚ_p`
-  (Layer 2): Emerton's ordinary-parts functor and smooth parabolic induction;
+  (Layer 2): Emerton's ordinary-parts functor `Ord_B`; the induced module itself is Mathlib's
+  continuous coinduction `ContRepresentation.coind`, with discrete coefficients in the smooth case;
 * the absence of supersingular constituents in admissible finitely presented representations for
-  `F ≠ ℚ_p` (Layer 2): smooth principal series and the supersingular notion.
+  `F ≠ ℚ_p` (Layer 2): the supersingular notion and an API of smooth principal series (Borel
+  induction of torus characters with its constituents); `ContRepresentation.coind` supplies only
+  the induced module.
 -/
 
 namespace TauCetiRoadmap.ModpRepresentationsOfGL2OverLocalFields
