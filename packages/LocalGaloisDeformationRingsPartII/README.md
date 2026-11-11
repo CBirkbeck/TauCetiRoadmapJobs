@@ -16,7 +16,8 @@ The following are imported and are not targets here.
 - Breuil–Kisin coefficient rings, the open-disc ring, `λ` and `N_∇`: `FiniteFlatGroupsAndIntegralPadicHodgeTheory`, §R07.4.1; Kisin modules of finite height and with coefficients: §§R07.4.2, R07.4.36; Fontaine's covariant equivalence between étale `φ`-modules and `G_{K∞}`-representations and its version `T_A` with finite coefficients: §§R07.4.5, R07.4.39 (the contravariant realization `V*_K` used here is defined from `T_A` in 3.3); the `(φ,N_∇)` comparison: §R07.4.6. Kisin modules with tame descent data over `𝔖_{L′,R}`, their étale descent and contravariant realization `T*_dd`, and the eigenbasis transformation law: `LocalGaloisDeformationRings`, §6.9. Bounded-height lattice functors: `LocalGaloisDeformationRings`, §§1.2 and 1.8.
 - Regular Serre weights `F(λ)`, alcove depth, the translation map `t_λ`, the set `Σ`, the mod-`p` tame parameter `τ(s,μ)` and the tame weight set `W(ρ̄)`: `ModpRepresentationsOfGL2OverLocalFields`, §§3.1, 3.2 and 3.4. The adjoint tensor decomposition and the `2^f` characteristic-zero constituents of a projective lift: §5.5.
 - Complete-local coproducts `A ⊗̂_𝒪 B`: `DeformationAndDerivedPatchingAlgebra`, §1.12; relative cotangent spaces and power-series presentations: §1.9; towers and cofinal completions: §§1.8, 1.14; flat completion of finite modules: §1.13; pointed tensor domains and component products: §4.6; detection of reduced `𝒪`-flat quotients by valued points: §4.7; square-free monomial components: §6.8.
-- Weierstrass preparation and division (`PowerSeries.exists_isWeierstrassFactorization`, `PowerSeries.isWeierstrassDivision_weierstrassDiv_weierstrassMod`), multivariate power series and regular local rings: Mathlib.
+- Factoriality of regular local rings in every dimension (Auslander–Buchsbaum): `PurityForFlatCohomology`, §7.4.
+- Weierstrass preparation and division (`PowerSeries.exists_isWeierstrassFactorization`, `PowerSeries.isWeierstrassDivision_weierstrassDiv_weierstrassMod`), multivariate power series and regular local rings: Mathlib; regularity of power series over a regular local ring: Tau Ceti.
 
 The unrestricted framed rings in every dimension (complete intersection, components, normality and factoriality after Böckle–Iyengar–Paškūnas and Paškūnas–Quast) and the weight-zero crystalline lifting rings of Boxer–Calegari–Gee–Newton–Thorne §2 are separate continuations of `LocalGaloisDeformationRings`; neither is an input here.
 
@@ -38,13 +39,15 @@ The unrestricted framed rings in every dimension (complete intersection, compone
 
 ### From Mathlib
 
-- `MvPowerSeries`, `MvPowerSeries.C`, `MvPowerSeries.X` (`Mathlib/RingTheory/MvPowerSeries/Basic.lean`): the ambient chart rings `𝒪⟦x₁,…,x_n⟧`; no further completed carrier is introduced. Note that the pin has no theorem that these rings are factorial in more than one variable.
+- `MvPowerSeries`, `MvPowerSeries.C`, `MvPowerSeries.X` (`Mathlib/RingTheory/MvPowerSeries/Basic.lean`): the ambient chart rings `𝒪⟦x₁,…,x_n⟧`; no further completed carrier is introduced. Neither pin proves these rings factorial in more than one variable; 5.3 takes factoriality from `PurityForFlatCohomology` §7.4.
+- `MvPowerSeries.isEmptyEquiv` and `MvPowerSeries.finSuccEquiv` (`Mathlib/RingTheory/MvPowerSeries/Equiv.lean`): power series in no variables over `𝒪` form `𝒪`, and `𝒪⟦x₀,…,x_n⟧ ≅ 𝒪⟦x₁,…,x_n⟧⟦x₀⟧` as `𝒪`-algebras. `IsRegularLocalRing.of_ringEquiv` (`Mathlib/RingTheory/RegularLocalRing/Defs.lean`): regularity is invariant under ring isomorphism; the instance of the same file makes every local principal ideal domain, in particular a discrete valuation ring, a regular local ring.
 - `PowerSeries.exists_isWeierstrassFactorization` and `PowerSeries.isWeierstrassDivision_weierstrassDiv_weierstrassMod` (`Mathlib/RingTheory/PowerSeries/WeierstrassPreparation.lean`): Weierstrass preparation and division over a complete local coefficient ring, for a series whose reduction is nonzero.
 - `IsDiscreteValuationRing`, `IsAdicComplete`, `IsLocalRing.maximalIdeal`, `IsLocalRing.notMem_maximalIdeal`, `IsRegularLocalRing` (`Mathlib/RingTheory/RegularLocalRing/Defs.lean`), `Ideal.span`, `Ideal.span_le`, `Ideal.minimalPrimes`, `Matrix.det_fin_two`, `Matrix.adjugate`, `Polynomial.derivative`, `Field.absoluteGaloisGroup`, `modularCyclotomicCharacter`, `LaurentSeries`.
 
 ### From Tau Ceti
 
 - `TauCeti.inertiaTameCharacter` and `TauCeti.quotientWildInertiaSubgroupEquiv` (`TauCeti/NumberTheory/LocalField/Tame/Character.lean`): the tame character of inertia and the identification of the tame inertia quotient, implementing `LocalFieldsRamification` Layer 4.
+- `TauCeti.PowerSeries.isRegularLocalRing` (`TauCeti/RingTheory/RegularLocalRing/PowerSeries.lean`): power series in one variable over a regular local ring form a regular local ring. Used in 5.3. Its factoriality theorem `TauCeti.IsRegularLocalRing.uniqueFactorizationMonoid` (`TauCeti/RingTheory/RegularLocalRing/UniqueFactorization.lean`) assumes Krull dimension at most two; since `𝒪⟦x₁,…,x_n⟧` has dimension `n + 1`, it covers only `n ≤ 1` and does not reach the rings `𝒪⟦x₁,…,x_n⟧`, `n ≥ 2`, of 5.3.
 
 ### From TauCetiRoadmap.LocalFieldsRamification and TauCetiRoadmap.ClassFieldTheory
 
@@ -73,7 +76,7 @@ The unrestricted framed rings in every dimension (complete intersection, compone
 - §6.9: coefficient Kisin modules with tame descent data over `𝔖_{L′,R} = (W(k′) ⊗ R)⟦u′⟧` for `K′/K` unramified of degree at most three, their étale descent over the completed carrier `𝒪_{ℰ,K,R}`, the realization `T*_dd` and the twisted-conjugation law for a change of eigenbasis, stated there with the `GL₃` chart API.
 - What LocalGaloisDeformationRings must provide (gap:rank-two-descent-kisin-modules): the §6.9 construction in rank two for `K′/K` of degree `r ∈ {1,2}` and every height `h`, over every complete Noetherian local `𝒪`-algebra `R` with residue field `𝔽`: the category `Y^{[0,h],τ}(R)` of rank-two Kisin modules with descent of type `τ`, eigenbases, the contravariant realization `T*_dd` (equal to `Hom_φ(M, 𝒪̂_{ℰ^ur} ⊗̂_{ℤ_p} R)` for the étale descent `M` of the module over `𝒪_{ℰ,K,R}`; LLHLM18, §2.3, p. 23), coefficient base change and the eigenbasis transformation law, together with the Hodge-bound subfunctor `Y^{≤λ,τ}` and its minor criterion on `𝒪`-flat `p`-complete `R` (the `i × i` minors of the Frobenius matrix are divisible by `(v+p)` to the sum of the `i` smallest entries of `λ_j`).
 - §8.10 constructs a crystalline lift in a Serre weight for reducible rank-two residual representations over `ℚ_p`.
-- What LocalGaloisDeformationRings must provide (gap:ghls-existence): GHLS17 Theorem D (Theorem 3.1.5): for `K/ℚ_p` unramified, `p ∤ n` and `r̄ : G_K → GL_n(𝔽̄_p)` with a crystalline lift of some extended Fontaine–Laffaille weight `F`, if `F` is a Jordan–Hölder factor of `σ(λ,τ)` then `r̄` has a potentially crystalline lift of type `(λ,τ)`; together with the crystalline extended-Fontaine–Laffaille lift of `ρ̄` in every 3-deep weight of `W(ρ̄)` for semisimple rank-two `ρ̄`, and the dictionary translating GHLS17's `HT(ε) = −1`, dual Galois representations and highest weights to `HT(ε) = +1`, so that the criterion becomes BHHMS23 equation (26), p. 32.
+- What LocalGaloisDeformationRings must provide (gap:ghls-existence): GHLS17 Theorem D (Theorem 3.1.5): for `K/ℚ_p` unramified, `p ≠ n` and `r̄ : G_K → GL_n(𝔽̄_p)` with a crystalline lift of some extended Fontaine–Laffaille weight `F`, if `F` is a Jordan–Hölder factor of `σ(λ,τ)` then `r̄` has a potentially crystalline lift of type `(λ,τ)`; together with the crystalline extended-Fontaine–Laffaille lift of `ρ̄` in every 3-deep weight of `W(ρ̄)` for semisimple rank-two `ρ̄`, and the dictionary translating GHLS17's `HT(ε) = −1`, dual Galois representations and highest weights to `HT(ε) = +1`, so that the criterion becomes BHHMS23 equation (26), p. 32.
 
 ### From TauCetiRoadmap.ModpRepresentationsOfGL2OverLocalFields
 
@@ -83,8 +86,11 @@ The unrestricted framed rings in every dimension (complete intersection, compone
 ### From TauCetiRoadmap.DeformationAndDerivedPatchingAlgebra
 
 - §1.8 (truncations and complete towers), §1.9 (the relative cotangent space `𝔪_B/(𝔪_B² + 𝔪_A B)` and `seriesPresentation_surjective`), §1.12 (the complete-local tensor product and its joint presentation `Λ⟦X⟧/I ⊗̂ Λ⟦Y⟧/J ≅ Λ⟦X,Y⟧/(I,J)`), §1.13 (`flatCompletion_finiteComparison`), §1.14 (the quotient-completion comparison `Â/JÂ ≅ (A/J)^`), §4.6 (pointed tensor domains; component products under geometric integrality), §4.7 (valued points detect reduced `𝒪`-flat quotients), §6.8 (square-free monomial component comparison).
-- What DeformationAndDerivedPatchingAlgebra must provide (gap:regular-local-factorial): the Auslander–Buchsbaum theorem that a regular local ring is a unique factorization domain, in particular `𝒪⟦x₁,…,x_n⟧` for a complete discrete valuation ring `𝒪`.
 - What DeformationAndDerivedPatchingAlgebra must provide (gap:power-invariance): Hamann's theorem that a local ring is power-invariant (`A⟦X⟧ ≅ B⟦X⟧` implies `A ≅ B`; Hamann75, Theorem 4, pp. 155–156), its iteration to finitely many variables, and for complete local `𝔽`-algebras with residue field `𝔽` the coefficient-field correction making the resulting isomorphism `𝔽`-linear.
+
+### From TauCetiRoadmap.PurityForFlatCohomology
+
+- §7.4 (`isRegularLocalRing_uniqueFactorizationMonoid`): a regular local ring is a unique factorization domain, in every dimension (Auslander–Buchsbaum). Used in 5.3 for `𝒪⟦x₁,…,x_n⟧`, a regular local ring of dimension `n + 1`.
 
 ## How to read the build
 
@@ -545,7 +551,7 @@ Let `I^poly_j = (G₁, …, G₅)` and let `P^poly_{j,21}` and `P^poly_{j,30}` b
 
 ### 5.3 Irreducible crossing equations
 
-Let `𝒪` be a complete discrete valuation ring with uniformiser `ϖ`, `A = 𝒪⟦x₁, …, x_n⟧` with `n ≥ 2`, `d > 0` and `u ∈ A^×`. Prove that `x₁x₂ + ϖ^d u` is prime, that `(x₁x₂ + ϖ^d u) ≠ (x₁)`, and that if `u₁ ≢ u₂` modulo `𝔪_A` then `(x₁x₂ + ϖ^d u₁) ≠ (x₁x₂ + ϖ^d u₂)` (BHHMS23, Lemma 3.3.1, p. 24). This is `crossing_prime` in `Suggested.lean` for the first assertion. Route: substitute `x₂ ↦ x₁ + x₂`; Weierstrass preparation in `x₁` over `𝒪⟦x₂, …, x_n⟧` reduces a factorization to a root `b` in the maximal ideal; `b² + b x₂ + ϖ^d u(b, …) = 0` forces `ϖ^d | b` or `ϖ^d | b + x₂`, contradicting that `u` is a unit; primality follows because `A` is factorial (gap:regular-local-factorial); comparing constant terms after Weierstrass preparation distinguishes the ideals. *Needs:* Mathlib `PowerSeries.exists_isWeierstrassFactorization`, `PowerSeries.isWeierstrassDivision_weierstrassDiv_weierstrassMod`, `MvPowerSeries`, `IsDiscreteValuationRing`, `IsAdicComplete`; gap:regular-local-factorial.
+Let `𝒪` be a complete discrete valuation ring with uniformiser `ϖ`, `A = 𝒪⟦x₁, …, x_n⟧` with `n ≥ 2`, `d > 0` and `u ∈ A^×`. Prove that `x₁x₂ + ϖ^d u` is prime, that `(x₁x₂ + ϖ^d u) ≠ (x₁)`, and that if `u₁ ≢ u₂` modulo `𝔪_A` then `(x₁x₂ + ϖ^d u₁) ≠ (x₁x₂ + ϖ^d u₂)` (BHHMS23, Lemma 3.3.1, p. 24). This is `crossing_prime` in `Suggested.lean` for the first assertion. Route: substitute `x₂ ↦ x₁ + x₂`; Weierstrass preparation in `x₁` over `𝒪⟦x₂, …, x_n⟧` reduces a factorization to a root `b` in the maximal ideal; `b² + b x₂ + ϖ^d u(b, …) = 0` forces `ϖ^d | b` or `ϖ^d | b + x₂`, contradicting that `u` is a unit; `A` is a regular local ring by induction on `n`, starting from the discrete valuation ring `𝒪` and adding one variable at a time by `TauCeti.PowerSeries.isRegularLocalRing` transported along `MvPowerSeries.finSuccEquiv`, hence factorial (`PurityForFlatCohomology` §7.4), so the irreducible crossing element is prime; comparing constant terms after Weierstrass preparation distinguishes the ideals. *Needs:* Mathlib `PowerSeries.exists_isWeierstrassFactorization`, `PowerSeries.isWeierstrassDivision_weierstrassDiv_weierstrassMod`, `MvPowerSeries`, `MvPowerSeries.isEmptyEquiv`, `MvPowerSeries.finSuccEquiv`, `IsRegularLocalRing.of_ringEquiv`, `IsDiscreteValuationRing`, `IsAdicComplete`; Tau Ceti `TauCeti.PowerSeries.isRegularLocalRing`; `PurityForFlatCohomology` §7.4.
 
 - The crossing element is prime in `A`.
 - Its ideal differs from `(x₁)`.
@@ -614,7 +620,7 @@ Prove: the map `R/I^poly → R/I∞` of 5.5 is an isomorphism, and it lifts to a
 
 ### Dependencies
 
-Layers 0–4; `LocalGaloisDeformationRings` §§1.1, 1.2, 1.8, 3.4, 3.9, 3.10, 8.10; `PadicLocalLanglandsForGL2Qp` §0.4; `DeformationAndDerivedPatchingAlgebra` §§1.8, 1.9, 1.12, 4.6, 4.7; Mathlib `MvPowerSeries`, Weierstrass preparation; gaps regular-local-factorial, ghls-existence, rank-two-descent-kisin-modules, relative-monodromy-criterion.
+Layers 0–4; `LocalGaloisDeformationRings` §§1.1, 1.2, 1.8, 3.4, 3.9, 3.10, 8.10; `PadicLocalLanglandsForGL2Qp` §0.4; `DeformationAndDerivedPatchingAlgebra` §§1.8, 1.9, 1.12, 4.6, 4.7; `PurityForFlatCohomology` §7.4; Mathlib `MvPowerSeries`, `MvPowerSeries.finSuccEquiv`, `IsRegularLocalRing`, Weierstrass preparation; Tau Ceti `TauCeti.PowerSeries.isRegularLocalRing`; gaps ghls-existence, rank-two-descent-kisin-modules, relative-monodromy-criterion.
 
 ## Layer 6: Single-type rings and their special fibres
 

@@ -3071,19 +3071,13 @@
       "slug": "ghls-existence",
       "supplier": "LocalGaloisDeformationRings",
       "section": "§8.10",
-      "needs": "GHLS17 Theorem D (Theorem 3.1.5): for `K/ℚ_p` unramified, `p ∤ n` and `r̄ : G_K → GL_n(𝔽̄_p)` with a crystalline lift of some extended Fontaine–Laffaille weight `F`, if `F` is a Jordan–Hölder factor of `σ(λ,τ)` then `r̄` has a potentially crystalline lift of type `(λ,τ)`; together with the crystalline extended-Fontaine–Laffaille lift of `ρ̄` in every 3-deep weight of `W(ρ̄)` for semisimple rank-two `ρ̄`, and the dictionary translating GHLS17's `HT(ε) = −1`, dual Galois representations and highest weights to `HT(ε) = +1`, so that the criterion becomes BHHMS23 equation (26), p. 32."
+      "needs": "GHLS17 Theorem D (Theorem 3.1.5): for `K/ℚ_p` unramified, `p ≠ n` and `r̄ : G_K → GL_n(𝔽̄_p)` with a crystalline lift of some extended Fontaine–Laffaille weight `F`, if `F` is a Jordan–Hölder factor of `σ(λ,τ)` then `r̄` has a potentially crystalline lift of type `(λ,τ)`; together with the crystalline extended-Fontaine–Laffaille lift of `ρ̄` in every 3-deep weight of `W(ρ̄)` for semisimple rank-two `ρ̄`, and the dictionary translating GHLS17's `HT(ε) = −1`, dual Galois representations and highest weights to `HT(ε) = +1`, so that the criterion becomes BHHMS23 equation (26), p. 32."
     },
     {
       "slug": "deligne-lusztig-reduction",
       "supplier": "ModpRepresentationsOfGL2OverLocalFields",
       "section": "§3.2",
       "needs": "for `ν ∈ η + Λ_R` and `μ − sw^{−1}ν − η` 1-deep, the Jordan–Hölder constituents of the reduction of the Deligne–Lusztig representation `R_{sw^{−1}}(μ − sw^{−1}ν)` of `GL₂(𝔽_q)` are the weights `F(t_{μ−η}(sw^{−1}(ω − ν̄)))` for `ω ∈ Σ`, each with multiplicity one, in the translation coordinates of §3.2 (BHHMS23, Proposition 2.4.3, p. 16)."
-    },
-    {
-      "slug": "regular-local-factorial",
-      "supplier": "DeformationAndDerivedPatchingAlgebra",
-      "section": "§3.2",
-      "needs": "the Auslander–Buchsbaum theorem that a regular local ring is a unique factorization domain, in particular `𝒪⟦x₁,…,x_n⟧` for a complete discrete valuation ring `𝒪`."
     },
     {
       "slug": "power-invariance",
