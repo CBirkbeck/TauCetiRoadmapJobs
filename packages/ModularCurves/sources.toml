@@ -89,3 +89,36 @@ licence_class = "author-page"
 status = "certified"
 accessed = "2026-11-10"
 cited_for = ["3.2", "5.1"]
+
+[[source]]
+id = "conrad-rgs"
+authors = "Brian Conrad"
+title = "Reductive group schemes (notes for the SGA 3 summer school, Luminy)"
+year = 2014
+locator_scheme = "theorem"
+locator = "Lemma 2.1.3"
+url = "https://math.stanford.edu/~conrad/papers/luminysga3.pdf"
+fetched_from = "https://math.stanford.edu/~conrad/papers/luminysga3.pdf"
+fetched_at = "2026-11-11T00:01:29Z"
+sha256 = "1a63a17e4ccb7e23263d65f05d93a6651262861e978e9eb0c1c53a01fd59140a"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-11"
+cited_for = ["0.6"]
+
+[[source]]
+id = "Conrad"
+authors = "Brian Conrad"
+title = "Arithmetic moduli of generalized elliptic curves"
+year = 2007
+doi = "10.1017/S1474748006000089"
+locator_scheme = "theorem"
+locator = "Corollary 3.1.9; Lemma 3.3.4"
+url = "https://math.stanford.edu/~conrad/papers/kmpaper.pdf"
+fetched_from = "https://math.stanford.edu/~conrad/papers/kmpaper.pdf"
+fetched_at = "2026-11-11T00:01:32Z"
+sha256 = "f53e4ff819d534926e6ee59874cbce4e7bad4a315cbd6d05984b8405b11f15d8"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-11"
+cited_for = ["8.2"]
