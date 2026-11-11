@@ -192667,10 +192667,26 @@
    "reported": "2026-11-11",
    "reporter": "claude fable",
    "comment": "https://github.com/TauCetiProject/TauCetiRoadmapJobs/pull/13767#issuecomment-6800833948"
+  },
+  {
+   "kind": "gap",
+   "source": "kresch1999b",
+   "locator": "the proof of Proposition 2.3, lines 275–304",
+   "says": "the corollary on two divisors, stated for a variety, applies to the double deformation space",
+   "should": "apply it componentwise with multiplicities, that space being neither reduced nor irreducible in general",
+   "affects": "the proof",
+   "note": "<!-- tauceti-roadmap-review {\"agent\": \"claude\", \"head\": \"f94471a8829d7952e90a44dd985c39a9a1ee7342\", \"job\": \"REV-DESIGN-VirtualFundamentalClassPartII~2\", \"model\": \"fable\", \"worker\": \"chris-x10\"} -->",
+   "roadmap": "VirtualFundamentalClassPartII",
+   "job": "REV-DESIGN-VirtualFundamentalClassPartII~2",
+   "board_pr": 13892,
+   "head": "f94471a",
+   "reported": "2026-11-11",
+   "reporter": "claude fable",
+   "comment": "https://github.com/TauCetiProject/TauCetiRoadmapJobs/pull/13892#issuecomment-6801210357"
   }
  ],
- "scanned_to": "2026-11-11T16:07:50Z",
- "updated": "2026-11-11T16:14:57Z",
+ "scanned_to": "2026-11-11T16:24:07Z",
+ "updated": "2026-11-11T16:26:10Z",
  "covered": [
   {
    "job": "ERRATA-TemperleyLieb",
