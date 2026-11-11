@@ -318,8 +318,10 @@ are not restated. Set `ν_in := −ν_out`. Prove the rest of its Riemannian hyp
 
 - On the model half-space of dimension 2 with the constant metric `g = [[1, a], [a, 1]]`,
   `|a| < 1`: `ν_in = (e₀ − a e₁)/√(1 − a²)`, since `g(e₀ − a e₁, e₁) = a − a = 0` and
-  `g(e₀ − a e₁, e₀ − a e₁) = 1 − a²`. The coordinate vector `e₀` has `g(e₀, e₁) = a ≠ 0`, so a
-  definition by the chart direction fails orthogonality.
+  `g(e₀ − a e₁, e₀ − a e₁) = 1 − a²`. For `a ≠ 0` the coordinate vector `e₀` has
+  `g(e₀, e₁) = a ≠ 0`, so a definition by the chart direction fails orthogonality: at `a = 1/2`,
+  `ν_in = (2/√3, −1/√3)` while `g(e₀, e₁) = 1/2`. At `a = 0` the formula returns `e₀`, which is then
+  the correct normal.
 - On the boundary sphere of the closed unit ball, `ν_out(x) = x` and `⟨v, ν_in⟩ = −⟨v, x⟩`.
 - Dimension one: for `M = [0, 1] ⊆ ℝ`, `ν_out(0) = −∂_x` and `ν_out(1) = +∂_x` in the ambient
   coordinate, although both charts read the inward direction as `+e₀`.
@@ -538,6 +540,10 @@ Prove:
 
 - The epigraph `{y ≥ √(1 + x²)} ⊆ ℝ²` has curvature `(1 + 2x²)^{−3/2}` at `(x, √(1 + x²))`: strictly
   convex everywhere with infimum `0`, so the uniform bound needs compactness of `∂M`.
+- The closed unit ball of `ℝⁿ⁺¹`, `n ≥ 1`: `II = h`, and a unit `u ∈ T_q∂M` turns the bound into
+  `1 ≥ c`, so the best constant is `c = 1`. For `n = 0`, `M = [−1, 1]`, every `T_q∂M` is zero and
+  `II_q(0, 0) = 0 = c h_q(0, 0)` for every `c > 0` (`c = 2`, `c = 100`): the bound holds, with no
+  largest constant, so sharpness is a statement for `n ≥ 1` only.
 - For `M = {y ≥ x³}` the convex points form the closed set `{x ≥ 0}` of the boundary, which is not
   open: convexity without strictness is not an open condition.
 - The family `g_s = e^{−2s|x|²} g` on the closed unit disc, `s ∈ ℝ`, has `II^{g_s} = e^{−s}(1 − 2s)h`
@@ -875,8 +881,9 @@ Ceti `TauCeti.SmoothEmbedding.normalExp` through the trivialisation of the norma
   `∂M` is compact, such that the closed tube `E_{∂M}({|r| ≤ ε₁(q)})` is closed in `N` (Tau Ceti's
   closed-tube theorem, applied inside `W`), and write `W := E_{∂M}({|r| < ε(q)})` and
   `W₁ := E_{∂M}({|r| < ε₁(q)})`. There is `ρ̂ ∈ C^∞(N)` with `ρ̂ = r_{∂M}` on `W₁` (so
-  `ρ̂ = d_M(·, ∂M)` near `∂M` in `M`), `ρ̂ = 1` on `M ∖ W`, `ρ̂ = −1` on `N ∖ (M ∪ W)`, and `ρ̂`
-  between `r_{∂M}` and `1` on `W ∩ M` and between `r_{∂M}` and `−1` on `W ∖ M`. Hence
+  `ρ̂ = d_M(·, ∂M)` on the neighbourhood `W₁ ∩ W' ∩ M` of `∂M` in `M`), `ρ̂ = 1` on `M ∖ W`,
+  `ρ̂ = −1` on `N ∖ (M ∪ W)`, and `ρ̂` between `r_{∂M}` and `1` on `W ∩ M` and between `r_{∂M}`
+  and `−1` on `W ∖ M`. Hence
   `M = {ρ̂ ≥ 0}`, `∂M = {ρ̂ = 0}`, `N ∖ M = {ρ̂ < 0}`, `grad ρ̂ = ν_in` on `∂M`, and for
   `0 < ε < 1` every point of `{ρ̂ ≥ −ε} ∖ M` lies in `W` with `r_{∂M} ≥ −ε`. Route:
   `ρ̂ = ψ r_{∂M} + (1 − ψ) s` with a smooth cutoff `ψ : N → [0, 1]` equal to `1` on the closed
@@ -904,9 +911,17 @@ Ceti `TauCeti.SmoothEmbedding.normalExp` through the trivialisation of the norma
 With `ε` and `E := E_{∂M}` from 4.3 for `f = ρ`, prove (Stefanov–Uhlmann–Vasy, lines 20–22 and
 220–221; Lee, *Introduction to Riemannian Manifolds*, Ch. 5–6):
 
-- `E` restricted to `{(q, r) ∈ ∂M × ℝ : 0 ≤ r < ε(q)}` is a diffeomorphism onto an open
-  neighbourhood of `∂M` in `M`, a smooth collar of `∂M` in the sense of GeometricTopology 1.1,
-  and `r = d_M(·, ∂M)` there.
+- `E` restricted to `{(q, r) ∈ ∂M × ℝ : 0 ≤ r < ε(q)}` is a diffeomorphism onto the open
+  neighbourhood `W ∩ M` of `∂M` in `M`, a smooth collar of `∂M` in the sense of GeometricTopology
+  1.1 after the rescaling `r = ε(q) s`.
+- Distance collar: there is a smooth `η : ∂M → (0, ∞)` with `η ≤ ε`, constant when `∂M` is
+  compact, such that `E({(q, r) : |r| < η(q)}) ⊆ W'` for the distance neighbourhood `W'` of 4.3;
+  hence `r = d_M(·, ∂M)` on `E({(q, r) : 0 ≤ r < η(q)})`, by the boundary case of 4.3. Route:
+  `E⁻¹(W')` is an open neighbourhood of `∂M × {0}` in the tube, so the largest half-width
+  `m(q) := sup {s ∈ (0, ε(q)] : {q} × (−s, s) ⊆ E⁻¹(W')}` is positive and lower semicontinuous
+  (tube lemma on `{q} × [−s, s]`), and a partition of unity on `∂M` (second countable because `N`
+  is, as for the tube of 4.3) gives a smooth `0 < η < m`, a constant when `∂M` is compact. On the
+  rest of the half-tube `r` is still the normal coordinate, but need not be the distance to `∂M`.
 - On `{|r| < ε(q)}`, `(E* g)((u, a), (u', a')) = a a' + h_r(u, u')` with `(h_r)` a smooth family of
   Riemannian metrics on `∂M` and `h_0 = h`.
 - `II = −½ ∂_r h_r |_{r=0}`.
@@ -918,8 +933,17 @@ With `ε` and `E := E_{∂M}` from 4.3 for `f = ρ`, prove (Stefanov–Uhlmann�
 - Exterior of the unit ball: `h_r = (1 + r)² h_0`, `II = −h_0`; half-space: `h_r = h_0`, `II = 0`.
 - Dimension one: `∂M` is discrete, `h_r` is the zero metric on a point, and the statement reduces to
   `E* g = dr²`.
+- The tube radius is not a distance radius: in `ℝ²` with `ρ(x, y) = x(1 − x)`, `M = [0, 1] × ℝ`
+  has the noncompact boundary `{0, 1} × ℝ`, and the radii `ε = 0.9` on `{x = 0}` and `ε = 0.01` on
+  `{x = 1}` meet every conclusion of 4.3's tube statement: `E((0, y), r) = (r, y)` and
+  `E((1, y), r) = (1 − r, y)` map onto the disjoint strips `(−0.9, 0.9) × ℝ` and
+  `(0.99, 1.01) × ℝ`, `ρ(E(q, r)) = r(1 − r)` has the sign of `r`, and `dE(∂_r) = ±e₁` is a unit
+  vector orthogonal to `e₂`. At `(0.8, 0)` the normal coordinate is `0.8`, but the segment to
+  `(1, 0)` lies in `M` and gives `d_M((0.8, 0), ∂M) = 0.2`. With `η = 0.4` on `{x = 0}` and
+  `η = 0.005` on `{x = 1}` the distance is `min(x, 1 − x) = r` on the smaller half-tube, which
+  does not contain `(0.8, 0)`.
 
-*Needs:* 1.4, 4.3; GeometricTopology 1.1 (smooth collars).
+*Needs:* 1.4, 4.3; GeometricTopology 1.1 (smooth collars); Mathlib `SmoothPartitionOfUnity`.
 
 ### 4.5 Convexity functions near a strictly convex boundary point
 
@@ -986,13 +1010,15 @@ over which the unit tangent vectors of the level sets of `r_{∂M}` form a compa
 ### Examples
 
 The ball, its exterior and the half-space for second-order contact and Fermi coordinates; the
+strip `[0, 1] × ℝ` with unequal tube radii (normal coordinate versus distance to `∂M`); the
 quartic `{y ≥ x⁴}` for leaving without strict convexity; the disc for the convexity function `x̃`;
 spherical caps in `S^{n+1}`, `n ≥ 1`, for enlargements.
 
 ### Dependencies
 
 4.1 uses 3.1, 3.5 and HopfRinow Layer 1; 4.2 uses Layer 1, 2.1–2.2 and 4.1; 4.3 uses 1.3, 3.1, 4.1,
-HopfRinow Layers 1–2 and Tau Ceti's normal exponential; 4.4 uses 1.4 and 4.3; 4.5 uses 2.1–2.2 and
+HopfRinow Layers 1–2 and Tau Ceti's normal exponential; 4.4 uses 1.4, 4.3 and Mathlib's partitions
+of unity; 4.5 uses 2.1–2.2 and
 3.1–3.2; 4.6 uses 2.3, 3.1–3.2 and 4.3.
 
 ## Layer 5: Exit time and scattering relation
@@ -1125,10 +1151,11 @@ lines 3110–3113):
 
 - Closed unit disc at `x = (0, −1)`: `τ̃(x, v_θ) = 2 sin θ` for all `θ`, smooth, while `τ|∂SM` has
   one-sided derivatives `2` and `0` at `θ = 0`; `μ/τ̃ = sin θ/(2 sin θ) = 1/2 = II(v, v)/2`.
-- Closed unit ball: `τ(x, v) − τ(x, −v) = −2⟨x, v⟩`, `τ(x, v) τ(x, −v) = 1 − |x|²`, both smooth, and
-  `d/dt(−2⟨x + tv, v⟩) = −2`; Remark 3.2.13's formula returns 6.1's `τ`.
+- Closed unit ball, for `(x, v) ∈ SM`: `τ(x, v) − τ(x, −v) = −2⟨x, v⟩`,
+  `τ(x, v) τ(x, −v) = 1 − |x|²`, both smooth, and `d/dt(−2⟨x + tv, v⟩) = −2|v|² = −2`; Remark
+  3.2.13's formula returns 6.1's unit-speed `τ`.
 - `M = [a, b]`: `τ(x, 1) − τ(x, −1) = a + b − 2x` and `X = d/dx` along the flow gives `−2`.
-- Fold form on the closed unit ball (Remark 3.2.13): `a = 4(⟨x, v⟩² + 1 − |x|²)` and
+- Fold form on the closed unit ball (Remark 3.2.13), on `SM`: `a = 4(⟨x, v⟩² + 1 − |x|²)` and
   `Q(r, x, v) = (−2⟨x, v⟩ + r)/2`, so `Q(√a) = τ(x, v)` and `Q(−√a) = −τ(x, −v)`.
 
 *Needs:* 2.1, 2.3, 4.2, 4.3, 5.1, 5.2, 5.3; Mathlib `ContDiffAt.implicitFunction`,
@@ -1139,7 +1166,9 @@ lines 3110–3113):
 Prove (Paternain–Salo–Uhlmann, Proposition 3.3.1, lines 3081–3106):
 
 - For compact `M` (no convexity assumption): if some `f ∈ C^∞(SM)` has `Xf > 0` on `SM`, then `M` is
-  non-trapping, with `τ ≤ (max f − min f)/min Xf`.
+  non-trapping, and every `(x, v) ∈ SM` satisfies
+  `τ(x, v) ≤ (max_SM f − min_SM f)/min_SM Xf`; the extrema exist because `SM` is compact and
+  contains `(x, v)`, and when `SM` is empty there is no point to bound.
 - Hessian criterion: for compact `M`, if `u` is smooth on an open neighbourhood of `M` in `N` and
   `Hess u` is positive definite at every point of `M`, then `M` is non-trapping (apply the first
   item to `f(x, v) = du_x(v)`, for which `Xf(x, v) = Hess u(v, v)`).
@@ -1153,11 +1182,16 @@ Prove (Paternain–Salo–Uhlmann, Proposition 3.3.1, lines 3081–3106):
 
 **Checks.**
 
-- Closed unit ball with `u = |x|²/2`: `f(x, v) = ⟨x, v⟩`, `Xf = 1`, and the bound gives
-  `τ ≤ (1 − (−1))/1 = 2`, the diameter, attained by diameters.
-- A nonempty compact manifold without boundary (the boundary condition is vacuous): all three
-  conditions fail: `Xf` vanishes at a maximum of `f` on `SM`, the constant `1` is therefore not of
-  the form `Xu`, and `τ ≡ ∞`.
+- Closed unit ball with `u = |x|²/2`: `f(x, v) = ⟨x, v⟩`, `Xf = |v|² = 1` on `SM`, and the bound
+  gives `τ(x, v) ≤ (1 − (−1))/1 = 2` for `(x, v) ∈ SM`, the diameter, attained by diameters.
+- A nonempty compact manifold without boundary (the boundary condition is vacuous): `SM` is
+  nonempty and compact, and all three conditions fail: `Xf` vanishes at a maximum of `f` on `SM`,
+  the constant `1` is therefore not of the form `Xu`, and `τ ≡ ∞` on `SM`.
+- The empty regular domain (`N = ℝ²`, `ρ ≡ −1`, for which `0` is a regular value with empty fibre):
+  `M = ∅` is compact with vacuously strictly convex boundary, `SM = ∅`, `M` is non-trapping,
+  `C^∞(SM)` is a single point on which `X` is surjective, and `Xf > 0` holds vacuously: all three
+  conditions hold, as the equivalence requires, so emptiness is not excluded from it and the
+  closed-manifold Check above needs `M ≠ ∅`.
 - The hemisphere of `S^{n+1}`, `n ≥ 1` (6.3 with `R = π/2`): a great circle in its boundary is a
   geodesic of `M`, so it is trapped, and `II = 0` there; the strict convexity hypothesis is not met.
   For `n = 0` the closed half-circle has strictly convex boundary (vacuously) and is non-trapping,
@@ -1215,12 +1249,18 @@ uses only calculus (Mathlib, Tau Ceti, ComplexKahlerGeometry K5a); 5.4 uses 2.1,
 For `R > 0` and the closed ball `B̄(c, R) = {R² − |x − c|² ≥ 0} ⊆ ℝⁿ⁺¹` with the Euclidean metric
 prove:
 `II = h/R`, `S = R⁻¹ id`, `H = 1/R` (`n ≥ 1`); the boundary is strictly convex; the ball is
-non-trapping with `τ(x, v) = −⟨x − c, v⟩ + √(⟨x − c, v⟩² + R² − |x − c|²)` for unit `v`; on `∂SM`,
+non-trapping with `τ(x, v) = −⟨x − c, v⟩ + √(⟨x − c, v⟩² + R² − |x − c|²)` for `x ∈ B̄(c, R)` and
+`|v| = 1`, hence, by the homogeneity of 5.2,
+`τ(x, v) = (−⟨x − c, v⟩ + √(⟨x − c, v⟩² + |v|²(R² − |x − c|²)))/|v|²` for `v ≠ 0`, and
+`τ(x, 0) = ∞`; on `∂SM`,
 `τ̃(x, v) = −2⟨x − c, v⟩` and `α(x, v) = (x − 2⟨x − c, v⟩ v, v)`; the signed distance to the sphere is
 `R − |x − c|` (Paternain–Salo–Uhlmann, Example 3.2.1, lines 2849–2864, and lines 307–310).
 
 For a compact regular domain `D = {ρ ≥ 0} ⊆ ℝⁿ⁺¹` prove: `D` is non-trapping (5.5 with
-`u = |x|²/2`), and `τ ≤ diam D` since its geodesics are straight segments; if `D` is convex as a subset of `ℝⁿ⁺¹`, then `∂D` is convex; and at
+`u = |x|²/2`), and `τ(x, v) ≤ diam D` for every `(x, v) ∈ SD`, since the geodesic is the segment
+from `x` to `x + τ(x, v) v`, of length `τ(x, v)` with both endpoints in `D`; for `v ≠ 0`,
+`τ(x, v) ≤ diam D/|v|`, and `τ(x, 0) = ∞`. If `D` is convex as a subset of `ℝⁿ⁺¹`, then `∂D` is
+convex; and at
 `q ∈ ∂D`, in Euclidean coordinates with `q = 0` and `ν_in(q) = e₀`, `D = {x₀ ≥ w(x')}` near `0` with
 `w(0) = 0`, `Dw(0) = 0`, and `II_q = D²w(0)` under `T_q∂D = ℝⁿ`; so `∂D` is strictly convex at `q`
 iff `D²w(0)` is positive definite, iff the principal curvatures at `q` are positive
@@ -1230,6 +1270,11 @@ iff `D²w(0)` is positive definite, iff the principal curvatures at `q` are posi
 
 - `R = 1`, `c = 0`: `II = h`, and `H = 1` for `n ≥ 1`; at `x = (0, −1)` in `ℝ²`,
   `τ(x, (cos θ, sin θ)) = sin θ + |sin θ|`, which is `2 sin θ` or `0`.
+- Speed, in the unit ball at `x = 0`: `τ(0, e₁) = 1`, the unit-speed root; `τ(0, e₁/4) = 4` and
+  `τ(0, 0) = ∞`, while the unit-speed root evaluated at `e₁/4` or at `0` still gives `1`, and
+  `4 > diam = 2`. The general-speed formula gives `(0 + √(1/16))/(1/16) = 4`, and the general bound
+  `4 ≤ 2/(1/4) = 8` holds: the root formula and the diameter bound are statements about unit
+  vectors.
 - `R = 0`: `{−|x − c|² ≥ 0} = {c}` and `dρ = −2(x − c)` vanishes at `c`, so `0` is a critical value
   and the singleton is not a regular domain; the hypothesis `R > 0` is what gives `|dρ| = 2R > 0`
   on the sphere.
