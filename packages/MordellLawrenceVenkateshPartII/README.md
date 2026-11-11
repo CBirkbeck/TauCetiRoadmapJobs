@@ -86,9 +86,14 @@ It uses, and does not redevelop:
 - **ReductiveGroupsPartII** §RG2.0.2 owns the analytic manifold structure on the points of a smooth
   group over a characteristic-zero local field; Layer 9 uses it for the Zariski density of open
   subgroups of `SO(E)(ℚ_ℓ)`.
-- **ShimuraData** owns variations of Hodge structure (§3.1), polarized rational and integral
-  variations (§§3.3–3.4), the flat-bundle local comparison (§3.5), the transversality criterion
-  (§3.6), the parabolic of a Hodge filtration (§3.7) and Mumford–Tate groups (§1.2).
+- **ShimuraData** owns variations of Hodge structure (§3.1), their morphisms, kernels and images
+  (§3.2), polarized rational and integral variations (§§3.3–3.4), the flat-bundle local comparison
+  (§3.5), the transversality criterion (§3.6), the parabolic of a Hodge filtration (§3.7) and
+  Mumford–Tate groups with their connectedness and reductivity (§§1.2–1.4). Tau Ceti supplies mixed
+  Hodge structures with their morphisms and the strictness of morphisms for `F` and `W`
+  (`TauCeti.Hodge.MixedHodgeStructure.Hom.range_inf_F_eq_map_F` and its weight-filtration companions);
+  §0.3 applies them fibrewise, and the systems, their local-system gluing and comparisons are owned
+  here.
 - **MotivesAndAlgebraicCycles** §§6.1–6.3 and 6.8 own neutral Tannakian reconstruction and the
   affine faithfully flat torsor of tensor isomorphisms between two fibre functors; PadicHodgeTheory
   §5.5 specializes that torsor to finite-type groups.
@@ -144,8 +149,9 @@ It uses, and does not redevelop:
   **FaltingsFinitenessAndIsogenyTheorems** §R28.5.15 owns Shafarevich finiteness for curves of
   genus at least two.
 - **AbelianSchemesAndArithmeticModuliPartII** Layer B3 owns the o-minimal Ax–Schanuel machinery for
-  Kuga mixed Shimura varieties; the pure Ax–Schanuel theorem for period maps is asked of it in the
-  supplier contracts.
+  Kuga mixed Shimura varieties, and §B2.4 owns polarized fixed parts for families of geometric origin;
+  the pure Ax–Schanuel theorem for period maps and the theorem of the fixed part for every polarized
+  integral variation are asked of it in the supplier contracts.
 
 It leaves to other roadmaps: the general theory of variations of mixed Hodge structure and limiting
 Hodge structures; general relative p-adic Hodge theory beyond the good-reduction proper smooth
@@ -226,6 +232,19 @@ finiteness for the quotient of the hypersurface parameter space by `PGL_(n+1)`.
   commutative Hopf algebra over a field, its points with values in an algebra are the tensor
   automorphisms of the scalar-extended forgetful functor on finitely generated comodules. This is
   reconstruction for a known group, not the torsor theorem for two arbitrary fibre functors.
+- `TauCeti.Hodge.MixedHodgeStructure` (`TauCeti/Geometry/Hodge/Mixed/Basic.lean`, line 72) and
+  `TauCeti.Hodge.MixedHodgeStructure.Hom` (`TauCeti/Geometry/Hodge/Mixed/Morphism.lean`, line 77): a
+  mixed Hodge structure on an integral carrier with rational and complex base-change models, a finite
+  rational weight filtration and a finite complex Hodge filtration whose weight-graded pieces are pure,
+  and morphisms as rational maps preserving `W` whose complexification preserves `F`. No finiteness of
+  the carriers and no polarization are included. Strictness
+  (`TauCeti/Geometry/Hodge/Mixed/Strictness.lean`):
+  `TauCeti.Hodge.MixedHodgeStructure.Hom.range_inf_F_eq_map_F` (line 110), `im f ∩ F'^p = f(F^p)`;
+  `TauCeti.Hodge.MixedHodgeStructure.Hom.range_inf_WC_eq_map_WC` (line 118), the same for the
+  complexified weight filtration; `TauCeti.Hodge.MixedHodgeStructure.Hom.range_inf_WQ_eq_map_WQ`
+  (line 131), `im f ∩ W'_k = f(W_k)` rationally. Mixed Hodge structures form an abelian category
+  (`TauCeti.Hodge.MixedHodgeStructureCat.abelian`, `TauCeti/Geometry/Hodge/Mixed/Abelian.lean`,
+  line 33). Applied fibrewise in §0.3; local systems, connections and comparisons are not part of it.
 - `TauCeti.AlgebraicGeometry.AbelianVariety` (`TauCeti/AlgebraicGeometry/AbelianVariety/Basic.lean`):
   an abelian variety over a field, bundled as a proper geometrically integral group scheme, with
   derived smoothness, geometric connectedness and commutativity. There is no abelian scheme over a
@@ -348,7 +367,12 @@ finiteness for the quotient of the hypersurface parameter space by `PGL_(n+1)`.
 
 - Layer B2 §B2.6 (semirational Pila–Wilkie block counting) and Layer B3 (definable uniformization
   and the Ax–Schanuel theorem for Kuga mixed Shimura varieties) are the o-minimal machinery on
-  which the following request rests.
+  which the Ax–Schanuel request below rests.
+- §B2.4 (polarized fixed parts): for polarized integral variations from smooth proper complex
+  algebraic families over a smooth connected quasi-projective base, the invariant local system is a
+  constant Hodge subvariation, and the identity component of the Zariski closure of monodromy is
+  semisimple. The request below extends it beyond geometric origin. Consumed in §3.1.
+- What AbelianSchemesAndArithmeticModuliPartII must provide (gap:polarized-fixed-part): the theorem of the fixed part for every polarized integral variation of Hodge structure on a smooth connected complex quasi-projective variety, not only for those of geometric origin: the global flat sections form a sub-Hodge structure of every fibre that is independent of the fibre after parallel transport, so a polarized integral variation with trivial monodromy is constant.
 - What AbelianSchemesAndArithmeticModuliPartII must provide (gap:period-map-ax-schanuel): the Ax–Schanuel theorem for pure polarized integral variations of Hodge structure (Bakker–Tsimerman) in the monodromy-orbit form: for such a variation on a smooth irreducible complex algebraic variety `X`, with `D_mon` the orbit, in the flag variety of a reference fibre, of the identity component of the Zariski closure of monodromy through a Hodge filtration, every irreducible analytic component `U` of the intersection of an algebraic subvariety `W ⊂ X × D_mon` with the graph of a local lift of the period map satisfies `codim_(X×D_mon) U ≥ codim_(X×D_mon) W + codim_(X×D_mon)(graph)` unless the projection of `U` to `X` lies in a proper weakly special subvariety of `X`; all codimensions are taken in `X × D_mon`, not in the product with a larger compact dual.
 
 ### From TauCetiRoadmap.MotivesAndAlgebraicCycles
@@ -589,9 +613,17 @@ proof shows that morphisms are strict for `F` and `W` and that componentwise ker
 again satisfy the axioms (LS, Definition 5.11, p. 43, and Lemma 5.12, p. 44).
 
 Strictness of morphisms of mixed Hodge structures and exactness of Fontaine's functors on crystalline
-representations give the kernels and cokernels with their comparisons. Faithfulness of the fibre
-functor uses connectedness of `X(ℂ)`; rigidity and `End(1) = ℚ` are checked before the reconstruction
-of MotivesAndAlgebraicCycles §6.2 is applied.
+representations give the kernels and cokernels with their comparisons. Strictness is applied fibrewise:
+at each complex point a morphism of systems is a morphism `TauCeti.Hodge.MixedHodgeStructure.Hom` of
+the fibres, and `TauCeti.Hodge.MixedHodgeStructure.Hom.range_inf_F_eq_map_F`,
+`TauCeti.Hodge.MixedHodgeStructure.Hom.range_inf_WQ_eq_map_WQ` and
+`TauCeti.Hodge.MixedHodgeStructure.Hom.range_inf_WC_eq_map_WC` give `im f ∩ F^p = f(F^p)` and
+`im f ∩ W_k = f(W_k)`; a rational fibre is presented on that carrier by any ℤ-lattice spanning it, and
+no flat integral lattice on `X` is assumed. The ranks of the induced filtrations on kernels and
+cokernels are then locally constant by the argument of ShimuraData §3.2 on each `gr^W_k`, and the
+gluing of these fibrewise statements into systems with their comparisons is the work of this target.
+Faithfulness of the fibre functor uses connectedness of `X(ℂ)`; rigidity and `End(1) = ℚ` are checked
+before the reconstruction of MotivesAndAlgebraicCycles §6.2 is applied.
 
 API:
 
@@ -607,8 +639,16 @@ API:
   fibre at a point of one component is not faithful; connectedness is necessary.
 - The kernel of a morphism of pure Hodge systems carries the induced strict Hodge filtration, not an
   arbitrary filtration of the same dimensions.
+- Strictness is needed beyond the pure case. For the projection `f : ℚ(0) ⊕ ℚ(−1) → ℚ(−1)`, which is
+  not a morphism between pure objects of one weight, `im f ∩ F¹` and `f(F¹)` both have dimension 1, and
+  `im f ∩ W₀` and `f(W₀)` both have dimension 0. The identity of `ℚ` viewed as a map `ℚ(0) → ℚ(−1)`
+  preserves `F` (the source has `F¹ = 0`) but is not strict, as `im ∩ F¹` has dimension 1 and the image
+  of `F¹` dimension 0; it is not a morphism, because it sends `W₀ = ℚ` into `W₀ = 0`.
 
-*Needs:* §0.1; MotivesAndAlgebraicCycles §§6.1–6.2; PadicHodgeTheory §§3.3–3.5; ShimuraData §3.2.
+*Needs:* §0.1; MotivesAndAlgebraicCycles §§6.1–6.2; PadicHodgeTheory §§3.3–3.5; ShimuraData §3.2;
+`TauCeti.Hodge.MixedHodgeStructure.Hom.range_inf_F_eq_map_F`,
+`TauCeti.Hodge.MixedHodgeStructure.Hom.range_inf_WQ_eq_map_WQ`,
+`TauCeti.Hodge.MixedHodgeStructure.Hom.range_inf_WC_eq_map_WC`.
 
 ### 0.4 Constant arithmetic systems
 
@@ -747,7 +787,10 @@ ShimuraData §§3.1–3.4; ComplexComparisonPartII §§C5.2–C5.3, C5.6; PadicH
 7.3, 8.1–8.2; EtaleCohomologyFoundations §F.3; ClassicalAdicEtaleCohomology §8.2; CrystallineCohomology
 §CR.7.3; MotivesAndAlgebraicCycles §§6.1–6.3, 6.8;
 DeligneWeightsAndPurity §§0.1–0.2, 0.7, 0.9, 4.3–4.4; WeilConjectures Layer WC.3;
-MordellLawrenceVenkatesh §§2.5–2.6, 2.11.
+MordellLawrenceVenkatesh §§2.5–2.6, 2.11; Tau Ceti mixed Hodge strictness
+(`TauCeti.Hodge.MixedHodgeStructure.Hom.range_inf_F_eq_map_F`,
+`TauCeti.Hodge.MixedHodgeStructure.Hom.range_inf_WQ_eq_map_WQ`,
+`TauCeti.Hodge.MixedHodgeStructure.Hom.range_inf_WC_eq_map_WC`).
 
 ## Layer 1: Arithmetic coefficient systems
 
@@ -1368,8 +1411,11 @@ of nonabelian cohomology with twisting.
 
 - `H¹(ℚ_p, GL_n)` is trivial (Hilbert 90).
 - `H¹(ℚ_p, μ₂) = ℚ_p^×/ℚ_p^(×2)` has four elements for `p` odd and eight for `p = 2`.
-- `H¹(ℚ_p, O_n)` classifies nondegenerate quadratic forms of dimension `n`; it is finite but not a
-  single point.
+- `H¹(ℚ_p, O_n)` classifies nondegenerate quadratic forms of dimension `n`; it is finite for every `n`
+  and every `p`, including `p = 2`, and for `n ≥ 1` it is not a single point. At `n = 1`, `O₁ = μ₂`
+  gives the forms `a x²` with `a ∈ ℚ_p^×/ℚ_p^(×2)`: four classes over `ℚ₃` and eight over `ℚ₂`. At
+  `n = 0` the only quadratic space is zero and `O₀ = 1`, so `H¹(ℚ_p, O₀)` is a single point; the
+  finiteness theorem keeps this case.
 - In `G = GL₂` over `ℚ₃`, the maximal tori geometrically conjugate to the diagonal torus `T` form four
   `GL₂(ℚ₃)`-classes, the split torus and the tori `Res_(L/ℚ₃) 𝔾_m` for `L = ℚ₃(√2)`, `ℚ₃(√3)` and
   `ℚ₃(√6)` (one per quadratic étale `ℚ₃`-algebra, `|ℚ₃^×/ℚ₃^(×2)| = 4`). The normalizer `N = T ⋊ C₂` has
@@ -1401,26 +1447,61 @@ over an arbitrary number field, through formal completion at a `K_v`-point, Rüc
 
 ### 3.1 Periods in a single monodromy orbit
 
-For a Hodge–Deligne system on `X` with differential monodromy group `G_mon` (§0.6), prove that the local
-complex period maps and the p-adic period map `Φ_p` of §0.7, after the fibre identifications of §0.6,
-take values in one orbit `D_mon` of `G_mon` on the flag variety of the reference fibre: the orbit is cut
-out by the horizontal tensors of the tensor category generated by the connection, which every Hodge
-filtration respects. Over a field that is not algebraically closed the identifications use the torsor of
-tensor isomorphisms, and no rational trivialization is chosen without an existence argument (LS,
-Lemma 6.1, pp. 63–64).
+For a polarized integral Hodge–Deligne system on `X` (§0.2) with differential monodromy group `G_mon`
+(§0.6), prove that every local lift of the complex period map and the p-adic period map `Φ_p` of §0.7 on
+a residue disk, after the fibre identifications of §0.6, take values in one orbit of `G_mon` on the flag
+variety of the reference fibre, and each of them in one orbit `D_mon` of the identity component
+`G_mon°`, the connected monodromy period orbit of §§3.2–3.4. Over a field that is not algebraically
+closed the identifications use the torsor of tensor isomorphisms, and no rational trivialization is
+chosen without an existence argument (LS, Lemma 6.1, pp. 63–64).
+
+The complex statement comes first (LS line 2910). A route: transported to the reference fibre, the Hodge
+cocharacters at the points of the universal cover of `X(ℂ)` factor through the generic Mumford–Tate group
+`M`, connected and reductive, and are `M(ℂ)`-conjugate, because conjugacy classes of cocharacters are
+discrete; on a finite étale cover the monodromy lies in `G_mon°`, which is normal in `M^der`
+(gap:andre-monodromy-normality); the Lie algebra of the centralizer `H′` of `G_mon°` in `M^der` is then a
+polarized integral subvariation of `End(V)` with trivial monodromy, so its Hodge structure is constant by
+the theorem of the fixed part (gap:polarized-fixed-part); as `M^ad = (G_mon°)^ad × (H′)^ad` and the
+image of a Hodge cocharacter in the torus `M/M^der` is constant, any two Hodge cocharacters differ by
+conjugation by `G_mon°(ℂ)`. The transfer to `Φ_p` is the torsor argument of LS lines 2913–2939. The torsor
+`P_V → X_(K′)` of tensor isomorphisms between the fibre functors at a point and at the reference point
+`x₀`, on the category generated by `(V_dR, ∇)` (MotivesAndAlgebraicCycles §6.8), carries the
+`G_mon`-equivariant morphism `Φ_P : P_V → Flag(V_(x₀))` sending `φ : V_x ≅ V_(x₀)` to `φ(F_x)`, and the
+complex and p-adic period maps are `Φ_P ∘ ι_ℂ` and `Φ_P ∘ ι_p` for the sections `ι_ℂ`, `ι_p` obtained by
+integrating the connection. Each complex fibre of `P_V` is one `G_mon(ℂ)`-orbit and meets the image of
+`ι_ℂ`, so by equivariance the image of `Φ_P` is one `G_mon`-orbit; as an inclusion of constructible
+images of morphisms over `K′` this holds over every algebraically closed field containing `K′`, hence
+for `Φ_p`. That orbit is a finite disjoint union of `G_mon°`-orbits of equal dimension, each open and
+closed in it, and a residue disk is connected. The torsor respects the tensor structure of the
+connection, not the Hodge filtrations: a horizontal tensor need not be a Hodge tensor.
 
 **Checks.**
 
-- For a constant system the period map is constant and `D_mon` is a point.
-- A flag of the right dimensions that does not respect a horizontal tensor is not in `D_mon`. For a
-  weight-one variation of rank four with flat symplectic form `B` and basis `e₁, e₂, f₁, f₂`,
-  `B(e_i, f_j) = δ_ij`, the plane `span(e₁, f₁)` has `B(e₁, f₁) = 1`, so it is not isotropic and is not
-  a Hodge filtration in `D_mon`, while `span(e₁, e₂)` is Lagrangian. A line cannot serve as this
-  negative control: every line is isotropic for an alternating form.
+- For a constant system `G_mon` is trivial, the period map is constant and `D_mon` is a point.
+- Horizontal tensors do not cut out `D_mon`. For the constant family `E₀ × X` with `E₀ = ℂ/ℤ[i]` (the
+  curve `y² = x³ − x`) and `H¹` with rational basis `e₁, e₂` dual to `1, i`, `F¹ = ℂ(e₁ + i e₂)` and
+  `D_mon = {F¹}`. Every rational endomorphism is horizontal, and `A = diag(1, 0)` sends `e₁ + i e₂` to
+  `e₁ ∉ F¹` (the determinant of `(1, i)` and `(1, 0)` is `−i ≠ 0`); no line is preserved by every
+  horizontal endomorphism, while the orbit argument gives the one-point orbit.
+- A flag that does not respect a horizontal Hodge tensor is not in `D_mon`: `G_mon` fixes every global
+  horizontal tensor, so each point of `D_mon` respects the horizontal tensors that the reference Hodge
+  filtration respects, such as the polarization. For a weight-one variation of rank four with flat
+  polarization `B` and basis `e₁, e₂, f₁, f₂`, `B(e_i, f_j) = δ_ij`, the plane `span(e₁, f₁)` has
+  `B(e₁, f₁) = 1`, so it is not isotropic and is not a Hodge filtration in `D_mon`, while `span(e₁, e₂)`
+  is Lagrangian. A line cannot serve as this negative control: every line is isotropic for an
+  alternating form.
+- Polarization is needed in the complex step. The isotropic planes of `Σ x_i²` in `ℂ⁴` of one ruling
+  form a `ℙ¹`; on this `ℙ¹` take the constant local system `ℚ⁴` with `F¹` the tautological plane. If
+  `v ∈ F¹ ∩ F̄¹` then `v̄ ∈ F¹` and isotropy gives `Σ v_i v̄_i = Σ |v_i|² = 0`, so `v = 0`: every fibre is a
+  weight-one Hodge structure, transversality is automatic and the monodromy is trivial, yet the period
+  map embeds `ℙ¹` and leaves the one-point orbit. No flat form polarizes it: a polarized family would be
+  a nonconstant holomorphic map from `ℙ¹` to a bounded Siegel domain.
 - For the Legendre family `D_mon` is the full `ℙ¹` of lines in `H¹`, the Lagrangian period variety of
   MordellLawrenceVenkatesh §3.8 in rank two.
 
-*Needs:* §§0.6–0.7, 2.5; MotivesAndAlgebraicCycles §6.8; ShimuraData §§3.5–3.6.
+*Needs:* §§0.2, 0.6–0.7, 2.5; MotivesAndAlgebraicCycles §6.8; ShimuraData §§1.2–1.4, 3.4–3.6 with
+gap:andre-monodromy-normality; AbelianSchemesAndArithmeticModuliPartII §B2.4 with
+gap:polarized-fixed-part; ReductiveGroups Layer 4.
 
 ### 3.2 Parabolic stabilizers of period orbits
 
@@ -1551,9 +1632,9 @@ coefficients. In dimension zero a point is dense in itself, so positive base dim
 
 ### Dependencies
 
-Layers 0 and 2; ShimuraData §§1.2, 3.4–3.7; MotivesAndAlgebraicCycles §6.8;
-AbelianSchemesAndArithmeticModuliPartII Layer B3; ComplexKahlerGeometry K3 §3.4; RestrictedPowerSeries
-§§2.1, 5.2; MordellLawrenceVenkatesh §§2.5–2.6, 2.8.
+Layers 0 and 2; ShimuraData §§1.2–1.4, 3.4–3.7; MotivesAndAlgebraicCycles §6.8; ReductiveGroups
+Layer 4; AbelianSchemesAndArithmeticModuliPartII §B2.4 and Layer B3; ComplexKahlerGeometry K3 §3.4;
+RestrictedPowerSeries §§2.1, 5.2; MordellLawrenceVenkatesh §§2.5–2.6, 2.8.
 
 ## Layer 4: Balanced monodromy and semisimple fibres
 
@@ -1706,16 +1787,19 @@ For an algebraic group `S` in characteristic zero with reductive identity compon
 `a_S = X_*(Z(S°)°) ⊗ ℚ`, identified with the ℚ-dual of `X^*(S°) ⊗ ℚ` through the central pairing; these
 geometric spaces are computed over an algebraic closure and keep their Galois action, rational
 cocharacters giving invariant classes. The **central weight** `w_S(μ)` of a rational cocharacter `μ` is
-its projection to `a_S`. For a Levi `M ⊂ G`, restriction of characters gives a canonical inclusion
-`ι_(GM) : a_G → a_M` splitting the opposite projection. The **modular character** of a parabolic `P` is
-`γ_P = det(Ad | Lie P)⁻¹`, paired additively with cocharacters (LS, Definition 8.4, pp. 74–75; LV,
-§§11.1–11.2, pp. 985–986).
+its projection to `a_S`. For a Levi `M ⊂ G`, the inclusion of connected centres `Z(G°)° ⊂ Z(M°)°`
+gives the canonical inclusion `ι_(GM) : a_G → a_M` (LS line 3391), while restriction of characters
+`X^*(G°) → X^*(M°)` gives, dually, the projection `pr_(MG) : a_M → a_G`; they split one another,
+`pr_(MG) ∘ ι_(GM) = id`, and `w_G(μ) = pr_(MG)(w_M(μ))` for a cocharacter `μ` of `M`. The **modular
+character** of a parabolic `P` is `γ_P = det(Ad | Lie P)⁻¹`, paired additively with cocharacters (LS,
+Definition 8.4, pp. 74–75; LV, §§11.1–11.2, pp. 985–986).
 
 API:
 
 - `a_S` is the space of rational central cocharacters, paired with rational characters.
 - A cocharacter has a well-defined central weight in `a_S`.
-- `ι_(GM)` splits the projection `a_M → a_G` and is compatible with restriction of characters.
+- `ι_(GM)` comes from the centres and `pr_(MG)` is dual to restriction of characters;
+  `pr_(MG) ∘ ι_(GM) = id`, and `⟨ι_(GM)(λ), χ|_M⟩ = ⟨λ, χ⟩` for every character `χ` of `G°`.
 
 **Checks.**
 
@@ -1724,6 +1808,11 @@ API:
 - For semisimple `S`, `a_S = 0`.
 - For the upper triangular Borel of `GL₂`, `γ_P(diag(a, b)) = a⁻¹b`; for `μ(t) = diag(t, 1)`,
   `⟨γ_P, μ⟩ = −1`.
+- Direction of the maps, for `GL₂` and its diagonal Levi `T`: in scalar-cocharacter coordinates
+  `ι_(GM)(a) = (a, a)` and `pr_(MG)(x, y) = (x + y)/2`, so `1 ↦ (1, 1) ↦ 1`, and `(1, 0)` projects to
+  `1/2`, the central weight of `diag(t, 1)`. Restriction sends `det` to `(1, 1)`; its dual, in the
+  coordinate dual to `det`, is `(x, y) ↦ x + y`, a map `a_T → a_G`, so restriction of characters cannot
+  produce the inclusion.
 
 *Needs:* §2.5; ReductiveGroups Layers 4, 7.
 
@@ -2284,8 +2373,10 @@ This layer computes the classical adjoint profiles of twisted abelian hypersurfa
 enough independent factors satisfy the coefficient inequalities; it derives the primitive Hodge numbers
 of projective hypersurfaces, their Eulerian asymptotics and the large-dimension, large-degree
 Lawrence–Venkatesh inequalities. Throughout, `A(n, q)` is the Eulerian number of
-ClassicalArithmeticCompletion §2.18, extended by zero outside `0 ≤ q < n`; `Suggested.lean` restates it
-as `eulerian`.
+ClassicalArithmeticCompletion §2.18, the number of permutations of `Fin n` with `q` descents, defined for
+all `n, q ∈ ℕ`; `Suggested.lean` restates it as `eulerian`. For `n ≥ 1` it vanishes outside `0 ≤ q < n`,
+while for `n = 0` the empty permutation gives `A(0, 0) = 1` and `A(0, q) = 0` for `q ≥ 1`. Every
+statement of this layer has `n ≥ 2`, where the two descriptions agree.
 
 ### 8.1 Classical adjoint profiles from Eulerian multiplicities
 
@@ -2373,6 +2464,10 @@ computations.
 - Equality holds at `n = 2` (`2·2 = 4 = 2!²`) and at `n = 3` (`2·18 = 36 = 3!²`).
 - At `n = 4`: `2·(1 + 121 + 121 + 1) = 488 ≤ 576`.
 - At `n = 1` the inequality `2·1 ≤ 1` fails, so `n ≥ 2` is necessary.
+- At `n = 0` the empty permutation and the empty sum differ: `Σ_(q<0) A(0, q)²` is the empty sum `0`,
+  so the denominator-free form reads `0 ≤ 1`, whereas `Σ_q A(0, q)² = A(0, 0)² = 1` gives `β₀ = 1 > 1/2`.
+  The range `q < n` captures the whole row only for `n ≥ 1`, and the hypothesis `n ≥ 2` keeps `n = 0`
+  out of the statement.
 - The tail comparison is strict `<`; reversing it gives no contradiction.
 
 *Needs:* §8.3.

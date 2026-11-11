@@ -4636,6 +4636,12 @@
       "needs": "for a crystalline representation `ρ : G_K → GL(V)` of a finite unramified `K/ℚ_p` preserving a family of tensors, the Zariski closure of `ρ(G_K)` contains a torus that is conjugate over `ℚ̄_p`, inside the group fixing those tensors, to the image of the Hodge cocharacter of `D_dR(V)` (Sen; Wintenberger's tensor-compatible splitting).",
       "supplier": "PadicHodgeTheory",
       "section": "§4.4"
+    },
+    {
+      "slug": "polarized-fixed-part",
+      "needs": "the theorem of the fixed part for every polarized integral variation of Hodge structure on a smooth connected complex quasi-projective variety, not only for those of geometric origin: the global flat sections form a sub-Hodge structure of every fibre that is independent of the fibre after parallel transport, so a polarized integral variation with trivial monodromy is constant.",
+      "supplier": "AbelianSchemesAndArithmeticModuliPartII",
+      "section": "§B2.4"
     }
   ],
   "sourceIssues": [
