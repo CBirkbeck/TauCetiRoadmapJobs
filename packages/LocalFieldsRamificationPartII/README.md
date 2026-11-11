@@ -1,6 +1,6 @@
 # Roadmap: local fields and ramification, part ii: general valued fields
 
-**Summary.** This roadmap extends [Local fields and ramification](../LocalFieldsRamification/README.md)
+**Summary.** This roadmap extends [Local fields and ramification](../../Completed/LocalFieldsRamification/README.md)
 from nonarchimedean local fields to fields with an arbitrary Krull valuation: valuations of any
 height, with any ordered value group, on fields that need not be complete or henselian and whose
 residue fields need not be perfect. Starting from Mathlib's valuation subrings, decomposition and
@@ -16,26 +16,30 @@ residue characteristic exponent `p` and no nontrivial finite extension of `p`-po
 that is, every algebraic extension is tame at every prolongation — and its separable form: a field
 without nontrivial finite separable extension of `P`-number degree is separably tame at every
 valuation whose residue characteristic lies in `P`. On the way it proves the Kuhlmann–Pank–Roquette
-splitting `Kᵗ ⊗_K K_w ≅ Kᵃ` over henselian fields and in height one, and the two profinite inputs
-of that splitting: `cd_p(G_F) ≤ 1` in characteristic `p`, and sections of profinite surjections with
-pro-`p` kernel onto groups of `p`-cohomological dimension at most one.
+splitting `Kᵗ ⊗_K K_w ≅ Kᵃ` over henselian fields and in height one, and the profinite input of
+that splitting that no library has: sections of profinite surjections with pro-`p` kernel onto
+groups of `p`-cohomological dimension at most one; the other input, `cd_p(G_F) ≤ 1` for fields of
+characteristic `p`, is ProfiniteCohomology's.
 
 ## Scope and ownership
 
-The base roadmap, Local fields and ramification, stops at finite extensions of nonarchimedean local
+The base roadmap, LocalFieldsRamification, stops at finite extensions of nonarchimedean local
 fields: discrete valuations, finite residue fields and the formula `[L : K] = e·f`. This Part II
-owns the general theory below; its comparison with the base roadmap is §2.9.
+owns the general theory below; its comparison with the base roadmap, and with
+RamificationOfCompleteDiscretelyValuedFields, is §2.9.
 
 **Owned here.** Prime-supported degrees, `P`-extensions, `P`-closed and separably `P`-closed
 fields and split towers (Layer 0); normalization and prolongations of a valuation in a finite
 extension, the behaviour of valuation rings under étale maps and henselization, the
-henselization of a valued field, the tensor decomposition `L ⊗_K Kʰ ≅ ∏ L_wʰ`, and finite
-presentation of flat finite-type algebras and modules over valuation rings and Prüfer domains
-(Layer 1); the étale criterion for unramified extensions, the ramification tower, the six extension
-classes, tame and separably tame fields, their tower laws and the comparison with perfection
-(Layer 2); the characteristic-`p` bound `cd_p(G_F) ≤ 1`, the section theorem for pro-`p` kernels, maximal
-extensions with prescribed ramification, the elementary complements, the splitting equivalences and
-the Kuhlmann–Pank–Roquette theorem (Layer 3); the rank-one Krasner and root-continuity bridge,
+henselization of a valued field, the tensor decomposition `L ⊗_K Kʰ ≅ ∏ L_wʰ`, the homogenization
+of finite-type algebras and finite modules, finite presentation of flat graded algebras and modules
+over a ring with finitely many primes detecting zero, and finite presentation of flat finite-type
+algebras and modules over valuation rings and Prüfer domains (Layer 1); the étale criterion for
+unramified extensions, the ramification tower, the six extension classes, tame and separably tame
+fields, their tower laws and the comparison with perfection, with local fields and with complete
+discretely valued fields (Layer 2); the section theorem for pro-`p` kernels, maximal extensions
+with prescribed ramification, the elementary complements, the splitting equivalences and the
+Kuhlmann–Pank–Roquette theorem (Layer 3); the rank-one Krasner and root-continuity bridge,
 decompletion and the height-one splitting and tameness theorems (Layer 4); composed valuations,
 finite-height coarsening chains, the Abhyankar inequality and the height bound, and the composition
 criteria (Layer 5); and the general tameness theorem with its separable export (Layer 6).
@@ -47,7 +51,7 @@ criteria (Layer 5); and the general tameness theorem with its separable export (
   `TauCeti.Henselization.existsUnique_isLocalHom`, `TauCeti.Henselization.map`,
   `TauCeti.Henselization.indEtale`, `TauCeti.Henselization.directLimitEquiv`,
   `TauCeti.Henselization.algEquivOfRadicalEq`); the henselization at a prime, integral base change
-  and products over pairwise coprime ideals are Scheme and stack foundations §0.12
+  and products over pairwise coprime ideals are SchemeAndStackFoundations §0.12
   (`henselization_at_prime`) and §0.13 (`henselization_integral_base_change`,
   `henselization_coprime_product`). This roadmap proves that the henselization of a valuation ring
   is a valuation ring and builds the valued field on it (§§1.2–1.3); it defines no second
@@ -64,32 +68,42 @@ criteria (Layer 5); and the general tameness theorem with its separable export (
   Sylow pro-`p` subgroup) is ClassicalAdicEtaleCohomology §5.3. §§1.2 and 2.2–2.3, and the targets
   that rest on the tame closure, use them.
 - Finite extensions of nonarchimedean local fields, their unramified, totally ramified, tame and wild
-  classes, wild inertia `P_K`, the tame character and arithmetic Frobenius are Local fields and
-  ramification, Layers 2–4. §2.9 compares them with the general classes and proves nothing about
-  local fields that the base roadmap states.
+  classes, wild inertia `P_K`, the tame character and arithmetic Frobenius are LocalFieldsRamification,
+  Layers 2–4. §2.9 compares them with the general classes and proves nothing about local fields that
+  the base roadmap states.
+- Finite extensions of complete discretely valued fields with arbitrary residue field, their integer
+  rings, unramified and totally ramified classes, lower and upper ramification filtrations, the
+  different and Herbrand functions are RamificationOfCompleteDiscretelyValuedFields, Layers 3a–4a.
+  §2.9 compares its unramified and totally ramified extensions with the classes here and states
+  nothing about filtrations.
 - Decomposition and inertia subgroups of a valuation subring are Mathlib's
   `ValuationSubring.decompositionSubgroup` and `ValuationSubring.inertiaSubgroup`; coarsenings and
   their inverse laws are Mathlib's `ValuationSubring.ofPrime` and `ValuationSubring.idealOfLE`;
   convex subgroups and coarsening of a valuation by a convex subgroup are Tau Ceti's
   `TauCeti.ConvexSubgroup` and `Valuation.coarsenByUnits`; the Krasner property is Mathlib's
-  `IsKrasner`.
-- Profinite Sylow theory (Profinite and pro-`p` groups, Layer 2) and the equality of `cd_p` of a
-  profinite group with that of its Sylow pro-`p` subgroups (Layer 6 of the same roadmap) are at the
-  pinned Tau Ceti: `TauCeti.IsProPSylow`, `TauCeti.exists_isProPSylow`,
+  `IsKrasner`, and continuity of roots over a normed field in one direction is Mathlib's
+  `Polynomial.exists_aroots_norm_sub_lt_of_norm_coeff_sub_lt`.
+- Profinite Sylow theory (ProfiniteProPGroups, Layer 2) and the equality of `cd_p` of a profinite
+  group with that of its Sylow pro-`p` subgroups (ProfiniteProPGroups, Layer 6) are at the pinned
+  Tau Ceti: `TauCeti.IsProPSylow`, `TauCeti.exists_isProPSylow`,
   `TauCeti.IsProPSylow.exists_map_conj_eq`, `TauCeti.IsProPSylow.eq_of_normal`,
   `TauCeti.IsProPSylow.map_of_surjective` and `TauCeti.IsProPSylow.cohomologicalDimensionAt_eq`.
   The invariant `cd_p` itself, its reduction to finite coefficients and its monotonicity on closed
-  subgroups are Continuous cohomology of profinite groups, Layer 11, implemented as Tau Ceti's
+  subgroups are ProfiniteCohomology, Layer 11, implemented as Tau Ceti's
   `TauCeti.cohomologicalDimensionAt`. The finite embedding problems with `p`-group kernel, their
-  finite-level solutions and the inverse-limit lifting (Profinite and pro-`p` groups, Layer 5) and
-  the passage from `cd_p ≤ 1` to their solvability (Layer 6 of the same roadmap) are at the pinned
+  finite-level solutions and the inverse-limit lifting (ProfiniteProPGroups, Layer 5) and the
+  passage from `cd_p ≤ 1` to their solvability (ProfiniteProPGroups, Layer 6) are at the pinned
   Tau Ceti as well: `TauCeti.HasPGroupSolutions`,
   `TauCeti.exists_continuous_lift_of_compatible_levelSolutions` and
-  `TauCeti.CohomologicalDimensionLE.hasElementaryAbelianSolutions`; §3.2 proves only the
+  `TauCeti.CohomologicalDimensionLE.hasElementaryAbelianSolutions`; §3.1 proves only the
   compatibility of the level solutions for a pro-`p` kernel.
-- Descent of finite presentation and of étaleness from the source of a faithfully flat morphism
-  (EGA IV, 17.7.5(iv) and 17.7.7) belongs to Scheme and stack foundations, Layer 1; §2.1 uses it
-  through the supplier contract below.
+- The bound `cd_p(G_F) ≤ 1` for every field `F` of characteristic `p`, from the Artin–Schreier
+  sequence and the vanishing of `Hⁱ(G_F, Fˢ)` for `i ≥ 1`, belongs to ProfiniteCohomology, Layer 9,
+  through the supplier contract below; §3.5 applies it to the residue field. The additive Hilbert 90
+  `H¹(G_F, Fˢ) = 0` is at the pinned Tau Ceti (`TauCeti.additiveHilbert90`).
+- Descent of finite presentation and descent of étaleness from the source of a faithfully flat
+  morphism (EGA IV, 17.7.5(iv) and 17.7.7) belong to SchemeAndStackFoundations, Layer 1; §2.1 uses
+  them through the two supplier contracts below.
 
 ## Conventions
 
@@ -121,7 +135,10 @@ criteria (Layer 5); and the general tameness theorem with its separable export (
   property is a Zorn-maximal intermediate field of `Kᵃ/K`; it is neither canonical nor normal.
 - **Tame and totally ramified.** Tame fields follow Temkin: `K` is tame when `Kᵃ = Kᵗ`, with no
   henselian hypothesis, and separably tame when `Kˢ = Kᵗ`. Totally ramified permits a purely
-  inseparable residue extension; the condition `f = 1` is the local-field specialization (§2.9).
+  inseparable residue extension. For finite extensions of complete discretely valued fields,
+  RamificationOfCompleteDiscretelyValuedFields §3a.1 calls an extension totally ramified when
+  `f = 1`; that implies total ramification here, and the two disagree exactly when the residue
+  extension is nontrivial and purely inseparable, so they agree for local fields (§2.9).
   The degree formula `[L : K] = e·f` is asserted only for finite tame extensions of henselian fields.
 - **Galois groups.** `G_K` is Mathlib's `Field.absoluteGaloisGroup K` with the Krull topology,
   identified with `Gal(Kˢ/K)` through Tau Ceti's `TauCeti.absoluteGaloisGroupRestrictEquiv`.
@@ -148,9 +165,21 @@ criteria (Layer 5); and the general tameness theorem with its separable export (
   valuation rings, hence of residue fields, and the induced order embedding of value groups.
 - `Valuation.RankOne`, `Mathlib/RingTheory/Valuation/RankOne.lean`: an order embedding of the value
   group into `ℝ≥0` for a nontrivial valuation; used in §4.1.
-- `IsKrasner`, `IsKrasner.krasner`, `IsKrasner.of_completeSpace_of_normal`,
-  `Mathlib/Analysis/Normed/Field/Krasner.lean`: the Krasner property, proved there for a complete
-  ultrametric base and a normal extension. §4.1 proves it without completeness of the base.
+- `IsKrasner`, `IsKrasner.krasner`, `IsKrasner.of_completeSpace_of_normal` and the instance
+  `IsKrasner.of_completeSpace`, `Mathlib/Analysis/Normed/Field/Krasner.lean`: the Krasner property,
+  proved there for a complete nontrivially normed ultrametric base and an algebraic (in the first
+  form, normal) extension whose norm extends that of the base. §4.1 proves it for a henselian base
+  without completeness.
+- `NormedField.valuation`, `Mathlib/Topology/Algebra/Valued/NormedValued.lean`: the `ℝ≥0`-valued
+  valuation `x ↦ ‖x‖₊` of an ultrametric normed field, whose valuation subring is `{x | ‖x‖ ≤ 1}`;
+  used in §4.1 to say that a normed field is henselian.
+- `Polynomial.exists_roots_norm_sub_lt_of_norm_coeff_sub_lt` and
+  `Polynomial.exists_aroots_norm_sub_lt_of_norm_coeff_sub_lt`,
+  `Mathlib/Analysis/Normed/Field/Approximation.lean`: continuity of roots over a normed field: for
+  monic `f`, `g` of the same degree whose coefficients differ by less than `ε`, and `g` split, every
+  root `a` of `f` is within `((deg f + 1)·ε)^{1/deg f}·max(‖a‖, 1)` of some root of `g`. It has no
+  Krull-valued form, no statement from the roots of `g` to those of `f`, and no uniqueness of the
+  paired root; §4.1 proves those.
 - `IntermediateField.LinearDisjoint`, `IntermediateField.LinearDisjoint.isField_of_isAlgebraic`,
   `Algebra.TensorProduct.isField_of_isAlgebraic`, `Mathlib/FieldTheory/LinearDisjoint.lean`, and
   `IntermediateField.linearDisjoint_of_isPurelyInseparable_of_isSeparable`,
@@ -169,7 +198,15 @@ criteria (Layer 5); and the general tameness theorem with its separable export (
   and `Algebra.FinitePresentation.of_finitePresentation_tensorProduct_of_faithfullyFlat`,
   `Mathlib/RingTheory/Finiteness/Descent.lean`: descent of étaleness and finite presentation along a
   faithfully flat base change. They are descent along the base, not from the source of a faithfully
-  flat morphism, which is the separate contract with Scheme and stack foundations below.
+  flat morphism, which is the separate contract with SchemeAndStackFoundations below.
+- `Algebra.FinitePresentation`, `Mathlib/RingTheory/FinitePresentation.lean`;
+  `Module.FinitePresentation`, `Mathlib/Algebra/Module/FinitePresentation.lean`;
+  `Module.Flat.flat_iff_torsion_eq_bot_of_valuationRing_localization_isMaximal`,
+  `Mathlib/RingTheory/Flat/TorsionFree.lean` (over a domain whose localizations at maximal ideals
+  are valuation rings, a module is flat exactly when it is torsion free; it says nothing about finite
+  presentation); `HomogeneousLocalization.Away`,
+  `Mathlib/RingTheory/GradedAlgebra/HomogeneousLocalization.lean` (the degree-zero part `S_(f)` of
+  the localization of a graded ring at a homogeneous element). Used in §1.5.
 
 ### From Tau Ceti
 
@@ -206,10 +243,15 @@ criteria (Layer 5); and the general tameness theorem with its separable export (
   pro-`p` hypothesis on `A`); `TauCeti.HasPGroupSolutions.exists_compatible_levelSolutions`,
   `TauCeti.isProjective_of_hasPGroupSolutions` and `TauCeti.IsProjective.exists_continuous_lift`
   (`Projective.lean`: the compatible family and the lift when the source `A` is pro-`p`). Used in
-  §3.2, which supplies the compatible family for a pro-`p` kernel instead.
+  §3.1, which supplies the compatible family for a pro-`p` kernel instead.
 - `Subgroup.exists_minimal_isClosed_le`, `TauCeti/Topology/Algebra/Group/ClosedSubgroup.lean`: a
   closed subgroup of `A × G`, with `A` compact, projecting onto `G` contains a minimal closed
-  subgroup projecting onto `G`. Used in §3.2.
+  subgroup projecting onto `G`. Used in §3.1.
+- `TauCeti.linearDisjoint_fieldRange_of_isIntegrallyClosedIn`,
+  `TauCeti/FieldTheory/Minpoly/IsIntegrallyClosedIn.lean`: for fields `k ⊆ F` with `k` relatively
+  algebraically closed in `F` (`IsIntegrallyClosedIn k F`) and a separable extension `k′/k`, the
+  image of `k′` in any common overfield `E` (with compatible scalar towers) is linearly disjoint from
+  `F` over `k`. Used in §6.3.
 - `TauCeti.ConvexSubgroup` (`TauCeti/Algebra/Order/Group/ConvexSubgroup.lean`: convex subgroups of
   a linearly ordered group, totally ordered by inclusion, with ordered quotients) and
   `Valuation.coarsenByUnits` (`TauCeti/RingTheory/Valuation/Coarsen.lean`: the coarsening of a
@@ -249,7 +291,8 @@ criteria (Layer 5); and the general tameness theorem with its separable export (
   of `R'` along `IR'` is `R' ⊗_R Rʰ`) and `henselization_coprime_product` (the henselization along
   `I_1 ∩ ⋯ ∩ I_n` with the `I_i` pairwise coprime is the product of the henselizations along the
   `I_i`). Assumed exactly as stated there.
-- What SchemeAndStackFoundations must provide (gap:source-side-fpqc-descent): Descent from the source of a faithfully flat morphism: for `f : X → Y` faithfully flat and locally of finite presentation and `g : Y → Z` with `g ∘ f` of finite presentation, g is of finite presentation when f is quasi-compact or g quasi-separated (EGA IV, Lemma 17.7.5(iv)), and for S-morphisms `g : X → Y` of schemes locally of finite presentation over S that are flat at x, étaleness of `X → S` at x implies étaleness of `Y → S` at `g(x)` (EGA IV, Proposition 17.7.7).
+- What SchemeAndStackFoundations must provide (gap:source-side-fpqc-descent): for `f : X → Y` faithfully flat and locally of finite presentation and `g : Y → Z` with `g ∘ f` of finite presentation, `g` is of finite presentation when `f` is quasi-compact or `g` is quasi-separated (EGA IV, Lemma 17.7.5(iv)).
+- What SchemeAndStackFoundations must provide (gap:source-side-etale-descent): for `S`-schemes `X` and `Y` locally of finite presentation over `S`, an `S`-morphism `g : X → Y` flat at a point `x` and `X → S` étale at `x`, the morphism `Y → S` is étale at `g(x)` (EGA IV, Proposition 17.7.7).
 
 ### From TauCetiRoadmap.ClassicalAdicEtaleCohomology
 
@@ -282,10 +325,29 @@ criteria (Layer 5); and the general tameness theorem with its separable export (
   wild inertia `wildInertia`, the tame character and its arithmetic-Frobenius convention.
   These are used only in the comparison §2.9.
 
+### From TauCetiRoadmap.RamificationOfCompleteDiscretelyValuedFields
+
+- §3a.1: for a finite Galois extension `L/K` of complete discretely valued fields with arbitrary
+  residue field, the integer ring of `L` is a complete discrete valuation ring free of rank `[L : K]`
+  over that of `K`, so `[L : K] = e·f`; an intermediate field `F` is unramified over `K` when
+  `e(F/K) = 1` and its residue extension is separable, and `L` is totally ramified over an
+  intermediate field when the residue degree is `1`. Used only in the comparison §2.9.
+
+### From TauCetiRoadmap.ProfiniteProPGroups
+
+- Layer 2 (profinite Sylow theory: existence, conjugacy, normal Sylow subgroups, images under
+  continuous surjections), Layer 5, items 5.1–5.6 (finite embedding problems, solvability with
+  elementary abelian and with `p`-group kernel, compatible systems of finite-level solutions and the
+  inverse-limit lifting for a pro-`p` source), and Layer 6 (Serre's theorem, step 1: `cd_p G ≤ 1`
+  solves the elementary abelian problems; `cd_p` of a profinite group equals that of its Sylow
+  pro-`p` subgroups). All are at the pinned Tau Ceti under the names in the Tau Ceti contract above.
+  Used in §§2.2, 3.1 and 3.5.
+
 ### From TauCetiRoadmap.ProfiniteCohomology
 
 - Layer 11: the invariant `cd_p`, `cd_p_le_iff_finite_pPrimary` (it suffices to test degree
-  `n + 1` on finite `p`-primary modules) and `cd_p_le_of_isClosed`. Used in §§3.1–3.2 and §3.6.
+  `n + 1` on finite `p`-primary modules) and `cd_p_le_of_isClosed`. Used in §§3.1 and 3.5.
+- What ProfiniteCohomology must provide (gap:char-p-galois-h2-vanishing): for every prime `p` and every field `F` of characteristic `p`, `H²(G_F, ℤ/p) = 0` for the trivial module, so that `TauCeti.cohomologicalDimensionAt p (Field.absoluteGaloisGroup F) ≤ 1`, from the Artin–Schreier sequence `0 → 𝔽_p → Fˢ → Fˢ → 0` and the vanishing of `Hⁱ(G_F, Fˢ)` for `i ≥ 1` (Serre, *Galois Cohomology*, II §2.2, Proposition 3 and Corollary 1).
 
 ## How to read the build
 
@@ -296,8 +358,9 @@ Layer 2 builds the ramification tower `Kʰ ⊆ Kᵘ ⊆ Kᵗ ⊆ Kˢ`, defines t
 tame fields, and proves their tower laws; the tame part of the tower rests on the structure of
 henselian fields with separably closed residue field, imported from ClassicalAdicEtaleCohomology
 §5.3. Above Layer 2 the build has two independent branches, which meet only in Layer 6. The first
-reduces the splitting of `Kᵃ/Kᵗ/K` to profinite group theory: Layer 3 proves the two profinite
-inputs and, with them, the splitting over henselian fields, and Layer 4 uses rank-one approximation
+reduces the splitting of `Kᵃ/Kᵗ/K` to profinite group theory: Layer 3 proves the section theorem
+for pro-`p` kernels and, with it and the bound `cd_p(G_κ) ≤ 1` of ProfiniteCohomology for the
+residue field, the splitting over henselian fields, and Layer 4 uses rank-one approximation
 to descend from `Kʰ` to `K` and so extends the splitting and the tameness of `p`-closed fields to
 height one. The second, Layer 5, composes valuations, controls finite height and proves the
 Abhyankar inequality; it uses only Layers 1 and 2 and none of Layers 3–4, so it can be built before,
@@ -306,6 +369,19 @@ proves tameness of `p`-closed fields by induction on finite height, with the hei
 Layer 4 and the inductive step from Layer 5, and by descent to subfields of finite transcendence
 degree through Layer 5's height bound, and it exports the separable statement. Each target's
 *Needs:* line lists what its statement and its proof route use; a different route may need less.
+
+Layer `k` is also cited as `GF.k`, for `k = 0, …, 6`, and its targets as `GF.k/<name>`; the table
+gives the section of each such identifier.
+
+| Former identifier | Section here |
+|---|---|
+| `GF.0` | Layer 0: `prime-supported-degree` §0.1; `p-extensions` §0.2; `p-closed` and `separably-p-closed` §0.3; `maximal-p-extension` §0.4; `split-tower` §0.5 |
+| `GF.1` | Layer 1: `normalization-and-prolongations` §1.1; `valued-henselization` §§1.2–1.3; `henselian-tensor-decomposition` §1.4 |
+| `GF.2` | Layer 2: `unramified-etale-criterion` §2.1; `ramification-tower` §2.2; `unramified-extension` and `strictly-unramified-extension` §2.3; `tame-extension` §2.4; `henselian-extension` and `henselian-disjointness` §2.5; `totally-ramified-extension` and `purely-wild-extension` §2.6; `tame-field` and `separably-tame-field` §2.7; `tower-laws` §2.8; `local-field-comparison` §2.9; `perfection-tame-tower` §2.10 |
+| `GF.3` | Layer 3: `maximal-ramification-extension` §3.2; `elementary-complements` §3.3; `splitting-equivalences` §3.4; `henselian-pank` §3.5 |
+| `GF.4` | Layer 4: `rank-one-krasner` §4.1; `rank-one-decompletion` §4.2; `maximal-wild-henselization` §4.3; `rank-one-pank` §4.4; `rank-one-p-closed` §4.5 |
+| `GF.5` | Layer 5: `composed-valuation` §5.1; `finite-height-chain` §5.2; `abhyankar-and-rank` §5.3; `unramified-composition` §5.4; `tame-composition` §5.5; `tame-field-composition` §5.6 |
+| `GF.6` | Layer 6: `p-closed-residue-divisibility` §6.1; `finite-height-tameness` §6.2; `finite-height-descent` §6.3; `general-tameness` §6.4; `separable-p-closed-tameness` §6.5 |
 
 ## Layer 0: prime-supported extensions and split towers
 
@@ -429,8 +505,9 @@ isomorphism with the prescribed factor maps gives a splitting.
 ### Examples
 
 `ℚ(2^{1/3})/ℚ` is a `{3}`-extension that is not normal (§0.2); `𝔽_q` is neither `P`-closed nor
-separably `P`-closed for any nonempty `P` (§0.3); the separable closure of `𝔽_p(t)` separates the two
-closedness predicates (§0.3); `ℚ(√2, √3)/ℚ(√2)/ℚ` splits (§0.5).
+separably `P`-closed for any `P` containing a prime, while for `P = {1}` or `P = {4}`, which contain
+no prime, the only `P`-number is `1` and `𝔽_q` is `P`-closed (§§0.1, 0.3); the separable closure
+of `𝔽_p(t)` separates the two closedness predicates (§0.3); `ℚ(√2, √3)/ℚ(√2)/ℚ` splits (§0.5).
 
 ### Dependencies
 
@@ -485,8 +562,7 @@ the value group of `A` and residue field the chosen separable closure of `κ_A` 
 ClassicalAdicEtaleCohomology §5.1; with the local map `TauCeti.StrictHenselization.fromHenselization`,
 `A ⊆ Aʰ ⊆ Aˢʰ` are then extensions of valuation rings inducing bijections on value groups.
 *Needs:* Tau Ceti `TauCeti.Henselization.algebra`, `TauCeti.Henselization.residueField_map_bijective`,
-`TauCeti.StrictHenselization.algebra`, `TauCeti.StrictHenselization.fromHenselization`; Scheme and
-stack foundations §0.12 (`henselization_at_prime`); ClassicalAdicEtaleCohomology §5.1; Mathlib
+`TauCeti.StrictHenselization.algebra`, `TauCeti.StrictHenselization.fromHenselization`; SchemeAndStackFoundations §0.12 (`henselization_at_prime`); ClassicalAdicEtaleCohomology §5.1; Mathlib
 `ValuationRing`, `Algebra.Etale`.
 
 **Checks.**
@@ -523,7 +599,7 @@ gives that of `Kʰ`, and for henselian `V` the structure map `V → Vʰ` is bije
 
 *Needs:* §1.2; Tau Ceti `TauCeti.Henselization.algebra`, `TauCeti.Henselization.henselianLocalRing`,
 `TauCeti.Henselization.existsUnique_isLocalHom`, `TauCeti.Henselization.bijective_algebraMap_of_henselianRing`,
-`TauCeti.Henselization.map`; Scheme and stack foundations §0.12 (`henselization_at_prime`); Mathlib
+`TauCeti.Henselization.map`; SchemeAndStackFoundations §0.12 (`henselization_at_prime`); Mathlib
 `HenselianLocalRing`, `FractionRing`.
 
 **Checks.**
@@ -545,7 +621,7 @@ semilocal with localizations the `w_i` (§1.1); `henselization_integral_base_cha
 `henselization_coprime_product` splits the result into the henselizations of the pairs `(B, 𝔪_i)`,
 and the universal property (`TauCeti.Henselization.existsUnique_lift`) identifies each with the
 henselization of the local ring `B_{𝔪_i}`; invert the nonzero elements of `V`. *Needs:* §§1.1–1.3;
-Scheme and stack foundations §0.13 (`henselization_integral_base_change`,
+SchemeAndStackFoundations §0.13 (`henselization_integral_base_change`,
 `henselization_coprime_product`); Tau Ceti `TauCeti.Henselization.algEquivOfRadicalEq`,
 `TauCeti.Henselization.existsUnique_lift`.
 
@@ -559,30 +635,81 @@ Scheme and stack foundations §0.13 (`henselization_integral_base_change`,
 
 ### 1.5 Flat finite-type algebras and modules over valuation rings and Prüfer domains
 
-Let `A` be a valuation ring, `B` a finite-type `A`-algebra and `M` a finite `B`-module. Prove: if `B`
-is flat over `A`, then `B` is a finitely presented `A`-algebra; and if `M` is flat as an `A`-module,
-then `M` is a finitely presented `B`-module (Stacks, Lemma 15.26.6, tag 053E). The flatness
-hypothesis of the second statement is on `M`, not on `B`.
+*Homogenization.* For a ring `R`, an `R`-algebra `B` of finite type and a finite `B`-module `M`,
+prove that there are a graded `R`-algebra `S = ⊕_{n≥0} S_n` with `S_0 = R`, generated as an
+`R`-algebra by finitely many elements of `S_1`, an element `f ∈ S_1` and a finite graded `S`-module
+`N` with `B ≅ S_(f)` as `R`-algebras and `M ≅ N_(f)` as `B`-modules, where `S_(f)` and `N_(f)` are
+the degree-zero parts of the localizations at `f` (`HomogeneousLocalization.Away`); and that if `S`
+is a finitely presented `R`-algebra then so is `S_(f)`, and if `N` is a finitely presented
+`S`-module then `N_(f)` is a finitely presented `S_(f)`-module (Stacks, Lemma 15.26.6, tag 053E,
+first step of its proof, which quotes Algebra, Lemma 10.57.10). Route: for generators
+`x_1, …, x_n` of `B` take `S_0 = R` and `S_d = B_{≤d}·T^d` for `d ≥ 1` inside `R ⊕ T·B[T]`, where
+`B_{≤d}` is the image of the polynomials of degree at most `d`, and `f = T`; build `N` in the same
+way from generators of `M`. Because `f` has degree one and is a unit in `S_f`, the map
+`S_(f)[T, T⁻¹] → S_f`, `T ↦ f`, is an isomorphism and `N_f ≅ N_(f) ⊗_{S_(f)} S_f`; so `S_(f)` is
+`S_f/(f − 1)` and `N_(f)` is `N_f/(f − 1)N_f`, finitely presented whenever `S_f` and `N_f` are.
+*Needs:* Mathlib `HomogeneousLocalization.Away`, `Algebra.FinitePresentation`,
+`Module.FinitePresentation`.
+
+**Checks.**
+- For `B = R` and `M = 0`: `S = R[X_0]`, `f = X_0`, `S_(f) = R` and `N = 0`.
+- For `R` a field, `B = R[x]` and `M = B`: `S = R[X_0, X_1]`, `f = X_0`, `S_(f) = R[X_1/X_0] ≅ R[x]`
+  and `N = S`.
+- For `R = ℤ` and `B = 𝔽₂`: `S = ℤ[X]/(2X)` has `S_0 = ℤ` and `S_d = 𝔽₂·X^d` for `d ≥ 1`, and
+  `S_(X) = 𝔽₂`; the relation of `B` is visible only in positive degrees.
+- The degree-zero part cannot be replaced by the whole localization: for `S = R[X_0]`,
+  `S_{X_0} = R[X_0, X_0⁻¹]` is a Laurent polynomial ring over `S_(X_0) = R`, not `R`.
+
+*Graded finite presentation.* Let `R` be a ring with finitely many primes `𝔭_1, …, 𝔭_m` such that
+`R → ∏_j R_{𝔭_j}` is injective, `S = ⊕_{n≥0} S_n` a graded `R`-algebra of finite type with `S_0`
+finite over `R`, and `N = ⊕_{d∈ℤ} N_d` a graded `S`-module. Prove that if `S` is flat over `R` then
+`S` is a finitely presented `R`-algebra, and that if `N` is flat over `R` and finite over `S` then
+`N` is a finitely presented `S`-module (Stacks, Lemma 15.26.4, tag 053D). The hypothesis on `R`
+holds for local rings, Noetherian rings and domains (Remark 15.26.5, tag 05GS (1)–(3)). Route: `S`
+is finite over a graded polynomial ring `P = R[x_1, …, x_n]` with generators of positive degree, so
+both statements reduce to finite presentation over `P` of a finite graded `P`-module flat over `R`;
+this holds after localizing at each prime of `R` (Stacks, Lemma 15.26.3, tag 053C, for a local base)
+and descends to `R` through the finitely many primes `𝔭_j` (Stacks, Lemma 15.26.1, tag 053A).
+*Needs:* Mathlib `Module.Flat`, `Algebra.FinitePresentation`, `Module.FinitePresentation`.
+
+**Checks.**
+- Over a field `R`, `S = R[X_1, X_2]` and `N = S/(X_1)` are flat over `R` and finitely presented.
+- The hypothesis on `R` cannot be dropped: for `R = ∏_ℕ 𝔽₂` and `I = ⊕_ℕ 𝔽₂`, every localization of
+  `R` at a prime is `𝔽₂`, so `R → ∏_j R_{𝔭_j}` factors through `𝔽₂^m` and is never injective; and
+  `S = R[X]/(I·X)`, with `S_0 = R` and `S_d = (R/I)·X^d` for `d ≥ 1`, is of finite type and flat
+  (every module over `R` is flat) but not finitely presented, since the kernel `I·X·R[X]` of
+  `R[X] → S` would be finitely generated only if `I` were.
+- Flatness cannot be dropped: for a nondiscrete valuation ring `R` (local, so the hypothesis on `R`
+  holds) with maximal ideal `𝔪`, `S = R[X]/(𝔪X)` is of finite type with `S_0 = R`, is not flat
+  (`X` is killed by `𝔪`) and is not finitely presented, since `𝔪` is not finitely generated.
+
+*Valuation rings and Prüfer domains.* Let `A` be a valuation ring, `B` a finite-type `A`-algebra and
+`M` a finite `B`-module. Prove: if `B` is flat over `A`, then `B` is a finitely presented
+`A`-algebra; and if `M` is flat as an `A`-module, then `M` is a finitely presented `B`-module
+(Stacks, Lemma 15.26.6, tag 053E). The flatness hypothesis of the second statement is on `M`, not on
+`B`.
 
 Prove the same two statements for a Prüfer domain `A` (a domain whose localization at every maximal
-ideal is a valuation ring): for `B` a finite-type `A`-algebra flat over `A`, `B` is finitely
-presented over `A`; for `B` a finite-type `A`-algebra and `M` a finite `B`-module flat as an
-`A`-module, `M` is finitely presented over `B`. The algebra statement is the case of a domain of the
-theorem that a flat finite-type algebra over a domain is finitely presented (Raynaud and Gruson
+ideal is a valuation ring), of which the valuation-ring statements are the local case:
+`finitePresentation_of_flat_of_valuationRing_localization` (for `B` a finite-type `A`-algebra flat
+over `A`, `B` is finitely presented over `A`) and
+`module_finitePresentation_of_flat_of_valuationRing_localization` (for `B` a finite-type
+`A`-algebra and `M` a finite `B`-module flat as an `A`-module, with compatible `A`- and
+`B`-actions, `M` is finitely presented over `B`). The algebra statement is the case of a domain of
+the theorem that a flat finite-type algebra over a domain is finitely presented (Raynaud and Gruson
 1971, Corollaire 3.4.7; invoked at this step in Temkin 2017, proof of Lemma 2.3.8, p. 106). Route
-for both statements, by homogenization as in the proof of Stacks tag 053E: over a Prüfer domain an
-`A`-module is flat exactly when it is torsion free
-(`Module.Flat.flat_iff_torsion_eq_bot_of_valuationRing_localization_isMaximal`); write `B = S_(f)`
-and `M = N_(f)` with `S` a graded `A`-algebra generated by finitely many elements of degree one with
-`S_0 = A`, `f ∈ S_1` and `N` a finite graded `S`-module; replace `S` by its quotient by its
-`A`-torsion in the algebra case and `N` by its quotient by its `A`-torsion in the module case
-(Stacks, Lemma 15.22.2, tag 0537), which changes neither `B` nor `M` since they are torsion free;
-the quotient is torsion free, hence flat over `A`, so it is finitely presented by Stacks, Lemma
-15.26.4, tag 053D, whose hypothesis on the base holds for every domain (Remark 15.26.5, tag 05GS
-(3)); dehomogenize. The valuation-ring case does not localize to the Prüfer case: finite
-presentation of a finite-type algebra is not detected at the localizations at the maximal ideals of
-the base (the Boolean-ring Check below); the route localizes only flatness. *Needs:* Mathlib
-`ValuationRing`, `Module.Flat`, `Module.Flat.flat_iff_torsion_eq_bot_of_valuationRing_localization_isMaximal`,
+for both statements, as in the proof of Stacks tag 053E: over a Prüfer domain an `A`-module is flat
+exactly when it is torsion free
+(`Module.Flat.flat_iff_torsion_eq_bot_of_valuationRing_localization_isMaximal`); homogenize,
+`B = S_(f)` and `M = N_(f)`; replace `S` by its quotient by its `A`-torsion in the algebra case and
+`N` by its quotient by its `A`-torsion in the module case (Stacks, Lemma 15.22.2, tag 0537), which
+changes neither `B` nor `M` since they are torsion free; the quotient is torsion free, hence flat
+over `A`, so it is finitely presented by graded finite presentation, whose hypothesis on the base
+holds for every domain; dehomogenize. The valuation-ring case does not localize to the Prüfer case:
+finite presentation of a finite-type algebra is not detected at the localizations at the maximal
+ideals of the base (the Boolean-ring Check below); the route localizes only flatness. *Needs:*
+homogenization and graded finite presentation above; Mathlib `ValuationRing`, `Module.Flat`,
+`Module.Flat.flat_iff_torsion_eq_bot_of_valuationRing_localization_isMaximal`,
 `Algebra.FinitePresentation`, `Module.FinitePresentation`.
 
 **Checks.**
@@ -609,9 +736,9 @@ is a non-flat finite-type algebra that is not finitely presented (§1.5).
 
 ### Dependencies
 
-Layer 0 is not used. Tau Ceti's henselization and strict henselization; Scheme and stack foundations
+Layer 0 is not used. Tau Ceti's henselization and strict henselization; SchemeAndStackFoundations
 §§0.12–0.13; ClassicalAdicEtaleCohomology §5.1 (§1.2); Mathlib valuation rings, integral closure,
-étale algebras and flatness.
+étale algebras, flatness, finite presentation and homogeneous localization (§1.5).
 
 ## Layer 2: the ramification tower and the six extension classes
 
@@ -628,8 +755,8 @@ descent from the source along `Spec A′ → Spec A` (EGA IV, 17.7.5(iv) and 17.
 `A` étale over `V` at the point under consideration, and `W` is a localization of `A`. At finite
 height `Spec V` is finite, so the localization is obtained by inverting one element. *Needs:*
 §§1.1–1.3 and §1.5; §2.3 for the definition; Tau Ceti `TauCeti.StrictHenselization.algebra`,
-`TauCeti.StrictHenselization.exists_stage_eq`, `TauCeti.StrictHenselization.map`; Scheme and stack
-foundations (gap:source-side-fpqc-descent).
+`TauCeti.StrictHenselization.exists_stage_eq`, `TauCeti.StrictHenselization.map`;
+SchemeAndStackFoundations (gap:source-side-fpqc-descent, gap:source-side-etale-descent).
 
 **Checks.**
 - `K/K` is unramified and `V` is étale over itself.
@@ -848,19 +975,42 @@ Ceti `TauCeti.Henselization.directLimitEquiv`.
   `s` is a `7`-adic square root of `2`.
 - Degrees are not preserved by arbitrary base change: `ℚ(√2) ⊗ ℚ_7` is not a field.
 
-### 2.9 Comparison with local fields
+### 2.9 Comparison with local fields and complete discretely valued fields
 
 For finite extensions of nonarchimedean local fields, prove that the classes of this layer agree with
-those of Local fields and ramification: unramified exactly when `e = 1` (`IsUnramified K L`), totally
+those of LocalFieldsRamification: unramified exactly when `e = 1` (`IsUnramified K L`), totally
 ramified exactly when `f = 1`, tame exactly when `p ∤ e` (`IsTamelyRamified K L`), and that `W` of
 §2.2 is the wild inertia `wildInertia` of Layer 4 there, with the character pairing of
 ClassicalAdicEtaleCohomology §5.3 (ii) restricting
 to its tame character and arithmetic Frobenius acting by `x ↦ x^q`. Route: a local field is
 henselian with perfect residue field and its finite extensions satisfy `[L : K] = e·f`; substitute
-in §§2.3–2.6. *Needs:* §§2.2–2.8; ClassicalAdicEtaleCohomology §5.3; Local fields and ramification,
+in §§2.3–2.6. *Needs:* §§2.2–2.8; ClassicalAdicEtaleCohomology §5.3; LocalFieldsRamification,
 Layers 2–4.
 
+For a finite separable extension `L/K` of complete discretely valued fields with arbitrary residue
+field, the setting of RamificationOfCompleteDiscretelyValuedFields §3a.1, prove that `L/K` is
+unramified here exactly when `e = 1` and `κ_L/κ_K` is separable, which is the notion of unramified
+there; that `L/K` is totally ramified here exactly when `κ_L/κ_K` is purely inseparable; hence that
+`f = 1`, which is total ramification there, implies total ramification here, and that the two
+notions of total ramification differ exactly when `κ_L/κ_K` is nontrivial and purely inseparable.
+Route: `K` is henselian, so every algebraic extension of `K` is a henselian extension and §2.6 gives
+the second statement; for the first, `L ⊆ Kᵘ` gives `e = 1` and a separable residue extension by
+§2.3, and conversely the unramified extension `M ⊆ Kᵘ` with residue field `κ_L` (§2.3) embeds in `L`
+over `K` with degree `f`, which is `[L : K]` because `[L : K] = e·f` (§3a.1 there for a Galois
+closure `L′` of `L/K`, with `e` and `f` multiplicative in `L′/L/K` and `e·f` at most the degree in
+each step), so `L` is the image of `M` under a `K`-embedding and lies in `Kᵘ`, which is normal over
+the henselian `K` (`I` is normal in `D = G_K`, §2.2). *Needs:* §§2.2–2.3, §2.6;
+RamificationOfCompleteDiscretelyValuedFields §3a.1.
+
 **Checks.**
+- Over `K = 𝔽_p(s)((t))` let `L = K(y)` with `y^p − y = s·t^{−p}`. With `z = t·y`,
+  `z^p − t^{p−1}·z = s`, so `κ_L = 𝔽_p(s^{1/p})`, `e = 1` and `f = p = [L : K]`. `L/K` is Galois of
+  degree `p` and `L ⊄ Kᵘ`, since its residue extension is inseparable, so `L ∩ Kᵘ = K` and `L` is
+  linearly disjoint from `Kᵘ`: `L/K` is totally ramified here and, with `f = p`, not totally
+  ramified in the sense of RamificationOfCompleteDiscretelyValuedFields §3a.1. It is unramified in
+  neither sense.
+- `𝔽_{p²}((t))/𝔽_p((t))` has `e = 1` and separable `f = 2`: unramified in both senses and totally
+  ramified in neither.
 - `ℚ_p(p^{1/ℓ})/ℚ_p` with `ℓ ≠ p` prime is tame in both senses, with `e = ℓ`.
 - The convention of arithmetic Frobenius is the supplier's: on the unramified extension `ℚ_p(ζ_ℓ)`,
   `ℓ ≠ p`, the arithmetic Frobenius sends `ζ_ℓ` to `ζ_ℓ^p`, not to `ζ_ℓ^{p⁻¹}`.
@@ -897,31 +1047,13 @@ wild of degree `p` (§2.6).
 
 Layer 1; Layer 0 for `{p}`-extensions (§2.6) and `P`-closedness under perfection (§2.10);
 ClassicalAdicEtaleCohomology §§5.1 and 5.3; Tau Ceti's strict henselization, directed colimits of
-henselizations and Sylow theory; Scheme and stack foundations, the descent gap (§2.1); Local fields
-and ramification Layers 2–4 (§2.9 only); Mathlib decomposition and inertia subgroups.
+henselizations and Sylow theory; SchemeAndStackFoundations, the two descent gaps (§2.1);
+LocalFieldsRamification Layers 2–4 and RamificationOfCompleteDiscretelyValuedFields §3a.1 (§2.9
+only); Mathlib decomposition and inertia subgroups.
 
-## Layer 3: profinite inputs and the splitting theorem over henselian fields
+## Layer 3: sections through pro-`p` kernels and the splitting theorem over henselian fields
 
-### 3.1 The cohomological dimension of `G_F` in characteristic `p`
-
-Prove `cohomologicalDimensionAt_absoluteGaloisGroup_le_one`: for a prime `p` and every field `F` of
-characteristic `p`, `TauCeti.cohomologicalDimensionAt p (Field.absoluteGaloisGroup F) ≤ 1`, for all
-discrete `p`-primary torsion coefficients (Serre, *Galois Cohomology*, II §2.2, Proposition 3
-and its Corollary 1; cited for this purpose in Kuhlmann–Pank–Roquette 1986, p. 44). Route: the
-Artin–Schreier sequence `0 → 𝔽_p → Fˢ → Fˢ → 0`, `x ↦ x^p − x`, is exact; `Hⁱ(G_F, Fˢ) = 0` for
-`i ≥ 1` by the additive normal basis theorem and passage to the limit over finite Galois
-subextensions; hence `Hⁱ(G_F, 𝔽_p) = 0` for `i ≥ 2`, and the same for every closed subgroup, which
-gives `cd_p ≤ 1` by reduction to `𝔽_p` coefficients. *Needs:* Tau Ceti
-`TauCeti.cohomologicalDimensionAt`; Continuous cohomology of profinite groups, Layer 11
-(`cd_p_le_iff_finite_pPrimary`, `cd_p_le_of_isClosed`); Mathlib `Field.absoluteGaloisGroup`,
-`CharP`.
-
-**Checks.**
-- For `F = 𝔽_p`, `G_F = Ẑ` and `cd_p Ẑ = 1`: the bound is attained.
-- For `F` separably closed of characteristic `p`, `G_F = 1` and `cd_p = 0`.
-- For `F = ℚ_p` (characteristic `0`) the statement does not apply, and indeed `cd_p G_{ℚ_p} = 2`.
-
-### 3.2 Sections through pro-`p` kernels
+### 3.1 Sections through pro-`p` kernels
 
 Prove `exists_continuous_section_of_isProP_ker`: for a prime `p` and a continuous surjective
 homomorphism `f : E → G` of profinite groups whose kernel is pro-`p` (`TauCeti.IsProP`), if
@@ -959,9 +1091,8 @@ which assumes nothing pro-`p` about `E`. When `E` is itself pro-`p` the whole st
 `TauCeti.CohomologicalDimensionLE.hasElementaryAbelianSolutions`,
 `TauCeti.HasElementaryAbelianSolutions.hasPGroupSolutions`, `TauCeti.LevelSolution`,
 `TauCeti.levelSolutionMap`, `TauCeti.exists_continuous_lift_of_compatible_levelSolutions`,
-`Subgroup.exists_minimal_isClosed_le`; Profinite and pro-`p` groups, Layer 5 (§§5.1–5.6) and
-Layer 6 (Serre's theorem, step 1); Continuous cohomology of profinite groups, Layer 11
-(`cd_p_le_iff_finite_pPrimary`).
+`Subgroup.exists_minimal_isClosed_le`; ProfiniteProPGroups, Layer 5 (items 5.1–5.6) and Layer 6
+(Serre's theorem, step 1); ProfiniteCohomology, Layer 11 (`cd_p_le_iff_finite_pPrimary`).
 
 **Checks.**
 - For `G = ℤ_p` (`cd_p = 1`, free pro-`p`) every extension by a pro-`p` group splits.
@@ -973,7 +1104,7 @@ Layer 6 (Serre's theorem, step 1); Continuous cohomology of profinite groups, La
   `TauCeti.IsProjective.exists_continuous_lift`, which needs a pro-`p` source, does not cover this
   case: step (b) of the route is what is proved here.
 
-### 3.3 Maximal extensions with prescribed ramification
+### 3.2 Maximal extensions with prescribed ramification
 
 For any set `S` of the six properties of Layer 2, prove that every subextension of `Kᵃ/K` with all
 properties in `S` is contained in a maximal one, and likewise inside `Kˢ` (Temkin 2017, Lemma
@@ -993,21 +1124,26 @@ properties in `S` is contained in a maximal one, and likewise inside `Kˢ` (Temk
   (otherwise `G_{ℚ_p}` would be the direct product of `W` and `Gal(Kᵗ/ℚ_p)`), so some conjugate of it
   is a different maximal one.
 
-### 3.4 Unramified and tame complements
+### 3.3 Unramified and tame complements
 
 Prove: if `K_hu/K` is maximal among henselian unramified extensions, then multiplication gives
 `Kʰ ⊗_K K_hu ≅ Kᵘ`; if `K_rt/K` is maximal among tame totally ramified extensions, then
 `Kᵘ ⊗_K K_rt ≅ Kᵗ` (Temkin 2017, Lemma 2.4.4, pp. 107–108). Route: disjointness holds by definition;
 maximality forces the residue field of `K_hu` to be separably closed and the value group of `K_rt` to
-be the prime-to-`p` divisible hull of `Γ_K`. *Needs:* §0.5, §§2.2–2.6, §3.3.
+be the prime-to-`p` divisible hull of `Γ_K`. *Needs:* §0.5, §§2.2–2.6, §3.2.
 
 **Checks.**
 - With the trivial valuation the first complement is `Kˢ` and the second is `K`.
 - For `ℚ_p`, `K_hu` is the maximal unramified extension and one choice of `K_rt` is generated by a
   compatible system of roots `p^{1/n}`, `p ∤ n`.
-- Each identity requires injectivity of the tensor map, not only the compositum equality.
+- The tensor identity is stronger than the compositum equality. For `K = ℚ_3`, the tame totally
+  ramified `F = ℚ_3(√3)` has `e = 2` and `F ∩ Kᵘ = K`, and `Kᵘ ⊗_K F → Kᵘ(√3)` is bijective, both
+  sides of dimension `2` over `Kᵘ`. The unramified quadratic `F′ = ℚ_3(√−1)` (`−1` is not a square
+  modulo `3`) is tame with `F′·Kᵘ = Kᵘ`, but `Kᵘ ⊗_K F′ ≅ Kᵘ × Kᵘ` has dimension `2` over `Kᵘ` and
+  its multiplication map onto `Kᵘ` has a kernel of dimension `1`: `F′` is not totally ramified and
+  is no tame complement, although a test of the compositum alone would accept it.
 
-### 3.5 Splitting equivalences
+### 3.4 Splitting equivalences
 
 Let `𝒱` be a class of valued fields closed under algebraic extensions. Prove that the following are
 equivalent: (0) for each `K ∈ 𝒱` some maximal purely wild `K_w` satisfies `Kᵗ ⊗_K K_w ≅ Kᵃ`; (1) every
@@ -1021,7 +1157,7 @@ section `Gal(Kᵗ/K) → G_K` of the quotient map, `G_K` then being the semidire
 need not be normal in `G_K`. Route: (1) ⇒ (0) is trivial; (0) for the perfection gives (1) through
 §2.10; a maximal purely wild extension of a field without purely wild extensions is the field itself;
 if `K_w` is tame, `Kᵃ/(Kᵗ·K_w)` is both tame and purely wild, hence trivial. *Needs:* §0.5, §§2.7–2.8,
-§2.10, §3.3; Mathlib `IntermediateField.linearDisjoint_of_isPurelyInseparable_of_isSeparable`; Tau
+§2.10, §3.2; Mathlib `IntermediateField.linearDisjoint_of_isPurelyInseparable_of_isSeparable`; Tau
 Ceti `TauCeti.absoluteGaloisGroupRestrictEquiv`.
 
 **Checks.**
@@ -1034,7 +1170,7 @@ Ceti `TauCeti.absoluteGaloisGroupRestrictEquiv`.
 - For `K` tame, the maximal purely wild extension is `K` and (1) reads `Kᵗ = Kᵃ`.
 - For `p = 1`, `K_w` is the perfection of `K`, which is `K` itself.
 
-### 3.6 The Kuhlmann–Pank–Roquette theorem
+### 3.5 The Kuhlmann–Pank–Roquette theorem
 
 Prove `sup_galoisTamePart_eq_top_of_henselian`: let `(K, V)` be henselian and `E` an intermediate
 field of `AlgebraicClosure K` over `K` that is linearly disjoint from `galoisTamePart V` and maximal
@@ -1045,12 +1181,14 @@ Pank and Roquette 1986, Theorems 2.1–2.2, p. 42, Corollary 2.5 and proof of Th
 Temkin 2017, Theorem 2.4.9, p. 109). For `p = 1` it reduces to `Kᵗ = Kˢ` and `K_w = K^{perf}`.
 Route for prime `p`: the Sylow pro-`p` subgroups of `G_K/W` map isomorphically onto those of
 `G_κ` (the kernel `I/W` has order prime to `p`, and `TauCeti.IsProPSylow.map_of_surjective`), so
-`cd_p(G_K/W) = cd_p(G_κ) ≤ 1` by `TauCeti.IsProPSylow.cohomologicalDimensionAt_eq` and §3.1 applied
-to `κ`; §3.2 gives a section of `G_K → G_K/W` through any closed subgroup surjecting onto `G_K/W`,
-which is the group form (ii) of Kuhlmann–Pank–Roquette; Galois theory over the perfection and §3.5
-translate it to the field statement for every maximal choice. No finite generation and no
-Schur–Zassenhaus argument is used. *Needs:* §§2.2, 2.4, 2.10, §§3.1–3.2, §3.5; Tau Ceti
-`TauCeti.IsProPSylow`, `TauCeti.exists_isProPSylow`, `TauCeti.IsProPSylow.map_of_surjective`,
+`cd_p(G_K/W) = cd_p(G_κ) ≤ 1` by `TauCeti.IsProPSylow.cohomologicalDimensionAt_eq` and the bound
+`cd_p(G_κ) ≤ 1` for the residue field `κ` of characteristic `p` (ProfiniteCohomology,
+gap:char-p-galois-h2-vanishing); §3.1 gives a section of `G_K → G_K/W` through any closed subgroup
+surjecting onto `G_K/W`, which is the group form (ii) of Kuhlmann–Pank–Roquette; Galois theory over
+the perfection and §3.4 translate it to the field statement for every maximal choice. No finite
+generation and no Schur–Zassenhaus argument is used. *Needs:* §§2.2, 2.4, 2.10, §3.1, §3.4;
+ProfiniteCohomology (gap:char-p-galois-h2-vanishing); Tau Ceti `TauCeti.IsProPSylow`,
+`TauCeti.exists_isProPSylow`, `TauCeti.IsProPSylow.map_of_surjective`,
 `TauCeti.IsProPSylow.cohomologicalDimensionAt_eq`.
 
 **Checks.**
@@ -1060,20 +1198,22 @@ Schur–Zassenhaus argument is used. *Needs:* §§2.2, 2.4, 2.10, §§3.1–3.2,
 - For `K` separably closed, henselian and imperfect of characteristic `p`, `galoisTamePart V = K`,
   the only maximal `E` is `Kᵃ`, and the conclusion holds trivially.
 - For `p = 1`, `galoisTamePart V = Kᵃ`, the only admissible `E` is `K`, and `K ⊔ Kᵃ = Kᵃ`.
-- A Schur–Zassenhaus argument alone does not suffice when `G_κ` has nontrivial pro-`p` quotients,
-  as for `κ = 𝔽_p`; the cohomological input §3.1 is what covers that case.
+- A Schur–Zassenhaus argument alone does not suffice when `G_κ` has nontrivial pro-`p` quotients:
+  for `κ = 𝔽_p`, `G_κ = Ẑ` has the quotient `ℤ_p` and `cd_p Ẑ = 1` (ProfiniteCohomology §11.6), so
+  the bound `cd_p(G_κ) ≤ 1` is attained, and it is this cohomological input that covers the case.
 
 ### Examples
 
-`ℚ_p`: the complements of §3.4 are explicit and some maximal purely wild extension contains
-`p^{1/p^∞}` (§3.6). `ℚ` at `2` with `X³ − X − 2`: wild inertia is not normal (§3.5). `𝔽_p`:
-`cd_p = 1` is attained (§3.1).
+`ℚ_p`: the complements of §3.3 are explicit and some maximal purely wild extension contains
+`p^{1/p^∞}` (§3.5). `ℚ` at `2` with `X³ − X − 2`: wild inertia is not normal (§3.4). `ℚ_3`: the
+unramified quadratic extension is tame but no tame complement (§3.3).
 
 ### Dependencies
 
 Layers 0 and 2; Tau Ceti Sylow theory, `TauCeti.cohomologicalDimensionAt` and the embedding-problem
 modules (`TauCeti.HasPGroupSolutions`, `TauCeti.exists_continuous_lift_of_compatible_levelSolutions`);
-Profinite and pro-`p` groups, Layers 5 and 6; Continuous cohomology of profinite groups, Layer 11.
+ProfiniteProPGroups, Layers 2, 5 and 6; ProfiniteCohomology, Layer 11 and the bound
+`cd_p(G_F) ≤ 1` in characteristic `p` (gap:char-p-galois-h2-vanishing, §3.5).
 
 ## Layer 4: height one
 
@@ -1084,9 +1224,17 @@ control, while the object descended is an extension of the henselization.
 
 Let `K` have height one. Choose an order embedding of `Γ_K` into the positive reals
 (`Valuation.RankOne`) and the associated ultrametric norm. Prove: the completion `K̂` is henselian and
-contains `Kʰ`, so `K` is dense in `Kʰ`; every normal algebraic extension of a henselian rank-one
-normed field, with the unique extended norm, satisfies `IsKrasner` without completeness of the base;
-and roots of monic polynomials depend continuously on the coefficients. The last statement needs no
+contains `Kʰ`, so `K` is dense in `Kʰ`; Krasner's lemma over a henselian base,
+`isKrasner_of_henselianLocalRing`: for a nontrivially normed field `K` with ultrametric norm whose
+valuation subring `{x | ‖x‖ ≤ 1}`, that of `NormedField.valuation`, is a henselian local ring, and an
+algebraic extension `L/K` with a field norm extending that of `K` (a normed `K`-algebra), normal or
+not, `IsKrasner K L` holds, with no completeness of `K` (Temkin 2017, proof of Lemma 2.5.2, p. 109,
+which applies Krasner's lemma over the henselization); and roots of monic polynomials depend
+continuously on the coefficients. Route for Krasner's lemma: over a henselian base the norm has a
+unique extension to every algebraic extension, so all conjugates of an element have the same norm
+and the norm of `L` is the spectral norm; with this in place of completeness, the arguments of
+`IsKrasner.of_completeSpace_of_normal` and of the reduction to the normal case in
+`IsKrasner.of_completeSpace` apply. The continuity statement needs no
 height hypothesis and is stated for any valued field, in additive notation with values in the
 divisible hull of `Γ_K` (the value group of `Kᵃ` for the fixed prolongation). Let `f ∈ K[X]` be
 monic of degree `n ≥ 1` with roots `α_1, …, α_n` in `Kᵃ`, let `g ∈ K[X]` be monic, write `v(f − g)`
@@ -1102,9 +1250,15 @@ Kuhlmann and Szewczyk 2023, Theorem 16 with its proof, pp. 13–15, which contai
 Route for the tolerance form: Theorem 16 there gives the conclusions at `ε_{f,g}`, hence at every
 smaller tolerance; for `kras(f) < ε ≤ ε_{f,g}`, two roots of `f` within `ε` of one root of `g` would
 be within `ε` of each other, and a root of `g` within `ε` of a root `α` of `f` is paired with `α` at
-`ε_{f,g}`, where the ball around `α` contains exactly one root of `g`. *Needs:* §1.3; Mathlib
-`Valuation.RankOne`, `IsKrasner`, `IsKrasner.krasner`, `IsKrasner.of_completeSpace_of_normal`,
-`UniformSpace.Completion`, `Polynomial.Monic`.
+`ε_{f,g}`, where the ball around `α` contains exactly one root of `g`. In rank one the direction
+from the roots of `f` to those of `g`, with a weaker radius and a split `g`, is Mathlib's
+`Polynomial.exists_aroots_norm_sub_lt_of_norm_coeff_sub_lt`, which suffices for the existence step
+of §4.2; the statement here adds the Krull-valued form, the converse direction, the threshold
+`ε_{f,g}` and uniqueness. *Needs:* §1.3; Mathlib `Valuation.RankOne`, `NormedField.valuation`,
+`HenselianLocalRing`, `IsKrasner`, `IsKrasner.krasner`, `IsKrasner.of_completeSpace_of_normal`,
+`IsKrasner.of_completeSpace`, `UniformSpace.Completion`, `Polynomial.Monic`,
+`Polynomial.exists_roots_norm_sub_lt_of_norm_coeff_sub_lt` and
+`Polynomial.exists_aroots_norm_sub_lt_of_norm_coeff_sub_lt` (the rank-one existence direction).
 
 **Checks.**
 - Uniqueness needs a tolerance strictly above `kras(f)`: for `f = g = (X − 1)(X + 1)` over `ℚ` with
@@ -1124,6 +1278,14 @@ be within `ε` of each other, and a root of `g` within `ε` of a root `α` of `f
 - For `n = 0` (`f = g = 1`) both root sets are empty and no division by `n` occurs.
 - For `K = ℚ` with the `p`-adic valuation, `Kʰ` is the algebraic closure of `ℚ` in `ℚ_p` and `ℚ` is
   dense in it.
+- Krasner's lemma needs the henselian hypothesis: over `ℚ` with the `7`-adic norm, give
+  `L = ℚ(√2)` the extended norm for which `√2` is the `7`-adic square root `s ≡ 3` modulo `7`. Then
+  `x = √2` is separable with its conjugate `−√2` in `L` and `‖x − (−x)‖ = ‖2s‖ = 1`, while `y = 3`
+  has `‖x − y‖ = ‖s − 3‖ ≤ 1/7 < 1`, yet `x ∉ ℚ(y) = ℚ`; and `ℤ_(7)` is not henselian (`X² − 2` has
+  two simple roots modulo `7` and none in `ℚ`).
+- For `K = ℚ_pʰ`, which is henselian and not complete, and `L` an algebraic closure of `K` with the
+  extended norm, `isKrasner_of_henselianLocalRing` applies while `IsKrasner.of_completeSpace` does
+  not; for `K = ℚ_p` both give `IsKrasner K L`.
 
 ### 4.2 Decompletion
 
@@ -1168,9 +1330,9 @@ For `K` of height one, prove that `E/K` is a maximal separable purely wild exten
 For `K` of height one, without henselian hypothesis, prove that every maximal purely wild `K_w`
 satisfies `Kᵗ ⊗_K K_w ≅ Kᵃ` and every maximal separable purely wild `K_sw` satisfies
 `Kᵗ ⊗_K K_sw ≅ Kˢ` (Temkin 2017, Theorem 2.5.5, p. 110). Route: for perfect `K`, `K_w·Kʰ` is maximal
-purely wild over `Kʰ` by §4.3, and §3.6 with tensor associativity gives the splitting; for imperfect
-`K` pass to the perfection (§2.10) to obtain one splitting, then §3.5 promotes it to every choice.
-*Needs:* §2.10, §§3.5–3.6, §4.3.
+purely wild over `Kʰ` by §4.3, and §3.5 with tensor associativity gives the splitting; for imperfect
+`K` pass to the perfection (§2.10) to obtain one splitting, then §3.4 promotes it to every choice.
+*Needs:* §2.10, §§3.4–3.5, §4.3.
 
 **Checks.**
 - At residue exponent `1`, `Kᵗ = Kˢ` and `K_w = K`.
@@ -1199,7 +1361,9 @@ maximal purely wild extension is a `{p}`-extension (§2.6), hence trivial; §4.4
 
 ### Dependencies
 
-Layers 0–3; Mathlib `Valuation.RankOne`, `IsKrasner`; Tau Ceti `TauCeti.Henselization.directLimitEquiv`.
+Layers 0–3; Mathlib `Valuation.RankOne`, `NormedField.valuation`, `IsKrasner` and the root
+continuity of `Mathlib/Analysis/Normed/Field/Approximation.lean`; Tau Ceti
+`TauCeti.Henselization.directLimitEquiv`.
 Layer 5 is not used.
 
 ## Layer 5: composition and finite height
@@ -1400,7 +1564,10 @@ is tame (§2.7); height one is §4.5; at height `d > 1` choose `0 < i < d`, appl
 
 **Checks.**
 - Height `0`: a `{p}`-closed field is perfect, hence tame for the trivial valuation.
-- Height `1` is exactly §4.5.
+- Height `1`, where no `0 < i < d` exists and the route uses §4.5 alone: `ℂ_p` (value group `ℚ`,
+  residue field an algebraic closure of `𝔽_p`, algebraically closed) satisfies the hypothesis and is
+  tame, while `ℚ_2` fails it (`X² − 2` gives degree `2`) and is indeed not tame, `ℚ_2(i)/ℚ_2` having
+  inertia of order `2`.
 - Height `2` in mixed characteristic uses the `p`-divisibility of the coarse value group from §6.1.
 
 ### 6.3 Descent to finite height
@@ -1413,12 +1580,19 @@ proof of Theorem 2.6.6, last paragraph, p. 112). `K_0` need not be finitely gene
 perfect (§0.4); adjoin the coefficients of a primitive polynomial of `L/K` to the prime field and take
 the relative algebraic closure in `K`, which is perfect, so `K/K_0` is regular and linearly disjoint
 from finite extensions of `K_0`; a finite `{p}`-extension of `K_0` would give one of `K` of the same
-degree; §5.3 gives finite height. *Needs:* §0.4, §0.5, §5.3; Mathlib
-`IntermediateField.linearDisjoint_of_isPurelyInseparable_of_isSeparable`, `Algebra.trdeg`.
+degree; §5.3 gives finite height. *Needs:* §0.4, §0.5, §5.3; Tau Ceti
+`TauCeti.linearDisjoint_fieldRange_of_isIntegrallyClosedIn` (a relatively algebraically closed base
+and a separable extension, separable here because `K_0` is perfect); Mathlib `Algebra.trdeg`.
 
 **Checks.**
-- Every coefficient of the primitive polynomial is adjoined before taking the relative algebraic
-  closure; omitting one would lose the descent of `L`.
+- The coefficients of the primitive polynomial matter when they are transcendental over the prime
+  field. For `K = ℚ(t)` with the trivial valuation (`p = 1`) and `L = K(√t)`, adjoining the
+  coefficient `t` of `X² − t` gives `K_0 = ℚ(t) = K` and `L_0 = L`. Omitting it gives the relative
+  algebraic closure `ℚ` of `ℚ` in `K`, and no finite `L_0/ℚ` has `L_0 ⊗_ℚ ℚ(t) ≅ L`: the left side
+  is `L_0(t)`, with constant field `L_0` and degree `[L_0 : ℚ]` over `K`, while `L = ℚ(√t)` is a
+  rational function field with constant field `ℚ`, which would force `L_0 = ℚ` and degree `1 ≠ 2`. A
+  coefficient that already lies in the relative algebraic closure of the prime field, such as `0`,
+  may be omitted.
 - For `K` algebraic over the prime field, `K_0 = K` already has height at most one.
 - The relative algebraic closure of `ℚ(t)` in a `{p}`-closed field is in general not finitely
   generated over `ℚ`, and only its transcendence degree is used.
@@ -1486,7 +1660,8 @@ Layer 0, Layer 2, Layer 4 (§4.5) and Layer 5 (§§5.1, 5.3, 5.6); Layers 1 and 
   separable form is the one valid for imperfect fields.
 - Arguments that need finite height of valuations on fields of finite transcendence degree, or the
   Abhyankar inequality, consume §5.3.
-- Continuous cohomology of profinite groups in characteristic-`p` Galois settings consumes §§3.1–3.2.
+- Splitting arguments for profinite extensions with pro-`p` kernel over a group of `p`-cohomological
+  dimension at most one, with no pro-`p` hypothesis on the extension, consume §3.1.
 
 ## Worked examples
 
@@ -1514,7 +1689,7 @@ when perfect and is always separably tame (§2.7).
 
 - Temkin 2017, §2.4.6, assertion (4), p. 108, states the splitting of `G_K → Gal(Kᵗ/K)` for an
   arbitrary class of valued fields. For non-henselian `K` the wild subgroup need not be normal and
-  `Kᵗ/K` need not be Galois (the `2`-adic example of §3.5); §3.5 states the quotient form for
+  `Kᵗ/K` need not be Galois (the `2`-adic example of §3.4); §3.4 states the quotient form for
   henselian fields and a subgroup factorization in general. The field-theoretic equivalences and all
   results of Layers 4 and 6 use only the field form.
 - Temkin 2017, Lemma 2.3.2, p. 104, lists the valued extensions with underlying field `l` up to
@@ -1547,8 +1722,8 @@ when perfect and is always separably tame (§2.7).
 - **aid25**: C. Aïd, *A choice-free look at algebraic extensions of valuations*, arXiv:2511.07177v1
   (2025): Propositions 3.3, 3.6, Theorem 3.7, Proposition 4.1, Theorem 4.4, pp. 5–13.
 - **stacks-more-algebra**: The Stacks Project Authors, *More on Algebra*: Lemmas 15.12.5–15.12.6
-  (tags 0A04, 0F0L), Lemma 15.22.2 (tag 0537), Lemmas 15.26.4 and 15.26.6 and Remark 15.26.5 (tags
-  053D, 053E, 05GS), Lemmas 15.125.5–15.125.6 (tags 0ASJ, 0ASK).
+  (tags 0A04, 0F0L), Lemma 15.22.2 (tag 0537), Lemmas 15.26.1, 15.26.3, 15.26.4 and 15.26.6 and
+  Remark 15.26.5 (tags 053A, 053C, 053D, 053E, 05GS), Lemmas 15.125.5–15.125.6 (tags 0ASJ, 0ASK).
 - **ega4**: A. Grothendieck, J. Dieudonné, *Éléments de géométrie algébrique IV, quatrième partie*,
   Publications Mathématiques de l'IHÉS 32 (1967): Lemma 17.7.5, pp. 73–74; Proposition 17.7.7,
   pp. 74–75; Proposition 18.6.8, p. 139; Proposition 18.6.14, p. 141.
