@@ -953,8 +953,12 @@ extrinsic description of Layer 8 (Hajlasz2009 line 28).
   `{x ↦ x³}`, which is a different smooth structure, `|x|` read in that chart is `|y|^{1/3}` with
   derivative `sign(y)|y|^{−2/3}/3`. That lies in `L^p_loc` iff `2p/3 < 1`, so `|x|` is in the
   class of that structure iff `p < 3/2`.
-- Discontinuous members: `sign(x₁)` lies in every class on the open submanifold
-  `ℝ² ∖ {x₁ = 0}`, with `Du = 0`, and in none on `ℝ²` (§1.3).
+- Discontinuous members: `u(x) = log |x|` on `ℝ²`, with `u(0) = 0`, lies in
+  `W^{1,p}_loc(ℝ²; ℝ)` for `1 ≤ p < 2`, with `Du(x)h = ⟨x, h⟩/|x|²` almost everywhere (§1.2).
+  At `p = 1`, `∫_{|x|<1} |u| dx = 2π ∫_0^1 r |log r| dr = π/2` and
+  `∫_{|x|<1} |Du| dx = 2π ∫_0^1 dr = 2π`. Since `u` is essentially unbounded on every
+  neighbourhood of `0`, no modification of `u` on a null set is continuous. A definition requiring
+  `u`, or some representative of `u`, to be continuous would reject it.
 - A `0`-manifold: every `u` is a member, and its weak differential is `0`.
 
 *Needs:* §1.2, §1.3, §2.2, §2.3, §2.4, §3.3; Mathlib `extChartAt`, `isOpen_extChartAt_target`,
@@ -1440,9 +1444,12 @@ integrals finite. HeikkilaPankka2025 line 25–27 supplies only the determinant 
 
 Let `N` also be Lindelöf with `[MeasurableSpace N] [BorelSpace N]`, so that
 `vol_N = TauCeti.riemannianVolume` of `N` is defined. Let `f` be a `C¹` open embedding (`C¹`,
-injective, with invertible differential). Then `J_f` is locally bounded, since
-`|J_f| ≤ ‖mfderiv f‖ⁿ` almost everywhere (§6.1, §6.2) and `‖mfderiv f‖` is continuous for a
-`C¹` map and continuous metrics, so `μ_f^±` are defined. Prove that
+injective, with invertible differential). Then `J_f` is locally essentially bounded:
+`|J_f| ≤ ‖mfderiv f‖ⁿ` almost everywhere (§6.1, §6.2), and `‖mfderiv f‖` is continuous for a
+`C¹` map and continuous metrics, hence bounded on compact sets. Since `vol_M` is locally finite
+(`TauCeti.isLocallyFiniteMeasure_riemannianVolume`) and `J_f` is a.e.-strongly measurable
+(§6.2), `J_f ∈ L¹_loc(M, vol_M)`, so `μ_f^±` are defined. `J_f` need not be locally bounded
+pointwise, since `Df` is fixed only outside a null set. Prove that
 `μ_f^+(A) + μ_f^−(A) = ∫⁻_A ENNReal.ofReal |J_f| dvol_M = vol_N(f(A))` for every Borel `A ⊆ M`,
 with no hypothesis on orientations (Lee2012 Ch. 16); here `f(A)` is Borel because `f` is an open
 embedding (`Topology.IsOpenEmbedding.measurableEmbedding`). Consequently, if `f` is orientation
@@ -1474,13 +1481,22 @@ injectivity of `f` makes the images disjoint.
   so `μ_f^+([−1,1]²) + μ_f^−([−1,1]²) = 4`. But
   `‖Df‖² ≥ 1/(4|x|)` off `x = 0`, whose nonnegative integral is `∞` there.
   A real Bochner integral would have junk value `0` and give the false bound `4 ≤ 0`.
+- Boundedness is essential, not pointwise. On flat `ℝ` with the standard orientations, let
+  `D(x) = k² · id` at `x = 1/k` for integers `k ≥ 2` and `D(x) = id` elsewhere. It differs from
+  `mfderiv id` on a countable null set, so it is a weak differential of `id` (§4.3, §4.4), and
+  nothing in the total choice of `Df` excludes it. Its Jacobian `j` has `j(1/2) = 4`,
+  `j(1/10) = 100` and `j(1/100) = 10⁴`, so it is unbounded on every `(−ε, ε)`, while `j = 1`
+  almost everywhere.
+  With `J_f = j`, still `∫_{[0,1]} J_f = 1`, `μ_f^+([0, 1]) = 1 = vol([0, 1])` and
+  `μ_f^−([0, 1]) = 0`. A claim that `J_f` is locally bounded pointwise fails here.
 
 *Needs:* §3.1, §4.4, §6.1, §6.2, §6.3; Mathlib `MeasureTheory.Measure.withDensity`,
 `MeasureTheory.lintegral_withDensity_eq_lintegral_mul₀`,
 `MeasureTheory.integral_withDensity_eq_integral_toReal_smul₀`,
 `MeasureTheory.lintegral_image_eq_lintegral_abs_det_fderiv_mul`,
 `Topology.IsOpenEmbedding.measurableEmbedding`; Tau Ceti `TauCeti.riemannianVolume`,
-`TauCeti.setLIntegral_riemannianVolume_of_subset`.
+`TauCeti.setLIntegral_riemannianVolume_of_subset`,
+`TauCeti.isLocallyFiniteMeasure_riemannianVolume`.
 
 ### Examples
 
