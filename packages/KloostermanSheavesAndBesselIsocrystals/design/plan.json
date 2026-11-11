@@ -3544,9 +3544,9 @@
  "gaps": [
   {
    "slug": "relative-level-geometry",
-   "needs": "Bun_𝒢, the Beilinson–Drinfeld Grassmannian and its Schubert bounds (§§0.1, 1.1–1.2) for a smooth affine model with connected fibres of a split group over ℙ¹_S for a noetherian base S, in particular the spectrum of a complete mixed-characteristic discrete valuation ring and its fraction field, compatibly with base change to every fibre and to finite residue-field extensions.",
+   "needs": "Bun_𝒢 with its full level structures, the Beilinson–Drinfeld Grassmannian, its Schubert bounds and the bounded Hecke stacks (§§0.1, 0.3, 1.1–1.3) for a smooth affine model with connected fibres of a split group over ℙ¹_S for a noetherian base S, in particular the spectrum of a complete mixed-characteristic discrete valuation ring and its fraction field, compatibly with base change to every fibre and to finite residue-field extensions.",
    "supplier": "GlobalShtukasAndFunctionFieldLanglands",
-   "section": "Layer 0 §0.1; Layer 1 §§1.1–1.2"
+   "section": "Layer 0 §§0.1, 0.3; Layer 1 §§1.1–1.3"
   },
   {
    "slug": "cuspidal-newton-bound",

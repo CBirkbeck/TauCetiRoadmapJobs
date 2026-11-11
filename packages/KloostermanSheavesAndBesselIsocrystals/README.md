@@ -178,7 +178,7 @@ categories live in one fixed universe; `Suggested.lean` places the extension fie
 - `PadicComplex` (`ℂ_[p]`): the completion of an algebraic closure of `ℚ_p`, with its norm.
 - `PowerSeries.mk`, `PowerSeries.coeff` and `PowerSeries.expand`: power series by coefficients and
   the substitution `x ↦ x^p`. `IsDiscreteValuationRing`, `IsAdicComplete` and `IsFractionRing`: the
-  coefficient ring of Layer 10.
+  coefficient ring `R` of §0.1 and of Layer 10.
 - `Matrix.trace`, `LieAlgebra` and `Module.finrank`: traces of Frobenius matrices and extension
   degrees.
 
@@ -241,9 +241,9 @@ categories live in one fixed universe; `Suggested.lean` places the extension fie
   `ℓ`-adic sheaves on the stacks of finite type used here; §1.5: fusion; §1.6: minuscule Hecke
   geometry at Iwahori level; §1.9 and §1.12: the `ℓ`-adic geometric Satake equivalence over finite
   fields, with Tate normalization by one fixed square root of `q` (§1.8).
-- What GlobalShtukasAndFunctionFieldLanglands must provide (gap:relative-level-geometry): `Bun_𝒢`,
-  the Beilinson–Drinfeld Grassmannian and its Schubert bounds of §§0.1, 1.1–1.2 for a smooth affine
-  model with connected fibres of a split group over `ℙ¹_S`, for a noetherian base `S` (in particular
+- What GlobalShtukasAndFunctionFieldLanglands must provide (gap:relative-level-geometry): `Bun_𝒢`
+  with its full level structures, the Beilinson–Drinfeld Grassmannian, its Schubert bounds and the
+  bounded Hecke stacks of §§0.1, 0.3, 1.1–1.3 for a smooth affine model with connected fibres of a split group over `ℙ¹_S`, for a noetherian base `S` (in particular
   the spectrum of a complete mixed-characteristic discrete valuation ring and its fraction field),
   compatibly with base change to every fibre and to finite residue-field extensions.
 - What GlobalShtukasAndFunctionFieldLanglands must provide (gap:cuspidal-newton-bound):
@@ -293,7 +293,8 @@ categories live in one fixed universe; `Suggested.lean` places the extension fie
   (§§RD.5.76, RD.5.89), logarithmic extension under unipotent monodromy (§RD.5.103) and full
   faithfulness of restriction to a dense open, including underlying overconvergent isocrystals
   (§RD.5.102(a), §RD.5.112(ii)).
-- RD.6: Tate twists (§RD.6.3), traces and the Lefschetz trace formula (§RD.6.23), pointwise weights
+- RD.6: the linear Frobenius at a closed point and its behaviour under residue extension (§RD.6.2),
+  Tate twists (§RD.6.3), traces and the Lefschetz trace formula (§RD.6.23), pointwise weights
   (§RD.6.28), the Fourier transform (§§RD.6.41–RD.6.44), the Dwork and Kummer F-isocrystals and
   their sign dictionary (§§RD.6.42, RD.6.46–RD.6.48), local monodromy representations, irregularity
   and Swan conductors (§§RD.6.51–RD.6.52), the Grothendieck–Ogg–Shafarevich formula (§RD.6.55), neutral
@@ -369,9 +370,11 @@ categories live in one fixed universe; `Suggested.lean` places the extension fie
   and the Drinfeld–Sokolov–Kostant slice) and F6 (oper reduction over the punctured disc).
 - AffineLieAlgebras A7–A8: the vacuum center and the completed center at the critical level.
 - SpringerResolutionAndCharacteristicCycles Layer 8 (§§8.1–8.6: differential operators, good
-  filtrations, characteristic varieties and cycles) and Layer 9 (§§9.1, 9.4, 9.6–9.7: transfer modules,
-  the operations and duality, holonomic modules, intermediate extension, regular holonomic modules), on
-  smooth varieties over a field of characteristic zero.
+  filtrations, characteristic varieties and cycles) and Layer 9 (§§9.1–9.2, 9.4, 9.6–9.7: transfer modules,
+  the operations and duality, Kashiwara's equivalence, holonomic modules, intermediate extension, regular
+  holonomic modules), on smooth varieties over a field of characteristic zero; Kashiwara's equivalence
+  defines the categories on the singular bounded pieces of the Grassmannian through closed embeddings into
+  smooth varieties.
 
 - What AffineLieAlgebras must provide (gap:critical-center-rational-forms): the vacuum and
   completed critical centres and their oper identifications for pinned split semisimple
@@ -435,7 +438,11 @@ the Dwork parameter `π ∈ K` attached to it (`π^{p−1} = −p`). Put `c_q = 
 Finite extensions of `K` carrying `π` and `c_p` to fixed images are allowed throughout (Xu–Zhu §1.1.1,
 pp. 2–3; §4.1, p. 37; §4.4.3, p. 50). The datum must contain `c_p`: the uniform field `K = ℚ_p(π)` of
 Xu–Zhu Theorems 1.1.4 and 1.2.4 (pp. 3–5) is too small for the normalized traces, as the witness in
-the conventions shows.
+the conventions shows. *Needs:* Mathlib `AddChar`, `AddChar.compAddMonoidHom`, `Algebra.trace`,
+`FiniteField.algebraMap_trace_eq_sum_pow`, `IsDiscreteValuationRing`, `IsAdicComplete`, `IsFractionRing`;
+PadicDifferentialEquationsAndRigidCohomology §RD.6.2 (Frobenius at a closed point and under residue
+extension), §RD.6.3 (Tate twists), §RD.6.46 (the character attached to `π`) and §RD.6.48 (direction of
+Frobenius structures).
 
 - The scalar normalization of a rank-`r` trace at a point of degree `d` is
   `(−1)^{r−1} c_q^{−d(r−1)}`, and it is compatible with finite coefficient extension.
@@ -529,7 +536,9 @@ ReductiveGroupsPartII RG2.3.3, RG2.4.1; §0.2.
 
 ReductiveGroups Layers 1, 9; ReductiveGroupsPartII RG2.3.3, RG2.3.6, RG2.4.1;
 GlobalShtukasAndFunctionFieldLanglands §§0.1, 1.1 and gap:relative-level-geometry; Mathlib `AddChar`,
-`Algebra.trace`; PadicDifferentialEquationsAndRigidCohomology §§RD.6.46–RD.6.48.
+`AddChar.compAddMonoidHom`, `Algebra.trace`, `FiniteField.algebraMap_trace_eq_sum_pow`,
+`IsDiscreteValuationRing`, `IsAdicComplete`, `IsFractionRing`; PadicDifferentialEquationsAndRigidCohomology
+§§RD.6.2, RD.6.3, RD.6.46–RD.6.48.
 
 ## Layer 1: Coefficients on the level stacks, Satake realizations and Kloosterman eigenobjects
 
@@ -553,6 +562,11 @@ gap:relative-level-geometry) of the categories of SpringerResolutionAndCharacter
 (Xu–Zhu §§2.3–2.5, pp. 13–19). Each has the operations `f_!`, `f_+` (respectively `f_!`, `f_*`) for
 schematic morphisms of finite type between these stacks, the canonical map `f_! → f_+`, smooth
 pullback, external products and duality, with the normalized shifts of the holonomic heart.
+*Needs:* §§0.1, 0.3; GlobalShtukasAndFunctionFieldLanglands §0.1 (the stacks and their smooth atlases),
+§§1.1–1.3 (Beilinson–Drinfeld Grassmannians, Schubert bounds and Hecke stacks) and §1.4 (`ℓ`-adic
+sheaves on stacks of finite type); gap:relative-level-geometry; SpringerResolutionAndCharacteristicCycles
+Layer 9 (§§9.1–9.2, 9.4, 9.6–9.7; Kashiwara's equivalence for the singular bounded pieces);
+gap:arithmetic-d-module-operations (operations, holonomic t-structure and weights for (iii)).
 
 - For a schematic affine morphism, `f_+` is right exact and `f_!` is left exact for the holonomic
   t-structure (Abe–Caro Proposition 1.3.13(i), for a complete c-affine morphism of realizable couples admitting the locally proper smooth frames of its proof, transported to these schematic morphisms by gap:arithmetic-d-module-operations).
