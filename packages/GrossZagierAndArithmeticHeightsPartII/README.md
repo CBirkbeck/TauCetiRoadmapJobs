@@ -4,9 +4,9 @@
 
 ## Scope and ownership
 
-GrossZagierAndArithmeticHeights stops at Shimura curves: its Layers 6–9 own the arithmetic theta kernels, the CM local intersections and the global Gross–Zagier and anticyclotomic formulas for modular and quaternionic Shimura curves. This Part II begins at higher-dimensional unitary special cycles. It owns the special cycles on the unitary Rapoport–Zink spaces of principal, almost self-dual, exotic and Krämer type, their derived classes, Euler intersection numbers, horizontal and vertical decompositions and Fourier properties; the cohomology and Tate classes of the unitary Deligne–Lusztig and symplectic incidence strata that these decompositions use; the density sides of the four local identities, including the exotic and Krämer density formulas and correction coefficients; the four Kudla–Rapoport identities; the global special cycles, their K-classes, uniformizations and local arithmetic degrees; the arithmetic Siegel–Weil formulas; the derived CM cycles, their pairings with modular generating series of arithmetic divisors, the relative trace series of the AFL comparison and the strongly regular arithmetic fundamental lemma.
+GrossZagierAndArithmeticHeights stops at Shimura curves: its Layers 6–9 own the arithmetic theta kernels, the CM local intersections and the global Gross–Zagier and anticyclotomic formulas for modular and quaternionic Shimura curves. This Part II begins at higher-dimensional unitary special cycles. It owns the special cycles on the unitary Rapoport–Zink spaces of principal, almost self-dual, exotic and Krämer type, their derived classes, Euler intersection numbers, horizontal and vertical decompositions and Fourier properties; the cohomology and Tate classes of the unitary Deligne–Lusztig and symplectic incidence strata that these decompositions use; the density sides of the four local identities, including the exotic and Krämer density formulas and correction coefficients; the four Kudla–Rapoport identities; the global special cycles, their K-classes, uniformizations and local arithmetic degrees; the arithmetic Siegel–Weil formulas; the automorphic Green functions of special divisors and the unitary Borcherds products over ℚ with their integral divisors, which give the arithmetic modularity of these generating series; the derived CM cycles, their pairings with modular generating series of arithmetic divisors, the relative trace series of the AFL comparison and the strongly regular arithmetic fundamental lemma.
 
-The following are owned elsewhere and imported by section. The unitary Rapoport–Zink spaces of all four types are PELModuliPartII §§1.1–1.2, 2.1–2.2, 3.3–3.4, 5.1, 5.3 and 5.7; their canonical rank-one sources §§1.3, 3.5 and 5.2; their special Hom spaces §§1.5, 2.3, 3.6 and 5.8; the rank-raising embedding and diagonal graph §§1.4 and 1.6; the auxiliary isogeny space of the almost self-dual comparison with its generic projections §§2.4–2.5; the relative and absolute exotic comparison §4.6; the exotic Bruhat–Tits strata and connected components §3.7; the comparison of signature conventions §0.7; the RSZ datum, integral CM moduli, Eisenstein, level and sign data §§6.1 and 6.5–6.8; the RSZ, exotic and Krämer integral models §§7.3–7.5 and 7.10; the integral Hecke system §8.5; and the basic-locus uniformizations §§9.3 and 9.5–9.9. Grothendieck–Messing deformation theory of Barsotti–Tate groups, including the homomorphism-lifting criterion, is AbelianSchemesAndArithmeticModuli §A4.CR.7.2. Tate modules, Tate's full-faithfulness theorem and covariant Dieudonné modules are FiniteFlatGroupsAndIntegralPadicHodgeTheory §§R07.1.8, R07.1.22 and R07.2.20. Canonical and quasi-canonical lifts, quadratic orders and the degrees of their fields of definition are LubinTateFormalModulesAndQuasiCanonicalLifts §§6.1–6.2, 6.4–6.5 and 7.1; the endomorphism-lifting lengths along quasi-canonical lifts, in the unramified and the ramified quadratic case, are GrossZagierAndArithmeticHeights §7.2. Hermitian lattices, duals, fundamental invariants, the unramified local densities, Siegel polynomials, the Cho–Yamauchi weight, the overlattice formula and the functional equation are GeometryOfNumbersAndQuadraticArithmetic §§2.7, 2.9 and 3.2. Supported K-theory, Tor and Euler pairings on locally noetherian formal schemes are SchemeKTheoryOperationsPartII Layers 0–4; supported cycle classes, the rational multiplicativity of the codimension filtration on regular schemes and the identification Gr₁G₀ ⊗ ℚ ≅ CH₁ ⊗ ℚ are SchemeKTheoryOperations §§6.12 and 7.7. The hermitian uncertainty principle (Li–Zhang, Proposition 8.1.6) is MetaplecticAutomorphicForms §3.3a; the Weil index, Weil operators, unitary dual-pair splittings, hermitian oscillator normalizations, Siegel–Weil sections, the anisotropic Siegel–Weil formula and coherent and incoherent section collections are MetaplecticAutomorphicForms §§2.1, 2.5, 3.3, 3.3b, 6.2, 6.4 and 6.7. Local and adelic Schwartz–Bruhat Fourier analysis with self-dual measures is AutomorphicLFunctionsAndLocalFactors AL.0. Normalized induction, Eisenstein series and their continuation are AutomorphicSpectralTheory §§1.1, 1.2 and 2.4. Arithmetic divisors with Green functions and their pairing with proper one-cycles, valued in ℝ modulo excluded prime logarithms, are ArakelovGeometryAndAbelianHeights §§1.8–1.10. The Fourier vanishing criterion for continuous automorphic functions on SL₂ over a totally real field with conductor-adjusted level (Zhang's Lemma 13.6) is AutomorphicFormsOnReductiveGroups §4.4 `fourierUnitVanishing`.
+The following are owned elsewhere and imported by section. The unitary Rapoport–Zink spaces of all four types are PELModuliPartII §§1.1–1.2, 2.1–2.2, 3.3–3.4, 5.1, 5.3 and 5.7; their canonical rank-one sources §§1.3, 3.5 and 5.2; their special Hom spaces §§1.5, 2.3, 3.6 and 5.8; the rank-raising embedding and diagonal graph §§1.4 and 1.6; the auxiliary isogeny space of the almost self-dual comparison with its generic projections §§2.4–2.5; the relative and absolute exotic comparison §4.6; the exotic Bruhat–Tits strata and connected components §3.7; the comparison of signature conventions §0.7; the RSZ datum, integral CM moduli, Eisenstein, level and sign data §§6.1 and 6.5–6.8; the RSZ, exotic and Krämer integral models §§7.3–7.5 and 7.10; the integral Hecke system §8.5; and the basic-locus uniformizations §§9.3 and 9.5–9.9. Grothendieck–Messing deformation theory of Barsotti–Tate groups, including the homomorphism-lifting criterion, is AbelianSchemesAndArithmeticModuli §A4.CR.7.2. Tate modules, Tate's full-faithfulness theorem and covariant Dieudonné modules are FiniteFlatGroupsAndIntegralPadicHodgeTheory §§R07.1.8, R07.1.22 and R07.2.20. Canonical and quasi-canonical lifts, quadratic orders and the degrees of their fields of definition are LubinTateFormalModulesAndQuasiCanonicalLifts §§6.1–6.2, 6.4–6.5 and 7.1; the endomorphism-lifting lengths along quasi-canonical lifts, in the unramified and the ramified quadratic case, are GrossZagierAndArithmeticHeights §7.2. Hermitian lattices, duals, fundamental invariants, the unramified local densities, Siegel polynomials, the Cho–Yamauchi weight, the overlattice formula and the functional equation are GeometryOfNumbersAndQuadraticArithmetic §§2.7, 2.9 and 3.2. Supported K-theory, Tor and Euler pairings on locally noetherian formal schemes are SchemeKTheoryOperationsPartII Layers 0–4; supported cycle classes, the rational multiplicativity of the codimension filtration on regular schemes and the identification Gr₁G₀ ⊗ ℚ ≅ CH₁ ⊗ ℚ are SchemeKTheoryOperations §§6.12 and 7.7. The hermitian uncertainty principle (Li–Zhang, Proposition 8.1.6) is MetaplecticAutomorphicForms §3.3a; the Weil index, Weil operators, unitary dual-pair splittings, hermitian oscillator normalizations, Siegel–Weil sections, the anisotropic Siegel–Weil formula and coherent and incoherent section collections are MetaplecticAutomorphicForms §§2.1, 2.5, 3.3, 3.3b, 6.2, 6.4 and 6.7. Local and adelic Schwartz–Bruhat Fourier analysis with self-dual measures is AutomorphicLFunctionsAndLocalFactors AL.0. Normalized induction, Eisenstein series and their continuation are AutomorphicSpectralTheory §§1.1, 1.2 and 2.4. Harmonic Maass forms for Weil representations of even lattices, their Fourier expansions and the ξ-operator exact sequences are QSeriesPartitionsAndMockModularForms §§8.3, 8.5 and 8.6; integral toroidal compactifications of PEL Shimura varieties at good primes and Fourier–Jacobi expansions of Hodge-line sections are ShimuraCompactifications §§7.3 and 7.15. Compact-support ℓ-adic cohomology of schemes over finite fields, with its open–closed localization sequence, is EtaleCohomologyFoundations §§0.7–0.8, F.2.5 and F.4.1–F.4.6. Arithmetic divisors with Green functions and their pairing with proper one-cycles, valued in ℝ modulo excluded prime logarithms, are ArakelovGeometryAndAbelianHeights §§1.8–1.10. The Fourier vanishing criterion for continuous automorphic functions on SL₂ over a totally real field with conductor-adjusted level (Zhang's Lemma 13.6) is AutomorphicFormsOnReductiveGroups §4.4 `fourierUnitVanishing`.
 
 Four directions that use the same objects have different end theorems and are not targets here: the arithmetic inner product formula for unitary groups (Li–Liu), whose theorems MotivesAndAlgebraicCycles §7.19 states with the almost self-dual identity of §4.5 as an explicit local premise; heights of special divisors on GSpin Shimura varieties; p-adic arithmetic inner product formulas; and CM values of higher Green functions. Generic local Jacquet–Rallis theory belongs to EndoscopicTransferAndUnitaryTraceComparison and EndoscopicTransferAndUnitaryTraceComparisonPartII: the spherical Jacquet–Rallis fundamental lemmas in the GL_n(F₀)-group and augmented Lie-algebra formulations are stated by EndoscopicTransferAndUnitaryTraceComparisonPartII §§4.4–4.5, the regular matching, twisted orbital distributions and smooth transfer in those formulations are requested by that roadmap from EndoscopicTransferAndUnitaryTraceComparison, and only the passage to Zhang's formulations on S_n is requested from EndoscopicTransferAndUnitaryTraceComparison below; this roadmap owns only Zhang's global relative trace series built from these. The arithmetic fundamental lemma for arbitrary regular semisimple elements, and over p-adic fields other than ℚ_p, is not proved here: §14.6 formulates that statement and identifies §14.5 as its strongly regular case over ℚ_p.
 
@@ -43,7 +43,7 @@ The pinned Mathlib and Tau Ceti are those of the content repository's `lake-mani
 
 ### From TauCetiRoadmap.PELModuliPartII
 
-Consume §§1.1–1.6 (the unramified framed functor, its representability and smoothness, the canonical rank-one source, the rank-raising embedding, the unramified special Hom space and the diagonal graph): the signature-(1,n−1) framed space N_n over Spf O_F̆, formally smooth of relative dimension n−1; the canonical lift Ē of signature (0,1); the closed immersion δ: N_(n−1) → N_n, X ↦ X × Ē; the nonsplit special Hom space V_n with the form above; and the graph Δ = (id, δ). Consume §0.7 (comparison of signature conventions). Consume §§2.1–2.5 (the almost self-dual framed functor and deformation theorem, its special Hom space, the auxiliary isogeny space and the generic projection comparison): the almost self-dual space N_n¹, regular and semistable of relative dimension n−1; the split space W_n with W_n ⊥ ⟨x₀⟩ ≅ V_(n+1), h(x₀,x₀) = ϖ; the auxiliary isogeny space Ñ with projections π₁, π₂, and on generic fibres π₁ finite étale of degree q+1 and π₂ an isomorphism onto its image. These generic statements do not give the integral finite flatness of π₁ or the exceptional divisors; those are §4.2. Consume §§3.3–3.7 (the relative exotic framed space, its good reduction, the principal ramified CM source, the exotic normalized special Hom space and the connected components with their strata): the exotic space for even n, smooth of relative dimension n−1 with exactly two connected components, the u⁻²-normalized nonsplit special Hom space, and the Bruhat–Tits stratification by trace-dual vertex lattices, each stratum meeting each component in a smooth projective generalized Deligne–Lusztig variety of dimension t(Λ)/2−1, with V_Λ ∩ V_Λ′ = V_(Λ+Λ′) when Λ+Λ′ is a vertex lattice and empty otherwise. Consume §4.6 (absolute and relative exotic spaces over an unramified base, with the isometry of their special Hom spaces). Consume §§5.1–5.3, 5.5, 5.7 and 5.8 (the Krämer filtration, the ramified rank-one source, the Krämer framed space, its framing parity, its regularity theorem and its special Hom space): the Krämer space with its rank-(n−1) filtration, semistable of relative dimension n−1, its two framings and the special Hom space of either sign. Consume §§6.1 and 6.5–6.8 (the strict fake Drinfeld datum of the RSZ construction, the integral Eisenstein conditions, the integral CM moduli, the integral unitary level data and the adjusted sign condition), §§7.3–7.5 and 7.10 (the semi-global RSZ, exotic and global Krämer integral models and their gluing with levels), §8.5 (the integral level and Hecke system) and §§9.3 and 9.5–9.9 (the nearby framing datum, the uniformization morphism, the exotic and inert basic-locus uniformizations, the CM partition and product, and the Krämer completion compatibility); the exotic global form of §9.6 is h′ = (u²/ϖ)·h with ϖ a uniformizer at the place, so u²/ϖ is a unit there. Special cycles on any of these spaces are not constructed there; they are constructed here.
+Consume §§1.1–1.6 (the unramified framed functor, its representability and smoothness, the canonical rank-one source, the rank-raising embedding, the unramified special Hom space and the diagonal graph): the signature-(1,n−1) framed space N_n over Spf O_F̆, formally smooth of relative dimension n−1; the canonical lift Ē of signature (0,1); the closed immersion δ: N_(n−1) → N_n, X ↦ X × Ē; the nonsplit special Hom space V_n with the form above; and the graph Δ = (id, δ). Consume §0.7 (comparison of signature conventions). Consume §§2.1–2.5 (the almost self-dual framed functor and deformation theorem, its special Hom space, the auxiliary isogeny space and the generic projection comparison): the almost self-dual space N_n¹, regular and semistable of relative dimension n−1; the split space W_n with W_n ⊥ ⟨x₀⟩ ≅ V_(n+1), h(x₀,x₀) = ϖ; the auxiliary isogeny space Ñ with projections π₁, π₂, and on generic fibres π₁ finite étale of degree q+1 and π₂ an isomorphism onto its image. These generic statements do not give the integral finite flatness of π₁ or the exceptional divisors; those are §4.2. Consume §§3.3–3.7 (the relative exotic framed space, its good reduction, the principal ramified CM source, the exotic normalized special Hom space and the connected components with their strata): the exotic space for even n, smooth of relative dimension n−1 with exactly two connected components, the u⁻²-normalized nonsplit special Hom space, and the Bruhat–Tits stratification by trace-dual vertex lattices, each stratum meeting each component in a smooth projective generalized Deligne–Lusztig variety of dimension t(Λ)/2−1, with V_Λ ∩ V_Λ′ = V_(Λ+Λ′) when Λ+Λ′ is a vertex lattice and empty otherwise. Consume §4.6 (absolute and relative exotic spaces over an unramified base, with the isometry of their special Hom spaces). Consume §§5.1–5.3, 5.5, 5.7 and 5.8 (the Krämer filtration, the ramified rank-one source, the Krämer framed space, its framing parity, its regularity theorem and its special Hom space): the Krämer space with its rank-(n−1) filtration, semistable of relative dimension n−1, its two framings and the special Hom space of either sign. Consume §§6.1 and 6.5–6.8 (the strict fake Drinfeld datum of the RSZ construction, the integral Eisenstein conditions, the integral CM moduli, the integral unitary level data and the adjusted sign condition), §§7.1–7.2 (the localized RSZ moduli over O_E[1/d], a smooth separated Deligne–Mumford stack of relative dimension n−1, a quasi-projective scheme at small level), §§7.3–7.5 and 7.10 (the semi-global RSZ, exotic and global Krämer integral models and their gluing with levels), §8.5 (the integral level and Hecke system) and §§9.3 and 9.5–9.9 (the nearby framing datum, the uniformization morphism, the exotic and inert basic-locus uniformizations, the CM partition and product, and the Krämer completion compatibility); the exotic global form of §9.6 is h′ = (u²/ϖ)·h with ϖ a uniformizer at the place, so u²/ϖ is a unit there. Special cycles on any of these spaces are not constructed there; they are constructed here.
 
 ### From TauCetiRoadmap.AbelianSchemesAndArithmeticModuli
 
@@ -81,9 +81,9 @@ Consume §6.12 (for separated regular noetherian schemes of finite dimension: th
 
 Consume §§5.1, 5.3–5.4 and 5.7 (Chow groups, first Chern classes, Chern classes, K₀ and G₀, and the Chern character on smooth schemes of finite pure dimension over a field) for the proper smooth strata of Layers 2, 5 and 7.
 
-### From TauCetiRoadmap.MotivesAndAlgebraicCycles and TauCetiRoadmap.ClassicalAdicEtaleCohomology
+### From TauCetiRoadmap.MotivesAndAlgebraicCycles and TauCetiRoadmap.EtaleCohomologyFoundations
 
-Consume MotivesAndAlgebraicCycles §§2.4 and 2.7 (cycle classes from Chern classes; the ℓ-adic étale realization over a finite field with its Galois action, Tate twists, traces and Poincaré duality on smooth proper varieties) and ClassicalAdicEtaleCohomology Layer 8 (compactly supported cohomology and the open–closed excision sequence). No Tate conjecture and no general semisimplicity of Frobenius is assumed; the specific eigenvalue and semisimplicity statements are §§2.1 and 5.4.
+Consume MotivesAndAlgebraicCycles §§2.4 and 2.7 (cycle classes from Chern classes; the ℓ-adic étale realization over a finite field with its Galois action, Tate twists, traces and Poincaré duality on smooth proper varieties) and, for the separated schemes of finite type over a finite field of Layers 2 and 5 (the unitary Deligne–Lusztig strata, the exotic strata and their open parts), EtaleCohomologyFoundations §0.7 (`ClassicalAlgebraic.supportLocalization`: for a closed subscheme i: Z → X with open complement j: U → X, the triangles i_*i^!K → K → Rj_*j^*K and j_!j^*K → K → i_*i^*K, with excision and naturality of the connecting maps), §0.8 (`ClassicalAlgebraic.properSupports`: the compactification-defined Rf_! for separated finitely presented morphisms of qcqs schemes on torsion coefficients, and the compact-support localization triangles it gives), §F.2.5 (compact-support cohomology RΓ_c(X, K) over a field, with its open–closed localization sequence) and §§F.4.1–F.4.6 (normalized adic systems, the classical adic realization and the rational ℚ_ℓ realization with finite-dimensional cohomology and continuous Frobenius action) for the passage from torsion to ℚ_ℓ coefficients. These are scheme statements; no analytic adic space and no analytification enters. No Tate conjecture and no general semisimplicity of Frobenius is assumed; the specific eigenvalue and semisimplicity statements are §§2.1 and 5.4.
 
 ### From TauCetiRoadmap.AutomorphicLFunctionsAndLocalFactors
 
@@ -91,7 +91,15 @@ Consume AL.0 (local Schwartz–Bruhat spaces, Fourier transforms for a nondegene
 
 ### From TauCetiRoadmap.MetaplecticAutomorphicForms
 
-Consume §2.1 `weilIndex`, §2.5 `weil_generators`, §2.7 (character change), §3.3 (unitary dual-pair splittings), §3.3a `weil_hermitianUncertainty` (if a Schwartz–Bruhat function on a positive-dimensional nondegenerate hermitian space has support in {val h(x,x) > 0} and its trace-self-dual transform has support in {val h(x,x) ≥ 0}, it vanishes), §3.3b `weil_hermitianNormalizations` (the hermitian Weil operators in the Li–Zhang, Li–Liu and Zhang normalizations, with γ_V), §4.5 (the adelic Weil representation), §5.1 (theta kernels), §5.8 (regularized theta integrals), §6.2 `siegelWeilSection`, §6.4 `siegelWeil_anisotropic` and §6.7 `thetaSectionCollection`.
+Consume §2.1 `weilIndex`, §2.5 `weil_generators`, §2.7 (character change), §3.3 (unitary dual-pair splittings), §3.3a `weil_hermitianUncertainty` (if a Schwartz–Bruhat function on a positive-dimensional nondegenerate hermitian space has support in {val h(x,x) > 0} and its trace-self-dual transform has support in {val h(x,x) ≥ 0}, it vanishes), §3.3b `weil_hermitianNormalizations` (the hermitian Weil operators in the Li–Zhang, Li–Liu and Zhang normalizations, with γ_V), §4.5 (the adelic Weil representation), §5.1 (theta kernels), §6.2 `siegelWeilSection`, §6.4 `siegelWeil_anisotropic` and §6.7 `thetaSectionCollection`.
+
+### From TauCetiRoadmap.QSeriesPartitionsAndMockModularForms
+
+Consume §8.3 (harmonic weak Maass spaces H_k(Γ, ρ) and the subspace H⁺ of forms whose ξ-image is cuspidal), §8.5 (for a nondegenerate even lattice L and k ≠ 1, the decomposition F = F⁺ + F⁻ of a form in H_k(Γ, ρ_L), the finiteness of its principal part, and ker ξ_k = M!_k) and §8.6 (the exact sequences 0 → M!_k → H_k → M!_(2−k) → 0 and 0 → M!_k → H_k⁺ → S_(2−k) → 0 for the Weil representation). They are used with k = 2 − n ≤ −1 for the lattice (L, Q) of signature (2n−2, 2) in §§12.4–12.5.
+
+### From TauCetiRoadmap.ShimuraCompactifications
+
+Consume §7.3 (the smooth proper integral toroidal compactification of a PEL Shimura variety at a prime where the datum has good reduction) and §7.15 (Fourier–Jacobi expansions of sections of powers of the Hodge line along its boundary). They are applied in §12.5 to the RSZ datum at the primes not dividing d, through the finite comparison of the localized RSZ model with PEL moduli of the product datum (PELModuliPartII §7.2).
 
 ### From TauCetiRoadmap.AutomorphicSpectralTheory
 
@@ -238,7 +246,7 @@ Prove that the derived class ᴸZ(L) depends only on L and not on its basis, and
 **Checks.**
 
 - For n = 1 and L = O_F·x with val h(x,x) = 1, Z(L) = Spec O_F̆/ϖ, proper and killed by ϖ.
-- For a lattice of rank n−1 the cycle Z(L) has a horizontal part and is not killed by any power of ϖ; properness is a full-rank statement.
+- Properness is a full-rank statement. For n = 2 and L = O_F·e with h(e,e) = 1, Z(L) ≅ N₁ = Spf O_F̆ (the unit-norm cycle is the lower-rank space), flat over Spf O_F̆, nonempty and not killed by any power of ϖ. Negative control: L = O_F·ϖ⁻¹e has norm ϖ⁻², so Z(L) = ∅ by §0.2; its horizontal part is empty and it is killed by every power of ϖ. A rank-(n−1) lattice therefore has a nonempty horizontal part only when it is integral.
 - Two bases related by a matrix in GL_n(O_F) give the same Int(L); bases of two non-isometric lattices of the same rank need not.
 
 *Needs:* §§0.4–0.6; SchemeKTheoryOperationsPartII §§2.1, 4.1 and 4.2.
@@ -367,7 +375,7 @@ Prove that on the open Coxeter stratum Y°_d of Y_d, the q²-Frobenius acts on H
 - The eigenvalue −q, with multiplicity 2g = q² − q on H¹ of the Fermat curve Y₁, gives #Y₁(F_(q²)) = 1 + q² + q(q² − q) = q³ + 1, the count of §0.3; the eigenvalue +q would give 1 + 2q² − q³ instead.
 - For 0 < 2j ≤ d the eigenvalues on H^(2j)(Y°_d)(j) are q^(2j) and −q^(2j−1); neither is a root of unity, which is why no power of Frobenius has invariants there.
 
-*Needs:* §0.3; MotivesAndAlgebraicCycles §2.7; ClassicalAdicEtaleCohomology Layer 8.
+*Needs:* §0.3; MotivesAndAlgebraicCycles §2.7; EtaleCohomologyFoundations §§0.7–0.8, F.2.5 and F.4.1–F.4.6.
 
 ### 2.2 Tate classes generated by strata
 
@@ -378,8 +386,9 @@ Prove that for 0 ≤ i ≤ d and every s ≥ 1, the space of Tate classes H^(2i)
 - i = 0: H⁰(Y_d)(0) is spanned by the fundamental class of Y_d.
 - d = 1, i = 1: H²(Y₁)(1) is one-dimensional, spanned by the class of a point, a zero-dimensional stratum.
 - The statement is specific to Y_d; for a general smooth projective variety over a finite field it is the Tate conjecture and is not asserted.
+- The excision sequence is the scheme localization sequence of EtaleCohomologyFoundations §§0.7–0.8 and F.2.5: for U = 𝔸¹ ⊂ ℙ¹ over a finite field with Q elements and closed complement a rational point, H⁰(ℙ¹) → H⁰(point) is an isomorphism and H¹(ℙ¹) = 0, so H⁰_c(𝔸¹) = H¹_c(𝔸¹) = 0 and H²_c(𝔸¹) ≅ H²(ℙ¹) = ℚ_ℓ(−1), on which geometric Frobenius acts by Q.
 
-*Needs:* §2.1; MotivesAndAlgebraicCycles §§2.4, 2.7; ClassicalAdicEtaleCohomology Layer 8.
+*Needs:* §2.1; MotivesAndAlgebraicCycles §§2.4, 2.7; EtaleCohomologyFoundations §§0.7–0.8, F.2.5 and F.4.1–F.4.6.
 
 ### 2.3 Numerical reduction to curves
 
@@ -461,7 +470,7 @@ For a type-three vertex lattice there are q³+1 type-one overlattices, and at x 
 
 ### Dependencies
 
-Layers 0–1; MotivesAndAlgebraicCycles §§2.4, 2.7; ClassicalAdicEtaleCohomology Layer 8; SchemeAndStackFoundations §§5.3–5.4, 5.7; SchemeKTheoryOperationsPartII §§3.1, 4.5 and 4.6; AutomorphicLFunctionsAndLocalFactors AL.0; MetaplecticAutomorphicForms §3.3b. Lusztig's computation (Lusztig76) is the source of §2.1.
+Layers 0–1; MotivesAndAlgebraicCycles §§2.4, 2.7; EtaleCohomologyFoundations §§0.7–0.8, F.2.5 and F.4.1–F.4.6; SchemeAndStackFoundations §§5.3–5.4, 5.7; SchemeKTheoryOperationsPartII §§3.1, 4.5 and 4.6; AutomorphicLFunctionsAndLocalFactors AL.0; MetaplecticAutomorphicForms §3.3b. Lusztig's computation (Lusztig76) is the source of §2.1.
 
 ## Layer 3: Unramified analytic side and the Kudla–Rapoport identity
 
@@ -469,11 +478,12 @@ Normalize the unramified density derivative and its Whittaker interpretation, de
 
 ### 3.1 Unramified density and Whittaker normalization
 
-Prove the normalization of the analytic side. For an integral nondegenerate lattice L of rank n in an unramified hermitian space, D_L(X) is the polynomial of GeometryOfNumbersAndQuadraticArithmetic 3.2.4 with D_L((−q)^(−k)) = Den(⟨1⟩_(n+k), L)/Den(⟨1⟩_(n+k), ⟨1⟩_n) for k ≥ 0, q = #k_F₀. For full-rank L in the nonsplit V_n the valuation val(L) is odd, so D_L(1) = 0 by the functional equation 3.2.7, and ∂Den(L) := −D′_L(1). With Li–Zhang's standard Siegel section and self-dual measures, the derivative at s = 0 of the local Whittaker function satisfies W′_T(0, 1_(L^n)) = ∂Den(L)·∏_(i=1)^n (1 − (−q)^(−i))·log(q²), T the Gram matrix of L (LZ §3.3, pp. 16–17; §9.1, pp. 60–62). The logarithm is that of the residue cardinality q² of F, while the interpolation variable uses q.
+Prove the normalization of the analytic side. For an integral nondegenerate lattice L of rank n in an unramified hermitian space, D_L(X) is the polynomial of GeometryOfNumbersAndQuadraticArithmetic 3.2.4 with D_L((−q)^(−k)) = Den(⟨1⟩_(n+k), L)/Den(⟨1⟩_(n+k), ⟨1⟩_n) for k ≥ 0, q = #k_F₀. For full-rank L in the nonsplit V_n the valuation val(L) is odd, so D_L(1) = 0 by the functional equation 3.2.7, and ∂Den(L) := −D′_L(1). The Schwartz input is a separate reference lattice: let Λ = ⟨1⟩_n be the self-dual lattice with Gram matrix the identity, in the split hermitian space Λ ⊗ F of dimension n, and φ₀ = 1_(Λ^n). With Li–Zhang's standard Siegel–Weil section of φ₀, the unramified additive character and self-dual measures, the local Whittaker function W_T(g, s, φ₀) at the Gram matrix T of an O_F-basis of L satisfies W_T(1, k, φ₀) = Den(⟨1⟩_(n+2k), L) for integers k ≥ 0, hence W_T(1, 0, φ₀) = Den(L)·∏_(i=1)^n (1 − (−q)^(−i)) and W′_T(1, 0, φ₀) = ∂Den(L)·∏_(i=1)^n (1 − (−q)^(−i))·log(q²) (LZ §3.3, (3.3.0.1)–(3.3.0.2), pp. 16–17; §9.1, pp. 60–62). The lattice L enters only through T. The logarithm is that of the residue cardinality q² of F, while the interpolation variable uses q.
 
 **Checks.**
 
-- n = 1, val h(x,x) = 1: D(X) = 1 − X, ∂Den = 1 and W′_T(0) = (1 + q⁻¹)·2 log q.
+- n = 1, val h(x,x) = 1: D(X) = 1 − X, ∂Den = 1 and W′_T(1, 0, φ₀) = (1 + q⁻¹)·2 log q; at q = 3 this is (4/3)·log 9 = (8/3)·log 3.
+- L is not the Schwartz lattice: in rank one L = ⟨ϖ⟩ has val(det) = 1 and Λ = ⟨1⟩ has val(det) = 0, of different parity, so L ⊗ F (nonsplit) and Λ ⊗ F (split) are not isometric. With 1_(L^n) in place of φ₀ the space of the input represents T itself, so the value at s = 0 is a nonzero multiple of the representation density of T by L (equal to q + 1 for L = ⟨ϖ⟩: the units a mod ϖ^N with N(a) ≡ 1 mod ϖ^(N−1) number (q + 1)·q^N), not Den(L) = 0, and its derivative is not the normalization above.
 - Writing log q in place of log(q²) halves the derivative and breaks the comparison of §13.5.
 - For a lattice of even valuation, in a split space, D_L(1) ≠ 0 in general (D(X) = 1 − X + X² at valuation 2 has D(1) = 1), so the derivative is not the leading term there.
 
@@ -536,7 +546,7 @@ Prove that for every full-rank O_F-lattice L in the nonsplit unramified space V_
 
 ### Examples
 
-For D(X) = 1 − X + X² − X³, D(1) = 0 and −D′(1) = 2; the Li–Zhang Whittaker derivative is then 2·(1 + q⁻¹)·log(q²) in rank one. A support condition with val h(x,x) ≥ 0 on both a function and its transform is weaker than the strict condition of the uncertainty principle and cannot replace it.
+For D(X) = 1 − X + X² − X³, D(1) = 0 and −D′(1) = 2; the Li–Zhang Whittaker derivative W′_T(1, 0, φ₀) with φ₀ = 1_⟨1⟩ is then 2·(1 + q⁻¹)·log(q²) in rank one, T = (ϖ³) coming from L. A support condition with val h(x,x) ≥ 0 on both a function and its transform is weaker than the strict condition of the uncertainty principle and cannot replace it.
 
 ### Dependencies
 
@@ -622,7 +632,7 @@ Prove that for every full-rank L ⊂ W_n, (q+1)·Int_Y(L) = ∂Den_Λ(L) − Den
 
 ### 4.6 Li–Liu normalization of the local identities
 
-Prove the conversion to Li–Liu's local normalization. For n = 2r, a nonsingular T at an inert place v and q = #k_(F₀,v) (the residue cardinality of the place of the totally real field below the place of the CM field), put b_(n,v)(0) = ∏_(i=1)^n (1 − (−q)^(−i))⁻¹. In Li–Liu's Whittaker parameter the self-dual Euler intersection equals b_(n,v)(0)·W′_T(φ₀)/log q, and the almost self-dual intersection equals b_(n,v)(0)/log q times ((q^(2r) − 1)/(q+1)·W′_T(φ₁) − (log q)/(q+1)·W_T(φ₀)), for the lattice-indicator sections of LL1 (LZ's φ₀, φ₁) (LL1 Notation 2.1 (F1), (F4), p. 10; §8 local identity, pp. 39–40; §9 local identity, pp. 44–45; LZ Remarks 3.4.2, p. 17, and 10.5.4, p. 72). The route compares Li–Liu's normalization of the local density with Li–Zhang's standard section before transporting derivatives; the correction term of §4.5 is kept.
+Prove the conversion to Li–Liu's local normalization. For n = 2r, a nonsingular T at an inert place v and q = #k_(F₀,v) (the residue cardinality of the place of the totally real field below the place of the CM field), put b_(n,v)(0) = ∏_(i=1)^n (1 − (−q)^(−i))⁻¹. In Li–Liu's Whittaker parameter the self-dual Euler intersection equals b_(n,v)(0)·W′_T(φ₀)/log q, and the almost self-dual intersection equals b_(n,v)(0)/log q times ((q^(2r) − 1)/(q+1)·W′_T(φ₁) − (log q)/(q+1)·W_T(φ₀)), for the lattice-indicator sections φ₀ = 1_(Λ₀^n) and φ₁ = 1_(Λ₁^n) of the reference lattices Λ₀ = ⟨1⟩_n (self-dual, §3.1) and Λ₁ = ⟨1⟩_(n−1) ⊥ ⟨ϖ⟩ (almost self-dual), while T is the Gram matrix of the lattice whose intersection number is computed (LL1 Notation 2.1 (F1), (F4), p. 10; §8 local identity, pp. 39–40; §9 local identity, pp. 44–45; LZ §3.3, p. 16, §9.2, p. 63, Remarks 3.4.2, p. 17, and 10.5.4, p. 72). The route compares Li–Liu's normalization of the local density with Li–Zhang's standard section before transporting derivatives; the correction term of §4.5 is kept.
 
 **Checks.**
 
@@ -652,7 +662,7 @@ Its API consists of the following facts:
 
 - The scaled form is integral-valued on the special homomorphisms that lift.
 - N(x) represents the extension of the special quasi-homomorphism x.
-- Both connected components of N^exo belong to the model, and N(x) meets each.
+- Both connected components of N^exo belong to the model. For x ≠ 0, N(x) is nonempty exactly when h(x,x) ∈ O_F₀ (LL2 §2.1, footnote 9, p. 11); then N(x)_red is the union of the open strata of the vertex lattices containing x (LL2 Corollary 2.30, p. 23), the closed stratum of such a lattice meets both connected components (LL2 Proposition 2.28(2), p. 23, PELModuliPartII §3.7), and so N(x) meets both. For h(x,x) ∉ O_F₀, N(x) = ∅ and meets neither.
 - The lifting subfunctor commutes with base change of test schemes and depends only on the O_F-span of its labels.
 
 **Checks.**
@@ -660,6 +670,7 @@ Its API consists of the following facts:
 - Odd n is outside the exotic smooth family; the trace-self-dual hyperbolic model exists only in even rank.
 - Omitting the factor u⁻² shifts every u-adic norm valuation by 2 and changes which lattices are integral.
 - For n = 2 and the minimal integral invariants (1,1), the total intersection number is 2, one on each component (§5.5 with b₁ = b₂ = 0).
+- Nonintegral norm: for e with h(e,e) = 1 and x = u⁻¹e, h(x,x) = u⁻¹·ū⁻¹ = −u⁻², of F₀-valuation −1 since −u² = N(u) is a uniformizer of F₀; hence N(x) = ∅ and meets zero components, while N(e) is nonempty and meets both.
 
 *Needs:* PELModuliPartII §§3.3–3.7; AbelianSchemesAndArithmeticModuli §A4.CR.7.2; GeometryOfNumbersAndQuadraticArithmetic §2.7 `IntegralHermitianLattice.ofCarrier`.
 
@@ -704,7 +715,7 @@ Prove that for every d ≥ 0 the d-dimensional Tate homology classes on an exoti
 - A type-four stratum is a ℙ¹ on each component; its H² is spanned by the class of a type-two point, and deg ω = q − 1, which is 2 at q = 3.
 - Replacing the trace dual by the hermitian dual h(x,Λ) ⊂ O_F changes the type of every vertex lattice and therefore the dimension assigned to its stratum.
 
-*Needs:* §5.2; PELModuliPartII §3.7; MotivesAndAlgebraicCycles §§2.4, 2.7; ClassicalAdicEtaleCohomology Layer 8; SchemeAndStackFoundations §5.3.
+*Needs:* §5.2; PELModuliPartII §3.7; MotivesAndAlgebraicCycles §§2.4, 2.7; EtaleCohomologyFoundations §§0.7–0.8, F.2.5 and F.4.1–F.4.6; SchemeAndStackFoundations §5.3.
 
 ### 5.5 Exotic rank-two intersection
 
@@ -737,7 +748,7 @@ The rank-two count gives 2, 4 and 2(q+3) at (b₁, b₂) = (0,0), (0,1), (1,1); 
 
 ### Dependencies
 
-Layer 0; PELModuliPartII §§3.3–3.7; AbelianSchemesAndArithmeticModuli §A4.CR.7.2; FiniteFlatGroupsAndIntegralPadicHodgeTheory §R07.2.20; GeometryOfNumbersAndQuadraticArithmetic §2.7; GrossZagierAndArithmeticHeights §7.2; LubinTateFormalModulesAndQuasiCanonicalLifts §§6.2 and 7.1; MotivesAndAlgebraicCycles §§2.4, 2.7; ClassicalAdicEtaleCohomology Layer 8; SchemeKTheoryOperationsPartII §1.7. The ²D Coxeter computation is Lusztig76, as cited in LL2 Lemma 2.32.
+Layer 0; PELModuliPartII §§3.3–3.7; AbelianSchemesAndArithmeticModuli §A4.CR.7.2; FiniteFlatGroupsAndIntegralPadicHodgeTheory §R07.2.20; GeometryOfNumbersAndQuadraticArithmetic §2.7; GrossZagierAndArithmeticHeights §7.2; LubinTateFormalModulesAndQuasiCanonicalLifts §§6.2 and 7.1; MotivesAndAlgebraicCycles §§2.4, 2.7; EtaleCohomologyFoundations §§0.7–0.8, F.2.5 and F.4.1–F.4.6; SchemeKTheoryOperationsPartII §1.7. The ²D Coxeter computation is Lusztig76, as cited in LL2 Lemma 2.32.
 
 ## Layer 6: Exotic analytic formula and induction
 
@@ -893,10 +904,11 @@ Its API consists of the following facts:
 
 ### 7.2 Symplectic incidence resolution
 
-Construct the symplectic incidence varieties. For a 2m-dimensional symplectic space V over F_q with Frobenius Φ, let S_V parametrize Lagrangian subspaces U with dim(U ∩ ΦU) ≥ m−1, and Y_V the pairs (U, U′) with dim U′ = m−1 and U′ ⊂ U ∩ ΦU. Prove that Y_V is smooth and projective of dimension m; for m ≥ 2 the projection Y_V → S_V resolves the singularities of S_V at its rational points, with exceptional fibres ℙ^(m−1); for m = 1, S_V = ℙ¹ and the projection is an isomorphism (K §3.1, Lemma 3.1, Proposition 3.2 and Remark 3.3, pp. 16–17). The route constructs the isotropic flag incidence scheme and computes its tangent spaces, treating m = 1 separately.
+Construct the symplectic incidence varieties. For an integer m ≥ 1 and a 2m-dimensional symplectic space V over F_q with Frobenius Φ, let S_V parametrize Lagrangian subspaces U with dim(U ∩ ΦU) ≥ m−1, and Y_V the pairs (U, U′) with dim U′ = m−1 and U′ ⊂ U ∩ ΦU. Prove that Y_V is smooth and projective of dimension m; for m ≥ 2 the projection Y_V → S_V resolves the singularities of S_V at its rational points, with exceptional fibres ℙ^(m−1); for m = 1, S_V = ℙ¹ and the projection is an isomorphism (K §3.1, Lemma 3.1, Proposition 3.2 and Remark 3.3, pp. 16–17). The route constructs the isotropic flag incidence scheme and computes its tangent spaces, treating m = 1 separately.
 
 Its API consists of the following facts:
 
+- The construction is for m ≥ 1, the range of K §3.1; type-zero vertex lattices, which would give m = 0, are treated separately in §§7.3–7.4.
 - The dimension condition is on U ∩ ΦU.
 - Forgetting U′ gives Y_V → S_V.
 - For m = 1, U′ = 0 and Y_V = S_V = ℙ¹.
@@ -904,7 +916,8 @@ Its API consists of the following facts:
 
 **Checks.**
 
-- m = 1: every line in a symplectic plane is Lagrangian, S_V = ℙ¹ is smooth, and there is no exceptional curve.
+- m = 0 is excluded, not reinterpreted: V = 0, S_V is the point {0}, and an incidence pair would need a subspace U′ of dimension −1, so Y_V is not defined; the target does not read m − 1 as the truncated natural number 0 (which would make Y_V → S_V the identity of a point), and type-zero strata take the separate route of §7.4.
+- m = 1: every line in a symplectic plane is Lagrangian, U′ = 0, Y_V = S_V = ℙ¹ of dimension 1, smooth, and there is no exceptional curve.
 - m = 2: over a rational Lagrangian U (ΦU = U) the fibre consists of all lines U′ ⊂ U, a ℙ¹.
 - Replacing the inequality dim(U ∩ ΦU) ≥ m−1 by equality removes the rational points and the boundary.
 
@@ -1123,7 +1136,7 @@ Layer 7; gap:ramified-hermitian-densities; GeometryOfNumbersAndQuadraticArithmet
 
 ## Layer 9: Local AFL geometry and rank reduction
 
-Define the intersection numbers of the arithmetic fundamental lemma on unramified Rapoport–Zink spaces, in the group and semi-Lie versions, prove their finiteness and orbit invariance, normalize the analytic side, compare the two versions through the relative Cayley map, and prove local constancy and compact support. This layer uses Layers 0–2 and not the density layers.
+Define the intersection numbers of the arithmetic fundamental lemma on unramified Rapoport–Zink spaces, in the group and semi-Lie versions, prove their finiteness and orbit invariance, normalize the analytic side, compare the two versions through the relative Cayley map, prove local constancy and compact support, and supply the AFL in rank at most three. This layer uses Layers 0–2 and not the density layers.
 
 ### 9.1 Group AFL intersection
 
@@ -1230,13 +1243,25 @@ Prove that for an unramified quadratic extension of odd residue characteristic a
 
 *Needs:* §§0.9, 9.2–9.3; EndoscopicTransferAndUnitaryTraceComparisonPartII §§4.4–4.5; gap:jr-afl-local-inputs.
 
+### 9.8 Low-rank AFL input
+
+Prove that for the unramified quadratic extension F of F₀ = ℚ_p, p odd, the group AFL holds in rank n ≤ 3: for regular semisimple γ ∈ S_n(F₀) matching g ∈ U(V_n)(F₀), ∂Orb(γ, 1_(S_n(O_F₀))) = −Int(g)·log p with the transfer factor included (Z Conjecture 3.2(a), whose strongly regular case is Conjecture 3.8(a)); and that, with §9.5(b), the semi-Lie AFL on V_(n−1) follows for n ≤ 3. For n = 1 both sides are trivial (§14.6). The cases n = 2 and n = 3 are Zhang's explicit computations of both sides (Zha12 Theorem 2.10, p. 211, and Theorem 5.5, p. 250, for his Conjecture 2.9, p. 210, over a p-adic field with p odd); in rank at most three every regular semisimple g has an artinian intersection, which is why the computation is possible there (Zha12 §2.2, p. 210; Mih16 §6, p. 29). The route translates Zhang's identity, written with his sign ω′(γ) and his orbital-integral normalization, into the normalization of Z Conjecture 3.2(a) with the transfer factor ω(γ) and the factor −log p; for n = 2 both sides reduce to lifting along the canonical lift, and for n = 3 to the decomposition of special cycles on N₂ into quasi-canonical cycles and their lifting lengths, which are §§1.3–1.4 here and GrossZagierAndArithmeticHeights §7.2.
+
+**Checks.**
+
+- n = 2: both sides equal (v(1 − dd̄) + 1)/2 up to the factor −log p, by Gross's canonical lifting (Zha12 Theorem 2.10); at v(1 − dd̄) = 1 and 3 the intersection numbers are 1 and 2 and ∂Orb/log p = −1 and −2, the same values as the semi-Lie dimension-one formula (a+1)/2 of §0.9 at a = 1 and 3.
+- Rank three is the limit: Zhang's computation uses that the diagonal and its g-translate meet in an artinian scheme for every regular g, which holds only for n ≤ 3 (Zha12 §2.2, p. 210); for n = 4 a regular semisimple g can have a non-artinian intersection, and this target says nothing there.
+- The passage to the semi-Lie version uses only §9.5(b), valid for q ≥ n: for n = 3 and p = 3 the implication from S₃ to V₂ holds, and the converse at q = n is not used.
+
+*Needs:* §§1.3–1.4, 9.1, 9.3, 9.5; GrossZagierAndArithmeticHeights §7.2; LubinTateFormalModulesAndQuasiCanonicalLifts §§6.1–6.2; gap:jr-afl-local-inputs.
+
 ### Examples
 
 The Cayley map is undefined at a block with d = 1, so the graph comparison requires a unit denominator on the integral locus. For a unit-norm u the special cycle is the lower-rank Rapoport–Zink space and the norm-unit reduction needs no residue bound. In semi-Lie dimension m the maximal-order input needs p > m+1. At q = n the n eigenvalue residues and the residue of d can exhaust the q+1 norm-one residues.
 
 ### Dependencies
 
-Layers 0 and 2; PELModuliPartII §§1.4 and 1.6; SchemeKTheoryOperationsPartII §§3.2, 4.3 and 4.7; EndoscopicTransferAndUnitaryTraceComparisonPartII §§4.4–4.5; gap:jr-afl-local-inputs; AutomorphicLFunctionsAndLocalFactors AL.0.
+Layers 0–2; PELModuliPartII §§1.4 and 1.6; SchemeKTheoryOperationsPartII §§3.2, 4.3 and 4.7; GrossZagierAndArithmeticHeights §7.2; LubinTateFormalModulesAndQuasiCanonicalLifts §§6.1–6.2; EndoscopicTransferAndUnitaryTraceComparisonPartII §§4.4–4.5; gap:jr-afl-local-inputs; AutomorphicLFunctionsAndLocalFactors AL.0.
 
 ## Layer 10: Global special cycles and local degrees
 
@@ -1244,14 +1269,14 @@ Construct the global special cycles on the RSZ models of PELModuliPartII §§7.3
 
 ### 10.1 Global unitary special cycles
 
-Construct the global special cycles. For a CM extension F/F₀, signature (n−1,1) at φ₀, the PEL datum, polarization lattice and neat level K of PELModuliPartII §§6.1, 6.7, 7.3 and 7.10, a hermitian matrix T of size r and a K-invariant open compact subset U ⊂ V(𝔸_(F₀,f))^r, let Z(T,1_U) classify (A₀, A, x₁, …, x_r) with x_i: A₀ → A homomorphisms whose Gram matrix (λ₀⁻¹ ∘ x_j^∨ ∘ λ ∘ x_i), with (i,j) entry h(x_i, x_j), is T and whose Tate class, read through the level structure, lies in U. For a K-invariant Schwartz function φ on V(𝔸_(F₀,f))^r with values in a coefficient field C ⊂ ℂ (C = ℚ for rational φ), whose finitely many nonzero values c have K-invariant open compact level sets φ⁻¹(c), define Z(T,φ) = Σ_c c·Z(T,1_(φ⁻¹(c))) as a cycle with C-coefficients; it is the linear extension of the characteristic-function cycles, not the moduli problem of the support of φ (LL1 §8, p. 38). For nonsingular positive definite T the forgetful map to the model is finite unramified; for r = 1 the positive-norm cycle is étale-locally Cartier and flat under the RSZ hypotheses. An isomorphism (ϕ₀, ϕ) of moduli pairs with common polarization similitude transports x to ϕ ∘ x ∘ (ϕ₀^r)⁻¹ and its Tate label by the same conjugation (LZ §§11.1–11.4, pp. 72–77; §13.3, pp. 81–82; Z §§7.1–7.3; LL1 Lemma 5.2, Definition 5.3 and Lemma 5.4, pp. 26–27). The route constructs the Hom-lifting stack with Tate-level labels and applies §0.2 locally.
+Construct the global special cycles. For a CM extension F/F₀, signature (n−1,1) at φ₀, the PEL datum, polarization lattice and neat level K of PELModuliPartII §§6.1, 6.7, 7.3 and 7.10, a hermitian matrix T ∈ Herm_r(F) and a K-invariant open compact subset U ⊂ V(𝔸_(F₀,f))^r, let Z(T,1_U) on the canonical model over E classify (A₀, A, x₁, …, x_r) with x_i ∈ Hom_(O_F)(A₀, A) ⊗ ℚ O_F-linear quasi-homomorphisms whose Gram matrix (λ₀⁻¹ ∘ x_j^∨ ∘ λ ∘ x_i), with (i,j) entry h(x_i, x_j), is T and whose rational Tate class (x_i)_* lies in η(U) for the level structure η; objects are taken up to the O_F-linear quasi-isogenies of the generic moduli problem, which act on the labels (LL1 Definition 5.3 and Lemma 5.4, pp. 26–27). Actual homomorphisms are not required: under principal polarizations their norms lie in O_F₀, while U may contain labels with denominators. On an integral model the cycle is defined by a moduli problem only for admissible data. Over O_(E,(ν)) for ν above p, on the semi-global model of PELModuliPartII §7.3, call 1_U v-admissible at a place v of F₀ above p that is nonsplit in F if its v-component is U_v = Λ_v^r; when this holds at every such v, Z(T,1_U) classifies tuples x ∈ (Hom_(O_F)(A₀, A) ⊗ ℤ_(p))^r, denominators prime to p allowed and none at p, with Gram matrix T ∈ Herm_r(O_(F,(p))), prime-to-p Tate label in U^p and the prescribed étale label at the split places above p, objects being taken up to prime-to-p quasi-isogenies (LZ §§13.2–13.3, p. 81; the p-basic condition of LL1 Definition 6.5, p. 30). A Schwartz function is inert-admissible if it is v-admissible at every place v inert in F. Over O_E[1/d], on the localized model of PELModuliPartII §§7.1–7.2, for φ = 1_(Λ^d) ⊗ φ_d with Λ^d = ∏_(v∤d) Λ_v° the self-dual lattices away from d and φ_d K-invariant at d, the divisor Z(ξ, φ) = Σ_μ φ_d(μ)·Z(ξ, μ) is built from the moduli problems Z(ξ, μ) of labels u ∈ Hom_(O_F)(A₀, A) ⊗ ℤ[1/d] with h(u,u) = ξ and level class μ at d, denominators allowed exactly at d; Z(ξ, μ) is finite unramified over the model, étale-locally Cartier and flat over O_E[1/d] (Z Definition 7.2, Proposition 7.3 and (7.2), pp. 31–32). On the global model of PELModuliPartII §7.10, Z(T,φ) is the T-summand of the fibre product of the Zariski closures of the generic cycles Z(t_i, φ_i), t_i the diagonal entries of T, and for inert-admissible φ its base change to O_(E,(ν)) above an inert prime is the semi-global moduli cycle (LZ §§14.3 and 14.5, pp. 85–86). For a K-invariant Schwartz function φ on V(𝔸_(F₀,f))^r with values in a coefficient field C ⊂ ℂ (C = ℚ for rational φ), whose finitely many nonzero values c have K-invariant open compact level sets φ⁻¹(c), define Z(T,φ) = Σ_c c·Z(T,1_(φ⁻¹(c))) as a cycle with C-coefficients; it is the linear extension of the characteristic-function cycles, not the moduli problem of the support of φ (LL1 §8, pp. 37–38). For nonsingular positive definite T the forgetful map of the generic cycle and of the admissible semi-global cycle to its model is finite unramified (LL1 Lemma 5.4(1); LZ §13.3); for r = 1 the positive-norm cycle is étale-locally Cartier and flat under the RSZ hypotheses. A quasi-isogeny (ϕ₀, ϕ) of moduli pairs with common polarization similitude (prime to p on the semi-global model) transports x to ϕ ∘ x ∘ (ϕ₀^r)⁻¹ and its Tate label by the same conjugation (LZ §§11.1–11.4, pp. 72–77; §13.3, pp. 81–82; Z §§7.1–7.3; LL1 Lemma 5.2, Definition 5.3 and Lemma 5.4, pp. 26–27). The route constructs the quasi-homomorphism stack with Tate-level labels on the generic fibre, the Hom ⊗ ℤ_(p) stack for admissible data on the semi-global model, and applies §0.2 locally.
 
 Its API consists of the following facts:
 
-- A point of Z(T,1_U) includes the Hom tuple with its Gram and level conditions.
+- A point of Z(T,1_U) on the generic model includes the tuple of O_F-linear quasi-homomorphisms with its Gram and level conditions; on the semi-global model at p, for admissible U, the tuple lies in Hom ⊗ ℤ_(p).
 - Z(T, ·) is C-linear: Z(T,1_(U′ ⊔ U″)) = Z(T,1_(U′)) + Z(T,1_(U″)) for disjoint K-invariant open compact U′, U″, as moduli spaces, and Z(T, cφ + φ′) = c·Z(T,φ) + Z(T,φ′) as cycles.
-- Isomorphisms (ϕ₀, ϕ) transport the tuple by x ↦ ϕ ∘ x ∘ (ϕ₀^r)⁻¹, with the corresponding Tate-level transport.
-- The forgetful map is finite unramified, which is weaker than finite étale over the arithmetic base.
+- Quasi-isogenies (ϕ₀, ϕ) of the moduli problem (prime to p on the semi-global model) transport the tuple by x ↦ ϕ ∘ x ∘ (ϕ₀^r)⁻¹, with the corresponding Tate-level transport.
+- For nonsingular positive definite T the forgetful map is finite unramified, which is weaker than finite étale over the arithmetic base; on an integral model this is asserted for admissible data.
 - Pulling back the abelian schemes, the tuple and the level label identifies the special-cycle functor over a new base, with the Gram matrix preserved.
 
 **Checks.**
@@ -1259,9 +1284,10 @@ Its API consists of the following facts:
 - A Gram matrix with a negative definite part has no generic cycle in the positive-definite signature.
 - Changing the tuple by x′_i = Σ_j x_j·a_(ji), a ∈ GL_r(O_F), replaces T by a^t·T·ā, because h is linear in its first variable: for T = I₂ and a with a₁₁ = a₂₂ = 1, a₁₂ = b, a₂₁ = 0, where b̄ = −b ≠ 0, direct substitution gives the off-diagonal entries h(x′₁, x′₂) = b̄ = −b and h(x′₂, x′₁) = b, and h(x′₂, x′₂) = 1 − b², as a^t·T·ā does, while ā^t·T·a would put b at (1,2) and −b at (2,1).
 - Weights are not supports: Z(T, 2·1_U) = 2·Z(T,1_U), while 2·1_U and 1_U have the same support.
+- Labels are rational: over F₀ = ℚ, at a point where A ≅ A₀ × B with the product principal polarization and x the inclusion of the first factor, h(x,x) = 1 and the quasi-homomorphism x/3 has norm 1/9. For a small K-invariant compact open U ∋ x/3 whose 3-component avoids the integral Tate lattice, the generic cycle Z(1/9, 1_U) contains this point, whereas a functor of actual homomorphisms would be empty, since their norms lie in ℤ. On the semi-global model at p ≠ 3 the denominator 3 is allowed in Hom ⊗ ℤ_(p); at p = 3 with 3 nonsplit in F, admissibility forces U_3 = Λ_3 and excludes x/3.
 - With ϕ₀ = id the transport is postcomposition x ↦ ϕ ∘ x.
 
-*Needs:* §0.2; PELModuli §§M1.3, M3.8; PELModuliPartII §§6.1, 6.7, 7.3 and 7.10.
+*Needs:* §0.2; PELModuli §§M1.3, M3.8; PELModuliPartII §§6.1, 6.7, 7.1–7.3 and 7.10.
 
 ### 10.2 Integral cycle K-classes
 
@@ -1319,7 +1345,7 @@ A rank-one integral class is the Cartier structure class. For a tuple of rank r 
 
 ### Dependencies
 
-Layers 0, 4 and 6; PELModuli §§M1.3, M3.8, M6.1; PELModuliPartII §§6.1, 6.7, 7.3, 7.10, 9.3, 9.5–9.7 and 9.9; SchemeKTheoryOperations §§6.12, 7.7; SchemeKTheoryOperationsPartII §4.2.
+Layers 0, 4 and 6; PELModuli §§M1.3, M3.8, M6.1; PELModuliPartII §§6.1, 6.7, 7.1–7.3, 7.10, 9.3, 9.5–9.7 and 9.9; SchemeKTheoryOperations §§6.12, 7.7; SchemeKTheoryOperationsPartII §4.2.
 
 ## Layer 11: Fat CM and derived Hecke cycles
 
@@ -1409,7 +1435,7 @@ Layers 9–10; PELModuli §§M1.3, M1.13, M6.1; PELModuliPartII §§6.6, 8.5 and
 
 ## Layer 12: Modular divisors, Green functions and CM pairings
 
-Construct the Chow-valued and arithmetic generating series of special divisors, with their automorphic-line constant terms, complex orbit descriptions and Green functions in a fixed normalization; prove their modularity in the stated scope; pair them with the proper derived CM one-cycle; and compute the finite inert and archimedean contributions as orbit sums.
+Construct the Chow-valued and arithmetic generating series of special divisors, with their automorphic-line constant terms, complex orbit descriptions and Green functions in a fixed normalization; over ℚ and for n ≥ 3 construct the automorphic Green functions as regularized theta lifts and the unitary Borcherds products with their integral divisors; prove the modularity of the series in the stated scope; pair them with the proper derived CM one-cycle; and compute the finite inert and archimedean contributions as orbit sums.
 
 ### 12.1 Chow-valued unitary divisor series
 
@@ -1461,13 +1487,54 @@ Its API consists of the following facts:
 
 *Needs:* §12.2; ArakelovGeometryAndAbelianHeights §1.8; MetaplecticAutomorphicForms §3.3b.
 
-### 12.4 Arithmetic divisor series and Green correction
+### 12.4 Automorphic Green functions by regularized theta lifts
 
-Construct the arithmetic series. With the regularized-theta Green function G_B of the source, define Ẑ_B(ξ,φ) = (Z(ξ,φ), G_B) for ξ > 0 and Ẑ_B(0,φ) = −φ(0)·ĉ₁(ω, ‖·‖_Pet), with principal arithmetic divisors (div f, −log|f|²), in the arithmetic Chow group of the integral model over O_E[1/d] modulo vertical classes at the excluded places; and define the correction series from G_K − G_B with the same weight-n Whittaker coefficients (Z §8.3, (8.14); §8.4, (8.15)–(8.17)). The route imports arithmetic divisors with Green functions and pins the zero coefficient and the metric comparison.
+Construct the automorphic Green functions. Let F₀ = ℚ, F an imaginary quadratic field, n ≥ 3 and V an F-hermitian space of signature (n−1,1), regarded as the rational quadratic space (V, Q) with Q(x) = h(x,x), of signature (2n−2, 2). The domain D of negative lines is the domain of negative definite F-stable planes z ⊂ V(ℝ); x_z is the orthogonal projection of x to z, so that Q(x_z) = R(x,z) ≤ 0 in the notation of §12.3. For an O_F-lattice L ⊂ V on which h is O_F-valued, with dual L′ for the trace form Tr_(F/ℚ) h, let S_L be the finite-dimensional space of Schwartz functions on V(𝔸_f) supported on L̂′ and invariant under L̂, with the Weil representation ω_L of SL₂(ℤ); every Schwartz function lies in S_L once L is small enough, since shrinking L enlarges L′. For an S_L-valued harmonic Maass form f of weight 2 − n for ω_L whose nonholomorphic part has cuspidal shadow (the space H⁺ of QSeriesPartitionsAndMockModularForms §§8.3 and 8.5), with holomorphic part f⁺ = Σ_m c⁺(m)q^m, c⁺(m) ∈ S_L, nonzero for only finitely many m < 0, define the regularized theta lift `Θ^reg(z, g, f) = ∫^reg_(SL₂(ℤ)∖ℍ) ⟨f(τ), θ(τ, z, g)⟩ du dv/v²`, where `θ(τ, z, g)(ϕ) = Σ_(x∈V) ϕ(g⁻¹x)·v·e^(2πi(Q(x_(z⊥))τ + Q(x_z)τ̄))` is the Siegel theta function of weight n − 2 and the integral is regularized as by Borcherds (BHKRY §7.2, pp. 99–101; Bor98 §6). Prove the following. (a) Θ^reg(f) is smooth on M(ℂ) off the divisor Z(f)(ℂ) = Σ_(m>0) Z(m, c⁺(−m))(ℂ), and near (z₀, g) the difference between Θ^reg(z, g, f) and Σ c⁺(−Q(x))(g⁻¹x)·Γ(0, 4π|Q(x_z)|), summed over the x ∈ V with Q(x) > 0 orthogonal to z₀, is smooth, where Γ(0, t) = ∫_t^∞ e^(−v) dv/v (BHKRY Theorem 7.2.1, p. 101, for harmonic f with principal parts supported on L̂; Bor98 Theorem 6.2, p. 24, for weakly holomorphic vector-valued f; in general the singular part comes from the principal part alone, the rest of f contributing a smooth function); hence Θ^reg(f) is a Green function of logarithmic type for Z(f)(ℂ) with the multiplicities given by the principal part. (b) For every m ∈ ℚ_(>0) and φ ∈ S_L there is a unique such form f_(m,φ) whose principal part is a single q^(−m)-term with coefficient the projection of φ to the functions allowed there by ω_L (supported on the cosets μ + L̂ with Q(μ) ≡ m mod ℤ, of the parity fixed by ω_L(−1)); since Q(x) = m forces Q(μ) ≡ m for x ∈ μ + L̂, and D(x) = D(−x), the projection has the same divisor Z(m, φ), and G_B(m, φ) := Θ^reg(f_(m,φ)) is ℚ-linear in φ and does not depend on the choice of L (BHKRY §7.3, p. 102). (c) For weakly holomorphic f, Θ^reg(f) = −log‖ψ(f)‖² for the Borcherds product ψ(f) of §12.5 (BHKRY Theorem 7.2.4, p. 102). The route reduces to the connected components of M(ℂ), on which the lift is Borcherds' regularized lift for the lattice gL; existence in (b) uses the ξ-operator exact sequences of QSeriesPartitionsAndMockModularForms §8.6, uniqueness the vanishing of holomorphic modular forms of negative weight 2 − n (a form in H⁺ with zero principal part has ξ-image orthogonal to every cusp form, hence is weakly holomorphic, hence holomorphic of negative weight and zero), and independence of L the compatibility of the lift with the inclusions S_L ⊂ S_(L₁) for L₁ ⊂ L.
 
 Its API consists of the following facts:
 
-- Each special divisor carries the regularized-theta Green function.
+- Θ^reg(f) depends linearly on f, and its singularities along each D(x), Q(x) > 0, are c⁺(−Q(x))(g⁻¹x)·Γ(0, 4π|R(x,z)|) up to smooth functions.
+- G_B(m, φ) is a Green function of logarithmic type for Z(m, φ)(ℂ) on the open Shimura variety, ℚ-linear in φ.
+- For weakly holomorphic f, Θ^reg(f) = Σ_(m>0) G_B(m, c⁺(−m)), by uniqueness in (b).
+- For weakly holomorphic f, Θ^reg(f) = −log‖ψ(f)‖² with the Petersson metric of §12.5.
+
+**Checks.**
+
+- Zero input: f = 0 gives Θ^reg = 0, the Green function of the zero divisor, and G_B(m, 0) = 0.
+- Weights are multiplicities: since Γ(0, t) = −log t − γ + O(t) and R(x,z) = |h(w, x)|²/h(w, w) for a local holomorphic generator w of the tautological line, the singular term c·Γ(0, 4π|R(x,z)|) is −c·log|ℓ_x|² plus a smooth function, ℓ_x = h(w, x) a local equation of D(x); replacing the principal part φ·q^(−m) by 2φ·q^(−m) doubles every multiplicity, although both have the same support.
+- Normalization: Γ(0, 4π|R(x,z)|) = −Ei(4πR(x,z)) = G_K(x, 1)(z) of §12.3, since Γ(0, t) = −Ei(−t); the automorphic and Kudla Green functions have the same singular part along every D(x), so G_K − G_B is smooth there.
+- n ≥ 3 is needed for uniqueness: for n = 3 the weight 2 − n = −1 is negative and holomorphic forms of weight −1 vanish; for n = 2 the weight is 0, the ω_L-invariant constant vectors are holomorphic of weight 0, and f_(m,φ) and G_B(m, φ) would be determined only up to them.
+
+*Needs:* §§10.1, 12.1, 12.3; QSeriesPartitionsAndMockModularForms §§8.3, 8.5, 8.6; MetaplecticAutomorphicForms §4.5; PELModuli §M3.4.
+
+### 12.5 Unitary Borcherds products and the modularity criterion
+
+Prove the Borcherds relations and the modularity criterion. In the setting of §12.4 (F₀ = ℚ, F imaginary quadratic, n ≥ 3), let f ∈ M^!_(2−n)(ω_L) be an S_L-valued weakly holomorphic form with principal part Σ_(m>0) c(−m)q^(−m) and constant term c(0), with c(m) ℤ-valued for m ≤ 0, and put k = c(0)(0). (a) After replacing f by a positive integer multiple, there is a rational section ψ(f) of ω^(⊗k) on the canonical model M over E whose divisor on the generic fibre is Σ_(m>0) Z(m, c(−m)), the special divisors of §10.1 with r = 1 and their moduli multiplicities, and whose norm for the Petersson metric ‖w‖² = −[w, w]/(4πe^γ) on the tautological line ([·,·] the bilinear extension of Tr_(F/ℚ) h, γ Euler's constant) satisfies −log‖ψ(f)‖² = Θ^reg(f) (BHKRY Theorem 5.3.1(1), pp. 76–77, with the weight k = c(0)(0) of p. 100 and Theorem 7.2.4 and the metric, p. 102; Bor98 Theorem 13.3, p. 48, for vector-valued f on the orthogonal Shimura variety of (V, Q), pulled back). (b) On integral models. At maximal self-dual level over O_F with odd discriminant D, the divisor of ψ(f) on the Krämer model is Σ_(m>0) c(−m)·Z^tot(m) plus a vertical divisor supported above the primes dividing D, namely k·(Exc/2 − div δ) with δ = √−D, the fibres above p | r weighted by the r-th constant terms, and multiples of the exceptional components (BHKRY Theorem 5.3.3, p. 78). On the localized model M over O_E[1/d] of PELModuliPartII §§7.1–7.2, d containing 2, the primes ramified in F and the primes at which the level is not hyperspecial, and for f valued in Schwartz functions standard away from d, the divisor of ψ(f) is Σ_(m>0) Z(m, c(−m)) with no vertical part: at a prime not dividing d every vertical divisor of the toroidal compactification meets the boundary, where the Fourier–Jacobi expansion of ψ(f) fixes its order (BHKRY §§5.3 and 6.5 at maximal level; Z Theorem 8.6 and its proof, p. 42). The vertical terms above d are not set to zero on a model over O_E; they lie in the subgroup of classes supported above d, and the arithmetic Chow group of M is the quotient by that subgroup (Z Remark 8.5, p. 42). Consequently, with Ẑ_B(m, φ) = (Z(m, φ), G_B(m, φ)) for m > 0 and Ẑ_B(0, φ) = −φ(0)·ĉ₁(ω̂), the relation Σ_(m≥0) Ẑ_B(m, c(−m)) = 0 holds in ĈH¹(M)_ℚ: div̂ ψ(f) = (div ψ(f), −log‖ψ(f)‖²) = k·ĉ₁(ω̂). (c) A formal series Σ_(m≥0) a(m)q^m with a(m) ∈ S_L^∨ ⊗ W, W a finite-dimensional ℚ-vector space, is the q-expansion of a holomorphic modular form of weight n for the dual representation of ω_L if and only if Σ_(m≥0) ⟨c(−m), a(m)⟩ = 0 for every f ∈ M^!_(2−n)(ω_L); for an arbitrary ℚ-vector space W the series is called modular when its image under every linear functional is (Bor99 Theorem 3.1, p. 5; BHKRY Theorem 4.2.3, p. 68, in the scalar form on Γ₀(D), and Theorem A, p. 3, for the meaning of modularity). The route constructs ψ(f) by pulling back Borcherds' product from the orthogonal Shimura variety and descending it to E, computes its integral divisor at the good primes from its Fourier–Jacobi expansions on the integral toroidal compactification, and proves (c) by Serre duality on the compactified modular curve of a torsion-free finite-index subgroup, averaged over the finite quotient.
+
+Its API consists of the following facts:
+
+- ψ(f) is a rational section of ω^(⊗k), k = c(0)(0), with generic divisor Σ_(m>0) Z(m, c(−m)).
+- −log‖ψ(f)‖² = Θ^reg(f) = Σ_(m>0) G_B(m, c(−m)).
+- On M over O_E[1/d], div̂ ψ(f) = Σ_(m>0) Ẑ_B(m, c(−m)) and Σ_(m≥0) Ẑ_B(m, c(−m)) = 0 in ĈH¹(M)_ℚ.
+- The modularity criterion (c), with the constant coefficient m = 0 included in the pairing.
+
+**Checks.**
+
+- Zero principal part: f is then a holomorphic modular form of negative weight 2 − n, hence zero, so its constant term and the metric coefficient k vanish; zero input gives ψ(f) constant, zero divisor and zero Green function.
+- A nonzero principal part at a positive index m makes ψ(f) vanish along a component D(x), Q(x) = m, to the order Σ_y c(−Q(y))(g⁻¹y) over the y ∈ F^×·x with Q(y) > 0 (Borcherds' order, Bor98 Theorem 13.3(2)), and −log‖ψ(f)‖² has the singular part −(that sum)·log|ℓ_x|², which is the singularity of Σ_m G_B(m, c(−m)) from §12.4: the divisor and the Green function carry the same multiplicity. For a principal part q^(−1)·1_(L̂) with L self-dual and x primitive of norm 1, only y = ζx, ζ ∈ O_F^×, contribute, and the order is #O_F^×.
+- The constant coefficient cannot be dropped: the Eisenstein series of weight n ≥ 3 is not a cusp form, so by (c) some principal part is orthogonal to every cusp form but not to it, and the corresponding f has k = c(0)(0) ≠ 0 by the residue relation of BHKRY Proposition 4.2.2 (p. 68); for it the relation Σ_(m>0) Ẑ_B(m, c(−m)) = k·ĉ₁(ω̂) has a nonzero metric term.
+- Vertical discrepancy: over O_F the relation contains −2k·(0, log D) on the Pappas model (BHKRY (7.3.3), p. 104), from (div δ, 0) = (0, log D); log D = Σ_(p|D) log p dies only in the quotient by classes above d ⊇ {p | D}, together with the vertical divisors, and not before.
+- Metric normalization: with the unnormalized metric ‖w‖₀² = −[w, w] one has ‖ψ(f)‖² = (4πe^γ)^(−k)·‖ψ(f)‖₀², so the relation reads Θ^reg(f) = −log‖ψ(f)‖₀² + k·log(4πe^γ); metrizing ω by ‖·‖₀ in the constant term −φ(0)·ĉ₁(ω̂) while keeping G_B would add k·(0, log(4πe^γ)) to the left side of the relation Σ_(m≥0) Ẑ_B(m, c(−m)) = 0, which holds as stated only for the metric of (a). The orthogonal normalization with ‖·‖₀ carries exactly this constant.
+
+*Needs:* §§10.1, 12.1, 12.4; PELModuliPartII §§7.1–7.2; ShimuraCompactifications §§7.3, 7.15; ArakelovGeometryAndAbelianHeights §§1.8–1.9; QSeriesPartitionsAndMockModularForms §8.6; PELModuli §M3.4.
+
+### 12.6 Arithmetic divisor series and Green correction
+
+Construct the arithmetic series. For F₀ = ℚ and n ≥ 3, with the automorphic Green functions G_B(ξ, φ) of §12.4, define Ẑ_B(ξ,φ) = (Z(ξ,φ), G_B(ξ,φ)) for ξ > 0 and Ẑ_B(0,φ) = −φ(0)·ĉ₁(ω, ‖·‖_Pet) with the Petersson metric of §12.5, with principal arithmetic divisors (div f, −log|f|²), in the arithmetic Chow group of the localized model M over O_E[1/d] of PELModuliPartII §§7.1–7.2, which is the arithmetic Chow group of a model over O_E modulo the classes supported above d (Z Remark 8.5); and define the correction series from G_K − G_B with the same weight-n Whittaker coefficients (Z §8.3, (8.14); §8.4, (8.15)–(8.17)). The route imports arithmetic divisors with Green functions, takes the Green functions from §12.4, and pins the zero coefficient and the metric comparison by the Borcherds relations of §12.5.
+
+Its API consists of the following facts:
+
+- Each special divisor carries the automorphic Green function G_B(ξ, φ) of §12.4.
 - The constant coefficient is minus the metrized Chern class of ω.
 - The Kudla version differs from it by the G_K − G_B series.
 - Changing a representative by (div f, −log|f|²) preserves the class and every pairing with proper one-cycles.
@@ -1478,23 +1545,23 @@ Its API consists of the following facts:
 - Using −log|f| instead gives a different relation, and the ℤ-relation (V_p, 0) = (0, 2 log p) of ArakelovGeometryAndAbelianHeights §1.8 fails.
 - Changing the metric on ω by e^c changes the constant coefficient and the correction series together.
 
-*Needs:* §§12.1, 12.3; ArakelovGeometryAndAbelianHeights §§1.8–1.9; PELModuliPartII §7.10.
+*Needs:* §§12.1, 12.3–12.5; ArakelovGeometryAndAbelianHeights §§1.8–1.9; PELModuliPartII §§7.1–7.2.
 
-### 12.5 Divisor and Green modularity
+### 12.7 Divisor and Green modularity
 
-Prove that the Chow-valued series of §12.1 is a holomorphic modular form of parallel weight n with values in CH¹(M)_ℚ, for totally real F₀; that for F₀ = ℚ the arithmetic G_B-series is holomorphic of weight n at a level supported in the excluded primes; and that the G_K − G_B series is a weight-n modular function of moderate growth (Z Theorems 8.1, 8.4 and 8.6). No arithmetic modularity over other totally real F₀ is asserted. The route uses the regularized theta lift of MetaplecticAutomorphicForms §5.8 and Borcherds products for the Chow statement, and the comparison of the two Green functions for the correction series.
+Prove that the Chow-valued series of §12.1 is a holomorphic modular form of parallel weight n with values in CH¹(M)_ℚ, for totally real F₀; that for F₀ = ℚ and n ≥ 3 the arithmetic G_B-series of §12.6 is holomorphic of weight n at a level supported in the excluded primes; and that for F₀ = ℚ and n ≥ 3 the G_K − G_B series is a weight-n modular function of moderate growth (Z Theorems 8.1, 8.4 and 8.6). No arithmetic modularity over other totally real F₀, or for n = 2, is asserted: the Borcherds products of §12.5 require n ≥ 3, and for n = 2 the unitary Shimura variety is a union of modular or compact Shimura curves, outside that theory (BHKRY §1.5, pp. 11–12). For the arithmetic statement the route applies the criterion §12.5(c) to Σ_(m≥0) Ẑ_B(m, ·)q^m, the relations it requires being the Borcherds relations §12.5(b). For the Chow statement over ℚ with n ≥ 3 the same argument runs on the generic fibre with §12.5(a); over a general totally real F₀, and for n = 2, it is Liu's deduction from the orthogonal Gross–Kohnen–Zagier theorem of Yuan–Zhang–Zhang through the embedding of the unitary into an orthogonal Shimura variety (Liu11a Theorem 3.5, p. 874, with Lemma 3.6, p. 876, for r = 1). The correction series uses Ehlen–Sankaran's comparison of G_K with the G_B of §12.4 (Z Theorem 8.4).
 
 **Checks.**
 
 - The weight is n, the dimension of V: for n = 2 the special divisors are points on a Shimura curve and the series has weight 2.
-- The arithmetic statement is restricted to F₀ = ℚ.
+- The arithmetic statement is restricted to F₀ = ℚ and n ≥ 3; at n = 2 the weight-zero ambiguity of §12.4 and the absence of the Borcherds relations of §12.5 leave it unsupported.
 - The correction series is modular but not holomorphic.
 
-*Needs:* §§12.1, 12.4; MetaplecticAutomorphicForms §§4.5, 5.1, 5.8.
+*Needs:* §§12.1, 12.4–12.6; MetaplecticAutomorphicForms §§4.5, 5.1.
 
-### 12.6 Normalized CM intersection series
+### 12.8 Normalized CM intersection series
 
-Define the CM pairing. Pair arithmetic divisors with the proper virtual CM one-cycle of §11.4 in ℝ_S = ℝ/span_ℚ{log p : p lies below an excluded place}, and put Int(h, Φ) = (Ẑ_B(h,φ), ᴸCM(α,φ₀))/(τ(Z^ℚ)·[E : F]); add the similarly normalized G_K − G_B pairing to obtain Int_K. For vertical curves the pairing is the degree of O(D) times the logarithm of the residue cardinality, and complex contributions carry one half of the sum over embeddings (Z §9.1, (9.1)–(9.8); §10, (10.9)–(10.10)). The route applies the pairing of ArakelovGeometryAndAbelianHeights §1.10, then the torus and reflex normalization.
+Define the CM pairing. Pair arithmetic divisors with the proper virtual CM one-cycle of §11.4 in ℝ_S = ℝ/span_ℚ{log p : p lies below an excluded place}. For F₀ = ℚ and n ≥ 3 put Int(h, Φ) = (Ẑ_B(h,φ), ᴸCM(α,φ₀))/(τ(Z^ℚ)·[E : F]) and Int_(K−B) the similarly normalized pairing of the G_K − G_B series; Int_K, the pairing with the Kudla Green functions of §12.3, is defined for every n and equals Int + Int_(K−B) when both are defined. The finite local terms Int_v(ξ, Φ), ξ ≠ 0, involve no Green function and are defined for every totally real F₀ and every n. For vertical curves the pairing is the degree of O(D) times the logarithm of the residue cardinality, and complex contributions carry one half of the sum over embeddings (Z §9.1, (9.1)–(9.8); §10, (10.9)–(10.10)). The route applies the pairing of ArakelovGeometryAndAbelianHeights §1.10, then the torus and reflex normalization.
 
 Its API consists of the following facts:
 
@@ -1509,21 +1576,21 @@ Its API consists of the following facts:
 - A principal arithmetic divisor pairs to zero in ℝ_S.
 - Replacing [E : F] by [E : F₀] changes the value by the factor 2 = [F : F₀].
 
-*Needs:* §§11.4, 12.4; ArakelovGeometryAndAbelianHeights §1.10.
+*Needs:* §§11.4, 12.6; ArakelovGeometryAndAbelianHeights §1.10.
 
-### 12.7 CM intersection modularity
+### 12.9 CM intersection modularity
 
-Prove that for F₀ = ℚ, Int(h, Φ) is a holomorphic modular form of weight n with values in ℝ_S, and Int_(K−B) is modular of moderate growth; the coefficient functions are well defined because the CM class is proper, and the constant coefficient remains part of the series when local comparisons are extracted at ξ ≠ 0 (Z §9.1, after (9.8); Corollary 10.4). The route pairs the coefficientwise modularity of §12.5 with the fixed proper one-cycle.
+Prove that for F₀ = ℚ and n ≥ 3, Int(h, Φ) is a holomorphic modular form of weight n with values in ℝ_S, and Int_(K−B) is modular of moderate growth; the coefficient functions are well defined because the CM class is proper, and the constant coefficient remains part of the series when local comparisons are extracted at ξ ≠ 0 (Z §9.1, after (9.8); Corollary 10.4). The route pairs the coefficientwise modularity of §12.7 with the fixed proper one-cycle.
 
 **Checks.**
 
 - Pairing is linear, so modularity of each Chow and arithmetic coefficient transfers to the scalar series.
 - The constant coefficient −φ(0)·ĉ₁(ω) pairs to a nonzero number in general and is retained.
-- Over F₀ ≠ ℚ only the Chow-valued modularity of §12.5 is available, so this statement is restricted to F₀ = ℚ.
+- Over F₀ ≠ ℚ only the Chow-valued modularity of §12.7 is available, so this statement is restricted to F₀ = ℚ; for n = 2 no arithmetic modularity is available (§12.7), so it is restricted to n ≥ 3.
 
-*Needs:* §§12.5–12.6.
+*Needs:* §§12.7–12.8.
 
-### 12.8 Finite local CM–KR orbit formula
+### 12.10 Finite local CM–KR orbit formula
 
 Prove that for ξ ≠ 0 the CM and special-divisor supports do not meet on the generic fibre; at a good split place their intersection is empty; and at a good inert place it is supported on the basic locus, with Int_v(ξ, Φ) = 2 log q_v·Σ_(δ,u) Int_v(δ,u)·Orb((δ,u), Φ^v) over the rational orbits of the nearby unitary data with characteristic polynomial α and norm ξ, for the chosen Haar measures. Excluded places are not asserted to contribute zero. The factor 2 is the residue degree of the unramified quadratic extension after the reflex normalization (Z §§9.2–9.4, Theorem 9.4 and (9.11)). The route uses the cyclic and irreducible CM condition to exclude generic intersection, and at inert places the formal uniformization §11.5 and the derived projection formula.
 
@@ -1533,9 +1600,9 @@ Prove that for ξ ≠ 0 the CM and special-divisor supports do not meet on the g
 - At an inert place the residue field of the CM field has q_v² elements, giving log(q_v²) = 2 log q_v.
 - If (δ,u) is not strongly regular, Int_v(δ,u) is not defined by §9.2; for ξ ≠ 0 and irreducible α every contributing pair is strongly regular.
 
-*Needs:* §§9.2, 11.5, 12.6.
+*Needs:* §§9.2, 11.5, 12.8.
 
-### 12.9 Refined CM invariant and archimedean orbit formula
+### 12.11 Refined CM invariant and archimedean orbit formula
 
 Prove that the CM field action makes the nearby space a rank-one hermitian space over F′/F′₀ whose trace form is the original pairing; put ξ′ = q(u) with Tr_(F′₀/F₀)(ξ′) = ξ; exactly one archimedean place v′ has ξ′ negative, and R(u, z_δ) = v′(ξ′). The archimedean intersection is the orbit sum of −Ei(−4πa·|ξ′|_v′) times the away-from-archimedean orbital factor, with coefficients divided by their weight-n Whittaker factor (Z §10.2, Corollary 10.3; MZ §§3.5–3.8, pp. 12–17, and §6.3, p. 29). The route refines the trace form to F′₀, evaluates the Green function at the unique fixed negative line and uses MZ's rescaling; the 2π and 4π formulas are not mixed.
 
@@ -1545,15 +1612,15 @@ Prove that the CM field action makes the nearby space a rank-one hermitian space
 - The sum of ξ′ over the places of F′₀ above the archimedean place of F₀ is ξ; the other places contribute positive terms and no Green singularity.
 - With 2π in place of 4π the value differs, and the comparison of §14.2 with the Gaussian orbital integrals fails.
 
-*Needs:* §§12.2–12.3, 12.6.
+*Needs:* §§12.2–12.3, 12.8.
 
 ### Examples
 
-At φ(0) = 0 the automorphic-line constant coefficient vanishes; otherwise its negative sign is required. A principal divisor pairs to zero only with the Green relation −log|f|². A good inert place contributes with the factor 2 log q_v and a good split place contributes zero. At infinity the factors 4π and 2π belong to different normalizations.
+At φ(0) = 0 the automorphic-line constant coefficient vanishes; otherwise its negative sign is required. The automorphic and Kudla Green functions have the same singular part, since Γ(0, 4π|R|) = −Ei(4πR) for R < 0; the Borcherds relation Σ_(m>0) Ẑ_B(m, c(−m)) = k·ĉ₁(ω̂) shows why the constant term is −φ(0)·ĉ₁(ω̂) and not +φ(0)·ĉ₁(ω̂). A principal divisor pairs to zero only with the Green relation −log|f|². A good inert place contributes with the factor 2 log q_v and a good split place contributes zero. At infinity the factors 4π and 2π belong to different normalizations.
 
 ### Dependencies
 
-Layers 9–11; PELModuli §§M1.3, M3.4, M3.8; PELModuliPartII §7.10; ArakelovGeometryAndAbelianHeights §§1.8–1.10; MetaplecticAutomorphicForms §§3.3b, 4.5, 5.1, 5.8; SchemeAndStackFoundations §5.3.
+Layers 9–11; PELModuli §§M1.3, M3.4, M3.8; PELModuliPartII §§7.1–7.2; ArakelovGeometryAndAbelianHeights §§1.8–1.10; MetaplecticAutomorphicForms §§3.3b, 4.5, 5.1; QSeriesPartitionsAndMockModularForms §§8.3, 8.5, 8.6; ShimuraCompactifications §§7.3, 7.15; SchemeAndStackFoundations §5.3.
 
 ## Layer 13: Arithmetic Siegel–Weil identities
 
@@ -1630,11 +1697,12 @@ Prove that for the nearby positive definite coherent hermitian space used in the
 
 ### 13.5 Semi-global and inert global identities
 
-Prove that at an admissible inert place v₀ with p > 2, for positive definite integral nonsingular T, Int_(T,v₀)(φ)·q^T = c_K·E′_(T,v₀)(z, φ) with c_K = (−1)^n·vol(K); that at almost self-dual level the auxiliary degree convention of §10.4 is used; and that for inert-admissible φ and nonsingular T with Diff(T,V) a single inert nondyadic place, summing the local formula gives Int_T(φ)·q^T = c_K·E′_T(z, φ) (LZ Theorem 13.6.1, pp. 83–84; Theorem 14.5.1 and Corollary 14.5.2, p. 86). The route uniformizes the special cycle by §10.3, substitutes the local identities §§3.5 and 4.3, evaluates the remaining point count by §13.4, and compares the product factors.
+Prove that at an admissible inert place v₀ with p > 2, for positive definite integral nonsingular T, Int_(T,v₀)(φ)·q^T = c_K·E′_(T,v₀)(z, φ) with c_K = (−1)^n·vol(K); that at almost self-dual level the auxiliary degree convention of §10.4 is used; and that for inert-admissible φ and nonsingular T with Diff(T,V) a single inert nondyadic place, summing the local formula gives Int_T(φ)·q^T = c_K·E′_T(z, φ) (LZ Theorem 13.6.1, pp. 83–84; Theorem 14.5.1 and Corollary 14.5.2, p. 86). The route uniformizes the special cycle by §10.3, substitutes the local identities §§3.5 and 4.3, evaluates the remaining point count by §13.4, and compares the product factors; the differentiated v₀-factor is W′_T(1, 0, φ_v₀) for φ_v₀ = 1_(Λ_v₀^n), the indicator of the lattice of the datum (self-dual as Λ₀ in §3.1, or almost self-dual as Λ₁ in §4.6), while T is the Gram matrix of the special homomorphisms.
 
 **Checks.**
 
 - A T not represented at v₀ but represented everywhere else has Diff(T,V) = {v₀}, the only place whose factor is differentiated.
+- The Schwartz factor at v₀ lives on the coherent local space of Λ_v₀, which does not represent T; using the indicator of the lattice spanned by the special homomorphisms instead would make the v₀-factor nonvanishing at s = 0, as in the §3.1 Check.
 - At almost self-dual level the auxiliary convention divides by q+1, and §4.3 has no −Den term.
 - The derivative uses log(q_(v₀)²) through §3.1; with log q_v₀ both sides would differ by 2.
 
@@ -1725,7 +1793,7 @@ Layers 3–4, 8 and 10; PELModuliPartII §§6.5, 6.7–6.8, 7.3, 7.5, 7.10 and 8
 
 ## Layer 14: Global comparison and the strongly regular AFL
 
-Construct Zhang's relative trace series from the local Jacquet–Rallis inputs, define the corrected holomorphic derivative and compare it over ℚ with the modular CM series, separate local logarithms, isolate strongly regular orbits, and prove the strongly regular AFL over ℚ_p with p ≥ n by induction on n. The regular semisimple AFL statement is formulated and its strongly regular case identified.
+Construct Zhang's relative trace series from the local Jacquet–Rallis inputs, define the corrected holomorphic derivative and compare it over ℚ with the modular CM series, separate local logarithms, isolate strongly regular orbits, and prove the strongly regular AFL over ℚ_p with p ≥ n by induction on n from the low-rank base of §9.8. The regular semisimple AFL statement is formulated and its strongly regular case identified.
 
 ### 14.1 Relative trace series and Gaussian inputs
 
@@ -1748,7 +1816,7 @@ Its API consists of the following facts:
 
 ### 14.2 Corrected holomorphic derivative
 
-Define, for F₀ = ℚ, ∂J_hol = 2∂J + Int_(K−B) and E♭ = ∂J_hol + Int_B = 2∂J + Int_K, with the same α, matching rational finite test data and the corrected Gaussian normalization; the constant and nilpotent terms are kept (Z Proposition 14.5; §14.3 and proof of Theorem 14.6, with the coefficient of ∂J_hol in E♭ equal to one). The route cancels the archimedean exponential-integral terms and the logarithmic constants through the nilpotent identity.
+Define, for F₀ = ℚ and a Shimura variety of a hermitian space of dimension m ≥ 3 (where Int_B and Int_(K−B) are defined, §12.8), ∂J_hol = 2∂J + Int_(K−B) and E♭ = ∂J_hol + Int_B = 2∂J + Int_K, with the same α, matching rational finite test data and the corrected Gaussian normalization; the constant and nilpotent terms are kept (Z Proposition 14.5; §14.3 and proof of Theorem 14.6, with the coefficient of ∂J_hol in E♭ equal to one). The route cancels the archimedean exponential-integral terms and the logarithmic constants through the nilpotent identity.
 
 Its API consists of the following facts:
 
@@ -1763,11 +1831,11 @@ Its API consists of the following facts:
 - A second factor 2 in front of ∂J_hol would give 4∂J and contradict the local identity −2∂J_v = Int_v of §14.3.
 - The nilpotent logarithm cancels the zero-vector Green value −log|a| of §12.3.
 
-*Needs:* §§12.7, 12.9, 14.1.
+*Needs:* §§12.9, 12.11, 14.1.
 
 ### 14.3 Conditional global arithmetic comparison
 
-Prove that for F₀ = ℚ, a finite set S containing the model, level and small-residue primes, matching rational finite test data and the prescribed Gaussians, if the group AFL for S_m holds at all p ∉ S then E♭ = 0, and consequently each good place v and ξ ≠ 0 satisfy −2∂J_v(ξ) = Int_v(ξ) in ℚ·log p_v (Z Theorem 14.6). To use §9.7 in semi-Lie dimension m, enlarge B by the finitely many inert p ∉ S with p ≤ m+1 and by the nonmaximal-order places, and use the norm-unit reduction §9.5(c), which has no residue bound, at the added places. The route shows that the coefficients with (ξ, B) = 1 vanish by §9.7 or §9.5(c), applies the vanishing criterion AutomorphicFormsOnReductiveGroups §4.4 `fourierUnitVanishing` over ℚ with this B, and separates the finite sum by the ℚ-linear independence of the logarithms of distinct primes in ℝ_S.
+Prove that for F₀ = ℚ, semi-Lie dimension m ≥ 3 (the hermitian space of the Shimura variety has dimension m, and the modularity of §12.9 needs m ≥ 3), a finite set S containing the model, level and small-residue primes, matching rational finite test data and the prescribed Gaussians, if the group AFL for S_m holds at all p ∉ S then E♭ = 0, and consequently each good place v and ξ ≠ 0 satisfy −2∂J_v(ξ) = Int_v(ξ) in ℚ·log p_v (Z Theorem 14.6). To use §9.7 in semi-Lie dimension m, enlarge B by the finitely many inert p ∉ S with p ≤ m+1 and by the nonmaximal-order places, and use the norm-unit reduction §9.5(c), which has no residue bound, at the added places. The route shows that the coefficients with (ξ, B) = 1 vanish by §9.7 or §9.5(c), applies the vanishing criterion AutomorphicFormsOnReductiveGroups §4.4 `fourierUnitVanishing` over ℚ with this B, and separates the finite sum by the ℚ-linear independence of the logarithms of distinct primes in ℝ_S.
 
 **Checks.**
 
@@ -1775,7 +1843,7 @@ Prove that for F₀ = ℚ, a finite set S containing the model, level and small-
 - Logarithms of distinct primes are ℚ-linearly independent, so a vanishing finite sum Σ c_p log p with c_p ∈ ℚ forces each c_p = 0.
 - At an added prime p ≤ m+1 the maximal-order input is not used.
 
-*Needs:* §§9.5, 9.7, 12.8, 14.2; AutomorphicFormsOnReductiveGroups §4.4 `fourierUnitVanishing`.
+*Needs:* §§9.5, 9.7, 12.10, 14.2; AutomorphicFormsOnReductiveGroups §4.4 `fourierUnitVanishing`.
 
 ### 14.4 Orbitwise semi-Lie AFL from the global comparison
 
@@ -1787,19 +1855,20 @@ Prove that at a good inert v, for a strongly regular global pair (δ, u) with ch
 - The isolated neighbourhood contains finitely many rational orbits by §9.6.
 - The identity is for strongly regular pairs; a regular semisimple pair that is not strongly regular is not reached.
 
-*Needs:* §§9.6, 12.8, 14.3.
+*Needs:* §§9.6, 12.10, 14.3.
 
 ### 14.5 Strongly regular AFL over ℚ_p
 
-Prove that for F₀ = ℚ_p, p odd and p ≥ n, Conjecture 3.8(a) holds for matching strongly regular elements of S_n and U(V_n), and Conjecture 3.8(b) holds for matching strongly regular pairs of S_(n−1) × V′_(n−1) and U(V_(n−1)) × V_(n−1); in each case ∂Orb = −Int·log p with the transfer factor included (Z Theorem 15.1 and proof; Conjecture 3.8). The route inducts on n: the semi-Lie dimension-one base, §9.7, the reductions §9.5 — including its q = n step for p = n — and, for the semi-Lie case, globalizing the local CM order over an imaginary quadratic field, arranging det(1−g) a unit and q(u) ≠ 0, approximating by a rational pair and applying §§9.6 and 14.4.
+Prove that for F₀ = ℚ_p, p odd and p ≥ n, Conjecture 3.8(a) holds for matching strongly regular elements of S_n and U(V_n), and Conjecture 3.8(b) holds for matching strongly regular pairs of S_(n−1) × V′_(n−1) and U(V_(n−1)) × V_(n−1); in each case ∂Orb = −Int·log p with the transfer factor included (Z Theorem 15.1 and proof; Conjecture 3.8). The route inducts on n. For n ≤ 3 the statement is §9.8: the group AFL from Zhang's low-rank computation and the semi-Lie AFL in dimension n − 1 ≤ 2 by §9.5(b), since q = p ≥ n. For n ≥ 4 the semi-Lie AFL in dimension m = n − 1 ≥ 3 is proved by globalizing the local CM order over an imaginary quadratic field, arranging det(1−g) a unit and q(u) ≠ 0, approximating by a rational pair and applying §§9.6 and 14.4 on the Shimura variety of an m-dimensional hermitian space, where §12.9 holds; the group AFL for S_m at the primes outside S required by §14.3 is the induction hypothesis, §9.7 supplies the maximal-order input of §14.3, and the group AFL for S_n follows from the semi-Lie one by §9.5(a) for p ≥ n+1 and by the q = n step of §9.5(b) for p = n. The global step is not used in semi-Lie dimension two: it would need arithmetic modularity on unitary Shimura curves, which the Borcherds products of §12.5 do not give (BHKRY §1.5).
 
 **Checks.**
 
-- n = 1: the group statement is trivial, and the semi-Lie statement in dimension one is the base case computed from §0.9.
+- n = 1: the group statement is trivial and the semi-Lie statement, in dimension n − 1 = 0, is vacuous. The semi-Lie statement in dimension one is the n = 2 instance, computed from §0.9: at norm valuations a = 1 and 3 the intersection numbers are 1 and 2 and the normalized derivatives ∂Orb/log p are −1 and −2.
+- n = 3 is still a base case (§9.8): its semi-Lie dimension is two, and the global comparison in dimension two would need the arithmetic modularity of unitary Shimura curves, which §12.9 does not assert; n = 4 is the first global step, on a three-dimensional hermitian space.
 - p = n can occur only when n is an odd prime; it is the case that uses the q = n step of §9.5(b).
 - A regular semisimple element that is not strongly regular is outside this theorem.
 
-*Needs:* §§0.9, 9.5–9.7, 14.4.
+*Needs:* §§0.9, 9.5–9.8, 12.9, 14.4.
 
 ### 14.6 The regular semisimple AFL statement
 
@@ -1823,11 +1892,11 @@ Layers 9 and 12; EndoscopicTransferAndUnitaryTraceComparisonPartII §§4.4–4.5
 
 ## Downstream consumers
 
-The arithmetic inner product formula for unitary groups consumes the global r-tuple K-classes and uniformization of §§10.2–10.3 and the local identities of §§3.5, 4.5–4.6, 6.8–6.9 and 8.7; MotivesAndAlgebraicCycles §7.19 states Li–Liu's theorems with the almost self-dual identity as an explicit local premise, which §4.5 with §4.6 discharges in Li–Liu's normalization. Those theorems keep their own automorphic hypotheses, height domains and doubling normalizations, which do not follow from a local Kudla–Rapoport identity. The strongly regular AFL of §14.5 is the local input of arithmetic Gan–Gross–Prasad comparisons for unitary groups. The higher arithmetic Chow products of §13.6 feed arithmetic Siegel–Weil formulas in higher codimension; the AFL branch needs only the divisor and proper one-cycle pairing of §12.6, modularity and the relative trace series.
+The arithmetic inner product formula for unitary groups consumes the global r-tuple K-classes and uniformization of §§10.2–10.3 and the local identities of §§3.5, 4.5–4.6, 6.8–6.9 and 8.7; MotivesAndAlgebraicCycles §7.19 states Li–Liu's theorems with the almost self-dual identity as an explicit local premise, which §4.5 with §4.6 discharges in Li–Liu's normalization. Those theorems keep their own automorphic hypotheses, height domains and doubling normalizations, which do not follow from a local Kudla–Rapoport identity. The strongly regular AFL of §14.5 is the local input of arithmetic Gan–Gross–Prasad comparisons for unitary groups. The higher arithmetic Chow products of §13.6 feed arithmetic Siegel–Weil formulas in higher codimension; the AFL branch needs only the divisor and proper one-cycle pairing of §12.8, modularity and the relative trace series.
 
 ## Acceptance file
 
-Suggested.lean is the acceptance test of this roadmap. Its headline theorems are the four local Kudla–Rapoport identities (§§3.5, 4.5, 6.8, 8.7), the unramified and modified arithmetic Siegel–Weil formulas (§§13.8, 13.10), the modularity of the CM intersection series (§12.7) and the strongly regular arithmetic fundamental lemma over ℚ_p (§14.5). None is statable at the pinned Mathlib and Tau Ceti: the first four need Rapoport–Zink formal schemes, special cycles and the derived Euler characteristic of coherent sheaves on formal schemes, together with ramified and unramified hermitian local densities; the Siegel–Weil formulas need integral models of unitary Shimura varieties, arithmetic degrees and the derivatives of unitary Siegel Eisenstein series; the modularity statement needs arithmetic Chow groups of these models; and the AFL needs Rapoport–Zink spaces and Jacquet–Rallis orbital integrals. The file therefore contains its module docstring, naming these missing carriers, and no declarations.
+Suggested.lean is the acceptance test of this roadmap. Its headline theorems are the four local Kudla–Rapoport identities (§§3.5, 4.5, 6.8, 8.7), the unramified and modified arithmetic Siegel–Weil formulas (§§13.8, 13.10), the modularity of the CM intersection series over ℚ for n ≥ 3 (§12.9) and the strongly regular arithmetic fundamental lemma over ℚ_p (§14.5). None is statable at the pinned Mathlib and Tau Ceti: the first four need Rapoport–Zink formal schemes, special cycles and the derived Euler characteristic of coherent sheaves on formal schemes, together with ramified and unramified hermitian local densities; the Siegel–Weil formulas need integral models of unitary Shimura varieties, arithmetic degrees and the derivatives of unitary Siegel Eisenstein series; the modularity statement needs arithmetic Chow groups of these models; and the AFL needs Rapoport–Zink spaces and Jacquet–Rallis orbital integrals. The file therefore contains its module docstring, naming these missing carriers, and no declarations.
 
 ## Source corrections
 
@@ -1845,6 +1914,7 @@ The following corrections are part of the statements above; each is stated in ou
 - K Theorem 8.2: only constancy on W_(≥0) ∖ {0} holds; vanishing on the negative cone fails by the rank-three example of §8.4; in (8.6) the orthogonal-sum sign is χ(−1)^n₁ (§8.4).
 - K Lemma 9.6: the valuation decrease fails for hyperbolic blocks, as in the split plane H₁; the missing step is §8.6.
 - Z §12 and Lemma 14.3: the Gaussian and Green scales are those of MZ, with −Ei(−4πa|ξ|) (§§12.3, 14.1). Z §14.3: the corrected series is E♭ = ∂J_hol + Int_B = 2∂J + Int_K (§14.2).
+- Z Theorem 8.6 and the proof of Theorem 15.1: the arithmetic modularity is deduced from BHKRY, whose Borcherds products require n ≥ 3 (BHKRY §1.5), while the induction applies it on Shimura varieties of every dimension from two on. Here arithmetic modularity is asserted only for n ≥ 3 (§12.7), and the semi-Lie dimension-two step is the rank-three AFL of Zha12 (§§9.8, 14.5).
 - Z Proposition 3.9 in the proof of Theorem 14.6: in semi-Lie dimension m the maximal-order input is used only for p > m+1, the remaining small inert primes being added to B (§14.3). Z Proposition 4.12(ii): the norm-unit implication holds without a bound on q (§9.5). Z Proposition 4.12(i): the semi-Lie-to-group direction also requires 1 − ξd to be a unit, which the elementary count gives for q ≥ n+1 (§9.5). Z Theorem 5.5: the rank-raising argument gives joint local constancy for q ≥ m in semi-Lie dimension m (§9.6). Z Lemma 5.4: the surjectivity of the differential uses cyclicity of u, not étaleness of F[x] (§9.6).
 
 ## References
@@ -1862,5 +1932,9 @@ The following corrections are part of the statements above; each is stated in ou
 - **Ter13b.** Ulrich Terstiege, [On the regularity of special difference divisors](https://arxiv.org/abs/1209.1286v1), arXiv:1209.1286v1; published in C. R. Math. Acad. Sci. Paris 351 (2013). Locators use the arXiv v1 pagination.
 - **KR11.** Stephen Kudla and Michael Rapoport, [Special cycles on unitary Shimura varieties I. Unramified local theory](https://arxiv.org/abs/0804.0600v2), arXiv:0804.0600v2; published in Invent. Math. 184 (2011). Locators use the arXiv v2 pagination; the paper works over F₀ = ℚ_p.
 - **Mih16.** Andreas Mihatsch, [Relative unitary RZ-spaces and the Arithmetic Fundamental Lemma](https://arxiv.org/abs/1611.06520v2), arXiv:1611.06520v2. Locators use the arXiv v2 pagination: Definition 1.7, p. 4; Theorem 1.12, p. 5; Corollary 9.9, pp. 39–40.
-- **Liu11a.** Yifeng Liu, [Arithmetic theta lifting and L-derivatives for unitary groups, I](https://msp.org/ant/2011/5-7/ant-v5-n7-p01-p.pdf), Algebra & Number Theory 5 (2011), no. 7, 849–921, DOI 10.2140/ant.2011.5.849. Locators are the printed pages: Proposition 4.5, p. 889; Theorem 4.17, p. 905.
+- **Liu11a.** Yifeng Liu, [Arithmetic theta lifting and L-derivatives for unitary groups, I](https://msp.org/ant/2011/5-7/ant-v5-n7-p01-p.pdf), Algebra & Number Theory 5 (2011), no. 7, 849–921, DOI 10.2140/ant.2011.5.849. Locators are the printed pages: Theorem 3.5, p. 874; Lemma 3.6, p. 876; Proposition 4.5, p. 889; Theorem 4.17, p. 905.
+- **BHKRY.** Jan Hendrik Bruinier, Benjamin Howard, Stephen S. Kudla, Michael Rapoport and Tonghai Yang, [Modularity of generating series of divisors on unitary Shimura varieties](https://arxiv.org/abs/1702.07812v3), arXiv:1702.07812v3; published in Astérisque 421 (2020). Locators use the arXiv v3 pagination: Theorem A, p. 3; §1.5, pp. 11–12; Proposition 4.2.2 and Theorem 4.2.3, p. 68; Theorem 5.3.1, pp. 76–77; Theorem 5.3.3, p. 78; Theorems 7.2.1–7.2.4, pp. 101–102; (7.3.3), p. 104.
+- **Bor98.** Richard E. Borcherds, [Automorphic forms with singularities on Grassmannians](https://arxiv.org/abs/alg-geom/9609022v2), arXiv:alg-geom/9609022v2; published in Invent. Math. 132 (1998), with different pagination. Locators use the arXiv pagination: §6 and Theorem 6.2, p. 24; Theorem 13.3, p. 48.
+- **Bor99.** Richard E. Borcherds, [The Gross–Kohnen–Zagier theorem in higher dimensions](https://arxiv.org/abs/alg-geom/9710002v3), arXiv:alg-geom/9710002v3; published in Duke Math. J. 97 (1999). Locators use the arXiv pagination: Theorem 3.1, p. 5.
+- **Zha12.** Wei Zhang, [On arithmetic fundamental lemmas](https://math.mit.edu/~wz2113/math/online/AFL.pdf), author copy of Invent. Math. 188 (2012), 197–252, DOI 10.1007/s00222-011-0348-1, carrying the journal pagination: Conjecture 2.9 and §2.2, p. 210; Theorem 2.10, p. 211; Theorem 5.5, p. 250.
 - **GS19.** Luis E. Garcia and Siddarth Sankaran, [Green forms and the arithmetic Siegel–Weil formula](https://arxiv.org/abs/1808.09313v1), arXiv:1808.09313v1. Locators use the v1 numbering and pagination: Theorem 1.1.1, p. 4; Theorem 1.1.2 and equation (1.1.19), p. 5; Example 2.6.3, p. 22.
