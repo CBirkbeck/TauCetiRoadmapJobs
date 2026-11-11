@@ -1,0 +1,22 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-BordismFormalGroups~68",
+  "head": "78bda3b92b40ea709bc4b6f6f12005edf8ec3eb2",
+  "pr": 1807,
+  "folder": "BordismFormalGroups",
+  "date": "2026-11-11",
+  "findings": 2,
+  "blocking": 1,
+  "notes": "incremental re-review of 0 changed lines since 8cb420c. The previous review raised no finding. Two findings come from main gaining TangentialBordism (5f7befb6, #942) and HomotopySpheres (3ba54598, #1287) after this pull request's base. R01 (P2): both claim the mod-p Steenrod algebras, Adams towers and MO splitting (B4.1-2, B4.7, B4.4), the James construction (3B) and Toda brackets (3C.3), and name BordismFormalGroups as their consumer, while this head owns F2.2, F2.4, F4.1 and F6.2. Repair: revise both roadmaps in this pull request to cite them. Citing TangentialBordism from here would close a loop through StringOrientation, and HomotopySpheres is never a supplier. R02 (P3): the description still calls them 'not on main' and addresses #942 and #1287 as open. Checked: the citations of the changed sibling text resolve (AlgebraicTopology 5.5, 8.3, 8.7, 8.8, 8.8c and 8.10 with the consumer line at 5375; CharacteristicClasses C3 with its C3.1 arbitrary-base change against Hatcher Thm 4D.1 p.432; TopologicalKTheory Conventions and T2.5). Seven hatcher-at locators were checked (4D.1, 3.19, the theorem on p.500 and the odd excess, 4L.12, 4L.13, 4L.16). The adversarial table has computed rows for AT 8.8, CC C3.1 and F2.2, F2.4, F4.1, F6.2. Gate: the worker's gate is OK (build=0); my rerun shows only outside-folder=24, all in this pull request's own sibling folders. depcheck: 206 roadmaps, 1908 edges, 0 problems. lake env lean gives 3 sorry warnings only, and #check of the 4 declarations matches. Remark on untouched text: at odd p, the F6.3 seed built on bar-model skeleta does not match its listed lens basis (p=3: H^6 has dimension 43).",
+  "deferred": [
+   {
+    "id": "D01",
+    "severity": "P2",
+    "title": "Steenrod algebras, Adams towers, MO splitting, James construction and Toda brackets have two owners on main",
+    "where": "TangentialBordism and HomotopySpheres on main, citing F2.2, F2.4, F4.1, F6.2",
+    "raised": "PRREVIEW-BordismFormalGroups~68"
+   }
+  ]
+ }
+}
