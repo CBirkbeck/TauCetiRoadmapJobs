@@ -1,0 +1,22 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-AlgebraicTopology~131",
+  "head": "99794975312f1c3c7fe9b551d7d170d87cda4c9c",
+  "pr": 1807,
+  "folder": "AlgebraicTopology",
+  "date": "2026-11-11",
+  "findings": 6,
+  "blocking": 0,
+  "notes": "Full re-review: previous R01-R05 all repaired. Seeded sample of 15 targets (2.3, 2.5, 2.6, 3.1, 4.1, 4.4, 4.5, 5.4, 7.1, 7.2, 8.1, 8.3, 8.7, 8.8c, 8.15) checked against cached hatcher, brown, vogt1972, strom1972 and kmr2023 (50 locators); the 5.4 and 4.10 locators do not state the cited facts. Gate: the worker's gate passes; a rerun without the pull request's folder list flags only paths in its own 12 other folders. Depcheck: 223 roadmaps, 2009 edges, 0 problems. Suggested.lean elaborates with 20 sorry warnings only, and #check of all 23 declarations matches the README. 6 P3 findings: two locators, the section 2.3 stub, undefined HA, and two on the description's text.",
+  "carried": {
+   "from": "99794975312f1c3c7fe9b551d7d170d87cda4c9c",
+   "head": "8cb420cda96a53253b1cd032387e434fbe175110",
+   "findings": 6,
+   "lines": 61,
+   "folders": [
+    "AlgebraicTopology"
+   ]
+  }
+ }
+}
