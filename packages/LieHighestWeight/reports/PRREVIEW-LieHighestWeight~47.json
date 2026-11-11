@@ -1,0 +1,13 @@
+{
+  "review": {
+    "status": "needs_changes",
+    "reviewer": "independent-review-PRREVIEW-LieHighestWeight~47",
+    "head": "c6c6caa93765f2260d2109887a23c7464fc823cb",
+    "pr": 1220,
+    "folder": "RepresentationTheory/LieHighestWeight",
+    "date": "2026-11-11",
+    "findings": 5,
+    "blocking": 3,
+    "notes": "Full review; previous findings: six repaired, two remain. All 12 seeded source targets inspected against available legal text; uncertified/inaccessible texts recorded. Gate passes; depcheck: 235 roadmaps, 2135 edges, 0 problems. Suggested.lean and all 14 declaration signatures elaborate; none of 13 one-tactic padding probes closes. Missing normalized polynomial basis headline independently shown statable. 139 adversarial rows, including exact rational tests of 140 highest vectors and 784 lowered vectors. Pinned-library, main/open-roadmap and overlap audits completed; no PR file changed."
+  }
+}
