@@ -71,8 +71,8 @@ locator = "Theorem A (an action with local cross-sections makes every equivarian
 url = "https://doi.org/10.1007/BF02565942"
 licence_class = "none"
 status = "uncertified"
-version_note = "Cited by its locator without the text. The DOI resolves to a paywalled publisher page; the EuDML record (eudml.org/doc/139198) and the GDZ resolver return only landing pages, no readable scan was obtained."
 accessed = "2026-11-06"
+version_note = "Cited by its locator without the text. The DOI resolves to a paywalled publisher page; the EuDML record (eudml.org/doc/139198) and the GDZ resolver return only landing pages, no readable scan was obtained."
 cited_for = ["2.1"]
 
 [[source]]
@@ -87,8 +87,8 @@ locator = "pp. 406–407 (the whole note: a homeomorphism of the n-cell fixing t
 url = "https://doi.org/10.1073/pnas.9.12.406"
 licence_class = "none"
 status = "uncertified"
-version_note = "Cited by its locator without the text. The publisher page and PDF (pnas.org) returned HTTP 403 and the PubMed Central copy (PMC1085470) served only a browser-check page; no readable text was obtained."
 accessed = "2026-11-06"
+version_note = "Cited by its locator without the text. The publisher page and PDF (pnas.org) returned HTTP 403 and the PubMed Central copy (PMC1085470) served only a browser-check page; no readable text was obtained."
 cited_for = ["2.1"]
 
 [[source]]
@@ -108,3 +108,41 @@ licence_class = "publisher-open"
 status = "certified"
 accessed = "2026-11-06"
 cited_for = ["2.1"]
+
+[[source]]
+id = "WAH08"
+authors = "Nathalie Wahl"
+title = "Homological stability for the mapping class groups of non-orientable surfaces"
+year = 2008
+venue = "Invent. math. 171 (2008), 389-424."
+doi = "10.1007/s00222-007-0085-7"
+arxiv = "math/0601310v2"
+locator_scheme = "theorem"
+locator = "Lemma 2.5"
+url = "https://arxiv.org/abs/math/0601310v2"
+fetched_from = "https://arxiv.org/pdf/math/0601310v2"
+fetched_at = "2026-11-11T09:55:36Z"
+sha256 = "3a073876cb46f86b55495e59abe9cde834cef9a28d9e95127885663173c5322c"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-11"
+version_note = "Read in arXiv v2 (2007); Lemma 2.5 is the number by which HW10 cites the published article."
+cited_for = ["2.6"]
+
+[[source]]
+id = "HAT91"
+authors = "Allen Hatcher"
+title = "On triangulations of surfaces"
+year = 1991
+venue = "Topology Appl. 40 (1991), 189-194"
+locator_scheme = "theorem"
+locator = "Theorem (a) and its proof (the surgery flow on arc systems)"
+url = "https://pi.math.cornell.edu/~hatcher/Papers/TriangSurf.pdf"
+fetched_from = "https://pi.math.cornell.edu/~hatcher/Papers/TriangSurf.pdf"
+fetched_at = "2026-11-11T09:55:37Z"
+sha256 = "ebc34efb2d1b3b6195455c3bdc17d601e05967494bd98119c8524f233da762b4"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-11"
+version_note = "Read in the author's revised and expanded version (Triangulations of Surfaces); the main Theorem and the surgery argument of its proof are those of the published 1991 article."
+cited_for = ["2.6"]

@@ -47,8 +47,10 @@ This roadmap owns:
   Nakayama with support control, the K-complex, its generator homotopies, and the theorem that low
   K-homology controls stabilization, all for the component ring (Layer 1);
 - the identification of the boundary-fixed mapping class group of the marked disc with
-  `TauCeti.BraidGroup n`, the based arc complex of the punctured disc, its truncated braid-coset
-  model, the arc stabilizers and the connectivity of the arc complex (Layer 2);
+  `TauCeti.BraidGroup n`, the arc complexes `F(S; Δ, Λ) ⊇ A(S; Δ, Λ)` of a disc with finitely many
+  boundary points `Δ` and interior points `Λ`, the based arc complex of the punctured disc, its
+  truncated braid-coset model, the arc stabilizers and the connectivity of the arc complexes
+  (Layer 2);
 - the graded homology modules of Hurwitz spaces, the Borel arc resolution, the identification of
   its rows with K-complexes, the arc spectral sequence and its low-degree edge sequence
   (Layer 3);
@@ -82,33 +84,39 @@ It does not own, and consumes by name:
 - homology of a `K(G, 1)` with local coefficients as group homology: ClassifyingSpaces Stage 4,
   items 16–17;
 - singular homology, cellular homology, the Künneth theorem over a field, finite covers, transfer,
-  Cartan–Leray and coinvariants, the Serre spectral sequence, relative simplicial approximation,
-  Hurewicz and Whitehead: AlgebraicTopology Stages 2, 4, 5 and 8;
+  Cartan–Leray and coinvariants for free actions of finite groups, the Serre spectral sequence,
+  relative simplicial approximation, Hurewicz and Whitehead: AlgebraicTopology Stages 2, 4, 5 and
+  8;
 - collars, tubular neighbourhoods, diffeomorphism groups of compact manifolds relative to the
-  boundary and Smale's disc theorem: GeometricTopology Layers 1 and 3 (§3.4);
+  boundary, isotopy extension and the restriction fibration, cutting a surface along a proper arc,
+  and Smale's disc theorem: GeometricTopology Layers 1 and 3 (§§3.3, 3.4) and §1.7.2;
 - the block inclusion `TauCeti.BraidGroup.natAdd` of a braid group on the last strands of a larger
   one, with its value on generators `TauCeti.BraidGroup.natAdd_sigma`; the diffeomorphism group
-  `TauCeti.DiscDiff 2` of the disc fixing its boundary pointwise, the abelian category
+  `TauCeti.DiscDiff 2` of the disc fixing its boundary pointwise, the thick realization
+  `TauCeti.fatRealization` of a semisimplicial space, the abelian category
   `TauCeti.GradedModuleCat` of internally graded modules over a graded algebra, its shifts and
   graded free modules, and the graded balanced tensor product: Tau Ceti;
 - the long exact sequences and spectral sequences of graded `Tor`: DGAInfinity Layer 5;
 - group homology, representations, monoid algebras and their gradings, graded objects and
   spectral-sequence pages: Mathlib.
 
-ArithmeticStatisticsPartVIII §5.16 states, for its own §5.19, the component-ring stability, the
-graded `Tor` spectral sequences, the K-complex bound, the arc spectral sequence, EVW Theorem 6.1,
-Corollary 6.2 for centreless `G`, the finite cell models and both uniform Betti bounds, and
-imports nothing from this roadmap; this roadmap proves the same theorems in Layers 0–5 for every
-finite group and nonsplitting class, together with the unmarked stability for every `G` (§4.5),
-the full-monodromy stability with its shift uniform in `n` (§4.3) and the uniform étale bound for
-every centreless `G` and rational nonsplitting generating class (§5.3). The two statements have a
-single owner in the build order, and every supplier of this roadmap precedes
-ArithmeticStatisticsPartVIII; nothing here is cited from it.
+ArithmeticStatisticsPartVIII §5.16 states, for its own §5.19, the component-ring stability with
+one exponent `D` for all subgroups, the graded `Tor` spectral sequences, the K-complex bound, the
+arc spectral sequence, EVW Theorem 6.1 for the marked and full-monodromy Hurwitz spaces of every
+nonsplitting pair, Corollary 6.2 for `CHur^c_{G,n}/G` with `G` centreless, the finite cell models
+of `Hur^c_{G,n}`, `CHur^c_{G,n}` and (for centreless `G`) `CHur^c_{G,n}/G`, the field Betti bound
+for `CHur^c_{G,n}/G` with `G` centreless, and the uniform étale Betti bound for every centreless
+`G` and rational nonsplitting generating class; it imports nothing from this roadmap. This
+roadmap proves the same theorems in Layers 0–5, and beyond them the unmarked stability of
+`Hur_n/G` and `CHur_n/G` for every finite `G` (§4.5), through the homology of the conjugation
+quotient for a non-free action (§4.4), and the field Betti bound for all four Hurwitz variants and
+every finite `G` (§5.2). The two statements have a single owner in the build order, and every
+supplier of this roadmap precedes ArithmeticStatisticsPartVIII; nothing here is cited from it.
 
 A stabilization map that commutes with Frobenius, and limits of Cohen–Lenstra type over `𝔽_q(t)`
-for fixed `q`, do not follow from the results here: the operator `U` is a sum of gluing maps of
-topological spaces and is not algebraic, and the comparisons of Layer IG.5 are for one `n` at a
-time.
+for fixed `q`, do not follow from the results here: the operator `U` is defined through gluing maps
+of topological spaces, no algebraic form of it is constructed here, and the comparisons of Layer
+IG.5 are for one `n` at a time.
 
 ## Conventions
 
@@ -145,8 +153,10 @@ time.
   augmentation is a point in degree `−1`. `K(M)` has every homological degree `q ≥ 0`. The arc
   spectral sequence is not augmented: its zeroth column on `E²` is `coker(K_2 → K_1)`, not
   `H_1(K)`.
-- `U` acts on homology as a `k`-linear sum of gluing maps; no single map of spaces and no algebraic
-  morphism induces it.
+- `U` acts on homology as the `k`-linear sum over `g ∈ c` of the gluing maps of the constant
+  blocks `(g, …, g)` (§0.7). For `|c| ≥ 2` this is a sum of several maps of spaces; for a
+  singleton class `c = {g}`, with `g` central, it is the single gluing map. No algebraic or
+  Frobenius-compatible form of `U` is constructed or used.
 
 ## Exact supplier contracts
 
@@ -207,7 +217,16 @@ time.
   diffeomorphisms of the closed unit disc of `ℝ²` fixing the unit circle pointwise, the fixing
   subgroup `TauCeti.RelativeDiff` of the boundary, closed by `Diffeomorph.isClosed_fixingSubgroup`,
   with the subspace topology of the weak Whitney topology (the `C^∞` topology, the disc being
-  compact). Nothing about its homotopy type is pinned.
+  compact). It is a topological group as a subgroup of the diffeomorphism group of the compact
+  disc, which is one by `Diffeomorph.isTopologicalGroup`
+  (`TauCeti/Geometry/Diffeomorphism/Inversion.lean`). Nothing about its homotopy type is pinned.
+- `TauCeti.fatRealization`, `TauCeti.fatRealizationFunctor` and `TauCeti.fatRealization.augment`
+  (`TauCeti/AlgebraicTopology/FatRealization.lean`): the thick (fat) realization `‖X‖` of a
+  semisimplicial space `X : SemiSimplexCategoryᵒᵖ ⥤ TopCat` (Mathlib `SemiSimplexCategory`, no
+  degeneracies), the quotient of `Σ_q X_q × Δ^q` by the face identifications, with its
+  characteristic maps `TauCeti.fatRealization.ι`, its functoriality, and the map `‖X‖ → Z` induced
+  by an augmentation `X → const Z`. Its skeletal filtration and homology spectral sequence are not
+  pinned.
 - `TauCeti.GradedModuleCat 𝒜` (`TauCeti/Algebra/Category/GradedModuleCat/Basic.lean`): for a
   `k`-algebra `A`, not necessarily commutative, with a family `𝒜 : ℤ → Submodule k A`, the
   category of `A`-modules with an internal `ℤ`-grading on which `𝒜_i` raises degrees by `i`,
@@ -296,16 +315,21 @@ reflections.
   components.
 - Stage 4: CW complexes, cellular homology and its comparison with singular homology, and the
   realization `simplicialRealizationCW` of a simplicial set (item 7).
-- Stage 5: the cross product and Künneth isomorphism over a field (item 1); finite covers, transfer,
-  the Cartan–Leray spectral sequence and, when `|G|` is invertible, the identification of the
-  homology of a quotient by a finite group with coinvariants (item 3); the Serre spectral sequence
-  of a fibre bundle (item 5).
+- Stage 5: the cross product and Künneth isomorphism over a field (item 1); item 3: finite covers
+  and transfer; the homology of a finite cover as the homology of the base with coefficients in
+  the permutation local system of a fibre, also for a nonregular cover; and, for a regular finite
+  cover `E → E/Γ`, that is a free action of a finite group `Γ` whose deck action is simply
+  transitive on each fibre, the Cartan–Leray spectral sequence and, when `|Γ|` is invertible in
+  `k`, the identification `H_*(E/Γ; k) ≅ H_*(E; k)_Γ`. This comparison is stated for free actions
+  only; the simultaneous conjugation of `G` on `Hur_n` is not free, and its quotient is treated in
+  §4.4. The Serre spectral sequence of a fibre bundle (item 5).
 - Stage 8: relative simplicial approximation, Hurewicz and Whitehead theorems, CW approximation.
 
-What AlgebraicTopology must provide (gap:algtop-semisimplicial-realization): in Stage 4, the thick
-geometric realization of a semisimplicial space, its skeletal filtration, and the first-quadrant
-homology spectral sequence `E¹_(q,p) = H_p(X_q; k) ⇒ H_(p+q)(‖X‖; k)` with `d¹` the alternating sum
-of the face maps, including its naturality and finite-diagonal convergence.
+What AlgebraicTopology must provide (gap:algtop-semisimplicial-realization): in Stage 4, for the
+thick realization `TauCeti.fatRealization` of a semisimplicial space `X` (pinned), its skeletal
+filtration and the natural first-quadrant homology spectral sequence
+`E¹_(q,p) = H_p(X_q; k) ⇒ H_(p+q)(‖X‖; k)` with `d¹` the alternating sum of the face maps,
+convergent since each total degree has finitely many terms.
 
 What AlgebraicTopology must provide (gap:algtop-borel-construction): in Stage 5, the Borel
 construction `EΓ ×_Γ X` of a discrete group acting on a space, functorial along a homomorphism
@@ -324,6 +348,14 @@ simplicial complex is `m`-connected when every simplicial map from a triangulate
 - Layer 1: collar and tubular neighbourhood theorems for smooth manifolds with boundary.
 - Layer 3: the group `Diff(M, ∂M)` of a compact manifold with the `C^∞` topology, fixing the
   boundary pointwise, as a topological group.
+- §3.3, *Isotopy extension*: for a compact manifold `N` and a boundaryless manifold `M`, the
+  restriction fibration: `Diff_c(M) → Emb(N, M)`, `g ↦ g ∘ e`, has continuous local sections near
+  `e`, its orbits are open and it is a locally trivial principal bundle; with relative and
+  continuous isotopy extension. §2.1 uses it with `N` a finite set and `M = int D`, where
+  `Emb(N, M)` is the ordered configuration space.
+- §1.7.2, the cutting bullet: the complement of an open tube of a proper arc in a compact surface,
+  its Euler characteristic and boundary circles, and the restriction to it of diffeomorphisms that
+  are the identity on a closed tube of the arc.
 - §3.4, Smale's disc theorem: the diffeomorphisms of the square `[0, 1]²` equal to the identity on
   a neighbourhood of the boundary form a contractible space (SMA59 Theorem B and Theorem 4), and a
   diffeomorphism of `D²` equal to the identity near `∂D²` is smoothly isotopic to the identity
@@ -337,9 +369,14 @@ route: the subgroup `Diff_c(D²)` of diffeomorphisms equal to the identity on a 
 along a collar through homotopies that keep members of `Diff_c(D²)` inside it. `Diff_c(D²)` is not
 closed in `TauCeti.DiscDiff 2`, so it is not a retract of it (§2.1, Checks).
 
-What GeometricTopology must provide (gap:geomtop-arc-isotopy-extension): in Layer 1, smooth
-isotopy extension for a finite system of disjoint properly embedded arcs in a compact surface,
-relative to a closed subset of the boundary, together with cutting a surface along such a system.
+What GeometricTopology must provide (gap:geomtop-arc-isotopy-extension): in §3.3, for a compact
+surface `F` with boundary, a finite set `Λ` of interior points and a finite system of smooth arcs
+from points of `∂F` to points of `Λ`, with interiors in `int F ∖ Λ` and disjoint except at common
+endpoints: isotopy extension for such systems relative to `∂F ∪ Λ` (§3.3 states it for compact
+sources in boundaryless targets), and the cut surface along such a system as a compact surface, to
+which a diffeomorphism fixing `∂F` and the arcs pointwise restricts, with two arcs disjoint from
+the system isotopic in the cut surface when they are isotopic in `F` relative to `∂F ∪ Λ` (the
+cutting of §1.7.2 is along one proper arc).
 
 What GeometricTopology must provide (gap:geomtop-marked-disc-diffeomorphisms): in Layer 3, the
 closed subgroup `Diff(D, P; ∂D)` of `Diff(D, ∂D) = TauCeti.DiscDiff 2` preserving a finite set
@@ -448,18 +485,16 @@ pp. 9–11; EVW16 lines 399–416). *Needs:* Tau Ceti `TauCeti.BraidGroup.lift`,
 `TauCeti.BraidGroup.sigma_induction_on`; Mathlib `ConjClasses`, `Subgroup.closure`; §IG.3.2 *The
 Hurwitz braid action*.
 
-- The generator `σ_i` acts by the `i`-th move (`hurwitzAction_sigma`).
+- The generator `σ_i` acts by the `i`-th move.
 - A property of tuples preserved by every move is preserved by every braid (`hurwitzAction_iff`),
   and a map of tuples that intertwines each move with the image of `σ_i` under a homomorphism of
   braid groups intertwines every braid (`hurwitzAction_comm`).
 - A move preserves the condition that all entries lie in `c` (`hurwitzMoveFun_mem_iff`) and the
   generated subgroup (`closure_range_hurwitzMoveFun`); hence every braid preserves the fibre
-  conditions (`hurwitzFibre_prop_iff`), and the action on fibres is computed on tuples
-  (`HurwitzFibre.smul_tuple`).
+  conditions (`hurwitzFibre_prop_iff`), and the action on fibres is computed on tuples.
 - A conjugacy class is closed under conjugation (`conj_mem_carrier`); moves commute with
   simultaneous conjugation (`hurwitzMoveFun_conj`), so the braid action commutes with it
-  (`smul_conjFibre`) and descends to classes, where it is computed on representatives
-  (`unmarked_smul_mk`).
+  (`smul_conjFibre`) and descends to classes, where it is computed on representatives.
 - The ordered product of a tuple is invariant under the braid action, not only up to conjugacy.
 
 **Checks.**
@@ -484,8 +519,9 @@ The block inclusion `B_n → B_(m+n)` on the last `n` strands, `σ_i ↦ σ_(m+i
 `TauCeti.BraidGroup.natAdd m` for `n ≥ 1` (`TauCeti.BraidGroup.natAdd_sigma`). Define
 `shiftHom m n : TauCeti.BraidGroup n →* TauCeti.BraidGroup (m + n)` as
 `TauCeti.BraidGroup.natAdd m` for `n ≥ 1` and as the trivial homomorphism out of `B_0 = 1` for
-`n = 0`, so that gluing and stabilization are defined for every `n`; it sends `σ_i` to `σ_(m+i)`
-(`shiftHom_sigma`). Prove that concatenation with a fixed prefix of length `m` is equivariant along
+`n = 0`, so that gluing and stabilization are defined for every `n`; it sends `σ_i` to `σ_(m+i)`,
+by `TauCeti.BraidGroup.natAdd_sigma`, there being generators only for `n ≥ 2`. Prove that
+concatenation with a fixed prefix of length `m` is equivariant along
 it (`hurwitzAction_shift`). Define `glue c full m g`, which prepends the constant block
 `(g, …, g)` of length `m` to a fibre point; it preserves the class
 condition and generation, is equivariant along the block inclusion (`glue_smul`), and satisfies
@@ -519,7 +555,8 @@ Stage 5 (gap:algtop-borel-construction) for the gluing of spaces.
 
 ### 0.5 Hurwitz homology as braid-group homology
 
-Prove: for every `B_n`-set `X`, the covering space `Ẽ ×_{B_n} X → Conf_n` associated with `X` has
+Prove: for every finite `B_n`-set `X`, the covering space `Ẽ ×_{B_n} X → Conf_n` associated with
+`X` has
 `H_p(Ẽ ×_{B_n} X; k) ≅ H_p(B_n; k[X])` (Mathlib `groupHomology` of `Rep.ofMulAction k (B_n) X`),
 naturally in `X`; for a homomorphism `f : B_n → B_m` and an `f`-equivariant map `X → Y` the induced
 map of Borel constructions corresponds to `groupHomology.map`. Applied to the fibres of §0.3 this
@@ -542,8 +579,11 @@ item 17, after CW approximation, AlgebraicTopology Stage 8). *Needs:* §0.3, §0
 - In degree zero, `H_0(B_n; k[X])` is the free vector space on the orbits `X/B_n`, matching
   `H_0` of the covering space as the free vector space on its components: for `S₃`, its
   transpositions and `n = 2` it has dimension five.
-- For a free transitive `B_n`-set `X = B_n` the covering space is the universal cover, and
-  `H_p(B_n; k[B_n])` vanishes for `p > 0`.
+- For `X = S_n`, with `B_n` acting through `TauCeti.BraidGroup.permHom` by left multiplication, the
+  covering space is `PConf_n` and `H_p(B_n; k[S_n]) ≅ H_p(P_n; k)` for the pure braid group
+  `P_n = TauCeti.BraidGroup.pureSubgroup n` (Shapiro's lemma). For `n = 2` both sides are `k` in
+  degrees `0` and `1`, as `PConf_2 ≃ S¹`; the trivial action on the two points of `S_2` would give
+  `H_0` of dimension two, the homology of two copies of `Conf_2`.
 
 ### 0.6 The component ring
 
@@ -593,7 +633,7 @@ of the classes of `glue g s`. *Needs:* §0.4, §0.5, §0.6; Mathlib `Rep.ofHom`,
   the field carries `U_D` to the same integral sum.
 - The glue sum does not depend on the representative of a class: it is invariant under
   simultaneous conjugation of the input (`unmarkedGlueSum_conj`, `unmarkedGlueSum_eq_of_mk_eq`),
-  and it is equivariant along the block inclusion (`unmarkedGlueSum_smul`). Hence
+  and it is equivariant along the block inclusion. Hence
   `unmarkedStabilizer` is a morphism of representations, and it is the map induced by
   `markedStabilizer` on coinvariants of simultaneous conjugation.
 
@@ -994,7 +1034,10 @@ Mathlib `CategoryTheory.GradedObject`, `CategoryTheory.SpectralSequence`,
 ## Layer 2: the truncated arc resolution
 
 `D` is a closed oriented smooth disc with a boundary base point `∗` and a set `P` of `n` interior
-points.
+points, numbered `P_1, …, P_n` so that the straight segments from `∗` to them leave `∗` in
+clockwise order. For the closed unit disc, the base configuration `P_j = j/√(1 + j²)` of §5.1 and
+`∗ = −i`, this is the order of the real parts. The classical generator `σ_i` is the
+counterclockwise half twist exchanging `P_i` and `P_(i+1)` (§2.1).
 
 ### 2.1 The braid group as the mapping class group of the marked disc
 
@@ -1031,11 +1074,17 @@ Prove: there are compatible isomorphisms
 `π_0 Diff(D, P; ∂D) ≅ Mod(D, P) ≅ TauCeti.BraidGroup n ≅ π_1(Conf_n)`, under which the generator
 `σ_i` corresponds to the positive half twist exchanging the `i`-th and `(i+1)`-st points (EVW16 §2.1,
 p. 8; EVW16 lines 354–368). *Proof sketch.* The evaluation map `Diff(D, ∂D) → Conf_n(int D)`,
-`φ ↦ φ(P)`, is a locally trivial fibre bundle with fibre `Diff(D, P; ∂D)` over `P`: the action of
-`Diff(D, ∂D)` on the ordered configuration space admits local cross-sections, obtained by pushing
-`n` small disjoint discs around the points of a configuration, and an equivariant map to a space
-with local cross-sections is locally trivial (PAL60, Theorem A and §3); the finite cover
-`PConf_n → Conf_n` carries the bundle down. The exact sequence below uses only that `π_0` and
+`φ ↦ φ(P)`, is a locally trivial fibre bundle with fibre `Diff(D, P; ∂D)` over `P`. The
+evaluation `e : Diff(D, ∂D) → PConf_n(int D)` at the points `P_1, …, P_n` in order has
+continuous local sections: GeometricTopology §3.3 (the restriction fibration, with `N` the finite
+set `P` and `M = int D`, where `Emb(N, M) = PConf_n(int D)`) gives them in `Diff_c(int D)`, and
+pushing `n` small disjoint discs around the points of a configuration gives them with supports in
+a fixed compact subset of `int D`, on which extension by the identity into `Diff(D, ∂D)` is
+continuous. As `Diff(D, ∂D)` is a topological group (`Diffeomorph.isTopologicalGroup`) and
+`e(ψ φ) = ψ(e(φ))`, a local section `s` over `V` trivializes `e` over `V` by
+`φ ↦ (e(φ), s(e(φ))⁻¹ φ)`, with fibre the diffeomorphisms fixing `P` pointwise (the argument of
+PAL60, Theorem A); the finite cover `PConf_n → Conf_n` carries the bundle down to `Conf_n`, with
+fibre `Diff(D, P; ∂D)`. The exact sequence below uses only that `π_0` and
 `π_1` of `Diff(D, ∂D)` vanish, and `Diff(D, ∂D)` is weakly contractible by Smale's disc theorem
 in the boundary-pointwise form (GeometricTopology §3.4, gap:geomtop-boundary-pointwise-disc-smale).
 Smale proves contractibility for the diffeomorphisms of the square that are the identity on a
@@ -1050,9 +1099,10 @@ lifted isotopy, an isomorphism; compose with `π_1(Conf_n) ≅ TauCeti.BraidGrou
 with `π_0 Diff(D, P; ∂D) ≅ Mod(D, P)`. The loop exchanging two adjacent points counterclockwise
 lifts to the positive half twist, the convention of §IG.3.2 and of ReductiveGroups Layer 11A
 transported to the disc by the radial homeomorphism of §5.1, which preserves orientation.
-*Needs:* Tau Ceti `TauCeti.BraidGroup`, `TauCeti.DiscDiff`, `TauCeti.TopCat.serreFibrations`;
-§IG.5.1; ReductiveGroups Layer 11A; GeometricTopology Layer 3
-(gap:geomtop-marked-disc-diffeomorphisms) and §3.4 (gap:geomtop-boundary-pointwise-disc-smale);
+*Needs:* Tau Ceti `TauCeti.BraidGroup`, `TauCeti.DiscDiff`, `Diffeomorph.isTopologicalGroup`,
+`TauCeti.TopCat.serreFibrations`; §IG.5.1; ReductiveGroups Layer 11A; GeometricTopology §3.3 (the
+restriction fibration), Layer 3 (gap:geomtop-marked-disc-diffeomorphisms) and §3.4
+(gap:geomtop-boundary-pointwise-disc-smale);
 AlgebraicTopology Stage 8 (the exact sequence of the based pair
 `(Diff(D, ∂D), Diff(D, P; ∂D))`, whose relative homotopy groups the lifting property of the bundle
 identifies with those of `Conf_n`).
@@ -1065,6 +1115,15 @@ identifies with those of `Conf_n`).
   around both points, a pure mapping class; `Conf_2(int D)` has the homotopy type of a circle.
 - The pure mapping classes are `TauCeti.BraidGroup.pureSubgroup n`, the kernel of
   `TauCeti.BraidGroup.permHom`; a full twist is not a half twist.
+- Convention witness, `n = 2`, `∗ = −i`, `P_1 < P_2` real. Let `γ_j` be the loop from `∗` along
+  the straight segment to `P_j`, once counterclockwise around `P_j` and back, and use Mathlib's
+  product in `π_1(D ∖ P, ∗)`, where `p * q` runs through `q` first. The counterclockwise half
+  twist `h` moves `P_1` along the side of `[P_1, P_2]` facing `∗`, so `h_*(γ_1) = γ_2` and
+  `h_*(γ_2) = γ_2⁻¹ γ_1 γ_2`. A cover with monodromy `f` and `(f(γ_1), f(γ_2)) = (a, b)`, pushed
+  forward along `h`, has monodromy `f ∘ h_*⁻¹`, with values `(a b a⁻¹, a)`: the positive move of
+  the conventions. The boundary loop, counterclockwise from `∗`, is `γ_1 γ_2`, with monodromy the
+  ordered product `a b`. Pulling back instead, `f ∘ h_*` has values `(b, b⁻¹ a b)`, the inverse
+  move.
 - For the annulus `A` in place of `D` the conclusion fails: `π_0 Diff(A, ∂A)` contains the Dehn
   twist about the core, which is not trivial, so the twist about the core, viewed in
   `π_0 Diff(A, {x}; ∂A)`, maps to a nontrivial class and is not the end of a lifted loop of the one
@@ -1083,33 +1142,43 @@ identifies with those of `Conf_n`).
 
 ### 2.2 The based arc complex
 
-Define the arc complex: a vertex is the isotopy class, relative to `∗` and `P`, of a smooth embedded
-arc from `∗` to a point of `P` whose interior avoids `∂D` and `P` and whose initial vector is not
-tangent to `∂D`; a `q`-simplex is a set of `q + 1` classes with simultaneous representatives
-meeting only at `∗`, with distinct tangent directions there and distinct endpoints in `P`. Order a
-simplex by the counterclockwise order of its tangent directions at `∗`; faces delete arcs
-(EVW16 §5.5, p. 25; EVW16 lines 1139–1159; HW10 Proposition 7.2, p. 35, where the complex is
-`A(S; Δ_0, Λ_n)`). *Needs:* §2.1; GeometricTopology Layer 1
-(gap:geomtop-arc-isotopy-extension); AlgebraicTopology Stage 4.
+Define, for a closed smooth oriented disc `S`, a finite nonempty set `Δ ⊂ ∂S` and a finite set
+`Λ ⊂ int S`, the simplicial complex `F(S; Δ, Λ)`: a vertex is the isotopy class, relative to
+`Δ ∪ Λ`, of a smooth embedded arc from a point of `Δ` to a point of `Λ` whose interior avoids `∂S`
+and `Λ` and whose initial vector is not tangent to `∂S`; a simplex is a finite set of classes with
+simultaneous representatives disjoint except at common endpoints. `A(S; Δ, Λ)` is the subcomplex
+of the simplices whose arcs have distinct endpoints in `Λ` (HW10 §7, pp. 34–35; HW10
+lines 1625–1643). The arc complex of this layer is `A(D; {∗}, P)`: a `q`-simplex is a set of
+`q + 1` classes with simultaneous representatives meeting only at `∗`, with distinct tangent
+directions there and distinct endpoints in `P`. Order a simplex of `A(D; {∗}, P)` by the clockwise
+order of its tangent directions at `∗`, the order of `P_1, …, P_n` for the straight arcs; faces
+delete arcs, which makes it a semisimplicial set (EVW16 §5.5, p. 25; EVW16 lines 1139–1159, with
+the order of *Notes on the sources*). *Needs:* §2.1; GeometricTopology §3.3
+(gap:geomtop-arc-isotopy-extension), §1.7.2; AlgebraicTopology Stage 4.
 
 - Relative isotopic arcs give the same vertex.
 - A finite set of vertices spans a simplex exactly when it has simultaneous representatives as
-  stated, with distinct endpoints.
-- The `i`-th face deletes the `i`-th arc in the counterclockwise order; the order of a simplex does
-  not depend on the representatives.
-- There are no `q`-simplices for `q ≥ n`.
-- `Diff⁺(D, P; ∂D)` acts simplicially, preserving the order, and the action factors through
-  `TauCeti.BraidGroup n` by §2.1.
+  stated, with distinct endpoints in `Λ` for `A(S; Δ, Λ)`.
+- In `A(D; {∗}, P)` the `i`-th face deletes the `i`-th arc in the clockwise order; the order of a
+  simplex does not depend on the representatives.
+- `A(S; Δ, Λ)` has no `q`-simplices for `q ≥ |Λ|`; in particular `A(D; {∗}, P)` has none for
+  `q ≥ n`.
+- `Diff⁺(D, P; ∂D)` acts simplicially on `A(D; {∗}, P)`, preserving the order, and the action
+  factors through `TauCeti.BraidGroup n` by §2.1.
 
 **Checks.**
 
 - `n = 0`: no vertices; the realization is empty.
 - `n = 1`: one vertex up to isotopy and no edges.
-- Two arcs ending at the same point of `P` never span an edge, even with disjoint interiors.
+- Two arcs ending at the same point of `P` never span an edge of `A(D; {∗}, P)`, even with disjoint
+  interiors; they can span an edge of `F(D; {∗}, P)`.
 - With other points present, arcs to a fixed point need not be isotopic: the vertices are not the
   finite set `P`.
-- Pairwise disjointness of representatives chosen separately does not give a simplex; simultaneous
-  representatives are required.
+- For `∗ = −i` and `P_1 < P_2` on the real axis, the straight arcs leave `∗` with directions
+  `(P_1, 1)` and `(P_2, 1)`, of arguments `arccot P_1 > arccot P_2`, so the arc to `P_1` comes first
+  in the clockwise order and is deleted by `∂_0`.
+- For `Δ = ∅` there are no arcs: `F(S; ∅, Λ)` is empty even for `|Λ| = 1`, which is why `Δ` is
+  nonempty.
 
 ### 2.3 The truncated braid-coset model
 
@@ -1162,17 +1231,21 @@ description, pp. 23–24; EVW16 lines 1070–1095). *Proof sketch.* `L_q` commut
 ### 2.5 Arc stabilizers and the coset identification
 
 Prove: for `0 ≤ q < n`, `B_n` acts transitively on the `q`-simplices of the arc complex, the
-stabilizer of the standard simplex of straight arcs from `∗` to the first `q + 1` points is
-`L_(n,q)`, and `b L_q ↦ b · v_q` is an equivariant isomorphism of augmented semisimplicial sets from
-`A(n)` to the arc complex (EVW16 Proposition 5.6 and (5.6.1), pp. 25–27; EVW16 lines 1160–1251).
+stabilizer of the standard simplex `v_q` of the straight arcs from `∗` to `P_1, …, P_(q+1)`, in
+this order, is `L_(n,q)`, and `b L_q ↦ b · v_q` is an equivariant isomorphism of augmented
+semisimplicial sets from `A(n)` to the arc complex (EVW16 Proposition 5.6 and (5.6.1), pp. 25–27;
+EVW16 lines 1160–1251).
 *Proof sketch.* Straighten two simplices near `∗`, match endpoints using the surjection onto `S_n`,
 and retract arcs inside disjoint tubular neighbourhoods. For the stabilizer, isotope a mapping class
 fixing the arc classes to one fixing the arcs pointwise, one arc at a time: the obstruction to
 removing intersections of an isotopy with the arcs already fixed lies in `π_2` of the punctured disc
 relative to an arc, which vanishes. The complement of a neighbourhood of `v_q` is a disc with
 `n − q − 1` points, whose mapping classes are the shifted braid group. Deleting the `i`-th arc of
-`v_q` is `s_(q,i) · v_(q−1)`. *Needs:* §2.1, §2.2, §2.3, §2.4; GeometricTopology Layers 1, 3
-(gap:geomtop-arc-isotopy-extension, gap:geomtop-marked-disc-diffeomorphisms).
+`v_q` is `s_(q,i) · v_(q−1)`: applied to `v_(q−1)`, the half twists `σ_q, σ_(q−1), …, σ_(i+1)`, in
+this order, carry the arc to `P_j` onto the arc to `P_(j+1)` for `j = q, q − 1, …, i + 1`, since
+each moves its left point along the side facing `∗`. *Needs:* §2.1, §2.2, §2.3, §2.4;
+GeometricTopology §3.3 (gap:geomtop-arc-isotopy-extension), §1.7.2, Layer 3
+(gap:geomtop-marked-disc-diffeomorphisms).
 
 **Checks.**
 
@@ -1182,26 +1255,55 @@ relative to an arc, which vanishes. The complement of a neighbourhood of `v_q` i
   simultaneous straightening is a step of the proof.
 - The face identification `∂_i(v_q) = s_(q,i) v_(q−1)` holds with right multiplication; with left
   multiplication the faces would not commute with the `B_n`-action.
+- `n = 2`, `q = 1`, `∗ = −i`, `P_1 < P_2` real, `a_0, a_1` the straight arcs to `P_1, P_2`: the
+  counterclockwise half twist `σ_1` moves `P_1` to `P_2` along the side of `[P_1, P_2]` facing `∗`
+  and `P_2` to `P_1` along the far side, so `σ_1 · a_0 = a_1`. Hence `∂_0(v_1) = a_1 = s_(1,0) · v_0`
+  and `∂_1(v_1) = a_0 = s_(1,1) · v_0`, as §2.3 requires. With `∗ = +i` the arcs to `P_1, P_2` leave
+  `∗` in counterclockwise order and the same twist carries `a_1` onto `a_0`, so deleting the first
+  arc would be `σ_1⁻¹ · v_0`, a different coset because `L_(2,0)` is trivial.
 
 ### 2.6 Connectivity of the arc complex
 
-Prove: for `n ≥ 1` the realization of the arc complex, and hence of `A(n)`, is `(n − 2)`-connected;
-for `n = 1` this means nonempty and for `n = 2` path connected (EVW16 Proposition 5.6, p. 25; HW10
-Lemma 7.1, p. 34, and Proposition 7.2, p. 35; HW10 lines 1631–1667; HW10 Definition 3.4, p. 16).
-*Proof sketch.* The larger complex in which several arcs may end at the same point is contractible
-by the surgery argument (HW10 Lemma 7.1). Extend a simplicial map of a `k`-sphere, `k ≤ n − 2`,
-over a disc in the larger complex; remove bad simplices of maximal dimension, those whose arcs hit
-each endpoint at least twice, by replacing their stars with joins: the link maps to a join of arc
-complexes of the cut surfaces, which is `(n − p − 2)`-connected by induction. *Needs:* §2.2,
-§2.5; AlgebraicTopology Stage 4, Stage 8 (gap:algtop-join-connectivity).
+Prove: for every closed disc `S`, finite nonempty `Δ ⊂ ∂S` and finite `Λ ⊂ int S`, the complex
+`F(S; Δ, Λ)` is contractible when `|Λ| ≥ 1` (HW10 Lemma 7.1, p. 34; HW10 lines 1631–1638), and
+`A(S; Δ, Λ)` is `(|Λ| − 2)`-connected and Cohen–Macaulay of dimension `|Λ| − 1` (HW10
+Proposition 7.2, p. 35; HW10 lines 1644–1667; HW10 Definition 3.4, p. 16). For `S = D`, `Δ = {∗}`,
+`Λ = P` and `n ≥ 1` this says that the realization of the arc complex, and hence of `A(n)` by
+§2.5, is `(n − 2)`-connected; for `n = 1` this means nonempty and for `n = 2` path connected (EVW16
+Proposition 5.6, p. 25). *Proof sketch.* `F(S; Δ, Λ)` deformation retracts onto the star of a
+vertex by Hatcher's surgery flow (HAT91, proof of the Theorem, p. 4; HAT91 lines 101–106), in the
+form of WAH08 Lemma 2.5 (WAH08 lines 302–303), which applies since `∂S` carries only points of `Δ`;
+that the points of `Λ` are interior plays no role (HW10 lines 1632–1638). For `A`, induct on
+`|Λ|`, the cases `|Λ| ≤ 1` being immediate as `Δ` is nonempty. Extend a simplicial map of a
+`k`-sphere, `k ≤ |Λ| − 2`, over a disc into `F(S; Δ, Λ)`. A simplex of the disc is bad when each
+endpoint in `Λ` of its arcs is the endpoint of at least two of them; a bad simplex of maximal
+dimension `p ≥ 1` has `d ≤ p` distinct endpoints, and its link maps into the join of the
+complexes `A(S_i; Δ_i, Λ_i)` of the pieces `S_i` of `S` cut along its arcs (HW10 lines 1654–1663).
+Each `S_i` is a disc, its set `Δ_i` of copies of points of `Δ` on `∂S_i` is nonempty, and
+`Λ_i = Λ ∩ int S_i`, with `Σ |Λ_i| = |Λ| − d`; so the pieces lie in the same family, and by
+induction and the join connectivity the join is `(|Λ| − d − 2)`-connected, at least
+`(|Λ| − p − 2)`-connected, which allows the star of the bad simplex to be replaced by a join.
+Cutting `S` along the arcs of a `q`-simplex of `A(S; Δ, Λ)`, which end at distinct points, leaves
+one disc `S'`, and the link of the simplex is `A(S'; Δ', Λ')` with `|Λ'| = |Λ| − q − 1`, which
+gives the Cohen–Macaulay property (HW10 lines 1645–1648). *Needs:* §2.2, §2.5; GeometricTopology
+§3.3 (gap:geomtop-arc-isotopy-extension), §1.7.2; AlgebraicTopology Stage 4, Stage 8
+(gap:algtop-join-connectivity).
 
 **Checks.**
 
 - `n = 1`: one vertex, nonempty, as required.
 - `n = 2`: the arc complex is a connected graph.
-- `n = 0`: the complex is empty, and no connectivity is claimed.
+- `Λ = ∅`: the complex is empty, which is `(−2)`-connected, and no connectivity is claimed.
 - Without distinct endpoints the complex is contractible, but its simplices of dimension `≥ n`
   would spoil the coset model.
+- Cutting `D` along two arcs from `∗` to the same point `p` with disjoint interiors gives two
+  discs: the outer one carries two copies of `∗` on its boundary, the inner one carries one. So
+  the induction leaves the complexes with `Δ = {∗}`, and the theorem is stated for every finite
+  nonempty `Δ`.
+- Cutting a disc along arcs from `∂S` to interior points always gives discs, each with its copies
+  of points of `Δ` on its single boundary circle; on an orientable surface of positive genus two
+  arcs from one point of `Δ` forming a nonseparating loop leave copies of that point on two
+  boundary circles of one piece.
 
 ### Examples
 
@@ -1213,9 +1315,9 @@ complexes of the cut surfaces, which is `(n − p − 2)`-connected by induction
 
 ### Dependencies
 
-Tau Ceti `TauCeti.BraidGroup`, `TauCeti.DiscDiff`, `TauCeti.TopCat.serreFibrations`; §IG.5.1;
-ReductiveGroups Layer 11A; GeometricTopology Layers 1, 3 (with §3.4); AlgebraicTopology Stages 4,
-5, 8. Independent of Layer 1.
+Tau Ceti `TauCeti.BraidGroup`, `TauCeti.DiscDiff`, `Diffeomorph.isTopologicalGroup`,
+`TauCeti.TopCat.serreFibrations`; §IG.5.1; ReductiveGroups Layer 11A; GeometricTopology Layer 1
+(§1.7.2) and Layer 3 (§§3.3, 3.4); AlgebraicTopology Stages 4, 5, 8. Independent of Layer 1.
 
 ## Layer 3: the arc spectral sequence for Hurwitz homology
 
@@ -1242,11 +1344,13 @@ element of `R_m` represented by `t` acts by `groupHomology.map (shiftHom m n)` o
 ### 3.2 The Borel arc resolution
 
 Construct, for each `n`, the semisimplicial space `X(n)_q = EB_n ×_(B_n) (A(n)_q × c^n)` and its
-thick realization `X(n)`, augmented to `Hur_n`; the augmentation is a bundle with fibre `|A(n)|`, and
+thick realization `X(n)` (Tau Ceti `TauCeti.fatRealization`), augmented to `Hur_n` by
+`TauCeti.fatRealization.augment`; the augmentation is a bundle with fibre `|A(n)|`, and
 for `n ≥ 2` it induces isomorphisms `H_t(X(n); k) → H_t(Hur_n; k)` for `t < n − 2` (EVW16 §5.3,
 p. 24; EVW16 lines 1099–1111). *Proof sketch.* Realization commutes with the Borel construction;
-apply §2.6 and the Serre spectral sequence of the bundle. *Needs:* §2.4, §2.6; §IG.5.2;
-AlgebraicTopology Stage 4 (gap:algtop-semisimplicial-realization), Stage 5
+apply §2.6 and the Serre spectral sequence of the bundle. *Needs:* §2.4, §2.6; §IG.5.2; Tau Ceti
+`TauCeti.fatRealization`, `TauCeti.fatRealization.augment`; AlgebraicTopology Stage 4
+(gap:algtop-semisimplicial-realization), Stage 5
 (gap:algtop-borel-construction), Stage 8.
 
 - `X(n)_q` is the Borel construction of `A(n)_q × c^n`.
@@ -1359,7 +1463,9 @@ Prove: for a finite group `G` and a nonsplitting class `c`, with `U = U_D` and `
 `A, B ≥ 0` depending only on `(G, c)` such that for every permitted field `k` and all `p, n ≥ 0`
 with `n > A p + B`, `U : H_p(Hur_n; k) → H_p(Hur_(n+a); k)` is an isomorphism; one can take
 `A = 3 A0` and `B = A2 + A0 + 2` (EVW16 Theorem 6.1 and (6.1.1), p. 27; EVW16 lines 1256–1261).
-*Proof sketch.* §4.1 gives `b = A2 + 3 A0 p` in §1.19. *Needs:* §4.1, §1.19, §0.7, §3.1.
+*Proof sketch.* In §1.19 take `b = A2 + 3 A0 p` from §4.1 for `p > 0`, and `b = A2 + 1` from §1.15
+for `p = 0`, where `M_0 = R`; in both cases `n > 3 A0 p + A2 + A0 + 2` gives `n ≥ b + A0`. *Needs:*
+§4.1, §1.15, §1.19, §0.7, §3.1.
 
 **Checks.**
 
@@ -1392,17 +1498,22 @@ supergroups, its diagonal block is `U_H` for `(H, c ∩ H)`, which is nonsplitti
 
 Prove: for `X = Hur_n` or `CHur_n` and a permitted field, `X//G → X/G` induces isomorphisms on
 homology and `H_p(X/G; k) ≅ H_p(X; k)_G`. The stabilizer of a point of exact image `H` is `C_G(H)`,
-and on `CHur_n` it is `Z(G)` (EVW16 proof of Corollary 6.2, p. 29; EVW16 lines 1347–1360). *Proof
-sketch.* Group the exact-image strata into conjugacy classes of subgroups; on each block the Borel
-comparison has fibre `BC_G(H)`, acyclic over `k`, and the Cartan–Leray sequence collapses to
-coinvariants. In braid-group homology, let `F` be the fibre of `X` over the base configuration:
-`c^n` for `Hur_n` and the generating tuples in `c^n` for `CHur_n`, that is `HurwitzFibre c full n`,
-with the Hurwitz action of `B_n` and the commuting action of `G` by simultaneous conjugation. Then
-`F/G` is `UnmarkedFibre c full n`, `k[F]_G = k[F/G]` as `B_n`-modules, and
+and on `CHur_n` it is `Z(G)` (EVW16 proof of Corollary 6.2, p. 29; EVW16 lines 1347–1360). The
+action of `G` on `X` is not free, so the coinvariant comparison of AlgebraicTopology Stage 5,
+item 3, which is for free actions, is not applied to it. *Proof sketch.* In braid-group homology,
+let `F` be the fibre of `X` over the base configuration: `c^n` for `Hur_n` and the generating
+tuples in `c^n` for `CHur_n`, that is `HurwitzFibre c full n`, with the Hurwitz action of `B_n`
+and the commuting action of `G` by simultaneous conjugation. Then `F/G` is
+`UnmarkedFibre c full n`, `k[F]_G = k[F/G]` as `B_n`-modules, and
 `H_p(B_n; k[F/G]) ≅ H_p(B_n; k[F])_G`, as coinvariants of a finite group of invertible order are
-exact and commute with `H_p(B_n; −)`; §0.5 identifies the two sides with `H_p(X/G; k)` and
-`H_p(X; k)_G`. *Needs:* §IG.5.2 *Forgetting the boundary marking*; AlgebraicTopology Stages 2, 5;
-§0.3, §0.5.
+exact and commute with `H_p(B_n; −)`; §0.5, applied to the finite covers with fibres `F` and
+`F/G`, identifies the two sides with `H_p(X/G; k)` and `H_p(X; k)_G`, the map being induced by the
+quotient `X → X/G`. This handles the stabilizers. For the Borel construction
+`X//G = EG ×_G X`, the group `G` acts freely on `EG × X`, and Cartan–Leray for this regular cover
+(AlgebraicTopology Stage 5, item 3) gives `H_p(X//G; k) ≅ H_p(X; k)_G`, induced by `X → X//G`.
+Since `X → X//G → X/G` is the quotient map, `X//G → X/G` is an isomorphism on homology. *Needs:*
+§IG.5.2 *Forgetting the boundary marking*; AlgebraicTopology Stage 2, Stage 5 (item 3;
+gap:algtop-borel-construction); §0.3, §0.5.
 
 **Checks.**
 
@@ -1436,8 +1547,12 @@ with `g^m = 1` for `g ∈ c` and `A, B` such that for every field `k` with
 
 **Checks.**
 
-- The averaging is applied to the isomorphism of `k[G]`-modules, not to a stabilization map of
-  quotient spaces, which does not exist.
+- Coinvariants are taken of the `k[G]`-linear isomorphism induced by `U`, not of single gluing
+  maps: a single summand need not descend to the quotient fibres. For `S₃`, its transpositions,
+  `a = (12)`, `b = (23)`, `m = 2` and `n = 1`, the tuples `(a)` and `(b)` are conjugate, but gluing
+  `(a, a)` gives `(a, a, a)` and `(a, a, b)`, which are not; the sum over `g ∈ c` gives the class
+  of `(t, t, t)` plus twice the class of `(t, t, t')`, `t ≠ t'`, for both (§0.4, `glue_conjFibre`).
+  For a singleton class `c = {g}` the element `g` is central and the single gluing map descends.
 - For `G = S₃`, `c` the transpositions and `n = 2`, `H_0(Hur_2/G)` has dimension two and
   `H_0(Hur_2)` dimension five; the coinvariants of the five orbits under conjugation are two.
 
@@ -1603,15 +1718,25 @@ following statements of the source are corrected where they are used.
 - EVW16 (7.8.3) (p. 35; EVW16 line 1599): the stabilization is written from `n` to `n + D`; it goes
   from `n` to `n + D d = n + deg U`, and the fixed-degree comparison at both ends needs
   `ℓ > max(|G|, q, n + deg U)`. §5.3 avoids this comparison.
+- EVW16 §5.5 and proof of Proposition 5.6 (p. 25; EVW16 lines 1151–1153 and 1203–1205): the arcs
+  are ordered counterclockwise at `∗`, while the direction of the half twist `σ_j` is left open
+  (EVW16 lines 360–368). With the counterclockwise half twist of ReductiveGroups Layer 11A the face
+  formula `∂_i(v_q) = s_(q,i) v_(q−1)` holds for the clockwise order, which §2.2 uses (§2.5,
+  Checks); the counterclockwise order goes with the clockwise half twist.
+- HW10 Lemma 7.1 and Proposition 7.2 (pp. 34–35; HW10 lines 1625–1644) take `Δ_0` finite; it has to
+  be nonempty, since for `Δ_0 = ∅` there are no arcs. They are stated for a connected surface with
+  `Δ_0` on one boundary circle, and on an orientable surface of positive genus the pieces cut off
+  in the proof of Proposition 7.2 can carry copies of a point of `Δ_0` on two boundary circles;
+  §2.6 states both results for discs, a family closed under that cutting.
 
 ## Downstream consumers
 
 - ArithmeticStatisticsPartVIII §5.19 uses the uniform étale Betti bound for the generalized
   dihedral data `(G_A, c_A)` in the form stated by ArithmeticStatisticsPartVIII §5.16 (*Uniform
-  Betti numbers of Hurwitz schemes*). §5.3 states that bound for every centreless `G` and every
-  rational nonsplitting class generating `G`, for coefficient primes `ℓ > max(|G|, q, n)`, and
-  §4.2, §4.3 and §4.5 the stability theorems behind it; a roadmap that needs them for general
-  `(G, c)` cites these sections.
+  Betti numbers of Hurwitz schemes*), which has the hypotheses of §5.3: `G` centreless, `c`
+  rational, nonsplitting and generating, coefficient primes `ℓ > max(|G|, q, n)`. A roadmap that
+  needs the unmarked stability or the field Betti bounds for a group with nontrivial centre, or for
+  `Hur_n/G`, cites §4.5 and §5.2.
 
 ## Worked examples
 
@@ -1649,3 +1774,9 @@ following statements of the source are corrected where they are used.
 - [ALEX23] J. W. Alexander, *On the deformation of an n-cell*, Proc. Nat. Acad. Sci. USA 9 (1923),
   406–407, [doi:10.1073/pnas.9.12.406](https://doi.org/10.1073/pnas.9.12.406); cited by its
   locator.
+- [HAT91] A. Hatcher, *On triangulations of surfaces*, Topology Appl. 40 (1991), 189–194;
+  [author's revised version](https://pi.math.cornell.edu/~hatcher/Papers/TriangSurf.pdf), the
+  Theorem and its proof. Locators give the page and the line of the author's version.
+- [WAH08] N. Wahl, *Homological stability for the mapping class groups of non-orientable surfaces*,
+  Invent. Math. 171 (2008), 389–424; [arXiv:math/0601310v2](https://arxiv.org/abs/math/0601310v2),
+  Lemma 2.5.

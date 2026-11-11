@@ -3062,7 +3062,7 @@
     },
     {
       "slug": "algtop-semisimplicial-realization",
-      "needs": "The thick geometric realization of a semisimplicial space, its skeletal filtration, and the first-quadrant spectral sequence E^1_(q,p) = H_p(X_q; k) => H_(p+q)(||X||; k) with d^1 the alternating face sum, natural and convergent on finite diagonals.",
+      "needs": "For the pinned thick realization TauCeti.fatRealization of a semisimplicial space X, its skeletal filtration and the natural first-quadrant homology spectral sequence E^1_(q,p) = H_p(X_q; k) => H_(p+q)(||X||; k) with d^1 the alternating face sum, convergent since each total degree has finitely many terms.",
       "supplier": "AlgebraicTopology",
       "section": "Stage 4"
     },
@@ -3080,9 +3080,9 @@
     },
     {
       "slug": "geomtop-arc-isotopy-extension",
-      "needs": "Smooth isotopy extension for a finite system of disjoint properly embedded arcs in a compact surface relative to a closed subset of the boundary, and cutting a surface along such a system.",
+      "needs": "For a compact surface F with boundary, a finite set Λ of interior points and a finite system of smooth arcs from points of ∂F to points of Λ, disjoint except at common endpoints: isotopy extension for such systems relative to ∂F ∪ Λ, and the cut surface along the system as a compact surface to which diffeomorphisms fixing ∂F and the arcs pointwise restrict, with two arcs disjoint from the system isotopic in the cut surface when they are isotopic in F relative to ∂F ∪ Λ.",
       "supplier": "GeometricTopology",
-      "section": "Layer 1"
+      "section": "§3.3"
     },
     {
       "slug": "geomtop-marked-disc-diffeomorphisms",
