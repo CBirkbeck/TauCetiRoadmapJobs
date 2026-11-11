@@ -2,7 +2,7 @@
 
 Reviewers, red-team passes and errata jobs record every mistake they find in a source while checking a roadmap's locators: misprints (slips whose intended meaning is clear), errors (a false statement or proof step) and gaps (a step the source does not justify), each with the roadmap, the board pull request or errata job and the head that reported it. Collected by the board sync from the `## Source issues` sections of review, red-team and errata comments; the data is in `errata/source-issues.json`.
 
-11211 mistakes recorded on the board: 6454 misprints, 2928 errors, 1365 gaps, 464 unparsed bullets.
+11215 mistakes recorded on the board: 6456 misprints, 2928 errors, 1367 gaps, 464 unparsed bullets.
 Errata jobs have read the cited sources of 60 roadmaps; in those of 2 they found no mistake.
 The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explorer/`: 1525 awaiting review, 13582 confirmed, 228 rejected.
 
@@ -4277,9 +4277,12 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 
 ## CH
 
+- **Gap** at Appendix, proof of Lemma 10.9, printed p.35, CH line 1707: the source says the source identifies the span of every triple with sl₂; it should be treat the zero triple separately before making that identification; affects the proof. Found by LieHighestWeightPartII (#12954 at 85c9dec, 2026-11-11, codex gpt-6-astra).
 - **Misprint** at Appendix, proof of Lemma 10.9, printed p.35, CH line 1720: the source says the source combines ascending neutral coordinates with descending-chain simple roots; it should be reverse the chain roots or reverse the coordinates; affects nothing. Found by LieHighestWeightPartII (#12954 at f7af1de, 2026-11-10, codex gpt-6-astra).
 - **Misprint** at Appendix, proof of Lemma 10.9, printed p.35, CH line 1726: the source says the largest index with nonzero increasing filtration; it should be take the largest nonzero graded index or largest filtration jump; affects a stated result. Found by LieHighestWeightPartII (#12954 at f7af1de, 2026-11-10, codex gpt-6-astra).
+- **Misprint** at Appendix, proof of Lemma 10.9, printed p.35, CH line 1726: the source says the largest nonzero increasing-filtration index; it should be use the largest nonzero graded index or filtration jump; affects a stated result. Found by LieHighestWeightPartII (#12954 at 85c9dec, 2026-11-11, codex gpt-6-astra).
 - **Gap** at Appendix, proof of Lemma 10.9, printed p.35, CH line 1731: the source says the source infers E₆/E₇ adjoint separation from E₈ by Levi inclusion; it should be justify complementary summands and descent of conjugacy, or verify those types independently; affects the proof. Found by LieHighestWeightPartII (#12954 at f7af1de, 2026-11-10, codex gpt-6-astra).
+- **Gap** at Appendix, proof of Lemma 10.9, printed p.35, CH line 1732: the source says the source infers Levi adjoint separation directly from E₈ separation; it should be justify complementary summands and descent of conjugacy, or check E₆/E₇ independently; affects the proof. Found by LieHighestWeightPartII (#12954 at 85c9dec, 2026-11-11, codex gpt-6-astra).
 - **Misprint** at Appendix, proof of Lemma 10.9, printed page 35 (CH line 1720–1725): the source says simple roots `±ε₁+ε₂, ε₂−ε₃, …` with neutral elements in ascending coordinates `a₁ ≤ ⋯ ≤ a_r`; it should be use descending coordinates, or the simple roots `ε_(i+1) − ε_i`, for the chamber to be dominant (for `(1,1,3,3)` the pairing with `ε₂−ε₃` is `−2`); affects nothing; (the two maxima are unchanged). Found by LieHighestWeightPartII (#2394 at 1806182, 2026-11-04, claude fable).
 - **Misprint** at Tables 2–4, printed pp.36–37, CH lines 1734,1813,1831: the source says the source labels graded multiplicities as filtration dimensions; it should be label graded-piece dimensions, whose cumulative sums give filtration dimensions; affects a stated result. Found by LieHighestWeightPartII (#12954 at f7af1de, 2026-11-10, codex gpt-6-astra).
 
@@ -13058,6 +13061,7 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 ## SOM
 
 - **Misprint** at §3.1, printed p.15, SOM line 356: the source says the source puts the target adjoint automorphism on the source side of the homomorphism; it should be postcompose the sl₂-to-g homomorphism by the automorphism of g; affects nothing. Found by LieHighestWeightPartII (#12954 at f7af1de, 2026-11-10, codex gpt-6-astra).
+- **Misprint** at §3.1, printed p.15, SOM line 356: the source says the source composes a target automorphism on the source side of an sl₂-to-g map; it should be postcompose by the automorphism of g; affects nothing. Found by LieHighestWeightPartII (#12954 at 85c9dec, 2026-11-11, codex gpt-6-astra).
 
 ## Soshnikov
 
