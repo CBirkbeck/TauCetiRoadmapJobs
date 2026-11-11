@@ -5841,7 +5841,7 @@
     },
     {
       "slug": "curve-crystalline-companions",
-      "needs": "For a smooth curve X over a finite field of characteristic p and an irreducible lisse ℚ̄_ℓ-sheaf on X with finite-order determinant, a crystalline companion overconvergent F-isocrystal with the same Frobenius characteristic polynomials at closed points (Abe), together with full faithfulness of restriction from overconvergent to convergent F-isocrystals on smooth curves (Kedlaya), so that Drinfeld–Kedlaya's slope bounds on curves apply to companions of indecomposable lisse sheaves.",
+      "needs": "For a smooth curve X over a finite field of characteristic p, a prime ℓ ≠ p, a field isomorphism ℚ̄_ℓ ≅ ℚ̄_p and an irreducible lisse ℚ̄_ℓ-sheaf on X with finite-order determinant, a crystalline companion: an irreducible overconvergent F-isocrystal on X whose Frobenius characteristic polynomial at every closed point is the image of that of the sheaf (Abe), so that Drinfeld–Kedlaya's slope bounds on curves apply to companions of indecomposable lisse sheaves.",
       "supplier": "PadicDifferentialEquationsAndRigidCohomology",
       "section": "RD.3.34 Convergent F-isocrystals"
     },

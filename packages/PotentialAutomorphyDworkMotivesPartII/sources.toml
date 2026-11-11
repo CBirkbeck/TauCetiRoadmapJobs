@@ -6,6 +6,7 @@ id = "QIAN23"
 authors = "Lie Qian"
 title = "Potential Automorphy for $GL_n$"
 year = 2021
+doi = "10.1007/s00222-022-01161-6"
 arxiv = "2104.09761v1"
 locator_scheme = "theorem"
 locator = "Lemmas 2.1, 2.3, 3.1, 3.3, 3.4, 3.6, 3.8–3.10; Propositions 3.2, 3.7, 4.2 (arXiv v1)"
@@ -17,7 +18,6 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-26"
 version_note = "arXiv v1 numbering; published in Invent. Math. 231 (2023), 1239–1275, where v1 Lemmas 3.6, 3.8–3.10 and Proposition 3.7 become Lemmas 3.7, 3.9–3.11 and Proposition 3.8"
-doi = "10.1007/s00222-022-01161-6"
 cited_for = ["Layers 1, 2, 4, 5, 6, 7, 9"]
 
 [[source]]
@@ -43,6 +43,7 @@ id = "BCGNT25"
 authors = "George Boxer, Frank Calegari, Toby Gee, James Newton, Jack A. Thorne"
 title = "The Ramanujan and Sato-Tate Conjectures for Bianchi modular forms"
 year = 2023
+doi = "10.1017/fmp.2024.29"
 arxiv = "2309.15880v3"
 locator_scheme = "theorem"
 locator = "§1.6; §4 (Theorem 4.2.1, Lemma 4.2.4, Propositions 4.2.5–4.2.6, Definitions 4.3.1–4.4.1, Lemma 4.3.4, Proposition 4.4.2, Lemma 4.4.4); Lemma 5.2.3; Theorem 6.2.4 and proof (arXiv v3)"
@@ -54,14 +55,13 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-26"
 version_note = "arXiv v3 (author pagination); published in Forum Math. Pi 13 (2025), e10"
-doi = "10.1017/fmp.2024.29"
 cited_for = ["Layers 0, 1, 2, 3, 5, 6, 7, 9"]
 
 [[source]]
 id = "BLGHT11"
-year = 2011
-title = "A family of Calabi-Yau varieties and potential automorphy II"
 authors = "Thomas Barnet-Lamb, David Geraghty, Michael Harris, Richard Taylor"
+title = "A family of Calabi-Yau varieties and potential automorphy II"
+year = 2011
 locator_scheme = "theorem"
 locator = "§4 (Lemma 4.1, Proposition 4.2, Lemma 4.3, Corollaries 4.4–4.8), §5 (Lemmas 5.1–5.3), §6 (Lemma 6.1, Proposition 6.2)"
 url = "https://virtualmath1.stanford.edu/~rltaylor/cy2fin.pdf"
@@ -75,9 +75,9 @@ cited_for = ["Layers 0, 1, 2, 4, 5, 7, 9"]
 
 [[source]]
 id = "KATZ09"
-year = 2009
-title = "Another look at the Dwork family"
 authors = "Nicholas M. Katz"
+title = "Another look at the Dwork family"
+year = 2009
 locator_scheme = "theorem"
 locator = "Theorem 5.3, Remark 5.4, Question 5.5; Corollary 8.7, Lemma 8.8"
 url = "https://web.math.princeton.edu/~nmk/dworkfamilyfinal.pdf"
@@ -127,9 +127,9 @@ cited_for = ["Layers 5, 7, 9"]
 
 [[source]]
 id = "DMOS82"
-year = 1982
-title = "Hodge cycles on abelian varieties"
 authors = "Pierre Deligne (notes by J. S. Milne)"
+title = "Hodge cycles on abelian varieties"
+year = 1982
 locator_scheme = "theorem"
 locator = "Chapter I, §7, Propositions 7.4, 7.6, 7.10"
 url = "https://www.jmilne.org/math/Documents/Deligne82.pdf"
@@ -143,9 +143,9 @@ cited_for = ["Layers 2, 6, 7"]
 
 [[source]]
 id = "BH89"
-year = 1989
-title = "Monodromy for the hypergeometric function nF(n-1)"
 authors = "Frits Beukers, Gert Heckman"
+title = "Monodromy for the hypergeometric function nF(n-1)"
+year = 1989
 locator_scheme = "theorem"
 locator = "Definition 2.9, Proposition 3.3, Theorem 3.5"
 url = "https://gdz.sub.uni-goettingen.de/download/pdf/PPN356556735_0095/LOG_0022.pdf"
@@ -159,9 +159,9 @@ cited_for = ["Layer 0"]
 
 [[source]]
 id = "BER10"
-year = 2010
-title = "Représentations modulaires de GL2(Qp) et représentations galoisiennes de dimension 2"
 authors = "Laurent Berger"
+title = "Représentations modulaires de GL2(Qp) et représentations galoisiennes de dimension 2"
+year = 2010
 locator_scheme = "theorem"
 locator = "§1.3; Théorème 3.2.1"
 url = "https://numdam.org/item/AST_2010__330__263_0.pdf"
@@ -175,9 +175,9 @@ cited_for = ["Layer 9"]
 
 [[source]]
 id = "ACC23"
-year = 2023
-title = "Potential automorphy over CM fields"
 authors = "Patrick B. Allen, Frank Calegari, Ana Caraiani, Toby Gee, David Helm, Bao V. Le Hung, James Newton, Peter Scholze, Richard Taylor, Jack A. Thorne"
+title = "Potential automorphy over CM fields"
+year = 2023
 locator_scheme = "theorem"
 locator = "Lemmas 7.1.7–7.1.8; Corollary 7.2.4"
 url = "https://math.uchicago.edu/~fcale/papers/Ramanujan.pdf"
@@ -191,9 +191,9 @@ cited_for = ["Layer 9"]
 
 [[source]]
 id = "CEGS"
-year = 2022
-title = "Components of moduli stacks of two-dimensional Galois representations"
 authors = "Ana Caraiani, Matthew Emerton, Toby Gee, David Savitt"
+title = "Components of moduli stacks of two-dimensional Galois representations"
+year = 2022
 locator_scheme = "theorem"
 locator = "§1.4, Lemma 1.4.1"
 url = "https://www.ma.imperial.ac.uk/~tsg/Index_files/cegsC.pdf"
@@ -225,9 +225,9 @@ cited_for = ["Layer 8"]
 
 [[source]]
 id = "LEWIS82"
-year = 1982
-title = "The isometry classification of Hermitian forms over division algebras"
 authors = "D. W. Lewis"
+title = "The isometry classification of Hermitian forms over division algebras"
+year = 1982
 doi = "10.1016/0024-3795(82)90258-2"
 locator_scheme = "section"
 locator = "§4"
@@ -311,3 +311,21 @@ licence_class = "none"
 status = "uncertified"
 version_note = "paywalled translation; cited by its locator, in the form applied in QIAN23 Lemma 3.6 and BLGHT11 Lemma 4.6"
 cited_for = ["Layer 0"]
+
+[[source]]
+id = "DICKSON01"
+authors = "Leonard Eugene Dickson"
+title = "Linear groups, with an exposition of the Galois field theory"
+year = 1901
+venue = "B. G. Teubner, Leipzig"
+locator_scheme = "section"
+locator = "Chapter XII, §§249–260, pp. 269–286; summary of the subgroups of PSL2(F_q) in §260, pp. 285–286"
+url = "https://dn790006.ca.archive.org/0/items/lineargroupswith00dickuoft/lineargroupswith00dickuoft.pdf"
+fetched_from = "https://dn790006.ca.archive.org/0/items/lineargroupswith00dickuoft/lineargroupswith00dickuoft.pdf"
+fetched_at = "2026-11-11T05:54:47Z"
+sha256 = "1d4ad61f79b22926ad39a3d13429cc178bc0e9f42ab0b8896c0b466079c7d07e"
+licence_class = "institutional"
+status = "certified"
+accessed = "2026-11-11"
+cited_for = ["0.11"]
+version_note = "public-domain 1901 edition, University of Toronto Libraries scan; printed page numbers"
