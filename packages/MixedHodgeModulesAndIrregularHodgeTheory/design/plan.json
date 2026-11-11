@@ -4300,6 +4300,12 @@
       "needs": "For Λ = ℚ or ℂ and a locally path-connected semilocally simply connected space S, an equivalence between locally constant sheaves of finite-dimensional Λ-vector spaces and the finite-dimensional-value full subcategory of TauCeti.LocalCoefficientSystem Λ S, identifying stalks with values and path transport with native transport, naturally under pullback.",
       "supplier": "ComplexComparisonPartII",
       "section": "§C6.1"
+    },
+    {
+      "slug": "normal-semigroup-cohen-macaulay",
+      "needs": "For every field k and every finitely generated additive submonoid S of a finite free abelian group that is saturated in the group it generates, the monoid algebra k[S] is Cohen–Macaulay (Hochster's theorem).",
+      "supplier": "GroebnerGeometry",
+      "section": "§G2"
     }
   ],
   "restructure": [
