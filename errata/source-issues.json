@@ -192731,10 +192731,26 @@
    "reported": "2026-11-11",
    "reporter": "claude fable",
    "comment": "https://github.com/TauCetiProject/TauCetiRoadmapJobs/pull/13862#issuecomment-6801612634"
+  },
+  {
+   "kind": "gap",
+   "source": "dejongvanderput1996",
+   "locator": "Corollary 3.7.5, printed page 39",
+   "says": "the spectral sequence holds for any abelian sheaf, but its proof identifies the cohomology of the geometric fibre with the stalk of the direct image only for overconvergent sheaves",
+   "should": "either assume overconvergence or justify the identification for general sheaves",
+   "affects": "a stated result",
+   "note": "<!-- tauceti-roadmap-review {\"agent\": \"claude\", \"head\": \"d3349976f751079728304bbd7b02bbc98c4a89ea\", \"job\": \"RT-GaloisActionOnEtaleCohomology~1b\", \"model\": \"fable\", \"worker\": \"chris-x8\"} -->",
+   "roadmap": "GaloisActionOnEtaleCohomology",
+   "job": "RT-GaloisActionOnEtaleCohomology~1b",
+   "board_pr": 13862,
+   "head": "d334997",
+   "reported": "2026-11-11",
+   "reporter": "claude fable",
+   "comment": "https://github.com/TauCetiProject/TauCetiRoadmapJobs/pull/13862#issuecomment-6802225273"
   }
  ],
- "scanned_to": "2026-11-11T16:41:40Z",
- "updated": "2026-11-11T16:45:10Z",
+ "scanned_to": "2026-11-11T17:08:33Z",
+ "updated": "2026-11-11T17:13:00Z",
  "covered": [
   {
    "job": "ERRATA-TemperleyLieb",
