@@ -1,6 +1,6 @@
 schema = "tauceti-roadmap-sources/v1"
 roadmap = "AmenableTracesOnCStarAlgebras"
-# cited_for lists README section numbers (### k.n headings of design/README.md).
+# cited_for lists README section numbers (### k.n headings of README.md).
 
 [[source]]
 id = "connes1976"
