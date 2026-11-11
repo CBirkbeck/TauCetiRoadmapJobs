@@ -147,8 +147,13 @@ supplier carriers named below; the statements of §§1.2–1.6 also need the imp
   coefficient extension; only this is lattice-independent.
 - For the real cyclotomic data of §1.1 write `δ = (−1)^e` with `e : G_L → ℤ/2`, so that
   `g(ζ) = ζ^{δ(g)}` for `ζ ∈ μ_n`. A twist of a variety X by a cocycle `a` is a variety X′ with
-  an isomorphism `φ : X′_{L̄} → X_{L̄}` such that `φ ∘ ᵍφ⁻¹ = a_g`; Galois then acts on `X(L̄)` by
-  `g ⋆ x = a_g(gx)` and on `H¹(X)` by `a_g^* ∘ ρ(g)`.
+  an isomorphism `φ : X′_{L̄} → X_{L̄}` such that `φ ∘ ᵍφ⁻¹ = a_g`, that is `ᵍφ = a_g⁻¹ ∘ φ`.
+  Transported through φ, Galois acts on `X(L̄)` by `g ⋆ x = a_g(gx)`, on Tate modules by
+  `a_g ∘ ρ(g)`, and on `H¹(X)` by `(a_g⁻¹)^* ∘ ρ(g)`: naturality of the Galois action gives
+  `ρ_{X′}(g) ∘ φ^* = (ᵍφ)^* ∘ ρ_X(g) = φ^* ∘ (a_g⁻¹)^* ∘ ρ_X(g)`. For an involutive cocycle, such
+  as the reflection cocycle `a_g = w^{e(g)}` of §1.2 or the quadratic-twist cocycle
+  `a_g = [−1]^{e(g)}`, `a_g⁻¹ = a_g` and the rule reads `(w^*)^{e(g)} ∘ ρ(g)`, respectively
+  `δ(g)ρ(g)`.
 - Matrices act on columns.
 
 **Convention witnesses.**
@@ -165,6 +170,13 @@ supplier carriers named below; the statements of §§1.2–1.6 also need the imp
 - For `E: y² = x³ − x + 1` over `𝔽₅` there are 8 points, so `a₅ = −2`; its quadratic twist by the
   nonsquare 2, `y² = 3(x³ − x + 1)`, has 4 points and `a₅ = 2`. A quadratic twist multiplies the
   trace by the character value, here `(2/5) = −1`.
+- The twist rule on `H¹` needs the inverse cocycle, which an involutive cocycle cannot detect.
+  Over `ℚ(ζ₃)` let `b³ = 2`, `X: y² = x³ + 1`, `X′: y² = 2x³ + 1` and `φ(x, y) = (bx, y)`. For g
+  with `g(b) = ζ₃b`, `ᵍφ(x, y) = (ζ₃bx, y)` and `a_g(x, y) = (ζ₃⁻¹x, y)`, of order three. With
+  `ω = dx/(2y)` on X and `ω′ = dx/(2y)` on X′, `φ^*ω = bω′` and `g(bω′) = ζ₃bω′`, so the transported
+  action sends ω to `ζ₃ω`. The rule `(a_g⁻¹)^* ∘ ρ(g)` gives `ζ₃ω`; the uninverted `a_g^* ∘ ρ(g)`
+  would give `ζ₃⁻¹ω`. The same pullback rules govern the semilinear action on `H⁰(X_{ℚ̄}, Ω¹)` and
+  the action on `H¹(X)`, where `a_g^*` has order three and so differs from its inverse.
 
 ## Exact supplier contracts
 
@@ -503,7 +515,8 @@ For m = 1 put `C^δ_1 = B^δ_t`, the quadratic twist of `B_t ⊗_k L` by δ. Pro
    trivially on that quotient.
 5. For every prime ℓ, `φ^*` is an isomorphism `H¹(C_{m,L̄}, ℤ_ℓ) → H¹(C^δ_{m,L̄}, ℤ_ℓ)` carrying
    `u_ζ^*` to `u′_ζ^*` and `w^*` to `w′^*`, under which `g ∈ G_L` acts on the source by
-   `(w^*)^{e(g)}ρ(g)`.
+   `(w^*)^{e(g)}ρ(g)`. This is the rule `(a_g⁻¹)^* ∘ ρ(g)` of the Conventions, since
+   `a_g = w^{e(g)}` is its own inverse.
 
 ([LeHung26](#references), §3.2, (9) and Lemma 3.2 with proof, p.6, LeHung26 lines 237–240 and
 line 245.)
@@ -571,10 +584,12 @@ its polynomials, semisimplicity and Hodge labels are proved.
 - For n = 3, `H¹(C^δ_3)` has dimension six, split into three two-dimensional pieces `W_1`,
   `W_η`, `W_{η⁻¹}`.
 - θ = 1 gives `W_1 = H¹(B^δ_t)`, of rank two, not a trivial or one-dimensional representation.
-- Non-example: inducing `V_θ` from `G_M` to `G_L` gives `W_θ ⊗ Ind_{G_M}^{G_L} 1 = W_θ ⊕ W_θ ⊗ δ`,
-  of rank `2[M:L]`, which is four when δ is nontrivial (for instance for every totally real k); the
-  twist is what produces a rank-two `G_L`-representation. Positive control: for `k = ℚ(√−3)` and
-  n = 3, `M = L` and the induction is `V_θ` itself, of rank two.
+- Non-example: inducing `V_θ` from `G_M` to `G_L` gives `W_θ ⊗ Ind_{G_M}^{G_L} 1`, of rank
+  `2[M:L]`. When δ is nontrivial (for instance for every totally real k), `[M:L] = 2`,
+  `Ind_{G_M}^{G_L} 1 = 1 ⊕ δ` and the induction is `W_θ ⊕ (W_θ ⊗ δ)`, of rank four; the twist is
+  what produces a rank-two `G_L`-representation. Positive control: for `k = ℚ(√−3)` and n = 3,
+  `M = L`, δ is trivial, `Ind_{G_M}^{G_L} 1 = 1`, and the induction is `V_θ = W_θ` itself, of rank
+  two, not `W_θ ⊕ W_θ`.
 - For ℓ dividing n the eigenspace is still taken with characteristic-zero coefficients; the
   integral statement is §1.5 and uses no integral projector.
 
@@ -687,7 +702,14 @@ ArithmeticGaloisRepresentations Layer 1.
   `H¹(A_t) ≡ H¹(B_t) ⊗ δ` modulo 3 over L. This agrees with the source's remark that `H¹(A_t)` is
   always congruent modulo 3 to a quadratic twist of E (LeHung26 lines 136–138), and is why three
   cannot be the seed prime.
-- Reversing the primes fails: modulo 3, `χ̄ = ψ̄ ≠ 1 = η̄`, so `W_χ ≡_3 W_ψ` and not `W_η`.
+- The evaluation argument proves congruences, not noncongruences. Modulo 3, `χ̄ = ψ̄` gives
+  `W_χ ≡_3 W_ψ`; since `χ̄` has order p while `η̄ = 1`, the argument does not identify the
+  evaluation at χ with that at η and gives no congruence `W_χ ≡_3 W_η`, but unequal residual labels
+  do not exclude one. Positive control for an accidental congruence: take n = 15, t ∈ U(k),
+  `J = Pic⁰(C_15(t))` and the finite extension `k′ = k(μ₁₅, J[3])`. Over k′, `M = L = k′`, δ is
+  trivial, and `H¹(C_{15,k̄}, 𝔽₃) ≅ J[3] ⊗ μ₃^{⊗−1}` is a trivial `G_{k′}`-module; every reduction
+  `T^δ_θ/𝔪`, a rank-two quotient of its extension of scalars to κ, is `κ²` with trivial action, so
+  `W_χ ≡_3 W_η ≡_3 W_1` over k′ although `χ̄` has order five and `η̄ = 1`.
 - Non-example, for δ nontrivial and θ ≠ 1 (so `θ ≠ θ⁻¹`, n being odd): an element `g ∈ G_L` with
   `δ(g) = −1` conjugates `u_ζ` to `u_{ζ⁻¹}`, so it carries the kernel of the θ-evaluation of the
   untwisted `H¹(C_{n,L̄}, ℤ_ℓ) ⊗ O` onto the kernel of the `θ⁻¹`-evaluation, and `G_L` does not act

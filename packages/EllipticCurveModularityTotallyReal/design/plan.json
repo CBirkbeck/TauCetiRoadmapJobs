@@ -170,6 +170,11 @@
        "name": "cubic clause needs 3 | n",
        "kind": "non-example",
        "statement": "n = 5: the tower has indices 1 and 5; forcing Y^3 = f_t gives valuations 1, -1, -5, 5 at S, -S, R, -R, four branch points, 2g - 2 = 8 and genus 5; for n = 15 the valuations -15, 15 at R, -R are divisible by 3, two branch points and genus 3"
+      },
+      {
+       "name": "inverse cocycle on H^1",
+       "kind": "non-example",
+       "statement": "for a twist with phi o g(phi)^-1 = a_g the transported action on H^1 is (a_g^-1)^* rho(g); over Q(zeta_3) with b^3 = 2, X: y^2 = x^3 + 1, X': y^2 = 2x^3 + 1, phi(x,y) = (bx,y) and g(b) = zeta_3 b, a_g(x,y) = (zeta_3^-1 x, y) and phi^* omega = b omega', so the transported action sends omega = dx/(2y) to zeta_3 omega, while a_g^* rho(g) would give zeta_3^-1 omega; for the reflection cocycle w^e(g) = (w^e(g))^-1 both read (w^*)^e(g) rho(g)"
       }
      ]
     },
@@ -231,7 +236,7 @@
       {
        "name": "induction",
        "kind": "non-example",
-       "statement": "Ind from G_M to G_L of V_theta is W_theta + W_theta tensor delta, of rank 2[M:L]: four when delta is nontrivial (every totally real k), two for k = Q(sqrt -3), n = 3, where M = L"
+       "statement": "Ind from G_M to G_L of V_theta is W_theta tensor Ind 1, of rank 2[M:L]: when delta is nontrivial (every totally real k) [M:L] = 2, Ind 1 = 1 + delta and the induction is W_theta + W_theta tensor delta, of rank four; for k = Q(sqrt -3), n = 3, M = L, delta = 1, Ind 1 = 1 and the induction is V_theta = W_theta, of rank two, not W_theta + W_theta"
       },
       {
        "name": "l divides n",
@@ -362,9 +367,14 @@
        "statement": "eta reduces to 1 mod 3 so W_eta =_3 W_1: H^1(A_t) is congruent mod 3 to a quadratic twist of E (LeHung26 lines 136-138)"
       },
       {
-       "name": "reversed primes",
+       "name": "labels versus congruence at 3",
        "kind": "non-example",
-       "statement": "mod 3, chi-bar = psi-bar != 1 = eta-bar, so W_chi =_3 W_psi and not W_eta"
+       "statement": "mod 3, chi-bar = psi-bar gives W_chi =_3 W_psi; chi-bar has order p and eta-bar = 1, so the evaluation argument gives no congruence W_chi =_3 W_eta, but unequal residual labels do not exclude one"
+      },
+      {
+       "name": "accidental congruence",
+       "kind": "computation",
+       "statement": "n = 15, t in U(k), J = Pic^0(C_15(t)), k' = k(mu_15, J[3]): over k' M = L = k', delta = 1 and H^1(C_15, F_3) = J[3] tensor mu_3^-1 is a trivial G_k'-module, so every T^delta_theta / m is kappa^2 with trivial action and W_chi =_3 W_eta =_3 W_1 over k' although chi-bar has order 5 and eta-bar = 1"
       },
       {
        "name": "untwisted lattice",
