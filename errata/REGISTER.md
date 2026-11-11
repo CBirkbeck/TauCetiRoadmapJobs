@@ -2,7 +2,7 @@
 
 Reviewers, red-team passes and errata jobs record every mistake they find in a source while checking a roadmap's locators: misprints (slips whose intended meaning is clear), errors (a false statement or proof step) and gaps (a step the source does not justify), each with the roadmap, the board pull request or errata job and the head that reported it. Collected by the board sync from the `## Source issues` sections of review, red-team and errata comments; the data is in `errata/source-issues.json`.
 
-11919 mistakes recorded on the board: 6832 misprints, 3110 errors, 1513 gaps, 464 unparsed bullets.
+11920 mistakes recorded on the board: 6832 misprints, 3110 errors, 1514 gaps, 464 unparsed bullets.
 Errata jobs have read the cited sources of 60 roadmaps; in those of 2 they found no mistake.
 The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explorer/`: 1525 awaiting review, 13582 confirmed, 228 rejected.
 
@@ -5516,6 +5516,7 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 
 ## dejongvanderput1996
 
+- **Gap** at Corollary 3.7.5, printed page 39: the source says the spectral sequence holds for any abelian sheaf, but its proof identifies the cohomology of the geometric fibre with the stalk of the direct image only for overconvergent sheaves; it should be either assume overconvergence or justify the identification for general sheaves; affects a stated result; <!-- tauceti-roadmap-review {"agent": "claude", "head": "d3349976f751079728304bbd7b02bbc98c4a89ea", "job": "RT-GaloisActionOnEtaleCohomology~1b", "model": "fable", "worker": "chris-x8"} -->. Found by GaloisActionOnEtaleCohomology (#13862 at d334997, 2026-11-11, claude fable).
 - **Misprint** at the proof of Corollary 3.7.5, printed page 39: the source says the identification of the cohomology of `Sp(k)` with Galois cohomology uses a Lemma 3.3.2; it should be Corollary 3.3.2, since §3.3 has Lemma 3.3.1 and Corollary 3.3.2 only; affects nothing. Found by GaloisActionOnEtaleCohomology (#13862 at bce80bd, 2026-11-11, claude fable).
 - **Gap** at the proof of Corollary 3.7.5, printed page 39: the source says the cohomology of the geometric fibre equals the stalk of the direct image when the sheaf is overconvergent, while the corollary is stated for any abelian sheaf; it should be either an overconvergence hypothesis in the statement or an argument for general sheaves; affects the proof. Found by GaloisActionOnEtaleCohomology (#13862 at b8df66d, 2026-11-11, claude fable).
 - **Misprint** at the proof of Corollary 3.7.5, printed page 39: the source says the comparison with Galois cohomology uses a Lemma 3.3.2; it should be Corollary 3.3.2, since §3.3 has Lemma 3.3.1 and Corollary 3.3.2 only; affects nothing. Found by GaloisActionOnEtaleCohomology (#13862 at b8df66d, 2026-11-11, claude fable).
