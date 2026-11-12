@@ -1,0 +1,22 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-ClassicalErgodicTheory~7",
+  "head": "1966f38707a1a5b905755f53ace0d02e5895246c",
+  "pr": 2231,
+  "folder": "ClassicalErgodicTheory",
+  "date": "2026-11-12",
+  "findings": 1,
+  "blocking": 0,
+  "notes": "incremental re-review of 21 changed lines since 92f201c. Previous R01 (§3.2 and §6.2 locators) is repaired. New P3: the Auer2024 Theorem 3 page (p. 5) holds only in arXiv v3 (2025); v1 and v2 (2024) have p. 6, and for d > 1 the restriction is a Z^d-action. Checked against the texts: Hochman2012 Def 6.1.1 (p. 56) and Cor 6.6.4 (p. 70); Auer2024 Thm 3 with its weak-mixing definition; Chung2013 pp. 21 and 23 (Walters Thm 9.16) and Walters Thm 9.11. Walters Thms 8.2, 8.4, 9.14 and 9.15 are uncertified and matched by secondary citations only. Seeded sample: 8.2 falls in the change and was checked; the other sample targets are untouched. Resolved: MathematicalBilliards design §12.1 and ArithmeticDynamics §2.7 at ae79f44. Adversarial rows cover §3.2 items 3-5, §6.2 (both statements) and §8.2 item 5 with its Check. Gate: the worker's gate passed; my rerun fails only NOT IN ORDER against the default order file, and the candidate-order depcheck reports 0 problems. lake env lean: 39 sorry warnings, 0 errors. No change outside the folder; the pull request text still matches; overlap check found nothing shared.",
+  "carried": {
+   "from": "1966f38707a1a5b905755f53ace0d02e5895246c",
+   "head": "e3c51083ea43388488e956e68be6597047e01cea",
+   "findings": 1,
+   "lines": 15,
+   "folders": [
+    "ClassicalErgodicTheory"
+   ]
+  }
+ }
+}
