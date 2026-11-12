@@ -1,0 +1,267 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "ClassicalErgodicTheory"
+
+[[source]]
+id = "Sarig2023"
+version_note = "version of April 3, 2023, from the author page; printed page numbers"
+year = 2023
+title = "Lecture Notes on Ergodic Theory"
+authors = "O. Sarig"
+locator_scheme = "theorem"
+locator = "Theorems 1.6, 1.7, 3.2, 4.4, 4.6, 4.8, 4.9; Definitions 1.20, 3.5, 3.6, 4.4; Propositions 3.3, 4.6, 4.7, 4.8; Corollary 4.1 (printed pages)"
+url = "https://www.weizmann.ac.il/math/sarigo/sites/math.sarigo/files/uploads/ergodicnotes.pdf"
+fetched_from = "https://www.weizmann.ac.il/math/sarigo/sites/math.sarigo/files/uploads/ergodicnotes.pdf"
+fetched_at = "2026-11-12T01:46:35Z"
+sha256 = "94b4fb65b7eb7730ad8b8369239eb5a5503a98b547a6bd812515b5bac6261094"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-12"
+cited_for = ["0.4", "1.1", "1.5", "2.1", "2.3", "3.3", "4.2", "4.3", "4.4", "4.5", "5.2", "6.1", "6.4", "7.2"]
+
+[[source]]
+id = "Creutz"
+year = 2016
+title = "Ergodic Theory of Group Actions"
+authors = "D. Creutz"
+locator_scheme = "theorem"
+locator = "Theorem 12.2 (p. 110), Theorem 13.7 (p. 117)"
+url = "https://www.dcreutz.com/publications/Ergodic_Theory_of_Group_Actions.pdf"
+fetched_from = "https://www.dcreutz.com/publications/Ergodic_Theory_of_Group_Actions.pdf"
+fetched_at = "2026-11-12T01:47:56Z"
+sha256 = "26210a6a40061e9246ba1fc7767023a4985630ee1d31782280f3cc71a496632b"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-12"
+cited_for = ["2.5"]
+
+[[source]]
+id = "Lindenstrauss2001"
+authors = "Elon Lindenstrauss"
+title = "Pointwise theorems for amenable groups"
+year = 2001
+venue = "Inventiones Mathematicae 146"
+doi = "10.1007/s002220100162"
+locator_scheme = "section"
+locator = "whole paper"
+url = "https://doi.org/10.1007/s002220100162"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited without a theorem number; the theorem-level locators of section 4.7 are to Lindenstrauss1999"
+cited_for = ["4.7"]
+
+[[source]]
+id = "Misiurewicz1976"
+year = 1976
+title = "A short proof of the variational principle for a Z_+^N action on a compact space"
+authors = "M. Misiurewicz"
+locator_scheme = "section"
+locator = "§2 (pp. 148-149); §3 (p. 149; Part I p. 150; Part II p. 152)"
+url = "http://www.numdam.org/item/AST_1976__40__147_0.pdf"
+fetched_from = "https://www.numdam.org/item/AST_1976__40__147_0.pdf"
+fetched_at = "2026-11-12T01:51:44Z"
+sha256 = "f7c63ad7ac979e1003ee058ffdde1cdd7a26744d4e1408dd3e12a9a2e793d78a"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-12"
+cited_for = ["5.4", "7.1"]
+
+[[source]]
+id = "Lindenstrauss1999"
+year = 1999
+title = "Pointwise theorems for amenable groups (research announcement)"
+authors = "E. Lindenstrauss"
+locator_scheme = "theorem"
+locator = "Definition 1.2, Theorem 1.4, Proposition 1.5 (p. 84), Theorem 4.2 and its proof sketch (p. 89)"
+url = "https://www.ams.org/journals/era/1999-05-12/S1079-6762-99-00065-7/S1079-6762-99-00065-7.pdf"
+fetched_from = "https://www.ams.org/journals/era/1999-05-12/S1079-6762-99-00065-7/S1079-6762-99-00065-7.pdf"
+fetched_at = "2026-11-12T01:51:46Z"
+sha256 = "5bbc7b4f76582816ca78b129bebc0ef77adbe307a502cc0212ef55a209c5b602"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-11-12"
+cited_for = ["4.7"]
+
+[[source]]
+id = "Hochman2012"
+year = 2012
+title = "Notes on ergodic theory"
+authors = "M. Hochman"
+locator_scheme = "theorem"
+locator = "Proposition 6.6.3 (p. 70)"
+url = "https://math.huji.ac.il/~mhochman/courses/ergodic-theory-2012/notes.final.pdf"
+fetched_from = "https://math.huji.ac.il/~mhochman/courses/ergodic-theory-2012/notes.final.pdf"
+fetched_at = "2026-11-12T01:57:52Z"
+sha256 = "9e0c9cc4585b66b353a0853f2ced191944db07b67c5bab245553d62baf3f19c5"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-12"
+cited_for = ["2.2"]
+
+[[source]]
+id = "Walters1982"
+authors = "Peter Walters"
+title = "An Introduction to Ergodic Theory"
+year = 1982
+venue = "Graduate Texts in Mathematics"
+doi = "10.1007/978-1-4612-5775-2"
+locator_scheme = "chapter"
+locator = "Chapters 1-9"
+url = "https://doi.org/10.1007/978-1-4612-5775-2"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["8.2", "References"]
+
+[[source]]
+id = "CornfeldFominSinai1982"
+authors = "I. P. Cornfeld, S. V. Fomin, Ya. G. Sinai"
+title = "Ergodic Theory"
+year = 1982
+venue = "Grundlehren der mathematischen Wissenschaften"
+doi = "10.1007/978-1-4615-6927-5"
+locator_scheme = "chapter"
+locator = "Chapters 6 and 11"
+url = "https://doi.org/10.1007/978-1-4615-6927-5"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["3.3", "9.1"]
+
+[[source]]
+id = "EinsiedlerWard2011"
+authors = "Manfred Einsiedler, Thomas Ward"
+title = "Ergodic Theory with a view towards Number Theory"
+year = 2011
+doi = "10.1007/978-0-85729-021-2"
+locator_scheme = "chapter"
+locator = "Chapters 2 and 4"
+url = "https://doi.org/10.1007/978-0-85729-021-2"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["References"]
+
+[[source]]
+id = "KechrisMiller2004"
+authors = "Alexander S. Kechris, Benjamin D. Miller"
+title = "Topics in Orbit Equivalence"
+year = 2004
+venue = "Lecture Notes in Mathematics"
+doi = "10.1007/b99421"
+locator_scheme = "theorem"
+locator = "Lemma 6.7"
+url = "https://doi.org/10.1007/b99421"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["0.4"]
+
+[[source]]
+id = "WardZhang1992"
+authors = "Thomas Ward, Qing Zhang"
+title = "The Abramov-Rokhlin entropy addition formula for amenable group actions"
+year = 1992
+venue = "Monatshefte für Mathematik 114"
+doi = "10.1007/BF01299386"
+locator_scheme = "section"
+locator = "whole paper"
+url = "https://doi.org/10.1007/BF01299386"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["4.9"]
+
+[[source]]
+id = "OrnsteinWeiss1987"
+authors = "Donald S. Ornstein, Benjamin Weiss"
+title = "Entropy and isomorphism theorems for actions of amenable groups"
+year = 1987
+venue = "Journal d'Analyse Mathématique 48"
+doi = "10.1007/BF02790325"
+locator_scheme = "section"
+locator = "quasi-tiling and entropy limit arguments"
+url = "https://doi.org/10.1007/BF02790325"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["4.6"]
+
+[[source]]
+id = "Chung2013"
+authors = "Nhan-Phu Chung"
+title = "Topological pressure and the variational principle for actions of sofic groups"
+year = 2013
+venue = "Ergodic Theory and Dynamical Systems 33"
+doi = "10.1017/S0143385712000429"
+arxiv = "1110.0699v3"
+locator_scheme = "section"
+locator = "§3"
+url = "https://arxiv.org/abs/1110.0699v3"
+fetched_from = "https://arxiv.org/pdf/1110.0699v3"
+fetched_at = "2026-11-12T02:15:13Z"
+sha256 = "db613402ff837e0ebcc1fb30cc0bcc1f2826ceac5701c17e1b75d094f761d046"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-12"
+version_note = "read as arXiv 1110.0699v3; the section cited is §3"
+cited_for = ["5.6"]
+
+[[source]]
+id = "BowenRuelle1975"
+authors = "Rufus Bowen, David Ruelle"
+title = "The ergodic theory of Axiom A flows"
+year = 1975
+venue = "Inventiones Mathematicae 29"
+doi = "10.1007/BF01389848"
+locator_scheme = "section"
+locator = "pressure of flows"
+url = "https://doi.org/10.1007/BF01389848"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["5.5"]
+
+[[source]]
+id = "BrinKatok1983"
+authors = "M. Brin, A. Katok"
+title = "On local entropy"
+year = 1983
+venue = "Lecture Notes in Mathematics"
+doi = "10.1007/BFb0061408"
+locator_scheme = "section"
+locator = "whole paper"
+url = "https://doi.org/10.1007/BFb0061408"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["6.3"]
+
+[[source]]
+id = "MoulinOllagnier1985"
+authors = "Jean Moulin Ollagnier"
+title = "Ergodic Theory and Statistical Mechanics"
+year = 1985
+venue = "Lecture Notes in Mathematics"
+doi = "10.1007/BFb0101575"
+locator_scheme = "chapter"
+locator = "Chapter 5"
+url = "https://doi.org/10.1007/BFb0101575"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["7.4"]
+
+[[source]]
+id = "MasurTabachnikov2002"
+authors = "Howard Masur, Serge Tabachnikov"
+title = "Rational billiards and flat structures"
+year = 2002
+venue = "Handbook of Dynamical Systems"
+doi = "10.1016/S1874-575X(02)80015-7"
+locator_scheme = "section"
+locator = "§1"
+url = "https://doi.org/10.1016/S1874-575X(02)80015-7"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["9.1"]
