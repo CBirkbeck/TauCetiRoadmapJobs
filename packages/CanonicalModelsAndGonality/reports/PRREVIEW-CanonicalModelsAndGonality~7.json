@@ -1,0 +1,22 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-CanonicalModelsAndGonality~7",
+  "head": "86fe709a6c0c7f5cee4f0cc4229fd2dc04ebcbe1",
+  "pr": 1726,
+  "folder": "CanonicalModelsAndGonality",
+  "date": "2026-11-12",
+  "findings": 6,
+  "blocking": 2,
+  "notes": "Full review. Previous R01, R02, R04 and R05 are repaired; R03 is partly repaired. Gate: the worker's gate passes; my rerun shows only depcheck NOT IN ORDER from the default order; candidate-order depcheck has 205 roadmaps, 1896 edges, 0 problems. Elaboration: 50 sorry warnings only; the one-tactic probe closes 0 of 50. Seeded sample: 15 targets checked against poonen-2007, belov, VZB, Saint-Donat, Stacks curves, abramovich-1996, yang-yau-1980, LMFDB knowls and web_curve.py; Stichtenoth, Hartshorne, ACGH and Serre are not verifiable (paywalled). P2: the §9.3 good-reduction headline is statable at the pins (a tested statement on Tau Ceti specialFiber/genericFiber elaborates) but is absent; GroupActionsOnRiemannSurfaces (#1728) and this roadmap each name the other as consumer, and both prove trigonal uniqueness for g >= 5. P3: Layer 6 still claims the hgcwa g0 column and the orbit-form Riemann-Hurwitz; 2.5 has no locator; Different/ArtinSchreier.lean does not exist at the pin; the description calls Castelnuovo-Severi and quotient genera targets. Cross-roadmap citations resolved on main and at heads #2226, #1017, #1313, #1504, #1717, #2140 and #1808.",
+  "deferred": [
+   {
+    "id": "D01",
+    "severity": "P2",
+    "title": "GroupActionsOnRiemannSurfaces and this roadmap each name the other as consumer, and both prove trigonal uniqueness",
+    "where": "GroupActionsOnRiemannSurfaces README §6.4 and its Downstream consumers",
+    "raised": "PRREVIEW-CanonicalModelsAndGonality~7"
+   }
+  ]
+ }
+}

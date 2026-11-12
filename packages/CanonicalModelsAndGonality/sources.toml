@@ -34,3 +34,19 @@ status = "certified"
 accessed = "2026-11-12"
 version_note = "arXiv v1 read (preliminary version); the README cites the IMRN 1996 publication, whose numbering of Theorem 0.1 was not checked"
 cited_for = ["8.5", "8.6"]
+
+[[source]]
+id = "stacks-project"
+authors = "The Stacks project authors"
+title = "The Stacks project, chapter Algebraic Curves"
+year = 2026
+locator_scheme = "tag"
+locator = "0E3C, 0E3D, 0H2V"
+url = "https://stacks.math.columbia.edu/tag/0E3C"
+fetched_from = "https://stacks.math.columbia.edu/download/curves.pdf#nameddest=0E3C"
+fetched_at = "2026-11-12T20:07:56Z"
+sha256 = "c4e3d4c0fc533a3d46ce07c1bd6ec49f03e02c131da30ed275ada4bc9f82c030"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-12"
+cited_for = ["2.5"]
