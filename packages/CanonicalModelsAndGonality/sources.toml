@@ -1,0 +1,36 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "CanonicalModelsAndGonality"
+
+[[source]]
+id = "yang-yau-1980"
+authors = "Paul C. Yang and Shing-Tung Yau"
+title = "Eigenvalues of the Laplacian of compact Riemann surfaces and minimal submanifolds"
+year = 1980
+locator_scheme = "page"
+locator = "§2, Proposition, p. 58; pp. 59–60"
+url = "http://www.numdam.org/item/ASNSP_1980_4_7_1_55_0/"
+fetched_from = "https://www.numdam.org/item/ASNSP_1980_4_7_1_55_0.pdf"
+fetched_at = "2026-11-12T17:37:43Z"
+sha256 = "89993e7623f2c3e8dc25dec6784a7acec8b0c8313496319f61b2bd3883a31e02"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-12"
+cited_for = ["8.4"]
+
+[[source]]
+id = "abramovich-1996"
+authors = "Dan Abramovich"
+title = "A linear lower bound on the gonality of modular curves"
+year = 1996
+arxiv = "alg-geom/9609012v1"
+locator_scheme = "theorem"
+locator = "Theorem 0.1"
+url = "https://arxiv.org/abs/alg-geom/9609012v1"
+fetched_from = "https://arxiv.org/pdf/alg-geom/9609012v1"
+fetched_at = "2026-11-12T17:38:14Z"
+sha256 = "5ff2134fbfb6bd702fa7051637027405c8e0d77a595830a63e8ad36f50791779"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-12"
+version_note = "arXiv v1 read (preliminary version); the README cites the IMRN 1996 publication, whose numbering of Theorem 0.1 was not checked"
+cited_for = ["8.5", "8.6"]
