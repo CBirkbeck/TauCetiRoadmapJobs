@@ -1,0 +1,22 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-BanachSpaceTheory~14",
+  "head": "7c577f0c21742930f8a2dfcfb02244a3919295f3",
+  "pr": 1854,
+  "folder": "BanachSpaceTheory",
+  "date": "2026-11-12",
+  "findings": 3,
+  "blocking": 0,
+  "notes": "incremental re-review of 135 changed lines since 7d06cba. Three P3 findings. R01: §4.4 credits the pinned RMK theorem (Signed.lean:262) with finiteness and a total-mass identity it does not state. R02: §6.2 and Scope restate the pinned C(K) Grothendieck inequality without its hypothesis 0 <= C, which is false for empty K. R03: the remaining part of the previous R06, the Garling-Gordon locator. Previous R01, R02/D01, R03, R04, R05, R07 and R08 are repaired; R06 is partly repaired. Checked: the complex John, Kadec-Snobar and Garling-Gordon routes by computation; the complex step of section 4.4; 17 locators against the cached texts (van Neerven 1.34 and 9.2, Daws 2.3.4 and its remark, MST Props 3, 4 and 7, James pp. 138-139, DOSZ Thms 6-7, Cor 9, Lemmas 10-11, Pisier p. 4); 8 pinned declarations. Gate: the worker's run passes every check; a re-run without the folder record flags only the pull request's own folders. depcheck: 0 problems. lake env lean exits 0 with 24 sorry warnings only. D01 resolved by commit 7c577f0.",
+  "carried": {
+   "from": "7c577f0c21742930f8a2dfcfb02244a3919295f3",
+   "head": "85fe2844041f277e259d49169d4b382acc147969",
+   "findings": 3,
+   "lines": 104,
+   "folders": [
+    "BanachSpaceTheory"
+   ]
+  }
+ }
+}
