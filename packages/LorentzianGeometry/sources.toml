@@ -288,3 +288,58 @@ licence_class = "none"
 status = "uncertified"
 version_note = "paywalled book; cited by its locator without the text, as the issue form directs; the sources service found no legal copy (recorded by hand)"
 cited_for = ["2.5", "5.3", "5.4", "5.5"]
+
+[[source]]
+id = "gallowaylingsbierski2018"
+authors = "G. J. Galloway, E. Ling, J. Sbierski"
+title = "Timelike completeness as an obstruction to C^0-extensions"
+year = 2018
+venue = "Comm. Math. Phys. 359 (2018) 937–949"
+arxiv = "1704.00353"
+locator_scheme = "theorem"
+locator = "Theorem 1 (arXiv v4, p. 1)"
+url = "https://arxiv.org/abs/1704.00353"
+fetched_from = "https://arxiv.org/pdf/1704.00353"
+fetched_at = "2026-11-12T02:10:41Z"
+sha256 = "069c6f4bcb1c1569ec8546f8579250c6128f1f3fa893516bb3a147a1570cf92a"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-12"
+version_note = "arXiv v4 (2 Nov 2017); theorem and page numbers of the arXiv version"
+cited_for = ["12.4"]
+
+[[source]]
+id = "minguzzi2015convex"
+authors = "E. Minguzzi"
+title = "Convex neighborhoods for Lipschitz connections and sprays"
+year = 2015
+arxiv = "1308.6675"
+locator_scheme = "theorem"
+locator = "Theorems 3–7 and 12, Lemma 2, Corollary 1 (arXiv v2, pp. 11–24)"
+url = "https://arxiv.org/abs/1308.6675"
+fetched_from = "https://arxiv.org/pdf/1308.6675"
+fetched_at = "2026-11-12T02:11:53Z"
+sha256 = "f5f12120f25106013c5019ca25e95a7c708d47b0c771e5371e1eb6332527eb82"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-12"
+version_note = "arXiv v2 (28 Nov 2014); theorem and page numbers of the arXiv version"
+cited_for = ["3.4", "10.1", "10.2", "10.3"]
+
+[[source]]
+id = "kunzingersteinbauerstojkovic2014"
+authors = "M. Kunzinger, R. Steinbauer, M. Stojković"
+title = "The exponential map of a C^{1,1}-metric"
+year = 2014
+arxiv = "1306.4776"
+locator_scheme = "theorem"
+locator = "Theorems 2.1 and 4.1 (arXiv v3, pp. 2 and 10)"
+url = "https://arxiv.org/abs/1306.4776"
+fetched_from = "https://arxiv.org/pdf/1306.4776"
+fetched_at = "2026-11-12T02:11:57Z"
+sha256 = "6244a74f81cba31e2d655b17842c16aa4db815b2080ec0b8b97fb4f0e62b54b1"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-12"
+version_note = "arXiv v3 (4 Apr 2014); theorem and page numbers of the arXiv version"
+cited_for = ["3.4"]
