@@ -261,3 +261,20 @@ status = "certified"
 accessed = "2026-11-09"
 version_note = "arXiv v2"
 cited_for = ["V8.CompactErgodicActions"]
+
+[[source]]
+id = "rieffel-van-daele-1977"
+authors = "Marc A. Rieffel, Alfons van Daele"
+title = "A bounded operator approach to Tomita-Takesaki theory"
+year = 1977
+venue = "Pacific Journal of Mathematics 69"
+locator_scheme = "theorem"
+locator = "Theorem 4.2"
+url = "https://msp.org/pjm/1977/69-1/pjm-v69-n1-p17-s.pdf"
+fetched_from = "https://msp.org/pjm/1977/69-1/pjm-v69-n1-p17-s.pdf"
+fetched_at = "2026-11-12T04:50:22Z"
+sha256 = "21cec65bb6967994ea899839514396601b716df0f980b3929a5fcd7a988999bb"
+licence_class = "institutional"
+status = "certified"
+accessed = "2026-11-12"
+cited_for = ["V10.StandardRealSubspaces", "V10.ModularTheory", "V10.KMS", "V11"]
