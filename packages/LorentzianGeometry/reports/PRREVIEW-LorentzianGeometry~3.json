@@ -1,0 +1,13 @@
+{
+  "review": {
+    "status": "needs_changes",
+    "reviewer": "independent-review-PRREVIEW-LorentzianGeometry~3",
+    "head": "14e6374790ec71e569f8328fcd27856191997ccc",
+    "pr": 2232,
+    "folder": "LorentzianGeometry",
+    "date": "2026-11-12",
+    "findings": 5,
+    "blocking": 0,
+    "notes": "Full review at 14e6374. Sample: 15 targets (1.2, 2.5, 4.1, 7.1, 7.3, 9.1, 9.4, 11.1, 11.2, 12.1, 12.4, 12.5, 12.6, 13.2, 13.3); 78 locators checked in 11 cached texts, all correct; adversarial table with computed values for every sampled target, all 7 Suggested.lean theorems and every target a finding touches. Gate: worker run OK; rerun differs only by depcheck NOT IN ORDER under the default order (not a finding); depcheck against the candidate order 0 problems. Elaboration 0 errors, 7 sorry warnings; #check @ of 30 declarations matches the README; one-tactic probe closes none. Previous review: R01-R11, R13, R15-R21 repaired; R12, R14 partly. Findings, all P3: R01 the 12.6 determination route uses an unowned existence step and omits 12.4 from Needs; R02 Tau Ceti and RiemannianGeometry R1 cited for each other's results, nonexistent Curvature/WarpedProd*.lean; R03 non-computing Checks in nine sections; R04 locators (partly previous R12); R05 no SmoothBundlesConnections supplier contract. Overlap check done; ownership against all 434 open heads checked by roadmaps grep."
+  }
+}
