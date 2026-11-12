@@ -1,0 +1,4 @@
+{"review": {"status": "accepted", "reviewer": "independent-review-PRREVIEW-PositiveMass~10",
+            "head": "90dd731c250e1137a011380b443ad4e2346d59fe", "pr": 2247, "folder": "PositiveMass", "date": "2026-11-12",
+            "findings": 0, "blocking": 0,
+            "notes": "incremental re-review of 4 changed lines since 6d2d7e4. R01 repaired: the Layer 8 title is now 'the positive mass theorems and their invariance' and 8.4's Needs line is '8.1-8.3; 0.2'. Checked that 8.4 needs only 0.2 (isometry invariance and lifts of ends, :291-293) on Schwarzschild and its free quotient. Read LeeParker1987 Theorem 9.6 (line 1691) and the remark after Theorem 10.3 (lines 1802-1809). R5c is at the RiemannianGeometry #2222 head 90a5c6a. No roadmap cites 8.4 or the Layer 8 heading. The pull request description matches the head. Gate re-run: OK. depcheck: 0 problems. lake env lean exits 0 with sorry warnings only; #check @ of both theorems matches README 8.1."}}
