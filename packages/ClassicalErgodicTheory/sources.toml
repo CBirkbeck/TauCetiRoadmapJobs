@@ -300,3 +300,21 @@ licence_class = "publisher-open"
 status = "certified"
 accessed = "2026-11-12"
 cited_for = ["5.3"]
+
+[[source]]
+id = "Auer2024"
+authors = "Max Auer"
+title = "Weak mixing and sparse equidistribution"
+year = 2024
+arxiv = "2408.15238v3"
+locator_scheme = "theorem"
+locator = "Theorem 3 (p. 5)"
+url = "https://arxiv.org/abs/2408.15238v3"
+fetched_from = "https://arxiv.org/pdf/2408.15238v3"
+fetched_at = "2026-11-12T09:12:27Z"
+sha256 = "0e7d12945d29221d64964c8a3809f48d2d0bc33943c769ee5551b4df5f2b293b"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-12"
+version_note = "arXiv v3"
+cited_for = ["3.2"]
