@@ -400,3 +400,39 @@ status = "certified"
 accessed = "2026-11-12"
 version_note = "arXiv v2"
 cited_for = ["12.7"]
+
+[[source]]
+id = "barzenleymann2026"
+authors = "Johanna Barzen, Frank Leymann"
+title = "Mathematics of Spacetime: A Guided Tour Through The Underlying Differential Topology and Differential Geometry"
+year = 2026
+arxiv = "2606.02616"
+locator_scheme = "theorem"
+locator = "Theorem 8, p. 50; Lemmas 34-36, pp. 61-62"
+url = "https://arxiv.org/abs/2606.02616"
+fetched_from = "https://arxiv.org/pdf/2606.02616"
+fetched_at = "2026-11-12T05:49:00Z"
+sha256 = "29cd95b1001e5981a3905dfa84f5a405f8d44e0401d894cccd9c71fc96561793"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-12"
+version_note = "arXiv, latest version"
+cited_for = ["2.5", "2.6"]
+
+[[source]]
+id = "gourgoulhon2007"
+authors = "Éric Gourgoulhon"
+title = "3+1 Formalism and Bases of Numerical Relativity"
+year = 2007
+arxiv = "gr-qc/0703035v1"
+locator_scheme = "equation"
+locator = "(2.92), (2.95), (2.96), p. 35; (2.101), (2.103), p. 36; (4.19), (4.21), p. 54"
+url = "https://arxiv.org/abs/gr-qc/0703035"
+fetched_from = "https://arxiv.org/pdf/gr-qc/0703035"
+fetched_at = "2026-11-12T05:50:12Z"
+sha256 = "0f4f991888ebc1f1e42c1d6952e1dd33eddc0b39ba75998a8f9068acc22d619d"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-12"
+version_note = "arXiv v1"
+cited_for = ["4.1", "9.1"]
