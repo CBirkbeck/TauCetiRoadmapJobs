@@ -1,0 +1,31 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-CanonicalModelsAndGonality~8",
+  "head": "b1848359cee977a66d15e2dc3f2804141b993bf0",
+  "pr": 1726,
+  "folder": "CanonicalModelsAndGonality",
+  "date": "2026-11-12",
+  "findings": 1,
+  "blocking": 0,
+  "notes": "incremental re-review of 85 changed lines since 86fe709. Previous R01, R03-R06 repaired; R02 deferred as D01, which stands at #1728's head. One new P3: the new 9.3 headline gonality_specialFiber_le cites Poonen 2007, which does not contain the specialization inequality; Derickx-van Hoeij arXiv v3 section 1 (1) does. Checked: Stacks Tags 0E3C, 0E3D, 0H2V against Situation 6.2; Tau Ceti Fibers, BaseAlgebra, Hurwitz, Galois and Artin-Schreier declarations at 2fd255d; the explicit elaborated type of the new theorem (special-fibre algebra via OverClass.fromOver); one-tactic probe fails; ModularCurves 0A labels at #2140; seeded sample 6.7; description against head (9 layers, 61 milestones). Gate: worker's gate OK; rerun only NOT IN ORDER from the default order, candidate-order depcheck 0 problems; elaboration exit 0 with 51 sorry warnings.",
+  "deferred": [
+   {
+    "id": "D01",
+    "severity": "P2",
+    "title": "GroupActionsOnRiemannSurfaces and this roadmap each name the other as consumer, and both prove trigonal uniqueness",
+    "where": "GroupActionsOnRiemannSurfaces README §6.4 and its Downstream consumers",
+    "raised": "PRREVIEW-CanonicalModelsAndGonality~7"
+   }
+  ],
+  "carried": {
+   "from": "b1848359cee977a66d15e2dc3f2804141b993bf0",
+   "head": "ed909376f779b9799948e0ba645175bd259c676b",
+   "findings": 1,
+   "lines": 11,
+   "folders": [
+    "CanonicalModelsAndGonality"
+   ]
+  }
+ }
+}
