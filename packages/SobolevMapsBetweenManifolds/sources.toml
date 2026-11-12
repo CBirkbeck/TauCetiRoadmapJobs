@@ -127,3 +127,62 @@ licence_class = "institutional"
 status = "certified"
 accessed = "2026-11-05"
 cited_for = ["6.1 the Jacobian of a linear map on R^n (line 124)", "7.1 Euclidean compatibility, J_f = det Du (line 124, lines 332–340)"]
+
+[[source]]
+id = "ArendtKreuter2018"
+authors = "Wolfgang Arendt, Marcel Kreuter"
+title = "Mapping theorems for Sobolev-spaces of vector-valued functions"
+year = 2016
+venue = "Studia Math. 240 (2018), no. 3, 275 - 299"
+doi = "10.4064/sm8757-4-2017"
+arxiv = "1611.06161v1"
+locator_scheme = "theorem"
+locator = "Theorem 4.2, p. 9; Theorem 6.2, p. 17 (numbering of arXiv 1611.06161v1)"
+url = "https://arxiv.org/abs/1611.06161v1"
+fetched_from = "https://arxiv.org/pdf/1611.06161v1"
+fetched_at = "2026-11-12T01:55:28Z"
+sha256 = "e41eb694b51b09951b42b868e51f55a2cd6ea5d50eb8f71fc8278d8a5ee7857b"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-12"
+version_note = "arXiv v1"
+cited_for = ["2.1(b) chain rule for Lipschitz outer maps on bounded domains (Thm 4.2)", "2.4 Banach-valued Morrey estimate (Thm 6.2)"]
+
+[[source]]
+id = "ConventVanSchaftingen2016"
+authors = "Alexandra Convent, Jean Van Schaftingen"
+title = "Intrinsic weak derivatives and Sobolev spaces between manifolds"
+year = 2013
+venue = "Ann. Sc. Norm. Super. Pisa Cl. Sci. (5) 16 (2016), no. 1, 97-128"
+doi = "10.2422/2036-2145.201312_005"
+arxiv = "1312.5858v1"
+locator_scheme = "theorem"
+locator = "Def. 1.1, p. 3; Def. 1.2 and Prop. 1.1, p. 4; Prop. 1.2, p. 5; Prop. 1.5, p. 6; Props. 1.7-1.8, p. 7; Def. 2.1, p. 8 (numbering of arXiv 1312.5858v1)"
+url = "https://arxiv.org/abs/1312.5858v1"
+fetched_from = "https://arxiv.org/pdf/1312.5858v1"
+fetched_at = "2026-11-12T01:55:34Z"
+sha256 = "381c6d8dd934b0bb43d67d228ebdd342ade7f1aed6d34b29db1d0197bb80cb03"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-12"
+version_note = "arXiv v1"
+cited_for = ["4.4 continuous colocal derivative and C1 maps (Prop. 1.1)", "4.7 colocal weak differentiability (Def. 1.1)", "4.8 colocal weak derivative, existence and uniqueness, chain rule, products, equality of derivatives (Def. 1.2, Props. 1.2, 1.5, 1.7, 1.8)", "5.4 homogeneous Sobolev class (Def. 2.1)"]
+
+[[source]]
+id = "Wockel2009"
+authors = "Christoph Wockel"
+title = "A Generalisation of Steenrod's Approximation Theorem"
+year = 2006
+venue = "Arch. Math. (Brno) 45 (2) (2009) 95"
+arxiv = "math/0610252v1"
+locator_scheme = "theorem"
+locator = "Theorem 0.11, p. 4 (numbering of arXiv math/0610252v1)"
+url = "https://arxiv.org/abs/math/0610252v1"
+fetched_from = "https://arxiv.org/pdf/math/0610252v1"
+fetched_at = "2026-11-12T01:55:39Z"
+sha256 = "09456b2d7b5634bdd47a48431934e4c04b2e3279570ef0b238c737a4b7d74506"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-12"
+version_note = "arXiv v1"
+cited_for = ["9.3 relative smoothing with graph control and relative homotopies (Thm 0.11)"]
