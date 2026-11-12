@@ -265,3 +265,38 @@ licence_class = "none"
 status = "uncertified"
 version_note = "paywalled; cited by its locator without the text"
 cited_for = ["9.1"]
+
+[[source]]
+id = "ParryPollicott1990"
+authors = "W. Parry, M. Pollicott"
+title = "Zeta functions and the periodic orbit structure of hyperbolic dynamics"
+year = 1990
+venue = "Astérisque 187-188"
+locator_scheme = "theorem"
+locator = "Proposition 1.2 (p. 14); Proposition 2.1 (p. 19); Theorem 2.2 (p. 21); Proposition 3.2 and Corollary 3.2.1 (p. 37); Theorem 3.5 (pp. 42-43); Proposition 4.10 (p. 60); p. 90 and Proposition 6.2 (pp. 93-94)"
+url = "http://www.numdam.org/item/AST_1990__187-188__1_0/"
+fetched_from = "https://www.numdam.org/item/AST_1990__187-188__1_0.pdf"
+fetched_at = "2026-11-12T08:14:36Z"
+sha256 = "092bb063c06cf30102ab1b4bc4ea7742b82ee8b1ab61bc08f1e08a57a6ec376a"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-12"
+cited_for = ["3.3", "8.6"]
+
+[[source]]
+id = "Bowen1972"
+authors = "R. Bowen"
+title = "Entropy-expansive maps"
+year = 1972
+venue = "Transactions of the American Mathematical Society 164"
+doi = "10.1090/S0002-9947-1972-0285689-X"
+locator_scheme = "theorem"
+locator = "Theorem 2.4 and Corollary 2.3 (p. 327)"
+url = "https://www.ams.org/journals/tran/1972-164-00/S0002-9947-1972-0285689-X/S0002-9947-1972-0285689-X.pdf"
+fetched_from = "https://www.ams.org/journals/tran/1972-164-00/S0002-9947-1972-0285689-X/S0002-9947-1972-0285689-X.pdf"
+fetched_at = "2026-11-12T08:20:36Z"
+sha256 = "38e1fc1273a1cd6ea4a2ad32f29b7a9412dfa2ff51522cbeaa7bd7035ede5298"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-11-12"
+cited_for = ["5.3"]
