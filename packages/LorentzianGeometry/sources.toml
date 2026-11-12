@@ -343,3 +343,60 @@ status = "certified"
 accessed = "2026-11-12"
 version_note = "arXiv v3 (4 Apr 2014); theorem and page numbers of the arXiv version"
 cited_for = ["3.4"]
+
+[[source]]
+id = "langelytchaksamann2021"
+authors = "A. Lange, A. Lytchak, C. Sämann"
+title = "Lorentz meets Lipschitz"
+year = 2021
+arxiv = "2009.08834v2"
+locator_scheme = "theorem"
+locator = "Theorem 1.1 and Proposition 1.2 (p. 3), §3.1 (p. 7) (arXiv v2)"
+url = "https://arxiv.org/abs/2009.08834v2"
+fetched_from = "https://arxiv.org/pdf/2009.08834v2"
+fetched_at = "2026-11-12T04:03:28Z"
+sha256 = "5a2c983eb004e404a6288e1d1a44ba50c6dd63f31e3ff71833d04ba014658c2d"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-12"
+version_note = "arXiv v2"
+cited_for = ["12.7"]
+
+[[source]]
+id = "grantkunzingersamannsteinbauer2020"
+authors = "James D. E. Grant, Michael Kunzinger, Clemens Sämann, Roland Steinbauer"
+title = "The future is not always open"
+year = 2019
+venue = "Letters in Math. Phys. 110 (2020), no. 1, 83-103"
+doi = "10.1007/s11005-019-01213-8"
+arxiv = "1901.07996v2"
+locator_scheme = "theorem"
+locator = "Example 3.1 (arXiv v2, pp. 10–12)"
+url = "https://arxiv.org/abs/1901.07996v2"
+fetched_from = "https://arxiv.org/pdf/1901.07996v2"
+fetched_at = "2026-11-12T04:04:29Z"
+sha256 = "81f5ec03c649730d3631f081e22483cbb39e6188c4569c8fd71a8665d843b29f"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-12"
+version_note = "arXiv v2"
+cited_for = ["8.2"]
+
+[[source]]
+id = "grafling2018"
+authors = "Melanie Graf, Eric Ling"
+title = "Maximizers in Lipschitz spacetimes are either timelike or null"
+year = 2017
+doi = "10.1088/1361-6382/aab259"
+arxiv = "1712.06504v2"
+locator_scheme = "theorem"
+locator = "Theorem 1.1 (arXiv v2, p. 2)"
+url = "https://arxiv.org/abs/1712.06504v2"
+fetched_from = "https://arxiv.org/pdf/1712.06504v2"
+fetched_at = "2026-11-12T04:04:09Z"
+sha256 = "ffe1e547b855dffc0b570bdb3b3fefdb4f81270e08f332ef5992f35037bf46f2"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-12"
+version_note = "arXiv v2"
+cited_for = ["12.7"]
