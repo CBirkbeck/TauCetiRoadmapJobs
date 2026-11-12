@@ -1,0 +1,4 @@
+{"review": {"status": "needs_changes", "reviewer": "independent-review-PRREVIEW-Yamabe~2",
+            "head": "c91966f30fc73604b82c98954b96c4549943adc1", "pr": 2248, "folder": "Yamabe", "date": "2026-11-12",
+            "findings": 8, "blocking": 2,
+            "notes": "Full re-review. Previous R01-R09 and R11 repaired, R10 partly. Seeded sample of 15 targets checked against Lee-Parker (AMS open archive, 38 locators) and Ammann-Humbert arXiv v3; 1.1, 4.4, 6.2, 10.2 and the n=3 Weyl-Schouten case have no locator (R06). Gate FAIL: residue=1 and statement-hygiene=3 (R03, R04); depcheck 0 problems. Suggested.lean elaborates with 16 sorry warnings only; #check of all 16 compared with the README; the one-tactic probe closes none; the R03 replacement elaborates. Blocking: Y1.1 duplicates PseudodifferentialOperators 5.2's W^(k,p) carrier (R01), and Y2.2 duplicates Isoperimetry I2/I5 rearrangement and Polya-Szego (R02). Also a Layer 6/8 build-order cycle (R05)."}}
