@@ -41,7 +41,9 @@ fields. This roadmap starts exactly there.
   imaginary quadratic `K` only, and their proofs are applied here, not repeated.
 - Layer 3: the detection of the exceptional class of `H¹(SL₂(𝔽₅), ad⁰)` by an order-five
   unipotent subgroup, for the trace-zero adjoint of ArithmeticGaloisRepresentations §§7.2 and 7.9
-  restricted to `SL₂`, with the triviality of the centre and the vanishing of invariants on it;
+  restricted to `SL₂`, with the triviality of the centre and the vanishing of invariants on it for
+  every field in which `2` is invertible (ArithmeticGaloisRepresentations §7.7 states that vanishing,
+  with that of `H¹`, for finite fields of odd characteristic other than `𝔽₅`);
   protected local residual data, their unipotent-inertia deformation condition, its tangent line and
   its dual.
 - Layer 4: the vanishing on protected places of the exceptional global classes, Taylor–Wiles primes
@@ -259,7 +261,9 @@ through Taylor–Wiles selection (CN23 line 4404); Layer 4 replaces that step.
   profinite group with its conjugation action; the invariant trace pairing, perfect between `ad⁰`
   and `ad/A·1` and hence on `ad⁰` when `2 ∈ A^×` through the splitting `ad = A·1 ⊕ ad⁰`; base
   change), §7.7 (restriction to a subgroup containing a Sylow subgroup is
-  injective on `H¹`; `H¹(SL₂(𝔽₅), ad⁰)` is one-dimensional; change of coefficient field), §7.9
+  injective on `H¹`; `H⁰(SL₂(F), ad⁰) = H¹(SL₂(F), ad⁰) = 0` for `F` finite of odd characteristic
+  with `#F ≠ 5`; `H¹(SL₂(𝔽₅), ad⁰)` is one-dimensional; change of coefficient field, in particular
+  `(M ⊗ k')^G = M^G ⊗ k'` for fields `k ⊆ k'` and `M` finite-dimensional), §7.9
   (`ResidualImage.adZeroRep`: the same adjoint for a homomorphism into `GL_n(k)`, on the trace kernel
   `LinearMap.ker (LinearMap.trace k (n → k))`).
 - **FaltingsFinitenessAndIsogenyTheorems** R28.6.2–R28.6.3 (semisimplicity and the Tate Hom
@@ -545,7 +549,11 @@ for finite `k`, where `SL(2, k)` is a finite and hence profinite group, it is it
 *ContinuousRep.adZero*, and it is the coefficient module of the groups `H¹(SL₂(F), ad⁰)` of its §7.7.
 Prove that the central element `−1` acts trivially, so the representation factors through
 `PSL₂(k)`, and that if `2 ∈ k^×` the invariants vanish: a trace-zero matrix commuting with
-`U = [[1,1],[0,1]]` and with its transpose `Uᵀ` is zero, so `H⁰(SL(2, k), ad⁰) = 0`. The route: for
+`U = [[1,1],[0,1]]` and with its transpose `Uᵀ` is zero, so `H⁰(SL(2, k), ad⁰) = 0`. For finite `k`
+of odd characteristic with `#k ≠ 5` this vanishing is also part of ArithmeticGaloisRepresentations
+§7.7, which states it together with `H¹(SL₂(k), ad⁰) = 0` and therefore excludes `𝔽₅`; the
+statement here differs in covering every field with `2 ∈ k^×`, among them `𝔽₅`, the case Layer 4
+uses, and every infinite field of characteristic other than two. The route: for
 `X = [[a, b],[c, −a]]`, `UX − XU = [[c, −2a],[0, −c]]` and `UᵀX − XUᵀ = [[−b, 0],[2a, b]]`. The
 trace form `⟨X, Y⟩ = tr(XY)`, its invariance and its perfectness on `ad⁰` when `2 ∈ k^×` (the trace
 pairing on `M₂(k)` is perfect, `ad⁰` is the orthogonal of `k·1`, and the two are complementary,
@@ -720,13 +728,15 @@ continuous with image conjugate in `GL₂(k̄)` to `SL₂(𝔽₅)`, `M = ad⁰�
 `H¹(G_{F,S}, M(1))` whose classes satisfy the dual condition `L_v^⊥` of §3.5 at `v`, restriction to
 `G_{LC_N}` is injective. The route: `L ∩ C_N = F` because `SL₂(𝔽₅)` is perfect and `C_N/F` abelian;
 inflation–restriction identifies the kernel of restriction to `G_{LC_N}` with
-`H¹(Gal(LC_N/F), M) ≅ H¹(SL₂(𝔽₅), ad⁰ ⊗ k)`, the `Gal(C_N/F)`-part contributing `Hom(−, M^(SL₂)) = 0`;
-`C_N/F` is unramified at `v`, so `I_v` maps onto an order-five subgroup of `SL₂(𝔽₅) × {1}`; by §3.2 a
-nonzero class restricts nontrivially to it, and inflation to `I_v` is injective, so `κ|G_{F_v}` would
-be ramified. (CaptainSude26, Lemma 3.3, lines 227–241.)
+`H¹(Gal(LC_N/F), M) ≅ H¹(SL₂(𝔽₅), ad⁰ ⊗ k)`, the `Gal(C_N/F)`-part contributing `Hom(−, M^(SL₂)) = 0`
+(`M^(SL₂) = (ad⁰)^(SL₂(𝔽₅)) ⊗ k = 0` by §3.1 at `𝔽₅` and the coefficient change of
+ArithmeticGaloisRepresentations §7.7); `C_N/F` is unramified at `v`, so `I_v` maps onto an
+order-five subgroup of `SL₂(𝔽₅) × {1}`; by §3.2 a nonzero class restricts nontrivially to it, and
+inflation to `I_v` is injective, so `κ|G_{F_v}` would be ramified. (CaptainSude26, Lemma 3.3,
+lines 227–241.)
 
-*Needs:* §§3.2, 3.3, 3.5; ArithmeticGaloisDuality R02.2; ArithmeticGaloisRepresentations §4.3
-(perfectness via Mathlib `Matrix.SL2.commutator_eq_top`).
+*Needs:* §§3.1, 3.2, 3.3, 3.5; ArithmeticGaloisDuality R02.2; ArithmeticGaloisRepresentations §4.3
+(perfectness via Mathlib `Matrix.SL2.commutator_eq_top`) and §7.7 (coefficient change).
 
 **Checks.**
 
@@ -734,8 +744,8 @@ be ramified. (CaptainSude26, Lemma 3.3, lines 227–241.)
   `H¹(SL₂(𝔽₅), ad⁰)` vanishes on `G_L` and is unramified wherever `ρ̄` is.
 - At a place where `ρ̄(I_v)` has order two, every class of `H¹(SL₂(𝔽₅), ad⁰)` restricts to zero on
   `ρ̄(I_v)`, so such a place protects nothing.
-- For `ρ̄` with image `SL₂(𝔽₇)` and `μ₇ ⊂ F`, `H¹(SL₂(𝔽₇), ad⁰) = 0` and the conclusion holds with no
-  protected place.
+- For `ρ̄` with image `SL₂(𝔽₇)` and `μ₇ ⊂ F`, `H¹(SL₂(𝔽₇), ad⁰) = 0` (ArithmeticGaloisRepresentations
+  §7.7) and the conclusion holds with no protected place.
 
 ### 4.2 Taylor–Wiles primes with a protected place
 
@@ -776,14 +786,15 @@ a fixed-determinant (`ε₅⁻¹`) global deformation problem with arbitrary loc
 the augmented problem `𝒮_{Q_N}` unrestricted at `Q_N`, prove that the `T`-framed ring `R^{□T}_{𝒮_{Q_N}}`
 is a quotient of `R^loc_T[[x₁, …, x_g]]` with `R^loc_T = ⊗̂_{v∈T} R_v` and `g = r − 3d − 1 + t`,
 independent of `N`. The protected places have no factor in `R^loc_T`. In the formula of
-GlobalGaloisDeformations §3.6 the global invariants vanish, each complex place contributes `−3`, each
+GlobalGaloisDeformations §3.6 the global invariants vanish (as in §4.1: §3.1 at `𝔽₅` and the
+coefficient change of ArithmeticGaloisRepresentations §7.7), each complex place contributes `−3`, each
 Taylor–Wiles place `dim L_w − h⁰ = 1` (LocalGaloisDeformationRings §2.16), each protected place
 `dim L_v − h⁰ = 0` (§3.5(a)), and the dual group vanishes (§4.2); the surjection is
 GlobalGaloisDeformations §3.7, whose tangent-generator part needs no liftability at `P`.
 (CaptainSude26, proof of Theorem 4.2, lines 416–444.)
 
-*Needs:* §§3.4, 3.5, 4.2; GlobalGaloisDeformations §§3.4, 3.6, 3.7, 5.1; LocalGaloisDeformationRings
-§2.16.
+*Needs:* §§3.1, 3.4, 3.5, 4.2; GlobalGaloisDeformations §§3.4, 3.6, 3.7, 5.1;
+LocalGaloisDeformationRings §2.16; ArithmeticGaloisRepresentations §7.7 (coefficient change).
 
 **Checks.**
 
@@ -806,8 +817,8 @@ so it is excluded from the dual Selmer group before any Taylor–Wiles prime is 
 
 ### Dependencies
 
-Layer 3; ArithmeticGaloisDuality R02.2; ArithmeticGaloisRepresentations §4.3; GlobalGaloisDeformations
-§§3.4, 3.6, 3.7, 5.1, 5.6; LocalGaloisDeformationRings §2.16; Chebotarev Layer 10.
+Layer 3; ArithmeticGaloisDuality R02.2; ArithmeticGaloisRepresentations §§4.3, 7.7;
+GlobalGaloisDeformations §§3.4, 3.6, 3.7, 5.1, 5.6; LocalGaloisDeformationRings §2.16; Chebotarev Layer 10.
 
 ## Layer 5: Hecke algebras and patching with a protected place
 

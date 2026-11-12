@@ -4,13 +4,13 @@
 
 ## Scope and ownership
 
-This roadmap owns, at the generality stated in each section: pressure of maps and flows and its three equivalent forms (Layer 2); the open-cover entropy and its agreement with Mathlib's entropy, the power and time-rescaling rules for topological entropy, expansive homeomorphisms, Bowen–Walters expansive flows, topological mixing, weak specification and the Bowen property (Layer 1); affinity of measure entropy, approximation by fine partitions, upper semicontinuity of entropy for expansive homeomorphisms and expansive flows, and Abramov's formula (Layer 3); the variational principles for pressure and entropy of maps and flows, equilibrium states and measures of maximal entropy with their convex and ergodic structure and existence, and the statement of Newhouse's theorem (Layer 4); Gibbs measures and Bowen's uniqueness criterion for homeomorphisms and flows (Layer 5); homeomorphisms and flows with hyperbolic local product structure and their expansivity, closing, spectral decomposition, specification and Bowen property (Layer 6); hyperbolic sets and Anosov systems with their linear theory (Layer 7); the uniform Hadamard–Perron theorem, local stable, unstable, strong and weak manifolds, local product structure of locally maximal hyperbolic sets, nontriviality and Hölder continuity of the bundles (Layer 8); the three families of examples (Layer 9); basic sets, Bowen's theorem, the Bowen–Ruelle theorem and the Bowen–Margulis measure (Layer 10); the geometric potential, bounded distortion, the two volume lemmas, the pressure of the geometric potential and the SRB theorem (Layer 11). No roadmap on main, at the open roadmap heads or on the board defines any of these objects; the only neighbouring notions (OperatorAlgebraDynamics §D9's pressure of quantum lattice systems, ArithmeticDynamics §§2.67–2.92's maximal-entropy measure of a rational map) concern other objects and are not consumed.
+This roadmap owns, at the generality stated in each section: pressure of maps and flows and its three equivalent forms (Layer 2); the open-cover entropy and its agreement with Mathlib's entropy, the power and time-rescaling rules for topological entropy, expansive homeomorphisms, Bowen–Walters expansive flows, topological mixing, weak specification and the Bowen property (Layer 1); affinity of measure entropy, approximation by fine partitions, upper semicontinuity of entropy for expansive homeomorphisms and expansive flows, and Abramov's formula (Layer 3); the variational principles for pressure and entropy of maps and flows, equilibrium states and measures of maximal entropy with their convex and ergodic structure and existence under upper semicontinuity of entropy (Layer 4); Gibbs measures and Bowen's uniqueness criterion for homeomorphisms and flows (Layer 5); homeomorphisms and flows with hyperbolic local product structure and their expansivity, closing, spectral decomposition, specification and Bowen property (Layer 6); hyperbolic sets and Anosov systems with their linear theory (Layer 7); the uniform Hadamard–Perron theorem, local stable, unstable, strong and weak manifolds, local product structure of locally maximal hyperbolic sets, nontriviality and Hölder continuity of the bundles (Layer 8); the three families of examples (Layer 9); basic sets, Bowen's theorem, the Bowen–Ruelle theorem and the Bowen–Margulis measure (Layer 10); the geometric potential, bounded distortion, the two volume lemmas, the pressure of the geometric potential and the SRB theorem (Layer 11). No roadmap on main, at the open roadmap heads or on the board defines any of these objects; the only neighbouring notions (OperatorAlgebraDynamics §D9's pressure of quantum lattice systems, ArithmeticDynamics §§2.67–2.92's maximal-entropy measure of a rational map) concern other objects and are not consumed.
 
-Already in the library and consumed by name in the supplier contracts: Mathlib's Bowen–Dinaburg entropy (`Dynamics.coverEntropy`, `Dynamics.netEntropyEntourage` and their agreement), flows (`Flow`), Birkhoff sums, ergodicity and its extreme-point characterisation, the Krylov–Bogolyubov theorem, compactness of the space of probability measures, Hölder maps, continuous and smooth Riemannian metrics on bundles, and Tau Ceti's maximal flows, geodesic flow, Riemannian volume, smooth circle and smooth mapping torus.
+Already in the library and consumed by name in the supplier contracts: Mathlib's Bowen–Dinaburg entropy (`Dynamics.coverEntropy`, `Dynamics.netEntropyEntourage` and their agreement, and finiteness of the entropy at a fixed entourage on a compact space), flows (`Flow`), Birkhoff sums, ergodicity and its extreme-point characterisation, the Krylov–Bogolyubov theorem, compactness of the space of probability measures, Hölder maps, continuous and smooth Riemannian metrics on bundles, and Tau Ceti's maximal flows, geodesic flow, Riemannian volume, smooth circle, smooth mapping torus and the unit sphere bundle of a smooth Riemannian vector bundle as an embedded smooth hypersurface of the total space.
 
-Stated by other roadmaps and imported, never planned again here: the partition entropy API and the measure entropy hμ(T) (GeometryOfNumbersAndQuadraticArithmetic §4.2); the pointwise Birkhoff theorem (ProbabilisticAndMetricNumberTheory §4.1); conditional entropy, the Shannon–McMillan–Breiman theorem, the supremum of hμ(T, P) over finite partitions, partitions of small diameter with μ-null boundaries, the ergodic decomposition with entropy integration, and the inequality hμ(T) ≤ h_top(T) on compact metric spaces (ArithmeticDynamics §§2.6–2.7); maximal flows of vector fields and completeness on compact manifolds (DifferentialGeometry Layer 3) and smooth Riemannian metrics (DifferentialGeometry Layer 12); sectional curvature, Jacobi fields, Rauch comparison and the Cartan–Hadamard theorem (RiemannianGeometry R1, R2, R4); sphere bundles as smooth manifolds (TangentialBordism §2.3).
+Stated by other roadmaps and imported, never planned again here: the countable partition entropies, the entropy rate and the measure entropy hμ(T) (GeometryOfNumbersAndQuadraticArithmetic §4.2); the finite-label entropy and conditional entropy with their chain rule, and the pointwise Birkhoff theorem (ProbabilisticAndMetricNumberTheory §§5.1a, 4.1); conditional entropy against a sub-σ-algebra and its decrease when the σ-algebra is enlarged, the Shannon–McMillan–Breiman theorem, the supremum of hμ(T, P) over finite partitions, partitions of small diameter with μ-null boundaries, the ergodic decomposition with entropy integration, and the inequality hμ(T) ≤ h_top(T) on compact metric spaces (ArithmeticDynamics §§2.6–2.7); maximal flows of vector fields and completeness on compact manifolds (DifferentialGeometry Layer 3) and smooth Riemannian metrics (DifferentialGeometry Layer 12); sectional curvature, Jacobi fields, Rauch comparison and the Cartan–Hadamard theorem (RiemannianGeometry R1, R2, R4); the comparison of sphere-bundle carriers with the literal subsets of the total space (TangentialBordism §2.3).
 
-Not part of this roadmap: nonuniform hyperbolicity (Pesin theory, Lyapunov exponents, the Katok entropy formula), the Buzzi–Crovisier–Sarig theorems, exponential mixing and Dolgopyat estimates, the Livšic theorem, structural stability, Markov partitions and symbolic dynamics of hyperbolic systems (the route below does not pass through them), thermodynamic formalism of ℤ^d-actions (whose measure entropy no supplier defines), and the ergodic theory of homogeneous flows (GeometryOfNumbersAndQuadraticArithmetic §4.2).
+Not part of this roadmap: nonuniform hyperbolicity (Pesin theory, Lyapunov exponents, the Katok entropy formula); Yomdin's theory of C^r volume growth and Newhouse's theorem that μ ↦ hμ(f) is upper semicontinuous on M(f) for a C^∞ map f of a compact manifold (Newhouse1989, Theorem 1), whose conclusion is the hypothesis of §4.6's existence theorem; the Buzzi–Crovisier–Sarig theorems; exponential mixing and Dolgopyat estimates; the Livšic theorem; structural stability; Markov partitions and symbolic dynamics of hyperbolic systems (the route below does not pass through them); thermodynamic formalism of ℤ^d-actions (whose measure entropy no supplier defines); and the ergodic theory of homogeneous flows (GeometryOfNumbersAndQuadraticArithmetic §4.2).
 
 **Route.** The summit is reached through Bowen's criterion rather than Markov partitions. Climenhaga and Thompson prove the criterion for homeomorphisms and for flows with a specification property whose gluing times are only bounded (ClimenhagaThompson2016, Theorem A and Theorem 5.5). With bounded gluing times, transitivity suffices: a transitive system with hyperbolic local product structure has this weak specification at every scale, so neither a mixing hypothesis nor the reduction of non-mixing flows to constant-roof suspensions is needed. The smooth theory enters only through Bowen's abstract axioms for a homeomorphism with hyperbolic local product structure (BowenPeriodicPoints1971, lines 66–83) and their flow analogue (BowenRuelle1975, lines 96–108), which locally maximal hyperbolic sets satisfy. This keeps each layer general: the uniqueness theorems hold for every compact metric system with the abstract properties, and the examples are not special-cased.
 
@@ -19,14 +19,14 @@ Not part of this roadmap: nonuniform hyperbolicity (Pesin theory, Lyapunov expon
 - Logarithms are natural. Topological entropy and pressure take values in EReal, as Mathlib's `Dynamics.coverEntropy` does, with value ⊥ on the empty space; on a nonempty compact space with finite topological entropy they are real. Measure entropy hμ(T) is GeometryOfNumbersAndQuadraticArithmetic §4.2's `measureEntropy`, valued in [0, ∞] and cast to EReal when compared with pressure. Free energies hμ(T) + ∫φ dμ are computed in EReal.
 - Pressure has the potential added: P_T(φ) is the exponential growth rate of Σ exp(S_nφ) over separated sets, so P_T(0) = h_top(T). The inverse-temperature form of statistical mechanics is P_T(−βH) for an energy H and inverse temperature β; equilibrium states of −βH are Gibbs states at temperature 1/β. Witness: on the full shift on k symbols, P(c) = log k + c for a constant c, so the inverse-temperature form of the constant energy H = 1 gives P(−β) = log k − β.
 - Birkhoff sums are Mathlib's `birkhoffSum T φ n`, the sum of φ∘T^k over 0 ≤ k < n; S_0φ = 0. For a flow g and potential F, the orbit integral over [0, t] is ∫₀ᵗ F(g^s x) ds, and F_t denotes the function x ↦ ∫₀ᵗ F(g^s x) ds, so F_1 is the time-one average of BowenRuelle1975, lines 191–192.
-- Dynamical distances use n terms for maps and closed time intervals for flows: d_n(x, y) = max over 0 ≤ k < n of d(T^k x, T^k y) (d_0 = 0), matching Mathlib's `Dynamics.dynEntourage`, and d_t(x, y) = sup over 0 ≤ s ≤ t of d(g^s x, g^s y). Bowen balls B_n(x, ε) and B_t(x, ε) are the open balls of these distances, so B_0(x, ε) is the whole space. Witness: for the doubling map of ℝ/ℤ, B_2(0, 1/8) is the arc of half-width 1/16.
+- Dynamical distances use n terms for maps and closed time intervals for flows: d_n(x, y) = max over 0 ≤ k < n of d(T^k x, T^k y) for n ≥ 1 and d_0 = 0, matching Mathlib's `Dynamics.dynEntourage`, and d_t(x, y) = sup over 0 ≤ s ≤ t of d(g^s x, g^s y) for real t ≥ 0, so that the flow distance d_0 is d itself. Bowen balls B_n(x, ε) and B_t(x, ε) are the open balls of these distances, always with radius ε > 0: the map ball B_0(x, ε) is the whole space, while the flow ball B_0(x, ε) is the ordinary ε-ball. Witness: for the doubling map of ℝ/ℤ, B_2(0, 1/8) is the arc of half-width 1/16.
 - Separated sets: a finite set is (n, U)-separated when it is a dynamical net in the sense of Mathlib's `Dynamics.IsDynNetIn` for the entourage U, that is, the balls of the n-step dynamical entourage about its points are pairwise disjoint; on a metric space U is {d < ε}. For a flow, a finite set E is (T, ε)-separated when the open d_T-balls of radius ε about its points are pairwise disjoint. Disjoint balls of radius ε force d_T(x, y) ≥ ε, and the classical convention d_T(x, y) > ε at scale 2ε forces disjoint balls at scale ε, so the two conventions differ by at most a factor two in the scale, which the limit ε → 0 does not see; a Check at a fixed scale is read with the disjoint-ball convention.
 - Invariant measures: M(T) is the set of Borel probability measures μ with `MeasurePreserving T μ μ`; for a flow g, M(g) is the set of probability measures preserved by every g^t. Ergodicity of a map is Mathlib's `Ergodic`; ergodicity of a flow is `ErgodicVAdd ℝ X μ` for the additive action `Flow.toAddAction`. The weak topology is that of `MeasureTheory.ProbabilityMeasure`.
 - Transitivity is Mathlib's `AddAction.IsTopologicallyTransitive`, for a map through the ℕ-flow `Flow.fromIter` and for a homeomorphism or flow through `Flow.toAddAction` of the ℤ- or ℝ-flow. Topological mixing is defined in §1.7.
 - Manifolds are finite-dimensional real smooth manifolds without boundary, modelled with corners I on a finite-dimensional normed space E; compactness is assumed where stated. Diffeomorphisms of class C^r (r ≥ 1) are Mathlib's `Diffeomorph I I M M r`. A C^r flow is a `Flow ℝ M` whose map (t, x) ↦ g^t x is C^r on ℝ × M; its generator is X(x) = d/dt g^t x at t = 0.
-- Norms on tangent spaces come from a continuous Riemannian metric, Mathlib's `Bundle.ContinuousRiemannianMetric` on the tangent bundle. Because hyperbolicity does not depend on this choice (§7.3), any continuous metric may be used, and smooth metrics (`Bundle.ContMDiffRiemannianMetric`) are the special case. Distances on M are those of a fixed smooth Riemannian metric; on compact M any two such distances are bi-Lipschitz equivalent, which changes contraction constants but not rates.
+- In Layers 7–10, norms on tangent spaces come from a continuous Riemannian metric, Mathlib's `Bundle.ContinuousRiemannianMetric` on the tangent bundle. Because hyperbolicity does not depend on this choice (§7.3), any continuous metric may be used, and smooth metrics (`Bundle.ContMDiffRiemannianMetric`) are the special case. In Layer 11, which differentiates unstable Jacobians in time, norms, distances and volume come from a smooth Riemannian metric, as in BowenRuelle1975, line 92: for a merely continuous metric t ↦ log Jac(Dg^t|E^u_x) need not be differentiable. Distances on M are those of a fixed smooth Riemannian metric; on compact M any two such distances are bi-Lipschitz equivalent, which changes contraction constants but not rates.
 - Rates: a hyperbolic set of a diffeomorphism has constants C > 0 and 0 < λ < 1 with |Df^n v| ≤ Cλ^n|v| on E^s; a hyperbolic set of a flow has C > 0 and κ > 0 with |Dg^t v| ≤ Ce^{−κt}|v| on E^s for t ≥ 0. Stable means contracted in forward time; unstable means contracted in backward time. Witness: for the linear map diag(2, 1/2) of ℝ² at the fixed point 0, E^s is the second coordinate axis with λ = 1/2 and C = 1.
-- The geometric potential of a flow is φ^u(x) = −d/dt log Jac(Dg^t|E^u_x) at t = 0, with the sign making ∫₀ᵀ φ^u(g^t x) dt = −log Jac(Dg^T|E^u_x). Witness: for the geodesic flow of a surface of curvature −1, Jac(Dg^t|E^u) = e^t and φ^u = −1.
+- The geometric potential of a C² flow generated by a C² vector field, for a smooth Riemannian metric (Layer 11), is φ^u(x) = −d/dt log Jac(Dg^t|E^u_x) at t = 0, with the sign making ∫₀ᵀ φ^u(g^t x) dt = −log Jac(Dg^T|E^u_x). Witness: for the geodesic flow of a surface of curvature −1 with the Sasaki metric, Jac(Dg^t|E^u) = e^t and φ^u = −1.
 - Weak specification has bounded, not fixed, gluing times, as in ClimenhagaThompson2016, lines 295–303 (flows) and lines 1661–1669 (maps); specification with gluing times all equal to a fixed τ is called strong specification.
 
 ## Exact supplier contracts
@@ -36,7 +36,7 @@ Not part of this roadmap: nonuniform hyperbolicity (Pesin theory, Lyapunov expon
 At commit `1b1ccf4b088b32fa3f23f2de1127433254a81e1e`.
 
 - `Dynamics.dynEntourage`, `Dynamics.mem_dynEntourage`, `Dynamics.mem_ball_dynEntourage` (`Mathlib/Dynamics/TopologicalEntropy/DynamicalEntourage.lean`): the n-step dynamical entourage, defined by `∀ k < n`.
-- `Dynamics.IsDynCoverOf`, `Dynamics.coverMincard`, `Dynamics.coverEntropyEntourage`, `Dynamics.coverEntropy`, `Dynamics.coverEntropyInf`, `Dynamics.coverEntropyInf_eq_coverEntropy` (`Mathlib/Dynamics/TopologicalEntropy/CoverEntropy.lean`): spanning-set entropy on uniform spaces, EReal-valued, limsup version as default; the file has no metric-space or open-cover form.
+- `Dynamics.IsDynCoverOf`, `Dynamics.coverMincard`, `Dynamics.coverEntropyEntourage`, `Dynamics.coverEntropy`, `Dynamics.coverEntropyInf`, `Dynamics.coverEntropyInf_eq_coverEntropy` (`Mathlib/Dynamics/TopologicalEntropy/CoverEntropy.lean`): spanning-set entropy on uniform spaces, EReal-valued, limsup version as default; the file has no metric-space or open-cover form. `Dynamics.coverEntropyEntourage_finite_of_isCompact_invariant` (same file): for a compact F with T(F) ⊆ F and an entourage U, the entropy of T on F at U is below ⊤; used by §1.5.
 - `Dynamics.IsDynNetIn`, `Dynamics.netMaxcard`, `Dynamics.netEntropyEntourage`, `Dynamics.coverEntropy_eq_iSup_netEntropyEntourage` (`Mathlib/Dynamics/TopologicalEntropy/NetEntropy.lean`): separated-set entropy and its agreement with the spanning-set entropy.
 - `Dynamics.coverEntropy_restrict`, `Dynamics.coverEntropy_image_le_of_uniformContinuous` (`Mathlib/Dynamics/TopologicalEntropy/Semiconj.lean`): restriction to invariant subsets and monotonicity under semiconjugacy.
 - `ExpGrowth.expGrowthSup` (`Mathlib/Analysis/Asymptotics/ExpGrowth.lean`): limsup of log(u_n)/n for ℝ≥0∞-valued sequences, the growth rate used for pressure.
@@ -47,6 +47,8 @@ At commit `1b1ccf4b088b32fa3f23f2de1127433254a81e1e`.
 - `MeasureTheory.exists_measurePreserving_probabilityMeasure` (`Mathlib/Dynamics/Ergodic/EmpiricalMeasure.lean`): Krylov–Bogolyubov on a nonempty compact Hausdorff space, producing a regular invariant probability measure.
 - `MeasureTheory.ProbabilityMeasure` and its compact-space instance (`Mathlib/MeasureTheory/Measure/Prokhorov.lean`: the space of probability measures on a compact Hausdorff Borel space is compact), `MeasureTheory.ProbabilityMeasure.tendsto_measure_of_null_frontier_of_tendsto` (`Mathlib/MeasureTheory/Measure/Portmanteau.lean`).
 - `UpperSemicontinuous` (`Mathlib/Topology/Semicontinuity/Defs.lean`), `HolderWith` (`Mathlib/Topology/MetricSpace/Holder.lean`).
+- `lebesgue_number_lemma` (`Mathlib/Topology/UniformSpace/Compact.lean`): a finite open cover of a compact uniform space has an entourage V each of whose balls lies in a member; used by §2.2.
+- `DifferentiableOn.dense_compl_image_of_dimH_lt_finrank` (`Mathlib/Topology/MetricSpace/HausdorffDimension.lean`): a map differentiable on a set of Hausdorff dimension below dim F has an image with dense complement in F; used by §8.6(b) for orbit arcs read in a chart.
 - `Bundle.ContinuousRiemannianMetric`, `Bundle.RiemannianBundle`, `IsContinuousRiemannianBundle` (`Mathlib/Topology/VectorBundle/Riemannian.lean`); `Bundle.ContMDiffRiemannianMetric`, `IsContMDiffRiemannianBundle` (`Mathlib/Geometry/Manifold/VectorBundle/Riemannian.lean`); `IsRiemannianManifold` (`Mathlib/Geometry/Manifold/Riemannian/Basic.lean`).
 - `Diffeomorph`, `mfderiv`, `ContMDiff` (`Mathlib/Geometry/Manifold/`).
 - `MeasureTheory.lintegral_image_eq_lintegral_abs_det_fderiv_mul` (`Mathlib/MeasureTheory/Function/Jacobian.lean`): the Euclidean change of variables, used in charts by the volume lemmas.
@@ -65,19 +67,20 @@ At commit `2fd255d997f47c0b5d834ee416c7015d55444ce5`.
 - `TauCeti.SmoothMappingTorus`, `TauCeti.SmoothMappingTorus.flow`, `TauCeti.SmoothMappingTorus.contMDiff_uncurry_flow`, `TauCeti.SmoothMappingTorus.flow_one_mk` (`TauCeti/Geometry/Manifold/Instances/MappingTorus.lean`): the smooth mapping torus of a diffeomorphism φ, the quotient of ℝ × M by (t + 1, x) ∼ (t, φx), with its smooth suspension flow [t, x] ↦ [t + s, x] whose time-one map is φ on each fibre.
 - `AddCircle.instIsManifold` (`TauCeti/Geometry/Manifold/Instances/AddCircle.lean`): ℝ/pℤ as an analytic manifold with the quotient map a local diffeomorphism.
 - `TauCeti.catMap`, `TauCeti.det_catMap`, `TauCeti.charpolyRev_catMap` (`TauCeti/Dynamics/CatMap.lean`): the matrix (2 1; 1 1), its determinant 1 and det(1 − tP) = 1 − 3t + t².
+- `TauCeti.sphereBundleChartedSpace`, `TauCeti.isManifold_sphereBundle`, `TauCeti.isSmoothEmbedding_coe_sphereBundle` (`TauCeti/Geometry/Manifold/VectorBundle/Riemannian/Sphere.lean`): for a C^n Riemannian vector bundle (1 ≤ n) over a boundaryless finite-dimensional C^n manifold with finite-dimensional fibre and a positive C^n radius r, the set {v : |v| = r(π v)} of the total space with its regular-level atlas is a C^n manifold whose inclusion into the total space is a C^n smooth embedding; with r = 1 and the tangent bundle this is the unit tangent sphere bundle of §9.3. It is closed in the total space, being the zero set of the continuous function |v|² − r(π v)².
 - `ContinuousLinearMap.lyapunovPerronSolution`, `ContinuousLinearMap.lyapunovPerronGraphMap`, `ContinuousLinearMap.localStableGraphMap`, `ContinuousLinearMap.localUnstableGraphMap` (`TauCeti/Analysis/ODE/LyapunovPerron/{Basic,Graph,Local,Smooth}.lean`): the Lyapunov–Perron fixed point for an ordinary differential equation y' = Ay + N(y) with an exponential dichotomy of the linear part, its Lipschitz graph over the stable spectral subspace, the cut-off local stable and unstable graphs at a hyperbolic equilibrium, and their smoothness in the parameter. These concern a single hyperbolic equilibrium of a vector field on a Banach space, not a hyperbolic set, and no target consumes them: §8.1 names them only as the construction its graph transform parallels in discrete time.
 
 ### From TauCetiRoadmap.GeometryOfNumbersAndQuadraticArithmetic — §4.2
 
-The **Entropy and Haar measure on leaves** paragraph: `finitePartitionEntropy`, `countablePartitionEntropy`, `conditionalPartitionEntropy`, `iteratedPartitionLabel`, `partitionEntropyRate` and `measureEntropy` for measurable labels, with the chain rule, relabelling, independence, conjugacy invariance and `entropy_inverse` (hμ(T⁻¹) = hμ(T) for invertible measure-preserving T). The measure entropy keeps the value +∞; natural logarithms.
+The **Entropy and Haar measure on leaves** paragraph: `countablePartitionEntropy` and `conditionalPartitionEntropy` for measurable labels with countably many values, `iteratedPartitionLabel` (the length-n itinerary of a label), `partitionEntropyRate` (the infimum over n ≥ 1 of the entropy of the n-fold itinerary divided by n, a limit for measure-preserving T and finite-entropy labels) and `measureEntropy` (the supremum of these rates over finite-entropy labels into ℕ, valued in [0, ∞]), with the chain rule, relabelling invariance, independence additivity, conjugacy invariance and `entropy_inverse` (hμ(T⁻¹) = hμ(T) for invertible measure-preserving T). On labels with finitely many values its countable entropies are the finite-label entropies of ProbabilisticAndMetricNumberTheory §5.1a. Natural logarithms.
 
-### From TauCetiRoadmap.ProbabilisticAndMetricNumberTheory — §4.1
+### From TauCetiRoadmap.ProbabilisticAndMetricNumberTheory — §§4.1, 5.1a
 
-`birkhoff_pointwise` (time averages of an integrable function converge almost everywhere to its conditional expectation on the invariant σ-algebra) and `birkhoff_pointwise_ergodic` (to its integral when T is ergodic), on any probability space.
+§4.1: `birkhoff_pointwise` (time averages of an integrable function converge almost everywhere to its conditional expectation on the invariant σ-algebra) and `birkhoff_pointwise_ergodic` (to its integral when T is ergodic), on any probability space. §5.1a: the finite-label entropy H(X) and conditional entropy H(X | Y) of measurable labels with finite alphabets (its targets labelEntropy and condLabelEntropy), with the chain rule H((X, Y)) = H(Y) + H(X | Y), the bound 0 ≤ H(X) ≤ log |A| for a nonempty alphabet A and additivity for independent labels; natural logarithms, cells of mass zero contributing zero.
 
 ### From TauCetiRoadmap.ArithmeticDynamics — §§2.6–2.7
 
-§2.6: hμ(T) is the supremum of hμ(T, P) over finite partitions P (its inequality hμ(T, P) ≤ hμ(T, Q) + Hμ(P | Q) is stated there only for a finite truncation Q of a countable P, as a step of that proof; the inequality for two arbitrary finite partitions is §3.2 of this roadmap). §2.7: conditional entropy Hμ(P | ℰ) against a sub-σ-algebra with its chain rule; the Shannon–McMillan–Breiman theorem; for a continuous map of a nonempty compact metric space and an invariant Borel probability μ, the inequality of the EReal image of hμ(T) with `Dynamics.coverEntropy T Set.univ`; finite Borel partitions of arbitrarily small diameter with μ-null boundaries; and, on a nonempty standard Borel space, the ergodic decomposition kernel x ↦ μ_x of a measure-preserving map with almost-everywhere uniqueness and hμ(T) = ∫⁻ hμ_x(T) dμ(x).
+§2.6: finite partitions as measurable labels with finite alphabets, and hμ(T) is the supremum of hμ(T, P) over finite partitions P, retaining +∞ (its inequality hμ(T, P) ≤ hμ(T, Q) + Hμ(P | Q) is stated there only for a finite truncation Q of a countable P, as a step of that proof; the inequality for two arbitrary finite partitions is §3.2 of this roadmap). §2.7: conditional entropy Hμ(P | ℰ) of a finite partition against a sub-σ-algebra, agreeing with the supplied conditional partition entropy when ℰ is generated by a finite label, decreasing when ℰ is enlarged (the trivial σ-algebra gives Hμ(P)), with its chain rule; the Shannon–McMillan–Breiman theorem; for a continuous map of a nonempty compact metric space and an invariant Borel probability μ, the inequality of the EReal image of hμ(T) with `Dynamics.coverEntropy T Set.univ`; finite Borel partitions of arbitrarily small diameter with μ-null boundaries; and, on a nonempty standard Borel space, the ergodic decomposition kernel x ↦ μ_x of a measure-preserving map with almost-everywhere uniqueness and hμ(T) = ∫⁻ hμ_x(T) dμ(x).
 
 ### From TauCetiRoadmap.DifferentialGeometry — Layers 3 and 12
 
@@ -89,13 +92,13 @@ R1: the curvature tensor and sectional curvature. R2: Jacobi fields along geodes
 
 ### From TauCetiRoadmap.TangentialBordism — §2.3 (B1.5)
 
-Unit disc and sphere bundles of a vector bundle with a metric as smooth manifolds, compared with the literal subsets of the total space.
+Unit disc and sphere bundles of a vector bundle with a metric as smooth manifolds, compared with the literal subsets of the total space; the corestriction theorem for the sphere bundle is the gap below.
 
 ### Required extensions
 
 These are what the named suppliers must provide for Layer 9's geodesic-flow example; nothing else in the roadmap depends on them.
 
-- What TangentialBordism §2.3 must provide (gap:sphere-bundle-embedding): the unit sphere bundle of a smooth Riemannian vector bundle as a closed smooth submanifold of the total space: the inclusion is a smooth embedding, and a smooth map into the total space with values in the sphere bundle is smooth into it.
+- What TangentialBordism §2.3 must provide (gap:sphere-bundle-embedding): for the unit sphere bundle of a C^n Riemannian vector bundle with Tau Ceti's regular-level atlas (`TauCeti.sphereBundleChartedSpace`, radius 1), the corestriction theorem: a C^n map from a C^n manifold into the total space whose values lie in the sphere bundle is C^n as a map into the sphere bundle. The atlas, the manifold structure and the smooth embedding of the inclusion are Tau Ceti's and are not requested.
 - What RiemannianGeometry, Part II (a proposed extension) must provide (gap:connection-map-jacobi-derivative): for a smooth Riemannian manifold (M, g) with its Levi-Civita connection, the connection map K : T(TM) → TM, the resulting splitting of T_v(TM) into the horizontal and vertical subspaces, each identified with T_{π(v)}M, and the theorem that, for v ∈ TM, a vector ξ ∈ T_v(TM) with horizontal and vertical components (w, w') and t in the domain of the geodesic γ_v of v, the derivative of the geodesic flow at v applied to ξ has components (J(t), D_tJ(t)), where J is the Jacobi field along γ_v with J(0) = w and D_tJ(0) = w' (RiemannianGeometry R2 supplies J).
 
 ## How to read the build
@@ -108,21 +111,25 @@ This layer connects Mathlib's entourage-based entropy with the metric and open-c
 
 ### 1.1 Dynamical distances and Bowen balls
 
-Define, for a map T of a pseudometric space (X, d), the dynamical distance d_n(x, y) as the maximum of d(T^k x, T^k y) over 0 ≤ k < n (zero for n = 0) and the Bowen ball B_n(x, ε) as the open d_n-ball. For a flow g on X define d_t(x, y) as the supremum of d(g^s x, g^s y) over 0 ≤ s ≤ t and the Bowen ball B_t(x, ε) as the open d_t-ball (BowenRuelle1975, lines 99–101, use closed balls with k ∈ [0, n]; ClimenhagaThompson2016, lines 175–177, use closed balls with s ∈ [0, t]; the conventions differ by a shift of n by one and by boundary points, which no limit sees).
+Define, for a map T of a pseudometric space (X, d), the dynamical distance d_n(x, y) as the maximum of d(T^k x, T^k y) over 0 ≤ k < n (zero for n = 0) and, for ε > 0, the Bowen ball B_n(x, ε) as the open d_n-ball. For a flow g on X and real t ≥ 0 define d_t(x, y) as the supremum of d(g^s x, g^s y) over 0 ≤ s ≤ t, so that d_0 = d, and for ε > 0 the Bowen ball B_t(x, ε) as the open d_t-ball (BowenRuelle1975, lines 163–164, separate maps with times k ∈ [0, n], and lines 99–101 use closed flow balls with s ∈ [0, T]; ClimenhagaThompson2016, lines 175–177, use closed balls with s ∈ [0, t]; the conventions differ by a shift of n by one and by boundary points, which no limit sees).
 
 Its API:
 
-- The Bowen ball B_n(x, ε) is the ball at x of Mathlib's `Dynamics.dynEntourage` T {(a, b) | d(a, b) < ε} n, so every metric statement transfers to Mathlib's entourage statements and back.
-- B_0(x, ε) is the whole space and B_1(x, ε) is the ball of radius ε; B_{n+1}(x, ε) ⊆ B_n(x, ε), and the balls increase with ε.
-- T maps B_{n+1}(x, ε) into B_n(Tx, ε); for a semiconjugacy h with h∘S = T∘h and h Lipschitz with constant L, h maps B^S_n(x, ε) into B^T_n(hx, Lε).
-- For a continuous flow on a compact metric space and t > 0: the flow ball B_{nt}(x, ε) lies in the time-t ball B^{g^t}_n(x, ε), and conversely B^{g^t}_n(x, δ) lies in B_{nt}(x, ε) whenever δ is a modulus of uniform continuity of (s, y) ↦ g^s y on [0, t] × X for ε.
-- For a homeomorphism the two-sided set Γ_ε(x) of points whose whole orbit stays ε-close to that of x is the intersection over n of T^{−n}B_{2n+1}(T^n x, ε) with closed balls; it is closed, and compact when X is compact (ClimenhagaThompson2016, line 358, for compact X). For the identity of ℝ it is the closed ε-ball, closed but not compact.
+- For ε > 0 the Bowen ball B_n(x, ε) is the ball at x of Mathlib's `Dynamics.dynEntourage` T {(a, b) | d(a, b) < ε} n, so every metric statement transfers to Mathlib's entourage statements and back.
+- For ε > 0, B_0(x, ε) is the whole space and B_1(x, ε) is the ball of radius ε; B_{n+1}(x, ε) ⊆ B_n(x, ε), and the balls increase with ε.
+- T maps B_{n+1}(x, ε) into B_n(Tx, ε); for a semiconjugacy h with h∘S = T∘h and h Lipschitz with a constant L > 0, h maps B^S_n(x, ε) into B^T_n(hx, Lε). Every Lipschitz map has a positive Lipschitz constant, and L = 0 is excluded because the ball of radius 0 is empty.
+- For a continuous flow on a compact metric space, t > 0 and n ≥ 1: the flow ball B_{nt}(x, ε) lies in the time-t ball B^{g^t}_n(x, ε), and conversely B^{g^t}_n(x, δ) lies in B_{nt}(x, ε) whenever δ > 0 is such that d(y, z) < δ implies d(g^s y, g^s z) < ε for every s ∈ [0, t] (such δ exists by uniform continuity of (s, y) ↦ g^s y on the compact [0, t] × X); every s ∈ [0, nt] is kt + r with 0 ≤ k ≤ n − 1 and r ∈ [0, t].
+- For a homeomorphism and ε > 0 the two-sided set Γ_ε(x) = {y : d(T^k x, T^k y) ≤ ε for every k ∈ ℤ} is the intersection over n ≥ 0 of T^n(B̄_{2n+1}(T^{−n}x, ε)), where B̄ denotes the closed d_{2n+1}-ball: y lies in the n-th set iff T^{−n}y is ε-close to T^{−n}x for d_{2n+1}, that is, iff the orbits are ε-close at the times −n, …, n. It is closed, and compact when X is compact (ClimenhagaThompson2016, line 358, for compact X).
 
 **Checks.**
 
 - For a rotation of ℝ/ℤ (an isometry), B_n(x, ε) equals the ε-ball for every n ≥ 1; a definition that summed the distances along the orbit instead of maximising would shrink with n.
 - For the doubling map x ↦ 2x of ℝ/ℤ and ε = 1/8, B_n(0, 1/8) is the arc of half-width 2^{−n−2}: half-width 1/8 at n = 1 and 1/16 at n = 2. The convention with k ≤ n would give 1/16 already at n = 1.
 - At n = 0 the ball is the whole space, matching `Dynamics.dynEntourage` at time zero, so Mathlib's `Dynamics.coverMincard` at time zero is 1 on a nonempty set; a convention using k ≤ n would give the ε-ball instead.
+- On the full two-shift with the metric of §1.5 and the left shift, let y have its only 1 at coordinate −1. Then d(T^k 0, T^k y) = 2^{−k−1} ≤ 1/2 for every k ≥ 0, while d(T^{−1}0, T^{−1}y) = 1, so y ∉ Γ_{1/2}(0). The set T^1(B̄_3(T^{−1}0, 1/2)) tests the times −1, 0, 1 and excludes y, whereas T^{−n}(B̄_{2n+1}(T^n 0, 1/2)), translated the other way, tests the times n, …, 3n and contains y for every n.
+- For the identity of ℚ, Γ_1(0) = [−1, 1] ∩ ℚ is closed but not compact (rationals tending to √2/2 have no limit in it), so the compactness clause needs X compact. The identity of ℝ is no counterexample: Γ_1(0) = [−1, 1] is compact.
+- For a constant map h of the two-point space {a, b} to a point (L = 0 is a Lipschitz constant), with n = 1 and ε = 1, the image {pt} of B_1(a, 1) does not lie in the empty ball B_1(pt, 0) but lies in B_1(pt, 1), the containment with the positive constant L = 1.
+- For the unit-speed rotation flow of ℝ/ℤ, t = 1 and ε = 1/4, the time-one map is the identity: B^{g^1}_0(x, δ) is the whole circle while the flow ball B_0(x, 1/4) is the arc of half-width 1/4, so the converse containment fails at n = 0; for n ≥ 1 and δ ≤ 1/4 both balls are arcs of half-width δ and 1/4 and it holds.
 
 *Needs:* Mathlib `Dynamics.dynEntourage`, `Dynamics.mem_ball_dynEntourage`, `Flow`.
 
@@ -132,7 +139,7 @@ Define the open-cover entropy h_cov(T) of a continuous map T of a nonempty compa
 
 Its API:
 
-- N((𝒰 ∨ 𝒱)^n) ≤ N(𝒰^n) N(𝒱^n), and refining 𝒰 increases the limit, so the supremum may be taken along any sequence of covers whose Lebesgue entourages shrink to the diagonal.
+- N((𝒰 ∨ 𝒱)^n) ≤ N(𝒰^n) N(𝒱^n), and refining 𝒰 increases the limit. If the members of 𝒰 are V-small (U × U ⊆ V for U ∈ 𝒰) for an entourage V contained in an entourage W, then a member of 𝒰^n contains at most one point of an (n, W)-separated set, so N(𝒰^n) ≥ `Dynamics.netMaxcard` T Set.univ W n; hence the supremum is also the limit along finite open covers whose members become V-small for every entourage V.
 - h_cov is invariant under topological conjugacy and does not increase under factors.
 - For the restriction to a closed invariant subset, h_cov agrees with Mathlib's `Dynamics.coverEntropy_restrict`.
 
@@ -142,7 +149,7 @@ Its API:
 - For the full shift on k symbols and the cover by the k cylinders of the zeroth coordinate, N(𝒰^n) = k^n, giving log k; a definition that took the cardinality of 𝒰^n without passing to minimal subcovers would give the same here but overcount for covers with redundant members.
 - Taking a single cover instead of the supremum fails: the trivial cover {X} gives 0 for the full shift, whose entropy is log k.
 
-*Needs:* Mathlib `Dynamics.coverEntropy`, `Dynamics.coverMincard`, `Dynamics.IsDynCoverOf`; Layer 1.1.
+*Needs:* Mathlib `Dynamics.coverEntropy`, `Dynamics.coverMincard`, `Dynamics.IsDynCoverOf`, `Dynamics.netMaxcard`, `Dynamics.coverEntropy_eq_iSup_netEntropyEntourage`, `lebesgue_number_lemma`; Layer 1.1.
 
 ### 1.3 Entropy of iterates and inverses
 
@@ -182,7 +189,7 @@ Its API:
 
 - On a compact space expansivity is independent of the metric (the constant changes), and passes to T⁻¹ with the same constant and to T^k, k ≠ 0, with a smaller constant.
 - On a compact space, for every ε > 0 there is N such that d(x, y) < ε whenever d(T^n x, T^n y) ≤ c for all |n| ≤ N (BowenPeriodicPoints1971, Lemma 2.4, lines 98–100).
-- A uniformly continuous map T of a compact metric space is entropy-expansive at scale ε > 0 when `Dynamics.coverEntropy` T Φ_ε(x) = 0 for every x, where Φ_ε(x) is the set of points whose forward orbit stays within ε of that of x (BowenEntropyExpansive1972, lines 55–56); for a homeomorphism of a compact space the two-sided set Γ_ε(x) of §1.1 may be used instead (BowenEntropyExpansive1972, Corollary 2.3, line 188). An entropy-expansive map of a compact metric space has finite entropy, equal to its spanning-set entropy at the entourage {d ≤ ε}: `Dynamics.coverEntropy` T Set.univ = `Dynamics.coverEntropyEntourage` T Set.univ {d ≤ ε} < ∞ (BowenEntropyExpansive1972, Theorem 2.4, lines 192–193; the entropy at a fixed scale is finite on a compact metric space because the itineraries through a finite cover by N balls of radius ε/2 give at most N^n points that (n, ε)-span X). In particular an expansive homeomorphism with constant c is entropy-expansive at every scale ε < c, since Γ_ε(x) = {x}, so it has finite entropy equal to the entropy at any entourage {d ≤ ε} with ε < c, and it has finitely many points of each period.
+- A uniformly continuous map T of a compact metric space is entropy-expansive at scale ε > 0 when `Dynamics.coverEntropy` T Φ_ε(x) = 0 for every x, where Φ_ε(x) is the set of points whose forward orbit stays within ε of that of x (BowenEntropyExpansive1972, lines 55–56); for a homeomorphism of a compact space the two-sided set Γ_ε(x) of §1.1 may be used instead (BowenEntropyExpansive1972, Corollary 2.3, line 188). An entropy-expansive map of a compact metric space has finite entropy, equal to its spanning-set entropy at the entourage {d ≤ ε}: `Dynamics.coverEntropy` T Set.univ = `Dynamics.coverEntropyEntourage` T Set.univ {d ≤ ε} < ∞ (BowenEntropyExpansive1972, Theorem 2.4, lines 192–193, for the equality; the entropy at the fixed entourage {d ≤ ε} of the compact space is finite by Mathlib's `Dynamics.coverEntropyEntourage_finite_of_isCompact_invariant`). In particular an expansive homeomorphism with constant c is entropy-expansive at every scale ε < c, since Γ_ε(x) = {x}, so it has finite entropy equal to the entropy at any entourage {d ≤ ε} with ε < c, and it has finitely many points of each period.
 
 **Checks.**
 
@@ -191,7 +198,7 @@ Its API:
 - The identity of a finite metric space is expansive with any c below the least distance, while the identity of [0, 1] is not.
 - The identity of [0, 1] is entropy-expansive at every scale although it is not expansive (Φ_ε(x) is a closed interval, on which the identity has entropy 0), so finiteness of entropy is the conclusion for the wider class, while finiteness of the sets of periodic points needs expansivity itself.
 
-*Needs:* Mathlib `Dynamics.coverEntropy`, `Dynamics.coverEntropyEntourage`; Layer 1.1.
+*Needs:* Mathlib `Dynamics.coverEntropy`, `Dynamics.coverEntropyEntourage`, `Dynamics.coverEntropyEntourage_finite_of_isCompact_invariant`; Layer 1.1.
 
 ### 1.6 Bowen–Walters expansive flows
 
@@ -226,7 +233,7 @@ Its API:
 
 - The full shift is mixing: cylinders U, V of length m meet after n ≥ m steps.
 - An irrational rotation is transitive but not mixing: a short arc U returns near itself only along a sparse set of times; the swap of two points is transitive and not mixing.
-- The constant-roof suspension (roof 1) of any homeomorphism is not mixing: a thin flow box U at height 0 meets a flow box V at height 1/2 only at times in 1/2 + ℤ up to the box widths.
+- The constant-roof suspension (roof 1) of any homeomorphism of a nonempty compact metric space is not mixing: a thin flow box U at height 1/4 meets a flow box V at height 3/4 only at times in 1/2 + ℤ up to the box widths, so not at the large integer times. On the empty space the suspension is empty and mixing holds vacuously, since there are no nonempty open sets.
 
 *Needs:* Mathlib `AddAction.IsTopologicallyTransitive`, `Flow.fromIter`, `Flow.toAddAction`.
 
@@ -300,15 +307,16 @@ Its API:
 
 ### 2.2 Spanning-set and open-cover pressure
 
-Prove that for a continuous map T of a nonempty compact Hausdorff space and a continuous potential φ, P_T(φ) also equals (a) the supremum over entourages U of the limsup of (1/n) log of the infimum over finite (n, U)-spanning sets s (`Dynamics.IsDynCoverOf`) of Σ_{x∈s} exp(S_nφ(x)), and (b) the supremum over finite open covers 𝒰 of the limit of (1/n) log of the infimum over subcovers 𝒱 of 𝒰^n of Σ_{A∈𝒱} sup_A exp(S_nφ) (Walters1982, Section 9.1; Misiurewicz1976, lines 96–102 for the separated form). The comparisons use a modulus of uniform continuity of φ: a maximal separated set spans, a minimal spanning set meets each member of a fine subcover, and entourage balls of a Lebesgue entourage refine the cover; the errors are at most n times the oscillation of φ on U-close pairs, which vanishes in the growth rate as U shrinks.
+Prove that for a continuous map T of a nonempty compact Hausdorff space and a continuous potential φ, P_T(φ) also equals (a) the supremum over entourages U of the limsup of (1/n) log of the infimum over finite (n, U)-spanning sets s (`Dynamics.IsDynCoverOf`) of Σ_{x∈s} exp(S_nφ(x)), and (b) the limit of p(T, φ, 𝒰) as the finite open cover 𝒰 becomes fine (Walters1982, Section 9.1; Misiurewicz1976, lines 96–102 for the separated form). Here p_n(T, φ, 𝒰) is the infimum over subcovers 𝒱 of 𝒰^n of Σ_{A∈𝒱} sup_A exp(S_nφ); it is submultiplicative in n and at least e^{n min φ}, so p(T, φ, 𝒰) = lim (1/n) log p_n(T, φ, 𝒰) exists and is real. "Becomes fine" means: when P_T(φ) is finite, for every ε > 0 there is an entourage V with |p(T, φ, 𝒰) − P_T(φ)| ≤ ε for every finite open cover 𝒰 by V-small sets (U × U ⊆ V for U ∈ 𝒰), and, when P_T(φ) = ∞, for every real a there is V with p(T, φ, 𝒰) ≥ a for all such 𝒰. Precisely, for a finite open cover 𝒰 by V-small sets and an entourage W ⊇ V, the limsup of (1/n) log Z_n(φ, W) is at most p(T, φ, 𝒰), and p(T, φ, 𝒰) ≤ P_T(φ) + osc_V(φ), where osc_V(φ) is the supremum of |φ(x) − φ(y)| over (x, y) ∈ V. The first bound holds because a member of 𝒰^n contains at most one point of an (n, W)-separated set. For the second, `lebesgue_number_lemma` gives an entourage L each of whose balls lies in a member of 𝒰, so each n-step L-ball lies in a member of 𝒰^n, along which S_nφ exceeds its value at the centre by at most n·osc_V(φ); hence p_n(T, φ, 𝒰) is at most e^{n osc_V(φ)} times the spanning sum of (a) at L. Both bounds tend to P_T(φ) as V shrinks, since osc_V(φ) → 0 by uniform continuity of φ on the compact space. The supremum of p(T, φ, 𝒰) over all finite open covers is not the pressure: a coarse member carries the largest value of exp(S_nφ) found anywhere on it.
 
 **Checks.**
 
-- For φ = 0 all three forms reduce to the three entropies of §1.2, the spanning form being Mathlib's definition.
-- For the identity of an m-point space all three give max φ.
-- Replacing sup_A by inf_A in the open-cover form changes the value at a fixed cover (the identity of two points with the single cover {X} gives min φ instead of max φ); the supremum is the correct choice.
+- For φ = 0 all three forms reduce to the three entropies of §1.2, the spanning form being Mathlib's definition; for φ = 0 refining a cover never lowers p(T, 0, 𝒰), which is why §1.2 may take a supremum over all covers.
+- For the identity of an m-point discrete space all three give max φ: the cover by points is V-small for V the diagonal and has p_n = Σ_x e^{nφ(x)}.
+- Let X be the disjoint union of a point p fixed by T and the full two-shift, with φ(p) = 2 and φ = 0 on the shift, so P_T(φ) = max(2, log 2) = 2. The coarse cover by U_i = {p} ∪ {x_0 = i}, i = 0, 1, has every member of 𝒰^n containing p, so p_n = 2^n e^{2n} and p(T, φ, 𝒰) = 2 + log 2 ≈ 2.693 > P_T(φ); the fine cover {p}, {x_0 = 0}, {x_0 = 1} gives p_n = e^{2n} + 2^n and p = 2. A supremum over all covers would give at least 2 + log 2.
+- At the coarse cover {X} of the identity of two points a, b, using sup_A gives max φ and using inf_A gives min φ; along fine covers both versions converge to P = max φ, because within a V-small member S_nφ varies by at most n·osc_V(φ).
 
-*Needs:* Mathlib `Dynamics.IsDynCoverOf`, `Dynamics.coverMincard`; Layers 1.2, 2.1.
+*Needs:* Mathlib `Dynamics.IsDynCoverOf`, `Dynamics.coverMincard`, `lebesgue_number_lemma`; Layers 1.2, 2.1.
 
 ### 2.3 Basic properties of pressure
 
@@ -383,7 +391,7 @@ Its API:
 
 Prove, for a measurable map T of a measurable space and μ ∈ M(T):
 
-- for finite partitions P and Q, hμ(T, P) ≤ hμ(T, Q) + Hμ(P | Q) (Walters1982, Theorem 4.12, and its use in Theorem 8.3): by the chain rule of GeometryOfNumbersAndQuadraticArithmetic §4.2, Hμ(Pⁿ) ≤ Hμ(Pⁿ ∨ Qⁿ) = Hμ(Qⁿ) + Hμ(Pⁿ | Qⁿ) ≤ Hμ(Qⁿ) + Σ_{i<n} Hμ(T^{−i}P | T^{−i}Q) = Hμ(Qⁿ) + n Hμ(P | Q), where Pⁿ is the n-fold join of the T^{−i}P, the middle step uses that conditional entropy is subadditive in its first argument and decreases when the conditioning is refined (Jensen's inequality for t ↦ −t log t, proved here), and the last step is the invariance of μ; divide by n and let n → ∞;
+- for finite partitions P and Q, hμ(T, P) ≤ hμ(T, Q) + Hμ(P | Q) (Walters1982, Theorem 4.12, and its use in Theorem 8.3): by the finite-label chain rule of ProbabilisticAndMetricNumberTheory §5.1a, Hμ(Pⁿ) ≤ Hμ(Pⁿ ∨ Qⁿ) = Hμ(Qⁿ) + Hμ(Pⁿ | Qⁿ) ≤ Hμ(Qⁿ) + Σ_{i<n} Hμ(T^{−i}P | T^{−i}Q) = Hμ(Qⁿ) + n Hμ(P | Q), where Pⁿ is the n-fold join of the T^{−i}P; the middle step expands Hμ(Pⁿ | Qⁿ) by the chain rule into the terms Hμ(T^{−i}P | Qⁿ ∨ P^i) and bounds each by Hμ(T^{−i}P | T^{−i}Q) because conditional entropy decreases when the conditioning σ-algebra is enlarged (ArithmeticDynamics §2.7, applied to the σ-algebras of finite labels, where its conditional entropy is the supplied one), and the last step is the invariance of μ; divide by n and let n → ∞;
 - for μ, ν ∈ M(T) and 0 ≤ p ≤ 1, the measure entropy of pμ + (1 − p)ν is p hμ(T) + (1 − p) hν(T) in [0, ∞] (Walters1982, Theorem 8.1);
 - for a measurable family x ↦ μ_x of measures in M(T) with integral μ and a finite partition ξ, hμ(T, ξ) ≥ ∫ hμ_x(T, ξ) dμ(x).
 
@@ -394,9 +402,10 @@ For a finite partition the entropy of the mixture lies between p Hμ + (1 − p)
 - For the identity on two points all invariant measures have entropy 0, and so does every mixture, although (δ_a + δ_b)/2 has partition entropy log 2 for the partition into points: the log 2 defect lives at finite n only.
 - On the full two-shift, the mixture with weights 1/2 of the Bernoulli measures (1/2, 1/2) and (1/3, 2/3) has entropy (1/2) log 2 + (1/2)(log 3 − (2/3) log 2), about 0.6648, while the Bernoulli measure of the averaged weights (5/12, 7/12) has entropy about 0.6792: entropy of a mixture is not the entropy of the averaged process.
 - With p = 0 or 1, or ν = μ, the identity is trivial.
+- A fair bit X has finite-label entropy log 2 (ProbabilisticAndMetricNumberTheory §5.1a), conditional entropy log 2 given the trivial label and 0 given X itself: the decrease under refinement of the conditioning that the conditional inequality uses runs from log 2 down to 0, never upward.
 - For the conditional inequality on the full two-shift with the Bernoulli measure (1/2, 1/2): P the partition by x_0 and Q the trivial partition give hμ(T, P) = log 2 ≤ 0 + Hμ(P | Q) = log 2, equality; P the partition by (x_0, x_1) and Q the partition by x_0 give log 2 ≤ log 2 + log 2, with Hμ(P | Q) = log 2 ≠ 0, so the inequality is strict there and a version without the conditional term would be false (hμ(T, P) = log 2 > 0 = hμ(T, {X})).
 
-*Needs:* GeometryOfNumbersAndQuadraticArithmetic §4.2 (`finitePartitionEntropy`, `conditionalPartitionEntropy` and its chain rule, `partitionEntropyRate`, `measureEntropy`); ArithmeticDynamics §2.6 (supremum over finite partitions); Layer 3.1.
+*Needs:* ProbabilisticAndMetricNumberTheory §5.1a (finite-label entropy, conditional entropy and their chain rule); GeometryOfNumbersAndQuadraticArithmetic §4.2 (`countablePartitionEntropy`, `conditionalPartitionEntropy`, `iteratedPartitionLabel`, `partitionEntropyRate`, `measureEntropy`); ArithmeticDynamics §2.6 (supremum over finite partitions) and §2.7 (decrease of conditional entropy under enlargement of the conditioning σ-algebra); Layer 3.1.
 
 ### 3.3 Entropy through fine partitions
 
@@ -414,7 +423,7 @@ The first item follows from Hμ(η | ξ_k) → 0 for every finite partition η (
 - For the identity map every rate is 0, and so is the limit.
 - For the trivial partition {X} the rate is 0: the first item needs the diameters to tend to 0, not merely the partitions to be finite.
 
-*Needs:* ArithmeticDynamics §2.6 (supremum over finite partitions), §2.7 (null-boundary partitions of small diameter); GeometryOfNumbersAndQuadraticArithmetic §4.2 (`conditionalPartitionEntropy` and its chain rule); Mathlib regularity of finite Borel measures on metric spaces; Layers 3.1, 3.2 (the conditional inequality).
+*Needs:* ArithmeticDynamics §2.6 (supremum over finite partitions), §2.7 (null-boundary partitions of small diameter); ProbabilisticAndMetricNumberTheory §5.1a (finite-label conditional entropy and its chain rule); Mathlib regularity of finite Borel measures on metric spaces; Layers 3.1, 3.2 (the conditional inequality).
 
 ### 3.4 Entropy of expansive homeomorphisms
 
@@ -428,7 +437,7 @@ The partition ξ is a two-sided generator: by expansivity and compactness the di
 **Checks.**
 
 - On the full two-shift (c = 1/2), the partition by the coordinates x_{−1}, x_0, x_1 has diameter 1/4 < c and rate H(p) = −p log p − (1 − p) log(1 − p) for the Bernoulli measure (p, 1 − p).
-- The normalised orbit measures of the periodic points of period n of the full two-shift converge to the Bernoulli measure (1/2, 1/2); they have entropy 0 while the limit has entropy log 2, so entropy is upper but not lower semicontinuous.
+- The uniform probability measures on Fix(T^n), the 2^n points of the full two-shift fixed by T^n, are invariant and converge to the Bernoulli measure (1/2, 1/2): for n ≥ m, a word of length m at m consecutive coordinates is read by exactly 2^{n−m} of these points, so every cylinder of length m has limit mass 2^{−m}. They have entropy 0 (finite support) while the limit has entropy log 2, so entropy is upper but not lower semicontinuous. The orbit measures of single periodic points do not converge to the Bernoulli measure in general: the orbit of (10^{n−1})^ℤ, of least period n, gives {x_0 = 1} mass 1/n → 0, and these measures converge to the point mass at 0^ℤ.
 - The identity of [0, 1] is not expansive, yet all its entropies vanish and the conclusion holds for another reason: expansivity is sufficient, not necessary.
 
 *Needs:* Mathlib `MeasureTheory.ProbabilityMeasure.tendsto_measure_of_null_frontier_of_tendsto`, `UpperSemicontinuous`; ArithmeticDynamics §2.7 (null-boundary partitions); Layers 1.5, 3.1, 3.3.
@@ -477,7 +486,7 @@ Prove that for a continuous map T of a nonempty compact Hausdorff uniform space,
 - For the identity of two points with φ(a) = 1, φ(b) = 0 and μ = (δ_a + δ_b)/2, the free energy is 1/2 and P = 1.
 - For φ = 0 on a compact metric space the inequality agrees with ArithmeticDynamics §2.7's comparison of hμ(T) with `Dynamics.coverEntropy`.
 
-*Needs:* GeometryOfNumbersAndQuadraticArithmetic §4.2 (`measureEntropy`, `finitePartitionEntropy`); ArithmeticDynamics §2.6; Mathlib regular measures; Layers 2.1, 3.1.
+*Needs:* GeometryOfNumbersAndQuadraticArithmetic §4.2 (`measureEntropy`, `partitionEntropyRate`); ProbabilisticAndMetricNumberTheory §5.1a (finite-label entropy); ArithmeticDynamics §2.6; Mathlib regular measures; Layers 2.1, 3.1.
 
 ### 4.2 Variational principle for pressure
 
@@ -493,13 +502,14 @@ Prove that for a continuous map T of a nonempty compact Hausdorff uniform space 
 
 ### 4.3 Variational principle for entropy and ergodic suprema
 
-Prove that h_top(T) is the supremum of hμ(T) over regular μ ∈ M(T) for a continuous map of a nonempty compact Hausdorff uniform space, and that on a compact metric space the suprema of §4.2 and of this section may be taken over ergodic μ only (Walters1982, Theorem 8.6 and Corollary 8.6.1; BCS2022, lines 45–51, for the statement). The ergodic reduction uses ArithmeticDynamics §2.7's ergodic decomposition: hμ(T) = ∫⁻ hμ_x(T) dμ and ∫φ dμ = ∫∫φ dμ_x dμ, so some ergodic component has free energy at least that of μ.
+Prove that h_top(T) is the supremum of hμ(T) over regular μ ∈ M(T) for a continuous map of a nonempty compact Hausdorff uniform space, and that on a compact metric space the suprema of §4.2 and of this section may be taken over ergodic μ only (Walters1982, Theorem 8.6 and Corollary 8.6.1; BCS2022, lines 45–51, for the statement). The ergodic reduction uses ArithmeticDynamics §2.7's ergodic decomposition: hμ(T) = ∫⁻ hμ_x(T) dμ and ∫φ dμ = ∫∫φ dμ_x dμ, so the free energy of μ is the integral of the free energies of its components (an extended integral, the potential term being bounded by max|φ|). For every real a below the free energy of μ, the components with free energy greater than a therefore form a set of positive μ-measure; this gives the supremum over ergodic measures without asserting that some component attains an infinite free energy.
 
 **Checks.**
 
 - The full shift on k symbols has h_top = log k, attained by the ergodic Bernoulli measure (1/k, …, 1/k).
 - The identity has h_top = 0 and every measure, ergodic or not, has entropy 0.
 - On the disjoint union of a fixed point and a full two-shift, the measure giving weight 1/2 to each part has entropy (log 2)/2 < log 2, and the supremum log 2 is attained by an ergodic measure on the shift.
+- Let X be the one-point compactification of the disjoint union over n ≥ 1 of full shifts on 2^{2^n} symbols, scaled so that the diameters of the pieces tend to 0, with T fixing the added point, and let μ give weight 2^{−n} to the uniform Bernoulli measure of the n-th piece. Each ergodic component has finite entropy 2^n log 2, while hμ(T) = Σ_n 2^{−n} 2^n log 2 = ∞: no component attains the free energy of μ (with φ = 0), but components exceed every real a, as the threshold argument uses.
 
 *Needs:* ArithmeticDynamics §2.7 (ergodic decomposition); Layers 3.1, 4.2.
 
@@ -548,29 +558,17 @@ Prove that if T is a continuous map of a nonempty compact metric space and μ �
 - The full shift is expansive and has a measure of maximal entropy, the uniform Bernoulli measure.
 - For every finite r ≥ 1 and every manifold of dimension at least 2 there is a C^r diffeomorphism with finite topological entropy and no measure of maximal entropy (Buzzi2014, Corollary 1, lines 114–116); the upper semicontinuity hypothesis cannot be dropped.
 - For the identity of [0, 1] (not expansive) and continuous φ, ES(φ) is the set of measures on the maximum set of φ, nonempty because entropy vanishes identically and is trivially upper semicontinuous.
-- When h_top(T) = ∞ the statement still applies: P_T(φ) = ∞ by §2.3, ∫φ dμ is finite for every μ, so ES_T(φ) is exactly the set of invariant measures of infinite entropy, which upper semicontinuity makes nonempty and closed; a measure of finite entropy is then never an equilibrium state. Upper semicontinuity itself fails in the natural infinite-entropy examples (the shift on [0, 1]^ℤ carries product measures on 2^k equally spaced values, of entropy k log 2, converging to a point mass of entropy 0), which is why the finiteness hypothesis was redundant rather than harmless: it is upper semicontinuity that does the work.
+- When h_top(T) = ∞ the statement still applies: P_T(φ) = ∞ by §2.3, ∫φ dμ is finite for every μ, so ES_T(φ) is exactly the set of invariant measures of infinite entropy, which upper semicontinuity makes nonempty and closed; a measure of finite entropy is then never an equilibrium state. Upper semicontinuity itself fails in the natural infinite-entropy examples: on the shift of [0, 1]^ℤ, the Bernoulli product μ_k of the uniform measure on the 2^k values j/2^{2k}, 0 ≤ j < 2^k, has entropy k log 2, and since every value is below 2^{−k} the μ_k converge to the point mass at 0^ℤ, of entropy 0. Equally spaced values j/(2^k − 1) would instead converge to the product of Lebesgue measures, of infinite entropy, and would not exhibit the failure. It is upper semicontinuity, not finiteness of entropy, that the existence proof uses.
 
 *Needs:* Mathlib `UpperSemicontinuous`, `MeasureTheory.ProbabilityMeasure` (compactness); Layers 3.1, 3.4, 4.2, 4.4.
 
-### 4.7 Newhouse's theorem, as an input
-
-State, without proof, Newhouse's theorem: for a C^∞ map f of a compact C^∞ manifold, μ ↦ hμ(f) is upper semicontinuous on M(f); consequently, by §4.6, which assumes no finiteness of entropy, every continuous potential has an equilibrium state for f, and in particular f has a measure of maximal entropy (Newhouse1989, Theorem 1; BCS2022, lines 59–60, and Buzzi2014, lines 25–27, for the statement). Its proof, through Yomdin's theory of C^r volume growth, is outside this roadmap: the statement is an input recorded so that consumers can state their hypotheses against the definitions here, and no target of this roadmap uses it.
-
-**Checks.**
-
-- Hyperbolic toral automorphisms are C^∞ and expansive, and §3.4 already gives upper semicontinuity for them, consistent with the input.
-- For finite r the conclusion fails (Buzzi2014, Corollary 1), so the C^∞ hypothesis is not cosmetic.
-- The identity of a compact manifold is C^∞ with all entropies zero, the degenerate case.
-
-*Needs:* Layers 3.1, 4.6.
-
-### 4.8 Variational principle and equilibrium states for flows
+### 4.7 Variational principle and equilibrium states for flows
 
 Define an equilibrium state of a continuous F for a continuous flow g on a compact metric space as μ ∈ M(g) with hμ(g^1) + ∫F dμ = P_g(F), and write ES_g(F) for their set (BowenRuelle1975, lines 200–201; TsujiiZhang2023, Definition 3.5, lines 485–495, which takes the variational form as the definition of the pressure). Prove the variational principle P_g(F) = sup over μ ∈ M(g) of hμ(g^1) + ∫F dμ (BowenRuelle1975, lines 192–199). The bound ≤ P_g(F) for μ ∈ M(g) follows from §2.4 and §4.1 applied to g^1 and F_1, with ∫F_1 dμ = ∫F dμ for μ ∈ M(g). For the reverse, §4.2 for g^1 gives μ' ∈ M(g^1) with free energy for (g^1, F_1) close to P_{g^1}(F_1); average it to μ = ∫₀¹ (g^s)_*μ' ds ∈ M(g). Then ∫F dμ = ∫F_1 dμ', and hμ(g^1) ≥ hμ'(g^1): each (g^s)_*μ' has the entropy of μ' because g^s commutes with g^1, and for partitions ξ_k of diameters tending to 0, hμ(g^1, ξ_k) ≥ ∫₀¹ h_{(g^s)_*μ'}(g^1, ξ_k) ds by §3.2's concavity, so §3.3 and Fatou's lemma conclude.
 
 Its API:
 
-- ES_g(F) is convex; its extreme points are exactly its flow-ergodic members; it is nonempty and compact when μ ↦ hμ(g^1) is upper semicontinuous on M(g), in particular for Bowen–Walters expansive flows (§3.5).
+- ES_g(F) is convex; its extreme points are exactly its flow-ergodic members; when X is nonempty and μ ↦ hμ(g^1) is upper semicontinuous on M(g), ES_g(F) is nonempty and compact, in particular for Bowen–Walters expansive flows on a nonempty compact metric space (§3.5). On the empty space M(g) and ES_g(F) are empty and upper semicontinuity holds vacuously, so nonemptiness of X is needed.
 - ES_g(F + c) = ES_g(F).
 - Measures of maximal entropy of g are the equilibrium states of F = 0.
 
@@ -582,13 +580,13 @@ Its API:
 
 *Needs:* Mathlib `ErgodicVAdd`, `Flow.toAddAction`; Layers 2.4, 3.1, 3.2, 3.3, 3.5, 4.1, 4.2, 4.5.
 
-### 4.9 Time changes and flow coboundaries
+### 4.8 Time changes and flow coboundaries
 
 Prove, for a continuous flow g on a compact metric space with h_top(g) < ∞ and a continuous F (BowenRuelle1975, lines 213–219 and 409–413; TsujiiZhang2023, lines 106–109):
 
 - for t > 0 and μ ∈ M(g), μ ∈ ES_g(F) iff μ is an equilibrium state of F_t for the map g^t;
 - for the rescaled flow g_a(t) = g(at) with a > 0, ES_{g_a}(aF) = ES_g(F) and P_{g_a}(aF) = a P_g(F);
-- if F' = F + c + L_gψ for a real c and a continuous ψ differentiable along the flow with continuous derivative L_gψ, then P_g(F') = P_g(F) + c and ES_g(F') = ES_g(F); on a manifold every C¹ function ψ qualifies, with L_gψ = dψ(X).
+- if F' = F + c + L_gψ for a real c and a continuous ψ differentiable along the flow with continuous derivative L_gψ, then P_g(F') = P_g(F) + c and ES_g(F') = ES_g(F); when g is a C¹ flow on a manifold, every C¹ function ψ qualifies, with L_gψ = dψ(X). For a merely continuous flow a C¹ function need not be differentiable along the flow, and only the explicit hypothesis applies.
 
 The first item combines Abramov's formula (§3.6), ∫F_t dμ = t∫F dμ and P_{g^t}(F_t) = t P_g(F) (§2.4): the free energy of μ for (g^t, F_t) is t times its free energy for (g, F), and the maximum over the larger set M(g^t) is t P_g(F). The coboundary item uses ∫L_gψ dμ = d/dt ∫ψ∘g^t dμ = 0 for μ ∈ M(g).
 
@@ -597,8 +595,9 @@ The first item combines Abramov's formula (§3.6), ∫F_t dμ = t∫F dμ and P_
 - On a periodic orbit of period p, ∫₀^p L_gψ(g^s x) ds = ψ(g^p x) − ψ(x) = 0, so the coboundary has zero integral for the flow-invariant measure.
 - For the constant-roof suspension of the full two-shift, F = 1 and F' = 1 + L_gψ have the same equilibrium state, the measure of maximal entropy, and pressure log 2 + 1.
 - For the flow on a periodic orbit of period 1 and t = 1, every point mass of the orbit is an equilibrium state of F_1 for g^1 but is not in M(g): the first item is an equivalence for g-invariant μ only.
+- For the unit-speed rotation flow of ℝ/ℤ and ψ(s) = sin(2πs), L_gψ = 2π cos(2πs). For the flow conjugate to this rotation by a homeomorphism which, in a local coordinate near 0, is s ↦ s^{1/3}, the orbit of 0 is t ↦ t^{1/3} near t = 0, so the smooth function equal to that coordinate near 0 has difference quotients t^{−2/3} along the orbit and is not differentiable along the flow: the C¹ clause needs a C¹ flow.
 
-*Needs:* Layers 2.4, 3.6, 4.8.
+*Needs:* Layers 2.4, 3.6, 4.7.
 
 ### Examples
 
@@ -618,7 +617,7 @@ Its API:
 
 - A measure with the (lower) Gibbs property at arbitrarily small scales gives positive mass to every nonempty open set.
 - If μ is Gibbs for φ at a scale below an expansivity constant of T, then μ is an equilibrium state of φ.
-- If T is expansive and ε is below an expansivity constant, two Gibbs measures μ, ν for the same φ at scale ε are mutually absolutely continuous with bounded densities; if one of them is ergodic they are equal (BowenPeriodicPoints1971, Lemma 6.4, lines 615–618, for the last step). The Gibbs bounds pass to every smaller scale ε' < ε with other constants, since by uniform expansivity (BowenPeriodicPoints1971, Lemma 2.4, lines 98–100) there is N with T^{−N}B_{n+2N}(T^{−N}x, ε) ⊆ B_n(x, ε'), and invariance gives μ(B_n(x, ε')) ≥ K⁻¹e^{−2N(|P_T(φ)| + sup|φ|)} exp(−nP_T(φ) + S_nφ(x)). The two-sided balls T^jB_{2j+1}(T^{−j}x, r) have the same bounds by invariance; for a closed set A, a Vitali covering by such balls of radius ε/5 about points of A, pairwise disjoint and with the balls of radius ε covering A, gives μ(A) ≤ K K_{ε/5} ν(N_j(A)) with N_j(A) the two-sided neighbourhood of A of radius ε/5 at order j; these neighbourhoods decrease to A as j → ∞ because r < c forces Γ_r(x) = {x}, so μ(A) ≤ K K_{ε/5} ν(A) on closed sets and, by regularity, on Borel sets.
+- If T is expansive and ε is below an expansivity constant, two Gibbs measures μ, ν for the same φ at scale ε are mutually absolutely continuous with bounded densities; if one of them is ergodic they are equal (BowenPeriodicPoints1971, Lemma 6.4, lines 615–618, for the last step). The Gibbs bounds pass to every smaller scale ε' < ε with other constants, since by uniform expansivity (BowenPeriodicPoints1971, Lemma 2.4, lines 98–100) there is N with T^N(B_{n+2N}(T^{−N}x, ε)) ⊆ B_n(x, ε') for every n ≥ 1: y lies in the left side iff the orbits of x and y are ε-close at the times −N, …, n + N − 1, so for 0 ≤ j < n they are ε-close at all times within N of j. Invariance gives μ(T^N(A)) = μ(A), hence μ(B_n(x, ε')) ≥ K⁻¹e^{−2N(|P_T(φ)| + sup|φ|)} exp(−nP_T(φ) + S_nφ(x)). The two-sided balls T^jB_{2j+1}(T^{−j}x, r) have the same bounds by invariance; for a closed set A, a Vitali covering by such balls of radius ε/5 about points of A, pairwise disjoint and with the balls of radius ε covering A, gives μ(A) ≤ K K_{ε/5} ν(N_j(A)) with N_j(A) the two-sided neighbourhood of A of radius ε/5 at order j; these neighbourhoods decrease to A as j → ∞ because r < c forces Γ_r(x) = {x}, so μ(A) ≤ K K_{ε/5} ν(A) on closed sets and, by regularity, on Borel sets.
 - μ is Gibbs for φ iff it is Gibbs for φ + c, and iff it is Gibbs for φ + ψ∘T − ψ with K multiplied by e^{2 sup|ψ|}.
 
 **Checks.**
@@ -626,7 +625,8 @@ Its API:
 - The uniform Bernoulli measure on the full two-shift with φ = 0 and ε = 1/2: B_n(x, 1/2) is the cylinder fixing x_{−1}, …, x_n, of measure 2^{−(n+2)}, and exp(n log 2) = 2^n, so the product is 1/4 for all x and n: Gibbs with K = 4.
 - For the swap of two points a, b and small ε, B_n(x, ε) = {x} has measure 1/2, P(φ) = (φ(a) + φ(b))/2, and |nP − S_nφ(x)| ≤ |φ(a) − φ(b)|/2, so the unique invariant measure is Gibbs.
 - The point mass at a fixed point of the full two-shift is not Gibbs for φ = 0: Bowen balls of other points have measure 0.
-- Without expansivity two Gibbs measures need not be equivalent: for the identity of [0, 1], φ = 0 and ε = 1, every Bowen ball is [0, 1], P = 0, and every invariant measure is Gibbs with K = 1, yet δ₀ and δ₁ are mutually singular; at ε = 1/10 Lebesgue measure and the uniform measure on the twenty points k/20 are both Gibbs with K = 20 and are mutually singular.
+- Without expansivity two Gibbs measures need not be equivalent: for the identity of [0, 1], φ = 0 and ε = 2, every open Bowen ball is [0, 1], P = 0, and every invariant measure is Gibbs with K = 1, yet δ₀ and δ₁ are mutually singular; at ε = 1 the ball B_n(0, 1) = [0, 1) has δ₁-measure 0, so δ₁ is not Gibbs at that scale. At ε = 1/10 Lebesgue measure and the uniform measure on the twenty points k/20, 0 ≤ k < 20, are both Gibbs with K = 20 (each ball has Lebesgue measure between 1/10 and 1/5 and contains between one and four of the points) and are mutually singular.
+- The smaller-scale transfer translates forward: on the full two-shift with x = 0^ℤ, N = 3, ε = 1/2, ε' = 1/8 and n = 1, let y have its only 1 at coordinate 0. Then T^{−3}y has its 1 at coordinate 3, d(T^{−3}y, 0) = 1/8 < 1/2, but at time 3 the points T^3T^{−3}y = y and 0 are at distance 1, so y ∉ T^3(B_7(T^{−3}0, 1/2)), as required since y ∉ B_1(0, 1/8). The set T^{−3}(B_7(T^{−3}0, 1/2)) compares T^{k+3}y with T^{k−3}0 and contains y.
 
 *Needs:* Layers 1.1, 1.5, 2.3, 3.1.
 
@@ -652,7 +652,7 @@ Prove that if X is a nonempty compact metric space, g a Bowen–Walters expansiv
 - The flow on a periodic orbit satisfies the hypotheses, and its unique invariant measure is the equilibrium state of every potential.
 - The identity flow of a two-point space is expansive but has no weak specification, and every probability measure on it is a measure of maximal entropy.
 
-*Needs:* Layers 1.6, 1.8, 1.9, 3.5, 4.8, 5.1.
+*Needs:* Layers 1.6, 1.8, 1.9, 3.5, 4.7, 5.1.
 
 ### Examples
 
@@ -672,7 +672,8 @@ Define, for a homeomorphism f of a compact metric space X and δ > 0, the local 
 
 Its API:
 
-- For 2δ ≤ δ* and d(x, z) < e(δ), the intersection W^s_δ(x) ∩ W^u_δ(z) is a single point [x, z] (two such points stay 2δ-close along the whole orbit and coincide by §6.2's expansivity); the bracket is continuous, [x, x] = x, and f[x, z] = [fx, fz] whenever both sides are defined.
+- Two points whose orbits stay δ*-close at all times n ∈ ℤ coincide: if d(f^n y, f^n y') ≤ δ* for every n ∈ ℤ, then f^n y' ∈ W^u_{δ*}(f^n y), so (A3) gives d(y, y') ≤ cλ^n d(f^n y, f^n y') ≤ cλ^n δ* for every n ≥ 0, hence y = y'.
+- For 2δ ≤ δ* and d(x, z) < e(δ), the intersection W^s_δ(x) ∩ W^u_δ(z) is a single point [x, z]: two such points stay 2δ-close at all times, so they coincide by the previous item. The bracket is continuous, [x, x] = x, and f[x, z] = [fx, fz] whenever both sides are defined.
 - f⁻¹ has hyperbolic local product structure with the roles of W^s and W^u exchanged, and so does f^k for k ≥ 1 with constant λ^k.
 - The definitions depend on the metric only up to bi-Lipschitz equivalence, which changes c and e but not λ.
 
@@ -688,7 +689,7 @@ Its API:
 
 Prove, for a homeomorphism f of a compact metric space with hyperbolic local product structure:
 
-- f is expansive with constant δ* (BowenPeriodicPoints1971, Lemma 2.3, lines 96–97): if d(f^n x, f^n y) ≤ δ* for all n ∈ ℤ then f^n y ∈ W^u_{δ*}(f^n x) and d(x, y) ≤ cλ^n δ* for every n;
+- f is expansive with constant δ* (BowenPeriodicPoints1971, Lemma 2.3, lines 96–97): this is §6.1's coincidence of points whose orbits stay δ*-close at all times;
 - shadowing: for every β > 0 there is α > 0 such that every α-pseudo-orbit (x_n)_{n∈ℤ}, d(f x_n, x_{n+1}) < α, is β-shadowed by some point y, d(f^n y, x_n) ≤ β for all n, and the shadowing point is unique when 2β ≤ δ*, two shadowing points staying 2β-close along their whole orbits (Bowen1975, Chapter 3; KatokHasselblatt1995, Section 18.1);
 - closing: for every ε > 0 there are φ(ε) > 0 and R(ε) such that if m ≥ R(ε) and d(f^m y, y) < φ(ε), there is z with f^m z = z and d(f^k z, f^k y) ≤ ε for 0 ≤ k ≤ m (BowenPeriodicPoints1971, 2.5, lines 101–104);
 - if f is topologically transitive, its periodic points are dense, so f satisfies Axiom A*.
@@ -736,7 +737,7 @@ Prove that for a homeomorphism f of a compact metric space with hyperbolic local
 
 ### 6.5 Flows with hyperbolic local product structure
 
-Define, for a continuous flow g without fixed points on a compact metric space and δ > 0, the local strong stable set W^s_δ(x) of points y with d(g^t x, g^t y) ≤ δ for all t ≥ 0 and d(g^t x, g^t y) → 0, and the local strong unstable set W^u_δ(x) symmetrically in backward time (BowenRuelle1975, lines 96–103). Say g has hyperbolic local product structure when (F2) for every small δ > 0 there is e(δ) > 0 such that whenever d(x, z) < e(δ) there is a unique v ∈ [−δ, δ] with W^s_δ(g^v x) ∩ W^u_δ(z) nonempty, and (F3) there are δ* > 0, κ > 0 and c ≥ 1 with d(g^t x, g^t y) ≤ ce^{−κt} d(x, y) for y ∈ W^s_{δ*}(x) and d(g^{−t} x, g^{−t} y) ≤ ce^{−κt} d(x, y) for y ∈ W^u_{δ*}(x), for all t ≥ 0 (BowenRuelle1975, lines 96–108 and 303–307, where these structures are used for basic sets; FH2019, Part II).
+Define, for a continuous flow g without fixed points on a compact metric space and δ > 0, the local strong stable set W^s_δ(x) of points y with d(g^t x, g^t y) ≤ δ for all t ≥ 0 and d(g^t x, g^t y) → 0, and the local strong unstable set W^u_δ(x) symmetrically in backward time (BowenRuelle1975, lines 96–103). Say g has hyperbolic local product structure when (F2) for every small δ > 0 there is e(δ) > 0 such that whenever d(x, z) < e(δ) there is a unique v ∈ [−δ, δ] with W^s_δ(g^v x) ∩ W^u_δ(z) nonempty, and (F3) there are δ* > 0, κ > 0 and c ≥ 1 with d(g^t x, g^t y) ≤ ce^{−κt} d(x, y) for y ∈ W^s_{δ*}(x) and d(g^{−t} x, g^{−t} y) ≤ ce^{−κt} d(x, y) for y ∈ W^u_{δ*}(x), for all t ≥ 0. The stable and unstable sets are those of BowenRuelle1975, lines 96–108; the axioms (F2) and (F3) are this roadmap's flow analogue of Bowen's (A2) and (A3) (BowenPeriodicPoints1971, lines 74–80), and §8.5 proves them for locally maximal hyperbolic sets of C¹ flows (FH2019, Part II).
 
 Its API:
 
@@ -748,7 +749,7 @@ Its API:
 
 - The constant-roof suspension (roof 1) of the full two-shift: W^s_δ([s, x]) consists of the points [s, y] with y ∈ W^s(x) of the shift, the bracket combines coordinates as in §6.1 at matched heights, and v is the height difference.
 - The flow on a periodic orbit: W^s_δ(x) = W^u_δ(x) = {x}, and every z near x is g^v x for a unique small v, so (F2) and (F3) hold.
-- The linear flow of irrational slope on ℝ²/ℤ² fails (F3): transverse distances are preserved for all time, so the strong stable sets reduce to points while (F2) fails.
+- The linear flow of irrational slope on ℝ²/ℤ² satisfies (F3) vacuously but fails (F2): distances are preserved for all time, so the convergence condition reduces both strong sets to {x}, and (F3) only tests y = x, where it reads 0 ≤ 0; a point z near x off the orbit segment g^{[−δ, δ]}x is not g^v x for any small v, so W^s_δ(g^v x) ∩ W^u_δ(z) is empty.
 
 *Needs:* Mathlib `Flow`, `Flow.reverse`; Layer 1.1.
 
@@ -773,13 +774,14 @@ Expansivity follows from (F3) as in §6.2, the time shift absorbing the reparame
 
 ### 6.7 Hölder potentials have the Bowen property for flows
 
-Prove that for a continuous flow g on a compact metric space with hyperbolic local product structure and a Hölder φ, φ has the Bowen property for g (BowenRuelle1975, Appendix, Lemma A.2, lines 681–701, for C¹ potentials on hyperbolic sets, whose argument uses only the bracket and the exponential estimates; ClimenhagaThompson2016, lines 341–342). For y ∈ B_t(x, ε), z = [x, y] lies on W^s(g^v x) with |v| ≤ Cε and on W^u(y); the orbit integrals of φ along x and g^v x differ by at most 2|v| max|φ|, and those along g^v x, z and z, y differ by geometric sums as in §6.4.
+Prove that for a continuous flow g on a compact metric space with hyperbolic local product structure and a Hölder φ, φ has the Bowen property for g (BowenRuelle1975, Appendix, Lemma A.2, lines 681–701, for C¹ potentials on hyperbolic sets, whose argument uses only the bracket and the exponential estimates; ClimenhagaThompson2016, lines 341–342). Fix a small δ and take ε ≤ e(δ) of (F2). For y ∈ B_t(x, ε), z = [x, y] lies on W^s_δ(g^v x) with |v| ≤ δ and on W^u_δ(y); the orbit integrals of φ over [0, t] along x and g^v x differ by at most 2|v| max|φ| ≤ 2δ max|φ|, and those along g^v x, z and z, y differ by at most the geometric integrals ∫₀^∞ C(cδ)^θ e^{−κθs} ds each, as in §6.4. No bound of |v| by a multiple of d(x, y) is used: the abstract axioms give none.
 
 **Checks.**
 
 - A constant potential is Bowen with K = 0.
 - For the constant-roof suspension of the full two-shift, a potential of the zeroth symbol and the height that is Lipschitz in the height is Hölder and Bowen.
-- The potential L_gψ of a C¹ function on a manifold is Bowen by §1.9 whether or not the flow is hyperbolic: the Bowen property of coboundaries does not need this section.
+- For a C¹ flow on a manifold, the potential L_gψ of a C¹ function ψ is Bowen by §1.9 whether or not the flow is hyperbolic: the Bowen property of coboundaries does not need this section.
+- On the circle, the flow conjugate to the unit-speed rotation by a homeomorphism equal to s ↦ s³ near 0 satisfies (F2) and (F3) with singleton strong sets, and d(x, g^v x) = |v|³ for x = 0 and small v: the time shift is not bounded by a multiple of the distance, while |v| ≤ δ still holds and the bound 2δ max|φ| is what the proof uses.
 
 *Needs:* Mathlib `HolderWith`; Layers 1.9, 6.5.
 
@@ -797,7 +799,7 @@ Prove: (a) if f is a transitive homeomorphism of a nonempty compact metric space
 
 ### Examples
 
-The full shift and the constant-roof suspension of the full shift satisfy all axioms of this layer; the swap and the periodic orbit are the finite cases; the irrational rotation and the irrational linear flow fail the contraction axiom.
+The full shift and the constant-roof suspension of the full shift satisfy all axioms of this layer; the swap and the periodic orbit are the finite cases; the irrational rotation fails the contraction axiom (A3), and the irrational linear flow satisfies (F3) vacuously but fails the product axiom (F2).
 
 ### Dependencies
 
@@ -813,7 +815,7 @@ Define a compact set Λ ⊆ M with f(Λ) = Λ to be a hyperbolic set of a C¹ di
 
 Its API:
 
-- A closed f-invariant subset of a hyperbolic set is hyperbolic with the restricted splitting; a finite union of hyperbolic sets is hyperbolic (the splittings agree on overlaps by §7.4).
+- A closed subset Λ' ⊆ Λ with f(Λ') = Λ' of a hyperbolic set Λ is hyperbolic with the restricted splitting and the same constants. Finite unions are treated in §7.4, after uniqueness of the splitting.
 - A fixed point p is a hyperbolic set {p} iff the linear map Df_p has no complex eigenvalue of modulus 1, with E^s_p and E^u_p the sums of the generalised eigenspaces of eigenvalues of modulus less than and greater than 1.
 - Hyperbolicity is invariant under C¹ conjugacy: if h is a C¹ diffeomorphism, h(Λ) is hyperbolic for h∘f∘h⁻¹ with the pushed-forward splitting.
 
@@ -857,13 +859,14 @@ Prove that if Λ is a hyperbolic set of f for one continuous Riemannian metric w
 
 ### 7.4 Characterisation and uniqueness of the splitting
 
-Prove, for a hyperbolic set Λ of f and x ∈ Λ, that E^s_x = {v : |D(f^n)_x v| → 0 as n → ∞} = {v : sup_{n≥0} |D(f^n)_x v| < ∞}, and E^u_x is the corresponding set for backward iterates; hence any two splittings witnessing hyperbolicity coincide. For a hyperbolic set of a flow, E^s_x = {v : |Dg^t v| → 0 as t → ∞}, E^s_x ⊕ ℝX(x) = {v : sup_{t≥0} |Dg^t v| < ∞}, and symmetrically for E^u (KatokHasselblatt1995, Section 6.4; FH2019, Part II). Writing v = v^s + v^u, the unstable component grows at least like C⁻¹λ^{−n}|v^u|, so boundedness forces v^u = 0; for flows the flow direction stays bounded above and below.
+Prove, for a hyperbolic set Λ of f and x ∈ Λ, that E^s_x = {v : |D(f^n)_x v| → 0 as n → ∞} = {v : sup_{n≥0} |D(f^n)_x v| < ∞}, and E^u_x is the corresponding set for backward iterates; hence any two splittings witnessing hyperbolicity coincide, and a finite union of hyperbolic sets Λ₁, …, Λ_k of f is hyperbolic, with constants the largest C_i and the largest λ_i, the splittings agreeing on overlaps. For a hyperbolic set of a flow, E^s_x = {v : |Dg^t v| → 0 as t → ∞}, E^s_x ⊕ ℝX(x) = {v : sup_{t≥0} |Dg^t v| < ∞}, and symmetrically for E^u (KatokHasselblatt1995, Section 6.4; FH2019, Part II). Writing v = v^s + v^u, the unstable component grows at least like C⁻¹λ^{−n}|v^u|, so boundedness forces v^u = 0; for flows the flow direction stays bounded above and below.
 
 **Checks.**
 
 - For diag(2, 1/2) at 0: (1, 0) grows like 2^n, (0, 1) decays like 2^{−n}, and (1, 1) is unbounded, so E^s is exactly the second axis.
 - For the constant-roof suspension of diag(2, 1/2), the flow direction ∂_t is bounded but does not decay, so it lies in E^s ⊕ ℝX and not in E^s.
 - The boundedness characterisation needs hyperbolicity: for a rotation of the plane every vector is bounded and none decays.
+- For the diffeomorphism of ℝ² ⊔ ℝ² equal to diag(2, 1/2) on the first copy and to (1/3)·Id on the second, the saddle {0₁} (C = 1, λ = 1/2) and the sink {0₂} (C = 1, λ = 1/3) have hyperbolic union with C = 1 and λ = 1/2 = max(1/2, 1/3), and dim E^s is 1 at 0₁ and 2 at 0₂.
 
 *Needs:* Layers 7.1, 7.2.
 
@@ -887,13 +890,13 @@ Prove that for a hyperbolic set Λ of a C¹ diffeomorphism f of a compact manifo
 
 - For diag(2, 1/2) at 0 with λ' = 3/4 the Euclidean metric is already adapted (C = 1, rate 1/2).
 - For the geodesic flow of a closed surface of curvature −1, the Sasaki metric is adapted with C = 1 and κ = 1: unstable Jacobi fields grow exactly like e^t in the norm (|J|² + |J'|²)^{1/2} (§9.3).
-- The rate itself cannot be kept: for the linear map of ℝ³ equal to 2 on one axis and to the Jordan block J = (1/2 1; 0 1/2) on the complementary plane, J^n has entries 2^{−n} and n2^{1−n}, so |J^n| decays slower than 2^{−n} in every norm and an adapted metric exists only for λ' > 1/2, as the strict inequality in the statement allows.
+- The spectral radius need not be an admissible rate: for the linear map of ℝ³ equal to 2 on one axis and to the Jordan block J = (1/2 1; 0 1/2) on the complementary plane, J^n has entries 2^{−n} and n2^{1−n}, so 2^n|J^n(0, 1)| = (4n² + 1)^{1/2} is unbounded and λ = 1/2 satisfies the hypothesis with no constant C, while every λ ∈ (1/2, 1) does. For λ' = 3/4 the inner product ⟨v, w⟩' = ⟨Dv, Dw⟩ with D = diag(1/8, 1) on the plane gives J the operator norm of (1/2 1/8; 0 1/2), which is ((65/64)^{1/2} + 1/8)/2 ≈ 0.566 ≤ 3/4, so the adapted metric of the statement exists there.
 
 *Needs:* Mathlib `Bundle.ContinuousRiemannianMetric`; DifferentialGeometry Layer 12.1 (`nonempty_contMDiffRiemannianMetric`); Layers 7.1, 7.2, 7.5.
 
 ### 7.7 Inverses, iterates and time reversal
 
-Prove: if Λ is a hyperbolic set of f, it is a hyperbolic set of f⁻¹ with E^s and E^u exchanged and the same constants, and of f^k (k ≥ 1) with the same splitting and rate λ^k; if Λ is a hyperbolic set of a flow g, it is one for the reversed flow `Flow.reverse` with E^s and E^u exchanged, and for the rescaled flow g(at), a > 0, with rate aκ; in particular inverses of Anosov diffeomorphisms and reversals of Anosov flows are Anosov (KatokHasselblatt1995, Section 6.4; FH2019, Part II). Each time-t map of an Anosov flow preserves the splitting E^s ⊕ ℝX ⊕ E^u with the stated rates on E^s and E^u and bounded distortion on ℝX; it is not an Anosov diffeomorphism.
+Prove: if Λ is a hyperbolic set of f, it is a hyperbolic set of f⁻¹ with E^s and E^u exchanged and the same constants, and of f^k (k ≥ 1) with the same splitting and rate λ^k; if Λ is a hyperbolic set of a flow g, it is one for the reversed flow `Flow.reverse` with E^s and E^u exchanged, and for the rescaled flow g(at), a > 0, with rate aκ; in particular inverses of Anosov diffeomorphisms and reversals of Anosov flows are Anosov (KatokHasselblatt1995, Section 6.4; FH2019, Part II). Each time-t map of an Anosov flow preserves the splitting E^s ⊕ ℝX ⊕ E^u with the stated rates on E^s and E^u and bounded distortion on ℝX; on a nonempty compact manifold it is not an Anosov diffeomorphism, for any real t, since Dg^t X(x) = X(g^t x) and |X| is bounded above and below. On the empty manifold every flow and every diffeomorphism is Anosov vacuously, so nonemptiness is needed.
 
 **Checks.**
 
@@ -917,23 +920,25 @@ Distances on M are those of a fixed smooth Riemannian metric (DifferentialGeomet
 
 ### 8.1 The Hadamard–Perron theorem for sequences
 
-Prove the uniform Hadamard–Perron theorem: let ℝ^d = E^u ⊕ E^s with balls B^u(r₀), B^s(r₀), let μ > max(1, λ), and for each n let f_n(x, y) = (A_n x + g_n(x, y), B_n y + h_n(x, y)) be C¹ maps of B^u(r₀) × B^s(r₀) into ℝ^d with linear A_n, B_n, |A_n⁻¹| ≤ μ⁻¹, |B_n| ≤ λ and g_n(0) = h_n(0) = 0. There is γ₀ > 0 such that for 0 < γ < γ₀ there is δ₀ > 0 such that if the C¹ norms of g_n and h_n are below δ < δ₀ for all n, then there are λ' < μ' (tending to λ and μ as γ, δ → 0) and a unique family of graphs W^+_n of C¹ maps φ_n : B^u(r₀) → B^s(r₀) with |Dφ_n| < γ, such that f_n(W^+_n) ∩ (B^u(r₀) × B^s(r₀)) = W^+_{n+1}, f_n expands distances on W^+_n by at least μ', and a point whose backward images under f_{n−1}, f_{n−2}, … decay faster than ν^{−L} for some λ' < ν < μ' lies on W^+_n; applying this to the inverse sequence gives the stable family (ClimenhagaPesin2016, Theorem 11.1 and Remark 11.2, lines 1822–1843; KatokHasselblatt1995, Theorem 6.2.8, cited at ClimenhagaPesin2016, lines 281–283). The proof is the graph transform: it is a contraction on the space of sequences of 1-Lipschitz graphs, and its fixed point is C¹ by the invariant cone family for the derivatives.
+Prove the uniform Hadamard–Perron theorem: let ℝ^d = E^u ⊕ E^s with balls B^u(r₀), B^s(r₀), let μ > max(1, λ), and for each n let f_n(x, y) = (A_n x + g_n(x, y), B_n y + h_n(x, y)) be C¹ maps of B^u(r₀) × B^s(r₀) into ℝ^d with linear A_n, B_n, |A_n⁻¹| ≤ μ⁻¹, |B_n| ≤ λ and g_n(0) = h_n(0) = 0. There is γ₀ > 0 such that for 0 < γ < γ₀ there is δ₀ > 0 such that if the C¹ norms of g_n and h_n are below δ < δ₀ for all n, then there are λ' < μ' (tending to λ and μ as γ, δ → 0) and a unique family of graphs W^+_n of C¹ maps φ_n : B^u(r₀) → B^s(r₀) with |Dφ_n| < γ, such that f_n(W^+_n) ∩ (B^u(r₀) × B^s(r₀)) = W^+_{n+1}, f_n expands distances on W^+_n by at least μ', and a point whose backward images under f_{n−1}, f_{n−2}, … decay faster than ν^{−L} for some λ' < ν < μ' lies on W^+_n (ClimenhagaPesin2016, Theorem 11.1, lines 1822–1840; KatokHasselblatt1995, Theorem 6.2.8, cited at ClimenhagaPesin2016, lines 281–283). The stable family is a separate statement with further hypotheses: assume in addition that λ < 1 and that each f_n is the restriction of a C¹ diffeomorphism F_n of ℝ^d with F_n(0) = 0 whose inverse, written in the coordinates of E^s ⊕ E^u, is (y, x) ↦ (B_n⁻¹y + h̃_n(x, y), A_n⁻¹x + g̃_n(x, y)), with B_n invertible and h̃_n, g̃_n of C¹ norm below δ on B^u(r₀) × B^s(r₀). The theorem applied to the backward-indexed sequence of the F_n⁻¹, with E^s in the role of E^u and the rates 1/λ > max(1, 1/μ), gives a unique family of graphs W^−_n of C¹ maps B^s(r₀) → B^u(r₀) with F_n⁻¹(W^−_{n+1}) ∩ (B^u(r₀) × B^s(r₀)) = W^−_n, on which F_n⁻¹ expands distances (ClimenhagaPesin2016, Remark 11.2, lines 1841–1843). The proof is the graph transform: it is a contraction on the space of sequences of 1-Lipschitz graphs, and its fixed point is C¹ by the invariant cone family for the derivatives.
 
 **Checks.**
 
 - For linear maps (g_n = h_n = 0) the unstable graphs are E^u itself: φ_n = 0, with expansion exactly μ when A_n = μ·Id.
 - With λ ≥ 1 allowed (only λ < μ and μ > 1 required) the theorem produces strong unstable manifolds for dominated splittings, as needed for flows, where the complement contains the neutral flow direction.
 - With μ = λ the cone argument fails: for f_n = Id on ℝ² every line through 0 is invariant, so uniqueness of the family is lost.
+- The stable statement needs invertibility: f_n(x, y) = (2x, 0) satisfies every hypothesis of the unstable statement (A_n = 2, B_n = 0, zero nonlinear parts, μ = 2, λ = 1/2), has the unstable graphs y = 0, and maps each vertical line {x} × ℝ to a single point, so it has no inverse sequence and receives no stable conclusion.
 
 *Needs:* Mathlib calculus (`fderiv`, contraction mapping `ContractingWith`). Tau Ceti's Lyapunov–Perron construction of the local stable manifold of a hyperbolic equilibrium of an ordinary differential equation (`ContinuousLinearMap.lyapunovPerronSolution`, `ContinuousLinearMap.localStableGraphMap`) is the continuous-time analogue of this graph transform; it concerns an equilibrium, not a sequence of maps, and is not consumed.
 
 ### 8.2 Local stable and unstable manifolds of hyperbolic sets of diffeomorphisms
 
-Prove that for a hyperbolic set Λ of a C^r diffeomorphism f of M (r ≥ 1) there are ε > 0, C' > 0 and λ < λ' < 1 such that for every x ∈ Λ the set W^s_ε(x) = {y : d(f^n x, f^n y) ≤ ε for all n ≥ 0} is an embedded C^r disc of dimension dim E^s_x tangent to E^s_x at x, with d(f^n x, f^n y) ≤ C'λ'^n d(x, y) for y ∈ W^s_ε(x) and n ≥ 0, depending continuously on x in the C¹ topology of embedded discs; and symmetrically for W^u_ε(x) (KatokHasselblatt1995, Section 6.4; ClimenhagaPesin2016, Theorem 11.1, for the sequence version). Apply §8.1 in exponential charts along each orbit, with the adapted metric of §7.6 so that the linear parts satisfy the hypotheses uniformly; C^r regularity follows by the same graph transform on jets.
+Prove that for a hyperbolic set Λ of a C^r diffeomorphism f of M (r ≥ 1) there are r₀ > 0, K ≥ 1, C' > 0 and λ < λ' < 1 and, for every x ∈ Λ, a C^r embedding φ^s_x of the closed ball of radius r₀ of E^s_x (for the adapted norm of §7.6) into M, the graph parametrisation in the chart at x, with φ^s_x(0) = x and derivative at 0 the inclusion of E^s_x, depending continuously on x in the C¹ topology of embeddings, such that the local stable plaques 𝒲^s_r(x) = φ^s_x(closed ball of radius r), 0 < r ≤ r₀, satisfy: f(𝒲^s_r(x)) ⊆ 𝒲^s_{λ'r}(fx); d(f^n y, f^n y') ≤ C'λ'^n d(y, y') for y, y' ∈ 𝒲^s_r(x) and n ≥ 0; and W^s_{r/K}(x) ⊆ 𝒲^s_r(x) ⊆ W^s_{Kr}(x), where W^s_ε(x) = {y : d(f^n x, f^n y) ≤ ε for all n ≥ 0}. Symmetrically for the unstable plaques 𝒲^u_r(x), tangent to E^u_x, and the sets W^u_ε(x) of backward orbits (KatokHasselblatt1995, Section 6.4; ClimenhagaPesin2016, Theorem 11.1, for the sequence version). The metric cutoffs W^s_ε(x) are compact neighbourhoods of x in the plaques but need not be smooth discs; the plaques carry the smooth structure. Apply §8.1 in exponential charts along each orbit, with the adapted metric of §7.6 so that the linear parts satisfy the hypotheses uniformly, the stable statement of §8.1 applying because f is a diffeomorphism; the inclusions W^s_{r/K}(x) ⊆ 𝒲^s_r(x) come from §8.1's characterisation of the points whose iterates stay in the boxes, and C^r regularity follows by the same graph transform on jets.
 
 **Checks.**
 
-- For a hyperbolic toral automorphism, W^s_ε(x) is the ε-segment of the line through x in the direction of the contracting eigenvector.
+- For the cat map on 𝕋² with the flat metric (its matrix is symmetric, so the eigenlines are orthogonal), W^s_ε(x) is, for small ε, the closed ε-segment of the stable line through x, and the plaques are segments of the same line.
+- For the linear map B = (1/2 1; 0 1/2) of ℝ², the fixed point 0 is a hyperbolic set with E^s = ℝ², and W^s_ε(0) = {y : |B^n y| ≤ ε for all n ≥ 0}. The unit vector v proportional to (1, √7 − 2) has |v| = |Bv| = 1 and |B²v| ≈ 0.7646, so at εv the constraints n = 0 and n = 1 are both active, with normals v and BᵀBv of determinant √7/4 ≈ 0.661 ≠ 0: W^s_ε(0) has a corner at εv for every ε > 0, while the plaques, closed discs of an adapted inner product, are smooth.
 - For the time-one map of a flow (not hyperbolic) the set {y : d(f^n x, f^n y) ≤ ε, n ≥ 0} contains a segment of the orbit of x and is not tangent to a contracting subspace: hyperbolicity is used.
 - At a hyperbolic fixed point the theorem is the local stable manifold theorem of the fixed point: for diag(2, 1/2) at 0 the local stable manifold is the ε-segment of the second axis.
 
@@ -941,31 +946,45 @@ Prove that for a hyperbolic set Λ of a C^r diffeomorphism f of M (r ≥ 1) ther
 
 ### 8.3 Strong and weak local manifolds of hyperbolic sets of flows
 
-Prove that for a hyperbolic set Λ of a C^r flow g (r ≥ 1) there is ε > 0 such that for x ∈ Λ the local strong stable set W^s_ε(x) of §6.5 (points whose forward orbits stay ε-close and converge) is an embedded C^r disc tangent to E^s_x with exponential contraction, the local weak stable set W^{cs}_ε(x), the union of g^v W^s_ε(x) over |v| ≤ ε, is an embedded C^r disc tangent to E^s_x ⊕ ℝX(x), and symmetrically for the unstable sets, all depending continuously on x (BowenRuelle1975, lines 96–108, for the definitions, and Appendix A.1, lines 643–652, for charts straightening W^{cs} and W^{cu}; FH2019, Part II). Apply §8.1 to the time-one map along orbits with the dominated splittings E^s ⊕ (ℝX ⊕ E^u) and (E^s ⊕ ℝX) ⊕ E^u (rates e^{−κ'} against a bounded neutral rate), and flow the strong discs for |v| ≤ ε.
+Prove that for a hyperbolic set Λ of a C^r flow g (r ≥ 1) there are r₀ > 0, K ≥ 1, C' > 0 and 0 < κ' < κ and, for every x ∈ Λ, strong stable plaques 𝒲^s_r(x), 0 < r ≤ r₀, images of closed balls of E^s_x under a C^r embedding with value x and derivative the inclusion of E^s_x at 0, depending continuously on x in the C¹ topology, with d(g^t y, g^t y') ≤ C'e^{−κ't} d(y, y') for y, y' ∈ 𝒲^s_r(x) and t ≥ 0 and W^s_{r/K}(x) ⊆ 𝒲^s_r(x) ⊆ W^s_{Kr}(x) for the local strong stable sets W^s_ε(x) of §6.5 (points whose forward orbits stay ε-close and converge); the weak stable plaque 𝒲^{cs}_r(x) is the image of [−r, r] × 𝒲^s_r(x) under (v, y) ↦ g^v y, a C^r embedding of a product of an interval and a closed ball whose interior is a C^r submanifold of dimension dim E^s_x + 1 tangent to E^s_x ⊕ ℝX(x) at x, and it contains the local weak stable set W^{cs}_{r/K}(x) = ∪_{|v| ≤ r/K} g^v W^s_{r/K}(x); symmetrically for the unstable plaques (BowenRuelle1975, lines 96–108, for the definitions, and Appendix A.1, lines 643–652, for charts straightening W^{cs} and W^{cu}; FH2019, Part II). The weak plaque has corners along the boundary of the product and is not claimed to be a smooth closed disc. Apply §8.1 to the time-one map along orbits with the dominated splittings E^s ⊕ (ℝX ⊕ E^u) and (E^s ⊕ ℝX) ⊕ E^u (rates e^{−κ'} against a bounded neutral rate), and flow the strong plaques for |v| ≤ r.
 
 **Checks.**
 
-- For the constant-roof suspension of a hyperbolic toral automorphism, W^s_ε([s, x]) is the stable segment of x at height s and W^{cs}_ε adds the flow direction.
-- For the geodesic flow of a surface of curvature −1, the strong stable discs are the stable horocycle arcs (§9.3).
-- Requiring only d(g^t x, g^t y) ≤ ε for t ≥ 0, without convergence, would include the orbit segment of x in the strong stable set; the convergence condition is what makes it a disc tangent to E^s.
+- For the constant-roof suspension of the cat map, the strong stable plaque at [s, x] is the stable segment of x at height s and the weak stable plaque is the product of that segment with a height interval [s − r, s + r], a rectangle with four corners.
+- For the geodesic flow of a surface of curvature −1, the strong stable plaques are arcs of the stable horocycles (§9.3).
+- Requiring only d(g^t x, g^t y) ≤ ε for t ≥ 0, without convergence, would include the orbit segment of x in the strong stable set; the convergence condition is what places it inside a plaque tangent to E^s.
 
 *Needs:* Mathlib `Flow`, `mfderiv`; Layers 6.5, 7.2, 7.5, 7.6, 8.1.
 
 ### 8.4 Local product structure of locally maximal hyperbolic sets of diffeomorphisms
 
-Call a hyperbolic set Λ of f locally maximal when Λ is the intersection of f^n(U) over n ∈ ℤ for some open U ⊇ Λ. Prove that f restricted to a locally maximal hyperbolic set Λ, with the restricted distance, has hyperbolic local product structure in the sense of §6.1, with local stable and unstable sets W^s_δ(x) ∩ Λ and W^u_δ(x) ∩ Λ (BowenPeriodicPoints1971, lines 73–80, attributing (A1)–(A3) for basic sets of Axiom A diffeomorphisms to Smale and to Hirsch–Pugh; KatokHasselblatt1995, Sections 6.4 and 18.4). For x, z ∈ Λ close, the discs W^s_ε(x) and W^u_ε(z) of §8.2 meet transversally in one point by continuity of the discs and complementarity of the tangent spaces; its orbit stays near Λ, hence in U, so it lies in Λ by local maximality. (A3) is §8.2's contraction.
+Call a hyperbolic set Λ of f locally maximal when Λ is the intersection of f^n(U) over n ∈ ℤ for some open U ⊇ Λ, an isolating neighbourhood.
+
+Its API:
+
+- Λ is locally maximal with isolating neighbourhood U iff every point whose whole orbit lies in U lies in Λ, that is, iff every f-invariant subset of U is contained in Λ.
+- If Λ is locally maximal for f, it is locally maximal for f⁻¹ with the same U, and for f^k, k ≥ 1, with the isolating neighbourhood U ∩ f(U) ∩ ⋯ ∩ f^{k−1}(U); a C¹ diffeomorphism h carries it to a locally maximal hyperbolic set h(Λ) of h∘f∘h⁻¹ with isolating neighbourhood h(U).
+- Local maximality does not depend on the metric, and it is what places the bracket of the theorem below in Λ.
 
 **Checks.**
 
-- For an Anosov diffeomorphism Λ = M with U = M is locally maximal, and the bracket is the transverse intersection of stable and unstable discs.
-- A hyperbolic periodic orbit is locally maximal; its local product structure is trivial at small scale.
+- A hyperbolic sink {p} of a diffeomorphism of ℝ² is locally maximal with U a small ball around p, since the forward images of U shrink to p; it is a hyperbolic set with E^u = 0, although no Anosov diffeomorphism of a compact manifold of positive dimension has E^u = 0 (§8.6), so the local API holds where the global nontriviality theorem does not apply.
+- The neighbourhood for f^k must be shrunk: let f act on three copies of ℝ² by diag(2, 1/2) on the first and by diag(2, 1/2) from the second copy to the third and from the third to the second, with fixed saddle a = 0₁ and period-two saddle orbit {c, d} = {0₂, 0₃}. Then Λ = {a} is locally maximal for f with U the union of small balls around a and c, since the orbit of c leaves U at d; for f² the point c is fixed in U, so the intersection of the f^{2n}(U) contains c, while U ∩ f(U) excludes c and isolates {a} for f².
 - Without local maximality the bracket can leave Λ: for a horseshoe with hyperbolic fixed point p and a transverse homoclinic orbit O of p, the set {p} ∪ O is hyperbolic but not locally maximal, and the bracket of two points of O near p, one close to the local stable and one close to the local unstable manifold of p, is a horseshoe point outside {p} ∪ O.
+
+Prove that f restricted to a locally maximal hyperbolic set Λ, with the restricted distance, has hyperbolic local product structure in the sense of §6.1, with local stable and unstable sets W^s_δ(x) ∩ Λ and W^u_δ(x) ∩ Λ (BowenPeriodicPoints1971, lines 73–80, attributing (A1)–(A3) for basic sets of Axiom A diffeomorphisms to Smale and to Hirsch–Pugh; KatokHasselblatt1995, Sections 6.4 and 18.4). Given δ > 0, put r = min(r₀, δ/K); for x, z ∈ Λ close, the plaques 𝒲^s_r(x) and 𝒲^u_r(z) of §8.2 meet transversally in exactly one point by continuity of the plaques and complementarity of the tangent spaces, and that point lies in W^s_δ(x) ∩ W^u_δ(z); its orbit stays within δ of Λ, hence in U for small δ, so it lies in Λ by local maximality. (A3) is §8.2's contraction on the plaques, through W^s_{δ*}(x) ⊆ 𝒲^s_{r₀}(x) for δ* = r₀/K.
+
+**Checks.**
+
+- For an Anosov diffeomorphism Λ = M with U = M is locally maximal, and the bracket is the transverse intersection of stable and unstable plaques.
+- A hyperbolic periodic orbit is locally maximal; its local product structure is trivial at small scale, both local sets in Λ being single points.
+- For the cat map on 𝕋², two points at distance below e(δ) have as bracket the intersection of the stable segment of the first with the unstable segment of the second, one point by transversality of the orthogonal eigenlines.
 
 *Needs:* Layers 6.1, 7.1, 8.2.
 
 ### 8.5 Local product structure of locally maximal hyperbolic sets of flows
 
-Prove that a C¹ flow g restricted to a locally maximal hyperbolic set Λ (Λ the intersection of g^t(U) over t ∈ ℝ for an open U ⊇ Λ) has hyperbolic local product structure in the sense of §6.5 (BowenRuelle1975, lines 25–34 and 96–108; FH2019, Part II). The bracket of nearby x, z ∈ Λ is the transverse intersection of W^{cs}_ε(x) and W^u_ε(z), which lies in Λ by local maximality; (F3) is §8.3's contraction.
+Prove that a C¹ flow g restricted to a locally maximal hyperbolic set Λ (Λ the intersection of g^t(U) over t ∈ ℝ for an open U ⊇ Λ) has hyperbolic local product structure in the sense of §6.5 (BowenRuelle1975, lines 25–34 and 96–108; FH2019, Part II). Given δ > 0 and r = min(r₀, δ/K), the bracket of nearby x, z ∈ Λ is the single transverse intersection point of the interior of the weak stable plaque 𝒲^{cs}_r(x) with the strong unstable plaque 𝒲^u_r(z) of §8.3; it has the form g^v y with |v| ≤ r and y in the strong stable plaque at x, its orbit stays within δ of Λ, and it lies in Λ by local maximality. (F3) is §8.3's contraction on the strong plaques, through W^s_{δ*}(x) ⊆ 𝒲^s_{r₀}(x) for δ* = r₀/K.
 
 **Checks.**
 
@@ -977,7 +996,11 @@ Prove that a C¹ flow g restricted to a locally maximal hyperbolic set Λ (Λ th
 
 ### 8.6 Nontriviality of the stable and unstable bundles
 
-Prove: (a) if f is a C¹ Anosov diffeomorphism of a compact manifold and E^s_x = 0 or E^u_x = 0 at some x, then the connected component of x is a single point; hence on a compact manifold whose components have positive dimension both bundles are nonzero everywhere; (b) if g is a C¹ Anosov flow on a compact manifold and E^s_x = 0 or E^u_x = 0 at some x, then the component of x has dimension 1 and is a periodic orbit; hence on a compact manifold of dimension at least 2 both bundles are nonzero. For (a) with E^u = 0 near x (dimensions are locally constant by §7.5), every point of the component has W^s_ε a neighbourhood (§8.2), so finitely many such neighbourhoods U_i cover the component K; since f^n permutes components, a power f^{nk} maps K onto K while diam f^{nk}(U_i) → 0, so K is a finite union of sets of arbitrarily small diameter, hence finite and, being connected, a point. For (b) with E^u = 0, the weak stable discs W^{cs}_ε are neighbourhoods (§8.3), so g^T maps each of finitely many such neighbourhoods into the tube of radius C'εe^{−κT} around an orbit segment of length 2ε; the Riemannian volume of such a tube is at most a constant times e^{−κT(dim M − 1)}, computed in charts, while g^T(K) = K has positive volume, so dim M = 1 (`TauCeti.riemannianVolume`, `TauCeti.chartRiemannianVolume_pos`).
+Prove: (a) if f is a C¹ Anosov diffeomorphism of a compact manifold and E^s_x = 0 or E^u_x = 0 at some x, then the connected component of x is a single point; hence on a compact manifold whose components have positive dimension both bundles are nonzero everywhere; (b) if g is a C¹ Anosov flow on a compact manifold and E^s_x = 0 or E^u_x = 0 at some x, then the component of x has dimension 1 and is a periodic orbit; hence on a compact manifold of dimension at least 2 both bundles are nonzero. The proof derives them from §§7.5, 7.7, 8.2 (whose plaques are those of KatokHasselblatt1995, Section 6.4) and 8.3 and one pinned Mathlib theorem, and every intermediate step is part of this target. By §7.7 (inverse and reversal exchange E^s and E^u) it suffices to treat E^u_x = 0. Dimensions are locally constant (§7.5), so E^u = 0 on the component K of x, which is open and closed and, the manifold being compact, one of finitely many components.
+
+For (a), each y ∈ K has dim E^s_y = dim M, so the stable plaque 𝒲^s_{r₀}(y) of §8.2 is a full-dimensional embedded disc around y and a neighbourhood of y; finitely many such plaques cover K. Since f permutes the finitely many components, some power f^p maps K onto K, and f^{pk}(K) is covered by the images of the plaques, whose diameters are at most 2C'λ'^{pk}r₀ → 0. A set covered, for each k, by the same finite number m of sets of diameter tending to 0 has at most m points, so K is finite and, being connected, a point.
+
+For (b), T_yM = E^s_y ⊕ ℝX(y) on K, so the interior of each weak stable plaque 𝒲^{cs}_{r₀}(y) of §8.3 is a neighbourhood of y; choose finitely many, N_1, …, N_m with centres y_i, covering K. A point of N_i is g^v z with |v| ≤ r₀ and z in the strong plaque at y_i, so d(g^t(g^v z), g^{t+v}y_i) ≤ L·C'e^{−κ't}·Kr₀, where L bounds the Lipschitz constants of the g^v with |v| ≤ r₀. Chaining overlapping N_i through the connected K gives times w_i with |w_i| ≤ 2mr₀ and d(g^t y_i, g^{t+w_i}y_1) → 0 as t → ∞. Hence the distance from each point of g^t(K) = K to the orbit arc {g^s y_1 : |s − t| ≤ 3mr₀} tends to 0 uniformly as t → ∞, and for t_k → ∞ with g^{t_k}y_1 → z the set K lies in the compact arc A = {g^s z : |s| ≤ 3mr₀}. In a chart at a point of K (`extChartAt`), A is the image of a subset of ℝ under a map differentiable on it, so if dim M ≥ 2 the image has dense complement (`DifferentiableOn.dense_compl_image_of_dimH_lt_finrank`), which a nonempty open subset of K cannot have. Hence dim M = 1 on K (dimension 0 is excluded by X ≠ 0), and the compact connected one-dimensional K, invariant and contained in one orbit, is that periodic orbit.
 
 **Checks.**
 
@@ -985,7 +1008,7 @@ Prove: (a) if f is a C¹ Anosov diffeomorphism of a compact manifold and E^s_x =
 - An Anosov flow on a circle (the flow on a single periodic orbit) has E^s = E^u = 0 and dim M = 1, the exception in (b).
 - A hyperbolic sink {p} of a diffeomorphism of ℝ² is a hyperbolic set with E^u = 0, but it is not Anosov on a compact manifold; the conclusion is about Anosov systems only.
 
-*Needs:* `TauCeti.riemannianVolume`, `TauCeti.chartRiemannianVolume_pos`, `TauCeti.riemannianVolume_restrict_source`; Layers 7.1, 7.2, 7.5, 8.2, 8.3.
+*Needs:* Mathlib `extChartAt`, `DifferentiableOn.dense_compl_image_of_dimH_lt_finrank`; Layers 7.1, 7.2, 7.5, 7.7, 8.2, 8.3.
 
 ### 8.7 Hölder continuity of the bundles
 
@@ -1001,7 +1024,7 @@ Prove that for a hyperbolic set Λ of a C² diffeomorphism or C² flow (C^{1+α}
 
 ### Examples
 
-For hyperbolic toral automorphisms the local manifolds are segments of eigenlines and the bracket is linear; for constant-roof suspensions the strong and weak manifolds are those of the base at matched heights.
+For the cat map the local stable and unstable sets are segments of eigenlines, and for a general hyperbolic toral automorphism translates of compact convex subsets of E^s and E^u, with linear bracket; for constant-roof suspensions the strong plaques are those of the base at matched heights and the weak plaques add a height interval. The sink (1/2 1; 0 1/2) shows that metric cutoffs can have corners where plaques are smooth.
 
 ### Dependencies
 
@@ -1016,32 +1039,34 @@ Construct, for an integer n × n matrix A with det A = ±1 and no complex eigenv
 Its API:
 
 - The lift of f_A to ℝ^n is A, and Df_A is A in the flat trivialisation of T𝕋^n; f_{AB} = f_A ∘ f_B and f_{A⁻¹} = f_A⁻¹.
-- The local stable and unstable manifolds are the ε-segments of the translates of E^s and E^u, and the bracket is linear in a chart.
+- For small ε and the flat metric, the local stable set W^s_ε(x) is the image of x + {v ∈ E^s : |A^k v| ≤ ε for all k ≥ 0}, a compact convex neighbourhood of 0 in E^s translated to x, and the plaques of §8.2 may be taken to be translates of closed balls of an adapted norm on E^s; symmetrically for E^u. For the cat matrix both are ε-segments of the eigenlines. The bracket is linear in a chart.
 - Haar measure is invariant, ergodic and of maximal entropy.
 
 **Checks.**
 
 - For the cat matrix (2 1; 1 1) (`TauCeti.catMap`, with `TauCeti.det_catMap` = 1 and `TauCeti.charpolyRev_catMap` = 1 − 3t + t²), the eigenvalues are (3 ± √5)/2 ≈ 2.618 and 0.382, E^u is spanned by (1, (√5 − 1)/2), and h_top = log((3 + √5)/2) ≈ 0.9624.
 - The shear (1 1; 0 1) has the double eigenvalue 1: f_A is not Anosov, and the entropy formula gives 0.
-- The rotation (0 −1; 1 0) has eigenvalues ±i of modulus 1 and satisfies A⁴ = I: f_A has finite order, entropy 0, and no hyperbolic splitting; in dimension 1 the only candidates ±1 have modulus 1, so hyperbolic toral automorphisms need n ≥ 2.
+- The rotation (0 −1; 1 0) has eigenvalues ±i of modulus 1 and satisfies A⁴ = I: f_A has finite order, entropy 0, and no hyperbolic splitting; in dimension 1 the only candidates ±1 have modulus 1, so positive-dimensional hyperbolic toral automorphisms need n ≥ 2.
+- For n = 0 the empty matrix has determinant 1 and no eigenvalues, 𝕋^0 is a point, and f_A is its identity: analytic, mixing and Anosov with zero tangent space, with entropy 0, the empty sum of the formula.
 
 *Needs:* Tau Ceti `AddCircle.instIsManifold`, `TauCeti.catMap`; Mathlib `Diffeomorph`; Layers 1.3, 1.7, 7.1.
 
 ### 9.2 Suspension flows and time changes
 
-Prove: (a) for a C^r Anosov diffeomorphism φ of a compact manifold N (r ≥ 1), the suspension flow on the smooth mapping torus (`TauCeti.SmoothMappingTorus.flow` φ, whose time-one map is φ on each fibre by `TauCeti.SmoothMappingTorus.flow_one_mk`, C^r jointly by `TauCeti.SmoothMappingTorus.contMDiff_uncurry_flow`) is a C^r Anosov flow, with E^s and E^u the images of E^s_φ and E^u_φ in the fibres and the flow direction ∂_t, and it is not topologically mixing; (b) if g is a C^r Anosov flow on a compact manifold with generator X and h is a positive C^r function, the flow of hX (DifferentialGeometry Layer 3.3 `toFlow`) is a C^r Anosov flow, with stable bundle the graph {v + a_x(v)X(x) : v ∈ E^s_x} of a continuous linear functional a_x on E^s_x given by an integral that converges by exponential contraction, and symmetrically for E^u; (c) consequently the suspension of φ under any positive C^r roof function is Anosov, since it is C^r conjugate to the flow of h∂_t on the mapping torus for a positive C^r function h whose integrals of 1/h over the fibre circuits realise the roof up to a cohomologous roof, which gives a conjugate flow (FH2019, Part II; KatokHasselblatt1995, Chapter 17; BowenRuelle1975, lines 119–133 and 60–61, for special flows and the passage between diffeomorphisms and flows).
+Prove: (a) for a C^r Anosov diffeomorphism φ of a nonempty compact manifold N (r ≥ 1), the suspension flow on the smooth mapping torus (`TauCeti.SmoothMappingTorus.flow` φ, whose time-one map is φ on each fibre by `TauCeti.SmoothMappingTorus.flow_one_mk`, C^r jointly by `TauCeti.SmoothMappingTorus.contMDiff_uncurry_flow`) is a C^r Anosov flow, with E^s and E^u the images of E^s_φ and E^u_φ in the fibres and the flow direction ∂_t, and it is not topologically mixing; (b) if g is a C^r Anosov flow on a compact manifold with generator X and h is a positive C^r function, the flow of hX (DifferentialGeometry Layer 3.3 `toFlow`) is a C^r Anosov flow, with stable bundle the graph {v + a_x(v)X(x) : v ∈ E^s_x} of a continuous linear functional a_x on E^s_x given by an integral that converges by exponential contraction, and symmetrically for E^u; (c) consequently the suspension of φ under any positive C^r roof function is Anosov, since it is C^r conjugate to the flow of h∂_t on the mapping torus for a positive C^r function h whose integrals of 1/h over the fibre circuits realise the roof up to a cohomologous roof, which gives a conjugate flow (FH2019, Part II; KatokHasselblatt1995, Chapter 17; BowenRuelle1975, lines 119–133 and 60–61, for special flows and the passage between diffeomorphisms and flows).
 
 **Checks.**
 
 - The constant-roof suspension of the cat map has h_top equal to log((3 + √5)/2), by §1.4 since its time-one map acts on each fibre as the cat map.
 - Speeding up the constant-roof suspension by the constant factor 2 (h = 2) halves the return time and doubles the entropy, to 2 log((3 + √5)/2), as §1.4's rescaling law predicts.
+- On the empty manifold the mapping torus is empty and its flow is mixing vacuously, which is why (a) assumes N nonempty.
 - The periods of periodic orbits of a constant-roof suspension (roof 1) are integers, so the flow is not mixing, while a roof r with r(p)/r(q) irrational at two fixed points p, q of φ gives a flow whose periods generate a dense subgroup of ℝ.
 
 *Needs:* Tau Ceti `TauCeti.SmoothMappingTorus`, `TauCeti.SmoothMappingTorus.flow`, `TauCeti.SmoothMappingTorus.flow_one_mk`, `TauCeti.SmoothMappingTorus.contMDiff_uncurry_flow`; DifferentialGeometry Layer 3.3; Layers 1.4, 1.7, 7.1, 7.2, 7.4, 7.5.
 
 ### 9.3 Geodesic flows in negative curvature
 
-Prove that if (M, g) is a compact smooth Riemannian manifold without boundary of dimension at least 2 whose sectional curvatures are all negative, then the geodesic flow restricted to the unit tangent sphere bundle SM is a C^∞ Anosov flow; if K ≤ −a² < 0 (such a exists by compactness), the rate can be taken to be κ = a for the norm (|J(0)|² + |D_tJ(0)|²)^{1/2}, and E^s_v and E^u_v correspond, under the horizontal–vertical identification of T_v(TM) with T_xM ⊕ T_xM, to the initial data of the stable and unstable Jacobi fields perpendicular to the geodesic of v (FH2019, Part II; KatokHasselblatt1995, Chapter 17). The geodesic flow on TM is smooth on its open domain (`TauCeti.Manifold.contMDiffOn_maximalIntegralCurve_geodesicSpray`), complete because M is compact (`TauCeti.Manifold.isGeodesicallyCompleteAt_of_compactSpace`), and preserves SM because geodesics have constant speed (`TauCeti.Manifold.IsGeodesicCurveOn.norm_curveVelocityWithin_eq`); SM is a closed smooth submanifold of TM (TangentialBordism §2.3). The derivative of the flow sends (J(0), D_tJ(0)) to (J(t), D_tJ(t)) for the Jacobi field J (the connection-map contract under Required extensions, built from RiemannianGeometry R2). There are no conjugate points (RiemannianGeometry R4.4); the stable Jacobi field with J(0) = w is the limit as T → ∞ of the Jacobi fields with J(0) = w and J(T) = 0, which exist and converge by the Riccati comparison of RiemannianGeometry R4.1, and the comparison with the model sinh(at)/a gives |J(t)| ≤ e^{−at}|J(0)| for stable and the reverse growth for unstable fields.
+Prove that if (M, g) is a compact smooth Riemannian manifold without boundary of dimension at least 2 whose sectional curvatures are all negative, then the geodesic flow restricted to the unit tangent sphere bundle SM is a C^∞ Anosov flow; if K ≤ −a² < 0 (such a exists by compactness), the rate can be taken to be κ = a for the norm (|J(0)|² + |D_tJ(0)|²)^{1/2}, and E^s_v and E^u_v correspond, under the horizontal–vertical identification of T_v(TM) with T_xM ⊕ T_xM, to the initial data of the stable and unstable Jacobi fields perpendicular to the geodesic of v (FH2019, Part II; KatokHasselblatt1995, Chapter 17). The geodesic flow on TM is smooth on its open domain (`TauCeti.Manifold.contMDiffOn_maximalIntegralCurve_geodesicSpray`), complete because M is compact (`TauCeti.Manifold.isGeodesicallyCompleteAt_of_compactSpace`), and preserves SM because geodesics have constant speed (`TauCeti.Manifold.IsGeodesicCurveOn.norm_curveVelocityWithin_eq`); SM, the vectors of length 1, is a closed embedded smooth hypersurface of TM with Tau Ceti's regular-level atlas for the radius 1 (`TauCeti.sphereBundleChartedSpace`, `TauCeti.isManifold_sphereBundle`, `TauCeti.isSmoothEmbedding_coe_sphereBundle`), and the restricted flow ℝ × SM → TM, smooth with values in SM, is smooth into SM by the corestriction theorem under Required extensions (gap:sphere-bundle-embedding). The derivative of the flow sends (J(0), D_tJ(0)) to (J(t), D_tJ(t)) for the Jacobi field J (the connection-map contract under Required extensions, built from RiemannianGeometry R2). There are no conjugate points (RiemannianGeometry R4.4); the stable Jacobi field with J(0) = w is the limit as T → ∞ of the Jacobi fields with J(0) = w and J(T) = 0, which exist and converge by the Riccati comparison of RiemannianGeometry R4.1, and the comparison with the model sinh(at)/a gives |J(t)| ≤ e^{−at}|J(0)| for stable and the reverse growth for unstable fields.
 
 Its API:
 
@@ -1055,7 +1080,7 @@ Its API:
 - For a flat torus, perpendicular Jacobi fields are affine, J(t) = p + tq, so no vector is exponentially contracted and the geodesic flow is not Anosov: negative curvature is needed.
 - For the round sphere, perpendicular Jacobi fields with J(0) = 0 are sin t times parallel fields and all geodesics are closed: the flow is periodic, with zero entropy.
 
-*Needs:* Tau Ceti `TauCeti.Manifold.contMDiffOn_maximalIntegralCurve_geodesicSpray`, `TauCeti.Manifold.isGeodesicallyCompleteAt_of_compactSpace`, `TauCeti.Manifold.IsGeodesicCurveOn.norm_curveVelocityWithin_eq`; RiemannianGeometry R1, R2, R4.1, R4.4; TangentialBordism §2.3 with the sphere-bundle embedding of Required extensions; the connection-map contract of Required extensions (RiemannianGeometry, Part II); Layers 7.2, 7.3, 7.7.
+*Needs:* Tau Ceti `TauCeti.Manifold.contMDiffOn_maximalIntegralCurve_geodesicSpray`, `TauCeti.Manifold.isGeodesicallyCompleteAt_of_compactSpace`, `TauCeti.Manifold.IsGeodesicCurveOn.norm_curveVelocityWithin_eq`; RiemannianGeometry R1, R2, R4.1, R4.4; Tau Ceti `TauCeti.sphereBundleChartedSpace`, `TauCeti.isManifold_sphereBundle`, `TauCeti.isSmoothEmbedding_coe_sphereBundle`; TangentialBordism §2.3 with the corestriction theorem of Required extensions; the connection-map contract of Required extensions (RiemannianGeometry, Part II); Layers 7.2, 7.3, 7.7.
 
 ### Examples
 
@@ -1063,7 +1088,7 @@ The cat map, its constant-roof suspension and the geodesic flow of a hyperbolic 
 
 ### Dependencies
 
-Layers 1, 7; Tau Ceti's circle, mapping torus and geodesic flow; DifferentialGeometry Layer 3.3; RiemannianGeometry R1, R2, R4; TangentialBordism §2.3.
+Layers 1, 7; Tau Ceti's circle, mapping torus, geodesic flow and sphere bundle; DifferentialGeometry Layer 3.3; RiemannianGeometry R1, R2, R4; TangentialBordism §2.3.
 
 ## Layer 10: Basic sets and the Bowen–Ruelle theorem
 
@@ -1093,14 +1118,14 @@ Prove that if Λ is a basic set of a C¹ diffeomorphism f of a compact manifold 
 **Checks.**
 
 - For the cat map and φ = 0 the unique equilibrium state is Haar measure, of entropy log((3 + √5)/2) (§9.1).
-- For the cat map and the geometric potential φ^u = −log((3 + √5)/2), a constant, the equilibrium state is again Haar measure, with pressure 0.
+- For the cat map and the constant potential −log((3 + √5)/2), minus the logarithm of its unstable Jacobian for the flat metric of 𝕋², the equilibrium state is again Haar measure, with pressure 0.
 - For a hyperbolic fixed point (a one-point basic set) the unique equilibrium state is the point mass, of entropy 0, for every φ.
 
 *Needs:* Layers 4.4, 6.8, 8.4, 9.1, 10.1.
 
 ### 10.3 The Bowen–Ruelle theorem for flows
 
-Prove that if Λ is a basic set of a C¹ flow g on a compact manifold and F : Λ → ℝ is Hölder continuous, then F has a unique equilibrium state ν_{g,F} for g restricted to Λ; ν_{g,F} is ergodic for the flow, positive on nonempty relatively open subsets of Λ, satisfies the lower Gibbs bound ν_{g,F}(B_x(ε, T)) ≥ C_ε exp(−T P(g|Λ, F) + ∫₀ᵀ F(g^t x) dt) for x ∈ Λ, T > 0, and ν_{g,F} = ν_{g,F'} whenever F' = F + c + L_gψ for a real c and a continuous ψ differentiable along the flow with continuous derivative (in particular for ψ of class C¹ on M); moreover ν_{g,F} is the equilibrium state of F_t for g^t among g-invariant measures for every t > 0, and ν_{g_a, aF} = ν_{g,F} for the rescaled flow g_a(t) = g(at), a > 0 (BowenRuelle1975, Theorem 3.3, lines 272–277, and Proposition 3.1, lines 213–222; TsujiiZhang2023, lines 106–109 and Definition 3.5, lines 485–495, for the statement in the consumers' form). In particular a transitive C¹ Anosov flow on a nonempty compact manifold and a Hölder F have exactly one equilibrium state, and C² flows are a specialisation. By §8.5 and §10.1, g restricted to Λ, a nonempty compact metric space, has hyperbolic local product structure and is transitive; §6.8(b) applies. The flow g|Λ is Bowen–Walters expansive by §6.6, so h_top(g|Λ) < ∞ by §1.6, and §4.9 gives the invariance and time-change statements.
+Prove that if Λ is a basic set of a C¹ flow g on a compact manifold and F : Λ → ℝ is Hölder continuous, then F has a unique equilibrium state ν_{g,F} for g restricted to Λ; ν_{g,F} is ergodic for the flow, positive on nonempty relatively open subsets of Λ, satisfies the lower Gibbs bound ν_{g,F}(B_x(ε, T)) ≥ C_ε exp(−T P(g|Λ, F) + ∫₀ᵀ F(g^t x) dt) for x ∈ Λ, T > 0, and ν_{g,F} = ν_{g,F'} whenever F' = F + c + L_gψ for a real c and a continuous ψ differentiable along the flow with continuous derivative (in particular for ψ of class C¹ on M); moreover ν_{g,F} is the equilibrium state of F_t for g^t among g-invariant measures for every t > 0, and ν_{g_a, aF} = ν_{g,F} for the rescaled flow g_a(t) = g(at), a > 0 (BowenRuelle1975, Theorem 3.3, lines 272–277, and Proposition 3.1, lines 213–222; TsujiiZhang2023, lines 106–109 and Definition 3.5, lines 485–495, for the statement in the consumers' form). In particular a transitive C¹ Anosov flow on a nonempty compact manifold and a Hölder F have exactly one equilibrium state, and C² flows are a specialisation. By §8.5 and §10.1, g restricted to Λ, a nonempty compact metric space, has hyperbolic local product structure and is transitive; §6.8(b) applies. The flow g|Λ is Bowen–Walters expansive by §6.6, so h_top(g|Λ) < ∞ by §1.6, and §4.8 gives the invariance and time-change statements.
 
 **Checks.**
 
@@ -1108,11 +1133,11 @@ Prove that if Λ is a basic set of a C¹ flow g on a compact manifold and F : Λ
 - For a hyperbolic periodic orbit of period p, ν_{g,F} is the normalised time measure for every F, with P = (1/p)∫₀^p F along the orbit.
 - For F' = F + 5 + L_gψ the equilibrium state is unchanged while the pressure increases by exactly 5.
 
-*Needs:* Layers 1.6 (finite entropy of expansive flows), 4.9, 6.6, 6.8, 8.5, 9.2, 10.1.
+*Needs:* Layers 1.6 (finite entropy of expansive flows), 4.8, 6.6, 6.8, 8.5, 9.2, 10.1.
 
 ### 10.4 Bowen–Margulis and Bowen measures
 
-Prove that a basic set Λ of a C¹ flow (in particular a transitive Anosov flow) has a unique measure of maximal entropy, the Bowen–Margulis measure ν_{g,0}, which is ergodic and positive on nonempty relatively open subsets of Λ, and that h_top(g|Λ) > 0 unless Λ is a single periodic orbit; that a basic set of a C¹ diffeomorphism has a unique measure of maximal entropy, Bowen's measure, with h_top > 0 unless Λ is finite; and that for a hyperbolic toral automorphism Bowen's measure is Haar measure (BowenRuelle1975, Remark 3.4, lines 324–325, and lines 77–78; BowenPeriodicPoints1971, Remark 4.4, lines 421–426, and Proposition 7.1, line 667). Uniqueness is §10.2 and §10.3 with zero potential. Positivity of entropy uses weak specification and expansivity: gluing two disjoint orbit segments in all binary patterns produces exponentially many separated orbit segments, unless Λ is a single orbit.
+Prove that a basic set Λ of a C¹ flow (in particular M itself for a transitive Anosov flow on a nonempty compact manifold) has a unique measure of maximal entropy, the Bowen–Margulis measure ν_{g,0}, which is ergodic and positive on nonempty relatively open subsets of Λ, and that h_top(g|Λ) > 0 unless Λ is a single periodic orbit; that a basic set of a C¹ diffeomorphism has a unique measure of maximal entropy, Bowen's measure, with h_top > 0 unless Λ is finite; and that for a hyperbolic toral automorphism Bowen's measure is Haar measure (BowenRuelle1975, Remark 3.4, lines 324–325, and lines 77–78; BowenPeriodicPoints1971, Remark 4.4, lines 421–426, and Proposition 7.1, line 667). Uniqueness is §10.2 and §10.3 with zero potential. Positivity of entropy uses weak specification and expansivity: gluing two disjoint orbit segments in all binary patterns produces exponentially many separated orbit segments, unless Λ is a single orbit.
 
 **Checks.**
 
@@ -1132,43 +1157,52 @@ Layers 4–9.
 
 ## Layer 11: SRB measures of C² flows
 
+Throughout this layer g is a C² flow on a compact manifold M whose generator X is a C² vector field (the C² flows of BowenRuelle1975, line 93), and norms, distances, Jacobians and the volume m (`TauCeti.riemannianVolume`) are those of a fixed smooth Riemannian metric (`Bundle.ContMDiffRiemannianMetric`; BowenRuelle1975, line 92). Hyperbolic sets, basic sets and attractors are those of Layers 7 and 10, which do not depend on the metric (§7.3).
+
 ### 11.1 The geometric potential
 
-Define, for a hyperbolic set Λ of a C² flow g and x ∈ Λ, the unstable Jacobian λ_t(x) as the absolute value of the determinant of Dg^t : E^u_x → E^u_{g^t x} computed in orthonormal bases of the Riemannian inner products, and the geometric potential φ^u(x) = −d/dt log λ_t(x) at t = 0 (BowenRuelle1975, Section 4, lines 346–358).
+Define, for a hyperbolic set Λ of g and x ∈ Λ, the unstable Jacobian λ_t(x) as the absolute value of the determinant of Dg^t : E^u_x → E^u_{g^t x} computed in orthonormal bases of the inner products of the smooth metric, and the geometric potential φ^u(x) = −d/dt log λ_t(x) at t = 0, which exists because t ↦ Dg^t restricted to E^u_x is C¹ and the metric is smooth (BowenRuelle1975, Section 4, lines 346–358).
 
 Its API:
 
 - λ_{t+s}(x) = λ_t(g^s x) λ_s(x), and ∫₀ᵀ φ^u(g^t x) dt = −log λ_T(x) (BowenRuelle1975, lines 351–357).
-- φ^u is continuous, and Hölder continuous since E^u is (BowenRuelle1975, Lemma 4.1, lines 360–363; §8.7).
-- Changing the Riemannian metric changes φ^u by a coboundary L_gψ with ψ the logarithm of the ratio of the two volume forms on E^u, so the equilibrium state of φ^u does not depend on the metric (BowenRuelle1975, Remark 4.5, lines 409–413); rescaling time by a replaces φ^u by aφ^u.
+- φ^u is continuous and Hölder continuous: x ↦ E^u_x is Hölder (§8.7), and φ^u(x) is a C¹ function of the plane E^u_x because the generator is C² and the metric smooth (BowenRuelle1975, Lemma 4.1, lines 360–363).
+- For a second smooth Riemannian metric, let ρ(x) be the ratio of its volume element on E^u_x to that of the first, ψ = log ρ, and λ'_t, φ'^u the new unstable Jacobian and potential. Then λ'_t(x) = λ_t(x) ρ(g^t x)/ρ(x), so ψ is differentiable along the flow with continuous derivative L_gψ and φ'^u = φ^u − L_gψ; by §4.8 the two potentials have the same pressure and the same equilibrium states (BowenRuelle1975, Remark 4.5, lines 409–413). Rescaling time by a replaces φ^u by aφ^u.
 
 **Checks.**
 
 - For the geodesic flow of a closed surface of curvature −1, λ_t = e^t and φ^u = −1.
-- For the constant-roof suspension of the cat map, λ_t = ((3 + √5)/2)^t on E^u and φ^u = −log((3 + √5)/2) ≈ −0.9624, so P(φ^u) = h_top + φ^u = 0, consistent with §11.4.
+- For the constant-roof suspension of the cat map A, let a = log((3 + √5)/2) and take on ℝ × ℝ² the metric ds² + e^{2as} du² + e^{−2as} dv², where u and v are the coordinates along the unstable and stable eigenlines of A. It is invariant under the lattice translations and under (s, w) ↦ (s − 1, Aw), so it descends to the mapping torus; it is smooth but not flat, and its volume form is ds du dv. For it λ_t = e^{at} on E^u and φ^u = −a ≈ −0.9624, so P(φ^u) = h_top + φ^u = 0, consistent with §11.4.
+- Rescaling that metric by e^{2u(s)} with u(s) = 0.1 sin(2πs) gives λ'_t = e^{at + u(s+t) − u(s)} and φ'^u = −a − 0.2π cos(2πs), which differs from −a by the flow derivative of ψ = u, as the metric-change item requires, and the pressure stays 0. A merely continuous conformal factor is not admissible: with u(s) = |sin(2πs)| the right and left t-derivatives of log λ'_t at s = 0 are a + 2π and a − 2π, and φ'^u is undefined there.
 - The sign is fixed by ∫₀ᵀ φ^u = −log λ_T: the opposite convention would make P(φ^u) = 2 h_top in the previous example instead of 0.
 
-*Needs:* Mathlib `mfderiv`, `Bundle.ContinuousRiemannianMetric`; Layers 7.2, 7.5, 8.7.
+*Needs:* Mathlib `mfderiv`, `Bundle.ContMDiffRiemannianMetric`; Layers 4.8 (coboundary invariance, for the metric change), 7.2, 7.5, 8.7.
 
 ### 11.2 Bounded distortion of unstable Jacobians
 
-Prove that for a hyperbolic set Λ of a C² flow and θ > 0 there is ε > 0 such that for x ∈ Λ, y with d(g^t x, g^t y) ≤ ε for 0 ≤ t ≤ T, and a plane E* at y tangent to a disc close to the unstable disc through y in the adapted chart at x, e^{−θ} ≤ Jac(Dg^T|E*) / λ_T(x) ≤ e^θ (BowenRuelle1975, Appendix, Lemmas A.2–A.4, lines 681–739). The route follows Bowen–Ruelle: the function E ↦ −d/dt log Jac(Dg^t|E) at t = 0 is Hölder on planes in a cone neighbourhood of the unstable bundle; the derivative cocycle contracts this cone neighbourhood (Bowen–Ruelle realise it as a hyperbolic set of the induced flow on the Grassmann bundle, Lemma A.3), so the Bowen-property estimate of §6.7 for this function along the pair of orbits bounds the logarithm of the ratio.
+Prove, for a hyperbolic set Λ of g, with q = dim E^u_x at the point x ∈ Λ under consideration:
+
+- (a) Bowen property near Λ: for a C¹ function ψ on M and θ > 0 there is δ > 0 such that |∫₀ᵀ ψ(g^t y) dt − ∫₀ᵀ ψ(g^t x) dt| < θ whenever x ∈ Λ, y ∈ M, T ≥ 0 and d(g^t y, g^t x) < δ for 0 ≤ t ≤ T (BowenRuelle1975, Lemma A.2, lines 681–701). Here y need not lie in Λ, unlike §6.7.
+- (b) Distortion of planes in unstable cones: for θ > 0 there are δ > 0 and η > 0 such that, for x ∈ Λ, T ≥ 0, y ∈ M with d(g^t y, g^t x) < δ for 0 ≤ t ≤ T, and a q-dimensional subspace E* ⊆ T_yM whose images Dg^t E*, read in the charts of §8.3 at g^t x (BowenRuelle1975, A.1), are graphs of linear maps E^u_{g^t x} → E^s_{g^t x} ⊕ ℝX(g^t x) of norm less than η for every t ∈ [0, T], one has e^{−θ} ≤ Jac(Dg^T|E*)/λ_T(x) ≤ e^θ. Both δ and η depend on θ.
+- (c) Chart slices: for θ > 0 there is ε > 0 such that for x ∈ Λ, an integer n ≥ 0 and a point y = φ_x(v) of the chart φ_x at x whose chart iterates stay in the ε-balls up to time n, the tangent plane E* at y to the slice φ_x(v + E^u_x(ε)) satisfies the hypotheses of (b) with T = n, hence e^{−θ} ≤ Jac(Dg^n|E*)/λ_n(x) ≤ e^θ (BowenRuelle1975, Lemma A.4, lines 718–733).
+
+For (a), the chart at x gives a point z on the weak stable plaque of x with time shift |s| ≤ C₀δ and d(g^k y, g^k z) ≤ C₂δγ^{n−k}, and the integrals are compared step by step, the time-one integrals of ψ being Lipschitz. For (b), apply (a)'s argument to the induced flow on q-planes, read in the charts of §8.3 and graph coordinates over E^u, with the C¹ function E ↦ −d/dt log Jac(Dg^t|E) at t = 0 (C¹ because the generator is C² and the metric smooth), along the plane orbits of E^u_x and E*: the planes {E^u_z : z ∈ Λ} form a hyperbolic set of the induced flow (BowenRuelle1975, Lemma A.3, lines 702–715), and the cone hypothesis keeps the two plane orbits within the tolerance of (a). For (c), the closeness of the iterated slice planes follows from the chart estimates (A.3)–(A.5) of BowenRuelle1975, lines 655–676.
 
 **Checks.**
 
-- For a linear Anosov flow (the constant-roof suspension of a toral automorphism) Jacobians of all planes in the unstable cone grow at the same constant rate along each orbit, and the ratio is bounded by the cone opening alone.
+- For the constant-roof suspension of the cat map with the metric of §11.1, x = y and E* spanned by e_u + b e_v, where e_u and e_v are the unit vectors along the unstable and stable lines at x: Dg^T E* is spanned by e^{aT}e_u + b e^{−aT}e_v, so Jac(Dg^T|E*)/λ_T(x) = (1 + b²e^{−4aT})^{1/2}/(1 + b²)^{1/2}, which decreases from 1 to (1 + b²)^{−1/2} as T → ∞. For b = 0.1 the limit 0.99504 is below e^{−0.001} ≈ 0.99900, although the base orbits coincide: the plane tolerance η must depend on θ, and the ratio stays in [e^{−θ}, e^θ] for all T ≥ 0 exactly when b² ≤ e^{2θ} − 1.
 - For E* = E^u_y with y ∈ Λ the ratio compares λ_T(y) with λ_T(x), which is the Bowen property of φ^u (§6.7).
 - Without the C² hypothesis φ^u need not be Hölder and the ratios can grow without bound along long orbit segments.
 
-*Needs:* Layers 6.7, 7.6, 8.3, 8.7, 11.1.
+*Needs:* Layers 7.2, 7.6, 8.3, 8.7, 11.1.
 
 ### 11.3 The volume lemmas
 
-Prove, for a hyperbolic set Λ of a C² flow on a compact manifold with Riemannian volume m (`TauCeti.riemannianVolume`) and closed flow Bowen balls B_x(ε, T) in M: (a) for small ε there is c_ε ≥ 1 with c_ε⁻¹ ≤ m(B_x(ε, T)) λ_T(x) ≤ c_ε for all x ∈ Λ and T > 0; (b) for small ε, δ there is d > 0 with m(B_y(δ, T)) ≥ d·m(B_x(ε, T)) whenever x ∈ Λ, y ∈ B_x(ε, T) and T > 0 (BowenRuelle1975, Lemmas 4.2–4.3, lines 364–375, proved in the Appendix A.5–A.6, lines 740–808). In charts adapted to the weak stable and unstable discs (BowenRuelle1975, A.1, via §8.3), the set of points whose orbit stays ε-close to that of x for time T is fibred by graphs over the unstable direction whose images at time T are discs of bounded size; Fubini's theorem in the chart, the Euclidean change of variables (`MeasureTheory.lintegral_image_eq_lintegral_abs_det_fderiv_mul`) and §11.2 bound each fibre's measure by λ_T(x)⁻¹ up to constants, and the chart volume is comparable to m by the continuous positive chart density (`TauCeti.riemannianVolume_restrict_source`, `TauCeti.chartRiemannianVolume`).
+Prove, for a hyperbolic set Λ of g with the Riemannian volume m of the smooth metric (`TauCeti.riemannianVolume`) and closed flow Bowen balls B_x(ε, T) in M: (a) for small ε there is c_ε ≥ 1 with c_ε⁻¹ ≤ m(B_x(ε, T)) λ_T(x) ≤ c_ε for all x ∈ Λ and T > 0; (b) for small ε, δ there is d > 0 with m(B_y(δ, T)) ≥ d·m(B_x(ε, T)) whenever x ∈ Λ, y ∈ B_x(ε, T) and T > 0 (BowenRuelle1975, Lemmas 4.2–4.3, lines 364–375, proved in the Appendix A.5–A.6, lines 740–808). In charts adapted to the weak stable and unstable plaques (BowenRuelle1975, A.1, via §8.3), the set of points whose orbit stays ε-close to that of x for time T is fibred by graphs over the unstable direction whose images at time T are discs of bounded size; Fubini's theorem in the chart, the Euclidean change of variables (`MeasureTheory.lintegral_image_eq_lintegral_abs_det_fderiv_mul`) and §11.2 bound each fibre's measure by λ_T(x)⁻¹ up to constants, and the chart volume is comparable to m by the continuous positive chart density (`TauCeti.riemannianVolume_restrict_source`, `TauCeti.chartRiemannianVolume`).
 
 **Checks.**
 
-- For the constant-roof suspension of the cat map with the flat metric, B_x(ε, T) is a box of unstable length about ε((3 + √5)/2)^{−T}, stable length about ε and flow length about ε, so its volume times λ_T = ((3 + √5)/2)^T is about ε³.
+- For the constant-roof suspension of the cat map with the metric of §11.1, whose volume form is ds du dv, B_x(ε, T) is a box of unstable length about εe^{−aT}, stable length about ε and flow length about ε, so its volume times λ_T = e^{aT} is about ε³.
 - For the geodesic flow of a hyperbolic surface the volume of B_x(ε, T) decays like e^{−T}, matching λ_T = e^T.
 - For T = 0 the ball is the ε-ball of M and λ_0 = 1, so (a) says the volume of small balls is bounded above and below, true by compactness.
 
@@ -1176,11 +1210,11 @@ Prove, for a hyperbolic set Λ of a C² flow on a compact manifold with Riemanni
 
 ### 11.4 The pressure of the geometric potential
 
-Prove, for a basic set Λ of a C² flow on a compact manifold: (a) P(g|Λ, φ^u) is the limsup as T → ∞ of (1/T) log m(B_Λ(ε, T)) for small ε, where B_Λ(ε, T) is the union of the B_x(ε, T) over x ∈ Λ, and hence P(g|Λ, φ^u) ≤ 0; (b) if the local stable set W^s_Λ(ε) has positive volume, in particular if Λ is an attractor, in particular if g is a transitive Anosov flow with Λ = M, then P(g|Λ, φ^u) = 0 and the equilibrium state μ⁺ = ν_{g,φ^u} satisfies hμ⁺(g^1) = −∫φ^u dμ⁺ (BowenRuelle1975, Proposition 4.4, lines 377–407). For (a), a maximal (δ, T)-separated set E of Λ gives disjoint balls B_x(δ/2, T) inside B_Λ(ε, T) ⊆ ∪_{x∈E} B_x(δ + ε, T), and §11.3(a) turns the volumes into the partition sum of φ^u; for (b), B_Λ(ε, T) contains the set of points whose forward orbits stay ε-close to Λ, which has volume bounded below.
+Prove, for a basic set Λ of g: (a) P(g|Λ, φ^u) is the limsup as T → ∞ of (1/T) log m(B_Λ(ε, T)) for small ε, where B_Λ(ε, T) is the union of the B_x(ε, T) over x ∈ Λ, and hence P(g|Λ, φ^u) ≤ 0; (b) if the local stable set W^s_Λ(ε) has positive volume, in particular if Λ is an attractor, in particular if g is a transitive Anosov flow on a nonempty compact manifold with Λ = M, then P(g|Λ, φ^u) = 0 and the equilibrium state μ⁺ = ν_{g,φ^u} satisfies hμ⁺(g^1) = −∫φ^u dμ⁺ (BowenRuelle1975, Proposition 4.4, lines 377–407). For (a), a maximal (δ, T)-separated set E of Λ gives disjoint balls B_x(δ/2, T) inside B_Λ(ε, T) ⊆ ∪_{x∈E} B_x(δ + ε, T), and §11.3(a) turns the volumes into the partition sum of φ^u; for (b), B_Λ(ε, T) contains the set of points whose forward orbits stay ε-close to Λ, which has volume bounded below.
 
 **Checks.**
 
-- For the constant-roof suspension of the cat map, P(φ^u) = log((3 + √5)/2) − log((3 + √5)/2) = 0 and μ⁺ is the product measure.
+- For the constant-roof suspension of the cat map with the metric of §11.1, P(φ^u) = log((3 + √5)/2) − log((3 + √5)/2) = 0 and μ⁺ is the product measure; another smooth metric changes φ^u by a flow coboundary (§11.1) and leaves P(φ^u) = 0 and μ⁺ unchanged.
 - For the geodesic flow of a hyperbolic surface, P(φ^u) = h_top − 1 = 0, so h_top = 1.
 - For a hyperbolic periodic orbit with nonzero unstable bundle (not an attractor), P(φ^u) = −(1/p) log λ_p < 0, consistent with (a) and with the strict inequality for non-attractors.
 
@@ -1188,19 +1222,19 @@ Prove, for a basic set Λ of a C² flow on a compact manifold: (a) P(g|Λ, φ^u)
 
 ### 11.5 The SRB theorem
 
-Prove that if Λ is an attractor of a C² flow on a compact manifold with basin W^s_Λ, then for m-almost every x ∈ W^s_Λ and every continuous u : M → ℝ, (1/T)∫₀ᵀ u(g^t x) dt → ∫u dμ⁺ as T → ∞, where μ⁺ = ν_{g,φ^u} is the equilibrium state of the geometric potential (BowenRuelle1975, Theorem 5.1, lines 421–469). In particular, for a transitive C² Anosov flow on a nonempty compact manifold, m-almost every point of M is generic for μ⁺; μ⁺ is the unique g-invariant probability measure whose generic points have positive volume, hence the unique one whose generic points have full volume; and every g-invariant probability measure absolutely continuous with respect to m equals μ⁺ (BowenRuelle1975, Remark 5.2, lines 470–472). The proof is Bowen–Ruelle's: for δ > 0 the set of points of a neighbourhood U of Λ whose time averages deviate by more than δ is covered, beyond any time N, by disjoint Bowen balls of points of Λ with deviating averages; the volume lemma (§11.3(a)), P(φ^u) = 0 (§11.4) and the lower Gibbs bound (§10.3) compare the total volume with the μ⁺-measure of the deviation sets beyond N, which tends to 0 by flow-ergodicity of μ⁺ and the pointwise ergodic theorem (ProbabilisticAndMetricNumberTheory §4.1 applied to g^1 and u_1); invariance of the deviation set and g^t(U) shrinking to Λ extend the conclusion to the basin, and a countable dense set of u finishes.
+Prove that if Λ is an attractor of g with basin W^s_Λ, then for m-almost every x ∈ W^s_Λ and every continuous u : M → ℝ, (1/T)∫₀ᵀ u(g^t x) dt → ∫u dμ⁺ as T → ∞, where μ⁺ = ν_{g,φ^u} is the equilibrium state of the geometric potential (BowenRuelle1975, Theorem 5.1, lines 421–469). In particular, when g is a transitive Anosov flow on a nonempty compact manifold, m-almost every point of M is generic for μ⁺; μ⁺ is the unique g-invariant probability measure whose generic points have positive volume, hence the unique one whose generic points have full volume; and every g-invariant probability measure absolutely continuous with respect to m equals μ⁺ (BowenRuelle1975, Remark 5.2, lines 470–472). The proof is Bowen–Ruelle's: for δ > 0 the set of points of a neighbourhood U of Λ whose time averages deviate by more than δ is covered, beyond any time N, by disjoint Bowen balls of points of Λ with deviating averages; the volume lemma (§11.3(a)), P(φ^u) = 0 (§11.4) and the lower Gibbs bound (§10.3) compare the total volume with the μ⁺-measure of the deviation sets beyond N, which tends to 0 by flow-ergodicity of μ⁺ and the pointwise ergodic theorem (ProbabilisticAndMetricNumberTheory §4.1 applied to g^1 and u_1); invariance of the deviation set and g^t(U) shrinking to Λ extend the conclusion to the basin, and a countable dense set of u finishes.
 
 **Checks.**
 
-- For the geodesic flow of a closed surface of curvature −1, φ^u = −1 is constant, so μ⁺ is the measure of maximal entropy (equilibrium states are unchanged by adding constants, §4.8), that is the Bowen–Margulis measure of §10.4; since the Liouville measure is invariant and absolutely continuous (KatokHasselblatt1995, Chapter 17), μ⁺ is also the Liouville measure: Bowen–Margulis, SRB and Liouville measures coincide.
-- For the constant-roof suspension of the cat map, μ⁺ is the product of Haar and fibre Lebesgue measure, which is the normalised Riemannian volume itself, and Lebesgue-almost every orbit equidistributes.
+- For the geodesic flow of a closed surface of curvature −1, φ^u = −1 is constant, so μ⁺ is the measure of maximal entropy (equilibrium states are unchanged by adding constants, §4.7), that is the Bowen–Margulis measure of §10.4; since the Liouville measure is invariant and absolutely continuous (KatokHasselblatt1995, Chapter 17), μ⁺ is also the Liouville measure: Bowen–Margulis, SRB and Liouville measures coincide.
+- For the constant-roof suspension of the cat map, μ⁺ is the product of Haar and fibre Lebesgue measure. For the metric of §11.1, whose volume form is ds du dv, this is the normalised Riemannian volume itself; for that metric rescaled by e^{2u(s)} with u(s) = 0.1 sin(2πs) the volume has density proportional to e^{3u(s)}, which the flow does not preserve, so for that metric μ⁺ is not the normalised volume but lies in its measure class. For every smooth metric Lebesgue-almost every orbit equidistributes to μ⁺.
 - Two distinct measures cannot both have generic points of positive volume on a transitive Anosov flow, since a common generic point would force equality; the uniqueness clause is that observation.
 
 *Needs:* ProbabilisticAndMetricNumberTheory §4.1 (`birkhoff_pointwise`); Tau Ceti `TauCeti.riemannianVolume`; Layers 3.1, 10.1, 10.3, 11.3, 11.4.
 
 ### Examples
 
-The constant-roof suspension of the cat map (μ⁺ = volume) and the geodesic flow of a hyperbolic surface (μ⁺ = Liouville = Bowen–Margulis) realise every statement of this layer with constant geometric potential.
+The constant-roof suspension of the cat map (μ⁺ = volume for the metric of §11.1) and the geodesic flow of a hyperbolic surface (μ⁺ = Liouville = Bowen–Margulis) realise every statement of this layer with constant geometric potential.
 
 ### Dependencies
 
@@ -1208,8 +1242,8 @@ Layers 2–10; ProbabilisticAndMetricNumberTheory §4.1; Tau Ceti's Riemannian v
 
 ## Downstream consumers
 
-- Exponential mixing of three-dimensional Anosov flows (TsujiiZhang2023, Theorem 1.1, lines 123–127) uses transitive C^∞ Anosov flows, topological mixing (§1.7), Hölder potentials and the unique equilibrium measure ν_{g,F} of §10.3, with the pressure in the variational form of §4.8 (TsujiiZhang2023, Definition 3.5, lines 485–495).
-- The Buzzi–Crovisier–Sarig theorems on C^∞ surface diffeomorphisms (BCS2022, Main Theorem, lines 61–64, and Corollaries 1.4–1.6, lines 195–213) state their conclusions with the variational principle (§4.3), measures of maximal entropy and equilibrium measures (§4.4), their ergodic components (§4.5), Newhouse's theorem (§4.7) and the geometric potential; a roadmap on nonuniform hyperbolicity would import these.
+- Exponential mixing of three-dimensional Anosov flows (TsujiiZhang2023, Theorem 1.1, lines 123–127) uses transitive C^∞ Anosov flows, topological mixing (§1.7), Hölder potentials and the unique equilibrium measure ν_{g,F} of §10.3, with the pressure in the variational form of §4.7 (TsujiiZhang2023, Definition 3.5, lines 485–495).
+- The Buzzi–Crovisier–Sarig theorems on C^∞ surface diffeomorphisms (BCS2022, Main Theorem, lines 61–64, and Corollaries 1.4–1.6, lines 195–213) state their conclusions with the variational principle (§4.3), measures of maximal entropy and equilibrium measures (§4.4), their ergodic components (§4.5), the existence theorem under upper semicontinuity of entropy (§4.6), which Newhouse's theorem feeds, and the geometric potential; a roadmap on nonuniform hyperbolicity, which would also own Newhouse's theorem, would import these.
 - ArithmeticDynamicsPartII and any roadmap comparing the maximal-entropy measure of a rational map with the general notion can cite §4.4 for the definition of a measure of maximal entropy.
 - GeometricTopology and TaubesGromov, which use Anosov torus bundles and the cat matrix as examples, can import §7.1's Anosov diffeomorphisms and §9.1's hyperbolic toral automorphisms.
 

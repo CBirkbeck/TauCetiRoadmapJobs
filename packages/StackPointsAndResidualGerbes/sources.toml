@@ -240,7 +240,6 @@ id = "sga3-vi-a"
 authors = "Michel Demazure, Alexander Grothendieck (eds.); re-edition by Philippe Gille, Patrick Polo"
 title = "Schémas en groupes (SGA 3), Tome I, Exposé VI_A: Généralités sur les groupes algébriques"
 year = 2011
-version_note = "Re-edition (Documents Mathématiques 7, Société Mathématique de France), file compiled 13 October 2024 from the editor's page; Théorème 3.2 is on printed page 313, and its items (ii′) and the detailed (iv) are editorial additions marked N.D.E."
 locator_scheme = "theorem"
 locator = "Exposé VI_A, Théorème 3.2"
 url = "https://webusers.imj-prg.fr/~patrick.polo/SGA3/Exp6A-13oct24.pdf"
@@ -250,4 +249,165 @@ sha256 = "6c8795572d1fc3b21bd02d24b1bfb20a8fb447475702c2674c96939b1eb69582"
 licence_class = "author-page"
 status = "certified"
 accessed = "2026-11-08"
+version_note = "Re-edition (Documents Mathématiques 7, Société Mathématique de France), file compiled 13 October 2024 from the editor's page; Théorème 3.2 is on printed page 313, and its items (ii′) and the detailed (iv) are editorial additions marked N.D.E."
 cited_for = ["the quotient of a group of finite type over a field by a closed subgroup is a separated scheme of finite type, smooth when the group is, with components of dimension dim G − dim H, the projection an fppf torsor (Théorème 3.2 (i), (ii), (ii′), (iv)(a′)–(c)): the supplier contract gap:homogeneous-quotient-scheme of target 7.3"]
+
+[[source]]
+id = "stacks-descent"
+authors = "The Stacks Project Authors"
+title = "The Stacks Project, Descent"
+year = 2026
+locator_scheme = "tag"
+locator = "Tag 034E"
+url = "https://stacks.math.columbia.edu/tag/034E"
+fetched_from = "https://stacks.math.columbia.edu/download/descent.pdf"
+fetched_at = "2026-11-10T19:58:31Z"
+sha256 = "28e718bac216bb7c4584e9edb1d25d6420ee19a6cd536742c58599242ff8cad4"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-10"
+cited_for = ["reducedness of schemes is local in the smooth topology (Lemma 35.18.1, Tag 034E) and descends along flat surjective morphisms (Lemma 35.19.1, Tag 06QM); regularity is smooth local (Lemma 35.18.4, Tag 036D, the statement of Tau Ceti's IsRegular.of_smooth): the supplier contract gap:reduced-regular-smooth-local of targets 0.1, 0.5, 3.1, 3.4"]
+
+[[source]]
+id = "stacks-spaces-descent"
+authors = "The Stacks Project Authors"
+title = "The Stacks Project, Descent and Algebraic Spaces"
+year = 2026
+locator_scheme = "tag"
+locator = "Tag 06MI"
+url = "https://stacks.math.columbia.edu/tag/06MI"
+fetched_from = "https://stacks.math.columbia.edu/download/spaces-descent.pdf"
+fetched_at = "2026-11-10T19:58:56Z"
+sha256 = "5c8408a876c17c258f78ac2cc8241662a4b089a8d33f787eefbdf27c0d782335"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-10"
+cited_for = ["reducedness of algebraic spaces descends along flat surjective morphisms (Lemma 74.9.2, Tag 06MI) and ascends and descends along smooth ones (Lemma 74.9.5, Tag 0GB3); regularity descends along flat surjective locally finitely presented morphisms (Lemma 74.9.4, Tag 06MK): the supplier contract gap:reduced-regular-smooth-local of targets 0.1, 0.5, 3.1, 3.4"]
+
+[[source]]
+id = "stacks-spaces-over-fields"
+authors = "The Stacks Project Authors"
+title = "The Stacks Project, Algebraic Spaces over Fields"
+year = 2026
+locator_scheme = "tag"
+locator = "Tag 06M1"
+url = "https://stacks.math.columbia.edu/tag/06M1"
+fetched_from = "https://stacks.math.columbia.edu/download/spaces-over-fields.pdf"
+fetched_at = "2026-11-10T19:58:58Z"
+sha256 = "b161e9ea6d579efd135abdb27022915d33be27a0fccf7a92376dfc58a9af6eb1"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-10"
+cited_for = ["a smooth algebraic space over a field is regular (Lemma 72.16.1, Tag 06M1): the supplier contract gap:reduced-regular-smooth-local of targets 3.1, 3.4"]
+
+[[source]]
+id = "stacks-morphisms-spaces"
+authors = "The Stacks Project Authors"
+title = "The Stacks Project, Morphisms of Algebraic Spaces"
+year = 2026
+locator_scheme = "theorem"
+locator = "Morphisms of Spaces, Lemma 67.10.8 and Proposition 67.32.1"
+url = "https://stacks.math.columbia.edu/download/spaces-morphisms.pdf"
+fetched_from = "https://stacks.math.columbia.edu/download/spaces-morphisms.pdf"
+fetched_at = "2026-11-11T12:45:19Z"
+sha256 = "46497665981806a93d5b2f315314555ba457aaed3d967bf2d8f0cd4a2310e161"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-11"
+cited_for = ["0.2; gap:generic-flatness-spaces"]
+
+[[source]]
+id = "stacks-properties-spaces"
+authors = "The Stacks Project Authors"
+title = "The Stacks Project, Properties of Algebraic Spaces"
+year = 2026
+locator_scheme = "theorem"
+locator = "Properties of Spaces, Proposition 66.13.3"
+url = "https://stacks.math.columbia.edu/download/spaces-properties.pdf"
+fetched_from = "https://stacks.math.columbia.edu/download/spaces-properties.pdf"
+fetched_at = "2026-11-11T12:45:22Z"
+sha256 = "7f71f8371bd2040b4cd3ec6171420ef6a1ce14f7a0a334d32c6d04821e1741bc"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-11"
+cited_for = ["gap:quasi-separated-space-schematic-locus"]
+
+[[source]]
+id = "stacks-groupoids-spaces"
+authors = "The Stacks Project Authors"
+title = "The Stacks Project, Groupoids in Algebraic Spaces"
+year = 2026
+locator_scheme = "theorem"
+locator = "Groupoids in Spaces, Lemmas 78.25.1 and 78.27.1-78.27.2"
+url = "https://stacks.math.columbia.edu/download/spaces-groupoids.pdf"
+fetched_from = "https://stacks.math.columbia.edu/download/spaces-groupoids.pdf"
+fetched_at = "2026-11-11T12:45:24Z"
+sha256 = "530a97af19dd13c53cddd32663181e19c535623a6898ad3dfb8192b750a49b56"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-11"
+cited_for = ["gap:flat-groupoid-quotients"]
+
+[[source]]
+id = "stacks-more-groupoids-spaces"
+authors = "The Stacks Project Authors"
+title = "The Stacks Project, More on Groupoids in Spaces"
+year = 2026
+locator_scheme = "theorem"
+locator = "More on Groupoids in Spaces, Lemma 79.9.4 and Proposition 79.10.3"
+url = "https://stacks.math.columbia.edu/download/spaces-more-groupoids.pdf"
+fetched_from = "https://stacks.math.columbia.edu/download/spaces-more-groupoids.pdf"
+fetched_at = "2026-11-11T12:45:25Z"
+sha256 = "5345c7115ed66a84a3ebfd92a468c4aa5f3c0aa8ec9f0b89cb57482065058971"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-11"
+cited_for = ["gap:group-spaces-over-fields"]
+
+[[source]]
+id = "stacks-artin"
+authors = "The Stacks Project Authors"
+title = "The Stacks Project, Artin’s Axioms"
+year = 2026
+locator_scheme = "theorem"
+locator = "Artin Axioms, Lemma 98.5.2 and Section 98.8"
+url = "https://stacks.math.columbia.edu/download/artin.pdf"
+fetched_from = "https://stacks.math.columbia.edu/download/artin.pdf"
+fetched_at = "2026-11-11T12:45:30Z"
+sha256 = "c90df80ae07d0b1a1bc5a886c5deea52fe07dcc2623e5903099333a144628bb2"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-11"
+cited_for = ["gap:algebraic-stacks-satisfy-rs"]
+
+[[source]]
+id = "stacks-algebraic-stacks"
+authors = "The Stacks Project Authors"
+title = "The Stacks Project, Algebraic Stacks"
+year = 2026
+locator_scheme = "theorem"
+locator = "Lemma 94.16.1 and Remark 94.16.3"
+url = "https://stacks.math.columbia.edu/tag/04T3"
+fetched_from = "https://stacks.math.columbia.edu/download/algebraic.pdf#nameddest=04T3"
+fetched_at = "2026-11-11T12:46:35Z"
+sha256 = "057f76954c64c7d41533316738ee5710efc452486c1d48ab688f5a1c59296689"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-11"
+cited_for = ["gap:flat-groupoid-quotients"]
+
+[[source]]
+id = "stacks-formal-defos"
+authors = "The Stacks Project Authors"
+title = "The Stacks Project, Formal Deformation Theory"
+year = 2026
+locator_scheme = "section"
+locator = "Section 90.29, Change of residue field"
+url = "https://stacks.math.columbia.edu/download/formal-defos.pdf"
+fetched_from = "https://stacks.math.columbia.edu/download/formal-defos.pdf"
+fetched_at = "2026-11-11T12:47:20Z"
+sha256 = "f6549caab0fa380254eb316265ce14357794224c0e01c517bb0365c708a4c2ea"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-11"
+cited_for = ["gap:algebraic-stacks-satisfy-rs; 7.3"]

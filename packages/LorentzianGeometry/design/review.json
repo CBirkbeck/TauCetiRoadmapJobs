@@ -1,0 +1,10 @@
+{
+  "review": {
+    "status": "needs_changes",
+    "reviewer": "independent-review-REV-DESIGN-LorentzianGeometry~6",
+    "date": "2026-11-11",
+    "findings": 3,
+    "blocking": 1,
+    "notes": "Round 6 of the design. Both round-5 repairs verified on main (c9dea9d) and at the pins (RiemannianGeometry Conventions/R1; Tau Ceti IsLocalHomeomorph.chartedSpaceComap family, Mathlib IsCoveringMap.isLocalHomeomorph). Gate: 0 problems, no UPWARD or CYCLE. All 102 cited library declarations found at their cited file and line at the pins (script). All six supplier roadmaps' cited sections resolved on main. Seeded sample of 15 targets checked against the cached texts: locators correct; chrusciel2011 (2.2.1)-(2.2.3) is cited in 3.1, 3.2, 3.4 for statements it does not make (R02, P3). Adversarial table with computed values for the sampled targets, the headlines, the repaired passages and sections 1.1, 1.3, 2.2, 4.1 (no rows in round 5). R01 (P2): the restriction bullet of 1.1 and the null-existence bullet of 1.3 (and three plan.json API statements) lack the Lorentzian hypothesis; counterexamples diag(-1,-1,1) and the Euclidean plane. R03 (P3): the double null metric of 2.5 uses R^(n-1) with no bound n >= 1. Design stage: no Suggested.lean, nothing elaborated (this lane does not elaborate). No source fetched; manifest unchanged."
+  }
+}

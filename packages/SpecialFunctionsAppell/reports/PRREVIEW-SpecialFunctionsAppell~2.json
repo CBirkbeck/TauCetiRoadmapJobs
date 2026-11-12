@@ -1,0 +1,4 @@
+{"review": {"status": "accepted", "reviewer": "independent-review-PRREVIEW-SpecialFunctionsAppell~2",
+            "head": "ac7377f9e9162e8f6cb907c4b460d923dc2d8df6", "pr": 2166, "folder": "SpecialFunctionsAppell", "date": "2026-11-11",
+            "findings": 0, "blocking": 0,
+            "notes": "incremental re-review of 150 changed lines since 9238be3. All eight previous findings (R01-R08) are repaired and no repair introduced a problem. Recomputed: the coefficient identities of 5.1 and 5.2 in exact rational arithmetic for M, N <= 5 at two parameter sets (one at the pole gamma = -1), the repaired fibre bound of 5.3 at y = 5 + 0.1i for m = 10..80 and the sum bound behind it, the four new Checks of 3.2. DLMF locators read for 16.14(ii), 16.15.4 and 16.16(i). Gate: all scanners 0, OK; depcheck 0 problems; lake env lean on Suggested.lean gives 56 sorry warnings only. No change outside the folder; the pull request's text agrees with the head."}}

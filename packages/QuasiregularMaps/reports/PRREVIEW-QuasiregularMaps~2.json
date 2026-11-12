@@ -1,0 +1,13 @@
+{
+  "review": {
+    "status": "needs_changes",
+    "reviewer": "independent-review-PRREVIEW-QuasiregularMaps~2",
+    "head": "97e2d44682324706bc5e14f7bc6a35a0bb55f62b",
+    "pr": 2134,
+    "folder": "QuasiregularMaps",
+    "date": "2026-11-10",
+    "findings": 1,
+    "blocking": 1,
+    "notes": "incremental re-review of 101 changed lines since 64a7eb8. Previous R01-R05 and R07 repaired with no new defect; R06 not repaired: the roadmap folder is consistent (orientation descent owned in 7.5) but the board's plan.json still declares gap orientation-descent against DifferentialGeometry, raised again as R01 (P2), with no edit needed in the roadmap folder. Checked: the changed passages of Scope, the Tau Ceti contract, 1.1, 5.1, 6.2-6.4, 7.3 and two docstrings; five pinned declarations opened at file and line; seeded target 1.1 against MartioRickmanVaisala1969 line 127 (the other fourteen lie in untouched text); 17 computed adversarial rows for changed statements and 19 carried forward. Gate: every counter zero. Elaboration: five sorry warnings only; ten #check signatures unchanged. Dependency check: 235 roadmaps, 2133 edges, 0 problems. Six Sobolev gaps remain declared conditional contracts."
+  }
+}

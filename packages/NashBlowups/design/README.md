@@ -31,8 +31,9 @@ annihilators, Seidenberg's lemma on derivation-stable ideals, coordinates from a
 the differentials, the `p`-monomial operators and the freeness of the Frobenius pushforward of a
 normal local ring; and the interface statements of Layer 0 on Tau Ceti's sheaf of relative
 differentials (the comparison map, base change, closed immersions, the rank on the smooth locus),
-on Grassmannians along a surjection, on cotangent spaces at points with separable residue field and
-on smoothness at closed points.
+on Grassmannians along a surjection, on cotangent spaces at points with separable residue field, on
+smoothness at closed points and on the normality of the base change of a normal scheme along a
+separable extension of the ground field (§0.7, which no other roadmap states and which §6.3 needs).
 
 **Supplied elsewhere and cited.** The Grassmannian of locally free rank-`r` quotients of a
 quasi-coherent sheaf of finite type, its universal quotient, classifying maps, base change, properness
@@ -57,9 +58,11 @@ every characteristic, through `J/J²`, because §4.4 applies it to local rings, 
 operator on fields of characteristic zero. The sheaf `Ω_{X/R}` of a scheme over a ring, its universal
 derivation, quasi-coherence, finite presentation, restriction to open subschemes, finite local freeness and rank
 on smooth schemes, pure dimension, the blowup of a scheme along an ideal sheaf with its universal
-property, exterior powers of sheaves of modules and the reduced-source factorisation through a
-vanishing ideal are in the pinned Tau Ceti; the smooth locus, relative normalisation, scheme-theoretic
-images, the module Grassmannian functor and Kähler differentials of algebras are in the pinned Mathlib.
+property, exterior powers of sheaves of modules, the reduced-source factorisation through a
+vanishing ideal and the recognition criterion for a relative normalisation are in the pinned Tau Ceti;
+the smooth locus, relative normalisation, scheme-theoretic images, the module Grassmannian functor,
+Kähler differentials of algebras and separability of field extensions that need not be algebraic are in
+the pinned Mathlib.
 
 **Not in this roadmap.** The combinatorial description of Nash blowups of toric varieties by
 logarithmic Jacobian ideals and the existence of the normal toric varieties of dimension `d ≥ 4` that
@@ -93,6 +96,18 @@ planned.
   reduced scheme, which is reduced with support the closure of the image.
 - **Open subschemes isomorphic to `X`** means isomorphic over `k`.
 - "Smooth" means smooth over `k`; "singular" means not smooth over `k`; "regular" refers to local rings.
+- A field extension `k'/k` is **separable** when every finitely generated subextension has a separating
+  transcendence basis (stacksAlgebra, Definition 10.42.1, tag 030O, line 4671; Mathlib's
+  `Algebra.IsTranscendentalSeparable`). It need not be algebraic: `ℚ(u)/ℚ` is separable. For an algebraic
+  extension it is Mathlib's `Algebra.IsSeparable`, and every extension of a perfect field is separable.
+- **Ground fields of the sources.** The sources on Nash blowups work over an algebraically closed field or over
+  `ℂ`: nobile1975 (line 29), gonzalezSprinberg1982 (line 78, with algebraically closed fields of
+  characteristic zero in the footnote, line 82), nashModificationNotes2024 (lines 143, 153, 232, 445, 505),
+  duarteNunezBetancourt2020 (line 103) and castilloDuarteLeytonLiendo2026 (lines 13–14 and 58). Their
+  statements are cited at that generality. The targets here are over an arbitrary field `k`. A route that
+  takes a step from one of those proofs uses no algebraic closedness; every property of `k` that a route
+  uses (characteristic zero, perfectness, separability of a residue field or of an extension) is a
+  hypothesis of the target.
 - Names in italics are this roadmap's proposed declaration names; names in code are declarations of
   the pinned libraries or of other roadmaps.
 
@@ -116,8 +131,14 @@ planned.
   `ext_of_isDominant_of_isSeparated` (morphisms from a reduced scheme into a separated one agreeing
   after a dominant map are equal; `Mathlib/AlgebraicGeometry/Morphisms/Separated.lean`).
 - `AlgebraicGeometry.Scheme.Hom.normalization` and `Scheme.Hom.normalizationPullback` with its
-  instance that the comparison is an isomorphism along a smooth base change
+  instance that the comparison is an isomorphism along a smooth base change, and
+  `Scheme.Hom.normalizationDesc` (for a quasi-compact quasi-separated `f : X → Y` factored as `f = f₁ ≫ f₂`
+  with `f₂ : T → Y` integral, the morphism `f.normalization → T` over `Y` from the normalisation of `Y` in `X`)
   (`Mathlib/AlgebraicGeometry/Normalization.lean`).
+- `Algebra.IsTranscendentalSeparable` (`Mathlib/FieldTheory/TranscendentalSeparable.lean`): every
+  finitely generated subextension has a separating transcendence basis (Stacks' separable extensions,
+  not necessarily algebraic), with the instances from `Algebra.IsSeparable` and from `PerfectField`, and
+  `Algebra.isSeparable_iff_isTranscendentalSeparable_and_isAlgebraic`.
 - `LocallyOfFiniteType.jacobsonSpace` (`Mathlib/AlgebraicGeometry/Morphisms/FiniteType.lean`) and
   `nonempty_inter_closedPoints` (`Mathlib/Topology/JacobsonSpace.lean`): a nonempty locally closed
   subset of a Jacobson space contains a closed point.
@@ -166,6 +187,10 @@ planned.
   `isIso_blowupToBase_iff` (the blowup map is an isomorphism iff the ideal is effective Cartier) and
   `isProper_blowupToBase` (`TauCeti/AlgebraicGeometry/Blowup/`).
 - `SheafOfModules.exteriorPower` (`TauCeti/Algebra/Category/ModuleCat/Sheaf/ExteriorPower/Basic.lean`).
+- `AlgebraicGeometry.Scheme.Hom.isIso_normalizationDesc_iff`
+  (`TauCeti/AlgebraicGeometry/Normalization/IsIso.lean`): `normalizationDesc` is an isomorphism iff over every
+  affine open `U ⊆ Y` the sections of `T` over the preimage of `U` map injectively into those of `X` with image
+  containing every element integral over `Γ(Y, U)`.
 
 ### From TauCetiRoadmap.AlgebraicModuliForArithmeticGeometry
 
@@ -232,18 +257,18 @@ No gap is recorded: every input above is stated by its owner.
 
 ## How to read the build
 
-Layer 0 adds the interface statements the construction needs on top of Tau Ceti's sheaf of
-differentials, AlgebraicModuliForArithmeticGeometry's Grassmannian and the regularity results of
-SchemeAndStackFoundations. Layer 1 proves the setting lemma and constructs, once and for all, the Nash
-modification of a sheaf of finite type along a dense open where it is locally free, with its universal
-property, Plücker form, locality and flat base change. Layer 2 specialises it to `Ω_{X/k}`: the Nash
-blowup, its modification property, its universal property, the triviality criterion, locality, field
-base change and the iteration. Layer 3 gives the embedded (Gauss map) and blowup descriptions. Layers 4
-and 5 prove the smoothness criteria, in characteristic zero and for normal schemes over perfect fields
-of characteristic `p` (Layer 5 takes the finiteness of the Frobenius from DeformationAndDerivedPatchingAlgebra
-§3.14); both start from §4.1. Layer 6 builds the normalised Nash blowup and its
-isomorphism criteria, and Layer 7 the iterations and the never-resolves principle. Layers 4 and 5 are
-independent of Layers 3, 6 and 7.
+Layer 0 adds the interface statements the construction needs on top of Tau Ceti's sheaf of differentials,
+AlgebraicModuliForArithmeticGeometry's Grassmannian and the regularity results of SchemeAndStackFoundations,
+together with the normality of base changes along separable extensions of the ground field that the base change of
+the normalised Nash blowup (§6.3) uses. Layer 1 proves the setting lemma and constructs, once and for all, the
+Nash modification of a sheaf of finite type along a dense open where it is locally free, with its universal
+property, Plücker form, locality and flat base change. Layer 2 specialises it to `Ω_{X/k}`: the Nash blowup, its
+modification property, its universal property, the triviality criterion, locality, field base change and the
+iteration. Layer 3 gives the embedded (Gauss map) and blowup descriptions. Layers 4 and 5 prove the smoothness
+criteria, in characteristic zero and for normal schemes over perfect fields of characteristic `p` (Layer 5 takes
+the finiteness of the Frobenius from DeformationAndDerivedPatchingAlgebra §3.14); both start from §4.1. Layer 6
+builds the normalised Nash blowup and its isomorphism criteria, and Layer 7 the iterations and the never-resolves
+principle. Layers 4 and 5 are independent of Layers 3, 6 and 7.
 
 ## Layer 0: interfaces with the pinned libraries
 
@@ -328,13 +353,31 @@ scheme `S`, a surjection `p : E' → E` with kernel `K`, and `r ≥ 0`, there is
 and whose image represents the quotients `h*E' → Q` killing the image of `h*K`; the universal quotient of
 `Gr_r(E')` restricts to the universal quotient of `Gr_r(E)` composed with `p` (alperModuli, proof of
 Theorem 1.4.5, lines 2985–3007, printed pp. 61–62, applied to the Grassmannian as the Quot scheme over
-`ℙ⁰`, Remark 1.1.4(1), line 2283). The closed subscheme is the zero locus of the composite
-`h*K → h*E' → Q` into a locally free sheaf, cut out locally by the coordinate functionals of `Q` applied
-to the local sections of `h*K`.
+`ℙ⁰`, Remark 1.1.4(1), line 2283). The proof there assumes `S` Noetherian and works with coherent sheaves on
+`ℙⁿ_S`, and so does the exercise it cites for the vanishing locus (alperModuli, Exercise 0.3.21, line 1202);
+the step used here, that the locus where a map from a quasi-coherent sheaf to a locally free sheaf of finite
+rank vanishes is a closed subscheme, needs neither, and `S` is an arbitrary scheme. For `h : T → S` and a
+quotient `h*E' → Q`, the closed subscheme of `T` is the zero locus of the composite `h*K → h*E' → Q`: on an
+open of `T` where `Q ≅ O_T^r` it is cut out by the quasi-coherent ideal generated by the images of the `r`
+coordinate maps `h*K → O_T`, and `T' → T` factors through it exactly when the pulled-back composite vanishes
+(pullback is right exact, so the image of the pulled-back coordinate map generates the pulled-back ideal).
+Right exactness also keeps `h*E' → h*E` surjective with kernel the image of `h*K`, so the quotients of
+`h*E'` killing that image are exactly the quotients of `h*E`.
 
 - The construction commutes with base change along `S' → S` and with composition of surjections.
 - For `E' = O_S^n`, `Gr_r(O_S^n) ≅ S ×_ℤ Gr(r, n)` (AlgebraicModuliForArithmeticGeometry §1.3 base change),
   so a surjection `O_S^n → E` embeds `Gr_r(E)` in `S × Gr(r, n)`.
+
+**Checks.**
+
+- Over the non-Noetherian `S = Spec k[x_1, x_2, …]`, with `E' = O_S²`, `E = O_S`, `p(a, b) = a` and `r = 1`,
+  `Gr_1(O_S) = S` embeds in `Gr_1(O_S²) = ℙ¹_S` as the section `[1 : 0]`, the quotient `(a, b) ↦ a` killing
+  `K = 0 ⊕ O_S`; it is the zero locus of the second homogeneous coordinate, a closed subscheme although `S` is
+  not Noetherian. Recording a quotient by its kernel (the conormal convention excluded in the Conventions)
+  would put the image at `[0 : 1]`.
+- For `p` the identity, `K = 0` and the closed immersion is the identity of `Gr_r(E)`.
+- For the same `p` and `r = 2`, `Gr_2(O_S) = ∅` while `Gr_2(O_S²) = S` (the only rank-two quotient of
+  `O_S²` is the identity, which does not kill `K`): the image is the empty closed subscheme.
 
 *Needs:* AlgebraicModuliForArithmeticGeometry §1.3 (`coherentGrassmannian`); Mathlib `IsClosedImmersion`.
 
@@ -344,8 +387,11 @@ Prove *cotangentSpaceEquivKaehler*: for a field `k` and a local `k`-algebra `(R,
 Noetherian, whose residue field is finite separable over `k`, the map `m/m² → κ ⊗_R Ω_{R/k}`, `a ↦ 1 ⊗ da`,
 is a `κ`-linear isomorphism (stacksAlgebra, Lemma 10.140.4, tag 00TU, line 17647, for injectivity: it is
 stated for Noetherian `R`, but its proof, lines 17654–17671, replaces `R` by `R/m²` and lifts `κ` into it,
-and uses the Noetherian hypothesis nowhere; the exact sequence in the proof of Lemma 10.140.5, tag 00TV,
-lines 17676–17678, with `Ω_{κ/k} = 0`, for surjectivity). Route: `κ` is formally étale over `k`
+and uses the Noetherian hypothesis nowhere; the lemma allows any finitely generated separable `κ`, and
+injectivity holds for such `κ` by the same proof, but surjectivity needs `Ω_{κ/k} = 0`, and for such `κ` the
+dimension of `Ω_{κ/k}` is `trdeg_k κ` (line 17680), so the isomorphism is the case of `κ` finite separable; the
+exact sequence in the proof of Lemma 10.140.5, tag 00TV, lines 17676–17678, with `Ω_{κ/k} = 0`, for
+surjectivity). Route: `κ` is formally étale over `k`
 (`Algebra.FormallyEtale.of_isSeparable`), so `R/m² → κ` has a `k`-algebra section; Mathlib's
 `retractionKerCotangentToTensorEquivSection` (for any surjective algebra map, no finiteness hypothesis)
 turns it into a retraction of `m/m² → κ ⊗ Ω_{R/k}`; surjectivity is
@@ -384,6 +430,38 @@ point (`LocallyOfFiniteType.jacobsonSpace`, `nonempty_inter_closedPoints`).
 *Needs:* SchemeAndStackFoundations §4.13 (`regularLocus_eq_smoothLocus`); Mathlib
 `LocallyOfFiniteType.jacobsonSpace`, `nonempty_inter_closedPoints`, `IsRegularLocalRing`.
 
+### 0.7 Normality under separable extension of the ground field
+
+Prove *isNormalScheme_pullback_of_isTranscendentalSeparable*: for a field `k`, a normal `k`-scheme `W` (every
+stalk an integrally closed domain, `IsNormalScheme` of SchemeAndStackFoundations §0.30) and a separable field
+extension `k'/k` in the sense of the Conventions (`Algebra.IsTranscendentalSeparable k k'`), the base change
+`W_{k'} = W ×_{Spec k} Spec k'` is normal (stacksVarieties, Lemma 33.10.6, tag 0C3M, line 1049). Neither `W` nor
+`k'/k` is assumed finite, of finite type or Noetherian. Route: `k'` is geometrically normal over `k`
+(stacksAlgebra, Lemma 10.165.4, tag 0C30, line 21510: `k^perf ⊗_k k'` is a field), and the tensor product over
+`k` of a geometrically normal `k`-algebra with a normal ring is normal (stacksAlgebra, Lemma 10.165.5, tag 06DF,
+line 21516); apply it to `k' ⊗_k Γ(V, O_W)` for the affine opens `V` of `W`, whose rings of sections are normal,
+normality being local (SchemeAndStackFoundations §0.30).
+
+**Checks.**
+
+- For `W = Spec ℚ(i)` over `ℚ` and `k' = ℚ(i)`, `ℚ(i) ⊗_ℚ ℚ(i) ≅ ℚ(i)[x]/((x − i)(x + i)) ≅ ℚ(i) × ℚ(i)`, so
+  `W_{k'}` is two reduced points: normal, but neither connected nor integral. The conclusion concerns the
+  stalks; a version asserting that `W_{k'}` is integral is false.
+- For `k = 𝔽_p(t)`, `p > 2`, the curve `C : x^p + y² + t = 0` is regular, hence normal (at the point `y = 0` the
+  maximal ideal is `(y)`, as `x^p + t = −y²`); over the inseparable `k' = k(t^{1/p})`, with `u = x + t^{1/p}`,
+  `C_{k'}` is the integral curve `u^p + y² = 0`, whose point `u = y = 0` has a two-dimensional cotangent space,
+  so it is not normal (its normalisation is `𝔸¹ → C_{k'}`, `s ↦ (u, y) = (−s², s^p)`): separability is needed.
+- For `k = 𝔽_p(t)` and `k' = k(s)` purely transcendental, `{s}` is a separating transcendence basis, so `k'/k` is
+  separable, though not algebraic, so `Algebra.IsSeparable k k'` fails; for `W = Spec k[y]`,
+  `W_{k'} = Spec k(s)[y]` is a principal ideal domain, normal. A carrier `Algebra.IsSeparable` would exclude
+  this case, and with it the transcendental extensions of §6.3.
+- For `W = Spec ℚ̄` and `k' = ℚ̄` over `ℚ`, the ring `ℚ̄ ⊗_ℚ ℚ̄` is not Noetherian (stacksVarieties, line 1064),
+  but it is a filtered colimit of the finite products of fields `L ⊗_ℚ ℚ̄ ≅ ℚ̄^{[L:ℚ]}` over the finite
+  subextensions `L`, hence absolutely flat, so every local ring is a field and `W_{k'}` is normal: no
+  Noetherian hypothesis is needed.
+
+*Needs:* SchemeAndStackFoundations §0.30 (`IsNormalScheme`); Mathlib `Algebra.IsTranscendentalSeparable`.
+
 ### Examples
 
 For `𝔸¹ → 𝔸²`, `t ↦ (t², t³)`, the comparison map of §0.1 is `dx ↦ 2t dt`, `dy ↦ 3t² dt`. The
@@ -392,8 +470,9 @@ with fibre `ℙ¹` over the origin and a single point elsewhere.
 
 ### Dependencies
 
-Tau Ceti's sheaf of differentials and smooth-locus files; Mathlib's Kähler differentials; AlgebraicModuliForArithmeticGeometry
-§1.3; SchemeAndStackFoundations §§0.7, 4.13.
+Tau Ceti's sheaf of differentials and smooth-locus files; Mathlib's Kähler differentials and
+`Algebra.IsTranscendentalSeparable`; AlgebraicModuliForArithmeticGeometry §1.3; SchemeAndStackFoundations §§0.7, 0.30,
+4.13.
 
 ## Layer 1: the setting and the Nash modification of a sheaf
 
@@ -1056,10 +1135,13 @@ Prove *normalizedNashBlowup.lift*: for `X` in the Setting, a locally Noetherian 
 `h : Z → X` sending
 generic points of irreducible components of `Z` to generic points of irreducible components of `X`, and a locally
 free rank-`d` quotient `h*Ω_{X/k} → M`, there is a unique `Z → X̄*` over `X` compatible with the quotients
-(stacksNormalization, Lemma 29.55.5(4), tag 035Q, line 6570; §2.4). Route: §2.4 gives `q : Z → X*`, which maps
-generic points of `Z` into `ν⁻¹(X_sm) ≅ X_sm` and hence to generic points of `X*`; the normalisation's universal
-property (AlgebraicModuliForArithmeticGeometry §5.4) lifts `q`. The hypothesis on generic points makes
-`h⁻¹(X_sm)` dense, as `Z` has locally finitely many irreducible components.
+(stacksNormalization, Lemma 29.55.5(4), tag 035Q, line 6570, which asks only that `Z` be normal; the locally
+Noetherian hypothesis is that of the setting of AlgebraicModuliForArithmeticGeometry §5.4, whose lifting bullet
+the route uses; §2.4). Route: §2.4 gives `q : Z → X*`, which maps generic points of `Z` into
+`ν⁻¹(X_sm) ≅ X_sm` and hence to generic points of `X*`; the normalisation's universal property
+(AlgebraicModuliForArithmeticGeometry §5.4) lifts `q`. The hypothesis on generic points makes `h⁻¹(X_sm)` dense:
+it is open and contains the generic point of every irreducible component of `Z`, and every point of `Z` is a
+specialisation of one of them.
 
 **Checks.**
 
@@ -1077,22 +1159,43 @@ Prove *normalizedNashBlowup.restrict*: for `V ⊆ X` open, `V̄* ≅ ν̄⁻¹(V
 29.54.6, tag 035K, line 6332, for the normalisation over an open, applied to the inclusion of the generic points of
 `X*`; §2.6 and normalisation commuting with open immersions, AlgebraicModuliForArithmeticGeometry §5.4).
 
-Prove *normalizedNashBlowup.baseChange*: for a finite separable extension `k'/k`, `(X̄*)_{k'} ≅ (X_{k'})̄*` over
-`X_{k'}` (stacksVarieties, Lemma 33.27.5, tag 0C3N, line 2256, for the normalisation of a locally algebraic
-`k`-scheme under a separable extension of `k`, applied to `X*`; §2.6 for `(X*)_{k'} ≅ (X_{k'})*`). Route: §2.6,
-`Spec k' → Spec k` is smooth, and the base change of the inclusion of generic points of `X*` is the inclusion of
-generic points of `(X*)_{k'}` because `κ(ξ) ⊗_k k'` is a finite product of fields; Mathlib's `normalizationPullback`
-is an isomorphism along smooth maps.
+Prove *normalizedNashBlowup.baseChange*: for `X` in the Setting and a separable extension `k'/k` in the sense of
+the Conventions (`Algebra.IsTranscendentalSeparable k k'`; neither finite nor algebraic is assumed), `(X̄*)_{k'} ≅
+(X_{k'})̄*` over `X_{k'}` (stacksVarieties, Lemma 33.27.5, tag 0C3N, line 2256, for the normalisation of a locally
+algebraic `k`-scheme under a separable extension of `k`, applied to `X*`; §2.6 for `(X*)_{k'} ≅ (X_{k'})*`).
+Route, after §2.6: let `U₀ = ν⁻¹(X_sm)`, a dense open of `X*` over which `η` is an isomorphism, with `η⁻¹(U₀)`
+dense in `X̄*` (§6.1). The projections `(X*)_{k'} → X*` and `(X̄*)_{k'} → X̄*` are flat, so they send generic
+points of irreducible components to generic points; hence `(U₀)_{k'}` and `(η⁻¹U₀)_{k'}` are dense opens
+containing every generic point, and `η_{k'} : (X̄*)_{k'} → (X*)_{k'}` is finite and restricts to an isomorphism
+`(η⁻¹U₀)_{k'} ≅ (U₀)_{k'}`. The inclusion of the generic points of `(X*)_{k'}` therefore factors through the
+integral `η_{k'}`, and Mathlib's `Scheme.Hom.normalizationDesc` gives a morphism `((X*)_{k'})^ν → (X̄*)_{k'}` over
+`(X*)_{k'}` (AlgebraicModuliForArithmeticGeometry §5.4 identifies `((X*)_{k'})^ν` with this relative
+normalisation). By §0.7, `(X̄*)_{k'}` is normal, so over an affine open its ring of sections is a finite product
+of normal domains, integrally closed in its total ring of fractions, which is the product of the residue fields at
+its generic points; Tau Ceti's `Scheme.Hom.isIso_normalizationDesc_iff` then makes the morphism an isomorphism (in
+the source's terms, stacksNormalization, Lemma 29.55.5(3), tag 035Q, line 6566: the normalisation of the target
+factors through an integral morphism that is birational over quasi-compact opens, and is the normalisation of its
+source, an isomorphism for a normal source by Lemma 29.55.9, tag 0H7D, line 6636). For finite separable `k'/k`
+there is also a shorter route: `Spec k' → Spec k` is smooth, the base change of the inclusion of generic points of
+`X*` is the inclusion of generic points of `(X*)_{k'}` because `κ(ξ) ⊗_k k'` is a finite product of fields, and
+Mathlib's `normalizationPullback` is an isomorphism along smooth maps.
 
 **Checks.**
 
 - For `V = X_sm`, `V̄* = V`.
-- For the cusp over `ℚ` and `k' = ℚ(i)`, both sides are `𝔸¹_{ℚ(i)}`.
+- For the cusp over `ℚ` and the finite separable `k' = ℚ(i)`, both sides are `𝔸¹_{ℚ(i)}`, and both routes apply.
+- For the cusp over `ℚ` and the transcendental `k' = ℚ(u)`, both sides are `𝔸¹_{ℚ(u)}`: `X̄* = 𝔸¹_ℚ`, and the cusp
+  over `ℚ(u)`, of characteristic `0`, has `(X_{k'})* = (X_{k'})̄* = 𝔸¹_{ℚ(u)}` (§2.1). Here `Spec ℚ(u) → Spec ℚ` is
+  not of finite type, hence not smooth, and only the general route reaches the case; a statement for finite
+  separable extensions alone would miss it.
 - For `k = 𝔽_p(t)`, `p > 2`, the regular curve `C : x^p + y² + t = 0` has `C̄* = C* = C`, but over the inseparable
-  `k' = k(t^{1/p})`, `C_{k'}` is the non-normal curve `(x + t^{1/p})^p + y² = 0` with `(C_{k'})̄* = 𝔸¹ ≠ C_{k'}`:
-  separability is needed.
+  `k' = k(t^{1/p})`, `C_{k'}` is the non-normal curve `(x + t^{1/p})^p + y² = 0` (§0.7) with `(C_{k'})* = C_{k'}`
+  (the free quotient `dx ↦ 1`, `dy ↦ 0` persists) and `(C_{k'})̄* = 𝔸¹ ≠ C_{k'} = (C̄*)_{k'}`; the comparison
+  `𝔸¹ → C_{k'}`, `s ↦ (−s² − t^{1/p}, s^p)`, is bijective and not an isomorphism: separability is needed.
 
-*Needs:* §§2.6, 6.1; AlgebraicModuliForArithmeticGeometry §5.4; Mathlib `Scheme.Hom.normalizationPullback`.
+*Needs:* §§0.7, 2.6, 6.1; AlgebraicModuliForArithmeticGeometry §5.4; Mathlib `Scheme.Hom.normalizationDesc`,
+`Scheme.Hom.normalizationPullback`, `Algebra.IsTranscendentalSeparable`; Tau Ceti
+`Scheme.Hom.isIso_normalizationDesc_iff`.
 
 ### 6.4 Isomorphism criteria
 
@@ -1122,7 +1225,8 @@ isomorphisms.
 
 ### Dependencies
 
-Layers 2, 4, 5; AlgebraicModuliForArithmeticGeometry §5.4; Mathlib relative normalisation.
+Layers 2, 4, 5 and §0.7; AlgebraicModuliForArithmeticGeometry §5.4; Mathlib relative normalisation; Tau Ceti
+`Scheme.Hom.isIso_normalizationDesc_iff`.
 
 ## Layer 7: iteration and the never-resolves principle
 

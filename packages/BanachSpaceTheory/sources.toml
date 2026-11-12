@@ -350,3 +350,21 @@ licence_class = "publisher-open"
 status = "certified"
 accessed = "2026-11-09"
 cited_for = ["2.1"]
+
+[[source]]
+id = "mst99"
+authors = "Gustavo A. Muñoz, Yannis Sarantopoulos, Andrew Tonge"
+title = "Complexifications of real Banach spaces, polynomials and multilinear maps"
+year = 1999
+venue = "Studia Mathematica 134 (1999), 1-33"
+doi = "10.4064/sm-134-1-1-33"
+locator_scheme = "theorem"
+locator = "Propositions 3, 4 and 7, pp. 5-9"
+url = "http://matwbn.icm.edu.pl/ksiazki/sm/sm134/sm13411.pdf"
+fetched_from = "https://matwbn.icm.edu.pl/ksiazki/sm/sm134/sm13411.pdf"
+fetched_at = "2026-11-12T00:58:51Z"
+sha256 = "be7a2abfa6ef81208690e932fedf9f91ef003612559a659372eed881ba19db29"
+licence_class = "institutional"
+status = "certified"
+accessed = "2026-11-12"
+cited_for = ["4.3"]

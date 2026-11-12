@@ -1,0 +1,10 @@
+{
+  "review": {
+    "status": "needs_changes",
+    "reviewer": "independent-review-REV-PKG-VectorBundlesAndIsocrystalsPartII~2",
+    "date": "2026-11-10",
+    "findings": 5,
+    "blocking": 2,
+    "notes": "Checked all eight prior repairs (F01 partly repaired, F02–F08 repaired), all 62 targets and 64 Check blocks, all 15 seeded source targets, headline statability, pinned declarations, current supplier heads and overlap data. Computed adversarial table in report. Package elaboration passed with only two sorry warnings; all four signatures checked and both sorried theorems failed the one-tactic padding probes. Dependency check: 236 roadmaps, 2141 edges, 0 problems. Findings: wrong exponential/tower indexing, duplicated Galois-action ownership, reversed curvature Check, one source page, stale generic-bundle layer locator. G-HOM remains a precise declared supplier contract. No package inputs or source manifest changed."
+  }
+}

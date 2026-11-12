@@ -234,3 +234,19 @@ status = "certified"
 accessed = "2026-10-25"
 version_note = "arXiv v2"
 cited_for = ["3.2"]
+
+[[source]]
+id = "KW09"
+authors = "Chandrashekhar Khare, Jean-Pierre Wintenberger"
+title = "Serre's modularity conjecture (II)"
+year = 2009
+locator_scheme = "theorem"
+locator = "Lemma 9.4, p. 87"
+url = "https://www.math.ucla.edu/~shekhar/papers/proofs.pdf"
+fetched_from = "https://www.math.ucla.edu/~shekhar/papers/proofs.pdf"
+fetched_at = "2026-11-10T21:17:08Z"
+sha256 = "53f45f8be3b3c7de19f42417920d34a809e908412826490ebed90f07c8e86ed4"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-10"
+cited_for = ["3.2"]

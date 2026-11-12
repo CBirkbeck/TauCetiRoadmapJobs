@@ -126,6 +126,11 @@ shard_max = 8
 # Mark the pull request ready for review after the last round (false: it stays a draft and a
 # human marks it ready).
 ready_after = false
+# A red-team pass stays independent of the package's first author and of the red-team fix before it, not of
+# the package's fix rounds (an independent review accepted the package after each of them). Under separation
+# by agent the Fable pass had no taker on every package with a Fable fix round (user 2026-11-11). true restores
+# the stricter rule.
+independent_of_fix_rounds = false
 
 [design]
 # The design lane is the only expensive one: at most this many design jobs per operator per day.
@@ -144,6 +149,8 @@ parent_roadmaps = ["RiemannianGeometry"]   # carries Surfaces/ below it and stay
 max_folders = 20   # a pull request that repairs the dependency loops of main touches 16 roadmaps and is no chore (2026-11-04)
 # A changes-needed review of a pool author's pull request is repaired in the same job; the repaired head is re-reviewed by another worker.
 repair_pool = true
+# Fable reviews, Opus repairs (user 2026-11-11): a worker that reviews with fable runs the repair with Opus.
+repair_models = { fable = "claude-opus-5-5" }
 # Small repairs (the P3 findings of an accepting review) pushed onto an accepted head keep `ai-approved` and get no
 # re-review when a reply records `tauceti-roadmap-carried {from, head}` and the folders changed by at most
 # small_change_lines lines (owner decision 2026-11-04).
@@ -153,6 +160,16 @@ carry_accept = true
 # (`tauceti-roadmap-chore-review {head, status}`), the AI review of the whole change (owner request 2026-11-05).
 chore_review = true
 small_change_lines = 150
+# A review whose findings are all P3 ends with its repair: the repaired head keeps or gains `ai-approved` and the folder
+# gets no further review, while the repair changed at most small_change_lines lines of it (owner decision 2026-11-11).
+carry_minor = true
+# A finding the repair cannot act on because it lies outside the folder under review is recorded once in the verdict
+# record; later reviews of the folder are told of it and do not raise it again (owner decision 2026-11-11).
+defer_outside = true
+# Reviews of these authors' pull requests rank after every other job, except the pull requests listed in late_except,
+# which other roadmaps depend on (owner decision 2026-11-11).
+late_authors = ["mycaule"]
+late_except = [1522, 1747, 1782]
 
 [agents]
 # Default agent for every lane: "codex" or "claude". Operators override per run with --agent.

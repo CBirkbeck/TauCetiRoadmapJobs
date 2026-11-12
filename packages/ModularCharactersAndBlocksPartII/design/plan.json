@@ -2,7 +2,7 @@
  "roadmap": "ModularCharactersAndBlocksPartII",
  "title": "Modular characters and blocks, part II — the Glauberman correspondence and heights of characters",
  "parent": "ModularCharactersAndBlocks",
- "summary": "Coprime actions on characters (canonical extension, Gallagher's correspondence, Brauer's permutation lemma, the cyclic, p-group and solvable cases, the unique compatible family and the Glauberman correspondence θ ↦ θ*, the degree relation θ(1) ∣ |Γ:C| θ*(1) and degree-divisibility as a predicate) and heights (defect classes, Brauer's theorem on heights, heights and height zero characters, Min–Max, covering, Fong–Reynolds, Fong's theorem, the extended first main theorem, blocks of P C_G(P), Reynolds' theorem), with Brauer's height zero and the Alperin–McKay conjectures as predicates.",
+ "summary": "Coprime actions on characters (canonical extension, Gallagher's correspondence, Brauer's permutation lemma, the cyclic, p-group and solvable cases, the unique compatible family and the Glauberman correspondence θ ↦ θ*, the degree relation θ(1) ∣ |Γ:C| θ*(1) and degree-divisibility as a predicate) and heights (central characters of blocks and Osima's formula on the base's defect classes, Brauer's theorem on heights, heights and height zero characters, Min–Max, covering, domination modulo an arbitrary normal subgroup, Fong–Reynolds, Fong's theorem, the extended first main theorem, blocks of P C_G(P), Reynolds' theorem), with Brauer's height zero and the Alperin–McKay conjectures as predicates.",
  "baseline": {
   "mathlib": "1b1ccf4b088b32fa3f23f2de1127433254a81e1e",
   "tauceti": "2fd255d997f47c0b5d834ee416c7015d55444ce5"
@@ -86,7 +86,7 @@
      "id": "1.2",
      "kind": "theorem",
      "name": "conjClasses_fixedPoints_equiv_invariantConjClasses",
-     "statement": "For S coprime to Γ, with S or Γ solvable: elements of C conjugate in Γ are conjugate in C; an S-invariant class of Γ meets C; an S-invariant coset gH of an S-invariant subgroup H meets C. Hence classes of C correspond bijectively to S-invariant classes of Γ.",
+     "statement": "For S coprime to Γ, with S or Γ solvable: elements of C conjugate in Γ are conjugate in C; an S-invariant class of Γ meets C; an S-invariant coset gH of an S-invariant subgroup H meets C. Hence classes of C correspond bijectively to S-invariant classes of Γ. Route: Glauberman's lemma from complements: for X (here Γ, or an S-invariant H ≤ Γ) acting transitively and compatibly with S on Ω, the stabiliser M of a point in X ⋊ S has M ∩ inl(X) normal Hall with quotient S; a complement of it (Mathlib Schur–Zassenhaus existence) is conjugate to inr(S) by IG.3.4, so S fixes a point; two S-fixed points differ by an element of C_X(S), by IG.3.4 inside M.",
      "hypotheses": [
       "Γ and S finite groups",
       "MulDistribMulAction S Γ",
@@ -98,7 +98,11 @@
       "where": "Lemma 3 (a)-(c), line 287"
      },
      "prerequisites": [
-      "roadmap:LocalFiniteGroupTheory L3",
+      "roadmap:InverseGaloisAndArithmeticFundamentalGroups IG.3.4",
+      "mathlib:Subgroup.exists_right_complement'_of_coprime",
+      "mathlib:Subgroup.IsComplement'",
+      "mathlib:SemidirectProduct",
+      "mathlib:MulAction.stabilizer",
       "mathlib:ConjClasses",
       "mathlib:FixedPoints.subgroup"
      ],
@@ -122,7 +126,7 @@
       {
        "name": "a5_on_f7_fifth",
        "kind": "computation",
-       "statement": "S = A₅ (not solvable) permuting the coordinates of Γ = 𝔽₇⁵: C is the line of constant vectors, 7 invariant classes = 7 classes of C; each invariant coset {Σ v_i = c} of H = {Σ v_i = 0} contains the constant vector 3c. Over 𝔽₅⁵ (not coprime) the coset {Σ v_i = 1} has no constant vector."
+       "statement": "S = A₅ (not solvable) permuting the coordinates of Γ = 𝔽₇⁵: C is the line of constant vectors, 7 invariant classes = 7 classes of C; each invariant coset {Σ v_i = c} of H = {Σ v_i = 0} contains the constant vector 3c; in the route X = H acts freely, M ≅ A₅ is a complement of inl(H) in H ⋊ A₅, and IG.3.4 applies through the solvability of H. Over 𝔽₅⁵ (not coprime) the coset {Σ v_i = 1} has no constant vector."
       }
      ]
     },
@@ -155,7 +159,7 @@
       {
        "name": "noncyclic_counterexample",
        "kind": "non-example",
-       "statement": "A = ⟨1 + E₁₂, 1 + E₁₃⟩ on 𝔽₂³: two fixed classes, four fixed characters; each element fixes four of each."
+       "statement": "A = ⟨1 + E₁₂, 1 + E₁₃⟩ on 𝔽₂³: two fixed classes, four fixed characters for the whole group; each nonidentity element fixes four vectors and four characters, the identity eight of each; both orbit counts are (8 + 4 + 4 + 4)/4 = 5."
       },
       {
        "name": "trivial_group",
@@ -405,7 +409,7 @@
       "where": "Lemma 2, line 266"
      },
      "prerequisites": [
-      "roadmap:LocalFiniteGroupTheory L1",
+      "roadmap:InverseGaloisAndArithmeticFundamentalGroups IG.3.4",
       "mathlib:SemidirectProduct",
       "mathlib:IsCyclic"
      ],
@@ -419,7 +423,7 @@
       {
        "name": "sl23_coset",
        "kind": "computation",
-       "statement": "SL(2,3): aQ₈ splits into two classes of size 4, matching the two classes of {±1}."
+       "statement": "SL(2,3): aQ₈ splits into two classes of size 4, matching the two classes of {±1}; the complements of Q₈ are the four subgroups of order 3, conjugate under Q₈ as IG.3.4 requires."
       },
       {
        "name": "d8_noncoprime",
@@ -638,9 +642,9 @@
        "statement": "S = C₃ on Q₈: Λ(sgn) = χ₂, Λ(1) = 1."
       },
       {
-       "name": "c6_two_series",
+       "name": "c15_two_series",
        "kind": "computation",
-       "statement": "C₆ = C₂ × C₃ on Q₈ × C₅: both series send sgn to χ₂ × 1."
+       "statement": "C₁₅ = C₃ × C₅ on Q₈ × C₁₁ (gcd(15, 88) = 1; C₃ on Q₈ as in SL(2,3), C₅ by r ↦ r³ on C₁₁, of order 5 with fixed subgroup 1): C = {±1} × 1; the series through C₃ gives sgn → sgn × 1 → χ₂ × 1, the series through C₅ gives sgn → χ₂ → χ₂ × 1."
       },
       {
        "name": "S_trivial",
@@ -712,9 +716,9 @@
      "api": [],
      "tests": [
       {
-       "name": "c6",
+       "name": "c15",
        "kind": "computation",
-       "statement": "The two series of C₆ give Λ(sgn) = χ₂ × 1."
+       "statement": "The two series of C₁₅ acting on Q₈ × C₁₁ give Λ(sgn) = χ₂ × 1."
       },
       {
        "name": "c9_on_c19",
@@ -992,7 +996,7 @@
      "id": "6.1",
      "kind": "theorem",
      "name": "blockCentralCharacter_osima_defectClass",
-     "statement": "For χ ∈ Irr(B): ω_χ(𝒞⁺) ∈ O and λ_B(𝒞⁺) = ω_χ(𝒞⁺) mod m for every class 𝒞, λ_B the unique algebra map Z(k[G]) → k with λ_B(e_B) = 1. Osima's formula for unions of components of the Brauer graph; their idempotents lie in Z(O[G]); Irr(B) is one component. A defect class exists and consists of p-regular elements.",
+     "statement": "For χ ∈ Irr(B): the K-linear map ω_χ : Z(K[G]) → K with ω_χ(𝒞⁺) = |𝒞| χ(x)/χ(1), read through F = ℚ(ζ_e) → K, is a K-algebra homomorphism (the native central character over ℂ restricted to Z(F[G]) and extended to K), ω_χ(𝒞⁺) ∈ O and λ_B(𝒞⁺) = ω_χ(𝒞⁺) mod m for every class 𝒞, λ_B the unique algebra map Z(k[G]) → k with λ_B(e_B) = 1. Osima's formula for unions of components of the Brauer graph; their idempotents lie in Z(O[G]); Irr(B) is one component. The defect classes of the base §6.2 exist and consist of p-regular elements.",
      "hypotheses": [
       "G a finite group",
       "p a prime",
@@ -1001,7 +1005,7 @@
      ],
      "locator": {
       "source": "martinez",
-      "where": "lines 351, 373; Proposition 2.3 line 414; Proposition 2.5 line 512; Corollary 2.7 line 566; lines 699, 760"
+      "where": "lines 351, 373; Proposition 2.3 line 414; Proposition 2.5 line 512; Corollary 2.7 line 566; lines 696, 760"
      },
      "prerequisites": [
       "roadmap:ModularCharactersAndBlocks §1.1",
@@ -1014,23 +1018,26 @@
       "roadmap:ModularCharactersAndBlocks §6.2",
       "roadmap:ModularCharactersAndBlocks §7.1",
       "roadmap:CharacterTheory §4.3",
-      "tauceti:TauCeti.Representation.isIntegral_centralCharacter_classSumCenter"
+      "tauceti:TauCeti.Representation.isIntegral_centralCharacter_classSumCenter",
+      "tauceti:TauCeti.Representation.centralCharacter",
+      "tauceti:TauCeti.Representation.centralCharacter_classSumCenter_mul_character_one",
+      "tauceti:TauCeti.classSumCenter"
      ],
      "api": [
       {
-       "name": "IsDefectClass",
-       "role": "definition",
-       "statement": "A class 𝒞 with a_B(𝒞) λ_B(𝒞⁺) ≠ 0."
+       "name": "centralCharacter_algHom",
+       "role": "comparison",
+       "statement": "ω_χ : Z(K[G]) → K, defined by the class-sum values |𝒞| χ(x)/χ(1) ∈ ℚ(ζ_e) read in K, is a K-algebra homomorphism with values in O on class sums; over ℂ it is TauCeti.Representation.centralCharacter."
       },
       {
        "name": "exists_isDefectClass",
        "role": "existence",
-       "statement": "Every block has a defect class."
+       "statement": "Every block has a defect class in the sense of the base §6.2, since e_B = Σ a_B(𝒞) 𝒞⁺ and λ_B(e_B) = 1."
       },
       {
        "name": "isDefectClass_pRegular",
        "role": "regularity",
-       "statement": "Elements of a defect class are p-regular."
+       "statement": "Elements of a defect class of the base §6.2 are p-regular: a_B vanishes on p-singular classes by Osima."
       },
       {
        "name": "osima",
@@ -1058,6 +1065,11 @@
        "name": "not_component",
        "kind": "non-example",
        "statement": "{1} is not a union of components; f_{{1}} has coefficient 1/6 ∉ ℤ₂."
+      },
+      {
+       "name": "c3_values_in_F",
+       "kind": "computation",
+       "statement": "C₃, p = 2, K = ℚ₂(ζ₃), k = 𝔽₄, χ(r) = ζ₃: ω_χ({r}⁺) = ζ₃ reduces to a root of X² + X + 1 in 𝔽₄, outside 𝔽₂; ω_χ({r}⁺{r²}⁺) = 1 = ζ₃ · ζ₃²."
       }
      ]
     },
@@ -1168,7 +1180,7 @@
      "id": "6.4",
      "kind": "theorem",
      "name": "height_special_blocks",
-     "statement": "Irr₀(B₀) = p'-degree characters of B₀; defect zero blocks have Irr(B) = {χ} = Irr₀(B) and conversely; for the Brauer correspondent b' in N_G(D), D is a defect group and Irr₀(b') = {ψ : ψ(1)_p = |N_G(D) : D|_p}.",
+     "statement": "Irr₀(B₀) = p'-degree characters of B₀; defect zero blocks have Irr(B) = {χ} = Irr₀(B) and conversely; for the Brauer correspondent b' in N_G(D), the block with e_{b'} = Br_D(e_B) (base §6.2, over the residue field k, no algebraic closure), D is a defect group and Irr₀(b') = {ψ : ψ(1)_p = |N_G(D) : D|_p}.",
      "hypotheses": [
       "G a finite group",
       "p a prime",
@@ -1200,6 +1212,11 @@
        "name": "sl23_p3",
        "kind": "computation",
        "statement": "SL(2,3), p = 3: the χ₂-block's correspondent in C₆ has three height-zero characters."
+      },
+      {
+       "name": "s3_splitting_field",
+       "kind": "computation",
+       "statement": "S₃, p = 2, k = 𝔽₄ (not algebraically closed): Br_{⟨t⟩}(1 + r + r²) = 1, so the correspondent of B₀ is the block of C₂, and |Irr₀(B₀)| = 2 = |Irr₀(b')|."
       }
      ]
     }
@@ -1308,40 +1325,74 @@
      "id": "7.3",
      "kind": "theorem",
      "name": "domination_defectGroup_le",
-     "statement": "For N ⊴ G, B̄ ∈ Bl(G/N) dominated by B with defect group D: some defect group of B̄ lies in DN/N.",
+     "statement": "For any N ⊴ G and π : k[G] → k[G/N]: B dominates B̄ when e_{B̄} π(e_B) = e_{B̄}; every block of G/N is dominated by exactly one block of G; π(e_B) is the sum of the e_{B̄} that B dominates (0 if none); inflation carries Irr(B̄), IBr(B̄) into Irr(B), IBr(B). If B̄ is dominated by B with defect group D, some defect group of B̄ lies in DN/N. The base §8.1 is the case of a normal p-subgroup.",
      "hypotheses": [
       "G a finite group",
       "p a prime",
       "(K, O, k) a splitting p-modular system for G (base §1.1): O a complete discrete valuation ring, K its fraction field of characteristic zero containing a primitive exp(G)-th root of unity, k its residue field of characteristic p",
-      "N ⊴ G",
-      "B̄ a block of G/N dominated by B",
+      "N ⊴ G (arbitrary)",
+      "B a block of G, B̄ a block of G/N",
       "D a defect group of B"
      ],
      "locator": {
       "source": "martinez",
-      "where": "Theorem 8.5 (i), line 1928"
+      "where": "Corollary 8.2, line 1895; Definition 8.3, line 1897; Proposition 8.4, line 1907, and line 1909; line 1924; Theorem 8.5 (i), line 1928, and (ii), line 1931"
      },
      "prerequisites": [
+      "roadmap:ModularCharactersAndBlocks §0.2",
+      "roadmap:ModularCharactersAndBlocks §1.3",
+      "roadmap:ModularCharactersAndBlocks §4.1",
+      "roadmap:ModularCharactersAndBlocks §4.2",
       "roadmap:ModularCharactersAndBlocks §6.1",
-      "roadmap:ModularCharactersAndBlocks §6.2",
-      "roadmap:ModularCharactersAndBlocks §8.1"
+      "roadmap:ModularCharactersAndBlocks §6.2"
      ],
-     "api": [],
+     "api": [
+      {
+       "name": "Dominates",
+       "role": "definition",
+       "statement": "B dominates B̄ when e_{B̄} π(e_B) = e_{B̄}, for an arbitrary normal subgroup N."
+      },
+      {
+       "name": "existsUnique_dominates",
+       "role": "existence",
+       "statement": "Every block of G/N is dominated by exactly one block of G."
+      },
+      {
+       "name": "map_blockIdempotent_eq_sum",
+       "role": "formula",
+       "statement": "π(e_B) is the sum of the e_{B̄} over the blocks B̄ dominated by B, and 0 when there are none."
+      },
+      {
+       "name": "dominates_iff_centralCharacter",
+       "role": "characterisation",
+       "statement": "B dominates B̄ exactly when λ_{B̄}(π(e_B)) = 1, and then λ_{B̄} ∘ π = λ_B."
+      },
+      {
+       "name": "inflation_mem_of_dominates",
+       "role": "compatibility",
+       "statement": "If B dominates B̄, inflation carries Irr(B̄) into Irr(B) and IBr(B̄) into IBr(B)."
+      }
+     ],
      "tests": [
       {
        "name": "s3_p2",
        "kind": "computation",
-       "statement": "S₃, N = C₃, p = 2: D N/N = C₂."
+       "statement": "S₃, N = C₃, p = 2: π(1 + r + r²) = 1, π(r + r²) = 0 in k[C₂]; B₀ dominates the block of C₂, the defect-zero block dominates none; D N/N = C₂."
       },
       {
        "name": "s3_p3",
        "kind": "computation",
-       "statement": "S₃, N = C₃, p = 3: dominated blocks of C₂ have defect zero inside C₃N/N = 1."
+       "statement": "S₃, N = C₃, p = 3: the single block maps to 1 = e₊ + e₋ and dominates both blocks of C₂, of defect zero inside C₃N/N = 1; not a bijection."
       },
       {
-       "name": "N_trivial",
+       "name": "s3xc2_mixed",
+       "kind": "computation",
+       "statement": "G = S₃ × C₂, N = S₃ × 1, p = 2 (|N| = 6, neither p- nor p'-group): block idempotents 1 + r + r² and r + r² map to 1 and 0 in k[C₂]; the single quotient block is dominated by the principal block only, with defect group C₂ = DN/N for D = ⟨t⟩ × C₂."
+      },
+      {
+       "name": "N_trivial_or_G",
        "kind": "degenerate",
-       "statement": "N = 1: B̄ = B."
+       "statement": "N = 1: B̄ = B; N = G: π is the augmentation and only B₀(G) dominates the block of the trivial group."
       }
      ]
     },
@@ -1792,6 +1843,7 @@
      "prerequisites": [
       "target:6.3",
       "target:6.4",
+      "roadmap:ModularCharactersAndBlocks §6.2",
       "roadmap:ModularCharactersAndBlocks §7.1"
      ],
      "api": [
@@ -1852,15 +1904,14 @@
     "§8.1",
     "§8.2"
    ],
-   "what": "splitting p-modular systems, block idempotents and their lifts, Brauer characters, decomposition numbers, projective characters, block partitions, generalized decomposition numbers, relative traces and the Brauer map, defect groups and their characterisations, Brauer pairs, block induction, the first and second main theorems, domination and covering"
+   "what": "splitting p-modular systems, block idempotents and their lifts, Brauer characters, decomposition numbers, projective characters, block partitions, generalized decomposition numbers, relative traces and the Brauer map, defect groups and their characterisations including the defect classes, Brauer pairs, block induction, the first main theorem in its Brauer-projection form over the residue field (§6.2) and the second main theorem, domination by normal p-subgroups, and covering for arbitrary normal subgroups"
   },
   {
-   "roadmap": "LocalFiniteGroupTheory",
+   "roadmap": "InverseGaloisAndArithmeticFundamentalGroups",
    "sections": [
-    "L1",
-    "L3"
+    "IG.3.4"
    ],
-   "what": "conjugacy of complements (exists_conj_eq_of_isComplement'), Glauberman's lemma and fixed points modulo an invariant normal subgroup"
+   "what": "the target Conjugacy of coprime complements: for N ⊴ G with Nat.Coprime (Nat.card N) N.index and N or G/N solvable, any two complements of N are conjugate by an element of N"
   },
   {
    "roadmap": "CharacterTheory",

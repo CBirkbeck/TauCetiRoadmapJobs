@@ -1,0 +1,10 @@
+{
+  "review": {
+    "status": "needs_changes",
+    "reviewer": "independent-review-REV-PKG-LevelOneAutomorphicFormsForClassicalGroups~2",
+    "date": "2026-11-10",
+    "findings": 12,
+    "blocking": 7,
+    "notes": "Checked all seven previous findings, all 110 targets and Needs lines, all 15 seeded source targets, eight declared gaps, object ownership and current supplier citations. Computed adversarial evidence and exact counterexamples are in the report. Lean elaborates with only four sorry warnings; all eight signatures retain their hypotheses; none of four admitted theorems closes under the one-tactic probes. Dependency check: 236 roadmaps, 2150 edges, 0 problems. Large external data and settled uncertified KT87 remain unverified."
+  }
+}

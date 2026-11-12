@@ -1,0 +1,13 @@
+{
+  "review": {
+    "status": "needs_changes",
+    "reviewer": "independent-review-PRREVIEW-ArtinAlgebras~6",
+    "head": "16c59637058219d94e8da73fb4a62e3a7229ebf4",
+    "pr": 2190,
+    "folder": "RepresentationTheory/ArtinAlgebras",
+    "date": "2026-11-11",
+    "findings": 7,
+    "blocking": 3,
+    "notes": "full review; both previous findings (r5 R01, R02) unrepaired and carried (R07, R03); gate at 16c5963 passes; depcheck 223 roadmaps, 1967 edges, 0 problems; Suggested.lean elaborates with 19 sorry warnings only; 26 signatures compared; 19 one-tactic probes, none closed; 22 source locators read (kr, en, inp, ch), defect formula checked in Krause arXiv:1604.02813; kr03, au78, ars, ass, au55, lz, hs, mu not readable; 21 pinned Tau Ceti declarations opened: the pin (2fd255d) already has the global dimension of an arbitrary ring, the radical ideal with powers, Fitting's lemma, representation-finiteness and the field-case AR theory, giving three P2 findings (statable headline absent, duplicate definition, targets restated) and four P3."
+  }
+}

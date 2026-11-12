@@ -168,11 +168,28 @@
      ],
      "locator": {
       "source": "alperModuli",
-      "where": "proof of Theorem 1.4.5, lines 2985–3007 (printed pp. 61–62), with Remark 1.1.4(1), line 2283"
+      "where": "proof of Theorem 1.4.5, lines 2985–3007 (printed pp. 61–62), with Remark 1.1.4(1), line 2283; the proof and the exercise it cites (Exercise 0.3.21, line 1202) assume S Noetherian and work on ℙⁿ_S, while the step used (the vanishing locus of a map from a quasi-coherent sheaf to a finite locally free sheaf is a closed subscheme) needs neither"
      },
      "prerequisites": [
       "roadmap:AlgebraicModuliForArithmeticGeometry §1.3",
       "mathlib:AlgebraicGeometry.IsClosedImmersion"
+     ],
+     "tests": [
+      {
+       "name": "mapOfSurjective_nonNoetherian",
+       "kind": "compatibility",
+       "statement": "S = Spec k[x_1, x_2, …], E' = O², E = O, p(a, b) = a, r = 1: Gr_1(O) = S embeds in ℙ¹_S as the section [1 : 0], the zero locus of the second coordinate, closed although S is not Noetherian; the kernel convention would give [0 : 1]"
+      },
+      {
+       "name": "mapOfSurjective_id",
+       "kind": "degenerate",
+       "statement": "p the identity: K = 0 and the closed immersion is the identity"
+      },
+      {
+       "name": "mapOfSurjective_empty",
+       "kind": "degenerate",
+       "statement": "same p with r = 2: Gr_2(O) = ∅ → Gr_2(O²) = S, the empty closed subscheme, as the identity quotient of O² does not kill K"
+      }
      ]
     },
     {
@@ -187,7 +204,7 @@
      ],
      "locator": {
       "source": "stacksAlgebra",
-      "where": "Lemma 10.140.4 (00TU), line 17647, stated for Noetherian R with a proof (lines 17654–17671) that does not use it, and the exact sequence in the proof of Lemma 10.140.5 (00TV), lines 17676–17678"
+      "where": "Lemma 10.140.4 (00TU), line 17647, stated for Noetherian R and finitely generated separable κ with a proof (lines 17654–17671) that does not use the Noetherian hypothesis; injectivity holds for such κ, the isomorphism needs Ω_{κ/k} = 0 (dimension trdeg_k κ, line 17680), i.e. κ finite separable; and the exact sequence in the proof of Lemma 10.140.5 (00TV), lines 17676–17678"
      },
      "prerequisites": [
       "mathlib:retractionKerCotangentToTensorEquivSection",
@@ -251,6 +268,47 @@
        "name": "imperfect_field_point",
        "kind": "non-example",
        "statement": "over 𝔽_p(t), Spec k(t^{1/p}) is regular but not smooth: perfectness is needed"
+      }
+     ]
+    },
+    {
+     "id": "0.7",
+     "kind": "theorem",
+     "name": "AlgebraicGeometry.isNormalScheme_pullback_of_isTranscendentalSeparable",
+     "statement": "For a field k, a normal k-scheme W (IsNormalScheme) and a separable field extension k'/k (every finitely generated subextension separably generated: Algebra.IsTranscendentalSeparable k k'), the base change W ×_{Spec k} Spec k' is normal. No finiteness or Noetherian hypothesis on W or k'/k.",
+     "hypotheses": [
+      "k a field",
+      "W a k-scheme with IsNormalScheme W",
+      "k'/k a field extension with Algebra.IsTranscendentalSeparable k k'"
+     ],
+     "locator": {
+      "source": "stacksVarieties",
+      "where": "Lemma 33.10.6 (0C3M), line 1049; stacksAlgebra Lemma 10.165.4 (0C30), line 21510, Lemma 10.165.5 (06DF), line 21516, Definition 10.42.1 (030O), line 4671"
+     },
+     "prerequisites": [
+      "roadmap:SchemeAndStackFoundations §0.30",
+      "mathlib:Algebra.IsTranscendentalSeparable"
+     ],
+     "tests": [
+      {
+       "name": "normal_baseChange_disconnected",
+       "kind": "non-example",
+       "statement": "W = Spec ℚ(i), k' = ℚ(i) over ℚ: W_{k'} = Spec(ℚ(i) × ℚ(i)) is normal but neither connected nor integral; an integrality conclusion is false"
+      },
+      {
+       "name": "normal_baseChange_inseparable_fails",
+       "kind": "non-example",
+       "statement": "k = 𝔽_p(t), p > 2, the regular curve x^p + y² + t = 0 becomes u^p + y² = 0 over k(t^{1/p}), not normal at u = y = 0 (normalisation s ↦ (−s², s^p)): separability is needed"
+      },
+      {
+       "name": "normal_baseChange_transcendental",
+       "kind": "compatibility",
+       "statement": "k = 𝔽_p(t), k' = k(s): separable but not algebraic (Algebra.IsSeparable fails); Spec k[y] becomes Spec k(s)[y], a PID, normal; the carrier must be Algebra.IsTranscendentalSeparable"
+      },
+      {
+       "name": "normal_baseChange_nonNoetherian",
+       "kind": "compatibility",
+       "statement": "W = Spec ℚ̄, k' = ℚ̄ over ℚ: ℚ̄ ⊗_ℚ ℚ̄ is not Noetherian but absolutely flat (filtered colimit of finite products of fields), so normal: no Noetherian hypothesis"
       }
      ]
     }
@@ -1373,7 +1431,7 @@
      ],
      "locator": {
       "source": "stacksNormalization",
-      "where": "Lemma 29.55.5(4) (035Q), line 6570"
+      "where": "Lemma 29.55.5(4) (035Q), line 6570, which needs Z only normal; the locally Noetherian hypothesis is that of the setting of AlgebraicModuliForArithmeticGeometry §5.4, whose lifting bullet the route uses"
      },
      "prerequisites": [
       "target:2.4",
@@ -1402,20 +1460,24 @@
      "id": "6.3",
      "kind": "theorem",
      "name": "AlgebraicGeometry.normalizedNashBlowup.baseChange",
-     "statement": "For V ⊆ X open, V̄* ≅ ν̄⁻¹(V); for a finite separable extension k'/k, (X̄*)_{k'} ≅ (X_{k'})̄* over X_{k'}.",
+     "statement": "For V ⊆ X open, V̄* ≅ ν̄⁻¹(V); for a separable extension k'/k (Algebra.IsTranscendentalSeparable k k', not necessarily finite or algebraic), (X̄*)_{k'} ≅ (X_{k'})̄* over X_{k'}.",
      "hypotheses": [
       "X in the Setting",
-      "k'/k finite separable"
+      "k'/k a field extension with Algebra.IsTranscendentalSeparable k k'"
      ],
      "locator": {
       "source": "stacksVarieties",
-      "where": "Lemma 33.27.5 (0C3N), line 2256 (normalisation and separable field extension); stacksNormalization Lemma 29.54.6 (035K), line 6332 (normalisation over an open)"
+      "where": "Lemma 33.27.5 (0C3N), line 2256 (normalisation and separable field extension, every separable K/k); stacksNormalization Lemma 29.54.6 (035K), line 6332 (normalisation over an open), Lemma 29.55.5(3) (035Q), line 6566, and Lemma 29.55.9 (0H7D), line 6636 (route of the general case)"
      },
      "prerequisites": [
+      "target:0.7",
       "target:2.6",
       "target:6.1",
       "roadmap:AlgebraicModuliForArithmeticGeometry §5.4",
-      "mathlib:AlgebraicGeometry.Scheme.Hom.normalizationPullback"
+      "mathlib:AlgebraicGeometry.Scheme.Hom.normalizationDesc",
+      "mathlib:AlgebraicGeometry.Scheme.Hom.normalizationPullback",
+      "mathlib:Algebra.IsTranscendentalSeparable",
+      "tauceti:AlgebraicGeometry.Scheme.Hom.isIso_normalizationDesc_iff"
      ],
      "tests": [
       {
@@ -1426,12 +1488,17 @@
       {
        "name": "cusp_Qi",
        "kind": "compatibility",
-       "statement": "cusp over ℚ, k' = ℚ(i): both sides 𝔸¹"
+       "statement": "cusp over ℚ, finite separable k' = ℚ(i): both sides 𝔸¹; both routes apply"
+      },
+      {
+       "name": "cusp_Qu_transcendental",
+       "kind": "compatibility",
+       "statement": "cusp over ℚ, transcendental k' = ℚ(u): both sides 𝔸¹_{ℚ(u)}; Spec ℚ(u) → Spec ℚ is not smooth, so only the general route (via §0.7) reaches it"
       },
       {
        "name": "inseparable_fails",
        "kind": "non-example",
-       "statement": "C : x^p + y² + t = 0 over 𝔽_p(t): C̄* = C but (C_{k'})̄* = 𝔸¹ ≠ C_{k'} for k' = k(t^{1/p})"
+       "statement": "C : x^p + y² + t = 0 over 𝔽_p(t): C̄* = C but (C_{k'})̄* = 𝔸¹ ≠ C_{k'} = (C̄*)_{k'} for k' = k(t^{1/p}); the comparison s ↦ (−s² − t^{1/p}, s^p) is bijective, not an isomorphism"
       }
      ]
     },

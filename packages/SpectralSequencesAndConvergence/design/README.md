@@ -193,6 +193,11 @@ part of this roadmap.
   `Mathlib/CategoryTheory/Preadditive/Projective/Basic.lean`,
   `Mathlib/Algebra/Category/ModuleCat/AB.lean`,
   `Mathlib/Algebra/Category/ModuleCat/Projective.lean`).
+- `CategoryTheory.IsArtinianObject` and
+  `CategoryTheory.antitone_chain_condition_of_isArtinianObject`
+  (`Mathlib/CategoryTheory/Subobject/ArtinianObject.lean`): an object is Artinian when
+  `Subobject X` satisfies the descending chain condition, and every antitone sequence of its
+  subobjects is then eventually constant. No length function is part of the definition.
 - `CategoryTheory.ObjectProperty.IsSerreClass`
   (`Mathlib/CategoryTheory/Abelian/SerreClass/Basic.lean`), `ComplexShape.EulerCharSigns`,
   `HomologicalComplex.eulerChar`, `HomologicalComplex.homologyEulerChar`
@@ -455,8 +460,7 @@ filtration, complementary and total degree; line 3010–3014, Lemma 24.2, bidegr
 - On the native positions of `coreE₂Cohomological` there are two assignments: the E₂ assignment
   `(p, q) ↦ (p, p + q)` with `e = 0`, and the classical filtered-complex assignment
   `(p, q) ↦ (−q − 1, p + q)` with `e = 1`.
-- A bidegree assignment transports along isomorphisms of spectral sequences, and along the page
-  shift of 6.1, which changes `e` by the shift.
+- A bidegree assignment transports along isomorphisms of spectral sequences.
 
 **Checks.**
 
@@ -477,7 +481,8 @@ persists to all later pages. Prove: bounded below implies regular at every posit
 above implies coregular at every position; bounded implies stabilisation at every position. If
 `β` is a bound below and `α` a bound above, a position `pq` of total degree `n` stabilises from
 the first page `r ≥ r₀` with `r ≥ β(n + 1) − fil pq + e` and `r ≥ fil pq − α(n − 1) + e`
-(stacks-012K line 3120–3130, Lemma 24.8 (3)–(5)). *Needs:* 1.2, 1.3, 2.1.
+(stacks-012K line 3120–3130, Lemma 24.8 (3)–(5)). *Needs:* 1.2, 1.3, 2.1; 1.4 for the
+first-quadrant bullet.
 
 - First quadrant: for an `E₂` cohomological spectral sequence with `E_2^{p,q} = 0` unless
   `p, q ≥ 0`, the sequence is bounded, and `E_r^{p,q} = E_∞^{p,q}` for `r > max(p, q + 1)`.
@@ -904,8 +909,9 @@ satisfies `IsThirdQuadrant`, the hypotheses of 4.4 hold in cohomological degree 
 with the homological assignment `(p, q) ↦ (−p, −p − q)`. The filtration in cohomological degree
 `m` is `F^s H^m := abutmentFiltration (m − s + 1) m`, where `s = −p` is the filtration degree, so
 that position `(p, q)` carries `EInfty (−q) m` (stacks-012K line 3202–3240, Lemma 24.13, tag
-0BK5, in its filtered-complex form, applied through 4.4). *Needs:* 4.4; Mathlib `IsFirstQuadrant`,
-`IsThirdQuadrant`, `coreE₂CohomologicalNat`, `coreE₂HomologicalNat`.
+0BK5, in its filtered-complex form, applied through 4.4). *Needs:* 4.4; 3.6 for the
+edge-morphism bullet; Mathlib `IsFirstQuadrant`, `IsThirdQuadrant`, `coreE₂CohomologicalNat`,
+`coreE₂HomologicalNat`.
 
 - The edge morphisms and five-term sequence of 3.6 apply to every first-quadrant spectral object.
 
@@ -992,7 +998,7 @@ the classical index `p` in place of the E₂ index `p + n + 1`. Prove: when the 
 `gr^p H^n(K)` is a subquotient of `E_∞^{p,n−p}`. The spectral sequence converges weakly at
 `(p, n − p)` if and only if the classical inclusions (24.6.1) and (24.6.2) are equalities
 (stacks-012K line 3072–3106 and 3144–3151, Lemmas 24.6 and 24.10, tags 012Q and 012V). *Needs:*
-4.2, 4.3, 5.1; Tau Ceti `CochainComplex.filtrationAbutmentIso`,
+3.2, 4.2, 4.3, 5.1; Tau Ceti `CochainComplex.filtrationAbutmentIso`,
 `CochainComplex.toFiltrationAbutmentFiltration_comp_filtrationAbutmentIso_hom`.
 
 - The induced filtration is functorial in filtered morphisms.
@@ -1045,7 +1051,8 @@ route, with `G_t = F^{−t}` as in 5.1: bounded below on `K^{n+1}` gives `Z_r = 
 degree `n`, hence an isomorphism on cycles in degree `n − 1`; cohomology commutes with exact
 sequential colimits, so `colim_j H^{n−1}(G_j / G_{q+1}) → H^{n−1}(K / G_{q+1})` is an epimorphism.
 Exhaustiveness on `K^n` makes the induced filtration of `H^n` exhaustive, and bounded below on
-`K^n` makes it vanish from `p₀(n)` on. *Needs:* 4.3, 5.1, 5.2; Mathlib `HasExactColimitsOfShape`.
+`K^n` makes it vanish from `p₀(n)` on. *Needs:* 3.2, 4.3, 5.1, 5.2; Mathlib
+`HasExactColimitsOfShape`.
 
 - For complexes of modules (`ModuleCat R` is `AB5`) this contains Tau Ceti's
   `CochainComplex.exists_mem_range_filtrationAbutmentFiltrationι` and DGFloer Layer 1 item 3's
@@ -1084,12 +1091,15 @@ isomorphism is the identification of the next derived couple's `E` with `H(E, jk
 exact couples induce morphisms of spectral sequences, functorially (stacks-012K line 2653–2686,
 Definition 21.1, Lemma 21.2 and Definition 21.3, tags 011Q–011S; weibel1994 Definitions
 5.9.1–5.9.3, uncertified; massey1952, uncertified). *Needs:* StableHomotopyKTheory §7.22; Mathlib
-`CategoryTheory.SpectralSequence`, `ComplexShape.up'`.
+`CategoryTheory.SpectralSequence`, `ComplexShape.up'`; 2.1 for the bidegree-assignment bullet.
 
 - For `a = (−1, 1)`, `b = (0, 0)`, `c = (1, 0)` the spectral sequence is a
   `CohomologicalSpectralSequence C 1`. For `a = (1, −1)`, `b = (0, 0)`, `c = (−1, 0)` the page
   shapes are homological of degree `(−r, r − 1)`.
 - The page shift is an isomorphism of categories, with inverse the shift by `−k`.
+- If `(fil, deg, e)` is a bidegree assignment (2.1) for `E`, then `(fil, deg, e − k)` is one for
+  the page shift of `E` by `k`: page `r` of the shift carries the relation of page `r + k` of
+  `E`, which raises `fil` by `r + k − e = r − (e − k)`.
 
 **Checks.**
 
@@ -1099,6 +1109,11 @@ Definition 21.1, Lemma 21.2 and Definition 21.3, tags 011Q–011S; weibel1994 De
   `ker(jk)/im(jk) = 0` at that bidegree.
 - For the cohomological degrees, `d_r` has degree `(1, 0) − (r − 1)(−1, 1) = (r, 1 − r)`. A model
   using `c + b + (r − 1) • a` would give `(2 − r, r − 1)`, not a cohomological shape.
+- *Sign of the shifted offset.* Shift `X.spectralSequence coreE₂Cohomological` by `k = 1`, so
+  that page `r` is native page `r + 1`, starting at `1`, with relation
+  `(p, q) → (p + r + 1, q − r)`. The classical assignment of 2.1 (`fil = −q − 1`, `e = 1`) gives
+  `fil′ = −(q − r) − 1 = fil + r`, so the shifted offset is `0 = 1 − 1`. A model with offset
+  `e + k = 2` would predict a rise of `r − 2`.
 
 ### 6.2 The towers of an exact couple
 
@@ -1163,7 +1178,7 @@ their spectral sequences with those of the corresponding filtered complexes or s
 
 ### Dependencies
 
-Layers 1, 4 and 5; StableHomotopyKTheory §7.22.
+Layers 1, 2, 4 and 5; StableHomotopyKTheory §7.22.
 
 ## Layer 7: towers and conditional convergence
 
@@ -1233,11 +1248,14 @@ groups). The route: the stable images form an epimorphic subtower with pro-zero 
 7.1 applies. stacks-012K line 3720–3724 records Neeman's theorem that in an abelian category
 with exact products the Mittag–Leffler condition alone does not force `lim¹ = 0`. That theorem
 is why the epimorphic-tower hypothesis is part of the statement. *Needs:* 7.1; Mathlib
-`EnoughProjectives`, `CountableAB4Star`.
+`EnoughProjectives`, `CountableAB4Star`; 1.2 and Mathlib `IsArtinianObject` for the
+cycle-tower bullet.
 
 - `ModuleCat R` (for `Small R`) has lim-acyclic epimorphic towers and `CountableAB4Star`.
-- Under these hypotheses, the cycle tower of a spectral sequence whose first page has objects of
-  finite length is Mittag–Leffler. The tower of 7.4 below then has `RE_∞ = 0`.
+- The cycle tower `r ↦ Z_r(pq)` of 1.2 at a position whose first-page object
+  `(E.page r₀).X pq` is Artinian (descending chains of subobjects stabilise; every object of
+  finite length is Artinian) is eventually constant, hence Mittag–Leffler. Its `lim¹` vanishes
+  by 7.1, the tower being constant on a cofinal subsequence.
 
 **Checks.**
 

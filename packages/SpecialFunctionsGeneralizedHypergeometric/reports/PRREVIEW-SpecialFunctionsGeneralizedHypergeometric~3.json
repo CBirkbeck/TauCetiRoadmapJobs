@@ -1,0 +1,13 @@
+{
+  "review": {
+    "status": "needs_changes",
+    "reviewer": "independent-review-PRREVIEW-SpecialFunctionsGeneralizedHypergeometric~3",
+    "head": "e3df809d26be054a8e2ee4aa8060142db9004039",
+    "pr": 2136,
+    "folder": "SpecialFunctionsGeneralizedHypergeometric",
+    "date": "2026-11-11",
+    "findings": 1,
+    "blocking": 1,
+    "notes": "incremental re-review of 75 changed lines since 3c765c9; verified all four previous findings, changed source locators (including seeded 4.1, 4.2 and 7.1), two new Lean headlines, numerical and pole cases, suppliers, ownership and PR text. One P1: bilateral sum fails at a=0,b=d=1/2,c=2. Worker gate passes; rerun reports only exempt NOT IN ORDER; explicit depcheck has zero problems; targeted build and elaboration pass with only sorry warnings."
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "review": {
+    "status": "needs_changes",
+    "reviewer": "independent-review-PRREVIEW-ExponentialSumsAndCircleMethodPartII~1",
+    "head": "d01cb8fc11dea14770b0f6de840ad6c3db3917da",
+    "pr": 2138,
+    "folder": "ExponentialSumsAndCircleMethodPartII",
+    "date": "2026-11-10",
+    "findings": 5,
+    "blocking": 1,
+    "notes": "Gate re-run on the head: all scanners 0, OK; worker gate.md build=0; lake env lean of Suggested.lean: only the two sorry warnings; depcheck 235 roadmaps, 2132 edges, 0 problems. Seeded sample 15/15 verified against BS20/BV15/LR14v2/Stacks (BS20 inequality signs read from gs renders, since pdftotext maps the slanted >= to >). All supplier citations resolved (SSF, ECF and their revisions, AT, DGFloer, CAC on main; FDT #2132, EDPS #1040, IG #850, DWP #929, SMPP #1495, LPV #873, AT2 #1694 at heads); 20 pinned declarations opened. One-tactic probes close neither theorem. R01 (P2): the §11.12 compact-open obstruction is statable at the pins; a tested Lean block is given. P3: Part II with no base, §4.3 locator, §7.1 Stacks line numbers, headings. 8 BS20 source issues recorded."
+  }
+}

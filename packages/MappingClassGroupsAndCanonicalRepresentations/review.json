@@ -1,0 +1,10 @@
+{
+  "review": {
+    "status": "needs_changes",
+    "reviewer": "independent-review-REV-PKG-MappingClassGroupsAndCanonicalRepresentations~2",
+    "date": "2026-11-10",
+    "findings": 16,
+    "blocking": 10,
+    "notes": "Checked all 13 previous repairs, 87 numbered targets, the 15 seeded source targets, current supplier heads, ownership overlaps and pinned declarations. Fourteen seeded targets have readable primary support; Jordan/two-generation primary texts remain settled uncertified. Original Suggested.lean elaborates with only three sorry warnings; all 11 declaration signatures retain their binders; all 12 final one-tactic probes fail. Dependency check: 236 roadmaps, 2147 edges, 0 problems. Manual ownership, forbidden-supplier, supplier-drift, mathematical-hypothesis, convention and Check defects require repairs. Computed witnesses and source limitations are recorded in the round-2 report."
+  }
+}

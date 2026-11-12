@@ -18,7 +18,7 @@ licence_class = "publisher-open"
 status = "certified"
 accessed = "2026-11-05"
 version_note = "publisher's open back-issue scan (MSP); the same paper is on Project Euclid"
-cited_for = ["§3.2 Theorem 1: the Nash blowup is locally the blowup of an ideal (line 105)", "§3.3 Remark 2 and Examples 1-2: Jacobian ideal of a hypersurface, cusp in characteristic 2 and q (lines 129-141)", "§3.1 Introduction: Gauss-map definition and independence of the embedding (lines 29-44)", "§4.5 Theorem 2: characteristic zero criterion (line 143)", "§2.2 Example 4: y^2 = x^2 z, non-finite Nash blowup (lines 314-324)", "§2.7 iterated Nash blowups (lines 202-203)", "§3.2 proof of Theorem 1: local construction of the blowup ideal from Jacobian minors weighted by functions separating the components (lines 107-116)"]
+cited_for = ["§3.2 Theorem 1: the Nash blowup is locally the blowup of an ideal (line 105)", "§3.3 Remark 2 and Examples 1-2: Jacobian ideal of a hypersurface, cusp in characteristic 2 and q (lines 129-141)", "§3.1 Introduction: Gauss-map definition and independence of the embedding (lines 29-44)", "§4.5 Theorem 2: characteristic zero criterion (line 143)", "§2.2 Example 4: y^2 = x^2 z, non-finite Nash blowup (lines 314-324)", "§2.7 iterated Nash blowups (lines 202-203)", "§3.2 proof of Theorem 1: local construction of the blowup ideal from Jacobian minors weighted by functions separating the components (lines 107-116)", "Conventions: the ground field is algebraically closed or the complex numbers (line 29)"]
 
 [[source]]
 id = "nashModificationNotes2024"
@@ -36,7 +36,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-05"
 version_note = "arXiv v1"
-cited_for = ["§1.2-§1.3 Section 3: Nash modification relative to a coherent sheaf, universal property, SN(F) = SN(wedge^d F) (lines 216-230)", "§2.4 Section 2: Teissier's universal formulation (lines 153-162)", "§2.5 Section 2: transport of the quotient (lines 170-171)", "§4.4 Proposition 2.3 (lines 179-199)", "§4.1 coordinates from a free quotient (lines 194-197, 484-501)", "§5.3-§5.4 Theorem 5.1 and its proof (lines 362-439); the statement there reads 'singular' for 'nonsingular'; finiteness of R^{1/p} (lines 418-420) is cited in §5.3 beside DeformationAndDerivedPatchingAlgebra §3.14", "§5.2 rank p^d of R^{1/p} for the local ring of a d-dimensional variety (lines 421-422)", "§2.3 Section 1: the Nash modification of an embedded variety is proper, birational and an isomorphism over the regular locus (lines 109-112)", "§3.2 Oneto-Zatini fractional ideal (lines 243-247)", "§6.4 Section 6 normalised criterion argument (lines 515-517)"]
+cited_for = ["§1.2-§1.3 Section 3: Nash modification relative to a coherent sheaf, universal property, SN(F) = SN(wedge^d F) (lines 216-230)", "§2.4 Section 2: Teissier's universal formulation (lines 153-162)", "§2.5 Section 2: transport of the quotient (lines 170-171)", "§4.4 Proposition 2.3 (lines 179-199)", "§4.1 coordinates from a free quotient (lines 194-197, 484-501)", "§5.3-§5.4 Theorem 5.1 and its proof (lines 362-439); the statement there reads 'singular' for 'nonsingular'; finiteness of R^{1/p} (lines 418-420) is cited in §5.3 beside DeformationAndDerivedPatchingAlgebra §3.14", "§5.2 rank p^d of R^{1/p} for the local ring of a d-dimensional variety (lines 421-422)", "§2.3 Section 1: the Nash modification of an embedded variety is proper, birational and an isomorphism over the regular locus (lines 109-112)", "§3.2 Oneto-Zatini fractional ideal (lines 243-247)", "§6.4 Section 6 normalised criterion argument (lines 515-517)", "Conventions: the ground field is algebraically closed (lines 143, 153, 232, 445, 505)"]
 
 [[source]]
 id = "duarteNunezBetancourt2020"
@@ -56,7 +56,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-05"
 version_note = "arXiv v2 read; numbering of the journal version not checked, locators refer to the arXiv text"
-cited_for = ["§2.1 Definition 2.1 (line 127)", "§2.5 Lemma 2.4 (lines 152-182)", "§4.5 Theorem 2.3 (line 136)", "§4.1, §5.1-§5.4 Theorem 3.10 and its proof (lines 256-305)"]
+cited_for = ["§2.1 Definition 2.1 (line 127)", "§2.5 Lemma 2.4 (lines 152-182)", "§4.5 Theorem 2.3 (line 136)", "§4.1, §5.1-§5.4 Theorem 3.10 and its proof (lines 256-305)", "Conventions: the ground field is algebraically closed throughout (line 103)"]
 
 [[source]]
 id = "castilloDuarteLeytonLiendo2026"
@@ -75,7 +75,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-05"
 version_note = "arXiv v3 (dated 7 Nov 2025) read; the journal version's numbering was not checked, locators refer to the arXiv text"
-cited_for = ["§2.1, §3.1, §6.1 Introduction: Gauss-map definitions of the Nash and normalised Nash blowups (lines 13-21)", "§7.2-§7.3 Theorem of the Introduction and its consequence (lines 58-67), statement only", "§3.3 Nobile's curve x^p - y^q (lines 33-35)", "Downstream consumers: Section 1 toric description (consumer side)"]
+cited_for = ["§2.1, §3.1, §6.1 Introduction: Gauss-map definitions of the Nash and normalised Nash blowups (lines 13-21)", "§7.2-§7.3 Theorem of the Introduction and its consequence (lines 58-67), statement only", "§3.3 Nobile's curve x^p - y^q (lines 33-35)", "Downstream consumers: Section 1 toric description (consumer side)", "Conventions: the ground field is algebraically closed (lines 13-14, 58)"]
 
 [[source]]
 id = "gonzalezSprinberg1982"
@@ -92,7 +92,7 @@ sha256 = "e395cdf618b29d87645908279beaf6e9665f5b6295dd0a7b0ed0c706b9af533a"
 licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-05"
-cited_for = ["§1.2, §2.1 Section 1.1-1.2: Nash transform in the Grassmannian of quotients of the differentials, Nash cotangent bundle, universal property (lines 79-98)", "§1.4 Section 1.3: Plücker form (lines 99-104)", "§3.1 Section 1.4: embedded description (lines 105-112)", "§6.1 Introduction: normalised Nash transform (lines 60-69)"]
+cited_for = ["§1.2, §2.1 Section 1.1-1.2: Nash transform in the Grassmannian of quotients of the differentials, Nash cotangent bundle, universal property (lines 79-98)", "§1.4 Section 1.3: Plücker form (lines 99-104)", "§3.1 Section 1.4: embedded description (lines 105-112)", "§6.1 Introduction: normalised Nash transform (lines 60-69)", "Conventions: the ground field is the complex numbers, the methods valid over algebraically closed fields of characteristic zero (lines 78, 82)"]
 
 [[source]]
 id = "stacksNormalization"
@@ -108,7 +108,7 @@ sha256 = "0bebe1d93baa7e4e99cb4f36fe50c7bcb6094772b8a2f760885a492892eca75f"
 licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-05"
-cited_for = ["§0.1 Lemma 29.33.8 (01UV, line 2900)", "§0.2 Lemmas 29.33.10 (01V0, line 2926) and 29.33.15 (01UZ, line 2953)", "§1.5 Lemma 29.26.16 (081I, line 2198) and Lemma 29.6.3(3) (01R8, line 421)", "§6.1 Definition 29.55.1 (035N, line 6498) and Lemma 29.55.3 (035P, line 6521)", "§6.2 Lemma 29.55.5(4) (035Q, lines 6561-6572)", "§6.3 Lemma 29.54.6 (035K, line 6332): normalisation over an open", "§6.4 Lemma 29.55.9 (0H7D, line 6636)", "background: Lemmas 29.55.8 (0AB1) and 29.55.11 (035S)"]
+cited_for = ["§0.1 Lemma 29.33.8 (01UV, line 2900)", "§0.2 Lemmas 29.33.10 (01V0, line 2926) and 29.33.15 (01UZ, line 2953)", "§1.5 Lemma 29.26.16 (081I, line 2198) and Lemma 29.6.3(3) (01R8, line 421)", "§6.1 Definition 29.55.1 (035N, line 6498) and Lemma 29.55.3 (035P, line 6521)", "§6.2 Lemma 29.55.5(4) (035Q, lines 6561-6572), which needs the source only normal", "§6.3 Lemma 29.54.6 (035K, line 6332): normalisation over an open", "§6.3 Lemma 29.55.5(3) (035Q, line 6566) and Lemma 29.55.9 (0H7D, line 6636): route of the base change along every separable extension", "§6.4 Lemma 29.55.9 (0H7D, line 6636)", "background: Lemmas 29.55.8 (0AB1) and 29.55.11 (035S)"]
 
 [[source]]
 id = "stacksVarieties"
@@ -124,7 +124,7 @@ sha256 = "ed339c312c86721e3f830876da14cabe89a96e83e454a78b7cd355555f4bca45"
 licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-05"
-cited_for = ["§1.1 Lemma 33.25.7 (056V, line 2112), Lemma 33.25.4 (056T, line 2084), Lemma 33.6.8 (04KS, line 296)", "§0.6 Lemma 33.25.8 (0B8X, line 2130)", "§6.3 Lemma 33.27.5 (0C3N, line 2256): normalisation commutes with a separable extension of the ground field"]
+cited_for = ["§1.1 Lemma 33.25.7 (056V, line 2112), Lemma 33.25.4 (056T, line 2084), Lemma 33.6.8 (04KS, line 296)", "§0.6 Lemma 33.25.8 (0B8X, line 2130)", "§6.3 Lemma 33.27.5 (0C3N, line 2256): normalisation commutes with every separable extension of the ground field, finite or not", "§0.7 Lemma 33.10.6 (0C3M, line 1049): the base change of a normal scheme along a separable extension of the ground field is normal; line 1064: the non-Noetherian base change of Spec of an algebraic closure of Q"]
 
 [[source]]
 id = "hironaka1983"
@@ -231,7 +231,7 @@ sha256 = "b035a1f02104906a1820636cd332a0d7962fef3318d207a056634cb14dc86947"
 licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-07"
-cited_for = ["§0.3 Lemma 10.140.3 (00TT, line 17618)", "§0.5 Lemma 10.140.4 (00TU, line 17647; its proof, lines 17654-17671, uses no Noetherian hypothesis) and the proof of Lemma 10.140.5 (00TV, lines 17676-17678)", "§4.2 Lemma 10.131.13 (00RW, line 15590)", "§5.4 Example 10.140.8 (00TY, lines 17720-17726): a regular non-smooth curve over F_p(t)"]
+cited_for = ["§0.3 Lemma 10.140.3 (00TT, line 17618)", "§0.5 Lemma 10.140.4 (00TU, line 17647; its proof, lines 17654-17671, uses no Noetherian hypothesis; injectivity for finitely generated separable residue fields, the isomorphism needing Omega of the residue field to vanish, of dimension the transcendence degree, line 17680) and the proof of Lemma 10.140.5 (00TV, lines 17676-17678)", "§4.2 Lemma 10.131.13 (00RW, line 15590)", "§5.4 Example 10.140.8 (00TY, lines 17720-17726): a regular non-smooth curve over F_p(t)", "Conventions Definition 10.42.1 (030O, line 4671): separable field extensions, not necessarily algebraic", "§0.7 Lemma 10.165.4 (0C30, line 21510): a separable extension is geometrically normal; Lemma 10.165.5 (06DF, line 21516): a geometrically normal algebra tensored with a normal ring is normal"]
 
 [[source]]
 id = "alperModuli"
@@ -248,4 +248,4 @@ sha256 = "4d95d2bbe08ede1b0fa94ff6dcf4d653e0942fbfdfd1195541a7082b820d7bd5"
 licence_class = "author-page"
 status = "certified"
 accessed = "2026-11-07"
-cited_for = ["§0.4 proof of Theorem 1.4.5 (lines 2985-3007, printed pp. 61-62) with Remark 1.1.4(1) (line 2283): a surjection gives a closed immersion of Quot/Grassmannian functors cut out by the vanishing of the kernel"]
+cited_for = ["§0.4 proof of Theorem 1.4.5 (lines 2985-3007, printed pp. 61-62) with Remark 1.1.4(1) (line 2283): a surjection gives a closed immersion of Quot/Grassmannian functors cut out by the vanishing of the kernel; the proof and Exercise 0.3.21 (line 1202) assume S Noetherian and work on projective space over S, which the step used does not need"]

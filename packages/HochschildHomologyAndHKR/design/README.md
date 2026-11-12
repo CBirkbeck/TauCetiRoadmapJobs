@@ -26,15 +26,18 @@ realises the isomorphism; and for polynomial algebras over every `k` the Koszul 
 
 This roadmap owns:
 
-- the ungraded Hochschild simplicial module, cosimplicial module, chain complex `C_•(A,M)`,
-  cochain complex `C^•(A,M)`, Hochschild homology and cohomology with arbitrary bimodule
-  coefficients, their functoriality in `M` and in `A`, and the long exact sequences in `M`
-  (Layer 1); the `R`-linear structure of these complexes for a commutative algebra `R` (§1.5);
+- the ungraded Hochschild simplicial module, the cosimplicial module (its codegeneracies and
+  its packaging over the pinned bimodule cofaces), chain complex `C_•(A,M)`, cochain complex
+  `C^•(A,M)`, Hochschild homology and cohomology with arbitrary bimodule coefficients, their
+  functoriality in `M` and in `A`, and the long exact sequences in `M` (Layer 1); the
+  `R`-linear structure of these complexes for a commutative algebra `R` (§1.5);
 - the normalised chain and cochain complexes and the normalisation theorem over every
   commutative `k` (Layer 2);
-- the low-degree identifications, bimodule derivations and inner derivations, the twisted
-  square-zero extension of a 2-cochain and the classification of `k`-split square-zero
-  extensions by `HH²` (Layer 3);
+- the low-degree identifications: `HH₀`, `HH⁰`, the submodules of bimodule derivations (the maps
+  underlying `TauCeti.BimoduleDerivation`) and of inner derivations with their comparison with
+  cocycles, coboundaries and `HH¹`, `HH₁` of a commutative algebra, the twisted square-zero
+  extension of a 2-cochain and the classification of `k`-split square-zero extensions by `HH²`
+  (Layer 3);
 - the bar resolution over `Aᵉ`, the identification of `HH^n` with Mathlib's `Ext` and the
   construction of `Tor` over `Aᵉ` with `HH_n ≅ Tor_n` (Layer 4);
 - the cup product on `C^•(A,A)`, the Leibniz rule, the graded algebra `HH^•(A,A)`, the
@@ -46,10 +49,11 @@ This roadmap owns:
   description of the antisymmetrisation and projection maps of RefinedTraceMethods §1.9 on the
   classical complex (Layer 6);
 - the duality between cochains and chains of a commutative algebra, the duality lemma for
-  complexes of projective modules with projective homology, exterior powers of finite projective
-  modules and their duals, polyvector fields `T^n_{R/k} = ⋀^n_R Der_k(R)`, the determinant cocycle,
-  the unnormalised and normalised HKR maps, the canonical HKR map and the cohomological HKR
-  theorem (Layer 7);
+  complexes of projective modules with projective homology, the identification of
+  `exteriorPower.pairingDual` on a finite projective module with the exterior-bidual evaluation
+  of EulerSystemsAndKolyvaginSystems §6.1, polyvector fields `T^n_{R/k} = ⋀^n_R Der_k(R)`, the
+  determinant cocycle, the unnormalised and normalised HKR maps, the canonical HKR map and the
+  cohomological HKR theorem (Layer 7);
 - the polynomial case through the Koszul bimodule resolution (Layer 8).
 
 It leaves to other roadmaps, by section:
@@ -71,6 +75,10 @@ It leaves to other roadmaps, by section:
   filtration and Hochschild homology over non-flat bases.
 - **DerivedModuleAlgebra** §0.K.1: the Koszul complex of a finite sequence in a commutative ring
   and its acyclicity for weakly regular sequences.
+- **EulerSystemsAndKolyvaginSystems** §6.1: the theorem that the exterior-bidual evaluation
+  `⋀^r_R X → Hom_R(⋀^r_R Hom_R(X,R), R)` is an isomorphism for every finite projective module `X`
+  over a commutative ring `R`; its carrier, the exterior bidual and its evaluation, is
+  IntegralIwasawaTheory §12.6's.
 - **DerivedDeRhamCohomology** Layer 2: the algebraic de Rham complex, its wedge product and
   differential. No statement here uses the de Rham differential.
 - **NoncommutativeGeometry** N1: scalar-valued and continuous cyclic cochains of complex
@@ -87,29 +95,43 @@ roadmap.
 Already in the pinned libraries, and cited rather than planned: Mathlib's `Derivation` (for
 commutative algebras), `KaehlerDifferential` with `KaehlerDifferential.linearMapEquivDerivation`,
 `ExteriorAlgebra.exteriorPower` with `exteriorPower.pairingDual` and its bijectivity for finite
-free modules, `Algebra.Smooth`, `Abelian.Ext` with its computation from projective resolutions,
-`Functor.leftDerived`, the Dold–Kan normalisation of simplicial objects, `TrivSqZeroExt`;
-Tau Ceti's `TauCeti.BalancedTensorProduct`, the Kronecker map and universal coefficient sequence
-(`TauCeti.ChainComplex.kronecker`), `TauCeti.derivationLieAlgebra` with
-`TauCeti.innerDerivation`, and the suspended Hochschild cochains of positive arity of an `A∞`
-algebra: the brace `TauCeti.ReducedTensorWords.brace` and the Gerstenhaber bracket
+free modules, `exteriorPower.instFinite`, `Algebra.Smooth`, `Abelian.Ext` with its computation
+from projective resolutions, `Functor.leftDerived`, the Dold–Kan normalisation of simplicial
+objects, `TrivSqZeroExt`; Tau Ceti's `TauCeti.BalancedTensorProduct`, the Kronecker map and
+universal coefficient sequence (`TauCeti.ChainComplex.kronecker`), `TauCeti.derivationLieAlgebra`
+with `TauCeti.innerDerivation`, the projectivity of exterior powers of projective modules
+(`exteriorPower.instProjective`), the bimodule cofaces `TauCeti.hochschildBimoduleCoface` with
+their coface identities, the Hochschild coboundary `TauCeti.hochschildBimoduleCoboundary` with
+arbitrary bimodule coefficients, its square-zero law and its characterisations of the
+degree-zero cocycles (central elements) and degree-one cocycles (derivations), the bimodule
+derivations `TauCeti.BimoduleDerivation`, and the suspended Hochschild cochains of positive
+arity of an `A∞` algebra: the brace `TauCeti.ReducedTensorWords.brace` and the Gerstenhaber bracket
 `TauCeti.ReducedTensorWords.gerstenhaberBracket` with their pre-Lie, antisymmetry and Jacobi
 identities, the Hochschild differential `TauCeti.AInfinityAlgebra.hochschildDifferential` with
 its Leibniz rule for the bracket, the cochain complex
 `TauCeti.AInfinityAlgebra.PositiveHochschild.complex`, its cohomology
 `TauCeti.AInfinityAlgebra.PositiveHochschild.Cohomology` with the bracket
 `TauCeti.AInfinityAlgebra.PositiveHochschild.cohomologyBracket`, and the normalised cochains
-`TauCeti.AInfinityAlgebra.PositiveHochschild.normalizedCochains` for a strict unit. The pin does
-not include cochains of arity zero (so neither `HH⁰` nor the quotient of the derivations by the
-inner ones), the cup product and the multiple brace `m{F,G}`, or Hochschild chains; these are
-imported from DGAInfinity Layer 8 by section, and Layer 6 compares both with the classical
-complexes.
+`TauCeti.AInfinityAlgebra.PositiveHochschild.normalizedCochains` for a strict unit. The pinned
+suspended complex does not include cochains of arity zero (so neither `HH⁰` nor the quotient of
+the derivations by the inner ones), the cup product and the multiple brace `m{F,G}`, or
+Hochschild chains; these are imported from DGAInfinity Layer 8 by section, and Layer 6 compares
+both with the classical complexes.
 
 Variants kept here, each differing in one stated respect from an existing object:
 
 - the ungraded complexes differ from DGAInfinity Layer 8's by allowing an arbitrary bimodule of
   coefficients and by living in Mathlib's `HomologicalComplex` of `ModuleCat k`, where `Ext`, `Tor`
   and the HKR comparison are stated;
+- the cochain complex of §1.2 differs from Tau Ceti's bare coboundary
+  `TauCeti.hochschildBimoduleCoboundary` by being a cosimplicial object of `ModuleCat k` with
+  codegeneracies, which the normalisation of Layer 2 needs, and from
+  `TauCeti.hochschildCochainComplex`, whose degree-`n` cochains take `n + 1` arguments with values
+  in a `k`-module `M` and compute `HH^n(A, Hom_k(A,M))`
+  (`TauCeti.multilinearCurryFirstEquiv_hochschildCoboundary`), not `HH^n(A,M)`;
+- the normalised chains of §2.1 differ from `TauCeti.normalizedHochschildChains` by allowing an
+  arbitrary bimodule of coefficients and by their comparison with the unnormalised complex; for
+  `M = A` the terms agree under `⨂[k]^{n+1} A ≅ A ⊗[k] A^{⊗n}`, and so do the boundaries;
 - the normalisation theorem of Layer 2 is for ordinary algebras with arbitrary bimodule
   coefficients, where DGAInfinity Layer 8's is for strictly unital DG algebras with coefficients
   in the algebra;
@@ -158,8 +180,10 @@ canonical map, and the determinant map is identified as `n!` times it.
   `b(m ⊗ a₁ ⊗ ⋯ ⊗ a_n) = m a₁ ⊗ a₂ ⊗ ⋯ ⊗ a_n + Σ_{i=1}^{n−1} (−1)^i m ⊗ ⋯ ⊗ a_i a_{i+1} ⊗ ⋯ ⊗ a_n
   + (−1)^n a_n m ⊗ a₁ ⊗ ⋯ ⊗ a_{n−1}`.
   Witness: in degree one `b(m ⊗ a) = m a − a m`; for `A = M = Mat₂(k)`, `m = E₁₂`, `a = E₂₁` this is
-  `E₁₁ − E₂₂ ≠ 0`, and for commutative `A = M` the degree-one boundary is zero.
-- **Hochschild coboundary** (Ginz05 lines 1055–1062; the same formula as BanachAlgebras Layer 6):
+  `E₁₁ − E₂₂`, nonzero for nonzero `k`, and for commutative `A = M` the degree-one boundary is zero.
+- **Hochschild coboundary** (Ginz05 lines 1055–1062; the same formula as BanachAlgebras Layer 6
+  and as Tau Ceti's `TauCeti.hochschildBimoduleCoboundary`, the alternating sum of the cofaces
+  `TauCeti.hochschildBimoduleCoface`):
   `δf(a₁,…,a_{n+1}) = a₁ f(a₂,…,a_{n+1}) + Σ_{i=1}^n (−1)^i f(…, a_i a_{i+1}, …)
   + (−1)^{n+1} f(a₁,…,a_n) a_{n+1}`.
   Witnesses: `δm(a) = a m − m a` on `C⁰ = M`, and `δf(a,b) = a f(b) − f(ab) + f(a) b` on `C¹`.
@@ -206,6 +230,11 @@ canonical map, and the determinant map is identified as `n!` times it.
   `Algebra.FinitePresentation` as an algebra), which agrees with the definition of StacksSmooth
   Tag 00T2 by Tag 00TN. Finite presentation as an algebra does not make `R` finitely presented,
   or projective, as a `k`-module.
+- **The zero ring.** Every statement is made over an arbitrary commutative `k`, the zero ring
+  included; over `k = 0` every module, complex and comparison of this roadmap is the zero object
+  or the zero map, and every theorem holds with both sides zero. A Check asserting that an
+  element is nonzero, or that a map or an extension fails a property, names the rings for which
+  it is made (`k` nonzero, `2 ≠ 0` in `k`, or `k = ℤ`).
 
 ## Exact supplier contracts
 
@@ -263,12 +292,18 @@ canonical map, and the determinant map is identified as `n!` times it.
   `exteriorPower.pairingDual` with `exteriorPower.pairingDual_ιMulti_ιMulti`,
   `exteriorPower.bijective_pairingDual` (stated for `Module.Free` and `Module.Finite` only; the
   finite projective case is §7.3), `exteriorPower.subsingleton_of_span_eq_top_of_card_lt`, and
-  `Matrix.det`. Mathlib has no `Module.Projective` instance for exterior powers.
+  `Matrix.det`. Mathlib has no `Module.Projective` instance for exterior powers; Tau Ceti's
+  `exteriorPower.instProjective` (below) supplies it.
+- **Duals.** `Module.Dual`, `Module.dual_finite` and `Module.dual_projective` (the dual of a
+  finite projective module is finite projective, `Mathlib/LinearAlgebra/Dual/Lemmas.lean`), the
+  `Module.IsReflexive` instance for finite projective modules (same file) and `Module.evalEquiv`
+  (`P ≃ₗ[R] P**` for a reflexive `P`, `Mathlib/LinearAlgebra/Dual/Defs.lean`).
 - **Regular sequences.** `RingTheory.Sequence.IsWeaklyRegular`. Mathlib has no lemma that the
   differences of two copies of the variables of a polynomial ring form a regular sequence
   (§8.1).
 - Mathlib has no Hochschild complex of an algebra, no derivation into a bimodule over a
-  noncommutative algebra, no Koszul complex and no `Tor` over a noncommutative ring.
+  noncommutative algebra, no Koszul complex and no `Tor` over a noncommutative ring; Tau Ceti's
+  bimodule coboundary and bimodule derivations are below.
 
 ### From Tau Ceti
 
@@ -288,6 +323,34 @@ canonical map, and the determinant map is identified as `n!` times it.
   (`TauCeti/Algebra/Homology/UniversalCoefficient/Basic.lean`): the universal coefficient
   sequence `0 → Ext¹(H_j(X),Y) → Hⁱ(Hom(X,Y)) → (Hᵢ(X) ⟶ Y) → 0` in degree `i = j + 1`, under the
   hypotheses that the cycles `Z_i ⟶ X_i` and `Z_j ⟶ X_j` are split and `Z_j` is projective.
+- `TauCeti.hochschildBimoduleCoface`, `TauCeti.hochschildBimoduleCoface_hochschildBimoduleCoface`,
+  `TauCeti.hochschildBimoduleCoboundary`, `TauCeti.hochschildBimoduleCoboundary_apply_eq_add_sum_add`,
+  `TauCeti.hochschildBimoduleCoboundary_comp_hochschildBimoduleCoboundary`,
+  `TauCeti.hochschildBimoduleCoboundary_constOfIsEmpty`,
+  `TauCeti.hochschildBimoduleCoboundary_constOfIsEmpty_eq_zero_iff`,
+  `TauCeti.hochschildBimoduleCoboundary_ofSubsingleton` and
+  `TauCeti.hochschildBimoduleCoboundary_ofSubsingleton_eq_zero_iff`
+  (`TauCeti/RingTheory/HochschildCohomology/Coboundary.lean`): for a `k`-algebra `A` and an additive
+  group `M` with `Module k M`, `Module A M`, `Module Aᵐᵒᵖ M`, `IsScalarTower k A M` and
+  `IsScalarTower k Aᵐᵒᵖ M`, the cofaces `∂_i : C^n(A,M) → C^{n+1}(A,M)`, `0 ≤ i ≤ n + 1` (`∂₀` the
+  left action of the first argument, `∂_{n+1}` the right action of the last, the others multiplying
+  two adjacent arguments), the identities `∂_{j+1} ∘ ∂_i = ∂_i ∘ ∂_j` for `i ≤ j` (under
+  `SMulCommClass A Aᵐᵒᵖ M`), the coboundary `Σ_i (−1)^i ∂_i`, which is the `δ` of the conventions,
+  `δ ∘ δ = 0` (under `SMulCommClass A Aᵐᵒᵖ M`), `δm(a) = a m − m a` with `δm = 0` exactly when `m` is
+  central, and `δf(a,b) = a f(b) − f(ab) + f(a) b` with `δf = 0` exactly when `f` satisfies the
+  Leibniz rule. The pin has no codegeneracies, no complex in `ModuleCat k` and no cohomology for
+  these cochains; Layer 1 adds them.
+- `TauCeti.BimoduleDerivation k A M` with `TauCeti.BimoduleDerivation.leibniz`,
+  `TauCeti.BimoduleDerivation.map_one_eq_zero`, `TauCeti.BimoduleDerivation.map_algebraMap` and
+  `TauCeti.BimoduleDerivation.hochschildBimoduleCoboundary_ofSubsingleton_eq_zero`
+  (`TauCeti/RingTheory/Derivation/Bimodule.lean` and `Coboundary.lean`): the `k`-linear maps
+  `D : A → M` into a bimodule with `D(ab) = a D(b) + D(a) b` and `D(1) = 0`, each a degree-one
+  cocycle. The condition `D(1) = 0` is part of the structure; for an additive group `M` it follows
+  from the Leibniz rule (`D(1) = 2D(1)`), so no intended derivation is lost. The structure carries
+  no module structure at the pin; §3.3 uses the `k`-submodule of `A →ₗ[k] M` of the underlying
+  maps.
+- `exteriorPower.instProjective` (`TauCeti/LinearAlgebra/ExteriorPower/Basic.lean`): `⋀[R]^n M` is a
+  projective `R`-module when `M` is, for every commutative ring `R`, with no finiteness hypothesis.
 - `TauCeti.derivationLieAlgebra R A` (`TauCeti/Algebra/Lie/Derivation/Basic.lean`): derivations of
   a nonassociative algebra as a Lie subalgebra of `Module.End R A`, with
   `TauCeti.innerDerivation` (`z ↦ ⁅z, −⁆`, that is `a ↦ z a − a z`) and
@@ -372,6 +435,22 @@ canonical map, and the determinant map is identified as `n!` times it.
   functoriality in the sequence, and acyclicity in positive degrees when `x` is weakly regular, so
   that `K(x) → B/(x)` is a finite free resolution.
 
+### From TauCetiRoadmap.EulerSystemsAndKolyvaginSystems
+
+- §6.1 (Exterior biduals of Selmer modules): for a commutative ring `R`, `r ∈ ℕ` and a finite
+  projective `R`-module `X`, the evaluation `TauCeti.StarkSystems.toExteriorBidual R r X` from
+  `⋀[R]^r X` to the exterior bidual `Hom_R(⋀[R]^r Hom_R(X,R), R)` is an isomorphism. Assumed of it:
+  that statement for every finite projective `X`, nothing of the Selmer specialisations.
+
+### From TauCetiRoadmap.IntegralIwasawaTheory
+
+- §12.6 (the shared exterior-bidual core): `TauCeti.StarkSystems.exteriorBidual R r X` and
+  `TauCeti.StarkSystems.toExteriorBidual R r X`, defined for every commutative ring `R` and
+  `R`-module `X` by flipping `exteriorPower.pairingDual`, with the determinant formula
+  `toExteriorBidual(x₁ ∧ ⋯ ∧ x_r)(φ₁ ∧ ⋯ ∧ φ_r) = det(φ_j(x_i))` and naturality in `X`. These are the
+  carrier of the EulerSystemsAndKolyvaginSystems §6.1 statement; the finite-abelian lattice
+  comparison of §12.6 is not used.
+
 ### From TauCetiRoadmap.KTheoryFiniteLocalFields
 
 - §4.0 (Cyclic homology foundations): `HH_n(A/k)` for an ordinary `k`-algebra `A`, the homology
@@ -401,8 +480,9 @@ canonical map, and the determinant map is identified as `n!` times it.
 
 ## How to read the build
 
-Layer 1 builds the two complexes from a simplicial and a cosimplicial `k`-module, with
-functoriality, long exact sequences and the `R`-linear structure in the commutative case.
+Layer 1 builds the two complexes from a simplicial and a cosimplicial `k`-module, the latter on
+Tau Ceti's bimodule cofaces, with functoriality, long exact sequences and the `R`-linear
+structure in the commutative case.
 Layer 2 deduces the normalisation theorem from Mathlib's Dold–Kan normalisation. Layer 3
 identifies the low degrees and classifies square-zero extensions. Layer 4 constructs the bar
 resolution and identifies the theory with `Ext` and `Tor` over `Aᵉ` for `k`-projective `A`.
@@ -412,7 +492,8 @@ Tau Ceti and DGAInfinity Layer 8, the chain complex with Layer 8's chains and, f
 algebras, with the derived chains of KTheoryFiniteLocalFields §4.0 through RefinedTraceMethods
 §1.1, proves Gerstenhaber's homotopy formula through the transported braces, and describes the
 antisymmetrisation of RefinedTraceMethods §1.9 on the classical complex. Layer 7 proves the
-duality lemma, extends the exterior-power pairing to finite projective modules, defines
+duality lemma, identifies the exterior-power pairing of a finite projective module with the
+exterior-bidual evaluation of EulerSystemsAndKolyvaginSystems §6.1, defines
 polyvector fields and the HKR maps, and proves the cohomological HKR theorem. Layer 8 computes
 the polynomial case from the Koszul resolution; it depends on Layers 1–5, §§6.2 and 6.4(a) and
 §§7.1, 7.4 and 7.5, not on the smooth HKR input of §6.4(d) and §7.6.
@@ -453,28 +534,40 @@ identities, so that `X(A,M)` is a simplicial object, and prove that the differen
   `a_n m` in the last face would make the degree-one boundary `m ⊗ a ↦ m a − m a = 0` and give
   `HH₀(Mat₂(k)) = Mat₂(k)` instead of `k` (§3.1 Checks).
 - For commutative `A = M`, the degree-one boundary vanishes, so every element of `A ⊗ A` is a
-  cycle; with `A = k[x]`, the cycle `1 ⊗ x` is not a boundary (§3.4).
+  cycle; with `A = k[x]` and `k` nonzero, the cycle `1 ⊗ x` is not a boundary (§3.4).
 
 ### 1.2 The Hochschild cosimplicial module and the cochain complex
 
 Define the Hochschild cosimplicial `k`-module `Y(A,M)` as the cosimplicial object of `ModuleCat k`
-with `Y^n = MultilinearMap k (fun _ : Fin n ↦ A) M`, cofaces `(δ⁰f)(a₁,…,a_{n+1}) = a₁ f(a₂,…,a_{n+1})`,
-`(δ^i f)(a₁,…,a_{n+1}) = f(a₁,…,a_i a_{i+1},…,a_{n+1})` for `1 ≤ i ≤ n`,
+with `Y^n = MultilinearMap k (fun _ : Fin n ↦ A) M`, cofaces the pinned
+`TauCeti.hochschildBimoduleCoface k A M i`, that is `(δ⁰f)(a₁,…,a_{n+1}) = a₁ f(a₂,…,a_{n+1})`,
+`(δ^i f)(a₁,…,a_{n+1}) = f(a₁,…,a_i a_{i+1},…,a_{n+1})` for `1 ≤ i ≤ n` and
 `(δ^{n+1} f)(a₁,…,a_{n+1}) = f(a₁,…,a_n) a_{n+1}`, and codegeneracies
 `(σ^j f)(a₁,…,a_n) = f(a₁,…,a_j, 1, a_{j+1},…,a_n)`. Define the Hochschild cochain complex
 `C^•(A,M)` as `AlgebraicTopology.alternatingCofaceMapComplex` of `Y(A,M)` and Hochschild
-cohomology `HH^n(A,M)` as its cohomology in degree `n`. Prove the cosimplicial identities and
-that the differential is the coboundary `δ` of the conventions (Ginz05 §5.2, lines 1055–1062;
-Loday98 §1.5; Weibel94 §9.1; CE56 Chapter IX).
+cohomology `HH^n(A,M)` as its cohomology in degree `n`. The coface identities are
+`TauCeti.hochschildBimoduleCoface_hochschildBimoduleCoface`; prove the cosimplicial identities
+involving the codegeneracies, and that the differential of `C^•(A,M)` from degree `n` is
+`TauCeti.hochschildBimoduleCoboundary k A M n`, the coboundary `δ` of the conventions (Ginz05 §5.2,
+lines 1055–1062; Loday98 §1.5; Weibel94 §9.1; CE56 Chapter IX).
 
 *Needs:* Mathlib `CategoryTheory.CosimplicialObject`, `AlgebraicTopology.alternatingCofaceMapComplex`,
-`MultilinearMap`, `PiTensorProduct.lift`.
+`MultilinearMap`, `PiTensorProduct.lift`; Tau Ceti `TauCeti.hochschildBimoduleCoface`,
+`TauCeti.hochschildBimoduleCoface_hochschildBimoduleCoface`, `TauCeti.hochschildBimoduleCoboundary`,
+`TauCeti.hochschildBimoduleCoboundary_apply_eq_add_sum_add`,
+`TauCeti.hochschildBimoduleCoboundary_comp_hochschildBimoduleCoboundary`,
+`TauCeti.hochschildBimoduleCoboundary_constOfIsEmpty`,
+`TauCeti.hochschildBimoduleCoboundary_ofSubsingleton`.
 
 - `C⁰(A,M) = M` (multilinear maps on the empty family), and `C^n(A,M) ≅ (A^{⊗n} →ₗ[k] M)` through
   `PiTensorProduct.lift`, compatibly with the differentials.
-- The differential on `C⁰` is `m ↦ (a ↦ a m − m a)` and on `C¹` is
-  `f ↦ ((a,b) ↦ a f(b) − f(ab) + f(a) b)`; in general it is the displayed `δ`.
-- `δ ∘ δ = 0`.
+- The differential from degree `n` is `TauCeti.hochschildBimoduleCoboundary k A M n`; so on `C⁰` it is
+  `m ↦ (a ↦ a m − m a)` (`TauCeti.hochschildBimoduleCoboundary_constOfIsEmpty`), on `C¹` it is
+  `f ↦ ((a,b) ↦ a f(b) − f(ab) + f(a) b)` (`TauCeti.hochschildBimoduleCoboundary_ofSubsingleton`),
+  and in general it is the displayed `δ`
+  (`TauCeti.hochschildBimoduleCoboundary_apply_eq_add_sum_add`).
+- `δ ∘ δ = 0`, as for every alternating coface complex and as
+  `TauCeti.hochschildBimoduleCoboundary_comp_hochschildBimoduleCoboundary`.
 - Cocycles and coboundaries of `C^•(A,M)` are the `k`-submodules `Z^n(A,M) = ker δ` and
   `B^n(A,M) = im δ`, with `B⁰ = 0`, and `HH^n(A,M) = Z^n/B^n`.
 
@@ -486,8 +579,10 @@ Loday98 §1.5; Weibel94 §9.1; CE56 Chapter IX).
   gives the last term the sign `−` instead of `(−1)^{n+1}` in degree one,
   `f ↦ a f(b) − f(ab) − f(a) b`, gives `δδm(a,b) = 2(mab − amb)`, which is `2E₁₂ ≠ 0` for
   `A = M = Mat₂(ℤ)`, `m = E₁₁`, `a = E₁₂`, `b = E₂₂` (there `mab = E₁₂` and `amb = 0`).
-- For `A = M = Mat₂(k)`, `HH⁰ = Z⁰` is the set of scalar matrices (§3.2 Checks), while the
-  variant that drops `δ⁰` would make every `m` a cocycle in degree zero.
+- For `A = M = Mat₂(k)`, `HH⁰ = Z⁰` is the set of scalar matrices (§3.2 Checks). The variant
+  that drops `δ⁰` leaves `m ↦ (a ↦ −m a)` in degree zero, whose kernel is `0` (evaluate at `a = 1`),
+  so its degree-zero cocycles would be `0` instead of the centre: for `A = M = ℤ` the correct `Z⁰`
+  is `ℤ` and the variant's is `0`, and for `Mat₂(k)` with `k` nonzero the scalar matrices are lost.
 
 ### 1.3 Functoriality
 
@@ -534,15 +629,15 @@ complex of `R`-modules through the left action on the coefficient factor,
 
 **Checks.**
 
-- For `R = k[x]` and `M = R`, `HH₁(R,R)` is the free `R`-module on the class of `1 ⊗ x` (§3.4), so
-  `x · [1 ⊗ x] = [x ⊗ x]` is nonzero. An action through the first algebra factor instead,
+- For `R = k[x]` with `k` nonzero and `M = R`, `HH₁(R,R)` is the free `R`-module on the class of
+  `1 ⊗ x` (§3.4), so `x · [1 ⊗ x] = [x ⊗ x]` is nonzero. An action through the first algebra factor instead,
   `x · (r ⊗ s ⊗ t) = r ⊗ x s ⊗ t`, is not compatible with `b`: `b(1 ⊗ x ⊗ 1) = x ⊗ 1` while the
   same action applied to `b(1 ⊗ 1 ⊗ 1) = 1 ⊗ 1` gives `1 ⊗ x`, and `x ⊗ 1 − 1 ⊗ x ≠ 0` in
   `k[x] ⊗ k[x]` for nonzero `k`.
 - For `R = k`, the `R`-structure is the `k`-structure and nothing new is added.
-- For the noncommutative `A = Mat₂(k)` and `M = A`, left multiplication by `E₁₁` does not commute
-  with `b`: `b(E₁₁ E₁₂ ⊗ E₂₁) = E₁₁ − E₂₂` while `E₁₁ b(E₁₂ ⊗ E₂₁) = E₁₁`, so the construction needs
-  commutativity of the acting ring.
+- For the noncommutative `A = Mat₂(k)` with `k` nonzero and `M = A`, left multiplication by `E₁₁`
+  does not commute with `b`: `b(E₁₁ E₁₂ ⊗ E₂₁) = E₁₁ − E₂₂` while `E₁₁ b(E₁₂ ⊗ E₂₁) = E₁₁`, so the
+  construction needs commutativity of the acting ring.
 
 ### Examples
 
@@ -553,7 +648,9 @@ wrap-around face. For `k[x]` the degree-one chains are all cycles.
 ### Dependencies
 
 Mathlib's simplicial objects, alternating (co)face complexes, tensor powers, multilinear maps and
-homology sequences. No roadmap supplier is used in this layer.
+homology sequences; Tau Ceti's bimodule cofaces and coboundary
+(`TauCeti.hochschildBimoduleCoface`, `TauCeti.hochschildBimoduleCoboundary`). No roadmap supplier
+is used in this layer.
 
 ## Layer 2: Normalisation
 
@@ -585,7 +682,7 @@ the normalised Moore complex; then apply
 - In degree one, `b(m ⊗ 1 ⊗ 1) = m ⊗ 1 − m ⊗ 1 + m ⊗ 1 = m ⊗ 1`, so the degenerate chain `m ⊗ 1` is a
   boundary, as the theorem requires.
 - For `A = M = k`, `Ā = 0`, so `N_n = 0` for `n ≥ 1` and `N₀ = k`, in agreement with §1.1 Checks.
-- The span of the tensors with `a₁ ∈ k·x` in `C₂(k[x],k[x])` is not a subcomplex:
+- For nonzero `k`, the span of the tensors with `a₁ ∈ k·x` in `C₂(k[x],k[x])` is not a subcomplex:
   `b(1 ⊗ x ⊗ x) = 2x ⊗ x − 1 ⊗ x²` has a component `1 ⊗ x²` outside it. Only the unit gives a
   subcomplex.
 
@@ -611,7 +708,8 @@ degeneracies becomes the intersection of the kernels of the codegeneracies.
 - Every derivation `D` is normalised, since `D(1) = D(1·1) = 2D(1)`; the inner derivation `δm` is
   normalised since `δm(1) = m − m = 0`.
 - For `g ∈ C¹(k[x],k[x])` with `g(1) = 1` and `g(x^j) = 0` for `j ≥ 1`, the coboundary `δg` has
-  `δg(1,1) = 1`; it is a cocycle that is not normalised, and its class is that of `0 ∈ N²`.
+  `δg(1,1) = 1`; for nonzero `k` it is a cocycle that is not normalised, and its class is that of
+  `0 ∈ N²`.
 - For `A = k`, `N^n = 0` for `n ≥ 1` and `N⁰ = M`, in agreement with §1.2 Checks.
 
 ### Examples
@@ -638,32 +736,45 @@ naturally in `M` (Ginz05 lines 941–953; Loday98 §1.1).
 - `HH₀(Mat₂(k)) ≅ k`: the commutators `E_{ij} = [E_{ij}, E_{jj}]` (`i ≠ j`) and `E_{ii} − E_{jj}` span
   the trace-zero matrices over every commutative `k` (Ginz05 lines 1001–1030). The variant with
   `m a_n` in the last face of §1.1 would give `Mat₂(k)` here.
+- For every `n ≥ 1` the trace induces `HH₀(Mat_n(k)) ≅ k`: the same commutators span the
+  trace-zero matrices, and at `n = 1` the trace is the identity of `k`. The bound `n ≥ 1` is needed:
+  `Mat₀(k)` is the zero ring, so `HH₀(Mat₀(k)) = 0`, and the trace `0 → k` is not an isomorphism for
+  nonzero `k`.
 - For commutative `A` and symmetric `M`, `[A,M] = 0` and `HH₀(A,M) = M`.
 
 ### 3.2 Hochschild cohomology in degree zero
 
 Prove that `HH⁰(A,M) ≅ M^A = {m ∈ M | a m = m a for all a}`, naturally in `M`, and that for `M = A`
 this is the centre `Subalgebra.center k A` as a `k`-module (Ginz05 lines 1066–1069; Loday98 §1.5).
+One route: `B⁰ = 0`, and `TauCeti.hochschildBimoduleCoboundary_constOfIsEmpty_eq_zero_iff`
+identifies `Z⁰(A,M)` with the central elements of `M`.
 
-*Needs:* §1.2; Mathlib `Subalgebra.center`.
+*Needs:* §1.2; Mathlib `Subalgebra.center`; Tau Ceti
+`TauCeti.hochschildBimoduleCoboundary_constOfIsEmpty_eq_zero_iff`.
 
 **Checks.**
 
-- For `A = M = Mat₂(k)`, `HH⁰` is the set of scalar matrices `k·1`: `E₁₂` is not central since
-  `E₁₁E₁₂ − E₁₂E₁₁ = E₁₂`.
+- For `A = M = Mat₂(k)`, `HH⁰` is the set of scalar matrices `k·1`; for nonzero `k`, `E₁₂` is not
+  central since `E₁₁E₁₂ − E₁₂E₁₁ = E₁₂`.
 - For commutative `A = M`, `HH⁰(A,A) = A`.
 
 ### 3.3 Derivations into a bimodule and HH¹
 
-Define the `k`-submodule `Der_k(A,M)` of `A →ₗ[k] M` of bimodule derivations,
-`D(ab) = a D(b) + D(a) b`, and the submodule `Inn(A,M)` of inner derivations `a ↦ a m − m a`.
-Prove that `Der_k(A,M) = Z¹(A,M)`, `Inn(A,M) = B¹(A,M)`, `HH¹(A,M) ≅ Der_k(A,M)/Inn(A,M)`, and that
-`0 → HH⁰(A,M) → M → Der_k(A,M) → HH¹(A,M) → 0` is exact, the map `M → Der_k(A,M)` being `m ↦ δm`
-(Ginz05 §3.1, lines 398–411, and §5.4, lines 1075–1085; Weibel94 §9.2; CE56 Chapter IX).
+The bimodule derivations are Tau Ceti's `TauCeti.BimoduleDerivation k A M`, the `k`-linear maps
+with `D(ab) = a D(b) + D(a) b` (and `D(1) = 0`, automatic here). Define `Der_k(A,M)` as the
+`k`-submodule of `A →ₗ[k] M` of their underlying linear maps, and the submodule `Inn(A,M)` of inner
+derivations `a ↦ a m − m a`. Prove that `Der_k(A,M) = Z¹(A,M)` under `C¹(A,M) ≅ A →ₗ[k] M` (the
+transport of `TauCeti.hochschildBimoduleCoboundary_ofSubsingleton_eq_zero_iff`), that
+`Inn(A,M) = B¹(A,M)` (by `TauCeti.hochschildBimoduleCoboundary_constOfIsEmpty`), that
+`HH¹(A,M) ≅ Der_k(A,M)/Inn(A,M)`, and that `0 → HH⁰(A,M) → M → Der_k(A,M) → HH¹(A,M) → 0` is exact,
+the map `M → Der_k(A,M)` being `m ↦ δm` (Ginz05 §3.1, lines 398–411, and §5.4, lines 1075–1085;
+Weibel94 §9.2; CE56 Chapter IX).
 
 *Needs:* §§1.2, 3.2; Mathlib `Derivation`, `TrivSqZeroExt`, `TrivSqZeroExt.fstHom`; Tau Ceti
-`TauCeti.derivationLieAlgebra`, `TauCeti.innerDerivation`,
-`TauCeti.derivationEquivDerivationLieAlgebra`.
+`TauCeti.BimoduleDerivation`, `TauCeti.BimoduleDerivation.map_algebraMap`,
+`TauCeti.hochschildBimoduleCoboundary_ofSubsingleton_eq_zero_iff`,
+`TauCeti.hochschildBimoduleCoboundary_constOfIsEmpty`, `TauCeti.derivationLieAlgebra`,
+`TauCeti.innerDerivation`, `TauCeti.derivationEquivDerivationLieAlgebra`.
 
 - A `k`-linear `D : A → M` is a derivation if and only if `a ↦ (a, D a)` is a `k`-algebra
   homomorphism `A → TrivSqZeroExt A M` whose composite with `TrivSqZeroExt.fstHom` is the identity;
@@ -672,16 +783,20 @@ Prove that `Der_k(A,M) = Z¹(A,M)`, `Inn(A,M) = B¹(A,M)`, `HH¹(A,M) ≅ Der_k(
   `Derivation k R M`, as `k`-modules and as `R`-modules (§1.5).
 - For `M = A`, `Der_k(A,A)` is the underlying submodule of `TauCeti.derivationLieAlgebra k A`, and
   `TauCeti.innerDerivation z = −δz`, so `Inn(A,A)` is its range.
-- Derivations kill `k·1`, compose with bimodule maps, and pull back along algebra maps compatibly
-  with §1.3.
+- Derivations kill `k·1` (`TauCeti.BimoduleDerivation.map_algebraMap`), compose with bimodule
+  maps, and pull back along algebra maps compatibly with §1.3.
 
 **Checks.**
 
 - For `A = M = k[x]`, `D ↦ D(x)` identifies `Der_k(A,A)` with `k[x]`, and `Inn = 0`, so
   `HH¹(k[x],k[x]) ≅ k[x]`, free of rank one on `∂_x`.
 - For `A = M = Mat₂(k)`, every derivation is inner and `HH¹ = 0`; the derivation `δE₁₁` sends `E₁₂`
-  to `E₁₂E₁₁ − E₁₁E₁₂ = −E₁₂`. The identity map of `k[x]` is not a derivation, since it sends `1` to
-  `1 ≠ 0`.
+  to `E₁₂E₁₁ − E₁₁E₁₂ = −E₁₂`. For nonzero `k`, the identity map of `k[x]` is not a derivation,
+  since it sends `1` to `1 ≠ 0`; over the zero ring it is the zero map, a derivation.
+- Dropping the condition `D(1) = 0` of `TauCeti.BimoduleDerivation` loses nothing over an additive
+  group `M`: the Leibniz rule at `a = b = 1` gives `D(1) = 2D(1)`, hence `D(1) = 0`; for the
+  derivation `∂_x` of `ℤ[x]` both conditions hold, and the map `1 ↦ 1`, `x^j ↦ 0` for `j ≥ 1` fails
+  both.
 - `TauCeti.innerDerivation E₁₁` sends `E₁₂` to `E₁₁E₁₂ − E₁₂E₁₁ = E₁₂ = −(δE₁₁)(E₁₂)`, pinning the
   sign between the two conventions.
 
@@ -730,15 +845,16 @@ Weibel94 §9.3).
 **Checks.**
 
 - For `f = 0` the product `(a,m)(a′,m′) = (aa′, a m′ + m a′)` is that of `TrivSqZeroExt A M`.
-- For `A = k[x]/(x²)`, `M = k` with `x` acting by `0` on both sides, and the 2-cochain with
-  `f(x,x) = 1` and `f = 0` on the other pairs of basis elements `1, x`, the cocycle identity holds
-  and `t = (x,0)` satisfies `t² = (0,1) ≠ 0` and `t³ = 0`, so `A ⊕_f M ≅ k[t]/(t³)`. An algebra
+- For nonzero `k`, `A = k[x]/(x²)`, `M = k` with `x` acting by `0` on both sides, and the 2-cochain
+  with `f(x,x) = 1` and `f = 0` on the other pairs of basis elements `1, x`, the cocycle identity
+  holds and `t = (x,0)` satisfies `t² = (0,1) ≠ 0` and `t³ = 0`, so `A ⊕_f M ≅ k[t]/(t³)`. An algebra
   section would send `x` to some `x + c t²` with square `t² ≠ 0`, so this extension does not split.
-- For `A = k[x]`, `M = k` with `x` acting by `0`, and `f(x, x²) = 1`, `f = 0` on the other pairs of
-  monomials, `δf(x,x,x) = 1`, and indeed `((x,0)(x,0))(x,0) = (x³,0)` while
+  Over the zero ring every term is `0` and the extension splits uniquely.
+- For nonzero `k`, `A = k[x]`, `M = k` with `x` acting by `0`, and `f(x, x²) = 1`, `f = 0` on the
+  other pairs of monomials, `δf(x,x,x) = 1`, and indeed `((x,0)(x,0))(x,0) = (x³,0)` while
   `(x,0)((x,0)(x,0)) = (x³,1)`: associativity fails exactly when the cocycle identity does.
-- For the coboundary `f = δg` with `g(1) = 1`, `g(x^j) = 0` for `j ≥ 1` on `k[x]`, `f(1,1) = 1` and
-  `(1,0)` is not a unit of `A ⊕_f A`: `(1,0)(x,0) = (x, f(1,x)) = (x, x)`.
+- For the coboundary `f = δg` with `g(1) = 1`, `g(x^j) = 0` for `j ≥ 1` on `k[x]`, `f(1,1) = 1` and,
+  for nonzero `k`, `(1,0)` is not a unit of `A ⊕_f A`: `(1,0)(x,0) = (x, f(1,x)) = (x, x)`.
 
 ### 3.6 HH² classifies split square-zero extensions
 
@@ -765,20 +881,22 @@ Weibel94 §9.3).
 - `HH²(k, M) = 0` for every `k`-module `M` (the computation of §1.2 Checks with `M` in place of the
   coefficients `k`), and indeed
   `k[ε]/ε² → k` splits through the structure map.
-- The extension `k[t]/(t³) → k[x]/(x²)` by `k·t²` is `k`-split and does not split as algebras
-  (§3.5 Checks), so its class in `HH²(k[x]/(x²), k)` is nonzero.
+- For nonzero `k`, the extension `k[t]/(t³) → k[x]/(x²)` by `k·t²` is `k`-split and does not split
+  as algebras (§3.5 Checks), so its class in `HH²(k[x]/(x²), k)` is nonzero.
 
 ### Examples
 
-`HH₀(Mat_n(k)) ≅ k` through the trace; `HH⁰(Mat₂(k)) = k`; `HH¹(k[x]) ≅ k[x]`;
-`HH₁(k[x]) ≅ k[x] dx`. The extension `k[t]/(t³) → k[x]/(x²)` represents a nonzero class of
-`HH²(k[x]/(x²), k)`, and `k[ε]/ε² → k` splits because `HH²(k, k) = 0`.
+`HH₀(Mat_n(k)) ≅ k` through the trace for every `n ≥ 1` (for `n = 0` the matrix ring is zero and
+so is `HH₀`); `HH⁰(Mat₂(k)) = k`; `HH¹(k[x]) ≅ k[x]`; `HH₁(k[x]) ≅ k[x] dx`. For nonzero `k`, the
+extension `k[t]/(t³) → k[x]/(x²)` represents a nonzero class of `HH²(k[x]/(x²), k)`, and
+`k[ε]/ε² → k` splits because `HH²(k, k) = 0`.
 
 ### Dependencies
 
-Layers 1–2; Mathlib's `TrivSqZeroExt`, Kähler differentials and centre; Tau Ceti's derivation Lie
-algebra. No roadmap supplier is used. DGAInfinity Layer 8's reading of `HH²(A,A)` as first-order
-deformations is the special case `M = A` over `k[ε]/ε²` and is not restated.
+Layers 1–2; Mathlib's `TrivSqZeroExt`, Kähler differentials and centre; Tau Ceti's bimodule
+derivations, the low-degree cocycle characterisations of its bimodule coboundary, and its
+derivation Lie algebra. No roadmap supplier is used. DGAInfinity Layer 8's reading of `HH²(A,A)`
+as first-order deformations is the special case `M = A` over `k[ε]/ε²` and is not restated.
 
 ## Layer 4: The bar resolution, Ext and Tor
 
@@ -800,8 +918,8 @@ lines 934–947).
 
 **Checks.**
 
-- For `A = Mat₂(k)` and `M = A`, `(E₁₂ ⊗ op E₂₁) · E₂₂ = E₁₂ E₂₂ E₂₁ = E₁₁`, while the opposite
-  ordering `a m b` read as `b m a` would give `E₂₁ E₂₂ E₁₂ = 0`.
+- For `A = Mat₂(k)` with `k` nonzero and `M = A`, `(E₁₂ ⊗ op E₂₁) · E₂₂ = E₁₂ E₂₂ E₂₁ = E₁₁`, while
+  the opposite ordering `a m b` read as `b m a` would give `E₂₁ E₂₂ E₁₂ = 0`.
 - For commutative `R`, `Rᵉ = R ⊗ R` and the multiplication map `R ⊗ R → R` is `Rᵉ`-linear.
 - For `A = k`, `Aᵉ = k` and bimodules are `k`-modules with equal left and right actions.
 
@@ -831,7 +949,7 @@ lines 747–782; HKR62 lines 414–447; Weibel94 §9.1; Loday98 §1.1).
   lines 774–782).
 - For `A = k`, `B_n(k) = k` with `b′_n` multiplication by `Σ_{i=0}^{n}(−1)^i`, and the augmented
   complex `⋯ → k → k → k → k → 0` is exact.
-- The homotopy `h` is not left `A`-linear: for `A = k[x]`, `h(x · (1 ⊗ 1)) = 1 ⊗ x ⊗ 1` while
+- The homotopy `h` is not left `A`-linear: for `A = k[x]` with `k` nonzero, `h(x · (1 ⊗ 1)) = 1 ⊗ x ⊗ 1` while
   `x · h(1 ⊗ 1) = x ⊗ 1 ⊗ 1`; contractibility holds over `k`, not over `Aᵉ`.
 
 ### 4.3 Cochains as bimodule homomorphisms out of the bar resolution
@@ -882,7 +1000,8 @@ lines 944–976; Weibel94 §9.1; Loday98 §1.1).
 - `Tor_0^{Aᵉ}(M,A) ≅ M/[A,M]`, matching §3.1; for `A = M = Mat₂(k)` it is `k`.
 - For `A = k`, `Aᵉ = k`, `Tor_0(M,k) = M` and `Tor_n(M,k) = 0` for `n ≥ 1`, as for `HH_n(k,M)`.
 - `Tor_n^{Aᵉ}(M, Aᵉ) = 0` for `n ≥ 1` and `Tor_0^{Aᵉ}(M,Aᵉ) ≅ M`.
-- The left structure `m · (a ⊗ op b) = a m b` is not a right `Aᵉ`-structure: for `A = M = Mat₂(k)`,
+- The left structure `m · (a ⊗ op b) = a m b` is not a right `Aᵉ`-structure: for `A = M = Mat₂(k)`
+  with `k` nonzero,
   applying `E₁₂ ⊗ 1` and then `E₂₁ ⊗ 1` to `m = 1` gives `E₂₁E₁₂ = E₂₂`, while the product
   `(E₁₂ ⊗ 1)(E₂₁ ⊗ 1) = E₁₁ ⊗ 1` gives `E₁₁`.
 
@@ -917,14 +1036,14 @@ resolution; Loday98 §1.5; Ger63 §7).
 
 **Checks.**
 
-- For `k[x,y]`, `(∂_x ∪ ∂_y)(x,y) = 1` and `(∂_y ∪ ∂_x)(x,y) = 0`: the cup product is not commutative
-  on cochains, even up to sign.
+- For `k[x,y]`, `(∂_x ∪ ∂_y)(x,y) = 1` and `(∂_y ∪ ∂_x)(x,y) = 0`: for nonzero `k` the cup product is
+  not commutative on cochains, even up to sign.
 - `1 ∪ f = f = f ∪ 1`. The variant that multiplies in the other order, `g(a_{p+1},…) f(a₁,…)`, is
   associative (it is the cup product of `Aᵒᵖ`) but breaks the Leibniz rule of §5.2: for
   `A = Mat₂(k)`, `x = E₁₁ ∈ C⁰` and `g = id ∈ C¹`, the defect
-  `g(b)ax − g(b)xa + g(a)bx − g(a)xb` at `(a,b) = (E₂₁, E₁₂)` is `E₁₁ − E₂₂ ≠ 0`.
-- For `D = ∂_x` on `k[x]`, `(D ∪ D)(x,x) = 1`, so `D ∪ D ≠ 0` as a cochain, although its class is
-  zero (§6.2 Checks).
+  `g(b)ax − g(b)xa + g(a)bx − g(a)xb` at `(a,b) = (E₂₁, E₁₂)` is `E₁₁ − E₂₂`, nonzero for nonzero `k`.
+- For `D = ∂_x` on `k[x]` with `k` nonzero, `(D ∪ D)(x,x) = 1`, so `D ∪ D ≠ 0` as a cochain, although
+  its class is zero (§6.2 Checks).
 
 ### 5.2 The Leibniz rule and the cohomology algebra
 
@@ -1058,15 +1177,18 @@ the full complex).
 - `n = 1` (at the pin, `TauCeti.AInfinityAlgebra.hochschildDifferential_eq_brace_sub` with
   `q = 0`): `m{Θf}(sa ⊗ sb) = s(f(a) b + a f(b))` (no sign: `Θf` has degree `0`),
   `Θf{m}(sa ⊗ sb) = s f(ab)`, so `[m, Θf](sa ⊗ sb) = s(f(a) b + a f(b) − f(ab)) = Θ(δf)(sa ⊗ sb)`,
-  sign `+1`; a dictionary with a uniform sign would fail one of the two cases `n = 0`, `n = 1`.
+  sign `+1`; a dictionary with a uniform sign would fail one of the two cases `n = 0`, `n = 1` as
+  soon as some `Θ(δx)` has `2Θ(δx) ≠ 0`, for instance `x = E₁₁` in `Mat₂(ℤ)`, where
+  `δx(E₁₂) = −E₁₂`.
 - `n = 2` (at the pin, `q = 1`): `m{Θf}(sa ⊗ sb ⊗ sc) = s(f(a,b) c − a f(b,c))` (the sign of moving
   `Θf`, of degree `1`, past `sa`), `Θf{m}(sa ⊗ sb ⊗ sc) = s(f(ab, c) − f(a, bc))` (the sign of moving
   `m` past `sa`), and `[m, Θf] = m{Θf} + Θf{m}`, so
   `[m, Θf](sa ⊗ sb ⊗ sc) = s(f(a,b) c − a f(b,c) + f(ab,c) − f(a,bc)) = −Θ(δf)(sa ⊗ sb ⊗ sc)`, sign
   `(−1)^{2+1} = −1`; the model `m{F} − F{m}` without the `(−1)^q` would give
-  `s(f(a,b) c − a f(b,c) − f(ab,c) + f(a,bc))`: for `f(a,b) = a` on `k[x]` this is `s(a + ac − 2ab)`
-  while `δf(a,b,c) = a − ac`, and at `(x,x,x)` the model equals `+Θ(δf)` but at `(x,1,x)` it equals
-  `−Θ(δf)`, so it is not `±Θ(δf)` when `2 ≠ 0` in `k`.
+  `s(f(a,b) c − a f(b,c) − f(ab,c) + f(a,bc))`. For the bilinear cochain `f(a,b) = a ∂_x b` on `ℤ[x]`,
+  `δf(a,b,c) = ab ∂_x c` while the model is `s(2a(∂_x b)c − ab ∂_x c)`; at `(a,b,c) = (1,x,1)`,
+  `δf = 0`, so `[m,Θf] = −Θ(δf) = 0`, while the model gives `s(2)`: it is neither `Θ(δf)` nor
+  `−Θ(δf)`.
 - `(p,q) = (1,0)` (arity zero, Layer 8 only): `m{Θf, Θy}(sa) = −s(f(a) y)`, the sign of moving `Θy`
   past `sa`, so `Θ(f ∪ y) = −m{Θf, Θy} = (−1)^{1·(0−1)} m{Θf,Θy}`; at `(p,q) = (1,1)` the sign is `+1`.
 
@@ -1100,9 +1222,13 @@ DGAInfinity Layer 8 (the cup product as `m{−,−}` and the arity-zero cochains
 - `(p,q) = (1,1)` computed directly: `f ∘ δg + δf ∘ g − δ(f ∘ g) = f ∪ g + g ∪ f`, all other terms
   cancelling. For derivations `f = g = ∂` of `k[x]` this reads `2(∂ ∪ ∂) = −δ(∂²)`, and indeed
   `−δ(∂²)(a,b) = 2∂a ∂b`; Ginz05 (6.6.3) would give `δ(∂²) = −2∂a∂b` instead.
-- `(p,q) = (1,0)` with `g = y ∈ A`: both sides equal `a ↦ y f(a) − f(a) y`; `(p,q) = (0,1)` with `f = x`:
-  both sides equal `a ↦ x g(a) − g(a) x`; `(p,q) = (2,0)`: both sides equal
-  `(a,b) ↦ y f(a,b) − f(a,b) y`, the other terms on the right cancelling in pairs.
+- `(p,q) = (1,0)` with `g = y ∈ A`: both sides equal `a ↦ y f(a) − f(a) y`; `(p,q) = (2,0)`: both
+  sides equal `(a,b) ↦ y f(a,b) − f(a,b) y`, the other terms on the right cancelling in pairs.
+- `(p,q) = (0,1)` with `f = x ∈ A`: the left side is `g ∪ x − x ∪ g`, and on the right `x ∘ g = 0` and
+  `x ∘ δg = 0` (`f ∘ g` sums over the `p` arguments of `f`, none when `p = 0`), leaving `δx ∘ g`; both
+  sides equal `a ↦ g(a) x − x g(a)`. For `A = Mat₂(ℤ)`, `x = E₁₁`, `g = id` and `a = E₁₂`, both sides
+  are `E₁₂E₁₁ − E₁₁E₁₂ = −E₁₂`, whereas the reversed expression `x g(a) − g(a) x` is `E₁₂`, so this
+  case fixes the sign of the term `δf ∘ g`.
 - On `k[x,y]`, `∂_x ∪ ∂_y + ∂_y ∪ ∂_x = −δ(∂_x ∂_y)`, so `[∂_x ∪ ∂_y] = −[∂_y ∪ ∂_x]` although the
   cochains differ (§5.1 Checks). On `k[x]`, `∂ ∪ ∂ = −δ(∂^{[2]})` with `∂^{[2]}(x^j) = C(j,2) x^{j−2}`,
   defined over every `k`: at `(x,x)`, `−δ(∂^{[2]})(x,x) = −(0 − 1 + 0) = 1 = (∂ ∪ ∂)(x,x)`.
@@ -1243,22 +1369,31 @@ coefficient sequence of Tau Ceti applies, and `Ext¹(H_{i−1}(X), M) = 0` by
 
 ### 7.3 Exterior powers of finite projective modules
 
-For a finite projective `R`-module `P` and every `n`, prove that `⋀[R]^n P` is finite projective and
-that `exteriorPower.pairingDual R P n : ⋀[R]^n (Module.Dual R P) → Module.Dual R (⋀[R]^n P)` is
-bijective (HKR62 lines 531–535). One route: choose a finite free `F` with `i : P → F`, `p : F → P`,
-`p ∘ i = id`; `exteriorPower.map` makes `⋀^n P` a retract of the free module `⋀^n F`, and the
-naturality squares `pairingDual_F ∘ ⋀^n(p^*) = (⋀^n p)^* ∘ pairingDual_P` and
-`pairingDual_P ∘ ⋀^n(i^*) = (⋀^n i)^* ∘ pairingDual_F` make `pairingDual_P` a retract of the bijection
-`exteriorPower.bijective_pairingDual` for `F`.
+Let `R` be a commutative ring and `P` a finite projective `R`-module. Then `⋀[R]^n P` is finite
+(Mathlib `exteriorPower.instFinite`) and projective (Tau Ceti `exteriorPower.instProjective`), and
+EulerSystemsAndKolyvaginSystems §6.1 proves that the exterior-bidual evaluation
+`TauCeti.StarkSystems.toExteriorBidual R n X` (on the carrier of IntegralIwasawaTheory §12.6) is an
+isomorphism for every finite projective `X`. Prove the comparison needed by §7.4: for every `n`,
+`exteriorPower.pairingDual R P n : ⋀[R]^n (Module.Dual R P) → Module.Dual R (⋀[R]^n P)` is bijective,
+because it equals the evaluation for `X = Module.Dual R P`, which is finite projective
+(`Module.dual_finite`, `Module.dual_projective`), followed by the dual of
+`⋀^n (Module.evalEquiv R P) : ⋀^n P ≅ ⋀^n P**` (HKR62 lines 531–535). On pure wedges both send
+`f₁ ∧ ⋯ ∧ f_n` to the form `v₁ ∧ ⋯ ∧ v_n ↦ det(f_j(v_i))`: the evaluation gives `det(Φ_j(f_i))` on
+`Φ_j = ev(v_j)`, which is `det(f_i(v_j))`, the transposed matrix, with the same determinant.
 
-*Needs:* Mathlib `exteriorPower.map`, `exteriorPower.instFinite`, `exteriorPower.instFree`,
-`exteriorPower.pairingDual`, `exteriorPower.pairingDual_ιMulti_ιMulti`,
-`exteriorPower.bijective_pairingDual`, `Module.Projective`, `Module.Finite`.
+*Needs:* EulerSystemsAndKolyvaginSystems §6.1 (the finite-projective exterior-bidual evaluation);
+IntegralIwasawaTheory §12.6 (`TauCeti.StarkSystems.toExteriorBidual` and its determinant formula);
+Mathlib `exteriorPower.map`, `exteriorPower.instFinite`, `exteriorPower.pairingDual`,
+`exteriorPower.pairingDual_ιMulti_ιMulti`, `Module.dual_finite`, `Module.dual_projective`,
+`Module.evalEquiv`; Tau Ceti `exteriorPower.instProjective`.
 
 **Checks.**
 
-- For `P = R²`, `(e₁* ∧ e₂*)(e₁ ∧ e₂) = det(e_j*(e_i)) = 1`.
-- For `P = 0`, `⋀⁰ = R` with pairing the identity and `⋀^n = 0` for `n ≥ 1`.
+- For `P = R²`, `(e₁* ∧ e₂*)(e₁ ∧ e₂) = det(e_j*(e_i)) = 1`, and the evaluation of
+  EulerSystemsAndKolyvaginSystems §6.1 at `X = (R²)*` gives `det(I₂) = 1` on the same wedges; the
+  transpose `e₂* ∧ e₁*` gives `−1` in both.
+- For `P = 0`, `⋀⁰ = R` with pairing the identity and `⋀^n = 0` for `n ≥ 1`; above the rank
+  (`P = R`, `n = 2`) both sides are `0`.
 - Finiteness is needed for surjectivity: for the free module `P = R^{(ℕ)}` over a field `R`,
   the alternating form on `⋀² P` with value `1` on every `e_{2i} ∧ e_{2i+1}` and `0` on the other
   basis wedges has infinite rank and is not a finite sum of `f ∧ g`.
@@ -1305,10 +1440,14 @@ projective, the unnormalised map is injective. When `n!` is invertible in `k`, d
 normalised HKR map `Φ^n_HKR = (1/n!)⟨…⟩` (Ginz05 §9.2, lines 2101–2156; HKR62 lines 509–521; AV20
 lines 237–243).
 
-*Needs:* §§1.2, 2.2, 5.1, 6.2, 7.4; Mathlib `Matrix.det`, `Derivation`.
+*Needs:* §§1.2, 2.2, 5.1, 6.2, 6.4(a), 7.1, 7.4; Mathlib `Matrix.det`, `Derivation`.
 
-- Evaluation: for `R` flat over `k`, `h_n[⟨D₁,…,D_n⟩](ε^cl_n(r₀ dr₁ ∧ ⋯ ∧ dr_n)) = n! r₀ det(D_j(r_i))`,
-  and `h_n[D₁ ∪ ⋯ ∪ D_n](ε^cl_n(r₀ dr₁ ∧ ⋯ ∧ dr_n)) = r₀ det(D_j(r_i))` (§§6.4, 7.1).
+- Evaluation, for every commutative `k`-algebra `R`, flat or not:
+  `h_n[⟨D₁,…,D_n⟩](ε^cl_n(r₀ dr₁ ∧ ⋯ ∧ dr_n)) = n! r₀ det(D_j(r_i))` and
+  `h_n[D₁ ∪ ⋯ ∪ D_n](ε^cl_n(r₀ dr₁ ∧ ⋯ ∧ dr_n)) = r₀ det(D_j(r_i))` (§§6.4(a), 7.1). Both are
+  computed on the antisymmetrised chain: the first is `Σ_σ sgn(σ) r₀ det(D_j(r_{σ(i)}))`, `n!` equal
+  terms, and the second is `Σ_σ sgn(σ) r₀ Π_j D_j(r_{σ(j)})`, the Leibniz expansion of the
+  determinant; no exactness of tensor products enters.
 - A cochain that is a derivation in each argument is a Hochschild cocycle for commutative `R`;
   at `n = 2`, `δf(a,b,c) = a f(b,c) − f(ab,c) + f(a,bc) − f(a,b) c = 0` after expanding the two middle
   terms.
@@ -1320,10 +1459,13 @@ lines 237–243).
 **Checks.**
 
 - On `k[x,y]`, `⟨∂_x, ∂_y⟩(x,y) = 1` and `⟨∂_x, ∂_y⟩(y,x) = −1`; the product cochain `∂_x ∪ ∂_y` takes
-  the values `1` and `0`, and is not alternating in the derivations: `(∂_x ∪ ∂_x)(x,x) = 1` while
-  `⟨∂_x, ∂_x⟩ = 0`.
+  the values `1` and `0`, and for nonzero `k` is not alternating in the derivations:
+  `(∂_x ∪ ∂_x)(x,x) = 1` while `⟨∂_x, ∂_x⟩ = 0`.
 - On `𝔽₂[x,y]`, `⟨∂_x, ∂_y⟩ = δ(∂_x ∂_y)`: `δ(D₁D₂)(a,b) = −(D₁a D₂b + D₂a D₁b)`, which in
   characteristic two is `det(D_j(r_i))`; the cocycle is nonzero but its class is zero.
+- The evaluation needs no flatness: for the non-flat `ℤ`-algebra `R = 𝔽₂[x,y]`, `D₁ = ∂_x`,
+  `D₂ = ∂_y` and `r₀ = 1`, `r₁ = x`, `r₂ = y`, the cup product evaluates to `1 = det(I₂)` on
+  `ε^cl₂(dx ∧ dy)` and the determinant cocycle to `2 · 1 = 0`, as both formulas predict.
 - For `n = 1` the map is `D ↦ D`, and its class is the class of §3.3.
 
 ### 7.6 The cohomological HKR theorem
@@ -1347,13 +1489,15 @@ deduction of lines 528–546 leading to Theorem 5.2, line 548; Loday98 §3.4, Th
 Weibel94 §9.4, Theorem 9.4.7; AV20 Proposition 1.2, line 70; Ginz05 Theorem 9.1.3, line 2086.)
 One route: `C_n(R,R) = R ⊗_k R^{⊗n}` is a projective `R`-module (§4.2 and
 `Module.Projective.tensorProduct`); `HH_n(R,R) ≅ Ω^n_{R/k}` through `ε^cl_n` (§6.4(d)) is finite
-projective (§7.3); §7.2 makes `h_n` bijective; §7.4 identifies `Hom_R(Ω^n, R)` with `T^n`; the
-evaluation formulas of §7.5 identify the composite with `Ψ_n` and give (3); multiplicativity of
-`Ψ` is associativity of `∪`; (5) follows from §7.4.
+projective (`exteriorPower.instFinite`, `exteriorPower.instProjective`); §7.2 makes `h_n`
+bijective; §7.4 identifies `Hom_R(Ω^n, R)` with `T^n`; the evaluation formulas of §7.5 identify the
+composite with `Ψ_n` and give (3); multiplicativity of `Ψ` is associativity of `∪`; (5) follows
+from §7.4.
 
 *Needs:* §§1.5, 4.2, 5.2, 6.4, 7.1–7.5; gap smooth-hkr-antisymmetrisation (through §6.4(d));
 Mathlib `Algebra.Smooth`, `Algebra.Smooth.flat`, `Module.Projective.tensorProduct`,
-`Module.FinitePresentation`, `Algebra.FormallySmooth.projective_kaehlerDifferential`.
+`Module.FinitePresentation`, `Algebra.FormallySmooth.projective_kaehlerDifferential`,
+`exteriorPower.instFinite`; Tau Ceti `exteriorPower.instProjective`.
 
 **Checks.**
 
@@ -1382,8 +1526,10 @@ free over `k`), `HH¹(R,R) = R·x∂_x` and `HH^n = 0` for `n ≥ 2`.
 
 ### Dependencies
 
-Layers 1–6; Tau Ceti's Kronecker map and universal coefficient sequence; Mathlib's exterior
-powers, Kähler differentials and smoothness; through §6.4(d), the gap
+Layers 1–6; Tau Ceti's Kronecker map, universal coefficient sequence and projectivity of exterior
+powers; Mathlib's exterior powers, duals, Kähler differentials and smoothness;
+EulerSystemsAndKolyvaginSystems §6.1 (the finite-projective exterior-bidual evaluation, §7.3) on
+the carrier of IntegralIwasawaTheory §12.6; through §6.4(d), the gap
 smooth-hkr-antisymmetrisation on RefinedTraceMethods §1.9.
 
 ## Layer 8: Polynomial algebras through the Koszul resolution
@@ -1402,8 +1548,8 @@ in which the multiplication map is evaluation at `Y = 0` and the variables form 
 
 - `m = 0`: the empty sequence, `Rᵉ = k`, and the kernel is `0`.
 - `m = 1`: `t = X ⊗ 1 − 1 ⊗ X` is a nonzerodivisor of `k[X] ⊗ k[X] ≅ k[X,Y]` for nonzero `k`.
-- For `R = k[x]/(x²)`, `t = x ⊗ 1 − 1 ⊗ x` is a zero divisor: `t (x ⊗ 1 + 1 ⊗ x) = x² ⊗ 1 − 1 ⊗ x² = 0`
-  with `x ⊗ 1 + 1 ⊗ x ≠ 0`.
+- For `R = k[x]/(x²)` with `k` nonzero, `t = x ⊗ 1 − 1 ⊗ x` is a zero divisor:
+  `t (x ⊗ 1 + 1 ⊗ x) = x² ⊗ 1 − 1 ⊗ x² = 0` with `x ⊗ 1 + 1 ⊗ x ≠ 0`.
 
 ### 8.2 The Koszul bimodule resolution
 
@@ -1425,7 +1571,8 @@ Mathlib `CategoryTheory.ProjectiveResolution`.
 
 - `m = 1`: `0 → Rᵉ --t--> Rᵉ → R → 0` is exact.
 - `m = 0`: `K = k` in degree zero, augmented by the identity.
-- The same complex for `k[x]/(x²)` is not exact in degree one, by §8.1's zero divisor.
+- For nonzero `k`, the same complex for `k[x]/(x²)` is not exact in degree one, by §8.1's zero
+  divisor.
 
 ### 8.3 Comparison with the bar resolution
 
@@ -1446,9 +1593,14 @@ map; HKR62 lines 448–466 for the shuffle product on the bar resolution).
 
 - `j = 1`: `b′(ι(e_i)) = b′(1 ⊗ X_i ⊗ 1) = X_i ⊗ 1 − 1 ⊗ X_i = ι(d e_i)`.
 - `j = 2`: `b′(1 ⊗ X₁ ⊗ X₂ ⊗ 1 − 1 ⊗ X₂ ⊗ X₁ ⊗ 1) = X₁ ⊗ X₂ ⊗ 1 + 1 ⊗ X₁ ⊗ X₂ − X₂ ⊗ X₁ ⊗ 1 − 1 ⊗ X₂ ⊗ X₁`,
-  which is `t₁ · (1 ⊗ X₂ ⊗ 1) − t₂ · (1 ⊗ X₁ ⊗ 1) = ι(d(e₁ ∧ e₂))`; the map without the sign of `σ` is
-  not a chain map.
-- `m = 0`: `ι` is the identity of `k`.
+  which is `t₁ · (1 ⊗ X₂ ⊗ 1) − t₂ · (1 ⊗ X₁ ⊗ 1) = ι(d(e₁ ∧ e₂))`. The map `ι′` without the sign of
+  `σ` has `b′ι′(e₁ ∧ e₂) − ι′(d(e₁ ∧ e₂)) = 2(X₂ ⊗ X₁ ⊗ 1 + 1 ⊗ X₂ ⊗ X₁ − 1 ⊗ X₁X₂ ⊗ 1)`, so it is not a
+  chain map when `2 ≠ 0` in `k`; over `𝔽₂` the two maps coincide.
+- `m = 0`: `R = Rᵉ = k`, `K(R)` is `k` in degree zero and `0` above, while `B_n(k) = k` in every
+  degree with `b′_n` multiplication by `Σ_{i=0}^{n}(−1)^i`. So `ι₀ = id_k` and `ι_n` is the zero map
+  `0 → B_n(k)` for `n > 0`: `ι` is not the identity of complexes but an augmentation-compatible
+  homotopy equivalence, both complexes having homology `k` in degree zero and `0` above (for
+  `k = ℤ`, in degree one `ι₁ : 0 → ℤ`).
 
 ### 8.4 Hochschild homology and cohomology of polynomial algebras
 
@@ -1470,14 +1622,18 @@ statement at line 210; Ginz05 Lemma 9.3.1, line 2187, for a regular sequence in 
 
 ### 8.5 The top degree and the Jacobian determinant
 
-For `R = MvPolynomial (Fin m) k`, `g ∈ R` and `r₁,…,r_m ∈ R`, prove that
-`⟨g∂₁, ∂₂, …, ∂_m⟩(r₁,…,r_m) = g · det(∂_j r_i)`, the Jacobian determinant, that its class is
-`m! · g · [∂₁ ∪ ⋯ ∪ ∂_m]`, that `HH^m(R,R)` is free of rank one on `[∂₁ ∪ ⋯ ∪ ∂_m]`, and that when `m!` is
-invertible in `k`, `Φ^m_HKR(g ∂₁ ∧ ⋯ ∧ ∂_m)(r₁,…,r_m) = (g/m!) det(∂_j r_i)` with class
-`g · [∂₁ ∪ ⋯ ∪ ∂_m]`. The determinant formula is the evaluation of the determinant cocycle of §7.5
-at the derivations `g∂₁, ∂₂, …, ∂_m`, its class identity is that of §7.5 with the product formula
-of HKR62 line 495, and the rank-one statement is the top degree of §8.4 (Ginz05 §9.2, lines
-2142–2156; HKR62 Theorem 5.2, line 548, is the case of a perfect field `k`).
+For every `m ∈ ℕ`, `R = MvPolynomial (Fin m) k`, `g ∈ R` and `r₁,…,r_m ∈ R`, prove that
+`(g · ⟨∂₁, …, ∂_m⟩)(r₁,…,r_m) = g · det(∂_j r_i)`, `g` times the Jacobian determinant, that its class
+is `m! · g · [∂₁ ∪ ⋯ ∪ ∂_m]`, that `HH^m(R,R)` is free of rank one on `[∂₁ ∪ ⋯ ∪ ∂_m]`, and that when
+`m!` is invertible in `k`, `Φ^m_HKR(g · (∂₁ ∧ ⋯ ∧ ∂_m))(r₁,…,r_m) = (g/m!) det(∂_j r_i)` with class
+`g · [∂₁ ∪ ⋯ ∪ ∂_m]`. The scalar `g` multiplies the whole cochain and the whole wedge, so the
+statement covers `m = 0`, where `R = k`, the empty determinant is `1`, the empty cup product is the
+unit `1 ∈ C⁰(k,k)` and the empty wedge is `1 ∈ T⁰`; for `m ≥ 1`, `R`-multilinearity of `⟨…⟩` in
+the derivations (§7.5) gives the first-column form `g · ⟨∂₁, …, ∂_m⟩ = ⟨g∂₁, ∂₂, …, ∂_m⟩`. The
+determinant formula is the evaluation of the determinant cocycle of §7.5 at `∂₁, …, ∂_m`, its class
+identity is that of §7.5 with the product formula of HKR62 line 495, and the rank-one statement is
+the top degree of §8.4 (Ginz05 §9.2, lines 2142–2156; HKR62 Theorem 5.2, line 548, is the case of
+a perfect field `k`).
 
 *Needs:* §§7.5, 8.4.
 
@@ -1485,7 +1641,11 @@ of HKR62 line 495, and the rank-one statement is the top degree of §8.4 (Ginz05
 
 - `m = 2`, `r₁ = X₁²`, `r₂ = X₂`: `det(∂_j r_i) = 2X₁`, so the normalised value is `g X₁` when `2` is
   invertible.
-- `m = 1`: `⟨g∂⟩ = g∂` and its class is `g[∂]`, with no factorial.
+- `m = 1`: `g · ⟨∂⟩ = g∂` and its class is `g[∂]`, with no factorial.
+- `m = 0`, `k = ℤ`, `g = 2`: the cochain `g · ⟨⟩`, its class and the normalised value
+  `Φ⁰_HKR(g · 1)` are all `2 ∈ HH⁰(ℤ,ℤ) = ℤ`, as `0! = 1` and the empty determinant is `1`. The
+  first-column form `⟨g∂₁, …⟩` has no first slot here and, read as the empty family, would give
+  `⟨⟩ = 1` instead of `2`.
 - `m = 2` over `𝔽₂`: the Jacobian cocycle `⟨∂₁, ∂₂⟩ = δ(∂₁∂₂)` is a nonzero coboundary, while
   `[∂₁ ∪ ∂₂]` generates `HH²`.
 
@@ -1519,8 +1679,8 @@ such a roadmap is outside this one.
   `HH₂`, and `h₂[∂_x ∪ ∂_y](c) = 1`. The determinant cocycle satisfies `⟨∂_x, ∂_y⟩(x,y) = 1` and
   `⟨∂_x, ∂_y⟩ = δ(∂_x∂_y)`, consistent with `h₂[⟨∂_x,∂_y⟩](c) = 2 = 0`.
 - **A non-split extension.** `k[t]/(t³) → k[x]/(x²)` is the twisted square-zero extension of the
-  2-cocycle `f(x,x) = 1` with coefficients in `k`; no algebra section exists, so the class is
-  nonzero in `HH²(k[x]/(x²), k)`.
+  2-cocycle `f(x,x) = 1` with coefficients in `k`; for nonzero `k` no algebra section exists, so the
+  class is nonzero in `HH²(k[x]/(x²), k)`.
 - **Matrices.** `Mat₂(k)` has `HH₀ ≅ k` (trace), `HH⁰ = k`, and every derivation inner.
 
 ## References

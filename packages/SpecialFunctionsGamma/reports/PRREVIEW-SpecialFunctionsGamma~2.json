@@ -1,0 +1,4 @@
+{"review": {"status": "needs_changes", "reviewer": "independent-review-PRREVIEW-SpecialFunctionsGamma~2",
+            "head": "9b7c4ed9dd00e3bccd83dc6215ebfcd9cd1305c0", "pr": 2191, "folder": "SpecialFunctionsGamma", "date": "2026-11-11",
+            "findings": 11, "blocking": 1,
+            "notes": "Full re-review. Previous findings: R02, R04-R13 repaired; R01 partly (Tau Ceti Gamma/ declarations still cited though absent at the pin, 5.7.6 off Re z > 0 unowned: P1); R03 not (gate tex=40, indented fences); R14 partly. All 15 seeded targets read against DLMF 1.2.8; every Suggested.lean statement recomputed numerically (table); 50 Mathlib names checked by #check at the pins; cross-roadmap citations resolved on main and at the ExplicitNumberFields head; depcheck 0 problems; lake env lean gives 73 sorry warnings only; one-tactic probe closes nothing. Gate fails (tex=40), repair tested on a copy (tex=0). Not verifiable: Widder, Titchmarsh, Andrews-Askey-Roy, Temme."}}

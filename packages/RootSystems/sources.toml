@@ -99,3 +99,21 @@ licence_class = "none"
 status = "uncertified"
 version_note = "paywalled; cited by its locator without the text"
 cited_for = ["3.1"]
+
+[[source]]
+id = "davis08"
+authors = "Michael W. Davis"
+title = "The Geometry and Topology of Coxeter Groups"
+year = 2008
+venue = "London Mathematical Society Monographs Series 32, Princeton University Press"
+locator_scheme = "theorem"
+locator = "Theorem 6.12.9"
+url = "https://people.math.osu.edu/davis.12/davisbook.pdf"
+fetched_from = "https://people.math.osu.edu/davis.12/davisbook.pdf"
+fetched_at = "2026-11-11T19:24:06Z"
+sha256 = "ccefbb950fdcfce98e178e995f674e199c00a1970cdeaa817e2b6f520e7a3b05"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-11"
+version_note = "author's copy; page numbers are those printed in it"
+cited_for = ["3.3", "3.4", "3.5"]

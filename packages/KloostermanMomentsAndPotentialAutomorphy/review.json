@@ -1,0 +1,10 @@
+{
+  "review": {
+    "status": "needs_changes",
+    "reviewer": "independent-review-REV-PKG-KloostermanMomentsAndPotentialAutomorphy~2",
+    "date": "2026-11-10",
+    "findings": 12,
+    "blocking": 12,
+    "notes": "Previous F01 repaired. Read 58 targets and their dependencies; checked all 15 seeded locators in FSY, plus XZ and Serre; Saito remains settled uncertified. Computed adversarial witnesses and 40 fresh finite-field moments. Original Lean elaboration and 21 signature checks pass with four sorry warnings; all sixteen closure probes fail, with no padding. External depcheck: 236 roadmaps, 2151 edges, 0 problems. Twelve README/signature-documentation findings include false signs, projector and Fourier identifications, supplier drift, missing hypotheses, internal build order and an unsupplied projectivity premise. Report contains current supplier/pin citations and source errata."
+  }
+}

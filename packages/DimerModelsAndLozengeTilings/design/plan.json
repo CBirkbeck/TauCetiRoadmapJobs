@@ -4,8 +4,8 @@
  "parent": null,
  "summary": "Lattice statistical mechanics with the hexagonal dimer model as worked case: the triangular lattice, lozenge tilings as perfect matchings, height functions, combinatorial simple connectivity with a bridge from topology, flips and Thurston's criterion; Kasteleyn's theorem and determinantal local statistics on finite simply connected regions; Gibbs specifications on finite-alphabet subshifts with a proper countable-group action (tail lemma, Bernoulli ergodicity, face property, closedness) and the dimer specification on periodic graphs; slopes and the classification on the boundary of the slope triangle; torus tilings and torus limits; the four-determinant torus formula; the explicit determinantal ergodic Gibbs measure of every interior slope, identified with the incomplete beta kernel and the discrete sine kernel; local-statistics convergence of tilings of growing regions.",
  "baseline": {
-  "mathlib": "f6090c7095e1e56b3464c1daba5f24631f1290d2",
-  "tauceti": "358314d4ab97483df4fc4cb8adcc02e74a8d9f5a"
+  "mathlib": "1b1ccf4b088b32fa3f23f2de1127433254a81e1e",
+  "tauceti": "2fd255d997f47c0b5d834ee416c7015d55444ce5"
  },
  "layers": [
   {
@@ -501,7 +501,7 @@
       {
        "name": "frozen_heights",
        "kind": "computation",
-       "statement": "H_{M₁}=x, H_{M₂}=y, H_{M₃}=0, H_{M_ε}(x,y)=Σ_{0≤i<x}ε_i."
+       "statement": "H_{M₁}=x, H_{M₂}=y, H_{M₃}=0; for the row tiling H_{M_ε}(x,y)=Σ_{0≤i<x}ε_i for x≥0 and −Σ_{x≤i<0}ε_i for x<0 (for ε≡1 and x=−1 this is −1, not the empty sum 0); for alternating ε_x=[x odd] it is ⌊x/2⌋."
       },
       {
        "name": "floor_height",
@@ -708,7 +708,7 @@
      "id": "3.1",
      "kind": "definition",
      "name": "kasteleynMatrix",
-     "statement": "For finite R and a positive edge weight w: K_R (rows white faces, columns black faces, entry w(e) for faces sharing e, else 0), partitionFunction R w = Σ_{M∈𝔈(R)} ∏_{e∈M} w(e), and the Boltzmann measure on 𝔈(R).",
+     "statement": "For finite R and a positive edge weight w: K_R (rows white faces, columns black faces, entry w(e) for faces sharing e, else 0), partitionFunction R w = Σ_{M∈𝔈(R)} ∏_{e∈M} w(e), and, when the partition function is positive (for positive w, exactly when R is tileable), the Boltzmann probability measure on 𝔈(R) with masses proportional to the weights; the matrix and the partition function are defined for every finite R.",
      "hypotheses": [
       "R finite",
       "w positive"
@@ -753,7 +753,7 @@
       {
        "name": "single_face",
        "kind": "degenerate",
-       "statement": "{W(0)}: one row, no column, partition function 0."
+       "statement": "{W(0)}: one row, no column, partition function 0, and no Boltzmann probability measure (𝔈(R)=∅); the empty region has the empty tiling, partition function 1 and the point-mass Boltzmann measure."
       }
      ]
     },
@@ -986,7 +986,8 @@
       "target:4.2",
       "mathlib:MeasureTheory.Measure.infinitePi",
       "mathlib:ProbabilityTheory.measure_zero_or_one_of_measurableSet_limsup_atTop",
-      "mathlib:ErgodicSMul"
+      "mathlib:ErgodicSMul",
+      "tauceti:TauCeti.MeasureTheory.ergodicSMul_iff_forall_smul_invariant"
      ],
      "api": [],
      "tests": [
@@ -1051,7 +1052,7 @@
      "id": "4.5",
      "kind": "definition",
      "name": "Specification",
-     "statement": "A specification on X: Markov kernels γ_Λ (Λ⊆I finite) from X to X, 𝓕_{Λᶜ}-measurable, proper (γ_Λ(B∩C|ω)=1_B(ω)γ_Λ(C|ω) for B∈𝓕_{Λᶜ}) and consistent (γ_Δγ_Λ=γ_Δ for Λ⊆Δ); μ is Gibbs if μγ_Λ=μ for all Λ; Γ-equivariance and quasilocality.",
+     "statement": "A specification on X: Markov kernels γ_Λ (Λ⊆I finite) from X to X, measurable for the trace of 𝓕_{Λᶜ} on X, proper (γ_Λ(B∩C|ω)=1_B(ω)γ_Λ(C|ω) for B∈𝓕_{Λᶜ}) and consistent (γ_Δγ_Λ=γ_Δ for Λ⊆Δ); μ is Gibbs if μγ_Λ=μ for all Λ; Γ-equivariance and quasilocality.",
      "hypotheses": [],
      "locator": {
       "source": "sheffield2005",
@@ -1080,9 +1081,14 @@
      ],
      "tests": [
       {
-       "name": "trivial_spec",
+       "name": "identity_spec_constants",
        "kind": "degenerate",
-       "statement": "γ_Λ(·|ω)=δ_ω: every probability measure is Gibbs."
+       "statement": "On the closed shift-invariant subshift X₀={0̄,1̄} of constant configurations of {0,1}^ℤ, each trace of 𝓕_{Λᶜ} is the full σ-algebra, so γ_Λ(·|ω)=δ_ω is a specification and every probability measure on X₀ is Gibbs."
+      },
+      {
+       "name": "identity_full_product",
+       "kind": "non-example",
+       "statement": "The identity kernels on all of {0,1}^ℤ are not a specification: for Λ={0} and C={ω(0)=1}, configurations differing only at 0 have the same exterior but kernel values 0 and 1; under Bern(1/2)^{⊗ℤ} the conditional expectation of 1_C given 𝓕_{Λᶜ} is 1/2."
       },
       {
        "name": "independent_spec",
@@ -1120,9 +1126,9 @@
      "api": [],
      "tests": [
       {
-       "name": "trivial_face",
+       "name": "identity_face_constants",
        "kind": "degenerate",
-       "statement": "Trivial specification: 𝒢_inv=𝔓_inv."
+       "statement": "Identity specification on X₀={0̄,1̄} with the shift: 𝒢_inv=𝔓_inv is the segment from δ_{0̄} to δ_{1̄}; its endpoints are the ergodic elements and the midpoint gives the invariant event {1̄} mass 1/2."
       },
       {
        "name": "independent_face",
@@ -1173,19 +1179,19 @@
       {
        "name": "completion_finite",
        "role": "locality",
-       "statement": "Completion sets Ω_F(ω) are finite, contain ω, and depend only on ω on F and adjacent edges."
+       "statement": "Completion sets Ω_F(ω)={ω'∈𝔛(G): ω'=ω off F} are finite and contain ω; the set of restrictions {ω'|_F : ω'∈Ω_F(ω)} is the set of η:F→Bool covering every endpoint of F exactly once together with the true edges of ω outside F, so it depends only on ω on the edges outside F sharing a vertex with F, and Ω_F(ω) is obtained by gluing these restrictions to ω|_{Fᶜ}."
       }
      ],
      "tests": [
       {
        "name": "path_graph",
        "kind": "computation",
-       "statement": "ℤ with nearest-neighbour edges: exactly two configurations."
+       "statement": "ℤ with nearest-neighbour edges: exactly two configurations; for F=∅ both restriction sets are {∅} while the completion sets are the two different singletons."
       },
       {
        "name": "infinite_degree",
        "kind": "non-example",
-       "statement": "A vertex of infinite degree: {c x_k} → ∅, uncovering c, so closedness fails."
+       "statement": "Without local finiteness (graph statement, no group action): on vertices c,d,x_n,y_n with edges c x_n, d y_n, x_n y_n, the perfect matchings M_k={c x_k, d y_k}∪{x_n y_n : n≠k} converge to {x_n y_n : n≥1}, which leaves c and d uncovered, so closedness fails."
       },
       {
        "name": "C6",
@@ -1214,7 +1220,7 @@
       {
        "name": "dimerSpecification_spec",
        "role": "structure",
-       "statement": "γ^w is a proper consistent quasilocal specification on 𝔛(G), Γ-equivariant for Γ-invariant w, uniform for w≡1."
+       "statement": "γ^w is a proper consistent quasilocal specification on 𝔛(G), Γ-equivariant for Γ-invariant w, uniform for w≡1; quasilocality: for a cylinder event C on finite E, γ^w_F(C|ω) depends only on ω on E∖F and on the edges outside F sharing a vertex with F (restriction sets of 5.1)."
       },
       {
        "name": "isGibbs_iff_cylinder",
@@ -1241,7 +1247,7 @@
       {
        "name": "C6_boltzmann",
        "kind": "computation",
-       "statement": "On C₆ with F all edges the only Gibbs measure gives each matching mass 1/2."
+       "statement": "On C₆ with F all edges the only Gibbs measure is the Boltzmann measure; with unit weights it gives each matching mass 1/2 (alternating weights 2 and 1 give masses 8/9 and 1/9)."
       },
       {
        "name": "gauge",
@@ -1264,7 +1270,8 @@
      },
      "prerequisites": [
       "target:4.6",
-      "target:5.2"
+      "target:5.2",
+      "tauceti:TauCeti.MeasureTheory.ergodicSMul_iff_forall_smul_invariant"
      ],
      "api": [],
      "tests": [
@@ -1453,7 +1460,7 @@
       {
        "name": "corner_case",
        "kind": "degenerate",
-       "statement": "At s=1 the only option is the all-ones sequence, i.e. δ_{M₁}."
+       "statement": "At s=1 the invariant probability measures concentrated on Φ₂ with slope (1,0) form {δ_{M₁}} ((δ_{M₁}+δ_{M₃})/2 has slope (1/2,0)); the only shift-invariant measure of density 1 is the point mass at the all-ones sequence."
       },
       {
        "name": "step_gibbs",
@@ -1649,7 +1656,7 @@
      "id": "8.1",
      "kind": "definition",
      "name": "twistedKasteleyn",
-     "statement": "K_{ab}, (a,b)∈{0,1}², indexed by [0,n₁)×[0,n₂) (rows W(v), columns B(v)), with weight entries and the factor (−1)^a on type-2 entries crossing the vertical seam and (−1)^b on type-1 entries crossing the horizontal seam.",
+     "statement": "Torus lozenges are L-orbits of plane edges, keeping their type; the signed weight of a torus lozenge is its weight times (−1)^a for a type-2 lozenge crossing the vertical seam (W(v)–B(v+e₁), v in the last column) and (−1)^b for a type-1 lozenge crossing the horizontal seam (W(v)–B(v−e₂), v in the first row); K_{ab}, (a,b)∈{0,1}², is indexed by [0,n₁)×[0,n₂) (rows W(v), columns B(v)), each entry the sum of the signed weights of the torus lozenges joining its two faces modulo L.",
      "hypotheses": [
       "w positive and n₁ℤ×n₂ℤ-periodic"
      ],
@@ -1665,7 +1672,7 @@
       {
        "name": "twisted_entries",
        "role": "structure",
-       "statement": "Each row has entries w₃, ±w₁, ±w₂ at columns v, v−e₂, v+e₁ modulo the period."
+       "statement": "The row of W(v) receives three edge contributions w₃, ±w₁, ±w₂ (types 3, 1, 2) at columns v, v−e₂, v+e₁ modulo the period; contributions with the same column are added (n₁=1 or n₂=1), so an entry may vanish although its summands do not."
       },
       {
        "name": "twisted_commute",
@@ -1675,14 +1682,14 @@
       {
        "name": "twisted_leibniz",
        "role": "expansion",
-       "statement": "det K_{ab} is a signed sum of weights of torus tilings."
+       "statement": "Expanding every entry into its edge contributions, det K_{ab} is a signed sum of weights of torus tilings."
       }
      ],
      "tests": [
       {
        "name": "one_by_one",
        "kind": "degenerate",
-       "statement": "n₁=n₂=1: K_{ab} = w₃+(−1)^b w₁+(−1)^a w₂."
+       "statement": "n₁=n₂=1: K_{ab} = w₃+(−1)^b w₁+(−1)^a w₂, one entry adding three contributions; at type weights (1,1,2), K₁₁=0."
       },
       {
        "name": "two_by_two",
@@ -1771,9 +1778,10 @@
      "id": "8.4",
      "kind": "theorem",
      "name": "torus_correlation_eq",
-     "statement": "For distinct torus lozenges ℓ_i=(W(u_i),B(v_i)): P(all ℓ_i ∈ M) = (2Z)⁻¹ Σ ε_{ab} ∏K_{ab}(ℓ_i)·c_{ab} with c_{ab} the signed complementary minor, equal to det K_{ab}·det[K_{ab}⁻¹(v_i,u_j)] when det K_{ab}≠0; the coefficients ε_{ab}det K_{ab}/(2Z) lie in [−1/2,1/2] and sum to 1.",
+     "statement": "For pairwise distinct torus lozenges ℓ_i joining W(u_i) to B(v_i), with signed weights κ_{ab}(ℓ_i): P(all ℓ_i ∈ M) = (2Z)⁻¹ Σ ε_{ab} ∏κ_{ab}(ℓ_i)·c_{ab}, where c_{ab}=0 if two ℓ_i share a white or a black face and otherwise c_{ab} is the signed complementary minor of K_{ab} (sum over bijections σ with σ(u_i)=v_i of sgn σ ∏_{u∉{u_i}} K_{ab}(u,σu)); when det K_{ab}≠0, c_{ab}=det K_{ab}·det[K_{ab}⁻¹(v_i,u_j)] with this convention; the coefficients ε_{ab}det K_{ab}/(2Z) lie in [−1/2,1/2] and sum to 1.",
      "hypotheses": [
-      "lozenges pairwise distinct"
+      "lozenges pairwise distinct (as L-orbits of typed edges)",
+      "n₁,n₂ ≥ 1"
      ],
      "locator": {
       "source": "gorin2021",
@@ -1781,6 +1789,7 @@
      },
      "prerequisites": [
       "target:3.3",
+      "target:8.1",
       "target:8.3"
      ],
      "api": [],
@@ -1788,7 +1797,7 @@
       {
        "name": "one_by_one",
        "kind": "computation",
-       "statement": "1×1, type-3 lozenge: w₃/(w₁+w₂+w₃)."
+       "statement": "1×1, type-3 lozenge: ∏κ=w₃, c=1, formula w₃(1+1+1−1)/(2Z)=w₃/(w₁+w₂+w₃), 1/3 at unit weights; aggregated entries in place of κ would give 1."
       },
       {
        "name": "coefficients",
@@ -1796,9 +1805,9 @@
        "statement": "2×2: coefficients 3/18, 5/18, 5/18, 5/18."
       },
       {
-       "name": "shared_white",
+       "name": "shared_faces",
        "kind": "degenerate",
-       "statement": "Two lozenges sharing a white face: every c_{ab} is an empty sum; probability 0."
+       "statement": "1×1 torus, lozenges of types 1 and 3 (same W(0) and B(0)): c_{ab}=0 and the probability is 0; without the convention the complementary sum is 1 and the formula gives w₁w₃/(w₁+w₂+w₃)."
       }
      ]
     },
@@ -1879,7 +1888,7 @@
       {
        "name": "angles",
        "role": "evaluation",
-       "statement": "w₁G_w(−e₂)=θ₁/π, w₂G_w(e₁)=θ₂/π, w₃G_w(0)=θ₃/π (θ_k opposite w_k); w₁G_w((m,−1))=(−1)^m sin(θ₁m)/(πm)."
+       "statement": "w₁G_w(−e₂)=θ₁/π, w₂G_w(e₁)=θ₂/π, w₃G_w(0)=θ₃/π (θ_k opposite w_k); for m≠0, w₁G_w((m,−1))=(−1)^m sin(θ₁m)/(πm), the value at m=0 being θ₁/π."
       }
      ],
      "tests": [
@@ -1990,7 +1999,8 @@
      "prerequisites": [
       "target:4.4",
       "target:9.1",
-      "target:9.3"
+      "target:9.3",
+      "tauceti:TauCeti.MeasureTheory.ergodicSMul_iff_forall_smul_invariant"
      ],
      "api": [],
      "tests": [
@@ -2076,7 +2086,7 @@
       {
        "name": "kernel_values",
        "role": "evaluation",
-       "statement": "K_ξ(v;v)=s; K_ξ((x,y);(x+m,y))=|ξ|^m sin(πsm)/(πm)."
+       "statement": "K_ξ(v;v)=s; for m≠0, K_ξ((x,y);(x+m,y))=|ξ|^m sin(πsm)/(πm)."
       }
      ],
      "tests": [
@@ -2101,7 +2111,7 @@
      "id": "9.7",
      "kind": "theorem",
      "name": "incompleteBetaProcess_exists_unique",
-     "statement": "For ξ∈ℍ with slope (s,t) and w=(sin πs, sin πt, sin π(1−s−t)): entrywise w₁G_w(v_i−v_j−e₂)=(−1)^{(x_i−x_j)+(y_i−y_j)}|ξ|^{x_j−x_i}|1−ξ|^{y_i−y_j}K_ξ(v_j;v_i) with |ξ|=w₂/w₃, |1−ξ|=w₁/w₃, i.e. the matrices are conjugate by the diagonal of κ(x,y)=(−1)^{x+y}|ξ|^{−x}|1−ξ|^{y} up to transposition, so det[w₁G_w(v_i−v_j−e₂)]=det[K_ξ(v_i;v_j)]; μ_ξ=μ^w satisfies μ_ξ{v₁,…,v_m∈X(M)}=det[K_ξ(v_i;v_j)]; it is the unique such measure; it is an ergodic translation-invariant Gibbs measure of slope (s,t); along a row its type-1 correlations are det[sin(πs(x_i−x_j))/(π(x_i−x_j))]; a.s. every row has infinitely many type-1 lozenges, and M is a measurable function of X(M) on tilings where no two consecutive rows lack type-1 lozenges.",
+     "statement": "For ξ∈ℍ with slope (s,t) and w=(sin πs, sin πt, sin π(1−s−t)): entrywise w₁G_w(v_i−v_j−e₂)=(−1)^{(x_i−x_j)+(y_i−y_j)}|ξ|^{x_j−x_i}|1−ξ|^{y_i−y_j}K_ξ(v_j;v_i) with |ξ|=w₂/w₃, |1−ξ|=w₁/w₃, i.e. the matrices are conjugate by the diagonal of κ(x,y)=(−1)^{x+y}|ξ|^{−x}|1−ξ|^{y} up to transposition, so det[w₁G_w(v_i−v_j−e₂)]=det[K_ξ(v_i;v_j)]; μ_ξ=μ^w satisfies μ_ξ{v₁,…,v_m∈X(M)}=det[K_ξ(v_i;v_j)]; it is the unique such measure; it is an ergodic translation-invariant Gibbs measure of slope (s,t); along a row its type-1 correlations are det[S_s(x_i−x_j)] with S_s(0)=s and S_s(m)=sin(πsm)/(πm) for m≠0, the discrete sine kernel; a.s. every row has infinitely many type-1 lozenges, and M is a measurable function of X(M) on tilings where no two consecutive rows lack type-1 lozenges.",
      "hypotheses": [
       "ξ in the upper half-plane",
       "v_i pairwise distinct"
@@ -2150,7 +2160,7 @@
      "id": "10.1",
      "kind": "definition",
      "name": "LocalConvergence",
-     "statement": "For finite regions R_N with tilings, probability measures μ_N on 𝔈(R_N) in 𝔓(TriEdge→Bool) and vertices v_N: the local statistics converge to μ when τ_{−v_N*}μ_N→μ weakly, equivalently all cylinder probabilities converge.",
+     "statement": "For regions R_N, finite or infinite, probability measures μ_N on TriEdge→Bool concentrated on the closed set 𝔈(R_N), and vertices v_N: the local statistics converge to μ when τ_{−v_N*}μ_N→μ weakly, equivalently all cylinder probabilities converge.",
      "hypotheses": [],
      "locator": {
       "source": "aggarwal2023",
@@ -2181,7 +2191,7 @@
       {
        "name": "constant",
        "kind": "degenerate",
-       "statement": "R_N all faces, μ_N=μ, v_N=0: limit μ."
+       "statement": "R_N all faces (infinite), μ_N=μ∈𝔓(𝕋), v_N=0: limit μ; for μ=δ_{M₃} every type-3 edge has probability 1."
       },
       {
        "name": "hexagons",
@@ -2191,7 +2201,7 @@
       {
        "name": "wrong_sign",
        "kind": "non-example",
-       "statement": "Translating by +v_N: limit is the point mass at the empty configuration."
+       "statement": "R_N=R₆+v_N with |v_N|→∞, uniform μ_N, translating by +v_N instead of −v_N: the limit is the point mass at the empty configuration (for v_N=0 both conventions give the hexagon law)."
       }
      ]
     },
@@ -2262,7 +2272,7 @@
       {
        "name": "unit_hexagon_case",
        "kind": "degenerate",
-       "statement": "A=B=C=1 is the unit hexagon R₆ with two tilings."
+       "statement": "A=B=C=1: vertices (0,0),(1,0),(0,1),(1,2),(2,2),(2,1), centred at (1,1); it is the translate R₆+(1,1) of the unit hexagon, with two tilings, the translates of T_a and T_b."
       }
      ]
     }

@@ -237,3 +237,21 @@ licence_class = "publisher-open"
 status = "certified"
 accessed = "2026-11-10"
 cited_for = ["C7.2"]
+
+[[source]]
+id = "thom1954"
+authors = "René Thom"
+title = "Quelques propriétés globales des variétés différentiables"
+year = 1954
+venue = "Commentarii Mathematici Helvetici 28 (1954), 17-86"
+doi = "10.1007/BF02566923"
+locator_scheme = "theorem"
+locator = "Théorème II.1, p. 29; §7 (k = 1), p. 43; §9 (k = 1 and k = 2), p. 50; Théorèmes II.26 and II.27, p. 55"
+url = "https://gdz.sub.uni-goettingen.de/download/pdf/PPN358147735_0028/LOG_0007.pdf"
+fetched_from = "https://gdz.sub.uni-goettingen.de/download/pdf/PPN358147735_0028/LOG_0007.pdf"
+fetched_at = "2026-11-11T07:48:35Z"
+sha256 = "17ad02729cbe456871e6d3db39075cb5e04a2e4b0d3af8f4eb27f1c8e3f6fd48"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-11"
+cited_for = ["C2.4a"]

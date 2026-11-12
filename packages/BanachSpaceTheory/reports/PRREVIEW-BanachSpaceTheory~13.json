@@ -1,0 +1,22 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-BanachSpaceTheory~13",
+  "head": "7d06cbabc4806a9c3f4c4e742caae7b09915c62f",
+  "pr": 1854,
+  "folder": "BanachSpaceTheory",
+  "date": "2026-11-12",
+  "findings": 8,
+  "blocking": 1,
+  "notes": "Full re-review at 7d06cba. Previous findings: R01, R02, R04, R05, R07, R08 repaired; R03 (gate outside-folder) not repaired; R06 partly. Gate re-run: all checks 0 except outside-folder (Completed/ArithmeticDirichletSeries, TauCetiRoadmap/SymplecticGeometry). depcheck: 206 roadmaps, 1903 edges, 0 problems. Suggested.lean elaborates (24 sorry warnings only); #check of 26 declarations keeps all binders; padding probe closes 0 of 24. Seeded sample: 15 targets; 40 locators read against cached texts (van Neerven, Daws, Yosida-Hewitt, Argyros-Haydon, AOST, James, Garrido-Jaramillo, BdlHV, Pisier, Ball, AFJS, Heil, DOSZ, Emmanuele); DOSZ numbering and James page wrong; 1.4, 4.1, 4.3 lack locators. Findings: P2 complex form of John's decomposition in 7.2; P3 gate, pinned C(K) Grothendieck restated in 6.2, 4.4 needs later 5.4, locators, downstream-consumer line, stale PR description.",
+  "deferred": [
+   {
+    "id": "D01",
+    "severity": "P3",
+    "title": "The push gate fails on two files outside the pull request's folders",
+    "where": "the edits to ArithmeticDirichletSeries and SymplecticGeometry, or the pull request's folder record",
+    "raised": "PRREVIEW-BanachSpaceTheory~13"
+   }
+  ]
+ }
+}

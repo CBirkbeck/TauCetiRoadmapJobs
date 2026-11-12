@@ -1,0 +1,109 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "RealSemisimpleLieGroups"
+
+[[source]]
+id = "Kostant1973"
+authors = "Bertram Kostant"
+title = "On convexity, the Weyl group and the Iwasawa decomposition"
+year = 1973
+venue = "Annales scientifiques de l'École normale supérieure 6"
+doi = "10.24033/asens.1254"
+locator_scheme = "theorem"
+locator = "Proposition 2.4"
+url = "https://doi.org/10.24033/asens.1254"
+fetched_from = "https://www.numdam.org/item/10.24033/asens.1254.pdf"
+fetched_at = "2026-11-12T00:33:29Z"
+sha256 = "ca8dd6faf0b09c456777b6fc6d560c3ed9ff8b3bc54185b07150614caea380d7"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-12"
+cited_for = ["2.4"]
+
+[[source]]
+id = "Knapp2002"
+authors = "Anthony W. Knapp"
+title = "Lie Groups Beyond an Introduction, 2nd ed."
+year = 2002
+doi = "10.1007/978-1-4757-2453-0"
+locator_scheme = "chapter"
+locator = "Ch. VI §§2-6; Ch. VII §§2-7; Appendix C"
+url = "https://doi.org/10.1007/978-1-4757-2453-0"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text; the DOI resolves to the first edition (1996), and the roadmap cites the second edition (Birkhauser, 2002)"
+cited_for = ["0.1", "0.2", "0.4", "1.2", "1.4", "2.2", "2.3", "2.4", "3.3", "4.1", "4.3"]
+
+[[source]]
+id = "BorelTits1965"
+authors = "Armand Borel, Jacques Tits"
+title = "Groupes réductifs"
+year = 1965
+venue = "Publications mathématiques de l'IHÉS 27, 55-150"
+locator_scheme = "section"
+locator = "§§4-5; 4.10; Theorem 14.4; 14.7"
+url = "http://www.numdam.org/item/PMIHES_1965__27__55_0/"
+fetched_from = "https://www.numdam.org/item/PMIHES_1965__27__55_0.pdf"
+fetched_at = "2026-11-12T00:34:34Z"
+sha256 = "ec6674ba292deaadd77a449f4bad3750db79c0b87b117a892ef6b09bb16357ad"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-12"
+cited_for = ["2.3", "3.2", "4.5"]
+
+[[source]]
+id = "Warner1972"
+authors = "Garth Warner"
+title = "Harmonic Analysis on Semi-Simple Lie Groups I"
+year = 1972
+doi = "10.1007/978-3-642-50275-0"
+locator_scheme = "section"
+locator = "§1.2"
+url = "https://doi.org/10.1007/978-3-642-50275-0"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["3.3"]
+
+[[source]]
+id = "BorelJi2006"
+authors = "Armand Borel, Lizhen Ji"
+title = "Compactifications of Symmetric and Locally Symmetric Spaces"
+year = 2006
+doi = "10.1007/0-8176-4430-x_2"
+locator_scheme = "chapter"
+locator = "Ch. I.1"
+url = "https://doi.org/10.1007/0-8176-4430-x_2"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text; Crossref resolves the title to this chapter DOI of the book"
+cited_for = ["4.4", "4.5"]
+
+[[source]]
+id = "BourbakiLieIV"
+authors = "Nicolas Bourbaki"
+title = "Lie Groups and Lie Algebras"
+year = 2002
+doi = "10.1007/978-3-540-89394-3"
+locator_scheme = "section"
+locator = "Ch. IV §2"
+url = "https://doi.org/10.1007/978-3-540-89394-3"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["3.3"]
+
+[[source]]
+id = "EschenburgSymSpaces"
+authors = "Jost-Hinrich Eschenburg"
+title = "Lecture Notes on Symmetric Spaces"
+version_note = "undated lecture notes on the author's institutional page; locators are its section, theorem and page numbers"
+locator_scheme = "theorem"
+locator = "§1 p. 2; Theorem 2 p. 8; Theorem 5 p. 15; Lemma §7 p. 17; Theorem 7.1 p. 18; Theorem 9 p. 20"
+url = "https://myweb.rz.uni-augsburg.de/~eschenbu/symspace.pdf"
+fetched_from = "https://myweb.rz.uni-augsburg.de/~eschenbu/symspace.pdf"
+fetched_at = "2026-11-12T00:36:42Z"
+sha256 = "7e24460b3e1af919b99317e0a85647a5386cad8c100a57dfb0f313955e0ee4d3"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-12"
+cited_for = ["0.3", "1.3", "5.1", "5.2"]

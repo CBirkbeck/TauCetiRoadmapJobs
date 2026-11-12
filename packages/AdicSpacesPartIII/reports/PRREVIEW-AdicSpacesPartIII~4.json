@@ -1,0 +1,22 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-AdicSpacesPartIII~4",
+  "head": "b566a4cd568e13a3f7991d07e1a65bf1995fe640",
+  "pr": 1807,
+  "folder": "AdicSpacesPartIII",
+  "date": "2026-11-11",
+  "findings": 4,
+  "blocking": 0,
+  "notes": "Full review. Previous findings R01-R05, R07, R08 repaired, R06 partly (three Check labels left). Four P3: AdicSpacesPartII supplier rows cite as planned Part II names declarations pinned in Tau Ceti; Huber.IsTateRing.isOpenMap absent at the pin (four lines); three backticked Check labels; GlueingSquare docstring misstates KL15 Def. 2.7.3's setting. Seeded sample of 15 targets: 31 locators checked against EGA I, EGA III-1, Kiehl-E, KL15, BHW, Conrad-MR, EGA IV-4; BL II, BL I, RG, Huber96 not readable (not verifiable). Adversarial table with computed values for the sample and every Suggested.lean declaration. Worker gate passes (build included); depcheck 0 problems; elaboration: sorry the only warning; #check comparison done. Pull request text for this folder agrees with the head.",
+  "carried": {
+   "from": "b566a4cd568e13a3f7991d07e1a65bf1995fe640",
+   "head": "8d8b243b676b5a14b5d71e5be7e3d42d8577ea81",
+   "findings": 4,
+   "lines": 69,
+   "folders": [
+    "AdicSpacesPartIII"
+   ]
+  }
+ }
+}

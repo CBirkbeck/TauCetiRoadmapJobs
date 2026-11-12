@@ -10,9 +10,12 @@ it states, against the pinned Mathlib and Tau Ceti, the headline theorems that t
 roadmap proves. At the pins none of them is statable, so the file states nothing. The headline
 theorems, and what each lacks at the pins, are the following.
 
-Every headline is a statement about Deligne–Mumford stacks or algebraic stacks over a field
-(the cone stacks `h¹/h⁰(E^∨)` and the intrinsic normal cone are algebraic stacks even over a
-scheme). The pins have no carrier for them: Mathlib has `Pseudofunctor.IsStack` for
+Every headline is a statement about quasi-separated Deligne–Mumford stacks of finite type, or
+quasi-separated algebraic stacks locally of finite type, over a field (README, Convention 1:
+quasi-separatedness, a quasi-compact and quasi-separated diagonal, is what makes the generic
+stabiliser finite, and it excludes `Bℤ`; it is weaker than separatedness). The cone stacks
+`h¹/h⁰(E^∨)` and the intrinsic normal cone are algebraic stacks even over a scheme. The pins have
+no carrier for them: Mathlib has `Pseudofunctor.IsStack` for
 category-valued pseudofunctors, and Tau Ceti has algebraic spaces
 (`TauCeti.AlgebraicGeometry.Spaces.IsAlgebraicSpace`) and the `Cat`-valued pseudofunctors on
 schemes (`TauCeti.AlgebraicGeometry.SchPseudofunctor`), but neither has stacks in groupoids with
@@ -62,8 +65,9 @@ by étale descent of cycles and rational equivalences on stacks that are not at 
    base gives `c_top(Ob) ∩ [M]`; products give exterior products; the class pulls back along a
    flat morphism of the base and, over a reduced base, along a regular local embedding;
    compatible obstruction theories satisfy `v^![X, E]^vir = [X', F]^vir` for a smooth `v`, and
-   over a reduced base for a local complete intersection `v` between stacks smooth over it; over
-   a reduced base, virtual counts are constant in a family over a smooth connected curve. They
+   over a reduced base when `v` is a morphism between stacks smooth over it; over a reduced base,
+   the virtual counts of a family over a smooth connected curve whose fibres have virtual
+   dimension zero are constant. They
    lack the carriers of 6, Chern classes and bivariant classes on stacks, and Vistoli's Gysin
    maps.
 8. **The obstruction theory of spaces of maps from curves** (README 11.4–11.6;

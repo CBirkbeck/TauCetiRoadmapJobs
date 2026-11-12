@@ -1,0 +1,10 @@
+{
+  "review": {
+    "status": "needs_changes",
+    "reviewer": "independent-review-REV-PKG-LocalLanglandsCorrespondenceForG2~2",
+    "date": "2026-11-10",
+    "findings": 11,
+    "blocking": 7,
+    "notes": "Checked F01\u2013F09 repairs, all 75 targets and Needs lines, all 15 seeded source targets, 11 declared gap contracts, current supplier heads and overlap leads, and pinned declarations. Computed adversarial witnesses are in the round-2 report. Suggested.lean elaborates with only its expected sorry warning; both signatures checked; all one-tactic padding probes fail. A native octonion formulation of the missing Griess headline also elaborates. Dependency check: 236 roadmaps, 2147 edges, 0 problems. Griess original text remains settled uncertified. Eleven findings require repair, seven blocking."
+  }
+}

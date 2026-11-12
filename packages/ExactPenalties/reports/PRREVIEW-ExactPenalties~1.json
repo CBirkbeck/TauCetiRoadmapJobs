@@ -1,0 +1,4 @@
+{"review": {"status": "needs_changes", "reviewer": "independent-review-PRREVIEW-ExactPenalties~1",
+            "head": "b5a8d565a136b20f80cb7657ecffc5918f0aeb9b", "pr": 2193, "folder": "ExactPenalties", "date": "2026-11-11",
+            "findings": 7, "blocking": 3,
+            "notes": "Gate reproduced: missing-files=1 FAIL (no Suggested.lean). Depcheck: 207 roadmaps, 1914 edges, 0 problems. The README cites no source locators, so all 3 targets and 3 Target 2 examples were checked by computation; the README headline and a general form (gap delta, ordered comm ring, one feasible witness) were proved at the pins in scratch; the proposed Suggested.lean elaborates with only the sorry warning. Duplication: no exact-penalty statement at the Mathlib/Tau Ceti pins, on main or at the 419 open roadmap heads. No changes outside the folder."}}

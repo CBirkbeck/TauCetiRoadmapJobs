@@ -1,0 +1,4 @@
+{"review": {"status": "needs_changes", "reviewer": "independent-review-PRREVIEW-GrothendieckTopoi~21",
+            "head": "24c3553113c12c92687904f39fedc39ff0e5cfc6", "pr": 1520, "folder": "GrothendieckTopoi", "date": "2026-11-11",
+            "findings": 2, "blocking": 0,
+            "notes": "incremental re-review of 54 changed lines since 119dbd3. Previous R01, R02, R04 repaired; R03 partly (5.1 has a route but no locator; 7.3's new Stone Spaces locator names II §3, which is coherent locales, sober spaces being in II §1). Checked: elaboration at the head (exit 0, 44 sorry warnings only), the two restated 6.6 signatures, the four Mathlib declarations the diff names at the pin, the routes added to 5.1, 7.3 and 8.4 on computed instances, the new locators in the seeded sample (3.2, 3.3, 5.1, 8.4) by section title (books paywalled), the pull request text. Gate at 24c3553 passes every check including the build; depcheck 0 problems; no change outside the folder."}}

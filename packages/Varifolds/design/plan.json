@@ -54,7 +54,7 @@
       {
        "name": "image plane",
        "role": "continuity",
-       "statement": "for injective L the projection onto L(range P) depends continuously on (L,P)."
+       "statement": "for finite-dimensional inner product spaces E, F, the pairs (L,P) with L: E -> F linear and injective on range P form an open set, on which the projection onto L(range P) in G(F,k) depends continuously on (L,P); with Q = L P it is Q (Q*Q + 1 - P)^{-1} Q*. L need not be injective on E."
       }
      ],
      "tests": [
@@ -77,6 +77,11 @@
        "name": "rank",
        "kind": "characterisation",
        "statement": "diag(1,1,0) lies in G(R^3,2), not in G(R^3,1), and has trace 2."
+      },
+      {
+       "name": "image plane boundary",
+       "kind": "non-example",
+       "statement": "for L_s = diag(1,s) and lines l_theta the image line tends to l_0 along s = 0 and to l_{pi/2} along theta = pi/2, so there is no continuous extension at (diag(1,0), P_{l_{pi/2}}); diag(1,0) is injective on l_0, A = 1 and the projection there is P_{l_0}."
       }
      ]
     },
@@ -492,6 +497,7 @@
       "where": "39.1 line 7443-7454; 15.6-15.7 line 2903-2933"
      },
      "prerequisites": [
+      "target:1.1",
       "target:1.4",
       "target:2.2",
       "mathlib:LinearMap.normDet",
@@ -1189,7 +1195,7 @@
      "id": "6.4",
      "kind": "theorem",
      "name": "Varifolds.constancy",
-     "statement": "If V is stationary in W and spt||V|| subset Sigma, a connected C^2 embedded k-submanifold of W, then V = theta_0 [Sigma] for a constant theta_0 >= 0, and Sigma is closed in W if V != 0.",
+     "statement": "If V is stationary in W and spt||V|| subset Sigma, a connected C^2 embedded k-submanifold of W, then either V = 0, or Sigma is closed in W with H^k(Sigma cap K) < inf for every compact K subset W (so [Sigma] is defined) and V = theta_0 [Sigma] for a constant theta_0 > 0.",
      "hypotheses": [
       "V stationary in W",
       "Sigma connected C^2 embedded k-submanifold",
@@ -1222,6 +1228,11 @@
        "name": "top dimension",
        "kind": "degenerate",
        "statement": "stationary N-varifolds on connected W are multiples of the volume."
+      },
+      {
+       "name": "non-closed curve",
+       "kind": "degenerate",
+       "statement": "the graph of sin(1/t) over (0,1) is connected, C^2 embedded, of infinite length in the closed ball of radius 2 and not closed; only V = 0 is stationary with support in it, the first alternative."
       }
      ]
     },
@@ -1801,7 +1812,7 @@
       {
        "name": "cone itself",
        "kind": "computation",
-       "statement": "V_i = C_{p,q} satisfies the second conclusion with y_i = 0."
+       "statement": "V_i = V = v(C_{p,q},1) satisfies the second conclusion with y_i = 0."
       }
      ]
     }

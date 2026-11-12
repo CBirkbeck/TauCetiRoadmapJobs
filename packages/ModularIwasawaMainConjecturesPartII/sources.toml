@@ -168,3 +168,20 @@ status = "certified"
 accessed = "2026-11-04"
 version_note = "GDZ image scan, text recognised by OCR; journal pagination."
 cited_for = ["5.1"]
+
+[[source]]
+id = "BKO21"
+authors = "Ashay Burungale, Shinichi Kobayashi, Kazuto Ota"
+title = "Rubin's conjecture on local units in the anticyclotomic tower at inert primes"
+year = 2021
+doi = "10.4007/annals.2021.194.3.8"
+locator_scheme = "theorem"
+locator = "Theorems 6.1–6.2, pp.960–963"
+url = "https://par.nsf.gov/servlets/purl/10336626"
+fetched_from = "https://par.nsf.gov/servlets/purl/10336626"
+fetched_at = "2026-11-10T20:07:26Z"
+sha256 = "72c0d2c7d6c3fb15b244327d194456e4b56ae32d81df9ad97abe313ff104efa3"
+licence_class = "institutional"
+status = "certified"
+accessed = "2026-11-10"
+cited_for = ["Scope and ownership"]

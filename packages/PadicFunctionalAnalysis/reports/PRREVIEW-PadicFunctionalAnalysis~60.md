@@ -1,0 +1,201 @@
+# Review of PadicFunctionalAnalysis (pull request #1807 at 8d98b44)
+
+**Verdict:** accepted
+
+This is an incremental re-review of 0 changed lines in `TauCetiRoadmap/PadicFunctionalAnalysis/` since `afdd14a`. Between `afdd14a` and `8d98b44` the folder is byte-identical: `git diff afdd14a 8d98b44` touches only five files of sibling folders.
+
+- The pins (`lake-manifest.json`) are unchanged.
+- The gate, the dependency check, elaboration and the signature comparison pass.
+- The changed sibling text that cites this roadmap still resolves.
+- The seeded sample's locators agree with the cached sources.
+
+This report has no findings.
+
+## Previous findings
+
+- none: the review of `afdd14a` had no findings (verdict accepted). Nothing in the folder has changed since then, so there is nothing to re-check under this heading.
+
+## Verified sound
+
+### Gate
+
+**The worker's gate at `8d98b44`:** every counter zero, `build=0`, "Every check passed".
+
+**My run of `gate … --base origin/main`** (main now at `c69ba93`):
+
+```text
+gate PadicFunctionalAnalysis: set_option=0 blob=0 latex=0 tex=0 prnum=0 sorry-data=0 sorry-examples=0 residue=0 private-paths=0 imports=0 mathlib-subimports=0 no-import-mathlib=0 lean-lines=0 statement-hygiene=0 forbidden=0 dropped=0 readme-ids-missing=0 empty-sections=0 round-labels=0 long-fences=0 layer-ids=0 target-ids=0 depcheck=0 metadata=0 stray-files=0 dirty=0 outside-folder=26 source-material=0 FAIL
+```
+
+**The `outside-folder=26` hits are not findings.**
+- `git diff --name-only origin/main...HEAD` lists exactly `README.md` and `Suggested.lean` in 14 folders. These are this folder and the 13 sibling folders the brief names as this pull request's own (2 × 13 = 26).
+- `git diff --stat origin/main...HEAD` excluding those 14 folders is empty.
+- In this folder only `README.md` and `Suggested.lean` differ from main. `PROGRESS.md`, `STATUS.md` and `metadata.toml` are main's own files.
+
+### Dependency check
+
+```text
+depcheck: 236 roadmaps, 2135 edges, 0 problem(s)
+```
+
+There is no UPWARD, CYCLE or `moved:` line.
+
+**Suppliers on main** (main moved from `5fc1aa8` to `c69ba93`):
+- `git log 5fc1aa8..origin/main` has 8 commits. None touches RestrictedPowerSeries, NewtonPolygons, `Completed/AdicSpaces`, `Completed/ProfiniteProPGroups`, `Completed/LocalFieldsRamification` or this folder.
+- I re-resolved every supplier id on `origin/main`:
+  - RestrictedPowerSeries §§0.3, 1.1, 1.3, 2.1, 2.2, 2.3 (README lines 224, 247, 277, 306, 324, 340), §7.1 (line 704) and Layers 0–2.
+  - NewtonPolygons Layer 1 (line 442).
+  - AdicSpaces Layer 0 (line 135).
+  - ProfiniteProPGroups Layer 9 (lines 79, 984).
+  - LocalFieldsRamification (its exported contract, line 30).
+
+### Elaboration and signatures
+
+**Elaboration.** `lake env lean TauCetiRoadmap/PadicFunctionalAnalysis/Suggested.lean` exits 0. The only output is eleven `declaration uses sorry` warnings, at lines 74, 84, 98, 142, 166, 175, 189, 202, 218, 237 and 263.
+
+**Signatures.**
+- I elaborated `#check @` for all 13 declarations in one scratch copy.
+- Every elaborated type equals the one in `signatures.md`, up to the `C₀` notation and the opened namespaces.
+- No declaration lost a binder:
+  - `distributions` and `binomialLA` keep `NormedField`, `NormedAlgebra ℚ_[p]`, `Algebra ℤ_[p]`, `IsBoundedSMul`, `IsUltrametricDist` and `CompleteSpace`.
+  - The two adic theorems keep all nine `S` binders of the `section Adic` variable.
+  - `exists_powerSeries_hasSum_weight_factor` keeps its six `K` binders.
+- `Suggested.lean` is unchanged since the padding probe of the previous review, so that probe stands.
+
+### Changed text outside the folder
+
+**The five changed files** (BordismFormalGroups, ClassifyingSpaces, RigidAnalyticGeometry README and `Suggested.lean`, TopologicalKTheory) are all among the brief's 13 own folders.
+
+**Only RigidAnalyticGeometry cites this roadmap:**
+- the supplier-table row at line 140 (unchanged context in the diff);
+- `### From TauCetiRoadmap.PadicFunctionalAnalysis` at lines 342–347;
+- the *Needs:* mentions at lines 569, 812, 938, 1559 and 1645.
+
+**What it asks for exists here.**
+- "Layer 1: the topology of finite Banach modules over a noetherian Banach–Tate ring (its §1.4 bridge …)" is this README's §1.4 target, at lines 461–480. That target is the normed bridge for a commutative Noetherian Banach–Tate ring, with `TauCeti.Huber.IsTateRing.isModuleTopology`.
+- "§2.4: strict exactness of completed scalar extension `L⊗̂_K(−)` on countable-type spaces" is the §2.4 target, at lines 588–598.
+
+The diff since `afdd14a` changes no sentence about this roadmap.
+
+### Pinned names in the sampled sections
+
+I extracted all 237 dotted backticked names from README lines 432–1413 (§§1.3–5.3) and matched each against a declaration at the pinned Mathlib or Tau Ceti.
+- All resolve.
+- My pattern missed only `NonarchimedeanAddGroup.summable_of_tendsto_cofinite_zero`. That name is generated by `to_additive` in `Mathlib/Topology/Algebra/InfiniteSum/Nonarchimedean.lean` and used under that name in `Mathlib/NumberTheory/Padics/MahlerBasis.lean:283` and `TauCeti/NumberTheory/Padics/Distribution/AnalyticStage.lean:150`.
+
+`roadmaps resolve` on the README reports no unresolved citation or Lean name.
+
+### Seeded sample (unchanged text, re-read against the cached sources)
+
+**§1.3.** [CM] Remark 1.2.28 (p. 70) and Corollary 1.2.31 (p. 72) were verified in the previous review (CM lines 2960–3075). The text is unchanged.
+
+**§2.3 [Serre] Proposition 1, p. 70.**
+- Serre line 60, on the page printed 70 (Serre line 54).
+- Condition (N) is applied at Serre line 85.
+
+**§2.4 [Conrad] Lemma 1.1.5.**
+- The lemma is stated at Conrad line 274, on the page printed 6 (line 245).
+- The step the README uses is on printed p. 7 (line 297), at Conrad lines 298–302: countable type, a continuous section by [BGR] 2.7.1/4, then injectivity after `k′⊗̂_k`. This is exactly "the proof of [Conrad] Lemma 1.1.5, p. 7".
+- Conrad's setting is complete fields `k′/k`, matching the README's complete extension `K′/K`.
+
+**§2.6 [Buz] Lemma 2.3(a)–(b), p. 10.**
+- Buz lines 328–332, on the page printed 10 (line 345).
+- Part (a)'s finite `S` comes from Noetherianity (Buz lines 337–342), as the README's route says.
+
+**§§2.1, 2.2, 3.1, 3.4 and 5.1** list only pinned declarations and targets, with no source locator. Their names resolve (above). In §5.1, `γ=exp(q) ↦ (1,1)`, because `exp q ≡ 1 mod q` and `log(exp q)/q=1`; this needs `‖4‖=4⁻¹<2⁻¹` at `p=2`.
+
+**§3.2.** Mahler's theorem is Mathlib's `PadicInt.mahlerEquiv`. The Layer 3 sources cite [Am] Théorème 1, p. 143: Am line 964, PDF page 28. Printed 151 is PDF page 36 (Am line 1236), so PDF page 28 is printed 143.
+
+**§§4.1–4.2.** RestrictedPowerSeries §§0.3, 1.1, 1.3, 2.1–2.3 resolve on main (above). `PadicInt.discHomeomorph` and `TauCeti.AnalyticStage.eval_natCast_val_add_mul` resolve at the pin.
+
+**§4.4 [Am] Théorème 2, p. 150.**
+- Am line 1226, PDF page 35 = printed 150.
+- Théorème 3 is at Am line 1532 (printed 159).
+- Corollaire 1(b) and (c) are at Am lines 1612–1617 (printed 161; printed 162 begins at line 1621). This gives "pp. 159–161" and "Corollaire 1(b), p. 161".
+
+**§4.4 [Col].** Théorème I.4.7 (Col line 712) and Corollaire I.4.8 (Col line 714) are on p. 15 (Col line 685).
+
+**§4.4 transition multiplier.** By Legendre, `v_p(m!)−v_p(⌊m/p⌋!)=⌊m/p⌋` with `m=⌊n/p^h⌋`, which gives `⌊n/p^(h+1)⌋`. Values are in the table.
+
+**§4.7 [Col] Théorème II.2.2, p. 30.**
+- Col line 1502, with Lemme II.2.1 at Col line 1492, both on p. 30 (Col line 1463).
+- §II.2 begins on p. 29 (Col line 1457).
+- §I.6 begins on p. 27 (Col line 1331).
+- Colmez's `L` is a closed subfield of `ℂ_p`. The README's complete `K` needs only Théorème I.4.7 over `ℤ_p`, as recorded in the earlier reviews.
+
+**§5.3 [RJW].**
+- Remark 3.47 is at RJW line 1492, on p. 25 (line 1429). It uses `ℤ_pˣ=μ_(p−1)×(1+pℤ_p)` (RJW line 1495), hence "for odd `p`".
+- Proposition 3.16 is at RJW line 816 (p. 16).
+- Diagram (3.4) and Theorem 3.25 are at RJW lines 954 and 959 (p. 18).
+
+### Ownership and overlaps
+
+**`overlaps.md`:**
+- No dropped id and no revision-only id.
+- Two other open pull requests change this folder, #1808 and #1854. The description's merge-order block states "`PadicFunctionalAnalysis`: this pull request → #1808 → #1854", which is a stated order.
+
+**Citations of this roadmap.** `roadmaps grep PadicFunctionalAnalysis` lists the citing roadmaps, led by LocallyAnalyticDistributions with 80 lines. Since this folder did not change, no id they cite has moved.
+
+**Ownership against the other open heads** was checked through the overlaps index and `roadmaps grep`. I did not reread the other open heads beyond those hits.
+
+### Adversarial table
+
+- Rows marked *(r59)* or *(r58)* are carried from the reviews of `afdd14a` and `d18ec2a`. No statement changed since then.
+- Rows marked *(r60)* were computed this round on statements of the sampled sections.
+
+| Statement | Instance | Left side | Right side | Result | Change |
+| --- | --- | --- | --- | --- | --- |
+| §4.4 transition multiplier `m_h(n)/m_(h+1)(n)` *(r60)* | `p=2,h=0,n=4`; `p=3,h=1,n=9`; `p=2,h=1,n=3` | `4!/2!=12`, `v_2=2`; `3!/1!=6`, `v_3=1`; `1!/0!=1`, `v_2=0` | `⌊4/2⌋=2`; `⌊9/9⌋=1`; `⌊3/4⌋=0` | valuation `⌊n/p^(h+1)⌋` in each case | none |
+| §2.6 transpose adapter Check *(r60)* | `v(a,b)=(b,a,0)`, `u(x,y,z)=(x,y)` | `B(v)B(u)`: `(0,1)=1·1`, `(1,0)=1·1`, diagonal `0` | `B(u∘v)`: transpose of the swap is the swap | equal; `B(u)B(v)` is `3×3` with `1` at `(0,1),(1,0)` only | none |
+| §2.6 diagonal Check *(r60)* | `diag(p^n)` on `C₀(ℕ,ℚ_p)` | preimage of `(p^n)` is `(1,1,…)` | `‖1‖=1` does not tend to `0` | not surjective, as stated | none |
+| §2.3 / Layer 2 Check *(r60)* | `ℚ_p` with `‖x‖=p^(1/2)|x|` | nonzero norms `p^(1/2)p^ℤ` | `‖p‖^ℤ=p^ℤ`; `1∉p^(1/2)p^ℤ` | potentially but not isometrically ONable | none |
+| §2.4 constant-term Check *(r60)* | `f=1+T` in `ℚ_p⟨T⟩` | `‖f‖=1` | `max(‖T‖,|1|)=1` | isometric splitting | none |
+| §5.1 decomposition *(r60)* | `γ=exp q`, `p=2` | `exp 4 ≡ 1 mod 4`, Δ-part `1` | `log(exp 4)/4=1` | `γ ↦ (1,1)` | none |
+| §3.4 `φ` Check *(r60)* | `φδ₁`, `p=3` | `φδ₁=δ₃` | `A=(1+T)^3`, no factor `3⁻¹` | as stated | none |
+| `exists_powerSeries_hasSum_weight_factor` *(r59)* | trivial `κ`, any `h` | `T_κ=0<r_h`; clause 1: `κ(x)=1` | `exp(… · log 1)=exp 0=1` | holds; `F=1`, `‖coeff₀‖=1` | none |
+| same *(r59)* | `κ(x)=x`, odd `p`, `h=0` (`h'=1`) | `‖T_κ‖=p⁻¹<p^(−1/(p−1))`; clause 1 at `x=1+p`: `1+p` | `exp(log(1+p))=1+p` | holds; `F=d₁(1+u₀)+cX` | none |
+| same *(r59)* | `κ(x)=x`, `p=2`, `h=0` (`h'=2`) | `‖T_κ‖=4⁻¹<2⁻¹=r_0`; at `x=5`: `5` | `exp(log 5)=5` | holds | none |
+| same, negative control on `hκ` *(r59)* | `p=3`, `ψ` of conductor 9, `h=0` | `‖ζ_3−1‖=3^(−1/2)=r_0`: `hκ` false; clause 1 at `γ`: `ζ_3` | `exp(log ζ_3)=1` | would fail; `hκ` excludes it | none |
+| same *(r59)* | same `ψ`, `h=1` | `3^(−1/2)<3^(−1/6)=r_1`; `ψ(γ³)=1` | `exp 0=1`; `F=ψ(d₁)` | holds | none |
+| same, level control *(r59)* | `p=2`, `h'=1`, sign weight, `x=−1` | `κ(−1)=−1` | `exp(log(−1)/2·log 1)=1` | would fail; Lean has `h'≥2` | none |
+| same, Gauss bound *(r59)* | `p=2,h=0`: `‖w^n/(4n)‖` | `n=1,2,4`: `1`, `2⁻¹`, `2⁻⁴` | `‖G^k/k!‖<2⁻¹`, `k≥1` | coefficients `≤1`, tending to `0` | none |
+| §4.6 equivalence *(r59)* | `p=2,h=1,t=√2` | `‖(1+t)²−1‖=2⁻¹`, not `<r_p` | `‖t‖=2^(−1/2)=r_1`, not `<` | both fail | none |
+| §1.3 with [CM] *(r59)* | `K=ℚ_p` | complete DVF, spherically complete | Cor. 1.2.31: orthogonal basis | supported | none |
+| Layer 1 Check (N) *(r59)* | `ℚ_p²`, `max(|x|,p^(−1/2)|y|)` | standard basis orthogonal | `‖(0,1)‖=p^(−1/2)∉p^ℤ∪{0}` | not orthonormal; (N) fails | none |
+| Layer 1 Check `ℓ¹` *(r59)* | `ℚ_p²`, `|x|+|y|` | `≥max` holds | `‖(1,1)‖=2>1` | equality fails without ultrametric | none |
+| Convention 9 *(r59)* | `amiceRadius 2 0`, `2 2`, `3 0` | `2⁻¹=r_p` | `2^(−1/4)`; `3^(−1/2)` | consistent | none |
+| Convention 10 *(r59)* | max-norm `ℚ_p[ε]`; sup-norm `ℚ_p×ℚ_p` | `‖ε‖=1`, `ε²=0` | `‖T‖=‖q‖<1`, power-multiplicative | nilpotent of norm 1; equivalence in the second | none |
+| `amiceMap_bijective_and_norm_eq` *(r58)* | `p=2,h=1,E=ℤ_2`, `c=single 2 1` | stage norm `max(‖−1‖,‖2‖)=1` | `‖c‖=1` | isometric | none |
+| same *(r58)* | `E=0` | `C₀(ℕ,0)=0` | `LA_h(0)=0` | bijective, norms 0 | none |
+| `isOrthonormalBasis_amiceTerm` *(r58)* | `p=2,h=1,n=0,1,2` | `(1;1)`, `(0,2;1,2)`, `(0,−1,2;0,1,2)` | mod 2 independent | norm 1 | none |
+| `exists_eval_eq_addChar_iff` *(r58)* | `p=2,h=0,t=2`; `p=3,h=0,t=3` | `v(2ⁿ/n!)=s_2(n)`; `v(3ⁿ/n!)→∞` | `2⁻¹=r_0`; `3⁻¹<3^(−1/2)` | both false; both true | none |
+| `amiceTransform_distribution_bijective` *(r58)* | `μ'(f)=f'(0)`; `b_n=1/n!` | `‖μ'‖_h=p^h`; `p^⌊n/p⌋→∞` | `log(1+T)`; `exp T` radius `r_p<1` | distribution; excluded | none |
+| `binomialLA` *(r58)* | `p=2,n=2` | level 0: norm 2 | level 1: norm 1 | `=‖m_h(2)‖⁻¹` | none |
+| `exists_character_of_hasEval` *(r58)* | `S=𝔽_p[ε]/ε²`; `S=ℤ_2,z=2` | `κ(γ^s)=1+sε`; `κ(γ)=3` | coordinate `ε`; `2` top. nilpotent | unique; holds | none |
+| `eq_aeval_binomialSeries` *(r58)* | `κ=x^k`, `k` odd, `x=−1` | `ω(−1)^k=−1` | without finite part: `1` | discriminates | none |
+| `amiceTransform_completedGroupAlgebra_compat` *(r58)* | `μ=δ_a` | `(1+X)^a↦[ofAdd a]` | `[ofAdd a]` | agree | none |
+| `measurePairing_injective` *(r58)* | odd `p`, `δ_1−δ_(1+p)` | trivial weight: `0` | `κ=x`: `−p≠0` | separated | none |
+| `exists_eval_eq_weight_iff` *(r58)* | trivial; `κ=x`, `h=0`; `p=3` `ψ` cond. 9; `p=2` sign | `f=1`; `x`; values on cosets | `0<r_h`; `p⁻¹<r_0`; `=r_0` / `<r_1`; `0<2⁻¹` | agree | none |
+| `mem_span_iff_forall_eval_annulus` *(r58)* | `TU−p`; `T` | `t(p/t)−p=0`; `t≠0` | in span; `T∉(TU−p)` | agree | none |
+| §5.2 valuations *(r58)* | `p=5,m=2`; `p=2,m=3` | `v(ζ_5−1)=1/4`; `v(−2)=1` | `1/4`; `1` | agree | none |
+
+### Library declarations opened at the pins this round
+
+**Mathlib:**
+- `NonarchimedeanAddGroup.summable_of_tendsto_cofinite_zero` (`Topology/Algebra/InfiniteSum/Nonarchimedean.lean:98`, the `to_additive` form of `multipliable_of_tendsto_cofinite_one`).
+- `PadicInt.mahlerEquiv` (`NumberTheory/Padics/MahlerBasis.lean:353`).
+
+**Tau Ceti:**
+- `TauCeti.amiceRadius` (`NumberTheory/Padics/Distribution/Amice/Norm.lean:98`).
+- The 13 elaborated `Suggested.lean` signatures, against their pinned carriers.
+
+The other 234 names of the sweep were matched by declaration line only.
+
+## Not verifiable
+
+- [Sch], [BGR] and [Bel] are settled as uncertified and cited by locator. Within the sample, [BGR] 2.7.1/4 and 3.7.3 are reached through Conrad lines 272 and 300, where Conrad cites them, but they were not read.
+- [ST] Theorem 2.2, p. 9 (§4.7) and [JN] §2.1, p. 8 (§1.4) were not re-read this round. Neither text changed, and the earlier reviews checked them.
+
+## Source issues
+
+- none

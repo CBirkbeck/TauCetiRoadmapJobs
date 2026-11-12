@@ -1,0 +1,4 @@
+{"review": {"status": "accepted", "reviewer": "independent-review-PRREVIEW-YangMillsConnectionsAndCaloricGauge~4",
+            "head": "8e1ec251047dafe39bf48353c3baa5859739cb31", "pr": 2164, "folder": "YangMillsConnectionsAndCaloricGauge", "date": "2026-11-11",
+            "findings": 0, "blocking": 0,
+            "notes": "incremental re-review of 12 changed lines since 35d692f: R01 repaired (contract and §1.1 Needs name nonempty_embeddedLieSubgroupData_lieSubalgebraOfSubgroup_of_isClosed, Embedded.lean:137); scratch test composing it with range_lieMapSubtypeVal_eq (Differential.lean:225) elaborates at the pin; adversarial rows for the contract and the §1.1 route; PR title and description read against the head; gate OK (all checks 0); depcheck 0 problems; Suggested.lean elaborates with sorry the only warning; no sampled target or locator in the changed passages."}}

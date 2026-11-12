@@ -4,8 +4,129 @@
  "parent": "CountableStructureSpaces",
  "summary": "Compares isomorphism relations of classes of countable structures by Borel reducibility; defines Borel completeness (also for languages with function symbols); proves by explicit continuous codings that graphs, linear orders and trees are Borel complete (Friedman–Stanley); embeds every Borel S∞-space into the logic action of the language with one n-ary symbol per n (Becker–Kechris for S∞, through the Polish realization of NoncompactQuantumSymmetry); proves the characterisations of Borel completeness; and shows that a Borel complete isomorphism relation is not Borel, lies above E₀, has continuum many classes and unbounded Scott height, with the Friedman–Stanley obstruction lemma.",
  "baseline": {
-  "mathlib": "f6090c7095e1e56b3464c1daba5f24631f1290d2",
-  "tauceti": "358314d4ab97483df4fc4cb8adcc02e74a8d9f5a"
+  "mathlib": "1b1ccf4b088b32fa3f23f2de1127433254a81e1e",
+  "tauceti": "2fd255d997f47c0b5d834ee416c7015d55444ce5",
+  "declarations": [
+   {
+    "ref": "tauceti:TauCeti.RelationalConfiguration",
+    "kind": "def",
+    "module": "TauCeti/ModelTheory/RelationalConfiguration/Basic.lean",
+    "provides": "The coding space Atom L V → Bool, for every language and carrier; atom, eval, restrict with restrict_id, restrict_comp, measurable_restrict; the relabelling action of Equiv.Perm V with perm_smul_def and eval_perm_smul.",
+    "checked": "Statement and hypotheses read in the pinned source tree."
+   },
+   {
+    "ref": "tauceti:TauCeti.RelationalConfiguration.continuous_iff",
+    "kind": "theorem",
+    "module": "TauCeti/ModelTheory/RelationalConfiguration/Topology.lean",
+    "provides": "Continuity into codes is continuity of every atom coordinate; with continuous_restrict, isClopen_setOf_eval, the compact, Polish and Borel instances (countable relation symbols and carrier) and mk_le_continuum.",
+    "checked": "Statement and hypotheses read in the pinned source tree."
+   },
+   {
+    "ref": "tauceti:TauCeti.RelationalConfiguration.toStructure",
+    "kind": "def",
+    "module": "TauCeti/ModelTheory/RelationalConfiguration/Structure.lean",
+    "provides": "Decoding for relational L; Equiv.encodeVia with eval_encodeVia, nonempty_equiv_encodeVia and encodeVia_trans.",
+    "checked": "Statement and hypotheses read in the pinned source tree."
+   },
+   {
+    "ref": "tauceti:TauCeti.RelationalConfiguration.isoSetoid",
+    "kind": "def",
+    "module": "TauCeti/ModelTheory/RelationalConfiguration/Isomorphism.lean",
+    "provides": "Isomorphism of decoded structures (relational L), with isoSetoid_apply, perm_smul_eq_encodeVia, isoSetoid_iff_exists_perm_smul_eq, isoSetoid_eq_orbitRel, Equiv.isoSetoid_encodeVia_iff, analyticSet_setOf_isoSetoid and IsomorphismInvariant with isomorphismInvariant_iff_isInvariantBlock.",
+    "checked": "Statement and hypotheses read in the pinned source tree."
+   },
+   {
+    "ref": "tauceti:TauCeti.RelationalConfiguration.modelsOf",
+    "kind": "def",
+    "module": "TauCeti/ModelTheory/RelationalConfiguration/ModelsOf.lean",
+    "provides": "Model classes of infinitary sentences, the carrier of the base theorems lopez_escobar and measurableSet_iso_inter_of_scottHeight_le.",
+    "checked": "Statement and hypotheses read in the pinned source tree."
+   },
+   {
+    "ref": "tauceti:FirstOrder.Language.LEquiv.onConfiguration",
+    "kind": "def",
+    "module": "TauCeti/ModelTheory/RelationalConfiguration/LanguageMap.lean",
+    "provides": "The homeomorphism of coding spaces induced by a language equivalence, on every carrier, with measurable_onConfiguration, onConfiguration_symm, onConfiguration_trans and, for relational languages, isoSetoid_onConfiguration_iff and image_onConfiguration_modelsOf.",
+    "checked": "Statement and hypotheses read in the pinned source tree."
+   },
+   {
+    "ref": "tauceti:TauCeti.RelationalConfiguration.IsSimpleGraph",
+    "kind": "def",
+    "module": "TauCeti/Combinatorics/SimpleGraph/RelationalConfiguration.lean",
+    "provides": "Symmetric irreflexive codes of Language.graph, with IsSimpleGraph.restrict, measurableSet_setOf_isSimpleGraph, SimpleGraph.toRelationalConfiguration, SimpleGraph.relationalConfigurationEquiv, SimpleGraph.range_toRelationalConfiguration and SimpleGraph.measurableEmbedding_toRelationalConfiguration.",
+    "checked": "Statement and hypotheses read in the pinned source tree."
+   },
+   {
+    "ref": "tauceti:Equiv.Perm.instTopologicalSpace",
+    "kind": "instance",
+    "module": "TauCeti/Topology/Algebra/Group/Perm.lean",
+    "provides": "The topology on the permutations of a discrete space, with instIsTopologicalGroup, instPolishSpace (countable carrier) and hasBasis_nhds_one_fixingSubgroup (stabilizers of finite sets). No σ-algebra on Equiv.Perm at either pin.",
+    "checked": "Statement and hypotheses read in the pinned source tree."
+   },
+   {
+    "ref": "tauceti:Setoid.BorelReducible",
+    "kind": "def",
+    "module": "TauCeti/SetTheory/Descriptive/BorelReducibility.lean",
+    "provides": "Borel reducibility of setoids on measurable spaces, with borelReducible_comap, borelReducible_iff_exists_eq_comap, refl, trans, exists_measurable_injective_quotient, lift_mk_quotient_le, measurableSet_setOf; Setoid.IsSmooth with IsSmooth.measurableSet_setOf and isSmooth_of_countable_quotient.",
+    "checked": "Statement and hypotheses read in the pinned source tree."
+   },
+   {
+    "ref": "tauceti:TauCeti.eZero",
+    "kind": "def",
+    "module": "TauCeti/SetTheory/Descriptive/EZero.lean",
+    "provides": "E₀ on ℕ → Bool with eZero_iff_finite, measurableSet_eZero, not_isSmooth_eZero, not_isSmooth_of_borelReducible_eZero, mk_quotient_eZero and borelReducible_bot_eZero.",
+    "checked": "Statement and hypotheses read in the pinned source tree."
+   },
+   {
+    "ref": "tauceti:TauCeti.BFEquiv",
+    "kind": "def",
+    "module": "TauCeti/ModelTheory/BackAndForth/Equivalence.lean",
+    "provides": "Ordinal back-and-forth equivalence of tuples for relational languages (successor retains the previous level), with zero, add_one, limit, mono, symm, trans and FirstOrder.Language.Equiv.bfEquiv.",
+    "checked": "Statement and hypotheses read in the pinned source tree."
+   },
+   {
+    "ref": "tauceti:TauCeti.IsTupleBFSystem",
+    "kind": "structure",
+    "module": "TauCeti/ModelTheory/BackAndForth/TupleSystem.lean",
+    "provides": "Tuple back-and-forth systems; with potentialIso_iff_exists_isTupleBFSystem (Presentation.lean), countable_potentialIso_iff_iso (Countable.lean) and sameAtomicType_order_iff (DiscreteOrder.lean).",
+    "checked": "Statement and hypotheses read in the pinned source tree."
+   },
+   {
+    "ref": "tauceti:TauCeti.scottHeight",
+    "kind": "def",
+    "module": "TauCeti/ModelTheory/Scott/Height.lean",
+    "provides": "The external Scott height, as used by the base's bounded-height theorem.",
+    "checked": "Statement and hypotheses read in the pinned source tree."
+   },
+   {
+    "ref": "tauceti:FirstOrder.Language.smallPresentationEquiv",
+    "kind": "def",
+    "module": "TauCeti/ModelTheory/Infinitary/SmallPresentation.lean",
+    "provides": "The equivalence of a countable language with its small presentation in Language.{0, 0}, with isRelational_smallPresentation and countable_relations_smallPresentation.",
+    "checked": "Statement and hypotheses read in the pinned source tree."
+   },
+   {
+    "ref": "tauceti:FirstOrder.Language.graphExpansion",
+    "kind": "def",
+    "module": "TauCeti/ModelTheory/Infinitary/GraphTranslation/Language.lean",
+    "provides": "The graph language (GraphRelation, graphLanguage) and the graph expansion; graphAxioms, model_graphAxioms_iff, reconstructStructure and reconstructStructure_graphExpansion in Reconstruct.lean.",
+    "checked": "Statement and hypotheses read in the pinned source tree."
+   },
+   {
+    "ref": "mathlib:FirstOrder.Language.equiv_between_cg",
+    "kind": "theorem",
+    "module": "Mathlib/ModelTheory/PartialEquiv.lean",
+    "provides": "Back-and-forth between countably generated structures forming extension pairs; used for the coloured Cantor theorem.",
+    "checked": "Statement and hypotheses read in the pinned source tree."
+   },
+   {
+    "ref": "mathlib:MeasurableSet.image_of_measurable_injOn",
+    "kind": "theorem",
+    "module": "Mathlib/MeasureTheory/Constructions/Polish/Basic.lean",
+    "provides": "Lusin–Souslin: measurable injective images of Borel sets are Borel.",
+    "checked": "Statement and hypotheses read in the pinned source tree."
+   }
+  ]
  },
  "layers": [
   {
@@ -16,7 +137,7 @@
      "id": "0.1",
      "kind": "definition",
      "name": "classIso",
-     "statement": "For K : Set (StructureSpace L), classIso K : Setoid K is Setoid.comap of structureIsoSetoid L along the inclusion K → StructureSpace L; K carries the subtype σ-algebra.",
+     "statement": "For K : Set (RelationalConfiguration L ℕ), classIso K : Setoid K is Setoid.comap of Tau Ceti's isoSetoid L ℕ along the inclusion K → RelationalConfiguration L ℕ; K carries the subtype σ-algebra.",
      "hypotheses": [
       "L is a relational first-order language ([L.IsRelational]) (no countability needed for the definition)"
      ],
@@ -25,7 +146,8 @@
       "where": "Definition 1.4, line 83; camerlo-gao-boolean lines 106–110 for classes"
      },
      "prerequisites": [
-      "roadmap:CountableStructureSpaces §4.1",
+      "tauceti:TauCeti.RelationalConfiguration.isoSetoid",
+      "tauceti:TauCeti.RelationalConfiguration.isoSetoid_eq_orbitRel",
       "mathlib:Setoid.comap",
       "mathlib:measurable_subtype_coe"
      ],
@@ -33,17 +155,17 @@
       {
        "name": "classIso_iff",
        "role": "unfolding",
-       "statement": "For x y : K, classIso K x y holds iff the decoded structures of x and y are isomorphic, iff x and y lie in one orbit of the logic action (structureIsoSetoid_eq_orbitRel)."
+       "statement": "For x y : K, classIso K x y holds iff the decoded structures of x and y are isomorphic (isoSetoid_apply), iff x and y lie in one orbit of the logic action (isoSetoid_eq_orbitRel)."
       },
       {
        "name": "borelReducible_classIso_univ",
        "role": "compatibility",
-       "statement": "classIso Set.univ and structureIsoSetoid L are Borel reducible to each other, the inclusion of univ being a measurable equivalence."
+       "statement": "classIso Set.univ and isoSetoid L ℕ are Borel reducible to each other, the inclusion of univ being a measurable equivalence."
       },
       {
        "name": "quotient_injection",
        "role": "structure",
-       "statement": "A Borel reduction of classIso K' to classIso K induces an injection of quotients (BorelEquivalenceRelations §5.1); it need not be injective on codes."
+       "statement": "A Borel reduction of classIso K' to classIso K induces an injection of quotients (Tau Ceti BorelReducible.exists_measurable_injective_quotient, not restated); it need not be injective on codes."
       }
      ],
      "tests": [
@@ -73,7 +195,7 @@
      "id": "0.2",
      "kind": "theorem",
      "name": "borelReducible_classIso_of_subset",
-     "statement": "If A ⊆ K then classIso A is Borel reducible to classIso K; hence if classIso K' is Borel reducible to classIso K and A ⊆ K', then classIso A is Borel reducible to classIso K.",
+     "statement": "If A ⊆ K then classIso A is Borel reducible to classIso K; hence if classIso K' is Borel reducible to classIso K and A ⊆ K', then classIso A is Borel reducible to classIso K. Route: classIso A is Setoid.comap of classIso K along the measurable inclusion A → K, and Tau Ceti's Setoid.borelReducible_comap applies.",
      "hypotheses": [
       "L is a relational first-order language ([L.IsRelational])",
       "A, K, K' arbitrary sets of codes (no Borelness needed)"
@@ -84,7 +206,8 @@
      },
      "prerequisites": [
       "target:0.1",
-      "roadmap:BorelEquivalenceRelations §5.1",
+      "tauceti:Setoid.BorelReducible",
+      "tauceti:Setoid.borelReducible_comap",
       "mathlib:measurable_subtype_coe",
       "mathlib:Measurable.subtype_mk"
      ],
@@ -93,7 +216,7 @@
       {
        "name": "restriction_to_orbit",
        "kind": "computation",
-       "statement": "Restricting the reduction of 2.5 to the orbit of one code of StructureSpace L' gives a reduction of a one-class relation."
+       "statement": "Restricting the reduction of 2.5 to the orbit of one code of RelationalConfiguration L' ℕ gives a reduction of a one-class relation."
       }
      ]
     },
@@ -101,9 +224,9 @@
      "id": "0.3",
      "kind": "theorem",
      "name": "borelReducible_classIso_of_measurable",
-     "statement": "If f : StructureSpace L' → StructureSpace L is measurable, maps K' into K, and for all x y ∈ K' the codes x, y are isomorphic iff f x, f y are, then classIso K' is Borel reducible to classIso K.",
+     "statement": "If f : RelationalConfiguration L' ℕ → RelationalConfiguration L ℕ is measurable, maps K' into K, and for all x y ∈ K' the codes x, y are isomorphic iff f x, f y are, then classIso K' is Borel reducible to classIso K. Route: the corestriction K' → K of f is measurable and Tau Ceti's Setoid.borelReducible_iff_exists_eq_comap applies.",
      "hypotheses": [
-      "L is a relational first-order language ([L.IsRelational]) with countably many relation symbols ([Countable (Σ l, L.Relations l)])",
+      "L is a relational first-order language ([L.IsRelational]) with countably many relation symbols ([∀ n, Countable (L.Relations n)])",
       "L' relational",
       "f measurable"
      ],
@@ -113,7 +236,8 @@
      },
      "prerequisites": [
       "target:0.1",
-      "roadmap:BorelEquivalenceRelations §5.1",
+      "tauceti:Setoid.BorelReducible",
+      "tauceti:Setoid.borelReducible_iff_exists_eq_comap",
       "mathlib:Measurable.subtype_mk"
      ],
      "api": [],
@@ -154,6 +278,16 @@
        "name": "SetReducible.analyticSet",
        "role": "compatibility",
        "statement": "For X, Y Polish with Borel σ-algebras, SetReducible A B and AnalyticSet B give AnalyticSet A (refine the topology by Measurable.exists_continuous, then AnalyticSet.preimage)."
+      },
+      {
+       "name": "setReducible_empty_iff",
+       "role": "boundary",
+       "statement": "SetReducible A (∅ : Set Y) ↔ A = ∅ ∧ (IsEmpty X ∨ Nonempty Y): the right side records that some map X → Y exists (the empty map, or a constant map, both measurable)."
+      },
+      {
+       "name": "setReducible_univ_iff",
+       "role": "boundary",
+       "statement": "SetReducible A (Set.univ : Set Y) ↔ A = Set.univ ∧ (IsEmpty X ∨ Nonempty Y)."
       }
      ],
      "tests": [
@@ -165,7 +299,7 @@
       {
        "name": "empty_and_univ_targets",
        "kind": "degenerate",
-       "statement": "A is set reducible to ∅ iff A = ∅ and to univ iff A = univ."
+       "statement": "Negative control for the existence clause: X = Unit, Y = Empty, A = ∅ satisfies A = ∅, yet no map Unit → Empty exists, so A is not set reducible to ∅ ⊆ Empty, and A = Set.univ ⊆ Unit is not set reducible to Set.univ ⊆ Empty; for X = Y = Empty the empty map witnesses both; for nonempty Y, A is set reducible to ∅ iff A = ∅ and to Set.univ iff A = Set.univ."
       },
       {
        "name": "nonborel_not_reducible",
@@ -194,7 +328,7 @@
      },
      "prerequisites": [
       "target:0.4",
-      "roadmap:BorelEquivalenceRelations §5.1",
+      "tauceti:Setoid.BorelReducible",
       "mathlib:Measurable.prodMap"
      ],
      "api": [],
@@ -204,7 +338,7 @@
      "id": "0.6",
      "kind": "theorem",
      "name": "setReducible_eZero_diagonal",
-     "statement": "The graph of eZero is SetReducible to the diagonal of (ℕ → Bool) × (ℕ → Bool), whereas eZero is not BorelReducible to (⊥ : Setoid (ℕ → Bool)); so set reducibility of graphs does not imply Borel reducibility.",
+     "statement": "The graph of TauCeti.eZero is SetReducible to the diagonal of (ℕ → Bool) × (ℕ → Bool) (it is Borel, measurableSet_eZero), whereas eZero is not Setoid.BorelReducible to (⊥ : Setoid (ℕ → Bool)) (that is Setoid.IsSmooth eZero, refuted by not_isSmooth_eZero); so set reducibility of graphs does not imply Borel reducibility.",
      "hypotheses": [],
      "locator": {
       "source": "paolini-shelah-tfab",
@@ -212,8 +346,10 @@
      },
      "prerequisites": [
       "target:0.4",
-      "roadmap:BorelEquivalenceRelations §5.4",
-      "roadmap:BorelEquivalenceRelations §5.2"
+      "tauceti:TauCeti.eZero",
+      "tauceti:TauCeti.measurableSet_eZero",
+      "tauceti:TauCeti.not_isSmooth_eZero",
+      "tauceti:Setoid.IsSmooth"
      ],
      "api": [],
      "tests": []
@@ -227,8 +363,8 @@
     {
      "id": "1.1",
      "kind": "construction",
-     "name": "StructureSpaceOn.relabel",
-     "statement": "For any language L and e : α ≃ β, the map StructureSpaceOn L α → StructureSpaceOn L β sending c to the code with value c ⟨R, e.symm ∘ w⟩ at ⟨R, w⟩; a homeomorphism and measurable equivalence.",
+     "name": "relabelHomeomorph",
+     "statement": "For any language L and e : α ≃ β, relabelling along e is Tau Ceti's RelationalConfiguration.restrict e.symm : RelationalConfiguration L α → RelationalConfiguration L β (value c.eval (atom R (e.symm ∘ w)) at atom R w). Bundle it as a homeomorphism and measurable equivalence with inverse restrict e. The library has the unbundled map with restrict_id, restrict_comp, measurable_restrict and continuous_restrict, and identifies relabelling with transport of the decoded structure only for permutations (perm_smul_eq_encodeVia); the bundled equivalence and the identification for an arbitrary bijection are new.",
      "hypotheses": [
       "any language L",
       "e : α ≃ β"
@@ -238,29 +374,32 @@
       "where": "lines 159–164 (the logic action as relabelling of structures on ℕ)"
      },
      "prerequisites": [
-      "roadmap:CountableStructureSpaces Layer 0",
-      "roadmap:CountableStructureSpaces §1.2"
+      "tauceti:TauCeti.RelationalConfiguration.restrict",
+      "tauceti:TauCeti.RelationalConfiguration.restrict_comp",
+      "tauceti:TauCeti.RelationalConfiguration.continuous_restrict",
+      "tauceti:Equiv.encodeVia",
+      "tauceti:Equiv.isoSetoid_encodeVia_iff"
      ],
      "api": [
       {
-       "name": "relabel_trans/relabel_refl",
+       "name": "relabelHomeomorph_trans/relabelHomeomorph_refl",
        "role": "functoriality",
-       "statement": "Relabelling along e.trans e' is the composite and along Equiv.refl is the identity; inverse along e.symm."
+       "statement": "Relabelling along e.trans e' is the composite and along Equiv.refl is the identity; the inverse is relabelling along e.symm (restrict_comp, restrict_id)."
       },
       {
-       "name": "relabel_perm",
+       "name": "relabelHomeomorph_perm",
        "role": "compatibility",
-       "statement": "For α = β = ℕ, relabelling along σ is the logic action σ • ·."
+       "statement": "For α = β = ℕ, relabelling along σ is the logic action σ • · (perm_smul_def)."
       },
       {
-       "name": "relabel_eq_encodeVia",
+       "name": "relabelHomeomorph_eq_encodeVia",
        "role": "compatibility",
-       "statement": "For relational L, the relabelled code is encodeVia e of the decoded structure; c and its relabelling decode to isomorphic structures."
+       "statement": "For relational L, the relabelled code is @Equiv.encodeVia L α β c.toStructure e (both read c.eval (atom R (e.symm ∘ w)) at atom R w, by eval_restrict and eval_encodeVia); c and its relabelling decode to isomorphic structures (Equiv.nonempty_equiv_encodeVia)."
       },
       {
-       "name": "relabel_iso_iff",
+       "name": "relabelHomeomorph_iso_iff",
        "role": "characterisation",
-       "statement": "Two codes on α are isomorphic iff their relabellings are; invariant Borel classes map to invariant Borel classes."
+       "statement": "Two codes on α are isomorphic iff their relabellings are (Equiv.isoSetoid_encodeVia_iff); invariant Borel classes map to invariant Borel classes, and classIso of a class and of its image are Borel reducible to each other."
       }
      ],
      "tests": [
@@ -285,9 +424,9 @@
      "id": "1.2",
      "kind": "definition",
      "name": "BorelComplete",
-     "statement": "BorelComplete K for K : Set (StructureSpace L): for every L' : Language.{0,0} with [L'.IsRelational] [Countable (Σ l, L'.Relations l)] and every K' : Set (StructureSpace L') with MeasurableSet K' and IsomorphismInvariant K', BorelReducible (classIso K') (classIso K).",
+     "statement": "BorelComplete K for K : Set (RelationalConfiguration L ℕ): for every L' : Language.{0,0} with [L'.IsRelational] [∀ n, Countable (L'.Relations n)] and every K' : Set (RelationalConfiguration L' ℕ) with MeasurableSet K' and IsomorphismInvariant K', Setoid.BorelReducible (classIso K') (classIso K).",
      "hypotheses": [
-      "L is a relational first-order language ([L.IsRelational]) with countably many relation symbols ([Countable (Σ l, L.Relations l)])"
+      "L is a relational first-order language ([L.IsRelational]) with countably many relation symbols ([∀ n, Countable (L.Relations n)])"
      ],
      "locator": {
       "source": "paolini-shelah-tfab",
@@ -295,14 +434,14 @@
      },
      "prerequisites": [
       "target:0.1",
-      "roadmap:BorelEquivalenceRelations §5.1",
-      "roadmap:CountableStructureSpaces §1.2"
+      "tauceti:Setoid.BorelReducible",
+      "tauceti:TauCeti.RelationalConfiguration.IsomorphismInvariant"
      ],
      "api": [
       {
        "name": "BorelComplete.of_borelReducible",
        "role": "functoriality",
-       "statement": "BorelComplete K and BorelReducible (classIso K) (classIso K₂) give BorelComplete K₂; in particular K ⊆ K₂."
+       "statement": "BorelComplete K and Setoid.BorelReducible (classIso K) (classIso K₂) give BorelComplete K₂; in particular K ⊆ K₂."
       },
       {
        "name": "borelComplete_congr",
@@ -317,7 +456,7 @@
       {
        "name": "borelComplete_map_lequiv_iff",
        "role": "compatibility",
-       "statement": "For e : L ≃ᴸ L₂, K is Borel complete iff its image under the code-space homeomorphism of e is."
+       "statement": "For a language equivalence e : L ≃ᴸ L₂ of countable relational languages, K is Borel complete iff e.onConfiguration '' K is (Tau Ceti LEquiv.onConfiguration)."
       }
      ],
      "tests": [
@@ -347,9 +486,9 @@
      "id": "1.3",
      "kind": "theorem",
      "name": "BorelComplete.borelReducible_univ",
-     "statement": "If BorelComplete K, then for every L' : Language.{u', v'} with [L'.IsRelational] [Countable (Σ l, L'.Relations l)] and every invariant Borel K' ⊆ StructureSpace L', classIso K' is Borel reducible to classIso K.",
+     "statement": "If BorelComplete K, then for every L' : Language.{u', v'} with [L'.IsRelational] [∀ n, Countable (L'.Relations n)] and every invariant Borel K' ⊆ RelationalConfiguration L' ℕ, classIso K' is Borel reducible to classIso K. Route: transport K' along Tau Ceti's smallPresentationEquiv L' by LEquiv.onConfiguration, a homeomorphism measurable both ways that preserves and reflects isomorphism (isoSetoid_onConfiguration_iff).",
      "hypotheses": [
-      "L is a relational first-order language ([L.IsRelational]) with countably many relation symbols ([Countable (Σ l, L.Relations l)])",
+      "L is a relational first-order language ([L.IsRelational]) with countably many relation symbols ([∀ n, Countable (L.Relations n)])",
       "L' countable relational in arbitrary universes",
       "K' invariant Borel"
      ],
@@ -359,8 +498,9 @@
      },
      "prerequisites": [
       "target:1.2",
-      "roadmap:InfinitaryModelExistence §0.3",
-      "roadmap:CountableModelCounting Layer 0",
+      "tauceti:FirstOrder.Language.smallPresentationEquiv",
+      "tauceti:FirstOrder.Language.LEquiv.onConfiguration",
+      "tauceti:FirstOrder.Language.LEquiv.isoSetoid_onConfiguration_iff",
       "target:1.1"
      ],
      "api": [],
@@ -370,17 +510,17 @@
      "id": "1.4",
      "kind": "construction",
      "name": "FunCode",
-     "statement": "For L with countably many function and relation symbols, the functional coding space: pairs (F, c) of a table F : (Σ f : (Σ l, L.Functions l), Fin f.1 → ℕ) → ℕ and a relation code c : StructureSpace L, with the product topology; decoding to L.Structure ℕ; the action (σ • F)⟨f, v⟩ = σ (F ⟨f, σ⁻¹ ∘ v⟩) and the logic action on c.",
+     "statement": "For L with countably many function and relation symbols, the functional coding space: pairs (F, c) of a table F : (Σ f : (Σ l, L.Functions l), Fin f.1 → ℕ) → ℕ and a relation code c : RelationalConfiguration L ℕ, with the product topology; decoding to L.Structure ℕ; the action (σ • F)⟨f, v⟩ = σ (F ⟨f, σ⁻¹ ∘ v⟩) and the logic action on c.",
      "hypotheses": [
-      "[Countable (Σ l, L.Functions l)]",
-      "[Countable (Σ l, L.Relations l)]"
+      "[∀ n, Countable (L.Functions n)]",
+      "[∀ n, Countable (L.Relations n)]"
      ],
      "locator": {
       "source": "paolini-shelah-tfab",
       "where": "lines 60–64 (groups, abelian groups and torsion-free abelian groups as Borel subsets of the space of structures)"
      },
      "prerequisites": [
-      "roadmap:CountableStructureSpaces Layer 0",
+      "tauceti:TauCeti.RelationalConfiguration",
       "roadmap:CountableStructureSpaces §1.2",
       "mathlib:FirstOrder.Language.Structure"
      ],
@@ -403,7 +543,7 @@
       {
        "name": "funCode_relational",
        "role": "compatibility",
-       "statement": "For relational L the table is the empty map and the space is StructureSpace L."
+       "statement": "For relational L the table is the empty map and the space is RelationalConfiguration L ℕ."
       }
      ],
      "tests": [
@@ -428,7 +568,7 @@
      "id": "1.5",
      "kind": "theorem",
      "name": "graphCodeFun_homeomorph",
-     "statement": "The graph-code map from the functional coding space to StructureSpace (graphLanguage L), sending a point to the code of graphExpansion of its decoded structure, is continuous, injective and equivariant; its range is the Gδ set of codes whose graph relations are graphs of total functions, which is not closed when L has at least one function symbol and is the whole coding space when L is relational; it is a homeomorphism onto its range, agreeing there with reconstructStructure; and two points decode to isomorphic structures iff their graph codes are isomorphic.",
+     "statement": "The graph-code map from the functional coding space to RelationalConfiguration (graphLanguage L) ℕ, sending a point to the code (ofStructure) of Tau Ceti's graphExpansion L ℕ of its decoded structure, is continuous, injective and equivariant; its range is the Gδ set of codes whose graph relations are graphs of total functions, which is not closed when L has at least one function symbol and is the whole coding space when L is relational; it is a homeomorphism onto its range, agreeing there with Tau Ceti's reconstructStructure (reconstructStructure_graphExpansion), the range being the codes whose decoded structure models graphAxioms of all function symbols (model_graphAxioms_iff); and two points decode to isomorphic structures iff their graph codes are isomorphic.",
      "hypotheses": [
       "L with countably many function and relation symbols"
      ],
@@ -438,8 +578,10 @@
      },
      "prerequisites": [
       "target:1.4",
-      "roadmap:InfinitaryModelExistence Layer 6",
-      "roadmap:CountableStructureSpaces Layer 0"
+      "tauceti:FirstOrder.Language.graphExpansion",
+      "tauceti:FirstOrder.Language.reconstructStructure",
+      "tauceti:FirstOrder.Language.model_graphAxioms_iff",
+      "tauceti:FirstOrder.Language.LEquiv.onConfiguration"
      ],
      "api": [],
      "tests": [
@@ -456,7 +598,7 @@
       {
        "name": "relational_case",
        "kind": "compatibility",
-       "statement": "For relational L the map is the base coding composed with the symbol relabelling R ↦ base R, and its range is the whole coding space, which is closed."
+       "statement": "For relational L the map is Tau Ceti's LEquiv.onConfiguration along the language equivalence L ≃ᴸ graphLanguage L sending R to GraphRelation.base R (an equivalence since L has no function symbols), and its range is the whole coding space, which is closed."
       }
      ]
     },
@@ -496,7 +638,7 @@
      "id": "1.7",
      "kind": "theorem",
      "name": "BorelComplete.borelReducible_funCode",
-     "statement": "If K₀ ⊆ StructureSpace L₀ is Borel complete, then for every L' with countably many function and relation symbols and every invariant Borel class K' of the functional coding space of L', the isomorphism relation of K' is Borel reducible to classIso K₀; an invariant Borel class K of a functional coding space is called Borel complete when its graph-code image is.",
+     "statement": "If K₀ ⊆ RelationalConfiguration L₀ ℕ is Borel complete, then for every L' with countably many function and relation symbols and every invariant Borel class K' of the functional coding space of L', the isomorphism relation of K' is Borel reducible to classIso K₀; an invariant Borel class K of a functional coding space is called Borel complete when its graph-code image is.",
      "hypotheses": [
       "L₀ countable relational",
       "L' countable, function symbols allowed",
@@ -524,7 +666,7 @@
      "id": "2.1",
      "kind": "construction",
      "name": "incidenceGraph",
-     "statement": "For countable relational L' and an injection ι of its relation symbols into ℕ, the coloured graph H_c on points p_a (a ∈ ℕ), tuple vertices t_q, position vertices s_{q,j} (j < arity) and truth vertices u_q (q : RelQueryOn L' ℕ), coloured κ(p) = 0, κ(u) = 1, κ(s_{q,j}) = 2+2j, κ(t_{⟨R,v⟩}) = 3+2ι(R), with edges t_q—s_{q,j}, s_{q,j}—p_{v j}, and t_q—u_q iff c q = true.",
+     "statement": "For countable relational L' and an injection ι of its relation symbols into ℕ, the coloured graph H_c on points p_a (a ∈ ℕ), tuple vertices t_q, position vertices s_{q,j} (j < arity) and truth vertices u_q (q : Atom L' ℕ), coloured κ(p) = 0, κ(u) = 1, κ(s_{q,j}) = 2+2j, κ(t_{⟨R,v⟩}) = 3+2ι(R), with edges t_q—s_{q,j}, s_{q,j}—p_{v j}, and t_q—u_q iff c.eval q = true.",
      "hypotheses": [
       "L' relational with countably many relation symbols"
      ],
@@ -533,7 +675,7 @@
       "where": "Theorem VI.27, lines 4582–4594 (coding a structure by gadgets attached to tuples; different gadgets)"
      },
      "prerequisites": [
-      "roadmap:CountableStructureSpaces Layer 0",
+      "tauceti:TauCeti.RelationalConfiguration.Atom",
       "mathlib:SimpleGraph",
       "mathlib:Encodable.ofCountable"
      ],
@@ -581,7 +723,7 @@
      "id": "2.2",
      "kind": "theorem",
      "name": "incidenceGraph_iso_iff",
-     "statement": "For codes c, d ∈ StructureSpace L': c and d are isomorphic iff there is a colour-preserving graph isomorphism H_c ≅ H_d.",
+     "statement": "For codes c, d ∈ RelationalConfiguration L' ℕ: c and d are isomorphic iff there is a colour-preserving graph isomorphism H_c ≅ H_d. Route: d = σ • c by eval_perm_smul, and isoSetoid_iff_exists_perm_smul_eq.",
      "hypotheses": [
       "L' countable relational"
      ],
@@ -591,8 +733,8 @@
      },
      "prerequisites": [
       "target:2.1",
-      "roadmap:CountableStructureSpaces §4.1",
-      "roadmap:CountableStructureSpaces §1.2"
+      "tauceti:TauCeti.RelationalConfiguration.isoSetoid_iff_exists_perm_smul_eq",
+      "tauceti:TauCeti.RelationalConfiguration.eval_perm_smul"
      ],
      "api": [],
      "tests": []
@@ -656,7 +798,7 @@
      "id": "2.4",
      "kind": "definition",
      "name": "graphClass",
-     "statement": "graphClass : Set (StructureSpace Language.graph) is the set of codes whose decoded adj is irreflexive and symmetric (models of Theory.simpleGraph).",
+     "statement": "graphClass : Set (RelationalConfiguration Language.graph ℕ) := {c | IsSimpleGraph c}, Tau Ceti's simple-graph codes (adjacency symmetric and false on the diagonal); equivalently the decoded adj is irreflexive and symmetric, the models of Theory.simpleGraph (Theory.simpleGraph_model_iff). Its API is cited from Tau Ceti and the base, not restated.",
      "hypotheses": [],
      "locator": {
       "source": "paolini-shelah-tfab",
@@ -665,23 +807,27 @@
      "prerequisites": [
       "mathlib:FirstOrder.Language.graph",
       "mathlib:FirstOrder.Language.Theory.simpleGraph_model_iff",
+      "tauceti:TauCeti.RelationalConfiguration.IsSimpleGraph",
+      "tauceti:TauCeti.RelationalConfiguration.IsSimpleGraph.restrict",
+      "tauceti:SimpleGraph.range_toRelationalConfiguration",
+      "tauceti:SimpleGraph.relationalConfigurationEquiv",
       "roadmap:CountableStructureSpaces Layer 0"
      ],
      "api": [
       {
        "name": "isClosed_graphClass",
        "role": "structure",
-       "statement": "graphClass is closed and invariant."
+       "statement": "graphClass is measurable (Tau Ceti measurableSet_setOf_isSimpleGraph), closed (CountableStructureSpaces Layer 0, closedness of the range of the graph coding) and invariant (σ • c = c.restrict σ⁻¹ by perm_smul_def, and IsSimpleGraph.restrict)."
       },
       {
-       "name": "range_graphCode",
+       "name": "range_toRelationalConfiguration",
        "role": "compatibility",
-       "statement": "graphClass = range graphCode, and graphCode is a measurable equivalence SimpleGraph ℕ ≃ graphClass."
+       "statement": "graphClass is the range of SimpleGraph.toRelationalConfiguration (Tau Ceti SimpleGraph.range_toRelationalConfiguration, by definition of graphClass), and SimpleGraph.relationalConfigurationEquiv is a measurable equivalence between SimpleGraph ℕ and the subtype graphClass; as a Borel subset of a Polish space graphClass is standard Borel (Mathlib MeasurableSet.standardBorel)."
       },
       {
        "name": "mem_graphClass_iff",
        "role": "evaluation",
-       "statement": "c ∈ graphClass iff ∀ i, ¬ adj(i,i) and ∀ i j, adj(i,j) → adj(j,i)."
+       "statement": "c ∈ graphClass iff IsSimpleGraph c (isSimpleGraph_iff: the atoms adjAtom u v and adjAtom v u agree and adjAtom v v is false), iff the decoded adj is irreflexive and symmetric."
       }
      ],
      "tests": [
@@ -703,7 +849,7 @@
       {
        "name": "clopen_conditions",
        "kind": "compatibility",
-       "statement": "Membership depends only on the values at adj(i,i), adj(i,j), adj(j,i): an intersection of clopen sets."
+       "statement": "Membership depends only on the values at adjAtom i i, adjAtom i j and adjAtom j i: an intersection of clopen sets (isClopen_setOf_eval)."
       }
      ]
     },
@@ -711,7 +857,7 @@
      "id": "2.5",
      "kind": "theorem",
      "name": "borelComplete_graphClass",
-     "statement": "BorelComplete graphClass, witnessed for each L' by one continuous map StructureSpace L' → StructureSpace Language.graph (relabelled tagged incidence graph) that lands in graphClass and reflects and preserves isomorphism.",
+     "statement": "BorelComplete graphClass, witnessed for each L' by one continuous map RelationalConfiguration L' ℕ → RelationalConfiguration Language.graph ℕ (relabelled tagged incidence graph) that lands in graphClass and reflects and preserves isomorphism. The code of the tagged incidence graph is SimpleGraph.toRelationalConfiguration, relabelled to ℕ; it lands in graphClass by IsSimpleGraph.restrict.",
      "hypotheses": [],
      "locator": {
       "source": "friedman-stanley-1989",
@@ -724,7 +870,8 @@
       "target:1.1",
       "target:1.2",
       "target:0.3",
-      "roadmap:CountableStructureSpaces Layer 0"
+      "tauceti:TauCeti.RelationalConfiguration.continuous_iff",
+      "tauceti:SimpleGraph.toRelationalConfiguration"
      ],
      "api": [],
      "tests": []
@@ -882,7 +1029,9 @@
      "prerequisites": [
       "target:3.2",
       "target:3.3",
-      "roadmap:InfinitaryLogic Layer 1",
+      "tauceti:TauCeti.IsTupleBFSystem",
+      "tauceti:TauCeti.potentialIso_iff_exists_isTupleBFSystem",
+      "tauceti:TauCeti.countable_potentialIso_iff_iso",
       "mathlib:List.IsPrefix"
      ],
      "api": [],
@@ -903,7 +1052,7 @@
      "id": "3.5",
      "kind": "definition",
      "name": "linearOrderClass",
-     "statement": "linearOrderClass : Set (StructureSpace Language.order): codes whose decoded relation is a linear order (models of Language.order.linearOrderTheory).",
+     "statement": "linearOrderClass : Set (RelationalConfiguration Language.order ℕ): codes whose decoded relation is a linear order (models of Language.order.linearOrderTheory).",
      "hypotheses": [],
      "locator": {
       "source": "paolini-shelah-tfab",
@@ -912,7 +1061,7 @@
      "prerequisites": [
       "mathlib:FirstOrder.Language.order",
       "mathlib:FirstOrder.Language.linearOrderTheory",
-      "roadmap:CountableStructureSpaces Layer 0"
+      "tauceti:TauCeti.RelationalConfiguration.toStructure"
      ],
      "api": [
       {
@@ -997,7 +1146,7 @@
       {
        "name": "empty_vs_complete",
        "kind": "non-example",
-       "statement": "The images of the empty graph and the complete graph on ℕ are not isomorphic."
+       "statement": "The images of the empty graph and the complete graph on ℕ are not isomorphic: the colour of [1, 1/2] for the empty graph (vertices (0, 1), distinct and not adjacent) occurs at no node for the complete graph. The colourings differ exactly at nodes having two entries with distinct ν-values; at [1, 2] both entries have ν-value 0, both record the vertices (0, 0), and the colours agree."
       }
      ]
     },
@@ -1005,7 +1154,7 @@
      "id": "3.7",
      "kind": "theorem",
      "name": "exists_continuous_reduction_graphClass_linearOrderClass",
-     "statement": "There is a continuous f : StructureSpace Language.graph → StructureSpace Language.order with f '' graphClass ⊆ linearOrderClass and, for c d ∈ graphClass, c ≅ d ↔ f c ≅ f d.",
+     "statement": "There is a continuous f : RelationalConfiguration Language.graph ℕ → RelationalConfiguration Language.order ℕ with f '' graphClass ⊆ linearOrderClass and, for c d ∈ graphClass, c ≅ d ↔ f c ≅ f d.",
      "hypotheses": [],
      "locator": {
       "source": "friedman-stanley-1989",
@@ -1042,7 +1191,7 @@
      "id": "3.9",
      "kind": "definition",
      "name": "treeClass",
-     "statement": "treeClass : Set (StructureSpace Language.order): codes whose decoded relation is a partial order with a least element in which every {y | y ≤ x} is finite and linearly ordered.",
+     "statement": "treeClass : Set (RelationalConfiguration Language.order ℕ): codes whose decoded relation is a partial order with a least element in which every {y | y ≤ x} is finite and linearly ordered.",
      "hypotheses": [],
      "locator": {
       "source": "camerlo-gao-boolean",
@@ -1050,7 +1199,7 @@
      },
      "prerequisites": [
       "mathlib:FirstOrder.Language.order",
-      "roadmap:CountableStructureSpaces Layer 0"
+      "tauceti:TauCeti.RelationalConfiguration.toStructure"
      ],
      "api": [
       {
@@ -1170,7 +1319,7 @@
      "prerequisites": [
       "target:3.9",
       "mathlib:Descriptive.tree",
-      "roadmap:CountableStructureSpaces Layer 0"
+      "tauceti:Equiv.encodeVia"
      ],
      "api": [],
      "tests": [
@@ -1225,23 +1374,25 @@
      "id": "4.1",
      "kind": "definition",
      "name": "instMeasurableSpacePerm",
-     "statement": "Equiv.Perm ℕ carries borel of the base topology, with BorelSpace and StandardBorelSpace; a Borel S∞-space is X with [MeasurableSpace X] [StandardBorelSpace X] [MulAction (Equiv.Perm ℕ) X] [MeasurableSMul₂ (Equiv.Perm ℕ) X], with orbit relation MulAction.orbitRel.",
+     "statement": "Equiv.Perm ℕ carries borel of Tau Ceti's topology Equiv.Perm.instTopologicalSpace, with BorelSpace and StandardBorelSpace; a Borel S∞-space is X with [MeasurableSpace X] [StandardBorelSpace X] [MulAction (Equiv.Perm ℕ) X] [MeasurableSMul₂ (Equiv.Perm ℕ) X], with orbit relation MulAction.orbitRel.",
      "hypotheses": [],
      "locator": {
       "source": "becker-kechris-bams",
       "where": "lines 126–131 (Borel G-spaces and Borel embeddings)"
      },
      "prerequisites": [
-      "roadmap:CountableStructureSpaces §1.1",
+      "tauceti:Equiv.Perm.instTopologicalSpace",
+      "tauceti:Equiv.Perm.instPolishSpace",
+      "roadmap:CountableStructureSpaces §1.2",
       "mathlib:borel",
       "mathlib:MeasurableSMul₂",
       "mathlib:StandardBorelSpace"
      ],
      "api": [
       {
-       "name": "measurableSMul₂_structureSpace",
+       "name": "measurableSMul₂_relationalConfiguration",
        "role": "constructor",
-       "statement": "The logic action on StructureSpace L (countable relational) is a Borel S∞-space with orbit relation structureIsoSetoid L."
+       "statement": "The logic action on RelationalConfiguration L ℕ (countable relational L) is a Borel S∞-space: it is continuous (CountableStructureSpaces continuousSMul_relationalConfiguration) and ContinuousSMul.measurableSMul₂ applies; its orbit relation is isoSetoid L ℕ (isoSetoid_eq_orbitRel)."
       },
       {
        "name": "measurableSMul₂_subtype",
@@ -1292,9 +1443,9 @@
        "statement": "universalLanguage is relational with countably many relation symbols."
       },
       {
-       "name": "structureSpace_universal_polish",
+       "name": "polishSpace_universal",
        "role": "structure",
-       "statement": "StructureSpace universalLanguage is compact Polish (base Layer 0)."
+       "statement": "RelationalConfiguration universalLanguage ℕ is compact Polish (Tau Ceti instances)."
       }
      ],
      "tests": [
@@ -1329,8 +1480,8 @@
       "where": "proof sketch of Theorem 2.1 and Corollary 2.2, lines 247–268"
      },
      "prerequisites": [
-      "roadmap:CountableStructureSpaces §1.1",
-      "roadmap:CountableStructureSpaces §1.2"
+      "tauceti:Equiv.Perm.hasBasis_nhds_one_fixingSubgroup",
+      "tauceti:TauCeti.RelationalConfiguration.eval_perm_smul"
      ],
      "api": [
       {
@@ -1346,7 +1497,7 @@
       {
        "name": "anchoredCode_injective",
        "role": "characterisation",
-       "statement": "The map is injective: anchors (0,…,k−1) give pointwise stabilizers converging to 1."
+       "statement": "The map is injective: anchors (0,…,k−1) give the pointwise stabilizers of {0,…,k−1}, a neighbourhood basis of 1 (Tau Ceti Equiv.Perm.hasBasis_nhds_one_fixingSubgroup gives the stabilizers of all finite sets, each inside some {0,…,k−1})."
       }
      ],
      "tests": [
@@ -1371,7 +1522,7 @@
      "id": "4.4",
      "kind": "construction",
      "name": "unpairCode",
-     "statement": "The map from codes of the language with countably many symbols of each arity to StructureSpace universalLanguage reading symbol m on b : Fin m → ℕ as the (k, n)-th symbol on b ∘ Fin.castLE, (n, k) = Nat.unpair m; continuous, injective, equivariant.",
+     "statement": "The map from codes of the language with countably many symbols of each arity to RelationalConfiguration universalLanguage ℕ reading symbol m on b : Fin m → ℕ as the (k, n)-th symbol on b ∘ Fin.castLE, (n, k) = Nat.unpair m; continuous, injective, equivariant.",
      "hypotheses": [],
      "locator": {
       "source": "becker-kechris-bams",
@@ -1416,7 +1567,7 @@
      "id": "4.5",
      "kind": "theorem",
      "name": "exists_equivariant_measurableEmbedding_universal",
-     "statement": "For every Borel S∞-space X there is Φ : X → StructureSpace universalLanguage, measurable, injective and equivariant; its image is invariant Borel and the orbit relation of X is BorelReducible to structureIsoSetoid universalLanguage.",
+     "statement": "For every Borel S∞-space X there is Φ : X → RelationalConfiguration universalLanguage ℕ, measurable, injective and equivariant; its image is invariant Borel and the orbit relation of X is BorelReducible to isoSetoid universalLanguage ℕ.",
      "hypotheses": [
       "X a Borel S∞-space"
      ],
@@ -1430,7 +1581,7 @@
       "target:4.3",
       "target:4.4",
       "roadmap:NoncompactQuantumSymmetry Layer 4",
-      "roadmap:CountableStructureSpaces §1.1",
+      "tauceti:Equiv.Perm.instIsTopologicalGroup",
       "mathlib:MeasurableSet.image_of_measurable_injOn"
      ],
      "api": [],
@@ -1446,10 +1597,10 @@
      "id": "5.1",
      "kind": "theorem",
      "name": "borelComplete_iff_graphClass",
-     "statement": "BorelComplete K ↔ BorelReducible (classIso graphClass) (classIso K).",
+     "statement": "BorelComplete K ↔ Setoid.BorelReducible (classIso graphClass) (classIso K).",
      "hypotheses": [
-      "L is a relational first-order language ([L.IsRelational]) with countably many relation symbols ([Countable (Σ l, L.Relations l)])",
-      "K : Set (StructureSpace L) arbitrary"
+      "L is a relational first-order language ([L.IsRelational]) with countably many relation symbols ([∀ n, Countable (L.Relations n)])",
+      "K : Set (RelationalConfiguration L ℕ) arbitrary"
      ],
      "locator": {
       "source": "camerlo-gao-boolean",
@@ -1469,9 +1620,9 @@
      "id": "5.2",
      "kind": "theorem",
      "name": "borelComplete_iff_forall_structureSpace",
-     "statement": "BorelComplete K ↔ ∀ L' : Language.{0,0} countable relational, BorelReducible (structureIsoSetoid L') (classIso K).",
+     "statement": "BorelComplete K ↔ ∀ L' : Language.{0,0} countable relational, Setoid.BorelReducible (isoSetoid L' ℕ) (classIso K).",
      "hypotheses": [
-      "L is a relational first-order language ([L.IsRelational]) with countably many relation symbols ([Countable (Σ l, L.Relations l)])"
+      "L is a relational first-order language ([L.IsRelational]) with countably many relation symbols ([∀ n, Countable (L.Relations n)])"
      ],
      "locator": {
       "source": "camerlo-gao-boolean",
@@ -1491,9 +1642,9 @@
      "id": "5.3",
      "kind": "theorem",
      "name": "borelComplete_iff_forall_measurableSet",
-     "statement": "BorelComplete K ↔ ∀ L' countable relational, ∀ B ⊆ StructureSpace L' measurable (not necessarily invariant), BorelReducible (classIso B) (classIso K).",
+     "statement": "BorelComplete K ↔ ∀ L' countable relational, ∀ B ⊆ RelationalConfiguration L' ℕ measurable (not necessarily invariant), Setoid.BorelReducible (classIso B) (classIso K).",
      "hypotheses": [
-      "L is a relational first-order language ([L.IsRelational]) with countably many relation symbols ([Countable (Σ l, L.Relations l)])"
+      "L is a relational first-order language ([L.IsRelational]) with countably many relation symbols ([∀ n, Countable (L.Relations n)])"
      ],
      "locator": {
       "source": "paolini-shelah-tfab",
@@ -1513,9 +1664,9 @@
      "id": "5.4",
      "kind": "theorem",
      "name": "borelComplete_iff_forall_permSpace",
-     "statement": "BorelComplete K ↔ ∀ X : Type u Borel S∞-space, BorelReducible (MulAction.orbitRel (Equiv.Perm ℕ) X) (classIso K).",
+     "statement": "BorelComplete K ↔ ∀ X : Type u Borel S∞-space, Setoid.BorelReducible (MulAction.orbitRel (Equiv.Perm ℕ) X) (classIso K).",
      "hypotheses": [
-      "L is a relational first-order language ([L.IsRelational]) with countably many relation symbols ([Countable (Σ l, L.Relations l)])",
+      "L is a relational first-order language ([L.IsRelational]) with countably many relation symbols ([∀ n, Countable (L.Relations n)])",
       "a fixed universe u"
      ],
      "locator": {
@@ -1563,7 +1714,7 @@
      "id": "6.1",
      "kind": "theorem",
      "name": "bfEquiv_iff_intervals",
-     "statement": "For Language.order-structures M, N whose relations are linear orders and tuples a, b of the same atomic type: BFEquiv γ n a b ↔ each open interval cut out by the distinct values of a is BFEquiv γ (empty tuples) to the corresponding interval cut out by b. Sum form: A ≡_γ A' and B ≡_γ B' give A + B ≡_γ A' + B'. Isomorphic orders are BFEquiv at every level.",
+     "statement": "For Language.order-structures M, N whose relations are linear orders and tuples a, b of the same atomic type: BFEquiv γ n a b ↔ each open interval cut out by the distinct values of a is BFEquiv γ (empty tuples) to the corresponding interval cut out by b. Sum form: A ≡_γ A' and B ≡_γ B' give A + B ≡_γ A' + B'. Isomorphic orders are BFEquiv at every level (FirstOrder.Language.Equiv.bfEquiv).",
      "hypotheses": [
       "M, N linear orders read in Language.order",
       "a, b same atomic type"
@@ -1573,7 +1724,9 @@
       "where": "Lemma II.37, lines 2322–2331 (for the one-sided relations ≤_α)"
      },
      "prerequisites": [
-      "roadmap:InfinitaryLogic Layer 1",
+      "tauceti:TauCeti.BFEquiv",
+      "tauceti:TauCeti.sameAtomicType_order_iff",
+      "tauceti:FirstOrder.Language.Equiv.bfEquiv",
       "mathlib:FirstOrder.Language.orderStructure"
      ],
      "api": [],
@@ -1605,7 +1758,7 @@
      },
      "prerequisites": [
       "target:6.1",
-      "roadmap:InfinitaryLogic Layer 1",
+      "tauceti:TauCeti.BFEquiv",
       "mathlib:Ordinal.type",
       "mathlib:Ordinal.omega0"
      ],
@@ -1632,9 +1785,9 @@
      "id": "6.3",
      "kind": "theorem",
      "name": "not_measurableSet_classIso_of_borelComplete",
-     "statement": "If BorelComplete K then {p : K × K | classIso K p.1 p.2} is not measurable for the product of the subtype σ-algebras.",
+     "statement": "If BorelComplete K then {p : K × K | classIso K p.1 p.2} is not measurable for the product of the subtype σ-algebras. Route: exists_uniform_bfSeparation (CountableStructureSpaces Layer 4.4) on the non-isomorphic pairs of linearOrderClass, 6.2 for ω^(1+β) and ω^(1+β)·2 transported by Equiv.encodeVia, then BFEquiv.mono.",
      "hypotheses": [
-      "L is a relational first-order language ([L.IsRelational]) with countably many relation symbols ([Countable (Σ l, L.Relations l)])",
+      "L is a relational first-order language ([L.IsRelational]) with countably many relation symbols ([∀ n, Countable (L.Relations n)])",
       "K arbitrary"
      ],
      "locator": {
@@ -1646,8 +1799,9 @@
       "target:3.8",
       "target:0.1",
       "roadmap:CountableStructureSpaces §4.4",
-      "roadmap:CountableStructureSpaces Layer 0",
-      "roadmap:InfinitaryLogic Layer 1"
+      "tauceti:Equiv.encodeVia",
+      "tauceti:Equiv.isoSetoid_encodeVia_iff",
+      "tauceti:TauCeti.BFEquiv.mono"
      ],
      "api": [],
      "tests": [
@@ -1672,9 +1826,9 @@
      "id": "6.4",
      "kind": "theorem",
      "name": "exists_lt_scottHeight_of_borelComplete",
-     "statement": "If K is invariant Borel and BorelComplete K, then for every β < ω₁ some c ∈ K has scottHeight of its decoded structure greater than β; classIso K is Borel reducible to no setoid with Borel graph (in particular not to eZero); the set {p ∈ K ×ˢ K | ¬ p.1 ≅ p.2} of non-isomorphic pairs is not an analytic subset of StructureSpace L × StructureSpace L.",
+     "statement": "If K is invariant Borel and BorelComplete K, then for every β < ω₁ some c ∈ K has scottHeight of its decoded structure greater than β; classIso K is Borel reducible to no setoid with Borel graph (in particular not to eZero); the set {p ∈ K ×ˢ K | ¬ p.1 ≅ p.2} of non-isomorphic pairs is not an analytic subset of RelationalConfiguration L ℕ × RelationalConfiguration L ℕ. Routes: lopez_escobar and measurableSet_iso_inter_of_scottHeight_le (CountableStructureSpaces Layers 5 and 4.3); BorelReducible.measurableSet_setOf; analyticSet_setOf_isoSetoid with Suslin.",
      "hypotheses": [
-      "L is a relational first-order language ([L.IsRelational]) with countably many relation symbols ([Countable (Σ l, L.Relations l)])",
+      "L is a relational first-order language ([L.IsRelational]) with countably many relation symbols ([∀ n, Countable (L.Relations n)])",
       "K invariant Borel"
      ],
      "locator": {
@@ -1685,7 +1839,8 @@
       "target:6.3",
       "roadmap:CountableStructureSpaces §4.3",
       "roadmap:CountableStructureSpaces Layer 5",
-      "roadmap:CountableStructureSpaces §1.2",
+      "tauceti:TauCeti.RelationalConfiguration.analyticSet_setOf_isoSetoid",
+      "tauceti:Setoid.BorelReducible.measurableSet_setOf",
       "mathlib:MeasureTheory.AnalyticSet.measurableSet_of_compl"
      ],
      "api": [],
@@ -1703,7 +1858,8 @@
      },
      "prerequisites": [
       "target:1.1",
-      "roadmap:BorelEquivalenceRelations §5.4"
+      "tauceti:TauCeti.eZero",
+      "tauceti:TauCeti.eZero_iff_finite"
      ],
      "api": [
       {
@@ -1744,9 +1900,9 @@
      "id": "6.6",
      "kind": "theorem",
      "name": "borelReducible_eZero_of_borelComplete",
-     "statement": "If BorelComplete K then BorelReducible eZero (classIso K); hence BorelReducible (⊥ : Setoid (ℕ → Bool)) (classIso K) and K has continuum many isomorphism types.",
+     "statement": "If BorelComplete K then Setoid.BorelReducible eZero (classIso K); hence Setoid.BorelReducible (⊥ : Setoid (ℕ → Bool)) (classIso K) (borelReducible_bot_eZero) and K has continuum many isomorphism types (at least 𝔠 by BorelReducible.lift_mk_quotient_le and mk_quotient_eZero, at most 𝔠 by mk_le_continuum).",
      "hypotheses": [
-      "L is a relational first-order language ([L.IsRelational]) with countably many relation symbols ([Countable (Σ l, L.Relations l)])"
+      "L is a relational first-order language ([L.IsRelational]) with countably many relation symbols ([∀ n, Countable (L.Relations n)])"
      ],
      "locator": {
       "source": "camerlo-gao-boolean",
@@ -1755,8 +1911,10 @@
      "prerequisites": [
       "target:6.5",
       "target:5.2",
-      "roadmap:BorelEquivalenceRelations §5.4",
-      "roadmap:BorelEquivalenceRelations §5.1"
+      "tauceti:TauCeti.borelReducible_bot_eZero",
+      "tauceti:TauCeti.mk_quotient_eZero",
+      "tauceti:Setoid.BorelReducible.lift_mk_quotient_le",
+      "tauceti:TauCeti.RelationalConfiguration.mk_le_continuum"
      ],
      "api": [],
      "tests": []
@@ -1765,17 +1923,17 @@
      "id": "6.7",
      "kind": "theorem",
      "name": "not_isSmooth_of_borelComplete",
-     "statement": "If BorelComplete K then ¬ IsSmooth (classIso K).",
+     "statement": "If BorelComplete K then ¬ Setoid.IsSmooth (classIso K).",
      "hypotheses": [
-      "L is a relational first-order language ([L.IsRelational]) with countably many relation symbols ([Countable (Σ l, L.Relations l)])"
+      "L is a relational first-order language ([L.IsRelational]) with countably many relation symbols ([∀ n, Countable (L.Relations n)])"
      ],
      "locator": {
       "source": "camerlo-gao-boolean",
-      "where": "lines 94–100 (E₀ below a Borel complete relation); BorelEquivalenceRelations §5.4 not_isSmooth_of_borelReducible_eZero"
+      "where": "lines 94–100 (E₀ below a Borel complete relation); Tau Ceti not_isSmooth_of_borelReducible_eZero"
      },
      "prerequisites": [
       "target:6.6",
-      "roadmap:BorelEquivalenceRelations §5.4"
+      "tauceti:TauCeti.not_isSmooth_of_borelReducible_eZero"
      ],
      "api": [],
      "tests": []
@@ -1784,9 +1942,9 @@
      "id": "6.8",
      "kind": "theorem",
      "name": "not_borelComplete_of_rank_bounded",
-     "statement": "Let K ⊆ StructureSpace L be measurable and ρ : StructureSpace L → Ordinal.{0}. If for every α < ω₁ isomorphism restricted to K ∩ {ρ ≤ α} is measurable in the square, and every analytic subset of K has ρ bounded below ω₁, then ¬ BorelComplete K.",
+     "statement": "Let K ⊆ RelationalConfiguration L ℕ be measurable and ρ : RelationalConfiguration L ℕ → Ordinal.{0}. If for every α < ω₁ isomorphism restricted to K ∩ {ρ ≤ α} is measurable in the square, and every analytic subset of K has ρ bounded below ω₁, then ¬ BorelComplete K.",
      "hypotheses": [
-      "L is a relational first-order language ([L.IsRelational]) with countably many relation symbols ([Countable (Σ l, L.Relations l)])",
+      "L is a relational first-order language ([L.IsRelational]) with countably many relation symbols ([∀ n, Countable (L.Relations n)])",
       "MeasurableSet K",
       "(a) Borel isomorphism on each stratum",
       "(b) ρ bounded on analytic subsets of K"
@@ -1823,9 +1981,9 @@
      "id": "6.9",
      "kind": "theorem",
      "name": "eZero_between_smooth_and_borelComplete",
-     "statement": "For invariant Borel Borel complete K: classIso K is not smooth, eZero reduces to it, and it does not reduce to eZero; for the codes of one unary predicate, isomorphism is Borel and smooth with bounded Scott height.",
+     "statement": "For invariant Borel K with BorelComplete K: classIso K is not smooth, eZero is Borel reducible to classIso K, and classIso K is not Borel reducible to eZero. For the codes of one unary predicate, isomorphism is Borel and smooth (Setoid.isSmooth_of_countable_quotient), hence Borel reducible to eZero (through equality on Cantor space and borelReducible_bot_eZero), while eZero is not Borel reducible to it; its Scott heights are bounded.",
      "hypotheses": [
-      "L is a relational first-order language ([L.IsRelational]) with countably many relation symbols ([Countable (Σ l, L.Relations l)])"
+      "L is a relational first-order language ([L.IsRelational]) with countably many relation symbols ([∀ n, Countable (L.Relations n)])"
      ],
      "locator": {
       "source": "montalban-cst2",
@@ -1835,8 +1993,9 @@
       "target:6.4",
       "target:6.6",
       "target:6.7",
-      "roadmap:BorelEquivalenceRelations §5.2",
-      "roadmap:CountableStructureSpaces §4.3"
+      "tauceti:Setoid.isSmooth_of_countable_quotient",
+      "tauceti:Setoid.IsSmooth.measurableSet_setOf",
+      "roadmap:CountableStructureSpaces Worked example 2"
      ],
      "api": [],
      "tests": [
@@ -1853,7 +2012,7 @@
       {
        "name": "unary_no_e0",
        "kind": "non-example",
-       "statement": "Isomorphism of codes of one unary predicate does not reduce eZero (countably versus continuum many classes)."
+       "statement": "For the codes of one unary predicate, eZero is not Borel reducible to their isomorphism relation (an injection of quotients would send continuum many classes into countably many), while that relation is Borel reducible to eZero (smooth, then borelReducible_bot_eZero)."
       }
      ]
     }
@@ -1865,51 +2024,15 @@
    "roadmap": "CountableStructureSpaces",
    "sections": [
     "Layer 0",
-    "§1.1",
     "§1.2",
-    "Layer 2",
     "Layer 3",
-    "§4.1",
     "§4.3",
     "§4.4",
     "Layer 5",
-    "§6.2"
+    "§6.2",
+    "Worked example 2"
    ],
-   "what": "coding space, S∞ topology and logic action, isomorphism as orbit relation, model classes, tree heights and boundedness, Scott height and bounded-height Borelness, uniform back-and-forth separation, López–Escobar, the well-order class"
-  },
-  {
-   "roadmap": "BorelEquivalenceRelations",
-   "sections": [
-    "§0.3",
-    "§0.5",
-    "§5.1",
-    "§5.2",
-    "§5.3",
-    "§5.4"
-   ],
-   "what": "BorelReducible with refl/trans and quotient injection, IsSmooth, smooth relations are Borel, eZero and its non-smoothness, borelReducible_bot_eZero, HasCantorAntichainOn"
-  },
-  {
-   "roadmap": "InfinitaryLogic",
-   "sections": [
-    "Layer 1"
-   ],
-   "what": "BFEquiv, SameAtomicType, potentialIso_of_equiv, potentialIso_iff_BFEquiv_all, IsTupleBFSystem, potentialIso_iff_exists_isTupleBFSystem, countable_potentialIso_iff_iso"
-  },
-  {
-   "roadmap": "InfinitaryModelExistence",
-   "sections": [
-    "§0.3",
-    "Layer 6"
-   ],
-   "what": "smallPresentation and smallPresentationEquiv; graphLanguage, graphExpansion, graphAxioms, reconstructStructure"
-  },
-  {
-   "roadmap": "CountableModelCounting",
-   "sections": [
-    "Layer 0"
-   ],
-   "what": "the code-space homeomorphism induced by a language equivalence of relational languages (transport between presentations)"
+   "what": "the targets the pinned Tau Ceti does not implement: closedness of the simple-graph codes, continuousSMul_relationalConfiguration, analytic_treeHeight_bounded, measurableSet_iso_inter_of_scottHeight_le, exists_uniform_bfSeparation, lopez_escobar, wellOrderClass with exists_mem_wellOrderClass_type_eq, analyticSet_compl_wellOrderClass and not_measurableSet_wellOrderClass, and the one-unary-predicate worked example"
   },
   {
    "roadmap": "NoncompactQuantumSymmetry",

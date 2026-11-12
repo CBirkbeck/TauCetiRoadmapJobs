@@ -2279,51 +2279,68 @@
     }
   ],
   "gaps": [
-    {
-      "slug": "lp-neumann-ball",
-      "title": "L^p Neumann problem on the unit ball",
-      "neededBy": [
-        "4.1"
-      ],
-      "detail": "For 1 < p < ∞, d ≥ 2, f ∈ L^p(B₁) and V ∈ W^{1,p}(B₁;ℝ^d) with ∫_{B₁} f = ∫_{∂B₁} ν·V: Δu = f in B₁, ∂_νu = ν·V on ∂B₁ has a solution u ∈ W^{2,p}(B₁), unique up to constants, with ‖∇u‖_{W^{1,p}} ≤ C(d,p)(‖f‖_{L^p} + ‖V‖_{W^{1,p}}).",
-      "needs": "PDE states elliptic boundary regularity only for the Dirichlet problem, and the method of continuity for Uhlenbeck's Coulomb gauge needs the W^{2,p} Neumann problem on the ball with inhomogeneous data.",
-      "supplier": "PDE",
-      "section": "Layer 5 (a new section on the L^p Neumann problem)"
-    },
-    {
-      "slug": "lp-divcurl-normal-ball",
-      "title": "L^p div–curl estimate with vanishing normal component on the unit ball",
-      "neededBy": [
-        "4.1"
-      ],
-      "detail": "For 1 < p < ∞, d ≥ 2 and every 1-form a ∈ W^{1,p}(B₁;ℝ^d) with x^ℓa_ℓ = 0 on ∂B₁: ‖a‖_{W^{1,p}(B₁)} ≤ C(d,p)(‖da‖_{L^p} + ‖∂^ℓa_ℓ‖_{L^p}).",
-      "needs": "PDE has no Gaffney-type estimate for the absolute boundary condition, and the a priori bound and uniqueness of Uhlenbeck's Coulomb gauge need it; it does not follow from the scalar Neumann problem alone.",
-      "supplier": "PDE",
-      "section": "Layer 5 (the same new section, as its second theorem)"
-    },
-    {
-      "slug": "hardy-inequality",
-      "title": "Hardy's inequality on ℝ^d",
-      "neededBy": [
-        "5.2",
-        "5.3",
-        "6.1"
-      ],
-      "detail": "For d ≥ 2, 1 ≤ p < d, u ∈ C_c^∞(ℝ^d): ‖u/|x|‖_{L^p} ≤ (p/(d−p))‖∇u‖_{L^p}, extended to Ẇ^{1,p}.",
-      "needs": "Hardy's inequality is at neither pin and in no roadmap section, and the terms [O_∞;x, b] with |O_∞;x| ≈ 1/|x| need it.",
-      "supplier": "PDE",
-      "section": "§1.4 (a new item)"
-    },
-    {
-      "slug": "compact-su2-subalgebra",
-      "title": "su(2) subalgebras realising γ₀ in compact Lie algebras",
-      "neededBy": [
-        "7.7"
-      ],
-      "detail": "Every noncommutative compact Lie algebra 𝔤 ⊆ 𝔲(N) with an ad-invariant inner product contains a Lie subalgebra 𝔰 ≅ su(2) with sup_{𝔰}|[X,Y]|/(|X||Y|) = sup_{𝔤}|[X,Y]|/(|X||Y|), through a highest root of a maximal abelian subalgebra and the sl₂-triple of the complexification (OhTataru-TopClass Lemma 6.4, lines 2381–2401).",
-      "needs": "LieGroups Layer 6 states maximal tori but no root su(2) subalgebras, and the ground state energy needs one on which the bracket constant is attained.",
-      "supplier": "LieGroups",
-      "section": "Layer 6 (a new item on root su(2) subalgebras)"
-    }
-  ]
+  {
+    "slug": "lp-neumann-ball",
+    "title": "L^p Neumann problem on the unit ball",
+    "neededBy": [
+      "4.1"
+    ],
+    "detail": "For 1 < p < ∞, d ≥ 2, f ∈ L^p(B₁) and V ∈ W^{1,p}(B₁;ℝ^d) with ∫_{B₁} f = ∫_{∂B₁} ν·V: Δu = f in B₁, ∂_νu = ν·V on ∂B₁ has a solution u ∈ W^{2,p}(B₁), unique up to constants, with ‖∇u‖_{W^{1,p}} ≤ C(d,p)(‖f‖_{L^p} + ‖V‖_{W^{1,p}}).",
+    "needs": "For 1 < p < ∞, d ≥ 2, f ∈ L^p(B₁) and V ∈ W^{1,p}(B₁;ℝ^d) with ∫_{B₁} f = ∫_{∂B₁} ν·V: Δu = f in B₁, ∂_νu = ν·V on ∂B₁ has a solution u ∈ W^{2,p}(B₁), unique up to constants, with ‖∇u‖_{W^{1,p}} ≤ C(d,p)(‖f‖_{L^p} + ‖V‖_{W^{1,p}}).",
+    "supplier": "PDE",
+    "section": "Layer 5 (a new section on the L^p Neumann problem)"
+  },
+  {
+    "slug": "lp-divcurl-normal-ball",
+    "title": "L^p div–curl estimate with vanishing normal component on the unit ball",
+    "neededBy": [
+      "4.1"
+    ],
+    "detail": "For 1 < p < ∞, d ≥ 2 and every 1-form a ∈ W^{1,p}(B₁;ℝ^d) with x^ℓa_ℓ = 0 on ∂B₁: ‖a‖_{W^{1,p}(B₁)} ≤ C(d,p)(‖da‖_{L^p} + ‖∂^ℓa_ℓ‖_{L^p}).",
+    "needs": "For 1 < p < ∞, d ≥ 2 and every 1-form a ∈ W^{1,p}(B₁;ℝ^d) with x^ℓa_ℓ = 0 on ∂B₁: ‖a‖_{W^{1,p}(B₁)} ≤ C(d,p)(‖da‖_{L^p} + ‖∂^ℓa_ℓ‖_{L^p}).",
+    "supplier": "PDE",
+    "section": "Layer 5 (the same new section, as its second theorem)"
+  },
+  {
+    "slug": "hardy-inequality",
+    "title": "Hardy's inequality on ℝ^d",
+    "neededBy": [
+      "5.2",
+      "5.3",
+      "6.1"
+    ],
+    "detail": "For d ≥ 2, 1 ≤ p < d, u ∈ C_c^∞(ℝ^d): ‖u/|x|‖_{L^p} ≤ (p/(d−p))‖∇u‖_{L^p}, extended to Ẇ^{1,p}.",
+    "needs": "For d ≥ 2 and 1 ≤ p < d, ‖u/|x|‖_{L^p(ℝ^d)} ≤ (p/(d−p))‖∇u‖_{L^p(ℝ^d)} for u ∈ C_c^∞(ℝ^d), with extension to the homogeneous Sobolev closure.",
+    "supplier": "PDE",
+    "section": "§1.4 (a new item)"
+  },
+  {
+    "slug": "compact-su2-subalgebra",
+    "title": "Longest-root rank-one subalgebras attain the compact bracket norm",
+    "neededBy": [
+      "7.7"
+    ],
+    "detail": "For every noncommutative compact real Lie algebra with a prescribed ad-invariant positive inner product, the bracket constant γ₀ equals the largest root length, and its restriction to the normalised compact su(2) subalgebra of a longest root has the same value. LieGroups Layer 6 supplies the real root planes and normalised rank-one subalgebras; the requested addition is their metric extremality (OhTataru-TopClass line 2381–2401).",
+    "needs": "For every noncommutative compact real Lie algebra with a prescribed ad-invariant positive inner product, the bracket constant γ₀ equals the largest root length, and its restriction to the normalised compact su(2) subalgebra of a longest root has the same value.",
+    "supplier": "LieGroups",
+    "section": "Layer 6, Rank-one representatives (metric extremality)"
+  },
+  {
+    "slug": "vector-valued-wkp",
+    "title": "Finite-dimensional vector-valued Sobolev classes on Euclidean open sets",
+    "neededBy": [
+      "2.1"
+    ],
+    "detail": "For a finite-dimensional real normed space V, an open Ω ⊆ ℝ^d, every integer k ≥ 0 and 1 ≤ p ≤ ∞: the space W^{k,p}(Ω; V) of u ∈ L^p(Ω; V) whose iterated weak derivatives (TauCeti.HasWeakFDerivOn) of order ≤ k exist and lie in L^p, complete for the sum of the L^p norms of u and its derivatives, with a continuous linear equivalence to the product of dim V copies of TauCeti.Wkp of order k given by the coordinates in any basis of V and commuting with every iterated weak derivative (so the class does not depend on the basis), and the local class W^{k,p}_loc(Ω; V) of the u whose restriction to every ball with closure in Ω lies in W^{k,p}. Used in §2.1 and through it in Layers 2–5 and 7; the generic bridge belongs with PDE's Euclidean Sobolev spaces rather than with any one consumer.",
+    "needs": "For a finite-dimensional real normed space V, an open Ω ⊆ ℝ^d, every integer k ≥ 0 and 1 ≤ p ≤ ∞: the space W^{k,p}(Ω; V) of u ∈ L^p(Ω; V) whose iterated weak derivatives (TauCeti.HasWeakFDerivOn) of order ≤ k exist and lie in L^p, complete for the sum of the L^p norms of u and its derivatives, with a continuous linear equivalence to the product of dim V copies of TauCeti.Wkp of order k given by the coordinates in any basis of V and commuting with every iterated weak derivative (so the class does not depend on the basis), and the local class W^{k,p}_loc(Ω; V) of the u whose restriction to every ball with closure in Ω lies in W^{k,p}.",
+    "supplier": "PDE",
+    "section": "Layer 1 (a new section on finite-dimensional vector-valued Sobolev classes)"
+  },
+  {
+    "slug": "inhomogeneous-besov-partition",
+    "needs": "For every d ≥ 1, use the consistent inhomogeneous blocks Δ_{−1} = χ(D), Δ_j = ψ(2^{−j}D) for j ≥ 0, with Σ_{j≥−1}Δ_j = I, and supply §7.2's complete Besov norms and cutoff independence for this partition.",
+    "supplier": "PDE",
+    "section": "§7.1–§7.2 (the inhomogeneous partition and its Besov norms)"
+  }
+]
 }

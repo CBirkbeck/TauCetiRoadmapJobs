@@ -17,7 +17,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-04"
 version_note = "arXiv v1, the version read and cited; line locators refer to it"
-cited_for = ["3.1.1", "3.1.3", "3.3.1", "3.4.1", "3.4.2", "1.6", "2.4.4", "2.5", "5.4.2", "8.1", "8.2", "8.3", "8.4", "8.5", "8.6", "8.7"]
+cited_for = ["Conventions: entropy normalization", "1.1", "1.5", "2.3", "2.4.1", "2.4.2", "2.4.3", "2.4.4", "2.5", "3.1.1", "3.1.2", "3.1.3", "3.2", "3.3.1", "3.3.2", "3.4.1", "3.4.2", "5.4.2", "7.1.2", "7.2", "8.1", "8.2", "8.3", "8.4", "8.5", "8.6", "8.7"]
 
 [[source]]
 id = "guo-phong2024"
@@ -132,7 +132,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-04"
 version_note = "arXiv v2"
-cited_for = ["6.4", "Scope and ownership: complex Evans–Krylov in Part II"]
+cited_for = ["5.1", "6.4", "6.5", "Scope and ownership: complex Evans–Krylov in Part II"]
 
 [[source]]
 id = "spruck2005"
@@ -150,7 +150,7 @@ licence_class = "institutional"
 status = "certified"
 accessed = "2026-11-04"
 version_note = "read from the Clay Mathematics Institute download of the whole volume (cmip02.pdf); image-only scan recognised by OCR"
-cited_for = ["1.3", "1.5", "2.1", "2.2.1", "2.2.3", "2.3", "2.4.4", "2.5.2"]
+cited_for = ["1.2", "1.3", "1.4", "2.1", "2.2.1", "2.2.3", "2.3", "2.4.4", "2.5.2"]
 
 [[source]]
 id = "lewis1996"
@@ -169,7 +169,7 @@ licence_class = "author-page"
 status = "certified"
 accessed = "2026-11-05"
 version_note = "the published article as scanned on the author's Cornell page; image-only scan recognised by OCR, so quote with care"
-cited_for = ["1.2", "1.3", "1.4.1", "1.4.2"]
+cited_for = ["1.2", "1.3.1", "1.3.2"]
 
 [[source]]
 id = "guedj-zeriahi2005"
@@ -228,12 +228,12 @@ year = 2001
 venue = "Classics in Mathematics"
 doi = "10.1007/978-3-642-61798-0"
 locator_scheme = "theorem"
-locator = "Theorems 2.1, 3.5, 8.18, 9.1, Lemmas 9.2, 17.16"
+locator = "Theorems 3.5, 6.2, 8.18, 9.1, Lemma 17.16"
 url = "https://doi.org/10.1007/978-3-642-61798-0"
 licence_class = "none"
 status = "uncertified"
 version_note = "paywalled; cited by its locator without the text"
-cited_for = ["Exact supplier contracts: PDE Lane C items 12–13, Lane E item 23 (weak-harnack-supersolutions), abp-maximum-principle", "6.5"]
+cited_for = ["Exact supplier contracts: PDE §3.2 (C13) strong maximum principle and Aleksandrov–Bakelman–Pucci estimate, §5.4 (E23) weak Harnack inequality (weak-harnack-supersolutions), §5.6 (E25) interior Schauder estimate", "6.5"]
 
 [[source]]
 id = "yau1978"
@@ -293,7 +293,7 @@ url = "https://doi.org/10.1007/BF01389077"
 licence_class = "none"
 status = "uncertified"
 version_note = "paywalled; cited without the text, as the global version of the estimate that gpt2023 and pss2012 attribute to it"
-cited_for = ["7.1", "7.2"]
+cited_for = ["7.2"]
 
 [[source]]
 id = "hormander1990"

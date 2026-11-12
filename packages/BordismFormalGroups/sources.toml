@@ -593,3 +593,21 @@ status = "certified"
 accessed = "2026-11-10"
 version_note = "arXiv v1; numbering is that of the arXiv version"
 cited_for = ["F4.3"]
+
+[[source]]
+id = "lawson-bousfield"
+authors = "Tyler Lawson"
+title = "An introduction to Bousfield localization"
+year = 2020
+arxiv = "2002.03888v1"
+locator_scheme = "theorem"
+locator = "Proposition 9.26"
+url = "https://arxiv.org/abs/2002.03888v1"
+fetched_from = "https://arxiv.org/pdf/2002.03888v1"
+fetched_at = "2026-11-10T21:29:28Z"
+sha256 = "e934d4aacaf1b5c0308868bb7763e19458d7df8dcd3d36769d126421a85ea54b"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-10"
+version_note = "arXiv v1; the README cites the numbering and page of this version"
+cited_for = ["F6.4"]

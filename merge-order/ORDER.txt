@@ -6,13 +6,14 @@ VonNeumannAlgebras
 EllipticCohomology
 CStarAlgebras
 HilbertModules
+AlgebraicKTheory
 OperatorKTheory
 IndexTheory
 StringOrientation
 SmoothBundlesConnections
+YangMillsConnectionsAndCaloricGauge
 PseudodifferentialOperators
 TangentialBordism
-AlgebraicKTheory
 StableHomotopyKTheory
 GeneralAlgebraicKTheory
 ResolutionOfSingularitiesCharacteristicZero
@@ -40,10 +41,8 @@ ComplexComparisonPartII
 FormalConnectionsOpers
 AbelianSchemesAndArithmeticModuli
 EtaleCohomologyFoundations
-QuaternionicModularForms
 LocallyAnalyticDistributions
 HomotopySpheres
-DGFloerPartII
 HabiroCyclotomicCompletions
 ZerosOfLFunctions
 FuchsianOrbifolds
@@ -58,6 +57,7 @@ SieveMethodsAndPrimePatterns
 ArithmeticGaloisRepresentations
 ArithmeticLocallySymmetricSpaces
 AutomorphicFormsOnReductiveGroups
+QuaternionicModularForms
 ArithmeticGaloisDuality
 ProbabilisticAndMetricNumberTheory
 HermitianKTheoryOfPoincareCategories
@@ -118,6 +118,7 @@ FarguesFontaineDiamonds
 ModularSymbolsPadicLFunctions
 SmallRamificationAndAbelianVarietyBaseCases
 PadicDifferentialEquationsAndRigidCohomology
+GaloisActionOnEtaleCohomology
 CrystallineCohomologyPartII
 PadicHodgeTheory
 VectorBundlesAndIsocrystals
@@ -192,6 +193,7 @@ PadicHodgeTheoryPartII
 PotentialAutomorphyInfrastructure
 CrystallineLocalGlobalCompatibilityCM
 EllipticCurveModularityImaginaryQuadratic
+EllipticCurveModularityTotallyReal
 ModularityAndLanglandsExtensions
 BianchiModularForms
 K2SymbolsBrauerPartII
@@ -228,6 +230,7 @@ AlgebraicTopologyPartII
 RealSurfacePeriodIndex
 CategoricalOperatorAlgebras
 CStarClassification
+AmenableTracesOnCStarAlgebras
 SpectralManifolds
 FactorRigidity
 ColemanIntegrationPartII
@@ -285,7 +288,6 @@ GSp4NonregularModularityLifting
 EllipticModularityEffectiveComparisons
 ArithmeticFuchsianGroups
 TeichmullerGeometry
-QuasiregularMaps
 PositiveMass
 HodgeClassesForJacquetLanglands
 MappingClassGroupsAndCanonicalRepresentations
@@ -333,6 +335,7 @@ AnalyticStacks
 StableHomotopyKTheoryPartII
 HabiroCohomologyFoundationsPartII
 GeneralAlgebraicKTheoryPartII
+DGFloerPartII
 ChromaticHomotopyTheory
 HabiroNahmSeries
 ArithmeticKTheoryPartII
@@ -400,3 +403,5 @@ PadicExtensionFamilies
 OddOrderTheorem
 VirtualFundamentalClasses
 SobolevMapsBetweenManifolds
+QuasiregularMaps
+MathematicalBilliards

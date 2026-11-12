@@ -1,0 +1,29 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-ComplexKahlerGeometry~91",
+  "head": "d524e59856ca26ca23a131c56605ed4a32f3707d",
+  "pr": 1807,
+  "folder": "ComplexKahlerGeometry",
+  "date": "2026-11-11",
+  "findings": 4,
+  "blocking": 1,
+  "notes": "incremental re-review of 119 changed lines since 806b373. Previous R02-R08 repaired; R01 (two-roadmap cycles with RealAnalyticGeometry and PseudodifferentialOperators) not repaired and carried as P2. New P3s: K7.1 and AlgebraicTopology 4.6 each repeat Tau Ceti's Hausdorff proof on Mathlib's projectivization for one field; 7.1 still calls the Riemann-sphere comparison cited while requiring its restatement; the 5.4 Demailly VI (2.1)-(2.2) locator is a compact-manifold statement attached to a Euclidean one. Checked: 9 new locators against demailly-agbook (I 3.28; II 4.2, 6.1; III 2.6, 2.7; VI 2.1-2.2, 4.7, 11.7); AlgebraicTopology 4.6, 5.0 and the CharacteristicClasses, GeneralizedCohomology and MorseTheory consumer citations at this head; pinned Mathlib and Tau Ceti projectivization and quotient-manifold files; Lean probes of the Hopf docstring's instance claims; adversarial rows for every changed statement. Gate at d524e59 passed (worker run; my rerun: all scanners 0, outside-folder only the pull request's own 12 folders); depcheck 206 roadmaps, 1919 edges, 0 problems; lake env lean on Suggested.lean: 27 sorry warnings only.",
+  "deferred": [
+   {
+    "id": "D01",
+    "severity": "P2",
+    "title": "The two-roadmap cycles with RealAnalyticGeometry and PseudodifferentialOperators remain (previous R01, not repaired)",
+    "where": "PseudodifferentialOperators P1.0, RealAnalyticGeometry, or a new ComplexKahlerGeometry Part II",
+    "raised": "PRREVIEW-ComplexKahlerGeometry~91"
+   },
+   {
+    "id": "D02",
+    "severity": "P3",
+    "title": "K7.1 and AlgebraicTopology §4.6 each repeat Tau Ceti's Hausdorff proof on Mathlib's instance, one field each",
+    "where": "AlgebraicTopology §4.6, Hausdorffness of Mathlib's ℙ K V in general",
+    "raised": "PRREVIEW-ComplexKahlerGeometry~91"
+   }
+  ]
+ }
+}

@@ -1,0 +1,13 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-SchemeAndStackFoundations~92",
+  "head": "96ebbb50c3142a6db725024e54e4999f6f0d7db9",
+  "pr": 1656,
+  "folder": "SchemeAndStackFoundations",
+  "date": "2026-11-11",
+  "findings": 1,
+  "blocking": 1,
+  "notes": "incremental re-review of 123 changed lines since 85395e0. Previous R01-R04 all repaired (constantEquiv restricted to Zariski sheaves with counterexample Check; Deligne 1985 pages read at their footers; README-only names italicised; description regenerated). One new finding in the rewritten §4.15 projectivity sentence: missing m>=3 (witness (1,1), m=2). Gate rerun OK (all counters 0), depcheck 0 problems, Suggested.lean unchanged and elaborates with 48 sorry warnings only; pinned declarations cited by the new §1.13 passage opened; of the seeded sample only §2.19 has a changed line, its Stacks tags resolved; adversarial table has computed rows for the changed statements and carries the rest."
+ }
+}

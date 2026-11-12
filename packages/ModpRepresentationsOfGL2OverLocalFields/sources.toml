@@ -275,3 +275,31 @@ licence_class = "none"
 status = "uncertified"
 version_note = "paywalled; cited by its locator without the text"
 cited_for = ["Layer 5"]
+
+[[source]]
+id = "SERRE-TREES"
+authors = "Jean-Pierre Serre"
+title = "Jean-Pierre Serre, Arbres, amalgames, SL2, 1977"
+year = 1977
+locator_scheme = "chapter"
+locator = "Chapter II, Corollary 1"
+url = "https://www.numdam.org/item/AST_1983__46__1_0.pdf"
+fetched_from = "https://www.numdam.org/item/AST_1983__46__1_0.pdf"
+fetched_at = "2026-11-11T05:34:50Z"
+sha256 = "7f048d9e38961ee8a082d6c5fc994e61112f809d9b1ade5d6c33d3c79cc8e947"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-11"
+resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/6807#issuecomment-6787957825"
+
+[[source]]
+id = "BARTHEL-LIVNE94"
+authors = "L. Barthel, R. Livne"
+title = "Irreducible modular representations of GL2 of a local field"
+year = 1994
+doi = "10.1215/s0012-7094-94-07508-x"
+locator_scheme = "theorem"
+locator = "Proposition 18"
+licence_class = "none"
+status = "waived"
+resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/6807#issuecomment-6787957825"

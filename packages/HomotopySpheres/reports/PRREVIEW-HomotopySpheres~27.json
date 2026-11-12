@@ -1,0 +1,4 @@
+{"review": {"status": "needs_changes", "reviewer": "independent-review-PRREVIEW-HomotopySpheres~27",
+            "head": "f10f2a491ca288b21a1ffec9809050f1822f8ac7", "pr": 284, "folder": "HomotopySpheres", "date": "2026-11-11",
+            "findings": 16, "blocking": 3,
+            "notes": "Gate rerun at f10f2a4: every check 0, OK. Depcheck: 222 roadmaps, 1964 edges, 0 problems. lake env lean Suggested.lean: exit 0, 10 sorry warnings; one-tactic probe fails on all 10 theorems. Seeded sample of 15 targets checked: 43 locators read in kervairemilnor1963, milnor_hcobordism, hatcher_at, hatcher_vbkt, ranicki2002 and Snaith arXiv v1. 22 cross-roadmap citations resolved on main. Blocking: Freudenthal duplicates GeneralizedCohomology G2 item 5 (R01); the third stem duplicates StringOrientation S2.3 (R02); the Type-0 skeleton cannot code the P_n fillings, which have boundary (R03). Previous review: 12 findings repaired, 7 partly repaired."}}
