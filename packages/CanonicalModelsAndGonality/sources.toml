@@ -50,3 +50,42 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-12"
 cited_for = ["2.5"]
+
+[[source]]
+id = "derickx-van-hoeij-2014"
+authors = "Maarten Derickx, Mark van Hoeij"
+title = "Gonality of the modular curve X1(N)"
+year = 2013
+venue = "Journal of Algebra 417 (2014), Pages 52-71"
+doi = "10.1016/j.jalgebra.2014.06.026"
+arxiv = "1307.5719v3"
+locator_scheme = "page"
+locator = "§1, inequality (1), p. 1"
+url = "https://arxiv.org/abs/1307.5719v3"
+fetched_from = "https://arxiv.org/pdf/1307.5719v3"
+fetched_at = "2026-11-12T20:58:53Z"
+sha256 = "d75c879465ce89c4f7af7f3752b112e113f4fac070474c80bae42bdcd93122d3"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-12"
+version_note = "arXiv v3 read; the README cites its §1, inequality (1), with the arXiv identifier; the numbering of the J. Algebra version was not checked"
+cited_for = ["9.3"]
+
+[[source]]
+id = "poonen-2007"
+authors = "Bjorn Poonen"
+title = "Gonality of modular curves in characteristic p"
+year = 2007
+venue = "Math. Res. Lett. 14 (2007), no. 4, 691–701"
+arxiv = "math/0601141"
+version_note = "author-page copy of the published version, with its Appendix A and Proposition A.1; arXiv v2 numbers the same list Proposition 1.1"
+locator_scheme = "theorem"
+locator = "Appendix A, Proposition A.1"
+url = "https://math.mit.edu/~poonen/papers/gonality.pdf"
+fetched_from = "https://math.mit.edu/~poonen/papers/gonality.pdf"
+fetched_at = "2026-11-12T21:00:46Z"
+sha256 = "7e222607bc844ef5d731b46d377d612ad849d204d04c37a14628b14d350f7a7e"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-12"
+cited_for = ["1.3", "1.6", "1.7"]
