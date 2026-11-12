@@ -1,0 +1,22 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-SelfAdjointSpectralTheory~9",
+  "head": "8e4f22057f7716160c06bb31ad1dace3f02178c2",
+  "pr": 1854,
+  "folder": "OperatorTheory/SelfAdjointSpectralTheory",
+  "date": "2026-11-12",
+  "findings": 9,
+  "blocking": 2,
+  "notes": "Full re-review of the rewritten folder. Previous R01-R14: twelve repaired, R08 partly (now R03/R04), R13 repaired except the TauCeti.LinearPMap export alias, kept for SpectralSubspacePerturbation's build on main (not raised). Seeded sample of 15 sections 1.1-4.3: seven carry locators. Teschl2009 locators checked against the cached text: (3.40), Thms 3.7, 3.8, 3.21, 5.1, 5.2, 6.6, 6.31, Lemma 6.36, (6.47); pages correct. Teschl's separability assumption (p. 42) is not recorded, and section 3.3 cites Thm 3.8 where Thm 2.18 is meant. Conway1990 IX.1.14 and Schmudgen2012 5.7 are uncertified and not verifiable. Blocking: sections 3.2 (supp P = spectrum) and 3.5 (self-adjoint maximal multiplier) are also owned by UnboundedOperators UO-A06/UO-A07 on main. Gate: worker PASS, every check 0; my rerun adds only outside-folder 4, which are the PR's own BanachSpaceTheory/MorseNovikov. Depcheck: 206 roadmaps, 1902 edges, 0 problems. lake env lean Suggested.lean exits 0 with 6 sorry warnings. #check of all 8 declarations matches the README with no lost binder. One-tactic probes fail on every headline. All 65 former SA ids cited elsewhere are mapped; the Part A-E labels are not (R06). The family index is stale (R08), and so is the PR description (R09).",
+  "deferred": [
+   {
+    "id": "D01",
+    "severity": "P3",
+    "title": "The family index still describes the old roadmap",
+    "where": "the OperatorTheory family index, `TauCetiRoadmap/OperatorTheory/README.md`",
+    "raised": "PRREVIEW-SelfAdjointSpectralTheory~9"
+   }
+  ]
+ }
+}
