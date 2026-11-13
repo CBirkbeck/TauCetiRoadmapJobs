@@ -98,16 +98,19 @@ It leaves to named roadmaps, by section:
   Ceti's `CliffordAlgebra.orthogonalSpinorNorm` at the pin.
 - Weyl's character and dimension formulas and the highest-weight theory of the classical groups:
   RepresentationTheory/LieHighestWeight Layer 6 and RepresentationTheory/ClassicalGroups Layers
-  3–5. Split Chevalley–Demazure group schemes over `ℤ`: ReductiveGroups Layer 9. Level-one
-  elliptic modular forms, Hecke eigenforms and their simultaneous eigenbasis: ModularForms, Layers
-  3–4, with the dimension formula from Mathlib.
+  3–5. Split Chevalley–Demazure group schemes over `ℤ`: ReductiveGroups Layer 9.
 
 Already in the pinned libraries and consumed as is: the smooth split symplectic group scheme over
 `ℤ` and its matrix points (`TauCeti.Symplectic.groupScheme`, `TauCeti.Symplectic.pointsMulEquiv`,
 `TauCeti.Symplectic.instSmoothCoordinateHopfAlgebra`); the eigenvector property of a local
 extremum of a Rayleigh quotient (`IsSelfAdjoint.hasEigenvector_of_isLocalExtrOn`); the level-one
 dimension formula and division by the discriminant (`ModularForm.dimension_level_one`,
-`CuspForm.discriminantEquiv`); the binary Golay code and its Construction A lattice
+`CuspForm.discriminantEquiv`); the Petersson product and a Petersson-orthonormal basis of good
+Hecke eigenforms of each fixed-character cusp space (`CuspForm.peterssonInnerCosets`,
+`HeckeRing.GL2.exists_peterssonOrthonormalBasis_eigenformAwayFromLevel`), normalized newforms with
+their Hecke eigenvalues and the newform basis of the new subspace (`HeckeRing.GL2.Newform`,
+`HeckeRing.GL2.Newform.basis`), with `TauCeti.cuspFormsNew_one` (at level one every cusp form is
+new) and `TauCeti.Gamma1_one_map_eq_SL` (`Γ₁(1)` is the full modular group); the binary Golay code and its Construction A lattice
 (`TauCeti.BinaryGolay.code`, `TauCeti.BinaryGolay.constructionALattice`); the integral lattice
 carrier `TauCeti.IntegralLattice` with `IsEven`, `IsUnimodular`, `IsPosDef`, `norm`,
 `vectorsOfNorm` and the isometry group `TauCeti.IntegralLattice.Isometry`. None of these is planned
@@ -161,10 +164,10 @@ fundamental lemma and trace inputs). Every theorem below whose route uses the lo
 global parameter, the multiplicity formula, the local packets or the Adams–Johnson and Mœglin–Renard
 descriptions carries those premises as hypotheses, exactly as the supplier states them; this applies
 to the type criterion and the same-type root number of §1.8 (not to its level-one root-number
-formula), to §§3.3–3.16, 4.11 and after, all of Layer 5 from §5.3 on except the explicit-formula exclusions themselves, and Layers 7–8
-except §§8.3–8.6. The generalized Riemann hypothesis, where used, is the explicit hypothesis that
-every zero of every completed Rankin–Selberg function `Λ(s, π × π′)` with `π, π′ ∈ Π_alg` has real
-part `1/2`; it appears in the statement of each theorem that uses it.
+formula), to §§3.2–3.16 (§3.2 uses that same-type root number), 4.11 and after, all of Layer 5 from
+§5.3 on except the explicit-formula exclusions themselves, and Layers 7–8 except §§8.3–8.6. The
+generalized Riemann hypothesis, where used, is the explicit hypothesis that every zero of every
+completed Rankin–Selberg function `Λ(s, π × π′)` with `π, π′ ∈ Π_alg` has real part `1/2`; it appears in the statement of each theorem that uses it.
 
 **Coefficients and universes.** Lattices are `TauCeti.IntegralLattice` objects in finite-dimensional
 `ℚ`-vector spaces; alternating forms are `ℚ`-valued. Automorphic spaces are complex. All finite
@@ -215,6 +218,25 @@ sets of classes are counted as natural numbers only after their finiteness is pr
   norm of a Lipschitz lift taken modulo squares; a reflection in `v` has spinor norm the class of
   `Q(v)`. It is the spinor norm of §4.6 and the one in which the imported Zassenhaus formula is
   stated.
+- `CuspForm.peterssonInnerCosets` (`TauCeti/NumberTheory/ModularForms/Petersson/FiniteIndex.lean`):
+  the Petersson product on cusp forms of a finite-index level `Γ ≤ SL₂(ℤ)`.
+  `HeckeRing.GL2.exists_peterssonOrthonormalBasis_eigenformAwayFromLevel`
+  (`TauCeti/NumberTheory/ModularForms/Petersson/Eigenbasis.lean`): each fixed-character cusp space
+  `S_k(N, χ)` has a finite Petersson-orthonormal basis of eigenforms of the Hecke operators prime to
+  `N`, which at `N = 1` are all Hecke operators. `HeckeRing.GL2.Newform`
+  (`TauCeti/NumberTheory/ModularForms/Newforms/Newform.lean`): a good Hecke eigenform in the new
+  subspace normalized by `a₁ = 1`, bundled with its character and its eigenvalues at the indices
+  prime to `N`. `HeckeRing.GL2.Newform.basis`
+  (`TauCeti/NumberTheory/ModularForms/Newforms/OrthogonalBasis.lean`): the newforms of level `N` and
+  weight `k` form a basis of the new subspace `S_k(Γ₁(N))ⁿᵉʷ`. `TauCeti.cuspFormsNew_one`
+  (`TauCeti/NumberTheory/ModularForms/Newforms/Basic.lean`): at level one the new subspace is all of
+  `S_k(Γ₁(1))`. `TauCeti.Gamma1_one_map_eq_SL`
+  (`TauCeti/NumberTheory/ModularForms/CongruenceSubgroups/Basic.lean`): the image of `Γ₁(1)` in
+  `GL₂(ℝ)` is the full modular group, the level of Mathlib's level-one forms. Together they give, at
+  level one, a basis of `S_{w+1}(SL₂(ℤ))` indexed by its normalized eigenforms, used in §§2.20–2.21;
+  the cuspidal representation attached to each newform is AutomorphicFormsOnReductiveGroups §7.2. The
+  eigenvalues stored in a `HeckeRing.GL2.Newform` are those of the Hecke-ring elements; their
+  comparison with the classical operators `T_n` is not part of these declarations.
 
 ### From TauCetiRoadmap.AutomorphicFormsOnReductiveGroups
 
@@ -415,7 +437,7 @@ sets of classes are counted as natural numbers only after their finiteness is pr
   `(1/|O(Leech)|) Σ_{γ ∈ O(Leech)} det(t − γ) = t²⁴ + t¹⁶ + t¹² + t⁸ + 1`, from the conjugacy classes
   of `O(Leech)` and the character of its 24-dimensional representation.
 
-### From TauCetiRoadmap.RepresentationTheory, ReductiveGroups and ModularForms
+### From TauCetiRoadmap.RepresentationTheory and ReductiveGroups
 
 - LieHighestWeight Layer 6: the Weyl character formula, Weyl dimension formula and Kostant
   multiplicity formula. ClassicalGroups Layers 3–5: highest weights of `SO_n`, `O_n` and `Sp_{2n}`,
@@ -423,10 +445,8 @@ sets of classes are counted as natural numbers only after their finiteness is pr
 - ReductiveGroups Layer 9: pinned Chevalley–Demazure group schemes over `ℤ`.
 - What ReductiveGroups must provide (gap:split-orthogonal-regular-form): the identification of the
   pinned Chevalley–Demazure groups of types `B_n` and `D_n` over `ℤ` with the special orthogonal
-  group schemes of the regular forms `x₁x_{2n} + ⋯ + x_nx_{n+1}` and
-  `x₁x_{2n+1} + ⋯ + x_nx_{n+2} + x_{n+1}²`, compatible with points over `ℤ_2`.
-- ModularForms Layers 3–4: the Petersson product, the simultaneous Hecke eigenbasis of level-one
-  cusp forms, normalized eigenforms and their Hecke eigenvalues.
+  group schemes of the regular forms `x₁x_{2n+1} + ⋯ + x_nx_{n+2} + x_{n+1}²` (rank `2n + 1`) and
+  `x₁x_{2n} + ⋯ + x_nx_{n+1}` (rank `2n`) respectively, compatible with points over `ℤ_2`.
 
 ## How to read the build
 
@@ -1150,10 +1170,15 @@ Prove: for odd `w`, if `S` is the set of classes attached to the normalized eige
 `S_{w+1}(SL₂(ℤ))` and §2.17 applies with `U = I_w`, `δ = 1`, `m = 1`, then `N(I_w) = dim S_{w+1}(SL₂(ℤ))`
 (CT20 §1.4 and §2.4.5). The classical dimension is the pinned `ModularForm.dimension_level_one` with
 `CuspForm.discriminantEquiv`, and the dictionary between normalized eigenforms and classes of
-parameter `I_w` is AutomorphicFormsOnReductiveGroups §7.2 with ModularForms Layer 4.
+parameter `I_w` is AutomorphicFormsOnReductiveGroups §7.2 applied to the level-one newforms
+`HeckeRing.GL2.Newform` of weight `w + 1`. Their number is `dim S_{w+1}(SL₂(ℤ))`:
+`HeckeRing.GL2.Newform.basis` is a basis of the new subspace indexed by the newforms, the new subspace
+is the whole cusp space at level one (`TauCeti.cuspFormsNew_one`), and `TauCeti.Gamma1_one_map_eq_SL`
+identifies the level `Γ₁(1)` there with the full modular group of `ModularForm.dimension_level_one`.
 
 *Needs:* §2.17; `ModularForm.dimension_level_one`, `CuspForm.discriminantEquiv`;
-AutomorphicFormsOnReductiveGroups §7.2; ModularForms Layers 3–4.
+AutomorphicFormsOnReductiveGroups §7.2; `HeckeRing.GL2.Newform.basis`, `TauCeti.cuspFormsNew_one`,
+`TauCeti.Gamma1_one_map_eq_SL`.
 
 **Checks.**
 
@@ -1190,14 +1215,15 @@ is the smallest case where the normalized minima differ.
 
 AnalyticNumberTheoryPartI §§1.3, 1.8; SmallRamificationAndAbelianVarietyBaseCases §§1.5–1.7;
 AutomorphicLFunctionsAndLocalFactors §§AL.1.4, AL.3.2.3, AL.3.3.8, AL.3.6, AL.3.9.2, AL.3.9.4;
-AutomorphicFormsOnReductiveGroups §7.2; ModularForms Layers 3–4; ComputationalNumberTheory §§4.17,
+AutomorphicFormsOnReductiveGroups §7.2; Tau Ceti's level-one newform basis
+(`HeckeRing.GL2.Newform.basis`, `TauCeti.cuspFormsNew_one`); ComputationalNumberTheory §§4.17,
 4.17a, 4.26, 4.29–4.34; Mathlib's Rayleigh quotient and level-one dimension formula; Layer 1.
 
 ## Layer 3: Arthur parameters, packet characters and triangular counts
 
 This layer specializes the classification of ModularityAndLanglandsExtensions Layer 3 to level one
 and computes, in the holomorphic cases, the finite sign tests that decide multiplicities. Every
-statement from §3.3 on carries the supplier's standing premises as hypotheses.
+statement from §3.2 on carries the supplier's standing premises as hypotheses.
 
 ### 3.1 Level-one Arthur parameters
 
@@ -1234,15 +1260,19 @@ For `ψ ∈ Ψ₁(Sp_{2g})` with `n_i = rank(π_i)`, let `I_even = {i : n_id_i e
 `I_odd = {i : n_id_i odd}`. Define `C_ψ` as the subgroup of `{±1}^I` of elements `(s_i)` with
 `∏ s_i^{n_id_i} = 1`; it is generated by the `s_i` (`i ∈ I_even`) and the `s_is_j` (`i, j ∈ I_odd`), and has
 order `2^{|I| − 1}`. Put `E_i = ∏_{j ≠ i} ε(π_i × π_j)^{min(d_i, d_j)}` and define `ε_ψ(s_i) = E_i`,
-`ε_ψ(s_is_j) = E_iE_j` (CT20 §5.1, (5.1.2)–(5.1.4)). Prove that this is the component group and epsilon
-character of ModularityAndLanglandsExtensions §3.8.
+`ε_ψ(s_is_j) = E_iE_j` (CT20 §5.1, (5.1.2)–(5.1.4)). Prove, under the standing premises, that this is the
+component group and epsilon character of ModularityAndLanglandsExtensions §3.8. Arthur's character
+retains only the symplectic constituents of the adjoint representation, while `E_i` runs over every pair;
+the two agree because a pair of the same type has `ε(π_i × π_j) = 1` by the conditional half of §1.8
+(CT20 §5.1, after (5.1.2), pp. 40–41).
 
 - `C_ψ` is the group of signs with `∏ s_i^{n_id_i} = 1`, independent of the choice of a distinguished
   odd index.
 - `ε_ψ` is a character of `C_ψ` determined by its values on the generators.
 - Only pairs of opposite type can contribute a sign `−1` to `E_i`, by §1.8.
 
-*Needs:* §§1.8, 3.1; ModularityAndLanglandsExtensions §3.8.
+*Needs:* §1.8 (its same-type root number, with the standing premises), §3.1;
+ModularityAndLanglandsExtensions §3.8 with its standing premises.
 
 **Checks.**
 
@@ -2069,8 +2099,9 @@ archimedean parameter `U_exc`.
 - The first multiplicity-free residual is the parameter of the known class `Δ₂₃,₂₁,₁₇,₁₁,₃`: the
   exclusions are of classes outside the known set, not of every class.
 - `U_exc ∉ V`, although it has `I₂₃` twice, dimension `14` and the simple summand `I₁`: membership in
-  `V` is failure of the `δ = m = 1` exclusion, not the shape of the parameter. Its dimension `14` is the
-  minimum attained on `V`.
+  `V` is failure of the `δ = m = 1` exclusion, not the shape of the parameter. Its dimension `14` equals
+  the lower end of the range `14 ≤ dim U ≤ 42` recorded for the elements of `V` (CT20 §4.1, after
+  Proposition 4.1, p. 35); the source states this bound only, not that some element of `V` attains it.
 
 ### 5.5 The exceptional two-class parameter
 
