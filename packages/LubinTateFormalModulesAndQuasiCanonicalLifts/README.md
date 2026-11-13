@@ -134,8 +134,9 @@ correction of traces between differently indexed generators and the trace-compat
   `χ_π(Art_K(π^r u)) = u⁻¹` for `u ∈ O_K^×`, and replacing `π` by `uπ` multiplies `χ` by the
   unramified character sending arithmetic Frobenius to `u`.
 - The deformation coefficient ring `B` is specified together with its residue field; no Cohen ring
-  of an imperfect field is chosen implicitly. For the CM problem with finite `k_F`, `B = O_(F^ur)`
-  with `F^ur` the maximal unramified subextension of `F/F₀`.
+  of an imperfect field is chosen implicitly. For the CM problem with finite `k_F`,
+  `B = O_(F ∩ F₀^ur)`, the integers of the maximal subextension of `F/F₀` unramified over `F₀`
+  (`F₀^ur` the maximal unramified extension of `F₀`, as for `K^ur`); its residue field is `k_F`.
 - For a lattice `L ⊃ T` with `[L:T] = q₀^N` the lattice quotient is marked to the `q₀^N`-Frobenius
   twist of the special fibre; multiplication by `π_F` compares markings when the exponent changes
   by the residue degree.
@@ -405,7 +406,7 @@ first nonzero coefficient of `[π]_F` is that of `X^(q^h)`, and is infinite when
 height of a module over a local ring is the height of its special fibre. Over a field the first
 nonzero term of `[π]_F` sits in a `q`-power degree, because differentiating the homomorphism
 equation forces a `p`-power and commuting with `[ζ]` for the residue units `ζ ∈ k_K^×` forces a
-power of `q` (VZ07, Definition 1.1, pp.57–58; Lemma 2.1 and Definition 2.2, pp.59–60).
+power of `q` (VZ07, Definition 1.1, pp.57–58; Lemma 2.1 and Definition 2.2, p.60).
 
 API:
 
@@ -591,9 +592,10 @@ with its `ℤ_p`-action has point module the kernel of reduction (§§0.2, 0.4).
 
 ### Dependencies
 
-Mathlib `FormalGroup`, power-series substitution and evaluation; Tau Ceti's elliptic formal group
-and formal-point homomorphisms, native general points, logarithm and exponential convergence,
-and weak approximation; BordismFormalGroups §F1;
+Mathlib `FormalGroup`, power-series substitution and evaluation, Krasner's lemma and the adic
+completions of a Dedekind domain at a height-one prime; Tau Ceti's formal-group homomorphisms and
+isomorphisms, elliptic formal group and formal-point homomorphisms, native general points,
+logarithm and exponential convergence, and weak approximation; BordismFormalGroups §F1;
 FiniteFlatGroupsAndIntegralPadicHodgeTheory §R07.1.12; LocalFieldsRamification Layers 0–1.
 
 ## Layer 1: The Lubin–Tate construction
@@ -734,7 +736,8 @@ height-one module used in the BKO layers.
 
 ### Dependencies
 
-§0.1 (formal modules); §0.2 (point modules, for §1.4); Mathlib power-series substitution.
+§0.1 (formal modules); §0.2 (point modules, for §1.4); Mathlib power-series substitution,
+reduction of coefficients to the residue field and monic polynomials.
 
 ## Layer 2: Torsion, Tate modules and the Artin comparison
 
@@ -933,7 +936,7 @@ API:
 
 Let `Art_K = TauCeti.ClassFieldTheory.artinMap K` be the arithmetic local Artin map. Prove that for
 `x = π^r u` with `u ∈ O_K^×`, every lift `σ ∈ G_K` of `Art_K(x)` satisfies `χ_π(σ|_(K_π)) = u⁻¹`; in
-particular `Art_K(π)` fixes `K_π`. Equivalently, for every `m ≥ 0` the norm group of
+particular `Art_K(π)` fixes `K_π`. Consequently, for every `m ≥ 0` the norm group of
 `K(F_f[π^m])/K` is `π^ℤ × U(K,m)`. For a Lubin–Tate polynomial `f` this norm-group statement is
 `artinMap_fixes_lubinTate_roots_iff`: for `ϖ ∈ Kˣ` equal to `π` and `x ∈ Kˣ`, every lift of
 `Art_K(x)` fixes every root of `f^{∘m}` if and only if `x ∈ ⟨ϖ⟩ · TauCeti.unitFiltration K m`
@@ -1000,8 +1003,9 @@ For `K = W(𝔽_(p²))[1/p]` and `π = −p`, the first division field has degre
 
 ### Dependencies
 
-Layers 0–1; Tau Ceti's finite locally free commutative affine group schemes, local Artin map and
-unit filtration; ClassFieldTheory Layers 6–8;
+Layers 0–1; Mathlib Weierstrass preparation, `IntermediateField.adjoin` and `AlgebraicClosure`;
+Tau Ceti's finite locally free commutative affine group schemes, local Artin map and unit
+filtration; ClassFieldTheory Layers 6–8;
 LocalFieldsRamification Layers 0–2; RamificationOfCompleteDiscretelyValuedFields §4a.3;
 FiniteFlatGroupsAndIntegralPadicHodgeTheory §§R07.1.8, R07.1.12–R07.1.13; ModularCurves §0B;
 RelativeFarguesFontaine §2.5.
@@ -1399,7 +1403,8 @@ Over `W(𝔽_(p²))` choose the Honda model of the Lubin–Tate module for `−p
 ### Dependencies
 
 §§0.1, 1.3; BordismFormalGroups §F1; EllipticCurves Layers 1 and 3; ModularCurves §§7C, 7E;
-FiniteFlatGroupsAndIntegralPadicHodgeTheory §§R07.1.1, R07.2.8; Tau Ceti's elliptic formal group.
+FiniteFlatGroupsAndIntegralPadicHodgeTheory §§R07.1.1, R07.2.8; Tau Ceti's elliptic formal group;
+Mathlib `WittVector`, `GaloisField` and Weierstrass curves.
 
 ## Layer 5: Lattice kernels and integral quotient isogenies
 
@@ -1582,7 +1587,7 @@ quasi-canonical quotients of Layer 6; for the multiplicative group over `ℤ_p` 
 ### Dependencies
 
 §§0.2, 2.1, 2.2, 2.5, 3.7; FiniteFlatGroupsAndIntegralPadicHodgeTheory §§R07.1.20–R07.1.20a;
-ModularCurves §§0B, 0C, 2B, 7C, 7E; EllipticCurves Layer 1.
+ModularCurves §§0B, 0C, 2B, 7C, 7E; EllipticCurves Layer 1; Mathlib Weierstrass preparation.
 
 ## Layer 6: Canonical and quasi-canonical lifts
 
@@ -1742,10 +1747,10 @@ orbit).
 
 ### 6.6 The field of moduli of a marked quasi-canonical lift
 
-Let `k_F` be finite and `B = O_(F^ur)`, and fix, for each Frobenius twist `H̄^(q₀^N)` of the special
-fibre `H̄` of the canonical lift, a universal deformation of `H̄^(q₀^N)` over `B[[t₁,…,t_(n−1)]]`,
-`n = [F:F₀]` (§3.6; each twist is again a formal `O₀`-module over `k_F` of height `n`). For a
-quasi-canonical lift `H_L` let `m_L` be its marked modulus in the deformation space of the twist to
+Let `k_F` be finite and `B = O_(F ∩ F₀^ur)` (Conventions), and fix, for each Frobenius twist
+`H̄^(q₀^N)` of the special fibre `H̄` of the canonical lift, a universal deformation of
+`H̄^(q₀^N)` over `B[[t₁,…,t_(n−1)]]`, `n = [F:F₀]` (§3.6; each twist is again a formal
+`O₀`-module over `k_F` of height `n`). For a quasi-canonical lift `H_L` let `m_L` be its marked modulus in the deformation space of the twist to
 which `H_L` is marked, the twist component of §6.2 (for `L ⊃ T` with `[L:T] = q₀^N` this is
 `H̄^(q₀^N)`); a lattice in the same `π_F^ℤ`-class and twist component gives the same modulus. Prove
 that a lift of `Art_F(a)`, with `a = π_F^r u` and `u ∈ O_F^×`, sends `m_L` to `m_(a⁻¹L)` in the same
@@ -1754,7 +1759,7 @@ Frobenius-twist identifications of §6.2 turn this into `[L] ↦ [a⁻¹L]` on `
 p.296, unit action; G86, §5, pp.324–325). Prove that the smallest field containing `F` over which
 this marked deformation is defined is `M_L = F(m_L)`, the class field of `π_F^ℤ O_L^× ⊂ F^×` under
 the arithmetic Artin map; the statement does not depend on the universal coordinates. After base
-change to the completion `F̂^ur` of the maximal unramified extension
+change to the completion `F̂^ur` of the maximal unramified extension `F^ur` of `F`
 (RamificationOfCompleteDiscretelyValuedFields §4a.3) the quadratic case identifies this field with
 the field of definition in GrossZagierAndArithmeticHeights §7.2. It does not assert minimality among
 fields not containing `F` (Y95, §4, Theorem 1 and proof, p.297; G86, §5, Proposition 5.3,
@@ -1828,8 +1833,8 @@ GrossZagierAndArithmeticHeights §7.2 (strict-base lifts and orbit sizes).
 
 ### 7.2 The quasi-canonical modulus is a uniformizer
 
-In the quadratic case let `B = O_(F^ur)` and fix, for each Frobenius twist of the special fibre, a
-universal height-two deformation over `B[[t]]` (§3.6). Prove that for every quasi-canonical lift
+In the quadratic case let `B = O_(F ∩ F₀^ur)` and fix, for each Frobenius twist of the special
+fibre, a universal height-two deformation over `B[[t]]` (§3.6). Prove that for every quasi-canonical lift
 `H_(L_s)` of level `s ≥ 1` its marked modulus `t_s`, taken in the deformation space of the twist to
 which `H_(L_s)` is marked (§6.6), is a uniformizer of `M_s`: with `v_F(π_F) = 1`,
 `v_F(t_s) = 1/[M_s : F]`, that is, `1/(q₀^(s−1)(q₀ + 1))` when unramified and `1/q₀^s` when
@@ -2099,8 +2104,8 @@ At `p = 5`: `[Φ₀:Φ] = 24`, `[Θ₁:Φ] = 25`, `[Ψ₁:Φ] = 5`, `[Ψ′_1:Φ
 
 ### Dependencies
 
-§§1.4, 2.3–2.5, 4.4, 7.2–7.4, 0.3; LocalFieldsRamification Layer 1; ClassFieldTheory Layers 7–8;
-FiniteFlatGroupsAndIntegralPadicHodgeTheory §R07.1.8.
+§§0.3, 1.4, 2.2–2.5, 4.4, 7.2–7.4; LocalFieldsRamification Layer 1; ClassFieldTheory Layers 7–8;
+Tau Ceti's local Artin map; FiniteFlatGroupsAndIntegralPadicHodgeTheory §R07.1.8.
 
 ## Layer 9: Formal traces and compatible tower maps
 
