@@ -599,7 +599,12 @@
       {
        "name": "free_cover",
        "kind": "compatibility",
-       "statement": "For the singular chains of a finite regular cover (AlgebraicTopology §5.3) the abutment is the homology of the base."
+       "statement": "For a surjective finite regular cover p : E → B with deck group G, C = C_*(E; k) (free over k[G]) and a k-module M with trivial G-action, (C ⊗ M)_G = C_*(E; M)_G ≅ C_*(B; M) through p_* (AlgebraicTopology §5.3, constant coefficients only): the abutment is Hₙ(B; M) and E² = H_p(G, H_q(E; M)) is that of §5.3's Cartan–Leray sequence."
+      },
+      {
+       "name": "free_cover_sign",
+       "kind": "non-example",
+       "statement": "Trivial action is needed: E = ℝ/2ℤ → B = ℝ/ℤ, G = ℤ/2 by x ↦ x + 1, k = ℤ, M = ℤ_sgn. Cellular chains ℤG →(t−1) ℤG give (C ⊗ M)_G = (ℤ →(−2) ℤ), so H₀ = ℤ/2, H₁ = 0, against H₀(B; ℤ) = H₁(B; ℤ) = ℤ; for trivial M = ℤ the differential is 0. Singular chains agree via 0 → ℤ_sgn → ℤG → ℤ → 0 and p_* = 2 on H₁."
       },
       {
        "name": "free_cyclic",
@@ -2256,7 +2261,7 @@
     "§5.4",
     "§8.15"
    ],
-   "what": "Cartan–Leray for finite regular covers, torus homology and C_p × C_p actions, for Checks."
+   "what": "Quotient-chain comparison and Cartan–Leray for surjective finite regular covers with constant coefficients, torus homology and C_p × C_p actions, for Checks."
   },
   {
    "roadmap": "SchemeKTheoryOperations",

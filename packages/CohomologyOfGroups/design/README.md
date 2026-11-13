@@ -59,7 +59,7 @@ continuous cup product `TauCeti.TopPairing.cup` and the continuous Mackey formul
   (§4.7) and the identification of one-edge splittings with Mathlib's `Monoid.PushoutI` and
   `HNNExtension` (§4.5). Layer 3 consumes them.
 - AlgebraicTopology owns cellular chains (§§4.1–4.3), the Cartan–Leray spectral sequence of a
-  finite regular cover (§5.3), torus homology (§5.4) and the non-freeness of `C_p × C_p` actions
+  finite regular cover with constant coefficients (§5.3), torus homology (§5.4) and the non-freeness of `C_p × C_p` actions
   on spheres (§8.15). The algebraic statements 3.3 and 8.3 are the group-cohomological inputs of
   those topological statements; `G`-CW complexes and the `G`-module structure on their cellular
   chains are not constructed here, and the topological forms (a free cellular action on a
@@ -314,8 +314,11 @@ continuous cup product `TauCeti.TopPairing.cup` and the continuous Mackey formul
 
 ### From TauCetiRoadmap.AlgebraicTopology
 
-- §5.3: the Cartan–Leray spectral sequence of a finite regular cover, compared with 3.3 in a
-  Check; §8.15: free actions of `C_p × C_p` on spheres, compared with 8.5 in a Check.
+- §5.3: for a surjective finite regular cover `p : E → B` with deck group `G` and a module `M` of
+  constant coefficients, the identification of the quotient chains `C_*(E; M)_G` with `C_*(B; M)`
+  through `p_*`, and the Cartan–Leray spectral sequence `H_p(G; H_q(E; M)) ⇒ H_{p+q}(B; M)`,
+  compared with 3.3 in a Check; nothing is assumed of coefficients with a nontrivial deck action;
+  §8.15: free actions of `C_p × C_p` on spheres, compared with 8.5 in a Check.
 
 ### From TauCetiRoadmap.SchemeKTheoryOperations
 
@@ -735,9 +738,22 @@ Prove that if every `G_σ` is trivial (each `C_p` free over `k[G]` on a basis), 
 
 **Checks.**
 
-- For the singular chains of a finite regular cover with deck group `G` (AlgebraicTopology §5.3),
-  the abutment `Hₙ((C ⊗ M)_G)` is the homology of the base through §5.3's quotient-chain
-  comparison, and the `E²` term is the `E²` term of §5.3.
+- For a surjective finite regular cover `p : E → B` with deck group `G`, `C = C_*(E; k)` its
+  singular chains with the deck action (free over `k[G]`, since `G` acts freely on singular
+  simplices) and `M` a `k`-module with trivial action of `G`, `(C ⊗ M)_G` is the quotient chain
+  complex `C_*(E; M)_G`, which AlgebraicTopology §5.3 identifies with `C_*(B; M)` through `p_*`.
+  So the abutment `Hₙ((C ⊗ M)_G)` is `Hₙ(B; M)` and the `E²` term `H_p(G, H_q(E; M))` is that of
+  §5.3's Cartan–Leray sequence. §5.3 compares constant coefficients only.
+- The trivial action on `M` is needed in that comparison: take `E = ℝ/2ℤ → B = ℝ/ℤ`, `G = ℤ/2`
+  acting by `x ↦ x + 1`, `k = ℤ` and `M = ℤ_sgn`. On the cellular chains of `E` with vertices
+  `0, 1` and edges `[0, 1], [1, 2]`, the complex `ℤG →(t−1) ℤG` of free modules, identifying
+  `(ℤG ⊗ M)_G` with `M` by `g ⊗ m ↦ g⁻¹m` turns `(C ⊗ M)_G` into `ℤ →(−2) ℤ`, with `H₀ = ℤ/2` and
+  `H₁ = 0`, while `H₀(B; ℤ) = H₁(B; ℤ) = ℤ`; for trivial `M = ℤ` the differential is `0` and both
+  sides are `ℤ` in degrees `0` and `1`. The singular chains give the same groups: the coefficient
+  sequence `0 → ℤ_sgn → ℤG → ℤ → 0` (`1 ↦ t − 1`) gives a long exact sequence (3.1) whose middle
+  terms are `Hₙ((C ⊗ ℤG)_G) = Hₙ(E; ℤ)`, mapping by `p_*` to `Hₙ(B; ℤ)`, which is bijective on
+  `H₀` and multiplication by `2` on `H₁`; hence `H₁ = 0` and `H₀ = ℤ/2` for `ℤ_sgn`. A nontrivial
+  action on `M` changes the coefficient system on the base.
 - For `G = ℤ/m` and the free resolution `⋯ → ℤG →N ℤG →(t−1) ℤG → ℤ` (Loh19 Prop. 1.6.11,
   p. 48), `Hₙ((C ⊗ ℤ)_G)` is `ℤ/m` in odd degrees and `0` in positive even degrees.
 - Freeness is needed: for `C = ℤ` in degree `0` with trivial action (not free),
