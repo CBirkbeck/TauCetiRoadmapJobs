@@ -17,6 +17,12 @@
       "needs": "For a smooth complex algebraic variety S, a closed complex analytic E⊆S^an and a closed complex analytic A⊆S^an∖E definable in an o-minimal expansion of R_an, the closure of A in S^an is complex analytic (Peterzil–Starchenko, Theorem 4.4).",
       "supplier": "ShimuraVarieties",
       "section": "3.5d"
+    },
+    {
+      "slug": "ran-exp-analytic-cells",
+      "needs": "Analytic cell decomposition for R_an,exp: for finitely many R_an,exp-definable subsets of ℝⁿ, a cell decomposition of ℝⁿ in the sense of §3.4c partitioning each of them in which every graph function and every band bound is real analytic on its base cell (van den Dries–Miller, Geometric categories, §4.2, p.12; Pila–Tsimerman 2014, proof of Lemma 7.7, p.678).",
+      "supplier": "ShimuraVarieties",
+      "section": "3.5a"
     }
   ]
 }

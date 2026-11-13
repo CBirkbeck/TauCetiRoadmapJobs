@@ -13,17 +13,6 @@ status = "waived"
 cited_for = ["6.1–6.6"]
 
 [[source]]
-id = "vd_dr_macintyre_marker"
-authors = "Lou van den Dries, Angus Macintyre, David Marker"
-title = "The Elementary Theory of Restricted Analytic Fields with Exponentiation"
-year = 1994
-locator_scheme = "section"
-locator = "Analytic cell decomposition, cited in van den Dries–Miller §4.2, p.12"
-licence_class = "none"
-status = "waived"
-cited_for = ["6.3"]
-
-[[source]]
 id = "pila_wilkie"
 authors = "Jonathan Pila and Alex Wilkie"
 title = "The rational points of a definable set"
