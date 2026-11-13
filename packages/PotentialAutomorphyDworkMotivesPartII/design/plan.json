@@ -5856,6 +5856,12 @@
       "needs": "For an imaginary CM number field L and integers a_σ indexed by the embeddings σ : L ↪ ℂ such that `a_σ + a_(cσ) = w` does not depend on σ, an algebraic Hecke character of L (Weil type A₀) whose restriction to the identity component of `(L ⊗ ℝ)^×` is `x ↦ ∏_σ σ(x)^(−a_σ)`, with no condition on its finite conductor (the converse of the purity of algebraic infinity types; Barnet-Lamb–Gee–Geraghty–Taylor, Lemma A.2.4, arXiv v4 p. 88).",
       "supplier": "GlobalNumberFields",
       "section": "Layer 10: archimedean characters, infinity types, and cyclotomic arithmetic"
+    },
+    {
+      "slug": "ordinary-and-supersingular-curves-over-prime-fields",
+      "needs": "For every prime p, an ordinary elliptic curve and a supersingular elliptic curve over 𝔽_p, in the sense of Layer 3 (Deuring's theorem that for q = p every integer β with β² ≤ 4p is the Frobenius trace of an elliptic curve over 𝔽_p; Waterhouse, Theorem 4.1, p. 536).",
+      "supplier": "EllipticCurves",
+      "section": "Layer 3: elliptic curves over finite fields — the Hasse bound (AEC V.1)"
     }
   ],
   "sourceIssues": [

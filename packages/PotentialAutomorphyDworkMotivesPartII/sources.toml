@@ -327,5 +327,22 @@ sha256 = "1d4ad61f79b22926ad39a3d13429cc178bc0e9f42ab0b8896c0b466079c7d07e"
 licence_class = "institutional"
 status = "certified"
 accessed = "2026-11-11"
-cited_for = ["0.11"]
 version_note = "public-domain 1901 edition, University of Toronto Libraries scan; printed page numbers"
+cited_for = ["0.11"]
+
+[[source]]
+id = "WATERHOUSE69"
+authors = "William C. Waterhouse"
+title = "Abelian varieties over finite fields"
+year = 1969
+venue = "Ann. Sci. École Norm. Sup. (4) 2, 521–560"
+locator_scheme = "theorem"
+locator = "Theorem 4.1, p. 536 (with q = p: every integer β with |β| ≤ 2√p is the Frobenius trace of an elliptic curve over F_p)"
+url = "https://www.numdam.org/item/ASENS_1969_4_2_4_521_0.pdf"
+fetched_from = "https://www.numdam.org/item/ASENS_1969_4_2_4_521_0.pdf"
+fetched_at = "2026-11-13T08:52:21Z"
+sha256 = "7be2bf9dde45454afa3dd9a0ea1ba05acbe952b6b573a0c37c2b1b8f0cccbb47"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-13"
+cited_for = ["9.7"]
