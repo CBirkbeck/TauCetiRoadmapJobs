@@ -1,0 +1,16 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "SpectralSequencesAndConvergencePartII"
+
+[[source]]
+id = "grothendieck1957"
+authors = "Alexander Grothendieck"
+title = "Sur quelques points d'algèbre homologique, I"
+year = 1957
+doi = "10.2748/tmj/1178244839"
+locator_scheme = "section"
+locator = "Chapitre II, §2.4 (derived functors of a composite functor)"
+sha256 = "5a8e5720bc2ef8905bf85f7919c65ac4a87a31cfc854bd77e6b5084c0d2debef"
+licence_class = "operator-local"
+status = "certified"
+local_name = "grothendieck-1957-tohoku-9-2-sur-quelques-points-I.pdf"
+resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/14490#issuecomment-6855603699"
