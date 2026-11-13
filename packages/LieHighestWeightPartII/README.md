@@ -23,6 +23,28 @@ The following objects have one owner and are consumed here.
 
 Weight patterns, `q`-geometric points, positive real parts and the recognition of positive real parts up to `G(ℂ)`-conjugacy (§§5.3–5.5) are owned here, for every connected complex reductive group and every `q > 1`, together with their direct-sum, tensor, dual and conjugation laws. The weight recognition of real Satake classes in GlobalShtukasAndFunctionFieldLanglandsPartII §8.0 is a consumer of them, not a second owner: it keeps only what is particular to Satake parameters, namely the normalization of real parts by the residue cardinality, which compares places with different `q`, the passage from absolute Weyl conjugacy to conjugacy under the relative Weyl group on the Frobenius-fixed real space, and the Aubert-involution identity of that section. None of these is stated or consumed here.
 
+Some roadmaps cite this one by a former numbering N0–N5, whose stages N0, …, N5 are Layers 0, …, 5 here, except for the labels that the table assigns to another roadmap. Each former label corresponds to a present section as follows.
+
+| Former label (N0–N5 numbering) | Present location |
+|---|---|
+| N0 zero-triple | §0.1 |
+| N0 nilpotent-orbit | NilpotentOrbits N0.3 and N2.4 (adjoint orbits of nilpotent elements and their classes; not owned here); conjugacy of triples is §§0.2–0.3 |
+| N0 jordan-centralizer | NilpotentOrbits N0.2 (internal Jordan decomposition) and N0.3 (centralizers); not owned here |
+| N0 jacobson-morozov, N0 kostant-conjugacy | NilpotentOrbits N2.1; not owned here |
+| N0 triple-integration | §0.2 (adjoint image and inner invariance of modules); the algebraic `SL₂`-homomorphism of a triple is NilpotentOrbits N2.1 |
+| N0 neutral-conjugacy | §0.3 |
+| N1 restriction, N1 weight-filtration, N1 graded-comparison, N1 tensor-exactness | §1.1, §1.2, §1.3, §1.4 respectively |
+| N2 classical-partitions | §2.1 and §2.2; the type `A` partition classification is NilpotentOrbits N4 |
+| N2 half-spin-separation, N2 classical-recognition | §2.3, §2.4 respectively |
+| N3 dominant-characteristic, N3 root-profile | §3.1, §3.2 respectively |
+| N3 candidate-certificate, N3 candidate-profile-injective | §3.3 |
+| N3 exceptional-separation, N3 appendix-table-interface | §3.4, §3.5 respectively |
+| N4 filtration-recognition | §4.1 |
+| N5 root-coset-half-integrality, N5 highest-weight-test | §5.1, §5.2 respectively |
+| N5 weight-pattern, N5 positive-real-part, N5 real-part-recognition | §5.3, §5.4, §5.5 respectively |
+| N5 algebraic-highest-weight-existence | ReductiveGroups Layer 10B; not owned here |
+| N5 character-separation | ReductiveGroupsPartIII §0.3 and §0.5; not owned here |
+
 ## Conventions
 
 `K` is an algebraically closed field of characteristic zero, except in §§5.3–5.5, where the field is `ℂ`, and in the Lie-algebra statement of §5.2, which needs only characteristic zero and a splitting Cartan subalgebra. `L` is a Lie algebra over `K`; it is finite-dimensional with nondegenerate Killing form (`LieAlgebra.IsKilling`) wherever conjugacy is discussed, which over `K` is semisimplicity. Modules are Lie modules over `K`; "representation" means a finite-dimensional Lie module unless an algebraic representation of a group is named. Half-spin modules are Lie modules of `so(2r)`; nothing here asks them to descend to a special orthogonal group. Over `K` they are realised on the even and odd exterior algebras `S⁺ = ⋀^even W`, `S⁻ = ⋀^odd W` of a maximal isotropic subspace `W` (Tau Ceti `TauCeti.spinPlus`, `TauCeti.spinMinus`) as modules of the split algebra `LieAlgebra.Orthogonal.typeD`, and `Suggested.lean` states the type-`D` recognition theorem on that split carrier.
@@ -587,7 +609,7 @@ ReductiveGroups Layers 1, 4, 7, 10B; ReductiveGroupsPartIII §0.5; LieHighestWei
 
 The recognition theorems of Layers 1–4 and the positive-real-part recognition of Layer 5 are the representation-theoretic inputs of the Ciubotaru–Harris argument for the generalized Ramanujan and Arthur conjectures over function fields: Lemma 2.4 compares Frobenius weight filtrations of Langlands parameters, and Proposition 10.2 identifies the real part of a Satake parameter from its weight patterns. Any consumer comparing representation-indexed filtrations or weight data of parameters for a complex reductive dual group uses these interfaces; none of them feeds back into this roadmap.
 
-GlobalShtukasAndFunctionFieldLanglandsPartII §8.0 is such a consumer. For `ν` in the real cocharacter space of the complex dual torus and an algebraic representation `τ`, its multiplicity function `n_(ν,τ)(i)`, the number of weights `μ` of `τ` with `2⟨μ, ν⟩ = i`, is `weightPattern q (τ(q^ν)) i` for every `q > 1`, because the eigenvalues of `τ(q^ν)` are the positive reals `q^⟨μ,ν⟩`; its geometric `ν` are those for which `q^ν` satisfies `IsGeometricPoint q`, and `q^ν` is its own positive real part. So §5.5 applied to `q^ν` and `q^ν′` makes them `G(ℂ)`-conjugate, hence Weyl-conjugate as points of the torus, hence `ν` and `ν′` Weyl-conjugate, since `ν ↦ q^ν` is injective and Weyl-equivariant on the real cocharacter space; that section adds only the normalization across residue cardinalities and the relative Weyl group refinement. SmoothRepresentationsOfLocalGroupsPartII consumes the positive real part of §5.4 and the half-integrality test of §5.2 for real parts of spherical Satake parameters.
+GlobalShtukasAndFunctionFieldLanglandsPartII §8.0 is such a consumer. For `ν` in the real cocharacter space of the complex dual torus and an algebraic representation `τ`, its multiplicity function `n_(ν,τ)(i)`, the number of weights `μ` of `τ`, counted with multiplicity, with `2⟨μ, ν⟩ = i`, is `weightPattern q (τ(q^ν)) i` for every `q > 1`, because `τ(q^ν)` acts on the `μ`-weight space of `τ` by the positive real `q^⟨μ,ν⟩`, of absolute value `q^(i/2)` exactly when `2⟨μ, ν⟩ = i`; for the adjoint representation of `SL₃` and `ν = 0` both sides are `8` at `i = 0`, although that representation has only `7` distinct weights (the six roots, and `0` with multiplicity two). The geometric `ν` of that section are those for which `q^ν` satisfies `IsGeometricPoint q`, and `q^ν` is its own positive real part. So §5.5 applied to `q^ν` and `q^ν′` makes them `G(ℂ)`-conjugate, hence Weyl-conjugate as points of the torus, hence `ν` and `ν′` Weyl-conjugate, since `ν ↦ q^ν` is injective and Weyl-equivariant on the real cocharacter space. That section adds the normalization across residue cardinalities, the relative Weyl group refinement and its Aubert-involution identity, the three items that Scope and ownership leaves to it. SmoothRepresentationsOfLocalGroupsPartII consumes the positive real part of §5.4 and the half-integrality test of §5.2 for real parts of spherical Satake parameters.
 
 ## Worked examples
 
