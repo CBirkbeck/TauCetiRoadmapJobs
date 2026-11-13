@@ -1,0 +1,22 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-AnabelianGeometryAndNonabelianChabauty~8",
+  "head": "4a7e05ea4d62b8ee951af23bbe85f675bcb8bafe",
+  "pr": 1021,
+  "folder": "AnabelianGeometryAndNonabelianChabauty",
+  "date": "2026-11-13",
+  "findings": 2,
+  "blocking": 0,
+  "notes": "incremental re-review of 33 changed lines since 227f000. Checked: the rewritten section 7.0 (Chern comparison on KTheoryFiniteLocalFields 1.8), its scope sentence, supplier contract, Needs lines and two new references; supplier sections resolved at the open heads of KTheoryFiniteLocalFields, SchemeKTheoryOperations and ArithmeticKTheory; Soule 6.1 and 6.4 and Weibel Propositions 4.4 and 5.1 read at their locators; Huber-Wildeshaus not fetchable (not verifiable). Adversarial table with computed values for the changed statements. Dependency check 0 problems. Gate FAILS: statement-hygiene=1 (letI in the signature of anabelian_isom, R01 P3, repair elaborated on a scratch copy). R02 P3: Layer 7 Dependencies paragraph omits KTheoryFiniteLocalFields 1.8. Suggested.lean elaborates with sorry the only warning. Seeded sample: no target falls in the changed passages. Pull request text consistent with the head.",
+  "carried": {
+   "from": "4a7e05ea4d62b8ee951af23bbe85f675bcb8bafe",
+   "head": "c71ec32dc38dfe440499094cd76e5f2da0e1e06b",
+   "findings": 2,
+   "lines": 49,
+   "folders": [
+    "AnabelianGeometryAndNonabelianChabauty"
+   ]
+  }
+ }
+}
