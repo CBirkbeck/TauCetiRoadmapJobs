@@ -19,7 +19,7 @@ sha256 = "d05a7f84ce98862d470d114946b7002e8d5ab1df3c4d77fb4851ff45f5d80049"
 licence_class = "publisher-open"
 status = "certified"
 accessed = "2026-10-25"
-cited_for = ["VS6–VS11"]
+cited_for = ["Conventions (Definition 4.1.3, nice maps), VS6–VS11"]
 
 [[source]]
 id = "GHW22"

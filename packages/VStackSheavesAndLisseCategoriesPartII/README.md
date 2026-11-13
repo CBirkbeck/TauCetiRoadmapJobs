@@ -2,7 +2,7 @@
 
 **Summary.** This Part II of *Artin v-stacks, solid and lisse coefficient categories* constructs the exceptional functors Rf_! and Rf^! for fine maps between decent v-stacks, which include stacky maps such as the structure map of the classifying stack of a locally pro-p group, and builds on them the symmetric monoidal 2-category of cohomological correspondences, dualizability as universal local acyclicity, characteristic classes on inertia stacks, the relative Lefschetz–Verdier trace formula, local terms with their base change and their comparison with perfect schemes, trace distributions of admissible representations, a Künneth formula for characteristic classes, and universal local terms for group actions. The sources are Gulotta–Hansen–Weinstein (the exceptional functors), Lu–Zheng (categorical traces) and Hansen–Kaletha–Weinstein §4, §5.3 and Appendix B (the trace formalism on v-stacks).
 
-The base roadmap *Artin v-stacks, solid and lisse coefficient categories* (`VStackSheavesAndLisseCategories`) stops at the following point. It defines Artin v-stacks, descends étale coefficients along smooth charts, constructs exceptional pullback for cohomologically smooth stacky maps and partial compact-support functors (its VS0), and develops universally locally acyclic (ULA) sheaves with their duality theory (its VS1); it constructs no exceptional pushforward Rf_! for non-representable maps such as [S/G_S] → S for a geometric point S and a nontrivial locally pro-p group G. Here the exceptional functors are constructed for all fine maps of decent v-stacks, and the Lefschetz–Verdier trace formalism is built on them through Lu–Zheng's symmetric monoidal 2-category of cohomological correspondences. The end theorems are the relative Lefschetz–Verdier trace formula for v-stacks (VS9.1) with its proper-pushforward form (VS9.2), the identification of the characteristic class of an admissible object on a classifying stack with its trace distribution (VS11.4), the Künneth formula for characteristic classes (VS11.9), and the identification of characteristic classes on quotient stacks [X/G] with universal local terms (VS11.12); the deep input theorem is the existence of the exceptional functors for fine maps (VS7.5) and the identification of dualizable objects with ULA objects (VS8.9).
+The base roadmap *Artin v-stacks, solid and lisse coefficient categories* (`VStackSheavesAndLisseCategories`) stops at the following point. It defines Artin v-stacks, descends étale coefficients along smooth charts, constructs exceptional pullback for cohomologically smooth stacky maps together with its left adjoint f_! on that smooth class, and partial compact-support functors (its VS0), and develops universally locally acyclic (ULA) sheaves with their duality theory (its VS1). It constructs no exceptional pushforward for maps that are neither representable nor cohomologically smooth, such as the structure map [T_S/G_S] → S for a geometric point S, the profinite set T = Z_p with the trivial action of G = C₂ and Λ = F_ℓ: this map is fine (VS10.10) and has C₂-stabilisers, and pulled back along the finite étale chart T_S → [T_S/G_S] its dualizing complex becomes K_(T_S/S), which is not invertible (VS7.9), so it is not cohomologically smooth (VS7.8). Here the exceptional functors are constructed for all fine maps of decent v-stacks, agreeing with the base roadmap's pair on the smooth class (VS7.8), and the Lefschetz–Verdier trace formalism is built on them through Lu–Zheng's symmetric monoidal 2-category of cohomological correspondences. The end theorems are the relative Lefschetz–Verdier trace formula for v-stacks (VS9.1) with its proper-pushforward form (VS9.2), the identification of the characteristic class of an admissible object on a classifying stack with its trace distribution (VS11.4), the Künneth formula for characteristic classes (VS11.9), and the identification of characteristic classes on quotient stacks [X/G] with universal local terms (VS11.12); the deep input theorem is the existence of the exceptional functors for fine maps (VS7.5) and the identification of dualizable objects with ULA objects (VS8.9).
 
 ## Scope and ownership
 
@@ -10,9 +10,10 @@ This roadmap owns: decent v-stacks, fine, proper fine and proper nice maps, and 
 
 It imports the following from other roadmaps, and states none of it again:
 
-- Artin v-stacks, smooth descent of D_ét, exceptional pullback for smooth stacky maps, ULA sheaves and their duality (Fargues–Scholze IV.1–IV.2), and the identification of sheaves on [∗/G] with smooth representations (Fargues–Scholze V.1.1): *Artin v-stacks, solid and lisse coefficient categories*, §§VS0.1–VS0.2, VS1.1–VS1.2, VS4.2 and VS5.2.
+- Artin v-stacks, smooth descent of D_ét, exceptional pullback for smooth stacky maps with its left adjoint on that class, ULA sheaves and their duality (Fargues–Scholze IV.1–IV.2), and the identification of sheaves on [∗/G] with smooth representations (Fargues–Scholze V.1.1): *Artin v-stacks, solid and lisse coefficient categories*, §§VS0.1–VS0.2, VS1.1–VS1.2, VS4.2 and VS5.2. The exceptional functors of Layer VS7 differ by being defined for all fine maps of decent v-stacks; on cohomologically smooth fine maps they are that pair (VS7.8).
 - Scholze's six operations for maps representable in locally spatial diamonds, cohomological smoothness, dualizing complexes and Haar-normalised averaging for profinite quotients: *Six operations, cohomological smoothness and biduality* (`DiamondSixOperations`), Layers S0–S5.
 - Diamonds, small v-stacks, spatial and locally spatial diamonds, relative representability and the diamond of an analytic adic space: *Diamonds and v-stacks* (`DiamondsAndVStacks`), Layers D4–D6.
+- The bound of the cohomological dimension of a spectral space by its Krull dimension: *Étale cohomology of diamonds and its four operations* (`DiamondEtaleCohomology`), §C8.44.
 - Quasicategories, derived ∞-categories of sheaves, hypercover descent, coherent diagrams, mates and adjoint functor theorems, and symmetric monoidal ∞-categories: *Enhanced derived categories of sheaves* (`EnhancedDerivedSheaves`), §§E1.4, E2.6, E3.2, E3.4 and E5:abstract.1.
 - Smooth representations, the derived smooth category, derived invariants, derived smooth duality and admissible complexes, compact generation by compact induction, locally constant compactly supported functions, ring-valued Haar measures, integration and convolution, smooth and compact induction, and the modulus character: *Smooth representations of local groups* (`SmoothRepresentationsOfLocalGroups`), §§SR.0.3, SR.0d.2, SR.1.1, SR.2.1 and SR.2.2. In particular §SR.0d.2 supplies admissibility and §SR.1.1 the ring-valued Haar measures and integration; VS10.5 equips the supplied Haar measures with the module and modulus identifications used by the geometric operations.
 - Cohomological correspondences of schemes, their trace maps and local terms, for finite ℓ-power-torsion coefficient rings and bounded constructible complexes of finite Tor dimension: *Étale duality, cycle classes and perverse sheaves* (`EtaleDualityAndPerverseSheaves`), §§6.1–6.3. The extension to arbitrary prime-to-p torsion coefficient rings, arbitrary complexes for correspondences and f-ULA complexes for local terms is required of that roadmap through the two supplier gaps stated in its contract below; VS9.7–VS9.8 keep that generality. The adic coefficient ranges of §§6.1–6.3 lie outside this roadmap's torsion convention.
@@ -30,11 +31,12 @@ Outside this roadmap: the computation of local terms of Satake sheaves on affine
 - Λ is a commutative ring with nΛ = 0 for an integer n prime to p. D_ét(X, Λ) is Scholze's category for a small v-stack X, with its symmetric monoidal ∞-categorical enhancement; H^0(X, A) means Hom(Λ_X, A).
 - Cohomologically smooth means ℓ-cohomologically smooth for every prime ℓ ≠ p (Scholze, Definition 23.8), and for maps of decent v-stacks the chart-wise notion of Gulotta–Hansen–Weinstein, Definition 1.3(ii).
 - Decency follows the public version of Gulotta–Hansen–Weinstein (arXiv:2202.12467v1, Definition 1.1): surjective charts from locally separated locally spatial diamonds that are locally separated and cohomologically smooth. Hansen–Kaletha–Weinstein restate it with different wording and numbering; see *Corrections to the sources*.
-- Proper means proper in the sense of Scholze, Definition 18.1; proper maps of v-stacks are 0-truncated. A proper fine map is a proper map of decent v-stacks that is fine, and a proper nice map is a proper fine map representable in locally spatial diamonds (VS6.11). Every proper fine map f carries a comparison c_f : Rf_! → Rf_* (VS7.7); f is cohomologically proper if the comparison of every base change of f along a map of decent v-stacks is an isomorphism. Proper 2-morphisms of correspondences, proper pushforwards and integration are taken among cohomologically proper maps; these include all proper nice maps.
+- A map of small v-stacks is representable in nice diamonds, or nice (Hansen–Kaletha–Weinstein, Definition 4.1.3, p. 22), if it is compactifiable, representable in locally spatial diamonds and locally of finite dim.trg; these are the eligible maps of DiamondSixOperations §S0.4. A nice diamond over S is a small v-stack X with X → S nice. Nice maps are separated (compactifiable maps are), so a nice map between decent v-stacks is fine (VS6.7 (iv)).
+- Proper means proper in the sense of Scholze, Definition 18.1; proper maps of v-stacks are 0-truncated. A proper fine map is a proper map of decent v-stacks that is fine, and a proper nice map is a proper fine map representable in locally spatial diamonds (VS6.11), equivalently a proper map of decent v-stacks that is nice (VS6.7 (iv)). Every proper fine map f carries a comparison c_f : Rf_! → Rf_* (VS7.7); f is cohomologically proper if the comparison of every base change of f along a map of decent v-stacks is an isomorphism. Proper 2-morphisms of correspondences, proper pushforwards and integration are taken among cohomologically proper maps; these include all proper nice maps.
 - Duality data follow Mathlib's orientation (`CategoryTheory.ExactPairing`): coev : 1 → X ⊗ X^∨ and ev : X^∨ ⊗ X → 1, and tr(e) = ev ∘ σ ∘ (e ⊗ id) ∘ coev with σ the symmetry. A 2-category is a bicategory (weak 2-category); ΩC = End(1).
-- In a correspondence X ← C → X′ the left leg is c₁ and the right leg c₂; a cohomological correspondence is u : c₁^*A → c₂^!A′. Fix(c) = C ×_(X ×_S X) X and In_S(X) = X ×_(X ×_S X) X.
+- In a correspondence X ← C → X′ the left leg is c₁ and the right leg c₂; a cohomological correspondence is u : c₁^*A → c₂^!A′. For c : C → X ×_S X, Fix(c) = C ×_(X ×_S X) X (the fibre product with the diagonal Δ), with projections Δ′ : Fix(c) → C, the base change of Δ, and c′ : Fix(c) → X, the base change of c; VS8.10 and VS9.8 use these two names; elsewhere (VS8.3, VS8.7, VS9.1, VS9.2, VS11.5, VS11.7) a prime marks another correspondence, leg, base change or morphism, named where it occurs. In_S(X) = X ×_(X ×_S X) X.
 - For a locally profinite set T and a discrete ring Λ, C(T, Λ) is the ring of locally constant functions and C_c(T, Λ) its ideal of compactly supported ones. For a locally profinite group G, Haar(G, Λ) is the module of left Haar measures, with the right-translation action specified below. G_S and T_S are constant diamonds over S, and S denotes a geometric point Spd C or Spd k (C an algebraically closed perfectoid field, k an algebraically closed discrete field of characteristic p) when Layer VS10 or VS11, or a Check about [S/G_S] or [T_S/G_S], says so.
-- The Haar action is (g·μ)(E) = μ(Eg); when a compact open subgroup has invertible pro-order, it has a coefficient-valued character χ_G(g) = (g·μ)/μ. *Smooth representations of local groups* §SR.2.2 uses δ_SR(g) = μ(Eg⁻¹)/μ(E), so χ_G = δ_SR⁻¹; every Haar twist below uses χ_G. Witness: for the affine group {(a, b)} over ℚ_p with left Haar measure |a|⁻² da db and g = diag(p, 1), μ(Eg) = |p|⁻¹μ(E) = pμ(E), so χ_G(g) = p, while δ_SR(g) = |p| = p⁻¹.
+- The Haar action is (g·μ)(E) = μ(Eg); when a compact open subgroup has invertible pro-order, it has a coefficient-valued character χ_G(g) = (g·μ)/μ. Write δ_G(g) = μ(Eg⁻¹)/μ(E) for the modular character of G; by uniqueness of Haar measures, for a compact open subgroup K of invertible pro-order, δ_G(g) = μ(gKg⁻¹)/μ(K) = [gKg⁻¹ : gKg⁻¹ ∩ K]·[K : gKg⁻¹ ∩ K]⁻¹, a unit of Λ. Then χ_G = δ_G⁻¹, and every Haar twist below uses χ_G. When G = P = M ⋉ N is a parabolic subgroup of a reductive group (M unimodular), δ_G is the modulus δ_P of *Smooth representations of local groups* §SR.2.2 (*modulus-character*); that δ_P is the conjugation modulus of N, so for a presentation with N = 1 it is trivial and differs from δ_G when G is not unimodular. Witness: for the affine group {(a, b)} over ℚ_p with left Haar measure |a|⁻² da db and g = diag(p, 1), μ(Eg) = |p|⁻¹μ(E) = pμ(E), so χ_G(g) = p and δ_G(g) = p⁻¹; for the pro-p subgroup K = (1 + pZ_p) ⋉ Z_p one has gKg⁻¹ = (1 + pZ_p) ⋉ pZ_p of index p in K, giving δ_G(g) = 1/p again. Conjugation by g scales N = {(1, b)} by |p| = p⁻¹, the conjugation modulus for M = {(a, 0)}, while for N = 1 it is 1 ≠ p⁻¹.
 - For a locally profinite set T with a continuous left G-action, G acts on C(T, Λ) and C_c(T, Λ) by (g·h)(t) = h(g⁻¹·t). In particular G acts on C_c(G, Λ) through its conjugation action g·x = gxg⁻¹ on G, by (g·h)(x) = h(g⁻¹xg), so g·1_K = 1_(gKg⁻¹). With the Haar action above this is the direction under which the trace distribution of VS11.3 is invariant. Witness: for the affine group over ℚ₂ (so p = 2), Λ = F_5, g = diag(2, 1) (so χ_G(g) = 2), a compact open pro-2 subgroup K, the Haar measure normalised by μ(K) = 1 and h = 1_K, one has μ(gKg⁻¹) = χ_G(g)⁻¹μ(K) = 2⁻¹ = 3 in F_5, so ∫ g·h d(g·μ) = χ_G(g)·μ(gKg⁻¹) = 2·3 = 1 = μ(K), while the other direction (g·h)(x) = h(gxg⁻¹) gives χ_G(g)·μ(g⁻¹Kg) = 2·2 = 4 ≠ 1. Over ℚ_p with p odd, |2|_p = 1 and both directions give μ(K), so the witness needs p = 2 and μ(K) ≠ 0.
 
 ## Exact supplier contracts
@@ -58,7 +60,7 @@ Outside this roadmap: the computation of local terms of Satake sheaves on affine
 ### From TauCetiRoadmap.VStackSheavesAndLisseCategories
 
 - §VS0.1 (*artin-v-stack-definition*): Artin v-stacks in the sense of Fargues–Scholze, Definition IV.1.1. Used by VS6.3.
-- §VS0.2 (*enhanced-smooth-descent*, *shriek-pullback-for-smooth-stacky-maps*, and the Check that the point of [∗/ℤ_p] is not a smooth atlas): enhanced smooth descent of D_ét, the exceptional pullback for cohomologically smooth stacky maps, and the failure of smoothness of the point of [∗/ℤ_p], the model case of an infinite compact open K. Used by VS6.8, VS6.10, VS7.5 and VS7.8.
+- §VS0.2 (*enhanced-smooth-descent*, *shriek-pullback-for-smooth-stacky-maps*, and the Check that the point of [∗/ℤ_p] is not a smooth atlas): enhanced smooth descent of D_ét, the exceptional pullback f^! for cohomologically smooth stacky maps, its left adjoint f_! on that smooth class (the API identity Map(f_!B, A) = Map(B, f^!A)), and the failure of smoothness of the point of [∗/ℤ_p], the model case of an infinite compact open K. Used by VS6.8, VS6.10, VS7.5 and VS7.8.
 - §VS1.1 (*ula-definition-with-constructibility*, *ula-descent-and-smooth-locality*, *ula-dualizability-criterion*, and the sub-target *Relative adjoints and ULA calculus*) and §VS1.2 (*smooth-ula-criterion*, *ula-for-artin-v-stacks*): ULA objects, their descent and smooth locality, their dualizability criterion and relative calculus, the smooth criterion and ULA objects on Artin v-stacks. Used by VS7.8, VS8.9, VS8.12, VS11.1 and VS11.11.
 - §VS4.2 (*classifying-stack-equivalence*): D_ét([∗/G], Λ) is the derived category of smooth representations, with derived invariants and the derived smooth dual. Used by VS10.7, VS10.9 and VS11.1.
 - §VS5.2 (sub-target *Torsion ULA and perfect invariants*): an object of D_ét(Bun_G, Λ) is ULA over the point iff every stratum restriction has perfect derived pro-p invariants; VS11.1 adapts the argument to [S/G_S]. Used by VS11.1.
@@ -77,6 +79,10 @@ Outside this roadmap: the computation of local terms of Satake sheaves on affine
 - §D4.1 (*diamond*), §D4.6 (*compact-hausdorff-diamonds*), §D4.7 (*small-v-sheaves-and-small-v-stacks*) and §D4.10 (*small-quotients-and-underlying-spaces*): diamonds, compact Hausdorff spaces as diamonds, small v-sheaves and v-stacks, and small quotients. Used by VS6.1, VS6.2, VS6.9, VS6.10, VS7.1 and VS10.4.
 - §D5.1 (*spatial-diamond*), §D5.2 (*injection-and-finite-etale-permanence*), §D5.5 (*quasi-pro-etale-and-fibre-product-permanence*), §D5.11 (*spatial-v-sheaf-criterion*), §D5.12 (*relative-representability*) and §D5.14 (*berkovich-quotient*): spatial v-sheaves and spatial diamonds, quasicompact injections, fibre products of locally spatial diamonds, the criterion that a spatial v-sheaf whose points are hit by quasi-pro-étale maps from geometric points is a spatial diamond, relative representability and the maximal Hausdorff quotient. Used by VS6.1, VS6.2, VS6.9, VS6.11, VS7.1 and VS7.2.
 - §D6.4 (*gluing-and-the-diamond-functor*) and §D6.5 (*etale-site-comparison*): the diamond of an analytic adic space and the étale-site comparison. Used by VS6.5.
+
+### From TauCetiRoadmap.DiamondEtaleCohomology
+
+- §C8.44 (Spectral-space cohomological dimension): for a spectral space X with topological Krull dimension at most a natural number d and any abelian sheaf F on X, Hⁱ(X, F) = 0 for i > d. Used by VS7.2.
 
 ### From TauCetiRoadmap.EnhancedDerivedSheaves
 
@@ -116,7 +122,8 @@ VS9.7 and VS9.8 depend on the first gap and VS9.8 also on the second. The passag
 - §SR.0.3 (*compact-open-invariants*, *averaging-projector*, *unit-pro-order*): invariants under compact open subgroups, the averaging projector for subgroups of invertible pro-order. Used by VS10.5 and VS11.3.
 - §SR.0d.2 (*derived-invariants*, *derived-smooth-dual*, *compact-generation*): derived invariants, the derived smooth dual, admissible complexes and compact generation by compact inductions. Used by VS10.9 and VS11.1.
 - §SR.1.1 (*locally-constant-compact-support*, *a-valued-haar-measure*, *integration*, *convolution-algebra*): C_c^∞(G, Λ), Λ-valued Haar measures, integration and the convolution algebra. Used by VS10.1, VS10.3, VS10.5 and VS11.3.
-- §SR.2.1 (*smooth-induction*, *compact-induction*, *frobenius-reciprocity*) and §SR.2.2 (*modulus-character*): smooth and compact induction, Frobenius reciprocity and the modulus character. Used by VS10.5, VS10.7 and VS10.8.
+- §SR.2.1 (*smooth-induction*, *compact-induction*, *frobenius-reciprocity*): smooth and compact induction and Frobenius reciprocity. Used by VS10.7 and VS10.8.
+- §SR.2.2 (*modulus-character*): the modulus δ_P of a parabolic subgroup P = M ⋉ N of a reductive group, the conjugation modulus of N; when G = P it is the modular character δ_G of the Conventions, since M is unimodular. Used by VS10.5 for that comparison only; the Haar character χ_G itself comes from §SR.1.1.
 
 ### From TauCetiRoadmap.PivotalSpherical, AdicSpacesPartIII and DGAInfinity
 
@@ -526,7 +533,7 @@ Gulotta–Hansen–Weinstein, Proposition 3.7, Lemma 3.8, Corollary 3.9, Lemma 3
 
 1. Reduce to Y = Spd(C, C⁺) and X separated prespatial proper over Y with a sheaf A in degree 0 vanishing on the generic fibre, as in the proof of Sch17 Theorem 22.5 (DiamondSixOperations §S1.1).
 2. Factor f through |X|^h × Y; the first map is proper and representable in spatial diamonds, with amplitude ≤ 2·dim.trg f (DiamondSixOperations §S1.4).
-3. Bound the cohomology of |X|^h by the Krull dimension of the spatial X₀ (GHW22 Lemma 3.8, via Scheiderer's theorem for spectral spaces whose generizations form chains), giving the remaining dim.trg f.
+3. Bound the cohomology of |X|^h by the Krull dimension of the spatial X₀, giving the remaining dim.trg f: the spectral space |X₀| has cohomological dimension at most its Krull dimension (DiamondEtaleCohomology §C8.44 (Spectral-space cohomological dimension)), and for a spectral space whose generizations form chains, as in every locally spatial diamond, the maximal Hausdorff quotient map q satisfies RΓ(|X₀|^h, F) ≅ RΓ(|X₀|, q^*F) for every abelian sheaf F on |X₀|^h (GHW22 Lemma 3.8, proved here).
 4. Separated case: factor through the canonical compactification and use that quasicompact injections have exact pushforward (GHW22 Corollary 3.9, Lemma 3.10).
 
 **Checks.**
@@ -534,7 +541,7 @@ Gulotta–Hansen–Weinstein, Proposition 3.7, Lemma 3.8, Corollary 3.9, Lemma 3
 - For a proper prespatial curve over Spd C the amplitude of Rf_* is at most 3.
 - A quasicompact open immersion has Rj_* of amplitude zero.
 
-*Needs:* VS7.1; DiamondSixOperations §S1.1; DiamondSixOperations §S1.4; DiamondsAndVStacks §D5.14 (*berkovich-quotient*).
+*Needs:* VS7.1; DiamondSixOperations §S1.1; DiamondSixOperations §S1.4; DiamondsAndVStacks §D5.14 (*berkovich-quotient*); DiamondEtaleCohomology §C8.44 (Spectral-space cohomological dimension).
 
 ### 7.3 Exceptional pushforward for weakly compactifiable maps
 
@@ -688,7 +695,7 @@ The API of the construction:
 
 Throughout this subsection, f is a fine map of decent v-stacks; ℓ ≠ p prime.
 
-For a fine map f : X → Y of decent v-stacks, the following are equivalent: (1) f is ℓ-cohomologically smooth (VS6.8); (2) Rf^!F_ℓ is invertible, Rf^!F_ℓ ⊗ f^*(−) → Rf^!(−) is an isomorphism, and both statements hold after every decent base change; (3) Rf^!F_ℓ is invertible and its formation commutes with every decent base change. For smooth f and Λ with nΛ = 0, Rf^!Λ is invertible, Rf^!Λ ⊗ f^* ≅ Rf^!, smooth base change g̃^*Rf^! ≅ Rf′^! g^* and f′^*Rg_! ≅ Rg̃_! f^* hold, and the twisted pullback agrees with the base roadmap's exceptional pullback for smooth stacky maps (VStackSheavesAndLisseCategories §VS0.2 (*shriek-pullback-for-smooth-stacky-maps*)).
+For a fine map f : X → Y of decent v-stacks, the following are equivalent: (1) f is ℓ-cohomologically smooth (VS6.8); (2) Rf^!F_ℓ is invertible, Rf^!F_ℓ ⊗ f^*(−) → Rf^!(−) is an isomorphism, and both statements hold after every decent base change; (3) Rf^!F_ℓ is invertible and its formation commutes with every decent base change. For smooth f and Λ with nΛ = 0, Rf^!Λ is invertible, Rf^!Λ ⊗ f^* ≅ Rf^!, smooth base change g̃^*Rf^! ≅ Rf′^! g^* and f′^*Rg_! ≅ Rg̃_! f^* hold, and the twisted pullback agrees with the base roadmap's exceptional pullback for smooth stacky maps (VStackSheavesAndLisseCategories §VS0.2 (*shriek-pullback-for-smooth-stacky-maps*)). Hence, for smooth fine f, Rf_! of VS7.5 is the base roadmap's stacky left adjoint f_! of that section, both being left adjoint to the same Rf^!.
 
 Gulotta–Hansen–Weinstein, Proposition 4.14 and proof, p. 31, characterises ℓ-cohomological smoothness of fine maps intrinsically through Rf^!F_ℓ. Fargues–Scholze, Proposition IV.2.33, p. 129, characterises cohomological smoothness of representable compactifiable maps by ULA-ness of F_ℓ and invertibility of the dualizing object. Hansen–Kaletha–Weinstein, Paragraph after Theorem 4.1.8 and equation (4.1.2), pp. 23–24, uses the twisted-pullback isomorphism and smooth base change for smooth fine maps.
 
@@ -697,12 +704,13 @@ Gulotta–Hansen–Weinstein, Proposition 4.14 and proof, p. 31, characterises �
 1. (1) ⇒ (2): with charts a, b and a smooth top map g, b^*Rf^!F_ℓ is a twist of Rg^!Ra^!F_ℓ by invertible objects, hence invertible; invertibility is v-local (DiamondSixOperations §S4.2, §S4.1).
 2. (2) ⇒ (1): pull back a chart of Y; the top map g composed with a chart h of the source has R(g∘h)^! = R(g∘h)^!F_ℓ ⊗ (g∘h)^*, so g ∘ h is smooth (GHW22 Proposition 4.14).
 3. (1) ⇔ (3): reduce to compactifiable maps of locally spatial diamonds and use Fargues–Scholze Proposition IV.2.33 (smooth iff F_ℓ is ULA with invertible dualizing object, iff the dualizing object is invertible and commutes with base change).
-4. Smooth base change follows from (2) and (BC1); agreement with the base roadmap's construction: both are the twisted pullback along smooth charts.
+4. Smooth base change follows from (2) and (BC1); agreement with the base roadmap's construction: both are the twisted pullback along smooth charts, and the two left adjoints of isomorphic functors are isomorphic by uniqueness of adjoints.
 
 **Checks.**
 
 - For S a geometric point, G as in VS10.6 and f : [S/G_S] → S, Rf^!Λ = Haar(G, Λ)^∗ is invertible (VS10.9).
 - For S a geometric point, G = Z_p, Λ ≠ 0 (for instance Λ = F_ℓ) and the point q : S → [S/G_S], Rq^!Λ = Haar(Z_p, Λ) is invertible but Rq^!Λ ⊗ q^*M → Rq^!M fails to be an isomorphism for the regular smooth representation M = C(Z_p, Λ), so q is not smooth; for Λ = 0 the map is 0 → 0, and the failure of smoothness is seen with F_ℓ coefficients.
+- For S a geometric point, p = 2, Λ = F₃ and f : B(C₃) → S (smooth by VS10.9, C₃ being locally pro-2 with open trivial subgroup), Rf^!M is M with trivial action (Haar(C₃, F₃) ≅ F₃ by counting measure), so both Rf_! of VS7.5 and the base roadmap's f_! are derived coinvariants, with H^(-1)(Rf_!Λ) = H₁(C₃, F₃) = F₃. A model identifying the smooth-class pushforward with Rf_* would give H^(-1) = 0 and H¹ = H¹(C₃, F₃) = F₃ instead (VS6.11, VS7.7).
 
 *Needs:* VS6.8; VS7.5; VS7.6; DiamondSixOperations §S4.2; DiamondSixOperations §S4.1; DiamondSixOperations §S4.5; VStackSheavesAndLisseCategories §VS1.2 (*smooth-ula-criterion*); VStackSheavesAndLisseCategories §VS0.2 (*shriek-pullback-for-smooth-stacky-maps*).
 
@@ -736,7 +744,7 @@ In the sources it enters as follows: characteristic classes are sections of K_(I
 - K_(S/S) = Λ_S and ∫_S is the identity of Λ.
 - For S = Spd C and X = (P¹_C)^♢, K_(X/S) ≅ Λ(1)[2] and ∫_X is the trace isomorphism H²(P¹, Λ(1)) → Λ.
 - For G = Z_p and S = Spd C, K_([S/G_S]/S) = Haar(Z_p, Λ)^∗, free of rank one.
-- For T = Z_p as a profinite set and Λ ≠ 0 (for instance Λ = F_ℓ), K_(T_S/S) is not invertible: H^0(T_S, K) = Dist(Z_p, Λ) is not a rank-one locally free C(Z_p, Λ)-module. For Λ = 0 every object is 0 and K = 0 is the invertible unit of the zero category, so the nonzero hypothesis is needed.
+- For S a geometric point (Spd C or Spd k), T = Z_p as a profinite set and Λ ≠ 0 (for instance Λ = F_ℓ), K_(T_S/S) is not invertible: H^0(T_S, K) = Dist(Z_p, Λ) (VS10.4) is not a rank-one locally free C(Z_p, Λ)-module, since the computation of the VS7.4 Check (written there for Z₂, valid at every non-isolated point of a metrizable profinite set) gives two Λ-independent germs of distributions at 0. For Λ = 0 every object is 0 and K = 0 is the invertible unit of the zero category; for S = ∅, T_S = ∅, D_ét(T_S, Λ) is zero and K = 0 is again invertible; for S = Spd C ⊔ Spd C, H^0(T_S, K) = Dist(Z_p, Λ)². So the nonzero coefficients and the hypothesis on S are both needed.
 - For f representable in nice diamonds and smooth, K_(X/S) is the dualizing complex of DiamondSixOperations §S4.3.
 
 *Needs:* VS7.5; VS7.7; DiamondSixOperations §S4.3.
@@ -791,7 +799,7 @@ Hansen–Kaletha–Weinstein, Lemma 4.1.11, equation (4.1.3) and proof, pp. 24�
 
 ### Dependencies
 
-This layer uses this roadmap's VS6; VStackSheavesAndLisseCategories §VS0.2, §VS1.2; DiamondSixOperations §S0.1, §S0.2, §S1.1, §S1.2, §S1.4, §S1.5, §S2.3, §S2.4, §S3.1, §S3.2, §S3.3, §S3.4, §S4.1, §S4.2, §S4.3, §S4.5; DiamondsAndVStacks §D4.1, §D5.1, §D5.2, §D5.14; EnhancedDerivedSheaves §E1.4, §E2.6, §E3.2, §E3.4, §E5:abstract.1; the supplier gaps gap:vs-pii-descent, gap:vs-pii-enhanced-operation-map, gap:vs-pii-partial-adjoints, gap:vs-pii-restricted-nerves.
+This layer uses this roadmap's VS6; VStackSheavesAndLisseCategories §VS0.2, §VS1.2; DiamondSixOperations §S0.1, §S0.2, §S1.1, §S1.2, §S1.4, §S1.5, §S2.3, §S2.4, §S3.1, §S3.2, §S3.3, §S3.4, §S4.1, §S4.2, §S4.3, §S4.5; DiamondsAndVStacks §D4.1, §D5.1, §D5.2, §D5.14; DiamondEtaleCohomology §C8.44; EnhancedDerivedSheaves §E1.4, §E2.6, §E3.2, §E3.4, §E5:abstract.1; the supplier gaps gap:vs-pii-descent, gap:vs-pii-enhanced-operation-map, gap:vs-pii-partial-adjoints, gap:vs-pii-restricted-nerves.
 
 ## Layer VS8: categorical traces and cohomological correspondences
 
@@ -1057,7 +1065,7 @@ Hansen–Kaletha–Weinstein, §4.3, paragraph after Proposition 4.3.5, p. 31, s
 
 Throughout this subsection, S is a decent v-stack; (X, A) is dualizable, i.e. A is ULA over S (VS8.9).
 
-Let (X, A) be dualizable in CoCorr_S and (c, u) an endomorphism with c : C → X ×_S X. Its trace is (Fix(c), tr_c(u, A)) ∈ ΩCoCorr_S, where Fix(c) = C ×_(X ×_S X, Δ) X and tr_c(u, A) ∈ H^0(Fix(c), K_(Fix(c)/S)) is the image of u under H^0(C, RHom(c₁^*A, c₂^!A)) ≅ H^0(C, c^!RHom(pr₁^*A, pr₂^!A)) ≅ H^0(C, c^!(𝔻A ⊠_S A)) → H^0(C, c^!Δ_∗(𝔻A ⊗ A)) → H^0(C, c^!Δ_∗K_(X/S)) ≅ H^0(C, Δ′_∗c′^!K_(X/S)) ≅ H^0(Fix(c), K_(Fix(c)/S)), using (P5), the dualizability isomorphism, the evaluation and (BC2).
+Let (X, A) be dualizable in CoCorr_S and (c, u) an endomorphism with c : C → X ×_S X. Its trace is (Fix(c), tr_c(u, A)) ∈ ΩCoCorr_S, where Fix(c) = C ×_(X ×_S X, Δ) X, with projections Δ′ : Fix(c) → C and c′ : Fix(c) → X (the base changes of Δ and of c), and tr_c(u, A) ∈ H^0(Fix(c), K_(Fix(c)/S)) is the image of u under H^0(C, RHom(c₁^*A, c₂^!A)) ≅ H^0(C, c^!RHom(pr₁^*A, pr₂^!A)) ≅ H^0(C, c^!(𝔻A ⊠_S A)) → H^0(C, c^!Δ_∗(𝔻A ⊗ A)) → H^0(C, c^!Δ_∗K_(X/S)) ≅ H^0(C, Δ′_∗c′^!K_(X/S)) ≅ H^0(Fix(c), K_(Fix(c)/S)), using (P5), the dualizability isomorphism, the evaluation and (BC2).
 
 Hansen–Kaletha–Weinstein, §4.3, pp. 31–32 and footnote 5, describes the trace of an endomorphism of a dualizable object of CoCorr_S as the fixed-point locus with the class tr_c(u, A) ∈ H^0(Fix(c), K_(Fix(c)/S)) given by the displayed chain. Lu–Zheng, Notation 2.20, p. 18, writes the scheme version as the relative Lefschetz–Verdier pairing.
 
@@ -1165,7 +1173,7 @@ Define local terms loc_β(u, F) for clopen pieces of the fixed locus cohomologic
 
 Throughout this subsection, S is a decent v-stack; q : X → X′ and p : C → C′ are cohomologically proper maps over S (VS7.7) compatible with the correspondences.
 
-Let 𝔛 = (X, A) be dualizable in CoCorr_S and 𝔣 ∈ End(𝔛) lie over c : C → X ×_S X. Suppose given cohomologically proper maps q : X → X′ and p : C → C′ over S and a correspondence C′ → X′ ×_S X′ such that the square formed by c, c′, p and q × q commutes. Then 𝔛′ = (X′, Rq_∗A) is dualizable; there is a unique 𝔣′ ∈ End(𝔛′) lying over C′ such that p defines a 2-morphism p̃ filling the square 𝔮 ∘ 𝔣 ⇒ 𝔣′ ∘ 𝔮 (𝔮 the 1-morphism over q); and there is a unique 2-morphism tr(p̃) : tr(𝔣) ⇒ tr(𝔣′) lying over tr(p) : Fix(c) → Fix(c′). Concretely, the induced cohomologically proper map Fix(c) → Fix(c′) pushes tr_c(u, A) to tr_(c′)(u′, Rq_∗A).
+Let 𝔛 = (X, A) be dualizable in CoCorr_S and 𝔣 ∈ End(𝔛) lie over c : C → X ×_S X. Suppose given cohomologically proper maps q : X → X′ and p : C → C′ over S and a correspondence c′ : C′ → X′ ×_S X′ such that the square formed by c, c′, p and q × q commutes. Then 𝔛′ = (X′, Rq_∗A) is dualizable; there is a unique 𝔣′ ∈ End(𝔛′) lying over C′ such that p defines a 2-morphism p̃ filling the square 𝔮 ∘ 𝔣 ⇒ 𝔣′ ∘ 𝔮 (𝔮 the 1-morphism over q); and there is a unique 2-morphism tr(p̃) : tr(𝔣) ⇒ tr(𝔣′) lying over tr(p) : Fix(c) → Fix(c′). Concretely, the induced cohomologically proper map Fix(c) → Fix(c′) pushes tr_c(u, A) to tr_(c′)(u′, Rq_∗A).
 
 Hansen–Kaletha–Weinstein, Theorem 4.3.8 and proof, pp. 32–33, states and proves the relative Lefschetz–Verdier trace formula in CoCorr_S: dualizability of (X′, q_∗A), the unique pushed endomorphism and the 2-morphism tr(f) ⇒ tr(f′) over tr(p). Lu–Zheng, Theorem 2.21, Corollary 2.22, Proposition 2.23, pp. 18–19, proves the scheme version, of which the v-stack proof is formally the same.
 
@@ -1206,7 +1214,7 @@ Hansen–Kaletha–Weinstein, Corollary 4.3.9, p. 33, deduces that characteristi
 
 ### 9.3 The Lefschetz trace formula for proper diamonds
 
-Throughout this subsection, S = Spd C with C algebraically closed perfectoid; q : X → S is proper nice and representable in nice diamonds; A is ULA over S. Y → S is proper nice (this hypothesis is omitted in the source; corrections to the sources).
+Throughout this subsection, S = Spd C with C algebraically closed perfectoid; q : X → S is proper nice (hence nice, Conventions); A is ULA over S. Y → S is proper nice (this hypothesis is omitted in the source; corrections to the sources).
 
 Let S = Spd C for C algebraically closed perfectoid, q : X → S a proper nice diamond, A ∈ D_ét(X, Λ) ULA over S, and 𝔣 = (c, u) an endomorphism of (X, A) over a fine correspondence c : Y → X ×_S X with Y → S proper nice (equivalently c₁ proper nice, X being proper nice). Then RΓ(X, A) is a perfect complex, q_∗(c, u) is an endomorphism of it, and tr(q_∗(c, u) | RΓ(X, A)) = ∫_(Fix(c)) tr_c(u, A). If 𝔣 comes from an automorphism g of X with u : g^*A → A and Fix(g) consists of finitely many isolated S-points x₁, …, x_n, then tr(g | RΓ(X, A)) = Σ_i loc_(x_i)(g, A).
 
@@ -1353,9 +1361,9 @@ The general-coefficient scheme correspondence interface is required by gap:vs-pi
 
 ### 9.8 Local terms of perfect schemes agree with those of their v-sheaves
 
-Throughout this subsection, k is a perfect field of characteristic p; c₁ and f ∘ c′ are perfectly proper; F is f-ULA. The scheme-theoretic local term is that of EtaleDualityAndPerverseSheaves §6.3 for the finite-type models, with the general coefficient extension specified in gap:vs-pii-scheme-local-terms, after base change to an algebraic closure of k.
+Throughout this subsection, k is a perfect field of characteristic p; c₁ : C → X and f ∘ c′ : Fix(c) → Spec k are perfectly proper, c′ : Fix(c) → X being the projection (Conventions); F is f-ULA. The scheme-theoretic local term is that of EtaleDualityAndPerverseSheaves §6.3 for the finite-type models, with the general coefficient extension specified in gap:vs-pii-scheme-local-terms, after base change to an algebraic closure of k.
 
-Let k be perfect, X ∈ PSch^ft_k with f : X → Spec k, c : C → X ×_k X a correspondence in PSch^ft_k with c₁ and f ∘ c′ perfectly proper, F ∈ D_ét(X, Λ) f-ULA with a cohomological correspondence u over c, and β ⊂ Fix(c) clopen. Then c_X^*F is f^♢-ULA and loc_β(u, F) = loc_(β^♢)(u^♢, c_X^*F) in Λ.
+Let k be perfect, X ∈ PSch^ft_k with f : X → Spec k, c : C → X ×_k X a correspondence in PSch^ft_k with c₁ : C → X and f ∘ c′ : Fix(c) → Spec k perfectly proper, where c′ : Fix(c) → X is the projection from Fix(c) = C ×_(X ×_k X) X (so Fix(c), and with it every clopen β ⊂ Fix(c), is perfectly proper over k, as the local terms of VS9.4 require), F ∈ D_ét(X, Λ) f-ULA with a cohomological correspondence u over c, and β ⊂ Fix(c) clopen. Then c_X^*F is f^♢-ULA and loc_β(u, F) = loc_(β^♢)(u^♢, c_X^*F) in Λ.
 
 Hansen–Kaletha–Weinstein, Proposition 5.3.2 and proof, pp. 49–50, proves that local terms of perfect schemes agree with those of their associated v-sheaves, by the symmetric monoidality of diamondification on cohomological correspondences.
 
@@ -1368,6 +1376,7 @@ Hansen–Kaletha–Weinstein, Proposition 5.3.2 and proof, pp. 49–50, proves t
 **Checks.**
 
 - For X = Spec k and c = id, both sides are the Euler characteristic of F.
+- The two properness hypotheses are independent: for X the perfection of A¹_k and c = id, c₁ = id is perfectly proper but Fix(c) = X ×_(X ×_k X) X = X is not proper over k, so f ∘ c′ = f is not perfectly proper and the local term of β = X is not defined; for X = Spec k and c = id, f ∘ c′ = id and both hold.
 - For Frobenius correspondences on perfect varieties, the v-sheaf local terms recover the scheme local terms.
 - For X = Spec k and Λ = F_ℓ[t], the two traces of id on Λ[0] are 1; deriving their scheme trace comparison requires gap:vs-pii-scheme-local-terms.
 
@@ -1396,7 +1405,7 @@ The layer proves that, for a geometric point S, D_ét(T_S, Λ) is the derived ca
 
 Throughout this subsection, T is a locally profinite set (Hausdorff, locally compact, totally disconnected); Λ is a discrete commutative ring.
 
-Let C(T, Λ) be the ring of locally constant functions T → Λ and C_c(T, Λ) the ideal of those with compact support; for a compact open U ⊂ T, 1_U is its characteristic function and 1_U·M ≅ C(U, Λ)⊗M is a C(T, Λ)-module. A C(T, Λ)-module M is smooth if M ⊗_(C(T,Λ)) C_c(T, Λ) → M is an isomorphism, equivalently colim_U 1_U·M → M is an isomorphism over compact opens U ordered by inclusion (every m equals 1_U·m for some compact open U); M is complete if M → lim_U 1_U·M is an isomorphism, with transition maps multiplication by 1_V. The functors M^s := colim_U 1_U·M and M^c := lim_U 1_U·M are projectors onto smooth and complete modules and restrict to mutually inverse equivalences between them.
+Let C(T, Λ) be the ring of locally constant functions T → Λ and C_c(T, Λ) the ideal of those with compact support; for a compact open U ⊂ T, 1_U is its characteristic function, multiplication by 1_U is a unital ring map C(T, Λ) → C(U, Λ), and 1_U·M ≅ C(U, Λ) ⊗_(C(T,Λ)) M is a C(U, Λ)-module and, through that map, a C(T, Λ)-module. A C(T, Λ)-module M is smooth if M ⊗_(C(T,Λ)) C_c(T, Λ) → M is an isomorphism, equivalently colim_U 1_U·M → M is an isomorphism over compact opens U ordered by inclusion (every m equals 1_U·m for some compact open U); M is complete if M → lim_U 1_U·M is an isomorphism, with transition maps multiplication by 1_V. The functors M^s := colim_U 1_U·M and M^c := lim_U 1_U·M are projectors onto smooth and complete modules and restrict to mutually inverse equivalences between them.
 
 Hansen–Kaletha–Weinstein, Appendix B.2, Definition B.2.1, Lemmas B.2.2–B.2.3, pp. 73–74, defines smooth and complete C(S, Λ)-modules for a locally profinite set S, the projectors M ↦ M^s, M ↦ M^c, and the equivalence between the two categories.
 
@@ -1522,14 +1531,14 @@ Hansen–Kaletha–Weinstein, Example 4.2.1, p. 25, identifies D_ét(T_S, Λ) wi
 
 Throughout this subsection, G is a locally profinite group; Λ is a commutative ring.
 
-Use `HaarMeasureWithValues` from SmoothRepresentationsOfLocalGroups §SR.1.1 as the carrier of Haar(G, Λ), for a locally profinite group G and a commutative ring Λ. Equip it with its Λ-module structure and identify it with Hom_G(C_c(G, Λ), Λ). Fix right translation by (g·μ)(E) = μ(Eg). If G has a compact open subgroup of pro-order invertible in Λ, this module is free of rank one, with generator normalised on that subgroup, its action has character χ_G(g) = δ_SR(g)⁻¹ valued in Λ^×, and its dual is Haar(G, Λ)^∗.
+Use `HaarMeasureWithValues` from SmoothRepresentationsOfLocalGroups §SR.1.1 as the carrier of Haar(G, Λ), for a locally profinite group G and a commutative ring Λ. Equip it with its Λ-module structure and identify it with Hom_G(C_c(G, Λ), Λ). Fix right translation by (g·μ)(E) = μ(Eg). If G has a compact open subgroup of pro-order invertible in Λ, this module is free of rank one, with generator normalised on that subgroup, its action has character χ_G(g) = δ_G(g)⁻¹ valued in Λ^× (Conventions), and its dual is Haar(G, Λ)^∗.
 
 Hansen–Kaletha–Weinstein, Example 4.2.2, p. 26, identifies q^!Λ for the point of [S/G_S] with Haar(G, Λ), the module of left-invariant Haar measures. Hansen–Kaletha–Weinstein, Example 4.2.4, p. 27, and equation (4.4.1), p. 35, uses Haar(G, Λ)^∗ as the relative dualizing complex of [S/G_S] → S, with G acting on Haar(G, Λ) by the modular character.
 
 The API of the construction:
 
 - If G has a compact open subgroup of pro-order invertible in Λ, Haar(G, Λ) is free of rank one, generated by the measure with value 1 on that subgroup.
-- If G has a compact open subgroup of pro-order invertible in Λ, right translation by g acts on Haar(G, Λ) by χ_G(g) = δ_SR(g)⁻¹ in Λ^×.
+- If G has a compact open subgroup of pro-order invertible in Λ, right translation by g acts on Haar(G, Λ) by χ_G(g) = δ_G(g)⁻¹ in Λ^×.
 - Haar(G, Λ) ⊂ Dist(G, Λ)^G.
 
 In the sources it enters as follows: q^!Λ = Haar(G, Λ) and K_([S/G_S]/S) = Haar(G, Λ)^∗ (HKW22 Examples 4.2.2 and 4.2.4, pp. 26–27); the dual of an admissible object is Haar(G, Λ)^∗ ⊗ M^∨ (HKW22 Proposition 4.4.1, p. 34); trace distributions take values on C_c(G, Λ) ⊗ Haar(G, Λ) (HKW22 equation (4.4.1), p. 35).
@@ -1537,7 +1546,7 @@ In the sources it enters as follows: q^!Λ = Haar(G, Λ) and K_([S/G_S]/S) = Haa
 *Proof sketch.*
 
 1. A left-invariant distribution is determined by its values on translates of a compact open subgroup U₀; finite additivity and invariance give μ(gU) = [U₀ : U]^(-1) μ(U₀) for U ≤ U₀ when [U₀ : U] is invertible (SmoothRepresentationsOfLocalGroups §SR.1.1 (*a-valued-haar-measure*), existence and uniqueness of the normalised measure).
-2. Right translation by g multiplies a left Haar measure by χ_G(g) = δ_SR(g)⁻¹ (SmoothRepresentationsOfLocalGroups §SR.2.2 (*modulus-character*)).
+2. Right translation by g carries a left Haar measure to a left Haar measure, so it multiplies the generator μ with μ(K) = 1, K a compact open subgroup of invertible pro-order, by the scalar χ_G(g) = μ(Kg)/μ(K), by uniqueness of the normalised measure (SmoothRepresentationsOfLocalGroups §SR.1.1 (*a-valued-haar-measure*)); χ_G is multiplicative, and χ_G(g) = δ_G(g)⁻¹ with δ_G the index ratio of the Conventions. For G a parabolic subgroup P = M ⋉ N of a reductive group it is δ_P⁻¹ with δ_P of SmoothRepresentationsOfLocalGroups §SR.2.2 (*modulus-character*).
 
 **Checks.**
 
@@ -1889,7 +1898,7 @@ Throughout this subsection, S is a decent v-stack; π and Δ_(T/S) are cohomolog
 
 Let T be a decent S-v-stack with π : T → S and Δ_(T/S) cohomologically smooth, X₁, X₂ → T fine, and A_i ∈ D_ét(X_i, Λ) ULA over S. Then A₁ ⊠_T A₂ is ULA over S, In_S(X₁ ×_T X₂) ≅ In_S(X₁) ×_(In_S(T)) In_S(X₂), and cc_(X₁/S)(A₁) ⊠_(In_S(T)) cc_(X₂/S)(A₂) = cc_(X₁×_TX₂/S)(A₁ ⊠_T A₂), where ⊠_(In_S(T)) is the Künneth pairing (4.5.2) built from κ_(In_S(T)/S) and the trivialisation of VS11.6.
 
-Hansen–Kaletha–Weinstein, Theorem 4.5.3, equation (4.5.2) and proof, pp. 36–41, states and proves the Künneth formula for characteristic classes over a base T with smooth structure map and diagonal, through based cohomological correspondences.
+Hansen–Kaletha–Weinstein, Theorem 4.5.3 and equation (4.5.2), p. 38, and proof, pp. 40–41, states and proves the Künneth formula for characteristic classes over a base T with smooth structure map and diagonal, through based cohomological correspondences.
 
 *Proof sketch.*
 
