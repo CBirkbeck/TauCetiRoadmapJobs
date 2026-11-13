@@ -1,0 +1,22 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-ProetaleCohomologyOfPAdicCurvesAndTowers~1",
+  "head": "41dab207697c5da0481422a9b9dc864919599ee8",
+  "pr": 2287,
+  "folder": "ProetaleCohomologyOfPAdicCurvesAndTowers",
+  "date": "2026-11-13",
+  "findings": 4,
+  "blocking": 1,
+  "notes": "Full review. Sample: all 15 seeded targets (1.1, 1.2, 2.3, 3.2, 3.3, 4.5, 4.8, 4.9, 5.1, 5.3, 5.4, 6.3, 7.3, 7.6, 7.8) read against the cached texts of CDN-CURVES, CDN-STEIN, CDN20, CDN23, CDN-DUKE, GK05, GK14, STR08, DAT06, THO24 (96 locators); the README flags no locator as unverified. Gate: every check passed; depcheck 0 problems, no UPWARD or CYCLE line. Suggested.lean elaborates with sorry as the only warning; one-tactic probes on the headline fail (no padding); 21 pinned declarations opened; citations of 31 supplier roadmaps resolved. R01 (P1): the exact sequence of section 3.3 (CDN-CURVES Proposition 6.29) fails on the right for proper curves and is only p^2-exact, and A_st is undefined. R02-R04 (P3): undefined index set in 3.2(d), direction of the gluing isomorphism in 2.2 against 2.3, the undefined word 'recovered' in 0.1. Not a finding: README line 139 states a gap completed-semistable-ring-general-K (PadicHodgeTheory 0.6) that the declared-gaps list of the design lacks. Eight source issues recorded.",
+  "deferred": [
+   {
+    "id": "D01",
+    "severity": "",
+    "title": "No F-number (the *Gaps* bullet of *Verified sound*): the top-level `gaps` list of the board's `plan.json` needs an entry `completed-semistable-ring-general-K` (supplier PadicHodgeTheory, §0.6, needed ",
+    "where": "board `design/plan.json` gaps list lacks `completed-semistable-ring-general-K`",
+    "raised": "PRREVIEW-ProetaleCohomologyOfPAdicCurvesAndTowers~1"
+   }
+  ]
+ }
+}
