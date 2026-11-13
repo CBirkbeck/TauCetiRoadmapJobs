@@ -1,0 +1,21 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "PadicDifferentialEquationsAndRigidCohomology"
+
+[[source]]
+id = "Kedlaya-FF"
+authors = "Kiran S. Kedlaya"
+title = "Full faithfulness for overconvergent F-isocrystals"
+year = 2001
+venue = "preprint; published version: in Geometric Aspects of Dwork Theory (Volume II), de Gruyter (Berlin), 2004, 819-835."
+arxiv = "math/0110125v4"
+locator_scheme = "theorem"
+locator = "Theorem 6.7"
+url = "https://arxiv.org/abs/math/0110125v4"
+fetched_from = "https://arxiv.org/pdf/math/0110125v4"
+fetched_at = "2026-11-13T03:17:24Z"
+sha256 = "cfda26e769afc875b880bc71992c2e811a1a53e7322998e486e48822a18ee431"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-13"
+version_note = "arXiv v4"
+cited_for = ["RD.3.27"]
