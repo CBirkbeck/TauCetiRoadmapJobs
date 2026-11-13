@@ -1,0 +1,28 @@
+{
+  "gaps": [
+    {
+      "slug": "neron-pairing-perfect-finite-residue",
+      "needs": "Perfectness of the Galois-equivariant Grothendieck pairing on geometric component groups of an arbitrary abelian variety and its dual over a nonarchimedean local field with finite residue field, without semistability.",
+      "supplier": "NeronModelsAndSemistableAbelianVarieties",
+      "section": "4.6"
+    },
+    {
+      "slug": "block-family-covering",
+      "needs": "For a definable family Z⊆ℝⁿ×ℝᵐ in an o-minimal expansion of the real field and ε>0, finitely many basic block families (Pila 2009, Definition 3.2) with fibres contained in the fibres of Z and a constant c>0 such that, for every parameter t and every T≥1, the rational points of Z_t of height at most T lie in at most c·T^ε of their fibres (Pila 2009, Theorem 3.5).",
+      "supplier": "AbelianSchemesAndArithmeticModuliPartII",
+      "section": "B2.6"
+    },
+    {
+      "slug": "definable-remmert-stein",
+      "needs": "For a smooth complex algebraic variety S, a closed complex analytic E⊆S^an and a closed complex analytic A⊆S^an∖E definable in an o-minimal expansion of R_an, the closure of A in S^an is complex analytic (Peterzil–Starchenko, Theorem 4.4).",
+      "supplier": "ShimuraVarieties",
+      "section": "3.5d"
+    },
+    {
+      "slug": "ran-exp-analytic-cells",
+      "needs": "Analytic cell decomposition for R_an,exp: for finitely many R_an,exp-definable subsets of ℝⁿ, a cell decomposition of ℝⁿ in the sense of §3.4c partitioning each of them in which every graph function and every band bound is real analytic on its base cell (van den Dries–Miller, Geometric categories, §4.2, p.12; Pila–Tsimerman 2014, proof of Lemma 7.7, p.678).",
+      "supplier": "ShimuraVarieties",
+      "section": "3.5a"
+    }
+  ]
+}
