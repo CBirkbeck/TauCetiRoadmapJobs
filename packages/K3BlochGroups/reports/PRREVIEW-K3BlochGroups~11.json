@@ -1,0 +1,13 @@
+{
+  "review": {
+    "status": "needs_changes",
+    "reviewer": "independent-review-PRREVIEW-K3BlochGroups~11",
+    "head": "2cb125d30bd92548118df7593fbe4420edce7785",
+    "pr": 1430,
+    "folder": "K3BlochGroups",
+    "date": "2026-11-13",
+    "findings": 8,
+    "blocking": 6,
+    "notes": "Full review: 15 seeded source targets, complete README and 15 Lean declarations, 117 adversarial rows, native-library and roadmap ownership audits. Worker gate passes including targeted build; independent elaboration has only nine sorry warnings; dependency check reports 222 roadmaps, 1972 edges, zero problems. Nine one-tactic probes did not close; additional Bloch rigidity signature elaborates. Three settled source waivers retained. Findings: one supplier gap, three ownership overlaps, two headline/generality defects, two prose corrections."
+  }
+}
