@@ -42,7 +42,7 @@ authors = "J. S. Milne"
 title = "Class Field Theory (course notes, version 4.03)"
 year = 2020
 locator_scheme = "theorem"
-locator = "Ch. II Prop. 1.30 (p. 70) and Cor. 1.33 (p. 71); Ch. II Prop. 1.38 (p. 73) and Prop. 1.39(a)–(e) (pp. 73–74)"
+locator = "Ch. II Prop. 1.30 (p. 70) and Cor. 1.33 (p. 71); Ch. II Prop. 1.38 (p. 73) and Prop. 1.39(a)–(e) (pp. 73–74); Ch. II Prop. 3.4 and Remark 3.5 (p. 81)"
 url = "https://www.jmilne.org/math/CourseNotes/CFT.pdf"
 fetched_from = "https://www.jmilne.org/math/CourseNotes/CFT.pdf"
 fetched_at = "2026-11-13T13:10:53Z"
@@ -51,7 +51,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-13"
 version_note = "Version 4.03 (August 2020); page numbers are printed pages (PDF page minus 9)."
-cited_for = ["Conventions", "Target 4.1", "Target 4.2", "Target 4.3", "Target 4.5", "Target 4.7", "Target 7.2"]
+cited_for = ["Conventions", "Target 4.1", "Target 4.2", "Target 4.3", "Target 4.5", "Target 4.7", "Target 7.2", "Target 8.4"]
 
 [[source]]
 id = "SerreArbres"
@@ -78,7 +78,7 @@ title = "A Bloch-Wigner complex for SL_2"
 year = 2013
 arxiv = "1107.0264v2"
 locator_scheme = "theorem"
-locator = "§3, p. 11 (stable elements, citing Brown III.9–III.10); Thm. 3.1 and Cor. 3.3, p. 12 (Swan's p-period theorems; SL₂(F_q))"
+locator = "§3, p. 11 (stable elements, citing Brown III.9–III.10); the ℓ-period before Thm. 3.1, Thm. 3.1 and Cor. 3.3, p. 12 (Swan's p-period theorems; SL₂(F_q))"
 url = "https://arxiv.org/abs/1107.0264v2"
 fetched_from = "https://arxiv.org/pdf/1107.0264v2"
 fetched_at = "2026-11-13T13:15:54Z"
@@ -111,11 +111,11 @@ title = "Homological Algebra"
 year = 1956
 venue = "Princeton Mathematical Series 19, Princeton University Press"
 locator_scheme = "chapter"
-locator = "Chapter XII (finite groups: duality, periodicity, generalised quaternion resolutions) and Chapter XVII (hyperhomology)"
+locator = "Chapter XII (finite groups: duality and periodicity) and Chapter XVII (hyperhomology)"
 licence_class = "none"
 status = "uncertified"
 version_note = "paywalled book; cited by chapter locators without the text"
-cited_for = ["Target 2.2", "Target 8.1", "Target 8.4", "Target 8.5"]
+cited_for = ["Target 2.2", "Target 8.1", "Target 8.5"]
 
 [[source]]
 id = "SwanPPeriod60"

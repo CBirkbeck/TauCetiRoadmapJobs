@@ -13,7 +13,7 @@ group; a filtered realisation of the Hochschild–Serre spectral sequence of a g
 with its edge maps, transgression in all degrees, products and low-degree sequences, and Hopf's
 formula; the double coset formula for a subgroup of finite index; and, for finite groups, stable
 elements with arbitrary coefficients, Tate duality, the periodicity theorem, the `p`-period with
-its cyclic and generalised quaternion cases, and the periodicity forced by an exact sequence of
+the all-degree cup periodicity of cyclic groups, and the periodicity forced by an exact sequence of
 cohomologically trivial modules from `ℤ_χ` to `ℤ`.
 The end theorems are the Hochschild–Serre spectral sequence (6.2–6.7), the tree sequence (3.5),
 the Künneth theorem (5.1), the double coset formula (7.1), the stable element theorem (7.2), Tate
@@ -95,10 +95,15 @@ continuous cup product `TauCeti.TopPairing.cup` and the continuous Mackey formul
   its universal central extension. 6.8 is Hopf's formula for every group.
 - K3BlochGroups §5.2 owns, for finite groups, the stable-element theorem with trivial coefficients
   `ℤ_(r)`, the duality `H^{d+1}(G, ℤ) ≅ Hom(H_d(G, ℤ), ℚ/ℤ)` for `d ≥ 1`, the four-periodic free
-  resolution of the generalised quaternion groups and Swan's theorem on `r`-periods. Here 7.2 is
-  the stable-element theorem for arbitrary coefficient representations, in homology and in Tate
-  cohomology; 8.1 is Tate duality for arbitrary coefficients, of which §5.2's duality is the
-  integral instance; 8.4 imports the quaternion resolution and Swan's theorem.
+  resolution of the generalised quaternion groups with its period class in `Ĥ⁴`, the invertibility
+  of cup product with that class in Tate cohomology (which, with the associativity and unit of the
+  Tate cup product, is the four-periodicity of `Ĥ*(Q_{2^s}, M)` for every `M`) and Swan's theorem
+  on `r`-periods. Here 7.2 is the stable-element theorem for arbitrary coefficient representations,
+  in homology and in Tate cohomology; 8.1 is Tate duality for arbitrary coefficients, of which
+  §5.2's duality is the integral instance; 8.4 defines the `p`-period, proves the all-degree cup
+  periodicity of cyclic groups and compares the period with §5.2's, and the generalised quaternion
+  case is §5.2's, not restated here; 8.3 is the periodicity forced by any exact sequence of the
+  stated shape, of which the quaternion resolution is an instance.
 - IntegralIwasawaTheoryPartII §0.7 owns the cap product `H^q(U, M^∨) × H_q(U, M) → ℂ_p` for a
   `ℂ_p[U]`-module `M`. The evaluation pairing of 4.6 is defined for any `k` and any `k`-module of
   values `A`, and agrees with §0.7 for `k = A = ℂ_p`.
@@ -332,8 +337,16 @@ continuous cup product `TauCeti.TopPairing.cup` and the continuous Mackey formul
   its total-complex sign comparisons; compared with 2.1.
 - §5.2, for a finite group `G`: the stable-element theorem for `Hⁿ(G, ℤ_(r))` with a Sylow
   `r`-subgroup, compared with 7.2; the duality `H^{d+1}(G, ℤ) ≅ Hom(H_d(G, ℤ), ℚ/ℤ)` for `d ≥ 1`,
-  natural in group homomorphisms, compared with 8.1; the four-periodic free resolution of
-  `Q_{2^s}`, `s ≥ 3`, with its integral homology, used in 8.4; and Swan's theorem (SwanPPeriod60
+  natural in group homomorphisms, compared with 8.1; for `Q_{2^s}`, `s ≥ 3` (§5.2's targets
+  quaternionPeriodicHomology and finiteGroup_period_fromSylow), the four-periodic free resolution
+  with its integral homology `H_{4j+1} = (ℤ/2)²`, `H_{4j+3} = ℤ/2^s`, `H_{2j+2} = 0` (`j ≥ 0`), its
+  period class `u ∈ Ĥ⁴(Q_{2^s}, ℤ)`, which generates `Ĥ⁴(Q_{2^s}, ℤ) ≅ ℤ/2^s`, and the
+  invertibility of cup product with `u` in Tate cohomology (the `2`-primary stable period class,
+  `Q_{2^s}` being its own Sylow `2`-subgroup). Invertibility gives `v ∈ Ĥ⁻⁴(Q_{2^s}, ℤ)` with
+  `u ∪ v = 1`; with `TauCeti.TateCohomology.cup_assoc`, `TauCeti.TateCohomology.cup_gradedComm`
+  and `TauCeti.TateCohomology.cup_left_unit`, `x ↦ u ∪ x` is then an isomorphism
+  `Ĥⁿ(Q_{2^s}, M) → Ĥⁿ⁺⁴(Q_{2^s}, M)` with inverse `y ↦ v ∪ y`, for every `n ∈ ℤ` and every `M`.
+  Used in a Check of 8.4 and in the Examples of Layer 8. And Swan's theorem (SwanPPeriod60
   Thms. 1 and 2; Hutchinson13 Thm. 3.1, p. 12, Hutchinson13 line 499–504): for an odd prime
   `r ∣ |G|` with a cyclic Sylow `r`-subgroup `P`, the `r`-period is `2·|N_G(P)/C_G(P)|`, and the
   `2`-period is `2` for a nontrivial cyclic Sylow `2`-subgroup and `4` for a generalised quaternion
@@ -1557,13 +1570,16 @@ not restated here. *Needs:* 4.7(a); K3BlochGroups §5.2 for the comparison; Tau 
 
 ### 8.2 Finite `p`-groups whose abelian subgroups are cyclic
 
-Prove that a finite `p`-group in which every abelian subgroup is cyclic is cyclic if `p` is odd, and
+Prove that, for a prime `p` (`Nat.Prime p`), a finite group `P` with `IsPGroup p P` (every element
+has order a power of `p`) in which every abelian subgroup is cyclic is cyclic if `p` is odd, and
 cyclic or isomorphic to `QuaternionGroup (2^(s−2))` for some `s ≥ 3` if `p = 2`; and conversely that
 every abelian subgroup of a cyclic or generalised quaternion group is cyclic (Loh19 Cor. 1.6.18 and
-Cor. 1.6.19, p. 53, and Outlook 1.6.20, p. 54; Brown82 Ch. IV §4). Route: a non-trivial `p`-group
-whose abelian subgroups are cyclic has a unique subgroup of order `p`; for odd `p` such a group is
-cyclic, and for `p = 2` it is cyclic or generalised quaternion, by induction through a cyclic
-subgroup of index `p`. *Needs:* Mathlib `IsPGroup`, `IsCyclic`, `QuaternionGroup`.
+Cor. 1.6.19, p. 53, Loh19 line 2399–2419, both for an odd prime, and Outlook 1.6.20, p. 54;
+Brown82 Ch. IV §4). Primality is a hypothesis of its own, since `IsPGroup p P` does not force `p`
+to be prime. Route: a non-trivial `p`-group whose abelian subgroups are cyclic has a unique
+subgroup of order `p`; for odd `p` such a group is cyclic, and for `p = 2` it is cyclic or
+generalised quaternion, by induction through a cyclic subgroup of index `p`. *Needs:* Mathlib
+`Nat.Prime`, `IsPGroup`, `IsCyclic`, `QuaternionGroup`.
 
 **Checks.**
 
@@ -1571,6 +1587,12 @@ subgroup of index `p`. *Needs:* Mathlib `IsPGroup`, `IsCyclic`, `QuaternionGroup
 - The dihedral group of order `8` and `ℤ/p × ℤ/p` contain `ℤ/p × ℤ/p` and are excluded.
 - For odd `p`, the Heisenberg group of order `p³` and exponent `p` contains `ℤ/p × ℤ/p`; there is
   no odd analogue of the quaternion groups.
+- Primality is needed: `p = 21` is odd but not prime. Take `P = ℤ/7 ⋊ ℤ/3`, with the generator of
+  `ℤ/3` acting on `ℤ/7` by multiplication by `2`, so `(a, b)(c, d) = (a + 2^b c, b + d)`. Its
+  elements are the identity, `6` of order `7` and `14` of order `3`, so `g^21 = 1` for every `g` and
+  `IsPGroup 21 P` holds. `P` is not abelian, since `(1, 0)(0, 1) = (1, 1)` while
+  `(0, 1)(1, 0) = (2, 1)`; so every abelian subgroup is proper, of order `1`, `3` or `7`, hence
+  cyclic, and yet `P` is not cyclic.
 
 ### 8.3 Periodicity from cohomologically trivial resolutions
 
@@ -1597,34 +1619,29 @@ ClassFieldTheory Layer 0 (`Rep.isZero_res_of_projective`, `Rep.projective_of_isZ
 ### 8.4 Periods
 
 Define the `p`-period of `G`, for a prime `p ∣ |G|` such that some `Ĥ^d(G, ℤ)(p)` with `d > 0` is
-cyclic of order `|G|_p`, as the least such `d`. Prove:
-
-- **Cyclic groups.** For `G` cyclic of order `m` and a generator `g`, cup product with
-  `δχ ∈ Ĥ²(G, ℤ)` (`TauCeti.TateCohomology.characterConnectingClass`, `χ(g) = 1/m`) is an
-  isomorphism `Ĥⁿ(G, M) → Ĥⁿ⁺²(G, M)` for every `n ∈ ℤ` and every `M`, for every finite cyclic
-  `G : Type u` (`[Group G] [IsCyclic G]`); in degree `0` it is
-  `TauCeti.TateCohomology.cup_characterConnectingClass_eq_groupCohomologyπEven`, which this extends
-  to all degrees. Route: `Rep.FiniteCyclicGroup.periodicIsoOfGenerator` and the compatibility of
-  the Tate cup product with connecting maps.
-- **Generalised quaternion groups.** The four-periodic free resolution of `Q_{2^s}`, `s ≥ 3`, of
-  K3BlochGroups §5.2 contains an exact sequence `0 → ℤ → C₃ → C₂ → C₁ → C₀ → ℤ → 0` of free
-  `ℤ[Q_{2^s}]`-modules with trivial action on the left `ℤ` (CE56 Ch. XII). By 8.3 with `n = 3` and
-  trivial `χ`, cup product with its class `u ∈ Ĥ⁴(Q_{2^s}, ℤ)` is an isomorphism
-  `Ĥⁿ(G, M) → Ĥⁿ⁺⁴(G, M)` for every `n ∈ ℤ` and every `M`, and the `2`-period is `4`, since
-  `Ĥ²(Q_{2^s}, ℤ) ≅ Hom(H₁(Q_{2^s}, ℤ), ℚ/ℤ) = (ℤ/2)²` is not cyclic of order `2^s`.
+cyclic of order `|G|_p`, as the least such `d` (Hutchinson13 p. 12, Hutchinson13 line 494–497, in
+the homological form compared below). Prove that for every finite cyclic `G : Type u`
+(`[Group G] [IsCyclic G]`) of order `m` and every generator `g`, cup product with
+`δχ ∈ Ĥ²(G, ℤ)` (`TauCeti.TateCohomology.characterConnectingClass`, `χ(g) = 1/m`) is an
+isomorphism `Ĥⁿ(G, M) → Ĥⁿ⁺²(G, M)` for every `n ∈ ℤ` and every `M` (MilneCFT Ch. II Prop. 3.4
+and Remark 3.5, p. 81, MilneCFT line 3793–3822, where the cup-product description is stated
+without proof); in degree `0` it is
+`TauCeti.TateCohomology.cup_characterConnectingClass_eq_groupCohomologyπEven`, which this extends
+to all degrees. Route: `Rep.FiniteCyclicGroup.periodicIsoOfGenerator` and the compatibility of
+the Tate cup product with connecting maps.
 
 Swan's theorem, that for an odd prime `p ∣ |G|` with a cyclic Sylow `p`-subgroup `P` the `p`-period is
 `2·|N_G(P)/C_G(P)|`, and that the `2`-period is `2` for a nontrivial cyclic Sylow `2`-subgroup and
 `4` for a generalised quaternion one, is K3BlochGroups §5.2's (SwanPPeriod60 Thms. 1 and 2;
 Hutchinson13 Thm. 3.1, p. 12, Hutchinson13 line 499–504); its period is the one defined here (Exact
-supplier contracts). *Needs:* 8.1, 8.3; K3BlochGroups §5.2; Tau Ceti
-`TauCeti.TateCohomology.characterConnectingClass`,
+supplier contracts). *Needs:* 8.1; K3BlochGroups §5.2 (duality, for the comparison of periods);
+Tau Ceti `TauCeti.TateCohomology.characterConnectingClass`,
 `TauCeti.TateCohomology.cup_characterConnectingClass_eq_groupCohomologyπEven`,
-`Rep.FiniteCyclicGroup.periodicIsoOfGenerator`; Mathlib `QuaternionGroup`, `Sylow`.
+`Rep.FiniteCyclicGroup.periodicIsoOfGenerator`, `TauCeti.TateCohomology.cup_δ_of_flat`; Mathlib
+`IsCyclic`.
 
 - The `p`-period, when defined, is at least `2`, since `Ĥ¹(G, ℤ) = Hom(G, ℤ) = 0` and `|G|_p > 1`.
 - For `G` cyclic of order `m` and `p ∣ m` the `p`-period is `2`: `Ĥ²(G, ℤ) = ℤ/m`.
-- For `Q_{2^s}`, `s ≥ 3`, the `2`-period is `4`.
 - For `d ≥ 2`, `Ĥ^d(G, ℤ)(p)` is cyclic of order `|G|_p` exactly when `H_{d−1}(G, ℤ_(p))` is, by the
   duality of 8.1; so the `p`-period is K3BlochGroups §5.2's `p`-period.
 
@@ -1636,6 +1653,12 @@ supplier contracts). *Needs:* 8.1, 8.3; K3BlochGroups §5.2; Tau Ceti
   `k ≡ 3 mod 4` (Hutchinson13 Cor. 3.3, p. 12).
 - The hypothesis `p ∣ |G|` is needed: for `p ∤ |G|` every `Ĥ^d(G, ℤ)(p)` is `0 = ℤ/|G|_p`, so the
   least such `d` is `1`, not `2·|N_G(1)/C_G(1)| = 2`.
+- `Q_{2^s}`, `s ≥ 3`, through the imported quaternion case (Exact supplier contracts): from
+  `H₁ = (ℤ/2)²`, `H₂ = 0`, `H₃ = ℤ/2^s` and the duality of 8.1, `Ĥ¹ = 0`, `Ĥ² = (ℤ/2)²` (not
+  cyclic), `Ĥ³ = 0` and `Ĥ⁴ = ℤ/2^s` with integral coefficients, so the `2`-period defined here is
+  `4`, Swan's value for a generalised quaternion Sylow `2`-subgroup. For `Q₈`, cup product with the
+  imported period class `u` is the isomorphism `Ĥ⁰(Q₈, ℤ) = ℤ/8 → Ĥ⁴(Q₈, ℤ) = ℤ/8`, `1 ↦ u`; a
+  model with period `2`, as for cyclic groups, would make `Ĥ²(Q₈, ℤ)` cyclic of order `8`.
 
 ### 8.5 The periodicity theorem
 
@@ -1668,13 +1691,17 @@ abelian `p`-subgroup is cyclic; (d_p) a Sylow `p`-subgroup is cyclic or generali
 
 ### Examples
 
-`Q₈` acts freely on the unit quaternions `S³`; 8.3 with `n = 3` and trivial `χ` gives period dividing
-`4`, and `Ĥ²(Q₈, ℤ) = (ℤ/2)²` is not cyclic of order `8`, so the period is exactly `4`.
+`Q₈` acts freely on the unit quaternions `S³`, and the four-periodic resolution of K3BlochGroups
+§5.2 gives an exact sequence `0 → ℤ → C₃ → C₂ → C₁ → C₀ → ℤ → 0` of free `ℤ[Q₈]`-modules whose
+left `ℤ` maps by `1 ↦ Σ_g g`, so that both ends carry the trivial action. By 8.3 with `n = 3` and
+trivial `χ` the period divides `4`, in agreement with the imported invertibility of the period
+class `u`; and `Ĥ²(Q₈, ℤ) = (ℤ/2)²` is not cyclic of order `8`, so the period is exactly `4`.
 
 ### Dependencies
 
-Layers 4, 5 and 7; K3BlochGroups §5.2 (quaternion resolution, Swan's theorem, integral duality);
-Tau Ceti's Tate cup product, cyclic periodicity and character classes; ClassFieldTheory Layer 0.
+Layers 4, 5 and 7; K3BlochGroups §5.2 (quaternion resolution and its period class, Swan's theorem,
+integral duality); Tau Ceti's Tate cup product, cyclic periodicity and character classes;
+ClassFieldTheory Layer 0.
 
 ---
 
