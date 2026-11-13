@@ -2802,7 +2802,7 @@
       "id": "jr-local-comparison",
       "supplier": "EndoscopicTransferAndUnitaryTraceComparison",
       "section": "Part II relative comparison continuation (local Jacquet–Rallis theory)",
-      "needs": "Supply the augmented and block/group Jacquet–Rallis invariant quotients, regular matching across all pure forms, η(det)-twisted orbital distributions, the cyclic factors (4.1) and (4.6), local smooth transfer with partial Fourier compatibility, and the product-to-conjugation identities (7.5)–(7.7), with the measures and unmatched-zero clauses of Leslie25 §§4.1 and 7.1–7.2.",
+      "needs": "Supply the augmented and block/group Jacquet–Rallis invariant quotients, regular matching across all pure forms, η(det)-twisted orbital distributions, the cyclic factors (4.1) and (4.6), the transfer relations (4.3) and (4.7) as relations between test functions, and the product-to-conjugation identities (7.5)–(7.7) with Definition 7.4, with the measures and unmatched-zero clauses of Leslie25 §§4.1 and 7.1–7.2.",
       "neededBy": [
         "EndoscopicTransferAndUnitaryTraceComparisonPartII:FJ.3/pure-form-orbit-torsor",
         "EndoscopicTransferAndUnitaryTraceComparisonPartII:FJ.3/generalized-nilpotent-integral",
@@ -2812,7 +2812,8 @@
         "EndoscopicTransferAndUnitaryTraceComparisonPartII:FJ.3/weil-orbital-sum",
         "EndoscopicTransferAndUnitaryTraceComparisonPartII:FJ.3/group-to-augmented",
         "EndoscopicTransferAndUnitaryTraceComparisonPartII:FJ.4/product-group-contraction",
-        "EndoscopicTransferAndUnitaryTraceComparisonPartII:FJ.4/rank-shifted-fundamental-lemma"
+        "EndoscopicTransferAndUnitaryTraceComparisonPartII:FJ.4/rank-shifted-fundamental-lemma",
+        "EndoscopicTransferAndUnitaryTraceComparisonPartII:FJ.4/augmented-fundamental-lemma"
       ]
     },
     {
@@ -2831,7 +2832,7 @@
       "id": "jr-product-base-change",
       "supplier": "EndoscopicTransferAndUnitaryTraceComparison",
       "section": "Part II relative comparison continuation (product-group spherical comparison)",
-      "needs": "Prove Leslie25 Theorem 11.1, p. 78, for GL_m×GL_(m+1) in every m≥0 with its factor Ω, spherical base change and all nonreference-form zero components, from an independent spectral proof that does not assume the Friedberg–Jacquet unit theorem.",
+      "needs": "Prove Leslie25 Theorem 11.1, p. 78, for GL_m×GL_(m+1) in every m≥0 and every residue characteristic, two included, with its factor Ω, spherical base change and all nonreference-form zero components, from an independent spectral proof that does not assume the Friedberg–Jacquet unit theorem; at a dyadic place the source's argument applies Lemma 10.6, p. 76, whose unit normalization is Lemma 8.6, p. 61, stated for odd residue characteristic (Source corrections, E18).",
       "neededBy": [
         "EndoscopicTransferAndUnitaryTraceComparisonPartII:FJ.4/product-group-contraction",
         "EndoscopicTransferAndUnitaryTraceComparisonPartII:FJ.4/rank-shifted-fundamental-lemma"
@@ -2856,7 +2857,7 @@
       "id": "hermitian-field-classification",
       "supplier": "GeometryOfNumbersAndQuadraticArithmetic",
       "section": "§2.9 (local classification beyond odd residue characteristic)",
-      "needs": "Classify nondegenerate Hermitian spaces over every quadratic extension of characteristic-zero local fields by dimension and discriminant, including dyadic and ramified extensions, as used in Xiao18 §2.2, p. 5, and Leslie19 Lemma 4.6, p. 16.",
+      "needs": "Classify nondegenerate Hermitian spaces over every quadratic extension of nonarchimedean local fields of characteristic zero by dimension and discriminant, including dyadic and ramified extensions, as used in Xiao18 §2.2, p. 5, and Leslie19 Lemma 4.6, p. 16.",
       "neededBy": [
         "EndoscopicTransferAndUnitaryTraceComparisonPartII:FJ.0/torsor",
         "EndoscopicTransferAndUnitaryTraceComparisonPartII:FJ.1/relative-datum",
