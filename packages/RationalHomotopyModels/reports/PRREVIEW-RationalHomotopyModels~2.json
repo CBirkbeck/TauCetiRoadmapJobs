@@ -1,0 +1,13 @@
+{
+  "review": {
+    "status": "needs_changes",
+    "reviewer": "independent-review-PRREVIEW-RationalHomotopyModels~2",
+    "head": "547c510ea11e24e39d4acc4c9c6e531a34640a97",
+    "pr": 2298,
+    "folder": "RationalHomotopyModels",
+    "date": "2026-11-13",
+    "findings": 13,
+    "blocking": 5,
+    "notes": "Full review; all 14 previous findings repaired; all 15 seeded targets examined, 30 core source comparisons with access limitations recorded; computed adversarial table; passing gate and direct Lean elaboration (13 sorry warnings); 20 signature checks and 13 padding probes; depcheck 240 roadmaps, 2172 edges, 0 problems."
+  }
+}
