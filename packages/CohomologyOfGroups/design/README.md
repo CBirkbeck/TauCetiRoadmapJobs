@@ -92,7 +92,8 @@ continuous cup product `TauCeti.TopPairing.cup` and the continuous Mackey formul
 - InductionRestrictionPartII RS.0.1 owns the exact sequence
   `H₂(E, ℤ) → H₂(G, ℤ) → A → E^ab → G^ab → 0` of a central extension `1 → A → E → G → 1`.
   StableHomotopyKTheory §3.29 owns the identification of `H₂` of a perfect group with the kernel of
-  its universal central extension. 6.8 is Hopf's formula for every group.
+  its universal central extension. 6.8 is Hopf's formula for every group, with the map fixed by a
+  chain-level formula, and is compared with §3.29 for perfect groups.
 - K3BlochGroups §5.2 owns, for finite groups, the stable-element theorem with trivial coefficients
   `ℤ_(r)`, the duality `H^{d+1}(G, ℤ) ≅ Hom(H_d(G, ℤ), ℚ/ℤ)` for `d ≥ 1`, the four-periodic free
   resolution of the generalised quaternion groups with its period class in `Ĥ⁴`, the invertibility
@@ -117,7 +118,10 @@ continuous cup product `TauCeti.TopPairing.cup` and the continuous Mackey formul
 - **Universes and rings.** `k G : Type u`, `[CommRing k]`, `[Group G]`; representations are
   objects of `Rep.{u} k G`, the generality in which Mathlib's carriers and its monoidal structure
   on `Rep` are stated. Subgroups `H ≤ G` carry the restricted representation `Rep.res H.subtype M`,
-  written `Res M` or `M` when no confusion arises.
+  written `Res M` or `M` when no confusion arises. Since `groupHomology`, `groupCohomology` and
+  `tateCohomology` take the ring and the group in one universe, for `k = ℤ` (or any other ring in
+  `Type`, such as `ℤ_(p)`) the group lies in `Type`: so in 6.8 (`S : Type`), in Layer 8 and in the
+  integral clauses of 5.4, as in Tau Ceti's `TauCeti.TateCohomology.characterConnectingClass`.
 - **Notation.** `Hⁿ(G, M) = groupCohomology M n`, `Hₙ(G, M) = groupHomology M n`, and, for
   `[Fintype G]`, `Ĥⁿ(G, M) = tateCohomology M n` for `n : ℤ`, with `Ĥ^{−n−1}(G, M) = Hₙ(G, M)`
   for `n ≥ 1` through `TateCohomology.isoGroupHomology`. For an abelian group `A` and a prime
@@ -170,6 +174,12 @@ continuous cup product `TauCeti.TopPairing.cup` and the continuous Mackey formul
   the carriers and their functoriality in compatible pairs.
 - `groupCohomology.coindIso`, `groupHomology.indIso` (`…/Shapiro.lean`): Shapiro's lemma for any
   subgroup.
+- `groupHomology.inhomogeneousChains` (`…/GroupHomology/Basic.lean`), whose differential is
+  `d(a[x|y]) = (x⁻¹·a)[y] − a[xy] + a[x]` in degree `2` (`groupHomology.inhomogeneousChains.d_single`);
+  `groupHomology.H1AddEquivOfIsTrivial` (`…/GroupHomology/LowDegree.lean`): `H₁(G, A) ≅ G^ab ⊗ A`
+  for trivial `A`, sending the class of `a[g]` to `g ⊗ a`; `CategoryTheory.ShortComplex.ShortExact.δ`
+  (`Algebra/Homology/HomologySequence.lean`): the connecting map of a short exact sequence of
+  complexes, with its exactness lemmas. Used in 6.8.
 - `Rep.standardResolution`, `Rep.barResolution` (`RepresentationTheory/Homological/Resolution.lean`),
   `groupCohomologyIso`, `groupHomologyIso`, `groupCohomologyIsoExt`, `groupHomologyIsoTor`: the
   carriers computed from any projective resolution of the trivial representation.
@@ -286,7 +296,7 @@ continuous cup product `TauCeti.TopPairing.cup` and the continuous Mackey formul
   morphisms `H_n(Tot C) → E²_{n,0}` and `E²_{0,n} → H_n(Tot C)` and the five-term exact sequence
   `H₂(Tot C) → E²_{2,0} → E²_{0,1} → H₁(Tot C) → E²_{1,0} → 0` of a first-quadrant homological
   double complex. §S.1 states these in cohomological indexing only; its homological form stops at
-  `E²` and convergence. Targets 6.3, 6.4, 6.7 and 6.8 use them.
+  `E²` and convergence. Targets 6.3, 6.4 and 6.7 use them.
 
 ### From TauCetiRoadmap.ProfiniteCohomology
 
@@ -311,6 +321,9 @@ continuous cup product `TauCeti.TopPairing.cup` and the continuous Mackey formul
   graph; for a graph of groups with trivial groups, the universal cover of the graph.
 - §§4.1–4.2 and §2.2: graphs of groups and their fundamental groups; the fundamental group of the
   rose with trivial groups is free on its petals.
+- §4.8: the structure theorem for a group acting on a tree without inversions, with its instance
+  that `SL(2, ℤ)` acting on its Bass–Serre tree recovers the amalgam `ℤ/4 ∗_{ℤ/2} ℤ/6`; cited for
+  that amalgam in a Check of 3.6.
 
 ### From TauCetiRoadmap.AlgebraicTopology
 
@@ -318,7 +331,16 @@ continuous cup product `TauCeti.TopPairing.cup` and the continuous Mackey formul
   constant coefficients, the identification of the quotient chains `C_*(E; M)_G` with `C_*(B; M)`
   through `p_*`, and the Cartan–Leray spectral sequence `H_p(G; H_q(E; M)) ⇒ H_{p+q}(B; M)`,
   compared with 3.3 in a Check; nothing is assumed of coefficients with a nontrivial deck action;
+  §5.4: the homology of the torus `Tⁿ` as the exterior algebra on its first homology, compared with
+  the Pontryagin ring of `ℤⁿ` in a Check of 5.4;
   §8.15: free actions of `C_p × C_p` on spheres, compared with 8.5 in a Check.
+
+### From TauCetiRoadmap.StableHomotopyKTheory
+
+- §3.29: for a perfect group `P` with a free presentation `1 → R → F → P → 1`, the identification
+  of `(R ∩ [F, F])/[F, R]`, the kernel of the universal central extension `[F, F]/[F, R] → P`, with
+  `H₂(P; ℤ)`, natural under presentation comparisons; no particular map is assumed. Compared with
+  6.8, whose formula fixes the map.
 
 ### From TauCetiRoadmap.SchemeKTheoryOperations
 
@@ -353,8 +375,12 @@ continuous cup product `TauCeti.TopPairing.cup` and the continuous Mackey formul
   Thms. 1 and 2; Hutchinson13 Thm. 3.1, p. 12, Hutchinson13 line 499–504): for an odd prime
   `r ∣ |G|` with a cyclic Sylow `r`-subgroup `P`, the `r`-period is `2·|N_G(P)/C_G(P)|`, and the
   `2`-period is `2` for a nontrivial cyclic Sylow `2`-subgroup and `4` for a generalised quaternion
-  one. The `r`-period there is the least `d ≥ 2` with `H_{d−1}(G, ℤ_(r))` cyclic of order `|G|_r`
-  (Hutchinson13 line 494–497); by §5.2's duality this is the `p`-period of 8.4. Used in 8.4 and 8.5.
+  one. §5.2 uses the `r`-period without defining it, and Hutchinson13 line 494–497 calls a period
+  every `d ≥ 2` with `H_{d−1}(G, ℤ_(r))` cyclic of order `|G|_r`. Assumed of §5.2: its `r`-period is
+  the least such `d`, the only reading under which "the `r`-period" is a single number (for `S₃`
+  and `r = 3`, `H₁(S₃, ℤ_(3)) = 0` while `H₃` and `H₇` are `ℤ/3`, so `d = 4` and `d = 8` both have
+  the property, and Swan's value is `4`); by §5.2's duality it is then the `p`-period of 8.4.
+  Used in 8.4 and 8.5.
 
 ### From TauCetiRoadmap.MappingClassGroupsAndCanonicalRepresentations
 
@@ -854,8 +880,8 @@ The infinite dihedral group `ℤ/2 ∗ ℤ/2` acts on the line with two vertex o
 
 ### Dependencies
 
-Layers 1–2; FreeGroupsAndLimitGroups §§2.2, 4.1–4.2, 4.5–4.7; Tau Ceti's Serre trees;
-AlgebraicTopology §5.3 for a Check.
+Layers 1–2; FreeGroupsAndLimitGroups §§2.2, 4.1–4.2, 4.5–4.7, and §4.8 for a Check; Tau Ceti's
+Serre trees; AlgebraicTopology §5.3 for a Check.
 
 ---
 
@@ -1154,8 +1180,8 @@ unions); Mathlib `groupHomology` of finite cyclic groups
 - Algebra laws: the product is associative and unital, with unit `1 ∈ H₀(A, k) = k`, and graded
   commutative, `xy = (−1)^{|x||y|} yx`.
 - Degree one: `x² = 0` for every `x ∈ H₁(A, k)`, so `ψ` is defined.
-- Integral comparison: for `k = ℤ`, `ψ` is an isomorphism in degrees `≤ 2`; in particular
-  `H₂(A, ℤ) ≅ Λ²A`.
+- Integral comparison: for `k = ℤ` (so `A : Type`), `ψ` is an isomorphism in degrees `≤ 2`; in
+  particular `H₂(A, ℤ) ≅ Λ²A`.
 - Torsion-free comparison: for torsion-free `A` and every `k`, `ψ` is an isomorphism in all degrees.
 - Rational comparison: for every `A` and every `ℚ`-algebra `k`, `ψ` is an isomorphism in all
   degrees.
@@ -1181,7 +1207,7 @@ unions); Mathlib `groupHomology` of finite cyclic groups
 ### Dependencies
 
 Layers 3–4; Tau Ceti's Künneth and universal coefficient sequences; Mathlib's finite cyclic
-computations.
+computations; AlgebraicTopology §5.4 for a Check.
 
 ---
 
@@ -1412,12 +1438,37 @@ Prove:
 
 ### 6.8 Hopf's formula
 
-Prove that for a free group `F` (`FreeGroup S`), `R ◁ F` and `G = F ⧸ R`,
-`H₂(G, ℤ) ≅ (R ⊓ ⁅F, F⁆) ⧸ ⁅F, R⁆`, naturally in presentations (Loh19 Thm. 1.5.1, p. 30, and
-Thm. 3.2.18, p. 129). Route: the homological five-term sequence of 6.7 with `H₂(F, ℤ) = 0` (3.6),
-`H₁(R, ℤ)_G = R/⁅F, R⁆` and `H₁(F, ℤ) = F^ab`. The low-degree sequence of a central extension is
-InductionRestrictionPartII RS.0.1's and is not restated here. *Needs:* 3.6, 6.7; Mathlib
-`FreeGroup`, `groupHomology` in degree `1`.
+Let `F = FreeGroup S` with `S : Type`, `R ◁ F` and `G = F ⧸ R`, and write `C(−)` for the
+inhomogeneous chains with trivial coefficients `ℤ` (Mathlib's `groupHomology.inhomogeneousChains`),
+where `d[x] = 0` and `d[x|y] = [y] − [xy] + [x]`. Define `h : H₂(G, ℤ) → (R ⊓ ⁅F, F⁆) ⧸ ⁅F, R⁆`:
+lift a 2-cycle `z` of `G` to a chain `z̃` of `F`; its boundary `dz̃` lies in the kernel `K₁` of
+`C₁(F) → C₁(G)`, which is spanned by the differences `[x] − [y]` with `x, y ∈ F` of equal image in
+`G`, and `h[z]` is the image of `dz̃` under the homomorphism `K₁ → R ⧸ ⁅F, R⁆`, `[x] − [y] ↦ xy⁻¹`.
+Prove that `h` is well defined and an isomorphism, natural in presentations (Loh19 Thm. 1.5.1,
+p. 30, and Thm. 3.2.18, p. 129, where the isomorphism is given without fixing the map).
+
+Route: `h` is the connecting map of the short exact sequence of complexes
+`0 → K → C(F) → C(G) → 0` followed by `K₁ → R ⧸ ⁅F, R⁆`. That homomorphism is well defined (it is
+`[x] ↦ x·σ(x̄)⁻¹`, `x̄` the image of `x`, for any section `σ` of `F → G`), kills `d(K₂)` (for
+`x = r₁x′` and `y = r₂y′` with `r₁, r₂ ∈ R`, the boundary of `[x|y] − [x′|y′]` goes to
+`r₁r₂(r₁x′r₂x′⁻¹)⁻¹ ∈ ⁅F, R⁆`), and induces `H₁(K) ≅ R ⧸ ⁅F, R⁆` with inverse `r ↦ [r] − [1]`:
+modulo `d(K₂)`, `[r] + [r′] − [rr′] − [1] = d([r|r′] − [1|1])` makes `r ↦ [r] − [1]` additive,
+`[ry] − [y] ≡ [r] − [1]` (the boundary of `[r|y] − [1|y]`) makes it onto, and `[frf⁻¹] ≡ [r]`
+(the boundaries of `[f|r] − [f|1]` and `[fr|f⁻¹] − [f|f⁻¹]`) makes it kill `⁅F, R⁆`. Under
+`H₁(F, ℤ) ≅ F^ab`, `[f] ↦ f`, the map `H₁(K) → H₁(F, ℤ)` is `R ⧸ ⁅F, R⁆ → F^ab`; since
+`H₂(F, ℤ) = 0` (3.6), the long exact sequence makes `h` an isomorphism onto its kernel
+`(R ⊓ ⁅F, F⁆) ⧸ ⁅F, R⁆`. Loh19 obtains the abstract isomorphism from the five-term sequence of 6.7;
+the chain-level map fixes the normalisation independently of the sign of that sequence's `d²`.
+*Needs:* 3.6; Mathlib `FreeGroup`, `groupHomology.inhomogeneousChains`,
+`CategoryTheory.ShortComplex.ShortExact.δ`, `groupHomology.H1AddEquivOfIsTrivial`;
+StableHomotopyKTheory §3.29 for the comparison.
+
+- Naturality: a homomorphism `F → F′` carrying `R` into `R′` commutes with `h` and the induced
+  maps on both sides.
+- Comparison with perfect groups: if `G` is perfect, `(R ⊓ ⁅F, F⁆) ⧸ ⁅F, R⁆` is the kernel of the
+  universal central extension `⁅F, F⁆ ⧸ ⁅F, R⁆ → G`, and `h` identifies it with `H₂(G, ℤ)`
+  naturally under presentation comparisons: an identification as in StableHomotopyKTheory §3.29,
+  which does not fix the map; `h` fixes it.
 
 **Checks.**
 
@@ -1425,6 +1476,12 @@ InductionRestrictionPartII RS.0.1's and is not restated here. *Needs:* 3.6, 6.7;
   `R/⁅F, R⁆` without the intersection with `⁅F, F⁆` would give `nℤ ≅ ℤ`.
 - `G = ℤ²` with `F` free on `a, b`: `R = [F, F]`, and `[F, F]/[F, [F, F]] ≅ ℤ` is generated by
   `[a, b]`, so `H₂(ℤ², ℤ) = ℤ`.
+- Normalisation, for `ℤ² = ⟨a, b | ⁅a, b⁆⟩`: the class of `z = [e₁|e₂] − [e₂|e₁]`, which pairs to
+  `+1` with `x ∪ y` (Conventions), lifts to `[a|b] − [b|a]`, whose boundary is
+  `([b] − [ab] + [a]) − ([a] − [ba] + [b]) = [ba] − [ab]`; so `h[z] = ba(ab)⁻¹ = bab⁻¹a⁻¹ = ⁅a, b⁆⁻¹`
+  (Mathlib's `⁅x, y⁆ = xyx⁻¹y⁻¹`). The composite of `h` with inversion, which passes the other
+  Checks and is as natural, gives `⁅a, b⁆`, the other generator of `⁅F, F⁆ ⧸ ⁅F, ⁅F, F⁆⁆ ≅ ℤ`.
+  Writing `y⁻¹x` for `xy⁻¹` gives the same value, since `F` acts trivially on `R ⧸ ⁅F, R⁆`.
 - A free group `G = F` with `R = 1` gives `0` on both sides, as `Hₙ(F, ℤ) = 0` for `n ≥ 2` (3.6)
   requires.
 
@@ -1462,7 +1519,8 @@ invisible mod `2`). By 6.6, `d₂y = x²`, the extension class, and `d₂x = 0`,
 
 Layers 1–4 and 3.6; MappingClassGroupsAndCanonicalRepresentations §1.1; Tau Ceti's filtered
 spectral sequences, inflation–restriction and transgression lift; DerivedModuleAlgebra §S.1 with
-`gap:homological-low-degree`; ProfiniteCohomology §§3.1, 5.5 for 6.9.
+`gap:homological-low-degree`; ProfiniteCohomology §§3.1, 5.5 for 6.9; StableHomotopyKTheory §3.29
+for the comparison of 6.8.
 
 ---
 
@@ -1556,7 +1614,8 @@ ProfiniteCohomology §6.4 and Tau Ceti's continuous Mackey formula for a Check.
 
 ## Layer 8: Tate duality and periodicity of finite groups
 
-Throughout, `G` is finite and representations are over `ℤ`; the Tate cup product is Tau Ceti's.
+Throughout, `G` is finite, in `Type`, and representations are over `ℤ`; the Tate cup product is
+Tau Ceti's.
 
 ### 8.1 Tate duality
 
@@ -1569,8 +1628,8 @@ group, cup product into `Ĥ⁰(G, ℤ) = ℤ/|G|` induces `Ĥⁱ(G, Hom(M, ℤ))
 dimension shifting with Tau Ceti's `cup_δ_of_flat` and `δ_cup_of_leftInverse`; the integral form
 from `0 → Hom(M, ℤ) → Hom(M, ℚ) → M^∨ → 0` (exact for free `M`) and the vanishing of `Ĥ` on the
 uniquely divisible `Hom(M, ℚ)`. For `M = ℤ` and `i ≥ 1`, with `Ĥⁱ(G, ℚ/ℤ) ≅ H^{i+1}(G, ℤ)`, the
-duality is the isomorphism `H^{i+1}(G, ℤ) ≅ Hom(H_i(G, ℤ), ℚ/ℤ)` of K3BlochGroups §5.2, which is
-not restated here. *Needs:* 4.7(a); K3BlochGroups §5.2 for the comparison; Tau Ceti
+duality is the isomorphism `H^{i+1}(G, ℤ) ≅ Hom(H_i(G, ℤ), ℚ/ℤ)` of K3BlochGroups §5.2.
+*Needs:* 4.7(a); K3BlochGroups §5.2 for the comparison; Tau Ceti
 `TauCeti.TateCohomology.cup`, `TauCeti.TateCohomology.cup_δ_of_flat`,
 `TauCeti.TateCohomology.δ_cup_of_leftInverse`; ClassFieldTheory Layer 0.
 
@@ -1636,7 +1695,7 @@ ClassFieldTheory Layer 0 (`Rep.isZero_res_of_projective`, `Rep.projective_of_isZ
 
 Define the `p`-period of `G`, for a prime `p ∣ |G|` such that some `Ĥ^d(G, ℤ)(p)` with `d > 0` is
 cyclic of order `|G|_p`, as the least such `d` (Hutchinson13 p. 12, Hutchinson13 line 494–497, in
-the homological form compared below). Prove that for every finite cyclic `G : Type u`
+the homological form compared below). Prove that for every finite cyclic `G : Type`
 (`[Group G] [IsCyclic G]`) of order `m` and every generator `g`, cup product with
 `δχ ∈ Ĥ²(G, ℤ)` (`TauCeti.TateCohomology.characterConnectingClass`, `χ(g) = 1/m`) is an
 isomorphism `Ĥⁿ(G, M) → Ĥⁿ⁺²(G, M)` for every `n ∈ ℤ` and every `M` (MilneCFT Ch. II Prop. 3.4
@@ -1649,9 +1708,9 @@ the Tate cup product with connecting maps.
 Swan's theorem, that for an odd prime `p ∣ |G|` with a cyclic Sylow `p`-subgroup `P` the `p`-period is
 `2·|N_G(P)/C_G(P)|`, and that the `2`-period is `2` for a nontrivial cyclic Sylow `2`-subgroup and
 `4` for a generalised quaternion one, is K3BlochGroups §5.2's (SwanPPeriod60 Thms. 1 and 2;
-Hutchinson13 Thm. 3.1, p. 12, Hutchinson13 line 499–504); its period is the one defined here (Exact
-supplier contracts). *Needs:* 8.1; K3BlochGroups §5.2 (duality, for the comparison of periods);
-Tau Ceti `TauCeti.TateCohomology.characterConnectingClass`,
+Hutchinson13 Thm. 3.1, p. 12, Hutchinson13 line 499–504), whose period is assumed to be the one
+defined here (Exact supplier contracts). *Needs:* 8.1; K3BlochGroups §5.2 (duality, for the
+comparison of periods); Tau Ceti `TauCeti.TateCohomology.characterConnectingClass`,
 `TauCeti.TateCohomology.cup_characterConnectingClass_eq_groupCohomologyπEven`,
 `Rep.FiniteCyclicGroup.periodicIsoOfGenerator`, `TauCeti.TateCohomology.cup_δ_of_flat`; Mathlib
 `IsCyclic`.
@@ -1659,7 +1718,9 @@ Tau Ceti `TauCeti.TateCohomology.characterConnectingClass`,
 - The `p`-period, when defined, is at least `2`, since `Ĥ¹(G, ℤ) = Hom(G, ℤ) = 0` and `|G|_p > 1`.
 - For `G` cyclic of order `m` and `p ∣ m` the `p`-period is `2`: `Ĥ²(G, ℤ) = ℤ/m`.
 - For `d ≥ 2`, `Ĥ^d(G, ℤ)(p)` is cyclic of order `|G|_p` exactly when `H_{d−1}(G, ℤ_(p))` is, by the
-  duality of 8.1; so the `p`-period is K3BlochGroups §5.2's `p`-period.
+  duality of 8.1; so the `p`-period is the least `d ≥ 2` with `H_{d−1}(G, ℤ_(p))` cyclic of order
+  `|G|_p`, which is K3BlochGroups §5.2's `p`-period under the assumption of the Exact supplier
+  contracts.
 
 **Checks.**
 

@@ -1286,7 +1286,8 @@
      "hypotheses": [
       "k A : Type u",
       "[CommRing k]",
-      "[CommGroup A]"
+      "[CommGroup A]",
+      "k = ℤ clauses: A : Type"
      ],
      "locator": {
       "source": "Brown82",
@@ -1740,9 +1741,9 @@
      "id": "6.8",
      "kind": "theorem",
      "name": "TauCeti.groupHomology.hopfFormula",
-     "statement": "For F = FreeGroup S, R ◁ F, G = F ⧸ R: H₂(G, ℤ) ≅ (R ⊓ ⁅F, F⁆) ⧸ ⁅F, R⁆, natural in presentations. The central-extension sequence is InductionRestrictionPartII RS.0.1's.",
+     "statement": "For F = FreeGroup S, R ◁ F, G = F ⧸ R: the map h : H₂(G, ℤ) → (R ⊓ ⁅F, F⁆) ⧸ ⁅F, R⁆ is a well-defined isomorphism, natural in presentations, where for a 2-cycle z of the inhomogeneous chains of G (d[x|y] = [y] − [xy] + [x]) and a lift z̃ to F, h[z] is the image of dz̃ ∈ ker(C₁(F) → C₁(G)) under [x] − [y] ↦ xy⁻¹ (x, y ∈ F of equal image in G). Route: the connecting map of 0 → K → C(F) → C(G) → 0, H₁(K) ≅ R ⧸ ⁅F, R⁆ with inverse r ↦ [r] − [1], and H₂(F, ℤ) = 0.",
      "hypotheses": [
-      "S : Type u",
+      "S : Type",
       "R : Subgroup (FreeGroup S)",
       "[R.Normal]"
      ],
@@ -1752,11 +1753,24 @@
      },
      "prerequisites": [
       "target:3.6",
-      "target:6.7",
       "mathlib:FreeGroup",
-      "gap:homological-low-degree"
+      "mathlib:groupHomology.inhomogeneousChains",
+      "mathlib:CategoryTheory.ShortComplex.ShortExact.δ",
+      "mathlib:groupHomology.H1AddEquivOfIsTrivial",
+      "roadmap:StableHomotopyKTheory §3.29"
      ],
-     "api": [],
+     "api": [
+      {
+       "name": "hopf_natural",
+       "role": "naturality",
+       "statement": "A homomorphism F → F′ carrying R into R′ commutes with h and the induced maps on both sides."
+      },
+      {
+       "name": "hopf_perfect",
+       "role": "comparison",
+       "statement": "For perfect G, (R ⊓ ⁅F, F⁆) ⧸ ⁅F, R⁆ is the kernel of the universal central extension ⁅F, F⁆ ⧸ ⁅F, R⁆ → G and h is a kernel–H₂ identification natural under presentation comparisons, as in StableHomotopyKTheory §3.29 (used for this comparison), which does not fix the map; h fixes it."
+      }
+     ],
      "tests": [
       {
        "name": "hopf_cyclic",
@@ -1767,6 +1781,11 @@
        "name": "hopf_Z2",
        "kind": "computation",
        "statement": "G = ℤ²: R = [F, F], [F,F]/[F,[F,F]] ≅ ℤ, H₂ = ℤ."
+      },
+      {
+       "name": "hopf_normalisation",
+       "kind": "non-example",
+       "statement": "ℤ² = ⟨a, b | ⁅a, b⁆⟩: z = [e₁|e₂] − [e₂|e₁] (pairing +1 with x ∪ y) lifts to [a|b] − [b|a] with boundary [ba] − [ab], so h[z] = ba(ab)⁻¹ = ⁅a, b⁆⁻¹ (⁅x, y⁆ = xyx⁻¹y⁻¹); h composed with inversion, equally natural and passing the other tests, gives ⁅a, b⁆. Writing y⁻¹x for xy⁻¹ gives the same value."
       },
       {
        "name": "hopf_free",
@@ -1968,7 +1987,7 @@
      "name": "TauCeti.TateCohomology.tateDuality",
      "statement": "Cup with evaluation M^∨ ⊗ M → ℚ/ℤ and Ĥ⁻¹(G, ℚ/ℤ) ⊂ ℚ/ℤ gives Ĥⁱ(G, M^∨) ≅ Hom(Ĥ^{−1−i}(G, M), ℚ/ℤ) for all i; for ℤ-free M, Ĥⁱ(G, Hom(M, ℤ)) ≅ Hom(Ĥ^{−i}(G, M), ℚ/ℤ). For M = ℤ and i ≥ 1 this is K3BlochGroups §5.2's H^{i+1}(G, ℤ) ≅ Hom(H_i(G, ℤ), ℚ/ℤ).",
      "hypotheses": [
-      "G : Type u",
+      "G : Type",
       "[Group G]",
       "[Fintype G]",
       "M : Rep ℤ G",
@@ -2059,7 +2078,7 @@
      "name": "TauCeti.TateCohomology.periodic_of_exact",
      "statement": "An exact sequence 0 → ℤ_χ → C_n → … → C_0 → ℤ → 0 with each C_i ℤ-free and cohomologically trivial gives, by cup with the iterated connecting class e ∈ Ĥⁿ⁺¹(G, ℤ_χ), isomorphisms Ĥⁱ(G, M) ≅ Ĥ^{i+n+1}(G, M ⊗ ℤ_χ); period divides 2(n+1), and n+1 if χ is trivial; such a sequence exists for a bounded complex of free ℤ[G]-modules with homology ℤ in degree 0 and ℤ_χ in degree n ≥ 1.",
      "hypotheses": [
-      "G : Type u",
+      "G : Type",
       "[Group G]",
       "[Fintype G]",
       "χ : G →* ℤˣ",
@@ -2098,9 +2117,9 @@
      "id": "8.4",
      "kind": "theorem",
      "name": "TauCeti.TateCohomology.pPeriod",
-     "statement": "p-period = least d > 0 with Ĥ^d(G, ℤ)(p) cyclic of order |G|_p (p ∣ |G|). Cyclic G: cup with δχ ∈ Ĥ²(G, ℤ) is an isomorphism Ĥⁿ(G, M) → Ĥⁿ⁺²(G, M) for every n ∈ ℤ and every M. The generalised quaternion case (the period class u ∈ Ĥ⁴(Q_{2^s}, ℤ) with invertible cup product, 2-period 4) and Swan's theorem (odd p, cyclic Sylow P: 2|N_G(P)/C_G(P)|; 2-period 2 or 4) are K3BlochGroups §5.2's, for this period.",
+     "statement": "p-period = least d > 0 with Ĥ^d(G, ℤ)(p) cyclic of order |G|_p (p ∣ |G|). Cyclic G: cup with δχ ∈ Ĥ²(G, ℤ) is an isomorphism Ĥⁿ(G, M) → Ĥⁿ⁺²(G, M) for every n ∈ ℤ and every M. The generalised quaternion case (the period class u ∈ Ĥ⁴(Q_{2^s}, ℤ) with invertible cup product, 2-period 4) and Swan's theorem (odd p, cyclic Sylow P: 2|N_G(P)/C_G(P)|; 2-period 2 or 4) are K3BlochGroups §5.2's, whose period is assumed to be this one (§5.2 does not define it).",
      "hypotheses": [
-      "G : Type u",
+      "G : Type",
       "[Group G]",
       "[Fintype G]",
       "p prime",
@@ -2139,7 +2158,7 @@
       {
        "name": "pPeriod_eq_K3",
        "role": "comparison",
-       "statement": "For d ≥ 2, Ĥ^d(G, ℤ)(p) is cyclic of order |G|_p iff H_{d−1}(G, ℤ_(p)) is (8.1), so the p-period is K3BlochGroups §5.2's."
+       "statement": "For d ≥ 2, Ĥ^d(G, ℤ)(p) is cyclic of order |G|_p iff H_{d−1}(G, ℤ_(p)) is (8.1), so the p-period is the least d ≥ 2 with H_{d−1}(G, ℤ_(p)) cyclic of order |G|_p, which is K3BlochGroups §5.2's p-period under the assumption of the supplier contract."
       }
      ],
      "tests": [
@@ -2171,7 +2190,7 @@
      "name": "TauCeti.TateCohomology.periodic_tfae",
      "statement": "TFAE for finite G: (a) cup with some u ∈ Ĥ^d(G, ℤ), d > 0, is an isomorphism in all degrees for all M; (b) Ĥ^d(G, ℤ) cyclic of order |G| for some d ≠ 0; (c) every abelian subgroup cyclic; (d) every Sylow subgroup cyclic or generalised quaternion; and the p-primary form.",
      "hypotheses": [
-      "G : Type u",
+      "G : Type",
       "[Group G]",
       "[Fintype G]",
       "p prime (p-primary form)"
@@ -2252,7 +2271,7 @@
     "§4.7",
     "§4.8"
    ],
-   "what": "G-trees, Bass–Serre trees, one-edge splittings as PushoutI and HNNExtension, free groups as fundamental groups of roses."
+   "what": "G-trees, Bass–Serre trees, one-edge splittings as PushoutI and HNNExtension, free groups as fundamental groups of roses; the structure theorem with SL(2, ℤ) recovering ℤ/4 ∗_{ℤ/2} ℤ/6 (§4.8, a Check of 3.6)."
   },
   {
    "roadmap": "AlgebraicTopology",
@@ -2261,7 +2280,14 @@
     "§5.4",
     "§8.15"
    ],
-   "what": "Quotient-chain comparison and Cartan–Leray for surjective finite regular covers with constant coefficients, torus homology and C_p × C_p actions, for Checks."
+   "what": "Quotient-chain comparison and Cartan–Leray for surjective finite regular covers with constant coefficients (a Check of 3.3), torus homology (a Check of 5.4) and C_p × C_p actions on spheres (a Check of 8.5)."
+  },
+  {
+   "roadmap": "StableHomotopyKTheory",
+   "sections": [
+    "§3.29"
+   ],
+   "what": "For a perfect group with a free presentation, the identification of (R ∩ [F, F])/[F, R], the kernel of the universal central extension, with H₂(P; ℤ), natural under presentation comparisons, no particular map assumed; compared with 6.8."
   },
   {
    "roadmap": "SchemeKTheoryOperations",
@@ -2276,7 +2302,7 @@
     "§4.1",
     "§5.2"
    ],
-   "what": "Bounded-below reindexing of integral hyperhomology (compared with 2.1); for finite groups the stable-element theorem with ℤ_(r) coefficients (compared with 7.2), the duality H^{d+1}(G, ℤ) ≅ Hom(H_d(G, ℤ), ℚ/ℤ) (compared with 8.1), the four-periodic resolution of Q_{2^s} with its period class u ∈ Ĥ⁴ and the invertibility of cup product with u (a Check of 8.4, the Layer 8 Examples), and Swan's r-period theorem (used in 8.4, 8.5)."
+   "what": "Bounded-below reindexing of integral hyperhomology (compared with 2.1); for finite groups the stable-element theorem with ℤ_(r) coefficients (compared with 7.2), the duality H^{d+1}(G, ℤ) ≅ Hom(H_d(G, ℤ), ℚ/ℤ) (compared with 8.1), the four-periodic resolution of Q_{2^s} with its period class u ∈ Ĥ⁴ and the invertibility of cup product with u (a Check of 8.4, the Layer 8 Examples), and Swan's r-period theorem (used in 8.4, 8.5), its r-period assumed to be the least d ≥ 2 with H_{d−1}(G, ℤ_(r)) cyclic of order |G|_r (§5.2 does not define it; Hutchinson13 line 494–497 calls every such d a period)."
   },
   {
    "roadmap": "MappingClassGroupsAndCanonicalRepresentations",
@@ -2301,8 +2327,7 @@
    "neededBy": [
     "6.3",
     "6.4",
-    "6.7",
-    "6.8"
+    "6.7"
    ],
    "detail": "DerivedModuleAlgebra §S.1 states edge morphisms and the five-term and extended sequences in cohomological indexing; its homological form gives E² and convergence only.",
    "needs": "The edge morphisms H_n(Tot C) → E²_{n,0}, E²_{0,n} → H_n(Tot C) and the exact sequence H₂(Tot C) → E²_{2,0} → E²_{0,1} → H₁(Tot C) → E²_{1,0} → 0 for a first-quadrant homological double complex.",
