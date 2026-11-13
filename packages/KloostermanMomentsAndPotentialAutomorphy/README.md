@@ -30,8 +30,9 @@ This roadmap owns:
 - the weight-zero normalization of the Kloosterman sheaves of every rank `r ≥ 2`, the facts about
   them not stated by their constructor (one unipotent Jordan block at `0`, geometric
   irreducibility, the rank-two symplectic pairing), their geometric and arithmetic monodromy groups
-  in every characteristic, the cohomology of `Sym^k Kl₂` over `𝔽̄_p`, and the integrality and
-  character independence of the moments (Layer 1);
+  in every characteristic, the cohomology of `Sym^k Kl₂` over `𝔽̄_p`, the integrality and
+  character independence of the moments, and the local monodromy of `Kl₂` at `∞` in every
+  characteristic with the Swan conductors and inertia invariants of its symmetric powers (Layer 1);
 - the algebraic Kloosterman connections `Kl_r` of every rank over fields of characteristic zero,
   their cyclic covers, symmetric powers, local structure, differential Galois groups and the Bessel
   sign dictionary (Layer 2);
@@ -106,10 +107,15 @@ What is stated elsewhere is consumed by section:
   (§§10.1–10.8).
 - ComplexComparisonPartII §§C5.6–C5.7 owns regular singular connections, the canonical logarithmic
   extension and the logarithmic de Rham comparison on curves.
+- DiophantineApproximationAndTranscendence §5.4 owns Picard–Vessiot fields over `C(z)`, their
+  differential Galois groups acting faithfully on the solution space, the fixed-field
+  correspondence with the identity component, and the analytic realization of monodromy over `ℂ`;
+  §2.5 computes the groups of the Kloosterman connections on that carrier.
 - EtaleCohomologyFoundations (finite and rational étale coefficients, compact supports, base change,
   topological invariance, duality, smooth purity, projective bundles and blow-ups),
   InverseGaloisAndArithmeticFundamentalGroups §IG.0.T3 (the rational Grothendieck–Lefschetz trace
-  formula), EtaleDualityAndPerverseSheaves §3.3 (rational perverse coefficients) and
+  formula), EtaleDualityAndPerverseSheaves §3.3 (rational perverse coefficients, with §2.7's perverse
+  Artin vanishing and the decomposition theorem of §§5.6 and 5.10) and
   DeligneWeightsAndPurity §§0.16, 0.18, 7.12, 7.15, 8.14, 8.19, 8.24 (eigenvalues under a perfect
   pairing; decomposition by weights; weights of `H_c`, `H` and the middle image; purity for smooth
   proper varieties; geometric monodromy and semisimplicity; the weight spectral sequence of a
@@ -144,9 +150,11 @@ What is stated elsewhere is consumed by section:
 - CohomologyComparisons §2.13 (the filtered de Rham comparison), §§3.4–3.5 (the crystalline
   comparison over a discretely valued base) and §§4.3–4.4 (the semistable comparison), and
   PadicHodgeTheory §3.2 (filtered spaces and the Hodge–Tate sign dictionary) supply the period
-  comparisons fed into §RD.7.21; PadicHodgeTheory §§5.1–5.3 (potential semistability of de Rham
-  representations, weak admissibility, `D_pst` and its Weil–Deligne representation) supply the
-  coefficient-prime slope argument of §11.2.
+  comparisons fed into §RD.7.21. NoncommutativeAndEquivariantIwasawa §F.6 (potential semistability
+  of de Rham representations), FiniteFlatGroupsAndIntegralPadicHodgeTheory §§R07.3.2–R07.3.3 (weak
+  admissibility of `D_st` of a semistable representation and its Newton–Hodge polygon form) and
+  PadicHodgeTheory §5.3 (`D_pst` and its Weil–Deligne representation) supply the coefficient-prime
+  slope argument of §11.2.
 
 The companion roadmap KloostermanSheavesAndBesselIsocrystals consumes Layers 1 and 2 in every rank,
 including the weight-zero normalization, the monodromy table and the Bessel sign dictionary; it
@@ -321,6 +329,18 @@ keeps the reductive-group Bessel constructions and the `F`-isocrystal companion 
 - §C5.6: regular singular connections and the canonical logarithmic extension; §C5.7: the
   logarithmic and compact-support logarithmic de Rham complexes on curves and their comparison maps.
 
+### From TauCetiRoadmap.DiophantineApproximationAndTranscendence
+
+- §5.4 (Picard–Vessiot fields and analytic solutions): for `k = C(z)` with `C` algebraically closed of
+  characteristic zero and every finite system `Y′ = AY` over `k`, a Picard–Vessiot field `K`, unique
+  up to differential `k`-isomorphism, with constants `C`; its differential automorphism group `G`, a
+  linear algebraic group acting faithfully on the solution space; the closed-subgroup/fixed-field
+  correspondence with `K^G = k` and `K^{G⁰}` the relative algebraic closure of `k` in `K`, finite
+  Galois over `k` with group `G/G⁰`; and, for `C = ℂ`, the realization of `K` in meromorphic germs at
+  an ordinary point, analytic continuation along loops acting through elements of `G`. Assumed: the
+  construction applies to the generic fibre of `Kl_r` over `ℂ(z)` and to that of `K̃l_r` over `ℂ(t)`,
+  written as first-order systems through the cyclic presentation of §2.1.
+
 ### From TauCetiRoadmap.EtaleCohomologyFoundations, InverseGaloisAndArithmeticFundamentalGroups, EtaleDualityAndPerverseSheaves and DeligneWeightsAndPurity
 
 - EtaleCohomologyFoundations §§F.2.4–F.2.7 (compact supports, Künneth), §F.0.4 (topological
@@ -330,7 +350,9 @@ keeps the reductive-group Bessel constructions and the `F`-isocrystal companion 
 - InverseGaloisAndArithmeticFundamentalGroups §IG.0.T3: the rational constructible
   Grothendieck–Lefschetz trace formula over every finite field.
 - EtaleDualityAndPerverseSheaves §3.3: perverse coefficient extension to rational coefficients;
-  §2.3 and §2.8: intermediate extension.
+  §2.3 and §2.8: intermediate extension; §2.7: perverse Artin vanishing, so that `H^i_c(X, P) = 0`
+  for `i < 0`, `X` affine and `P` perverse; §§5.6 and 5.10: the decomposition theorem for proper
+  morphisms over finite fields and over `ℂ`.
 - DeligneWeightsAndPurity §0.16: eigenvalues of Frobenius modules under a Frobenius-equivariant
   perfect pairing; §0.18: a Frobenius module whose eigenvalues are Weil numbers decomposes
   functorially by weights, so `gr^W` is exact; §§8.14 and 8.19: geometric monodromy groups and the
@@ -409,12 +431,21 @@ keeps the reductive-group Bessel constructions and the `F`-isocrystal companion 
   varieties), §§3.4–3.5 (the crystalline comparison over a discretely valued base and the
   crystalline representation export), §§4.3–4.4 (the semistable comparison with `φ`, `N` and the
   filtration, and its agreement with the de Rham comparison).
-- PadicHodgeTheory §3.2: the filtered linear algebra and the Hodge–Tate sign dictionary; §5.1: a
-  de Rham representation of `G_K`, `K/ℚ_p` finite, is potentially semistable; §5.2: the filtered
-  `(φ, N)`-module of a semistable representation is weakly admissible, so its Newton polygon lies
-  above its Hodge polygon with the same endpoints; §5.3: `D_pst` and Fontaine's Weil–Deligne
-  representation, exact on potentially semistable representations and compatible with restriction
-  to finite extensions.
+- PadicHodgeTheory §3.2: the filtered linear algebra and the Hodge–Tate sign dictionary; §5.3:
+  `D_pst` and Fontaine's Weil–Deligne representation, exact on potentially semistable
+  representations and compatible with restriction to finite extensions.
+
+### From TauCetiRoadmap.NoncommutativeAndEquivariantIwasawa and FiniteFlatGroupsAndIntegralPadicHodgeTheory
+
+- NoncommutativeAndEquivariantIwasawa §F.6, stage 3: `deRham_iff_potentiallySemistable`, for every
+  finite-dimensional continuous representation of `G_K`, `K/ℚ_p` finite, every prime `p` including
+  `p = 2` and arbitrary Hodge–Tate weights. PadicHodgeTheory §5.3 consumes the same theorem.
+- FiniteFlatGroupsAndIntegralPadicHodgeTheory §R07.3.3: `dSt_isWeaklyAdmissible`, for `K/ℚ_p` finite
+  and every semistable representation `V` of `G_K`, the filtered `(φ, N)`-module `D_st(V)` is weakly
+  admissible; §R07.3.2: `isWeaklyAdmissible_iff_polygon`, a filtered `(φ, N)`-module is weakly
+  admissible exactly when the Newton polygon of every subobject lies on or above its Hodge polygon,
+  with the same endpoints for the whole module. Assumed: the Hodge polygon is formed from the jumps of
+  the de Rham filtration, as in this roadmap's convention.
 
 ### From TauCetiRoadmap.PotentialModularityAndCompatibleSystems and ModularityAndLanglandsExtensions
 
@@ -443,7 +474,8 @@ keeps the reductive-group Bessel constructions and the `F`-isocrystal companion 
 ## How to read the build
 
 Layer 0 defines the finite sums and series and needs only Mathlib. Layer 1 realizes them in
-`ℓ`-adic cohomology on top of CongruenceSpectralGap §4.2b. Layers 2 and 3 build the characteristic-zero
+`ℓ`-adic cohomology on top of CongruenceSpectralGap §4.2b and computes the local monodromy of `Kl₂`
+at `∞`, which fixes the degrees and boundary factors of Layer 8. Layers 2 and 3 build the characteristic-zero
 Kloosterman connections in every rank and their exponential cohomology on the `D`-module and Hodge
 module suppliers; Layer 4 proves classicality, introduces the moment hypersurfaces and the Nori motive,
 and compares with the finite-field side. Layers 5 and 6 specialize to rank two and compute dimensions,
@@ -751,6 +783,75 @@ integers fixed by `Gal(ℚ̄/ℚ)`, since the moments are rational, hence intege
 
 *Needs:* §§0.2–0.3, 1.4; Mathlib `AddChar.sum_eq_ite`.
 
+### 1.6 Local monodromy of `Kl₂` at `∞`
+
+Let `p` be a prime, `ℓ ≠ p`, `ψ` a nontrivial additive character of `𝔽_p`, `D_∞ ⊃ I_∞ ⊃ P_∞` the
+decomposition, inertia and wild inertia groups at `∞ ∈ ℙ¹_{𝔽_p}`, and `ρ` the representation of `D_∞`
+on `Kl₂` near `∞`. Breaks, lower ramification groups and Swan conductors are those of
+ArithmeticGaloisRepresentations §3.1.
+
+**Theorem.** The group `ρ(I_∞)` is a finite subgroup of `SL₂(ℚ̄_ℓ)` that acts irreducibly and
+contains `−1`. For odd `p`, `ρ(P_∞)` is cyclic of order `p` and lies in a maximal torus `T`, and
+`ρ(I_∞) = ρ(P_∞) ⋊ ⟨w⟩` for an element `w` of the normalizer of `T` outside `T`, so that `w² = −1`
+(Yun-moments §2.3.4, p. 12). For `p = 2`, `ρ(I_∞)` is the binary tetrahedral group `2.A₄ ≅ SL₂(𝔽₃)`
+of order `24`, `ρ(P_∞)` is the quaternion group `Q₈`, the lower ramification filtration of the image
+is `D₀ = 2.A₄ ⊃ D₁ = Q₈ ⊃ D₂ = D₃ = {±1} ⊃ D₄ = 1`, and a lift of geometric Frobenius maps to `c·φ₁`
+with `c² = 2` and `φ₁` in the binary octahedral group `2.S₄` but not in `2.A₄` (Yun-moments
+§§4.3.1–4.3.2, pp. 36–37). Consequently, for every `k ≥ 1`:
+
+- `(Sym^k Kl₂)^{I_∞} = 0` for odd `k`, since `−1` acts by `−1`;
+- `Sw_∞(Sym^k Kl₂)` is `(k + 1)/2 − ⌊(k + p)/(2p)⌋` for odd `k` and odd `p`, `k/2 − ⌊k/(2p)⌋` for even
+  `k` and odd `p`, `(k + 1)/2` for odd `k` and `p = 2`, and `⌊(k + 2)/4⌋` for even `k` and `p = 2`;
+- for even `k`, `(Sym^k Kl₂)^{I_∞}` has dimension `⌊k/(2p)⌋ + δ_{4∣k}` for odd `p`, and for `p = 2`
+  dimension `⌊k/12⌋ + 1` if `k ≡ 0, 6, 8 (mod 12)` and `⌊k/12⌋` if `k ≡ 2, 4, 10 (mod 12)`;
+- geometric Frobenius acts semisimply on `(Sym^k Kl₂)^{I_∞}` with eigenvalues of absolute value
+  `p^{k/2}` under every embedding `ι`; for `p = 2` the eigenvalues are `2^{k/2}` with multiplicity `a_k`
+  and `−2^{k/2}` with multiplicity `b_k`, where `a_k = ⌊k/24⌋ + 1` for
+  `k ≡ 0, 8, 12, 16, 18, 20 (mod 24)` and `⌊k/24⌋` otherwise, and `b_k = ⌊k/24⌋ + 1` for
+  `k ≡ 6, 12, 14, 18, 20, 22 (mod 24)` and `⌊k/24⌋` otherwise (Yun-moments Lemmas 4.3.3–4.3.4,
+  pp. 37–39);
+- `(Sym^k Kl₂)^{I₀}` is a line on which geometric Frobenius acts by `1`.
+
+*Proof sketch.* By §1.2, `det ρ` is unramified with Frobenius `p`, so `ρ(I_∞) ⊂ SL₂`. Swan conductor
+one in rank two with no tame part (CongruenceSpectralGap §4.2b) forces both breaks to equal `1/2`;
+an `I_∞`-stable line would have an integral break, so `ρ|I_∞` is irreducible, its monodromy logarithm
+vanishes and `ρ(I_∞)` is finite. For odd `p`, the tame quotient acts on `ρ(P_∞)` through a Coxeter
+element of the Weyl group of `SL₂`. For `p = 2`, the image in `PGL₂` is finite with a normal Sylow
+`2`-subgroup; a cyclic image would make `ρ(I_∞)` abelian and `ρ|I_∞` reducible, a dihedral image
+would make `Sw_∞(Sym² Kl₂) ≥ 2`, against `Sw_∞(Sym² Kl₂) = dim H¹_c(𝔾_m, Sym² Kl₂) = deg Z₂ = 1`
+(§§1.4–1.5), and `Sw_∞(Kl₂) = 1` then fixes the lower filtration; `φ₁` normalizes `2.A₄`, and its
+conjugation action inverts the image of a tame generator in `2.S₄/Q₈ ≅ S₃`. The Swan conductors of `Sym^k` follow from
+the breaks (odd `p`: the weights `i` of `T` on `Sym^k` with `p ∤ i` have break `1/2` and the others are
+`ρ(P_∞)`-invariant) and from the lower filtration (`p = 2`). For even `k` the invariants are counted
+on the weights `i ∈ 2pℤ`, which `w` pairs `i ↔ −i`, plus the weight-zero line, on which `w` acts by
+`(−1)^{k/2}` (odd `p`), and by averaging characters over `2.A₄` and over the coset `φ₁·2.A₄` (`p = 2`).
+The normalizer of the finite irreducible group `ρ(I_∞)` in `SL₂` is finite, so a Frobenius lift is
+`c·φ₁` with `c² = p` and `φ₁` of finite order, whence semisimplicity and the absolute values. At `0`,
+`Sym^k` of one unipotent block of rank two (§1.2) has a one-dimensional invariant space, the `k`-th
+power of the invariant line of `Kl₂`; that line is `H¹_c(𝔾_m, Kl₂)`, because the invariants at `∞`
+vanish, and `Z₁ = 1 − T` (§1.5) gives its Frobenius `1`.
+
+**Checks.**
+
+- `p = 2`, `k = 1`: the lower filtration gives
+  `Sw_∞(Kl₂) = Σ_{j ≥ 1}(2 − dim Kl₂^{D_j})/[D₀ : D_j] = 2/3 + 2/12 + 2/12 = 1`, matching
+  CongruenceSpectralGap §4.2b; a longer filtration with `D₂ = D₃ = D₄ = {±1}` would give
+  `2/3 + 3·(2/12) = 7/6 ≠ 1`.
+- `p = 2`, `k = 12`: the invariants have dimension `⌊12/12⌋ + 1 = 2` and `a₁₂ = b₁₂ = 1`, so the
+  eigenvalues are `64` and `−64`, and `Sw_∞ = ⌊14/4⌋ = 3`; the moments give
+  `Z₁₂(2; T) = 1 − T − 4096T² + 4096T³ = (1 − T)(1 − 64T)(1 + 64T)`, of degree `3`. Reading the invariant
+  lines as twisted by `ℚ_ℓ(6)` would give eigenvalues `±2^{−6}`, which do not occur.
+- `p = 3`, `k = 6`: the weights of `T` are `−6, −4, …, 6`, of which `−6, 0, 6` are divisible by `3`, so
+  `Sw_∞ = (7 − 3)/2 = 2 = deg Z₆(3; T)`; `w` swaps the weights `±6` and acts by `(−1)³ = −1` on weight
+  `0`, so the invariants form one line, and `Z₆(3; T) = (1 − T)(1 + 27T)` shows its eigenvalue `−27`, of
+  absolute value `3³`.
+- `k = 3`: the invariants at `∞` vanish at every `p`; at `p = 2`, `Z₃(2; T) = (1 − T)(1 + 4T)` has no
+  reciprocal root of absolute value `2^{3/2}`.
+
+*Needs:* §§1.2, 1.4–1.5; CongruenceSpectralGap §4.2b (Swan conductor one, tameness at `0`, curve
+Euler–Poincaré); ArithmeticGaloisRepresentations §3.1 (breaks and Swan conductors of representations
+with finite wild image).
+
 ### Examples
 
 - `Z₅(2; T) = 1 − 5T + 68T² − 64T³ = (1 − T)(1 − 4T + 64T²)`; the quadratic factor has
@@ -760,7 +861,8 @@ integers fixed by `Gal(ℚ̄/ℚ)`, since the moments are rational, hence intege
 ### Dependencies
 
 Layer 0. Other roadmaps: CongruenceSpectralGap, EtaleCohomologyFoundations,
-InverseGaloisAndArithmeticFundamentalGroups, EtaleDualityAndPerverseSheaves, DeligneWeightsAndPurity.
+InverseGaloisAndArithmeticFundamentalGroups, EtaleDualityAndPerverseSheaves, DeligneWeightsAndPurity,
+ArithmeticGaloisRepresentations.
 
 ## Layer 2: Kloosterman connections in every rank
 
@@ -878,15 +980,25 @@ p. 12; §2.2, pp. 13–14). The API proves the following facts.
 
 ### 2.5 Differential Galois groups
 
-**Theorem.** Over `ℂ`, the differential Galois groups of `Kl_r` and of `K̃l_r` in their
-`r`-dimensional representations are `SL_r` for odd `r` and `Sp_r` for even `r`. Consequently, for every
-`k ≥ 1`, `Sym^k Kl_r` and `Sym^k K̃l_r` are irreducible of rank `binomial(r − 1 + k, k)` (Katz, as
-recorded in FSY Proposition 2.7, p. 12).
+**Theorem.** Over `ℂ`, the differential Galois groups of `Kl_r` and of `K̃l_r`, that is the
+Picard–Vessiot groups of their generic fibres over `ℂ(z)` and `ℂ(t)` in their `r`-dimensional solution
+representations (DiophantineApproximationAndTranscendence §5.4), are `SL_r` for odd `r` and `Sp_r` for
+even `r`. Consequently, for every `k ≥ 1`, `Sym^k Kl_r` and `Sym^k K̃l_r` are irreducible of rank
+`binomial(r − 1 + k, k)` (Katz, as recorded in FSY Proposition 2.7, p. 12).
 
-*Proof sketch.* The connected differential Galois group contains the exponential torus of the
-formal decomposition at `∞` and the unipotent local monodromy at `0`; Katz's classification identifies
-it. The cover changes the group only by a finite index, and `Sym^k` of the standard representation of
-`SL_r` or `Sp_r` is irreducible.
+*Proof sketch.* Let `K/ℂ(z)` be the Picard–Vessiot field of `Kl_r` and `G` its group. Analytic
+continuation around `0` acts through an element of `G` (DiophantineApproximationAndTranscendence
+§5.4), the unipotent single block of §2.3. The exponential torus of the formal decomposition at `∞`
+(§2.3, PadicDifferentialEquationsAndRigidCohomology §RD.6.52a) acts by differential automorphisms of
+the explicit formal solution field, whose constants are `ℂ` and which contains a Picard–Vessiot field
+of `Kl_r` over `ℂ(z)`; by uniqueness of that field, restriction places the torus in `G`. Katz's
+classification of the group generated by these elements identifies `G`; it is connected. For
+`K̃l_r`, the compositum `K·ℂ(t)` is a Picard–Vessiot field over `ℂ(t)` whose group is the subgroup of
+`G` fixing `K ∩ ℂ(t)`; that field is algebraic over `ℂ(z)`, hence contained in `K^{G⁰} = K^G = ℂ(z)`, so
+the group is `G` again. A sub-connection of `Sym^k` gives a `G`-stable subspace of `Sym^k` of the
+solution space, through the fixed-field correspondence `K^G = ℂ(z)`, and `Sym^k` of the standard
+representation of `SL_r` or `Sp_r` is irreducible. These restriction and sub-object steps are part of
+this target.
 
 **Checks.**
 
@@ -895,8 +1007,15 @@ it. The cover changes the group only by a finite index, and `Sym^k` of the stand
   do not transfer.
 - For `r = 3`, `Sym²` of the standard representation of `SL₃` is irreducible of dimension `6`,
   whereas for `SO₃` it would split off an invariant line.
+- For `r = 2` the fundamental group of `ℂˣ` is generated by the loop around `0`, whose monodromy is one
+  unipotent block; the Zariski closure of the monodromy group is the one-dimensional additive group,
+  whereas `G = SL₂` has dimension `3`. Taking the closure of the analytic monodromy in place of the
+  Picard–Vessiot group would lose the irregular part at `∞`, as it does for `y′ = y`, whose group is
+  `𝔾_m` while its monodromy is trivial.
 
-*Needs:* §§2.3–2.4.
+*Needs:* §§2.3–2.4; DiophantineApproximationAndTranscendence §5.4 (Picard–Vessiot fields, the
+fixed-field correspondence, analytic monodromy in `G`); PadicDifferentialEquationsAndRigidCohomology
+§RD.6.52a (formal decomposition at `∞`).
 
 ### 2.6 The Bessel connection dictionary
 
@@ -930,7 +1049,8 @@ coefficient recurrence is `θfᵢ = −f_{i+1}`, and the last equation introduce
 ### Dependencies
 
 Layer 0 for the notation. Other roadmaps: ComplexComparisonPartII, SpringerResolutionAndCharacteristicCycles,
-PadicDifferentialEquationsAndRigidCohomology, MixedHodgeModulesAndIrregularHodgeTheory. Libraries: Mathlib.
+PadicDifferentialEquationsAndRigidCohomology, MixedHodgeModulesAndIrregularHodgeTheory,
+DiophantineApproximationAndTranscendence. Libraries: Mathlib.
 
 ## Layer 3: exponential cohomology and middle extensions
 
@@ -989,7 +1109,9 @@ cohomology. The API proves the following facts.
 
 - For `r = 2`, `k = 2` a transposition acts by `−1` on the selected pieces; for `r = 3`, `k = 2` by
   `+1`.
-- Over `ℚ_ℓ` with `ℓ ∣ k!·r` the projectors are still defined; no integral projector is claimed.
+- `r = 2`, `k = 2`, `ℓ = 2`: `e_χ = (2!·2)⁻¹ Σ sgn(σ)(σ, ζ)` has denominator `4`, a unit in `ℚ₂` but not
+  in `ℤ₂`, so the projector exists on `ℚ₂`-cohomology and not on `ℤ₂`-lattices; only rational
+  coefficients are used.
 - Cover versus descent at `r = 2`, `k = 3`: the four classes `tʲṽ₀³dt/t`, `0 ≤ j ≤ 3`, of
   `H¹_dR(𝔾_m, Sym³ K̃l₂)` (§5.6) have deck eigenvalues `(−1)^j = +1, −1, +1, −1`, so `e_μ` has rank
   `2 = dim H¹_dR(𝔾_m, Sym³ Kl₂)`; on middle cohomology the dimensions are `3` before and `1` after
@@ -1219,9 +1341,15 @@ MixedHodgeModulesAndIrregularHodgeTheory §8.4 gives the isomorphism on `gr^W_{n
 
 **Checks.**
 
-- The conclusion is classicality: the objects are mixed Hodge structures, not merely exponential
-  ones.
-- For `r = 2` the middle weight is `k + 1`.
+- For `r = 2`, `k = 2` the full `H¹` is a line of Hodge type `(3, 3)`, of weight `6`; for `r = 2`,
+  `k = 5` its types are `(2, 4)`, `(4, 2)` and `(6, 6)`, of weights `6, 6, 12` (§6.6). A version
+  asserting that the full `H¹` is pure of weight `nk + 1 = k + 1` fails in both cases; only the bound
+  `≥ k + 1` holds.
+- Pairing parity for `r = 2`: `(−1)^{k+1}` is `−1` at `k = 6` and `+1` at `k = 7`, so the middle
+  pairing is alternating on the two-dimensional `H¹_mid` of `k = 6` and symmetric on the
+  three-dimensional one of `k = 7`, as for `V_{6,ℓ}` and `V_{7,ℓ}` in §7.4; with the opposite parity
+  the form at `k = 6` would be symmetric on a pure Hodge structure of odd weight `7`, which a
+  polarization never is.
 - For `r = 2`, `k = 3` the full `H¹` has dimension two with weights `4` and `8` (§6.6), so `H¹` is not
   pure and `W₄H¹` is the one-dimensional middle part.
 
@@ -1329,7 +1457,10 @@ hypersurface.
 
 - For `r = p = 2` the comparison passes through the inseparable factor, not through an étale
   `μ₂`-cover.
-- The weight before the twist is `nk − 1`.
+- For `r = 2`, `k = 3`, `p = 2` the space `gr^W₂H²_c(K_{3,𝔽̄₂})^χ` before the twist carries the
+  Frobenius eigenvalue `−2`, of weight `2 = nk − 1`; the twist `(−1)` multiplies it by `2`, giving `−4`
+  of weight `4`. Omitting the twist, or twisting by `(1)`, gives `−2` or `−1`, neither a reciprocal root
+  of `M₃(2; T)`.
 - For `r = 2`, `k = 3`, `p = 2` the right side is one-dimensional with Frobenius eigenvalue `−4`,
   matching `M₃(2; T) = 1 + 4T`.
 
@@ -1630,7 +1761,9 @@ theorem of MixedHodgeModulesAndIrregularHodgeTheory §10.7.
 **Checks.**
 
 - The `z`-exponent has Newton degree two and the `t`-exponent degree one.
-- Even `k` needs the blow-up computation of §6.2 instead of the Newton argument.
+- `k = 2`: on the face spanned by all monomials, the critical equations `xᵢ² = z` and
+  `x₁⁻¹ + x₂⁻¹ = 0` have the torus solution `(x₁, x₂, z) = (1, −1, 1)`, so `f₂` is degenerate; for `k = 3`
+  the same equations require three signs `±1` with sum zero, which do not exist in characteristic zero.
 - For `k = 1` the Newton polygon of `x + z/x` has vertices `(1, 0)` and `(−1, 1)` in the coordinates
   `(α₁, α₀)`, both on `2α₀ + α₁ = 1`.
 
@@ -1677,7 +1810,9 @@ along `(k − j)E₁ + (k − 2j)E₂`, which gives `j ≤ k/2` on the cover. Fi
 **Checks.**
 
 - `k = 3`: `F⁴` is spanned by `j = 0`, `F²` contains `j = 0, 1`, and `F⁵ = 0`.
-- For even `k` the theorem asserts nothing for `p ≤ k/2`.
+- `k = 2` on `𝔾_m`: only `j = 0 < ⌊3/2⌋ = 1` occurs, so for `p ∈ {2, 3}` the space `F^pH¹` is the line
+  spanned by `v₀² dz/z` and `F⁴H¹ = 0` (`2·0 ≤ −1` fails), the single Hodge type `(3, 3)` of §6.6; the
+  range `p > k/2 = 1` is exactly the one in which this computation is asserted.
 - The factor `2` in the pullback comes from `dz/z = 2dt/t`.
 
 *Needs:* §§6.2–6.4, 5.6, 4.1; MixedHodgeModulesAndIrregularHodgeTheory §§10.2–10.3 and 10.7.
@@ -1733,8 +1868,12 @@ transport by signed permutations (§6.1). The derivative need not be a unit on t
 
 **Checks.**
 
-- The argument works at `p = 2` as well as at odd primes.
-- Interior singular points of `K` remain possible and are treated in §7.2.
+- Over `𝔽₂`, in the `k = 2` chart at `(z₁, z₂) = (1, 0)`: `g₁ = 1 + 1 = 0` and
+  `∂g₁/∂z₁ = 1 + z₂² + 2z₁z₂² = 1 = −1/z₁`, so the boundary intersection is smooth there even though
+  `2 = 0`.
+- For `k = 2` over `ℚ`, `(y₁, y₂) = (1, −1)` satisfies `g = 0` and both derivatives `1 − yᵢ⁻² = 0`, an
+  interior singular point of `K` (§7.2); smoothness along the boundary does not extend to smoothness
+  of `K̄` everywhere.
 - For `k = 2` on the standard chart, `g₁ = 1 + z₁ + z₁²z₂² + z₁z₂²` and `g₁(0, z₂) = 1`, so
   `K̄ ∩ (z₁ = 0) = ∅`.
 
@@ -1839,30 +1978,52 @@ facts (FSY proof of Theorem 5.17, (5.18)–(5.21), pp. 45–48).
 
 - Over `ℚ`, `K′` and `K̄′` are smooth and `K̄′` is projective. `T` is a disjoint union of smooth
   quadrics of dimension `k − 2`, and `K̄′ ∖ K′` is a strict normal crossings divisor.
-- Open comparison: `π` induces an isomorphism `H^{k−1}_c(K′)^χ ≅ H^{k−1}_c(K)^χ` on `χ`-isotypic
-  parts. This holds in the Betti, de Rham and `ℓ`-adic realizations over `ℚ`, and `ℓ`-adically over
-  `𝔽_p` for odd `p ≠ ℓ` (FSY (5.18)).
+- Open comparison: `π^* : H^{k−1}_c(K)^χ → H^{k−1}_c(K′)^χ` is surjective, and its kernel is the
+  image of `H^{k−2}(T)^χ` under the connecting map, a space of dimension `δ_{4∣k}`, pure of weight
+  `k − 2`. So `π^*` is an isomorphism for `k ≡ 2 (mod 4)`, and for every even `k ≥ 4` it is an
+  isomorphism on `gr^W_{k−1}` and on `W_{k−3}`. This holds in the Betti, de Rham and `ℓ`-adic
+  realizations over `ℚ`, and `ℓ`-adically over `𝔽_p` for odd `p ≠ ℓ` (FSY (5.18), whose printed
+  isomorphism omits `H^{k−2}(T)`). The localization sequences of `T ⊂ K′` and `S ⊂ K`, with
+  `K′ ∖ T = K ∖ S` and `H^{k−2}(S) = H^{k−1}(S) = H^{k−1}(T) = 0`, give the exact sequence
+  `H^{k−2}_c(K′) → H^{k−2}(T) → H^{k−1}_c(K) → H^{k−1}_c(K′) → 0`. The first map has image spanned by the
+  hyperplane classes `h^{(k−2)/2}` of the quadrics: `π_*IC_{K′}` is `IC_K` plus summands supported on
+  `S` (decomposition theorem), `H^{−1}_c(K, IC_K) = 0` because `K` is affine (perverse Artin vanishing),
+  and a linear section of dimension `k/2` of a quadric restricts to a nonzero multiple of its
+  `h^{(k−2)/2}`.
+- Isotypic count: the stabilizer of a balanced point in `S_k × μ₂` is
+  `(S_{k/2} × S_{k/2})·⟨(σ₀, −1)⟩`, `σ₀` exchanging the two halves. It fixes `h^{(k−2)/2}`, which has no
+  `χ`-part since a transposition inside one half has `χ = −1`. On the primitive class of the quadric
+  `Σ_{yᵢ = 1} zᵢ² − Σ_{yᵢ = −1} zᵢ² = 0` it acts by `+1` or `−1` according as the two rulings are kept or
+  exchanged: by `sgn` on `S_{k/2} × S_{k/2}`, and by `+1` on `(σ₀, −1)`, which multiplies the form by
+  `−1` and has determinant `(−1)^{k/2}`. As `χ(σ₀, −1) = sgn(σ₀) = (−1)^{k/2}`, `H^{k−2}(T)^χ` has
+  dimension `δ_{4∣k}`.
 - Proper closure: §7.1 (c) for `Y = K̄′_ℚ` gives
   `gr^W_{k−1}H^{k−1}_c(K′) = im(H^{k−1}_c(K′) → H^{k−1}(K̄′)) = ker(H^{k−1}(K̄′) → H^{k−1}(D^{(1)}))`
   (FSY (5.19)). It also gives `gr^W_{k−2}H^{k−1}_c(K′)` as the `E₂^{1,k−2}` term
   `ker(H^{k−2}(D^{(1)}) → H^{k−2}(D^{(2)})) / im(H^{k−2}(K̄′) → H^{k−2}(D^{(1)}))` (FSY (5.20)).
-- With the open comparison, the `χ`-part of this weight-`(k − 2)` boundary correction has dimension
-  `δ_{4∣k}`.
+- The `χ`-part of this `E₂^{1,k−2}` term is zero for every even `k ≥ 4`: `gr^W_{k−2}H^{k−1}_c(K)^χ` has
+  dimension `δ_{4∣k}` (FSY Theorem 1.8 with Theorem 3.8, as recalled in the proof of Theorem 5.17,
+  p. 45), and the open comparison kills it.
 - At an odd prime `p`, `K̄′_{𝔽_p}` is smooth along `K̄′ ∖ K′`. Its singular points are the
   positive-`b` ordinary quadratic points of §7.2, all lying in `K′_{𝔽_p}`.
 
 **Checks.**
 
-- `k = 4`: for the open resolution, `gr^W₂H³_c(K′_{ℚ̄})^χ` has dimension one, as for `K` by the open
-  comparison. For the smooth projective closure, `H³(K̄′_{ℚ̄})` is pure of weight `3`, so its `gr^W₂`
-  is zero. The middle part `gr^W₃H³_c(K′_{ℚ̄})^χ` has dimension `d₄ = 0`. A single space standing
-  for both `K′` and `K̄′` would lose the weight-two class.
-- `k = 6`: the boundary correction has dimension zero.
+- `k = 4`: the six balanced points form one orbit with stabilizer `(S₂ × S₂)·⟨(σ₀, −1)⟩`; the
+  transpositions `(12)` and `(34)` exchange the rulings of the quadric surface `z₁² + z₂² − z₃² − z₄² = 0`
+  (`χ = −1`), and `(σ₀, −1)` keeps them (`χ = +1`), so `H²(T)^χ` is a line. It is the kernel of
+  `H³_c(K)^χ → H³_c(K′)^χ`, the one-dimensional `gr^W₂H³_c(K_{ℚ̄})^χ` dies, and
+  `gr^W₂H³_c(K′_{ℚ̄})^χ = 0`; the middle part `gr^W₃` has dimension `d₄ = 0` on both. A version that
+  asserts an isomorphism keeps a weight-two class in `H³_c(K′)^χ`.
+- `k = 6`: `(σ₀, −1)` has `χ = (−1)³ = −1` and keeps the rulings, so `H⁴(T)^χ = 0`, `π^*` is an
+  isomorphism on `χ`-parts and the boundary correction has dimension zero.
 - `k = 6`, `p = 3`: the `b = 2` orbit survives the resolution, so the integral model is not smooth
   everywhere.
 
 *Needs:* §§7.1–7.2 (including the boundary localization of §7.1), 3.2; SchemeAndStackFoundations
-§§4.11, 4.17; EtaleCohomologyFoundations §F.7 (blow-ups and projective bundles).
+§§4.11, 4.17; EtaleCohomologyFoundations §F.7 (blow-ups and projective bundles);
+EtaleDualityAndPerverseSheaves §2.7 (perverse Artin vanishing) and §§5.6, 5.10 (decomposition
+theorem over finite fields and over `ℂ`).
 
 ### 7.4 Galois realizations of the moment motives
 
@@ -1876,8 +2037,9 @@ continuous action `r_{k,ℓ}` of `Gal(ℚ̄/ℚ)`, and `V_{1,ℓ} = 0` (FSY (5.5
 - For odd `k`, `V_{k,ℓ}(1)` is the `χ`-part of `ker(H^{k−1}(K̄_{ℚ̄}) → H^{k−1}(D^{(1)}_{ℚ̄}))`, by the
   boundary localization of §7.1 (c) applied to the smooth projective compactification `K̄_ℚ`. For
   even `k ≥ 4`, `V_{k,ℓ}(1)` is the `χ`-part of `ker(H^{k−1}(K̄′_{ℚ̄}) → H^{k−1}(D^{(1)}_{ℚ̄}))` for the
-  proper resolution `K̄′ → K̄` of §7.3. This follows from its open comparison
-  `H^{k−1}_c(K′)^χ ≅ H^{k−1}_c(K)^χ` and §7.1 (c) for `Y = K̄′_ℚ` (FSY (5.19)).
+  proper resolution `K̄′ → K̄` of §7.3. This follows from the isomorphism
+  `gr^W_{k−1}H^{k−1}_c(K)^χ ≅ gr^W_{k−1}H^{k−1}_c(K′)^χ` given by the open comparison of §7.3 and §7.1 (c)
+  for `Y = K̄′_ℚ` (FSY (5.19)).
 - Its de Rham and Betti realizations are the filtered middle cohomology of §4.1.
 
 **Checks.**
@@ -1899,8 +2061,9 @@ and gap:nori-weight-filtration; EtaleCohomologyFoundations §F.4.5.
 ### Dependencies
 
 Layers 3, 4 and 6. Other roadmaps: ShimuraCompactifications, SchemeAndStackFoundations,
-LefschetzPencilsAndVanishingCycles, EtaleCohomologyFoundations, DeligneWeightsAndPurity,
-MixedHodgeModulesAndIrregularHodgeTheory, MotivesAndAlgebraicCycles. Libraries: Tau Ceti.
+LefschetzPencilsAndVanishingCycles, EtaleCohomologyFoundations, EtaleDualityAndPerverseSheaves,
+DeligneWeightsAndPurity, MixedHodgeModulesAndIrregularHodgeTheory, MotivesAndAlgebraicCycles.
+Libraries: Tau Ceti.
 
 ## Layer 8: local factors and conductors
 
@@ -1926,12 +2089,12 @@ of weight `k + 1`; and the reciprocal roots are stable under `α ↦ p^{k+1}/α`
 roots have absolute value `p^{−(k+1)/2}`, or, only for even `k`, `p^{−k/2}`
 (`momentSeries_weights`; FSY §1.1, p. 3, and (5.2)–(5.4), pp. 39–40).
 
-*Proof sketch.* Combine §1.4 with the purity of the middle image and the weights of the local
-invariants: the invariants at `0` of `Sym^k` of a single unipotent block of rank two form one line of
-weight `0`, and the invariants at `∞` are computed from §5.2's `ℓ`-adic counterpart, the formal
-structure of `Sym^k Kl₂` at `∞` in characteristic `p`, which contributes only for even `k` and with
-weight `k`. At odd `p` an alternative route is PadicDifferentialEquationsAndRigidCohomology
-§RD.6.98 (b) with §RD.7.21a, through the rigid trace formula, which gives the same polynomial.
+*Proof sketch.* Combine §1.4 with the purity of the middle image and the local invariants of §1.6:
+the invariants at `0` form one line with Frobenius `1`, and the invariants at `∞` vanish for odd `k`
+and, for even `k`, carry Frobenius eigenvalues of absolute value `p^{k/2}`. The localization sequence
+identifies the kernel of `H¹_c → H¹` with the sum of the two invariant spaces. At odd `p` an
+alternative route is PadicDifferentialEquationsAndRigidCohomology §RD.6.98 (b) with §RD.7.21a, through
+the rigid trace formula, which gives the same polynomial.
 
 **Checks.**
 
@@ -1943,7 +2106,7 @@ weight `k`. At odd `p` an alternative route is PadicDifferentialEquationsAndRigi
 - `Z₆(3; T) = (1 − T)(1 + 27T)`: the root `−1/27` has absolute value `3^{−3} = 3^{−6/2}`, a weight-`k`
   boundary root; `M₆(3; T) = 1`.
 
-*Needs:* §§1.2, 1.4, 0.3; DeligneWeightsAndPurity §§0.16, 7.12; EtaleCohomologyFoundations §F.5;
+*Needs:* §§1.2, 1.4, 1.6, 0.3; DeligneWeightsAndPurity §§0.16, 7.12; EtaleCohomologyFoundations §F.5;
 PadicDifferentialEquationsAndRigidCohomology §§RD.6.98, RD.7.21a for the alternative odd-prime route.
 
 ### 8.2 Degrees and trivial factors
@@ -1963,18 +2126,20 @@ and (5.1)–(5.4), pp. 39–40). Moreover: for odd `k`, `Z_k = (1 − T)M_k` at 
 odd `p`, with `u = ⌊k/(2p)⌋`, `v = ⌊k/(4p) + 1/2⌋` and `m = u + δ_{4∣k}`,
 `Z_k = (1 − T)(1 − (−1)^{(p−1)/2}p^{k/2}T)^v(1 − p^{k/2}T)^{m−v}M_k`; for even `k` and `p = 2`,
 `Z_k = (1 − T)(1 − 2^{k/2}T)^{a_k}(1 + 2^{k/2}T)^{b_k}M_k` with `deg M_k = 2⌊(k + 2)/12⌋ − 2δ_{12∣k}`,
-where `a_k = ⌊k/24⌋ + 1` for `k ≡ 0, 8, 12, 16, 18, 20 (mod 24)` and `⌊k/24⌋` otherwise, and
-`b_k = ⌊k/24⌋ + 1` for `k ≡ 6, 12, 14, 18, 20, 22 (mod 24)` and `⌊k/24⌋` otherwise. The degree equals
-`Sw_∞(Sym^k Kl₂)`. At odd `p` the factorization is the `ℓ`-adic form of
+where `a_k` and `b_k` are the multiplicities of §1.6. The degree equals `Sw_∞(Sym^k Kl₂)`, computed in
+§1.6. At odd `p` the factorization is the `ℓ`-adic form of
 PadicDifferentialEquationsAndRigidCohomology §RD.7.21a; the two agree because both sides are
 determinants equal to `Z_k(p; T)`, and the content here is the `p = 2` case, the degrees and the
 `ℓ`-adic middle factor.
 
 *Proof sketch.* Integrality is §1.5. By §1.4 and the curve Euler–Poincaré formula of
-CongruenceSpectralGap §4.2b, `deg Z_k = Sw_∞(Sym^k Kl₂)`; the Swan conductor and the local invariants at
-`0` and `∞` are computed from the local structure of `Kl₂` at `∞` (Fu–Wan for odd `p`, Yun for
-`p = 2`, as recorded in FSY §5.1.1). Separate the weights `0`, `k` and `k + 1` (§8.1) to identify the
-factors.
+CongruenceSpectralGap §4.2b, `deg Z_k = Sw_∞(Sym^k Kl₂)`, which §1.6 computes; this is
+`momentDegree p k`. The kernel of `H¹_c → H¹` is the sum of the invariants at `0` (one line, Frobenius
+`1`) and at `∞` (§1.6), and the weights `0`, `k` and `k + 1` (§8.1) separate the factors: at `p = 2` the
+eigenvalues `±2^{k/2}` with multiplicities `a_k`, `b_k` of §1.6 give the displayed factorization and
+`deg M_k = ⌊(k + 2)/4⌋ − 1 − a_k − b_k`; at odd `p` the weight-`k` factor is the boundary factor of
+§RD.7.21a, both being the weight-`k` part of `Z_k(p; T)`, and has degree `m` (§1.6). Fu–Wan for odd `p`
+and Yun for `p = 2`, as recorded in FSY §5.1.1, give the same values.
 
 **Checks.**
 
@@ -1985,8 +2150,8 @@ factors.
 - `k = 9`, `p = 3`: `⌊(9 + 3)/6⌋ = 2`, degree `5 − 2 = 3`; `k = 3`, `p = 3`: degree `1`, `Z₃(3; T) = 1 − T`.
 - `k = 8`, `p = 3`: `u = v = 1`, `m = 2`, and `Z₈(3; T) = (1 − T)(1 + 81T)(1 − 81T)`, so `M₈(3; T) = 1`.
 
-*Needs:* §§1.4–1.5, 8.1; CongruenceSpectralGap §4.2b (curve Euler–Poincaré, local structure of
-`Kl₂`); PadicDifferentialEquationsAndRigidCohomology §RD.7.21a at odd primes.
+*Needs:* §§1.4–1.6, 8.1; CongruenceSpectralGap §4.2b (curve Euler–Poincaré);
+PadicDifferentialEquationsAndRigidCohomology §RD.7.21a at odd primes.
 
 ### 8.3 Local structure at odd symmetric powers
 
@@ -2015,7 +2180,9 @@ radicand has even valuation, that is, when `v_p(a)` is odd.
 
 - `k = 9`, `p = 3`: `Θ⁻₃ = {1}` and `Θ⁺₃ = {3}`; the `a = 1` line is ramified and the `a = 3` line
   unramified, with Frobenius eigenvalue `((−1)^5·2/3)·3^5 = 243`.
-- The decomposition is local; global semisimplicity of `V_{k,ℓ}` is not asserted.
+- `k = 5`, `p = 3`: `Θ⁻₃ = {1}` and `Θ⁺₃ = ∅`, so `E` is one ramified line and `M` has dimension
+  `d₅ − 1 = 1`, matching `Z₅(3; T) = 1 + 26T − 27T² = (1 − T)(1 + 27T)`, whose middle factor
+  `M₅(3; T) = 1 + 27T` has degree one.
 - `k = 3`, `p = 3`: `Θ⁻₃ = {1}`, `Θ⁺₃ = ∅`, `M = 0`, so `V^{I₃} = 0` and the Euler factor at `3` is `1`.
 
 *Needs:* §§7.1 (boundary localization), 7.2, 7.4, 4.5, 8.2; LefschetzPencilsAndVanishingCycles
@@ -2035,7 +2202,10 @@ resolution `Y = K̄′ → K̄` with `U = K′` (part (b)
 on the special fibre, which keeps its positive-`b` quadratic points, and part (c) over `ℚ̄_p`), and the
 odd-dimensional Picard–Lefschetz transvection formula of LefschetzPencilsAndVanishingCycles §2.8 at
 the positive-`b` points; the weights of §8.2 show that the inclusions of invariant and vanishing subspaces are
-equalities; the Frobenius on each quadric piece is `(−1)^{bp(p−1)/4}p^{(k−2)/2}` before the twist.
+equalities; the Frobenius on each quadric piece is `(−1)^{bp(p−1)/4}p^{(k−2)/2}` before the twist. The
+`χ`-part of the boundary term `E₂^{1,k−2}` vanishes (§7.3), and for `4 ∣ k` the quotient `ℚ_ℓ(−k/2)`
+of `E` is the kernel of the open comparison of §7.3 over `𝔽̄_p`, twisted by `(−1)`: the primitive
+classes of the `b = 0` quadrics, with Frobenius `p^{(k−2)/2}` before the twist.
 
 **Checks.**
 
@@ -2142,9 +2312,9 @@ with `H¹_{rig,mid}(𝔾_m, Sym^k Kl₂) ⊗ K ≅ D_cris(V_{k,p}) ⊗ K`; and f
 `ℚ_p(√−p)` with a Frobenius-compatible injection of the rigid middle module into `D_st`. Further, the
 filtered input of §RD.7.22 holds by §§4.1 and 6.6, so for every odd `p` the Newton polygon of
 `H¹_{rig,c}` lies above the compact-support Hodge polygon and the coefficients of
-`Z_k(p; T) = Σ c_nTⁿ` satisfy `v_p(c_n) ≥ n(n − 1)` (FSY Proposition 5.23, pp. 49–51; Corollary 5.27
-and Remark 5.28, pp. 51–52). The conclusions are those of §§RD.7.21–RD.7.22; this target supplies
-their hypotheses.
+`Z_k(p; T) = Σ c_nTⁿ` satisfy `v_p(c_n) ≥ n(n − 1)`, the odd-`p` case of `momentSeries_coeff_dvd`
+(§11.2) (FSY Proposition 5.23, pp. 49–51; Corollary 5.27 and Remark 5.28, pp. 51–52). The conclusions
+are those of §§RD.7.21–RD.7.22; this target supplies their hypotheses.
 
 *Proof sketch.* The geometric identifications are §§7.1–7.4 and §4.3. At good odd primes the model is
 smooth and CohomologyComparisons §§3.4–3.5 apply. At bad odd primes the semistable model is obtained
@@ -2155,8 +2325,12 @@ then give `(C_st)`.
 
 **Checks.**
 
-- At good odd primes the crystalline statement uses no semistable model.
-- The de Rham statement includes `p = 2`; the semistable statement is only at odd `p`.
+- `k = 6`, `p = 5 > k/2`: the crystalline case, with
+  `Z₆(5; T) = 1 − 151T + 78275T² − 78125T³ = (1 − T)(1 − 150T + 78125T²)`, a middle factor of full
+  degree `d₆ = 2` and no boundary factor of slope `3`; the coefficient valuations `0, 0, 2, 7` meet the
+  bounds `0, 0, 2, 6`.
+- `k = 5`, `p = 2`: `V_{5,2}` is de Rham at `2` but no semistable model is used there; the valuation
+  bound at `2` comes from §11.2, and `Z₅(2; T) = 1 − 5T + 68T² − 64T³` has valuations `0, 0, 2, 6`.
 - `k = 9`, `p = 3`: the `a = 3` point has thickness two, so this case needs the higher-thickness
   contract; the `a = 1` point has unit thickness.
 - `k = 3`, `p = 3`: `Z₃(3; T) = 1 − T` satisfies the valuation bound trivially, also when the middle
@@ -2371,10 +2545,13 @@ consequences.
 
 **Checks.**
 
-- No new definition of potential automorphy is made; the theorem is an application.
 - `k = 3`: the system is a Hecke character, automorphic over `ℚ` itself.
-- The conclusion includes strict purity, hence strict local compatibility, for the semisimplified
-  system.
+- `k = 5`: the system has rank two with Hodge–Tate weights `2, 4`, distinct, so it is regular; at
+  `p = 2` its Frobenius polynomial `M₅(2; T) = 1 − 4T + 64T²` has reciprocal roots `2 ± 2√−15`, of
+  absolute value `8 = 2^{(5+1)/2}`, the purity at `p = 2` that the automorphic conclusion forces.
+- `k = 6`, `p = 3`: the inverse Euler factor `1 + 27T` has degree `1 < 2 = d₆`, because inertia acts
+  through a nontrivial unipotent group (§8.4); the potentially automorphic system keeps this
+  ramification rather than becoming unramified at `3`.
 
 *Needs:* §9.2; ModularityAndLanglandsExtensions §§2.42, 2.49.
 
@@ -2408,26 +2585,39 @@ sides are semisimple with the same Frobenius polynomials at almost all places
 is ModularityAndLanglandsExtensions §2.43, identifies each `WD(r_{π_i,2}|G_{F′_v})^{F-ss}` with
 `rec(π_{i,v}|det|^{(1−n_i)/2})`, and its Layer AG2.5 does the same at `ℓ ≠ 2`. By §8.3, `V_{k,ℓ}` is
 unramified at `2` with Frobenius polynomial `M_k(2; T)`. `D_pst` is exact on potentially semistable
-representations, and `V_{k,2}` is de Rham at `2` (§9.1), hence potentially semistable
-(PadicHodgeTheory §§5.1, 5.3); so `V_{k,2}` and `r_{k,2}^{ss}` have the same Frobenius slopes. These
+representations (PadicHodgeTheory §5.3), and `V_{k,2}` is de Rham at `2` (§9.1), hence potentially
+semistable (NoncommutativeAndEquivariantIwasawa §F.6, `deRham_iff_potentiallySemistable`); so
+`V_{k,2}` and `r_{k,2}^{ss}` have the same Frobenius slopes. These
 slopes are read off on the finite-index subgroup `W_{F′_v}`: a slope is `v₂(β)/f_v` for an eigenvalue
 `β` of the Frobenius of `F′_v`, `f_v` its residue degree. No isomorphism of Weil–Deligne
 representations over `ℚ₂` itself is asserted.
 
-**Corollary.** For odd `k`, `Z_k(2; T) = Σ c_nTⁿ` satisfies `v₂(c_n) ≥ n(n − 1)` for every `n` (FSY
-Remark 5.41, p. 59).
+**Corollary.** For `k ≥ 1` and a prime `p` with `p` odd or `k` odd, every coefficient `c_n` of
+`Z_k(p; T) = Σ c_nTⁿ` is an integer divisible by `p^{n(n−1)}` (`momentSeries_coeff_dvd`; FSY Corollary
+5.27 and Remark 5.28, pp. 51–52, for odd `p`; Remark 5.41, p. 59, for `p = 2`). For odd `p` this is the
+conclusion of §9.1; the case `p = 2`, `k` odd, is proved here.
 
-*Proof sketch.* Weak admissibility (PadicHodgeTheory §5.2), applied over a finite extension over
-which `V_{k,2}` becomes semistable, puts the Newton polygon of `D_pst(V_{k,2})` above its Hodge polygon,
-whose slopes are the `p`-indices `2, 4, …, k − 1` of the middle Hodge table of §6.6 (FSY convention,
-PadicHodgeTheory §3.2 for the sign). By the preceding theorem the Newton polygon of `M_k(2; T)` lies
-above the polygon with these slopes. Restoring the factor `1 − T` of §8.2 adds the slope `0`, and the
-polygon with slopes `0, 2, …, k − 1` passes through `(n, n(n − 1))`.
+*Proof sketch.* Let `p = 2` and `k` odd. Over a finite extension `L/ℚ₂` over which `V_{k,2}` becomes
+semistable, `D_st,L(V_{k,2})` is weakly admissible (FiniteFlatGroupsAndIntegralPadicHodgeTheory
+§R07.3.3, `dSt_isWeaklyAdmissible`), so its Newton polygon lies above its Hodge polygon
+(§R07.3.2, `isWeaklyAdmissible_iff_polygon`), whose slopes are the `p`-indices `2, 4, …, k − 1` of the
+middle Hodge table of §6.6 (FSY convention, PadicHodgeTheory §3.2 for the sign). By the preceding
+theorem the Newton polygon of `M_k(2; T)` lies above the polygon with these slopes. Restoring the
+factor `1 − T` of §8.2 adds the slope `0`, and the polygon with slopes `0, 2, …, k − 1` passes through
+`(n, n(n − 1))`; the coefficients are integers by §8.2, and vanish beyond the degree.
 
 **Checks.**
 
-- The tame monodromy `N` of §8.4 is kept throughout.
-- The first theorem applies at `p = 2` and gives no closed formula for the even factor there.
+- `k = 6`, `p = 3`: the Weil–Deligne representation has Frobenius eigenvalues `−27` on `ker N` and
+  `−81` on the quotient, of weights `6` and `8` centred at `7`, and `N` of rank one; its local factor
+  is `(1 + 27T)⁻¹`, whereas dropping `N` would give `((1 + 27T)(1 + 81T))⁻¹`, of degree two.
+- `k = 0` is excluded from the corollary: `Z₀(p; T) = (1 − T)/(1 − pT)` has `c₂ = p² − p`, of
+  valuation `1 < 2`. For `p = 2` and even `k` no bound is asserted; `Z₆(2; T) = 1 + 7T − 8T²` happens to
+  satisfy it.
+- `k = 13`, `p = 2`: the coefficients of `Z₁₃(2; T)` have `2`-adic valuations
+  `0, 0, 2, 6, 12, 20, 30, 42`, equal to `n(n − 1)`, the leading one being `−2^{42}`; `k = 9`, `p = 3`:
+  `Z₉(3; T) = 1 + 53T + 58995T² − 59049T³` has valuations `0, 0, 3, 10` against the bounds
+  `0, 0, 2, 6`.
 - The slope theorem is a comparison at the coefficient prime itself: the strict compatibility of
   PotentialModularityAndCompatibleSystems §1.6 is away from the residue characteristic, so for
   `p = ℓ = 2` it says nothing, and the input is Layer AG2.6.
@@ -2439,7 +2629,8 @@ polygon with slopes `0, 2, …, k − 1` passes through `(n, n(n − 1))`.
 
 *Needs:* §§6.6, 8.2–8.4, 9.1, 10.3, 11.1; ArithmeticGaloisRepresentations §§2.5–2.7, 3.3, 5.3;
 ModularityAndLanglandsExtensions §§2.42–2.43, 2.49; AutomorphicGaloisRepresentationsPartII Layers
-AG2.5–AG2.6; PadicHodgeTheory §§3.2, 5.1–5.3.
+AG2.5–AG2.6; PadicHodgeTheory §§3.2, 5.3; NoncommutativeAndEquivariantIwasawa §F.6;
+FiniteFlatGroupsAndIntegralPadicHodgeTheory §§R07.3.2–R07.3.3.
 
 ### 11.3 The odd root number
 
@@ -2456,7 +2647,9 @@ with the automorphic sign through §11.2.
 
 **Checks.**
 
-- Even weight alone does not give the conclusion; the orthogonal pairing is part of the hypothesis.
+- Orthogonality is needed: a cubic Dirichlet character `χ` modulo `7` is even and gives a rank-one
+  motive of even weight `0` that is not self-dual, with root number `τ(χ)/√7`; this is not real,
+  since `τ(χ)³ = 7·J(χ, χ)` with the Jacobi sum `J(χ, χ) ∈ ℤ[ζ₃]` of norm `7`, which is not real.
 - `k = 3`: the root number of `L(s, χ_{−3})` is `+1`, consistent with the theorem.
 - `k = 1`: `M₁ = 0` and the root number of the empty product is `1`.
 
@@ -2523,7 +2716,8 @@ reflection and §§10.2–10.4 for the explicit odd-prime factors, conductor and
 ### Dependencies
 
 Layers 4 and 6–10. Other roadmaps: ModularityAndLanglandsExtensions, ArithmeticGaloisRepresentations,
-AutomorphicGaloisRepresentationsPartII, MotivesAndAlgebraicCycles, PadicHodgeTheory.
+AutomorphicGaloisRepresentationsPartII, MotivesAndAlgebraicCycles, PadicHodgeTheory,
+NoncommutativeAndEquivariantIwasawa, FiniteFlatGroupsAndIntegralPadicHodgeTheory.
 
 ## Downstream consumers
 
@@ -2567,6 +2761,15 @@ AutomorphicGaloisRepresentationsPartII, MotivesAndAlgebraicCycles, PadicHodgeThe
   equation `Q − u·(√−p)²` with `u` a unit; the constant term `2ap` (respectively `2bp`) has valuation
   greater than one when `p` divides `a` (respectively `b`), for instance `18` at `k = 9`, `p = 3`,
   `a = 3`. The route of §9.1 handles these points through the higher-thickness supplier contract.
+- FSY proof of Theorem 5.17, (5.18) and (5.20), pp. 46–47: the resolution of the balanced nodes is
+  asserted to induce an isomorphism `H^{k−1}_c(K′) ≅ H^{k−1}_c(K)`, from the vanishing of three
+  groups; the localization sequence also contains `H^{k−2}(T)`, and the map `H^{k−1}_c(K)^χ → H^{k−1}_c(K′)^χ`
+  is surjective with kernel of dimension `δ_{4∣k}`. Consequently the `χ`-part of the `E₂^{1,k−2}` term of
+  `K̄′` is zero, not of dimension `δ_{4∣k}`; the dimension count in the rest of the proof is unchanged,
+  the kernel taking the place of that term (§§7.3, 8.4).
+- Yun-moments Lemma 4.3.4, p. 37: the invariant lines at `∞` carry the Tate twist `(−d/2)`, with
+  geometric Frobenius eigenvalues `±2^{d/2}` as computed in its proof (4.14); the displayed twist
+  `(d/2)` has the opposite sign (§1.6).
 
 ## References
 
@@ -2579,3 +2782,6 @@ AutomorphicGaloisRepresentationsPartII, MotivesAndAlgebraicCycles, PadicHodgeThe
 - **Saito-orthogonal.** T. Saito, *The sign of the functional equation of the L-function of an
   orthogonal motive*, Invent. Math. 120 (1995), 119–142; cited by its locator through FSY §5.3.3,
   p. 58.
+- **Yun-moments.** Z. Yun, *Galois representations attached to moments of Kloosterman sums and
+  conjectures of Evans*, Compositio Math. 151 (2015), 68–120; arXiv:1308.3920v2, §2.3.4, p. 12, and
+  §§4.3.1–4.3.4, pp. 36–39. All page numbers refer to the arXiv v2 pagination.

@@ -16,6 +16,9 @@ Stated here:
   (Fresán–Sabbah–Yu (1.5), (5.1)–(5.4), after Fu–Wan and Yun);
 * the weights of the reciprocal roots of `Z_k(p;T)`: one trivial root, the middle roots of weight
   `k + 1`, and, for even `k`, boundary roots of weight `k` (Fresán–Sabbah–Yu §1.1 and §5.1.1);
+* the divisibility of the coefficient of `Tⁿ` in `Z_k(p;T)` by `p^{n(n−1)}` for `p` odd or `k` odd,
+  the Newton polygon lying above the polygon with slopes `0, 2, 4, …` (Fresán–Sabbah–Yu,
+  Corollary 5.27, Remarks 5.28 and 5.41);
 * the meromorphic continuation and functional equation of the completed odd moment `L`-function
   (Fresán–Sabbah–Yu, Theorem 1.2);
 * the meromorphic continuation and functional equation of the completed even moment `L`-function,
@@ -184,6 +187,16 @@ noncomputable def eulerCoeff (L : ℕ → PowerSeries ℂ) (n : ℕ) : ℂ :=
   n.factorization.prod fun p j => coeff j (L p)
 
 /-! ## Layer 11: potential automorphy and functional equations -/
+
+/-- **Coefficient divisibility** (Fresán–Sabbah–Yu, Corollary 5.27 and Remark 5.28 for odd `p`,
+Remark 5.41 for `p = 2` and odd `k`). For `k ≥ 1`, and `p` odd or `k` odd, the coefficient `c_n` of
+`Tⁿ` in `Z_k(p; T)` is an integer divisible by `p^{n(n−1)}`: the Newton polygon of `Z_k(p; T)` lies on
+or above the polygon with slopes `0, 2, 4, …`, by Newton above Hodge for the moment motive at the
+prime `p`. At `n = 0` and `n = 1` the exponent is `0`. -/
+theorem momentSeries_coeff_dvd (p : ℕ) [Fact p.Prime] (k : ℕ) (hk : 0 < k)
+    (hpk : p ≠ 2 ∨ Odd k) (n : ℕ) :
+    ∃ c : ℤ, coeff n (momentSeries p k) = (p : ℂ) ^ (n * (n - 1)) * (c : ℂ) := by
+  sorry
 
 /-- **Odd moment functional equation** (Fresán–Sabbah–Yu, Theorem 1.2). For odd `k`, the Euler
 product `L_k(s) = Π_p L_k(p; p^{−s})` converges absolutely for `Re s > (k + 3)/2`, and the completed

@@ -72,3 +72,23 @@ licence_class = "none"
 status = "uncertified"
 version_note = "paywalled; cited by its locator without the text"
 cited_for = ["§11.3 and the MotivesAndAlgebraicCycles supplier contract (root number of the odd moment motive)"]
+
+[[source]]
+id = "Yun-moments"
+authors = "Zhiwei Yun"
+title = "Galois representations attached to moments of Kloosterman sums and conjectures of Evans"
+year = 2013
+venue = "Compositio Math. 151 (2015) 68-120"
+doi = "10.1112/S0010437X14007593"
+arxiv = "1308.3920v2"
+locator_scheme = "section"
+locator = "§2.3.4, p. 12; §§4.3.1–4.3.2, Lemmas 4.3.3–4.3.4, pp. 36–39"
+url = "https://arxiv.org/abs/1308.3920v2"
+fetched_from = "https://arxiv.org/pdf/1308.3920v2"
+fetched_at = "2026-11-13T23:31:14Z"
+sha256 = "e9c60079e18a4a04b814a06929b9bc93274f428a4efc0105652b3d84a2900d94"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-13"
+version_note = "arXiv v2"
+cited_for = ["§1.6 (local monodromy of Kl₂ at ∞ at every prime; Swan conductors, inertia invariants and Frobenius eigenvalues of its symmetric powers at p = 2)", "§§8.1–8.2 (degrees and trivial factors through §1.6)"]
