@@ -3047,7 +3047,7 @@
       "slug": "tame-types-unramified",
       "supplier": "PadicLocalLanglandsForGL2Qp",
       "section": "§4.4",
-      "needs": "for `K/ℚ_p` unramified of degree `f` and a tame inertial type `τ ≅ τ(s,μ+η)` with `μ` 1-deep, the type `σ(τ)` of `GL₂(𝒪_K)` with its occurrence property, its identification with the inflation of the Deligne–Lusztig representation `R_s(μ)` of `GL₂(𝔽_q)` in the normalization of BHHMS23 §2.2 (pp. 13–14), the twist rule `σ(τ ⊗ χ) ≅ σ(τ) ⊗ (χ ∘ det)` and a lattice-independent semisimplified reduction `σ̄(τ)`."
+      "needs": "for `K/ℚ_p` unramified of degree `f` and every tame inertial type `τ` of rank two (equivalently `τ ≅ τ(s,μ+η)` for some `s ∈ S₂^f` and `μ ∈ (ℤ²)^f`), the type `σ(τ)` of `GL₂(𝒪_K)` in the normalization of BHHMS23 §2.2 (pp. 13–14; for scalar `τ = χ ⊕ χ` it is `χ ∘ det`, as `σ^cr(τ)` in §4.4) with the occurrence property of `σ^cr` (for an infinite-dimensional irreducible smooth `π` of `GL₂(K)`, `Hom_{GL₂(𝒪_K)}(σ(τ), π) ≠ 0` exactly when the Weil–Deligne parameter of `π` has inertial restriction `τ` and `N = 0`), the fact that it is inflated from an irreducible representation of `GL₂(𝔽_q)`, the twist rule `σ(τ ⊗ χ) ≅ σ(τ) ⊗ (χ ∘ det)` and a lattice-independent semisimplified reduction `σ̄(τ)`; and, when `μ` is 1-deep, its identification with the inflation of the Deligne–Lusztig representation `R_s(μ+η)` of `GL₂(𝔽_q)` (BHHMS23, proof of Proposition 2.4.3, p. 16)."
     },
     {
       "slug": "relative-monodromy-criterion",
