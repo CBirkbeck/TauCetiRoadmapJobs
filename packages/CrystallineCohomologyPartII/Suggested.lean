@@ -45,13 +45,30 @@ Not statable at the pins (each is a README target):
   slope `< 1` part of rigid cohomology with compact supports (§3.6), and the identity
   `ζ^{<1}(X, t) = ζ^W(X, t)` (§6.2): Mathlib and Tau Ceti have neither rigid cohomology nor
   the Witt vector sheaves `W_n 𝒪_X`, `W 𝒪_X` of a scheme and their cohomology.
+* Ax's criterion in its point-count form (§6.3): the point counts `|X(F_{q^r})|` and
+  `|Y(F_{q^r})|` are congruent modulo `q^r` for all `r` if and only if the slope `< 1` factors of
+  the zeta functions of `X` and `Y` agree. The pins have the zeta function of a Weierstrass curve
+  only, not that of a separated scheme of finite type over a finite field, and no Newton-polygon
+  slope factors. The arithmetic core of the criterion is a statement about rational power series
+  with integer coefficients that mentions none of the roadmap's objects; it stays a README target.
 * Bhatt–Scholze's h-descent for Frobenius-inverted Witt vector cohomology (§§1.5–1.6):
   no h-topology and no Witt vector sheaves of schemes.
+* Ekedahl duality for the Witt canonical system and the action of proper correspondences on
+  relative Hodge–Witt cohomology (§§4.1, 4.5): no de Rham–Witt complex or Witt canonical sheaves
+  of a scheme, no Witt dualizing complexes and no Hodge–Witt cohomology with supports.
 * The theorems on Witt-rational singularities (§§5.4, 5.6, 5.12): no Witt vector
   sheaves, no Witt canonical sheaves, no isogeny category of sheaves on schemes.
+* Serre's vanishing of the Bockstein operations of an abelian variety `A` of dimension `g`, in
+  the form of the injectivity of `V^i : H^g(A, 𝒪_A) → H^g(A, W_{i+1} 𝒪_A)` (§6.8): no sheaves
+  `W_n 𝒪_X` of a scheme and no Verschiebung on their cohomology.
 * Esnault's vanishing of Witt vector cohomology of universally `CH_0`-trivial varieties and the
   point count of their WO-rational degenerations (§6.13, §6.14 (ii)): no Witt vector cohomology
   and no Witt-rational singularities.
+* Esnault's point count for rationally chain connected, in particular Fano, smooth projective
+  varieties (§§6.11, 6.12, 6.14 (i)): no families of rational curves and no notion of rational
+  chain connectedness. `card_rationalPoints_modEq_one_of_universallyCH0Trivial` states the
+  theorem under universal `CH_0`-triviality, which §6.12 derives from rational chain
+  connectedness.
 -/
 
 @[expose] public section
@@ -72,13 +89,13 @@ composed with the canonical identification `f^* 𝒪_Y ≅ 𝒪_X` is bijective.
 `K`-rational points of `X` and `Y`, the sections of their structure morphisms, are congruent
 modulo `|K|`. -/
 theorem card_rationalPoints_modEq_of_cohomologyPullback_bijective {K : Type u} [Field K]
-    [Fintype K] {X Y : Scheme.{u}} (πX : X ⟶ Spec (.of K)) (πY : Y ⟶ Spec (.of K))
+    [Finite K] {X Y : Scheme.{u}} (πX : X ⟶ Spec (.of K)) (πY : Y ⟶ Spec (.of K))
     [IsProper πX] [IsProper πY] (f : X ⟶ Y) (hf : f ≫ πY = πX)
     (hH : ∀ i, Function.Bijective (fun x =>
       (Scheme.Modules.cohomologyFunctor X i).map (Scheme.Modules.pullbackObjUnitIso f).hom
         (f.cohomologyPullback (𝟙_ Y.Modules) i x))) :
     Nat.card {s : Spec (.of K) ⟶ X // s ≫ πX = 𝟙 _} ≡
-      Nat.card {s : Spec (.of K) ⟶ Y // s ≫ πY = 𝟙 _} [MOD Fintype.card K] := by
+      Nat.card {s : Spec (.of K) ⟶ Y // s ≫ πY = 𝟙 _} [MOD Nat.card K] := by
   sorry
 
 /-- **Ax–Katz modulo `q`** (Berthelot–Bloch–Esnault, Corollary 1.5, from Proposition 6.8 and
@@ -87,11 +104,11 @@ Corollary 1.3). Let `K` be a finite field and `F₀, …, F_{r-1}` homogeneous p
 `ℙⁿ(K)` at which all `F_j` vanish is congruent to `1` modulo `|K|`. A point of the
 projectivization is tested on its chosen representative; homogeneity makes the condition
 independent of that choice. -/
-theorem card_projectiveZeroLocus_modEq_one {K : Type*} [Field K] [Fintype K] {n r : ℕ}
+theorem card_projectiveZeroLocus_modEq_one {K : Type*} [Field K] [Finite K] {n r : ℕ}
     (F : Fin r → MvPolynomial (Fin (n + 1)) K) (d : Fin r → ℕ)
     (hF : ∀ j, (F j).IsHomogeneous (d j)) (hd : ∀ j, 1 ≤ d j) (hsum : ∑ j, d j ≤ n) :
     Nat.card {x : Projectivization K (Fin (n + 1) → K) // ∀ j, eval x.rep (F j) = 0} ≡ 1
-      [MOD Fintype.card K] := by
+      [MOD Nat.card K] := by
   sorry
 
 /-- **Ax's theorem modulo `q`**, the affine form of `card_projectiveZeroLocus_modEq_one`.
@@ -99,10 +116,10 @@ For polynomials `f_i` (`i ∈ s`) in finitely many variables over a finite field
 degrees add up to less than the number of variables, the number of common zeros in `K^σ` is
 divisible by `|K|`. Mathlib's `char_dvd_card_solutions_of_sum_lt` gives divisibility by the
 characteristic only. -/
-theorem card_dvd_card_solutions_of_sum_lt {K σ ι : Type*} [Field K] [Fintype K] [Fintype σ]
+theorem card_dvd_card_solutions_of_sum_lt {K σ ι : Type*} [Field K] [Finite K] [Finite σ]
     {s : Finset ι} {f : ι → MvPolynomial σ K}
-    (h : ∑ i ∈ s, (f i).totalDegree < Fintype.card σ) :
-    Fintype.card K ∣ Nat.card {x : σ → K // ∀ i ∈ s, eval x (f i) = 0} := by
+    (h : ∑ i ∈ s, (f i).totalDegree < Nat.card σ) :
+    Nat.card K ∣ Nat.card {x : σ → K // ∀ i ∈ s, eval x (f i) = 0} := by
   sorry
 
 /-- A **theta divisor** on an abelian variety `A` over `K`, encoded by its ideal sheaf
@@ -121,11 +138,11 @@ def IsThetaDivisor {K : Type u} [Field K] (A : AbelianVariety K)
 divisors on an abelian variety over a finite field `K` have congruent numbers of `K`-rational
 points modulo `|K|`; the rational points of a divisor are the sections of its closed subscheme
 over `Spec K`. -/
-theorem card_thetaDivisor_modEq {K : Type u} [Field K] [Fintype K] (A : AbelianVariety K)
+theorem card_thetaDivisor_modEq {K : Type u} [Field K] [Finite K] (A : AbelianVariety K)
     (I I' : A.toScheme.IdealSheafData) (hI : IsThetaDivisor A I) (hI' : IsThetaDivisor A I') :
     Nat.card {s : Spec (.of K) ⟶ I.subscheme // s ≫ (I.subschemeι ≫ A.toOver.hom) = 𝟙 _} ≡
       Nat.card {s : Spec (.of K) ⟶ I'.subscheme // s ≫ (I'.subschemeι ≫ A.toOver.hom) = 𝟙 _}
-        [MOD Fintype.card K] := by
+        [MOD Nat.card K] := by
   sorry
 
 /-- The **degree of a zero-cycle** `z` on a scheme `π : X → Spec L` over a field: the sum of its
@@ -155,10 +172,10 @@ geometrically connected variety over a finite field `K` that is universally `CH�
 number of `K`-rational points congruent to `1` modulo `|K|`; in particular it has a rational
 point. -/
 theorem card_rationalPoints_modEq_one_of_universallyCH0Trivial {K : Type u} [Field K]
-    [Fintype K] {X : Scheme.{u}} [X.Over (Spec (.of K))] [X.IsProjectiveOver K]
+    [Finite K] {X : Scheme.{u}} [X.Over (Spec (.of K))] [X.IsProjectiveOver K]
     [Smooth (X ↘ Spec (.of K))] [GeometricallyConnected (X ↘ Spec (.of K))]
     (h : UniversallyCH0Trivial (X ↘ Spec (.of K))) :
-    Nat.card {s : Spec (.of K) ⟶ X // s ≫ (X ↘ Spec (.of K)) = 𝟙 _} ≡ 1 [MOD Fintype.card K] := by
+    Nat.card {s : Spec (.of K) ⟶ X // s ≫ (X ↘ Spec (.of K)) = 𝟙 _} ≡ 1 [MOD Nat.card K] := by
   sorry
 
 end TauCetiRoadmap.CrystallineCohomologyPartII
