@@ -3798,7 +3798,7 @@
     },
     {
       "slug": "hilbert-siegel-models",
-      "needs": "Supply the Hilbert–Siegel datum Res_{F/Q}GSp4 for totally real F with p split, its moduli with Klingen or Iwahori level at each place above p, and the normalized integral models of §M4.5 at that level.",
+      "needs": "Supply the Hilbert–Siegel datum Res_{F/Q}GSp4 for totally real F with p split, its moduli with Klingen or Iwahori level at each place above p, and the normalized integral models of §M4.5 at that level; these models are flat, normal and local complete intersections over Z_(p), hence Cohen–Macaulay, and smooth outside codimension two (BCGP21 Proposition 3.4.1), and at a place v with hyperspecial or Klingen level the locus of p-rank zero at v has codimension two in the special fibre (P20 Lemma 14.9.2 for F = Q).",
       "supplier": "PELModuli",
       "section": "§M5.4"
     },
