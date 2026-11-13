@@ -29,12 +29,19 @@ it lacks are listed below.
   comparison of solid derived locally analytic vectors with Pan's functors. The
   pins have no analytic ring E_■ over a p-adic field, no solid E-vector spaces
   and no solidified group rings of profinite groups.
+* Layer 4: the highest-weight theory of split reductive Lie algebras over a
+  field of characteristic zero by descent from an algebraic closure, the
+  finite length and the classification of the simple objects of the parabolic
+  categories O^p_alg, the restricted BGG duality, the Verma multiplicities in
+  length at most one for products of gl_n, and Kostant homology of nilradicals.
+  The pins have Verma modules and their simple quotients only for Lie algebras
+  with nondegenerate Killing form and a split Cartan subalgebra
+  (`TauCeti.VermaModule`, `TauCeti.irreducibleQuotient`), which excludes gl_n,
+  and no BGG category O and no generalised Verma modules.
 * Layers 5–6: Schraen's spectral sequence for Ext into a locally analytic
   parabolic induction, and the Orlik–Strauch irreducibility and Jordan–Hölder
   theorems. These need locally analytic parabolic induction, Kohlhaase's
-  homology and the parabolic BGG categories O^p_alg over a split reductive Lie
-  algebra; the pins have Verma modules only for Killing Lie algebras
-  (`TauCeti.VermaModule`) and no category O.
+  homology and the categories O^p_alg of Layer 4, none of which the pins have.
 * Layer 7: Emerton's adjunction theorem and Breuil's adjunction for
   Orlik–Strauch representations. These need Emerton's locally analytic Jacquet
   functor, closed induction and very strong admissibility.
@@ -44,6 +51,11 @@ it lacks are listed below.
   the parabolic maps ζ_{F_P}, and the decomposition of Ext¹ over the embeddings
   of L. All carriers of the previous items are needed, together with
   π_alg(φ, h), π_1(φ, h) and their Ext groups.
+
+The general locally convex inputs of Layer 0, such as the theorem that weakly
+null sequences are null over a spherically complete field, are statements
+about arbitrary locally convex spaces that mention none of the roadmap's
+objects; they are README targets, not headlines.
 -/
 
 namespace TauCetiRoadmap.LocallyAnalyticRepresentationsOfLocalGroups

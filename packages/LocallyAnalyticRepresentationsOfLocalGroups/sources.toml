@@ -36,7 +36,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-26"
 version_note = "arXiv v1"
-cited_for = ["1.1", "1.2", "1.3", "1.4", "1.6", "2.1", "Exact supplier contracts"]
+cited_for = ["1.1", "1.2", "1.3", "1.4", "1.6", "2.1", "2.3", "Exact supplier contracts"]
 
 [[source]]
 id = "ST02B"
@@ -88,7 +88,7 @@ sha256 = "e123a87644ef29d96db71525903344307ac2d70f46dba3b82fd87100a49e3b79"
 licence_class = "author-page"
 status = "certified"
 accessed = "2026-10-26"
-cited_for = ["0.2", "0.9", "1.2", "1.5", "1.6", "2.1", "2.2"]
+cited_for = ["0.2", "0.5", "0.9", "1.2", "1.5", "1.6", "2.1", "2.2"]
 
 [[source]]
 id = "EMJ1"
@@ -401,7 +401,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-26"
 version_note = "arXiv v2"
-cited_for = ["Layer 8", "Layer 9", "Layer 10", "0.9", "1.5", "1.7", "1.8", "1.9", "1.10", "5.2", "5.3", "6.7", "7.2"]
+cited_for = ["Layer 8", "Layer 9", "Layer 10", "0.9", "1.5", "1.7", "1.8", "1.9", "1.10", "5.2", "5.3", "6.7", "7.2", "8.1", "9.6"]
 
 [[source]]
 id = "CD14"
@@ -412,7 +412,7 @@ venue = "Algebra Number Theory 8 (2014) 1447-1519"
 doi = "10.2140/ant.2014.8.1447"
 arxiv = "1301.7647v1"
 locator_scheme = "theorem"
-locator = "Corollaire IV.14"
+locator = "§IV.1; Propositions IV.2, IV.4, IV.13; Corollaires IV.8, IV.14; Remarque IV.15"
 url = "https://arxiv.org/abs/1301.7647v1"
 fetched_from = "https://arxiv.org/pdf/1301.7647v1"
 fetched_at = "2026-10-26T20:32:03Z"
@@ -421,7 +421,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-26"
 version_note = "arXiv v1"
-cited_for = ["2.5"]
+cited_for = ["2.3", "2.5", "Exact supplier contracts"]
 
 [[source]]
 id = "SCHN11"

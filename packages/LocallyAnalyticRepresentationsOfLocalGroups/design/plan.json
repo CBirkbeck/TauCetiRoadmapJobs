@@ -7372,18 +7372,6 @@
    "supplier": "SmoothRepresentationsOfLocalGroups",
    "section": "SR.3.2",
    "needs": "Over a finite extension E of ℚ_p and for generic φ, with 𝒵 the Bernstein centre over E of the block of π_sm = (Ind_{B⁻} φη)^∞, x its point and X_w = ∏_i Spec 𝒵_{w⁻¹(i)} the torus of ordered unramified twists (φ′_i) of w(φ): the morphisms 𝒥_w : X_w → Spec 𝒵, (φ′_i) ↦ the point of (Ind_{B⁻} (⊠_i φ′_i)η)^∞, satisfy 𝒥_{w_2} ∘ p_u = 𝒥_{w_1} for u = w_2w_1⁻¹ and p_u : X_{w_1} → X_{w_2}, (φ′_i) ↦ (φ′_{u⁻¹(i)}), which sends w_1(φ) to w_2(φ) (on rings 𝒥_{w_1}^* = p_u^* ∘ 𝒥_{w_2}^*), and the map θ from Ext¹_sm(π_sm, π_sm) to the tangent space of Spec 𝒵 at x recording the action of 𝒵 on self-extensions is injective and sends the class of (Ind_{B⁻} w(φ)η(1 + ψε))^∞ to d𝒥_w(ψ) at w(φ) (Caraiani–Emerton–Gee–Geraghty–Paškūnas–Shin, Lemma 3.22)."
-  },
-  {
-   "slug": "frechet-stein-general",
-   "supplier": "PadicLocalLanglandsForGL2Qp",
-   "section": "§0.1",
-   "needs": "The coadmissible-module theory of §0.1 for an arbitrary left Fréchet–Stein algebra over a discretely valued field, in particular for D(H, E): Theorems A and B with the base-change isomorphisms, flatness of the Banach stages, the canonical Fréchet topology with continuity and strictness of module maps, coadmissible submodules being exactly the closed ones, coadmissibility of finitely generated submodules and finitely presented modules, closedness of finitely generated left ideals, and change of ring along a map A → B with B coadmissible over A (Schneider–Teitelbaum 2003, §3, Corollaries 3.1–3.5, Lemmas 3.6 and 3.8)."
-  },
-  {
-   "slug": "radius-algebras",
-   "supplier": "PadicLocalLanglandsForGL2Qp",
-   "section": "§0.1",
-   "needs": "For a compact group H with a saturated finite-rank p-valuation and an ordered basis satisfying (HYP), the ordered-coordinate expansion of distributions, the norms ‖·‖_r for 1/p ≤ r < 1, the noetherian Banach algebras D_r(H, E) as completions, and their identification with the Banach stages of the Fréchet–Stein structure of §0.1 (Schneider–Teitelbaum 2003, §4, Lemma 4.1 to Theorem 4.5)."
   }
  ],
  "sourceIssues": [
