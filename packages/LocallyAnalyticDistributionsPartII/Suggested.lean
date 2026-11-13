@@ -41,9 +41,10 @@ Not statable at the pins, with the carrier each one lacks:
   (README §§4.7–4.10): they need the Banach steps `D_r(G, K)` of the distribution algebra.
 * Fu's comparison of isotypic quotients `M_W ≅ M̂_W` (Fu, Theorem 4.3; README §3.10): it needs the
   microlocalisation `M̂ = Û(g_K) ⊗_{K[[G]]} M`.
-* Strong duality after central specialisation, `D(G, K)_λ ≅ C^la(G, K)[λ ∘ S]′_b` with `S` the
-  antipode of `U(g)` (Fu, Theorem 5.2; README §4.3): it needs the space of locally analytic
-  functions with its compact-type topology and its strong dual.
+* Strong duality after central specialisation, `D(G, K)_λ ≅ C^la(G, K)[λ ∘ S]′_b` for a
+  `K`-algebra character `λ` of the centre `Z(U(g_K))` of `U(g_K)`, the quotient being taken over
+  that centre, with `S` the antipode of `U(g_K)` (Fu, Theorem 5.2; README §4.3): it needs the
+  space of locally analytic functions with its compact-type topology and its strong dual.
 * The Fréchet–Stein property of the Arens–Michael envelope `𝒰(g)` (README §2.5): it needs
   Fréchet–Stein algebras and the completions `U(g)_r`.
 -/
