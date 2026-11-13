@@ -19,8 +19,9 @@ Lubin–Tate structure of the formal group of a supersingular elliptic curve wit
 the classification and fields of moduli of quasi-canonical lifts, and the trace-compatible
 comparison of the two BKO towers.
 
-The formal-module foundations of Layer 0 hold over an arbitrary commutative coefficient ring, and
-the Lubin–Tate construction of Layer 1 over any discrete valuation ring with finite residue field
+The formal modules and their point modules (§§0.1–0.2) are defined over an arbitrary commutative
+coefficient ring, the analytic logarithm and number-field models (§§0.3–0.4) over finite extensions
+of `ℚ_p`, and the Lubin–Tate construction of Layer 1 over any discrete valuation ring with finite residue field
 (either characteristic, complete or not). The torsion, Tate-module and reciprocity results of
 Layer 2 are stated for nonarchimedean local fields of characteristic zero, that is, finite
 extensions of `ℚ_p`. For the CM construction the coefficient field `F₀` and the CM field `F` are
@@ -55,17 +56,22 @@ correction of traces between differently indexed generators and the trace-compat
 **Taken from other owners, not restated.**
 
 - The finite Lubin–Tate division fields and their compatible scalar-action Galois isomorphisms,
-  and the infinite unit-group comparison: RelativeFarguesFontaine §2.5. Sections 2.3–2.4 identify
-  these objects with the elementary series construction and its primitive-root coordinates and
-  Tate character; §2.5 adds the comparison with the pinned arithmetic Artin map.
+  and the infinite unit-group comparison: RelativeFarguesFontaine §2.5, built on the normalized
+  Lubin–Tate formal `O_E`-module `G_LT` of VectorBundlesAndIsocrystals Layer 5, "Lubin–Tate
+  universal cover and sections of O(1)". Section 2.3 proves that `G_LT` is Lubin–Tate for `π` in
+  the sense of §1.1, and §§2.3–2.4 identify these objects with the elementary series construction
+  and its primitive-root coordinates and Tate character; §2.5 adds the comparison with the pinned
+  arithmetic Artin map.
 - Quadratic canonical and quasi-canonical lifts over the completed strict base, with markings,
   orders, orbit sizes and integral endomorphism lifting filtrations:
   GrossZagierAndArithmeticHeights §7.2. Layers 6–7 add finite-residue descent, higher-degree lattice
   classification, explicit moduli coordinates and the comparisons used by the BKO towers.
-- The marked strict formal `O`-module deformation rings at the finite-residue base `O_r`, and
-  the algebraically closed residue-field spaces: EndoscopicTransferAndUnitaryTraceComparison
-  §§10.2, 12.3. Section 3.6 extends the functor to arbitrary specified `B` and residue field and
-  identifies its restriction with these supplied functors, retaining their markings.
+- The marked strict formal `O`-module deformation rings at the finite-residue base `O_r`:
+  EndoscopicTransferAndUnitaryTraceComparison §10.2; the deformation spaces over an algebraically
+  closed residue field framed by a quasi-isogeny, whose level-zero component of quasi-isogeny height
+  zero is the functor of deformations marked by an isomorphism: §12.3 there. Section 3.6 extends the
+  marked functor to arbitrary specified `B` and residue field and identifies its specializations
+  with the functor of §10.2 and with that component of §12.3, retaining their markings.
 - General formal-group homomorphisms and isomorphisms, evaluated topologically nilpotent points,
   integral logarithm coefficient bounds and convergence, exponential convergence on the standard
   disc, and finite-height rigidity: already in Tau Ceti, with the exact declarations below.
@@ -115,14 +121,15 @@ correction of traces between differently indexed generators and the trace-compat
 ## Conventions
 
 - `K` is a nonarchimedean local field with integers `O = O_K`, uniformizer `π`, maximal ideal
-  `𝔪_K` and residue field `k_K` of cardinality `q`. In Layer 1, `O` may be any discrete valuation
-  ring with finite residue field of cardinality `q` and `π` any irreducible element; in Layers 0
-  and 2–9, `K` has characteristic zero, so `K/ℚ_p` is finite with ramification index `e` and
-  residue degree `f`.
+  `𝔪_K` and residue field `k_K` of cardinality `q`. In §§0.1–0.2 the coefficient ring is an
+  arbitrary commutative ring, and when it is `O_K` the field `K` may have either characteristic; in
+  Layer 1, `O` may be any discrete valuation ring with finite residue field of cardinality `q` and
+  `π` any irreducible element; in §§0.3–0.4 and Layers 2–9, `K` has characteristic zero, so `K/ℚ_p`
+  is finite with ramification index `e` and residue degree `f`.
 - A formal `A`-module over an `A`-algebra `R` is a commutative one-dimensional Mathlib
   `FormalGroup R` together with an action `a ↦ [a]` of `A` by endomorphisms whose linear
   coefficient is the structure map `A → R`. Its `O_K`-height `h` is read off `[π]` over a field;
-  the underlying `p`-height is `h[K:ℚ_p]`.
+  when `K/ℚ_p` is finite the underlying `p`-height is `h[K:ℚ_p]`.
 - A coordinate change `X ↦ uX + ⋯` is strict when `u = 1`. A marked deformation carries an
   isomorphism of its special fibre with a given residual module, and marked isomorphisms preserve
   that whole isomorphism. Strictness and marking are different conditions.
@@ -198,6 +205,12 @@ correction of traces between differently indexed generators and the trace-compat
   `TauCeti.FormalGroupHom.toTopNilpotentPointHom` (`…/TopNilpotentPoint/Hom.lean`) evaluates a
   homomorphism on those points. For a local field extension these are used on `O_L` with its
   maximal-ideal adic topology, not on `L` with a field-linear topology.
+- `FormalGroup.log` (`TauCeti/RingTheory/FormalGroup/Logarithm/Basic.lean`): over a `ℚ`-algebra,
+  the series with zero constant term whose derivative is the invariant differential, with linear
+  coefficient `1`, and `FormalGroup.map_log` (it commutes with coefficient base change).
+  `FormalGroup.zsmulSeries` (`TauCeti/RingTheory/FormalGroup/ZSMul.lean`): the multiplication-by-`n`
+  series `[n]_F` for `n ∈ ℤ`, with zero constant term and linear coefficient `n`, negative indices
+  using the formal inverse, and `FormalGroup.map_zsmulSeries` for base change.
 - `FormalGroup.norm_coeff_log_le_inv_norm_natCast`, `FormalGroup.onOpenDisc_log`,
   `FormalGroup.summable_norm_coeff_log_mul_pow` and `FormalGroup.summable_coeff_log_mul_pow`
   (`TauCeti/RingTheory/FormalGroup/Logarithm/Convergence.lean`): for a coefficient map to a
@@ -249,10 +262,22 @@ correction of traces between differently indexed generators and the trace-compat
 ### From TauCetiRoadmap.RelativeFarguesFontaine
 
 §2.5 supplies `E_m = E(LT[π^m])`, their compatible inclusions and scalar-action isomorphisms
-`Gal(E_m/E) ≅ (O_E/π^m)^×`, and the infinite unit-group comparison. Sections 2.3–2.4 identify this
-same tower, specialized to mixed characteristic, with `K(F_f[π^m])` for every Lubin–Tate series
-`f` for `π`, using the same-parameter coordinate comparison. Under that identification the scalar
-`a` acts by `[a]_f`; §2.5 determines its inverse-unit value on arithmetic Artin symbols.
+`Gal(E_m/E) ≅ (O_E/π^m)^×`, and the infinite unit-group comparison. The module `LT` of that section
+is the normalized Lubin–Tate formal `O_E`-module `G_LT` of VectorBundlesAndIsocrystals Layer 5,
+"Lubin–Tate universal cover and sections of O(1)". Section 2.3 proves that, for `E = K`, `[π]` of
+this module is a Lubin–Tate series for `π`, and then identifies this tower, specialized to mixed
+characteristic, with `K(F_f[π^m])` for every Lubin–Tate series `f` for `π`, using the
+same-parameter coordinate comparison of §1.4. Under that identification the scalar `a` acts by
+`[a]_f`; §2.5 determines its inverse-unit value on arithmetic Artin symbols.
+
+### From TauCetiRoadmap.VectorBundlesAndIsocrystals
+
+Layer 5, "Lubin–Tate universal cover and sections of O(1)", supplies the normalized Lubin–Tate
+formal `O_E`-module `G_LT`, normalized by its Dieudonné module `W_(O_E)(k)` with `F = σ/π` and
+defined over `O_E`, together with its universal cover `G̃ = lim_[π] G_LT`, the identification of
+`G̃(A) = G̃(A/π)` with the topologically nilpotent elements of `A^♭` for `π`-adically complete `A`,
+and the logarithm comparison. It is used only in §§2.3–2.4, through the statement of §2.3 that this
+module is Lubin–Tate for `π`; its normalization and variance are those of the supplier.
 
 ### From TauCetiRoadmap.GrossZagierAndArithmeticHeights
 
@@ -269,11 +294,19 @@ and transport the same residual CM embedding and marking.
 ### From TauCetiRoadmap.EndoscopicTransferAndUnitaryTraceComparison
 
 §10.2 supplies the marked strict `O`-module deformation functor for its residual modules over
-`κ_r` and its ring `O_r[[T₁,…,T_(h−1)]]`; §12.3 supplies the corresponding algebraically closed
-residue-field deformation spaces. The tangent action is the structural action, and markings
-preserve it. Section 3.6 extends to arbitrary specified complete noetherian local `B` with residue
-field `k` and identifies the specialization with those same functors by their marked universal
-properties; it does not construct a second finite-residue deformation space.
+`κ_r` and its ring `O_r[[T₁,…,T_(h−1)]]`. §12.3 supplies, over an algebraically closed residue
+field, the framed deformation spaces classifying `(G, ρ, α_m)` with `ρ` an `O_E`-linear
+quasi-isogeny of the special fibre and `α_m` a Drinfeld level structure; the quasi-isogeny height is
+locally constant, and at level zero each height component is an open ball. Its level-zero component
+of quasi-isogeny height zero is the functor of deformations marked by an isomorphism: by rigidity a
+marking lifts uniquely to a quasi-isogeny over the reduction modulo `ϖ`, of height zero, and a
+quasi-isogeny of height zero between one-dimensional formal `O_E`-modules of the same finite height
+over an algebraically closed field is an isomorphism, the units of the maximal order `End(H)` being
+its elements of valuation zero. The tangent action is the structural action, and markings preserve
+it. Section 3.6 extends to arbitrary specified complete noetherian local `B` with residue field `k`
+and identifies its specializations with the functor of §10.2 and with the height-zero level-zero
+component of §12.3 by their marked universal properties; it does not construct a second
+deformation space.
 
 ### From TauCetiRoadmap.BordismFormalGroups
 
@@ -378,12 +411,81 @@ generators in §9.3), and the remaining forward references are pointers only.
 
 The companion `Suggested.lean` states the headline theorems that are statable against the pinned
 libraries, with the two predicates `IsLubinTateSeries` and `IsLubinTatePolynomial` of §1.1: the
-Lubin–Tate theorem `exists_formalGroup_of_isLubinTateSeries` (§1.3) and the interpolation of
-homomorphisms `existsUnique_lubinTate_intertwiner` (§1.2), the division-field degree
+Lubin–Tate theorem `exists_formalGroup_of_isLubinTateSeries` (§1.3) and Lubin–Tate interpolation
+in every arity `exists_lubinTate_interpolation` (§1.2), the division-field degree
 `finrank_adjoin_primitive_lubinTate_root` (§2.3), the norm-group comparison with Tau Ceti's Artin
-map `artinMap_fixes_lubinTate_roots_iff` (§2.5), and the Lubin–Tate structure of the supersingular
-elliptic formal group `exists_lubinTate_endomorphism_formalGroup` (§4.4). Its module docstring lists
-the headline theorems that need carriers absent at the pins.
+map `artinMap_fixes_lubinTate_roots_iff` (§2.5), the Honda type and the Honda model of a formal
+group law with scalar Frobenius `exists_hondaType_log_of_map_zsmulSeries` and
+`exists_strictIso_hondaLog_of_map_zsmulSeries` (§4.3), and the Lubin–Tate structure of the
+supersingular elliptic formal group `exists_lubinTate_endomorphism_formalGroup` (§4.4). Its module
+docstring lists the headline theorems that need carriers absent at the pins.
+
+Roadmaps citing the former numbering LT.k of this roadmap, or its former target titles, find the
+content as follows; former layer LT.k is Layer k for k = 0, …, 9.
+
+| Former numbering | Former title | Now |
+|---|---|---|
+| LT.0 | Formal modules, coordinates and complete points | Layer 0 |
+| LT.0/formal-hom | Formal group homomorphisms | Tau Ceti `TauCeti.FormalGroupHom` and BordismFormalGroups §F1 (Scope and ownership) |
+| LT.0/formal-module | One-dimensional formal modules | §0.1 |
+| LT.0/adic-points | Adic formal-module points | §0.2 |
+| LT.0/formal-log | Normalized formal logarithm | BordismFormalGroups §F1, with its identities in §0.1 |
+| LT.0/analytic-log | Convergence of the formal logarithm (also cited as "Analytic logarithm") | §0.3 |
+| LT.1 | Lubin–Tate construction and coordinate independence | Layer 1 |
+| LT.1/admissible-series | Lubin–Tate series | §1.1 |
+| LT.1/interpolation | Lubin–Tate interpolation | §1.2 |
+| LT.1/lt-module | Lubin–Tate formal module | §1.3 |
+| LT.1/lt-coordinate-comparison | Coordinate independence | §1.4 |
+| LT.2 | Torsion, Tate modules and the Artin comparison | Layer 2 |
+| LT.2/finite-height-torsion | Finite-height torsion comparison | §2.1 |
+| LT.2/tate-module-comparison | Formal-module Tate module (also cited as "Tate module") | §2.2 |
+| LT.2/primitive-division | Lubin–Tate division fields | §2.3 |
+| LT.2/lt-character | Lubin–Tate character | §2.4 |
+| LT.2/reciprocity-comparison | Comparison with local reciprocity (also cited as "Artin comparison") | §2.5 |
+| LT.2/uniformizer-twist | Change of uniformizer | §2.6 |
+| LT.3 | Marked deformations at finite height | Layer 3 |
+| LT.3/marked-deformation | Marked formal-module deformations | §3.1 |
+| LT.3/formal-module-coefficient-ring | Universal formal-module coefficients | §3.2 |
+| LT.3/deformation-cocycles | Formal-module deformation cocycles | §3.3 |
+| LT.3/deformation-lifting | Lifting and rigidity | §3.4 |
+| LT.3/finiteheight-tangent | Finite-height tangent space | §3.5 |
+| LT.3/universal-deformation | Universal finite-height deformation | §3.6 |
+| LT.3/elliptic-deformation-comparison | Elliptic deformation compatibility | §3.7 |
+| LT.4 | Unramified Honda and elliptic comparisons | Layer 4 |
+| LT.4/honda-type | Honda logarithm types | §4.1 |
+| LT.4/functional-equation-integrality | Honda functional equation | §4.2 |
+| LT.4/unramified-honda-comparison | Unramified Honda–Lubin–Tate comparison | §4.3 |
+| LT.4/elliptic-honda-comparison | Supersingular elliptic comparison | §4.4 |
+| LT.5 | Lattice kernels and integral quotient isogenies | Layer 5 |
+| LT.5/tate-lattice | Tate lattices and finite kernels | §5.1 |
+| LT.5/lattice-quotient | Integral lattice quotient isogenies | §5.2 |
+| LT.5/lattice-homs | Homomorphisms in the lattice isogeny class | §5.3 |
+| LT.5/lattice-descent | Descent of lattice quotients | §5.4 |
+| LT.5/elliptic-isogeny-comparison | Elliptic quotient compatibility | §5.5 |
+| LT.6 | Canonical and Frobenius-marked quasi-canonical lifts | Layer 6 |
+| LT.6/canonical-lift | Canonical CM lift | §6.1 |
+| LT.6/quasi-canonical-lift | Frobenius-marked quasi-canonical lifts | §6.2 |
+| LT.6/marked-lattice-classification | Marked and unmarked lattice classification | §6.3 |
+| LT.6/quadratic-order | Quadratic CM orders | §6.4 |
+| LT.6/quadratic-level-classification | Quadratic level classification | §6.5 |
+| LT.6/marked-minimal-field | Smallest marked field of definition | §6.6 |
+| LT.7 | Quadratic orders, minimal fields and boundary tests | Layer 7 |
+| LT.7/quadratic-degree | Quadratic ring-class degrees | §7.1 |
+| LT.7/deformation-uniformizer | Quadratic deformation moduli | §7.2 |
+| LT.7/bko-quasi-fields | BKO quasi-canonical fields | §7.3 |
+| LT.7/ringclass-galois | Infinite primed ring-class tower | §7.4 |
+| LT.7/honda-ramified-test | Ramified Honda boundary test | §7.5 |
+| LT.7/lattice-neighbors | Neighboring level lattices | §7.6 |
+| LT.8 | The BKO tame and anticyclotomic towers | Layer 8 |
+| LT.8/bko-character-data | BKO tame character data | §8.1 |
+| LT.8/quadratic-directions | Cyclotomic and anticyclotomic directions | §8.2 |
+| LT.8/bko-fields | BKO finite fixed fields | §8.3 |
+| LT.8/field-generator-comparisons | Field and generator comparisons | §8.4 |
+| LT.8/sign-generator-comparison | π-adic and p-adic generators | §8.5 |
+| LT.9 | Formal traces and compatible tower maps | Layer 9 |
+| LT.9/formal-trace | Finite formal traces | §9.1 |
+| LT.9/tame-descent | Tame descent on formal points | §9.2 |
+| LT.9/trace-compatible-exports | Trace-compatible tower comparisons | §9.3 |
 
 ## Layer 0: Formal modules, points and analytic logarithms
 
@@ -420,7 +522,8 @@ API:
 - Conjugating the law and all action series by an isomorphism of formal group laws gives an
   isomorphic formal module; height is unchanged.
 - For a finite extension `F/F₀` of local fields of degree `n`, a formal `O_F`-module of
-  `O_F`-height `h` has `O_(F₀)`-height `nh`; in particular its `p`-height is `h[F:ℚ_p]`.
+  `O_F`-height `h` has `O_(F₀)`-height `nh`, in either characteristic; for `F/ℚ_p` finite its
+  `p`-height is `h[F:ℚ_p]`.
 - Over a `ℚ`-algebra, the normalized logarithm `ℓ_F` of BordismFormalGroups §F1 satisfies
   `ℓ_F ∘ [a]_F = a·ℓ_F`, and for a homomorphism `φ : F → G` with linear coefficient `c`,
   `ℓ_G ∘ φ = c·ℓ_F`; both follow from the uniqueness of additive series along `F`.
@@ -522,14 +625,20 @@ Let `K/ℚ_p` be finite and `F` a commutative formal group law over `O_K`. Using
 coefficient bounds and convergence, prove that evaluation of the normalized logarithm
 `ℓ_F ∈ X·K[[X]]` on `𝔪_L` for every finite extension `L/K` defines a homomorphism `F(𝔪_L) → (L, +)`;
 that for each `L` there is `r ≥ 1` such that `ℓ_F` and its formal inverse are mutually inverse
-analytic isomorphisms between `F(𝔪_L^r)` and `𝔪_L^r`; and that the evaluated logarithm commutes with
-field embeddings and with coordinate isomorphisms over `O_K`. Its compatibility with formal traces
-is a property of the traces and is stated with them in §9.1. The kernel of `ℓ_F` on `F(𝔪_L)`
-contains the torsion, so no injectivity on `F(𝔪_L)` is asserted. A proof route: use the supplied
-logarithm and exponential summability to evaluate the formal addition and inverse identities on a
-deep ideal; extend the addition identity to the maximal ideal by convergence. For nonzero `x`, the
-supplied bound gives `n·v_L(x) − v_L(n) → ∞`; choosing `(p−1)r > e_L` puts `𝔪_L^r` in the
-exponential disc (H70, §1, pp.216–219; LT65, §1, p.383).
+analytic isomorphisms between `F(𝔪_L^r)` and `𝔪_L^r`; that the evaluated logarithm commutes with
+embeddings of the coefficient fields `L ⊂ L′`; and that for an isomorphism `φ : F → G` of formal
+group laws over `O_K` with linear coefficient `c ∈ O_K^×` it satisfies `ℓ_G(φ(x)) = c·ℓ_F(x)` on
+`F(𝔪_L)`, the evaluated form of the identity `ℓ_G ∘ φ = c·ℓ_F` of §0.1, so that the map induced on
+`(L, +)` is multiplication by `c`; in particular strict isomorphisms preserve the evaluated
+logarithm. Its compatibility with formal traces is a property of the traces and is stated with them
+in §9.1. The kernel of `ℓ_F` on `F(𝔪_L)` contains the torsion, so no injectivity on `F(𝔪_L)` is
+asserted. A proof route: use the supplied logarithm and exponential summability to evaluate the
+formal addition and inverse identities on a deep ideal; extend the addition identity to the maximal
+ideal by convergence. For nonzero `x`, the supplied bound gives `n·v_L(x) − v_L(n) → ∞`; choosing
+`(p−1)r > e_L` puts `𝔪_L^r` in the exponential disc (H70, §1, Theorem 1, pp.218–219, for the formal
+logarithm and the identity `F(X,Y) = ℓ_F⁻¹(ℓ_F(X) + ℓ_F(Y))`; LT65, §1, p.383, for its evaluation on
+maximal ideals; convergence and the exponential disc are the Tau Ceti declarations of the *Needs*
+line).
 
 **Checks.**
 
@@ -539,6 +648,10 @@ exponential disc (H70, §1, pp.216–219; LT65, §1, p.383).
 - For the additive group the logarithm is `X`, and `r = 1` works.
 - At `p = 2`, the coefficient of `X²` in `log(1+X)` is `−1/2`, of norm `2 = ‖2⁻¹‖`. The
   exponential disc is `‖x‖ < 1/2`; over `ℚ₂`, `r = 2` gives `‖4‖ = 1/4 < 1/2`.
+- A non-strict isomorphism needs its linear coefficient: on the additive formal group over `ℤ₃`,
+  `φ(X) = 2X` is an isomorphism over `ℤ₃` (`2` is a unit), and at `x = 3` it gives
+  `ℓ(φ(x)) = 6` while `ℓ(x) = 3`, so `6 = 2·3 = c·ℓ(x)`; the claim that every coordinate
+  isomorphism commutes with the logarithm fails here, and holds for the strict ones.
 
 *Needs:* §0.2; BordismFormalGroups §F1 (logarithm and exponential identities);
 Tau Ceti `FormalGroup.summable_coeff_log_mul_pow`, `FormalGroup.norm_coeff_log_le_inv_norm_natCast`,
@@ -640,9 +753,12 @@ API:
 Let `f, g` be Lubin–Tate series for the same `π` and `q` the residue cardinality, and let
 `a₁, …, a_n ∈ O`. Prove that there is a unique `H ∈ O[[X₁,…,X_n]]` with zero constant term and linear part
 `Σ a_i X_i` satisfying `f(H(X₁,…,X_n)) = H(g(X₁),…,g(X_n))`, and that it is also the unique such series with coefficients
-in the fraction field of `O`. The arity-one case is `existsUnique_lubinTate_intertwiner`: for every
-`a ∈ O` there is a unique `φ ∈ O[[X]]` with zero constant term, linear coefficient `a` and
-`f ∘ φ = φ ∘ g` (LT65, Lemma 1 and the remarks after it, pp.381–382). A proof route: solve degree by
+in the fraction field `K` of `O`: the series over `K` with zero constant term, linear part
+`Σ a_i X_i` and this functional equation for the images of `f` and `g` are exactly the image of `H`.
+This is `exists_lubinTate_interpolation`, for every `n ≥ 0`. In arity one it gives, for every
+`a ∈ O`, a unique `φ ∈ O[[X]]` with zero constant term, linear coefficient `a` and
+`f ∘ φ = φ ∘ g`, the homomorphism `[a]_(f,g)`; in arity two, with `a = (1, 1)`, the law `F_f` of
+§1.3 (LT65, Lemma 1 and the remarks after it, pp.381–382). A proof route: solve degree by
 degree; in degree `r ≥ 2` the error is divisible by `π`, because `f` and `g` reduce to the `q`-power
 map and every residue `b` satisfies `b^q = b`, and it is corrected by dividing by `π − π^r`, which is
 `π` times a unit. Uniqueness over the fraction field follows from `π − π^r ≠ 0`.
@@ -650,6 +766,12 @@ map and every residue `b` satisfies `b^q = b`, and it is corrected by dividing b
 **Checks.**
 
 - For `a = 1` and `f = g`, the unique solution is `φ = X`; for `a = 0` it is `φ = 0`.
+- At `n = 0` the only series with zero constant term is `0`, and both sides of the functional
+  equation are `f(0) = 0` and `0`: the empty arity is admitted and has the unique solution `0`.
+- At `n = 2` over `ℤ₂` with `f = g = 2X + X²` and `a = (1, 1)`, the solution is
+  `H = X + Y + XY`: both `f(H)` and `H(g(X), g(Y))` equal `(1 + X)²(1 + Y)² − 1`. The linear
+  candidate `X + Y` fails: `f(X + Y)` has `XY` coefficient `2`, while `g(X) + g(Y)` has `XY`
+  coefficient `0`.
 - For odd `p`, `O = ℤ_p`, `f = (1 + X)^p − 1` and `g = pX + X^p`, the derivative-one
   intertwiner has `X²` coefficient `1/2 ∈ ℤ_p`, since `(p²−p)c = p(p−1)/2`; it is not `X`.
 - At `p = 2`, both series are `2X + X²`, so the derivative-one intertwiner is `X`, with
@@ -868,9 +990,21 @@ API:
 
 ### 2.3 Lubin–Tate division fields
 
-Let `f` be a Lubin–Tate series over `O_K` and `m ≥ 1`. Identify its division fields and scalar
-Galois action with the tower of RelativeFarguesFontaine §2.5, through the same-parameter coordinate
-comparison of §1.4. Prove the primitive-coordinate refinement: the points of `F_f[π^m](K̄)` not
+Let `f` be a Lubin–Tate series over `O_K` and `m ≥ 1`. First prove that the module on which
+RelativeFarguesFontaine §2.5 builds its tower is Lubin–Tate for `π`: for `E = K`, in any coordinate
+over `O_K`, the series `[π]` of the normalized Lubin–Tate module `G_LT` of VectorBundlesAndIsocrystals
+Layer 5, "Lubin–Tate universal cover and sections of O(1)", is a Lubin–Tate series for `π`. Its
+linear coefficient is `π` by the tangent condition of §0.1, and its reduction is `X^q` because the
+relative `q`-power Frobenius of the special fibre of `G_LT` over `k_K` is `[π]`. A proof route for
+the last point: that Frobenius is an endomorphism of degree `q` of a height-one formal
+`O_K`-module over `k_K`, whose endomorphism ring is `O_K`, so it is `[π′]` for a uniformizer `π′`;
+the supplier's normalization (Dieudonné module `W_(O_K)(k)` with `F = σ/π`, in the supplier's
+variance, with the special fibre and its Dieudonné module defined over `k_K`), equivalently its
+identification of `lim_[π] G_LT(A/π)` with the topologically nilpotent elements of `A^♭` through
+the `q`-power map, gives `π′ = π`. Hence `G_LT` is the module `F_g` of `g = [π]_(G_LT)` in its own
+coordinate (§1.3), and the comparison `[1]_(f,g)` of §1.4 identifies the supplied division fields
+`K(G_LT[π^m])` and their scalar Galois action with `K(F_f[π^m])` and the action of `[a]_f`. Prove
+the primitive-coordinate refinement: the points of `F_f[π^m](K̄)` not
 killed by `π^(m−1)` are exactly the generators of the free rank-one `O_K/π^m`-module
 `F_f[π^m](K̄)`; that for any such `t`, `K(t) = K(F_f[π^m])` is totally ramified of degree
 `(q − 1)q^(m−1)` with uniformizer `t`. Under this identification the supplied scalar-action Galois isomorphism
@@ -897,9 +1031,20 @@ group in `(O_K/π^m)^×`, agreeing with the supplied scalar action; other `f` fo
   `m = n + 1`, so `[Φ₀:Φ] = p² − 1`, not `1`.
 - A root of `f^{∘m}` that is also a root of `f^{∘(m−1)}` generates a smaller field: `t = 0`
   generates `K`.
+- Height one alone does not identify a module with the tower of `π`. For `π′ = uπ` with
+  `u ∈ O_K^×`, `u ≠ 1`, and a Lubin–Tate series `f′` for `π′`, the module `F_(f′)` has height one,
+  and `[π]_(f′) = [u⁻¹]_(f′) ∘ f′` has linear coefficient `π`; but its reduction is the reduction of
+  `[u⁻¹]_(f′)` composed with `X^q`, and the reduction of `[u⁻¹]_(f′)` is not `X`, since by
+  `TauCeti.FormalGroupHom.eq_of_map_residue_eq` it would otherwise equal `[1]_(f′) = X` and
+  `u⁻¹ = 1`. So `[π]_(f′)` is not a Lubin–Tate series for `π`, and the tower of `F_(f′)` is a
+  different field from `K_π` (§2.6): the Frobenius statement about `G_LT` is needed.
 
-*Needs:* §§1.3, 1.4, 2.2; Mathlib `IntermediateField.adjoin`, `AlgebraicClosure`;
-LocalFieldsRamification Layer 0; RelativeFarguesFontaine §2.5.
+*Needs:* §§1.3, 1.4, 2.2; §0.1 (tangent condition); Mathlib `IntermediateField.adjoin`,
+`AlgebraicClosure`; LocalFieldsRamification Layer 0; RelativeFarguesFontaine §2.5;
+VectorBundlesAndIsocrystals Layer 5, "Lubin–Tate universal cover and sections of O(1)" (the module
+`G_LT` and its normalization); FiniteFlatGroupsAndIntegralPadicHodgeTheory §§R07.2.6–R07.2.8 (for
+reading the normalization on Dieudonné modules); Tau Ceti
+`TauCeti.FormalGroupHom.eq_of_map_residue_eq`.
 
 ### 2.4 The Lubin–Tate character
 
@@ -930,7 +1075,8 @@ API:
 - After adjoining `F_f[π^m]` the restricted image is `U(K,m)`, equal to `1 + π^m O_K` for
   `m ≥ 1`; at `m = 0` the field is `K` and the image is `O_K^×`.
 
-*Needs:* §§2.2, 2.3, 1.4; RelativeFarguesFontaine §2.5.
+*Needs:* §§2.2, 2.3, 1.4; RelativeFarguesFontaine §2.5; VectorBundlesAndIsocrystals Layer 5,
+"Lubin–Tate universal cover and sections of O(1)" (the module `G_LT` of the supplied tower).
 
 ### 2.5 Comparison with local reciprocity
 
@@ -1007,8 +1153,9 @@ Layers 0–1; Mathlib Weierstrass preparation, `IntermediateField.adjoin` and `A
 Tau Ceti's finite locally free commutative affine group schemes, local Artin map and unit
 filtration; ClassFieldTheory Layers 6–8;
 LocalFieldsRamification Layers 0–2; RamificationOfCompleteDiscretelyValuedFields §4a.3;
-FiniteFlatGroupsAndIntegralPadicHodgeTheory §§R07.1.8, R07.1.12–R07.1.13; ModularCurves §0B;
-RelativeFarguesFontaine §2.5.
+FiniteFlatGroupsAndIntegralPadicHodgeTheory §§R07.1.8, R07.1.12–R07.1.13, R07.2.6–R07.2.8;
+ModularCurves §0B; RelativeFarguesFontaine §2.5; VectorBundlesAndIsocrystals Layer 5, "Lubin–Tate
+universal cover and sections of O(1)"; Tau Ceti finite-height rigidity.
 
 ## Layer 3: Marked deformations at finite height
 
@@ -1082,12 +1229,24 @@ API:
 
 **Checks.**
 
-- The `XY` coefficient of the law has degree one.
-- The `X^q` coefficient of `[π]` has degree `q − 1`.
-- A residual law over `k` lifts to `B` by lifting the images of the polynomial generators, without
-  assuming `k` algebraically closed.
-- Different coordinate laws can give the same deformation class, so `Λ_O` is not the deformation
-  ring of §3.6.
+- Over `ℤ₂`, the additive and the multiplicative formal `ℤ₂`-modules give different maps
+  `Λ_O → ℤ₂`: the universal `XY` coefficient of the law and the universal `X²` coefficient of
+  `[2]` go to `(0, 0)` for the additive module (`X + Y`, `[2] = 2X`) and to `(1, 1)` for the
+  multiplicative one (`X + Y + XY`, `[2] = 2X + X²`).
+- The action series carry generators that the law and `[π]` miss. Over `O = W(𝔽₄)` (`π = 2`,
+  `q = 4`), transport the additive formal module by `h = X + cX²` (law `h⁻¹(h(X) + h(Y))`, action
+  `h⁻¹(a·h(X))`): the `XY` coefficient is `−2c` and the `X²` coefficient of `[a]` is `c(a − a²)`,
+  so `−2c` for `[2]` and `c(ζ − ζ²)` for `[ζ]`, `ζ` a primitive Teichmüller cube root of unity. Here
+  `ζ − ζ² = ζ(1 − ζ)` is a unit, since `(1 − ζ)(1 − ζ²) = 3`, while `2` is not; so in degree one the
+  image of `Λ_O` in `O[c]` is `c·O`, a generator of `Λ_O` in degree one is a unit multiple of the
+  `X²` coefficient of `[ζ]`, and the `XY` coefficient of the law, which generates the Lazard ring in
+  degree one, is a unit times `2` times a generator: the map to `Λ_O` from the Lazard ring tensored
+  with `O`, which forgets the action, is not surjective in degree one.
+- Over `ℤ₂`, transporting the multiplicative law by `h = X + 2X²` gives `h⁻¹(F(h(X), h(Y)))` with
+  `XY` coefficient `1 − 2·2 = −3` instead of `1`: two different maps `Λ_O → ℤ₂`, although `h`
+  reduces to `X` modulo `2` and the two laws are the same marked height-one deformation of the
+  residual multiplicative module. So `Λ_O` classifies laws in a coordinate, not deformation
+  classes, and is not the deformation ring of §3.6.
 
 *Needs:* §0.1; BordismFormalGroups §F1 (Lazard ring, symmetric cocycle lemma).
 
@@ -1175,8 +1334,9 @@ infinite products with field extensions.
 
 ### 3.6 The universal finite-height deformation
 
-Extend the marked functors of EndoscopicTransferAndUnitaryTraceComparison §§10.2, 12.3 to the
-coefficient bases of §3.1. Prove that this functor is represented on complete noetherian local
+Extend the marked functor of EndoscopicTransferAndUnitaryTraceComparison §10.2, and the level-zero
+component of quasi-isogeny height zero of the framed spaces of §12.3 there, to the coefficient bases
+of §3.1. Prove that this functor is represented on complete noetherian local
 `B`-algebras by `B[[t₁,…,t_(h−1)]]` with a universal deformation: pullback gives a bijection, natural
 in the base, between continuous local `B`-algebra maps and isomorphism classes of deformations,
 and the marked comparison of each pullback is unique. Residue-field and coefficient extensions
@@ -1185,7 +1345,11 @@ proof, pp.56–57, Proposition 3.3, pp.57–58; VZ07, Theorem 3.8 and proof, p.6
 pp.294–295). A proof route: choose a lift over `B` and `h − 1` tangent directions from §3.5, build a
 family over the truncations, and induct on artinian length using §§3.4–3.5. At `B = O_r` for the
 residual modules of the supplier, identify both functors and universal families by the identity
-on laws, strict actions and markings; do the same at its algebraically closed residue base.
+on laws, strict actions and markings. Over the algebraically closed residue base of §12.3, identify
+the functor of §3.1 with the level-zero component of quasi-isogeny height zero: a marking `ι`
+corresponds to the framing obtained by lifting `ι` (in the direction of the supplier's framing)
+uniquely to a quasi-isogeny over the reduction modulo `ϖ`, which has height zero, and conversely
+the reduction to `k` of a framing of height zero is an isomorphism.
 
 **Checks.**
 
@@ -1194,6 +1358,11 @@ on laws, strict actions and markings; do the same at its algebraically closed re
 - At the finite-residue base `B = O_r`, heights `1` and `2` give `O_r` and `O_r[[T]]` in both
   interfaces; a pullback is compared by the same marked isomorphism, not by an unmarked change
   of coordinate.
+- Framings of nonzero height are not markings: if `ρ` is the height-zero framing attached to a
+  marked deformation `(G, ι)`, then `ρ` composed with `[ϖ]` is again a framing of the same `G`, of
+  quasi-isogeny height `h ≠ 0` (the `O_E`-height of `[ϖ]`), and lies in another component of
+  §12.3. The functor of §3.1 is the height-zero component at level zero, not the whole framed
+  space, whose level-zero part is a disjoint union of copies indexed by the integers.
 - For `O_K = ℤ_p`, `k` perfect and `B = W(k)` the representing ring is that of BordismFormalGroups
   §F5; for `k = 𝔽_p(t)` (imperfect) the theorem still applies with any specified `B`, and no Cohen
   ring is chosen.
@@ -1333,6 +1502,18 @@ Proposition 3.3, pp.226–228; H68, Theorem 2, pp.204–205). Part (i) follows f
 and `s² = 1`; `ℓ_s` has the same type, and §4.2 gives (iii). The strict isomorphism of (iii) need
 not reduce to the identity, so it is not a marked isomorphism.
 
+Because `σ² = 1` on the fraction field `K` of `O`, the type operator of `p − sT²` involves no
+coefficient twist, and parts (ii) and (iii) are statements about native substitution. With `[sp]_G`
+the integer multiplication series `FormalGroup.zsmulSeries` of Tau Ceti and `ℓ_G` the logarithm
+`FormalGroup.log` of the base change of `G` to `K`, part (ii) is
+`exists_hondaType_log_of_map_zsmulSeries`: `p·ℓ_G(X) − s·ℓ_G(X^q) = p·A(X)` for some `A ∈ O[[X]]`.
+Part (iii) is `exists_strictIso_hondaLog_of_map_zsmulSeries`: for every `ℓ ∈ K[[X]]` with
+`p·ℓ(X) − s·ℓ(X^q) = pX`, a functional equation whose only solution is `ℓ_s`, there is `φ ∈ O[[X]]`
+with zero constant term and linear coefficient `1` such that `ℓ(φ(X)) = ℓ_G(X)`. Over the
+characteristic-zero ring `O` an endomorphism of `G` with linear coefficient `sp` equals `[sp]_G`,
+since `ℓ_G ∘ φ = sp·ℓ_G` determines `φ` (§0.1), so the hypothesis may equally be read on any such
+endomorphism.
+
 BKO21, Lemma 5.1(ii), p.956, pairs `a_(p²) = 2sp` with type `p + sT²` and parameter `−sp`; the
 correct pairing is type `p − sT²` and parameter `sp`, since the parameter of a Lubin–Tate module
 reduces to the `q`-power Frobenius. The two readings differ for both signs. BKO21's local
@@ -1354,8 +1535,16 @@ the Lubin–Tate module of parameter `−p`: that is the correct pair, type `p +
   `1/(2−2⁴) = −1/14`, whereas the Honda logarithm `ℓ₁` has coefficient `1/2`. The strict
   comparison from `F_f` to the Honda model has coefficient `−1/14−1/2 = −4/7` in degree four,
   so it is integral and nonidentity; equality of normalized logarithms is not asserted.
+- The functional equation `p·ℓ(X) − s·ℓ(X^q) = pX` determines `ℓ`: writing `ℓ = Σ a_n X^n`, the
+  constant term gives `(p − s)a_0 = 0`, so `a_0 = 0` since `p ≥ 2 > |s|`; degree one gives `a_1 = 1`;
+  and for `n ≥ 2`, `a_n = (s/p)·a_(n/q)` when `q ∣ n` and `a_n = 0` otherwise. So `a_(q^j) = (sp)^(−j)`
+  and the solution is `ℓ_s`; at `p = 2`, `s = −1` its coefficients in degrees `1, 4, 16` are
+  `1, −1/2, 1/4`. With `−s` in place of `s` the solution `ℓ_(−s)` has `X^(q²)` coefficient
+  `(sp)^(−2)` as well but `X^q` coefficient `−(sp)^(−1)`, and the strict comparison `ℓ_(−s)⁻¹ ∘ ℓ_s`
+  has `X^q` coefficient `2(sp)^(−1) = 2s/p`, which is not integral for odd `p`.
 
-*Needs:* §§4.2, 1.3, 0.1; FiniteFlatGroupsAndIntegralPadicHodgeTheory §R07.1.1 (`frobeniusHom`)
+*Needs:* §§4.2, 1.3, 0.1; Tau Ceti `FormalGroup.zsmulSeries`, `FormalGroup.log`;
+FiniteFlatGroupsAndIntegralPadicHodgeTheory §R07.1.1 (`frobeniusHom`)
 and §R07.2.8 (`dieudonneEquivalenceFinite`) for the Dieudonné reading of scalar Frobenius.
 
 ### 4.4 The supersingular elliptic comparison
@@ -2193,7 +2382,7 @@ route: both sides are the formal trace from `Ψ′_(s+2)` to `Ψ_s`, by transiti
   generates `Φ₁`, of degree `600` over `Φ`, so it is not a point over the source `Ψ′_2`, of
   degree `30`.
 
-*Needs:* §§9.1, 9.2, 8.4, 8.5, 5.5, 3.6, 0.3.
+*Needs:* §§9.1, 9.2, 8.4, 8.5, 4.4, 0.3.
 
 ### Examples
 
@@ -2202,7 +2391,7 @@ traces `Ψ′_2 → Ψ₁ → Φ` and `Ψ′_2 → Ψ′_1 → Φ`, of total deg
 
 ### Dependencies
 
-§§0.2, 0.3, 3.6, 4.4, 5.5, 8.4, 8.5; LocalFieldsRamification Layer 0.
+§§0.2, 0.3, 4.4, 8.4, 8.5; LocalFieldsRamification Layer 0.
 
 ## Downstream consumers
 
