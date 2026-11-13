@@ -4983,6 +4983,7 @@
  "gaps": [
   {
    "id": "qcqs-frobenius-factorization",
+   "slug": "qcqs-frobenius-factorization",
    "supplier": "SchemeAndStackFoundations",
    "section": "0.26",
    "needs": "For every finite finitely presented universal homeomorphism f: X → Y of qcqs F_p-schemes, provide N ≥ 0 and g: Y → X with f ∘ g = F_Y^N and g ∘ f = F_X^N.",
@@ -5009,6 +5010,16 @@
    "needs": "For schemes X and Y over a field k that are quasi-compact with affine diagonal, and quasi-coherent modules F on X and G on Y, the external cup product ⊕_{a+b=n} H^a(X, F) ⊗_k H^b(Y, G) → H^n(X ×_k Y, F ⊠ G) is an isomorphism for every n, where F ⊠ G is the tensor product of the pullbacks of F and G along the two projections.",
    "neededBy": [
     "CrystallineCohomologyPartII:WV.6/serre-bockstein-vanishing"
+   ]
+  },
+  {
+   "id": "admissible-invariant-quotient-gluing",
+   "slug": "admissible-invariant-quotient-gluing",
+   "supplier": "SchemeAndStackFoundations",
+   "section": "1.17",
+   "needs": "For a finite group G acting by automorphisms on a separated scheme X of finite type over a field such that every G-orbit lies in an affine open, glue the affine invariant quotients of the G-stable affine opens into a separated scheme X/G of finite type with q: X → X/G finite, surjective and G-invariant and O_{X/G} = (q_*O_X)^G.",
+   "neededBy": [
+    "CrystallineCohomologyPartII:WV.6/witt-isomorphism-point-congruence"
    ]
   }
  ],

@@ -146,8 +146,8 @@ sha256 = "161c63089dadc8f9aecd3da1753563fe8f7f9fc2b2722952307cd19bacda7c66"
 licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-25"
-version_note = "Certified text: arXiv v2, Corollary 4.6. Published Corollary 4.7 is the corresponding result. Published Corollary 1.3 and pp. 19–20 are cited by locator only; they are absent from v2 and are not certified by this extraction."
-cited_for = ["Scope and ownership", "§2.2", "§3.6", "§5.5", "§6.5", "§6.11", "§6.13", "§6.14"]
+version_note = "Certified text: arXiv v2. Every HW23 locator in the roadmap uses the arXiv v2 numbering (§2, p. 6; Corollary 4.6 and proof, p. 21); the published version was not read and no locator of it is cited."
+cited_for = ["§0.1", "§0.5", "§2.2", "§5.2", "§5.5", "Downstream consumers"]
 
 [[source]]
 id = "Tan18"
