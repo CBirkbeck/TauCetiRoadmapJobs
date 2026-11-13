@@ -1,0 +1,22 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-MappingClassGroupsAndCanonicalRepresentations~1",
+  "head": "e40458f3d71ab97787cde8adb95c3ea4a9557043",
+  "pr": 2266,
+  "folder": "MappingClassGroupsAndCanonicalRepresentations",
+  "date": "2026-11-13",
+  "findings": 4,
+  "blocking": 0,
+  "notes": "Full review. Four P3 findings: the description's dependency prose (three kim-em pull requests listed as ours; FiniteGroupInvariants and MixedHodgeModulesAndIrregularHodgeTheory omitted and called consumers), the locator of section 7.3 (proof of LL24 Lemma 8.3.3, not its statement), Layer 12 without an Examples subsection, and a non-correction listed under Corrections to the sources. Seeded sample of 15 targets and the six Lean headlines checked against the cached texts (LL24, LL22, AS16, Kor02, Mor89, HS53, Sik12, Sim90, BGMW17, CH19, KS16, LL-P04) with computed instances in the adversarial table; 31 pinned declarations opened; every cross-roadmap citation resolved (MixedHodgeModulesAndIrregularHodgeTheory only against its board package). Gate passes; Suggested.lean elaborates with sorry as the only warning; one-tactic probe closes none of the six theorems; depcheck 0 problems. Eight source errata recorded. For humans: LL-P04 is an unpublished author web page with AI-generated review text; one supplier has no pull request.",
+  "carried": {
+   "from": "e40458f3d71ab97787cde8adb95c3ea4a9557043",
+   "head": "e9cbde918d8863da6d4026e1efce6385db9ecb6b",
+   "findings": 4,
+   "lines": 23,
+   "folders": [
+    "MappingClassGroupsAndCanonicalRepresentations"
+   ]
+  }
+ }
+}
