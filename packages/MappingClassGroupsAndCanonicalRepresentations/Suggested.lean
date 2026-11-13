@@ -21,9 +21,15 @@ Stated here:
   image (Landesman–Litt, Theorem 1.2.1; README Layer 9).
 * `freeGroup_finite_image`: the free-group form, for `N = 2g` or `2g + 1` (Landesman–Litt,
   Corollary 1.6.1; README Layer 9).
-* `putmanWieland_of_card_lt`: the Putman–Wieland property for finite groups of order `< g²`, in its
-  equivalent form "no nonzero class of the compactified cover is fixed by a finite-index subgroup
-  of the stabiliser" (Landesman–Litt, Corollary 7.2.4; README Layer 6).
+* `putmanWieland_of_irreducible_dim_lt`: the Putman–Wieland property for finite groups all of whose
+  irreducible complex representations have dimension `< g`, in its equivalent form "no nonzero class
+  of the compactified cover is fixed by a finite-index subgroup of the stabiliser" (Landesman–Litt,
+  Corollary 7.2.3; README Layer 6).
+* `putmanWieland_of_card_lt`: the same property for finite groups of order `< g²` (Landesman–Litt,
+  Corollary 7.2.4 and Theorem 1.4.1; README Layer 6).
+* `rankTwo_mcgFinite_finite_image`: in every genus `g ≥ 2`, an MCG-finite representation of rank two
+  has finite image (Landesman–Litt, Remark 10.2.2, with Biswas–Gupta–Mj–Whang, Theorem A, and
+  Cousin–Heu, Theorem B; README Layer 12).
 
 Headline theorems of the README that are not statable at the pins, with what each lacks:
 
@@ -42,6 +48,10 @@ Headline theorems of the README that are not statable at the pins, with what eac
   characterisation (Corollary 9.1.4) and residual non-lifting (Corollary 9.2.2): no étale
   fundamental groups of varieties over finitely generated fields, no moduli stack over `ℚ`, and no
   polarizable variations of Hodge structure.
+
+The other results of README Layer 12 are examples showing that hypotheses and ranges are needed
+(unipotent, genus-one and large-rank semisimple examples); they are range checks and stay in the
+README.
 -/
 
 namespace TauCetiRoadmap.MappingClassGroupsAndCanonicalRepresentations
@@ -67,6 +77,7 @@ transported along the inversion of the handle generators `aᵢ ↦ aᵢ⁻¹`, `
 def surfaceGroup (g n : ℕ) : Type :=
   PresentedGroup ({surfaceRelator g n} : Set (FreeGroup (Fin g ⊕ Fin g ⊕ Fin n)))
 
+/-- The group structure of `surfaceGroup g n`, inherited from the presented group. -/
 instance (g n : ℕ) : Group (surfaceGroup g n) :=
   inferInstanceAs (Group (PresentedGroup _))
 
@@ -116,9 +127,10 @@ def HasFiniteConjugacyOrbitUnder {G : Type*} [Group G] {r : ℕ} (H : Subgroup (
 
 /-! ## Layer 6: higher Prym representations and the Putman–Wieland property -/
 
-/-- The stabiliser of a finite quotient `ϕ : π₁(Σ_{g,n}) → H` up to conjugacy in `H`: the elements
-of the algebraic pure mapping class group with `ϕ ∘ φ = c_h ∘ ϕ` for some `h ∈ H`
-(Landesman–Litt, Notation 7.1.1). -/
+/-- The stabiliser of a homomorphism `ϕ : π₁(Σ_{g,n}) → H` up to conjugacy in `H`: the elements
+of the algebraic pure mapping class group with `ϕ ∘ φ = c_h ∘ ϕ` for some `h ∈ H`. It contains every
+inner automorphism. When `H` is finite and `ϕ` is surjective it is the algebraic form of the
+finite-index subgroup `Γ` of Landesman–Litt, Notation 7.1.1, which lies in it. -/
 def prymStabilizer {g n : ℕ} {H : Type*} [Group H] (ϕ : surfaceGroup g n →* H) :
     Subgroup (MulAut (surfaceGroup g n)) :=
   pureMappingClassAut g n ⊓
@@ -135,10 +147,12 @@ def prymStabilizer {g n : ℕ} {H : Type*} [Group H] (ϕ : surfaceGroup g n →*
         rw [this]
         group }
 
-/-- The first cohomology `H¹(Σ_{g'}, ℂ)` of the compactified cover attached to `ϕ`, inside
-`H¹(Σ_{g',n'}, ℂ) = Hom(ker ϕ, ℂ)`: the homomorphisms vanishing on every element of `ker ϕ`
-conjugate in the surface group to a power of a peripheral loop, that is on every loop around a
-puncture of the cover. -/
+/-- The additive characters of `ker ϕ` with values in `ℂ` vanishing on every element of `ker ϕ`
+conjugate in the surface group to a power of a peripheral loop. When `H` is finite and `ϕ` is
+surjective, `Hom(ker ϕ, ℂ)` is the cohomology `H¹(Σ_{g',n'}, ℂ)` of the corresponding finite cover,
+those elements are the loops around its punctures, and this subspace is the first cohomology
+`H¹(Σ_{g'}, ℂ)` of the compactified cover. For an infinite quotient it is only this algebraic
+subspace. -/
 def compactPrymCohomology {g n : ℕ} {H : Type*} [Group H] (ϕ : surfaceGroup g n →* H) :
     Submodule ℂ (Additive ϕ.ker →+ ℂ) where
   carrier := {f | ∀ (k : ϕ.ker) (h : surfaceGroup g n) (j : Fin n) (m : ℤ),
@@ -153,7 +167,23 @@ def compactPrymCohomology {g n : ℕ} {H : Type*} [Group H] (ϕ : surfaceGroup g
     intro c f hf k h j m hk
     simp [hf k h j m hk]
 
-/-- **Putman–Wieland for small groups** (Landesman–Litt, Corollary 7.2.4 and Theorem 1.4.1).
+/-- **Putman–Wieland for groups of small degree** (Landesman–Litt, Corollary 7.2.3). If every
+irreducible complex representation of the finite group `H` has dimension `< g` and
+`ϕ : π₁(Σ_{g,n}) → H` is surjective, no nonzero class in the cohomology of the compactified cover is
+fixed by a finite-index subgroup of the stabiliser of `ϕ`. Every irreducible representation of a
+finite group is finite-dimensional, hence isomorphic to one on `Fin d → ℂ`, so quantifying over
+those is the source's hypothesis. -/
+theorem putmanWieland_of_irreducible_dim_lt (g n : ℕ) {H : Type*} [Group H] [Finite H]
+    (hH : ∀ (d : ℕ) (σ : Representation ℂ H (Fin d → ℂ)), σ.IsIrreducible → d < g)
+    (ϕ : surfaceGroup g n →* H) (hϕ : Function.Surjective ϕ)
+    (Γ' : Subgroup (MulAut (surfaceGroup g n))) (hΓ' : Γ' ≤ prymStabilizer ϕ)
+    (hfin : Γ'.relIndex (prymStabilizer ϕ) ≠ 0) (f : compactPrymCohomology ϕ)
+    (hf : ∀ γ ∈ Γ', ∀ k k' : ϕ.ker, (k' : surfaceGroup g n) = γ k →
+      (f : Additive ϕ.ker →+ ℂ) (Additive.ofMul k') = (f : Additive ϕ.ker →+ ℂ) (Additive.ofMul k)) :
+    f = 0 := by
+  sorry
+
+/-- **Putman–Wieland for groups of small order** (Landesman–Litt, Corollary 7.2.4 and Theorem 1.4.1).
 If `#H < g²` and `ϕ : π₁(Σ_{g,n}) → H` is surjective, no nonzero class in the cohomology of the
 compactified cover is fixed by a finite-index subgroup of the stabiliser of `ϕ`. Equivalently,
 every nonzero vector of the higher Prym representation has infinite orbit. -/
@@ -184,6 +214,19 @@ image. -/
 theorem freeGroup_finite_image (N g r : ℕ) (hN : N = 2 * g ∨ N = 2 * g + 1)
     (ρ : FreeGroup (Fin N) →* GL (Fin r) ℂ) (hρ : HasFiniteConjugacyOrbitUnder ⊤ ρ)
     (hr : r ^ 2 < g + 1) :
+    (Set.range ρ).Finite := by
+  sorry
+
+/-! ## Layer 12: examples and range checks -/
+
+/-- **Rank two in genus at least two** (Landesman–Litt, Remark 10.2.2; Biswas–Gupta–Mj–Whang,
+Theorem A; Cousin–Heu, Theorem B). For `g ≥ 2` and every `n`, a representation of the fundamental
+group of a genus-`g` surface with `n` punctures into `GL₂(ℂ)` whose conjugacy class has finite orbit
+under the pure mapping class group has finite image. For `g = 2, 3` this lies outside the range
+`r² < g + 1` of `mcgFinite_finite_image`; for `g = 1` it fails on punctured tori. -/
+theorem rankTwo_mcgFinite_finite_image (g n : ℕ) (hg : 2 ≤ g)
+    (ρ : surfaceGroup g n →* GL (Fin 2) ℂ)
+    (hρ : HasFiniteConjugacyOrbitUnder (pureMappingClassAut g n) ρ) :
     (Set.range ρ).Finite := by
   sorry
 
