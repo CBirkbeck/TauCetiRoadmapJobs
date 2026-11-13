@@ -775,3 +775,21 @@ licence_class = "author-page"
 status = "certified"
 accessed = "2026-11-03"
 cited_for = ["1.1", "1.2"]
+
+[[source]]
+id = "weibel-chern"
+authors = "Charles Weibel"
+title = "Étale Chern classes at the prime 2"
+year = 1993
+venue = "Algebraic K-theory and Algebraic Topology (Lake Louise, 1991), NATO ASI Series C 407, Kluwer, pp. 249–286"
+version_note = "The author-hosted preprint (37 pages) is the text read; the README locators use the preprint's pagination, which was not compared with the published version."
+locator_scheme = "theorem"
+locator = "Proposition 4.4"
+url = "https://sites.math.rutgers.edu/~weibel/archive/papers-dir/chernclass.pdf"
+fetched_from = "https://sites.math.rutgers.edu/~weibel/archive/papers-dir/chernclass.pdf"
+fetched_at = "2026-11-13T14:08:03Z"
+sha256 = "38dc2a10f368cf0115b890baff2b64ab77d352c037add1cc9bbe50125d796665"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-13"
+cited_for = ["7.0"]
