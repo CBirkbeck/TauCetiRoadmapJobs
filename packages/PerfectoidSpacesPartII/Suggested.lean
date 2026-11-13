@@ -37,9 +37,11 @@ Stated here:
   `TauCeti.ValuationSpectrum.presentationLimitPlusPresheaf` along the opens `annularOpen` of the
   annuli, with its limit in commutative rings and the canonical maps `coeffToSections`.
 * André's perfectoid Riemann extension theorem, in its complete-integral-closure form
-  (README §3.6; André, *Le lemme d'Abhyankar perfectoïde*, Théorème 4.2.2 and Lemme 4.2.3):
+  (README §3.6(2); André, *Le lemme d'Abhyankar perfectoïde*, Théorème 4.2.2):
   `riemann_extension_completeIntegralClosure`, on the root saturation `rootSaturation` of
-  README §2.3.
+  README §2.3; and the complete integral closedness of the root saturation in `R[1/g]` for every
+  compatible system of roots, with no regularity of `g` (README §3.6(3); André, *Le lemme
+  d'Abhyankar perfectoïde*, Lemme 4.2.3): `rootSaturation_completelyIntegrallyClosed`.
 * The trace clause of André's perfectoid Abhyankar lemma (README §4.7(3); André, *Le lemme
   d'Abhyankar perfectoïde*, Théorème 0.3.1(3) and Proposition 5.3.1(3)), in the integral-closure
   model `B̃°` of README §4.6: `abhyankar_trace_almost_surjective`, with the trace of a finite
@@ -61,10 +63,10 @@ Headline theorems of the README that are not statable at the pins, and what each
   every complex `K` in the derived category of `A/tᵐ`-modules; the pinned Mathlib has the derived
   category and `CategoryTheory.Tor` for objects, but no derived tensor product of complexes, and
   restricting to modules would lose the complexes the theorem is about.
-* The first clause of André's Riemann extension theorem, `lim_j A{ϖʲ/g}° = g^{-1/p^∞}A°`, and the
-  nested-systems theorem (README §3.6, §3.11): the uniform Banach localisations `A{λ/g}` with
-  their transition maps, uniform limits, and the 2-limit category of perfectoid algebras on the
-  annuli are missing.
+* The first and fourth clauses of André's Riemann extension theorem, `lim_j A{ϖʲ/g}° = g^{-1/p^∞}A°`
+  and its uniform-limit form, and the nested-systems theorem (README §3.6, §3.11): the uniform
+  Banach localisations `A{λ/g}` with their transition maps, uniform limits, and the 2-limit
+  category of perfectoid algebras on the annuli are missing.
 * Ramified almost purity (README §4.5): the almost-module category is native, but almost
   perfectoid algebra and almost finite étale algebra structures are missing.
 * Clauses (1) and (2) of André's perfectoid Abhyankar lemma (README §4.7): the largest perfectoid
@@ -390,6 +392,32 @@ theorem riemann_extension_completeIntegralClosure
           (Localization.Away ((g 0 : powerBoundedSubring R) : R)), M.FG ∧ ∀ n : ℕ, b ^ n ∈ M} :=
   sorry
 
+/-- **André's perfectoid Riemann extension theorem, complete integral closedness of the root
+saturation** (André, *Le lemme d'Abhyankar perfectoïde*, Lemme 4.2.3, p. 56; README §3.6(3)).
+
+Let `K` be a perfectoid field (given by the criterion of
+`riemann_extension_completeIntegralClosure`), `R` a perfectoid Tate ring which is a topological
+`K`-algebra, and `g m` a compatible system of `p`-power roots in `R°` of `g = g 0`
+(`g (m + 1) ^ p = g m`), equivalently a `K⟨T^{1/p^∞}⟩`-algebra structure on `R` with `g` the image
+of `T`. No regularity of `g` is assumed: `g` may be a zero divisor of `R`. Then the root saturation
+`S = rootSaturation p g hg = g^{-1/p^∞}R°` is completely integrally closed in `R[1/g]`: every
+`b ∈ R[1/g]` whose powers `bⁿ` all lie in one finitely generated `S`-submodule of `R[1/g]` belongs
+to `S`. -/
+theorem rootSaturation_completelyIntegrallyClosed
+    (K : Type u) [NontriviallyNormedField K] [IsUltrametricDist K] [CompleteSpace K]
+    (hK : ∀ ε : ℝ, 1 < ε → ∃ x : K, 1 < ‖x‖ ∧ ‖x‖ < ε) (hKp : ‖(p : K)‖ < 1)
+    (hKF : Function.Surjective
+      (fun x : ModP (NormedField.valuation (K := K)).integer p ↦ x ^ p))
+    (R : Type u) [CommRing R] [UniformSpace R] [IsUniformAddGroup R] [IsTopologicalRing R]
+    [IsTateRing R] [CompleteSpace R] [T2Space R] [TauCeti.Perfectoid.IsPerfectoidTateRing p R]
+    [Algebra K R] (hKR : Continuous (algebraMap K R))
+    (g : ℕ → powerBoundedSubring R) (hg : ∀ m, g (m + 1) ^ p = g m)
+    (b : Localization.Away ((g 0 : powerBoundedSubring R) : R))
+    (hb : ∃ M : Submodule (rootSaturation p g hg)
+        (Localization.Away ((g 0 : powerBoundedSubring R) : R)), M.FG ∧ ∀ n : ℕ, b ^ n ∈ M) :
+    b ∈ rootSaturation p g hg :=
+  sorry
+
 /-! ## Layer 4: the perfectoid Abhyankar lemma -/
 
 /-- **André's perfectoid Abhyankar lemma, trace clause** (André, *Le lemme d'Abhyankar
@@ -482,7 +510,7 @@ abbrev KummerQuotient (g : KummerBase p k n) : Type u :=
   MvPolynomial (KummerVar n) (KummerBase p k n) ⧸ Ideal.span (kummerRelations p k n g)
 
 /-- The `K₀`-algebra `A_∞∞ = ⋃_{j,l} A_jl`, with `A_jl = K_j°⟦T^{1/p^j}⟧[g^{1/p^l}][1/p]`
-(André, *La conjecture du facteur direct*, §2.2, formula (7)). -/
+(André, *La conjecture du facteur direct*, §2.2, formula (8), p. 78). -/
 abbrev KummerAlgebra (g : KummerBase p k n) : Type u :=
   Localization.Away (p : KummerQuotient p k n g)
 
@@ -506,7 +534,7 @@ def kummerStage (g : KummerBase p k n) (j l : ℕ∞) :
   Algebra.adjoin (KummerBase p k n) (kummerGenerators p k n g j l)
 
 /-- The normalized stage `A°_jl`: the integral closure of `A` in `A_jl` (André, *La conjecture du
-facteur direct*, §2.3, formula (8)). -/
+facteur direct*, §2.3, p. 78). -/
 def kummerIntegralStage (g : KummerBase p k n) (j l : ℕ∞) :
     Subalgebra (KummerBase p k n) (KummerAlgebra p k n g) :=
   integralClosure (KummerBase p k n) (KummerAlgebra p k n g) ⊓ kummerStage p k n g j l

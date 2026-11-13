@@ -62,8 +62,9 @@ This roadmap owns, layer by layer:
   André's perfectoid Riemann extension theorem, the largest perfectoid subalgebra of `A[1/g]`, the
   comparison of uniform and perfectoid limits, the `lim¹` estimate for nested systems, and the
   nested-systems theorem.
-- Layer 4: almost Galois extensions of almost algebras, Galois closures of finite étale extensions and
-  Galois rigidity, annular envelopes, integral almost étaleness away from `g`, ramified almost
+- Layer 4: almost Galois extensions of almost algebras, the stabiliser torsor of the symmetric-group
+  splitting torsor of a finite étale algebra over the algebra itself, Galois rigidity, annular
+  envelopes, integral almost étaleness away from `g`, ramified almost
   purity, the perfectoid Abhyankar envelope and lemma, and almost perfectoid envelopes of reduced
   affinoid algebras.
 - Layer 5: pure and almost pure module and ring maps, André's Krull detection lemma, the normalized
@@ -113,9 +114,13 @@ It leaves to other roadmaps, by section:
   localisation of the pair `(A, A°)` at `({λ, g}, g)`, kept here for its explicit quotient norm
   and unit-ball estimates.
 - Stated by AdicEtaleGeometry: finite étale `G`-torsors of commutative rings with the Galois map
-  `Algebra.galoisTensorMap` and the class `Algebra.IsFiniteEtaleTorsor` (A4.2), and finite Galois
-  descent of modules (A4.2a). §4.1 is their almost analogue and §4.2 adds the `S_r`-Galois
-  closure and Galois rigidity, which A4.2 does not state.
+  `Algebra.galoisTensorMap` and the class `Algebra.IsFiniteEtaleTorsor` (A4.2), finite Galois
+  descent of modules (A4.2a), and the splitting torsor of a finite étale algebra (A4.3,
+  *splitting-torsor-of-finite-etale-algebra*), which for an algebra `S` of constant rank `r` is the
+  frame algebra `T` of ordered `r`-tuples of pairwise distinct points in the fibres of `S`, an
+  `S_r`-torsor over which `S` splits. §4.1 is the almost analogue of A4.2; §4.2 adds that
+  the first frame coordinate makes `T` an `S_{r−1}`-torsor over `S`, which A4.3 does not state,
+  and Galois rigidity.
 - Stated by DerivedModuleAlgebra and EnhancedDerivedSheaves: Koszul complexes (DerivedModuleAlgebra
   §0.K.1), derived tensor products of modules (§0.2), towers with `lim` and `lim¹` and the module
   Milnor sequence (§1.T.1), derived limits of towers (§1.1); ordinary pro-zero towers and
@@ -269,7 +274,7 @@ It leaves to other roadmaps, by section:
   `TauCeti.Huber.PairOfDefinition.completionLocObj` (the completed localisation `A⟨T/s⟩` of one
   presentation), `TauCeti.Huber.PairOfDefinition.completedPlusSubring` (its plus ring,
   `RingTheory/Huber/LocalizationTopology/Plus.lean`), `TauCeti.Huber.PairOfDefinition.toCompletionLoc`
-  (the structure map `A → A⟨T/s⟩`), `TauCeti.Huber.HasDenominatorPower` (the standing hypothesis
+  (the structure map `A → A⟨T/s⟩`), `TauCeti.Huber.PairOfDefinition.HasDenominatorPower` (the standing hypothesis
   of the construction, `RingTheory/Huber/LocalizationTopology/Basic.lean`) and
   `TauCeti.ValuationSpectrum.pairHomOfRationalSubsetSubset` (the comparison morphism of an
   inclusion of rational subsets, `AlgebraicGeometry/AdicSpace/Spa/Localization/PlusComparison.lean`).
@@ -414,6 +419,13 @@ flat over `K°`.
   André's canonical map is `b ⊗ b′ ↦ (γ(b)·b′)_γ`, the composite of A4.2's with the swap of the two
   tensor factors; both are bijective together.
 - A4.2a: finite Galois descent of modules (*finite-galois-descent-of-modules*).
+- A4.3 (*splitting-torsor-of-finite-etale-algebra*), used only for algebras of constant rank: for a
+  commutative ring `R` and a finite étale `R`-algebra `S` of constant rank `r`, let `δ ∈ S ⊗_R S`
+  be the idempotent cutting out the diagonal, `δ_{ab}` its image in `S^{⊗r}` under the `(a, b)`-th
+  coprojection (`1 ≤ a < b ≤ r`) and `ε = ∏_{a<b}(1 − δ_{ab})`. Assumed: the frame algebra
+  `T = ε·S^{⊗r}`, with `S_r` permuting the tensor factors, is a finite étale `S_r`-torsor over `R`
+  in the sense of A4.2, and the universal frame `S ⊗_R T → T^r` is an isomorphism. A4.3's padding
+  of an algebra of variable rank to constant rank is not used.
 
 ### From TauCetiRoadmap.DerivedModuleAlgebra and EnhancedDerivedSheaves
 
@@ -1596,20 +1608,24 @@ comparing coefficients; hence `R^a = lim_j (S_j)^a = lim_j R[j]^a`.
 
 ### 3.6 André's perfectoid Riemann extension theorem
 
-Let `A` be a perfectoid `K`-algebra and `g ∈ A°` a nonzerodivisor of `A` admitting a root system in
-`A` (its roots lie in `A°`, since `A°` is integrally closed). Prove (André A, Théorème 4.2.2 with
-proof, pp. 55–56; Lemme 4.2.3 and Remarque 4.2.4, p. 56):
+Let `A` be a perfectoid `K`-algebra and `g ∈ A°` an element admitting a root system in `A` (its
+roots lie in `A°`, since `A°` is integrally closed). Clauses (1) and (3) need no further hypothesis
+on `g`; (2) assumes that `g` is a nonzerodivisor of `A`, so that `A° ⊆ A[1/g]`, and in (4) it is one
+because multiplication by `g` is isometric. Prove (André A, Théorème 4.2.2 with proof, pp. 55–56;
+Lemme 4.2.3 and Remarque 4.2.4, p. 56):
 
 1. `lim_j A{ϖʲ/g}° = g^{-1/p^∞}A°`;
 2. this ring is the complete integral closure of `A°` in `A[1/g]`: an element `b ∈ A[1/g]` lies in
    `g^{-1/p^∞}A°` iff its powers lie in one finitely generated `A°`-submodule of `A[1/g]`, iff
    `(ϖg)^m bⁿ ∈ A°` for some `m` and all `n` (André A, (2.19), p. 26);
-3. for every perfectoid `K⟨T^{1/p^∞}⟩`-algebra `B`, with `g` the image of `T`, `g^{-1/p^∞}B°` is
-   completely integrally closed in `B[1/g]`, so the six conditions of §2.3 hold;
+3. for every perfectoid `K⟨T^{1/p^∞}⟩`-algebra `B`, with `g` the image of `T` (a zero divisor
+   allowed), `g^{-1/p^∞}B°` is completely integrally closed in `B[1/g]`: an element of `B[1/g]` whose
+   powers lie in one finitely generated `g^{-1/p^∞}B°`-submodule of `B[1/g]` lies in `g^{-1/p^∞}B°`;
+   so the six conditions of §2.3 hold (André A, Lemme 4.2.3, p. 56);
 4. if multiplication by `g` is isometric, `ulim_j A{ϖʲ/g} = g^{-1/p^∞}A`, the complete integral
    closure of `A` in `A[1/g]`;
-5. (1) and (2) hold for almost perfectoid `A` (§3.3) as well, since `A^♮` still contains the roots
-   of `g` and has the same root saturation.
+5. (1) and (2) hold for almost perfectoid `A` (§3.3) as well, under the same hypotheses on `g`,
+   since `A^♮` still contains the roots of `g` and has the same root saturation.
 
 The roots of `g` are part of the hypothesis: without them André only shows, under an Ax–Sen–Tate type
 invariance, that the limit is contained in the complete integral closure (André A, Remarque 4.2.5,
@@ -1621,9 +1637,13 @@ theorem (André A, §4, formula (4.1), p. 53).
 perfectoid-field criterion of PerfectoidSpaces P1.11 (norms accumulating at `1`, `‖p‖ < 1`, Frobenius
 surjective on `K°/p`), with `R°` Tau Ceti's `powerBoundedSubring R`, `R[1/g]` Mathlib's
 `Localization.Away`, the root saturation `rootSaturation p g hg` of §2.3 (the `b` with `g^{1/p^m}b`
-in the image of `R°` for every `m`), and the complete integral closure written with `Submodule.FG`. Statements (1), (3)
-and (4) need the Banach localisations `A{λ/g}` with their transition maps and uniform limits, which the
-pins lack.
+in the image of `R°` for every `m`), and the complete integral closure written with `Submodule.FG`.
+`rootSaturation_completelyIntegrallyClosed` states (3) on the same carriers, for every compatible
+system `g m` of `p`-power roots in `R°` and with no regularity hypothesis (a continuous
+`K⟨T^{1/p^∞}⟩`-algebra structure on `R` is the same datum, §2.3): an element `b` of `R[1/g]` such that
+some finitely generated `rootSaturation p g hg`-submodule of `R[1/g]` contains every power `bⁿ` lies
+in `rootSaturation p g hg`. Statements (1) and (4) need the Banach localisations `A{λ/g}` with their
+transition maps and uniform limits, which the pins lack.
 
 *Proof sketch.* Reduce the almost perfectoid case to `A^♮`. By §3.4, `A°⟨(ϖʲ/g)^{1/p^∞}⟩ → A{ϖʲ/g}°`
 is an almost isomorphism; apply §3.5 to `R = A°/ϖ^r` to get
@@ -1632,14 +1652,24 @@ is an almost isomorphism; apply §3.5 to `R = A°/ϖ^r` to get
 §2.3: `g^{-1/p^∞}A° = lim_j A{ϖʲ/g}°`. For (3): if `a ∈ B°[1/g]` and `a^p ∈ g^{-1/p^∞}B°`, then in each
 `B{ϖʲ/g}^u` a power-bounded multiple of `a` has power-bounded `p`-th power, so `a` is power-bounded
 there (spectral unit balls are `p`-root closed, §2.2); in the limit `a ∈ g^{-1/p^∞}B°`, which is the
-first condition of §2.3, and that gives (2).
+first condition of §2.3; by §2.3 it gives the sixth condition, which is (3), and for a nonzerodivisor
+`g` the fourth, which is (2). None of the inputs of (1) (§3.4, §3.5, the root saturation of §2.3 as
+almost elements, and the commutation of root saturation with limits) uses regularity of `g`, so (1)
+and (3) hold for every `g` with a root system.
 
-*Needs:* §2.2, §2.3, §2.6, §3.1, §3.3, §3.4, §3.5; PerfectoidSpaces P1.1, P1.11.
+*Needs:* §2.2, §2.3, §2.6, §3.1, §3.3, §3.4, §3.5; PerfectoidSpaces P1.1, P1.11; Mathlib
+`Submodule.FG`.
 
 **Checks.**
 
 - For `A = K⟨T^{1/p^∞}⟩` and `g = T`: `lim_j K⟨T^{1/p^∞}⟩{ϖʲ/T}° = K°⟨T^{1/p^∞}⟩` (§2.3), so
   bounded functions on the punctured perfectoid disc extend.
+- (3) holds for zero divisors: for `A = K × K` and `g = (1, 0)` with every root equal to `(1, 0)`,
+  `A[1/g] = K` (the first factor), and the image of `A°` and the root saturation are both `K°`. If
+  every power of `b ∈ K` lies in `K°c₁ + ⋯ + K°c_k`, then `|b|ⁿ ≤ max_i |c_i|` for all `n`, so
+  `|b| ≤ 1` and `b ∈ K°`; for `b = ϖ^{−1}` the norms `|ϖ|^{−n}` are unbounded and no such module
+  exists. A form of (3) that assumed `g` regular would not apply to this algebra. For `g = 0` (all
+  roots `0`) both `A[1/g]` and the root saturation are the zero ring, and (3) holds trivially.
 - For `g` a unit both sides of (2) are `A°`: an element of `A` whose powers lie in a finitely
   generated `A°`-submodule is power-bounded because `A` is uniform.
 - The complete integral closure cannot be replaced by the integral closure: in characteristic `p`, for
@@ -1653,9 +1683,9 @@ first condition of §2.3, and that gives (2).
 
 ### 3.7 the largest perfectoid subalgebra of `A[1/g]`
 
-In the setting of §3.6 give `A` its spectral norm. Prove (André A, Corollaire 4.2.4 with proof,
-p. 56): (1) `(g^{-1/p^∞}A°[1/ϖ])^♮` is the largest spectral perfectoid `A`-algebra contained in
-`A[1/g]`, where "contained" is as abstract `A`-algebras and the structure map from `A` is continuous;
+In the setting of §3.6, with `g` a nonzerodivisor of `A`, give `A` its spectral norm. Prove (André A,
+Corollaire 4.2.4 with proof, p. 56): (1) `(g^{-1/p^∞}A°[1/ϖ])^♮` is the largest spectral perfectoid
+`A`-algebra contained in `A[1/g]`, where "contained" is as abstract `A`-algebras and the structure map from `A` is continuous;
 (2) `(g^{-1/p^∞}A°)♭ ≅ (g♭)^{-1/p^∞}A♭°`, hence
 `(g^{-1/p^∞}A°[1/ϖ])^♮ ≅ ((g♭)^{-1/p^∞}A♭°[1/ϖ♭])^♯`.
 
@@ -1672,8 +1702,8 @@ formula with §3.4: `(lim A{ϖʲ/g}°)♭ = lim A♭{(ϖ♭)ʲ/g♭}°`.
   `A`-algebra in `A[1/T]`: bounded functions on the punctured perfectoid disc are already functions on
   the disc.
 - For `g` a unit, the largest perfectoid subalgebra is `A` itself.
-- For the characteristic-`p` algebra `B` of §3.6's last Check (with `g = T₁`), the largest perfectoid
-  `B`-algebra in `B[1/T₁]` is `P`, strictly larger than `B`.
+- For the characteristic-`p` algebra `B = K + (Σ_m T₁^{1/p^m}P)^−` in the Checks of §3.6 (with
+  `g = T₁`), the largest perfectoid `B`-algebra in `B[1/T₁]` is `P`, strictly larger than `B`.
 
 ### 3.8 uniform limits of perfectoid algebras
 
@@ -1821,8 +1851,9 @@ PerfectoidQuotients §1.4; DerivedModuleAlgebra §1.T.1; Tau Ceti
 
 The Abhyankar lemma is proved by restricting a finite étale `A[1/g]`-algebra `B′` to the annuli
 `A{ϖʲ/g}`, where almost purity applies, and taking the uniform limit. Finite étaleness is not an
-equational condition, but being Galois is: the layer therefore develops almost Galois extensions and
-the classical Galois closure and rigidity lemmas, and reduces every statement to the Galois case. The
+equational condition, but being Galois is: the layer therefore develops almost Galois extensions,
+imports the symmetric-group splitting torsor of AdicEtaleGeometry A4.3, proves the classical
+stabiliser and rigidity lemmas, and reduces every statement to the Galois case. The
 output is ramified almost purity and the perfectoid Abhyankar lemma. In §4.3–§4.6, `K` is a
 perfectoid field, `ϖ ∈ K°°` has `|p| ≤ |ϖ|` and a root system, `(V, m) = (K°[T^{1/p^∞}], (ϖT)^{1/p^∞}V)`,
 `A` is a perfectoid (or almost perfectoid) `K⟨T^{1/p^∞}⟩`-algebra, `g = T·1 ∈ A°` and `A[j] = A{ϖʲ/g}`.
@@ -1883,32 +1914,55 @@ Its API consists of the following facts.
 
 ### 4.2 Galois closures of finite étale extensions and Galois rigidity
 
-Prove (André A, §1.9.3, Lemmes 1.9.2–1.9.3 with proofs, p. 10): (1) for a finite étale extension
-`R → S` of rings of constant rank `r ≥ 1` (faithful, so `r ≥ 1`), there is a Galois extension `R → T`
-with group `S_r` factoring through `S` such that `S → T` is Galois with group `S_{r−1}`: `T` is the ring
-of the complement `Z` of all partial diagonals in the `r`-fold fibre product
-`Spec S ×_{Spec R} ⋯ ×_{Spec R} Spec S`, with `S_r` permuting the factors; (2) if `G` is a finite group of
-automorphisms of a ring `S`, `R = S^G`, and `R ⊆ S′ ⊆ S` is a `G`-stable intermediate ring that is
-`G`-Galois over `R`, then `S′ = S`. Both are classical; connectedness of `Spec R` is not required. A
-general finite étale algebra is first split along its open and closed constant-rank loci, and the
-rank-zero part is treated separately.
+Let `R → S` be a finite étale extension of rings of constant rank `r ≥ 1` (faithful, so `r ≥ 1`),
+and let `T = ε·S^{⊗r}` be its frame algebra, the finite étale `S_r`-torsor over `R` of
+AdicEtaleGeometry A4.3 (*splitting-torsor-of-finite-etale-algebra*), with `S_r` permuting the tensor
+factors; for `m = V` it is `S_r`-Galois over `R` in the sense of §4.1. Prove (André A, §1.9.3,
+Lemmes 1.9.2–1.9.3 with proofs, p. 10): (1) the first frame coordinate
+`ι : S → T`, `s ↦ ε·(s ⊗ 1 ⊗ ⋯ ⊗ 1)`, is a map of `R`-algebras, so `R → T` factors through `S`; the
+stabiliser `S_{r−1} ⊆ S_r` of the first factor acts on `T` by `S`-algebra automorphisms; and through
+`ι`, `T` is a finite étale `S_{r−1}`-torsor over `S`, so that `S = T^{S_{r−1}}`; (2) if `G` is a
+finite group of automorphisms of a ring `S`, `R = S^G`, and `R ⊆ S′ ⊆ S` is a `G`-stable
+intermediate ring that is `G`-Galois over `R`, then `S′ = S`. Both are classical; connectedness of
+`Spec R` is not required. A general finite étale algebra is first split along its open and closed
+constant-rank loci, and the rank-zero part is treated separately.
 
-*Proof sketch.* (1) `S` étale over `R` makes the partial diagonals open and closed, so `Z` is finite
-étale over `Spec R` and over `Spec S`; `S_r × Z → Z ×_X Z` (and `S_{r−1} × Z → Z ×_Y Z`) is an
-isomorphism, checked on geometric fibres where `S` is a product of `r` copies of the residue field. (2)
-The idempotents splitting `S′ ⊗_R S′ ≅ ∏_G S′` also split `S ⊗_R S′ ≅ ∏_G e_γ(S ⊗_R S′)`; faithful
+*Proof sketch.* (1) The permutations fixing the first factor fix `ε`, which is symmetric, and every
+`ι(s)`. The diagonal idempotent splits `S ⊗_R S ≅ S × S″` as `S`-algebras through the first factor,
+with `S″ = (1 − δ)(S ⊗_R S)` finite étale of constant rank `r − 1` over `S`. Writing
+`S^{⊗r} = (S ⊗_R S) ⊗_S ⋯ ⊗_S (S ⊗_R S)` (`r − 1` factors, each an `S`-algebra through its first
+factor), the idempotents `1 − δ_{1b}` cut each factor down to `S″` and the remaining `1 − δ_{ab}`,
+`2 ≤ a < b`, are the diagonal idempotents of `S″` over `S`; so `T`, as an `S`-algebra through `ι`,
+is the frame algebra of `S″` over `S`, with `S_{r−1}` permuting its factors, and A4.3 over the base
+`S` makes it an `S_{r−1}`-torsor; A4.2's fixed-ring statement gives `T^{S_{r−1}} = S`. On geometric
+fibres, where `S` is a product of `r` copies of the residue field, this says that the frames with a
+prescribed first point form a torsor under the permutations of the other `r − 1` points. (2) The
+idempotents splitting `S′ ⊗_R S′ ≅ ∏_G S′` also split `S ⊗_R S′ ≅ ∏_G e_γ(S ⊗_R S′)`; faithful
 flatness of `S′` over `R` and `G × 1`-invariants give `S ⊗_R S′ = S′ ⊗_R S′`, hence `S = S′`.
 
-*Needs:* §4.1; AdicEtaleGeometry A4.2; Mathlib `Algebra.Etale`, `Module.FaithfullyFlat`.
+*Needs:* §4.1; AdicEtaleGeometry A4.2, A4.3; Mathlib `Algebra.Etale`, `Module.FaithfullyFlat`.
 
 **Checks.**
 
-- For `r = 1`, `T = S = R` and `S_1` is trivial.
-- For `r = 2` and `S = R[x]/(x² − a)` with `2a` invertible, `T = S`.
+- For `r = 1`, `ε = 1` (an empty product), `T = S = R`, `ι` is the identity, and `S_1` and `S_0` are
+  trivial.
+- For `r = 2` and `S = R[x]/(x² − a)` with `2a` invertible, the diagonal idempotent is
+  `δ = (1 + (x ⊗ x)/a)/2`, the frame algebra is `T = (1 − δ)(S ⊗_R S)`, in which `1 ⊗ x = −(x ⊗ 1)`,
+  and `ι` identifies `T` with `S`: the `S_1`-torsor is trivial, while the transposition of `S_2`
+  acts on `T = S` by `x ↦ −x`.
 - Rank zero is excluded: over a nonzero ring `R`, `R → 0` cannot factor a faithfully flat Galois
   extension `R → T` through `0`.
 - For `R = ℚ` and `S = ℚ(2^{1/3})` (`r = 3`), `T` is the Galois closure `ℚ(2^{1/3}, ζ₃)`, of degree
-  `6 = |S_3|` over `ℚ`, and `S_2` is the Galois group of `T` over `S`.
+  `6 = 3!` over `ℚ` and `2` over `S`, and `S_2` is the Galois group of `T` over `S`. Only the
+  stabiliser acts over `S`: the transposition `(1 2)` of the nonabelian `S_3` sends
+  `ι(2^{1/3}) = ε·(2^{1/3} ⊗ 1 ⊗ 1)` to `ε·(1 ⊗ 2^{1/3} ⊗ 1)`, a different cube root of `2` in `T`, so
+  a statement making all of `S_r` act by `S`-algebra automorphisms fails here.
+- The frame torsor need not be a field when `S` is: for a cyclic cubic field `S` over `ℚ` (`r = 3`),
+  the Galois group `ℤ/3` of `S` acts freely on the six frames of its three embeddings, with two
+  orbits (the two cyclic orientations), so `T ≅ S × S`, of rank `6` over `ℚ`, and the transposition
+  `(2 3)` reverses orientations and exchanges the two factors: `T` is the trivial `S_2`-torsor over
+  `S`. Taking `T` to be the normal closure of `S` would give `S` itself, of rank `3`, which is not an
+  `S_3`-torsor.
 
 ### 4.3 annular envelopes of finite étale algebras over `A[1/g]`
 
@@ -1928,10 +1982,12 @@ projective limit `lim_j A[j]`, where `g` is invertible (it does not embed into t
 `1/T` has unbounded annular norms). If `I = ker(B′ → lim_j B_j)` then `tr(xy)` maps to zero for `x ∈ I`
 and every `y ∈ B′`, so `tr(xy) = 0`, and nondegeneracy of the finite étale trace pairing gives `I = 0`.
 For surjectivity: for `B′` Galois with group `G`, `B[1/g]^G = A[1/g]` and Galois rigidity (§4.2(2))
-concludes; in general embed `B′` in an `S_r`-Galois closure (§4.2(1)) on each constant-rank component
-of positive rank and take `S_{r−1}`-invariants.
+concludes; in general, on each constant-rank component of positive rank `r`, embed `B′` through its
+first frame coordinate in its `S_r`-Galois frame torsor (AdicEtaleGeometry A4.3), apply the Galois
+case to the torsor and take `S_{r−1}`-invariants (§4.2(1)).
 
-*Needs:* §2.4, §3.10, §3.11, §4.2; PerfectoidSpaces P0.12, P0.14, P3.10, P3.12.
+*Needs:* §2.4, §3.10, §3.11, §4.2; AdicEtaleGeometry A4.3; PerfectoidSpaces P0.12, P0.14, P3.10,
+P3.12.
 
 **Checks.**
 
@@ -1969,12 +2025,13 @@ finite étale, hence flat, over `A[1/g]`, and `p` is a nonzerodivisor on the `K�
 gap:principal-almost-flatness, with `C = A°[1/g]^a`, `M = B°[1/g]^a`, `f = p`; GR, Lemma 5.2.1,
 pp. 106–107) gives almost flatness of `B°[1/g]` over `A°[1/g]` in `(K°, K°°)`, and separatedness and
 isometry place the Galois idempotents in `ϖ^{-1/p^∞}B₂°[1/g]`. General case: reduce to the Galois case
-through an `S_r`-Galois closure (§4.2). In characteristic `p` the statement is PerfectoidSpaces P3.3
+through the `S_r`-Galois frame torsor of `B[1/g]` (AdicEtaleGeometry A4.3) and its `S_{r−1}`-invariants
+(§4.2(1)). In characteristic `p` the statement is PerfectoidSpaces P3.3
 as above, transported to the setup `(V, m)` by PerfectoidSpaces P0.16; the reduction modulo `p` is the
 algebra itself, so no lifting from `p` is needed.
 
-*Needs:* §3.6, §4.1, §4.2, §4.3; PerfectoidSpaces P0.14, P0.16, P2.16, P3.3, P3.13; PerfectoidSpaces
-P0.11, gap:principal-almost-flatness.
+*Needs:* §3.6, §4.1, §4.2, §4.3; AdicEtaleGeometry A4.3; PerfectoidSpaces P0.14, P0.16, P2.16, P3.3,
+P3.13; PerfectoidSpaces P0.11, gap:principal-almost-flatness.
 
 **Checks.**
 
@@ -2075,10 +2132,11 @@ than modulo every `p^m`) is not established (André A, §0.3; Remarque 5.2.1); i
 (2) for `m = 1` is that statement, since `p = 0`.
 
 `abhyankar_trace_almost_surjective` states (3) in the integral-closure model `B̃°` of §4.6 (André A,
-Proposition 5.3.1(3), p. 68), on the carriers of §3.6: `A = R°` for a perfectoid Tate ring `R` over a
-field `K` satisfying the perfectoid-field criterion, `g` given by its roots in `R°` and a nonzerodivisor
-of `R`, `A[1/g]` Mathlib's `Localization.Away`, `g^{-1/p^∞}A°` the subalgebra `rootSaturation p g hg`
-of §2.3, and `B̃°` Mathlib's `integralClosure` of it in `B′`. The trace is Tau Ceti's
+Proposition 5.3.1(3), p. 68), on the carriers of §3.6. Here `A = R` is a perfectoid Tate ring over a
+field `K` satisfying the perfectoid-field criterion, `A° = powerBoundedSubring R`, `g` is given by its
+roots in `R°` and is a nonzerodivisor of `R`, and `A[1/g]` is
+`Localization.Away ((g 0 : powerBoundedSubring R) : R)`; `rootSaturation p g hg` is the
+`R°`-subalgebra `g^{-1/p^∞}A°` of §2.3, and `B̃°` is Mathlib's `integralClosure` of it in `B′`. The trace is Tau Ceti's
 `LinearMap.projectiveTrace` of multiplication by an element. The statement says that the trace maps
 `B̃°` into the root saturation, and that `c·g^{1/p^l}·a` is the trace of an element of `B̃°` for every
 `a` in the root saturation, every `c ∈ K` with `|c| < 1` and every `l`. These elements `c·g^{1/p^l}`
@@ -2182,7 +2240,7 @@ AdicSpacesPartII R0.9.
 Layer 2, Layer 3; PerfectoidSpaces P0.1, P0.8, P0.9, P0.11, P0.12, P0.14, P0.16, P0.25, P1.30, P2.16,
 P3.3, P3.10–P3.13; PerfectoidSpaces P0.26, gap:complete-almost-nakayama; PerfectoidSpaces P0.11,
 gap:principal-almost-flatness; PerfectoidQuotients §1.4; AdicSpacesPartII R0.9;
-AdicEtaleGeometry A4.2; Tau Ceti `LinearMap.projectiveTrace`; Mathlib `Algebra.Etale`,
+AdicEtaleGeometry A4.2, A4.3; Tau Ceti `LinearMap.projectiveTrace`; Mathlib `Algebra.Etale`,
 `Module.FaithfullyFlat`, `integralClosure`.
 
 ## Layer 5: Purity and André's flatness theorem for Kummer towers
