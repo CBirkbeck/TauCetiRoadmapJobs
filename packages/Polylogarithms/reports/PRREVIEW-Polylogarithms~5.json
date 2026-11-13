@@ -1,0 +1,23 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-Polylogarithms~5",
+  "head": "1cf0554ef380c3673300e379eea04c9f66561530",
+  "pr": 1424,
+  "folder": "Polylogarithms",
+  "date": "2026-11-13",
+  "findings": 5,
+  "blocking": 0,
+  "notes": "incremental re-review of 92 changed lines since fc00043 (README only). Checked: the four previous findings (R01 and R03 not repaired and written again; R02 settled by PadicHodgeRegulators' head; R04 not carried); every changed passage, with the new Checks recomputed (five-term element at (-1,4) mod 3, the weight-two rational-curve recipe over F_3, inversion family, t∧2∧3∧5 residues); the new supplier citations against K3BlochGroups §§3.3, 3.6, 3.7, 4.21 at its open head; 9 new source locators in G95, GR, Z90 (all found); seeded sample where it falls in the change (§§4.4, 4.6); removed names searched on main and open heads (none cited). New P3 findings: §4.4 heading still says three assertions, [G95] Theorem 1.1 attached to the n=4 sentence, pull-request description contradicts the head in three sentences. Gate passes; depcheck 0 problems; Suggested.lean elaborates with sorry as the only warning (9).",
+  "carried": {
+   "from": "1cf0554ef380c3673300e379eea04c9f66561530",
+   "head": "bd1c355d4b1911dc824d5a7305ea474d2fefc316",
+   "findings": 5,
+   "lines": 36,
+   "folders": [
+    "Polylogarithms"
+   ],
+   "outside": true
+  }
+ }
+}
