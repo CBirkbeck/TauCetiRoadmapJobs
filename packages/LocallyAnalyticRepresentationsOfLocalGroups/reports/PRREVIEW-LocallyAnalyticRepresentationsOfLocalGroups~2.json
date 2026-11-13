@@ -1,0 +1,22 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-LocallyAnalyticRepresentationsOfLocalGroups~2",
+  "head": "c71cc7db0afe4b887dccb6f2921ee092c473facb",
+  "pr": 2294,
+  "folder": "LocallyAnalyticRepresentationsOfLocalGroups",
+  "date": "2026-11-13",
+  "findings": 0,
+  "blocking": 0,
+  "notes": "incremental re-review of 46 changed lines since 3a7730d. R01, R02, R04, R05, R06 of the previous review repaired; R03 is deferred finding D01, which stands. Checked: the new supplier contracts against LocallyAnalyticDistributionsPartII sections 1.4-1.5 at its open head; ReductiveGroups 9A item 5, AdicSpacesPartIII R3.4 and LieHighestWeight Layers 3, 7, 9 on main; seven Tau Ceti declarations at the pin; the rewritten 3.2, 3.4-3.8 against BCGP25 lines 1019-1111 (wording and mathematics) and ST03 Lemmas 3.6, 3.8; seeded-sample targets 1.1 and 3.7 where they fall in changed passages; the pull request text against the head. Adversarial table: 11 rows with computed values. Gate: every check passed; depcheck 0 problems; Suggested.lean elaborates with no output and declares nothing. Accepted conditional on the seven declared supplier gaps.",
+  "deferred": [
+   {
+    "id": "D01",
+    "severity": "P2",
+    "title": "Two declared gaps ask LocallyAnalyticDistributions for what Mathlib and its own §0.0 provide",
+    "where": "board `design/plan.json` `needs` text of gaps barrelled-banach-steinhaus and compact-type-tensor",
+    "raised": "PRREVIEW-LocallyAnalyticRepresentationsOfLocalGroups~1"
+   }
+  ]
+ }
+}
