@@ -1,0 +1,39 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "KTheoryFiniteLocalFields"
+
+[[source]]
+id = "HM03"
+authors = "Lars Hesselholt, Ib Madsen"
+title = "On the K-theory of local fields"
+year = 1999
+venue = "Ann. of Math. (2) 158 (2003), no. 1, 1--113"
+doi = "10.4007/annals.2003.158.1"
+arxiv = "math/9910186v2"
+locator_scheme = "page"
+locator = "Theorems A–D pp.1–7; §§1–6 pp.7–104; Appendix A pp.105–111 (arXiv v2 pagination)"
+url = "https://arxiv.org/abs/math/9910186v2"
+fetched_from = "https://arxiv.org/pdf/math/9910186v2"
+fetched_at = "2026-11-13T16:10:19Z"
+sha256 = "38f4919e35a7afedc8503c921929ac892fb1fe102d461724ce464d6923e44d0e"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-13"
+version_note = "arXiv v2"
+cited_for = ["4.1", "4.5", "4.6", "4.8", "5.1", "5.5", "5.14", "5.15"]
+
+[[source]]
+id = "MILNE"
+authors = "J. S. Milne"
+title = "Class Field Theory"
+year = 2020
+version_note = "course notes v4.03, 6 August 2020; printed p.114 is PDF p.123"
+locator_scheme = "theorem"
+locator = "Chapter III, Remark 4.5, p.114"
+url = "https://www.jmilne.org/math/CourseNotes/CFT.pdf"
+fetched_from = "https://www.jmilne.org/math/CourseNotes/CFT.pdf"
+fetched_at = "2026-11-13T16:10:26Z"
+sha256 = "50d79af78250a9f1117ad9d337e0b231704a533fc707966ed1bfa52e13d498f5"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-13"
+cited_for = ["3.1"]
