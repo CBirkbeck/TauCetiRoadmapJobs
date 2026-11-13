@@ -8,8 +8,7 @@ and Tau Ceti, the headline theorems of the roadmap that are statable at the pins
 the file declares nothing. The headline theorems and the carrier each one lacks at the pins:
 
 * Kato's main conjecture for every CM newform and every prime (Burungale–Tian, Theorem 2.6;
-  README §8.6), and the CM case of Kato's Theorem 12.4 that precedes it (torsion of `H²`,
-  torsion-free rank one `H¹`; README §7.8). They need the `p`-adic Galois representation of a newform
+  README §8.6). It needs the `p`-adic Galois representation of a newform
   (`HeckeRing.GL2.Newform` carries no Galois representation at the pins), Kato's cyclotomic
   Iwasawa cohomology of `ℤ[ζ_{p^n}, 1/p]` with `j_*` coefficients, and Kato's zeta morphism
   and zeta submodule; none exists in Mathlib or Tau Ceti.
