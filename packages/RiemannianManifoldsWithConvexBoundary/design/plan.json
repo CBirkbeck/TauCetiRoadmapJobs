@@ -1220,7 +1220,7 @@
      "id": "4.3.3",
      "kind": "theorem",
      "name": "boundaryDistance_eq_signedDistance",
-     "statement": "For Σ = ∂M (f = ρ): on W' ∩ M, r_{∂M} = d_M(·, ∂M) (intrinsic distance of (M, g_M), Manifold.riemannianEDist); r_{∂M} is a boundary defining function near ∂M with grad = ν_in on ∂M. Normalised defining function: with a smooth ε₁ < ε (constant when ∂M is compact) such that the closed tube E_{∂M}({|r| ≤ ε₁(q)}) is closed in N, W := E_{∂M}({|r| < ε(q)}) and W₁ := E_{∂M}({|r| < ε₁(q)}), there is ρ̂ ∈ C^∞(N) with ρ̂ = r_{∂M} on W₁, ρ̂ = 1 on M ∖ W, ρ̂ = −1 on N ∖ (M ∪ W), ρ̂ between r_{∂M} and 1 on W ∩ M and between r_{∂M} and −1 on W ∖ M; hence M = {ρ̂ ≥ 0}, ∂M = {ρ̂ = 0}, N ∖ M = {ρ̂ < 0}, grad ρ̂ = ν_in on ∂M, and for 0 < ε < 1 every point of {ρ̂ ≥ −ε} ∖ M lies in W with r_{∂M} ≥ −ε. Route: ρ̂ = ψ r_{∂M} + (1 − ψ) s with ψ a cutoff equal to 1 on the closed tube and 0 off W, and s : N → [−1, 1] equal to 1 on M ∖ W₁ and −1 on N ∖ (M ∪ W₁) (both closed since ∂M ⊆ W₁), from exists_contMDiff_zero_iff_one_iff_of_isClosed.",
+     "statement": "For Σ = ∂M (f = ρ): on W' ∩ M, r_{∂M} = d_M(·, ∂M) (intrinsic distance of (M, g_M), Manifold.riemannianEDist); r_{∂M} is a boundary defining function near ∂M with grad = ν_in on ∂M. Normalised defining function: with smooth ε₁ < ε₂ < ε (constant when ∂M is compact) such that the closed tubes E_{∂M}({|r| ≤ ε₁(q)}) and E_{∂M}({|r| ≤ ε₂(q)}) are closed in N (the closed-tube theorem inside W gives ε₂; every smaller positive continuous radius, such as ε₁ = ε₂/2, has a closed tube, the image of a closed subset of the closed ε₂-disc bundle), W := E_{∂M}({|r| < ε(q)}), W₂ := E_{∂M}({|r| < ε₂(q)}) and W₁ := E_{∂M}({|r| < ε₁(q)}), there is ρ̂ ∈ C^∞(N) with ρ̂ = r_{∂M} on W₁, ρ̂ = 1 on M ∖ W, ρ̂ = −1 on N ∖ (M ∪ W), ρ̂ between r_{∂M} and 1 on W ∩ M and between r_{∂M} and −1 on W ∖ M; hence M = {ρ̂ ≥ 0}, ∂M = {ρ̂ = 0}, N ∖ M = {ρ̂ < 0}, grad ρ̂ = ν_in on ∂M, and for 0 < ε < 1 every point of {ρ̂ ≥ −ε} ∖ M lies in W with r_{∂M} ≥ −ε. Route: ρ̂ = ψ r_{∂M} + (1 − ψ) s with ψ : N → [0, 1] a cutoff equal to 1 on the closed ε₁-tube and 0 on the closed set N ∖ W₂, and s : N → [−1, 1] equal to 1 on M ∖ W₁ and −1 on N ∖ (M ∪ W₁) (both closed since ∂M ⊆ W₁), from exists_contMDiff_zero_iff_one_iff_of_isClosed; the support of ψ lies in the closed ε₂-tube, closed in N and contained in W, so ψ r_{∂M} extended by 0 is smooth on the open cover {W, N ∖ closed ε₂-tube} of N.",
      "hypotheses": [
       "(N, g) Hausdorff boundaryless smooth manifold over 𝓘(ℝ, E), finrank ℝ E = n + 1, with a smooth Riemannian metric",
       "ρ : N → ℝ smooth with 0 a regular value; M = {ρ ≥ 0} with Tau Ceti's sublevel atlas for −ρ and the pulled-back metric (3.1)",
@@ -1244,12 +1244,17 @@
       {
        "name": "ball",
        "kind": "computation",
-       "statement": "Unit ball: d_M(x, ∂M) = 1 − |x| = r_{∂M}; with ε = 1/2, ε₁ = 1/4, ρ̂ = 1 − |x| on 3/4 < |x| < 5/4, ρ̂ = 1 on |x| ≤ 1/2 and ρ̂ = −1 on |x| ≥ 3/2."
+       "statement": "Unit ball: d_M(x, ∂M) = 1 − |x| = r_{∂M}; with ε = 1/2, ε₂ = 3/8, ε₁ = 1/4, ρ̂ = 1 − |x| on 3/4 < |x| < 5/4, ρ̂ = 1 on |x| ≤ 1/2 and ρ̂ = −1 on |x| ≥ 3/2."
       },
       {
        "name": "sandwich",
        "kind": "compatibility",
        "statement": "On W ∖ M the value ρ̂ is a convex combination of r_{∂M} < 0 and −1, so {ρ̂ ≥ −ε} ∖ M ⊆ {r_{∂M} ≥ −ε} for ε < 1; the unnormalised ψ r_{∂M} + (1 − ψ) ρ has no such bound (4.6's negative control)."
+      },
+      {
+       "name": "cutoff_frontier",
+       "kind": "non-example",
+       "statement": "Closed unit ball, ρ = 1 − |x|², ε = 1: W = {0 < |x| < 2} has the centre 0 on its frontier, where r_{∂M} = 1 − |x| is not smooth; a cutoff only required to vanish off W may equal |x|² near 0, and then ψ r_{∂M} = |x|² − |x|³ is not C³ at 0. With ε₂ = 3/4, ε₁ = 1/2: W₂ = {1/4 < |x| < 7/4}, ψ = 0 for |x| ≤ 1/4, ψ r_{∂M} vanishes near 0 and ρ̂ = s = 1 there."
       }
      ]
     },
@@ -1493,7 +1498,7 @@
       {
        "name": "exitTime_flow",
        "role": "structure",
-       "statement": "For compact M and unit v with τ < ∞: the geodesic extends to [0, τ], ends on ∂M with μ ≤ 0; for 0 ≤ t ≤ τ(x, v) and (y, w) = φ_t(x, v): τ(y, w) = τ(x, v) − t and τ(y, −w) = τ(x, −v) + t."
+       "statement": "For compact M and (x, v) ∈ SM (unit v, as μ and φ_t require) with τ(x, v) < ∞: the geodesic extends to [0, τ], ends on ∂M with μ ≤ 0; for 0 ≤ t ≤ τ(x, v) and (y, w) = φ_t(x, v) ∈ SM: τ(y, w) = τ(x, v) − t and τ(y, −w) = τ(x, −v) + t."
       },
       {
        "name": "closed_trapped",
@@ -2157,9 +2162,10 @@
      "id": "6.4",
      "kind": "example",
      "name": "smallGeodesicBall",
-     "statement": "For boundaryless Hausdorff (N, g) and p ∈ N there is r_p > 0 such that for 0 < R < r_p, d(p, ·)² is smooth on B(p, r_p) with R² regular, and B̄(p, R) is a compact regular domain with strictly convex boundary, non-trapping; r_p uniform over compact sets of centres.",
+     "statement": "For boundaryless Hausdorff second-countable (N, g) and p ∈ N there is r_p > 0 such that for 0 < R < r_p, d(p, ·)² is smooth on B(p, r_p) with R² regular, and B̄(p, R) is a compact regular domain with strictly convex boundary, non-trapping; r_p uniform over compact sets of centres.",
      "hypotheses": [
       "(N, g) Hausdorff boundaryless smooth manifold over 𝓘(ℝ, E), finrank ℝ E = n + 1, with a smooth Riemannian metric",
+      "N second countable (the standing hypothesis of Layer 5, whose criterion 5.5.1 the route applies, and of SmoothBundlesConnections B6.0)",
       "p ∈ N"
      ],
      "locator": {

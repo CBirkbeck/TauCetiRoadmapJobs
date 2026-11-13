@@ -794,7 +794,9 @@ ComplexKahlerGeometry K5a and DifferentialGeometry 12.1; 3.5 uses 3.3–3.4 and 
 ## Layer 4: Geodesics at the boundary
 
 Throughout, `(N, g)` is a Hausdorff boundaryless Riemannian manifold as in 3.1 and
-`M = {ρ ≥ 0}` a regular domain; by 3.5 every `(M, g)` is one.
+`M = {ρ ≥ 0}` a regular domain; by 3.5 every `(M, g)` is one. In 4.3, 4.4 and 4.6, which use Tau
+Ceti's tube theorems (stated for a second-countable ambient manifold) and partitions of unity, `N`
+is moreover second countable; 4.1, 4.2 and 4.5 are local and do not assume it.
 
 ### 4.1 Geodesics of a regular domain
 
@@ -877,25 +879,40 @@ Ceti `TauCeti.SmoothEmbedding.normalExp` through the trivialisation of the norma
 - Boundary case `Σ = ∂M`, `f = ρ`: on `W' ∩ M`, `r_{∂M}(y) = d_M(y, ∂M)`, the distance to `∂M` of
   `(M, g_M)` itself (no path is shorter than the normal segment, which lies in `M`), and `r_{∂M}`
   is a boundary defining function near `∂M` with `grad r_{∂M} = ν_in` on `∂M`.
-- Normalised defining function: choose a smooth `ε₁ : ∂M → (0, ∞)` with `ε₁ < ε`, constant when
-  `∂M` is compact, such that the closed tube `E_{∂M}({|r| ≤ ε₁(q)})` is closed in `N` (Tau Ceti's
-  closed-tube theorem, applied inside `W`), and write `W := E_{∂M}({|r| < ε(q)})` and
-  `W₁ := E_{∂M}({|r| < ε₁(q)})`. There is `ρ̂ ∈ C^∞(N)` with `ρ̂ = r_{∂M}` on `W₁` (so
-  `ρ̂ = d_M(·, ∂M)` on the neighbourhood `W₁ ∩ W' ∩ M` of `∂M` in `M`), `ρ̂ = 1` on `M ∖ W`,
-  `ρ̂ = −1` on `N ∖ (M ∪ W)`, and `ρ̂` between `r_{∂M}` and `1` on `W ∩ M` and between `r_{∂M}`
-  and `−1` on `W ∖ M`. Hence
-  `M = {ρ̂ ≥ 0}`, `∂M = {ρ̂ = 0}`, `N ∖ M = {ρ̂ < 0}`, `grad ρ̂ = ν_in` on `∂M`, and for
-  `0 < ε < 1` every point of `{ρ̂ ≥ −ε} ∖ M` lies in `W` with `r_{∂M} ≥ −ε`. Route:
+- Normalised defining function: choose smooth `ε₁, ε₂ : ∂M → (0, ∞)` with `ε₁ < ε₂ < ε`, constant
+  when `∂M` is compact, such that the closed tubes `E_{∂M}({|r| ≤ ε₁(q)})` and
+  `E_{∂M}({|r| ≤ ε₂(q)})` are closed in `N` (Tau Ceti's closed-tube theorem, applied inside `W`,
+  gives a radius `ε₂` with closed tube; every smaller positive continuous radius, such as the
+  minimum of `ε₂` when `∂M` is compact and then `ε₁ := ε₂/2`, has a closed tube too, the image of a
+  closed subset of the closed `ε₂`-disc bundle under the same closed embedding), and write
+  `W := E_{∂M}({|r| < ε(q)})`, `W₂ := E_{∂M}({|r| < ε₂(q)})` and `W₁ := E_{∂M}({|r| < ε₁(q)})`.
+  There is `ρ̂ ∈ C^∞(N)` with `ρ̂ = r_{∂M}` on `W₁` (so `ρ̂ = d_M(·, ∂M)` on the neighbourhood
+  `W₁ ∩ W' ∩ M` of `∂M` in `M`), `ρ̂ = 1` on `M ∖ W`, `ρ̂ = −1` on `N ∖ (M ∪ W)`, and `ρ̂` between
+  `r_{∂M}` and `1` on `W ∩ M` and between `r_{∂M}` and `−1` on `W ∖ M`. Hence `M = {ρ̂ ≥ 0}`,
+  `∂M = {ρ̂ = 0}`, `N ∖ M = {ρ̂ < 0}`, `grad ρ̂ = ν_in` on `∂M`, and for `0 < ε < 1` every point
+  of `{ρ̂ ≥ −ε} ∖ M` lies in `W` with `r_{∂M} ≥ −ε`. Route:
   `ρ̂ = ψ r_{∂M} + (1 − ψ) s` with a smooth cutoff `ψ : N → [0, 1]` equal to `1` on the closed
-  tube `E_{∂M}({|r| ≤ ε₁(q)})` and to `0` off `W`, and a smooth `s : N → [−1, 1]` equal to `1` on
-  the closed set `M ∖ W₁` and to `−1` on the closed set `N ∖ (M ∪ W₁)` (closed because
-  `∂M ⊆ W₁`), both from Mathlib's `exists_contMDiff_zero_iff_one_iff_of_isClosed`; on `W ∖ W₁`
-  the value `ρ̂` is a convex combination of `r_{∂M}` and `s = ±1`.
+  tube `E_{∂M}({|r| ≤ ε₁(q)})` and to `0` on the closed set `N ∖ W₂`, and a smooth
+  `s : N → [−1, 1]` equal to `1` on the closed set `M ∖ W₁` and to `−1` on the closed set
+  `N ∖ (M ∪ W₁)` (closed because `∂M ⊆ W₁`), both from Mathlib's
+  `exists_contMDiff_zero_iff_one_iff_of_isClosed`. The support of `ψ` lies in the closure of `W₂`,
+  hence in the closed `ε₂`-tube, which is closed in `N` and contained in `W`; so `ψ r_{∂M}`,
+  extended by `0`, is smooth on each of the open sets `W` and `N ∖ E_{∂M}({|r| ≤ ε₂(q)})`, which
+  cover `N`. A cutoff that is merely `0` off `W` can be positive up to the frontier of `W`, where
+  `r_{∂M}` need not extend smoothly. On `W ∖ W₁` the value `ρ̂` is a convex combination of
+  `r_{∂M}` and `s = ±1`.
 
 **Checks.**
 
 - `Σ = S^n ⊆ ℝⁿ⁺¹`, `f = 1 − |x|²`: `ν_Σ = −x`, `E(q, r) = (1 − r)q`, `r_Σ = 1 − |x|` on
   `0 < |x| < 2`, `|grad r_Σ| = 1`; `ε` cannot exceed `1`, where the normals meet at the centre.
+- The cutoff must vanish near the frontier of `W`: for the closed unit ball, `ρ = 1 − |x|²`, the
+  constant `ε = 1` is admissible, `W = {0 < |x| < 2}` and `r_{∂M} = 1 − |x|` is not smooth at the
+  centre `0`, a frontier point of `W`. A cutoff that is only required to vanish off `W` may equal
+  `|x|²` near `0`; then `ψ r_{∂M} = |x|² − |x|³` there, which is not `C³` at `0` (on a line
+  through `0`, `|t|³` has third derivative `6 sign t` off `0`). With `ε₂ = 3/4` and `ε₁ = 1/2`,
+  `W₂ = {1/4 < |x| < 7/4}`, so `ψ = 0` for `|x| ≤ 1/4` and for `|x| ≥ 7/4`, `ψ r_{∂M}` vanishes
+  near `0`, and `ρ̂ = s = 1` there, as required on `M ∖ W₁`.
 - For the exterior domain, `f = |x|² − 1` gives `r_Σ = |x| − 1`; the sign is fixed by `f`, not by `Σ`.
 - In a slanted collar of the half-plane, `(q, r) ↦ q + r(e₀ + e₁)`, the cross term
   `⟨∂_r, ∂_{x₁}⟩ = 1` is nonzero; the normal exponential is the collar with no cross term.
@@ -1070,9 +1087,10 @@ with `sup ∅ = 0`; `M` is non-trapping if `τ(x, v) < ∞` for every unit `(x, 
 - Homogeneity: `τ(x, λ v) = τ(x, v)/λ` for `λ > 0`; `τ(x, 0) = ∞`.
 - `τ(x, v) > 0` if `x ∈ int M` or `v` is inward; `τ = 0` on outward vectors at boundary points;
   `τ = 0` on `∂₀S_qM` if `∂M` is strictly convex at `q` (4.2), so then `τ = 0` on `∂₋S_qM`.
-- If `M` is compact and `τ(x, v) < ∞`, the geodesic extends to `[0, τ(x, v)]`, ends on `∂M`, and
-  `μ(φ_τ(x, v)) ≤ 0`; for `0 ≤ t ≤ τ(x, v)`, with `(y, w) = φ_t(x, v)`,
-  `τ(y, w) = τ(x, v) − t` and `τ(y, −w) = τ(x, −v) + t` (reversal of geodesics).
+- If `M` is compact, `(x, v) ∈ SM` (so `v` is a unit vector, as `μ` and `φ_t` require) and
+  `τ(x, v) < ∞`, the geodesic extends to `[0, τ(x, v)]`, ends on `∂M`, and `μ(φ_τ(x, v)) ≤ 0`; for
+  `0 ≤ t ≤ τ(x, v)`, with `(y, w) = φ_t(x, v) ∈ SM`, `τ(y, w) = τ(x, v) − t` and
+  `τ(y, −w) = τ(x, −v) + t` (reversal of geodesics).
 - A nonempty compact `M` with empty boundary is trapped (`τ ≡ ∞`).
 
 **Checks.**
@@ -1345,12 +1363,14 @@ closed balls `{u ≤ cosh R}`, `R > 0`, are strictly convex with `II = coth R ·
 
 ### 6.4 Small geodesic balls
 
-Prove: for a boundaryless Hausdorff Riemannian `(N, g)` and `p ∈ N` there is `r_p > 0` such that
-for `0 < R < r_p` the function `d(p, ·)²` is smooth on `B(p, r_p)` with `R²` a regular value there,
-and the closed ball `B̄(p, R) = {d(p, ·)² ≤ R²}` is a compact regular domain with strictly convex
-boundary which is non-trapping; on a compact set of centres `r_p` can be chosen uniformly
-(Lee, *Introduction to Riemannian Manifolds*, Ch. 6; the spherical-cap instance is
-Paternain–Salo–Uhlmann, Example 3.1.4, lines 2677–2678). Route:
+Prove: for a boundaryless Hausdorff second-countable Riemannian `(N, g)` and `p ∈ N` there is
+`r_p > 0` such that for `0 < R < r_p` the function `d(p, ·)²` is smooth on `B(p, r_p)` with `R²` a
+regular value there, and the closed ball `B̄(p, R) = {d(p, ·)² ≤ R²}` is a compact regular domain
+with strictly convex boundary which is non-trapping; on a compact set of centres `r_p` can be
+chosen uniformly (Lee, *Introduction to Riemannian Manifolds*, Ch. 6; the spherical-cap instance is
+Paternain–Salo–Uhlmann, Example 3.1.4, lines 2677–2678). Second countability is the standing
+hypothesis of Layer 5, whose non-trapping criterion 5.5 the route applies, and of
+SmoothBundlesConnections B6.0. Route:
 in normal coordinates `z` at `p`, `d(p, ·) = |z|` (HopfRinow Layer 2), the Christoffel symbols vanish
 at `p` (RiemannianGeometry R1 item 4), so `Hess |z|² = 2g + O(|z|²)`, positive definite on a small
 ball; apply 3.2 and 5.5; uniformity from SmoothBundlesConnections B6.0.
