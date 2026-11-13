@@ -1,8 +1,6 @@
-module
-
-public import Mathlib
-public import TauCeti.RepresentationTheory.Homological.ContCohomology.CohomologicalDimension.Basic
-public import TauCeti.Topology.Algebra.Group.Profinite.ProP.Basic
+import Mathlib
+import TauCeti.RepresentationTheory.Homological.ContCohomology.CohomologicalDimension.Basic
+import TauCeti.Topology.Algebra.Group.Profinite.ProP.Basic
 
 /-!
 # Local fields and ramification, Part II: target signatures
@@ -25,10 +23,12 @@ Headline theorems stated below:
 * the separable export: a separably `P`-closed field is separably tame at every valuation whose
   residue characteristic lies in `P` (Layer 6);
 * the Kuhlmann–Pank–Roquette splitting over a henselian valued field (Layer 3);
-* the algebraic Abhyankar inequality and the resulting height bound (Layer 5);
-* the two profinite inputs of the splitting theorem: `cd_p(G_F) ≤ 1` for a field of
-  characteristic `p`, and continuous sections of surjections with pro-`p` kernel onto groups of
-  `p`-cohomological dimension at most one (Layer 3).
+* the profinite input of the splitting theorem: continuous sections of surjections with pro-`p`
+  kernel onto groups of `p`-cohomological dimension at most one (Layer 3);
+* finite presentation of flat finite-type algebras, and of finite modules flat over the base, over
+  a Prüfer domain (Layer 1);
+* Krasner's lemma over a henselian, not necessarily complete, rank-one normed field (Layer 4);
+* the algebraic Abhyankar inequality and the resulting height bound (Layer 5).
 
 Headline theorems not statable at the pins:
 
@@ -37,12 +37,11 @@ Headline theorems not statable at the pins:
   inertia subgroup of a prolongation to the separable closure and its fixed field, which neither
   library provides (Mathlib has decomposition and inertia subgroups only);
 * the tensor decomposition `L ⊗_K Kʰ ≅ ∏ L_wʰ` and the height-one decompletion: they need the
-  henselization of a valued field, which neither library provides;
+  henselization of a valued field, which neither library provides (Tau Ceti has the henselization
+  of the valuation ring as a ring, not the valued field built on it inside a separable closure);
 * the composition criteria for unramified and tame extensions: they need the unramified and tame
   extension classes of a non-henselian field, defined through the henselization.
 -/
-
-@[expose] public section
 
 namespace TauCetiRoadmap.LocalFieldsRamificationPartII
 
@@ -67,6 +66,32 @@ whose degree is a `P`-number. No perfection is imposed. -/
 def IsSeparablyPClosed (P : Set ℕ) (K : Type*) [Field K] : Prop :=
   ∀ E : IntermediateField K (AlgebraicClosure K), FiniteDimensional K E →
     Algebra.IsSeparable K E → IsPNumber P (Module.finrank K E) → E = ⊥
+
+/-! ## Layer 1: finite presentation over Prüfer domains -/
+
+/-- **Flat finite-type algebras over a Prüfer domain are finitely presented.** Let `A` be a
+domain whose localization at every maximal ideal is a valuation ring, and `B` an `A`-algebra of
+finite type that is flat over `A`. Then `B` is a finitely presented `A`-algebra. For a valuation
+ring this is Stacks, Lemma 15.26.6 (tag 053E); for a domain it is the domain case of
+Raynaud–Gruson, Corollaire 3.4.7. -/
+theorem finitePresentation_of_flat_of_valuationRing_localization (A B : Type*) [CommRing A]
+    [IsDomain A] [CommRing B] [Algebra A B] [Algebra.FiniteType A B] [Module.Flat A B]
+    (hA : ∀ (P : Ideal A), [P.IsMaximal] → ValuationRing (Localization P.primeCompl)) :
+    Algebra.FinitePresentation A B := by
+  sorry
+
+/-- **Finite modules flat over a Prüfer domain are finitely presented.** Let `A` be a domain
+whose localization at every maximal ideal is a valuation ring, `B` an `A`-algebra of finite type
+and `M` a finite `B`-module that is flat as an `A`-module. Then `M` is a finitely presented
+`B`-module; the flatness hypothesis is on `M`, not on `B` (Stacks, Lemma 15.26.6, tag 053E, for a
+valuation ring). -/
+theorem module_finitePresentation_of_flat_of_valuationRing_localization (A B M : Type*)
+    [CommRing A] [IsDomain A] [CommRing B] [Algebra A B] [Algebra.FiniteType A B]
+    [AddCommGroup M] [Module A M] [Module B M] [IsScalarTower A B M] [Module.Finite B M]
+    [Module.Flat A M]
+    (hA : ∀ (P : Ideal A), [P.IsMaximal] → ValuationRing (Localization P.primeCompl)) :
+    Module.FinitePresentation B M := by
+  sorry
 
 /-! ## Layer 2: tame Galois extensions and tame fields -/
 
@@ -100,15 +125,7 @@ noncomputable def galoisTamePart {K : Type*} [Field K] (V : ValuationSubring K) 
     IntermediateField K (AlgebraicClosure K) :=
   ⨆ (L : IntermediateField K (AlgebraicClosure K)) (_ : IsTameGaloisExtension V L), L
 
-/-! ## Layer 3: the splitting theorem over a henselian field and its profinite inputs -/
-
-/-- **`cd_p(G_F) ≤ 1` in characteristic `p`.** For every field `F` of characteristic `p`, the
-absolute Galois group of `F` has `p`-cohomological dimension at most one (Serre, *Galois
-Cohomology*, II §2.2, Proposition 3; the Artin–Schreier sequence). -/
-theorem cohomologicalDimensionAt_absoluteGaloisGroup_le_one (p : ℕ) [Fact p.Prime]
-    (F : Type*) [Field F] [CharP F p] :
-    TauCeti.cohomologicalDimensionAt p (Field.absoluteGaloisGroup F) ≤ 1 := by
-  sorry
+/-! ## Layer 3: sections through pro-`p` kernels and the splitting theorem over henselian fields -/
 
 /-- **Sections through pro-`p` kernels.** Let `f : E → G` be a continuous surjective homomorphism
 of profinite groups whose kernel is pro-`p`. If `cd_p G ≤ 1`, then `f` has a continuous
@@ -134,6 +151,20 @@ theorem sup_galoisTamePart_eq_top_of_henselian {K : Type*} [Field K] (V : Valuat
     (hmax : ∀ E' : IntermediateField K (AlgebraicClosure K), E ≤ E' →
       E'.LinearDisjoint (galoisTamePart V) → E' = E) :
     E ⊔ galoisTamePart V = ⊤ := by
+  sorry
+
+/-! ## Layer 4: height one -/
+
+/-- **Krasner's lemma over a henselian base.** Let `K` be a nontrivially normed field with an
+ultrametric norm whose valuation ring `{x | ‖x‖ ≤ 1}` is henselian, and `L` an algebraic
+extension of `K` with a field norm extending that of `K`. Then `L/K` has the Krasner property: if
+`x ∈ L` is separable over `K` with all its conjugates in `L`, and `y ∈ L` is closer to `x` than
+every other conjugate of `x`, then `x ∈ K(y)`. Completeness of `K` is not assumed; Temkin 2017,
+proof of Lemma 2.5.2, applies this over the henselization of a field of height one. -/
+theorem isKrasner_of_henselianLocalRing (K L : Type*) [NontriviallyNormedField K]
+    [IsUltrametricDist K] [NormedField L] [NormedAlgebra K L] [Algebra.IsAlgebraic K L]
+    [HenselianLocalRing (NormedField.valuation (K := K)).valuationSubring] :
+    IsKrasner K L := by
   sorry
 
 /-! ## Layer 5: the Abhyankar inequality and the height bound -/
@@ -179,8 +210,9 @@ theorem isTameField_of_isPClosed {K : Type*} [Field K] (V : ValuationSubring K)
 /-- **The separable export.** Let `P` be a set of primes and `K` a field without nontrivial
 finite separable extension of `P`-number degree. Then `K` is separably tame at every valuation
 subring whose residue characteristic exponent lies in `P`. The field `K` need not be perfect, and
-nothing is claimed for residue characteristics outside `P` (Temkin 2017, Lemma 3.2.5 and
-Remark 2.4.7, through the perfection of `K`). -/
+nothing is claimed for residue characteristics outside `P`. Temkin 2017, Lemma 3.2.5, states the
+`P`-closed form; the separable form passes through the perfection of `K`, as Temkin 2017,
+Remark 2.4.7, does for the separable splitting conditions. -/
 theorem isSeparablyTameField_of_isSeparablyPClosed {K : Type*} [Field K] (P : Set ℕ)
     (hP : IsSeparablyPClosed P K) (V : ValuationSubring K)
     (hp : ringExpChar (ResidueField V) ∈ P) :

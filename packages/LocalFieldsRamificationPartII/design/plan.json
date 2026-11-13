@@ -3234,9 +3234,21 @@
   "gaps": [
     {
       "slug": "source-side-fpqc-descent",
-      "needs": "Descent from the source of a faithfully flat morphism: for f : X → Y faithfully flat and locally of finite presentation and g : Y → Z with g ∘ f of finite presentation, g is of finite presentation when f is quasi-compact or g quasi-separated (EGA IV, Lemma 17.7.5(iv)), and for S-morphisms g : X → Y of schemes locally of finite presentation over S that are flat at x, étaleness of X → S at x implies étaleness of Y → S at g(x) (EGA IV, Proposition 17.7.7).",
+      "needs": "For f : X → Y faithfully flat and locally of finite presentation and g : Y → Z with g ∘ f of finite presentation, g is of finite presentation when f is quasi-compact or g is quasi-separated (EGA IV, Lemma 17.7.5(iv)).",
       "supplier": "SchemeAndStackFoundations",
       "section": "Layer 1, §1.1 (descent)"
+    },
+    {
+      "slug": "source-side-etale-descent",
+      "needs": "For S-schemes X and Y locally of finite presentation over S, an S-morphism g : X → Y flat at a point x and X → S étale at x, the morphism Y → S is étale at g(x) (EGA IV, Proposition 17.7.7).",
+      "supplier": "SchemeAndStackFoundations",
+      "section": "Layer 1, §1.1 (descent)"
+    },
+    {
+      "slug": "char-p-galois-h2-vanishing",
+      "needs": "For every prime p and every field F of characteristic p, H²(G_F, ℤ/p) = 0 for the trivial module, so that TauCeti.cohomologicalDimensionAt p (Field.absoluteGaloisGroup F) ≤ 1, from the Artin–Schreier sequence 0 → 𝔽_p → Fˢ → Fˢ → 0 and the vanishing of Hⁱ(G_F, Fˢ) for i ≥ 1 (Serre, Galois Cohomology, II §2.2, Proposition 3 and Corollary 1).",
+      "supplier": "ProfiniteCohomology",
+      "section": "Layer 9: the Galois interface: Hilbert 90 and Kummer theory"
     }
   ],
   "restructure": [
