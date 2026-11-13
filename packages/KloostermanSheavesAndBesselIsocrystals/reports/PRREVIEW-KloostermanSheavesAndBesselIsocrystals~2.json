@@ -1,0 +1,29 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-KloostermanSheavesAndBesselIsocrystals~2",
+  "head": "08122a92a5723009aeda30817e81619d940656e0",
+  "pr": 2289,
+  "folder": "KloostermanSheavesAndBesselIsocrystals",
+  "date": "2026-11-13",
+  "findings": 0,
+  "blocking": 0,
+  "notes": "incremental re-review of 20 changed lines since 8199100; checked previous R01–R04 with deferred D01/D02 excluded, changed scope and §§1.3, 1.4 (seeded sample), 2.4, source locators and ownership, computed adversarial instances, PR text and source independence. Gate and dependency check pass; targeted build, direct Lean elaboration and 11-declaration signature probe pass. Acceptance retains declared supplier contracts and deferred board findings; ready for human final approval.",
+  "deferred": [
+   {
+    "id": "D01",
+    "severity": "P2",
+    "title": "Four supplier contracts are gaps that the plan does not declare",
+    "where": "board record packages/KloostermanSheavesAndBesselIsocrystals/design/plan.json, top-level gaps list",
+    "raised": "PRREVIEW-KloostermanSheavesAndBesselIsocrystals~1"
+   },
+   {
+    "id": "D02",
+    "severity": "P3",
+    "title": "The pull request description misstates the suppliers",
+    "where": "the generator of the description's merge-order block",
+    "raised": "PRREVIEW-KloostermanSheavesAndBesselIsocrystals~1"
+   }
+  ]
+ }
+}
