@@ -1,0 +1,22 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-MixedHodgeModulesAndIrregularHodgeTheory~2",
+  "head": "2e2b5964f95cc47abb80746849a4ca63a8733774",
+  "pr": 2279,
+  "folder": "MixedHodgeModulesAndIrregularHodgeTheory",
+  "date": "2026-11-13",
+  "findings": 4,
+  "blocking": 1,
+  "notes": "Full re-review. Previous findings: R01, R03, R04, R05, R06 repaired; R02 deferred (D01, stands: the board plan still declares four gaps against the README's six and lists duality in regular-holonomic-stability). Gate passed at the head; depcheck 239 roadmaps, 2174 edges, 0 problems; Suggested.lean elaborates with sorry as the only warning, 13 signatures compared, eight one-tactic probes fail (no padding). Seeded sample of 15 targets: 13 checked against FSY, MT, AS, Yu, KS, ESY, Sai90 (62 locators); 1.2 (Dimca) and 3.4 (Zucker) not readable. 59 supplier section headings resolved, 18 pinned declarations opened. Blocking: R01, the logarithmic de Rham complex of 10.1 has no cited owner (ComplexComparisonPartII C5.5 states it). P3: 7.3 cites Hodge-norm estimates that 3.2 does not state and omits ShimuraVarieties 3.5b.2 from its Needs; the locator of 5.6 (Sai90 section 4) does not contain the statement; two Yu locators in 10.4. Three source errata recorded (two FSY misprints, one false remark in Yu).",
+  "deferred": [
+   {
+    "id": "D01",
+    "severity": "P2",
+    "title": "The declared gaps and the README's supplier contracts disagree",
+    "where": "board plan.json `gaps` list must declare two README gaps and narrow one",
+    "raised": "PRREVIEW-MixedHodgeModulesAndIrregularHodgeTheory~1"
+   }
+  ]
+ }
+}
