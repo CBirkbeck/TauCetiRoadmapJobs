@@ -54,8 +54,10 @@ noncomputable def kloostermanSum (F : Type*) [Field F] [Finite F]
   ∑ᶠ x : Fˣ, ψ ((x : F) + a * (x : F)⁻¹)
 
 /-- The additive character `x ↦ exp(2πi Tr_{𝔽_{p^m}/𝔽_p}(x)/p)` of `𝔽_{p^m}`: the standard
-character of `ZMod p` composed with the field trace. These characters are compatible in towers of
-finite fields, as the moment generating series requires. -/
+character of `ZMod p` composed with the field trace. For positive `m ∣ m′` and an `𝔽_p`-embedding
+`ι : 𝔽_{p^m} → 𝔽_{p^{m′}}`, the character of the larger field is the character of the smaller field
+composed with the relative trace through `ι` (so its restriction along `ι` is the `(m′/m)`-th power
+of the smaller one): the tower compatibility the moment generating series requires. -/
 noncomputable def traceChar (p : ℕ) [Fact p.Prime] (m : ℕ) : AddChar (GaloisField p m) ℂ :=
   (ZMod.stdAddChar (N := p)).compAddMonoidHom
     (Algebra.trace (ZMod p) (GaloisField p m)).toAddMonoidHom

@@ -195,7 +195,14 @@ keeps the reductive-group Bessel constructions and the `F`-isocrystal companion 
   `AddChar.sum_eq_ite` (orthogonality over a finite group into a domain) and
   `AddChar.compAddMonoidHom`.
 - `ZMod.stdAddChar` (the character `x ↦ exp(2πi x/N)` of `ZMod N`), `GaloisField` with
-  `GaloisField.card` (`𝔽_{p^m}` has `p^m` elements for `m ≠ 0`), `Algebra.trace`,
+  `GaloisField.card` (`𝔽_{p^m}` has `p^m` elements for `m ≠ 0`), `GaloisField.finrank` (it has
+  degree `m` over `ZMod p` for `m ≠ 0`), `FiniteField.nonempty_algHom_of_finrank_dvd` (a finite
+  extension embeds into a finite field over a common base when its degree divides the other's),
+  `Algebra.trace`, `Algebra.trace_trace` (for a scalar tower `R → S → T` with `S` finite free over
+  `R` and `T` finite free over `S`, the trace from `T` to `R` is the trace from `S` to `R` after the
+  trace from `T` to `S`), `Algebra.trace_algebraMap` (for `S` free over `R` with the strong rank
+  condition, the trace of the image of `x ∈ R` is `finrank R S • x`), `Module.finrank_mul_finrank`
+  (degrees multiply in a tower), `AddChar.map_nsmul_eq_pow` (`ψ(n•x) = ψ(x)ⁿ`),
   `FiniteField.trace_to_zmod_nondegenerate` and `FiniteField.algebraMap_trace_eq_sum_pow`.
 - `SymmetricPower` (the symmetric tensor power of a module over a commutative semiring, as the
   quotient of the tensor power by the permutation relations): the underlying module of a symmetric
@@ -498,9 +505,19 @@ composed with `Algebra.trace`. Define the `k`-th moment
 (FSY §1.1, pp. 2–3). The sign makes `−Kl₂(a)` the sum `α_a + β_a` of the Frobenius eigenvalues
 (§1.4), whose product is `p^m`. The API proves the following facts.
 
-- `traceChar p m` is nontrivial for `m ≥ 1` (Mathlib `FiniteField.trace_to_zmod_nondegenerate`), and
-  for `m ∣ m′` its composition with the inclusion `𝔽_{p^m} → 𝔽_{p^{m′}}` relates to `traceChar p m′`
-  through the transitivity of the trace (Mathlib `FiniteField.algebraMap_trace_eq_sum_pow`).
+- `traceChar p m` is nontrivial for `m ≥ 1` (Mathlib `FiniteField.trace_to_zmod_nondegenerate`).
+- Tower law. Let `m, m′ ≥ 1` with `m ∣ m′`, let `ι : 𝔽_{p^m} → 𝔽_{p^{m′}}` be an `𝔽_p`-algebra
+  embedding (one exists by Mathlib `FiniteField.nonempty_algHom_of_finrank_dvd` and
+  `GaloisField.finrank`), and let `Tr_ι : 𝔽_{p^{m′}} → 𝔽_{p^m}` be the trace of `𝔽_{p^{m′}}` regarded
+  as an `𝔽_{p^m}`-algebra through `ι`. Then `traceChar p m′ = traceChar p m ∘ Tr_ι`: the tower
+  `𝔽_p → 𝔽_{p^m} → 𝔽_{p^{m′}}` is a scalar tower because `ι` is `𝔽_p`-linear, and the absolute trace
+  of `𝔽_{p^{m′}}` is the absolute trace of `𝔽_{p^m}` after `Tr_ι` (Mathlib `Algebra.trace_trace`).
+- Restriction along `ι` is a power: `traceChar p m′ (ι x) = (traceChar p m x)^{m′/m}` for every
+  `x ∈ 𝔽_{p^m}`, because `Tr_ι(ι x) = (m′/m)·x` (Mathlib `Algebra.trace_algebraMap`, the relative
+  degree being `m′/m` by `Module.finrank_mul_finrank` and `GaloisField.finrank`) and
+  `AddChar.map_nsmul_eq_pow`. So the restricted character does not depend on `ι`, and it is trivial
+  exactly when `p ∣ m′/m`. On elements, with `𝔽_{p^m}` identified with `ι(𝔽_{p^m})`,
+  `Tr_ι(y) = Σ_{0 ≤ i < m′/m} y^{p^{mi}}` (Mathlib `FiniteField.algebraMap_trace_eq_sum_pow`).
 - For complex `ψ`, `Kl₂(a; ψ)` is real: `x ↦ −x` and `ψ(−y) = conj ψ(y)` exchange the sum with its
   conjugate.
 - Replacing `ψ` by `ψ(c·)` for `c ∈ Fˣ` replaces `Kl₂(a)` by `Kl₂(c²a)` (scale `x` by `c`); the moment,
@@ -524,8 +541,26 @@ composed with `Algebra.trace`. Define the `k`-th moment
 - The zero parameter is outside the product-fibre comparison: over `𝔽₂` with `ψ(1) = −1`,
   `Kl₂(0) = ψ(1) = −1`, whereas the fibre `{x₁x₂ = 0}` in `(𝔽₂ˣ)²` is empty and its sum is `0`; at
   `a = 1` both presentations give `ψ(0) = 1`.
+- Tower law over `𝔽₄/𝔽₂` (`m = 1`, `m′ = 2`): `Tr_ι(ι 1) = 1 + 1² = 0`, so
+  `traceChar 2 2 (ι 1) = traceChar 2 1 (0) = 1` and the character of `𝔽₄` restricts to the trivial
+  character of `𝔽₂`, while `traceChar 2 1 (1) = −1`; the power law reads `1 = (−1)²`. A tower law
+  stated as plain restriction, `traceChar p m′ ∘ ι = traceChar p m`, fails here.
+- Over `𝔽₉/𝔽₃` at `1`, with `ζ₃ = e^{2πi/3}`: `Tr_ι(ι 1) = 1 + 1³ = 2`, so
+  `traceChar 3 2 (ι 1) = traceChar 3 1 (2) = ζ₃² = (traceChar 3 1 (1))²`; as `3 ∤ 2` the restriction
+  is nontrivial, but it is the square of the smaller character, not that character (`ζ₃² ≠ ζ₃`).
+- Degree one with a nonidentity embedding: for `m′ = m` and `ι` the Frobenius `x ↦ x^p`, `Tr_ι` is
+  `ι⁻¹`, not the identity, and both laws say `traceChar p m (x^p) = traceChar p m x`. In
+  `𝔽₄ = 𝔽₂(ω)` with `ω² = ω + 1`, `Tr(ω) = ω + ω² = 1` and `Tr(ω²) = ω² + ω⁴ = ω² + ω = 1`, so both
+  values are `−1`.
+- The exponent needs `m′ ≥ 1`: `GaloisField p 0` is the splitting field of the zero polynomial
+  `X^{p⁰} − X`, hence `𝔽_p` of degree `1`. For `m = 1`, `m′ = 0` one has `1 ∣ 0` and an embedding
+  `ι` exists, but the relative degree is `1`, not `0/1 = 0`, and
+  `traceChar p 0 (ι 1) = e^{2πi/p} ≠ 1 = (traceChar p 1 (1))⁰`. The composition law
+  `traceChar p m′ = traceChar p m ∘ Tr_ι` holds here too.
 
-*Needs:* Mathlib `AddChar`, `ZMod.stdAddChar`, `GaloisField`, `Algebra.trace`,
+*Needs:* Mathlib `AddChar`, `AddChar.map_nsmul_eq_pow`, `ZMod.stdAddChar`, `GaloisField`,
+`GaloisField.finrank`, `FiniteField.nonempty_algHom_of_finrank_dvd`, `Algebra.trace`,
+`Algebra.trace_trace`, `Algebra.trace_algebraMap`, `Module.finrank_mul_finrank`,
 `FiniteField.trace_to_zmod_nondegenerate`, `FiniteField.algebraMap_trace_eq_sum_pow`; §0.1;
 CongruenceSpectralGap §4.2a for the identification with `hyperKloosterman` at unit parameters.
 
