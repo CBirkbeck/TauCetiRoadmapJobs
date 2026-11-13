@@ -303,3 +303,21 @@ locator = "Proposition 18"
 licence_class = "none"
 status = "waived"
 resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/6807#issuecomment-6787957825"
+
+[[source]]
+id = "LE19"
+authors = "Daniel Le"
+title = "On some nonadmissible smooth irreducible representations for GL₂"
+year = 2019
+arxiv = "1809.10247v3"
+locator_scheme = "theorem"
+locator = "§2.1; Theorems 1.1, 3.2, 3.4 (arXiv v3)"
+url = "https://arxiv.org/abs/1809.10247v3"
+fetched_from = "https://arxiv.org/pdf/1809.10247v3"
+fetched_at = "2026-11-13T16:04:53Z"
+sha256 = "ce5e51358c230bd7c131fc0970db9dbd27eae49ebb9974441a87d0b6276d328e"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-13"
+version_note = "arXiv v3"
+cited_for = ["§2.4"]
