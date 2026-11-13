@@ -1,0 +1,18 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "InfinityCategoryFoundations"
+
+[[source]]
+id = "HTT"
+authors = "Jacob Lurie"
+title = "Higher Topos Theory"
+year = 2006
+locator_scheme = "theorem"
+locator = "Theorem 2.2.5.1"
+url = "https://www.math.ias.edu/~lurie/papers/HTT.pdf"
+fetched_from = "https://www.math.ias.edu/~lurie/papers/HTT.pdf"
+fetched_at = "2026-11-13T13:20:40Z"
+sha256 = "58855f3a0ad6d9c470ded74a38938b9468927592e9ae1209bab6a068e67ede6e"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-13"
+cited_for = ["9.5"]
