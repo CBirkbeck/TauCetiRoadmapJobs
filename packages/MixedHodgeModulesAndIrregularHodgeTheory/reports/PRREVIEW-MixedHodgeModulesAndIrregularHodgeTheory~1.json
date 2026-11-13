@@ -1,0 +1,22 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-MixedHodgeModulesAndIrregularHodgeTheory~1",
+  "head": "2ecdd81240c49bc890c6b68a34a6755ad3d81b97",
+  "pr": 2279,
+  "folder": "MixedHodgeModulesAndIrregularHodgeTheory",
+  "date": "2026-11-13",
+  "findings": 6,
+  "blocking": 2,
+  "notes": "Full review. Gate passed at the head; depcheck 0 problems; Suggested.lean elaborates with sorry as the only warning, 13 signatures checked, one-tactic probes fail (no padding). Seeded sample of 15 targets: 12 checked against FSY, Sai90, KS, ESY, Yu, AS, MT, Sab10, Kash84 (46 locators, all found); 1.1 (Verdier) and 3.4 (Zucker) not readable, 1.5 partly (Dimca). 58 supplier sections resolved, 21 pinned declarations opened. Blocking: R01 Layers 8-11 follow FSY Appendix A.4-A.7; R02 the plan's gaps as held on the board (five) against the README's seven, two of the five wider than the README and asking for what SchemeKTheoryOperations 5.7 and SpringerResolutionAndCharacteristicCycles 9.7 supply. P3: unconsumed supplier contracts, Dependencies paragraphs against Needs lines, a renamed object in 11.6, a truncated sentence in the description. Five source errata recorded (four FSY misprints, one false remark in Yu).",
+  "deferred": [
+   {
+    "id": "D01",
+    "severity": "P2",
+    "title": "The declared gaps and the README's supplier contracts disagree",
+    "where": "board plan.json `gaps` list must declare two README gaps and narrow one",
+    "raised": "PRREVIEW-MixedHodgeModulesAndIrregularHodgeTheory~1"
+   }
+  ]
+ }
+}
