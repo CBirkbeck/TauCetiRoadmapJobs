@@ -1,0 +1,77 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "ProjectiveModulesOverPolynomialRings"
+
+[[source]]
+id = "LombardiQuitte2015"
+authors = "Henri Lombardi, Claude Quitté"
+title = "Commutative algebra: Constructive methods. Finite projective modules"
+year = 2016
+venue = "Series Algebra and Applications, Vol. 20 Translated from the French (Calvage \\& Mounet, 2011, revised and extended by the authors) by Tania K. Roblot, Springer, 2015"
+doi = "10.1007/978-94-017-9944-7"
+arxiv = "1605.04832v4"
+locator_scheme = "theorem"
+locator = "see report"
+url = "https://arxiv.org/abs/1605.04832v4"
+fetched_from = "https://arxiv.org/pdf/1605.04832v4"
+fetched_at = "2026-11-13T18:01:00Z"
+sha256 = "85b25e3b55b38ab900de8bf0ffc0dbc21e6140bb41c07799b7f899f989881b6d"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-13"
+version_note = "arXiv v4"
+cited_for = ["review"]
+
+[[source]]
+id = "Kedlaya2004"
+authors = "Kiran S. Kedlaya"
+title = "Full faithfulness for overconvergent F-isocrystals"
+year = 2001
+venue = "preprint; published version: in Geometric Aspects of Dwork Theory (Volume II), de Gruyter (Berlin), 2004, 819-835."
+arxiv = "math/0110125v4"
+locator_scheme = "theorem"
+locator = "see report"
+url = "https://arxiv.org/abs/math/0110125v4"
+fetched_from = "https://arxiv.org/pdf/math/0110125v4"
+fetched_at = "2026-11-13T18:01:08Z"
+sha256 = "cfda26e769afc875b880bc71992c2e811a1a53e7322998e486e48822a18ee431"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-13"
+version_note = "arXiv v4"
+cited_for = ["review"]
+
+[[source]]
+id = "Quillen1976"
+authors = "Quillen"
+title = "Projective modules over polynomial rings"
+year = 1976
+venue = "Inventiones Mathematicae 36"
+doi = "10.1007/bf01390008"
+locator_scheme = "theorem"
+locator = "Theorems 1-4"
+url = "https://gdz.sub.uni-goettingen.de/download/pdf/PPN356556735_0036/LOG_0016.pdf"
+fetched_from = "https://gdz.sub.uni-goettingen.de/download/pdf/PPN356556735_0036/LOG_0016.pdf"
+fetched_at = "2026-11-13T18:05:37Z"
+sha256 = "912a7557d69138ffa9118b46726b074ae7a60f8a99a78b69c06d29015939fb3c"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-13"
+cited_for = ["review", "3.2"]
+
+[[source]]
+id = "Cesnavicius2022"
+authors = "Kestutis Cesnavicius"
+title = "Problems about torsors over regular rings (with an appendix by Yifei Zhao)"
+year = 2022
+arxiv = "2201.06424v4"
+locator_scheme = "theorem"
+locator = "see report"
+url = "https://arxiv.org/abs/2201.06424v4"
+fetched_from = "https://arxiv.org/pdf/2201.06424v4"
+fetched_at = "2026-11-13T18:01:20Z"
+sha256 = "da970a4ea0412899e911d80c4d2dd3ff58d265b7595b19925596d9081450085a"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-13"
+version_note = "arXiv v4"
+cited_for = ["review"]
