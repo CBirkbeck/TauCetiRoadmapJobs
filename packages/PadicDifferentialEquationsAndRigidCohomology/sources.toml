@@ -19,3 +19,37 @@ status = "certified"
 accessed = "2026-11-13"
 version_note = "arXiv v4"
 cited_for = ["RD.3.27"]
+
+[[source]]
+id = "Arabia-CMH"
+authors = "Alberto Arabia"
+title = "Relèvements des algèbres lisses et de leurs morphismes"
+year = 2001
+venue = "Comment. Math. Helv. 76 (2001), 607–639"
+locator_scheme = "theorem"
+locator = "Théorème 2.2.2; §§1.1–1.3"
+url = "https://webusers.imj-prg.fr/~alberto.arabia/pub/commentarii.pdf"
+fetched_from = "https://webusers.imj-prg.fr/~alberto.arabia/pub/commentarii.pdf"
+fetched_at = "2026-11-13T06:27:05Z"
+sha256 = "ca1b510d8e377dfe61fec05039c5040cd79f8d3e8bd90bb3ab4b3e0806358d10"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-13"
+cited_for = ["RD.0.39"]
+
+[[source]]
+id = "Milne-LEC"
+authors = "J. S. Milne"
+title = "Lectures on Étale Cohomology"
+year = 2013
+version_note = "v2.21 (March 22, 2013)"
+locator_scheme = "theorem"
+locator = "Lemma 27.10"
+url = "https://www.jmilne.org/math/CourseNotes/LEC.pdf"
+fetched_from = "https://www.jmilne.org/math/CourseNotes/LEC.pdf"
+fetched_at = "2026-11-13T06:43:01Z"
+sha256 = "ac4f122f371d38a44c58c296b7dbf88081d89d2de2334070bff3606771c01077"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-13"
+cited_for = ["RD.7.4"]
