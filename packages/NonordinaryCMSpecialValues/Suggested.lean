@@ -72,7 +72,10 @@ def IsAnticyclotomic [IsCMField K] (χ : HeckeCharacter K) : Prop :=
 /-- A Hecke character `φ` of an imaginary quadratic field `K` is *conjugation-equivariant of
 ideal infinity type `(1,0)`* for the embedding `ι : K → ℂ` when `φ((x)) = ι(x)` for every
 `x ≡ 1` modulo its conductor, and `φ(ā) = conj φ(a)` for every ideal `a` prime to the conductor.
-Equivalently (Jia, Property 1), `φ((n)) = κ_K(n) n` on rational integers prime to the conductor. -/
+Among characters already of ideal infinity type `(1,0)` for `ι`, the conjugation condition is
+equivalent to `φ((n)) = κ_K(n) n` on rational integers `n` prime to the conductor (Jia,
+Property 1); without the type condition it is not, since `φ³/N` satisfies the rational law and
+the conjugation condition but has ideal infinity type `(2,−1)`. -/
 def IsEquivariantTypeOneZero [IsCMField K] (ι : K →+* ℂ) (φ : HeckeCharacter K) : Prop :=
   (∀ (x : Kˣ) (hx : IsCongrOne (conductorModulus φ) x),
       (φ.idealCharacter ⟨toPrincipalIdeal (𝓞 K) K x, hx.toPrincipalIdeal_mem_idealsPrimeTo⟩ : ℂ) =
