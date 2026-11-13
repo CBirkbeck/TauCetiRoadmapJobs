@@ -1,0 +1,22 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-IntegralIwasawaTheoryPartII~1",
+  "head": "f3022f4637435f2c768a0e067bf67a7cba84050c",
+  "pr": 2267,
+  "folder": "IntegralIwasawaTheoryPartII",
+  "date": "2026-11-13",
+  "findings": 5,
+  "blocking": 0,
+  "notes": "Full review. Five P3 findings: two inexact locators (0.4, 5.5), one ambiguous wording (0.6), two Needs lines (2.2 forward reference, 2.5a missing 2.5). Seeded sample of 15 targets verified against DKV16, DDP11, CD14, Lin12 and V15 (41 locators); Sc93, AL13, W86, Br82 and the DKV16 preprint normalization not verifiable. Adversarial table of 26 rows with computed values; no mathematical defect found. 34 pinned declarations and 12 suppliers' sections and names resolved. Gate passes; depcheck 0 problems; Suggested.lean elaborates with sorry as the only warning; the one headline survives the one-tactic probe. Eight declared supplier gaps match plan.json. No overlap with open pull requests or main.",
+  "carried": {
+   "from": "f3022f4637435f2c768a0e067bf67a7cba84050c",
+   "head": "0bfa8e5722e126fd1f9db02d4061cfc4b4b2ec33",
+   "findings": 5,
+   "lines": 10,
+   "folders": [
+    "IntegralIwasawaTheoryPartII"
+   ]
+  }
+ }
+}
