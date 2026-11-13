@@ -1116,7 +1116,7 @@
      "id": "5.1",
      "kind": "definition",
      "name": "ExactCouple.Pairing.SatisfiesMassey",
-     "statement": "For cohomological exact couples C₁, C₂, C of modules over a commutative ring R and a pairing φ : E₁ ⊗ E₂ → E (bilinear, additive in bidegrees), φ satisfies μ_n if whenever k₁(x) = i₁ⁿ(a) and k₂(y) = i₂ⁿ(b) there is c with k(xy) = iⁿ(c) and j(c) = j₁(a)y + (−1)^{s+t} x j₂(b); μ means all μ_n. Then μ_0 is the Leibniz rule for jk; under μ_0, μ_n for φ is equivalent to μ_{n−1} for the derived pairing; under μ every induced pairing φ_r on the base §6.1 pages satisfies μ, the Leibniz rule for d_r, and φ_{r+1} is induced on cohomology by φ_r.",
+     "statement": "For cohomological exact couples C₁, C₂, C of modules over a commutative ring R and a pairing φ : E₁ ⊗ E₂ → E (bilinear, additive in bidegrees), φ satisfies μ_n if whenever k₁(x) = i₁ⁿ(a) and k₂(y) = i₂ⁿ(b) there is c with k(xy) = iⁿ(c) and j(c) = j₁(a)y + (−1)^{s+t} x j₂(b); μ means all μ_n. Then μ_0 is the Leibniz rule for jk; under μ_0, for every m ≥ 0, μ_{m+1} for φ is equivalent to μ_m for the derived pairing; under μ every induced pairing φ_r on the base §6.1 pages satisfies μ, the Leibniz rule for d_r, and φ_{r+1} is induced on cohomology by φ_r.",
      "hypotheses": [
       "R commutative",
       "C₁, C₂, C cohomological exact couples of R-modules"
@@ -1139,7 +1139,7 @@
       {
        "name": "ExactCouple.Pairing.satisfiesMassey_succ_iff",
        "role": "Proposition 4.1",
-       "statement": "Under μ_0, μ_n for φ iff μ_{n−1} for the derived pairing."
+       "statement": "Under μ_0, for every m ≥ 0: μ_{m+1} for φ iff μ_m for the derived pairing (the shift starts at μ_1: μ_0 for φ does not give μ_0 for the derived pairing)."
       },
       {
        "name": "ExactCouple.Pairing.pagePairing",
@@ -1162,6 +1162,11 @@
        "name": "leibniz_fails",
        "kind": "non-example",
        "statement": "Couple of the stupid filtration of ℤ →(×2) ℤ with the pairing E^{0,0} × E^{0,0} → E^{0,0} multiplication and zero elsewhere: d(1·1) = 2 but d(1)·1 + 1·d(1) = 0, so μ_0 fails."
+      },
+      {
+       "name": "index_shift_from_one",
+       "kind": "non-example",
+       "statement": "Couple of 0 → M →(×2) M → M/2M → 0 for M = ℤ →(×4) ℤ (D^{s,t} = H^{s+t}(M), E^{s,t} = H^{s+t}(M/2M), i = ×2: E^{s,−s} = E^{s,1−s} = ℤ/2, D^{s,1−s} = ℤ/4, k(1) = 2), with the 𝔽₂ product on E^{s,−s} × E^{s′,−s′} and zero elsewhere: d₁ = 0, so μ_0 holds and φ′ = φ; μ_1 fails for φ (x = y = 1, a = b = 1 ∈ D^{2,−1}: every c with i(c) = 2 has j(c) = 1, the right side is 0) and μ_0 fails for φ′ (d₂(1·1) = 1, d₂(1)·1 + 1·d₂(1) = 0). The m = 0 equivalence is false ⟺ false; sending μ_0 for φ to μ_0 for φ′ would give true ⟺ false."
       }
      ]
     },
@@ -1370,7 +1375,7 @@
       {
        "name": "z_mod_pr",
        "kind": "computation",
-       "statement": "M = ℤ →(×p^r) ℤ: E_s⁰ = E_s¹ = ℤ/p for s ≤ r, 0 for s > r; d_1 = ⋯ = d_{r−1} = 0, d_r an isomorphism, E_{r+1} = 0, matching H¹ = ℤ/p^r; stabilisation from page r + 1."
+       "statement": "M = ℤ →(×p^r) ℤ: E_s⁰ = E_s¹ = ℤ/p for s ≤ r, 0 for s > r; d_1 = ⋯ = d_{r−1} = 0, d_r an isomorphism, E_{r+1} = 0, matching H¹ = ℤ/p^r; stabilisation from page r + 1. The representative of 1 ∈ E_r⁰ is the cochain u = 1 ∈ M⁰, not a cocycle of M (du = p^r) but one modulo p^r, with w = 1: k(1) = p^{r−1}[1] and d_r(1) = β_r(1) = 1."
       },
       {
        "name": "unbounded_torsion",

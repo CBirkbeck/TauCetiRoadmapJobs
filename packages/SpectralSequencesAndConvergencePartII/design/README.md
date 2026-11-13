@@ -1156,19 +1156,23 @@ Tau Ceti K-flat complexes, cross products and first-quadrant bicomplexes.
 
 ### 5.1 Pairings of exact couples
 
-Let `R` be a commutative ring and `C₁ = (D₁, E₁; i₁, j₁, k₁)`, `C₂`, `C = (D, E; i, j, k)` cohomological
-exact couples of `R`-modules (base §6.1, StableHomotopyKTheory §7.22). A *pairing* `φ : E₁ ⊗ E₂ → E` is a
-family of bilinear maps `E₁^{s,t} × E₂^{s′,t′} → E^{s+s′,t+t′}`, written `xy`. For `n ≥ 0`, `φ` *satisfies
-Massey's condition `μ_n`* if for all `x ∈ E₁^{s,t}`, `y ∈ E₂`, `a ∈ D₁`, `b ∈ D₂` with `k₁(x) = i₁ⁿ(a)` and
-`k₂(y) = i₂ⁿ(b)` there is `c ∈ D` with `k(xy) = iⁿ(c)` and `j(c) = j₁(a)y + (−1)^{s+t} x j₂(b)`; it
-*satisfies `μ`* if it satisfies every `μ_n` (may-primer line 249–266; massey1954, uncertified). Prove:
-`μ_0` holds if and only if `d = jk` satisfies the Leibniz rule
-`d(xy) = d(x)y + (−1)^{s+t} x d(y)`; under `μ_0`, `φ` satisfies `μ_n` if and only if the induced pairing
-`φ′` of the derived couples satisfies `μ_{n−1}` (may-primer line 267–279, Proposition 4.1); hence if `φ`
-satisfies `μ`, every induced pairing `φ_r : E_r(C₁) ⊗ E_r(C₂) → E_r(C)` on the pages of base §6.1 satisfies
-`μ`, satisfies the Leibniz rule for `d_r`, and `φ_{r+1}` is the map induced on cohomology by `φ_r`
-(may-primer line 280–287, Corollary 4.2). *Needs:* base §6.1; StableHomotopyKTheory §7.22; Mathlib
-`ModuleCat`.
+Let `R` be a commutative ring and `C₁ = (D₁, E₁; i₁, j₁, k₁)`, `C₂`, `C = (D, E; i, j, k)` cohomological exact
+couples of `R`-modules (base §6.1, StableHomotopyKTheory §7.22). A *pairing* `φ : E₁ ⊗ E₂ → E` is a family of
+bilinear maps `E₁^{s,t} × E₂^{s′,t′} → E^{s+s′,t+t′}`, written `xy`. For `n ≥ 0`, `φ` *satisfies Massey's
+condition `μ_n`* if for all `x ∈ E₁^{s,t}`, `y ∈ E₂`, `a ∈ D₁`, `b ∈ D₂` with `k₁(x) = i₁ⁿ(a)` and
+`k₂(y) = i₂ⁿ(b)` there is `c ∈ D` with `k(xy) = iⁿ(c)` and `j(c) = j₁(a)y + (−1)^{s+t} x j₂(b)`; it *satisfies
+`μ`* if it satisfies every `μ_n` (may-primer line 249–266; massey1954, uncertified). Prove: `μ_0` holds if and
+only if `d = jk` satisfies the Leibniz rule `d(xy) = d(x)y + (−1)^{s+t} x d(y)`; under `μ_0`, for every
+`m ≥ 0`, `φ` satisfies `μ_{m+1}` if and only if the induced pairing `φ′` of the derived couples satisfies
+`μ_m` (may-primer line 267–279, Proposition 4.1, whose index `n = m + 1` is positive); hence if `φ` satisfies
+`μ`, every induced pairing `φ_r : E_r(C₁) ⊗ E_r(C₂) → E_r(C)` on the pages of base §6.1 satisfies `μ`,
+satisfies the Leibniz rule for `d_r`, and `φ_{r+1}` is the map induced on cohomology by `φ_r` (may-primer line
+280–287, Corollary 4.2). Route for the equivalence, with `n = m + 1`: a class of `E′₁` is `x̄` for a `d`-cycle
+`x`, an element of `D′₁ = i₁D₁` is `i₁a`, and `k′₁(x̄) = i′₁^m(i₁a)` exactly when `k₁(x) = i₁ⁿ(a)`, so `μ_n`
+for `φ` gives `μ_m` for `φ′` with `c′ = i(c)`. Conversely, an `x` with `k₁(x) = i₁ⁿ(a)` is a `d`-cycle because
+`j₁i₁ = 0` and `n ≥ 1`; `μ_m` for `φ′` gives `c′ = i(c)` with `j(c)` equal to the required element up to a
+boundary `jk(z)`, and `c − k(z)` satisfies `μ_n` for `φ` because `iⁿk = 0` for `n ≥ 1`. *Needs:* base §6.1;
+StableHomotopyKTheory §7.22; Mathlib `ModuleCat`.
 
 - The pairings `φ_r` are natural in morphisms of exact couples compatible with the pairings.
 - `μ_0` for a pairing on `E₁ = E` is exactly that `φ` is a map of complexes for `jk`.
@@ -1181,6 +1185,15 @@ satisfies `μ`, every induced pairing `φ_r : E_r(C₁) ⊗ E_r(C₂) → E_r(C)
 - *A non-example.* For the couple of the stupid filtration of `ℤ →(×2) ℤ` (`E₁^{0,0} = E₁^{1,0} = ℤ`,
   `d₁ = ×2`) and the pairing multiplying `E^{0,0} × E^{0,0} → E^{0,0}` and zero elsewhere, `d(1·1) = 2` in
   `E^{1,0}` while `d(1)·1 + 1·d(1) = 0`, so `μ_0` fails.
+- *The index shift starts at `μ_1`.* Let `M = (ℤ →(×4) ℤ)` in degrees `0, 1` and take the couple of
+  `0 → M →(×2) M → M/2M → 0` with `D^{s,t} = H^{s+t}(M)`, `E^{s,t} = H^{s+t}(M/2M)` and
+  `i : D^{s+1,t−1} → D^{s,t}` multiplication by `2`: `E^{s,−s} = E^{s,1−s} = ℤ/2`, `D^{s,1−s} = ℤ/4`, other
+  terms `0`, and `k(1) = 2`. Pair `E^{s,−s} × E^{s′,−s′} → E^{s+s′,−s−s′}` by the product of `𝔽₂`, and every
+  other pair to `0`. Then `j(2) = 0` gives `d₁ = 0`, so `μ_0` holds and `φ′ = φ`. With `x = y = 1 ∈ E^{0,0}`
+  and `a = b = 1 ∈ D^{2,−1}`, any `c` with `i(c) = k(1·1) = 2` is odd, so `j(c) = 1`, whereas
+  `j(a)·1 + 1·j(b) = 0`: `μ_1` fails for `φ`. Likewise `d₂(1·1) = j(1) = 1` in `E^{2,−1}` while
+  `d₂(1)·1 + 1·d₂(1) = 0`: `μ_0` fails for `φ′`. The equivalence at `m = 0` reads false ⟺ false; a reading
+  of the shift at index `0` that sends `μ_0` for `φ` to `μ_0` for `φ′` would claim true ⟺ false.
 
 ### 5.2 Pairings of filtered complexes
 
@@ -1310,14 +1323,15 @@ module `T`, and `H̄ⁿ = Hⁿ(M)/Hⁿ(M)[f^∞]`. Prove, for `r ≥ 1` and ever
 Route: the towers are base §6.2 for this couple. The higher universal-coefficient sequence comes from
 `0 → ker k/B_r → Z_r/B_r → k(Z_r) → 0`, with `ker k / B_r ≅ Hⁿ/(fHⁿ + Hⁿ[f^{r−1}]) ≅ f^{r−1}Hⁿ/f^rHⁿ` (by
 `x ↦ f^{r−1}x`) and `k(Z_r) = f^{r−1}H^{n+1} ∩ H^{n+1}[f]`. The higher Bockstein formula is base §6.2's
-description of `d_{r}`: if `k(x) = f^{r−1}y`, `d_r[x] = [j(y)]`, and a cocycle `u` of `M` with `du = f^r w`
-gives both `k(u mod f) = f^{r−1}[w]` and `β_r(u mod f^r) = w mod f`. Stabilisation: for `r ≥ b`,
-`f^rH^{n+1} ∩ H^{n+1}[f] = 0`, so `Z_{r+1} = ker k`, and `B_{r+1}` is constant for `r ≥ a`. Convergence: in
-modules, the kernel of `D^{s,n−s} → Hⁿ(M)[1/f]` (where `D^{s,n−s} = Hⁿ(M)` for every `s`) is `⋃_r ker i^r`,
-so the image filtration of the colimit `Hⁿ(M)[1/f]` of the tower `i` has
-`gr^s ≅ D^{s,n−s}/(iD^{s+1,n−s−1} + ⋃_r ker i^r) ≅ ker k / B_∞` through `j`, a submodule
-of the limit page `Z_∞/B_∞`, equal to it exactly when `Z_∞ = ker k`. *Needs:* 6.1; base §§1.3, 1.4, 3.1,
-3.2, 6.2.
+description of `d_{r}`: if `k(x) = f^{r−1}y`, `d_r[x] = [j(y)]`; a cochain `u ∈ Mⁿ` whose reduction modulo
+`f^r` is a cocycle has `du = f^r w` for a unique `w ∈ M^{n+1}` (multiplication by `f^r` is injective), `w` is
+a cocycle since `f^r dw = d²u = 0`, and `u` gives both `k(u mod f) = f^{r−1}[w]` and
+`β_r(u mod f^r) = w mod f`. Stabilisation: for `r ≥ b`, `f^rH^{n+1} ∩ H^{n+1}[f] = 0`, so `Z_{r+1} = ker k`,
+and `B_{r+1}` is constant for `r ≥ a`. Convergence: in modules, the kernel of `D^{s,n−s} → Hⁿ(M)[1/f]` (where
+`D^{s,n−s} = Hⁿ(M)` for every `s`) is `⋃_r ker i^r`, so the image filtration of the colimit `Hⁿ(M)[1/f]` of
+the tower `i` has `gr^s ≅ D^{s,n−s}/(iD^{s+1,n−s−1} + ⋃_r ker i^r) ≅ ker k / B_∞` through `j`, a submodule of
+the limit page `Z_∞/B_∞`, equal to it exactly when `Z_∞ = ker k`. *Needs:* 6.1; base §§1.3, 1.4, 3.1, 3.2,
+6.2.
 
 - *Multiplicativity.* If `M` is a differential graded `A`-algebra, the filtration `f^sM` of `M[1/f]` is
   multiplicative, so every page carries a pairing with `d_r` a derivation (5.2; may-primer line
@@ -1328,7 +1342,9 @@ of the limit page `Z_∞/B_∞`, equal to it exactly when `Z_∞ = ker k`. *Need
 - *The ℤ/p^r complex.* For `M = (ℤ →(×p^r) ℤ)` in degrees `0, 1` and `f = p`: `H^0 = 0` and `H^1 = ℤ/p^r`;
   the higher universal-coefficient sequences give `E_s^0 = E_s^1 = ℤ/p` for `s ≤ r` and `0` for `s > r`, so
   `d_1 = ⋯ = d_{r−1} = 0`, `d_r` is an isomorphism and `E_{r+1} = 0`, matching `H^1 = ℤ/p^r`; stabilisation
-  is from page `max(0, r) + 1`.
+  is from page `max(0, r) + 1`. The route's representative of `1 ∈ E_r^0` is `u = 1 ∈ M^0`, which is not a
+  cocycle of `M` (`du = p^r`) but reduces to one modulo `p^r`, with `w = 1`: `k(1) = p^{r−1}[1]` and
+  `d_r(1) = β_r(1) = 1`. Requiring `u` to be a cocycle of `M` would force `w = 0` and miss this `d_r`.
 - *A limit page reached by no page.* For `M = ⊕_{k ≥ 1} (ℤ →(×p^k) ℤ)`, `H^1 = ⊕_k ℤ/p^k` has unbounded
   torsion, `E_r^0 = ⊕_{k ≥ r} ℤ/p ≠ 0` for every `r`, while `⋂_r p^r H^1 = 0` gives `Z_∞^0 = ker k = 0`
   (`H^0 = 0`) and `E_∞^0 = 0`, consistent with `H^0(M)[1/p] = 0`.
