@@ -1021,8 +1021,10 @@ being flat. *Needs:* Mathlib `CategoryTheory.Tor`, `CategoryTheory.Tor'`,
   the socle. For `X = R/(xy)`, resolving `k` by `R² →(x, y) R` gives `Tor_0(X, k) = X/(x, y)X = k`.
   Resolving `X` by `R →(×xy) R` gives `Tor'_0(X, k) = coker(0 : soc R → soc R) = k`. But
   `X ⋆ k = soc(X) = k·x ⊕ k·y` has dimension `2`. Balance holds; the identification with `⋆` fails
-  because `X ⋆ −` is not right exact: `R → X` induces the zero map `soc(R) = k·xy → soc(X)`, which is not
-  surjective.
+  because `− ⋆ k` is not right exact: applied to `R ↠ X` it gives the zero map
+  `soc(R) = k·xy → soc(X) = k·x ⊕ k·y`, which is not surjective. Likewise `X ⋆ −` is not right exact: it
+  sends `R ↠ k` to the zero map `X ≅ X ⋆ R → X ⋆ k = soc(X)`, induced by multiplication by `xy`, which
+  kills `X`.
 - For a projective `X`, `Tor_n(X, Y) = 0` for `n > 0`, which by definition is a statement about the
   second variable and follows here from `CategoryTheory.isZero_Tor'_succ_of_projective`.
 - *Ext needs no balancing at the pin.* `Ext¹_ℤ(ℤ/2, ℤ)` is `ℤ/2` both from `ℤ →(×2) ℤ → ℤ/2` (Mathlib
@@ -1269,8 +1271,16 @@ complexes* as a family of bilinear maps `K^{p,q} × L^{p′,q′} → M^{p+p′,
   give `(−1)^{(q+1)p′} a′ ⊗ db`, the wrong sign.
 - *Graded commutativity.* For `A = B = ℤ[ε]/(ε²)` with `|ε| = 1` and zero differentials,
   `(ε ⊗ 1)(1 ⊗ ε) = ε ⊗ ε` and `(1 ⊗ ε)(ε ⊗ 1) = −ε ⊗ ε`, the Koszul sign of two elements of total degree `1`.
-- A double complex concentrated in column `0` with its pairing is a differential graded algebra, and
-  `′E₁ = H` with its product.
+- *One column.* A differential graded algebra `A` placed in column `0` (`K^{0,q} = A^q`, `d₂ = d_A`,
+  `d₁ = 0`), with its associative unital multiplication as the self-pairing, satisfies both rules (at
+  `p = p′ = 0` the vertical rule is the Leibniz rule of `A`), `Tot(K) = A`, and `′E₁ = H(A)` in column `0`
+  with its induced algebra product, all later differentials being zero. For `A = ℤ[ε]/(ε²)`, `|ε| = 1`,
+  `d = 0`: `(1·ε)·1 = ε = 1·(ε·1)` and `′E₁ = A = H(A)`.
+- *A self-pairing is not an algebra.* Let `K^{0,0} = ℤe ⊕ ℤf`, all other terms `0`, paired with itself by
+  `e² = f`, `fe = e`, `ef = f² = 0`. Every differential is zero, so both rules read `0 = 0` and this is a
+  pairing of double complexes; but `(ee)e = fe = e` while `e(ee) = ef = 0`, and no element `u = ae + bf` is
+  a unit on either side (`eu = af ≠ e`, and `ue = e` forces `u = f`, with `ff = 0 ≠ f`). So the
+  definition imposes neither associativity nor a unit, and `′E₁ = K` carries this non-associative product.
 
 ### Examples
 

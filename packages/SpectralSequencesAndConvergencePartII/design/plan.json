@@ -927,7 +927,7 @@
       {
        "name": "degree_zero_needs_right_exactness",
        "kind": "non-example",
-       "statement": "R = 𝔽₂[x, y]/(x², y²), k = R/(x, y), finite-dimensional R-modules with D = Hom_𝔽₂(−, 𝔽₂) and U ⋆ V = D(DU ⊗_R DV) (unit DR ≅ R via the xy-coefficient pairing): P ⋆ − and − ⋆ P are exact for projective P (free, P ⋆ V ≅ V^n), and U ⋆ k ≅ soc(U). For X = R/(xy): Tor_0(X, k) = X/(x, y)X = k, Tor'_0(X, k) = coker(0 : soc R → soc R) = k, but X ⋆ k = soc(X) = k·x ⊕ k·y has dimension 2; X ⋆ − is not right exact (soc(R) → soc(X) is zero, not surjective)."
+       "statement": "R = 𝔽₂[x, y]/(x², y²), k = R/(x, y), finite-dimensional R-modules with D = Hom_𝔽₂(−, 𝔽₂) and U ⋆ V = D(DU ⊗_R DV) (unit DR ≅ R via the xy-coefficient pairing): P ⋆ − and − ⋆ P are exact for projective P (free, P ⋆ V ≅ V^n), and U ⋆ k ≅ soc(U). For X = R/(xy): Tor_0(X, k) = X/(x, y)X = k, Tor'_0(X, k) = coker(0 : soc R → soc R) = k, but X ⋆ k = soc(X) = k·x ⊕ k·y has dimension 2; − ⋆ k is not right exact (applied to R ↠ X it gives the zero map soc(R) = k·xy → soc(X) = k·x ⊕ k·y, not surjective), and neither is X ⋆ − (it sends R ↠ k to the zero map X ≅ X ⋆ R → soc(X), induced by multiplication by xy, which kills X)."
       },
       {
        "name": "projective_first",
@@ -1272,7 +1272,12 @@
       {
        "name": "one_column",
        "kind": "degenerate",
-       "statement": "A double complex in column 0 with a pairing is a DGA, and ′E₁ = H with its product."
+       "statement": "A DGA A in column 0 (K^{0,q} = A^q, d₂ = d_A, d₁ = 0) with its associative unital multiplication as self-pairing satisfies both rules (at p = p′ = 0 the vertical rule is A's Leibniz rule), Tot(K) = A, and ′E₁ = H(A) in column 0 with its induced algebra product, later differentials zero; for A = ℤ[ε]/(ε²), |ε| = 1, d = 0: (1·ε)·1 = ε = 1·(ε·1) and ′E₁ = A = H(A)."
+      },
+      {
+       "name": "pairing_not_algebra",
+       "kind": "non-example",
+       "statement": "K^{0,0} = ℤe ⊕ ℤf, all other terms 0, with e² = f, fe = e, ef = f² = 0: all differentials vanish, so both rules read 0 = 0 and this is a pairing; but (ee)e = e ≠ 0 = e(ee), and there is no unit on either side (eu = af ≠ e; ue = e forces u = f, and ff = 0 ≠ f). A pairing imposes neither associativity nor a unit."
       }
      ]
     }
