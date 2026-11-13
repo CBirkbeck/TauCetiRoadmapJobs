@@ -3490,7 +3490,7 @@
     },
     {
       "slug": "p-ramified-hilbert-coefficient-families",
-      "needs": "The §F.5 coefficient families M, M′, S, the operators T_𝔩 (𝔩 ∤ 𝔫p) and U_𝔮 (𝔮 | 𝔫p), the ordinary projector, ordinary control, Hecke images and pairings, and the ordinary Eisenstein family E(1,χ) (T_𝔩-eigenvalue 1 + χε(𝔩), U_𝔮-eigenvalue 1 at every 𝔮 | p, standard constants 2^(−[F:ℚ])L_p(χω, 1 − k)), for every prime p (with the dyadic conventions of gap:dyadic-hilbert-coefficient-families at p = 2) and every totally odd finite-order χ whose conductor 𝔫𝔣_p has a nontrivial part 𝔣_p above p and tame level 𝔫 prime to p, including χ = ω⁻¹ at tame level 1, with weight-k specializations of level 𝔫·lcm(𝔣_p, ∏_{𝔮|p}𝔮) and character χω^(1−k).",
+      "needs": "The §F.5 coefficient families M, M′, S, the operators T_𝔩 (𝔩 ∤ 𝔫p) and U_𝔮 (𝔮 | 𝔫p), the ordinary projector, ordinary control, finite freeness of M° and M′°, Hecke images and pairings, and the ordinary Eisenstein family E(1,χ) (T_𝔩-eigenvalue 1 + χε(𝔩), U_𝔮-eigenvalue 1 at every 𝔮 | p, standard constants 2^(−[F:ℚ])L_p(χω, 1 − k)), for every prime p (with the dyadic conventions of gap:dyadic-hilbert-coefficient-families at p = 2) and every totally odd finite-order χ whose conductor 𝔫𝔣_p has a nontrivial part 𝔣_p above p and tame level 𝔫 prime to p, including χ = ω⁻¹ at tame level 1, with weight-k specializations of level 𝔫·lcm(𝔣_p, ∏_{𝔮|p}𝔮) and character χω^(1−k).",
       "supplier": "NoncommutativeAndEquivariantIwasawa",
       "section": "§F.5"
     },
