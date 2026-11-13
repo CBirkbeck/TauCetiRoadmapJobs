@@ -1,0 +1,4 @@
+{"review": {"status": "needs_changes", "reviewer": "independent-review-PRREVIEW-ConvexLifting~1",
+            "head": "16d406fa5bfe3f65250622aac00d0949b45f7d9c", "pr": 2292, "folder": "ConvexLifting", "date": "2026-11-13",
+            "findings": 10, "blocking": 2,
+            "notes": "Full review. Gate fails (latex=7, tex=7; build and depcheck pass, 0 problems). Suggested.lean elaborates with sorry warnings only; one-tactic probes run on a scratch copy (epigraph_composition_iff and the chain-rule conjunct are padding). Adversarial table computed for all 13 theorems and the README's domain-restricted comparison, which is false as listed (counterexample g = -x^2). Sampled sections 2.1-2.3 carry no locator; their sources (HBO, TS05) could not be read legally. Read: arXiv:1511.06710v3 section 4, arXiv:1607.03566v2 section 4 eqs (8)-(10). 9 Mathlib declarations resolved at the pin. Overlap read against 5 closest roadmaps: nothing shared."}}
