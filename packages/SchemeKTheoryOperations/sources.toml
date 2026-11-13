@@ -18,3 +18,127 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-09"
 cited_for = ["6.7"]
+
+[[source]]
+id = "Gillet.1981"
+authors = "Henri Gillet"
+title = "Riemann-Roch theorems for higher algebraic K-theory"
+year = 1981
+venue = "Advances in Mathematics 40"
+doi = "10.1016/S0001-8708(81)80006-0"
+locator_scheme = "page"
+locator = "cited as a whole, without locators"
+url = "https://doi.org/10.1016/S0001-8708(81)80006-0"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["7.3a"]
+
+[[source]]
+id = "Gillet.1980"
+authors = "Henri Gillet"
+title = "Riemann-Roch theorems for higher algebraic K-theory"
+year = 1980
+venue = "Bulletin of the American Mathematical Society (N.S.) 3 (1980), no. 2, 849-852"
+doi = "10.1090/S0273-0979-1980-14828-4"
+locator_scheme = "page"
+locator = "cited as a whole, without locators"
+url = "https://www.ams.org/journals/bull/1980-03-02/S0273-0979-1980-14828-4/S0273-0979-1980-14828-4.pdf"
+fetched_from = "https://www.ams.org/journals/bull/1980-03-02/S0273-0979-1980-14828-4/S0273-0979-1980-14828-4.pdf"
+fetched_at = "2026-11-13T13:25:13Z"
+sha256 = "e9f42dba786892e92037aa34341be17e3eb38b097a5fc8a4554905faef5860c3"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-11-13"
+cited_for = ["7.3a"]
+
+[[source]]
+id = "Jannsen.1988"
+authors = "Uwe Jannsen"
+title = "Continuous étale cohomology"
+year = 1988
+venue = "Mathematische Annalen 280 (1988), 207-245"
+locator_scheme = "theorem"
+locator = "Theorem 6.12 and its proof, pp.241-242; Proposition 6.13, pp.242-243"
+url = "https://epub.uni-regensburg.de/26684/1/jannsen12.pdf"
+fetched_from = "https://epub.uni-regensburg.de/26684/1/jannsen12.pdf"
+fetched_at = "2026-11-13T13:30:36Z"
+sha256 = "c9d26714c40b14912ea553307062835a05955b0787587429260cfead87bb3d76"
+licence_class = "institutional"
+status = "certified"
+accessed = "2026-11-13"
+cited_for = ["7.3a"]
+version_note = "Regensburg repository scan; locators use the printed pages"
+
+[[source]]
+id = "WeibelChern"
+authors = "Charles A. Weibel"
+title = "Étale Chern classes at the prime 2"
+year = 1993
+venue = "Algebraic K-theory and algebraic topology (Lake Louise, 1991), NATO ASI Series C 407 (1993)"
+locator_scheme = "theorem"
+locator = "Proposition 1.1, Theorem 1.2, Lemma 2.3, Propositions 2.4 and 2.8, (3.1), Theorems 3.2 and 3.3, Propositions 4.2 and 4.4"
+url = "https://sites.math.rutgers.edu/~weibel/archive/papers-dir/chernclass.pdf"
+fetched_from = "https://sites.math.rutgers.edu/~weibel/archive/papers-dir/chernclass.pdf"
+fetched_at = "2026-11-13T13:30:41Z"
+sha256 = "38dc2a10f368cf0115b890baff2b64ab77d352c037add1cc9bbe50125d796665"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-13"
+cited_for = ["7.3a"]
+version_note = "author-hosted preprint; PDF page = printed page"
+
+[[source]]
+id = "Soulé.1979"
+authors = "Christophe Soulé"
+title = "K-théorie des anneaux d'entiers de corps de nombres et cohomologie étale"
+year = 1979
+venue = "Inventiones mathematicae 55 (1979), 251-295"
+locator_scheme = "theorem"
+locator = "II.2.2-II.2.3, pp.260-261; Théorème 1, p.262; Remarques, p.265"
+url = "https://gdz.sub.uni-goettingen.de/download/pdf/PPN356556735_0055/LOG_0021.pdf"
+fetched_from = "https://gdz.sub.uni-goettingen.de/download/pdf/PPN356556735_0055/LOG_0021.pdf"
+fetched_at = "2026-11-13T13:42:15Z"
+sha256 = "734d20bb75cadb59c5996e73eed05be193f9c64430eeac816d9b86cfb5f18729"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-13"
+cited_for = ["7.3a"]
+version_note = "GDZ scan; printed page = PDF page + 249"
+
+[[source]]
+id = "Weibel"
+authors = "Charles A. Weibel"
+title = "The K-book: an introduction to algebraic K-theory"
+year = 2013
+venue = "Graduate Studies in Mathematics 145, American Mathematical Society (2013)"
+locator_scheme = "theorem"
+locator = "Section V.11: Definitions V.11.5 and V.11.14, Examples V.11.9, V.11.10 and V.11.12, Lemmas V.11.3 and V.11.6, Proposition V.11.8 (PDF pp.459-469)"
+url = "https://sites.math.rutgers.edu/~weibel/Kbook/Kbook.pdf"
+fetched_from = "https://sites.math.rutgers.edu/~weibel/Kbook/Kbook.pdf"
+fetched_at = "2026-11-13T13:42:53Z"
+sha256 = "a04f53c9393b20672fab2a6818279b2f9996dbc7cf74735789ed13804b058845"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-13"
+cited_for = ["7.3a"]
+version_note = "author-hosted draft of 29 August 2013; PDF page = book page + 8; the published numbering differs"
+
+[[source]]
+id = "HuberWildeshaus"
+authors = "Annette Huber and Jörg Wildeshaus"
+title = "Classical motivic polylogarithm according to Beilinson and Deligne"
+year = 1998
+venue = "Documenta Mathematica 3 (1998), 27-133"
+locator_scheme = "theorem"
+locator = "Appendix B, Theorem B.3.7, p.116"
+url = "https://www.maths.tcd.ie/EMIS/journals/DMJDMV/vol-03/03.pdf"
+fetched_from = "https://www.maths.tcd.ie/EMIS/journals/DMJDMV/vol-03/03.pdf"
+fetched_at = "2026-11-13T14:05:44Z"
+sha256 = "169449aa416c6cc5f8dc82177d7d71d31785ff8b0d42f96681e112f628efe5b2"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-13"
+cited_for = ["7.3a"]
+version_note = "EMIS mirror of the journal; printed page = PDF page + 26"
+
