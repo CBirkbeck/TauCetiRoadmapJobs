@@ -3,6 +3,7 @@ module
 import Mathlib
 import TauCeti.GroupTheory.TitsSystem.Parabolic.Basic
 import TauCeti.LinearAlgebra.Matrix.GeneralLinearGroup.Diagonal.TitsSystem
+import TauCeti.RingTheory.CompositionSeries.Multiplicity
 
 /-!
 # Pro-étale cohomology of p-adic curves, Drinfeld half-spaces and the rank-two Drinfeld tower: target signatures
@@ -11,14 +12,17 @@ The roadmap is `README.md`; this file is not the roadmap. It states the roadmap'
 theorems against the pinned Mathlib and Tau Ceti, each with `sorry`, together with the few
 definitions their statements need.
 
-Stated here, for the generalized Steinberg representations `Sp_J(A)` of `GL_{d+1}(K)`, `K/ℚ_p`
-finite:
+Stated here, for the generalized Steinberg representations `Sp_J(A)` of `GL_{d+1}(K)`:
 
-* their irreducibility over a coefficient field `A` of characteristic `0` or `p` (README §0.4(a));
-* their pairwise non-isomorphism over such a field (README §0.4(a));
-* the Schneider–Stuhler and Iovita–Spiess presentation of `Sp_r(ℤ)` as the locally constant
-  `ℤ`-valued functions on `(r + 1)`-tuples of `K`-rational hyperplanes of `K^{d+1}` that satisfy
-  the cocycle identity and vanish on tuples with linearly dependent equations (README §0.5).
+* for `K` a non-Archimedean local field of residue characteristic `p` (Mathlib's
+  `IsNonarchimedeanLocalField`) and a coefficient field `A` of characteristic `0` or `p`, their
+  irreducibility, their pairwise non-isomorphism, and that they are the composition factors of
+  `LC(G/B, A)`, each with multiplicity one, counted with Tau Ceti's
+  `TauCeti.compositionMultiplicity` (README §0.4(a));
+* for `K/ℚ_p` finite, the Schneider–Stuhler and Iovita–Spiess presentation of `Sp_r(ℤ)` as the
+  locally constant `ℤ`-valued functions on `(r + 1)`-tuples of `K`-rational hyperplanes of
+  `K^{d+1}` that satisfy the cocycle identity and vanish on tuples with linearly dependent
+  equations (README §0.5).
 
 The representations are the quotients of the locally constant functions on `GL_{d+1}(K)/P_J` by
 the functions pulled back from the larger flag varieties (README §0.3). The standard parabolic
@@ -32,9 +36,6 @@ half-spaces in Layer 6.
 
 Not statable at the pins, by headline theorem and missing carrier:
 
-* the multiplicity-one part of README §0.4(a), that the `Sp_J(A)` are the irreducible
-  constituents of `LC(G/B, A)` each with multiplicity one: the pins have no composition
-  multiplicities of representations (Jordan–Hölder factors counted up to isomorphism);
 * the fundamental diagrams of affinoid, proper, overconvergent and Stein curves (README §§3.5,
   4.1, 4.2, 4.7), the Kummer regulator `Symb_ℓ(Y) ≅ H¹_ét(Y, ℤ_ℓ(1))` (§2.4), the ℓ-adic,
   de Rham and Hyodo–Kato filtrations and the Weil–Deligne similarity (§§2.5, 3.2, 4.3, 4.6):
@@ -60,7 +61,7 @@ Not statable at the pins, by headline theorem and missing carrier:
 namespace TauCetiRoadmap.ProetaleCohomologyOfPAdicCurvesAndTowers
 
 open TauCeti
-open scoped LinearAlgebra.Projectivization
+open scoped LinearAlgebra.Projectivization ValuativeRel
 
 /-! ## Layer 0: Graphs with legs and generalized Steinberg representations -/
 
@@ -122,34 +123,57 @@ noncomputable def generalizedSteinberg (K : Type*) [Field K] [Nontrivial Kˣ] [T
     (steinbergRelations K A d J) (steinbergRelations_le_comap K A d J)
 
 /-- **Irreducibility of the generalized Steinberg representations** (README §0.4(a);
-CDN-STEIN Proposition 5.1, after Casselman in characteristic `0`, Borel–Wallach, Chapter X,
-Theorem 4.11, extended from `ℂ` to every field of characteristic `0` by base change of the
-Hecke modules of invariants, and Grosse-Klönne, GK14 Corollaries 4.3–4.4, in characteristic `p`).
-Let `K` be a finite extension of `ℚ_p` with its absolute value and `A` a field of characteristic
-`0` or `p`. Then for every `d` and every set `J` of simple reflections of the standard Tits
-system of `GL_{d+1}(K)`, `Sp_J(A)` is an irreducible representation of `GL_{d+1}(K)`. The
-instance `Nontrivial Kˣ`, which the Tits system requires, holds for every such `K`: it has
-characteristic `0`, so `-1 ≠ 1`. -/
-theorem generalizedSteinberg_isIrreducible (p : ℕ) [Fact p.Prime] (K : Type*)
-    [NontriviallyNormedField K] [NormedAlgebra ℚ_[p] K] [FiniteDimensional ℚ_[p] K]
-    [Nontrivial Kˣ] (A : Type*) [Field A] (hA : CharZero A ∨ CharP A p) (d : ℕ)
+CDN-STEIN Proposition 5.1 for `K/ℚ_p` finite; for every non-Archimedean local field, Casselman's
+theorem over `ℂ` in characteristic `0`, Borel–Wallach, Chapter X, Theorem 4.11, as recalled in
+GK14 lines 42–44, extended from `ℂ` to every field of characteristic `0` by base change of the
+Hecke modules of invariants, and Grosse-Klönne, GK14 Corollary 4.3, in characteristic `p`).
+Let `K` be a non-Archimedean local field whose residue field has characteristic `p`, such as a
+finite extension of `ℚ_p` or a field `𝔽_q((t))` with `q` a power of `p`, and `A` a field of
+characteristic `0` or `p`. Then for every `d` and every set `J` of simple reflections of the
+standard Tits system of `GL_{d+1}(K)`, `Sp_J(A)` is an irreducible representation of
+`GL_{d+1}(K)`. The residue field is finite, so `p` is prime. The instance `Nontrivial Kˣ`, which
+the Tits system requires, holds for every such `K`: a uniformizer is a unit different from `1`. -/
+theorem generalizedSteinberg_isIrreducible (p : ℕ) (K : Type*) [Field K] [ValuativeRel K]
+    [TopologicalSpace K] [IsNonarchimedeanLocalField K] [CharP 𝓀[K] p] [Nontrivial Kˣ]
+    (A : Type*) [Field A] (hA : CharZero A ∨ CharP A p) (d : ℕ)
     (J : Set (glTitsSystem K d).simple) :
     (generalizedSteinberg K A d J).IsIrreducible := by
   sorry
 
 /-- **Pairwise non-isomorphism of the generalized Steinberg representations** (README §0.4(a);
-CDN-STEIN Proposition 5.1, after Casselman in characteristic `0`, Borel–Wallach, Chapter X,
-Theorem 4.11, descended from `ℂ` to every field of characteristic `0` through the Hecke modules
-of invariants, and Grosse-Klönne, GK14 Corollary 4.4(a), in characteristic `p`). Let `K` be a
-finite extension of `ℚ_p` with its absolute value and `A` a field of characteristic `0` or `p`.
-Then `Sp_J(A)` and `Sp_{J'}(A)` are isomorphic representations of `GL_{d+1}(K)` exactly when
-`J = J'`. -/
-theorem generalizedSteinberg_nonempty_equiv_iff (p : ℕ) [Fact p.Prime] (K : Type*)
-    [NontriviallyNormedField K] [NormedAlgebra ℚ_[p] K] [FiniteDimensional ℚ_[p] K]
-    [Nontrivial Kˣ] (A : Type*) [Field A] (hA : CharZero A ∨ CharP A p) (d : ℕ)
+CDN-STEIN Proposition 5.1 for `K/ℚ_p` finite; for every non-Archimedean local field, Casselman's
+theorem over `ℂ` in characteristic `0`, Borel–Wallach, Chapter X, Theorem 4.11, as recalled in
+GK14 lines 42–44, descended from `ℂ` to every field of characteristic `0` through the Hecke
+modules of invariants, and Grosse-Klönne, GK14 Corollary 4.4(a), in characteristic `p`). Let `K`
+be a non-Archimedean local field of residue characteristic `p` and `A` a field of
+characteristic `0` or `p`. Then `Sp_J(A)` and `Sp_{J'}(A)` are isomorphic representations of
+`GL_{d+1}(K)` exactly when `J = J'`. -/
+theorem generalizedSteinberg_nonempty_equiv_iff (p : ℕ) (K : Type*) [Field K] [ValuativeRel K]
+    [TopologicalSpace K] [IsNonarchimedeanLocalField K] [CharP 𝓀[K] p] [Nontrivial Kˣ]
+    (A : Type*) [Field A] (hA : CharZero A ∨ CharP A p) (d : ℕ)
     (J J' : Set (glTitsSystem K d).simple) :
     Nonempty ((generalizedSteinberg K A d J).Equiv (generalizedSteinberg K A d J')) ↔
       J = J' := by
+  sorry
+
+/-- **The generalized Steinberg representations are the composition factors of `LC(G/B, A)`,
+each with multiplicity one** (README §0.4(a); CDN-STEIN Proposition 5.1 for `K/ℚ_p` finite; for
+every non-Archimedean local field, Casselman's theorem over `ℂ` as recalled in GK14 lines 42–44,
+descended to every field of characteristic `0` through the Hecke modules of invariants, and
+GK14 Corollary 4.4(b) in characteristic `p`). Let `K` be a non-Archimedean local field of residue
+characteristic `p`, `A` a field of characteristic `0` or `p`, `G = GL_{d+1}(K)` and `B = P_∅`
+its upper triangular Borel subgroup. Then the `A[G]`-module `LC(G/B, A)` of the translation
+representation has a composition series from `0` to `LC(G/B, A)` each of whose factors is
+isomorphic, as an `A[G]`-module, to `Sp_J(A)` for some set `J` of simple reflections, and in
+which `Sp_J(A)` occurs exactly once for every `J`. -/
+theorem exists_compositionSeries_generalizedSteinberg (p : ℕ) (K : Type*) [Field K]
+    [ValuativeRel K] [TopologicalSpace K] [IsNonarchimedeanLocalField K] [CharP 𝓀[K] p]
+    [Nontrivial Kˣ] (A : Type*) [Field A] (hA : CharZero A ∨ CharP A p) (d : ℕ) :
+    ∃ s : CompositionSeries (Submodule (MonoidAlgebra A (GL (Fin (d + 1)) K))
+        (translation (GL (Fin (d + 1)) K) ((glTitsSystem K d).standardParabolic ∅) A).asModule),
+      s.head = ⊥ ∧ s.last = ⊤ ∧
+        (∀ i, ∃ J, IsCompositionFactorAt s i (generalizedSteinberg K A d J).asModule) ∧
+        ∀ J, compositionMultiplicity s (generalizedSteinberg K A d J).asModule = 1 := by
   sorry
 
 /-- The index set `{s_1, …, s_{d−r}}` of `Sp_r = Sp_{{1,…,d−r}}` (CDN-STEIN §5.2.1, README
