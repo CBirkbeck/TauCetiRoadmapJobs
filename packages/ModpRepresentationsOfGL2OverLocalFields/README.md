@@ -191,7 +191,7 @@ of Layer 7 is an upper bound under explicit multiplicity hypotheses.
   Artin map of `F` alone gives only the niveau-`f` character. Over `ℚ_p`, `ω_1` is the reduction
   of the cyclotomic character on inertia.
 - Prime bounds: the saturated Iwahori computations of Layer 4 and the extension calculus of
-  Layers 5–7 assume `p > 3`; the multiplicity statement for `W_{χ,3}` in §5.1 assumes `p > 5`;
+  Layers 5–7 assume `p > 3`; the multiplicity statement for `W_{χ,3}` in §5.1 assumes `q ≠ 5`;
   the integral constructions of Layer 8 assume `p > 2`, `L/ℚ_p` unramified and `𝒪 = W(k)`. Every
   stronger depth or prime bound stated in a target is part of that target.
 - Universes: all carriers live in one universe; the `ℚ_p` statements of Suggested.lean live in
@@ -319,9 +319,9 @@ of Layer 7 is an upper bound under explicit multiplicity hypotheses.
   into all representations (*smooth-rep-category*, SR.0.2), invariants under compact opens are a
   functor, the smooth contragredient is the smooth part of the algebraic dual with the inverse
   action. The adjunction gives the injective envelopes of §4.6.
-- SR.0d.1: the smooth category is Grothendieck abelian with enough injectives; used for the derived
-  functors of `Ord_B` in §2.2. It states no essential (minimal) injective envelopes; those are
-  constructed in §4.6.
+- SR.0d.1: the smooth category is Grothendieck abelian with enough injectives; used in §0.1 to
+  obtain the injectives of the locally admissible category, in which §2.2 derives `Ord_B`. It
+  states no essential (minimal) injective envelopes; those are constructed in §4.6.
 - SR.2.1: *smooth-induction* (unnormalised, right translation), *compact-induction* (with the
   identification of `c-Ind_U^G` with Mathlib's induction for open `U`), *frobenius-reciprocity*,
   *induction-exactness*, *mackey-filtration*. Used for `c-Ind`, `Ind_{B̄}^G` and Frobenius
@@ -516,7 +516,7 @@ subrepresentation `𝒪[H]v` is torsion-admissible. The notion differs from Smoo
 action is torsion-admissible and not admissible in that sense. For `H = GL₂(ℚ_p)` with fixed
 central character it is the admissibility of PadicLocalLanglandsForGL2Qp §2.1. *Needs:* Mathlib
 `IsFiniteLength`, `OpenSubgroup`; SmoothRepresentationsOfLocalGroups *is-smooth*,
-*compact-open-invariants*.
+*compact-open-invariants*, SR.0d.1 (for the injectives of the locally admissible category).
 
 API:
 
@@ -535,6 +535,15 @@ API:
   PadicLocalLanglandsForGL2Qp §2.3).
 - Local admissibility can be checked on cyclic subrepresentations, and a finite sum of locally
   admissible subrepresentations is locally admissible.
+- For a smooth `𝒪`-representation `V`, the `p`-power-torsion vectors `v` with `𝒪[H]v`
+  torsion-admissible form a subrepresentation `V_{l.adm}` (the sum of two torsion-admissible
+  subrepresentations is a quotient of their direct sum). The locally admissible representations
+  form a full subcategory of the smooth representations closed under subobjects, quotients and
+  arbitrary direct sums, hence abelian; `V ↦ V_{l.adm}` is right adjoint to the exact inclusion, so
+  it carries injectives of the smooth category (SmoothRepresentationsOfLocalGroups SR.0d.1) to
+  injectives, and the locally admissible category has enough injectives (EMERTON1, Definition
+  2.2.15, Lemma 2.2.16, Proposition 2.2.18 and the paragraph after Remark 2.2.19, pp. 6–7;
+  EMERTON2, Proposition 2.1.1, p. 2). §2.2 derives `Ord_B` in this category.
 
 **Checks.**
 
@@ -547,6 +556,11 @@ API:
   admissible; in particular the zero representation is.
 - For `H = GL₂(ℚ_p)` and `V = c-Ind_{KZ}^G σ` over `k`, `V^{I₁}` is infinite-dimensional, so `V` is
   not torsion-admissible, while the Steinberg representation (infinite-dimensional) is.
+- The locally admissible part is not the torsion part: for `H = ℚ_p` acting by translation on
+  `V = k[ℚ_p/ℤ_p]`, a nonzero `v` has infinitely many translates with pairwise disjoint supports,
+  all fixed by `ℤ_p`, so `(𝒪[H]v)^{ℤ_p}` is infinite-dimensional and `V_{l.adm} = 0`. For compact
+  `H`, by contrast, `𝒪[H]v` is finite for every torsion `v` (finite orbit, finite `𝒪v`), and
+  `V_{l.adm}` is the whole `p`-power-torsion part.
 
 ### 0.2 The augmented Iwasawa algebra
 
@@ -555,9 +569,15 @@ that it carries a unique associative `𝒪`-algebra structure for which `𝒪[H]
 `𝒪[[U]] → 𝒪⟨H⟩` are algebra maps; that for another compact open `U′` there is a canonical
 algebra isomorphism compatible with both maps; and that the `𝒪[H]`-action on a smooth torsion
 representation extends uniquely to an `𝒪⟨H⟩`-module structure, functorially (SHOTTON20,
-Proposition 3.2 (Kohlhaase) and Lemma 3.5; CDN23, §1.1.1, p. 10). Multiplication is the crossed
-product given by coset representatives of `H/U`, not the componentwise product of the tensor
-factors. Prove that `𝒪⟨H⟩` is flat as a right `𝒪[[U]]`-module (SHOTTON20, Lemma 3.3).
+Proposition 3.2 (Kohlhaase) and Lemma 3.5; CDN23, §1.1.1, p. 10). The multiplication is not the
+componentwise product of the tensor factors, and `U` need not be normal in `H`: to multiply
+`(h ⊗ x)(g ⊗ y)` put `U_g = U ∩ gUg⁻¹`, open in `U`, choose representatives `a` of `U/U_g`, and
+write `x = Σ_a a x_a` with `x_a ∈ 𝒪[[U_g]]` (NoncommutativeAndEquivariantIwasawa §0.3); then
+`g⁻¹ x_a g ∈ 𝒪[[g⁻¹U_g g]] ⊆ 𝒪[[U]]`, as `g⁻¹U_g g = g⁻¹Ug ∩ U`, and the product is
+`Σ_a hag ⊗ (g⁻¹ x_a g) y`. Prove that it is independent of the representatives and compatible with
+the comparison maps between compact open subgroups (SHOTTON20, proof of Proposition 3.2, pp. 7–8).
+For `U` normal in `H`, `U_g = U` and this is the crossed product of `𝒪[[U]]` by `H/U`. Prove that
+`𝒪⟨H⟩` is flat as a right `𝒪[[U]]`-module (SHOTTON20, Lemma 3.3).
 
 The `𝒪[[U]]`-action on a smooth torsion `V` is assembled here, without asking `V` to be compact.
 For `v ∈ V` the `𝒪[U]`-span `M_v` of `v` is finite: the orbit `Uv` is finite, `U` being compact
@@ -587,8 +607,13 @@ API:
   action.
 - For discrete `H` and `U = {1}`, `𝒪⟨H⟩ = 𝒪[H]`, including its noncommutative multiplication when
   `H` is nonabelian: in `𝒪[S₃]`, `[(12)][(23)] = [(123)]` while `[(23)][(12)] = [(132)]`.
+- A subgroup that is not normal: for discrete `H = S₃`, `U = ⟨(12)⟩`, `g = (123)`, `h = y = 1` and
+  `x = [(12)]`, `gUg⁻¹ = ⟨(23)⟩`, so `U_g = {1}`, the coefficients are `x_{(12)} = 1`, `x_1 = 0`, and
+  the rule gives `[(12)(123)] ⊗ 1 = [(23)] ⊗ 1`, the product in `𝒪[S₃]`. Moving `x` past `g` inside
+  `𝒪[[U]]` is impossible: `g⁻¹(12)g = (13) ∉ U`.
 - For `H = ℤ_p ⋊ C₂`, with the generator `s` of `C₂` acting on `ℤ_p` by `x ↦ −x`, and `U = ℤ_p`,
-  `𝒪⟨H⟩` is free on `{1, s}` as a right `𝒪[[T]]`-module, `T = [1] − 1`, and the crossed product gives
+  `𝒪⟨H⟩` is free on `{1, s}` as a right `𝒪[[T]]`-module, `T = [1] − 1`, and the multiplication rule,
+  with `U` normal so that `U_g = U`, gives
   `sTs⁻¹ = [−1] − 1 = (1 + T)⁻¹ − 1 = −T + T² − T³ + ⋯`; a multiplication in which the two tensor
   factors commute would give `sTs⁻¹ = T`, which differs already in the coefficient of `T` (and, for
   `p = 2` after reduction modulo `𝔪`, in that of `T²`).
@@ -729,8 +754,12 @@ of `G′`, if `A, B, D, E` are finitely presented then so is `C` (CDN23, Lemme 2
 Let `F/ℚ_p` be finite and `W` a finite-dimensional smooth `k[KZ]`-module with central character. For
 a `G`-equivariant surjection `q : c-Ind_{KZ}^G W → V` put `P⁺ = {(a b; 0 1) : a ∈ 𝒪_F ∖ {0}, b ∈ 𝒪_F}`,
 `w = (0 1; ϖ 0)`, let `I⁺(W)` be the span of the standard functions `[g, v]` with `g ∈ P⁺`,
-`v ∈ W`, and `I⁻(W) = w I⁺(W)`. Define `Δ(W,V) = q(I⁺(W)) ∩ q(I⁻(W)) ⊆ V` (HU12, §3.1.1, p. 17;
-§3.3, p. 30). Prove that `c-Ind_{KZ}^G W = I⁺(W) ⊕ I⁻(W)` as `IZ`-modules and that `Δ(W,V)` is
+`v ∈ W`, and `I⁻(W) = w I⁺(W)`. The functions of `c-Ind_{KZ}^G W` satisfy `f(hx) = h·f(x)` for
+`h ∈ KZ`, `G` acts by right translation, and `[g, v]` is the function supported on `KZg⁻¹` with
+value `v` at `g⁻¹`, so that `h·[g, v] = [hg, v]` and `[g, v]` corresponds to `g ⊗ v` under the
+identification of SmoothRepresentationsOfLocalGroups *compact-induction* (HU12, p. 5). Define
+`Δ(W,V) = q(I⁺(W)) ∩ q(I⁻(W)) ⊆ V` (HU12, §3.1.1, p. 17; §3.3, p. 30). Prove that
+`c-Ind_{KZ}^G W = I⁺(W) ⊕ I⁻(W)` as `IZ`-modules and that `Δ(W,V)` is
 stable under `IZ` and `w` (HU12, §3.1.1; VIGNERAS11, §5, Lemme 11, p. 21, and Proposition 9,
 p. 22). Prove that for `σ` a Serre weight, an absolutely irreducible `W`
 (FiniteFlatGroupsAndIntegralPadicHodgeTheory R07.5.15), and `V` a nonzero admissible quotient of
@@ -743,8 +772,9 @@ FiniteFlatGroupsAndIntegralPadicHodgeTheory R07.5.15; §§0.1, 0.3.
 
 API:
 
-- `v ∈ Δ(W,V)` exactly when `v` has a preimage under `q` supported in `P⁺KZ` and one supported in
-  `wP⁺KZ`.
+- `v ∈ Δ(W,V)` exactly when `v` has a preimage under `q` supported in `KZ(P⁺)⁻¹` and one supported
+  in `KZ(P⁺)⁻¹w⁻¹`: these sets are the inverses of the two cells of `G = P⁺KZ ∐ wP⁺KZ` (HU12,
+  equation (3), p. 5), and `I⁺(W)`, `I⁻(W)` are exactly the functions supported in them.
 - For `σ` a Serre weight and `V` a nonzero admissible quotient of `c-Ind_{KZ}^G σ`, `Δ(σ,V)`
   contains `V^{I₁}` (HU12, Corollaire 3.9, p. 19).
 - A `G`-map `V → V′` compatible with the presentations restricts to `Δ(W,V) → Δ(W,V′)`, compatibly
@@ -758,6 +788,11 @@ API:
   admissibility, and `c-Ind_{KZ}^G W` is indeed not admissible (§0.1).
 - For `W = k` trivial and `q` the augmentation onto the trivial line, both cell images are `k`, so
   `Δ = k`.
+- Supports of the two cells: in the augmentation, `[1, 1]` and `[w, 1] = w·[1, 1]` both map to `1`,
+  and they are supported in `KZ` and `KZw⁻¹`, inside `KZ(P⁺)⁻¹` and `KZ(P⁺)⁻¹w⁻¹`. A criterion
+  using the cells `P⁺KZ` and `wP⁺KZ` themselves would give `Δ = 0` here: for `s = (0 1; 1 0) ∈ K`,
+  `sw = diag(ϖ, 1) ∈ P⁺`, so left multiplication by `s` carries `wP⁺KZ` into the disjoint cell
+  `P⁺KZ`, and a function with `f(sx) = s·f(x)` supported in `wP⁺KZ` vanishes.
 - The functor is not right exact: the augmentation above has `Δ(source) = 0` and
   `Δ(target) = k`, so the induced map is not surjective.
 
@@ -773,9 +808,9 @@ API:
 ### Dependencies
 
 Mathlib representations, induction and finite length; Tau Ceti completed group algebras;
-SmoothRepresentationsOfLocalGroups SR.0.1–SR.0.4 and SR.2.1; NoncommutativeAndEquivariantIwasawa
-§§0.3 and F.1; FiniteFlatGroupsAndIntegralPadicHodgeTheory R07.5.15 (Serre weights, §0.8);
-PadicLocalLanglandsForGL2Qp §§2.3 and 2.9 for Checks.
+SmoothRepresentationsOfLocalGroups SR.0.1–SR.0.4, SR.0d.1 and SR.2.1;
+NoncommutativeAndEquivariantIwasawa §§0.3 and F.1; FiniteFlatGroupsAndIntegralPadicHodgeTheory
+R07.5.15 (Serre weights, §0.8); PadicLocalLanglandsForGL2Qp §§2.3 and 2.9 for Checks.
 
 ## Layer 1: Finite-length criteria over ℚ_p
 
@@ -996,12 +1031,15 @@ R07.5.15 (with gap:barthel-livne-finite-codimension); SmoothRepresentationsOfLoc
 
 ### 2.1 Ordinary parts for GL₂(F)
 
-On torsion-admissible representations define Emerton's ordinary part `Ord_B(V)` as the subspace of
+On smooth torsion representations define Emerton's ordinary part `Ord_B(V)` as the subspace of
 locally `Z_T`-finite vectors in `Hom_{𝒪[T⁺]}(𝒪[T], V^{N₀})`, where `T⁺` acts on `V^{N₀}` by the
 transfer Hecke operators `t·v = Σ_{n ∈ N₀/tN₀t⁻¹} n t v` of PotentialAutomorphyInfrastructure §3.7
 (EMERTON1, Definition 3.1.3, Lemma 3.1.7, equation (3.1.8) and Definition 3.1.9, pp. 15–17).
 Prove that it is independent of the choice of the
-contracting compact open subgroup, left exact, preserves torsion admissibility, and is right
+contracting compact open subgroup, left exact, commutes with inductive limits (EMERTON1,
+Proposition 3.2.4, p. 21), preserves torsion admissibility (EMERTON1, Theorem 3.3.3, p. 22), and
+hence preserves local admissibility, a locally admissible representation being the union of its
+finitely generated subrepresentations, which are torsion-admissible (§0.1); and that it is right
 adjoint to unnormalised smooth parabolic induction from the lower Borel: for admissible smooth
 `U` of `T` and `V` of `G`, `Hom_G(Ind_{B̄}^G U, V) ≅ Hom_T(U, Ord_B V)` naturally (EMERTON1,
 Theorem 4.4.6; CDN23, §1.5.2, p. 20). No modulus character is inserted. For `F = ℚ_p` the functor
@@ -1042,7 +1080,13 @@ API:
 Assume `F ≠ ℚ_p`. Prove: for admissible `U`, `Ord_B(Ind_{B̄}^G U) ≅ U` and
 `R¹Ord_B(Ind_{B̄}^G U) = 0`; for a smooth character `χ`, `Ord_B(St ⊗ χ∘det) ≅ χ ⊗ χ` and
 `R¹Ord_B(St ⊗ χ∘det) = 0`; and `Ord_B(χ∘det) = R¹Ord_B(χ∘det) = 0` (CDN23, Proposition 1.30,
-pp. 20–21). Here `R¹Ord_B` is the derived functor on locally admissible representations, and
+pp. 20–21). Here `R¹Ord_B` is the first right derived functor of `Ord_B` on the abelian category of
+locally admissible representations of `G`, computed with the injectives of that category (§0.1),
+`Ord_B` taking it to the locally admissible representations of `T` (§2.1) (EMERTON2, §3.7, p. 23,
+and Remark 3.7.8, p. 25, on the choice of category); the injectives of the smooth category
+(SmoothRepresentationsOfLocalGroups SR.0d.1) enter only through §0.1. Thus
+`R¹Ord_B(V) = coker(Ord_B(J) → Ord_B(J/V))` for an embedding `V ⊆ J` into an injective `J` of the
+locally admissible category. Further,
 `H^iOrd_B(V)` is the localisation `Hom_{𝒪[T⁺]}(𝒪[T], H^i(N₀, V))_{T-fin}` of the continuous
 cohomology of `N₀`, on which `t ∈ T⁺` acts by conjugation followed by corestriction (EMERTON2,
 Definition 3.3.1, p. 10, and the description after Proposition 3.5.6, p. 22). Prove the natural
@@ -1080,8 +1124,9 @@ With these: `R¹Ord_B(Ind_{B̄}^G U) ↪ H¹Ord_B(Ind_{B̄}^G U) = 0` (HAUSEUX, 
 `Ord_B(χ∘det) = 0` by the §2.1 Check, and `Ord_B` applied to the Steinberg sequence gives
 `Ord_B(St ⊗ χ∘det) ≅ Ord_B(Ind_{B̄}^G(χ⊗χ)) ≅ χ ⊗ χ`. CDN23 justifies its Steinberg clause by
 EMERTON2, Theorem 4.2.12, a statement about `GL₂(ℚ_p)` only; the route above replaces it.
-*Needs:* §2.1; PotentialAutomorphyInfrastructure §3.7; SmoothRepresentationsOfLocalGroups
-SR.0d.1, *smooth-induction*, *mackey-filtration*; Tau Ceti `TauCeti.ContCohomology.coindAcyclic`.
+*Needs:* §0.1 (the locally admissible category and its injectives); §2.1;
+PotentialAutomorphyInfrastructure §3.7; SmoothRepresentationsOfLocalGroups *smooth-induction*,
+*mackey-filtration*; Tau Ceti `TauCeti.ContCohomology.coindAcyclic`.
 
 **Checks.**
 
@@ -1477,8 +1522,11 @@ Prove that, when `μ − η` is 1-deep, `W(ρ̄)` is the set of regular weights 
 Proposition 2.4.2, p. 16); `t_{μ−η}` is injective with regular values on `Λ_W^{μ−η}` (BHHMS23, §2.4,
 p. 15), which contains `sΣ` because the coordinates `m_i = x_i − y_i` of `μ − η = ((x_i, y_i))`
 satisfy `1 ≤ m_i ≤ p − 3` and `(sω)_i ∈ {−1, 0, 1}`, so `W(ρ̄)` has `2^f` regular elements. In the
-irreducible case each `A` admits at most one weight (BDJ10, §3.1, pp. 18–19), so `W_BDJ(ρ̄)` has at
-most `2^f` elements. In the reducible case, fix an ordering `ρ̄|_{I_F} ≅ χ₁ ⊕ χ₂`, let `A` record
+irreducible case write `ρ̄|_{I_F} ≅ ξ ⊕ ξ^q` and let `A` record the exponents carried by `ξ`, its
+complement recording those of the conjugate `ξ^q` (replacing `ξ` by `ξ^q` replaces `A` by its
+complement); for this fixed `ξ` each `A` admits at most one weight (BDJ10, §3.1, pp. 18–19), so
+`W_BDJ(ρ̄)` has at most `2^f` elements. In the reducible case, fix an ordering
+`ρ̄|_{I_F} ≅ χ₁ ⊕ χ₂`, let `A` record
 the exponents carried by `χ₁` and write `χ₁χ₂^{−1} = ω_f^n`: each `A` admits one weight, or two when
 `n ≡ n_A = Σ_{i∈A} p^{i+1} − Σ_{i∉A} p^i` modulo `p^f − 1`, and then the two have `r_i = p − 1` for
 `i ∈ A` and `r_i = 0` otherwise, respectively `r_i = 0` for `i ∈ A` and `r_i = p − 1` otherwise
@@ -1515,6 +1563,11 @@ API:
   `W_BDJ(ρ̄)` with `A = {0}`, giving `ω₂^6 ⊕ ω₂^{6·17}`, and `Sym^{11} ⊗ det^5` with `A = {0}`, giving
   `ω₂^{90} ⊗ (ω₂^{12} ⊕ ω₂^{204}) = ω₂^{102} ⊕ ω₂^{294}`, where `294 ≡ 6` modulo `288`; these are the
   two weights of the irreducible `ρ̄` of §3.5, and `W(ρ̄) = W_BDJ(ρ̄)` there, `ρ̄` being irreducible.
+  The set `A` alone does not fix the weight, since the defining isomorphism does not order the two
+  characters: here one `A` carries two weights. With `ξ = ω₂^6` fixed as in the route, `A = {0}`
+  requires `r + 1 + 18b ≡ 6` modulo `288`, so `r = 5`, `b ≡ 0` modulo `16`, and `A = {1}` requires
+  `17(r + 1) + 18b ≡ 6` modulo `288`, so `r + 1 ≡ 12` modulo `18`, `r = 11`, `b ≡ 5` modulo `16`: one
+  weight for each `A`, two in all, within the bound `2^f = 2`.
 - Boundary of the comparison: `f = 1`, `p = 5`, `s = 1`, `μ − η = (2, 0)`, which is 1-deep
   (`1 < 3 < 4`) but not 2-deep, and `ρ̄|_I = ω³ ⊕ 1`. Then `W(ρ̄) = {F(2,0), F(−1,−1)} = {Sym², det³}`,
   while `W_BDJ(ρ̄) = {Sym², det³, det³ ⊗ Sym⁴}`: with `χ₁ = ω³`, `A = {0}` gives `Sym²` and `A = ∅`
@@ -1847,14 +1900,24 @@ Prove: `Ext¹_{I/Z₁}(χ, χ′)` is nonzero exactly when `χ′ = χα_i` or `
 then one-dimensional; write `E_{χ′,χ}` for the nonsplit extension `0 → χ′ → E → χ → 0`. It is
 `K₁`-trivial (factors through `I/K₁`) exactly when `χ′ = χα_i`. Every nonzero map
 `W_{χ′,2} → W_{χ,3}` for such `χ′` is injective (BHHMS23, Lemmas 6.1.1–6.1.2, p. 56; equation (44),
-p. 55). For `p > 5`, every `χ′ ≠ χ` occurs at most once in `W_{χ,3}`. The bound `p > 5` is needed:
-the printed statement assumes `p > 3`, but for `p = 5`, `f = 1` the root character `α` has order four,
-`α² = α^{−2} ≠ 1`, and the independent degree-two vectors `e²`, `f²` both have weight `α²`, so `χα²`
-occurs twice. *Needs:* §§4.4, 4.6; SmoothRepresentationsOfLocalGroups *compact-open-invariants*.
+p. 55). For `q ≠ 5`, every `χ′ ≠ χ` occurs at most once in `W_{χ,3}`. Route: the weights of
+`W_{χ,3}` other than `χ` are `χα^d` for the nonzero `d ∈ ℤ^J` with `Σ|d_i| ≤ 2`, `α^d` being the
+character `diag(x, y) ↦ (x/y)^{Σ d_i p^i}` of `T(k_F)`, and each such `d` is the weight of exactly
+one monomial of degree at most two in the `e_i, f_i, h_i` of `gr_𝔪` (§4.4); two of them give the
+same character only if `Σ c_i p^i ≡ 0` modulo `q − 1` for some nonzero `c` with `Σ|c_i| ≤ 4`, while
+`|c_i| < p` makes `Σ c_i p^i` a nonzero integer of absolute value at most `4p^{f−1} < q − 1` unless
+`q = 5`. The exclusion of `q = 5` is needed: the printed statement assumes `p > 3`, but for `p = 5`,
+`f = 1` the root character `α` has order four, `α² = α^{−2} ≠ 1`, and the independent degree-two
+vectors `e²`, `f²` both have weight `α²`, so `χα²` occurs twice. *Needs:* §§4.4, 4.6;
+SmoothRepresentationsOfLocalGroups *compact-open-invariants*.
 
 **Checks.**
 
 - The `p = 5`, `f = 1` collision just described: multiplicity two for `χα²` in `W_{χ,3}`.
+- The exclusion is `q = 5` and not `p = 5`: for `p = 5`, `f = 2`, `q − 1 = 24`, the twelve weights
+  `α^d ≠ 1` of `W_{χ,3}` have exponents `±1, ±5` (degree one) and `±2, ±10, ±6, ±4` (degree two)
+  modulo `24`, twelve distinct classes, so a bound `p > 5` would exclude a case where every `χ′ ≠ χ`
+  occurs once.
 - `Ext¹_{I/Z₁}(χ, χ)` vanishes: the degree-one part of `gr A` has weights `α_i^{±1} ≠ 1` (as `p > 3`).
 - Orientation: torus conjugation multiplies the upper unipotent direction `e_i` by `α_i` and the
   lower direction `f_i` by `α_i^{−1}`. The extension through `e_i` is `E_{χα_i,χ}` and factors through
@@ -2007,8 +2070,16 @@ characters. *Needs:* §§3.1, 5.3, 5.4; Tau Ceti
 Let `A₁ = k[[K/Z₁]]/𝔪_{K₁}²` (finite-dimensional). For a smooth irreducible `σ`, the injective
 envelope `Inj_{K/Z₁} σ` of §4.6 has
 `Inj_{K/Z₁}σ[𝔪_{K₁}²] = Inj_{A₁} σ`, finite-dimensional, with `K₁`-invariants `Inj_Γ σ` and quotient
-embedded in `Inj_Γ σ ⊗ H¹(K₁/Z₁, k)`, where `H¹(K₁/Z₁, k) ≅ ⊕_i A_i^*` (NoncommutativeAndEquivariantIwasawa
-§0.13 for `K₁/Z₁` uniform of dimension `3f`). Prove (for `p > 3`): for 2-deep `σ` and
+embedded in `Inj_Γ σ ⊗ H¹(K₁/Z₁, k)`, where `H¹(K₁/Z₁, k) ≅ ⊕_i A_i^*` as `K`-representations
+(`A_i` of §5.5). Prove this identification first, for `p > 2`: `1 + pX ↦ X mod p` is a surjective
+homomorphism `K₁ → M₂(k_F)` with kernel `K₂ = 1 + p²M₂(𝒪_F)`, equivariant for conjugation by `K`
+and sending `Z₁` onto the scalars `k_F`, as `(1 + pX)(1 + pY) = 1 + p(X + Y) + p²XY`; since
+`K₂ = K₁^p` contains the commutators of `K₁`, it identifies the quotient of `K₁/Z₁` by its `p`-th
+powers and commutators (its Frattini quotient) `K`-equivariantly with `M₂(k_F)/k_F ≅ sl₂(k_F)`, the
+inverse sending `x` to `exp(p x̃)` for any lift `x̃ ∈ sl₂(𝒪_F)`; hence
+`H¹(K₁/Z₁, k) = Hom_cont(K₁/Z₁, k) ≅ Hom_{𝔽_p}(sl₂(k_F), k) ≅ ⊕_i A_i^*`, of dimension `3f` over
+`k`, in agreement with NoncommutativeAndEquivariantIwasawa §0.13 for `K₁/Z₁` uniform of dimension
+`3f`. Prove (for `p > 3`): for 2-deep `σ` and
 `τ ∈ JH(Inj_{A₁} σ)`, a submodule `V ⊆ Inj_{A₁} σ` with `cosoc V = τ` and `[V : σ] = 1` is unique and
 multiplicity-free; if `τ ∈ JH(Inj_Γ σ)` then `K₁` acts trivially on `V` and `V = I(σ, τ)`. Dually,
 for 2-deep `τ` a quotient of `Proj_{A₁} τ` with simple socle `σ` and `[V : τ] = 1` is unique; a quotient
@@ -2035,6 +2106,10 @@ RepresentationTheory/ArtinAlgebras §2.3.
   dimension `6 + 6 + 10 + 12 = 34 = 2p`.
 - `dim_k H¹(K₁/Z₁, k) = 3f`: `K₁/Z₁` is uniform of dimension `3f` (as `p > 2`), and
   `dim Inj_{A₁} σ ≤ (1 + 3f) dim Inj_Γ σ`.
+- The quotient by `Z₁` and the prime `p > 2` both matter in the identification: `K₁` alone has
+  Frattini quotient `M₂(k_F)`, of dimension `4f` over `𝔽_p`, the scalar `1 + pa` going to `a·1`; and
+  for `p = 2` the identity has trace `0`, so `k_F·1 ⊆ sl₂(k_F)` and `sl₂(k_F) → M₂(k_F)/k_F` has a
+  kernel.
 - The self-extension bound is sharp: for `f = 1` and `p = 17`, `Ext¹_{K/Z₁}(Sym^{14}, Sym^{14}) = 0`
   (`r = 14 = p − 3`), whereas `Ext¹_{K/Z₁}(Sym^{15}, Sym^{15}) ≠ 0` (`r = 15 = p − 2`, still
   regular) (HW22, proof of Lemma 2.10, p. 12; HW22 line 564), while
@@ -2319,7 +2394,7 @@ Under the hypotheses of §7.4, assume also that `π^{I₁}` is connected (§7.1)
 Proposition 6.4.6, p. 75). Route: connectedness and the embeddings `W_{χ′,2} → W_{χ,3}` of §5.1 force
 a map to vanish on the bottom characters other than `χ`; the rest lies in `π[𝔪_{K₁}²]`, and the
 induced `K`-image contradicts §7.2 unless the map factors through `χ`. The genericity
-`2 < r_i < p−3` forces `p ≥ 7`, so the `p = 5` collision of §5.1 does not enter. *Needs:* §§5.1, 7.1,
+`2 < r_i < p−3` forces `p ≥ 7`, so the `q = 5` collision of §5.1 does not enter. *Needs:* §§5.1, 7.1,
 7.2, 7.4.
 
 **Checks.**
@@ -2373,8 +2448,8 @@ lifts `x̃ ∈ sl₂(𝒪_F)`, `ṽ ∈ V°` and put `β_{V°}(x ⊗ v) = p^{−
 a well-defined `K`-equivariant `k`-linear map `sl₂(k_F) ⊗_{𝔽_p} (V°/p) → V°/p`, and that
 `sl₂(k_F) ⊗ (V°/p) → V°/p → (V°/p²)_{K₁} → V°/p → 0`, with second map multiplication by `p`, is exact
 (BHHMS23, §7.1 and Lemma 7.1.1, pp. 76–77). The sequence uses coinvariants `(−)_{K₁}`. *Needs:*
-NoncommutativeAndEquivariantIwasawa §0.13 (`exp(p·)` identifies `sl₂(𝒪_F)/p` with the Frattini
-quotient of `K₁/Z₁`); SmoothRepresentationsOfLocalGroups *coefficient-change*; Mathlib
+§5.6 (its identification, valid for `p > 2`, of `sl₂(𝒪_F)/p = sl₂(k_F)` with the Frattini quotient
+of `K₁/Z₁` through `exp(p·)`); SmoothRepresentationsOfLocalGroups *coefficient-change*; Mathlib
 `Representation`.
 
 API:
