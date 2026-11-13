@@ -1,0 +1,29 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-KloostermanSheavesAndBesselIsocrystals~1",
+  "head": "8199100f0d6044099e98e56a2b0edb93c0921478",
+  "pr": 2289,
+  "folder": "KloostermanSheavesAndBesselIsocrystals",
+  "date": "2026-11-13",
+  "findings": 4,
+  "blocking": 1,
+  "notes": "Full review. Gate passed on this head (all checks 0, targeted build OK); lake env lean on Suggested.lean gives five sorry warnings only; one-tactic probe closes none of the five theorems; depcheck 238 roadmaps, 2162 edges, 0 problems. All 15 seeded targets checked against the cached texts (XZ, HNY, Zhu, BD) plus FG, GR, Miy, Car, Tsu, DAd, VL locators; two wrong locators (R02, R03). The three exponential-sum identities, the ordinarity statement (p = 2, ranks 3, 5, 7), the signed Dwork congruence, the orthogonal matrices and the quadric chart count were recomputed by direct evaluation over small fields. All cited supplier sections resolved on main, at open heads, or in the board packages of the two suppliers not yet in a pull request. One blocking finding: four supplier gaps stated in the README are not in the plan's gaps list (R01). One P3 on the pull request description (R04). Seven uncertified sources remain unread.",
+  "deferred": [
+   {
+    "id": "D01",
+    "severity": "P2",
+    "title": "Four supplier contracts are gaps that the plan does not declare",
+    "where": "board record packages/KloostermanSheavesAndBesselIsocrystals/design/plan.json, top-level gaps list",
+    "raised": "PRREVIEW-KloostermanSheavesAndBesselIsocrystals~1"
+   },
+   {
+    "id": "D02",
+    "severity": "P3",
+    "title": "The pull request description misstates the suppliers",
+    "where": "the generator of the description's merge-order block",
+    "raised": "PRREVIEW-KloostermanSheavesAndBesselIsocrystals~1"
+   }
+  ]
+ }
+}
