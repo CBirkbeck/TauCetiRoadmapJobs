@@ -111,12 +111,11 @@ roadmap_files = ["README.md", "Suggested.lean", "metadata.toml", "PROGRESS.md", 
 # Rounds of red-teaming on the draft pull request. Each round runs every pass below
 # independently, then one fix lane merges their findings on the pull request branch.
 rounds = 2
-# The passes of one round. Normally two different agents, so that the reviews are independent:
-# `{ agent = "codex", model = "gpt-6-astra" }` and `{ agent = "claude", model = "fable" }`. While
-# Codex is out of usage credit the first pass runs on Claude as well (the operator's decision);
-# put the Codex pass back when it answers again.
+# The passes of one round: two different agents, so that the reviews are independent. When Codex
+# is out of usage credit the operator may run the first pass on Claude as well
+# (`{ agent = "claude", model = "fable" }` twice) until it answers again.
 passes = [
-  { agent = "claude", model = "fable" },
+  { agent = "codex", model = "gpt-6-astra" },
   { agent = "claude", model = "fable" },
 ]
 # Add section-sharded passes: after its whole-document pass, every red-team job runs one more pass
