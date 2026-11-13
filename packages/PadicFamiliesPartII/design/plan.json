@@ -3834,7 +3834,7 @@
     },
     {
       "slug": "mixed-cube-cover",
-      "needs": "Supply the cover of the mixed-level Hilbert–Siegel minimal compactification by the 2^{|I|} affinoids indexed by [2,3]^I whose finite intersections are acyclic for the toroidal-to-minimal pushforward of the analytic coefficients (BCGP21 Theorem 6.2.6).",
+      "needs": "Supply, for every place v above p and rational ε_v > 0, an integer n(ε_v) such that, at full level p^n with min_v n_v ≥ max_v n(ε_v), the Hodge–Tate model of the Hilbert–Siegel minimal compactification carries the ample sheaf det ω^mod and global sections of it lifting the wedges ⊗_v HT(e_{v,i_v}) ∧ HT(e_{v,j_v}) modulo p^{ε_v}; and, for such n, the cover of the open X^*_{K(p^n)}(ε) of that model cut out by the Hodge–Tate conditions (the image of the Hodge–Tate neighbourhood X_{K(p^n)}(ε), not the whole minimal compactification) by the 2^{|I|} opens indexed by the vertices (i_v) ∈ {2,3}^I of the cube [2,3]^I, on which ⊗_{v∈I} HT(e_{v,i_v}) ∧ HT(e_{v,4}) ⊗_{v∈Iᶜ} HT(e_{v,3}) ∧ HT(e_{v,4}) does not vanish, each finite intersection of these opens, in particular each one indexed by a face of the cube, having a projective map, an isomorphism on generic fibres, to an affine formal scheme, so that the Čech complex of a small formal Banach sheaf on it is acyclic in positive degrees after inverting p (BCGP21 Theorem 6.1.3, p. 140; Lemma 6.2.3 and Theorem 6.2.6, pp. 145–146).",
       "supplier": "ShimuraCompactifications",
       "section": "§7.25"
     },
