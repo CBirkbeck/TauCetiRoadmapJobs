@@ -1,0 +1,22 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-LocallyAnalyticRepresentationsOfLocalGroups~1",
+  "head": "3a7730d2bd5479b9c64135ba13645a9ac86048cf",
+  "pr": 2294,
+  "folder": "LocallyAnalyticRepresentationsOfLocalGroups",
+  "date": "2026-11-13",
+  "findings": 6,
+  "blocking": 3,
+  "notes": "Full review. Gate passed on this head (every check); depcheck rerun: 239 roadmaps, 2171 edges, 0 problems; Suggested.lean elaborates with no output (it declares nothing, no headline is statable at the pins). README read in full and its Checks recomputed (adversarial table, 28 rows). Seeded sample of 15 targets verified at the source lines (DING25, DING19, ST02, BR19, BR16, BR15, PAN22, CD14, RJRC22, BCGP25, BH20, SCH11); SCHN11, HUM08, NFA02 uncertified and not read. Cross-roadmap ids of the 14 supplier roadmaps resolved at main or the open heads; library declarations opened at the pins. Findings: R01 P2 gap:frechet-stein-general and gap:radius-algebras duplicate LocallyAnalyticDistributionsPartII 1.4-1.5 and are absent from plan.json; R02 P2 sections 3.2, 3.4, 3.6, 3.8 follow BCGP25 2.2.16-2.2.27 clause by clause (replacement text given); R03 P2 plan needs of barrelled-banach-steinhaus and compact-type-tensor ask for what Mathlib and LocallyAnalyticDistributions 0.0 provide; R04 P3 affinoid group called Stein; R05 P3 LieHighestWeight Layers 4, 5 in Layer 4 Dependencies; R06 P3 description's validation sentences. Acceptance would be conditional on the five remaining declared gaps.",
+  "deferred": [
+   {
+    "id": "D01",
+    "severity": "P2",
+    "title": "Two declared gaps ask LocallyAnalyticDistributions for what Mathlib and its own §0.0 provide",
+    "where": "board `design/plan.json` `needs` text of gaps barrelled-banach-steinhaus and compact-type-tensor",
+    "raised": "PRREVIEW-LocallyAnalyticRepresentationsOfLocalGroups~1"
+   }
+  ]
+ }
+}
