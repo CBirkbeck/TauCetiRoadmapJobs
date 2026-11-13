@@ -53,3 +53,152 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-13"
 cited_for = ["RD.7.4"]
+
+[[source]]
+id = "Kedlaya-Notes"
+authors = "Kiran S. Kedlaya"
+title = "Notes on isocrystals"
+year = 2016
+arxiv = "1606.01321v6"
+locator_scheme = "theorem"
+locator = "Notation 1.1; Remark 2.3; Theorem 3.12; Theorem 4.1; Theorem 5.1; Remark 5.2"
+url = "https://arxiv.org/abs/1606.01321v6"
+fetched_from = "https://arxiv.org/pdf/1606.01321v6"
+fetched_at = "2026-11-13T10:55:22Z"
+sha256 = "7fa7ab3126dcb5b25a77b97b5d7930983e2305fbfebc71b2e5f92697e6cab886"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-13"
+version_note = "arXiv v6"
+cited_for = ["RD.3.43", "RD.3.44", "RD.3.44a"]
+
+[[source]]
+id = "Kedlaya-Finiteness"
+authors = "Kiran S. Kedlaya"
+title = "Finiteness of rigid cohomology with coefficients"
+year = 2002
+venue = "preprint; published version: Duke Math. J. 134 (2006), 15-97"
+arxiv = "math/0208027v6"
+locator_scheme = "theorem"
+locator = "Hypothesis 4.2.1; Proposition 2.4.2; Remark 3.2.4; Lemma 6.3.4; Definition 8.5.2"
+url = "https://arxiv.org/abs/math/0208027v6"
+fetched_from = "https://arxiv.org/pdf/math/0208027v6"
+fetched_at = "2026-11-13T10:55:43Z"
+sha256 = "a4668e61edff20999f5634b19fa372dbf29cbffe50d14180219d175c98583ba3"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-13"
+version_note = "arXiv v6"
+cited_for = ["RD.3.1", "RD.5.11", "RD.6.8", "Corrections to the sources"]
+
+[[source]]
+id = "Kedlaya-Overview"
+authors = "Kiran S. Kedlaya"
+title = "Local monodromy of p-adic differential equations: an overview"
+year = 2005
+venue = "preprint; published version: Intl J. Number Theory 1 (2005), 109-154."
+arxiv = "math/0501361v2"
+locator_scheme = "theorem"
+locator = "Example 2.1.10"
+url = "https://arxiv.org/abs/math/0501361v2"
+fetched_from = "https://arxiv.org/pdf/math/0501361v2"
+fetched_at = "2026-11-13T10:55:49Z"
+sha256 = "31d9e39eacbab5bef5b2f7b09ef66e97854eced3f3d94b559a6f113252dcf275"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-13"
+version_note = "arXiv v2"
+cited_for = ["RD.2.42"]
+
+[[source]]
+id = "Kedlaya-LMT"
+authors = "Kiran S. Kedlaya"
+title = "A p-adic local monodromy theorem"
+year = 2001
+venue = "preprint; published version: Annals of Math. 160 (2004), 93-184"
+arxiv = "math/0110124v4"
+locator_scheme = "theorem"
+locator = "Proposition 5.11"
+url = "https://arxiv.org/abs/math/0110124v4"
+fetched_from = "https://arxiv.org/pdf/math/0110124v4"
+fetched_at = "2026-11-13T10:55:58Z"
+sha256 = "f38f45d4a956187ba26872363fcb880bf9e18c20f611bd07e25825022c9fc568"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-13"
+version_note = "arXiv v4"
+cited_for = ["Corrections to the sources"]
+
+[[source]]
+id = "DAddezio-Parabolicity"
+authors = "Marco D'Addezio"
+title = "Parabolicity conjecture of $F$-isocrystals"
+year = 2020
+venue = "Ann. Math. 198 (2023), 619-656"
+doi = "10.4007/annals.2023.198.2.3"
+arxiv = "2012.12879v4"
+locator_scheme = "section"
+locator = "§2.2"
+url = "https://arxiv.org/abs/2012.12879v4"
+fetched_from = "https://arxiv.org/pdf/2012.12879v4"
+fetched_at = "2026-11-13T10:56:03Z"
+sha256 = "f92379bec97564edc2b89f86f6bfc5c271abdc31c5d17cb9ba93b58e204a07a8"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-13"
+version_note = "arXiv v4"
+cited_for = ["RD.3.43", "RD.3.45"]
+
+[[source]]
+id = "FarguesFontaine-Courbes"
+authors = "Laurent Fargues; Jean-Marc Fontaine"
+title = "Courbes et fibrés vectoriels en théorie de Hodge p-adique"
+year = 2018
+venue = "Astérisque 406 (2018); HAL author copy of 16 avril 2017"
+locator_scheme = "theorem"
+locator = "Proposition 11.2.24; Lemme 11.2.25"
+url = "https://hal.science/hal-01510045/document"
+fetched_from = "https://hal.science/hal-01510045/document"
+fetched_at = "2026-11-13T10:56:46Z"
+sha256 = "32c96c47b5594a24e414abd2d6ddffbb949e418d8867a79dd475140d48b03f5f"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-13"
+cited_for = ["Corrections to the sources"]
+
+[[source]]
+id = "Kedlaya-SFR"
+authors = "Kiran S. Kedlaya"
+title = "Slope filtrations revisited"
+year = 2005
+venue = "preprint; published version: Documenta Mathematica 10 (2005), 447-525."
+arxiv = "math/0504204v4"
+locator_scheme = "theorem"
+locator = "Lemma 5.4.1; §5.4"
+url = "https://arxiv.org/abs/math/0504204v4"
+fetched_from = "https://arxiv.org/pdf/math/0504204v4"
+fetched_at = "2026-11-13T11:19:14Z"
+sha256 = "da80101622bfea911682476b1e3542bfd79200f247acf0c788c5b2383bd3ce07"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-13"
+version_note = "arXiv v4"
+cited_for = ["RD.2.2"]
+
+[[source]]
+id = "Kedlaya-WeilII"
+authors = "Kiran S. Kedlaya"
+title = "Fourier transforms and p-adic \"Weil II\""
+year = 2002
+arxiv = "math/0210149v3"
+locator_scheme = "theorem"
+locator = "Proof of Theorem 5.3.2"
+url = "https://arxiv.org/abs/math/0210149v3"
+fetched_from = "https://arxiv.org/pdf/math/0210149v3"
+fetched_at = "2026-11-13T11:19:22Z"
+sha256 = "b678f13ceb5b0d0b528e927a20187e344f2fd40552819a5d528f7d52ab3f1599"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-13"
+version_note = "arXiv v3"
+cited_for = ["RD.6.14"]
