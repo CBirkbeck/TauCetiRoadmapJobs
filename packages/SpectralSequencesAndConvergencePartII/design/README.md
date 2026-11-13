@@ -56,7 +56,9 @@ It leaves to named owners:
   exact couples, their towers and the couple of a filtered complex (§§6.1–6.3), lim, lim¹ and the
   complete convergence theorem (§§7.1, 7.4, 7.5). Every spectral sequence of this roadmap is one of
   the base's filtered-complex or exact-couple spectral sequences and carries one of its convergence
-  structures; no convergence theory is restated.
+  structures; no convergence theory is restated. Each base section used here is consumed through
+  its own supplier gap, listed under *Exact supplier contracts* with the statement and hypotheses
+  used; the classical indexing of §5.1 is read directly on Tau Ceti's construction (Conventions).
 - **DerivedModuleAlgebra, §S.1**: the first-quadrant double complex with its second page, abutment
   filtration, stabilisation bound, edge morphisms, five-term and extended sequences, exact-rows
   comparison and homological form. Layer 1 states the second page and convergence for an arbitrary
@@ -116,15 +118,27 @@ unbounded complexes with exact kernel or cokernel complexes (stacks-012K Lemmas 
   half-plane statements use the classes of the base: countable coproducts with exact sequential
   colimits (`HasCountableCoproducts`, `HasColimitsOfShape ℕ`, `HasExactColimitsOfShape ℕ`) for the
   direct-sum totalisation, and the class of base §7.4 (countable products and coproducts,
-  `CountableAB4Star`, exact sequential colimits, lim-acyclic epimorphic towers) for the product
-  totalisation. `ModuleCat R` belongs to both classes; module categories are `ModuleCat.{u} R`
+  `CountableAB4Star`, exact sequential colimits, and lim-acyclic epimorphic towers in the sense of
+  base §7.2, gap:base-tower-exact-categories) for the product totalisation. `ModuleCat R` belongs
+  to both classes; module categories are `ModuleCat.{u} R`
   with `R : Type u`, where Mathlib's `AB5` and `AB4Star` instances live.
 - **Indexing.** Cohomological throughout, as in the base: `E_r^{p,q}` with `p` the filtration
   degree, `p + q` the total degree and `d_r` of bidegree `(r, 1 − r)`; filtrations are decreasing.
-  The spectral sequence of a decreasingly filtered complex is the one of base §5.1, whose classical
-  term `E_r^{p,q}` is page `r + 1` of Tau Ceti's `CochainComplex.spectralSequence` at the native
-  position `(2p + q + 1, −p − 1)`. Homological sequences are read through the homological bidegree
-  assignment of base §2.1: `E^r_{p,q}` with `d^r` of bidegree `(−r, r − 1)`.
+  The spectral sequence of a decreasingly filtered complex `(K, F)` is Tau Ceti's
+  `CochainComplex.spectralSequence (CochainComplex.filtrationFunctor G _)` for the increasing
+  filtration `G_t = F^{−t}`, read in the classical indexing of base §5.1: the classical term
+  `E_r^{p,q}` is page `r + 1` at the native position `(2p + q + 1, −p − 1)`, with the classical
+  bidegree assignment of base §2.1 (gap:base-bidegree-assignments). Taking `i₁ = −p − 1` and
+  `i₂ = −p`, `CochainComplex.spectralSequenceFirstPageXIsoCokernel` gives
+  `E_1^{p,q} ≅ H^{p+q}(gr^p K)`; `CochainComplex.spectralSequence_first_page_d_eq` identifies
+  `d_1 : E_1^{p,q} → E_1^{p+1,q}` with the connecting morphism of
+  `0 → gr^{p+1} K → F^p K / F^{p+2} K → gr^p K → 0`; and a filtered morphism induces a morphism of
+  spectral sequences through `CochainComplex.filtrationFunctorMap`, `CochainComplex.spectralObjectMap`
+  and `CategoryTheory.Abelian.SpectralObject.spectralSequenceMap`. *Witness:* for the stupid
+  filtration of `ℤ →(×2) ℤ` in degrees `0, 1`, `E_1^{0,0} = E_1^{1,0} = ℤ` sit at native `(1, −1)` and
+  `(3, −2)` on page `2`, and `d_1` is multiplication by `+2`. Homological sequences are read through
+  the homological bidegree assignment of base §2.1 (the same gap): `E^r_{p,q}` with `d^r` of bidegree
+  `(−r, r − 1)`.
 - **Double complexes.** A double complex is a Mathlib
   `HomologicalComplex₂ 𝒜 (ComplexShape.up ℤ) (ComplexShape.up ℤ)`: a complex (in `p`) of cochain
   complexes (in `q`). Write `K^{p,q}` for its terms, `d₁ : K^{p,q} → K^{p+1,q}` (horizontal) and
@@ -230,16 +244,26 @@ unbounded complexes with exact kernel or cokernel complexes (stacks-012K Lemmas 
 - `ModuleCat.restrictScalars`, `ModuleCat.coextendScalars` and `ModuleCat.restrictCoextendScalarsAdj`
   for any rings, `ModuleCat.extendScalars` and `ModuleCat.extendRestrictScalarsAdj` for
   commutative rings (`Mathlib/Algebra/Category/ModuleCat/ChangeOfRings.lean`).
-- `HasCountableProducts`, `HasCountableCoproducts`, `CountableAB4Star`, `HasExactColimitsOfShape`
-  and the module-category instances, as fixed in the base's Mathlib contract.
+- `HasCountableProducts`, `HasCountableCoproducts` (`Mathlib/CategoryTheory/Limits/Shapes/Countable.lean`),
+  `CountableAB4Star` (`Mathlib/CategoryTheory/Abelian/GrothendieckAxioms/Basic.lean`),
+  `HasExactColimitsOfShape` (`Mathlib/CategoryTheory/Limits/HasExactLimitsOfShape.lean`), and the
+  instances `AB5` and `AB4Star` of `ModuleCat.{u} R` for `R : Type u`
+  (`Mathlib/Algebra/Category/ModuleCat/AB.lean`). Assumed: nothing beyond the definitions; existence
+  of countable products is not exactness of products.
 
 ### From Tau Ceti
 
 - `CochainComplex.filtrationFunctor`, `CochainComplex.filtrationFunctorMap`,
-  `CochainComplex.spectralSequence`, `CochainComplex.spectralSequenceFirstPageXIsoCokernel`
-  (`TauCeti/Algebra/Homology/SpectralSequence/Filtered/SpectralObject.lean`, `Naturality.lean`) and
-  `CochainComplex.spectralSequence_first_page_d_eq` (`Filtered/FirstPage.lean`), through the base's
-  §5.1.
+  `CochainComplex.spectralObjectMap`, `CochainComplex.spectralSequence`,
+  `CochainComplex.spectralSequenceFirstPageXIsoCokernel`
+  (`TauCeti/Algebra/Homology/SpectralSequence/Filtered/SpectralObject.lean`, `Naturality.lean`),
+  `CochainComplex.spectralSequence_first_page_d_eq` (`Filtered/FirstPage.lean`) and
+  `CategoryTheory.Abelian.SpectralObject.spectralSequenceMap`
+  (`TauCeti/Algebra/Homology/SpectralObject/SpectralSequenceMap.lean`): the spectral sequence of a
+  filtered cochain complex in any abelian category, starting on native page `2`, its first page as
+  the cohomology of the graded pieces when the filtration maps are monomorphisms (the instance on
+  `filtrationFunctor`), its first differential as the connecting morphism, and the morphisms induced
+  by morphisms of filtrations. Read in the classical indexing of the Conventions.
 - `CategoryTheory.SpectralSequence.Hom.isIso_hom_f_of_le`
   (`TauCeti/Algebra/Homology/SpectralSequence/Comparison.lean`): a morphism of spectral sequences that
   is an isomorphism at every position of page `r` is one on every later page.
@@ -276,36 +300,183 @@ unbounded complexes with exact kernel or cokernel complexes (stacks-012K Lemmas 
 
 ### From TauCetiRoadmap.SpectralSequencesAndConvergence
 
-- §1.3 (stabilisation, regularity, degeneration) and §1.4 (the limit page).
-- §4.3 (the canonical comparison of the limit page with `EInfty`, through which weak convergence of
-  the filtered-complex spectral sequence is read in 5.2).
-- §2.1 (bidegree assignments, including the homological one) and §2.2 (bounded below implies
-  regular).
-- §3.1 (decreasing filtrations: exhaustive, separated, complete, finite), §3.2 (weak, ordinary and
-  strong convergence in a set of total degrees), §3.3 (morphisms of converging structures),
-  §3.4 (finite filtrations, weak Serre classes), §3.5 (the comparison theorem, with its finite and
-  strongly convergent cases), §3.6 (vanishing, two columns, first quadrant with edge morphisms and
-  the five-term and extended sequences).
-- §§5.1–5.4: the classical spectral sequence of a decreasingly filtered complex with its first page
-  and first differential, functoriality in filtered morphisms, the induced filtration on cohomology,
-  convergence under degreewise finite filtrations (§5.3) and the classical convergence theorem for
-  exhaustive filtrations bounded below in categories with exact sequential colimits (§5.4).
-- §§6.1–6.3: the spectral sequence of a cohomological exact couple (degrees `(−1, 1)`, `(0, 0)`,
-  `(1, 0)`), its towers `Z_{r+1} = k^{−1}(im i^r)`, `B_{r+1} = j(ker i^r)` and limit page, and the
-  exact couple of a decreasingly filtered complex identified with §5.1.
-- §7.4, for its class of categories only (countable products and coproducts, `CountableAB4Star`,
-  exact sequential colimits, lim-acyclic epimorphic towers), in which 1.3(c) is stated; its
-  conditional-convergence theorems enter only through §7.5.
-- §7.5: complete convergence for exhaustive complete filtrations with regular spectral sequence,
-  strong under its half-plane criterion, in the class of §7.4.
+The convergence language of this roadmap is the base's (*Scope and ownership*). Each base section
+that a statement or a route here uses is a supplier gap below, stated with the hypotheses under which
+it is used; none of them is restated as a target here. Two inputs are not gaps: the classical
+indexing of base §5.1 is read on Tau Ceti's construction (Conventions, *From Tau Ceti*), and the
+pages of an exact couple on which 5.1 states its pairings are StableHomotopyKTheory §7.22's. Of the
+base's tower theory only the class of categories of §7.4 and the complete convergence theorem of
+§7.5 are used, not the limit side of §7.4.
 
-Assumed: the cited sections with the statements and hypotheses they have in the base; this roadmap
-uses the colimit side of the base's exact-couple convergence and §7.5, not the limit side of §7.4.
+What SpectralSequencesAndConvergence must provide (gap:base-stabilisation-regularity): for a
+spectral sequence `E` in Mathlib's carrier `CategoryTheory.SpectralSequence C c r₀` over an abelian
+category and a position `pq`, the notions "`E` stabilises at `pq` from page `s`" (every differential
+of every page `r ≥ s` leaving or entering `pq` vanishes), "`E` is regular at `pq`" (the leaving
+differentials vanish for all large `r`) and "`E` degenerates at page `s`" (every differential of every
+page `r ≥ s` vanishes); stabilisation from `s` gives canonical isomorphisms
+`(E.page s).X pq ≅ (E.page r).X pq` for `r ≥ s`, compatible with composition and natural in morphisms
+of spectral sequences, and degeneration at `s` gives stabilisation at every position from `s`.
+Supplier section: §1.3. Used in 1.3(a) and (c), 4.2, 4.3 and 6.2.
+
+What SpectralSequencesAndConvergence must provide (gap:base-limit-page): for `E` and `pq` as above,
+the cycle and boundary towers `B_r(pq) ≤ Z_r(pq)` in `(E.page r₀).X pq`, presenting
+`(E.page r).X pq` as `Z_r/B_r`, and the limit page `E_∞(pq) = Z_∞/B_∞` wherever the meet `Z_∞` of
+the `Z_r` and the join `B_∞` of the `B_r` exist in `Subobject ((E.page r₀).X pq)` (always under
+countable products and countable coproducts), with `E_∞(pq) ≅ (E.page s).X pq` when `E` stabilises
+at `pq` from `s` (no hypothesis on the category), functorially in morphisms of spectral sequences
+having limit pages. Supplier section: §1.4, with the towers of §1.2. Used in 6.2, and through
+gap:base-convergence-structures wherever a convergence is stated.
+
+What SpectralSequencesAndConvergence must provide (gap:base-bidegree-assignments): bidegree
+assignments `(fil, deg, e)` for a spectral sequence in Mathlib's carrier (`pq ↦ (fil pq, deg pq)`
+injective, every relation of page `r` raising `deg` by `1` and `fil` by `r − e`), transported along
+isomorphisms of spectral sequences, with the cohomological assignment `(p, q) ↦ (p, p + q)`,
+`e = 0`; the homological assignment `(p, q) ↦ (−p, −p − q)`, `e = 0`, for page shapes of bidegree
+`(−r, r − 1)`; and the classical filtered-complex assignment `(p, q) ↦ (−q − 1, p + q)`, `e = 1`, on
+the native positions of `coreE₂Cohomological`. Supplier section: §2.1. Used in the Conventions and
+2.6, and through 2.6 in 3.4 and 4.4.
+
+What SpectralSequencesAndConvergence must provide (gap:base-bounded-below-regularity): for a
+spectral sequence with a bidegree assignment, vanishing of `(E.page r).X pq` persists to all later
+pages; if `E` is bounded below (for every `n` there is `β(n)` with `(E.page r₀).X pq = 0` whenever
+`deg pq = n` and `fil pq ≥ β(n)`), it is regular at every position; and if only finitely many
+first-page positions of total degrees `n − 1` and `n + 1` are nonzero, it stabilises at every
+position of total degree `n`. Supplier section: §2.2. Used in 1.3(a) (the stabilisation bound) and
+1.3(c) (the regularity criterion).
+
+What SpectralSequencesAndConvergence must provide (gap:base-decreasing-filtrations): for a
+decreasingly filtered object, a Mathlib `CategoryTheory.FilteredObject C ℤᵒᵖ`, its graded pieces
+`gr^p = F^p/F^{p+1}`, functorial in `CategoryTheory.FilteredObject.Hom`, and the predicates
+exhaustive (`⊤` is the join of the steps), separated (`⊥` is their meet), complete (the cone from `X`
+to the system `(X/F^p X)_p` is a limit cone) and finite (`F^a X = X` and `F^b X = 0` for some
+`a ≤ b`), finite implying the other three. Supplier section: §3.1. Used in 6.2, and through
+gap:base-convergence-structures.
+
+What SpectralSequencesAndConvergence must provide (gap:base-convergence-structures): for a spectral
+sequence `E` in Mathlib's carrier with a bidegree assignment `(fil, deg, e)`, a set `I ⊆ ℤ` and an
+abutment `H : ℤ → FilteredObject C ℤᵒᵖ`, the structures of weak convergence in `I` (limit pages at
+every position of total degree in `I`, isomorphisms `β : E_∞(pq) ≅ gr^s H^n` when
+`(fil pq, deg pq) = (s, n)` with `n ∈ I`, and `gr^s H^n = 0` when `(s, n)` is not of this form), of
+convergence in `I` (adding that the filtration of every `H^n`, `n ∈ I`, is exhaustive and separated)
+and of strong convergence in `I` (adding completeness), each restricting to subsets of `I` and
+transported along isomorphisms of spectral sequences and filtered isomorphisms of abutments.
+Supplier section: §3.2. Used wherever a convergence is stated: 1.3–1.5, 2.4–2.6, 3.2–3.4, 4.2–4.4,
+5.2 and 6.2.
+
+What SpectralSequencesAndConvergence must provide (gap:base-converging-morphisms): morphisms of
+weakly converging structures in `I`, pairs `(f, h)` of a `CategoryTheory.SpectralSequence.Hom`
+`f : E ⟶ E′` and filtered morphisms `h_n : H^n ⟶ H′^n` with `β′ ∘ E_∞(f, pq) = gr^s(h_n) ∘ β` at every
+position of total degree `n ∈ I`, forming a category whose composition and identities are those of
+the components. Supplier section: §3.3. Used in 1.4, 2.4, 2.5 and 3.3.
+
+What SpectralSequencesAndConvergence must provide (gap:base-finite-filtration-convergence): weak
+convergence in degree `n` together with a finite filtration of `H^n` is strong convergence in degree
+`n`; `H^n` then has a finite chain of subobjects whose successive quotients are the `E_∞` at the
+positions of total degree `n`, vanishes when all of them vanish, and lies in every weak Serre class
+(a property of objects containing `0` and closed under kernels, cokernels and extensions) that
+contains all of these `E_∞`, or that contains all `E_r` of total degree `n` for a page `r` on which
+every position of total degree `n` has reached its limit page. Supplier section: §3.4. Used in 1.3(a)
+and in the two-column sequences of 4.2 and 4.3.
+
+What SpectralSequencesAndConvergence must provide (gap:base-comparison-theorem): for a morphism
+`(f, h)` of weakly converging structures in degree `n` such that `f` is an isomorphism at every
+position of some page `s ≥ r₀`, `E_∞(f)` is an isomorphism at every position of total degree `n`;
+`h_n` is an isomorphism when the filtrations of `H^n` and `H′^n` are finite; and, in an abelian
+category with exact sequential colimits (`HasColimitsOfShape ℕ`, `HasExactColimitsOfShape ℕ`), `h_n`
+is an isomorphism when both structures converge strongly in degree `n`. Supplier section: §3.5. Used
+in 1.4.
+
+What SpectralSequencesAndConvergence must provide (gap:base-first-quadrant-sequences): for an `E₂`
+cohomological spectral sequence with the cohomological assignment and `E_2^{p,q} = 0` for `p < 0` or
+`q < 0`: under convergence in degree `n`, the edge morphisms `E_2^{n,0} ↠ E_∞^{n,0} ≅ F^n H^n ↪ H^n`
+and `H^n ↠ H^n/F^1 H^n ≅ E_∞^{0,n} ↪ E_2^{0,n}`; under convergence in degrees `1` and `2`, the exact
+sequence `0 → E_2^{1,0} → H^1 → E_2^{0,1} → E_2^{2,0} → H^2`, whose map `E_2^{0,1} → E_2^{2,0}` is
+`d_2` and whose other maps are the edge morphisms; and, for `m ≥ 1` with `E_2^{p,q} = 0` for all `p`
+and `0 < q < m`, under convergence in degrees up to `m + 1`, the isomorphisms `E_2^{j,0} ≅ H^j` for
+`j < m` and the exact sequence `0 → E_2^{m,0} → H^m → E_2^{0,m} → E_2^{m+1,0} → H^{m+1}`. Supplier
+section: §3.6. Used in 3.3, and through 2.6 in the low-degree sequences of 3.4 and 4.4.
+
+What SpectralSequencesAndConvergence must provide (gap:base-einfty-comparison): for a spectral object
+`X : CategoryTheory.Abelian.SpectralObject C EInt` and a position `(p, q)`, `n = p + q`, at which
+`X.spectralSequence coreE₂Cohomological` has a limit page, with
+`Zᵗ = ker(δ : H^n(q ≤ q + 1) → H^{n+1}(⊥ ≤ q))` and `Bᵗ = im(δ : H^{n−1}(q + 1 ≤ ⊤) → H^n(q ≤ q + 1))`:
+`Zᵗ ≤ Z_∞` and `B_∞ ≤ Bᵗ`, and the canonical subobject `Zᵗ/B_∞` of `E_∞(p, q)` maps onto Tau Ceti's
+`CategoryTheory.Abelian.SpectralObject.EInfty q n ≅ Zᵗ/Bᵗ`, the inclusion being an isomorphism
+exactly when `Z_∞ = Zᵗ` and the projection exactly when `B_∞ = Bᵗ`. Supplier section: §4.3. Used in
+5.2, through gap:base-induced-filtration.
+
+What SpectralSequencesAndConvergence must provide (gap:base-induced-filtration): for a cochain
+complex `K` with an antitone family `F : ℤ → Subobject K` of subcomplexes, the induced filtration
+`F^p H^n(K) = im(H^n(F^p K) → H^n(K))` as a decreasingly filtered object, functorial in filtered
+morphisms, and, wherever the spectral sequence of `(K, F)` in the classical indexing has a limit page
+at `(p, n − p)`, the canonical presentation of `gr^p H^n(K)` as a subquotient of `E_∞^{p,n−p}` (the
+comparison of gap:base-einfty-comparison read through Tau Ceti's
+`CochainComplex.filtrationAbutmentIso`), weak convergence at `(p, n − p)` holding exactly when this
+presentation is an isomorphism. Supplier section: §5.2. Used in 1.2 and 5.2.
+
+What SpectralSequencesAndConvergence must provide (gap:base-finite-filtered-convergence): for a
+decreasingly filtered cochain complex `(K, F)` in an abelian category and an integer `n` such that the
+filtrations of `K^{n−1}`, `K^n` and `K^{n+1}` are finite, the spectral sequence of `(K, F)` in the
+classical indexing stabilises at every position of total degree `n` and converges strongly in degree
+`n` to `H^n(K)` with the induced filtration, which is finite, through the canonical isomorphisms of
+gap:base-induced-filtration; and `H^n(K)` lies in every weak Serre class that contains every
+`E_r^{p,q}` for some `r`. Supplier section: §5.3. Used in 1.3(a), 4.3 and 5.2.
+
+What SpectralSequencesAndConvergence must provide (gap:base-exhaustive-bounded-below-convergence): in
+an abelian category with exact sequential colimits (`HasColimitsOfShape ℕ`,
+`HasExactColimitsOfShape ℕ`), for a decreasingly filtered cochain complex `(K, F)` and an integer `n`
+such that the filtration is exhaustive on `K^{n−1}` and `K^n` and `F^s K^m = 0` for `m ∈ {n, n + 1}`
+and all `s ≥ p₀(n)`, the spectral sequence of `(K, F)` in the classical indexing is regular and has a
+limit page at every position of total degree `n`, and converges strongly in degree `n` to `H^n(K)`
+with the induced filtration, through the canonical isomorphisms of gap:base-induced-filtration.
+Supplier section: §5.4. Used in 1.3(b), 1.5 and 5.2.
+
+What SpectralSequencesAndConvergence must provide (gap:base-exact-couple-spectral-sequence): for a
+bigraded exact couple of StableHomotopyKTheory §7.22 with degrees `a, b, c`, its spectral sequence in
+Mathlib's carrier `CategoryTheory.SpectralSequence C (fun r ↦ ComplexShape.up' (c + b − (r − 1) • a)) 1`,
+whose page `r` is the `E` of the `(r − 1)`-th derived couple with differential `j ∘ k` and whose
+homology isomorphisms identify the `E` of the next derived couple with `H(E, jk)`, functorial in
+morphisms of exact couples; for `a = (−1, 1)`, `b = (0, 0)`, `c = (1, 0)` it is a
+`CategoryTheory.CohomologicalSpectralSequence C 1`. Supplier section: §6.1. Used in 5.2 (with
+gap:base-filtered-exact-couple), 6.1 and 6.2.
+
+What SpectralSequencesAndConvergence must provide (gap:base-exact-couple-towers): for a cohomological
+exact couple, the towers of gap:base-limit-page of its spectral sequence are
+`Z_{r+1}^{s,t} = k^{−1}(im(i^r : D^{s+r+1,t−r} → D^{s+1,t}))` and
+`B_{r+1}^{s,t} = j(ker(i^r : D^{s,t} → D^{s−r,t+r}))`, the differential `d_{r+1}` sends the class of
+`x` with `k x = i^r y` to the class of `j y`, and the limit page exists whenever the meet of the
+`im i^r` and the join of the `ker i^r` exist, with `Z_∞ = k^{−1}(⋂_r im i^r)` and
+`B_∞ = j(⋃_r ker i^r)`. Supplier section: §6.2. Used in 6.2.
+
+What SpectralSequencesAndConvergence must provide (gap:base-filtered-exact-couple): for a
+decreasingly filtered cochain complex `(K, F)`, the cohomological exact couple
+`D^{s,t} = H^{s+t}(F^s K)`, `E^{s,t} = H^{s+t}(gr^s K)` with the maps of the long exact cohomology
+sequences, functorial in filtered morphisms, and an isomorphism, compatible with the differentials
+and functorial, of its spectral sequence (gap:base-exact-couple-spectral-sequence) with the spectral
+sequence of `(K, F)` in the classical indexing. Supplier section: §6.3. Used in 5.2 and 6.1.
+
+What SpectralSequencesAndConvergence must provide (gap:base-tower-exact-categories): the property
+that an abelian category with countable products has lim-acyclic epimorphic towers (every tower
+`ℕᵒᵖ ⥤ C` whose transitions are epimorphisms has `lim¹ = 0`, `lim¹` being the cokernel of Tau Ceti's
+`CategoryTheory.Functor.towerDifference`, and epimorphic limit projections), with `ModuleCat.{u} R`
+for a ring `R : Type u` an instance. Supplier section: §7.2, the standing hypothesis of §§7.4–7.5.
+Used in the Conventions, 1.3(c) and 1.5.
+
+What SpectralSequencesAndConvergence must provide (gap:base-complete-convergence): in an abelian
+category with countable products and coproducts, `CountableAB4Star`, exact sequential colimits and
+lim-acyclic epimorphic towers (gap:base-tower-exact-categories), for a decreasingly filtered cochain
+complex `(K, F)` whose filtration is exhaustive and complete (`K^m ≅ lim_p K^m/F^p K^m`) in every
+degree and whose spectral sequence in the classical indexing is regular at every position, and such
+that for every `n` there is a bound below which `E_1^{p,m−p} = 0` for `m ∈ {n − 1, n}`, the spectral
+sequence converges strongly in every degree to `H^*(K)` with the induced filtration. Supplier
+section: §7.5. Used in 1.3(c) and 1.5.
 
 ### From TauCetiRoadmap.StableHomotopyKTheory
 
-- §7.22: bigraded exact couples in an abelian category and their derived couples, the carrier of
-  the base's §6.1 and of the pairings of 5.1.
+- §7.22: bigraded exact couples in an abelian category, their derived couples and their pages: page
+  `r ≥ 1` is the `E` of the `(r − 1)`-th derived couple, with `d_r = j ∘ k` there of degree
+  `c + b − (r − 1)a`. These pages carry the pairings of 5.1, and the couples are the input of
+  gap:base-exact-couple-spectral-sequence. Assumed: the derived couple is again exact.
 
 ### From TauCetiRoadmap.DerivedModuleAlgebra
 
@@ -329,7 +500,7 @@ uses the colimit side of the base's exact-couple convergence and §7.5, not the 
 ## How to read the build
 
 Layer 1 totalises double complexes, filters the totals by columns and by rows, and identifies the
-two resulting spectral sequences of base §5.1 through their second pages; it proves their
+two resulting spectral sequences of filtered complexes through their second pages; it proves their
 convergence when every antidiagonal is finite and in the half-plane cases, by base §§5.3, 5.4 and
 7.5, and deduces the comparison of totals and the acyclic assembly lemma. Layer 2 builds horseshoe
 and Cartan–Eilenberg resolutions, compares Mathlib's two right derived functors, and obtains the two
@@ -390,7 +561,8 @@ For a double complex `K` and `Tot(K)` one of `Tot^⊕(K)`, `Tot^Π(K)`, define t
 `F_I^p Tot(K)` as the subcomplex formed by the columns of index at least `p` (the total complex of the
 truncation of `K` to those columns, through Mathlib's `HomologicalComplex.stupidTrunc`), a decreasing
 filtration by subcomplexes. Define the *first spectral sequence* `′E(K)` as the spectral sequence of
-base §5.1 of `(Tot(K), F_I)`, and the *second spectral sequence* `″E(K)` as `′E(K.flip)`, whose
+the decreasingly filtered complex `(Tot(K), F_I)` (Conventions), and the *second spectral sequence*
+`″E(K)` as `′E(K.flip)`, whose
 abutment `H^*(Tot(K.flip))` is identified with `H^*(Tot(K))` through the flip isomorphism of 1.1; the
 filtration it transports to `Tot(K)` is the *row filtration* `F_II^p`, formed by the rows of index at
 least `p`. Prove (stacks-012K line 3241–3265, §25 and Lemma 25.1, tags 012X and 0130;
@@ -400,13 +572,16 @@ grothendieck1957 line 1226–1235, (2.4.1)):
 - `′E_1^{p,q} ≅ H^q(K^{p,•})`, with `′d_1 = H^q(d₁)`; hence `′E_2^{p,q} ≅ H_I^p H_II^q(K)`;
 - `″E_1^{p,q} ≅ H^q(K^{•,p})`, with `″d_1 = H^q(d₂)`; hence `″E_2^{p,q} ≅ H_II^p H_I^q(K)`;
 - a morphism of double complexes induces morphisms of both spectral sequences and filtered maps of
-  the abutments (Tau Ceti `CochainComplex.filtrationFunctorMap`, base §5.1), functorially;
+  the abutments (Tau Ceti `CochainComplex.filtrationFunctorMap`, `CochainComplex.spectralObjectMap`,
+  `CategoryTheory.Abelian.SpectralObject.spectralSequenceMap`), functorially;
 - the induced filtrations `F_I^p Hⁿ(Tot K)` and `F_II^p Hⁿ(Tot K)` are those of base §5.2, and when the
   limit page exists `gr^p_I Hⁿ` is a subquotient of `′E_∞^{p,n−p}` (base §5.2).
 
-*Needs:* 1.1; base §§5.1, 5.2; Mathlib `HomologicalComplex₂.flip`,
+*Needs:* 1.1; base §5.2 (gap:base-induced-filtration); Mathlib `HomologicalComplex₂.flip`,
 `HomologicalComplex₂.totalFlipIso`, `HomologicalComplex.stupidTrunc`; Tau Ceti
-`CochainComplex.filtrationFunctor`, `CochainComplex.filtrationFunctorMap`,
+`CochainComplex.spectralSequence`, `CochainComplex.filtrationFunctor`,
+`CochainComplex.filtrationFunctorMap`, `CochainComplex.spectralObjectMap`,
+`CategoryTheory.Abelian.SpectralObject.spectralSequenceMap`,
 `CochainComplex.spectralSequenceFirstPageXIsoCokernel`, `CochainComplex.spectralSequence_first_page_d_eq`.
 
 - `κ : Tot^⊕(K) → Tot^Π(K)` is a filtered map for the column filtrations and an isomorphism on every
@@ -469,8 +644,12 @@ for (b) and (c)):
   complete on `Tot^Π`, since products commute with limits, and exhaustive by `a(n)`; `′E_1^{p,n−p}`
   vanishes for `p` below `a(n − 1)` and `a(n)`, which is the half-plane criterion of base §7.5.
 
-*Needs:* 1.1, 1.2; base §§1.3, 2.2, 3.2, 3.4, 5.3, 5.4, 7.5, and §7.4 for its class of categories
-only; Mathlib `HasCountableCoproducts`, `HasExactColimitsOfShape`, `CountableAB4Star`.
+*Needs:* 1.1, 1.2; base §1.3 (gap:base-stabilisation-regularity), §2.2
+(gap:base-bounded-below-regularity), §3.2 (gap:base-convergence-structures), §3.4
+(gap:base-finite-filtration-convergence), §5.3 (gap:base-finite-filtered-convergence), §5.4
+(gap:base-exhaustive-bounded-below-convergence), §7.5 (gap:base-complete-convergence), and the class
+of categories of §7.4 (gap:base-tower-exact-categories); Mathlib `HasCountableCoproducts`,
+`HasExactColimitsOfShape`, `CountableAB4Star`.
 
 - In (a), the stabilisation page in total degree `n` is bounded by the number of columns meeting the
   antidiagonals `n − 1, n, n + 1`, plus one.
@@ -505,7 +684,8 @@ Lemma 25.4, tag 0133, for an augmentation). Route: by 1.2 `′E(f)` is an isomor
 hence on every page (Tau Ceti `CategoryTheory.SpectralSequence.Hom.isIso_hom_f_of_le`); the filtered
 map `Tot(f)` gives a morphism of converging structures (base §3.3), and the comparison theorem
 (base §3.5, its finite case for the first case and its strongly convergent case for the others)
-makes `Hⁿ(Tot f)` an isomorphism. *Needs:* 1.2, 1.3; base §§3.3, 3.5; Tau Ceti
+makes `Hⁿ(Tot f)` an isomorphism. *Needs:* 1.2, 1.3; base §3.3 (gap:base-converging-morphisms),
+§3.5 (gap:base-comparison-theorem); Tau Ceti
 `CategoryTheory.SpectralSequence.Hom.isIso_hom_f_of_le`.
 
 **Checks.**
@@ -542,7 +722,9 @@ page `1`, hence regular, and converges strongly by 1.3; the augmented forms appl
 complex with `M` adjoined as an extra column, whose total complex is the mapping cone. Stacks
 proves the half-plane forms only for abelian groups and does not write the general case
 (stacks-012K line 3348–3351); the generality here is the one in which base §§5.4 and 7.5 hold.
-*Needs:* 1.3; base §§5.4, 7.5; Mathlib mapping cones.
+*Needs:* 1.3; base §5.4 (gap:base-exhaustive-bounded-below-convergence), §7.5
+(gap:base-complete-convergence), and the class of categories of §7.4
+(gap:base-tower-exact-categories); Mathlib mapping cones.
 
 - *Dictionary with Weibel.* Weibel's double complexes are homological, `C_{p,q} = K^{−p,−q}`: his
   upper half-plane is the lower half-plane here and his right half-plane the left half-plane. His four
@@ -571,9 +753,14 @@ column-filtration spectral sequences their homological form.
 
 ### Dependencies
 
-Base §§2.2, 3.3–3.5, 5.1–5.4, 7.5; Mathlib double complexes, total complexes and their flip; Tau
-Ceti's filtered-complex spectral sequence and comparison. DerivedModuleAlgebra §S.1 enters Checks
-only.
+Base §§1.3, 2.2, 3.2–3.5, 5.2–5.4, 7.2 (the class of §7.4) and 7.5, through
+gap:base-stabilisation-regularity, gap:base-bounded-below-regularity,
+gap:base-convergence-structures, gap:base-converging-morphisms,
+gap:base-finite-filtration-convergence, gap:base-comparison-theorem, gap:base-induced-filtration,
+gap:base-finite-filtered-convergence, gap:base-exhaustive-bounded-below-convergence,
+gap:base-tower-exact-categories and gap:base-complete-convergence; Mathlib double complexes, total
+complexes and their flip; Tau Ceti's filtered-complex spectral sequence and comparison.
+DerivedModuleAlgebra §S.1 enters Checks only.
 
 ## Layer 2: Cartan–Eilenberg resolutions and hyper-derived functors
 
@@ -761,7 +948,8 @@ Lemma 21.3, tag 015J, first spectral sequence; grothendieck1957 line 1236–1252
   (`K^p = 0` for `p < 0`, `H^0(K) = A`, `H^p(K) = 0` for `p ≠ 0`), the sequence is
   `′E_1^{p,q} = R^qF(K^p) ⇒ R^{p+q}F(A)`.
 
-*Needs:* 1.2, 1.3(a); 2.2(ii), 2.3; base §3.3; Mathlib `CategoryTheory.SpectralSequence.Hom`; Tau Ceti
+*Needs:* 1.2, 1.3(a); 2.2(ii), 2.3; base §3.3 (gap:base-converging-morphisms); Mathlib
+`CategoryTheory.SpectralSequence.Hom`; Tau Ceti
 `CategoryTheory.SpectralSequence.Hom.isIso_hom_f_of_le`.
 
 - Natural in `F`: a natural transformation `F ⟶ F′` induces a morphism of first hypercohomology
@@ -802,7 +990,8 @@ the second spectral sequence (1.2) of `F(I)`. Prove (stacks-05QI line 3655–368
 - (grothendieck1957 line 1352–1356, Remarque 3) if every `K^p` is `F`-acyclic, the sequence is
   `″E_2^{p,q} = R^pF(H^q(K)) ⇒ H^{p+q}(F(K))`.
 
-*Needs:* 1.2, 1.3(a); 2.2(ii), 2.2(v), 2.3; base §3.3; Mathlib `CategoryTheory.SpectralSequence.Hom`,
+*Needs:* 1.2, 1.3(a); 2.2(ii), 2.2(v), 2.3; base §3.3 (gap:base-converging-morphisms); Mathlib
+`CategoryTheory.SpectralSequence.Hom`,
 `DerivedCategory.Plus.Q`; Tau Ceti `CategoryTheory.SpectralSequence.Hom.isIso_hom_f_of_le`.
 
 **Checks.**
@@ -840,7 +1029,8 @@ stacks-05QI line 3449–3478, §19, the dual statements; weibel1994 §5.7, uncer
 
 *Needs:* 2.2–2.5; Mathlib `CochainComplex.opEquivalence`, `HomologicalComplex.homologyOp`,
 `CategoryTheory.Functor.leftDerived`, `CategoryTheory.ProjectiveResolution.isoLeftDerivedObj`,
-`CategoryTheory.Functor.leftDerivedZeroIsoSelf`, the instance `EnoughInjectives 𝒜ᵒᵖ`; base §2.1.
+`CategoryTheory.Functor.leftDerivedZeroIsoSelf`, the instance `EnoughInjectives 𝒜ᵒᵖ`; base §2.1
+(gap:base-bidegree-assignments).
 
 **Checks.**
 
@@ -862,7 +1052,9 @@ double complexes (1.2) on a fixed cover.
 
 ### Dependencies
 
-Layer 1; base §3.3; Mathlib derived functors on `D⁺`, classical derived functors, resolutions and
+Layer 1; base §3.3 (gap:base-converging-morphisms) and §2.1 (gap:base-bidegree-assignments, for
+the homological reading of 2.6); Mathlib derived functors on `D⁺`, classical derived functors,
+resolutions and
 opposite complexes, K-injective complexes and the lifting of maps to injective resolutions; Tau
 Ceti's one-step injective horseshoe in an exact category.
 
@@ -951,7 +1143,8 @@ Route: base §3.6 applied to the first-quadrant convergence of 3.2, with Arithme
 §D7.1's identification of the edge maps; for naturality, `α` gives a chain map `F(J) → F′(J)` and 2.5's
 naturality in the complex, and `β` gives `G(I) → G′(I)` and 2.5's naturality in the functor.
 *Needs:* 3.1 (the condition on the pairs), 3.2; 2.5 (its naturality in the complex and in the
-functor, for naturality in the functors); base §§3.3, 3.6; ArithmeticGaloisDuality §D7.1; Mathlib
+functor, for naturality in the functors); base §3.3 (gap:base-converging-morphisms), §3.6
+(gap:base-first-quadrant-sequences); ArithmeticGaloisDuality §D7.1; Mathlib
 `CategoryTheory.NatTrans.rightDerivedFunctorPlus`.
 
 **Checks.**
@@ -1002,7 +1195,8 @@ exact inflation, so invariants under `N` followed by invariants under `G/N` sati
 
 ### Dependencies
 
-Layer 2; base §§3.3, 3.6; ArithmeticGaloisDuality §D7.1; Mathlib derived functors on `D⁺`.
+Layer 2; base §3.3 (gap:base-converging-morphisms), §3.6 (gap:base-first-quadrant-sequences);
+ArithmeticGaloisDuality §D7.1; Mathlib derived functors on `D⁺`.
 
 ## Layer 4: Tor and Ext over rings
 
@@ -1081,7 +1275,8 @@ being flat. *Needs:* Mathlib `CategoryTheory.Tor`, `CategoryTheory.Tor'`,
   complex of projectives the abutment is `H^{p+q}(Hom_R(P, M))`. If `Ext^i_R = 0` for `i ≥ 2`, the two
   columns give `0 → Ext¹_R(H^{1−n}(K), M) → Hom_{D(R)}(K, M[n]) → Hom_R(H^{−n}(K), M) → 0`.
 
-*Needs:* 1.2, 1.3(b), 2.4–2.6; base §§1.3, 3.4; DerivedModuleAlgebra §0.2; Mathlib `CategoryTheory.Tor`,
+*Needs:* 1.2, 1.3(b), 2.4–2.6; base §1.3 (gap:base-stabilisation-regularity), §3.4
+(gap:base-finite-filtration-convergence); DerivedModuleAlgebra §0.2; Mathlib `CategoryTheory.Tor`,
 `CategoryTheory.Abelian.Ext`, `CategoryTheory.InjectiveResolution.extEquivCohomologyClass`,
 `CochainComplex.IsKInjective`, `CochainComplex.IsKProjective`.
 
@@ -1111,14 +1306,15 @@ cartan-eilenberg1956 Ch. XVII, uncertified; weibel1994 §5.6, uncertified). Rout
 projective Cartan–Eilenberg resolution of `K` (2.6), with resolution degree `s ≤ 0`, so that `Tot(P)` is
 a bounded-above complex of projectives quasi-isomorphic to `K` and `Tot(P) ⊗ L` computes `K ⊗^L L`
 (DerivedModuleAlgebra §0.2). Filter `Tot(P) ⊗ L` by `F^s = Tot(rows of P of index ≥ s) ⊗ L`; the
-filtration is finite in each degree, so its spectral sequence (base §5.1) converges strongly (base
+filtration is finite in each degree, so its spectral sequence (Conventions) converges strongly (base
 §5.3). Its graded pieces are the rows `P_s` of `P` tensored with `L`, and each `P_s` is a split complex
 with projective cohomology `H_I(P)_s`, so `E₁^{s,m} ≅ ⊕_{i+j=m} H_I^i(P)_s ⊗ H^j(L)` (the Künneth
 isomorphism for split complexes below). Each `H_I^i(P)` is a projective resolution of `H^i(K)`, so
 `E₂^{s,m} ≅ ⊕_{i+j=m} Tor'_{−s}(H^i K, H^j L) ≅ ⊕ Tor_{−s}(H^i K, H^j L)` by 4.1. Naturality from page `2`
-follows from the lifting of 2.6. *Needs:* 2.6, 4.1; base §§5.1, 5.3; base §§1.3, 3.4 (for the two-column
-sequence); DerivedModuleAlgebra §0.2; Tau Ceti `CochainComplex.isKFlat_of_boundedAbove_flat`,
-`HomologicalComplex.homologyCross`.
+follows from the lifting of 2.6. *Needs:* 2.6, 4.1; base §5.3 (gap:base-finite-filtered-convergence);
+base §1.3 (gap:base-stabilisation-regularity) and §3.4 (gap:base-finite-filtration-convergence), for
+the two-column sequence; DerivedModuleAlgebra §0.2; Tau Ceti `CochainComplex.spectralSequence`,
+`CochainComplex.isKFlat_of_boundedAbove_flat`, `HomologicalComplex.homologyCross`.
 
 - *Künneth isomorphism for split complexes.* For a complex `S` of `R`-modules whose differentials split
   and whose cohomology is projective, and any complex `L`, the cross product
@@ -1189,15 +1385,17 @@ of 4.2(a).
 
 ### Dependencies
 
-Layers 1–3; base §§1.3, 3.4, 5.1, 5.3; DerivedModuleAlgebra §0.2; Mathlib Tor, Ext and change of rings;
-Tau Ceti K-flat complexes, cross products and first-quadrant bicomplexes.
+Layers 1–3; base §§1.3, 3.4, 5.3 (gap:base-stabilisation-regularity,
+gap:base-finite-filtration-convergence, gap:base-finite-filtered-convergence); DerivedModuleAlgebra
+§0.2; Mathlib Tor, Ext and change of rings; Tau Ceti's filtered-complex spectral sequence, K-flat
+complexes, cross products and first-quadrant bicomplexes.
 
 ## Layer 5: products
 
 ### 5.1 Pairings of exact couples
 
 Let `R` be a commutative ring and `C₁ = (D₁, E₁; i₁, j₁, k₁)`, `C₂`, `C = (D, E; i, j, k)` cohomological exact
-couples of `R`-modules (base §6.1, StableHomotopyKTheory §7.22). A *pairing* `φ : E₁ ⊗ E₂ → E` is a family of
+couples of `R`-modules (StableHomotopyKTheory §7.22). A *pairing* `φ : E₁ ⊗ E₂ → E` is a family of
 bilinear maps `E₁^{s,t} × E₂^{s′,t′} → E^{s+s′,t+t′}`, written `xy`. For `n ≥ 0`, `φ` *satisfies Massey's
 condition `μ_n`* if for all `x ∈ E₁^{s,t}`, `y ∈ E₂`, `a ∈ D₁`, `b ∈ D₂` with `k₁(x) = i₁ⁿ(a)` and
 `k₂(y) = i₂ⁿ(b)` there is `c ∈ D` with `k(xy) = iⁿ(c)` and `j(c) = j₁(a)y + (−1)^{s+t} x j₂(b)`; it *satisfies
@@ -1205,13 +1403,14 @@ condition `μ_n`* if for all `x ∈ E₁^{s,t}`, `y ∈ E₂`, `a ∈ D₁`, `b 
 only if `d = jk` satisfies the Leibniz rule `d(xy) = d(x)y + (−1)^{s+t} x d(y)`; under `μ_0`, for every
 `m ≥ 0`, `φ` satisfies `μ_{m+1}` if and only if the induced pairing `φ′` of the derived couples satisfies
 `μ_m` (may-primer line 267–279, Proposition 4.1, whose index `n = m + 1` is positive); hence if `φ` satisfies
-`μ`, every induced pairing `φ_r : E_r(C₁) ⊗ E_r(C₂) → E_r(C)` on the pages of base §6.1 satisfies `μ`,
+`μ`, every induced pairing `φ_r : E_r(C₁) ⊗ E_r(C₂) → E_r(C)` on the pages `E_r` (the `E` of the
+`(r − 1)`-th derived couple, StableHomotopyKTheory §7.22) satisfies `μ`,
 satisfies the Leibniz rule for `d_r`, and `φ_{r+1}` is the map induced on cohomology by `φ_r` (may-primer line
 280–287, Corollary 4.2). Route for the equivalence, with `n = m + 1`: a class of `E′₁` is `x̄` for a `d`-cycle
 `x`, an element of `D′₁ = i₁D₁` is `i₁a`, and `k′₁(x̄) = i′₁^m(i₁a)` exactly when `k₁(x) = i₁ⁿ(a)`, so `μ_n`
 for `φ` gives `μ_m` for `φ′` with `c′ = i(c)`. Conversely, an `x` with `k₁(x) = i₁ⁿ(a)` is a `d`-cycle because
 `j₁i₁ = 0` and `n ≥ 1`; `μ_m` for `φ′` gives `c′ = i(c)` with `j(c)` equal to the required element up to a
-boundary `jk(z)`, and `c − k(z)` satisfies `μ_n` for `φ` because `iⁿk = 0` for `n ≥ 1`. *Needs:* base §6.1;
+boundary `jk(z)`, and `c − k(z)` satisfies `μ_n` for `φ` because `iⁿk = 0` for `n ≥ 1`. *Needs:*
 StableHomotopyKTheory §7.22; Mathlib `ModuleCat`.
 
 - The pairings `φ_r` are natural in morphisms of exact couples compatible with the pairings.
@@ -1254,7 +1453,10 @@ with the sign `d(x ⊗ y) = dx ⊗ y + (−1)^{|x|} x ⊗ dy`) with `φ(F^pA ⊗
 Route: the exact couples of the three filtered complexes (base §6.3) carry the pairing induced by `φ` on
 `E₁ = H(gr)`, which satisfies `μ` (may-primer line 310–311): for `k₁(x) = i₁ⁿ(a)` choose a representative
 `x̃` of `x` with `dx̃ ∈ F^{p+n+1}A` representing `a`, likewise `ỹ`, and take `c` the class of `d(x̃ỹ)`;
-then 5.1. *Needs:* 5.1; base §§4.3, 5.1–5.4, 6.3; Mathlib `HomologicalComplex.mapBifunctor`.
+then 5.1. *Needs:* 5.1; base §4.3 (gap:base-einfty-comparison), §5.2 (gap:base-induced-filtration),
+§5.3 (gap:base-finite-filtered-convergence), §5.4 (gap:base-exhaustive-bounded-below-convergence),
+§6.1 (gap:base-exact-couple-spectral-sequence), §6.3 (gap:base-filtered-exact-couple); Tau Ceti
+`CochainComplex.spectralSequence`; Mathlib `HomologicalComplex.mapBifunctor`.
 
 **Checks.**
 
@@ -1312,7 +1514,10 @@ sequence of the singular cochains with the cup product, is 5.2 for the filtratio
 
 ### Dependencies
 
-Layer 1; base §§4.3, 5.1–5.4, 6.1, 6.3; StableHomotopyKTheory §7.22; Mathlib tensor products of complexes.
+Layer 1; base §§4.3, 5.2–5.4, 6.1, 6.3 (gap:base-einfty-comparison, gap:base-induced-filtration,
+gap:base-finite-filtered-convergence, gap:base-exhaustive-bounded-below-convergence,
+gap:base-exact-couple-spectral-sequence, gap:base-filtered-exact-couple); StableHomotopyKTheory
+§7.22; Tau Ceti's filtered-complex spectral sequence; Mathlib tensor products of complexes.
 
 ## Layer 6: the Bockstein spectral sequence
 
@@ -1325,8 +1530,9 @@ multiplication by `f`, `j` the reduction and `k` the connecting morphism of `0 �
 degrees `(−1, 1)`, `(0, 0)`, `(1, 0)`; and the *Bockstein spectral sequence* as its spectral sequence
 (may-primer line 136–150, Example 2.3, for torsion-free chain complexes over `ℤ`; stacks-more-algebra
 line 12960–13006, §97, the Bockstein operators, and line 13013–14, footnote 18; mccleary2001 Ch. 10,
-uncertified). *Needs:* base §§5.1, 6.1, 6.3; StableHomotopyKTheory §7.22; Mathlib connecting
-morphisms.
+uncertified). *Needs:* base §6.1 (gap:base-exact-couple-spectral-sequence), §6.3
+(gap:base-filtered-exact-couple); StableHomotopyKTheory §7.22; Tau Ceti `CochainComplex.spectralSequence`;
+Mathlib connecting morphisms.
 
 - Exactness at the three vertices is the long exact cohomology sequence.
 - *Periodicity.* `(s, t) ↦ (s + 1, t − 1)` is an automorphism of the couple; the pages `E_r^{s,t}` depend
@@ -1335,7 +1541,7 @@ morphisms.
   Bockstein operator.
 - *The filtered complex.* The couple is isomorphic to the exact couple (base §6.3) of `M[1/f] = M ⊗_A A_f`
   filtered by `F^s = f^sM`, `s ∈ ℤ`, through multiplication by `f^{−s}` on `D` and `f^sM/f^{s+1}M ≅ M/fM` on
-  `E`; so the Bockstein spectral sequence is the spectral sequence of that filtered complex (base §5.1),
+  `E`; so the Bockstein spectral sequence is the spectral sequence of that filtered complex (Conventions),
   as stacks-more-algebra footnote 18 records.
 
 **Checks.**
@@ -1379,7 +1585,9 @@ and `B_{r+1}` is constant for `r ≥ a`. Convergence: in modules, the kernel of 
 `D^{s,n−s} = Hⁿ(M)` for every `s`) is `⋃_r ker i^r`, so the image filtration of the colimit `Hⁿ(M)[1/f]` of
 the tower `i` has `gr^s ≅ D^{s,n−s}/(iD^{s+1,n−s−1} + ⋃_r ker i^r) ≅ ker k / B_∞` through `j`, a submodule of
 the limit page `Z_∞/B_∞`, equal to it exactly when `Z_∞ = ker k`. *Needs:* 6.1; 5.2 (for multiplicativity
-only); base §§1.3, 1.4, 3.1, 3.2, 6.2.
+only); base §1.3 (gap:base-stabilisation-regularity), §1.4 (gap:base-limit-page), §3.1
+(gap:base-decreasing-filtrations), §3.2 (gap:base-convergence-structures), §6.2
+(gap:base-exact-couple-towers).
 
 - *Multiplicativity.* If `M` is a differential graded `A`-algebra, the filtration `f^sM` of `M[1/f]` is
   multiplicative, so every page carries a pairing with `d_r` a derivation (5.2; may-primer line
@@ -1413,7 +1621,11 @@ first-order Bockstein maps of Tau Ceti's continuous cohomology are `d_1` of 6.1 
 
 ### Dependencies
 
-Base §§1.3, 1.4, 3.1, 3.2, 5.1, 6.1–6.3; Layer 5 for multiplicativity; StableHomotopyKTheory §7.22.
+Base §§1.3, 1.4, 3.1, 3.2, 6.1–6.3 (gap:base-stabilisation-regularity, gap:base-limit-page,
+gap:base-decreasing-filtrations, gap:base-convergence-structures,
+gap:base-exact-couple-spectral-sequence, gap:base-exact-couple-towers, gap:base-filtered-exact-couple);
+Tau Ceti's filtered-complex spectral sequence; Layer 5 for multiplicativity; StableHomotopyKTheory
+§7.22.
 
 ## Downstream consumers
 
