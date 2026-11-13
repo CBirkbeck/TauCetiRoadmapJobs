@@ -196619,10 +196619,42 @@
    "reported": "2026-11-13",
    "reporter": "claude fable",
    "comment": "https://github.com/TauCetiProject/TauCetiRoadmapJobs/pull/13474#issuecomment-6849923020"
+  },
+  {
+   "kind": "misprint",
+   "source": "paternain-salo-uhlmann2023",
+   "locator": "Corollary 2.5.3(b), printed p. 47",
+   "says": "the derivative of `b` is positive at radius 1",
+   "should": "at the outer radius `r₁`",
+   "affects": "a stated result",
+   "note": "",
+   "roadmap": "RiemannianManifoldsWithConvexBoundary",
+   "job": "REV-DESIGN-RiemannianManifoldsWithConvexBoundary~5",
+   "board_pr": 13810,
+   "head": "93d2394",
+   "reported": "2026-11-13",
+   "reporter": "claude fable",
+   "comment": "https://github.com/TauCetiProject/TauCetiRoadmapJobs/pull/13810#issuecomment-6850399768"
+  },
+  {
+   "kind": "misprint",
+   "source": "paternain-salo-uhlmann2023",
+   "locator": "Lemma 3.2.11, printed p. 64",
+   "says": "the second factor of the product is the exit time at the single argument `x − v`",
+   "should": "at the pair `(x, −v)`",
+   "affects": "a stated result",
+   "note": "",
+   "roadmap": "RiemannianManifoldsWithConvexBoundary",
+   "job": "REV-DESIGN-RiemannianManifoldsWithConvexBoundary~5",
+   "board_pr": 13810,
+   "head": "93d2394",
+   "reported": "2026-11-13",
+   "reporter": "claude fable",
+   "comment": "https://github.com/TauCetiProject/TauCetiRoadmapJobs/pull/13810#issuecomment-6850399768"
   }
  ],
- "scanned_to": "2026-11-13T10:08:06Z",
- "updated": "2026-11-13T10:16:21Z",
+ "scanned_to": "2026-11-13T10:33:34Z",
+ "updated": "2026-11-13T10:35:08Z",
  "covered": [
   {
    "job": "ERRATA-TemperleyLieb",
