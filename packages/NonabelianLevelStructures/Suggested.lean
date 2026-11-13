@@ -28,11 +28,11 @@ Headline theorems stated here:
   points with values in every `R`-algebra `S` are unchanged by simultaneous conjugation by
   `GL₂(S)`; testing at the universal point shows that this is invariance under the coaction of the
   group scheme `GL₂`, not merely under the group `GL₂(R)`.
-* `sl2_cusp_automorphism_central`: for an absolutely irreducible subgroup `G` of `SL₂(𝔽_q)`,
-  `q ≥ 3`, whose image in `PSL₂(𝔽_q)` is not dihedral, `G` contains the centre of `SL₂(𝔽_q)` and
-  every cusp automorphism group `A(G, u, h)` is that centre (README §6.6). This is the finite-group
-  form of the computation of the vertical automorphisms of `SL₂(𝔽_q)`-level structures; the
-  geometric form is named below.
+* `sl2_cusp_automorphism_central`: for an absolutely irreducible subgroup `G` of `SL₂(𝔽_q)` whose
+  image in `PSL₂(𝔽_q)` is not dihedral, `G` contains the centre of `SL₂(𝔽_q)` and every cusp
+  automorphism group `A(G, u, h)` is that centre (README §6.6); over `𝔽₂` no subgroup is both.
+  This is the finite-group form of the computation of the vertical automorphisms of
+  `SL₂(𝔽_q)`-level structures; the geometric form is named below.
 
 Headline theorems that are not statable at the pins:
 
@@ -54,7 +54,8 @@ Headline theorems that are not statable at the pins:
   the noncongruence of the associated subgroups of `SL₂(ℤ)` (README §§7.6, 7.7): the monodromy
   group of a finite cover of the `j`-line and the identification `Out⁺(F₂) ≅ SL₂(ℤ)` are missing.
 * Cofinality of elliptic nonabelian levels among finite étale covers of `𝓜(1)` over `ℚ̄`
-  (README §0.7): the étale fundamental group of the moduli stack is missing.
+  (README §0.7), and the Galois correspondence between those covers and finite `SL₂(ℤ)`-sets on
+  which it rests (README §0.3): the elliptic moduli stack and its finite étale covers are missing.
 -/
 
 open scoped commutatorElement TensorProduct
@@ -263,17 +264,17 @@ theorem integral_trace_coordinates (R : Type u) [CommRing R] :
 /-! ## Layer 6: SL₂ level structures -/
 
 /-- **Cusp automorphisms of `SL₂(𝔽_q)`-level structures are central.** Let `K` be a finite field
-with at least three elements and `G ≤ SL₂(K)` a subgroup that is absolutely irreducible (its
-`K`-span is all of `M₂(K)`) and not dihedral (its image in `PSL₂(K)` is isomorphic to no dihedral
-group; `DihedralGroup n` has order `2n`, so the Klein four group `DihedralGroup 2` is excluded).
-Then `G` contains the centre of `SL₂(K)`, and for every generating pair `(u, h)` of `G` every
-element `a` of the cusp automorphism group `A(G, u, h)`, that is, every `a ∈ G` centralizing `u`
+and `G ≤ SL₂(K)` a subgroup that is absolutely irreducible (its `K`-span is all of `M₂(K)`) and not
+dihedral (its image in `PSL₂(K)` is isomorphic to no dihedral group; `DihedralGroup n` has order
+`2n`, so the Klein four group `DihedralGroup 2` is excluded). Over `𝔽₂` no subgroup satisfies both
+hypotheses, since `SL₂(𝔽₂) ≅ DihedralGroup 3` and its proper subgroups are cyclic. Then `G`
+contains the centre of `SL₂(K)`, and for every generating pair `(u, h)` of `G` every element `a` of the cusp automorphism group `A(G, u, h)`, that is, every `a ∈ G` centralizing `u`
 and `h⁻¹ u⁻¹ h` with `[a, h] ∈ ⟨u⟩`, is central in `SL₂(K)`. So `A(G, u, h) = Z(G) = Z(SL₂(K))`,
 the twist period of every cusp is `|u|`, and the compactified level stack of `G` is representable
 over the compactified elliptic stack (Chen, Theorem 5.3.2, pp. 405–406, and Proposition
 6.4.1(a), pp. 428–429). -/
 theorem sl2_cusp_automorphism_central {K : Type*} [Field K] [Finite K]
-    (hK : 3 ≤ Nat.card K) (G : Subgroup (Matrix.SpecialLinearGroup (Fin 2) K))
+    (G : Subgroup (Matrix.SpecialLinearGroup (Fin 2) K))
     (habs : Submodule.span K
       ((fun g : Matrix.SpecialLinearGroup (Fin 2) K => (g : Matrix (Fin 2) (Fin 2) K)) '' G) = ⊤)
     (hdih : ∀ n : ℕ, IsEmpty
