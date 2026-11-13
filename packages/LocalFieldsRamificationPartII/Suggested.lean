@@ -210,8 +210,9 @@ theorem isTameField_of_isPClosed {K : Type*} [Field K] (V : ValuationSubring K)
 /-- **The separable export.** Let `P` be a set of primes and `K` a field without nontrivial
 finite separable extension of `P`-number degree. Then `K` is separably tame at every valuation
 subring whose residue characteristic exponent lies in `P`. The field `K` need not be perfect, and
-nothing is claimed for residue characteristics outside `P` (Temkin 2017, Lemma 3.2.5 and
-Remark 2.4.7, through the perfection of `K`). -/
+nothing is claimed for residue characteristics outside `P`. Temkin 2017, Lemma 3.2.5, states the
+`P`-closed form; the separable form passes through the perfection of `K`, as Temkin 2017,
+Remark 2.4.7, does for the separable splitting conditions. -/
 theorem isSeparablyTameField_of_isSeparablyPClosed {K : Type*} [Field K] (P : Set ℕ)
     (hP : IsSeparablyPClosed P K) (V : ValuationSubring K)
     (hp : ringExpChar (ResidueField V) ∈ P) :

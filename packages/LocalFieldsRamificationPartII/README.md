@@ -139,7 +139,12 @@ criteria (Layer 5); and the general tameness theorem with its separable export (
   RamificationOfCompleteDiscretelyValuedFields §3a.1 calls an extension totally ramified when
   `f = 1`; that implies total ramification here, and the two disagree exactly when the residue
   extension is nontrivial and purely inseparable, so they agree for local fields (§2.9).
-  The degree formula `[L : K] = e·f` is asserted only for finite tame extensions of henselian fields.
+  The degree formula `[L : K] = e·f` is proved here only for finite tame extensions of henselian
+  fields (§2.4). For finite extensions of nonarchimedean local fields it is LocalFieldsRamification's,
+  and for finite separable extensions of complete discretely valued fields §2.9 derives it from the
+  Galois case of RamificationOfCompleteDiscretelyValuedFields §3a.1. Otherwise it can fail, by a
+  defect over a henselian field (an immediate Artin–Schreier extension, `e = f = 1`, degree `p`) or
+  through several prolongations (`ℚ(√2)/ℚ` at `7`: `e = f = 1` at each of two, degree `2`) (§2.4).
 - **Galois groups.** `G_K` is Mathlib's `Field.absoluteGaloisGroup K` with the Krull topology,
   identified with `Gal(Kˢ/K)` through Tau Ceti's `TauCeti.absoluteGaloisGroupRestrictEquiv`.
   Fixed fields of subgroups of `G_K` are taken in `Kˢ`.
@@ -416,9 +421,14 @@ Define an algebraic extension `L/K` to be a `P`-extension when every finite sube
 
 - A finite extension `L/K` is a `P`-extension exactly when `[L : K]` is a `P`-number.
 - For algebraic extensions `M/L/K`, `M/K` is a `P`-extension exactly when `M/L` and `L/K` are
-  (Temkin 2017, §2.1.1, p. 103). Route: the tower law for degrees, after replacing a finite
-  subextension of `M/L` by one over a finite subextension of `L/K` that contains the coefficients of
-  the minimal polynomials of its generators, which has the same degree.
+  (Temkin 2017, §2.1.1, p. 103). Route: the tower law for degrees, after descending a finite
+  subextension `E` of `M/L` to one of the same degree over a finite subextension of `L/K`. Choose
+  generators `a_1, …, a_k` of `E/L` (for the converse, the generators of a given finite subextension
+  `F` of `M/K`, with `E = L·F`) and an `L`-basis `b_1, …, b_m` of `E` made of monomials in the `a_i`;
+  let `L_0` be generated over `K` by the coordinates in this basis of all products `a_i·b_j`, and put
+  `E_0 = L_0(a_1, …, a_k)`. The `L_0`-span of the `b_j` is stable under multiplication by every
+  `a_i`, so it is a nonzero `E_0`-subspace of `E_0`, hence `E_0` itself, and
+  `[E_0 : L_0] = m = [E : L]`.
 - A directed union of `P`-subextensions of an algebraic extension is a `P`-extension: a finite
   subextension of the union lies in one member.
 - Every subextension of a `P`-extension is a `P`-extension.
@@ -430,6 +440,11 @@ Define an algebraic extension `L/K` to be a `P`-extension when every finite sube
   through the normal closure would reject it.
 - The three cubic subfields of the splitting field of `X³ − 2` over `ℚ` are `{3}`-extensions while
   the compositum of two of them has degree `6`: the class is not closed under composita.
+- The descent in the tower law needs the coordinates of products, not only the coefficients of
+  minimal polynomials. For `K = ℚ`, `L = ℚ(√2)` and `E = L(√3, √6) = L(√3)`, `[E : L] = 2`; the
+  minimal polynomials `X² − 3` and `X² − 6` over `L` of the generators have coefficients in `ℚ`, but
+  `[ℚ(√3, √6) : ℚ] = 4`. With the basis `1, √3`, the product `√6·1 = √2·√3` has the coordinate `√2`,
+  so `L_0 = ℚ(√2)`, `E_0 = ℚ(√2, √3)` and `[E_0 : L_0] = 2`.
 
 ### 0.3 Prime-supported closed fields
 
@@ -447,8 +462,11 @@ subextensions; no perfection is imposed.
 - For `K` of characteristic `q > 0`: `IsSeparablyPClosed P K` holds exactly when the perfection
   `K^{1/q^∞}` satisfies `IsPClosed P` (finite separable extensions of the perfection descend to `K`
   with the same degree after a Frobenius twist of the defining polynomial, and the perfection has no
-  nontrivial purely inseparable extensions; Temkin 2017, Remark 2.4.7, p. 108, with
-  `IntermediateField.linearDisjoint_of_isPurelyInseparable_of_isSeparable`).
+  nontrivial purely inseparable extensions; conversely a finite separable extension of `K` stays a
+  field of the same degree over the perfection by
+  `IntermediateField.linearDisjoint_of_isPurelyInseparable_of_isSeparable`). The equivalence is
+  proved here; the identification of the absolute Galois groups of `K` and of its perfection on
+  which it rests is Temkin 2017, §2.4.6, proof of (0) ⇒ (4), p. 108.
 
 *Needs:* §0.2; Mathlib `AlgebraicClosure`, `Algebra.IsSeparable`,
 `IntermediateField.linearDisjoint_of_isPurelyInseparable_of_isSeparable`.
@@ -467,14 +485,24 @@ Prove that inside `Kᵃ` every `P`-extension of `K` is contained in a maximal on
 `K_P` satisfies `IsPClosed P` (Zorn's lemma with §0.2, Temkin 2017, §2.1.1, p. 103). Prove that if
 `K` has characteristic exponent `q`, `q` is prime and `q ∈ P`, then a `P`-closed `K` is perfect: a
 missing `q`-th root gives a purely inseparable extension of degree `q` (Temkin 2017, proof of
-Theorem 2.6.6, p. 112). The analogous separable statements hold inside `Kˢ`. *Needs:* §0.3; Mathlib
-`zorn_le_nonempty`, `IsPurelyInseparable.finrank_eq_pow`, `PerfectField`.
+Theorem 2.6.6, p. 112). Prove the separable form of the first statement: inside `Kˢ` every
+separable `P`-extension of `K` is contained in a maximal separable `P`-extension `K_{sP}`, every
+finite subextension of `K_{sP}/K` is separable of `P`-number degree, and `K_{sP}` satisfies
+`IsSeparablyPClosed P` (a finite separable extension of `K_{sP}` of `P`-number degree embeds in
+`Kˢ` over `K_{sP}` and is then a separable `P`-extension of `K` by §0.2, hence equals `K_{sP}`). The
+perfection statement has no separable form: a separably `P`-closed field need not be perfect
+(§0.3). *Needs:* §§0.2–0.3; Mathlib `zorn_le_nonempty`, `IsPurelyInseparable.finrank_eq_pow`,
+`PerfectField`, `separableClosure`.
 
 **Checks.**
 - For `P = ∅` the maximal extension is `K`; for `P` the set of all primes it is `Kᵃ`.
 - For `P = {3}` a maximal `{3}`-extension of `ℚ` containing `ℚ(2^{1/3})` does not contain the
   normal closure `ℚ(2^{1/3}, ζ_3)`, which has degree `6`.
 - `𝔽_p(t)` is not `{p}`-closed (`t^{1/p}`), consistent with perfection being forced.
+- For `K = 𝔽_p(t)` and `P = {p}`, a maximal separable `{p}`-extension `K_{sP}` is separably
+  `{p}`-closed but does not contain `t^{1/p}`, which is not in `Kˢ`; so `K_{sP}(t^{1/p})` has
+  degree `p` over it, `K_{sP}` is neither perfect nor `{p}`-closed, and a separable form of the
+  perfection statement would be false. For `P = ∅`, `K_{sP} = K`.
 
 ### 0.5 Split towers
 
@@ -679,9 +707,14 @@ and descends to `R` through the finitely many primes `𝔭_j` (Stacks, Lemma 15.
   `S = R[X]/(I·X)`, with `S_0 = R` and `S_d = (R/I)·X^d` for `d ≥ 1`, is of finite type and flat
   (every module over `R` is flat) but not finitely presented, since the kernel `I·X·R[X]` of
   `R[X] → S` would be finitely generated only if `I` were.
-- Flatness cannot be dropped: for a nondiscrete valuation ring `R` (local, so the hypothesis on `R`
-  holds) with maximal ideal `𝔪`, `S = R[X]/(𝔪X)` is of finite type with `S_0 = R`, is not flat
-  (`X` is killed by `𝔪`) and is not finitely presented, since `𝔪` is not finitely generated.
+- Flatness cannot be dropped: for a valuation ring `R` whose maximal ideal `𝔪` is not finitely
+  generated (its value group has no least positive element; for example the valuation ring of
+  `ℂ_p`, with value group `ℚ`), `R` is local, so the hypothesis on `R` holds, and
+  `S = R[X]/(𝔪X)` is of finite type with `S_0 = R`, is not flat (`X` is killed by `𝔪`) and is not
+  finitely presented, since the kernel `𝔪X·R[X]` would be finitely generated only if `𝔪` were.
+  Nondiscreteness alone is not enough: the composite valuation ring of `ℚ_p((t))` (§5.1), with value
+  group `ℤ × ℤ` ordered lexicographically, has the least positive value `(0, 1)` and maximal ideal
+  `(p)`, and `R[X]/(pX)` is finitely presented.
 
 *Valuation rings and Prüfer domains.* Let `A` be a valuation ring, `B` a finite-type `A`-algebra and
 `M` a finite `B`-module. Prove: if `B` is flat over `A`, then `B` is a finitely presented
@@ -714,7 +747,7 @@ homogenization and graded finite presentation above; Mathlib `ValuationRing`, `M
 
 **Checks.**
 - Over a field every finite-type algebra is flat and finitely presented, by Hilbert's basis theorem.
-- `A/𝔪` for a nondiscrete valuation ring `A` with non-finitely-generated maximal ideal `𝔪` is of
+- `A/𝔪` for a valuation ring `A` whose maximal ideal `𝔪` is not finitely generated is of
   finite type and not finitely presented; it is not flat (it is torsion), so flatness cannot be
   dropped.
 - For the same `A`, `B = A` (flat and of finite type) and `M = A/𝔪`, the module `M` is cyclic over
@@ -731,8 +764,9 @@ homogenization and graded finite presentation above; Mathlib `ValuationRing`, `M
 ### Examples
 
 `ℚ(√2)/ℚ` at `7` has two prolongations and `L ⊗ Kʰ` two factors (§§1.1, 1.4); the `p`-adic
-henselization of `ℚ` is immediate and not complete (§1.3); `A/𝔪` over a nondiscrete valuation ring
-is a non-flat finite-type algebra that is not finitely presented (§1.5).
+henselization of `ℚ` is immediate and not complete (§1.3); `A/𝔪` over a valuation ring whose
+maximal ideal is not finitely generated, such as that of `ℂ_p`, is a non-flat finite-type algebra
+that is not finitely presented (§1.5).
 
 ### Dependencies
 
@@ -750,9 +784,14 @@ strict version adds equality of residue fields, that étale implies essentially 
 two are equivalent when `V` has finite height (Temkin 2017, Lemma 2.3.8, pp. 105–106). No noetherian
 or rank-one hypothesis is made. Route: essentially étale identifies the strict henselizations; for
 the converse, descend from a pointed étale neighbourhood `A′` of `V` in `Vˢʰ`, put `A = A′ ∩ L`, a
-Prüfer domain by §1.1, over which `A′` is flat and of finite type, hence finitely presented by §1.5;
-descent from the source along `Spec A′ → Spec A` (EGA IV, 17.7.5(iv) and 17.7.7, pp. 73–75) makes
-`A` étale over `V` at the point under consideration, and `W` is a localization of `A`. At finite
+Prüfer domain by §1.1, over which `A′` is flat and of finite type, hence finitely presented by §1.5.
+`Spec A′ → Spec A` is surjective, hence faithfully flat: for a prime `𝔮` of `A`, a relation
+`1 = Σ q_i a_i` with `q_i ∈ 𝔮` and `a_i ∈ A′_𝔮` would give, for `q` a nonzero `q_i` of least value
+in the valuation ring `A_𝔮` (§1.1), `q⁻¹ = Σ (q_i/q)·a_i ∈ A′_𝔮 ∩ L`; this intersection is `A_𝔮`
+(if `s·x ∈ A′` with `s ∈ A ∖ 𝔮` and `x ∈ L`, then `s·x ∈ A`), which does not contain `q⁻¹`; so the
+fibre over `𝔮` is not empty. Descent from the source along `Spec A′ → Spec A` (EGA IV, 17.7.5(iv)
+and 17.7.7, pp. 73–75) then makes `A` étale over `V` at the point under consideration, and `W` is a
+localization of `A`. At finite
 height `Spec V` is finite, so the localization is obtained by inverting one element. *Needs:*
 §§1.1–1.3 and §1.5; §2.3 for the definition; Tau Ceti `TauCeti.StrictHenselization.algebra`,
 `TauCeti.StrictHenselization.exists_stage_eq`, `TauCeti.StrictHenselization.map`;
@@ -1545,7 +1584,8 @@ every element of `K` has a `p`-th root (an irreducible `X^p − a` would give an
 is `{p}`-closed (a finite `{p}`-extension of `κ_i` is separable, because `κ_i` has characteristic
 zero or is perfect of characteristic `p`, and a lift of its primitive monic irreducible polynomial to
 `V_i` is irreducible and of `p`-power degree); and that `K_i` with residue characteristic exponent `1`
-is tame without induction (Temkin 2017, proof of Theorem 2.6.6, p. 112). *Needs:* §0.3, §0.4, §5.1.
+is tame without induction (Temkin 2017, proof of Theorem 2.6.6, p. 112). *Needs:* §0.3, §0.4, §2.7,
+§§5.1–5.2.
 
 **Checks.**
 - The trivial coarsening has residue field `K` itself, which is `{p}`-closed by hypothesis.
@@ -1560,7 +1600,7 @@ Prove that every valued field of finite height with residue characteristic expon
 p. 112). Route: at height `0` the field is perfect (§0.4) and the trivial valuation of a perfect field
 is tame (§2.7); height one is §4.5; at height `d > 1` choose `0 < i < d`, apply induction to `K_i`
 (or the residue-characteristic-zero case) and to `κ_i`, and conclude with §6.1 and §5.6. *Needs:*
-§0.4, §2.7, §4.5, §5.6, §6.1.
+§0.4, §2.7, §4.5, §5.2, §5.6, §6.1.
 
 **Checks.**
 - Height `0`: a `{p}`-closed field is perfect, hence tame for the trivial valuation.
@@ -1627,16 +1667,20 @@ residue characteristic lies in `P` (Temkin 2017, Lemma 3.2.5, p. 116), as `IsPCl
 Prove `isSeparablyTameField_of_isSeparablyPClosed`: for a set `P` of natural numbers, if
 `IsSeparablyPClosed P K` and the residue characteristic exponent of `V` lies in `P`, then
 `IsSeparablyTameField V`: every finite separable extension of `K` is tame at every prolongation. `K`
-need not be perfect and nothing is claimed at valuations whose residue characteristic is outside `P`
-(Temkin 2017, Lemma 3.2.5, p. 116 and Remark 2.4.7, p. 108, through perfection). Route: for `p = 1`
-the conclusion holds outright; for prime `p ∈ P`, `K` is separably `{p}`-closed, so its perfection is
-`{p}`-closed (§0.3), hence tame by §6.4 with the same residue characteristic, and §2.10 descends
-separable tameness to `K`. *Needs:* §0.3, §2.10, §6.4.
+need not be perfect and nothing is claimed at valuations whose residue characteristic is outside `P`.
+Temkin 2017, Lemma 3.2.5, p. 116, states the `P`-closed form; the separable form is derived here
+through the perfection (§§0.3 and 2.10), as Temkin 2017, Remark 2.4.7, p. 108, obtains the
+separable analogues of the splitting conditions. Route: for `p = 1` the conclusion holds outright;
+for prime `p ∈ P`, `K` is separably `{p}`-closed, so its perfection is `{p}`-closed (§0.3), hence
+tame by §6.4 with the same residue characteristic, and §2.10 descends separable tameness to `K`.
+*Needs:* §0.3, §2.10, §6.4.
 
 **Checks.**
-- For the separable closure of `𝔽_p(t)` with any valuation the hypothesis holds for every `P` and
-  `t^{1/p}` gives a non-tame algebraic extension: only the separable conclusion survives, so the word
-  separable cannot be dropped.
+- For the separable closure of `𝔽_p(t)` with any valuation, whose residue characteristic exponent
+  is `p`, the closedness hypothesis holds for every `P` and the residue hypothesis exactly for the
+  `P` containing `p`. For those `P` the field is separably tame, while `t^{1/p}` gives a non-tame
+  algebraic extension: only the separable conclusion survives, so the word separable cannot be
+  dropped.
 - For `P = ∅` the closedness hypothesis holds for every field and the hypothesis on the residue
   characteristic never does, so nothing is claimed; this is necessary, since `ℚ_p` is separably
   `∅`-closed and not separably tame.
@@ -1651,7 +1695,7 @@ its residue field `{p}`-closed (§6.1), so the induction of §6.2 applies. The s
 
 ### Dependencies
 
-Layer 0, Layer 2, Layer 4 (§4.5) and Layer 5 (§§5.1, 5.3, 5.6); Layers 1 and 3 only through them.
+Layer 0, Layer 2, Layer 4 (§4.5) and Layer 5 (§§5.1–5.3, 5.6); Layers 1 and 3 only through them.
 
 ## Downstream consumers
 
