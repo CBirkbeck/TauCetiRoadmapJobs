@@ -171,3 +171,19 @@ licence_class = "none"
 status = "uncertified"
 version_note = "paywalled; cited by its locator without the text"
 cited_for = ["1.5"]
+
+[[source]]
+id = "stacks-more-flatness"
+authors = "The Stacks Project Authors"
+title = "The Stacks Project, Chapter 38: More on Flatness"
+year = 2026
+locator_scheme = "tag"
+locator = "Lemma 38.10.9 (05I7), Theorem 38.13.6 (05IK), Lemma 38.13.7 (05IL), Proposition 38.13.10 (053G)"
+url = "https://stacks.math.columbia.edu/tag/053G"
+fetched_from = "https://stacks.math.columbia.edu/download/flat.pdf#nameddest=053G"
+fetched_at = "2026-11-13T12:11:19Z"
+sha256 = "553b6d1e2eb22bcf1dfbb8167356c184f41b48089f72cf93acf94e0fb143212e"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-13"
+cited_for = ["1.5"]
