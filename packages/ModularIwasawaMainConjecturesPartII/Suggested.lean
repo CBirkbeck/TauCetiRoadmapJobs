@@ -17,8 +17,12 @@ the file declares nothing. The headline theorems and the carrier each one lacks 
   the pins (`TauCeti.ClassFieldTheory.rayClassField`, a number field, with the Artin isomorphism
   `TauCeti.ClassFieldTheory.rayClassArtinEquiv`), but the statement needs the norm-limit modules
   of their `p`-units and `p`-primary class groups over the whole tower with their action of the
-  completed group algebra, and the elliptic units, which need CM elliptic curves with level
-  structure over those fields and Kato's theta functions; none exists in Mathlib or Tau Ceti.
+  completed group algebra, and the elliptic units, which need CM elliptic curves over those
+  fields with a torsion point of exact level, and Kato's theta functions; none exists in Mathlib
+  or Tau Ceti.
+* The generation of the CM ray-tower and cyclotomic Iwasawa cohomology by elliptic units at
+  height zero (Kato, 15.15; README §7.8). It needs the ray-tower Iwasawa cohomology, the
+  elliptic-unit element and Kato's comparison map, none of which exists at the pins.
 * Johnson-Leung and Kings' main conjecture for every finite-order character at every prime
   (their Theorem 5.2; README §4.5). It needs arithmetic Iwasawa cohomology over the
   `ℤ_p²`-extension of `K`, Knudsen–Mumford determinants of perfect complexes over the
