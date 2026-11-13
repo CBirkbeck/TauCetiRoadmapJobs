@@ -185,7 +185,7 @@ API:
 
 - At a ramified prime the factor is `1`, not `(1 − 0)⁻¹` computed from an extended-by-zero value of a wrong modulus; for `η` ramified at both primes above `l`, the `l`-factors are `1` (§5.3).
 - For `φ` of the curve `y² = x³ − x` at the inert prime `7`, `eulerFactor` at `s = 1` is `(1 − (−7)/49)⁻¹ = (1 + 1/7)⁻¹ = 7/8`; using `+7` gives `7/6`.
-- The trivial `p`-character with the `p`-factor deleted: `E_{{p}}(1) = 1 − φ((p))/p² = 1 + 1/p`, which is nonzero but has `v_p = −1`; deletion at `p` is harmless for nonvanishing and changes valuations.
+- The trivial `p`-character with the `p`-factor deleted, for `p ∤ f`: `E_{{p}}(1) = 1 − φ((p))/p² = 1 + 1/p` (§0.1 gives `φ((p)) = −p`), which is nonzero but has `v_p = −1`; deletion at `p` is harmless for nonvanishing and changes valuations. If `p | f` the primitive factor at `p` is `1` and `E_{{p}}(1) = 1`.
 - Without the entire-function clause the value would not be determined: take `F` equal to the Euler product on `Re s > 3/2` and assign it an arbitrary value at `s = 1`; this gives both `0` and `1` as candidate central values. Requiring `F` entire excludes such assignments, so `HasCentralValue η ϖ z` holds for at most one `z`, and `HasCentralValue η ϖ z` with `z ≠ 0` asserts nonvanishing.
 
 ### 0.4 The integral CM period
@@ -401,7 +401,8 @@ API:
 
 **Checks.**
 
-- `χ = 1`, `r = 1`: the deleted value `L_{pf}(φ̄, 1)` contains the `p`-factor `1 − φ̄((p))/p² = 1 + 1/p`, nonzero and of valuation `−1`.
+- `χ = 1`, `r = 1`, `ψ = φ` conjugation-equivariant as in §0.1, `p` inert and `φ` unramified at `p`: the rational-principal law of §0.1 gives `φ̄((p)) = conj(−p) = −p`, so the deleted value `L_{pf}(φ̄, 1)` contains the `p`-factor `1 − φ̄((p))/p² = 1 + 1/p`, nonzero and of valuation `−1`.
+- Split and ramified `p`, where that factor is wrong: `K = Q(i)`, `φ` of `y² = x³ − x` (conductor `(1 + i)³`), `p = 5 = 𝔭𝔭̄` with `φ(𝔭) = −1 + 2i` and `φ(𝔭̄) = −1 − 2i`. The `5`-part of the deletion is `(1 − φ̄(𝔭)/5)(1 − φ̄(𝔭̄)/5) = ((6 + 2i)/5)((6 − 2i)/5) = 8/5`, equal to `1 − a_5/5 + 5/25` with `a_5 = 5 + 1 − #E(F_5) = 6 − 8 = −2`; the single-ideal expression `1 − φ̄((5))/25 = 1 − 5/25 = 4/5` and the inert value `6/5` both fail. At `p = 2`, ramified and dividing the conductor, the primitive factor is `1` and deletion at `2` changes nothing.
 - Orientation of `χ`: replacing `χ` by `χ⁻¹` replaces the weights `χ(σ)` by `χ(σ)⁻¹` (for `χ(σ) = ζ_25` these are `ζ_25` and `ζ_25⁻¹`, unequal since `ζ_25² ≠ 1`) and the right side by `L_{pf}(ψ̄, χ⁻¹, r)`. The two values need not differ: for `K = Q(√−7)`, `p = 5`, `ψ = φ` canonical and `χ` of order `25` (`c = 3`), `L(φ̄χ, 1) = L(φχ⁻¹, 1)` and `L(φ̄χ⁻¹, 1) = L(φχ, 1)` both vanish (§1.4). The convention is tested on the weights.
 - The smoothing factor for `a = (α)` with `α ≡ 1 mod f`: `N(a) − ψ(a) = α ᾱ − α^r`, which for `r = 1` is `α(ᾱ − 1)`.
 - Sign at the origin, `a = (5)` in `Z[i]`: `dlog {}_aθ_E` has leading term `24 dz/z` (order of vanishing `N(a) − 1 = 24`), matching `N(a)E_1 − Σ_{P ∈ E[a]} E_1(· − P) ∼ 25/z − 1/z`; at `r = 2`, `(d/ω)^2 log {}_aθ_E ∼ −24/z²` against `N(a)E_2 − Σ E_2(· − P) ∼ +24/z²`, the factor `(−1)^{r−1} = −1`. A model with the opposite overall sign would give `−24 dz/z`, the logarithmic derivative of a function with a pole of order `24` at the origin; the divisor `N(a)(0) − E[a]` excludes it.
@@ -431,7 +432,7 @@ Prove: for the integral class at level `K(gp^n)`, `g` divisible by `f`, and a ch
 
 **Checks.**
 
-- `χ = 1`: the inert `p`-factor `1 + 1/p` is retained.
+- `χ = 1`: the inert `p`-factor `1 + 1/p` is retained; `φ` is unramified at `p` because `E` has good reduction above `p` (§0.4) and `p` splits completely in `H`, so `φ̄((p)) = −p`.
 - Inverse characters: replacing `χ` by `χ⁻¹` replaces the weights `χ(σ)` by `χ(σ)⁻¹` (`ζ_25` against `ζ_25⁻¹` for `χ(σ) = ζ_25`) and the right side by `Ω⁻¹L_{pg}(φ̄χ⁻¹, 1) = Ω⁻¹L_{pg}(φχ, 1)`. The two values may coincide: when `c = 3` in the example of §1.4 both are `0`. The convention is tested on the weights, not on the values.
 - `g = f l^m` with `ν ≠ 1`: the `l`-factors of `L_{pg}` are `1` (§5.3), so `L_{pg}(φ̄ν, 1) = L_{pf}(φ̄ν, 1)`.
 
@@ -488,9 +489,9 @@ Prove: `F_n` and `L[r]` are linearly disjoint over `K`, so `F_n ⊗_K L[r] → M
 
 **Checks.**
 
-- `K = Q(√−7)`, `p = 47`, `l = 23`: `47` is inert (`−7 ≡ 40 mod 47` and `(40/47) = (2/47)(5/47) = 1 · (2/5) = −1`), `23` splits (`−7 ≡ 16 = 4² mod 23`), `23 ∤ h_K N(f) = 7`, `47 ∤ 22 = l − 1`, and `23 | p − 1 = 46`; so `l` divides both `[F_n : H] = (p² − 1)p^{2n} = 2208 · 47^{2n}` and `[L[r] : K] = 23^r`, and the ramification argument applies although the degrees are not coprime. For `p = 5` no admissible `l` divides `p² − 1 = 24`: its prime factors `2, 3` are below `5`, and `3` is inert in `Q(√−7)` (`−7 ≡ 2 mod 3`).
+- `K = Q(√−7)`, `p = 47`, `l = 23`: `47` is inert (`−7 ≡ 40 mod 47` and `(40/47) = (2/47)(5/47) = 1 · (2/5) = −1`), `23` splits (`−7 ≡ 16 = 4² mod 23`), `23 ∤ h_K N(f) = 7`, `47 ∤ 22 = l − 1`, and `23 | p − 1 = 46`; so for `r ≥ 1`, `l` divides both `[F_n : H] = (p² − 1)p^{2n} = 2208 · 47^{2n}` and `[L[r] : K] = 23^r` (at `r = 1`, `gcd(2208, 23) = 23`), and the ramification argument applies although the degrees are not coprime. At `r = 0`, `L[0] = K`, the degrees `2208 · 47^{2n}` and `1` are coprime, and disjointness is immediate. For `p = 5` no admissible `l` divides `p² − 1 = 24`: its prime factors `2, 3` are below `5`, and `3` is inert in `Q(√−7)` (`−7 ≡ 2 mod 3`).
 - If `l | h_K`, the Hilbert class field contains a cyclic `l`-extension that may lie in both fields; the hypothesis is used.
-- The disjointness is of Galois extensions of `K`; a coprime-degree argument would fail for `l | (p² − 1)p^{2n}`.
+- The disjointness is of Galois extensions of `K`; for `l | (p² − 1)p^{2n}` a coprime-degree argument fails at every `r ≥ 1` and applies only at `r = 0`, where `L[0] = K`.
 
 ### 3.3 Splitting and the semilocal character factors
 
@@ -721,7 +722,7 @@ API:
 
 **Checks.**
 
-- On a prime of norm `Q`, `λ_ν(a) = φ̄(a)ν(a)/Q`; the opposite twist `Qφ̄(a)ν(a)` shifts the central point to `s = −1`.
+- On a prime of norm `Q`, `λ_ν(a) = φ̄(a)ν(a)/Q`, and `L(λ_ν, s) = L(φ̄ν, s + 1)` has centre `s = 0`. The opposite twist `N·φ̄ν`, of value `Qφ̄(a)ν(a)`, has `L(Nφ̄ν, s) = L(φ̄ν, s − 1)` and centre `s = 2`; its value at `s = 0` is `L(φ̄ν, −1)`, not a central value. For `K = Q(√−7)`, canonical `φ`, `ν = 1` and the inert prime `(5)` of norm `25`, `φ̄((5)) = −5`: the coefficients are `−1/5` and `−125`, and the Euler denominators of the divided twist at `s = 0`, of `φ̄` at `s = 1` and of the opposite twist at `s = 2` all equal `6/5`, while the opposite twist at `s = −1` gives `1 + 125·25 = 3126`.
 - Euler denominators: `1 − φ̄(a)ν(a)Q^{−s}·Q^{−1}` at `s = 0` equals the `φ̄ν` denominator at `s = 1`.
 - Finis's tower prime set to the inert `p` violates the split hypothesis of §4.6.
 - `ν = 1` belongs to the family with sign `+1`; the almost-all theorem need not make its value a unit.
