@@ -1,0 +1,14 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "CohomologyOfGroups"
+
+[[source]]
+id = "SwanPPeriod60"
+authors = "Richard G. Swan"
+title = "The p-period of a finite group"
+year = 1960
+doi = "10.1215/ijm/1255456050"
+locator_scheme = "theorem"
+locator = "Theorems 1 and 2"
+licence_class = "none"
+status = "waived"
+resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/14491#issuecomment-6855809391"
