@@ -922,7 +922,12 @@
       {
        "name": "degree_zero",
        "kind": "degenerate",
-       "statement": "Tor_0 ≅ Tor'_0 ≅ ⊗ (leftDerivedZeroIsoSelf)."
+       "statement": "n = 0 is covered: Tor_0(X, Y) = coker(X ⊗ Q_1 → X ⊗ Q_0) and Tor'_0(X, Y) = coker(P_1 ⊗ Y → P_0 ⊗ Y) are both H_0 Tot(P ⊠ Q); they equal X ⊗ Y when X ⊗ − and − ⊗ Y preserve finite colimits (leftDerivedZeroIsoSelf), as in ModuleCat R for commutative R (X ⊗ − left adjoint to internal Hom, − ⊗ Y ≅ Y ⊗ − by the braiding); e.g. Tor_0(ℤ/4, ℤ/6) = Tor'_0(ℤ/4, ℤ/6) = ℤ/4 ⊗ ℤ/6 = ℤ/2."
+      },
+      {
+       "name": "degree_zero_needs_right_exactness",
+       "kind": "non-example",
+       "statement": "R = 𝔽₂[x, y]/(x², y²), k = R/(x, y), finite-dimensional R-modules with D = Hom_𝔽₂(−, 𝔽₂) and U ⋆ V = D(DU ⊗_R DV) (unit DR ≅ R via the xy-coefficient pairing): P ⋆ − and − ⋆ P are exact for projective P (free, P ⋆ V ≅ V^n), and U ⋆ k ≅ soc(U). For X = R/(xy): Tor_0(X, k) = X/(x, y)X = k, Tor'_0(X, k) = coker(0 : soc R → soc R) = k, but X ⋆ k = soc(X) = k·x ⊕ k·y has dimension 2; X ⋆ − is not right exact (soc(R) → soc(X) is zero, not surjective)."
       },
       {
        "name": "projective_first",

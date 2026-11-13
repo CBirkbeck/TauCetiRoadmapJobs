@@ -196,7 +196,8 @@ unbounded complexes with exact kernel or cokernel complexes (stacks-012K Lemmas 
 - `CategoryTheory.Functor.rightDerived`, `CategoryTheory.InjectiveResolution.isoRightDerivedObj`
   (`Mathlib/CategoryTheory/Abelian/RightDerived.lean`), `CategoryTheory.Functor.leftDerived`,
   `CategoryTheory.ProjectiveResolution.isoLeftDerivedObj`,
-  `CategoryTheory.Functor.leftDerivedZeroIsoSelf` (`LeftDerived.lean`), `InjectiveResolution`,
+  `CategoryTheory.Functor.leftDerivedZeroIsoSelf` (`LeftDerived.lean`, for additive `F` preserving
+  finite colimits), `InjectiveResolution`,
   `ProjectiveResolution`, `CategoryTheory.Injective.injective_of_adjoint`,
   `CategoryTheory.Adjunction.map_injective` and the instance giving `EnoughInjectives 𝒜ᵒᵖ` from
   `EnoughProjectives 𝒜` (`Mathlib/CategoryTheory/Preadditive/Injective/Basic.lean`).
@@ -1006,7 +1007,22 @@ being flat. *Needs:* Mathlib `CategoryTheory.Tor`, `CategoryTheory.Tor'`,
 
 - `Tor_1(ℤ/4, ℤ/6) = ℤ/2` both ways: resolving `ℤ/6` gives the kernel of `×6` on `ℤ/4`, which is
   `{0, 2}`; resolving `ℤ/4` gives the kernel of `×4` on `ℤ/6`, which is `{0, 3}`.
-- In degree `0` both sides are the tensor product (Mathlib `Functor.leftDerivedZeroIsoSelf`).
+- *Degree zero.* The route covers `n = 0`: `Tor_0(X, Y)` and `Tor'_0(X, Y)` are the cokernels of
+  `X ⊗ Q_1 → X ⊗ Q_0` and of `P_1 ⊗ Y → P_0 ⊗ Y`, both `H_0` of `Tot(P ⊠ Q)`. They are `X ⊗ Y`
+  when `X ⊗ −` and `− ⊗ Y` preserve finite colimits (Mathlib `Functor.leftDerivedZeroIsoSelf`,
+  which assumes exactly this). In `ModuleCat R`, `R` commutative, both do: `X ⊗ −` is left adjoint to
+  the internal Hom of Mathlib's `MonoidalClosed` instance, and `− ⊗ Y ≅ Y ⊗ −` by the braiding. For
+  example, `Tor_0(ℤ/4, ℤ/6) = Tor'_0(ℤ/4, ℤ/6) = ℤ/4 ⊗ ℤ/6 = ℤ/2`.
+- *Exactness with projectives alone does not give `Tor_0 = ⊗`.* Take `R = 𝔽₂[x, y]/(x², y²)`, `k = R/(x, y)`
+  and, on finite-dimensional `R`-modules, `D = Hom_{𝔽₂}(−, 𝔽₂)` and `U ⋆ V := D(DU ⊗_R DV)`, a
+  symmetric monoidal preadditive structure with unit `DR`. Taking the coefficient of `xy` in a
+  product is a nondegenerate pairing on `R`, so `DR ≅ R`. Since `R` is local, projectives are free
+  and `P ⋆ V ≅ V^n` for `P = R^n`, so the theorem's hypothesis holds. However, `U ⋆ k ≅ soc(U)`,
+  the socle. For `X = R/(xy)`, resolving `k` by `R² →(x, y) R` gives `Tor_0(X, k) = X/(x, y)X = k`.
+  Resolving `X` by `R →(×xy) R` gives `Tor'_0(X, k) = coker(0 : soc R → soc R) = k`. But
+  `X ⋆ k = soc(X) = k·x ⊕ k·y` has dimension `2`. Balance holds; the identification with `⋆` fails
+  because `X ⋆ −` is not right exact: `R → X` induces the zero map `soc(R) = k·xy → soc(X)`, which is not
+  surjective.
 - For a projective `X`, `Tor_n(X, Y) = 0` for `n > 0`, which by definition is a statement about the
   second variable and follows here from `CategoryTheory.isZero_Tor'_succ_of_projective`.
 - *Ext needs no balancing at the pin.* `Ext¹_ℤ(ℤ/2, ℤ)` is `ℤ/2` both from `ℤ →(×2) ℤ → ℤ/2` (Mathlib
