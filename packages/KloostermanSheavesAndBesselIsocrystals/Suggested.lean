@@ -154,7 +154,7 @@ half twist and sign corrected in README §9.4 and §11.1). Over every finite fie
 nontrivial additive character, for `N ≥ 2`,
 `U_N(a) − |F| = ∑_{uv = a} (Kl₂(u)² − |F|) · Kl_{2N−2}(v)` in raw sums. -/
 theorem orthogonalSum_sub_card_eq_convolution (F : Type*) [Field F] [Finite F]
-    [DecidableEq F] {K : Type*} [Field K] (ψ : AddChar F K) (hψ : ψ ≠ 1) (N : ℕ) (hN : 2 ≤ N) (a : Fˣ) :
+    {K : Type*} [Field K] (ψ : AddChar F K) (hψ : ψ ≠ 1) (N : ℕ) (hN : 2 ≤ N) (a : Fˣ) :
     orthogonalSum ψ N a - Nat.card F
       = ∑ᶠ u : Fˣ, (kloostermanSum ψ 2 u ^ 2 - Nat.card F)
           * kloostermanSum ψ (2 * N - 2) (a * u⁻¹) := by

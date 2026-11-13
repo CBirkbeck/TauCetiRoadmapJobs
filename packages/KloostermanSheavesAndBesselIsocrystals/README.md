@@ -416,6 +416,11 @@ former target labels identify the same mathematical targets; former §7.2 is now
 | KB.1 hecke-action | §1.5 |
 | KB.1 eigenobject | §1.6 |
 | KB.1 trace-companions | §1.8 |
+| KB.2 invariant-parameter | §2.2 |
+| KB.2 oper-slice | §2.3 |
+| KB.2 quantized-hitchin | §2.5 |
+| KB.2 zhu-identification | §2.7 |
+| KB.3 tensor-comparison | §3.5 |
 | KB.4 bessel-isocrystal | §4.1 |
 | KB.4 log-extension | §4.2 |
 | KB.6 rigidity-local | §6.6 |
@@ -604,9 +609,13 @@ LA object whose restriction to `j` is holonomic is its intermediate extension, a
 unipotent vanishing cycles along every strict henselian trait mapping to `S`, and smoothness
 of all cohomology objects for an object ULA over the identity of a smooth scheme
 (Corollaries 2.8.6–2.8.7, p. 23). Prove Braden's
-hyperbolic localization for weakly `𝔾_m`-equivariant objects: the canonical map from the attracting
-`!`-restriction to the repelling `+`-restriction is an isomorphism (Xu–Zhu §2.10, Theorem 2.10.2,
-pp. 25–26). *Needs:* gap:arithmetic-d-module-operations; §1.1.
+hyperbolic localization for weakly `𝔾_m`-equivariant objects `F` on a quasi-projective `k`-scheme `Q`,
+geometrically connected and normal, with a `𝔾_m`-action: with `a₊ : Q⁺ → Q` and `a₋ : Q⁻ → Q` the attracting and repelling loci and
+`e₊ : Q⁰ → Q⁺`, `e₋ : Q⁰ → Q⁻` the inclusions of the fixed locus, the canonical map
+`e₋^+ a₋^! F → e₊^! a₊^+ F`, from the repelling side (`!`-restriction to the repelling locus,
+then `+`-restriction to the fixed locus) to the attracting side (`+`-restriction to the attracting locus,
+then `!`-restriction to the fixed locus), is an isomorphism (Xu–Zhu §2.10, (2.10.1.2) and
+Theorem 2.10.2, pp. 25–26). *Needs:* gap:arithmetic-d-module-operations; §1.1.
 
 **Checks.**
 
@@ -614,9 +623,11 @@ pp. 25–26). *Needs:* gap:arithmetic-d-module-operations; §1.1.
   not ULA over the identity of `𝔸¹`, since its vanishing cycles at `0` are nonzero.
 - The smoothness conclusion requires the identity morphism: the constant object on `𝔸¹` is ULA over the map to a
   point but is already smooth, while a skyscraper is ULA over the point and is not smooth on `𝔸¹`.
-- For the constant object on `𝔸²` with weights `(1, −1)`, the attracting side is compactly supported
-  cohomology of the `x`-axis and the repelling side is cohomology of the `y`-axis with supports in the
-  origin; both are `K[−2](−1)`. With weights `(1, 1)` the attracting locus is all of `𝔸²`, the repelling
+- For the constant object on `𝔸²` with weights `(1, −1)`, the attracting locus is the `x`-axis and the
+  repelling locus the `y`-axis. The attracting side is the `!`-restriction to the origin of the constant
+  object of the `x`-axis (equivalently, compactly supported cohomology of the `x`-axis); the repelling
+  side is the stalk at the origin of the `!`-restriction `K[−2](−1)` of the constant object to the
+  `y`-axis; both are `K[−2](−1)`. With weights `(1, 1)` the attracting locus is all of `𝔸²`, the repelling
   locus is the origin, and both sides are `K[−4](−2)`; a comparison landing in degree `0` would be
   wrong in both cases.
 
@@ -1050,8 +1061,11 @@ does. In the same way the eigenvalue `Kl_W` is a connection (respectively overco
 the curve `X`, and its holonomic object is `Kl_W[1]` (Xu–Zhu §4.2.2 and §4.2.5, pp. 43–44). Construct the
 relative specialization map from relative twisted de Rham cohomology of `(GR_W°°)_K` with coefficient `M`
 to relative rigid cohomology of `(GR_W°°)_k` with coefficient `M` (both computed by derived direct image
-of the relative de Rham complex, as `GR_W°°` need not be affine over `X`), as a horizontal map of
-`A†`-modules on `𝔾_m`, where `A†` is the ring of functions on `ℙ¹` overconvergent along `{0, ∞}` (Xu–Zhu §2.3.7,
+of the relative de Rham complex, as `GR_W°°` need not be affine over `X`), as a morphism of these
+derived direct images that induces, on each cohomology object `ℋ^k` for the holonomic t-structure on
+`X`, a horizontal map of `A†`-modules on `𝔾_m`. When `GR_W°°` is not affine over `X` (the quasi-minuscule
+case of §3.3) the derived direct images are not concentrated in one degree, and only the map on `ℋ⁰` of
+the direct images shifted by the curve shift `[1]` is used. Here `A†` is the ring of functions on `ℙ¹` overconvergent along `{0, ∞}` (Xu–Zhu §2.3.7,
 (2.3.7.2), and §4.2.4, (4.2.4.1), pp. 15–16 and 43–44). Prove that the dagger-to-completed ring map
 `A† → A₀` is faithfully flat, so that an isomorphism after `⊗ A₀` descends, and that the fibre of the
 map at an `R`-point after any finite extension of `R` is the absolute specialization map of
@@ -1096,18 +1110,28 @@ specialization plus equality of dimensions gives the fibre isomorphism; faithful
 
 For quasi-minuscule `W`, the closed Schubert variety `Gr_{≤W}` has an isolated singular point (the
 vertex) and a resolution `G̃r_{≤W}`; let `τ : GR_W°° → X` be the smooth part of the family, `j : GR_W°° → GR_W°`
-the open immersion, and `M` the Satake-normalized coefficient of §3.1, so that `j_{!+}(M) ≅ p₁^+ A_ψ ⊗ IC_W`
-on `GR_W°` (with `p₁^+ E_{−π}` in the de Rham theory). Over a point `s` of `X` write `Y_s` for the fibre
-of `GR_W°`, `U_s` for its smooth part of dimension `d = dim Gr_W`, and `M_s` for the restriction of `M`,
-which is `p₁^+ A_ψ[d]` on `U_s` (twisted by `(d/2)` when Frobenius is kept) and lies in its holonomic heart (Xu–Zhu §4.2.5, p. 44). Prove that the
-image of compact-support cohomology in ordinary cohomology of the intermediate extension `j_{!+}(M_s)` on
-`Y_s` is concentrated in degree zero, of dimension `dim W`, in both the de Rham and the rigid theories, and
-that the relative objects `τ_+(M)[1]` on `X` are holonomic, that is, lie in the heart, in both theories;
-the shift `[1]` is the curve shift of §3.1, as for `Kl_W[1]`. Route: use the
-localization triangle at the vertex, the decomposition of the push-forward from the resolution, and
-perverse truncation of `τ_+` rather than any affineness of `τ`. The printed step in Xu–Zhu Lemma 4.2.6(i)
-(pp. 44–45) asserts that `τ` is affine; the punctured cone over the vertex has codimension at least two
-and is not affine, so that step is replaced by this theorem. *Needs:* §§1.1, 1.3, 1.4, 1.5, 3.1;
+the open immersion, `i : Z → GR_W°` the complementary vertex section (`Z ≅ X`, `p₂° ∘ i = id`), and `M` the
+Satake-normalized coefficient of §3.1, so that `j_{!+}(M) ≅ p₁^+ A_ψ ⊗ IC_W` on `GR_W°` (with `p₁^+ E_{−π}` in
+the de Rham theory). Write `ℋ^k` for the cohomology objects of the holonomic t-structure on `X`, and recall
+that `Kl_W[1] = p°_{2,+}(j_{!+}(M))[1]` lies in the heart (§1.6, `p₂°` being affine on the big cell and
+clean). Over a point `s` of `X` write `Y_s` for the fibre of `GR_W°`, `U_s` for its smooth part of dimension
+`d = dim Gr_W`, and `M_s` for the restriction of `M`, which is `p₁^+ A_ψ[d]` on `U_s` (twisted by `(d/2)` when
+Frobenius is kept) and lies in its holonomic heart (Xu–Zhu §4.2.5, p. 44). Prove, in both the de Rham and
+the rigid theories: (i) for every point `s` of `X`, the image of the forget-supports map
+`H^*_c(U_s, M_s) → H^*(U_s, M_s)` is `H^*(Y_s, j_{!+}(M_s))`, through the factorization
+`H^0_c(U_s, M_s) ↠ H^0_c(Y_s, j_{!+}(M_s)) ≅ H^0(Y_s, j_{!+}(M_s)) ↪ H^0(U_s, M_s)`, and it is concentrated in
+degree zero, of dimension `dim W`; (ii) the cone `C` of `j_{!+}(M)[1] → j_+(M)[1]` is `i_+ i^!(j_{!+}(M))[2]`,
+supported on `Z` and in holonomic degrees `≥ 0` (Xu–Zhu Corollary 2.6.2(i), p. 19), hence
+`ℋ^k(τ_+(M)[1]) = 0` for `k < 0`, the map `Kl_W[1] → ℋ⁰(τ_+(M)[1])` is injective with cokernel
+`ℋ⁰(i^!(j_{!+}(M))[2])`, and `ℋ^k(τ_+(M)[1]) ≅ ℋ^k(i^!(j_{!+}(M))[2])` for `k ≥ 1`; dually
+`ℋ⁰(τ_!(M)[1]) → Kl_W[1]` is surjective, so `Kl_W[1]` is the image of `ℋ⁰(τ_!(M)[1]) → ℋ⁰(τ_+(M)[1])`.
+The complex `τ_+(M)[1]` is not in the heart (Checks). Route: the localization triangles along the vertex
+section and at the vertex of `Y_s`, the support and cosupport conditions that characterize `j_{!+}`
+(Xu–Zhu Corollary 2.6.2(i)), cleanness of `p₂°` (§§1.4, 1.6) and `p₂° ∘ i = id`; no affineness of `τ` is
+used. Xu–Zhu Lemma 4.2.6(i) (p. 44) asserts that `τ_+(M)[1]` is holonomic, deducing it from an asserted
+affineness of `τ`; `τ` is not affine and that conclusion fails as well (Checks), so (ii) replaces the whole
+of that lemma. The quasi-minuscule comparison (§3.4) uses only the degree-zero map
+`Kl_W[1] → ℋ⁰(τ_+(M)[1])` of (ii), as in Xu–Zhu (4.2.7.1), p. 45. *Needs:* §§1.1, 1.3, 1.4, 1.5, 1.6, 3.1;
 SpringerResolutionAndCharacteristicCycles Layer 9 (§9.6, intermediate extension);
 gap:arithmetic-d-module-operations.
 
@@ -1117,17 +1141,28 @@ gap:arithmetic-d-module-operations.
   punctured chart is not affine; the middle image still has dimension `3 = dim W` for the adjoint `W`.
 - The Satake shift is part of the statement. For `G = PGL₂` (`d = 2`) the normalized coefficient gives
   middle-image dimensions `3` in degree `0` and `0` in degree `2`; the unshifted `j_{!+}(p₁^+ A_ψ)` moves the
-  three-dimensional space to degree `2`, leaving `0` in degree `0`. On the curve, a smooth object lies in
-  holonomic degree `1`, so it is `τ_+(M)[1]`, not `τ_+(M)`, that lies in the heart.
+  three-dimensional space to degree `2`, leaving `0` in degree `0`. On the curve it is
+  `Kl_W[1] = p°_{2,+}(j_{!+}(M))[1]` that lies in the heart; `τ_+(M)[1]` does not: for `PGL₂` its `ℋ⁰` has
+  rank `3` and its `ℋ¹` rank `1`, the fibre dimensions of the next Check. In (ii), `j_{!+}(M)` is a rank-one
+  smooth object in ordinary degree `−2` near the vertex section, which has codimension `2` in a rationally
+  smooth threefold, so `i^!(j_{!+}(M))[2]` is a rank-one smooth object on `Z` in ordinary degree `0`, that is,
+  in holonomic degree `1` (up to Tate twist): the cokernel in degree `0` vanishes and `ℋ¹(τ_+(M)[1])` has
+  rank `1`.
 - Extension by zero has no vertex stalk: for `i` the vertex of `Y_s`, `i^+ j_!(M_s) = 0`. For `G = PGL₂` the
   coefficient `p₁^+ A_ψ` is a rank-one smooth object across the vertex, and the cone is the quotient of
   `𝔸²` by `μ₂` acting by `−1` (an étale double cover off the vertex for odd `p`, radicial for `p = 2`), so
   with characteristic-zero coefficients `j_{!+}(M_s)` is `p₁^+ A_ψ[2]` near the vertex, up to the half twist. The vertex stalks
   in degree `−2` therefore have dimensions `0` for `j_!` and `1` for `j_{!+}`. The localization triangle
-  `j_!(M_s) → j_{!+}(M_s) → i_+ i^+ j_{!+}(M_s)`, with the concentration of this theorem, then gives
+  `j_!(M_s) → j_{!+}(M_s) → i_+ i^+ j_{!+}(M_s)`, with the concentration of `H^*(Y_s, j_{!+}(M_s))` in (i), then gives
   `H^{−1}_c(U_s, M_s)` of dimension `1` besides `H^0_c(U_s, M_s)` of dimension `3`; dually `H^0(U_s, M_s)` has
   dimension `3` and `H^1(U_s, M_s)` dimension `1`. Only the intermediate extension is concentrated in
-  degree zero.
+  degree zero; the image of `H^*_c(U_s, M_s) → H^*(U_s, M_s)` is the three-dimensional space in degree `0`, as
+  (i) says, although neither side is concentrated in one degree.
+- `τ` is not affine in any quasi-minuscule case, and `ℋ^{d−1}(τ_+(M)[1]) ≠ 0` with `d − 1 ≥ 1`. On a fibre,
+  `H^{d−1}(U_s, M_s)` is the degree-`d` costalk of `j_{!+}(M_s)` at the vertex, which is dual to the lowest
+  stalk cohomology of the intersection complex there and so is nonzero; Artin vanishing would put the
+  cohomology of the heart object `M_s` on an affine `U_s` in degrees `≤ 0`. Near the vertex section the family
+  is a product of `X` with the Schubert variety, so the same costalk gives `ℋ^{d−1}(i^!(j_{!+}(M))[2]) ≠ 0`.
 - The statement is fibrewise over every closed point of `X`, including after finite residue extension.
 
 ### 3.4 The quasi-minuscule comparison
@@ -1135,9 +1170,14 @@ gap:arithmetic-d-module-operations.
 For quasi-minuscule `W`, first prove the convergence theorem: the finite locally free
 dagger module with connection obtained by analytifying `Kl_W^dR(−πφ)` is convergent on
 the tube of `X_k` and has an overconvergent Taylor stratification along `{0,∞}`, without
-any Frobenius on this module. Route: the relative middle-image map of §§3.1–3.3 is an
-isomorphism on a dense open `U` by the fibre calculation and faithful flatness, so on `U`
-its Taylor stratification is that of `Kl_W^rig` with Frobenius forgotten. Apply the
+any Frobenius on this module. Route: over a dense open `U ⊂ X` on which the cohomology
+objects of `τ_+(M)[1]` are smooth in both theories, the relative specialization map of §3.1
+on `ℋ⁰(τ_+(M)[1])` carries the image of `Kl_W^dR` (§3.3(ii)) isomorphically onto the image
+of `Kl_W^rig`, by the fibre calculation of §3.3(i), the commutative specialization and
+forget-supports square of §RD.4.59 (which makes specialization map the de Rham middle image
+onto the rigid one, an isomorphism by equality of dimensions, as in §3.2) and faithful
+flatness; so on `U` the Taylor stratification of the analytified module
+is that of `Kl_W^rig` with Frobenius forgotten. Apply the
 convergence-detection contract below to the connection, which is defined over the entire
 dagger lift of `X`; this is the analytic input of Xu–Zhu §4.2.7, (4.2.7.1)–(4.2.7.2),
 p. 45, and it precedes any use of Frobenius transport. Then prove
@@ -1146,7 +1186,7 @@ overconvergent isocrystals (PadicDifferentialEquationsAndRigidCohomology §RD.5.
 also distinguished in §RD.5.112(ii)). Neither forgetting overconvergence nor convergent
 F-isocrystal full faithfulness is this restriction theorem.
 *Needs:* §§3.1–3.3; gap:dense-convergence-detection;
-PadicDifferentialEquationsAndRigidCohomology §§RD.3.37, RD.5.102(a).
+PadicDifferentialEquationsAndRigidCohomology §§RD.3.37, RD.4.59, RD.5.102(a).
 
 **Checks.**
 
@@ -1223,7 +1263,7 @@ of `Be_H`, a constant central element, whose action commutes with the transporte
 Prove that `Be_H†` extends uniquely to a tensor functor into log-convergent F-isocrystals on `(𝔸¹_k, 0)`,
 nilpotent at the logarithmic point and overconvergent along `∞`, with residue `dρ_W(N)` in representation
 `W`; the local Robba object at `0` is unipotent with this principal nilpotent residue (Xu–Zhu §4.4.2,
-(4.4.2.1), p. 50; §2.9.3, pp. 23–24). This specializes §RD.5.103 to the Bessel residue; regularity at `∞`
+(4.4.2.1), p. 50; §2.9.3, p. 24). This specializes §RD.5.103 to the Bessel residue; regularity at `∞`
 is not asserted. *Needs:* §4.1; PadicDifferentialEquationsAndRigidCohomology §§RD.2.13–RD.2.16,
 RD.2.33, RD.5.101–RD.5.103.
 
@@ -1459,7 +1499,7 @@ PadicDifferentialEquationsAndRigidCohomology §§RD.1.17–RD.1.19, RD.6.52.
 **Checks.**
 
 - The decomposition uses `Sym^{2e_i}`: for `SL₃` the exponents are `1, 2` and `3 + 5 = 8 = dim sl₃`; the printed
-  indexing `ℓ_i + 1 = e_i` (Xu–Zhu Lemma 4.5.5, p. 53) gives `Sym^{2e_i − 2}`, of dimension `1 + 3 = 4`.
+  indexing `ℓ_i + 1 = e_i` (proof of Xu–Zhu Lemma 4.5.5, p. 53) gives `Sym^{2e_i − 2}`, of dimension `1 + 3 = 4`.
 - `A₁` and `A₂` at `p = 2` are exceptions: for `SL₃` at `p = 2` the monodromy is `SO₃`, whose adjoint image is a
   principal `PGL₂`.
 - The bound `r + r/h < r + 1` uses `|Φ| = rh`; for `G₂`, `dim = 14`, `h = 6`, `14/6 < 3`.
@@ -1543,7 +1583,7 @@ break `c` of `D`. *Needs:* ReductiveGroups Layers 7, 9; §RD.6.51; Tau Ceti
 For almost-simple `H` outside type `A_{2n}` at `p = 2`, put `E = Ad(Be_H†)`. Prove: `H^i(ℙ¹, j_{!+}E) = 0` for every `i`;
 `Irr_∞(E) = rank H`; `E^{I_∞} = 0`; the nilpotent monodromy operator at `∞` vanishes; and the local Weil
 parameter at `∞` attached to the companion is a simple wild parameter in the sense of §6.5, whose nonzero
-adjoint upper breaks are all `1/h` when `p ∤ |W_H|` (Xu–Zhu Corollary 4.5.7 and Remark 4.5.8, p. 54; HNY
+adjoint upper breaks are all `1/h` when `p ∤ |W_H|` (Xu–Zhu Corollary 4.5.7 and Remark 4.5.8, pp. 53–54; HNY
 Corollary 2.15, p. 262). Route: the localization sequence for `j_{!+}E`, duality and the
 Grothendieck–Ogg–Shafarevich formula give `χ = −Irr_∞(E) + dim E^{I_0} + dim E^{I_∞}` with
 `dim E^{I_0} = r` (the centralizer of a principal nilpotent); with `Irr_∞ ≤ r` (§6.3) this forces all
@@ -1604,7 +1644,7 @@ Let `H′ ⊂ H` be a pinning-compatible inclusion in one row of the table of §
 and `V` a nontrivial irreducible constituent of `Lie H` restricted to `H′`.
 Outside type `A_{2n}` at `p=2`, for the normalized integral parameter, prove that a nonzero solution functional at `0`
 `u : Be_{H′,V}(−π)|₀ → (K{x},d)` in the dual-solution convention of Xu–Zhu
-§2.9.2, (2.9.2.2), pp. 23–24, has coefficient series of common radius exactly `1`.
+§2.9.2, (2.9.2.2), p. 24, has coefficient series of common radius exactly `1`.
 Use the nilpotent logarithmic extension at `0` to get a nonzero functional converging
 on the open unit disc. The monodromy classification of §6.4 and its finite centralizer in `H` show that the
 adjoint restriction, hence `V`, has no trivial constituent. Its semisimple decomposition
@@ -2240,7 +2280,7 @@ PadicDifferentialEquationsAndRigidCohomology §§RD.6.4, RD.6.25.
 ### 11.3 Everywhere ordinarity
 
 For split `H` of type `A_n`, `B_n`, `C_n`, `D_n` or `G₂`, prove that `ν_a = ρ` at every closed point `a` of `𝔾_m`, and at
-the logarithmic point `0` (Xu–Zhu Theorem 1.2.4(ii) and Theorem 5.4.2(ii), p. 62; Lemma 5.4.3, pp. 62–63). The
+the logarithmic point `0` (Xu–Zhu Theorem 1.2.4(ii), p. 5, and Theorem 5.4.2(ii), p. 62; Lemma 5.4.3, pp. 62–63). The
 normalized slopes are `−(r−1)/2, …, (r−1)/2` for scalar rank `r ≥ 2` at every prime, with no condition `(r, p) = 1`,
 and `−n, …, n` for the odd orthogonal standard representation of rank `2n + 1`. Route: types `A` and `C` are
 gap:scalar-kloosterman-ordinarity through §8.1; types `B` and `D` use §11.2 with the normalization of §9.2 at odd `p`
