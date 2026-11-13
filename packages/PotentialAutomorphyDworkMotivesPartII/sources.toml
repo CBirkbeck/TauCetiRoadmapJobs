@@ -311,3 +311,19 @@ licence_class = "none"
 status = "uncertified"
 version_note = "paywalled translation; cited by its locator, in the form applied in QIAN23 Lemma 3.6 and BLGHT11 Lemma 4.6"
 cited_for = ["Layer 0"]
+
+[[source]]
+id = "WAT69"
+authors = "William C. Waterhouse"
+title = "Abelian varieties over finite fields"
+year = 1969
+locator_scheme = "theorem"
+locator = "Theorem 4.1, p. 536"
+url = "https://www.numdam.org/item/ASENS_1969_4_2_4_521_0.pdf"
+fetched_from = "https://www.numdam.org/item/ASENS_1969_4_2_4_521_0.pdf"
+fetched_at = "2026-11-13T16:26:47Z"
+sha256 = "7be2bf9dde45454afa3dd9a0ea1ba05acbe952b6b573a0c37c2b1b8f0cccbb47"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-13"
+cited_for = ["9.13"]
