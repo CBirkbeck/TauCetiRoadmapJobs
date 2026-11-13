@@ -1,0 +1,20 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-MathematicalBilliards~1",
+  "head": "5b627bb1cf389506c3ac51c0bd0e8d7efb30acf4",
+  "pr": 2255,
+  "folder": "MathematicalBilliards",
+  "date": "2026-11-13",
+  "findings": 1,
+  "blocking": 0,
+  "notes": "One P3 finding, on the pull request description (it says the README names no roadmap in an open pull request of ours; README line 13 cites ProbabilisticAndMetricNumberTheory §§4.6 and 4.9a, which is only at the head of #1421). No finding on README.md or Suggested.lean. Checked: all 15 sampled targets (8 against the cached texts of BialyMironov2022, Herman1983, Hochman2012, ChaikaForni2026: 33 passages, locators agree; 7 cite only waived or uncertified sources and are listed as not verifiable, their Checks recomputed); adversarial table of 36 rows with computed values; 53 Mathlib and 25 Tau Ceti declarations opened at the pins; 12 cross-roadmap citations resolved on main or at open heads; gate all 0 with build passing; depcheck 0 problems; Suggested.lean elaborates with sorry as the only warning; one-tactic probe closes none of the 9 theorems; 18 signatures compared with the README; overlap and source-independence checks done.",
+  "carried": {
+   "from": "5b627bb1cf389506c3ac51c0bd0e8d7efb30acf4",
+   "head": "5b627bb1cf389506c3ac51c0bd0e8d7efb30acf4",
+   "findings": 1,
+   "lines": 0,
+   "folders": []
+  }
+ }
+}
