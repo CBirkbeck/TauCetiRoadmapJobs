@@ -1,0 +1,22 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-SmoothRepresentationsOfLocalGroupsPartII~5",
+  "head": "9739abb06e6ffb26b56c6cb563e3debeec1dcf2d",
+  "pr": 1815,
+  "folder": "SmoothRepresentationsOfLocalGroupsPartII",
+  "date": "2026-11-13",
+  "findings": 1,
+  "blocking": 0,
+  "notes": "incremental re-review of 75 changed lines since 01e8ddf. Eight of the nine previous findings are repaired; R05 is partly repaired (one dangling 'duality contract' phrase at README:512, P3). Checked: the changed passages against CH26, GS23 and CiF4 locators (seeded sample at 3.4 and 4.6), BanachSpaceTheory B5 exists_lpInftyDualEquiv on main, the Springer and Excursion supplier heads, the new Milman theorem (elaborates, one-tactic probe fails, not in the pinned libraries), the pull-request description against the head. Gate passes; lake env lean gives eight sorry warnings only; depcheck 0 problems.",
+  "carried": {
+   "from": "9739abb06e6ffb26b56c6cb563e3debeec1dcf2d",
+   "head": "9354bba629a75dcb28a346055ce960ebcd6d8656",
+   "findings": 1,
+   "lines": 6,
+   "folders": [
+    "SmoothRepresentationsOfLocalGroupsPartII"
+   ]
+  }
+ }
+}
