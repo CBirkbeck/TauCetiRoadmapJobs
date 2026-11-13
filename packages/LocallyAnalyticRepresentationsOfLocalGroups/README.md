@@ -338,7 +338,7 @@ API:
 
 ### Dependencies
 
-ReductiveGroupsPartII RG2.0.2; ReductiveGroups Layers 1–2; LocallyAnalyticDistributions §§0.0, 0.2 with gap:barrelled-banach-steinhaus and gap:compact-type-tensor; LocallyAnalyticDistributionsPartII §1.1; PadicLocalLanglandsForGL2Qp §0.1; CompletedCohomologyPartII F.4; SmoothRepresentationsOfLocalGroups SR.0.1; Mathlib `UniversalEnvelopingAlgebra`, `LieGroup`, `PolynormableSpace.banach_steinhaus`.
+ReductiveGroupsPartII RG2.0.2; ReductiveGroups Layers 1–2; LocallyAnalyticDistributions §§0.0, 0.2 with gap:barrelled-banach-steinhaus and gap:compact-type-tensor; LocallyAnalyticDistributionsPartII §1.1; PadicLocalLanglandsForGL2Qp §0.1; CompletedCohomologyPartII F.4; SmoothRepresentationsOfLocalGroups SR.0.1; Mathlib `UniversalEnvelopingAlgebra`, `UniversalEnvelopingAlgebra.lift`, `LieGroup`, `BarrelledSpace`, `PolynormableSpace.banach_steinhaus`.
 
 ## Layer 1: Coadmissible modules, admissibility, locally algebraic representations and Ext groups
 
@@ -616,7 +616,7 @@ The proof route: embed B G_0-equivariantly into C(G_0, E)^(⊕d) with admissible
 - For B = C(G_0, E), R^iLA(B) = 0 for i ≥ 1 and B^la = C^la(G_0, E).
 - Degenerate case: B = 0.
 - For p odd, G = ℤ_p and the character a ↦ (1 + p)^a on E, the representation is admissible and analytic on every G_n, R^0LA is the whole line and R^iLA vanishes for i ≥ 1.
-- Non-example: c_0(ℕ, E) with trivial action of ℤ_p is not admissible and is not covered; it is strongly LA-acyclic by the B ⊗̂ M clause applied to the trivial character B = ℚ_p and M = c_0(ℕ, E), which shows that the tensor clause is the source of acyclicity there, not admissibility.
+- Non-example: c_0(ℕ, E) with trivial action of ℤ_p is not admissible and is not covered; it is strongly LA-acyclic by the B ⊗̂ M clause applied to the trivial character B = E, a one-dimensional E-Banach representation, and M = c_0(ℕ, ℚ_p), since E ⊗̂_(ℚ_p) c_0(ℕ, ℚ_p) = c_0(ℕ, E) for E finite over ℚ_p (B = ℚ_p is not an E-vector space once E ≠ ℚ_p), which shows that the tensor clause is the source of acyclicity there, not admissibility.
 
 ### Examples
 
@@ -795,7 +795,7 @@ API:
 
 ### Dependencies
 
-Layers 0 and 2; VStackSheavesAndLisseCategories §§VS2.1–VS2.2; AdicSpacesPartIII §R3.4; PadicMeasuresIwasawaAlgebras §1.7; LocallyAnalyticDistributionsPartII §2.5; NoncommutativeAndEquivariantIwasawa §§0.6–0.7; PadicLocalLanglandsForGL2Qp §0.1; CompletedCohomologyPartII F.4; SmoothRepresentationsOfLocalGroups SR.0.1, SR.0d.1, SR.2.1; ReductiveGroups Layer 1; Mathlib `continuousCohomology`; `TauCeti.completedGroupAlgebra`.
+Layers 0 and 2; LocallyAnalyticDistributions §0.0; VStackSheavesAndLisseCategories §§VS2.1–VS2.2; AdicSpacesPartIII §R3.4; PadicMeasuresIwasawaAlgebras §1.7; LocallyAnalyticDistributionsPartII §2.5; NoncommutativeAndEquivariantIwasawa §§0.6–0.7; PadicLocalLanglandsForGL2Qp §0.1; CompletedCohomologyPartII F.4; SmoothRepresentationsOfLocalGroups SR.0.1, SR.0d.1, SR.2.1; ReductiveGroups Layer 1; Mathlib `continuousCohomology`; `TauCeti.completedGroupAlgebra`.
 
 ## Layer 4: Category O for split reductive Lie algebras
 
@@ -1583,7 +1583,7 @@ Assume n ≥ 2. Let F be the filtration ⊕_(i≤n−1) φ_i ⊂ ⊕_i φ_i (par
 
 ### Dependencies
 
-Layers 0, 1, 5, 6, 8.
+Layers 0, 1, 4, 5, 6, 8.
 
 ## Layer 10: Locally σ-analytic theory
 
