@@ -1,0 +1,22 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-SchemeKTheoryOperations~8",
+  "head": "46fa3846d7f718c9a77bac765d08ab17045f2624",
+  "pr": 1229,
+  "folder": "SchemeKTheoryOperations",
+  "date": "2026-11-13",
+  "findings": 5,
+  "blocking": 3,
+  "notes": "incremental re-review of 95 changed lines since 07d5e4d (the new section 7.3a, Chern classes with values in a cohomology theory, and the lines citing it). Checked: all 31 source locators of 7.3a against the texts of Schneider, Weibel K-book V.11, WeibelChern, Soule 1979, HuberWildeshaus and Jannsen 1988 (all found at the stated pages; Gillet 1980/1981 cited as whole works, not opened); the seeded sample where it falls in the change (7.3a only); the adversarial table with computed values for T1-T8, the axioms and the Checks; six Mathlib names at the pin; supplier sections of StableHomotopyKTheory, EnhancedDerivedSheaves and AlgebraicModuliForArithmeticGeometry; ownership against the open heads of KTheoryFiniteLocalFields, MotivicEtaleKTheory, PadicHodgeRegulators and AnabelianGeometryAndNonabelianChabauty; the pull request description. Gate rerun passes (all checks 0, build 0 in the worker's gate), depcheck 0 problems, lake env lean reports sorry only; Suggested.lean unchanged. Findings: R01 P2 divisor axiom stated for schemes but used on simplicial schemes; R02 P2 the closure condition on the category V excludes smooth quasi-projective varieties, the domain of the K-cohomology instance; R03 P3 rank component Z instead of H^0(X,Z); R04 P2 the same classes are constructed here and in four open roadmaps, ownership not recorded in Scope and ownership; R05 P3 description does not mention 7.3a. The previous report (r7) had no finding.",
+  "deferred": [
+   {
+    "id": "D01",
+    "severity": "P2",
+    "title": "§7.3a and four open roadmaps each construct the same classes",
+    "where": "pull requests of MotivicEtaleKTheory §7.1, PadicHodgeRegulators §4.1, KTheoryFiniteLocalFields §§1.8, 6.10",
+    "raised": "PRREVIEW-SchemeKTheoryOperations~8"
+   }
+  ]
+ }
+}
