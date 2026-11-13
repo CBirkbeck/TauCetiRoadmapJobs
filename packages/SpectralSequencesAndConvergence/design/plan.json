@@ -1876,5 +1876,12 @@
    "what": "Convergence in a range of degrees (Layers 3, 4)."
   }
  ],
- "gaps": []
+ "gaps": [
+  {
+   "slug": "exact-couple-morphisms",
+   "needs": "Define morphisms of bigraded exact couples of fixed degrees a, b, c in an abelian category (bigraded maps of D and of E commuting with i, j and k), with identities and composition, and the morphism of derived couples that a morphism induces, functorially, so that it induces a morphism on every page.",
+   "supplier": "StableHomotopyKTheory",
+   "section": "§7.22"
+  }
+ ]
 }

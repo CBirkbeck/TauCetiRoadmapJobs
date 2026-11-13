@@ -7,7 +7,7 @@ authors = ["The Stacks Project Authors"]
 title = "The Stacks Project, chapter Homological Algebra"
 year = 2026
 locator_scheme = "tag"
-locator = "012K; tags 011N, 011O, 011Q–011T, 0121, 012B–012D, 012L–012W, 0BDU–0BDW, 0BK5, 02N0, 02N1"
+locator = "012K; tags 02MO, 0754, 011N, 011O, 011Q–011T, 0121, 012B–012D, 012L–012W, 0BDU–0BDW, 0BK5, 02N0, 02N1"
 url = "https://stacks.math.columbia.edu/tag/012K"
 fetched_from = "https://stacks.math.columbia.edu/download/homology.pdf#nameddest=012K"
 fetched_at = "2026-11-05T04:40:26Z"
@@ -132,7 +132,7 @@ cited_for = ["References"]
 
 [[source]]
 id = "bhatt-scholze2015"
-authors = "Bhargav Bhatt, Peter Scholze"
+authors = ["Bhargav Bhatt", "Peter Scholze"]
 title = "The pro-étale topology for schemes"
 year = 2013
 arxiv = "1309.1198v2"
