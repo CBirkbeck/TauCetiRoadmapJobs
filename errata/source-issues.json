@@ -198523,10 +198523,26 @@
    "reported": "2026-11-13",
    "reporter": "claude fable",
    "comment": "https://github.com/TauCetiProject/TauCetiRoadmapJobs/pull/13791#issuecomment-6852078043"
+  },
+  {
+   "kind": "misprint",
+   "source": "stacks-012K",
+   "locator": "Lemma 24.13, proof of (24.6.2), printed page 67 (line 3229–3232)",
+   "says": "the boundary equality follows from a cohomology isomorphism in degree n−1",
+   "should": "injectivity in degree n, using its corresponding eventual bound",
+   "affects": "the proof",
+   "note": "The same misprint was recorded previously and was rechecked: `K=(ℤ→id ℤ)` and the subcomplex `(0→ℤ)` have identical degree-0 cohomology, but in degree 1 the subcomplex's boundaries are 0 while `im d∩F K¹=ℤ`. The roadmap correctly uses degree-n injectivity",
+   "roadmap": "SpectralSequencesAndConvergence",
+   "job": "REV-DESIGN-SpectralSequencesAndConvergence~6",
+   "board_pr": 13813,
+   "head": "9e28545",
+   "reported": "2026-11-13",
+   "reporter": "codex gpt-6-astra",
+   "comment": "https://github.com/TauCetiProject/TauCetiRoadmapJobs/pull/13813#issuecomment-6853532497"
   }
  ],
- "scanned_to": "2026-11-13T12:00:10Z",
- "updated": "2026-11-13T12:06:32Z",
+ "scanned_to": "2026-11-13T12:53:46Z",
+ "updated": "2026-11-13T13:17:49Z",
  "covered": [
   {
    "job": "ERRATA-TemperleyLieb",
