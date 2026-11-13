@@ -1382,14 +1382,14 @@
  "gaps": [
   {
    "slug": "proper-rigid-finiteness",
-   "title": "Finiteness of prime-to-residue cohomology of proper rigid spaces",
+   "title": "Finiteness of prime-to-residue cohomology of quasi-compact quasi-separated rigid spaces",
    "neededBy": [
     "4.4"
    ],
-   "detail": "ClassicalAdicEtaleCohomology §9.7 proves finiteness of H^i(X, L) for proper smooth rigid X over an algebraically closed complete rank-one C and n invertible in 𝒪_C (Berkovich 7.4.4). §11.1 proves finiteness for qcqs X locally algebraically of finite type over C (Huber, Proposition 6.1.1), with constructible coefficients killed by n prime to the residue characteristic. Case (d) of 4.4 needs the same for proper X that need not be smooth; the gap is the proper spaces without a locally algebraically finite-type presentation. The statement is Huber, A finiteness result for the compactly supported cohomology of rigid analytic varieties II, Ann. Inst. Fourier 57 (2007), Corollary 5.6 (with Corollary 5.4 for compact supports), with no hypothesis on the characteristic of C.",
-   "needs": "Finiteness of H^i(X, ℤ/n) for every proper rigid space X over an algebraically closed complete rank-one field C and every n invertible in 𝒪_C, without smoothness.",
+   "detail": "ClassicalAdicEtaleCohomology §9.7 proves finiteness of H^i(X, L) for proper smooth rigid X over an algebraically closed complete rank-one C and n invertible in 𝒪_C (Berkovich 7.4.4). §11.1 proves finiteness for qcqs X locally algebraically of finite type over C, smooth qcqs X included (Huber, Proposition 6.1.1), with constructible coefficients killed by n prime to the residue characteristic. Case (d) of 4.4 needs the same for every quasi-compact quasi-separated rigid X, proper or not, that need not be smooth; the gap is the qcqs spaces without a locally algebraically finite-type presentation (proper ones among them). The statement is Huber, A finiteness result for the compactly supported cohomology of rigid analytic varieties II, Ann. Inst. Fourier 57 (2007), Corollary 5.6, page 996 (every quasi-separated adic space of finite type over Spa(C, 𝒪_C); with Corollary 5.4 for compact supports of separated ones), with no hypothesis on the characteristic of C. The slug names the proper case of the accepted design; the statement is the quasi-compact quasi-separated one.",
+   "needs": "Finiteness of H^i(X, ℤ/n) for every quasi-compact quasi-separated rigid space X (in particular every proper one) over an algebraically closed complete rank-one field C and every n invertible in 𝒪_C, without smoothness or an algebraic presentation.",
    "supplier": "ClassicalAdicEtaleCohomology",
-   "section": "§9.7"
+   "section": "§11.1"
   }
  ]
 }

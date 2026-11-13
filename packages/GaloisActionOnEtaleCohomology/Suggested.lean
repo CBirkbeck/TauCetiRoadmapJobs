@@ -44,9 +44,10 @@ Headline theorems that are not statable at the pins, and the carrier each lacks:
   the étale cohomology of rigid spaces with twisted coefficients.
 * Equivariant twisting (README §4.1) lacks the sheaf `μ_n` and its twists on the étale site of
   an adic space.
-* The equivariant comparison for proper schemes (README §4.2) lacks the analytification of a
-  scheme as an adic space and Huber's comparison morphism, besides the étale cohomology of
-  adic spaces.
+* The equivariant comparison with analytifications (README §4.2), for proper schemes with
+  torsion coefficients and for schemes of finite type with constructible coefficients of order
+  invertible in `K`, lacks the analytification of a scheme as an adic space and Huber's
+  comparison morphism, besides the étale cohomology of adic spaces.
 * The passage from finiteness to finitely generated and finite-dimensional continuous
   representations, and its instances (README §§4.3–4.4), lack the groups of README §3.1.
 -/
