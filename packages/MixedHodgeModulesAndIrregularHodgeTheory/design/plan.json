@@ -4290,12 +4290,6 @@
       "section": "§0.3"
     },
     {
-      "slug": "blowup-exceptional-divisor",
-      "needs": "For the blow-up π : X̃ → X of a smooth variety over a field along a smooth closed subvariety Z of pure codimension c ≥ 2, the smoothness of X̃ over that field.",
-      "supplier": "SchemeAndStackFoundations",
-      "section": "§5.5"
-    },
-    {
       "slug": "rational-complex-local-system-dictionary",
       "needs": "For Λ = ℚ or ℂ and a locally path-connected semilocally simply connected space S, an equivalence between locally constant sheaves of finite-dimensional Λ-vector spaces and the finite-dimensional-value full subcategory of TauCeti.LocalCoefficientSystem Λ S, identifying stalks with values and path transport with native transport, naturally under pullback.",
       "supplier": "ComplexComparisonPartII",
