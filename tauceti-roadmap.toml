@@ -111,9 +111,12 @@ roadmap_files = ["README.md", "Suggested.lean", "metadata.toml", "PROGRESS.md", 
 # Rounds of red-teaming on the draft pull request. Each round runs every pass below
 # independently, then one fix lane merges their findings on the pull request branch.
 rounds = 2
-# The passes of one round: two different agents, so that the reviews are independent.
+# The passes of one round. Normally two different agents, so that the reviews are independent:
+# `{ agent = "codex", model = "gpt-6-astra" }` and `{ agent = "claude", model = "fable" }`. While
+# Codex is out of usage credit the first pass runs on Claude as well (the operator's decision);
+# put the Codex pass back when it answers again.
 passes = [
-  { agent = "codex", model = "gpt-6-astra" },
+  { agent = "claude", model = "fable" },
   { agent = "claude", model = "fable" },
 ]
 # Add section-sharded passes: after its whole-document pass, every red-team job runs one more pass
@@ -200,6 +203,10 @@ separation = "agent"
 # Logins whose review comments on a board pull request count, besides the board's bots and the
 # project's own workers (for example a maintainer reviewing from a browser model).
 comment_reviewers = ["CBirkbeck"]
+# The review of round r of a design or a package is independent of the first author and of the fix
+# that wrote round r, not of the fix rounds before it (the operator's decision): with one operator
+# and two reviewing models, a model that repaired an early round would otherwise never review again.
+independent_of_earlier_fix_rounds = false
 
 [sources]
 # Hosts that are refused outright (pirate mirrors). The sandbox proxy refuses them as well, through
