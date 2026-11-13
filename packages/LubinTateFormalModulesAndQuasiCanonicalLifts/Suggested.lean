@@ -3,6 +3,8 @@ import Mathlib
 import TauCeti.AlgebraicGeometry.EllipticCurve.FormalGroup.Basic
 import TauCeti.NumberTheory.ClassFieldTheory.Local.ArtinMap
 import TauCeti.NumberTheory.LocalField.UnitFiltration.Basic
+import TauCeti.RingTheory.FormalGroup.Logarithm.Basic
+import TauCeti.RingTheory.FormalGroup.ZSMul
 
 /-!
 # Lubin–Tate formal modules and quasi-canonical lifts: target signatures
@@ -14,10 +16,15 @@ coefficient-level predicates they need.
 Stated here:
 
 * the Lubin–Tate theorem: a Lubin–Tate series is an endomorphism of a unique formal group law, which
-  is commutative (§1.3), and the Lubin–Tate interpolation of homomorphisms (§1.2);
+  is commutative (§1.3), and Lubin–Tate interpolation in every arity, unique over the fraction
+  field (§1.2);
 * the degree and splitting of the Lubin–Tate division fields of a Lubin–Tate polynomial (§2.3);
 * the norm group of the Lubin–Tate division fields under Tau Ceti's arithmetic local Artin map
   (§2.5);
+* the unramified Honda–Lubin–Tate comparison over `W(𝔽_(p²))` (§4.3): the Honda type `p − s T²` of
+  the logarithm of a formal group law with scalar Frobenius `[s p]`, and its strict isomorphism to
+  the Honda model; because the Frobenius lift `σ` satisfies `σ² = 1` there, both are statements
+  about native power-series substitution;
 * the Lubin–Tate structure of the formal group of an elliptic curve over `W(𝔽_(p²))` whose
   reduction has trace of Frobenius `±2p` (§4.4).
 
@@ -25,20 +32,22 @@ Not statable at the pins, with what each lacks:
 
 * the unit formula `χ_π(Art_K(π^r u)) = u⁻¹` and the isomorphism `Gal(K_π/K) ≅ O_K^×` given by
   `σ(t) = [χ_π(σ)]_f(t)` (§§2.4–2.5), and the freeness of rank `h` of the `π`-adic Tate module of a
-  formal `O_K`-module of height `h` (§2.2): there is no carrier of points of a general formal group
-  over maximal ideals of finite extensions (Mathlib's `FormalGroup.Point` is power-series valued,
-  and Tau Ceti's evaluated formal points are those of a Weierstrass curve), so `[a]_f(t)` cannot be
-  formed;
+  formal `O_K`-module of height `h` (§2.2): native evaluated points
+  `FormalGroup.TopNilpotentPoint` and evaluated formal-group homomorphisms exist, but the formal
+  `O_K`-action, its torsion and its Tate module with scalar Galois character are missing;
 * the universal deformation of a formal `O_K`-module of finite height over `B[[t₁,…,t_(h−1)]]`
-  (§3.6): there are no homomorphisms or isomorphisms of formal group laws at the pins, hence no
-  marked deformation functor;
-* Honda's functional-equation integrality and the unramified type `p − sT²` (§§4.2–4.3): the
-  Frobenius-skew power-series ring `O_σ[[T]]` is absent;
+  (§3.6): native `TauCeti.FormalGroupHom` and `TauCeti.FormalGroupIso` exist, but the
+  action-sensitive marked formal `O_K`-module deformation functor is missing;
+* Honda's functional-equation integrality for a general special element `u` under condition (F),
+  with the criterion `v C = t u` for integral homomorphisms and the classification of strict
+  isomorphism classes by left-associate classes of special elements (§4.2): the Frobenius-skew
+  power-series ring `O_σ[[T]]`, with its multiplication and its operator on logarithms, is absent;
 * the classification of quasi-canonical lifts, their fields of moduli as ring class fields with
   degrees `q₀^(s−1)(q₀+1)` and `q₀^s`, and the uniformizer property of their moduli (§§6.3–7.2):
   lattice quotients of formal modules, their markings and fields of moduli are not available;
 * the BKO tower comparisons and the trace-compatible square of formal traces (§§8.4–9.3): they need
-  the quasi-canonical fields and formal traces on evaluated points.
+  the specified quasi-canonical fields and their tower comparisons, and formal traces on the
+  native evaluated points; the general point carrier alone does not construct these fields.
 -/
 
 namespace TauCetiRoadmap.LubinTateFormalModulesAndQuasiCanonicalLifts
@@ -85,15 +94,31 @@ theorem exists_formalGroup_of_isLubinTateSeries {π : O} (hπ : Irreducible π)
             PowerSeries.subst (MvPowerSeries.X 1) f] G.toPowerSeries → G = F := by
   sorry
 
-/-- **Lubin–Tate interpolation of homomorphisms** (LT65, Lemma 1, pp.381–382, in arity one). For
-Lubin–Tate series `f` and `g` for the same uniformizer `π` and every `a ∈ O` there is a unique power
-series `φ = a X + ⋯` over `O` with `f ∘ φ = φ ∘ g`; it is the homomorphism `[a]_(f,g)`. -/
-theorem existsUnique_lubinTate_intertwiner {π : O} (hπ : Irreducible π)
-    {f g : PowerSeries O}
+/-- **Lubin–Tate interpolation** (LT65, Lemma 1 and the remarks after it, pp.381–382). Let `O` be
+a discrete valuation ring with finite residue field of cardinality `q`, fraction field `K` and
+uniformizer `π`, let `f` and `g` be Lubin–Tate series for `π`, and let `a₁, …, aₙ ∈ O`. There is a
+power series `H ∈ O[[X₁, …, Xₙ]]` with zero constant term, linear part `∑ aᵢ Xᵢ` and
+`f(H(X₁, …, Xₙ)) = H(g(X₁), …, g(Xₙ))`, and the series over `K` with these three properties (for
+the images of `f`, `g` and the `aᵢ`) are exactly the image of `H`; in particular `H` is unique.
+Arity one gives the homomorphisms `[a]_(f,g)`, arity two the law `F_f`. -/
+theorem exists_lubinTate_interpolation (K : Type*) [Field K] [Algebra O K] [IsFractionRing O K]
+    {π : O} (hπ : Irreducible π) {f g : PowerSeries O}
     (hf : IsLubinTateSeries π (Nat.card (IsLocalRing.ResidueField O)) f)
-    (hg : IsLubinTateSeries π (Nat.card (IsLocalRing.ResidueField O)) g) (a : O) :
-    ∃! φ : PowerSeries O, constantCoeff φ = 0 ∧ coeff 1 φ = a ∧
-      PowerSeries.subst φ f = PowerSeries.subst g φ := by
+    (hg : IsLubinTateSeries π (Nat.card (IsLocalRing.ResidueField O)) g)
+    {n : ℕ} (a : Fin n → O) :
+    ∃ H : MvPowerSeries (Fin n) O,
+      (MvPowerSeries.constantCoeff H = 0 ∧
+        (∀ i, MvPowerSeries.coeff (Finsupp.single i 1) H = a i) ∧
+        PowerSeries.subst H f =
+          MvPowerSeries.subst (fun i ↦ PowerSeries.subst (MvPowerSeries.X i) g) H) ∧
+      ∀ H' : MvPowerSeries (Fin n) K,
+        (MvPowerSeries.constantCoeff H' = 0 ∧
+          (∀ i, MvPowerSeries.coeff (Finsupp.single i 1) H' = algebraMap O K (a i)) ∧
+          PowerSeries.subst H' (PowerSeries.map (algebraMap O K) f) =
+            MvPowerSeries.subst
+              (fun i ↦ PowerSeries.subst (MvPowerSeries.X i) (PowerSeries.map (algebraMap O K) g))
+              H') ↔
+          H' = MvPowerSeries.map (algebraMap O K) H := by
   sorry
 
 end Construction
@@ -102,14 +127,13 @@ end Construction
 
 section DivisionFields
 
-variable {K : Type} [Field K] [ValuativeRel K] [TopologicalSpace K]
-  [IsNonarchimedeanLocalField K]
-
-/-- **Lubin–Tate division fields** (LT65, Theorem 2, pp.383–384). Let `K` be a nonarchimedean local
-field of characteristic zero with residue cardinality `q`, `π` a uniformizer and `f` a Lubin–Tate
-polynomial for `π`. If `t ∈ K̄` is a root of the iterate `f^{∘m}`, `m ≥ 1`, but not of `f^{∘(m−1)}`,
-then `[K(t) : K] = (q − 1) q ^ (m − 1)` and every root of `f^{∘m}` lies in `K(t)`. -/
-theorem finrank_adjoin_primitive_lubinTate_root [CharZero K] {π : 𝒪[K]} (hπ : Irreducible π)
+/-- **Degree and splitting of the Lubin–Tate division fields** (LT65, Theorem 2, pp.383–384;
+README §2.3). Let `K` be a nonarchimedean local field of characteristic zero with residue
+cardinality `q`, `π` a uniformizer and `f` a Lubin–Tate polynomial for `π`. If `t ∈ K̄` is a root
+of the iterate `f^{∘m}`, `m ≥ 1`, but not of `f^{∘(m−1)}`, then `[K(t) : K] = (q − 1) q ^ (m − 1)`
+and every root of `f^{∘m}` lies in `K(t)`. -/
+theorem finrank_adjoin_primitive_lubinTate_root {K : Type*} [Field K] [ValuativeRel K]
+    [TopologicalSpace K] [IsNonarchimedeanLocalField K] [CharZero K] {π : 𝒪[K]} (hπ : Irreducible π)
     {f : Polynomial 𝒪[K]} (hf : IsLubinTatePolynomial π (Nat.card 𝓀[K]) f)
     {m : ℕ} (hm : 1 ≤ m) {t : AlgebraicClosure K}
     (ht : Polynomial.aeval t ((f.comp)^[m] Polynomial.X) = 0)
@@ -123,8 +147,11 @@ theorem finrank_adjoin_primitive_lubinTate_root [CharZero K] {π : 𝒪[K]} (hπ
 /-- **The norm group of the Lubin–Tate division fields** (LT65, §2, Theorem 3 and its corollary,
 pp.385–387). With `K`, `π` and `f` as above, `ϖ ∈ Kˣ` equal to `π`, and `m ≥ 0`: every lift to the
 absolute Galois group of the arithmetic Artin symbol `Art_K(x)` fixes every root of `f^{∘m}` if and
-only if `x ∈ ⟨ϖ⟩ · U(K, m)`, that is, the norm group of `K(f^{∘m} = 0)/K` is `π^ℤ × (1 + 𝔪_K^m)`. -/
-theorem artinMap_fixes_lubinTate_roots_iff [CharZero K] {π : 𝒪[K]} (hπ : Irreducible π)
+only if `x ∈ ⟨ϖ⟩ · U(K, m)`, that is, the norm group of `K(f^{∘m} = 0)/K` is
+`π^ℤ · U(K, m)`, where `U(K, 0) = O_K^×` and `U(K, m) = 1 + 𝔪_K^m` only for `m ≥ 1`. Here
+`K : Type` because the pinned `TauCeti.ClassFieldTheory.artinMap` is stated in universe zero. -/
+theorem artinMap_fixes_lubinTate_roots_iff {K : Type} [Field K] [ValuativeRel K]
+    [TopologicalSpace K] [IsNonarchimedeanLocalField K] [CharZero K] {π : 𝒪[K]} (hπ : Irreducible π)
     {f : Polynomial 𝒪[K]} (hf : IsLubinTatePolynomial π (Nat.card 𝓀[K]) f)
     (ϖ : Kˣ) (hϖ : (ϖ : K) = π) (m : ℕ) (x : Kˣ) :
     (∀ σ : Field.absoluteGaloisGroup K,
@@ -138,14 +165,59 @@ end DivisionFields
 
 /-! ## Layer 4: Honda theory and the elliptic comparisons -/
 
+section Honda
+
+/-- **Honda type in the unramified Honda–Lubin–Tate comparison** (README §4.3(ii); H70, Lemma 4.2,
+p.231, with Proposition 3.3 and Theorem 4, pp.226–228). Let `p` be prime, `O = W(𝔽_(p²))` with
+fraction field `K`, `s = ±1`, and `G` a commutative formal group law over `O` whose reduction
+satisfies `[s p]_Ḡ = X ^ (p²)`, that is, the `p²`-power Frobenius of its special fibre is `[s p]`.
+Then the logarithm `ℓ_G` of `G` over `K` has Honda type `p − s T²` for the Frobenius lift `σ` with
+`q = p`; since `σ² = 1` on `K`, this says `p ℓ_G(X) − s ℓ_G(X ^ (p²)) ∈ p O[[X]]`. -/
+theorem exists_hondaType_log_of_map_zsmulSeries (p : ℕ) [Fact p.Prime] (s : ℤ)
+    (hs : s = 1 ∨ s = -1) (K : Type*) [Field K] [CharZero K]
+    [Algebra (WittVector p (GaloisField p 2)) K]
+    [IsFractionRing (WittVector p (GaloisField p 2)) K]
+    (G : FormalGroup (WittVector p (GaloisField p 2))) [G.IsComm]
+    (hG : PowerSeries.map (IsLocalRing.residue (WittVector p (GaloisField p 2)))
+      (G.zsmulSeries (s * p)) = X ^ (p ^ 2)) :
+    ∃ A : PowerSeries (WittVector p (GaloisField p 2)),
+      (p : K) • (G.map (algebraMap (WittVector p (GaloisField p 2)) K)).log -
+          (s : K) • PowerSeries.subst ((X : PowerSeries K) ^ (p ^ 2))
+            (G.map (algebraMap (WittVector p (GaloisField p 2)) K)).log =
+        (p : K) • PowerSeries.map (algebraMap (WittVector p (GaloisField p 2)) K) A := by
+  sorry
+
+/-- **The Honda model in the unramified Honda–Lubin–Tate comparison** (README §4.3(iii); H70,
+Lemma 2.4 and Theorem 3, pp.223–225; H68, Theorem 2, pp.204–205). With `p`, `O = W(𝔽_(p²))`, `K`,
+`s` and `G` as above, let `ℓ ∈ K[[X]]` satisfy `p ℓ(X) − s ℓ(X ^ (p²)) = p X`; this forces
+`ℓ = ∑_(j ≥ 0) (s p)^(−j) X ^ (p^(2j))`, the logarithm of type `p − s T²` of the Lubin–Tate module
+for `s p`. Then `G` is strictly isomorphic over `O` to the formal group law with logarithm `ℓ`:
+there is `φ = X + ⋯` in `O[[X]]` with `ℓ(φ(X)) = ℓ_G(X)`. -/
+theorem exists_strictIso_hondaLog_of_map_zsmulSeries (p : ℕ) [Fact p.Prime] (s : ℤ)
+    (hs : s = 1 ∨ s = -1) (K : Type*) [Field K] [CharZero K]
+    [Algebra (WittVector p (GaloisField p 2)) K]
+    [IsFractionRing (WittVector p (GaloisField p 2)) K]
+    (G : FormalGroup (WittVector p (GaloisField p 2))) [G.IsComm]
+    (hG : PowerSeries.map (IsLocalRing.residue (WittVector p (GaloisField p 2)))
+      (G.zsmulSeries (s * p)) = X ^ (p ^ 2))
+    (ℓ : PowerSeries K)
+    (hℓ : (p : K) • ℓ - (s : K) • PowerSeries.subst ((X : PowerSeries K) ^ (p ^ 2)) ℓ =
+      (p : K) • (X : PowerSeries K)) :
+    ∃ φ : PowerSeries (WittVector p (GaloisField p 2)), constantCoeff φ = 0 ∧ coeff 1 φ = 1 ∧
+      PowerSeries.subst (PowerSeries.map (algebraMap (WittVector p (GaloisField p 2)) K) φ) ℓ =
+        (G.map (algebraMap (WittVector p (GaloisField p 2)) K)).log := by
+  sorry
+
+end Honda
+
 section Elliptic
 
 /-- **The supersingular elliptic formal group is Lubin–Tate** (H70, Theorem 9 and Lemma 4.2;
 BKO21, Lemma 5.1, with the sign `p − sT²` of README §4.3). Let `p` be prime, `O = W(𝔽_(p²))` and `W`
 a Weierstrass curve over `O` with unit discriminant whose reduction has `p² + 1 − 2sp` points over
 `𝔽_(p²)`, `s = ±1`. Then the formal group law of `W` has an endomorphism which is a Lubin–Tate
-series for `s p` (namely `[s p]`, whose reduction is the `p²`-power Frobenius), so by the Lubin–Tate
-theorem it is the Lubin–Tate formal `O`-module for `s p`. -/
+series for `s p` (namely `[s p]`, whose reduction is the `p²`-power Frobenius), so by the
+Lubin–Tate theorem it is the Lubin–Tate formal `O`-module for `s p`. -/
 theorem exists_lubinTate_endomorphism_formalGroup (p : ℕ) [Fact p.Prime] (s : ℤ)
     (hs : s = 1 ∨ s = -1) (W : WeierstrassCurve (WittVector p (GaloisField p 2)))
     (hΔ : IsUnit W.Δ)
