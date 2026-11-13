@@ -1,7 +1,5 @@
-module
-
-public import Mathlib
-public import TauCeti.GroupTheory.SpecificGroups.Braid.Basic
+import Mathlib
+import TauCeti.GroupTheory.SpecificGroups.Braid.Basic
 
 /-!
 # Inverse Galois theory and arithmetic fundamental groups, Part II: target signatures
@@ -9,9 +7,10 @@ public import TauCeti.GroupTheory.SpecificGroups.Braid.Basic
 The roadmap is `README.md`; this file is not the roadmap. It states the roadmap's headline
 theorems against the pinned Mathlib and Tau Ceti, with the few definitions they need: the
 Hurwitz action of the pinned Artin braid group `TauCeti.BraidGroup n` on branch tuples, the fibres
-of the marked and unmarked Hurwitz covers over the base configuration, the block inclusion of
-braid groups, and the stabilization operator `U` (the sum over `g ∈ c` of gluing the constant
-block `(g, …, g)`) on the permutation representations. Since `Conf_n` is a `K(B_n, 1)` and a
+of the marked and unmarked Hurwitz covers over the base configuration, the extension to every
+`n` of Tau Ceti's block inclusion `TauCeti.BraidGroup.natAdd` of braid groups, and the
+stabilization operator `U` (the sum over `g ∈ c` of gluing the constant block `(g, …, g)`) on the
+permutation representations. Since `Conf_n` is a `K(B_n, 1)` and a
 Hurwitz space is the covering space of `Conf_n` with fibre `X`, its homology with coefficients in
 a field `k` is the group homology `H_p(B_n; k[X])`; the stability statements below are written in
 that form (README, Layer 0, §0.5, *Hurwitz homology as braid-group homology*).
@@ -29,20 +28,20 @@ Headline theorems not statable at the pins:
   (EVW Proposition 7.8): Mathlib has pro-étale `ℓ`-adic cohomology of schemes
   (`AlgebraicGeometry.Scheme.EllAdicCohomology`) but no Hurwitz scheme, a moduli construction
   supplied by the parent roadmap;
-* stabilization of a graded module from its low K-homology (EVW Theorem 4.2): there is no carrier
-  for internally graded modules over the noncommutative component algebra together with the
-  K-complex and its homology;
+* stabilization of a graded module from its low K-homology (EVW Theorem 4.2): Tau Ceti has the
+  category `TauCeti.GradedModuleCat` of internally graded modules over a graded algebra and the
+  graded balanced tensor product, but not the component algebra, the monoid algebra of the
+  braid-orbit monoid with its length grading, nor the K-complex with its differential and its
+  homology; both are constructions of the roadmap, not short definitions;
 * `(n − 2)`-connectivity of the disc arc complex (Hatcher–Wahl Proposition 7.2): there is no
   carrier for isotopy classes of embedded arcs in a marked disc.
 -/
-
-@[expose] public section
 
 namespace TauCetiRoadmap.InverseGaloisAndArithmeticFundamentalGroupsPartII
 
 open TauCeti TauCeti.BraidGroup
 
-/-! ## Layer 0: nonsplitting classes, the Hurwitz action and the stabilization operator -/
+/-! ## Layer 0: nonsplitting classes, the Hurwitz representation and the component ring -/
 
 /-- The nonsplitting property of a conjugacy class `c` of `G` (EVW Definition 3.1): `c` generates
 `G`, and for every subgroup `H` any two elements of `c ∩ H` are conjugate in `H`, that is, `c ∩ H`
@@ -148,16 +147,11 @@ def hurwitzAction (n : ℕ) (G : Type*) [Group G] : BraidGroup n →* Equiv.Perm
     · exact hurwitzMove_braid h
     · exact (hurwitzMove_braid h).symm)
 
-/-- The generator `σ_i` acts by the `i`-th move. -/
-theorem hurwitzAction_sigma (i : Fin (n - 1)) (s : Fin n → G) :
-    hurwitzAction n G (sigma i) s = hurwitzMoveFun i s := by
-  simp [hurwitzAction, hurwitzMove]
-
 /-- A property of tuples preserved by every move is preserved by every braid. -/
 theorem hurwitzAction_iff (P : (Fin n → G) → Prop) (h : ∀ i s, P (hurwitzMoveFun i s) ↔ P s)
     (b : BraidGroup n) (s : Fin n → G) : P (hurwitzAction n G b s) ↔ P s := by
   induction b using sigma_induction_on generalizing s with
-  | sigma i => rw [hurwitzAction_sigma]; exact h i s
+  | sigma i => simpa [hurwitzAction, hurwitzMove] using h i s
   | one => simp
   | mul b b' hb hb' => rw [map_mul, Equiv.Perm.mul_apply, hb, hb']
   | inv b hb =>
@@ -173,7 +167,7 @@ theorem hurwitzAction_comm {m : ℕ} (φ : (Fin n → G) → (Fin m → G))
     (b : BraidGroup n) (s : Fin n → G) :
     hurwitzAction m G (f b) (φ s) = φ (hurwitzAction n G b s) := by
   induction b using sigma_induction_on generalizing s with
-  | sigma i => rw [hurwitzAction_sigma]; exact h i s
+  | sigma i => simpa [hurwitzAction, hurwitzMove] using h i s
   | one => simp
   | mul b b' hb hb' =>
     simp only [map_mul, Equiv.Perm.mul_apply]
@@ -182,24 +176,26 @@ theorem hurwitzAction_comm {m : ℕ} (φ : (Fin n → G) → (Fin m → G))
     rw [map_inv, map_inv, Equiv.Perm.inv_eq_iff_eq, hb]
     simp
 
-/-- The block inclusion `B_n → B_(m+n)` on the last `n` strands: `σ_i ↦ σ_(m+i)`. -/
-def shiftHom (m n : ℕ) : BraidGroup n →* BraidGroup (m + n) :=
-  lift (fun i => sigma ⟨m + i, by have := i.isLt; omega⟩)
-    (fun {i j} h => sigma_mul_sigma_comm
-      (show m + (i : ℕ) + 2 ≤ m + j ∨ m + (j : ℕ) + 2 ≤ m + i by omega))
-    (fun {i j} h => sigma_braid (show m + (i : ℕ) + 1 = m + j ∨ m + (j : ℕ) + 1 = m + i by omega))
-
-/-- The block inclusion on generators. -/
-theorem shiftHom_sigma (m : ℕ) (i : Fin (n - 1)) :
-    shiftHom m n (sigma i) = sigma ⟨m + i, by have := i.isLt; omega⟩ := by
-  simp [shiftHom]
+/-- The block inclusion `B_n → B_(m+n)` on the last `n` strands, `σ_i ↦ σ_(m+i)`, for every `n`:
+Tau Ceti's `TauCeti.BraidGroup.natAdd m` for `n ≥ 1`, and the trivial homomorphism out of the
+trivial group `B_0`. -/
+def shiftHom (m : ℕ) : (n : ℕ) → BraidGroup n →* BraidGroup (m + n)
+  | 0 => 1
+  | _ + 1 => natAdd m
 
 /-- Concatenation with a fixed prefix of length `m` is equivariant along the block inclusion. -/
 theorem hurwitzAction_shift (m : ℕ) (t : Fin m → G) (b : BraidGroup n) (s : Fin n → G) :
     hurwitzAction (m + n) G (shiftHom m n b) (Fin.append t s) =
       Fin.append t (hurwitzAction n G b s) := by
+  have hs : ∀ (k : ℕ) (j : Fin (k - 1)),
+      shiftHom m k (sigma j) = sigma ⟨m + j, by have := j.isLt; omega⟩ := by
+    intro k j
+    cases k with
+    | zero => exact Fin.elim0 j
+    | succ k => exact (natAdd_sigma m j).trans (congrArg sigma (Fin.ext rfl))
   refine hurwitzAction_comm (Fin.append t) (shiftHom m n) (fun i s => ?_) b s
-  rw [shiftHom_sigma, hurwitzAction_sigma]
+  rw [hs n i]
+  simp only [hurwitzAction, hurwitzMove, lift_sigma, Equiv.coe_fn_mk]
   have e1 : (strand (⟨m + i, by have := i.isLt; omega⟩ : Fin (m + n - 1)) : Fin (m + n)) =
       Fin.natAdd m (strand i) := Fin.ext (by simp)
   have e2 : (strandSucc (⟨m + i, by have := i.isLt; omega⟩ : Fin (m + n - 1)) : Fin (m + n)) =
@@ -212,9 +208,6 @@ theorem hurwitzAction_shift (m : ℕ) (t : Fin m → G) (b : BraidGroup n) (s : 
       Fin.ne_of_val_ne (by simp only [Fin.val_castAdd, Fin.val_natAdd]; omega)
     simp [hurwitzMoveFun, e1, e2, n1, n2]
   · simp [hurwitzMoveFun, e1, e2]
-
-
-
 
 end BraidAction
 
@@ -304,10 +297,6 @@ instance HurwitzFibre.instMulAction (c : ConjClasses G) (full : Bool) (n : ℕ) 
     (show hurwitzAction n G (b * b') s.tuple =
       hurwitzAction n G b (hurwitzAction n G b' s.tuple) by simp)
 
-/-- The underlying tuple of `b • s`. -/
-theorem HurwitzFibre.smul_tuple (c : ConjClasses G) (full : Bool) (b : BraidGroup n)
-    (s : HurwitzFibre c full n) : (b • s).tuple = hurwitzAction n G b s.tuple := rfl
-
 /-- Gluing the constant block `(g, …, g)` of length `m` on the left. -/
 def glue (c : ConjClasses G) (full : Bool) (m : ℕ) (g : c.carrier) (s : HurwitzFibre c full n) :
     HurwitzFibre c full (m + n) where
@@ -322,13 +311,7 @@ def glue (c : ConjClasses G) (full : Bool) (m : ℕ) (g : c.carrier) (s : Hurwit
 /-- Gluing a constant block is equivariant along the block inclusion. -/
 theorem glue_smul (c : ConjClasses G) (full : Bool) (m : ℕ) (g : c.carrier) (b : BraidGroup n)
     (s : HurwitzFibre c full n) : glue c full m g (b • s) = shiftHom m n b • glue c full m g s :=
-  HurwitzFibre.ext (by
-    simp only [glue, HurwitzFibre.smul_tuple]
-    rw [hurwitzAction_shift])
-
-
-
-
+  HurwitzFibre.ext (hurwitzAction_shift m (fun _ => (g : G)) b s.tuple).symm
 
 /-- The gluing map of a constant block, as a morphism of braid-group representations along the
 block inclusion. -/
@@ -349,7 +332,6 @@ noncomputable def markedStabilizer [Fintype G] (k : Type) [Field k] (c : ConjCla
       Rep.res (shiftHom m n)
         (Rep.ofMulAction k (BraidGroup (m + n)) (HurwitzFibre c full (m + n))) :=
   ∑ g : c.carrier, glueRepHom k c full m n g
-
 
 /-- A conjugacy class is closed under conjugation. -/
 theorem conj_mem_carrier {c : ConjClasses G} {x : G} (hx : x ∈ c.carrier) (h : G) :
@@ -380,10 +362,8 @@ theorem hurwitzMoveFun_conj (h : G) (i : Fin (n - 1)) (s : Fin n → G) :
 /-- The braid action commutes with simultaneous conjugation. -/
 theorem smul_conjFibre {c : ConjClasses G} {full : Bool} (h : G) (b : BraidGroup n)
     (s : HurwitzFibre c full n) : b • conjFibre h s = conjFibre h (b • s) :=
-  HurwitzFibre.ext (by
-    simp only [HurwitzFibre.smul_tuple, conjFibre]
-    exact hurwitzAction_comm (fun t j => h * t j * h⁻¹) (MonoidHom.id _)
-      (fun i t => by simpa [hurwitzAction_sigma] using hurwitzMoveFun_conj h i t) b s.tuple)
+  HurwitzFibre.ext (hurwitzAction_comm (fun t j => h * t j * h⁻¹) (MonoidHom.id _)
+    (fun i t => by simpa [hurwitzAction, hurwitzMove] using hurwitzMoveFun_conj h i t) b s.tuple)
 
 /-- Fibre points equivalent under simultaneous conjugation. -/
 def conjSetoid (c : ConjClasses G) (full : Bool) (n : ℕ) : Setoid (HurwitzFibre c full n) where
@@ -413,10 +393,6 @@ instance UnmarkedFibre.instMulAction (c : ConjClasses G) (full : Bool) (n : ℕ)
 abbrev UnmarkedFibre.mk {c : ConjClasses G} {full : Bool} {n : ℕ} (s : HurwitzFibre c full n) :
     UnmarkedFibre c full n :=
   Quotient.mk _ s
-
-/-- The action on classes is computed on representatives. -/
-theorem unmarked_smul_mk (c : ConjClasses G) (full : Bool) (b : BraidGroup n)
-    (s : HurwitzFibre c full n) : b • UnmarkedFibre.mk s = UnmarkedFibre.mk (b • s) := rfl
 
 /-- Gluing `(g, …, g)` onto a conjugate is the conjugate of gluing `(h⁻¹ g h, …)`. -/
 theorem glue_conjFibre (c : ConjClasses G) (full : Bool) (m : ℕ) (g : c.carrier) (h : G)
@@ -452,16 +428,6 @@ theorem unmarkedGlueSum_conj (k : Type) [Field k] [Fintype G] (c : ConjClasses G
   exact (Quot.sound (show (conjSetoid c full (m + n)).r _ _ from
     ⟨h, glue_conjFibre c full m g h s⟩)).symm
 
-/-- The glue sum is equivariant along the block inclusion. -/
-theorem unmarkedGlueSum_smul (k : Type) [Field k] [Fintype G] (c : ConjClasses G)
-    (full : Bool) (m : ℕ) (b : BraidGroup n) (s : HurwitzFibre c full n) :
-    unmarkedGlueSum k c full m (b • s) =
-      Representation.ofMulAction k (BraidGroup (m + n)) (UnmarkedFibre c full (m + n))
-        (shiftHom m n b) (unmarkedGlueSum k c full m s) := by
-  classical
-  simp only [unmarkedGlueSum, map_sum, Representation.ofMulAction_single, glue_smul,
-    unmarked_smul_mk]
-
 /-- The glue sum depends only on the class of the input. -/
 theorem unmarkedGlueSum_eq_of_mk_eq (k : Type) [Field k] [Fintype G] (c : ConjClasses G)
     (full : Bool) (m : ℕ) {s t : HurwitzFibre c full n}
@@ -483,14 +449,15 @@ noncomputable def unmarkedStabilizer [Fintype G] (k : Type) [Field k] (c : ConjC
     refine MonoidAlgebra.lhom_ext' fun q => LinearMap.ext_ring ?_
     have hq : UnmarkedFibre.mk (Quotient.out (b • q)) =
         UnmarkedFibre.mk (b • Quotient.out q) := by
-      rw [← unmarked_smul_mk]
+      show UnmarkedFibre.mk (Quotient.out (b • q)) = b • UnmarkedFibre.mk (Quotient.out q)
       simp only [UnmarkedFibre.mk, Quotient.out_eq]
     simp only [LinearMap.coe_comp, Function.comp_apply, MonoidAlgebra.lsingle_apply,
       Representation.ofMulAction_single, LinearEquiv.coe_coe, MonoidAlgebra.coeffLinearEquiv_apply,
       MonoidAlgebra.coeff_single, Finsupp.linearCombination_single, one_smul, MonoidHom.comp_apply]
-    rw [unmarkedGlueSum_eq_of_mk_eq k c full m hq, unmarkedGlueSum_smul]⟩
-
-
+    rw [unmarkedGlueSum_eq_of_mk_eq k c full m hq]
+    classical
+    simp only [unmarkedGlueSum, map_sum, Representation.ofMulAction_single, glue_smul]
+    rfl⟩
 
 /-! ## Layer 4: linear stability for marked, full-monodromy and unmarked Hurwitz spaces -/
 
@@ -512,7 +479,7 @@ theorem hurwitz_homological_stability [Fintype G] (c : ConjClasses G) (hc : IsNo
               (groupHomology.map (shiftHom m n) (unmarkedStabilizer k c full m n) p).hom := by
   sorry
 
-/-! ## Layer 5: finite-cell models and uniform Betti numbers -/
+/-! ## Layer 5: finite cell models and uniform Betti numbers -/
 
 /-- The uniform Betti bound (Ellenberg–Venkatesh–Westerland, Proposition 2.5 and the topological
 part of the proof of Proposition 7.8): for a nonsplitting class `c` of a finite group `G` there is
