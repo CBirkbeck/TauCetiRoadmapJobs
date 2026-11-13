@@ -356,3 +356,18 @@ licence_class = "none"
 status = "uncertified"
 version_note = "paywalled; cited by its locator without the text"
 cited_for = ["gap endomorphism-characteristic-polynomials; 4.6"]
+
+[[source]]
+id = "BW00"
+authors = "Armand Borel, Nolan Wallach"
+title = "Continuous cohomology, discrete subgroups, and representations of reductive groups"
+year = 2000
+venue = "Mathematical Surveys and Monographs 67, American Mathematical Society, second edition"
+doi = "10.1090/surv/067"
+locator_scheme = "theorem"
+locator = "Chapter X, Theorem 4.11"
+url = "https://doi.org/10.1090/surv/067"
+licence_class = "none"
+status = "uncertified"
+version_note = "AMS monograph, not openly available (the sources service found no legal copy); cited by its locator without the text, as CDN-STEIN cites it in the proof of Proposition 5.1 (CDN-STEIN line 1920, reference [10] at line 3254)"
+cited_for = ["0.4"]

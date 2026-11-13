@@ -43,20 +43,17 @@ open scoped Pointwise
 
 /-! ## Layer 0: Graphs with legs and generalized Steinberg representations -/
 
-/-- The `m`-th standard flag subspace of `Kⁿ`: the vectors whose coordinates of index `≥ m`
-vanish, that is, the span of the first `m` standard basis vectors (README §0.3). -/
-def flagSubspace (K : Type*) [Field K] (n m : ℕ) : Submodule K (Fin n → K) :=
-  ⨅ (i : Fin n) (_ : m ≤ i.val), LinearMap.ker (LinearMap.proj i)
-
 /-- The standard parabolic subgroup `P_J = B W_J B` of `GL_{d+1}(K)` attached to a set `J` of
 simple reflections, the reflection `k : Fin d` exchanging the basis vectors of index `k` and
-`k + 1`: the stabilizer of the standard flag subspaces of dimension `k + 1` for `k ∉ J`
-(CDN-STEIN §5.2.1). For `J = ∅` it is the upper triangular Borel subgroup, for `J` everything
-it is `GL_{d+1}(K)` (README §0.3). -/
-def parabolic (K : Type*) [Field K] (d : ℕ) (J : Set (Fin d)) : Subgroup (GL (Fin (d + 1)) K) :=
+`k + 1`: the stabilizer, for every `k ∉ J`, of the span of the first `k + 1` standard basis
+vectors, the term of index `k + 1` of the flag `Module.Basis.flag` of the standard basis
+`Pi.basisFun` (CDN-STEIN §5.2.1). For `J = ∅` it is the upper triangular Borel subgroup, for `J`
+everything it is `GL_{d+1}(K)` (README §0.3). -/
+noncomputable def parabolic (K : Type*) [Field K] (d : ℕ) (J : Set (Fin d)) :
+    Subgroup (GL (Fin (d + 1)) K) :=
   ⨅ (k : Fin d) (_ : k ∉ J),
     (MulAction.stabilizer (LinearMap.GeneralLinearGroup K (Fin (d + 1) → K))
-      (flagSubspace K (d + 1) (k.val + 1))).comap
+      ((Pi.basisFun K (Fin (d + 1))).flag k.succ.castSucc)).comap
       (Matrix.GeneralLinearGroup.toLin (n := Fin (d + 1)) (R := K)).toMonoidHom
 
 /-- The standard parabolic subgroups increase with the set of simple reflections: `J ⊆ J'`
@@ -117,8 +114,9 @@ noncomputable def generalizedSteinberg (K : Type*) [Field K] [TopologicalSpace K
     (steinbergRelations K A d J) (steinbergRelations_le_comap K A d J)
 
 /-- **Irreducibility of the generalized Steinberg representations** (README §0.4(a);
-CDN-STEIN Proposition 5.1, after Casselman in characteristic `0` and Grosse-Klönne, GK14
-Corollaries 4.3–4.4, in characteristic `p`). Let `K` be a finite extension of `ℚ_p` with its
+CDN-STEIN Proposition 5.1, after Casselman in characteristic `0`, Borel–Wallach, Chapter X,
+Theorem 4.11, extended from `ℂ` to every field of characteristic `0` by base change of the
+Hecke modules of invariants, and Grosse-Klönne, GK14 Corollaries 4.3–4.4, in characteristic `p`). Let `K` be a finite extension of `ℚ_p` with its
 absolute value and `A` a field of characteristic `0` or `p`. Then for every `d` and every set `J`
 of simple reflections, `Sp_J(A)` is an irreducible representation of `GL_{d+1}(K)`. -/
 theorem generalizedSteinberg_isIrreducible (p : ℕ) [Fact p.Prime] (K : Type*)
