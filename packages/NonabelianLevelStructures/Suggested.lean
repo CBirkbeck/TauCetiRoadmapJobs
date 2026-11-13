@@ -28,6 +28,11 @@ Headline theorems stated here:
   points with values in every `R`-algebra `S` are unchanged by simultaneous conjugation by
   `GL₂(S)`; testing at the universal point shows that this is invariance under the coaction of the
   group scheme `GL₂`, not merely under the group `GL₂(R)`.
+* `sl2_cusp_automorphism_central`: for an absolutely irreducible subgroup `G` of `SL₂(𝔽_q)`,
+  `q ≥ 3`, whose image in `PSL₂(𝔽_q)` is not dihedral, `G` contains the centre of `SL₂(𝔽_q)` and
+  every cusp automorphism group `A(G, u, h)` is that centre (README §6.6). This is the finite-group
+  form of the computation of the vertical automorphisms of `SL₂(𝔽_q)`-level structures; the
+  geometric form is named below.
 
 Headline theorems that are not statable at the pins:
 
@@ -35,8 +40,11 @@ Headline theorems that are not statable at the pins:
   `I(G)` and the computation of their vertical automorphism groups (README §§1.8, 2.2–2.3): the
   admissible-cover stack, its cusp fibre and its automorphism groupoid are missing.
 * The representability criterion for the rigidified compactified level stack over the
-  compactified elliptic stack (README §2.3): stacks, rigidification and representable morphisms
-  of stacks are missing.
+  compactified elliptic stack (README §2.3), and its consequence for absolutely irreducible
+  non-dihedral subgroups of `SL₂(𝔽_q)`, that the vertical automorphism groups of the
+  admissible-cover stack are the centre and the compactified level stack is representable over
+  the elliptic stack (README §6.6): stacks, rigidification and representable morphisms of stacks
+  are missing.
 * The two geometric components of the trace `−2` level stack of `SL₂(𝔽_p)`, their degree
   `p(p ± 3)` over the `j`-line and their genus formula (README §§7.1–7.3): the level stack, its
   coarse curve and its genus are missing.
@@ -250,6 +258,33 @@ theorem integral_trace_coordinates (R : Type u) [CommRing R] :
     Function.Injective (integralTraceMap R) ∧
       ∀ f : SL2PairCoord R,
         f ∈ (integralTraceMap R).range ↔ IsGL2ConjugationInvariant R f := by
+  sorry
+
+/-! ## Layer 6: SL₂ level structures -/
+
+/-- **Cusp automorphisms of `SL₂(𝔽_q)`-level structures are central.** Let `K` be a finite field
+with at least three elements and `G ≤ SL₂(K)` a subgroup that is absolutely irreducible (its
+`K`-span is all of `M₂(K)`) and not dihedral (its image in `PSL₂(K)` is isomorphic to no dihedral
+group; `DihedralGroup n` has order `2n`, so the Klein four group `DihedralGroup 2` is excluded).
+Then `G` contains the centre of `SL₂(K)`, and for every generating pair `(u, h)` of `G` every
+element `a` of the cusp automorphism group `A(G, u, h)`, that is, every `a ∈ G` centralizing `u`
+and `h⁻¹ u⁻¹ h` with `[a, h] ∈ ⟨u⟩`, is central in `SL₂(K)`. So `A(G, u, h) = Z(G) = Z(SL₂(K))`,
+the twist period of every cusp is `|u|`, and the compactified level stack of `G` is representable
+over the compactified elliptic stack (Chen, Theorem 5.3.2, pp. 405–406, and Proposition
+6.4.1(a), pp. 428–429). -/
+theorem sl2_cusp_automorphism_central {K : Type*} [Field K] [Finite K]
+    (hK : 3 ≤ Nat.card K) (G : Subgroup (Matrix.SpecialLinearGroup (Fin 2) K))
+    (habs : Submodule.span K
+      ((fun g : Matrix.SpecialLinearGroup (Fin 2) K => (g : Matrix (Fin 2) (Fin 2) K)) '' G) = ⊤)
+    (hdih : ∀ n : ℕ, IsEmpty
+      (G.map (QuotientGroup.mk' (Subgroup.center (Matrix.SpecialLinearGroup (Fin 2) K))) ≃*
+        DihedralGroup n)) :
+    Subgroup.center (Matrix.SpecialLinearGroup (Fin 2) K) ≤ G ∧
+      ∀ u h a : G, Subgroup.closure ({u, h} : Set G) = ⊤ →
+        a ∈ Subgroup.centralizer ({u, h⁻¹ * u⁻¹ * h} : Set G) →
+        ⁅a, h⁆ ∈ Subgroup.zpowers u →
+        (a : Matrix.SpecialLinearGroup (Fin 2) K) ∈
+          Subgroup.center (Matrix.SpecialLinearGroup (Fin 2) K) := by
   sorry
 
 end TauCetiRoadmap.NonabelianLevelStructures
