@@ -1173,12 +1173,12 @@
       "title": "projective products",
       "supplier": "PadicMeasuresIwasawaAlgebras",
       "section": "Layer 1, §1.7",
-      "needs": "For compact p-adic analytic H, every projective pseudo-compact O[[H]]-module is a product of indecomposable summands of the regular module, with the same statement in the fixed-central-character category using its completed regular quotient.",
+      "needs": "For a profinite group H with an open pro-p subgroup, every projective pseudo-compact O[[H]]-module is a product of indecomposable summands of the regular module, with the same statement in the fixed-central-character category using its completed regular quotient.",
       "neededBy": [
         "3.1",
         "3.5"
       ],
-      "detail": "EP proof of Lemma 2.8, p. 344; BIP proof of Lemma 6.7, p. 49 (EP lines 325–332; BIP lines 2435–2439)."
+      "detail": "EP §2.1 and proof of Lemma 2.8, pp. 342–344, where the group is any profinite group with an open pro-p subgroup; BIP proof of Lemma 6.7, p. 49 (EP lines 261, 325–332; BIP lines 2435–2439). This is the generality of gap:capture-formalism, whose passage from O[[H]] to every projective uses it."
     },
     {
       "slug": "completed-tensor-reduced-equidimensional",
@@ -1243,7 +1243,7 @@
       "title": "crystalline closure components",
       "supplier": "CompletedCohomologyAndLocalGlobalCompatibility",
       "section": "§5.2a",
-      "needs": "For every finite F/ℚ_p, every prime p and every residual ρ̄, the Zariski closure of the regular crystalline points in the rigid generic fibre (Spf R□_{ρ̄})^rig is a union of irreducible components, proved on the framed trianguline variety at benign points.",
+      "needs": "For every finite F/ℚ_p, every prime p and every residual ρ̄, the Zariski closure of the regular crystalline points in the rigid generic fibre (Spf R□_ρ̄)^rig is a union of irreducible components, proved on the framed trianguline variety at benign points.",
       "neededBy": [
         "5.2",
         "6.1"
@@ -1274,11 +1274,22 @@
       "detail": "DEJ Lemma 7.1.9, p. 78 (DEJ lines 2553–2560); CON Theorem 2.3.1, pp. 500–501 (CON lines 1053–1070); applied in BIPD §3, p. 8, and Lemma 5.1, p. 11 (BIPD lines 329–339, 454–461)."
     },
     {
+      "slug": "fixed-centre-specialisation",
+      "title": "fixed centre specialisation",
+      "supplier": "CompletedCohomologyAndLocalGlobalCompatibility",
+      "section": "§5.1",
+      "needs": "Let Λ_Z act on M∞ by the transpose of its action on the Pontryagin dual of M∞, on which O[Z]⊂Λ_Z acts through the group, so that the element c∈Z of Λ_Z acts on M∞ as the group element c⁻¹; this action agrees with the action through `Λ_Z→R□_ρ̄→R∞`, `c↦(ε^{d(d−1)/2}det ρ^univ)(Art_F c)`, with geometric Art_F. Then for every continuous O-algebra map x_Z:Λ_Z→O, the group Z acts on `M∞⊗̂_{Λ_Z,x_Z}O` by `c↦x_Z(c)⁻¹` and on its Pontryagin dual by `c↦x_Z(c)`, and `M∞⊗̂_{Λ_Z,x_Z}O` is a nonzero projective object of the category of compact O[[K]]-modules on which Z∩K acts by `c↦x_Z(c)⁻¹`.",
+      "neededBy": [
+        "2.2"
+      ],
+      "detail": "CEGGPS §4.22, p. 67, Proposition 4.23 and Corollary 4.26, pp. 68–70 (CEGGPS lines 2749–2765, 2774–2775, 2867–2884); BIP Lemma 6.6, p. 48 (BIP lines 2396–2412). The paragraph before CEGGPS Corollary 4.26 (CEGGPS lines 2867–2875) labels the compact category by ξ=x_Z and its smooth dual by ξ⁻¹; the transposition of CEGGPS §4.22 puts ξ⁻¹ on the compact side, as BIP Lemma 6.6 states."
+    },
+    {
       "slug": "capture-formalism",
       "title": "capture formalism",
       "supplier": "CompletedCohomologyAndLocalGlobalCompatibility",
       "section": "§5.3",
-      "needs": "For a compact group H with an open pro-p subgroup and a family (V_i) of finite-dimensional continuous L-representations of H, capture of a compact O[[H]]-module M is equivalent to the vanishing of the common kernel of all continuous H-maps M→V_i*; captured modules are O-torsion free; for O-torsion-free M, capture is equivalent to density of the evaluation map ⊕_i Hom_H(V_i,Π(M))⊗V_i→Π(M); a product is captured exactly when every factor is; an endomorphism of a captured M that kills every Hom(M,V_i*) is zero; capture of O[[H]] is equivalent to capture of every projective; a family of representations over finite extensions L_i of L captures M exactly when the family obtained by any further finite extension of each L_i does; and if (V_i) captures every projective and W≠0 is a finite-dimensional continuous representation, then (V_i⊗W) captures every projective.",
+      "needs": "For a compact group H with an open pro-p subgroup and a family (V_i) of finite-dimensional continuous L-representations of H, capture of a compact O[[H]]-module M is equivalent to the vanishing of the common kernel of all continuous H-maps M→V_i*; captured modules are O-torsion free; for O-torsion-free M, capture is equivalent to density of the evaluation map ⊕_i Hom_H(V_i,Π(M))⊗V_i→Π(M); a product is captured exactly when every factor is; capture of O[[H]] is equivalent to capture of every projective; a family of representations over finite extensions L_i of L captures M exactly when the family obtained by any further finite extension of each L_i does; and if (V_i) captures every projective and W≠0 is a finite-dimensional continuous representation, then (V_i⊗W) captures every projective.",
       "neededBy": [
         "3.1",
         "3.3",
@@ -1288,7 +1299,7 @@
         "6.3",
         "6.5"
       ],
-      "detail": "EP Definition 2.1, Lemmas 2.2–2.5 and 2.7–2.9, pp. 342–344, and Lemmas 2.14–2.17, pp. 346–347 (EP lines 266–354, 404–442); W=0 is excluded as in the Check of §3.1, since EP Lemmas 2.6 and 2.9 fail for W=0."
+      "detail": "EP Definition 2.1, Lemmas 2.2–2.5, 2.8 and 2.9, pp. 342–344, and Lemmas 2.14–2.17, pp. 346–347 (EP lines 266–319, 325–345, 404–442); W=0 is excluded as in the Check of §3.1, since EP Lemmas 2.6 and 2.9 fail for W=0. The vanishing of an endomorphism killed by every test (EP Lemma 2.7) follows from the first clause and is proved in §3.1."
     },
     {
       "slug": "smooth-test-quotients",
