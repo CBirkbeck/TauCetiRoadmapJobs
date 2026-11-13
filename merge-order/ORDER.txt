@@ -15,6 +15,7 @@ YangMillsConnectionsAndCaloricGauge
 PseudodifferentialOperators
 TangentialBordism
 StableHomotopyKTheory
+SpectralSequencesAndConvergence
 GeneralAlgebraicKTheory
 ResolutionOfSingularitiesCharacteristicZero
 DiamondsAndVStacks
