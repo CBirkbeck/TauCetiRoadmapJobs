@@ -97,7 +97,13 @@ commutative algebras), `KaehlerDifferential` with `KaehlerDifferential.linearMap
 `ExteriorAlgebra.exteriorPower` with `exteriorPower.pairingDual` and its bijectivity for finite
 free modules, `exteriorPower.instFinite`, `Algebra.Smooth`, `Abelian.Ext` with its computation
 from projective resolutions, `Functor.leftDerived`, the Dold–Kan normalisation of simplicial
-objects, `TrivSqZeroExt`; Tau Ceti's `TauCeti.BalancedTensorProduct`, the Kronecker map
+objects, `TrivSqZeroExt`, the algebra `A` as a module over `A ⊗[k] Aᵐᵒᵖ`
+(`instModuleTensorProductMop`); Tau Ceti's weak regularity of distinct polynomial variables over
+every commutative ring (`MvPolynomial.isWeaklyRegular_map_X`), its Koszul complex
+`TauCeti.koszulComplex` (the formalisation of DerivedModuleAlgebra §0.K.1) with the zeroth
+homology of a finite sequence (`TauCeti.koszulComplex.homologyZeroEquivSpan`) and acyclicity for
+weakly regular sequences (`TauCeti.koszulComplex.exactAt_of_isWeaklyRegular`),
+`TauCeti.BalancedTensorProduct`, the Kronecker map
 (`TauCeti.ChainComplex.kronecker`) and its bijectivity in degree `n` for a complex of projectives
 indexed by `ℕ` whose homology is projective below `n`
 (`TauCeti.ChainComplex.kronecker_bijective_of_projective_homology_lt`, and
@@ -263,6 +269,10 @@ canonical map, and the determinant map is identified as `n!` times it.
 - **Tensor algebra.** `TensorProduct`, `PiTensorProduct` with `PiTensorProduct.lift`,
   `TensorPower.mulEquiv`, `MultilinearMap`, `Algebra.TensorProduct`, `MulOpposite`,
   `TensorProduct.Algebra.module` (a `Module (A ⊗[R] B) M` from commuting actions; not an instance),
+  `instModuleTensorProductMop` (`Mathlib/Algebra/Azumaya/Defs.lean`: that structure on `A` itself,
+  `Module (A ⊗[R] Aᵐᵒᵖ) A`, for every commutative `R` and `R`-algebra `A`; an abbreviation, not an
+  instance) with `AlgHom.mulLeftRight_apply` (`a ⊗ op b` acts on `A` by `x ↦ a x b`, the convention
+  of §4.1),
   `Module.Projective.tensorProduct` (`Mathlib/Algebra/Module/Projective.lean`: `M ⊗[R₀] N` is
   `R`-projective for `M` projective over `R` and `N` projective over `R₀`), `Module.Flat`.
 - **Ext, Tor and derived functors.** `CategoryTheory.ProjectiveResolution`,
@@ -319,12 +329,17 @@ canonical map, and the determinant map is identified as `n!` times it.
   finite projective module is finite projective, `Mathlib/LinearAlgebra/Dual/Lemmas.lean`), the
   `Module.IsReflexive` instance for finite projective modules (same file) and `Module.evalEquiv`
   (`P ≃ₗ[R] P**` for a reflexive `P`, `Mathlib/LinearAlgebra/Dual/Defs.lean`).
-- **Regular sequences.** `RingTheory.Sequence.IsWeaklyRegular`. Mathlib has no lemma that the
-  differences of two copies of the variables of a polynomial ring form a regular sequence
-  (§8.1).
+- **Regular sequences.** `RingTheory.Sequence.IsWeaklyRegular`,
+  `LinearEquiv.isWeaklyRegular_congr'` (`Mathlib/RingTheory/Regular/RegularSequence.lean`: weak
+  regularity transported along a semilinear equivalence, the sequence mapped by the ring map) and
+  `MvPolynomial.span_X_image_eq_ker_aeval_ite_mem` (`Mathlib/RingTheory/MvPolynomial/Ideal.lean`:
+  the ideal spanned by a set of variables is the kernel of the substitution killing them). Weak
+  regularity of the variables themselves is Tau Ceti's (below); what neither library states is its
+  transport to the differences `t_i = X_i ⊗ 1 − 1 ⊗ X_i` of the two copies of the variables in
+  `R ⊗[k] R`, which is §8.1.
 - Mathlib has no Hochschild complex of an algebra, no derivation into a bimodule over a
   noncommutative algebra, no Koszul complex and no `Tor` over a noncommutative ring; Tau Ceti's
-  bimodule coboundary and bimodule derivations are below.
+  bimodule coboundary, bimodule derivations and Koszul complex are below.
 
 ### From Tau Ceti
 
@@ -434,6 +449,22 @@ canonical map, and the determinant map is identified as `n!` times it.
   only where the adjacent differentials die against `Y`, and is used only for the Koszul
   resolution of §8.2, never for the bar resolution of §4.4 (for `A = k = ℤ` the bar differential
   `B₂ → B₁` is the identity).
+- `MvPolynomial.isWeaklyRegular_map_X` (`TauCeti/RingTheory/MvPolynomial/RegularSequence.lean`):
+  for every commutative ring `R` and every list `l` of indices without repetition, the variables
+  `X_i`, `i ∈ l`, form a weakly regular sequence in `MvPolynomial σ R`, with no nontriviality
+  hypothesis (the regular version `MvPolynomial.isRegular_map_X` adds `Nontrivial R`). §8.1
+  transports it to the `t_i`.
+- `TauCeti.koszulComplex` (`TauCeti/RingTheory/KoszulComplex/Basic.lean`): for a linear functional
+  `φ : M → B` on a module over a commutative ring `B`, the `ℕ`-indexed chain complex of `B`-modules
+  with terms `⋀[B]^j M` and differential the contraction by `φ`, with
+  `TauCeti.zeroEquiv_koszulDifferential_zero` (the first differential is `φ`),
+  `TauCeti.oneEquiv_koszulDifferential_one` (`u ∧ v ↦ φ(u) v − φ(v) u`),
+  `TauCeti.koszulComplex.homologyZeroEquivSpan` (`H₀ ≅ B/(x₁,…,x_m)` for the functional
+  `Fintype.linearCombination B x` on `B^m`) and `TauCeti.koszulComplex.exactAt_of_isWeaklyRegular`
+  (`TauCeti/RingTheory/KoszulComplex/Regular.lean`: `H_{j+1} = 0` for every `j` when `x` is weakly
+  regular). These are the pinned form of DerivedModuleAlgebra §0.K.1, whose own contract records
+  them; §8.2 applies them to the sequence `t` of §8.1 in `Rᵉ`. Nothing is assumed of them beyond
+  these statements.
 
 ### From TauCetiRoadmap.DGAInfinity
 
@@ -463,7 +494,9 @@ canonical map, and the determinant map is identified as `n!` times it.
 - §0.K.1 (Koszul complex of a finite sequence): for a commutative ring `B` and `x = (x₁,…,x_m)`
   in `B`, the chain complex `K(x)` with `K(x)_j = ⋀^j B^m` and `d₁(v) = Σ x_i v_i`, `H₀(K(x)) = B/(x)`,
   functoriality in the sequence, and acyclicity in positive degrees when `x` is weakly regular, so
-  that `K(x) → B/(x)` is a finite free resolution.
+  that `K(x) → B/(x)` is a finite free resolution. At the pin these clauses are Tau Ceti's
+  `TauCeti.koszulComplex` of `Fintype.linearCombination B x` with the declarations listed under
+  "From Tau Ceti", which §8.2 consumes.
 
 ### From TauCetiRoadmap.EulerSystemsAndKolyvaginSystems
 
@@ -935,12 +968,13 @@ as first-order deformations is the special case `M = A` over `k[ε]/ε²` and is
 
 Construct the equivalence between `A`-bimodules (with the conventions above) and `ModuleCat Aᵉ`,
 `Aᵉ = A ⊗[k] Aᵐᵒᵖ`, through `TensorProduct.Algebra.module`, `(a ⊗ op b) · m = a m b`; the bimodule `A`
-as an object of `ModuleCat Aᵉ`; and the right `Aᵉ`-module structure on a bimodule,
+as an object of `ModuleCat Aᵉ`, whose module structure is Mathlib's `instModuleTensorProductMop`
+(the same `TensorProduct.Algebra.module` on `A`); and the right `Aᵉ`-module structure on a bimodule,
 `m · (a ⊗ op b) = b m a`, used for balanced tensor products (Ginz05 §4.2, lines 751–752, and §5.1,
 lines 934–947).
 
 *Needs:* Mathlib `Algebra.TensorProduct`, `MulOpposite`, `TensorProduct.Algebra.module`,
-`ModuleCat`; Tau Ceti `TauCeti.BalancedTensorProduct`.
+`instModuleTensorProductMop`, `ModuleCat`; Tau Ceti `TauCeti.BalancedTensorProduct`.
 
 - Bimodule homomorphisms are exactly `Aᵉ`-linear maps, and the equivalence is `k`-linear.
 - The left and right `Aᵉ`-structures on a bimodule commute with the `k`-structure, and for the
@@ -987,8 +1021,8 @@ lines 747–782; HKR62 lines 414–447; Weibel94 §9.1; Loday98 §1.1).
 
 Prove that `φ ↦ (a₁,…,a_n) ↦ φ(1 ⊗ a₁ ⊗ ⋯ ⊗ a_n ⊗ 1)` is an isomorphism of cochain complexes
 `Hom_{Aᵉ}(B_•(A), M) ≅ C^•(A,M)` over every `k`, natural in `M` (Ginz05 §5.2, lines 1033–1062;
-HKR62 lines 284–298). The differential of the left side is precomposition with `b′`, as in
-`ChainComplex.linearYonedaObj`; no sign is introduced.
+HKR62 lines 480–489, for commutative `A` and `M = A`). The differential of the left side is
+precomposition with `b′`, as in `ChainComplex.linearYonedaObj`; no sign is introduced.
 
 *Needs:* §§1.2, 4.2; Mathlib `ChainComplex.linearYonedaObj`.
 
@@ -1147,8 +1181,10 @@ negatives of each other (§6.2). For `A = Mat₂(k)` the cohomology algebra is `
 
 ### Dependencies
 
-Layers 1–4; Mathlib graded monoids, direct sums and `Ext` composition; Tau Ceti's comparison of
-resolutions. No roadmap supplier is used.
+Layers 1–4 (Tau Ceti's bimodule coboundary enters only through the cochains of Layer 1); Mathlib
+graded monoids, direct sums, `Ext` composition and the `Ext` classes of cocycles on projective
+resolutions (`extMk` with its composition lemmas and morphisms of resolutions). No Tau Ceti
+declaration is used directly and no roadmap supplier is used.
 
 ## Layer 6: Comparison with the graded and derived carriers
 
@@ -1351,10 +1387,13 @@ antisymmetrised chain `1 ⊗ x ⊗ y − 1 ⊗ y ⊗ x` represents `ε(dx ∧ dy
 
 ### Dependencies
 
-Layers 1–5; the pinned Tau Ceti braces, Gerstenhaber bracket, Hochschild differential and
-positive-arity Hochschild complex (`TauCeti.ReducedTensorWords.brace`,
+Layers 1–5; the pinned Tau Ceti suspension convention and DG algebras
+(`TauCeti.AInfinity.IsSuspension`, `TauCeti.IsDGAlgebra`), braces, Gerstenhaber bracket, Hochschild
+differential and positive-arity Hochschild complex (`TauCeti.ReducedTensorWords.brace`,
 `TauCeti.AInfinityAlgebra.hochschildDifferential`,
-`TauCeti.AInfinityAlgebra.PositiveHochschild.complex`); DGAInfinity Layers 0, 1 and 8;
+`TauCeti.AInfinityAlgebra.PositiveHochschild.complex`); Mathlib's embedding of `ℕ`-indexed chain
+complexes into `ℤ`-indexed cochain complexes (§6.3) and flatness of smooth algebras (§6.4);
+DGAInfinity Layers 0, 1 and 8;
 KTheoryFiniteLocalFields §4.0; RefinedTraceMethods §§1.1 and 1.9; the gap
 smooth-hkr-antisymmetrisation, used only in §6.4(d).
 
@@ -1599,10 +1638,18 @@ smooth-hkr-antisymmetrisation on RefinedTraceMethods §1.9.
 For `R = MvPolynomial (Fin m) k` over any commutative `k`, prove that the elements
 `t_i = X_i ⊗ 1 − 1 ⊗ X_i` of `Rᵉ = R ⊗[k] R` form a weakly regular sequence and generate the kernel of
 the multiplication map `Rᵉ → R` (HKR62 lines 268–279; Ginz05 Lemma 9.3.1, line 2187). One route:
-`Rᵉ ≅ MvPolynomial (Fin m) R` with the second copy of the variables replaced by `Y_i = 1 ⊗ X_i − X_i ⊗ 1`,
-in which the multiplication map is evaluation at `Y = 0` and the variables form a regular sequence.
+`Rᵉ ≅ MvPolynomial (Fin m) R`, with the first factor `R ⊗ 1` as coefficients and the second copy of
+the variables replaced by `Y_i = 1 ⊗ X_i − X_i ⊗ 1 = −t_i`. Under it the multiplication map is
+evaluation at `Y = 0`, whose kernel is spanned by the `Y_i`
+(`MvPolynomial.span_X_image_eq_ker_aeval_ite_mem` for the set of all variables); Tau Ceti's
+`MvPolynomial.isWeaklyRegular_map_X` makes the `Y_i` weakly regular over the coefficient ring `R`,
+with no nontriviality hypothesis, and `LinearEquiv.isWeaklyRegular_congr'` transports this to `Rᵉ`.
+Replacing each `Y_i` by `t_i = −Y_i` changes neither the ideals `(Y₁,…,Y_j)` nor the kernel of
+multiplication by `Y_{j+1}` on their quotients, so the `t_i` are weakly regular as well.
 
-*Needs:* Mathlib `MvPolynomial`, `Algebra.TensorProduct`, `RingTheory.Sequence.IsWeaklyRegular`.
+*Needs:* Mathlib `MvPolynomial`, `Algebra.TensorProduct`, `RingTheory.Sequence.IsWeaklyRegular`,
+`LinearEquiv.isWeaklyRegular_congr'`, `MvPolynomial.span_X_image_eq_ker_aeval_ite_mem`; Tau Ceti
+`MvPolynomial.isWeaklyRegular_map_X`.
 
 **Checks.**
 
@@ -1623,9 +1670,14 @@ of Theorem 3.1; Ginz05 §9.3, lines 2187–2197).
 *Needs:* §§4.1, 4.5 (for `Tor`), 8.1; DerivedModuleAlgebra §0.K.1 (Koszul complex of a finite
 sequence); Mathlib `CategoryTheory.ProjectiveResolution`,
 `CategoryTheory.ProjectiveResolution.isoLeftDerivedObj`, `CategoryTheory.Abelian.Ext.linearEquiv₀`;
-Tau Ceti `CategoryTheory.ProjectiveResolution.extLinearEquiv`.
+Tau Ceti `TauCeti.koszulComplex`, `TauCeti.koszulComplex.homologyZeroEquivSpan` (with §8.1,
+`H₀(K(R)) ≅ Rᵉ/(t) ≅ R`), `TauCeti.koszulComplex.exactAt_of_isWeaklyRegular` (with §8.1, `H_j = 0`
+for `j ≥ 1`), `TauCeti.zeroEquiv_koszulDifferential_zero`, `TauCeti.oneEquiv_koszulDifferential_one`,
+`CategoryTheory.ProjectiveResolution.extLinearEquiv`.
 
-- `d(e_i) = t_i` and `d(e_i ∧ e_j) = t_i e_j − t_j e_i`, the sign of §0.K.1's degree `−1` derivation.
+- `d(e_i) = t_i` and `d(e_i ∧ e_j) = t_i e_j − t_j e_i`, the sign of §0.K.1's degree `−1` derivation
+  (at the pin, `TauCeti.zeroEquiv_koszulDifferential_zero` and
+  `TauCeti.oneEquiv_koszulDifferential_one` with `φ(e_i) = t_i`).
 - `Tor_j^{Rᵉ}(R,R) ≅ ⋀^j R^m` and `Ext^j_{Rᵉ}(R,R) ≅ ⋀^j (R^m)^*` as `R`-modules. Since
   `R ⊗_{Rᵉ} K(R)` has zero differential, `Tor_j` is its degree-`j` term
   (`isoLeftDerivedObj`); since `Hom_{Rᵉ}(K(R), R)` has zero differential, the two vanishing
@@ -1727,8 +1779,15 @@ Jacobian cocycle of `(X₁, X₂, X₃)` represents `6` times it.
 
 ### Dependencies
 
-Layers 1–7 (§6.4(a) for the antisymmetrisation map, not §6.4(d)); DerivedModuleAlgebra §0.K.1;
-Mathlib's polynomial rings and regular sequences.
+Layers 1–7 (§6.4(a) for the antisymmetrisation map, not §6.4(d)); DerivedModuleAlgebra §0.K.1,
+consumed through its pinned form, Tau Ceti's Koszul complex `TauCeti.koszulComplex` with its
+zeroth homology and its acyclicity for weakly regular sequences (§8.2); Tau Ceti's weak
+regularity of distinct variables `MvPolynomial.isWeaklyRegular_map_X` (§8.1) and
+`CategoryTheory.ProjectiveResolution.extLinearEquiv` (§8.2); Mathlib's polynomial rings and
+partial derivatives, tensor products of algebras, regular sequences with their transport along
+equivalences, projective resolutions, `Ext` in degree zero, left derived functors, and homotopy
+equivalences of resolutions with their images under additive functors and on homology
+(§§8.2–8.4).
 
 ## Downstream consumers
 

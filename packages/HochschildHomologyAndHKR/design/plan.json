@@ -703,7 +703,7 @@
      "id": "4.1",
      "kind": "construction",
      "name": "HochschildHKR.envModule",
-     "statement": "With Aᵉ = A ⊗[k] Aᵐᵒᵖ, bimodules are left Aᵉ-modules via TensorProduct.Algebra.module, (a⊗op b)·m = a m b, giving a k-linear equivalence with ModuleCat Aᵉ; A is an object of ModuleCat Aᵉ; a bimodule is a right Aᵉ-module by m·(a⊗op b)=b m a.",
+     "statement": "With Aᵉ = A ⊗[k] Aᵐᵒᵖ, bimodules are left Aᵉ-modules via TensorProduct.Algebra.module, (a⊗op b)·m = a m b, giving a k-linear equivalence with ModuleCat Aᵉ; A is an object of ModuleCat Aᵉ through Mathlib's instModuleTensorProductMop; a bimodule is a right Aᵉ-module by m·(a⊗op b)=b m a.",
      "hypotheses": [
       "k a commutative ring",
       "A a ring with Algebra k A"
@@ -716,6 +716,7 @@
       "mathlib:Algebra.TensorProduct",
       "mathlib:MulOpposite",
       "mathlib:TensorProduct.Algebra.module",
+      "mathlib:instModuleTensorProductMop",
       "mathlib:ModuleCat",
       "tauceti:TauCeti.BalancedTensorProduct"
      ],
@@ -1677,7 +1678,10 @@
      "prerequisites": [
       "mathlib:MvPolynomial",
       "mathlib:Algebra.TensorProduct",
-      "mathlib:RingTheory.Sequence.IsWeaklyRegular"
+      "mathlib:RingTheory.Sequence.IsWeaklyRegular",
+      "mathlib:LinearEquiv.isWeaklyRegular_congr'",
+      "mathlib:MvPolynomial.span_X_image_eq_ker_aeval_ite_mem",
+      "tauceti:MvPolynomial.isWeaklyRegular_map_X"
      ],
      "api": [],
      "tests": [
@@ -1719,13 +1723,18 @@
       "mathlib:CategoryTheory.ProjectiveResolution",
       "mathlib:CategoryTheory.ProjectiveResolution.isoLeftDerivedObj",
       "mathlib:CategoryTheory.Abelian.Ext.linearEquiv₀",
+      "tauceti:TauCeti.koszulComplex",
+      "tauceti:TauCeti.koszulComplex.homologyZeroEquivSpan",
+      "tauceti:TauCeti.koszulComplex.exactAt_of_isWeaklyRegular",
+      "tauceti:TauCeti.zeroEquiv_koszulDifferential_zero",
+      "tauceti:TauCeti.oneEquiv_koszulDifferential_one",
       "tauceti:CategoryTheory.ProjectiveResolution.extLinearEquiv"
      ],
      "api": [
       {
        "name": "HochschildHKR.koszul_d",
        "role": "evaluation",
-       "statement": "d(e_i)=t_i and d(e_i∧e_j)=t_i e_j − t_j e_i."
+       "statement": "d(e_i)=t_i and d(e_i∧e_j)=t_i e_j − t_j e_i (at the pin TauCeti.zeroEquiv_koszulDifferential_zero and TauCeti.oneEquiv_koszulDifferential_one with φ(e_i)=t_i)."
       },
       {
        "name": "HochschildHKR.koszul_tor_ext",
@@ -1904,7 +1913,7 @@
    "sections": [
     "§0.K.1"
    ],
-   "what": "Koszul complex of a finite sequence in a commutative ring and its acyclicity for weakly regular sequences."
+   "what": "Koszul complex of a finite sequence in a commutative ring and its acyclicity for weakly regular sequences; at the pin this is Tau Ceti's TauCeti.koszulComplex with TauCeti.koszulComplex.homologyZeroEquivSpan and TauCeti.koszulComplex.exactAt_of_isWeaklyRegular, consumed by 8.2."
   },
   {
    "roadmap": "EulerSystemsAndKolyvaginSystems",
