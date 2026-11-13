@@ -266,3 +266,15 @@ licence_class = "publisher-open"
 status = "certified"
 accessed = "2026-11-05"
 cited_for = ["2.5", "10.1", "10.2"]
+
+[[source]]
+id = "GarlandRaghunathan1970"
+authors = "H. Garland, M. S. Raghunathan"
+title = "Fundamental Domains for Lattices in (R-)rank 1 Semisimple Lie Groups"
+year = 1970
+doi = "10.2307/1970838"
+locator_scheme = "theorem"
+locator = "Theorems 0.7 and 4.10"
+licence_class = "none"
+status = "waived"
+resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/13664#issuecomment-6855604192"
