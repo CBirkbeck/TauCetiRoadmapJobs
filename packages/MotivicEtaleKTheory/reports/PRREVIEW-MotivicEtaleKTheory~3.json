@@ -1,0 +1,20 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-MotivicEtaleKTheory~3",
+  "head": "d1c5de6996dcbb320ab38d754d201f0680027781",
+  "pr": 1470,
+  "folder": "MotivicEtaleKTheory",
+  "date": "2026-11-13",
+  "findings": 1,
+  "blocking": 0,
+  "notes": "incremental re-review of 9 changed lines since 8d34493. Previous R01 (simplicial divisor condition) and R02 (purity direction) repaired; the deformation-to-the-normal-cone argument of §7.1 and the B·G_m Check recomputed (table); 19 library line numbers checked at the refreshed pins; SchemeKTheoryOperations §7.3a and SchemeAndStackFoundations §5.5 resolved; 3 source locators read. Gate OK, depcheck 0 problems, Suggested.lean elaborates with no output. One P3 finding, in the pull request description only: it still lists #1199 ResolutionOfSingularitiesCharacteristicZero as an open supplier although the roadmap is on main at this head.",
+  "carried": {
+   "from": "d1c5de6996dcbb320ab38d754d201f0680027781",
+   "head": "d1c5de6996dcbb320ab38d754d201f0680027781",
+   "findings": 1,
+   "lines": 0,
+   "folders": []
+  }
+ }
+}
