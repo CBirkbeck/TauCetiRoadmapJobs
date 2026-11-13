@@ -580,3 +580,21 @@ status = "certified"
 accessed = "2026-11-10"
 version_note = "arXiv v7, the version read and cited; published in Moscow Math. J. 12 (2012), 515–542"
 cited_for = ["5.9a", "gap:curve-companions"]
+
+[[source]]
+id = "SS22"
+authors = "Claude Sabbah, Christian Schnell"
+title = "Degenerating complex variations of Hodge structure in dimension one"
+year = 2022
+arxiv = "2206.08166v1"
+locator_scheme = "section"
+locator = "§14 Proposition, §24 Theorem, §28, §39 Theorem, §64 Proposition, §190 Example"
+url = "https://arxiv.org/abs/2206.08166v1"
+fetched_from = "https://arxiv.org/pdf/2206.08166v1"
+fetched_at = "2026-11-13T10:25:25Z"
+sha256 = "6276a8dbc8c30c8dde893ba2a0d0619a81ef13820f2e4771aa5c23cad7940506"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-13"
+version_note = "arXiv v1"
+cited_for = ["5.4"]

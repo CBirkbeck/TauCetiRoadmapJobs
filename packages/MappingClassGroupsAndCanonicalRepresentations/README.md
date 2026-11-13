@@ -55,13 +55,15 @@ It also owns the following foundational targets:
   the lift and exactness; the cochain construction is pinned in Tau Ceti), the lifting
   obstruction of a projective representation through a finite central isogeny, deformations of
   representations of discrete groups over Artinian `ℂ`-algebras with the constancy criterion,
-  representation schemes of finitely presented groups with fixed determinant and their quotients,
-  the Jordan identity `[x^{m(r)}, y^{m(r)}] = 1` in finite linear groups and two-generation of
-  `GL_r(𝔽_p)` (Layer 1);
+  representation schemes of finitely presented groups, with and without fixed determinant, and
+  their quotients, the Jordan identity `[x^{m(r)}, y^{m(r)}] = 1` in finite linear groups and
+  two-generation of `GL_r(𝔽_p)` (Layer 1);
 - polarizable complex variations of Hodge structure on complex manifolds with the notions of
   geometric origin and integral PVHS, parabolic semistability of Deligne extensions,
-  isomonodromic deformations and their semistability, real variations of mixed Hodge structure with
-  graded-polarizability and admissibility for real coefficients, the mixed Hodge structure on `H¹` of
+  isomonodromic deformations and their semistability, the limit theorem for polarizable complex
+  variations on the punctured disc whose monodromy need not be quasi-unipotent, real variations of
+  mixed Hodge structure with graded-polarizability and admissibility for real coefficients, the
+  mixed Hodge structure on `H¹` of
   unitary local systems in families with the theorem of the fixed part for real admissible
   variations, the derivative of the period map,
   Mochizuki's deformation of local systems to variations, cohomological rigidity, Drinfeld's
@@ -137,10 +139,13 @@ It also owns the following foundational targets:
 - pure, mixed and polarized Hodge structures as linear algebra: Completed/HodgeStructures; pure
   real and rational variations of Hodge structure on complex manifolds, their morphisms and rational
   polarizations: ShimuraData §§3.1–3.3 (`Variation`, `RationalPolarizedVariation`); graded-polarizable
-  rational variations of mixed Hodge structure, their admissibility and the rigidity of admissible
-  rational variations with constant local system: MixedHodgeModulesAndIrregularHodgeTheory §§3.1, 3.3
-  and 5.6. §5.4 differs in using real coefficients, which a unitary local system forces;
-  Hermitian holomorphic bundles, Dolbeault cohomology and Serre duality: ComplexKahlerGeometry K4–K5;
+  rational variations of mixed Hodge structure, the limit mixed Hodge structure for quasi-unipotent
+  monodromy, their admissibility and the rigidity of admissible rational variations with constant
+  local system: MixedHodgeModulesAndIrregularHodgeTheory §§3.1–3.3 and 5.6. §5.4 differs in using
+  real coefficients, which a unitary local system forces, and in stating the limit theorem for
+  monodromy that need not be quasi-unipotent; the relative monodromy filtration:
+  LefschetzPencilsAndVanishingCycles §1.5; Hermitian holomorphic bundles, Dolbeault cohomology and
+  Serre duality: ComplexKahlerGeometry K4–K5;
 - the Wedderburn decomposition and the irreducible index of a finite group:
   RepresentationTheory/CharacterTheory Layer 2; Schur's lemma for arbitrary groups is Mathlib's
   (`Representation.IsIrreducible.bijective_or_eq_zero`); factor sets and Schur multipliers of
@@ -520,7 +525,7 @@ Completed/HodgeStructures: pure, polarized and mixed Hodge structures, used fibr
 ComplexKahlerGeometry K4–K5: holomorphic bundles, Hermitian metrics, Dolbeault cohomology and
 Serre duality on compact curves.
 
-### From TauCetiRoadmap.ShimuraData and TauCetiRoadmap.MixedHodgeModulesAndIrregularHodgeTheory
+### From TauCetiRoadmap.ShimuraData, TauCetiRoadmap.MixedHodgeModulesAndIrregularHodgeTheory and TauCetiRoadmap.LefschetzPencilsAndVanishingCycles
 
 ShimuraData §3.1 (`Variation`: a pure real or rational variation of Hodge structure of weight `n`
 on a complex manifold, a finite-rank local system with a filtration of its holomorphic flat bundle
@@ -529,14 +534,22 @@ by holomorphic subbundles, opposed on every fibre and satisfying Griffiths trans
 rational polarization by a parallel form satisfying the Hodge–Riemann relations fibrewise).
 MixedHodgeModulesAndIrregularHodgeTheory §3.1 (graded-polarizable variations of mixed Hodge
 structure: a flat weight filtration with pure graded pieces in the sense of ShimuraData §3.1, and
-morphisms strict for `W` and `F`), §3.3 (admissibility along punctured discs: extension of the
-Hodge bundles to the canonical extension with the limit filtration on the graded pieces, and
-existence of the relative monodromy filtration) and §5.6 (for an admissible variation with constant
-local system on a smooth connected variety, the global sections form a mixed Hodge structure
-mapping isomorphically to every fibre). These are stated with rational coefficients; §5.4 uses the
-same definitions with a local system of real vector spaces and real polarizations, which involve
-only the complexified local system, `F`, `W` and the local monodromy, and states the theorem of the
-fixed part for real admissible variations with nonconstant local system as its own target.
+morphisms strict for `W` and `F`), §3.2 (the limit mixed Hodge structure of a rationally polarized
+pure variation on the punctured disc with quasi-unipotent monodromy, through a finite cover on which
+the monodromy is unipotent), §3.3 (admissibility along punctured discs with quasi-unipotent
+monodromy: extension of the Hodge bundles to the canonical extension with the limit filtration on
+the graded pieces, and existence of the relative monodromy filtration) and §5.6 (for an admissible
+variation with constant local system on a smooth connected variety, the global sections form a
+mixed Hodge structure mapping isomorphically to every fibre). These are stated with rational
+coefficients and quasi-unipotent monodromy, and §5.4 compares its statements with them in that
+case; §5.4 uses the definitions of §3.1 with a local system of real vector spaces and real
+polarizations, states the limit theorem for polarizable complex variations on the punctured disc
+with monodromy that need not be quasi-unipotent and the admissibility it defines as its own targets,
+and states the theorem of the fixed part for real admissible variations with nonconstant local
+system as its own target. LefschetzPencilsAndVanishingCycles §1.5 (the relative monodromy filtration
+of a nilpotent endomorphism with respect to a finite increasing filtration, unique when it exists
+and unchanged by a nonzero scalar multiple of the endomorphism; existence is a hypothesis), used in
+condition (b) of §5.4's admissibility.
 
 ### From TauCetiRoadmap.RepresentationTheory
 
@@ -636,8 +649,10 @@ Write `Mod(g, b, p)` for MordellLawrenceVenkatesh §5.9's `Mod(Σ_{g,b,p})`, who
 permute the punctures, and define `PMod(g, b, p)` as its subgroup of classes fixing each puncture,
 the kernel of the permutation action on the `p` punctures; it has index `p!`, every permutation
 being realized. For `p = 0` it is GeometricTopology §1.7.2's `Mod⁺(Σ_{g,b})` through §11.2.1 item 5,
-equal to its `Mod(Σ_{g,b})` when `b ≥ 1`; for `b = 0` the latter also contains the
-orientation-reversing classes (for the torus, `PMod(1, 0, 0) ≅ SL₂(ℤ)` inside `Mod(T²) ≅ GL₂(ℤ)`).
+equal to GeometricTopology's `Mod(Σ_{g,b})` when `b ≥ 1`; for `b = 0` GeometricTopology's group also
+contains the orientation-reversing classes, which the `Mod` of *Conventions* and of
+MordellLawrenceVenkatesh §5.9 excludes (for the torus, `PMod(1, 0, 0) = Mod(1, 0, 0) ≅ SL₂(ℤ)`, of
+index two in GeometricTopology's `Mod(T²) ≅ GL₂(ℤ)`).
 Marking a base point `x` as an extra puncture, `PMod(g, b, p + 1)` is the subgroup of
 MordellLawrenceVenkatesh's `Mod(Σ_{g,b,p}*)` fixing each of the other punctures. A class in it acts
 on `π₁(Σ_{g,b,p}, x)` by functoriality; this based action factors through isotopy because isotopies
@@ -936,7 +951,12 @@ matrix congruent to the identity modulo `I`. Prove:
 For a finitely presented group `Γ = ⟨s₁, …, s_k | w₁, …, w_l⟩`, `r ≥ 1` and a character
 `χ : Γ → ℂ^×`, define `R_r(Γ)_χ` as the closed subscheme of `GL_r^k` over `ℂ` cut out by
 `w_j(A₁, …, A_k) = 1` and `det A_i = χ(s_i)`, with `GL_r` acting by simultaneous conjugation, and
-`M_r(Γ)_χ = Spec O(R_r(Γ)_χ)^{GL_r}` with quotient map `π`. Prove:
+`M_r(Γ)_χ = Spec O(R_r(Γ)_χ)^{GL_r}` with quotient map `π`. Write `R_r(Γ)` and
+`M_r(Γ) = Spec O(R_r(Γ))^{GL_r}` for the same constructions without the determinant equations, so
+that `R_r(Γ)` represents `B ↦ Hom(Γ, GL_r(B))`, `M_r(Γ)` is the character variety of `Γ`, and
+`R_r(Γ)_χ` is a closed `GL_r`-stable subscheme of `R_r(Γ)`, the determinant equations being
+conjugation-invariant. The three statements below hold for `R_r(Γ)` and `M_r(Γ)` with the same
+proofs, the determinant condition being dropped from the first. Prove:
 
 - `R_r(Γ)_χ` represents `B ↦ {ρ : Γ → GL_r(B) | det ρ = χ}` on commutative `ℂ`-algebras, and a
   change of presentation gives a canonical equivariant isomorphism; a connected component `X` of
@@ -961,6 +981,12 @@ SchemeAndStackFoundations Layer 0; Mathlib `AlgebraicGeometry.Scheme`.
 - `Γ = ℤ`, `r = 2`, `χ = 1`: the unipotent `[[1, 1], [0, 1]]` and the identity have the same image
   in `M_2(ℤ)_1`, only the identity has a closed orbit, and both lie in one connected component.
 - `Γ` trivial: `R_r(Γ)_χ` is a point and so is `M_r(Γ)_χ`.
+- `Γ = ℤ/2`, `r = 2`, without fixed determinant: `R_2(Γ)` is the set of involutions, the points `I`
+  and `−I` and the closed orbit of `diag(1, −1)`, of dimension `4 − 2 = 2`; it has three connected
+  components and `M_2(Γ)` has three points. Fixing the determinant selects `±I` for `χ` trivial and
+  the orbit of `diag(1, −1)` for `χ(s₁) = −1`, so `R_2(Γ)` is the disjoint union of its two
+  fixed-determinant subschemes; a reading of `M_r(Γ)` as one of the `M_r(Γ)_χ` would lose a
+  component.
 - `Γ = ℤ/2`, `r = 2`, `χ` trivial: an involution of determinant one is `±I`, so `R_2(Γ)_χ` has
   the two points `±I`, two components, and `M_2(Γ)_χ = R_2(Γ)_χ`, matching the bijection on
   components; for `χ` trivial and `r = 1` the scheme is the single point `1`, since fixing the
@@ -1438,8 +1464,9 @@ C6.3; SchemeAndStackFoundations §§2.1–2.2, 4.15; Mathlib `Representation.IsI
 
 This layer states the Hodge-theoretic results the finiteness theorem rests on: polarizable complex
 variations of Hodge structure and the notions of geometric origin and integral PVHS, semistability
-of parabolic Deligne extensions, isomonodromic deformations and their semistability, the mixed
-Hodge structure on the cohomology of unitary local systems in families, the derivative of its
+of parabolic Deligne extensions, isomonodromic deformations and their semistability, the limit
+theorem for polarizable variations on the punctured disc, the mixed Hodge structure on the
+cohomology of unitary local systems in families, the derivative of its
 period map, the rank bound for sub-local systems and its Artinian vanishing form, nonabelian Hodge
 theory, cohomological rigidity, companions over finite fields with Drinfeld's pro-semisimple
 comparison, integrality of rigid local systems, and unitarity of low-rank variations on
@@ -1664,13 +1691,45 @@ holomorphic subbundles satisfying Griffiths transversality, such that each `gr^W
 induced `F`, is a pure real variation of weight `k` in the sense of ShimuraData §3.1 (`Variation`).
 It is *graded-polarizable* when each `gr^W_k` carries a parallel real bilinear form of parity
 `(−1)^k` satisfying the Hodge–Riemann relations on every fibre (the real form of ShimuraData §3.3's
-rational polarization), and *admissible* when, along every holomorphic map from a disc sending the
-punctured disc into the base, conditions (a) and (b) of MixedHodgeModulesAndIrregularHodgeTheory
-§3.3 hold: the Hodge bundles extend to subbundles of the canonical extension inducing the limit
-Hodge filtration on each `gr^W_k`, and the relative monodromy filtration of the logarithm of the
-unipotent part of the local monodromy with respect to `W` exists. These conditions involve only the
-complexified local system, `F`, `W` and the local monodromy; for rational variations with
-quasi-unipotent monodromy they are MixedHodgeModulesAndIrregularHodgeTheory §3.3's admissibility.
+rational polarization).
+
+The local monodromy of a polarizable real variation along a punctured disc need not be
+quasi-unipotent (Checks), while MixedHodgeModulesAndIrregularHodgeTheory §3.2 constructs the limit
+only for rationally polarized variations with quasi-unipotent monodromy, through a finite cover
+`t = u^e` on which the monodromy becomes unipotent. Prove the limit theorem without that
+hypothesis. Let `L` be a polarizable complex variation of pure Hodge structure of weight `k` on the
+punctured disc `Δ^*` (§5.1; the complexification of a polarizable real variation is one), `Ψ` its
+space of multivalued flat sections, `T = T_s T_u` its monodromy with `T_s` semisimple and `T_u`
+unipotent, `N = (2πi)⁻¹ log T_u`, and `Φ(z)` the Hodge filtration on `Ψ` at the point `t = e^z`,
+`Re z < 0`. Then:
+
+- every eigenvalue of `T` has absolute value one, so the residue eigenvalues of the canonical
+  extension are real (Sabbah–Schnell, §14 Proposition, proved in §64, SS22 lines 228 and 1366);
+- the Hodge bundles extend to holomorphic subbundles of the canonical extension `Ē` with residue
+  eigenvalues in `[0, 1)` (*Conventions*), and the limit `F_lim = lim e^{−zN} Φ(z)`, as `Re z → −∞`
+  with `Im z` bounded, exists and satisfies `T_s F^p_lim = F^p_lim` and `N F^p_lim ⊂ F^{p−1}_lim`
+  (Sabbah–Schnell, §24 Theorem and §28, SS22 lines 407–415 and 476–490);
+- `Ψ` carries a mixed Hodge structure with Hodge filtration `F_lim` and weight filtration
+  `M_j = W(N)_{j−k}`, the monodromy weight filtration of `N` centred at `k`, for which
+  `N : Ψ → Ψ(−1)` and `T_s` are morphisms (Sabbah–Schnell, §39 Theorem, SS22 line 710).
+
+Identifying `Ψ` with the fibre `Ē(0)`, `F_lim` is obtained from the fibre at `0` of the extended
+Hodge bundles by passing to the graded pieces of the filtration of `Ψ` by residue eigenvalues: its
+part in the generalized eigenspace of the residue for the eigenvalue `α` consists of the components
+there of the vectors of the fibre whose components in the generalized eigenspaces for eigenvalues
+`< α` vanish (SS22 line 413). It equals that fibre when `T` is unipotent, and differs from it
+in general (Checks). For rationally polarized variations with quasi-unipotent monodromy this is the
+setting of MixedHodgeModulesAndIrregularHodgeTheory §3.2, which this statement extends without
+passing to a cover.
+
+The real variation of mixed Hodge structure is *admissible* when, along every holomorphic map from
+a disc sending the punctured disc into the base, the pulled-back variation satisfies: (a) its Hodge
+bundles extend to holomorphic subbundles of the canonical extension `Ē` which induce on the
+canonical extension of each `gr^W_k` the extended Hodge bundles of the limit theorem; and (b) the
+relative monodromy filtration of `N` with respect to the filtration of `Ψ` induced by `W` exists
+(LefschetzPencilsAndVanishingCycles §1.5). No quasi-unipotence is assumed; for rational variations
+with quasi-unipotent monodromy these are conditions (a) and (b) of
+MixedHodgeModulesAndIrregularHodgeTheory §3.3.
 
 Let `V` be a unitary local system on `C°` with a real structure `V_ℝ` (an orthogonal local system with
 `V ≅ V_ℝ ⊗ ℂ`; `V ⊕ V^∨` always has one). Prove that `R¹π°_* V_ℝ` underlies an admissible
@@ -1678,7 +1737,12 @@ graded-polarizable real variation of mixed Hodge structure on `M` with weights i
 `W₁ = R¹π_* j_* V_ℝ`, and Hodge filtration
 `F¹ = im(π_*(E ⊗ Ω¹_{C/M}(log D)) → R¹π°_* V ⊗ O_M)`, where `(E, ∇)` is the canonical logarithmic
 extension and `R¹π°_* V ⊗ O_M ≅ R¹π_*(E → E ⊗ Ω¹_{C/M}(log D))` (Landesman–Litt, Theorem 4.1.1,
-pp. 24–25; Timmerscheidt, Theorem 7.1; Schnell, Theorem 21.1, Sch19 line 1493). For an arbitrary
+pp. 24–25; Timmerscheidt, Theorem 7.1; Schnell, Theorem 21.1, Sch19 line 1493). Landesman–Litt
+deduce graded-polarizability and admissibility from Saito's mixed Hodge modules through Schnell's
+Theorem 21.1, and that theory is stated for quasi-unipotent local monodromy (Sch19 line 520); the route
+covers the `V` whose local monodromies along the boundary divisors of a smooth compactification of
+`C°` are quasi-unipotent, and for general `V` admissibility is the condition defined above with the
+limit theorem of this section (Corrections to the sources). For an arbitrary
 unitary `V`, write `H_V = R¹π°_* V ⊗ O_M`; the flat positive Hermitian form identifies `V^∨` with
 the complex conjugate local system `V̄`, and so gives a complex-antilinear isomorphism
 `c_V : H_V → H_{V^∨}`. Let `F̄¹ ⊂ H_V` be the preimage of `F¹H_{V^∨}` under `c_V`, the conjugate
@@ -1695,11 +1759,33 @@ irreducible complex local system with `Hom(L, W_ℂ) ≠ 0`, then `L̃` (`L` if 
 `L ⊕ L̄` otherwise) underlies a polarizable real variation and there is a nonzero map of variations
 `Q ⊗ L̃ → W` from a nonzero constant real mixed Hodge structure `Q` (Landesman–Litt,
 Proposition 4.2.2, p. 26). *Needs:* §§5.1–5.2; ShimuraData §§3.1–3.3;
-MixedHodgeModulesAndIrregularHodgeTheory §§3.1, 3.3, 5.6; ComplexComparisonPartII §§C5.2, C5.6;
-Completed/HodgeStructures (mixed Hodge structures); gap:local-system-direct-images.
+MixedHodgeModulesAndIrregularHodgeTheory §§3.1–3.3, 5.6; LefschetzPencilsAndVanishingCycles §1.5;
+ComplexComparisonPartII §§C5.2, C5.6; Completed/HodgeStructures (mixed Hodge structures);
+gap:local-system-direct-images.
 
 **Checks.**
 
+- The limit theorem without quasi-unipotence: the rank-two real orthogonal local system on `Δ^*`
+  whose monodromy is the rotation by the angle `2π√2`, a variation of weight `0` and type `(0, 0)`,
+  has `T = T_s` with eigenvalues `exp(±2πi√2)`, of absolute value one and of infinite order, so
+  MixedHodgeModulesAndIrregularHodgeTheory §3.2 does not apply. Here `N = 0`, the canonical extension
+  has residues `2 − √2 ≈ 0.586` and `√2 − 1 ≈ 0.414` (`exp(−2πi Res)` has eigenvalues
+  `exp(±2πi√2)`), `F⁰` is the whole canonical extension and `F¹ = 0`, and the limit is `Ψ`, pure of
+  type `(0, 0)`. Such monodromy occurs in this section: on the complement `M` of the zero locus of a
+  nonconstant regular function `f` on a level chart `M′`, with `χ` the pullback along `f` of the
+  character `1 ↦ exp(2πi√2)` of `π₁(𝔾_m)` (the first Check of §4.5) and `V = π°^* χ`, the system
+  `R¹π°_*(V ⊕ V^∨)_ℝ` has, along a disc in `M′` meeting `f = 0` transversally at a smooth point, local
+  monodromy with eigenvalues `exp(±2πi√2)`, since the family is smooth over that disc.
+- The limit is not the fibre at `0`: for `0 < α < 1`, the complex weight-one variation of rank two
+  on `Δ^*` whose Hodge line at `t = e^z` is spanned by `(1, e^{αz})` in a basis of multivalued flat
+  sections (Sabbah–Schnell, §190 Example, SS22 line 4053) has `N = 0` and residues `0` and `α`. The
+  extended Hodge line has fibre at `0` spanned by `(1, 1)`, which meets both residue eigenspaces in
+  zero and so is not `T_s`-stable, while `F¹_lim`, the leading term for the smaller residue, is
+  spanned by `(1, 0)`. A definition of the limit as the fibre of the extended bundle would give a
+  line that is not the Hodge filtration of a polarized Hodge structure.
+- The hypothesis of polarizability is needed: the rank-one local system on `Δ^*` with monodromy `2`
+  underlies no polarizable complex variation, since a rank-one variation has a single bidegree and is
+  unitary (§5.1, Checks), and `|2| ≠ 1` violates the first item of the limit theorem.
 - For `V` trivial of rank one and `n = 0`, `R¹π_* ℝ` is the weight-one variation of the family,
   pure, with `H^{1,1} = 0`.
 - The identification of `H_V` with `H_{V^∨}` is antilinear: for `V = V^∨` trivial of rank one on a
@@ -1984,9 +2070,10 @@ Deligne extensions; by the parabolic Deligne extension case of §5.3 the deforme
 semistable on an analytically general nearby curve, where it underlies a complex PVHS, and the
 third item of §5.2 makes its monodromy, which is that of `(E, ∇)`, unitary. Only the canonical
 lattice with its full parabolic structure enters, never a coarsened structure or another lattice.
-Prove that a representation `Γ → GL_m(O_K)` which is
-unitary at every complex embedding of `K` has finite image, since its image is discrete in a
-compact group (Landesman–Litt 2022, Lemma 7.2.1, p. 51). Deduce: on an analytically very general
+Prove that a representation `ρ : Γ → GL_m(O_K)`, `K` a number field, whose scalar extension
+`ρ ⊗_{O_K, ι} ℂ` is unitary for every field embedding `ι : K → ℂ`, the real embeddings included, has
+finite image, since its image is discrete in a compact group (Landesman–Litt 2022, Lemma 7.2.1,
+p. 51, LL22 lines 1908–1911). Deduce: on an analytically very general
 hyperbolic pointed curve of genus `g`, an `O_K`-local system with infinite monodromy all of whose
 complex conjugates underlie complex PVHS has rank at least `2√(g + 1)` (Landesman–Litt 2022,
 Theorem 1.2.5, p. 3), and a local system of geometric origin with infinite monodromy has dimension at
@@ -1999,8 +2086,9 @@ least `2√(g + 1)` (Landesman–Litt 2022, Corollary 1.2.7, p. 3). *Needs:* §�
 - Unitarity at one embedding is not enough: the Salem polynomial `x⁴ − x³ − x² − x + 1` has two
   real roots `λ ≈ 1.722`, `λ⁻¹` and two roots on the unit circle (with `y = x + 1/x` it becomes
   `y² − y − 3 = 0`, whose roots are about `2.30` and `−1.30`); the character `ℤ → O_K^×`, `1 ↦ λ`,
-  for `K = ℚ(λ)` is integral, unitary at the two complex embeddings and of infinite image, and is not
-  unitary at the real embeddings.
+  for `K = ℚ(λ)` is integral, unitary at the pair of non-real embeddings (where `|λ′| = 1`) and of
+  infinite image, and is not unitary at the two real embeddings (`λ ≈ 1.722`, `λ⁻¹ ≈ 0.581`), so the
+  hypothesis of the finiteness criterion fails there, as it must.
 - `g = 0`: the bound `2√1 = 2` forces rank one, where variations are unitary.
 
 ### Examples
@@ -2015,8 +2103,9 @@ least `2√(g + 1)` (Landesman–Litt 2022, Corollary 1.2.7, p. 3). *Needs:* §�
 ### Dependencies
 
 Layers 1–2 and 4; ComplexComparisonPartII §§C5.2, C5.6, C6.3 and gap:local-system-direct-images;
-Completed/HodgeStructures; ShimuraData §§3.1–3.3; MixedHodgeModulesAndIrregularHodgeTheory §§3.1,
-3.3, 5.6; ComplexKahlerGeometry K4–K5; ComplexCurveModuli D3.4;
+Completed/HodgeStructures; ShimuraData §§3.1–3.3; MixedHodgeModulesAndIrregularHodgeTheory
+§§3.1–3.3, 5.6; LefschetzPencilsAndVanishingCycles §1.5; ComplexKahlerGeometry K4–K5;
+ComplexCurveModuli D3.4;
 ArithmeticGaloisRepresentations §1.11; LanglandsParameterStacks §2.2; SchemeAndStackFoundations
 §2.2; ResolutionOfSingularitiesCharacteristicZero §6.2; AutomorphicLFunctionsAndLocalFactors §AL.3
 and gap:curve-companions; DeligneWeightsAndPurity §§5.5, 7.8, 8.14, 8.19;
@@ -2649,8 +2738,12 @@ preserves conjugacy and the image. *Needs:* §§9.3, 9.7.
 
 **Checks.**
 
-- `G = F_N^{ab} = ℤ^N` with `Out(G) = GL_N(ℤ)`: the conclusion recovers finiteness of
-  `GL_N(ℤ)`-finite characters of `ℤ^N`.
+- `G = F_N^{ab} = ℤ^N` with `Out(G) = GL_N(ℤ)` and `N ≥ 2`, so that `g ≥ 1` and `r = 1` is in range:
+  the conclusion recovers finiteness of `GL_N(ℤ)`-finite characters of `ℤ^N`. For `N = 2` the
+  transvection `e₂ ↦ k e₁ + e₂` sends the character `(λ, μ)` to `(λ, λ^k μ)`, so a finite orbit forces
+  `λ`, and symmetrically `μ`, to be roots of unity. For `N = 1` the character `1 ↦ 2` of `ℤ` has
+  `GL₁(ℤ)`-orbit `{2, 1/2}` and infinite image; it lies outside the range, since `N = 1 = 2g + 1`
+  gives `g = 0` and `r = 1` fails `1 < 1`.
 - The quotient must be characteristic so that automorphisms of `F_N` descend to `G`.
 
 ### 9.10 Finite total image
@@ -2729,20 +2822,25 @@ whole image is that finite set. *Needs:* §§9.3, 10.1; InverseGaloisAndArithmet
 Prove that for a continuous `ρ : π₁^ét(C°_K̄) → GL_r(ℚ̄_ℓ)` with `r² < g + 1` the following are
 equivalent: (1) `ρ` has finite image; (2) `ρ` is arithmetic; (3) for every embedding `K → ℂ` and every
 field isomorphism `ℚ̄_ℓ ≅ ℂ` the complex local system on the punctured Riemann surface is of geometric
-origin; (4) for every such choice it underlies an integral PVHS in the `O_K` sense of §5.1
-(Landesman–Litt, Corollary 9.1.4, pp. 45–46). (1) ⇒ (2) is the finite-image criterion of
-InverseGaloisAndArithmeticFundamentalGroups §IG.1.4 and (2) ⇒ (1) is §10.2; (1) ⇒ (3) because a
-finite local system is a summand of a push-forward of the constant sheaf; (3) ⇒ (4) is §5.1; (4) ⇒ (1):
-choose the embedding at an analytically very general point, possible because the points over the
-generic point of `M_{g,n,ℚ}` form a comeagre set and so does the very general locus, and apply §5.11
-(Landesman–Litt 2022, Theorem 1.2.5; the source cites Corollary 1.2.7 at this step), using
-`r < 2√(g + 1)`. *Needs:* §§5.1, 5.11, 10.2; InverseGaloisAndArithmeticFundamentalGroups
-§IG.1.4.
+origin; (4) for every such choice it underlies an integral PVHS in the sense of §5.1, that is, it
+is `V ⊗_{O_L, ι} ℂ` for a number field `L`, an embedding `ι : L → ℂ` and a local system `V` of finite
+free `O_L`-modules such that `V ⊗_{O_L, ι′} ℂ` underlies a complex PVHS for every embedding
+`ι′ : L → ℂ` (Landesman–Litt, Corollary 9.1.4, pp. 45–46). The number field `L` is unrelated to the
+base field `K`, which contains the function field of `M_{g,n,ℚ}`, of transcendence degree
+`3g − 3 + n` over `ℚ`, and can be a number field only for `(g, n) = (0, 3)`. (1) ⇒ (2) is the
+finite-image criterion of InverseGaloisAndArithmeticFundamentalGroups §IG.1.4 and (2) ⇒ (1) is
+§10.2; (1) ⇒ (3) because a finite local system is a summand of a push-forward of the constant
+sheaf; (3) ⇒ (4) is §5.1; (4) ⇒ (1): choose the embedding at an analytically very general point,
+possible because the points over the generic point of `M_{g,n,ℚ}` form a comeagre set and so does
+the very general locus, and apply §5.11 (Landesman–Litt 2022, Theorem 1.2.5; the source cites
+Corollary 1.2.7 at this step), using `r < 2√(g + 1)`. *Needs:* §§5.1, 5.11, 10.2;
+InverseGaloisAndArithmeticFundamentalGroups §IG.1.4.
 
 **Checks.**
 
-- A non-real character of finite order satisfies (4) in the `O_K` sense though it has no invariant
-  rank-one `ℤ`-lattice; under a `ℤ`-lattice reading (1) ⇒ (4) would fail.
+- A non-real character of order three satisfies (4) with `L = ℚ(ζ₃)`, a number field whatever the
+  base field `K` is, though it has no invariant rank-one `ℤ`-lattice; under a `ℤ`-lattice reading
+  (1) ⇒ (4) would fail.
 - The quantifiers in (3) and (4) range over all embeddings and all coefficient isomorphisms.
 - (1) ⇒ (2) through §IG.1.4: the trivial representation has a one-element orbit, and a finite-image
   representation whose cover and group action descend to `C°_{K′}` with `[K′ : K] = d` has at most
@@ -2856,7 +2954,8 @@ InverseGaloisAndArithmeticFundamentalGroups §IG.3.1.
 ### 11.5 Non-density of finite-image representations
 
 Prove that for `2g − 2 + n > 0` and `r ≥ 2` the semisimple representations of `π₁(Σ_{g,n})` with
-finite image lie in a proper closed subset of the character variety `M_r(π₁(Σ_{g,n}))`; consequently,
+finite image lie in a proper closed subset of the character variety `M_r(π₁(Σ_{g,n}))` of §1.4,
+without fixed determinant, since finite-image representations have varying determinants; consequently,
 on the generic curve in the range `1 < r < √(g + 1)`, arithmetic representations are not Zariski
 dense (Landesman–Litt 2022, Lemma 7.5.1, pp. 53–54; Landesman–Litt, Remark 9.1.3, p. 45). The Jordan
 identity of §1.5 cuts out a closed conjugation-invariant subset of the representation scheme, whose
@@ -3129,14 +3228,21 @@ Layers 0–3, 5 and 9; Mathlib `FreeGroup`.
   Corollary 2.3.5 (§4.5; the authors' erratum adds it).
 - Landesman–Litt, §3.2, p. 21: the auxiliary map `d_n` is defined and injective only for `n ≥ 1`,
   the range in which the proof of Proposition 3.2.1 uses it (§1.3).
+- Landesman–Litt, §4.1 and proof of Theorem 4.1.1, pp. 24–25: admissibility of real variations is
+  said to be analogous to the rational case, and the proof appeals to Saito's mixed Hodge modules,
+  which assume quasi-unipotent local monodromy; for a unitary `V` the local monodromy of
+  `R¹π°_* V_ℝ` need not be quasi-unipotent, and the limit filtration in the admissibility conditions
+  is that of the limit theorem for arbitrary polarizable complex variations on the punctured disc
+  (§5.4, with the rotation check).
 - Landesman–Litt, Lemma 7.2.5, p. 36: the boundary-replaced cover has genus `g′`, not `g` (§6.3).
 - Landesman–Litt, Theorem 8.5.3, p. 43: Lemma 8.5.2 needs a connected finite-type family of actual
   fixed-determinant representations; §8.3 takes the connected component of the representation scheme
   containing the nonabelian Hodge deformation (§§1.4, 5.8).
 - Landesman–Litt, Lemma 8.6.1, p. 44: the finite-index subgroup must stabilize the actual class of
   `ρ` and the covering data, not only the constituents of `Hom(ρ₂, ρ₁)` (§9.2).
-- Landesman–Litt, Corollary 9.1.4, pp. 45–46: "integral PVHS" is read in the `O_K` sense of §5.1,
-  and the step (4) ⇒ (1) uses Landesman–Litt 2022, Theorem 1.2.5 (§10.3).
+- Landesman–Litt, Corollary 9.1.4, pp. 45–46: "integral PVHS" is read in the sense of §5.1, over the
+  ring of integers of a number field unrelated to the base field, and the step (4) ⇒ (1) uses
+  Landesman–Litt 2022, Theorem 1.2.5 (§10.3).
 - Landesman–Litt, Example 9.2.3, pp. 48–49: surjections exist for every `p`, non-liftability only for
   `p ∤ m(r)` (§11.4; the authors' erratum restricts it).
 - Landesman–Litt, Remarks 9.2.5–9.2.6, p. 49: non-flatness does not imply failure of the
@@ -3201,6 +3307,9 @@ Layers 0–3, 5 and 9; Mathlib `FreeGroup`.
 - **PS08** C. Peters, J. Steenbrink, *Mixed Hodge Structures*, Ergebnisse 52, Springer (2008).
 - **Sch19** C. Schnell, *An overview of Morihiko Saito's theory of mixed Hodge modules*;
   [arXiv:1405.3096v1](https://arxiv.org/abs/1405.3096v1).
+- **SS22** C. Sabbah, C. Schnell, *Degenerating complex variations of Hodge structure in dimension
+  one*; [arXiv:2206.08166v1](https://arxiv.org/abs/2206.08166v1). Locators are the numbered
+  paragraphs of that version.
 - **Del70** P. Deligne, *Équations différentielles à points singuliers réguliers*, Lecture Notes in
   Math. 163, Springer (1970).
 - **FM12** B. Farb, D. Margalit, *A Primer on Mapping Class Groups*, Princeton (2012).
