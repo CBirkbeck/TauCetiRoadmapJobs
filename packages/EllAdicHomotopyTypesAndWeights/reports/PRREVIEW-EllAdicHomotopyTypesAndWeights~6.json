@@ -1,0 +1,20 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-EllAdicHomotopyTypesAndWeights~6",
+  "head": "2e22a163c1c0abb5b425ab5ef9b8f1d2f2510683",
+  "pr": 1644,
+  "folder": "EllAdicHomotopyTypesAndWeights",
+  "date": "2026-11-13",
+  "findings": 2,
+  "blocking": 0,
+  "notes": "incremental re-review of 34 changed lines since e3d2077: the previous review raised no findings. The README repair is correct: all 16 references to AlgebraicTopologyPartII Layer 4 are gone, and #1694 head ed88288 Layer 4 (lines 617-753) has no Sullivan content. MixedHodge 5.1/5.2 resolve at board package lines 480/497. The five Sullivan gaps stay precise and minimal, with no other owner on main, at the 439 open heads, in the board packages or at the pins. Locators of the changed contracts and of seeded-sample 8.2 were checked (morgan 1036/1162, weil-II 3947, dgms 1060). Gate rerun OK; depcheck 205 roadmaps 0 problems; lake env lean exit 0, no output. Two P3 findings on the pull request description: the dependencies sentence calls every non-main roadmap a consumer, and the Lean/validation sentences describe theorems and sorry warnings in a Suggested.lean that has no declarations.",
+  "carried": {
+   "from": "2e22a163c1c0abb5b425ab5ef9b8f1d2f2510683",
+   "head": "2e22a163c1c0abb5b425ab5ef9b8f1d2f2510683",
+   "findings": 2,
+   "lines": 0,
+   "folders": []
+  }
+ }
+}
