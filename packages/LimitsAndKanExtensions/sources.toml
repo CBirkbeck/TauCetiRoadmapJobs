@@ -1,0 +1,29 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "LimitsAndKanExtensions"
+
+[[source]]
+id = "HTT"
+locator_scheme = "theorem"
+locator = "Proposition 4.1.1.8"
+url = "https://www.math.ias.edu/~lurie/papers/HTT.pdf"
+fetched_from = "https://www.math.ias.edu/~lurie/papers/HTT.pdf"
+fetched_at = "2026-11-13T13:13:55Z"
+sha256 = "58855f3a0ad6d9c470ded74a38938b9468927592e9ae1209bab6a068e67ede6e"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-13"
+cited_for = ["4.3"]
+
+[[source]]
+id = "Kerodon"
+locator_scheme = "tag"
+locator = "02YZ; 02YC; 02NY"
+url = "https://kerodon.net/tag/02YZ"
+fetched_from = "https://kerodon.net/kerodon.pdf#nameddest=02YZ"
+fetched_at = "2026-11-13T13:22:35Z"
+sha256 = "fcb5147c4ea62895bfd97b1ce9bef190d8eae03eab251dc7680d1c73b3ebcbf4"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-13"
+cited_for = ["7.6.3", "7.1.4", "5.4.2"]
+
