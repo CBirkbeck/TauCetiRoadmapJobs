@@ -216,7 +216,7 @@
           "id": "1.4",
           "kind": "theorem",
           "name": "BallQuotient.action_faithful_transitive",
-          "statement": "From RealSemisimpleLieGroups §5.7: the faithful transitive holomorphic action of G on 𝔹ⁿ, the stabiliser K of o, K ≅ U(n), and G/K ≅ 𝔹ⁿ, read on B through ι. Explicit forms proved here: g·w = (c + Dw)/(a + bᵀw) is a continuous action of U(1,n) on B corresponding to [z] ↦ [gz]; K ≅ U(n) via [diag(a,D)] ↦ a⁻¹D, acting by w ↦ a⁻¹Dw (the supplier's v ↦ āAv, as |a| = 1); the orbit map is a homeomorphism G/K ≅ B, with continuous section w ↦ g_w. G = K·{g_t}·K for g_t = h_t ⊕ 1 with tanh|t| = |g·0|; G is unimodular. Connectedness is the supplier's.",
+          "statement": "From RealSemisimpleLieGroups §5.7: the faithful transitive holomorphic action of G on 𝔹ⁿ, the stabiliser K of o, K ≅ U(n), and G/K ≅ 𝔹ⁿ, read on B through ι. Explicit forms proved here: g·w = (c + Dw)/(a + bᵀw) is a continuous action of U(1,n) on B corresponding to [z] ↦ [gz]; K ≅ U(n) via [diag(a,D)] ↦ a⁻¹D, acting by w ↦ a⁻¹Dw (the supplier's v ↦ āAv, as |a| = 1); the orbit map is a homeomorphism G/K ≅ B, with continuous section w ↦ g_w. The Cartan decomposition is LieGroups Layer 9's kakDecomposition for the Iwasawa datum of G from RealSemisimpleLieGroups §3.1: its K is the stabiliser of o (fixed group of [g] ↦ [(gᴴ)⁻¹]), its 𝔞 a line ℝY_v, Y_v = [[0,vᴴ],[v,0]], |v| = 1, all K-conjugate. Explicit form proved here: lieExp(tY_v) = [[cosh t, sinh t·vᴴ],[sinh t·v, 1 + (cosh t − 1)vvᴴ]], lieExp(tY_v)·0 = tanh(t)v, g_t = h_t ⊕ 1 = lieExp(tY_{−ie₁}), restricted Weyl group of order 2 acting by t ↦ −t; so G = K·{g_t}·K with tanh|t| = |g·0|. G is unimodular. Connectedness is the supplier's.",
           "hypotheses": [
             "n ≥ 1"
           ],
@@ -229,6 +229,8 @@
             "target:1.2",
             "target:1.3",
             "roadmap:RealSemisimpleLieGroups §5.7",
+            "roadmap:RealSemisimpleLieGroups §3.1",
+            "roadmap:LieGroups Layer 9",
             "tauceti:TauCeti.Matrix.isCompact_unitaryGroup",
             "mathlib:MulAction.stabilizer"
           ],
@@ -236,7 +238,7 @@
             {
               "name": "cartan_decomposition",
               "role": "structure",
-              "statement": "G = K·{g_t}·K for g_t = h_t ⊕ 1, with tanh|t| = |g·0|."
+              "statement": "LieGroups Layer 9's kakDecomposition read on G: with 𝔞 = ℝY_{−ie₁}, lieExp(tY_{−ie₁}) = g_t = h_t ⊕ 1, so G = K·{g_t}·K, and in g = k₁g_tk₂, tanh|t| = |g·0|."
             },
             {
               "name": "unimodular",
@@ -274,15 +276,20 @@
               "name": "parabolic_not_unimodular",
               "kind": "non-example",
               "statement": "P_∞ = MAN is not unimodular: a_s scales the Lie algebra of N by s^{2n} (s² for n = 1, as a_{1/2}T_1a_{1/2}⁻¹ = T_{1/4})."
+            },
+            {
+              "name": "middle_factor_convention",
+              "kind": "computation",
+              "statement": "n = 1: lieExp(tY_1) is the boost [[cosh t, sinh t],[sinh t, cosh t]] (0 ↦ tanh t), lieExp(tY_{−i}) = h_t (0 ↦ −i tanh t), v = i gives h_{−t} (0 ↦ i tanh t); [diag(1,−i)] ∈ K carries Y_1 to Y_{−i}. [Y_{e₁}, Y_{ie₁}] = diag(2i, −2i e₁e₁ᴴ) ≠ 0, so 𝔞 is a line."
             }
           ],
-          "proofSketch": "Denominator nonvanishing from |a|² − |b|² = 1; comparison of the K-actions through ā = a⁻¹; explicit section g_w; tangent action of K is the standard representation; Cartan decomposition from transitivity of K on spheres and g_t·0 = (−i tanh t, 0, …, 0); modular function trivial on K and on g_t."
+          "proofSketch": "Denominator nonvanishing from |a|² − |b|² = 1; comparison of the K-actions through ā = a⁻¹; explicit section g_w; tangent action of K is the standard representation. Cartan decomposition: kakDecomposition (LieGroups Layer 9) for the datum of RealSemisimpleLieGroups §3.1; fixed group of the Cartan involution is K since JgJ = λg forces λ = 1 (λ ≠ 1 gives a = 0, contradicting |a|² − |c|² = 1) and g block diagonal; maximal abelian subspaces of 𝔭 are the lines ℝY_v; Y_v² = diag(1, vvᴴ) gives the matrix of lieExp(tY_v); K acts unitarily, so |g·0| = tanh|t|. Modular function trivial on K and on g_t."
         },
         {
           "id": "1.5",
           "kind": "definition",
           "name": "BallQuotient.heisenberg",
-          "statement": "For b ∈ ∂B the stabiliser P_b; at ∞ ∈ ∂𝔖 the Heisenberg group N = ℂ^{n−1} × ℝ acting by n_{(a,t)}(u,v) = (u+a, v + 2i⟨a,u⟩ + i|a|² + t) with law (a,t)(a′,t′) = (a+a′, t+t′−2Im⟨a,a′⟩), centre Z(N) of vertical translations, A = {a_s}, M = U(n−1), horoballs H(N) = {ρ > N}; P_∞ = M·A·N; G is transitive on ∂B; for n = 2, N ≅ TauCeti.HeisenbergGroup ℝ via (p+iq,t) ↦ (p,q,−t/4+pq/2).",
+          "statement": "For b ∈ ∂B the stabiliser P_b; at ∞ ∈ ∂𝔖 the Heisenberg group N = ℂ^{n−1} × ℝ acting by n_{(a,t)}(u,v) = (u+a, v + 2i⟨a,u⟩ + i|a|² + t) with law (a,t)(a′,t′) = (a+a′, t+t′−2Im⟨a,a′⟩), centre Z(N) of vertical translations, A = {a_s}, M = U(n−1), horoballs H(N) = {ρ > N}. Comparison with RealSemisimpleLieGroups §3.1's minimal parabolic P = MAN (M × A × N → P diffeomorphism, G = KP) for 𝔞 = ℝY_{eₙ} and positive roots positive on Y_{eₙ}: lieExp(τY_{eₙ}) = a_{e^τ}; M = Z_K(𝔞) = {[diag(a,D′,a)]} ≅ U(n−1); the supplier's N is the Heisenberg group (a_s n_{(a,t)} a_s⁻¹ = n_{(sa,s²t)}, dimensions 2n − 1); P = P_∞ (P_∞ = (K ∩ P_∞)P, K ∩ P_∞ = M). Hence P_∞ = M·A·N uniquely and G (already K) is transitive on ∂B. For n = 2, N ≅ TauCeti.HeisenbergGroup ℝ via (p+iq,t) ↦ (p,q,−t/4+pq/2).",
           "hypotheses": [
             "n ≥ 1; for n = 1, N = Z(N) = ℝ"
           ],
@@ -293,13 +300,15 @@
           "prerequisites": [
             "target:1.3",
             "target:1.4",
+            "roadmap:RealSemisimpleLieGroups §3.1",
+            "roadmap:LieGroups Layer 9",
             "tauceti:TauCeti.HeisenbergGroup"
           ],
           "api": [
             {
-              "name": "langlands_decomposition",
+              "name": "minimal_parabolic_comparison",
               "role": "structure",
-              "statement": "Every p ∈ P_∞ is uniquely m·a·n."
+              "statement": "RealSemisimpleLieGroups §3.1's P = MAN for 𝔞 = ℝY_{eₙ} is P_∞, with M = U(n−1), A = {a_s} and N the Heisenberg group; every p ∈ P_∞ is uniquely m·a·n (supplier's diffeomorphism)."
             },
             {
               "name": "rho_invariance",
@@ -337,6 +346,16 @@
               "name": "n1_degenerate",
               "kind": "degenerate",
               "statement": "For n = 1, N = Z(N) = ℝ acting by translations and M is trivial."
+            },
+            {
+              "name": "positive_system",
+              "kind": "computation",
+              "statement": "lieExp(τY_{eₙ})·0 = tanh(τ)eₙ, C(tanh(τ)eₙ) = (0, ie^{2τ}) → ∞; the opposite positive system gives the stabiliser of −eₙ, sent by C to (0,0) ∈ ∂𝔖."
+            },
+            {
+              "name": "dimension_n2",
+              "kind": "computation",
+              "statement": "n = 2: dim M + dim A + dim N = 1 + 1 + 3 = 5 = dim G − dim K + dim M = 8 − 4 + 1."
             }
           ]
         },
@@ -393,7 +412,7 @@
           ],
           "locator": {
             "source": "Goldman1999",
-            "where": "Ch. 3; BaldiUllmo2023 line 35 to line 36"
+            "where": "Ch. 3"
           },
           "prerequisites": [
             "tauceti:DifferentiableOn.analyticOnNhd_of_finiteDimensional",
@@ -549,15 +568,16 @@
           "id": "2.4",
           "kind": "theorem",
           "name": "BallQuotient.dist_formula",
-          "statement": "(B, g_𝔹) is a complete Hadamard manifold with unique geodesics, those through 0 being t ↦ lieExp(tY)·0 (RealSemisimpleLieGroups §5.3). Explicit forms proved here: lieExp(tY_v)·0 = tanh(t)v for unit v, so unit-speed geodesics through 0 are s ↦ tanh(s/√2)v; cosh²(d([z],[w])/√2) = |⟨z,w⟩|²/(⟨z,z⟩⟨w,w⟩); holomorphic isometries are exactly G.",
+          "statement": "(B, g_𝔹) is a complete Hadamard manifold with unique geodesics, those through 0 being t ↦ lieExp(tY)·0 (RealSemisimpleLieGroups §5.3). Explicit forms proved here: since lieExp(tY_v)·0 = tanh(t)v for unit v (1.4), unit-speed geodesics through 0 are s ↦ tanh(s/√2)v; cosh²(d([z],[w])/√2) = |⟨z,w⟩|²/(⟨z,z⟩⟨w,w⟩); holomorphic isometries are exactly G.",
           "hypotheses": [
             "n ≥ 1"
           ],
           "locator": {
             "source": "Goldman1999",
-            "where": "Ch. 3"
+            "where": "Ch. 3; Mok2012 line 319 to line 321 (automorphisms are isometries of the Kähler–Einstein metric)"
           },
           "prerequisites": [
+            "target:1.4",
             "target:2.1",
             "target:2.2",
             "roadmap:RealSemisimpleLieGroups §5.3",
@@ -1018,7 +1038,7 @@
           ],
           "locator": {
             "source": "WitteMorris2015",
-            "where": "line 1893 and line 1940; BaldiUllmo2023 line 355 to line 357"
+            "where": "line 1893 and line 1940; Exercise 4.1#10 line 2000 to line 2001; BaldiUllmo2023 line 355 to line 357"
           },
           "prerequisites": [
             "roadmap:VonNeumannAlgebras Layer 9",
@@ -1043,6 +1063,11 @@
               "name": "cocompact_iff",
               "role": "characterisation",
               "statement": "Γ cocompact iff Γ\\B compact (5.3)."
+            },
+            {
+              "name": "lattice_in_discrete",
+              "role": "structure",
+              "statement": "In a unimodular second-countable locally compact group (G, or 𝐆′(ℝ)⁰ for a connected semisimple ℚ-group 𝐆′), a discrete subgroup Λ containing a lattice Γ is a lattice, [Λ : Γ] < ∞ and covol(Γ) = [Λ : Γ]·covol(Λ) (WitteMorris2015 Exercise 4.1#10, line 2000 to line 2001)."
             }
           ],
           "tests": [
@@ -1059,7 +1084,7 @@
             {
               "name": "cyclic_parabolic_not",
               "kind": "non-example",
-              "statement": "⟨T_1⟩ is discrete and not a lattice."
+              "statement": "⟨T_1⟩ is discrete and not a lattice; for n = 1 it has infinite index in the lattice PSL(2,ℤ), so lattice_in_discrete needs the smaller group to be a lattice."
             }
           ]
         },
@@ -2280,14 +2305,14 @@
           "id": "11.1",
           "kind": "definition",
           "name": "BallQuotient.IsArithmetic",
-          "statement": "AdelicAlgebraicGroups §3.4's arithmetic lattices in a real Lie group, read on the connected G (G⁰ = G): a lattice Γ is arithmetic when there are a connected semisimple ℚ-group 𝐆, a continuous surjection p: 𝐆(ℝ)⁰ → G with compact kernel and an arithmetic Γ_𝐆 ⊂ 𝐆(ℚ) with p(Γ_𝐆 ∩ 𝐆(ℝ)⁰) commensurable with Γ. Added here: (a) the witness form — a subgroup Γ, not assumed a lattice, is an arithmetic lattice iff p(𝐆(ℤ) ∩ 𝐆(ℝ)⁰) is commensurable with Γ for a faithful 𝐆 ⊂ GL_N, 𝐆(ℤ) = 𝐆(ℚ) ∩ GL_N(ℤ) (closure model, AdelicAlgebraicGroups §1.1; model independence; §5.1); (b) reduction to the unique ℚ-simple factor 𝐆₁ whose real points map onto G.",
+          "statement": "AdelicAlgebraicGroups §3.4's arithmetic lattices in a real Lie group, read on the connected G (G⁰ = G): a lattice Γ is arithmetic when there are a connected semisimple ℚ-group 𝐆, a continuous surjection p: 𝐆(ℝ)⁰ → G with compact kernel and an arithmetic Γ_𝐆 ⊂ 𝐆(ℚ) with p(Γ_𝐆 ∩ 𝐆(ℝ)⁰) commensurable with Γ. Added here: (a) the witness form — a subgroup Γ, not assumed a lattice, is an arithmetic lattice iff p(𝐆(ℤ) ∩ 𝐆(ℝ)⁰) is commensurable with Γ for a faithful 𝐆 ⊂ GL_N, 𝐆(ℤ) = 𝐆(ℚ) ∩ GL_N(ℤ) (closure model, AdelicAlgebraicGroups §1.1; model independence; §5.1); (b) reduction to the unique ℚ-simple factor 𝐆₁ whose real points map onto G. (c) Integral points across an isogeny: for an isogeny φ: 𝐆 → 𝐆′ of connected semisimple ℚ-groups (surjective, finite kernel), in particular 𝐆 → 𝐆^ad, and faithful 𝐆 ⊂ GL_N, 𝐆′ ⊂ GL_M, φ(𝐆(ℤ)) is commensurable with 𝐆′(ℤ).",
           "hypotheses": [
             "𝐆 connected semisimple over ℚ",
             "p: 𝐆(ℝ)⁰ → G continuous surjective with compact kernel"
           ],
           "locator": {
             "source": "WitteMorris2015",
-            "where": "Definition 5.1.19 line 3732 to line 3739; BaldiUllmo2023 Proposition 2.3.3 line 333 to line 339"
+            "where": "Definition 5.1.19 line 3732 to line 3739; Proposition 9.4.5 line 8668 to line 8669; BaldiUllmo2023 Proposition 2.3.3 line 333 to line 339"
           },
           "prerequisites": [
             "roadmap:AdelicAlgebraicGroups §1.1",
@@ -2310,6 +2335,11 @@
               "name": "simple_factor",
               "role": "constructor",
               "statement": "𝐆 may be replaced by its unique ℚ-simple factor 𝐆₁ with 𝐆₁(ℝ)⁰ → G onto; the other factors have compact real points and finite arithmetic subgroups; p(𝐆₁(ℤ) ∩ 𝐆₁(ℝ)⁰) has finite index in p(𝐆(ℤ) ∩ 𝐆(ℝ)⁰)."
+            },
+            {
+              "name": "isogeny_integral_points",
+              "role": "compatibility",
+              "statement": "For an isogeny φ: 𝐆 → 𝐆′ of connected semisimple ℚ-groups, φ(𝐆(ℤ)) and 𝐆′(ℤ) are commensurable (WitteMorris2015 Proposition 9.4.5, line 8668 to line 8669)."
             }
           ],
           "tests": [
@@ -2332,9 +2362,24 @@
               "name": "nonarithmetic",
               "kind": "non-example",
               "statement": "Mostow1980 Theorem 17.3 and DeligneMostow1986 line 151 lattices are not arithmetic."
+            },
+            {
+              "name": "sl2_to_pgl2",
+              "kind": "computation",
+              "statement": "π: SL₂ → PGL₂ ⊂ GL(M₂): PGL₂(ℤ) = GL₂(ℤ)/{±1}, π(SL₂(ℤ)) = PSL₂(ℤ) of index 2 (determinant sign); equal after intersecting with PGL₂(ℝ)⁰."
+            },
+            {
+              "name": "identity_isogeny",
+              "kind": "degenerate",
+              "statement": "φ = id with the standard representation of SL₂ and its conjugate by diag(2,1): SL₂(ℤ) and {[[a,2b],[c/2,d]]} meet in Γ⁰(2), index 3 in each; commensurable, not equal."
+            },
+            {
+              "name": "not_over_Q",
+              "kind": "non-example",
+              "statement": "SL₁(D), D an indefinite quaternion division algebra over ℚ: real points ≅ SL₂(ℝ), integral points cocompact, SL₂(ℤ) not; no real isomorphism makes them commensurable, so φ must be defined over ℚ."
             }
           ],
-          "proofSketch": "(a) 𝐆(ℤ) is the integral-point group of the closure model, hence arithmetic; model independence gives commensurability with any arithmetic Γ_𝐆; images of commensurable groups are commensurable; commensurable with a lattice is a lattice. (b) Images of the 𝐆ᵢ(ℝ)⁰ are commuting connected normal subgroups generating the non-abelian G with simple Lie algebra, so one is G and the rest trivial; a lattice inside a lattice has finite index."
+          "proofSketch": "(a) 𝐆(ℤ) is the integral-point group of the closure model, hence arithmetic; model independence gives commensurability with any arithmetic Γ_𝐆; images of commensurable groups are commensurable; commensurable with a lattice is a lattice. (b) Images of the 𝐆ᵢ(ℝ)⁰ are commuting connected normal subgroups generating the non-abelian G with simple Lie algebra, so one is G and the rest trivial; a lattice inside a lattice has finite index (5.1). (c) ρ ⊕ (ρ′∘φ) is faithful, so Γ₁ = 𝐆(ℤ) ∩ φ⁻¹(𝐆′(ℤ)) has finite index in 𝐆(ℤ) (model independence); φ_ℝ: 𝐆(ℝ)⁰ → 𝐆′(ℝ)⁰ is onto with finite kernel, so φ(Γ₁ ∩ 𝐆(ℝ)⁰) is a lattice (AdelicAlgebraicGroups §3.4 image theorem) inside the discrete 𝐆′(ℤ) ∩ 𝐆′(ℝ)⁰, of finite index there (5.1) and in φ(𝐆(ℤ))."
         },
         {
           "id": "11.2",
@@ -2382,7 +2427,7 @@
           "id": "11.3",
           "kind": "construction",
           "name": "BallQuotient.shimuraDatum",
-          "statement": "For arithmetic Γ with ℚ-simple 𝐆: 𝐆^ad(ℝ) = H × C (H the real points of the noncompact ℝ-simple factor, C of the compact ones), 𝐆^ad(ℝ)⁺ = G × C⁺; h₀(z) = ([diag(1,z/z̄,…,z/z̄)], 1) with diag(1,z/z̄,…,z/z̄) ∈ U(1,n) (the class of diag(z̄,z,…,z) in PGL_{n+1}(ℂ), a matrix in U(1,n) only for |z| = 1); X the full 𝐆^ad(ℝ)-conjugacy class of h₀; (𝐆^ad, X) is a pure Shimura datum (ShimuraVarieties §P.1); the component X⁺ ∋ h₀ is the G-class of h₀ with stabiliser K, so X⁺ ≅ B biholomorphically (ShimuraVarieties §P.2); X = X⁺ for n ≥ 2 and X has two components for n = 1, exchanged by H ∖ G; at every level K_f the component stabilisers Γ_a = 𝐆^ad(ℚ)₊ ∩ aK_f a⁻¹ (ShimuraVarieties §0.1) have arithmetic effective images Γ_a^eff ⊂ G commensurable with Γ, neat for neat K_f, and the level-K_f variety is the finite union of the Γ_a^eff\\X⁺ ≅ Γ_a^eff\\B (ShimuraVarieties §0.5).",
+          "statement": "For arithmetic Γ with ℚ-simple 𝐆: 𝐆^ad(ℝ) = H × C (H the real points of the noncompact ℝ-simple factor, C of the compact ones), 𝐆^ad(ℝ)⁺ = H⁰ × C⁺ with ι: H⁰ ≅ G, p = ι ∘ pr_H ∘ π_ℝ (p and pr_H ∘ π_ℝ have the same kernel, the g with Ad(g) trivial on the noncompact simple ideal 𝔥); h₀(z) = ([diag(1,z/z̄,…,z/z̄)], 1) with diag(1,z/z̄,…,z/z̄) ∈ U(1,n) (the class of diag(z̄,z,…,z) in PGL_{n+1}(ℂ), a matrix in U(1,n) only for |z| = 1); X the full 𝐆^ad(ℝ)-conjugacy class of h₀; (𝐆^ad, X) is a pure Shimura datum (ShimuraVarieties §P.1); the component X⁺ ∋ h₀ is the G-class of h₀ with stabiliser K, so X⁺ ≅ B biholomorphically (ShimuraVarieties §P.2); X = X⁺ for n ≥ 2 and X has two components for n = 1, exchanged by H ∖ G; at every level K_f the component stabilisers Γ_a = 𝐆^ad(ℚ)₊ ∩ aK_f a⁻¹ (ShimuraVarieties §0.1) have arithmetic effective images Γ_a^eff = ι(pr_H(Γ_a)) ⊂ G commensurable with Γ (Γ_a ~ 𝐆^ad(ℤ) ∩ 𝐆^ad(ℝ)⁺ ~ π(𝐆(ℤ) ∩ 𝐆(ℝ)⁰) by 11.1 (c), then apply ι ∘ pr_H and 11.1 (a)), neat for neat K_f, and the level-K_f variety is the finite union of the Γ_a^eff\\X⁺ ≅ Γ_a^eff\\B (ShimuraVarieties §0.5).",
           "hypotheses": [
             "Γ arithmetic",
             "𝐆 ℚ-simple"
@@ -2445,6 +2490,11 @@
               "name": "no_negative_similitude",
               "kind": "computation",
               "statement": "n = 2: gᴴJg = −J would give |det g|² = det(−J)/det J = −1, impossible, so X = X⁺; for n = 1 the value is 1 and the swap S realises it."
+            },
+            {
+              "name": "component_group_n1",
+              "kind": "computation",
+              "statement": "n = 1, 𝐆 = SL₂, K_f = PGL₂(Ẑ), a = 1: PGL₂(ℚ) ∩ PGL₂(Ẑ) = GL₂(ℤ)/{±1}, Γ_a = PSL₂(ℤ) = Γ_a^eff = p(SL₂(ℤ)), although π(SL₂(ℤ)) has index 2 in 𝐆^ad(ℤ)."
             }
           ]
         },
@@ -2452,7 +2502,7 @@
           "id": "11.4",
           "kind": "theorem",
           "name": "BallQuotient.minimal_eq_bailyBorel",
-          "statement": "For every component group Γ_a^eff of 11.3, acting on X⁺ ≅ B, id extends to a unique S*_{Γ_a^eff} ≅ Baily–Borel component (ShimuraVarieties §2.7), restricting to the algebraization of ShimuraVarieties §§1.2, 3.3, 3.5; arbitrary arithmetic Γ are related through S*_{Γ∩Γ_c}.",
+          "statement": "For every component group Γ_a^eff of 11.3, acting on X⁺ ≅ B, id extends to a unique S*_{Γ_a^eff} ≅ Baily–Borel component (ShimuraVarieties §2.7), restricting to the algebraization of ShimuraVarieties §§1.2, 3.3, 3.5; arbitrary arithmetic Γ are related through S*_{Γ∩Γ_c}. Both compactifications add finitely many points: S* by 9.5; Baily–Borel because the boundary components of the ball are points (a holomorphic disc in the closed ball through a boundary point is constant), so the rational boundary components (ShimuraVarieties §2.1) are points, finitely many modulo Γ_a^eff (ShimuraVarieties §2.2).",
           "hypotheses": [
             "Γ arithmetic"
           ],
@@ -2461,10 +2511,13 @@
             "where": "Theorem 3.12 line 1686; Remark 3.13 line 1722 to line 1727; BailyBorel1966 Theorem 10.11; BaldiUllmo2023 line 457"
           },
           "prerequisites": [
+            "target:9.5",
             "target:10.5",
             "target:10.6",
             "target:11.3",
             "roadmap:ShimuraVarieties §1.2",
+            "roadmap:ShimuraVarieties §2.1",
+            "roadmap:ShimuraVarieties §2.2",
             "roadmap:ShimuraVarieties §2.7",
             "roadmap:ShimuraVarieties §3.3",
             "roadmap:ShimuraVarieties §3.5"
@@ -2485,6 +2538,11 @@
               "name": "nonarithmetic",
               "kind": "non-example",
               "statement": "Non-arithmetic Γ: no Shimura datum, but S*_Γ exists."
+            },
+            {
+              "name": "boundary_points",
+              "kind": "computation",
+              "statement": "For f: disc → closed ball with |f(0)| = 1, ζ ↦ ⟨f(0), f(ζ)⟩ has modulus ≤ 1 and value 1 at 0, so it is ≡ 1 and f ≡ f(0): boundary components of 𝔹ⁿ are points, unlike the bidisc, whose boundary contains the discs {1} × Δ."
             }
           ]
         },
@@ -2534,10 +2592,10 @@
           "id": "12.1",
           "kind": "definition",
           "name": "BallQuotient.IsTotallyGeodesicSubvariety",
-          "statement": "Γ-special sub-ball: 𝔹(W) of dimension m ≥ 1 with r_W(Γ ∩ H_W) a lattice in PU(1,m); Γ-special subvariety: π(X_H) with reduced structure; totally geodesic subvariety: irreducible closed W ⊂ S_Γ, dim ≥ 1, every irreducible component of π⁻¹(W^an) with totally geodesic regular locus.",
+          "statement": "Γ-special sub-ball: 𝔹(W) of dimension m ≥ 1 with r_W(Γ ∩ H_W) a lattice in PU(1,m); Γ-special subvariety: π(X_H) with reduced structure; totally geodesic subvariety: irreducible closed Z ⊂ S_Γ, dim ≥ 1, every irreducible component of π⁻¹(Z^an) with totally geodesic regular locus.",
           "hypotheses": [
             "Γ lattice",
-            "dim W ≥ 1"
+            "dim Z ≥ 1"
           ],
           "locator": {
             "source": "BaldiUllmo2023",
@@ -2553,7 +2611,7 @@
             {
               "name": "torsionFree_iff",
               "role": "characterisation",
-              "statement": "For torsion-free Γ: W totally geodesic iff W^reg totally geodesic in (X_Γ, ω_Γ)."
+              "statement": "For torsion-free Γ: Z totally geodesic iff Z^reg totally geodesic in (X_Γ, ω_Γ)."
             },
             {
               "name": "orbit_invariant",
@@ -2570,7 +2628,7 @@
             {
               "name": "whole",
               "kind": "degenerate",
-              "statement": "W = S_Γ is totally geodesic and Γ-special."
+              "statement": "Z = S_Γ is totally geodesic and Γ-special."
             },
             {
               "name": "points_excluded",
@@ -2588,7 +2646,7 @@
           "id": "12.2",
           "kind": "theorem",
           "name": "BallQuotient.special_isAlgebraic",
-          "statement": "For a Γ-special sub-ball X_H of dimension m: π(X_H) = W^an for an irreducible closed W ⊂ S_Γ of dimension m; j: S_{Γ_H} → S_Γ finite, birational onto W (S_{Γ_H} = normalization of W), extending to S*_{Γ_H} → S*_Γ with ∂ into ∂; W totally geodesic with preimage components γX_H.",
+          "statement": "For a Γ-special sub-ball X_H of dimension m: π(X_H) = Z^an for an irreducible closed Z ⊂ S_Γ of dimension m; j: S_{Γ_H} → S_Γ finite, birational onto Z (S_{Γ_H} = normalization of Z), extending to S*_{Γ_H} → S*_Γ with ∂ into ∂; Z totally geodesic with preimage components γX_H.",
           "hypotheses": [
             "Γ lattice",
             "X_H Γ-special"
@@ -2612,12 +2670,12 @@
             {
               "name": "whole",
               "kind": "degenerate",
-              "statement": "m = n: W = S_Γ and j = id."
+              "statement": "m = n: Z = S_Γ and j = id."
             },
             {
               "name": "picard_curve",
               "kind": "computation",
-              "statement": "Picard over ℚ(i), sub-ball {w₂ = 0}: Γ_H ⊃ finite index in U(1,1;ℤ[i]) × U(1;ℤ[i]); W a modular curve."
+              "statement": "Picard over ℚ(i), sub-ball {w₂ = 0}: Γ_H ⊃ finite index in U(1,1;ℤ[i]) × U(1;ℤ[i]); Z a modular curve."
             },
             {
               "name": "trivial_stabiliser",
@@ -2630,10 +2688,10 @@
           "id": "12.3",
           "kind": "theorem",
           "name": "BallQuotient.totallyGeodesic_isSpecial",
-          "statement": "Every totally geodesic subvariety W ⊂ S_Γ of dimension m ≥ 1 is Γ-special: preimage components are sub-balls X_H and r_W(Γ ∩ H_W) is a lattice in PU(1,m).",
+          "statement": "Every totally geodesic subvariety Z ⊂ S_Γ of dimension m ≥ 1 is Γ-special: preimage components are sub-balls X_H = 𝔹(W) and r_W(Γ ∩ H_W) is a lattice in PU(1,m).",
           "hypotheses": [
             "Γ lattice",
-            "W totally geodesic"
+            "Z totally geodesic"
           ],
           "locator": {
             "source": "BaldiUllmo2023",
@@ -2653,7 +2711,7 @@
             {
               "name": "n1",
               "kind": "degenerate",
-              "statement": "n = 1: only W = S_Γ."
+              "statement": "n = 1: only Z = S_Γ."
             },
             {
               "name": "finiteness_consumer",
@@ -2671,10 +2729,10 @@
           "id": "12.4",
           "kind": "theorem",
           "name": "BallQuotient.axSchanuel_setting",
-          "statement": "Algebraic subvarieties of B × S_Γ (components of (B × S_Γ^an) ∩ Y^an, Y ⊂ ℙⁿ × S_Γ closed) are closed irreducible analytic; Π = graph of π is closed irreducible of pure dimension n; for every component U of W ∩ Π, dim U ≥ dim W − n (codim U ≤ codim W + codim Π).",
+          "statement": "Algebraic subvarieties of B × S_Γ (components of (B × S_Γ^an) ∩ Y^an, Y ⊂ ℙⁿ × S_Γ closed) are closed irreducible analytic; Π = graph of π is closed irreducible of pure dimension n; for every component U of Q ∩ Π, dim U ≥ dim Q − n (codim U ≤ codim Q + codim Π).",
           "hypotheses": [
             "Γ lattice",
-            "W algebraic subvariety of B × S_Γ"
+            "Q algebraic subvariety of B × S_Γ"
           ],
           "locator": {
             "source": "BaldiUllmo2023",
@@ -2694,17 +2752,17 @@
             {
               "name": "fibre",
               "kind": "computation",
-              "statement": "n = 1, W = B × {s}: U points, dim U = 0 = dim W − n."
+              "statement": "n = 1, Q = B × {s}: U points, dim U = 0 = dim Q − n."
             },
             {
               "name": "whole",
               "kind": "degenerate",
-              "statement": "W = B × S_Γ: U = Π, dim n = 2n − n."
+              "statement": "Q = B × S_Γ: U = Π, dim n = 2n − n."
             },
             {
               "name": "point_times",
               "kind": "computation",
-              "statement": "W = {x₀} × S_Γ: U a point, 0 = n − n."
+              "statement": "Q = {x₀} × S_Γ: U a point, 0 = n − n."
             }
           ]
         }
@@ -2715,13 +2773,21 @@
     {
       "roadmap": "RealSemisimpleLieGroups",
       "sections": [
+        "§3.1",
         "§5.2",
         "§5.3",
         "§5.4",
         "§5.6",
         "§5.7"
       ],
-      "what": "Complex hyperbolic space (§5.7): the form of signature (1,n) (linear in the first slot), U(1,n), SU(1,n), PU(1,n) as a connected centre-free Lie group with SU-kernel μ_{n+1} and Ad ≅ Int(𝔰𝔲(1,n)), K ≅ U(n), the ball in Projectivization with its chart, the faithful transitive action and PU(1,n)/K ≅ 𝔹ⁿ, the metric g_𝔹 of ω = −i∂∂̄log(1−|w|²) with invariance, Killing = 2(n+1)g_𝔹 and uniqueness of invariant metrics, complex sub-balls with stabilisers and the local classification of totally geodesic complex submanifolds; properness and proper discontinuity on G/K (§5.2); completeness, Hadamard property, geodesics and curvature of G/K (§5.3); Cartan's fixed-point theorem (§5.4); Riemannian volume versus Haar measure and covolume (§5.6). Read in this roadmap's conventions in §§1.1–1.4, 2.2–2.4, 3.1–3.3, 5.2–5.3, 6.1."
+      "what": "Complex hyperbolic space (§5.7): the form of signature (1,n) (linear in the first slot), U(1,n), SU(1,n), PU(1,n) as a connected centre-free Lie group with SU-kernel μ_{n+1} and Ad ≅ Int(𝔰𝔲(1,n)), K ≅ U(n), the ball in Projectivization with its chart, the faithful transitive action and PU(1,n)/K ≅ 𝔹ⁿ, the metric g_𝔹 of ω = −i∂∂̄log(1−|w|²) with invariance, Killing = 2(n+1)g_𝔹 and uniqueness of invariant metrics, complex sub-balls with stabilisers and the local classification of totally geodesic complex submanifolds; the minimal parabolic datum of a connected group with semisimple Lie algebra and finite centre: P = MAN, M × A × N ≅ P, G = KP (§3.1); properness and proper discontinuity on G/K (§5.2); completeness, Hadamard property, geodesics and curvature of G/K (§5.3); Cartan's fixed-point theorem (§5.4); Riemannian volume versus Haar measure and covolume (§5.6). Read in this roadmap's conventions in §§1.1–1.5, 2.2–2.4, 3.1–3.3, 5.2–5.3, 6.1."
+    },
+    {
+      "roadmap": "LieGroups",
+      "sections": [
+        "Layer 9"
+      ],
+      "what": "RepresentationTheory/LieGroups Layer 9: IwasawaData, kakDecomposition (G = K·exp(𝔞̄⁺)·K, middle factor unique modulo the restricted Weyl group) and iwasawaDecomposition; read on G in §§1.4–1.5 with the datum of RealSemisimpleLieGroups §3.1."
     },
     {
       "roadmap": "FuchsianOrbifolds",
@@ -2802,12 +2868,14 @@
         "§0.4",
         "§0.5",
         "§1.2",
+        "§2.1",
+        "§2.2",
         "§2.7",
         "§3.3",
         "§3.4a",
         "§3.5"
       ],
-      "what": "Pure Shimura data with the full conjugacy class, Hermitian components and the stabiliser of a chosen component, finite analytic quotients, arithmetic component stabilisers, proper effective action, component decomposition, arithmetic quotients, Baily–Borel, unique algebraization at neat level, finite quotients."
+      "what": "Pure Shimura data with the full conjugacy class, Hermitian components and the stabiliser of a chosen component, finite analytic quotients, arithmetic component stabilisers, proper effective action, component decomposition, arithmetic quotients, rational boundary components and the compact Satake quotient, Baily–Borel, unique algebraization at neat level, finite quotients."
     },
     {
       "roadmap": "AdelicAlgebraicGroups",
