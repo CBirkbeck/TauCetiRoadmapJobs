@@ -2,7 +2,7 @@
 
 Reviewers, red-team passes and errata jobs record every mistake they find in a source while checking a roadmap's locators: misprints (slips whose intended meaning is clear), errors (a false statement or proof step) and gaps (a step the source does not justify), each with the roadmap, the board pull request or errata job and the head that reported it. Collected by the board sync from the `## Source issues` sections of review, red-team and errata comments; the data is in `errata/source-issues.json`.
 
-12162 mistakes recorded on the board: 6941 misprints, 3180 errors, 1577 gaps, 464 unparsed bullets.
+12164 mistakes recorded on the board: 6943 misprints, 3180 errors, 1577 gaps, 464 unparsed bullets.
 Errata jobs have read the cited sources of 60 roadmaps; in those of 2 they found no mistake.
 The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explorer/`: 1525 awaiting review, 13582 confirmed, 228 rejected.
 
@@ -12376,7 +12376,9 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 
 ## paternain-salo-uhlmann2023
 
+- **Misprint** at Corollary 2.5.3(b), printed p. 47: the source says the derivative of `b` is positive at radius 1; it should be at the outer radius `r₁`; affects a stated result. Found by RiemannianManifoldsWithConvexBoundary (#13810 at 93d2394, 2026-11-13, claude fable).
 - **Misprint** at Corollary 2.5.3(b), printed p. 47 (line 2480): the source says the derivative of `b` is positive at radius 1; it should be at the outer radius `r₁`; affects a stated result. Found by RiemannianManifoldsWithConvexBoundary (#13810 at 6950c69, 2026-11-13, claude fable).
+- **Misprint** at Lemma 3.2.11, printed p. 64: the source says the second factor of the product is the exit time at the single argument `x − v`; it should be at the pair `(x, −v)`; affects a stated result. Found by RiemannianManifoldsWithConvexBoundary (#13810 at 93d2394, 2026-11-13, claude fable).
 - **Misprint** at Lemma 3.2.11, printed p. 64 (line 3029): the source says the second factor of the product is the exit time at the single argument `x − v`; it should be at the pair `(x, −v)`; affects a stated result; <!-- tauceti-roadmap-review {"agent": "claude", "head": "6950c6968ab829a8f3fcdc73c38121a0e19fccf6", "job": "REV-DESIGN-RiemannianManifoldsWithConvexBoundary~4", "model": "fable", "worker": "chris-x14"} -->. Found by RiemannianManifoldsWithConvexBoundary (#13810 at 6950c69, 2026-11-13, claude fable).
 
 ## peled-spinka-2017
