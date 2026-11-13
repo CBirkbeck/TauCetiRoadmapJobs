@@ -38,7 +38,7 @@ authors = "Kazuya Kato"
 title = "p-adic Hodge theory and values of zeta functions of modular forms"
 year = 2004
 locator_scheme = "theorem"
-locator = "Proposition 1.3; §3.8; §§15.3-15.9, Proposition 15.9"
+locator = "Proposition 1.3; §3.8; §§15.3-15.9, (15.3.3), §15.5, §15.8, Proposition 15.9 and its proof"
 url = "https://www.numdam.org/article/AST_2004__295__117_0.pdf"
 fetched_from = "https://www.numdam.org/article/AST_2004__295__117_0.pdf"
 fetched_at = "2026-10-26T16:26:35Z"
@@ -54,7 +54,7 @@ authors = "Tobias Finis"
 title = "Divisibility of anticyclotomic L-functions and theta functions with complex multiplication"
 year = 2006
 locator_scheme = "theorem"
-locator = "Theorem 1.1; Propositions 2.4, 3.6, 3.7; Theorem 4.1; Lemma 4.5"
+locator = "Theorem 1.1; §2, (3)-(6), (9), Propositions 2.2, 2.4, Corollary 2.3; Lemmas 3.1, 3.3, 3.5; Propositions 3.4, 3.6, 3.7; equations (13)-(15); Theorem 4.1; Lemma 4.5"
 url = "https://annals.math.princeton.edu/wp-content/uploads/annals-v163-n3-p02.pdf"
 fetched_from = "https://annals.math.princeton.edu/wp-content/uploads/annals-v163-n3-p02.pdf"
 fetched_at = "2026-10-26T16:27:12Z"
@@ -62,7 +62,7 @@ sha256 = "878674736df503052d7b0a58504740050016a3f7dd0a0048d66cd85eb4c40f82"
 licence_class = "publisher-open"
 status = "certified"
 accessed = "2026-10-26"
-cited_for = ["1.2", "4.1", "4.2", "4.3", "4.4", "4.5", "4.6", "5.1", "5.2"]
+cited_for = ["1.2", "4.1", "4.2", "4.3", "4.4", "4.5", "4.6", "4.7", "5.1", "5.2"]
 
 [[source]]
 id = "RUBIN87"
@@ -138,7 +138,7 @@ title = "On L-functions of Hecke characters and anticyclotomic towers"
 year = 2024
 arxiv = "2412.05867v1"
 locator_scheme = "theorem"
-locator = "Theorem 1; Property 1; §2; §4, Proposition 5"
+locator = "Introduction, p.1; Theorem 1; Property 1; §2; §4, Proposition 5"
 url = "https://arxiv.org/abs/2412.05867v1"
 fetched_from = "https://arxiv.org/pdf/2412.05867v1"
 fetched_at = "2026-10-26T16:31:48Z"
@@ -147,7 +147,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-26"
 version_note = "Locators refer to arXiv:2412.05867v1; the version of record is Acta Arithmetica 224 (2026), 99-116, not read."
-cited_for = ["0.1", "1.4", "3.4", "6.2", "6.3", "6.4"]
+cited_for = ["0.1", "0.2", "1.4", "3.4", "6.1", "6.2", "6.3", "6.4"]
 
 [[source]]
 id = "QUEYRUT74"
@@ -177,17 +177,33 @@ status = "waived"
 resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/13118#issuecomment-6787957436"
 
 [[source]]
+id = "KATO99"
+authors = "Kazuya Kato"
+title = "Generalized explicit reciprocity laws"
+year = 1999
+venue = "Algebraic number theory (Hapcheon/Saga, 1996), Adv. Stud. Contemp. Math. 1 (1999), 57-126"
+locator_scheme = "theorem"
+locator = "Theorem 4.3.1, case of height h = 1"
+licence_class = "none"
+status = "uncertified"
+version_note = "No open copy found; cited by its locator, which KATO04 gives at line 5495 (bibliography lines 6648-6649), without the text."
+cited_for = ["2.5"]
+
+[[source]]
 id = "YANG97"
 authors = "Tonghai Yang"
 title = "Theta liftings and Hecke L-functions"
 year = 1997
+venue = "J. reine angew. Math. 485 (1997), 25-53"
+doi = "10.1515/crll.1997.485.25"
 locator_scheme = "theorem"
-locator = "Theorem 2.6 (2.19), p.43; Theorem 2.15, p.48"
+locator = "Theorem 2.6, (2.19), p. 43; Theorem 2.15, p. 48"
 url = "https://gdz.sub.uni-goettingen.de/download/pdf/PPN243919689_0485/LOG_0007.pdf"
 fetched_from = "https://gdz.sub.uni-goettingen.de/download/pdf/PPN243919689_0485/LOG_0007.pdf"
-fetched_at = "2026-11-13T16:42:44Z"
+fetched_at = "2026-11-13T10:53:59Z"
 sha256 = "a98a539aaaba14a84da1c3e1b42c582dd4e757b4b169385ea20b44e4d25ea16b"
 licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-13"
-cited_for = ["4.2"]
+version_note = "Image-only scan read through OCR."
+cited_for = ["4.4"]
