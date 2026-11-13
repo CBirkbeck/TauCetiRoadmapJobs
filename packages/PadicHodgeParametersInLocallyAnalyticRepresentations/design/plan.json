@@ -2323,22 +2323,10 @@
   ],
   "gaps": [
     {
-      "slug": "embedding-selective-modification",
-      "needs": "For a de Rham (φ,Γ)-module D over R_{K,E} with labelled Hodge–Tate weights h and σ∈Σ_K, the module D_σ attached to the B-pair (W_e(D),Λ) with Λ_σ=W⁺_dR(D)_σ and Λ_τ=(t^{h_{n,τ}}B⁺_dR⊗_{K,τ}E)^{⊕n} for τ≠σ, characterised as the unique module with D⊂D_σ, D_σ[1/t]=D[1/t] and weights 𝔗_σ(h), with the induced D_pst(D)≅D_pst(D_σ) identifying σ-components of D_dR as filtered spaces (Ding, Proposition 2.5).",
-      "supplier": "PadicHodgeTheory",
-      "section": "Layer 4, §4.5 B-pairs, cohomology and general de Rham blocks"
-    },
-    {
       "slug": "principal-series-bernstein-completion",
-      "needs": "Over a finite E/ℚ_p, the Bernstein centre ℋ of the principal-series block of π_sm(φ), its completion Ĥ_φ at π_sm(φ), and for generic φ and each w∈S_n the isomorphism 𝒥_w:Ĥ_φ≅R_{w(φ),g} onto the completed local ring of ∏_i Spec ℋ_{w⁻¹(i)} at w(φ), with tangent maps compatible under reordering (CEGGPS Lemma 3.22; Ding §3.2.2).",
+      "needs": "Over a finite E/ℚ_p, the Bernstein centre ℋ of the principal-series block of π_sm(φ), its completion Ĥ_φ at π_sm(φ), and for generic φ and each w∈S_n that the ordered-character map 𝒥_w (the one LocallyAnalyticRepresentationsOfLocalGroups requests from the same section, with its reordering identity) induces an isomorphism Ĥ_φ≅R_{w(φ),g} onto the completed local ring of ∏_i Spec ℋ_{w⁻¹(i)} at w(φ) (CEGGPS Lemma 3.22; Ding §3.2.2).",
       "supplier": "SmoothRepresentationsOfLocalGroups",
       "section": "Layer SR.3, §SR.3.2 The Bernstein decomposition and centre"
-    },
-    {
-      "slug": "split-gln-harish-chandra",
-      "needs": "The Harish-Chandra isomorphism Z(U(gl_{n,Σ_K}))≅U(t_{Σ_K})^{S_n^{Σ_K}} for the split reductive ∏_σ gl_n over a finite, not algebraically closed, extension E/ℚ_p, with S_n^{Σ_K} acting by the ordinary permutation action (the dot action transported along μ↦μ−θ: ρ−θ=((n−1)/2)(1,…,1) is central, so the dot-invariants in μ−θ are the ordinary invariants in μ), normalised so that weight μ corresponds to the infinitesimal character of L(μ−θ), with the centre acting on Verma modules and on each L(μ) by its infinitesimal character.",
-      "supplier": "LieHighestWeight",
-      "section": "Layer 9: reductive Lie algebras and gl_n"
     }
   ],
   "coverage": [

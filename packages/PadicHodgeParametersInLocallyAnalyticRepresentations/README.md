@@ -1,7 +1,8 @@
 # Roadmap: p-adic Hodge parameters in locally analytic representations of GL_n
 
 **Summary.** For a generic noncritical crystabelline (φ,Γ)-module D of rank n over the Robba ring
-`R_{K,E}`, the smooth representation π_sm(φ) and the Hodge–Tate weights h fix the locally algebraic
+`R_{K,E}`, the smooth representation π_sm(φ) and the Hodge–Tate–Sen weights h (normalised so that the
+cyclotomic character has weight +1, see Conventions) fix the locally algebraic
 representation π_alg(φ,h) of GL_n(K), but from rank three on they forget the Hodge filtration of D.
 This roadmap constructs Ding's comparison: the unique surjection
 `t_D : Ext¹_{GL_n(K)}(π_alg(φ,h), π_1(φ,h)) ↠ Ext¹(D,D)/Ext¹_0(D,D)` that matches, refinement by
@@ -13,12 +14,14 @@ The end theorems are: the comparison theorem and its kernel dimension; the chara
 characters; its compatibility with parabolic induction and its decomposition over the embeddings of
 K; the recovery theorem, which says that π_min(D) determines, embedding by embedding, the modified
 modules D_σ (hence D itself when K = ℚ_p); and the realisation of π_min(D) as the annihilator of the
-maximal ideal of a first-order Artinian algebra A_D acting on the universal extension. The source is
-Ding, *p-adic Hodge parameters in the crystabelline representations of GL_n* (DING25), §3.2.
+maximal ideal of a first-order Artinian algebra A_D acting on the universal extension. These results
+are located in Ding, *p-adic Hodge parameters in the crystabelline representations of GL_n* (DING25),
+§3.2, pp. 47–59; each target gives its locator.
 
 ## Scope and ownership
 
-This roadmap owns the comparison of §3.2 of DING25 and everything built from it: the endpoint
+This roadmap owns the comparison between `Ext¹_{GL_n(K)}(π_alg(φ,h), π_1(φ,h))` and the trianguline
+first-order deformations of D, and everything built from it: the endpoint
 refinement families and block character directions used in the induction (Layer 0), the refinement
 presentation and the comparison map with its kernel (Layers 0–1), the minimal representation, its
 Ext¹ comparison, characterisation and scalar characters (Layer 2), its parabolic, single-embedding
@@ -27,42 +30,49 @@ Artinian algebras, universal extensions and the universal action (Layer 5).
 
 It owns none of the two theories being compared:
 
-- **The locally analytic side** is LocallyAnalyticRepresentationsOfLocalGroups. Its Layers LR.0–LR.1
+- **The locally analytic side** is LocallyAnalyticRepresentationsOfLocalGroups. Its Layers 0–1
   give admissible locally ℚ_p-analytic representations of GL_n(K), the Schneider–Teitelbaum duality,
   Ext groups computed among D(G,E)-modules with their long exact sequences, the identification of
   Ext¹ with extensions, tautological and universal extensions, and completed external tensor
-  products; LR.5 gives the Orlik–Strauch functors; LR.6 gives Emerton's closed induction; LR.7 gives
+  products (§§0.9, 1.5, 1.7–1.9); its §4.1 gives highest-weight and Harish-Chandra theory for split
+  reductive Lie algebras over E; its §§6.1–6.2 give the Orlik–Strauch functors and their exactness;
+  its §§7.1–7.3 give Emerton's Jacquet-module adjunction and closed induction; its §§8.1–8.14 give
   π_alg(φ,h), the principal series PS(w(φ),h), PS_1(w(φ),h), π_1(φ,h), the amalgam π(φ,h), the maps
-  ζ_w, the dimension of Ext¹(π_alg(φ,h), π_1(φ,h)) and its filtration by the images of the
-  locally algebraic, the self-extension and the refinement subspaces (Ding §§3.1.1–3.1.2); LR.8 gives
-  the parabolic subrepresentations `π_{F_P}(φ,h)`, the maps `ζ_{F_P}` and the amalgamation of the two
-  endpoint parabolics (Ding §3.1.3); LR.9 gives the locally σ-analytic theory, `π_{1,σ}(φ,h)` and the
-  decomposition of Ext¹ over the embeddings (Ding §3.1.4). The compact distribution algebras and
-  coadmissible modules behind these are LocallyAnalyticDistributionsPartII ND.0–ND.3, reached here
-  only through LR.0–LR.1.
-- **The (φ,Γ)-module side** is TriangulineVarietyAndItsLocalModel. Its Layer 9 gives the class
-  ΦΓ_nc(φ,h), the canonical labelled subquotients D_1 and C_1 and the modified endpoint diagrams of
-  D_σ; Layer 10 gives the refinement deformation spaces Ext¹_w(D,D) with the parameter maps κ_w,
-  their dimensions and Weyl transport, the common kernel Ext¹_0(D,D), the quotient deformation
-  spaces, the de Rham-up-to-twist and paraboline subspaces; Layer 11 gives the partial de Rham
-  deformation spaces and the first-order modification T_σ with its quotient comparison; Layer 12
-  gives the higher-intertwining relation, the spanning of the deformation space by the refinement
-  subspaces and the single-embedding recovery exact sequence (Ding §§2.1–2.4).
-- **Robba modules and Herr cohomology** are PhiGammaModulesAndIwasawaCohomology §§1.0, 1.2, 3.4a,
-  3.6 and 7.1–7.5 (the Robba ring, the étale equivalence, coefficient Robba modules over finite local
-  E-algebras, Herr cohomology, character modules `R_{K,E}(δ)`, weights, the de Rham criterion for
-  rank-one modules and triangulations).
+  ζ_w, the dimension of Ext¹(π_alg(φ,h), π_1(φ,h)) and its filtration by the images of the locally
+  algebraic, the self-extension and the refinement subspaces (Ding §§3.1.1–3.1.2); its §§9.1–9.7 give the
+  parabolic subrepresentations `π_{F_P}(φ,h)`, the maps `ζ_{F_P}` and the amalgamation of the two
+  endpoint parabolics (Ding §3.1.3); its §§10.1–10.7 give the locally σ-analytic theory,
+  `π_{1,σ}(φ,h)` and the decomposition of Ext¹ over the embeddings (Ding §3.1.4). The compact
+  distribution algebras, their Fréchet–Stein structure and the coadmissible modules behind these are
+  PadicLocalLanglandsForGL2Qp §0.1, reached here only through Layers 0–1 of
+  LocallyAnalyticRepresentationsOfLocalGroups.
+- **The (φ,Γ)-module side** is TriangulineVarietyAndItsLocalModel. Its Layer 10 gives the class
+  ΦΓ_nc(φ,h), the canonical labelled subquotients D_1 and C_1, the modified module D_σ (imported there
+  from PadicHodgeTheory §5.2) and its modified endpoint diagrams; Layer 11 gives the refinement
+  deformation spaces Ext¹_w(D,D) with the parameter maps κ_w, their dimensions and Weyl transport, the
+  common kernel Ext¹_0(D,D), the quotient deformation spaces, the de Rham-up-to-twist and paraboline
+  subspaces; Layer 12 gives the partial de Rham deformation spaces and the first-order modification
+  T_σ with its quotient comparison; Layer 13 gives the higher-intertwining relation, the spanning of
+  the deformation space by the refinement subspaces and the single-embedding recovery exact sequence
+  (Ding §§2.1–2.4).
+- **Robba modules and rank-one characters** are PhiGammaModulesAndIwasawaCohomology §§1.0, 7.1–7.4
+  and 7.2a (the étale realisation of Galois representations, character modules `R_{K,E}(δ)` with
+  their tensor laws, their cohomology and rank-one submodules, Sen modules, weights over Artinian
+  coefficients, the rank-one classification and the de Rham criterion for rank-one modules).
 - **Deformation rings of (φ,Γ)-modules** with their trianguline and de Rham quotients, tangent
   spaces and the first-order Cartesian comparison are LocalGaloisDeformationRings §§0.4 and 1.23.
-- **B-pairs and labelled de Rham realisations** are PadicHodgeTheory §4.5; the modified module D_σ
-  of Ding Proposition 2.5(1) is constructed there (supplier contract below).
+- **B-pairs and labelled de Rham realisations** are PadicHodgeTheory §4.5. The modified module D_σ
+  of Ding Proposition 2.5(1) is consumed through TriangulineVarietyAndItsLocalModel §10.5, which
+  imports it from PadicHodgeTheory §5.2.
 - **The completed Bernstein centre** of the principal-series block of π_sm(φ), with Ding's
   ordered-character isomorphisms 𝒥_w, is SmoothRepresentationsOfLocalGroups §SR.3.2 (supplier
   contract below).
 - **Harish-Chandra theory** for the split reductive Lie algebra `gl_{n,Σ_K}` = ∏_σ gl_n over E is
-  LieHighestWeight Layers 3, 7 and 9 (supplier contract below). Tau Ceti's `TauCeti.hcProjection`
-  exists at the pin for Killing-semisimple Lie algebras over a characteristic-zero field and does not
-  cover the reductive gl_n.
+  LocallyAnalyticRepresentationsOfLocalGroups §4.1, which descends LieHighestWeight Layers 3, 4, 5, 7
+  and 9 from an algebraic closure (supplier contract below); this roadmap only translates its dot
+  action into the variable used in §2.6. Tau Ceti's `TauCeti.hcProjection` exists at the pin for
+  Killing-semisimple Lie algebras over a characteristic-zero field and does not cover the reductive
+  gl_n.
 
 Ding's local–global applications (§4 of DING25: patched eigenvarieties and the occurrence of π_min(D)
 in completed cohomology) belong to the completed-cohomology local–global compatibility roadmaps and
@@ -72,13 +82,27 @@ representation attached to D by a p-adic local Langlands correspondence.
 ## Conventions
 
 **Standing hypotheses (H).** p is a prime (p = 2 allowed). K/ℚ_p is finite of degree d_K, K_0 its
-maximal unramified subfield and ϖ_K a uniformiser. E/ℚ_p is a finite extension containing σ(K) for
-every embedding σ : K ↪ E, and Σ_K is the set of these embeddings, so #Σ_K = d_K. Fix n ≥ 1 and put
+maximal unramified subfield and ϖ_K a uniformiser. E ⊂ ℚ̄_p is a finite extension of ℚ_p that
+contains σ(K) for every embedding σ : K ↪ ℚ̄_p (equivalently, E contains a Galois closure of K, or
+`K ⊗_{ℚ_p} E ≅ E^{d_K}`); Σ_K = `Hom_{ℚ_p}(K, E)` is the set of embeddings K ↪ E, so #Σ_K = d_K (DING25
+§2.1, p. 9). Witness: for K = ℚ_p(√p), E = ℚ_p fails (H) since √p ∉ ℚ_p, and E = ℚ_p(√p) has the
+two embeddings √p ↦ ±√p; a condition quantified only over the embeddings K ↪ E would hold vacuously
+for E = ℚ_p, with Σ_K empty and #Σ_K = 0 ≠ 2 = d_K. Fix n ≥ 1 and put
 G = GL_n(K), with T ⊂ B the diagonal torus and upper Borel and B⁻ the lower Borel. The smooth
 characters φ_1,…,φ_n : K^× → E^× are *generic*: φ_i/φ_j ∉ {1, |·|_K} for i ≠ j. The weight
 h = `(h_{i,σ})` ∈ `ℤ^{{1,…,n}×Σ_K}` is strictly dominant: `h_{1,σ}` > ⋯ > `h_{n,σ}` for every σ. The
-module D lies in ΦΓ_nc(φ,h) (TriangulineVarietyAndItsLocalModel §9.1 for n ≥ 2; for n = 1,
-ΦΓ_nc(φ,h) consists of the single module `R_{K,E}(φ_1z^{h_1})`). D need not be étale. Every theorem
+`h_{i,σ}` are Hodge–Tate–Sen weights in Ding's normalisation (DING25 §2.1, p. 10): the cyclotomic
+character ε has weight +1, so `R_{K,E}(z^k)` has weight `k_σ` at σ, and `h_{i,σ}` is both the
+exponent at σ of the algebraic part of the i-th graded parameter of a noncritical refinement and
+the Sen weight at σ. These are the character weights of PhiGammaModulesAndIwasawaCohomology §7.3
+and the Sen labels of its §7.2a, and the negatives of the Hodge–Tate weights of that roadmap's
+standing convention, in which ℚ_p(1) has Hodge–Tate weight −1; a weight k at σ is a jump of the
+σ-Hodge filtration at −k. Witness: for n = 1, K = ℚ_p, φ_1 = |·| and h_1 = 1, D = `R_{ℚ_p,E}(x|x|)`
+= `R(ε)` has weight +1 here, Hodge–Tate weight −1 in PhiGammaModulesAndIwasawaCohomology, and its
+Hodge filtration jumps at −1; every character and modification formula below uses the weights h of
+this normalisation. The module D lies in ΦΓ_nc(φ,h) (TriangulineVarietyAndItsLocalModel §10.1 for n ≥ 2, where D is regular
+because h is strictly dominant; for n = 1, ΦΓ_nc(φ,h) consists of the single module
+`R_{K,E}(φ_1z^{h_1})`). D need not be étale. Every theorem
 below assumes (H) unless it says otherwise; the purely combinatorial statements of Layer 0 and 1.1
 state their own weaker hypotheses.
 
@@ -89,44 +113,54 @@ x ↦ ∏_σ `σ(x)^{k_σ}`; for a weight μ of the torus, z^μ(diag(t_i)) = `�
 θ = (0, −1, …, 1−n), λ = h − θ (so `λ_{i,σ}` = `h_{i,σ}` + i − 1, dominant), η = 1 ⊠ |·|_K ⊠ ⋯ ⊠
 `|·|_K^{n−1}` and N = n(n−1)/2. For a standard parabolic P with Levi blocks of sizes n_1,…,n_r,
 θ^P is constant equal to −(n_1 + ⋯ + `n_{i−1}`) on the i-th block; every block comparison carries the
-twist `ε^{−1}` ∘ θ^P (LocallyAnalyticRepresentationsOfLocalGroups LR.7, target gln-conventions).
+twist `ε^{−1}` ∘ θ^P (LocallyAnalyticRepresentationsOfLocalGroups §§8.1 and 9.1).
 
 **Permutations.** S_n acts on tuples by w(φ)_i = `φ_{w^{−1}(i)}`, so the refinement attached to w
-places φ_i in position w(i); its triangulation has graded parameters `φ_{w^{−1}(i)}z^{h_i}`. The
-filtration F is D_1 ⊂ D (graded pieces of ranks n−1 and 1, parabolic `P_{n−1}`) and G is
+places φ_i in position w(i); its triangulation has graded parameters `φ_{w^{−1}(i)}z^{h_i}`. For
+n ≥ 2 the filtration F is D_1 ⊂ D (graded pieces of ranks n−1 and 1, parabolic `P_{n−1}`) and G is
 `R_{K,E}(φ_nz^{h_1})` ⊂ D (ranks 1 and n−1, parabolic P_1), where P_i is the maximal standard
 parabolic obtained by deleting the simple root i. A refinement w is compatible with F exactly when
-w(n) = n and with G exactly when w(n) = 1.
+w(n) = n and with G exactly when w(n) = 1. For n = 1 there is no proper parabolic and F and G are not
+defined.
 
 **Character spaces.** H_char = Hom(K^×, E) is the space of locally ℚ_p-analytic additive characters,
 of dimension 1 + d_K; its smooth subspace has dimension 1 and its locally σ-analytic subspace,
 Hom_σ(K^×, E), dimension 2. H_T = Hom(T(K), E) ≅ H_char^n via ψ(t) = Σ_i ψ_i(t_i); Hom_sm(T(K),E),
 Hom_σ(T(K),E), `Hom_{g′}(T(K),E)` and `Hom_{P,g′}(T(K),E)` are as in LocallyAnalyticRepresentationsOfLocalGroups
-LR.7 (gln-conventions) and TriangulineVarietyAndItsLocalModel §§10.5 and 10.8.
+§8.1 and TriangulineVarietyAndItsLocalModel §§11.5 and 11.8.
 
 **Fixed objects.** Throughout:
 
 ```text
-A   = π_alg(φ,h) = π_sm(φ) ⊗_E L(λ)           (LR.7, pi-alg)
-V   = π_1(φ,h)                                (LR.7, ps1-and-pi1)
-𝔈   = Ext¹_G(A, V)                            dim n + (2^n − 1)·d_K   (LR.7, ext-pi1)
-Q   = Ext¹(D,D) / Ext¹_0(D,D)                 dim n + n(n+1)·d_K/2    (TriangulineVarietyAndItsLocalModel §10.4)
+A   = π_alg(φ,h) = π_sm(φ) ⊗_E L(λ)
+V   = π_1(φ,h)
+𝔈   = Ext¹_G(A, V)                            dim n + (2^n − 1)·d_K
+Q   = Ext¹(D,D) / Ext¹_0(D,D)                 dim n + n(n+1)·d_K/2
 ```
+
+Here A, V and dim 𝔈 are LocallyAnalyticRepresentationsOfLocalGroups §§8.2, 8.7 and 8.12, and Q with
+its dimension is TriangulineVarietyAndItsLocalModel §11.4.
 
 For a refinement w, 𝔈_w ⊂ 𝔈 is the image of ζ_w : H_T → 𝔈 and Q_w ⊂ Q the image of Ext¹_w(D,D);
 𝔈_g ⊂ `𝔈_{g′}` ⊂ 𝔈_w are the images of the locally algebraic self-extensions and of all
 self-extensions of A (dimensions n, n + d_K, n(1 + d_K)); Q_g ⊂ `Q_{g′}` ⊂ Q_w are the images of the
 de Rham and de Rham-up-to-twist deformations (same dimensions). For a P-filtration F_P of D,
-`𝔈_{F_P}` and `Q_{F_P}` are the parabolic images (LR.8, pi-fp; TriangulineVarietyAndItsLocalModel §10.6). For σ ∈ Σ_K, 𝔈_σ is the image
-of Ext¹_σ(A, `π_{1,σ}(φ,h)`) (dimension n + 2^n − 1) and Q_σ the image of the deformations that are
-de Rham at every τ ≠ σ (dimension n + n(n+1)/2) (LR.9, sigma-ext-pi1; TriangulineVarietyAndItsLocalModel §§11.1–11.2). The
-parameter isomorphisms are κ_w : Q_w ≅ H_T (TriangulineVarietyAndItsLocalModel §10.4) and ζ_w : H_T ≅ 𝔈_w (LR.7, ext-filtration);
+`𝔈_{F_P}` and `Q_{F_P}` are the parabolic images (LocallyAnalyticRepresentationsOfLocalGroups §9.3;
+TriangulineVarietyAndItsLocalModel §§11.6–11.7). For σ ∈ Σ_K, 𝔈_σ is the image of
+Ext¹_σ(A, `π_{1,σ}(φ,h)`) (dimension n + 2^n − 1) and Q_σ the image of the deformations that are
+de Rham at every τ ≠ σ (dimension n + n(n+1)/2) (LocallyAnalyticRepresentationsOfLocalGroups §10.5;
+TriangulineVarietyAndItsLocalModel §§12.1–12.2); the push-forward identifies Ext¹_σ(A, `π_{1,σ}(φ,h)`)
+with 𝔈_σ. For a P-filtration, `𝔈_{σ,F_P}` = 𝔈_σ ∩ `𝔈_{F_P}` is the image of
+Ext¹_σ(A, `π_{F_P,σ}(φ,h)`) (LocallyAnalyticRepresentationsOfLocalGroups §10.6). The parameter
+isomorphisms are κ_w : Q_w ≅ H_T (TriangulineVarietyAndItsLocalModel §11.4) and ζ_w : H_T ≅ 𝔈_w
+(LocallyAnalyticRepresentationsOfLocalGroups §8.14);
 a_w : Q_w ↪ Q is the inclusion. The letter σ subscript on an Ext group always means "algebraic, or de
 Rham, at every embedding other than σ", never a condition at σ.
 
-**Citations.** LR.k denotes Layer LR.k of LocallyAnalyticRepresentationsOfLocalGroups, followed by
-the name of the target there (for example LR.7, ext-pi1); sections § of other roadmaps are their own
-numbering.
+**Citations.** A section § following another roadmap's name is in that roadmap's own numbering; a §
+without a roadmap name is a section of this roadmap. A theorem number without a source name (Theorem
+1.4) is this roadmap's; a source's theorems are written with its name (Ding Remark 3.7, DING25
+Theorem 3.21). A bare parenthesised number such as (3.51) is always an equation number of DING25.
 
 **Coefficients and Artinian algebras.** Artinian algebras are local Artinian E-algebras with residue
 field E. Tangent spaces are Hom_E(𝔪/𝔪², E) and cotangent spaces 𝔪/𝔪²; for a first-order algebra
@@ -142,7 +176,10 @@ Linear algebra at the pin: `LinearMap.ker`, `LinearMap.range`, `LinearMap.prod`,
 quotient by its kernel), `LinearMap.finrank_range_add_finrank_ker` (rank–nullity on a
 finite-dimensional source), `Submodule.finrank_sup_add_finrank_inf_eq`, `Module.Dual`; permutations
 `Equiv.Perm` of `Fin n`; the square-zero algebras `TrivSqZeroExt` and `DualNumber`; `IsLocalRing`;
-`CategoryTheory.Abelian.Ext` for Ext in module categories. None of these knows locally analytic
+`CategoryTheory.Abelian.Ext` for Ext in module categories, with the Yoneda product
+`CategoryTheory.Abelian.Ext.comp`, the class `CategoryTheory.ShortComplex.ShortExact.extClass` of a
+short exact sequence and the long exact sequence `CategoryTheory.Abelian.Ext.covariantSequence`, whose
+connecting maps are products with that class (used in §2.2). None of these knows locally analytic
 representations, Robba rings or Ext between them.
 
 ### From Tau Ceti
@@ -154,104 +191,108 @@ evaluations), in `TauCeti/Algebra/Lie/HighestWeight/CentralCharacter/HarishChand
 the semisimple shape of the input of §2.6; they do not apply to gl_n, whose Killing form is
 degenerate.
 
-### From TauCetiRoadmap.RepresentationTheory.LieHighestWeight
-
-Layer 3 (Verma modules, the centre acting on a Verma module by a scalar), Layer 7 (the centre of
-U(L) and the Harish-Chandra isomorphism with the dot action) and Layer 9 (gl_n as a reductive Lie
-algebra, its diagonal Cartan, dominance and the scalar-centre transfer). These are stated over an
-algebraically closed field of characteristic zero, and Layer 7's Harish-Chandra isomorphism for a
-Killing-semisimple algebra.
-
-What LieHighestWeight must provide (gap:split-gln-harish-chandra): the Harish-Chandra isomorphism
-`Z(U(gl_{n,Σ_K})) ≅ U(t_{Σ_K})^{W_{n,K}}` for the split reductive Lie algebra
-`gl_{n,Σ_K}` = `∏_{σ∈Σ_K}` gl_n over a finite (not algebraically closed) extension E of ℚ_p, with
-`W_{n,K}` = `S_n^{Σ_K}` acting by the ordinary permutation action on `t_{Σ_K}`, normalised so that a
-weight μ corresponds to the infinitesimal character `ξ_{μ−θ}` of L(μ − θ) (the highest-weight module
-for the upper-triangular Borel), together with the fact that the centre acts on every Verma module,
-and on every finite-dimensional irreducible L(μ), by its infinitesimal character. The ordinary action
-is the dot action w·ν = w(ν + ρ) − ρ transported along μ ↦ μ − θ: `ξ_{μ−θ}` is evaluation at μ − θ + ρ
-under the ρ-shifted isomorphism, and since ρ − θ = ((n−1)/2)(1,…,1) at each σ is fixed by every
-permutation, `ξ_{μ−θ}` = `ξ_{μ′−θ}` exactly when μ′ ∈ `S_n^{Σ_K}`μ; the dot-invariants in the variable
-μ − θ are the ordinary invariants in μ, and the invariant ring is the symmetric polynomials in each
-σ-block, as in §2.6.
-
 ### From TauCetiRoadmap.LocallyAnalyticRepresentationsOfLocalGroups
 
-- LR.1 targets ext-groups, ext1-extensions and self-extension-dual-numbers: Ext^i_G(V_1,V_2) =
-  `Ext^i_{D(G,E)}(V_2′, V_1′)`, push-forward and pull-back, the long exact sequences in both
-  variables, Ext¹ as Yoneda classes of admissible extensions, the dual-number structure on a
-  self-extension, and the tautological extension of V_1 ⊗_E U by V_2 for a subspace U of a
-  finite-dimensional Ext¹_G(V_1,V_2) (the universal extension when U is everything), with its
-  functoriality under restriction to a subspace and push-out along V_2 → W. Assumed: the classifying
-  isomorphism `Ext¹_G(V_1 ⊗_E U, V_2) ≅ Hom_E(U, Ext¹_G(V_1, V_2))` for finite-dimensional U.
-- LR.0 target completed-external-tensor and LR.1 target admissible-external-tensor: completed
-  external tensor products of admissible representations of the Levi blocks.
-- LR.5 target orlik-strauch-functor: F^G_P(M, π) with the U(g)-action on F^G_P(M, π) induced from M.
-- LR.6 target closed-induction: Emerton's closed induction `I_{P⁻}^G`, distinct from full locally
-  analytic induction.
-- LR.7 targets gln-conventions, pi-alg (End_G(A) = E), principal-series-ps
-  (PS(w(φ),h) = `F^{GL_n}_{B⁻}(M⁻(−λ), w(φ)η)`), principal-series-constituents, constituent-labels
-  (all nonempty proper I ⊂ {1,…,n}), ps1-and-pi1 (soc V = A, End(V) = E), self-extensions (Ding
-  Proposition 3.3, including the Weyl transport `ζ_{w_2}` ∘ `(w_2w_1^{−1})` = `ζ_{w_1}` on `Hom_{g′}`),
-  constituent-ext-lines (Ding Lemma 3.5, in particular part (2): pull-back along a nonsplit
-  self-extension of A is a bijection on Ext¹(·, `C(I,s_{i,σ})`)), zeta-w (Ding (3.10)–(3.11) and Remark
-  3.7), ext-ps1 (Ding Proposition 3.6), ext-pi1 (Ding Proposition 3.8 and Remark 3.9: dim 𝔈 =
-  n + (2^n − 1)d_K, surjectivity of (ζ_w)_w : ⊕_w H_T ↠ 𝔈, and 𝔈 ≅ Ext¹_G(A, π(φ,h))),
-  finite-slope-amalgam, ext-filtration (𝔈_g ⊂ `𝔈_{g′}` ⊂ 𝔈_w with dimensions n, n + d_K, n(1 + d_K)).
-- LR.8 targets parabolic-levi-data, parabolic-constituents, pi-fp, ext-pi-fp, zeta-fp,
-  zeta-fp-bijective (Ding Proposition 3.12, including compatible-refinement spanning of `𝔈_{F_P}` and
-  Weyl transport (3.30)) and endpoint-amalgamation (Ding Proposition 3.13: the exact sequence
-  `0 → 𝔈_{g′} → 𝔈_F ⊕ 𝔈_G → 𝔈 → 0` with first map b ↦ (b, −b), and ζ_F, ζ_G).
-- LR.9 targets sigma-analytic-representation, pi1-sigma (`π_{1,σ}(φ,h)` is the maximal
-  `g_{Σ_K∖{σ}}`-algebraic subrepresentation of V), sigma-self-extensions, sigma-ext-ps1, sigma-ext-pi1
-  (Ding Proposition 3.18: dim 𝔈_σ = n + 2^n − 1, the σ-refinement surjection, and
-  `⊕_σ (𝔈_σ/𝔈_g) ≅ 𝔈/𝔈_g`), sigma-parabolic and sigma-amalgamation.
+- §1.7 (Ext^i_G(V_1,V_2) = `Ext^i_{D(G,E)}(V_2′, V_1′)`, push-forward and pull-back, the long exact
+  sequences in both variables), §1.8 (Ext¹ as Yoneda classes of admissible extensions, also for
+  locally σ-analytic representations), §1.9 (the dual-number structure on a self-extension, the
+  deformed characters χ(1 + ψε), and the tautological extension of V_1 ⊗_E U by V_2 for a subspace U
+  of a finite-dimensional Ext¹_G(V_1,V_2), the universal extension when U is everything, with its
+  functoriality under restriction to a subspace and push-out along V_2 → W). Assumed: the
+  classifying isomorphism `Ext¹_G(V_1 ⊗_E U, V_2) ≅ Hom_E(U, Ext¹_G(V_1, V_2))` for
+  finite-dimensional U (§1.9 (ii)).
+- §0.9 and §1.5: completed external tensor products of admissible representations of the Levi
+  blocks and their admissibility.
+- §4.1: highest-weight theory for split reductive Lie algebras over a field of characteristic zero,
+  descended from LieHighestWeight Layers 3, 4, 5, 7 and 9, as products over σ for
+  `gl_{n,Σ_K}` = `∏_{σ∈Σ_K}` gl_n over E with its diagonal Cartan `t_{Σ_K}` and upper Borel. Used here
+  in the form of §4.1 (iv): the Harish-Chandra map identifies Z(U(`gl_{n,Σ_K}`)) with the invariants
+  of `U(t_{Σ_K})` under the dot action w·ν = w(ν + ρ) − ρ of `S_n^{Σ_K}`, where
+  ρ = ((n−1)/2, (n−3)/2, …, (1−n)/2) at each σ, and the Verma modules M(ν), M(ν′) (hence their simple
+  quotients) have equal infinitesimal characters exactly when ν′ lies in the dot orbit of ν. This
+  roadmap writes `ξ_{μ−θ}` for the infinitesimal character of M(μ − θ) and of L(μ − θ), that is, it
+  uses the variable μ = ν + θ. Since ρ − θ = ((n−1)/2)(1,…,1) at each σ is fixed by every permutation,
+  w·(μ − θ) = w(μ) − θ: the dot action in ν is the ordinary permutation action in μ, `ξ_{μ−θ}` =
+  `ξ_{μ′−θ}` exactly when μ′ ∈ `S_n^{Σ_K}`μ, and the invariant ring in the variable μ is the symmetric
+  polynomials in each σ-block (§2.6).
+- §§6.1–6.2: the Orlik–Strauch functor F^G_P(M, π) with the U(g)-action on F^G_P(M, π) induced from
+  M, and its exactness in M (used in §2.1 for the multiplicity of A in PS(w(φ),h)).
+- §§7.1–7.3: Emerton's Jacquet-module adjunction, Jacquet modules of very strongly admissible
+  representations, and Emerton's closed induction `I_{P⁻}^G`, distinct from full locally analytic
+  induction, with its value on deformed characters (§7.3 (iv)).
+- §8.1 (θ, θ^P, w(φ), η, ε, λ = h − θ, `Hom_{g′}` and Hom_σ), §8.2 (π_alg(φ,h), End_G(A) = E),
+  §8.3 (PS(w(φ),h) = `F^{GL_n}_{B⁻}(M⁻(−λ), w(φ)η)`), §8.4 (constituents and socles of the principal
+  series), §8.5 (the labels I run over all nonempty proper subsets of {1,…,n}), §8.7 (PS_1(w(φ),h)
+  and π_1(φ,h), soc V = A, End(V) = E), §8.8 (Ding Proposition 3.3, including the Weyl transport
+  `ζ_{w_2}` ∘ `(w_2w_1^{−1})` = `ζ_{w_1}` on `Hom_{g′}`), §8.9 (Ding Lemma 3.5, in particular part
+  (2): pull-back along a nonsplit self-extension of A is a bijection on Ext¹(·, `C(I,s_{i,σ})`)),
+  §8.10 (ζ_w: Ding (3.10)–(3.11) and Remark 3.7), §8.11 (Ding Proposition 3.6), §8.12 (Ding
+  Proposition 3.8 and Remark 3.9: dim 𝔈 = n + (2^n − 1)d_K, surjectivity of
+  (ζ_w)_w : ⊕_w H_T ↠ 𝔈, and 𝔈 ≅ Ext¹_G(A, π(φ,h))), §8.13 (the amalgam π(φ,h)), §8.14
+  (𝔈_g ⊂ `𝔈_{g′}` ⊂ 𝔈_w with dimensions n, n + d_K, n(1 + d_K)).
+- §§9.1–9.7: the Levi data of a P-filtration and the parabolic induction (3.19), its constituents,
+  `π_{F_P}(φ,h)` and `𝔈_{F_P}` (§9.3), Ext¹(A, `π_{F_P}(φ,h)`) (§9.4), the maps `ζ_{F_P}` (§9.5),
+  their bijectivity with compatible-refinement spanning of `𝔈_{F_P}` and Weyl transport (3.30) (§9.6,
+  Ding Proposition 3.12), and the amalgamation of the two endpoint parabolics (§9.7, Ding
+  Proposition 3.13: the exact sequence `0 → 𝔈_{g′} → 𝔈_F ⊕ 𝔈_G → 𝔈 → 0` with first map
+  b ↦ (b, −b), and ζ_F, ζ_G).
+- §§10.1–10.7: locally σ-analytic and `g_{Σ_K∖{σ}}`-algebraic representations and Ext¹_σ (§10.1);
+  `π_{1,σ}(φ,h)`, the maximal `g_{Σ_K∖{σ}}`-algebraic subrepresentation of V, and `π_{F_P,σ}(φ,h)`
+  (§10.2); σ-analytic self-extensions (§10.3); Ext¹_σ(A, `PS_{1,σ}(w(φ),h)`) (§10.4); Ding
+  Proposition 3.18 (§10.5: dim 𝔈_σ = n + 2^n − 1, the σ-refinement surjection, and
+  `⊕_σ (𝔈_σ/𝔈_g) ≅ 𝔈/𝔈_g`); the σ-parabolic spaces `𝔈_{σ,F_P}` (§10.6); the σ-amalgamation of the
+  endpoint parabolics, `𝔈_{σ,F}` + `𝔈_{σ,G}` = 𝔈_σ (§10.7, Ding Proposition 3.20).
 
 ### From TauCetiRoadmap.TriangulineVarietyAndItsLocalModel
 
-- §9.1 (ΦΓ_nc(φ,h), refinements and their parameters `φ_{w^{−1}(i)}z^{h_i}`), §9.2 (D_1, C_1 and the
-  canonical labelled subquotients), §9.6 (the modified endpoints `D_{1,σ}`, `C_{1,σ}` and the parameters
-  `w(φ)z^{𝔗_σ(h)}` of every refinement of D_σ), §9.9 (surjectivity of 𝔗_σ on isomorphism classes).
-- §10.1 (Ext¹ of a rank-one module as Hom(K^×, E), ψ ↔ δ(1 + εψ)), §10.2 (Ext¹_w, κ_w, Ext¹_g),
-  §10.3 (dimensions, surjectivity of κ_w, Weyl transport on Ext¹_g: Ding Proposition 2.10 and
-  Lemma 2.11), §10.4 (Ext¹_0, the quotient Q, Q_w ≅ H_T, Q_g ≅ Hom_sm(T(K),E), dim Q), §10.5
-  `(Ext¹_{g′})`, §§10.6–10.8 (paraboline subspaces, `Q_{F_P} ≅ ∏_i Q(M_i)` and `Hom_{P,g′}`, Ding
+- §10.1 (ΦΓ_nc(φ,h), regular modules, refinements and their parameters `φ_{w^{−1}(i)}z^{h_i}`),
+  §10.2 (D_1, C_1 and the canonical labelled subquotients), §10.3 (the rank-(n−1) injection pencil),
+  §10.5 (the modified module D ⊂ D_σ with D_σ[1/t] = D[1/t], Hodge–Tate–Sen weights 𝔗_σ(h), equal to
+  h_σ at σ and to `h_{n,τ}` at every τ ≠ σ, and the same σ-filtered de Rham module, imported there
+  from PadicHodgeTheory §5.2; the modified endpoints `D_{1,σ}`, `C_{1,σ}`, formed with the ambient
+  off-σ cutoff `h_{n,τ}` and not with the lowest weight of D_1 or C_1; and the parameters
+  `w(φ)z^{𝔗_σ(h)}` of every refinement of D_σ), §10.7 (the rank-three example of Ding
+  Example 2.9), §10.8 (surjectivity of 𝔗_σ on isomorphism classes).
+- §11.1 (Ext¹ of a rank-one module as Hom(K^×, E), ψ ↔ δ(1 + εψ)), §11.2 (Ext¹_w, κ_w, Ext¹_g),
+  §11.3 (dimensions, surjectivity of κ_w, Weyl transport on Ext¹_g: Ding Proposition 2.10 and
+  Lemma 2.11), §11.4 (Ext¹_0, the quotient Q, Q_w ≅ H_T, Q_g ≅ Hom_sm(T(K),E), dim Q), §11.5
+  `(Ext¹_{g′})`, §§11.6–11.8 (paraboline subspaces, `Q_{F_P} ≅ ∏_i Q(M_i)` and `Hom_{P,g′}`, Ding
   Corollaries 2.14–2.15 and (2.19)–(2.21)).
-- §11.1–§11.2 (partial de Rham conditions and Q_σ), §11.4 (the first-order modification T_σ),
-  §11.6 (the modified zero subspace), §11.7 (Ding Corollary 2.27: `Q_*(D) ≅ Q_*(D_σ)` for
-  * = g, σ, (σ, F_P), compatibly with parabolic products).
-- §12.8 (Ding Proposition 2.12: ⊕_w Ext¹_w(D,D) → Ext¹(D,D) is surjective, also modulo Ext¹_0),
-  §12.13 (the single-embedding relation ℒ_σ(D_σ, `D_{1,σ}`, `C_{1,σ}`) inside its ambient space
-  `𝒱_σ(D_{1,σ}, C_{1,σ})`), §12.14 (Ding (2.42) and Corollary 2.38(1): the exact sequence
+- §§12.1–12.2 (partial de Rham conditions and Q_σ), §12.4 (the first-order modification T_σ, which
+  applies the same ambient cutoff to saturated filtrations and their graded pieces),
+  §12.6 (the modified zero subspace), §12.7 (Ding Corollary 2.27: `Q_*(D) ≅ Q_*(D_σ)` for
+  * = g, σ, (σ, F_P), compatibly with parabolic products and with the graded modifications).
+- §13.8 (Ding Proposition 2.12: ⊕_w Ext¹_w(D,D) → Ext¹(D,D) is surjective, also modulo Ext¹_0),
+  §13.13 (the single-embedding relation ℒ_σ(D_σ, `D_{1,σ}`, `C_{1,σ}`) inside its ambient space
+  `𝒱_σ(D_{1,σ}, C_{1,σ})`), §13.14 (Ding (2.42) and Corollary 2.38(1): the exact sequence
   `0 → ℒ_σ → 𝒱_σ → Q_σ(D_σ) → 0`, and equality of the relations for fixed endpoints and φ_n is
-  equivalent to D_σ ≅ D′_σ), §12.16 (Ding Corollary 2.40: refinement spanning of Q_σ for D and D_σ).
+  equivalent to D_σ ≅ D′_σ), §13.16 (Ding Corollary 2.40: refinement spanning of Q_σ for D and D_σ).
 
-These sections assume n ≥ 2; the rank-one case they reduce to is §10.1.
+These sections assume n ≥ 2; the rank-one case they reduce to is §11.1. Section 10.1 admits weakly
+decreasing weights so that it contains the modified modules D_σ; the module D of (H) is regular,
+since h is strictly dominant, and Theorem 1.4 is applied only to regular modules.
 
 ### From TauCetiRoadmap.PhiGammaModulesAndIwasawaCohomology
 
 §1.0 (the étale realisation of E-representations of G_K as étale Robba modules, with coefficient
-algebras), §1.2 (relative (φ,Γ_K)-modules over a finite local E-algebra A, the coefficient Robba
-modules and their étale equivalence), §§3.4a and 3.6 (the Herr complex and its comparison with
-Galois cohomology), §7.1 (the rank-one modules `R_{K,E}(δ)`, written `R_{E,K}(δ)` there, with
-ε = `N_{K/ℚ_p}|N_{K/ℚ_p}|` the Tate character), §7.3 (weights of characters over Artinian
-coefficients, locally algebraic characters), §7.4 (a rank-one module `R_{K,E}(δ)` is de Rham exactly
-when δ is locally algebraic), §7.5 (triangulations).
+algebras; used in §4.2 to pass from D to ρ), §7.1 (the rank-one modules `R_{K,E}(δ)`, written
+`R_{E,K}(δ)` there, with ε = `N_{K/ℚ_p}|N_{K/ℚ_p}|` the Tate character, and their tensor and
+coefficient-change laws, used in §5.1 to twist deformations by a character), §7.2 (H⁰, H¹, H² of
+the rank-one modules `R_{K,E}(δ)` over a coefficient field and their (φ,Γ)-submodules
+`∏_σ t_σ^{m_σ} R_{K,E}(δ)`; used in
+§5.1 for the vanishing of Hom(R(φ_i)[1/t], R(φ_j)[1/t]) when φ_i/φ_j is not algebraic), §7.2a (Sen
+modules and Sen polynomials over affinoid coefficients, applied over E[ε]/ε² in §2.6), §7.3 (weights
+of characters over Artinian coefficients, locally algebraic characters), §7.4 (rank-one
+classification over Artinian coefficients, and, over a coefficient field, a rank-one module
+`R_{K,E}(δ)` is de Rham exactly when δ is locally algebraic).
 
 ### From TauCetiRoadmap.PadicHodgeTheory
 
 §4.5 (the Galois B-pair of a Robba module over a finite coefficient field, imported there from
 PhiGammaModulesAndIwasawaCohomology §1.6 with its exact tensor equivalence with Robba modules, and
-its labelled positive de Rham lattices), §5.2 (Berger's modification of a filtered module with finite
-descent).
-
-What PadicHodgeTheory must provide (gap:embedding-selective-modification): for a de Rham
-(φ,Γ)-module D over `R_{K,E}` with labelled Hodge–Tate weights h and an embedding σ ∈ Σ_K, the module
-D_σ attached to the B-pair (W_e(D), Λ) where Λ_σ = W⁺_dR(D)_σ and Λ_τ = (`t^{h_{n,τ}}` B⁺_dR `⊗_{K,τ}`
-`E)^{⊕n}` for τ ≠ σ; its characterisation as the unique module with D ⊂ D_σ, D_σ[1/t] = D[1/t] and
-Hodge–Tate weights 𝔗_σ(h) (equal to h at σ and to `h_{n,τ}` at every τ ≠ σ), and the induced
-isomorphism D_pst(D) ≅ D_pst(D_σ) identifying the σ-components of D_dR as filtered E-vector spaces
-(DING25 Proposition 2.5, p. 13).
+its labelled positive de Rham lattices). The modified module D_σ of DING25 Proposition 2.5 (p. 13)
+is not consumed from here directly: it is TriangulineVarietyAndItsLocalModel §10.5's, imported there
+from PadicHodgeTheory §5.2.
 
 ### From TauCetiRoadmap.LocalGaloisDeformationRings
 
@@ -259,8 +300,14 @@ isomorphism D_pst(D) ≅ D_pst(D_σ) identifying the σ-components of D_dR as fi
 (`PhiGamma.defRing`, `PhiGamma.triangulineDefRing`, `PhiGamma.deRhamDefRing`, the tangent
 identifications `PhiGamma.tangent_defRing`, formal smoothness `PhiGamma.formallySmooth`, the
 forgetful maps, and the first-order Cartesian comparison with locally algebraic parameters, for
-End(D) = E and generic noncritical parameters; its rank-one case gives the deformation rings of a
-character and of its locally algebraic deformations).
+noncritical crystabelline D with End(D) = E and generic regular parameters). Its rank-one case
+applies to the trivial module `R_{K,E}`, which is crystalline (genericity, regularity and
+noncriticality are empty conditions in rank one), and gives its deformation ring R_1 ≅
+`E⟦x_1,…,x_{d_K+1}⟧` with tangent space `Ext¹(R_{K,E}, R_{K,E})` ≅ Hom(K^×, E). It does not apply
+to `R_{K,E}(δ)` for a character δ that is not locally algebraic, since that module is not de Rham
+(PhiGammaModulesAndIwasawaCohomology §7.4). §5.1 obtains the ring `R_{δ_i}` of an arbitrary
+continuous character δ_i of K^× from R_1 by twisting, and builds the rings of characters of
+T(K) = (K^×)^n as completed tensor products of these rank-one rings; neither is stated there.
 
 ### From TauCetiRoadmap.SmoothRepresentationsOfLocalGroups
 
@@ -269,11 +316,15 @@ character and of its locally algebraic deformations).
 What SmoothRepresentationsOfLocalGroups must provide (gap:principal-series-bernstein-completion):
 over a finite extension E of ℚ_p containing the values of φ, the Bernstein centre ℋ of the
 principal-series block of π_sm(φ) (and ℋ_i of the block of φ_i of K^×), the completion Ĥ_φ of ℋ at
-the point π_sm(φ), and, for generic φ and every w ∈ S_n, the isomorphism
-`𝒥_w : Ĥ_φ ≅ R_{w(φ),g}` induced by `∏_i Spec ℋ_{w^{−1}(i)} → Spec ℋ` on completions, where
+the point π_sm(φ), and, for generic φ and every w ∈ S_n, that the map `𝒥_w` induced by
+`∏_i Spec ℋ_{w^{−1}(i)} → Spec ℋ` on completions is an isomorphism `𝒥_w : Ĥ_φ ≅ R_{w(φ),g}`, where
 `R_{w(φ),g}` is the completed local ring of `∏_i Spec ℋ_{w^{−1}(i)}` at w(φ) (equivalently the ring of
-smooth deformations of the character w(φ) of T(K)), with tangent map compatible with the reordering
-`w_2w_1^{−1}` (CEGGPS16 Lemma 3.22, p. 47; DING25 §3.2.2, p. 57).
+smooth deformations of the character w(φ) of T(K)) (CEGGPS16 Lemma 3.22, p. 47; DING25 §3.2.2,
+p. 57). The ordered-character maps 𝒥_w themselves, with the reordering identity
+`𝒥_{w_2} ∘ p_{w_2w_1^{−1}} = 𝒥_{w_1}` and their differentials on Hom_sm(T(K), E), are what
+LocallyAnalyticRepresentationsOfLocalGroups requests from the same section for its §8.8 (2);
+one construction serves both, and this gap adds only the completion Ĥ_φ and the isomorphism of Ĥ_φ
+onto `R_{w(φ),g}`.
 
 ## How to read the build
 
@@ -284,8 +335,10 @@ comparisons and extending to all refinements, and computes its kernel. Layer 2 b
 π_fs(D), identifies their Ext¹ with Q, characterises π_min(D) intrinsically and computes its scalar
 characters. Layer 3 compares parabolic blocks, restricts to one embedding, splits the kernel over the
 embeddings and transports everything to the modified modules D_σ. Layer 4 proves the recovery
-theorem. Layer 5 reformulates Theorem 3.21 through first-order Artinian algebras acting on the
-universal extension. Layers 2 and 5 depend on Layer 1 but not on each other; Layer 4 depends on
+theorem. Layer 5 reformulates Theorem 1.4 (DING25 Theorem 3.21) through first-order Artinian
+algebras acting on the universal extension. Layer 2 depends on Layer 1. Layer 5 depends on Layer 1: §§5.1–5.4 reformulate
+Theorem 1.4 through universal extensions, and §5.5 also uses Layer 2's minimal representation
+π_min(D) (§2.1); nothing in Layer 2 uses Layer 5. Layer 3 depends on Layers 1–2, and Layer 4 on
 Layer 3.
 
 ## Layer 0: Refinement parameters and the common presentation
@@ -294,8 +347,9 @@ Layer 3.
 
 For n ≥ 1 define the end family S_end = {w ∈ S_n : w(n) = n} and the start family S_start =
 {w ∈ S_n : w(n) = 1}. With w(φ)_i = `φ_{w^{−1}(i)}`, these are exactly the refinements placing φ_n
-last, respectively first; they are the refinements compatible with F and with G (DING25 proof of
-Theorem 3.21, p. 48, where S_start is written `S′_{n−1}`). For an interior position 1 < i < n and a
+last, respectively first; for n ≥ 2 they are the refinements compatible with F and with G (DING25
+proof of Theorem 3.21, p. 48, where S_start is written `S′_{n−1}`), and for n = 1, where F and G are
+not defined, only the two combinatorial families are defined. For an interior position 1 < i < n and a
 split 1 ≤ j ≤ n − 1, the Weyl group S_j × `S_{n−j}` of the Levi of P_j contains a permutation w_j with
 w_j(i) ∈ {1, n}: the transposition (1 i) when i ≤ j, the transposition (i n) when i > j (DING25
 p. 49). *Needs:* Mathlib `Equiv.Perm`.
@@ -334,7 +388,7 @@ and H_Z the space Hom(Z(K), E). *Needs:* Mathlib `LinearMap`, `Submodule`.
   the boundary values j = 0 (constantly b) and j = n (constantly a).
 - The block tuple of (a, a) is the constant tuple a; hence H_Z ⊂ H_j for every j.
 - For 1 ≤ j ≤ n − 1, H_j has dimension 2(1 + d_K) and H_Z dimension 1 + d_K.
-- H_j ⊂ `Hom_{P_j,g′}(T(K), E)` (TriangulineVarietyAndItsLocalModel §10.8), so the parabolic Weyl
+- H_j ⊂ `Hom_{P_j,g′}(T(K), E)` (TriangulineVarietyAndItsLocalModel §11.8), so the parabolic Weyl
   transport of Ding Corollary 2.15(2) and (3.30) applies to every element of H_j.
 
 **Checks.**
@@ -351,10 +405,13 @@ and H_Z the space Hom(Z(K), E). *Needs:* Mathlib `LinearMap`, `Submodule`.
 
 **Theorem.** For n ≥ 1 and any abelian group H_char, every v = (v_1,…,v_n) ∈ H_char^n equals the
 constant tuple v_n plus the sum over j = 1,…,n−1 of the block tuples of (v_j − `v_{j+1}`, 0) at j.
-Consequently H_T = H_Z + `Σ_{j=1}^{n−1}` H_j. The sum has overlaps along the constant tuples; it is
-not a direct sum (DING25 proof of Theorem 3.21, (3.43) and the closing paragraph, pp. 49–50; the
-printed direct-sum isomorphism (3.43) is false, see Source corrections, and only the spanning is
-used).
+Consequently H_T = H_Z + `Σ_{j=1}^{n−1}` H_j. If moreover n ≥ 2 and H_char ≠ 0, the sum is not
+direct: for a nonzero a ∈ H_char the constant tuple (a,…,a) ∈ H_Z and the block tuple of (−a, −a)
+at j = 1, which lies in H_1, are nonzero with sum zero. The character space Hom(K^×, E) of (H) has
+dimension 1 + d_K ≥ 2, so in rank n ≥ 2 the sum is never direct there. For n = 1 (no H_j) or
+H_char = 0 (all summands zero) the sum is trivially direct (DING25 proof of Theorem 3.21, (3.43) and
+the closing paragraph, pp. 49–50; the printed direct-sum isomorphism (3.43) is false, see Source
+corrections, and only the spanning is used).
 
 *Proof sketch.* At coordinate i the block tuples at j ≥ i contribute `Σ_{j=i}^{n−1}(v_j − v_{j+1})` =
 v_i − v_n; adding v_n gives v_i. For n = 1 only the constant term remains. *Needs:* §0.2.
@@ -364,7 +421,10 @@ v_i − v_n; adding v_n gives v_i. For n = 1 only the constant term remains. *Ne
 - n = 3: (a, b, c) = (c, c, c) + (a − b, 0, 0) + (b − c, b − c, 0).
 - n = 3, d_K = 1: H_T has dimension 6, whereas the direct sum H_Z ⊕ H_1 ⊕ H_2 has dimension
   2 + 4 + 4 = 10, so (3.43) as printed fails; in general (2n − 1)(1 + d_K) ≠ n(1 + d_K) for n ≥ 2.
-- n = 1: v = (v_1) is its own constant tuple and there are no block terms.
+- n = 1: v = (v_1) is its own constant tuple and there are no block terms; the sum map H_Z → H_char
+  is the identity, injective, so non-directness genuinely needs n ≥ 2.
+- n = 2, H_char = ℤ: (1, 1) ∈ H_Z and (−1, −1) ∈ H_1 are nonzero with sum zero; for H_char = 0 every
+  summand is zero at every n and the sum is direct, so non-directness genuinely needs H_char ≠ 0.
 
 ### 0.4 The refinement presentation
 
@@ -375,26 +435,31 @@ R_D : C → 𝔈,   R_D = Σ_w ζ_w ∘ κ_w,
 s_D : C → Q,   s_D = Σ_w a_w.
 ```
 
-R_D is surjective by LocallyAnalyticRepresentationsOfLocalGroups LR.7 (ext-pi1, part (2): the map
-(ζ_w)_w : ⊕_w H_T → 𝔈 is onto) and s_D is surjective by TriangulineVarietyAndItsLocalModel §12.8
+R_D is surjective by LocallyAnalyticRepresentationsOfLocalGroups §8.12 (2) (the map
+(ζ_w)_w : ⊕_w H_T → 𝔈 is onto) and s_D is surjective by TriangulineVarietyAndItsLocalModel §13.8
 (Ding Proposition 2.12). These are two different supplier facts; the inclusion Ker R_D ⊂ Ker s_D is
 the content of Theorem 1.4, not of this construction (DING25 (2.14)–(2.16) and Proposition 2.12,
-pp. 17–18; Proposition 3.8 and (3.17), pp. 38–39; (3.38), p. 47). *Needs:* LR.7 (zeta-w, ext-pi1,
-ext-filtration); TriangulineVarietyAndItsLocalModel §§10.2–10.4, 12.8; Mathlib `LinearMap`.
+pp. 17–18; Proposition 3.8 and (3.17), pp. 38–39; (3.38), p. 47). *Needs:* LocallyAnalyticRepresentationsOfLocalGroups
+§§8.10, 8.12, 8.14; TriangulineVarietyAndItsLocalModel §§11.2–11.4, 13.8; Mathlib `LinearMap`.
 
 - R_D restricted to the w-summand is ζ_w ∘ κ_w and s_D restricted to it is a_w.
 - R_D and s_D are surjective.
 - Relabelling refinements by a permutation of S_n permutes the summands of C and commutes with both
   maps.
 - Ker R_D has dimension n!·n(1 + d_K) − n − (2^n − 1)d_K and Ker s_D has dimension
-  n!·n(1 + d_K) − n − n(n+1)d_K/2; neither inclusion between them follows from dimensions.
+  n!·n(1 + d_K) − n − n(n+1)d_K/2. For n ≥ 2 neither inclusion between them follows from dimensions
+  alone (at n = 2 both dimensions equal 2 + d_K, which does not make the subspaces equal; at n = 3,
+  d_K = 1 they are 26 and 27); for n = 1 both kernels are zero.
 
 **Checks.**
 
 - n = 1: C = Q_1, and both maps are isomorphisms identifying Q with H_T = Hom(K^×, E).
-- Replacing Q_w by Ext¹_w(D,D) and Q by Ext¹(D,D) breaks the presentation: R_D (through κ_w) kills
-  the summand Ext¹_0(D,D) ⊂ Ext¹_w(D,D), but s_D does not, so no map t_D with t_D ∘ R_D = s_D could
-  exist. At n = 3, d_K = 1, Ext¹_0(D,D) is a line (Q has dimension 9, Ext¹(D,D) dimension 10).
+- When Ext¹_0(D,D) ≠ 0, replacing Q_w by Ext¹_w(D,D) and Q by Ext¹(D,D) breaks the presentation:
+  R_D (through κ_w) kills the summand Ext¹_0(D,D) ⊂ Ext¹_w(D,D), but s_D does not, so no map t_D with
+  t_D ∘ R_D = s_D could exist. Since dim Ext¹_0(D,D) = (n − 1)(n·d_K − 2)/2
+  (TriangulineVarietyAndItsLocalModel §11.4), this happens exactly for n ≥ 3 and for n = 2 with
+  d_K ≥ 2; at n = 3, d_K = 1, Ext¹_0(D,D) is a line (Q has dimension 9, Ext¹(D,D) dimension 10). For
+  n = 1, and for n = 2 with K = ℚ_p, Ext¹_0(D,D) = 0 and the replacement changes nothing.
 - Two summands carrying the same class of Q have difference in Ker s_D; whether that difference
   lies in Ker R_D is exactly what Theorem 1.4 decides.
 - An element of a summand with κ_w-image zero is zero, since κ_w is injective on Q_w.
@@ -407,8 +472,8 @@ targets dimension 5.
 
 ### Dependencies
 
-LocallyAnalyticRepresentationsOfLocalGroups LR.7; TriangulineVarietyAndItsLocalModel §§10.2–10.4,
-10.8 and 12.8; Mathlib linear algebra and `Equiv.Perm`.
+LocallyAnalyticRepresentationsOfLocalGroups §§8.10–8.14; TriangulineVarietyAndItsLocalModel §§11.2–11.4,
+11.8 and 13.8; Mathlib linear algebra and `Equiv.Perm`.
 
 ## Layer 1: Ding's comparison and its kernel
 
@@ -434,16 +499,17 @@ subtraction agrees with the integer one (DING25 Remark 3.22(1), p. 50).
 
 Let n ≥ 2 and assume Theorem 1.4 for all ranks < n (strong induction). Apply it to D_1 ∈
 ΦΓ_nc(φ^1, h^1) and C_1 ∈ ΦΓ_nc(φ^1, h^2), where φ^1 = `(φ_1,…,φ_{n−1})`, h^1 = `(h_1,…,h_{n−1})` and
-h^2 = (h_2,…,h_n) (TriangulineVarietyAndItsLocalModel §9.2), and to the rank-one modules. Through the
-block isomorphisms ζ_F : 𝔈(D_1) × H_char ≅ 𝔈_F (LR.8, endpoint-amalgamation) and
-κ_F : Q_F ≅ Q(D_1) × H_char (TriangulineVarietyAndItsLocalModel §10.7), define t_F : 𝔈_F → Q_F ↪ Q as the product of the
+h^2 = (h_2,…,h_n) (TriangulineVarietyAndItsLocalModel §10.2), and to the rank-one modules. Through the
+block isomorphisms ζ_F : 𝔈(D_1) × H_char ≅ 𝔈_F (LocallyAnalyticRepresentationsOfLocalGroups §9.7) and
+κ_F : Q_F ≅ Q(D_1) × H_char (TriangulineVarietyAndItsLocalModel §11.7), define t_F : 𝔈_F → Q_F ↪ Q as the product of the
 rank-(n−1) comparison of D_1 and the identity on H_char; define t_G : 𝔈_G → Q_G ↪ Q in the same way
 from C_1 and `R_{K,E}(φ_nz^{h_1})`. Prove that t_F and t_G agree on `𝔈_{g′}` (Ding (3.18) and (2.13)
 with g replaced by g′), and define τ_D : 𝔈 → Q as the unique map restricting to t_F and t_G, using
 the exact sequence `0 → 𝔈_{g′} → 𝔈_F ⊕ 𝔈_G → 𝔈 → 0` with first map b ↦ (b, −b) (DING25 proof of
 Theorem 3.21, (3.40)–(3.41), pp. 48–49; Proposition 3.13, p. 44). *Needs:* the induction hypothesis
-(Theorem 1.4 in lower rank); §0.1; LR.8 (zeta-fp-bijective, endpoint-amalgamation); TriangulineVarietyAndItsLocalModel §§9.2,
-10.5, 10.7.
+(Theorem 1.4 in lower rank); §0.1; LocallyAnalyticRepresentationsOfLocalGroups §8.14 (the transport
+(3.18) on `Hom_{g′}`) and §§9.6–9.7; TriangulineVarietyAndItsLocalModel §§10.2, 11.5 (the transport
+(2.13) on `Ext¹_{g′}`), 11.7.
 
 - τ_D restricted to 𝔈_F is t_F and restricted to 𝔈_G is t_G.
 - τ_D is determined by these two restrictions, since 𝔈_F + 𝔈_G = 𝔈.
@@ -468,10 +534,10 @@ and the closing paragraph of the proof of Theorem 3.21, pp. 49–50).
 
 *Proof sketch.* Let w(n) = i be interior. For each split j choose w_j as in §0.1, so w_jw lies in
 S_end ∪ S_start, where §1.2 applies. On `κ_w^{−1}(H_j)` ⊂ `Ext¹_{F_{P_j},g′}` the parabolic Weyl
-transport of Ding Corollary 2.15(2) (TriangulineVarietyAndItsLocalModel §10.8) and of (3.30) (LR.8, zeta-fp-bijective (3)) identifies
+transport of Ding Corollary 2.15(2) (TriangulineVarietyAndItsLocalModel §11.8) and of (3.30) (LocallyAnalyticRepresentationsOfLocalGroups §9.6 (3)) identifies
 ζ_w ∘ κ_w with `ζ_{w_jw}` ∘ `κ_{w_jw}`, so the equation holds on `κ_w^{−1}(H_j)`. It also holds on
-`κ_w^{−1}(H_Z)`. Theorem 0.3 shows these subspaces span Q_w. *Needs:* §§0.1–0.3, §1.2; LR.8
-(zeta-fp-bijective); TriangulineVarietyAndItsLocalModel §10.8.
+`κ_w^{−1}(H_Z)`. Theorem 0.3 shows these subspaces span Q_w. *Needs:* §§0.1–0.3, §1.2;
+LocallyAnalyticRepresentationsOfLocalGroups §9.6; TriangulineVarietyAndItsLocalModel §11.8.
 
 **Checks.**
 
@@ -488,14 +554,14 @@ transport of Ding Corollary 2.15(2) (TriangulineVarietyAndItsLocalModel §10.8) 
 **Theorem (DING25 Theorem 3.21, p. 48).** Assume (H). There is a unique E-linear map t_D : 𝔈 → Q
 with t_D ∘ R_D = s_D; equivalently t_D ∘ ζ_w = a_w ∘ `κ_w^{−1}` on H_T for every w ∈ S_n. It is
 surjective, and its restriction to 𝔈_w is the isomorphism a_w ∘ `κ_w^{−1}` ∘ `ζ_w^{−1}` onto Q_w. Under
-the push-forward isomorphism 𝔈 ≅ Ext¹_G(A, π(φ,h)) (LR.7, ext-pi1 (3)) the same map is the comparison
+the push-forward isomorphism 𝔈 ≅ Ext¹_G(A, π(φ,h)) (LocallyAnalyticRepresentationsOfLocalGroups §8.12 (3)) the same map is the comparison
 for π(φ,h) (DING25 Remark 3.22(2), p. 50).
 
 *Proof sketch.* Strong induction on n. For n = 1, 𝔈 = 𝔈_id, Q = Q_id, and t_D = `κ_1^{−1}` ∘ `ζ_1^{−1}`.
 For n ≥ 2, §1.2 builds τ_D from the lower-rank comparisons and §1.3 proves every refinement
 equation, so τ_D ∘ R_D = s_D. Uniqueness holds because R_D is onto; surjectivity because s_D is.
-*Needs:* §§0.4, 1.2, 1.3; Mathlib `LinearMap.quotKerEquivOfSurjective` for the induced isomorphism
-𝔈/Ker t_D ≅ Q.
+*Needs:* §§0.4, 1.2, 1.3; LocallyAnalyticRepresentationsOfLocalGroups §8.12 (3) for the transport to
+π(φ,h); Mathlib `LinearMap.quotKerEquivOfSurjective` for the induced isomorphism 𝔈/Ker t_D ≅ Q.
 
 - t_D ∘ ζ_w ∘ κ_w = a_w for every w.
 - Every element of Q is t_D(b) for some b ∈ 𝔈.
@@ -515,9 +581,10 @@ equation, so τ_D ∘ R_D = s_D. Uniqueness holds because R_D is onto; surjectiv
 **Theorem (DING25 Remark 3.22(1), p. 50).** Assume (H). dim_E Ker(t_D) = c_n·d_K. In particular
 the kernel vanishes for n ≤ 2, and for n = 3 it has dimension d_K.
 
-*Proof sketch.* Rank–nullity for the surjection t_D, with dim 𝔈 = n + (2^n − 1)d_K (LR.7,
-ext-pi1) and dim Q = n + n(n+1)d_K/2 (TriangulineVarietyAndItsLocalModel §10.4): the difference is (2^n − 1 − n(n+1)/2)d_K = c_n d_K,
-using §1.1. *Needs:* §§1.1, 1.4; Mathlib `LinearMap.finrank_range_add_finrank_ker`.
+*Proof sketch.* Rank–nullity for the surjection t_D, with dim 𝔈 = n + (2^n − 1)d_K
+(LocallyAnalyticRepresentationsOfLocalGroups §8.12) and dim Q = n + n(n+1)d_K/2 (TriangulineVarietyAndItsLocalModel §11.4): the difference is (2^n − 1 − n(n+1)/2)d_K = c_n d_K,
+using §1.1. *Needs:* §§1.1, 1.4; LocallyAnalyticRepresentationsOfLocalGroups §8.12;
+TriangulineVarietyAndItsLocalModel §11.4; Mathlib `LinearMap.finrank_range_add_finrank_ker`.
 
 **Checks.**
 
@@ -534,7 +601,8 @@ Consequently Ker(t_D) ∩ `𝔈_{g′}` = 0 and Ker(t_D) ∩ 𝔈_g = 0, and t_D
 Q_w and 𝔈_g onto Q_g.
 
 *Proof sketch.* On 𝔈_w, t_D = a_w ∘ `κ_w^{−1}` ∘ `ζ_w^{−1}` is injective. The other statements follow from
-𝔈_g ⊂ `𝔈_{g′}` ⊂ 𝔈_w and from Q_g = `κ_w^{−1}(Hom_sm)` (TriangulineVarietyAndItsLocalModel §10.4). *Needs:* §1.4; LR.7 (ext-filtration).
+𝔈_g ⊂ `𝔈_{g′}` ⊂ 𝔈_w and from Q_g = `κ_w^{−1}(Hom_sm)` (TriangulineVarietyAndItsLocalModel §11.4). *Needs:* §1.4;
+LocallyAnalyticRepresentationsOfLocalGroups §8.14; TriangulineVarietyAndItsLocalModel §11.4.
 
 **Checks.**
 
@@ -553,8 +621,8 @@ of them.
 
 ### Dependencies
 
-Layer 0; LocallyAnalyticRepresentationsOfLocalGroups LR.7–LR.8; TriangulineVarietyAndItsLocalModel
-§§9.2, 10.4–10.8; Mathlib rank–nullity and `LinearMap.quotKerEquivOfSurjective`.
+Layer 0; LocallyAnalyticRepresentationsOfLocalGroups §§8.10–8.14, 9.6–9.7; TriangulineVarietyAndItsLocalModel
+§§10.2, 11.4–11.8; Mathlib rank–nullity and `LinearMap.quotKerEquivOfSurjective`.
 
 ## Layer 2: The minimal representation and its scalar characters
 
@@ -562,22 +630,37 @@ Layer 0; LocallyAnalyticRepresentationsOfLocalGroups LR.7–LR.8; TriangulineVar
 
 Let 𝒦_D = Ker(t_D) ⊂ 𝔈. Define π_min(D) as the tautological extension
 `0 → V → π_min(D) → 𝒦_D ⊗_E A → 0` whose class in Ext¹_G(𝒦_D ⊗ A, V) ≅ Hom_E(𝒦_D, 𝔈) is the
-inclusion, and π_fs(D) as its push-out along V ↪ π(φ,h). Prove π_fs(D) ≅ π_min(D) ⊕_V π(φ,h), that
-the class of π_fs(D) is the inclusion of 𝒦_D transported through 𝔈 ≅ Ext¹_G(A, π(φ,h)), and that
-either representation determines the subspace 𝒦_D ⊂ 𝔈, because End_G(π(φ,h)) → End_G(V) → End_G(A)
-are isomorphisms onto E (DING25 §3.1.1, p. 33; Remark 3.9 and (3.16), p. 39; the definition before
-(3.44) and (3.44), p. 50). *Needs:* §1.4; LR.1 (self-extension-dual-numbers, ext1-extensions); LR.7
-(pi-alg, ps1-and-pi1, finite-slope-amalgam, ext-pi1).
+inclusion, an object determined by its class up to isomorphism of extensions, and π_fs(D) as its
+push-out along V ↪ π(φ,h). Prove π_fs(D) ≅ π_min(D) ⊕_V π(φ,h), that the class of π_fs(D) is the
+inclusion of 𝒦_D transported through 𝔈 ≅ Ext¹_G(A, π(φ,h)), that restriction gives isomorphisms
+End_G(π(φ,h)) ≅ End_G(V) ≅ End_G(A) = E, and hence that either representation determines the
+subspace 𝒦_D ⊂ 𝔈 (DING25 §3.1.1, p. 33; Remark 3.9 and (3.16), p. 39; the definition before
+(3.44) and (3.44), p. 50). For the endomorphisms: an endomorphism f of π(φ,h) preserves its socle A
+(LocallyAnalyticRepresentationsOfLocalGroups §8.13) and acts there by a scalar c (End_G(A) = E, its
+§8.2); f − c kills A, so its image is a quotient of π(φ,h)/A; A occurs once as a constituent of
+π(φ,h), since it occurs once in each PS(w(φ),h) (the weight −λ occurs once in M⁻(−λ) and the C(w,u)
+are pairwise non-isomorphic, its §§6.2 and 8.3–8.4 (1)) and hence once in their amalgam over A, of
+which π(φ,h) is a quotient; so the image has no constituent A, while a nonzero subrepresentation of
+π(φ,h) contains its socle A; hence f = c, and the same argument for V is its §8.7. *Needs:* §1.4;
+LocallyAnalyticRepresentationsOfLocalGroups §§1.8–1.9, 6.2, 8.2–8.4, 8.7, 8.12–8.13.
 
 - π_min(D) is an admissible locally analytic extension of 𝒦_D ⊗ A ≅ `A^{⊕c_n d_K}` by V.
 - Its class sends k ∈ 𝒦_D to k ∈ 𝔈; changing a basis of 𝒦_D transports the same class.
 - π_fs(D) is the amalgamated sum of π_min(D) and π(φ,h) over V, with the same quotient 𝒦_D ⊗ A.
 - If π_min(D) ≅ π_min(D′) as G-representations, then 𝒦_D = `𝒦_{D′}` as subspaces of 𝔈; the same for
   π_fs.
+- Every G-endomorphism of π(φ,h), of V and of A is a scalar, and restriction π(φ,h) ⊃ V ⊃ A
+  identifies the three endomorphism rings with E.
 
 **Checks.**
 
 - n = 2: 𝒦_D = 0, so π_min(D) ≅ V and π_fs(D) ≅ π(φ,h).
+- n = 2, K = ℚ_p: π(φ,h) = π_1(φ,h) = V (LocallyAnalyticRepresentationsOfLocalGroups §8.13), and
+  End_G(π(φ,h)) = E is End_G(V) = E of its §8.7. For n = 3 the amalgam π(φ,h) is strictly larger
+  than V, and the endomorphism argument needs the multiplicity one of A, not only soc = A: a
+  nonsplit self-extension Ã of A has socle A but contains A twice, and the endomorphism
+  Ã ↠ A ↪ Ã is nonzero with square zero (LocallyAnalyticRepresentationsOfLocalGroups §1.9 (i)), so
+  End_G(Ã) contains E[ε]/(ε²) and is not E.
 - n = 3, K = ℚ_p: the quotient is a single copy of A and the class is a nonzero generator of the
   line 𝒦_D, so π_min(D) is a nonsplit extension of A by V.
 - If 𝒦_D ≠ 0, the split extension represents the zero map 𝒦_D → 𝔈, not the inclusion; so the
@@ -589,14 +672,26 @@ are isomorphisms onto E (DING25 §3.1.1, p. 33; Remark 3.9 and (3.16), p. 39; th
 Define f_D : 𝔈 → Ext¹_G(A, π_min(D)) as push-forward along V ↪ π_min(D). Prove that
 `0 → 𝒦_D → 𝔈 → Ext¹_G(A, π_min(D)) → 0` is exact, the first map being the connecting map of the
 Hom–Ext sequence of `0 → V → π_min(D) → 𝒦_D ⊗ A → 0` composed with Hom_G(A, 𝒦_D ⊗ A) ≅ 𝒦_D, which is
-the inclusion. Surjectivity of f_D is a separate input: it uses Ding Lemma 3.5(2) (pull-back along a
-nonsplit self-extension of A is bijective on Ext¹(·, `C(I,s_{i,σ})`)) and dévissage over the
-constituents (DING25 (3.45) and the following paragraph, p. 50). Define t_D^min :
+the inclusion. Surjectivity of f_D is a separate input. By the same sequence its cokernel is the
+kernel of the connecting map ∂ : 𝒦_D ⊗ Ext¹_G(A, A) → Ext²_G(A, V), which sends k ⊗ a to the Yoneda
+product k·a of k ∈ 𝔈 and a ∈ Ext¹_G(A, A); so it suffices that ∂ be injective. Compose ∂ with the
+push-forward along V ↠ V/A ≅ ⊕_C C, where C runs over the constituents `C(I,s_{i,σ})`, each
+occurring once (LocallyAnalyticRepresentationsOfLocalGroups §8.7), and write the image of a basis
+vector k_j of 𝒦_D in the line Ext¹_G(A, C) = E·c_C (its §8.9 (1)) as `x_{j,C}`·c_C; then
+Σ_j k_j ⊗ a_j goes to (c_C·(Σ_j `x_{j,C}` a_j))_C in ⊕_C Ext²_G(A, C). For a nonsplit self-extension of A with class
+a ≠ 0, Ding Lemma 3.5(2) (its §8.9 (2): pull-back along it is bijective on Ext¹(·, C)) and the long
+exact sequence in the first variable make c ↦ c·a injective on Ext¹_G(A, C), so c_C·a = 0 only for
+a = 0, and Σ_j `x_{j,C}` a_j = 0 for every C. The rows (`x_{j,C}`)_C are linearly independent: they are
+the images of the k_j in 𝔈/`𝔈_{g′}` ≅ ⊕_C Ext¹_G(A, C) (its §8.12 (1)), and 𝒦_D ∩ `𝔈_{g′}` = 0
+(§1.6). Hence every a_j = 0 (DING25 (3.45) and the following paragraph, p. 50, where only Lemma 3.5(2)
+is named; see Source corrections). Define t_D^min :
 Ext¹_G(A, π_min(D)) ≅ Q as the induced isomorphism, so t_D^min ∘ f_D = t_D. For every named subspace
 𝔈_* (* = g, w, F_P, σ, (σ, F_P)) define 𝔈_*^min = f_D(𝔈_*), an image and not a new filtration
-(DING25 p. 50; Corollary 3.25(2), p. 51). *Needs:* §2.1; LR.1 (ext-groups: the covariant long exact
-sequence); LR.7 (constituent-ext-lines (2), principal-series-constituents); Mathlib
-`LinearMap.quotKerEquivOfSurjective`.
+(DING25 p. 50; Corollary 3.25(2), p. 51). *Needs:* §§1.6, 2.1; LocallyAnalyticRepresentationsOfLocalGroups
+§1.7 (Ext² and the long exact sequences in both variables), §8.4, §8.7, §8.9 (1)–(2) and §8.12 (1);
+Mathlib `CategoryTheory.Abelian.Ext.comp` and `CategoryTheory.ShortComplex.ShortExact.extClass` (the
+connecting maps of `CategoryTheory.Abelian.Ext.covariantSequence` are Yoneda products with the class
+of the short exact sequence), `LinearMap.quotKerEquivOfSurjective`.
 
 - f_D is functorial push-forward along V ↪ π_min(D), with kernel 𝒦_D.
 - f_D is surjective.
@@ -608,8 +703,15 @@ sequence); LR.7 (constituent-ext-lines (2), principal-series-constituents); Math
 - If 𝒦_D = 0 then π_min(D) = V and f_D is the identity.
 - For k ∈ 𝒦_D, f_D(k) is the split class; for b with t_D(b) ≠ 0, f_D(b) ≠ 0.
 - f_D restricted to 𝔈_w is injective by §1.6, although f_D itself has a kernel for n ≥ 3.
-- The left-exact Hom–Ext sequence (3.45) alone stops at Ext¹_G(A, π_min(D)) without its cokernel
-  term; surjectivity needs the constituent input, since Ext¹_G(A, 𝒦_D ⊗ A) ≠ 0.
+- When 𝒦_D ≠ 0 (n ≥ 3), the Hom–Ext sequence (3.45) alone does not give surjectivity: the cokernel of
+  f_D embeds into the next term Ext¹_G(A, 𝒦_D ⊗ A) ≅ 𝒦_D ⊗ Ext¹_G(A, A), which is nonzero (dimension
+  1·4 = 4 at n = 3, K = ℚ_p), so the constituent input is needed. For n ≤ 2, 𝒦_D = 0, that term is
+  Ext¹_G(A, 0) = 0 and f_D is the identity; the sequence alone suffices there.
+- Transversality (§1.6) is used: for n = 1, K = ℚ_p, A = V = χ and a line L = Eψ ⊂ 𝔈 = `𝔈_{g′}`
+  (ψ ≠ 0) in place of 𝒦_D, the tautological extension is Π_L = χ(1 + ψε) and the push-forward
+  𝔈 → Ext¹(χ, Π_L) has rank 2 − 1 = 1. It is not onto: the E[ε]/(ε³)-valued character
+  χ·(1 + ψε + ψ²ε²/2) is an extension of χ by Π_L whose image under Π_L ↠ χ is ψ ≠ 0, whereas every
+  push-forward from 𝔈 maps to zero there; equivalently ∂(ψ ⊗ ψ) = ψ·ψ = 0.
 
 ### 2.3 Refinement comparisons after push-forward
 
@@ -618,14 +720,17 @@ t_D^min restricts to an isomorphism 𝔈_*^min ≅ Q_*. The maps ζ_w^min = f_D 
 H_T ≅ 𝔈_w^min with t_D^min ∘ ζ_w^min = a_w ∘ `κ_w^{−1}`.
 
 *Proof sketch.* f_D is injective on 𝔈_w and 𝔈_g by §1.6; compose with §1.4 and with Q_g =
-`κ_w^{−1}(Hom_sm(T(K),E))` (TriangulineVarietyAndItsLocalModel §10.4, LR.7 self-extensions (1)). *Needs:* §§1.6, 2.2.
+`κ_w^{−1}(Hom_sm(T(K),E))` (TriangulineVarietyAndItsLocalModel §11.4, LocallyAnalyticRepresentationsOfLocalGroups §8.8 (1)). *Needs:* §§1.4, 1.6, 2.2;
+LocallyAnalyticRepresentationsOfLocalGroups §8.8; TriangulineVarietyAndItsLocalModel §11.4.
 
 **Checks.**
 
 - The g-images have dimension n and the w-images dimension n(1 + d_K) on both sides.
 - n = 3, K = ℚ_p: 𝔈^min has dimension 9 = dim Q, and every 𝔈_w^min still has dimension 6.
-- The images are taken in the quotient Q; in the full Ext¹(D,D) the g-space would have dimension
-  1 + n(n−1)d_K/2, not n.
+- The images are taken in the quotient Q: the full de Rham space Ext¹_g(D,D) has dimension
+  1 + n(n−1)d_K/2, exceeding n by dim Ext¹_0(D,D) = (n − 1)(n·d_K − 2)/2, for instance 4 against 3 at
+  n = 3, K = ℚ_p, and 3 against 2 at n = 2, d_K = 2. At n = 1, and at n = 2 with K = ℚ_p,
+  Ext¹_0(D,D) = 0 and both dimensions equal n, so there the two readings agree.
 
 ### 2.4 Intrinsic characterisation
 
@@ -636,13 +741,17 @@ Ext¹_G(A, Π) ≅ Q whose composite with the push-forward f : 𝔈 → Ext¹_G(
 w ∈ S_n, that f ∘ ζ_w is an isomorphism onto its image and the bijection composed with f ∘ ζ_w equals
 a_w ∘ `κ_w^{−1}`.
 
-*Proof sketch.* π_min(D) satisfies (1) because nonzero coefficient directions are nonsplit and Ding
-Lemma 3.5(2) controls lifts through the constituents `C(I,s_{i,σ})`; it satisfies (2) by §§2.2–2.3.
+*Proof sketch.* π_min(D) satisfies (1). Its socle is A: the class map 𝒦_D → 𝔈 is injective, so
+Hom_G(A, π_min(D)) = Hom_G(A, V) = E, and Hom_G(C, π_min(D)) = Hom_G(C, V) = 0 for every other
+constituent C. The socle of π_min(D)/A is V/A = soc(V/A): Hom_G(C, π_min(D)/A) = Hom_G(C, V/A), and
+Hom_G(A, π_min(D)/A) = 0 because the connecting map 𝒦_D → Ext¹_G(A, V/A) ≅ 𝔈/`𝔈_{g′}`
+(LocallyAnalyticRepresentationsOfLocalGroups §8.12 (1)) is injective, 𝒦_D ∩ `𝔈_{g′}` being zero
+(§1.6). It satisfies (2) by §§2.2–2.3.
 Conversely, (1) identifies the first two socle layers of Π with those of V and recovers a coefficient
 subspace L ⊂ 𝔈 with Π the tautological extension of L ⊗ A by V. Condition (2) makes the composite
 𝔈 → Q agree with t_D on every 𝔈_w; since the 𝔈_w span 𝔈, it equals t_D, whose kernel is the kernel
-of f, which is L; so L = 𝒦_D. *Needs:* §§2.1–2.3; LR.7 (principal-series-constituents,
-ps1-and-pi1, constituent-ext-lines).
+of f, which is L; so L = 𝒦_D. *Needs:* §§1.6, 2.1–2.3; LocallyAnalyticRepresentationsOfLocalGroups
+§§1.7, 8.4, 8.7, 8.9, 8.12.
 
 **Checks.**
 
@@ -651,7 +760,13 @@ ps1-and-pi1, constituent-ext-lines).
   Π_L of A by V with class L has the socle layers of (1) and the right quotient multiplicity, but the
   push-forward 𝔈 → Ext¹_G(A, Π_L) kills L, while a bijection as in (2) forces the composite to be t_D,
   whose kernel is 𝒦_D ≠ L; so Π_L violates (2).
-- The split extension V ⊕ `A^{⊕c_n d_K}` violates (1): its socle is `A^{⊕(1 + c_n d_K)}`.
+- When 𝒦_D ≠ 0 (n ≥ 3), the split extension V ⊕ `A^{⊕c_n d_K}` violates (1): its socle is
+  `A^{⊕(1 + c_n d_K)}`, for instance `A^{⊕2}` at n = 3, K = ℚ_p. For n ≤ 2 the split extension is
+  V ⊕ 0 = V = π_min(D), with socle A, and satisfies (1); there it is the unique extension, as in the
+  first Check, and is no negative control.
+- A line L inside `𝔈_{g′}` violates (1): for n = 3, K = ℚ_p and L spanned by the image of a nonsplit
+  self-extension of A, the connecting map L → 𝔈/`𝔈_{g′}` is zero, so Π_L/A contains A in its socle
+  (soc(Π_L/A) = A ⊕ V/A against V/A); §1.6 is what keeps 𝒦_D out of this case.
 
 ### 2.5 The determinant-normalised character
 
@@ -661,8 +776,8 @@ of A (the factor |·|_K^N is the central character of η) and that det D ≅ `R_
 exponent of `χ_Dε^{−N}` at σ being |λ|_σ − N = Σ_i `h_{i,σ}` (DING25 §2.1, p. 9; §3.1.2, p. 34; the
 paragraph before Proposition 3.26, p. 51, where the exponent is printed as a single sum over i and
 σ, see Source corrections). *Needs:* PhiGammaModulesAndIwasawaCohomology §7.1 (the rank-one modules
-`R_{K,E}(δ)` and the Tate character ε); TriangulineVarietyAndItsLocalModel §9.1 (the triangulation of D with graded parameters `φ_{w^{−1}(i)}z^{h_i}`);
-LR.7 (pi-alg).
+`R_{K,E}(δ)` and the Tate character ε); TriangulineVarietyAndItsLocalModel §10.1 (the triangulation of D with graded parameters `φ_{w^{−1}(i)}z^{h_i}`);
+LocallyAnalyticRepresentationsOfLocalGroups §§8.1–8.2.
 
 - χ_D is a product of an algebraic, an unramified and a smooth factor, with each embedding indexed
   separately.
@@ -695,14 +810,13 @@ through Q). With the Harish-Chandra
 isomorphism normalised so that h corresponds to ξ_λ, the induced map HC : X_h → `X_{ξ_λ}` is bijective
 because h is regular: at each σ the Jacobian of the elementary symmetric polynomials at
 `(h_{1,σ},…,h_{n,σ})` is ± the Vandermonde determinant `∏_{i<j}(h_{i,σ} − h_{j,σ})` ≠ 0. On each 𝔈_w,
-d_inf ∘ ζ_w ∘ κ_w = HC ∘ d_Sen ∘ a_w, by the closed-induction description of ζ_w (Remark 3.7) and the
+d_inf ∘ ζ_w ∘ κ_w = HC ∘ d_Sen ∘ a_w, by the closed-induction description of ζ_w (Ding Remark 3.7) and the
 Jacquet–Emerton module of the induced extension; since the 𝔈_w span 𝔈, d_inf = HC ∘ d_Sen ∘ t_D.
 For π_min(D) the off-diagonal part of a − ξ_λ(a) is d_inf restricted to 𝒦_D, which vanishes. The
 central character is treated in the same way, with the determinant tangent in place of d_Sen
-(DING25 Proposition 3.26 and (3.46)–(3.47), pp. 51–52). *Needs:* §§1.4, 2.1, 2.5; LieHighestWeight
-Layers 3, 7, 9 and the split gl_n Harish-Chandra contract above; LR.5 (orlik-strauch-functor); LR.6
-(closed-induction, jacquet-emerton-functor); LR.7 (principal-series-ps, zeta-w); PhiGammaModulesAndIwasawaCohomology §§7.2a,
-7.3 (Sen weights and character weights over E[ε]/ε²).
+(DING25 Proposition 3.26 and (3.46)–(3.47), pp. 51–52). *Needs:* §§1.4, 2.1, 2.5;
+LocallyAnalyticRepresentationsOfLocalGroups §4.1 (iv) in the variable μ = ν + θ of the contract above,
+§6.1, §§7.1–7.3, §§8.3, 8.10; PhiGammaModulesAndIwasawaCohomology §§7.2a, 7.3 (Sen weights and character weights over E[ε]/ε²).
 
 **Checks.**
 
@@ -722,7 +836,10 @@ Layers 3, 7, 9 and the split gl_n Harish-Chandra contract above; LR.5 (orlik-str
   invariants are the ordinary permutation invariants in h (the dot action in λ transported by the
   central vector ρ − θ), and a supplier building the dot-invariants in the variable h would identify
   h = (3, 1) with s·h = s(h + ρ) − ρ = (0, 4) instead of with s(h) = (1, 3); the weight (0, 4) has
-  λ + ρ = (1/2, 9/2) and e_2 = 9/4 ≠ 21/4, so its infinitesimal character is a different one.
+  λ + ρ = (1/2, 9/2) and e_2 = 9/4 ≠ 21/4, so its infinitesimal character is a different one. In the
+  variable ν = μ − θ of LocallyAnalyticRepresentationsOfLocalGroups §4.1 the dot partner of
+  ν = λ = (3, 2) is s·(3, 2) = (1, 4), and adding θ gives (1, 3) = s(h): the supplier's dot action is
+  the ordinary permutation of h.
 
 ### Examples
 
@@ -731,8 +848,9 @@ dimension 9 = dim Q, Z(G) acts by φ_1φ_2φ_3 `z^{h_1+h_2+h_3+3}|·|^3` and �
 
 ### Dependencies
 
-Layer 1; LocallyAnalyticRepresentationsOfLocalGroups LR.1, LR.5–LR.7; TriangulineVarietyAndItsLocalModel
-§§9.1, 10.4; PhiGammaModulesAndIwasawaCohomology §§7.1, 7.2a, 7.3; LieHighestWeight Layers 3, 7, 9.
+Layer 1; LocallyAnalyticRepresentationsOfLocalGroups §§1.7–1.9, 4.1, 6.1–6.2, 7.1–7.3, 8.1–8.5,
+8.7–8.14; TriangulineVarietyAndItsLocalModel §§10.1, 11.4; PhiGammaModulesAndIwasawaCohomology §§7.1,
+7.2a, 7.3; Mathlib `CategoryTheory.Abelian.Ext.comp`, `CategoryTheory.ShortComplex.ShortExact.extClass`.
 
 ## Layer 3: Parabolic and embedding compatibility
 
@@ -741,14 +859,15 @@ Layer 1; LocallyAnalyticRepresentationsOfLocalGroups LR.1, LR.5–LR.7; Triangul
 **Theorem (DING25 Proposition 3.27, pp. 52–53).** Assume (H). Let P be a standard parabolic with Levi
 blocks `GL_{n_1}` × ⋯ × `GL_{n_r}`, F_P a P-filtration of D and M_i = gr_i F_P (of rank n_i, in
 ΦΓ_nc of the induced parameters). Then t_D restricts to a surjection `t_{D,F_P}` : `𝔈_{F_P}` ↠ `Q_{F_P}`,
-and the square with top ∏_i `t_{M_i}` : ∏_i 𝔈(M_i) → ∏_i Q(M_i), left side `ζ_{F_P}` (LR.8,
-zeta-fp-bijective), right side `κ_{F_P}^{−1}` (TriangulineVarietyAndItsLocalModel §10.7) and bottom `t_{D,F_P}` commutes. Hence `ζ_{F_P}`
+and the square with top ∏_i `t_{M_i}` : ∏_i 𝔈(M_i) → ∏_i Q(M_i), left side `ζ_{F_P}`
+(LocallyAnalyticRepresentationsOfLocalGroups §9.6), right side `κ_{F_P}^{−1}` (TriangulineVarietyAndItsLocalModel §11.7) and bottom `t_{D,F_P}` commutes. Hence `ζ_{F_P}`
 induces ⊕_i `Ker(t_{M_i})` ≅ Ker(t_D) ∩ `𝔈_{F_P}`, an identification of embedded subspaces.
 
 *Proof sketch.* `Q_{F_P}` is spanned by the Q_w with T_w compatible with F_P (Ding Corollary 2.14(2),
-TriangulineVarietyAndItsLocalModel §10.7 with §12.8) and `𝔈_{F_P}` by the corresponding 𝔈_w (LR.8, zeta-fp-bijective (4)). Check the
+TriangulineVarietyAndItsLocalModel §11.7 with §13.8) and `𝔈_{F_P}` by the corresponding 𝔈_w
+(LocallyAnalyticRepresentationsOfLocalGroups §9.6 (4)). Check the
 square on each compatible refinement using (2.20) and (3.28), then extend linearly. *Needs:* §1.4;
-LR.8 (zeta-fp, zeta-fp-bijective); TriangulineVarietyAndItsLocalModel §§10.6–10.7, 12.8.
+LocallyAnalyticRepresentationsOfLocalGroups §§9.5–9.6; TriangulineVarietyAndItsLocalModel §§11.6–11.7, 13.8.
 
 **Checks.**
 
@@ -769,9 +888,9 @@ there is an injection `I_{P⁻}^G((⊠̂_i π_min(M_i)) ⊗_E (ε^{−1} ∘ θ^
 completed external tensor product and `I_{P⁻}^G` Emerton's closed induction; (iii) its quotient by V is
 `A^{⊕ d_K Σ_i c_{n_i}}`; (iv) after push-forward to the minimal representations, all four arrows of
 the square of §3.1 become isomorphisms, the lower left being the image of `𝔈_{F_P}` in
-Ext¹_G(A, `π_{min,F_P}(D)`) (DING25 Remark 3.28 and its diagram, p. 53). *Needs:* §§2.1–2.2, 3.1; LR.0
-(completed-external-tensor); LR.1 (self-extension-dual-numbers: restriction to a subspace); LR.6
-(closed-induction); LR.8 (pi-fp, zeta-fp).
+Ext¹_G(A, `π_{min,F_P}(D)`) (DING25 Remark 3.28 and its diagram, p. 53). *Needs:* §§2.1–2.2, 3.1;
+LocallyAnalyticRepresentationsOfLocalGroups §0.9, §1.5, §1.9 (restriction to a subspace), §7.3,
+§§9.3, 9.5.
 
 - The injection into π_min(D) is the identity on V and the inclusion `𝒦_{D,F_P}` ⊗ A ↪ 𝒦_D ⊗ A on
   quotients.
@@ -792,12 +911,13 @@ Ext¹_G(A, `π_{min,F_P}(D)`) (DING25 Remark 3.28 and its diagram, p. 53). *Need
 ### 3.3 Comparison for one embedding
 
 Fix σ ∈ Σ_K and define `t_{D,σ}` : 𝔈_σ → Q_σ as the restriction of t_D. Prove that t_D(𝔈_σ) ⊂ Q_σ
-(the σ-refinement generators of 𝔈_σ map into Q_σ, by the σ-surjection of LR.9 sigma-ext-pi1 (2) and
-the identification `Q_{σ,w}` ≅ Hom_σ(T(K),E) of TriangulineVarietyAndItsLocalModel §11.2), that `t_{D,σ}` is surjective (Ding Corollary
-2.40, TriangulineVarietyAndItsLocalModel §12.16), that `Ker(t_{D,σ})` = Ker(t_D) ∩ 𝔈_σ has dimension c_n, independent of d_K, and that
+(the σ-refinement generators of 𝔈_σ map into Q_σ, by the σ-surjection of LocallyAnalyticRepresentationsOfLocalGroups §10.5 (2) and
+the identification `Q_{σ,w}` ≅ Hom_σ(T(K),E) of TriangulineVarietyAndItsLocalModel §12.2), that `t_{D,σ}` is surjective (Ding Corollary
+2.40, TriangulineVarietyAndItsLocalModel §13.16), that `Ker(t_{D,σ})` = Ker(t_D) ∩ 𝔈_σ has dimension c_n, independent of d_K, and that
 for every P-filtration the σ-block square commutes and induces ⊕_i `Ker(t_{M_i,σ})` ≅
 `Ker(t_{D,σ})` ∩ `𝔈_{σ,F_P}` (DING25 (3.50), Corollary 3.29 and Remark 3.30(1), pp. 53–54). *Needs:*
-§§1.4, 1.5, 3.1; LR.9 (sigma-ext-pi1, sigma-parabolic); TriangulineVarietyAndItsLocalModel §§11.1–11.2, 12.16.
+§§1.4, 1.5, 3.1; LocallyAnalyticRepresentationsOfLocalGroups §§10.5–10.6; TriangulineVarietyAndItsLocalModel
+§§12.1–12.2, 13.16.
 
 - `t_{D,σ}(ζ_w(ψ))` = `a_w(κ_w^{−1}(ψ))` for ψ ∈ Hom_σ(T(K), E).
 - `Ker(t_{D,σ})` = Ker(t_D) ∩ 𝔈_σ.
@@ -814,12 +934,12 @@ for every P-filtration the σ-block square commutes and induces ⊕_i `Ker(t_{M_
 
 ### 3.4 The minimal representation for one embedding
 
-Through Ext¹_σ(A, `π_{1,σ}(φ,h)`) ≅ 𝔈_σ (LR.9, sigma-ext-pi1) view `𝒦_{D,σ}` = `Ker(t_{D,σ})` as a subspace
+Through Ext¹_σ(A, `π_{1,σ}(φ,h)`) ≅ 𝔈_σ (LocallyAnalyticRepresentationsOfLocalGroups §10.5) view `𝒦_{D,σ}` = `Ker(t_{D,σ})` as a subspace
 of Ext¹_σ(A, `π_{1,σ}(φ,h)`) and define π_min(D)_σ as the tautological extension
 `0 → π_{1,σ}(φ,h) → π_min(D)_σ → 𝒦_{D,σ} ⊗ A → 0`. Prove that its natural map to π_min(D) is
 injective and that its image is the maximal `g_{Σ_K∖{σ}}`-algebraic subrepresentation of π_min(D)
-(DING25 Remark 3.30(2), p. 54). *Needs:* §§2.1, 3.3; LR.1 (self-extension-dual-numbers); LR.9
-(sigma-analytic-representation, pi1-sigma, sigma-ext-pi1).
+(DING25 Remark 3.30(2), p. 54). *Needs:* §§2.1, 3.3; LocallyAnalyticRepresentationsOfLocalGroups
+§1.9, §§10.1, 10.2, 10.5.
 
 - π_min(D)_σ is `g_{Σ_K∖{σ}}`-algebraic, with class the inclusion `𝒦_{D,σ}` ↪ Ext¹_σ(A, `π_{1,σ}`).
 - The injection into π_min(D) restricts to `π_{1,σ}` ↪ V and induces `𝒦_{D,σ}` ↪ 𝒦_D on quotients.
@@ -831,8 +951,9 @@ injective and that its image is the maximal `g_{Σ_K∖{σ}}`-algebraic subrepre
 - K = ℚ_p: π_min(D)_σ = π_min(D).
 - n = 2: π_min(D)_σ = `π_{1,σ}(φ,h)`, which is all of V only when d_K = 1.
 - n = 3: for every σ the quotient is one copy of A.
-- For d_K > 1, replacing `π_{1,σ}` by V would include constituents `C(I,s_{i,τ})` with τ ≠ σ, which are
-  not `g_{Σ_K∖{σ}}`-algebraic, violating maximal partial algebraicity.
+- For n ≥ 2 and d_K > 1, replacing `π_{1,σ}` by V would include constituents `C(I,s_{i,τ})` with
+  τ ≠ σ, which are not `g_{Σ_K∖{σ}}`-algebraic, violating maximal partial algebraicity. For n = 1 there
+  are no labels I, V = A = `π_{1,σ}` for every d_K, and the replacement changes nothing.
 
 ### 3.5 Decomposition over the embeddings
 
@@ -841,44 +962,71 @@ injective and that its image is the maximal `g_{Σ_K∖{σ}}`-algebraic subrepre
 π_min(D)_σ, σ ∈ Σ_K, over their common socle A (not their direct sum).
 
 *Proof sketch.* Since Ker(t_D) ∩ 𝔈_g = 0 (§1.6), Ker(t_D) and each `Ker(t_{D,σ})` inject into 𝔈/𝔈_g.
-By ⊕_σ(𝔈_σ/𝔈_g) ≅ 𝔈/𝔈_g (LR.9, sigma-ext-pi1 (3)) the sum map ⊕_σ `Ker(t_{D,σ})` → Ker(t_D) is
+By ⊕_σ(𝔈_σ/𝔈_g) ≅ 𝔈/𝔈_g (LocallyAnalyticRepresentationsOfLocalGroups §10.5 (3)) the sum map ⊕_σ `Ker(t_{D,σ})` → Ker(t_D) is
 injective; both sides have dimension c_n d_K (§§1.5, 3.3). For the representations: V is the
 amalgamated sum of the `π_{1,σ}(φ,h)` over A, since each constituent `C(I,s_{i,σ})` of V/A lies in exactly
-one `π_{1,σ}` (LR.7, ps1-and-pi1; LR.9, pi1-sigma); combine with the class-inclusion description of
-§§2.1 and 3.4. *Needs:* §§1.5, 1.6, 3.3, 3.4; LR.9 (sigma-ext-pi1, pi1-sigma); LR.7 (ps1-and-pi1).
+one `π_{1,σ}` (LocallyAnalyticRepresentationsOfLocalGroups §§8.7 and 10.2); combine with the class-inclusion description of
+§§2.1 and 3.4. *Needs:* §§1.5, 1.6, 3.3, 3.4;
+LocallyAnalyticRepresentationsOfLocalGroups §§8.7, 10.2, 10.5.
 
 **Checks.**
 
 - n = 3, d_K = 2: two σ-kernel lines spanning the 2-dimensional kernel.
-- The shared 𝔈_g must be divided out first: 𝔈_σ ∩ 𝔈_τ ⊃ 𝔈_g ≠ 0, so ⊕_σ 𝔈_σ → 𝔈 is not injective.
+- For d_K ≥ 2 the shared 𝔈_g must be divided out first: for σ ≠ τ, 𝔈_σ ∩ 𝔈_τ ⊃ 𝔈_g ≠ 0 (dimension n),
+  so ⊕_σ 𝔈_σ → 𝔈 is not injective. For K = ℚ_p there is one embedding, 𝔈_σ = 𝔈, and the sum map is
+  the identity.
 - Quotient multiplicities add (c_n per embedding, c_n d_K in total) while A is counted once; the
   direct sum of the π_min(D)_σ would have socle `A^{⊕d_K}`.
 
 ### 3.6 Comparison with the modified module
 
-Let D_σ be the modified module (PadicHodgeTheory §4.5, supplier contract above; TriangulineVarietyAndItsLocalModel §9.6) and
-T_σ : Q_σ(D) ≅ Q_σ(D_σ) the quotient isomorphism of TriangulineVarietyAndItsLocalModel §11.7 (Ding Corollary 2.27(1)). Define
+Let D_σ be the modified module (TriangulineVarietyAndItsLocalModel §10.5, which imports it from
+PadicHodgeTheory §5.2) and
+T_σ : Q_σ(D) ≅ Q_σ(D_σ) the quotient isomorphism of TriangulineVarietyAndItsLocalModel §12.7 (Ding Corollary 2.27(1)). Define
 `t_{D_σ}` = T_σ ∘ `t_{D,σ}` : 𝔈_σ ↠ Q_σ(D_σ). Prove: (1) `Ker(t_{D_σ})` = `Ker(t_{D,σ})`; (2) the
 surjection ⊕_w `Q_{σ,w}(D_σ)` ↠ Q_σ(D_σ) factors through `t_{D_σ}` composed with
 (ζ_w ∘ κ_w)_w : ⊕_w `Q_{σ,w}(D_σ)` → Ext¹_σ(A, `π_{1,σ}`) ↠ 𝔈_σ, where κ_w now uses the parameters
 `w(φ)z^{𝔗_σ(h)}` of D_σ; consequently `Ker(t_{D_σ})` depends only on the isomorphism class of D_σ; (3)
-for every P-filtration, with `M_{i,σ}` = 𝔗_σ(M_i), the block square transports and gives
-⊕_i `Ker(t_{M_{i,σ}})` ≅ `Ker(t_{D_σ})` ∩ `𝔈_{σ,F_P}` ((3.51)) (DING25 §2.2, Proposition 2.5 and (2.7),
-p. 13; §3.2.1, Corollary 3.32 and (3.51), p. 55). *Needs:* §§3.3, 3.1; PadicHodgeTheory §4.5 (and the
-contract above); TriangulineVarietyAndItsLocalModel §§9.6, 11.4, 11.6–11.7, 12.16.
+for every P-filtration F_P of D with graded pieces M_i, let `M_{i,σ}` be the i-th graded piece of the
+saturated filtration of D_σ with `M_{i,σ}[1/t]` = `M_i[1/t]`, put `t_{M_{i,σ}}` = T_σ ∘ `t_{M_i,σ}`
+with T_σ : Q_σ(M_i) ≅ `Q_σ(M_{i,σ})` the graded quotient isomorphism of
+TriangulineVarietyAndItsLocalModel §12.7; then the block square transports and gives
+⊕_i `Ker(t_{M_{i,σ}})` ≅ `Ker(t_{D_σ})` ∩ `𝔈_{σ,F_P}` (Ding (3.51), where `M_{i,σ}` is written
+𝔗_σ(M_i)) (DING25 §2.2, Proposition 2.5 and (2.7), p. 13; §3.2.1, Corollary 3.32 and (3.51),
+p. 55). The block `M_{i,σ}` is the modification of M_i with the ambient cutoff: it keeps the σ-weights
+of M_i and gives every weight at τ ≠ σ the value `h_{n,τ}`, the convention of
+TriangulineVarietyAndItsLocalModel §§10.5 and 12.4 for `D_{1,σ}`, `C_{1,σ}` and for graded pieces of
+first-order deformations. It is not the modification of M_i with its own lowest weight `h_{b,τ}`
+(b the last index of the i-th block): the two differ by the twist by the algebraic character
+`z^{k_i}` with `k_{i,σ}` = 0 and `k_{i,τ}` = `h_{n,τ}` − `h_{b,τ}`, which is an isomorphism on Ext¹
+carrying σ-partial de Rham, refinement and zero subspaces to each other. Since T_σ is injective,
+`Ker(t_{M_{i,σ}})` = `Ker(t_{M_i,σ})` ⊂ 𝔈_σ(M_i) whichever cutoff is used; the cutoff matters for the
+target Q_σ and for the isomorphism classes compared in Layer 4. *Needs:* §§3.3, 3.1;
+TriangulineVarietyAndItsLocalModel §§10.5, 12.4, 12.6–12.7, 13.16.
 
 - `t_{D_σ}` is `t_{D,σ}` followed by the genuine isomorphism T_σ.
 - `Ker(t_{D_σ})` = `Ker(t_{D,σ})` as subspaces of the fixed 𝔈_σ.
 - An isomorphism D_σ ≅ D′_σ identifies the two σ-refinement presentations, hence `Ker(t_{D_σ})` =
   `Ker(t_{D′_σ})`.
 - The transported block square identifies embedded parabolic kernels.
+- The graded piece `M_{i,σ}` of the filtration of D_σ is the own-cutoff modification of M_i twisted
+  by `z^{k_i}`, and `Ker(t_{M_{i,σ}})` = `Ker(t_{M_i,σ})`.
 
 **Checks.**
 
-- K = ℚ_p: D_σ = D, T_σ is the identity and nothing changes.
+- K = ℚ_p: D_σ = D, T_σ is the identity, every exponent `k_{i,τ}` is vacuous and nothing changes.
 - If D_σ ≅ D′_σ, the kernels are equal subspaces of 𝔈_σ, not merely of equal dimension.
-- Varying the Hodge filtration of D at τ ≠ σ while keeping D_σ fixed (possible by TriangulineVarietyAndItsLocalModel §9.9) leaves
-  `Ker(t_{D,σ})` unchanged.
+- For n ≥ 3 and d_K ≥ 2, take D, D′ ∈ ΦΓ_nc(φ,h) with the same Deligne–Fontaine module and the same
+  σ-Hodge filtration but different generic flags at some τ ≠ σ (such D′ exist by
+  TriangulineVarietyAndItsLocalModel §10.8): then D_σ ≅ D′_σ and `Ker(t_{D,σ})` = `Ker(t_{D′,σ})`.
+  For n = 1 the labelled filtration at each embedding has a single jump and cannot vary, for
+  d_K = 1 there is no τ ≠ σ, and for n = 2 both kernels are zero, so the statement has content only
+  for n ≥ 3 and d_K ≥ 2.
+- Cutoff of the blocks: for n = 3, d_K = 2, `h_τ` = (3, 1, 0) at τ ≠ σ and F = (D_1 ⊂ D), the block
+  D_1 has τ-weights (3, 1) and its graded piece `D_{1,σ}` in D_σ has τ-weights (0, 0), whereas
+  modifying D_1 with its own lowest weight gives (1, 1); the two differ by the twist with τ-exponent
+  `k_τ` = 0 − 1 = −1 and σ-exponent 0. The second block `R(φ_3z^{h_3})` has own lowest weight 0 =
+  `h_{3,τ}` and needs no twist.
 - For d_K > 1 and n > 1 the weights of D_σ at τ ≠ σ are all equal to `h_{n,τ}`, so D_σ ∉ ΦΓ_nc(φ,h):
   Theorem 1.4 cannot be reapplied to D_σ, and its comparison is the transported one. For two
   embeddings and weights (3, 1, 0) at τ, D_σ has weights (0, 0, 0) at τ.
@@ -887,14 +1035,23 @@ contract above); TriangulineVarietyAndItsLocalModel §§9.6, 11.4, 11.6–11.7, 
 
 **Theorem (DING25 Corollary 3.33 and diagram (3.52), p. 55).** Assume (H). There are natural
 isomorphisms Ext¹_σ(A, π_min(D)_σ) ≅ Q_σ(D) ≅ Q_σ(D_σ), the first induced by `t_{D,σ}` and the second by
-T_σ. For every P-filtration F_P they fit in the commutative diagram (3.52), whose lower left term is
+T_σ. For every P-filtration F_P, with the blocks `M_{i,σ}` of §3.6 (3) (ambient cutoff) in the
+right-hand column, they fit in the commutative diagram (3.52), whose lower left term is
 the image of `Ext¹_{σ,F_P}(A, π_{1,σ}(φ,h))` in Ext¹_σ(A, `π_{min,F_P}(D)_σ`), with `π_{min,F_P}(D)_σ` the
 maximal `g_{Σ_K∖{σ}}`-algebraic subrepresentation of `π_{min,F_P}(D)`; every arrow of that diagram is an
 isomorphism.
 
-*Proof sketch.* Repeat §2.2 inside the `g_{Σ_K∖{σ}}`-algebraic extensions, with the same constituent
-surjectivity input; transport the target by T_σ and apply §3.6(3). *Needs:* §§2.2, 3.2, 3.4, 3.6; LR.9
-(sigma-ext-pi1, sigma-parabolic); TriangulineVarietyAndItsLocalModel §11.7.
+*Proof sketch.* Run the argument of §2.2 in Ext_G for the extension
+`0 → π_{1,σ}(φ,h) → π_min(D)_σ → 𝒦_{D,σ} ⊗ A → 0`: the dévissage uses the constituents
+`C(I,s_{i,σ})` of `π_{1,σ}(φ,h)`/A, σ fixed (LocallyAnalyticRepresentationsOfLocalGroups §10.2), and
+`𝒦_{D,σ}` ∩ `𝔈_{g′}` ⊂ 𝒦_D ∩ `𝔈_{g′}` = 0 (§1.6), so push-forward
+Ext¹_G(A, `π_{1,σ}(φ,h)`) → Ext¹_G(A, π_min(D)_σ) is onto with kernel `𝒦_{D,σ}`. It restricts to
+the σ-subspaces: push-out along the injection `π_{1,σ}(φ,h)` ↪ π_min(D)_σ embeds the extension of a
+preimage into the pushed-out extension, and `g_{Σ_K∖{σ}}`-algebraicity passes to subrepresentations
+(its §10.1), so every preimage of a class of Ext¹_σ(A, π_min(D)_σ) lies in Ext¹_σ(A, `π_{1,σ}(φ,h)`).
+Transport the target by T_σ and apply §3.6(3). *Needs:* §§1.6, 2.2, 3.2, 3.4, 3.6;
+LocallyAnalyticRepresentationsOfLocalGroups §§1.7, 8.9, 10.1–10.2, 10.5–10.6;
+TriangulineVarietyAndItsLocalModel §12.7.
 
 **Checks.**
 
@@ -905,46 +1062,83 @@ surjectivity input; transport the target by T_σ and apply §3.6(3). *Needs:* §
 ### Examples
 
 For n = 4, d_K = 1 and the filtration with block ranks (3, 1), `π_{min,F_P}(D)` has quotient one copy of
-A, receiving the closed induction of π_min(M_1) ⊠ M_2 twisted by `ε^{−1}` ∘ θ^P = 1 ⊠ ε^3, while
+A, receiving the closed induction of π_min(M_1) ⊠ π_min(M_2) twisted by `ε^{−1}` ∘ θ^P = 1 ⊠ ε^3,
+where π_min(M_2) is the character `ψz^{h_4}` of K^× for the rank-one block M_2 = `R_{K,E}(ψz^{h_4})`
+(§2.6, first Check), while
 π_min(D) has quotient `A^{⊕5}`. For n = 3, d_K = 2, π_min(D) is the amalgam over A of two extensions
 π_min(D)_σ, π_min(D)_τ, each with quotient A.
 
 ### Dependencies
 
-Layers 1–2; LocallyAnalyticRepresentationsOfLocalGroups LR.0, LR.1, LR.6–LR.9;
-TriangulineVarietyAndItsLocalModel §§9.6, 9.9, 10.6–10.7, 11.1–11.7, 12.8, 12.16; PadicHodgeTheory
-§4.5.
+Layers 1–2; LocallyAnalyticRepresentationsOfLocalGroups §§0.9, 1.5, 1.7, 1.9, 7.3, 8.4–8.5,
+8.7–8.14, 9.1–9.7, 10.1–10.7; TriangulineVarietyAndItsLocalModel §§10.5, 10.8, 11.6–11.7, 12.1–12.2,
+12.4, 12.6–12.7, 13.8, 13.16.
 
 ## Layer 4: Recovery of the modified Hodge parameters
 
 ### 4.1 The embedded relation detected by the representation
 
 Fix σ and n ≥ 3, and let F = (D_1 ⊂ D), G = (`R_{K,E}(φ_nz^{h_1})` ⊂ D). Inside Π = π_min(D)_σ let π⁻
-and π⁺ be the tautological subextensions of `π_{1,σ}(φ,h)` by `Ker(t_{D_σ,F})` ⊗ A and by
-`Ker(t_{D_σ,G})` ⊗ A (§3.6). Define ℒ_Π as the kernel of the sum of push-forwards
-`Ext¹_σ(A, π⁻) ⊕ Ext¹_σ(A, π⁺) → Ext¹_σ(A, Π)`. Prove that the block isomorphisms of §3.7 identify the
-ambient space Ext¹_σ(A, π⁻) ⊕ Ext¹_σ(A, π⁺) with `𝒱_σ(D_{1,σ}, C_{1,σ})` =
-(`Q_σ(D_{1,σ})` × Hom_σ(K^×, E)) ⊕ (`Q_σ(C_{1,σ})` × Hom_σ(K^×, E)) (TriangulineVarietyAndItsLocalModel §12.13), that this identification
-depends only on the fixed block data (φ, h, `D_{1,σ}`, `C_{1,σ}`) and on π⁻, π⁺, and that it carries ℒ_Π
-onto the relation ℒ_σ(D_σ, `D_{1,σ}`, `C_{1,σ}`) of TriangulineVarietyAndItsLocalModel §12.13 (DING25 proof of Theorem 3.34,
-(3.53)–(3.54), p. 56; §2.4, (2.42) and Corollary 2.38, p. 32). *Needs:* §§3.2, 3.6, 3.7; TV
-§§12.13–12.14; Mathlib `LinearMap.ker`, `LinearMap.prod`.
+and π⁺ be the tautological extensions of `Ker(t_{D_σ,F})` ⊗ A and of `Ker(t_{D_σ,G})` ⊗ A by
+`π_{1,σ}(φ,h)` (§3.6), subrepresentations of Π with subobject `π_{1,σ}(φ,h)`; they are the
+representations `π_{min,F}(D)_σ` and `π_{min,G}(D)_σ` of §3.7. Let E⁻_F ⊂ Ext¹_σ(A, π⁻) be the image of the parabolic subspace `𝔈_{σ,F}` ⊂ 𝔈_σ ≅
+Ext¹_σ(A, `π_{1,σ}(φ,h)`) under push-forward along `π_{1,σ}(φ,h)` ↪ π⁻, and E⁺_G ⊂ Ext¹_σ(A, π⁺) the
+image of `𝔈_{σ,G}` under push-forward along `π_{1,σ}(φ,h)` ↪ π⁺; these are the lower left terms of
+the diagram of §3.7 for F and for G. There `D_{1,σ}` and `C_{1,σ}` are the blocks of §3.6 (3) for F
+and for G, formed with the ambient cutoff `h_{n,τ}` as in TriangulineVarietyAndItsLocalModel §10.5,
+and the rank-one blocks `R(φ_nz^{h_n})` of F and `R(φ_nz^{h_1})` of G contribute their σ-parts
+Hom_σ(K^×, E) (TriangulineVarietyAndItsLocalModel §11.1). Define ℒ_Π as the kernel of the sum of push-forwards
+E⁻_F ⊕ E⁺_G → Ext¹_σ(A, Π). Prove that this sum map is surjective; that the block isomorphisms of
+§3.7 for F and G identify E⁻_F ⊕ E⁺_G with `𝒱_σ(D_{1,σ}, C_{1,σ})` =
+(`Q_σ(D_{1,σ})` × Hom_σ(K^×, E)) ⊕ (`Q_σ(C_{1,σ})` × Hom_σ(K^×, E))
+(TriangulineVarietyAndItsLocalModel §13.13); that this identification depends only on the fixed
+block data (φ, h, `D_{1,σ}`, `C_{1,σ}`) and on π⁻, π⁺; and that it carries ℒ_Π onto the relation
+ℒ_σ(D_σ, `D_{1,σ}`, `C_{1,σ}`) of TriangulineVarietyAndItsLocalModel §13.13, so that
+0 → ℒ_Π → E⁻_F ⊕ E⁺_G → Ext¹_σ(A, Π) → 0 is identified, through `t_{D_σ}` on the last term, with the
+exact sequence of TriangulineVarietyAndItsLocalModel §13.14 (DING25 proof of Theorem 3.34,
+(3.53)–(3.54), p. 56, with the two middle terms read as the parabolic images of (3.52), p. 55, see
+Source corrections; §2.4, (2.42) and Corollary 2.38, p. 32). The full groups Ext¹_σ(A, π⁻) and
+Ext¹_σ(A, π⁺) are not identified with block spaces: they are strictly larger.
 
-- A pair lies in ℒ_Π exactly when the sum of its two pushed-forward classes is zero.
-- The ambient identification is the middle isomorphism of (3.54), built from the block isomorphisms
-  of §3.7.
+*Proof sketch.* Since π⁻, π⁺ ⊂ Π, the push-forward of 𝔈_σ to Ext¹_σ(A, Π) restricted to
+`𝔈_{σ,F}` (resp. `𝔈_{σ,G}`) factors through E⁻_F (resp. E⁺_G). As `𝔈_{σ,F}` + `𝔈_{σ,G}` = 𝔈_σ
+(LocallyAnalyticRepresentationsOfLocalGroups §10.7) and 𝔈_σ → Ext¹_σ(A, Π) is onto (§3.7), the sum
+map is onto. The block identification is read off the diagram of §3.7 for F and for G: its lower
+left term E⁻_F (resp. E⁺_G) maps isomorphically to the product of modified block quotients in its
+upper right corner, `Q_σ(D_{1,σ})` × Hom_σ(K^×, E) (resp. the factors of G, in the order of
+TriangulineVarietyAndItsLocalModel §13.13). Since the diagram commutes, the sum map followed by
+`t_{D_σ}` corresponds to the addition of the two paraboline classes in Q_σ(D_σ), and ℒ_Π maps
+isomorphically onto the kernel ℒ_σ of the sequence of §13.14 there. *Needs:* §§3.2, 3.6, 3.7;
+LocallyAnalyticRepresentationsOfLocalGroups §§10.6–10.7; TriangulineVarietyAndItsLocalModel
+§§10.5, 11.1, 13.13–13.14; Mathlib `LinearMap.ker`, `LinearMap.prod`.
+
+- A pair (x, y) ∈ E⁻_F ⊕ E⁺_G lies in ℒ_Π exactly when the sum of its two pushed-forward classes in
+  Ext¹_σ(A, Π) is zero.
+- The sum map E⁻_F ⊕ E⁺_G → Ext¹_σ(A, Π) is surjective; dim E⁻_F = dim E⁺_G =
+  n + 1 + n(n−1)/2, dim Ext¹_σ(A, Π) = n + n(n+1)/2, hence dim ℒ_Π = 2 + n(n−1)/2.
+- The ambient identification is the middle isomorphism of (3.54) on the parabolic images, built from
+  the block isomorphisms of §3.7 for F and G.
 - Its image of ℒ_Π equals ℒ_σ(D_σ, `D_{1,σ}`, `C_{1,σ}`) as a subspace of `𝒱_σ(D_{1,σ}, C_{1,σ})`.
-- Replacing D by D′ with π_min(D′)_σ ≅ Π, `D′_{1,σ}` ≅ `D_{1,σ}` and `C′_{1,σ}` ≅ `C_{1,σ}` leaves the
-  middle isomorphism unchanged.
+- Replacing D by D′ with π_min(D′)_σ ≅ Π, `D′_{1,σ}` ≅ `D_{1,σ}` and `C′_{1,σ}` ≅ `C_{1,σ}` leaves
+  E⁻_F, E⁺_G and the middle isomorphism unchanged.
 
 **Checks.**
 
-- A class lying in both subextensions gives the pair (x, −x), which lies in ℒ_Π; the pair (x, x)
-  does not unless 2x = 0 in Ext¹_σ(A, Π), so the sign of the sum map matters.
+- For nonzero b ∈ 𝔈_g, which lies in `𝔈_{σ,F}` ∩ `𝔈_{σ,G}` (𝔈_g ⊂ 𝔈_w for every w), with images
+  b⁻ ∈ E⁻_F and b⁺ ∈ E⁺_G, the pair (b⁻, −b⁺) lies in ℒ_Π, while (b⁻, b⁺) maps to twice the image
+  of b in Ext¹_σ(A, Π), which is nonzero because Ker(t_D) ∩ 𝔈_g = 0 (§1.6) and 2 is invertible in E;
+  so the sign of the sum map matters.
 - Two distinct lines in the same ambient space are abstractly isomorphic; only equality as embedded
   subspaces carries information, so an abstract isomorphism ℒ_Π ≅ ℒ_σ would not suffice.
-- n = 3: both blocks have rank two, π⁻ = π⁺ = `π_{1,σ}` (their kernels vanish by §3.1), yet ℒ_Π, of
-  dimension dim 𝒱_σ − dim Q_σ(D_σ) = 2(5 + 2) − 9 = 5, still detects the rank-three parameter.
+- n = 3: F and G have block ranks (2, 1) and (1, 2), so their kernels vanish (§3.1), π⁻ = π⁺ =
+  `π_{1,σ}`, and E⁻_F = `𝔈_{σ,F}`, E⁺_G = `𝔈_{σ,G}` have dimension 7 = 5 + 2 each
+  (LocallyAnalyticRepresentationsOfLocalGroups §10.6); their sum maps onto the 9-dimensional
+  Ext¹_σ(A, Π), so ℒ_Π has dimension 14 − 9 = 5 = 2 + 3, matching 14 = 9 + 5 in
+  TriangulineVarietyAndItsLocalModel §13.14, and it still detects the rank-three parameter.
+- Negative control: at n = 3 the unrestricted groups Ext¹_σ(A, π^±) = Ext¹_σ(A, `π_{1,σ}`) ≅ 𝔈_σ have
+  dimension n + 2^n − 1 = 10 each, so the kernel of their sum map to Ext¹_σ(A, Π) has dimension
+  20 − 9 = 11, not 5, and their direct sum (dimension 20) is not isomorphic to the 14-dimensional
+  `𝒱_σ(D_{1,σ}, C_{1,σ})`; only the parabolic images carry the block identification.
 
 ### 4.2 The recovery theorem
 
@@ -956,20 +1150,34 @@ Then π_min(D)_σ ≅ π_min(D′)_σ as G-representations if and only if D_σ �
 *Proof sketch.* Since End_G(V) → End_G(A) ≅ E is an isomorphism, π_min(D)_σ ≅ π_min(D′)_σ exactly
 when `Ker(t_{D_σ})` = `Ker(t_{D′_σ})`. If D_σ ≅ D′_σ, §3.6(2) gives equal kernels. Conversely, induct on
 n: for n ≤ 2 all modules D_σ with fixed (φ, 𝔗_σ(h)) are isomorphic. For n ≥ 3, equal kernels give equal
-parabolic kernels for F and G (§3.6(3)), hence by (3.51) equal kernels for the blocks, hence
-`D_{1,σ}` ≅ `D′_{1,σ}` and `C_{1,σ}` ≅ `C′_{1,σ}` by induction. Then §4.1 gives ℒ_σ(D_σ, `D_{1,σ}`, `C_{1,σ}`) =
-ℒ_σ(D′_σ, `D_{1,σ}`, `C_{1,σ}`) in `𝒱_σ(D_{1,σ}, C_{1,σ})`, and TriangulineVarietyAndItsLocalModel §12.14 (Ding Corollary 2.38(1)) gives
+parabolic kernels for F and G (§3.6(3)), hence by (3.51) equal kernels for the blocks. The theorem
+in rank n − 1, applied to D_1, D′_1 ∈ ΦΓ_nc(φ^1, h^1) and to C_1, C′_1 ∈ ΦΓ_nc(φ^1, h^2) (§1.2), makes
+their own-cutoff modifications isomorphic, and the twists `z^{k}` of §3.6 (3), with exponent
+`h_{n,τ}` − `h_{n−1,τ}` at τ ≠ σ for D_1 and 0 for C_1, carry these isomorphisms to
+`D_{1,σ}` ≅ `D′_{1,σ}` and `C_{1,σ}` ≅ `C′_{1,σ}`. Then §4.1 gives ℒ_σ(D_σ, `D_{1,σ}`, `C_{1,σ}`) =
+ℒ_σ(D′_σ, `D_{1,σ}`, `C_{1,σ}`) in `𝒱_σ(D_{1,σ}, C_{1,σ})`, and TriangulineVarietyAndItsLocalModel §13.14 (Ding Corollary 2.38(1)) gives
 D_σ ≅ D′_σ. The statement for π_min(D) follows from §§3.4–3.5. For K = ℚ_p, D_σ = D; for étale D pass
 to ρ through the étale equivalence (PhiGammaModulesAndIwasawaCohomology §1.0) (DING25 Theorem 3.34 and proof, p. 56; Corollary
-2.38(1), p. 32). *Needs:* §§2.1, 3.4–3.6, 4.1; TriangulineVarietyAndItsLocalModel §§9.6, 12.14; PhiGammaModulesAndIwasawaCohomology §1.0.
+2.38(1), p. 32). *Needs:* §§2.1, 3.4–3.6, 4.1; TriangulineVarietyAndItsLocalModel §§10.5, 13.14; PhiGammaModulesAndIwasawaCohomology §1.0.
 
 **Checks.**
 
 - n ≤ 2: all π_min(D)_σ coincide with `π_{1,σ}`, and for n = 2 all D_σ with fixed (φ, 𝔗_σ(h)) are
   isomorphic, because the torus of Frobenius-eigenline scalings acts transitively on the lines at σ
   avoiding both eigenlines; for d_K > 1 the modules D themselves need not be isomorphic.
-- n = 3, K = ℚ_p: two modules with σ-Hodge flags spanned by (e_1 + e_2, e_1 + ae_2 + e_3) for
-  different a ∉ {0, 1} (TriangulineVarietyAndItsLocalModel §9.8) have different kernel lines in the 10-dimensional 𝔈.
+- n = 3, K = ℚ_p, D crystalline with generic unramified φ (TriangulineVarietyAndItsLocalModel §10.7;
+  DING25 Example 2.9, pp. 14–15): in the Frobenius eigenbasis e_1, e_2, e_3 take the Hodge plane
+  span(e_1 + e_2, e_1 + ae_2 + e_3) and, inside it, the Hodge line E(e_1 + ae_2 + e_3), a ∉ {0, 1}.
+  For a = 2 the line is (1, 2, 1) and the plane has normal (1, −1, 1); for a = 3 they are (1, 3, 1)
+  and (1, −1, 2). Both dot products are 0 and no coordinate of a line or a normal vanishes, so every
+  refinement is noncritical. An isomorphism is diagonal, diag(x, y, z), in the eigenbasis (as in the
+  proof sketch of §5.1); it must carry the plane's intersection E(e_1 + e_2) with Ee_1 + Ee_2 to
+  itself, forcing x = y, and then the image (x, 2x, z) of the a = 2 line is never proportional to
+  (1, 3, 1). So the two modules are not isomorphic, and by Theorem 4.2 their kernel lines in the
+  10-dimensional 𝔈 differ. The planes alone do not separate them: diag(1, 1, 1/2) carries the a = 2
+  plane (normal (1, −1, 1)) onto the a = 3 plane (normal (1, −1, 2)), since it sends e_1 + e_2 and
+  (1, 2, 1) to e_1 + e_2 and (1, 2, 1/2), both orthogonal to (1, −1, 2); so the line inside the plane
+  is the datum that carries a.
 - The equivalence has the stated direction in both halves: equality of modified modules gives
   isomorphic representations by §3.6 alone, while the converse is the induction.
 - For general K, the family (D_σ)_σ need not determine D: the isomorphism classes of the D_σ forget
@@ -983,8 +1191,8 @@ at its own embedding, and the pair of lines determines (D_σ, D_τ) but not D.
 
 ### Dependencies
 
-Layer 3; TriangulineVarietyAndItsLocalModel §§9.6, 9.8, 12.13–12.14; PhiGammaModulesAndIwasawaCohomology
-§1.0.
+Layer 3; LocallyAnalyticRepresentationsOfLocalGroups §§10.6–10.7; TriangulineVarietyAndItsLocalModel
+§§10.5, 10.7, 11.1, 13.13–13.14; PhiGammaModulesAndIwasawaCohomology §1.0.
 
 ## Layer 5: Universal extensions and the first-order Artinian action
 
@@ -997,18 +1205,41 @@ for i ≠ j, φ_i/φ_j is smooth and nontrivial, hence not algebraic, so Hom(R(�
 and f is diagonal, f = diag(a_i). It preserves the Hodge flag at each σ. Noncriticality of all
 refinements puts the first Hodge line at σ outside every coordinate hyperplane spanned by n − 1
 Frobenius eigenvectors (general position with every refinement flag), and a diagonal map preserves
-such a line only if all a_i are equal. *Needs:* TriangulineVarietyAndItsLocalModel §§9.1–9.3; PhiGammaModulesAndIwasawaCohomology §§7.1–7.2 (Hom between
+such a line only if all a_i are equal. *Needs:* TriangulineVarietyAndItsLocalModel §§10.1–10.3; PhiGammaModulesAndIwasawaCohomology §§7.1–7.2 (Hom between
 localised rank-one modules vanishes unless the parameters differ by an algebraic character);
 PadicHodgeTheory §4.5 (functoriality of the labelled filtered de Rham realisation).
 
 With this, LocalGaloisDeformationRings §1.23 gives the formally smooth deformation rings R_D ↠
-`R_{D,w}` ↠ `R_{D,g}` with tangent spaces Ext¹(D,D), Ext¹_w(D,D), Ext¹_g(D,D), and, in rank one, the rings
-R_δ ↠ `R_{δ,g}` of a character δ of T(K) and of its locally algebraic deformations, with tangent spaces
-H_T and Hom_sm(T(K),E). For δ = w(φ)z^h the square with top R_δ/𝔪² → `R_{δ,g}/𝔪²`, bottom
+`R_{D,w}` ↠ `R_{D,g}` with tangent spaces Ext¹(D,D), Ext¹_w(D,D), Ext¹_g(D,D).
+
+For a continuous character δ_i of K^× let `R_{δ_i}` be the ring R_1 of the trivial module
+`R_{K,E}` (LocalGaloisDeformationRings §1.23 in rank one, see the contract above) with its universal
+deformation twisted by δ_i. By the tensor and coefficient-change laws of
+PhiGammaModulesAndIwasawaCohomology §7.1, M ↦ M ⊗ `R_{K,A}(δ_i)` is an equivalence from the
+deformations of `R_{K,E}` over an Artinian A to those of `R_{K,E}(δ_i)`, with inverse the twist by
+`δ_i^{−1}`; so `R_{δ_i}` ≅ `E⟦x_1,…,x_{d_K+1}⟧` pro-represents the deformations of `R_{K,E}(δ_i)`
+whether or not δ_i is locally algebraic. For a continuous character δ = δ_1 ⊠ ⋯ ⊠ δ_n of
+T(K) = (K^×)^n define R_δ = `⊗̂_{i,E} R_{δ_i}`, the completed tensor product over E of these
+rank-one rings, and, for δ locally algebraic, `R_{δ,g}` = `⊗̂_{i,E} R_{δ_i,g}`, where `R_{δ_i,g}` is the quotient of
+`R_{δ_i}` pro-representing the locally algebraic deformations of δ_i. Prove that R_δ pro-represents
+the deformations of δ over Artinian algebras (n-tuples of deformations δ̃_i : K^× → A^× of the δ_i,
+equivalently of the modules `R_{K,E}(δ_i)` by the rank-one classification of
+PhiGammaModulesAndIwasawaCohomology §7.4), and `R_{δ,g}` those with every δ̃_i locally algebraic in
+the sense of its §7.3; that both rings are formally smooth and R_δ ↠ `R_{δ,g}`; and that through
+ψ ↦ δ(1 + εψ) (TriangulineVarietyAndItsLocalModel §11.1) their tangent spaces are H_T, of dimension
+n(1 + d_K), and Hom_sm(T(K), E), of dimension n. For δ_i = `φ_iz^{k_i}` with φ_i smooth, a locally
+algebraic deformation has weight `k_i` (an integer weight reducing to `k_i`), so it is `φ̃_iz^{k_i}`
+with φ̃_i a smooth deformation of φ_i, unramified because 1 + 𝔪_A is torsion-free; hence
+`R_{δ_i,g}` ≅ E⟦y_i⟧ (DING25 §3.2.2, the deformation rings R_δ ↠ `R_{δ,g}` and their tangent
+spaces, p. 57). *Needs:* LocalGaloisDeformationRings §1.23 (rank one, for the trivial module);
+PhiGammaModulesAndIwasawaCohomology §§7.1, 7.3–7.4; TriangulineVarietyAndItsLocalModel §11.1.
+
+For δ = w(φ)z^h the square with top R_δ/𝔪² → `R_{δ,g}/𝔪²`, bottom
 `R_{D,w}/𝔪²` → `R_{D,g}/𝔪²` and vertical maps induced by κ_w is Cartesian (Ding (3.55), from Proposition
 2.10(2)(3)). Let A_0 = Ĥ_φ/𝔪² (SmoothRepresentationsOfLocalGroups contract above) and A_0 ↪ `R_{D,g}/𝔪²`
 the composite of 𝒥_w, the twist by `z^{−h}` and `R_{w(φ)z^h,g}/𝔪²` → `R_{D,g}/𝔪²`; it is independent of w by
-TriangulineVarietyAndItsLocalModel §10.3 (Ding Lemma 2.11) and LR.7 self-extensions (2) (Ding Proposition 3.3(2)). Define
+TriangulineVarietyAndItsLocalModel §11.3 (Ding Lemma 2.11) and LocallyAnalyticRepresentationsOfLocalGroups §8.8 (2) (Ding Proposition
+3.3(2)). Define
 
 ```text
 A_D   = R_D/𝔪²   ×_{R_{D,g}/𝔪²} A_0,
@@ -1020,10 +1251,10 @@ Prove that A_D and `A_{D,w}` are local Artinian E-algebras with square-zero maxi
 field E and tangent spaces Q and Q_w; that A_D ≅ `TrivSqZeroExt E (Module.Dual E Q)`; that the
 natural map A_D → R_D/𝔪², the first projection of the fibre product, is injective, dual to the
 surjection Ext¹(D,D) ↠ Q, and is not surjective when Ext¹_0(D,D) ≠ 0 (n = 3, d_K = 1: dimensions 10
-and 11); and that A_D → ∏_w `A_{D,w}` is injective, equivalently ⋂_w I_w = 0, dually to the surjection ⊕_w Q_w ↠ Q of TriangulineVarietyAndItsLocalModel §12.8 (DING25 §3.2.2, the
+and 11); and that A_D → ∏_w `A_{D,w}` is injective, equivalently ⋂_w I_w = 0, dually to the surjection ⊕_w Q_w ↠ Q of TriangulineVarietyAndItsLocalModel §13.8 (DING25 §3.2.2, the
 deformation rings, (3.55) and the paragraph defining A_0, A_D, `A_{D,w}`, I_w, pp. 56–57). *Needs:*
 LocalGaloisDeformationRings §§0.4, 1.23; SmoothRepresentationsOfLocalGroups §SR.3.2 and the contract
-above; TriangulineVarietyAndItsLocalModel §§10.3–10.4, 12.8; LR.7 (self-extensions); Mathlib `TrivSqZeroExt`, `Module.Dual`,
+above; TriangulineVarietyAndItsLocalModel §§11.3–11.4, 13.8; LocallyAnalyticRepresentationsOfLocalGroups §8.8; Mathlib `TrivSqZeroExt`, `Module.Dual`,
 `IsLocalRing`.
 
 - A map S → A_D of E-algebras is a pair of E-algebra maps S → R_D/𝔪² and S → A_0 with equal composites
@@ -1032,10 +1263,27 @@ above; TriangulineVarietyAndItsLocalModel §§10.3–10.4, 12.8; LR.7 (self-exte
   `A_{D,w}` with Q_w.
 - `A_{D,w}` ≅ `R_{w(φ)z^h}/𝔪²`, compatibly with residue fields and cotangent identifications.
 - I_w is the kernel of A_D ↠ `A_{D,w}`; an element of A_D mapping to zero in every `A_{D,w}` is zero.
+- For a character δ of T(K), R_δ and (δ locally algebraic) `R_{δ,g}` pro-represent the deformations,
+  respectively the locally algebraic deformations, of δ; both are formally smooth, R_δ ↠ `R_{δ,g}`,
+  and their tangent spaces are H_T and Hom_sm(T(K), E).
 
 **Checks.**
 
 - For x, y in `𝔪_{A_D}`, xy = 0, while residue scalars multiply as in E.
+- n = 1: R_δ ≅ `E⟦x_1,…,x_{d_K+1}⟧` and `R_{δ,g}` ≅ E⟦y⟧, the unramified direction; for
+  δ = `φ_1z^{h_1}`, which is locally algebraic, LocalGaloisDeformationRings §1.23 also applies to
+  `R_{K,E}(δ)` directly, and its ring pro-represents the same functor as the twisted R_1. n = 2, K = ℚ_p: the tangent dimensions are 2 + 2 = 4 = dim H_T and
+  1 + 1 = 2 = dim Hom_sm(T(K), E); reading "rank one" as the ring of the product character δ_1δ_2 of
+  K^× would give tangent dimension 2, too small.
+- K = ℚ_p and δ_1 trivial on p and on the roots of unity of ℚ_p and equal to x ↦ exp(a·log_p x) on
+  1 + 2pℤ_p, with a ∈ ℤ_p ∖ ℤ (the exponential converges since |a·log_p x| ≤ |2p| < `p^{−1/(p−1)}`, also
+  for p = 2): δ_1 has weight a ∉ ℤ, so `R_{ℚ_p,E}(δ_1)` is not de Rham and LocalGaloisDeformationRings
+  §1.23 does not apply to it, while the twist of R_1 by δ_1 gives `R_{δ_1}` ≅ E⟦x_1, x_2⟧ with tangent
+  space Hom(ℚ_p^×, E) of dimension 2. Citing the supplier's rank-one case for every continuous
+  character would use it outside its hypotheses.
+- K = ℚ_p, δ_1 = z^k with k ≠ 0: δ_1(1 + εv_p) has weight k and is locally algebraic, while
+  δ_1(1 + ε log_p) has weight k + ε and is not; so the tangent space of `R_{δ,g}` is the smooth
+  characters, not all of H_T.
 - n = 1: A_D = `A_{D,id}` = `R_{φ_1z^{h_1}}/𝔪²` and I_id = 0.
 - n = 3, d_K = 1: dim_E A_D = 10, dim_E `A_{D,w}` = 7, dim_E I_w = 3, while dim_E R_D/𝔪² = 11; the
   missing direction is Ext¹_0(D,D).
@@ -1051,8 +1299,8 @@ U_w ⊂ U be the inverse image of 𝔈_w ⊗ A, the tautological extension with 
 x ∈ `𝔪_{A_{D,w}}` ≅ H_T^∨ acts on δ̃_w^univ by projection to H_T ⊗ δ_w, contraction with x, and inclusion
 of δ_w; on U_w it acts by projection to 𝔈_w ⊗ A, contraction with x ∘ `ζ_w^{−1}`, and inclusion of
 A ⊂ V ⊂ U_w ((3.57)); E acts by its given scalars (DING25 §3.2.2, the universal extensions, p. 57; the
-actions and (3.57), p. 58; §3.1.1, p. 33). *Needs:* §5.1; LR.1 (self-extension-dual-numbers:
-universal and tautological extensions, deformed characters).
+actions and (3.57), p. 58; §3.1.1, p. 33). *Needs:* §5.1; LocallyAnalyticRepresentationsOfLocalGroups §1.9
+(universal and tautological extensions, deformed characters).
 
 - U has class id_𝔈 in Hom_E(𝔈, 𝔈); pulling U back along b : A → 𝔈 ⊗ A represents b ∈ 𝔈.
 - U_w is the sub-extension over 𝔈_w ⊗ A; the U_w generate U as a G-representation, since Σ_w 𝔈_w = 𝔈.
@@ -1074,20 +1322,27 @@ universal and tautological extensions, deformed characters).
 push-out along PS_1(w(φ),h) ↪ V is isomorphic to U_w, and the resulting injection
 `I_{B⁻}^G(δ̃_w^univ)` ↪ U_w is equivariant for the actions of `A_{D,w}` ≅ `R_{w(φ)z^h}/𝔪²`.
 
-*Proof sketch.* By Remark 3.7 (LR.7, zeta-w) the induced representation is an extension of
+*Proof sketch.* By Ding Remark 3.7 (LocallyAnalyticRepresentationsOfLocalGroups §8.10) the induced representation is an extension of
 `A^{⊕n(1+d_K)}` by a subrepresentation V′ ⊂ PS_1(w(φ),h), and every class in the image of (3.10) is
-pushed forward from V′. Since (3.10) is bijective (LR.7, ext-ps1), the surjectivity of the last map of
+pushed forward from V′. Since (3.10) is bijective (LocallyAnalyticRepresentationsOfLocalGroups §8.11), the surjectivity of the last map of
 (3.14) forces V′ = PS_1(w(φ),h); then the tautological classes match under ζ_w, and the radical
-actions match by construction. *Needs:* §5.2; LR.6 (closed-induction); LR.7 (zeta-w, ext-ps1, ext-pi1).
+actions match by construction. *Needs:* §5.2;
+LocallyAnalyticRepresentationsOfLocalGroups §§7.3, 8.10–8.12.
 
 **Checks.**
 
 - n = 1: PS_1 = A = δ_1 = `φ_1z^{h_1}`, the closed induction is δ̃_1^univ itself, and U_1 = U.
 - Universality is what forces the subobject to be all of PS_1: a proper V′ would leave the classes of
   Ext¹(A, PS_1) not pushed forward from V′ unrealised.
-- The closed induction `I_{B⁻}^G` is used, not the full locally analytic induction, whose quotient by
-  PS_1(w(φ),h) contains the constituents of PS(w(φ),h)/PS_1(w(φ),h) and whole copies of PS(w(φ),h),
-  not only copies of A.
+- For n ≥ 2 the closed induction `I_{B⁻}^G` is used, not the full locally analytic induction: the
+  latter is an extension of `PS(w(φ),h)^{⊕n(1+d_K)}` by PS(w(φ),h), so its quotient by PS_1(w(φ),h)
+  has as constituents those of PS(w(φ),h)/PS_1(w(φ),h) and n(1 + d_K) copies of every constituent
+  C(w,u) of PS(w(φ),h), including those with u ≠ 1, which are not A
+  (LocallyAnalyticRepresentationsOfLocalGroups §8.4 (1)–(2)); the closed induction modulo
+  PS_1(w(φ),h) is `A^{⊕n(1+d_K)}`. For n = 2, K = ℚ_p, PS_1 = PS and the two quotients have
+  constituents 4A + 4C(w,s) against 4A. For n = 1, G = B⁻ = T(K) = K^×, both induction functors are
+  the identity and both quotients are `A^{⊕(1+d_K)}`: rank one is the equality case, not a negative
+  control.
 
 ### 5.4 Ding's universal Artinian action
 
@@ -1119,18 +1374,30 @@ generate U. No equality U_w = U[I_w] is asserted. *Needs:* §§1.4, 5.1–5.3.
 ### 5.5 The minimal representation as an annihilator
 
 **Theorem (DING25 Corollary 3.37, p. 59).** Assume (H). For the action of §5.4,
-`U[𝔪_{A_D}]` is the inverse image of 𝒦_D ⊗ A in U, and it is canonically π_min(D). The statement concerns
-the annihilator of the maximal ideal, not the quotient `U/𝔪_{A_D}U` and not a refinement annihilator.
+`U[𝔪_{A_D}]` is the inverse image of 𝒦_D ⊗ A in U. As an extension of 𝒦_D ⊗ A by V it has the class
+of π_min(D), so `U[𝔪_{A_D}]` ≅ π_min(D) as extensions, hence as G-representations; it is the
+representative of π_min(D) cut out inside the chosen U. The isomorphism is unique only up to the
+automorphisms 1 + i ∘ f ∘ p of π_min(D), with i : V ↪ π_min(D), p : π_min(D) ↠ 𝒦_D ⊗ A and
+f ∈ Hom_G(𝒦_D ⊗ A, V) ≅ Hom_E(𝒦_D, E) (Hom_G(A, V) = E); it is unique when 𝒦_D = 0. The statement
+concerns the annihilator of the maximal ideal, not the quotient `U/𝔪_{A_D}U` and not a refinement
+annihilator.
 
 *Proof sketch.* u is killed by `𝔪_{A_D}` exactly when every x ∈ Q^∨ contracts (t_D ⊗ id)(p(u)) to zero;
 since Q is finite-dimensional, its dual separates points, so this happens exactly when p(u) ∈ 𝒦_D ⊗ A.
-The inverse image of 𝒦_D ⊗ A in U is the tautological extension with class 𝒦_D ↪ 𝔈 (LR.1,
-self-extension-dual-numbers: restriction to a subspace), which is π_min(D). *Needs:* §§2.1, 5.4.
+The inverse image of 𝒦_D ⊗ A in U is the pull-back of U along 𝒦_D ⊗ A ↪ 𝔈 ⊗ A, whose class is
+the inclusion 𝒦_D ↪ 𝔈 (LocallyAnalyticRepresentationsOfLocalGroups §1.9: pull-back along a subspace
+restricts the classifying inclusion), the defining class of π_min(D) (§2.1); extensions with equal
+classes are isomorphic as extensions (LocallyAnalyticRepresentationsOfLocalGroups §1.8), and two such
+isomorphisms differ by an automorphism 1 + i ∘ f ∘ p, which is the identity on V and on the
+quotient since p ∘ i = 0. *Needs:* §§2.1, 5.4; LocallyAnalyticRepresentationsOfLocalGroups §§1.8–1.9.
 
 **Checks.**
 
 - n ≤ 2: `U[𝔪_{A_D}]` = V, since 𝒦_D = 0.
 - n = 3, K = ℚ_p: `U[𝔪_{A_D}]/V` is one copy of A, while U/V is `A^{⊕10}`.
+- n = 3, K = ℚ_p, with j : A ↪ V the socle: the maps 1 + c·i ∘ j ∘ p, c ∈ E, are pairwise distinct
+  automorphisms of π_min(D) fixing V and the quotient A, and (i ∘ j ∘ p)² = 0 since p ∘ i = 0; so
+  `U[𝔪_{A_D}]` ≅ π_min(D) is a line of isomorphisms, none distinguished by the extension class.
 - As soon as Q ≠ 0, `𝔪_{A_D}U` is the socle copy of A in V, so `U/𝔪_{A_D}U` = U/A is an extension of
   𝔈 ⊗ A by V/A and is not π_min(D); for n = 3, K = ℚ_p it has ten copies of A on top, against one
   for the annihilator.
@@ -1145,9 +1412,9 @@ copy of A over V, whereas U/V has ten.
 ### Dependencies
 
 Layers 1–2; LocalGaloisDeformationRings §§0.4, 1.23; SmoothRepresentationsOfLocalGroups §SR.3.2;
-LocallyAnalyticRepresentationsOfLocalGroups LR.1, LR.6, LR.7; TriangulineVarietyAndItsLocalModel
-§§9.1–9.3, 10.3–10.4, 12.8; PhiGammaModulesAndIwasawaCohomology §§7.1–7.2; Mathlib `TrivSqZeroExt`,
-`Module.Dual`.
+LocallyAnalyticRepresentationsOfLocalGroups §§1.8–1.9, 7.3, 8.4, 8.8–8.12; TriangulineVarietyAndItsLocalModel
+§§10.1–10.3, 11.1, 11.3–11.4, 13.8; PhiGammaModulesAndIwasawaCohomology §§7.1–7.4; PadicHodgeTheory
+§4.5; Mathlib `TrivSqZeroExt`, `Module.Dual`.
 
 ## Worked examples
 
@@ -1168,7 +1435,8 @@ needed.
 The character spanning in rank three is (a, b, c) = (c, c, c) + (a − b, 0, 0) + (b − c, b − c, 0); the
 constant tuple lies in both block spaces, so the spanning holds while the printed direct sum cannot.
 
-For d_K > 1, D_σ has repeated weights at τ ≠ σ; its transported σ-quotient is meaningful, but the
+For d_K > 1 and n ≥ 2, D_σ has repeated weights at τ ≠ σ (for n = 1 it has a single weight at
+each embedding); its transported σ-quotient is meaningful, but the
 standing hypotheses cannot be reapplied to D_σ. The recovery theorem detects the family of modified
 modules, and only for K = ℚ_p does the single modification equal D.
 
@@ -1177,8 +1445,9 @@ modules, and only for K = ℚ_p does the single modification equal D.
 All entries paraphrase the published version of DING25.
 
 - **(3.43), proof of Theorem 3.21, p. 49.** The full character space is not the direct sum of the
-  maximal-Levi-centre character spaces and the centre character space: each two-block space contains
-  the constant tuples, and the dimensions are (2n − 1)(1 + d_K) against n(1 + d_K). The proof on p. 50
+  maximal-Levi-centre character spaces and the centre character space when n ≥ 2: each two-block
+  space contains the constant tuples, and the dimensions are (2n − 1)(1 + d_K) against n(1 + d_K)
+  (equal only at n = 1, where there are no block spaces). The proof on p. 50
   uses only the spanning, which §0.3 proves by telescoping.
 - **Definition of χ_D, before Proposition 3.26, p. 51.** The exponent |λ| is an element of `ℤ^{Σ_K}`,
   |λ|_σ = Σ_i `λ_{i,σ}`, not a sum over both i and σ (§2.5; witness: λ_σ = (2,0), λ_τ = (5,1) gives
@@ -1189,21 +1458,28 @@ All entries paraphrase the published version of DING25.
   ℒ(D′_σ, `D_{1,σ}`, `C_{1,σ}`).
 - **Proof of Theorem 3.34, first paragraph, p. 56.** The labels "if" and "only if" are interchanged:
   Corollary 3.32(1) gives the implication from D_σ ≅ D′_σ, and the induction proves the converse.
+- **Paragraph after (3.45), p. 50.** Surjectivity of the push-forward to π_min(D) needs, besides
+  Lemma 3.5(2), that the kernel of t_D meets the self-extension image in zero (Lemma 3.23): for a line
+  inside that image the push-forward is not onto (§2.2, last Check).
 - **Proof of Proposition 3.26, p. 51.** The bijectivity of the tangent map of the Harish-Chandra
   map at h needs regularity of h (the Vandermonde argument of §2.6), not only polynomiality of the
   invariants.
 - **Corollary 2.14 proof, p. 19.** The sign before n in the dimension of the quotient paraboline space
   is +: dim `Q_{F_P}` = n + d_K dim(B ∩ L_P) (for P = B this is n(1 + d_K)); recorded in
-  TriangulineVarietyAndItsLocalModel §10.7.
+  TriangulineVarietyAndItsLocalModel §11.7.
 - **(3.12), (3.15) and (3.33), pp. 38–39 and 46.** The labels I range over all nonempty proper subsets
-  of {1,…,n}; recorded in LocallyAnalyticRepresentationsOfLocalGroups LR.7 and LR.9.
+  of {1,…,n}; recorded in LocallyAnalyticRepresentationsOfLocalGroups §§8.5, 8.12 and 10.5.
 - **Lemma 2.11 proof, p. 16.** The last parameter of the displayed triangulation has algebraic factor
   `z^{h_n}`, not `z^{h_1}`.
 - **Paragraph after (3.30), p. 43.** The two endpoint inductions are from `P_{n−1}⁻` and P_1⁻, and their
   cyclotomic twists are 1 ⊠ `ε^{n−1}` and 1 ⊠ (ε ∘ det), as fixed by `ε^{−1}` ∘ θ^P: at n = 2 the printed
   first induction has algebraic part `z^{(h_1+1, h_2)}`, whereas PS(φ,h) has z^λ = `z^{(h_1, h_2+1)}`. π_F
-  and π_G are fixed intrinsically (LocallyAnalyticRepresentationsOfLocalGroups LR.8), so nothing
+  and π_G are fixed intrinsically (LocallyAnalyticRepresentationsOfLocalGroups §§9.1 and 9.7), so nothing
   downstream changes.
+- **(3.53)–(3.54), proof of Theorem 3.34, p. 56.** The two middle terms must be the images of the
+  parabolic σ-Ext groups of `π_{1,σ}(φ,h)` for F and for G under push-forward to π⁻ and π⁺, as in the
+  lower left of (3.52), p. 55; unrestricted Ext¹_σ(π_alg(φ,h), π^±) are too large to be identified
+  with the block space (at n = 3: 10 + 10 against 7 + 7). §4.1 uses the images.
 - **Definition before Corollary 2.38, pp. 31–32.** The relation attached to D_σ has third argument
   `C_{1,σ}`, not an undefined `D_{2,σ}`.
 
