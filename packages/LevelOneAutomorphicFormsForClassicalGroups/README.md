@@ -927,6 +927,13 @@ basis pair, (POS) and the forced central zero give `Z^F(π, π′) ≥ B_F e⊥(
 inequalities add up on the nonnegative cone. The statement does not assert that `C^F` is positive
 semidefinite on signed vectors.
 
+Prove also the conditional form: assuming the generalized Riemann hypothesis of the Conventions, the
+same conclusion holds for every test function `F` of §2.1 with `F(x) ≥ 0` and `F̂(ξ) ≥ 0` for all real
+`x` and `ξ`, a condition weaker than (POS) (CT20 §4.3, p. 38). The hypothesis puts every zero
+`ρ = 1/2 + iγ` of `Λ(s, π^∨ × π′)` at the real point `ξ = (1 − 2ρ)/(4πi) = −γ/(2π)` (both `π^∨` and `π′`
+lie in `Π_alg`), so the pairwise bound `Z^F(π, π′) ≥ B_F e⊥(π, π′)` and the positivity of `B_f^F` hold as
+before.
+
 *Needs:* §§1.8, 2.6.
 
 **Checks.**
@@ -936,8 +943,9 @@ semidefinite on signed vectors.
   added, and the argument gives nothing.
 - At `x = 1` the inequality reads `A_F − J_F(1) ≥ 0`, Odlyzko's inequality for the trivial
   representation.
-- With `G_ℓ` in place of `F_ℓ` the inequality needs the explicit generalized Riemann hypothesis of the
-  Conventions: then every `ρ` has `Re ρ = 1/2` and `ξ` is real, where `Ĝ_ℓ ≥ 0`.
+- `G_ℓ` satisfies the hypotheses of the conditional form (`G_ℓ ≥ 0` and `Ĝ_ℓ ≥ 0` on `ℝ`, §2.2) but not
+  (POS) (§2.1, Checks), so for `G_ℓ` the generalized Riemann hypothesis is needed: a zero `ρ` with
+  `Re ρ ≠ 1/2` would sit at a nonreal `ξ`, where the sign of `Re Ĝ_ℓ(ξ)` is not controlled.
 
 ### 2.8 The multiplicity bound
 
@@ -966,9 +974,10 @@ parameters satisfying the bound form a finite set.
 ### 2.9 Admissible quadruples and their Gram matrices
 
 An admissible quadruple `Q = (r, U, δ, m)` consists of `r ≥ 1`, `U_i ∈ K∞`, `δ_i ∈ {0, 1}` and integers
-`m_i > 0`, such that `ε(U_iU_j) ∈ {±1}` whenever `δ_iδ_j = 1`. For real `A_F, B_F` define the real
-symmetric matrix `β_ij = (A_F/m_i) δ_ij − J_F(U_iU_j) − (B_F/4) δ_iδ_j (1 − ε(U_iU_j))`, let
-`D_r = {t ∈ ℝ^r : t_i ≥ 0, Σ t_i² = 1}` and `μ_F(Q) = min_{t ∈ D_r} tᵀβt` (CT20 (2.4.3)–(2.4.5)).
+`m_i > 0`, such that `ε(U_iU_j) ∈ {±1}` whenever `δ_iδ_j = 1`. For a test function `F` of §2.1 (so that
+`A_F` and `B_F` are real) define the real symmetric matrix `β^F_Q = (β_ij)` by
+`β_ij = (A_F/m_i) δ_ij − J_F(U_iU_j) − (B_F/4) δ_iδ_j (1 − ε(U_iU_j))`, write `β^F_Q(x, y) = xᵀβ^F_Q y`, let
+`D_r = {t ∈ ℝ^r : t_i ≥ 0, Σ t_i² = 1}` and `μ_F(Q) = min_{t ∈ D_r} β^F_Q(t, t)` (CT20 (2.4.3)–(2.4.5)).
 
 - The diagonal entry is `β_ii = A_F/m_i − J_F(U_i²) − (B_F/4) δ_i (1 − ε(U_i²))`, with the factor
   `1/m_i` and the root coefficient `1/4`. It equals `A_F/m_i − J_F(U_i²)` when `δ_i = 0` or
@@ -977,7 +986,7 @@ symmetric matrix `β_ij = (A_F/m_i) δ_ij − J_F(U_iU_j) − (B_F/4) δ_iδ_j (
   out gives `ε(U²) = (−1)^{ab + (a + b + 1) Σ c_v (v + 1)}`, and `det U = 1` makes `Σ c_v (v + 1) ≡ b`
   mod `2`), so no premise of the Conventions enters.
 - The minimum is attained, since `D_r` is compact and nonempty.
-- `μ_F(Q) < 0` exactly when `tᵀβt < 0` for some nonzero `t ≥ 0`.
+- `μ_F(Q) < 0` exactly when `β^F_Q(t, t) < 0` for some nonzero `t ≥ 0`.
 
 *Needs:* §§1.4, 1.8, 2.1, 2.3.
 
@@ -1060,9 +1069,9 @@ diagonal contribution, so a negative minimum would be beaten after renormalizati
 
 ### 2.14 Monotonicity in forced self-duality
 
-Prove: for admissible `Q = (r, U, δ, m)` and `Q′ = (r, U, δ′, m)` with `δ′ ≥ δ` and `B_F ≥ 0`,
-`β_{Q′}(x, y) ≤ β_Q(x, y)` for all `x, y ≥ 0`, hence `μ_F(Q′) ≤ μ_F(Q)` (CT20 Remark 2.10). The new terms
-have coefficient `−B_F(1 − ε)/4 ≤ 0`.
+Prove: for admissible `Q = (r, U, δ, m)` and `Q′ = (r, U, δ′, m)` with `δ′ ≥ δ`, and a test function `F` of
+§2.1 with `B_F ≥ 0`, `β^F_{Q′}(x, y) ≤ β^F_Q(x, y)` for all `x, y ≥ 0`, hence `μ_F(Q′) ≤ μ_F(Q)` (CT20
+Remark 2.10). The new terms have coefficient `−B_F(1 − ε)/4 ≤ 0`.
 
 *Needs:* §2.9.
 
@@ -1091,10 +1100,11 @@ multiplicity lift `x_{i,r} = t_i/m_i` of ComputationalNumberTheory §4.34 gives
 
 ### 2.16 Negativity from enclosed scalars
 
-Prove: let `Q` be admissible, `ℓ > 0` rational, and `t ≥ 0` a nonzero rational vector; if rational
-intervals containing the eight scalars of §2.4 at `ℓ` give an upper bound for `tᵀβ_{F_ℓ}t` that is
-strictly negative, then `μ_{F_ℓ}(Q) < 0` (CT20 §2.4.4). The proof combines §2.4 with the validity of
-rational Gram witnesses in ComputationalNumberTheory §§4.29–4.33.
+Prove: let `Q` be admissible, `ℓ > 0` rational, `F` one of `F_ℓ` and `G_ℓ`, and `t ≥ 0` a nonzero rational
+vector; if rational intervals containing the four scalars of §2.4 attached to `F` at `ℓ` (`F̂(0)`,
+`F̂(i/(4π))`, `J_F(I_w)` for the `w` that occur, and `J_F(1 − e)`) give an upper bound for `β^F_Q(t, t)`
+that is strictly negative, then `μ_F(Q) < 0` (CT20 §2.4.4 for `F_ℓ`, §4.3 for `G_ℓ`). The proof combines §2.4
+with the validity of rational Gram witnesses in ComputationalNumberTheory §§4.29–4.33.
 
 *Needs:* §§2.4, 2.9; ComputationalNumberTheory §§4.29–4.33.
 
@@ -1106,14 +1116,17 @@ rational Gram witnesses in ComputationalNumberTheory §§4.29–4.33.
 
 ### 2.17 Excluding further classes
 
-Prove (CT20 §2.4.5): let `S ⊂ Π_alg` be a finite set of distinct classes, grouped by their pairs
-`(U, sd)` with multiplicities. Suppose `m ≥ 1` further distinct classes of parameter `U` exist outside
-`S`, each self-dual when `δ = 1`. Form `Q` from the candidate block `(U, δ, m)` and blocks of `S`. If
-`β_Q(t, t) < 0` for some nonzero `t ≥ 0`, this is impossible: for
-`x = (t_cand/m) Σ π_new + Σ_i (t_i/m_i) Σ π_known,i`, §§2.14–2.15 give `C^F(x, x) ≤ β_Q(t, t) < 0`, against
-§2.7. The same holds with `G_ℓ` under the explicit generalized Riemann hypothesis.
+Prove (CT20 §2.4.5): let `F` be a test function of §2.1 satisfying (POS), and let `S ⊂ Π_alg` be a finite
+set of distinct classes, grouped by their pairs `(U, sd)` with multiplicities. Suppose `m ≥ 1` further
+distinct classes of parameter `U` exist outside `S`, each self-dual when `δ = 1`. Form `Q` from the
+candidate block `(U, δ, m)` and the blocks of `S`. If `β^F_Q(t, t) < 0` for some nonzero `t ≥ 0`, this is
+impossible: for `x = (t_cand/m) Σ π_new + Σ_i (t_i/m_i) Σ π_known,i`, the monotonicity of §2.14 (which
+applies because `F ≥ 0` gives `B_F ≥ 0`) and the lift identity of §2.15 give
+`C^F(x, x) ≤ β^F_Q(t, t) < 0`, against §2.7. Assuming the generalized Riemann hypothesis of the
+Conventions, the same holds for every test function `F` of §2.1 with `F ≥ 0` and `F̂ ≥ 0` on `ℝ`, in
+particular for `G_ℓ` with `ℓ > 0` (§2.2), by the conditional form of §2.7 (CT20 §4.3, p. 38).
 
-*Needs:* §§2.7, 2.14, 2.15, 2.16.
+*Needs:* §§2.2, 2.7, 2.14, 2.15, 2.16.
 
 **Checks.**
 
@@ -1123,6 +1136,13 @@ Prove (CT20 §2.4.5): let `S ⊂ Π_alg` be a finite set of distinct classes, gr
   pair.
 - With `S = ∅`, `r = 1` and `m = 1` the statement is the bound of §2.8 with `m = 1`, sharpened by the
   root term `−(B_F/4)(1 − ε(U²))` when `δ = 1`.
+- Negative control for (POS): `F = −F₁` is even, `C²` and compactly supported, so a test function of
+  §2.1, but `−F₁(0) = −1` violates (POS). Take `S = ∅`, `U = 1`, `δ = 0`, `m = 1`, `t = 1`. Then
+  `β^{−F₁}_Q(1, 1) = −(A_{F₁} − J_{F₁}(1)) = −C^{F₁}(1, 1)`, and by §2.6
+  `C^{F₁}(1, 1) = B_f^{F₁}(1, 1) + Z^{F₁}(1, 1)/2`, where `Z^{F₁}(1, 1) ≥ 0` by (POS) for `F₁` and
+  `B_f^{F₁}(1, 1)` is the single prime-power term with `k log p < 1`, namely
+  `F₁(log 2)(log 2)/√2 ≈ 0.0399754 > 0` (`g > 0` on `(−1, 1)`). So the value is negative although the
+  trivial class exists: without (POS) the statement would exclude it.
 
 ### 2.18 Positive definite covers
 
@@ -1286,9 +1306,13 @@ ModularityAndLanglandsExtensions §3.8 with its standing premises.
 Prove: for `ψ ∈ Ψ₁(Sp_{2g})` and an irreducible unitary `(𝔤, K)`-module `ρ` occurring with
 multiplicity one in the real Arthur packet of `ψ` (fixed Whittaker datum), the multiplicity in the
 level-one discrete spectrum of the representation `ρ ⊗ (spherical finite part)` is `1` if
-`χ_ρ|_{C_ψ} = ε_ψ` and `0` otherwise (CT20 §5.1, (5.1.4); Tai17 §4.1.2). The finite unramified packets
-are singletons with trivial character. Local multiplicity one is used only in the holomorphic cases
-of §§3.5 and 3.8.
+`χ_ρ|_{C_ψ} = ε_ψ` and `0` otherwise (CT20 §5.1, (5.1.4); Tai17 §4.1.2). Prove also, under the same
+premises, the local fact through which the finite places enter: at each prime `p`, the local packet of the
+localization `ψ_p` contains exactly one `Sp_{2g}(ℤ_p)`-spherical member, and its packet character, for a
+Whittaker datum unramified with respect to `Sp_{2g}(ℤ_p)`, is trivial (Tai17 Lemma 4.1.1, p. 305; route: the
+endoscopic character identities of ModularityAndLanglandsExtensions §3.15 and the twisted fundamental lemma
+for the unit of the spherical Hecke algebra among that roadmap's trace inputs). The whole local packet need
+not be a singleton. Local multiplicity one is used only in the holomorphic cases of §§3.5 and 3.8.
 
 *Needs:* §3.2; ModularityAndLanglandsExtensions §§3.15 and 3.17 with its standing premises.
 
@@ -1299,6 +1323,12 @@ of §§3.5 and 3.8.
   reads `−1 = (−1)^{k−1}` and holds exactly for even `k`: the level-one Saito–Kurokawa lifts.
 - Changing the Whittaker datum changes the packet pairing by a character trivial on `C_ψ`, so the
   test is unchanged.
+- Whole packet versus spherical member: for `Sp₂ = SL₂` over `ℚ_p` and the unramified tempered
+  parameter with Frobenius `diag(−1, −1, 1)` in `SO₃(ℂ)`, the centralizer is `S(O₂ × O₁) ≅ O₂`, with two
+  components, and the centre of `SO₃(ℂ)` is trivial, so the component group has order `2` and the
+  packet has `2` members, the two constituents of the principal series induced from the unramified
+  quadratic character. Exactly `1` of them is `SL₂(ℤ_p)`-spherical; the other is spherical for the
+  conjugate of `SL₂(ℤ_p)` by `diag(p, 1)`. A claim that unramified packets are singletons fails here.
 
 ### 3.4 Holomorphic lowest-weight modules
 
@@ -1602,7 +1632,7 @@ exist:
 At `k = 20` the three shapes give `dim S₂₀(Γ₂) = 1 + 2 + 0 = 3` (§7.2, Checks); omitting the simple shape
 gives `2`. For `g = 1` a holomorphic parameter of weight `k` is a simple parameter of rank three with
 weights `0, ±(k − 1)`, the adjoint `Sym²Δ_{k−1}` of an elliptic eigenform of weight `k`; at
-`k = 12` it is `Sym²Δ₁₁`, the genus-one row of §7.9.
+`k = 12` it is `Sym²Δ₁₁`, the one member of the set `A(1, 12)` of §7.9.
 
 ### Dependencies
 
@@ -1973,15 +2003,21 @@ thus determined.
 ### 4.18 The values of the masses
 
 Prove that the masses of §§4.12–4.17 are the rational numbers listed in the tables accompanying CT20
-Theorems 6–7, and that `m_P ≠ 0` for every `P ∈ P₁(G)` except six indices for `SO₁₃` and six for
-`SO₁₇` (CT20 Remark 3.10). This identifies each listed value with the intrinsic mass through §4.11.
+Theorems 6–7 (p. 12); this identifies each listed value with the intrinsic mass through §4.11. Prove also,
+for `G` one of the groups of CT20 Theorem 6, namely `SO_d` with `d ≤ 17` and `G(ℝ)` admitting discrete
+series, and `Sp_{2n}` with `n ≤ 7`, that `m_P ≠ 0` for every `P ∈ P₁(G)` except six indices for `SO₁₃` and
+six for `SO₁₇` (CT20 Remark 3.10, p. 33). The nonvanishing clause makes no assertion about `Sp₁₆`.
 
 *Needs:* §§4.11, 4.15, 4.17.
 
 **Checks.**
 
 - The `SO₃` row of the tables is `(−1/12, 1/4, 1/3)` on `P₁(SO₃)` = `{Φ₁³, Φ₁Φ₂², Φ₁Φ₃}`.
-- The number of exceptional zero masses is twelve in total, so `P₁` is almost sharp but not sharp.
+- For the groups of CT20 Theorem 6 the number of exceptional zero masses is twelve in total, so `P₁` is
+  almost sharp but not sharp there.
+- The range of the nonvanishing clause is that of CT20 Theorem 6: `Sp₁₄` is in it (`14 ≤ 14`) and `Sp₁₆`
+  is not (`16 > 14`); the `2521` masses of `Sp₁₆` are determined by §4.17, and which of them vanish is
+  not asserted.
 - A value table without the rank and vanishing statements of §4.11 does not determine the masses.
 
 ### Examples
@@ -2168,14 +2204,15 @@ parameter itself is not regular, `I₂₃` being repeated.
 Prove (CT20 Theorem 4 and §4.3): assume the generalized Riemann hypothesis of the Conventions. If
 `π ∈ Π_alg` has motivic weight 23 and the weight `23/2` with multiplicity greater than one, then
 `L(π∞) = I₁ + I₇ + I₁₁ + I₁₅ + I₁₉ + I₂₁ + 2I₂₃`, `π` has rank 16, and it is the only element of `Π_alg` with
-these weights. Write `A = I₁ + I₇ + I₁₁ + I₁₅ + I₁₉ + I₂₁ + 2I₂₃`, an element of `V`. Use `G_ℓ` in place
-of `F_ℓ` and the 27 known classes as `S`: first exclude the dual pair at `U_exc` with `δ = 0`, `m = 2`;
+these weights. Write `A = I₁ + I₇ + I₁₁ + I₁₅ + I₁₉ + I₂₁ + 2I₂₃`, an element of `V`. Use the conditional
+form of §2.17 with `G_ℓ` in place of `F_ℓ`, negativity witnesses from §2.16 for `G_ℓ`, and the 27 known
+classes as `S`: first exclude the dual pair at `U_exc` with `δ = 0`, `m = 2`;
 then, at every element of `V \ {A}`, exclude a self-dual class with `δ = m = 1`; by §5.7 this covers
 every remaining case, since a fibre with at least two classes occurs only at `U_exc` and a singleton
 fibre is self-dual. At `A` no exclusion is made: since `A ≠ U_exc`, §5.7 gives at most one class with
 parameter `A`, which is the uniqueness asserted; nothing is asserted about its existence.
 
-*Needs:* §§2.2, 2.4, 2.17, 5.1, 5.7.
+*Needs:* §§2.2, 2.4, 2.16, 2.17, 5.1, 5.7.
 
 **Checks.**
 
@@ -2414,29 +2451,16 @@ to `0`.
 
 ### 6.8 The small-rank lattice eigenparameters and the low-genus Eichler basis
 
-Prove (CL14 Théorème E, Table I.2 and Table C.5; CT20 §5.3.2): the `T_p` act on `ℂ[X₈]`, `ℂ[X₁₆]`, `ℂ[X₂₄]`
-with `1`, `2`, `24` distinct joint eigenlines. Their standard parameters are `[7] ⊕ [1]` (degree `0`) in
-rank 8; `[15] ⊕ [1]` (degree `0`) and `Δ₁₁[4] ⊕ [7] ⊕ [1]` (degree `4`) in rank 16; and in rank 24 the 24
-parameters of the table below, with the stated degrees. The degree of an eigenvector with parameter `ψ′` is
-the least `g₀` such that `[2k − 1 − 2g₀]` is a summand of `ψ′`, except `ψ′ = Δ₁₁[12]` with `g₀ = 12`. Prove
-also the low-genus Eichler basis theorem: `θ_g : ℂ[X_{2k}] → M_k(Γ_g)` is surjective for `k = 4, 8, 12` and
-`g ≤ k` (CL14 Introduction §3 and Théorème D, which covers `k = 12`, `g ≤ 23`).
-
-| Degree `g₀` | Standard parameter in rank 24 |
-|---:|---|
-| 0 | `[23] ⊕ [1]` |
-| 1 | `Sym²Δ₁₁ ⊕ [21]` |
-| 2 | `Δ₂₁[2] ⊕ [1] ⊕ [19]` |
-| 3 | `Δ₁₉[2] ⊕ Sym²Δ₁₁ ⊕ [17]` |
-| 4 | `Δ₁₇[2] ⊕ Δ₂₁[2] ⊕ [1] ⊕ [15]`, `Δ₁₉[4] ⊕ [1] ⊕ [15]` |
-| 5 | `Δ₁₅[2] ⊕ Δ₁₉[2] ⊕ Sym²Δ₁₁ ⊕ [13]`, `Δ₁₇[4] ⊕ Sym²Δ₁₁ ⊕ [13]` |
-| 6 | `Δ₁₅[4] ⊕ Δ₂₁[2] ⊕ [1] ⊕ [11]`, `Δ₁₇[2] ⊕ Δ₂₁,₁₃[2] ⊕ [1] ⊕ [11]`, `Δ₁₇[6] ⊕ [1] ⊕ [11]` |
-| 7 | `Δ₁₁[2] ⊕ Δ₁₅[2] ⊕ Δ₁₉[2] ⊕ Sym²Δ₁₁ ⊕ [9]`, `Δ₁₁[2] ⊕ Δ₁₇[4] ⊕ Sym²Δ₁₁ ⊕ [9]`, `Δ₁₅[6] ⊕ Sym²Δ₁₁ ⊕ [9]` |
-| 8 | `Δ₁₁[4] ⊕ Δ₁₇[2] ⊕ Δ₂₁[2] ⊕ [1] ⊕ [7]`, `Δ₁₁[4] ⊕ Δ₁₉[4] ⊕ [1] ⊕ [7]`, `Δ₁₅[4] ⊕ Δ₂₁,₉[2] ⊕ [1] ⊕ [7]`, `Δ₁₅[8] ⊕ [1] ⊕ [7]` |
-| 9 | `Δ₁₁[2] ⊕ Δ₁₅[2] ⊕ Δ₁₉,₇[2] ⊕ Sym²Δ₁₁ ⊕ [5]`, `Δ₁₁[6] ⊕ Δ₁₉[2] ⊕ Sym²Δ₁₁ ⊕ [5]` |
-| 10 | `Δ₁₁[4] ⊕ Δ₁₇[2] ⊕ Δ₂₁,₅[2] ⊕ [1] ⊕ [3]`, `Δ₁₁[8] ⊕ Δ₂₁[2] ⊕ [1] ⊕ [3]` |
-| 11 | `Δ₁₁[10] ⊕ Sym²Δ₁₁ ⊕ [1]` |
-| 12 | `Δ₁₁[12]` |
+Prove (CL14 Théorème E, p. 12, with the eigenvectors ordered by degree in Table C.5, p. 440; CT20 §5.3.2):
+the `T_p` act on `ℂ[X₈]`, `ℂ[X₁₆]`, `ℂ[X₂₄]` with `1`, `2`, `24` distinct joint eigenlines. Their standard
+parameters are `[7] ⊕ [1]` (degree `0`) in rank 8; `[15] ⊕ [1]` (degree `0`) and `Δ₁₁[4] ⊕ [7] ⊕ [1]`
+(degree `4`) in rank 16; and in rank 24 the `24` parameters of CL14 Théorème E: pairwise distinct formal
+sums `⊕ π_i[d_i]` of dimension `24` with every `π_i` among the eleven classes of §5.3 and infinitesimal
+weights `±11, …, ±1` and `0` twice (those of the trivial representation of `SO₂₄`), among them `[23] ⊕ [1]` of
+degree `0` and `Δ₁₁[12]` of degree `12`. The degree of an eigenvector with parameter `ψ′` is the least `g₀`
+such that `[2k − 1 − 2g₀]` is a summand of `ψ′`, except `ψ′ = Δ₁₁[12]` with `g₀ = 12`. Prove also the
+low-genus Eichler basis theorem: `θ_g : ℂ[X_{2k}] → M_k(Γ_g)` is surjective for `k = 4, 8, 12` and `g ≤ k`
+(CL14 Introduction §3 and Théorème D, which covers `k = 12`, `g ≤ 23`).
 
 - Each eigenspace is one-dimensional and each parameter has dimension equal to the rank.
 - The degrees in rank 24 are distributed `(1, 1, 1, 1, 2, 2, 3, 3, 4, 2, 2, 1, 1)` over `g₀ = 0, …, 12`.
@@ -2626,8 +2650,11 @@ masses are known by §§4.13–4.17; there is no bound on `k₁`.
 Prove (CT20 §5.3.1): for `13 ≥ k₁ ≥ ⋯ ≥ k_g > g ≥ 1`, every block of a contributing parameter lies in `L₂₄`,
 the 27 classes of the Layer 5 Examples; counting the two `Δ₂₃` classes separately there are `223` candidate
 parameters in positive genus, of which `58` pass §3.3; identifying the two `Δ₂₃` classes there are `198`
-shapes with the same `58` passing, and with genus zero `199` shapes and `59` passing. Of the `58`
-eigenparameters, `29` have nonscalar weight and `29` scalar weight.
+shapes with the same `58` passing, and with genus zero `199` shapes and `59` passing. Write `A_reg` for
+this set of `58` eigenparameters in positive genus, and for `ψ ∈ A_reg` of genus `g` with positive
+infinitesimal weights `a₁ > ⋯ > a_g` write `k(ψ) = (a₁ + 1, …, a_g + g)`, the dominant weight with
+`k_g > g` at which `ψ` contributes (§7.2). Of the `58` members of `A_reg`, `29` have nonscalar weight
+`k(ψ)` and `29` scalar weight.
 
 *Needs:* §§5.3, 5.6, 5.10, 7.2.
 
@@ -2670,7 +2697,7 @@ for `k = 4, 8, 12`, and by §6.10 every realized lift is noncuspidal except `g =
 - At `(g, k) = (14, 13)`: `ε_ψ(s) = ε(Δ₁₁ × Sym²Δ₁₁) = −1` while `χ(s) = 1`.
 - For `k = 2, 6, 10` the remainders fail the odd-pair test; for `k = 2, 6`, `ψ′ = [2k − 1] ⊕ [1]` and
   `(−1)^{a/2}` with `a = k ≡ 2 mod 4` is `−1` against `ε = 1`.
-- The degree of the genus-12 form is exactly `12`; this uses §6.8, not the table of §7.9.
+- The degree of the genus-12 form is exactly `12`; this uses §6.8, not the dimension count of §7.9.
 
 ### 7.7 Scalar case (H2) in low weight
 
@@ -2698,99 +2725,52 @@ with multiplicity one, and are cuspidal by odd weight.
 
 ### 7.8 The twenty-nine nonscalar spaces
 
-Prove (CT20 Theorem 2 and Table 6): for nonscalar dominant `k` with `13 ≥ k₁ ≥ ⋯ ≥ k_g > g ≥ 1`,
-`dim S_k(Γ_g)` is `1` at the 29 weights below, with the stated standard parameter, and `0` at every other
-such weight.
+Prove (CT20 Theorem 2; the source lists the weights and parameters in its Table 6, p. 58): for nonscalar
+dominant `k` with `13 ≥ k₁ ≥ ⋯ ≥ k_g > g ≥ 1`, `dim S_k(Γ_g)` is the number of `ψ ∈ A_reg` with `k(ψ) = k`
+(§7.4). The map `ψ ↦ k(ψ)` is injective on the `29` members of `A_reg` of nonscalar weight, so
+`dim S_k(Γ_g) ≤ 1` for every such `k`, with equality at exactly `29` weights, all in genera `3` to `8`; the
+standard parameter of the eigenform at such a weight is the unique `ψ` in the fibre.
 
-| Genus | Weight `k` | Standard parameter |
-|---:|---|---|
-| 3 | `(12, 8, 8)` | `Δ₁₁[2] ⊕ Sym²Δ₁₁` |
-| 3 | `(12, 10, 10)` | `Δ₁₅[2] ⊕ Sym²Δ₁₁` |
-| 3 | `(13, 10, 7)` | `O^odd(24,16,8)` |
-| 4 | `(11, 11, 7, 7)` | `Δ₁₉,₇[2] ⊕ [1]` |
-| 4 | `(12, 12, 6, 6)` | `Δ₂₁,₅[2] ⊕ [1]` |
-| 4 | `(12, 12, 8, 8)` | `Δ₂₁,₉[2] ⊕ [1]` |
-| 4 | `(12, 12, 10, 10)` | `Δ₂₁,₁₃[2] ⊕ [1]` |
-| 4 | `(13, 11, 8, 6)` | `[1] ⊕ O^even(24,18,10,4)` |
-| 4 | `(13, 12, 10, 5)` | `[1] ⊕ O^even(24,20,14,2)` |
-| 4 | `(13, 13, 7, 7)` | `Δ₂₃,₇[2] ⊕ [1]` |
-| 5 | `(12, 10, 10, 10, 10)` | `Δ₁₁[2] ⊕ Δ₁₅[2] ⊕ Sym²Δ₁₁` |
-| 5 | `(12, 12, 12, 8, 8)` | `Δ₁₉,₇[2] ⊕ Sym²Δ₁₁` |
-| 5 | `(12, 12, 12, 10, 10)` | `Δ₁₁[2] ⊕ Δ₁₉[2] ⊕ Sym²Δ₁₁` |
-| 5 | `(13, 12, 12, 12, 9)` | `Δ₁₉[2] ⊕ O^odd(24,16,8)` |
-| 6 | `(12, 12, 10, 10, 10, 10)` | `Δ₁₁[4] ⊕ Δ₂₁[2] ⊕ [1]` |
-| 6 | `(12, 12, 12, 12, 8, 8)` | `Δ₁₇[2] ⊕ Δ₂₁,₅[2] ⊕ [1]` |
-| 6 | `(12, 12, 12, 12, 10, 10)` | `Δ₁₇[2] ⊕ Δ₂₁,₉[2] ⊕ [1]` |
-| 6 | `(13, 12, 12, 12, 12, 7)` | `Δ₁₇[2] ⊕ [1] ⊕ O^even(24,20,14,2)` |
-| 6 | `(13, 13, 12, 12, 9, 9)` | `Δ₁₇[2] ⊕ Δ₂₃,₇[2] ⊕ [1]` |
-| 7 | `(12, 10, 10, 10, 10, 10, 10)` | `Δ₁₁[6] ⊕ Sym²Δ₁₁` |
-| 7 | `(12, 12, 12, 10, 10, 10, 10)` | `Δ₁₁[2] ⊕ Δ₁₉,₇[2] ⊕ Sym²Δ₁₁` |
-| 7 | `(12, 12, 12, 12, 12, 10, 10)` | `Δ₁₅[2] ⊕ Δ₁₉,₇[2] ⊕ Sym²Δ₁₁` |
-| 7 | `(13, 13, 13, 12, 9, 9, 9)` | `Δ₂₁,₅[2] ⊕ O^odd(24,16,8)` |
-| 8 | `(12, 12, 10, 10, 10, 10, 10, 10)` | `Δ₁₁[4] ⊕ Δ₂₁,₅[2] ⊕ [1]` |
-| 8 | `(12, 12, 12, 12, 10, 10, 10, 10)` | `Δ₁₉,₇[4] ⊕ [1]` |
-| 8 | `(12, 12, 12, 12, 12, 12, 10, 10)` | `Δ₁₅[4] ⊕ Δ₂₁,₅[2] ⊕ [1]` |
-| 8 | `(13, 13, 12, 12, 12, 12, 11, 11)` | `Δ₁₅[4] ⊕ Δ₂₃,₇[2] ⊕ [1]` |
-| 8 | `(13, 13, 13, 13, 9, 9, 9, 9)` | `Δ₂₁,₅[4] ⊕ [1]` |
-| 8 | `(13, 13, 13, 13, 11, 11, 11, 11)` | `Δ₂₁,₉[4] ⊕ [1]` |
-
-*Needs:* §7.4.
+*Needs:* §§7.1, 7.4.
 
 **Checks.**
 
-- `(13, 10, 7)`: `k_i − i = 12, 8, 4`, the positive weights of `O^odd(24,16,8)`, of rank `7 = 2·3 + 1`.
-- `(11, 11, 7, 7)`: `k_i − i = 10, 9, 4, 3`, the shifted weights `19/2 ± 1/2` and `7/2 ± 1/2` of `Δ₁₉,₇[2]`.
-- No statement is made outside `k_g > g`, and the 29 weights are pairwise distinct.
+- `(13, 10, 7)`: `k_i − i = 12, 8, 4`, the positive weights of `O^odd(24,16,8)`, of rank `7 = 2·3 + 1`; this
+  is the one member of `A_reg` with `k(ψ) = (13, 10, 7)`.
+- `(11, 11, 7, 7)`: `k_i − i = 10, 9, 4, 3`, the shifted weights `19/2 ± 1/2` and `7/2 ± 1/2` of
+  `Δ₁₉,₇[2] ⊕ [1]`.
+- Injectivity holds on the nonscalar part only: on scalar weights `ψ ↦ k(ψ)` is not injective, the fibre
+  over `(12, 12, 12, 12)` having two members (§7.9).
+- The `29` weights are distributed `3, 7, 4, 5, 4, 6` over the genera `3, …, 8`; in genus `2` every
+  nonscalar `k` with `13 ≥ k₁ ≥ k₂ > 2` has `dim S_k(Γ₂) = 0`. The genus-two eigenform attached to
+  `Δ₁₉,₇` has standard parameter of positive weights `(19 + 7)/2 = 13` and `(19 − 7)/2 = 6`, so it sits at
+  `k = (14, 8)`, just outside the range.
+- No statement is made outside `k_g > g`.
 
 ### 7.9 All scalar cusp dimensions through weight thirteen
 
-Prove (CT20 Theorem 2 and Table 5): for every `g ≥ 1` and integer `0 ≤ k ≤ 13`, `dim S_k(Γ_g)` is the number of
-rows of the table below with that `(g, k)`, and `0` when there is none. The rows are the 29 regular scalar
-eigenparameters of §7.4 and the three singular ones of §§7.5 and 7.7. For `k < 0` there are no forms (§6.2).
+Prove (CT20 Theorem 2; the source lists the parameters in its Table 5, p. 59): for every `g ≥ 1` and integer
+`0 ≤ k ≤ 13`, `dim S_k(Γ_g) = |A(g, k)|`, where `A(g, k)` consists of the `ψ ∈ A_reg` of genus `g` with
+`k(ψ) = (k, …, k)` (which requires `k > g`), together with those of the three singular parameters of
+§§7.5 and 7.7 that lie at `(g, k)`: `Δ₁₁[12] ⊕ [1]` at `(12, 12)`, `Δ₁₇[8] ⊕ [9] ⊕ [7] ⊕ [1]` at `(16, 13)` and
+`Δ₁₁[12] ⊕ [25]` at `(24, 13)`. The scalar members of `A_reg` are `29`, so the sets `A(g, k)` have `32`
+members in all, and the standard parameters of an eigenbasis of `S_k(Γ_g)` are the members of `A(g, k)`.
+For `k < 0` there are no forms (§6.2).
 
-| Genus | Weight | Standard parameter |
-|---:|---:|---|
-| 1 | 12 | `Sym²Δ₁₁` |
-| 2 | 10 | `Δ₁₇[2] ⊕ [1]` |
-| 2 | 12 | `Δ₂₁[2] ⊕ [1]` |
-| 3 | 12 | `Δ₁₉[2] ⊕ Sym²Δ₁₁` |
-| 4 | 8 | `Δ₁₁[4] ⊕ [1]` |
-| 4 | 10 | `Δ₁₅[4] ⊕ [1]` |
-| 4 | 12 | `Δ₁₇[2] ⊕ Δ₂₁[2] ⊕ [1]` |
-| 4 | 12 | `Δ₁₉[4] ⊕ [1]` |
-| 5 | 12 | `Δ₁₅[2] ⊕ Δ₁₉[2] ⊕ Sym²Δ₁₁` |
-| 5 | 12 | `Δ₁₇[4] ⊕ Sym²Δ₁₁` |
-| 6 | 10 | `Δ₁₁[4] ⊕ Δ₁₇[2] ⊕ [1]` |
-| 6 | 12 | `Δ₁₅[4] ⊕ Δ₂₁[2] ⊕ [1]` |
-| 6 | 12 | `Δ₁₇[2] ⊕ Δ₂₁,₁₃[2] ⊕ [1]` |
-| 6 | 12 | `Δ₁₇[6] ⊕ [1]` |
-| 7 | 12 | `Δ₁₁[2] ⊕ Δ₁₅[2] ⊕ Δ₁₉[2] ⊕ Sym²Δ₁₁` |
-| 7 | 12 | `Δ₁₁[2] ⊕ Δ₁₇[4] ⊕ Sym²Δ₁₁` |
-| 7 | 12 | `Δ₁₅[6] ⊕ Sym²Δ₁₁` |
-| 8 | 10 | `Δ₁₁[8] ⊕ [1]` |
-| 8 | 12 | `Δ₁₁[4] ⊕ Δ₁₇[2] ⊕ Δ₂₁[2] ⊕ [1]` |
-| 8 | 12 | `Δ₁₁[4] ⊕ Δ₁₉[4] ⊕ [1]` |
-| 8 | 12 | `Δ₁₅[4] ⊕ Δ₂₁,₉[2] ⊕ [1]` |
-| 8 | 12 | `Δ₁₅[8] ⊕ [1]` |
-| 8 | 13 | `Δ₂₁,₁₃[4] ⊕ [1]` |
-| 9 | 12 | `Δ₁₁[2] ⊕ Δ₁₅[2] ⊕ Δ₁₉,₇[2] ⊕ Sym²Δ₁₁` |
-| 9 | 12 | `Δ₁₁[6] ⊕ Δ₁₉[2] ⊕ Sym²Δ₁₁` |
-| 10 | 12 | `Δ₁₁[4] ⊕ Δ₁₇[2] ⊕ Δ₂₁,₅[2] ⊕ [1]` |
-| 10 | 12 | `Δ₁₁[8] ⊕ Δ₂₁[2] ⊕ [1]` |
-| 11 | 12 | `Δ₁₁[10] ⊕ Sym²Δ₁₁` |
-| 12 | 12 | `Δ₁₁[12] ⊕ [1]` |
-| 12 | 13 | `Δ₁₉,₇[6] ⊕ [1]` |
-| 16 | 13 | `Δ₁₇[8] ⊕ [9] ⊕ [7] ⊕ [1]` |
-| 24 | 13 | `Δ₁₁[12] ⊕ [25]` |
-
-*Needs:* §§6.2, 7.4–7.7.
+*Needs:* §§6.2, 7.1, 7.4–7.7.
 
 **Checks.**
 
-- `dim S₁₂(Γ₄) = 2`: two rows; the table is not a list of one-dimensional spaces.
+- `dim S₁₂(Γ₄) = 2`: `A(4, 12)` consists of `Δ₁₉[4] ⊕ [1]` and `Δ₁₇[2] ⊕ Δ₂₁[2] ⊕ [1]`, both with positive
+  infinitesimal weights `11, 10, 9, 8`, hence `k(ψ) = (12, 12, 12, 12)`; reading the count as one
+  eigenform per weight gives `1`.
 - The weight-12 dimensions for `g = 1, …, 12` are `1, 1, 1, 2, 2, 3, 3, 4, 2, 2, 1, 1`, agreeing with CL14
-  Théorème D, an independent theta-series computation.
-- `S₈(Γ_g)` is nonzero only for `g = 4`, and `S₄(Γ_g) = S₆(Γ_g) = 0` for all `g ≥ 1`.
+  Théorème D, an independent theta-series computation, and with the consecutive differences of the
+  sequence of §8.2.
+- `S₈(Γ_g)` is nonzero only for `g = 4`, `S₁₀(Γ_g)` only for `g = 2, 4, 6, 8`, and `S₄(Γ_g) = S₆(Γ_g) = 0` for
+  all `g ≥ 1`.
+- Restricting to `A_reg` loses the singular forms: `Δ₁₁[12] ⊕ [25]` has `k = 13 < 24 = g`, so it is not in
+  `A_reg`, and without §7.7 the count would give `dim S₁₃(Γ₂₄) = 0`, against §7.10.
 
 ### 7.10 The four weight-thirteen cusp forms
 
@@ -3049,7 +3029,7 @@ parameters through §6.9.
   eigenvector `Δ₁₇[8]` maps to `0`.
 - By the harmonic form of §6.9 with `n = 16 < 2g + 1 = 17`, a nonzero image of the eigenvector `Δ₂₁,₁₃[4]` has
   parameter `Δ₂₁,₁₃[4] ⊕ [1]`, that of `F₈`; a nonzero image of `Δ₁₇[8]` would have parameter `Δ₁₇[8] ⊕ [1]`,
-  which is not in the table of §7.9.
+  which is not in `A(8, 13)` of §7.9, whose one member is `Δ₂₁,₁₃[4] ⊕ [1]`.
 
 ### 8.10 The alternating theta isomorphism
 

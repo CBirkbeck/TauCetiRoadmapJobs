@@ -30,7 +30,7 @@ Stated here:
 Not statable at the pins, with the missing carrier:
 
 * the computability of `dim S_k(Sp_{2g}(ℤ))` for `g ≤ 8` and `k_g > g` (README §7.3), the
-  twenty-nine nonscalar and thirty-two scalar eigenparameter rows in weight at most 13
+  twenty-nine nonscalar and thirty-two scalar eigenparameters in weight at most 13
   (§§7.8–7.9), the four weight-13 forms (§7.10), the Eichler basis theorem in weights 4, 8, 12
   (§8.1), the harmonic theta realizations and the alternating theta isomorphism (§§8.8, 8.10), and
   the stable dimensions, stable Siegel operator and stable theta isomorphism (§§8.12–8.14): Siegel
