@@ -8,14 +8,16 @@ theorems that are statable against the pinned Mathlib and Tau Ceti, each with `s
 
 A finite extension `K` of `ℚ_p` is realised as a finite intermediate field of the fixed algebraic
 closure `PadicAlgCl p`, its absolute Galois group `G_K` is `PadicAlgCl p ≃ₐ[K] PadicAlgCl p` with
-the Krull topology, and `G_K` acts on `ℂ_[p]` by extending each automorphism by continuity (it is
-an isometry of the spectral norm, `spectralNorm_eq_of_equiv`). With these, two headlines of
-Layers 0–1 are statable:
+the Krull topology, and `σ ∈ G_K` acts on `ℂ_[p]` by its extension by continuity
+`UniformSpace.Completion.map σ` (it is an isometry of the spectral norm,
+`spectralNorm_eq_of_equiv`). This action and its laws are those of the roadmap PadicPeriodRings,
+§1.1; the statements below write the completion map directly. With these, two headlines of
+Layer 0 are statable:
 
 * Fontaine's full faithfulness for finite-dimensional semilinear `ℂ_p`-representations
   (README §0.2, first half);
 * the fundamental theorem for an extension of a `ℂ_p`-line by a finite-dimensional
-  representation (README §1.8).
+  representation (README §0.10).
 
 The other headline theorems are not statable at the pins:
 
@@ -37,14 +39,9 @@ namespace TauCetiRoadmap.VectorBundlesAndIsocrystalsPartII
 
 /-! ## Layer 0: Almost C-representations and period rigidity -/
 
-/-- The action of `σ ∈ Gal(ℚ̄_p/K)` on `ℂ_p`: the extension by continuity of `σ`, which is
-uniformly continuous because it preserves the spectral norm of `PadicAlgCl p`. -/
-noncomputable def galoisAct (p : ℕ) [Fact p.Prime] {K : IntermediateField ℚ_[p] (PadicAlgCl p)}
-    (σ : PadicAlgCl p ≃ₐ[K] PadicAlgCl p) : ℂ_[p] → ℂ_[p] :=
-  UniformSpace.Completion.map σ
-
 /-- A continuous semilinear `ℂ_p`-representation of `G_K = Gal(ℚ̄_p/K)` on a `ℂ_p`-module `W`:
-an action by additive maps, semilinear over `galoisAct` and jointly continuous for the
+an action by additive maps, semilinear over the action of `G_K` on `ℂ_p` (each `σ` acting by its
+extension by continuity `UniformSpace.Completion.map σ`) and jointly continuous for the
 Krull topology on `G_K` (Fontaine, *Presque C_p-représentations*, §1.3, p. 289). -/
 structure SemilinearRep (p : ℕ) [Fact p.Prime] (K : IntermediateField ℚ_[p] (PadicAlgCl p))
     (W : Type*) [AddCommGroup W] [Module ℂ_[p] W] [TopologicalSpace W] where
@@ -52,7 +49,7 @@ structure SemilinearRep (p : ℕ) [Fact p.Prime] (K : IntermediateField ℚ_[p] 
   act : (PadicAlgCl p ≃ₐ[K] PadicAlgCl p) →* AddMonoid.End W
   /-- Semilinearity: `σ (c w) = σ(c) σ(w)`. -/
   act_smul : ∀ (σ : PadicAlgCl p ≃ₐ[K] PadicAlgCl p) (c : ℂ_[p]) (w : W),
-    act σ (c • w) = galoisAct p σ c • act σ w
+    act σ (c • w) = UniformSpace.Completion.map σ c • act σ w
   /-- Joint continuity of `G_K × W → W`. -/
   continuous_act : Continuous fun x : (PadicAlgCl p ≃ₐ[K] PadicAlgCl p) × W => act x.1 x.2
 
@@ -76,9 +73,7 @@ theorem semilinearRep_equivariant_map_smul (p : ℕ) [Fact p.Prime]
     f (c • w) = c • f w := by
   sorry
 
-/-! ## Layer 1: Arithmetic extensions and duality -/
-
-/-- **The fundamental theorem for an extension of a `ℂ_p`-line** (README §1.8). Let `K/ℚ_p` be
+/-- **The fundamental theorem for an extension of a `ℂ_p`-line** (README §0.10). Let `K/ℚ_p` be
 finite, `E` a `ℚ_p`-Banach space with a jointly continuous linear action of `G_K`, `V ⊂ E` a
 finite-dimensional subspace, and `q : E → W` a continuous equivariant surjection with kernel `V`
 onto a one-dimensional continuous semilinear `ℂ_p`-representation `W` (so `V` is `G_K`-stable). If
@@ -97,7 +92,8 @@ theorem fundamental_extension_surjective (p : ℕ) [Fact p.Prime]
     (hq_ker : q.ker = V.toAddSubgroup)
     (hq_equiv : ∀ (σ : PadicAlgCl p ≃ₐ[K] PadicAlgCl p) (x : E), q (ρ σ x) = ρW.act σ (q x))
     (η : E →L[ℚ_[p]] ℂ_[p])
-    (hη : ∀ (σ : PadicAlgCl p ≃ₐ[K] PadicAlgCl p) (x : E), η (ρ σ x) = galoisAct p σ (η x))
+    (hη : ∀ (σ : PadicAlgCl p ≃ₐ[K] PadicAlgCl p) (x : E),
+      η (ρ σ x) = UniformSpace.Completion.map σ (η x))
     (hne : LinearMap.range (η : E →ₗ[ℚ_[p]] ℂ_[p]) ≠ V.map (η : E →ₗ[ℚ_[p]] ℂ_[p])) :
     Function.Surjective η ∧
       FiniteDimensional ℚ_[p] (LinearMap.ker (η : E →ₗ[ℚ_[p]] ℂ_[p])) ∧
