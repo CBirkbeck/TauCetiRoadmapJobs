@@ -1,0 +1,55 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "MatesDoubleCategories"
+
+[[source]]
+id = "FairbanksShulman"
+authors = "Aaron David Fairbanks, Michael Shulman"
+title = "Doubly weak double categories"
+year = 2025
+venue = "Applied Categorical Structures 34 (2026)"
+doi = "10.1007/s10485-026-09863-1"
+arxiv = "2506.23651v2"
+locator_scheme = "theorem"
+locator = "Example 3.10"
+url = "https://arxiv.org/abs/2506.23651v2"
+fetched_from = "https://arxiv.org/pdf/2506.23651v2"
+fetched_at = "2026-11-13T18:00:55Z"
+sha256 = "fe1c476264381749636c1a3908f284fa2127aca8b2bc736a2ae2b94aa4132c5e"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-13"
+version_note = "arXiv v2"
+cited_for = ["M3"]
+
+[[source]]
+id = "ChengGurskiRiehl"
+authors = "Eugenia Cheng, Nick Gurski, Emily Riehl"
+title = "Multivariable adjunctions and mates"
+year = 2012
+arxiv = "1208.4520v2"
+locator_scheme = "theorem"
+locator = "Theorem 1.2"
+url = "https://arxiv.org/abs/1208.4520v2"
+fetched_from = "https://arxiv.org/pdf/1208.4520v2"
+fetched_at = "2026-11-13T18:00:59Z"
+sha256 = "abfdf13d0635269756d14e636ccbbe05603705386ece5d60e20a175cf2423e7b"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-13"
+version_note = "arXiv v2"
+cited_for = ["M4"]
+
+[[source]]
+id = "KellyStreet"
+authors = "G. M. Kelly, Ross Street"
+title = "Review of the elements of 2-categories"
+year = 1974
+venue = "Lecture Notes in Mathematics"
+doi = "10.1007/BFb0063101"
+locator_scheme = "theorem"
+locator = "Proposition 2.2"
+url = "https://doi.org/10.1007/BFb0063101"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["M4"]
