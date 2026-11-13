@@ -594,7 +594,7 @@ Prove that for a chain complex `C` indexed by `ℕ` there are natural spectral s
 converge, with filtrations finite in each total degree. They are the two spectral sequences of the
 defining bicomplex: filtering by the degree of `C` gives the first, and since inhomogeneous chains
 are exact in the coefficients, filtering by the bar degree gives the second (HS53 Ch. I §5,
-Lemmas 1–2 and Prop. 5, p. 116). For `k = ℤ` the two homological sequences are those of
+Lemma 1, p. 115; Lemma 2 and Prop. 5, p. 116). For `k = ℤ` the two homological sequences are those of
 SchemeKTheoryOperations §6.7 under the comparison of 2.1; the target adds arbitrary `k` and the
 cohomological sequences. *Needs:* 2.1; DerivedModuleAlgebra §S.1; SchemeKTheoryOperations §6.7
 for the comparison; Tau Ceti `HomologicalComplex₂.rowFiltrationSpectralSequence`,
@@ -1179,8 +1179,11 @@ pp. 119–121). Prove the properties below. *Needs:* Mathlib
 - Each `A_j` is a subcomplex, and `A_{j+1} ⊂ A_j`.
 - Bounded in each degree: `A_j ∩ C̄ⁿ = C̄ⁿ` for `j ≤ 0` and `A_{n+1} ∩ C̄ⁿ = 0`. As the increasing
   filtration `F_t = A_{−t}` indexed by `ℤ`, the input of `CochainComplex.filtrationFunctor`,
-  `F_t = C̄` for `t ≥ 0`, but no `F_t` is zero when `C̄` is unbounded: the bound holds degree by
-  degree, not globally.
+  `F_t = C̄` for `t ≥ 0`. The filtration is bounded in each degree; a global lower bound is not
+  guaranteed, and whether one exists is not decided by the boundedness of `C̄`: some `F_t` is zero
+  exactly when `N = G` or `M = 0`, and then `F_{−1} = A_1 = 0`; if `N ≠ G` and `M ≠ 0`, no `F_t`
+  is zero, since for `g ∉ N`, `0 ≠ m ∈ M` and `j ≥ 1` the cochain of degree `j` with value `m` at
+  `(g, …, g)` and `0` elsewhere is normalized and lies in `A_j`.
 - Multiplicativity: for a pairing `M ⊗ M' ⟶ P`, `A_r(M) ∪ A_s(M') ⊂ A_{r+s}(P)`.
 - Naturality: a morphism of pairs `(G', N') → (G, N)` with a compatible coefficient map sends each
   `A_j` into `A_j`.
@@ -1191,9 +1194,13 @@ pp. 119–121). Prove the properties below. *Needs:* Mathlib
 
 - For `N = 1`, a nonzero normalized cochain has no argument equal to `1`, so
   `A_j ∩ C̄ⁿ = C̄ⁿ` for `j ≤ n`: the filtration is the filtration by degree, `E₁` is the row
-  `q = 0` with `E₁^{p,0} = C̄^p(G, M)`, and `E₂^{p,0} = Hᵖ(G, M)`.
+  `q = 0` with `E₁^{p,0} = C̄^p(G, M)`, and `E₂^{p,0} = Hᵖ(G, M)`. For `G = ℤ/2` and `M = 𝔽₂`,
+  `C̄ⁿ = 𝔽₂` in every degree and `A_j` contains `C̄ⁿ` for every `n ≥ max(j, 0)`, so every `F_t` is
+  nonzero.
 - For `N = G`, every argument lies in `N`, so `A_j ∩ C̄ⁿ = 0` for `j > 0`, and the spectral
-  sequence is the column `p = 0` with `E₁^{0,q} = E₂^{0,q} = H^q(G, M)`.
+  sequence is the column `p = 0` with `E₁^{0,q} = E₂^{0,q} = H^q(G, M)`. For `G = ℤ/2` and
+  `M = 𝔽₂`, `C̄ⁿ = 𝔽₂` in every degree, so `C̄` is unbounded, yet `F_{−1} = A_1 = 0`: an unbounded
+  complex with a globally bounded filtration, so unboundedness of `C̄` does not exclude a zero `F_t`.
 - For `G = ℤ/4`, `N = 2ℤ/4` and `n = 1`, `A_1 ∩ C̄¹` is the normalized cochains with `f(2) = 0`,
   while `A*_1 ∩ C̄¹` also requires `f(1) = f(3)`: the inclusion `A*_1 ⊂ A_1` is strict, and only the
   spectral sequences agree from `E₁` on.

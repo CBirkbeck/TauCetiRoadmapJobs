@@ -427,7 +427,7 @@
      ],
      "locator": {
       "source": "HS53",
-      "where": "Ch. I §5, Lemmas 1–2 and Prop. 5, p. 116; Ch. I §4 Prop. 4, p. 114"
+      "where": "Ch. I §5, Lemma 1, p. 115; Lemma 2 and Prop. 5, p. 116; Ch. I §4 Prop. 4, p. 114"
      },
      "prerequisites": [
       "target:2.1",
@@ -1392,7 +1392,7 @@
       {
        "name": "filtration_finite",
        "role": "structure",
-       "statement": "A_j ∩ C̄ⁿ = C̄ⁿ for j ≤ 0, A_{n+1} ∩ C̄ⁿ = 0, d(A_j) ⊂ A_j, A_{j+1} ⊂ A_j; as F_t = A_{−t}, F_t = C̄ for t ≥ 0 but no F_t is zero: bounded in each degree, not globally."
+       "statement": "A_j ∩ C̄ⁿ = C̄ⁿ for j ≤ 0, A_{n+1} ∩ C̄ⁿ = 0, d(A_j) ⊂ A_j, A_{j+1} ⊂ A_j; as F_t = A_{−t}, F_t = C̄ for t ≥ 0. The filtration is bounded in each degree; a global lower bound is not guaranteed: some F_t is zero exactly when N = G or M = 0 (then F_{−1} = A_1 = 0), and for N ≠ G, M ≠ 0 the cochain of degree j ≥ 1 with value m ≠ 0 at (g, …, g), g ∉ N, and 0 elsewhere lies in A_j."
       },
       {
        "name": "filtration_cup",
@@ -1414,12 +1414,12 @@
       {
        "name": "filt_N_trivial",
        "kind": "degenerate",
-       "statement": "N = 1: filtration by degree, E₂^{p,0} = Hᵖ(G, M)."
+       "statement": "N = 1: filtration by degree, E₂^{p,0} = Hᵖ(G, M); for G = ℤ/2, M = 𝔽₂, C̄ⁿ = 𝔽₂ ⊂ A_j for every n ≥ max(j, 0), so every F_t is nonzero."
       },
       {
        "name": "filt_N_G",
        "kind": "degenerate",
-       "statement": "N = G: A_j ∩ C̄ⁿ = 0 for j > 0, single column."
+       "statement": "N = G: A_j ∩ C̄ⁿ = 0 for j > 0, single column; for G = ℤ/2, M = 𝔽₂, C̄ⁿ = 𝔽₂ in every degree (C̄ unbounded) yet F_{−1} = A_1 = 0."
       },
       {
        "name": "filt_star_strict",
