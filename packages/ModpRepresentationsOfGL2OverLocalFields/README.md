@@ -66,7 +66,10 @@ It leaves to other roadmaps, by section:
 - Serre weights of `GL₂(F)` for every local field including `F = ℚ_p`, `I(σ) = c-Ind_{KZ}^G σ`,
   its Hecke algebra `k̄[T]` and freeness (`SerreWeight`, `compactInduction`, `heckeOperatorT`,
   `endEquivPolynomial`, `compactInduction_free`): FiniteFlatGroupsAndIntegralPadicHodgeTheory
-  R07.5.15;
+  R07.5.15; for every finite `F/ℚ_p`, the Barthel–Livné classification of the non-supersingular
+  irreducibles and the presentation of irreducible principal series and Steinberg twists by Hecke
+  quotients of `I(σ)`: the same section (gap:barthel-livne-ordinary-classification,
+  gap:ordinary-irreducible-hecke-presentation);
 - ordinary parts as `N(𝒪)`-invariants with the transfer Hecke action of the positive torus,
   followed by localisation: PotentialAutomorphyInfrastructure §3.7 (`LocalOrdinaryParts`); their
   derived version on the derived smooth category: §3.12; §2.1 here keeps Emerton's right adjoint
@@ -288,7 +291,7 @@ of Layer 7 is an upper bound under explicit multiplicity hypotheses.
 - What PadicLocalLanglandsForGL2Qp must provide (gap:ext1-finite-length-into-compact-induction):
   for `G′ = GL₂(ℚ_p)/p^ℤ`, a smooth finite-length `k[G′]`-representation `π` and a Serre weight
   `σ`, the space `Ext¹_{G′}(π, I(σ))` is finite-dimensional over `k`, for every prime `p`
-  including `p = 2, 3` (Dotto–Emerton–Gee, Lemma 4.2.1, proves it for `p ≥ 5`), in §2.7.
+  including `p = 2, 3` (DEG, Lemma 4.2.1, proves it for `p ≥ 5`), in §2.7.
 
 ### From TauCetiRoadmap.FiniteFlatGroupsAndIntegralPadicHodgeTheory
 
@@ -296,12 +299,27 @@ of Layer 7 is an upper bound under explicit multiplicity hypotheses.
   character (`SerreWeight`), `I(σ) = c-Ind_{KZ}^G σ` (`compactInduction`), the Hecke operator
   `T` supported on `KZ diag(1,ϖ)^{±1} KZ` (`heckeOperatorT`), `End_G(I(σ)) ≅ k̄[T]`
   (`endEquivPolynomial`), freeness of `I(σ)` over `k̄[T]` (`compactInduction_free`), for every
-  `F` including `F = ℚ_p`, and the Barthel–Livné classification of the quotients `I(σ)/(T − λ)`,
-  `λ ≠ 0`.
+  `F` including `F = ℚ_p`. A *supersingular* representation of `GL₂(F)` is an irreducible
+  quotient of `I(σ)/(T)` for some Serre weight `σ` (CDN23, §1.2.1, p. 11).
 - What FiniteFlatGroupsAndIntegralPadicHodgeTheory must provide (gap:barthel-livne-finite-codimension):
   for a Serre weight `σ` of `GL₂(F)` and a nonzero `G`-subrepresentation `π′ ⊆ I(σ)`, the
-  `I₁`-invariants `(π′)^{I₁}` have finite codimension in `I(σ)^{I₁}` (Barthel–Livné, Proposition
+  `I₁`-invariants `(π′)^{I₁}` have finite codimension in `I(σ)^{I₁}` (BARTHEL-LIVNE94, Proposition
   18), in R07.5.15.
+- What FiniteFlatGroupsAndIntegralPadicHodgeTheory must provide (gap:barthel-livne-ordinary-classification):
+  for every finite `F/ℚ_p`, every irreducible smooth `k̄[GL₂(F)]`-module with central character
+  that is not supersingular is a character `χ∘det`, a twist `St ⊗ χ∘det` of the Steinberg
+  representation or a principal series `Ind_B^G(χ₁ ⊗ χ₂)` with `χ₁ ≠ χ₂`, where `χ, χ₁, χ₂` are
+  smooth characters `F^× → k̄^×` (BARTHEL-LIVNE94, Theorems 33–34 and Corollary 36, as cited in
+  HU12, p. 16, and BP12, proof of Corollary 6.9, p. 44; CDN23, §1.2.1, pp. 11–12), in R07.5.15.
+- What FiniteFlatGroupsAndIntegralPadicHodgeTheory must provide (gap:ordinary-irreducible-hecke-presentation):
+  for every finite `F/ℚ_p`, every principal series `Ind_B^G(χ₁ ⊗ χ₂)` with `χ₁ ≠ χ₂` and every
+  twist `St ⊗ χ∘det`, for smooth characters `χ, χ₁, χ₂ : F^× → k̄^×`, is the quotient of
+  `I(σ) ⊗ (χ′∘det)` by a finitely generated `G`-subrepresentation, for some Serre weight `σ` and
+  some smooth character `χ′ : F^× → k̄^×`: for the principal series the subrepresentation is the
+  image of `T − λ` with `λ ≠ 0`, and for the Steinberg twist it is that image (with `σ` of
+  dimension `q`) together with one further vector (BARTHEL-LIVNE94, Theorem 30, as used in HU12,
+  proof of Théorème 3.27, p. 29; CDN23, §1.2.3, p. 12, and HU12, §5.1, p. 42, record the resulting
+  finite presentation), in R07.5.15.
 
 ### From TauCetiRoadmap.PotentialAutomorphyInfrastructure
 
@@ -563,7 +581,8 @@ left coherent: the completed group algebras are noetherian (hence coherent), and
 (SHOTTON20, Propositions 4.1–4.3, Corollary 4.4). Hence the finitely presented smooth torsion
 representations of `H` form an abelian subcategory: kernels and cokernels of maps between them are
 finitely presented (SHOTTON20, Theorem 4.5; CDN23, Proposition 1.3, p. 11). By Ihara's theorem
-`SL₂(F) = SL₂(𝒪_F) *_{I∩SL₂} SL₂(𝒪_F)^α` and `G₀ = K *_I K^α` with `α = diag(1, ϖ)`; since `G₀` has
+`SL₂(F) = SL₂(𝒪_F) *_{I∩SL₂} SL₂(𝒪_F)^α` (SERRE-TREES, Chapter II, §1.4, Corollaire 1) and
+`G₀ = K *_I K^α` with `α = diag(1, ϖ)` (the same §1.4, Théorème 3); since `G₀` has
 finite index in `G′`, the finite-index calculus gives the headline statement.
 
 Prove `isFinitelyPresented_ker`: for `F/ℚ_p` finite with uniformiser `ϖ` and `L/ℚ_p` finite with
@@ -573,7 +592,8 @@ Corollary 5.2 and Lemma 2.8; CDN23, Proposition 1.3 and Remarque 1.4(ii)). The c
 coherence, not noetherianity: `𝒪⟨G′⟩` is not noetherian. *Needs:* §§0.2–0.4;
 NoncommutativeAndEquivariantIwasawa §F.1 (noetherianity of `𝒪[[U]]`) and §0.3 (freeness over
 open subgroups); the amalgam
-decomposition from Serre's *Arbres, amalgames, SL₂*, Chapter II, cited by SHOTTON20, §5.
+decompositions of SERRE-TREES, Chapter II, §1.4 (Théorème 3 and Corollaire 1), cited by
+SHOTTON20, §5.
 
 **Checks.**
 
@@ -686,14 +706,15 @@ Representations are smooth `k[G′]`-modules.
 ### 1.1 Proper quotients of Serre-weight compact inductions
 
 Prove that every nonzero proper quotient of `I(σ)` has finite length (CDN23, Proposition 1.17,
-p. 16). Route: for the kernel `π′ ≠ 0`, Barthel–Livné give finite codimension of `(π′)^{I₁}` in
-`I(σ)^{I₁}`, so some nonzero `P(T)` sends the generator supported on `KZ` into `π′`; the quotient
-then factors through `I(σ)/P(T)I(σ)`, which has finite length by the `ℚ_p` classification
-(Barthel–Livné, Breuil). Coefficients are descended from `k̄` to `k` with §0.6. The hypothesis
-`F = ℚ_p` enters through this finite-length step; for general `F`, CDN23, Remarque 1.18, p. 16,
-records Emerton's conjecture that nonzero admissible quotients of `I(σ)` have finite length.
-*Needs:* FiniteFlatGroupsAndIntegralPadicHodgeTheory R07.5.15 (the operator `T`, freeness, and
-gap:barthel-livne-finite-codimension); PadicLocalLanglandsForGL2Qp §2.7; §0.6.
+p. 16). Route: for the kernel `π′ ≠ 0`, `(π′)^{I₁}` has finite codimension in `I(σ)^{I₁}`
+(BARTHEL-LIVNE94, Proposition 18), so some nonzero `P(T)` sends the generator supported on `KZ`
+into `π′`; the quotient then factors through `I(σ)/P(T)I(σ)`, which has finite length by the
+`ℚ_p` classification (PadicLocalLanglandsForGL2Qp §2.7). Coefficients are descended from `k̄` to
+`k` with §0.6. The hypothesis `F = ℚ_p` enters through this finite-length step; for general `F`,
+CDN23, Remarque 1.18, p. 16, records Emerton's conjecture that nonzero admissible quotients of
+`I(σ)` have finite length. *Needs:* FiniteFlatGroupsAndIntegralPadicHodgeTheory R07.5.15 (the
+operator `T`, freeness, and gap:barthel-livne-finite-codimension); PadicLocalLanglandsForGL2Qp
+§2.7; §0.6.
 
 **Checks.**
 
@@ -1021,9 +1042,43 @@ exponent), extend scalars to a finite field containing the image of `k_F` and th
 `ϖ` on a generating `KZ`-module, so that its composition factors are Serre weights defined over
 that field (absolutely irreducible with central character, §1.2), apply §2.3 to the graded pieces
 (VIGNERAS11, §5, Proposition 8, p. 21, and Théorème 6, pp. 19–21), and for `F ≠ ℚ_p` exclude
-supersingular constituents by PadicLocalLanglandsForGL2Qp §2.9 and the Barthel–Livné classification
-(FiniteFlatGroupsAndIntegralPadicHodgeTheory R07.5.15). *Needs:* §§0.1, 0.3, 0.4, 0.6, 1.2, 2.3;
-PadicLocalLanglandsForGL2Qp §§2.7, 2.9; FiniteFlatGroupsAndIntegralPadicHodgeTheory R07.5.15.
+supersingular constituents: an irreducible constituent `π` is admissible and finitely presented,
+so over a finite extension `k′` of `k` it splits into absolutely irreducible pieces (§0.6), each of
+which, extended to `k̄`, has scalar endomorphisms and so a central character, and is finitely
+presented, hence not supersingular (PadicLocalLanglandsForGL2Qp §2.9(i)); by
+gap:barthel-livne-ordinary-classification it is a character, a Steinberg twist or a principal
+series, defined over a finite extension of `k′` by §0.6. *Needs:* §§0.1, 0.3, 0.4, 0.6, 1.2, 2.3;
+PadicLocalLanglandsForGL2Qp §§2.7, 2.9; FiniteFlatGroupsAndIntegralPadicHodgeTheory R07.5.15
+(gap:barthel-livne-ordinary-classification).
+
+Prove that the ordinary irreducibles and the inductions of finite torus representations lie in
+`𝒞_𝒪(G)`, for every finite `F/ℚ_p`: for smooth characters `χ, χ₁, χ₂ : F^× → k^×`, the
+representations `χ∘det`, `St ⊗ χ∘det` and `Ind_B^G(χ₁ ⊗ χ₂)` over `k` are admissible and finitely
+presented, and so is `Ind_{B̄}^G U` for every smooth representation `U` of `T` on an `𝒪`-module of
+finite length (CDN23, §1.2.3, p. 12, and proof of Proposition 1.33, p. 21; HU12, §5.1, p. 42).
+Route: `Ind_{B̄}^G` and `Ind_B^G` are exact and preserve admissibility, `B̄\G` and `B\G` being
+compact (SmoothRepresentationsOfLocalGroups *induction-exactness*; EMERTON1, Propositions 4.1.5
+and 4.1.7, pp. 27–29), and admissibility passes to the subrepresentation `χ∘det` and the quotient
+`St ⊗ χ∘det` of `Ind_B^G(χ ⊗ χ)` (§0.1). For finite presentation, `I(σ) = c-Ind_{KZ}^G σ` is the
+quotient of the finitely presented `c-Ind_K^G σ` by the image of the endomorphism
+`ϖ − ζ_σ(ϖ)`, `ζ_σ` the central character of `σ`, hence finitely presented (§§0.3–0.4), and
+`I(σ) ⊗ (χ′∘det) ≅ c-Ind_{KZ}^G(σ ⊗ χ′∘det)` is again of this form. After extension to `k̄`,
+gap:ordinary-irreducible-hecke-presentation writes `V = Ind_B^G(χ₁ ⊗ χ₂)` with `χ₁ ≠ χ₂`, and
+`V = St ⊗ χ∘det`, as the quotient of such an `I(σ) ⊗ (χ′∘det)` by a finitely generated
+subrepresentation, so `V ⊗_k k̄` is finitely presented (§0.4). The weight, the character, the
+surjection and the finitely many generators of its kernel are defined over a finite extension `k′`
+of `k` (§0.6), so `V ⊗_k k′` is finitely presented over `k′`, hence over `k`; as
+`V ⊗_k k′ ≅ V^{[k′:k]}` as `k[G]`-modules, `V` is the quotient of `V ⊗_k k′` by a finitely
+generated complement, finitely presented (§0.4). The reducible `Ind_B^G(χ ⊗ χ)` is an extension of
+`St ⊗ χ∘det` by the constant functions `χ∘det` (as in §2.2), hence finitely presented (§0.4), and
+`χ∘det` is the quotient of `c-Ind_{KZ}^G χ` by a finitely generated kernel (§2.3, the obstruction
+space being `k`). For `U`, a composition series has irreducible `k[T]`-modules as factors,
+finite-dimensional and split into characters over a finite extension of `k` (`T` is abelian);
+`Ind_{B̄}^G(χ₁ ⊗ χ₂) ≅ Ind_B^G(χ₂ ⊗ χ₁)` by conjugation with `w` (§2.1), and exactness of
+induction, closure under extensions (§0.4) and the same descent conclude. *Needs:* §§0.1, 0.3,
+0.4, 0.6, 2.1, 2.3; SmoothRepresentationsOfLocalGroups *smooth-induction*, *compact-induction*,
+*induction-exactness*; FiniteFlatGroupsAndIntegralPadicHodgeTheory R07.5.15 (`compactInduction`,
+`heckeOperatorT`, gap:ordinary-irreducible-hecke-presentation).
 
 API:
 
@@ -1031,6 +1086,9 @@ API:
 - Subobjects, quotients and extensions of objects of `𝒞_𝒪(G)` lie in `𝒞_𝒪(G)`
   (`isFinitelyPresented_subrepresentation_of_admissible` for subobjects).
 - For `F = ℚ_p`, `𝒞_𝒪(G)` is the full subcategory of finite-length smooth torsion representations.
+- For every finite `F/ℚ_p`, the characters `χ∘det`, the Steinberg twists and the principal series
+  `Ind_B^G(χ₁ ⊗ χ₂)` over `k`, and `Ind_{B̄}^G U` for every smooth representation `U` of `T` of
+  finite length over `𝒪`, lie in `𝒞_𝒪(G)`.
 
 **Checks.**
 
@@ -1038,6 +1096,28 @@ API:
   presented as a quotient of `c-Ind_{KZ}^G χ` by a finitely generated kernel (§2.3 with `Δ = k`).
 - The Steinberg representation over `k` lies in `𝒞` and is infinite-dimensional: finite length is
   over `k[G]`.
+- Admissibility of principal series comes from the compactness of `B\G`. For `n ≥ 1` and
+  `K_n = 1 + ϖ^n M₂(𝒪_F)`, normal in `K`, `G = BK` gives `B\G/K_n = ℙ¹(𝒪_F/ϖ^n)`, with
+  `(q + 1)q^{n−1}` elements (`q = |k_F|`), and each double coset carries a `K_n`-invariant function
+  because `χ₁, χ₂` are trivial on the pro-`p` group `1 + ϖ𝒪_F`, `k^×` having no `p`-torsion; so
+  `dim_k Ind_B^G(χ₁ ⊗ χ₂)^{K_n} = (q + 1)q^{n−1}`, which is `q + 1` for `n = 1`. Inducing from the
+  torus `T` instead, `T\G/K_n` is infinite, every double coset again carries an invariant function,
+  and the invariants are infinite-dimensional.
+- The trivial weight does not reach the Steinberg through `Ind_B^G(1 ⊗ 1)`:
+  `Hom_G(I(1), Ind_B^G(1 ⊗ 1))` is `Ind_B^G(1 ⊗ 1)^{KZ}`, the line of constant functions
+  (`G = BK`, and `Z` acts trivially), so every map from `I(1)` lands in the trivial
+  subrepresentation. The `K₁`-invariants `Ind_B^G(1 ⊗ 1)^{K₁} = k[ℙ¹(k_F)]` split as `k ⊕ St_q`, the
+  constants splitting off because the augmentation sends the constant function `1` to
+  `q + 1 = 1 ≠ 0` in `k`; the complement `St_q`, of dimension `q`, meets the constants in `0` and so
+  maps injectively to the Steinberg quotient, matching the weight of dimension `q` in
+  gap:ordinary-irreducible-hecke-presentation. `I(1)/(T − 1)` has the opposite orientation: the
+  augmentation makes the trivial character its quotient, the Steinberg being its subrepresentation
+  (Layer 1, Examples).
+- Finite length over `𝒪`, not finite generation, is the hypothesis on `U`: for `U = 𝒪` with trivial
+  action, `Ind_{B̄}^G 𝒪 = C^∞(ℙ¹(F), 𝒪)` contains the constant function `1`, which no power of
+  `ϖ_L` kills, so it is not a torsion representation and not an object of `𝒞_𝒪(G)`; for
+  `U = ⊕_{n∈ℕ} k` with trivial action, `(Ind_{B̄}^G U)^{K₁} = ⊕_ℕ k^{q+1}` is infinite-dimensional and
+  the induction is not admissible.
 - For `F ≠ ℚ_p` an admissible absolutely irreducible smooth `k[G]`-module `π` with central character
   whose scalar extension to `k̄` is supersingular is not in `𝒞`, because it is not finitely
   presented: a finite presentation of `π` extends to one of `π ⊗_k k̄`, which is admissible and
@@ -1046,7 +1126,11 @@ API:
   non-admissible.
 - Admissibility is not implied by irreducibility and a central character. Take `p > 2`,
   `F = ℚ_{p³}` (so `ϖ = p`), `k ⊇ 𝔽_{p³}`, a generic irreducible `ρ̄` in the sense of BP12,
-  Definition 11.7, and the parameters `λ₀ = 1`, `λ_i = 2` for `i ≠ 0`. Le's representation `π` is
+  Definition 11.7, and the parameters `λ₀ = 1`, `λ_i = 2` for `i ≠ 0`. Write `D₀(ρ̄)` for the
+  finite-dimensional `KZ`-module that BP12, Theorem 13.8, p. 79, attaches to `ρ̄` (LE19, §2.1,
+  p. 3); when `ρ̄|_{I_F} ≅ τ(s, μ)` with `μ − η` 1-deep it is the module `D₀(W(ρ̄))` of §3.5,
+  inflated to `KZ` with `p` acting trivially, `W(ρ̄)` being then the set of Buzzard–Diamond–Jarvis
+  weights of `ρ̄` (§3.4). Le's representation `π` is
   an absolutely irreducible smooth `k[G′]`-module with a central character whose restriction to
   `KZ` contains `⊕_{i∈ℤ} D₀(ρ̄)`, infinitely many copies of a nonzero finite-dimensional module on
   which `K₁ = 1 + pM₂(𝒪_F)` acts trivially (LE19, Theorem 1.1, p. 1, proved by §§2.1–2.2,
@@ -1054,18 +1138,24 @@ API:
   `π` is not admissible. It is supersingular, a quotient of `I(σ)/(T)` for the weights `σ` of its `K`-socle,
   its Hecke eigenvalues being those of supersingular representations (LE19, p. 2); consistently,
   it is none of the characters, Steinberg twists and irreducible principal series of the
-  Barthel–Livné classification (FiniteFlatGroupsAndIntegralPadicHodgeTheory R07.5.15), all of
-  which are admissible. Such `π` lies outside `𝒞` by failing admissibility; the previous Check
-  does not apply to it.
+  Barthel–Livné classification (gap:barthel-livne-ordinary-classification), all of which are
+  admissible, as this section proves for the ordinary irreducibles. Such `π` lies outside `𝒞` by
+  failing admissibility; the previous Check does not apply to it.
 
 ### 2.5 Exactness of ordinary parts and the finite-error counit
 
 Assume `F ≠ ℚ_p`. Prove that `Ord_B` is exact on `𝒞_𝒪(G)` with values finite `𝒪`-modules; that an
 object with `Ord_B(V) = 0` is a finite `𝒪`-module; and that for every `V` in `𝒞_𝒪(G)` the kernel and
 cokernel of the counit `ι_V : Ind_{B̄}^G Ord_B(V) → V` are finite `𝒪`-modules (CDN23, Lemmes
-1.31–1.32 and Proposition 1.33, p. 21). Route: `R¹Ord_B` vanishes on the constituents of §2.4 by
-§2.2; an object with zero ordinary part has only character constituents; apply `Ord_B` to the
-counit. *Needs:* §§2.1, 2.2, 2.4.
+1.31–1.32 and Proposition 1.33, p. 21). Route: after a finite extension of `k`, which `Ord_B` and
+its derived functors commute with (§2.1), the constituents of an object of `𝒞_𝒪(G)` are
+characters, Steinberg twists and principal series (§2.4, through
+gap:barthel-livne-ordinary-classification), on which `R¹Ord_B` vanishes by §2.2; an object with
+zero ordinary part has only character constituents, `Ord_B` being nonzero on Steinberg twists and
+principal series (§2.2); apply `Ord_B` to the counit, to its image and to its kernel, which lies in
+`𝒞_𝒪(G)` because `Ind_{B̄}^G Ord_B(V)` does (§2.4, `Ord_B(V)` being of finite length over `𝒪`) and
+`𝒞_𝒪(G)` is closed under subobjects. *Needs:* §§2.1, 2.2, 2.4; FiniteFlatGroupsAndIntegralPadicHodgeTheory
+R07.5.15 (gap:barthel-livne-ordinary-classification, gap:ordinary-irreducible-hecke-presentation).
 
 **Checks.**
 
@@ -1144,8 +1234,8 @@ CompletedCohomologyPartII F.1; PadicLocalLanglandsForGL2Qp §0.1; SmoothRepresen
 
 ### Examples
 
-- For `F = ℚ_{p²}` and `V` the reduction of a unitary principal series, `V` lies in `𝒞`, has length at
-  most two and `Ord_B(V)` is its inducing character.
+- For `F = ℚ_{p²}` and `V = Ind_{B̄}^G(χ₁ ⊗ χ₂)` the reduction of a unitary principal series, `V`
+  lies in `𝒞` (§2.4), has length at most two and `Ord_B(V) = χ₁ ⊗ χ₂` is its inducing character.
 - For `F ≠ ℚ_p` the representation `V = St ⊗ χ∘det ⊕ χ′ ∘ det` has `Ord_B(V) = χ ⊗ χ`; the counit has
   kernel `χ∘det` and cokernel `χ′∘det`.
 
@@ -1154,8 +1244,9 @@ CompletedCohomologyPartII F.1; PadicLocalLanglandsForGL2Qp §0.1; SmoothRepresen
 Layer 0; PotentialAutomorphyInfrastructure §§3.7 and 3.12; CompletedCohomologyAndLocalGlobalCompatibility
 §0.1 (the `F = ℚ_p` functor of §2.1); SmoothRepresentationsOfLocalGroups SR.0d.1 and SR.2.1; Tau Ceti
 `TauCeti.ContCohomology.coindAcyclic`; Mathlib `ContRepresentation.coind`; PadicLocalLanglandsForGL2Qp
-§§0.1, 2.6, 2.7, 2.9; FiniteFlatGroupsAndIntegralPadicHodgeTheory R07.5.15; CompletedCohomologyPartII
-F.1.
+§§0.1, 2.6, 2.7, 2.9; FiniteFlatGroupsAndIntegralPadicHodgeTheory R07.5.15 (with
+gap:barthel-livne-ordinary-classification and gap:ordinary-irreducible-hecke-presentation);
+CompletedCohomologyPartII F.1.
 
 ## Layer 3: Tame weights and extension coordinates
 
@@ -2219,7 +2310,8 @@ precomposition. *Needs:* §§5.6, 8.6, 9.1.
 - `τ = σ`: `Hom_K(T_σ, T_σ) = End_K(T_σ)` is cyclic, generated by the identity.
 - The module structure is precomposition on the source; as a left `End_K(T_σ)`-module by
   postcomposition the statement is different and not claimed.
-- The bounds force `p ≥ 15`, that is `p ≥ 17`.
+- The bounds force `p ≥ 14`, that is `p ≥ 17`: `p = 13` leaves `5 < r_i < 6`, empty, and `p = 17`
+  gives `r_i ∈ {6, …, 9}`.
 
 ### 9.3 Relative projectivity of all quotients
 
@@ -2362,3 +2454,9 @@ Consumers that cite this roadmap by its former target identifiers find the conte
   congruence level*; author copy, item (2).
 - **SERRE-LRFG** — Jean-Pierre Serre, *Linear Representations of Finite Groups*, Graduate Texts in
   Mathematics 42, Springer (1977), Part III, Chapters 14–15.
+- **SERRE-TREES** — Jean-Pierre Serre, *Arbres, amalgames, SL₂*, Astérisque 46, Société
+  Mathématique de France (1977); Chapter II, §1.4, Théorème 3 and Corollaire 1 (Ihara).
+- **BARTHEL-LIVNE94** — L. Barthel, R. Livné, *Irreducible modular representations of GL₂ of a
+  local field*, Duke Math. J. 75 (1994), 261–292; Proposition 18, Theorem 30, Theorems 33–34 and
+  Corollary 36, numbered as HU12 (pp. 16, 29) and BP12 (pp. 43–44) cite them; the classification
+  is recorded in CDN23, §1.2.1.
