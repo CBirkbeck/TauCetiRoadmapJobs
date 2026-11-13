@@ -1,0 +1,21 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-PadicHodgeRegulators~6",
+  "head": "a63b5f679e3197d0c291a166697186158edb20da",
+  "pr": 1498,
+  "folder": "PadicHodgeRegulators",
+  "date": "2026-11-13",
+  "findings": 2,
+  "blocking": 0,
+  "notes": "incremental re-review of 35 changed lines since aada6bb; checked changed Chern-class contracts, syntomic projective-bundle and divisor conditions, transfer at p=2, affected seeded §6.3, nine source locators, supplier ownership, seven elaborated signatures, and PR text. Gate, dependency check, targeted build and Lean elaboration pass. Two P3 findings concern stale PR-description supplier claims.",
+  "carried": {
+   "from": "a63b5f679e3197d0c291a166697186158edb20da",
+   "head": "0c9e8c60d22b07983ab704a014a4dcb9d35ea217",
+   "findings": 2,
+   "lines": 0,
+   "folders": [],
+   "outside": true
+  }
+ }
+}
