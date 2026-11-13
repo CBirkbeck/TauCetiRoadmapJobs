@@ -1,0 +1,70 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "ConvexLifting"
+
+[[source]]
+id = "LYBV16"
+authors = "Miles Lubin, Emre Yamangil, Russell Bent, Juan Pablo Vielma"
+title = "Extended Formulations in Mixed-integer Convex Programming"
+year = 2015
+doi = "10.1007/978-3-319-33461-5_9"
+arxiv = "1511.06710v3"
+locator_scheme = "section"
+locator = "§4"
+url = "https://arxiv.org/abs/1511.06710v3"
+fetched_from = "https://arxiv.org/pdf/1511.06710v3"
+fetched_at = "2026-11-13T17:27:10Z"
+sha256 = "9a3870ac7e84ef8e5443ecd85ca7b6b1d97fb934e7e030ece397c8378f0f9939"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-13"
+version_note = "arXiv v3"
+cited_for = ["1.1"]
+
+[[source]]
+id = "LYBV"
+authors = "Miles Lubin, Emre Yamangil, Russell Bent, Juan Pablo Vielma"
+title = "Polyhedral approximation in mixed-integer convex optimization"
+year = 2016
+doi = "10.1007/s10107-017-1191-y"
+arxiv = "1607.03566v2"
+locator_scheme = "section"
+locator = "§4"
+url = "https://arxiv.org/abs/1607.03566v2"
+fetched_from = "https://arxiv.org/pdf/1607.03566v2"
+fetched_at = "2026-11-13T17:27:16Z"
+sha256 = "25e8995411583d52ed7cc1164e7b4cc4e039ad11e81eb0d85d8e7da210a15a9b"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-13"
+version_note = "arXiv v2"
+cited_for = ["1.1"]
+
+[[source]]
+id = "KLW18"
+authors = "Jan Kronqvist, Andreas Lundell, Tapio Westerlund"
+title = "Reformulations for utilizing separability when solving convex MINLP problems"
+year = 2018
+venue = "Journal of Global Optimization 71"
+doi = "10.1007/s10898-018-0616-3"
+locator_scheme = "theorem"
+locator = "Proposition 1"
+url = "https://link.springer.com/content/pdf/10.1007/s10898-018-0616-3.pdf"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["4.1"]
+
+[[source]]
+id = "TS05"
+authors = "Tawarmalani"
+title = "A polyhedral branch-and-cut approach to global optimization"
+year = 2005
+venue = "Mathematical Programming 103"
+doi = "10.1007/s10107-005-0581-8"
+locator_scheme = "theorem"
+locator = "Theorem 1"
+url = "https://doi.org/10.1007/s10107-005-0581-8"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["3.1"]

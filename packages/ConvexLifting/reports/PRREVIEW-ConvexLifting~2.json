@@ -1,0 +1,4 @@
+{"review": {"status": "needs_changes", "reviewer": "independent-review-PRREVIEW-ConvexLifting~2",
+            "head": "b2972af9602984ad9c0306ecf21094667470579c", "pr": 2292, "folder": "ConvexLifting", "date": "2026-11-13",
+            "findings": 4, "blocking": 1,
+            "notes": "Full re-review. Previous R01-R05, R08, R09 repaired; R06, R07, R10 partly or not (now R02-R04). Sample 1.1-4.2: all statements computed on instances and true as stated; R01 (P2) is a narrowing below TS05 as described by README line 26, repair elaborated on a scratch copy. Sources: LYBV16 and LYBV read at their locators; TS05, HBO13, KLW18 not readable legally. Gate passes (all counters 0, build ok); lake env lean gives 13 sorry warnings only; one-tactic probe closes none; depcheck 0 problems; overlap check against 5 closest roadmaps, nothing shared."}}
