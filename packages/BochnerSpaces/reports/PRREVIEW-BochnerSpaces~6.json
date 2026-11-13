@@ -1,0 +1,13 @@
+{
+  "review": {
+    "status": "needs_changes",
+    "reviewer": "independent-review-PRREVIEW-BochnerSpaces~6",
+    "head": "94078e7addd3e3b28d93d77e0dfe11d22dd2b829",
+    "pr": 2249,
+    "folder": "BochnerSpaces",
+    "date": "2026-11-13",
+    "findings": 4,
+    "blocking": 3,
+    "notes": "Full review of 41 targets; previous 3 inherited repairs retained. Fifteen seeded targets instantiated; source locators uncertified because legal full texts unavailable. Worker gate passed; independent depcheck 240 roadmaps/2170 edges/0 problems and Lean elaboration passed with 24 sorry warnings; 31 signatures checked, 24 one-tactic probes failed. Ownership conflict, existing Mathlib density uniqueness, omitted statable atomic duality, and required headings reported."
+  }
+}
