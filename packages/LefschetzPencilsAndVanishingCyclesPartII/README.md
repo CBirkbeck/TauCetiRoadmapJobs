@@ -7,10 +7,10 @@ neighbourhood `V` smooth over `k`, and `U ⊆ Y` an open set with `U ∩ V` dens
 an affine curve `C` over `k`, smooth of relative dimension one and geometrically integral, a point
 `c ∈ C(k)` and a `k`-morphism `g : C → Y` with `g(c) = y` and `g⁻¹(U)` nonempty and dense in `C`.
 The point `y` may lie outside `U`, the good open `g⁻¹(U)` need not contain any rational point, and
-nothing is assumed of `Y` away from `V`. Over `k = 𝔽_q` both marked residue fields are `𝔽_q`, so a
-lisse sheaf on `Y` has the same Frobenius at `c` and at `y`, with no passage to a power of
-Frobenius. The proof is elementary and local. Layer 1 specialises Tau Ceti's Kronecker
-substitution to the weights `X_i ↦ T^(B^i)` (`polynomialGraph`), deduces from Tau Ceti's
+nothing is assumed of `Y` away from `V`. Over `k = 𝔽_q` both marked residue fields are `𝔽_q`, so
+the pullback along `g` of a lisse sheaf on `Y` has at `c` the Frobenius that the sheaf has at `y`,
+with no passage to a power of Frobenius. The proof is elementary and local. Layer 1 specialises
+Tau Ceti's Kronecker substitution to the weights `X_i ↦ T^(B^i)` (`polynomialGraph`), deduces from Tau Ceti's
 coefficient theorem and the uniqueness of base-`B` digits that a base `B` exceeding every exponent
 preserves every coefficient (`polynomialGraph_coeff`), and concludes that over the field `k` the
 graph `a_B : 𝔸¹_k → 𝔸^m_k` through the origin meets the complement of any given hypersurface
@@ -166,8 +166,7 @@ universal hypersurface families; semistable potential maps.
   `HasRingHomProperty @Etale RingHom.Etale`, by which an étale morphism of affine schemes is the
   spectrum of an étale ring map (`Mathlib/AlgebraicGeometry/Morphisms/Etale.lean`);
   `Algebra.Etale.baseChange`, étaleness of algebras is stable under base change
-  (`Mathlib/RingTheory/Etale/Basic.lean`), and `Algebra.EssFiniteType.of_finiteType`
-  (`Mathlib/RingTheory/EssentialFiniteness.lean`); `AlgebraicGeometry.SmoothOfRelativeDimension`
+  (`Mathlib/RingTheory/Etale/Basic.lean`); `AlgebraicGeometry.SmoothOfRelativeDimension`
   and the composition instance `AlgebraicGeometry.smoothOfRelativeDimension_comp`, which adds
   relative dimensions (`Mathlib/AlgebraicGeometry/Morphisms/Smooth.lean`); the instance
   `AlgebraicGeometry.AffineSpace.smoothOfRelativeDimension_fin` (`𝔸(ULift.{u} (Fin n); S) → S` is
@@ -192,12 +191,16 @@ universal hypersurface families; semistable potential maps.
   (`Mathlib/AlgebraicGeometry/Properties.lean`). In particular a geometrically integral
   `k`-scheme is nonempty, so the targets below do not state that separately; the nonemptiness
   they do state is that of the good open `g⁻¹(U)`, which is a different claim.
-- `Algebra.FormallyEtale.iff_exists_algEquiv_prod`: an étale algebra essentially of finite type
-  over a field is a finite product of finite separable field extensions
-  (`Mathlib/RingTheory/Etale/Field.lean`).
+- `Algebra.Etale.iff_exists_algEquiv_prod`: an algebra over a field is étale if and only if it is
+  a finite product of finite separable field extensions (`Mathlib/RingTheory/Etale/Field.lean`).
 - `Ideal.under_ne_bot_of_algebraic_mem`: a nonzero element of an ideal of a domain that is
   algebraic over a subring forces a nonzero element of the ideal in that subring
   (`Mathlib/RingTheory/Ideal/GoingUp.lean`).
+- `IsFractionRing.isAlgebraic_iff`: for a domain `R` with fraction field `K` and a commutative
+  algebra `C` over both, compatibly, an element of `C` is algebraic over `R` if and only if it is
+  algebraic over `K` (`Mathlib/RingTheory/Localization/Integral.lean`);
+  `isAlgebraic_algebraMap_iff`: along an injective algebra map `S → C` of `R`-algebras, an element
+  of `S` is algebraic over `R` if and only if its image is (`Mathlib/RingTheory/Algebraic/Basic.lean`).
 - `IsOpen.dense`, `IsOpenMap.denseRange_of_isPreirreducibleSpace` (`Mathlib/Topology/Irreducible.lean`);
   `TopologicalSpace.NoetherianSpace.finite_irreducibleComponents`, `isClosed_connectedComponent`.
 
@@ -419,17 +422,19 @@ the irreducible `𝔸^m_k`, which lies in no `V(p)` with `p ≠ 0`. Since `π` i
 étale ring map (`Etale` is the scheme-morphism property attached to `RingHom.Etale`, the
 `HasRingHomProperty` instance in `Mathlib/AlgebraicGeometry/Morphisms/Etale.lean`). Localising at
 `k[X] ∖ {0}`, the base change `k(X) ⊗_{k[X]} A` is étale over the field `k(X)`
-(`Algebra.Etale.baseChange`), in particular of finite presentation, hence essentially of finite
-type, so it is a finite product of finite separable extensions
-(`Algebra.FormallyEtale.iff_exists_algEquiv_prod`); so every element of `A` is algebraic over
-`k[X]`. Since `Z ≠ V` and `A` is reduced, the ideal `I` of `Z` is nonzero;
+(`Algebra.Etale.baseChange`), so it is a finite product of finite separable field extensions of
+`k(X)` (`Algebra.Etale.iff_exists_algEquiv_prod`), a finite-dimensional `k(X)`-algebra whose
+elements are all algebraic over `k(X)`. As `A` is a domain and `π^*` is injective, `A` is a
+torsion-free `k[X]`-module and embeds in this base change; so every element of `A` is algebraic
+over `k(X)`, hence over `k[X]` (`IsFractionRing.isAlgebraic_iff`, `isAlgebraic_algebraMap_iff`).
+Since `Z ≠ V` and `A` is reduced, the ideal `I` of `Z` is nonzero;
 `Ideal.under_ne_bot_of_algebraic_mem` gives `0 ≠ h ∈ k[X]` with `π^*(h) ∈ I`, and then `h` vanishes on
 `π(Z)`. (A route through dimension theory — the closure of `π(Z)` has dimension `< m` — gives the
 same conclusion.) *Needs:* Mathlib `AlgebraicGeometry.Flat.generalizingMap`,
 `AlgebraicGeometry.isOpenMap_of_generalizingMap`, the `HasRingHomProperty @Etale RingHom.Etale`
 instance (`Mathlib/AlgebraicGeometry/Morphisms/Etale.lean`), `Algebra.Etale.baseChange`
-(`Mathlib/RingTheory/Etale/Basic.lean`), `Algebra.EssFiniteType.of_finiteType`,
-`Algebra.FormallyEtale.iff_exists_algEquiv_prod`, `Ideal.under_ne_bot_of_algebraic_mem`.
+(`Mathlib/RingTheory/Etale/Basic.lean`), `Algebra.Etale.iff_exists_algEquiv_prod`,
+`IsFractionRing.isAlgebraic_iff`, `isAlgebraic_algebraMap_iff`, `Ideal.under_ne_bot_of_algebraic_mem`.
 
 **Checks.**
 
@@ -573,14 +578,14 @@ into it. *Proof sketch.*
 2. *The curve.* Apply `exists_marked_etale_curve` to `(V₀, π, y, U ∩ V₀)` and compose `g` with the
    open immersion `V₀ → Y`; `f ∘ g` is the structure morphism of `C` because `π` is a `k`-morphism.
 3. *Dimension zero.* If `m = 0`, then `V₀` is integral and étale over `k`, hence `Spec L` for a
-   finite separable field extension `L/k` (`Algebra.FormallyEtale.iff_exists_algEquiv_prod`); the
+   finite separable field extension `L/k` (`Algebra.Etale.iff_exists_algEquiv_prod`); the
    rational point gives a `k`-algebra map `L → k`, so `L = k` and `V₀` is the single point `y`, and
    density of `U ∩ V₀` forces `y ∈ U`. The curve of step 2 is then `C = 𝔸¹_k` with `g` the constant
    morphism through `y` and `g⁻¹(U) = C`. This is why the conclusion asks for a morphism and not an
    immersion.
 
 *Needs:* §2.3; Tau Ceti `AlgebraicGeometry.Smooth.exists_etale_affineSpace`; Mathlib
-`Algebra.FormallyEtale.iff_exists_algEquiv_prod`, `AffineSpace.SpecIso`, `MvPolynomial.renameEquiv`,
+`Algebra.Etale.iff_exists_algEquiv_prod`, `AffineSpace.SpecIso`, `MvPolynomial.renameEquiv`,
 `Equiv.ulift`, and for the curve `𝔸¹_k` of step 3 `AffineSpace.smoothOfRelativeDimension_fin`
 transported as in §2.2; Stacks 056T and 033N for the shrinking step.
 
@@ -631,7 +636,8 @@ degree one geometry. *Needs:* Tau Ceti `TauCeti.AlgebraicGeometry.RationalPoint.
 
 Layer 1; SchemeAndStackFoundations §0.8 (`rational_point_component`); Mathlib
 étale, smooth, flat and geometrically integral morphisms, the `HasRingHomProperty @Etale RingHom.Etale`
-instance, `Algebra.Etale.baseChange`, `Algebra.FormallyEtale.iff_exists_algEquiv_prod`,
+instance, `Algebra.Etale.baseChange`, `Algebra.Etale.iff_exists_algEquiv_prod`,
+`IsFractionRing.isAlgebraic_iff`, `isAlgebraic_algebraMap_iff`,
 `Ideal.under_ne_bot_of_algebraic_mem`, `AffineSpace.SpecIso`, `AffineSpace.SpecIso_inv_over`,
 `AffineSpace.smoothOfRelativeDimension_fin`, `MvPolynomial.uniqueAlgEquiv`,
 `MvPolynomial.renameEquiv`; Tau Ceti `AlgebraicGeometry.Smooth.exists_etale_affineSpace` (module
@@ -695,7 +701,8 @@ instance, `Algebra.Etale.baseChange`, `Algebra.FormallyEtale.iff_exists_algEquiv
   `Mathlib/AlgebraicGeometry/Morphisms/UniversallyOpen.lean`,
   `Mathlib/AlgebraicGeometry/Geometrically/Integral.lean`, `Mathlib/AlgebraicGeometry/Properties.lean`,
   `Mathlib/RingTheory/Etale/Basic.lean`, `Mathlib/RingTheory/Etale/Field.lean`,
-  `Mathlib/RingTheory/EssentialFiniteness.lean`, `Mathlib/RingTheory/Ideal/GoingUp.lean`,
+  `Mathlib/RingTheory/Localization/Integral.lean`, `Mathlib/RingTheory/Algebraic/Basic.lean`,
+  `Mathlib/RingTheory/Ideal/GoingUp.lean`,
   `Mathlib/Topology/Irreducible.lean`.
 - Tau Ceti: `TauCeti/RingTheory/MvPolynomial/Kronecker.lean`,
   `TauCeti/AlgebraicGeometry/Morphisms/Smooth/EtaleCoordinates.lean`,
