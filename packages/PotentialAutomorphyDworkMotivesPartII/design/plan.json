@@ -5871,7 +5871,7 @@
     },
     {
       "slug": "slopes-of-indecomposable-convergent-isocrystals",
-      "needs": "For a perfect field k of characteristic p, a smooth irreducible quasi-compact k-scheme X with generic point η and an indecomposable convergent F-isocrystal M on X of rank n, the generic slopes a^η_1 ≥ ⋯ ≥ a^η_n of M satisfy a^η_i − a^η_(i+1) ≤ 1 for 1 ≤ i < n (Drinfeld–Kedlaya, Theorem 1.1.5, arXiv v11 p. 3), together with the full faithfulness of restriction of convergent F-isocrystals from X to a dense open subset on which its proof rests (their Theorem 2.2.3, p. 6).",
+      "needs": "For a perfect field k of characteristic p, a smooth irreducible quasi-compact k-scheme X with generic point η and an indecomposable convergent F-isocrystal M on X of rank n, the generic slopes a^η_1 ≥ ⋯ ≥ a^η_n of M satisfy a^η_i − a^η_(i+1) ≤ 1 for 1 ≤ i < n (Drinfeld–Kedlaya, Theorem 1.1.5, arXiv v11 p. 3).",
       "supplier": "PadicDifferentialEquationsAndRigidCohomology",
       "section": "RD.3.34 Convergent F-isocrystals"
     }
