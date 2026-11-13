@@ -57,14 +57,14 @@ noncomputable def dworkBlock {K : Type*} [Field K] (p : ℕ) (B : ℕ → K) (m 
     PowerSeries K :=
   PowerSeries.mk fun j => if m * p ^ s ≤ j ∧ j < (m + 1) * p ^ s then B j else 0
 
-/-- **Signed 2-adic Dwork congruences** (Xu–Zhu, Theorem A.5(i′)). Let `R` be a complete discrete
-valuation ring of mixed characteristic `(0, 2)` with fraction field `K`, and let `B⁽ⁱ⁾ : ℕ → Kˣ`,
+/-- **Signed 2-adic Dwork congruences** (Xu–Zhu, Theorem A.5(i′)). Let `R` be a discrete valuation
+ring of mixed characteristic `(0, 2)`, complete or not, with fraction field `K`, and let `B⁽ⁱ⁾ : ℕ → Kˣ`,
 `i ≥ 0`, satisfy: `B⁽ⁱ⁾(0)` is a unit of `R`; `B⁽ⁱ⁾(a + 2n) / B⁽ⁱ⁺¹⁾(n) ∈ R` for `a ∈ {0, 1}`; and
 the signed congruence `B⁽ⁱ⁾(a + 2n + m 2^{s+1}) / B⁽ⁱ⁺¹⁾(n + m 2^s) ≡ u(i,s,m) B⁽ⁱ⁾(a + 2n) / B⁽ⁱ⁺¹⁾(n)`
 modulo `2^{s+1} R`, with signs `u(i,s,m) = ±1` independent of `a, n` and equal to `1` for `s ≠ 1`.
 Then `F⁽⁰⁾(x) F⁽¹⁾_{m,s}(x²) − F⁽⁰⁾_{m,s+1}(x) F⁽¹⁾(x²)` lies in `2^s B⁽ˢ⁺¹⁾(m) R⟦x⟧`. -/
 theorem signed_dwork_congruence {R K : Type*} [CommRing R] [IsDomain R]
-    [IsDiscreteValuationRing R] [IsAdicComplete (IsLocalRing.maximalIdeal R) R]
+    [IsDiscreteValuationRing R]
     [Field K] [CharZero K] [Algebra R K] [IsFractionRing R K]
     (h2 : ¬ IsUnit (2 : R))
     (B : ℕ → ℕ → K) (hB : ∀ i j, B i j ≠ 0)

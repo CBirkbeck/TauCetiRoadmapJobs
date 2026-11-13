@@ -285,18 +285,23 @@ categories live in one fixed universe; `Suggested.lean` places the extension fie
   theorem (§RD.2.33), André's Tannakian local monodromy (§RD.2.51).
 - RD.3: overconvergent and convergent F-isocrystals (§§RD.3.25, RD.3.33–RD.3.37), Newton
   semicontinuity (§RD.3.43), common Newton vertices and the dense-open slope filtration
-  (§§RD.3.44–RD.3.45), Kummer isocrystals (§RD.3.51).
+  (§§RD.3.44–RD.3.45), unit-root F-isocrystals, all of whose pointwise Frobenius slopes are zero
+  (§RD.3.47), Kummer isocrystals (§RD.3.51).
 - RD.4: specialization and cospecialization of de Rham cohomology (§RD.4.58) and the specialization
   and forget-supports square (§RD.4.59); these are maps under their smooth proper compactification
   hypotheses, not comparison isomorphisms.
 - RD.5: Kedlaya's full faithfulness (§RD.5.8), finiteness and Poincaré duality with coefficients
-  (§§RD.5.76, RD.5.89), logarithmic extension under unipotent monodromy (§RD.5.103) and full
-  faithfulness of restriction to a dense open, including underlying overconvergent isocrystals
-  (§RD.5.102(a), §RD.5.112(ii)).
+  (§§RD.5.76, RD.5.89), convergent log-isocrystals on a smooth pair with a strict normal crossings
+  divisor, with their residues along its components (§RD.5.101), logarithmic extension under
+  unipotent monodromy (§RD.5.103) and full faithfulness of restriction to a dense open, including
+  underlying overconvergent isocrystals (§RD.5.102(a), §RD.5.112(ii)).
 - RD.6: the linear Frobenius at a closed point and its behaviour under residue extension (§RD.6.2),
-  Tate twists (§RD.6.3), traces and the Lefschetz trace formula (§RD.6.23), pointwise weights
-  (§RD.6.28), the Fourier transform (§§RD.6.41–RD.6.44), the Dwork and Kummer F-isocrystals and
-  their sign dictionary (§§RD.6.42, RD.6.46–RD.6.48), local monodromy representations, irregularity
+  Tate twists (§RD.6.3), the `L`-function of an overconvergent F-isocrystal on a separated scheme of
+  finite type over `𝔽_q` and its rationality as the alternating product of the characteristic
+  polynomials of Frobenius on compactly supported rigid cohomology (§§RD.6.4, RD.6.25), traces and
+  the Lefschetz trace formula (§RD.6.23), pointwise weights (§RD.6.28), the Fourier transform
+  (§§RD.6.41–RD.6.44), the Dwork and Kummer F-isocrystals and their sign dictionary
+  (§§RD.6.42, RD.6.46–RD.6.48), local monodromy representations, irregularity
   and Swan conductors (§§RD.6.51–RD.6.52), the Grothendieck–Ogg–Shafarevich formula (§RD.6.55), neutral
   Tannakian recognition and generation (§§RD.6.64–RD.6.65), normalization to weight zero (§RD.6.82)
   and the scalar Kloosterman F-isocrystal `Kl_{n+1}` at every prime `p` and every rank `n + 1 ≥ 1`, with its
@@ -601,8 +606,13 @@ acyclicity by requiring, for every `N ∈ D(S)`, the graph-induced comparison
 local acyclicity (ULA) by requiring this property after `+`-pullback along every morphism
 `S′ → S` between smooth `k`-schemes; the morphism itself need not be smooth (Xu–Zhu
 Definition 2.8.2 and (2.8.1.1)–(2.8.1.3), p. 21). Prove preservation under smooth
-pullback and proper pushforward (Proposition 2.8.3), and under external products over
-products of smooth bases by the tensor comparison. Prove that for a smooth effective
+pullback and proper pushforward (Proposition 2.8.3), and prove that for a smooth `k`-scheme `S`
+and every object `M` on a realizable `k`-scheme `Y`, the pullback `pr₁^+M` to `Y × S` is ULA over `S`
+through `pr₂` (Proposition 2.8.3(i), ULA over `Spec k`, with the base changes `S′ → Spec k` of
+Definition 2.8.2, p. 21); on an ind-scheme LA and ULA are read on the closed subschemes of finite
+type supporting the object (Proposition 2.8.3(iv), p. 21, and Remark 2.8.4, p. 22). This is the case used
+for the Satake kernel spread over `X` and for external products over `X²` in the fusion product
+(Xu–Zhu §3.2.2, p. 28, and proof of Proposition 3.2.5(i), p. 29). Prove that for a smooth effective
 divisor `D ⊂ S`, with inverse-image immersion `i` and complementary immersion `j`, an
 LA object whose restriction to `j` is holonomic is its intermediate extension, and
 `i^+M[−1] ≅ i^!M(1)[1]` (Proposition 2.8.5, p. 22). Deduce vanishing of full and
@@ -623,6 +633,9 @@ Theorem 2.10.2, pp. 25–26). *Needs:* gap:arithmetic-d-module-operations; §1.1
   not ULA over the identity of `𝔸¹`, since its vanishing cycles at `0` are nonzero.
 - The smoothness conclusion requires the identity morphism: the constant object on `𝔸¹` is ULA over the map to a
   point but is already smooth, while a skyscraper is ULA over the point and is not smooth on `𝔸¹`.
+- ULA depends on the morphism, not on the object alone: `j_!K` on `𝔸¹` is not ULA over the identity, yet its
+  pullback `pr₁^+(j_!K)` to `𝔸¹ × 𝔸¹` is ULA over the second factor by the product clause; a definition of
+  ULA as a property of the object alone would contradict one of the two.
 - For the constant object on `𝔸²` with weights `(1, −1)`, the attracting locus is the `x`-axis and the
   repelling locus the `y`-axis. The attracting side is the `!`-restriction to the origin of the constant
   object of the `x`-axis (equivalently, compactly supported cohomology of the `x`-axis); the repelling
@@ -701,7 +714,7 @@ map to `pr_{2,+}`. Prove: fusion identifies `Hk_{W⊗W′}` with the composite o
 followed by restriction to the diagonal, compatibly with associativity and with all intertwiners;
 `Hk_1(M) = M ⊠ 1`; and over the base point the eigenvalue is the pushforward from the open part
 `GR_W°` of the bounded Grassmannian with the exponential coefficient (Xu–Zhu §4.1.2, (4.1.2.1)–(4.1.2.4),
-pp. 38–39; §4.1.8, (4.1.8.1)–(4.1.8.4), p. 40). *Needs:* §§1.3–1.4; GlobalShtukasAndFunctionFieldLanglands
+p. 38; §4.1.8, (4.1.8.1)–(4.1.8.4), p. 40). *Needs:* §§1.3–1.4; GlobalShtukasAndFunctionFieldLanglands
 §§1.1–1.5; gap:relative-level-geometry.
 
 - The trivial representation acts by exterior product with the unit on `X`.
@@ -1768,7 +1781,7 @@ define `N = Σ_{1 ≤ i ≤ 2n−1, i ≠ n} E_{i,i+1} + E_{n−1,n+1} + E_{n,n+
 `N = Σ_{i=1}^{2n} E_{i,i+1}` and `E = 2E_{2n,1} + 2E_{2n+1,2}`, with connection `d + (N + λ^{2n} x E) dx/x`; its cyclic
 operator in the column convention of Xu–Zhu is `δ^{2n+1} − λ^{2n} x (4δ + 2)`. The dual group of this odd
 orthogonal datum is `Sp_{2n}`, whose middle simple-root coordinate is `E_{n,n+1}` (Xu–Zhu §5.3.3,
-(5.3.3.1)–(5.3.3.2), p. 58; §5.3.6, (5.3.6.1)–(5.3.6.4), pp. 60–61, with the root coordinates of the
+(5.3.3.1)–(5.3.3.2), p. 58; §5.3.6, (5.3.6.1)–(5.3.6.4), p. 60, with the root coordinates of the
 lowest-root entries corrected). *Needs:* §§2.1–2.2; OrthogonalSpinGroups Layer 0; Mathlib `Matrix.trace`.
 
 - Both `N` and `E` satisfy the infinitesimal form equation `X^t J + J X = 0` for the stated forms.
@@ -1836,7 +1849,7 @@ and summing the free additive variables by orthogonality (Mathlib `AddChar.sum_e
 `Σ_{z ∈ Q°(𝔽_Q)} ψ(Tr W(z, a)) = S_n(a) + Q^{n−1} − Q`, where
 `S_n(a) = Σ_{x₁, …, x_{2n−2} ∈ 𝔽_Q^×} ψ(Tr(Σ_i x_i + a (x₁ + x₂)/∏_i x_i)) = U_{n−1}(a)`. The direct count of the boundary
 stratum in every dimension is part of this target; the constant is `Q^{n−1} − Q`, not the printed
-`(Q − 1)Q^{n−2}` of Xu–Zhu Proposition 5.3.5 (pp. 59–60), and the proof uses no identity of Layer 11.
+`(Q − 1)Q^{n−2}` of Xu–Zhu Proposition 5.3.5 (p. 59), and the proof uses no identity of Layer 11.
 *Needs:* §8.4; Mathlib `AddChar.sum_eq_ite`, `AddChar.sum_eq_zero_of_ne_one`.
 
 **Checks.**
@@ -1852,7 +1865,7 @@ stratum in every dimension is part of this target; the constant is `Q^{n−1} �
 
 Let `Q = q^d`. For `n ≥ 3` and `a ∈ 𝔽_Q^×`, prove that the normalized `SO_{2n}` standard trace at `a` is
 `Q^{−(n−1)} (S_n(a) + Q^{n−1} − Q)`, and that for `n = 2` it is the square of the normalized rank-two trace
-(Xu–Zhu Proposition 5.3.5, (5.3.5.1)–(5.3.5.2), pp. 59–60, with the corrected constant).
+(Xu–Zhu Proposition 5.3.5, (5.3.5.1)–(5.3.5.2), p. 59, with the corrected constant).
 *Needs:* §§8.3–8.5; CongruenceSpectralGap §4.2a.
 
 **Checks.**
@@ -1912,7 +1925,7 @@ PadicDifferentialEquationsAndRigidCohomology §§RD.6.42, RD.6.47.
 
 - Permuting either sequence and shifting a parameter by an integer give the corresponding gauge isomorphisms; individual integral shifts follow by the rank-one Kummer gauge inside convolution. Inversion exchanges the two sequences, inverts their characters and replaces `ψ` by `ψ^{−1}` (Miyatani Definition 3.2.1 and Theorem 3.2.5, pp. 22–24; Lemmas 3.1.3 and 3.2.3, pp. 17–18 and 22–23).
 - Write `Hyp_ψ(n;ρ)` for the specialization with all upper parameters zero, `n>m≥0`, and every lower parameter nonintegral. It has rank `n`, operator `δ^n − (−1)^{n+mp} π^{n−m}x∏_j(δ−β_j)`, and trace `(−1)^{n+m−1}H_{ψ,d}(n;ρ)` with no upper-character factors.
-- For this specialization only, prove maximal unipotence at `0` and the logarithmic zero spectrum `γq^j`, `0≤j<n`, where `γ=(−1)^m∏_j g(ψ^{−1},ρ_j^{−1})` (Xu–Zhu Theorem 5.2.2 and §5.2.3, pp. 56–57; Katz, *Exponential sums and differential equations*, 7.0.7; *From Clausen to Carlitz*, 2.6.1). The endpoint is `q^{n−1}γ`, and no zero eigenvalue occurs. General upper parameters carry their own tame exponents, so this nilpotent extension and spectrum are not asserted for them.
+- For this specialization only, prove maximal unipotence at `0` and the logarithmic zero spectrum `γq^j`, `0≤j<n`, where `γ=(−1)^m∏_j g(ψ^{−1},ρ_j^{−1})` (Xu–Zhu Theorem 5.2.2 and §5.2.3, p. 57; Katz, *Exponential sums and differential equations*, 7.0.7; *From Clausen to Carlitz*, 2.6.1). The endpoint is `q^{n−1}γ`, and no zero eigenvalue occurs. General upper parameters carry their own tame exponents, so this nilpotent extension and spectrum are not asserted for them.
 - With no lower parameters and all upper parameters zero, the specialization is the unnormalized rank-`n` scalar Kloosterman object.
 
 **Checks.**
@@ -2019,12 +2032,13 @@ Let `R` be a complete discrete valuation ring of mixed characteristic `(0, p)` w
 `a, n, m, s`. For `p = 2` the *signed condition* (c′) replaces (c) by the congruence with right side multiplied
 by `u(i, s, m) ∈ {±1}`, independent of `a, n`, and `u(i, s, m) = 1` for `s ≠ 1`. Put `F⁽ⁱ⁾ = Σ_j B⁽ⁱ⁾(j) x^j` and the
 block truncations `F⁽ⁱ⁾_{m,s} = Σ_{m p^s ≤ j < (m+1) p^s} B⁽ⁱ⁾(j) x^j` (`dworkBlock` in `Suggested.lean`); `F⁽ⁱ⁾_s = F⁽ⁱ⁾_{0,s}`. A
-*normalized periodic* datum adds `B⁽ⁱ⁾(0) = 1` and `B⁽ⁱ⁺ʳ⁾ = B⁽ⁱ⁾` for a fixed `r ≥ 1` (Xu–Zhu Appendix A.4–A.6,
-(A.5.1)–(A.5.4), pp. 64–65). *Needs:* Mathlib `PowerSeries.mk`, `IsDiscreteValuationRing`.
+*normalized periodic* datum is a family satisfying (a), (b) and either (c) or, for `p = 2`, (c′), together with
+`B⁽ⁱ⁾(0) = 1` and `B⁽ⁱ⁺ʳ⁾ = B⁽ⁱ⁾` for a fixed `r ≥ 1`; it is *ordinary* or *signed* according as (c) or (c′) is
+used (Xu–Zhu Appendix A.4–A.6, (A.5.1)–(A.5.4), pp. 64–65). *Needs:* Mathlib `PowerSeries.mk`, `IsDiscreteValuationRing`.
 
 - The block `F_{m,s}` starts at `m p^s` and stops before `(m+1) p^s`.
 - Conditions (a) and (b) imply `B⁽ⁱ⁾(j) ∈ R` for all `i, j`, by induction on `j`.
-- Normalization and periodicity are extra structure, not consequences of (a)–(c).
+- Normalization and periodicity are extra structure, not consequences of (a), (b) and (c) or (c′).
 - Deleting the first sequence gives a datum `B⁽ⁱ⁺¹⁾` with the inherited conditions and signs `u(i+1, s, m)`.
 
 **Checks.**
@@ -2034,16 +2048,22 @@ block truncations `F⁽ⁱ⁾_{m,s} = Σ_{m p^s ≤ j < (m+1) p^s} B⁽ⁱ⁾(j)
 - At `s=0`, `B(j)=j+1`, `m=2`, the block is `3x²`: coefficients at `1,2,3` are `0,3,0`, not a prefix truncation.
 - At `p=2`, `m=0`, `s=1`, `B(j)=1`, the block is `1+x` with coefficient `0` at degree `2`; for the total definition with `p=0`, `s=1`, every block is empty. The congruence theorems require prime `p`.
 - For the rank-three sequence `B(j) = (−2)^{3j}/(j!)³`, `B(4)/B(2) = 1/27 ≡ −1` modulo `4` while `B(0)/B(0) = 1`: the
-  ordinary condition (c) fails at `s = 1` and the signed condition holds with `u = −1`.
+  ordinary condition (c) fails at `s = 1` and the signed condition holds with `u = −1`. With `B(0) = 1` and
+  period `1` this sequence, and its rank-five analogue, is a signed and not an ordinary normalized periodic
+  datum, with `u(i, 1, m) = (−1)^m`; a definition admitting only (c) would exclude the series of §10.4.
 
 ### 10.2 Signed 2-adic Dwork congruences
 
 Prove: (i) under (a)–(c), `F⁽⁰⁾(x) F⁽¹⁾_{m,s}(x^p) − F⁽⁰⁾_{m,s+1}(x) F⁽¹⁾(x^p) ∈ p^{s+1} B⁽ˢ⁺¹⁾(m) R⟦x⟧` (Dwork, *p-adic
 cycles*, Theorem 2); (ii) under (a), (b), (c′) at `p = 2`, the same difference with `x²` lies in
-`2^s B⁽ˢ⁺¹⁾(m) R⟦x⟧`; (iii) for a normalized periodic datum, `F⁽⁰⁾_{s+1}(x)/F⁽¹⁾_s(x^p)` converges, as `s → ∞`, to a
+`2^s B⁽ˢ⁺¹⁾(m) R⟦x⟧`; (iii) for a normalized periodic datum, ordinary or signed, `F⁽⁰⁾_{s+1}(x)/F⁽¹⁾_s(x^p)` converges, as `s → ∞`, to a
 function on the formal open where all reductions `F⁽ⁱ⁾₁`, `i < r`, are nonzero, with unit value at every rigid
 point after finite extension (Xu–Zhu Theorem A.5, pp. 64–65, and proof A.13, pp. 67–69; Dwork Theorem 3).
-Statement (ii) is `signed_dwork_congruence`. Route for (ii): Dwork's antisymmetric block sums
+Statements (i) and (ii) are congruences on single coefficients and hold for every discrete valuation ring
+of mixed characteristic `(0, p)`, complete or not: the hypotheses over `R` give those over the completion
+`R̂`, and the quotient of a coefficient by `p^{s+1} B⁽ˢ⁺¹⁾(m)` (respectively `2^s B⁽ˢ⁺¹⁾(m)`) lies in
+`K ∩ R̂ = R`; completeness is used only in (iii). Statement (ii) is `signed_dwork_congruence`. Route for
+(ii): Dwork's antisymmetric block sums
 `H_a(m, s, N)` and induction on the block length, propagating the signs `u(i, s, m)`, with the parity-splitting
 indices as determined by the block endpoints. *Needs:* §10.1; PadicDifferentialEquationsAndRigidCohomology
 §RD.3.8 for (iii).
@@ -2052,6 +2072,10 @@ indices as determined by the block endpoints. *Needs:* §10.1; PadicDifferential
 
 - The signed modulus is `2^s`, the ordinary one `p^{s+1}`; for the sequence of §10.1 at `s = 1` the ordinary
   congruence (c) fails, so (i) does not apply and (ii) is needed.
+- Over the incomplete ring `ℤ_(2)` with `K = ℚ`, the constant sequence `B(j) = (−2)^{3j}/(j!)³` and the alternating
+  pair below at `n = 1, 2` give, for `s ≤ 3`, `m ≤ 2` and coefficient degree `N ≤ 40`, quotients by `2^s B⁽ˢ⁺¹⁾(m)` with odd
+  denominators; the least `2`-adic valuation of a nonzero quotient is `0` for the constant sequence, so `2^s`
+  cannot be raised to `2^{s+1}`.
 - For the alternating pair `B⁽⁰⁾(j) = (−2)^{(2n+1)j}/(j!)^{2n+1}`, `B⁽¹⁾(j) = 2^{(2n+1)j}(2j−1)!!/(j!)^{2n+1}`,
   `B⁽ⁱ⁺²⁾ = B⁽ⁱ⁾`, conditions (b) and (c′) hold with `u(0, 1, m) = 1`, `u(1, 1, m) = (−1)^m`, and the coefficient
   divisibility of (ii) holds for `n = 1, 2`, `s ≤ 3`, `m ≤ 2` and all relevant coefficients by direct computation.
@@ -2061,7 +2085,7 @@ indices as determined by the block endpoints. *Needs:* §10.1; PadicDifferential
 ### 10.3 Dwork unit-root lines
 
 Over `k = 𝔽_p`, for a power series `F` whose constant sequence `B⁽ⁱ⁾ = B` is a normalized periodic datum of
-period `1`, let `U` be the formal open where the reduction of `F₁` is nonzero. Prove that `f = F(x)/F(x^p)` and
+period `1`, ordinary or signed, let `U` be the formal open where the reduction of `F₁` is nonzero. Prove that `f = F(x)/F(x^p)` and
 `η = F′(x)/F(x)` extend to `U`, that `f` is invertible, that `f′/f + p x^{p−1} η(x^p) = η(x)`, and that
 `E_F = (O, d − η dx)` with multiplier `f` is a unit-root convergent F-isocrystal on `U` with `f(0) = 1` (Xu–Zhu A.6
 and Corollary A.7, p. 65). After constant extension to `𝔽_q`, `q = p^s`, for `F` with coefficients fixed by the
