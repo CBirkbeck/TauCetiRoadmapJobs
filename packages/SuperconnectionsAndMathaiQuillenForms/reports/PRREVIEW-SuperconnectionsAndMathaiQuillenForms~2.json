@@ -1,0 +1,4 @@
+{"review": {"status": "needs_changes", "reviewer": "independent-review-PRREVIEW-SuperconnectionsAndMathaiQuillenForms~2",
+            "head": "edffd72c92fe4072e52788c5bf5f72d60e16c9bd", "pr": 2297, "folder": "SuperconnectionsAndMathaiQuillenForms", "date": "2026-11-13",
+            "findings": 12, "blocking": 4,
+            "notes": "Full re-review. Previous findings: 13 of 15 repaired, R10 and R13 partly. New: 6.2 manifolds unowned (P1); 1.1 is Mathlib's CliffordAlgebra.map_mul_map_of_isOrtho_of_mem_evenOdd, closed by a scratch proof (P2); Pfaffian also owned by RandomMatrices 8.5 on main (P2); 4.4(b) kernel bundle unowned (P2); eight P3. Sample: all 15 seeded targets and every headline computed (adversarial table); 21 locators read in Wu2006 and Garcia2018; Berline-Getzler-Vergne, Quillen 1988 and its zbMATH review not readable. Gate passed; depcheck 0 problems; Suggested.lean elaborates with 16 sorry warnings only; one-tactic probe closes none."}}
