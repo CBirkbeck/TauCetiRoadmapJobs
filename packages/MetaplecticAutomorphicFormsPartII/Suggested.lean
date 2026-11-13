@@ -15,10 +15,10 @@ few definitions they need.
 Stated here:
 
 * Layer 1: the finite Stone–von Neumann theorem for the Heisenberg group of a nondegenerate
-  alternating space over a finite field of odd characteristic (existence, dimension, vanishing of
-  the character off the centre, uniqueness), and the fully ramified theorem for a finite group
-  `J`, a normal subgroup `H` with abelian quotient and a `J`-invariant character `θ` of `H` whose
-  commutator pairing is nondegenerate (existence, `dim² = [J : H]`, character, uniqueness).
+  alternating space over a finite field of odd characteristic (dimension, vanishing of the
+  character off the centre, uniqueness), and the fully ramified theorem for a finite group `J`, a
+  normal subgroup `H` with abelian quotient and a `J`-invariant character `θ` of `H` whose
+  commutator pairing is nondegenerate (`dim² = [J : H]`, character, uniqueness).
 * Layer 2: existence and uniqueness of the normalized finite Weil representation in the
   Schrödinger model of a full polarization `X × X*`, characterized by Egorov covariance and the
   parity-determinant identity `det W(g) = (det W(g)|S⁺)²`; this includes `Sp₂(𝔽₃)`.
@@ -33,11 +33,17 @@ Stated here:
   finite product polarization restricts on blockwise elements to the tensor product of the
   normalized Weil representations of the factors.
 
-Every headline theorem of the roadmap is stated. The groups of the Gérardin formula are built
-from the coordinate action `heisenbergAction` of the isometry group on `H(V)` with Mathlib's
-`SemidirectProduct`; the quotient `I^⊥/I` enters through a linear map onto a polarized space
-that is onto and form-preserving on `I^⊥` with kernel `I`, and the Weil–Heisenberg
-representations through the formulas `π(h) W(g)` that characterize them.
+Every headline theorem of the roadmap is stated. Existence of an irreducible representation on
+which a normal subgroup acts through a conjugation-invariant character needs none of the
+commutator, nondegeneracy or characteristic hypotheses: the subgroup acts by that character on
+the whole induced representation, so every irreducible subrepresentation qualifies (the invariant
+case of Clifford theory, InductionRestriction Layer 5). It is therefore not a headline of this
+roadmap; for the Heisenberg group the Schrödinger model of README §1.2 realizes it.
+
+The groups of the Gérardin formula are built from the coordinate action `heisenbergAction` of the
+isometry group on `H(V)` with Mathlib's `SemidirectProduct`; the quotient `I^⊥/I` enters through
+a linear map onto a polarized space that is onto and form-preserving on `I^⊥` with kernel `I`,
+and the Weil–Heisenberg representations through the formulas `π(h) W(g)` that characterize them.
 -/
 
 @[expose] public section
@@ -45,6 +51,25 @@ representations through the formulas `π(h) W(g)` that characterize them.
 namespace TauCetiRoadmap.MetaplecticAutomorphicFormsPartII
 
 open Multiplicative
+
+/-! ## Layer 0: Finite symplectic coordinates -/
+
+section Polarization
+
+variable (k X : Type*) [Field k] [AddCommGroup X] [Module k X]
+
+/-- The standard symplectic form on `X × X*`: `((x, y), (x', y')) ↦ y'(x) − y(x')`
+(README §0.2). -/
+def polarizationForm : LinearMap.BilinForm k (X × Module.Dual k X) :=
+  LinearMap.mk₂ k (fun p q => q.2 p.1 - p.2 q.1)
+    (fun m₁ m₂ n => by simp only [Prod.fst_add, Prod.snd_add, map_add, LinearMap.add_apply]; ring)
+    (fun c m n => by
+      simp only [Prod.smul_fst, Prod.smul_snd, map_smul, LinearMap.smul_apply, smul_eq_mul]; ring)
+    (fun m n₁ n₂ => by simp only [Prod.fst_add, Prod.snd_add, map_add, LinearMap.add_apply]; ring)
+    (fun c m n => by
+      simp only [Prod.smul_fst, Prod.smul_snd, map_smul, LinearMap.smul_apply, smul_eq_mul]; ring)
+
+end Polarization
 
 /-! ## Layer 1: Finite Heisenberg representations -/
 
@@ -99,18 +124,27 @@ def heisenbergAction (ω : LinearMap.BilinForm k V) :
   map_one' := by ext x <;> rfl
   map_mul' g h := by ext x <;> rfl
 
-/-- **Finite Stone–von Neumann theorem, existence** (README §1.3). Over a finite field of odd
-characteristic, a nondegenerate alternating space has an irreducible complex representation of
-its Heisenberg group on which the centre acts through a given nontrivial additive character `ψ`
-(the Schrödinger model). (N02, §2 and Lemma 2.1, p. 16, with the irreducibility shown in its
-proof, p. 17; FS25, Lemma 3.3.1, p. 14.) -/
-theorem finite_stoneVonNeumann_exists [Finite k] [FiniteDimensional k V] (hk : ringChar k ≠ 2)
-    (ω : LinearMap.BilinForm k V) (hω : ω.IsAlt) (hnd : ω.Nondegenerate)
-    (ψ : AddChar k ℂ) (hψ : ψ ≠ 1) :
-    ∃ (E : Type) (_ : AddCommGroup E) (_ : Module ℂ E) (_ : FiniteDimensional ℂ E)
-      (ρ : Representation ℂ (Heisenberg ω) E), ρ.IsIrreducible ∧
-        ∀ (t : k) (ξ : E), ρ ((heisenbergFactorSet ω).inl (ofAdd t)) ξ = ψ t • ξ := by
-  sorry
+end Heisenberg
+
+section Schrodinger
+
+variable {k X : Type*} [Field k] [AddCommGroup X] [Module k X]
+
+/-- The Schrödinger operator `π(t, x, y)` on `X → ℂ`:
+`(π(t, x, y) f)(z) = ψ(t + y(z) + y(x)/2) f(z + x)` (README §1.2). -/
+noncomputable def schrodingerOp (ψ : AddChar k ℂ) (t : k) (v : X × Module.Dual k X) :
+    (X → ℂ) →ₗ[ℂ] (X → ℂ) where
+  toFun f z := ψ (t + v.2 z + v.2 v.1 / 2) * f (z + v.1)
+  map_add' f g := by ext z; simp [mul_add]
+  map_smul' c f := by ext z; simp only [Pi.smul_apply, smul_eq_mul, RingHom.id_apply]; ring
+
+end Schrodinger
+
+section StoneVonNeumann
+
+attribute [local instance] TauCeti.trivialMulDistribMulAction
+
+variable {k V : Type*} [Field k] [AddCommGroup V] [Module k V]
 
 /-- **Finite Stone–von Neumann theorem** (README §1.3). Every irreducible complex representation
 of `H(V)` with central character `ψ` has dimension `√|V|`, its character vanishes off the
@@ -130,34 +164,21 @@ theorem finite_stoneVonNeumann [Finite k] [FiniteDimensional k V] (hk : ringChar
       Nonempty (ρ.Equiv σ) := by
   sorry
 
-end Heisenberg
+end StoneVonNeumann
 
 section FullyRamified
 
 variable {J : Type*} [Group J] [Finite J]
 
-/-- **Fully ramified characters, existence** (README §1.4). Let `H` be normal in the finite group
-`J` with `J/H` abelian, and `θ` a `J`-invariant character of `H` such that every `g ∉ H` has a
-commutator `[g, x]` on which `θ` is nontrivial. Then some irreducible complex representation of
-`J` restricts to `H` as the scalar character `θ`. This general finite-group statement is proved by
-the route of README §1.4; S08, Proposition 3.5, p. 14 (for `J¹ ⊇ H¹` of a skew semisimple
-stratum), and F21, Lemma 7.7 and the proof of Lemma 7.8, pp. 30–31 (for a Heisenberg `p`-group
-with centre of order `p`), are instances. -/
-theorem fullyRamified_exists (H : Subgroup J) [hH : H.Normal]
-    (hcomm : ∀ g x : J, g * x * g⁻¹ * x⁻¹ ∈ H) (θ : H →* ℂˣ)
-    (hinv : ∀ (g : J) (h : H), θ ⟨g * h * g⁻¹, hH.conj_mem h h.2 g⟩ = θ h)
-    (hnd : ∀ g : J, g ∉ H → ∃ x : J, θ ⟨g * x * g⁻¹ * x⁻¹, hcomm g x⟩ ≠ 1) :
-    ∃ (E : Type) (_ : AddCommGroup E) (_ : Module ℂ E) (_ : FiniteDimensional ℂ E)
-      (ρ : Representation ℂ J E), ρ.IsIrreducible ∧
-        ∀ (h : H) (ξ : E), ρ h ξ = (θ h : ℂ) • ξ := by
-  sorry
-
-/-- **Fully ramified characters** (README §1.4). In the situation of `fullyRamified_exists`, an
-irreducible representation on which `H` acts by `θ` has dimension `d` with `d² = [J : H]`, its
-character vanishes off `H`, and any two such representations are equivalent. No exponent-`p`
-or special-isomorphism hypothesis is made: the centre `H / ker θ` may be cyclic of any order.
-This general statement is proved by the route of README §1.4; S08, Proposition 3.5, p. 14, and
-F21, Lemma 7.7 and the proof of Lemma 7.8, pp. 30–31, are instances in their settings. -/
+/-- **Fully ramified characters** (README §1.4). Let `H` be normal in the finite group `J` with
+`J/H` abelian, and `θ` a `J`-invariant character of `H` such that every `g ∉ H` has a commutator
+`[g, x]` on which `θ` is nontrivial. Then an irreducible complex representation of `J` on which
+`H` acts by `θ` has dimension `d` with `d² = [J : H]`, its character vanishes off `H`, and any two
+such representations are equivalent. No exponent-`p` or special-isomorphism hypothesis is made:
+the centre `H / ker θ` may be cyclic of any order. Such a representation exists as soon as `H` is
+normal and `θ` is invariant (README §1.4). This general statement is proved by the route of
+README §1.4; S08, Proposition 3.5, p. 14, and F21, Lemma 7.7 and the proof of Lemma 7.8,
+pp. 30–31, are instances in their settings. -/
 theorem fullyRamified_unique (H : Subgroup J) [hH : H.Normal]
     (hcomm : ∀ g x : J, g * x * g⁻¹ * x⁻¹ ∈ H) (θ : H →* ℂˣ)
     (hinv : ∀ (g : J) (h : H), θ ⟨g * h * g⁻¹, hH.conj_mem h h.2 g⟩ = θ h)
@@ -177,28 +198,7 @@ end FullyRamified
 
 section Weil
 
-variable (k X : Type*) [Field k] [AddCommGroup X] [Module k X]
-
-/-- The standard symplectic form on `X × X*`: `((x, y), (x', y')) ↦ y'(x) − y(x')`
-(README, Conventions). -/
-def polarizationForm : LinearMap.BilinForm k (X × Module.Dual k X) :=
-  LinearMap.mk₂ k (fun p q => q.2 p.1 - p.2 q.1)
-    (fun m₁ m₂ n => by simp only [Prod.fst_add, Prod.snd_add, map_add, LinearMap.add_apply]; ring)
-    (fun c m n => by
-      simp only [Prod.smul_fst, Prod.smul_snd, map_smul, LinearMap.smul_apply, smul_eq_mul]; ring)
-    (fun m n₁ n₂ => by simp only [Prod.fst_add, Prod.snd_add, map_add, LinearMap.add_apply]; ring)
-    (fun c m n => by
-      simp only [Prod.smul_fst, Prod.smul_snd, map_smul, LinearMap.smul_apply, smul_eq_mul]; ring)
-
-variable {k X}
-
-/-- The Schrödinger operator `π(t, x, y)` on `X → ℂ`:
-`(π(t, x, y) f)(z) = ψ(t + y(z) + y(x)/2) f(z + x)` (README §1.2). -/
-noncomputable def schrodingerOp (ψ : AddChar k ℂ) (t : k) (v : X × Module.Dual k X) :
-    (X → ℂ) →ₗ[ℂ] (X → ℂ) where
-  toFun f z := ψ (t + v.2 z + v.2 v.1 / 2) * f (z + v.1)
-  map_add' f g := by ext z; simp [mul_add]
-  map_smul' c f := by ext z; simp only [Pi.smul_apply, smul_eq_mul, RingHom.id_apply]; ring
+variable {k X : Type*} [Field k] [AddCommGroup X] [Module k X]
 
 variable (X) in
 /-- The projector `f ↦ (f + f ∘ (−1))/2` onto the even functions `S⁺` (README §2.2). -/

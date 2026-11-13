@@ -47,7 +47,7 @@ year = 2025
 arxiv = "2501.18553"
 version_note = "author manuscript read; equation (3.3.3) has [x,z] for [x,y]"
 locator_scheme = "theorem"
-locator = "Example 3.1.6, p. 11; Lemma 3.3.1, p. 14; Lemma 3.3.4, p. 15; Construction 3.4.2, Remark 3.4.3, Definition 3.4.4, p. 17; Definition 3.4.5, pp. 17-18"
+locator = "Example 3.1.6, p. 11; Lemma 3.3.1, p. 14; Lemma 3.3.4 and the paragraph before it, p. 15; Fact 3.4.1, Construction 3.4.2, Remark 3.4.3, Definition 3.4.4, p. 17; Definition 3.4.5, pp. 17-18; Appendix A (partial polarizations), p. 44"
 url = "https://www.math.uni-bonn.de/people/schwein/documents/fintzen_schwein25.pdf"
 fetched_from = "https://www.math.uni-bonn.de/people/schwein/documents/fintzen_schwein25.pdf"
 fetched_at = "2026-10-26T19:26:13Z"
@@ -55,7 +55,7 @@ sha256 = "9d8bdc451c612c5be1afd086bd8f944387405ab6a308de996f45b103c2576d16"
 licence_class = "author-page"
 status = "certified"
 accessed = "2026-10-26"
-cited_for = ["Layers 0-4"]
+cited_for = ["Scope and ownership", "Layers 0-4"]
 
 [[source]]
 id = "Gerardin77"
@@ -88,4 +88,4 @@ sha256 = "1f8b7011be2d894640db21a9aa94b5916481bcb1f8783e287c27a4df069807c3"
 licence_class = "publisher-open"
 status = "certified"
 accessed = "2026-10-26"
-cited_for = ["Layers 1, 2, 4"]
+cited_for = ["Layers 1-4"]
