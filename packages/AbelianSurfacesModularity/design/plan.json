@@ -3007,22 +3007,10 @@
  ],
  "gaps": [
   {
-    "slug": "surface-open-image",
-    "supplier": "FaltingsFinitenessAndIsogenyTheorems",
-    "section": "R28.4",
-    "needs": "For a polarized abelian surface over a number field with geometric endomorphism ring ℤ, prove that each rational ℓ-adic Zariski closure contains Sp₄, with invariance under finite base change and isogeny, without requiring a principal polarization."
-  },
-  {
     "slug": "surface-residual-endomorphisms",
     "supplier": "FaltingsFinitenessAndIsogenyTheorems",
     "section": "R28.4",
     "needs": "Prove that geometric End is ℤ for a characteristic-zero abelian surface with symplectically identified mod-2 image containing A₅(b), by the five-point very-simple module and the Galois-stable endomorphism algebra, and for prime-to-3-polarized surfaces with surjective mod-3 image."
-  },
-  {
-    "slug": "near-adequacy-reasonableness",
-    "supplier": "ArithmeticGaloisRepresentations",
-    "section": "7.9",
-    "needs": "Provide Whitmore Definition 3.19 reasonableness with its eventual cyclotomic-image H⁰ vanishing and semisimple-detection conditions, its conditional dual-adjoint H¹ vanishing, and the symplectic-adequacy comparison of Lemma 3.20."
   },
   {
     "slug": "integral-enormity",
