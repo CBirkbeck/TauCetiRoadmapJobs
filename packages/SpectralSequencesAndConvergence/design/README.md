@@ -702,13 +702,26 @@ quotients are the `E_∞` at the positions of total degree `n`. `H^n = 0` if all
 vanish. If they all satisfy a weak Serre class `P` as in 2.3, so does `H^n`. If the limit page
 at these positions is reached on page `r` and the `E_r` satisfy `P`, so does `H^n`
 (stacks-012K line 3152–3174, Lemma 24.11 (2)–(4), tag 012W, in its filtered-complex form;
-weibel1994 Definition 5.2.5 and the remark after 5.2.6, uncertified). *Needs:* 3.1, 3.2, 2.2;
-2.3 for the weak Serre classes and for the page-step identity behind the Euler identity.
+weibel1994 Definition 5.2.5 and the remark after 5.2.6, uncertified). These clauses are local:
+they use convergence in degree `n` only. *Needs:* 3.1, 3.2; 2.3 for the weak Serre classes; for
+the Euler identity below also 1.3, 1.4 and 2.2 (degeneration and the stabilised limit page) and
+2.3 (the page-step identity).
 
-- Under a finite filtration in every degree and finitely many nonzero positions on page `r`, all
-  in `P`: only finitely many `H^n` are nonzero, and
+- *Euler identity.* Suppose `E` converges weakly to `H` in every total degree (`I = ℤ`), every
+  `H^n` has a finite filtration, and page `r` has finitely many nonzero positions, all in `P`.
+  Then only finitely many `H^n` are nonzero, and
   `Σ_n (−1)^n v(H^n) = Σ_pq (−1)^{deg pq} v(E_r(pq))` (stacks-012K line 3175–3197, Lemma 24.12,
-  tag 0BDW, in its filtered-complex form).
+  tag 0BDW, in its filtered-complex form, where the finite filtration of the complex gives
+  convergence in every degree by Lemma 24.11). The route: vanishing persists to later pages
+  (2.2), so the nonzero positions of every page `r′ ≥ r` lie among those of page `r`. If there
+  are none, every page from `r` on is zero. Otherwise let `f₋` and `f₊` be the least and greatest
+  filtration degree of a nonzero position of page `r`; for `r′ ≥ r` with `r′ > f₊ − f₋ + e` a
+  differential of page `r′` leaving a nonzero position of filtration degree `f` ends in filtration
+  degree `f + r′ − e > f₊` (2.1), at a zero object, so every differential of page `r′` vanishes.
+  Hence `E` degenerates at `R = max(r, f₊ − f₋ + e + 1)` (1.3) and `E_∞ ≅ E_R` at every
+  position (1.4). Iterating 2.3 from page `r` to page `R` equates the page sums. In each degree
+  `n` the local clauses give `v(H^n) = Σ_{deg pq = n} v(E_∞(pq))`, and `H^n = 0` when no nonzero
+  position has total degree `n`.
 
 **Checks.**
 
@@ -717,6 +730,16 @@ weibel1994 Definition 5.2.5 and the remark after 5.2.6, uncertified). *Needs:* 3
 - If every `E_∞` of total degree `n` is zero and the filtration is finite, `H^n = 0`.
 - With `P` the finite abelian groups and `v` the length, `E_∞ = ℤ/2, ℤ/2` gives `v(H^n) = 2` in
   both cases of the first Check.
+- *The Euler identity needs convergence in every degree.* Over `ℚ`, with `P` the
+  finite-dimensional spaces, `v` the dimension and the standard assignment `(p, q) ↦ (p, p + q)`,
+  take the zero spectral sequence and `H^1 = ℚ` with `F^p H^1 = ℚ` for `p ≤ 0` and `0` for
+  `p ≥ 1`, all other `H^n = 0`. Every filtration is finite and weak convergence holds in
+  `I = {0}`, yet the page sum is `0` and the abutment sum is `−1`: convergence fails in degree `1`,
+  where `gr^0 H^1 = ℚ` and `E_∞^{0,1} = 0`. With `ℚ` at `(0, 1)` on every page and zero
+  differentials instead, convergence holds in every degree and both sums are `−1`.
+- *The Euler identity needs finite filtrations.* The zero spectral sequence with `H^0 = ℚ`
+  carrying the constant filtration `F^p = ℚ`, all other `H^n = 0`, converges weakly in every
+  degree (all graded pieces vanish), yet the abutment sum is `1` and the page sum is `0`.
 
 ### 3.5 The comparison theorem
 
@@ -768,8 +791,11 @@ mccleary2001 Ch. 2, uncertified):
 - *Two rows.* If `E_2^{p,q} = 0` for `q ∉ {0, 1}` and the sequence converges in degree `n + 1`,
   then `E_2^{n−1,1} →(d_2) E_2^{n+1,0} → H^{n+1} → E_2^{n,1} →(d_2) E_2^{n+2,0}` is exact: only
   `d_2` is nonzero, `E_∞^{n+1,0}` is its cokernel and `E_∞^{n,1}` its kernel, and convergence in
-  degree `n + 1` gives `F^{n+2} H^{n+1} = 0` and `F^n H^{n+1} = H^{n+1}`. Over all `n` with
-  convergence these splice into a long exact sequence.
+  degree `n + 1` gives `F^{n+2} H^{n+1} = 0` and `F^n H^{n+1} = H^{n+1}`. The sequences for `n`
+  and `n + 1` share the map `E_2^{n,1} → E_2^{n+2,0}`, so convergence in every degree of an
+  interval of integers splices them into one exact sequence over that interval, and convergence
+  in every degree into the long exact sequence
+  `⋯ → E_2^{n+1,0} → H^{n+1} → E_2^{n,1} → E_2^{n+2,0} → H^{n+2} → ⋯`.
 - *First quadrant.* If `E_2^{p,q} = 0` for `p < 0` or `q < 0` and the sequence converges in degree
   `n`, the edge morphisms `E_2^{n,0} ↠ E_∞^{n,0} ≅ F^n H^n ↪ H^n` and
   `H^n ↠ H^n / F^1 H^n ≅ E_∞^{0,n} ↪ E_2^{0,n}` exist. Convergence in degrees `1` and `2` gives the

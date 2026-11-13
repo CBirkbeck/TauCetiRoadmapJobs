@@ -646,12 +646,12 @@
      "id": "3.4",
      "kind": "theorem",
      "name": "CategoryTheory.SpectralSequence.WeakConvergence.toStrong_of_isFinite",
-     "statement": "Weak convergence in degree n and a finite filtration of H^n give strong convergence in degree n; H^n has a finite chain of subobjects with successive quotients the E_∞ of total degree n; H^n = 0 if they vanish; if they satisfy a weak Serre class P so does H^n, and likewise if the E_r on a page reaching the limit do. With finite filtrations in all degrees and finitely many nonzero positions on page r in P: finitely many H^n are nonzero and Σ_n (−1)^n v(H^n) = Σ_pq (−1)^{deg pq} v(E_r(pq)).",
+     "statement": "Weak convergence in degree n and a finite filtration of H^n give strong convergence in degree n; H^n has a finite chain of subobjects with successive quotients the E_∞ of total degree n; H^n = 0 if they vanish; if they satisfy a weak Serre class P so does H^n, and likewise if the E_r on a page reaching the limit do; these clauses are local to degree n. Euler identity: if E converges weakly to H in every total degree (I = ℤ), every H^n has a finite filtration, and page r has finitely many nonzero positions, all in P, then finitely many H^n are nonzero and Σ_n (−1)^n v(H^n) = Σ_pq (−1)^{deg pq} v(E_r(pq)); route: E degenerates at R = max(r, f₊ − f₋ + e + 1) with f₋, f₊ the extreme filtration degrees of the nonzero positions of page r, E_∞ ≅ E_R, iterate 2.3 from r to R, and sum the local identities v(H^n) = Σ_{deg pq = n} v(E_∞(pq)) over n.",
      "hypotheses": [
       "C abelian",
-      "weak convergence in degree n",
-      "finite filtration of H^n",
-      "for the Euler identity: P weak Serre class, v additive on P"
+      "local clauses: weak convergence in degree n and a finite filtration of H^n",
+      "Euler identity: weak convergence in every total degree (I = ℤ), a finite filtration of every H^n, finitely many nonzero positions on page r, all in P",
+      "for the Serre-class clauses and the Euler identity: P weak Serre class, v additive on short exact sequences in P"
      ],
      "locator": {
       "source": "stacks-012K",
@@ -660,6 +660,8 @@
      "prerequisites": [
       "target:3.1",
       "target:3.2",
+      "target:1.3",
+      "target:1.4",
       "target:2.2",
       "target:2.3"
      ],
@@ -679,6 +681,16 @@
        "name": "finite_length",
        "kind": "computation",
        "statement": "Length of H^n is 2 in both cases of the first test."
+      },
+      {
+       "name": "euler_needs_all_degrees",
+       "kind": "non-example",
+       "statement": "Over ℚ with v = dim: zero pages, H^1 = ℚ with F^0H^1 = ℚ, F^1H^1 = 0, other H^n = 0. Finite filtrations and weak convergence in I = {0}, but page sum 0 ≠ −1 = abutment sum; convergence fails in degree 1 (gr^0H^1 = ℚ, E_∞^{0,1} = 0). With ℚ at (0,1) on every page it converges in every degree and both sums are −1."
+      },
+      {
+       "name": "euler_needs_finite_filtrations",
+       "kind": "non-example",
+       "statement": "Zero pages, H^0 = ℚ with constant filtration, other H^n = 0: weak convergence in every degree, abutment sum 1 ≠ 0 = page sum."
       }
      ]
     },
@@ -732,7 +744,7 @@
      "id": "3.6",
      "kind": "theorem",
      "name": "CategoryTheory.SpectralSequence.fiveTerm_exact",
-     "statement": "For an E₂ cohomological spectral sequence with the standard assignment: (vanishing) convergence in degree n and E_r^{p,n−p} = 0 ∀p ⇒ H^n = 0; (dimension) over a field with finite dimensions, finitely many nonzero, finite filtration: dim H^n = Σ_p dim E_∞^{p,n−p} ≤ Σ_p dim E_r^{p,n−p}, with equality iff all differentials of pages r′ ≥ r leaving or entering total degree n vanish; (two columns) E_2^{p,q} = 0 for p ∉ {0,1} ⇒ 0 → E_2^{1,n−1} → H^n → E_2^{0,n} → 0; (two rows) E_2^{p,q} = 0 for q ∉ {0,1}, convergence in degree n+1 ⇒ E_2^{n−1,1} → E_2^{n+1,0} → H^{n+1} → E_2^{n,1} → E_2^{n+2,0} exact; (first quadrant) edge morphisms E_2^{n,0} ↠ F^nH^n ↪ H^n ↠ E_∞^{0,n} ↪ E_2^{0,n}, five-term sequence 0 → E_2^{1,0} → H^1 → E_2^{0,1} → E_2^{2,0} → H^2 under convergence in degrees 1, 2, and for m ≥ 1 with E_2^{p,q} = 0 for 0 < q < m: E_2^{j,0} ≅ H^j for j < m and 0 → E_2^{m,0} → H^m → E_2^{0,m} → E_2^{m+1,0} → H^{m+1}.",
+     "statement": "For an E₂ cohomological spectral sequence with the standard assignment: (vanishing) convergence in degree n and E_r^{p,n−p} = 0 ∀p ⇒ H^n = 0; (dimension) over a field with finite dimensions, finitely many nonzero, finite filtration: dim H^n = Σ_p dim E_∞^{p,n−p} ≤ Σ_p dim E_r^{p,n−p}, with equality iff all differentials of pages r′ ≥ r leaving or entering total degree n vanish; (two columns) E_2^{p,q} = 0 for p ∉ {0,1}, convergence in degree n ⇒ 0 → E_2^{1,n−1} → H^n → E_2^{0,n} → 0; (two rows) E_2^{p,q} = 0 for q ∉ {0,1}, convergence in degree n+1 ⇒ E_2^{n−1,1} → E_2^{n+1,0} → H^{n+1} → E_2^{n,1} → E_2^{n+2,0} exact, and convergence in every degree of an interval splices these into one exact sequence over it (every degree: the long exact sequence ⋯ → E_2^{n+1,0} → H^{n+1} → E_2^{n,1} → E_2^{n+2,0} → H^{n+2} → ⋯); (first quadrant) under convergence in degree n the edge morphisms E_2^{n,0} ↠ F^nH^n ↪ H^n ↠ E_∞^{0,n} ↪ E_2^{0,n}, five-term sequence 0 → E_2^{1,0} → H^1 → E_2^{0,1} → E_2^{2,0} → H^2 under convergence in degrees 1, 2, and for m ≥ 1 with E_2^{p,q} = 0 for 0 < q < m, under convergence in all degrees ≤ m + 1: E_2^{j,0} ≅ H^j for j < m and 0 → E_2^{m,0} → H^m → E_2^{0,m} → E_2^{m+1,0} → H^{m+1}.",
      "hypotheses": [
       "C abelian",
       "E₂ cohomological spectral sequence",
