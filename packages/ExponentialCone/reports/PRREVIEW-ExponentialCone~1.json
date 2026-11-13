@@ -1,0 +1,13 @@
+{
+  "review": {
+    "status": "needs_changes",
+    "reviewer": "independent-review-PRREVIEW-ExponentialCone~1",
+    "head": "834a110cffd55f1f4f62a15bed3e2251255d7114",
+    "pr": 2293,
+    "folder": "ExponentialCone",
+    "date": "2026-11-13",
+    "findings": 7,
+    "blocking": 1,
+    "notes": "Full read-only review. Seeded sections 4.1–4.3 checked against arXiv v1/v3, MOSEK, Chares and the author-corrected thesis; original 2021 thesis and published paper version remain unverified. Adversarial table covers all 21 theorems and supporting definitions. Worker gate passed; independent Lean elaboration passed with 21 sorry warnings. All 25 signatures checked; eight of 21 one-tactic probes closed. Dependency check: 240 roadmaps, 2171 edges, 0 problems. Closest-roadmap and source-independence checks recorded."
+  }
+}
