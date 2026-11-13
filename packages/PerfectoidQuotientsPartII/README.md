@@ -8,16 +8,16 @@ questions. What does the tilt remember about an integral perfectoid ring? The ri
 its `ϖ`-torsion as an `A_inf`-module, its adic completeness, whether it is a valuation ring and its
 value group, and whether its fraction field is algebraically closed; and the class of integral
 perfectoid rings is closed under fibre products along surjections and is generated, under
-quotients, by torsion-free members (Layers Q5–Q6, after Česnavičius–Scholze §2.1). How far can
-André's lemma be pushed? To a faithfully flat, ind-syntomic, `ϖ`-Henselian extension in which every
-monic polynomial of positive degree acquires a root with compatible `p`-power roots modulo a
-`ϖ`-divisible ideal, and from there to faithfully flat semiperfectoid covers of all `p`-Zariski
-rings (Layers Q7–Q9, after Česnavičius–Scholze §2.3). What does this give for regular local rings?
-Faithfully flat perfectoid covers, by perfecting a prism, and the almost vanishing of `Tor` along
-finite subextensions of the absolute integral closure that Bhatt and Scholze derive from almost
-purity along an arbitrary ideal, which for `F`-finite residue fields is Heitmann–Ma's theorem
-(Layer Q10). The end theorems are the
-ind-syntomic André lemma (Q9.3), semiperfectoid covers of `p`-Zariski rings (Q9.6), fibre products
+quotients, by torsion-free members (Layers Q5–Q6; Česnavičius–Scholze Propositions 2.1.4, 2.1.9
+and 2.1.12). How far can André's lemma be pushed? To a faithfully flat, ind-syntomic,
+`ϖ`-Henselian extension in which every monic polynomial of positive degree acquires a root with
+compatible `p`-power roots modulo a `ϖ`-divisible ideal, and from there to faithfully flat
+semiperfectoid covers of all `p`-Zariski rings (Layers Q7–Q9; Česnavičius–Scholze Theorem 2.3.4
+and Corollary 2.3.7). What does this give for regular local rings? Faithfully flat perfectoid
+covers, by perfecting a prism, and the almost vanishing of `Tor` along finite subextensions of the
+absolute integral closure that Bhatt and Scholze derive from almost purity along an arbitrary
+ideal, which for `F`-finite residue fields is Heitmann–Ma's theorem (Layer Q10). The end theorems
+are the ind-syntomic André lemma (Q9.3), semiperfectoid covers of `p`-Zariski rings (Q9.6), fibre products
 of perfectoid rings (Q5.6), tilting of perfectoid valuation rings (Q6.4, Q6.7), torsion-free
 presentations (Q6.8), perfectoid covers of regular local rings (Q10.2), such a cover inside the
 completed absolute integral closure for an `F`-finite residue field (Q10.4), and the almost
@@ -36,14 +36,18 @@ completed root-polynomial algebras, completed tensor products, root-stable quoti
 sharp-ideal completions and completed ind-étale and henselian extensions (§0.6); the fixed-field
 integral model (§0.7); the relative smooth-site cover, the modulo-`p` ind-syntomic refinement of
 André's cover and Bhatt's almost faithfully flat root extensions (§§1.1–1.4); and
-characteristic-`p` radical quotients (§2.1). This Part II starts there. It owns the remaining
-structure theory of Česnavičius–Scholze §2.1 (the tilting identities of §§2.1.1–2.1.2 not stated
-above, fibre products, the relative tilting equivalence with completeness, valuation rings and
-algebraically closed fraction fields, torsion-free presentations), all of Česnavičius–Scholze §2.3
-(ind-fppf and ind-syntomic ring maps, the approximation lemma, the valuative nilpotence criterion,
-the ind-syntomic André lemma and semiperfectoid covers), the unramified refinement of the residue
-tower of Česnavičius–Scholze Lemma 3.1.1 (a), Bhatt–Scholze Remark 3.11 and the application of
-Bhatt–Scholze Remark 10.13.
+characteristic-`p` radical quotients (§2.1). This Part II starts there. It owns the tilting
+identities for integral perfectoid rings with torsion that are not stated above, fibre products of
+perfectoid rings and their glueing with perfect algebras, the relative tilting equivalence with the
+transfer of completeness, of the valuation-ring property, of value groups and of algebraically
+closed fraction fields, and torsion-free presentations (Česnavičius–Scholze (2.1.1.3), (2.1.2.2),
+(2.1.2.5), Propositions 2.1.4, 2.1.9 and 2.1.12, Example 2.1.5 and Remark 2.1.10, pp. 10–17);
+ind-fppf and ind-syntomic ring maps, the integral approximation lemma, the valuative criterion for
+topological nilpotence, the ind-syntomic André lemma and semiperfectoid covers of `p`-Zariski rings
+(Česnavičius–Scholze §2.3.3, Lemmas 2.3.1 and 2.3.2, Theorem 2.3.4 and Corollary 2.3.7,
+pp. 22–28); the unramified refinement of the residue tower (Česnavičius–Scholze Lemma 3.1.1 (a));
+the prismatic perfectoid cover of a regular local ring (Bhatt–Scholze Remark 3.11); and the almost
+vanishing of `Tor` that Bhatt–Scholze Remark 10.13 derives from almost purity.
 
 **Imported, not planned again.**
 
@@ -145,7 +149,10 @@ an algebraic closure of its fraction field (Mathlib `integralClosure R (Algebrai
 (FractionRing R))`), and `(R⁺)^∧` its `p`-adic completion.
 
 Universes: families of rings and colimits are small in a fixed universe; the existential
-statements of `Suggested.lean` produce rings in the universe of the input ring.
+statements of `Suggested.lean` produce rings in the universe of the input ring. The valuations of
+Q8.3 and Q8.4 take values in ordered groups of an arbitrary universe, independent of the ring's:
+Q8.3 bounds every such valuation, and the converse direction of Q8.4 is witnessed by a valuation of
+rank one, whose value group embeds in `ℝ_{>0}`.
 
 The statements of `Suggested.lean` carry, as instance hypotheses, facts that are consequences of
 the README's hypotheses but are needed to form the objects: `Fact ¬IsUnit (p : A)` (the ring is
@@ -226,9 +233,16 @@ At the Tau Ceti revision pinned by the repository's `lake-manifest.json`.
 - `TauCeti.Algebra.IsStandardSyntomicOfRelativeDimension n R S`
   (`TauCeti/RingTheory/Syntomic/StandardSyntomic.lean`): `S` is flat over `R` and has a finite
   presentation with `n + c` generators and `c` relations whose nontrivial fibres have Krull
-  dimension `n`, that is, `S` is a flat relative global complete intersection. Base change and
-  invariance under isomorphism are supplied. Flatness is part of the definition: that a relative
-  global complete intersection is automatically flat (Stacks Lemma 10.136.13) is Q7.6 here.
+  dimension `n`, that is, `S` is a flat relative global complete intersection. Supplied there:
+  invariance under isomorphism (`of_algEquiv`), base change (`baseChange`) and polynomial rings in
+  finitely many variables (`mvPolynomial`, `mvPolynomial_fin`); composition, with addition of
+  relative dimensions (`trans`, `TauCeti/RingTheory/Syntomic/Composition.lean`); and localization
+  away from one element, of relative dimension `0`, also composed on either side with a standard
+  syntomic algebra (`localization_away`, `trans_localization_away`, `localization_away_trans`,
+  `TauCeti/RingTheory/Syntomic/Localization.lean`), all in the namespace
+  `TauCeti.Algebra.IsStandardSyntomicOfRelativeDimension`. Flatness is part of the definition: for
+  one equation, that a fibrewise nonzero hypersurface is automatically flat (Stacks
+  Lemma 10.136.13, the case of one relation) is Q7.6 here.
 - `Valuation.IsContinuous` (`TauCeti/RingTheory/Valuation/Continuous/Basic.lean`): every set
   `{a : v(a) < v(b)}` is open. `Valuation.IsContinuous.lt_one_of_isTopologicallyNilpotent` and
   `Valuation.IsContinuous.cofinalValue_of_isTopologicallyNilpotent`
@@ -265,9 +279,12 @@ At the Tau Ceti revision pinned by the repository's `lake-manifest.json`.
   Proposition 2.1.8); `completion_integrally_closed_perfectoid` (Česnavičius Lemma 4.7).
 - §0.6: `perfectoid_completed_root_polynomial`, `perfectoid_completed_tensor`,
   `perfectoid_completed_root_quotient` (Česnavičius–Scholze Proposition 2.1.11 (a)–(c)),
-  `integralPerfectoid_pi_iff` (products, (d)), `perfectoid_sharp_ideal_completion` ((e)) and
-  `perfectoid_completely_etale_henselization` (completed ind-étale and henselian extensions,
-  Corollary 2.1.6).
+  `integralPerfectoid_pi_iff` (products, (d)), `perfectoid_sharp_ideal_completion` ((e): the
+  completion along the ideal generated by the sharps of finitely many elements of the tilt is
+  integral perfectoid, with tilt the corresponding completion of the tilt) and
+  `perfectoid_completely_etale_henselization` (the `p`-adic completions of étale, ind-étale and
+  henselian extensions are integral perfectoid; Q6.8 obtains from it, with (e), the `ϖ`-adic
+  completion of Česnavičius–Scholze Corollary 2.1.6).
 - §1.2 and §1.4: the modulo-`p` ind-syntomic refinement `andre_ind_syntomic_mod_p` and Bhatt's almost
   faithfully flat root extension `bhatt_root_extension_almost_faithfully_flat`, against which Q9.4
   compares.
@@ -834,16 +851,30 @@ of a `p`-torsion-free integral perfectoid ring (Proposition 2.1.12, second asser
 `u ∈ A^×` (Q5.3); with roots, take `ϖ♭ = (ϖ^{1/pⁿ})_n` (Mathlib `Perfection.quotientMulEquiv`), so
 `u = 1`. Let `B₀ = 𝔽_p[X_a^{1/p^∞} : a ∈ A♭]` with `B₀ ↠ A♭`, `X_a ↦ a`; lift the `ξ_i` to
 `ξ̃_i ∈ B₀` with `X_{ϖ♭}^p | ξ̃₀`, and let `B` be the `X_{ϖ♭}`-adic completion of `B₀[1/ξ̃₁]`, a perfect
-`ξ̃₀`-complete `𝔽_p`-algebra surjecting onto `A♭`. Then `Ã' = W(B)/(ξ̃)` is integral perfectoid
-(Q6.1), surjects onto `A`, and with `ϖ̃' = (X_{ϖ♭})♯` one has `ϖ̃'^p | p`; `Ã'` is `ϖ̃'`-complete
-(Q6.2) and `ϖ̃'`-torsion-free (Q5.4, as `B` is `X_{ϖ♭}`-torsion-free). In general let `Ã` be the
-`ϖ̃'`-adic completion of `Ã'[1/ũ]` for a lift `ũ` of `u` (integral perfectoid by
-`perfectoid_completely_etale_henselization` of PerfectoidQuotients §0.6) and `ϖ̃ = ϖ̃'ũ`; with roots
-`Ã = Ã'` and the roots `((X_{ϖ♭})^{1/pⁿ})♯` lift `ϖ^{1/pⁿ}`. For `p`-torsion-freeness take
-`ξ̃₀ = X_{ξ₀}` and replace `X_{ϖ♭}` by `X_{ξ₀}`.
+`𝔽_p`-algebra that surjects onto `A♭` and is `ξ̃₀`-adically complete because `(ξ̃₀) ⊆ (X_{ϖ♭})`
+(Stacks Lemma 10.96.8). Let `ξ̃ ∈ W(B)` have Witt coordinates `ξ̃_i`. Then `(W(B), (ξ̃))` is a
+perfect prism: `W(B)` is `(p, [ξ̃₀])`-adically complete, and `ξ̃` is distinguished because
+`δ(ξ̃)` reduces to the unit `ξ̃₁` of `B = W(B)/p`. So `Ã' = W(B)/(ξ̃)` is integral perfectoid with
+tilt `B` (PerfectoidSpaces P4.15.2; Česnavičius–Scholze (2.1.2.1), p. 10), and it surjects onto
+`A` because `W(B) ↠ W(A♭)` carries `ξ̃` to `ξ`. With `ϖ̃' = (X_{ϖ♭})♯` one has `ϖ̃'^p | p`, as `p` is a
+unit multiple of `(ξ̃₀)♯` in `Ã'`; `Ã'` is `ϖ̃'`-complete (Q6.2) and `ϖ̃'`-torsion-free (Q5.4, as `B`
+is `X_{ϖ♭}`-torsion-free). In general let `ũ ∈ Ã'` lift `u`. The `p`-adic completion `R₁` of the
+étale `Ã'`-algebra `Ã'[1/ũ]` is integral perfectoid (`perfectoid_completely_etale_henselization` of
+PerfectoidQuotients §0.6, which is stated for `p`-adic completions), and the `ϖ̃'`-adic completion
+`Ã` of `R₁` is integral perfectoid (`perfectoid_sharp_ideal_completion` of PerfectoidQuotients §0.6
+for the image of `X_{ϖ♭}` in `R₁♭`, whose sharp is the image of `ϖ̃'` by `untilt_natural`). Since
+`p ∈ ϖ̃'^p Ã'`, `R₁/ϖ̃'ⁿ = Ã'[1/ũ]/ϖ̃'ⁿ` for every `n`, so `Ã` is the `ϖ̃'`-adic completion of
+`Ã'[1/ũ]` (the ring of Česnavičius–Scholze's proof, there via their Corollary 2.1.6, p. 13), and
+it surjects onto the `ϖ`-adically complete `A`. Put `ϖ̃ = ϖ̃'ũ`, a unit multiple of `ϖ̃'` in `Ã`:
+then `ϖ̃^p | p`, `Ã` is `ϖ̃`-adically complete, and `Ã` is `ϖ̃`-torsion-free, being the completion of
+the `ϖ̃'`-torsion-free `Ã'[1/ũ]` along a nonzerodivisor. With roots `Ã = Ã'` and the roots
+`((X_{ϖ♭})^{1/pⁿ})♯` lift `ϖ^{1/pⁿ}`. For `p`-torsion-freeness take `ξ̃₀ = X_{ξ₀}`, let `B` be the
+`X_{ξ₀}`-adic completion of `B₀[1/ξ̃₁]` and `Ã = Ã'`: Q5.4 (1) gives `Ã'[p] ≅ B[X_{ξ₀}] = 0`.
 
-*Needs:* Q5.3, Q5.4, Q6.1, Q6.2; PerfectoidQuotients §0.6; Mathlib `PerfectClosure`, `MvPolynomial`,
-`WittVector`, `Perfection.quotientMulEquiv`.
+*Needs:* Q5.3, Q5.4, Q6.2; PerfectoidSpaces P4.15.2; PerfectoidQuotients §0.2 (`untilt_natural`) and
+§0.6 (`perfectoid_completely_etale_henselization`, `perfectoid_sharp_ideal_completion`); Mathlib
+`PerfectClosure`, `MvPolynomial`, `WittVector`, `Perfection.quotientMulEquiv`, `Localization.Away`,
+`AdicCompletion`.
 
 **Checks.**
 
@@ -853,6 +884,13 @@ of a `p`-torsion-free integral perfectoid ring (Proposition 2.1.12, second asser
 - For `A = 𝔽_p`, the third theorem is realized by the completion of `ℤ_p[p^{1/p^∞}] → 𝔽_p`.
 - The roots variant is genuinely stronger: in the first theorem `ϖ̃` need not have roots in `Ã`
   mapping to given roots of `ϖ`, since the lift `ϖ̃ = ϖ̃'ũ` involves the unit `ũ`.
+- The last completion is `ϖ̃'`-adic, and the `p`-adic one does not replace it. Let `A` be a perfect
+  `𝔽_p`-algebra with `ξ = p`, choose `ϖ = 0 = ϖ♭u` with a unit `u ≠ 1`, the lifts `ξ̃₀ = 0`,
+  `ξ̃₁ = 1`, `ξ̃_i = 0` for `i ≥ 2`, and `ũ = X_u`. Then `ξ̃ = p` in `W(B)`, `Ã' = B` has `p = 0`, and
+  `B[1/X_u]` is its own `p`-adic completion. It is not `X_0`-adically complete: `Σ_n (X_0/X_u)ⁿ`
+  converges `X_0`-adically to an inverse of `1 − X_0/X_u`, which has none in `B[1/X_u]`: sending
+  `X_0` and `X_u` to `t` and every other `X_a` to `1` maps `B[1/X_u]` to the `t`-adic completion of
+  `𝔽_p[t^{1/p^∞}]` with `t` inverted, a nonzero ring, and kills `X_u − X_0`.
 
 ### Examples
 
@@ -924,7 +962,10 @@ API:
 - a standard syntomic algebra is syntomic (take `m = 1`, `g_1 = 1`); a syntomic algebra is flat and
   finitely presented, and ind-syntomic;
 - syntomic maps are stable under base change (Tau Ceti's base change of standard syntomic algebras
-  and of localizations) and composition (Stacks Lemma 10.136.17);
+  and of localizations) and composition: for `R → S → T` with charts `S_g` standard syntomic over
+  `R` and `T_h` standard syntomic over `S`, each `T_{hg} = T_h ⊗_S S_g` is standard syntomic over
+  `S_g` by base change and then over `R` by Tau Ceti's composition of standard syntomic algebras,
+  and the products `hg` generate the unit ideal of `T` (Stacks Lemma 10.136.17);
 - an ind-syntomic algebra is flat (a filtered colimit of flat modules), and a faithfully flat
   ind-syntomic algebra is ind-fppf;
 - composites, base changes, finite products (including the empty product) and filtered colimits of
@@ -934,10 +975,13 @@ API:
 **Checks.**
 
 - `A → A[T^{1/p^∞}] = colim_n A[T^{1/pⁿ}]` is ind-syntomic (each `A[T^{1/pⁿ}]` is a polynomial
-  ring, standard syntomic of relative dimension one) and faithfully flat, hence ind-fppf.
+  ring in one variable, standard syntomic of relative dimension one by Tau Ceti's polynomial case)
+  and faithfully flat, hence ind-fppf.
 - `A → A[T, X]/(ϖX − q)` for `ϖ ∈ A` and monic `q ∈ A[T]` of positive degree is syntomic (Q7.6).
 - `ℤ → 𝔽_p` is not ind-syntomic: it is not flat.
-- `ℤ → ℤ[1/p] = ℤ[x]/(px − 1)` is syntomic but not faithfully flat, hence not ind-fppf.
+- `ℤ → ℤ[1/p] = ℤ[x]/(px − 1)` is syntomic, indeed standard syntomic of relative dimension `0`
+  (Tau Ceti's localization case: one generator, one relation, fibres empty or a point), but not
+  faithfully flat, hence not ind-fppf.
 - `𝔽_p → 𝔽_p[x, y]/(x², xy, y²)` is flat (over a field) and finitely presented but not syntomic:
   its fibre is not a complete intersection, and no presentation with `n + c` generators and `c`
   relations has fibres of dimension `n` (Tau Ceti's discussion of this example).
@@ -1195,7 +1239,13 @@ Wedhorn Proposition 7.18 (1)), so its powers are bounded. If `A₀^{∘∘} · A
 Otherwise choose a maximal ideal `𝔪 ⊇ A₀^{∘∘} A₀[1/a]`, a minimal prime `𝔭 ⊆ 𝔪` extending to a minimal
 prime of `R[1/a]` (Stacks Lemmas 10.17.2 and 10.30.5), a valuation ring `V` dominating
 `(A₀[1/a]/𝔭)_𝔪` (Stacks Lemma 10.50.2), and `V̄ = V/⋂ϖⁿV`; the induced valuation is continuous, `≤ 1`
-on `A₀` and has `v(1/a) ≤ 1`, contradicting `v(a) < 1`.
+on `A₀` and has `v(1/a) ≤ 1`, contradicting `v(a) < 1`. The contradicting valuation may be taken of
+rank one, so the criterion does not depend on the universe of the value groups: for a continuous
+`v` with `v(A₀) ≤ 1` and `v(a) ≥ 1` and a topologically nilpotent unit `ϖ` of `R`, let `H` be the
+largest convex subgroup of `Γ_v` not containing `v(ϖ)`. As the powers of `v(ϖ)` are cofinal in
+`Γ_v` (Q8.1), `Γ_v/H` has no convex subgroup other than `1` and itself, so it embeds in `ℝ_{>0}`
+as an ordered group; the coarsening `w` of `v` with values in `Γ_v/H ∪ {0}` has `w(ϖ) < 1` with
+cofinal powers, hence is continuous (Q8.1), and `w(A₀) ≤ 1`, `w(a) ≥ 1`.
 
 *Needs:* Q8.1; Tau Ceti `TauCeti.Huber.IsTateRing`, `TauCeti.Huber.PairOfDefinition`,
 `Valuation.IsContinuous.lt_one_of_isTopologicallyNilpotent`,
@@ -1211,6 +1261,13 @@ on `A₀` and has `v(1/a) ≤ 1`, contradicting `v(a) < 1`.
   `A₀`, no valuation continuous on `ℚ_p` is `≤ 1` on `ℚ_p` (it would be trivial on `p`), so the
   right side holds vacuously for `a = 1`, which is not topologically nilpotent.
 - The zero ring is a Tate ring with no valuations; both sides hold for `a = 0`.
+- Rank one suffices for the converse. On `ℚ_p⟨T⟩` with `A₀ = ℤ_p⟨T⟩`, let `v(f)` be the pair
+  `(|f|_Gauss, γ^{ord_{T=1} f̄})` in `p^ℤ × γ^ℤ`, ordered lexicographically with `γ < 1`, where `f̄` is
+  the reduction in `𝔽_p[T]` of `f` scaled to Gauss norm one. Then `v(A₀) ≤ 1`, `v(p)ⁿ = (p^{−n}, 1)`
+  is cofinal, so `v` is continuous, and `v(T) = (1, 1) = 1`. Here `H = 1 × γ^ℤ`, and the coarsening
+  is the Gauss valuation, with value group `p^ℤ ⊂ ℝ_{>0}` and `w(T) = 1`. The only convex subgroup
+  containing `v(p)` is the whole group, and coarsening by it gives the trivial valuation, which is
+  not continuous.
 
 ### Examples
 
