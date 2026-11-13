@@ -27,6 +27,7 @@
      },
      "prerequisites": [
       "mathlib:HomologicalComplex₂",
+      "mathlib:HomologicalComplex₂.HasTotal",
       "mathlib:HomologicalComplex₂.total",
       "mathlib:HomologicalComplex₂.totalFlipIso",
       "mathlib:HasCountableProducts",
@@ -343,7 +344,7 @@
       {
        "name": "ProjectiveResolution.horseshoe",
        "role": "dual",
-       "statement": "The dual statements for projective resolutions, through 𝒜ᵒᵖ."
+       "statement": "The dual statements for projective resolutions, through 𝒜ᵒᵖ. For finite projective resolutions of objects, the dual of (a) is Tau Ceti's TauCeti.ExactStructure.FiniteResolution.horseshoe for TauCeti.ExactStructure.abelian (with TauCeti.ExactStructure.abelian_isProjective_iff), middle length at most the larger outer length; the statement here adds unbounded length, complexes and the relative form."
       }
      ],
      "tests": [
@@ -458,8 +459,8 @@
       "where": "line 3617–3695, Definition 21.1 and Lemma 21.2, tags 015H and 015I, Remark 21.4, tag 015K; weibel1994 Lemma 5.7.2 (uncertified) and cartan-eilenberg1956 Ch. XVII §1 (uncertified) for lifting"
      },
      "prerequisites": [
-      "target:2.1",
       "target:1.5",
+      "target:2.1",
       "mathlib:HomologicalComplex₂",
       "mathlib:InjectiveResolution"
      ],
@@ -725,6 +726,7 @@
       "target:2.2",
       "mathlib:CategoryTheory.Functor.rightDerivedFunctorPlus",
       "mathlib:CategoryTheory.Functor.rightDerivedFunctorPlusUnit",
+      "mathlib:CategoryTheory.Functor.IsRightDerivedFunctor",
       "mathlib:CategoryTheory.Injective.injective_of_adjoint"
      ],
      "api": [
@@ -822,6 +824,8 @@
       "where": "line 1330–1337, Théorème 2.4.1, for the spectral sequence of 3.2 at an object; the five-term and extended sequences are base §3.6 (first quadrant) applied to it"
      },
      "prerequisites": [
+      "target:2.5",
+      "target:3.1",
       "target:3.2",
       "roadmap:SpectralSequencesAndConvergence §3.3",
       "roadmap:SpectralSequencesAndConvergence §3.6",
@@ -1017,6 +1021,8 @@
       "target:4.1",
       "roadmap:SpectralSequencesAndConvergence §5.1",
       "roadmap:SpectralSequencesAndConvergence §5.3",
+      "roadmap:SpectralSequencesAndConvergence §1.3",
+      "roadmap:SpectralSequencesAndConvergence §3.4",
       "roadmap:DerivedModuleAlgebra §0.2",
       "tauceti:CochainComplex.isKFlat_of_boundedAbove_flat",
       "tauceti:HomologicalComplex.homologyCross"
@@ -1368,6 +1374,7 @@
      },
      "prerequisites": [
       "target:6.1",
+      "target:5.2",
       "roadmap:SpectralSequencesAndConvergence §1.3",
       "roadmap:SpectralSequencesAndConvergence §1.4",
       "roadmap:SpectralSequencesAndConvergence §3.1",
@@ -1464,7 +1471,7 @@
   },
   {
    "roadmap": "InverseGaloisAndArithmeticFundamentalGroupsPartII",
-   "what": "Change-of-rings and hyperhomology sequences of its declared graded-Tor gap."
+   "what": "Its graded composite Tor sequence Tor^{R̄}_i(k, Tor^R_j(R̄, M)) ⇒ Tor^R_{i+j}(k, M) and its hyperhomology sequence of a bounded-below chain complex of right modules tensored with a left module, over a graded, possibly noncommutative algebra, are instances of 3.4 (R̄ ⊗_R − then k ⊗_{R̄} −) and of 2.6 (− ⊗_R M) in the abelian categories of graded modules; Layer 4 does not state them, and that roadmap takes them from the supplier named in its own contracts."
   },
   {
    "roadmap": "K3BlochGroups",

@@ -82,11 +82,13 @@ It leaves to named owners:
   balancing of Ext is a Check of Layer 4, not a target.
 - **Tau Ceti** (at the pin): the row- and column-filtration spectral sequences of a first-quadrant
   homological bicomplex with their first pages and convergence, the quasi-isomorphism of totals
-  induced by a quasi-isomorphism on rows and the exact-augmentation form, the Künneth short exact
-  sequence over rings whose modules have projective dimension at most one, the universal
+  induced by a quasi-isomorphism on rows and the exact-augmentation form, the horseshoe of finite
+  projective resolutions of the outer terms of a conflation in an exact category (in an abelian
+  category, the finite case of the projective form of 2.1(a) for objects), the Künneth short
+  exact sequence over rings whose modules have projective dimension at most one, the universal
   coefficient sequence for cohomology, K-flat complexes, `Tor` from presentations of length one,
-  and the first-order Bockstein maps of continuous cohomology. These are instances of Layers 1, 4
-  and 6 and are consumed as they stand.
+  and the first-order Bockstein maps of continuous cohomology. These are instances of Layers 1, 2,
+  4 and 6 and are consumed as they stand.
 - **AlgebraicTopology, §5.1** (the Künneth spectral sequence of singular chains),
   **DGFloer, Layer 1 item 2** (the multiplicative Serre spectral sequence),
   **SchemeAndStackFoundations, §§2.2, 2.7, 2.15** (`leray_spectral_sequence`,
@@ -190,7 +192,10 @@ unbounded complexes with exact kernel or cokernel complexes (stacks-012K Lemmas 
   `CategoryTheory.NatTrans.rightDerivedFunctorPlus`
   (`Mathlib/Algebra/Homology/DerivedCategory/RightDerivedFunctorPlus.lean`). The unit is an
   isomorphism at bounded-below complexes of injective objects, and `RF` is a triangulated right
-  derived functor. Assumed: nothing about left derived functors on `D⁻` (there are none at the
+  derived functor: with its unit it is an instance of
+  `CategoryTheory.Functor.IsRightDerivedFunctor` for the quasi-isomorphisms
+  (`Mathlib/CategoryTheory/Functor/Derived/RightDerived.lean`, a left Kan extension along the
+  localisation). Assumed: nothing about left derived functors on `D⁻` (there are none at the
   pin) and no comparison with `Functor.rightDerived` (the file's documentation records that one as
   missing).
 - `CategoryTheory.Functor.rightDerived`, `CategoryTheory.InjectiveResolution.isoRightDerivedObj`
@@ -254,6 +259,14 @@ unbounded complexes with exact kernel or cokernel complexes (stacks-012K Lemmas 
   and the one-step injective horseshoe: for a conflation `X ↪ Y ↠ Z` and conflations `X ↪ I_X ↠ C_X`,
   `Z ↪ I_Z ↠ C_Z` with `I_X` injective, `Y` embeds by a conflation into a split extension of `I_Z` by
   `I_X`, with cokernel an extension of `C_Z` by `C_X`, compatibly with the given conflations.
+- `TauCeti.ExactStructure.FiniteResolution.horseshoe`
+  (`TauCeti/CategoryTheory/Exact/Resolution/Horseshoe.lean`) and
+  `TauCeti.ExactStructure.abelian_isProjective_iff` (`TauCeti/CategoryTheory/Exact/Projective.lean`):
+  for a conflation in an exact category and finite resolutions of its outer terms by relative
+  projectives, a finite projective resolution of the middle term, no longer than the longer of the
+  two, with augmentation-compatible chain maps and degreewise split exactness; for
+  `TauCeti.ExactStructure.abelian` the relative projectives are the projective objects. Consumed as
+  it stands, as the finite case of the projective form of 2.1(a) for objects.
 - `CochainComplex.IsKFlat`, `CochainComplex.isKFlat_of_boundedAbove_flat`,
   `CochainComplex.quasiIso_id_tensorHom` (`TauCeti/Algebra/Homology/Monoidal/KFlat/Basic.lean`).
 - `HomologicalComplex.homologyCross`, `HomologicalComplex.homologyKunnethShortComplex_shortExact`
@@ -339,8 +352,9 @@ is `∏_{p+q=n} K^{p,q}`, and the component of its differential with target `K^{
 is `d₁ ∘ π_{p−1,q} + (−1)^p d₂ ∘ π_{p,q−1}`, where `π` are the product projections (stacks-012K
 line 3400–3409, the complex `Tot_π` in the proof of Lemma 26.3, tag 09J0; weibel1994 §1.2,
 uncertified). The direct-sum total complex `Tot^⊕(K)` is Mathlib's `HomologicalComplex₂.total` for the
-shape `up ℤ`. *Needs:* Mathlib `HomologicalComplex₂`, `HomologicalComplex₂.total`,
-`HomologicalComplex₂.totalFlipIso`, `HasCountableProducts`, `HasCountableCoproducts`.
+shape `up ℤ`. *Needs:* Mathlib `HomologicalComplex₂`, `HomologicalComplex₂.HasTotal`,
+`HomologicalComplex₂.total`, `HomologicalComplex₂.totalFlipIso`, `HasCountableProducts`,
+`HasCountableCoproducts`.
 
 - The differential of `Tot^Π(K)` squares to zero; `Tot^Π` is an additive functor from double
   complexes to cochain complexes, and a morphism into `Tot^Π(K)` is determined by its composites with
@@ -607,7 +621,11 @@ Ceti `TauCeti.ExactStructure.exists_conflation_of_conflation_of_injective`,
 `TauCeti.ExactStructure.abelian`, `TauCeti.ExactStructure.abelian_isInjective_iff`.
 
 - The dual statements hold for projective resolutions, through `𝒜ᵒᵖ` (Mathlib's instance
-  `EnoughInjectives 𝒜ᵒᵖ`).
+  `EnoughInjectives 𝒜ᵒᵖ`). For finite projective resolutions of objects, the dual of (a) is Tau
+  Ceti's `TauCeti.ExactStructure.FiniteResolution.horseshoe` for `TauCeti.ExactStructure.abelian`
+  (with `TauCeti.ExactStructure.abelian_isProjective_iff`), whose middle resolution has length at
+  most the larger of the two outer lengths; the statement here adds resolutions of unbounded
+  length, complexes and the relative form (b).
 
 **Checks.**
 
@@ -659,7 +677,8 @@ Definition 16.2, tag 015A). Prove:
 *Needs:* Mathlib `CategoryTheory.Functor.rightDerivedFunctorPlus`,
 `CategoryTheory.Functor.rightDerivedFunctorPlusUnit`, `DerivedCategory.Plus.homologyFunctor`,
 `DerivedCategory.Plus.singleFunctor`, `CategoryTheory.Functor.rightDerived`,
-`CategoryTheory.InjectiveResolution.isoRightDerivedObj`, `HomologicalComplex.stupidTrunc`.
+`CategoryTheory.InjectiveResolution.isoRightDerivedObj`, `HomologicalComplex.stupidTrunc`,
+`CategoryTheory.NatTrans.rightDerivedFunctorPlus`.
 
 - `RⁿF` commutes with finite direct sums and is functorial in natural transformations of `F`
   (Mathlib `CategoryTheory.NatTrans.rightDerivedFunctorPlus`).
@@ -682,8 +701,8 @@ Let `𝒜` have enough injectives and `K` be a cochain complex with `K^p = 0` fo
 `p < a` and for `q < 0`; for each `p`, the column `I^{p,•}`, with `ε^p`, is an injective resolution of
 `K^p`; and the complexes (in `q`) of horizontal cycles `Ker(d₁^{p,•})`, horizontal boundaries
 `Im(d₁^{p−1,•})` and horizontal cohomology `H_I^p(I)`, with the augmentations induced by `ε`, are
-injective resolutions of `Z^p(K)`, `B^p(K)` and `H^p(K)`. *Needs:* 2.1; Mathlib `HomologicalComplex₂`,
-`InjectiveResolution`.
+injective resolutions of `Z^p(K)`, `B^p(K)` and `H^p(K)`. *Needs:* 1.5 (finite case, for the total
+complex), 2.1; Mathlib `HomologicalComplex₂`, `InjectiveResolution`.
 
 - *Existence* (stacks-05QI line 3630–3654, Lemma 21.2, tag 015I): every such `K` has one. Route:
   decompose `K` into the short exact sequences `0 → Z^p → K^p → B^{p+1} → 0` and
@@ -863,7 +882,8 @@ exact left adjoint (then `F` preserves injectives: Mathlib `CategoryTheory.Injec
 Route: at a bounded-below complex `A` with injective resolution `A → J`, `t` is the map
 `(G ∘ F)(J) → RG(F(J))`, an isomorphism by Leray's acyclicity lemma 2.2(v); conversely evaluate `t` at
 `I[0]`. *Needs:* 2.2(ii), 2.2(v); Mathlib `CategoryTheory.Functor.rightDerivedFunctorPlus`,
-`CategoryTheory.Functor.rightDerivedFunctorPlusUnit`, `CategoryTheory.Injective.injective_of_adjoint`.
+`CategoryTheory.Functor.rightDerivedFunctorPlusUnit`, `CategoryTheory.Functor.IsRightDerivedFunctor`,
+`CategoryTheory.Injective.injective_of_adjoint`.
 
 - `t` is compatible with the units, natural in `F` and `G`, and the identity when `F` or `G` is the
   identity functor.
@@ -930,7 +950,8 @@ for an object is the spectral sequence of grothendieck1957 line 1330–1337, Th�
 Route: base §3.6 applied to the first-quadrant convergence of 3.2, with ArithmeticGaloisDuality
 §D7.1's identification of the edge maps; for naturality, `α` gives a chain map `F(J) → F′(J)` and 2.5's
 naturality in the complex, and `β` gives `G(I) → G′(I)` and 2.5's naturality in the functor.
-*Needs:* 3.2; base §§3.3, 3.6; ArithmeticGaloisDuality §D7.1; Mathlib
+*Needs:* 3.1 (the condition on the pairs), 3.2; 2.5 (its naturality in the complex and in the
+functor, for naturality in the functors); base §§3.3, 3.6; ArithmeticGaloisDuality §D7.1; Mathlib
 `CategoryTheory.NatTrans.rightDerivedFunctorPlus`.
 
 **Checks.**
@@ -1095,8 +1116,9 @@ filtration is finite in each degree, so its spectral sequence (base §5.1) conve
 with projective cohomology `H_I(P)_s`, so `E₁^{s,m} ≅ ⊕_{i+j=m} H_I^i(P)_s ⊗ H^j(L)` (the Künneth
 isomorphism for split complexes below). Each `H_I^i(P)` is a projective resolution of `H^i(K)`, so
 `E₂^{s,m} ≅ ⊕_{i+j=m} Tor'_{−s}(H^i K, H^j L) ≅ ⊕ Tor_{−s}(H^i K, H^j L)` by 4.1. Naturality from page `2`
-follows from the lifting of 2.6. *Needs:* 2.6, 4.1; base §§5.1, 5.3; DerivedModuleAlgebra §0.2; Tau Ceti
-`CochainComplex.isKFlat_of_boundedAbove_flat`, `HomologicalComplex.homologyCross`.
+follows from the lifting of 2.6. *Needs:* 2.6, 4.1; base §§5.1, 5.3; base §§1.3, 3.4 (for the two-column
+sequence); DerivedModuleAlgebra §0.2; Tau Ceti `CochainComplex.isKFlat_of_boundedAbove_flat`,
+`HomologicalComplex.homologyCross`.
 
 - *Künneth isomorphism for split complexes.* For a complex `S` of `R`-modules whose differentials split
   and whose cohomology is projective, and any complex `L`, the cross product
@@ -1356,8 +1378,8 @@ a cocycle since `f^r dw = d²u = 0`, and `u` gives both `k(u mod f) = f^{r−1}[
 and `B_{r+1}` is constant for `r ≥ a`. Convergence: in modules, the kernel of `D^{s,n−s} → Hⁿ(M)[1/f]` (where
 `D^{s,n−s} = Hⁿ(M)` for every `s`) is `⋃_r ker i^r`, so the image filtration of the colimit `Hⁿ(M)[1/f]` of
 the tower `i` has `gr^s ≅ D^{s,n−s}/(iD^{s+1,n−s−1} + ⋃_r ker i^r) ≅ ker k / B_∞` through `j`, a submodule of
-the limit page `Z_∞/B_∞`, equal to it exactly when `Z_∞ = ker k`. *Needs:* 6.1; base §§1.3, 1.4, 3.1, 3.2,
-6.2.
+the limit page `Z_∞/B_∞`, equal to it exactly when `Z_∞ = ker k`. *Needs:* 6.1; 5.2 (for multiplicativity
+only); base §§1.3, 1.4, 3.1, 3.2, 6.2.
 
 - *Multiplicativity.* If `M` is a differential graded `A`-algebra, the filtration `f^sM` of `M[1/f]` is
   multiplicative, so every page carries a pairing with `d_r` a derivation (5.2; may-primer line
@@ -1400,8 +1422,13 @@ Base §§1.3, 1.4, 3.1, 3.2, 5.1, 6.1–6.3; Layer 5 for multiplicativity; Stabl
   invariants under `G/N`, and the homological form through coinvariants), the Künneth and
   universal-coefficient sequences of group (co)homology as Layer 4, and the multiplicativity of the
   extension sequence through the filtered-complex pairings of Layer 5.
-- **InverseGaloisAndArithmeticFundamentalGroupsPartII** (the change-of-rings and hyperhomology
-  sequences of its declared gap on graded Tor spectral sequences), **K3BlochGroups** (group
+- **InverseGaloisAndArithmeticFundamentalGroupsPartII** (its composite Tor sequence
+  `Tor^{R̄}_i(k, Tor^R_j(R̄, M)) ⇒ Tor^R_{i+j}(k, M)` and its hyperhomology sequence of a
+  bounded-below chain complex of right modules tensored with a left module, over a graded, possibly
+  noncommutative algebra, are instances of 3.4's right exact composites, for `R̄ ⊗_R −` followed by
+  `k ⊗_{R̄} −`, and of 2.6, for `− ⊗_R M`, in the abelian categories of graded modules; Layer 4 does
+  not state them, and that roadmap takes them from the supplier named in its own supplier
+  contracts), **K3BlochGroups** (group
   hyperhomology sequences), **EtaleDualityAndPerverseSheaves** (hypercohomology sequences),
   **TorsionCohomologyInfrastructure** (Künneth and universal-coefficient sequences), and
   **HilbertModularVarietiesAndShimuraCurvesPartII** (change of rings for Ext along `A → A/x`): they state
