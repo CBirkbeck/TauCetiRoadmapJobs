@@ -1,0 +1,48 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "MotivesAndAlgebraicCycles"
+
+[[source]]
+id = "ArapuraKang"
+authors = "Donu Arapura, Su-Jeong Kang"
+title = "Functoriality of the coniveau filtration"
+year = 2005
+arxiv = "math/0501347v1"
+locator_scheme = "theorem"
+locator = "Theorem 1.1"
+url = "https://arxiv.org/abs/math/0501347v1"
+fetched_from = "https://arxiv.org/pdf/math/0501347v1"
+fetched_at = "2026-11-13T17:10:56Z"
+sha256 = "c02c1afbfd15a7b3dbb26ed611e80cf4f9ff614b55cd75f44d36601648bca48c"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-13"
+version_note = "arXiv v1"
+cited_for = ["7.1a"]
+
+[[source]]
+id = "DeligneHodgeIII"
+locator_scheme = "theorem"
+locator = "Corollaire 8.2.8"
+url = "https://www.numdam.org/item/PMIHES_1974__44__5_0/"
+fetched_from = "https://www.numdam.org/item/PMIHES_1974__44__5_0.pdf"
+fetched_at = "2026-11-13T17:10:59Z"
+sha256 = "d78d4f46742916cd669279e7db365e4db6a43f38d2dcdec6862c6d27d07216b3"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-13"
+cited_for = ["7.1a"]
+
+[[source]]
+id = "Grothendieck1969"
+authors = "A. Grothendieck"
+title = "Hodge's general conjecture is false for trivial reasons"
+year = 1969
+venue = "Topology 8"
+doi = "10.1016/0040-9383(69)90016-0"
+locator_scheme = "page"
+locator = "pp.299-303"
+url = "https://doi.org/10.1016/0040-9383(69)90016-0"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["7.1a"]
