@@ -35,6 +35,38 @@ constructions, not definitions of a few lines. The headline theorems and what ea
   `ι`-weights, and Lefschetz curves.
 * The docile Lefschetz theorem (README MS.5.8; D'Addezio, Theorem 4.4.2) lacks docile
   overconvergent isocrystals on the complement of a normal crossings divisor.
+* The opposite slope rank bound (README MS.0.4; Tsuzuki, Theorems 2.13–2.14; D'Addezio,
+  Lemma 4.2.7) lacks `φ`-modules, with no connection, over the bounded Robba field and the Amice
+  field and over D'Addezio's generic pair of the affine line (residue field `k(t)`), with their
+  Frobenius slopes and maximal-slope quotients.
+* The bounded graded formula and the two descents of the PBQ filtration (README MS.1.2, MS.1.4,
+  MS.1.5; Tsuzuki, Theorems 3.19(2) and 3.23) lack, beyond the carriers of the local theorems,
+  maximally bounded quotients and the grades of PBQ filtrations, and `(φ,∇)`-modules over the
+  bounded-disc ring `K[[t]]₀`, which Tau Ceti has only as a ring.
+* The curve intersection, gluing and transport theorems (README MS.2.2, MS.2.3, MS.2.6, MS.2.7,
+  MS.2.9: dagger sections as intersections, interior and boundary gluing, finite étale PBQ
+  transport, the curve bounded quotient, the convergent PBQ filtration; Tsuzuki, Lemmas 3.1–3.2
+  and 3.31–3.33, Proposition 3.29, proof of Proposition 6.1) lack the weak and the `p`-adic
+  completions of a lifted affine curve, its completed generic field and its local fields with
+  their embeddings, and convergent and overconvergent F-isocrystals on a curve with their
+  generic and local realisations, pullback and direct image.
+* Local graded recovery, the curve irreducibility criterion and curve graded recovery (README
+  MS.3.6, MS.4.3, MS.4.4; Tsuzuki, Theorem 4.11, Proposition 6.2, Theorem 6.4) lack, beyond
+  these carriers, saturated quotients of `(φ,∇)`-modules over the bounded Robba field and of
+  overconvergent F-isocrystals on a curve, and the convergent bounded quotient of a curve.
+* The reductions of the minimal slope property, the generic minimal slope property and the étale
+  affine-line reduction (README MS.5.3, MS.5.5, MS.5.6; D'Addezio, Lemmas 4.1.4–4.1.8,
+  Proposition 4.2.2, proof of Theorem 4.2.13) lack convergent and overconvergent
+  `F^n`-isocrystals with Frobenius pullback and finite étale direct image, dagger hulls,
+  minimal-slope subobjects, and `(φ,∇)`-modules over D'Addezio's generic pair.
+* Lefschetz fibre reconstruction, the coefficient-linear trace formula, the projected trace
+  average and the fibrewise isomorphism criterion (README MS.6.3, MS.6.6, MS.6.7, MS.6.10;
+  Tsuzuki, Corollary 6.8, Propositions 7.10, 7.12 and 7.15, Lemma 7.11, Corollary 7.13) lack
+  overconvergent `L`-`F_q`-isocrystals and `Q̄_p`-objects with their Frobenius fibres, rigid
+  cohomology with and without compact supports with these coefficients, their `L`-functions and
+  `ι`-weights, and Lefschetz curves. The averaging step of MS.6.7 on a bare representation is
+  Mathlib's `Representation.averageMap`; stated there it is linear algebra on free variables,
+  not the headline.
 -/
 
 namespace TauCetiRoadmap.PadicDifferentialEquationsAndRigidCohomologyPartII
