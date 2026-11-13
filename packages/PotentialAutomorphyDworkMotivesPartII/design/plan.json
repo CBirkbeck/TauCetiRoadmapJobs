@@ -5841,21 +5841,39 @@
     },
     {
       "slug": "curve-crystalline-companions",
-      "needs": "For a smooth curve X over a finite field of characteristic p and an irreducible lisse ℚ̄_ℓ-sheaf on X with finite-order determinant, a crystalline companion overconvergent F-isocrystal with the same Frobenius characteristic polynomials at closed points (Abe), together with full faithfulness of restriction from overconvergent to convergent F-isocrystals on smooth curves (Kedlaya), so that Drinfeld–Kedlaya's slope bounds on curves apply to companions of indecomposable lisse sheaves.",
+      "needs": "For a smooth curve X over a finite field of characteristic p, a prime ℓ ≠ p, a field isomorphism ℚ̄_ℓ ≅ ℚ̄_p and an irreducible lisse ℚ̄_ℓ-sheaf on X with finite-order determinant, a crystalline companion: an irreducible overconvergent F-isocrystal on X whose Frobenius characteristic polynomial at every closed point is the image of that of the sheaf (Abe), so that Drinfeld–Kedlaya's slope bounds on curves apply to companions of indecomposable lisse sheaves.",
       "supplier": "PadicDifferentialEquationsAndRigidCohomology",
       "section": "RD.3.34 Convergent F-isocrystals"
     },
     {
-      "slug": "equivariant-toroidal-semistable-reduction",
-      "needs": "For a log smooth (toroidal) scheme over a complete discrete valuation ring whose toroidal charts carry a finite group acting through characters on the chart coordinates, a unimodular subdivision of the conical complex gives, after a totally ramified base change of suitable degree e, an equivariant projective blowup that is strictly semistable and an isomorphism over the generic fibre (Kempf–Knudsen–Mumford–Saint-Donat).",
-      "supplier": "SchemeAndStackFoundations",
-      "section": "4.20 Traits, S-varieties, strict semistability and the semistable alteration theorem"
-    },
-    {
       "slug": "twisted-modular-curve-over-number-fields",
-      "needs": "For a number field F, an integer r ≥ 3 and a continuous ρ : G_F → GL₂(ℤ/r) with determinant the mod-r cyclotomic character, the twisted curve Y(ρ)/F with its universal elliptic curve, its geometric connectedness, a smooth model with good reduction of the universal curve over O_F[1/r], and for every prime p ∤ r the equality of the geometric mod-p monodromy of the universal curve with SL₂(𝔽_p).",
+      "needs": "For a number field F, an integer r ≥ 3 and a continuous ρ : G_F → GL₂(ℤ/r) with determinant the mod-r cyclotomic character, the twisted curve Y(ρ)/F with its universal elliptic curve, smooth and geometrically connected over F, such that for every prime p ∤ r the geometric mod-p monodromy of the universal curve is SL₂(𝔽_p).",
       "supplier": "ModularCurvesPartII",
       "section": "5.14 Compactified twisted curves X(ρ)"
+    },
+    {
+      "slug": "cm-hecke-characters-with-prescribed-infinity-type",
+      "needs": "For an imaginary CM number field L and integers a_σ indexed by the embeddings σ : L ↪ ℂ such that `a_σ + a_(cσ) = w` does not depend on σ, an algebraic Hecke character of L (Weil type A₀) whose restriction to the identity component of `(L ⊗ ℝ)^×` is `x ↦ ∏_σ σ(x)^(−a_σ)`, with no condition on its finite conductor (the converse of the purity of algebraic infinity types; Barnet-Lamb–Gee–Geraghty–Taylor, Lemma A.2.4, arXiv v4 p. 88).",
+      "supplier": "GlobalNumberFields",
+      "section": "Layer 10: archimedean characters, infinity types, and cyclotomic arithmetic"
+    },
+    {
+      "slug": "ordinary-and-supersingular-curves-over-prime-fields",
+      "needs": "For every prime p, an ordinary elliptic curve and a supersingular elliptic curve over 𝔽_p, in the sense of Layer 3 (Deuring's theorem that for q = p every integer β with β² ≤ 4p is the Frobenius trace of an elliptic curve over 𝔽_p; Waterhouse, Theorem 4.1, p. 536).",
+      "supplier": "EllipticCurves",
+      "section": "Layer 3: elliptic curves over finite fields — the Hasse bound (AEC V.1)"
+    },
+    {
+      "slug": "griffiths-residue-hodge-filtration",
+      "needs": "For a smooth hypersurface V ⊂ ℙ^{m+1}_ℂ, m ≥ 1, and 1 ≤ k ≤ m + 1, the residue map from rational (m+1)-forms on ℙ^{m+1} regular off V with a pole of order at most k along V, modulo differentials of rational m-forms with a pole of order at most k − 1, to H^m(V, ℂ) is an isomorphism onto F^{m−k+1} of the primitive part of the Hodge structure of properPureHodge (§C5.3), equivariant for the linear automorphisms of ℙ^{m+1} preserving V acting on forms by pullback (Griffiths' theorem on the pole-order filtration, as applied in Deligne, Hodge cycles on abelian varieties, proof of Proposition 7.6, pp. 47–48).",
+      "supplier": "ComplexComparisonPartII",
+      "section": "C5.3 Geometric Hodge theory"
+    },
+    {
+      "slug": "slopes-of-indecomposable-convergent-isocrystals",
+      "needs": "For a perfect field k of characteristic p, a smooth irreducible quasi-compact k-scheme X with generic point η and an indecomposable convergent F-isocrystal M on X of rank n, the generic slopes a^η_1 ≥ ⋯ ≥ a^η_n of M satisfy a^η_i − a^η_(i+1) ≤ 1 for 1 ≤ i < n (Drinfeld–Kedlaya, Theorem 1.1.5, arXiv v11 p. 3).",
+      "supplier": "PadicDifferentialEquationsAndRigidCohomology",
+      "section": "RD.3.34 Convergent F-isocrystals"
     }
   ],
   "sourceIssues": [
