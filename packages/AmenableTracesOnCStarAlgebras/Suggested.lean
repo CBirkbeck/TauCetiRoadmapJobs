@@ -32,11 +32,14 @@ amenable traces by injectivity of the GNS von Neumann algebra and by amenability
 trace (the unique normal positive functional on it recovering the trace), every tracial state of
 a nuclear C*-algebra being uniform amenable, and the equivalence of amenability, uniform
 amenability, nuclearity of the GNS representation and injectivity on an algebra with a nuclear
-faithful representation (Layer 5); the face property of the amenable and of the uniform amenable traces,
-their permanence under normalized restriction along star homomorphisms (restriction to
-C*-subalgebras, corners and closed ideals, and lifting from quotients) and under extension from
-closed ideals (Layer 6); the traces of commutative and of AF algebras and the characterization of
-amenable discrete groups by the traces of their reduced group C*-algebras (Layer 7);
+faithful representation (Layer 5); the face property of the amenable and of the uniform
+amenable traces, their permanence under normalized restriction along star homomorphisms
+(restriction to C*-subalgebras, corners and closed ideals, and lifting from quotients), under
+passage to quotients through which the trace factors, in particular to the image of the GNS
+representation (for amenable traces given a completely positive contractive splitting), and
+under extension from closed ideals (Layer 6); the traces of commutative and of AF algebras and
+the characterization of amenable discrete groups by the traces of their reduced group
+C*-algebras (Layer 7);
 quasidiagonal traces on quasidiagonal algebras, quasidiagonality from a faithful quasidiagonal
 trace, Rosenberg's theorem and the necessary conditions for a C*-algebra to embed in a simple
 unital AF algebra (Layer 8).
@@ -373,6 +376,22 @@ theorem isAmenableTrace_of_normalized_comp {B : Type*} [NonUnitalCStarAlgebra B]
     (hγτ : ∀ a, γ a = (c : ℂ)⁻¹ * τ (ι a)) :
     (IsAmenableTrace τ → IsAmenableTrace γ) ∧
       (IsUniformAmenableTrace τ → IsUniformAmenableTrace γ) := by
+  sorry
+
+/-- **Passage to quotients, in particular to the image of the GNS representation.** Let
+`q : A → B` be a surjective star homomorphism and `γ` a positive functional on `B` with
+`γ ∘ q = τ` for a tracial state `τ` of `A`; then `γ` is a tracial state (Tau Ceti's
+`TauCeti.CStarAction.isKMSState_comp_iff_of_surjective`) and `ker q` lies in the trace kernel of
+`τ`. If `τ` is uniform amenable, so is `γ`; if `τ` is amenable and `q` has a completely positive
+contractive splitting, `γ` is amenable. For faithful `γ`, `ker q` is the trace kernel, `B ≅ π_τ(A)`
+and `γ` is the descended trace (README §6.4; brown2006, Proposition 3.5.8 (1)–(2)). The splitting
+cannot be dropped: `C*(F₂) → C*_r(F₂)` carries the amenable regular trace to a non-amenable one. -/
+theorem isAmenableTrace_of_comp_surjective {B : Type*} [NonUnitalCStarAlgebra B]
+    [PartialOrder B] [StarOrderedRing B] (q : A →⋆ₙₐ[ℂ] B) (hq : Function.Surjective q)
+    (τ : A →P[ℂ] ℂ) (hτ : IsTracialState τ) (γ : B →P[ℂ] ℂ) (hτγ : ∀ a, τ a = γ (q a)) :
+    (IsUniformAmenableTrace τ → IsUniformAmenableTrace γ) ∧
+      ((∃ σ : B →CP A, (∀ b, ‖σ b‖ ≤ ‖b‖) ∧ ∀ b, q (σ b) = b) →
+        IsAmenableTrace τ → IsAmenableTrace γ) := by
   sorry
 
 /-- **Extension from closed ideals.** Let `ι : A → B` be an injective star homomorphism onto a
