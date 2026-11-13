@@ -110,7 +110,7 @@ What SmoothRepresentationsOfLocalGroups must provide (gap:ordered-character-map)
 
 ### From TauCetiRoadmap.ReductiveGroups and TauCetiRoadmap.RepresentationTheory.LieHighestWeight
 
-ReductiveGroups Layer 1 (finite-dimensional algebraic representations as comodules), Layer 2 (the Lie algebra and the adjoint representation), Layer 7 (parabolic subgroups, Levi decompositions and Weyl groups of split reductive groups) and Layer 10, §10B (for a split connected reductive group over a field: the induced modules ∇(λ), the one-dimensional highest-weight line of weight λ, the simple socle L(λ) for dominant λ, and the classification of the simple rational modules by their dominant highest weights). LieHighestWeight Layer 3 (PBW, Verma modules M(μ) and their simple quotients L(μ)), Layer 4 (classification of finite-dimensional irreducibles by dominant integral highest weight), Layer 5 (complete reducibility), Layer 7 (the centre of U(g), the Harish-Chandra isomorphism and the dot action) and Layer 9 (reductive Lie algebras and gl_n), all over an algebraically closed field of characteristic zero; Layer 4.1 here descends them to split algebras over E.
+ReductiveGroups Layer 1 (finite-dimensional algebraic representations as comodules), Layer 2 (the Lie algebra and the adjoint representation, and the differential of a representation), Layer 4 (diagonalizable groups and tori, with their character lattices), Layer 7 (parabolic subgroups, Levi decompositions and Weyl groups of split reductive groups), Layer 8, §8.1 (split reductive groups with a specified split maximal torus and its character lattice; the lattice depends on the group, not on its Lie algebra or Dynkin diagram, as for SL_2 and PGL_2) and Layer 10, §10B (for a split connected reductive group over a field: the induced modules ∇(λ), the one-dimensional highest-weight line of weight λ, the simple socle L(λ) for dominant λ, and the classification of the simple rational modules by their dominant highest weights). LieHighestWeight Layer 3 (PBW, Verma modules M(μ) and their simple quotients L(μ)), Layer 4 (classification of finite-dimensional irreducibles by dominant integral highest weight), Layer 5 (complete reducibility), Layer 7 (the centre of U(g), the Harish-Chandra isomorphism and the dot action) and Layer 9 (reductive Lie algebras and gl_n), all over an algebraically closed field of characteristic zero; Layer 4.1 here descends them to split algebras over E.
 
 ### From TauCetiRoadmap.ArithmeticLocallySymmetricSpaces
 
@@ -799,7 +799,7 @@ Layers 0 and 2; VStackSheavesAndLisseCategories §§VS2.1–VS2.2; AdicSpacesPar
 
 ## Layer 4: Category O for split reductive Lie algebras
 
-This layer is pure Lie algebra over a field k of characteristic zero; in the applications k = E and the Lie algebra is g ⊗_(ℚ_p) E = ∏_(σ∈Σ_L) g_σ for a split reductive group over L, in particular ∏_σ gl_n. It descends the highest-weight theory of LieHighestWeight from an algebraic closure to split algebras over k, defines the BGG category O and its parabolic algebraic subcategories O^p_alg as Orlik–Strauch do, constructs generalised Verma modules and their simple quotients with the maximal parabolic of a simple object, the restricted BGG duality, the low-length Verma multiplicities for products of gl_n, and Kostant homology of nilradicals. Throughout, 𝔤 is a split reductive Lie algebra over k with split Cartan subalgebra 𝔥, Borel 𝔟 = 𝔥 ⊕ 𝔫 attached to a base Δ, Weyl group W, ρ the half-sum of positive roots, dot action w·μ = w(μ + ρ) − ρ, and X ⊆ 𝔥^* the lattice of differentials of algebraic characters of a split maximal torus T of a split reductive group with Lie algebra 𝔤.
+This layer is pure Lie algebra over a field k of characteristic zero; in the applications k = E and the Lie algebra is g ⊗_(ℚ_p) E = ∏_(σ∈Σ_L) g_σ, the Lie algebra of (Res_(L/ℚ_p)𝐆) ×_(ℚ_p) E = ∏_σ 𝐆 ×_(L,σ) E for a split connected reductive 𝐆 over L, in particular ∏_σ gl_n, or in 10.1 the subproduct over the embeddings other than a fixed one. It descends the highest-weight theory of LieHighestWeight from an algebraic closure to split algebras over k, defines the BGG category O and its parabolic algebraic subcategories O^p_alg as Orlik–Strauch do, constructs generalised Verma modules and their simple quotients with the maximal parabolic of a simple object, the restricted BGG duality, the low-length Verma multiplicities for products of gl_n, and Kostant homology of nilradicals. Throughout, 𝔤 = Lie(𝐆) for a split connected reductive group 𝐆 over k with split maximal torus 𝐓, both fixed as part of the data, 𝔥 = Lie(𝐓) the split Cartan subalgebra, Borel 𝔟 = 𝔥 ⊕ 𝔫 attached to a base Δ, Weyl group W, ρ the half-sum of positive roots, dot action w·μ = w(μ + ρ) − ρ, and X ⊆ 𝔥^* the lattice of differentials of the algebraic characters of 𝐓 (Orlik–Strauch, §2.5, pp. 7–8, and Definition 2.6, p. 8). The categories O and O^p depend only on 𝔤, 𝔥 and 𝔟; the lattice X, and with it O_alg and O^p_alg, depends on 𝐆 (4.2, Checks).
 
 ### 4.1 Highest-weight theory for split reductive Lie algebras over a field of characteristic zero
 
@@ -823,12 +823,13 @@ API:
 - Exactness of the forgetful functor to k-vector spaces and of restriction to 𝔩_P.
 - Each object of O^p_alg is generated by a finite-dimensional 𝔭-stable subspace W, giving a surjection U(𝔤) ⊗_(U(𝔭)) W → M.
 
-*Needs:* 4.1.
+*Needs:* 4.1; ReductiveGroups Layers 1, 4, 7 and 8 (algebraic representations, characters of split tori, Levi subgroups, split reductive groups), for X and (iii).
 
 **Checks.**
 
 - Degenerate case: for 𝔭 = 𝔤, O^g_alg is the category of finite-dimensional algebraic 𝔤-modules; for gl_2 the module det ⊕ Sym² lies in it.
-- The Verma module M(μ) lies in O_alg if and only if μ ∈ X (Orlik–Strauch, Example 2.7, p. 8): for gl_2 over ℚ_p, μ = (1/2, 0) gives an object of O but not of O_alg.
+- The Verma module M(μ) lies in O_alg if and only if μ ∈ X (Orlik–Strauch, Example 2.7, p. 8): for 𝐆 = GL_2 over ℚ_p, μ = (1/2, 0) gives an object of O but not of O_alg.
+- Dependence on the group: for 𝔤 = sl_2 over ℚ_p, 𝔥 = ℚ_p·H with H = diag(1, −1) and ϖ(H) = 1, the group SL_2 gives X = ℤϖ, and the standard two-dimensional module, of weights ±ϖ, lies in O^g_alg; PGL_2, with the same Lie algebra, gives X = ℤα = 2ℤϖ, since the character diag(t, 1) ↦ t of its torus has differential H ↦ 2, so the same module lies in O^g but not in O^g_alg. A lattice read off from 𝔤 alone could not give both answers.
 - Non-example: for gl_2 the infinite-dimensional module U(gl_2) ⊗_(U(𝔥)) k_0 is not in O, since 𝔫 does not act locally finitely.
 - Non-example to "finite-dimensional semisimple" as the endpoint: for k = ℚ_3 and 𝔤 = 𝔥 = Lie(𝔾_m), let the generator t act on k² by (0 3; 1 0). Its characteristic polynomial X² − 3 has no root in ℚ_3, a root having valuation 1/2, so k² ≅ k[t]/(t² − 3) is a simple, hence semisimple, two-dimensional 𝔤-module whose sum of k-weight spaces is 0, not 2-dimensional; it is not in O, and so not in O^g. After extension to ℚ_3(√3) it splits into the two weight lines t = ±√3. For 𝔤 = 𝔥, O^g consists exactly of the finite direct sums of one-dimensional modules k_μ, μ ∈ 𝔥^*.
 
@@ -901,7 +902,7 @@ For a standard parabolic P = M_P N_P ⊇ B of a split reductive group over E wit
 
 ### Dependencies
 
-LieHighestWeight Layers 3, 4, 5, 7, 9; ArithmeticLocallySymmetricSpaces ALS.4.5 with gap:kostant-split-reductive; `TauCeti.VermaModule`, `TauCeti.irreducibleQuotient`; Mathlib `UniversalEnvelopingAlgebra`.
+LieHighestWeight Layers 3, 4, 5, 7, 9; ReductiveGroups Layers 1, 4, 7 and 8; ArithmeticLocallySymmetricSpaces ALS.4.5 with gap:kostant-split-reductive; `TauCeti.VermaModule`, `TauCeti.irreducibleQuotient`; Mathlib `UniversalEnvelopingAlgebra`.
 
 ## Layer 5: Locally analytic parabolic induction, principal series and Schraen's spectral sequence
 
@@ -1590,14 +1591,14 @@ This layer decomposes the extension groups of Layers 8 and 9 over the embeddings
 
 ### 10.1 Locally σ-analytic and g_(Σ_L∖{σ})-algebraic representations
 
-Let σ ∈ Σ_L and G a locally L-analytic group. Define a locally ℚ_p-analytic representation V to be locally σ-analytic if the action of g ⊗_(ℚ_p) E = ∏_τ g_τ (0.3) factors through g_σ, and g_(Σ_L∖{σ})-algebraic if for every v the module U(g_(Σ_L∖{σ}))·v is a finite-dimensional algebraic representation of g_(Σ_L∖{σ}) := ∏_(τ≠σ) g_τ; D_σ(G, E) is the quotient of D(G, E) acting on locally σ-analytic representations, dual to the locally σ-analytic functions (0.4 (vi) with the σ-analytic structure). For g_(Σ_L∖{σ})-algebraic V, W, Ext¹_σ(V, W) ⊆ Ext¹_G(V, W) is the subspace of g_(Σ_L∖{σ})-algebraic extensions; for admissible locally σ-analytic V, W it is Ext¹_(D_σ(G,E))(W′, V′) (1.8). Hom_σ(T(L), E) and Hom_(σ,g′) are as in 8.1; (Ind_P^G U)^(σ-an) is 5.1 (vi) (Ding, §3.1.4, the first paragraph, arXiv v2 p. 48; Breuil, Ext¹, §2.1 and Lemme 2.1.1, p. 10). Prove that both conditions are conditions on the Lie action, stable under subquotients, and that g_(Σ∖σ)-algebraic extensions are closed under Baer sum and scalar multiplication, so Ext¹_σ is a subspace.
+Let σ ∈ Σ_L and G a locally L-analytic group with L-Lie algebra g. Define a locally ℚ_p-analytic representation V to be locally σ-analytic if the action of g ⊗_(ℚ_p) E = ∏_τ g_τ (0.3) factors through g_σ; D_σ(G, E) is the quotient of D(G, E) acting on locally σ-analytic representations, dual to the locally σ-analytic functions (0.4 (vi) with the σ-analytic structure; Breuil, Ext¹, §2.1, p. 10). Algebraicity away from σ is measured against an algebraic group, which G and g do not determine. For it, let 𝐆 be a split connected reductive group over L with split maximal torus 𝐓 and G an open subgroup of 𝐆(L) with the L-analytic structure of Conventions 2, the inclusion G ⊆ 𝐆(L) being part of the data, so that g = Lie(𝐆) (0.1). Put 𝐆_(Σ∖σ) := ∏_(τ≠σ) 𝐆 ×_(L,τ) E, a split connected reductive group over E with split maximal torus 𝐓_(Σ∖σ) := ∏_(τ≠σ) 𝐓 ×_(L,τ) E and Lie algebra g_(Σ_L∖{σ}) := ∏_(τ≠σ) g_τ. Define V to be g_(Σ_L∖{σ})-algebraic if for every v the module U(g_(Σ_L∖{σ}))·v is finite-dimensional and lies in the category O^g_alg of 4.2 (the case 𝔭 = 𝔤) for 𝔤 = g_(Σ_L∖{σ}) and the group 𝐆_(Σ∖σ) with its torus 𝐓_(Σ∖σ): Lie(𝐓_(Σ∖σ)) acts on it diagonalisably with weights in the lattice X of differentials of characters of 𝐓_(Σ∖σ); equivalently (4.2 (iii) for 𝔭 = 𝔤) it is the differential of an algebraic representation of 𝐆_(Σ∖σ) (ReductiveGroups Layers 1 and 2). For admissible g_(Σ_L∖{σ})-algebraic V, W, Ext¹_σ(V, W) ⊆ Ext¹_G(V, W) is the subspace of the classes of extensions (1.8) whose middle term is g_(Σ_L∖{σ})-algebraic. For G = 𝐆(L), Hom_σ(T(L), E) and Hom_(σ,g′) are as in 8.1, and (Ind_P^G U)^(σ-an) is 5.1 (vi) (Ding, §3.1.4, the first paragraph, arXiv v2 p. 48, for 𝐆 = GL_n; Breuil, Ext¹, §2.1 and Lemme 2.1.1, p. 10). Prove: (1) both conditions are conditions on the Lie action, stable under subrepresentations, quotients and finite direct sums; (2) g_(Σ∖σ)-algebraic extensions are closed under Baer sum and scalar multiplication, so Ext¹_σ is a subspace; (3) for admissible locally σ-analytic V, W, which are g_(Σ∖σ)-algebraic with g_(Σ∖σ) acting by zero, every g_(Σ∖σ)-algebraic extension of V by W is locally σ-analytic, so Ext¹_σ(V, W) = Ext¹_(D_σ(G,E))(W′, V′) (1.8). The proof route: (1) from 4.2 (i), O^g_alg being closed under submodules, quotients and finite direct sums, with U(g_(Σ∖σ))·(v_1, v_2) ⊆ U(g_(Σ∖σ))·v_1 ⊕ U(g_(Σ∖σ))·v_2; (2) the Baer sum and the scalar multiple are subquotients of direct sums of the given extensions and of W; (3) for x in the middle term, U(g_(Σ∖σ))·x is a finite-dimensional object of O^g_alg, semisimple by 4.2 (ii), whose composition factors are trivial because g_(Σ∖σ) kills V and W, so g_(Σ∖σ) acts on it by zero.
 
 API:
 
-- Locally algebraic representations are g_(Σ∖σ)-algebraic for every σ.
+- For G = 𝐆(L), locally algebraic representations (1.6) are g_(Σ∖σ)-algebraic for every σ: the restriction of an algebraic representation of ∏_τ 𝐆 ×_(L,τ) E to the factor 𝐆_(Σ∖σ) is algebraic.
 - (Ind_P^G U)^(σ-an) ⊆ (Ind_P^G U)^(ℚ_p-an).
 
-*Needs:* 0.3, 0.4, 1.7, 1.8, 5.1, 8.1.
+*Needs:* 0.1, 0.3, 0.4, 1.6, 1.7, 1.8, 4.2, 5.1, 8.1; ReductiveGroups Layers 1 and 2 (algebraic representations of 𝐆_(Σ∖σ) and their differentials).
 
 **Checks.**
 
@@ -1605,6 +1606,7 @@ API:
 - dim Hom_σ(L^×, E) = 2 (valuation and σ ∘ log), and dim Hom_(σ,g′)(T(L), E) = n + 1.
 - Non-example: for L ≠ ℚ_p and τ ≠ σ, the multiplicative character x ↦ τ(x) of L^× is locally ℚ_p-analytic but not locally σ-analytic.
 - For z^μ with μ_τ = 0 for τ ≠ σ, z^μ is locally σ-analytic; if μ_τ ≠ 0 for some τ ≠ σ it is g_(Σ∖σ)-algebraic but not locally σ-analytic.
+- Dependence on the algebraic group, the inclusion G ⊆ 𝐆(L) being part of the data: let L = E = ℚ_3(√3), σ the identity and τ the conjugation, 𝐆 = 𝐓 = 𝔾_m and G = H = 1 + 3O_L, open in L^×, on which log : H → 3O_L is an isomorphism (3O_L is the set where v_3 ≥ 1, inside the disc v_3 > 1/2 on which exp and log are inverse). The characters χ_1 = τ|_H and χ_(1/2) = exp(½·log τ(·)) of H are locally ℚ_3-analytic and not locally σ-analytic, g_τ acting by 1 and by 1/2. For the inclusion H ⊆ 𝔾_m(L), χ_1 is g_(Σ∖σ)-algebraic and χ_(1/2) is not, the rational characters t ↦ t^m of 𝔾_m having differentials m ∈ ℤ. The squaring map j(g) = g² is an L-analytic automorphism of H (multiplication by 2 ∈ ℤ_3^× after log) with χ_1 ∘ j⁻¹ = χ_(1/2); for the embedding j : H → 𝔾_m(L) in place of the inclusion, rational characters pull back to τ(·)^(2m), of differential 2m, and 2m = 1 has no solution m ∈ ℤ, so χ_1 is not algebraic for it. A condition read off from the locally L-analytic group H or from its Lie algebra alone could not separate χ_1 from χ_(1/2).
 
 ### 10.2 The parts π_(1,σ)(φ, h) and PS_(1,σ)(w(φ), h)
 
@@ -1691,7 +1693,7 @@ Assume n ≥ 2. With F and G as in 9.7, prove that there are natural exact seque
 
 ### Dependencies
 
-Layers 0, 1, 5–9.
+Layers 0, 1, 4–9; ReductiveGroups Layers 1 and 2.
 
 ## Downstream consumers
 
