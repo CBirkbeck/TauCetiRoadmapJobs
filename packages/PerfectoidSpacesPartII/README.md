@@ -47,8 +47,9 @@ This roadmap owns, layer by layer:
   `D^b(A)`, the uniform variant relative to a second root system, the almost vanishing of derived
   limits, the stability under linear functors, and the passage of uniform annihilation through
   derived tensor products.
-- Layer 1: the annular tower `A⟨tⁿ/g⟩` of an integral perfectoid algebra with its almost
-  presentation, and Bhatt's quantitative Riemann extension theorem in its four forms.
+- Layer 1: the annular tower `A⟨tⁿ/g⟩` of an integral perfectoid algebra (Tau Ceti's plus presheaf
+  on the increasing annuli) with its almost presentation, and Bhatt's quantitative Riemann extension
+  theorem in its four forms.
 - Layer 2: the `p`-root closure and the localised complete integral closure, André's dictionary
   between uniform Banach algebras and their unit balls, the root saturation `g^{-1/p^∞}B°`, Laurent
   and Weierstrass localisations of uniform Banach algebras with their unit balls, uniform limits and
@@ -77,8 +78,9 @@ It leaves to other roadmaps, by section:
   multipliers (Mathlib `completeIntegralClosure`, `IsAlmostIntegral`), localisations, flat and
   faithfully flat modules, adic completion, Witt vectors, power series rings, cyclotomic
   polynomials, Krull's intersection theorem (`Ideal.mem_iInf_smul_pow_eq_bot_iff`), linear functors
-  and derived categories; Tau Ceti's Huber and Tate rings, power-bounded subrings, uniformity and
-  presentationwise rational localisations with their plus rings, perfectoid Tate rings
+  and derived categories; Tau Ceti's Huber and Tate rings, power-bounded subrings, uniformity,
+  presentationwise rational localisations with their plus rings, the structure presheaf of
+  `Spa(A, A⁺)` with its plus presheaf `𝒪_X⁺` and the canonical maps `A → 𝒪_X(V)`, perfectoid Tate rings
   (`TauCeti.Perfectoid.IsPerfectoidTateRing`), basic setups, almost modules and their almostification,
   and the finite-projective trace `LinearMap.projectiveTrace`. The uniform Banach limits and
   almost algebra structures used below remain targets of their named owners.
@@ -204,15 +206,22 @@ It leaves to other roadmaps, by section:
 - Krull's intersection theorem `Ideal.mem_iInf_smul_pow_eq_bot_iff`, with `IsNoetherianRing` and
   `Module.annihilator`.
 - Completion: `IsAdicComplete`, `AdicCompletion` (the `I`-adic completion of an `R`-module, an
-  `R`-module).
+  `R`-module; for `M = R` a commutative ring and an `S`-algebra whenever `R` is,
+  `Mathlib/RingTheory/AdicCompletion/Algebra.lean`).
 - The Kummer tower: `WittVector`, `MvPowerSeries`, `MvPowerSeries.X`, `MvPolynomial`,
   `Polynomial.cyclotomic`, `IsIntegralClosure.finite`, `Algebra.adjoin`, `Subalgebra.inclusion`.
-- Étale algebras and traces: `Algebra.Etale`, `Module.Finite`, `Module.Free`, `LinearMap.trace`.
+- Étale algebras and traces: `Algebra.Etale`, `Module.Finite`, `Module.Free`, `LinearMap.trace`,
+  with `IsReduced` and the left-factor algebra structure `Algebra.TensorProduct.leftAlgebra` of a
+  tensor product.
   `LinearMap.trace` is defined through a finite basis and is `0` on a module without one;
   finite-projective traces use Tau Ceti `LinearMap.projectiveTrace` and almost traces use
   PerfectoidSpaces P0.12.
 - Categories and homological algebra: `CategoryTheory.Functor.Linear`, `DerivedCategory`,
-  `CategoryTheory.Limits.limit`.
+  `CategoryTheory.Tor`, `CategoryTheory.Limits.limit` with `CommRingCat.hasLimits`
+  (`Mathlib/Algebra/Category/Ring/Limits.lean`: commutative rings have all small limits) and
+  `Monotone.functor` (the functor `ℕ ⥤ Opens X` of an increasing sequence of opens). The pinned
+  library has no derived tensor product of complexes; Layer 1 takes it from DerivedModuleAlgebra
+  §0.2.
 - Perfection and fields: `Perfection` (the inverse limit along Frobenius), `PerfectClosure` (the
   direct limit along Frobenius), `ModP`, `NormedField.valuation`, `smoothingSeminorm`,
   `IsSMulRegular`, `IsIdempotentElem`.
@@ -261,9 +270,25 @@ It leaves to other roadmaps, by section:
   of the construction, `RingTheory/Huber/LocalizationTopology/Basic.lean`) and
   `TauCeti.ValuationSpectrum.pairHomOfRationalSubsetSubset` (the comparison morphism of an
   inclusion of rational subsets, `AlgebraicGeometry/AdicSpace/Spa/Localization/PlusComparison.lean`).
-  These objects are presentationwise: there is no functor on the rational subsets and no limit over
-  them, which is why Layer 1's tower is a README target; the two clauses of §1.2 use one
-  restriction map at a time and `Suggested.lean` states them on these carriers.
+  These objects are presentationwise: each rational subset carries one completion per
+  presentation, with comparison morphisms between presentations. The two clauses of §1.2 and the
+  kernel clause of §1.4 use one restriction map at a time, and `Suggested.lean` states them on these
+  carriers.
+- Structure presheaf and plus presheaf: `TauCeti.ValuationSpectrum.spaBasicOpen` (the rational
+  subset `R(T/s)` as an open of `Spa(A, A⁺)`, `AlgebraicGeometry/AdicSpace/Spa/RationalSubset/Basic.lean`),
+  the presentation-limit structure presheaf of rings
+  `TauCeti.ValuationSpectrum.presentationLimitPresheafInCommRingCat`
+  (`Spa/StructurePresheaf/Stalk/Basic.lean`), the canonical map
+  `TauCeti.ValuationSpectrum.toPresentationLimit : A → 𝒪_X(V)` for complete Hausdorff `A`, an
+  isomorphism for `V = X` (`TauCeti.ValuationSpectrum.isIso_toPresentationLimit_top`, `Spa/StructurePresheaf/GlobalSections.lean`),
+  and the plus presheaf `TauCeti.ValuationSpectrum.presentationLimitPlusPresheaf`, a functor on all
+  opens with values `𝒪_X⁺(V) = {f ∈ 𝒪_X(V) : v_x(f_x) ≤ 1 for x ∈ V}`, with its inclusion
+  `TauCeti.ValuationSpectrum.presentationLimitPlusPresheafι : 𝒪_X⁺ ⟶ 𝒪_X` and, on a rational open with open numerator ideal,
+  the identification of `𝒪_X⁺(R(T/s))` with `completedPlusSubring`
+  (`TauCeti.ValuationSpectrum.map_completedPlusSubring_eq_presentationLimitPlusSubring`;
+  `Spa/StructurePresheaf/Plus/Basic.lean`, lines 116, 151 and 225). Assumed: `A⁺` consists of
+  power-bounded elements and contains the ring of definition (`TauCeti.Huber.PairOfDefinition.le_powerBoundedSubring`
+  gives this for `A⁺ = A°`). §1.1's tower is this presheaf on the annuli, and §1.5 is stated on it.
 
 ### From TauCetiRoadmap.PerfectoidSpaces
 
@@ -640,13 +665,18 @@ that, modulo `tᵐ`, `A` is almost-pro-isomorphic to this tower with uniform con
 For `n ≥ 1` put `X⟨tⁿ/g⟩ = {x ∈ X : |tⁿ(x)| ≤ |g(x)|}`, a rational subset, and
 `A⟨tⁿ/g⟩ = O⁺_X(X⟨tⁿ/g⟩)` (Bhatt, Notation 4.1, p. 6, and §1.2, p. 2). Since
 `X⟨tⁿ/g⟩ ⊆ X⟨t^{n+1}/g⟩`, restriction gives maps `A⟨t^{n+1}/g⟩ → A⟨tⁿ/g⟩`, and with the structure
-maps `f_n : A → A⟨tⁿ/g⟩` they form a tower under `A`. The intended signature is a functor from
-`ℕ≥1ᵒᵖ` to `K°`-algebras under `A`, built from PerfectoidSpaces P2.3–P2.4's perfectoid rational
-localisation on Tau Ceti's rational localisation (`TauCeti.Huber.PairOfDefinition.completedPlusSubring`
-for the presentation `({tⁿ, g}, g)`, with the comparison morphisms
-`TauCeti.ValuationSpectrum.pairHomOfRationalSubsetSubset` as transitions; each term, the structure
-map `f_n` and each single restriction map are already statable on these carriers, and §1.2 is
-stated so in `Suggested.lean`; the functor and the limit over `n` are this layer's). In `A⟨tⁿ/g⟩` the
+maps `f_n : A → A⟨tⁿ/g⟩` they form a tower under `A`. With `A = R°` for the perfectoid Tate ring
+`R = A[1/t]`, the tower is Tau Ceti's plus presheaf `TauCeti.ValuationSpectrum.presentationLimitPlusPresheaf` of
+`Spa(R, R°)` composed with the increasing sequence of opens `n ↦ X⟨tⁿ/g⟩`: in `Suggested.lean`,
+`annularOpen t g n` is the open `X⟨tⁿ/g⟩` (`TauCeti.ValuationSpectrum.spaBasicOpen` of the presentation `({tⁿ, g}, g)`),
+`annularTower P t g h` is the functor `ℕᵒᵖ ⥤ CommRingCat` (`h` the monotonicity of the opens), and
+`coeffToSections P R° V` is the canonical map `R → 𝒪_X(V)` (Tau Ceti `TauCeti.ValuationSpectrum.toPresentationLimit`) through
+which `f_n` is read, followed by the inclusion `𝒪⁺ ⊆ 𝒪`. Since `tⁿ` is a unit of `R`, the
+numerator ideal of `({tⁿ, g}, g)` is the unit ideal, so each term is identified with
+`TauCeti.Huber.PairOfDefinition.completedPlusSubring` of that presentation, the carrier on which
+§1.2 is stated in `Suggested.lean` with the restriction maps
+`TauCeti.ValuationSpectrum.pairHomOfRationalSubsetSubset`. PerfectoidSpaces P2.3–P2.4 supply the
+perfectoid structure of the terms. In `A⟨tⁿ/g⟩` the
 functions `u_n^{1/p^k} := (tⁿ/g)^{1/p^k}` are bounded, `g^{1/p^k}u_n^{1/p^k} = t^{n/p^k}`, and `g`
 divides `tⁿ`. For every `m ≥ 0` the map
 `A[u_n^{1/p^∞}]/(tᵐ, (u_ng)^{1/p^k} − t^{n/p^k} for all k) → A⟨tⁿ/g⟩/tᵐ` is an almost isomorphism
@@ -662,9 +692,11 @@ isomorphism, and reduction modulo `tᵐ` gives the presentation. Restriction fro
 `X⟨tⁿ/g⟩` sends `t^{n+1}/g` to `t·(tⁿ/g)`.
 
 *Needs:* PerfectoidSpaces P0.2, P1.25, P2.3, P2.4; Tau Ceti
+`TauCeti.ValuationSpectrum.presentationLimitPlusPresheaf`,
+`TauCeti.ValuationSpectrum.toPresentationLimit`,
 `TauCeti.Huber.PairOfDefinition.completedPlusSubring`,
 `TauCeti.Huber.PairOfDefinition.toCompletionLoc`,
-`TauCeti.ValuationSpectrum.pairHomOfRationalSubsetSubset`.
+`TauCeti.ValuationSpectrum.pairHomOfRationalSubsetSubset`; Mathlib `Monotone.functor`.
 
 Its API consists of the following facts.
 
@@ -722,8 +754,11 @@ inclusions of the annuli are hypotheses of the statements; each holds for every 
 they weaken nothing. Almost zero is written out: (1) says that `f_n(a) ∈ tᵐA⟨tⁿ/g⟩` for `a ∈ A`
 forces `t^{1/p^l}a ∈ tᵐA` for every `l`, under the hypothesis that `ga ∈ tᵐA` forces the same; (2)
 says that for every `x ∈ A⟨t^{n+c}/g⟩` with `c = pᵏm` and every `l`, `g^{1/p^k}t^{1/p^l}ρ_{n+c,n}(x)`
-lies in `f_n(A) + tᵐA⟨tⁿ/g⟩`. Neither statement uses the normalisation `|t| = |p|`. (3) is a
-statement about the towers and is not stated.
+lies in `f_n(A) + tᵐA⟨tⁿ/g⟩`. Neither statement uses the normalisation `|t| = |p|`. (3) unfolds,
+by the definition of §0.1, to the conjunction of (2) with a kernel clause for the same offset; for
+almost regular `g` the kernel clause is (1), and without regularity it is
+`bhatt_kernel_without_regularity` (§1.4). Raising the two offsets to their maximum gives (3), so it is
+not stated separately.
 
 *Proof sketch.* Replace `A⟨tⁿ/g⟩/tᵐ` by its almost presentation `M_n` (§1.1). Kernels: every
 `g^{1/p^k}` is an almost nonzerodivisor on `A/tᵐ`, and comparing coefficients of the monomials `u_n^e`
@@ -809,16 +844,42 @@ and cokernel are killed by every `(tg)^{1/p^k}` (Bhatt, Remark 1.7, p. 3). Geome
 function on the Zariski open `{g ≠ 0} = ⋃_n X⟨tⁿ/g⟩` of `X` almost extends to `X`. This is the
 principal case of Scholze's Hebbarkeitssatz in mixed characteristic.
 
+`bhatt_riemann_extension_limit` states it on the tower of §1.1, with the hypotheses on `K`, `R`, `t`
+and `g` of §1.2 and no regularity hypothesis on `g`. The limit is `CategoryTheory.Limits.limit` of
+`annularTower` in commutative rings, and the canonical map is read componentwise: the image of
+`a ∈ R°` in `𝒪_X(X⟨tⁿ/g⟩)` is `coeffToSections`, and a component of an element of the limit is
+compared through the inclusion `TauCeti.ValuationSpectrum.presentationLimitPlusPresheafι : 𝒪⁺ ⟶ 𝒪`. Kernel: if the image of
+`a ∈ R°` vanishes on every annulus, then `(tg)^{1/p^k}a = 0` for every `k`. Cokernel: for every
+element `x` of the limit and every `k` there is `a ∈ R°` whose image on every annulus is
+`(tg)^{1/p^k}xₙ`, with the same `a` for all `n`. The monotonicity of `n ↦ X⟨tⁿ/g⟩`, needed to form
+the tower, is a hypothesis; it always holds, since `t ∈ R°` gives `|t| ≤ 1` on `Spa(R, R°)` and hence
+`|t^{n+1}| ≤ |tⁿ| ≤ |g|`. The index runs over `n ≥ 0`; the term at `n = 0` does not change the
+limit of a tower.
+
 *Proof sketch.* For each `m`, §1.4 and §0.3 give that `A/tᵐ → R lim_n A⟨tⁿ/g⟩/tᵐ` is an almost
 isomorphism. Then take `R lim` over `m`: `A` and every `A⟨tⁿ/g⟩` are `t`-adically complete and the
 towers over `m` have surjective transitions, so limits over `m` and `n` commute and no `lim¹` in `m`
 appears; the almost isomorphism passes to the limit (PerfectoidSpaces P0.27).
 
-*Needs:* §0.3, §1.4; PerfectoidSpaces P0.27.
+The kernel statement is exact, not only almost modulo `tᵐ`: if `a` dies on every annulus, then for
+every `m` the kernel half of §1.4 puts `(tg)^{1/p^k}a` in `tᵐA`, and `⋂_m tᵐA = 0` because `A` is
+bounded in the Hausdorff ring `R` and `tᵐ → 0`.
+
+*Needs:* §0.3, §1.1, §1.4; PerfectoidSpaces P0.27; Tau Ceti
+`TauCeti.ValuationSpectrum.presentationLimitPlusPresheaf`,
+`TauCeti.ValuationSpectrum.toPresentationLimit`; Mathlib `CategoryTheory.Limits.limit`,
+`CommRingCat.hasLimits`.
 
 **Checks.**
 
 - For `g` a unit both sides equal `A`.
+- For `g = 0` (all roots `0`) every annulus `{|tⁿ| ≤ |0| ≠ 0}` is empty and the limit is the zero
+  ring, so the kernel is all of `A`; it is killed by `(tg)^{1/p^k} = 0`, and the cokernel clause
+  holds with `a = 0`. A version asserting injectivity, or almost injectivity for `t^{1/p^∞}` alone,
+  fails here for `A ≠ 0`.
+- For `A = K°⟨T^{1/p^∞}⟩ × K°` and `g = (T, 0)` the kernel is `(0) × K°`: the annuli lie in the
+  first component. It is killed by `(tg)^{1/p^k} = (t^{1/p^k}T^{1/p^k}, 0)` but not by `t^{1/p^k}`, so
+  the almost setup of the limit form is that of `(tg)^{1/p^∞}`, as stated.
 - When `g` is a nonzerodivisor, André's theorem (§3.6) identifies the limit exactly with
   `g^{-1/p^∞}A`, consistently with this almost statement.
 - For `A = K°⟨T^{1/p^∞}⟩` and `g = T` the map is an isomorphism onto `lim_n A⟨tⁿ/T⟩ = A` (§2.3's
@@ -837,7 +898,10 @@ appears; the almost isomorphism passes to the limit (PerfectoidSpaces P0.27).
 
 Layer 0; PerfectoidSpaces P0.2, P0.27, P1.25, P1.30, P2.3, P2.4; DerivedModuleAlgebra §§0.K.1, 0.2;
 Tau Ceti `TauCeti.Huber.PairOfDefinition.completedPlusSubring`,
-`TauCeti.ValuationSpectrum.pairHomOfRationalSubsetSubset`.
+`TauCeti.ValuationSpectrum.pairHomOfRationalSubsetSubset`,
+`TauCeti.ValuationSpectrum.presentationLimitPlusPresheaf`,
+`TauCeti.ValuationSpectrum.toPresentationLimit`; Mathlib `CategoryTheory.Limits.limit`,
+`CommRingCat.hasLimits`, `Monotone.functor`.
 
 ## Layer 2: Uniform Banach algebras: closures, localisations, uniform limits and colimits
 
@@ -2263,6 +2327,8 @@ faithfully flat over every finite `A°_{j0}`, and so is its
   `ζ_j − 1` as an element of `A°_∞0`, and `kummerAlmostIdeal p k n g` is the ideal of `A°_∞0` they
   generate, which is `K°°_∞·A°_∞0` because `K°°_∞ = ⋃_j (ζ_{p^j} − 1)K°_∞` (the valuations of the
   `ζ_{p^j} − 1` tend to `0`).
+- `kummerRoot p k n g l` is `g^{1/p^l}` as an element of `A°_∞∞ = kummerIntegralStage p k n g ⊤ ⊤`,
+  integral over `A` as a root of the monic `X^{p^l} − g`.
 
 The stage subalgebra is the image of André's abstract `A_jl`, and the two agree. For finite indices
 `j ≤ j′` and `l ≤ l′` the transition `A_jl → A_{j′l′}` is a localisation of a finite free extension
@@ -2606,7 +2672,26 @@ almost faithfully flat, hence almost pure (§5.2). For the corollary, almost zer
 both setups and `S` is almost isomorphic to `Â°_∞∞` there, so `S/p^m → B°/p^m` is almost pure, and so is
 `S/p^m → (B ⊗_A S)/p^m`, through which it factors.
 
-*Needs:* §4.7, §5.2, §5.6, §5.10, §5.11; PerfectoidSpaces P0.11, P0.16.
+`kummer_ramified_almost_faithfullyFlat` states the first assertion. `KummerCompletion p k n g` is
+`Â°_∞∞`, the `p`-adic completion of the ring `A°_∞∞` (Mathlib `AdicCompletion`, with its ring and
+`A`-algebra structures); `KummerCompletionAway p k n g` is its localisation away from `pg`, which is
+`Â_∞∞[1/g]` because `Â_∞∞ = Â°_∞∞[1/p]`; and `B°` is Mathlib's `integralClosure` of `Â°_∞∞` in
+`Â_∞∞[1/g] ⊗_A B`, the tensor product of the statement with its factors exchanged, so that `Â°_∞∞`
+acts through the left factor (`Algebra.TensorProduct.leftAlgebra`). `kummerRamifiedIdeal p k n g` is the
+ideal of `Â°_∞∞` generated by the images of `(ζ_j − 1)g^{1/p^l}` (`kummerZetaSubOne` times `kummerRoot`)
+for all `j, l`; it is the extension of `T^{1/p^∞}K°°_∞[T^{1/p^∞}]` along `T^{1/p^l} ↦ g^{1/p^l}`, since
+`K°°_∞ = ⋃_j (ζ_{p^j} − 1)K°_∞`, and it is idempotent: `ζ_j − 1` is a unit of `K°_∞` times
+`(ζ_{j+1} − 1)^p` for `j ≥ 1`, and `g^{1/p^l} = (g^{1/p^{l+1}})^p`. `B°/p^m` is written as the base
+change `(Â°_∞∞/p^m) ⊗_{Â°_∞∞} B°`, and almost faithful flatness over `Â°_∞∞/p^m` is `IsAlmostFaithfullyFlat`
+(§5.2) for the image of `kummerRamifiedIdeal`: a `Â°_∞∞/p^m`-module is killed by the setup's ideal acting
+through `K°_∞[T^{1/p^∞}] → Â°_∞∞` exactly when it is killed by that image. The étale hypothesis is
+written for `A[1/(pg)] ⊗_A B = B[1/(pg)]`, `p`-torsion-freeness as Mathlib `IsSMulRegular B p`, and
+`g ∉ pA` as `g ∉ Ideal.span {p}`. The corollary for `S` follows from the theorem through §5.2 and §5.11 and
+is not stated separately.
+
+*Needs:* §4.7, §5.2, §5.4, §5.6, §5.10, §5.11; PerfectoidSpaces P0.11, P0.16; Mathlib `AdicCompletion`,
+`Localization.Away`, `integralClosure`, `Algebra.Etale`, `Algebra.TensorProduct.leftAlgebra`,
+`IsReduced`, `IsSMulRegular`.
 
 **Checks.**
 
@@ -2617,6 +2702,17 @@ both setups and `S` is almost isomorphic to `Â°_∞∞` there, so `S/p^m → B
   (§3.6, the root saturation along `g`).
 - For `B = A × A` the conclusion is almost faithful flatness of the diagonal into a product of two
   copies, which holds on the nose.
+- For `m = 0` the ideal `(p⁰) = (1)` makes both `Â°_∞∞/p⁰` and the base change zero rings, and the
+  statement holds trivially; for `m = 1` the coefficients reduce to `W(k)/p = k`, which has `2`
+  elements for `k = 𝔽₂` and `3` for `k = 𝔽₃`, and the statement is a genuine assertion about
+  characteristic-`p` algebras. A version stated without the reduction modulo `p^m` would assert almost
+  flatness of `B°` itself, which the source does not claim.
+- The hypothesis `A → B` injective excludes `B = 0`, for which `B° = 0` and the faithfulness half fails
+  for `m ≥ 1`: `0 ⊗ N = 0` is almost zero for every `N`, so faithfulness would make `N = Â°_∞∞/p^m`
+  almost zero, that is, put the ramified ideal inside `p^mÂ°_∞∞`. For `n = 0`, `k = 𝔽_p` and `g = 1`
+  the ideal contains `ζ_{p²} − 1`, and the evaluation `g^{1/p^l} ↦ 1` maps `Â°_∞∞` to the completed
+  `K°_∞`, where `ζ_{p²} − 1` has valuation `1/(p(p − 1))` (`1/2` at `p = 2`, `1/6` at `p = 3`), less
+  than `v(p^m) = m`; so `ζ_{p²} − 1 ∉ pÂ°_∞∞`.
 - With the Krull detection lemma and Hochster's Mittag-Leffler argument, this proves the direct summand
   theorem (André B, §§3.3–3.4), which belongs to Direct summands and big Cohen–Macaulay algebras.
 
@@ -2638,7 +2734,8 @@ P2.2, P2.3, P3.13; PerfectoidQuotients §1.4; DerivedDeRhamCohomology §1.10; De
 `Algebra.adjoin`, `Subalgebra.inclusion`, `IsIntegralClosure.finite`, `AdicCompletion`, `IsAdicComplete`,
 `IsNoetherianRing`, `LinearMap.lTensor`, `Module.Flat`, `Module.FaithfullyFlat`,
 `Module.FaithfullyFlat.lTensor_injective_iff_injective`, `Module.annihilator`,
-`Ideal.mem_iInf_smul_pow_eq_bot_iff`.
+`Ideal.mem_iInf_smul_pow_eq_bot_iff`, `Algebra.Etale`, `Algebra.TensorProduct.leftAlgebra`, `IsReduced`,
+`IsSMulRegular`.
 
 ## Corrections to the sources
 

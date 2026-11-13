@@ -7,6 +7,9 @@ public import TauCeti.RingTheory.Huber.Bounded
 public import TauCeti.RingTheory.Huber.PowerBounded
 public import TauCeti.RingTheory.Huber.LocalizationTopology.Plus
 public import TauCeti.AlgebraicGeometry.AdicSpace.Spa.Localization.PlusComparison
+public import TauCeti.AlgebraicGeometry.AdicSpace.Spa.StructurePresheaf.GlobalSections
+public import TauCeti.AlgebraicGeometry.AdicSpace.Spa.StructurePresheaf.Stalk.Basic
+public import TauCeti.AlgebraicGeometry.AdicSpace.Spa.StructurePresheaf.Plus.Basic
 
 /-!
 # Perfectoid rings and spaces, Part II: target signatures
@@ -25,7 +28,13 @@ Stated here:
   localisation: `A⟨tⁿ/g⟩` is `TauCeti.Huber.PairOfDefinition.completedPlusSubring` of the
   presentation `({tⁿ, g}, g)`, the structure map is `toCompletionLoc`, and the restriction from
   `n + c` to `n` is `TauCeti.ValuationSpectrum.pairHomOfRationalSubsetSubset` of the inclusion of
-  rational subsets; each clause uses one restriction map at a time.
+  rational subsets; each clause uses one restriction map at a time. The assembled
+  almost-pro-isomorphism (README §1.2(3), and §1.4) is the conjunction of the cokernel clause with
+  a kernel clause, the offsets being raised to their maximum, and is not restated.
+* Bhatt's Riemann extension theorem after limits (README §1.5; Bhatt, Remark 1.7):
+  `bhatt_riemann_extension_limit`, on the annular tower `annularTower`, Tau Ceti's plus presheaf
+  `TauCeti.ValuationSpectrum.presentationLimitPlusPresheaf` along the opens `annularOpen` of the
+  annuli, with its limit in commutative rings and the canonical maps `coeffToSections`.
 * André's perfectoid Riemann extension theorem, in its complete-integral-closure form
   (README §3.6; André, *Le lemme d'Abhyankar perfectoïde*, Théorème 4.2.2 and Lemme 4.2.3):
   `riemann_extension_completeIntegralClosure`.
@@ -34,16 +43,18 @@ Stated here:
   `kummer_isPureHom`.
 * André's flatness theorem for the Kummer tower (README §5.8; André, *La conjecture du facteur
   direct*, Théorème 2.5.2): `kummer_almost_faithfullyFlat`.
+* Ramified almost faithful flatness modulo `pᵐ` for the Kummer tower (README §5.12; André, *La
+  conjecture du facteur direct*, Théorème 3.2.1): `kummer_ramified_almost_faithfullyFlat`, on the
+  completed tower `KummerCompletion`, its localisation `KummerCompletionAway` and the ramified
+  ideal `kummerRamifiedIdeal`. Its consequence for the integral model `S` of README §5.11 follows
+  through README §5.2 and is not restated.
 
 Headline theorems of the README that are not statable at the pins, and what each lacks:
 
-* The assembled almost-pro-isomorphism of Bhatt's theorem, its derived form and its limit form
-  (README §1.2(3), §1.3, §1.5). They are statements about the tower
-  of rings `A⟨tⁿ/g⟩ = O⁺(X⟨tⁿ/g⟩)` as a pro-object, about derived tensor products over its terms,
-  and about its limit. Tau Ceti builds each `O⁺` of a rational subset only presentationwise, on a
-  completion whose type depends on the presentation, with comparison morphisms between pairs of
-  presentations but no functor on the rational subsets and no limit over them; the tower as a
-  single object and its limit are missing.
+* The derived form of Bhatt's theorem (README §1.3). It concerns `K ⊗^L_{A/tᵐ} A⟨tⁿ/g⟩/tᵐ` for
+  every complex `K` in the derived category of `A/tᵐ`-modules; the pinned Mathlib has the derived
+  category and `CategoryTheory.Tor` for objects, but no derived tensor product of complexes, and
+  restricting to modules would lose the complexes the theorem is about.
 * The first clause of André's Riemann extension theorem, `lim_j A{ϖʲ/g}° = g^{-1/p^∞}A°`, and the
   nested-systems theorem (README §3.6, §3.11): the uniform Banach localisations `A{λ/g}` with
   their transition maps, uniform limits, and the 2-limit category of perfectoid algebras on the
@@ -53,10 +64,6 @@ Headline theorems of the README that are not statable at the pins, and what each
 * André's perfectoid Abhyankar lemma (README §4.7): the largest perfectoid subalgebra of a
   finite étale `A[1/g]`-algebra needs topologies on intermediate algebras and almost finite étale
   algebra structures. The finite-projective trace is native as `LinearMap.projectiveTrace`.
-* Ramified almost flatness modulo `pᵐ` for the Kummer tower (README §5.12): its carriers (the
-  integral closure of the completed tower in `B ⊗_A Â_∞∞[1/g]` and almost purity in the setup of
-  `K°_∞[T^{1/p^∞}]` acting through the roots of `g`) need the perfectoid completion as an algebra
-  over that setup, which the pins lack.
 -/
 
 noncomputable section
@@ -236,6 +243,76 @@ theorem bhatt_kernel_without_regularity
           (algebraMap K R (t 0) ^ m) * y) →
     ∃ b ∈ powerBoundedSubring R,
       (g k * algebraMap K R (t k)) * a = algebraMap K R (t 0) ^ m * b :=
+  sorry
+
+open CategoryTheory TopologicalSpace TauCeti.ValuationSpectrum in
+/-- The canonical map `R → 𝒪_X(V)` from a complete Hausdorff Huber ring to the sections of the
+presentation-limit structure presheaf of `X = Spa(R, R⁺)` over an open `V`, as a map of rings: Tau
+Ceti's `toPresentationLimit` with the topology forgotten. -/
+def coeffToSections {R : Type u} [CommRing R] [UniformSpace R] [IsUniformAddGroup R]
+    [IsTopologicalRing R] [CompleteSpace R] [T0Space R] (P : PairOfDefinition R)
+    (Rplus : Subring R) (V : Opens ↥(spa Rplus)) :
+    R →+* (presentationLimitPresheafInCommRingCat P Rplus).obj (Opposite.op V) :=
+  ((forget₂ _root_.TopCommRingCat CommRingCat).map
+      (eqToHom (TauCeti.CompleteSeparatedTopCommRingCat.of_obj R).symm) ≫
+    (TauCeti.TopCommRingCat.isCompleteSeparated.ι ⋙ forget₂ _root_.TopCommRingCat CommRingCat).map
+      (toPresentationLimit (P := P) Rplus V) ≫
+    eqToHom (presentationLimitPresheafInCommRingCat_obj P Rplus (Opposite.op V)).symm).hom
+
+open TopologicalSpace TauCeti.ValuationSpectrum in
+open Classical in
+/-- The annulus `X⟨tⁿ/g⟩ = {x : |tⁿ(x)| ≤ |g(x)| ≠ 0}` of `X = Spa(R, R°)`, as an open set:
+Tau Ceti's `spaBasicOpen` of the presentation `({tⁿ, g}, g)`. -/
+def annularOpen {R : Type u} [CommRing R] [TopologicalSpace R] [NonarchimedeanRing R]
+    (t g : R) (n : ℕ) : Opens ↥(spa (powerBoundedSubring R)) :=
+  spaBasicOpen (powerBoundedSubring R) ({t ^ n, g} : Finset R) g
+
+open CategoryTheory TauCeti.ValuationSpectrum in
+/-- The annular tower `n ↦ A⟨tⁿ/g⟩ = 𝒪⁺_X(X⟨tⁿ/g⟩)` of `X = Spa(R, R°)` with its restriction maps:
+Tau Ceti's plus presheaf `presentationLimitPlusPresheaf` along the increasing annuli. -/
+def annularTower {R : Type u} [CommRing R] [TopologicalSpace R] [NonarchimedeanRing R]
+    (P : PairOfDefinition R) (t g : R) (h : Monotone (annularOpen t g)) :
+    ℕᵒᵖ ⥤ CommRingCat.{u} :=
+  h.functor.op ⋙ presentationLimitPlusPresheaf (P := P)
+    (fun _ ha ↦ mem_powerBoundedSubring.mp ha) P.le_powerBoundedSubring
+
+open CategoryTheory CategoryTheory.Limits TauCeti.ValuationSpectrum in
+/-- **Bhatt's Riemann extension theorem after limits** (Bhatt, *On the direct summand conjecture
+and its derived variant*, Remark 1.7, p. 3; Scholze's Hebbarkeitssatz in the principal case).
+
+With the perfectoid field, Tate algebra and compatible roots `t l` of `t` and `g k` of `g` of §1.2,
+and no regularity assumption on `g`, the canonical map `R° → lim_n 𝒪⁺(X⟨tⁿ/g⟩)` is an almost
+isomorphism for `(tg)^{1/p^∞}`. The tower is `annularTower`, its limit is taken in commutative rings,
+and the structure maps are `coeffToSections` followed by the inclusion `𝒪⁺ ⊆ 𝒪`. Kernel: if the image
+of `a ∈ R°` vanishes on every annulus, then `t^{1/p^k} g^{1/p^k} a = 0` for every `k`. Cokernel: for
+every compatible family `x` and every `k` some `a ∈ R°` has image `t^{1/p^k} g^{1/p^k} xₙ` on every
+annulus. The monotonicity of the annuli is a hypothesis that always holds, since `|t| ≤ 1` on
+`Spa(R, R°)`. -/
+theorem bhatt_riemann_extension_limit
+    (K : Type u) [NontriviallyNormedField K] [IsUltrametricDist K] [CompleteSpace K]
+    (hK : ∀ ε : ℝ, 1 < ε → ∃ x : K, 1 < ‖x‖ ∧ ‖x‖ < ε) (hKp : ‖(p : K)‖ < 1)
+    (hKF : Function.Surjective
+      (fun x : ModP (NormedField.valuation (K := K)).integer p ↦ x ^ p))
+    (R : Type u) [CommRing R] [UniformSpace R] [IsUniformAddGroup R] [IsTopologicalRing R]
+    [IsTateRing R] [CompleteSpace R] [T2Space R] [TauCeti.Perfectoid.IsPerfectoidTateRing p R]
+    [Algebra K R] (hKR : Continuous (algebraMap K R))
+    (t : ℕ → K) (ht0 : 0 < ‖t 0‖) (ht1 : ‖t 0‖ < 1) (htr : ∀ l, t (l + 1) ^ p = t l)
+    (g : ℕ → R) (hgA : ∀ k, g k ∈ powerBoundedSubring R) (hgr : ∀ k, g (k + 1) ^ p = g k)
+    (P : PairOfDefinition R)
+    (hmono : Monotone (annularOpen (algebraMap K R (t 0)) (g 0))) :
+    (∀ a ∈ powerBoundedSubring R,
+      (∀ n, coeffToSections P (powerBoundedSubring R)
+        (annularOpen (algebraMap K R (t 0)) (g 0) n) a = 0) →
+      ∀ k, (algebraMap K R (t k) * g k) * a = 0) ∧
+    ∀ x : (limit (annularTower P (algebraMap K R (t 0)) (g 0) hmono) : CommRingCat.{u}),
+    ∀ k : ℕ, ∃ a ∈ powerBoundedSubring R, ∀ n : ℕ,
+      coeffToSections P (powerBoundedSubring R) (annularOpen (algebraMap K R (t 0)) (g 0) n)
+          (algebraMap K R (t k) * g k) *
+        (limit.π (annularTower P (algebraMap K R (t 0)) (g 0) hmono) (Opposite.op n) ≫
+          (presentationLimitPlusPresheafι (P := P) (fun _ ha ↦ mem_powerBoundedSubring.mp ha)
+            P.le_powerBoundedSubring).app
+            (Opposite.op (annularOpen (algebraMap K R (t 0)) (g 0) n))).hom x =
+      coeffToSections P (powerBoundedSubring R) (annularOpen (algebraMap K R (t 0)) (g 0) n) a :=
   sorry
 
 /-! ## Layer 3: the perfectoid Riemann extension theorem -/
@@ -433,6 +510,66 @@ theorem kummer_almost_faithfullyFlat [CharP k p] [PerfectRing k p] (g : KummerBa
     IsAlmostFaithfullyFlat (kummerAlmostIdeal p k n g)
       (AdicCompletion (Ideal.span {(p : kummerIntegralStage p k n g ⊤ 0)})
         (kummerIntegralStage p k n g ⊤ ⊤)) :=
+  sorry
+
+/-- The root `g^{1/p^l}` as an element of the normalized tower `A°_∞∞`; it is integral over `A`
+as a root of the monic `X^{p^l} − g`. -/
+def kummerRoot (g : KummerBase p k n) (l : ℕ) : kummerIntegralStage p k n g ⊤ ⊤ :=
+  ⟨kummerVar p k n g (KummerVar.root l),
+    ⟨IsIntegral.map (IsScalarTower.toAlgHom (KummerBase p k n) (KummerQuotient p k n g)
+        (KummerAlgebra p k n g))
+      ⟨Polynomial.X ^ (p ^ l) - Polynomial.C g, Polynomial.monic_X_pow_sub_C g
+        (pow_ne_zero _ (Fact.out : p.Prime).ne_zero), by
+        rw [Polynomial.eval₂_sub, Polynomial.eval₂_X_pow, Polynomial.eval₂_C,
+          IsScalarTower.algebraMap_apply (KummerBase p k n)
+            (MvPolynomial (KummerVar n) (KummerBase p k n)) (KummerQuotient p k n g),
+          Ideal.Quotient.algebraMap_eq, MvPolynomial.algebraMap_eq, ← map_pow, ← map_sub,
+          Ideal.Quotient.eq_zero_iff_mem]
+        exact Ideal.subset_span (Or.inl (Or.inr ⟨l, rfl⟩))⟩,
+      Algebra.subset_adjoin (Or.inl (Or.inr ⟨l, le_top, rfl⟩))⟩⟩
+
+/-- The ring `Â°_∞∞`: the `p`-adic completion of the normalized Kummer tower `A°_∞∞`. -/
+abbrev KummerCompletion (g : KummerBase p k n) : Type u :=
+  AdicCompletion (Ideal.span {(p : kummerIntegralStage p k n g ⊤ ⊤)})
+    (kummerIntegralStage p k n g ⊤ ⊤)
+
+/-- The algebra `Â_∞∞[1/g] = Â°_∞∞[1/(pg)]`, since `Â_∞∞ = Â°_∞∞[1/p]`. -/
+abbrev KummerCompletionAway (g : KummerBase p k n) : Type u :=
+  Localization.Away ((p : KummerCompletion p k n g) *
+    algebraMap (KummerBase p k n) (KummerCompletion p k n g) g)
+
+/-- The ideal of `Â°_∞∞` generated by the `(ζ_j − 1) g^{1/p^l}`: the extension of the ideal
+`T^{1/p^∞}K°°_∞[T^{1/p^∞}]` of the ramified setup along `T^{1/p^l} ↦ g^{1/p^l}`, since
+`K°°_∞ = ⋃_j (ζ_j − 1)K°_∞`. -/
+def kummerRamifiedIdeal (g : KummerBase p k n) : Ideal (KummerCompletion p k n g) :=
+  Ideal.span (Set.range fun jl : ℕ × ℕ ↦
+    algebraMap (kummerIntegralStage p k n g ⊤ ⊤) (KummerCompletion p k n g)
+      (Subalgebra.inclusion (kummerIntegralStage_mono p k n g (le_refl ⊤)
+        (zero_le : (0 : ℕ∞) ≤ ⊤)) (kummerZetaSubOne p k n g jl.1) * kummerRoot p k n g jl.2))
+
+/-- **Ramified almost faithful flatness modulo `pᵐ` for the Kummer tower** (André, *La conjecture
+du facteur direct*, §3.2 and Théorème 3.2.1, p. 83; André, *Le lemme d'Abhyankar perfectoïde*,
+Théorème 0.3.1). Let `A = W(k)⟦T₁, …, Tₙ⟧`, `A → B` finite and injective with `B` reduced and
+`p`-torsion-free, and `g ∈ A ∖ pA` with `B[1/(pg)] = A[1/(pg)] ⊗_A B` étale over `A[1/(pg)]`. Let
+`B°` be the integral closure of `Â°_∞∞` in the finite étale `Â_∞∞[1/g]`-algebra
+`Â_∞∞[1/g] ⊗_A B`. Then for every `m`, `B°/pᵐ = (Â°_∞∞/pᵐ) ⊗_{Â°_∞∞} B°` is almost faithfully flat
+over `Â°_∞∞/pᵐ` for the image of `kummerRamifiedIdeal`, that is, in the setup
+`(K°_∞[T^{1/p^∞}], T^{1/p^∞}K°°_∞[T^{1/p^∞}])` acting through `T^{1/p^l} ↦ g^{1/p^l}`. -/
+theorem kummer_ramified_almost_faithfullyFlat [CharP k p] [PerfectRing k p]
+    (g : KummerBase p k n) (hg : g ∉ Ideal.span {(p : KummerBase p k n)})
+    (B : Type u) [CommRing B] [Algebra (KummerBase p k n) B] [Module.Finite (KummerBase p k n) B]
+    (hinj : Function.Injective (algebraMap (KummerBase p k n) B)) [IsReduced B]
+    (hptf : IsSMulRegular B (p : B))
+    (het : Algebra.Etale (Localization.Away ((p : KummerBase p k n) * g))
+      (Localization.Away ((p : KummerBase p k n) * g) ⊗[KummerBase p k n] B))
+    (m : ℕ) :
+    IsAlmostFaithfullyFlat
+      ((kummerRamifiedIdeal p k n g).map
+        (Ideal.Quotient.mk (Ideal.span {(p : KummerCompletion p k n g) ^ m})))
+      ((KummerCompletion p k n g ⧸ Ideal.span {(p : KummerCompletion p k n g) ^ m}) ⊗[
+          KummerCompletion p k n g]
+        integralClosure (KummerCompletion p k n g)
+          (KummerCompletionAway p k n g ⊗[KummerBase p k n] B)) :=
   sorry
 
 end Kummer
