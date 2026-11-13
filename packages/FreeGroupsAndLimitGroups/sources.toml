@@ -1,0 +1,20 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "FreeGroupsAndLimitGroups"
+
+[[source]]
+id = "IFT"
+authors = "O. Kharlampovich, A. Miasnikov"
+title = "Implicit function theorem over free groups"
+year = 2003
+arxiv = "math/0312509v2"
+locator_scheme = "theorem"
+locator = "Lemma 14"
+url = "https://arxiv.org/abs/math/0312509v2"
+fetched_from = "https://arxiv.org/pdf/math/0312509v2"
+fetched_at = "2026-11-13T09:57:34Z"
+sha256 = "ed2cfda3c57223abe585b03b6a6a4dd47b5b61b305d9d46e34be64111e2f24fb"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-13"
+version_note = "arXiv v2"
+cited_for = ["7.3"]
