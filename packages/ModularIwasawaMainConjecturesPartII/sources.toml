@@ -185,3 +185,22 @@ licence_class = "institutional"
 status = "certified"
 accessed = "2026-11-10"
 cited_for = ["Scope and ownership"]
+
+[[source]]
+id = "Schutt09"
+authors = "Matthias Schuett"
+title = "CM newforms with rational coefficients"
+year = 2009
+venue = "Ramanujan Journal 19 (2009), 187-205"
+arxiv = "math/0511228v5"
+locator_scheme = "theorem"
+locator = "Theorem 1.4"
+url = "https://arxiv.org/abs/math/0511228v5"
+fetched_from = "https://arxiv.org/pdf/math/0511228v5"
+fetched_at = "2026-11-13T16:22:27Z"
+sha256 = "1ee6ca745927168c769b1a9672d32e7490db6362c9373c6f1dbe24174e481f15"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-13"
+version_note = "arXiv v5"
+cited_for = ["7.1"]
