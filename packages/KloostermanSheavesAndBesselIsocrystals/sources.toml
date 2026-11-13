@@ -10,7 +10,7 @@ venue = "Inventiones Mathematicae 227 (2022), 997–1092"
 doi = "10.1007/s00222-021-01079-5"
 arxiv = "1910.13391v2"
 locator_scheme = "theorem"
-locator = "arXiv v2: §1.1.1, pp. 2–3; Theorems 1.1.4, 1.2.4, 1.2.7, 1.2.8, §1.2.9, pp. 3–7; §§2.3–2.10, pp. 13–26; Proposition 3.1.2, Theorems 3.5.1, 3.5.3, 3.6.7, Lemma 3.6.10, pp. 26–37; §4.1 (Lemma 4.1.4, Theorem 4.1.5, §§4.1.8–4.1.13), pp. 37–42; Theorem 4.2.1, Lemmas 4.2.3, 4.2.6, pp. 42–46; Theorem 4.3.3, §§4.3.5–4.3.6, pp. 47–49; §4.4, Theorem 4.4.4, Proposition 4.4.5, pp. 49–50; Theorem 4.5.2, Lemmas 4.5.3, 4.5.5, Corollaries 4.5.6–4.5.7, Remark 4.5.8, pp. 51–54; Lemma 5.1.1, Proposition 5.1.3, Theorem 5.1.4, pp. 55–56; Theorem 5.2.2, §5.2.3, pp. 56–57; §§5.3.1–5.3.11, pp. 57–61; Theorem 5.4.2, Lemma 5.4.3, pp. 62–63; Appendix A.1–A.13, pp. 63–69"
+locator = "arXiv v2: §1.1.1, pp. 2–3; Theorems 1.1.4, 1.2.4, 1.2.7, 1.2.8, §1.2.9, pp. 3–7; §§2.3–2.10, pp. 13–26; Proposition 3.1.2, Theorems 3.5.1, 3.5.3, §3.6.3, Proposition 3.6.5, Theorem 3.6.7, §3.6.8 and (3.6.8.1), Lemma 3.6.10, pp. 26–37; §4.1 (Lemma 4.1.4, Theorem 4.1.5, §§4.1.8–4.1.13), pp. 37–42; Theorem 4.2.1, Lemmas 4.2.3, 4.2.6, pp. 42–46; Theorem 4.3.3, §§4.3.5–4.3.6, pp. 47–49; §4.4, Theorem 4.4.4, Proposition 4.4.5, pp. 49–50; Theorem 4.5.2, Lemmas 4.5.3, 4.5.5, Corollaries 4.5.6–4.5.7, Remark 4.5.8, pp. 51–54; Lemma 5.1.1, Proposition 5.1.3, Theorem 5.1.4, pp. 55–56; §5.2.1 and (5.2.1.2), Theorem 5.2.2, §5.2.3, pp. 56–57; §§5.3.1–5.3.11, pp. 57–61; Theorem 5.4.2, Lemma 5.4.3, pp. 62–63; Appendix A.1–A.13, pp. 63–69"
 url = "https://arxiv.org/abs/1910.13391v2"
 fetched_from = "https://arxiv.org/pdf/1910.13391v2"
 fetched_at = "2026-10-26T21:37:44Z"
@@ -19,7 +19,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-26"
 version_note = "arXiv v2 (19 Dec 2019); all locators use the 71-page preprint pagination, not the journal pagination"
-cited_for = ["0.1", "0.2", "0.3", "1.1", "1.2", "1.3", "1.4", "1.5", "1.6", "1.7", "1.8", "2.1", "2.2", "2.3", "2.5", "2.6", "2.7", "2.8", "3.1", "3.2", "3.3", "3.4", "3.5", "4.1", "4.2", "4.3", "4.4", "4.5", "5.1", "5.2", "5.3", "6.1", "6.2", "6.3", "6.4", "6.6", "7.1", "7.2", "7.3", "7.4", "7.5", "7.6", "8.1", "8.2", "8.3", "8.4", "8.5", "8.6", "9.1", "9.2", "9.3", "9.4", "10.1", "10.2", "10.3", "10.4", "10.5", "10.6", "11.1", "11.2", "11.3", "11.4", "11.5"]
+cited_for = ["0.1", "0.2", "0.3", "1.1", "1.2", "1.3", "1.4", "1.5", "1.6", "1.7", "1.8", "1.9", "2.1", "2.2", "2.3", "2.5", "2.6", "2.7", "2.8", "3.1", "3.2", "3.3", "3.4", "3.5", "4.1", "4.2", "4.3", "4.4", "4.5", "5.1", "5.2", "5.3", "6.1", "6.2", "6.3", "6.4", "6.6", "7.1", "2.9", "7.3", "7.4", "7.5", "7.6", "8.1", "8.2", "8.3", "8.4", "8.5", "8.6", "9.1", "9.2", "9.3", "9.4", "10.1", "10.2", "10.3", "10.4", "10.5", "10.6", "11.1", "11.2", "11.3", "11.4", "11.5", "gap:arithmetic-d-module-operations"]
 
 [[source]]
 id = "HNY"
@@ -28,7 +28,7 @@ title = "Kloosterman sheaves for reductive groups"
 year = 2013
 venue = "Annals of Mathematics 177 (2013), 241–310"
 locator_scheme = "theorem"
-locator = "§§1.2–1.3, pp. 250–252; Proposition 1.1, Corollaries 1.2–1.3, pp. 253–255; Lemma 2.1, Remark 2.2, pp. 255–256; Lemma 2.3, Definition 2.4, Remark 2.5, Definition 2.6, pp. 256–257; Definition 2.11, p. 260; Theorem 1, p. 261; Corollary 2.15, p. 262; §2.6"
+locator = "§§1.2–1.3, pp. 250–252; Proposition 1.1, Corollaries 1.2–1.3, pp. 253–255; Lemma 2.1, Remark 2.2, pp. 255–256; Lemma 2.3, Definition 2.4, Remark 2.5, Definition 2.6, pp. 256–257; Definition 2.11, p. 260; Theorem 1, including part (2), p. 261; Theorem 2, Corollary 2.15, p. 262; §2.6; §4.3, (4.3)–(4.4), pp. 270–271"
 url = "https://math.mit.edu/~zyun/Kloosterman_published.pdf"
 fetched_from = "https://math.mit.edu/~zyun/Kloosterman_published.pdf"
 fetched_at = "2026-10-26T21:38:09Z"
@@ -37,7 +37,7 @@ licence_class = "author-page"
 status = "certified"
 accessed = "2026-10-26"
 version_note = "author-hosted published version; printed page numbers"
-cited_for = ["0.2", "0.3", "1.4", "1.6", "1.7", "5.2", "6.6"]
+cited_for = ["0.2", "0.3", "1.4", "1.6", "1.7", "1.9", "4.3", "5.2", "6.2", "6.6", "gap:equal-characteristic-central-sheaves"]
 
 [[source]]
 id = "FG"
@@ -47,7 +47,7 @@ year = 2009
 venue = "Annals of Mathematics 170 (2009), 1469–1512"
 arxiv = "0901.2163v3"
 locator_scheme = "theorem"
-locator = "arXiv v3: §§5–6, pp. 8–14; Theorem 1, p. 16; Proposition 8 and Corollaries 9–10, pp. 27–29; Proposition 11 and (14.1), p. 29"
+locator = "arXiv v3: §§5–6, pp. 8–14; Theorem 1, p. 16; §§7–10, pp. 14–22; §14, pp. 29–31; Proposition 8 and Corollaries 9–10, pp. 27–29; Proposition 11 and (14.1), p. 29"
 url = "https://arxiv.org/abs/0901.2163v3"
 fetched_from = "https://arxiv.org/pdf/0901.2163v3"
 fetched_at = "2026-10-26T21:37:48Z"
@@ -103,7 +103,7 @@ venue = "American Journal of Mathematics 142 (2020)"
 doi = "10.1353/ajm.2020.0030"
 arxiv = "1607.04852v2"
 locator_scheme = "theorem"
-locator = "arXiv v2: Main theorem, pp. 2–3; Theorem 3.2.5, p. 23; Proposition 3.3.3, p. 26; Theorem 4.1.3, pp. 27–28"
+locator = "arXiv v2: Main theorem, pp. 2–3; Definition 2.1.1, p. 14; Proposition 2.1.3, p. 15; Lemma 3.1.3, pp. 17–18; Definition 3.2.1, p. 22; Lemmas 3.2.3–3.2.4 and Theorem 3.2.5, p. 23; Proposition 3.3.3, p. 26; Lemma 4.1.1 and Theorem 4.1.3, pp. 27–28, proof p. 30; Remark 4.1.9, p. 30; Propositions 4.2.1–4.2.3, pp. 30–32"
 url = "https://arxiv.org/abs/1607.04852v2"
 fetched_from = "https://arxiv.org/pdf/1607.04852v2"
 fetched_at = "2026-10-26T21:38:00Z"
@@ -112,7 +112,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-26"
 version_note = "arXiv v2, preprint pagination"
-cited_for = ["9.1", "9.4"]
+cited_for = ["3.4", "9.1", "9.4"]
 
 [[source]]
 id = "GR"
@@ -121,7 +121,7 @@ title = "Arithmetic invariants of discrete Langlands parameters"
 year = 2010
 venue = "Duke Mathematical Journal 154 (2010)"
 locator_scheme = "theorem"
-locator = "§5, Proposition 5.6, p. 34; §6, definition of simple wild parameters, p. 35"
+locator = "§3.2, conditions (1)–(3) and Lemma 3.1, p. 15; §5.2, Conjecture 5.2, p. 30; §5.3, standing adjoint-type assumption, p. 31; Proposition 5.4, pp. 31–33; Proposition 5.6, p. 34; §6, definition of simple wild parameters, p. 35"
 url = "https://people.math.harvard.edu/~gross/preprints/AdjointGamma5.pdf"
 fetched_from = "https://people.math.harvard.edu/~gross/preprints/AdjointGamma5.pdf"
 fetched_at = "2026-10-26T21:38:12Z"
@@ -157,7 +157,7 @@ title = "On Landau-Ginzburg models for quadrics and flat sections of Dubrovin co
 year = 2014
 arxiv = "1404.4844v2"
 locator_scheme = "section"
-locator = "arXiv v2: §3.3 and Theorem 3.2, pp. 12–13"
+locator = "arXiv v2: §3.3, pp. 13–14; Theorem 3.2, p. 14"
 url = "https://arxiv.org/abs/1404.4844v2"
 fetched_from = "https://arxiv.org/pdf/1404.4844v2"
 fetched_at = "2026-10-26T22:08:46Z"
@@ -231,7 +231,7 @@ locator = "Corollary 3.11 (Newton polygon lies above the Hodge polygon; degree o
 licence_class = "none"
 status = "uncertified"
 version_note = "paywalled or not openly available; cited by its locator without the text"
-cited_for = ["11.2"]
+cited_for = ["11.2", "Exact supplier contracts"]
 
 [[source]]
 id = "Wan93"
@@ -245,7 +245,7 @@ locator = "the boundary decomposition theorem and the diagonal ordinarity criter
 licence_class = "none"
 status = "uncertified"
 version_note = "paywalled or not openly available; cited by its locator without the text"
-cited_for = ["11.2", "11.3"]
+cited_for = ["11.2", "11.3", "Exact supplier contracts"]
 
 [[source]]
 id = "Wan04"
@@ -258,7 +258,7 @@ locator = "Corollary 2.6 and Theorem 3.1 (as cited in Xu–Zhu Lemma 5.4.3)"
 licence_class = "none"
 status = "uncertified"
 version_note = "paywalled or not openly available; cited by its locator without the text"
-cited_for = ["11.2"]
+cited_for = ["11.2", "Exact supplier contracts"]
 
 [[source]]
 id = "VL-est"
@@ -343,7 +343,7 @@ year = 2013
 venue = "American Journal of Mathematics 140 (2018)"
 arxiv = "1303.0662v4"
 locator_scheme = "theorem"
-locator = "arXiv v4: Main Theorem, p. 2 (Theorem 4.1.3, Corollary 4.2.4); Theorem 1.4.9"
+locator = "arXiv v4: Main Theorem, p. 2 (Theorem 4.1.3, Corollary 4.2.4); Theorem 1.4.9; Proposition 1.3.13(i), p. 16; Theorem 4.3.1, p. 58"
 url = "https://arxiv.org/abs/1303.0662v4"
 fetched_from = "https://arxiv.org/pdf/1303.0662v4"
 fetched_at = "2026-10-26T21:52:28Z"
@@ -352,7 +352,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-26"
 version_note = "arXiv v4"
-cited_for = ["1.1"]
+cited_for = ["1.1", "6.2", "gap:arithmetic-d-module-operations"]
 
 [[source]]
 id = "Bal82"
@@ -406,3 +406,41 @@ licence_class = "none"
 status = "uncertified"
 version_note = "paywalled or not openly available; cited by its locator without the text"
 cited_for = ["9.1"]
+
+[[source]]
+id = "Gai01"
+authors = "Dennis Gaitsgory"
+title = "Construction of central elements in the affine Hecke algebra via nearby cycles"
+year = 2001
+venue = "Inventiones Mathematicae 144 (2001)"
+arxiv = "math/9912074v4"
+locator_scheme = "theorem"
+locator = "arXiv v4: Theorems 1 and 2, p. 5"
+url = "https://arxiv.org/abs/math/9912074v4"
+fetched_from = "https://arxiv.org/pdf/math/9912074v4"
+fetched_at = "2026-11-13T19:43:18Z"
+sha256 = "a0d6d53aa857010b53e45d330fe9ee5fd106ab1b4cc70dde161a4d4d1768cd3c"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-13"
+version_note = "arXiv v4; numbering of this version"
+cited_for = ["gap:equal-characteristic-central-sheaves"]
+
+[[source]]
+id = "GH07"
+authors = "Ulrich Görtz, Thomas J. Haines"
+title = "The Jordan–Hölder series for nearby cycles on some Shimura varieties and affine flag varieties"
+year = 2007
+venue = "Journal für die reine und angewandte Mathematik 609 (2007)"
+arxiv = "math/0402143v1"
+locator_scheme = "theorem"
+locator = "arXiv v1: Theorem 1.1 and Corollary 1.2, pp. 2–3"
+url = "https://arxiv.org/abs/math/0402143v1"
+fetched_from = "https://arxiv.org/pdf/math/0402143v1"
+fetched_at = "2026-11-13T19:43:35Z"
+sha256 = "1bd4985fa4519fe045b5dc475bede2fcfb9c94b9a40ac866ed2b49b674ba262c"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-13"
+version_note = "arXiv v1; numbering of this version"
+cited_for = ["gap:equal-characteristic-central-sheaves"]

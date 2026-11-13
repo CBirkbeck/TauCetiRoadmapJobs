@@ -3544,19 +3544,25 @@
  "gaps": [
   {
    "slug": "relative-level-geometry",
-   "needs": "Bun_𝒢, the Beilinson–Drinfeld Grassmannian and its Schubert bounds (§§0.1, 1.1–1.2) for a smooth affine model with connected fibres of a split group over ℙ¹_S for a noetherian base S, in particular the spectrum of a complete mixed-characteristic discrete valuation ring and its fraction field, compatibly with base change to every fibre and to finite residue-field extensions.",
+   "needs": "Bun_𝒢 with its full level structures, the Beilinson–Drinfeld Grassmannian, its Schubert bounds and the bounded Hecke stacks (§§0.1, 0.3, 1.1–1.3) for a smooth affine model with connected fibres of a split group over ℙ¹_S for a noetherian base S, in particular the spectrum of a complete mixed-characteristic discrete valuation ring and its fraction field, compatibly with base change to every fibre and to finite residue-field extensions.",
    "supplier": "GlobalShtukasAndFunctionFieldLanglands",
-   "section": "Layer 0 §0.1; Layer 1 §§1.1–1.2"
+   "section": "Layer 0 §§0.1, 0.3; Layer 1 §§1.1–1.3"
   },
   {
    "slug": "cuspidal-newton-bound",
-   "needs": "V. Lafforgue's estimate (Bull. SMF 139 (2011), Proposition 2.1): for a split reductive group over a global function field and a cuspidal Hecke eigenform with coefficients in Q̄_p, the Newton point of the Satake parameter at every unramified place v, normalized by v(q_v) = 1, is dominated by half the sum of the positive coroots of the dual group.",
+   "needs": "V. Lafforgue's estimate (Bull. SMF 139 (2011), Proposition 2.1): for a split reductive group over a global function field and a nonzero cuspidal Hecke eigenform with coefficients in Q̄_p and finite-order central character, the Newton point of the Satake parameter at every unramified place v, normalized by v(q_v) = 1, is dominated by half the sum of the positive coroots of the dual group.",
    "supplier": "GlobalShtukasAndFunctionFieldLanglands",
    "section": "Layer 0 §0.14"
   },
   {
+   "slug": "equal-characteristic-central-sheaves",
+   "needs": "For a split connected reductive group over a finite field and ℓ ≠ p, Gaitsgory's central functor: the nearby cycles Ψ(IC_W) of the normalized Satake sheaves along the Beilinson–Drinfeld degeneration over 𝔸¹ of the affine Grassmannian to the Iwahori affine flag variety at 0 are Iwahori-equivariant perverse sheaves with unipotent inertia action (Gaitsgory, Theorems 1 and 2), and (Görtz–Haines, Theorem 1.1 and Corollary 1.2) their Jordan–Hölder constituents are Tate twists IC_w(−i) of the intersection complexes of the Iwahori orbit closures, those on the zero-dimensional orbits of length-zero elements carrying with multiplicity the Frobenius eigenvalues of H^*(Gr_G, IC_W) (HNY §4.3, pp. 270–271).",
+   "supplier": "GlobalShtukasAndFunctionFieldLanglands",
+   "section": "Layer 1 §§1.1, 1.6, 1.9"
+  },
+  {
    "slug": "arithmetic-d-module-operations",
-   "needs": "Holonomic arithmetic D-modules with and without Frobenius on realizable separated k-schemes of finite type and on quotient stacks by smooth descent, with the six operations and duality, the holonomic t-structure, the Abe–Caro weight theory, Abe's nearby and vanishing cycles, the trace formula and the equality of trace functions with ℓ-adic sheaves built by the same operations (Gabber–Fujiwara independence), overconvergent F-isocrystals being the smooth objects.",
+   "needs": "Holonomic arithmetic D-modules with and without Frobenius on realizable separated k-schemes of finite type and on quotient stacks by smooth descent, with the six operations and duality, the holonomic t-structure, the Abe–Caro weight theory including the geometric semisimplicity of pure objects (Abe–Caro Theorem 4.3.1), Abe's nearby and vanishing cycles, the trace formula and the equality of trace functions with ℓ-adic sheaves built by the same operations, nearby cycles included (Gabber–Fujiwara independence), overconvergent F-isocrystals being the smooth objects, and, for an overconvergent F-isocrystal on a curve unipotent at a boundary point, the Frobenius-compatible identification of its unipotent nearby cycles there with its logarithmic fibre (Xu–Zhu Proposition 2.9.4).",
    "supplier": "PadicDifferentialEquationsAndRigidCohomology",
    "section": "Layer RD.6"
   },
@@ -3582,7 +3588,37 @@
    "slug": "scalar-kloosterman-ordinarity",
    "needs": "For every prime p, every rank r ≥ 2 and every closed point a of 𝔾_m over 𝔽_q, the Frobenius eigenvalues at a of the weight-zero Kloosterman sheaf (equivalently of its p-adic companion), normalized by v(q^{deg a}) = 1, have valuations −(r−1)/2, −(r−3)/2, …, (r−1)/2, each once, with no condition relating p and r (Sperber 1980, Theorem (2.35), for p > r + 2; Wan 1993, by the boundary decomposition, in general).",
    "supplier": "KloostermanMomentsAndPotentialAutomorphy",
-   "section": "KM.1 (Kloosterman sheaves and normalized monodromy)"
+   "section": "Layer 1 §§1.1, 1.3 (normalized Kloosterman sheaves and monodromy)"
+  },
+  {
+   "slug": "dense-convergence-detection",
+   "needs": "For a smooth curve with smooth formal lift, a finite locally free module with integrable connection on its tube is convergent if its restriction over a Zariski dense open of the special fibre is convergent, without assuming Frobenius (Xu–Zhu §4.2.7, p. 45; Miyatani proof of Theorem 4.1.3, p. 30).",
+   "supplier": "PadicDifferentialEquationsAndRigidCohomology",
+   "section": "Layer RD.3 (§§RD.3.33, RD.3.37)"
+  },
+  {
+   "slug": "critical-center-rational-forms",
+   "needs": "The vacuum and completed critical centres and their oper identifications for pinned split semisimple Chevalley Lie algebras over any characteristic-zero field, with a rational form and compatibility with field extension, extending the complex centre theorems of A7–A8.",
+   "supplier": "AffineLieAlgebras",
+   "section": "A7–A8 (vacuum and completed critical centres)"
+  },
+  {
+   "slug": "toric-exponential-sum-hodge-bound",
+   "needs": "Adolphson–Sperber (Ann. of Math. 130 (1989), Corollary 3.11): for a Laurent polynomial f in N variables over 𝔽_q, nondegenerate on every face not containing the origin of its N-dimensional Newton polyhedron Δ(f) (the convex hull of the origin and its exponents), and a nontrivial additive character of 𝔽_p, the toric L-function exp(Σ_m S*_m(f) T^m/m)^{(−1)^{N−1}} is a polynomial of degree N!·Vol(Δ(f)) whose Newton polygon for v(q) = 1 lies on or above the Hodge polygon HP(Δ(f)) defined by the weight function of Δ(f), for every p.",
+   "supplier": "PadicDifferentialEquationsAndRigidCohomology",
+   "section": "Layer RD.6 (§§RD.6.4–RD.6.7, RD.6.25: L-functions, Dwork operators, rationality)"
+  },
+  {
+   "slug": "toric-exponential-sum-ordinarity",
+   "needs": "Wan's ordinarity criteria (Asian J. Math. 8 (2004), Theorem 3.1 and Corollary 2.6; Ann. of Math. 137 (1993)): for f as in toric-exponential-sum-hodge-bound, f is ordinary (Newton polygon equal to HP(Δ(f))) if and only if its restriction to every codimension-one face of Δ(f) not containing the origin is ordinary, and a diagonal f with exponent matrix V is nondegenerate exactly when p ∤ det V and is ordinary when p ≡ 1 modulo the exponent of the group S(Δ) = {r ∈ (ℚ ∩ [0,1))^N : Vr ∈ ℤ^N} of order |det V|.",
+   "supplier": "PadicDifferentialEquationsAndRigidCohomology",
+   "section": "Layer RD.6 (§§RD.6.4–RD.6.7, RD.6.25: L-functions, Dwork operators, rationality)"
+  },
+  {
+   "slug": "log-newton-semicontinuity",
+   "needs": "For a convergent log-F-isocrystal on a smooth pair (X, Z) over a perfect field of characteristic p, with Newton polygons at points of Z taken for the Frobenius on the logarithmic fibre: Grothendieck–Katz semicontinuity including specialization to points of Z (polygons rise under specialization with fixed endpoints, and the loci on or above a given polygon are closed), and the slope filtration by sub-log-convergent F-isocrystals on a connected open meeting Z on which the polygon is constant (Xu–Zhu proof of Theorem 5.4.2(i), p. 62, and §A.2, p. 64).",
+   "supplier": "PadicDifferentialEquationsAndRigidCohomology",
+   "section": "Layer RD.3 (§RD.3.43, Newton semicontinuity) and Layer RD.5 (§RD.5.101, convergent log-isocrystals)"
   }
  ],
  "sourceIssues": [

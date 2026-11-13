@@ -34,8 +34,8 @@ This roadmap owns:
   equivalence for arithmetic `D`-modules (with and without Frobenius) and for holonomic `D`-modules
   over a characteristic-zero field;
 - the clean automorphic datum, the normalized Hecke action and the Kloosterman eigenobjects
-  `Kl_H^ét`, `Kl_H^dR` and `Kl_H^rig`, with the tame-character variant and the closed-point
-  comparison of their traces;
+  `Kl_H^ét`, `Kl_H^dR` and `Kl_H^rig`, with the tame-character variant, the closed-point
+  comparison of their traces and the local monodromy and Frobenius of `Kl_H^ét` at `0`;
 - the Frenkel–Gross connection, the dual invariant parameter, the Bessel oper slice, critical-level
   localization at the two-point level, central descent from the adjoint group, Zhu's comparison
   `Kl_H^dR ≅ Be_H` and the Frenkel–Gross differential Galois groups;
@@ -64,17 +64,30 @@ It leaves to other roadmaps, by section:
   `ℓ`-adic Kloosterman sheaf of every rank: **CongruenceSpectralGap** §4.2a and §4.2b
   (`hyperKloosterman`); the local definition `kloostermanSum` of `Suggested.lean` is the same sum,
   restated only because a roadmap module cannot be imported there;
+- finite hypergeometric sums with equally many upper and lower characters (Katz's exponential sum
+  `katzExpSum`): **HypergeometricMotives** §4.2. The trace sums of §9.1 are Katz's exponential sums with `n`
+  upper and `m` lower characters; for `n = m` they are that roadmap's sum, and the unequal lengths `n > m` used
+  in §§9.2–11.2 (the Kloosterman and Bessel types) are owned here; the local definition
+  `quadraticHypergeometricSum` of `Suggested.lean` is the case of `N` trivial upper characters and one quadratic
+  lower character;
 - the Hasse–Davenport lifting relation for Gauss sums under finite extension of the base field
   (Davenport–Hasse 1935): **CharacterSumsOverFiniteFields** §3.3; Layer 9 applies it to the
   `K`-valued characters of §0.1 by transport of the character values;
 - the normalized scalar Kloosterman sheaf, Katz's scalar monodromy groups, the scalar Kloosterman
   connections, the Bessel dictionary and the scalar differential Galois groups:
-  **KloostermanMomentsAndPotentialAutomorphy** KM.1 and KM.2; scalar ordinarity at every prime and
+  **KloostermanMomentsAndPotentialAutomorphy** §§1.1, 1.3, 2.1, 2.5–2.6; scalar ordinarity at every prime and
   rank is a supplier gap there;
 - `Bun_𝒢` for a smooth affine model, the Beilinson–Drinfeld Grassmannian, Schubert bounds, `ℓ`-adic
   sheaves on the stacks involved, fusion and the `ℓ`-adic geometric Satake equivalence over finite
   fields: **GlobalShtukasAndFunctionFieldLanglands** Layers 0–1; the relative geometry over a
-  mixed-characteristic base and V. Lafforgue's `p`-adic estimate are supplier gaps there;
+  mixed-characteristic base, V. Lafforgue's `p`-adic estimate and Gaitsgory's central sheaves on the
+  Iwahori affine flag variety with the Görtz–Haines weight filtration of their nearby cycles are supplier
+  gaps there;
+- nearby cycles over a henselian trait and their exchange with proper direct image:
+  **LefschetzPencilsAndVanishingCycles** §0.6; the tame fundamental group of a curve and the `ℓ`-adic
+  trace formula: **InverseGaloisAndArithmeticFundamentalGroups** §§IG.0.T3, IG.1.2; the `ℓ`-adic
+  Euler–Poincaré formula with Swan conductors: **EtaleDualityAndPerverseSheaves** §5.2; the
+  Riemann–Hurwitz formula for curves: **SchemeAndStackFoundations** §3.2;
 - Bruhat–Tits and parahoric group schemes, Moy–Prasad filtrations and the Iwahori–Weyl group:
   **ReductiveGroupsPartII** RG2.3.3, RG2.3.6, RG2.4.1;
 - pinned Chevalley–Demazure groups, representations, structure theory and highest weights:
@@ -86,16 +99,23 @@ It leaves to other roadmaps, by section:
   duality, the Grothendieck–Ogg–Shafarevich formula, Tannakian generation, weights and the scalar
   Kloosterman F-isocrystal at every prime and every rank: **PadicDifferentialEquationsAndRigidCohomology**
   Layers RD.0–RD.6;
-  arithmetic `D`-module operations, Baldassarri's slope comparison and D'Addezio's monodromy
-  comparison are supplier gaps there; the minimal-slope reconstruction on curves:
+  arithmetic `D`-module operations, Newton semicontinuity and slope filtrations for log-convergent
+  F-isocrystals up to the logarithmic boundary, Baldassarri's slope comparison, D'Addezio's monodromy
+  comparison, the Adolphson–Sperber degree and Hodge bound and Wan's facial and diagonal ordinarity
+  criteria for exponential sums of nondegenerate Laurent polynomials are supplier gaps there; the minimal-slope reconstruction on curves:
   **PadicDifferentialEquationsAndRigidCohomologyPartII** MS.4;
 - Newton orbit spaces and rational dominance: **BunGAndNewtonStrata** §§1.5, 1.22;
 - neutral Tannakian reconstruction: **MotivesAndAlgebraicCycles** Layer 6;
 - connections on torsors, opers and the Drinfeld–Sokolov–Kostant slice: **FormalConnectionsOpers**
-  F2, F4, F6; the critical-level center: **AffineLieAlgebras** A7–A8; algebraic differential
+  F2, F4, F6; the critical-level center: **AffineLieAlgebras** A7–A8, with rational coefficient forms requested by gap:critical-center-rational-forms; algebraic differential
   operators and holonomic `D`-modules: **SpringerResolutionAndCharacteristicCycles** Layers 8 and 9;
-- `ℓ`-adic weights, the six operations on mixed complexes and Deligne semisimplicity:
-  **DeligneWeightsAndPurity** DWP.8; étale foundations: **EtaleCohomologyFoundations**.
+- `ℓ`-adic weights, the six operations on mixed complexes, Deligne semisimplicity and the local
+  weight–monodromy theorem on a curve: **DeligneWeightsAndPurity** DWP.8 and §5.11; étale foundations:
+  **EtaleCohomologyFoundations**;
+- the classification of finite subgroups of `SL₂(ℂ)`: **McKaySkewGroup** §§0.1–0.2; §6.3 transports it to
+  finite subgroups of `PGL₂` over an algebraically closed field of characteristic zero;
+- recognition of continuous `ℓ`-adic representations of the fundamental group of a curve over a finite field
+  by their Frobenius characteristic polynomials: **ArithmeticGaloisRepresentations** §5.13.
 
 The rank-one sign dictionary for the Dwork and Kummer F-isocrystals is
 PadicDifferentialEquationsAndRigidCohomology §RD.6.48; this roadmap records its specialization in
@@ -115,8 +135,15 @@ rank and `E` a nonzero lowest-root vector. Group-valued monodromy statements ass
 unless a product or a torus is named.
 
 **Coefficients.** `R` is a complete discrete valuation ring of mixed characteristic `(0, p)` with
-residue field `k` and fraction field `K`, enlarged finitely when needed so that `K` contains a Dwork
-parameter `π` with `π^{p−1} = −p` and a chosen square root `c_p` of `p`; put `c_q = c_p^s`. The nontrivial
+residue field `k` containing a Dwork parameter `π` with `π^{p−1} = −p` (for instance `W(k)[π]`, totally
+ramified of degree `p − 1` over `W(k)` since `x^{p−1} + p` is Eisenstein), and `K₀` is its fraction field. The
+coefficient field `K` is a finite extension of `K₀` containing a chosen square root `c_p` of `p`; put
+`c_q = c_p^s`. The residue field of `K` can be strictly larger than `k`: for odd `p` the unit `π^{(p−1)/2}/c_p`
+squares to `−1`, so the residue field of `K` contains a square root of `−1`, which `𝔽_q` lacks when `p ≡ 3`
+modulo `4` and `s` is odd (§0.1, Checks). The curve, the
+level stacks and the relative families of Layer 3 stay over `k` and `R`; every coefficient category over `k`
+is made `K`-linear by finite extension of scalars from `K₀`, with the `q`-power Frobenius acting
+`K`-linearly. The nontrivial
 additive character `ψ : 𝔽_p → K^×` is the one attached to `π` (PadicDifferentialEquationsAndRigidCohomology
 §RD.6.46), and over `k_d = 𝔽_{q^d}` the character is `ψ ∘ Tr_{k_d/𝔽_p}`. The tame torus character is
 trivial except in §1.7.
@@ -130,14 +157,20 @@ linear `q^d`-Frobenius is the ordered product `C(ã) C(ã^q) ⋯ C(ã^{q^{d−1}
 
 **Rank-one dictionary** (§RD.6.48 with `ε = −1`). The connection `d − π dt` carries the multiplier
 `exp(π(t − t^q))` and has trace function `ψ ∘ Tr`; in the notation `E_λ = (O, d + λ dt)` this is
-`E_{−π}`, and the scalar supplier's `ϖ` of KloostermanMomentsAndPotentialAutomorphy KM.4 is `−π`.
+`E_{−π}`, and the scalar connection dictionary of KloostermanMomentsAndPotentialAutomorphy §2.6 uses `λ = −π`.
 The Kummer connection `d − a dx/x` with `(q − 1)a ∈ ℤ` carries `x^{−(q−1)a}` and has trace the inverse
 of the Teichmüller character `x ↦ x̃^{(q−1)a}`; a nontrivial tame character needs a rational exponent
 modulo `ℤ`. Witness: differentiating `exp(π(t − t^p))` gives the logarithmic derivative
 `π(1 − p t^{p−1})`, which is the horizontality equation for `d − π dt` with `q = p`; for `d + π dt` the
 same multiplier fails by the constant term `2π`. The scalar Kloosterman F-isocrystal of
 PadicDifferentialEquationsAndRigidCohomology §RD.6.95 is built from `L_π` (`ε = +1`) and therefore has the trace
-function of `ψ^{−1}`; comparisons with it replace `π` by `−π`.
+function of `ψ^{−1}`. For odd `p`, comparisons with it use the Dwork parameter `−π`, which again satisfies
+`(−π)^{p−1} = −p`, with `ψ_{−π} = ψ^{−1}` (§RD.6.46). For `p = 2` the only Dwork parameter is `π = −2` (`−π = 2`
+does not satisfy `π^{p−1} = −p`) and `ψ = ψ^{−1}`; there §RD.6.95 is used with `π` itself, and `L_π = (O, d + π dt)`
+and `E_{−π} = (O, d − π dt)` are isomorphic overconvergent F-isocrystals on `𝔸¹` through multiplication by
+`exp(2πt) = exp(−4t)`, which converges for `|t| < 2`, takes the value `1` at `0` and intertwines the two
+Frobenius multipliers: `exp(π(t^q − t)) exp(2πt) = exp(−π(t^q − t)) exp(2πt^q)`. For odd `p` the same
+series converges only on the open unit disc, as the different trace functions `ψ^{−1} ≠ ψ` require.
 
 **Half twists and normalized traces.** The half Tate twist `(1/2)` multiplies the `q^d`-Frobenius by
 `c_q^{−d}`. The raw rank-`r` Kloosterman sum is `R_r(a) = Σ_{x₁⋯x_r = a} ψ(Tr(x₁ + ⋯ + x_r))` with no
@@ -177,7 +210,7 @@ categories live in one fixed universe; `Suggested.lean` places the extension fie
 - `PadicComplex` (`ℂ_[p]`): the completion of an algebraic closure of `ℚ_p`, with its norm.
 - `PowerSeries.mk`, `PowerSeries.coeff` and `PowerSeries.expand`: power series by coefficients and
   the substitution `x ↦ x^p`. `IsDiscreteValuationRing`, `IsAdicComplete` and `IsFractionRing`: the
-  coefficient ring of Layer 10.
+  coefficient ring `R` of §0.1 and of Layer 10.
 - `Matrix.trace`, `LieAlgebra` and `Module.finrank`: traces of Frobenius matrices and extension
   degrees.
 
@@ -185,13 +218,24 @@ categories live in one fixed universe; `Suggested.lean` places the extension fie
 
 - `TauCeti.FGComoduleCat` and `TauCeti.Tannaka.pointsFunctorIsoTensorAutFunctor`: finite comodules
   over a commutative Hopf algebra and the reconstruction of an affine group from its tensor
-  automorphisms; consumed through PadicDifferentialEquationsAndRigidCohomology §RD.6.64. No
-  Kloosterman, Bessel, isocrystal or Hecke-eigensheaf declaration exists at the pin.
+  automorphisms; consumed through PadicDifferentialEquationsAndRigidCohomology §RD.6.64. Neither pin
+  has a Kloosterman sum, an F-isocrystal on a curve, a Bessel F-isocrystal or a Hecke eigensheaf. The Bessel
+  declarations at the pins are analytic special functions: Tau Ceti's `Real.besselI`
+  (TauCeti/Analysis/SpecialFunctions/BesselI.lean), the modified Bessel function `I_ν` of a real variable,
+  and Mathlib's `Complex.besselJ`; neither supplies a connection on a curve. Mathlib's
+  `WittVector.Isocrystal` is a Frobenius-semilinear vector space over the fraction field of the Witt
+  vectors of a perfect field, with no connection and no base curve.
+- `TauCeti.LocalFieldsRamification.map_restrictNormalHom_lowerRamificationGroupReal` (Herbrand's theorem: for a
+  finite normal extension `M/K` of nonarchimedean local fields and a normal subextension `L`, the image of the
+  lower ramification group `G_u` in `Gal(L/K)` is the lower group at `φ_{M/L}(u)`) and
+  `TauCeti.LocalFieldsRamification.map_restrictNormalHom_upperRamificationGroup` (for a Galois tower, the upper
+  filtration maps onto the upper filtration of the quotient): the change of lower numbering under a central lift
+  in §6.5.
 
 ### From TauCetiRoadmap.CongruenceSpectralGap
 
 - §4.2a: `hyperKloosterman F k ψ r`, the raw product-fibre sum over unit tuples, with its
-  eliminated-variable presentation and the change-of-character rule `ψ(a·) ↦ a^k r`. Assumed in every
+  positive-rank eliminated-variable presentation and the change-of-character rule `ψ(a·) ↦ a^k r`. Assumed in every
   characteristic and every rank, with no normalizing factor.
 - §4.2b: the `ℓ`-adic Artin–Schreier sheaf `L_ψ` (geometric Frobenius trace `ψ(Tr x)`) and the
   Kloosterman sheaf `Kl_k`, lisse of rank `k` on `𝔾_m`, tame at `0`, Swan one at `∞`, pure of weight
@@ -208,14 +252,22 @@ categories live in one fixed universe; `Suggested.lean` places the extension fie
   `ψ`, their norm and trace lifts and both Gauss sums to their `ℂ`-valued counterparts. The case used
   here has `ψ` nontrivial, so every `χ`, trivial or not, is covered.
 
+### From TauCetiRoadmap.HypergeometricMotives
+
+- §4.2: `katzExpSum ω ψ a b t`, the sum over `t ∏ x_i = ∏ y_j` of `ψ(Σ x_i − Σ y_j) ∏ ω^{a_i}(x_i) ∏ ω^{−b_j}(y_j)`
+  over a finite field, for complex-valued characters, a generator `ω` of the character group and equally many
+  upper and lower parameters; zero coordinates contribute nothing. Consumed only as the identification of the
+  equal-length trace sums of §9.1, transported to `K`-valued characters through a field embedding into `ℂ` of
+  the subfield generated by the character values, as for the Hasse–Davenport relation.
+
 ### From TauCetiRoadmap.KloostermanMomentsAndPotentialAutomorphy
 
-- KM.1 (normalized-sheaf): the weight-zero normalization `Kl_r^0`, trace
+- §1.1 (normalized sheaf): the weight-zero normalization `Kl_r^0`, trace
   `(−1)^{r−1} c^{−m(r−1)} R_r(a; p^m)` with one square root `c` of `p` fixed at `p`.
-- KM.1 (monodromy): for `r ≥ 2`, the geometric and arithmetic monodromy of `Kl_r^0` is `Sp_r` for `r`
+- §1.3 (monodromy): for `r ≥ 2`, the geometric and arithmetic monodromy of `Kl_r^0` is `Sp_r` for `r`
   even, `SL_r` for `p, r` odd, `SO_r` for `p = 2`, `r` odd, `r ≠ 7`, and `G₂` for `p = 2`, `r = 7`. Used as
   an independent check in §6.4 and §11.4.
-- KM.2 (connection, bessel-dictionary, differential-galois): the rank-`r` Kloosterman connection,
+- §§2.1, 2.6, 2.5 (connection, Bessel dictionary, differential Galois group): the rank-`r` Kloosterman connection,
   its cyclic presentation, the identification of the Bessel connection with its pullback along
   `z = λ^r x` with the transpose and sign rule for horizontal solutions, and the differential Galois
   groups `SL_r` (`r` odd) and `Sp_r` (`r` even).
@@ -234,16 +286,27 @@ categories live in one fixed universe; `Suggested.lean` places the extension fie
   `ℓ`-adic sheaves on the stacks of finite type used here; §1.5: fusion; §1.6: minuscule Hecke
   geometry at Iwahori level; §1.9 and §1.12: the `ℓ`-adic geometric Satake equivalence over finite
   fields, with Tate normalization by one fixed square root of `q` (§1.8).
-- What GlobalShtukasAndFunctionFieldLanglands must provide (gap:relative-level-geometry): `Bun_𝒢`,
-  the Beilinson–Drinfeld Grassmannian and its Schubert bounds of §§0.1, 1.1–1.2 for a smooth affine
-  model with connected fibres of a split group over `ℙ¹_S`, for a noetherian base `S` (in particular
+- What GlobalShtukasAndFunctionFieldLanglands must provide (gap:relative-level-geometry): `Bun_𝒢`
+  with its full level structures, the Beilinson–Drinfeld Grassmannian, its Schubert bounds and the
+  bounded Hecke stacks of §§0.1, 0.3, 1.1–1.3 for a smooth affine model with connected fibres of a split group over `ℙ¹_S`, for a noetherian base `S` (in particular
   the spectrum of a complete mixed-characteristic discrete valuation ring and its fraction field),
   compatibly with base change to every fibre and to finite residue-field extensions.
 - What GlobalShtukasAndFunctionFieldLanglands must provide (gap:cuspidal-newton-bound):
   V. Lafforgue's estimate that for a split reductive group over a global function field and a
-  cuspidal Hecke eigenform with coefficients in `ℚ̄_p`, the Newton point of the Satake parameter at
+  nonzero cuspidal Hecke eigenform with coefficients in `ℚ̄_p` and finite-order central character, the Newton point of the Satake parameter at
   every unramified place `v`, normalized by `v(q_v) = 1`, is dominated by half the sum of the
   positive coroots of the dual group (V. Lafforgue 2011, Proposition 2.1).
+- What GlobalShtukasAndFunctionFieldLanglands must provide (gap:equal-characteristic-central-sheaves):
+  for a split connected reductive group over a finite field `k` and `ℓ ≠ p`, Gaitsgory's central functor: the
+  nearby cycles `Ψ(IC_W)` of the normalized Satake sheaves along the Beilinson–Drinfeld degeneration over `𝔸¹`
+  of the affine Grassmannian at the points of `𝔾_m` to the affine flag variety of the Iwahori model at `0` are
+  perverse sheaves on the affine flag variety, equivariant under the Iwahori group, on which inertia at `0` acts
+  unipotently (Gaitsgory, Theorems 1 and 2, p. 5); and their Jordan–Hölder constituents, as Weil perverse
+  sheaves, are Tate twists `IC_w(−i)` of the intersection complexes of the Iwahori orbit closures, `w` in the
+  Iwahori–Weyl group, those supported on the zero-dimensional orbit of a length-zero element occurring with
+  multiplicity `dim H^{2i}` of the unnormalized intersection cohomology of the Schubert variety, so that they
+  carry, with multiplicity, the Frobenius eigenvalues of `H^*(Gr_G, IC_W)` (Görtz–Haines, Theorem 1.1 and
+  Corollary 1.2, pp. 2–3; HNY §4.3, pp. 270–271).
 
 ### From TauCetiRoadmap.ReductiveGroupsPartII
 
@@ -278,16 +341,23 @@ categories live in one fixed universe; `Suggested.lean` places the extension fie
   theorem (§RD.2.33), André's Tannakian local monodromy (§RD.2.51).
 - RD.3: overconvergent and convergent F-isocrystals (§§RD.3.25, RD.3.33–RD.3.37), Newton
   semicontinuity (§RD.3.43), common Newton vertices and the dense-open slope filtration
-  (§§RD.3.44–RD.3.45), Kummer isocrystals (§RD.3.51).
+  (§§RD.3.44–RD.3.45), unit-root F-isocrystals, all of whose pointwise Frobenius slopes are zero
+  (§RD.3.47), Kummer isocrystals (§RD.3.51).
 - RD.4: specialization and cospecialization of de Rham cohomology (§RD.4.58) and the specialization
   and forget-supports square (§RD.4.59); these are maps under their smooth proper compactification
   hypotheses, not comparison isomorphisms.
 - RD.5: Kedlaya's full faithfulness (§RD.5.8), finiteness and Poincaré duality with coefficients
-  (§§RD.5.76, RD.5.89), logarithmic extension under unipotent monodromy (§RD.5.103) and full
-  faithfulness of restriction to a dense open (§RD.5.112).
-- RD.6: Tate twists (§RD.6.3), traces and the Lefschetz trace formula (§RD.6.23), pointwise weights
-  (§RD.6.28), the Fourier transform (§§RD.6.41–RD.6.44), the Dwork and Kummer F-isocrystals and
-  their sign dictionary (§§RD.6.42, RD.6.46–RD.6.48), local monodromy representations, irregularity
+  (§§RD.5.76, RD.5.89), convergent log-isocrystals on a smooth pair with a strict normal crossings
+  divisor, with their residues along its components (§RD.5.101), logarithmic extension under
+  unipotent monodromy (§RD.5.103) and full faithfulness of restriction to a dense open, including
+  underlying overconvergent isocrystals (§RD.5.102(a), §RD.5.112(ii)).
+- RD.6: the linear Frobenius at a closed point and its behaviour under residue extension (§RD.6.2),
+  Tate twists (§RD.6.3), the `L`-function of an overconvergent F-isocrystal on a separated scheme of
+  finite type over `𝔽_q` and its rationality as the alternating product of the characteristic
+  polynomials of Frobenius on compactly supported rigid cohomology (§§RD.6.4, RD.6.25), traces and
+  the Lefschetz trace formula (§RD.6.23), pointwise weights (§RD.6.28), the Fourier transform
+  (§§RD.6.41–RD.6.44), the Dwork and Kummer F-isocrystals and their sign dictionary
+  (§§RD.6.42, RD.6.46–RD.6.48), local monodromy representations, irregularity
   and Swan conductors (§§RD.6.51–RD.6.52), the Grothendieck–Ogg–Shafarevich formula (§RD.6.55), neutral
   Tannakian recognition and generation (§§RD.6.64–RD.6.65), normalization to weight zero (§RD.6.82)
   and the scalar Kloosterman F-isocrystal `Kl_{n+1}` at every prime `p` and every rank `n + 1 ≥ 1`, with its
@@ -295,10 +365,26 @@ categories live in one fixed universe; `Suggested.lean` places the extension fie
 - What PadicDifferentialEquationsAndRigidCohomology must provide (gap:arithmetic-d-module-operations):
   holonomic arithmetic `D`-modules with and without Frobenius structure on realizable separated
   `k`-schemes of finite type and on quotient stacks by smooth descent, with the six operations and
-  duality, the holonomic t-structure, the Abe–Caro weight theory, Abe's nearby and vanishing cycles,
+  duality, the holonomic t-structure, the Abe–Caro weight theory (including the geometric
+  semisimplicity of pure objects, Abe–Caro Theorem 4.3.1), Abe's nearby and vanishing cycles,
   the trace formula, and the equality of trace functions with `ℓ`-adic sheaves built by the same
-  operations from compatible inputs (Gabber–Fujiwara independence), overconvergent F-isocrystals
-  being the smooth objects.
+  operations, nearby cycles included, from compatible inputs (Gabber–Fujiwara independence),
+  overconvergent F-isocrystals being the smooth objects; for an overconvergent F-isocrystal on a curve
+  unipotent at a boundary point, its unipotent nearby cycles there are the logarithmic fibre, Frobenius
+  included (Xu–Zhu Proposition 2.9.4, p. 24).
+- What PadicDifferentialEquationsAndRigidCohomology must provide (gap:dense-convergence-detection):
+  for a smooth curve with smooth formal lift, a finite locally free module with integrable
+  connection on its tube is convergent if its restriction over a Zariski dense open of the
+  special fibre is convergent; this criterion does not assume Frobenius (the precise input used
+  in Xu–Zhu §4.2.7, p. 45, and Miyatani proof of Theorem 4.1.3, p. 30).
+- What PadicDifferentialEquationsAndRigidCohomology must provide (gap:log-newton-semicontinuity): for a
+  convergent log-F-isocrystal (§RD.5.101) on a smooth pair `(X, Z)` over a perfect field of characteristic `p`,
+  with Newton polygons at the points of `Z` taken for the Frobenius on the logarithmic fibre, the Grothendieck–Katz
+  semicontinuity of §RD.3.43 including specialization to points of `Z` (the polygon at a specialization lies on or
+  above the polygon at its generization, with the same endpoints, and the loci where it lies on or above a given
+  polygon are closed), and, on a connected open of `X` meeting `Z` on which the polygon is constant, the slope
+  filtration by sub-log-convergent F-isocrystals (Xu–Zhu proof of Theorem 5.4.2(i), p. 62, applying
+  Grothendieck–Katz to log-convergent F-isocrystals, and §A.2, p. 64).
 - What PadicDifferentialEquationsAndRigidCohomology must provide (gap:formal-slope-comparison):
   Baldassarri's comparison: for an algebraic connection on a punctured disc over a `p`-adic field
   whose analytification is solvable at the boundary, every `p`-adic break at the puncture is at most
@@ -309,6 +395,29 @@ categories live in one fixed universe; `Suggested.lean` places the extension fie
   split reductive group `G₀` over `E` with a faithful representation `ρ₀` such that each member's
   neutral monodromy component, with its tautological representation, is `G₀ ⊗ E_λ` with `ρ₀ ⊗ E_λ`,
   together with the equality of the component groups (D'Addezio, Theorem 1.2.1 and §4.3).
+- What PadicDifferentialEquationsAndRigidCohomology must provide (gap:toric-exponential-sum-hodge-bound):
+  the Adolphson–Sperber theorem. Let `𝔽_q` have characteristic `p`, let `ψ` be a nontrivial additive character
+  of `𝔽_p` with values in a `p`-adic field, and let `f ∈ 𝔽_q[x₁^{±1}, …, x_N^{±1}]` have Newton polyhedron `Δ(f)`, the
+  convex hull of the origin and the exponents of `f`, of dimension `N`. Suppose `f` nondegenerate: for every face
+  `σ` of `Δ(f)` not containing the origin, the logarithmic derivatives `x_i ∂f_σ/∂x_i` of the restriction `f_σ` have
+  no common zero on `(𝔽̄_q^×)^N`. Then, with `S*_m(f) = Σ_{x ∈ (𝔽_{q^m}^×)^N} ψ(Tr f(x))`, the function
+  `exp(Σ_m S*_m(f) T^m/m)^{(−1)^{N−1}}` is a polynomial of degree `N! · Vol(Δ(f))` whose Newton polygon, for
+  `v(q) = 1`, lies on or above the Hodge polygon `HP(Δ(f))`, for every `p`. Here the weight `w(u)` of a lattice point
+  `u` of the cone over `Δ(f)` is the least `c ≥ 0` with `u ∈ cΔ(f)`, `D` is the least positive integer with
+  `D w(u) ∈ ℤ` for all such `u`, `W(k)` is the number of such `u` with `w(u) = k/D`, and `HP(Δ(f))` has slope `k/D` with
+  multiplicity `Σ_{i=0}^{N} (−1)^i C(N, i) W(k − iD)` (Adolphson–Sperber, Corollary 3.11, by the concentration of the
+  Dwork complex of `f` in top degree).
+- What PadicDifferentialEquationsAndRigidCohomology must provide (gap:toric-exponential-sum-ordinarity):
+  Wan's ordinarity criteria for `f` as in gap:toric-exponential-sum-hodge-bound, ordinary meaning that its
+  Newton polygon equals `HP(Δ(f))`. (a) Facial decomposition: `f` is ordinary if and only if, for every
+  codimension-one face `δ` of `Δ(f)` not containing the origin, the restriction `f^δ` is ordinary with respect to the
+  convex hull of the origin and `δ`. (b) Diagonal criterion: if `f` is diagonal, that is, has exactly `N` monomials,
+  all with nonzero coefficients and with linearly independent exponent vectors `V₁, …, V_N`, then `f` is
+  nondegenerate exactly when `p ∤ det(V₁, …, V_N)`; the group `S(Δ) = {r ∈ (ℚ ∩ [0, 1))^N : Σ_i r_i V_i ∈ ℤ^N}` is finite
+  abelian of order `|det(V₁, …, V_N)|`; and `f` is ordinary when `p ≡ 1` modulo the exponent of `S(Δ)` (Wan 2004,
+  Theorem 3.1 and Corollary 2.6; Wan 1993, boundary decomposition and diagonal criterion). The index condition
+  in (b) and the faces in (a) are codimension-one data; nondegeneracy is a condition on all faces not containing
+  the origin.
 
 ### From TauCetiRoadmap.PadicDifferentialEquationsAndRigidCohomologyPartII
 
@@ -324,8 +433,10 @@ categories live in one fixed universe; `Suggested.lean` places the extension fie
 
 ### From TauCetiRoadmap.MotivesAndAlgebraicCycles
 
-- Layer 6, §§6.1–6.3 and §6.5: neutral fibre functors, reconstruction of the neutral group,
-  generation, finite type, and tensor-isomorphism torsors without a chosen point.
+- Layer 6, §§6.1–6.3 and §6.8: neutral fibre functors, reconstruction of the neutral group,
+  generation, finite type, and the affine faithfully flat torsor of tensor isomorphisms between two
+  fibre functors, with its two actions and the conjugation twist of the group under a change of fibre
+  functor, no rational point being asserted.
 
 ### From TauCetiRoadmap.FormalConnectionsOpers, AffineLieAlgebras and SpringerResolutionAndCharacteristicCycles
 
@@ -333,23 +444,61 @@ categories live in one fixed universe; `Suggested.lean` places the extension fie
   and the Drinfeld–Sokolov–Kostant slice) and F6 (oper reduction over the punctured disc).
 - AffineLieAlgebras A7–A8: the vacuum center and the completed center at the critical level.
 - SpringerResolutionAndCharacteristicCycles Layer 8 (§§8.1–8.6: differential operators, good
-  filtrations, characteristic varieties and cycles) and Layer 9 (§§9.1, 9.4, 9.6–9.7: transfer modules,
-  the operations and duality, holonomic modules, intermediate extension, regular holonomic modules), on
-  smooth varieties over a field of characteristic zero.
+  filtrations, characteristic varieties and cycles) and Layer 9 (§§9.1–9.2, 9.4, 9.6–9.7: transfer modules,
+  the operations and duality, Kashiwara's equivalence, holonomic modules, intermediate extension, regular
+  holonomic modules), on smooth varieties over a field of characteristic zero; Kashiwara's equivalence
+  defines the categories on the singular bounded pieces of the Grassmannian through closed embeddings into
+  smooth varieties.
+
+- What AffineLieAlgebras must provide (gap:critical-center-rational-forms): the vacuum and
+  completed critical centres and their oper identifications for pinned split semisimple
+  Chevalley Lie algebras over any characteristic-zero field, with a rational form and
+  compatibility with field extension, extending A7–A8's complex centre theorems; the
+  two-point localization and its normalized descent remain targets of §§2.4–2.7 here.
 
 ### From TauCetiRoadmap.DeligneWeightsAndPurity and EtaleCohomologyFoundations
 
 - DeligneWeightsAndPurity DWP.8: mixed complexes and their stability under the six operations
-  (§8.5), purity of proper direct images (§8.12), geometric monodromy (§8.14) and Deligne
-  semisimplicity (§8.19); EtaleCohomologyFoundations: constructible `ℓ`-adic complexes and their
+  (§8.5), purity of proper direct images (§8.12), geometric monodromy, with geometric semisimplicity
+  equivalent to reductivity of the neutral component of its Zariski closure (§8.14), and Deligne
+  semisimplicity (§8.19); DeligneWeightsAndPurity §5.11: for a lisse sheaf pure of weight `β` on a curve
+  over `𝔽_q`, at a missing point the local monodromy filtration is the weight filtration, its `i`-th graded
+  piece being pure of weight `β + i`; EtaleCohomologyFoundations: constructible `ℓ`-adic complexes and their
   operations on schemes of finite type.
+
+### From TauCetiRoadmap.InverseGaloisAndArithmeticFundamentalGroups, EtaleDualityAndPerverseSheaves, LefschetzPencilsAndVanishingCycles and SchemeAndStackFoundations
+
+- InverseGaloisAndArithmeticFundamentalGroups §IG.0.T3 (`VanishingCycles.etaleTraceFormula`): the rational
+  constructible trace formula for all powers of geometric Frobenius on compactly supported cohomology of a
+  separated scheme of finite type over `𝔽_q`, so that the `L`-function of a lisse `ℓ`-adic sheaf is the
+  alternating product of the characteristic polynomials on `H^i_c`; §IG.1.2: the tame fundamental group of a
+  smooth curve over an algebraically closed field and the peripheral maps from local tame inertia, whose
+  images are the inertia subgroups.
+- EtaleDualityAndPerverseSheaves §5.2 (`curveEulerPoincareSwan`): `χ_c(U, L) = rank(L) χ_c(U, ℚ̄_ℓ) − Σ_x Swan_x(L)`
+  for a lisse `ℚ̄_ℓ`-sheaf on a smooth curve over an algebraically closed field, the sum over the missing points.
+- LefschetzPencilsAndVanishingCycles §0.6: the exchange of `RΨ` with `Rg_*` for proper `g` and with `g^*` for
+  smooth `g`, equivariantly for inertia.
+- SchemeAndStackFoundations §3.2 (`scheme_riemann_hurwitz`): Riemann–Hurwitz for a finite generically étale
+  morphism of smooth proper curves, with equality in the tame bound exactly for tame ramification.
+
+### From TauCetiRoadmap.McKaySkewGroup and TauCetiRoadmap.ArithmeticGaloisRepresentations
+
+- McKaySkewGroup §§0.1–0.2: the concrete models of the finite subgroups of `SL₂(ℂ)` and the theorem that every
+  finite subgroup is cyclic, binary dihedral, binary tetrahedral, binary octahedral or binary icosahedral.
+  Consumed in §6.3 for finite subgroups of `SL₂(K̄)`, `K̄` algebraically closed of characteristic zero, through a
+  field embedding into `ℂ` of the finitely generated field of matrix entries.
+- ArithmeticGaloisRepresentations §5.13 (recognition): for a smooth geometrically connected curve over `𝔽_q`,
+  `ℓ ≠ p` and continuous representations of its fundamental group over a finite extension of `ℚ_ℓ` or over
+  `ℚ̄_ℓ`, equal Frobenius characteristic polynomials at all closed points of a dense open, with the same kind of
+  Frobenius on both sides, give isomorphic semisimplifications, and isomorphic representations when both are
+  semisimple. Consumed in §7.5.
 
 ## How to read the build
 
 Layer 0 fixes the coefficient datum and the level data. Layer 1 builds the coefficient theories on
-the level stacks, proves the Satake equivalences needed for them, and constructs the Kloosterman
-eigenobjects with matching traces. Layer 2 identifies the de Rham eigenvalue with the Frenkel–Gross
-connection. Layer 3 compares the de Rham and rigid eigenvalues over `R`. Layer 4 transports Frobenius
+the level stacks, proves the Satake equivalences needed for them, constructs the Kloosterman
+eigenobjects with matching traces and computes the `ℓ`-adic eigenobject at `0`. Layer 2 identifies the de Rham eigenvalue with the Frenkel–Gross
+connection, computes its characteristic-zero adjoint cohomology, and establishes the central and pinned symmetries. Layer 3 compares the de Rham and rigid eigenvalues over `R`. Layer 4 transports Frobenius
 to the Frenkel–Gross connection and computes it at zero and as a matrix. Layer 5 proves generic
 ordinarity from the cuspidal Newton bound, independently of the 2-adic branch. Layer 6 computes the
 monodromy away from type `A_{2n}` at `p = 2`, and Layer 7 deduces functoriality and the companion
@@ -360,6 +509,28 @@ corollaries. No target is used in its own proof: the central torsor and the even
 `p = 2` sit after the monodromy theorems they use, and the characteristic-two identities sit after the
 isocrystal comparison that proves them.
 
+The former layer labels `KB.k` mean Layer `k`, for `0 ≤ k ≤ 11`. The following
+former target labels identify the same mathematical targets; former §7.2 is now §2.9.
+
+| Former numbering | Section |
+| --- | --- |
+| KB.0 affine-depth | §0.2 |
+| KB.0 level-model | §0.3 |
+| KB.1 clean-datum | §1.4 |
+| KB.1 hecke-action | §1.5 |
+| KB.1 eigenobject | §1.6 |
+| KB.1 trace-companions | §1.8 |
+| KB.2 invariant-parameter | §2.2 |
+| KB.2 oper-slice | §2.3 |
+| KB.2 quantized-hitchin | §2.5 |
+| KB.2 zhu-identification | §2.7 |
+| KB.3 tensor-comparison | §3.5 |
+| KB.4 bessel-isocrystal | §4.1 |
+| KB.4 log-extension | §4.2 |
+| KB.6 rigidity-local | §6.6 |
+| KB.7 symmetry-central | §2.9 |
+| KB.11 all-prime-corollaries | §11.5 |
+
 ## Layer 0: Coefficients, normalizations and level data
 
 This layer fixes the coefficient datum, the root-depth quotient at `∞` and the two-point level
@@ -369,14 +540,23 @@ a sign or degree chosen here is checked once by a two-term witness and then reus
 ### 0.1 The normalized coefficient datum
 
 Define a *normalized datum* as a tuple `(p, s, k, R, K, c_p, ψ, π)`: a prime `p`, `s ≥ 1`, `k = 𝔽_q` with
-`q = p^s`, a complete discrete valuation ring `R` of mixed characteristic with residue field `k` and
-fraction field `K`, a square root `c_p ∈ K` of `p`, a nontrivial additive character `ψ` of `𝔽_p` and
-the Dwork parameter `π ∈ K` attached to it (`π^{p−1} = −p`). Put `c_q = c_p^s`, use `ψ ∘ Tr_{k_d/𝔽_p}` over
+`q = p^s`, a nontrivial additive character `ψ` of `𝔽_p`, a complete discrete valuation ring `R` of mixed
+characteristic with residue field `k` containing the Dwork parameter `π` attached to `ψ` (`π^{p−1} = −p`), with
+fraction field `K₀`, and a finite extension `K` of `K₀` (the coefficient field) containing a square root `c_p`
+of `p`. The residue field of `K` is a finite extension of `k` and need not be `k`; the curve and the level
+data stay over `k` and `R`, and coefficients are extended from `K₀` to `K` by finite extension of scalars,
+the `q`-power Frobenius acting `K`-linearly (Xu–Zhu §2.3.1, p. 13, where the coefficient field is an
+extension of the fraction field of the base ring, and §3.6.8, p. 36, where it is the coefficient field that
+contains `p^{1/2}`). Put `c_q = c_p^s`, use `ψ ∘ Tr_{k_d/𝔽_p}` over
 `k_d`, half twists with `q`-Frobenius scalar `c_q^{−1}` and the valuation normalized by `v(q) = 1`.
 Finite extensions of `K` carrying `π` and `c_p` to fixed images are allowed throughout (Xu–Zhu §1.1.1,
 pp. 2–3; §4.1, p. 37; §4.4.3, p. 50). The datum must contain `c_p`: the uniform field `K = ℚ_p(π)` of
 Xu–Zhu Theorems 1.1.4 and 1.2.4 (pp. 3–5) is too small for the normalized traces, as the witness in
-the conventions shows.
+the conventions shows. *Needs:* Mathlib `AddChar`, `AddChar.compAddMonoidHom`, `Algebra.trace`,
+`FiniteField.algebraMap_trace_eq_sum_pow`, `IsDiscreteValuationRing`, `IsAdicComplete`, `IsFractionRing`;
+PadicDifferentialEquationsAndRigidCohomology §RD.6.2 (Frobenius at a closed point and under residue
+extension), §RD.6.3 (Tate twists), §RD.6.46 (the character attached to `π`) and §RD.6.48 (direction of
+Frobenius structures).
 
 - The scalar normalization of a rank-`r` trace at a point of degree `d` is
   `(−1)^{r−1} c_q^{−d(r−1)}`, and it is compatible with finite coefficient extension.
@@ -396,6 +576,10 @@ the conventions shows.
   over `k`, not over `k_d`.
 - Over `𝔽₃` the normalized rank-two trace at `a = 1` is `1/√3 ∉ ℚ₃(μ₃)`, so a datum without `√3` cannot
   carry the normalization.
+- At `p = q = 3`: `π² = −3` and `c_3² = 3` give `(π/c_3)² = −1`, a unit whose reduction would square to
+  `2` in `𝔽₃`, which is not a square there; so no ring with residue field exactly `𝔽₃` contains both. Here
+  `R = ℤ₃[π]` has residue field `𝔽₃` and `K = ℚ₃(√−3, √3) = ℚ₃(√−3, i)` has residue field `𝔽₉`, while the curve
+  and its traces stay over `𝔽₃`. At `p = 5` the same unit lies in `ℚ₅`, since `−1` is a square modulo `5`.
 - The half-twist witness: for `q = 4` and `d = 2` the scalar is `c_4^{−2} = 1/4`, and its square
   `1/16` is the `q²`-Frobenius of `(1)`, not of `(1/2)`.
 
@@ -426,9 +610,9 @@ Layer 9.
 - For `SL₂`, `V` has the two coordinates of the finite simple root and of the affine root `δ − θ`; a
   description with only the finite coordinate misses the affine one.
 - For `G = 𝔾_m`, `V = 0` and the zero functional is generic by the empty condition.
-- For `GL₂` over `𝔽₂`, `diag(1 + y, 1)` with `y` in the maximal ideal lies in the Moy–Prasad `I(2)`; its
-  determinant `1 + y` is not a square times a commutator, so the commutator-plus-scalar kernel is a
-  different subgroup.
+- For `GL₂` over `𝔽₂`, `diag(1 + t, 1)` with `t` a uniformizer of `𝔽₂[[t]]` lies in the Moy–Prasad `I(2)`; its
+  determinant `1 + t` is not a square times a commutator, so the commutator-plus-scalar kernel is a
+  different subgroup. For `y = t²` the determinant is `(1 + t)²`, so an arbitrary maximal-ideal element does not give this control.
 
 ### 0.3 The two-point level models
 
@@ -464,13 +648,20 @@ ReductiveGroupsPartII RG2.3.3, RG2.4.1; §0.2.
 
 - For `G = PGL₂` (`H = SL₂`) the datum is: `V = 𝔸²` with coordinates of the simple root and the affine
   root, `Ω = ℤ/2`, a generic functional `φ(u₁, u₀) = u₁ + u₀`, and `Bun_G(0,2)` with two components.
-- For `G = 𝔾_m` all level data are trivial and the eigenobject of Layer 1 is the constant object.
+- For `G = 𝔾_m`: `V = 0` and the zero functional is generic; `Ω = ℤ` indexes the components by degree;
+  `Bun_G(0,2)` is one point with trivial automorphism group in each degree (a line bundle with a
+  trivialization of its fibre at `∞`), whereas a line bundle with no marking has automorphism group `𝔾_m`;
+  and `Bun_G(1,2)` is a copy of `𝔾_m` in each degree (the relative position of the trivializations at `0`
+  and `∞` modulo global scalars), matching the big cell `T̃ × V = T̃` with `1 → 𝔾_m → T̃ → ℤ → 1`. With
+  trivial tame character the eigenvalue of Layer 1 is the constant object in every representation.
 
 ### Dependencies
 
 ReductiveGroups Layers 1, 9; ReductiveGroupsPartII RG2.3.3, RG2.3.6, RG2.4.1;
 GlobalShtukasAndFunctionFieldLanglands §§0.1, 1.1 and gap:relative-level-geometry; Mathlib `AddChar`,
-`Algebra.trace`; PadicDifferentialEquationsAndRigidCohomology §§RD.6.46–RD.6.48.
+`AddChar.compAddMonoidHom`, `Algebra.trace`, `FiniteField.algebraMap_trace_eq_sum_pow`,
+`IsDiscreteValuationRing`, `IsAdicComplete`, `IsFractionRing`; PadicDifferentialEquationsAndRigidCohomology
+§§RD.6.2, RD.6.3, RD.6.46–RD.6.48.
 
 ## Layer 1: Coefficients on the level stacks, Satake realizations and Kloosterman eigenobjects
 
@@ -494,9 +685,14 @@ gap:relative-level-geometry) of the categories of SpringerResolutionAndCharacter
 (Xu–Zhu §§2.3–2.5, pp. 13–19). Each has the operations `f_!`, `f_+` (respectively `f_!`, `f_*`) for
 schematic morphisms of finite type between these stacks, the canonical map `f_! → f_+`, smooth
 pullback, external products and duality, with the normalized shifts of the holonomic heart.
+*Needs:* §§0.1, 0.3; GlobalShtukasAndFunctionFieldLanglands §0.1 (the stacks and their smooth atlases),
+§§1.1–1.3 (Beilinson–Drinfeld Grassmannians, Schubert bounds and Hecke stacks) and §1.4 (`ℓ`-adic
+sheaves on stacks of finite type); gap:relative-level-geometry; SpringerResolutionAndCharacteristicCycles
+Layer 9 (§§9.1–9.2, 9.4, 9.6–9.7; Kashiwara's equivalence for the singular bounded pieces);
+gap:arithmetic-d-module-operations (operations, holonomic t-structure and weights for (iii)).
 
 - For a schematic affine morphism, `f_+` is right exact and `f_!` is left exact for the holonomic
-  t-structure (Xu–Zhu §2.4, Proposition 2.4.4 and [Abe–Caro 1.3.13] as cited there).
+  t-structure (Abe–Caro Proposition 1.3.13(i), for a complete c-affine morphism of realizable couples admitting the locally proper smooth frames of its proof, transported to these schematic morphisms by gap:arithmetic-d-module-operations).
 - Smooth pullback commutes with `j_!` and `j_+` for open immersions `j`, so cleanness can be checked on a
   smooth atlas.
 - The weight theory of (iii) gives: `f_!` preserves objects of weight `≤ w`, `f_+` preserves objects of weight
@@ -507,34 +703,60 @@ pullback, external products and duality, with the normalized shifts of the holon
 
 **Checks.**
 
-- On `𝔸¹` the exponential object `E_{−π}` in (ii) and the Dwork F-isocrystal in (iii) have the
-  matching trace function `ψ ∘ Tr` (§RD.6.48 with `ε = −1`); `E_{π}` gives `ψ^{−1}`.
+- On `𝔸¹` the analytification of the exponential object `E_{−π}` of (ii), Frobenius forgotten, is the
+  underlying connection of the Dwork F-isocrystal of (iii); with the Frobenius multiplier `exp(π(t − t^q))`
+  the latter has trace function `ψ ∘ Tr` (§RD.6.48 with `ε = −1`), and `E_{π}` with `exp(π(t^q − t))` gives
+  `ψ^{−1}`. The algebraic `D`-module of (ii) has no trace function: the same connection with multiplier
+  `2 exp(π(t − t^q))` has trace `2^d ψ(Tr a)` at a point `a` of degree `d`, so the multiplier is part of the datum.
 - For the open immersion `j : 𝔾_m → 𝔸¹` and the constant object, `j_! → j_+` is not an isomorphism (its
   cone is supported at `0`), so cleanness is a property and not a formal identity.
 - The dual weight bound is `≥ −w`, not `≥ w`: the dual of `K(−1/2)` on a point has weight `−1`.
 
 ### 1.2 Universal local acyclicity and hyperbolic localization for arithmetic `D`-modules
 
-For a morphism `f : Y → S` of realizable `k`-schemes and an object `M` of category (iii), define `M` to be
-universally locally acyclic over `f` when the vanishing cycles of `M` vanish along every smooth
-effective divisor of every smooth `S′ → S` after base change, and prove: (a) ULA is preserved by smooth
-pullback, proper pushforward and external products; (b) if `M` is ULA over `f`, its vanishing cycles
-vanish along every strict henselian trait mapping to `S`; (c) on a smooth `k`-scheme, an object that is
-ULA over the identity has smooth cohomology objects, that is, overconvergent F-isocrystals
-(Xu–Zhu §2.8, Propositions 2.8.3, 2.8.5 and Corollaries 2.8.6–2.8.7, pp. 21–23). Prove Braden's
-hyperbolic localization for weakly `𝔾_m`-equivariant objects: the canonical map from the attracting
-`!`-restriction to the repelling `+`-restriction is an isomorphism (Xu–Zhu §2.10, Theorem 2.10.2,
-pp. 25–26). *Needs:* gap:arithmetic-d-module-operations; §1.1.
+Let `S` be a smooth realizable `k`-scheme, `f : Y → S` a morphism from a realizable
+`k`-scheme, and `M ∈ D(Y)` in theory (iii). Write `g : Y → Y × S` for the graph,
+`d_S` for the componentwise dimension of `S`, `⊗` for the ordinary tensor product and `~⊗` for its dual tensor product. Define local
+acyclicity by requiring, for every `N ∈ D(S)`, the graph-induced comparison
+`M ⊗ f^+N → (M ~⊗ f^!N)(d_S)[2d_S]` to be an isomorphism. Define universal
+local acyclicity (ULA) by requiring this property after `+`-pullback along every morphism
+`S′ → S` between smooth `k`-schemes; the morphism itself need not be smooth (Xu–Zhu
+Definition 2.8.2 and (2.8.1.1)–(2.8.1.3), p. 21). Prove preservation under smooth
+pullback and proper pushforward (Proposition 2.8.3), and prove that for a smooth `k`-scheme `S`
+and every object `M` on a realizable `k`-scheme `Y`, the pullback `pr₁^+M` to `Y × S` is ULA over `S`
+through `pr₂` (Proposition 2.8.3(i), ULA over `Spec k`, with the base changes `S′ → Spec k` of
+Definition 2.8.2, p. 21); on an ind-scheme LA and ULA are read on the closed subschemes of finite
+type supporting the object (Proposition 2.8.3(iv), p. 21, and Remark 2.8.4, p. 22). This is the case used
+for the Satake kernel spread over `X` and for external products over `X²` in the fusion product
+(Xu–Zhu §3.2.2, p. 28, and proof of Proposition 3.2.5(i), p. 29). Prove that for a smooth effective
+divisor `D ⊂ S`, with inverse-image immersion `i` and complementary immersion `j`, an
+LA object whose restriction to `j` is holonomic is its intermediate extension, and
+`i^+M[−1] ≅ i^!M(1)[1]` (Proposition 2.8.5, p. 22). Deduce vanishing of full and
+unipotent vanishing cycles along every strict henselian trait mapping to `S`, and smoothness
+of all cohomology objects for an object ULA over the identity of a smooth scheme
+(Corollaries 2.8.6–2.8.7, p. 23). Prove Braden's
+hyperbolic localization for weakly `𝔾_m`-equivariant objects `F` on a quasi-projective `k`-scheme `Q`,
+geometrically connected and normal, with a `𝔾_m`-action: with `a₊ : Q⁺ → Q` and `a₋ : Q⁻ → Q` the attracting and repelling loci and
+`e₊ : Q⁰ → Q⁺`, `e₋ : Q⁰ → Q⁻` the inclusions of the fixed locus, the canonical map
+`e₋^+ a₋^! F → e₊^! a₊^+ F`, from the repelling side (`!`-restriction to the repelling locus,
+then `+`-restriction to the fixed locus) to the attracting side (`+`-restriction to the attracting locus,
+then `!`-restriction to the fixed locus), is an isomorphism (Xu–Zhu §2.10, (2.10.1.2) and
+Theorem 2.10.2, pp. 25–26). *Needs:* gap:arithmetic-d-module-operations; §1.1.
 
 **Checks.**
 
-- The constant object on a smooth `Y` is ULA over every smooth `f`; the object `j_!K` for `j : 𝔾_m → 𝔸¹` is
+- The zero-point map `Spec k → 𝔸¹` is an allowed base change between smooth schemes although it is not smooth; the constant object stays locally acyclic after it. The constant object on a smooth `Y` is ULA over every smooth `f`; the object `j_!K` for `j : 𝔾_m → 𝔸¹` is
   not ULA over the identity of `𝔸¹`, since its vanishing cycles at `0` are nonzero.
-- Criterion (c) requires the identity morphism: the constant object on `𝔸¹` is ULA over the map to a
+- The smoothness conclusion requires the identity morphism: the constant object on `𝔸¹` is ULA over the map to a
   point but is already smooth, while a skyscraper is ULA over the point and is not smooth on `𝔸¹`.
-- For the constant object on `𝔸²` with weights `(1, −1)`, the attracting side is compactly supported
-  cohomology of the `x`-axis and the repelling side is cohomology of the `y`-axis with supports in the
-  origin; both are `K[−2](−1)`. With weights `(1, 1)` the attracting locus is all of `𝔸²`, the repelling
+- ULA depends on the morphism, not on the object alone: `j_!K` on `𝔸¹` is not ULA over the identity, yet its
+  pullback `pr₁^+(j_!K)` to `𝔸¹ × 𝔸¹` is ULA over the second factor by the product clause; a definition of
+  ULA as a property of the object alone would contradict one of the two.
+- For the constant object on `𝔸²` with weights `(1, −1)`, the attracting locus is the `x`-axis and the
+  repelling locus the `y`-axis. The attracting side is the `!`-restriction to the origin of the constant
+  object of the `x`-axis (equivalently, compactly supported cohomology of the `x`-axis); the repelling
+  side is the stalk at the origin of the `!`-restriction `K[−2](−1)` of the constant object to the
+  `y`-axis; both are `K[−2](−1)`. With weights `(1, 1)` the attracting locus is all of `𝔸²`, the repelling
   locus is the origin, and both sides are `K[−4](−2)`; a comparison landing in degree `0` would be
   wrong in both cases.
 
@@ -547,13 +769,18 @@ constraint and the corrected commutativity constraint makes it a symmetric monoi
 hypercohomology functor is an exact faithful tensor functor making `Sat_G` neutral Tannakian; its
 Tannakian group is the Langlands dual group `H` over `L`, with the canonical pinning from
 semi-infinite orbits (Xu–Zhu Theorems 3.5.1 and 3.5.3, pp. 33–34). With Frobenius structures, prove that
-the category `F-Sat_G` is equivalent to the category of `σ`-semilinear representations of `H(L) ⋊ ℤ`
-of Xu–Zhu §3.6, and that after the half twist by `c_q` the Tate-normalized subcategory is `Rep(H)`
-(Xu–Zhu Theorem 3.6.7, p. 36). For holonomic `D`-modules on `Gr_G ⊗ K` over a field `K` of characteristic
+the category `F-Sat_G` is equivalent to the full subcategory of finite-dimensional `σ`-semilinear
+representations of `H(L) ⋊ ℤ` (Xu–Zhu §3.6.3) whose restriction to the abstract group `H(L)` is algebraic
+(Xu–Zhu Proposition 3.6.5(ii) and Theorem 3.6.7(ii), pp. 35–36); for the standing `q`-power Frobenius,
+`σ = id_L` and the representations are `L`-linear. Prove that after the half twist by `c_q` the full
+subcategory of direct sums of the weight-zero objects `IC_μ` is equivalent to `Rep(H)` (Xu–Zhu §3.6.8,
+(3.6.8.1), p. 36). For holonomic `D`-modules on `Gr_G ⊗ K` over a field `K` of characteristic
 zero, prove the same equivalence with `Rep(H)` (Beilinson–Drinfeld, *Quantization of Hitchin's
-integrable system*, §5.3). Prove that both equivalences are compatible with the `ℓ`-adic one of
-GlobalShtukasAndFunctionFieldLanglands §1.9 on characteristic polynomials of the hypercohomology of
-`IC_μ` stalks. *Needs:* §§1.1–1.2; GlobalShtukasAndFunctionFieldLanglands §§1.1–1.2, 1.5, 1.8;
+integrable system*, §5.3). Prove that the arithmetic equivalence is compatible with the `ℓ`-adic one of
+GlobalShtukasAndFunctionFieldLanglands §1.9 on Frobenius characteristic polynomials of the hypercohomology
+of the stalks of the normalized `IC_μ`, and that the de Rham equivalence is compatible with it on the
+graded dimensions of that stalk cohomology; a de Rham object carries no Frobenius, so no characteristic
+polynomial is attached to it. *Needs:* §§1.1–1.2; GlobalShtukasAndFunctionFieldLanglands §§1.1–1.2, 1.5, 1.8;
 ReductiveGroups Layers 1, 10.
 
 - The simple objects are `IC_μ = j_{μ,!+}(L_{Gr_μ}[⟨2ρ, μ⟩])` for dominant coweights `μ`, and the parity
@@ -571,15 +798,27 @@ ReductiveGroups Layers 1, 10.
   group is `𝔾_m` (Xu–Zhu Lemma 3.5.4).
 - For a minuscule `μ`, `IC_μ` is the constant object shifted by `dim Gr_μ`; with the Tate normalization
   its Frobenius is `c_q^{−dim Gr_μ}` times the identity on stalks, not `q^{−dim Gr_μ}`.
-- Without the corrected commutativity constraint the hypercohomology of `IC_μ ⋆ IC_μ` for `G = PGL₂` and
-  `μ` minuscule would give a super vector space with odd part, so the Tannakian group would not be `SL₂`.
+- The corrected commutativity constraint is needed. For `G = PGL₂` and `μ` minuscule, `H^*(IC_μ)` lies in the
+  odd degrees `−1` and `1`, and the uncorrected constraint acts on `H^*(IC_μ) ⊗ H^*(IC_μ)` as minus the ordinary
+  flip: it sends `e ⊗ e` to `−e ⊗ e` for a nonzero class `e` of degree `−1`, which the corrected constraint fixes.
+  With the uncorrected constraint the categorical dimension of `IC_μ` would be `−2`, which no representation
+  of `SL₂` has. The tensor square `H^*(IC_μ ⋆ IC_μ)` itself lies in the even degrees `−2, 0, 2`.
+- Algebraicity on `H(L)` is part of the Frobenius equivalence: for `H = 𝔾_m`, `σ = id_L` and a uniformizer `ϖ`
+  of `L`, the character `t ↦ ϖ^{v(t)}` of `L^× = H(L)`, with `ℤ` acting trivially, is a one-dimensional
+  representation of `H(L) ⋊ ℤ` that is `1` on units and `ϖ` at `ϖ`, so it equals no algebraic character
+  `t ↦ t^m` (which is `1` on all units only for `m = 0`) and is excluded, while every `t ↦ t^m` is included.
+- The de Rham compatibility is a statement about dimensions: for `G = PGL₂` and minuscule `μ`, `Gr_μ ≅ ℙ¹`
+  and the stalk cohomology of `IC_μ` at a point of `Gr_μ` is one-dimensional, in degree `−1`, in every theory;
+  in the arithmetic and `ℓ`-adic theories the normalized Frobenius on it is `c_q^{−1}` in both, with
+  characteristic polynomial `1 − c_q^{−1}T`, whereas the de Rham stalk has no Frobenius from which a
+  characteristic polynomial could be formed.
 
 ### 1.4 The clean automorphic datum
 
 For a generic functional `φ` on `V` (§0.2) put `A_ψφ = φ^*(A_ψ)`, the pullback of the exponential object
 in each theory: the Artin–Schreier sheaf, `E_{−π}` in the de Rham theory, the Dwork F-isocrystal in the
 arithmetic theory. On the `γ` component define `A_γ = j_{γ,!}(A_ψφ)[dim Bun_G(0,2)]`. Prove: the canonical
-map `j_{γ,!}(A_ψφ) → j_{γ,+}(A_ψφ)` is an isomorphism; and restriction to the base point induces an
+map `j_{γ,!}(A_ψφ) → j_{γ,+}(A_ψφ)` is an isomorphism; and restriction to the base point followed by the shift `[−dim Bun_G(0,2)]` induces an
 equivalence between `(V, A_ψφ)`-equivariant holonomic objects on `Bun_G(0,2)^γ × X` and holonomic objects
 on `X`, with quasi-inverse `M ↦ A_γ ⊠ M` (Xu–Zhu Lemma 4.1.4 and (4.1.3.2), pp. 38–39; HNY Lemma 2.3 and
 Definition 2.4, pp. 256–257). *Needs:* §§0.2–0.3, 1.1; PadicDifferentialEquationsAndRigidCohomology
@@ -587,13 +826,13 @@ Definition 2.4, pp. 256–257). *Needs:* §§0.2–0.3, 1.1; PadicDifferentialEq
 
 - Restriction of `A_γ` along `j_γ` recovers `A_ψφ` with the stated shift.
 - The canonical support-to-ordinary map is invertible, naturally in the coefficient object.
-- Every generic-equivariant holonomic object is `A_γ` tensored with its fibre at the chart origin, and
+- Every generic-equivariant holonomic object is `A_γ` tensored with its normalized fibre at the chart origin, and
   this description is fully faithful.
 - A morphism between generic-equivariant objects is determined by its fibre at the chart origin.
 
 **Checks.**
 
-- The coefficient fibre of `A_γ` at the chart origin is the unit object of rank one in degree zero.
+- The normalized fibre `i_γ^*A_γ[−dim Bun_G(0,2)]` is the unit in degree zero. For `SL₂` the ordinary fibre is `K[2]`, with its single cohomology in degree `−2`.
 - Every `!`-stalk and `+`-stalk on the complement of the big cell vanishes: at each boundary orbit some
   root group in the stabilizer acts through a nontrivial character of `φ`.
 - For `SL₂` and `φ = 0` the stabilizer argument fails at the boundary point of the affine-root line, and
@@ -608,7 +847,7 @@ map to `pr_{2,+}`. Prove: fusion identifies `Hk_{W⊗W′}` with the composite o
 followed by restriction to the diagonal, compatibly with associativity and with all intertwiners;
 `Hk_1(M) = M ⊠ 1`; and over the base point the eigenvalue is the pushforward from the open part
 `GR_W°` of the bounded Grassmannian with the exponential coefficient (Xu–Zhu §4.1.2, (4.1.2.1)–(4.1.2.4),
-pp. 38–39; §4.1.8, (4.1.8.1)–(4.1.8.4), p. 40). *Needs:* §§1.3–1.4; GlobalShtukasAndFunctionFieldLanglands
+p. 38; §4.1.8, (4.1.8.1)–(4.1.8.4), p. 40). *Needs:* §§1.3–1.4; GlobalShtukasAndFunctionFieldLanglands
 §§1.1–1.5; gap:relative-level-geometry.
 
 - The trivial representation acts by exterior product with the unit on `X`.
@@ -632,10 +871,11 @@ Prove that `A = (A_γ)_γ` is a Hecke eigenobject: there is an exact tensor func
 `Kl_H^rig(ψφ) : Rep(H) → F-Isoc†(X/K)` and isomorphisms `Hk_W(A) ≅ A ⊠ Kl_W^rig`, compatible with fusion
 and all intertwiners; each `Kl_W^rig` has rank `dim W` and is pure of weight zero; in the base-point
 formula the canonical map from `!`-pushforward to `+`-pushforward is an isomorphism. The same holds in the
-`ℓ`-adic theory, giving `Kl_H^{ét,ℓ}(ψφ)` (HNY Theorem 1, p. 261), and in the de Rham theory, giving an
+`ℓ`-adic theory, giving `Kl_H^{ét,ℓ}(ψφ)` (HNY Theorem 1(1),(3), p. 261; part (2), the monodromy at `0`, is
+§1.9), and in the de Rham theory, giving an
 `H`-connection `Kl_H^dR(λφ)` on `X_K` for `λ ∈ K^×` (HNY §2.6; Xu–Zhu Theorem 4.1.5, §§4.1.6–4.1.8 and
 §4.1.13, pp. 39–42). Route: extract the eigenvalue by the equivalence of §1.4 and prove holonomicity
-using the affineness of `pr₂` restricted to the big cell; prove smoothness from ULA of `IC_W` and §1.2(c);
+using the affineness of `pr₂` restricted to the big cell; prove smoothness from ULA of `IC_W` and the identity-morphism consequence of §1.2;
 use fusion for tensor compatibility; deduce purity from cleanness and the weight theory of §1.1.
 *Needs:* §§1.2–1.5; DeligneWeightsAndPurity §§8.5, 8.12 in the `ℓ`-adic theory.
 
@@ -682,8 +922,10 @@ Under a fixed isomorphism `K̄ ≅ ℚ̄_ℓ`, `ℓ ≠ p`, prove that for every
 of `X`, the characteristic polynomials of Frobenius of `Kl_W^rig(ψφ, χ, s)` and `Kl_W^{ét,ℓ}(ψφ, χ, s)` at
 `a` agree (Xu–Zhu §4.1.12, p. 42). Route: compute both trace functions over every finite extension by the
 base-point formula of §1.5 and the trace formulas of gap:arithmetic-d-module-operations and
-EtaleCohomologyFoundations, which apply to the same correspondence and coefficients; recover the
-characteristic polynomials from traces of all powers. *Needs:* §§1.5–1.7; gap:arithmetic-d-module-operations.
+InverseGaloisAndArithmeticFundamentalGroups §IG.0.T3 (on the coefficients of EtaleCohomologyFoundations), which
+apply to the same correspondence and coefficients; recover the characteristic polynomials from traces of all
+powers. *Needs:* §§1.5–1.7; gap:arithmetic-d-module-operations; InverseGaloisAndArithmeticFundamentalGroups
+§IG.0.T3.
 
 **Checks.**
 
@@ -692,18 +934,66 @@ characteristic polynomials from traces of all powers. *Needs:* §§1.5–1.7; ga
 - In rank two the comparison at `a = 1`, `q = 3` reads `1/√3` on both sides, after the half twist.
 - The de Rham object of §1.6 carries no Frobenius; it enters the comparison only through Layer 3.
 
+### 1.9 The `ℓ`-adic eigenobject at zero
+
+For trivial tame character, prove that `Kl_H^{ét,ℓ}(ψφ)` is tamely ramified at `0`, that a topological
+generator of tame inertia at `0` acts through a principal unipotent element of `H`, and that for every
+`W ∈ Rep(H)` geometric Frobenius on the nearby-cycle fibre `Ψ_0(Kl_W^{ét,ℓ})` (the geometric generic stalk at
+`0` with its local Galois action, on which inertia acts unipotently, so that the characteristic polynomial of a
+Frobenius lift does not depend on the lift) has characteristic polynomial `det(1 − (2ρ)(c_q) T | W)`;
+equivalently, the semisimple part of a Frobenius lift is conjugate in `H` to `(2ρ)(c_q)` (HNY Theorem 1(2),
+p. 261, and §4.3, (4.3)–(4.4), pp. 270–271; Xu–Zhu proof of Proposition 4.4.5, p. 50). The scalars are part of
+the statement, not only their weights. Route: inertia at `0` acts unipotently on Gaitsgory's nearby cycles
+`Ψ(IC_W)` (gap:equal-characteristic-central-sheaves); the Hecke projection of the bounded Hecke stack is proper
+and the automorphic factor is pulled back along a smooth map, so nearby cycles commute with the Hecke operator
+(LefschetzPencilsAndVanishingCycles §0.6) and `Ψ_0(Kl_W^{ét,ℓ})` is the compactly supported cohomology, at the
+trivial bundle, of the automorphic object of §1.4 tensored with `Ψ(IC_W)`, with tame unipotent inertia. By the
+Görtz–Haines description in the same gap, the Jordan–Hölder constituents of `Ψ(IC_W)` are Tate twists of
+`IC_w`, and the Frobenius eigenvalues of `Ψ_0(Kl_W^{ét,ℓ})` are those of the Hecke operators of these
+constituents. For `w` of positive length, `w = w′s` with `s` simple and `ℓ(w′) < ℓ(w)`, `IC_w` is pulled back from the partial flag
+variety of the parahoric generated by `s`, so its Hecke operator produces an object equivariant under that
+parahoric and under `(V, A_ψφ)`, which vanishes by the stabilizer argument behind the cleanness of §1.4
+(HNY §4.3, p. 271). Only the length-zero pieces contribute, each acting by a Hecke translation of `Ω` that
+carries the trivial bundle to a chart origin with fibre `1` (§§0.3, 1.4), and these pieces carry the Frobenius
+eigenvalues of `H^*(Gr_G, IC_W)`, which with the Tate normalization are those of `(2ρ)(c_q)` on `W` (§1.3;
+GlobalShtukasAndFunctionFieldLanglands §§1.8–1.9).
+Since `Kl_W^{ét,ℓ}` is pure of weight zero (§1.6), the weight filtration at `0` is the monodromy filtration
+(DeligneWeightsAndPurity §5.11); for `W = Lie H` its graded dimensions are those of the principal grading, all
+in even degrees with degree-zero part of dimension `rank H`, so the logarithm `N` of the unipotent monodromy
+has `dim ker(ad N) = rank H`, is regular, and is principal (ReductiveGroups Layer 7). *Needs:* §§1.3–1.6;
+gap:equal-characteristic-central-sheaves; GlobalShtukasAndFunctionFieldLanglands §§1.6, 1.8–1.9;
+LefschetzPencilsAndVanishingCycles §0.6; DeligneWeightsAndPurity §5.11; ReductiveGroupsPartII RG2.4.1;
+ReductiveGroups Layer 7.
+
+**Checks.**
+
+- For `H = SL₂` and `W` standard the local data at `0` are `N = E₁₂`, one Jordan block of size two, with
+  normalized Frobenius eigenvalues `c_q^{−1}, c_q` (eigenvalues `1, q` before the half twist); a semisimple
+  inertia action would give invariants of dimension `2` instead of `1`.
+- The scalars, not only their weights, are fixed: `−diag(c_q^{−1}, c_q)` has the same absolute values and the
+  same relation `Φ N Φ^{−1} = q^{−1} N` with `N = E₁₂`, but trace `−(c_q + c_q^{−1})`; the theorem gives
+  trace `c_q + c_q^{−1}`.
+- Geometric Frobenius satisfies `Φ N Φ^{−1} = q^{−1} N`: for `Φ = diag(c_q^{−1}, c_q)`, `Φ E₁₂ Φ^{−1} = c_q^{−2} E₁₂`; the
+  arithmetic Frobenius gives `q N` instead.
+- For `W = Lie SL₃` the principal grading has dimensions `1, 2, 2, 2, 1` in degrees `−4, −2, 0, 2, 4`, and `ad N` has
+  two Jordan blocks, of sizes `3` and `5`; a subregular nilpotent would have kernel of dimension `4` on `sl₃`.
+- The tame character must be trivial: for `G = 𝔾_m` and nontrivial `χ` the eigenvalue of §1.7 is a Kummer
+  sheaf, on which inertia at `0` acts through `χ`, not unipotently.
+
 ### Examples
 
 - For `H = SL₂`, `Kl_{Std}^{ét}` is the normalized rank-two Kloosterman sheaf of
-  KloostermanMomentsAndPotentialAutomorphy KM.1, and `Kl_{Std}^dR(λφ)` is the rank-two Bessel
-  connection with parameter `λ²` of KM.2.
+  KloostermanMomentsAndPotentialAutomorphy §§1.1, 1.3, and `Kl_{Std}^dR(λφ)` is the rank-two Bessel
+  connection with parameter `λ²` of §§2.1, 2.5–2.6.
 - For `H = SO₃ ≅ PGL₂`, `Kl_{SO₃,Std} ≅ Kl_{SL₂,Sym²}` (Xu–Zhu (4.1.9.1)).
 
 ### Dependencies
 
-Layer 0; GlobalShtukasAndFunctionFieldLanglands §§0.1, 1.1–1.9 and gap:relative-level-geometry;
-gap:arithmetic-d-module-operations; SpringerResolutionAndCharacteristicCycles Layer 9;
-PadicDifferentialEquationsAndRigidCohomology §§RD.6.42, RD.6.47; DeligneWeightsAndPurity DWP.8;
+Layer 0; GlobalShtukasAndFunctionFieldLanglands §§0.1, 1.1–1.9, gap:relative-level-geometry and
+gap:equal-characteristic-central-sheaves; gap:arithmetic-d-module-operations;
+SpringerResolutionAndCharacteristicCycles Layer 9; PadicDifferentialEquationsAndRigidCohomology §§RD.6.42,
+RD.6.47; DeligneWeightsAndPurity DWP.8 and §5.11; LefschetzPencilsAndVanishingCycles §0.6;
+InverseGaloisAndArithmeticFundamentalGroups §IG.0.T3; ReductiveGroupsPartII RG2.4.1; ReductiveGroups Layer 7;
 EtaleCohomologyFoundations.
 
 ## Layer 2: The Frenkel–Gross connection and Zhu's comparison
@@ -732,7 +1022,7 @@ forms).
 - In an almost-simple factor, rescaling `λ` multiplies the degree-`h` invariant of `A_λ` by `λ^h`; for
   `H = SL_r` and `W` standard, `Be_H(λ)` is the rank-`r` Bessel connection of Xu–Zhu (1.1.1.3), the
   cyclic operator with superdiagonal ones and lower-left entry `λ^r x`
-  (KloostermanMomentsAndPotentialAutomorphy KM.2, bessel-dictionary).
+  (KloostermanMomentsAndPotentialAutomorphy §2.6, Bessel dictionary).
 
 **Checks.**
 
@@ -746,9 +1036,13 @@ forms).
 Prove that the invariant quotient `V^*//T` (§0.2) and the quotient `𝔥_aff(1)//Ť` of the degree-one part of
 the affine Lie algebra of `H` are canonically identified through their equal images in the Hitchin base,
 and that after the pinning both are the product of the lowest-root parameter lines `⊕_j x·𝔥_{−θ_j}`. For
-almost-simple `G`, a functional `φ` and a lowest-root vector `E` match when `P_h(λφ) = λ^h P_h(φ)` equals the
-degree-`h` invariant `P̌_h(N + x E)`, with all invariant generators matched through the Cartan duality
-`(Lie T)^* = Lie Ť` (Xu–Zhu Theorem 4.3.3 and §4.3.4, (4.3.3.1)–(4.3.4.2), pp. 47–48).
+almost-simple `G`, a functional `φ` and a lowest-root vector `E` match when `P_h(φ) = P̌_h(N + x E)`, with the
+degree-`h` invariant generators `P_h`, `P̌_h` and all other invariant generators matched through the Cartan
+duality `(Lie T)^* = Lie Ť`. Then `λφ` matches `N + λ^h x E` for every `λ ∈ K^×`: `P_h(λφ) = λ^h P_h(φ)`, and
+`P̌_h(N + c x E) = c P̌_h(N + x E)`, since conjugation by `ρ(t)` in `H_ad`, with `t^h = c` over an extension,
+scales `N` by `t` and `E` by `t^{1−h}`. This is the matching under which §2.7 compares `Kl_H^dR(λφ)` with
+`Be_H(λ) = d + (N + λ^h x E) dx/x` (Xu–Zhu Theorem 4.3.3 and §4.3.4, (4.3.3.1)–(4.3.4.2), pp. 47–48, and
+(4.4.1.1)–(4.4.1.2), p. 49).
 *Needs:* §§0.2, 2.1; ReductiveGroups Layer 7 (Chevalley restriction).
 
 **Checks.**
@@ -757,6 +1051,9 @@ degree-`h` invariant `P̌_h(N + x E)`, with all invariant generators matched thr
 - Independent scalar normalizations of the invariant generators on the two sides are excluded: for
   `SL₂` the matching `P₂(φ) = P̌₂(N + xE)` fixes `E` up to the `T_ad`-orbit of `φ`.
 - For a torus both quotients are points and the matching is empty.
+- The scaling is carried on both sides. For `H = SL₂` with `φ(u₁, u₀) = u₁ + u₀`, `E = E₂₁` and generators
+  normalized so that `P₂(φ) = P̌₂(N + xE) = 1`: at `λ = 2` the functional `2φ` has invariant `4`, and so has
+  `N + 4xE`, whereas `N + xE` has invariant `1`; matching `λφ` with the unscaled `N + xE` would assert `4 = 1`.
 
 ### 2.3 The Bessel oper slice
 
@@ -784,17 +1081,19 @@ product over the simple factors. The residue condition at `0` is part of the def
 
 ### 2.4 Critical-level localization at the two-point level
 
-Let `X` be a smooth projective curve over an algebraically closed field of characteristic zero, `𝒢` a
+Let `X` be a smooth projective curve over an algebraically closed field `K` of characteristic zero, `𝒢` a
 smooth affine group scheme over `X` with connected fibres and adjoint dual at the unramified points, and
 assume `ω_{Bun_𝒢}^{1/2}` exists. For each unramified point the critical center `z_x` acts on the vacuum
 module, and localization gives `h : Fun Op_{H}(U) → Γ(Bun_𝒢, D′)` into global critically twisted
 differential operators, a filtered map whose associated graded is the classical Hitchin map. For
 commutative subalgebras `A_y ⊂ End(Vac_y)` at the ramified points containing the image of `Z_y`, let `A`
 be the image of `A_H(U) ⊗ ⊗_y A_y` in `Γ(Bun_𝒢, D′)`. Prove: if `D′` is flat over `A`, then for every
-`χ ∈ Spec A` the module `ω^{−1/2} ⊗ (D′ ⊗_{A, χ} K)` is a Hecke eigensheaf whose eigenvalue is the
-`H`-local system of the oper underlying `χ` (Zhu Theorem 8 and Corollary 9, pp. 8–10, recording
+character `χ : A → K` of `K`-algebras the module `ω^{−1/2} ⊗ (D′ ⊗_{A, χ} K)` is a Hecke eigensheaf whose
+eigenvalue is the `H`-local system of the oper `o_χ` underlying `χ` (the restriction of `χ` to `Fun Op_H(X)^𝒢 ⊂ A`). The statement is indexed by these
+`K`-valued characters, the `K`-points of `Spec A`, not by all points of `Spec A` (Zhu Theorem 8, at a closed point,
+and Corollary 9, through the homomorphism attached to the point, pp. 8–10, recording
 Beilinson–Drinfeld §§5.5 and 7.8). *Needs:* AffineLieAlgebras A7–A8; FormalConnectionsOpers F4, F6;
-SpringerResolutionAndCharacteristicCycles Layer 9; §§1.1, 1.3.
+SpringerResolutionAndCharacteristicCycles Layer 9; gap:critical-center-rational-forms; §§1.1, 1.3.
 
 **Checks.**
 
@@ -803,8 +1102,11 @@ SpringerResolutionAndCharacteristicCycles Layer 9; §§1.1, 1.3.
   ramified algebras `A_y` are added.
 - Flatness is a hypothesis: without it only the derived tensor product is a Hecke eigenobject, and it
   can fail to be concentrated in degree zero.
-- The eigenvalue is attached to the oper `π(χ)`, not to `χ`: two points of `Spec A` over the same oper
+- The eigenvalue is attached to the oper `o_χ`, not to `χ`: two characters of `A` over the same oper
   give eigensheaves with the same eigenvalue.
+- The index set is the set of characters: for `A = K[t]`, the point `t = 0` is the character `t ↦ 0` to `K`,
+  while the generic point `(0)` has residue field `K(t)` and is the kernel of no `K`-algebra map `K[t] → K`
+  (evaluation at `c` has kernel `(t − c)`), so `D′ ⊗_{A, χ} K` is not defined there.
 
 ### 2.5 The quantized Hitchin identification
 
@@ -815,7 +1117,7 @@ associated graded recovers the invariant-parameter comparison of §2.2; that the
 `T^*Bun_G(0,2) → V^*` is flat, so that `D′` is flat over the resulting `A`; and that localization at a generic
 character gives a nonzero holonomic eigenobject whose big-cell restriction is the exponential object
 `A_ψφ` (Zhu Lemmas 18–21 and the final localization argument, pp. 20–23; Xu–Zhu §4.3.5, (4.3.5.1),
-pp. 48–49). *Needs:* §§2.2–2.4, 1.4.
+pp. 48–49). *Needs:* §§2.2–2.4, 1.4; gap:critical-center-rational-forms.
 
 **Checks.**
 
@@ -826,22 +1128,22 @@ pp. 48–49). *Needs:* §§2.2–2.4, 1.4.
 
 ### 2.6 Central descent from the adjoint group
 
-Let `H → H_ad` be the adjoint quotient of a split reductive `H`. Prove: (i) for semisimple `H`, two
-`H`-connections on `𝔾_m` with the same pushout to `H_ad`, both with unipotent monodromy at `0`, differ by a
-`Z(H)`-torsor with connection; this finite central local system extends to `𝔸¹` and is trivial, so the
-lift is unique; (ii) for reductive `H`, the central torus `Z(H)°` contributes a rank-one factor which is
-the trivial connection on both sides for the trivial tame character, and the `H`-objects are recovered
-from the semisimple and central parts through `H = (H_der × Z(H)°)/(H_der ∩ Z(H)°)` (Xu–Zhu §4.3.6,
-p. 49). The kernel of `H → H_ad` is not finite for nonsemisimple `H`; step (ii) is separate.
-*Needs:* §2.1; ReductiveGroups Layer 7.
+Let `H → H_ad` be the adjoint quotient of a split reductive group in characteristic zero.
+For semisimple `H` over an algebraically closed field, prove that two lifts with a specified
+identification of their adjoint connections and unipotent monodromy at `0` differ by a finite
+`Z(H)`-torsor with connection. It extends across `0` to `𝔸¹` and is trivial there; hence the
+lifts are geometrically isomorphic, with their isomorphisms a torsor under `Z(H)` (Xu–Zhu
+§4.3.6, p. 49). Over a general coefficient field `K`, the extended torsor can be constant
+and nontrivial: require a compatible `K`-rational marking of its fibre at `0` to obtain its
+unique trivialization respecting that marking. For reductive `H`, treat `Z(H)°` separately:
+the trivial tame datum fixes its rank-one factors to be trivial connections, and recover `H`
+through `(H_der × Z(H)°)/(H_der ∩ Z(H)°)`. *Needs:* §2.1; ReductiveGroups Layer 7.
 
 **Checks.**
 
-- For `H = SL₂`, the two lifts of a `PGL₂`-connection differ by a `μ₂`-torsor; unipotent monodromy at `0`
-  excludes the nontrivial Kummer torsor `√x`.
-- For `H = GL₂` the kernel of `GL₂ → PGL₂` is `𝔾_m`; the trivial tame character fixes the determinant to
-  be the trivial connection.
-- For a torus all three objects are trivial.
+- For `SL₂`, unipotence at `0` excludes the Kummer torsor `√x`; it does not exclude the constant torsor `Spec K(√a) × 𝔸¹` for nonsquare `a ∈ K^×`, whose fibre at `0` has no `K`-point.
+- Conjugating the rank-two Bessel matrix by `P = diag(a,1)` gives the same projective connection. Its horizontal intertwiners are `cP`; an `SL₂` intertwiner needs `c²a = 1`. A nonsquare `a` fails the marking, whereas `a = b²` admits `c = b^{−1}`.
+- For `GL₂`, the kernel is `𝔾_m`, not finite; fixing the trivial determinant is essential. For a torus the trivial datum gives only trivial connections.
 
 ### 2.7 Zhu's comparison
 
@@ -849,42 +1151,88 @@ For a generic functional `φ` over `K` and `λ ∈ K^×`, with matched parameter
 tensor functors `Kl_H^dR(λφ) ≅ Be_H(λ)` to algebraic connections on `𝔾_{m,K}`, for trivial tame character
 (Xu–Zhu Theorem 4.3.3 and §§4.3.5–4.3.6, pp. 47–49; Zhu §5, p. 23). Route: for adjoint `H` over `K̄`,
 identify the localized eigensheaf of §2.5 with the clean extension of its big-cell restriction by
-§1.4, so its eigenvalue is `Kl_H^dR`; compare with the oper, which is `Be_H`; descend from `K̄` to `K`
-since both functors are defined over `K`; lift from `H_ad` to `H` by §2.6.
+§1.4, so its eigenvalue is `Kl_H^dR`; compare with the oper, which is `Be_H`.
+The rational descent target is to construct this tensor comparison from the normalized localization
+map of §2.5 and its specified exponential identification on every big cell, both over `K`,
+and prove that its Galois conjugates agree with it: the clean-extension equivalence determines
+the normalized eigensheaf map, Hecke compatibility determines its eigenvalue maps, and the
+induced marking of the finite central comparison torsor at `0` must be `K`-rational. Prove
+these assertions before applying Galois descent and §2.6. This retains the comparison over `K`;
+geometric existence and definition of the two functors over `K` alone do not imply it.
 *Needs:* §§1.4, 1.6, 2.2, 2.5, 2.6.
 
 **Checks.**
 
 - The big-cell restriction of the localized object is the exponential object of §1.4, with `E_{−π}`
   replaced by `E_λ`.
-- For a nonsemisimple `H` the torus is treated before the finite central kernel.
+- For a nonsemisimple `H` the torus is treated before the finite central kernel; the normalized comparison has Galois cocycle `1`. The nonsquare conjugate in §2.6 lacks that rational marking and cannot be substituted for it.
 - For `H = SL_r` and `W` standard the comparison is the classical identity `Be_r ≅ Kl_r^dR` of Xu–Zhu §1.1.1,
-  checked on the holomorphic solution `Σ_{m ≥ 0} (λ^r x)^m/(m!)^r`.
+  checked on the solution functional of the cyclic module, `Σ_{m ≥ 0} (λ^r x)^m/(m!)^r`. A horizontal first coefficient of the original column connection is instead `Σ_{m ≥ 0} ((−1)^r λ^r x)^m/(m!)^r`: for `r = 3`, `λ = 1` these begin `1 + x + x²/8` and `1 − x + x²/8`; substituting the first into the horizontal equation leaves coefficient `2` at `x` (KloostermanMomentsAndPotentialAutomorphy §2.6).
 
 ### 2.8 The Frenkel–Gross monodromy
 
 For almost-simple `H` over an algebraically closed field of characteristic zero, prove that the
 differential Galois group of `Be_H(λ)`, `λ ≠ 0`, is connected and, up to central isogeny, is given by the
 table `A_{2n} → A_{2n}`; `A_{2n−1}, C_n → C_n`; `B_n, D_{n+1} → B_n` for `n ≥ 4`; `B₃, D₄, G₂ → G₂`;
-`E₆, F₄ → F₄`; `E₇ → E₇`; `E₈ → E₈`. Where the table gives a smaller group it is the fixed subgroup of the
-pinned outer automorphism, and its central form is the image in `H` of the simply connected group of
-that type. The connection is principal unipotent at `0`, and the intermediate extension of its adjoint
+`E₆, F₄ → F₄`; `E₇ → E₇`; `E₈ → E₈`. The reductions `A_{2n−1} → C_n`, `D_{n+1} → B_n`, `E₆ → F₄` and
+`D₄ → G₂` come from pinned fixed groups (triality for `D₄`). The inclusion `G₂ ⊂ B₃`
+instead is its seven-dimensional orthogonal representation: the matrices `N,E` lie in `𝔤₂`
+and preserve its invariant alternating three-form (Frenkel–Gross §6, Case IV, p. 13;
+§13, Corollary 10, p. 28). The central form in every row is the image in `H` of the
+simply connected group of the displayed type. The connection is principal unipotent at `0`, and the intermediate extension of its adjoint
 local system to `ℙ¹` has vanishing cohomology in every degree (Frenkel–Gross Theorem 1, p. 16,
 Proposition 8 and Corollaries 9–10, pp. 27–29; Xu–Zhu table (1.2.6.1), p. 6, and §4.5.1, p. 51).
 Route: the formal Coxeter type at `∞` and principal unipotence at `0` force a connected reductive group
-containing a principal `SL₂`; apply gap:principal-sl2-subgroups; the pinned outer symmetries force the
-smaller rows; compute the adjoint Euler characteristic with the corrected local term (§6.6).
-*Needs:* §2.1; gap:principal-sl2-subgroups; KloostermanMomentsAndPotentialAutomorphy KM.2
-(differential-galois) for the rows `A_n` and `C_n`; OrthogonalSpinGroups Layers 0–1.
+containing a principal `SL₂`; apply gap:principal-sl2-subgroups; the fixed-group symmetries and the exceptional seven-dimensional inclusion give the upper
+bounds in the smaller rows. Prove adjoint rigidity directly in characteristic zero using the
+algebraic de Rham boundary exact sequence, duality and the formal index computation of
+Frenkel–Gross §§7–10 and §14, Proposition 11, pp. 14–22 and 29–30: for `V = Lie H`,
+`H⁰ = H² = V^{G_alg} = 0`, `Irr_∞(V) = r`, `dim V^{I₀} = r`, and
+`dim V^{I_∞} = 0`, so `h¹ = r − r − 0 = 0`. The two local terms in (14.1) are at
+`0` and `∞`, as the boundary sequence immediately preceding it shows. For a proper
+monodromy subgroup decompose the adjoint into its adjoint and the complementary
+constituents and apply the same computation (Frenkel–Gross §14, pp. 30–31).
+*Needs:* §2.1; SpringerResolutionAndCharacteristicCycles Layer 9 (algebraic de Rham operations and duality); gap:principal-sl2-subgroups; KloostermanMomentsAndPotentialAutomorphy §2.5
+(differential Galois group) for the rows `A_n` and `C_n`; OrthogonalSpinGroups Layers 0–1.
 
 **Checks.**
 
-- `SL₃` has characteristic-zero group `SL₃`; the group `SO₃` that appears at `p = 2` in §11.4 is not
+- For `SL₂` adjoint rigidity gives `h¹ = 1 − 1 − 0 = 0`; counting the zero-place invariants twice gives `−1`. `SL₃` has characteristic-zero group `SL₃`; the group `SO₃` that appears at `p = 2` in §11.4 is not
   substituted here.
 - `G₂ ⊂ SO₇` and `SO₇` have the same seven-dimensional standard connection; the group is `G₂` and the
-  ambient central form is retained.
+  ambient central form is retained. Here `dim G₂ = 14 < 21 = dim SO₇`, while `B₃` has no nontrivial diagram automorphism. For `D₄`, actual triality has fixed group `G₂` of dimension `14 < 28`.
 - The row is `D_{n+1} → B_n` for `n ≥ 4`; the index `D_{2n+1}` printed in Frenkel–Gross Corollary 10 (p. 28)
   contradicts the inclusion `so_{2n+1} ⊂ so_{2n+2}` displayed before it, and `D₄` is the separate `G₂` row.
+
+### 2.9 Central and pinned symmetries
+
+For `(a, σ) ∈ 𝔾_m × Aut(G,B,T)`, define `r_{a,σ} : V → V` by loop
+rotation followed by the automorphism of the based group. In the affine-root coordinates
+with local loop parameter `t = 1/x`, its rotation part fixes every finite simple-root
+coordinate and multiplies the coordinate `t e_{−θ_j}` in each factor by `a`; its second
+part is the actual root-line map induced by `σ` (including its scalar on the lowest-root
+line). For pinned `σ`, the finite simple lines are permuted with their pinned coordinates;
+for `σ = Ad(s)`, the coordinate on a root line `α` is multiplied by `α(s)`.
+Rotation commutes with these root-line maps, so `r_{a,σ} r_{b,τ} = r_{ab,στ}`.
+The induced pullback on generic functionals is `φ ↦ φ ∘ r_{a,σ}`; it preserves genericity.
+This action is distinct from the logarithmic derivation `δ = x d/dx`.
+Prove: (i) for a homomorphism `G′ → G` inducing an isomorphism of adjoint groups and of root-depth
+quotients, the dual map `H → H′` pushes `Kl_H` to `Kl_{H′}` in each theory; (ii) for `(a, σ) ∈ 𝔾_m(k) × Aut(G, B, T)`, `Kl_{H, W}(ψ(φ ∘ r_{a,σ})) ≅ a^* Kl_{H, ι(σ^{−1}) W}(ψφ)`, compatibly with tensor structures; (iii) the
+eigenvalue depends only on the `T_ad`-orbit of `φ`, and replacing `ψ` by `ψ(a ·)` pulls back by `x ↦ a^h x`; (iv) for
+almost-simple `G` not of type `A_{2n}`, or for `p = 2`, every outer automorphism preserves `Kl_H(ψφ)`, while for
+type `A_{2n}` and `p > 2` the outer involution gives `Kl_{H,W} ≅ (−1)^* Kl_{H, W^∨}`; (v) the exceptional
+identities `Kl_{SL₂, Sym²} ≅ Kl_{SO₃, Std}`, `Kl_{Sp₄, ker(Λ² → 1)} ≅ Kl_{SO₅, Std}`,
+`Kl_{SO₄, Std} ≅ Kl_{SL₂ × SL₂, Std ⊠ Std}` and `Kl_{SO₆, Std} ≅ Kl_{SL₄, Λ²}` (Xu–Zhu §§4.1.9–4.1.10,
+(4.1.9.1)–(4.1.10.5), pp. 40–41). *Needs:* §§0.2, 1.6, 2.7; §1.3 (the action of `Aut(G)`).
+
+**Checks.**
+
+- `r_{1,id}` is the identity. For `SL₂` and `φ(v₁,v₀) = b₁v₁ + b₀v₀`, rotation gives `b₁v₁ + ab₀v₀`, so the invariant product becomes `a b₁b₀`; scaling both coordinates would give `a²b₁b₀`.
+- Two rotations by `a,b` give `v₀ ↦ abv₀`, agreeing with `r_{ab,id}`. The scalar on the lowest-root line is retained under a pinned outer involution in type `A_{2n}`.
+- A map `G′ → G` of automorphic groups induces `H → H′` in the opposite direction.
+- `SO₄` is handled through `SL₂ × SL₂` and the tensor product; there is no almost-simple `D₂`.
+- For `H = SL₃` and `p` odd, (iv) relates `Kl_{Std}` to the pullback by `x ↦ −x` of `Kl_{Std^∨}`; at `p = 2` the
+  pullback is the identity and `Kl_{Std} ≅ Kl_{Std^∨}`.
 
 ### Examples
 
@@ -894,31 +1242,50 @@ smaller rows; compute the adjoint Euler characteristic with the corrected local 
 ### Dependencies
 
 Layers 0–1; ReductiveGroups Layers 1, 7, 9; FormalConnectionsOpers F2, F4, F6; AffineLieAlgebras
-A7–A8; SpringerResolutionAndCharacteristicCycles Layer 9; KloostermanMomentsAndPotentialAutomorphy KM.2;
+A7–A8 and gap:critical-center-rational-forms; SpringerResolutionAndCharacteristicCycles Layer 9; KloostermanMomentsAndPotentialAutomorphy §§2.1, 2.5–2.6;
 gap:principal-sl2-subgroups; OrthogonalSpinGroups Layers 0–1.
 
 ## Layer 3: The relative de Rham–rigid comparison
 
-This layer works over the complete discrete valuation ring `R` of the coefficient datum. It compares
+This layer works over the complete discrete valuation ring `R` of the coefficient datum, whose residue
+field is `k` and whose fraction field is `K₀`. Its comparisons forget Frobenius and use `π` but not `c_p`, so
+they are constructed over `R` and `K₀` and then extended to the coefficient field `K` of §0.1 by finite
+extension of scalars, which commutes with relative specialization, intermediate extension and the full
+faithfulness used below. It compares
 the analytification of the de Rham eigenvalue with the rigid eigenvalue, first for minuscule and
 quasi-minuscule representations by relative cohomology of the bounded Hecke family, then for all
 representations through tensor generators. The main comparison has trivial tame character.
 
 ### 3.1 Relative specialization for the bounded Hecke family
 
-For a representation `W` with `Gr_{≤W}` smooth or with a resolution, let `p₂° : GR_W° → X` be the open part
-of the bounded Grassmannian over the big cell (§1.5), base-changed over `R` through
-gap:relative-level-geometry, with the good compactification `Gr_{≤W, ℙ¹} → ℙ¹`. Construct the relative
-specialization map from relative twisted de Rham cohomology of `(GR_W°)_K` with coefficient `p₁^+ E_{−π}`
-to relative rigid cohomology of `(GR_W°)_k` with the Dwork coefficient, as a horizontal map of
-`A†`-modules on `𝔾_m`, where `A†` is the ring of functions on `ℙ¹` overconvergent along `{0, ∞}` (Xu–Zhu §2.3.7,
+For a representation `W` with `Gr_{≤W}` smooth or with a resolution, put `d = dim Gr_W`, let
+`p₂° : GR_W° → X` be the open part of the bounded Grassmannian over the big cell (§1.5), base-changed
+over `R` through gap:relative-level-geometry, and let `GR_W°° ⊂ GR_W°` be its smooth locus (all of
+`GR_W°` when `Gr_{≤W}` is smooth), with the good compactification `Gr_{≤W, ℙ¹} → ℙ¹` (respectively
+`G̃r_{≤W} × ℙ¹ → ℙ¹` from the resolution). The coefficient is Satake-normalized: on `GR_W°°` put
+`M = p₁^+ E_{−π}[d]` in the de Rham theory and `M = p₁^+ A_ψ[d]` in the arithmetic theory, with the half
+twist `(d/2)` added when Frobenius is kept. Here `p₁^+` of a smooth coefficient is its unshifted pullback
+as a connection (respectively overconvergent isocrystal), and a smooth object on a smooth scheme of
+dimension `e` lies in the holonomic heart only after the shift `[e]` (Xu–Zhu §2.3.4, (2.3.4.1)–(2.3.4.2),
+p. 15). Since `IC_W` is constant on `GR_W°°` with shift `[d]` and twist `(d/2)` (§§1.3, 1.5), `M` is the
+restriction of `p₁^+ A_ψ ⊗ IC_W`; its restriction to the `d`-dimensional smooth part of a fibre over a
+point of `X` lies in the holonomic heart, while on the `(d + 1)`-dimensional total space it is `M[1]` that
+does. In the same way the eigenvalue `Kl_W` is a connection (respectively overconvergent isocrystal) on
+the curve `X`, and its holonomic object is `Kl_W[1]` (Xu–Zhu §4.2.2 and §4.2.5, pp. 43–44). Construct the
+relative specialization map from relative twisted de Rham cohomology of `(GR_W°°)_{K₀}` with coefficient `M`
+to relative rigid cohomology of `(GR_W°°)_k` with coefficient `M` (both computed by derived direct image
+of the relative de Rham complex, as `GR_W°°` need not be affine over `X`), as a morphism of these
+derived direct images that induces, on each cohomology object `ℋ^k` for the holonomic t-structure on
+`X`, a horizontal map of `A†`-modules on `𝔾_m`. When `GR_W°°` is not affine over `X` (the quasi-minuscule
+case of §3.3) the derived direct images are not concentrated in one degree, and only the map on `ℋ⁰` of
+the direct images shifted by the curve shift `[1]` is used. Here `A†` is the ring of functions on `ℙ¹` overconvergent along `{0, ∞}` (Xu–Zhu §2.3.7,
 (2.3.7.2), and §4.2.4, (4.2.4.1), pp. 15–16 and 43–44). Prove that the dagger-to-completed ring map
 `A† → A₀` is faithfully flat, so that an isomorphism after `⊗ A₀` descends, and that the fibre of the
 map at an `R`-point after any finite extension of `R` is the absolute specialization map of
-PadicDifferentialEquationsAndRigidCohomology §RD.4.58. *Needs:* §§1.5–1.6; §RD.4.58, §RD.4.59,
+PadicDifferentialEquationsAndRigidCohomology §RD.4.58. *Needs:* §§1.3, 1.5–1.6; §RD.4.58, §RD.4.59,
 §RD.3.8; gap:relative-level-geometry.
 
-- The relative map is `D_{X_K}`-linear and horizontal after `⊗ A†`.
+- The relative map is `D_{X_{K₀}}`-linear and horizontal after `⊗ A†`.
 - Its formation commutes with finite extension of `R` and with restriction to opens of `X`.
 - Its fibre at a lifted closed point is the absolute specialization map of §RD.4.58.
 
@@ -933,7 +1300,9 @@ PadicDifferentialEquationsAndRigidCohomology §RD.4.58. *Needs:* §§1.5–1.6; 
 ### 3.2 The minuscule comparison
 
 For generic `φ` over `R` and minuscule `W`, prove that the relative specialization map induces an
-isomorphism of connections `(Kl_W^dR(−πφ))† ≅ Kl_W^rig(ψφ)`. On each lifted closed-point fibre the
+isomorphism of connections `(Kl_W^dR(−πφ))† ≅ Kl_W^rig(ψφ)`. On each lifted closed-point fibre, with the
+Satake-normalized coefficient `M` of §3.1 (for minuscule `W`, `IC_W` is the constant object shifted by
+`d` and twisted by `d/2`, so `M = p₁^+ A_ψ ⊗ IC_W`), the
 compact-to-ordinary square and cleanness (§1.4) identify cohomology in degree zero, all other degrees
 vanish, and the common dimension is `dim W` (Xu–Zhu Lemma 4.2.3 and §4.2.4, (4.2.4.1)–(4.2.4.2),
 pp. 43–44). Route: the minuscule Schubert variety is a smooth projective partial flag variety, so the
@@ -943,7 +1312,9 @@ specialization plus equality of dimensions gives the fibre isomorphism; faithful
 
 **Checks.**
 
-- The fibre cohomology vanishes outside degree zero and has dimension `dim W` there.
+- The fibre cohomology with coefficient `M` vanishes outside degree zero and has dimension `dim W` there. For
+  `H = SL₂` and `W` standard (`d = 1`) this is `2` in degree `0`; the unshifted coefficient `p₁^+ A_ψ` would
+  put the two-dimensional space in degree `1` and nothing in degree `0`.
 - A rigid point not rational over `K` is tested after its finite extension, and the conclusion descends.
 - For `H = SL₂` and `W` standard both sides have rank two and the comparison is the rank-two case of
   §2.7 after analytification.
@@ -951,42 +1322,90 @@ specialization plus equality of dimensions gives the fibre isomorphism; faithful
 ### 3.3 The quasi-minuscule middle image
 
 For quasi-minuscule `W`, the closed Schubert variety `Gr_{≤W}` has an isolated singular point (the
-vertex) and a resolution `G̃r_{≤W}`; let `τ : GR_W°° → X` be the smooth part of the family. Prove that the
-image of compact-support cohomology in ordinary cohomology of the intermediate-extension coefficient
-`j_{!+}(p₁^+ A_ψ)` on each fibre is concentrated in degree zero, of dimension `dim W`, in both the de Rham and
-the rigid theories, and that the relative de Rham object is holonomic in degree zero. Route: use the
-localization triangle at the vertex, the decomposition of the push-forward from the resolution, and
-perverse truncation of `τ_+` rather than any affineness of `τ`. The printed step in Xu–Zhu Lemma 4.2.6(i)
-(pp. 44–45) asserts that `τ` is affine; the punctured cone over the vertex has codimension at least two
-and is not affine, so that step is replaced by this theorem. *Needs:* §§1.1, 1.4, 3.1;
+vertex) and a resolution `G̃r_{≤W}`; let `τ : GR_W°° → X` be the smooth part of the family, `j : GR_W°° → GR_W°`
+the open immersion, `i : Z → GR_W°` the complementary vertex section (`Z ≅ X`, `p₂° ∘ i = id`), and `M` the
+Satake-normalized coefficient of §3.1, so that `j_{!+}(M) ≅ p₁^+ A_ψ ⊗ IC_W` on `GR_W°` (with `p₁^+ E_{−π}` in
+the de Rham theory). Write `ℋ^k` for the cohomology objects of the holonomic t-structure on `X`, and recall
+that `Kl_W[1] = p°_{2,+}(j_{!+}(M))[1]` lies in the heart (§1.6, `p₂°` being affine on the big cell and
+clean). Over a point `s` of `X` write `Y_s` for the fibre of `GR_W°`, `U_s` for its smooth part of dimension
+`d = dim Gr_W`, and `M_s` for the restriction of `M`, which is `p₁^+ A_ψ[d]` on `U_s` (twisted by `(d/2)` when
+Frobenius is kept) and lies in its holonomic heart (Xu–Zhu §4.2.5, p. 44). Prove, in both the de Rham and
+the rigid theories: (i) for every point `s` of `X`, the image of the forget-supports map
+`H^*_c(U_s, M_s) → H^*(U_s, M_s)` is `H^*(Y_s, j_{!+}(M_s))`, through the factorization
+`H^0_c(U_s, M_s) ↠ H^0_c(Y_s, j_{!+}(M_s)) ≅ H^0(Y_s, j_{!+}(M_s)) ↪ H^0(U_s, M_s)`, and it is concentrated in
+degree zero, of dimension `dim W`; (ii) the cone `C` of `j_{!+}(M)[1] → j_+(M)[1]` is `i_+ i^!(j_{!+}(M))[2]`,
+supported on `Z` and in holonomic degrees `≥ 0` (Xu–Zhu Corollary 2.6.2(i), p. 19), hence
+`ℋ^k(τ_+(M)[1]) = 0` for `k < 0`, the map `Kl_W[1] → ℋ⁰(τ_+(M)[1])` is injective with cokernel
+`ℋ⁰(i^!(j_{!+}(M))[2])`, and `ℋ^k(τ_+(M)[1]) ≅ ℋ^k(i^!(j_{!+}(M))[2])` for `k ≥ 1`; dually
+`ℋ⁰(τ_!(M)[1]) → Kl_W[1]` is surjective, so `Kl_W[1]` is the image of `ℋ⁰(τ_!(M)[1]) → ℋ⁰(τ_+(M)[1])`.
+The complex `τ_+(M)[1]` is not in the heart (Checks). Route: the localization triangles along the vertex
+section and at the vertex of `Y_s`, the support and cosupport conditions that characterize `j_{!+}`
+(Xu–Zhu Corollary 2.6.2(i)), cleanness of `p₂°` (§§1.4, 1.6) and `p₂° ∘ i = id`; no affineness of `τ` is
+used. Xu–Zhu Lemma 4.2.6(i) (p. 44) asserts that `τ_+(M)[1]` is holonomic, deducing it from an asserted
+affineness of `τ`; `τ` is not affine and that conclusion fails as well (Checks), so (ii) replaces the whole
+of that lemma. The quasi-minuscule comparison (§3.4) uses only the degree-zero map
+`Kl_W[1] → ℋ⁰(τ_+(M)[1])` of (ii), as in Xu–Zhu (4.2.7.1), p. 45. *Needs:* §§1.1, 1.3, 1.4, 1.5, 1.6, 3.1;
 SpringerResolutionAndCharacteristicCycles Layer 9 (§9.6, intermediate extension);
 gap:arithmetic-d-module-operations.
 
 **Checks.**
 
-- In the simplest case `G = PGL₂` the quasi-minuscule Schubert variety is the quadric cone in `𝔸³`, whose
-  punctured cone is not affine; the middle image still has dimension `3 = dim W` for the adjoint `W`.
-- The intermediate extension, not `j_!` or `j_+`, is the coefficient: `j_!` contributes the vertex stalk to
-  compactly supported cohomology and changes the dimension.
+- In the simplest case `G = PGL₂` the projective quasi-minuscule Schubert surface has a vertex neighbourhood isomorphic to the affine quadric cone `Spec K[u,v,w]/(uv−w²)`, whose
+  punctured chart is not affine; the middle image still has dimension `3 = dim W` for the adjoint `W`.
+- The Satake shift is part of the statement. For `G = PGL₂` (`d = 2`) the normalized coefficient gives
+  middle-image dimensions `3` in degree `0` and `0` in degree `2`; the unshifted `j_{!+}(p₁^+ A_ψ)` moves the
+  three-dimensional space to degree `2`, leaving `0` in degree `0`. On the curve it is
+  `Kl_W[1] = p°_{2,+}(j_{!+}(M))[1]` that lies in the heart; `τ_+(M)[1]` does not: for `PGL₂` its `ℋ⁰` has
+  rank `3` and its `ℋ¹` rank `1`, the fibre dimensions of the next Check. In (ii), `j_{!+}(M)` is a rank-one
+  smooth object in ordinary degree `−2` near the vertex section, which has codimension `2` in a rationally
+  smooth threefold, so `i^!(j_{!+}(M))[2]` is a rank-one smooth object on `Z` in ordinary degree `0`, that is,
+  in holonomic degree `1` (up to Tate twist): the cokernel in degree `0` vanishes and `ℋ¹(τ_+(M)[1])` has
+  rank `1`.
+- Extension by zero has no vertex stalk: for `i` the vertex of `Y_s`, `i^+ j_!(M_s) = 0`. For `G = PGL₂` the
+  coefficient `p₁^+ A_ψ` is a rank-one smooth object across the vertex, and the cone is the quotient of
+  `𝔸²` by `μ₂` acting by `−1` (an étale double cover off the vertex for odd `p`, radicial for `p = 2`), so
+  with characteristic-zero coefficients `j_{!+}(M_s)` is `p₁^+ A_ψ[2]` near the vertex, up to the half twist. The vertex stalks
+  in degree `−2` therefore have dimensions `0` for `j_!` and `1` for `j_{!+}`. The localization triangle
+  `j_!(M_s) → j_{!+}(M_s) → i_+ i^+ j_{!+}(M_s)`, with the concentration of `H^*(Y_s, j_{!+}(M_s))` in (i), then gives
+  `H^{−1}_c(U_s, M_s)` of dimension `1` besides `H^0_c(U_s, M_s)` of dimension `3`; dually `H^0(U_s, M_s)` has
+  dimension `3` and `H^1(U_s, M_s)` dimension `1`. Only the intermediate extension is concentrated in
+  degree zero; the image of `H^*_c(U_s, M_s) → H^*(U_s, M_s)` is the three-dimensional space in degree `0`, as
+  (i) says, although neither side is concentrated in one degree.
+- `τ` is not affine in any quasi-minuscule case, and `ℋ^{d−1}(τ_+(M)[1]) ≠ 0` with `d − 1 ≥ 1`. On a fibre,
+  `H^{d−1}(U_s, M_s)` is the degree-`d` costalk of `j_{!+}(M_s)` at the vertex, which is dual to the lowest
+  stalk cohomology of the intersection complex there and so is nonzero; Artin vanishing would put the
+  cohomology of the heart object `M_s` on an affine `U_s` in degrees `≤ 0`. Near the vertex section the family
+  is a product of `X` with the Schubert variety, so the same costalk gives `ℋ^{d−1}(i^!(j_{!+}(M))[2]) ≠ 0`.
 - The statement is fibrewise over every closed point of `X`, including after finite residue extension.
 
 ### 3.4 The quasi-minuscule comparison
 
-For quasi-minuscule `W`, prove the isomorphism `(Kl_W^dR(−πφ))† ≅ Kl_W^rig(ψφ)`: §3.3 gives a fibrewise
-isomorphism of middle images on a dense open of `X`; the relative map is an isomorphism there; the
-de Rham object is convergent and overconvergent along `{0, ∞}` because it is a direct summand of the
-analytification of a tensor power of minuscule objects already compared, or by the convergence of
-its relative cohomology; and the isomorphism extends uniquely to `X` by full faithfulness of restriction
-to a dense open (§RD.5.112) (Xu–Zhu §§4.2.5–4.2.7, Lemma 4.2.6 and (4.2.6.3), pp. 44–45).
-*Needs:* §§3.1–3.3; PadicDifferentialEquationsAndRigidCohomology §§RD.3.37, RD.5.112.
+For quasi-minuscule `W`, first prove the convergence theorem: the finite locally free
+dagger module with connection obtained by analytifying `Kl_W^dR(−πφ)` is convergent on
+the tube of `X_k` and has an overconvergent Taylor stratification along `{0,∞}`, without
+any Frobenius on this module. Route: over a dense open `U ⊂ X` on which the cohomology
+objects of `τ_+(M)[1]` are smooth in both theories, the relative specialization map of §3.1
+on `ℋ⁰(τ_+(M)[1])` carries the image of `Kl_W^dR` (§3.3(ii)) isomorphically onto the image
+of `Kl_W^rig`, by the fibre calculation of §3.3(i), the commutative specialization and
+forget-supports square of §RD.4.59 (which makes specialization map the de Rham middle image
+onto the rigid one, an isomorphism by equality of dimensions, as in §3.2) and faithful
+flatness; so on `U` the Taylor stratification of the analytified module
+is that of `Kl_W^rig` with Frobenius forgotten. Apply the
+convergence-detection contract below to the connection, which is defined over the entire
+dagger lift of `X`; this is the analytic input of Xu–Zhu §4.2.7, (4.2.7.1)–(4.2.7.2),
+p. 45, and it precedes any use of Frobenius transport. Then prove
+`(Kl_W^dR(−πφ))† ≅ Kl_W^rig(ψφ)` on `X` by full faithfulness for underlying
+overconvergent isocrystals (PadicDifferentialEquationsAndRigidCohomology §RD.5.102(a),
+also distinguished in §RD.5.112(ii)). Neither forgetting overconvergence nor convergent
+F-isocrystal full faithfulness is this restriction theorem.
+*Needs:* §§3.1–3.3; gap:dense-convergence-detection;
+PadicDifferentialEquationsAndRigidCohomology §§RD.3.37, RD.4.59, RD.5.102(a).
 
 **Checks.**
 
-- The extension from the dense open uses full faithfulness for F-isocrystals; without Frobenius,
-  restriction from overconvergent to convergent is not full (§RD.5.9).
-- No step uses affineness of `τ`.
-- For `G = PGL₂` and `W` adjoint the result is `Sym²` of the standard comparison of §3.2, as it must be by
-  §1.5 applied to `Std ⊗ Std = Sym² ⊕ 1`.
+- For `E₈` there are zero nontrivial minuscule representations: take the quasi-minuscule adjoint `W` of rank `248`. Its de Rham module and its dense-open middle-image comparison have rank `248`; the convergence theorem applies to that module directly, before §4.1.
+- For the unit connection on `X` and its restriction to any dense open `U`, both underlying endomorphism spaces are `K`; retaining semilinear Frobenius instead gives `K^σ`. The extension here uses the former spaces.
+- For `G = PGL₂`, the adjoint comparison has rank `3`, agreeing with `Sym²` of the rank-two comparison. No step assumes that the punctured vertex chart is affine.
 
 ### 3.5 The tensor comparison
 
@@ -1018,7 +1437,7 @@ compatibility. For a nontrivial tame character only the rational-Kummer comparis
 ### Dependencies
 
 Layers 1–2; PadicDifferentialEquationsAndRigidCohomology §§RD.3.8, RD.3.37, RD.4.58, RD.4.59,
-RD.5.9, RD.5.112; gap:relative-level-geometry; gap:arithmetic-d-module-operations;
+RD.5.102(a); gap:dense-convergence-detection; gap:relative-level-geometry; gap:arithmetic-d-module-operations;
 SpringerResolutionAndCharacteristicCycles Layer 9; ReductiveGroups Layer 1.
 
 ## Layer 4: Bessel Frobenius structures
@@ -1036,7 +1455,7 @@ Let `φ` be generic over `R` with trivial tame character, and let `E_j` be the m
 the composite of the isomorphisms of §2.7 and §3.5 (Xu–Zhu §4.4.1, (4.4.1.1)–(4.4.1.3), pp. 49–50). Prove
 that it is independent of the chosen comparisons: two choices differ by a horizontal tensor automorphism
 of `Be_H`, a constant central element, whose action commutes with the transported Frobenius.
-*Needs:* §§1.6, 1.8, 2.7, 3.5; PadicDifferentialEquationsAndRigidCohomology §RD.3.25.
+*Needs:* §§1.6, 1.8, 2.7–2.8, 3.5; PadicDifferentialEquationsAndRigidCohomology §RD.3.25.
 
 - For every `W`, the underlying overconvergent connection is `d + dρ_W(N + x Σ_j (−π)^{h_j} E_j) dx/x`.
 - The Frobenius commutes with all intertwiners and with the unit, dual and tensor constraints.
@@ -1057,7 +1476,7 @@ of `Be_H`, a constant central element, whose action commutes with the transporte
 Prove that `Be_H†` extends uniquely to a tensor functor into log-convergent F-isocrystals on `(𝔸¹_k, 0)`,
 nilpotent at the logarithmic point and overconvergent along `∞`, with residue `dρ_W(N)` in representation
 `W`; the local Robba object at `0` is unipotent with this principal nilpotent residue (Xu–Zhu §4.4.2,
-(4.4.2.1), p. 50; §2.9.3, pp. 23–24). This specializes §RD.5.103 to the Bessel residue; regularity at `∞`
+(4.4.2.1), p. 50; §2.9.3, p. 24). This specializes §RD.5.103 to the Bessel residue; regularity at `∞`
 is not asserted. *Needs:* §4.1; PadicDifferentialEquationsAndRigidCohomology §§RD.2.13–RD.2.16,
 RD.2.33, RD.5.101–RD.5.103.
 
@@ -1080,17 +1499,26 @@ Prove that in the logarithmic fibre of `Be_H†` at `0` the semisimple part of F
 Frobenius matrix satisfies `N C(0) = q C(0) N`, so `C(0)^{−1} N C(0) = qN`; for the inverse `Φ = C^{−1}`,
 `Ad_{Φ(0)} N = qN` (Xu–Zhu Proposition 4.4.5 and its proof, p. 50, with the conjugation direction fixed by
 the column equation). For `SL_r` the eigenvalues are `q^{−(r−1)/2}, …, q^{(r−1)/2}`. Route: horizontality
-with the logarithmic residue constrains the Frobenius to the principal grading coset; the normalized
-Satake weights fix the central scalar in every irreducible representation. *Needs:* §4.2, §1.8;
-ReductiveGroups Layer 7.
+with the logarithmic residue gives `N C(0) = q C(0) N`, so, `N` being principal, the semisimple part of `C(0)` is
+conjugate to `ε·(2ρ)(c_q)` for a central `ε ∈ Z(H)(K)`; weights and slopes do not see `ε` (Checks). The
+logarithmic fibre with its Frobenius is the unipotent nearby-cycle fibre of `Be†_W` at `0`, and since `Be†_W` and
+`Kl_W^{ét,ℓ}` are companions (§§1.8, 4.1) their unipotent nearby cycles at `0` have the same Frobenius
+characteristic polynomial (both by gap:arithmetic-d-module-operations); by §1.9 it is `det(1 − (2ρ)(c_q) T | W)`.
+For irreducible `W` the element `ε` acts by a root of unity `χ_W(ε)`, and the eigenvalue of largest valuation,
+on the highest-weight line, occurs once, so `χ_W(ε) = 1`; the central characters of the irreducible
+representations separate the points of `Z(H)`, so `ε = 1` (Xu–Zhu proof of Proposition 4.4.5, p. 50).
+*Needs:* §§1.8, 1.9, 4.1, 4.2; gap:arithmetic-d-module-operations; ReductiveGroups Layers 1, 7.
 
 **Checks.**
 
 - For `H = SL₂`, `N = E₁₂` and `c_q² = q`, `C(0) = diag(c_q^{−1}, c_q)` satisfies `N C(0) = q C(0) N`: both sides have
   upper-right entry `c_q`.
-- For `H = PGL₂`, `ρ` is not a cocharacter; the class is `(2ρ)(c_q)`, the image of `diag(c_q^{−1}, c_q)`.
+- For `H = SL₂`, `ρ` is not a cocharacter, since half the coroot requires half-integral exponents. In `PGL₂` it is integral, represented by `t ↦ [diag(t,1)]`: the image of `diag(c_q^{−1}, c_q)` is `[diag(1,q)]`, Weyl conjugate to `ρ(q) = [diag(q,1)]`.
 - The conjugation equation for `Φ = C^{−1}` is the opposite one, `Φ(0) N Φ(0)^{−1} = qN`; mixing the two
   inverts the eigenvalues.
+- The residue relation and the weights leave the centre open: for `SL₂`, `−C(0) = −diag(c_q^{−1}, c_q)` also
+  satisfies `N C = q C N` and has the same slopes `−1/2, 1/2`, but its trace is `−(c_q + c_q^{−1})` instead of
+  `c_q + c_q^{−1}`; the comparison with §1.9 selects `C(0)`, i.e. `ε = 1` and not `ε = −1 ∈ Z(SL₂)`.
 
 ### 4.4 The horizontal Frobenius matrix
 
@@ -1140,8 +1568,8 @@ formulas with the column ones. *Needs:* §§4.3–4.4; PadicDifferentialEquation
 
 ### Dependencies
 
-Layers 1–3; PadicDifferentialEquationsAndRigidCohomology §§RD.2.13–RD.2.16, RD.2.33, RD.3.25,
-RD.5.101–RD.5.103, RD.6.23; ReductiveGroups Layer 7; Mathlib `Matrix.trace`.
+Layers 1–3; gap:arithmetic-d-module-operations; PadicDifferentialEquationsAndRigidCohomology §§RD.2.13–RD.2.16,
+RD.2.33, RD.3.25, RD.5.101–RD.5.103, RD.6.23; ReductiveGroups Layers 1, 7; Mathlib `Matrix.trace`.
 
 ## Layer 5: Newton bounds and generic ordinarity
 
@@ -1174,17 +1602,26 @@ gives the nondecreasing slopes, and dominance is polygon dominance (Xu–Zhu §5
 For split almost-simple `G` and the normalized Bessel datum, prove that `ν_a ≤ ρ` at every closed point `a`
 of `𝔾_m`; the bound persists for products and compatible central quotients of split reductive `H`
 (Xu–Zhu Theorem 5.4.2(i) and its proof, p. 62; §1.3.4, pp. 7–8). Route: the clean eigenobject has, by the
-function-sheaf dictionary over `k`, a unique cuspidal eigenfunction for the generic two-point datum
-(HNY Lemma 2.1 and Remark 2.2, pp. 255–256), whose normalized Hecke eigenvalues are the Frobenius classes of `Kl_H^{ét,ℓ}`;
+function-sheaf dictionary over `k`, a nonzero cuspidal Hecke eigenfunction, with its
+component values fixed by the chosen normalized eigenobject (HNY Lemma 2.1 and Remark 2.2,
+pp. 255–256). Normalize its chart-origin values by removing the common cohomological
+shift sign; for the trivial component character they are `1` on every `γ ∈ Ω`.
+Its normalized Hecke eigenvalues are the Frobenius classes of `Kl_H^{ét,ℓ}`, through the sheaf–function
+Satake dictionary (GlobalShtukasAndFunctionFieldLanglands §1.12). For an
+almost-simple automorphic group the centre is finite; for a reductive group the trivial
+tame and central datum makes the eigenfunction invariant under the degree lattice of
+the connected centre. Thus its central character is finite order, and the Satake class
+has zero central Newton projection, including after products and compatible central quotients;
 apply gap:cuspidal-newton-bound; transfer to `Be_H†` by §1.8. Purity of weight zero alone does not give
-`ν_a ≤ ρ`. *Needs:* §§1.6, 1.8, 5.1; GlobalShtukasAndFunctionFieldLanglands §0.14;
+`ν_a ≤ ρ`. *Needs:* §§1.6, 1.8, 5.1; GlobalShtukasAndFunctionFieldLanglands §§0.14, 1.12;
 gap:cuspidal-newton-bound.
 
 **Checks.**
 
 - A pure weight-zero rank-two Frobenius with slopes `(−1, 1)` satisfies purity but violates `ν ≤ ρ`; the
   bound is an automorphic input.
-- For the split torus factor `ρ = 0` and the normalized object is trivial.
+- For the split torus factor `ρ = 0`, a finite-order central character has slope `0`. The degree character sending a degree-one idele to `q` has slope `1`, so is excluded by the central-character hypothesis.
+- For `G = PGL₂`, `Ω = ℤ/2`, and `(1,1)` and `(1,−1)` are the two component eigenvectors, exchanged by the unramified quadratic twist. The chosen trivial component character selects `(1,1)`; the datum alone does not select an eigenfunction or its scalar.
 - For `H = SL₂` the bound says each Frobenius eigenvalue of the normalized Kloosterman sheaf has slope in
   `[−1/2, 1/2]`.
 
@@ -1193,11 +1630,12 @@ gap:cuspidal-newton-bound.
 Prove that for every split reductive `H` with the normalized trivial-tame datum there is a dense open
 `U ⊂ 𝔾_m` with `ν_a = ρ` for every closed point `a ∈ U`; equivalently the exceptional closed points form a
 finite set (Xu–Zhu Theorem 5.4.2(i) and its proof, p. 62; Appendix A.2, p. 64). Route: the logarithmic
-fibre at `0` has Newton class `ρ` (§4.3); Newton semicontinuity for log-convergent F-isocrystals on a
-connected neighbourhood of `0` bounds the generic class from below by the class at `0`; the bound of §5.2
-gives the opposite inequality; finitely many tensor generators give one common open. No input from
-Layers 10–11 is used. *Needs:* §§4.2–4.3, 5.1–5.2; PadicDifferentialEquationsAndRigidCohomology §§RD.3.43,
-RD.5.101.
+fibre at `0` has Newton class `ρ` (§4.3); Newton semicontinuity for log-convergent F-isocrystals on
+`(𝔸¹, 0)`, including specialization to the logarithmic point `0` (gap:log-newton-semicontinuity), bounds the
+generic class from below by the class at `0`; the bound of §5.2 gives the opposite inequality; finitely many
+tensor generators give one common open. The semicontinuity of §RD.3.43 for convergent F-isocrystals does not
+reach `0`, where the residue is a nonzero nilpotent. No input from Layers 10–11 is used. *Needs:* §§4.2–4.3,
+5.1–5.2; gap:log-newton-semicontinuity; PadicDifferentialEquationsAndRigidCohomology §§RD.3.43, RD.5.101.
 
 **Checks.**
 
@@ -1205,6 +1643,10 @@ RD.5.101.
 - One common open comes from finitely many tensor generators; on a curve its complement is finite.
 - For `H = SL₂` at `p = 2` generic ordinarity is the generic ordinarity of the rank-two Kloosterman sums
   over `𝔽_{2^m}`, which is also everywhere ordinarity (§11.3).
+- The specialization runs to the logarithmic point: for the rank-two standard object the residue at `0` is
+  `E₁₂ ≠ 0`, so the logarithmic extension is not a convergent F-isocrystal across `0`; its logarithmic fibre has
+  Frobenius `diag(c_q^{−1}, c_q)` with slopes `(−1/2, 1/2)`, and the generic slopes, which by semicontinuity lie
+  on or below that polygon and by §5.2 on or above `ρ`, are `(−1/2, 1/2)` as well.
 
 ### Examples
 
@@ -1213,8 +1655,9 @@ RD.5.101.
 
 ### Dependencies
 
-Layer 4; BunGAndNewtonStrata §§1.5, 1.22; GlobalShtukasAndFunctionFieldLanglands §0.14 and
-gap:cuspidal-newton-bound; PadicDifferentialEquationsAndRigidCohomology §§RD.3.43, RD.5.101.
+Layer 4; BunGAndNewtonStrata §§1.5, 1.22; GlobalShtukasAndFunctionFieldLanglands §§0.14, 1.12 and
+gap:cuspidal-newton-bound; gap:log-newton-semicontinuity; PadicDifferentialEquationsAndRigidCohomology §§RD.3.43,
+RD.5.101.
 
 ## Layer 6: Local and global monodromy
 
@@ -1234,13 +1677,13 @@ specializes PadicDifferentialEquationsAndRigidCohomology §§RD.6.64–RD.6.65 a
 §§6.1–6.3 to the image of `Rep(H)`, and gives closed embeddings `G_geo → G_alg → H` and `G_geo → G_arith → H`
 compatible with the fibres (Xu–Zhu §4.5.1, (4.5.1.1), p. 51). A comparison of monodromy across coefficient
 theories is §7.6, not an arrow among these groups. *Needs:* §§2.1, 4.1; §§RD.6.64–RD.6.65;
-MotivesAndAlgebraicCycles §§6.1–6.3, 6.5; ReductiveGroups Layer 1.
+MotivesAndAlgebraicCycles §§6.1–6.3, 6.8; ReductiveGroups Layer 1.
 
 - Each functor from `Rep(H)` factors through its generated category, and the associated group embeds in
   `H` through the given fibre identification.
 - Forgetting Frobenius gives the embedding `G_geo → G_arith` with compatible fibres.
 - Changing the fibre functor changes the embedded group by conjugation through the tensor-isomorphism
-  torsor of MotivesAndAlgebraicCycles §6.5; statements are made up to that conjugation.
+  torsor of MotivesAndAlgebraicCycles §6.8; statements are made up to that conjugation.
 - A tensor of a representation is invariant under `G_geo` exactly when it comes from a constant
   subobject of the corresponding Bessel object with Frobenius forgotten.
 
@@ -1248,24 +1691,51 @@ MotivesAndAlgebraicCycles §§6.1–6.3, 6.5; ReductiveGroups Layer 1.
 
 - For the trivial tensor functor on `Rep(𝔾_m)` the generated group is trivial, not `𝔾_m`.
 - For `H = SL₂` the standard object generates `G_geo = SL₂` at every `p`, agreeing with
-  KloostermanMomentsAndPotentialAutomorphy KM.1 (monodromy) for `r = 2`.
-- A reducible tensor construction contributes its invariant line as a subobject; using the literal image
-  without subquotient closure gives the wrong group for `Std ⊗ Std` of `SL₂`.
+  KloostermanMomentsAndPotentialAutomorphy §1.3 (monodromy) for `r = 2`.
+- Subquotient closure is needed. For `H = SO₈`, whose monodromy group is `G₂` (§2.8), `Std₈` restricts to `G₂`
+  as `Std₇ ⊕ 1`, so the generated category contains a nontrivial object of rank `7`; the literal image of
+  `Rep(SO₈)` contains none, since every nontrivial representation of `SO₈` has a constituent of dimension at
+  least `8`. For `H = SL₂` the test is empty: `Std ⊗ Std = Sym² ⊕ 1` already splits in `Rep(SL₂)`, so the
+  literal image contains both summands.
 
 ### 6.2 Nontrivial wild monodromy
 
 For almost-simple `H`, prove that `G_geo` contains `exp(tN)` coming from the unipotent local object at `0`
 (§4.2), that `G_geo°` is semisimple, and that wild inertia at `∞` has nontrivial image in `G_geo`
-(Xu–Zhu Lemma 4.5.3 and §4.5.4, pp. 51–52). Route: if wild inertia acted trivially, the `ℓ`-adic companion
-would be tame at both ends, the tame geometric fundamental group of `𝔾_m` is procyclic, and a
-semisimple group generated by a procyclic image cannot contain a nontrivial principal unipotent element
-as required. Semisimplicity of `G_geo°` comes from purity of weight zero and Deligne semisimplicity.
-*Needs:* §§4.2, 6.1, 1.8; §RD.2.51; DeligneWeightsAndPurity §8.19.
+(Xu–Zhu Lemma 4.5.3 and §4.5.4, pp. 51–52). Route for wild inertia: suppose wild inertia at `∞` acted
+trivially on every `Be†_W`. Then `Swan_∞(Be†_W) = 0` (§RD.6.51), and `Be†_W` is unipotent at `0` (§4.2), so the
+Grothendieck–Ogg–Shafarevich formula with Poincaré duality gives `χ_c(𝔾_m, Be†_W) = 0` (§§RD.5.89, RD.6.55).
+The `L`-function of `Be†_W` is a rational function of degree `−χ_c` (§RD.6.25), and it equals that of
+`Kl_W^{ét,ℓ}` (§§1.8, 4.1), whose degree is again `−χ_c` by the `ℓ`-adic trace formula
+(InverseGaloisAndArithmeticFundamentalGroups §IG.0.T3); so `χ_c(𝔾_{m,k̄}, Kl_W^{ét,ℓ}) = 0`, and the `ℓ`-adic
+Euler–Poincaré formula (EtaleDualityAndPerverseSheaves §5.2, with `χ_c(𝔾_m) = 0`) gives
+`Swan_0 + Swan_∞ = 0`: `Kl_W^{ét,ℓ}` is tame at both ends. A connected Galois cover of `𝔾_{m,k̄}` tamely ramified
+at `0` and `∞` has `2g − 2 = −(r_0 + r_∞)` by the tame Riemann–Hurwitz formula (SchemeAndStackFoundations
+§3.2), `r_x` being the number of points over `x`, so `g = 0` and `r_0 = r_∞ = 1`: it is totally ramified at `0`,
+with cyclic Galois group equal to the inertia group there. Hence the tame fundamental group of `𝔾_{m,k̄}` is
+procyclic and topologically generated by the image of tame inertia at `0` (InverseGaloisAndArithmeticFundamentalGroups
+§IG.1.2), which acts on `Kl_H^{ét,ℓ}` through a principal unipotent element `u ≠ 1` (§1.9). The geometric
+monodromy group of `Kl_W^{ét,ℓ}`, for `W` faithful, would then be the Zariski closure of the group generated by
+`u`, a nontrivial connected unipotent group; but `Kl_W^{ét,ℓ}` is pure of weight zero (§1.6), hence
+geometrically semisimple, and the neutral component of its geometric monodromy group is reductive
+(DeligneWeightsAndPurity §§8.14, 8.19): a contradiction. Route for the rest: `exp(tN)` lies in `G_geo` by
+André's local monodromy theorem (§RD.2.51) applied to §4.2. Each `Be†_W` is pure of weight zero (§4.1), hence
+geometrically semisimple (Abe–Caro Theorem 4.3.1, in gap:arithmetic-d-module-operations), so `G_geo°` is
+reductive; it contains `N` in its Lie algebra and hence a principal `SL₂` (Jacobson–Morozov), so its centre lies
+in the centralizer of a principal `SL₂`, the finite group `Z(H)` (gap:principal-sl2-subgroups), and `G_geo°` is
+semisimple. *Needs:* §§1.6, 1.8, 1.9, 4.1, 4.2, 6.1; PadicDifferentialEquationsAndRigidCohomology §§RD.2.51,
+RD.5.89, RD.6.25, RD.6.51, RD.6.55; gap:arithmetic-d-module-operations; gap:principal-sl2-subgroups;
+InverseGaloisAndArithmeticFundamentalGroups §§IG.0.T3, IG.1.2; EtaleDualityAndPerverseSheaves §5.2;
+SchemeAndStackFoundations §3.2; DeligneWeightsAndPurity §§8.14, 8.19.
 
 **Checks.**
 
 - For almost-simple `H` the principal nilpotent gives a nontrivial one-parameter unipotent subgroup.
 - The contradiction uses geometric semisimplicity of the companion, not purity of a trace function.
+- The Euler characteristic detects wild ramification: for `H = SL₂` and `W` standard, `Swan_∞ = 1` and
+  `χ_c(𝔾_m, Be†_Std) = −1`; the sum of the normalized degree-one traces over `a ∈ 𝔽_q^×` is
+  `−c_q^{−1}(Σ_{x ∈ 𝔽_q^×} ψ(x))² = −c_q^{−1}`, the alternating trace on the one-dimensional `H¹_c`, while tameness at
+  `∞` would force `χ_c = 0`.
 - For a torus `H` there is no unipotent element and wild inertia acts trivially for the trivial datum; the
   hypothesis "almost simple" is necessary.
 
@@ -1277,18 +1747,30 @@ Bessel object is at most `r`, and that unless the type is `A₁`, or `A₂` with
 gap:formal-slope-comparison every `p`-adic break of `Ad(Be_H†)` at `∞` is at most the formal slope `1/h` of the
 algebraic connection, so the irregularity is at most `dim(Lie H)/h = r + r/h < r + 1`, hence at most `r`; by
 gap:principal-sl2-subgroups the restriction of `Lie H` to a principal `SL₂` is `⊕_i Sym^{2e_i}` over the
-exponents; nontrivial wild inertia (§6.2) and the finite solvable subgroups of `PGL₂` force irregularity
+exponents; nontrivial wild inertia (§6.2) and the finite subgroups of `PGL₂` force irregularity
 `> r` for that containment, except in the listed low-rank cases, where `A₄ ⊂ PGL₂` at `p = 2` is the
-exception. *Needs:* §§2.8, 6.2; gap:formal-slope-comparison; gap:principal-sl2-subgroups;
-PadicDifferentialEquationsAndRigidCohomology §§RD.1.17–RD.1.19, RD.6.52.
+exception. The finite subgroups enter as follows: in the local monodromy representation at `∞` (§RD.6.51)
+wild inertia acts through a finite `p`-group, normal in the image of inertia. A finite subgroup of `PGL₂(K̄)` has finite inverse image in
+`SL₂(K̄)`; carrying the finitely generated field of its matrix entries into `ℂ` by a field embedding and
+applying McKaySkewGroup §0.2, that inverse image is cyclic, binary dihedral, binary tetrahedral, binary
+octahedral or binary icosahedral, so the subgroup itself is cyclic, dihedral, `A₄`, `S₄` or `A₅`. Hence a
+finite `p`-subgroup of `PGL₂(K̄)` is cyclic, and lies in a torus, unless `p = 2`, where it can also be
+dihedral; the image of inertia, being solvable, is not `A₅`. *Needs:* §§2.8, 6.2; gap:formal-slope-comparison;
+gap:principal-sl2-subgroups; McKaySkewGroup §§0.1–0.2 (finite subgroups of `SL₂(ℂ)`);
+PadicDifferentialEquationsAndRigidCohomology §§RD.1.17–RD.1.19, RD.6.51–RD.6.52.
 
 **Checks.**
 
 - The decomposition uses `Sym^{2e_i}`: for `SL₃` the exponents are `1, 2` and `3 + 5 = 8 = dim sl₃`; the printed
-  indexing `ℓ_i + 1 = e_i` (Xu–Zhu Lemma 4.5.5, p. 53) gives `Sym^{2e_i − 2}`, of dimension `1 + 3 = 4`.
+  indexing `ℓ_i + 1 = e_i` (proof of Xu–Zhu Lemma 4.5.5, p. 53) gives `Sym^{2e_i − 2}`, of dimension `1 + 3 = 4`.
 - `A₁` and `A₂` at `p = 2` are exceptions: for `SL₃` at `p = 2` the monodromy is `SO₃`, whose adjoint image is a
   principal `PGL₂`.
 - The bound `r + r/h < r + 1` uses `|Φ| = rh`; for `G₂`, `dim = 14`, `h = 6`, `14/6 < 3`.
+- The exceptional image at `p = 2` comes from the classification: the binary tetrahedral group `SL(2, 𝔽₃)` of
+  order `24` maps onto `A₄` of order `12`, whose normal Sylow `2`-subgroup `V₄` of order `4` is a possible
+  wild image and whose quotient `A₄/V₄ ≅ ℤ/3` is cyclic of odd order, as a tame quotient must be. At odd `p`
+  no noncyclic `p`-subgroup exists: `A₄`, `S₄` and `A₅` have cyclic Sylow `p`-subgroups for `p ≥ 3`, and a
+  dihedral group's odd-order subgroups are cyclic.
 
 ### 6.4 The monodromy classification
 
@@ -1296,55 +1778,109 @@ If `H` is almost simple and either `p > 2` or `H` is not of type `A_{2n}` (`n �
 and `G_arith = G_geo` as embedded subgroups up to the chosen fibre conjugation; the groups and their
 central forms are those of the table of §2.8 (Xu–Zhu Theorem 4.5.2(i),(iii), pp. 51–53). Route: §2.8 gives
 `G_alg`; §6.3 and gap:principal-sl2-subgroups force `G_geo` to be a subgroup containing a principal `SL₂`
-and not a principal `PGL₂`, and the pinned symmetries of §7.2 force equality outside even `A`; for even `A` in
+and not a principal `PGL₂`, and the pinned symmetries of §2.9 force equality outside even `A`; for even `A` in
 odd characteristic, the outer involution gives `Be_H† ≅ (−1)^* (Be_H†)^∨` (Xu–Zhu (4.1.10.5)), normalized to a
-`μ₂`-descent cocycle, and a proper image `SO_{2n+1} ⊂ SL_{2n+1}` would make the standard Swan conductor at `∞`
-even, contradicting Swan `1`; the logarithmic Frobenius at `0` (§4.3) excludes extra central components of
-`G_arith`; descend along the actual central isogeny. The scalar type-`A` statement of
-KloostermanMomentsAndPotentialAutomorphy KM.1 (monodromy) is an independent check.
-*Needs:* §§2.8, 4.3, 6.1–6.3, 7.2; KloostermanMomentsAndPotentialAutomorphy KM.1.
+`μ₂`-descent cocycle. The standard object of `SL_{2n+1}` has Swan conductor exactly `1` at `∞`: by
+gap:formal-slope-comparison every `p`-adic break there is at most the formal slope `1/(2n+1)` of the
+rank-`(2n+1)` algebraic connection, so its irregularity is at most `1`; the irregularity is an integer equal to
+the Swan conductor (§RD.6.52); and it is nonzero because wild inertia acts nontrivially through the faithful
+standard representation (§6.2). A proper image `SO_{2n+1} ⊂ SL_{2n+1}` would descend the object along the
+double cover and make this conductor even, a contradiction. This uses no identification of the standard
+object with the scalar Kloosterman object (§8.1). The logarithmic Frobenius at `0` (§4.3) excludes extra
+central components of `G_arith`; descend along the actual central isogeny. The scalar type-`A` statement of
+KloostermanMomentsAndPotentialAutomorphy §1.3 (monodromy) is an independent check.
+*Needs:* §§2.8, 4.3, 6.1–6.3, 2.9; gap:formal-slope-comparison; PadicDifferentialEquationsAndRigidCohomology
+§§RD.1.17–RD.1.19, RD.6.52; KloostermanMomentsAndPotentialAutomorphy §§1.1, 1.3.
 
 **Checks.**
 
 - For type `A₂` in odd characteristic the group is `SL₃`; `p = 2` is reserved for §11.4.
 - The `μ₂` descent needs an involutive cocycle, not only an isomorphism with the dual, before Swan
   multiplicativity under the double cover is used.
+- For `SL₃` and odd `p` the Swan bound is `3 · (1/3) = 1`, and wild nontriviality (§6.2) excludes `0`; a
+  descended object would have even Swan conductor `0` or at least `2`, so neither value is possible.
 - For `H = SO₇` the group is `G₂` at every `p`, and for `H = Sp₄` it is `Sp₄`.
 
 ### 6.5 Simple wild parameters
 
-Let `k_∞` be a local field of characteristic `p` with finite residue field, `W_{k_∞}` its Weil group and
-`H` almost simple of rank `ℓ`. For a discrete parameter `ϕ : W_{k_∞} → H` (finite image on inertia, Frobenius
-included) with `(Lie H)^{ϕ(I)} = 0` and Swan conductor `b(Ad ∘ ϕ) = ℓ`, and with `p ∤ |W_H|`, prove that the wild
-image `D₁` lies in a unique maximal torus, that the tame image acts through a Coxeter element of order `h`,
-that `D₂ = 1` and `D₁` is a simple `𝔽_p[w]`-submodule of `Ť[p]`, and that the upper breaks of `ϕ(W)` are `0` and
-`1/h` (Gross–Reeder Proposition 5.6, p. 34). Define a *simple wild parameter* as a discrete parameter
-with `(Lie H)^{ϕ(I)} = 0` and `b(Ad ∘ ϕ) = ℓ` (Gross–Reeder §6, p. 35). *Needs:* ReductiveGroups Layer 7;
-§RD.6.51.
+Let `k_∞` be a local field of characteristic `p` with finite residue field, `W_{k_∞}` its Weil group with inertia
+subgroup `I` and wild inertia `I⁺`, and `H` almost simple of rank `ℓ`, with centre `Z(H)`, adjoint quotient
+`π_ad : H → H_ad` and `Ť_ad = π_ad(Ť)`. A *discrete parameter* is a homomorphism `ϕ : W_{k_∞} → H(K̄)`, `K̄` an
+algebraically closed field of characteristic zero, defined on the whole Weil group (Frobenius included), whose
+restriction to inertia is continuous with finite image (equivalently, has open kernel), whose Frobenius image is
+semisimple, and whose image has finite centralizer in `H` (Gross–Reeder §3.2, conditions (1)–(3), p. 15, and
+§6, p. 35).
+Define a *simple wild parameter* as a discrete parameter with `(Lie H)^{ϕ(I)} = 0` and adjoint Swan conductor
+`b(Ad ∘ ϕ) = ℓ` (Gross–Reeder §6, p. 35). Since `Ad` factors through `H_ad`, the composite `ϕ_ad = π_ad ∘ ϕ` is again
+a simple wild parameter. The finite groups `D = ϕ(I)` and `D^ad = ϕ_ad(I)` are the inertia groups of finite Galois
+extensions of `k_∞` cut out by `ϕ` and `ϕ_ad`, with lower filtrations `D_u`, `D^ad_u` and upper filtrations; `D₁ = ϕ(I⁺)`
+is the wild image.
 
-- The adjoint Swan conductor of a parameter with `(Lie H)^{ϕ(I)} = 0` is at least `ℓ` (Gross–Reeder §5).
+Assume `p ∤ |W_H|`. For the adjoint parameter prove (Gross–Reeder Proposition 5.6, p. 34, where the dual group is
+adjoint by the standing assumption of Gross–Reeder §5.3, p. 31): `D^ad_1` lies in a unique maximal torus of `H_ad`,
+after conjugation `Ť_ad`, and `ϕ_ad(W_{k_∞})` lies in its normalizer; the tame quotient `D^ad/D^ad_1` maps onto the
+subgroup of `W_H` generated by a Coxeter element `w` of order `h`; `D^ad_2 = 1` and `D^ad_1` is a simple
+`𝔽_p[w]`-submodule of `Ť_ad[p]` of order `p^a`, with `a` the order of `p` in `(ℤ/h)^×`; and the upper breaks of
+`ϕ_ad(W_{k_∞})` are `0` and `1/h`. For `ϕ` itself, with `C = D ∩ Z(H)` of order `c`, prove: `p ∤ c`, because `|Z(H)|`
+divides the index of the root lattice in the weight lattice, which divides `|W_H|`; `π_ad` maps `D₁` isomorphically
+onto `D^ad_1`, so `D₁` lies in the unique maximal torus `Ť = π_ad^{−1}(Ť_ad)` and is a simple `𝔽_p[w]`-submodule of
+`Ť[p] ≅ Ť_ad[p]`; the upper breaks of `D` are `0` and `1/h`; and the lower filtration of `D` jumps at `c`:
+`D₁ = D_c` and `D_{c+1} = 1`. In particular `D₂ = 1` holds for `ϕ` exactly when `C = 1`; the lower numbering is not
+invariant under a central lift, and the conclusion `D₂ = 1` of Gross–Reeder belongs to the adjoint parameter.
+Route: `D/C = D^ad`; the upper filtration passes to quotients, and `C` meets no upper ramification group of
+positive index, these being `p`-groups; the subextension cut out by `C` is tame of degree `c`, so its Herbrand
+function is `u ↦ u/c`, and Herbrand's theorem for the quotient carries the lower break `1` of `D^ad` to the lower
+break `c` of `D`. *Needs:* ReductiveGroups Layers 7, 9; §RD.6.51; Tau Ceti
+`TauCeti.LocalFieldsRamification.map_restrictNormalHom_lowerRamificationGroupReal` and
+`TauCeti.LocalFieldsRamification.map_restrictNormalHom_upperRamificationGroup`.
+
+- If `p ∤ |W_H|`, every discrete parameter with `(Lie H)^{ϕ(I)} = 0` has `b(Ad ∘ ϕ) ≥ ℓ` (Gross–Reeder
+  Proposition 5.4, pp. 31–33, applied to `ϕ_ad`); without that hypothesis the inequality is Gross–Reeder
+  Conjecture 5.2, p. 30, and is not asserted here.
 - Under `p ∤ |W_H|`, all nonzero adjoint upper breaks of a simple wild parameter equal `1/h`.
 - A bare inertia homomorphism without the Frobenius element is not a discrete parameter in this sense.
 
 **Checks.**
 
-- For `H = SL₂` (`ℓ = 1`, `h = 2`, `|W| = 2`) and `p` odd: `D₁` is a subgroup of order `p` of `Ť[p] = μ_p`, the tame
-  image acts on it by inversion (the Coxeter element), and the upper breaks are `0` and `1/2`.
+- For `H = SL₂` (`ℓ = 1`, `h = 2`, `|W| = 2`) and `p` odd: `D₁` is the subgroup `μ_p = Ť[p]`, the tame image acts on it by
+  inversion (the Coxeter element), and the upper breaks are `0` and `1/2`. Every element of `N(Ť) − Ť` squares to `−1`,
+  so `C = {±1}`, `c = 2` and `D₁ = D₂ ≠ D₃ = 1` for every simple wild parameter of `SL₂`; for `PGL₂`, `c = 1` and `D₂ = 1`.
+- Negative control for a central lift. Over `k_∞ = 𝔽₅((t))` put `u⁴ = t` and `z⁵ − z = u^{−2}`: a totally ramified
+  Galois extension of degree `20` with `σ : (u, z) ↦ (u, z + 1)` of order `5` and `τ : (u, z) ↦ (2u, −z)` of order `4`
+  (`(2u)^{−2} = −u^{−2}` in `𝔽₅`), and `τστ^{−1} = σ^{−1}`. Sending `σ ↦ diag(ζ₅, ζ₅^{−1})` and `τ ↦ [[0, 1], [−1, 0]]`
+  gives a parameter into `SL₂` with centralizer `{±1}` and `(Lie SL₂)^{ϕ(I)} = 0`. With `v(u) = 5`, `v(z) = −2`, the
+  uniformizer `uz²` has `v(σ(uz²) − uz²) = v(u(2z + 1)) = 3`, so `|D| = 20`, `D₁ = D₂ = C₅` and `D₃ = 1`; the upper break
+  is `2 · 5/20 = 1/2`, and `b(Ad ∘ ϕ) = 2 · 1/2 = 1 = ℓ` with `5 ∤ 2`. Every hypothesis holds and `D₂ ≠ 1`, as
+  `c = |⟨τ²⟩| = 2` predicts; the adjoint image in `PGL₂` has order `10`, lower break `2/c = 1` and `D^ad_2 = 1`.
 - For `p = 2` and `H = SO₃` the hypothesis `p ∤ |W|` fails, and the inertia image `A₄` of §11.5 has breaks that the
   proposition does not describe.
 - The tamely ramified principal parameter has `b = 0 < ℓ` only because `(Lie H)^{ϕ(I)} ≠ 0`; the lower bound needs
   the vanishing of inertia invariants.
+- Continuity on inertia is part of the definition. Over `𝔽₂((t))` the principal units modulo squares form a product
+  of copies of `𝔽₂` indexed by the positive odd integers; a linear functional that vanishes on the finitely
+  supported vectors and is `1` on the all-ones vector, pulled back through local reciprocity, is a character of
+  the Weil group into `{±1}` with finite image on inertia and a dense kernel that is not open. Its central twist
+  of a simple wild parameter of `SL₂` over `𝔽₂((t))` (for instance the local parameter at `∞` of the rank-two
+  Bessel object at `p = 2`, §11.5) keeps the finite inertia image, the adjoint parameter and the finite
+  centralizer, but its inertia kernel is not open, so it cuts out no finite Galois extension and has no
+  ramification filtration; it is excluded, while the degree-`20` parameter of the negative control above is
+  continuous.
 
 ### 6.6 Adjoint rigidity and the simple-wild property at `∞`
 
 For almost-simple `H` outside type `A_{2n}` at `p = 2`, put `E = Ad(Be_H†)`. Prove: `H^i(ℙ¹, j_{!+}E) = 0` for every `i`;
-`Irr_∞(E) = rank H`; `E^{I_∞} = 0`; the nilpotent monodromy operator at `∞` vanishes; and the local Weil
-parameter at `∞` attached to the companion is a simple wild parameter in the sense of §6.5, whose nonzero
-adjoint upper breaks are all `1/h` when `p ∤ |W_H|` (Xu–Zhu Corollary 4.5.7 and Remark 4.5.8, p. 54; HNY
-Corollary 2.15, p. 262). Route: the localization sequence for `j_{!+}E`, duality and the
+`Irr_∞(E) = rank H`; `E^{I_∞} = 0`; the nilpotent monodromy operator at `∞` vanishes; and the local monodromy
+parameter at `∞` of `Be_H†` (§RD.6.51), a Weil–Deligne parameter valued in `H` whose nilpotent part vanishes, is a
+simple wild parameter in the sense of §6.5, whose nonzero adjoint upper breaks are all `1/h` when `p ∤ |W_H|`
+(Xu–Zhu Corollary 4.5.7 and Remark 4.5.8, pp. 53–54). These are statements about the Bessel object; the
+analogue for `Kl_H^{ét,ℓ}` when `p` is good, HNY Theorem 2 and Corollary 2.15, p. 262, is not a target of this
+roadmap. Route: the localization sequence for `j_{!+}E`, duality and the
 Grothendieck–Ogg–Shafarevich formula give `χ = −Irr_∞(E) + dim E^{I_0} + dim E^{I_∞}` with
 `dim E^{I_0} = r` (the centralizer of a principal nilpotent); with `Irr_∞ ≤ r` (§6.3) this forces all
-cohomology and `E^{I_∞}` to vanish; a nonzero adjoint `N_∞` would lie in `E^{I_∞}`. In the characteristic-zero
+cohomology and `E^{I_∞}` to vanish; a nonzero adjoint `N_∞` would lie in `E^{I_∞}`. The parameter is continuous
+with finite image on inertia (§RD.6.51); `(Lie H)^{ϕ(I)} = E^{I_∞} = 0` makes its centralizer finite, so its
+Frobenius image has finite order and is semisimple (Gross–Reeder Lemma 3.1, p. 15); and `b(Ad ∘ ϕ) = Irr_∞(E) = r`
+(§RD.6.52). In the characteristic-zero
 dimension formula one subtracts `dim V^{I_0} + dim V^{I_∞}`; Frenkel–Gross (14.1), p. 29, prints `I₀` twice,
 and its preceding boundary sequence gives the correct `I₀ ⊕ I_∞`. *Needs:* §§4.2, 6.3–6.5;
 PadicDifferentialEquationsAndRigidCohomology §§RD.5.76, RD.5.89, RD.6.51–RD.6.52, RD.6.55.
@@ -1364,15 +1900,19 @@ PadicDifferentialEquationsAndRigidCohomology §§RD.5.76, RD.5.89, RD.6.51–RD.
 
 ### Dependencies
 
-Layers 2, 4; PadicDifferentialEquationsAndRigidCohomology §§RD.1.17–RD.1.19, RD.2.51, RD.5.76, RD.5.89,
-RD.6.51–RD.6.52, RD.6.55, RD.6.64–RD.6.65; MotivesAndAlgebraicCycles §§6.1–6.3, 6.5;
-gap:formal-slope-comparison; gap:principal-sl2-subgroups; KloostermanMomentsAndPotentialAutomorphy KM.1;
-DeligneWeightsAndPurity §8.19.
+Layers 1, 2, 4; PadicDifferentialEquationsAndRigidCohomology §§RD.1.17–RD.1.19, RD.2.51, RD.5.76, RD.5.89,
+RD.6.25, RD.6.51–RD.6.52, RD.6.55, RD.6.64–RD.6.65; gap:arithmetic-d-module-operations; MotivesAndAlgebraicCycles
+§§6.1–6.3, 6.8; McKaySkewGroup §§0.1–0.2; gap:formal-slope-comparison; gap:principal-sl2-subgroups;
+KloostermanMomentsAndPotentialAutomorphy §§1.1, 1.3; InverseGaloisAndArithmeticFundamentalGroups §§IG.0.T3,
+IG.1.2; EtaleDualityAndPerverseSheaves §5.2; SchemeAndStackFoundations §3.2; DeligneWeightsAndPurity §§8.14,
+8.19; ReductiveGroups Layers 1, 7, 9; Tau Ceti
+`TauCeti.LocalFieldsRamification.map_restrictNormalHom_lowerRamificationGroupReal`,
+`TauCeti.LocalFieldsRamification.map_restrictNormalHom_upperRamificationGroup`.
 
 ## Layer 7: Functoriality and companions
 
 This layer proves that Frobenius structures on the Frenkel–Gross connection differ by central
-elements, records the pinned and central symmetries, proves functoriality between groups in one row of
+elements, uses the pinned and central symmetries of §2.9, proves functoriality between groups in one row of
 the table of §2.8 first for integral parameters and then for Heinloth–Ngô–Yun sheaves, and compares
 monodromy across companions.
 
@@ -1384,7 +1924,7 @@ and that the normalized Frobenius eigenvalues at `0` in every representation (§
 (Xu–Zhu Lemma 5.1.1, p. 55; §4.4.1 and Theorem 4.4.4, pp. 49–50). Route: the ratio of two Frobenius
 structures is a horizontal tensor automorphism, hence an element of the centralizer of `G_geo` in `H`, which
 is `Z(H)` by §6.4; compare scalars on residue lines at `0`. For type `A_{2n}` at `p = 2` the same statement holds
-after §11.4. *Needs:* §§4.1, 4.3, 6.4; MotivesAndAlgebraicCycles §6.5.
+after §11.4. *Needs:* §§4.1, 4.3, 6.4; MotivesAndAlgebraicCycles §6.8.
 
 **Checks.**
 
@@ -1393,50 +1933,41 @@ after §11.4. *Needs:* §§4.1, 4.3, 6.4; MotivesAndAlgebraicCycles §6.5.
 - The centralizer used is that of `G_geo`, not of `G_alg`.
 - For `H = PGL₂` the center is trivial and the Frobenius structure is unique.
 
-### 7.2 Central and pinned symmetries
-
-Prove: (i) for a homomorphism `G′ → G` inducing an isomorphism of adjoint groups and of root-depth
-quotients, the dual map `H → H′` pushes `Kl_H` to `Kl_{H′}` in each theory; (ii) for `(a, σ) ∈ 𝔾_m(k) × Aut(G, B, T)`, `Kl_{H, W}(ψ(φ ∘ δ)) ≅ a^* Kl_{H, ι(σ^{−1}) W}(ψφ)`, compatibly with tensor structures; (iii) the
-eigenvalue depends only on the `T_ad`-orbit of `φ`, and replacing `ψ` by `ψ(a ·)` pulls back by `x ↦ a^h x`; (iv) for
-almost-simple `G` not of type `A_{2n}`, or for `p = 2`, every outer automorphism preserves `Kl_H(ψφ)`, while for
-type `A_{2n}` and `p > 2` the outer involution gives `Kl_{H,W} ≅ (−1)^* Kl_{H, W^∨}`; (v) the exceptional
-identities `Kl_{SL₂, Sym²} ≅ Kl_{SO₃, Std}`, `Kl_{Sp₄, ker(Λ² → 1)} ≅ Kl_{SO₅, Std}`,
-`Kl_{SO₄, Std} ≅ Kl_{SL₂ × SL₂, Std ⊠ Std}` and `Kl_{SO₆, Std} ≅ Kl_{SL₄, Λ²}` (Xu–Zhu §§4.1.9–4.1.10,
-(4.1.9.1)–(4.1.10.5), pp. 40–41). *Needs:* §§0.2, 1.6, 2.7; §1.3 (the action of `Aut(G)`).
-
-**Checks.**
-
-- A map `G′ → G` of automorphic groups induces `H → H′` in the opposite direction.
-- `SO₄` is handled through `SL₂ × SL₂` and the tensor product; there is no almost-simple `D₂`.
-- For `H = SL₃` and `p` odd, (iv) relates `Kl_{Std}` to the pullback by `x ↦ −x` of `Kl_{Std^∨}`; at `p = 2` the
-  pullback is the identity and `Kl_{Std} ≅ Kl_{Std^∨}`.
-
 ### 7.3 The exact radius of adjoint solutions
 
-Let `H′ ⊂ H` be a pinning-compatible inclusion in one row of the table of §2.8, and let `V` be a nontrivial
-irreducible constituent of `Lie H` restricted to `H′`. Prove that the overconvergent connection
-`Be_{H′}(−π)` in `V` has a nonzero horizontal section on the open unit disc around `∞` (after the change of
-coordinate `x ↦ 1/x`) whose radius of convergence is exactly `1`, and that rescaling the parameter by a
-non-unit `u` (`λ ↦ uλ`) produces a solution of radius different from `1` (Xu–Zhu Proposition 5.1.3 and
-§5.1.2, p. 55). *Needs:* §2.1; PadicDifferentialEquationsAndRigidCohomology §§RD.1.11–RD.1.13, RD.1.45.
+Let `H′ ⊂ H` be a pinning-compatible inclusion in one row of the table of §2.8,
+and `V` a nontrivial irreducible constituent of `Lie H` restricted to `H′`.
+Outside type `A_{2n}` at `p=2`, for the normalized integral parameter, prove that a nonzero solution functional at `0`
+`u : Be_{H′,V}(−π)|₀ → (K{x},d)` in the dual-solution convention of Xu–Zhu
+§2.9.2, (2.9.2.2), p. 24, has coefficient series of common radius exactly `1`.
+Use the nilpotent logarithmic extension at `0` to get a nonzero functional converging
+on the open unit disc. The monodromy classification of §6.4 and its finite centralizer in `H` show that the
+adjoint restriction, hence `V`, has no trivial constituent. Its semisimple decomposition
+into irreducible overconvergent constituents therefore has no constant quotient; a
+functional of radius greater than `1` would extend to such a quotient, contradicting
+that decomposition (Xu–Zhu proof of Proposition 5.1.3, p. 55). For `c ∈ K^×`,
+the functional with coefficients `f_i(cx)` has radius `1/|c|`; for parameter change
+`λ ↦ uλ`, `u ∈ K^×`, it is `|u|^{−h′}`, with `h′` the Coxeter number of `H′`.
+*Needs:* §§2.1, 4.2, 6.4; PadicDifferentialEquationsAndRigidCohomology
+§§RD.1.11–RD.1.13, RD.2.13–RD.2.16, RD.6.65.
 
 **Checks.**
 
-- A Frobenius structure forces generic radius `1` (§RD.1.45); the statement here is about a particular
-  solution at the boundary, not the generic radius.
-- For `H′ = Sp₄ ⊂ SL₄` the constituent `Λ²_0` is nontrivial and the statement applies to it; for the trivial
-  constituent every constant is a solution of infinite radius, so nontriviality is needed.
-- Rescaling by a unit preserves the radius; only a non-unit scale is excluded.
+- At `p = 2`, the rank-two cyclic solution functional has coefficients `4^j/(j!)²`; since `v₂(4^j/(j!)²) = 2s₂(j)`, its radius is `1`. Replacing `λ` by `2λ` gives radius `|2|^{−2} = 4`; replacing it by `λ/2` gives `1/4`.
+- For the adjoint `SL₂` connection at infinity, set `y = 1/x` and `a = λ² ≠ 0`. Horizontality of `uE+vH+wF` gives `δ_y u = −2v`, `δ_y v = w−au/y`, `δ_y w = 2av/y`. Power-series coefficients force `u₀=v₀=w₀=0` and `a(2k−1)u_k=0`, hence the only such section is zero. Infinity cannot replace zero in the theorem.
+- For `Sp₄ ⊂ SL₄`, the constituent `Λ²_0` has radius `1`. For the identity inclusion on `SL₄`, its adjoint splits under monodromy `Sp₄` into dimensions `10+5=15`, both nontrivial; irreducibility as an `SL₄` representation alone would not suffice; the trivial constituent has constant functionals of infinite radius. Unit scale `|c|=1` preserves `1`, and `c=0` is excluded.
 
 ### 7.4 Integral functoriality
 
-For `H′ ⊂ H` as in §7.3 and a generic integral `φ′` for the dual of `H′`, prove that the matched Frenkel–Gross
+For `H′ ⊂ H` in a common table row and a generic integral `φ′` for the dual of `H′`, prove that the matched Frenkel–Gross
 parameter also comes from a generic integral `φ` for the dual of `H`, and that `Be_H†` is the pushout of
 `Be_{H′}†` along `H′ → H` (Xu–Zhu Proposition 5.1.3 and §5.1.2, p. 55). Integrality means the affine invariant
 has unit scale relative to a generic integral parameter. Route: the pushout of connections is immediate from
-the pinned matrices; §7.3 excludes a non-unit relative scale, which would turn the transported Frobenius
-into one for a rescaled connection with a forbidden constant quotient; the two Frobenius structures on the
-pushout differ centrally (§7.1) and agree at `0`. *Needs:* §§2.2, 6.4, 7.1–7.3.
+the pinned matrices; §7.3 compares the solution functionals at `0` for the reference normalized connection
+and its pullback `x ↦ cx`. For distinct groups in the row, both arise from Frobenius objects with the same nontrivial
+irreducible monodromy constituents, so each has radius `1`; the rescaling formula `1/|c|`
+forces `|c| = 1` (a larger radius on either side would give a constant quotient). The identity inclusion needs no radius argument, and covers the single-group `A_{2n}` row at `p=2`; the two Frobenius structures on the
+pushout differ centrally (§7.1) and agree at `0`. *Needs:* §§2.2, 2.9; §§6.4, 7.1, 7.3 for proper inclusions.
 
 **Checks.**
 
@@ -1446,22 +1977,42 @@ pushout differ centrally (§7.1) and agree at `0`. *Needs:* §§2.2, 6.4, 7.1–
 
 ### 7.5 Heinloth–Ngô–Yun functoriality
 
-For `H′ ⊂ H` as above and any generic `φ′` over `k`, prove that there is a generic `φ` over `k` such that
+For `H′ ⊂ H` in a common table row and any generic `φ′` over `k`, prove that there is a generic `φ` over `k` such that
 `Kl_H^{ét,ℓ}(ψφ)` is isomorphic, as a tensor functor to `ℓ`-adic local systems, to the pushout of
 `Kl_{H′}^{ét,ℓ}(ψφ′)`, `ℓ ≠ p`; this is Heinloth–Ngô–Yun's Conjecture 7.3 (Xu–Zhu Theorem 5.1.4, pp. 55–56).
-Route: lift `φ′` over `R`, construct `φ` by §7.4 and reduce it; companion traces (§§1.8, 4.1) and restriction
+Route: for an identity or central-form map use §2.9; for a proper inclusion lift `φ′` over `R`, construct `φ` by §7.4 and reduce it; companion traces (§§1.8, 4.1) and restriction
 of the rational representation ring of `H` onto that of the common geometric monodromy group give equal
-traces in every representation of that group; semisimple Chebotarev in a faithful representation gives an
-isomorphism up to an automorphism preserving semisimple conjugacy classes, which is inner by
-gap:principal-sl2-subgroups. In the `Spin₇/G₂` case use `V₇|_{G₂} = Std₇` and `V₁₄ = Λ²V₇ − V₇` to generate the
-`G₂` representation ring; the spin representation alone does not. *Needs:* §§1.8, 4.1, 6.4, 7.4;
-gap:principal-sl2-subgroups; ReductiveGroups Layers 1, 7.
+traces in every representation of that group, exterior powers included, hence equal Frobenius
+characteristic polynomials at every closed point in a faithful representation `W`. The two continuous
+`ℓ`-adic representations of `π₁(X)` on `W` are semisimple. Each is pure of weight zero (§1.6), hence
+geometrically semisimple (DeligneWeightsAndPurity §8.19). Their adjoint objects have no geometric invariants:
+the adjoint object `Be†_{H, Lie H}`, which by §7.4 is also `Be†_{H′}` evaluated on `Lie H` restricted to `H′`,
+has none because its monodromy group (§6.4) contains a principal `SL₂`, so its `H²_c` vanishes by duality and its `L`-function is a
+polynomial (PadicDifferentialEquationsAndRigidCohomology §§RD.5.89, RD.6.25); the two `ℓ`-adic adjoint objects
+have the same `L`-function (§§1.8, 4.1), whose poles would be the weight-two Frobenius eigenvalues on their
+`H²_c`, the geometric coinvariants, `H¹_c` having weights at most one (DeligneWeightsAndPurity §8.5). So the
+centralizer of each geometric monodromy group in `H` is finite. The unipotent radical of each arithmetic
+monodromy group meets the reductive geometric one trivially, both being normal, so it centralizes it and is
+trivial: each arithmetic monodromy group is reductive and both representations on `W` are semisimple. The
+recognition theorem of
+ArithmeticGaloisRepresentations §5.13 (`ℓ ≠ p`, geometric Frobenius on both sides) then makes the two
+representations conjugate in `GL(W)`, which gives an isomorphism up to an automorphism preserving
+semisimple conjugacy classes, inner by gap:principal-sl2-subgroups. In the `Spin₇/G₂` case use
+`V₇|_{G₂} = Std₇` and `V₁₄ = Λ²V₇ − V₇` to generate the `G₂` representation ring; the spin representation
+alone does not. *Needs:* §§1.6, 1.8, 4.1, 6.4, 7.4; ArithmeticGaloisRepresentations §5.13 (recognition by
+Frobenius characteristic polynomials over function fields); DeligneWeightsAndPurity §§8.5, 8.19;
+PadicDifferentialEquationsAndRigidCohomology §§RD.5.89, RD.6.25; gap:principal-sl2-subgroups;
+ReductiveGroups Layers 1, 7.
 
 **Checks.**
 
 - `φ′` is lifted over `R` first; the invariant parameter for the larger group is matched and then reduced.
 - For `Spin₇ ⊃ G₂`, `V₇` and `Λ²V₇ − V₇` restrict to the standard and adjoint representations of `G₂`.
 - For `Sp_{2n} ⊂ SL_{2n}` the statement recovers that the rank-`2n` Kloosterman sheaf has symplectic monodromy.
+- Semisimplicity is needed for recognition: the rank-two unipotent extension of `1` by `1` on which Frobenius
+  of the constant field acts by `[[1, 1], [0, 1]]` has the same Frobenius polynomials `(1 − T)²` as `1 ⊕ 1`
+  and is not isomorphic to it; its geometric monodromy is trivial, so its adjoint has geometric invariants of
+  dimension `4`, which the adjoint vanishing above excludes for the Kloosterman objects.
 
 ### 7.6 Companion monodromy comparison
 
@@ -1487,9 +2038,9 @@ gap:companion-monodromy.
 
 ### Dependencies
 
-Layers 1, 2, 4, 6; PadicDifferentialEquationsAndRigidCohomology §§RD.1.11–RD.1.13, RD.1.45;
-MotivesAndAlgebraicCycles §6.5; gap:principal-sl2-subgroups; gap:companion-monodromy;
-ReductiveGroups Layers 1, 7.
+Layers 1, 2, 4, 6; PadicDifferentialEquationsAndRigidCohomology §§RD.1.11–RD.1.13, RD.2.13–RD.2.16, RD.5.89,
+RD.6.25, RD.6.65; MotivesAndAlgebraicCycles §6.8; ArithmeticGaloisRepresentations §5.13; DeligneWeightsAndPurity
+§§8.5, 8.19; gap:principal-sl2-subgroups; gap:companion-monodromy; ReductiveGroups Layers 1, 7.
 
 ## Layer 8: Classical realizations and orthogonal sums
 
@@ -1503,16 +2054,17 @@ Landau–Ginzburg potential for `n ≥ 3`, and computes its trace as a toric exp
 For the standard summed generic functional, prove that `Be†_{SL_r, Std}`, `r ≥ 2`, has underlying connection
 the rank-`r` Bessel connection `Be_r(−π)` and Frobenius traces the normalized scalar traces
 `(−1)^{r−1} c_q^{−d(r−1)} R_r(a)`, so that it is the `p`-adic companion of the normalized Kloosterman sheaf of
-KloostermanMomentsAndPotentialAutomorphy KM.1 (normalized-sheaf), built from CongruenceSpectralGap §4.2b;
+KloostermanMomentsAndPotentialAutomorphy §1.1 (normalized sheaf), built from CongruenceSpectralGap §4.2b;
 at every prime `p` and every rank `r` it is the half-twisted Kloosterman F-isocrystal `Kl_r` of
-PadicDifferentialEquationsAndRigidCohomology §RD.6.95 with `π` replaced by `−π`. Likewise `Be†_{Sp_{2n}, Std}` is
+PadicDifferentialEquationsAndRigidCohomology §RD.6.95, built with the Dwork parameter `−π` for odd `p` and with
+`π = −2` itself for `p = 2`, where `L_π ≅ E_{−π}` (rank-one dictionary of the conventions). Likewise `Be†_{Sp_{2n}, Std}` is
 the rank-`2n` scalar object, and the `GL_r` object is its central extension with trivial normalized
 determinant (Xu–Zhu §§5.3.1–5.3.2, (5.3.1.1)–(5.3.1.3), pp. 57–58). These are comparisons; no second
 scalar Kloosterman sum, sheaf or connection is defined. Route: the Hecke diagram of the standard
 representation is the torus diagram of the scalar sum; the superdiagonal and last-row matrix matches the
-cyclic generator and the parameter (KM.2 bessel-dictionary); the anti-diagonal alternating form is
+cyclic generator and the parameter (§2.6 Bessel dictionary); the anti-diagonal alternating form is
 preserved, so §7.4 identifies the symplectic object. *Needs:* §§1.5, 4.1, 7.4;
-KloostermanMomentsAndPotentialAutomorphy KM.1, KM.2; CongruenceSpectralGap §§4.2a–4.2b;
+KloostermanMomentsAndPotentialAutomorphy §§1.1, 1.3, 2.1, 2.5–2.6; CongruenceSpectralGap §§4.2a–4.2b;
 PadicDifferentialEquationsAndRigidCohomology §RD.6.95.
 
 **Checks.**
@@ -1522,8 +2074,10 @@ PadicDifferentialEquationsAndRigidCohomology §RD.6.95.
   values agree, while in rank three over `𝔽₃` the raw sums at `a = 1` and `a = −1` are `R₃(1)` and its complex
   conjugate; at `p = 2` the characters `ψ` and `ψ^{−1}` coincide and the comparison is an equality of raw sums in
   every rank.
-- The scalar cyclic module and its horizontal solutions use the sign rule of KM.2: for odd `r` the solution
-  series of `δ^r − λ^r x` satisfies `δ^r f + λ^r x f = 0`.
+- At `p = 2` the parameter is not negated: `π = −2` and `−π = 2` are distinct in `K`, and only `−2` satisfies
+  `π^{p−1} = −p`, while `ψ` and `ψ^{−1}` both take the value `−1` at `1 ∈ 𝔽₂`; the isomorphism
+  `L_π ≅ E_{−π}` is multiplication by `exp(−4t)`, whose radius `2` exceeds `1`.
+- The scalar sign dictionary is KloostermanMomentsAndPotentialAutomorphy §2.6: a solution functional of the cyclic module satisfies `δ^r f − λ^r x f = 0`; a horizontal first coefficient of the column connection satisfies `δ^r f − (−1)^r λ^r x f = 0`. For `r=3`, `λ=1` the two normalized series begin `1+x+x²/8` and `1−x+x²/8`, respectively.
 
 ### 8.2 Orthogonal Bessel matrices
 
@@ -1533,7 +2087,7 @@ define `N = Σ_{1 ≤ i ≤ 2n−1, i ≠ n} E_{i,i+1} + E_{n−1,n+1} + E_{n,n+
 `N = Σ_{i=1}^{2n} E_{i,i+1}` and `E = 2E_{2n,1} + 2E_{2n+1,2}`, with connection `d + (N + λ^{2n} x E) dx/x`; its cyclic
 operator in the column convention of Xu–Zhu is `δ^{2n+1} − λ^{2n} x (4δ + 2)`. The dual group of this odd
 orthogonal datum is `Sp_{2n}`, whose middle simple-root coordinate is `E_{n,n+1}` (Xu–Zhu §5.3.3,
-(5.3.3.1)–(5.3.3.2), p. 58; §5.3.6, (5.3.6.1)–(5.3.6.4), pp. 60–61, with the root coordinates of the
+(5.3.3.1)–(5.3.3.2), p. 58; §5.3.6, (5.3.6.1)–(5.3.6.4), p. 60, with the root coordinates of the
 lowest-root entries corrected). *Needs:* §§2.1–2.2; OrthogonalSpinGroups Layer 0; Mathlib `Matrix.trace`.
 
 - Both `N` and `E` satisfy the infinitesimal form equation `X^t J + J X = 0` for the stated forms.
@@ -1559,7 +2113,7 @@ standard object restricted to the diagonal is `Sym² Std ⊕ 1`. Hence the norma
 `T_{SO_{2n+2}}(a) − 1 = T_{SO_{2n+1}}(a)` for every `n ≥ 1` (Xu–Zhu §5.3.3, p. 58; (5.3.6.5), p. 60; Corollary
 5.3.11(ii), p. 61). Route: split the invariant line and its orthogonal complement in the explicit even
 matrix; after adjoining `√2` identify the complement with the odd pinning; §7.4 and the Frobenius at `0`
-fix the Frobenius on the line. *Needs:* §§7.2, 7.4, 8.2.
+fix the Frobenius on the line. *Needs:* §§2.9, 7.4, 8.2.
 
 **Checks.**
 
@@ -1577,8 +2131,7 @@ and `δ_l` for `1 ≤ l ≤ n−3`, and define on `Q° × 𝔾_m` the potential
 `W = p₁/p₀ + Σ_{l=1}^{n−3} p_{l+1} p_{2n−2−l}/δ_l + p_n/p_{n−1} + p_n/p′_{n−1} + x p₁/p_{2n−2}`. Prove that the standard
 object of `Be†_{SO_{2n}}` is `pr_{2,!}(W^* A_ψ)[2(n−1)](n−1)`, and that its de Rham version is the corresponding
 exponential pushforward of `E_λ` with the same shift and no twist (Xu–Zhu §5.3.4, (5.3.4.1)–(5.3.4.6),
-pp. 58–59; Lam–Templier Theorem 1.8 (= Theorem 7.10); Pech–Rietsch–Williams §3.3 and Theorem 3.2,
-pp. 12–13). Route: the base-point formula of §1.5 for the minuscule standard representation, whose
+pp. 58–59; Lam–Templier Theorem 1.8 (= Theorem 7.10); Pech–Rietsch–Williams §3.3, pp. 13–14, and Theorem 3.2, p. 14). Route: the base-point formula of §1.5 for the minuscule standard representation, whose
 Schubert variety is the quadric; Lam–Templier's identification of the Hecke chart with the geometric
 crystal; the explicit potential of Pech–Rietsch–Williams. The formula is not used for `n = 2`, where the
 divisor labels overlap. *Needs:* §§1.5, 8.2; PadicDifferentialEquationsAndRigidCohomology §RD.6.42.
@@ -1602,7 +2155,7 @@ and summing the free additive variables by orthogonality (Mathlib `AddChar.sum_e
 `Σ_{z ∈ Q°(𝔽_Q)} ψ(Tr W(z, a)) = S_n(a) + Q^{n−1} − Q`, where
 `S_n(a) = Σ_{x₁, …, x_{2n−2} ∈ 𝔽_Q^×} ψ(Tr(Σ_i x_i + a (x₁ + x₂)/∏_i x_i)) = U_{n−1}(a)`. The direct count of the boundary
 stratum in every dimension is part of this target; the constant is `Q^{n−1} − Q`, not the printed
-`(Q − 1)Q^{n−2}` of Xu–Zhu Proposition 5.3.5 (pp. 59–60), and the proof uses no identity of Layer 11.
+`(Q − 1)Q^{n−2}` of Xu–Zhu Proposition 5.3.5 (p. 59), and the proof uses no identity of Layer 11.
 *Needs:* §8.4; Mathlib `AddChar.sum_eq_ite`, `AddChar.sum_eq_zero_of_ne_one`.
 
 **Checks.**
@@ -1618,7 +2171,7 @@ stratum in every dimension is part of this target; the constant is `Q^{n−1} �
 
 Let `Q = q^d`. For `n ≥ 3` and `a ∈ 𝔽_Q^×`, prove that the normalized `SO_{2n}` standard trace at `a` is
 `Q^{−(n−1)} (S_n(a) + Q^{n−1} − Q)`, and that for `n = 2` it is the square of the normalized rank-two trace
-(Xu–Zhu Proposition 5.3.5, (5.3.5.1)–(5.3.5.2), pp. 59–60, with the corrected constant).
+(Xu–Zhu Proposition 5.3.5, (5.3.5.1)–(5.3.5.2), p. 59, with the corrected constant).
 *Needs:* §§8.3–8.5; CongruenceSpectralGap §4.2a.
 
 **Checks.**
@@ -1634,7 +2187,7 @@ Let `Q = q^d`. For `n ≥ 3` and `a ∈ 𝔽_Q^×`, prove that the normalized `S
 
 ### Dependencies
 
-Layers 1, 2, 4, 7; KloostermanMomentsAndPotentialAutomorphy KM.1, KM.2; CongruenceSpectralGap
+Layers 1, 2, 4, 7; KloostermanMomentsAndPotentialAutomorphy §§1.1, 1.3, 2.1, 2.5–2.6; CongruenceSpectralGap
 §§4.2a–4.2b; PadicDifferentialEquationsAndRigidCohomology §§RD.6.42, RD.6.95; OrthogonalSpinGroups
 Layer 0; Mathlib `AddChar.sum_eq_ite`, `Matrix.trace`.
 
@@ -1646,36 +2199,60 @@ it in odd characteristic and proves the normalized convolution formula there.
 
 ### 9.1 Hypergeometric arithmetic `D`-modules with rational parameters
 
-For `n > m ≥ 0`, nonintegral `β_j ∈ (q−1)^{−1}ℤ` (`1 ≤ j ≤ m`) with associated nontrivial characters `ρ_j` of
-`k^×`, construct the hypergeometric overconvergent F-isocrystal `Hyp_ψ(n; ρ)` on `𝔾_m` as the multiplicative
-convolution of `n` Dwork objects and `m` Kummer-twisted inverse Dwork objects, prove that its underlying
-connection is the hypergeometric operator `δ^n − (−1)^{n+mp} π^{n−m} x ∏_j (δ − β_j)`, that it has rank `n` and
-is pure of weight `n + m − 1`, that its Frobenius trace at `a ∈ k_d^×` is `(−1)^{n+m−1} H_{ψ,d}(n; ρ)(a)`, where
-`H_{ψ,d}(n; ρ)(a) = Σ_{∏x_i = a ∏y_j} ψ(Tr(Σx_i − Σy_j)) ∏_j ρ_j^{−1}(N y_j)`, that the Frobenius structure on the
-connection is unique up to a scalar, and that the support-to-ordinary map of the convolution is an
-isomorphism (Miyatani Main theorem, pp. 2–3; Theorems 3.2.5, p. 23, and 4.1.3, pp. 27–28;
-Proposition 3.3.3, p. 26). Prove that the eigenvalues of Frobenius on the logarithmic fibre at `0` are
-`α q^j`, `0 ≤ j < n`, with `α = (−1)^m ∏_j g(ψ^{−1}, ρ_j^{−1})`, the companion of Katz's computation of the inertia
-invariants and Frobenius at `0` of the `ℓ`-adic hypergeometric sheaf (Katz, *Exponential sums and differential
-equations*, 7.0.7; Katz, *From Clausen to Carlitz*, 2.6.1; as recorded in Xu–Zhu §5.2.3, p. 57, where the
-endpoint `q^{2n}α` is printed for every rank). *Needs:* §1.1; CharacterSumsOverFiniteFields §3.3; gap:arithmetic-d-module-operations; PadicDifferentialEquationsAndRigidCohomology
-§§RD.6.42, RD.6.47.
+For finite sequences `α = (α₁,…,α_n)` and `β = (β₁,…,β_m)` in
+`(q−1)^{−1}ℤ`, with `α_i−β_j ∉ ℤ` for every pair, construct the arithmetic
+hypergeometric module associated to
+`∏_i(δ−α_i) − (−1)^{n+mp} π^{n−m} x ∏_j(δ−β_j)` over the coefficient field
+of §0.1. Rational parameters of denominator prime to `p` are included after a finite
+constant-field extension making the denominators divide `q−1`; no primality condition
+relates `p` to the lengths of the sequences. For `n+m>0`, prove that it is an
+overconvergent F-isocrystal of rank `max(n,m)` on `𝔾_m` when `n≠m`, and of rank
+`n` on `𝔾_m \ {1}` when `n=m`. The latter puncture means the residue point `1`;
+at `p=2` the leading coefficient in characteristic zero can vanish at `−1` instead,
+which has the same reduction (Miyatani Main theorem(i), pp. 2–3, Lemma 4.1.1 and
+Theorem 4.1.3, pp. 27–28).
 
-- For `m = 0` the object is the unnormalized scalar Kloosterman F-isocrystal of rank `n`.
-- An integral shift `β_j ↦ β_j + 1` changes the operator by an algebraic gauge and leaves the F-isocrystal
-  unchanged.
-- The zero spectrum has exactly `n` eigenvalues, one in each slope `v(α) + j`.
+Let `χ_i,ρ_j` be the multiplicative characters corresponding to `α_i,β_j`.
+Prove its identification with the multiplicative convolution of the rank-one
+Kummer-twisted Dwork factors and inverse-Dwork factors, with the holonomic shifts of
+Miyatani Definition 3.2.1 and Theorem 3.2.5, pp. 22–23; prove that the canonical
+support-to-ordinary convolution map is an isomorphism (Proposition 3.3.3, p. 26).
+Using the same rank-one and Fourier induction with Frobenius forgotten for geometric irreducibility, on the indicated smooth domain prove purity of weight `n+m−1`, geometric
+irreducibility, uniqueness of Frobenius up to a scalar, and the closed-point trace
+formula `(−1)^{n+m−1} H_{ψ,d}(χ;ρ)(a)`, where
+`H_{ψ,d}(χ;ρ)(a) = Σ_{∏x_i = a∏y_j} ψ(Tr(Σx_i−Σy_j)) ∏χ_i(Nx_i) ∏ρ_j^{−1}(Ny_j)`
+with every variable a unit and norms and traces to `k`. For `n = m` this is Katz's exponential sum
+`katzExpSum` of HypergeometricMotives §4.2 over `k_d`, with the characters `χ_i ∘ N` and `ρ_j ∘ N` written as
+powers of a generator, the additive character `ψ ∘ Tr` and `t = a^{−1}`; for `n ≠ m` the same formula defines
+it here. Prove base-change compatibility
+by the norm/trace lifts of the characters (Miyatani Lemma 3.2.4, p. 23; Remark 4.1.9,
+p. 30, and Propositions 4.2.1–4.2.3, pp. 30–32). For `n=m=0`, retain the convolution unit,
+the delta module at `1`, whose restriction off `1` is the rank-zero object
+(Definition 3.2.1(i), p. 22).
+*Needs:* §1.1; gap:arithmetic-d-module-operations; CharacterSumsOverFiniteFields §3.3; HypergeometricMotives
+§4.2 (for `n = m`); PadicDifferentialEquationsAndRigidCohomology §§RD.6.42, RD.6.47.
+
+- Permuting either sequence and shifting a parameter by an integer give the corresponding gauge isomorphisms; individual integral shifts follow by the rank-one Kummer gauge inside convolution. Inversion exchanges the two sequences, inverts their characters and replaces `ψ` by `ψ^{−1}` (Miyatani Definition 3.2.1 and Theorem 3.2.5, pp. 22–24; Lemmas 3.1.3 and 3.2.3, pp. 17–18 and 22–23).
+- Write `Hyp_ψ(n;ρ)` for the specialization with all upper parameters zero, `n>m≥0`, and every lower parameter nonintegral. It has rank `n`, operator `δ^n − (−1)^{n+mp} π^{n−m}x∏_j(δ−β_j)`, and trace `(−1)^{n+m−1}H_{ψ,d}(n;ρ)` with no upper-character factors.
+- For this specialization only, prove maximal unipotence at `0` and the logarithmic zero spectrum `γq^j`, `0≤j<n`, where `γ=(−1)^m∏_j g(ψ^{−1},ρ_j^{−1})` (Xu–Zhu Theorem 5.2.2 and §5.2.3, p. 57; Katz, *Exponential sums and differential equations*, 7.0.7; *From Clausen to Carlitz*, 2.6.1). The endpoint is `q^{n−1}γ`, and no zero eigenvalue occurs. General upper parameters carry their own tame exponents, so this nilpotent extension and spectrum are not asserted for them.
+- With no lower parameters and all upper parameters zero, the specialization is the unnormalized rank-`n` scalar Kloosterman object.
 
 **Checks.**
 
-- `n = 3`, `m = 1`, `ρ` quadratic: the zero spectrum is `α, αq, αq²`, three nonzero values; a list containing `0`
-  is impossible for an invertible Frobenius.
-- The rank equals `n`, not a fixed `2n`, for every `n`.
-- For `n = 1`, `m = 0` the object is the Dwork F-isocrystal restricted to `𝔾_m`, with trace `ψ(Tr a)`.
+- Over `𝔽₇`, upper `(0,1/2)` and lower `(1/3)` give differences `−1/3,1/6`, both nonintegral, and rank `2` on `𝔾_m`. The two tame upper exponents at `0` differ, excluding maximal unipotence.
+- Over `𝔽₇`, upper `(0)` and lower `(1/2)` give rank `1` on `𝔾_m \ {1}`. The leading coefficient is `x(1−x)` at odd `p`, so the extra point cannot be retained as smooth.
+- The equal-length sum is the supplier's with `t = a^{−1}`, not `t = a`. Upper `(0)`, lower the quadratic
+  character `ρ`: the trace sum is `Σ_y ψ((a − 1)y) ρ(y) = ρ(a − 1) g` and `katzExpSum` at `t` is `ρ(t) ρ(1 − t) g`,
+  with `g = Σ_y ρ(y) ψ(y)`. Over `𝔽₃` at `a = 2` both give `ψ(1) − ψ(2) = i√3` for `ψ(1) = e^{2πi/3}`, but there
+  `a = a^{−1}`. Over `𝔽₅` with `ψ(1) = e^{2πi/5}`, `g = √5`, and at `a = 2` the trace sum is `√5`, `t = a^{−1} = 3`
+  gives `ρ(3) ρ(3) √5 = √5`, while `t = 2` gives `ρ(2) ρ(4) √5 = −√5`.
+- Upper empty and lower `(1/2)` give rank `1` on `𝔾_m`, obtained by inversion from the one-upper-factor object; `max(0,1)=1` rather than zero. Upper `(0)`, lower `(1)` fail nonresonance since the difference is `−1`.
+- Empty sequences give the convolution unit, a delta module supported at the single point `1`; its restriction off `1` has rank `0`, while a constant rank-one local system has rank `1` there.
+- In the all-zero-upper case `n=3,m=1`, with quadratic lower character, the zero spectrum is `γ,γq,γq²`. For `n=1,m=0`, the trace is `ψ(Tr a)` and the object is the Dwork object on `𝔾_m`.
 
 ### 9.2 The normalized Bessel hypergeometric object
 
-With `g_j = g(ψ^{−1}, ρ_j^{−1})` over `k` and `α = (−1)^m ∏ g_j`, define the normalized object by multiplying the
+For the all-zero-upper specialization `n>m≥0` of §9.1, with `g_j = g(ψ^{−1}, ρ_j^{−1})` over `k` and `α = (−1)^m ∏ g_j`, define the normalized object by multiplying the
 Frobenius of `Hyp_ψ(n; ρ)` by `q^{−(n−1)/2}/α` (using `c_q`). Prove that its zero spectrum is
 `q^{−(n−1)/2 + j}`, `0 ≤ j < n`, and that its trace at a point of degree `d` is
 `(q^{−(n−1)/2}/α)^d (−1)^{n+m−1} H_{ψ,d}(n; ρ)` (Xu–Zhu §§5.2.1–5.2.3, (5.2.1.1)–(5.2.3.1), pp. 56–57, and
@@ -1686,7 +2263,7 @@ CharacterSumsOverFiniteFields §3.3, transported to `K`-valued characters as in 
 
 - The `n` zero eigenvalues are `q^{−(n−1)/2}, …, q^{(n−1)/2}`; in odd rank the middle one is `1`.
 - At a `k`-point the trace is `H_ψ(n; ρ)/((−c_q)^{n−1} ∏_j g_j)`.
-- For `m = 0` the normalized object is `Be†_{SL_n, Std}` of §8.1, including its sign.
+- For `m = 0` and `n ≥ 2` the normalized object is `Be†_{SL_n, Std}` of §8.1, including its sign; at `n=1` it remains the Dwork object, not the trivial representation of `SL₁`.
 - Under degree-`d` extension, `g_{j,d} = (−1)^{d−1} g_j^d`, and the hypergeometric sign and the `d`-th power of the
   scalar are transported together.
 
@@ -1694,8 +2271,10 @@ CharacterSumsOverFiniteFields §3.3, transported to `K`-valued characters as in 
 
 - `n = 3`, `m = 1`: the zero spectrum is `q^{−1}, 1, q`.
 - `n = 2`, `m = 0`: the trace is `−R₂/c_q` and the zero spectrum `c_q^{−1}, c_q`.
-- At `d = 2` the normalizing scalar is the square of the base scalar; using the Gauss sum of `k₂` without the
-  sign `(−1)^{d−1}` multiplies the trace by `−1`.
+- At `d = 2` the normalizing scalar is the square of the base scalar. Replacing each `g_j²` by the Gauss sum
+  `g_{j,2}` of `k₂` without the Hasse–Davenport sign changes the product, and hence the normalized trace, by
+  `(−1)^m`: over `𝔽₃` with one quadratic lower parameter `g² = −3` and `g_{j,2} = 3`, so the trace changes sign;
+  with two quadratic lower parameters the two signs cancel (`9 = 9`), and for `m = 0` there is nothing to change.
 
 ### 9.3 The odd orthogonal hypergeometric comparison
 
@@ -1715,17 +2294,30 @@ irreducible object (§9.1); the zero spectrum fixes the scalar. *Needs:* §§4.3
 
 ### 9.4 The normalized Bessel convolution
 
-For `p > 2` and `n ≥ 2`, prove `Be†_{SO_{2n+1}, Std} ≅ (Be†_{SO₃, Std} ⋆ Be†_{2n−2})(1/2)`, where `⋆` is `Rμ_!` of the
-exterior product under multiplication `μ : 𝔾_m × 𝔾_m → 𝔾_m` and `Be†_r = Be†_{SL_r, Std}`. On traces over `𝔽_Q` this reads
-`T_{SO_{2n+1}}(a) = −Q^{−1/2} Σ_{uv=a} T_{SO₃}(u) K_{2n−2}(v)` with `K_r` the normalized scalar trace (Xu–Zhu §5.3.9 and
-Corollary 5.3.11(i), p. 61, with the half twist and sign corrected; Miyatani Main theorem (ii), p. 3, and
-Proposition 3.3.3, p. 26). The case `n = 1` is `Sym²` of `SL₂` and uses no rank-zero object. Route: multiplicative
-convolution of hypergeometric objects with explicit shifts; compare quadratic hypergeometric objects in
-odd characteristic; fix the twist and sign by the zero spectrum. *Needs:* §§8.1, 9.1–9.3;
-gap:arithmetic-d-module-operations.
+Overconvergent F-isocrystals on `𝔾_m` are placed in the heart of the constructible t-structure (Xu–Zhu §§2.3.4–2.3.5,
+(2.3.4.1), p. 15), so that their closed-point traces are the traces of the isocrystals, and `M ⋆ N = Rμ_!(M ⊠ N)` is the
+unshifted multiplicative convolution under `μ : 𝔾_m × 𝔾_m → 𝔾_m` (Miyatani Definition 2.1.1, p. 14; Xu–Zhu (5.2.1.2),
+p. 56), whose trace at `a` is `+Σ_{uv=a}` of the products of traces (Miyatani Proposition 2.1.3, p. 15). Write
+`Be†_r = Be†_{SL_r, Std}`. For `p > 2` and `n ≥ 2`, prove that `Be†_{SO₃, Std} ⋆ Be†_{2n−2}` has constructible
+cohomology only in degree `1`, that this cohomology is smooth of rank `2n + 1`, and that
+`Be†_{SO_{2n+1}, Std} ≅ (Be†_{SO₃, Std} ⋆ Be†_{2n−2})[1](1/2)`.
+On traces over `𝔽_Q` the shift `[1]` gives the sign: `T_{SO_{2n+1}}(a) = −Q^{−1/2} Σ_{uv=a} T_{SO₃}(u) K_{2n−2}(v)` with `K_r`
+the normalized scalar trace (Xu–Zhu §5.3.9, (5.3.9.1), and Corollary 5.3.11(i), p. 61, with the shift and half
+twist added; Miyatani Main theorem (ii), p. 3, and Proposition 3.3.3, p. 26). The case `n = 1` is `Sym²` of `SL₂`
+and uses no rank-zero object. Route: along each fibre `uv = a`, a punctured line, the smooth object
+`Be†_{SO₃, Std} ⊗ inv_a^* Be†_{2n−2}` (with `inv_a(u) = a/u`) has no compactly supported cohomology in degree `0`, being
+smooth on an affine curve, nor in degree `2`, since a geometrically constant quotient would give a common
+constituent of `Be†_{SO₃, Std}`, tame at `0`, and the dual of `inv_a^* Be†_{2n−2}`, totally wild at `0`; the
+Grothendieck–Ogg–Shafarevich formula gives rank `Sw_∞ + Sw_0 = (2n − 2) + 3 = 2n + 1`; then multiplicative
+convolution of hypergeometric objects with explicit shifts, comparison of quadratic hypergeometric objects in
+odd characteristic, and the zero spectrum fix the twist. *Needs:* §§8.1, 9.1–9.3;
+gap:arithmetic-d-module-operations; PadicDifferentialEquationsAndRigidCohomology §RD.6.55.
 
 **Checks.**
 
+- Object against trace, over `𝔽₃`, `n = 2`, `a = 1`: `R₂(1) = −1`, `R₂(2) = 2`, `U₂(1) = 7`; the `SO₃` traces are `−2/3`
+  and `1/3`, the normalized rank-two traces `1/√3` and `−2/√3`, and `Σ_{uv=1} T_{SO₃}(u) K₂(v) = −4/(3√3)`. The unshifted
+  twisted convolution has trace `−4/9`, while `T_{SO₅}(1) = (U₂(1) − 3)/3² = 4/9`; the shift `[1]` supplies the sign.
 - The trace formula carries both the cohomological sign and `Q^{−1/2}`; in raw sums it is
   `U_n(a) − Q = Σ_{uv=a} (R₂(u)² − Q) R_{2n−2}(v)`, which holds over `𝔽₃`, `𝔽₅`, `𝔽₇`, `𝔽₉` for `n = 2, 3` by direct computation.
 - The printed form `−Q^{−1/2}(U_n − Q^{n−1})` of Xu–Zhu (1.2.9.2) fails over `𝔽₂` at `n = 2`, `a = 1`: the left side is
@@ -1738,8 +2330,8 @@ gap:arithmetic-d-module-operations.
 
 ### Dependencies
 
-Layers 0, 1, 4, 8; CharacterSumsOverFiniteFields §3.3; gap:arithmetic-d-module-operations;
-PadicDifferentialEquationsAndRigidCohomology §§RD.6.42, RD.6.47.
+Layers 0, 1, 4, 8; CharacterSumsOverFiniteFields §3.3; HypergeometricMotives §4.2;
+gap:arithmetic-d-module-operations; PadicDifferentialEquationsAndRigidCohomology §§RD.6.42, RD.6.47, RD.6.55.
 
 ## Layer 10: The characteristic-two comparison
 
@@ -1756,29 +2348,38 @@ Let `R` be a complete discrete valuation ring of mixed characteristic `(0, p)` w
 `a, n, m, s`. For `p = 2` the *signed condition* (c′) replaces (c) by the congruence with right side multiplied
 by `u(i, s, m) ∈ {±1}`, independent of `a, n`, and `u(i, s, m) = 1` for `s ≠ 1`. Put `F⁽ⁱ⁾ = Σ_j B⁽ⁱ⁾(j) x^j` and the
 block truncations `F⁽ⁱ⁾_{m,s} = Σ_{m p^s ≤ j < (m+1) p^s} B⁽ⁱ⁾(j) x^j` (`dworkBlock` in `Suggested.lean`); `F⁽ⁱ⁾_s = F⁽ⁱ⁾_{0,s}`. A
-*normalized periodic* datum adds `B⁽ⁱ⁾(0) = 1` and `B⁽ⁱ⁺ʳ⁾ = B⁽ⁱ⁾` for a fixed `r ≥ 1` (Xu–Zhu Appendix A.4–A.6,
-(A.5.1)–(A.5.4), pp. 64–65). *Needs:* Mathlib `PowerSeries.mk`, `IsDiscreteValuationRing`.
+*normalized periodic* datum is a family satisfying (a), (b) and either (c) or, for `p = 2`, (c′), together with
+`B⁽ⁱ⁾(0) = 1` and `B⁽ⁱ⁺ʳ⁾ = B⁽ⁱ⁾` for a fixed `r ≥ 1`; it is *ordinary* or *signed* according as (c) or (c′) is
+used (Xu–Zhu Appendix A.4–A.6, (A.5.1)–(A.5.4), pp. 64–65). *Needs:* Mathlib `PowerSeries.mk`, `IsDiscreteValuationRing`.
 
 - The block `F_{m,s}` starts at `m p^s` and stops before `(m+1) p^s`.
 - Conditions (a) and (b) imply `B⁽ⁱ⁾(j) ∈ R` for all `i, j`, by induction on `j`.
-- Normalization and periodicity are extra structure, not consequences of (a)–(c).
+- Normalization and periodicity are extra structure, not consequences of (a), (b) and (c) or (c′).
 - Deleting the first sequence gives a datum `B⁽ⁱ⁺¹⁾` with the inherited conditions and signs `u(i+1, s, m)`.
 
 **Checks.**
 
 - `B⁽ⁱ⁾(j) = 1` satisfies (a)–(c) and is periodic of period `1`.
 - For `p = 2`, `m = 1`, `s = 2` the block contains exactly `j = 4, 5, 6, 7`; an inclusive upper end adds `j = 8`.
+- At `s=0`, `B(j)=j+1`, `m=2`, the block is `3x²`: coefficients at `1,2,3` are `0,3,0`, not a prefix truncation.
+- At `p=2`, `m=0`, `s=1`, `B(j)=1`, the block is `1+x` with coefficient `0` at degree `2`; for the total definition with `p=0`, `s=1`, every block is empty. The congruence theorems require prime `p`.
 - For the rank-three sequence `B(j) = (−2)^{3j}/(j!)³`, `B(4)/B(2) = 1/27 ≡ −1` modulo `4` while `B(0)/B(0) = 1`: the
-  ordinary condition (c) fails at `s = 1` and the signed condition holds with `u = −1`.
+  ordinary condition (c) fails at `s = 1` and the signed condition holds with `u = −1`. With `B(0) = 1` and
+  period `1` this sequence, and its rank-five analogue, is a signed and not an ordinary normalized periodic
+  datum, with `u(i, 1, m) = (−1)^m`; a definition admitting only (c) would exclude the series of §10.4.
 
 ### 10.2 Signed 2-adic Dwork congruences
 
 Prove: (i) under (a)–(c), `F⁽⁰⁾(x) F⁽¹⁾_{m,s}(x^p) − F⁽⁰⁾_{m,s+1}(x) F⁽¹⁾(x^p) ∈ p^{s+1} B⁽ˢ⁺¹⁾(m) R⟦x⟧` (Dwork, *p-adic
 cycles*, Theorem 2); (ii) under (a), (b), (c′) at `p = 2`, the same difference with `x²` lies in
-`2^s B⁽ˢ⁺¹⁾(m) R⟦x⟧`; (iii) for a normalized periodic datum, `F⁽⁰⁾_{s+1}(x)/F⁽¹⁾_s(x^p)` converges, as `s → ∞`, to a
+`2^s B⁽ˢ⁺¹⁾(m) R⟦x⟧`; (iii) for a normalized periodic datum, ordinary or signed, `F⁽⁰⁾_{s+1}(x)/F⁽¹⁾_s(x^p)` converges, as `s → ∞`, to a
 function on the formal open where all reductions `F⁽ⁱ⁾₁`, `i < r`, are nonzero, with unit value at every rigid
 point after finite extension (Xu–Zhu Theorem A.5, pp. 64–65, and proof A.13, pp. 67–69; Dwork Theorem 3).
-Statement (ii) is `signed_dwork_congruence`. Route for (ii): Dwork's antisymmetric block sums
+Statements (i) and (ii) are congruences on single coefficients and hold for every discrete valuation ring
+of mixed characteristic `(0, p)`, complete or not: the hypotheses over `R` give those over the completion
+`R̂`, and the quotient of a coefficient by `p^{s+1} B⁽ˢ⁺¹⁾(m)` (respectively `2^s B⁽ˢ⁺¹⁾(m)`) lies in
+`K ∩ R̂ = R`; completeness is used only in (iii). Statement (ii) is `signed_dwork_congruence`. Route for
+(ii): Dwork's antisymmetric block sums
 `H_a(m, s, N)` and induction on the block length, propagating the signs `u(i, s, m)`, with the parity-splitting
 indices as determined by the block endpoints. *Needs:* §10.1; PadicDifferentialEquationsAndRigidCohomology
 §RD.3.8 for (iii).
@@ -1787,6 +2388,10 @@ indices as determined by the block endpoints. *Needs:* §10.1; PadicDifferential
 
 - The signed modulus is `2^s`, the ordinary one `p^{s+1}`; for the sequence of §10.1 at `s = 1` the ordinary
   congruence (c) fails, so (i) does not apply and (ii) is needed.
+- Over the incomplete ring `ℤ_(2)` with `K = ℚ`, the constant sequence `B(j) = (−2)^{3j}/(j!)³` and the alternating
+  pair below at `n = 1, 2` give, for `s ≤ 3`, `m ≤ 2` and coefficient degree `N ≤ 40`, quotients by `2^s B⁽ˢ⁺¹⁾(m)` with odd
+  denominators; the least `2`-adic valuation of a nonzero quotient is `0` for the constant sequence, so `2^s`
+  cannot be raised to `2^{s+1}`.
 - For the alternating pair `B⁽⁰⁾(j) = (−2)^{(2n+1)j}/(j!)^{2n+1}`, `B⁽¹⁾(j) = 2^{(2n+1)j}(2j−1)!!/(j!)^{2n+1}`,
   `B⁽ⁱ⁺²⁾ = B⁽ⁱ⁾`, conditions (b) and (c′) hold with `u(0, 1, m) = 1`, `u(1, 1, m) = (−1)^m`, and the coefficient
   divisibility of (ii) holds for `n = 1, 2`, `s ≤ 3`, `m ≤ 2` and all relevant coefficients by direct computation.
@@ -1796,7 +2401,7 @@ indices as determined by the block endpoints. *Needs:* §10.1; PadicDifferential
 ### 10.3 Dwork unit-root lines
 
 Over `k = 𝔽_p`, for a power series `F` whose constant sequence `B⁽ⁱ⁾ = B` is a normalized periodic datum of
-period `1`, let `U` be the formal open where the reduction of `F₁` is nonzero. Prove that `f = F(x)/F(x^p)` and
+period `1`, ordinary or signed, let `U` be the formal open where the reduction of `F₁` is nonzero. Prove that `f = F(x)/F(x^p)` and
 `η = F′(x)/F(x)` extend to `U`, that `f` is invertible, that `f′/f + p x^{p−1} η(x^p) = η(x)`, and that
 `E_F = (O, d − η dx)` with multiplier `f` is a unit-root convergent F-isocrystal on `U` with `f(0) = 1` (Xu–Zhu A.6
 and Corollary A.7, p. 65). After constant extension to `𝔽_q`, `q = p^s`, for `F` with coefficients fixed by the
@@ -1831,8 +2436,14 @@ coordinate `x ↦ −x` of the appendix, and `G` that of the odd orthogonal oper
 **Checks.**
 
 - At `p = 2` both first truncations are `1` modulo `2`, so the domain is the whole completed affine line.
-- Both `h′/h = η_F − η_G` and `h f_G = f_F h(x²)` are needed; a horizontal map need not respect Frobenius.
-- For a constant extension of degree `s` the `s`-fold products are used, not the squaring multiplier.
+- At `n = 1`: `F = 1 − 8x + 8x² + O(x³)` and `G = 1 + 8x + 24x² + O(x³)`. Taking `F = G` fails already at the
+  coefficient of `x`; deleting the double factorial from `G` fails at `x²` (coefficient `8` instead of `24`).
+- For this pair `h = 1 − 16x + 112x² + O(x³)`, so `h′(0) = −16 = η_F(0) − η_G(0)`, and `h(x) f_G(x)` and
+  `f_F(x) h(x²)` both begin `1 − 8x + 0·x²`. Multiplication by `h^{−1}` instead has derivative `+16` at `0` and is
+  not the stated map `E_G → E_F`.
+- At `n = 1`, `f_{F,2} = 1 − 8x + 16x² + O(x³)` whereas `f_{F,4} = f_{F,2}(x) f_{F,2}(x²) = 1 − 8x + 8x² + O(x³)`; for `G`
+  the corresponding `x²` coefficients are `16` and `24`. The single squaring multiplier therefore fails the
+  degree-two constant-field extension test.
 
 ### 10.5 Frobenius on the maximal-slope quotient
 
@@ -1843,9 +2454,11 @@ quotient connection `d + η_F dx`, the dual of `E_F`, and similarly for `G`; the
 respectively `q^n/f_{G,q}`, fixed by the common eigenvalue `q^n` at `0`; and multiplication by `h^{−1}` is a
 Frobenius-compatible isomorphism from the `G` quotient to the `F` quotient (Xu–Zhu A.8, Proposition A.9 and A.11,
 pp. 65–66, with the Frobenius step added). Route: §5.3 gives the common ordinary open independently of
-Layer 11; factor the Ore operators and identify the horizontal quotient with the maximal-slope quotient
-using the dense-open slope filtration (§RD.3.45); the ratio of the quotient Frobenius to `q^n/f_{F,q}` is
-horizontal, hence constant on the connected open, and equals `1` at `0`. *Needs:* §§4.3, 5.3, 10.4;
+Layer 11; the open of constant polygon with `0` adjoined, and the slope filtration of the logarithmic
+extension on it, are those of gap:log-newton-semicontinuity; factor the Ore operators and identify the
+horizontal quotient with the maximal-slope quotient using that slope filtration (on `𝔾_m` the dense-open slope
+filtration of §RD.3.45); the ratio of the quotient Frobenius to `q^n/f_{F,q}` is horizontal, hence constant on
+the connected open, and equals `1` at `0`. *Needs:* §§4.3, 5.3, 10.4; gap:log-newton-semicontinuity;
 PadicDifferentialEquationsAndRigidCohomology §§RD.2.33, RD.3.43–RD.3.45, RD.5.101.
 
 **Checks.**
@@ -1862,13 +2475,13 @@ PadicDifferentialEquationsAndRigidCohomology §§RD.2.33, RD.3.43–RD.3.45, RD.
 For `p = 2` and `n ≥ 1`, prove `Be†_{2n+1} ≅ Be†_{SO_{2n+1}, Std}` as normalized overconvergent F-isocrystals on `𝔾_m`,
 compatibly with all finite constant-field extensions (Xu–Zhu Proposition A.1 and Theorem A.3, pp. 63–64; A.11–A.12,
 pp. 66–67; Proposition 5.3.8(ii), p. 61). Route: both objects are geometrically irreducible (§6.4 for the odd
-orthogonal one, KloostermanMomentsAndPotentialAutomorphy KM.1 for the scalar one); §10.5 gives an
+orthogonal one, KloostermanMomentsAndPotentialAutomorphy §§1.1, 1.3 for the scalar one); §10.5 gives an
 isomorphism of maximal-slope quotients on a common open; PadicDifferentialEquationsAndRigidCohomologyPartII
 MS.4 lifts it to an isomorphism on that open; full faithfulness of restriction to a dense open (§RD.5.112)
 extends it to `𝔾_m`; the sign of `x` in the appendix is transported by the Taylor isomorphism between the lifts
 `x` and `−x` of the same map in characteristic two, with its Frobenius (§RD.1.44). *Needs:* §§6.4, 8.1,
 10.5; PadicDifferentialEquationsAndRigidCohomologyPartII MS.4; PadicDifferentialEquationsAndRigidCohomology
-§§RD.0.37, RD.1.44, RD.5.112; KloostermanMomentsAndPotentialAutomorphy KM.1.
+§§RD.0.37, RD.1.44, RD.5.112; KloostermanMomentsAndPotentialAutomorphy §§1.1, 1.3.
 
 **Checks.**
 
@@ -1885,9 +2498,9 @@ extends it to `𝔾_m`; the sign of `x` in the appendix is transported by the Ta
 
 ### Dependencies
 
-Layers 4–8; PadicDifferentialEquationsAndRigidCohomology §§RD.0.37, RD.1.44, RD.2.33, RD.3.8,
+Layers 4–8; gap:log-newton-semicontinuity; PadicDifferentialEquationsAndRigidCohomology §§RD.0.37, RD.1.44, RD.2.33, RD.3.8,
 RD.3.33–RD.3.34, RD.3.43–RD.3.45, RD.3.47, RD.5.101, RD.5.112; PadicDifferentialEquationsAndRigidCohomologyPartII
-MS.4; KloostermanMomentsAndPotentialAutomorphy KM.1; Mathlib `PowerSeries.mk`, `PowerSeries.expand`,
+MS.4; KloostermanMomentsAndPotentialAutomorphy §§1.1, 1.3; Mathlib `PowerSeries.mk`, `PowerSeries.expand`,
 `IsDiscreteValuationRing`, `IsAdicComplete`.
 
 ## Layer 11: Everywhere ordinarity, the exceptional branch and the identities
@@ -1903,30 +2516,69 @@ Define, for a finite field `F`, a field `K` and an additive character `ψ : F �
 `kloostermanSum ψ k a = Σ_{x₁⋯x_k = a} ψ(x₁ + ⋯ + x_k)` over unit tuples, the even orthogonal sum
 `orthogonalSum ψ n a = U_n(a)` of the conventions (sum over `2n` units, meant for `n ≥ 1`), the quadratic character
 `quadraticCharIn F K` (Mathlib `quadraticChar` composed with `ℤ → K`), the quadratic hypergeometric sum
-`quadraticHypergeometricSum ψ N b = H_N(b)`, and for a `ZMod p`-algebra `F` the trace character
+`quadraticHypergeometricSum ψ N b = H_N(b)`, and, for prime `p` and finite `ZMod p`-algebra field `F`, the trace character
 `traceChar p F ψ₀ = ψ₀ ∘ Tr_{F/𝔽_p}`.
 
-- `kloostermanSum` agrees with `hyperKloosterman` of CongruenceSpectralGap §4.2a, and its eliminated-variable
+- `kloostermanSum` agrees with `hyperKloosterman` of CongruenceSpectralGap §4.2a, and, for `k ≥ 1`, its eliminated-variable
   form is `Σ_{x : Fin (k−1) → F^×} ψ(Σx_i + a/∏x_i)`.
-- `orthogonalSum ψ n a` is the `Q`-point count `S_{n+1}(a)` of §8.5, and `orthogonalSum ψ 1 a = kloostermanSum ψ 2 a ^ 2`.
-- `quadraticHypergeometricSum ψ N b` eliminates `y = (x₁ ⋯ x_N)/b`, so it is the sum over `x` alone.
-- `traceChar p F ψ₀` is a nontrivial character when `ψ₀` is (Mathlib `FiniteField.trace_to_zmod_nondegenerate`).
+- For `k = 0`, `kloostermanSum ψ 0 a` is `1` if `a = 1` and `0` otherwise.
+- For `n ≥ 2`, `orthogonalSum ψ n a` is the toric sum `S_{n+1}(a)` of §8.5. At `n=1`, `orthogonalSum ψ 1 a = kloostermanSum ψ 2 a ^ 2`, using the `SO₄` product case rather than the quadric chart.
+- For `b ≠ 0`, `quadraticHypergeometricSum ψ N b` eliminates `y = (x₁ ⋯ x_N)/b`, so it is the sum over `x` alone. Its total definition at `b = 0` is `0`, since the argument of the quadratic character is `0`.
+- For prime `p` and finite `F`, `traceChar p F ψ₀` is a nontrivial character when `ψ₀` is (Mathlib `FiniteField.trace_to_zmod_nondegenerate`).
 
 Prove: (i) in characteristic two, with `ψ = traceChar 2 F ψ₀`, `ψ₀ ≠ 1`, `U_n(a) − |F| = R_{2n+1}(a)` for `n ≥ 1`
 (`orthogonalSum_sub_card_eq_kloostermanSum`; Carlitz (4), p. 35, at `n = 1`); (ii) in odd characteristic, for
 every nontrivial `ψ` and `g = Σ_y ρ(y) ψ(−y)`, `g · (U_n(a) − |F|) = H_{2n+1}(4a)` for `n ≥ 1`
-(`gaussSum_mul_orthogonalSum_sub_card`); (iii) in every characteristic, for every nontrivial `ψ` and `N ≥ 2`,
-`U_N(a) − |F| = Σ_{uv=a} (R₂(u)² − |F|) R_{2N−2}(v)` (`orthogonalSum_sub_card_eq_convolution`) (Xu–Zhu §1.2.9, pp. 6–7,
-and Corollary 5.3.11, p. 61, corrected). Route: (i) is the trace identity of §10.6 with §§8.3 and 8.6; (ii) is the
-trace identity of §9.3 with §§8.3 and 8.6; (iii) is §9.4 in odd characteristic and, at `p = 2`, follows from (i)
-and the convolution property `R_{2N+1}(a) = Σ_{uv=a} R₃(u) R_{2N−2}(v)` of raw sums. All identities are first proved
-for `K ⊂ ℂ` and transported to any field `K` in which the character is nontrivial. For (i) the values are `±1` and
-the identity is one between integers. For (ii) and (iii) both sides are integer polynomials in a primitive `p`-th
-root of unity `ζ`; their difference vanishes at every primitive `p`-th root of unity of `ℂ`, because (ii) and (iii)
-hold for every nontrivial character, hence is divisible by the `p`-th cyclotomic polynomial. *Needs:* §§8.3, 8.6,
-9.3–9.4, 10.6; CongruenceSpectralGap §4.2a; Mathlib `gaussSum`, `quadraticChar`, `AddChar`.
+(`gaussSum_mul_orthogonalSum_sub_card`); (iii) in every characteristic, for every nontrivial `ψ` and `N ≥ 1`,
+`U_N(a) − |F| = Σ_{uv=a} (R₂(u)² − |F|) R_{2N−2}(v)`, with `R₀(v) = 1` for `v = 1` and `0` otherwise (Xu–Zhu §1.2.9,
+pp. 6–7, and Corollary 5.3.11, p. 61, corrected). Route: (i) is the trace identity of §10.6 with §§8.3 and 8.6;
+(ii) is the trace identity of §9.3 with §§8.3 and 8.6. (iii) is elementary and uses no other target: in `U_N(a)`
+put `v = y₁ ⋯ y_{2N−2}` for the last `2N − 2` variables and `u = a/v`, so that the argument becomes
+`(x₁ + u/x₁) + (x₂ + u/x₂) + Σ y_i` and the sum over `x₁, x₂` is `R₂(u)²`, giving `U_N(a) = Σ_{uv=a} R₂(u)² R_{2N−2}(v)`;
+and `Σ_v R_{2N−2}(v) = (Σ_{x ∈ F^×} ψ(x))^{2N−2} = 1` for nontrivial `ψ` (Mathlib `AddChar.sum_eq_zero_of_ne_one`).
+It is the trace form of §9.4, and with the convolution `Σ_{uv=a} R_j(u) R_k(v) = R_{j+k}(a)` of raw sums it reduces
+(i) and (ii) for general `n` to their cases `n = 1`, Carlitz's and Katz's identities. Identities (i) and (ii) are
+first proved for `K ⊂ ℂ` and transported to any field `K` in which the character is nontrivial; (iii) holds
+directly over every field. For (i) the values are `±1` and the identity is one between integers. For (ii) both
+sides are integer polynomials in a primitive `p`-th root of unity `ζ`; their difference vanishes at every
+primitive `p`-th root of unity of `ℂ`, because (ii) holds for every nontrivial character, hence is divisible by
+the `p`-th cyclotomic polynomial. *Needs:* §§8.3, 8.6, 9.3, 10.6 (for (i) and (ii)); CongruenceSpectralGap §4.2a;
+Mathlib `gaussSum`, `quadraticChar`, `AddChar`, `AddChar.sum_eq_zero_of_ne_one`.
 
-**Checks.**
+The finite-field signatures use `[Finite F]` and `Nat.card F`; the finite-support sums
+agree with the usual sums over any finite enumeration. No enumeration is part of the datum.
+
+**Checks.** For the raw sum.
+
+- Over `𝔽₂`, `k=0`, `a=1`, the product-fibre sum is `ψ(0)=1`; the truncated-subtraction formula would instead give `ψ(1)=−1`.
+- Over `𝔽₃`, `k=0`, `a=2`, the fibre is empty, so the sum is `0`; for `a=1` it is `1`.
+- At `k=1` the unique tuple is `(a)`, giving `ψ(a)`. For `𝔽₂`, the values at `a=1`, `k=1,2,3` are `−1,1,−1`.
+
+**Checks.** For the orthogonal sum.
+
+- Over `𝔽₂`, `a=1`, its unique tuple gives `U₁=U₂=1`, since both distinguished coordinates add to zero.
+- Over `𝔽₃`, for `ψ(1)=ζ₃`, `U₁(1)=1` and `U₁(2)=4`, agreeing with `R₂(1)²=(−1)²` and `R₂(2)²=2²`.
+- At `n=0`, the total Lean expression still has two distinguished coordinates; over `𝔽₃`, `a=2`, it gives `4`, whereas an empty-tuple sum with zero additive argument would give `1`. Every orthogonal headline requires `n≥1`.
+
+**Checks.** For the quadratic character.
+
+- On `𝔽₃` with coefficients `ℂ`, its values at `0,1,2` are `0,1,−1`; zero is not a unit and is assigned `0`.
+- On `𝔽₅`, the nonzero square `4` gives `1`, while the nonsquare `2` gives `−1`.
+- On `𝔽₃` with characteristic-two coefficients the values at `1,2` both become `1`. On `𝔽₄`, every nonzero element is a square, so the character takes `0` at zero and `1` on all units; the odd-characteristic identity excludes this source field.
+
+**Checks.** For the quadratic hypergeometric sum.
+
+- At `b=0`, every summand has quadratic-character factor `ρ(0)=0`, hence the total is `0`, even for `N=0`.
+- Over `𝔽₃`, `N=0`, `b=1`, the sole tuple gives `ψ(−1)ρ(1)=ζ₃²`; for `b=2` it gives `ψ(−2)ρ(2)=−ζ₃`.
+- Over `𝔽₃`, `N=1`, `b=1`, the two summands are `1` and `−1`, giving `0`; for `b=2` they are `−ζ₃²` and `ζ₃`, giving `i√3`.
+
+**Checks.** For the trace character.
+
+- For `F=𝔽₄=𝔽₂[ω]`, `ω²=ω+1`, the traces at `0,1,ω` are `0,0,1`, giving character values `1,1,−1` for the nontrivial base character.
+- The other non-prime-field element `ω+1` also has trace `1` and value `−1`; composing with the identity instead of the field trace would not give these four values.
+- With trivial base character all four values are `1`; on the prime field `𝔽₂` with nontrivial base character the values at `0,1` are `1,−1`.
+
+**Checks.** For the identities.
 
 - Over `𝔽₂`, `a = 1`: `R₂ = 1`, `R₃ = −1` and `R₂² − 2 = −1`; the printed factor `−1/√q` of Xu–Zhu (1.2.9.1) at `p = 2`
   would give `1/√2`.
@@ -1940,29 +2592,48 @@ hold for every nontrivial character, hence is divisible by the `p`-th cyclotomic
 
 ### 11.2 Toric hypergeometric slopes
 
-For odd `p`, `n ≥ 1`, `d | p − 1` and `a ∈ 𝔽_q^×`, let `f_d = Σ_{i=1}^{2n} x_i − z^d + a z^d/∏_{i=1}^{2n} x_i` on `𝔾_m^{2n+1}`. Prove
-that `f_d` is nondegenerate, that its Newton polytope has dimension `2n + 1` and volume `d/(2n)!`, that its
-`L`-function `exp(Σ_m S_m(f_d) T^m/m)` is a polynomial of degree `d(2n + 1)`, and that its Hodge and Newton slopes
-are `j/d`, `0 ≤ j < d(2n + 1)`, each once; and that `S_m(f₂) − S_m(f₁)` is the raw quadratic hypergeometric sum
-`H_{ψ,m}(2n + 1; ρ)(a)` (Xu–Zhu Lemma 5.4.3, (5.4.3.1)–(5.4.3.2), pp. 62–63; Adolphson–Sperber, Corollary 3.11;
-Wan 2004, Corollary 2.6 and Theorem 3.1; Wan 1993, boundary decomposition). Hence the unnormalized
-quadratic hypergeometric object of §9.1 with `2n + 1` upper parameters has slopes `1/2, 3/2, …, 2n + 1/2` at every
-`a`. Route: every face not containing the origin is diagonal with lattice quotient of order `d`, ordinary because
-`d | p − 1`; Wan's boundary decomposition gives ordinarity of `f_d`; divide the two `L`-polynomials, keeping the
-sign: the unnormalized trace of the hypergeometric object is minus the raw sum (§9.1 with `n + m − 1 = 2n + 1` odd).
-*Needs:* §9.1; PadicDifferentialEquationsAndRigidCohomology §§RD.6.4, RD.6.25.
+For odd `p`, `n ≥ 1`, `d | p − 1` and `a ∈ 𝔽_q^×`, let `f_d = Σ_{i=1}^{2n} x_i − z^d + a z^d/∏_{i=1}^{2n} x_i` on `𝔾_m^{2n+1}`, and
+let `Δ(f_d)` be its Newton polyhedron, the convex hull of the origin and the exponent vectors. Prove that `f_d` is
+nondegenerate on every face of `Δ(f_d)` not containing the origin, that `Δ(f_d)` has dimension `2n + 1` and volume
+`d/(2n)!`, that the `L`-function `exp(Σ_m S_m(f_d) T^m/m)` of the toric sums `S_m` over `(𝔽_{q^m}^×)^{2n+1}` is a polynomial
+of degree `d(2n + 1)`, and that its Hodge and Newton slopes are `j/d`, `0 ≤ j < d(2n + 1)`, each once; and that
+`S_m(f₂) − S_m(f₁)` is the raw quadratic hypergeometric sum `H_{ψ,m}(2n + 1; ρ)(a)` (Xu–Zhu Lemma 5.4.3,
+(5.4.3.1)–(5.4.3.2), pp. 62–63; Adolphson–Sperber, Corollary 3.11; Wan 2004, Corollary 2.6 and Theorem 3.1;
+Wan 1993, boundary decomposition). Hence the unnormalized quadratic hypergeometric object of §9.1 with
+`2n + 1` upper parameters has slopes `1/2, 3/2, …, 2n + 1/2` at every `a`. Route: `Δ(f_d)` has vertices `0`, `e₁, …, e_{2n}`, `d e_z` and
+`(−1, …, −1, d)`; its codimension-one faces not containing the origin are the `2n + 1` simplices
+`{e₁, …, e_{2n}, d e_z}` and `{e_i (i ≠ j), d e_z, (−1, …, −1, d)}` for `1 ≤ j ≤ 2n`, each with vertex determinant `±d`, and every face
+not containing the origin lies in one of them. Since `p ∤ d`, the restriction of `f_d` to each such simplex is a
+diagonal Laurent polynomial that is nondegenerate on all its faces (gap:toric-exponential-sum-ordinarity), so
+`f_d` is nondegenerate; gap:toric-exponential-sum-hodge-bound gives the polynomiality, the degree
+`(2n + 1)! · d/(2n)! = d(2n + 1)` and Newton above Hodge; counting the lattice points of the cone over `Δ(f_d)` by
+weight gives the Hodge numbers `1` at each `j/d`, `0 ≤ j < d(2n + 1)`. For each codimension-one face `δ` not containing
+the origin the group `S(δ)` has order `d`, so its exponent divides `p − 1`, and the diagonal criterion of
+gap:toric-exponential-sum-ordinarity makes the restriction `f_d^δ` ordinary; the facial decomposition there gives
+ordinarity of `f_d`. The index `d` is a property of the codimension-one faces only, while nondegeneracy is needed on
+every face not containing the origin. Divide the two `L`-polynomials, keeping the sign: the unnormalized trace of
+the hypergeometric object is minus the raw sum (§9.1 with `n + m − 1 = 2n + 1` odd).
+*Needs:* §9.1; gap:toric-exponential-sum-hodge-bound; gap:toric-exponential-sum-ordinarity;
+PadicDifferentialEquationsAndRigidCohomology §§RD.6.4, RD.6.25.
 
 **Checks.**
 
 - `d = 1` gives slopes `0, 1, …, 2n`; `d = 2` gives `0, 1/2, 1, …, 2n + 1/2`; the quotient keeps the half-integers.
 - `S_m(f₂) − S_m(f₁)` is the raw sum, minus the unnormalized trace; the sign has valuation zero and does not move
   the polygon, but it fixes the quotient `L(f₂)/L(f₁)` as the hypergeometric determinant.
-- For `n = 1`, `p = 3`, `d = 2` the degree is `6` and the slopes are `0, 1/2, 1, 3/2, 2, 5/2`.
+- For `n = 1`, `p = 3`, `d = 2`: `Δ(f₂)` has dimension `3` and volume `1`, the degree is `3! · 1 = 6` and the slopes are
+  `0, 1/2, 1, 3/2, 2, 5/2`; for `d = 1` the volume is `1/2`, the degree `3` and the slopes `0, 1, 2`, so the quotient keeps
+  `1/2, 3/2, 5/2`.
+- Codimension-one faces only: for `n = 1`, `d = 2` the face with vertices `(1, 0, 0)`, `(0, 1, 0)`, `(0, 0, 2)` has determinant
+  `2` and `S(δ)` of order `2`, while the vertex `(1, 0, 0)`, a face of dimension `0` not containing the origin, is primitive
+  in its saturated span and has index `1`, not `2`; "every face has index `d`" is false.
+- At `p = 2`, `d = 2` the hypotheses fail twice: `d ∤ p − 1 = 1`, and on the vertex `(0, …, 0, 2)` the restriction `−z²` has
+  logarithmic derivative `z ∂_z(−z²) = −2z²`, identically zero in characteristic `2`, so `f₂` is degenerate there.
 
 ### 11.3 Everywhere ordinarity
 
 For split `H` of type `A_n`, `B_n`, `C_n`, `D_n` or `G₂`, prove that `ν_a = ρ` at every closed point `a` of `𝔾_m`, and at
-the logarithmic point `0` (Xu–Zhu Theorem 1.2.4(ii) and Theorem 5.4.2(ii), p. 62; Lemma 5.4.3, pp. 62–63). The
+the logarithmic point `0` (Xu–Zhu Theorem 1.2.4(ii), p. 5, and Theorem 5.4.2(ii), p. 62; Lemma 5.4.3, pp. 62–63). The
 normalized slopes are `−(r−1)/2, …, (r−1)/2` for scalar rank `r ≥ 2` at every prime, with no condition `(r, p) = 1`,
 and `−n, …, n` for the odd orthogonal standard representation of rank `2n + 1`. Route: types `A` and `C` are
 gap:scalar-kloosterman-ordinarity through §8.1; types `B` and `D` use §11.2 with the normalization of §9.2 at odd `p`
@@ -1989,27 +2660,28 @@ through the standard representation; for another central form of type `A_{2n}` t
 the central quotient (Xu–Zhu Theorem 4.5.2(ii),(iii), pp. 51–53; Corollary 5.3.10, p. 61). This includes `A₂` at
 `p = 2` and differs from the characteristic-zero group `SL_{2n+1}` of §2.8. Route: §10.6 identifies the standard
 objects; recover the group-valued pushout through the faithful standard representation and its preserved
-quadratic form; apply §6.4 to `SO_{2n+1}`; pass through the central kernel. *Needs:* §§6.4, 7.2, 10.6;
-KloostermanMomentsAndPotentialAutomorphy KM.1 (as a check).
+quadratic form; apply §6.4 to `SO_{2n+1}`; pass through the central kernel. *Needs:* §§6.4, 2.9, 10.6;
+KloostermanMomentsAndPotentialAutomorphy §§1.1, 1.3 (as a check).
 
 **Checks.**
 
 - For `SL₃` at `p = 2` the group is `SO₃`, and for its central quotients the image of `SO₃`.
 - At rank seven the group is `G₂ ⊂ SO₇ ⊂ SL₇`; the adjoint representation of `SL₇` is not identified with anything by
   the standard comparison.
-- KloostermanMomentsAndPotentialAutomorphy KM.1 gives `SO_r` (`r ≠ 7`) and `G₂` (`r = 7`) for the scalar sheaf at `p = 2`,
+- KloostermanMomentsAndPotentialAutomorphy §§1.1, 1.3 gives `SO_r` (`r ≠ 7`) and `G₂` (`r = 7`) for the scalar sheaf at `p = 2`,
   `r` odd, in agreement.
 
 ### 11.5 All-prime corollaries
 
-After §11.4, prove that the companion monodromy comparison (§7.6), the central torsor (§7.1), adjoint rigidity and
+After §11.4, prove that the companion monodromy comparison (§7.6), the central torsor (§7.1), the radius statement (§7.3), adjoint rigidity and
 the local statements of §6.6 hold for type `A_{2n}` at `p = 2` as well: `H^i(ℙ¹, j_{!+} Ad(Be_H†)) = 0` and
-`Irr_∞ = rank H` for every almost-simple `H` at every `p`, and if `p ∤ |W_H|` the only nonzero adjoint upper break at
-`∞` is `1/h`; and that the normalized convolution of §9.4 and the identity (iii) of §11.1 hold at `p = 2` with the
-same half twist (Xu–Zhu Corollaries 4.5.6–4.5.7 and Remark 4.5.8(iv), pp. 53–54; §§5.3.9–5.3.11, p. 61). Route:
+`Irr_∞(Ad(Be_H†)) = rank H` for every almost-simple `H` at every `p`, and if `p ∤ |W_H|` the only nonzero upper break
+of `Ad(Be_H†)` at `∞` is `1/h`; and that the normalized convolution of §9.4 holds at `p = 2` with the
+same shift and half twist, `Be†_{SO_{2n+1}, Std} ≅ (Be†_{SO₃, Std} ⋆ Be†_{2n−2})[1](1/2)` for `n ≥ 2` (Xu–Zhu
+Corollaries 4.5.6–4.5.7 and Remark 4.5.8(iv), pp. 53–54; §§5.3.9–5.3.11, p. 61). Route:
 repeat the localization computation of §6.6 with the known group, without identifying adjoint representations
 through the standard comparison; apply gap:companion-monodromy; transport the convolution through §10.6.
-*Needs:* §§6.6, 7.1, 7.6, 9.4, 10.6, 11.4; gap:companion-monodromy.
+*Needs:* §§6.6, 7.1, 7.3, 7.6, 9.4, 10.6, 11.4; gap:companion-monodromy.
 
 **Checks.**
 
@@ -2017,6 +2689,8 @@ through the standard comparison; apply gap:companion-monodromy; transport the co
   not identify the adjoint functors of `SL_{2n+1}` and `SO_{2n+1}`.
 - For `SO₃` at `p = 2` the inertia image at `∞` is `A₄`, compatible with `Sym²` of the rank-two object.
 - `p = 2` divides `|W_H|` for every almost-simple `H`, so the `1/h` statement is never applied at `p = 2`.
+- The shift at `p = 2`, over `𝔽₂`, `n = 2`, `a = 1`: `T_{SO₃}(1) = −1/2` and `K₂(1) = −1/√2`, so the unshifted twisted
+  convolution has trace `(1/√2) · (1/(2√2)) = 1/4`, while `T_{SO₅}(1) = (U₂(1) − 2)/2² = −1/4`; `[1]` gives `−1/4`.
 
 ### Examples
 
@@ -2025,15 +2699,16 @@ through the standard comparison; apply gap:companion-monodromy; transport the co
 
 ### Dependencies
 
-Layers 5–10; KloostermanMomentsAndPotentialAutomorphy KM.1 and gap:scalar-kloosterman-ordinarity;
+Layers 5–10; KloostermanMomentsAndPotentialAutomorphy §§1.1, 1.3 and gap:scalar-kloosterman-ordinarity;
 CongruenceSpectralGap §4.2a; gap:companion-monodromy; PadicDifferentialEquationsAndRigidCohomology
-§§RD.6.4, RD.6.25; Mathlib `gaussSum`, `quadraticChar`, `AddChar`, `PadicComplex`.
+§§RD.6.4, RD.6.25; gap:toric-exponential-sum-hodge-bound; gap:toric-exponential-sum-ordinarity;
+Mathlib `gaussSum`, `quadraticChar`, `AddChar`, `PadicComplex`.
 
 ## Downstream consumers
 
-- **GlobalShtukasAndFunctionFieldLanglandsPartII** uses the eigenobject (§1.6), adjoint rigidity and the vanishing
-  of adjoint inertia invariants at `∞` (§§6.6, 11.5) for Kloosterman parameters of split almost-simple groups.
-- **KloostermanMomentsAndPotentialAutomorphy** uses the normalization of the all-rank companions (§§0.1, 8.1).
+- **GlobalShtukasAndFunctionFieldLanglandsPartII** uses the eigenobject (§1.6), its tame principal unipotent
+  monodromy at `0` (§1.9), and adjoint rigidity and the vanishing of adjoint inertia invariants at `∞` for the
+  Bessel object (§§6.6, 11.5), for Kloosterman parameters of split almost-simple groups.
 - Roadmaps on exponential sums and on `G₂`-monodromy use the identities of §11.1 and the monodromy table of
   §§6.4 and 11.4.
 
@@ -2074,6 +2749,10 @@ to `1`.
   241–310; author-hosted published version, printed page numbers.
 - **[FG]** E. Frenkel, B. Gross, *A rigid irregular connection on the projective line*, Ann. of Math. 170 (2009),
   1469–1512; arXiv:0901.2163v3, preprint pagination.
+- **[Gai]** D. Gaitsgory, *Construction of central elements in the affine Hecke algebra via nearby cycles*,
+  Invent. Math. 144 (2001); arXiv:math/9912074v4, numbering of that version.
+- **[GH]** U. Görtz, T. J. Haines, *The Jordan–Hölder series for nearby cycles on some Shimura varieties and
+  affine flag varieties*, J. reine angew. Math. 609 (2007); arXiv:math/0402143v1, numbering of that version.
 - **[Zhu]** X. Zhu, *Frenkel–Gross' irregular connection and Heinloth–Ngô–Yun's are the same*, Selecta Math. 23
   (2017); arXiv:1603.05796v2, preprint pagination.
 - **[BD]** A. Beilinson, V. Drinfeld, *Quantization of Hitchin's integrable system and Hecke eigensheaves*,
