@@ -695,8 +695,9 @@ API:
 - In equal characteristic the additive law is itself Lubin–Tate: over `O = 𝔽_q[[t]]` with `π = t`,
   `f = tX + X^q` is a Lubin–Tate series (constant term `0`, linear coefficient `t`, reduction
   `X^q`), and `f(X + Y) = f(X) + f(Y)` because `(X + Y)^q = X^q + Y^q` in characteristic `p`; so
-  `F_f = X + Y` by uniqueness, with `[a]_f = aX` for `a ∈ 𝔽_q` and `[t]_f = f`. A wrong Check that
-  forbids this for every `O` contradicts §1.3.
+  `F_f = X + Y` by uniqueness, with `[a]_f = aX` for `a ∈ 𝔽_q` and `[t]_f = f`. The claim that the
+  additive law is never a Lubin–Tate module fails here: the preceding bullet needs characteristic
+  zero.
 
 *Needs:* §§1.1–1.2; §0.1.
 
@@ -720,8 +721,8 @@ Its reduction need not be the identity, so it is not a marked isomorphism in the
 - Interpolation with `a = u ∈ O^×` gives an isomorphism `[u]_(f,g) : F_g → F_f` with linear
   coefficient `u`; it is strict exactly when `u = 1`. Over `ℤ₂` with `f = g = 2X + X²`, `u = 1`
   gives `X`, of derivative `1`, and `u = 3` gives `(1 + X)³ − 1 = 3X + 3X² + X³`, of derivative
-  `3 ≠ 1`, which commutes with `f` since both composites are `(1 + X)⁶ − 1`. A Check calling every
-  unit comparison non-strict fails at `u = 1`.
+  `3 ≠ 1`, which commutes with `f` since both composites are `(1 + X)⁶ − 1`. The claim that every
+  unit comparison is non-strict fails at `u = 1`.
 
 *Needs:* §1.3; §0.2.
 
@@ -1193,7 +1194,7 @@ on laws, strict actions and markings; do the same at its algebraically closed re
   §F5; for `k = 𝔽_p(t)` (imperfect) the theorem still applies with any specified `B`, and no Cohen
   ring is chosen.
 
-*Needs:* §§3.4, 3.5; EndoscopicTransferAndUnitaryTraceComparison §§10.2, 12.3.
+*Needs:* §§3.1, 3.4, 3.5; EndoscopicTransferAndUnitaryTraceComparison §§10.2, 12.3.
 
 ### 3.7 Elliptic deformation comparison
 
@@ -1217,8 +1218,8 @@ compose ModularCurves §§7C, 7F with `BarsottiTate.equivFormalLieGroup`, keepin
 - The comparison identifies the parameters through the functor isomorphism, not by name: a
   coordinate change `t ↦ ut + ⋯` on one side is matched by the induced change on the other.
 
-*Needs:* §§3.6, 2.1; ModularCurves §§7C, 7D, 7E, 7F; FiniteFlatGroupsAndIntegralPadicHodgeTheory
-§R07.1.13; EllipticCurves Layer 1.
+*Needs:* §§3.1, 3.6, 2.1; ModularCurves §§7C, 7D, 7E, 7F;
+FiniteFlatGroupsAndIntegralPadicHodgeTheory §R07.1.13; EllipticCurves Layer 1.
 
 ### Examples
 
@@ -1403,10 +1404,11 @@ FiniteFlatGroupsAndIntegralPadicHodgeTheory §§R07.1.1, R07.2.8; Tau Ceti's ell
 ## Layer 5: Lattice kernels and integral quotient isogenies
 
 Let `F₀/ℚ_p` be finite with integers `O₀`, uniformizer `ϖ₀` and residue cardinality `q₀`, and let `G`
-be a formal `O₀`-module of finite height over the integers `R` of a finite extension of `F₀`, with
-`T = T_(ϖ₀) G` and `V = T ⊗ F₀` (§2.2). An embedded lattice above `T` is a finite subgroup of
-torsion; this layer builds the integral quotient of `G` by it as a formal `O₀`-module with an
-explicit coordinate, its Frobenius-twisted marking, its homomorphisms and its descent.
+be a formal `O₀`-module of finite height over the integers `R` of a finite extension `K` of `F₀`,
+with `K̄` a fixed algebraic closure of `K`, `T = T_(ϖ₀) G` and `V = T ⊗ F₀` (§2.2). An embedded
+lattice above `T` is a finite subgroup of torsion; this layer builds the integral quotient of `G`
+by it as a formal `O₀`-module with an explicit coordinate, its Frobenius-twisted marking, its
+homomorphisms and its descent.
 
 ### 5.1 Tate lattices and finite kernels
 
@@ -1532,18 +1534,24 @@ the fields of moduli of the marked quotient are stated in §6.6.
 
 ### 5.5 Elliptic quotient comparison
 
-Let `G` be the formal completion of an elliptic curve `E` over `R` at the zero section, in a
-parameter `X` (ModularCurves §7C), and let `H ⊂ E` be a finite locally free subgroup scheme whose
-special fibre is supported at the zero section; its order is then a power `p^m`, which kills `H`.
-Being finite and local over the complete ring `R`, `H` lies in the formal neighbourhood of the zero
-section: it is `Spec(R[[X]]/J)` for an ideal `J ⊃ ([p^m]_G)`, a closed finite flat subgroup scheme
-of the torsion level `G[p^m] = Spec(R[[X]]/([p^m]_G))` of §2.1. When its geometric points form an
+Let `E` be an elliptic curve over `R` whose formal completion at the zero section, in a parameter
+`X` (ModularCurves §7C), is the formal group underlying the formal `O₀`-module `G`. For
+`O₀ = ℤ_p` this is every elliptic curve over `R`: the completion carries exactly one formal
+`ℤ_p`-module structure, `[a]` being the limit of `[n]` over integers `n → a`. For `O₀ ≠ ℤ_p` the
+`O₀`-action on the completion is part of the data, and a curve whose completion carries none is
+excluded. Let `H ⊂ E` be a finite locally free subgroup scheme whose special fibre is supported at
+the zero section; its order is then a power `p^m`, which kills `H`. Being finite and local over the
+complete ring `R`, `H` lies in the formal neighbourhood of the zero section: it is
+`Spec(R[[X]]/J)` for an ideal `J ⊃ ([p^m]_G)`, a closed finite flat subgroup scheme of the torsion
+level `G[p^m] = Spec(R[[X]]/([p^m]_G))` of §2.1. When its geometric points form an
 `O₀`-stable subgroup `C_L = H(K̄)` of `G[ϖ₀^∞](K̄)`, as always when `O₀ = ℤ_p`, `H` is the finite
 flat subgroup of §5.1 attached to `C_L`, being flat and closed with that generic fibre. Prove that
-the completion of the elliptic quotient `E/H` of ModularCurves §2B is canonically isomorphic to
-`G_L`, and that the completed elliptic isogeny and `g_L` differ by this integral target
-coordinate; the induced maps on torsion, Tate modules and logarithms agree (BKO21, §5, pp.957–959,
-for the use of this transport).
+the completion of the elliptic quotient `E/H` of ModularCurves §2B is canonically isomorphic, as
+a formal group, to the formal group underlying `G_L`, and that the completed elliptic isogeny and
+`g_L` differ by this integral target coordinate; the `O₀`-action on the completion of `E/H` is the
+one transported from `G_L` by this isomorphism (for `O₀ = ℤ_p`, its unique `ℤ_p`-action). The
+induced maps on torsion, Tate modules and logarithms agree (BKO21, §5, pp.957–959, for the use of
+this transport).
 
 **Checks.**
 
@@ -1555,6 +1563,10 @@ for the use of this transport).
   `E[p] = G[p]` has geometric points `O₀/p ≅ 𝔽_(p²)`; a subgroup scheme `H` of order `p` has an
   `𝔽_p`-line as geometric points, which is not `O₀`-stable, so it corresponds to no `O₀`-lattice:
   it is a lattice kernel only for `G` restricted to `ℤ_p`.
+- An ordinary curve is excluded for `O₀ = W(𝔽_(p²))`: its completion has `p`-height one, while a
+  formal `W(𝔽_(p²))`-module of `O₀`-height `h` has `p`-height `2h`, so the completion carries no
+  `O₀`-action and `[ϖ₀]`, `G[ϖ₀^∞]` and `G_L` are not defined for it; for `O₀ = ℤ_p` the same
+  curve is admitted, with `G[p^∞]` its connected part.
 - A subgroup not supported at the zero section of the special fibre (an étale subgroup of an
   ordinary curve) is not a subgroup of the formal group, and the comparison does not apply.
 
@@ -1841,7 +1853,7 @@ independent of the coordinate.
   valuation at least `2` and cannot cancel it.
 - In the ramified case at `s = 1`, `v_F(t₁) = 1/q₀`.
 
-*Needs:* §§7.1, 3.6, 5.2.
+*Needs:* §§7.1, 6.6, 3.6, 5.2.
 
 ### 7.3 The BKO quasi-canonical fields
 
@@ -1871,7 +1883,7 @@ API:
 - The first cyclic kernel is defined over `Ψ′_1` while its nonzero points are not rational there:
   they generate the first division field, of degree `p² − 1 > p + 1`.
 
-*Needs:* §§7.1, 6.2, 6.5, 2.4.
+*Needs:* §§7.1, 6.6, 6.2, 6.5, 2.4.
 
 ### 7.4 The infinite primed tower
 
