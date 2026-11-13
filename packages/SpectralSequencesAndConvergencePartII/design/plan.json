@@ -158,7 +158,7 @@
       {
        "name": "first_quadrant",
        "kind": "compatibility",
-       "statement": "For first-quadrant K, ′E_2 ≅ H_I H_II(K) is DerivedModuleAlgebra §S.1's identification; for first-quadrant homological bicomplexes the first page agrees with Tau Ceti's columnFiltrationSpectralSequenceFirstPageXIso."
+       "statement": "DerivedModuleAlgebra §S.1 uses anticommuting differentials d′, d″; a double complex here gives one there by d′ = d₁, d″ = (−1)^p d₂ (d′d″ + d″d′ = (−1)^p d₁d₂ + (−1)^{p+1} d₂d₁ = 0, same total differential d₁ + (−1)^p d₂, same column filtration and vertical cohomology); on the unit square d″ is +1 on K^{0,0} and −1 on K^{1,0}, while d″ = d₂ would give d′d″ + d″d′ = 2. For first-quadrant K, ′E_2 ≅ H_I H_II(K) is then §S.1's identification; for first-quadrant homological bicomplexes the first page agrees with Tau Ceti's columnFiltrationSpectralSequenceFirstPageXIso."
       },
       {
        "name": "staircase_kappa",
@@ -171,20 +171,21 @@
      "id": "1.3",
      "kind": "theorem",
      "name": "HomologicalComplex₂.columnSpectralSequence_convergesStrongly",
-     "statement": "(a) If every antidiagonal of K has finitely many nonzero terms, both ′E(K) and ″E(K) converge strongly (base §3.2) in every degree to H^*(Tot K) with finite filtrations, every position stabilises, and Hⁿ(Tot K) lies in every weak Serre class containing the ′E_r^{p,n−p} for some r. (b) If 𝒜 has countable coproducts and exact sequential colimits and for every n there is b(n) with K^{p,n−p} = 0 for p > b(n), then ′E(K) converges strongly to H^*(Tot^⊕ K); dually ″E(K) when K^{n−q,q} = 0 for q > b(n). (c) If 𝒜 is in the class of base §7.4, for every n there is a(n) with K^{p,n−p} = 0 for p < a(n), and ′E(K) is regular, then ′E(K) converges strongly to H^*(Tot^Π K); dually for ″E(K). Regularity holds when for every n there is p₁(n) with H^{n+1−p}(K^{p,•}) = 0 for p ≥ p₁(n).",
+     "statement": "(a) If every antidiagonal of K has finitely many nonzero terms, both ′E(K) and ″E(K) converge strongly (base §3.2) in every degree to H^*(Tot K) with finite filtrations, and every position stabilises; Hⁿ(Tot K) lies in every weak Serre class containing ′E_r^{p,q} for all p, q and some r (stacks-012K Lemma 25.3 (4); base §5.3), and in every weak Serre class containing ′E_r^{p,n−p} for all p and some r from which every position of total degree n stabilises (base §§1.3, 3.4); similarly for ″E(K). (b) If 𝒜 has countable coproducts and exact sequential colimits and for every n there is b(n) with K^{p,n−p} = 0 for p > b(n), then ′E(K) converges strongly to H^*(Tot^⊕ K); dually ″E(K) when K^{n−q,q} = 0 for q > b(n). (c) If 𝒜 is in the class of base §7.4, for every n there is a(n) with K^{p,n−p} = 0 for p < a(n), and ′E(K) is regular, then ′E(K) converges strongly to H^*(Tot^Π K); dually for ″E(K). Regularity holds when for every n there is p₁(n) with H^{n+1−p}(K^{p,•}) = 0 for p ≥ p₁(n).",
      "hypotheses": [
       "𝒜 abelian",
       "(b): HasCountableCoproducts 𝒜, HasColimitsOfShape ℕ 𝒜, HasExactColimitsOfShape ℕ 𝒜",
-      "(c): 𝒜 has countable products and coproducts, CountableAB4Star, exact sequential colimits and lim-acyclic epimorphic towers (base §7.4)",
+      "(c): 𝒜 in the class of base §7.4 (countable products and coproducts, CountableAB4Star, exact sequential colimits, lim-acyclic epimorphic towers); §7.4 is used for this class only",
       "the antidiagonal bounds stated in each case"
      ],
      "locator": {
       "source": "stacks-012K",
-      "where": "line 3284–3291, Lemma 25.3, tag 0132, for (a); weibel1994 §5.6 (uncertified) for (b) and (c)"
+      "where": "line 3284–3291, Lemma 25.3, tag 0132, for (a), its item (4) at line 3289–3290 for the first weak Serre form; weibel1994 §5.6 (uncertified) for (b) and (c)"
      },
      "prerequisites": [
       "target:1.1",
       "target:1.2",
+      "roadmap:SpectralSequencesAndConvergence §1.3",
       "roadmap:SpectralSequencesAndConvergence §2.2",
       "roadmap:SpectralSequencesAndConvergence §3.2",
       "roadmap:SpectralSequencesAndConvergence §3.4",
@@ -213,6 +214,11 @@
        "name": "finite_case",
        "kind": "computation",
        "statement": "ℤ →(×2) ℤ horizontally: F_I^1 H¹ = H¹ = ℤ/2, F_I^2 H¹ = 0 (base §3.2's Check)."
+      },
+      {
+       "name": "one_antidiagonal_not_enough",
+       "kind": "non-example",
+       "statement": "In abelian groups with P the ℚ-vector spaces (a weak Serre class not closed under subobjects), K^{0,0} = ℚ →(d₁, quotient) K^{1,0} = ℚ/ℤ: on antidiagonal 0, ′E_1^{0,0} = ℚ ∈ P and the other ′E_1^{p,−p} vanish, yet H⁰(Tot K) = ℤ ∉ P. The first weak Serre form fails its hypothesis at ′E_1^{1,0} = ℚ/ℤ and at ′E_r^{0,0} = ℤ for r ≥ 2; the second cannot use r = 1 (′d_1 ≠ 0 leaves (0,0)) and fails at ′E_2^{0,0} = ℤ."
       },
       {
        "name": "zero",
@@ -323,7 +329,15 @@
      },
      "prerequisites": [
       "mathlib:InjectiveResolution",
-      "mathlib:EnoughInjectives"
+      "mathlib:EnoughInjectives",
+      "mathlib:CochainComplex.isKInjective_of_injective",
+      "mathlib:CochainComplex.IsKInjective.Qh_map_bijective",
+      "mathlib:CategoryTheory.InjectiveResolution.desc",
+      "mathlib:CategoryTheory.InjectiveResolution.descHomotopy",
+      "mathlib:CochainComplex.Plus.exists_quasiIso_injective",
+      "tauceti:TauCeti.ExactStructure.exists_conflation_of_conflation_of_injective",
+      "tauceti:TauCeti.ExactStructure.abelian",
+      "tauceti:TauCeti.ExactStructure.abelian_isInjective_iff"
      ],
      "api": [
       {
@@ -346,7 +360,7 @@
       {
        "name": "off_diagonal_needed",
        "kind": "non-example",
-       "statement": "Target horseshoe transported by (u, v) ↦ (u + h(v), v) for nonzero h: the identity is not a chain map between the middle resolutions, while (u, v) ↦ (u + h(v), v) is."
+       "statement": "Target horseshoe transported by φ(u, v) = (u + h(v), v), h a family I₃^n → I₁^n; for the source differential d(u, v) = (d₁u + t(v), d₃v), φd − dφ = ((hd₃ − d₁h)(v), 0), so the identity is a chain map between the middle resolutions exactly when h is a chain map, while μ = φ always is. Instance: split 0 → ℤ/2 → ℤ/2 ⊕ ℤ/2 → ℤ/2 → 0, I₁ = I₃ = (ℚ/ℤ →(×2) ℚ/ℤ), t = 0, h = id in degree 0 and 0 in degree 1: d₁h − hd₃ = ×2 ≠ 0, the transported degree-0 differential is (u, v) ↦ (2u − 2v, 2v) against (2u, 2v). For h = id in both degrees the differentials agree, but the transported augmentation (a, c) ↦ (ε₁a + ε₃c, ε₃c) differs, so the identity still does not lie over f₂."
       }
      ]
     },
@@ -805,7 +819,7 @@
      ],
      "locator": {
       "source": "grothendieck1957",
-      "where": "line 1330–1337, Théorème 2.4.1 (spectral functor); base §3.6 for the low-degree sequences"
+      "where": "line 1330–1337, Théorème 2.4.1, for the spectral sequence of 3.2 at an object; the five-term and extended sequences are base §3.6 (first quadrant) applied to it"
      },
      "prerequisites": [
       "target:3.2",
@@ -1432,10 +1446,6 @@
   {
    "roadmap": "CohomologyOfGroups",
    "what": "Group hyperhomology and hypercohomology (Layer 2), extension spectral sequences (Layer 3), Künneth and universal-coefficient sequences of group (co)homology (Layer 4), multiplicativity through filtered-complex pairings (Layer 5)."
-  },
-  {
-   "roadmap": "ArithmeticStatisticsPartVIII",
-   "what": "Graded Tor spectral sequences of §5.16 as graded instances of 4.1, 2.6, 4.2 and 3.4."
   },
   {
    "roadmap": "InverseGaloisAndArithmeticFundamentalGroupsPartII",
