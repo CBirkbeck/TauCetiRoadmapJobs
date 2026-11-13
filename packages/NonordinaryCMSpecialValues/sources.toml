@@ -62,7 +62,7 @@ sha256 = "878674736df503052d7b0a58504740050016a3f7dd0a0048d66cd85eb4c40f82"
 licence_class = "publisher-open"
 status = "certified"
 accessed = "2026-10-26"
-cited_for = ["1.2", "4.1", "4.2", "4.3", "4.4", "4.5", "4.6", "5.1", "5.2"]
+cited_for = ["1.2", "4.1", "4.2", "4.3", "4.4", "4.5", "4.6", "4.7", "5.1", "5.2"]
 
 [[source]]
 id = "RUBIN87"
@@ -175,7 +175,7 @@ locator_scheme = "theorem"
 locator = "Theorem 1, pp. 1063-1066"
 licence_class = "none"
 status = "waived"
-cited_for = ["4.4"]
+cited_for = ["4.5"]
 
 [[source]]
 id = "KATO99"
@@ -207,4 +207,4 @@ sha256 = "a98a539aaaba14a84da1c3e1b42c582dd4e757b4b169385ea20b44e4d25ea16b"
 licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-13"
-cited_for = ["4.2"]
+cited_for = ["4.4"]

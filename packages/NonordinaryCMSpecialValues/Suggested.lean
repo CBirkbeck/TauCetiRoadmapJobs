@@ -61,7 +61,8 @@ noncomputable def conductorModulus (χ : HeckeCharacter K) : Modulus K :=
 /-- A Hecke character `χ` of an imaginary quadratic field is *anticyclotomic* when its ideal
 character inverts under complex conjugation: `χ(ā) = χ(a)⁻¹` for every fractional ideal `a`
 prime to the conductor. The membership equivalence says that `b` is the conjugate of `a`. For
-characters of odd finite order this is the class of ring class characters. -/
+characters of finite order this is the class of ring class characters: such a character is trivial
+on the ideles of `ℚ`. -/
 def IsAnticyclotomic [IsCMField K] (χ : HeckeCharacter K) : Prop :=
   ∀ a b : idealsPrimeTo (conductorModulus χ),
     (∀ x : K, x ∈ ((a : (FractionalIdeal (𝓞 K)⁰ K)ˣ) : FractionalIdeal (𝓞 K)⁰ K) ↔
@@ -158,7 +159,7 @@ Greenberg's conductor parity and the Fröhlich–Queyrut local root number, and 
 from Jia's theorem, which generalises Rohrlich's class-number-one theorem). Let `K` be
 imaginary quadratic, `φ` a
 conjugation-equivariant Hecke character of ideal type `(1,0)` unramified at the odd inert prime
-`p`, and `ν` an anticyclotomic character of odd finite order unramified at `p`. There is a sign
+`p`, and `ν` an anticyclotomic character of finite order unramified at `p`. There is a sign
 `ε` (the root number of `φν`) such that, for `χ` in the `p`-anticyclotomic family with conductor
 exponent `c(χ)` at `p`: if `(−1)^{c(χ)} = −ε` then `L(φνχ, 1) = 0`, and all but finitely many
 `χ` with `(−1)^{c(χ)} = ε` have `L(φνχ, 1) ≠ 0`. Since `L(φ̄νχ, s) = L(φν⁻¹χ⁻¹, s)`, this is
@@ -167,7 +168,7 @@ theorem centralValue_parity_dichotomy [IsCMField K] [Algebra.IsQuadraticExtensio
     (ι : K →+* ℂ) (φ ν : HeckeCharacter K) (p : ℕ) [Fact p.Prime] (hp : p ≠ 2)
     (v : HeightOneSpectrum (𝓞 K)) (hv : v.asIdeal = Ideal.span {(p : 𝓞 K)})
     (hφ : IsEquivariantTypeOneZero ι φ) (hφv : φ.conductorExponent v = 0)
-    (hν : ν.IsFiniteOrder) (hνodd : Odd (orderOf ν)) (hνac : IsAnticyclotomic ν)
+    (hν : ν.IsFiniteOrder) (hνac : IsAnticyclotomic ν)
     (hνv : ν.conductorExponent v = 0)
     (ϖ : (w : HeightOneSpectrum (𝓞 K)) → (w.adicCompletion K)ˣ)
     (hϖ : ∀ w, Valued.v (ϖ w : w.adicCompletion K) = WithZero.exp (-1 : ℤ)) :
