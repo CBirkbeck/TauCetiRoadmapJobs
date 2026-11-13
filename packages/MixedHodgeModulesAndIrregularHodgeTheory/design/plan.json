@@ -4273,7 +4273,7 @@
     },
     {
       "slug": "regular-holonomic-stability",
-      "needs": "Stability of the bounded derived category with regular holonomic cohomology under f_+, f_!, arbitrary f^†, external product and restriction to the diagonal, with the corresponding composition, adjunction and duality comparisons for algebraic maps of smooth complex varieties; duality, smooth pullback and intermediate extension are supplied by §9.7.",
+      "needs": "Stability of the bounded derived category with regular holonomic cohomology under f_+, f_!, arbitrary f^†, external product and restriction to the diagonal, for algebraic maps of smooth complex varieties; duality, smooth pullback and intermediate extension are supplied by §9.7, and the composition, identity, adjunction and proper-duality comparisons on holonomic complexes by §9.1.",
       "supplier": "SpringerResolutionAndCharacteristicCycles",
       "section": "§§9.1, 9.7"
     },

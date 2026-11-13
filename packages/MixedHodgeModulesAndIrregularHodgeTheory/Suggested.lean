@@ -9,7 +9,7 @@ and Tau Ceti, the headline theorems of the roadmap that are statable at the pins
 
 ## Stated here
 
-* Layer 12, target 12.6, the Adolphson–Sperber theorem: for a Laurent polynomial `φ` in `n`
+* Layer 10, target 10.3, the Adolphson–Sperber theorem: for a Laurent polynomial `φ` in `n`
   variables whose Newton polytope `Δ(φ) = conv({0} ∪ supp φ)` is full dimensional and which is
   nondegenerate on every nonempty face of `Δ(φ)` not containing the origin, the twisted de Rham
   complex of the torus with differential `d + dφ ∧` is exact outside degree `n`, and its
@@ -44,21 +44,32 @@ Each of the following needs a carrier that neither Mathlib nor Tau Ceti has at t
   Layer 7). Missing: the Deligne filtration, defined from the `F` and `V` filtrations of a mixed
   Hodge module, and polarized twistor `D`-modules.
 * The classical `tg` criterion and its zero-locus formula (Fresán–Sabbah–Yu, Theorem A.24 and
-  Example A.27; Layer 10), the Fourier costalk theorem and the Hodge numbers of the Fourier
-  transform of a pure Hodge module (Theorem A.30, Corollary A.31; Layer 11), and the monodromy
-  weights at infinity of `Π M` (Matsui–Takeuchi, Proposition A.3; Layer 11). Missing:
-  exponential cohomology of a pair, which needs mixed Hodge modules and `Π`.
+  Example A.27; Layer 9, targets 9.1 and 9.2), the Fourier costalk theorem and the Hodge numbers
+  of the Fourier transform of a pure Hodge module (Theorem A.30, Corollary A.31; targets 9.4 and
+  9.5), and the monodromy weights at infinity of `Π M` (Matsui–Takeuchi, Proposition A.3;
+  target 9.8). Missing: exponential cohomology of a pair, which needs mixed Hodge modules and
+  `Π`.
 * Agreement of the Newton and irregular Hodge filtrations (Yu, Theorem 4.6), model independence
   of the logarithmic irregular Hodge filtration and the filtered Künneth and duality theorems
-  (Chen–Yu, Theorem 1; Yu, Theorem 2.2) (Layer 12, targets 12.3, 12.7 and 12.9). Missing: the
-  irregular Hodge filtration `F_irr` of a pair, defined through the Deligne filtration.
+  (Chen–Yu, Theorem 1; Yu, Theorem 2.2) (targets 10.4, 8.9 and 8.10). Missing: the irregular
+  Hodge filtration `F_irr` of a pair, defined through the Deligne filtration.
+* Kouchnirenko's graded acyclicity (Layer 10, target 10.2): the ring associated with the Newton
+  filtration of the cone algebra is Cohen–Macaulay of dimension `n`, the leading forms of the
+  twisted Euler operators form a regular sequence on it, and the graded Koszul complex has
+  cohomology only in degree `n`, of dimension `n! · vol(Δ(φ))`. Missing: the associated graded
+  ring of a filtered ring, from which the Newton-graded cone algebra and its Koszul complex are
+  built.
+* The constant boundary correction for a convenient Newton-nondegenerate Laurent polynomial
+  `h : (G_m)^n → A¹` (Denef–Loeser; Layer 10, target 10.5): the cone of `h_! pℚ → h_* pℚ` has
+  constant cohomology mixed Hodge modules. Missing: mixed Hodge modules and their direct images,
+  and the projector `Π`.
 -/
 
 namespace TauCetiRoadmap.MixedHodgeModulesAndIrregularHodgeTheory
 
 open MeasureTheory
 
-/-! ## Layer 12: Logarithmic and Newton descriptions of the filtration -/
+/-! ## Layer 10: Newton polytopes and the twisted de Rham cohomology of a torus -/
 
 /-- The ring `ℂ[x₁^{±1}, …, x_n^{±1}]` of Laurent polynomials in `n` variables, the coordinate ring
 of the torus `T = (G_m)^n`, realized as the additive monoid algebra of the character lattice

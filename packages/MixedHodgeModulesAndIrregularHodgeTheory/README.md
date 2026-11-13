@@ -1,6 +1,6 @@
 # Roadmap: mixed Hodge modules, exponential mixed Hodge structures and the irregular Hodge filtration
 
-**Summary.** This roadmap builds Saito's theory of polarizable and mixed Hodge modules on smooth complex quasi-projective varieties, the Kontsevich–Soibelman category of exponential mixed Hodge structures with its projector `Π`, and the irregular Hodge filtration of an exponentially twisted de Rham cohomology. It starts from algebraic `D`-modules (SpringerResolutionAndCharacteristicCycles), analytification, compact-support sheaf theory and Deligne's regular-singular Riemann–Hilbert theory (ComplexComparisonPartII), the formal classification of differential modules and the index formula on curves (PadicDifferentialEquationsAndRigidCohomology), the monodromy filtration of a nilpotent operator (LefschetzPencilsAndVanishingCycles), pure variations of Hodge structure and their one-variable degenerations (ShimuraData, ShimuraVarieties), and the linear pure and mixed Hodge structures of Tau Ceti. On these it constructs algebraically constructible Betti sheaves with rational and complex coefficients and the regular Riemann–Hilbert correspondence (Layer 1), exponential twists and Fourier–Laplace transformation (Layer 2), variations of mixed Hodge structure on punctured curves with their limits, admissibility and `L²` cohomology (Layer 3), pure and mixed Hodge modules with their operations, weights and nearby cycles (Layers 4 and 5), exponential mixed Hodge structures (Layer 6), the Deligne filtration and the strict bifiltered exponential realization (Layer 7), the classical mixed Hodge structures inside the exponential ones (Layer 8), the exponential cohomology of a pair `(U, f)` (Layer 9), the classicality criterion for the function `tg` (Layer 10), Fourier cohomology, costalks and monodromy weights at infinity (Layer 11), and the logarithmic and Newton descriptions of the irregular Hodge filtration (Layer 12). The end theorems are Saito's projective direct-image and abelianness theorems, Esnault–Sabbah–Yu's `E₁`-degeneration of the irregular Hodge filtration with Fresán–Sabbah–Yu's strict bifiltered realization (FSY, Proposition A.10), the classicality of the `tg` pair cohomology (FSY, Theorem A.24), the Fourier costalk and Hodge-number theorems (FSY, Theorem A.30 and Corollary A.31), the monodromy weights at infinity of `Π M` (MT, Proposition A.3), and the concentration, volume and Hodge comparison theorems for a Newton-nondegenerate Laurent polynomial (AS, Theorems 4.13 and 5.1; Yu, Theorems 4.1 and 4.6).
+**Summary.** This roadmap builds Saito's theory of polarizable and mixed Hodge modules on complex algebraic varieties, with its operations for all algebraic maps, the Kontsevich–Soibelman category of exponential mixed Hodge structures with its projector `Π`, and the irregular Hodge filtration of an exponentially twisted de Rham cohomology. It starts from algebraic `D`-modules (SpringerResolutionAndCharacteristicCycles), analytification, compact-support sheaf theory and Deligne's regular-singular Riemann–Hilbert theory (ComplexComparisonPartII), the formal classification of differential modules and the index formula on curves (PadicDifferentialEquationsAndRigidCohomology), the monodromy filtration of a nilpotent operator (LefschetzPencilsAndVanishingCycles), pure variations of Hodge structure and their one-variable degenerations (ShimuraData, ShimuraVarieties), and the linear pure and mixed Hodge structures of Tau Ceti. On these it constructs algebraically constructible Betti sheaves with rational and complex coefficients and the regular Riemann–Hilbert correspondence (Layer 1), exponential twists and Fourier–Laplace transformation (Layer 2), variations of mixed Hodge structure on punctured curves with their limits, admissibility and `L²` cohomology (Layer 3), pure and mixed Hodge modules with their operations, weights and nearby cycles (Layers 4 and 5), exponential mixed Hodge structures with the classical mixed Hodge structures inside them (Layer 6), the Deligne filtration and the strict bifiltered exponential realization, with its classical case (Layer 7), the exponential cohomology of a pair `(U, f)` with its weights, its logarithmic pole-order models and its filtered Künneth and duality theorems (Layer 8), the classicality of the cohomology of the pairs `(A¹ × V, tg)` and the Fourier cohomology, costalks and monodromy weights at infinity of a mixed Hodge module on the line (Layer 9), and the Newton description of the twisted de Rham cohomology of a torus and of its irregular Hodge filtration (Layer 10). The end theorems are Saito's projective direct-image and abelianness theorems, Esnault–Sabbah–Yu's `E₁`-degeneration of the irregular Hodge filtration with Fresán–Sabbah–Yu's strict bifiltered realization (FSY, Proposition A.10), the classicality of the `tg` pair cohomology (FSY, Theorem A.24), the Fourier costalk and Hodge-number theorems (FSY, Theorem A.30 and Corollary A.31), the monodromy weights at infinity of `Π M` (MT, Proposition A.3), and the concentration, volume and Hodge comparison theorems for a Newton-nondegenerate Laurent polynomial (AS, Theorems 4.13 and 5.1; Yu, Theorems 4.1 and 4.6).
 
 ## Scope and ownership
 
@@ -10,37 +10,35 @@ This roadmap owns:
 - exponential twists, Fourier–Laplace transformation on the affine line, additive convolution, localized Fourier transformation and Fourier duality (Layer 2);
 - graded-polarizable variations of mixed Hodge structure, the limit mixed Hodge structure on the full nearby space of a quasi-unipotent polarized variation on a punctured disc, admissibility, and Zucker's `L²` Hodge theory of a punctured curve (Layer 3);
 - compatible filtrations and Rees modules, the rational Kashiwara–Malgrange filtration, polarizable pure Hodge modules, strict-support extension, the polarized projective direct-image theorem, mixed Hodge modules and their abelianness and simultaneous strictness (Layer 4);
-- the derived Hodge-module operations, weight bounds, Hodge nearby and vanishing cycles, the pure curve costalk formula, constant-divisor localization and the rigidity of Hodge modules with constant underlying local system (Layer 5);
-- exponential mixed Hodge structures, the projector `Π`, the exponential tensor product, exponential weights, the de Rham fibre and its Fourier description (Layer 6);
-- the Deligne filtration, filtered Laplace specialization, polarized twistor `D`-modules on curves and the strictness of their Fourier–Laplace transformation on the projective line, `E₁`-degeneration and the strict bifiltered realization (Layer 7);
-- the classical embedding of mixed Hodge structures into exponential ones and the agreement of filtrations (Layer 8);
-- ordinary, compact and middle exponential cohomology of a pair and its Künneth, duality, weight and localization theorems (Layer 9);
-- the classical `tg` criterion and its zero-locus formula (Layer 10);
-- Fourier cohomology, costalks, the constant correction of `Π`, regular stationary phase and the monodromy weights at infinity (Layer 11);
-- the logarithmic pole-order complex, its blow-up and model independence, the Newton complex, Kouchnirenko's graded acyclicity, the Adolphson–Sperber concentration and volume theorem, the Newton–Hodge comparison, the constant Gauss–Manin boundary of a convenient Laurent polynomial and the filtered Künneth and duality theorems (Layer 12).
+- the derived Hodge-module operations for all morphisms of varieties, weight bounds, Hodge nearby and vanishing cycles, the pure curve costalk formula, constant-divisor localization and the rigidity of Hodge modules with constant underlying local system (Layer 5);
+- exponential mixed Hodge structures, the projector `Π`, the exponential tensor product, exponential weights, the de Rham fibre and its Fourier description, and the classical embedding of mixed Hodge structures into exponential ones (Layer 6);
+- the Deligne filtration, filtered Laplace specialization, polarized twistor `D`-modules on curves and the strictness of their Fourier–Laplace transformation on the projective line, `E₁`-degeneration, the strict bifiltered realization and the agreement of the irregular and classical filtrations on classical objects (Layer 7);
+- ordinary, compact and middle exponential cohomology of a pair and its Künneth, duality, weight and localization theorems, the logarithmic pole-order complex with its blow-up and model independence, and the filtered Künneth and duality theorems (Layer 8);
+- the classical `tg` criterion and its zero-locus formula, Fourier cohomology, costalks, the constant correction of `Π`, regular stationary phase and the monodromy weights at infinity (Layer 9);
+- the Newton complex, Kouchnirenko's graded acyclicity, the Adolphson–Sperber concentration and volume theorem, the Newton–Hodge comparison and the constant Gauss–Manin boundary of a convenient Laurent polynomial (Layer 10).
 
 It leaves to named owners, and imports by section:
 
 - Ordinary algebraic differential operators are ComplexComparisonPartII §C5.1; their symbol algebra and filtered PBW on smooth characteristic-zero varieties are FormalConnectionsOpers §F2.2. Noetherianity, good filtrations, their existence and comparison, and characteristic varieties are SpringerResolutionAndCharacteristicCycles §§8.2–8.5; transfers and duality, Kashiwara equivalence, holonomicity, finite length, intermediate extension and regularity are its §§9.1, 9.2, 9.4–9.7, including regular duality and smooth pullback in §9.7.
-- Analytification of finite-type complex schemes, finite triangulations compatible with algebraic stratifications, the finite-coefficient local-system dictionary, the topological compact-support theory (extension by zero, c-soft resolutions, `f_!`, localization triangles) for module sheaves over an arbitrary commutative ring, the analytic canonical logarithmic extension with its residue–monodromy normalization `T = exp(−2πi·Res)`, Deligne's regular-singular Riemann–Hilbert equivalence and the regular-singular de Rham comparison are ComplexComparisonPartII §§C-1.1, C6.0, C6.1 and C5.6. This roadmap's Betti categories have rational and complex coefficients and require the extension of the local-system dictionary in gap:rational-complex-local-system-dictionary; the finite and adic constructible categories stay with ComplexComparisonPartII and the étale roadmaps.
+- Analytification of finite-type complex schemes, finite triangulations compatible with algebraic stratifications, the finite-coefficient local-system dictionary, the topological compact-support theory (extension by zero, c-soft resolutions, `f_!`, localization triangles) for module sheaves over an arbitrary commutative ring, the analytic canonical logarithmic extension with its residue–monodromy normalization `T = exp(−2πi·Res)`, Deligne's regular-singular Riemann–Hilbert equivalence and the regular-singular de Rham comparison are ComplexComparisonPartII §§C-1.1, C6.0, C6.1 and C5.6. This roadmap's Betti categories have rational and complex coefficients and require the extension of the local-system dictionary in gap:rational-complex-local-system-dictionary; the finite and adic constructible categories stay with ComplexComparisonPartII and the étale roadmaps. EtaleDualityAndPerverseSheaves §3.5 (`complexAnalyticComparison`) compares étale complexes with algebraically constructible complexes on `X^an`, and its §5.9 works in `D^b_c(X(ℂ), ℂ)` and its perverse heart; both take the analytic categories from ComplexComparisonPartII §§C6.0–C6.6, whose constructible comparisons are for finite and adic coefficients, and neither constructs the complex-coefficient category or its heart. Layer 1 constructs both for `Λ ∈ {ℚ, ℂ}`, inside the derived category of `Λ`-module sheaves on the carrier `T_X` of EnhancedDerivedSheaves §0.1, with the stalk and costalk conditions along algebraic strata that §3.5 also uses, so that the two roadmaps refer to one category and one heart.
 - Formal differential modules over `ℂ((x))`: the finite-ramification formal normal form, slopes, ramified descent, Malgrange's irregularity `Irr = Σ slope · multiplicity` with good lattice pairs, and the Euler–Poincaré formula `χ_dR(U, E) = rank(E) · χ(U) − Σ_z Irr_z(E)` for an algebraic connection on a smooth affine curve are PadicDifferentialEquationsAndRigidCohomology §§RD.6.52a and RD.6.53, used at the base field `ℂ`.
 - Pure real and rational variations of Hodge structure on complex manifolds, their morphisms and rational polarizations are ShimuraData §§3.1–3.3 (`Variation`, `RationalPolarizedVariation`). The nilpotent-orbit theorem, the monodromy weight filtration, the polarized limiting mixed Hodge structure and the Hodge-norm estimates of a polarized variation with unipotent monodromy on `(Δ^*)^r × Δ^s` are ShimuraVarieties §§3.5b.1–3.5b.2. Layer 3 adds the mixed and quasi-unipotent one-variable statements that Saito's theory needs.
 - The monodromy filtration `M(N, c)` of a nilpotent endomorphism in an abelian category, its strictness and primitive decomposition, the uniqueness of the relative monodromy filtration, the normalized `can` and `var`, and the existence of Lefschetz pencils are LefschetzPencilsAndVanishingCycles §§1.3, 1.4, 1.5, 1.7 and 3.4. Its étale nearby cycles are not used: Layer 1 constructs the Betti nearby cycles.
 - Embedded resolution, principalization and smooth projective compactification with simple normal crossing boundary are ResolutionOfSingularitiesCharacteristicZero §§5.1, 5.2 and 6.2; 3.3 and 4.6 use the last as the boundary at which admissibility is tested.
 - Compactifications of a separated finite-type map over a quasi-compact quasi-separated base and their Nagata existence (`Compactification`, `DenseCompactification`, `nagataCompactification`) are EtaleCohomologyFoundations §§G.1–G.2; Layer 1 uses them for the maps of separated complex varieties, whose sources need not be quasi-projective, and 3.3 for the compactification of a smooth variety at whose boundary admissibility is tested.
-- The exceptional projective bundle of a Koszul-regular blow-up, its sign `O_X̃(−E)|_E = O_E(1)`, normal line `O_E(−1)` and the negative-twist derived vanishing are SchemeKTheoryOperations §5.7. Smoothness of the blow-up of a smooth variety along a smooth centre is requested from SchemeAndStackFoundations §5.5 (gap:blowup-exceptional-divisor); §§12.2 and 12.9 apply the supplied vanishing to filtered complexes.
+- The exceptional projective bundle of a Koszul-regular blow-up, its sign `O_X̃(−E)|_E = O_E(1)`, normal line `O_E(−1)` and the negative-twist derived vanishing are SchemeKTheoryOperations §5.7. Smoothness of the blow-up of a smooth variety along a smooth centre is requested from SchemeAndStackFoundations §5.5 (gap:blowup-exceptional-divisor); 8.8 and 8.10 apply the supplied vanishing to filtered complexes.
 - Whitney's condition (b), tubes, control data, controlled lifts and Thom's first isotopy lemma are AlgebraicTopologyPartII §§16.1a–16.1e. Definable Whitney stratifications and Nash strata in the semialgebraic case are StratifiedSpacesAndTameTopology §§7.2–7.3. Layer 1 adds the stratification of an algebraic map.
 - Derived categories of sheaves of modules on ringed sites with derived tensor, internal Hom, pullback, pushforward and coefficient change are EnhancedDerivedSheaves §§0.1–0.4 and E1.4.
-- Depth and Cohen–Macaulay modules, quasi-coherent cohomology and the cohomology of projective space, Čech and Leray spectral sequences, derived quasi-coherent pullback, pushforward and Tor-independent base change, Serre duality, Riemann–Roch for vector bundles on curves, blow-ups and strict transforms, and strict normal crossing divisors are SchemeAndStackFoundations §§0.17, 2.2, 2.6, 2.18, 2.20, 3.3, 4.11 and 4.17. The nonsingular projective model of a curve and the expansion at a rational place are AlgebraicCurves Layers 9 and 12.
+- Depth and Cohen–Macaulay modules, quasi-coherent cohomology and the cohomology of projective space, Čech and Leray spectral sequences, derived quasi-coherent pullback, pushforward and Tor-independent base change, Serre duality, blow-ups and strict transforms, Chow's lemma, and strict normal crossing divisors are SchemeAndStackFoundations §§0.17, 2.2, 2.6, 2.18, 2.20, 4.11, 4.12 and 4.17.
 - Integral lattices, toric cones, fans, regular cones, dual semigroups and the fan scheme are AnalyticToricGeometry Layer 0; invariant toric divisors, their character weights and monomial divisor sections are AnalyticToricGeometryPartII §§0.1–0.3.
-- Affine semigroups, their saturation and the normality of their algebras are GroebnerGeometry §G2. Hochster's theorem, that the algebra over a field of a finitely generated saturated semigroup is Cohen–Macaulay, is requested from it (gap:normal-semigroup-cohen-macaulay), with Cohen–Macaulay in the sense of Tau Ceti's `TauCeti.Ring.IsCohenMacaulay`; 12.5 applies it to the cones over the faces of the Newton polytope.
+- Affine semigroups, their saturation and the normality of their algebras are GroebnerGeometry §G2. Hochster's theorem, that the algebra over a field of a finitely generated saturated semigroup is Cohen–Macaulay, is requested from it (gap:normal-semigroup-cohen-macaulay), with Cohen–Macaulay in the sense of Tau Ceti's `TauCeti.Ring.IsCohenMacaulay`; 10.2 applies it to the cones over the faces of the Newton polytope.
 - Pure and mixed Hodge structures, their morphisms, Deligne's splitting and the strictness of morphisms for `F`, `W` and the Deligne pieces, Tate structures and Tate twists are Tau Ceti (`TauCeti.Hodge.HodgeStructureOn`, `TauCeti.Hodge.MixedHodgeStructure`, `TauCeti.Hodge.MixedHodgeStructure.Hom.range_inf_iSup_deligneSplittingFamily_eq_map_iSup`, `TauCeti.Hodge.tate`, `TauCeti.Hodge.HodgeStructureOn.tateTwist`). In particular, the point case of simultaneous strictness for `W_k ∩ F^p` is that pinned theorem and is not restated.
 - The derived category of an abelian category, formal power series, formal Laurent series, monoid algebras, convex hulls, exposed faces, Lebesgue measure and the asymptotic count of lattice points in dilates are Mathlib (`DerivedCategory`, `PowerSeries`, `LaurentSeries`, `AddMonoidAlgebra`, `convexHull`, `IsExposed`, `MeasureTheory.volume`, `ZLattice.covolume.tendsto_card_div_pow`).
 - KloostermanMomentsAndPotentialAutomorphy owns the Kloosterman connections, their symmetric powers, the particular Newton polytopes, monomial bases, parity and singularity tests, Jordan blocks and numerical Hodge counts; this roadmap supplies the general interfaces they use.
 
 ## Conventions
 
-- **Varieties.** Varieties are separated schemes of finite type over `ℂ`; maps are algebraic. Hodge modules live on smooth quasi-projective varieties; a singular closed support `Z ⊂ X` is handled through the full subcategory of objects on the smooth ambient `X` supported on `Z`. Analytification `X ↦ X^an` is ComplexComparisonPartII's `complexSchemeAnalytification`.
+- **Varieties.** Varieties are separated schemes of finite type over `ℂ`; maps are algebraic. Mixed Hodge modules depend only on the reduced structure and are defined on every variety `X` (4.6): on an affine open `U ⊂ X` with a closed embedding into a smooth affine variety `V` they are the objects of `MHM(V)` supported on `U`, independent of the embedding by Kashiwara's equivalence, and they glue over an affine open cover, membership in `MHM` being Zariski local (Sai90, Introduction, pp. 222–223, Sai90 lines 66–67 and 98; §4.2, pp. 315–318, Sai90 lines 3217–3260 and 3305–3325). Neither quasi-projectivity nor a global closed embedding into a smooth variety is assumed. Analytification `X ↦ X^an` is ComplexComparisonPartII's `complexSchemeAnalytification`.
 - **Coefficients.** All Hodge objects are rational and graded-polarizable. A rational mixed Hodge structure is a `TauCeti.Hodge.MixedHodgeStructure` whose integral group is the rational space itself with the identity as rational model; finite dimension and graded polarizability are added conditions. No integral lattice or integral polarization is imposed.
 - **Degrees.** For `X` smooth of pure dimension `d`, the unshifted de Rham complex `DR(M)` of a left `D_X`-module has terms in degrees `0, …, d`, and `pDR(M) = DR(M)[d]`. The constant perverse object is `pℚ_X = ℚ_X[d]`, of Hodge-module weight `d`; a smooth variation of weight `m` gives a Hodge module of weight `m + d`.
 - **Hodge filtrations.** Filtrations of `D`-modules are increasing, `F_p`; decreasing notation is `F^p = F_{−p}`. The constant left module `O_X` has `F_0 O_X = O_X` and `F_{−1} O_X = 0`. Side change is `F_p(M_right) = ω_X ⊗ F_{p+d}(M_left)`. For `i : pt → A¹`, the left direct image of a filtered vector space is `F_p(i_+ V) = Σ_{k ≥ 0} F_{p−1−k} V · ∂^k`; this shift cancels the degree-one shift of its de Rham complex.
@@ -58,8 +56,8 @@ It leaves to named owners, and imports by section:
 - `DerivedCategory` (`Mathlib/Algebra/Homology/DerivedCategory/Basic.lean`): the derived category of an abelian category, as the localization of cochain complexes at quasi-isomorphisms. It supplies no constructibility, perversity or `t`-structure.
 - `Polynomial.derivative` and `Polynomial.derivative_mul` (`Mathlib/Algebra/Polynomial/Derivative.lean`): the formal derivative as an `R`-linear map and the Leibniz rule, used for the rank-one connection on `ℂ[t]`.
 - `PowerSeries` (`Mathlib/RingTheory/PowerSeries/Basic.lean`) and `LaurentSeries` (`Mathlib/RingTheory/LaurentSeries.lean`, the abbreviation of the Hahn series `R⟦ℤ⟧`): the lattice ring `ℂ[[x]]` and the field `ℂ((x))` of the formal differential modules imported from PadicDifferentialEquationsAndRigidCohomology.
-- `AddMonoidAlgebra` (`Mathlib/Algebra/MonoidAlgebra/Defs.lean`, a structure with field `coeff : M →₀ R`) with `AddMonoidAlgebra.coeffLinearEquiv` (`Mathlib/Algebra/MonoidAlgebra/Module.lean`), `Finsupp.lsum`, `Finsupp.lsingle`, `LinearMap.mulLeft`, `LinearMap.pi`, `LinearMap.proj`, `convexHull`, `affineSpan`, `IsExposed` (`Mathlib/Analysis/Convex/Exposed.lean`: a set `B` is exposed in `A` when it is empty or is the set of maximizers on `A` of a continuous linear functional; the functional may be zero, so `A` is exposed in itself) and `MeasureTheory.volume` on `Fin n → ℝ` (the product of Lebesgue measures, the Dirac mass when `n = 0`): the carriers of the Laurent polynomial ring, its twisted de Rham complex and the Newton polytope in Layer 12.
-- `ZLattice.covolume.tendsto_card_div_pow` (`Mathlib/Algebra/Module/ZLattice/Covolume.lean`): for a lattice `L ⊂ ℝ^ι` with a `ℤ`-basis and a bounded measurable `s` whose frontier is null, `#(s ∩ k⁻¹L)/k^{#ι}` tends to `vol(s)/covol(L)` as `k → ∞` through the natural numbers; with `L = ℤ^n`, covolume one, and `s = Δ`, it gives `#(kΔ ∩ ℤ^n)/k^n → vol(Δ)`. `Convex.addHaar_frontier` (`Mathlib/Analysis/Convex/Measure.lean`): the frontier of a convex set in a finite-dimensional real space is null for every additive Haar measure. Used in 12.5.
+- `AddMonoidAlgebra` (`Mathlib/Algebra/MonoidAlgebra/Defs.lean`, a structure with field `coeff : M →₀ R`) with `AddMonoidAlgebra.coeffLinearEquiv` (`Mathlib/Algebra/MonoidAlgebra/Module.lean`), `Finsupp.lsum`, `Finsupp.lsingle`, `LinearMap.mulLeft`, `LinearMap.pi`, `LinearMap.proj`, `convexHull`, `affineSpan`, `IsExposed` (`Mathlib/Analysis/Convex/Exposed.lean`: a set `B` is exposed in `A` when it is empty or is the set of maximizers on `A` of a continuous linear functional; the functional may be zero, so `A` is exposed in itself) and `MeasureTheory.volume` on `Fin n → ℝ` (the product of Lebesgue measures, the Dirac mass when `n = 0`): the carriers of the Laurent polynomial ring, its twisted de Rham complex and the Newton polytope in Layer 10.
+- `ZLattice.covolume.tendsto_card_div_pow` (`Mathlib/Algebra/Module/ZLattice/Covolume.lean`): for a lattice `L ⊂ ℝ^ι` with a `ℤ`-basis and a bounded measurable `s` whose frontier is null, `#(s ∩ k⁻¹L)/k^{#ι}` tends to `vol(s)/covol(L)` as `k → ∞` through the natural numbers; with `L = ℤ^n`, covolume one, and `s = Δ`, it gives `#(kΔ ∩ ℤ^n)/k^n → vol(Δ)`. `Convex.addHaar_frontier` (`Mathlib/Analysis/Convex/Measure.lean`): the frontier of a convex set in a finite-dimensional real space is null for every additive Haar measure. Used in 10.2.
 
 ### From Tau Ceti
 
@@ -69,7 +67,7 @@ It leaves to named owners, and imports by section:
 - `TauCeti.Hodge.MixedHodgeStructureCat` (`Mixed/Category.lean`), the `ℚ`-linear category of mixed Hodge structures, with its instance `TauCeti.Hodge.MixedHodgeStructureCat.abelian` (`Mixed/Abelian.lean`): the category is abelian. This is the point case of the abelianness in 4.7 and is not restated.
 - `TauCeti.Hodge.IsPolarization`, `TauCeti.Hodge.Polarization` and `TauCeti.Hodge.IsPolarizable` (`Polarization.lean`): the Hodge–Riemann relations for an integral bilinear form on the lattice of a pure Hodge structure. The rational polarizations of this roadmap are `ℚ`-valued forms on rational spaces; on a structure that has a lattice, a rational polarization becomes integral after multiplication by a positive integer, so rational polarizability is then `TauCeti.Hodge.IsPolarizable`.
 - `TauCeti.Hodge.tate` and `TauCeti.Hodge.tate_F` (`Tate/Basic.lean`): `ℤ(m)` of weight `−2m` with its explicit Hodge filtration. `TauCeti.Hodge.HodgeStructureOn.tateTwist` (`Tate/Twist.lean`): Tate twist lowers the weight by `2m` and shifts `F^p` to `F^{p+m}`.
-- `TauCeti.Ring.IsCohenMacaulay` (`TauCeti/RingTheory/CohenMacaulay/Ring.lean`): a commutative ring that is Noetherian and whose localization at every prime is Cohen–Macaulay as a module over itself; the predicate of 12.5 (a) and of gap:normal-semigroup-cohen-macaulay.
+- `TauCeti.Ring.IsCohenMacaulay` (`TauCeti/RingTheory/CohenMacaulay/Ring.lean`): a commutative ring that is Noetherian and whose localization at every prime is Cohen–Macaulay as a module over itself; the predicate of 10.2 (a) and of gap:normal-semigroup-cohen-macaulay.
 
 ### From TauCetiRoadmap.SpringerResolutionAndCharacteristicCycles
 
@@ -77,7 +75,7 @@ It leaves to named owners, and imports by section:
 
 What SpringerResolutionAndCharacteristicCycles must provide (gap:holonomic-specializability): for a holonomic `D_X`-module on a smooth complex variety and a smooth hypersurface `x = 0`, the existence of a good `V_0 D_X`-lattice with a nonzero Bernstein–Sato polynomial for the Euler operator on its graded quotient, also after graph embedding of a regular function, and the rationality of its roots for regular holonomic modules with quasi-unipotent monodromy.
 
-What SpringerResolutionAndCharacteristicCycles must provide (gap:regular-holonomic-stability): stability of the bounded derived category with regular holonomic cohomology under `f_+`, `f_!`, arbitrary `f^†`, external product and restriction to the diagonal, with the corresponding composition, adjunction and duality comparisons for algebraic maps of smooth complex varieties; the duality, smooth-pullback and intermediate-extension cases are supplied by §9.7.
+What SpringerResolutionAndCharacteristicCycles must provide (gap:regular-holonomic-stability): stability of the bounded derived category with regular holonomic cohomology under `f_+`, `f_!`, arbitrary `f^†`, external product and restriction to the diagonal, for algebraic maps of smooth complex varieties. The duality, smooth-pullback and intermediate-extension cases are supplied by §9.7, and the composition, identity, adjunction and proper-duality comparisons on holonomic complexes by §9.1; they restrict to the regular holonomic complexes once these are stable.
 
 ### From TauCetiRoadmap.ComplexComparisonPartII
 
@@ -121,15 +119,15 @@ ShimuraData §3.1 (`Variation`: a pure real or rational variation of Hodge struc
 
 §§0.1–0.4 (enhanced derived categories of module sheaves on ringed sites, replacements, derived tensor, internal Hom and derived functors) and §E1.4 (tensor, internal Hom, pullback, pushforward and change of coefficients), applied to the topological space `T_X` with the constant rings `ℚ` and `ℂ`.
 
-### From TauCetiRoadmap.SchemeAndStackFoundations and TauCetiRoadmap.AlgebraicCurves
+### From TauCetiRoadmap.SchemeAndStackFoundations
 
-SchemeAndStackFoundations §0.17 (depth and Cohen–Macaulay modules), §2.2 (Leray and Čech spectral sequences), §2.6 (quasi-coherent cohomology, including `H^q(P^n_A, O(d))`), §2.18 (derived quasi-coherent pullback and pushforward, the projection formula and Tor-independent base change), §2.20 (Serre duality for proper Cohen–Macaulay schemes), §3.3 (degrees and Riemann–Roch for vector bundles on curves), §4.11 (blow-ups and strict transforms), §4.17 (strict normal crossing divisors), §5.5 (the conormal sheaf `I/I²` and the normal bundle `(I/I²)^∨` of a regular immersion). AlgebraicCurves Layer 9 (expansion of a function field at a rational place into `k((T))`, compatible with derivations) and Layer 12 (the nonsingular projective model of a curve).
+SchemeAndStackFoundations §0.17 (depth and Cohen–Macaulay modules), §2.2 (Leray and Čech spectral sequences), §2.6 (quasi-coherent cohomology, including `H^q(P^n_A, O(d))`), §2.18 (derived quasi-coherent pullback and pushforward, the projection formula and Tor-independent base change), §2.20 (Serre duality for proper Cohen–Macaulay schemes), §4.11 (blow-ups and strict transforms), §4.12 (`chow_lemma`: for `X → S` separated of finite type over a Noetherian `S`, a projective modification `X′ → X` with `X′` quasi-projective over `S`, and projective over `S` when `X` is proper over `S`), §4.17 (strict normal crossing divisors), §5.5 (the conormal sheaf `I/I²` and the normal bundle `(I/I²)^∨` of a regular immersion).
 
 What SchemeAndStackFoundations must provide (gap:blowup-exceptional-divisor): for the blow-up `π : X̃ → X` of a smooth variety over a field along a smooth closed subvariety `Z` of pure codimension `c ≥ 2`, the smoothness of `X̃` over that field.
 
 ### From TauCetiRoadmap.SchemeKTheoryOperations
 
-§5.7: for a Koszul-regular immersion `Z → X` of pure codimension `c ≥ 1`, the exceptional divisor of `Bl_Z X` is `Proj(Sym(I/I²))`, denoted `P(N_{Z/X})` with `N_{Z/X} = (I/I²)^∨`; `O_X̃(−E)|_E = O_E(1)` and the normal line is `O_E(−1)`. For `p : E → Z`, perfect `G` and `1 ≤ μ ≤ c − 1`, it supplies `Rp_*(O_E(−μ) ⊗ Lp^* G) = 0`. Smooth varieties and smooth centres give Koszul-regular immersions, and `G = O_Z` with `c = 2` and `μ = 1` supplies the vanishing `Rp_* O_E(−1) = 0` used in 12.2 and 12.9.
+§5.7: for a Koszul-regular immersion `Z → X` of pure codimension `c ≥ 1`, the exceptional divisor of `Bl_Z X` is `Proj(Sym(I/I²))`, denoted `P(N_{Z/X})` with `N_{Z/X} = (I/I²)^∨`; `O_X̃(−E)|_E = O_E(1)` and the normal line is `O_E(−1)`. For `p : E → Z`, perfect `G` and `1 ≤ μ ≤ c − 1`, it supplies `Rp_*(O_E(−μ) ⊗ Lp^* G) = 0`. Smooth varieties and smooth centres give Koszul-regular immersions, and `G = O_Z` with `c = 2` and `μ = 1` supplies the vanishing `Rp_* O_E(−1) = 0` used in 8.8 and 8.10.
 
 ### From TauCetiRoadmap.AnalyticToricGeometry and TauCetiRoadmap.AnalyticToricGeometryPartII
 
@@ -141,17 +139,17 @@ What AnalyticToricGeometryPartII must provide (gap:toric-rounded-vanishing): for
 
 ### From TauCetiRoadmap.GroebnerGeometry
 
-§G2 (an affine semigroup is a finitely generated additive submonoid `S` of a finite free abelian group, with algebra `k[S] = AddMonoidAlgebra k S`; its saturation in the group `L_S` that it generates, finite normalization, and, over a field, normality of `k[S]` exactly when `S` is saturated). Used in 12.5 for the semigroups of lattice points of the cones over the faces of `Δ` not containing `0`, each saturated by construction.
+§G2 (an affine semigroup is a finitely generated additive submonoid `S` of a finite free abelian group, with algebra `k[S] = AddMonoidAlgebra k S`; its saturation in the group `L_S` that it generates, finite normalization, and, over a field, normality of `k[S]` exactly when `S` is saturated). Used in 10.2 for the semigroups of lattice points of the cones over the faces of `Δ` not containing `0`, each saturated by construction.
 
-What GroebnerGeometry must provide (gap:normal-semigroup-cohen-macaulay): for every field `k` and every finitely generated additive submonoid `S` of a finite free abelian group that is saturated in the group it generates, the monoid algebra `k[S]` is Cohen–Macaulay in the sense of `TauCeti.Ring.IsCohenMacaulay` (Hochster's theorem). On `S = {0}`, `ℕ`, `ℤ` and `ℕ²` the depth equals the dimension, `0`, `1`, `1` and `2`; saturation cannot be dropped, by the nonsaturated example in the Checks of 12.5.
+What GroebnerGeometry must provide (gap:normal-semigroup-cohen-macaulay): for every field `k` and every finitely generated additive submonoid `S` of a finite free abelian group that is saturated in the group it generates, the monoid algebra `k[S]` is Cohen–Macaulay in the sense of `TauCeti.Ring.IsCohenMacaulay` (Hochster's theorem). On `S = {0}`, `ℕ`, `ℤ` and `ℕ²` the depth equals the dimension, `0`, `1`, `1` and `2`; saturation cannot be dropped, by the nonsaturated example in the Checks of 10.2.
 
 ## How to read the build
 
-Layer 1 gives the Betti side: stratifications of maps, constructible complexes with six operations, perverse sheaves, nearby cycles and regular Riemann–Hilbert. Layer 2 gives the exponential and Fourier operations on holonomic modules. Layer 3 gives the variations of mixed Hodge structure on punctured curves that Saito's induction needs. Layer 4 defines pure and mixed Hodge modules and proves the projective direct-image and abelianness theorems; Layer 5 builds the operations, weights and cycles. Layer 6 defines exponential mixed Hodge structures by the projector `Π`; Layer 7 builds the Deligne filtration and proves `E₁`-degeneration and bifiltered strictness; Layer 8 embeds classical mixed Hodge structures. Layer 9 defines pair cohomology, Layer 10 proves the `tg` criterion, Layer 11 computes Fourier cohomology and weights at infinity, and Layer 12 compares the irregular Hodge filtration with logarithmic and Newton filtrations and proves the Adolphson–Sperber theorem, the headline statement of `Suggested.lean`. Each target's `*Needs:*` line lists what its statement and its proof route use, item by item.
+Layer 1 gives the Betti side: stratifications of maps, constructible complexes with six operations, perverse sheaves, nearby cycles and regular Riemann–Hilbert. Layer 2 gives the exponential and Fourier operations on holonomic modules. Layer 3 gives the variations of mixed Hodge structure on punctured curves that Saito's induction needs. Layer 4 defines pure and mixed Hodge modules and proves the projective direct-image and abelianness theorems; Layer 5 builds the operations, weights and cycles. Layer 6 defines exponential mixed Hodge structures by the projector `Π` and embeds the classical mixed Hodge structures in them; Layer 7 builds the Deligne filtration, proves `E₁`-degeneration and bifiltered strictness, and identifies the irregular filtration of a classical object with its Hodge filtration. Layer 8 defines pair cohomology and computes its irregular Hodge filtration by logarithmic pole-order complexes, through Künneth and duality; Layer 9 proves the `tg` criterion and, through it, computes Fourier cohomology and the weights at infinity; and Layer 10 compares the irregular Hodge filtration with the Newton filtration and proves the Adolphson–Sperber theorem, the headline statement of `Suggested.lean`. Each target's `*Needs:*` line lists what its statement and its proof route use, item by item.
 
 ### Former-numbering map
 
-The former lettered numbering corresponds to the following sections. A layer entry applies to its unchanged individual topics; the individual entries specify shifts caused by additional topics.
+The former lettered numbering corresponds to the following sections. A layer entry applies to its unchanged individual topics; the individual entries specify shifts caused by additional topics. A second table maps the former numbering of the layers and sections after Layer 7 to the present one.
 
 | Former numbering | Section or supplier |
 |---|---|
@@ -172,13 +170,47 @@ The former lettered numbering corresponds to the following sections. A layer ent
 | I | Layer 7 |
 | I/deligne-filtration, I/rees-laplace-specialisation | §§7.1, 7.2 respectively |
 | I/polarized-curve-strictness, I/irregular-e1, I/strict-bifiltered-realisation | §§7.4, 7.5, 7.6 respectively; §7.3 supplies the twistor construction |
-| C | Layer 8, §§8.1–8.2 in the same topic order |
-| P | Layer 9, §§9.1–9.6 in the same topic order |
-| G | Layer 10, §§10.1–10.2 in the same topic order |
-| T | Layer 11, §§11.1–11.6 in the same topic order |
-| N | Layer 12 |
-| N/logarithmic-filtration, N/filtered-blowup, N/model-independence, N/newton-complex | §§12.1, 12.2, 12.3, 12.4 respectively |
-| N/newton-concentration, N/newton-hodge-comparison, N/constant-gauss-manin-cone, N/filtered-kunneth-duality | §§12.6, 12.7, 12.8, 12.9 respectively; §12.5 supplies graded acyclicity |
+| C | §§6.7 and 7.7 |
+| C/classical-embedding, C/classical-filtration | §§6.7, 7.7 respectively |
+| P | Layer 8, §§8.1–8.6 in the same topic order |
+| G | Layer 9, §§9.1–9.2 in the same topic order |
+| T | Layer 9, §§9.3–9.8 in the same topic order |
+| N | §§8.7–8.10 and Layer 10 |
+| N/logarithmic-filtration, N/filtered-blowup, N/model-independence, N/newton-complex | §§8.7, 8.8, 8.9, 10.1 respectively |
+| N/newton-concentration, N/newton-hodge-comparison, N/constant-gauss-manin-cone, N/filtered-kunneth-duality | §§10.3, 10.4, 10.5, 8.10 respectively; §10.2 supplies graded acyclicity |
+
+| Former section | Section |
+|---|---|
+| Layer 8 | §§6.7 and 7.7 |
+| §8.1 | §6.7 |
+| §8.2 | §7.7 |
+| Layer 9 | Layer 8, §§8.1–8.6 |
+| §9.1 | §8.1 |
+| §9.2 | §8.2 |
+| §9.3 | §8.3 |
+| §9.4 | §8.4 |
+| §9.5 | §8.5 |
+| §9.6 | §8.6 |
+| Layer 10 | Layer 9, §§9.1–9.2 |
+| §10.1 | §9.1 |
+| §10.2 | §9.2 |
+| Layer 11 | Layer 9, §§9.3–9.8 |
+| §11.1 | §9.3 |
+| §11.2 | §9.4 |
+| §11.3 | §9.5 |
+| §11.4 | §9.6 |
+| §11.5 | §9.7 |
+| §11.6 | §9.8 |
+| Layer 12 | §§8.7–8.10 and Layer 10 |
+| §12.1 | §8.7 |
+| §12.2 | §8.8 |
+| §12.3 | §8.9 |
+| §12.4 | §10.1 |
+| §12.5 | §10.2 |
+| §12.6 | §10.3 |
+| §12.7 | §10.4 |
+| §12.8 | §10.5 |
+| §12.9 | §8.10 |
 
 ## Layer 1: Betti constructibility and regular Riemann–Hilbert
 
@@ -223,6 +255,7 @@ API:
 - Perverse truncation triangles exist and give a long exact sequence of perverse cohomology.
 - `j_!* L` is the unique extension of `L` with no nonzero subobject or quotient supported on the boundary.
 - Verdier duality is `t`-exact on the heart and exchanges `pH⁰ j_!` and `pH⁰ Rj_*`.
+- For `Λ = ℂ` the heart `Perv(X, ℂ)` is the analytic perverse heart in which EtaleDualityAndPerverseSheaves §§3.5 and 5.9 work.
 
 **Checks.**
 
@@ -421,7 +454,7 @@ API:
 
 - For the constant variation `ℚ` on `C° = P¹ ∖ {0, ∞}`, `H^i(P¹, j_* ℚ) = H^i(P¹, ℚ)`: `ℚ` in degree `0` and `ℚ(−1)` in degree `2`, not `H^i(C°, ℚ)`, which has `H¹ = ℚ(−1)`.
 - For `L` of weight `m`, `H¹(C, j_* L)` has weight `m + 1`, not `m`: for the constant variation on a curve of genus `g ≥ 1`, `H¹(C, ℚ)` has weight `1`.
-- For a rank-one variation with nontrivial finite monodromy at every puncture, `j_* L = j_! L` near the punctures, so `H⁰ = H² = 0` and only `H¹` survives.
+- For a rank-one variation on a curve with at least one puncture, with nontrivial finite monodromy at every puncture, `j_* L = j_! L` near the punctures and `L` and its dual have no global sections, so `H⁰ = H² = 0` and only `H¹` survives. The puncture set must be nonempty: for `C° = C = P¹` and `L = ℚ` the monodromy condition is empty, while `H⁰ = ℚ` and `H² = ℚ(−1)`.
 
 ### Examples
 
@@ -433,7 +466,7 @@ For the rank-two variation `L = R¹π_*ℚ` of the Legendre family on `C° = P¹
 
 ## Layer 4: Pure and mixed Hodge modules
 
-This layer constructs compatible `F`, `V` and Rees modules, defines polarizable pure Hodge modules by strict support, recursive specialization and primitive polarizations, and builds graded-polarizable algebraic mixed Hodge modules by admissibility and relative monodromy. It proves strict-support extension and semisimplicity, the polarized projective direct-image theorem and abelianness with simultaneous strictness. The construction is in every dimension; at a point it recovers Tau Ceti's rational mixed Hodge structures.
+This layer constructs compatible `F`, `V` and Rees modules, defines polarizable pure Hodge modules by strict support, recursive specialization and primitive polarizations, and builds graded-polarizable algebraic mixed Hodge modules by admissibility and relative monodromy, on smooth quasi-projective varieties and then, by local embeddings and gluing, on every variety. It proves strict-support extension and semisimplicity, the polarized projective direct-image theorem and abelianness with simultaneous strictness. The construction is in every dimension; at a point it recovers Tau Ceti's rational mixed Hodge structures.
 
 ### 4.1 Compatible filtrations and Rees modules
 
@@ -454,11 +487,11 @@ API:
 
 ### 4.2 The rational Kashiwara–Malgrange filtration
 
-**Construction.** Let `M` be a regular holonomic module on `X` with quasi-unipotent monodromy along the smooth hypersurface `x = 0`. Construct its unique increasing rational filtration `V_α M`, `α ∈ ℚ`, by coherent `V_0 D_X`-modules, exhaustive and discretely indexed, with `x V_α ⊂ V_{α−1}`, `∂_x V_α ⊂ V_{α+1}` and `x∂_x + α` nilpotent on `gr^V_α = V_α / V_{<α}`. For a good `F`, the `F`-specializability conditions are: `x : F_p V_α → F_p V_{α−1}` is an isomorphism for `α < 1`, and `∂_x : F_p gr^V_α → F_{p+1} gr^V_{α+1}` is an isomorphism for `α > 0`. For a regular function `g`, define the cycles of `M` along `g` through the graph embedding, keeping its codimension-one filtration shift. Prove that the de Rham complexes of `gr^V_α` for `α ∈ [0, 1)` are the Betti nearby cycles of `DR M` on the eigenvalue-`exp(2πiα)` part, that of `gr^V_1` is the unipotent vanishing cycles, and that, with the comparison isomorphism on `gr^V_1` normalized so that `can` corresponds to `∂_x : gr^V_0 → gr^V_1`: the monodromy is `T = exp(−2πi x∂_x)` on `gr^V_α`, so `log T_u = −2πi(x∂_x + α)` and `N = (2πi)⁻¹ log T_u = −(x∂_x + α)`; and the normalized variation `var : pφ_{x,1} → pψ_{x,1}(−1)` of 1.4 corresponds to `−x : gr^V_1 → gr^V_0`. Consistently, `(−x)∂_x = −x∂_x = N` on `gr^V_0` and `∂_x(−x) = −(x∂_x + 1) = N_φ` on `gr^V_1`, while the topological variation corresponds to `−x ∘ (exp(2πiN_φ) − 1)/N_φ`, which is `−2πi x` exactly when `x ∘ N_φ = 0` on `gr^V_1`, in particular when `N_φ = 0` (the criterion of 1.4). These signs are forced by the residue convention `T = exp(−2πi·Res)` of ComplexComparisonPartII §C5.6 and are not read off Saito's right-module formulas (Sai88, (0.2) and (0.7), pp. 851–852, Sai88 lines 80–82 and 127; §§3.1–3.2, especially Lemma 3.1.2 (Sai88 line 1773) and §§3.2.1–3.2.6, pp. 902–908; §3.4, Proposition 3.4.12 and its proof, pp. 924–925; ESY, §§2.1 and 2.3, pp. 18–21; Kash76). This is the compatibility of 1.5 with nearby and vanishing cycles. *Proof route:* the Bernstein–Sato polynomial gives coherent lattices; shift its roots into a fundamental interval by `x` and `∂_x`; quasi-unipotence makes the exponents rational; uniqueness from generalized eigenspaces and the shift relations; translate Saito's right-module conventions by 4.1; read the signs of `T`, `N`, `can` and `var` on the Deligne lattice of a logarithmic connection, where `x∂_x` is the residue. *Needs:* 4.1; 1.4, 1.5; ComplexComparisonPartII §C5.6; SpringerResolutionAndCharacteristicCycles §§9.2, 9.7 and gap:holonomic-specializability.
+**Construction.** Let `M` be a regular holonomic module on `X` with quasi-unipotent monodromy along the smooth hypersurface `x = 0`. Construct its unique increasing rational filtration `V_α M`, `α ∈ ℚ`, by coherent `V_0 D_X`-modules, exhaustive and discretely indexed, with `x V_α ⊂ V_{α−1}`, `∂_x V_α ⊂ V_{α+1}`, `x : V_α M → V_{α−1} M` an isomorphism for every `α < 1`, and `x∂_x + α` nilpotent on `gr^V_α = V_α / V_{<α}` (ESY, Definition 2.2.2(1c), p. 20, ESY line 1029, stated for Rees modules and read here at `z = 1`, with the same normalization of the index; uniqueness, ESY Remark 2.2.3(2), ESY line 1040). The isomorphism condition belongs to the unfiltered characterization and not only to the `F`-specializability conditions: without it the constant filtration satisfies every other condition (Checks). For a good `F`, the `F`-specializability conditions are: `x : F_p V_α → F_p V_{α−1}` is an isomorphism for `α < 1`, and `∂_x : F_p gr^V_α → F_{p+1} gr^V_{α+1}` is an isomorphism for `α > 0`. For a regular function `g`, define the cycles of `M` along `g` through the graph embedding, keeping its codimension-one filtration shift. Prove that the de Rham complexes of `gr^V_α` for `α ∈ [0, 1)` are the Betti nearby cycles of `DR M` on the eigenvalue-`exp(2πiα)` part, that of `gr^V_1` is the unipotent vanishing cycles, and that, with the comparison isomorphism on `gr^V_1` normalized so that `can` corresponds to `∂_x : gr^V_0 → gr^V_1`: the monodromy is `T = exp(−2πi x∂_x)` on `gr^V_α`, so `log T_u = −2πi(x∂_x + α)` and `N = (2πi)⁻¹ log T_u = −(x∂_x + α)`; and the normalized variation `var : pφ_{x,1} → pψ_{x,1}(−1)` of 1.4 corresponds to `−x : gr^V_1 → gr^V_0`. Consistently, `(−x)∂_x = −x∂_x = N` on `gr^V_0` and `∂_x(−x) = −(x∂_x + 1) = N_φ` on `gr^V_1`, while the topological variation corresponds to `−x ∘ (exp(2πiN_φ) − 1)/N_φ`, which is `−2πi x` exactly when `x ∘ N_φ = 0` on `gr^V_1`, in particular when `N_φ = 0` (the criterion of 1.4). These signs are forced by the residue convention `T = exp(−2πi·Res)` of ComplexComparisonPartII §C5.6 and are not read off Saito's right-module formulas (Sai88, (0.2) and (0.7), pp. 851–852, Sai88 lines 80–82 and 127; §§3.1–3.2, especially Lemma 3.1.2 (Sai88 line 1773) and §§3.2.1–3.2.6, pp. 902–908; §3.4, Proposition 3.4.12 and its proof, pp. 924–925; ESY, §§2.1 and 2.3, pp. 18–21; Kash76). This is the compatibility of 1.5 with nearby and vanishing cycles. *Proof route:* the Bernstein–Sato polynomial gives coherent lattices; shift its roots into a fundamental interval by `x` and `∂_x`; quasi-unipotence makes the exponents rational; uniqueness from generalized eigenspaces and the shift relations; translate Saito's right-module conventions by 4.1; read the signs of `T`, `N`, `can` and `var` on the Deligne lattice of a logarithmic connection, where `x∂_x` is the residue. *Needs:* 4.1; 1.4, 1.5; ComplexComparisonPartII §C5.6; SpringerResolutionAndCharacteristicCycles §§9.2, 9.7 and gap:holonomic-specializability.
 
 API:
 
-- The coherence, eigenvalue and shift conditions characterize `V`.
+- The coherence, exhaustivity, inclusion, isomorphism and eigenvalue conditions characterize `V`; without the isomorphism of `x` for `α < 1` they do not.
 - The construction along `g` is independent of local coordinates after graph embedding.
 - `DR(gr^V_α)` identifies with the corresponding Betti nearby or vanishing eigenspace of 1.4.
 - `x` and `∂_x` are filtered isomorphisms in the stated ranges.
@@ -469,6 +502,7 @@ API:
 - For `O(∗0)` on `A¹`, `x^k` has index `−k` and `x∂_x` acts on it by `k`; so `V_α = x^{−⌊α⌋} O` for nonintegral `α`, and the endpoint at integral `α` is fixed by nilpotence of `x∂_x + α`.
 - For the Kummer module `x∂_x e = a e` with `a ∈ ℚ ∖ ℤ`, `x^k e` has index `−a − k`, so the jumps of `V` are nonintegral; the fundamental interval must contain every eigenvalue of monodromy, not only `1`.
 - For `δ_0 = D/Dx`, the generator satisfies `x∂_x δ = −δ`, so `∂_x^k δ` lies in `gr^V_{k+1}`; hence `gr^V_α δ_0 = 0` for `α ∈ [0, 1)` and `gr^V_1 δ_0 = ℂδ`: a module supported at `x = 0` has zero nearby cycles and contributes only through vanishing cycles. For `O`, `1 ∈ gr^V_0` and `gr^V_1 O = 0`, so `ψ(O) = ℂ` and `φ_1(O) = 0`.
+- The isomorphism condition is what makes `V` unique. On `O_{A¹}` the constant filtration `U_α = O` for every `α` consists of coherent `V_0 D`-modules, is exhaustive and discretely indexed, satisfies both inclusions, and satisfies the nilpotence condition vacuously since every `gr^U_α` is zero; it fails only the isomorphism condition, `x : O → O` not being surjective. The genuine filtration has `V_α O = O` for `α ≥ 0` and `V_α O = x^{⌈−α⌉} O` for `α < 0`, so `gr^V_0 O = ℂ`, and `x : V_α O → V_{α−1} O` is bijective for `α < 1` (at `α = 0` it is `O → xO`) but not at `α = 1`, where `V_1 O = V_0 O = O`. For `δ_0`, `V_α = 0` for `α < 1` and `x` kills `V_1 = ℂδ`, again bijective exactly below `1`.
 - For the logarithmic connection `d + A dx/x` on `O(∗0)e_0 ⊕ O(∗0)e_1` with `A e_1 = e_0` and `A e_0 = 0`, `gr^V_0` has basis `e_0, e_1` with `x∂_x = A`, so `T = exp(−2πiA) = 1 − 2πiA`, `log T_u = −2πiA` and `N e_1 = −e_0`. Here `can = ∂_x` sends `e_1` to `x⁻¹e_0` and `var = −x` sends that to `−e_0 = N e_1`; on `gr^V_1`, `∂_x(−x)(x⁻¹e_1) = −x⁻¹e_0 = −(x∂_x + 1)(x⁻¹e_1)`. Reading `x∂_x` as `N` gives `+e_0`, and reading `−2πi x∂_x` as `N` gives `−2πi e_0`; examples with zero nilpotent residue, such as `O`, `O(∗0)` and `δ_0`, detect neither. Here `x ∘ N_φ(x⁻¹e_1) = −e_0 ≠ 0`, and the topological variation sends `x⁻¹e_1` to `−2πi e_1 − 2π² e_0`, not to `−2πi e_1`.
 - For `M = D/D(x∂_x)²`, the regular holonomic module of `j_! L[1]` with `L` of rank two and one unipotent Jordan block (1.5), let `m_1` be the generator and `m_0 = x∂_x m_1`. Then `x^k m_0, x^k m_1` lie in `gr^V_{−k}` and `∂_x^k m_0, ∂_x^k m_1` in `gr^V_k`, so `can = ∂_x : gr^V_0 → gr^V_1` is an isomorphism; `N_φ(∂_x m_1) = −(x∂_x + 1)∂_x m_1 = −∂_x m_0 ≠ 0`, and `var = −x` sends `∂_x m_1` to `−m_0` and `∂_x m_0` to `0`. So `x ∘ N_φ = 0` and the topological variation is `−2πi x` although `N_φ ≠ 0`; also `var ∘ can = N` on `m_1`, both sides giving `−m_0`.
 
@@ -513,13 +547,14 @@ API:
 
 ### 4.6 Admissible graded-polarizable mixed Hodge modules
 
-**Definition.** Define the category `MHM(X)` of algebraic mixed Hodge modules on a smooth quasi-projective `X` by Saito's admissible gluing: objects are rationally realized good filtered regular holonomic modules with a finite increasing weight filtration `W` such that each `gr^W_w` is in `MH(X, w)^pol`, the filtrations `F`, `W` and `V` are compatible under every local graph specialization, the relative monodromy filtration exists on nearby cycles (LefschetzPencilsAndVanishingCycles §1.5), and the objects glue admissibly across every local hypersurface; on a dense smooth open subset of each support the object is an admissible variation (3.3), and the extendability condition at a good compactification holds (Sai90, Theorem 0.2 and Proposition 0.3, Sai90 lines 94–104; §2.17, pp. 256–258; Remark 3.29, p. 313; §4.1, p. 314). Morphisms preserve the whole structure. A singular closed support is handled by objects on a smooth ambient variety supported on it. A finite `W` with pure graded pieces is not enough: admissibility and relative monodromy are required. *Needs:* 4.1–4.4; 1.4; 3.3; LefschetzPencilsAndVanishingCycles §§1.3, 1.5; ResolutionOfSingularitiesCharacteristicZero §§5.2, 6.2.
+**Definition.** Define the category `MHM(X)` of algebraic mixed Hodge modules, first on a smooth quasi-projective `X`, by Saito's admissible gluing: objects are rationally realized good filtered regular holonomic modules with a finite increasing weight filtration `W` such that each `gr^W_w` is in `MH(X, w)^pol`, the filtrations `F`, `W` and `V` are compatible under every local graph specialization, the relative monodromy filtration exists on nearby cycles (LefschetzPencilsAndVanishingCycles §1.5), and the objects glue admissibly across every local hypersurface; on a dense smooth open subset of each support the object is an admissible variation (3.3), and the extendability condition at a good compactification holds (Sai90, Theorem 0.2 and Proposition 0.3, Sai90 lines 94–104; §2.17, pp. 256–258; Remark 3.29, p. 313; §4.1, p. 314). Morphisms preserve the whole structure. A finite `W` with pure graded pieces is not enough: admissibility and relative monodromy are required. Then, on an arbitrary variety `X`, taken with its reduced structure, an object of `MHM(X)` is given on the members `U_i` of a finite affine open cover by objects of `MHM(V_i)` supported on `U_i`, for closed embeddings `U_i → V_i` into smooth affine varieties, with isomorphisms on the overlaps satisfying the cocycle condition; equivalently, it is a polarizable weakly mixed object on `X` (a filtered `D`-module given by compatible local representatives on smooth ambient varieties, a perverse sheaf in `Perv(X, ℚ)` of 1.3, their comparison and `W`) whose restriction to every affine open lies in `MHM`. Membership is Zariski local, so the category depends neither on the cover nor on the embeddings, and on a smooth quasi-projective `X` it is the category defined first (Sai90, §2.13, p. 251, Sai90 lines 1059–1072, for the local representatives; §4.2, (4.2.4), (4.2.6) and (4.2.9), pp. 316–318, Sai90 lines 3238–3260 and 3305–3318). *Needs:* 4.1–4.4; 1.3, 1.4; 3.3; LefschetzPencilsAndVanishingCycles §§1.3, 1.5; ResolutionOfSingularitiesCharacteristicZero §§5.2, 6.2; SpringerResolutionAndCharacteristicCycles §9.2 (Kashiwara equivalence).
 
 API:
 
 - `gr^W_w M` is a polarizable pure Hodge module of weight `w`.
 - Admissibility is characterized by the local `F`, `W`, `V` compatibility and the relative-monodromy and gluing conditions.
-- For a closed embedding `i : Z → X` of smooth varieties, `i_*` identifies `MHM(Z)` with the objects of `MHM(X)` supported on `Z`.
+- For a closed immersion `i : Z → X` of varieties, `i_*` identifies `MHM(Z)` with the objects of `MHM(X)` supported on `Z`; in particular the category of a singular variety does not depend on the chosen local embeddings.
+- Membership in `MHM(X)` is Zariski local on `X`, and objects and morphisms glue over open covers.
 - `MHM(pt)` is equivalent to finite-dimensional graded-polarizable rational mixed Hodge structures, realized on `TauCeti.Hodge.MixedHodgeStructure` with the rational space as integral group and the identity as rational model.
 
 **Checks.**
@@ -527,6 +562,8 @@ API:
 - At a point, `ℚ(−1)` has only `gr^W_2` nonzero and `F¹ = ℂ`.
 - A nonsplit extension of `ℚ(0)` by `ℚ(1)` (weights `0` and `−2`) exists in `MHM(pt)`: `Ext¹(ℚ(0), ℚ(1)) = ℂ/2πiℚ ≠ 0`.
 - The rank-three variation of the Checks of 3.3, with weights `−1` and `0` and `N e ≠ 0` in `W_{−1}`, is defined by the same formula on all of `G_m`. As a smooth object it is excluded from `MHM(G_m)`, although its graded pieces are polarized and its Hodge bundles extend to the canonical extension at `0`: it has no relative monodromy filtration there. Its graded ranks `2` and `1` are realizable, whereas a weight-one graded piece of rank one is not, since a rational Hodge structure of odd weight has even dimension.
+- A smooth proper variety that is not projective, such as Hironaka's threefold, has `MHM(X)` defined through an affine open cover, containing `pℚ_X` and the admissible variations on `X`; a definition that requires `X` quasi-projective, or a global closed embedding into a smooth quasi-projective variety, leaves `MHM(X)` undefined there, although 5.2 and 5.6 apply to such `X`.
+- The node `C = {xy = 0}` embeds in `A²` and, by `(x, y) ↦ (x, y, 0)`, in `A³`; the objects of `MHM(A²)` and of `MHM(A³)` supported on `C` form equivalent categories, both containing the object `pℚ_C = ℚ_C[1]` of 5.5, so `MHM(C)` does not depend on the embedding.
 
 ### 4.7 Abelianness and simultaneous strictness
 
@@ -544,7 +581,7 @@ On `A¹` with coordinate `x`, the objects `pℚ_{A¹}` (weight `1`), `δ_0 ℚ` 
 
 ### Dependencies
 
-4.1 needs FormalConnectionsOpers §F2.2 and SpringerResolutionAndCharacteristicCycles §§8.2–8.4; 4.2 needs 4.1, 1.4, 1.5, ComplexComparisonPartII §C5.6 (the residue convention fixing the signs of `N`, `can` and `var`) and SpringerResolutionAndCharacteristicCycles §§9.1–9.7; 4.3 needs 4.1, 4.2, 1.5, 3.1, 3.2 and LefschetzPencilsAndVanishingCycles §§1.3–1.4; 4.4 needs 4.3, 1.3, 3.2, 3.3 and ComplexComparisonPartII §C5.6; 4.5 needs 4.1–4.4, 3.2, 3.4 and LefschetzPencilsAndVanishingCycles §§1.4, 3.4; 4.6 needs 4.1–4.4, 1.4, 3.3 and LefschetzPencilsAndVanishingCycles §1.5; 4.7 needs 4.1, 4.4, 4.6 and Tau Ceti's mixed Hodge structures.
+4.1 needs FormalConnectionsOpers §F2.2 and SpringerResolutionAndCharacteristicCycles §§8.2–8.4; 4.2 needs 4.1, 1.4, 1.5, ComplexComparisonPartII §C5.6 (the residue convention fixing the signs of `N`, `can` and `var`) and SpringerResolutionAndCharacteristicCycles §§9.1–9.7; 4.3 needs 4.1, 4.2, 1.5, 3.1, 3.2 and LefschetzPencilsAndVanishingCycles §§1.3–1.4; 4.4 needs 4.3, 1.3, 3.2, 3.3 and ComplexComparisonPartII §C5.6; 4.5 needs 4.1–4.4, 3.2, 3.4 and LefschetzPencilsAndVanishingCycles §§1.4, 3.4; 4.6 needs 4.1–4.4, 1.3, 1.4, 3.3, LefschetzPencilsAndVanishingCycles §1.5 and SpringerResolutionAndCharacteristicCycles §9.2; 4.7 needs 4.1, 4.4, 4.6 and Tau Ceti's mixed Hodge structures.
 
 ## Layer 5: Hodge-module operations, weights and specialization
 
@@ -552,7 +589,7 @@ This layer lifts `f_*`, `f_!`, `f^*`, `f^!`, external products, duality and Tate
 
 ### 5.1 Derived Hodge-module operations
 
-**Construction.** On `D^b MHM(X)` for smooth quasi-projective varieties and supported categories, construct `f_*`, `f_!`, `f^*`, `f^!`, the duality `D`, external product `⊠`, the Hodge tensor product `M ⊗^H N = Δ^*(M ⊠ N)` and Tate twists, with adjunctions, composition, proper base change, the projection formula and the open–closed localization triangles. The rational realization commutes with the Betti operations of 1.2, and the filtered de Rham realization with the normalized `D`-module transfer. `⊗^H` is not the unshifted `O`-module tensor product of left `D`-modules. On a smooth `d`-fold `D(pℚ_X) = pℚ_X(d)`, and `(m)` lowers weights by `2m` and shifts `F^p` to `F^{p+m}` (Sai90, §§4.2–4.5, pp. 315–325; Introduction 0.1–0.3, pp. 222–224; FSY, Appendix A.2, pp. 61–63, whose dual Tate twist is corrected to `(d)`). *Proof route:* external products and projective direct images first, by 4.5 and weight dévissage; open extensions and inverse images by admissible gluing; factor an algebraic map as an immersion followed by a projective projection and prove independence by base change; dual operations by `D`; the tensor product from the diagonal. *Needs:* 4.5, 4.6, 4.7; 1.2; SpringerResolutionAndCharacteristicCycles §9.1 and gap:regular-holonomic-stability; `TauCeti.Hodge.tate`, `TauCeti.Hodge.HodgeStructureOn.tateTwist`.
+**Construction.** On `D^b MHM(X)` for every variety `X`, construct, for every morphism `f : X → Y` of varieties, `f_*`, `f_!`, `f^*` and `f^!`, together with the duality `D`, external product `⊠`, the Hodge tensor product `M ⊗^H N = Δ^*(M ⊠ N)` and Tate twists, with adjunctions, composition, proper base change, the projection formula and the open–closed localization triangles. The rational realization commutes with the Betti operations of 1.2, and the filtered de Rham realization with the normalized `D`-module transfer. `⊗^H` is not the unshifted `O`-module tensor product of left `D`-modules. On a smooth `d`-fold `D(pℚ_X) = pℚ_X(d)`, and `(m)` lowers weights by `2m` and shifts `F^p` to `F^{p+m}` (Sai90, Theorem 0.1, p. 222, Sai90 lines 73–80, for morphisms of arbitrary varieties; Introduction 0.1–0.3, pp. 222–224; §§4.2–4.5, pp. 315–325, with Theorem 4.3, p. 319, Sai90 lines 3358–3370, and §4.4, pp. 321–322, Sai90 lines 3426–3445; FSY, Appendix A.2, pp. 61–63, whose dual Tate twist is corrected to `(d)`). *Proof route:* external products and projective direct images first, by 4.5 and weight dévissage; open extensions with locally principal complement and inverse images by admissible gluing; for a quasi-projective morphism, the cohomological direct images through a factorization as an open immersion with locally principal complement followed by a projective morphism, independent of the factorization by the uniqueness of the open extensions (Sai90, Introduction, Sai90 lines 107–116); for affine source and target derive them, and for arbitrary varieties use finite affine open covers compatible with `f` and Čech resolutions whose terms are acyclic for the direct images between the intersections, independent of the covers by passing to a common refinement (Sai90, Theorem 4.3 and its proof); `f^*` and `f^!` as the adjoints of `f_*` and `f_!`, constructed through the factorization `X → X × Y → Y` of `f` by its graph, with closed immersions treated by Čech complexes of affine covers of the complement (Sai90, §4.4); dual operations by `D`; the tensor product from the diagonal. *Needs:* 4.5, 4.6, 4.7; 1.2; SpringerResolutionAndCharacteristicCycles §9.1 and gap:regular-holonomic-stability; SchemeAndStackFoundations §4.11 (blowing up a boundary to make it locally principal); `TauCeti.Hodge.tate`, `TauCeti.Hodge.HodgeStructureOn.tateTwist`.
 
 API:
 
@@ -566,10 +603,11 @@ API:
 - For `id_pt` all operations are the identity or the linear-algebra operations on rational mixed Hodge structures.
 - `D(pℚ_{A¹}) = pℚ_{A¹}(1)`, of weight `1 − 2 = −1`; the printed twist `(−1)` would give weight `3`.
 - For `X` a smooth `d`-fold, `pℚ_X ⊗^H pℚ_X = Δ^*(ℚ_{X×X}[2d]) = pℚ_X[d]`; using `O_X ⊗ O_X` as the tensor loses the shift.
+- The affine-cover construction agrees with the projective one. For `a : P¹ → pt` and the cover by two affine lines meeting in `G_m`, the Čech computation gives the Mayer–Vietoris sequence of mixed Hodge structures, with `H⁰ = ℚ`, `H¹ = coker(ℚ² → ℚ) = 0` and `H² ≅ H¹(G_m) = ℚ(−1)` through the connecting map, which is the projective direct image of 4.5 (`ℚ` and `ℚ(−1)` in degrees `−1` and `1` after the shift of `pℚ_{P¹}`).
 
 ### 5.2 Weight bounds and duality
 
-**Theorem.** Say `M ∈ D^b MHM(X)` has weights `≤ w` (resp. `≥ w`) when `H^j M` has weights `≤ w + j` (resp. `≥ w + j`) for all `j`. Then `f_!` and `f^*` preserve weights `≤ w`, `f_*` and `f^!` preserve weights `≥ w`, `D` sends weights `≤ w` to weights `≥ −w` and weights `≥ w` to weights `≤ −w`, and `(m)` sends weights `≤ w` (resp. `≥ w`) to weights `≤ w − 2m` (resp. `≥ w − 2m`). For a pure `M` of weight `w` and `f` projective, `H^j f_* M` is pure of weight `w + j` (Sai90, Introduction, p. 225, Sai90 lines 166–171; §4.5, (4.5.1)–(4.5.2), p. 324, Sai90 lines 3513–3519; FSY, Proposition A.19 and its proof, pp. 66–67). The duality bound negates the weight: a polarization of a pure `M` of weight `w` is an isomorphism `M ≅ D M(−w)`, so `D M` is pure of weight `−w` (Sai88, (0.9), p. 852, Sai88 lines 138–140), and the mixed statement is Sai90, Remark 4.6(1), (4.6.1), p. 328, Sai90 lines 3656–3662. The one-sided bounds assert nothing about purity for nonproper `f`. *Proof route:* admissible gluing and specialization bounds with 4.5; factor `f` through a compactification and bound open extensions; duality for the opposite bound. *Needs:* 5.1; 4.5, 4.7.
+**Theorem.** Say `M ∈ D^b MHM(X)` has weights `≤ w` (resp. `≥ w`) when `H^j M` has weights `≤ w + j` (resp. `≥ w + j`) for all `j`. Then, for every morphism `f` of varieties, `f_!` and `f^*` preserve weights `≤ w`, `f_*` and `f^!` preserve weights `≥ w`, `D` sends weights `≤ w` to weights `≥ −w` and weights `≥ w` to weights `≤ −w`, and `(m)` sends weights `≤ w` (resp. `≥ w`) to weights `≤ w − 2m` (resp. `≥ w − 2m`). For `f` proper, `f_! = f_*`, so for a pure `M` of weight `w` each `H^j f_* M` is pure of weight `w + j`; for `f` projective this is 4.5 (Sai90, Introduction, p. 225, Sai90 lines 166–171; §4.5, (4.5.1)–(4.5.4), p. 324, Sai90 lines 3513–3527; FSY, Proposition A.19 and its proof, pp. 66–67). The duality bound negates the weight: a polarization of a pure `M` of weight `w` is an isomorphism `M ≅ D M(−w)`, so `D M` is pure of weight `−w` (Sai88, (0.9), p. 852, Sai88 lines 138–140), and the mixed statement is Sai90, Remark 4.6(1), (4.6.1), p. 328, Sai90 lines 3656–3662. The one-sided bounds assert nothing about purity for nonproper `f`. *Proof route:* the bounds are local on the target. For a projective morphism use 4.5 with weight dévissage, and for an open immersion with locally principal complement the admissible gluing and specialization bounds; a quasi-projective morphism is an open immersion followed by a projective morphism, and blowing up the boundary makes the complement locally principal; an open immersion is quasi-projective over each affine open of its target; a proper morphism is reduced to a projective one by Chow's lemma, through a projective modification and the decomposition of pure complexes (Sai90, §4.5, Sai90 lines 3518–3527); a general `f` is an open immersion followed by a proper morphism, by a dense compactification; duality gives the opposite bounds. *Needs:* 5.1; 4.5, 4.7; EtaleCohomologyFoundations §§G.1–G.2 (`nagataCompactification`); SchemeAndStackFoundations §§4.11, 4.12 (`chow_lemma`).
 
 **Checks.**
 
@@ -578,6 +616,7 @@ API:
 - For `a : P¹ → pt`, `H^j a_* pℚ_{P¹}` is pure of weight `1 + j` (`ℚ` in degree `−1`, `ℚ(−1)` in degree `1`), as the projective case requires.
 - Duality on Tate lines of a point: `ℚ(−1)` has weight `2`, hence weights `≤ 2`, and `D ℚ(−1) = ℚ(1)` has weight `−2`, so it has weights `≥ −2` and not weights `≥ 2`; starting from `ℚ(1)`, of weights `≥ −2`, the dual `ℚ(−1)` has weights `≤ 2`. A duality that kept the bound `w` fails both. On `A¹`, `pℚ_{A¹}` of weight `1` has dual `pℚ_{A¹}(1)` of weight `−1`, as in 5.1.
 - Duality with a degree shift: `M = ℚ[−1]` on a point has `H¹ M = ℚ` of weight `0 ≤ −1 + 1`, so weights `≤ −1`; `D M = ℚ[1]` has `H^{−1} = ℚ` of weight `0 ≥ 1 − 1`, so weights `≥ 1`.
+- Properness, not projectivity, gives purity: for a smooth proper threefold `X` that is not projective and `a : X → pt`, `H^j a_* pℚ_X = H^{j+3}(X, ℚ)` is pure of weight `3 + j`, the purity of the cohomology of a smooth proper variety; a statement restricted to projective `f` says nothing about it, and for the open `G_m → pt` the two bounds differ as in the first Check.
 
 ### 5.3 Hodge nearby and vanishing cycles
 
@@ -633,11 +672,11 @@ For `f : G_m → A¹` the inclusion, `H⁰ f_* pℚ_{G_m} = j_* pℚ_{G_m}` has 
 
 ### Dependencies
 
-5.1 needs 4.5–4.7, 1.2, SpringerResolutionAndCharacteristicCycles §§9.1–9.7 and Tau Ceti's Tate twists; 5.2 needs 5.1, 4.5, 4.7; 5.3 needs 4.2, 4.6, 5.1, 1.4, LefschetzPencilsAndVanishingCycles §§1.3, 1.5, 1.7 and ComplexComparisonPartII §C5.6; 5.4 needs 4.4, 5.1, 5.3; 5.5 needs 5.1, 5.2, 1.3; 5.6 needs 5.1, 4.7, 3.3.
+5.1 needs 4.5–4.7, 1.2, SpringerResolutionAndCharacteristicCycles §§9.1–9.7, SchemeAndStackFoundations §4.11 and Tau Ceti's Tate twists; 5.2 needs 5.1, 4.5, 4.7, EtaleCohomologyFoundations §§G.1–G.2 and SchemeAndStackFoundations §§4.11–4.12; 5.3 needs 4.2, 4.6, 5.1, 1.4, LefschetzPencilsAndVanishingCycles §§1.3, 1.5, 1.7 and ComplexComparisonPartII §C5.6; 5.4 needs 4.4, 5.1, 5.3; 5.5 needs 5.1, 5.2, 1.3; 5.6 needs 5.1, 4.7, 3.3.
 
-## Layer 6: Exponential mixed Hodge structures and the projector
+## Layer 6: Exponential mixed Hodge structures, the projector and the classical objects
 
-This layer defines exponential mixed Hodge structures as the mixed Hodge modules on the affine line with vanishing global Betti cohomology, constructs the projector `Π` by additive convolution with `K = j_! pℚ_{G_m}`, and builds the exponential tensor product, exponential weights and the exact faithful de Rham fibre. Exponential weights are distinguished from the ambient weights on `MHM(A¹)`.
+This layer defines exponential mixed Hodge structures as the mixed Hodge modules on the affine line with vanishing global Betti cohomology, constructs the projector `Π` by additive convolution with `K = j_! pℚ_{G_m}`, and builds the exponential tensor product, exponential weights and the exact faithful de Rham fibre. Exponential weights are distinguished from the ambient weights on `MHM(A¹)`. It ends with the classical objects: the fully faithful tensor functor `V ↦ Π i_{0*} V` from graded-polarizable rational mixed Hodge structures, with `φ_{θ,1}` as inverse on its image, and the Fourier criterion for an object to be classical. An integral jumping set is not the definition of classical.
 
 ### 6.1 Exponential mixed Hodge structures
 
@@ -733,17 +772,34 @@ API:
 - For `N = O_{A¹}`, `FT O = δ_0` and `δ_0(∗0) = 0`, matching `Π pℚ_{A¹} = 0`.
 - The localization is in the Fourier coordinate `t`, not in `θ`: localizing `δ_0` in `θ` would give zero, while `Π δ_0 ℚ = K ≠ 0`.
 
+### 6.7 The classical embedding
+
+**Construction.** Let `MHS_gp` be the graded-polarizable rational mixed Hodge structures of finite dimension, realized on `TauCeti.Hodge.MixedHodgeStructure` with the rational space as integral group and the identity as rational model. Define `I(V) = Π i_{0*} V` for `i_0 : {0} → A¹_θ`. Prove that `I` is exact, fully faithful and symmetric monoidal, with `φ_{θ,1} I(V) = V`. Call an exponential mixed Hodge structure classical when it lies in the essential image of `I`. Its exponential weight filtration is `I(W V)`; this does not identify its ambient weights with `W V`. An object `Π N` is classical exactly when the localized Fourier transform `(FT N)(∗0)` of 6.6 is a constant connection on `G_m`, and then the Hodge data are induced (FSY, Lemma A.12, p. 65, and proof of Theorem A.24(3), p. 70). No new mixed Hodge vector-space structure is introduced. *Proof route:* constants have zero vanishing cycles, so `φ_1 Π i_{0*} = id`; full faithfulness from the adjunction of 6.2 and the punctual supported-category equivalence (4.6); tensor compatibility from convolution of punctual modules; the criterion from 6.6 and 5.6: if `(FT N)(∗0)` is constant of rank `r`, then by 6.6 and inversion (2.2) the module underlying `Π N` is `(j_! O_{G_m})^r`, so the adjunction `j_! j^* Π N → Π N` is an isomorphism (its rational realization is, 4.7); `j^* Π N` is a smooth mixed Hodge module on `G_m` with constant local system, hence `a^* V[1]` by 5.6, and `j_!(a^* V[1]) = K ⊗ V = I(V)`; conversely, if `Π N ≅ I(V)`, then `(FT N)(∗0) ≅ FT Π N = FT I(V) = O(∗0) ⊗ V`. *Needs:* 6.2, 6.3, 6.4, 6.6; 2.2; 4.7; 5.1, 5.3, 5.6; `TauCeti.Hodge.MixedHodgeStructure`.
+
+API:
+
+- `Hom(I(V), I(V′)) ≅ Hom_{MHS}(V, V′)`.
+- `φ_{θ,1} ∘ I ≅ id` and `φ_{θ,1} ∘ Π ≅ φ_{θ,1}`.
+- `I(V ⊗ V′) ≅ I(V) ⊗_E I(V′)`, with `I(ℚ) = K`.
+- `W^E_n I(V) = I(W_n V)`.
+
+**Checks.**
+
+- `I(ℚ) = K`, not `δ_0 ℚ`.
+- `I(ℚ(m))` has exponential weight `−2m` and `φ_{θ,1} I(ℚ(m))` is `TauCeti.Hodge.tate m` rationalized.
+- `Π δ_a ℚ` for `a ≠ 0` has `φ_{θ,1} = 0` at the origin but nonzero fibre, so it is not classical; and an object whose irregular Hodge numbers happen to be integral is not thereby classical (integrality of jumps is neither the definition nor a sufficient criterion).
+
 ### Examples
 
-For `N = δ_a ℚ` with `a ≠ 0`, `Π N = δ_a ⋆ K = j_{a!} pℚ_{A¹ ∖ {a}}`, its exponential weight is `0`, its de Rham fibre is `ℂ`, and its Fourier transform `E^{at}(∗0)` is a localized exponential: the projector of a translated point is not classical (8.1).
+For `N = δ_a ℚ` with `a ≠ 0`, `Π N = δ_a ⋆ K = j_{a!} pℚ_{A¹ ∖ {a}}`, its exponential weight is `0`, its de Rham fibre is `ℂ`, and its Fourier transform `E^{at}(∗0)` is a localized exponential: the projector of a translated point is not classical (6.7).
 
 ### Dependencies
 
-6.1 needs 4.6, 4.7, 5.1 and 1.3; 6.2 needs 6.1, 2.3, 5.1 and 5.5; 6.3 needs 6.2, 2.3, 2.4 and 5.1; 6.4 needs 6.2, 6.3, 4.7 and 5.2; 6.5 needs 6.1–6.4, 2.2, 2.4, 1.5, 4.7, SpringerResolutionAndCharacteristicCycles §9.2 and PadicDifferentialEquationsAndRigidCohomology §RD.6.53; 6.6 needs 6.2, 2.2–2.4 and 5.5.
+6.1 needs 4.6, 4.7, 5.1 and 1.3; 6.2 needs 6.1, 2.3, 5.1 and 5.5; 6.3 needs 6.2, 2.3, 2.4 and 5.1; 6.4 needs 6.2, 6.3, 4.7 and 5.2; 6.5 needs 6.1–6.4, 2.2, 2.4, 1.5, 4.7, SpringerResolutionAndCharacteristicCycles §9.2 and PadicDifferentialEquationsAndRigidCohomology §RD.6.53; 6.6 needs 6.2, 2.2–2.4 and 5.5; 6.7 needs 6.2–6.4, 6.6, 2.2, 4.7, 5.1, 5.3, 5.6 and Tau Ceti's mixed Hodge structures.
 
-## Layer 7: The Deligne filtration and the strict bifiltered realization
+## Layer 7: The Deligne filtration, the strict bifiltered realization and its classical case
 
-This layer constructs the rational Deligne filtration on the exponential twist of a mixed Hodge module on `A¹`, normalized by the punctual classical object; proves the filtered Laplace specialization formula, polarized strictness of Fourier–Laplace transformation on `P¹`, and `E₁`-degeneration; and factors the de Rham realization through `Π`, strictly for `W_n ∩ F^λ` simultaneously.
+This layer constructs the rational Deligne filtration on the exponential twist of a mixed Hodge module on `A¹`, normalized by the punctual classical object; proves the filtered Laplace specialization formula, polarized strictness of Fourier–Laplace transformation on `P¹`, and `E₁`-degeneration; and factors the de Rham realization through `Π`, strictly for `W_n ∩ F^λ` simultaneously. On the classical objects of 6.7 the irregular filtration is the classical Hodge filtration.
 
 ### 7.1 The rational Deligne filtration
 
@@ -811,7 +867,7 @@ API:
 
 ### 7.6 The strict bifiltered exponential realization
 
-**Theorem.** The functor `N ↦ (ω N, W, F_irr)` factors through `Π`. Every morphism `a : N → N′` of mixed Hodge modules on `A¹` induces a strictly bifiltered map: `a(W_n ω N ∩ F^λ_irr ω N) = im(a) ∩ W_n ω N′ ∩ F^λ_irr ω N′` for every `n` and rational `λ`. The filtered inclusion from the Deligne complex is injective; the fibre has finitely many rational Hodge jumps and integral exponential weights, with strict bifiltrations on kernels, images and cokernels (FSY, Proposition A.10 and its proof, p. 65; ESY, Theorem 3.3.1, Remark 3.3.2 and Lemma 3.3.3, p. 25). The weight filtration on `ω` is defined from `W^E` (6.4), not from the ambient `W`. *Proof route:* 7.5 gives injectivity; constants have zero fibre at every index, so strict exactness for the kernel and cokernel of `η` descends the bifiltration through `Π`; `F`, `V`-bistrictness of morphisms of mixed Hodge modules makes the Deligne-filtered twisted complex exact on short exact sequences, so by 7.5 `F^λ_irr ∘ ω` is exact; applied to `W_n N₁ ↠ W_n(im a) ↪ W_n N₂` with the `W`-strictness of `a` this gives the intersection statement, not only two separate strictness statements. *Needs:* 7.1, 7.5; 6.4, 6.5; 4.7; 5.3.
+**Theorem.** The functor `N ↦ (ω N, W, F_irr)` factors through `Π`. Every morphism `a : N → N′` of mixed Hodge modules on `A¹` induces a strictly bifiltered map: `a(W_n ω N ∩ F^λ_irr ω N) = im(a) ∩ W_n ω N′ ∩ F^λ_irr ω N′` for every `n` and rational `λ`. The filtered inclusion from the Deligne complex is injective; the fibre has finitely many rational Hodge jumps and integral exponential weights, with strict bifiltrations on kernels, images and cokernels (FSY, Proposition A.10 and its proof, p. 65; ESY, Theorem 3.3.1, Remark 3.3.2 and Lemma 3.3.3, p. 25; the bistrictness of morphisms in Sabbah's general setting of irregular mixed Hodge modules is Sab18, Theorems 0.2(2), 0.3(2) and 0.3(4), Sab18 lines 185 and 196–205). The weight filtration on `ω` is defined from `W^E` (6.4), not from the ambient `W`. *Proof route:* 7.5 gives injectivity; constants have zero fibre at every index, so strict exactness for the kernel and cokernel of `η` descends the bifiltration through `Π`; `F`, `V`-bistrictness of morphisms of mixed Hodge modules makes the Deligne-filtered twisted complex exact on short exact sequences, so by 7.5 `F^λ_irr ∘ ω` is exact; applied to `W_n N₁ ↠ W_n(im a) ↪ W_n N₂` with the `W`-strictness of `a` this gives the intersection statement, not only two separate strictness statements. *Needs:* 7.1, 7.5; 6.4, 6.5; 4.7; 5.3.
 
 **Checks.**
 
@@ -819,38 +875,9 @@ API:
 - For `η : δ_0 ℚ → K`, `ω η` is an isomorphism of bifiltered lines of weight `0` and Hodge jump `0`.
 - For `pℚ_{A¹} → j_* pℚ_{G_m}`, the source has zero fibre and the map on fibres is `0 → ℂ`, strict for both filtrations.
 
-### Examples
+### 7.7 Agreement of classical and irregular filtrations
 
-For `N = j_* pℚ_{G_m}` on `A¹`, `Π N = Π δ_0 ℚ(−1) = I(ℚ(−1))`; its fibre is `ℂ`, of exponential weight `2` with `F¹_irr = ℂ` and `F^{1+ε}_irr = 0`, computed by 7.1 on the two-term complex of `δ_0 ℚ(−1)`.
-
-### Dependencies
-
-7.1 needs 4.1, 4.2, 5.1, 6.5 and 2.1; 7.2 needs 7.1, 4.1, 4.2, 4.5 and 5.3; 7.3 needs 4.3, 3.2, 3.4 and 1.5; 7.4 needs 7.1, 7.2, 7.3, 4.3 and 4.5; 7.5 needs 7.2, 7.4, 4.5, 4.7 and 5.3; 7.6 needs 7.1, 7.5, 6.4, 6.5, 4.7 and 5.3.
-
-## Layer 8: Classical mixed Hodge structures inside exponential ones
-
-This layer constructs the fully faithful tensor functor `V ↦ Π i_{0*} V` from graded-polarizable rational mixed Hodge structures to exponential ones, with `φ_{θ,1}` as inverse on its image, and proves that on the classical image the irregular filtration is the classical Hodge filtration. An integral jumping set is not the definition of classical.
-
-### 8.1 The classical embedding
-
-**Construction.** Let `MHS_gp` be the graded-polarizable rational mixed Hodge structures of finite dimension, realized on `TauCeti.Hodge.MixedHodgeStructure` with the rational space as integral group and the identity as rational model. Define `I(V) = Π i_{0*} V` for `i_0 : {0} → A¹_θ`. Prove that `I` is exact, fully faithful and symmetric monoidal, with `φ_{θ,1} I(V) = V`. Call an exponential mixed Hodge structure classical when it lies in the essential image of `I`. Its exponential weight filtration is `I(W V)`; this does not identify its ambient weights with `W V`. An object `Π N` is classical exactly when the localized Fourier transform `(FT N)(∗0)` of 6.6 is a constant connection on `G_m`, and then the Hodge data are induced (FSY, Lemma A.12, p. 65, and proof of Theorem A.24(3), p. 70). No new mixed Hodge vector-space structure is introduced. *Proof route:* constants have zero vanishing cycles, so `φ_1 Π i_{0*} = id`; full faithfulness from the adjunction of 6.2 and the punctual supported-category equivalence (4.6); tensor compatibility from convolution of punctual modules; the criterion from 6.6 and 5.6: if `(FT N)(∗0)` is constant of rank `r`, then by 6.6 and inversion (2.2) the module underlying `Π N` is `(j_! O_{G_m})^r`, so the adjunction `j_! j^* Π N → Π N` is an isomorphism (its rational realization is, 4.7); `j^* Π N` is a smooth mixed Hodge module on `G_m` with constant local system, hence `a^* V[1]` by 5.6, and `j_!(a^* V[1]) = K ⊗ V = I(V)`; conversely, if `Π N ≅ I(V)`, then `(FT N)(∗0) ≅ FT Π N = FT I(V) = O(∗0) ⊗ V`. *Needs:* 6.2, 6.3, 6.4, 6.6; 2.2; 4.7; 5.1, 5.3, 5.6; `TauCeti.Hodge.MixedHodgeStructure`.
-
-API:
-
-- `Hom(I(V), I(V′)) ≅ Hom_{MHS}(V, V′)`.
-- `φ_{θ,1} ∘ I ≅ id` and `φ_{θ,1} ∘ Π ≅ φ_{θ,1}`.
-- `I(V ⊗ V′) ≅ I(V) ⊗_E I(V′)`, with `I(ℚ) = K`.
-- `W^E_n I(V) = I(W_n V)`.
-
-**Checks.**
-
-- `I(ℚ) = K`, not `δ_0 ℚ`.
-- `I(ℚ(m))` has exponential weight `−2m` and `φ_{θ,1} I(ℚ(m))` is `TauCeti.Hodge.tate m` rationalized.
-- `Π δ_a ℚ` for `a ≠ 0` has `φ_{θ,1} = 0` at the origin but nonzero fibre, so it is not classical; and an object whose irregular Hodge numbers happen to be integral is not thereby classical (integrality of jumps is neither the definition nor a sufficient criterion).
-
-### 8.2 Agreement of classical and irregular filtrations
-
-**Theorem.** If `Π N^H` is classical, there is a natural bifiltered isomorphism `(ω N, W, F_irr) ≅ (φ_{θ,1} N^H)_ℂ` with its classical `W` and `F`; at rational `λ` the right-hand filtration is `F^{⌈λ⌉}`. Thus wherever classicality holds, the rational irregular filtration is exactly the integer-indexed Hodge filtration (FSY, Proposition A.13 and its proof, p. 65). *Proof route:* for `N = i_{0*} V` the filtered point direct image `F_p = Σ_k F_{p−1−k} V ∂^k` makes the twisted de Rham complex filtered quasi-isomorphic to `V[−1]` with its original `F`, including the codimension-one shift; then 7.6, full faithfulness and `φ_1 Π = φ_1` pass to any representative. *Needs:* 8.1; 7.1, 7.6; 4.1; 5.3.
+**Theorem.** If `Π N^H` is classical, there is a natural bifiltered isomorphism `(ω N, W, F_irr) ≅ (φ_{θ,1} N^H)_ℂ` with its classical `W` and `F`; at rational `λ` the right-hand filtration is `F^{⌈λ⌉}`. Thus wherever classicality holds, the rational irregular filtration is exactly the integer-indexed Hodge filtration (FSY, Proposition A.13 and its proof, p. 65). *Proof route:* for `N = i_{0*} V` the filtered point direct image `F_p = Σ_k F_{p−1−k} V ∂^k` makes the twisted de Rham complex filtered quasi-isomorphic to `V[−1]` with its original `F`, including the codimension-one shift; then 7.6, full faithfulness and `φ_1 Π = φ_1` pass to any representative. *Needs:* 6.7; 7.1, 7.6; 4.1; 5.3.
 
 **Checks.**
 
@@ -860,19 +887,19 @@ API:
 
 ### Examples
 
-For the pair `(G_m, x)` of Layer 9, `H¹ = I(ℚ(−1))` and `H¹_c = I(ℚ(0))`, both classical; their fibres are lines with irregular jumps `1` and `0`.
+For `N = j_* pℚ_{G_m}` on `A¹`, `Π N = Π δ_0 ℚ(−1) = I(ℚ(−1))`; its fibre is `ℂ`, of exponential weight `2` with `F¹_irr = ℂ` and `F^{1+ε}_irr = 0`, computed by 7.1 on the two-term complex of `δ_0 ℚ(−1)`.
 
 ### Dependencies
 
-8.1 needs 6.2–6.4, 6.6, 2.2, 4.7, 5.1, 5.3, 5.6 and Tau Ceti's mixed Hodge structures; 8.2 needs 8.1, 7.1, 7.6, 4.1 and 5.3.
+7.1 needs 4.1, 4.2, 5.1, 6.5 and 2.1; 7.2 needs 7.1, 4.1, 4.2, 4.5 and 5.3; 7.3 needs 4.3, 3.2, 3.4 and 1.5; 7.4 needs 7.1, 7.2, 7.3, 4.3 and 4.5; 7.5 needs 7.2, 7.4, 4.5, 4.7 and 5.3; 7.6 needs 7.1, 7.5, 6.4, 6.5, 4.7 and 5.3; 7.7 needs 6.7, 7.1, 7.6, 4.1 and 5.3.
 
-## Layer 9: Cohomology of a pair and its weights
+## Layer 8: Cohomology of a pair, its weights and its logarithmic models
 
-This layer constructs ordinary, compactly supported and middle exponential cohomology of a smooth quasi-projective pair `(U, f)`, with coefficients; identifies the fibres with unshifted twisted de Rham groups; and proves Künneth, duality, the middle-weight criterion, divisor localization and the affine-line and torus-sum examples. At `f = 0` it recovers the mixed Hodge structures given by Hodge modules.
+This layer constructs ordinary, compactly supported and middle exponential cohomology of a smooth quasi-projective pair `(U, f)`, with coefficients; identifies the fibres with unshifted twisted de Rham groups; and proves Künneth, duality, the middle-weight criterion, divisor localization and the affine-line and torus-sum examples. At `f = 0` it recovers the mixed Hodge structures given by Hodge modules. It then constructs the pole-order logarithmic filtration on good and non-degenerate compactifications of a pair, proves its blow-up invariance, model independence and `E₁`-degeneration and its agreement with the irregular Hodge filtration of 8.2, and ends with the filtered Künneth and duality theorems.
 
-### 9.1 Ordinary, compact and middle cohomology of a pair
+### 8.1 Ordinary, compact and middle cohomology of a pair
 
-**Construction.** For `U` smooth quasi-projective of dimension `d`, `f : U → A¹_θ` and `N^H ∈ MHM(U)`, set `N^r_* = H^{r−d} f_* N^H`, `N^r_! = H^{r−d} f_! N^H` and `N^r_mid = im(N^r_! → N^r_*)`, and define `H^r(U, N^H, f) = Π N^r_*`, `H^r_c(U, N^H, f) = Π N^r_!` and `H^r_mid(U, N^H, f) = Π N^r_mid`, with their exponential weights and filtered de Rham fibres. For `N^H = pℚ_U` the coefficient is omitted. At `f = 0` these are `I` applied to the mixed Hodge structures `H^r(U)`, `H^r_c(U)` and their image, computed by Hodge modules (FSY, (A.14), p. 65; Example A.15 and Definition A.18, p. 66). The shift `r − d` depends on `U`, also for supported coefficients. *Proof route:* 5.1 direct images and perverse cohomology in degree `r − d`; abelianness and exactness of `Π` commute `Π` with the image; for `f = 0`, factor through the point and use 8.1. *Needs:* 5.1; 4.7; 6.2, 6.4, 6.5; 8.1; 7.6.
+**Construction.** For `U` smooth quasi-projective of dimension `d`, `f : U → A¹_θ` and `N^H ∈ MHM(U)`, set `N^r_* = H^{r−d} f_* N^H`, `N^r_! = H^{r−d} f_! N^H` and `N^r_mid = im(N^r_! → N^r_*)`, and define `H^r(U, N^H, f) = Π N^r_*`, `H^r_c(U, N^H, f) = Π N^r_!` and `H^r_mid(U, N^H, f) = Π N^r_mid`, with their exponential weights and filtered de Rham fibres. For `N^H = pℚ_U` the coefficient is omitted. At `f = 0` these are `I` applied to the mixed Hodge structures `H^r(U)`, `H^r_c(U)` and their image, computed by Hodge modules (FSY, (A.14), p. 65; Example A.15 and Definition A.18, p. 66). The shift `r − d` depends on `U`, also for supported coefficients. *Proof route:* 5.1 direct images and perverse cohomology in degree `r − d`; abelianness and exactness of `Π` commute `Π` with the image; for `f = 0`, factor through the point and use 6.7. *Needs:* 5.1; 4.7; 6.2, 6.4, 6.5; 6.7; 7.6.
 
 API:
 
@@ -887,29 +914,29 @@ API:
 - `H^r(A¹, t) = H^r_c(A¹, t) = 0` in all degrees: `f_* pℚ_{A¹} = pℚ_{A¹}` is constant and killed by `Π`.
 - For `(A¹, 0)`, `H⁰ = I(ℚ)` and `H²_c = I(ℚ(−1))`, all other groups zero; the middle object is the image in `EMHS`, not an independently chosen subspace.
 
-### 9.2 Twisted de Rham realization of pair cohomology
+### 8.2 Twisted de Rham realization of pair cohomology
 
-**Theorem.** With left coefficient module `N` underlying `N^H`, there are natural identifications `ω H^r(U, N^H, f) ≅ H^r_dR(U, N ⊗ E^f)`, `ω H^r_c ≅ H^r_{dR,c}(U, N ⊗ E^f)`, and `ω H^r_mid ≅ im(H^r_{dR,c} → H^r_dR)`. They are bifiltered for the pushforward Deligne filtration and the exponential weights, and commute with the long exact sequences of coefficients (FSY, displays (A.16)–(A.17) and the following paragraph, p. 66, where the filtered statement is deduced from Sabbah–Yu; here it is deduced from 7.5). Unshifted de Rham degrees are used, and compact de Rham cohomology is defined by holonomic `!` direct image. *Proof route:* the projection formula for exponential twisting applied to `f_*` and `f_!`; by 6.5 the exponential fibre of every perverse cohomology term has cohomology only in degree one, so the direct-image spectral sequence has one row; the shift `r − d`; 7.5 for the filtered identification along a compactification of `f`, and 7.6 for filtered images. *Needs:* 9.1; 6.5; 7.5, 7.6; 5.1; 2.1.
+**Theorem.** With left coefficient module `N` underlying `N^H`, there are natural identifications `ω H^r(U, N^H, f) ≅ H^r_dR(U, N ⊗ E^f)`, `ω H^r_c ≅ H^r_{dR,c}(U, N ⊗ E^f)`, and `ω H^r_mid ≅ im(H^r_{dR,c} → H^r_dR)`. They are bifiltered for the pushforward Deligne filtration and the exponential weights, and commute with the long exact sequences of coefficients (FSY, displays (A.16)–(A.17) and the following paragraph, p. 66, FSY lines 3006–3014, where the filtered statement is deduced from SY15, Theorem 1.3(4), SY15 lines 93–98, the compatibility of the irregular Hodge filtration with projective direct images; here it is deduced from 7.5). Unshifted de Rham degrees are used, and compact de Rham cohomology is defined by holonomic `!` direct image. *Proof route:* the projection formula for exponential twisting applied to `f_*` and `f_!`; by 6.5 the exponential fibre of every perverse cohomology term has cohomology only in degree one, so the direct-image spectral sequence has one row; the shift `r − d`; 7.5 for the filtered identification along a compactification of `f`, and 7.6 for filtered images. *Needs:* 8.1; 6.5; 7.5, 7.6; 5.1; 2.1.
 
 **Checks.**
 
 - For a point supported in a `d`-fold, the only nonzero unshifted de Rham degree is `d`, which the normalization must keep.
 - For `(G_m, x)`, `H¹_dR(G_m, E^x)` is one-dimensional, matching `ω I(ℚ(−1)) = ℂ`.
-- For `(A¹, t)`, `H^r_dR(A¹, E^t) = 0` for all `r` (2.1), matching 9.1.
+- For `(A¹, t)`, `H^r_dR(A¹, E^t) = 0` for all `r` (2.1), matching 8.1.
 
-### 9.3 Künneth and duality for exponential cohomology
+### 8.3 Künneth and duality for exponential cohomology
 
-**Theorem.** For smooth `U`, `V` and regular functions `f`, `g`, the pair `(U × V, f ⊞ g)` has `H^r ≅ ⊕_{a+b=r} H^a(U, f) ⊗_E H^b(V, g)` as exponential mixed Hodge structures, and similarly for compact supports, with `W^E` the convolution of the two weight filtrations. For `U` of dimension `d` the trace pairing `H^r_c(U, f) ⊗_E H^{2d−r}(U, −f) → I(ℚ(−d))` is perfect and compatible with `W^E`; with coefficients, the dual coefficient has the normalization of 5.1 (FSY, Example A.22, pp. 67–68; Yu, Theorem 2.2 and its proof, pp. 14–16). The dual exponential has the sign `−f`. Compatibility with `F_irr` is 12.9. *Proof route:* external product, projection formula and `E^{f⊞g} = E^f ⊠ E^g`; `Π` and the exact monoidal fibre give the Künneth decomposition; duality of `f_!` and `f_*` with `D(pℚ_U) = pℚ_U(d)` and the trace give the twist `(−d)`. *Needs:* 9.1, 9.2; 6.3, 6.5; 7.6; 5.1; 2.5; `TauCeti.Hodge.tate`.
+**Theorem.** For smooth quasi-projective `U`, `V` and regular functions `f`, `g`, the pair `(U × V, f ⊞ g)` has `H^r ≅ ⊕_{a+b=r} H^a(U, f) ⊗_E H^b(V, g)` as exponential mixed Hodge structures, and similarly for compact supports, with `W^E` the convolution of the two weight filtrations. For `U` of dimension `d` the trace pairing `H^r_c(U, f) ⊗_E H^{2d−r}(U, −f) → I(ℚ(−d))` is perfect and compatible with `W^E`; with coefficients, the dual coefficient has the normalization of 5.1 (FSY, Example A.22, pp. 67–68; Yu, Theorem 2.2 and its proof, pp. 14–16). The dual exponential has the sign `−f`. Compatibility with `F_irr` is 8.10. *Proof route:* external product, projection formula and `E^{f⊞g} = E^f ⊠ E^g`; `Π` and the exact monoidal fibre give the Künneth decomposition; duality of `f_!` and `f_*` with `D(pℚ_U) = pℚ_U(d)` and the trace give the twist `(−d)`. *Needs:* 8.1, 8.2; 6.3, 6.5; 7.6; 5.1; 2.5; `TauCeti.Hodge.tate`.
 
 **Checks.**
 
 - `H¹_c(G_m, x) = I(ℚ)` pairs with `H¹(G_m, −x) = I(ℚ(−1))` into `I(ℚ(−1))`.
-- For `(A¹ × A¹, x + 0)`, Künneth gives `H^r = H^•(A¹, x) ⊗ H^•(A¹, 0) = 0`, consistent with 9.1.
+- For `(A¹ × A¹, x + 0)`, Künneth gives `H^r = H^•(A¹, x) ⊗ H^•(A¹, 0) = 0`, consistent with 8.1.
 - Dropping the sign fails: the cup product `H¹_c(G_m, x) ⊗ H¹(G_m, x) → H²_c(G_m, 2x)` lands in zero (`H^r_c(G_m, 2x)` vanishes for `r ≠ 1`), so only the pairing with `−f` can be perfect.
 
-### 9.4 The middle degree and the lowest weight
+### 8.4 The middle degree and the lowest weight
 
-**Theorem.** For `U` smooth of dimension `d` and constant coefficients, `H^d_c(U, f)` has exponential weights `≤ d`, `H^d(U, f)` has weights `≥ d`, and `H^d_mid(U, f)` is pure of weight `d`. The map `gr^W_d H^d_c → gr^W_d H^d` is an isomorphism if and only if `H^d_mid = W_d H^d`. All maps are strict for `F_irr` and `W` (FSY, Proposition A.19 and its proof, pp. 66–67). These are statements in the central degree `d` for the coefficient `pℚ_U` of weight `d`. *Proof route:* the weight bounds of 5.2 for `H⁰ f_! pℚ_U` and `H⁰ f_* pℚ_U`, descended by `Π`; the image has both bounds; the kernel and cokernel of `! → *`, their duality with the Tate twist and exactness of `gr^W Π`. *Needs:* 9.1, 9.3; 5.2; 6.4; 7.6.
+**Theorem.** For `U` smooth quasi-projective of dimension `d` and constant coefficients, `H^d_c(U, f)` has exponential weights `≤ d`, `H^d(U, f)` has weights `≥ d`, and `H^d_mid(U, f)` is pure of weight `d`. The map `gr^W_d H^d_c → gr^W_d H^d` is an isomorphism if and only if `H^d_mid = W_d H^d`. All maps are strict for `F_irr` and `W` (FSY, Proposition A.19 and its proof, pp. 66–67). These are statements in the central degree `d` for the coefficient `pℚ_U` of weight `d`. *Proof route:* the weight bounds of 5.2 for `H⁰ f_! pℚ_U` and `H⁰ f_* pℚ_U`, descended by `Π`; the image has both bounds; the kernel and cokernel of `! → *`, their duality with the Tate twist and exactness of `gr^W Π`. *Needs:* 8.1, 8.3; 5.2; 6.4; 7.6.
 
 **Checks.**
 
@@ -917,9 +944,9 @@ API:
 - For `(A¹, x²)`, `H⁰ f_* pℚ_{A¹} = pℚ_{A¹} ⊕ j_* L[1]` with `L` the rank-one local system of monodromy `−1` on `G_m`; `Π` kills the first summand, and `H¹_c ≅ H¹ ≅ H¹_mid` is one-dimensional and pure of weight `1`.
 - The ambient weight of the representing module must not be used: for `(G_m, x)`, `H⁰ f_* pℚ_{G_m} = j_* pℚ_{G_m}` has ambient weights `1` and `2`, while its `Π` is pure of exponential weight `2`.
 
-### 9.5 Divisor sequences for pair cohomology
+### 8.5 Divisor sequences for pair cohomology
 
-**Theorem.** Let `D ⊂ U` be a reduced divisor on which `f` vanishes. There is a long exact sequence `… → H^{r−1}_c(D) → H^r_c(U ∖ D, f) → H^r_c(U, f) → H^r_c(D) → …`, the terms on `D` being classical. If `D` is smooth there is a long exact sequence `… → H^{r−2}(D)(−1) → H^r(U, f) → H^r(U ∖ D, f) → H^{r−1}(D)(−1) → …`, compatible with the compact-to-ordinary maps. For singular `D` the ordinary sequence keeps `RΓ_D` (FSY, Example A.20 and (A.21), p. 67). *Proof route:* apply `f_!` and `Π` to 5.5 and use the zero-function comparison on `D`; for smooth `D` apply `f_*` to the second sequence of 5.5 with its twist; naturality of localization triangles. *Needs:* 5.5; 9.1, 9.2; 8.2.
+**Theorem.** For a pair `(U, f)` as in 8.1, let `D ⊂ U` be a reduced divisor on which `f` vanishes. There is a long exact sequence `… → H^{r−1}_c(D) → H^r_c(U ∖ D, f) → H^r_c(U, f) → H^r_c(D) → …`, the terms on `D` being classical. If `D` is smooth there is a long exact sequence `… → H^{r−2}(D)(−1) → H^r(U, f) → H^r(U ∖ D, f) → H^{r−1}(D)(−1) → …`, compatible with the compact-to-ordinary maps. For singular `D` the ordinary sequence keeps `RΓ_D` (FSY, Example A.20 and (A.21), p. 67). *Proof route:* apply `f_!` and `Π` to 5.5 and use the zero-function comparison on `D`; for smooth `D` apply `f_*` to the second sequence of 5.5 with its twist; naturality of localization triangles. *Needs:* 5.5; 8.1, 8.2; 7.7.
 
 **Checks.**
 
@@ -927,140 +954,19 @@ API:
 - The ordinary sequence for the same data gives `H¹(G_m, x) ≅ H⁰(D)(−1) = I(ℚ(−1))`.
 - For `D = {xy = 0}` in `A²` and `f = xy`, the ordinary sequence with `H^{r−2}(D)(−1)` is not used; `RΓ_D(A², ℚ)` has the extra node contribution of 5.5.
 
-### 9.6 Affine-line and torus-sum examples
+### 8.6 Affine-line and torus-sum examples
 
-**Theorem.** `H^r(A¹, t) = H^r_c(A¹, t) = 0` for every `r`. For `k ≥ 1`, `H^r(G_m^k, x₁ + ⋯ + x_k)` vanishes for `r ≠ k` and is `I(ℚ(−k))` for `r = k`; `H^r_c` vanishes for `r ≠ k` and is `I(ℚ(0))` for `r = k`; the compact-to-ordinary map in degree `k` is zero and `H^k_mid = 0`. For `k = 0` the point gives `I(ℚ)` in degree `0` with identity comparison. These are equalities in the classical subcategory, hence statements about both Hodge and irregular filtrations (FSY, Example A.22 and (A.23), pp. 67–68). *Proof route:* the affine identity pushforward is constant; the divisor sequences at `{0}` give `H¹(G_m, x) = I(ℚ(−1))` and `H¹_c(G_m, x) = I(ℚ)`; Künneth for the `k`-fold sum and duality for compact supports; the comparison is zero for `k ≥ 1` by weights. *Needs:* 9.1, 9.3, 9.5; 8.2; 5.2.
+**Theorem.** `H^r(A¹, t) = H^r_c(A¹, t) = 0` for every `r`. For `k ≥ 1`, `H^r(G_m^k, x₁ + ⋯ + x_k)` vanishes for `r ≠ k` and is `I(ℚ(−k))` for `r = k`; `H^r_c` vanishes for `r ≠ k` and is `I(ℚ(0))` for `r = k`; the compact-to-ordinary map in degree `k` is zero and `H^k_mid = 0`. For `k = 0` the point gives `I(ℚ)` in degree `0` with identity comparison. These are equalities in the classical subcategory, hence statements about both Hodge and irregular filtrations (FSY, Example A.22 and (A.23), pp. 67–68). *Proof route:* the affine identity pushforward is constant; the divisor sequences at `{0}` give `H¹(G_m, x) = I(ℚ(−1))` and `H¹_c(G_m, x) = I(ℚ)`; Künneth for the `k`-fold sum and duality for compact supports; the comparison is zero for `k ≥ 1` by weights. *Needs:* 8.1, 8.3, 8.5; 7.7; 5.2.
 
 **Checks.**
 
 - The ordinary and compact Hodge jumps are `k` and `0`.
 - For `k = 0` the comparison is the identity of `I(ℚ)`, which distinguishes it from a map that is zero in every case.
-- The de Rham dimensions `dim H^k_dR(G_m^k, Σ x_i) = 1` agree with 12.6: the Newton polytope is the standard simplex, of volume `1/k!`.
+- The de Rham dimensions `dim H^k_dR(G_m^k, Σ x_i) = 1` agree with 10.3: the Newton polytope is the standard simplex, of volume `1/k!`.
 
-### Examples
+### 8.7 The logarithmic pole-order complex
 
-For `(G_m, x)`: `H¹ = I(ℚ(−1))`, `H¹_c = I(ℚ)`, the comparison is zero, `H¹_mid = 0`, the ordinary filtration jumps at `1` and the compact one at `0`, and the duality pairs them into `I(ℚ(−1))`. Taking `k` factors gives the torus-sum example with `I(ℚ(−k))` and `I(ℚ)` paired into `I(ℚ(−k))`.
-
-### Dependencies
-
-9.1 needs 5.1, 4.7, 6.2, 6.4, 6.5, 8.1 and 7.6; 9.2 needs 9.1, 6.5, 7.5, 7.6, 5.1 and 2.1; 9.3 needs 9.1, 9.2, 6.3, 6.5, 7.6, 5.1 and 2.5; 9.4 needs 9.1, 9.3, 5.2, 6.4 and 7.6; 9.5 needs 5.5, 9.1, 9.2 and 8.2; 9.6 needs 9.1, 9.3, 9.5, 8.2 and 5.2.
-
-## Layer 10: The classical `tg` criterion and the zero locus
-
-### 10.1 The classical `tg` criterion
-
-**Theorem.** Let `V` be smooth quasi-projective, `g ∈ O(V)`, `M^H ∈ MHM(V)`, `U = A¹_t × V` and `f = tg`. Then all `H^r(U, pℚ_{A¹} ⊠ M^H, f)` and `H^r_c(U, pℚ_{A¹} ⊠ M^H, f)` are classical. For the coefficient `pℚ_{A¹}[∗0] ⊠ M^H` the ordinary groups are classical in every degree, and for `pℚ_{A¹}[!0] ⊠ M^H` the compact groups are. Their bifiltered fibres are the corresponding mixed Hodge structures, so `F_irr` agrees with `F`. This holds for `g = 0` and for an arbitrary, possibly singular or empty, zero locus; no tameness or nondegeneracy of `g` is assumed (FSY, Theorem A.24 and proofs (A.25)–(A.26), pp. 68–70). Here `pℚ_{A¹}[∗0] = j_* pℚ_{G_m}` and `pℚ_{A¹}[!0] = j_! pℚ_{G_m}`. *Proof route:* localize along `A¹ × g⁻¹(0)`: the supported term pushes to `θ = 0` and is classical; on the complement push along `(t, g)` to reduce to `g = τ`; the localized ordinary fibre is the Fourier de Rham complex `[M(∗0) → M(∗0)]` with differential multiplication by `τ`, acyclic since `τ` is invertible; duality with the sign involution gives the compact case; for `[∗0]`, replace `M` by `Π_τ M`, whose difference is constant and killed after localization, using 5.6 on `A¹` to see that constancy of the underlying `D`-module suffices, and 6.6; faithfulness of the fibre (6.5) and 8.2 conclude. *Needs:* 9.1, 9.2, 9.5; 8.1, 8.2; 6.5, 6.6; 2.2, 2.5; 5.1, 5.6.
-
-**Checks.**
-
-- For `V = pt` and `g = 0`, the ordinary groups are `I(ℚ)` in degree `0` and the compact ones `I(ℚ(−1))` in degree `2`.
-- For `g = 1`, all groups vanish: `f = t` and 9.6.
-- The argument uses the derived direct image of `M` and no tameness of `g`: for `g = x²` on `A¹`, with singular-looking fibre `x² = 0` (a nonreduced point), the groups are classical and computed by 10.2 on the reduced point.
-
-### 10.2 Zero-locus description of `tg` cohomology
-
-**Theorem.** For constant coefficients and `Z = g⁻¹(0)` with its reduced structure, `H^r_c(A¹ × V, tg) ≅ I(H^{r−2}_c(Z)(−1))` and `H^r(A¹ × V, tg) ≅ I(H^r_Z(V))`, as classical structures with their filtered fibres. If `Z` is a smooth divisor, `H^r_Z(V) ≅ H^{r−2}(Z)(−1)`. For `g = 0` the ordinary group is `H^r(V)` and the compact group `H^{r−2}_c(V)(−1)`; for `g` a unit both vanish (FSY, Example A.27, pp. 70–71, whose assertion that the relevant pushforward is the zero functor is corrected here). The smooth-divisor formula is not applied to `g = 0` or to singular `Z`. *Proof route:* the localized vanishing of 10.1 and the compact localization triangle reduce compact cohomology to `A¹ × Z`, where the exponential function is zero; compact Künneth with `H²_c(A¹) = ℚ(−1)`; for ordinary cohomology use `i_* i^!` and homotopy invariance in the `A¹` direction; `tg ∘ i` is the zero function, whose direct image factors through the point and is not the zero functor; purity only for a smooth divisor. *Needs:* 10.1; 9.3, 9.5; 5.1; 1.2.
-
-**Checks.**
-
-- For `g = x` on `V = A¹`, `Z` is a point: `H²_c(A², tx) = I(ℚ(−1))` and `H²(A², tx) = I(H²_{0}(A¹)) = I(ℚ(−1))`.
-- For `V = pt` and `g = 0`, the ordinary group is `I(ℚ)` in degree `0` and the compact group `I(ℚ(−1))` in degree `2`.
-- For `g = xy` on `A²`, `Z` is the node and `H^r_Z(A²)` is kept: `H²_Z = ℚ(−1)²` and `H³_Z = ℚ(−2)`, whereas a smooth-divisor formula would predict `H^{r−2}` of the normalization.
-
-### Examples
-
-For `V = A¹`, `g = x`: the pair `(A², tx)` has `H_c² = I(ℚ(−1))` and `H² = I(ℚ(−1))`; for `g` invertible both vanish; for `g = 0`, `Z = V` and the ordinary cohomology is `H^r(A¹)`, while the compact cohomology is `H^{r−2}_c(A¹)(−1)`, nonzero only for `r = 4`.
-
-### Dependencies
-
-10.1 needs 9.1, 9.2, 9.5, 8.1, 8.2, 6.5, 6.6, 2.2, 2.5, 5.1 and 5.6; 10.2 needs 10.1, 9.3, 9.5, 5.1 and 1.2.
-
-## Layer 11: Fourier cohomology, costalks and weights at infinity
-
-This layer gives the Fourier transform of a mixed Hodge module on `A¹` a cohomological mixed Hodge structure through the pair `(A¹ × A¹, tτ)`, without claiming that the Fourier transform is a mixed Hodge module; proves the costalk comparison and the pure-input Hodge-number formula; computes the constant correction of `Π`; and proves the monodromy-filtration theorem at infinity for `Π` of a pure Hodge module, keeping every primitive part.
-
-### 11.1 Classical cohomology of a Fourier transform
-
-**Construction.** For `M^H ∈ MHM(A¹_τ)`, define `H^j(A¹_t, FT M^H) = φ_{θ,1} H^{j+1}(A¹_t × A¹_τ, pℚ_{A¹} ⊠ M^H, tτ)` and similarly `H^j_c`, classical by 10.1. Their de Rham fibres are `H^j_dR(A¹, FT M)` and `H^j_{dR,c}(A¹, FT M)`; ordinary cohomology can be nonzero only for `j = 0, 1` and compact cohomology only for `j = 1, 2`. They carry the `W` and `F` of the classical pair comparison. The notation does not assert that `FT M` is a regular Hodge module; it may be irregular (FSY, Lemma A.28 and Notation A.29, p. 71). *Proof route:* 10.1 for the classical structure; compare the projection along `τ` with the Fourier kernel and its relative dimension one; 9.2 and the de Rham bounds on an affine curve; duality for the compact range. *Needs:* 10.1; 9.1, 9.2; 2.2, 2.5; 8.2.
-
-API:
-
-- The complex fibre is the ordinary or compact de Rham cohomology of `FT M`.
-- Exact sequences of inputs give long exact sequences of mixed Hodge structures.
-- The classical Hodge filtration equals the irregular filtration of the pair.
-
-**Checks.**
-
-- For `M^H = δ_0 V`, `H⁰(FT M^H) = V` and the other ordinary degrees vanish; `FT δ_0 = O` has `H⁰_dR = ℂ`.
-- For `M^H = pℚ_{A¹}`, `H¹(FT M^H) = ℚ(−1)` and `H⁰ = 0`; `FT O = δ_0` has `H¹_dR = ℂ`.
-- For `δ_a V` with `a ≠ 0`, ordinary and compact Fourier cohomology vanish (`FT δ_a = E^{at}`); the pair degree is `j + 1`, and using `j` changes the costalk formula of 11.2.
-
-### 11.2 Fourier cohomology is the costalk
-
-**Theorem.** For every `M^H ∈ MHM(A¹_τ)` there are natural isomorphisms of mixed Hodge structures `H^j(A¹_t, FT M^H) ≅ H^j i_0^! M^H` for all `j`, both sides vanishing outside `j = 0, 1`, identifying `W` and the irregular Hodge filtration on the Fourier fibre with the classical `W` and `F` of the costalk; `i_0` is the origin of the input line (FSY, Theorem A.30 and its proof, p. 71). *Proof route:* first `M = i_{0*} V`; then the triangle `i_* i^! M → M → M[∗0]`, where the Fourier de Rham complex of `M[∗0]` is acyclic because it becomes multiplication by the invertible coordinate `τ`; take cohomology and use the punctual case and 7.6. *Needs:* 11.1; 10.1; 5.1; 8.2; 6.5; 2.2.
-
-**Checks.**
-
-- For `pℚ_{A¹}` the answer is `ℚ(−1)` in degree one, which is `H¹ i_0^! pℚ`; the stalk `i_0^* pℚ = ℚ[1]` would give a different degree and twist.
-- For `δ_0 V` both sides are `V` in degree `0`.
-- For `K = j_! pℚ_{G_m}`, the map `j_! pℚ_{G_m} → j_* pℚ_{G_m}` has kernel `δ_0 ℚ` and cokernel `δ_0 ℚ(−1)`, so `H⁰ i_0^! K = ℚ` and `H¹ i_0^! K = ℚ(−1)`; on the other side `FT(j_! O) = O(∗0)` has `H⁰_dR = H¹_dR = ℂ`, matching both degrees.
-
-### 11.3 Pure-input Fourier Hodge numbers
-
-**Theorem.** Let `M^H` be pure of weight `w` with no nonzero section supported at `τ = 0`. Then `H^j_dR(A¹, FT M) = 0` for `j ≠ 1` and `H¹(A¹, FT M^H) = coker(N : ψ_{τ,1} M^H → ψ_{τ,1} M^H(−1))`. If `M` is smooth at `0`, this is `ψ_τ M^H(−1)`, pure of weight `w + 1`, and `dim gr^p_{F_irr} H¹_dR(A¹, FT M) = rank gr^{p−1}_F M` for every integer `p` (FSY, Corollary A.31(1)–(2) and its proof, p. 72). Having no punctual summand at `0` is weaker than smoothness there; the rank formula needs smoothness. *Proof route:* 11.2 and 5.4; semisimplicity rules out degree-zero costalk; for smooth input `N = 0` and the full nearby cycles have the generic Hodge ranks and weight `w − 1` (5.3), so the twist `(−1)` gives the shift. *Needs:* 11.2; 5.3, 5.4; 4.4.
-
-**Checks.**
-
-- For `M = pℚ_{A¹}` (weight `1`, smooth at `0`), `H¹ = ψ(−1) = ℚ(−1)`, of weight `2 = w + 1`; the variation `O` has `gr⁰_F` of rank one and all other `gr^p_F` zero, and the formula gives `dim gr¹_{F_irr} H¹ = 1`, the single jump of `ℚ(−1)` at `1`.
-- At a singular point the cokernel of `N` must be kept: for `j_!* L[1]` with a unipotent Jordan block of size two at `0`, `H¹` is one-dimensional while the generic rank is two.
-- For `M = δ_0 V` the hypothesis fails (a punctual section), and indeed `H⁰ ≠ 0`.
-
-### 11.4 The constant correction of the projector
-
-**Theorem.** Let `M^H` be pure of weight `w` with no constant subobject. Then `η` gives an exact sequence `0 → M^H → Π M^H → M′^H → 0` with `M′` constant of ambient weights `≥ w + 1`, and `W_w Π M = M`. For all integers `l` and `p`, `dim gr^p_{F_irr} gr^W_l H¹_dR(A¹, FT M′) = rank gr^{p−1}_F gr^W_{l−1} M′`, the left `W` being the classical cohomology weight and the right `W` the ambient weight (FSY, Corollary A.31(3) and its proof, p. 72). *Proof route:* the kernel of `η` is the largest constant subobject, hence zero; pure splitting rules out a weight-`w` constant quotient inside `Π M`; apply 11.3 to each pure constant `gr^W_{l−1} M′`. *Needs:* 6.2, 6.4; 4.4; 5.2; 11.3; 7.6.
-
-**Checks.**
-
-- For `M = δ_0 ℚ` (weight `0`), `Π M = K` and `M′ = pℚ_{A¹}` of ambient weight `1 = w + 1`.
-- For `M = j_* L[1]` with `L` of monodromy `−1` on `G_m`, `M` has no constant subobject and `RΓ(M) = 0`, so `Π M = M` and `M′ = 0`.
-- The weight shift `l − 1` is essential: for `M′ = pℚ_{A¹}`, of ambient weight `1`, `H¹(FT M′) = ℚ(−1)` has weight `2 = 1 + 1`.
-
-### 11.5 Regular Fourier stationary phase at eigenvalue one
-
-**Theorem.** For a regular holonomic `M` on `A¹`, regular also at infinity, there is a natural isomorphism `(φ_{t,1} FT M, N) ≅ (ψ_{1/τ,1} M, N)` between the unipotent vanishing cycles of `FT M` at the output origin and the unipotent nearby cycles of `M` at the input infinity, taken along the coordinate `1/τ`, intertwining the two nilpotent monodromies, each normalized as in 4.2 in its local coordinate (the sign of the Fourier kernel does not enter: pullback by `t ↦ −t` fixes `0` and preserves the positive loop, hence `N`); it is natural for the localization `FT M → (FT M)(∗0)` and matches its `can`/`var` diagram with `ψ_∞ M → ψ_∞ Π M`. The comparison is of underlying local systems; Tate shifts are attached through 5.3, without claiming that the irregular `FT M` underlies a mixed Hodge module (MT, Lemma A.4 and its proof, p. 39). *Proof route:* compactify the Fourier kernel to `P¹ × A¹` and specialize at the output coordinate `0`; use the local exponential model near the input boundary, excluding the nonzero finite exponential factors (PadicDifferentialEquationsAndRigidCohomology §RD.6.52a), and identify the surviving unipotent factor and its logarithm; apply proper specialization (1.4) and compare the localization and variation maps. The local kernel-specialization computation is part of this target; exactness of `FT` and the formal normal form alone do not give it. *Needs:* 2.2, 2.4; PadicDifferentialEquationsAndRigidCohomology §RD.6.52a; 1.4; 4.2; 5.3.
-
-**Checks.**
-
-- For `M = O_{A¹}`: `FT M = δ_0` has unipotent vanishing cycles `ℂ` at `0`, and `O` has unipotent nearby cycles `ℂ` at `∞`.
-- For `M = δ_a`, `a ≠ 0`: `FT M = E^{at}` is smooth at `0` with zero vanishing cycles, and `δ_a` has zero nearby cycles at `∞`.
-- The comparison is not with the vanishing cycles of `M` at the input origin: for `M = δ_0`, `φ_0 M = ℂ`, while `FT M = O` has zero vanishing cycles at `0`, consistent with `ψ_∞ δ_0 = 0`.
-- For `M = D/D(τ∂_τ)²`, regular with one unipotent Jordan block of size two at `0` and at `∞`, 2.2 gives `FT M = D/D(∂_t t)²`, since `τ∂_τ` goes to `−∂_t t = −(t∂_t + 1)`. At `t = 0` the generator `e` and `(t∂_t + 1)e` span `gr^V_1`, where `N = −(t∂_t + 1)` is one Jordan block of size two. At infinity, with `s = 1/τ` and `τ∂_τ = −s∂_s`, the generator lies in `gr^V_0` and `N = −s∂_s = τ∂_τ`, which the operator correspondence sends to `−(t∂_t + 1)`, the `N` at the output origin. The other Checks have `N = 0` and do not see this normalization.
-
-### 11.6 Monodromy weights at infinity of the projector
-
-**Theorem.** Let `M^H` be a polarizable pure Hodge module of weight `w` with no constant subobject, and `0 → M → Π M → M″ → 0` as in 11.4. Put `Ψ = ψ_{∞,1} Π M` with `L_k Ψ = ψ_{∞,1}(W_{k+1} Π M)`. The weight filtration of `Ψ` is the monodromy filtration of `N` centred at `w`. On underlying nilpotent spaces `im N = ψ_{∞,1} M`, the inclusion with its shift being the variation comparison. For `k ≥ 0` put `P_k = ker[N^{k+1} : gr^W_{w−1+k} ψ_{∞,1} M → gr^W_{w−3−k} ψ_{∞,1} M(−k−1)]`. Then `W_{w+1} M″` is the constant variation with fibre `H⁰(P¹, pDR M_min)`, where `M_min` is the pure intermediate extension to `P¹`, and `gr^W_{w+k+2} M″` is the constant variation with fibre `P_k(−1)`. Every primitive part `P_k` is kept; a single Jordan block is not assumed (MT, Proposition A.3, Lemmas A.2 and A.4 and the complete proof, pp. 36–40, especially (A.1)–(A.7); FSY, Proposition 2.21, pp. 16–18). The central weight is `w` for `ψ_∞ Π M` and `w − 1` for `ψ_∞ M`. *Proof route:* the long exact global sequence and `RΓ(Π M) = 0` give the constant fibre `H⁰(A¹, pDR M)`; intermediate extension to `P¹` and the boundary cokernel of `N` split its graded pieces into `H⁰(P¹, pDR M_min)` and the `P_k(−1)`; 11.5 and semisimplicity identify `im N` with the original nearby space; the primitive decomposition (LefschetzPencilsAndVanishingCycles §1.4) compares the relative and absolute monodromy graded pieces, and purity and symmetry force `W = M(N)[w]`. *Needs:* 11.4, 11.5; 4.4, 4.5; 5.3; 6.2, 6.4; LefschetzPencilsAndVanishingCycles §§1.3, 1.4, 1.5.
-
-**Checks.**
-
-- For `M = δ_0 ℚ` (`w = 0`), `Π M = K`, `ψ_{∞,1} K = ℚ` with `N = 0`, of weight `0 = w`, and `M″ = pℚ_{A¹}` with fibre `H⁰(P¹, pDR δ_0) = ℚ` in weight `w + 1 = 1`; no `P_k` occurs since `ψ_∞ δ_0 = 0`.
-- A direct sum of two inputs whose nearby cycles at infinity have Jordan blocks of different lengths must produce two constant weight pieces of `M″`, in the weights `w + k + 2` for the two values of `k`.
-- Keeping only the eigenvalue-one part of `ψ_∞ M` is correct here, but a single-block assumption is not: for an input with blocks of sizes one and three, `P_0` and `P_2` are both nonzero.
-
-### Examples
-
-For `M = pℚ_{A¹}` the Fourier cohomology is `H¹ = ℚ(−1)`, which is `H¹ i_0^! pℚ`, while the stalk `ℚ[1]` has a different degree and twist. For `M = δ_0 V` the Fourier cohomology is `V` in degree `0`.
-
-### Dependencies
-
-11.1 needs 10.1, 9.1, 9.2, 2.2, 2.5 and 8.2; 11.2 needs 11.1, 10.1, 5.1, 8.2, 6.5 and 2.2; 11.3 needs 11.2, 5.3, 5.4 and 4.4; 11.4 needs 6.2, 6.4, 4.4, 5.2, 11.3 and 7.6; 11.5 needs 2.2, 2.4, PadicDifferentialEquationsAndRigidCohomology §RD.6.52a, 1.4, 4.2 and 5.3; 11.6 needs 11.4, 11.5, 4.4, 4.5, 5.3, 6.2, 6.4 and LefschetzPencilsAndVanishingCycles §§1.3–1.5.
-
-## Layer 12: Logarithmic and Newton descriptions of the filtration
-
-This layer constructs the pole-order logarithmic filtration on good and non-degenerate compactifications and proves its blow-up invariance, model independence, `E₁`-degeneration and agreement with the irregular Hodge filtration of Layer 9. For a full-dimensional Newton-nondegenerate Laurent polynomial it constructs the Newton complex and proves graded acyclicity, the Adolphson–Sperber concentration and volume theorem, and the Newton–Hodge comparison. For a convenient nondegenerate Laurent polynomial it proves that the cone of `h_! pℚ → h_* pℚ` has constant cohomology. It ends with the filtered Künneth and duality theorems.
-
-### 12.1 The logarithmic pole-order complex
-
-**Construction.** A good compactification of `(U, f)` is a smooth projective `X ⊃ U` with `D = X ∖ U` a simple normal crossing divisor (SchemeAndStackFoundations §4.17) such that `f` extends to `f : X → P¹`; write `P` for its pole divisor with multiplicities and `D = P_red + T`. The decreasing rational filtration of the twisted logarithmic complex is `(F^λ_log DR_f)^q = 0` for `q < λ` and `Ω^q_X(log D)(⌊(q − λ)P⌋)` for `q ≥ λ`, with differential `d + df ∧`; for `λ ≤ 0` it is quasi-isomorphic to `DR(U, E^f)`. For compact supports use the logarithmic complex twisted by `O(−T)`, keeping the pole components. Also allow non-degenerate compactifications whose local model at the indeterminacy locus is `f = z/x^e`, with transverse zero and pole divisors, besides the pole model `1/x^e` (Yu, §1(a)–(c), pp. 4–8, the logarithmic complex on p. 8; §2, pp. 14–16; §4(b), pp. 27–31; ESY, §1.2, pp. 5–6; Proposition 1.7.4 and Corollary 1.7.6, pp. 17–18). `P` has its actual multiplicities. *Proof route:* a good model from an SNC compactification of `U` by principalizing the indeterminacy ideal of `f`; `d + df ∧` preserves the degree-dependent pole bounds; the local exponential Koszul computation compares the meromorphic and logarithmic complexes; the compact variant by extension by zero along `T` and meromorphic extension along `P`. *Needs:* 2.1; 9.2; ResolutionOfSingularitiesCharacteristicZero §§5.1, 6.2; ComplexComparisonPartII §C5.6 (`regularSingularDeRhamComparison`) for the case `f = 0`.
+**Construction.** A good compactification of `(U, f)` is a smooth projective `X ⊃ U` with `D = X ∖ U` a simple normal crossing divisor (SchemeAndStackFoundations §4.17) such that `f` extends to `f : X → P¹`; write `P` for its pole divisor with multiplicities and `D = P_red + T`. The decreasing rational filtration of the twisted logarithmic complex is `(F^λ_log DR_f)^q = 0` for `q < λ` and `Ω^q_X(log D)(⌊(q − λ)P⌋)` for `q ≥ λ`, with differential `d + df ∧`; for `λ ≤ 0` it is quasi-isomorphic to `DR(U, E^f)`. For compact supports use the logarithmic complex twisted by `O(−T)`, keeping the pole components. Also allow non-degenerate compactifications whose local model at the indeterminacy locus is `f = z/x^e`, with transverse zero and pole divisors, besides the pole model `1/x^e` (Yu, §1(a)–(c), pp. 4–8, the logarithmic complex on p. 8; §2, pp. 14–16; §4(b), pp. 27–31; ESY, §1.2, pp. 5–6; Proposition 1.7.4 and Corollary 1.7.6, pp. 17–18). `P` has its actual multiplicities. *Proof route:* a good model from an SNC compactification of `U` by principalizing the indeterminacy ideal of `f`; `d + df ∧` preserves the degree-dependent pole bounds; the local exponential Koszul computation compares the meromorphic and logarithmic complexes; the compact variant by extension by zero along `T` and meromorphic extension along `P`. *Needs:* 2.1; 8.2; ResolutionOfSingularitiesCharacteristicZero §§5.1, 6.2; SchemeAndStackFoundations §4.17 (strict normal crossing divisors); ComplexComparisonPartII §C5.6 (`regularSingularDeRhamComparison`) for the case `f = 0`.
 
 API:
 
@@ -1075,9 +981,9 @@ API:
 - For `x` on `A¹ ⊂ P¹`, `P = {∞}` with multiplicity one and the degree-`q` twist is `⌊q − λ⌋ {∞}`; for `x^m` the twist is `⌊m(q − λ)⌋ {∞}`, allowing jumps in `(1/m)ℤ`.
 - For `f = x` on `G_m ⊂ P¹`, the horizontal boundary is `{0}` and the pole boundary `{∞}`; the compact filtration twists by `−{0}`, not by `−{0} − {∞}`, which would change the pole contribution.
 
-### 12.2 Filtered comparison under the toric blow-ups
+### 8.8 Filtered comparison under the toric blow-ups
 
-**Theorem.** For the blow-up resolving an indeterminacy stratum of a non-degenerate model `f = z/x^e`, along a smooth boundary stratum of the intersection of the zero and pole divisors as in Yu §4(b), the pullback comparison of the `F^λ_log` complexes is a filtered quasi-isomorphism after direct image, for every rational `λ`, and likewise with the compact-support twist. In Yu's interpolation between the pulled-back complex and the complex of the new pole divisor, the centre `Ξ` has codimension two (a component of the transverse intersection of the zero divisor with a pole component, Yu, Proposition 4.3, p. 27), the exceptional divisor `E` is a `P¹`-bundle over `Ξ`, and the successive quotients are sums of `O_E(−1)`, whose derived direct images to `Ξ` vanish (Yu, Proposition 4.4, Lemma 4.5 and proof, pp. 29–31). It is not a statement about arbitrary blow-ups. *Proof route:* the two affine charts, the transformed zero and pole divisors and multiplicities; the intermediate complexes with exceptional pole bounds; local exponential Koszul exactness reduces the quotients to `O_E(−1)`; `X̃` is smooth (SchemeAndStackFoundations §5.5, gap:blowup-exceptional-divisor); import `E = P(N_{Ξ/X})`, `O_X̃(−E)|_E = O_E(1)` and `R(π|_E)_* O_E(−1) = 0` from SchemeKTheoryOperations §5.7 (its vanishing for `1 ≤ μ ≤ c − 1` in the case of codimension `c = 2` and twist `μ = 1`, with `G = O_Ξ`), and apply this vanishing to the successive quotients; the projection formula for the compact variant. *Needs:* 12.1; SchemeKTheoryOperations §5.7; SchemeAndStackFoundations §§2.18, 4.11, 5.5 (gap:blowup-exceptional-divisor).
+**Theorem.** For the blow-up resolving an indeterminacy stratum of a non-degenerate model `f = z/x^e`, along a smooth boundary stratum of the intersection of the zero and pole divisors as in Yu §4(b), the pullback comparison of the `F^λ_log` complexes is a filtered quasi-isomorphism after direct image, for every rational `λ`, and likewise with the compact-support twist. In Yu's interpolation between the pulled-back complex and the complex of the new pole divisor, the centre `Ξ` has codimension two (a component of the transverse intersection of the zero divisor with a pole component, Yu, Proposition 4.3, p. 27), the exceptional divisor `E` is a `P¹`-bundle over `Ξ`, and the successive quotients are sums of `O_E(−1)`, whose derived direct images to `Ξ` vanish (Yu, Proposition 4.4, Lemma 4.5 and proof, pp. 29–31). It is not a statement about arbitrary blow-ups. *Proof route:* the two affine charts, the transformed zero and pole divisors and multiplicities; the intermediate complexes with exceptional pole bounds; local exponential Koszul exactness reduces the quotients to `O_E(−1)`; `X̃` is smooth (SchemeAndStackFoundations §5.5, gap:blowup-exceptional-divisor); import `E = P(N_{Ξ/X})`, `O_X̃(−E)|_E = O_E(1)` and `R(π|_E)_* O_E(−1) = 0` from SchemeKTheoryOperations §5.7 (its vanishing for `1 ≤ μ ≤ c − 1` in the case of codimension `c = 2` and twist `μ = 1`, with `G = O_Ξ`), and apply this vanishing to the successive quotients; the projection formula for the compact variant. *Needs:* 8.7; SchemeKTheoryOperations §5.7; SchemeAndStackFoundations §§2.18, 4.11, 5.5 (gap:blowup-exceptional-divisor).
 
 **Checks.**
 
@@ -1086,19 +992,141 @@ API:
 - The twist `−1` cannot be replaced by `−2`: `H¹(P¹, O(−2)) = ℂ ≠ 0`, so a quotient `O_E(−2)` would survive the direct image and the comparison would fail.
 - The sign of the exceptional twist is fixed by `O_X̃(−E)|_E = O_E(1)`: for the blow-up of `A²` at the origin, `E = P¹` has self-intersection `−1`, so `O_X̃(E)|_E = O_{P¹}(−1)`. With the opposite convention `O_X̃(E)|_E = O_E(1)` the quotients would read `O_E(1)`, whose direct image to `Ξ` is the conormal sheaf `I/I²`, of rank two, and the comparison would fail.
 
-### 12.3 Model independence and the Deligne comparison
+### 8.9 Model independence and the Deligne comparison
 
-**Theorem.** For any two good compactifications, the image filtrations on `H^r_dR(U, E^f)` and on its compact variant agree under the canonical identifications, because on each model the image filtration is `F_irr` of 9.2; on non-degenerate compactifications the same filtration is obtained before resolving indeterminacy. The spectral sequences degenerate at `E₁`, so `H^r(F^λ_log) → H^r(DR)` is injective, and the construction is functorial for the proper direct images defining pair cohomology (Yu, Lemma 1.6, p. 9; Theorem 1.7 and Corollary 1.8, pp. 10–12; Proposition 4.4, pp. 29–31; ESY, Theorem 1.2.2, p. 6; §1.7, Proposition 1.7.4 and Corollary 1.7.6, pp. 16–18; §§3.3–3.4, pp. 25–26). Independence of the model is deduced from the identification with `F_irr` on each model; Yu's proof through weak factorization is not used. *Proof route:* on a fixed good model identify the logarithmic filtration with the Deligne filtration of the localized module (ESY Proposition 1.7.4, Corollary 1.7.6); 12.2 passes from the non-degenerate model; the graph construction, 7.5 and projective direct image identify the image filtration with the filtered fibre of 9.2; duality for compact supports. *Needs:* 12.1, 12.2; 7.1, 7.2, 7.5; 9.2, 9.3.
+**Theorem.** For any two good compactifications, the image filtrations on `H^r_dR(U, E^f)` and on its compact variant agree under the canonical identifications, because on each model the image filtration is `F_irr` of 8.2; on non-degenerate compactifications the same filtration is obtained before resolving indeterminacy. The spectral sequences degenerate at `E₁`, so `H^r(F^λ_log) → H^r(DR)` is injective, and the construction is functorial for the proper direct images defining pair cohomology (Yu, Lemma 1.6, p. 9; Theorem 1.7 and Corollary 1.8, pp. 10–12; Proposition 4.4, pp. 29–31; ESY, Theorem 1.2.2, p. 6; §1.7, Proposition 1.7.4 and Corollary 1.7.6, pp. 16–18; §§3.3–3.4, pp. 25–26). Independence of the model is deduced from the identification with `F_irr` on each model; Yu's proof through weak factorization is not used. *Proof route:* on a fixed good model identify the logarithmic filtration with the Deligne filtration of the localized module (ESY Proposition 1.7.4, Corollary 1.7.6); 8.8 passes from the non-degenerate model; the graph construction, 7.5 and projective direct image identify the image filtration with the filtered fibre of 8.2; duality for compact supports. *Needs:* 8.7, 8.8; 7.1, 7.2, 7.5; 8.2, 8.3.
 
 **Checks.**
 
-- For `(A¹, x)` the complex on `P¹` has `H^•` zero for every `λ`, consistent with 9.6.
+- For `(A¹, x)` the complex on `P¹` has `H^•` zero for every `λ`, consistent with 8.6.
 - For `(G_m, x)` on `P¹`, `H¹(F^λ_log)` is `ℂ` for `λ ≤ 1` and `0` for `λ > 1`, the jump of `I(ℚ(−1))`; with the compact twist the jump is at `0`.
 - The agreement includes all rational steps: for `(A¹, x²)` both models give the single jump `1/2`, not only the same dimension.
 
-### 12.4 The Newton complex of a Laurent polynomial
+### 8.10 Filtered Künneth and Poincaré duality
 
-This subsection fixes the objects of the headline theorem 12.6. Let `LaurentRing` `n` be the Laurent polynomial ring `ℂ[x₁^{±1}, …, x_n^{±1}]`, the additive monoid algebra of `ℤ^n`, and `φ = Σ_m a_m x^m` an element.
+**Theorem.** For smooth quasi-projective pairs `(U, f)` and `(V, g)`, the Künneth isomorphism of 8.3 identifies `F^λ_irr H^r(U × V, f ⊞ g)` with `⊕_{a+b=r} Σ_{α+β=λ} F^α_irr H^a(U, f) ⊗ F^β_irr H^b(V, g)`, and likewise for compact supports. For `U` of dimension `d`, the perfect pairing `H^r_c(U, f) ⊗ H^{2d−r}(U, −f) → ℂ` of 8.3 identifies the rational filtration with its dual: the annihilator of `F^λ` on the compact factor is `F^{>d−λ}` on the ordinary factor, where `F^{>a} = Σ_{b>a} F^b`. These are statements for constant coefficients (CY, Theorem 1, pp. 1–2; §§3.1–3.2, pp. 7–11; Yu, Theorem 2.2 and its proof, pp. 14–16). *Proof route:* start from the product of two good models; on each intermediate model write `a_D` and `b_D` for the pole orders along a boundary component `D` of the pullbacks of `f` and `g`, and blow up the intersection `D₁ ∩ D₂` of two meeting components for which `(a_{D₁} − b_{D₁})(a_{D₂} − b_{D₂})` is negative and smallest; after finitely many such blow-ups the least value of this product increases, and once it is nonnegative for every meeting pair, so that near each boundary point either `a_D ≥ b_D` for all components `D` through it or `b_D ≥ a_D` for all of them, the zero divisor of `f ⊞ g` is smooth near the boundary and transverse to it, and the model is non-degenerate (CY §3.1, pp. 8–9, CY lines 345–398); on intermediate models use the convex combinations `Σ_{0≤θ≤1} O(⌊μ((1 − θ)P_f + θP_g)⌋)`, whose blow-up quotients are sums of `O_E(−1)` with vanishing direct image (SchemeKTheoryOperations §5.7, applied as in 8.8), checking pushforward on the finite monomial resolution although the sum need not be locally free (CY §3.2); the coherent external-product computation (Tor-independent base change and Čech complexes) and `E₁`-degeneration of both factors identify the convolution filtration, transferred by 8.9; for duality pair the logarithmic complex with its horizontal compact twist via residues and Serre duality, with the strict inequality at a rational jump, and dualize the ordinary Künneth statement for compact supports. *Needs:* 8.7, 8.8, 8.9; 8.3; 7.5; SchemeAndStackFoundations §§2.2, 2.6, 2.18, 2.20.
+
+**Checks.**
+
+- The torus-sum examples give `F^k H^k = H^k` with jump `k` for the ordinary groups and `F⁰ H^k_c = H^k_c` with jump `0` for the compact groups, and the annihilator rule pairs jump `0` with jump `k = d`.
+- For `(A¹, x²)` the jump is `1/2`, and for `(A², x² + y²)` it is `1 = 1/2 + 1/2`; rounding each factor to an integer before adding would give `0` or `2`.
+- For `(G_m, x)`, `d = 1`: the compact jump `0` and the ordinary jump `1` satisfy `ann F^λ = F^{>1−λ}`: for `λ ≤ 0`, `F^λ H_c = H_c` and its annihilator is `0 = F^{>1−λ} H` since `1 − λ ≥ 1`.
+- The blow-up rule of the proof route compares differences of pole orders. For `(G_m, 1/x)` and `(G_m, 1/y)` with good models `P¹`, at the crossing of the two pole divisors of `P¹ × P¹` the pairs `(a_D, b_D)` are `(1, 0)` along `x = 0` and `(0, 1)` along `y = 0`, with differences `1` and `−1` of negative product; there the zero divisor `x + y = 0` of `f ⊞ g = (x + y)/(xy)` passes through the crossing, so the product model is degenerate. On the chart `y = xu` of the blow-up, `f ⊞ g = (u + 1)/(xu)`: the exceptional divisor `x = 0` has `(a, b) = (1, 1)`, the strict transform `u = 0` has `(0, 1)`, the product is `0`, and the zero divisor `u = −1` meets the exceptional divisor transversally away from `u = 0`. Pole orders are never negative, so a rule asking for pole orders of opposite signs would leave this crossing alone.
+
+### Examples
+
+For `(G_m, x)`: `H¹ = I(ℚ(−1))`, `H¹_c = I(ℚ)`, the comparison is zero, `H¹_mid = 0`, the ordinary filtration jumps at `1` and the compact one at `0`, and the duality pairs them into `I(ℚ(−1))`. Taking `k` factors gives the torus-sum example with `I(ℚ(−k))` and `I(ℚ)` paired into `I(ℚ(−k))`.
+
+### Dependencies
+
+8.1 needs 5.1, 4.7, 6.2, 6.4, 6.5, 6.7 and 7.6; 8.2 needs 8.1, 6.5, 7.5, 7.6, 5.1 and 2.1; 8.3 needs 8.1, 8.2, 6.3, 6.5, 7.6, 5.1 and 2.5; 8.4 needs 8.1, 8.3, 5.2, 6.4 and 7.6; 8.5 needs 5.5, 8.1, 8.2 and 7.7; 8.6 needs 8.1, 8.3, 8.5, 7.7 and 5.2; 8.7 needs 2.1, 8.2, ResolutionOfSingularitiesCharacteristicZero §§5.1, 6.2, SchemeAndStackFoundations §4.17 and ComplexComparisonPartII §C5.6; 8.8 needs 8.7, SchemeKTheoryOperations §5.7 and SchemeAndStackFoundations §§2.18, 4.11, 5.5 (gap:blowup-exceptional-divisor); 8.9 needs 8.7, 8.8, 7.1, 7.2, 7.5, 8.2 and 8.3; 8.10 needs 8.7–8.9, 8.3, 7.5 and SchemeAndStackFoundations §§2.2, 2.6, 2.18, 2.20.
+
+## Layer 9: Classicality of `tg` cohomology and Fourier cohomology on the line
+
+This layer proves that the cohomology of the pairs `(A¹ × V, tg)` is classical, with its zero-locus description, and through the pair `(A¹ × A¹, tτ)` gives the Fourier transform of a mixed Hodge module on `A¹` a cohomological mixed Hodge structure, without claiming that the Fourier transform is a mixed Hodge module; it proves the costalk comparison and the pure-input Hodge-number formula, computes the constant correction of `Π`, and proves the monodromy-filtration theorem at infinity for `Π` of a pure Hodge module, keeping every primitive part.
+
+### 9.1 The classical `tg` criterion
+
+**Theorem.** Let `V` be smooth quasi-projective, `g ∈ O(V)`, `M^H ∈ MHM(V)`, `U = A¹_t × V` and `f = tg`. Then all `H^r(U, pℚ_{A¹} ⊠ M^H, f)` and `H^r_c(U, pℚ_{A¹} ⊠ M^H, f)` are classical. For the coefficient `pℚ_{A¹}[∗0] ⊠ M^H` the ordinary groups are classical in every degree, and for `pℚ_{A¹}[!0] ⊠ M^H` the compact groups are. Their bifiltered fibres are the corresponding mixed Hodge structures, so `F_irr` agrees with `F`. This holds for `g = 0` and for an arbitrary, possibly singular or empty, zero locus; no tameness or nondegeneracy of `g` is assumed (FSY, Theorem A.24 and proofs (A.25)–(A.26), pp. 68–70). Here `pℚ_{A¹}[∗0] = j_* pℚ_{G_m}` and `pℚ_{A¹}[!0] = j_! pℚ_{G_m}`. *Proof route:* localize along `A¹ × g⁻¹(0)`: the supported term pushes to `θ = 0` and is classical; on the complement push along `(t, g)` to reduce to `g = τ`; the localized ordinary fibre is the Fourier de Rham complex `[M(∗0) → M(∗0)]` with differential multiplication by `τ`, acyclic since `τ` is invertible; duality with the sign involution gives the compact case; for `[∗0]`, replace `M` by `Π_τ M`, whose difference is constant and killed after localization, using 5.6 on `A¹` to see that constancy of the underlying `D`-module suffices, and 6.6; faithfulness of the fibre (6.5) and 7.7 conclude. *Needs:* 8.1, 8.2, 8.5; 6.7, 7.7; 6.5, 6.6; 2.2, 2.5; 5.1, 5.6.
+
+**Checks.**
+
+- For `V = pt` and `g = 0`, the ordinary groups are `I(ℚ)` in degree `0` and the compact ones `I(ℚ(−1))` in degree `2`.
+- For `g = 1`, all groups vanish: `f = t` and 8.6.
+- The argument uses the derived direct image of `M` and no tameness of `g`: for `g = x²` on `A¹`, with singular-looking fibre `x² = 0` (a nonreduced point), the groups are classical and computed by 9.2 on the reduced point.
+
+### 9.2 Zero-locus description of `tg` cohomology
+
+**Theorem.** For constant coefficients and `Z = g⁻¹(0)` with its reduced structure, `H^r_c(A¹ × V, tg) ≅ I(H^{r−2}_c(Z)(−1))` and `H^r(A¹ × V, tg) ≅ I(H^r_Z(V))`, as classical structures with their filtered fibres. If `Z` is a smooth divisor, `H^r_Z(V) ≅ H^{r−2}(Z)(−1)`. For `g = 0` the ordinary group is `H^r(V)` and the compact group `H^{r−2}_c(V)(−1)`; for `g` a unit both vanish (FSY, Example A.27, pp. 70–71, whose assertion that the relevant pushforward is the zero functor is corrected here). The smooth-divisor formula is not applied to `g = 0` or to singular `Z`. *Proof route:* the localized vanishing of 9.1 and the compact localization triangle reduce compact cohomology to `A¹ × Z`, where the exponential function is zero; compact Künneth with `H²_c(A¹) = ℚ(−1)`; for ordinary cohomology use `i_* i^!` and homotopy invariance in the `A¹` direction; `tg ∘ i` is the zero function, whose direct image factors through the point and is not the zero functor; purity only for a smooth divisor. *Needs:* 9.1; 8.3, 8.5; 5.1; 1.2.
+
+**Checks.**
+
+- For `g = x` on `V = A¹`, `Z` is a point: `H²_c(A², tx) = I(ℚ(−1))` and `H²(A², tx) = I(H²_{0}(A¹)) = I(ℚ(−1))`.
+- For `V = pt` and `g = 0`, the ordinary group is `I(ℚ)` in degree `0` and the compact group `I(ℚ(−1))` in degree `2`.
+- For `g = xy` on `A²`, `Z` is the node and `H^r_Z(A²)` is kept: `H²_Z = ℚ(−1)²` and `H³_Z = ℚ(−2)`, whereas a smooth-divisor formula would predict `H^{r−2}` of the normalization.
+
+### 9.3 Classical cohomology of a Fourier transform
+
+**Construction.** For `M^H ∈ MHM(A¹_τ)`, define `H^j(A¹_t, FT M^H) = φ_{θ,1} H^{j+1}(A¹_t × A¹_τ, pℚ_{A¹} ⊠ M^H, tτ)` and similarly `H^j_c`, classical by 9.1. Their de Rham fibres are `H^j_dR(A¹, FT M)` and `H^j_{dR,c}(A¹, FT M)`; ordinary cohomology can be nonzero only for `j = 0, 1` and compact cohomology only for `j = 1, 2`. They carry the `W` and `F` of the classical pair comparison. The notation does not assert that `FT M` is a regular Hodge module; it may be irregular (FSY, Lemma A.28 and Notation A.29, p. 71). *Proof route:* 9.1 for the classical structure; compare the projection along `τ` with the Fourier kernel and its relative dimension one; 8.2 and the de Rham bounds on an affine curve; duality for the compact range. *Needs:* 9.1; 8.1, 8.2; 2.2, 2.5; 7.7.
+
+API:
+
+- The complex fibre is the ordinary or compact de Rham cohomology of `FT M`.
+- Exact sequences of inputs give long exact sequences of mixed Hodge structures.
+- The classical Hodge filtration equals the irregular filtration of the pair.
+
+**Checks.**
+
+- For `M^H = δ_0 V`, `H⁰(FT M^H) = V` and the other ordinary degrees vanish; `FT δ_0 = O` has `H⁰_dR = ℂ`.
+- For `M^H = pℚ_{A¹}`, `H¹(FT M^H) = ℚ(−1)` and `H⁰ = 0`; `FT O = δ_0` has `H¹_dR = ℂ`.
+- For `δ_a V` with `a ≠ 0`, ordinary and compact Fourier cohomology vanish (`FT δ_a = E^{at}`); the pair degree is `j + 1`, and using `j` changes the costalk formula of 9.4.
+
+### 9.4 Fourier cohomology is the costalk
+
+**Theorem.** For every `M^H ∈ MHM(A¹_τ)` there are natural isomorphisms of mixed Hodge structures `H^j(A¹_t, FT M^H) ≅ H^j i_0^! M^H` for all `j`, both sides vanishing outside `j = 0, 1`, identifying `W` and the irregular Hodge filtration on the Fourier fibre with the classical `W` and `F` of the costalk; `i_0` is the origin of the input line (FSY, Theorem A.30 and its proof, p. 71). *Proof route:* first `M = i_{0*} V`; then the triangle `i_* i^! M → M → M[∗0]`, where the Fourier de Rham complex of `M[∗0]` is acyclic because it becomes multiplication by the invertible coordinate `τ`; take cohomology and use the punctual case and 7.6. *Needs:* 9.3; 9.1; 5.1; 7.7; 6.5; 2.2.
+
+**Checks.**
+
+- For `pℚ_{A¹}` the answer is `ℚ(−1)` in degree one, which is `H¹ i_0^! pℚ`; the stalk `i_0^* pℚ = ℚ[1]` would give a different degree and twist.
+- For `δ_0 V` both sides are `V` in degree `0`.
+- For `K = j_! pℚ_{G_m}`, the map `j_! pℚ_{G_m} → j_* pℚ_{G_m}` has kernel `δ_0 ℚ` and cokernel `δ_0 ℚ(−1)`, so `H⁰ i_0^! K = ℚ` and `H¹ i_0^! K = ℚ(−1)`; on the other side `FT(j_! O) = O(∗0)` has `H⁰_dR = H¹_dR = ℂ`, matching both degrees.
+
+### 9.5 Pure-input Fourier Hodge numbers
+
+**Theorem.** Let `M^H` be pure of weight `w` with no nonzero section supported at `τ = 0`. Then `H^j_dR(A¹, FT M) = 0` for `j ≠ 1` and `H¹(A¹, FT M^H) = coker(N : ψ_{τ,1} M^H → ψ_{τ,1} M^H(−1))`. If `M` is smooth at `0`, this is `ψ_τ M^H(−1)`, pure of weight `w + 1`, and `dim gr^p_{F_irr} H¹_dR(A¹, FT M) = rank gr^{p−1}_F M` for every integer `p` (FSY, Corollary A.31(1)–(2) and its proof, p. 72). Having no punctual summand at `0` is weaker than smoothness there; the rank formula needs smoothness. *Proof route:* 9.4 and 5.4; semisimplicity rules out degree-zero costalk; for smooth input `N = 0` and the full nearby cycles have the generic Hodge ranks and weight `w − 1` (5.3), so the twist `(−1)` gives the shift. *Needs:* 9.4; 5.3, 5.4; 4.4.
+
+**Checks.**
+
+- For `M = pℚ_{A¹}` (weight `1`, smooth at `0`), `H¹ = ψ(−1) = ℚ(−1)`, of weight `2 = w + 1`; the variation `O` has `gr⁰_F` of rank one and all other `gr^p_F` zero, and the formula gives `dim gr¹_{F_irr} H¹ = 1`, the single jump of `ℚ(−1)` at `1`.
+- At a singular point the cokernel of `N` must be kept: for `j_!* L[1]` with a unipotent Jordan block of size two at `0`, `H¹` is one-dimensional while the generic rank is two.
+- For `M = δ_0 V` the hypothesis fails (a punctual section), and indeed `H⁰ ≠ 0`.
+
+### 9.6 The constant correction of the projector
+
+**Theorem.** Let `M^H` be pure of weight `w` with no constant subobject. Then `η` gives an exact sequence `0 → M^H → Π M^H → M′^H → 0` with `M′` constant of ambient weights `≥ w + 1`, and `W_w Π M = M`. For all integers `l` and `p`, `dim gr^p_{F_irr} gr^W_l H¹_dR(A¹, FT M′) = rank gr^{p−1}_F gr^W_{l−1} M′`, the left `W` being the classical cohomology weight and the right `W` the ambient weight (FSY, Corollary A.31(3) and its proof, p. 72). *Proof route:* the kernel of `η` is the largest constant subobject, hence zero; pure splitting rules out a weight-`w` constant quotient inside `Π M`; apply 9.5 to each pure constant `gr^W_{l−1} M′`. *Needs:* 6.2, 6.4; 4.4; 5.2; 9.5; 7.6.
+
+**Checks.**
+
+- For `M = δ_0 ℚ` (weight `0`), `Π M = K` and `M′ = pℚ_{A¹}` of ambient weight `1 = w + 1`.
+- For `M = j_* L[1]` with `L` of monodromy `−1` on `G_m`, `M` has no constant subobject and `RΓ(M) = 0`, so `Π M = M` and `M′ = 0`.
+- The weight shift `l − 1` is essential: for `M′ = pℚ_{A¹}`, of ambient weight `1`, `H¹(FT M′) = ℚ(−1)` has weight `2 = 1 + 1`.
+
+### 9.7 Regular Fourier stationary phase at eigenvalue one
+
+**Theorem.** For a regular holonomic `M` on `A¹`, regular also at infinity, there is a natural isomorphism `(φ_{t,1} FT M, N) ≅ (ψ_{1/τ,1} M, N)` between the unipotent vanishing cycles of `FT M` at the output origin and the unipotent nearby cycles of `M` at the input infinity, taken along the coordinate `1/τ`, intertwining the two nilpotent monodromies, each normalized as in 4.2 in its local coordinate (the sign of the Fourier kernel does not enter: pullback by `t ↦ −t` fixes `0` and preserves the positive loop, hence `N`); it is natural for the localization `FT M → (FT M)(∗0)` and matches its `can`/`var` diagram with `ψ_∞ M → ψ_∞ Π M`. The comparison is of underlying local systems; Tate shifts are attached through 5.3, without claiming that the irregular `FT M` underlies a mixed Hodge module (MT, Lemma A.4 and its proof, p. 39). *Proof route:* compactify the Fourier kernel to `P¹ × A¹` and specialize at the output coordinate `0`; use the local exponential model near the input boundary, excluding the nonzero finite exponential factors (PadicDifferentialEquationsAndRigidCohomology §RD.6.52a), and identify the surviving unipotent factor and its logarithm; apply proper specialization (1.4) and compare the localization and variation maps. The local kernel-specialization computation is part of this target; exactness of `FT` and the formal normal form alone do not give it. *Needs:* 2.2, 2.4; PadicDifferentialEquationsAndRigidCohomology §RD.6.52a; 1.4; 4.2; 5.3.
+
+**Checks.**
+
+- For `M = O_{A¹}`: `FT M = δ_0` has unipotent vanishing cycles `ℂ` at `0`, and `O` has unipotent nearby cycles `ℂ` at `∞`.
+- For `M = δ_a`, `a ≠ 0`: `FT M = E^{at}` is smooth at `0` with zero vanishing cycles, and `δ_a` has zero nearby cycles at `∞`.
+- The comparison is not with the vanishing cycles of `M` at the input origin: for `M = δ_0`, `φ_0 M = ℂ`, while `FT M = O` has zero vanishing cycles at `0`, consistent with `ψ_∞ δ_0 = 0`.
+- For `M = D/D(τ∂_τ)²`, regular with one unipotent Jordan block of size two at `0` and at `∞`, 2.2 gives `FT M = D/D(∂_t t)²`, since `τ∂_τ` goes to `−∂_t t = −(t∂_t + 1)`. At `t = 0` the generator `e` and `(t∂_t + 1)e` span `gr^V_1`, where `N = −(t∂_t + 1)` is one Jordan block of size two. At infinity, with `s = 1/τ` and `τ∂_τ = −s∂_s`, the generator lies in `gr^V_0` and `N = −s∂_s = τ∂_τ`, which the operator correspondence sends to `−(t∂_t + 1)`, the `N` at the output origin. The other Checks have `N = 0` and do not see this normalization.
+
+### 9.8 Monodromy weights at infinity of the projector
+
+**Theorem.** Let `M^H` be a polarizable pure Hodge module of weight `w` with no constant subobject, and `0 → M → Π M → M″ → 0` as in 9.6. Put `Ψ = ψ_{∞,1} Π M` with `L_k Ψ = ψ_{∞,1}(W_{k+1} Π M)`. The weight filtration of `Ψ` is the monodromy filtration of `N` centred at `w`. On underlying nilpotent spaces `im N = ψ_{∞,1} M`, the inclusion with its shift being the variation comparison. For `k ≥ 0` put `P_k = ker[N^{k+1} : gr^W_{w−1+k} ψ_{∞,1} M → gr^W_{w−3−k} ψ_{∞,1} M(−k−1)]`. Then `W_{w+1} M″` is the constant variation with fibre `H⁰(P¹, pDR M_min)`, where `M_min` is the pure intermediate extension to `P¹`, and `gr^W_{w+k+2} M″` is the constant variation with fibre `P_k(−1)`. Every primitive part `P_k` is kept; a single Jordan block is not assumed (MT, Proposition A.3, Lemmas A.2 and A.4 and the complete proof, pp. 36–40, especially (A.1)–(A.7); FSY, Proposition 2.21, pp. 16–18). The central weight is `w` for `ψ_∞ Π M` and `w − 1` for `ψ_∞ M`. *Proof route:* the long exact global sequence and `RΓ(Π M) = 0` give the constant fibre `H⁰(A¹, pDR M)`; intermediate extension to `P¹` and the boundary cokernel of `N` split its graded pieces into `H⁰(P¹, pDR M_min)` and the `P_k(−1)`; 9.7 and semisimplicity identify `im N` with the original nearby space; the primitive decomposition (LefschetzPencilsAndVanishingCycles §1.4) compares the relative and absolute monodromy graded pieces, and purity and symmetry force `W = M(N)[w]`. *Needs:* 9.6, 9.7; 4.4, 4.5; 5.3; 6.2, 6.4; LefschetzPencilsAndVanishingCycles §§1.3, 1.4, 1.5.
+
+**Checks.**
+
+- For `M = δ_0 ℚ` (`w = 0`), `Π M = K`, `ψ_{∞,1} K = ℚ` with `N = 0`, of weight `0 = w`, and `M″ = pℚ_{A¹}` with fibre `H⁰(P¹, pDR δ_0) = ℚ` in weight `w + 1 = 1`; no `P_k` occurs since `ψ_∞ δ_0 = 0`.
+- A direct sum of two inputs whose nearby cycles at infinity have Jordan blocks of different lengths must produce two constant weight pieces of `M″`, in the weights `w + k + 2` for the two values of `k`.
+- Keeping only the eigenvalue-one part of `ψ_∞ M` is correct here, but a single-block assumption is not: for an input with blocks of sizes one and three, `P_0` and `P_2` are both nonzero.
+
+### Examples
+
+For `V = A¹`, `g = x`: the pair `(A², tx)` has `H_c² = I(ℚ(−1))` and `H² = I(ℚ(−1))`; for `g` invertible both vanish; for `g = 0`, `Z = V` and the ordinary cohomology is `H^r(A¹)`, while the compact cohomology is `H^{r−2}_c(A¹)(−1)`, nonzero only for `r = 4`. For `M = pℚ_{A¹}` the Fourier cohomology is `H¹ = ℚ(−1)`, which is `H¹ i_0^! pℚ`, while the stalk `ℚ[1]` has a different degree and twist. For `M = δ_0 V` the Fourier cohomology is `V` in degree `0`.
+
+### Dependencies
+
+9.1 needs 8.1, 8.2, 8.5, 6.7, 7.7, 6.5, 6.6, 2.2, 2.5, 5.1 and 5.6; 9.2 needs 9.1, 8.3, 8.5, 5.1 and 1.2; 9.3 needs 9.1, 8.1, 8.2, 2.2, 2.5 and 7.7; 9.4 needs 9.3, 9.1, 5.1, 7.7, 6.5 and 2.2; 9.5 needs 9.4, 5.3, 5.4 and 4.4; 9.6 needs 6.2, 6.4, 4.4, 5.2, 9.5 and 7.6; 9.7 needs 2.2, 2.4, PadicDifferentialEquationsAndRigidCohomology §RD.6.52a, 1.4, 4.2 and 5.3; 9.8 needs 9.6, 9.7, 4.4, 4.5, 5.3, 6.2, 6.4 and LefschetzPencilsAndVanishingCycles §§1.3–1.5.
+
+## Layer 10: Newton polytopes and the twisted de Rham cohomology of a torus
+
+For a full-dimensional Newton-nondegenerate Laurent polynomial this layer constructs the Newton complex and proves graded acyclicity, the Adolphson–Sperber concentration and volume theorem, and the Newton–Hodge comparison. For a convenient nondegenerate Laurent polynomial it proves that the cone of `h_! pℚ → h_* pℚ` has constant cohomology.
+
+### 10.1 The Newton complex of a Laurent polynomial
+
+This subsection fixes the objects of the headline theorem 10.3. Let `LaurentRing` `n` be the Laurent polynomial ring `ℂ[x₁^{±1}, …, x_n^{±1}]`, the additive monoid algebra of `ℤ^n`, and `φ = Σ_m a_m x^m` an element.
 
 **Definition (Euler derivations and the twisted de Rham complex).** Define `eulerDerivation` `i`, the derivation `θ_i = x_i ∂/∂x_i` multiplying `x^m` by `m_i`, and `twistedEuler` `φ i = θ_i + θ_i(φ)`. Algebraic `q`-forms on the torus are written in the basis `dlog x_J`, `J ⊂ {1, …, n}` of cardinality `q` (`forms`); the twisted differential `twistedDifferential` is `(dω)_J = Σ_{j ∈ J} (−1)^{#{i ∈ J : i < j}} (θ_j + θ_j φ) ω_{J ∖ {j}}`, the differential `d + dφ ∧` of `DR(T, E^φ)`; `cocycles` and `coboundaries` are its closed and exact `q`-forms, the latter zero in degree `0`; and `topCohomology` is the quotient of the Laurent ring by the sum of the images of the twisted Euler operators, the degree-`n` cohomology.
 
@@ -1112,7 +1140,7 @@ API:
 **Checks.**
 
 - For `n = 1` and `φ = x`, `twistedEuler` sends `x^m` to `m x^m + x^{m+1}`; its cokernel is spanned by the class of `1` (all `x^k`, `k ≥ 1`, are exact, and `x^{−k}` reduces to a multiple of `1`), so `topCohomology` is one-dimensional, in agreement with the Euler–Poincaré formula of PadicDifferentialEquationsAndRigidCohomology §RD.6.53 (`χ(G_m) = 0`, `Irr_0 = 0`, `Irr_∞ = 1`, `H⁰ = 0`).
-- For `φ = 0` the complex is the Koszul complex of `θ_1, …, θ_n` on `ℂ[x^{±1}]`, whose cohomology in degree `q` is spanned by the constant forms `dlog x_J`, `#J = q`: the cohomology of `(G_m)^n`, of dimension `C(n, q)`. For `n ≥ 1`, `Δ(0) = {0}` is not full dimensional, consistent with the hypothesis of 12.6: for `n = 1`, `topCohomology` is `ℂ[x^{±1}]/θℂ[x^{±1}] = ℂ·1` and `H⁰` is also `ℂ`, so cohomology is not confined to the top degree. For `n = 0`, `ℝ⁰ = {0}`, so `affineSpan ℝ {0} = ⊤` and `{0}` is full dimensional; the complex is `ℂ` in degree `0 = n`, of dimension `1 = 0! · vol({0})`, and 12.6 applies.
+- For `φ = 0` the complex is the Koszul complex of `θ_1, …, θ_n` on `ℂ[x^{±1}]`, whose cohomology in degree `q` is spanned by the constant forms `dlog x_J`, `#J = q`: the cohomology of `(G_m)^n`, of dimension `C(n, q)`. For `n ≥ 1`, `Δ(0) = {0}` is not full dimensional, consistent with the hypothesis of 10.3: for `n = 1`, `topCohomology` is `ℂ[x^{±1}]/θℂ[x^{±1}] = ℂ·1` and `H⁰` is also `ℂ`, so cohomology is not confined to the top degree. For `n = 0`, `ℝ⁰ = {0}`, so `affineSpan ℝ {0} = ⊤` and `{0}` is full dimensional; the complex is `ℂ` in degree `0 = n`, of dimension `1 = 0! · vol({0})`, and 10.3 applies.
 - For `n = 2`, with every sign replaced by `+1`, `d²(ω)_{12}` would equal `2 (θ_1 + θ_1φ)(θ_2 + θ_2φ) ω_∅`, not zero; with the sign `(−1)^{#{i ∈ J : i < j}}` it is `D_1 D_2 ω_∅ − D_2 D_1 ω_∅ = 0`.
 
 **Definition (Newton polytope and nondegeneracy).** Let `latticePoint` send `m ∈ ℤ^n` to `ℝ^n`, and `newtonPolytope` `φ` be `Δ(φ) = conv({0} ∪ supp φ)`. For a subset `σ ⊂ ℝ^n` let `faceEulerEval` `φ σ j z` be `θ_j φ_σ` evaluated at `z ∈ ℂ^n`, where `φ_σ = Σ_{m ∈ σ} a_m x^m`. `IsNewtonNondegenerate` `φ` means: for every nonempty exposed face `σ` of `Δ(φ)` not containing `0`, the functions `θ_1 φ_σ, …, θ_n φ_σ` have no common zero on `(ℂ^×)^n`. Since `0 ∈ Δ(φ) ∖ σ`, the face is cut out by a functional `ℓ` with `ℓ = c > 0` on `σ`, and `Σ ℓ_i θ_i φ_σ = c φ_σ`; so the condition is equivalent to Yu's, which also requires `φ_σ = 0` (Yu, §4(a), Definition, p. 25). Faces of a polytope are exactly its exposed faces. The cone `C_Δ` generated by `Δ` and the gauge `h(m) = inf{a ≥ 0 : m ∈ aΔ}` define the Newton filtration: `F^λ_Newton` in degree `q` is zero for `q < λ` and otherwise spanned by `x^m dlog x_I` with `m ∈ C_Δ` and `h(m) ≤ q − λ` (Yu, (24)–(25), pp. 25–26; FSY, §4.3.1, p. 35). Convenience means `0` lies in the interior of `Δ`. *Needs:* Mathlib `AddMonoidAlgebra`, `AddMonoidAlgebra.coeffLinearEquiv`, `convexHull`, `affineSpan`, `IsExposed`, `MeasureTheory.volume`; AnalyticToricGeometry Layer 0 (items 1, 2 and 6: the integral lattice `ℤ^n ⊂ ℝ^n`, the cone `C_Δ` and the semigroup of its lattice points); AnalyticToricGeometryPartII §0.3 (gap:toric-normal-fan); PadicDifferentialEquationsAndRigidCohomology §RD.6.53 for the first Check.
@@ -1131,9 +1159,9 @@ API:
 - For `φ = x + x⁻¹`, `Δ = [−1, 1]`, `h(m) = |m|`, and `φ` is convenient; for `φ = (x + y)²` on `(G_m)²`, the edge from `(2, 0)` to `(0, 2)` has face polynomial `(x + y)²`, whose Euler derivatives vanish on `x + y = 0`, so `φ` is degenerate.
 - For `φ` constant and `n ≥ 1`, `Δ = {0}` is not full dimensional; the empty set is an exposed face of every set, and the nonemptiness clause is what keeps it from making every `φ` degenerate. Convenience does not make `φ : T → A¹` proper: for `x + x⁻¹ + y + y⁻¹` on `(G_m)²`, convenient and nondegenerate, the fibre over `0` is a positive-dimensional affine curve (a correction of Yu, p. 26, which uses only the exhaustiveness of the Newton filtration).
 
-### 12.5 Kouchnirenko's graded acyclicity
+### 10.2 Kouchnirenko's graded acyclicity
 
-**Theorem.** Let `φ` be Newton nondegenerate with `Δ(φ)` full dimensional, and let `gr ℂ[C_Δ ∩ ℤ^n]` be the graded ring associated with the Newton filtration of the cone algebra (the filtration by the gauge `h`). Then (a) `gr ℂ[C_Δ ∩ ℤ^n]` is a Cohen–Macaulay ring of dimension `n`; (b) the classes of the face Euler derivatives, that is the leading forms of `θ_1 φ, …, θ_n φ`, form a regular sequence on it; (c) consequently the associated graded complex `gr_Newton` of the Newton complex, which is the Koszul complex of these leading forms, has cohomology only in degree `n`, and that cohomology has dimension `n! · vol(Δ(φ))` (AS, (4.3), AS lines 442–445, quoting Kouchnirenko, Théorème 2.8; Yu, Theorem 4.1(ii), Yu lines 1408 and 1442). Top-degree concentration is not inferred from face nondegeneracy without the regular-sequence argument. *Proof route:* for every face `σ` of `Δ` not containing `0`, including the empty face, whose cone is `{0}`, the lattice points of the cone `C_σ` over `σ` form a finitely generated semigroup (Gordan, AnalyticToricGeometry Layer 0 item 6) that is saturated in the group it generates (GroebnerGeometry §G2), so its algebra `ℂ[C_σ ∩ ℤ^n]` is Cohen–Macaulay by Hochster's theorem (gap:normal-semigroup-cohen-macaulay; AS line 617 recalls it for one graded cone). The Newton-graded ring is the ring on the monomials `x^m`, `m ∈ C_Δ ∩ ℤ^n`, in which `x^m · x^{m′} = x^{m+m′}` when `m` and `m′` lie in the cone over a common such face, that is when `h(m + m′) = h(m) + h(m′)`, and `0` otherwise; Kouchnirenko's exact sequence relating it to the face algebras `ℂ[C_σ ∩ ℤ^n]` gives its Cohen–Macaulay property (Kou, §2). Cohen–Macaulayness of the cone algebra itself is not used: it does not pass to an associated graded ring in general; nondegeneracy says that the leading forms `F_1, …, F_n` have no common zero on any face away from `0`, so they form a homogeneous system of parameters and hence a regular sequence. The graded ring is then free over `ℂ[F_1, …, F_n]` on a homogeneous basis of the quotient `Q` by the `F_i`. All degrees lie in `e⁻¹ℕ` for a common denominator `e` of the values of `h`; with `H_gr(t) = Σ_{m ∈ C_Δ ∩ ℤ^n} t^{h(m)}`, the Hilbert series of `Q` is the polynomial `H_Q(t) = (1 − t)^n H_gr(t)` in `t^{1/e}`. The dimension of `Q` is its value `H_Q(1) = lim_{t→1}(1 − t)^n H_gr(t)`, not the series itself. To evaluate it for `n ≥ 1`, count the monomials of degree at most `k`: since `h(m) ≤ k` exactly when `m ∈ kΔ`, freeness gives `#(kΔ ∩ ℤ^n) = dim Q · k^n/n! + O(k^{n−1})`, while `#(kΔ ∩ ℤ^n)/k^n → vol(Δ)` (Mathlib `ZLattice.covolume.tendsto_card_div_pow`, the boundary of `Δ` being null by `Convex.addHaar_frontier`); hence `dim Q = n! · vol(Δ)`. *Needs:* 12.4; AnalyticToricGeometry Layer 0 (dual semigroups, item 6); GroebnerGeometry §G2 (saturation and normality of semigroup algebras) and gap:normal-semigroup-cohen-macaulay; SchemeAndStackFoundations §0.17 (depth, regular sequences and Cohen–Macaulay modules) and Tau Ceti `TauCeti.Ring.IsCohenMacaulay`; Mathlib `ZLattice.covolume.tendsto_card_div_pow` and `Convex.addHaar_frontier`.
+**Theorem.** Let `φ` be Newton nondegenerate with `Δ(φ)` full dimensional, and let `gr ℂ[C_Δ ∩ ℤ^n]` be the graded ring associated with the Newton filtration of the cone algebra (the filtration by the gauge `h`). Then (a) `gr ℂ[C_Δ ∩ ℤ^n]` is a Cohen–Macaulay ring of dimension `n`; (b) the classes of the face Euler derivatives, that is the leading forms of `θ_1 φ, …, θ_n φ`, form a regular sequence on it; (c) consequently the associated graded complex `gr_Newton` of the Newton complex, which is the Koszul complex of these leading forms, has cohomology only in degree `n`, and that cohomology has dimension `n! · vol(Δ(φ))` (AS, (4.3), AS lines 442–445, quoting Kouchnirenko, Théorème 2.8; Yu, Theorem 4.1(ii), Yu lines 1408 and 1442). Top-degree concentration is not inferred from face nondegeneracy without the regular-sequence argument. *Proof route:* for every face `σ` of `Δ` not containing `0`, including the empty face, whose cone is `{0}`, the lattice points of the cone `C_σ` over `σ` form a finitely generated semigroup (Gordan, AnalyticToricGeometry Layer 0 item 6) that is saturated in the group it generates (GroebnerGeometry §G2), so its algebra `ℂ[C_σ ∩ ℤ^n]` is Cohen–Macaulay by Hochster's theorem (gap:normal-semigroup-cohen-macaulay; AS line 617 recalls it for one graded cone). The Newton-graded ring is the ring on the monomials `x^m`, `m ∈ C_Δ ∩ ℤ^n`, in which `x^m · x^{m′} = x^{m+m′}` when `m` and `m′` lie in the cone over a common such face, that is when `h(m + m′) = h(m) + h(m′)`, and `0` otherwise; Kouchnirenko's exact sequence relating it to the face algebras `ℂ[C_σ ∩ ℤ^n]` gives its Cohen–Macaulay property (Kou, §2). Cohen–Macaulayness of the cone algebra itself is not used: it does not pass to an associated graded ring in general; nondegeneracy says that the leading forms `F_1, …, F_n` have no common zero on any face away from `0`, so they form a homogeneous system of parameters and hence a regular sequence. The graded ring is then free over `ℂ[F_1, …, F_n]` on a homogeneous basis of the quotient `Q` by the `F_i`. All degrees lie in `e⁻¹ℕ` for a common denominator `e` of the values of `h`; with `H_gr(t) = Σ_{m ∈ C_Δ ∩ ℤ^n} t^{h(m)}`, the Hilbert series of `Q` is the polynomial `H_Q(t) = (1 − t)^n H_gr(t)` in `t^{1/e}`. The dimension of `Q` is its value `H_Q(1) = lim_{t→1}(1 − t)^n H_gr(t)`, not the series itself. To evaluate it for `n ≥ 1`, count the monomials of degree at most `k`: since `h(m) ≤ k` exactly when `m ∈ kΔ`, freeness gives `#(kΔ ∩ ℤ^n) = dim Q · k^n/n! + O(k^{n−1})`, while `#(kΔ ∩ ℤ^n)/k^n → vol(Δ)` (Mathlib `ZLattice.covolume.tendsto_card_div_pow`, the boundary of `Δ` being null by `Convex.addHaar_frontier`); hence `dim Q = n! · vol(Δ)`. *Needs:* 10.1; AnalyticToricGeometry Layer 0 (dual semigroups, item 6); GroebnerGeometry §G2 (saturation and normality of semigroup algebras) and gap:normal-semigroup-cohen-macaulay; SchemeAndStackFoundations §0.17 (depth, regular sequences and Cohen–Macaulay modules) and Tau Ceti `TauCeti.Ring.IsCohenMacaulay`; Mathlib `ZLattice.covolume.tendsto_card_div_pow` and `Convex.addHaar_frontier`.
 
 **Checks.**
 
@@ -1144,19 +1172,19 @@ API:
 - For `φ = x + x⁻¹`, `Δ = [−1, 1]` and the faces not containing `0` are `{1}`, `{−1}` and the empty face, with face algebras `ℂ[x]`, `ℂ[x⁻¹]` and `ℂ`. In the graded ring `x · x⁻¹ = 0`, since `h(0) = 0 < 2`, so it is `ℂ[x, y]/(xy)` with `y` the class of `x⁻¹`: Cohen–Macaulay of dimension one, though not a domain, and not the Laurent ring `ℂ[x^{±1}]`, in which `x · x⁻¹ = 1`. The leading form `x − y` of `θφ` lies in neither minimal prime `(x)`, `(y)`, so it is a nonzerodivisor, and `ℂ[x, y]/(xy, x − y) = ℂ[x]/(x²)` has dimension `2 = 1! · vol([−1, 1])`.
 - Hochster's theorem needs saturation: the semigroup `S ⊂ ℕ²` generated by `(4, 0)`, `(3, 1)`, `(1, 3)`, `(0, 4)` contains `(4, 4) = 2 · (2, 2)` but not `(2, 2)`, which lies in its group. Its algebra `k[s⁴, s³t, st³, t⁴]` has dimension two and depth one: `t⁴ · s⁶t² = s⁴ · s²t⁶`, but `s⁶t²` is not in `s⁴ k[S]`, so the parameters `s⁴, t⁴` are not a regular sequence. The face semigroups `C_σ ∩ ℤ^n` are saturated by construction.
 
-### 12.6 Concentration and volume of twisted de Rham cohomology on a torus
+### 10.3 Concentration and volume of twisted de Rham cohomology on a torus
 
-**Theorem** (`twistedDeRham_concentration_finrank`). Let `φ ∈ LaurentRing n` with `Δ(φ)` full dimensional (its affine span is `ℝ^n`) and `IsNewtonNondegenerate φ`. Then the twisted de Rham complex `(Ω^•(T), d + dφ ∧)` of the torus `T = (G_m)^n` is exact outside degree `n`, and `H^n_dR(T, E^φ)` is finite dimensional of dimension `n! · vol(Δ(φ))`, the volume normalized so that `ℤ^n` has covolume one. Moreover the cone-to-Laurent inclusion is a quasi-isomorphism for `λ ≤ 0` and the Newton spectral sequence degenerates at `E₁` (AS, Theorem 4.13, p. 73, AS lines 569–573, and Theorem 5.1, p. 74, AS lines 583–590, with `r = 0` and `a = 0`; Theorem 4.1, p. 67, AS lines 395–398, is the same statement for the cone-algebra complex, the input of 12.5; Yu, Theorem 4.1 and Corollary 4.2, Yu lines 1397–1416). Full dimension is necessary: if `φ` is constant along a subtorus, ordinary cohomology of that subtorus appears. In Lean the conclusion is stated as `cocycles φ r ≤ coboundaries φ r` for `r ≠ n`, finite dimensionality of `topCohomology φ`, and the equality of its dimension with `n.factorial · volume (newtonPolytope φ)`. *Proof route:* 12.5 gives graded acyclicity outside degree `n`; the dimension of the graded cone algebra modulo the regular sequence, the value at `t = 1` of its Hilbert series, is the normalized volume (12.5 (c)); filtered acyclicity compares the cone and Laurent complexes and degenerates the spectral sequence. *Needs:* 12.4, 12.5; AnalyticToricGeometry Layer 0.
+**Theorem** (`twistedDeRham_concentration_finrank`). Let `φ ∈ LaurentRing n` with `Δ(φ)` full dimensional (its affine span is `ℝ^n`) and `IsNewtonNondegenerate φ`. Then the twisted de Rham complex `(Ω^•(T), d + dφ ∧)` of the torus `T = (G_m)^n` is exact outside degree `n`, and `H^n_dR(T, E^φ)` is finite dimensional of dimension `n! · vol(Δ(φ))`, the volume normalized so that `ℤ^n` has covolume one. Moreover the cone-to-Laurent inclusion is a quasi-isomorphism for `λ ≤ 0` and the Newton spectral sequence degenerates at `E₁` (AS, Theorem 4.13, p. 73, AS lines 569–573, and Theorem 5.1, p. 74, AS lines 583–590, with `r = 0` and `a = 0`; Theorem 4.1, p. 67, AS lines 395–398, is the same statement for the cone-algebra complex, the input of 10.2; Yu, Theorem 4.1 and Corollary 4.2, Yu lines 1397–1416). Full dimension is necessary: if `φ` is constant along a subtorus, ordinary cohomology of that subtorus appears. In Lean the conclusion is stated as `cocycles φ r ≤ coboundaries φ r` for `r ≠ n`, finite dimensionality of `topCohomology φ`, and the equality of its dimension with `n.factorial · volume (newtonPolytope φ)`. *Proof route:* 10.2 gives graded acyclicity outside degree `n`; the dimension of the graded cone algebra modulo the regular sequence, the value at `t = 1` of its Hilbert series, is the normalized volume (10.2 (c)); filtered acyclicity compares the cone and Laurent complexes and degenerates the spectral sequence. *Needs:* 10.1, 10.2; AnalyticToricGeometry Layer 0.
 
 **Checks.**
 
 - For `φ = x` on `G_m`, `n! vol = 1` and `dim H¹ = 1`; for `x + x⁻¹`, `n! vol = 2` and `dim H¹ = 2`, in agreement with PadicDifferentialEquationsAndRigidCohomology §RD.6.53, since `E^{x+x⁻¹}` has irregularity one at `0` and at `∞` and no horizontal sections.
-- For `φ = x₁ + ⋯ + x_n`, `Δ` is the standard simplex of volume `1/n!`, so `dim H^n = 1`, matching 9.6.
+- For `φ = x₁ + ⋯ + x_n`, `Δ` is the standard simplex of volume `1/n!`, so `dim H^n = 1`, matching 8.6.
 - For `φ = x` on `(G_m)²`, `Δ` is a segment and the hypothesis fails; indeed `H^•_dR = H^•(G_m, E^x) ⊗ H^•(G_m)` has `H¹` and `H²` both one-dimensional, so cohomology is not confined to degree two. For `n = 0`, `φ` is a constant `c`, `Δ = {0}` is full dimensional in `ℝ⁰`, and `H⁰ = ℂ` has dimension `0! · 1`.
 
-### 12.7 Newton and irregular Hodge filtrations agree
+### 10.4 Newton and irregular Hodge filtrations agree
 
-**Theorem.** For every full-dimensional Newton-nondegenerate Laurent polynomial `φ` and every rational `λ`, `F^λ_irr H^n_dR(T, E^φ)` is the image of `H^n(F^λ_Newton)`. In particular, for `m ∈ C_Δ` with `h(m) ≤ n − λ`, the class of `x^m dlog x₁ ∧ ⋯ ∧ dlog x_n` lies in `F^λ_irr`. The equality of image filtrations does not depend on the toric refinement or the resolution of indeterminacy, and it does not assert that these monomials form a basis (Yu, Proposition 4.3, p. 27; Proposition 4.4 and Lemma 4.5, pp. 29–31; Theorem 4.6, p. 31; FSY, §4.3.1, p. 35). Convenience is not required. *Proof route:* on a regular refinement of the normal fan, the Newton complex is the global logarithmic pole-order complex, and toric vanishing (gap:toric-rounded-vanishing) shows that global sections compute hypercohomology; zero and pole divisors meet transversally by nondegeneracy (Yu, Proposition 4.3), so the toric model is non-degenerate; 12.2 resolves the indeterminacy and 12.3 identifies the image filtration with `F_irr`. *Needs:* 12.1, 12.2, 12.3, 12.4, 12.6; AnalyticToricGeometry Layer 0; AnalyticToricGeometryPartII §0.3 (gap:toric-normal-fan, gap:toric-rounded-vanishing).
+**Theorem.** For every full-dimensional Newton-nondegenerate Laurent polynomial `φ` and every rational `λ`, `F^λ_irr H^n_dR(T, E^φ)` is the image of `H^n(F^λ_Newton)`. In particular, for `m ∈ C_Δ` with `h(m) ≤ n − λ`, the class of `x^m dlog x₁ ∧ ⋯ ∧ dlog x_n` lies in `F^λ_irr`. The equality of image filtrations does not depend on the toric refinement or the resolution of indeterminacy, and it does not assert that these monomials form a basis (Yu, Proposition 4.3, p. 27; Proposition 4.4 and Lemma 4.5, pp. 29–31; Theorem 4.6, p. 31; FSY, §4.3.1, p. 35). Convenience is not required. *Proof route:* on a regular refinement of the normal fan, the Newton complex is the global logarithmic pole-order complex, and toric vanishing (gap:toric-rounded-vanishing) shows that global sections compute hypercohomology; zero and pole divisors meet transversally by nondegeneracy (Yu, Proposition 4.3), so the toric model is non-degenerate; 8.8 resolves the indeterminacy and 8.9 identifies the image filtration with `F_irr`. *Needs:* 8.7, 8.8, 8.9, 10.1, 10.3; AnalyticToricGeometry Layer 0; AnalyticToricGeometryPartII §0.3 (gap:toric-normal-fan, gap:toric-rounded-vanishing).
 
 **Checks.**
 
@@ -1164,25 +1192,15 @@ API:
 - For `φ = x + x⁻¹`, `dlog x` has `h = 0` and `x^{±1} dlog x` have `h = 1`; the jumps are `0` and `1` once a basis of `H¹` is extracted, which is a separate computation.
 - The implication bounds the filtration of a class, including the class zero; it gives no linear independence.
 
-### 12.8 The constant boundary correction of a Laurent Gauss–Manin system
+### 10.5 The constant boundary correction of a Laurent Gauss–Manin system
 
-**Theorem.** For a convenient Newton-nondegenerate Laurent polynomial `h : T = (G_m)^n → A¹`, the cone of `h_! pℚ_T → h_* pℚ_T` has constant cohomology mixed Hodge modules. Consequently `Π H⁰ h_! pℚ_T ≅ Π im(H⁰ h_! pℚ_T → H⁰ h_* pℚ_T) ≅ Π H⁰ h_* pℚ_T`; the central compact-to-ordinary map of the pair `(T, h)` is an isomorphism after `Π`, and the central invariant is pure of exponential weight `n` (DL, §§3.3–3.7 and the proof in §3.9(c), pp. 280–282, whose finite-field constancy step is replaced here by simple connectedness of `A¹`; FSY, proof of Proposition 2.21, pp. 16–18). Both convenience and nondegeneracy are required; `h` need not be proper. *Proof route:* close the graph `h − θ = 0` in a smooth proper toric refinement; Denef–Loeser's face computation gives a proper graph compactification smooth over the boundary strata, whose boundary maps have no vanishing cycles over `A¹`; proper base change and the boundary-strata Čech resolution make every boundary direct image a local system on `A¹`, constant because `A¹` is simply connected; 5.6 upgrades it to a constant mixed Hodge module; the boundary localization triangle identifies these with the cone; exactness of `Π` and 9.4. *Needs:* 12.4; AnalyticToricGeometry Layer 0; 1.2; 5.1, 5.6; 6.2; 9.4.
+**Theorem.** For a convenient Newton-nondegenerate Laurent polynomial `h : T = (G_m)^n → A¹`, the cone of `h_! pℚ_T → h_* pℚ_T` has constant cohomology mixed Hodge modules. Consequently `Π H⁰ h_! pℚ_T ≅ Π im(H⁰ h_! pℚ_T → H⁰ h_* pℚ_T) ≅ Π H⁰ h_* pℚ_T`; the central compact-to-ordinary map of the pair `(T, h)` is an isomorphism after `Π`, and the central invariant is pure of exponential weight `n` (DL, §§3.3–3.7 and the proof in §3.9(c), pp. 280–282, whose finite-field constancy step is replaced here by simple connectedness of `A¹`; FSY, proof of Proposition 2.21, pp. 16–18). Both convenience and nondegeneracy are required; `h` need not be proper. *Proof route:* close the graph `h − θ = 0` in a smooth proper toric refinement; Denef–Loeser's face computation gives a proper graph compactification smooth over the boundary strata, whose boundary maps have no vanishing cycles over `A¹`; proper base change and the boundary-strata Čech resolution make every boundary direct image a local system on `A¹`, constant because `A¹` is simply connected; 5.6 upgrades it to a constant mixed Hodge module; the boundary localization triangle identifies these with the cone; exactness of `Π` and 8.4. *Needs:* 10.1; AnalyticToricGeometry Layer 0; 1.2; 5.1, 5.6; 6.2; 8.4.
 
 **Checks.**
 
 - For `h = x` on `G_m`, convenience fails, and indeed `H¹_c = I(ℚ)` and `H¹ = I(ℚ(−1))` are not isomorphic: the comparison cannot be deduced from nondegeneracy alone.
-- For `h = x + x⁻¹`, convenience holds, the common central object has fibre of dimension two (12.6), and the compact-to-ordinary map is an isomorphism after `Π`.
+- For `h = x + x⁻¹`, convenience holds, the common central object has fibre of dimension two (10.3), and the compact-to-ordinary map is an isomorphism after `Π`.
 - For `h = x + y + 1/(xy)` on `(G_m)²`, convenient and nondegenerate, the central object has fibre dimension `2! · vol = 3`, pure of exponential weight `2`.
-
-### 12.9 Filtered Künneth and Poincaré duality
-
-**Theorem.** For smooth quasi-projective pairs `(U, f)` and `(V, g)`, the Künneth isomorphism of 9.3 identifies `F^λ_irr H^r(U × V, f ⊞ g)` with `⊕_{a+b=r} Σ_{α+β=λ} F^α_irr H^a(U, f) ⊗ F^β_irr H^b(V, g)`, and likewise for compact supports. For `U` of dimension `d`, the perfect pairing `H^r_c(U, f) ⊗ H^{2d−r}(U, −f) → ℂ` of 9.3 identifies the rational filtration with its dual: the annihilator of `F^λ` on the compact factor is `F^{>d−λ}` on the ordinary factor, where `F^{>a} = Σ_{b>a} F^b`. These are statements for constant coefficients (CY, Theorem 1, pp. 1–2; §§3.1–3.2, pp. 7–11; Yu, Theorem 2.2 and its proof, pp. 14–16). *Proof route:* from two good models, blow up intersections of boundary components where the pole orders of `f` and `g` have opposite signs, until a non-degenerate model of `f ⊞ g` is reached (CY §3.1); on intermediate models use the convex combinations `Σ_{0≤θ≤1} O(⌊μ((1 − θ)P_f + θP_g)⌋)`, whose blow-up quotients are sums of `O_E(−1)` with vanishing direct image (SchemeKTheoryOperations §5.7, applied as in 12.2), checking pushforward on the finite monomial resolution although the sum need not be locally free (CY §3.2); the coherent external-product computation (Tor-independent base change and Čech complexes) and `E₁`-degeneration of both factors identify the convolution filtration, transferred by 12.3; for duality pair the logarithmic complex with its horizontal compact twist via residues and Serre duality, with the strict inequality at a rational jump, and dualize the ordinary Künneth statement for compact supports. *Needs:* 12.1, 12.2, 12.3; 9.3; 7.5; SchemeAndStackFoundations §§2.2, 2.6, 2.18, 2.20.
-
-**Checks.**
-
-- The torus-sum examples give `F^k H^k = H^k` with jump `k` for the ordinary groups and `F⁰ H^k_c = H^k_c` with jump `0` for the compact groups, and the annihilator rule pairs jump `0` with jump `k = d`.
-- For `(A¹, x²)` the jump is `1/2`, and for `(A², x² + y²)` it is `1 = 1/2 + 1/2`; rounding each factor to an integer before adding would give `0` or `2`.
-- For `(G_m, x)`, `d = 1`: the compact jump `0` and the ordinary jump `1` satisfy `ann F^λ = F^{>1−λ}`: for `λ ≤ 0`, `F^λ H_c = H_c` and its annihilator is `0 = F^{>1−λ} H` since `1 − λ ≥ 1`.
 
 ### Examples
 
@@ -1190,17 +1208,17 @@ For `φ = x` on `G_m`, the Newton cone has only nonnegative exponents and `H¹` 
 
 ### Dependencies
 
-12.1 needs 2.1, 9.2, ResolutionOfSingularitiesCharacteristicZero §§5.1, 6.2 and ComplexComparisonPartII §C5.6; 12.2 needs 12.1, SchemeKTheoryOperations §5.7 and SchemeAndStackFoundations §§2.18, 4.11, 5.5 (gap:blowup-exceptional-divisor); 12.3 needs 12.1, 12.2, 7.1, 7.2, 7.5, 9.2 and 9.3; 12.4 needs Mathlib's monoid algebras and convex geometry, AnalyticToricGeometryPartII §0.3; 12.5 needs 12.4, AnalyticToricGeometry Layer 0, GroebnerGeometry §G2 (gap:normal-semigroup-cohen-macaulay), SchemeAndStackFoundations §0.17 and Mathlib's lattice-point count; 12.6 needs 12.4 and 12.5; 12.7 needs 12.1–12.4, 12.6 and the toric suppliers; 12.8 needs 12.4, 1.2, 5.1, 5.6, 6.2 and 9.4; 12.9 needs 12.1–12.3, 9.3, 7.5 and SchemeAndStackFoundations §§2.2, 2.6, 2.18, 2.20.
+10.1 needs Mathlib's monoid algebras and convex geometry, AnalyticToricGeometryPartII §0.3; 10.2 needs 10.1, AnalyticToricGeometry Layer 0, GroebnerGeometry §G2 (gap:normal-semigroup-cohen-macaulay), SchemeAndStackFoundations §0.17 and Mathlib's lattice-point count; 10.3 needs 10.1 and 10.2; 10.4 needs 8.7–8.9, 10.1, 10.3 and the toric suppliers; 10.5 needs 10.1, 1.2, 5.1, 5.6, 6.2 and 8.4.
 
 ## Downstream consumers
 
-- **KloostermanMomentsAndPotentialAutomorphy** uses 2.4 (localized Fourier transformation of its recursive connections), Layers 6, 7 and 8 (the exponential realization and classicality), 10.1 and 11.1–11.6 (Fourier cohomology, costalks, Hodge numbers and the weights at infinity of `Π`), and 12.4–12.8 (Newton complexes and the constant Gauss–Manin correction). It owns its connections, polytopes, bases and Jordan blocks.
+- **KloostermanMomentsAndPotentialAutomorphy** uses 2.4 (localized Fourier transformation of its recursive connections), Layers 6 and 7 (the exponential realization and classicality, including 6.7 and 7.7), 8.1–8.6 (pair cohomology and its de Rham realization), Layer 9 (the `tg` criterion and zero locus, Fourier cohomology, costalks, Hodge numbers and the weights at infinity of `Π`), 8.7–8.9 and 10.1–10.5 (logarithmic and Newton complexes and the constant Gauss–Manin correction). It owns its connections, polytopes, bases and Jordan blocks.
 - **EllAdicHomotopyTypesAndWeights** uses 5.1 and 5.2 for the operations and weight bounds of mixed Hodge modules on quasi-projective varieties.
 - **SheafConvolutionOnAbelianVarieties** needs, in its §§0.4, 0.9, 1.5 and 4.3, the equivalence between complexes with regular holonomic cohomology and `D^b_c(X, ℂ)`; that equivalence is 1.5.
 
 ## Worked examples
 
-- **Tori sums.** For `(G_m, x)`, localization at `0` in `A¹` gives `H¹ = I(ℚ(−1))` and `H¹_c = I(ℚ(0))`; the comparison is zero because the weights differ. For `k` factors, `H^k((G_m)^k, Σ x_i) = I(ℚ(−k))` and `H^k_c = I(ℚ(0))`, all other groups zero; the ordinary filtration jumps at `k`, the compact one at `0`, the duality pairing lands in `I(ℚ(−k))`, and the de Rham dimension `1` is `k!` times the volume `1/k!` of the standard simplex (12.6). This checks the degree normalization, the Tate signs, the two support theories and the classical filtration comparison together.
+- **Tori sums.** For `(G_m, x)`, localization at `0` in `A¹` gives `H¹ = I(ℚ(−1))` and `H¹_c = I(ℚ(0))`; the comparison is zero because the weights differ. For `k` factors, `H^k((G_m)^k, Σ x_i) = I(ℚ(−k))` and `H^k_c = I(ℚ(0))`, all other groups zero; the ordinary filtration jumps at `k`, the compact one at `0`, the duality pairing lands in `I(ℚ(−k))`, and the de Rham dimension `1` is `k!` times the volume `1/k!` of the standard simplex (10.3). This checks the degree normalization, the Tate signs, the two support theories and the classical filtration comparison together.
 - **Costalk versus stalk.** For `M = pℚ_{A¹_τ}`, Fourier cohomology is `H¹ = ℚ(−1)`, which is `H¹ i_0^! pℚ`, since `i_0^! pℚ = ℚ(−1)[−1]`; the stalk `i_0^* pℚ = ℚ[1]` has a different degree and twist. For `M = δ_0 V`, Fourier cohomology is `V` in degree `0`.
 - **Zero loci.** For `g = x` on `V = A¹`, the zero locus is a point, and `(A², tx)` has `H²_c = I(ℚ(−1))` and `H² = I(H²_{0}(A¹)) = I(ℚ(−1))`. For `g` invertible both groups vanish. For `g = 0`, ordinary cohomology is `H^r(V)` and compact cohomology `H^{r−2}_c(V)(−1)`; the smooth-divisor formula does not apply to this zero locus.
 - **Newton polytopes.** For `φ = x` on `G_m`, the Newton cone has only nonnegative exponents and `H¹` has dimension one; for `φ = x + x⁻¹` the cone is the whole line, the height is `|m|` and `H¹` has dimension two; for `φ = x` on `(G_m)²` the polytope is not full dimensional and the ordinary cohomology of the unused variable prevents top-degree concentration.
@@ -1217,6 +1235,8 @@ For `φ = x` on `G_m`, the Newton cone has only nonnegative exponents and `H¹` 
 - **Sab05.** C. Sabbah, *Polarizable twistor D-modules*, Astérisque 300 (2005); arXiv:math/0503038. §§1.6, 3.1–3.3, 4.1–4.2, Theorem 5.0.1, §6.1, §8.4.
 - **Sai88.** M. Saito, *Modules de Hodge polarisables*, Publ. RIMS 24 (1988), 849–995. §§1.1, 2.1–2.2, 3.1–3.2, 3.4, 5.1–5.3.
 - **Sai90.** M. Saito, *Mixed Hodge modules*, Publ. RIMS 26 (1990), 221–333. Introduction, §§2.2–2.4, 2.9–2.11, 2.17, 3.29, 4.1–4.5.
+- **SY15.** C. Sabbah, J.-D. Yu, *On the irregular Hodge filtration of exponentially twisted mixed Hodge modules*, Forum Math. Sigma 3 (2015), e9; arXiv:1406.1339v3. Theorem 1.3.
+- **Sab18.** C. Sabbah (with J.-D. Yu), *Irregular Hodge theory*, Mém. Soc. Math. France 156 (2018); arXiv:1511.00176v5. Theorems 0.2 and 0.3.
 - **Kash76.** M. Kashiwara, *B-functions and holonomic systems*, Invent. Math. 38 (1976), 33–53.
 - **Kash84.** M. Kashiwara, *The Riemann–Hilbert problem for holonomic systems*, Publ. RIMS 20 (1984), 319–365. §§6–7.
 - **Kash86.** M. Kashiwara, *A study of variation of mixed Hodge structure*, Publ. RIMS 22 (1986), 991–1024. §1.
