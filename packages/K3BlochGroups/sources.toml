@@ -254,3 +254,90 @@ licence_class = "author-page"
 status = "certified"
 accessed = "2026-10-22"
 cited_for = ["Exact supplier contracts; 6.7"]
+
+[[source]]
+id = "mirzaii-local"
+authors = "Behrooz Mirzaii"
+title = "A Bloch-Wigner exact sequence over local rings"
+year = 2016
+arxiv = "1603.03649v1"
+locator_scheme = "theorem"
+locator = "Propositions 3.6(i), 4.7; Theorem 6.1; Corollary 6.3"
+url = "https://arxiv.org/abs/1603.03649v1"
+fetched_from = "https://arxiv.org/pdf/1603.03649v1"
+fetched_at = "2026-11-13T13:48:37Z"
+sha256 = "4a3b631756ac372e5bbc6c67ec932a698d8358e466f835679c39a769e90b35be"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-13"
+version_note = "arXiv v1"
+cited_for = ["4.22"]
+
+[[source]]
+id = "mirzaii-mokari"
+authors = "Behrooz Mirzaii, Fatemeh Y. Mokari"
+title = "Bloch-Wigner theorem over rings with many units II"
+year = 2011
+arxiv = "1108.5452v2"
+locator_scheme = "section"
+locator = "Section 1 p.4; Theorem 5.1; Corollaries 5.3–5.4"
+url = "https://arxiv.org/abs/1108.5452v2"
+fetched_from = "https://arxiv.org/pdf/1108.5452v2"
+fetched_at = "2026-11-13T13:49:01Z"
+sha256 = "2d9a6238353684257e31b3a53987133595f42fb26f5060cadc5200306b4ee3b4"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-13"
+version_note = "arXiv v2"
+cited_for = ["4.22"]
+
+[[source]]
+id = "hutchinson-local"
+authors = "Kevin Hutchinson"
+title = "The third homology of SL_2 of local rings"
+year = 2013
+arxiv = "1309.5010v2"
+locator_scheme = "theorem"
+locator = "Theorem 2.1; Theorem 3.22; Corollary 3.23"
+url = "https://arxiv.org/abs/1309.5010v2"
+fetched_from = "https://arxiv.org/pdf/1309.5010v2"
+fetched_at = "2026-11-13T13:49:19Z"
+sha256 = "766381a0459d0eca4263ee284a296ab3f4794aea16696b972bee56cee89a1c7a"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-13"
+version_note = "arXiv v2"
+cited_for = ["3.17; 4.22"]
+
+[[source]]
+id = "coronado-hutchinson"
+authors = "Rodrigo Cuitun Coronado, Kevin Hutchinson"
+title = "Bloch Groups of Rings"
+year = 2022
+arxiv = "2201.04996v3"
+locator_scheme = "theorem"
+locator = "Corollary 8.4 p.27"
+url = "https://arxiv.org/abs/2201.04996v3"
+fetched_from = "https://arxiv.org/pdf/2201.04996v3"
+fetched_at = "2026-11-13T13:49:53Z"
+sha256 = "8c454093c4157b3a729812790433e85b0a6b79e011777650d79cfd69f29264c4"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-13"
+version_note = "arXiv v3"
+cited_for = ["3.4"]
+
+[[source]]
+id = "mirzaii-erratum"
+authors = "Behrooz Mirzaii"
+title = "Erratum to: Bloch–Wigner theorem over rings with many units"
+year = 2013
+venue = "Mathematische Zeitschrift 275"
+doi = "10.1007/s00209-013-1199-9"
+locator_scheme = "page"
+locator = "pp.653–655"
+url = "https://doi.org/10.1007/s00209-013-1199-9"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["References"]
