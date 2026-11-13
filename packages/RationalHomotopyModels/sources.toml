@@ -1,0 +1,76 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "RationalHomotopyModels"
+
+[[source]]
+id = "Hess2007"
+authors = "Kathryn Hess"
+title = "Rational homotopy theory: a brief introduction"
+year = 2006
+arxiv = "math/0604626v2"
+locator_scheme = "theorem"
+locator = "Proposition 1.13"
+url = "https://arxiv.org/abs/math/0604626v2"
+fetched_from = "https://arxiv.org/pdf/math/0604626v2"
+fetched_at = "2026-11-13T18:05:32Z"
+sha256 = "d9dd87d87b404dc0e1b523c7bef87e4976272f0ccbdc56107472759367f7bd76"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-13"
+version_note = "arXiv v2"
+cited_for = ["2.2"]
+
+[[source]]
+id = "Morgan1978"
+locator_scheme = "theorem"
+locator = "Theorem 5.6"
+url = "http://www.numdam.org/item/PMIHES_1978__48__137_0/"
+fetched_from = "https://www.numdam.org/item/PMIHES_1978__48__137_0.pdf"
+fetched_at = "2026-11-13T18:05:35Z"
+sha256 = "9909425a426f7d130c0bf0f5994b8b579bd026c48817c34c73763eb91d47d2c4"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-13"
+cited_for = ["3.1"]
+
+[[source]]
+id = "Sullivan1977"
+locator_scheme = "theorem"
+locator = "Proposition (3.5)"
+url = "http://www.numdam.org/item/PMIHES_1977__47__269_0/"
+fetched_from = "https://www.numdam.org/item/PMIHES_1977__47__269_0.pdf"
+fetched_at = "2026-11-13T18:05:37Z"
+sha256 = "ba6e3f93cad5e39559642920223b99a5657d3afb3a26a8a9037da30482b13d93"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-13"
+cited_for = ["2.2"]
+
+[[source]]
+id = "DGMS1975"
+authors = "Pierre Deligne, Phillip Griffiths, John Morgan, Dennis Sullivan"
+title = "Real homotopy theory of K�hler manifolds"
+year = 1975
+venue = "Inventiones Mathematicae 29"
+doi = "10.1007/BF01389853"
+locator_scheme = "theorem"
+locator = "Theorem 4.1"
+url = "https://doi.org/10.1007/BF01389853"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["7.2"]
+
+[[source]]
+id = "FHT2001"
+authors = "Félix"
+title = "Rational Homotopy Theory"
+year = 2001
+venue = "Graduate Texts in Mathematics"
+doi = "10.1007/978-1-4613-0105-9"
+locator_scheme = "section"
+locator = "§12"
+url = "https://doi.org/10.1007/978-1-4613-0105-9"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["1.2"]
