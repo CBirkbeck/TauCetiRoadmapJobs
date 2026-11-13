@@ -142,3 +142,21 @@ accessed = "2026-11-13"
 cited_for = ["7.3a"]
 version_note = "EMIS mirror of the journal; printed page = PDF page + 26"
 
+[[source]]
+id = "GS87"
+authors = "Henri Gillet and Christophe Soulé"
+title = "Intersection theory using Adams operations"
+year = 1987
+venue = "Inventiones mathematicae 90 (1987), 243-277"
+locator_scheme = "theorem"
+locator = "§1.1-1.9, pp.245-249; §5.1-5.2, pp.265-266; Proposition 5.3, pp.266-267; §8.1 and Theorem 8.2, pp.273-275"
+url = "https://gdz.sub.uni-goettingen.de/download/pdf/PPN356556735_0090/LOG_0018.pdf"
+fetched_from = "https://gdz.sub.uni-goettingen.de/download/pdf/PPN356556735_0090/LOG_0018.pdf"
+fetched_at = "2026-11-13T16:01:39Z"
+sha256 = "01090fc2ea8b53af8583899218221b0dcbf8e5bef1569649edaebbf7f9158c13"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-13"
+cited_for = ["6.12", "7.7"]
+version_note = "GDZ scan of the journal, text recognised by OCR; printed page = PDF page + 241"
+
