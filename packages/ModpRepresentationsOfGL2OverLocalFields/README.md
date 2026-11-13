@@ -627,8 +627,8 @@ a `G`-equivariant surjection `q : c-Ind_{KZ}^G W → V` put `P⁺ = {(a b; 0 1) 
 `w = (0 1; ϖ 0)`, let `I⁺(W)` be the span of the standard functions `[g, v]` with `g ∈ P⁺`,
 `v ∈ W`, and `I⁻(W) = w I⁺(W)`. Define `Δ(W,V) = q(I⁺(W)) ∩ q(I⁻(W)) ⊆ V` (HU12, §3.1.1, p. 17;
 §3.3, p. 30). Prove that `c-Ind_{KZ}^G W = I⁺(W) ⊕ I⁻(W)` as `IZ`-modules and that `Δ(W,V)` is
-stable under `IZ` and `w` (HU12, §3.1.1; VIGNERAS11, §5, Lemme 11 and Proposition 9). Prove that
-for `σ` a Serre weight, an absolutely irreducible `W`
+stable under `IZ` and `w` (HU12, §3.1.1; VIGNERAS11, §5, Lemme 11, p. 21, and Proposition 9,
+p. 22). Prove that for `σ` a Serre weight, an absolutely irreducible `W`
 (FiniteFlatGroupsAndIntegralPadicHodgeTheory R07.5.15), and `V` a nonzero admissible quotient of
 `c-Ind_{KZ}^G σ`, `Δ(σ,V)` contains `V^{I₁}`, hence is nonzero, `I₁` being pro-`p` (HU12,
 Corollaire 3.9, p. 19). Admissibility cannot be dropped: Vignéras's Propositions 9 and 10 assert
@@ -689,8 +689,10 @@ Prove that every nonzero proper quotient of `I(σ)` has finite length (CDN23, Pr
 p. 16). Route: for the kernel `π′ ≠ 0`, Barthel–Livné give finite codimension of `(π′)^{I₁}` in
 `I(σ)^{I₁}`, so some nonzero `P(T)` sends the generator supported on `KZ` into `π′`; the quotient
 then factors through `I(σ)/P(T)I(σ)`, which has finite length by the `ℚ_p` classification
-(Barthel–Livné, Breuil). Coefficients are descended from `k̄` to `k` with §0.6. *Needs:*
-FiniteFlatGroupsAndIntegralPadicHodgeTheory R07.5.15 (the operator `T`, freeness, and
+(Barthel–Livné, Breuil). Coefficients are descended from `k̄` to `k` with §0.6. The hypothesis
+`F = ℚ_p` enters through this finite-length step; for general `F`, CDN23, Remarque 1.18, p. 16,
+records Emerton's conjecture that nonzero admissible quotients of `I(σ)` have finite length.
+*Needs:* FiniteFlatGroupsAndIntegralPadicHodgeTheory R07.5.15 (the operator `T`, freeness, and
 gap:barthel-livne-finite-codimension); PadicLocalLanglandsForGL2Qp §2.7; §0.6.
 
 **Checks.**
@@ -700,9 +702,6 @@ gap:barthel-livne-finite-codimension); PadicLocalLanglandsForGL2Qp §2.7; §0.6.
   extending scalars.
 - For `σ` trivial and `P = T − 1`, `I(σ)/(T − 1)` has length two, with Steinberg subrepresentation
   and trivial quotient (PadicLocalLanglandsForGL2Qp §2.7).
-- `F = ℚ_p` is essential: for `F ≠ ℚ_p` the quotient `I(σ)/T I(σ)` has infinite length
-  (PadicLocalLanglandsForGL2Qp §2.9), and CDN23, Remarque 1.18 records only Emerton's conjecture
-  that admissible nonzero quotients have finite length.
 
 ### 1.2 A filtration by compact inductions of irreducible K-modules
 
@@ -749,8 +748,11 @@ SmoothRepresentationsOfLocalGroups *compact-induction*, *frobenius-reciprocity*,
   the endomorphism dimensions `1 ≠ 2` exclude; so `Hom_{G′}(I(σ), V) = Hom_K(σ, V) = 0` for every
   Serre weight `σ` defined over `𝔽₅`, and `V` has no filtration by quotients of such `I(σ)`. The
   filtration of the statement has the one step `c-Ind_K^{G′}(V|_K) → V`. Over `𝔽₂₅`,
-  `V ⊗ 𝔽₂₅ = χ ⊕ χ⁵` with `χ = ac∘det`, two distinct characters (`t⁵ = −t`), each a quotient of
-  `I(χ|_K)`: dimension `2` over `𝔽₅` against `1 + 1` over `𝔽₂₅`.
+  `V ⊗ 𝔽₂₅ = χ ⊕ χ⁵` with `χ = ac∘det`, two distinct characters (`t⁵ = −t`), quotients of
+  `I(χ|_K)` and of `I(χ⁵|_K)` respectively, and not of a common one: a `K`-map `χ|_K → χ⁵|_K` is a
+  scalar `c` with `t c = −t c` at `diag(t̃, 1)`, so `c = 0` as `2t ≠ 0`, and
+  `Hom_{G′}(I(χ|_K), χ⁵) = 0` by Frobenius reciprocity. The filtration of `V ⊗ 𝔽₂₅` has two steps,
+  `W₁ = χ|_K` and `W₂ = χ⁵|_K`: dimension `2` over `𝔽₅` against `1 + 1` over `𝔽₂₅`.
 
 ### 1.3 Finite type implies finite presentation
 
@@ -1036,9 +1038,25 @@ API:
   presented as a quotient of `c-Ind_{KZ}^G χ` by a finitely generated kernel (§2.3 with `Δ = k`).
 - The Steinberg representation over `k` lies in `𝒞` and is infinite-dimensional: finite length is
   over `k[G]`.
-- For `F ≠ ℚ_p` a supersingular irreducible representation over `k̄` with central character is
-  admissible and not in `𝒞` (PadicLocalLanglandsForGL2Qp §2.9); `c-Ind_{KZ}^G σ` is finitely
-  presented and not in `𝒞`, being non-admissible.
+- For `F ≠ ℚ_p` an admissible absolutely irreducible smooth `k[G]`-module `π` with central character
+  whose scalar extension to `k̄` is supersingular is not in `𝒞`, because it is not finitely
+  presented: a finite presentation of `π` extends to one of `π ⊗_k k̄`, which is admissible and
+  supersingular, hence not finitely presented (PadicLocalLanglandsForGL2Qp §2.9(i); CDN23,
+  Théorème 1.27, p. 19). `c-Ind_{KZ}^G σ` is finitely presented and not in `𝒞`, being
+  non-admissible.
+- Admissibility is not implied by irreducibility and a central character. Take `p > 2`,
+  `F = ℚ_{p³}` (so `ϖ = p`), `k ⊇ 𝔽_{p³}`, a generic irreducible `ρ̄` in the sense of BP12,
+  Definition 11.7, and the parameters `λ₀ = 1`, `λ_i = 2` for `i ≠ 0`. Le's representation `π` is
+  an absolutely irreducible smooth `k[G′]`-module with a central character whose restriction to
+  `KZ` contains `⊕_{i∈ℤ} D₀(ρ̄)`, infinitely many copies of a nonzero finite-dimensional module on
+  which `K₁ = 1 + pM₂(𝒪_F)` acts trivially (LE19, Theorem 1.1, p. 1, proved by §§2.1–2.2,
+  pp. 3–4, and Theorems 3.2 and 3.4, pp. 5–6; central character, p. 2). So `dim_k π^{K₁} = ∞` and
+  `π` is not admissible. It is supersingular, a quotient of `I(σ)/(T)` for the weights `σ` of its `K`-socle,
+  its Hecke eigenvalues being those of supersingular representations (LE19, p. 2); consistently,
+  it is none of the characters, Steinberg twists and irreducible principal series of the
+  Barthel–Livné classification (FiniteFlatGroupsAndIntegralPadicHodgeTheory R07.5.15), all of
+  which are admissible. Such `π` lies outside `𝒞` by failing admissibility; the previous Check
+  does not apply to it.
 
 ### 2.5 Exactness of ordinary parts and the finite-error counit
 
@@ -2327,8 +2345,11 @@ Consumers that cite this roadmap by its former target identifiers find the conte
 - **HW22** — Yongquan Hu, Haoran Wang, *On the mod p cohomology for GL₂: the non-semisimple case*;
   locators use arXiv:2009.09640v4.
 - **VIGNERAS11** — Marie-France Vignéras, *Le foncteur de Colmez pour GL(2,F)*, Arithmetic Geometry and
-  Automorphic Forms, ALM 19 (2011), 531–557; locators use arXiv:0909.4003v1 (§5, Lemme 11, Propositions 8–10 and
-  Théorème 6), whose numbering differs from the published Propositions 5.5–5.8.
+  Automorphic Forms, ALM 19 (2011), 531–557; locators use arXiv:0909.4003v1 (§5: Théorème 6,
+  pp. 19–21; Proposition 8 and Lemme 11, p. 21; Propositions 9–10, p. 22), whose numbering differs
+  from the published Propositions 5.5–5.8.
+- **LE19** — Daniel Le, *On some nonadmissible smooth irreducible representations for GL₂*, Math.
+  Res. Lett. 26 (2019), 1747–1758; locators use arXiv:1809.10247v3.
 - **HU12** — Yongquan Hu, *Diagrammes canoniques et représentations modulo p de GL₂(F)*, J. Inst.
   Math. Jussieu 11 (2012), 67–118; locators use arXiv:0904.3991v3.
 - **KOHLHAASE17** — Jan Kohlhaase, *Smooth duality in natural characteristic*, Adv. Math. 317 (2017),

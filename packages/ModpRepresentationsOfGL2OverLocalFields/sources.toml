@@ -27,7 +27,6 @@ title = "Towards a modulo p Langlands correspondence for GL2"
 year = 2012
 locator_scheme = "theorem"
 locator = "Equation (2) (pp. 13-14); Lemmas 3.4-3.5 (p. 21), 3.8 (p. 23); Corollaries 3.12, 5.6(i); Proposition 13.1; Corollary 13.2; Proposition 14.7 (p. 83); §16, case (iii) (p. 92)"
-version_note = "author copy; Corollary 5.6(i) assumes p > 2 in its case f = 1"
 url = "https://www.imo.universite-paris-saclay.fr/~breuil/PUBLICATIONS/supersingular.pdf"
 fetched_from = "https://www.imo.universite-paris-saclay.fr/~christophe.breuil/PUBLICATIONS/supersingular.pdf"
 fetched_at = "2026-10-26T18:58:23Z"
@@ -35,6 +34,7 @@ sha256 = "a63c41e222e226f1019282f6b7dab7078afe61f908572f1b0f90523f7fdf2d51"
 licence_class = "author-page"
 status = "certified"
 accessed = "2026-10-26"
+version_note = "author copy; Corollary 5.6(i) assumes p > 2 in its case f = 1"
 cited_for = ["Layers 1, 3, 5"]
 
 [[source]]
@@ -251,7 +251,7 @@ title = "De GL(2,F) a Gal_{Q_p}"
 year = 2009
 arxiv = "0909.4003v1"
 locator_scheme = "theorem"
-locator = "§5, Lemme 11, Propositions 8-10 and Théorème 6, pp. 19-21 (arXiv numbering)"
+locator = "§5, Théorème 6, pp. 19-21; Proposition 8 and Lemme 11, p. 21; Propositions 9-10, p. 22 (arXiv numbering)"
 url = "https://arxiv.org/abs/0909.4003v1"
 fetched_from = "https://arxiv.org/pdf/0909.4003v1"
 fetched_at = "2026-10-26T19:04:09Z"
@@ -304,3 +304,21 @@ locator = "Proposition 18"
 licence_class = "none"
 status = "waived"
 resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/6807#issuecomment-6787957825"
+
+[[source]]
+id = "LE19"
+authors = "Daniel Le"
+title = "On some nonadmissible smooth irreducible representations for GL2"
+year = 2019
+arxiv = "1809.10247v3"
+locator_scheme = "theorem"
+locator = "Theorem 1.1, p. 1; central characters and Hecke eigenvalues, p. 2; §§2.1-2.2, pp. 3-4; Theorems 3.2 and 3.4, pp. 5-6 (arXiv numbering)"
+url = "https://arxiv.org/abs/1809.10247v3"
+fetched_from = "https://arxiv.org/pdf/1809.10247v3"
+fetched_at = "2026-11-13T08:52:36Z"
+sha256 = "ce5e51358c230bd7c131fc0970db9dbd27eae49ebb9974441a87d0b6276d328e"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-13"
+version_note = "arXiv:1809.10247v3; published in Math. Res. Lett. 26 (2019), 1747-1758, whose Theorem 1.1 is that of v3; locators use the arXiv numbering and pagination"
+cited_for = ["2.4"]
