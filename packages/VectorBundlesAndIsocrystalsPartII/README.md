@@ -9,6 +9,7 @@ This roadmap owns almost `C`-representations and their arithmetic Hom and `Ext` 
 It leaves to other roadmaps:
 
 - VectorBundlesAndIsocrystals, Layer 5: sympathetic algebras and Vector Spaces, classical Banach–Colmez presentations, Dimension, the abelian BC category, curvature, HN invariants, finite-length period realizations, the Artinian property, morphism calculus and Le Bras's equivalence. These are imported by section heading.
+- CompactOperators §0.5: compactoid subsets of Banach spaces and maps of compactoid image over a complete nontrivially normed ultrametric field. The `B_m`-relative notion and compact-type limits over `C` and `B_m`, with their completeness, regularity and permanence, are §2.5.
 - LocallyAnalyticDistributions §§0.0–0.3 and Layer 1: the generic nonarchimedean locally convex category, its strict derived category and left heart, completed tensors, three-space and functional-extension theorems, locally analytic functions, continuous functions, distributions and measures. The sympathetic functor categories and their period comparisons are what this roadmap adds.
 - PadicPeriodRings §§1.1–1.2: the continuous action of `G_K` on `ℂ_p` for finite `K/ℚ_p`, by the completion map of each automorphism, with its uniqueness, isometry, composition and joint-continuity laws, and the fixed field `ℂ_p^{G_K} = K`.
 - PadicPeriodRings §§1.5, 2, 4.1–4.3: the period carriers, their topologies and Galois actions, the fixed fields and the twist invariants.
@@ -77,6 +78,7 @@ The pin is `1b1ccf4b088b32fa3f23f2de1127433254a81e1e`.
 | `UniformSpace.Completion.map` — Mathlib/Topology/UniformSpace/Completion.lean:477 | Extension of a map to completions. It restricts to the map on the dense image when the map is uniformly continuous (`UniformSpace.Completion.map_coe`, line 488). |
 | `IsModuleTopology` — Mathlib/Topology/Algebra/Module/ModuleTopology.lean:133 | The module topology, the canonical topology of a finite-dimensional `ℂ_p`-space. |
 | `AddMonoid.End` — Mathlib/Algebra/Group/Hom/Defs.lean:975 | The monoid of additive endomorphisms, the target of the action map of a `SemilinearRep`. |
+| `WithSeminorms.banach_steinhaus`, `BaireSpace.instBarrelledSpace` — Mathlib/Analysis/LocallyConvex/Barrelled.lean:164, 122 | The uniform boundedness principle for continuous linear maps from a barrelled space over a nontrivially normed field to a space with a generating family of seminorms, and barrelledness of every Baire topological vector space, in particular of every Fréchet space. No archimedean or ultrametric hypothesis is made. |
 | `WittVector.fontaineTheta` — Mathlib/RingTheory/Perfectoid/FontaineTheta.lean:166 | `θ` from Witt vectors of the pretilt to a `p`-adically complete ring with `p` prime and not a unit. |
 
 The positive period carrier requires `R` commutative, `p` prime, `[Fact ¬IsUnit (p : R)]` and `[IsAdicComplete (Ideal.span {(p : R)}) R]`. These hypotheses include no perfectoidness, DVR structure, topology or Galois action. For `R = O_C` the period suppliers identify this carrier with the classical one. In characteristic `p` the positive and localized rings are zero, and substituting `R = C` would make `p` a unit and violate the nonunit hypothesis.
@@ -108,7 +110,11 @@ Section 4.4 supplies the Sen module and the Sen operator of a finite-dimensional
 
 ### From TauCetiRoadmap.LocallyAnalyticDistributions
 
-Section 0.0 supplies the category of nonarchimedean locally convex spaces, its strict derived category and left heart (*Left hearts and strict exactness*), bounded sets, projective tensors and separated completions. Section 0.2 supplies the comparison of strict sequences with the left heart, the closure of Banach and Fréchet spaces under extensions, Fréchet open mapping, *Continuous functional extension in countable type*, and *Strict countable inverse limits and cohomology* with its strict Roos surjectivity and finite-dimensional Mittag–Leffler hypotheses. Its *Extensions of spaces of compact type* keeps the subsection hypothesis of a finite `K/ℚ_p` and its spherical-completeness-or-separability alternatives, so §4.6 proves the separable extension over `C` needed here. Sections 0.1 and 0.3 and Layer 1 supply locally analytic functions, continuous functions, distributions, measures and their analytic-stage and strong dual topologies over `ℚ_p`.
+Section 0.0 supplies the category of nonarchimedean locally convex spaces, its strict derived category and left heart (*Left hearts and strict exactness*), bounded sets, projective tensors and separated completions. Section 0.2 supplies the comparison of strict sequences with the left heart, the closure of Banach and Fréchet spaces under extensions, Fréchet open mapping, *Continuous functional extension in countable type*, and *Strict countable inverse limits and cohomology* with its strict Roos surjectivity and finite-dimensional Mittag–Leffler hypotheses. Its *Extensions of spaces of compact type* keeps the subsection hypothesis of a finite `K/ℚ_p` and its spherical-completeness-or-separability alternatives, so §4.6 proves the separable extension over `C` needed here. Its compact-type contract of §0.0, completeness and regularity, is stated for countable Banach systems with injective compact transitions over finite `K/ℚ_p`; over `C` a compact map of Banach spaces is zero, so it is not used for `C`-spaces or `B_m`-models, and §2.5 states the compactoid version. Sections 0.1 and 0.3 and Layer 1 supply locally analytic functions, continuous functions, distributions, measures and their analytic-stage and strong dual topologies over `ℚ_p`.
+
+### From TauCetiRoadmap.CompactOperators
+
+Section 0.5 supplies `IsCompactoidSet` and `HasCompactoidImage` for Banach spaces over a complete nontrivially normed ultrametric field, with no discreteness, local compactness or spherical completeness assumed, and its model-space criterion: a subset of `c₀(I, K)` is compactoid exactly when it is bounded and its coordinates are uniformly small outside a finite set of indices. Over `ℂ_p` it records that the identity of a line has compactoid image without being a compact operator. Its theory is for Banach spaces; the `B_m`-relative notion, compact-type inductive limits over `C` and `B_m`, and their completeness, regularity and permanence are §2.5.
 
 ### From TauCetiRoadmap.ArithmeticGaloisRepresentations
 
@@ -124,7 +130,7 @@ PerfectoidSpaces Layer P1 supplies the Frobenius criterion for complete uniform 
 
 ## How to read the build
 
-Layer 0 builds the strict Banach Galois category, Fontaine's full faithfulness, analyticity of fundamental extensions, the abelian category of almost `C`-representations, and the rigidity of continuous equivariant maps between de Rham periods. Layer 1 builds the arithmetic extension theory: almost-split extensions, the Yoneda comparison, the two-operator complex, Euler–Poincaré duality, the period `Ext` table, the fundamental theorem and the equivariant analytic realization. The fundamental theorem §1.8 is stated in Layer 1 with the extension theory but depends only on §§0.1–0.3 and the parent; it is proved before §0.5, which uses it. Layer 2 builds the left-heart functor category TVS, completed period Modules and Pairs. Layer 3 computes the perfectoid disc class `Ext¹_TVS(V₁,V₁) ≅ C`. Layer 4 proves Hom and `Ext¹` comparisons for reasonable period models and Pairs. Layer 5 defines qBC and proves its intrinsic filtration and full faithfulness. Layer 6 returns to the parent's VS category and proves the period-valued height–rank formula, using its own sheaf and limit comparisons. Layers 0–1 and Layers 2–5 are independent. Layer 6 uses only the parent and Layer 2's conventions.
+Layer 0 builds the strict Banach Galois category, Fontaine's full faithfulness, analyticity of fundamental extensions, the fundamental theorem for an extension of a `C`-line, the abelian category of almost `C`-representations, and the rigidity of continuous equivariant maps between de Rham periods. The fundamental theorem §0.10 depends only on §§0.1–0.3 and the parent and is proved before §0.5, which uses it. Layer 1 builds the arithmetic extension theory: almost-split extensions, the Yoneda comparison, the two-operator complex, Euler–Poincaré duality, the period `Ext` table and the equivariant analytic realization. Layer 2 builds the left-heart functor category TVS, completed period Modules and Pairs. Layer 3 computes the perfectoid disc class `Ext¹_TVS(V₁,V₁) ≅ C`. Layer 4 proves Hom and `Ext¹` comparisons for reasonable period models and Pairs. Layer 5 defines qBC and proves its intrinsic filtration and full faithfulness. Layer 6 returns to the parent's VS category and proves the period-valued height–rank formula, using its own sheaf and colimit comparisons and the projectivity of the constant source. Layers 0–1 and Layers 2–5 are independent. Layer 6 uses only the parent and Layer 2's conventions.
 
 ## Layer 0: Almost C-representations and period rigidity
 
@@ -200,9 +206,9 @@ API:
 
 For finite `K/ℚ_p`, `C(G_K)` is an abelian strict full subcategory of `B(G_K)`. Its morphisms are strict, and their Banach kernels and cokernels remain almost `C`. The presentation integers `d` and `ht` do not depend on the presentation and are additive in short exact sequences. The exact structure is the restriction of the ambient one, and arithmetic `Ext` is `CategoryTheory.Abelian.Ext` with a compatible `HasExt` universe (Fontaine03, Théorème B, p. 291; Théorème 5.1 and §5.1, pp. 341–345; CN25, §2.2.1, p. 9).
 
-A proof route: follow Fontaine03 §5.1, with the analytic morphisms of §0.3 and the parent's Dimension and subobject calculus. Where Fontaine03 §5.1 applies its Théorème 4.1 to the restriction of a morphism to an extension of a `C`-line by a finite-dimensional representation (Fontaine03, proof of Théorème 5.1, p. 343), use §1.8, which needs only §§0.1–0.3 and the parent and is proved before this target. This avoids using the structure theorem as its own input.
+A proof route: follow Fontaine03 §5.1, with the analytic morphisms of §0.3 and the parent's Dimension and subobject calculus. Where Fontaine03 §5.1 applies its Théorème 4.1 to the restriction of a morphism to an extension of a `C`-line by a finite-dimensional representation (Fontaine03, proof of Théorème 5.1, p. 343), use §0.10, which needs only §§0.1–0.3 and the parent and is proved before this target. This avoids using the structure theorem as its own input.
 
-*Needs:* §0.4; §0.3; §1.8; VectorBundlesAndIsocrystals, Layer 5, *Dimension and the abelian BC category*; VectorBundlesAndIsocrystals, Layer 5, *Artinian property of BC*; `TauCeti.ExactStructure`; `CategoryTheory.Abelian.Ext`.
+*Needs:* §0.4; §0.3; §0.10; VectorBundlesAndIsocrystals, Layer 5, *Dimension and the abelian BC category*; VectorBundlesAndIsocrystals, Layer 5, *Artinian property of BC*; `TauCeti.ExactStructure`; `CategoryTheory.Abelian.Ext`.
 
 **Checks.**
 
@@ -269,29 +275,45 @@ A proof route: by §0.7 a map on `C(j)` with `j ≠ 0` kills the dense `K̄`. Fo
 - The condition `ℓ > k` matters: `End(B_k)` contains the identity.
 - For `(N, k) = (1, 1)`, `Hom(B_dR⁺, t^(−1)B_dR⁺/tB_dR⁺) = K`, spanned by the reduction of `1`, although the target is an extension of `C(−1)` by `C`. A count with one scalar for each graded piece would give `K²`.
 
+### 0.10 The fundamental theorem for an extension of a C-line
+
+Let `K/ℚ_p` be finite, `V` a continuous `ℚ_p`-representation of dimension `h`, `W` a one-dimensional continuous semilinear `C`-representation, and `0 → V → E → W → 0` a strict extension in `B(G_K)`. If a continuous equivariant `ℚ_p`-linear `η : E → C` satisfies `η(E) ≠ η(V)`, then `η` is surjective and `ker η` is a finite-dimensional `ℚ_p`-representation of dimension `h`. Lean: `fundamental_extension_surjective`, with `E` a `ℚ_p`-Banach space with jointly continuous linear action, `V` a finite-dimensional subspace, stable because it is the kernel of the equivariant `q`, and `q : E → W` a continuous equivariant surjection with kernel `V` (Fontaine03, Théorème 4.1, p. 329, proof completed p. 340; FF18, Preface, Theorem 2.25, pp. 21–22, the case `W = C`). The hypothesis compares images; `η ≠ 0` is not enough.
+
+A proof route: §0.3 gives a BC source of Dimension `(1, h)` and a BC map to `V₁`. If `η(E)` were finite-dimensional, the induced map `W → η(E)/η(V)` would vanish: compose with the inclusion into `C ⊗_ℚ_p (η(E)/η(V))` and apply §0.2, since a nonzero `C`-linear image cannot lie in a finite-dimensional `ℚ_p`-space. So unequal images force an infinite-dimensional image, and the parent's Artinian property makes `η` surjective. Dimension additivity gives `Dim(ker η) = (1, h) − (1, 0) = (0, h)`, and zero-dimensional BC objects are finite `ℚ_p`-spaces.
+
+*Needs:* §0.1; §0.2; §0.3; VectorBundlesAndIsocrystals, Layer 5, *Dimension and the abelian BC category*, *Banach–Colmez morphism calculus*, *Artinian property of BC* and *Height of torsion period subobjects*; for the Lean statement, PadicPeriodRings §1.1 and `SemilinearRep` (Conventions).
+
+**Checks.**
+
+- For `W = C`, `E = V ⊕ C` and `η = (g, 1)`, the kernel is `{(v, −g(v))} ≅ V`, of dimension `h`.
+- `η = (g, 0)` has `η(E) = η(V)` and is excluded, even when `g ≠ 0`. Its kernel `ker g ⊕ C` is infinite-dimensional, so the hypothesis cannot be dropped.
+- For `V = 0` and `W = C(1)`, every equivariant `η : W → C` is 0, so the hypothesis fails.
+- For `E = U₁ = (B_cris⁺)^{φ=p}`, `V = ℚ_p t` and `η = θ`, the image of `V` is 0 and `θ(U₁) = C`, so the theorem gives the fundamental exact sequence `0 → ℚ_p t → U₁ → C → 0`, with kernel of dimension 1 = `dim V`.
+
 ### Examples
 
-The almost presentations give height 1 for `ℚ_p` and −1 for `C/ℚ_p`. `B₂` has Dimension `(2, 0)` and is almost isomorphic to `C²`. For general `K`, multiplication by an element of `C` outside `K` is not equivariant. For finite `K/ℚ_p`, an equivariant continuous map `C(j) → C(j′)` is multiplication by an element of `H⁰(G_K, C(j′ − j))`, which is `K` or 0.
+The almost presentations give height 1 for `ℚ_p` and −1 for `C/ℚ_p`. `B₂` has Dimension `(2, 0)` and is almost isomorphic to `C²`. For general `K`, multiplication by an element of `C` outside `K` is not equivariant. For finite `K/ℚ_p`, an equivariant continuous map `C(j) → C(j′)` is multiplication by an element of `H⁰(G_K, C(j′ − j))`, which is `K` or 0. In a split extension `V ⊕ C`, a projection to `C` has kernel `V`, as the fundamental theorem predicts.
 
 ### Dependencies
 
-`TopModuleCat`; `ContinuousLinearMap.isOpenMap`; `TauCeti.ExactStructure`; `CategoryTheory.Abelian.Ext`; `PadicComplex`; `krullTopology`; `spectralNorm_eq_of_equiv`; `UniformSpace.Completion.map`; `IsModuleTopology`; Layer 1, §1.8, for §0.5 (§1.8 needs only §§0.1–0.3 and the parent); ArithmeticGaloisRepresentations §1.1; PadicHodgeTheory §4.4; FiniteFlatGroupsAndIntegralPadicHodgeTheory §R07.P7.2; PadicPeriodRings §§1.1–1.2, 1.5, 2, 4.1–4.3; VectorBundlesAndIsocrystals, Layer 5, *Finite-Dimensional Banach–Colmez presentations*, *Dimension and the abelian BC category* and *Artinian property of BC*.
+`TopModuleCat`; `ContinuousLinearMap.isOpenMap`; `TauCeti.ExactStructure`; `CategoryTheory.Abelian.Ext`; `PadicComplex`; `krullTopology`; `spectralNorm_eq_of_equiv`; `UniformSpace.Completion.map`; `IsModuleTopology`; ArithmeticGaloisRepresentations §1.1; PadicHodgeTheory §4.4; FiniteFlatGroupsAndIntegralPadicHodgeTheory §R07.P7.2; PadicPeriodRings §§1.1–1.2, 1.5, 2, 4.1–4.3; VectorBundlesAndIsocrystals, Layer 5, *Finite-Dimensional Banach–Colmez presentations*, *Dimension and the abelian BC category*, *Artinian property of BC*, *Banach–Colmez morphism calculus* and *Height of torsion period subobjects*.
 
 ## Layer 1: Arithmetic extensions and duality
 
 ### 1.1 Almost-split extensions
 
-For finite `K/ℚ_p`, an extension in `B(G_K)` of two almost `C`-representations has an almost `C` middle term if and only if it is almost split. Almost split means that there is a finite-dimensional stable `ℚ_p`-subspace `Z` of the kernel such that the sequence obtained by quotienting by `Z` has a continuous equivariant splitting. In particular every short exact sequence in `C(G_K)` is almost split. The same holds for extensions of finite-length `B_dR⁺`-representations (Fontaine03, Théorème D, pp. 291–292, and §§5.2, 5.4–5.5; CN25, §2.2.1 and Proposition 2.5, pp. 9–10). A splitting after a finite scalar extension is not what almost split means.
+For finite `K/ℚ_p`, an extension in `B(G_K)` of two almost `C`-representations has an almost `C` middle term if and only if it is almost split. Almost split means that there is a finite-dimensional stable `ℚ_p`-subspace `Z` of the kernel such that the sequence obtained by quotienting by `Z` has a continuous equivariant splitting. In particular every short exact sequence in `C(G_K)` is almost split. For an extension in `B(G_K)` of two finite-length `B_dR⁺`-representations, the middle term is a finite-length `B_dR⁺`-representation if and only if the extension is almost split. Such a structure on the middle term makes both maps `B_dR⁺`-linear and is unique, by the second half of §0.2 (Fontaine03, Théorème D(i)–(ii), pp. 291–292, and §§5.2, 5.4–5.5; CN25, §2.2.1 and Proposition 2.5, pp. 9–10). A splitting after a finite scalar extension is not what almost split means.
 
 A proof route: by Fontaine03 Théorème D, quotient by a finite stable kernel to obtain a split extension of `C`-representations. For the converse, recover the middle term by adjoining that finite kernel; almost presentations are stable under finite modifications. Fontaine03 Proposition 5.5, p. 344, and Théorème 5.6, p. 346, move extension classes into the finite-period or finite-`ℚ_p` subcategory. These resolutions are inputs of §1.2.
 
-*Needs:* §0.1; §0.4; §0.5; §0.6.
+*Needs:* §0.1; §0.2; §0.4; §0.5; §0.6.
 
 **Checks.**
 
 - The extension `0 → C(1) → B₂ → C → 0` does not split equivariantly: its class spans `Ext¹(C, C(1)) = K`. It is almost split with `Z = ℚ_p t`: the space `U₁ = (B_cris⁺)^{φ=p}` injects into `B₂`, meets `C(1) = tB₂` in `ℚ_p t` and maps onto `C`, so `U₁/ℚ_p t` splits the quotient sequence. Almost splitting therefore does not make `Ext¹` vanish.
 - For `0 → ℚ_p → C → C/ℚ_p → 0`, take `Z = ℚ_p`: the quotient sequence `0 → 0 → C/ℚ_p → C/ℚ_p → 0` splits.
 - The extension of `ℚ_p` by `ℚ_p` given by `log χ` is almost split with `Z = ℚ_p`, although it does not split equivariantly.
+- For `0 → C(1) → B₂ → C → 0` the ends are `B_dR⁺`-representations, the middle term is the `B_dR⁺`-representation `B₂`, and the sequence is almost split with `Z = ℚ_p t`, as the second equivalence requires. For `0 → ℚ_p → C → C/ℚ_p → 0` neither end is a `B_dR⁺`-representation, their Dimensions `(0, 1)` and `(1, −1)` having nonzero height while §0.6 gives height 0, so only the first equivalence applies; reading the second one as a statement about an almost `C` middle term would make it a special case of the first.
 
 ### 1.2 Yoneda Ext comparison for arithmetic period objects
 
@@ -345,7 +367,7 @@ A proof route: by §1.2, work with finite-length period representations. Fontain
 
 ### 1.5 Euler–Poincaré and Ext duality
 
-For finite `K/ℚ_p` and `X, Y ∈ C(G_K)`, every `Ext^i(X, Y)` is a finite-dimensional `ℚ_p`-space, and it vanishes for `i ≥ 3`. The alternating Euler characteristic is `−[K:ℚ_p] ht(X) ht(Y)`. There is a natural trace `Ext²(X, X(1)) → ℚ_p` such that Yoneda composition gives a perfect pairing `Ext^i(X, Y) × Ext^(2−i)(Y, X(1)) → ℚ_p` for `0 ≤ i ≤ 2` (CN25, Theorem 2.6, p. 10; Fontaine03, Théorème 6.1 and §§6.2–6.5, pp. 355–368; FF18, Preface, Proposition 2.28, p. 23, read with alternating signs). The trace and pairing are `ℚ_p`-linear; the `Ext` spaces need not be `K`-vector spaces.
+For finite `K/ℚ_p` and `X, Y ∈ C(G_K)`, every `Ext^i(X, Y)` is a finite-dimensional `ℚ_p`-space, and it vanishes for `i ≥ 3`. The alternating Euler characteristic is `−[K:ℚ_p] ht(X) ht(Y)`. There is a natural trace `Ext²(X, X(1)) → ℚ_p` such that Yoneda composition gives a perfect pairing `Ext^i(X, Y) × Ext^(2−i)(Y, X(1)) → ℚ_p` for `0 ≤ i ≤ 2` (CN25, Theorem 2.6, p. 10; Fontaine03, Théorème 6.1, p. 355, and §§6.2–6.5, pp. 355–368; FF18, Preface, Proposition 2.28, p. 23; Fontaine03 and FF18 print the plain sum of the three dimensions, a misprint for the alternating sum, which is how CN25 Theorem 2.6(ii) states it). The trace and pairing are `ℚ_p`-linear; the `Ext` spaces need not be `K`-vector spaces.
 
 A proof route: use §1.1 and almost presentations to reduce the cohomological δ-functors to finite-dimensional `ℚ_p` pieces and finite-length period pieces. For `ℚ_p` pieces import local Tate duality with rational coefficients. For period pieces use Fontaine03 §§6.3–6.5 and the two-operator computation of §1.4. Extend the trace from the basic cases, checking compatibility with connecting morphisms. Dévissage and the five lemma give perfectness and finiteness. Euler additivity reduces to Dimension and height on the same presentations.
 
@@ -385,28 +407,13 @@ A proof route: filter the source by its successive quotients `C(r)`. For each tw
 - `i = j` is excluded, since the identity survives.
 - `N = 1`, `i = j = 1` is excluded by `i < j`, and indeed `Hom(C, t^(−1)B_dR⁺/tB_dR⁺)` contains the nonzero inclusion of `C = B_dR⁺/tB_dR⁺`.
 
-### 1.8 The fundamental theorem for an extension of a C-line
-
-Let `K/ℚ_p` be finite, `V` a continuous `ℚ_p`-representation of dimension `h`, `W` a one-dimensional continuous semilinear `C`-representation, and `0 → V → E → W → 0` a strict extension in `B(G_K)`. If a continuous equivariant `ℚ_p`-linear `η : E → C` satisfies `η(E) ≠ η(V)`, then `η` is surjective and `ker η` is a finite-dimensional `ℚ_p`-representation of dimension `h`. Lean: `fundamental_extension_surjective`, with `E` a `ℚ_p`-Banach space with jointly continuous linear action, `V` a finite-dimensional subspace, stable because it is the kernel of the equivariant `q`, and `q : E → W` a continuous equivariant surjection with kernel `V` (Fontaine03, Théorème 4.1, p. 329, proof completed p. 340; FF18, Preface, Theorem 2.25, pp. 21–22, the case `W = C`). The hypothesis compares images; `η ≠ 0` is not enough.
-
-A proof route: §0.3 gives a BC source of Dimension `(1, h)` and a BC map to `V₁`. If `η(E)` were finite-dimensional, the induced map `W → η(E)/η(V)` would vanish: compose with the inclusion into `C ⊗_ℚ_p (η(E)/η(V))` and apply §0.2, since a nonzero `C`-linear image cannot lie in a finite-dimensional `ℚ_p`-space. So unequal images force an infinite-dimensional image, and the parent's Artinian property makes `η` surjective. Dimension additivity gives `Dim(ker η) = (1, h) − (1, 0) = (0, h)`, and zero-dimensional BC objects are finite `ℚ_p`-spaces.
-
-*Needs:* §0.1; §0.2; §0.3; VectorBundlesAndIsocrystals, Layer 5, *Dimension and the abelian BC category*, *Banach–Colmez morphism calculus*, *Artinian property of BC* and *Height of torsion period subobjects*; for the Lean statement, PadicPeriodRings §1.1 and `SemilinearRep` (Conventions).
-
-**Checks.**
-
-- For `W = C`, `E = V ⊕ C` and `η = (g, 1)`, the kernel is `{(v, −g(v))} ≅ V`, of dimension `h`.
-- `η = (g, 0)` has `η(E) = η(V)` and is excluded, even when `g ≠ 0`. Its kernel `ker g ⊕ C` is infinite-dimensional, so the hypothesis cannot be dropped.
-- For `V = 0` and `W = C(1)`, every equivariant `η : W → C` is 0, so the hypothesis fails.
-- For `E = U₁ = (B_cris⁺)^{φ=p}`, `V = ℚ_p t` and `η = θ`, the image of `V` is 0 and `θ(U₁) = C`, so the theorem gives the fundamental exact sequence `0 → ℚ_p t → U₁ → C → 0`, with kernel of dimension 1 = `dim V`.
-
-### 1.9 Equivariant analytic realization
+### 1.8 Equivariant analytic realization
 
 For finite `K/ℚ_p`, construct an exact faithful functor from almost `C`-representations to classical BC spaces with continuous `G_K`-action, whose evaluation at `C` is naturally the original Banach representation. The target category has BC objects with jointly continuous `G_K`-action on their Banach evaluations and equivariant BC morphisms. The functor does not depend on the almost presentation. Forgetting the action gives a faithful functor to BC, which is not full (FF18, Preface, Remark 2.26(i), p. 22; Fontaine03, Théorème 4.1, p. 329, and §1.6, pp. 292–294).
 
 A proof route: use the analytic extension construction of §0.3 and its finite-dimensional modifications, and the almost-split presentations of §1.1. Prove descent for different presentations and identify evaluation, instead of choosing a non-functorial BC lift of each object. Equivalent almost presentations give canonically isomorphic realizations satisfying the cocycle law. Exactness and the natural `C`-evaluation with its topology are part of the target.
 
-*Needs:* §0.5; §0.6; §1.1; §1.8; VectorBundlesAndIsocrystals, Layer 5, *Exact faithful Banach realization* and *Finite-Dimensional Banach–Colmez presentations*; `TauCeti.ExactStructure.IsConflationExact`.
+*Needs:* §0.5; §0.6; §0.10; §1.1; VectorBundlesAndIsocrystals, Layer 5, *Exact faithful Banach realization* and *Finite-Dimensional Banach–Colmez presentations*; `TauCeti.ExactStructure.IsConflationExact`.
 
 API:
 
@@ -423,11 +430,11 @@ API:
 
 ### Examples
 
-For `k = 1` the `Ext` triples against `C` and `C(1)` are `(K, K, 0)` and `(0, K, K)`. In a split extension `V ⊕ C`, a projection to `C` has kernel `V`. The nonzero `H²(G_K, ℚ_p(1))` pins the vanishing range at degrees `≥ 3`.
+For `k = 1` the `Ext` triples against `C` and `C(1)` are `(K, K, 0)` and `(0, K, K)`. The nonzero `H²(G_K, ℚ_p(1))` pins the vanishing range at degrees `≥ 3`.
 
 ### Dependencies
 
-Layer 0; `CategoryTheory.Abelian.Ext.mapExactFunctor`; `LinearMap`; `TauCeti.ExactStructure.IsConflationExact`; PadicHodgeTheory §4.4; PadicPeriodRings §§1.1, 4.1–4.3; ArithmeticGaloisDuality §§R02.1.3 and D7.4; VectorBundlesAndIsocrystals, Layer 5, *Dimension and the abelian BC category*, *Banach–Colmez morphism calculus*, *Artinian property of BC*, *Height of torsion period subobjects*, *Exact faithful Banach realization* and *Finite-Dimensional Banach–Colmez presentations*.
+Layer 0; `CategoryTheory.Abelian.Ext.mapExactFunctor`; `LinearMap`; `TauCeti.ExactStructure.IsConflationExact`; PadicHodgeTheory §4.4; PadicPeriodRings §§4.1–4.3; ArithmeticGaloisDuality §§R02.1.3 and D7.4; VectorBundlesAndIsocrystals, Layer 5, *Exact faithful Banach realization* and *Finite-Dimensional Banach–Colmez presentations*.
 
 ## Layer 2: Topological Vector Spaces and period Pairs
 
@@ -492,15 +499,23 @@ A proof route: cover `W` by finite sums of universal covers of `p`-divisible gro
 
 ### 2.5 Completion and evaluation of period tensors
 
-For `m ≥ 1` and a Hausdorff locally convex `B_m`-module `M` with jointly continuous action, define its separated completion `M̂`. The completed balanced realization evaluated at `C` is naturally `M̂`, and equals `M` when `M` is complete. Prove that Fréchet `B_m`-models and compact-type ones, countable inductive limits of `B_m`-Banach models with injective compactoid transition maps in the sense of LocallyAnalyticDistributions §0.0, are complete and separated. Identify the completed balanced tensor with the completion of the algebraic balanced projective tensor (CN25, Definition 4.4(i) and footnote 10, p. 21; Appendix A, pp. 58–59).
+For `m ≥ 1` and a Hausdorff locally convex `B_m`-module `M` with jointly continuous action, define its separated completion `M̂`. The completed balanced realization evaluated at `C` is naturally `M̂`, and equals `M` when `M` is complete. Identify the completed balanced tensor with the completion of the algebraic balanced projective tensor (CN25, Definition 4.4(i) and footnote 10, p. 21; Appendix A, pp. 58–59).
 
-*Needs:* LocallyAnalyticDistributions §0.0; VectorBundlesAndIsocrystals, Layer 5, *Sympathetic Vector Spaces*.
+Write `B_m°` for the unit ball of the Banach algebra `B_m`, the image of `A_inf` (CN25, §4.3.2, p. 26), and `W°` for the unit ball of a `B_m`-Banach model `W`. A continuous `B_m`-linear map `u : W → W′` of `B_m`-Banach models has compactoid image over `B_m` when for every open lattice `U` of `W′` there is a finite set `F ⊂ W′` with `u(W°) ⊆ U + Σ_{f ∈ F} B_m° f`. For `m = 1` this is `HasCompactoidImage` of CompactOperators §0.5 over the field `C`; for `m ≥ 2` it is a notion relative to `B_m`, not compactoidness over a field. A compact-type `B_m`-model is a countable locally convex inductive limit of `B_m`-Banach models with injective transition maps of compactoid image. CN25 §4.3.2 asks for c-compact images instead. Over `C`, which is not spherically complete, no nonzero bounded closed `O_C`-submodule is c-compact, because its trace on a `C`-line is a ball of `C`; so compactoid image is the notion used. It is not compactness over `ℚ_p`, the notion of LocallyAnalyticDistributions §0.0 for finite `K/ℚ_p`: the image of the unit ball under a nonzero `C`-linear map contains a closed copy of `O_C`, which is not compact. Prove that Fréchet `B_m`-models and compact-type ones are complete and separated. Prove that a compact-type model is regular: every bounded subset lies in one step and is bounded there. Prove that a closed `B_m`-submodule of a compact-type model, with the induced topology, and the quotient by it are compact-type models. LocallyAnalyticDistributions §0.0 states completeness and regularity for finite `K/ℚ_p` only, so these are targets here.
+
+A proof route: the image of the unit ball under a map of compactoid image lies in the closed `B_m`-span of the countably many finite sets `F` attached to the balls of radius `p^(−k)`, so every step may be replaced by a closed submodule of countable type, over which continuous functional extension in countable type replaces the Hahn–Banach theorem used over finite `K/ℚ_p`. For `m = 1`, let `D` be the Fréchet space of compatible families of continuous functionals on the steps, the projective limit of their Banach duals. Identify the compact-type space with the strong dual of `D`, the bidual identification that CN25 uses under separability (proof of Proposition A.4, p. 59). A Fréchet space is a Baire space and hence barrelled, so the uniform boundedness principle `WithSeminorms.banach_steinhaus` makes a bounded set of functionals on `D` equicontinuous, which places it in the polar of a zero-neighbourhood of `D` and hence, after one transition map, in a bounded subset of one step. The submodule and quotient statements follow from regularity, by intersecting with the steps and by passing to the quotient step by step. For `m ≥ 2` argue on the `t`-adic filtration, whose graded pieces are `C`-spaces.
+
+*Needs:* LocallyAnalyticDistributions §0.0; LocallyAnalyticDistributions §0.2 (*Continuous functional extension in countable type*); CompactOperators §0.5; `WithSeminorms.banach_steinhaus`; VectorBundlesAndIsocrystals, Layer 5, *Sympathetic Vector Spaces*.
 
 **Checks.**
 
 - For `M = B_m` the evaluation is `B_m`.
 - For `M = c₀₀(ℕ, C)` with the sup norm the evaluation is `c₀(ℕ, C)`, strictly larger than `M`.
 - For `M = 0` the completion, balanced tensor and evaluation are 0.
+- `colim_n C^n` with the coordinate inclusions is of compact type: each transition has finite rank, so the image of the unit ball, `O_C^n`, lies in the `O_C`-span of the `n` coordinate vectors. That image is not compact, because the residue field of `O_C` is infinite, so compactness over `ℚ_p` would exclude this space.
+- In `colim_n C^n` the set `{e_n : n ≥ 1}` lies in no single step, so regularity forces it to be unbounded. Indeed the lattice `⊕_n O_C p^n e_n` meets every step in an open lattice, so it is open, and `λe_n` lies in it only when `|λ| ≤ |p^n|`, so no nonzero multiple of the set lies in it. In the norm topology induced from `c₀(ℕ, C)` the same set is bounded, so that topology is not the inductive-limit topology.
+- The identity of `c₀(ℕ, C)` does not have compactoid image: by the coordinate-decay criterion of CompactOperators §0.5, a compactoid subset of `c₀(ℕ, C)` has uniformly small coordinates outside a finite set, and `e_n` has coordinate 1 at `n`. So the constant system on `c₀(ℕ, C)` is not a compact-type presentation.
+- For `m = 2`, the identity of `B₂` has compactoid image relative to `B₂`, with `F = {1}`, so a finite free `B₂`-module with identity transitions is a compact-type `B₂`-model. A `C`-linear definition does not apply, since `B₂` is not a `C`-vector space, and compactness over `ℚ_p` fails, since `B₂°` maps onto the non-compact `O_C`.
 
 ### 2.6 Injectivity and exactness of period base change
 
@@ -566,7 +581,7 @@ The dense proper diagonal injection on `c₀` has a nonzero algebraic quotient b
 
 ### Dependencies
 
-`CategoryTheory.Functor`; `TauCeti.ExactStructure`; LocallyAnalyticDistributions §§0.0 and 0.2; PadicPeriodRings §§4.1–4.3; VectorBundlesAndIsocrystals, Layer 5, *Sympathetic Vector Spaces*, *Exact faithful Banach realization*, *Finite-Dimensional Banach–Colmez presentations*, *HN decomposition and connected components* and *Curvature-zero finite-length modules*.
+`CategoryTheory.Functor`; `TauCeti.ExactStructure`; `WithSeminorms.banach_steinhaus`; LocallyAnalyticDistributions §§0.0 and 0.2; CompactOperators §0.5; PadicPeriodRings §§4.1–4.3; VectorBundlesAndIsocrystals, Layer 5, *Sympathetic Vector Spaces*, *Exact faithful Banach realization*, *Finite-Dimensional Banach–Colmez presentations*, *HN decomposition and connected components* and *Curvature-zero finite-length modules*.
 
 ## Layer 3: The perfectoid disc extension class
 
@@ -680,7 +695,7 @@ API:
 
 The assignment `E ↦ λ_E`, with `λ_v = vλ_E`, is a natural `C`-linear isomorphism `Ext¹_TVS(V₁, V₁) ≅ C`. With endpoints fixed by `0 → V₁ → B₂ → V₁ → 0`, first map multiplication by `t`, the class of `B₂` maps to 1. The scalar structure uses `End_TVS(V₁) = C`. An isomorphism of unframed middle objects does not identify all nonzero classes (CN25, Proposition 4.10(ii), pp. 23–25).
 
-A proof route: §3.6 extracts the invariant and shows that `λ_v = 0` for nonzero `v` exactly when the extension splits. For the period extension, a logarithmic lift in `B₂` of the compatible `X`-roots gives `λ_v = v`, which proves surjectivity. Injectivity and scaling give `λ_v = vλ_E`. Baer sum and pushout give `C`-linearity.
+A proof route: §3.6 extracts the invariant and shows that `λ_v = 0` for nonzero `v` exactly when the extension splits. For the period extension take `ℓ = v̂·log[E_1^♭]` in `B₂(C̃{X})`, where `E_1^♭ = (E_(1/p^k))_(k ≥ 0)` is the compatible system of `p`-power roots of `E_1` given by the normalized roots of §3.1 and `v̂ ∈ B₂` lifts `v`. Then `θ(ℓ) = v·log E_1 = vX`, and `(σ − 1)ℓ = v̂·log[χ_1(σ)^♭] = v̂·ψ_1(σ)t` for `σ ∈ H_C`, by the definition of `ψ_1`; this is the image of `vψ_1(σ)` under `c ↦ tc`, so `λ_v = v`, which proves surjectivity. At `p = 2` the same formula holds with `E_1` the normalized fourth root of `exp(4X)`, again with `log E_1 = X`. CN25 writes the compatible system with the letter `X` in place of `E` at this point (proof of Proposition 4.10, p. 23). Injectivity and scaling give `λ_v = vλ_E`. Baer sum and pushout give `C`-linearity.
 
 *Needs:* §2.3; §2.7; §3.6; PadicPeriodRings §§4.1–4.3.
 
@@ -717,11 +732,11 @@ At `p = 3` the first congruence is `Y_0³ = X` modulo `3^(1/3)`. At `p = 2` it i
 
 ### 4.1 Reasonable C-spaces
 
-A reasonable `C`-space is a Hausdorff locally convex `C`-vector space that is separable, meaning it has a dense `C`-linear subspace of countable dimension, together with a Fréchet presentation or a countable compact-type presentation. Fréchet means complete and metrizable by a countable family of nonarchimedean seminorms. Compact type means a locally convex inductive limit of Banach spaces with injective compact transition maps, in the compactoid sense of LocallyAnalyticDistributions §0.0. Its TVS realization is `Λ ↦ Λ ⊗̂_C W`. The type is remembered when a same-type theorem is used (CN25, §4.3, p. 25; Appendix A, pp. 58–59). `C` need not be spherically complete, so results of LocallyAnalyticDistributions §§0.0–0.2 that require spherical completeness do not specialize to `C`. Completeness and strict tensor exactness come from §§2.5–2.6 and extensions from §4.6.
+A reasonable `C`-space is a Hausdorff locally convex `C`-vector space that is separable, meaning it has a dense `C`-linear subspace of countable dimension, together with a Fréchet presentation or a countable compact-type presentation. Fréchet means complete and metrizable by a countable family of nonarchimedean seminorms. Compact type is the case `m = 1` of §2.5: a countable locally convex inductive limit of `C`-Banach spaces with injective transition maps of compactoid image (`HasCompactoidImage`, CompactOperators §0.5). Over `C`, which is not locally compact, a map sending the unit ball into a compact set is zero, so the compact maps of LocallyAnalyticDistributions §0.0, stated for finite `K/ℚ_p`, are not the notion used. The TVS realization of a reasonable `C`-space `W` is `Λ ↦ Λ ⊗̂_C W`. The type is remembered when a same-type theorem is used (CN25, §4.3, p. 25; Appendix A, pp. 58–59). `C` need not be spherically complete, so results of LocallyAnalyticDistributions §§0.0–0.2 that require spherical completeness do not specialize to `C`. Completeness, regularity and strict tensor exactness come from §§2.5–2.6 and extensions from §4.6.
 
-A proof route: specialize the Fréchet and compact-type definitions of LocallyAnalyticDistributions §§0.0–0.2, adding separability rather than a second topology. Construct the realization with countable-type Banach models and completed projective tensors, and verify independence of the presentation and evaluation at `C`.
+A proof route: use the Fréchet notions of LocallyAnalyticDistributions §0.0 and the compact-type notion of §2.5 with its permanence properties, adding separability rather than a second topology. Construct the realization with countable-type Banach models and completed projective tensors, and verify independence of the presentation and evaluation at `C`.
 
-*Needs:* §2.7; LocallyAnalyticDistributions §0.0; LocallyAnalyticDistributions §0.2.
+*Needs:* §2.5; §2.7; LocallyAnalyticDistributions §0.0; LocallyAnalyticDistributions §0.2; CompactOperators §0.5.
 
 API:
 
@@ -734,15 +749,16 @@ API:
 
 - The zero space is reasonable of both types.
 - `c₀(ℕ, C)` is a separable Banach, hence Fréchet, example, with realization `c₀(ℕ, Λ)`.
-- An infinite-dimensional Banach space is not of compact type.
+- An infinite-dimensional Banach space is not of compact type: by the regularity of §2.5 its unit ball would lie and be bounded in one step, so its image in the next step would be compactoid. The unit ball would then be compactoid in the space itself, and a Banach space with compactoid unit ball is finite-dimensional.
+- The identity of `C` has compactoid image, being of rank one, but does not send the unit ball `O_C` into a compact set, since `O_C` is not compact. So `C`, with the constant presentation, is of compact type, and compactness of the transition maps would exclude it.
 
 ### 4.2 Reasonable topological B_m-modules
 
-For `m ≥ 1`, a reasonable `B_m`-model has a topology defined by a countable family of `B_m`-module seminorms and is Fréchet, or is a compactoid countable inductive limit of `B_m`-Banach models. Scalars act continuously, and complete separated models are used for realization. Its graded pieces `W[t^i]/W[t^(i−1)]`, `1 ≤ i ≤ m`, are closed subquotients killed by `t`, hence `C`-spaces of the same type, and each of them is required to be of countable type, or a Banach space linearly homeomorphic to `c₀(I, C)` for a set `I` of any cardinality, or a Fréchet space whose local Banach spaces, the completions of its quotients by the kernels of a defining sequence of seminorms, are of one of these two kinds. Whether a dense countably generated `B_m`-submodule exists is recorded separately. Reduction to `t`-kernels and quotients preserves the topological type with the strict structures used (CN25, §4.3.2 and Remark 4.20, p. 26). A single `m` kills the whole model. No `C`-algebra section `C → B_m` is chosen. CN25 §4.3.2 imposes no condition on the graded pieces, but its comparison for these models reduces to Proposition 4.18, whose proof uses continuous functionals and orthonormal bases of separable spaces (CN25, Proposition 4.22 and proof, p. 27; proof of Proposition 4.18, p. 26); the condition on the graded pieces is what that route needs. A compact-type model is of countable type automatically, since the image of a compactoid map lies in the closed span of a countable set, so the condition restricts only Banach and Fréchet models. The statements below quantify over this class, which contains every model of countable type; §4.9 supplies the `C`-spaces beyond countable type.
+For `m ≥ 1`, a reasonable `B_m`-model has a topology defined by a countable family of `B_m`-module seminorms and is Fréchet, or is a compact-type `B_m`-model in the sense of §2.5. Scalars act continuously, and complete separated models are used for realization. Its graded pieces `W[t^i]/W[t^(i−1)]`, `1 ≤ i ≤ m`, are closed subquotients killed by `t`, hence `C`-spaces of the same type (by §2.5 for compact type), and each of them is required to be of countable type, or a Banach space linearly homeomorphic to `c₀(I, C)` for a set `I` of any cardinality, or a Fréchet space whose local Banach spaces, the completions of its quotients by the kernels of a defining sequence of seminorms, are of one of these two kinds. Whether a dense countably generated `B_m`-submodule exists is recorded separately. Reduction to `t`-kernels and quotients preserves the topological type with the strict structures used (CN25, §4.3.2 and Remark 4.20, p. 26; §2.5 for compact type). A single `m` kills the whole model. No `C`-algebra section `C → B_m` is chosen. CN25 §4.3.2 imposes no condition on the graded pieces, but its comparison for these models reduces to Proposition 4.18, whose proof uses continuous functionals and orthonormal bases of separable spaces (CN25, Proposition 4.22 and proof, p. 27; proof of Proposition 4.18, p. 26); the condition on the graded pieces is what that route needs. A compact-type model is of countable type automatically, since the image of a map of compactoid image lies in the closed span of a countable set (§2.5), so the condition restricts only Banach and Fréchet models. The statements below quantify over this class, which contains every model of countable type; §4.9 supplies the `C`-spaces beyond countable type.
 
-A proof route: use the Banach, Fréchet and compact-type notions of LocallyAnalyticDistributions §§0.0–0.2 with `B_m`-module seminorms and the topological module carrier `TopModuleCat`. Check `t`-stable closed subobjects, the induced strict quotient topology and the completed realization of §2.7. Prove strict tensor exactness with the `t`-filtration and the countable basis of `B_m(Λ)`. Treat `m = 1` as the `C`-case.
+A proof route: use the Banach and Fréchet notions of LocallyAnalyticDistributions §§0.0–0.2 with `B_m`-module seminorms, the compact-type notion of §2.5, and the topological module carrier `TopModuleCat`. Check `t`-stable closed subobjects, the induced strict quotient topology and the completed realization of §2.7. Prove strict tensor exactness with the `t`-filtration and the countable basis of `B_m(Λ)`. Treat `m = 1` as the `C`-case.
 
-*Needs:* §2.7; §4.1; `TopModuleCat`; LocallyAnalyticDistributions §0.0.
+*Needs:* §2.5; §2.7; §4.1; `TopModuleCat`; LocallyAnalyticDistributions §0.0; CompactOperators §0.5.
 
 API:
 
@@ -756,7 +772,7 @@ API:
 - `B_m` and finite direct sums of copies of `B_m` are reasonable Banach models on which `t^m = 0` uniformly.
 - For an uncountable set `I`, `c₀(I, C)` with `t` acting by zero is a reasonable Banach `B₁`-model, its only graded piece being `c₀(I, C)` itself, but it has no dense countably generated subspace. Each vector of `c₀(I, C)` has countable support, so a countably generated subspace and its closure are supported on a countable `S ⊂ I`, and a unit vector `e_j` with `j ∉ S` has distance 1 from that closure. The model lies in this class but not in that of §4.1.
 - A colimit of `B_m` over unbounded `m` is not a reasonable model, although each element is torsion.
-- The spherical completion `Ĉ` of `C`, with `t` acting by zero, is a `C`-Banach space and hence a Banach `B₁`-module in the sense of CN25 §4.3.2, and its continuous `C`-dual is 0 (CN25, Remark A.2, p. 58). It is not a reasonable model here: a nonzero space of countable type has a nonzero continuous functional, by the functional extension of LocallyAnalyticDistributions §0.2, and `c₀(I, C)` has its coordinate functionals. The route of §4.7 has neither a functional nor a basis on `Ĉ`, and no comparison is asserted for it.
+- The spherical completion `Ĉ` of `C`, with `t` acting by zero, is a `C`-Banach space and hence a Banach `B₁`-module in the sense of CN25 §4.3.2, and its continuous `C`-dual is 0, as CN25 asserts in Remark A.2, p. 58, by way of a non-splitting it only expects. Directly: a nonzero continuous functional `f` would make the one-dimensional `C`-space `Ĉ/ker f`, whose norm is a multiple of the absolute value of `C`, a quotient of a spherically complete Banach space by a closed subspace, hence spherically complete; then `C` would be spherically complete, which it is not. A decreasing sequence of balls of strictly decreasing radii `r_n` in the quotient lifts to centres `x_n` with `‖x_(n+1) − x_n‖ ≤ r_(n−1)`, and a point `y` of the intersection of the balls of radius `r_(n−1)` about the `x_n` maps into every ball, since its image is within `max(r_n, r_n) = r_n` of the `n`-th centre. It is not a reasonable model here: a nonzero space of countable type has a nonzero continuous functional, by the functional extension of LocallyAnalyticDistributions §0.2, and `c₀(I, C)` has its coordinate functionals. The route of §4.7 has neither a functional nor a basis on `Ĉ`, and no comparison is asserted for it.
 
 ### 4.3 Reasonable Pairs and same type
 
@@ -803,17 +819,17 @@ API:
 
 ### 4.5 A profinite cocycle lies in one compact-type step
 
-Let `H` be profinite and `W = colim_n W_n` a compact-type inductive limit of `C`-Banach spaces on which `H` acts compatibly and isometrically on every `W_n`. Then every continuous 1-cocycle `H → W` has image in a single `W_N`. The assertion concerns cocycles with these invariant steps, not arbitrary continuous maps to an inductive limit. The closure properties of unit balls must hold for the chosen presentation (CN25, Lemma 4.19 and proof, p. 26).
+Let `H` be profinite and `W = colim_n W_n` a compact-type `C`-space in the sense of §2.5, with `H` acting compatibly and isometrically on every `W_n`. Then every continuous 1-cocycle `H → W` has image in a single `W_N`. The assertion concerns cocycles with these invariant steps, not arbitrary continuous maps to an inductive limit (CN25, Lemma 4.19 and proof, p. 26). CN25 proves the subgroups below closed by c-compactness of the closed unit balls, which over `C` fails for every nonzero step; the route below uses closures and the regularity of §2.5 instead.
 
-A proof route: let `B_n` be the closed image of the unit ball and form the increasing closed subgroups `U_n = Σ_{i ≤ n} p^(i−n) B_i` covering `W`. Their preimages `H_n` under the cocycle are closed subgroups, by the isometric action and the cocycle equation. Baire gives some `H_n` with nonempty interior, hence of finite index. Adjoining the values at finitely many coset representatives gives a common `W_N`.
+A proof route: let `B_n` be the closure in `W` of the image of the unit ball of `W_n`, and let `Ū_n` be the closure of `U_n = Σ_{i ≤ n} p^(i−n) B_i`. The `Ū_n` are increasing closed subgroups covering `W`, each preserved by `H`, which acts continuously on `W` and preserves every `B_i`. Their preimages `H_n` under the cocycle are closed subgroups, by the cocycle equation. Baire gives some `H_n` with nonempty interior, hence of finite index. Adjoining the values at finitely many coset representatives places the cocycle in one bounded set `Ū_N`, which lies in a single step `W_M` by the regularity of §2.5.
 
-*Needs:* §4.1; LocallyAnalyticDistributions §0.2.
+*Needs:* §2.5; §4.1; LocallyAnalyticDistributions §0.2.
 
 **Checks.**
 
 - The zero cocycle lies in every step.
 - For `H` finite, every cocycle has finitely many values and lies in a single step for any presentation.
-- For `H = ℤ_p` acting trivially on `W = colim_n C^n` (coordinate inclusions, finite rank and hence compact), a continuous cocycle is a continuous homomorphism, `x ↦ x·w` with `w = c(1)`, and its image lies in the step `C^N` containing `w`. The step depends on the cocycle: for `w = e_N` it is `N`, so no single step contains all cocycles, and the quantifiers "for each cocycle there is a step" cannot be exchanged.
+- For `H = ℤ_p` acting trivially on `W = colim_n C^n` (coordinate inclusions, of finite rank and hence of compactoid image), a continuous cocycle is a continuous homomorphism, `x ↦ x·w` with `w = c(1)`, and its image lies in the step `C^N` containing `w`. The step depends on the cocycle: for `w = e_N` it is `N`, so no single step contains all cocycles, and the quantifiers "for each cocycle there is a step" cannot be exchanged.
 
 ### 4.6 Separable compact-type extensions over C
 
@@ -925,17 +941,18 @@ A proof route: use the parent's fundamental BC sequence and the injection into `
 
 ### 4.14 Linearity of rank-zero additive lifts
 
-In the situation of CN25 Proposition 4.27, an extension split on `C` with both endpoint Modules killed by `t` and reasonable of the same type (reasonable `B₁`-models of §4.2), let `v ↦ ℓ_v` be the continuous map of rank-zero additive lifts, with `ℓ_v(1) = v`. For every sympathetic `Λ`, `x ↦ ℓ_v(x)` on `O_Λ` is continuous and additive, and `ℓ_v(cx) = ℓ_(cv)(x)` for every `c ∈ O_C`, including zero and nonunits (CN25, Lemma 4.29 and proof, p. 30). Continuity of the lift map needs evaluation `ℓ ↦ ℓ(1)` to be a topological isomorphism. For compact type this is §4.6. For Fréchet endpoints, of countable type or not, §§4.7–4.9 make evaluation bijective on the space of lifts, which is closed in the Fréchet space `𝐖(C{X})`, and the open mapping theorem makes it a homeomorphism (CN25, proof of Proposition 4.27, p. 29).
+In the situation of CN25 Proposition 4.27, an extension split on `C` with both endpoint Modules killed by `t` and reasonable of the same type (reasonable `B₁`-models of §4.2), let `v ↦ ℓ_v` be the continuous map of rank-zero additive lifts, with `ℓ_v(1) = v`. For every sympathetic `Λ`, `x ↦ ℓ_v(x)` on `O_Λ` is continuous and additive, and `ℓ_v(cx) = ℓ_(cv)(x)` for every `c ∈ O_C`, including zero and nonunits (CN25, Lemma 4.29 and proof, p. 30). Continuity of the lift map needs evaluation `ℓ ↦ ℓ(1)` to be a topological isomorphism. For compact type this is §4.6. For Fréchet endpoints, of countable type or not, §§4.7–4.9 make evaluation bijective on the space of lifts. That space is closed in `E(C̃{X})`, the value of the extension `E` at the sympathetic closure, which is a Fréchet space because it is an extension of the Fréchet spaces `𝐖₂(C̃{X})` by `𝐖₁(C̃{X})` (LocallyAnalyticDistributions §0.2, *Extensions of Fréchet spaces*); a TVS has no value at the disc algebra `C{X}`, which is not sympathetic. The open mapping theorem then makes evaluation a homeomorphism onto the Fréchet space `E(C)` (CN25, proof of Proposition 4.27, p. 29).
 
 A proof route: descend `(τ−1)ℓ_v` to the translation parameter using `H`-invariance. `C`-point detection of sympathetic algebras makes the descended map additive. For units `c`, use the lift `X ↦ cX` and its conjugation action to identify `ℓ_v` and `ℓ_(cv)`. For a nonunit `c`, both `1` and `1 + c` are units, so additivity applied to `c = (1 + c) − 1` extends the identity. Treat `c = 0` directly.
 
-*Needs:* §2.3; §3.6; §4.2; §4.3; §4.6; §4.7; §4.8; §4.9; VectorBundlesAndIsocrystals, Layer 5, *Sympathetic Vector Spaces*.
+*Needs:* §2.3; §3.6; §4.2; §4.3; §4.6; §4.7; §4.8; §4.9; LocallyAnalyticDistributions §0.2 (*Extensions of Fréchet spaces* and *Fréchet open mapping*); VectorBundlesAndIsocrystals, Layer 5, *Sympathetic Vector Spaces*.
 
 **Checks.**
 
 - The identity holds for `c = 0`, where both sides are 0, and for `c = p`.
 - Changing a lift by `H` does not change the descended function.
 - For `c = −1`, `ℓ_v(−x) = ℓ_(−v)(x) = −ℓ_v(x)`, consistent with additivity.
+- For `W₁ = W₂ = C` and the split extension `E = V₁ ⊕ V₁`, `E(C̃{X}) = C̃{X}²` and the rank-zero additive elements are the pairs `(cX, vX)` with `c, v ∈ C`, a closed plane on which `ℓ ↦ ℓ(1) = (c, v)` is a bijection onto `C²`, hence a homeomorphism. The space of lifts is a subspace of this value at the sympathetic closure, not of a value at `C{X}`.
 
 ### 4.15 Period-module Hom and Ext comparison
 
@@ -971,7 +988,7 @@ For `W = B₃`, `d = 2`, both `W[t²]` and `W/t²W` have length 2, and for `d = 
 
 ### Dependencies
 
-Layers 2–3; `TopModuleCat`; `Submodule.torsionBy`; LocallyAnalyticDistributions §§0.0 and 0.2; PadicPeriodRings §§4.1–4.3; VectorBundlesAndIsocrystals, Layer 5, *Sympathetic Vector Spaces*, *Dimensions of standard Banach–Colmez spaces* and *Nonpositive curvature extension criterion*.
+Layers 2–3; `TopModuleCat`; `Submodule.torsionBy`; LocallyAnalyticDistributions §§0.0 and 0.2; CompactOperators §0.5; PadicPeriodRings §§4.1–4.3; VectorBundlesAndIsocrystals, Layer 5, *Sympathetic Vector Spaces*, *Dimensions of standard Banach–Colmez spaces* and *Nonpositive curvature extension criterion*.
 
 ## Layer 5: Quasi-Banach–Colmez spaces
 
@@ -1109,17 +1126,17 @@ Construct the comparison from the parent's sympathetic VS period objects to `ℚ
 - For `(V₁, V₁)` the degree-zero and degree-one comparisons both identify `C` with `C`.
 - For the normalized `B₂` sequence the connecting map sends 1 to the class 1; a zero comparison map fails this.
 
-### 6.3 The positive-period inverse limit
+### 6.3 The constant source is projective in VS
 
-For `W = ℚ_p`, identify the inverse-limit comparison for the system `B_m` with its Milnor sequence. Prove `Hom_VS(ℚ_p, B_m) = B_m`, `Ext¹_VS(ℚ_p, B_m) = 0` and surjectivity of the reductions `B_(m+1) → B_m`, and deduce `lim¹ Hom = 0` and `Ext¹_VS(ℚ_p, B_dR⁺) = 0`. This is a VS statement, obtained from the comparison of §6.2 (CN25, Lemma 3.26 and proof, pp. 19–20).
+For every VS `F`, evaluation of `1 ∈ ℚ_p` over `C` identifies `Hom_VS(ℚ_p, F)` with `F(C)`. Here `ℚ_p` is the constant functor, and `C` is initial among sympathetic algebras: a natural map from `ℚ_p` is determined by the image of `1` at `C`, and every element of `F(C)` defines one by transport along the unique algebra maps `C → Λ`. Exactness in VS is exactness at each algebra, so this functor of `F` is exact. Hence the constant `ℚ_p` is projective in VS and `Ext^i_VS(ℚ_p, F) = 0` for all `i ≥ 1`. In particular `Hom_VS(ℚ_p, B_m) = B_m` and `Hom_VS(ℚ_p, B_dR) = B_dR`, and `Ext¹_VS(ℚ_p, −)` vanishes on `B_m`, `V₁`, `B_dR⁺`, `t^(−k)B_dR⁺` and `B_dR`; no inverse-limit argument is needed. CN25 derives the `B_dR⁺` case from the tower of the `B_m` instead (CN25, Lemma 3.26 and proof, pp. 19–20).
 
-*Needs:* §6.2; LocallyAnalyticDistributions §0.2.
+*Needs:* VectorBundlesAndIsocrystals, Layer 5, *Sympathetic Vector Spaces*.
 
 **Checks.**
 
-- At `m = 1` the Hom group is `C` and `Ext¹` is 0.
-- The fibre of `B₂ → B₁` is `tC`, a nonzero `C`-line; a tower of identity maps would have the wrong kernel.
-- For the constant zero tower, Hom, `Ext¹` and `lim¹` are 0.
+- For `F = V₁`, `Hom_VS(ℚ_p, V₁) = C` and `Ext¹_VS(ℚ_p, V₁) = 0`, the values §6.5 uses.
+- For `F = B_dR`, `Hom_VS(ℚ_p, B_dR) = B_dR` and `Ext¹_VS(ℚ_p, B_dR) = 0`, so `h(ℚ_p)` and the `Ext¹` term have `B_dR`-ranks `(1, 0)`, as §6.7 requires for height 1.
+- The argument fails for the source `V₁`: `Hom_VS(V₁, F)` is not evaluation at an initial object, and `Ext¹_VS(V₁, B_dR⁺) = C ≠ 0` (§6.5), so `V₁` is not projective in VS.
 
 ### 6.4 Filtered localization of VS Ext
 
@@ -1135,9 +1152,9 @@ For every classical BC `W`, the canonical map `colim_{k ≥ 0} Ext¹_VS(W, t^(�
 
 ### 6.5 VS Ext for the basic sources
 
-For a classical BC `W`, the map of §6.4 is an isomorphism of `B_dR`-vector spaces. Prove `Ext¹_VS(ℚ_p, V₁) = 0` and, for every `k ≥ 0`, `Ext¹_VS(V₁, t^(−k)B_dR⁺) ≅ C`, with the connecting map `Hom_VS(V₁, t^(−k−1)V₁) → Ext¹_VS(V₁, t^(−k)B_dR⁺)` an isomorphism. Consequently the transition to the next lattice-target `Ext¹` is zero. Section 6.3 gives `Ext¹_VS(ℚ_p, B_dR⁺) = 0`. All groups are in VS. A table computed in v-sheaves is used only through the comparison of §6.2 (CN25, §3.3 and proof of Lemma 3.26, pp. 19–20; LeBras18, Theorem 4.1, pp. 26–28; AnschutzLeBras25, Theorems 3.1, 3.2 and 3.9 and Corollary 3.11, pp. 3670–3681; TVS25, Theorem 4.1 and Corollary 4.7, pp. 24–26, Lemma 4.21, p. 28, and Corollary 4.25, p. 30).
+For a classical BC `W`, the map of §6.4 is an isomorphism of `B_dR`-vector spaces. By §6.3, `Ext¹_VS(ℚ_p, V₁) = 0`. Prove, for every `k ≥ 0`, `Ext¹_VS(V₁, t^(−k)B_dR⁺) ≅ C`, with the connecting map `Hom_VS(V₁, t^(−k−1)V₁) → Ext¹_VS(V₁, t^(−k)B_dR⁺)` an isomorphism. Consequently the transition to the next lattice-target `Ext¹` is zero. Section 6.3 gives `Ext¹_VS(ℚ_p, B_dR⁺) = 0`. All groups are in VS. A table computed in v-sheaves is used only through the comparison of §6.2 (CN25, §3.3 and proof of Lemma 3.26, pp. 19–20; LeBras18, Theorem 4.1, pp. 26–28; AnschutzLeBras25, Theorems 3.1, 3.2 and 3.9 and Corollary 3.11, pp. 3670–3681; TVS25, Theorem 4.1 and Corollary 4.7, pp. 24–26, Lemma 4.21, p. 28, and Corollary 4.25, p. 30).
 
-A proof route: transport the v-sheaf `Ext` table of LeBras18 Theorem 4.1 through §6.2. The filtered colimit is §6.4; the Mac Lane resolution and qcqs representable powers in the proof of AnschutzLeBras25, Corollary 3.8, give the sheaf-side pseudocoherence. For `ℚ_p` and `B_m` use §6.3, keeping its Milnor term until the tower proves it zero. For `V₁` use `0 → t^(−k)B_dR⁺ → t^(−k−1)B_dR⁺ → t^(−k−1)V₁ → 0`, the parent's vanishing of torsion-to-positive-period Hom and the normalized degree-one class. The boundary is the isomorphism `C → C`, so the next transition is zero.
+A proof route: transport the v-sheaf `Ext` table of LeBras18 Theorem 4.1 through §6.2. The filtered colimit is §6.4; the Mac Lane resolution and qcqs representable powers in the proof of AnschutzLeBras25, Corollary 3.8, give the sheaf-side pseudocoherence. For the source `ℚ_p` use §6.3. For `V₁` use `0 → t^(−k)B_dR⁺ → t^(−k−1)B_dR⁺ → t^(−k−1)V₁ → 0`, the parent's vanishing of torsion-to-positive-period Hom and the normalized degree-one class. The boundary is the isomorphism `C → C`, so the next transition is zero.
 
 *Needs:* §6.1; §6.2; §6.3; §6.4; VectorBundlesAndIsocrystals, Layer 5, *The tilted coherent heart*, *Le Bras equivalence* and *VS Hom vanishing from torsion period modules*.
 
@@ -1151,9 +1168,9 @@ A proof route: transport the v-sheaf `Ext` table of LeBras18 Theorem 4.1 through
 
 If a classical BC `W` has curvature `≤ 0`, then `Ext¹_VS(W, B_dR) = 0`. Therefore every exact sequence `0 → W₁ → W → W₂ → 0` of such BC spaces gives an exact sequence `0 → h(W₂) → h(W) → h(W₁) → 0`. These are BC sequences read in VS, not arbitrary Pairs (CN25, Lemma 3.26 and proof, pp. 19–20).
 
-A proof route: for `ℚ_p` use §6.3 and §6.5. For `V₁` the lattice transitions are zero by §6.5, so the colimit vanishes. Filter a finite-length affine BC by its `t`-filtration to get vanishing for every affine object. The parent's characterization `0 → V → W → M → 0`, with `V` finite-dimensional over `ℚ_p` and `M` affine, for curvature `≤ 0`, and the long exact sequence give the general case. Apply `Hom_VS(−, B_dR)` to a short exact sequence to get the contravariant exactness.
+A proof route: for `ℚ_p` use §6.3. For `V₁` the lattice transitions are zero by §6.5, so the colimit vanishes. Filter a finite-length affine BC by its `t`-filtration to get vanishing for every affine object. The parent's characterization `0 → V → W → M → 0`, with `V` finite-dimensional over `ℚ_p` and `M` affine, for curvature `≤ 0`, and the long exact sequence give the general case. Apply `Hom_VS(−, B_dR)` to a short exact sequence to get the contravariant exactness.
 
-*Needs:* §6.1; §6.5; VectorBundlesAndIsocrystals, Layer 5, *Nonpositive curvature extension criterion* and *Curvature-zero finite-length modules*.
+*Needs:* §6.1; §6.3; §6.5; VectorBundlesAndIsocrystals, Layer 5, *Nonpositive curvature extension criterion* and *Curvature-zero finite-length modules*.
 
 **Checks.**
 
@@ -1181,7 +1198,7 @@ For `ℚ_p`, `C` and `C/ℚ_p`, the ranks of `(h, Ext¹)` are `(1, 0)`, `(0, 0)`
 
 ### Dependencies
 
-gap:G-HOM; LocallyAnalyticDistributions §0.2; PadicPeriodRings §§4.1–4.3; VectorBundlesAndIsocrystals, Layer 5, *Sympathetic Vector Spaces*, *VS Hom vanishing from torsion period modules*, *Le Bras equivalence*, *The tilted coherent heart*, *Nonpositive curvature extension criterion*, *Curvature-zero finite-length modules*, *Finite-Dimensional Banach–Colmez presentations* and *Dimension and the abelian BC category*.
+gap:G-HOM; PadicPeriodRings §§4.1–4.3; VectorBundlesAndIsocrystals, Layer 5, *Sympathetic Vector Spaces*, *VS Hom vanishing from torsion period modules*, *Le Bras equivalence*, *The tilted coherent heart*, *Nonpositive curvature extension criterion*, *Curvature-zero finite-length modules*, *Finite-Dimensional Banach–Colmez presentations* and *Dimension and the abelian BC category*.
 
 ## Downstream consumers
 

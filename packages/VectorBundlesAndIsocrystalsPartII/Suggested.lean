@@ -12,12 +12,12 @@ the Krull topology, and `σ ∈ G_K` acts on `ℂ_[p]` by its extension by conti
 `UniformSpace.Completion.map σ` (it is an isometry of the spectral norm,
 `spectralNorm_eq_of_equiv`). This action and its laws are those of the roadmap PadicPeriodRings,
 §1.1; the statements below write the completion map directly. With these, two headlines of
-Layers 0–1 are statable:
+Layer 0 are statable:
 
 * Fontaine's full faithfulness for finite-dimensional semilinear `ℂ_p`-representations
   (README §0.2, first half);
 * the fundamental theorem for an extension of a `ℂ_p`-line by a finite-dimensional
-  representation (README §1.8).
+  representation (README §0.10).
 
 The other headline theorems are not statable at the pins:
 
@@ -73,9 +73,7 @@ theorem semilinearRep_equivariant_map_smul (p : ℕ) [Fact p.Prime]
     f (c • w) = c • f w := by
   sorry
 
-/-! ## Layer 1: Arithmetic extensions and duality -/
-
-/-- **The fundamental theorem for an extension of a `ℂ_p`-line** (README §1.8). Let `K/ℚ_p` be
+/-- **The fundamental theorem for an extension of a `ℂ_p`-line** (README §0.10). Let `K/ℚ_p` be
 finite, `E` a `ℚ_p`-Banach space with a jointly continuous linear action of `G_K`, `V ⊂ E` a
 finite-dimensional subspace, and `q : E → W` a continuous equivariant surjection with kernel `V`
 onto a one-dimensional continuous semilinear `ℂ_p`-representation `W` (so `V` is `G_K`-stable). If
