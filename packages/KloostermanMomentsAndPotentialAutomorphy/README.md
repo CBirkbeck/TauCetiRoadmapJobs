@@ -3,13 +3,18 @@
 **Summary.** Assemble the symmetric power moments of rank-two Kloosterman sums over all finite
 fields into generating series `Z_k(p; T)`, realize them cohomologically, and prove the theorems of
 Fresán, Sabbah and Yu: `Z_k(p; T)` is an integer polynomial of known degree whose reciprocal roots
-have weights `0`, `k` and `k + 1`; the middle factors are the Euler factors of a motive `M_k` over
-`ℚ` of weight `k + 1` whose Hodge numbers are all `0` or `1` and are computed explicitly; the
-`ℓ`-adic realizations of `M_k` form a regular, polarized, weakly compatible system, hence are
-potentially automorphic by Patrikis–Taylor; and the completed moment `L`-functions continue
-meromorphically with the functional equations `Λ_k(s) = Λ_k(k + 2 − s)` for odd `k` (Theorem 1.2)
-and `Λ_k(s) = ε_k Λ_k(k + 2 − s)` for even `k`, with an Euler factor, conductor exponent and sign at
-`2` that are shown to exist (Theorem 1.3). The route goes through the characteristic-zero
+have weights `0`, `k` and `k + 1`; the middle de Rham cohomology of `Sym^k Kl₂` is the realization
+of a motive `M_k` over `ℚ` of weight `k + 1` whose Hodge numbers are all `0` or `1` and are computed
+explicitly; the inverse Euler factor of `M_k` at `p` is the middle factor `M_k(p; T)` of `Z_k(p; T)`,
+its part of weight `k + 1`, except at the odd primes with `p² ≤ k` for odd `k` and at the odd primes
+`p ≤ k/2` and at `2` for even `k`; at those odd primes it is `M_k(p; T)` times explicit linear factors
+of weight `k + 1`, respectively `k`, from inertia invariants outside the middle part (Layer 8), and at
+`2` for even `k` it is shown to exist (Layer 11); the `ℓ`-adic realizations of `M_k` form a
+regular, polarized, weakly compatible system, hence are potentially automorphic by Patrikis–Taylor;
+and the completed moment `L`-functions continue meromorphically with the functional equations
+`Λ_k(s) = Λ_k(k + 2 − s)` for odd `k` (Theorem 1.2) and `Λ_k(s) = ε_k Λ_k(k + 2 − s)` for even
+`k`, with an Euler factor, conductor exponent and sign at `2` that are shown to exist (Theorem 1.3).
+The route goes through the characteristic-zero
 Kloosterman connections of every rank `r ≥ 2`, their exponential mixed Hodge theory, explicit bases
 and compactifications, the moment hypersurfaces `K_{r,k}` and their integral models, the local
 Galois structure at every odd prime by Picard–Lefschetz theory, and the gamma and epsilon factors.
@@ -37,7 +42,8 @@ This roadmap owns:
   realization of middle cohomology, the Nori motive `M_{r,k}` and the finite-field hypersurface
   comparison (Layer 4);
 - the explicit rank-two frame, formal structure, intermediate extensions, inverse Fourier local
-  structure, cohomology dimensions and de Rham bases (Layer 5);
+  structure, cohomology dimensions, de Rham bases and the weight of the constant quotient
+  (Layer 5);
 - the signed-permutation fan, the nondegenerate compactification of `t·g`, Newton weights, the
   Hodge filtration on the explicit bases and the two Hodge-number tables (Layer 6);
 - the integral boundary geometry, the bad-prime quadratic singularities, the resolution of the even
@@ -90,14 +96,14 @@ What is stated elsewhere is consumed by section:
   and the curve costalk formula (§§4.3, 4.6, 5.1–5.4), exponential mixed Hodge structures, the
   projector `Π`, the exponential weight filtration, the de Rham fibre and the Fourier description
   of `Π` (§§6.1–6.6), the irregular Hodge filtration and its strict bifiltered realization (§§7.1,
-  7.5–7.6), the classical subcategory and the agreement of filtrations (§§8.1–8.2), exponential
+  7.5–7.6), the classical subcategory and the agreement of filtrations (§§6.7, 7.7), exponential
   pair cohomology with its de Rham fibre, Künneth, duality, middle-degree weights and divisor
-  sequences (§§9.1–9.5), the classicality of `t·g` and the zero-locus comparison (§§10.1–10.2),
+  sequences (§§8.1–8.5), the classicality of `t·g` and the zero-locus comparison (§§8.7–8.8),
   the Fourier cohomology of a mixed Hodge module on the line, Fourier costalks, pure-input Hodge
   numbers, the constant correction of `Π`, regular stationary phase and the weights at infinity
-  (§§11.1–11.6), and the logarithmic and Newton descriptions of
+  (§§9.1–9.6), and the logarithmic and Newton descriptions of
   the irregular filtration with the constant boundary correction of a Laurent Gauss–Manin system
-  (§§12.1–12.8).
+  (§§10.1–10.8).
 - ComplexComparisonPartII §§C5.6–C5.7 owns regular singular connections, the canonical logarithmic
   extension and the logarithmic de Rham comparison on curves.
 - EtaleCohomologyFoundations (finite and rational étale coefficients, compact supports, base change,
@@ -270,7 +276,7 @@ keeps the reductive-group Bessel constructions and the `F`-isocrystal companion 
   Fourier functor `j₀⁺ ∘ FT ∘ j_{0,+}`; Fourier duality.
 - §§4.3, 4.6 and 5.1–5.4: pure and mixed Hodge modules, their operations, weight bounds, Hodge
   nearby and vanishing cycles, and the curve costalk formula.
-- §§6.1–6.6, 7.1, 7.5–7.6 and 8.1–8.2: exponential mixed Hodge structures, `Π` with its unit and
+- §§6.1–6.7, 7.1 and 7.5–7.7: exponential mixed Hodge structures, `Π` with its unit and
   constant kernel and cokernel, the exponential weight filtration, the de Rham fibre, the irregular
   Hodge filtration and its strict bifiltered realization, and the agreement of the irregular and
   classical filtrations on classical objects (FSY Proposition A.13). From §6.6 this roadmap uses the
@@ -278,25 +284,28 @@ keeps the reductive-group Bessel constructions and the `F`-isocrystal companion 
   `Π ∘ FT⁻¹ ≅ FT⁻¹ ∘ j_{0,+}j₀⁺` on modules whose inverse Fourier transform is regular holonomic. The
   regularity is a condition on `N`, not on the transform `FT N`, which is irregular at `∞` in every
   use here.
-- §§9.1–9.5 and 10.1–10.2: ordinary, compact and middle exponential cohomology of a pair with its de
+- §§8.1–8.5 and 8.7–8.8: ordinary, compact and middle exponential cohomology of a pair with its de
   Rham fibre, Künneth and duality, the middle-degree weight statement, divisor sequences, the
   classicality of `t·g` on `𝔸¹ × V` and its `*0`/`!0` variants (FSY Theorem A.24), and the zero-locus
   comparison `H_c^a(𝔸¹ × V, tg) ≅ H_c^{a−2}(K)(−1)`, `H^a(𝔸¹ × V, tg) ≅ H_K^a(V)` (FSY Example A.27).
-- §§11.1–11.6: the mixed Hodge structures `H^j(𝔸¹_t, FT M^H)` and `H^j_c(𝔸¹_t, FT M^H)` of a mixed
+- §§9.1–9.6: the mixed Hodge structures `H^j(𝔸¹_t, FT M^H)` and `H^j_c(𝔸¹_t, FT M^H)` of a mixed
   Hodge module on `𝔸¹_τ` with their long exact sequences (FSY Notation A.29), the Fourier costalk
   and pure-input Hodge-number formulas, the constant correction of `Π`, regular stationary phase at
-  eigenvalue one and the monodromy weights at infinity (FSY Theorem A.30, Corollary A.31).
-- §§12.1–12.8: the logarithmic filtration on good and nondegenerate compactifications, filtered
+  eigenvalue one and the monodromy weights at infinity (FSY Theorem A.30, Corollary A.31). Layer 3
+  uses only the weight bound `≥ w + 1` of the constant quotient (§9.4); its exact weight in rank two
+  comes from §9.6 applied in §5.7, with every primitive part kept, to the single block at `∞` of
+  §5.4.
+- §§10.1–10.8: the logarithmic filtration on good and nondegenerate compactifications, filtered
   invariance under the explicit blow-ups, model independence and `E₁` degeneration, the Newton
   filtration of a Newton-nondegenerate Laurent polynomial with its agreement with the irregular
   filtration, and the constant cone of `h_! → h_*` for a convenient nondegenerate Laurent
-  polynomial `h` (§12.8).
+  polynomial `h` (§10.8).
 - What MixedHodgeModulesAndIrregularHodgeTheory must provide (gap:irregular-stationary-phase):
   for a holonomic module `M` on `𝔸¹` whose formal structure at `∞` is a sum of
   `E^{c_i t} ⊗ R_i` with distinct `c_i ∈ ℂ` and `R_i` regular, together with parts of slope
   different from one, the inverse Fourier transform is smooth on `𝔸¹ ∖ {c_i}` and its vanishing cycles
   at each `c_i` are isomorphic, with their monodromy, to the formal regular module `R_i`, with the
-  sign convention of the kernel `E^{tτ}`. This extends the regular-input stationary phase of §11.5.
+  sign convention of the kernel `E^{tτ}`. This extends the regular-input stationary phase of §9.5.
 
 ### From TauCetiRoadmap.ComplexComparisonPartII
 
@@ -975,7 +984,7 @@ one-dimensional base.
 - For `r = 2`, `k = 2` the transposition acts on `H³_dR(𝔾_m³, E^{f_{2,2}})` with the sign
   `(−1)^{1·1} = −1` relative to the factor swap of `Kl₂^{⊗2}`.
 
-*Needs:* §§2.1, 3.1–3.2; MixedHodgeModulesAndIrregularHodgeTheory §2.1 (exponential twists) and §9.3
+*Needs:* §§2.1, 3.1–3.2; MixedHodgeModulesAndIrregularHodgeTheory §2.1 (exponential twists) and §8.3
 (Künneth); SpringerResolutionAndCharacteristicCycles §9.1 (direct images).
 
 ### 3.4 Middle Kloosterman cohomology
@@ -1020,7 +1029,7 @@ Corollary 2.15, pp. 15–16; the projectors are defined on p. 14).
 `S_k`-projector `e^S_χ` of §3.2, using that the actions of `S_k` on the two sides of §3.3 differ by
 `χ_n`; for the descended object on the cover presentation apply in addition `e_μ`, by the finite
 étale descent of §2.2. Then compare supports and descend the graded-symmetric Poincaré pairing of
-MixedHodgeModulesAndIrregularHodgeTheory §9.3.
+MixedHodgeModulesAndIrregularHodgeTheory §8.3.
 
 **Checks.**
 
@@ -1032,7 +1041,7 @@ MixedHodgeModulesAndIrregularHodgeTheory §9.3.
   `2` and `1` (§5.5); identifying the cover with the `S₃ × μ₂`-part would give `2` and `1` for the
   cover as well.
 
-*Needs:* §§2.2, 2.5, 3.2–3.4; MixedHodgeModulesAndIrregularHodgeTheory §§9.1–9.3 (pair cohomology,
+*Needs:* §§2.2, 2.5, 3.2–3.4; MixedHodgeModulesAndIrregularHodgeTheory §§8.1–8.3 (pair cohomology,
 its de Rham fibre, Künneth and duality).
 
 ### 3.6 Inverse Fourier Kloosterman objects
@@ -1049,9 +1058,9 @@ pp. 16–17). Let
 and cokernel are constant; prove that `M` is its image, equivalently the quotient of
 `G_{r,k}^{S_k,χ_n}` by its maximal constant submodule, which is a direct summand. Prove that `M`
 underlies an irreducible pure Hodge module `M^H` of weight `nk` with `M^H = W_{nk}ΠM^H`. Prove also
-that `M′` underlies a constant mixed Hodge module `M′^H` on `𝔸¹` with weights `≥ nk + 1`, pure of
-weight `2k + 1` when `r = 2` (FSY (2.22)–(2.23), Proposition 2.21 and Lemma 2.24, pp. 16–18). The API
-proves the following facts.
+that `M′` underlies a constant mixed Hodge module `M′^H` on `𝔸¹` with weights `≥ nk + 1` (FSY
+(2.22)–(2.23), Proposition 2.21 and Lemma 2.24, pp. 16–18). Its exact weight in rank two needs the
+monodromy at infinity of §5.4 and is the theorem of §5.7. The API proves the following facts.
 
 - `M` is regular holonomic. The Gauss–Manin module `N = H⁰g_{r,k,+}O` and its projection `ΠN`
   underlie the mixed Hodge modules `H⁰g_{r,k,*}pℚ^H_{𝔾_m^{nk}}` and `Π(H⁰g_{r,k,*}pℚ^H_{𝔾_m^{nk}})`
@@ -1067,15 +1076,15 @@ proves the following facts.
 - The inclusion `M → ΠM` is the unit of `Π`, and its cokernel is constant.
 - The kernel and cokernel of `H⁰g_{r,k,!}O → H⁰g_{r,k,+}O` are constant, since `g_{r,k}` is a
   convenient Newton-nondegenerate Laurent polynomial (MixedHodgeModulesAndIrregularHodgeTheory
-  §12.8).
+  §10.8).
 - `M^H` forgets to `M` and is pure of weight `nk`. Its exponential de Rham fibre
   `ω(M) = H¹_dR(𝔸¹_τ, M ⊗ E^τ)` is identified by `ω(η)` with `ω(ΠM)` and is the fibre at `t = 1` of
   `FT M = j_{0,!*}Sym^k K̃l_r`, of dimension `binomial(r − 1 + k, k)`. With `W_jω(ΠM) = ω(W_jM^H)`
   it is pure of exponential weight `nk`: a pure input gives its own weight, with no shift
   (MixedHodgeModulesAndIrregularHodgeTheory §§6.4–6.5; FSY Remark A.6 and (A.8)–(A.9), p. 64).
-- The Fourier cohomology `H¹(𝔸¹_t, FT M^H)` of MixedHodgeModulesAndIrregularHodgeTheory §11.1 is a
+- The Fourier cohomology `H¹(𝔸¹_t, FT M^H)` of MixedHodgeModulesAndIrregularHodgeTheory §9.1 is a
   different object from this fibre. `M` is irreducible and not punctual, so it has no section
-  supported at `τ = 0`, and §11.3 there gives
+  supported at `τ = 0`, and §9.3 there gives
   `H¹(𝔸¹_t, FT M^H) ≅ coker(N : ψ_{τ,1}M^H → ψ_{τ,1}M^H(−1))`. The weight filtration of
   `ψ_{τ,1}M^H` is the monodromy filtration of `N` centred at `nk − 1` (§5.3
   there). Let `P_i ⊂ gr^W_{nk−1+i}ψ_{τ,1}M^H`, `i ≥ 0`, be its primitive parts. Then
@@ -1085,10 +1094,10 @@ proves the following facts.
 - Fourier cohomology applied to `0 → M^H → ΠM^H → M′^H → 0` gives an exact sequence of mixed Hodge
   structures `0 → H¹(𝔸¹_t, FT M^H) → H¹(𝔸¹_t, FT ΠM^H) → H¹(𝔸¹_t, FT M′^H) → 0`. The outer zeros hold
   because `H⁰` of the Fourier cohomology of a constant module vanishes, and so does ordinary Fourier
-  cohomology in degree two (§11.1 there). By §11.4 there the quotient has weights `≥ nk + 2`. The
+  cohomology in degree two (§9.1 there). By §9.4 there the quotient has weights `≥ nk + 2`. The
   middle term is `H^{nk+1}(𝔾_m^{nk+1}, t·g_{r,k})^{S_k,χ_n}`, the structure realizing
   `H¹(𝔾_m, Sym^k K̃l_r)` in §3.5; its de Rham fibre is `H¹_dR(𝔸¹_t, j_{0,+}Sym^k K̃l_r)`. Indeed, as pair
-  cohomology (§9.1 there) the fibre `t = 0` contributes `RΓ(𝔸¹_τ, ΠM^H) = 0`, constant objects in `τ`
+  cohomology (§8.1 there) the fibre `t = 0` contributes `RΓ(𝔸¹_τ, ΠM^H) = 0`, constant objects in `τ`
   contribute nothing over `t ≠ 0`, and `(t·g_{r,k})_* = (tτ)_* ∘ (id × g_{r,k})_*` (FSY proof of
   Theorem 3.2, p. 20, and of Proposition 4.20, p. 32).
 
@@ -1106,28 +1115,26 @@ proves the following facts.
   `Sym² K̃l₂` at `t = 1`, of dimension `3` and exponential weight `2 = nk`. `M` has rank `2` and is
   singular at `0` (§5.4), with local monodromy one Jordan block of size two. So `P₀ = 0` and `P₁` is
   one-dimensional, and `H¹(𝔸¹_t, FT M^H) = P₁(−1) = ℚ(−2)` has dimension `1`, type `(2, 2)` and weight
-  `4 = nk + 2`. Together with the class `(3, 3)` of `H¹(𝔸¹_t, FT M′^H)` this gives the two classes of
-  §6.4. Neither the fibre nor the Fourier cohomology has weight `nk + 1 = 3`.
+  `4 = nk + 2`. Together with the class `(3, 3)` of `H¹(𝔸¹_t, FT M′^H)`, whose weight is the
+  rank-two quotient weight of §5.7, this gives the two classes of §6.4. Neither the fibre nor the
+  Fourier cohomology has weight `nk + 1 = 3`.
 - `r = 2`, `k = 3`. `M` is smooth at `0` (§5.4), so `H¹(𝔸¹_t, FT M^H) = ψ_τM^H(−1)` has dimension
   `rank M = 3` and is pure of weight `4 = nk + 1`. These are the middle classes `(1, 3), (2, 2), (3, 1)`
   of §6.4. The fibre `ω(M)` has dimension `4` and exponential weight `3`.
-- `k = 0` is excluded. There `j_{0,!*}O_{𝔾_m} = O_{𝔸¹}` and `M = FT⁻¹O = δ_0` is punctual, so §11.3 of
+- `k = 0` is excluded. There `j_{0,!*}O_{𝔾_m} = O_{𝔸¹}` and `M = FT⁻¹O = δ_0` is punctual, so §9.3 of
   MixedHodgeModulesAndIrregularHodgeTheory does not apply, and indeed
   `H⁰_dR(𝔸¹_t, FT δ_0) = H⁰_dR(𝔸¹_t, O) = ℂ ≠ 0`.
-- For `r = 2` the quotient `M′^H` is pure of weight `2k + 1` as a mixed Hodge module on `𝔸¹`, being
-  `a^*V[1]` for a constant variation `V` of weight `2k`. In contrast `ΠM^H` is not pure, having the
-  weights `k` and `2k + 1`.
-- `M′^H` is not an exponential mixed Hodge structure. At `r = 2`, `k = 1` it is the nonzero constant
-  object `a^*ℚ(−1)[1]`, so `RΓ(𝔸¹, M′^H) = ℚ(−1)[1] ≠ 0` and `ΠM′^H = 0`
-  (MixedHodgeModulesAndIrregularHodgeTheory §§6.1–6.2). Its weights at `k = 1` are `3` as a Hodge
-  module and `2` for the variation. Its contribution `H¹(𝔸¹_t, FT M′^H)` to `H¹(𝔾_m, Sym¹ K̃l₂)` has
-  weight `4`, the top class `(2, 2)` of §6.4.
+- `M′^H` is not an exponential mixed Hodge structure. At `r = 2`, `k = 1` it is a nonzero constant
+  object `a^*V[1]` with `V` of rank one, by the trace summand of the first Check, so
+  `RΓ(𝔸¹, M′^H) = V[1] ≠ 0` and `ΠM′^H = 0` (MixedHodgeModulesAndIrregularHodgeTheory §§6.1–6.2).
+  The bound `≥ nk + 1 = 2` is all this section gives for its weight; the value `3`, with `V = ℚ(−1)`
+  and the top class `(2, 2)` of §6.4, comes from §5.7.
 
 *Needs:* §§3.1, 3.2, 3.5; MixedHodgeModulesAndIrregularHodgeTheory §§2.2, 6.1, 6.2, 6.6 (Fourier
 transform, exponential structures, projector, Fourier localization), §§6.4–6.5 (exponential weight
 filtration, de Rham fibre), §§4.3, 4.6, 5.1–5.3 (pure and mixed Hodge modules, direct images, weights,
-nearby cycles), §9.1 (pair cohomology), §§11.1–11.4 (Fourier cohomology, costalk, pure-input
-formula, constant correction) and §12.8 (constant boundary of a Laurent Gauss–Manin system);
+nearby cycles), §8.1 (pair cohomology), §§9.1–9.4 (Fourier cohomology, costalk, pure-input
+formula, constant correction) and §10.8 (constant boundary of a Laurent Gauss–Manin system);
 SpringerResolutionAndCharacteristicCycles §§9.6–9.7 (intermediate extension, regular holonomic
 modules).
 
@@ -1159,10 +1166,10 @@ the maps on `gr^W_{nk+1}` identify both extreme graded pieces with the middle co
 `(−1)^{nk+1}` (FSY Theorem 3.2, pp. 19–21; Theorem A.24, pp. 68–70).
 
 *Proof sketch.* The potential on the cover is `t·g_{r,k}` on `𝔸¹ × 𝔾_m^{nk}` after adding the constant
-`𝔸¹`-factor, so MixedHodgeModulesAndIrregularHodgeTheory §10.1 (the classical `t·g` criterion)
-applies; its §8.2 identifies the filtrations. Transfer to `Sym^k K̃l_r` through `e^S_χ` and to
+`𝔸¹`-factor, so MixedHodgeModulesAndIrregularHodgeTheory §8.7 (the classical `t·g` criterion)
+applies; its §7.7 identifies the filtrations. Transfer to `Sym^k K̃l_r` through `e^S_χ` and to
 `Sym^k Kl_r` through `e_χ` (§§3.2, 3.5), which is the finite cyclic descent of §2.2. The weight bounds
-are those of MixedHodgeModulesAndIrregularHodgeTheory §9.4 in the central degree `nk + 1`. For
+are those of MixedHodgeModulesAndIrregularHodgeTheory §8.4 in the central degree `nk + 1`. For
 `H¹_mid = W_{nk+1}H¹` on the cover, that is for `Sym^k K̃l_r`, use the Fourier-cohomology facts of
 §3.6. They put `W_{nk+1}H¹` inside `H¹(𝔸¹_t, FT M^H)`, where it has dimension `dim P₀`, and the pure
 middle space `H¹(ℙ¹_t, j_{!*}Sym^k K̃l_r)` (§3.4) lies there too. The codimension of the middle space
@@ -1172,7 +1179,7 @@ the irregular part contributes nothing. Stationary phase at the origin
 (gap:irregular-stationary-phase) matches this with the cokernel of `N` on `φ_{τ,1}M`, which has
 dimension `Σ_{i≥1} dim P_i` because `M` is an intermediate extension at `0`. So the middle space has
 dimension `dim P₀` and equals `W_{nk+1}H¹`, and the criterion of
-MixedHodgeModulesAndIrregularHodgeTheory §9.4 gives the isomorphism on `gr^W_{nk+1}`; taking
+MixedHodgeModulesAndIrregularHodgeTheory §8.4 gives the isomorphism on `gr^W_{nk+1}`; taking
 `μ_r`-invariants gives the statement for `Sym^k Kl_r` (FSY proof of Theorem 3.2, pp. 20–21).
 
 **Checks.**
@@ -1183,8 +1190,8 @@ MixedHodgeModulesAndIrregularHodgeTheory §9.4 gives the isomorphism on `gr^W_{n
 - For `r = 2`, `k = 3` the full `H¹` has dimension two with weights `4` and `8` (§6.6), so `H¹` is not
   pure and `W₄H¹` is the one-dimensional middle part.
 
-*Needs:* §§2.2–2.3, 3.2, 3.4–3.6; MixedHodgeModulesAndIrregularHodgeTheory §§8.1–8.2, 9.1–9.4,
-10.1 and 11.1–11.4, and §11.5 with its irregular stationary phase (gap:irregular-stationary-phase);
+*Needs:* §§2.2–2.3, 3.2, 3.4–3.6; MixedHodgeModulesAndIrregularHodgeTheory §§6.7, 7.7, 8.1–8.4,
+8.7 and 9.1–9.4, and §9.5 with its irregular stationary phase (gap:irregular-stationary-phase);
 PadicDifferentialEquationsAndRigidCohomology §RD.6.52a (formal decomposition at `∞`);
 SpringerResolutionAndCharacteristicCycles §9.6 (intermediate extension); Tau Ceti
 `TauCeti.Hodge.MixedHodgeStructure` and its strictness theorems.
@@ -1223,10 +1230,10 @@ projector `e_χ` of §3.2; if `K_{r,k}` is smooth the last term equals
 `(gr^W_{nk−1}H^{nk−1}(K_{r,k}))^{S_k×μ_r,χ_n}(−1)` (FSY Theorem 3.8, pp. 21–23; Example A.27,
 pp. 70–71).
 
-*Proof sketch.* MixedHodgeModulesAndIrregularHodgeTheory §10.2's zero-locus comparison gives
+*Proof sketch.* MixedHodgeModulesAndIrregularHodgeTheory §8.8's zero-locus comparison gives
 `H_c^a(𝔸¹ × 𝔾_m^{nk}, tg) ≅ H_c^{a−2}(K_{r,k})(−1)` and `H^a ≅ H^a_{K_{r,k}}(𝔾_m^{nk})`, equivariantly
 for `S_k × μ_r` since `μ_r` acts trivially on `H²_c(𝔸¹)`. Remove the `t = 0` contribution by the
-divisor sequences of its §9.5, compare lowest weights, and apply `e_χ` with §§3.5 and 4.1.
+divisor sequences of its §8.5, compare lowest weights, and apply `e_χ` with §§3.5 and 4.1.
 
 **Checks.**
 
@@ -1238,8 +1245,8 @@ divisor sequences of its §9.5, compare lowest weights, and apply `e_χ` with §
   not `1`: a weight-one piece twisted by `(−1)` would have weight `3`. The `μ₂`-invariance is part of
   the projector; the `S₃`-sign part of the cover middle cohomology has dimension `3` (§3.5).
 
-*Needs:* §§4.1–4.2, 3.2, 3.5; MixedHodgeModulesAndIrregularHodgeTheory §10.2 (zero locus) and
-§9.5 (divisor sequences of pairs).
+*Needs:* §§4.1–4.2, 3.2, 3.5; MixedHodgeModulesAndIrregularHodgeTheory §8.8 (zero locus) and
+§8.5 (divisor sequences of pairs).
 
 ### 4.4 The Kloosterman moment motive
 
@@ -1378,12 +1385,19 @@ no-boundary-subquotient characterization of SpringerResolutionAndCharacteristicC
 
 **Theorem.** For `k ≥ 1`, `ΠM` of §3.6 has rank `k + 1` and `M` rank `k`. Their finite
 singularities are `τ = 2(2j − k)`, `j = 0, …, k`. At each of them the vanishing cycles have rank one
-with monodromy `(−1)^k`. At `∞` the monodromy is unipotent with a single Jordan block (FSY
-Corollary 4.10, p. 29).
+with monodromy `(−1)^k`. At `∞` the monodromy of `ΠM` is unipotent with a single Jordan block of
+size `k + 1`, and that of `M` is unipotent with a single Jordan block of size `k` (FSY Corollary 4.10,
+p. 29).
 
 *Proof sketch.* Apply stationary phase to the formal exponential factors of §5.2 (the supplier
 contract gap:irregular-stationary-phase), and use the extensions of §5.3 at `0` and `∞` to compute
-nearby and vanishing cycle ranks.
+nearby and vanishing cycle ranks. At `∞`, regular stationary phase at eigenvalue one
+(MixedHodgeModulesAndIrregularHodgeTheory §9.5, applied to `ΠM` and `M`, which are regular also at
+`∞` by §3.6) identifies the nearby cycles at `∞` with the vanishing cycles at `t = 0` of
+`FT ΠM = j_{0,+}Sym^k K̃l₂` and of `FT M = j_{0,!*}Sym^k K̃l₂`. The first is the nearby space of
+`Sym^k K̃l₂` at `0`, on which `Sym^k` of the single unipotent block of §2.3, of size two also after
+the cover `z = t²`, is one block of size `k + 1`; the second is the image of its logarithm, one block
+of size `k` (FSY p. 29).
 
 **Checks.**
 
@@ -1391,8 +1405,12 @@ nearby and vanishing cycle ranks.
 - For `k = 3` the finite singular values are `−6, −2, 2, 6`.
 - Ranks: `k + 1` exponents give `k + 1` singular points, each contributing one vanishing cycle; the
   rank `k` of `M` and `k + 1` of `ΠM` differ by the constant quotient.
+- `k = 2`: the blocks at `∞` have sizes `3` for `ΠM` and `2` for `M`; a block of size `k + 1` on `M`
+  would exceed its rank `2`.
+- `k = 1`: the logarithm of the monodromy at `∞` is zero on the rank-one `ψ_∞M` and nonzero on the
+  rank-two `ψ_∞ΠM`, so the two blocks are not interchangeable.
 
-*Needs:* §§3.6, 5.2–5.3; MixedHodgeModulesAndIrregularHodgeTheory §11.5 and its irregular
+*Needs:* §§2.3, 3.6, 5.2–5.3; MixedHodgeModulesAndIrregularHodgeTheory §9.5 and its irregular
 stationary phase (gap:irregular-stationary-phase).
 
 ### 5.5 Dimensions of moment cohomology
@@ -1435,6 +1453,39 @@ kernel, and conclude with the dimensions of §5.5.
 - For `k = 1`: one class `v₀dz/z`, and the leading determinant is `(1!!)²(−z) = −z`.
 
 *Needs:* §§5.1, 5.5; ComplexComparisonPartII §§C5.6–C5.7.
+
+### 5.7 Weights of the constant quotient in rank two
+
+**Theorem.** For `r = 2` and `k ≥ 1`, the constant quotient `M′^H` of
+`0 → M^H → ΠM^H → M′^H → 0` (§3.6) has rank one and is pure of weight `2k + 1` as a mixed Hodge
+module on `𝔸¹_τ`: it is `a^*V[1]` for a rank-one constant variation `V` of weight `2k`, hence of type
+`(k, k)`. Consequently `ΠM^H` has exactly the weights `k` and `2k + 1`, and
+`H¹(𝔸¹_t, FT M′^H)` is one-dimensional of type `(k + 1, k + 1)` (FSY Proposition 2.21 and the end of
+its proof, pp. 16–18, with Corollary 4.10, p. 29).
+
+*Proof sketch.* By §5.4, `rank M′ = (k + 1) − k = 1` and the monodromy of `M` at `∞` is one unipotent
+block of size `k`. Apply MixedHodgeModulesAndIrregularHodgeTheory §9.6 with `w = nk = k`: the weight
+filtration of `ψ_{∞,1}M^H` is the monodromy filtration centred at `k − 1`, so its only nonzero
+primitive part is the line `P_{k−1} ⊂ gr^W_{2k−2}ψ_{∞,1}M^H`, and `gr^W_{2k+1}M′^H` is the constant
+variation `P_{k−1}(−1)`, of rank one. Since `M′` has rank one, the other graded pieces, including
+`W_{k+1}M′^H`, vanish. A rank-one Hodge structure of weight `2k` has type `(k, k)`. The
+statement on `H¹(𝔸¹_t, FT M′^H)` is the constant correction of §9.4 there, which raises the weight
+by one.
+
+**Checks.**
+
+- `k = 1, 2, 3`: the block of `M` at `∞` has size `1, 2, 3` and centre `0, 1, 2`; the primitive line has
+  weight `0, 2, 4`; `V` has weight `2, 4, 6`; `M′^H` has weight `3, 5, 7`; and `H¹(𝔸¹_t, FT M′^H)` has
+  type `(2, 2), (3, 3), (4, 4)`, the top classes of §6.4. The general bound `≥ nk + 1` of §3.6 gives
+  only `≥ 2, 3, 4`.
+- Indexing the primitive part by `k` instead of `k − 1`, as for the block of size `k + 1` of `ΠM`,
+  would give `M′^H` weight `2k + 2` and a one-dimensional `H¹(𝔸¹_t, FT M′^H)` of odd weight `2k + 3`,
+  which Hodge symmetry excludes; at `k = 1` this is weight `5` in place of the type `(2, 2)`.
+- `ΠM^H` is not pure: at `k = 1` its weights are `1`, from `M^H`, and `3`, from `M′^H`. At `k = 1`,
+  `M′^H = a^*ℚ(−1)[1]`, which has weight `2` as a variation and `3` as a Hodge module on `𝔸¹`.
+
+*Needs:* §§3.6, 5.4; MixedHodgeModulesAndIrregularHodgeTheory §§5.3, 9.4 and 9.6 (monodromy
+filtration of nearby cycles, constant correction, monodromy weights at infinity of the projector).
 
 ### Examples
 
@@ -1508,7 +1559,7 @@ sections.
 **Theorem.** Let `k ≥ 1` over a field of characteristic zero. Starting from `ℙ¹_t × X_k`, blow up
 successively the intersections of the strict transform of `t = 0` with the toric boundary divisors.
 For odd `k` the result is a nondegenerate compactification of `(𝔾_m^{k+1}, t·Σᵢ(yᵢ + yᵢ⁻¹))` with
-strict normal crossings boundary, in the sense of MixedHodgeModulesAndIrregularHodgeTheory §12.1.
+strict normal crossings boundary, in the sense of MixedHodgeModulesAndIrregularHodgeTheory §10.1.
 For even `k` the only failures are at `t = ∞` over the balanced sign points `yᵢ = ±1`, `Σᵢ yᵢ = 0`;
 blowing up each of them and then the intersection of its exceptional divisor with the strict
 transform of `t = ∞` gives a nondegenerate compactification, whose new divisors `E₁`, `E₂` satisfy
@@ -1527,7 +1578,7 @@ and pole orders.
   blow-up at `t = ∞` is needed.
 
 *Needs:* §§6.1, 3.1; SchemeAndStackFoundations §§4.11, 4.17; MixedHodgeModulesAndIrregularHodgeTheory
-§§12.1–12.2 (good and nondegenerate compactifications, the toric blow-ups).
+§§10.1–10.2 (good and nondegenerate compactifications, the toric blow-ups).
 
 ### 6.3 Newton weights of the moment forms
 
@@ -1539,7 +1590,7 @@ top-form classes (FSY §4.3.1, p. 35).
 
 *Proof sketch.* Compute the exponent set, its supporting hyperplane and face equations; the face
 critical equations have a balanced sign solution exactly for even `k`; apply the Newton filtration
-theorem of MixedHodgeModulesAndIrregularHodgeTheory §12.7.
+theorem of MixedHodgeModulesAndIrregularHodgeTheory §10.7.
 
 **Checks.**
 
@@ -1548,7 +1599,7 @@ theorem of MixedHodgeModulesAndIrregularHodgeTheory §12.7.
 - For `k = 1` the Newton polygon of `x + z/x` has vertices `(1, 0)` and `(−1, 1)` in the coordinates
   `(α₁, α₀)`, both on `2α₀ + α₁ = 1`.
 
-*Needs:* §§3.1, 5.6; MixedHodgeModulesAndIrregularHodgeTheory §§12.4–12.7 (Newton complex, concentration
+*Needs:* §§3.1, 5.6; MixedHodgeModulesAndIrregularHodgeTheory §§10.4–10.7 (Newton complex, concentration
 and comparison).
 
 ### 6.4 Hodge numbers on the double cover
@@ -1561,9 +1612,10 @@ pp. 32–34).
 
 *Proof sketch.* Use the pure Hodge module `M` of rank `k` (§3.6) and its single-block monodromy at
 `∞` (§5.4) to compute the rank-one Hodge graded pieces through the pure-input Fourier formula of
-MixedHodgeModulesAndIrregularHodgeTheory §11.3; the nearby cycles at `τ = 0` and the constant
-quotient `M′` give the two extra even-`k` classes and the top Tate class. The primitive part of the
-monodromy filtration at `∞` is indexed by `k − 1`.
+MixedHodgeModulesAndIrregularHodgeTheory §9.3; the nearby cycles at `τ = 0` give the extra even-`k`
+class of weight `k + 2`, and the constant quotient `M′`, pure of weight `2k + 1` by §5.7, gives the top
+Tate class `(k + 1, k + 1)`. The primitive part of the monodromy filtration at `∞` is indexed by
+`k − 1`.
 
 **Checks.**
 
@@ -1571,8 +1623,8 @@ monodromy filtration at `∞` is indexed by `k − 1`.
 - `k = 3`: middle `(1, 3), (2, 2), (3, 1)` and the top class `(4, 4)`; total dimension `4 = k + 1`.
 - The total dimension is `k + 1` for odd `k` and `(k − 2) + 2 = k` for even `k`, as in §5.5.
 
-*Needs:* §§3.6, 4.1, 5.4–5.5; MixedHodgeModulesAndIrregularHodgeTheory §§11.3–11.6 (pure-input Fourier
-Hodge numbers, constant correction, weights at infinity).
+*Needs:* §§3.6, 4.1, 5.4–5.5, 5.7; MixedHodgeModulesAndIrregularHodgeTheory §§9.3–9.6 (pure-input
+Fourier Hodge numbers, constant correction, weights at infinity).
 
 ### 6.5 The Hodge filtration on the explicit bases
 
@@ -1584,7 +1636,7 @@ means an empty span (FSY Proposition 4.21 and its proof, pp. 34–38).
 
 *Proof sketch.* For odd `k` use §6.3. For even `k` use §6.2: the top form vanishes logarithmically
 along `(k − j)E₁ + (k − 2j)E₂`, which gives `j ≤ k/2` on the cover. Filtered blow-up invariance and
-`E₁` degeneration (MixedHodgeModulesAndIrregularHodgeTheory §§12.2–12.3), the cover Hodge numbers of
+`E₁` degeneration (MixedHodgeModulesAndIrregularHodgeTheory §§10.2–10.3), the cover Hodge numbers of
 §6.4 and strict `μ₂`-invariants turn the inclusions into equalities.
 
 **Checks.**
@@ -1593,7 +1645,7 @@ along `(k − j)E₁ + (k − 2j)E₂`, which gives `j ≤ k/2` on the cover. Fi
 - For even `k` the theorem asserts nothing for `p ≤ k/2`.
 - The factor `2` in the pullback comes from `dz/z = 2dt/t`.
 
-*Needs:* §§6.2–6.4, 5.6, 4.1; MixedHodgeModulesAndIrregularHodgeTheory §§12.2–12.3 and 12.7.
+*Needs:* §§6.2–6.4, 5.6, 4.1; MixedHodgeModulesAndIrregularHodgeTheory §§10.2–10.3 and 10.7.
 
 ### 6.6 Hodge numbers of the Kloosterman moments
 
@@ -1983,6 +2035,11 @@ odd `p` the exponent is `dim V − dim V^{I_p} = |Θ⁻_p|`, the Swan term vanis
 **Checks.**
 
 - `k = 9`: `sf(9) = 1` whereas the radical is `3`; `oddConductor 9 = sf(3)sf(5)sf(7)sf(9) = 105`.
+- `k = 9`, `p = 3`: the moments `53`, `115181`, `−9408475` over `𝔽₃`, `𝔽₉`, `𝔽₂₇` give
+  `Z₉(3; T) = 1 + 53T + 58995T² − 59049T³ = (1 − T)(1 + 54T + 3¹⁰T²)`, so `M₉(3; T) = 1 + 54T + 3¹⁰T²`
+  with roots of absolute value `3^{−5}`, and `oddEulerFactorInv 9 3 = (1 + 54T + 3¹⁰T²)(1 − 243T)` has
+  degree `3`. Taking the middle factor `M₉(3; T)` alone as the inverse Euler factor loses the
+  inertia-invariant line `E⁺` of §8.3.
 - `k = 3`: the conductor is `3` and the Euler factor at `3` is `1`.
 - `k = 1`: `Θ⁺_p = Θ⁻_p = ∅` for every `p`, the Euler factors are `1`, and `oddConductor 1 = 1`.
 

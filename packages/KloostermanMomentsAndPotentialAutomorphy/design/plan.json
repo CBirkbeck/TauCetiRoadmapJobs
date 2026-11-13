@@ -3981,7 +3981,7 @@
       "slug": "irregular-stationary-phase",
       "needs": "For a holonomic module on the affine line whose formal structure at infinity is a sum of E^(c_i t) tensor regular modules R_i (plus parts of slope other than one), the inverse Fourier transform is smooth away from the c_i and its vanishing cycles at c_i are R_i with their monodromy, in the sign convention of the kernel E^(t tau).",
       "supplier": "MixedHodgeModulesAndIrregularHodgeTheory",
-      "section": "§11.5"
+      "section": "§9.5"
     },
     {
       "slug": "nori-weight-filtration",
