@@ -1034,16 +1034,28 @@ representations through tensor generators. The main comparison has trivial tame 
 
 ### 3.1 Relative specialization for the bounded Hecke family
 
-For a representation `W` with `Gr_{≤W}` smooth or with a resolution, let `p₂° : GR_W° → X` be the open part
-of the bounded Grassmannian over the big cell (§1.5), base-changed over `R` through
-gap:relative-level-geometry, with the good compactification `Gr_{≤W, ℙ¹} → ℙ¹`. Construct the relative
-specialization map from relative twisted de Rham cohomology of `(GR_W°)_K` with coefficient `p₁^+ E_{−π}`
-to relative rigid cohomology of `(GR_W°)_k` with the Dwork coefficient, as a horizontal map of
+For a representation `W` with `Gr_{≤W}` smooth or with a resolution, put `d = dim Gr_W`, let
+`p₂° : GR_W° → X` be the open part of the bounded Grassmannian over the big cell (§1.5), base-changed
+over `R` through gap:relative-level-geometry, and let `GR_W°° ⊂ GR_W°` be its smooth locus (all of
+`GR_W°` when `Gr_{≤W}` is smooth), with the good compactification `Gr_{≤W, ℙ¹} → ℙ¹` (respectively
+`G̃r_{≤W} × ℙ¹ → ℙ¹` from the resolution). The coefficient is Satake-normalized: on `GR_W°°` put
+`M = p₁^+ E_{−π}[d]` in the de Rham theory and `M = p₁^+ A_ψ[d]` in the arithmetic theory, with the half
+twist `(d/2)` added when Frobenius is kept. Here `p₁^+` of a smooth coefficient is its unshifted pullback
+as a connection (respectively overconvergent isocrystal), and a smooth object on a smooth scheme of
+dimension `e` lies in the holonomic heart only after the shift `[e]` (Xu–Zhu §2.3.4, (2.3.4.1)–(2.3.4.2),
+p. 15). Since `IC_W` is constant on `GR_W°°` with shift `[d]` and twist `(d/2)` (§§1.3, 1.5), `M` is the
+restriction of `p₁^+ A_ψ ⊗ IC_W`; its restriction to the `d`-dimensional smooth part of a fibre over a
+point of `X` lies in the holonomic heart, while on the `(d + 1)`-dimensional total space it is `M[1]` that
+does. In the same way the eigenvalue `Kl_W` is a connection (respectively overconvergent isocrystal) on
+the curve `X`, and its holonomic object is `Kl_W[1]` (Xu–Zhu §4.2.2 and §4.2.5, pp. 43–44). Construct the
+relative specialization map from relative twisted de Rham cohomology of `(GR_W°°)_K` with coefficient `M`
+to relative rigid cohomology of `(GR_W°°)_k` with coefficient `M` (both computed by derived direct image
+of the relative de Rham complex, as `GR_W°°` need not be affine over `X`), as a horizontal map of
 `A†`-modules on `𝔾_m`, where `A†` is the ring of functions on `ℙ¹` overconvergent along `{0, ∞}` (Xu–Zhu §2.3.7,
 (2.3.7.2), and §4.2.4, (4.2.4.1), pp. 15–16 and 43–44). Prove that the dagger-to-completed ring map
 `A† → A₀` is faithfully flat, so that an isomorphism after `⊗ A₀` descends, and that the fibre of the
 map at an `R`-point after any finite extension of `R` is the absolute specialization map of
-PadicDifferentialEquationsAndRigidCohomology §RD.4.58. *Needs:* §§1.5–1.6; §RD.4.58, §RD.4.59,
+PadicDifferentialEquationsAndRigidCohomology §RD.4.58. *Needs:* §§1.3, 1.5–1.6; §RD.4.58, §RD.4.59,
 §RD.3.8; gap:relative-level-geometry.
 
 - The relative map is `D_{X_K}`-linear and horizontal after `⊗ A†`.
@@ -1061,7 +1073,9 @@ PadicDifferentialEquationsAndRigidCohomology §RD.4.58. *Needs:* §§1.5–1.6; 
 ### 3.2 The minuscule comparison
 
 For generic `φ` over `R` and minuscule `W`, prove that the relative specialization map induces an
-isomorphism of connections `(Kl_W^dR(−πφ))† ≅ Kl_W^rig(ψφ)`. On each lifted closed-point fibre the
+isomorphism of connections `(Kl_W^dR(−πφ))† ≅ Kl_W^rig(ψφ)`. On each lifted closed-point fibre, with the
+Satake-normalized coefficient `M` of §3.1 (for minuscule `W`, `IC_W` is the constant object shifted by
+`d` and twisted by `d/2`, so `M = p₁^+ A_ψ ⊗ IC_W`), the
 compact-to-ordinary square and cleanness (§1.4) identify cohomology in degree zero, all other degrees
 vanish, and the common dimension is `dim W` (Xu–Zhu Lemma 4.2.3 and §4.2.4, (4.2.4.1)–(4.2.4.2),
 pp. 43–44). Route: the minuscule Schubert variety is a smooth projective partial flag variety, so the
@@ -1071,7 +1085,9 @@ specialization plus equality of dimensions gives the fibre isomorphism; faithful
 
 **Checks.**
 
-- The fibre cohomology vanishes outside degree zero and has dimension `dim W` there.
+- The fibre cohomology with coefficient `M` vanishes outside degree zero and has dimension `dim W` there. For
+  `H = SL₂` and `W` standard (`d = 1`) this is `2` in degree `0`; the unshifted coefficient `p₁^+ A_ψ` would
+  put the two-dimensional space in degree `1` and nothing in degree `0`.
 - A rigid point not rational over `K` is tested after its finite extension, and the conclusion descends.
 - For `H = SL₂` and `W` standard both sides have rank two and the comparison is the rank-two case of
   §2.7 after analytification.
@@ -1079,14 +1095,19 @@ specialization plus equality of dimensions gives the fibre isomorphism; faithful
 ### 3.3 The quasi-minuscule middle image
 
 For quasi-minuscule `W`, the closed Schubert variety `Gr_{≤W}` has an isolated singular point (the
-vertex) and a resolution `G̃r_{≤W}`; let `τ : GR_W°° → X` be the smooth part of the family. Prove that the
-image of compact-support cohomology in ordinary cohomology of the intermediate-extension coefficient
-`j_{!+}(p₁^+ A_ψ)` on each fibre is concentrated in degree zero, of dimension `dim W`, in both the de Rham and
-the rigid theories, and that the relative de Rham object is holonomic in degree zero. Route: use the
+vertex) and a resolution `G̃r_{≤W}`; let `τ : GR_W°° → X` be the smooth part of the family, `j : GR_W°° → GR_W°`
+the open immersion, and `M` the Satake-normalized coefficient of §3.1, so that `j_{!+}(M) ≅ p₁^+ A_ψ ⊗ IC_W`
+on `GR_W°` (with `p₁^+ E_{−π}` in the de Rham theory). Over a point `s` of `X` write `Y_s` for the fibre
+of `GR_W°`, `U_s` for its smooth part of dimension `d = dim Gr_W`, and `M_s` for the restriction of `M`,
+which is `p₁^+ A_ψ[d]` on `U_s` (twisted by `(d/2)` when Frobenius is kept) and lies in its holonomic heart (Xu–Zhu §4.2.5, p. 44). Prove that the
+image of compact-support cohomology in ordinary cohomology of the intermediate extension `j_{!+}(M_s)` on
+`Y_s` is concentrated in degree zero, of dimension `dim W`, in both the de Rham and the rigid theories, and
+that the relative objects `τ_+(M)[1]` on `X` are holonomic, that is, lie in the heart, in both theories;
+the shift `[1]` is the curve shift of §3.1, as for `Kl_W[1]`. Route: use the
 localization triangle at the vertex, the decomposition of the push-forward from the resolution, and
 perverse truncation of `τ_+` rather than any affineness of `τ`. The printed step in Xu–Zhu Lemma 4.2.6(i)
 (pp. 44–45) asserts that `τ` is affine; the punctured cone over the vertex has codimension at least two
-and is not affine, so that step is replaced by this theorem. *Needs:* §§1.1, 1.4, 3.1;
+and is not affine, so that step is replaced by this theorem. *Needs:* §§1.1, 1.3, 1.4, 1.5, 3.1;
 SpringerResolutionAndCharacteristicCycles Layer 9 (§9.6, intermediate extension);
 gap:arithmetic-d-module-operations.
 
@@ -1094,8 +1115,19 @@ gap:arithmetic-d-module-operations.
 
 - In the simplest case `G = PGL₂` the projective quasi-minuscule Schubert surface has a vertex neighbourhood isomorphic to the affine quadric cone `Spec K[u,v,w]/(uv−w²)`, whose
   punctured chart is not affine; the middle image still has dimension `3 = dim W` for the adjoint `W`.
-- The intermediate extension, not `j_!` or `j_+`, is the coefficient: `j_!` contributes the vertex stalk to
-  compactly supported cohomology and changes the dimension.
+- The Satake shift is part of the statement. For `G = PGL₂` (`d = 2`) the normalized coefficient gives
+  middle-image dimensions `3` in degree `0` and `0` in degree `2`; the unshifted `j_{!+}(p₁^+ A_ψ)` moves the
+  three-dimensional space to degree `2`, leaving `0` in degree `0`. On the curve, a smooth object lies in
+  holonomic degree `1`, so it is `τ_+(M)[1]`, not `τ_+(M)`, that lies in the heart.
+- Extension by zero has no vertex stalk: for `i` the vertex of `Y_s`, `i^+ j_!(M_s) = 0`. For `G = PGL₂` the
+  coefficient `p₁^+ A_ψ` is a rank-one smooth object across the vertex, and the cone is the quotient of
+  `𝔸²` by `μ₂` acting by `−1` (an étale double cover off the vertex for odd `p`, radicial for `p = 2`), so
+  with characteristic-zero coefficients `j_{!+}(M_s)` is `p₁^+ A_ψ[2]` near the vertex, up to the half twist. The vertex stalks
+  in degree `−2` therefore have dimensions `0` for `j_!` and `1` for `j_{!+}`. The localization triangle
+  `j_!(M_s) → j_{!+}(M_s) → i_+ i^+ j_{!+}(M_s)`, with the concentration of this theorem, then gives
+  `H^{−1}_c(U_s, M_s)` of dimension `1` besides `H^0_c(U_s, M_s)` of dimension `3`; dually `H^0(U_s, M_s)` has
+  dimension `3` and `H^1(U_s, M_s)` dimension `1`. Only the intermediate extension is concentrated in
+  degree zero.
 - The statement is fibrewise over every closed point of `X`, including after finite residue extension.
 
 ### 3.4 The quasi-minuscule comparison
@@ -2283,7 +2315,6 @@ Mathlib `gaussSum`, `quadraticChar`, `AddChar`, `PadicComplex`.
 
 - **GlobalShtukasAndFunctionFieldLanglandsPartII** uses the eigenobject (§1.6), adjoint rigidity and the vanishing
   of adjoint inertia invariants at `∞` (§§6.6, 11.5) for Kloosterman parameters of split almost-simple groups.
-- **KloostermanMomentsAndPotentialAutomorphy** uses the normalization of the all-rank companions (§§0.1, 8.1).
 - Roadmaps on exponential sums and on `G₂`-monodromy use the identities of §11.1 and the monodromy table of
   §§6.4 and 11.4.
 
