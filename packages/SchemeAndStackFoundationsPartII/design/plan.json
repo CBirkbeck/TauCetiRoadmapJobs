@@ -3355,16 +3355,6 @@
       "source": "SP Tag 0A6R, Lemma 47.9.1; CS24 proof of Theorem 5.7.2, p.81"
     },
     {
-      "slug": "classical-affine-group-adapter",
-      "supplier": "SchemeAndStackFoundations",
-      "section": "Layer 1 §1.15",
-      "needs": "For ordinary rings, connect the native affine Hopf-algebra group-point functors and finite locally free Cartier duality with the smooth affine commutative group-scheme category.",
-      "nodes": [
-        "gap:begueri-resolution"
-      ],
-      "source": "BG80 §§2.1–2.2, pp.22–27; CS24 §1.4, p.8 and §5.1.11, p.52"
-    },
-    {
       "slug": "flat-group-cotangent-amplitude",
       "supplier": "SchemeAndStackFoundations",
       "section": "Layer 1 §1.15",
