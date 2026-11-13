@@ -2,7 +2,7 @@
 
 Reviewers, red-team passes and errata jobs record every mistake they find in a source while checking a roadmap's locators: misprints (slips whose intended meaning is clear), errors (a false statement or proof step) and gaps (a step the source does not justify), each with the roadmap, the board pull request or errata job and the head that reported it. Collected by the board sync from the `## Source issues` sections of review, red-team and errata comments; the data is in `errata/source-issues.json`.
 
-12829 mistakes recorded on the board: 7292 misprints, 3397 errors, 1673 gaps, 467 unparsed bullets.
+12831 mistakes recorded on the board: 7294 misprints, 3397 errors, 1673 gaps, 467 unparsed bullets.
 Errata jobs have read the cited sources of 60 roadmaps; in those of 2 they found no mistake.
 The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explorer/`: 1525 awaiting review, 13582 confirmed, 228 rejected.
 
@@ -11539,8 +11539,10 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 - **Misprint** at Corollary 3.2.23 proof, printed p. 136, lines 5903, 5908 and 5927: the source says both tensor factors use the resolution of G; it should be the resolutions of G and H respectively; affects the proof. Found by CohomologyOfGroups (#14777 at 2a8a308, 2026-11-13, codex gpt-6-astra).
 - **Misprint** at Example 3.2.24, printed p. 137 (lines 5954–5955): the source says integral homology of ℤ² vanishes for n≥2; it should be n≥3, since the immediately preceding computation gives H₂=ℤ; affects a stated result. Found by CohomologyOfGroups (#14777 at e75c7b5, 2026-11-13, codex gpt-6-astra).
 - **Misprint** at Example 3.2.24, printed p. 137, lines 5954–5955: the source says the integral homology of the rank-two free abelian group vanishes from degree two; it should be from degree three, with degree two equal to ℤ; affects a stated result. Found by CohomologyOfGroups (#14777 at 2a8a308, 2026-11-13, codex gpt-6-astra).
+- **Misprint** at Example 3.2.24, printed p. 137, lines 5954–5955: the source says integral homology of the rank-two free abelian group vanishes from degree two; it should be from degree three, with degree two equal to ℤ; affects a stated result. Found by CohomologyOfGroups (#14777 at 6c08ac7, 2026-11-13, codex gpt-6-astra).
 - **Misprint** at Example 3.2.25 conclusion, printed p. 138 (lines 5976–5980): the source says integral-coefficient Hₙ is an n-dimensional vector space over 𝔽_p; it should be Hₙ with 𝔽_p coefficients, of dimension n+1; affects a stated result. Found by CohomologyOfGroups (#14777 at e75c7b5, 2026-11-13, codex gpt-6-astra).
 - **Misprint** at Example 3.2.25 conclusion, printed p. 138, lines 5976–5980: the source says the computed groups have integral coefficients and dimension n; it should be coefficients 𝔽_p and dimension n+1 in degree n; affects a stated result. Found by CohomologyOfGroups (#14777 at 2a8a308, 2026-11-13, codex gpt-6-astra).
+- **Misprint** at Theorem 3.2.18 proof, printed p. 130, line 5643: the source says the E² term at (2,0) is H₁ of the quotient with invariant coefficients; it should be H₂ of that quotient with invariant coefficients; affects the proof. Found by CohomologyOfGroups (#14777 at 6c08ac7, 2026-11-13, codex gpt-6-astra).
 
 ## LOU17
 
