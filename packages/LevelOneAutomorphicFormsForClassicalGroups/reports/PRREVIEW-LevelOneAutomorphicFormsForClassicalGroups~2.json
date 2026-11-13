@@ -1,0 +1,22 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-LevelOneAutomorphicFormsForClassicalGroups~2",
+  "head": "9d747e15ce4b59d3f2cba97bd5a30210ccdfa7e4",
+  "pr": 2285,
+  "folder": "LevelOneAutomorphicFormsForClassicalGroups",
+  "date": "2026-11-13",
+  "findings": 2,
+  "blocking": 0,
+  "notes": "Full re-review. All 13 findings of the previous review are repaired at this head. Two P3 findings: §1.5 restates the definition of §1.1 (the purity statement with content is not stated), and the finiteness locator of §1.7 (CT20 §2.4.1, not §2.4.2). Seeded sample of 15 targets checked against CT20, CL14, CT19a, Tai17, MR18 and BoechererNote (48 locators); supplier sections read at their heads; §4.9 index-set sizes recomputed (1158 for Sp14). Gate passes at 9d747e1; depcheck 0 problems; Suggested.lean elaborates with sorry the only warning and is unchanged since 060e3fe; one-tactic probe closes no theorem. For a human: the ninth gap slug (scalar-lowest-weight-packet-character) is in the README but not in design/plan.json.",
+  "carried": {
+   "from": "9d747e15ce4b59d3f2cba97bd5a30210ccdfa7e4",
+   "head": "7be3a49278da051a25df1fcfd1391a90391261fd",
+   "findings": 2,
+   "lines": 32,
+   "folders": [
+    "LevelOneAutomorphicFormsForClassicalGroups"
+   ]
+  }
+ }
+}
