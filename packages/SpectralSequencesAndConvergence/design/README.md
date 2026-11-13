@@ -33,7 +33,8 @@ This roadmap owns:
   total degrees; morphisms of converging spectral sequences; the comparison theorem; the
   consequences listed in Layer 3;
 - the towers, limit page and convergence of the spectral sequence of a spectral object indexed
-  by `EInt`, including Mathlib's first- and third-quadrant sequences;
+  by `EInt`, including Mathlib's first- and third-quadrant sequences, and the towers of Mathlib's
+  sequence of a spectral object indexed by `Fin (l + 1)`;
 - the classical indexing of the spectral sequence of a decreasingly filtered cochain complex in an
   arbitrary abelian category, its convergence in the cohomologically bounded and
   degreewise-finite cases, and Weibel's classical convergence theorem in abelian categories with
@@ -155,7 +156,11 @@ part of this roadmap.
 - **Exact couples.** Bigraded exact couples `D →i D →j E →k D` with degrees `a, b, c` are those of
   StableHomotopyKTheory §7.22. The cohomological couple of a decreasing filtration has
   `a = (−1, 1)`, `b = (0, 0)` and `c = (1, 0)`, so that `d_r` has degree `c + b − (r − 1)a =
-  (r, 1 − r)`.
+  (r, 1 − r)`. Total degrees: `i` and `j` preserve the total degree and `k` raises it by one. For
+  the tower `A_n^s = D^{s, n−s}` in total degree `n`, the limit-page objects of total degree `n`
+  converge to the colimit `A_n^{−∞}` but to the limit `A_{n+1}^{+∞}` (7.4). *Witness:* the two
+  step couples of 7.4's Checks. In the colimit one `E_∞^{0,0} = ℤ` matches `A_0^{−∞} = ℤ`; in the
+  limit one it matches `A_1^{+∞} = ℤ`, while `A_0^{+∞} = 0`.
 
 ## Exact supplier contracts
 
@@ -177,9 +182,15 @@ part of this roadmap.
   `CategoryTheory.Abelian.SpectralObject.coreE₂Cohomological`, `coreE₂CohomologicalNat`,
   `coreE₂CohomologicalFin`, `coreE₂HomologicalNat`, `HasSpectralSequence`, `IsFirstQuadrant`,
   `IsThirdQuadrant`, `spectralSequence`, `spectralSequencePageXIso`, `isoMapFourδ₁Toδ₀'`,
-  `isoMapFourδ₄Toδ₃'` (`Mathlib/Algebra/Homology/SpectralObject/`). The object
+  `isoMapFourδ₄Toδ₃'`, `SpectralSequenceDataCore.HasFirstPageComputation`,
+  `spectralSequenceFirstPageXIso` (`Mathlib/Algebra/Homology/SpectralObject/`). The object
   `E^n(i₀ ≤ i₁ ≤ i₂ ≤ i₃)` is the homology of
-  `H^{n−1}(i₂ ≤ i₃) →δ H^n(i₁ ≤ i₂) →δ H^{n+1}(i₀ ≤ i₁)`.
+  `H^{n−1}(i₂ ≤ i₃) →δ H^n(i₁ ≤ i₂) →δ H^{n+1}(i₀ ≤ i₁)`. The recipe `coreE₂CohomologicalFin l`
+  is for spectral objects indexed by `Fin (l + 1)`, with positions `ℤ × Fin l` and indices
+  clamped to `0` and `l`; `HasSpectralSequence` is an instance for it and for
+  `coreE₂Cohomological`, and a hypothesis for `coreE₂CohomologicalNat` and `coreE₂HomologicalNat`,
+  implied by `IsFirstQuadrant` and `IsThirdQuadrant` respectively. `HasFirstPageComputation` is an
+  instance for the three recipes on `EInt` only.
 - `HomotopyCategory.spectralObjectMappingCone`,
   `CategoryTheory.Triangulated.SpectralObject.mapHomologicalFunctor`, `EInt`
   (`Mathlib/Order/WithBotTop.lean`).
@@ -350,8 +361,10 @@ helle-rognes2024 line 68–70, proof of Lemma 2.2). *Needs:* Mathlib `Subobject`
   one side to one on the other side.
 - The presentation of the cokernel of `I ≤ K` is natural: for `I ≤ I′ ≤ K′ ≤ K` it is the
   presentation obtained in two steps.
-- A presentation with `B = ⊥` and `Z = ⊤` is the identity presentation; transport along it is
-  the identity.
+- For `A = X`, the presentation `(⊥, ⊤, e)` with `e` the canonical identification (the cokernel
+  of a morphism out of the zero object `⊥` is its target, and the arrow of `⊤` is an isomorphism)
+  is the identity presentation; transport along it is the identity. The two subobjects alone do
+  not fix `e` (third Check).
 
 **Checks.**
 
@@ -362,6 +375,10 @@ helle-rognes2024 line 68–70, proof of Lemma 2.2). *Needs:* Mathlib `Subobject`
 - Two presentations of the same `X` inside the same `A` can differ: inside `A = ℤ/4`, both
   `(B, Z) = (0, 2ℤ/4ℤ)` and `(B, Z) = (2ℤ/4ℤ, ℤ/4)` present `ℤ/2`. So the isomorphism `e` and
   the pair `(B, Z)` are data, not determined by `X`.
+- *The marking matters for the identity.* Take `A = X = ℤ²`, `B = 0`, `Z = A`, and let `e` be the
+  coordinate swap composed with the canonical identification. Preimage along `Z ↠ X` sends the
+  axis `ℤ × 0` of `X` to the axis `0 × ℤ` of `A`, whereas transport along the identity
+  presentation sends it to `ℤ × 0`. With the canonical `e` each axis is its own preimage.
 
 ### 1.2 The cycle and boundary towers
 
@@ -787,8 +804,11 @@ and line 568–587, Theorem 2.7, state a spectral sequence of `ℚ_ℓ`-vector s
 supported in `0 ≤ m ≤ d`, with differential of bidegree `(r, 1 − r)`, converging to a complex
 whose `i`th cohomology is a compactly supported cohomology group only for `i` above an explicit
 bound. In this roadmap's terms it is strong convergence in the set `I` of those `i`, with finite
-filtrations, to the abutment whose `i`th object is that cohomology group. The vanishing of `d_r`
-for odd `r` is a degeneration statement on odd pages.
+filtrations, to the abutment whose `i`th object is that cohomology group. Every differential of
+an odd page vanishes, so the homology of an odd page identifies it with the next page; this does
+not assert degeneration (1.3) at an odd page, since later even-page differentials may be nonzero.
+For instance, `E_1 = E_2` with `ℤ` at `(0, 1)` and `(2, 0)`, `d_1 = 0` and `d_2` the identity has
+every odd differential zero, yet `E_2 ≠ E_3 = 0`, so it does not degenerate at page `1`.
 
 ### Dependencies
 
@@ -811,13 +831,43 @@ page `2` at `(p, q)` with `H^n(q ≤ q + 1)` by Mathlib's first-page isomorphism
 - the presentation of 1.2 is Mathlib's `spectralSequencePageXIso`, with the four indices
   `q − r + 2 ≤ q ≤ q + 1 ≤ q + r − 1`.
 
-The same formulas hold for `coreE₂CohomologicalNat` and `coreE₂CohomologicalFin`, and for
-`coreE₂HomologicalNat` with `q` replaced by `−q` (helle-rognes2024 line 291–303, Definition 4.5
-and Remark 4.6, and line 334–335, Remark 4.10, for Cartan–Eilenberg systems). *Needs:* 1.2;
-Mathlib `CategoryTheory.Abelian.SpectralObject.E`, `cycles`, `opcycles`,
-`spectralSequencePageXIso`, `spectralSequenceFirstPageXIso`, `coreE₂Cohomological`.
+The restricted recipes are stated on their own carriers. Each spectral sequence exists only under
+Mathlib's class `HasSpectralSequence` for its recipe, and the towers are those of that sequence:
 
-- `Z_2 = ⊤` and `B_2 = ⊥`, because `H(i ≤ i) = 0`.
+- *Natural positions.* For `X : SpectralObject C EInt` with
+  `X.HasSpectralSequence coreE₂CohomologicalNat` (for instance when `X.IsFirstQuadrant`), at
+  `(p, q) ∈ ℕ × ℕ` with `n = p + q`, the formulas above hold. Where the differential of page `r`
+  leaving `(p, q)` would leave `ℕ × ℕ`, the class makes `H^{n+1}(q − r + 1 ≤ q − r + 2)` vanish,
+  and where the entering one would come from outside, it makes `H^{n−1}(q + r − 1 ≤ q + r)`
+  vanish; so the zero differential of the restricted page agrees with the formulas on page
+  `r + 1`. The class is a real hypothesis (last Check).
+- *Homological natural positions.* For `X : SpectralObject C EInt` with
+  `X.HasSpectralSequence coreE₂HomologicalNat` (for instance when `X.IsThirdQuadrant`), at
+  `(p, q) ∈ ℕ × ℕ` the cohomological degree is `n = −p − q` and the formulas hold with `q`
+  replaced by `−q`: `Z_r(p, q)` is the kernel of
+  `δ : H^n(−q ≤ −q + 1) → H^{n+1}(−q − r + 2 ≤ −q)` and `B_r(p, q)` the image of
+  `δ : H^{n−1}(−q + 1 ≤ −q + r − 1) → H^n(−q ≤ −q + 1)`.
+- *Finitely many rows.* For `l : ℕ` and `X : SpectralObject C (Fin (l + 1))`, for which Mathlib
+  supplies `HasSpectralSequence` for `coreE₂CohomologicalFin l`, at `(p, q) : ℤ × Fin l` with
+  `n = p + q` (`q` read as its value), the indices are clamped: `i₀ = max(0, q − r + 2)`,
+  `i₁ = q`, `i₂ = q + 1` and `i₃ = min(l, q + r − 1)`. Then `Z_r(p, q)` is the kernel of
+  `δ : H^n(q ≤ q + 1) → H^{n+1}(i₀ ≤ q)`, equivalently the image of
+  `H^n(i₀ ≤ q + 1) → H^n(q ≤ q + 1)`, and `B_r(p, q)` is the image of
+  `δ : H^{n−1}(q + 1 ≤ i₃) → H^n(q ≤ q + 1)`, equivalently the kernel of
+  `H^n(q ≤ q + 1) → H^n(q ≤ i₃)`. Mathlib's first-page isomorphism needs the class
+  `SpectralSequenceDataCore.HasFirstPageComputation`, which the pin supplies for the three
+  recipes on `EInt` only. Register it for `coreE₂CohomologicalFin l`: at `r = 2`,
+  `i₀ = max(0, q) = q = i₁` and `i₃ = min(l, q + 1) = q + 1 = i₂`, because `q < l`.
+
+(helle-rognes2024 line 291–303, Definition 4.5 and Remark 4.6, and line 334–335, Remark 4.10, for
+Cartan–Eilenberg systems.) *Needs:* 1.2; Mathlib `CategoryTheory.Abelian.SpectralObject.E`,
+`cycles`, `opcycles`, `spectralSequencePageXIso`, `spectralSequenceFirstPageXIso`,
+`coreE₂Cohomological`; for the restricted recipes `coreE₂CohomologicalNat`,
+`coreE₂HomologicalNat`, `coreE₂CohomologicalFin`, `HasSpectralSequence`,
+`SpectralSequenceDataCore.HasFirstPageComputation`, `IsFirstQuadrant`, `IsThirdQuadrant`.
+
+- `Z_2 = ⊤` and `B_2 = ⊥` for each of the four recipes, because at `r = 2` the indices are
+  `q ≤ q ≤ q + 1 ≤ q + 1` (with `−q` in the homological recipe) and `H(i ≤ i) = 0`.
 - Naturality in morphisms of spectral objects, through Tau Ceti `spectralSequenceMap` and `EMap`.
 
 **Checks.**
@@ -828,6 +878,19 @@ Mathlib `CategoryTheory.Abelian.SpectralObject.E`, `cycles`, `opcycles`,
 - *Not the permanent cycles.* Replacing `H^{n+1}(q − r + 2 ≤ q)` by `H^{n+1}(⊥ ≤ q)` gives a
   subobject contained in every `Z_r`, and in general smaller than `Z_∞`; 4.3 says when they
   agree.
+- *Clamped indices.* For `l = 2` and `r = 3` the finite recipe gives the indices `(0, 0, 1, 2)` at
+  `q = 0` and `(0, 1, 2, 2)` at `q = 1`, all in `Fin 3`; the integer formulas would give
+  `(−1, 0, 1, 2)` and `(0, 1, 2, 3)`, which leave `Fin 3`. At `q = 1`, `i₂ = i₃`, so
+  `B_3 = ⊥`: nothing enters the top row. For `l = 0` there are no positions.
+- *The class is needed on natural positions.* Let `K = (ℤ →(id) ℤ)` in degrees `0, 1`, with the
+  increasing filtration `G_t = 0` for `t ≤ 0`, `G_1 = K^1` (the degree-`1` term) and `G_t = K`
+  for `t ≥ 2`, and its spectral object (Tau Ceti `CochainComplex.spectralObject`). On the integer
+  page `2`, `E_2^{1,0} = H^1(0 ≤ 1) = ℤ`, `E_2^{−1,1} = H^0(1 ≤ 2) = ℤ`, and `d_2` between them is
+  the connecting morphism of `0 → K^1 → K → K^0 → 0`, an isomorphism. On `ℕ × ℕ` the source
+  `(−1, 1)` is missing, so the page-`2` homology at `(1, 0)` would be `ℤ`, while the recipe's
+  page-`3` object there is `E^1(−1 ≤ 0 ≤ 1 ≤ 2) = 0`. Accordingly
+  `HasSpectralSequence coreE₂CohomologicalNat` fails (`H^0(1 ≤ 2) ≠ 0`), and so does
+  `IsFirstQuadrant` (`H^0(1 ≤ 2)` with `0 < 1`).
 
 ### 4.2 The abutment as a decreasingly filtered object
 
@@ -1078,8 +1141,13 @@ is the case `I = ℤ`). *Needs:* 4.4, 5.1, 5.2; Tau Ceti `CochainComplex.isZero_
 
 - The stupid filtration of `ℤ →(×2) ℤ` is finite in every degree, and strong convergence in `I = ℤ`
   is the Check of 3.2.
-- A complex with `K^m = 0` except in degrees `0, 1`, and a filtration finite on `K^0` and `K^1`
-  but not on the zero terms: the theorem applies, since finiteness of the zero object is trivial.
+- *Degreewise, not uniformly, finite.* Let `K^m = ℤ` for `m ≥ 0` and `0` otherwise, with `d = 0`,
+  and `F^p K^m = ℤ` exactly when `p ≤ m`. Each `K^m` is finitely filtered (the steps are `ℤ` up to
+  `p = m` and `0` from `p = m + 1`), but no single `p` has `F^p K = 0`, so Tau Ceti's finite-filtration
+  theorem does not apply. Here `gr^p K = ℤ` in degree `p`, `E_1^{m,0} = H^m(gr^m K) = ℤ` for
+  `m ≥ 0`, every differential vanishes, and the hypotheses hold in degree `n` with `p₁ = n` and
+  `p₀ = n + 2`; for `n ≥ 0` the theorem gives `gr^n H^n = ℤ = E_∞^{n,0}`. A zero term `K^m = 0` admits only
+  the zero filtration, which is finite, so finiteness on zero terms is never a restriction.
 - *The hypothesis in degree `n + 1` is needed.* The filtered complex of the last Check of 1.4 has
   `H^1(F^s K) = H^1(ℓ^{s−1}ℤ in degree 1) = ℓ^{s−1} ℤ ≠ 0` for all `s ≥ 1`. The hypothesis fails
   in degree `n + 1 = 1` for `n = 0`, and `(0, 0)` does not stabilise.
@@ -1382,39 +1450,52 @@ used. *Needs:* 7.1; Tau Ceti `TauCeti.IsReplete.epi_π_app` for the epimorphic-l
 Let `C` be abelian with countable products and coproducts, exact sequential colimits, and
 replete (7.2); countable products are then exact (`TauCeti.IsReplete.countableAB4Star`) and
 every tower with epimorphic transitions has `lim¹ = 0` (7.2). For a cohomological exact couple
-(6.1) and a total degree `n`, put `A^s = D^{s, n−s}`, with `i : A^{s+1} → A^s`. Define
-(helle-rognes2024 line 145–156, Definitions 3.6 and 3.7, citing boardman1999 Definition 5.10;
-line 71–80, Definition 2.3 and Remark 2.4; line 169–178, Definition 3.11, citing boardman1999
-§§3 and 8, uncertified):
+(6.1) and a total degree `n`, put `A_n^s = D^{s, n−s}`, with `i : A_n^{s+1} → A_n^s`, and
+`Im^r A_n^s` as in 7.3. Define (helle-rognes2024 line 145–156, Definitions 3.6 and 3.7, citing
+boardman1999 Definition 5.10; line 71–80, Definition 2.3 and Remark 2.4; line 169–178,
+Definition 3.11, citing boardman1999 §§3 and 8, uncertified):
 
-- `A^{−∞} = colim_{s→−∞} A^s`, filtered by `F^s = im(A^s → A^{−∞})`;
-- `A^{+∞} = lim_{s→+∞} A^s` and `RA^{+∞} = lim¹_{s→+∞} A^s`, with `A^{+∞}` filtered by
-  `F^s = ker(A^{+∞} → A^s)`;
-- *conditional convergence to the colimit*: `A^{+∞} = 0` and `RA^{+∞} = 0` (in each total degree);
-  *conditional convergence to the limit*: `A^{−∞} = 0`;
+- `A_n^{−∞} = colim_{s→−∞} A_n^s`, filtered by `F^s = im(A_n^s → A_n^{−∞})`;
+- `A_n^{+∞} = lim_{s→+∞} A_n^s` and `RA_n^{+∞} = lim¹_{s→+∞} A_n^s`, with `A_n^{+∞}` filtered by
+  `F^s = ker(A_n^{+∞} → A_n^s)`;
+- *conditional convergence to the colimit*: `A_n^{+∞} = 0` and `RA_n^{+∞} = 0` for every `n`;
+  *conditional convergence to the limit*: `A_n^{−∞} = 0` for every `n`;
 - `RE_∞(s, t) = lim¹_r Z_r(s, t)`;
 - the *whole-plane obstruction*
-  `W^n = colim_{s→−∞} lim¹_r (ker(A^s → A^{−∞}) ∩ Im^r A^s)`.
+  `W^n = colim_{s→−∞} lim¹_r (ker(A_n^s → A_n^{−∞}) ∩ Im^r A_n^s)`.
+
+*Degrees.* `j : D^{s,t} → E^{s,t}` preserves the total degree and `k : E^{s,t} → D^{s+1,t}` raises
+it by one. The limit-page objects of total degree `n` are therefore compared, through `j`, with
+the colimit of the tower in the same total degree `n`, but, through `k`, with the limit of the
+tower in total degree `n + 1` (helle-rognes2024 line 237–245, proof of Theorem 3.10, where the
+graded pieces of the limit are identified through `γ`, which is `k` here; by line 113–114,
+Definition 3.1, `γ` may have nonzero internal degree).
 
 Prove (helle-rognes2024 line 163–168, Theorems 3.9 and 3.10, citing boardman1999 8.10 and 8.13,
 uncertified, in the indexing `s ↦ −s`; and line 185–247 for Lemmas 3.13–3.15 and the proofs):
 
 - if the couple converges conditionally to the colimit and `RE_∞ = 0`, the spectral sequence
-  converges weakly to `A^{−∞}`, the filtration of `A^{−∞}` is exhaustive and has
-  `lim¹_s F^s = 0` (complete in the sense of helle-rognes2024 Definition 2.5; complete in the
-  sense of 3.1 if and only if `W^n = 0`), and the meet `F^{+∞} = lim_s F^s` is isomorphic to
-  `W^n`;
-- if the couple converges conditionally to the limit and `RE_∞ = 0`, the spectral sequence
-  converges strongly to `A^{+∞}` and `RA^{+∞} ≅ W^n`;
+  converges weakly in each total degree `n` to `A_n^{−∞}`, the filtration of `A_n^{−∞}` is
+  exhaustive and has `lim¹_s F^s = 0` (complete in the sense of helle-rognes2024 Definition 2.5;
+  complete in the sense of 3.1 if and only if `W^n = 0`), and the meet `F^{+∞} = lim_s F^s` is
+  isomorphic to `W^n`;
+- if the couple converges conditionally to the limit and `RE_∞ = 0` at the positions of total
+  degree `n`, the spectral sequence converges strongly in total degree `n` to
+  `H^n := A_{n+1}^{+∞}`, filtered by `F^s H^n = ker(A_{n+1}^{+∞} → A_{n+1}^s)`: `k` induces
+  `E_∞^{s,n−s} ≅ F^s H^n / F^{s+1} H^n`. Moreover `RA_{n+1}^{+∞} ≅ W^{n+1}`. As an abutment in the
+  sense of 3.2, with the assignment `(s, t) ↦ (s, s + t)` and `e = 0`, this is the family
+  `n ↦ A_{n+1}^{+∞}`;
 - *Half-plane criteria.* If `E_1^{s,·} = 0` in total degrees `n − 1` and `n` for all `s < s₀`,
-  then `W^n = 0`, because `i : A^{s+1} → A^s` is an isomorphism for `s < s₀`, so
-  `A^s → A^{−∞}` is an isomorphism for `s ≤ s₀`. With conditional convergence to the colimit
-  and `RE_∞ = 0`, the convergence to `A^{−∞}` is strong in degree `n`. If `E_1^{s,·} = 0` in
-  total degrees `n − 1`, `n` and `n + 1` for all `s > s₁`, then the towers `Im^r A^s` in
-  degrees `n` and `n + 1`, and with them the cycle towers `Z_r` in degree `n`, are eventually
-  constant, so `RE_∞ = 0` and `W^n = 0` in degree `n`. With conditional convergence to the
-  limit, the convergence to `A^{+∞}` is strong in degree `n` without further hypothesis
-  (helle-rognes2024 line 13–25, summarising boardman1999 Theorems 7.1 and 8.2, uncertified).
+  then `W^n = 0`, because `i : A_n^{s+1} → A_n^s` is an isomorphism for `s < s₀`, so
+  `A_n^s → A_n^{−∞}` is an isomorphism for `s ≤ s₀`. With conditional convergence to the
+  colimit and `RE_∞ = 0`, the convergence to `A_n^{−∞}` is strong in degree `n`. If
+  `E_1^{s,·} = 0` in total degrees `n` and `n + 1` for all `s > s₁`, then
+  `i : A_{n+1}^{s+1} → A_{n+1}^s` is an isomorphism for `s > s₁`, so for every `s` the tower
+  `r ↦ Im^r A_{n+1}^s` is eventually constant; by 6.2 so are the cycle towers `Z_r` at the
+  positions of total degree `n`, whence `RE_∞ = 0` there and `RA_{n+1}^{+∞} = W^{n+1} = 0`. With
+  conditional convergence to the limit, the second theorem then gives strong convergence in total
+  degree `n` to `A_{n+1}^{+∞}` with no hypothesis on `RE_∞` (helle-rognes2024 line 13–25,
+  summarising boardman1999 Theorems 7.1 and 8.2, uncertified).
 - A regular position has `RE_∞ = 0` (helle-rognes2024 line 78–80, Remark 2.4).
 
 *Needs:* 1.4, 3.2, 6.1, 6.2, 7.1–7.3; Tau Ceti `TauCeti.IsReplete`,
@@ -1428,29 +1509,50 @@ uncertified, in the indexing `s ↦ −s`; and line 185–247 for Lemmas 3.13–
 
 **Checks.**
 
-- The zero exact couple has `A^{±∞} = RA^{+∞} = RE_∞ = W = 0` and converges to `0`.
-- The couple with `D = ℤ`, `i = id` and `E = 0` has zero pages and `RE_∞ = W = 0`, but
-  `A^{+∞} = A^{−∞} = ℤ`. It satisfies neither conditional-convergence hypothesis, so zero pages do
-  not force a zero target.
+- The zero exact couple has `A_n^{±∞} = RA_n^{+∞} = RE_∞ = W^n = 0` and converges to `0`.
+- The couple with `D = ℤ` in every bidegree, `i = id` and `E = 0` has zero pages and
+  `RE_∞ = W^n = 0`, but `A_n^{+∞} = A_n^{−∞} = ℤ`. It satisfies neither conditional-convergence
+  hypothesis, so zero pages do not force a zero target.
+- *Limit step couple: the abutment sits one degree up.* Let `D^{s,1−s} = ℤ` for `s ≥ 1` and `D = 0` in every
+  other bidegree, with `i` the identity between nonzero terms; let `E^{0,0} = ℤ` and `E = 0`
+  elsewhere, `j = 0`, and `k : E^{0,0} → D^{1,0}` the identity. The couple is exact (at `D^{1,0}`,
+  `ker(i : D^{1,0} → D^{0,1} = 0) = ℤ = im k`; at `E^{0,0}`, `ker k = 0 = im j`; elsewhere `i` is
+  an isomorphism between nonzero terms or a map between zero objects). Every `A_m^{−∞}` is `0`,
+  so the couple converges conditionally to the limit; every differential is zero and every cycle
+  tower constant, so `E_∞^{0,0} = ℤ` is the only nonzero limit-page object and `RE_∞ = 0`. Here
+  `A_0^{+∞} = 0` and `A_1^{+∞} = ℤ`. With `H^0 = A_1^{+∞}`, `F^s H^0 = ker(ℤ → A_1^s)` is `ℤ` for
+  `s ≤ 0` and `0` for `s ≥ 1`, so `gr^0 H^0 = ℤ = E_∞^{0,0}`, as the second theorem says; a model
+  with `H^n = A_n^{+∞}` would give `gr^0 H^0 = 0 ≠ ℤ`. The half-plane criterion applies with
+  `n = 0`, `s₁ = 0`, and `RA_1^{+∞} = W^1 = 0`.
+- *Colimit step couple: no shift.* Let `D^{s,−s} = ℤ` for `s ≤ 0` and `D = 0` in every other
+  bidegree, with `i` the identity between nonzero terms; let `E^{0,0} = ℤ` and `E = 0` elsewhere,
+  `j : D^{0,0} → E^{0,0}` the identity, and `k = 0`. The couple is exact (at `D^{0,0}`,
+  `ker j = 0 = im i` since `D^{1,−1} = 0`; at `E^{0,0}`, `ker k = ℤ = im j`). Every `A_m^{+∞}` and
+  `RA_m^{+∞}` is `0`, so it converges conditionally to the colimit, all differentials vanish, and
+  `A_0^{−∞} = ℤ` with `F^s = ℤ` for `s ≤ 0` and `0` for `s ≥ 1`: `gr^0 A_0^{−∞} = ℤ = E_∞^{0,0}`
+  in the same total degree. Every `A_0^s → A_0^{−∞}` is injective, so `W^0 = 0` and the
+  convergence is strong.
 - If every first-page object has finite length, the cycle towers are Mittag–Leffler and
   `RE_∞ = 0` (7.2). The conditional-convergence and `W` hypotheses remain.
 - *A nonzero whole-plane obstruction* (helle-rognes2024 line 943–967, Example 8.1, in the
-  indexing `s ↦ −s`). In `ModuleCat k` over a field `k`, let `D^{s,t} = A^s = ∏_{i ≥ |s|} k` when
-  `s + t = 0` and `0` otherwise, with `i : A^{s+1} → A^s` the inclusion for `s ≥ 0` and the
-  projection for `s < 0`. Exactness forces `E_1^{s,−s} = coker(i) = k` for `s ≥ 0`,
+  indexing `s ↦ −s`). In `ModuleCat k` over a field `k`, let `D^{s,t} = A_0^s = ∏_{i ≥ |s|} k`
+  when `s + t = 0` and `0` otherwise, with `i : A_0^{s+1} → A_0^s` the inclusion for `s ≥ 0` and
+  the projection for `s < 0`. Exactness forces `E_1^{s,−s} = coker(i) = k` for `s ≥ 0`,
   `E_1^{s,−1−s} = ker(i) = k` for `s < 0`, and `E_1 = 0` elsewhere; `d_{2m−1}` maps
   `E^{−m, m−1}` isomorphically onto `E^{m−1, 1−m}` for `m ≥ 1` (6.2: `Z_r(−m, m−1)` is everything
   for `r ≤ 2m − 1` and `0` from `2m` on), so `E_∞ = 0` and every cycle tower is eventually
-  constant, `RE_∞ = 0`. In total degree `0`, `A^{+∞} = ⋂_s ∏_{i ≥ s} k = 0` and `RA^{+∞} = 0`
-  (`A^0 → lim_s A^0 / A^s = ∏ k` is the identity), so the couple converges conditionally to the
-  colimit. `A^{−∞} = ∏ k / ⨁ k`, and every `A^s → A^{−∞}` is onto, so `F^s = A^{−∞}` for all `s`:
+  constant, `RE_∞ = 0`. In total degree `0`, `A_0^{+∞} = ⋂_s ∏_{i ≥ s} k = 0` and
+  `RA_0^{+∞} = 0` (`A_0^0 → lim_s A_0^0 / A_0^s = ∏ k` is the identity), so the couple converges
+  conditionally to the colimit. `A_0^{−∞} = ∏ k / ⨁ k`, and every `A_0^s → A_0^{−∞}` is onto, so
+  `F^s = A_0^{−∞}` for all `s`:
   `gr^s = 0 = E_∞`, the filtration is exhaustive with `lim¹_s F^s = 0`, and its meet is
-  `∏ k / ⨁ k`. Directly, for `s = −m` and `r ≥ 2m`, `ker(A^{−m} → A^{−∞}) ∩ Im^r A^{−m}` is
-  `⨁_{i ≥ r−m} k`, whose `lim¹_r` is `∏_{i ≥ m} k / ⨁_{i ≥ m} k`, so `W^0 ≅ ∏ k / ⨁ k ≠ 0`, as
-  the first theorem says. The spectral sequence converges weakly to `A^{−∞}` but does not converge
-  (the filtration is not separated), so it is not strongly convergent. A model with `W := 0`
-  contradicts `F^{+∞} ≅ W^0`. Neither half-plane criterion applies: `E_1` is nonzero in total
-  degree `−1` for every `s < 0` and in total degree `0` for every `s ≥ 0`.
+  `∏ k / ⨁ k`. Directly, for `s = −m` and `r ≥ 2m`, `ker(A_0^{−m} → A_0^{−∞}) ∩ Im^r A_0^{−m}`
+  is `⨁_{i ≥ r−m} k`, whose `lim¹_r` is `∏_{i ≥ m} k / ⨁_{i ≥ m} k`, so `W^0 ≅ ∏ k / ⨁ k ≠ 0`,
+  as the first theorem says. The spectral sequence converges weakly to `A_0^{−∞}` but does not
+  converge (the filtration is not separated), so it is not strongly convergent. A model with
+  `W := 0` contradicts `F^{+∞} ≅ W^0`. Neither half-plane criterion applies in total degree `0`:
+  `E_1` is nonzero in total degree `−1` for every `s < 0` and in total degree `0` for every
+  `s ≥ 0`.
 
 ### 7.5 Complete convergence for filtered complexes
 
@@ -1466,7 +1568,8 @@ moreover, for each `n`, `E_1^{p,n−p} = 0` for `p` below some bound in total de
 `lim_s F^s K^m = lim¹_s F^s K^m = 0` (7.1, completeness through lim¹). `1 − s` is then an
 isomorphism on `∏_s F^s K`, so `lim_s H^n(F^s K) = lim¹_s H^n(F^s K) = 0`, which is
 conditional convergence to the colimit for the couple of 6.3. Exhaustiveness and exact
-sequential colimits give `A^{−∞} = H^n(K)`, and 7.4 applies. *Needs:* 5.1, 5.2, 6.3, 7.1, 7.2, 7.4.
+sequential colimits give `A_n^{−∞} = H^n(K)`, and 7.4's first theorem applies, in the same
+total degree `n`. *Needs:* 5.1, 5.2, 6.3, 7.1, 7.2, 7.4.
 
 - For `ModuleCat.{u} R` with `R : Type u` this contains DGFloer Layer 1 item 3's complete
   convergence theorem for module complexes.
@@ -1508,8 +1611,8 @@ Grothendieck axioms and `EnoughProjectives`.
   §§10, 19–24 and 31 (tags 011N, 011O, 011Q–011T, 0121, 012B–012D, 012L–012W, 0BDU–0BDW, 0BK5,
   02N0, 02N1).
 - helle-rognes2024: G. O. Helle, J. Rognes, *Boardman's whole-plane obstruction group for
-  Cartan–Eilenberg systems*, Lemmas 2.2, 2.6, 3.4, 3.13–3.15, Definitions 2.3, 2.5, 2.7, 3.3, 3.6,
-  3.7, 3.11, 4.5, Remarks 2.4, 3.5, 4.6, 4.10, the sequence (3.1), Theorems 3.9, 3.10, Example
+  Cartan–Eilenberg systems*, Lemmas 2.2, 2.6, 3.4, 3.13–3.15, Definitions 2.3, 2.5, 2.7, 3.1, 3.3,
+  3.6, 3.7, 3.11, 4.5, Remarks 2.4, 3.5, 4.6, 4.10, the sequence (3.1), Theorems 3.9, 3.10, Example
   8.1.
 - bhatt-scholze2015: B. Bhatt, P. Scholze, *The pro-étale topology for schemes*, Astérisque 369
   (2015); arXiv 1309.1198v2, Definition 3.1.1 and Proposition 3.1.10.

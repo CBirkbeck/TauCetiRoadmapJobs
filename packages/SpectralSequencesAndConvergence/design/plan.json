@@ -16,7 +16,7 @@
      "id": "1.1",
      "kind": "construction",
      "name": "CategoryTheory.Subobject.SubquotientPresentation",
-     "statement": "A subquotient presentation of X in A is a pair of subobjects B ≤ Z of A with an isomorphism cokernel(Subobject.ofLE B Z) ≅ X; for subobjects I ≤ K of X, the preimages B ≤ B′ ≤ Z′ ≤ Z give a presentation of cokernel(I ≤ K), and preimage is an order isomorphism Subobject X ≃o [B, Z] preserving and reflecting existing greatest lower bounds and least upper bounds.",
+     "statement": "A subquotient presentation of X in A is a pair of subobjects B ≤ Z of A with an isomorphism cokernel(Subobject.ofLE B Z) ≅ X; for subobjects I ≤ K of X, the preimages B ≤ B′ ≤ Z′ ≤ Z give a presentation of cokernel(I ≤ K), and preimage is an order isomorphism Subobject X ≃o [B, Z] preserving and reflecting existing greatest lower bounds and least upper bounds; for A = X the presentation (⊥, ⊤, e) with e the canonical identification is the identity presentation, and its transport is the identity.",
      "hypotheses": [
       "C abelian"
      ],
@@ -49,7 +49,7 @@
       {
        "name": "refl",
        "role": "identity",
-       "statement": "The presentation (⊥, ⊤, canonical iso) of X in X; transport along it is the identity."
+       "statement": "For A = X, the presentation (⊥, ⊤, e) with e the canonical identification (cokernel of a map out of the zero object ⊥, then the arrow of ⊤) is the identity presentation; transport along it is the identity. The pair (⊥, ⊤) alone does not fix e."
       }
      ],
      "tests": [
@@ -67,6 +67,11 @@
        "name": "presentation_not_unique",
        "kind": "non-example",
        "statement": "Inside A = ℤ/4 both (0, 2ℤ/4ℤ) and (2ℤ/4ℤ, ℤ/4) present ℤ/2, so the pair and e are data."
+      },
+      {
+       "name": "presentation_swap_marking",
+       "kind": "non-example",
+       "statement": "A = X = ℤ², B = 0, Z = A, e the coordinate swap after the canonical identification: preimage sends the axis ℤ × 0 of X to 0 × ℤ, whereas identity transport sends it to ℤ × 0; the canonical e is required."
       }
      ]
     },
@@ -778,11 +783,14 @@
      "id": "4.1",
      "kind": "theorem",
      "name": "CategoryTheory.Abelian.SpectralObject.cyclesTower_eq_ker_δ",
-     "statement": "For X : SpectralObject C EInt, (p,q), n = p+q and r ≥ 2, with page 2 identified with H^n(q ≤ q+1) by spectralSequenceFirstPageXIso: Z_r(p,q) = ker(δ : H^n(q ≤ q+1) → H^{n+1}(q−r+2 ≤ q)) = im(H^n(q−r+2 ≤ q+1) → H^n(q ≤ q+1)) and B_r(p,q) = im(δ : H^{n−1}(q+1 ≤ q+r−1) → H^n(q ≤ q+1)) = ker(H^n(q ≤ q+1) → H^n(q ≤ q+r−1)); the presentation of 1.2 is spectralSequencePageXIso; the same for coreE₂CohomologicalNat, coreE₂CohomologicalFin, and coreE₂HomologicalNat with q ↦ −q.",
+     "statement": "For X : SpectralObject C EInt, (p,q), n = p+q and r ≥ 2, with page 2 identified with H^n(q ≤ q+1) by spectralSequenceFirstPageXIso: Z_r(p,q) = ker(δ : H^n(q ≤ q+1) → H^{n+1}(q−r+2 ≤ q)) = im(H^n(q−r+2 ≤ q+1) → H^n(q ≤ q+1)) and B_r(p,q) = im(δ : H^{n−1}(q+1 ≤ q+r−1) → H^n(q ≤ q+1)) = ker(H^n(q ≤ q+1) → H^n(q ≤ q+r−1)); the presentation of 1.2 is spectralSequencePageXIso. Restricted recipes, each on its own carrier and with HasSpectralSequence: (i) X : SpectralObject C EInt with X.HasSpectralSequence coreE₂CohomologicalNat (e.g. IsFirstQuadrant), (p,q) ∈ ℕ×ℕ, n = p+q: the same formulas; (ii) X with X.HasSpectralSequence coreE₂HomologicalNat (e.g. IsThirdQuadrant), (p,q) ∈ ℕ×ℕ, n = −p−q: the formulas with q replaced by −q; (iii) l : ℕ, X : SpectralObject C (Fin (l+1)) (HasSpectralSequence is an instance), (p,q) : ℤ × Fin l, n = p + q.val, clamped indices i₀ = max(0, q−r+2), i₁ = q, i₂ = q+1, i₃ = min(l, q+r−1): Z_r = ker(δ : H^n(q ≤ q+1) → H^{n+1}(i₀ ≤ q)) = im(H^n(i₀ ≤ q+1) → H^n(q ≤ q+1)), B_r = im(δ : H^{n−1}(q+1 ≤ i₃) → H^n(q ≤ q+1)) = ker(H^n(q ≤ q+1) → H^n(q ≤ i₃)); the instance HasFirstPageComputation for coreE₂CohomologicalFin l is registered (at r = 2, i₀ = q = i₁ and i₃ = q+1 = i₂ since q < l).",
      "hypotheses": [
       "C abelian",
-      "X : SpectralObject C EInt",
-      "r ≥ 2"
+      "r ≥ 2",
+      "X : SpectralObject C EInt for coreE₂Cohomological",
+      "X : SpectralObject C EInt with X.HasSpectralSequence coreE₂CohomologicalNat, for the ℕ × ℕ cohomological clause",
+      "X : SpectralObject C EInt with X.HasSpectralSequence coreE₂HomologicalNat, for the homological clause",
+      "l : ℕ and X : SpectralObject C (Fin (l + 1)), for the finite clause"
      ],
      "locator": {
       "source": "helle-rognes2024",
@@ -793,14 +801,21 @@
       "mathlib:CategoryTheory.Abelian.SpectralObject.E",
       "mathlib:CategoryTheory.Abelian.SpectralObject.spectralSequencePageXIso",
       "mathlib:CategoryTheory.Abelian.SpectralObject.spectralSequenceFirstPageXIso",
-      "mathlib:CategoryTheory.Abelian.SpectralObject.coreE₂Cohomological"
+      "mathlib:CategoryTheory.Abelian.SpectralObject.coreE₂Cohomological",
+      "mathlib:CategoryTheory.Abelian.SpectralObject.coreE₂CohomologicalNat",
+      "mathlib:CategoryTheory.Abelian.SpectralObject.coreE₂HomologicalNat",
+      "mathlib:CategoryTheory.Abelian.SpectralObject.coreE₂CohomologicalFin",
+      "mathlib:CategoryTheory.Abelian.SpectralObject.HasSpectralSequence",
+      "mathlib:CategoryTheory.Abelian.SpectralObject.SpectralSequenceDataCore.HasFirstPageComputation",
+      "mathlib:CategoryTheory.Abelian.SpectralObject.IsFirstQuadrant",
+      "mathlib:CategoryTheory.Abelian.SpectralObject.IsThirdQuadrant"
      ],
      "api": [],
      "tests": [
       {
        "name": "towers_r_two",
        "kind": "degenerate",
-       "statement": "r = 2 gives ⊤ and ⊥ since H(i ≤ i) = 0."
+       "statement": "r = 2 gives ⊤ and ⊥ for all four recipes: the indices are q ≤ q ≤ q+1 ≤ q+1 (−q in the homological one; clamping is inactive in the finite one) and H(i ≤ i) = 0."
       },
       {
        "name": "towers_times_two_complex",
@@ -811,6 +826,16 @@
        "name": "not_permanent_cycles",
        "kind": "non-example",
        "statement": "Using H^{n+1}(⊥ ≤ q) gives a subobject below every Z_r, in general smaller than Z_∞."
+      },
+      {
+       "name": "fin_clamped_indices",
+       "kind": "computation",
+       "statement": "l = 2, r = 3: indices (0,0,1,2) at q = 0 and (0,1,2,2) at q = 1, all in Fin 3; the integer formulas give (−1,0,1,2) and (0,1,2,3), outside Fin 3; at q = 1, i₂ = i₃ so B_3 = ⊥; l = 0 has no positions."
+      },
+      {
+       "name": "nat_needs_hasSpectralSequence",
+       "kind": "non-example",
+       "statement": "K = (ℤ →id ℤ) in degrees 0,1, G_t = 0 (t ≤ 0), G_1 = K¹, G_t = K (t ≥ 2): integer d_2 : E_2^{−1,1} = H^0(1 ≤ 2) = ℤ → E_2^{1,0} = H^1(0 ≤ 1) = ℤ is an isomorphism; on ℕ × ℕ the source is missing, page-2 homology at (1,0) is ℤ but the recipe's page 3 there is E^1(−1 ≤ 0 ≤ 1 ≤ 2) = 0; HasSpectralSequence coreE₂CohomologicalNat fails (H^0(1 ≤ 2) ≠ 0), as does IsFirstQuadrant."
       }
      ]
     },
@@ -1188,9 +1213,9 @@
        "statement": "Stupid filtration of ℤ →(×2) ℤ: strong convergence in ℤ (3.2's test)."
       },
       {
-       "name": "zero_terms_trivial",
-       "kind": "degenerate",
-       "statement": "Finiteness on zero terms is automatic."
+       "name": "degreewise_not_uniformly_finite",
+       "kind": "computation",
+       "statement": "K^m = ℤ for m ≥ 0, 0 otherwise, d = 0, F^pK^m = ℤ iff p ≤ m: each K^m finitely filtered, no p with F^pK = 0 (Tau Ceti's finite-filtration theorem does not apply); gr^pK = ℤ in degree p, E_1^{m,0} = ℤ for m ≥ 0, all differentials 0; hypotheses hold in degree n with p₁ = n, p₀ = n+2, and gr^nH^n = ℤ = E_∞^{n,0} for n ≥ 0. Zero terms admit only the zero filtration, which is finite."
       },
       {
        "name": "degree_n_plus_one_needed",
@@ -1617,7 +1642,7 @@
      "id": "7.4",
      "kind": "theorem",
      "name": "CategoryTheory.ExactCouple.boardman_weakConvergence",
-     "statement": "In a replete abelian category (7.2) with countable products and coproducts and exact sequential colimits (so CountableAB4Star holds by TauCeti.IsReplete.countableAB4Star and epimorphic towers have lim¹ = 0 by 7.2), for a cohomological exact couple with A^s = D^{s,n−s}: A^{−∞} = colim_{s→−∞}, F^s = im(A^s → A^{−∞}); A^{+∞} = lim_{s→+∞}, RA^{+∞} = lim¹, F^s = ker(A^{+∞} → A^s); conditional convergence to the colimit (A^{+∞} = RA^{+∞} = 0) or to the limit (A^{−∞} = 0); RE_∞ = lim¹_r Z_r; W^n = colim_{s→−∞} lim¹_r(ker(A^s → A^{−∞}) ∩ Im^rA^s). Theorems: conditional convergence to the colimit with RE_∞ = 0 ⇒ weak convergence to A^{−∞}, exhaustive filtration with lim¹_s F^s = 0 (complete in the sense of helle-rognes2024 Definition 2.5; complete in the sense of 3.1 iff W^n = 0), meet lim_s F^s ≅ W^n; to the limit with RE_∞ = 0 ⇒ strong convergence to A^{+∞}, RA^{+∞} ≅ W^n; E_1 vanishing for s < s₀ in degrees n−1, n ⇒ W^n = 0; E_1 vanishing for s > s₁ in degrees n−1, n, n+1 ⇒ RE_∞ = 0 = W^n in degree n; regular positions have RE_∞ = 0.",
+     "statement": "In a replete abelian category (7.2) with countable products and coproducts and exact sequential colimits (so CountableAB4Star holds by TauCeti.IsReplete.countableAB4Star and epimorphic towers have lim¹ = 0 by 7.2), for a cohomological exact couple with A_n^s = D^{s,n−s} and i : A_n^{s+1} → A_n^s: A_n^{−∞} = colim_{s→−∞} A_n^s, F^s = im(A_n^s → A_n^{−∞}); A_n^{+∞} = lim_{s→+∞} A_n^s, RA_n^{+∞} = lim¹, F^s = ker(A_n^{+∞} → A_n^s); conditional convergence to the colimit (A_n^{+∞} = RA_n^{+∞} = 0 for all n) or to the limit (A_n^{−∞} = 0 for all n); RE_∞ = lim¹_r Z_r; W^n = colim_{s→−∞} lim¹_r(ker(A_n^s → A_n^{−∞}) ∩ Im^rA_n^s). Since k raises total degree by 1, total degree n of E_∞ is compared with A_n^{−∞} (through j) but with A_{n+1}^{+∞} (through k). Theorems: conditional convergence to the colimit with RE_∞ = 0 ⇒ weak convergence in each total degree n to A_n^{−∞}, exhaustive filtration with lim¹_s F^s = 0 (complete in the sense of helle-rognes2024 Definition 2.5; complete in the sense of 3.1 iff W^n = 0), meet lim_s F^s ≅ W^n; to the limit with RE_∞ = 0 in total degree n ⇒ strong convergence in total degree n to H^n := A_{n+1}^{+∞} with F^sH^n = ker(A_{n+1}^{+∞} → A_{n+1}^s), k inducing E_∞^{s,n−s} ≅ F^sH^n/F^{s+1}H^n, and RA_{n+1}^{+∞} ≅ W^{n+1}; E_1 vanishing for s < s₀ in total degrees n−1, n ⇒ W^n = 0; E_1 vanishing for s > s₁ in total degrees n, n+1 ⇒ RE_∞ = 0 in total degree n and RA_{n+1}^{+∞} = W^{n+1} = 0; regular positions have RE_∞ = 0.",
      "hypotheses": [
       "C abelian",
       "HasCountableProducts C",
@@ -1627,7 +1652,7 @@
      ],
      "locator": {
       "source": "helle-rognes2024",
-      "where": "line 145–178 and 185–247, Definitions 3.6, 3.7, 3.11, Lemmas 3.13–3.15, Theorems 3.9, 3.10 (boardman1999 Definition 5.10, 8.10, 8.13, Theorems 7.1, 8.2, uncertified)"
+      "where": "line 145–178 and 185–247, Definitions 3.6, 3.7, 3.11, Lemmas 3.13–3.15, Theorems 3.9, 3.10; line 237–245 and 113–114 for the degree of γ = k in the limit comparison (boardman1999 Definition 5.10, 8.10, 8.13, Theorems 7.1, 8.2, uncertified)"
      },
      "prerequisites": [
       "target:1.4",
@@ -1646,39 +1671,49 @@
       {
        "name": "conditionallyConvergentToColimit",
        "role": "definition",
-       "statement": "A^{+∞} = 0 and RA^{+∞} = 0 in each total degree."
+       "statement": "A_n^{+∞} = 0 and RA_n^{+∞} = 0 for every total degree n."
       },
       {
        "name": "conditionallyConvergentToLimit",
        "role": "definition",
-       "statement": "A^{−∞} = 0."
+       "statement": "A_n^{−∞} = 0 for every total degree n."
       },
       {
        "name": "wholePlaneObstruction",
        "role": "definition",
-       "statement": "W^n = colim_s lim¹_r (ker(A^s → A^{−∞}) ∩ Im^rA^s)."
+       "statement": "W^n = colim_s lim¹_r (ker(A_n^s → A_n^{−∞}) ∩ Im^rA_n^s), in the total degree n of the tower A_n."
       },
       {
        "name": "boardman_strongConvergence_limit",
        "role": "theorem",
-       "statement": "Conditional convergence to the limit and RE_∞ = 0 ⇒ strong convergence to A^{+∞} and RA^{+∞} ≅ W^n."
+       "statement": "Conditional convergence to the limit and RE_∞ = 0 at the positions of total degree n ⇒ strong convergence in total degree n to H^n := A_{n+1}^{+∞}, F^sH^n = ker(A_{n+1}^{+∞} → A_{n+1}^s), E_∞^{s,n−s} ≅ gr^sH^n induced by k; and RA_{n+1}^{+∞} ≅ W^{n+1}."
       },
       {
        "name": "wholePlaneObstruction_eq_zero_of_halfPlane",
        "role": "theorem",
-       "statement": "Half-plane vanishing criteria for W^n and RE_∞."
+       "statement": "E_1 = 0 for s < s₀ in total degrees n−1, n ⇒ W^n = 0; E_1 = 0 for s > s₁ in total degrees n, n+1 ⇒ RE_∞ = 0 in total degree n and RA_{n+1}^{+∞} = W^{n+1} = 0."
       }
      ],
      "tests": [
       {
        "name": "zero_couple",
        "kind": "degenerate",
-       "statement": "Zero couple: all invariants 0, converges to 0."
+       "statement": "Zero couple: A_n^{±∞} = RA_n^{+∞} = RE_∞ = W^n = 0, converges to 0."
       },
       {
        "name": "identity_couple",
        "kind": "non-example",
-       "statement": "D = ℤ, i = id, E = 0: zero pages, RE_∞ = W = 0, A^{±∞} = ℤ, neither conditional convergence holds."
+       "statement": "D = ℤ in every bidegree, i = id, E = 0: zero pages, RE_∞ = W^n = 0, A_n^{±∞} = ℤ, neither conditional convergence holds."
+      },
+      {
+       "name": "limit_abutment_shift",
+       "kind": "non-example",
+       "statement": "D^{s,1−s} = ℤ for s ≥ 1, else 0, i = id between nonzero terms; E^{0,0} = ℤ, else 0; j = 0, k : E^{0,0} → D^{1,0} = id. Exact; all A_m^{−∞} = 0; all d_r = 0, RE_∞ = 0; E_∞^{0,0} = ℤ, A_0^{+∞} = 0, A_1^{+∞} = ℤ; F^sH^0 = ker(ℤ → A_1^s) = ℤ (s ≤ 0), 0 (s ≥ 1), gr^0H^0 = ℤ = E_∞^{0,0}; the unshifted model H^n = A_n^{+∞} gives 0. RA_1^{+∞} = W^1 = 0."
+      },
+      {
+       "name": "colimit_abutment_unshifted",
+       "kind": "computation",
+       "statement": "D^{s,−s} = ℤ for s ≤ 0, else 0, i = id between nonzero terms; E^{0,0} = ℤ, else 0; j : D^{0,0} → E^{0,0} = id, k = 0. Exact; A_m^{+∞} = RA_m^{+∞} = 0; all d_r = 0; A_0^{−∞} = ℤ, F^s = ℤ (s ≤ 0), 0 (s ≥ 1), gr^0A_0^{−∞} = ℤ = E_∞^{0,0} in the same total degree; W^0 = 0, strong."
       },
       {
        "name": "finite_length_RE",
@@ -1688,7 +1723,7 @@
       {
        "name": "whole_plane_obstruction_nonzero",
        "kind": "non-example",
-       "statement": "helle-rognes2024 Example 8.1 (line 943–967) with s ↦ −s: over a field k, D^{s,−s} = A^s = ∏_{i ≥ |s|} k, i the inclusion for s ≥ 0 and the projection for s < 0; E_1 = k at (s,−s), s ≥ 0, and at (s,−1−s), s < 0; d_{2m−1} : E^{−m,m−1} ≅ E^{m−1,1−m}; E_∞ = 0, RE_∞ = 0; A^{+∞} = RA^{+∞} = 0; A^{−∞} = ∏k/⨁k with F^s = A^{−∞} for all s, lim¹_s F^s = 0, meet ∏k/⨁k ≅ W^0 ≠ 0: weak convergence, not convergence, not strong; a model with W := 0 fails."
+       "statement": "helle-rognes2024 Example 8.1 (line 943–967) with s ↦ −s: over a field k, D^{s,−s} = A_0^s = ∏_{i ≥ |s|} k, i the inclusion for s ≥ 0 and the projection for s < 0; E_1 = k at (s,−s), s ≥ 0, and at (s,−1−s), s < 0; d_{2m−1} : E^{−m,m−1} ≅ E^{m−1,1−m}; E_∞ = 0, RE_∞ = 0; A_0^{+∞} = RA_0^{+∞} = 0; A_0^{−∞} = ∏k/⨁k with F^s = A_0^{−∞} for all s, lim¹_s F^s = 0, meet ∏k/⨁k ≅ W^0 ≠ 0: weak convergence, not convergence, not strong; a model with W := 0 fails."
       }
      ]
     },
@@ -1696,7 +1731,7 @@
      "id": "7.5",
      "kind": "theorem",
      "name": "CochainComplex.weakConvergence_of_complete_exhaustive",
-     "statement": "In C as in 7.4, for a decreasingly filtered complex exhaustive and complete in every degree (K^m ≅ lim_p K^m/F^pK^m) whose spectral sequence (5.1) is regular: weak convergence to H^*(K) with induced filtration exhaustive and lim¹_p F^p H^n = 0, separation defect ⋂_p F^p H^n ≅ W^n, separated (and so complete in the sense of 3.1) iff W^n = 0; if moreover E_1^{p,n−p} = 0 for p below a bound in total degrees n−1, n, strong convergence.",
+     "statement": "In C as in 7.4, for a decreasingly filtered complex exhaustive and complete in every degree (K^m ≅ lim_p K^m/F^pK^m) whose spectral sequence (5.1) is regular: weak convergence to H^*(K) (7.4's colimit theorem, H^n(K) = A_n^{−∞} in the same total degree) with induced filtration exhaustive and lim¹_p F^p H^n = 0, separation defect ⋂_p F^p H^n ≅ W^n, separated (and so complete in the sense of 3.1) iff W^n = 0; if moreover E_1^{p,n−p} = 0 for p below a bound in total degrees n−1, n, strong convergence.",
      "hypotheses": [
       "C as in 7.4",
       "exhaustive and complete in every degree",
