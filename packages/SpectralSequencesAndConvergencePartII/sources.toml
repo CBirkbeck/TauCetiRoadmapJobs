@@ -8,8 +8,8 @@ title = "Sur quelques points d'algèbre homologique, I"
 year = 1957
 doi = "10.2748/tmj/1178244839"
 locator_scheme = "section"
-locator = "Chapitre II, §2.4 (derived functors of a composite functor): the two spectral sequences of a bicomplex, (2.4.1), line 1226–1235; the hyperhomology spectral sequences, (2.4.2), and their construction from Cartan–Eilenberg resolutions, line 1236–1308; Théorème 2.4.1 and Remarques 1–3, line 1309–1360. §2.5, Propositions 2.5.3–2.5.5 and Corollaire, line 1441–1570. Chapitre III, §3.7 (Leray, Théorème 3.7.3), line 2421–2456; §3.8 (Čech, as a case of Théorème 2.4.1), line 2493–2509"
-cited_for = ["Layer 1", "Layer 2", "Layer 3", "Checks"]
+locator = "Chapitre II, §2.4: the two spectral sequences of a bicomplex, (2.4.1), line 1226–1235; the hyperhomology spectral sequences, (2.4.2), line 1236–1252, their construction and the F-acyclic variant, line 1253–1299, the left-derived and contravariant variants, line 1304–1308; Théorème 2.4.1, line 1309–1337; Remarques 1–3, line 1338–1360. §2.5, Proposition 2.5.4, line 1506–1529. Chapitre III, §3.7 (Leray, Théorème 3.7.3), line 2421–2456; §3.8 (Čech), line 2493–2509; the sign convention of the total differential, line 1266–1268"
+cited_for = ["Conventions", "1.2", "2.4", "2.5", "2.6", "3.1", "3.2", "3.3", "Layer 3 Examples"]
 sha256 = "5a8e5720bc2ef8905bf85f7919c65ac4a87a31cfc854bd77e6b5084c0d2debef"
 licence_class = "operator-local"
 status = "certified"
@@ -22,7 +22,7 @@ authors = ["The Stacks Project Authors"]
 title = "The Stacks Project, chapter Homological Algebra"
 year = 2026
 locator_scheme = "tag"
-locator = "012K; §12.18 Definition 12.18.3 (tag 012Z, line 2154–2164); §12.25 (tags 012X, 0130–0133, line 3241–3309); §12.26 (tags 0E1P, 0E1Q, 09IZ, 09J0, 0E1R, line 3347–3444)"
+locator = "012K; §18 Definition 18.3 (tag 012Z, line 2154–2164); §25 (tags 012X, 0130–0133, line 3241–3315); §26 (tags 0E1P, 0E1Q, 09J0, 0E1R, line 3347–3438, including the complex Tot_π at line 3400–3409)"
 url = "https://stacks.math.columbia.edu/tag/012K"
 fetched_from = "https://stacks.math.columbia.edu/download/homology.pdf#nameddest=012K"
 fetched_at = "2026-11-13T12:41:55Z"
@@ -30,7 +30,7 @@ sha256 = "f3d73df1c27a6d88f9e4dd0f01697b3dd8553b88e3ea078539a9b512dc4d9576"
 licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-13"
-cited_for = ["Layer 1"]
+cited_for = ["Conventions", "1.1", "1.2", "1.3", "1.4", "1.5"]
 
 [[source]]
 id = "stacks-05QI"
@@ -38,7 +38,7 @@ authors = ["The Stacks Project Authors"]
 title = "The Stacks Project, chapter Derived Categories"
 year = 2026
 locator_scheme = "tag"
-locator = "05QI; §13.21 (tags 015G–015K, line 3617–3695); §13.22 (tags 015L–015N, line 3696–3730)"
+locator = "05QI; §16 (tags 05TC, 015A, 05TD, 015C, 05TE, 015E, line 2872–3011); §18 (tags 013R, 013P, 013S, 013T, line 3269–3448); §19 (line 3449–3478); §21 (tags 015G–015K, line 3617–3695); §22 (tags 015L–015N, line 3696–3730)"
 url = "https://stacks.math.columbia.edu/tag/05QI"
 fetched_from = "https://stacks.math.columbia.edu/download/derived.pdf#nameddest=05QI"
 fetched_at = "2026-11-13T12:43:01Z"
@@ -46,7 +46,7 @@ sha256 = "3d6c5169149c3a8556cab5bbfc5ce27ca34607fb1d5da49456277f4410ddcae3"
 licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-13"
-cited_for = ["Layer 2", "Layer 3"]
+cited_for = ["2.1", "2.2", "2.3", "2.4", "2.5", "2.6", "3.1", "3.2"]
 
 [[source]]
 id = "stacks-more-algebra"
@@ -54,7 +54,7 @@ authors = ["The Stacks Project Authors"]
 title = "The Stacks Project, chapter More on Algebra"
 year = 2026
 locator_scheme = "tag"
-locator = "05E3; §15.63 (tags 061Y, 061Z, 068F, 0662, line 7118–7166); §15.65 Lemma 15.65.4 and Example 15.65.5 (tags 0H7Z, 0H80, line 7399–7420); §15.69 (tags 0AVG–0AVI, line 8115–8127); §15.97 (tags 0F7S, 0F7T, line 12960–13014)"
+locator = "05E3; §63 (tags 061Y, 061Z, 068F, line 7118–7140); §65 Lemma 65.4 and Example 65.5 (tags 0H7Z, 0H80, line 7399–7422); §69 (tags 0AVG–0AVI, line 8115–8127); §97 (the Bockstein operators, line 12960–13006, and footnote 18, line 13013–13014)"
 url = "https://stacks.math.columbia.edu/tag/0H7Z"
 fetched_from = "https://stacks.math.columbia.edu/download/more-algebra.pdf#nameddest=0H7Z"
 fetched_at = "2026-11-13T12:44:03Z"
@@ -62,7 +62,7 @@ sha256 = "ab69179738e642603ddbde651f2838e1cb5d8711e8bcd7c447cbf02a8bb6a5d2"
 licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-13"
-cited_for = ["Layer 4", "Layer 6"]
+cited_for = ["4.2", "4.3", "4.4", "6.1"]
 
 [[source]]
 id = "may-primer"
@@ -71,7 +71,7 @@ title = "A primer on spectral sequences"
 year = 2009
 version_note = "no year is printed in the text; 2009 is the creation date recorded in the PDF on the author's page"
 locator_scheme = "section"
-locator = "§4 Products: Proposition 4.1, Corollary 4.2, Example 4.3, pairings of filtered complexes (line 238–324)"
+locator = "§2 Example 2.3, the Bockstein spectral sequence (line 136–168); §4 Products: the conditions μ_n, Proposition 4.1, Corollary 4.2, Example 4.3, pairings of filtered complexes (line 238–324)"
 url = "https://www.math.uchicago.edu/~may/MISC/SpecSeqPrimer.pdf"
 fetched_from = "https://www.math.uchicago.edu/~may/MISC/SpecSeqPrimer.pdf"
 fetched_at = "2026-11-13T12:45:05Z"
@@ -79,7 +79,7 @@ sha256 = "b9c2e3e7728cde0c89c498adb8e2fdb5c02cbf34c3820ddd6c94915554d667a2"
 licence_class = "author-page"
 status = "certified"
 accessed = "2026-11-13"
-cited_for = ["Layer 5", "Layer 6"]
+cited_for = ["5.1", "5.2", "6.1", "6.2", "Layer 5 Examples"]
 
 [[source]]
 id = "hatcher-at"
@@ -95,7 +95,7 @@ sha256 = "bebb3032bf9021b956da3bd070eb6c67dc662cf849be9cdf6679f677560e5618"
 licence_class = "author-page"
 status = "certified"
 accessed = "2026-11-13"
-cited_for = ["Layer 6"]
+cited_for = ["6.2"]
 
 [[source]]
 id = "douady1959"
@@ -111,7 +111,7 @@ sha256 = "37e5ce9636dec37fdc928f73300fdeff211a910c4632245296b3d424e312b858"
 licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-13"
-cited_for = ["Layer 5"]
+cited_for = ["Scope and ownership"]
 
 [[source]]
 id = "weibel1994"
@@ -120,11 +120,11 @@ title = "An Introduction to Homological Algebra"
 year = 1994
 doi = "10.1017/CBO9781139644136"
 locator_scheme = "section"
-locator = "§2.7 (balancing Tor and Ext, acyclic assembly lemma); §5.6 (double complexes, Künneth and base-change spectral sequences); §5.7 (hyperhomology, Cartan–Eilenberg resolutions); §5.8 (Grothendieck spectral sequences); numbers to be confirmed by the designer"
+locator = "§1.2 (total complexes); §2.2 (horseshoe lemma); §2.7, Theorem 2.7.2 (balancing Tor) and Lemma 2.7.3 (acyclic assembly); §5.6 (double complexes, Künneth and base-change spectral sequences); §5.7 (hyperhomology, Cartan–Eilenberg resolutions, Lemma 5.7.2); §5.8 (Grothendieck spectral sequences)"
 licence_class = "none"
 status = "uncertified"
 version_note = "paywalled; cited by its locator without the text"
-cited_for = ["Layer 1", "Layer 2", "Layer 4"]
+cited_for = ["1.1", "1.3", "1.4", "1.5", "2.1", "2.3", "2.6", "3.4", "4.1", "4.3", "4.4"]
 
 [[source]]
 id = "mccleary2001"
@@ -133,11 +133,11 @@ title = "A User's Guide to Spectral Sequences, 2nd edition"
 year = 2001
 doi = "10.1017/CBO9780511626289"
 locator_scheme = "chapter"
-locator = "Ch. 2 (multiplicative structures); Ch. 10 (the Bockstein spectral sequence); numbers to be confirmed by the designer"
+locator = "Ch. 2 (multiplicative structures); Ch. 10 (the Bockstein spectral sequence)"
 licence_class = "none"
 status = "uncertified"
 version_note = "paywalled; cited by its locator without the text"
-cited_for = ["Layer 5", "Layer 6"]
+cited_for = ["5.2", "6.1", "6.2"]
 
 [[source]]
 id = "cartan-eilenberg1956"
@@ -145,11 +145,11 @@ authors = ["H. Cartan", "S. Eilenberg"]
 title = "Homological Algebra"
 year = 1956
 locator_scheme = "chapter"
-locator = "Ch. XI (products); Ch. XV (spectral sequences); Ch. XVI (applications, change of rings); Ch. XVII §1 (Cartan–Eilenberg resolutions, hyperhomology); section numbers to be confirmed by the designer"
+locator = "Ch. XV (spectral sequences, products of a double complex); Ch. XVI (applications, change of rings); Ch. XVII §1 (Cartan–Eilenberg resolutions, hyperhomology) and the Künneth spectral sequence of Ch. XVII"
 licence_class = "none"
 status = "uncertified"
 version_note = "paywalled; cited by its locator without the text"
-cited_for = ["Layer 2", "Layer 4", "Layer 5"]
+cited_for = ["2.3", "3.4", "4.3", "4.4", "5.3"]
 
 [[source]]
 id = "massey1954"
@@ -163,4 +163,4 @@ url = "https://www.jstor.org/stable/1969719"
 licence_class = "none"
 status = "uncertified"
 version_note = "JSTOR, paywalled; cited by its locator without the text"
-cited_for = ["Layer 5"]
+cited_for = ["5.1"]

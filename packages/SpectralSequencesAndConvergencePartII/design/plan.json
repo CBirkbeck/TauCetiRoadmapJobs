@@ -1,0 +1,1462 @@
+{
+ "roadmap": "SpectralSequencesAndConvergencePartII",
+ "title": "Spectral sequences and convergence, part II — the standard constructions and their products",
+ "parent": "SpectralSequencesAndConvergence",
+ "summary": "The standard spectral sequences of homological algebra built inside the convergence language of SpectralSequencesAndConvergence: the two spectral sequences of a double complex for both totalisations with half-plane convergence, comparison and acyclic assembly; horseshoe and Cartan–Eilenberg resolutions, right derived functors on D⁺ compared with the classical ones, and the two hypercohomology spectral sequences with their duals; the composition theorem and the composite-functor spectral sequence of a complex; balancing of Tor, universal-coefficient, Künneth and change-of-rings spectral sequences; pairings of exact couples, filtered complexes and double complexes; and the Bockstein spectral sequence with its higher Bocksteins, limit page and convergence.",
+ "baseline": {
+  "mathlib": "1b1ccf4b088b32fa3f23f2de1127433254a81e1e",
+  "tauceti": "2fd255d997f47c0b5d834ee416c7015d55444ce5"
+ },
+ "layers": [
+  {
+   "key": "1",
+   "title": "Double complexes and their two spectral sequences",
+   "targets": [
+    {
+     "id": "1.1",
+     "kind": "definition",
+     "name": "HomologicalComplex₂.totalProd",
+     "statement": "For a double complex K : HomologicalComplex₂ 𝒜 (up ℤ) (up ℤ) in a preadditive category with the products over the antidiagonals, the product total complex Tot^Π(K) has degree-n term ∏_{p+q=n} K^{p,q}, and the component of its differential with target K^{p,q} (p+q = n+1) is d₁ ∘ π_{p−1,q} + (−1)^p d₂ ∘ π_{p,q−1}. The direct-sum total complex Tot^⊕(K) is Mathlib's HomologicalComplex₂.total for the shape up ℤ.",
+     "hypotheses": [
+      "𝒜 preadditive",
+      "the products ∏_{p+q=n} K^{p,q} exist for every n (for instance HasCountableProducts 𝒜)"
+     ],
+     "locator": {
+      "source": "stacks-012K",
+      "where": "line 3400–3409, the complex Tot_π in the proof of Lemma 26.3, tag 09J0"
+     },
+     "prerequisites": [
+      "mathlib:HomologicalComplex₂",
+      "mathlib:HomologicalComplex₂.total",
+      "mathlib:HomologicalComplex₂.totalFlipIso",
+      "mathlib:HasCountableProducts",
+      "mathlib:HasCountableCoproducts"
+     ],
+     "api": [
+      {
+       "name": "HomologicalComplex₂.totalProd_d_comp_d",
+       "role": "differential",
+       "statement": "The differential of Tot^Π(K) squares to zero."
+      },
+      {
+       "name": "HomologicalComplex₂.totalProdFunctor",
+       "role": "functoriality",
+       "statement": "Tot^Π is an additive functor from double complexes to cochain complexes; morphisms into Tot^Π(K) are determined by their composites with the projections π_{p,q}."
+      },
+      {
+       "name": "HomologicalComplex₂.hasTotal_of_countableCoproducts",
+       "role": "existence",
+       "statement": "Tot^⊕(K) exists (HasTotal) when 𝒜 has countable coproducts, and when 𝒜 has finite coproducts and each antidiagonal has finitely many nonzero terms."
+      },
+      {
+       "name": "HomologicalComplex₂.totalToTotalProd",
+       "role": "comparison",
+       "statement": "The canonical chain map κ : Tot^⊕(K) → Tot^Π(K), identity on matching summands, is natural, and an isomorphism when each antidiagonal has finitely many nonzero terms."
+      },
+      {
+       "name": "HomologicalComplex₂.totalProdFlipIso",
+       "role": "symmetry",
+       "statement": "Tot^Π(K.flip) ≅ Tot^Π(K) with the signs (−1)^{pq} of totalFlipIso, compatibly with κ."
+      }
+     ],
+     "tests": [
+      {
+       "name": "unit_square",
+       "kind": "computation",
+       "statement": "Unit square of ℤ's with identity maps: the total differential sends 1 ∈ K^{0,0} to (1,1) and K^{1,0}, K^{0,1} to K^{1,1} by −1, +1; it squares to zero, while d₁ + d₂ unsigned squares to 2."
+      },
+      {
+       "name": "column_sign",
+       "kind": "computation",
+       "statement": "K^{1,0} = ℤ →(×2) K^{1,1} = ℤ only: both totals are ℤ →(−2) ℤ in degrees 1, 2 with H² = ℤ/2; signs (−1)^q or (−1)^{p+1} would give +2."
+      },
+      {
+       "name": "staircase",
+       "kind": "non-example",
+       "statement": "D_p = K^{p,−p} = ℤ, O_p = K^{p+1,−p} = ℤ (p ≥ 0), d₁ : D_p → O_p and d₂ : D_{p+1} → O_p identities: degree-0 differential x ↦ (x_p − (−1)^p x_{p+1}); H⁰(Tot^⊕) = 0, H⁰(Tot^Π) = ℤ spanned by (1,1,−1,−1,…); κ injective, not surjective in degree 0."
+      },
+      {
+       "name": "degenerate",
+       "kind": "degenerate",
+       "statement": "The zero double complex has zero totals; a double complex concentrated in column 0 has both totals equal to that column."
+      }
+     ]
+    },
+    {
+     "id": "1.2",
+     "kind": "definition",
+     "name": "HomologicalComplex₂.columnSpectralSequence",
+     "statement": "For a double complex K and Tot(K) ∈ {Tot^⊕(K), Tot^Π(K)}, the column filtration F_I^p Tot(K) is the subcomplex of the columns of index ≥ p; the first spectral sequence ′E(K) is the base §5.1 spectral sequence of (Tot K, F_I); the second spectral sequence ″E(K) is ′E(K.flip) with abutment transported through the flip isomorphism, whose transported filtration is the row filtration F_II. Then gr^p_I Tot(K) ≅ (K^{p,•})⟦−p⟧, ′E_1^{p,q} ≅ H^q(K^{p,•}) with ′d_1 = H^q(d₁), ′E_2^{p,q} ≅ H_I^p H_II^q(K), ″E_1^{p,q} ≅ H^q(K^{•,p}) with ″d_1 = H^q(d₂), ″E_2^{p,q} ≅ H_II^p H_I^q(K); both are functorial in morphisms of double complexes.",
+     "hypotheses": [
+      "𝒜 abelian",
+      "Tot(K) exists (HasTotal for Tot^⊕, or the products for Tot^Π)"
+     ],
+     "locator": {
+      "source": "stacks-012K",
+      "where": "line 3241–3265, §25 and Lemma 25.1, tags 012X and 0130; grothendieck1957 line 1226–1235, (2.4.1)"
+     },
+     "prerequisites": [
+      "target:1.1",
+      "roadmap:SpectralSequencesAndConvergence §5.1",
+      "roadmap:SpectralSequencesAndConvergence §5.2",
+      "mathlib:HomologicalComplex₂.flip",
+      "mathlib:HomologicalComplex₂.totalFlipIso",
+      "mathlib:HomologicalComplex.stupidTrunc",
+      "tauceti:CochainComplex.filtrationFunctor",
+      "tauceti:CochainComplex.filtrationFunctorMap",
+      "tauceti:CochainComplex.spectralSequenceFirstPageXIsoCokernel",
+      "tauceti:CochainComplex.spectralSequence_first_page_d_eq"
+     ],
+     "api": [
+      {
+       "name": "HomologicalComplex₂.columnFiltration_gradedIso",
+       "role": "graded pieces",
+       "statement": "gr^p_I Tot(K) ≅ (K^{p,•})⟦−p⟧, the sign of the shift matching the column sign (−1)^p."
+      },
+      {
+       "name": "HomologicalComplex₂.columnSpectralSequenceFirstPageIso",
+       "role": "first page",
+       "statement": "′E_1^{p,q} ≅ H^q(K^{p,•}), with ′d_1 = H^q(d₁); hence ′E_2^{p,q} ≅ H_I^p H_II^q(K)."
+      },
+      {
+       "name": "HomologicalComplex₂.rowSpectralSequenceSecondPageIso",
+       "role": "second sequence",
+       "statement": "″E_1^{p,q} ≅ H^q(K^{•,p}) with ″d_1 = H^q(d₂), and ″E_2^{p,q} ≅ H_II^p H_I^q(K)."
+      },
+      {
+       "name": "HomologicalComplex₂.columnSpectralSequenceMap",
+       "role": "naturality",
+       "statement": "A morphism of double complexes induces morphisms of both spectral sequences and filtered maps of abutments, functorially (Tau Ceti filtrationFunctorMap)."
+      },
+      {
+       "name": "HomologicalComplex₂.isIso_columnSpectralSequenceMap_of_quasiIso",
+       "role": "comparison",
+       "statement": "κ : Tot^⊕ → Tot^Π and any morphism that is a quasi-isomorphism on every column induce isomorphisms of first spectral sequences from page 1."
+      },
+      {
+       "name": "HomologicalComplex₂.columnAbutmentFiltration",
+       "role": "abutment",
+       "statement": "The induced filtrations F_I^p Hⁿ(Tot K), F_II^p Hⁿ(Tot K) are those of base §5.2; gr is a subquotient of E_∞ when the limit page exists."
+      }
+     ],
+     "tests": [
+      {
+       "name": "first_differential",
+       "kind": "computation",
+       "statement": "K^{0,0} = ℤ →(d₁ = ×2) K^{1,0} = ℤ: ′d_1 = +2 (the base's witness), ′E_2^{1,0} = ℤ/2, ′E_2^{0,0} = 0."
+      },
+      {
+       "name": "second_differential_sign",
+       "kind": "computation",
+       "statement": "K^{1,0} →(d₂ = ×2) K^{1,1}: ″d_1 = +2 here and −2 in stacks-012K Lemma 25.1(4); totalFlipIso has components +1 at (1,0), −1 at (1,1); both give ″E_2^{1,1} = ℤ/2 = H²(Tot K)."
+      },
+      {
+       "name": "exact_columns",
+       "kind": "degenerate",
+       "statement": "A double complex with exact columns has ′E_1 = 0."
+      },
+      {
+       "name": "first_quadrant",
+       "kind": "compatibility",
+       "statement": "For first-quadrant K, ′E_2 ≅ H_I H_II(K) is DerivedModuleAlgebra §S.1's identification; for first-quadrant homological bicomplexes the first page agrees with Tau Ceti's columnFiltrationSpectralSequenceFirstPageXIso."
+      },
+      {
+       "name": "staircase_kappa",
+       "kind": "non-example",
+       "statement": "For the staircase, ′E_1 of both totals is ℤ at (0,0) only and κ is an isomorphism on it though not a quasi-isomorphism."
+      }
+     ]
+    },
+    {
+     "id": "1.3",
+     "kind": "theorem",
+     "name": "HomologicalComplex₂.columnSpectralSequence_convergesStrongly",
+     "statement": "(a) If every antidiagonal of K has finitely many nonzero terms, both ′E(K) and ″E(K) converge strongly (base §3.2) in every degree to H^*(Tot K) with finite filtrations, every position stabilises, and Hⁿ(Tot K) lies in every weak Serre class containing the ′E_r^{p,n−p} for some r. (b) If 𝒜 has countable coproducts and exact sequential colimits and for every n there is b(n) with K^{p,n−p} = 0 for p > b(n), then ′E(K) converges strongly to H^*(Tot^⊕ K); dually ″E(K) when K^{n−q,q} = 0 for q > b(n). (c) If 𝒜 is in the class of base §7.4, for every n there is a(n) with K^{p,n−p} = 0 for p < a(n), and ′E(K) is regular, then ′E(K) converges strongly to H^*(Tot^Π K); dually for ″E(K). Regularity holds when for every n there is p₁(n) with H^{n+1−p}(K^{p,•}) = 0 for p ≥ p₁(n).",
+     "hypotheses": [
+      "𝒜 abelian",
+      "(b): HasCountableCoproducts 𝒜, HasColimitsOfShape ℕ 𝒜, HasExactColimitsOfShape ℕ 𝒜",
+      "(c): 𝒜 has countable products and coproducts, CountableAB4Star, exact sequential colimits and lim-acyclic epimorphic towers (base §7.4)",
+      "the antidiagonal bounds stated in each case"
+     ],
+     "locator": {
+      "source": "stacks-012K",
+      "where": "line 3284–3291, Lemma 25.3, tag 0132, for (a); weibel1994 §5.6 (uncertified) for (b) and (c)"
+     },
+     "prerequisites": [
+      "target:1.1",
+      "target:1.2",
+      "roadmap:SpectralSequencesAndConvergence §2.2",
+      "roadmap:SpectralSequencesAndConvergence §3.2",
+      "roadmap:SpectralSequencesAndConvergence §3.4",
+      "roadmap:SpectralSequencesAndConvergence §5.3",
+      "roadmap:SpectralSequencesAndConvergence §5.4",
+      "roadmap:SpectralSequencesAndConvergence §7.4",
+      "roadmap:SpectralSequencesAndConvergence §7.5",
+      "mathlib:HasCountableCoproducts",
+      "mathlib:HasExactColimitsOfShape",
+      "mathlib:CountableAB4Star"
+     ],
+     "api": [
+      {
+       "name": "HomologicalComplex₂.columnSpectralSequence_stabilises",
+       "role": "stabilisation",
+       "statement": "In (a) the stabilisation page in total degree n is at most the number of columns meeting the antidiagonals n − 1, n, n + 1, plus one."
+      }
+     ],
+     "tests": [
+      {
+       "name": "staircase_separates",
+       "kind": "non-example",
+       "statement": "Staircase: (b) for ″E gives H^*(Tot^⊕) = 0, (c) for ′E gives H⁰(Tot^Π) = ℤ; ′E on Tot^⊕ would predict ℤ and ″E on Tot^Π would predict 0, both false and both outside the hypotheses."
+      },
+      {
+       "name": "finite_case",
+       "kind": "computation",
+       "statement": "ℤ →(×2) ℤ horizontally: F_I^1 H¹ = H¹ = ℤ/2, F_I^2 H¹ = 0 (base §3.2's Check)."
+      },
+      {
+       "name": "zero",
+       "kind": "degenerate",
+       "statement": "The zero double complex converges to zero in every case."
+      }
+     ]
+    },
+    {
+     "id": "1.4",
+     "kind": "theorem",
+     "name": "HomologicalComplex₂.quasiIso_total_map_of_columns",
+     "statement": "A morphism f : K → L of double complexes that is a quasi-isomorphism on every column induces a quasi-isomorphism Tot(f) when both have finite antidiagonals, or under the hypotheses of 1.3(b) on both with Tot = Tot^⊕, or under the hypotheses of 1.3(c) on both (both ′E regular) with Tot = Tot^Π; dually for rows.",
+     "hypotheses": [
+      "f a quasi-isomorphism on every column (resp. row)",
+      "one of the three convergence regimes of 1.3 for K and L"
+     ],
+     "locator": {
+      "source": "weibel1994",
+      "where": "§5.6 (uncertified); stacks-012K line 3293–3315, Lemma 25.4, tag 0133, for an augmentation"
+     },
+     "prerequisites": [
+      "target:1.2",
+      "target:1.3",
+      "roadmap:SpectralSequencesAndConvergence §3.3",
+      "roadmap:SpectralSequencesAndConvergence §3.5",
+      "tauceti:CategoryTheory.SpectralSequence.Hom.isIso_hom_f_of_le"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "staircase_projection",
+       "kind": "non-example",
+       "statement": "The projection of the staircase onto its column 0 is a quasi-isomorphism on columns; on Tot^Π it is a quasi-isomorphism (H⁰ = ℤ both sides), on Tot^⊕ it is not (0 against ℤ)."
+      },
+      {
+       "name": "first_quadrant_rows",
+       "kind": "compatibility",
+       "statement": "For first-quadrant homological bicomplexes and rows this is Tau Ceti's quasiIso_total_map_of_rows."
+      },
+      {
+       "name": "identity",
+       "kind": "degenerate",
+       "statement": "The identity of K gives the identity of Tot(K)."
+      }
+     ]
+    },
+    {
+     "id": "1.5",
+     "kind": "theorem",
+     "name": "HomologicalComplex₂.acyclic_total_of_exact",
+     "statement": "Tot^⊕(K) is acyclic (𝒜 as in 1.3(b)) if its columns are exact and K^{p,n−p} = 0 for p ≫ 0 in every degree n, or its rows are exact and K^{n−q,q} = 0 for q ≫ 0; Tot^Π(K) is acyclic (𝒜 as in 1.3(c)) if its columns are exact and K^{p,n−p} = 0 for p ≪ 0, or its rows are exact and K^{n−q,q} = 0 for q ≪ 0; Tot(K) is acyclic in any abelian category with finite antidiagonals and exact columns or rows. Augmented forms: for an exact 0 → M → A_0 → A_1 → ⋯ of complexes, M → Tot^⊕(A) is a quasi-isomorphism (𝒜 as in 1.3(b)); for an exact ⋯ → A_1 → A_0 → M → 0, Tot^Π(A) → M is one (𝒜 as in 1.3(c)).",
+     "hypotheses": [
+      "the exactness and antidiagonal vanishing stated",
+      "the class of 𝒜 of 1.3(b) for Tot^⊕ and of 1.3(c) for Tot^Π"
+     ],
+     "locator": {
+      "source": "weibel1994",
+      "where": "Lemma 2.7.3 (uncertified); stacks-012K line 3293–3303 (Lemma 25.4, tag 0133), line 3354–3358 (Lemma 26.1, tag 0E1Q), line 3433–3438 (Lemma 26.4, tag 0E1R), line 3348–3351"
+     },
+     "prerequisites": [
+      "target:1.3",
+      "roadmap:SpectralSequencesAndConvergence §5.4",
+      "roadmap:SpectralSequencesAndConvergence §7.5"
+     ],
+     "api": [
+      {
+       "name": "HomologicalComplex₂.weibelDictionary",
+       "role": "dictionary",
+       "statement": "With C_{p,q} = K^{−p,−q}, Weibel's upper and right half-planes are the lower and left half-planes here; his four cases are among the eight above."
+      }
+     ],
+     "tests": [
+      {
+       "name": "staircase_rows",
+       "kind": "non-example",
+       "statement": "Staircase: rows exact, q ≤ 0: Tot^⊕ acyclic; Tot^Π is not (H⁰ = ℤ), so the row condition for Tot^Π cannot be weakened to the lower half-plane."
+      },
+      {
+       "name": "finite_rows",
+       "kind": "computation",
+       "statement": "ℤ →(id) ℤ horizontally: exact rows, finite antidiagonals, Tot acyclic."
+      },
+      {
+       "name": "resolution",
+       "kind": "degenerate",
+       "statement": "A resolution 0 → A → I^0 → I^1 → ⋯ viewed as complexes in degree 0: the augmented form says A[0] → I is a quasi-isomorphism."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "key": "2",
+   "title": "Cartan–Eilenberg resolutions and hyper-derived functors",
+   "targets": [
+    {
+     "id": "2.1",
+     "kind": "theorem",
+     "name": "InjectiveResolution.horseshoe",
+     "statement": "(a) For a short exact sequence 0 → A → B → C → 0 of bounded-below complexes in 𝒜 with enough injectives and an injective resolution A → I₁, there are injective resolutions B → I₂, C → I₃ and a degreewise split short exact sequence 0 → I₁ → I₂ → I₃ → 0 compatible with the augmentations, vanishing in negative degrees when A, B, C, I₁ do; for objects, given resolutions of A and C, the middle can have terms I₁^n ⊕ I₃^n. (b) Given a morphism (f₁, f₂, f₃) of short exact sequences of objects, a short exact sequence of resolutions 0 → R₁ → R₂ → R₃ → 0 of the source, a degreewise split short exact sequence of injective resolutions 0 → I₁′ → I₂′ → I₃′ → 0 of the target, and chain maps α : R₁ → I₁′ over f₁, β : R₃ → I₃′ over f₃, there is μ : R₂ → I₂′ over f₂ restricting to α and inducing β.",
+     "hypotheses": [
+      "𝒜 abelian with enough injectives"
+     ],
+     "locator": {
+      "source": "stacks-05QI",
+      "where": "line 3402–3448, Lemma 18.9, tag 013T; line 3269–3310 and 3363, Lemmas 18.4, 18.6, 18.7, tags 013R, 013P, 013S"
+     },
+     "prerequisites": [
+      "mathlib:InjectiveResolution",
+      "mathlib:EnoughInjectives"
+     ],
+     "api": [
+      {
+       "name": "ProjectiveResolution.horseshoe",
+       "role": "dual",
+       "statement": "The dual statements for projective resolutions, through 𝒜ᵒᵖ."
+      }
+     ],
+     "tests": [
+      {
+       "name": "split",
+       "kind": "degenerate",
+       "statement": "For 0 → A → A ⊕ C → C → 0 the direct sum of resolutions is a horseshoe and μ = α ⊕ β."
+      },
+      {
+       "name": "twisted_middle",
+       "kind": "computation",
+       "statement": "0 → ℤ →(×2) ℤ → ℤ/2 → 0 with I₁ = (ℚ → ℚ/ℤ), I₃ = (ℚ/ℤ →(×2) ℚ/ℤ): middle terms ℚ ⊕ ℚ/ℤ, ℚ/ℤ ⊕ ℚ/ℤ with cohomology ℤ in degree 0 only; the untwisted sum has H⁰ = ℤ ⊕ ℤ/2."
+      },
+      {
+       "name": "off_diagonal_needed",
+       "kind": "non-example",
+       "statement": "Target horseshoe transported by (u, v) ↦ (u + h(v), v) for nonzero h: the identity is not a chain map between the middle resolutions, while (u, v) ↦ (u + h(v), v) is."
+      }
+     ]
+    },
+    {
+     "id": "2.2",
+     "kind": "definition",
+     "name": "CategoryTheory.Functor.rightDerivedPlusObj",
+     "statement": "For additive F : 𝒜 → ℬ with 𝒜 having enough injectives, RⁿF(X) := Hⁿ(F.rightDerivedFunctorPlus X) for X ∈ DerivedCategory.Plus 𝒜, and RⁿF(A) := RⁿF(A[0]). (i) RⁿF(A) ≅ (F.rightDerived n).obj A naturally in A and F; (ii) for K → T a quasi-isomorphism into a bounded-below complex of injectives, RⁿF(K) ≅ Hⁿ(F(T)); (iii) Hⁱ(X) = 0 for i < a implies RⁱF(X) = 0 for i < a, RⁱF(A) = 0 for i < 0, F(A) → R⁰F(A) is an isomorphism for all A iff F is left exact, and Hⁱ(RF(τ_{≤a}X)) ≅ Hⁱ(RF X) for i ≤ a; (iv) long exact sequences, δ-functor; (v) for F left exact, Leray's acyclicity lemma: a bounded-below complex of F-acyclic objects computes RF.",
+     "hypotheses": [
+      "𝒜, ℬ abelian with HasDerivedCategory",
+      "F additive",
+      "EnoughInjectives 𝒜",
+      "F left exact in (v) and in the R⁰ clause"
+     ],
+     "locator": {
+      "source": "stacks-05QI",
+      "where": "line 2872–3011, Lemmas 16.1, 16.3, 16.4, 16.6, 16.7 and Definition 16.2, tags 05TC, 05TD, 015C, 05TE, 015E, 015A"
+     },
+     "prerequisites": [
+      "mathlib:CategoryTheory.Functor.rightDerivedFunctorPlus",
+      "mathlib:CategoryTheory.Functor.rightDerivedFunctorPlusUnit",
+      "mathlib:DerivedCategory.Plus.homologyFunctor",
+      "mathlib:DerivedCategory.Plus.singleFunctor",
+      "mathlib:CategoryTheory.Functor.rightDerived",
+      "mathlib:CategoryTheory.InjectiveResolution.isoRightDerivedObj",
+      "mathlib:HomologicalComplex.stupidTrunc",
+      "mathlib:CategoryTheory.NatTrans.rightDerivedFunctorPlus"
+     ],
+     "api": [
+      {
+       "name": "CategoryTheory.Functor.rightDerivedPlusObjIsoRightDerived",
+       "role": "comparison",
+       "statement": "RⁿF(A) ≅ (F.rightDerived n).obj A, natural in A and F."
+      },
+      {
+       "name": "CategoryTheory.Functor.rightDerivedPlusObjIsoOfInjective",
+       "role": "computation",
+       "statement": "RⁿF(K) ≅ Hⁿ(F(T)) for a quasi-isomorphism K → T into a bounded-below complex of injectives."
+      },
+      {
+       "name": "CategoryTheory.Functor.isZero_rightDerivedPlusObj_of_isGE",
+       "role": "t-exactness",
+       "statement": "Hⁱ(X) = 0 for i < a implies RⁱF(X) = 0 for i < a."
+      },
+      {
+       "name": "CategoryTheory.Functor.rightDerivedPlusZeroIso",
+       "role": "degree zero",
+       "statement": "F → R⁰F is an isomorphism iff F is left exact."
+      },
+      {
+       "name": "CategoryTheory.Functor.rightDerivedPlus_longExact",
+       "role": "δ-functor",
+       "statement": "Long exact sequences of RⁿF for short exact sequences of bounded-below complexes, natural."
+      },
+      {
+       "name": "CategoryTheory.Functor.isIso_rightDerivedFunctorPlusUnit_of_acyclic",
+       "role": "Leray",
+       "statement": "For F left exact and L a bounded-below complex of F-acyclic objects, the unit F(L) → RF(L) is an isomorphism."
+      }
+     ],
+     "tests": [
+      {
+       "name": "hom_z2_z",
+       "kind": "computation",
+       "statement": "F = Hom_ℤ(ℤ/2, −), A = ℤ, resolution ℚ → ℚ/ℤ: R⁰F(ℤ) = 0, R¹F(ℤ) = ℤ/2 = Ext¹(ℤ/2, ℤ)."
+      },
+      {
+       "name": "exact_functor",
+       "kind": "degenerate",
+       "statement": "An exact F has RⁿF = 0 for n > 0 and R⁰F = F."
+      },
+      {
+       "name": "not_left_exact",
+       "kind": "non-example",
+       "statement": "F = − ⊗ ℤ/2: R⁰F(ℤ) = ker(ℚ ⊗ ℤ/2 → ℚ/ℤ ⊗ ℤ/2) = 0 ≠ ℤ/2 = F(ℤ)."
+      },
+      {
+       "name": "leray_consistency",
+       "kind": "compatibility",
+       "statement": "ℚ → ℚ/ℤ consists of acyclic objects and computes RF(ℤ) by (v), consistently with (ii)."
+      }
+     ]
+    },
+    {
+     "id": "2.3",
+     "kind": "definition",
+     "name": "CochainComplex.CartanEilenbergResolution",
+     "statement": "For K with K^p = 0 for p < a in 𝒜 with enough injectives, a Cartan–Eilenberg resolution is a double complex I with ε : K → I^{•,0} such that I^{p,q} = 0 for p < a or q < 0, each column I^{p,•} with ε^p is an injective resolution of K^p, and the horizontal cycles, boundaries and cohomology of I (complexes in q, with the induced augmentations) are injective resolutions of Z^p(K), B^p(K), H^p(K). Such resolutions exist; their rows split; Tot(I) is an injective resolution of K; chain maps lift to morphisms of resolutions compatible with the augmentations and inducing lifts on columns, cycles, boundaries and cohomology.",
+     "hypotheses": [
+      "𝒜 abelian with enough injectives",
+      "K^p = 0 for p < a"
+     ],
+     "locator": {
+      "source": "stacks-05QI",
+      "where": "line 3617–3695, Definition 21.1 and Lemma 21.2, tags 015H and 015I, Remark 21.4, tag 015K; weibel1994 Lemma 5.7.2 (uncertified) and cartan-eilenberg1956 Ch. XVII §1 (uncertified) for lifting"
+     },
+     "prerequisites": [
+      "target:2.1",
+      "target:1.5",
+      "mathlib:HomologicalComplex₂",
+      "mathlib:InjectiveResolution"
+     ],
+     "api": [
+      {
+       "name": "CochainComplex.CartanEilenbergResolution.exists",
+       "role": "existence",
+       "statement": "Every K bounded below by a has a Cartan–Eilenberg resolution (horseshoes by induction on p)."
+      },
+      {
+       "name": "CochainComplex.CartanEilenbergResolution.rows_split",
+       "role": "split rows",
+       "statement": "Each row is a complex of injectives with injective cycles, boundaries and cohomology; every additive G commutes with horizontal cycles, boundaries and cohomology of I."
+      },
+      {
+       "name": "CochainComplex.CartanEilenbergResolution.quasiIso_total",
+       "role": "total complex",
+       "statement": "Tot(I) vanishes below a, has injective terms, and K → Tot(I) is a quasi-isomorphism."
+      },
+      {
+       "name": "CochainComplex.CartanEilenbergResolution.lift",
+       "role": "lifting",
+       "statement": "A chain map f : K → L lifts to f̃ : I → J with f̃ ∘ ε = ε′ ∘ f, inducing chain maps over f^p, Z^p(f), B^p(f), H^p(f); the source may be any double complex satisfying the conditions with 'resolution' in place of 'injective resolution'."
+      }
+     ],
+     "tests": [
+      {
+       "name": "single_object",
+       "kind": "degenerate",
+       "statement": "K = A[0]: a Cartan–Eilenberg resolution is an injective resolution of A in column 0 (Z^0 = A, B = 0, H^0 = A)."
+      },
+      {
+       "name": "zero",
+       "kind": "degenerate",
+       "statement": "The zero double complex resolves the zero complex."
+      },
+      {
+       "name": "column_resolution_not_CE",
+       "kind": "non-example",
+       "statement": "K = ℤ →(×2) ℤ with columns ℚ → ℚ/ℤ and d₁ = ×2: columns resolve, but H_I^1 = (ℚ/2ℚ, (ℚ/ℤ)/2) = 0 does not resolve H¹(K) = ℤ/2."
+      },
+      {
+       "name": "split_complex",
+       "kind": "computation",
+       "statement": "K = A →(id) A with both columns the same injective resolution and d₁ = id is Cartan–Eilenberg: Z^0 = 0, B^1 = A, H = 0 resolved by 0, the second column, 0."
+      }
+     ]
+    },
+    {
+     "id": "2.4",
+     "kind": "construction",
+     "name": "CategoryTheory.Functor.firstHypercohomologySpectralSequence",
+     "statement": "For left exact F : 𝒜 → ℬ, K bounded below and I a Cartan–Eilenberg resolution of K, ′E(F, K) := ′E(F(I)) has ′E_1^{p,q} ≅ R^qF(K^p), ′d_1 = R^qF(d_K^p), ′E_2^{p,q} ≅ H^p(R^qF(K^•)); it converges strongly in every degree with finite filtrations to R^{p+q}F(K); ′E_1^{p,q} = 0 unless p ≥ a and q ≥ 0; it is independent of I and natural in K and F from page 1; if K is a resolution of A it is ′E_1^{p,q} = R^qF(K^p) ⇒ R^{p+q}F(A).",
+     "hypotheses": [
+      "F left exact",
+      "EnoughInjectives 𝒜",
+      "K^p = 0 for p < a"
+     ],
+     "locator": {
+      "source": "stacks-05QI",
+      "where": "line 3655–3681, Lemma 21.3, tag 015J; grothendieck1957 line 1236–1252, (2.4.2), and line 1348–1354, Remarque 3"
+     },
+     "prerequisites": [
+      "target:1.2",
+      "target:1.3",
+      "target:2.2",
+      "target:2.3",
+      "roadmap:SpectralSequencesAndConvergence §3.3",
+      "mathlib:CategoryTheory.SpectralSequence.Hom",
+      "tauceti:CategoryTheory.SpectralSequence.Hom.isIso_hom_f_of_le"
+     ],
+     "api": [
+      {
+       "name": "CategoryTheory.Functor.firstHypercohomologySpectralSequence_firstPage",
+       "role": "first page",
+       "statement": "′E_1^{p,q} ≅ R^qF(K^p) with ′d_1 = R^qF(d_K^p)."
+      },
+      {
+       "name": "CategoryTheory.Functor.firstHypercohomologySpectralSequence_converges",
+       "role": "convergence",
+       "statement": "Strong convergence with finite filtrations to R^{p+q}F(K) through Hⁿ(Tot F(I)) = Hⁿ(F(Tot I)) ≅ RⁿF(K)."
+      },
+      {
+       "name": "CategoryTheory.Functor.firstHypercohomologySpectralSequenceMap",
+       "role": "naturality",
+       "statement": "A chain map f and any lift induce the same morphism of converging spectral sequences, with page-1 component R^qF(f^p) and abutment RⁿF(f); a lift of the identity between two resolutions is an isomorphism."
+      },
+      {
+       "name": "CategoryTheory.Functor.firstHypercohomologySpectralSequence_natTrans",
+       "role": "functor naturality",
+       "statement": "A natural transformation F ⟶ F′ induces a morphism with page-1 component its R^q at K^p."
+      }
+     ],
+     "tests": [
+      {
+       "name": "hom_z2_on_times2",
+       "kind": "computation",
+       "statement": "F = Hom(ℤ/2, −), K = ℤ →(×2) ℤ: ′E_1^{0,1} = ′E_1^{1,1} = ℤ/2, ′E_1^{p,0} = 0, ′d_1 = 0; abutment ℤ/2 in degrees 1, 2 = Ext^{n−1}(ℤ/2, ℤ/2)."
+      },
+      {
+       "name": "object",
+       "kind": "degenerate",
+       "statement": "K = A[0]: concentrated in column 0 with ′E_1^{0,q} = R^qF(A)."
+      },
+      {
+       "name": "acyclic_terms",
+       "kind": "compatibility",
+       "statement": "All K^p F-acyclic: ′E_1 concentrated in row 0, giving RⁿF(K) ≅ Hⁿ(F K) as in Leray's lemma 2.2(v)."
+      }
+     ]
+    },
+    {
+     "id": "2.5",
+     "kind": "construction",
+     "name": "CategoryTheory.Functor.secondHypercohomologySpectralSequence",
+     "statement": "With F, K, I as in 2.4, ″E(F, K) := ″E(F(I)) has ″E_1^{p,q} ≅ F(H_I^q(I)^p), ″E_2^{p,q} ≅ R^pF(H^q K); it converges strongly with finite filtrations to R^{p+q}F(K); ″E_2^{p,q} = 0 unless p ≥ 0 and H^q(K) ≠ 0; from page 2 it is independent of I, natural in K and F, sends quasi-isomorphisms to isomorphisms and factors through DerivedCategory.Plus.Q; a double complex L satisfying the Cartan–Eilenberg conditions with resolutions by F-acyclic objects gives an isomorphic sequence from page 2; if every K^p is F-acyclic it reads R^pF(H^q K) ⇒ H^{p+q}(F K).",
+     "hypotheses": [
+      "F left exact",
+      "EnoughInjectives 𝒜",
+      "K bounded below"
+     ],
+     "locator": {
+      "source": "stacks-05QI",
+      "where": "line 3655–3689, Lemma 21.3, tag 015J; grothendieck1957 line 1236–1252, (2.4.2), line 1291–1299 and line 1352–1356, Remarque 3"
+     },
+     "prerequisites": [
+      "target:1.2",
+      "target:1.3",
+      "target:2.2",
+      "target:2.3",
+      "roadmap:SpectralSequencesAndConvergence §3.3",
+      "mathlib:CategoryTheory.SpectralSequence.Hom",
+      "mathlib:DerivedCategory.Plus.Q",
+      "tauceti:CategoryTheory.SpectralSequence.Hom.isIso_hom_f_of_le"
+     ],
+     "api": [
+      {
+       "name": "CategoryTheory.Functor.secondHypercohomologySpectralSequence_secondPage",
+       "role": "second page",
+       "statement": "″E_2^{p,q} ≅ R^pF(H^q K), through the split rows of I."
+      },
+      {
+       "name": "CategoryTheory.Functor.secondHypercohomologySpectralSequence_converges",
+       "role": "convergence",
+       "statement": "Strong convergence with finite filtrations to R^{p+q}F(K)."
+      },
+      {
+       "name": "CategoryTheory.Functor.secondHypercohomologySpectralSequenceFunctor",
+       "role": "descent to D⁺",
+       "statement": "Restricted to pages r ≥ 2, ″E(F, −) is a functor on DerivedCategory.Plus 𝒜; quasi-isomorphisms induce isomorphisms."
+      },
+      {
+       "name": "CategoryTheory.Functor.secondHypercohomologySpectralSequence_ofAcyclicResolution",
+       "role": "acyclic resolutions",
+       "statement": "F-acyclic Cartan–Eilenberg-type resolutions compute ″E from page 2, compatibly with the abutment."
+      }
+     ],
+     "tests": [
+      {
+       "name": "hom_z2_on_times2",
+       "kind": "computation",
+       "statement": "F = Hom(ℤ/2, −), K = ℤ →(×2) ℤ: ″E_2^{0,1} = Hom(ℤ/2, ℤ/2) = ℤ/2, ″E_2^{1,1} = Ext¹(ℤ/2, ℤ/2) = ℤ/2; all d_r vanish; abutment as in 2.4's Check."
+      },
+      {
+       "name": "object",
+       "kind": "degenerate",
+       "statement": "K = A[0]: ″E_2^{p,0} = R^pF(A), degenerate at page 2."
+      },
+      {
+       "name": "CE_needed",
+       "kind": "non-example",
+       "statement": "F = identity, column resolution of 2.3's non-example: its second spectral sequence has ℤ/2 at (1,0), while R^pF(H^q K) has it at (0,1); same abutment H¹(K) = ℤ/2, different filtrations."
+      }
+     ]
+    },
+    {
+     "id": "2.6",
+     "kind": "definition",
+     "name": "CategoryTheory.Functor.hyperLeftDerived",
+     "statement": "For right exact F : 𝒜 → ℬ with 𝒜 having enough projectives and K bounded above, L_nF(K) := unop RⁿFᵒᵖ(K°) with K° the bounded-below complex of 𝒜ᵒᵖ of CochainComplex.opEquivalence. L_nF(A) ≅ (F.leftDerived n).obj A; projective Cartan–Eilenberg resolutions are unops of Cartan–Eilenberg resolutions of K°; the hyperhomology spectral sequences E^1_{p,q} = L_qF(K_p) and E^2_{p,q} = L_pF(H_q K) (K_p = K^{−p}, H_q = H^{−q}) converge strongly with finite filtrations to L_{p+q}F(K) in the homological bidegree assignment; a contravariant left exact G : 𝒜ᵒᵖ → ℬ has ′E_1^{p,q} = R^qG(op K^{−p}) and ″E_2^{p,q} = R^pG(op H^{−q}K) converging to R^{p+q}G(K°).",
+     "hypotheses": [
+      "F right exact (resp. G left exact on 𝒜ᵒᵖ)",
+      "EnoughProjectives 𝒜",
+      "K bounded above"
+     ],
+     "locator": {
+      "source": "grothendieck1957",
+      "where": "line 1304–1308; stacks-05QI line 3449–3478, §19 (dual statements); weibel1994 §5.7 (uncertified)"
+     },
+     "prerequisites": [
+      "target:2.2",
+      "target:2.3",
+      "target:2.4",
+      "target:2.5",
+      "roadmap:SpectralSequencesAndConvergence §2.1",
+      "mathlib:CochainComplex.opEquivalence",
+      "mathlib:HomologicalComplex.homologyOp",
+      "mathlib:CategoryTheory.Functor.leftDerived",
+      "mathlib:CategoryTheory.ProjectiveResolution.isoLeftDerivedObj",
+      "mathlib:CategoryTheory.Functor.leftDerivedZeroIsoSelf"
+     ],
+     "api": [
+      {
+       "name": "CategoryTheory.Functor.hyperLeftDerivedIsoLeftDerived",
+       "role": "comparison",
+       "statement": "L_nF(A) ≅ (F.leftDerived n).obj A naturally; L_0F(A) ≅ F(A)."
+      },
+      {
+       "name": "CochainComplex.ProjectiveCartanEilenbergResolution",
+       "role": "projective resolutions",
+       "statement": "Projective Cartan–Eilenberg resolutions of bounded-above K exist, have split rows, total complex a bounded-above projective complex quasi-isomorphic to K, and chain maps lift."
+      },
+      {
+       "name": "CategoryTheory.Functor.hyperhomologySpectralSequences",
+       "role": "spectral sequences",
+       "statement": "E^1_{p,q} = L_qF(K_p) and E^2_{p,q} = L_pF(H_q K) ⇒ L_{p+q}F(K), with independence and naturality."
+      },
+      {
+       "name": "CategoryTheory.Functor.contravariantHypercohomology",
+       "role": "contravariant",
+       "statement": "For left exact G : 𝒜ᵒᵖ → ℬ, the hypercohomology sequences at K° from projective Cartan–Eilenberg resolutions of K."
+      }
+     ],
+     "tests": [
+      {
+       "name": "tor_z2",
+       "kind": "computation",
+       "statement": "F = − ⊗ ℤ/2: L_1F(ℤ/2) = ℤ/2 from 0 → ℤ →(×2) ℤ → ℤ/2."
+      },
+      {
+       "name": "index_witness",
+       "kind": "computation",
+       "statement": "K = ℤ →(×2) ℤ in cohomological degrees −1, 0: E^1_{0,0} = E^1_{1,0} = ℤ/2, d^1 = 0, L_0F(K) = L_1F(K) = ℤ/2 = Tor_n(ℤ/2, ℤ/2); indexing by K^p would put a term in homological degree −1."
+      },
+      {
+       "name": "exact",
+       "kind": "degenerate",
+       "statement": "An exact F has L_nF(A) = 0 for n > 0."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "key": "3",
+   "title": "Composite functors",
+   "targets": [
+    {
+     "id": "3.1",
+     "kind": "theorem",
+     "name": "CategoryTheory.Functor.isIso_rightDerivedFunctorPlusCompTrans_iff",
+     "statement": "For left exact F : 𝒜 → ℬ, G : ℬ → 𝒞 with 𝒜, ℬ having enough injectives, the composition transformation t : R(G ∘ F) ⟶ RF ⋙ RG (universal property of the right derived functor R(G ∘ F)) is an isomorphism iff F(I) is G-acyclic for every injective I, iff every object of 𝒜 embeds into some M with R^qG(F M) = 0 for q > 0; this holds when F has an exact left adjoint.",
+     "hypotheses": [
+      "F, G left exact",
+      "EnoughInjectives 𝒜, EnoughInjectives ℬ",
+      "HasDerivedCategory for 𝒜, ℬ, 𝒞"
+     ],
+     "locator": {
+      "source": "stacks-05QI",
+      "where": "line 3696–3717, Lemma 22.1, tags 015L and 015M; grothendieck1957 line 1338–1342, Remarque 1"
+     },
+     "prerequisites": [
+      "target:2.2",
+      "mathlib:CategoryTheory.Functor.rightDerivedFunctorPlus",
+      "mathlib:CategoryTheory.Functor.rightDerivedFunctorPlusUnit",
+      "mathlib:CategoryTheory.Injective.injective_of_adjoint"
+     ],
+     "api": [
+      {
+       "name": "CategoryTheory.Functor.rightDerivedFunctorPlusCompTrans",
+       "role": "the transformation",
+       "statement": "t is compatible with the units, natural in F and G, and the identity when F or G is the identity."
+      }
+     ],
+     "tests": [
+      {
+       "name": "hom_z2_twice",
+       "kind": "non-example",
+       "statement": "F = G = Hom(ℤ/2, −), at ℚ/ℤ: F(ℚ/ℤ) = ℤ/2 is not G-acyclic; R¹(G ∘ F)(ℚ/ℤ) = 0 while H¹(RG(RF ℚ/ℤ)) = Ext¹(ℤ/2, ℤ/2) = ℤ/2."
+      },
+      {
+       "name": "identity",
+       "kind": "degenerate",
+       "statement": "F = identity: the condition holds and t is the identity."
+      },
+      {
+       "name": "coextension",
+       "kind": "computation",
+       "statement": "coextendScalars along R → S is right adjoint to the exact restriction, preserves injectives, and satisfies the condition for every G."
+      }
+     ]
+    },
+    {
+     "id": "3.2",
+     "kind": "construction",
+     "name": "CategoryTheory.Functor.compositeSpectralSequence",
+     "statement": "Under 3.1's condition, for X ∈ DerivedCategory.Plus 𝒜, E(F, G; X) := ″E(G, F(J)) for a bounded-below injective complex J representing X, with abutment RⁿG(F J) ≅ Rⁿ(G ∘ F)(X) through t⁻¹; E₂^{p,q} ≅ R^pG(H^q(RF X)) (R^pG(R^qF A) for X = A[0]); strong convergence with finite filtrations; E₂^{p,q} = 0 unless p ≥ 0 and q ≥ a when Hⁱ(X) = 0 for i < a; a functor of X from page 2; computed from any bounded-below complex of F-acyclic objects quasi-isomorphic to X; for X = A[0] it is ArithmeticGaloisDuality §D7.1's sequence.",
+     "hypotheses": [
+      "F, G left exact",
+      "EnoughInjectives 𝒜, ℬ",
+      "F sends injectives to G-acyclic objects"
+     ],
+     "locator": {
+      "source": "stacks-05QI",
+      "where": "line 3718–3730, Lemma 22.2, tag 015N; grothendieck1957 line 1309–1347, Théorème 2.4.1 and Remarque 2, line 1506–1529, Proposition 2.5.4"
+     },
+     "prerequisites": [
+      "target:2.2",
+      "target:2.5",
+      "target:3.1",
+      "roadmap:ArithmeticGaloisDuality §D7.1",
+      "mathlib:DerivedCategory.Plus"
+     ],
+     "api": [
+      {
+       "name": "CategoryTheory.Functor.compositeSpectralSequence_secondPage",
+       "role": "second page",
+       "statement": "E₂^{p,q} ≅ R^pG(H^q(RF X))."
+      },
+      {
+       "name": "CategoryTheory.Functor.compositeSpectralSequence_converges",
+       "role": "convergence",
+       "statement": "Strong convergence with finite filtrations to R^{p+q}(G ∘ F)(X)."
+      },
+      {
+       "name": "CategoryTheory.Functor.compositeSpectralSequence_ofAcyclic",
+       "role": "acyclic resolutions",
+       "statement": "Isomorphic from page 2 to ″E(G, F(L)) for any bounded-below F-acyclic L quasi-isomorphic to X."
+      }
+     ],
+     "tests": [
+      {
+       "name": "exact_F_or_G",
+       "kind": "degenerate",
+       "statement": "F exact: R^pG(F A) ≅ R^p(G ∘ F)(A); G exact: G(R^qF A) ≅ R^q(G ∘ F)(A)."
+      },
+      {
+       "name": "acyclicity_needed",
+       "kind": "non-example",
+       "statement": "For F = G = Hom(ℤ/2, −) at ℚ/ℤ the would-be E₂^{1,0} = ℤ/2 would survive, forcing R¹(G ∘ F)(ℚ/ℤ) ≠ 0; in fact it is 0."
+      },
+      {
+       "name": "coextension_z4_z2",
+       "kind": "computation",
+       "statement": "ℤ/4 → ℤ/2, F = Hom_{ℤ/4}(ℤ/2, −), G = Hom_{ℤ/2}(ℤ/2, −), A = ℤ/2: R^qF(ℤ/2) = ℤ/2 for all q ≥ 0, G exact, E₂ concentrated in column 0, abutment Extⁿ_{ℤ/4}(ℤ/2, ℤ/2) = ℤ/2."
+      }
+     ]
+    },
+    {
+     "id": "3.3",
+     "kind": "theorem",
+     "name": "CategoryTheory.Functor.compositeSpectralSequence_fiveTerm",
+     "statement": "For A ∈ 𝒜: 0 → R¹G(F A) → R¹(G ∘ F)(A) → G(R¹F A) → R²G(F A) → R²(G ∘ F)(A) is exact with edge maps of ArithmeticGaloisDuality §D7.1 and d₂; for m ≥ 1 with R^qF(A) = 0 for 0 < q < m, R^jG(F A) ≅ R^j(G ∘ F)(A) for j < m and 0 → R^mG(F A) → R^m(G ∘ F)(A) → G(R^mF A) → R^{m+1}G(F A) → R^{m+1}(G ∘ F)(A) is exact; natural transformations α : F ⟶ F′, β : G ⟶ G′ between pairs satisfying 3.1 induce morphisms of composite spectral sequences with page-2 components R^pG(R^qα), R^pβ(R^qF), natural in A.",
+     "hypotheses": [
+      "the hypotheses of 3.2",
+      "m ≥ 1 for the extended sequence"
+     ],
+     "locator": {
+      "source": "grothendieck1957",
+      "where": "line 1330–1337, Théorème 2.4.1 (spectral functor); base §3.6 for the low-degree sequences"
+     },
+     "prerequisites": [
+      "target:3.2",
+      "roadmap:SpectralSequencesAndConvergence §3.3",
+      "roadmap:SpectralSequencesAndConvergence §3.6",
+      "roadmap:ArithmeticGaloisDuality §D7.1",
+      "mathlib:CategoryTheory.NatTrans.rightDerivedFunctorPlus"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "coextension_five_term",
+       "kind": "computation",
+       "statement": "For the ℤ/4 → ℤ/2 example: 0 → 0 → ℤ/2 → ℤ/2 → 0 → ℤ/2 with the middle map an isomorphism."
+      },
+      {
+       "name": "exact_F",
+       "kind": "degenerate",
+       "statement": "F exact: the hypothesis holds for every m and R^jG(F A) ≅ R^j(G ∘ F)(A) for all j."
+      },
+      {
+       "name": "identities",
+       "kind": "compatibility",
+       "statement": "Identity transformations induce identity morphisms."
+      }
+     ]
+    },
+    {
+     "id": "3.4",
+     "kind": "theorem",
+     "name": "CategoryTheory.Functor.compositeSpectralSequence_rightExact",
+     "statement": "(a) For right exact F : 𝒜 → ℬ, G : ℬ → 𝒞 with enough projectives and F sending projectives to objects B with L_qG(B) = 0 (q > 0): the composition transformation for Fᵒᵖ, Gᵒᵖ is an isomorphism and E²_{p,q} = L_pG(L_qF A) ⇒ L_{p+q}(G ∘ F)(A) converges strongly with finite filtrations, with L₂(G ∘ F)A → L₂G(F A) → G(L₁F A) → L₁(G ∘ F)A → L₁G(F A) → 0 exact and naturality. (b) For right exact F : 𝒜 → ℬ and left exact G : ℬᵒᵖ → 𝒞 with R^qG(op F(P)) = 0 for q > 0 and projective P: E₂^{p,q} = R^pG(op L_qF A) ⇒ R^{p+q}(G ∘ Fᵒᵖ)(op A), with the low-degree sequences.",
+     "hypotheses": [
+      "EnoughProjectives 𝒜, ℬ",
+      "the acyclicity hypotheses stated"
+     ],
+     "locator": {
+      "source": "weibel1994",
+      "where": "§5.8 (uncertified); cartan-eilenberg1956 Ch. XVI (uncertified)"
+     },
+     "prerequisites": [
+      "target:2.6",
+      "target:3.1",
+      "target:3.2",
+      "target:3.3"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "mixed_z_z2",
+       "kind": "computation",
+       "statement": "ℤ → ℤ/2, F = extendScalars, G = Hom_{ℤ/2}(−, ℤ/2), A = ℤ/2: L_qF(ℤ/2) = ℤ/2 (q = 0, 1), E₂^{0,q} = ℤ/2, abutment Extⁿ_ℤ(ℤ/2, ℤ/2) = ℤ/2 for n = 0, 1."
+      },
+      {
+       "name": "exact_projective_preserving",
+       "kind": "degenerate",
+       "statement": "F exact and preserving projectives: L_pG(F A) ≅ L_p(G ∘ F)(A)."
+      },
+      {
+       "name": "hypothesis_needed",
+       "kind": "non-example",
+       "statement": "F = − ⊗ ℤ/2, G = Hom_ℤ(−, ℤ): G ∘ Fᵒᵖ = 0, but R¹G(op L₀F ℤ) = Ext¹(ℤ/2, ℤ) ≠ 0; the hypothesis fails since (ℤ/2)^{(X)} is not G-acyclic."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "key": "4",
+   "title": "Tor and Ext over rings",
+   "targets": [
+    {
+     "id": "4.1",
+     "kind": "theorem",
+     "name": "CategoryTheory.torIsoTor'",
+     "statement": "In a monoidal abelian category 𝒞 (MonoidalPreadditive, HasProjectiveResolutions) in which P ⊗ − and − ⊗ P are exact for every projective P, Tor 𝒞 n ≅ Tor' 𝒞 n as functors 𝒞 ⥤ 𝒞 ⥤ 𝒞, for every n; ModuleCat R for commutative R is an instance.",
+     "hypotheses": [
+      "𝒞 abelian, MonoidalCategory, MonoidalPreadditive, HasProjectiveResolutions",
+      "P ⊗ − and − ⊗ P exact for projective P"
+     ],
+     "locator": {
+      "source": "weibel1994",
+      "where": "Theorem 2.7.2 (uncertified)"
+     },
+     "prerequisites": [
+      "mathlib:CategoryTheory.Tor",
+      "mathlib:CategoryTheory.Tor'",
+      "mathlib:CategoryTheory.Functor.mapBifunctorHomologicalComplex",
+      "mathlib:HomologicalComplex₂.totalFlipIso",
+      "mathlib:CategoryTheory.ProjectiveResolution.isoLeftDerivedObj",
+      "tauceti:HomologicalComplex₂.quasiIso_totalAugmentation_of_rows"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "tor_z4_z6",
+       "kind": "computation",
+       "statement": "Tor_1(ℤ/4, ℤ/6) = ℤ/2 both ways: ker(×6 on ℤ/4) = {0, 2}, ker(×4 on ℤ/6) = {0, 3}."
+      },
+      {
+       "name": "degree_zero",
+       "kind": "degenerate",
+       "statement": "Tor_0 ≅ Tor'_0 ≅ ⊗ (leftDerivedZeroIsoSelf)."
+      },
+      {
+       "name": "projective_first",
+       "kind": "compatibility",
+       "statement": "For projective X, Tor_n(X, Y) = 0 for n > 0 follows from isZero_Tor'_succ_of_projective."
+      },
+      {
+       "name": "ext_balance",
+       "kind": "compatibility",
+       "statement": "Ext¹_ℤ(ℤ/2, ℤ) = ℤ/2 from ℤ →(×2) ℤ and from ℚ → ℚ/ℤ (Mathlib's two extEquivCohomologyClass); the double complex Hom(P, I) is first-quadrant with quasi-isomorphic augmentations by 1.5."
+      }
+     ]
+    },
+    {
+     "id": "4.2",
+     "kind": "theorem",
+     "name": "ModuleCat.universalCoefficientSpectralSequence",
+     "statement": "(a) R commutative, K any complex of R-modules, M an R-module: E₂^{p,q} = Tor^R_{−p}(H^q K, M) ⇒ H^{p+q}(K ⊗^L M), strongly convergent, natural, as ″E of K ⊠ P on Tot^⊕; for K bounded above also E₁^{p,q} = Tor^R_{−q}(K^p, M); if Tor_{≥2} = 0, 0 → Hⁿ(K) ⊗ M → Hⁿ(K ⊗^L M) → Tor_1(H^{n+1}K, M) → 0. (b) R any ring, M an R-module, Hⁱ(K) = 0 for i ≪ 0: E₂^{i,j} = Ext^i(M, H^j K) ⇒ Hom_{D(R)}(M[0], K[i+j]) and E₁^{i,j} = Ext^j(M, K^i). (c) R any ring, Hⁱ(K) = 0 for i ≫ 0: E₂^{p,q} = Ext^p(H^{−q}K, M) ⇒ Hom_{D(R)}(K, M[p+q]), abutting to H^{p+q}(Hom(P, M)) for a bounded-above projective P; if Ext_{≥2} = 0, 0 → Ext¹(H^{1−n}K, M) → Hom_D(K, M[n]) → Hom(H^{−n}K, M) → 0.",
+     "hypotheses": [
+      "(a) R commutative",
+      "(b), (c) R any ring",
+      "the boundedness stated in (b), (c)"
+     ],
+     "locator": {
+      "source": "stacks-more-algebra",
+      "where": "line 7121–7134, Example 63.1, tag 061Z; line 8115–8127, §69, tags 0AVG–0AVI; line 7413–7422, Example 65.5, tag 0H80"
+     },
+     "prerequisites": [
+      "target:1.2",
+      "target:1.3",
+      "target:2.4",
+      "target:2.5",
+      "target:2.6",
+      "roadmap:SpectralSequencesAndConvergence §1.3",
+      "roadmap:SpectralSequencesAndConvergence §3.4",
+      "roadmap:DerivedModuleAlgebra §0.2",
+      "mathlib:CategoryTheory.Tor",
+      "mathlib:CategoryTheory.Abelian.Ext",
+      "mathlib:CategoryTheory.InjectiveResolution.extEquivCohomologyClass",
+      "mathlib:CochainComplex.IsKInjective",
+      "mathlib:CochainComplex.IsKProjective"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "z2_derived_square",
+       "kind": "computation",
+       "statement": "ℤ/2 ⊗^L ℤ/2: E₂^{0,0} = E₂^{−1,0} = ℤ/2, H⁰ = H^{−1} = ℤ/2 (DerivedModuleAlgebra §0.2's Check)."
+      },
+      {
+       "name": "unbounded",
+       "kind": "computation",
+       "statement": "K = ⊕_n ℤ/2[n], M = ℤ/2: Hⁿ(K ⊗^L M) = (ℤ/2)² in every degree."
+      },
+      {
+       "name": "contravariant_witness",
+       "kind": "computation",
+       "statement": "X = ℤ →(×2) ℤ (homological 1, 0), M = ℤ: E₂^{1,0} = Ext¹(ℤ/2, ℤ) = ℤ/2, E₂^{0,0} = 0, H¹(Hom(X, ℤ)) = ℤ/2."
+      },
+      {
+       "name": "kronecker",
+       "kind": "compatibility",
+       "statement": "Over a hereditary ring the contravariant two-column sequence is Tau Ceti's exact_extToHomology_kronecker."
+      },
+      {
+       "name": "injective_M",
+       "kind": "degenerate",
+       "statement": "M injective: concentrated in column 0, Hom_D(K, M[n]) ≅ Hom(H^{−n}K, M)."
+      }
+     ]
+    },
+    {
+     "id": "4.3",
+     "kind": "theorem",
+     "name": "ModuleCat.kunnethSpectralSequence",
+     "statement": "R commutative, K, L complexes of R-modules with Hⁱ = 0 for i ≫ 0: E₂^{p,q} = ⊕_{i+j=q} Tor^R_{−p}(H^i K, H^j L) ⇒ H^{p+q}(K ⊗^L L), finitely many nonzero terms per total degree, strongly convergent with finite filtrations, natural from page 2; constructed as the base §5.1 sequence of Tot(P) ⊗ L filtered by Tot(rows ≥ s of P) ⊗ L, P a projective Cartan–Eilenberg resolution of K. Its edge map E₂^{0,n} → Hⁿ is the cross product; for K bounded-above flat it abuts to H(Tot(K ⊗ L)); if Tor_{≥2} = 0, 0 → ⊕ H^i K ⊗ H^j L → Hⁿ(K ⊗^L L) → ⊕_{i+j=n+1} Tor_1(H^i K, H^j L) → 0.",
+     "hypotheses": [
+      "R commutative",
+      "K, L cohomologically bounded above"
+     ],
+     "locator": {
+      "source": "stacks-more-algebra",
+      "where": "line 7399–7412, Lemma 65.4, tag 0H7Z (bounded complexes); line 7413–7422, Example 65.5, tag 0H80; cartan-eilenberg1956 Ch. XVII and weibel1994 §5.6 (uncertified)"
+     },
+     "prerequisites": [
+      "target:2.6",
+      "target:4.1",
+      "roadmap:SpectralSequencesAndConvergence §5.1",
+      "roadmap:SpectralSequencesAndConvergence §5.3",
+      "roadmap:DerivedModuleAlgebra §0.2",
+      "tauceti:CochainComplex.isKFlat_of_boundedAbove_flat",
+      "tauceti:HomologicalComplex.homologyCross"
+     ],
+     "api": [
+      {
+       "name": "HomologicalComplex.homologyCross_bijective_of_split",
+       "role": "split Künneth",
+       "statement": "For a complex S with split differentials and projective cohomology, ⊕_{i+j=n} H^i(S) ⊗ H^j(L) → Hⁿ(S ⊗ L) is an isomorphism."
+      },
+      {
+       "name": "ModuleCat.kunnethSpectralSequence_edge",
+       "role": "edge map",
+       "statement": "The edge map E₂^{0,n} ↠ E_∞^{0,n} ↪ Hⁿ(K ⊗^L L) is the cross product."
+      }
+     ],
+     "tests": [
+      {
+       "name": "z2_z2",
+       "kind": "computation",
+       "statement": "K = L = ℤ/2[0] over ℤ: E₂^{0,0} = E₂^{−1,0} = ℤ/2, H⁰ = H^{−1} = ℤ/2."
+      },
+      {
+       "name": "dual_numbers",
+       "kind": "non-example",
+       "statement": "R = k[ε]/(ε²), K = L = k[0]: E₂^{p,0} = k for all p ≤ 0, one row, degenerate; H^{−n}(k ⊗^L k) = k for all n ≥ 0 — two columns do not suffice in general."
+      },
+      {
+       "name": "unit",
+       "kind": "degenerate",
+       "statement": "K = R[0]: E₂^{0,q} = H^q(L) only."
+      },
+      {
+       "name": "uct",
+       "kind": "compatibility",
+       "statement": "L = M[0] gives the page and abutment of 4.2(a)."
+      },
+      {
+       "name": "taucet_kunneth",
+       "kind": "compatibility",
+       "statement": "Over a ring of global dimension ≤ 1, for ℕ-indexed complexes of projectives, the two-column sequence is Tau Ceti's homologyKunnethShortComplex_shortExact."
+      }
+     ]
+    },
+    {
+     "id": "4.4",
+     "kind": "theorem",
+     "name": "ModuleCat.changeOfRingsSpectralSequence",
+     "statement": "For f : R → S: (a) R, S commutative, M an R-module, N an S-module: E²_{p,q} = Tor^S_p(Tor^R_q(M, S), N) ⇒ Tor^R_{p+q}(M, N) (homological); (b) any rings, N an S-module, M an R-module: E₂^{p,q} = Ext^p_S(N, Ext^q_R(S, M)) ⇒ Ext^{p+q}_R(N, M); (c) R, S commutative: E₂^{p,q} = Ext^p_S(Tor^R_q(S, M), N) ⇒ Ext^{p+q}_R(M, N); each strongly convergent with finite filtrations and the low-degree sequences of 3.3, 3.4.",
+     "hypotheses": [
+      "(a), (c) R, S commutative",
+      "(b) R, S rings"
+     ],
+     "locator": {
+      "source": "stacks-more-algebra",
+      "where": "line 7135–7140, Example 63.2, tag 068F; weibel1994 §5.6 (uncertified); cartan-eilenberg1956 Ch. XVI (uncertified)"
+     },
+     "prerequisites": [
+      "target:3.1",
+      "target:3.2",
+      "target:3.3",
+      "target:3.4",
+      "target:4.1",
+      "target:4.2",
+      "mathlib:ModuleCat.extendScalars",
+      "mathlib:ModuleCat.coextendScalars",
+      "mathlib:ModuleCat.restrictScalars",
+      "mathlib:ModuleCat.restrictCoextendScalarsAdj",
+      "mathlib:ModuleCat.extendRestrictScalarsAdj"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "z_to_z4",
+       "kind": "computation",
+       "statement": "ℤ → ℤ/4, M = N = ℤ/2: E²_{p,q} = ℤ/2 for p ≥ 0, q ∈ {0,1}; abutment ℤ/2 for n = 0, 1 and 0 for n ≥ 2, so every d² : E²_{p,0} → E²_{p−2,1} (p ≥ 2) is an isomorphism."
+      },
+      {
+       "name": "z4_to_z2",
+       "kind": "computation",
+       "statement": "ℤ/4 → ℤ/2, N = M = ℤ/2: (b) concentrated in column 0, abutting to Extⁿ_{ℤ/4}(ℤ/2, ℤ/2) = ℤ/2."
+      },
+      {
+       "name": "z_to_z2_mixed",
+       "kind": "computation",
+       "statement": "ℤ → ℤ/2, M = N = ℤ/2: (c) is 3.4's first Check, abutting to Extⁿ_ℤ(ℤ/2, ℤ/2)."
+      },
+      {
+       "name": "identity_map",
+       "kind": "degenerate",
+       "statement": "f = identity: each sequence is concentrated in one column or one row."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "key": "5",
+   "title": "Products",
+   "targets": [
+    {
+     "id": "5.1",
+     "kind": "definition",
+     "name": "ExactCouple.Pairing.SatisfiesMassey",
+     "statement": "For cohomological exact couples C₁, C₂, C of modules over a commutative ring R and a pairing φ : E₁ ⊗ E₂ → E (bilinear, additive in bidegrees), φ satisfies μ_n if whenever k₁(x) = i₁ⁿ(a) and k₂(y) = i₂ⁿ(b) there is c with k(xy) = iⁿ(c) and j(c) = j₁(a)y + (−1)^{s+t} x j₂(b); μ means all μ_n. Then μ_0 is the Leibniz rule for jk; under μ_0, μ_n for φ is equivalent to μ_{n−1} for the derived pairing; under μ every induced pairing φ_r on the base §6.1 pages satisfies μ, the Leibniz rule for d_r, and φ_{r+1} is induced on cohomology by φ_r.",
+     "hypotheses": [
+      "R commutative",
+      "C₁, C₂, C cohomological exact couples of R-modules"
+     ],
+     "locator": {
+      "source": "may-primer",
+      "where": "line 249–287, the conditions μ_n, Proposition 4.1 and Corollary 4.2; massey1954 (uncertified)"
+     },
+     "prerequisites": [
+      "roadmap:SpectralSequencesAndConvergence §6.1",
+      "roadmap:StableHomotopyKTheory §7.22",
+      "mathlib:ModuleCat"
+     ],
+     "api": [
+      {
+       "name": "ExactCouple.Pairing.satisfiesMassey_zero_iff",
+       "role": "μ_0",
+       "statement": "μ_0 holds iff jk satisfies the Leibniz rule with sign (−1)^{s+t}."
+      },
+      {
+       "name": "ExactCouple.Pairing.satisfiesMassey_succ_iff",
+       "role": "Proposition 4.1",
+       "statement": "Under μ_0, μ_n for φ iff μ_{n−1} for the derived pairing."
+      },
+      {
+       "name": "ExactCouple.Pairing.pagePairing",
+       "role": "pages",
+       "statement": "Under μ, pairings φ_r on every page with Leibniz rule, φ_{r+1} induced by φ_r; natural in morphisms of couples compatible with the pairings."
+      }
+     ],
+     "tests": [
+      {
+       "name": "zero_pairing",
+       "kind": "degenerate",
+       "statement": "The zero pairing satisfies μ (c = 0)."
+      },
+      {
+       "name": "bockstein_z",
+       "kind": "computation",
+       "statement": "Bockstein couple of ℤ (D = ℤ, i = ×ℓ, E = ℤ/ℓ, k = 0) with the product of ℤ/ℓ: μ_n holds with c = 0 since iⁿ(a) = 0 forces a = 0."
+      },
+      {
+       "name": "leibniz_fails",
+       "kind": "non-example",
+       "statement": "Couple of the stupid filtration of ℤ →(×2) ℤ with the pairing E^{0,0} × E^{0,0} → E^{0,0} multiplication and zero elsewhere: d(1·1) = 2 but d(1)·1 + 1·d(1) = 0, so μ_0 fails."
+      }
+     ]
+    },
+    {
+     "id": "5.2",
+     "kind": "theorem",
+     "name": "CochainComplex.FilteredPairing.spectralSequencePairing",
+     "statement": "For decreasingly filtered cochain complexes A, B, C of modules over a commutative ring R and a chain map φ : A ⊗ B → C with φ(F^pA ⊗ F^{p′}B) ⊆ F^{p+p′}C: pairings E_r^{p,q}(A) ⊗ E_r^{p′,q′}(B) → E_r^{p+p′,q+q′}(C) for r ≥ 1 with d_r(xy) = d_r(x)y + (−1)^{p+q} x d_r(y), page r+1 induced by page r, page 1 induced by φ on H(gr), the limit pairing equal to the one induced on graded pieces by H(A) ⊗ H(B) → H(C) wherever the three sequences converge weakly through the comparison of base §4.3, natural in filtered maps.",
+     "hypotheses": [
+      "R commutative",
+      "φ a filtered chain map"
+     ],
+     "locator": {
+      "source": "may-primer",
+      "where": "line 295–324; mccleary2001 Ch. 2 (uncertified)"
+     },
+     "prerequisites": [
+      "target:5.1",
+      "roadmap:SpectralSequencesAndConvergence §4.3",
+      "roadmap:SpectralSequencesAndConvergence §5.1",
+      "roadmap:SpectralSequencesAndConvergence §5.2",
+      "roadmap:SpectralSequencesAndConvergence §5.3",
+      "roadmap:SpectralSequencesAndConvergence §5.4",
+      "roadmap:SpectralSequencesAndConvergence §6.3",
+      "mathlib:HomologicalComplex.mapBifunctor"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "leibniz_page_one",
+       "kind": "computation",
+       "statement": "Over 𝔽₂, A = 𝔽₂[x, y]/(x²), |x| = 1, |y| = 2, dx = y, filtered by (y)^p: E₁ basis y^p at (p,p), xy^p at (p,p+1), d₁(xy^p) = y^{p+1}, d₁(x·y) = y² = d₁(x)y + x d₁(y); E₂ = 𝔽₂ at (0,0) = H(A)."
+      },
+      {
+       "name": "trivial_filtration",
+       "kind": "degenerate",
+       "statement": "F^0 = A, F^1 = 0: E₁ = H(A) with its product, all differentials zero."
+      },
+      {
+       "name": "zero",
+       "kind": "degenerate",
+       "statement": "Pairings of the zero complex are zero."
+      }
+     ]
+    },
+    {
+     "id": "5.3",
+     "kind": "definition",
+     "name": "HomologicalComplex₂.Pairing",
+     "statement": "A pairing of double complexes K, L → M of modules over a commutative ring is a family of bilinear maps K^{p,q} × L^{p′,q′} → M^{p+p′,q+q′} inducing a chain map Tot^⊕(K) ⊗ Tot^⊕(L) → Tot^⊕(M); equivalently d₁(xy) = d₁(x)y + (−1)^{p+q} x d₁(y) and d₂(xy) = (−1)^{p′} d₂(x)y + (−1)^q x d₂(y). Column and row filtrations are then multiplicative; ′E and ″E carry the pairings of 5.2, with ″E using the flipped pairing x ·_{flip} y = (−1)^{pq′+p′q} xy, and the page-2 pairings are induced on iterated cohomology.",
+     "hypotheses": [
+      "R commutative"
+     ],
+     "locator": {
+      "source": "cartan-eilenberg1956",
+      "where": "Ch. XV (uncertified)"
+     },
+     "prerequisites": [
+      "target:1.1",
+      "target:1.2",
+      "target:5.2",
+      "mathlib:HomologicalComplex₂.totalFlipIso",
+      "mathlib:HomologicalComplex.mapBifunctor"
+     ],
+     "api": [
+      {
+       "name": "HomologicalComplex₂.Pairing.leibniz_iff",
+       "role": "Leibniz rules",
+       "statement": "The total chain-map condition is equivalent to the two bidegree Leibniz rules."
+      },
+      {
+       "name": "HomologicalComplex₂.Pairing.flip",
+       "role": "flip",
+       "statement": "The flipped pairing (−1)^{pq′+p′q} xy is the unique sign making totalFlipIso multiplicative."
+      },
+      {
+       "name": "HomologicalComplex₂.Pairing.tensor",
+       "role": "tensor of DGAs",
+       "statement": "A ⊠ B with (a ⊗ b)(a′ ⊗ b′) = (−1)^{|b||a′|} aa′ ⊗ bb′ is a pairing, with Tot(A ⊠ B) = A ⊗ B as DGAs."
+      },
+      {
+       "name": "HomologicalComplex₂.Pairing.spectralSequencePairings",
+       "role": "spectral sequences",
+       "statement": "′E and ″E carry pairings satisfying 5.2; page-2 pairings on H_I H_II and H_II H_I."
+      }
+     ],
+     "tests": [
+      {
+       "name": "vertical_sign",
+       "kind": "computation",
+       "statement": "In A ⊠ B with x = 1 ⊗ b ∈ K^{0,q}, y = a′ ⊗ 1 ∈ K^{p′,0}, p′ odd: d₂(xy) = (−1)^{qp′} a′ ⊗ db = (−1)^{p′} d₂(x)y; the rule without (−1)^{p′} gives (−1)^{(q+1)p′}, wrong."
+      },
+      {
+       "name": "graded_commutativity",
+       "kind": "computation",
+       "statement": "A = B = ℤ[ε]/(ε²), |ε| = 1: (ε ⊗ 1)(1 ⊗ ε) = ε ⊗ ε, (1 ⊗ ε)(ε ⊗ 1) = −ε ⊗ ε."
+      },
+      {
+       "name": "one_column",
+       "kind": "degenerate",
+       "statement": "A double complex in column 0 with a pairing is a DGA, and ′E₁ = H with its product."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "key": "6",
+   "title": "The Bockstein spectral sequence",
+   "targets": [
+    {
+     "id": "6.1",
+     "kind": "construction",
+     "name": "CochainComplex.bocksteinExactCouple",
+     "statement": "For a commutative ring A, f ∈ A and a cochain complex M of A-modules with f injective on every term, the Bockstein exact couple has D^{s,t} = H^{s+t}(M), E^{s,t} = H^{s+t}(M/fM), i = multiplication by f, j = reduction, k = connecting morphism of 0 → M →(f) M → M/fM → 0, of degrees (−1,1), (0,0), (1,0); the Bockstein spectral sequence is its base §6.1 spectral sequence. It is periodic in (s,t) ↦ (s+1, t−1); E_1ⁿ = Hⁿ(M/fM) with d_1 the connecting morphism of 0 → M/f →(f) M/f² → M/f → 0; it is isomorphic to the base §6.3 couple of M[1/f] filtered by F^s = f^sM.",
+     "hypotheses": [
+      "A commutative",
+      "f injective on every Mⁿ"
+     ],
+     "locator": {
+      "source": "may-primer",
+      "where": "line 136–150, Example 2.3; stacks-more-algebra line 12960–13006 (§97, Bockstein operators) and line 13013–13014 (footnote 18); mccleary2001 Ch. 10 (uncertified)"
+     },
+     "prerequisites": [
+      "roadmap:SpectralSequencesAndConvergence §6.1",
+      "roadmap:SpectralSequencesAndConvergence §6.3",
+      "roadmap:SpectralSequencesAndConvergence §5.1",
+      "roadmap:StableHomotopyKTheory §7.22"
+     ],
+     "api": [
+      {
+       "name": "CochainComplex.bocksteinExactCouple_exact",
+       "role": "exactness",
+       "statement": "Exactness at the three vertices is the long exact cohomology sequence."
+      },
+      {
+       "name": "CochainComplex.bocksteinExactCouple_periodic",
+       "role": "periodicity",
+       "statement": "(s,t) ↦ (s+1, t−1) is an automorphism; pages depend only on n = s + t."
+      },
+      {
+       "name": "CochainComplex.bocksteinSpectralSequence_d₁",
+       "role": "first differential",
+       "statement": "d_1 is the Bockstein connecting morphism of 0 → M/f → M/f² → M/f → 0."
+      },
+      {
+       "name": "CochainComplex.bocksteinExactCoupleIsoFiltered",
+       "role": "filtered complex",
+       "statement": "The couple is isomorphic to the base §6.3 couple of (M[1/f], f^sM), through multiplication by f^{−s}."
+      }
+     ],
+     "tests": [
+      {
+       "name": "d1_sign",
+       "kind": "computation",
+       "statement": "M = ℤ →(×p) ℤ, f = p: k(1) = [1] ∈ ℤ/p, j([1]) = 1, d_1 = +1, an isomorphism."
+      },
+      {
+       "name": "torsion_free_cohomology",
+       "kind": "degenerate",
+       "statement": "M = ℤ[0], f = p: k = 0, every d_r = 0, E_r^0 = ℤ/p for all r."
+      },
+      {
+       "name": "torsion_needed",
+       "kind": "non-example",
+       "statement": "M = ℤ/p[0], f = p: multiplication by p is zero, 0 → M → M → M/pM → 0 is not exact, no couple."
+      },
+      {
+       "name": "d1_vanishes",
+       "kind": "computation",
+       "statement": "M = ℤ →(×p²) ℤ: k(1) = [p] ∈ ℤ/p², j([p]) = 0, d_1 = 0."
+      }
+     ]
+    },
+    {
+     "id": "6.2",
+     "kind": "theorem",
+     "name": "CochainComplex.bocksteinSpectralSequence_limitPage",
+     "statement": "For M, f as in 6.1 and r ≥ 1: Z_{r+1}ⁿ = k^{−1}(f^r H^{n+1}(M)), B_{r+1}ⁿ = j(Hⁿ(M)[f^r]), Z_∞ⁿ = k^{−1}(⋂_r f^r H^{n+1}(M)), B_∞ⁿ = j(Hⁿ(M)[f^∞]); 0 → (f^{r−1}Hⁿ(M)) ⊗ A/f → E_rⁿ → (f^{r−1}H^{n+1}(M))[f] → 0 is exact; d_r[x] = [β_r(x̃)] for a lift x̃ ∈ Hⁿ(M/f^r); if Hⁿ(M)[f^∞] = Hⁿ(M)[f^a] and H^{n+1}(M)[f^∞] = H^{n+1}(M)[f^b] the sequence stabilises in degree n from page max(a,b)+1 with E_∞ⁿ ≅ H̄ⁿ ⊗ A/f; with Hⁿ(M)[1/f] filtered (exhaustively) by f^s H̄ⁿ, gr^s ≅ H̄ⁿ ⊗ A/f, and the canonical comparison gr^s ≅ ker k/B_∞ ⊆ E_∞ is an isomorphism in total degree n iff ⋂_r f^r H^{n+1}(M) ∩ H^{n+1}(M)[f] = 0, in which case it is a weak convergence structure (base §3.2), a convergence structure when moreover ⋂_s f^s H̄ⁿ = 0.",
+     "hypotheses": [
+      "A commutative",
+      "f injective on every Mⁿ",
+      "the torsion bounds for stabilisation",
+      "the stated intersections for convergence"
+     ],
+     "locator": {
+      "source": "may-primer",
+      "where": "line 147–168, Example 2.3 (higher universal-coefficient sequences and the limit page for finite type over ℤ); hatcher-at line 13330–13337, Proposition 3E.3; mccleary2001 Ch. 10 (uncertified)"
+     },
+     "prerequisites": [
+      "target:6.1",
+      "roadmap:SpectralSequencesAndConvergence §1.3",
+      "roadmap:SpectralSequencesAndConvergence §1.4",
+      "roadmap:SpectralSequencesAndConvergence §3.1",
+      "roadmap:SpectralSequencesAndConvergence §3.2",
+      "roadmap:SpectralSequencesAndConvergence §6.2"
+     ],
+     "api": [
+      {
+       "name": "CochainComplex.bocksteinSpectralSequence_multiplicative",
+       "role": "products",
+       "statement": "For a DGA M the pages carry pairings with d_r a derivation (5.2; may-primer line 288–294, Example 4.3)."
+      }
+     ],
+     "tests": [
+      {
+       "name": "z_mod_pr",
+       "kind": "computation",
+       "statement": "M = ℤ →(×p^r) ℤ: E_s⁰ = E_s¹ = ℤ/p for s ≤ r, 0 for s > r; d_1 = ⋯ = d_{r−1} = 0, d_r an isomorphism, E_{r+1} = 0, matching H¹ = ℤ/p^r; stabilisation from page r + 1."
+      },
+      {
+       "name": "unbounded_torsion",
+       "kind": "non-example",
+       "statement": "M = ⊕_{k≥1}(ℤ →(×p^k) ℤ): E_r⁰ = ⊕_{k≥r} ℤ/p ≠ 0 for every r but E_∞⁰ = 0, consistent with H⁰(M)[1/p] = 0."
+      },
+      {
+       "name": "weak_convergence_fails",
+       "kind": "non-example",
+       "statement": "M = ℤ → ℤ[1/p] (inclusion): H¹ = ℤ[1/p]/ℤ divisible with H¹[p] = ℤ/p, criterion fails; E_r⁰ = ℤ/p for all r while H⁰(M)[1/p] = 0."
+      },
+      {
+       "name": "hatcher_bockstein_cohomology",
+       "kind": "compatibility",
+       "statement": "A = ℤ, f = p, M integral singular cochains with finitely generated cohomology: E_2 is Hatcher's BHⁿ(X; ℤ/p) with the rules of Proposition 3E.3; E_∞ⁿ = (Hⁿ/torsion) ⊗ ℤ/p."
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "suppliers": [
+  {
+   "roadmap": "SpectralSequencesAndConvergence",
+   "sections": [
+    "§1.3",
+    "§1.4",
+    "§2.1",
+    "§2.2",
+    "§3.1",
+    "§3.2",
+    "§3.3",
+    "§3.4",
+    "§3.5",
+    "§3.6",
+    "§4.3",
+    "§5.1",
+    "§5.2",
+    "§5.3",
+    "§5.4",
+    "§6.1",
+    "§6.2",
+    "§6.3",
+    "§7.4",
+    "§7.5"
+   ],
+   "what": "Limit pages, bidegree assignments and regularity, filtered objects and convergence structures, morphisms, finite filtrations, the comparison theorem and low-degree consequences, the comparison of limit page and EInfty, the classical spectral sequence of a filtered complex with its convergence theorems, exact couples, their towers and the couple of a filtered complex, and complete convergence."
+  },
+  {
+   "roadmap": "StableHomotopyKTheory",
+   "sections": [
+    "§7.22"
+   ],
+   "what": "Bigraded exact couples in an abelian category and their derived couples (carrier of base §6.1 and of 5.1)."
+  },
+  {
+   "roadmap": "DerivedModuleAlgebra",
+   "sections": [
+    "§0.2",
+    "§S.1"
+   ],
+   "what": "The derived tensor product on D(R) computed by Tot(P ⊗ L) for bounded-above flat P (abutment of 4.2(a) and 4.3); the first-quadrant double complex sequence (compared with Layer 1)."
+  },
+  {
+   "roadmap": "ArithmeticGaloisDuality",
+   "sections": [
+    "§D7.1"
+   ],
+   "what": "The composite-functor spectral sequence of an object with finite filtrations and edge maps (the object case of 3.2; edge maps used in 3.3)."
+  }
+ ],
+ "consumers": [
+  {
+   "roadmap": "CohomologyOfGroups",
+   "what": "Group hyperhomology and hypercohomology (Layer 2), extension spectral sequences (Layer 3), Künneth and universal-coefficient sequences of group (co)homology (Layer 4), multiplicativity through filtered-complex pairings (Layer 5)."
+  },
+  {
+   "roadmap": "ArithmeticStatisticsPartVIII",
+   "what": "Graded Tor spectral sequences of §5.16 as graded instances of 4.1, 2.6, 4.2 and 3.4."
+  },
+  {
+   "roadmap": "InverseGaloisAndArithmeticFundamentalGroupsPartII",
+   "what": "Change-of-rings and hyperhomology sequences of its declared graded-Tor gap."
+  },
+  {
+   "roadmap": "K3BlochGroups",
+   "what": "Group hyperhomology spectral sequences."
+  },
+  {
+   "roadmap": "EtaleDualityAndPerverseSheaves",
+   "what": "Hypercohomology spectral sequences."
+  },
+  {
+   "roadmap": "TorsionCohomologyInfrastructure",
+   "what": "Künneth and universal-coefficient spectral sequences."
+  },
+  {
+   "roadmap": "HilbertModularVarietiesAndShimuraCurvesPartII",
+   "what": "Change of rings for Ext along A → A/x."
+  }
+ ],
+ "gaps": []
+}
