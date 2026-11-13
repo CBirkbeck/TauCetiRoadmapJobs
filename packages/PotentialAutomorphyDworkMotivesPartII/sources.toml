@@ -147,7 +147,7 @@ authors = "Frits Beukers, Gert Heckman"
 title = "Monodromy for the hypergeometric function nF(n-1)"
 year = 1989
 locator_scheme = "theorem"
-locator = "Definition 2.9, Proposition 3.3, Theorem 3.5"
+locator = "Definitions 2.9 and 3.1, Proposition 3.3, Theorem 3.5"
 url = "https://gdz.sub.uni-goettingen.de/download/pdf/PPN356556735_0095/LOG_0022.pdf"
 fetched_from = "https://gdz.sub.uni-goettingen.de/download/pdf/PPN356556735_0095/LOG_0022.pdf"
 fetched_at = "2026-10-26T15:37:12Z"
@@ -294,7 +294,7 @@ locator = "Theorem 2"
 url = "https://doi.org/10.1002/cpa.3160080403"
 licence_class = "none"
 status = "uncertified"
-version_note = "paywalled; cited by its locator, in the restricted form applied in QIAN23 Proposition 3.7"
+version_note = "paywalled; cited by its locator, for the same-rank comparison used in QIAN23 Proposition 3.7, which itself refers to the classification of finite simple groups"
 cited_for = ["Layer 0"]
 
 [[source]]

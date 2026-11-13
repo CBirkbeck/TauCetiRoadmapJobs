@@ -27,11 +27,15 @@ Not statable at the pins, for want of the carriers named:
 * Katz's comparison of Dwork eigensheaves with hypergeometric sheaves (§3.4), the maximally
   unipotent monodromy at infinity and the companion-matrix model of the Dwork monodromy
   (§§4.4–4.6), the geometric residual monodromy groups (§§5.5, 5.6, 5.8, 5.10) and the geometric
-  irreducibility of the level-structure torsors (§5.12): Mathlib has no relative étale or relative
-  Betti cohomology of a smooth projective family as a lisse sheaf or local system, no
-  eigensheaves of a finite group action on it, no constructible `ℓ`-adic sheaves with compactly
-  supported direct images or multiplicative convolution, and no étale fundamental group of a
-  scheme acting on the stalks of lisse sheaves.
+  irreducibility of the level-structure torsors (§5.12): neither library has relative étale or
+  relative Betti cohomology of a smooth projective family of schemes as a lisse sheaf or local
+  system (Mathlib's `AlgebraicGeometry.Scheme.EllAdicCohomology` is the absolute pro-étale
+  cohomology of one scheme, and Tau Ceti's `TauCeti.fiberLocalSystem` is the fibre homology of a
+  Hurewicz fibration of topological spaces, with no analytification of a family of schemes to
+  feed it), no eigensheaves of a finite group action on it, no constructible `ℓ`-adic sheaves with
+  compactly supported direct images or multiplicative convolution, and no lisse sheaves on whose
+  stalks the étale fundamental group could act (Tau Ceti has it for finite étale covers only, as
+  the automorphism group of the geometric fibre functor `TauCeti.FiniteEtaleScheme.fiber`).
 * The comparison character as an algebraic Hecke character (§7.5): Tau Ceti has Hecke
   characters, but neither library has their `ℓ`-adic avatars, and Mathlib's period ring
   `BDeRham` comes without the functor `D_dR` on Galois representations.
