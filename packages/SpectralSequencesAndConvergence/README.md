@@ -1839,9 +1839,10 @@ Grothendieck axioms and `EnoughProjectives`.
   §§10, 19–24 and 31 (tags 02MO, 0754, 011N, 011O, 011Q–011T, 0121, 012B–012D, 012L–012W,
   0BDU–0BDW, 0BK5, 02N0, 02N1).
 - helle-rognes2024: G. O. Helle, J. Rognes, *Boardman's whole-plane obstruction group for
-  Cartan–Eilenberg systems*, Lemmas 2.2, 2.6, 3.4, 3.13–3.15, Definitions 2.3, 2.5, 2.7, 3.1, 3.3,
-  3.6, 3.7, 3.11, 4.5, Remarks 2.4, 3.5, 4.6, 4.10, the sequence (3.1), Theorems 3.9, 3.10, Example
-  8.1.
+  Cartan–Eilenberg systems*, Documenta Math. 24 (2019), 1855–1878; Lemmas 2.2, 2.6, 3.4,
+  3.13–3.15, Definitions 2.3, 2.5, 2.7, 3.1, 3.3, 3.6, 3.7, 3.11, 4.5, Remarks 2.4, 3.5, 4.6, 4.10,
+  the sequence (3.1), Theorems 3.9, 3.10, Example 8.1. Line locators refer to the authors' draft
+  dated 2 February 2018, whose numbering of these items agrees with the published version.
 - bhatt-scholze2015: B. Bhatt, P. Scholze, *The pro-étale topology for schemes*, Astérisque 369
   (2015); arXiv 1309.1198v2, Definition 3.1.1 and Proposition 3.1.10.
 - browning-sawin2020: T. Browning, W. Sawin, *A geometric version of the circle method*, Ann. of
