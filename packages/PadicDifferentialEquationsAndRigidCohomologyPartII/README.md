@@ -65,9 +65,9 @@ Kedlaya's analytic rings `Γ^ℓ`, including the trivially valued case `Γ^ℓ[�
 (§RD.0.9); the Frobenius-equivariant embeddings into Witt-vector rings and the injectivity of
 overconvergent base change over the complete residue field `k((t))` (§§RD.0.35, RD.0.53, RD.5.2), whose
 extension to D'Addezio's generic pair with residue field `k(t)` is a supplier request; Taylor change of
-Frobenius lift and of coordinate (§§RD.0.37, RD.1.44); weak completions, Frobenius lifts and étale
-lifting (§§RD.0.39, RD.0.42, RD.3.38, RD.3.39); Dwork transfer (§§RD.1.13, RD.2.22); `(φ,∇)`-modules
-(§RD.1.43); Frobenius slopes, purity, the calculus of slopes, Dieudonné–Manin, stable lattices, the
+Frobenius lift and of coordinate (§§RD.0.37, RD.1.44); smooth lifts, Frobenius lifts on weak
+completions and étale lifting (§§RD.0.39, RD.0.42, RD.3.38, RD.3.39); Dwork transfer (§§RD.1.13,
+RD.2.22); `(φ,∇)`-modules (§RD.1.43); Frobenius slopes, purity, the calculus of slopes, Dieudonné–Manin, stable lattices, the
 generic Harder–Narasimhan filtration and de Jong's reverse filtration (§§RD.1.32, RD.1.35–RD.1.37,
 RD.1.39–RD.1.41, RD.1.72); overconvergent and convergent F-isocrystals, their restriction functor,
 Dwork–Berthelot overconvergence, the affine dagger-algebra realisation, finite étale pushforward,
@@ -88,8 +88,10 @@ smooth completions of curves) for the curve carriers.
 **Already in the library.** Mathlib's quotient-by-kernel equivalence, finite-group averaging,
 linear traces, `p`-adic norms of powers of `p` and fixed subfields; Tau Ceti's rings of power series
 with bounded coefficients and of power series on the open unit disc, which underlie `K[[t]]₀` and the
-solution carriers of MS.0.2 as rings (their Frobenius lifts, derivations, `(φ,∇)`-modules and slopes
-are not in the library); see the supplier contracts.
+solution carriers of MS.0.2 as rings, and its `π`-adic and Monsky–Washnitzer weak completions of a
+finitely generated algebra, which are the rings `Â_C` and `A†_C` of MS.0.1 (Frobenius lifts on all
+of these rings, `(φ,∇)`-modules over them and their slopes are not in the library); see the supplier
+contracts.
 
 **Not in this roadmap.** D'Addezio's minimal slope theorem for smooth varieties of dimension at least
 two, his parabolicity theorem for monodromy groups, his integral models of the affine line and his
@@ -219,11 +221,21 @@ weight and Lefschetz statements listed as supplier requests.
 - `PowerSeries.OnOpenDisc.subring` (`TauCeti/RingTheory/PowerSeries/OpenDisc/Basic.lean`): the subring
   of series restricted at every radius below `R₀`; with `R = B^τ` and `R₀ = 1` it is the carrier
   `B^τ{u}` of analytic functions on the open unit disc in MS.0.2.
+- `TauCeti.Dagger.piAdicCompletion`, `TauCeti.Dagger.weakCompletion` and
+  `TauCeti.Dagger.weakCompletion.of` (`TauCeti/RingTheory/Dagger/WeakCompletion/Basic.lean`): for a
+  commutative ring `O`, an element `π ∈ O` and an `O`-algebra `S`, the `π`-adic completion `S^∧`
+  (Mathlib's `AdicCompletion` along `πS`); for `S` of finite type over `O` (`[Algebra.FiniteType O S]`), the
+  Monsky–Washnitzer weak completion `S† ⊆ S^∧`, the `O`-subalgebra of the `π`-adic sums
+  `Σ_j π^j P_j(x)` whose polynomials in a finite generating family `x` have degrees bounded by a
+  linear function of `j`, independent of that family, with its structure map `S → S†`. For
+  `O = O_K`, `π` the uniformiser and `S = A_C` these are the rings `Â_C` and `A†_C` of MS.0.1; as
+  `(p) = (π^e)` in `O_K`, the `π`-adic and `p`-adic completions agree.
 
 These are rings only. Mathlib's formal derivative `PowerSeries.derivative` acts on all of `R⟦X⟧`,
-but neither library equips these subrings with a compatible Frobenius lift over `σ` making them
-coefficient rings of `(φ,∇)`-modules, and Tau Ceti at the pin has no Amice or bounded Robba field, no differential or Frobenius
-modules over them, no slopes and no isocrystals; all of these are consumed from the parent below.
+but neither library equips these rings with a compatible Frobenius lift over `σ` making them
+coefficient rings of `(φ,∇)`-modules (a Frobenius lift on `A†_C` is the parent's §RD.0.42), and
+Tau Ceti at the pin has no Amice or bounded Robba field, no differential or Frobenius modules over
+them, no slopes and no isocrystals; all of these are consumed from the parent below.
 
 ### From TauCetiRoadmap.PadicDifferentialEquationsAndRigidCohomology
 
@@ -245,9 +257,9 @@ The sections are consumed with their stated hypotheses:
   the categories of `(φ,∇)`-modules for different lifts are canonically equivalent.
 - §RD.0.38: the series converging only on the closed disc, separating completion from
   overconvergence.
-- §RD.0.39, §RD.0.42, §RD.3.38, §RD.3.39, §RD.5.29: smooth lifts, weak completions, Frobenius lifts
-  on weak completions, étale lifts with unique extension of Frobenius, and projective lifts of a
-  smooth projective curve with its boundary points.
+- §RD.0.39, §RD.0.42, §RD.3.38, §RD.3.39, §RD.5.29: smooth lifts, Frobenius lifts on the weak
+  completions of Tau Ceti above, étale lifts with unique extension of Frobenius, and projective lifts
+  of a smooth projective curve with its boundary points.
 - §RD.1.13, §RD.2.22: Dwork transfer; for a solvable module the solutions at the centre of the disc
   span a space of dimension equal to the rank.
 - §RD.1.43, §RD.1.45: `(φ,∇)`-modules; a Frobenius structure forces generic radius one, so every
@@ -362,9 +374,12 @@ that boundedness is splitting of the slope filtration, and defines PBQ modules.
 ### MS.0.1 Completed generic and local fields of a curve
 
 Let `C` be a smooth connected affine curve over `k` with smooth completion `C̄`, let `Spec A_C` be a
-smooth affine lift of `C` over `O_K` whose weak completion `A†_C` carries a `q`-Frobenius lift `φ`
-over `σ`, and let `x ∈ A_C` reduce to a generically étale coordinate of `C`. Such lifts exist
-(PadicDifferentialEquationsAndRigidCohomology §§RD.0.39, RD.0.42). Put `A†_(C,K) = A†_C ⊗ K` and
+smooth affine lift of `C` over `O_K`, with `π`-adic completion
+`Â_C = TauCeti.Dagger.piAdicCompletion π A_C` and weak completion
+`A†_C = TauCeti.Dagger.weakCompletion π A_C ⊆ Â_C` (`A_C` is of finite type over `O_K`), such that
+`A†_C` carries a `q`-Frobenius lift `φ` over `σ`, and let `x ∈ A_C` reduce to a generically étale
+coordinate of `C`. Such lifts exist (PadicDifferentialEquationsAndRigidCohomology §§RD.0.39,
+RD.0.42). Put `A†_(C,K) = A†_C ⊗ K` and
 `Â_(C,K) = Â_C ⊗ K`.
 
 Define the **completed generic field** `E_η` as the `p`-adic completion of the localisation of `A_C`
@@ -388,7 +403,8 @@ overconvergent functions land in `E†_α`. Independence of the lift, coordinate
 solvability and boundedness follows from the Taylor comparison (Tsuzuki, Proposition 3.6, p. 14).
 
 *Needs:* PadicDifferentialEquationsAndRigidCohomology §§RD.0.9, RD.0.37, RD.0.39, RD.0.42, RD.1.43,
-RD.1.44, RD.3.29; AlgebraicCurves Layer 12.
+RD.1.44, RD.3.29; AlgebraicCurves Layer 12; Tau Ceti `TauCeti.Dagger.piAdicCompletion`,
+`TauCeti.Dagger.weakCompletion`.
 
 API:
 
@@ -732,7 +748,8 @@ The lacunary series separates `E_η` from a local Laurent field.
 PadicDifferentialEquationsAndRigidCohomology Layers RD.0, RD.1 and RD.3 (carriers, `(φ,∇)`-modules,
 slopes, reverse filtrations, Frobenius lifts) and the supplier request
 dejong-generic-affine-line-comparison (generic case of MS.0.4); AlgebraicCurves Layer 12; Tau Ceti
-`PowerSeries.HasGaussNorm.subring` and `PowerSeries.OnOpenDisc.subring`; Mathlib `Padic.norm_p_pow`
+`PowerSeries.HasGaussNorm.subring`, `PowerSeries.OnOpenDisc.subring`,
+`TauCeti.Dagger.piAdicCompletion` and `TauCeti.Dagger.weakCompletion`; Mathlib `Padic.norm_p_pow`
 and `FixedPoints.subfield`. No other layer of this roadmap is used.
 
 ## Layer MS.1: Local PBQ filtrations
