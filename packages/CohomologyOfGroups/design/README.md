@@ -9,11 +9,12 @@ a normal subgroup; hyperhomology and hypercohomology of complexes with their two
 sequences; complexes of permutation modules, groups acting on trees and the Mayer–Vietoris
 sequences of amalgams and HNN extensions; cup and cap products for arbitrary equivariant
 pairings; the Künneth and universal coefficient theorems and the Pontryagin ring of an abelian
-group; the Hochschild–Serre spectral sequence of a group extension with its edge maps,
-transgression, products and low-degree sequences, and Hopf's formula; the double coset formula
-for a subgroup of finite index; and, for finite groups, stable elements, Tate duality, the
-periodicity theorem, periods (cyclic, generalised quaternion, Swan's `p`-period) and the
-periodicity forced by an exact sequence of cohomologically trivial modules from `ℤ_χ` to `ℤ`.
+group; a filtered realisation of the Hochschild–Serre spectral sequence of a group extension
+with its edge maps, transgression in all degrees, products and low-degree sequences, and Hopf's
+formula; the double coset formula for a subgroup of finite index; and, for finite groups, stable
+elements with arbitrary coefficients, Tate duality, the periodicity theorem, the `p`-period with
+its cyclic and generalised quaternion cases, and the periodicity forced by an exact sequence of
+cohomologically trivial modules from `ℤ_χ` to `ℤ`.
 The end theorems are the Hochschild–Serre spectral sequence (6.2–6.7), the tree sequence (3.5),
 the Künneth theorem (5.1), the double coset formula (7.1), the stable element theorem (7.2), Tate
 duality (8.1) and the periodicity theorem (8.5).
@@ -70,17 +71,41 @@ continuous cup product `TauCeti.TopPairing.cup` and the continuous Mackey formul
   proves the two-term sequences over rings of global dimension at most one.
 - Finiteness conditions, cohomological and virtual cohomological dimension, duality groups, Euler
   characteristics and Farrell cohomology are not planned here; no target uses them, and the
-  finiteness hypothesis of 5.2 is stated directly on the homology of a factor.
+  finiteness hypothesis of 5.3 is stated directly on the homology of a factor.
+- SchemeKTheoryOperations §6.7 owns group hyperhomology of a chain complex of integral
+  representations in degrees `≥ 0`, with its functoriality, quasi-isomorphism invariance, two
+  spectral sequences, low-degree vanishing and the Shapiro identification of its first page for
+  transitive permutation modules; and the identification of the homology of a directed union of
+  subgroups with the colimit of their homology, for any coefficient ring. K3BlochGroups §4.1 owns
+  the bounded-below reindexing of the integral form. Here 2.1–2.3 are the extension to coefficients
+  in any commutative ring `k` and to hypercohomology of cochain complexes, compared with §6.7 at
+  `k = ℤ`; 3.2 extends the permutation-module identification to monomial complexes; 5.4 imports
+  the directed-union identification.
+- MappingClassGroupsAndCanonicalRepresentations §1.1 owns, for every extension of discrete groups,
+  the existence and naturality of the cohomological Hochschild–Serre spectral sequence, the lift
+  of an invariant class of `H¹(N, M)` through a set-theoretic section, the transgression it defines,
+  the cohomological five-term exact sequence and the degree-two filtration. Here 6.2 realises that
+  spectral sequence by the filtration of 6.1, on which the edge maps, products and higher
+  transgressions of 6.4–6.6 are computed; 6.7 adds the sequences of degree `m ≥ 2` and the
+  homological five-term sequence; 6.9 compares the five-term sequence with the profinite one for
+  finite groups.
+- InductionRestrictionPartII RS.0.1 owns the exact sequence
+  `H₂(E, ℤ) → H₂(G, ℤ) → A → E^ab → G^ab → 0` of a central extension `1 → A → E → G → 1`.
+  StableHomotopyKTheory §3.29 owns the identification of `H₂` of a perfect group with the kernel of
+  its universal central extension. 6.8 is Hopf's formula for every group.
+- K3BlochGroups §5.2 owns, for finite groups, the stable-element theorem with trivial coefficients
+  `ℤ_(r)`, the duality `H^{d+1}(G, ℤ) ≅ Hom(H_d(G, ℤ), ℚ/ℤ)` for `d ≥ 1`, the four-periodic free
+  resolution of the generalised quaternion groups and Swan's theorem on `r`-periods. Here 7.2 is
+  the stable-element theorem for arbitrary coefficient representations, in homology and in Tate
+  cohomology; 8.1 is Tate duality for arbitrary coefficients, of which §5.2's duality is the
+  integral instance; 8.4 imports the quaternion resolution and Swan's theorem.
+- IntegralIwasawaTheoryPartII §0.7 owns the cap product `H^q(U, M^∨) × H_q(U, M) → ℂ_p` for a
+  `ℂ_p[U]`-module `M`. The evaluation pairing of 4.6 is defined for any `k` and any `k`-module of
+  values `A`, and agrees with §0.7 for `k = A = ℂ_p`.
+- ModularCurvesPartII §15.4 owns the sequence of the modular amalgam; 3.6 is the sequence of an
+  arbitrary amalgam.
 - Non-goals: the Evens norm and finite generation of cohomology rings; equivariant Tate cohomology
   of complexes; realising periods by finite complexes.
-
-**Local restatements in roadmaps under review.** SchemeKTheoryOperations §6.7 and K3BlochGroups
-§4.1 (integral group hyperhomology), K3BlochGroups §§4.15 and 5.2 (extension sequences, stable
-elements, homology duality and periods with `ℤ_(r)` coefficients),
-MappingClassGroupsAndCanonicalRepresentations §1.1 (the cohomological Hochschild–Serre and
-five-term sequences for discrete groups), InductionRestrictionPartII RS.0.1 (the low-degree
-sequence of a central extension) and ModularCurvesPartII §15.4 (the sequence of one amalgam) are
-instances of targets here. Each is listed under Downstream consumers with the target it imports.
 
 ## Conventions
 
@@ -213,10 +238,19 @@ instances of targets here. Each is listed under Downstream consumers with the ta
   group as the colimit over its finite quotients.
 - `CochainComplex.filtrationFunctor`, `CochainComplex.spectralSequence`,
   `CochainComplex.spectralSequenceFirstPageXIsoCokernel`, `CochainComplex.spectralSequence_first_page_d_eq`,
-  `CochainComplex.filtrationAbutmentIso`, `CochainComplex.filtrationSpectralSequencePageXIsoGradedOfFinite`,
-  `CochainComplex.filtrationFunctorMap` (`Algebra/Homology/SpectralSequence/Filtered/`): the
-  spectral sequence of a filtered cochain complex, its first page and differential, convergence for
-  a finite filtration, naturality.
+  `CochainComplex.filtrationAbutmentIso`, `CochainComplex.filtrationFunctorMap`
+  (`Algebra/Homology/SpectralSequence/Filtered/`): the spectral sequence of an increasing
+  filtration `F : ℤ → Subobject K` of a cochain complex, its first page and differential, the
+  filtration of the abutment, naturality. Mathlib's page numbering starts at `2`; the object at
+  `(p, q)` has filtration index `q` and total degree `p + q`, and for the decreasing filtration
+  `F^s = F_{−s}` it is the classical `E^{s,t}` with `s = −q − 1`, `t = p + 2q + 1` (module
+  docstring of `…/Filtered/FirstPage.lean`).
+- `CochainComplex.filtrationSpectralSequencePageXIsoEInfty` (`…/Filtered/Stabilization.lean`) and
+  `CategoryTheory.Abelian.SpectralObject.EInftyIsoCokernel` (`Algebra/Homology/SpectralObject/Abutment.lean`):
+  on page `r ≥ 2` the object at `(p, q)`, `n = p + q`, is `E∞` as soon as `H^{n+1}(F_{q−r+2}) = 0`
+  and `H^{n−1}(K / F_{q+r−1}) = 0`, and `E∞` is the graded piece `F_{q+1}Hⁿ / F_qHⁿ` of the
+  abutment. No global bound `F_a = ⊥` is assumed, unlike
+  `CochainComplex.filtrationSpectralSequencePageXIsoGradedOfFinite`.
 - `HomologicalComplex₂.rowFiltrationSpectralSequence`, `HomologicalComplex₂.columnFiltrationSpectralSequence`,
   `HomologicalComplex₂.columnFiltrationAbutmentIso`, `HomologicalComplex₂.quasiIso_totalAugmentation_of_rows`
   (`Algebra/Homology/SpectralSequence/Bicomplex.lean`, `Algebra/Homology/TotalComplex.lean`): the
@@ -247,7 +281,7 @@ instances of targets here. Each is listed under Downstream consumers with the ta
   morphisms `H_n(Tot C) → E²_{n,0}` and `E²_{0,n} → H_n(Tot C)` and the five-term exact sequence
   `H₂(Tot C) → E²_{2,0} → E²_{0,1} → H₁(Tot C) → E²_{1,0} → 0` of a first-quadrant homological
   double complex. §S.1 states these in cohomological indexing only; its homological form stops at
-  `E²` and convergence. Targets 6.3, 6.5, 6.7 and 6.8 use them.
+  `E²` and convergence. Targets 6.3, 6.4, 6.7 and 6.8 use them.
 
 ### From TauCetiRoadmap.ProfiniteCohomology
 
@@ -278,23 +312,71 @@ instances of targets here. Each is listed under Downstream consumers with the ta
 - §5.3: the Cartan–Leray spectral sequence of a finite regular cover, compared with 3.3 in a
   Check; §8.15: free actions of `C_p × C_p` on spheres, compared with 8.5 in a Check.
 
+### From TauCetiRoadmap.SchemeKTheoryOperations
+
+- §6.7, group hyperhomology: for a group `G` and a chain complex `C` of integral representations
+  concentrated in degrees `≥ 0`, `H_n(G; C)` is the homology of the total complex of
+  `P_q ⊗_G C_p` for a projective resolution `P` of `ℤ`, independent of `P`; it is functorial in
+  compatible pairs, invariant under quasi-isomorphisms and equal to `H_n(G, M)` for `C = M` in
+  degree `0`; it has the spectral sequences `E¹_{p,q} = H_q(G, C_p)` with `d¹ = H_q(G, ∂)` and
+  `E²_{p,q} = H_p(G, H_q(C))`, both abutting to `H_{p+q}(G; C)`; it vanishes in degrees `≤ t`
+  when `H_i(C) = 0` for `i ≤ t`; and for `C_p = ℤ[X]` with `X` transitive its first page is
+  `H_q(Stab_G(x), ℤ)`. Compared with 2.1, 2.3 and 3.2.
+- §6.7, directed unions: if `G` is the union of a directed family of subgroups `G_i` and
+  `A : Rep k G`, the maps `H_m(G_i, A) → H_m(G, A)` induced by the inclusions identify `H_m(G, A)`
+  with the colimit of the `H_m(G_i, A)`, for every `m ≥ 0`. Used in 5.4.
+
+### From TauCetiRoadmap.K3BlochGroups
+
+- §4.1: the reindexing of an integral complex bounded below by `b` to one in degrees `≥ 0`, with
+  its total-complex sign comparisons; compared with 2.1.
+- §5.2, for a finite group `G`: the stable-element theorem for `Hⁿ(G, ℤ_(r))` with a Sylow
+  `r`-subgroup, compared with 7.2; the duality `H^{d+1}(G, ℤ) ≅ Hom(H_d(G, ℤ), ℚ/ℤ)` for `d ≥ 1`,
+  natural in group homomorphisms, compared with 8.1; the four-periodic free resolution of
+  `Q_{2^s}`, `s ≥ 3`, with its integral homology, used in 8.4; and Swan's theorem (SwanPPeriod60
+  Thms. 1 and 2; Hutchinson13 Thm. 3.1, p. 12, Hutchinson13 line 499–504): for an odd prime
+  `r ∣ |G|` with a cyclic Sylow `r`-subgroup `P`, the `r`-period is `2·|N_G(P)/C_G(P)|`, and the
+  `2`-period is `2` for a nontrivial cyclic Sylow `2`-subgroup and `4` for a generalised quaternion
+  one. The `r`-period there is the least `d ≥ 2` with `H_{d−1}(G, ℤ_(r))` cyclic of order `|G|_r`
+  (Hutchinson13 line 494–497); by §5.2's duality this is the `p`-period of 8.4. Used in 8.4 and 8.5.
+
+### From TauCetiRoadmap.MappingClassGroupsAndCanonicalRepresentations
+
+- §1.1: for an extension `1 → N → G → Q → 1` of discrete groups and a `G`-module `M`, a spectral
+  sequence `E₂^{p,q} = Hᵖ(Q, H^q(N, M)) ⇒ H^{p+q}(G, M)`, natural in the extension and in `M`; for a
+  conjugation-invariant class of `H¹(N, M)`, a lift through a set-theoretic section `s : Q → G`,
+  `s(1) = 1`, satisfying `TauCeti.ContCohomology.IsTransgressionLift`, whose descended coboundary
+  `TauCeti.ContCohomology.IsTransgressionLift.cocycle` defines the transgression
+  `tg : H¹(N, M)^Q → H²(Q, M^N)`; and exactness of
+  `0 → H¹(Q, M^N) → H¹(G, M) → H¹(N, M)^Q →tg H²(Q, M^N) → H²(G, M)` with inflation, restriction,
+  `tg` and inflation. Used in 6.2, 6.6, 6.7 and 6.9.
+
+### From TauCetiRoadmap.IntegralIwasawaTheoryPartII
+
+- §0.7: for a group `U` and a `ℂ_p[U]`-module `M` with `M^∨ = Hom_{ℂ_p}(M, ℂ_p)` and the
+  contragredient action, the cap product `H^q(U, M^∨) × H_q(U, M) → ℂ_p` obtained by evaluating a
+  homogeneous cocycle on a homogeneous chain. Compared with 4.6.
+
 ## How to read the build
 
 Layer 1 adds to the carriers what every later layer uses: conjugation, the action of a quotient
 group on the (co)homology of a normal subgroup, additivity, permutation modules, and the named
 comparison of continuous and discrete cohomology for a discrete group. Layer 2 extends the
-coefficients to complexes and produces the two hyper(co)homology spectral sequences from
-DerivedModuleAlgebra §S.1. Layer 3 applies Layer 2 to complexes of permutation modules: orbit and
-free complexes, and the exact chain complex of a tree, which gives the sequences of amalgams, HNN
-extensions and free groups without a spectral sequence. Layer 4 builds cup and cap products for
-arbitrary pairings and compares them with the library's Tate and continuous cups. Layer 5 treats
-products of groups and abelian groups (Künneth, universal coefficients, Pontryagin ring). Layer 6
-builds the Hochschild–Serre spectral sequence (cohomology through the filtration of the cochains
-of `G`, homology through Layer 2), identifies its edge maps, transgression and products, and
-derives the low-degree sequences and Hopf's formula, using the free groups of Layer 3. Layer 7
-proves the double coset formula for any group and, for finite groups, the stable element theorem.
-Layer 8 proves Tate duality and the periodicity theorems for finite groups, using Layers 4, 5
-and 7.
+integral group hyperhomology of SchemeKTheoryOperations §6.7 to coefficients in any `k` and to
+hypercohomology, with the two spectral sequences from DerivedModuleAlgebra §S.1. Layer 3 applies
+Layer 2 to complexes of permutation modules: orbit and free complexes, and the exact chain complex
+of a tree, which gives the sequences of amalgams, HNN extensions and free groups without a spectral
+sequence. Layer 4 builds cup and cap products for arbitrary pairings, connecting-map rules and
+uniqueness before the identities that use them, and compares them with the library's Tate and
+continuous cups. Layer 5 treats products of groups and abelian groups (Künneth, universal
+coefficients before the cohomological Künneth theorem that uses them, Pontryagin ring). Layer 6
+realises the Hochschild–Serre spectral sequence of MappingClassGroupsAndCanonicalRepresentations
+§1.1 by the filtration of the cochains of `G` (and in homology through Layer 2), identifies its
+edge maps, transgression and products, and derives the low-degree sequences and Hopf's formula,
+using the free groups of Layer 3. Layer 7 proves the double coset formula for any group and, for
+finite groups, the stable element theorem. Layer 8 proves Tate duality and the periodicity
+theorems for finite groups, using Layers 4, 5 and 7 and the period computations of K3BlochGroups
+§5.2.
 
 ---
 
@@ -358,9 +440,9 @@ with `Rep.quotientToCoinvariantsFunctor` (HS53 line 345–354; Loh19 Prop. 3.2.1
 
 Prove that for a family `(M_i)_{i ∈ ι}` of representations, `ι : Type u`, the canonical maps
 `⊕_i Hₙ(G, M_i) → Hₙ(G, ⊕_i M_i)` and `Hⁿ(G, ∏_i M_i) → ∏_i Hⁿ(G, M_i)` are isomorphisms, and that
-for finite `ι` cohomology also commutes with direct sums. The inhomogeneous chains of a direct sum
-are the direct sum of the chains, the cochains of a product are the product of the cochains, and
-homology of modules commutes with direct sums and products. *Needs:* Mathlib
+for finite `ι` cohomology also commutes with direct sums (Brown82 Ch. III). The inhomogeneous
+chains of a direct sum are the direct sum of the chains, the cochains of a product are the product
+of the cochains, and homology of modules commutes with direct sums and products. *Needs:* Mathlib
 `groupHomology.chainsFunctor`, `groupCohomology.cochainsFunctor`.
 
 **Checks.**
@@ -402,7 +484,10 @@ spaces of `TopRep.homogeneousCochains` with the homogeneous cochains `Hom_G(k[G^
 the comparison of the standard and bar resolutions gives the inhomogeneous cochains. Prove that
 `Θ` is natural in compatible pairs of discrete groups and in `A`, commutes with the connecting maps
 of short exact sequences of discrete representations, and agrees in degrees `0, 1, 2` with the
-explicit comparisons of ProfiniteCohomology §§3.1–3.2. *Needs:* Mathlib `continuousCohomology`,
+explicit comparisons of ProfiniteCohomology §§3.1–3.2. The passage between homogeneous and
+inhomogeneous cochains is HS53 Ch. I §2, pp. 112–113, HS53 line 129–141; the comparison itself is
+between the pinned carriers `continuousCohomology` and `groupCohomology`, whose module docstring
+records it as missing. *Needs:* Mathlib `continuousCohomology`,
 `TopRep.homogeneousCochains`, `Rep.standardResolution`, `groupCohomologyIso`; ProfiniteCohomology
 §3.1, §3.2; Tau Ceti `TauCeti.ContCohomology.explicitH1IsoGroupCohomology`,
 `TauCeti.ContCohomology.explicitH2IsoGroupCohomology`.
@@ -429,7 +514,7 @@ explicit comparisons of ProfiniteCohomology §§3.1–3.2. *Needs:* Mathlib `con
 
 For `G = S₃` and `N = A₃`, the quotient `ℤ/2` acts on `H¹(A₃, 𝔽₃) ≅ 𝔽₃` by `−1` and on
 `H²(A₃, ℤ) ≅ ℤ/3` by `−1`, and on `H⁴(A₃, ℤ) ≅ ℤ/3` trivially; these three actions are used again
-in 6.7 and 7.2.
+in 6.2 and 7.2.
 
 ### Dependencies
 
@@ -447,11 +532,15 @@ Define, for a chain complex `C` of representations indexed by `ℕ`, the *hyperh
 term is the module of inhomogeneous `p`-chains with coefficients in `C_q`, obtained by applying
 `groupHomology.chainsFunctor` to `C` degreewise. Define, for a cochain complex `D` indexed by `ℕ`,
 the *hypercohomology* `Hⁿ(G; D)` as the cohomology of the total complex of the bicomplex of
-inhomogeneous `p`-cochains with values in `D^q`, from `groupCohomology.cochainsFunctor`. Every
-bounded-below complex is a shift of one indexed by `ℕ`. (HS53 Ch. I §4, p. 114, for the cochain
-bicomplex `C(Π, U)`, and Ch. I §2 Prop. 1, p. 111, for independence of the resolution.)
-*Needs:* Mathlib `groupHomology.chainsFunctor`, `groupCohomology.cochainsFunctor`,
-`HomologicalComplex₂.total`.
+inhomogeneous `p`-cochains with values in `D^q`, from `groupCohomology.cochainsFunctor`. A chain
+complex `C` with `C_i = 0` for `i < b` is reindexed to `C′_r = C_{r+b}` with the same differential,
+and `Hₙ(G; C) = H_{n−b}(G; C′)` for `n ≥ b`, `0` for `n < b`; dually for cochain complexes.
+(HS53 Ch. I §4, p. 114, for the cochain bicomplex `C(Π, U)`, and Ch. I §2 Prop. 1, p. 111, for
+independence of the resolution.) For
+`k = ℤ` and chain complexes this is the group hyperhomology of SchemeKTheoryOperations §6.7; the
+target adds arbitrary `k` and hypercohomology. *Needs:* Mathlib `groupHomology.chainsFunctor`,
+`groupCohomology.cochainsFunctor`, `HomologicalComplex₂.total`; SchemeKTheoryOperations §6.7 and
+K3BlochGroups §4.1 for the comparison.
 
 - Functoriality: chain maps of complexes of representations, and compatible pairs consisting of
   `f : G' →* G` and a chain map `C' ⟶ Res_f C` (homology) or `Res_f D ⟶ D'` (cohomology).
@@ -467,6 +556,10 @@ bicomplex `C(Π, U)`, and Ch. I §2 Prop. 1, p. 111, for independence of the res
   `DerivedCategory`), `Hⁿ(G; D)` is naturally isomorphic to the morphisms from the trivial
   representation `k` to the shift `D[n]`; for `D` concentrated in degree `0` this is
   `groupCohomologyIsoExt`.
+- Comparison: for `k = ℤ` and `C` in degrees `≥ 0`, `Hₙ(G; C)` is naturally isomorphic to the group
+  hyperhomology of SchemeKTheoryOperations §6.7 (independence of the resolution, with §6.7's `P`),
+  compatibly with functoriality and with the degree-`0` identification; for an integral `C`
+  bounded below, the reindexing above is that of K3BlochGroups §4.1.
 
 **Checks.**
 
@@ -480,8 +573,9 @@ bicomplex `C(Π, U)`, and Ch. I §2 Prop. 1, p. 111, for independence of the res
 ### 2.2 Long exact sequences
 
 Prove that a degreewise short exact sequence of complexes of representations gives natural long
-exact sequences in hyperhomology and in hypercohomology. The functors of inhomogeneous chains and
-cochains are exact, so the sequence of total complexes is short exact. *Needs:* 2.1.
+exact sequences in hyperhomology and in hypercohomology (CE56 Ch. XVII). The functors of
+inhomogeneous chains and cochains are exact, so the sequence of total complexes is short exact.
+*Needs:* 2.1.
 
 **Checks.**
 
@@ -500,11 +594,14 @@ Prove that for a chain complex `C` indexed by `ℕ` there are natural spectral s
 converge, with filtrations finite in each total degree. They are the two spectral sequences of the
 defining bicomplex: filtering by the degree of `C` gives the first, and since inhomogeneous chains
 are exact in the coefficients, filtering by the bar degree gives the second (HS53 Ch. I §5,
-Lemmas 1–2 and Prop. 5, p. 116). *Needs:* 2.1; DerivedModuleAlgebra §S.1; Tau Ceti
-`HomologicalComplex₂.rowFiltrationSpectralSequence`,
+Lemmas 1–2 and Prop. 5, p. 116). For `k = ℤ` the two homological sequences are those of
+SchemeKTheoryOperations §6.7 under the comparison of 2.1; the target adds arbitrary `k` and the
+cohomological sequences. *Needs:* 2.1; DerivedModuleAlgebra §S.1; SchemeKTheoryOperations §6.7
+for the comparison; Tau Ceti `HomologicalComplex₂.rowFiltrationSpectralSequence`,
 `HomologicalComplex₂.columnFiltrationSpectralSequence`.
 
-- If `Hᵢ(C) = 0` for `i ≤ t`, then `Hₙ(G; C) = 0` for `n ≤ t`; dually for cochain complexes.
+- If `Hᵢ(C) = 0` for `i ≤ t`, then `Hₙ(G; C) = 0` for `n ≤ t`; dually for cochain complexes. For
+  `k = ℤ` this is the vanishing statement of SchemeKTheoryOperations §6.7.
 - If `C_p` is acyclic for `H_*(G, −)` in positive degrees for every `p`, then
   `Hₙ(G; C) ≅ Hₙ((C)_G)`; dually `Hⁿ(G; D) ≅ Hⁿ(D^G)` (the exact-rows comparison of
   DerivedModuleAlgebra §S.1; HS53 Ch. I §4 Prop. 4, p. 114).
@@ -540,12 +637,32 @@ DerivedModuleAlgebra §S.1.
 ### 3.1 Equivariant homology of a complex of representations
 
 For a chain complex `C` of representations indexed by `ℕ` and `M : Rep k G`, write
-`H^G_n(C; M) = H_n(G; C ⊗ M)` (2.1) and, dually, `H_G^n(C; M) = Hⁿ(G; Hom_k(C, M))`, with the long
-exact sequences and naturality of 2.2. Prove that if every `C_p` is flat over `k` and `C` is a
-resolution of the trivial representation `k`, then `H^G_n(C; M) ≅ Hₙ(G, M)` and
-`H_G^n(C; M) ≅ Hⁿ(G, M)`. The augmentation `C ⊗ M → M` is then a quasi-isomorphism of complexes of
-representations (and `Hom_k(C, M)` is quasi-isomorphic to `M` when every `C_p` is projective over
-`k`). *Needs:* 2.1, 2.2.
+`H^G_n(C; M) = H_n(G; C ⊗ M)` (2.1) and, dually, `H_G^n(C; M) = Hⁿ(G; Hom_k(C, M))` (Brown82
+Ch. VII). Let `C` be a resolution of the trivial representation `k`. Prove that if every `C_p` is
+flat over `k`, the augmentation `C ⊗ M → M` is a quasi-isomorphism of complexes of representations
+and `H^G_n(C; M) ≅ Hₙ(G, M)`; and that if every `C_p` is projective over `k`, the map
+`M → Hom_k(C, M)` dual to the augmentation is a quasi-isomorphism and `H_G^n(C; M) ≅ Hⁿ(G, M)`.
+Flatness alone does not give the cohomological statement (Checks). Route: the cone of `C → k` is
+a bounded-below exact complex of flat `k`-modules, which stays exact after `− ⊗ M`; with projective
+terms `C → k` is a `k`-linear homotopy equivalence, which `Hom_k(−, M)` preserves; then the
+quasi-isomorphism invariance of 2.1. *Needs:* 2.1, 2.2.
+
+- Long exact sequences in the complex: a short exact sequence `0 → C' → C → C'' → 0` of complexes of
+  representations that stays degreewise short exact after `− ⊗ M` (for instance when it is split
+  over `k` in each degree, when `M` is flat over `k`, or when every `C''_p` is flat over `k`) gives,
+  by 2.2, a natural long exact sequence
+  `⋯ → H^G_n(C'; M) → H^G_n(C; M) → H^G_n(C''; M) → H^G_{n−1}(C'; M) → ⋯`. One that stays
+  degreewise short exact after `Hom_k(−, M)` (split over `k` in each degree, `M` injective over `k`,
+  or every `C''_p` projective over `k`) gives a natural long exact sequence
+  `⋯ → H_G^n(C''; M) → H_G^n(C; M) → H_G^n(C'; M) → H_G^{n+1}(C''; M) → ⋯`.
+- Long exact sequences in the coefficients: a short exact sequence `0 → M' → M → M'' → 0` of
+  representations gives a natural long exact sequence in `H^G_*(C; −)` when every `C_p` is flat
+  over `k`, and in `H_G^*(C; −)` when every `C_p` is projective over `k`.
+- Naturality: `H^G_n` is covariant and `H_G^n` contravariant in chain maps of complexes, both are
+  functorial in `M`, and both are natural for compatible pairs as in 2.1.
+- Comparison with group (co)homology: for a resolution `C` of `k`, termwise flat over `k` in
+  homology and termwise projective over `k` in cohomology, the isomorphisms above are natural in
+  `M` and compatible with the long exact sequences in the coefficients.
 
 **Checks.**
 
@@ -555,6 +672,18 @@ representations (and `Hom_k(C, M)` is quasi-isomorphic to `M` when every `C_p` i
 - Flatness is used: for `k = ℤ/4`, `G` trivial, `M = ℤ/2` and `C = k ⊕ (ℤ/2 → ℤ/4 → ℤ/2)` (the
   exact sequence placed in degrees `2, 1, 0`), `C → k` is a quasi-isomorphism but
   `H^G_2(C; M) = ℤ/2 ≠ 0 = H₂(1, M)`.
+- Projectivity, not flatness, is the cohomological hypothesis: for `k = ℤ`, `G` trivial, `M = ℤ`,
+  `F = ℤ^{(ℕ)}` with basis `(e_i)` and `C = ℤ ⊕ (F →u F →v ℤ[1/2])` (degrees `2, 1, 0`, with
+  `u(e_i) = e_i − 2e_{i+1}` and `v(e_i) = 2^{−i}`), every `C_p` is flat and `C → ℤ` is a
+  quasi-isomorphism. The differential `Hom(F, ℤ) → Hom(F, ℤ)` is `(a_i) ↦ (a_i − 2a_{i+1})`, and the
+  sequence `(1, 0, 1, 0, …)` is not in its image: `a₀ = Σ_{i<r} 2^i b_i + 2^r a_r` for every `r`
+  would force `a₀ = Σ_j 4^j = −1/3` in `ℤ₂`. So `H_G^2(C; ℤ) ≠ 0 = H²(1, ℤ)`; `ℤ[1/2]` is not
+  projective.
+- The exactness hypothesis of the long exact sequences is used: for `k = ℤ`, `G` trivial,
+  `M = ℤ/2` and the sequence `0 → ℤ →2 ℤ → ℤ/2 → 0` in degree `0` (not split, with non-flat
+  `ℤ/2`), tensoring gives `ℤ/2 →0 ℤ/2 →id ℤ/2`, and a long exact sequence would force the zero map
+  `H^G_0(C'; M) = ℤ/2 → H^G_0(C; M) = ℤ/2` to be injective, since `H^G_1(C''; M) = 0`. The
+  sequence of a tree in 3.4, split over `k`, satisfies the hypothesis.
 
 ### 3.2 The orbit spectral sequence
 
@@ -564,8 +693,12 @@ permutes the cells, `Σ_p` the orbit representatives of `p`-cells, `G_σ` their 
 `k_σ` their orientation characters). Prove that the first sequence of 2.3 for `C ⊗ M` is
 `E¹_{p,q} = ⊕_{σ ∈ Σ_p} H_q(G_σ, k_σ ⊗ M) ⇒ H^G_{p+q}(C; M)` and dually
 `E₁^{p,q} = ∏_{σ ∈ Σ_p} H^q(G_σ, Hom_k(k_σ, M)) ⇒ H_G^{p+q}(C; M)`, with `d¹` the map induced by
-`∂` transported through the Shapiro isomorphisms of 1.4 (HS53 Ch. I §5 Prop. 5, p. 116; Brown82
-Ch. VII). *Needs:* 1.3, 1.4, 2.3.
+`∂` transported through the Shapiro isomorphisms of 1.4 (Brown82 Ch. VII). The identification is
+the first sequence of 2.3, filtered by the degree of `C` in the bicomplex of HS53 Ch. I §4, p. 114,
+with its terms computed by 1.3 and 1.4. For `k = ℤ`, trivial characters and `C_p = ℤ[X]` with `X`
+transitive it is the first-page identification of SchemeKTheoryOperations §6.7; the target adds
+monomial modules with characters, arbitrary `k`, `M` and the cohomological sequence.
+*Needs:* 1.3, 1.4, 2.3; SchemeKTheoryOperations §6.7 for the comparison.
 
 **Checks.**
 
@@ -657,8 +790,12 @@ example after Prop. 13, p. 169; Brown82 Ch. II §7).
   `⋯ → Hₙ(A, M) → Hₙ(H, M) → Hₙ(G, M) → Hₙ₋₁(A, M) → ⋯`, the first map the difference of the map
   induced by `A ≤ H` and the map induced by `ι_B ∘ φ` (with its coefficient map `m ↦ t·m`), and the
   dual cohomology sequence.
-- *Free products and free groups.* `Hₙ(A ∗ B, M) ≅ Hₙ(A, M) ⊕ Hₙ(B, M)` for `n ≥ 1`. For a set
-  `S` and `F = FreeGroup S`, `Hₙ(F, M) = 0` and `Hⁿ(F, M) = 0` for `n ≥ 2`, and
+- *Free products and free groups.* For the free product `A ∗ B` (the amalgam over the trivial
+  group) and every `M`, `Hₙ(A ∗ B, M) ≅ Hₙ(A, M) ⊕ Hₙ(B, M)` for `n ≥ 2`, and in degree one the
+  amalgam sequence ends with the exact sequence
+  `0 → H₁(A, M) ⊕ H₁(B, M) → H₁(A ∗ B, M) → M → M_A ⊕ M_B → M_{A∗B} → 0`, whose middle map is
+  `m ↦ (−[m], [m])`; so the direct-sum formula holds in degree one when `A ∗ B` acts trivially on
+  `M`. For a set `S` and `F = FreeGroup S`, `Hₙ(F, M) = 0` and `Hⁿ(F, M) = 0` for `n ≥ 2`, and
   `0 → H₁(F, M) → M^{(S)} → M → H₀(F, M) → 0` is exact, from the action of `F` on its Bass–Serre
   tree for the rose with trivial groups (§§4.1–4.2, 4.7, and §2.2 for the identification with
   `FreeGroup S`).
@@ -676,6 +813,10 @@ example after Prop. 13, p. 169; Brown82 Ch. II §7).
   `1 + 2 = 3` and `1 + 1 = 2`, hence `H₁ = ℤ/3`.
 - For `F = FreeGroup S` and trivial `ℤ`, `H₁(F, ℤ) = ℤ^{(S)}` and `Hₙ(F, ℤ) = 0` for `n ≥ 2`; the
   free product `ℤ/2 ∗ ℤ/2` has `Hₙ = (ℤ/2)²` for odd `n` and `0` for even `n ≥ 2`.
+- The degree-one direct sum fails for twisted coefficients: for `ℤ ∗ ℤ = FreeGroup {a, b}` and
+  `M = ℤ` with both generators acting by `−1`, the free-group sequence gives
+  `H₁ = ker(ℤ² → ℤ, (m_a, m_b) ↦ −2m_a − 2m_b) ≅ ℤ`, while `H₁(ℤ, M) = ker(−2) = 0` for each factor.
+  The missing summand is the kernel of `M → M_A ⊕ M_B = (ℤ/2)²`, `m ↦ (−m, m)`, which is `2ℤ ≅ ℤ`.
 
 ### Examples
 
@@ -715,25 +856,7 @@ the induced `k`-bilinear map `∪_μ : Hᵖ(G, M) × H^q(G, N) → H^{p+q}(G, P)
   cocycles: for `G = ℤ`, `M = ℤ` trivial, `N = P = ℤ[ℤ]` with `μ` the scalar multiplication,
   `φ = id` and the cocycle `ψ` with `ψ(1) = 1`, its coboundary at `(1, 1, 1)` is `2(t − 1) ≠ 0`.
 
-### 4.2 Identities
-
-Prove that `∪` is unital (`1 ∈ H⁰(G, k)` with the unitor), associative for compatible pairings
-(`μ ∘ (μ₁₂ ⊗ 1) = ν ∘ (1 ⊗ ν₂₃)` up to the associator gives `(x ∪ y) ∪ z = x ∪ (y ∪ z)`), graded
-commutative (`x ∪_μ y = (−1)^{pq} y ∪_{μ'} x` with `μ'` the composite of `μ` with the braiding), and
-natural for compatible pairs `f : G' →* G` with coefficient maps commuting with the pairings; in
-particular for restriction to any subgroup, inflation from any quotient, and coefficient maps
-(MilneCFT Ch. II Prop. 1.39(a), (b), (c), (e), pp. 73–74). Associativity and naturality hold on
-cochains; graded commutativity holds in cohomology, by the uniqueness of 4.3. *Needs:* 4.1, 4.3.
-
-**Checks.**
-
-- For `G` trivial, `∪` is `μ` in degree `0` and there is nothing in positive degrees.
-- On `H*(ℤ/2, 𝔽₂)` graded commutativity is commutativity, and `x² ≠ 0` for `x` of degree `1`; on
-  `H*(ℤ², ℤ)`, `x ∪ y = −y ∪ x` for the two projections, by the witness of the Conventions.
-- Graded commutativity fails on cochains: for `ℤ²` the cochains `x ∪ y` and `−y ∪ x` differ at
-  `(e₁, e₂)` (values `1` and `0`), and are cohomologous.
-
-### 4.3 Connecting maps and uniqueness
+### 4.2 Connecting maps and uniqueness
 
 Prove that for a short exact sequence `0 → M' → M → M'' → 0` whose tensor product with `N` is short
 exact, and compatible pairings, `δx'' ∪ y = δ(x'' ∪ y)`; and for `0 → N' → N → N'' → 0` whose
@@ -753,6 +876,24 @@ stay exact after tensoring because they are split over `k` (MilneCFT Ch. II Prop
 - The family `(−1)^{pq} x ∪ y` (the convention of Loh19 Outlook 3.2.28) satisfies
   `x ∪ δy = δ(x ∪ y)` and `δx ∪ y = (−1)^q δ(x ∪ y)`; it agrees with `∪` in bidegrees `(0, q)` and
   `(p, 0)` and is its negative on `H¹(ℤ², ℤ) × H¹(ℤ², ℤ)`. The left rule excludes it.
+
+### 4.3 Identities
+
+Prove that `∪` is unital (`1 ∈ H⁰(G, k)` with the unitor), associative for compatible pairings
+(`μ ∘ (μ₁₂ ⊗ 1) = ν ∘ (1 ⊗ ν₂₃)` up to the associator gives `(x ∪ y) ∪ z = x ∪ (y ∪ z)`), graded
+commutative (`x ∪_μ y = (−1)^{pq} y ∪_{μ'} x` with `μ'` the composite of `μ` with the braiding), and
+natural for compatible pairs `f : G' →* G` with coefficient maps commuting with the pairings; in
+particular for restriction to any subgroup, inflation from any quotient, and coefficient maps
+(MilneCFT Ch. II Prop. 1.39(a), (b), (c), (e), pp. 73–74). Associativity and naturality hold on
+cochains; graded commutativity holds in cohomology, by the uniqueness of 4.2. *Needs:* 4.1, 4.2.
+
+**Checks.**
+
+- For `G` trivial, `∪` is `μ` in degree `0` and there is nothing in positive degrees.
+- On `H*(ℤ/2, 𝔽₂)` graded commutativity is commutativity, and `x² ≠ 0` for `x` of degree `1`; on
+  `H*(ℤ², ℤ)`, `x ∪ y = −y ∪ x` for the two projections, by the witness of the Conventions.
+- Graded commutativity fails on cochains: for `ℤ²` the cochains `x ∪ y` and `−y ∪ x` differ at
+  `(e₁, e₂)` (values `1` and `0`), and are cohomologous.
 
 ### 4.4 Diagonal approximations
 
@@ -784,7 +925,7 @@ Ch. V; HS53 Ch. II §1, pp. 118–119 for the cochain formula). *Needs:* 4.1; Ma
 Prove that for `H ≤ G` of finite index, `x ∈ Hᵖ(H, M)` and `y ∈ H^q(G, N)`,
 `cor(x ∪ res y) = cor(x) ∪ y` and `cor(res y ∪ x) = y ∪ cor(x)`, for any pairing `μ`, with
 `TauCeti.groupCohomology.corestriction` (MilneCFT Ch. II Prop. 1.39(d), p. 74). Route: degree `0`
-by the norm formula, then dimension shifting with 4.3 and Tau Ceti's `δ_comp_corestriction`.
+by the norm formula, then dimension shifting with 4.2 and Tau Ceti's `δ_comp_corestriction`.
 *Needs:* 4.2, 4.3; Tau Ceti `TauCeti.groupCohomology.corestriction`,
 `TauCeti.groupCohomology.δ_comp_corestriction`.
 
@@ -798,18 +939,29 @@ by the norm formula, then dimension shifting with 4.3 and Tau Ceti's `δ_comp_co
 ### 4.6 Cap product and evaluation
 
 Define, for `μ : M ⊗ N ⟶ P`, the cap product `∩ : Hᵖ(G, M) ⊗ Hₙ(G, N) → Hₙ₋ₚ(G, P)` (zero for
-`p > n`) through a diagonal approximation (4.4), and the evaluation pairing
-`⟨−, −⟩ : Hⁿ(G, Hom_k(M, A)) ⊗ Hₙ(G, M) → A` for a `k`-module `A` with trivial action, as the cap
-product with evaluation followed by `H₀(G, A) = A` (Brown82 Ch. V). *Needs:* 4.4, 4.2; Tau Ceti
-`TauCeti.groupHomology.transfer`.
+`p > n`) through a diagonal approximation (4.4) (Brown82 Ch. V). Define, for a `k`-module `A` with
+trivial action, the evaluation pairing `⟨−, −⟩ : Hⁿ(G, Hom_k(M, A)) ⊗ Hₙ(G, M) → A`, with the
+contragredient action on `Hom_k(M, A)`, on inhomogeneous representatives by
+`⟨φ, Σ_i a_i [g_{i,1}|…|g_{i,n}] ⊗ m_i⟩ = Σ_i a_i φ(g_{i,1}, …, g_{i,n})(m_i)`. With Mathlib's
+differentials of inhomogeneous chains and cochains, `⟨dφ, c⟩ = ⟨φ, ∂c⟩` with no sign, so the
+pairing descends to classes. *Needs:* 4.4, 4.3; Tau Ceti `TauCeti.groupHomology.transfer`;
+IntegralIwasawaTheoryPartII §0.7 for the comparison.
 
 - `1 ∩ z = z`, `(x ∪ y) ∩ z = x ∩ (y ∩ z)` for compatible pairings, and naturality in coefficients.
 - Projection formula for `f : G' →* G`: `f_*(f^*x ∩ z) = x ∩ f_*z`.
 - Finite index: for `H ≤ G` of finite index, `tr(y ∩ z) = res y ∩ tr z` and
-  `cor(x ∩ tr z) = cor(x) ∩ z`, with `tr = TauCeti.groupHomology.transfer`, the second `cor`
-  homological and the first cohomological.
-- `⟨x ∪ y, z⟩ = ⟨x, y ∩ z⟩`, and for `M = k` the evaluation is the second map of the cohomological
-  universal coefficient sequence of 5.3.
+  `cor(x ∩ tr z) = cor(x) ∩ z`, with `tr = TauCeti.groupHomology.transfer`; the first `cor` is the
+  homological corestriction `Hₙ₋ₚ(H, P) → Hₙ₋ₚ(G, P)` and the second the cohomological
+  corestriction `Hᵖ(H, M) → Hᵖ(G, M)`.
+- Adjunction: for `x ∈ Hᵖ(G, Hom_k(M', A))`, `y ∈ H^q(G, Hom_k(M, M'))` and `z ∈ H_{p+q}(G, M)`,
+  with composition as the pairing of the cup product and evaluation as the pairing of the cap
+  product, `⟨x ∪ y, z⟩ = ⟨x, y ∩ z⟩`. For `x = 1` this says that `⟨y, z⟩` is the image of `y ∩ z`
+  under `H₀(G, A) = A`; the law fixes the cap product as the adjoint of the cup product, without
+  sign.
+- Comparison: for `k = A = ℂ_p` and a `ℂ_p[G]`-module `M`, the evaluation pairing
+  `Hⁿ(G, M^∨) ⊗ Hₙ(G, M) → ℂ_p` is the cap product of IntegralIwasawaTheoryPartII §0.7: under the
+  standard passage `[g₁|…|gₙ] ↔ (1, g₁, g₁g₂, …, g₁⋯gₙ)` between inhomogeneous and homogeneous
+  (co)chains both evaluate a cocycle on a chain without sign.
 
 **Checks.**
 
@@ -819,22 +971,26 @@ product with evaluation followed by `H₀(G, A) = A` (Brown82 Ch. V). *Needs:* 4
 - The degree-`0` case of the finite-index formula: for `x ∈ M^H` and `z = [n]`, both sides of
   `cor(x ∩ tr z) = cor(x) ∩ z` are `Σ_{gH ∈ G/H} [μ(g·x ⊗ n)]`, because the inverses of
   representatives of `H\G` represent `G/H`; for `G` trivial both sides are `[μ(x ⊗ n)]`.
+- The evaluation is pinned against the cup product: for the coordinate classes `x, y` of `ℤ²` and
+  the cycle `[e₁|e₂] − [e₂|e₁]`, `⟨x ∪ y, [e₁|e₂] − [e₂|e₁]⟩ = 1 − 0 = 1`, the value fixed in the
+  Conventions, while `⟨y ∪ x, [e₁|e₂] − [e₂|e₁]⟩ = 0 − 1 = −1`; a pairing of `x ∪ y` that ignored
+  the order of the arguments would give `0`.
 
 ### 4.7 Agreement with the library's other cup products
 
 Prove:
 
 - **(a) Tate.** For `[Fintype G]` and `p, q ≥ 1`, the isomorphisms
-  `TateCohomology.isoGroupCohomology` carry the cup product of 4.2 for `𝟙 : M ⊗ N ⟶ M ⊗ N` to
+  `TateCohomology.isoGroupCohomology` carry the cup product of 4.1 for `𝟙 : M ⊗ N ⟶ M ⊗ N` to
   `TauCeti.TateCohomology.cup M N p q (p + q)`; in degree `0` the quotient `H⁰ → Ĥ⁰` intertwines
-  them. Route: both satisfy the axioms of 4.3 in positive degrees.
+  them. Route: both satisfy the axioms of 4.2 in positive degrees.
 - **(b) Discrete groups.** For `G` with the discrete topology and discrete coefficients, the
-  isomorphisms `Θ` of 1.5 carry `TauCeti.TopPairing.cup` of a pairing to the cup product of 4.2
+  isomorphisms `Θ` of 1.5 carry `TauCeti.TopPairing.cup` of a pairing to the cup product of 4.1
   of the same pairing.
 - **(c) Profinite groups.** For profinite `G` and discrete `M, N`, under the finite-quotient
   colimit `TauCeti.ContCohomology.continuousFiniteQuotientColimit` (ProfiniteCohomology §10.1) and
   `Θ` for each finite quotient `G ⧸ U`, `TauCeti.TopPairing.cup` is the colimit of the cup
-  products of 4.2 on the groups `G ⧸ U` with coefficients `M^U, N^U`.
+  products of 4.1 on the groups `G ⧸ U` with coefficients `M^U, N^U`.
 
 The abstract group cohomology of a profinite group is not compared with its continuous cohomology.
 *Needs:* 1.5, 4.2, 4.3; Tau Ceti `TauCeti.TateCohomology.cup`, `TauCeti.TopPairing.cup`,
@@ -872,7 +1028,9 @@ Prove, for groups `G, H : Type u`, `M : Rep k G`, `N : Rep k H` and `M ⊠ N` th
 homotopy equivalence `C(G; M) ⊗_k C(H; N) ≃ C(G × H; M ⊠ N)` of chain complexes of `k`-modules:
 the tensor product of the standard resolutions is a projective resolution of `k` over `G × H`,
 because each is contractible over `k` (Loh19 proof of Cor. 3.2.23, p. 136). Define the natural cross
-product `× : H_p(G, M) ⊗_k H_q(H, N) → H_{p+q}(G × H, M ⊠ N)`. Prove that if `k` has global
+product `× : H_p(G, M) ⊗_k H_q(H, N) → H_{p+q}(G × H, M ⊠ N)` as the map induced by the
+Eilenberg–Zilber shuffle map of the standard resolutions: a `(p, q)`-shuffle contributes its sign,
+so for trivial coefficients `[g] × [h] = [(g, 1)|(1, h)] − [(1, h)|(g, 1)]`. Prove that if `k` has global
 dimension at most one and `N` is projective over `k`, then
 `0 → ⊕_{p+q=n} H_p(G, M) ⊗ H_q(H, N) → Hₙ(G × H, M ⊠ N) → ⊕_{p+q=n−1} Tor₁^k(H_p(G, M), H_q(H, N)) → 0`
 is exact, and split (not naturally) when also `M` is projective over `k`; and that over a field the
@@ -891,23 +1049,7 @@ cross product is an isomorphism (Loh19 Thm. 3.2.22 and Cor. 3.2.23, pp. 135–13
   product alone is not surjective.
 - `Hₙ(ℤ/p × ℤ/p, 𝔽_p) = 𝔽_p^{n+1}` (Loh19 Example 3.2.25, p. 137).
 
-### 5.2 The cross product in cohomology
-
-Define `x × y = pr₁^* x ∪ pr₂^* y` for `x ∈ Hᵖ(G, M)`, `y ∈ H^q(H, N)` with the pairing
-`Res M ⊗ Res N ⟶ M ⊠ N`. Prove that for a field `k`, trivial coefficients `k`, and `H` such that
-`H_q(H, k)` is finite-dimensional for every `q ≤ n`, the map
-`⊕_{p+q=n} Hᵖ(G, k) ⊗ H^q(H, k) → Hⁿ(G × H, k)` is an isomorphism. Route: over a field
-`Hⁿ(−, k) = Hom(Hₙ(−, k), k)` by 5.3, 5.1, and `(V ⊗ W)^* = V^* ⊗ W^*` for finite-dimensional `W`;
-the evaluation of `x × y` on `a × b` is `(−1)^{|y||a|}⟨x, a⟩⟨y, b⟩`. *Needs:* 4.2, 4.6, 5.1, 5.3.
-
-**Checks.**
-
-- `dim Hⁿ(ℤ/p × ℤ/p, 𝔽_p) = n + 1`.
-- The finiteness hypothesis is used: for `G = H = ℤ^{(ℕ)}` and `k = ℚ`, `H²(G × H, ℚ)` contains
-  `(ℚ^{(ℕ)} ⊗ ℚ^{(ℕ)})^*`, larger than `ℚ^ℕ ⊗ ℚ^ℕ`.
-- For `H` trivial, `x × 1 = pr₁^* x` and the map is `pr₁^*`, an isomorphism.
-
-### 5.3 Universal coefficient sequences
+### 5.2 Universal coefficient sequences
 
 Prove, for `k` of global dimension at most one, any group `G` and a `k`-module `A` with trivial
 action, natural short exact sequences, split but not naturally,
@@ -928,24 +1070,69 @@ trivial coefficients are free `k`-modules, `C(G; A) = C(G; k) ⊗_k A` and
 - `H₂(ℤ/2, ℤ/2) = H₂(ℤ/2, ℤ) ⊗ ℤ/2 ⊕ Tor(H₁(ℤ/2, ℤ), ℤ/2) = 0 ⊕ ℤ/2`; the sequence without the
   `Tor` term would give `0`.
 
+### 5.3 The cross product in cohomology
+
+Define `x × y = pr₁^* x ∪ pr₂^* y` for `x ∈ Hᵖ(G, M)`, `y ∈ H^q(H, N)` with the pairing
+`Res M ⊗ Res N ⟶ M ⊠ N`. Prove that for a field `k`, trivial coefficients `k`, and `H` such that
+`H_q(H, k)` is finite-dimensional for every `q ≤ n`, the map
+`⊕_{p+q=n} Hᵖ(G, k) ⊗ H^q(H, k) → Hⁿ(G × H, k)` is an isomorphism (Loh19 Outlook 3.2.26, p. 138,
+Loh19 line 5985–5994, records the statement without proof; the generality here follows from 5.1
+and 5.2). Route: over a field `Hⁿ(−, k) = Hom(Hₙ(−, k), k)` by 5.2, 5.1, and
+`(V ⊗ W)^* = V^* ⊗ W^*` for finite-dimensional `W`; with the evaluation of 4.6 and the cross product
+of 5.1, `⟨x × y, a × b⟩ = ⟨x, a⟩⟨y, b⟩` for trivial coefficients, without sign, because on
+normalized representatives (HS53 line 368–379) only the identity shuffle survives in the
+Alexander–Whitney front and back faces. *Needs:* 4.3, 4.6, 5.1, 5.2.
+
+- The cross product is bilinear and natural in compatible pairs on both factors and in the
+  coefficients.
+- `x × 1 = pr₁^* x` and `1 × y = pr₂^* y`.
+- Graded commutativity: under the exchange `τ : G × H ≅ H × G`, `τ^*(y × x) = (−1)^{pq} x × y`, by
+  the graded commutativity of 4.3.
+- Evaluation: for trivial coefficients, `a ∈ H_p(G, k)` and `b ∈ H_q(H, k)`,
+  `⟨x × y, a × b⟩ = ⟨x, a⟩⟨y, b⟩`.
+- Künneth: for a field `k` and `H_q(H, k)` finite-dimensional for `q ≤ n`, the cross product is
+  an isomorphism onto `Hⁿ(G × H, k)`.
+
+**Checks.**
+
+- `dim Hⁿ(ℤ/p × ℤ/p, 𝔽_p) = n + 1`.
+- The finiteness hypothesis is used: for `G = H = ℤ^{(ℕ)}` and `k = ℚ`, `H²(G × H, ℚ)` contains
+  `(ℚ^{(ℕ)} ⊗ ℚ^{(ℕ)})^*`, larger than `ℚ^ℕ ⊗ ℚ^ℕ`.
+- For `H` trivial, `x × 1 = pr₁^* x` and the map is `pr₁^*`, an isomorphism.
+- Bidegree `(1, 1)` without sign: for `G = H = ℤ`, `k = ℚ`, `x, y` the identity characters and
+  `a = [1]`, `b = [1]`, `a × b = [e₁|e₂] − [e₂|e₁]` in `H₂(ℤ², ℚ)` and
+  `⟨x × y, a × b⟩ = (x × y)(e₁, e₂) − (x × y)(e₂, e₁) = 1 − 0 = 1 = ⟨x, a⟩⟨y, b⟩`; the Koszul
+  factor `(−1)^{|y||a|}` would give `−1`.
+
 ### 5.4 The Pontryagin ring of an abelian group
 
 Define, for an abelian group `A` (`CommGroup A`, in `Type u`), the Pontryagin product on
-`H•(A, k)` (trivial coefficients) as the cross product of 5.1 followed by the map induced by the
-multiplication `A × A →* A`. Prove that it makes `⊕ₙ Hₙ(A, k)` a graded-commutative, associative,
-unital `k`-algebra, natural in `A`, in which degree-one classes square to zero; that the
-resulting algebra map `ψ : Λ_k(A ⊗ k) → H•(A, k)` extending `H₁(A, k) ≅ A ⊗ k` is an isomorphism in
-degrees `≤ 2` for `k = ℤ` (so `H₂(A, ℤ) ≅ Λ²A`), in all degrees for torsion-free `A`, and in all
-degrees when `k` is a `ℚ`-algebra; and that for a field `k` the cross product
-`H•(A, k) ⊗ H•(B, k) ≅ H•(A × B, k)` is an isomorphism of graded algebras, so that for finitely
-generated `A` the algebra is computed from the cyclic factors (Brown82 Ch. V). Routes: for
-torsion-free `A`, Künneth for `ℤⁿ` from `H•(ℤ, k) = Λ(k)` (3.6) and the colimit over finitely
-generated subgroups; for a `ℚ`-algebra, the torsion subgroup has trivial positive-degree
-homology; in degree `2`, Künneth for finitely generated `A` (`Λ²(A ⊕ B) = Λ²A ⊕ Λ²B ⊕ A ⊗ B`)
-and colimits. *Needs:* 5.1, 3.6; Mathlib `groupHomology` of finite cyclic groups
+`H•(A, k) = ⊕ₙ Hₙ(A, k)` (trivial coefficients) as the cross product of 5.1 followed by the map
+induced by the multiplication `A × A →* A`, and, once degree-one classes are shown to square to
+zero, the algebra map `ψ : Λ_k(A ⊗ k) → H•(A, k)` extending `H₁(A, k) ≅ A ⊗ k`; prove the laws and
+comparisons below (Brown82 Ch. V). Routes: for torsion-free `A`, Künneth for `ℤⁿ` from
+`H•(ℤ, k) = Λ(k)` (3.6) and the colimit over finitely generated subgroups; for a `ℚ`-algebra, the
+torsion subgroup has trivial positive-degree homology; in degree `2`, Künneth for finitely
+generated `A` (`Λ²(A ⊕ B) = Λ²A ⊕ Λ²B ⊕ A ⊗ B`) and colimits. Each colimit is the directed-union
+identification of SchemeKTheoryOperations §6.7, whose surjective half is Tau Ceti's
+`groupHomology.exists_map_subtype_eq`. *Needs:* 5.1, 3.6; SchemeKTheoryOperations §6.7 (directed
+unions); Mathlib `groupHomology` of finite cyclic groups
 (`RepresentationTheory/Homological/GroupHomology/FiniteCyclic.lean`); Tau Ceti
 `groupHomology.exists_map_subtype_eq` and `TauCeti.groupHomology.isZero_groupHomology_of_directed`
 (`…/GroupHomology/DirectedUnion.lean`).
+
+- Functoriality: a homomorphism of abelian groups induces a homomorphism of graded `k`-algebras.
+- Algebra laws: the product is associative and unital, with unit `1 ∈ H₀(A, k) = k`, and graded
+  commutative, `xy = (−1)^{|x||y|} yx`.
+- Degree one: `x² = 0` for every `x ∈ H₁(A, k)`, so `ψ` is defined.
+- Integral comparison: for `k = ℤ`, `ψ` is an isomorphism in degrees `≤ 2`; in particular
+  `H₂(A, ℤ) ≅ Λ²A`.
+- Torsion-free comparison: for torsion-free `A` and every `k`, `ψ` is an isomorphism in all degrees.
+- Rational comparison: for every `A` and every `ℚ`-algebra `k`, `ψ` is an isomorphism in all
+  degrees.
+- Products: for a field `k`, the cross product `H•(A, k) ⊗ H•(B, k) → H•(A × B, k)` is an
+  isomorphism of graded algebras, so that for finitely generated `A` the algebra is the tensor
+  product of those of its cyclic factors.
 
 **Checks.**
 
@@ -953,6 +1140,9 @@ and colimits. *Needs:* 5.1, 3.6; Mathlib `groupHomology` of finite cyclic groups
 - `H•(ℤⁿ, ℤ) ≅ Λ(ℤⁿ)`, with ranks `C(n, i)`, as for the torus in AlgebraicTopology §5.4.
 - In degree `3`, `Λ³(ℤ/2) = 0` while `H₃(ℤ/2, ℤ) = ℤ/2`: the restriction to degrees `≤ 2` for
   `k = ℤ` is needed.
+- `ℚ` is the union of the chain `(1/m!)ℤ`: the colimit of `H₁ = ℤ` along multiplication by `m + 1`
+  is `ℚ = Λ¹ℚ = H₁(ℚ, ℤ)`, and `H₂(ℚ, ℤ) = Λ²ℚ = 0`. Surjectivity of the colimit map alone, the
+  half that Tau Ceti supplies, would leave `H₁(ℚ, ℤ)` a quotient of `ℚ`.
 
 ### Examples
 
@@ -972,20 +1162,30 @@ Throughout, `N ◁ G`, `Q = G ⧸ N` and `M : Rep k G`; `Q` acts on `Hⁿ(N, M)`
 
 ### 6.1 Normalized cochains and the extension filtration
 
-Define the normalized cochains `C̄ⁿ(G, M) ⊂ Cⁿ(G, M)`, those vanishing when some argument is `1`,
-and prove that they form a subcomplex whose inclusion is a quasi-isomorphism (HS53 line 368–379;
-the dual of Mathlib's deformation retraction of the alternating face complex onto the normalized
-Moore complex, applied to the standard resolution). Define the decreasing filtration
-`A_j ⊂ C̄(G, M)`: `A_j ∩ C̄ⁿ = C̄ⁿ` for `j ≤ 0`; for `0 < j ≤ n`, the cochains vanishing whenever
-`n − j + 1` of the arguments lie in `N`; `0` for `j > n` (HS53 Ch. II §1, p. 118). Prove that each
-`A_j` is a subcomplex, that the filtration is finite in each degree (`A_0 = C̄`,
-`A_{n+1} ∩ C̄ⁿ = 0`), multiplicative (`A_r ∪ B_s ⊂ C_{r+s}` for a pairing), and natural for
-morphisms of pairs `(G', N') → (G, N)`; and that the second filtration `A*_j` (cochains depending
-only on the first `n − j` arguments and the cosets mod `N` of the last `j`) has the same spectral
-sequence from `E₁` on (HS53 Ch. II §1 Prop. 1 and Lemma 1, pp. 119–121). *Needs:* Mathlib
+Define the normalized cochains `C̄ⁿ(G, M) ⊂ Cⁿ(G, M)`, those vanishing when some argument is `1`
+(HS53 line 368–379; the dual of Mathlib's deformation retraction of the alternating face complex
+onto the normalized Moore complex, applied to the standard resolution). Define the decreasing
+filtration `A_j ⊂ C̄(G, M)`: `A_j ∩ C̄ⁿ = C̄ⁿ` for `j ≤ 0`; for `0 < j ≤ n`, the cochains vanishing
+whenever `n − j + 1` of the arguments lie in `N`; `0` for `j > n` (HS53 Ch. II §1, p. 118). Define
+the second filtration `A*_j`: for `0 < j ≤ n`, the cochains depending only on the first `n − j`
+arguments and the cosets mod `N` of the last `j` (HS53 Ch. II §1 Prop. 1 and Lemma 1,
+pp. 119–121). Prove the properties below. *Needs:* Mathlib
 `groupCohomology.cochainsFunctor`,
 `AlgebraicTopology.DoldKan.homotopyEquivNormalizedMooreComplexAlternatingFaceMapComplex`,
 `AlgebraicTopology.inclusionOfMooreComplexMap`; Tau Ceti `CochainComplex.filtrationFunctor`.
+
+- Normalization: `C̄(G, M)` is a subcomplex of the inhomogeneous cochains and its inclusion is a
+  quasi-isomorphism, natural in `M` and in compatible pairs.
+- Each `A_j` is a subcomplex, and `A_{j+1} ⊂ A_j`.
+- Bounded in each degree: `A_j ∩ C̄ⁿ = C̄ⁿ` for `j ≤ 0` and `A_{n+1} ∩ C̄ⁿ = 0`. As the increasing
+  filtration `F_t = A_{−t}` indexed by `ℤ`, the input of `CochainComplex.filtrationFunctor`,
+  `F_t = C̄` for `t ≥ 0`, but no `F_t` is zero when `C̄` is unbounded: the bound holds degree by
+  degree, not globally.
+- Multiplicativity: for a pairing `M ⊗ M' ⟶ P`, `A_r(M) ∪ A_s(M') ⊂ A_{r+s}(P)`.
+- Naturality: a morphism of pairs `(G', N') → (G, N)` with a compatible coefficient map sends each
+  `A_j` into `A_j`.
+- Second filtration: each `A*_j` is a subcomplex contained in `A_j`, and the inclusions induce an
+  isomorphism of spectral sequences from `E₁` on.
 
 **Checks.**
 
@@ -1000,18 +1200,28 @@ sequence from `E₁` on (HS53 Ch. II §1 Prop. 1 and Lemma 1, pp. 119–121). *N
 
 ### 6.2 The cohomological Hochschild–Serre spectral sequence
 
-Prove that the spectral sequence of the filtration `(A_j)` (Tau Ceti's `CochainComplex.spectralSequence`
-of `CochainComplex.filtrationFunctor`) has `E₁^{p,q} ≅ C̄^p(Q, H^q(N, M))` through restriction of
-the first `q` arguments to `N` (HS53 Ch. II §2 Thm. 1, p. 121, and §5 Prop. 3, p. 125), with `d₁`
+MappingClassGroupsAndCanonicalRepresentations §1.1 states that every extension of discrete groups
+has a natural spectral sequence `E₂^{p,q} = Hᵖ(Q, H^q(N, M)) ⇒ H^{p+q}(G, M)`. Realise it as the
+spectral sequence of the filtration `(A_j)`: Tau Ceti's `CochainComplex.spectralSequence` of
+`CochainComplex.filtrationFunctor` for `F_t = A_{−t}`, in which the classical `E_r^{p,q}` is the
+object at `(2p + q + 1, −p − 1)` on page `r + 1` (Exact supplier contracts). Prove that
+`E₁^{p,q} ≅ C̄^p(Q, H^q(N, M))` through restriction of the first `q` arguments to `N` of
+representatives in `A*_p` (HS53 Ch. II §2 Thm. 1, p. 121; for representatives in `A_p` the
+restriction is applied to the shuffle sum of HS53 Ch. II §3, as in §5 Prop. 3, p. 125), with `d₁`
 equal to `(−1)^q` times the coboundary (HS53 Ch. II §4 Thm. 2, p. 125), so that
-`E₂^{p,q} ≅ Hᵖ(Q, H^q(N, M)) ⇒ H^{p+q}(G, M)`, converging with
-`E_∞^{p,q} = F^pH^{p+q}/F^{p+1}H^{p+q}` (Tau Ceti `CochainComplex.filtrationAbutmentIso`,
-`CochainComplex.filtrationSpectralSequencePageXIsoGradedOfFinite`). Prove naturality for morphisms
-of extensions `(G', N') → (G, N)` with compatible coefficient maps (HS53 Ch. I §7 Prop. 7, p. 117,
-for the existence; Loh19 Thm. 3.2.12(2) and Remark 3.2.14, pp. 123–125). *Needs:* 1.2, 6.1; Tau Ceti
+`E₂^{p,q} ≅ Hᵖ(Q, H^q(N, M))`. Prove convergence, `E_∞^{p,q} ≅ A_pH^{p+q}/A_{p+1}H^{p+q}` with
+`A_pHⁿ` the image of `Hⁿ(A_p)` in `Hⁿ(G, M)`: in Mathlib's numbering, from page
+`r ≥ max(q + 3, p + 2)` on, `H^{p+q+1}(F_{1−p−r}) = H^{p+q+1}(A_{p+r−1}) = 0` because `A_{p+r−1}` is
+zero in degree `p + q + 1`, and `C̄/F_{r−p−2} = C̄/A_{p+2−r} = 0`, which are the hypotheses of
+`CochainComplex.filtrationSpectralSequencePageXIsoEInfty`; then
+`CategoryTheory.Abelian.SpectralObject.EInftyIsoCokernel` identifies `E∞` with the graded piece.
+Prove naturality for morphisms of extensions `(G', N') → (G, N)` with compatible coefficient maps
+(HS53 Ch. I §7 Prop. 7, p. 117, for the existence; Loh19 Thm. 3.2.12(2) and Remark 3.2.14,
+pp. 123–125). *Needs:* 1.2, 6.1; MappingClassGroupsAndCanonicalRepresentations §1.1; Tau Ceti
 `CochainComplex.spectralSequence`, `CochainComplex.spectralSequenceFirstPageXIsoCokernel`,
 `CochainComplex.spectralSequence_first_page_d_eq`, `CochainComplex.filtrationAbutmentIso`,
-`CochainComplex.filtrationSpectralSequencePageXIsoGradedOfFinite`, `CochainComplex.filtrationFunctorMap`.
+`CochainComplex.filtrationSpectralSequencePageXIsoEInfty`,
+`CategoryTheory.Abelian.SpectralObject.EInftyIsoCokernel`, `CochainComplex.filtrationFunctorMap`.
 
 **Checks.**
 
@@ -1023,6 +1233,10 @@ for the existence; Loh19 Thm. 3.2.12(2) and Remark 3.2.14, pp. 123–125). *Need
 - For `G = ℤ/4 ⊃ N = 2ℤ/4` and `𝔽₂`, `E₂^{p,q} = 𝔽₂` for all `p, q ≥ 0` while
   `Hⁿ(ℤ/4, 𝔽₂) = 𝔽₂`: the spectral sequence does not degenerate at `E₂`, and `d₂` is the
   transgression of 6.6.
+- Convergence needs no global bound: for `N = 1`, `G = ℤ/2` and `𝔽₂`, `A_j ∩ C̄ʲ = C̄ʲ ≠ 0` for every
+  `j`, so no `F_t` is zero and `CochainComplex.filtrationSpectralSequencePageXIsoGradedOfFinite`
+  does not apply; in bidegree `(p, 0)` the two vanishing hypotheses hold from page `max(3, p + 2)`,
+  and `E_∞^{p,0} = Hᵖ(ℤ/2, 𝔽₂) = 𝔽₂`.
 
 ### 6.3 The homological Hochschild–Serre spectral sequence
 
@@ -1066,20 +1280,28 @@ Route in homology: naturality of 6.3 for the morphisms of extensions `(N, N) →
 
 Prove that for a pairing `μ : M ⊗ M' ⟶ P` the pages of 6.2 carry pairings
 `E_r^{p,q} ⊗ E_r^{p',q'} → E_r^{p+p',q+q'}` for which every `d_r` is a derivation
-(`d_r(u ∪ v) = d_r u ∪ v + (−1)^{p+q} u ∪ d_r v`); that on `E₂` the pairing is `(−1)^{qp'}` times the
-cup product of 4.2 on `Q` with coefficients paired by the cup product on `N`; and that on `E_∞` it
-is induced by the cup product on `G` with the filtration `F^p ∪ F^{p'} ⊂ F^{p+p'}` (HS53 Ch. II §5
-Thm. 3 and the remark after it, p. 126; HS53 line 397–400). *Needs:* 4.2, 6.1, 6.2; Tau Ceti
-`CochainComplex.filtrationFunctorMap`.
+(`d_r(u ∪ v) = d_r u ∪ v + (−1)^{p+q} u ∪ d_r v`); that for `u ∈ E₂^{p,q}` and `v ∈ E₂^{p',q'}`,
+under the identification of 6.2 (restriction of the first `q` arguments to `N`), `u ∪ v` is
+`(−1)^{pq'}` times the cup product of 4.1 on `Q` of the classes of `u` and `v`, with coefficients
+paired by the cup product on `N`; and that on `E_∞` it is induced by the cup product on `G` with
+`A_pH ∪ A_{p'}H ⊂ A_{p+p'}H` (HS53 Ch. II §5 Thm. 3 and the remark after it, p. 126,
+HS53 line 686–700; HS53 line 397–400). With `d₁ = (−1)^q d` of 6.2 the derivation rule on `E₁` is
+compatible with the sign `(−1)^{pq'}`; with `(−1)^{qp'}` the term `d₁u ∪ v` would acquire an extra
+factor `(−1)^{q'}`. *Needs:* 4.1, 4.3, 6.1, 6.2; Tau Ceti `CochainComplex.filtrationFunctorMap`.
 
 **Checks.**
 
 - For `N = 1` the pairing on the row `q = 0` is the cup product on `G`.
 - For `G = ℤ/2 × ℤ/2 ⊃ N = 0 × ℤ/2` and `𝔽₂`, `E₂ = 𝔽₂[x] ⊗ 𝔽₂[y]` with `x` from `Q` and `y` from
-  `N`; the sign is invisible mod `2`, and the product is the cohomology ring of 5.2.
-- The sign `(−1)^{qp'}` is visible for `G = ℤ × ℤ ⊃ N = 0 × ℤ` and `ℤ`: for `y ∈ E₂^{0,1}` and
-  `x ∈ E₂^{1,0}` the formula gives `y ∪ x = −(x ∪ y)` in `E₂^{1,1} = ℤ = E_∞^{1,1} = H²(ℤ², ℤ)`, as
-  graded commutativity in `H²(ℤ², ℤ)` requires; without the sign the two products would be equal.
+  `N`; the sign is invisible mod `2`, and the product is the cohomology ring of 5.3.
+- The sign is pinned on `G = ℤ × ℤ ⊃ N = 0 × ℤ`, `Q = ℤ`, `M = ℤ`, with `x ∈ E₂^{1,0} = Hom(Q, ℤ)`
+  and `y ∈ E₂^{0,1} = Hom(N, ℤ)` the identity characters and `x·y ∈ E₂^{1,1} = Hom(Q, Hom(N, ℤ))`
+  the class of `γ ↦ x(γ)y`. For the coordinate projections `x̃, ỹ` of `G`, the cocycle `ỹ ∪ x̃`
+  lies in `A*_1` and restricts in its first argument to `(σ, γ) ↦ y(σ)x(γ)`, so `y ∪ x ↦ +x·y`, as
+  `(−1)^{pq'} = (−1)^{0·0}` predicts; graded commutativity in `H²(ℤ², ℤ) = E_∞^{1,1}` then gives
+  `x ∪ y ↦ −x·y`, as `(−1)^{1·1}` predicts. The sign `(−1)^{qp'}` gives the opposite values, and
+  the anticommutativity of the two products does not distinguish the conventions. The plain
+  restriction of `x̃ ∪ ỹ`, which is not in `A*_1`, is `0`: representatives must be taken in `A*`.
 
 ### 6.6 Transgression
 
@@ -1088,16 +1310,25 @@ Define, for `n ≥ 1`, a class `x ∈ Hⁿ(N, M)` to be *transgressive* if some 
 `c ∈ C̄ⁿ⁺¹(Q, M^N)`; and the *transgression* `τ(x)` as the class of `c` in the quotient of
 `Hⁿ⁺¹(Q, M^N)` identified with `E_{n+1}^{n+1,0}`. Prove that the transgressive classes are exactly
 the image of `E_{n+1}^{0,n}` in `Hⁿ(N, M)`, and that `τ` is `d_{n+1}` (HS53 Ch. III §3 Prop. 1 and
-the paragraph after it, pp. 128–129). Prove that for `n = 1` every class of `H¹(N, M)^Q` is
-transgressive, so that `τ : H¹(N, M)^Q → H²(Q, M^N)` is defined for every group, through a
-set-theoretic section `s : Q → G` with `s(1) = 1`: the cochain
-`f(g) = h(s(gN)) + s(gN)·c(s(gN)⁻¹ g)` satisfies the identities of Tau Ceti's
-`TauCeti.ContCohomology.IsTransgressionLift` (with `G` and `M` discrete), for a cocycle `c` on `N`
-and a choice `h` of elements with `g·c(g⁻¹ ν g) − c(ν) = ν·h(g) − h(g)`. Prove that when `N` acts
-trivially on `M`, `d₂ : Hᵖ(Q, Hom(N^ab, M)) → H^{p+2}(Q, M)` is `u ↦ −c ∪ u`, where
-`c ∈ H²(Q, N^ab)` is the class (Conventions) of `1 → N^ab → G ⧸ [N, N] → Q → 1` and the pairing is
-evaluation (HS53 Ch. III §6 Thm. 4, p. 133). *Needs:* 1.2, 4.2, 6.1, 6.2, 6.5; Tau Ceti
-`TauCeti.ContCohomology.IsTransgressionLift`.
+the paragraph after it, pp. 128–129). In degree one, MappingClassGroupsAndCanonicalRepresentations
+§1.1 lifts every class of `H¹(N, M)^Q` through a set-theoretic section `s : Q → G` with
+`s(1) = 1` to a cochain satisfying `TauCeti.ContCohomology.IsTransgressionLift` (with `G` and `M`
+discrete) and defines its transgression `tg`; prove that every class of `H¹(N, M)^Q` is
+transgressive and that `τ = tg = d₂` on `E₂^{0,1}`. Prove that when `N` acts trivially on `M`,
+`d₂ : Hᵖ(Q, Hom(N^ab, M)) → H^{p+2}(Q, M)` is `u ↦ −c ∪ u`, where `c ∈ H²(Q, N^ab)` is the class
+(Conventions) of `1 → N^ab → G ⧸ [N, N] → Q → 1` and the pairing is evaluation (HS53 Ch. III §6
+Thm. 4, p. 133). *Needs:* 1.2, 4.3, 6.1, 6.2, 6.5; MappingClassGroupsAndCanonicalRepresentations
+§1.1; Tau Ceti `TauCeti.ContCohomology.IsTransgressionLift`.
+
+- The transgressive classes form a `k`-submodule of `Hⁿ(N, M)^Q`, equal to the image of
+  `E_{n+1}^{0,n}`.
+- `τ` is well defined with values in the quotient of `H^{n+1}(Q, M^N)` by the images of
+  `d₂, …, d_n`, which is `E_{n+1}^{n+1,0}`; it is `k`-linear and equal to `d_{n+1}`.
+- Degree one: `τ` is defined on all of `H¹(N, M)^Q`, for every group, with values in
+  `H²(Q, M^N)`, and equals §1.1's `tg` and `d₂`.
+- Naturality: `τ` commutes with the maps induced by morphisms of extensions with compatible
+  coefficient maps.
+- Trivial action: when `N` acts trivially on `M`, `d₂ = −c ∪ (−)` on `Hᵖ(Q, Hom(N^ab, M))`.
 
 **Checks.**
 
@@ -1113,57 +1344,67 @@ evaluation (HS53 Ch. III §6 Thm. 4, p. 133). *Needs:* 1.2, 4.2, 6.1, 6.2, 6.5; 
 
 Prove:
 
-- **Cohomological five-term sequence.** `0 → H¹(Q, M^N) → H¹(G, M) → H¹(N, M)^Q →τ H²(Q, M^N) → H²(G, M)`
-  is exact, with inflation, restriction, the transgression of 6.5 and inflation (HS53 Ch. III §4,
-  remark after Thm. 2, p. 130).
-- **Degree `m`.** For `m ≥ 1`, if `H^q(N, M) = 0` for `0 < q < m`, then
-  `0 → H^m(Q, M^N) → H^m(G, M) → H^m(N, M)^Q →τ H^{m+1}(Q, M^N) → H^{m+1}(G, M)` is exact and the
-  transgressive classes are all of `H^m(N, M)^Q` (HS53 Ch. III §4 Thm. 2, p. 129). This extends
-  `TauCeti.groupCohomology.HInfRes_exact` by the transgression term.
+- **Degree `m`.** For `m ≥ 2`, if `H^q(N, M) = 0` for `0 < q < m`, then
+  `0 → H^m(Q, M^N) → H^m(G, M) → H^m(N, M)^Q →τ H^{m+1}(Q, M^N) → H^{m+1}(G, M)` is exact, with
+  inflation, restriction, the transgression of 6.6 and inflation, and the transgressive classes are
+  all of `H^m(N, M)^Q` (HS53 Ch. III §4 Thm. 2, p. 129, HS53 line 825–830). This extends
+  `TauCeti.groupCohomology.HInfRes_exact` by the transgression term. For `m = 1` the hypothesis is
+  vacuous and the sequence is the cohomological five-term sequence of
+  MappingClassGroupsAndCanonicalRepresentations §1.1 (HS53 line 854–856), whose transgression is the
+  `τ` of 6.6.
 - **Homological five-term sequence.**
   `H₂(G, M) → H₂(Q, M_N) → H₁(N, M)_Q → H₁(G, M) → H₁(Q, M_N) → 0` is exact, with coinflation, `d²`,
   corestriction and coinflation (Loh19 proof of Thm. 3.2.18, pp. 129–131). Its last three terms
   are Mathlib's `groupHomology.H1CoresCoinf`.
 
-*Needs:* 6.2, 6.3, 6.4, 6.6; Tau Ceti `TauCeti.groupCohomology.HInfRes_exact`; Mathlib
-`groupHomology.H1CoresCoinf`; `gap:homological-low-degree`.
+*Needs:* 6.2, 6.3, 6.4, 6.6; MappingClassGroupsAndCanonicalRepresentations §1.1; Tau Ceti
+`TauCeti.groupCohomology.HInfRes_exact`; Mathlib `groupHomology.H1CoresCoinf`;
+`gap:homological-low-degree`.
 
 **Checks.**
 
 - `N = 1` and `N = G`: the sequences reduce to isomorphisms between the outer terms.
-- `G = S₃`, `N = A₃`, `M = 𝔽₃`: `0 → 0 → H¹(S₃, 𝔽₃) → H¹(A₃, 𝔽₃)^{ℤ/2} = 0`, so `H¹(S₃, 𝔽₃) = 0`.
-- The hypothesis `m ≥ 1` is needed: at `m = 0` the first three terms are `M^G → M^G → M^G` with
-  both maps the identity, and exactness at the middle term fails whenever `M^G ≠ 0`, for instance
-  for `M = ℤ`.
+- Degree `2` for `ℤ/2 ≅ 2ℤ/4 ⊂ ℤ/4` and `M = ℤ`: `H¹(N, ℤ) = Hom(ℤ/2, ℤ) = 0`, and the sequence is
+  `0 → H²(ℤ/2, ℤ) = ℤ/2 → H²(ℤ/4, ℤ) = ℤ/4 → H²(N, ℤ)^Q = ℤ/2 → H³(ℤ/2, ℤ) = 0`, with inflation the
+  dual of `ℤ/4 ↠ ℤ/2` (injective) and restriction the dual of `ℤ/2 ↪ ℤ/4` (onto). The vanishing
+  hypothesis is needed: with `M = 𝔽₂`, `H¹(N, 𝔽₂) ≠ 0` and inflation
+  `H²(ℤ/2, 𝔽₂) → H²(ℤ/4, 𝔽₂)` is zero, since it sends `x²` to the square of the nonzero class of
+  `H¹(ℤ/4, 𝔽₂)`, which vanishes.
+- Homological five-term sequence for `ℤ/2 ⊂ ℤ/4` and `M = ℤ`: `H₂(ℤ/4, ℤ) = 0 → H₂(ℤ/2, ℤ) = 0`,
+  then `0 → H₁(N, ℤ)_Q = ℤ/2 → H₁(ℤ/4, ℤ) = ℤ/4 → H₁(ℤ/2, ℤ) = ℤ/2 → 0`, with corestriction
+  `1 ↦ 2`.
 
-### 6.8 Hopf's formula and central extensions
+### 6.8 Hopf's formula
 
 Prove that for a free group `F` (`FreeGroup S`), `R ◁ F` and `G = F ⧸ R`,
 `H₂(G, ℤ) ≅ (R ⊓ ⁅F, F⁆) ⧸ ⁅F, R⁆`, naturally in presentations (Loh19 Thm. 1.5.1, p. 30, and
 Thm. 3.2.18, p. 129). Route: the homological five-term sequence of 6.7 with `H₂(F, ℤ) = 0` (3.6),
-`H₁(R, ℤ)_G = R/⁅F, R⁆` and `H₁(F, ℤ) = F^ab`. Prove that for a central extension
-`1 → A → E → G → 1` (Mathlib's `GroupExtension`), `H₂(E, ℤ) → H₂(G, ℤ) → A → E^ab → G^ab → 0` is
-exact. *Needs:* 3.6, 6.7; Mathlib `FreeGroup`, `groupHomology` in degree `1`.
+`H₁(R, ℤ)_G = R/⁅F, R⁆` and `H₁(F, ℤ) = F^ab`. The low-degree sequence of a central extension is
+InductionRestrictionPartII RS.0.1's and is not restated here. *Needs:* 3.6, 6.7; Mathlib
+`FreeGroup`, `groupHomology` in degree `1`.
 
 **Checks.**
 
-- `G = ℤ/n` with `F = ℤ`, `R = nℤ`: `R ∩ [F, F] = 0`, so `H₂(ℤ/n, ℤ) = 0`.
+- `G = ℤ/n` with `F = ℤ`, `R = nℤ`: `R ∩ [F, F] = 0`, so `H₂(ℤ/n, ℤ) = 0`. The model
+  `R/⁅F, R⁆` without the intersection with `⁅F, F⁆` would give `nℤ ≅ ℤ`.
 - `G = ℤ²` with `F` free on `a, b`: `R = [F, F]`, and `[F, F]/[F, [F, F]] ≅ ℤ` is generated by
   `[a, b]`, so `H₂(ℤ², ℤ) = ℤ`.
-- For `Q₈` as a central extension of `(ℤ/2)²` by `ℤ/2`, the sequence
-  `H₂(Q₈) → H₂((ℤ/2)²) = ℤ/2 → ℤ/2 → Q₈^ab = (ℤ/2)² → (ℤ/2)² → 0` forces
-  `ℤ/2 → ℤ/2` to be an isomorphism and so `H₂(Q₈, ℤ) → ℤ/2` to be zero, consistent with
-  `H₂(Q₈, ℤ) = 0`.
+- A free group `G = F` with `R = 1` gives `0` on both sides, as `Hₙ(F, ℤ) = 0` for `n ≥ 2` (3.6)
+  requires.
 
 ### 6.9 Comparison with the profinite theory for finite groups
 
-Prove that for finite `G` with the discrete topology, the five-term sequence of 6.7 corresponds
-under `Θ` (1.5) and the explicit comparisons of ProfiniteCohomology §3.1 to the explicit five-term
-sequence of ProfiniteCohomology §5.5, and that the transgression of 6.6 is
+Prove that for finite `G` with the discrete topology, the cohomological five-term sequence
+(MappingClassGroupsAndCanonicalRepresentations §1.1, with the transgression `τ` of 6.6)
+corresponds under `Θ` (1.5) and the explicit comparisons of ProfiniteCohomology §3.1 to the
+explicit five-term sequence of ProfiniteCohomology §5.5, and that the transgression of 6.6 is
 `TauCeti.ContCohomology.transgression` under `TauCeti.ContCohomology.explicitH1IsoGroupCohomology`
-and `TauCeti.ContCohomology.explicitH2IsoGroupCohomology`. *Needs:* 1.5, 6.6, 6.7;
-ProfiniteCohomology §3.1, §5.5; Tau Ceti `TauCeti.ContCohomology.transgression`,
-`TauCeti.ContCohomology.fiveTerm_exact_H1N`.
+and `TauCeti.ContCohomology.explicitH2IsoGroupCohomology`. The sequence itself is HS53 Ch. III §4,
+remark after Thm. 2, p. 130, HS53 line 854–856; the comparison is determined by the definitions of
+the pinned `TauCeti.ContCohomology.IsTransgressionLift`, `TauCeti.ContCohomology.transgression`
+and the explicit comparisons, not by that source. *Needs:* 1.5, 6.6, 6.7;
+MappingClassGroupsAndCanonicalRepresentations §1.1; ProfiniteCohomology §3.1, §5.5; Tau Ceti
+`TauCeti.ContCohomology.transgression`, `TauCeti.ContCohomology.fiveTerm_exact_H1N`.
 
 **Checks.**
 
@@ -1174,15 +1415,18 @@ ProfiniteCohomology §3.1, §5.5; Tau Ceti `TauCeti.ContCohomology.transgression
 
 ### Examples
 
-For `ℤ/2 ⊂ ℤ/4` with `𝔽₂`, `d₂ : E₂^{p,1} → E₂^{p+2,0}` is cup with the nonzero class of
-`H²(ℤ/2, 𝔽₂)` (6.6), an isomorphism for every `p`; so `E₃` is the column `p = 0` and the row
-`q = 0` in degrees `≤ 1`, and `Hₙ(ℤ/4, 𝔽₂) = 𝔽₂`.
+For `ℤ/2 ⊂ ℤ/4` with `𝔽₂`, `E₂ = 𝔽₂[x, y]` with `x ∈ E₂^{1,0}` and `y ∈ E₂^{0,1}` (6.5; signs are
+invisible mod `2`). By 6.6, `d₂y = x²`, the extension class, and `d₂x = 0`, so
+`d₂(xᵖy^q) = q·x^{p+2}y^{q−1}`: an isomorphism for odd `q` and zero for even `q`. The `E₃` page is
+`𝔽₂[x, y²]/(x²)`, supported in the columns `p = 0, 1` and the even rows; every later differential
+`d_r`, `r ≥ 3`, leaves these two columns, so `E₃ = E_∞`, with one copy of `𝔽₂` in each total degree
+(`(0, n)` for even `n`, `(1, n − 1)` for odd `n`), and `Hⁿ(ℤ/4, 𝔽₂) = 𝔽₂` for every `n ≥ 0`.
 
 ### Dependencies
 
-Layers 1–4 and 3.6; Tau Ceti's filtered spectral sequences, inflation–restriction and
-transgression lift; DerivedModuleAlgebra §S.1 with `gap:homological-low-degree`; ProfiniteCohomology
-§§3.1, 5.5 for 6.9.
+Layers 1–4 and 3.6; MappingClassGroupsAndCanonicalRepresentations §1.1; Tau Ceti's filtered
+spectral sequences, inflation–restriction and transgression lift; DerivedModuleAlgebra §S.1 with
+`gap:homological-low-degree`; ProfiniteCohomology §§3.1, 5.5 for 6.9.
 
 ---
 
@@ -1220,12 +1464,31 @@ restriction maps `Hⁿ(G, M)(p)` isomorphically onto the stable classes; that fo
 homological corestriction maps the classes `z ∈ Hₙ(P, M)` with
 `tr^P_{P ∩ gPg⁻¹} z = tr^{gPg⁻¹}_{P ∩ gPg⁻¹}(c_g z)` for all `g` isomorphically onto `Hₙ(G, M)(p)`;
 and that in Tate cohomology restriction maps `Ĥⁿ(G, M)(p)` isomorphically onto the stable classes of
-`Ĥⁿ(P, M)` for every `n ∈ ℤ`. If `P` is abelian, the stable classes are the invariants of `N_G(P)`
-acting by conjugation (Brown82 Ch. III §10). Route: injectivity is Tau Ceti's Sylow theorem; for a
-stable `z`, 7.1 gives `res cor z = [G : P] z` with `[G : P]` prime to `p` (MilneCFT Ch. II Prop. 1.30
-and Cor. 1.33, pp. 70–71; Hutchinson13 §3, p. 11, Hutchinson13 line 482–491). *Needs:* 1.1, 7.1;
-Tau Ceti `TauCeti.groupCohomology.eq_zero_of_pow_nsmul_eq_zero_of_map_sylow_eq_zero`; ClassFieldTheory
+`Ĥⁿ(P, M)` for every `n ∈ ℤ`. If `P` is abelian and `G` acts trivially on `M`, the stable classes are
+the invariants of `N_G(P)` acting by conjugation (Brown82 Ch. III §10): by Burnside's fusion
+argument, for `A ≤ P` and `g` with `gAg⁻¹ ≤ P` some `n ∈ N_G(P)` induces the same map `A → P` as
+`g`, and with trivial coefficients `c_g` depends only on that map. For a nontrivial action the
+fusion conditions remain (Checks). Route: injectivity is Tau Ceti's Sylow theorem; for a stable
+`z`, 7.1 gives `res cor z = [G : P] z` with `[G : P]` prime to `p` (MilneCFT Ch. II Prop. 1.30 and
+Cor. 1.33, pp. 70–71; Hutchinson13 §3, p. 11, Hutchinson13 line 482–491). For `M = ℤ_(r)` with
+trivial action and `n ≥ 1`, the cohomological statement is the stable-element theorem of
+K3BlochGroups §5.2; the target adds arbitrary coefficients, homology and Tate cohomology.
+*Needs:* 1.1, 7.1; K3BlochGroups §5.2 for the comparison; Tau Ceti
+`TauCeti.groupCohomology.eq_zero_of_pow_nsmul_eq_zero_of_map_sylow_eq_zero`; ClassFieldTheory
 Layer 0 (Tate restriction and corestriction); Mathlib `Sylow`.
+
+- The stable classes form a `k`-submodule of `Hⁿ(P, M)` (respectively of `Ĥⁿ(P, M)`, and, with the
+  transfer condition, of `Hₙ(P, M)`) containing the restriction (respectively the transfer) of
+  every class of `G`.
+- Cohomology, `n ≥ 1`: `res^G_P` restricts to an isomorphism from `Hⁿ(G, M)(p)` onto the stable
+  classes, inverse to `[G : P]⁻¹ cor^G_P`, `[G : P]` acting invertibly on `p`-primary parts.
+- Homology, `n ≥ 1`: the homological corestriction is an isomorphism from the stable classes of
+  `Hₙ(P, M)` onto `Hₙ(G, M)(p)`.
+- Tate cohomology, every `n ∈ ℤ`: `res^G_P` restricts to an isomorphism from `Ĥⁿ(G, M)(p)` onto the
+  stable classes of `Ĥⁿ(P, M)`.
+- Abelian Sylow subgroup and trivial action: the stable classes are the `N_G(P)`-invariants.
+- Comparison: for `M = ℤ_(r)` with trivial action, `p = r` and `n ≥ 1`, `Hⁿ(G, ℤ_(r))(r) = Hⁿ(G, ℤ_(r))`
+  and the cohomological isomorphism is that of K3BlochGroups §5.2.
 
 **Checks.**
 
@@ -1235,6 +1498,13 @@ Layer 0 (Tate restriction and corestriction); Mathlib `Sylow`.
   `H²(S₃, ℤ) = ℤ/2` and `H⁴(S₃, ℤ) = ℤ/6`.
 - Degree `0` is excluded: for `M = ℤ`, `H⁰(G, ℤ)(p) = 0` while every element of `H⁰(P, ℤ) = ℤ` is
   stable.
+- The trivial-action hypothesis of the abelian simplification is needed: for `G = C₂ × S₃`, `p = 2`,
+  `P = C₂ × ⟨(12)⟩` (abelian, with `N_G(P) = P`) and `M = 𝔽₂³` with `S₃` permuting the coordinates
+  and `C₂ = ⟨z⟩` acting trivially, the cocycle on `P` with `z ↦ e₃` and `(12) ↦ 0` is
+  `N_G(P)`-invariant, but for `g = (23)`, `P ∩ gPg⁻¹ = ⟨z⟩` and `c_g` changes its restriction to
+  `H¹(⟨z⟩, M) = M` from `e₃` to `(23)·e₃ = e₂`, so it is not stable. Counting: as a `P`-module
+  `M = 𝔽₂[P/⟨z⟩] ⊕ 𝔽₂`, so `dim H¹(P, M) = 1 + 2 = 3`, all `N_G(P)`-invariant, while
+  `M = Ind_P^G 𝔽₂` gives `dim H¹(G, M) = dim H¹(P, 𝔽₂) = 2`, the dimension of the stable classes.
 
 ### Examples
 
@@ -1258,20 +1528,23 @@ Let `M : Rep ℤ G` and `M^∨ = Hom(M, ℚ/ℤ)` with the contragredient action
 product with the evaluation `M^∨ ⊗ M → ℚ/ℤ`, followed by
 `Ĥ⁻¹(G, ℚ/ℤ) = {x ∈ ℚ/ℤ : |G|x = 0} ⊂ ℚ/ℤ`, induces isomorphisms
 `Ĥⁱ(G, M^∨) ≅ Hom(Ĥ^{−1−i}(G, M), ℚ/ℤ)` for all `i ∈ ℤ`. Prove that for `M` free as an abelian
-group, cup product into `Ĥ⁰(G, ℤ) = ℤ/|G|` induces `Ĥⁱ(G, Hom(M, ℤ)) ≅ Hom(Ĥ^{−i}(G, M), ℚ/ℤ)`, and
-that `H^{d+1}(G, ℤ) ≅ Hom(H_d(G, ℤ), ℚ/ℤ)` for `d ≥ 1` (Brown82 Ch. VI §7; CE56 Ch. XII). Route:
-degree `0` by the exactness of `Hom(−, ℚ/ℤ)`, then dimension shifting with Tau Ceti's
-`cup_δ_of_flat` and `δ_cup_of_leftInverse`; the integral form from `0 → Hom(M, ℤ) → Hom(M, ℚ) → M^∨ → 0`
-(exact for free `M`) and the vanishing of `Ĥ` on the uniquely divisible `Hom(M, ℚ)`. *Needs:* 4.7(a);
-Tau Ceti `TauCeti.TateCohomology.cup`, `TauCeti.TateCohomology.cup_δ_of_flat`,
+group, cup product into `Ĥ⁰(G, ℤ) = ℤ/|G|` induces `Ĥⁱ(G, Hom(M, ℤ)) ≅ Hom(Ĥ^{−i}(G, M), ℚ/ℤ)`
+(Brown82 Ch. VI §7; CE56 Ch. XII). Route: degree `0` by the exactness of `Hom(−, ℚ/ℤ)`, then
+dimension shifting with Tau Ceti's `cup_δ_of_flat` and `δ_cup_of_leftInverse`; the integral form
+from `0 → Hom(M, ℤ) → Hom(M, ℚ) → M^∨ → 0` (exact for free `M`) and the vanishing of `Ĥ` on the
+uniquely divisible `Hom(M, ℚ)`. For `M = ℤ` and `i ≥ 1`, with `Ĥⁱ(G, ℚ/ℤ) ≅ H^{i+1}(G, ℤ)`, the
+duality is the isomorphism `H^{i+1}(G, ℤ) ≅ Hom(H_i(G, ℤ), ℚ/ℤ)` of K3BlochGroups §5.2, which is
+not restated here. *Needs:* 4.7(a); K3BlochGroups §5.2 for the comparison; Tau Ceti
+`TauCeti.TateCohomology.cup`, `TauCeti.TateCohomology.cup_δ_of_flat`,
 `TauCeti.TateCohomology.δ_cup_of_leftInverse`; ClassFieldTheory Layer 0.
 
 **Checks.**
 
 - `G = ℤ/2`, `M = ℤ`: `Ĥ⁰(G, ℚ/ℤ) = 0 = Hom(Ĥ⁻¹(G, ℤ), ℚ/ℤ)` and
   `Ĥ¹(G, ℚ/ℤ) = ℤ/2 = Hom(H₁(G, ℤ), ℚ/ℤ)`.
-- `H²(ℤ/2, ℤ) = ℤ/2 = Hom(H₁(ℤ/2, ℤ), ℚ/ℤ)`; the corollary fails at `d = 0`:
-  `H¹(G, ℤ) = 0` while `Hom(H₀(G, ℤ), ℚ/ℤ) = ℚ/ℤ`.
+- The integral instance needs `i ≥ 1`: at `i = 1`, `H²(ℤ/2, ℤ) = ℤ/2 = Hom(H₁(ℤ/2, ℤ), ℚ/ℤ)`; the
+  degree-`0` analogue fails, `H¹(G, ℤ) = 0` while `Hom(H₀(G, ℤ), ℚ/ℤ) = ℚ/ℤ`, because `Ĥ⁰` and
+  `Ĥ⁻¹` are not `H⁰` and `H₀`.
 - Freeness is used in the integral form: for `G = ℤ/2` and `M = ℤ/2` (not free),
   `Ĥ⁰(G, Hom(M, ℤ)) = 0` while `Hom(Ĥ⁰(G, ℤ/2), ℚ/ℤ) = ℤ/2`.
 
@@ -1312,12 +1585,12 @@ ClassFieldTheory Layer 0 (`Rep.isZero_res_of_projective`, `Rep.projective_of_isZ
 - `G = ℤ/m` and `0 → ℤ →N ℤG →(t−1) ℤG → ℤ → 0` (Loh19 Remark 1.6.12, p. 48): period dividing `2`.
 - `G = ℤ/2`, `n = 0`: `0 → ℤ_sgn → ℤG → ℤ → 0` gives `Ĥⁱ(G, M) ≅ Ĥⁱ⁺¹(G, M ⊗ ℤ_sgn)` and period
   dividing `2`.
-- `C_p × C_p` admits no such sequence, since `dim Hⁿ(C_p × C_p, 𝔽_p) = n + 1` (5.2) is unbounded.
+- `C_p × C_p` admits no such sequence, since `dim Hⁿ(C_p × C_p, 𝔽_p) = n + 1` (5.3) is unbounded.
 
 ### 8.4 Periods
 
-Define the `p`-period of `G` with `p ∣ |G|` and `p`-periodic cohomology as the least `d > 0` such
-that `Ĥ^d(G, ℤ)(p)` is cyclic of order `|G|_p`. Prove:
+Define the `p`-period of `G`, for a prime `p ∣ |G|` such that some `Ĥ^d(G, ℤ)(p)` with `d > 0` is
+cyclic of order `|G|_p`, as the least such `d`. Prove:
 
 - **Cyclic groups.** For `G` cyclic of order `m` and a generator `g`, cup product with
   `δχ ∈ Ĥ²(G, ℤ)` (`TauCeti.TateCohomology.characterConnectingClass`, `χ(g) = 1/m`) is an
@@ -1326,19 +1599,27 @@ that `Ĥ^d(G, ℤ)(p)` is cyclic of order `|G|_p`. Prove:
   `TauCeti.TateCohomology.cup_characterConnectingClass_eq_groupCohomologyπEven`, which this extends
   to all degrees. Route: `Rep.FiniteCyclicGroup.periodicIsoOfGenerator` and the compatibility of
   the Tate cup product with connecting maps.
-- **Generalised quaternion groups.** For `Q_{2^s}`, `s ≥ 3`, there is `u ∈ Ĥ⁴(Q_{2^s}, ℤ)` with cup
-  product an isomorphism in every degree, and the period is `4`, from a periodic resolution of
-  period `4` and 8.3 (CE56 Ch. XII).
-- **Swan's theorem.** For odd `p ∣ |G|` with a cyclic Sylow `p`-subgroup `P`, the `p`-period is
-  `2·|N_G(P)/C_G(P)|`; the `2`-period is `2` for a nontrivial cyclic Sylow `2`-subgroup and `4` for
-  a generalised quaternion one (SwanPPeriod60 Thms. 1 and 2; Hutchinson13 Thm. 3.1, p. 12,
-  Hutchinson13 line 499–504). Route: 7.2 for abelian `P` (stable classes are the
-  `N_G(P)`-invariants), and `N_G(P)/C_G(P)` acting faithfully on `Ĥ²(P, ℤ) ≅ P^∨` through a cyclic
-  group of order dividing `p − 1`.
+- **Generalised quaternion groups.** The four-periodic free resolution of `Q_{2^s}`, `s ≥ 3`, of
+  K3BlochGroups §5.2 contains an exact sequence `0 → ℤ → C₃ → C₂ → C₁ → C₀ → ℤ → 0` of free
+  `ℤ[Q_{2^s}]`-modules with trivial action on the left `ℤ` (CE56 Ch. XII). By 8.3 with `n = 3` and
+  trivial `χ`, cup product with its class `u ∈ Ĥ⁴(Q_{2^s}, ℤ)` is an isomorphism
+  `Ĥⁿ(G, M) → Ĥⁿ⁺⁴(G, M)` for every `n ∈ ℤ` and every `M`, and the `2`-period is `4`, since
+  `Ĥ²(Q_{2^s}, ℤ) ≅ Hom(H₁(Q_{2^s}, ℤ), ℚ/ℤ) = (ℤ/2)²` is not cyclic of order `2^s`.
 
-*Needs:* 7.2, 8.3; Tau Ceti `TauCeti.TateCohomology.characterConnectingClass`,
+Swan's theorem, that for an odd prime `p ∣ |G|` with a cyclic Sylow `p`-subgroup `P` the `p`-period is
+`2·|N_G(P)/C_G(P)|`, and that the `2`-period is `2` for a nontrivial cyclic Sylow `2`-subgroup and
+`4` for a generalised quaternion one, is K3BlochGroups §5.2's (SwanPPeriod60 Thms. 1 and 2;
+Hutchinson13 Thm. 3.1, p. 12, Hutchinson13 line 499–504); its period is the one defined here (Exact
+supplier contracts). *Needs:* 8.1, 8.3; K3BlochGroups §5.2; Tau Ceti
+`TauCeti.TateCohomology.characterConnectingClass`,
 `TauCeti.TateCohomology.cup_characterConnectingClass_eq_groupCohomologyπEven`,
 `Rep.FiniteCyclicGroup.periodicIsoOfGenerator`; Mathlib `QuaternionGroup`, `Sylow`.
+
+- The `p`-period, when defined, is at least `2`, since `Ĥ¹(G, ℤ) = Hom(G, ℤ) = 0` and `|G|_p > 1`.
+- For `G` cyclic of order `m` and `p ∣ m` the `p`-period is `2`: `Ĥ²(G, ℤ) = ℤ/m`.
+- For `Q_{2^s}`, `s ≥ 3`, the `2`-period is `4`.
+- For `d ≥ 2`, `Ĥ^d(G, ℤ)(p)` is cyclic of order `|G|_p` exactly when `H_{d−1}(G, ℤ_(p))` is, by the
+  duality of 8.1; so the `p`-period is K3BlochGroups §5.2's `p`-period.
 
 **Checks.**
 
@@ -1360,16 +1641,21 @@ form for a prime `p`: (a_p) cup with some `u ∈ Ĥ^d(G, ℤ)`, `d > 0`, is an i
 abelian `p`-subgroup is cyclic; (d_p) a Sylow `p`-subgroup is cyclic or generalised quaternion
 (Brown82 Ch. VI §9; CE56 Ch. XII; Loh19 §4.3.2, pp. 167–168). Route: (a)⇒(b) from
 `Ĥ⁰(G, ℤ) = ℤ/|G|`; (b)⇒(a) since a generator has an inverse for the perfect pairing of 8.1;
-(a)⇒(c) since restriction of `u` is invertible and `ℤ/p × ℤ/p` is not periodic (5.2); (c)⇔(d) by
-8.2; (d)⇒(b) by 8.4 and 7.2 prime by prime. *Needs:* 5.2, 7.2, 8.1, 8.2, 8.3, 8.4; Tau Ceti
-`TauCeti.TateCohomology.cup_assoc`, `TauCeti.TateCohomology.cup_res`.
+(a)⇒(c) since restriction of `u` is invertible and `ℤ/p × ℤ/p` is not periodic (5.3); (c)⇔(d) by
+8.2; (d)⇒(b) by 8.4, Swan's theorem of K3BlochGroups §5.2 and 7.2, prime by prime. *Needs:* 5.3,
+7.2, 8.1, 8.2, 8.3, 8.4; K3BlochGroups §5.2; Tau Ceti `TauCeti.TateCohomology.cup_assoc`,
+`TauCeti.TateCohomology.cup_res`.
 
 **Checks.**
 
 - `C_p × C_p` is not periodic: `dim Hⁿ(C_p × C_p, 𝔽_p) = n + 1` is unbounded, consistent with
   AlgebraicTopology §8.15.
-- `SL₂(𝔽_q)` for odd `q` has generalised quaternion Sylow `2`-subgroups and cyclic odd Sylow
-  subgroups, so it is periodic (Hutchinson13 Cor. 3.3, p. 12).
+- `SL₂(𝔽_q)`, `q = p^f` odd: its Sylow `2`-subgroups are generalised quaternion and its Sylow
+  `ℓ`-subgroups for odd `ℓ ≠ p` are cyclic (Hutchinson13 line 494–497), so (d_ℓ) holds for every
+  prime `ℓ ≠ p` and the `2`-period is `4` (Hutchinson13 Cor. 3.3, p. 12); its Sylow `p`-subgroup is the unipotent group
+  `{[[1, a], [0, 1]]} ≅ (𝔽_q, +) ≅ (ℤ/p)^f`, cyclic exactly when `f = 1`. So `SL₂(𝔽_p)` is
+  periodic, and `SL₂(𝔽₉)` is not: its unipotent subgroup `ℤ/3 × ℤ/3` has order `9`, the full
+  `3`-part of `|SL₂(𝔽₉)| = 720`, and violates (c).
 - The trivial group satisfies all four conditions, with every `Ĥⁿ = 0` and `u = 0`; `S₃` satisfies
   them with `d = 4`, and `A₄` fails (c) through `V₄`.
 
@@ -1380,29 +1666,20 @@ abelian `p`-subgroup is cyclic; (d_p) a Sylow `p`-subgroup is cyclic or generali
 
 ### Dependencies
 
-Layers 4, 5 and 7; Tau Ceti's Tate cup product, cyclic periodicity and character classes;
-ClassFieldTheory Layer 0.
+Layers 4, 5 and 7; K3BlochGroups §5.2 (quaternion resolution, Swan's theorem, integral duality);
+Tau Ceti's Tate cup product, cyclic periodicity and character classes; ClassFieldTheory Layer 0.
 
 ---
 
 ## Downstream consumers
 
-- **SchemeKTheoryOperations** §6.7 and **HomologicalStabilityOfGeneralLinearGroups**: group
-  hyperhomology and its two spectral sequences with the permutation-module form (2.1–2.3, 3.2).
-- **K3BlochGroups**: §4.1 imports 2.1–2.3; §4.15 imports Layer 6; §5.2 imports 7.2, 8.1 and 8.4
-  for its `finiteGroup_stableElements`, `finiteGroup_homologyDuality`, `quaternionPeriodicHomology`
-  and `finiteGroup_period_fromSylow`.
-- **InductionRestrictionPartII** RS.0.1: the low-degree sequence of a central extension (6.8).
-- **MappingClassGroupsAndCanonicalRepresentations** §1.1: the cohomological Hochschild–Serre
-  sequence and five-term sequence for discrete groups (6.2, 6.6, 6.7).
-- **ModularCurvesPartII** §15.4, **AutomorphyLiftingBeyondTaylorWiles** and
-  **ArithmeticLocallySymmetricSpacesPartII**: the amalgam sequence (3.6).
-- **InverseGaloisAndArithmeticFundamentalGroups**: Schur multipliers through Hopf's formula (6.8).
-- **ArithmeticLocallySymmetricSpaces**: equivariant homology and extensions (Layers 3 and 6).
-- **NoncommutativeAndEquivariantIwasawa** §F.3 and **ArithmeticGaloisDuality** R02.2: the
-  finite-group comparison of 6.9.
-- A roadmap on finiteness conditions and duality groups consumes products and cap products,
-  extensions, trees, stable elements and periodicity.
+The roadmaps that state integral, cohomological-five-term, central-extension, finite-group or
+`ℂ_p` instances of these results own those instances and are suppliers here (Scope and ownership);
+none of them consumes this roadmap. Later roadmaps consume the general statements: a roadmap on
+finiteness conditions and duality groups (cohomological dimension, Euler characteristics, Farrell
+cohomology) consumes products and cap products (Layers 4–5), extensions (Layer 6), trees
+(Layer 3), stable elements and periodicity (Layers 7–8); a roadmap that needs group (co)homology
+with twisted coefficients over a ring other than `ℤ` consumes Layers 1–3 and 6.
 
 ## References
 

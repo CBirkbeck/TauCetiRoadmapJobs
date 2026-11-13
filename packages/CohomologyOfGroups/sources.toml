@@ -8,7 +8,7 @@ title = "Cohomology of group extensions"
 year = 1953
 venue = "Transactions of the American Mathematical Society 74, pp. 110-134"
 locator_scheme = "theorem"
-locator = "Ch. I §2 Prop. 1 (p. 111), Prop. 2 and its corollary (p. 113), homogeneous cochains (pp. 112–113); Ch. I §4 and Prop. 4 (p. 114); Ch. I §5 Lemmas 1–2 and Prop. 5 (pp. 115–116); Ch. I §7 Prop. 7 and the G/K-operators (pp. 117–118); Ch. II §1 filtrations, Prop. 1 and Lemma 1 (pp. 118–121); Ch. II §2 Thm. 1 (p. 121); Ch. II §4 Thm. 2 (p. 125); Ch. II §5 Prop. 3 and Thm. 3 (pp. 125–126); Ch. III §1 (p. 126); Ch. III §3 Prop. 1 (pp. 128–129); Ch. III §4 Thm. 2 and remark (pp. 129–130); Ch. III §6 Thm. 4 (p. 133)"
+locator = "Ch. I §2 Prop. 1 (p. 111), Prop. 2 and its corollary (p. 113), homogeneous cochains (pp. 112–113); Ch. I §4 and Prop. 4 (p. 114); Ch. I §5 Lemmas 1–2 and Prop. 5 (pp. 115–116); Ch. I §7 Prop. 7 and the G/K-operators (pp. 117–118); Ch. II §1 filtrations, Prop. 1 and Lemma 1 (pp. 118–121); Ch. II §2 Thm. 1 (p. 121); Ch. II §3 Prop. 2, the shuffle sums (pp. 123–124); Ch. II §4 Thm. 2 (p. 125); Ch. II §5 Prop. 3 and Thm. 3 (pp. 125–126); Ch. III §1 (p. 126); Ch. III §3 Prop. 1 (pp. 128–129); Ch. III §4 Thm. 2 and remark (pp. 129–130); Ch. III §6 Thm. 4 (p. 133)"
 url = "https://www.ams.org/journals/tran/1953-074-01/S0002-9947-1953-0052438-8/S0002-9947-1953-0052438-8.pdf"
 fetched_from = "https://www.ams.org/journals/tran/1953-074-01/S0002-9947-1953-0052438-8/S0002-9947-1953-0052438-8.pdf"
 fetched_at = "2026-11-13T13:09:36Z"
@@ -17,7 +17,7 @@ licence_class = "publisher-open"
 status = "certified"
 accessed = "2026-11-13"
 version_note = "Page numbers are the printed pages of the journal; the PDF page is the printed page minus 109."
-cited_for = ["Target 1.1", "Target 1.2", "Target 1.5", "Target 2.1", "Target 2.3", "Target 3.2", "Target 3.3", "Target 4.1", "Target 4.4", "Target 6.1", "Target 6.2", "Target 6.3", "Target 6.4", "Target 6.5", "Target 6.6", "Target 6.7", "Target 6.9"]
+cited_for = ["Target 1.1", "Target 1.2", "Target 1.5", "Target 2.1", "Target 2.3", "Target 3.2", "Target 3.3", "Target 4.1", "Target 4.4", "Target 5.3", "Target 6.1", "Target 6.2", "Target 6.3", "Target 6.4", "Target 6.5", "Target 6.6", "Target 6.7", "Target 6.9"]
 
 [[source]]
 id = "Loh19"
@@ -34,7 +34,7 @@ licence_class = "author-page"
 status = "certified"
 accessed = "2026-11-13"
 version_note = "Page numbers are the printed pages of the notes; the PDF page is the printed page plus 8."
-cited_for = ["Conventions", "Target 1.1", "Target 1.2", "Target 3.3", "Target 4.4", "Target 5.1", "Target 5.2", "Target 5.3", "Target 6.2", "Target 6.3", "Target 6.7", "Target 6.8", "Target 8.2", "Target 8.3", "Target 8.5"]
+cited_for = ["Conventions", "Target 1.1", "Target 1.2", "Target 3.3", "Target 4.2", "Target 4.4", "Target 5.1", "Target 5.2", "Target 5.3", "Target 6.2", "Target 6.3", "Target 6.7", "Target 6.8", "Target 8.2", "Target 8.3", "Target 8.5"]
 
 [[source]]
 id = "MilneCFT"
@@ -87,7 +87,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-13"
 version_note = "arXiv v2; cited only as an open secondary statement of the stable-element and p-period theorems."
-cited_for = ["Target 7.2", "Target 8.3", "Target 8.4"]
+cited_for = ["Target 7.2", "Target 8.4", "Target 8.5"]
 
 [[source]]
 id = "Brown82"
@@ -115,7 +115,7 @@ locator = "Chapter XII (finite groups: duality, periodicity, generalised quatern
 licence_class = "none"
 status = "uncertified"
 version_note = "paywalled book; cited by chapter locators without the text"
-cited_for = ["Target 2.2", "Target 8.1", "Target 8.3", "Target 8.4"]
+cited_for = ["Target 2.2", "Target 8.1", "Target 8.4", "Target 8.5"]
 
 [[source]]
 id = "SwanPPeriod60"
