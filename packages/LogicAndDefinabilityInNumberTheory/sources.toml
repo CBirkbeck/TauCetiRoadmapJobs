@@ -301,7 +301,7 @@ authors = "Lou van den Dries and Chris Miller"
 title = "Geometric categories and o-minimal structures"
 year = 1996
 locator_scheme = "section"
-locator = "§2.5 with item (4), pp.8–9, and the o-minimality definition, p.9; 4.1–4.4 and 4.6, pp.12–13"
+locator = "§2, pp.7–9: structures on the real field, p.7, §2.5 with item (4), pp.8–9, and the o-minimality definition, p.9; 4.1–4.4 and 4.6, pp.12–13"
 url = "https://people.math.osu.edu/miller.1987/newg.pdf"
 fetched_from = "https://people.math.osu.edu/miller.1987/newg.pdf"
 fetched_at = "2026-10-25T00:21:05Z"
@@ -632,7 +632,7 @@ authors = "Tau Ceti contributors"
 title = "Tau Ceti library"
 year = 2026
 locator_scheme = "section"
-locator = "Geometry/RealAlgebraic/Semialgebraic/Basic.lean; RingTheory/GrothendieckRing.lean"
+locator = "Geometry/RealAlgebraic/Semialgebraic/Basic.lean, RingLanguage.lean and Dimension/Basic.lean; Geometry/RealAlgebraic/CAD/Existence.lean; RingTheory/GrothendieckRing.lean; NumberTheory/NumberField/Global/Approximation/Vector.lean; NumberTheory/QuadraticForm/Global/SignPrescription.lean; NumberTheory/Height/Absolute.lean"
 url = "https://github.com/TauCetiProject/TauCeti/tree/a91d3aafa8cd3e6bc33dfde0d7677ed0f1625039"
 fetched_from = "https://github.com/TauCetiProject/TauCeti/tree/a91d3aafa8cd3e6bc33dfde0d7677ed0f1625039"
 fetched_at = "2026-10-25T00:27:22Z"
@@ -640,7 +640,7 @@ sha256 = "2db7aa02ab95a4b8b8a453d98d1b88267259c84482dc624700b0dc5c0867101b"
 licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-25"
-cited_for = ["Scope and ownership; Exact supplier contracts; 3.2; 6.11"]
+cited_for = ["Scope and ownership; Exact supplier contracts; 3.2; 4.20; 6.1; 6.2; 6.11; 6.12; 6.16"]
 
 [[source]]
 id = "cluckers_comte_loeser_2012"
