@@ -196859,10 +196859,26 @@
    "reported": "2026-11-13",
    "reporter": "claude fable",
    "comment": "https://github.com/TauCetiProject/TauCetiRoadmapJobs/pull/13007#issuecomment-6850874284"
+  },
+  {
+   "kind": "gap",
+   "source": "dejongvanderput1996",
+   "locator": "Corollary 3.7.5, printed page 39",
+   "says": "the spectral sequence holds for every abelian sheaf, while its proof identifies the fibre cohomology with the stalk only for overconvergent sheaves",
+   "should": "assume overconvergence or justify the general case",
+   "affects": "a stated result",
+   "note": "",
+   "roadmap": "GaloisActionOnEtaleCohomology",
+   "job": "RT-GaloisActionOnEtaleCohomology~2a",
+   "board_pr": 13862,
+   "head": "86878fa",
+   "reported": "2026-11-13",
+   "reporter": "claude fable",
+   "comment": "https://github.com/TauCetiProject/TauCetiRoadmapJobs/pull/13862#issuecomment-6851203603"
   }
  ],
- "scanned_to": "2026-11-13T10:58:10Z",
- "updated": "2026-11-13T11:05:27Z",
+ "scanned_to": "2026-11-13T11:15:09Z",
+ "updated": "2026-11-13T11:15:59Z",
  "covered": [
   {
    "job": "ERRATA-TemperleyLieb",
