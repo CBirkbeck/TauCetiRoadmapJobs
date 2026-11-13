@@ -22,13 +22,10 @@ year = 1927
 doi = "10.1007/BF02421325"
 locator_scheme = "section"
 locator = "§§1–3"
-url = "https://projecteuclid.org/journals/acta-mathematica/volume-50/issue-none/On-the-periodic-motions-of-dynamical-systems/10.1007/BF02421325.full"
-fetched_from = "https://projecteuclid.org/journals/acta-mathematica/volume-50/issue-none/On-the-periodic-motions-of-dynamical-systems/10.1007/BF02421325.full"
-fetched_at = "2026-11-07T19:52:54Z"
-sha256 = "32dbe0cde398e9c62e9c84e8e50ee4b3e702c4d3dba9e4a0f3e72d4380f7ac97"
-licence_class = "open-repository"
-status = "certified"
-accessed = "2026-11-07"
+url = "https://doi.org/10.1007/BF02421325"
+licence_class = "none"
+status = "uncertified"
+version_note = "cited by its locator without the text: the Project Euclid article and PDF pages answered with a blocked-request page, not the article, and a DOI lookup gave no readable copy"
 resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/6012#issuecomment-6712166264"
 cited_for = ["References"]
 
@@ -111,7 +108,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-10"
 version_note = "arXiv v4"
-cited_for = ["1.2", "1.4", "1.5", "2.1", "2.5", "3.1", "3.2", "3.3", "5.1", "5.3", "5.5", "Downstream consumers"]
+cited_for = ["1.2", "1.4", "1.5", "2.1", "2.4", "2.5", "3.1", "3.2", "3.3", "5.1", "5.3", "5.5", "Downstream consumers"]
 
 [[source]]
 id = "ChaikaForni2026"
@@ -152,7 +149,7 @@ authors = "Michael R. Herman"
 title = "Sur les courbes invariantes par les difféomorphismes de l'anneau, volume 1 (Astérisque 103–104), with an appendix by Albert Fathi"
 year = 1983
 locator_scheme = "section"
-locator = "Chapitre I (1.2, 2.1, 2.2, 2.4, 3.1–3.6, 4.3, 5.2) and Appendice (Théorème de Birkhoff), lines 69–1287"
+locator = "Chapitre I (1.2, 2.2, 2.4, 3.4, 4.3, 5.2) and Appendice (Théorème de Birkhoff), lines 149–1287"
 url = "https://www.numdam.org/item/AST_1983__103-104__1_0/"
 fetched_from = "https://www.numdam.org/item/AST_1983__103-104__1_0.pdf"
 fetched_at = "2026-11-10T20:19:43Z"
@@ -160,7 +157,7 @@ sha256 = "304923d23c41f760886f774f9c02e3a6a63271ca362664000aa1ff04c8e19cb7"
 licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-10"
-cited_for = ["4.1", "4.2", "4.4", "5.1", "5.2", "5.3", "5.4"]
+cited_for = ["4.1", "4.2", "4.4", "5.2", "5.3", "5.4"]
 
 [[source]]
 id = "Hochman2012"
