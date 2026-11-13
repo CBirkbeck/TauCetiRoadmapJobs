@@ -8,7 +8,7 @@ title = "Cohomology of group extensions"
 year = 1953
 venue = "Transactions of the American Mathematical Society 74, pp. 110-134"
 locator_scheme = "theorem"
-locator = "Ch. I §2 Prop. 1 (p. 111), §4 (p. 114), §5 Prop. 5 (p. 116) and §7 Prop. 7 (p. 117); Ch. II §4 Thm. 2 (p. 125); Ch. II §5 Thm. 3 (p. 126); Ch. III §1 (p. 126); Ch. III §3 (p. 128); Ch. III §4 Thm. 2 (p. 129); Ch. III §6 Thm. 4 (p. 133)"
+locator = "Ch. I §2 Prop. 1 (p. 111), Prop. 2 and its corollary (p. 113), homogeneous cochains (pp. 112–113); Ch. I §4 and Prop. 4 (p. 114); Ch. I §5 Lemmas 1–2 and Prop. 5 (pp. 115–116); Ch. I §7 Prop. 7 and the G/K-operators (pp. 117–118); Ch. II §1 filtrations, Prop. 1 and Lemma 1 (pp. 118–121); Ch. II §2 Thm. 1 (p. 121); Ch. II §4 Thm. 2 (p. 125); Ch. II §5 Prop. 3 and Thm. 3 (pp. 125–126); Ch. III §1 (p. 126); Ch. III §3 Prop. 1 (pp. 128–129); Ch. III §4 Thm. 2 and remark (pp. 129–130); Ch. III §6 Thm. 4 (p. 133)"
 url = "https://www.ams.org/journals/tran/1953-074-01/S0002-9947-1953-0052438-8/S0002-9947-1953-0052438-8.pdf"
 fetched_from = "https://www.ams.org/journals/tran/1953-074-01/S0002-9947-1953-0052438-8/S0002-9947-1953-0052438-8.pdf"
 fetched_at = "2026-11-13T13:09:36Z"
@@ -17,7 +17,7 @@ licence_class = "publisher-open"
 status = "certified"
 accessed = "2026-11-13"
 version_note = "Page numbers are the printed pages of the journal; the PDF page is the printed page minus 109."
-cited_for = ["Final target 1.1", "Final target 1.3", "Final target 2.1", "Final target 4.1", "Final target 4.2", "Final target 4.3", "Final target 4.4", "Final target 4.5", "Final target 5.2"]
+cited_for = ["Target 1.1", "Target 1.2", "Target 1.5", "Target 2.1", "Target 2.3", "Target 3.2", "Target 3.3", "Target 4.1", "Target 4.4", "Target 6.1", "Target 6.2", "Target 6.3", "Target 6.4", "Target 6.5", "Target 6.6", "Target 6.7", "Target 6.9"]
 
 [[source]]
 id = "Loh19"
@@ -25,7 +25,7 @@ authors = "Clara Löh"
 title = "Group Cohomology (lecture notes, Universität Regensburg, summer semester 2019)"
 year = 2019
 locator_scheme = "theorem"
-locator = "Thm. 1.5.1 (p. 30); Thm. 3.2.12 (p. 123); Thm. 3.2.18 (p. 129); Cor. 3.2.21 (p. 135); Cor. 3.2.23 (p. 136); Thms. 4.3.3 and 4.3.7 (p. 165)"
+locator = "Prop. 1.6.11 and Remark 1.6.12 (p. 48); Cor. 1.6.18, Cor. 1.6.19 (p. 53) and Outlook 1.6.20 (p. 54); Thm. 1.5.1 (p. 30); Thm. 3.2.12 and Prop. 3.2.13 (pp. 123–124); Remark 3.2.14 (p. 125); Thm. 3.2.18 and its proof (pp. 129–131); Cor. 3.2.21, Thm. 3.2.22 and Cor. 3.2.23 (pp. 135–136); Example 3.2.25 (p. 137); Outlook 3.2.26 (p. 138); Outlook 3.2.28 (p. 139); Thm. 4.3.7 and §4.3.2 (pp. 165–168)"
 url = "https://loeh.app.uni-regensburg.de/teaching/grouphom_ss19/lecture_notes.pdf"
 fetched_from = "https://loeh.app.uni-regensburg.de/teaching/grouphom_ss19/lecture_notes.pdf"
 fetched_at = "2026-11-13T13:10:15Z"
@@ -34,7 +34,7 @@ licence_class = "author-page"
 status = "certified"
 accessed = "2026-11-13"
 version_note = "Page numbers are the printed pages of the notes; the PDF page is the printed page plus 8."
-cited_for = ["Final target 3.1", "Final target 3.2", "Final target 4.1", "Final target 4.5", "Final target 8.3"]
+cited_for = ["Conventions", "Target 1.1", "Target 1.2", "Target 3.3", "Target 4.4", "Target 5.1", "Target 5.2", "Target 5.3", "Target 6.2", "Target 6.3", "Target 6.7", "Target 6.8", "Target 8.2", "Target 8.3", "Target 8.5"]
 
 [[source]]
 id = "MilneCFT"
@@ -42,7 +42,7 @@ authors = "J. S. Milne"
 title = "Class Field Theory (course notes, version 4.03)"
 year = 2020
 locator_scheme = "theorem"
-locator = "Ch. II, Props. 1.38 and 1.39 (pp. 73-74); Ch. II, Prop. 1.30 (p. 70) and Cor. 1.33 (p. 71)"
+locator = "Ch. II Prop. 1.30 (p. 70) and Cor. 1.33 (p. 71); Ch. II Prop. 1.38 (p. 73) and Prop. 1.39(a)–(e) (pp. 73–74)"
 url = "https://www.jmilne.org/math/CourseNotes/CFT.pdf"
 fetched_from = "https://www.jmilne.org/math/CourseNotes/CFT.pdf"
 fetched_at = "2026-11-13T13:10:53Z"
@@ -51,7 +51,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-13"
 version_note = "Version 4.03 (August 2020); page numbers are printed pages (PDF page minus 9)."
-cited_for = ["Final target 2.1", "Final target 2.2", "Final target 7.2"]
+cited_for = ["Conventions", "Target 4.1", "Target 4.2", "Target 4.3", "Target 4.5", "Target 4.7", "Target 7.2"]
 
 [[source]]
 id = "SerreArbres"
@@ -60,7 +60,7 @@ title = "Arbres, amalgames, SL₂"
 year = 1977
 venue = "Astérisque 46"
 locator_scheme = "section"
-locator = "II §2.8, Prop. 13 and the amalgam example following it (pp. 167-169)"
+locator = "II §2.8, the chain complex of a tree (p. 168), Prop. 13 and Remarque 1, and the amalgam example after it (p. 169)"
 url = "https://www.numdam.org/item/AST_1983__46__1_0.pdf"
 fetched_from = "https://www.numdam.org/item/AST_1983__46__1_0.pdf"
 fetched_at = "2026-11-13T13:11:06Z"
@@ -69,7 +69,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-13"
 version_note = "Numdam scan of Astérisque 46; page numbers are the printed pages (PDF page minus 1). The English translation, Trees (Springer, 1980), has the same section numbering."
-cited_for = ["Final target 6.1", "Final target 6.2"]
+cited_for = ["Target 1.4", "Target 3.4", "Target 3.5", "Target 3.6"]
 
 [[source]]
 id = "Hutchinson13"
@@ -78,7 +78,7 @@ title = "A Bloch-Wigner complex for SL_2"
 year = 2013
 arxiv = "1107.0264v2"
 locator_scheme = "theorem"
-locator = "§3, p. 11 (stable elements in homology, citing Brown III.9-III.10) and Thm. 3.1, p. 12 (restating Swan, The p-period of a finite group, Thms. 1 and 2)"
+locator = "§3, p. 11 (stable elements, citing Brown III.9–III.10); Thm. 3.1 and Cor. 3.3, p. 12 (Swan's p-period theorems; SL₂(F_q))"
 url = "https://arxiv.org/abs/1107.0264v2"
 fetched_from = "https://arxiv.org/pdf/1107.0264v2"
 fetched_at = "2026-11-13T13:15:54Z"
@@ -87,24 +87,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-13"
 version_note = "arXiv v2; cited only as an open secondary statement of the stable-element and p-period theorems."
-cited_for = ["Final target 7.2", "Final target 8.2"]
-
-[[source]]
-id = "NSW"
-authors = "Jürgen Neukirch, Alexander Schmidt, Kay Wingberg"
-title = "Cohomology of Number Fields (2nd edition, online version 2.3)"
-year = 2020
-locator_scheme = "theorem"
-locator = "(1.4.1)-(1.4.5), (1.5.6) and Thm. (2.4.1), as used by ProfiniteCohomology Layers 6 and 12 and ArithmeticGaloisDuality R02.2.1; to be confirmed by the designer in the PDF"
-url = "https://www.mathi.uni-heidelberg.de/~schmidt/NSW2e/NSW2.3.pdf"
-fetched_from = "https://www.mathi.uni-heidelberg.de/~schmidt/NSW2e/"
-fetched_at = "2026-11-13T13:10:41Z"
-sha256 = "08f7c5d0abe72ac27b3923d60440c603bfa4c98046841f446ef38f54896fe410"
-licence_class = "author-page"
-status = "certified"
-accessed = "2026-11-13"
-version_note = "The recorded file is the authors' landing page, which offers the PDF of version 2.3 (May 2020) free for non-commercial use; the sources service did not retrieve the PDF itself in this run. Used only for the profinite comparisons."
-cited_for = ["Final target 2.4", "Final target 4.6"]
+cited_for = ["Target 7.2", "Target 8.3", "Target 8.4"]
 
 [[source]]
 id = "Brown82"
@@ -114,12 +97,12 @@ year = 1982
 venue = "Graduate Texts in Mathematics 87"
 doi = "10.1007/978-1-4684-9327-6"
 locator_scheme = "chapter"
-locator = "Chapters III (§§9-10), V, VI and VII; finer section numbers to be confirmed by the designer"
+locator = "Ch. II §7; Ch. III §§8–10; Ch. IV §4; Ch. V; Ch. VI §§7, 9; Ch. VII"
 url = "https://doi.org/10.1007/978-1-4684-9327-6"
 licence_class = "none"
 status = "uncertified"
-version_note = "paywalled; cited by its locator without the text, as a checklist of coverage only"
-cited_for = ["coverage checklist for Final targets 2, 3, 5, 7 and 8"]
+version_note = "paywalled; cited by chapter and section locators without the text"
+cited_for = ["Target 1.3", "Target 3.1", "Target 3.2", "Target 3.6", "Target 4.4", "Target 4.6", "Target 5.1", "Target 5.4", "Target 7.1", "Target 7.2", "Target 8.1", "Target 8.2", "Target 8.3", "Target 8.5"]
 
 [[source]]
 id = "CE56"
@@ -128,11 +111,11 @@ title = "Homological Algebra"
 year = 1956
 venue = "Princeton Mathematical Series 19, Princeton University Press"
 locator_scheme = "chapter"
-locator = "Chapter XII (finite groups: Tate cohomology, duality, stable elements, periodicity), Chapter XVI (applications of spectral sequences, group extensions) and Chapter XVII (hyperhomology); section numbers to be confirmed by the designer"
+locator = "Chapter XII (finite groups: duality, periodicity, generalised quaternion resolutions) and Chapter XVII (hyperhomology)"
 licence_class = "none"
 status = "uncertified"
-version_note = "paywalled book; cited by its chapter locator without the text, as the issue form asks"
-cited_for = ["Final target 1.3", "Final target 7.3", "Final target 8.1"]
+version_note = "paywalled book; cited by chapter locators without the text"
+cited_for = ["Target 2.2", "Target 8.1", "Target 8.3", "Target 8.4"]
 
 [[source]]
 id = "SwanPPeriod60"
@@ -146,4 +129,4 @@ locator = "Theorems 1 and 2"
 licence_class = "none"
 status = "waived"
 resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/14491#issuecomment-6855809391"
-cited_for = ["Final target 8.2"]
+cited_for = ["Target 8.4"]
