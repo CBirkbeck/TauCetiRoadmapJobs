@@ -157,10 +157,11 @@ function is `F̂(ξ) = ∫_ℝ F(x) exp(−2πixξ) dx`, extended to complex `ξ
 
 **Standing premises.** The global Arthur classification is imported from
 ModularityAndLanglandsExtensions together with its stated premises (its twisted weighted
-fundamental lemma and trace inputs). Every theorem below whose route uses the multiplicity
-formula, the local packets or the Adams–Johnson and Mœglin–Renard descriptions carries those
-premises as hypotheses, exactly as the supplier states them; this applies to §§3.3–3.16, 4.11 and
-after, all of Layer 5 from §5.3 on except the explicit-formula exclusions themselves, and Layers 7–8
+fundamental lemma and trace inputs). Every theorem below whose route uses the localization of a
+global parameter, the multiplicity formula, the local packets or the Adams–Johnson and Mœglin–Renard
+descriptions carries those premises as hypotheses, exactly as the supplier states them; this applies
+to the type criterion and the same-type root number of §1.8 (not to its level-one root-number
+formula), to §§3.3–3.16, 4.11 and after, all of Layer 5 from §5.3 on except the explicit-formula exclusions themselves, and Layers 7–8
 except §§8.3–8.6. The generalized Riemann hypothesis, where used, is the explicit hypothesis that
 every zero of every completed Rankin–Selberg function `Λ(s, π × π′)` with `π, π′ ∈ Π_alg` has real
 part `1/2`; it appears in the statement of each theorem that uses it.
@@ -183,8 +184,14 @@ sets of classes are counted as natural numbers only after their finiteness is pr
   eigenvector. It does not say which eigenvalue; §2.10 adds minimality.
 - `Matrix.toQuadraticForm'` (the quadratic form `x ↦ xᵀ M x` of a matrix), `Matrix.charpoly`,
   `PadicInt`, `Padic`, `Polynomial.cyclotomic`, `AlternatingMap`, `finsum`, `Module.finrank`,
-  `Matrix.rank`, `riemannZeta`, `Complex.Gamma`, Fourier integrals and `HasCompactSupport`. The
-  digamma function enters only through the closed formulas of ComputationalNumberTheory §4.17.
+  `Matrix.rank`, `riemannZeta`, `Complex.Gamma`, Fourier integrals and `HasCompactSupport`.
+- `Complex.Gamma_add_one` (`Mathlib/Analysis/SpecialFunctions/Gamma/Basic.lean`): `Γ(s + 1) = s Γ(s)`
+  for `s ≠ 0`. `Real.convexOn_log_Gamma` (`Mathlib/Analysis/SpecialFunctions/Gamma/BohrMollerup.lean`):
+  `log ∘ Γ` is convex on `(0, ∞)`. `Continuous.fourierInv_fourier_eq`
+  (`Mathlib/Analysis/Fourier/Inversion.lean`): a continuous integrable function with integrable Fourier
+  transform is the inverse transform of its transform. These three give the closed form of `J_F(1 − e)`
+  in §2.3; otherwise the digamma function enters only through the closed formulas of
+  ComputationalNumberTheory §4.17.
 
 ### From Tau Ceti
 
@@ -303,7 +310,10 @@ sets of classes are counted as natural numbers only after their finiteness is pr
   (both orthogonal or both symplectic), the global root number `ε(1/2, π × π′)` equals `1` (Arthur,
   Theorem 1.5.3(b)).
 - §3.8: discrete global Arthur parameters `ψ = ⊞ π_i[d_i]` of `Sp_{2n}`, `SO_{2n+1}` and `SO_{2n}`,
-  their component groups `S_ψ` and the epsilon character `ε_ψ`. §3.15: local Arthur packets with
+  their component groups `S_ψ` and the epsilon character `ε_ψ`, and their localization `ψ_v` at a place
+  `v`, a parameter into the `L`-group of `G` whose standard representation is `⊕ rec(π_{i,v}) ⊗ ν_{d_i}`;
+  for a simple generic parameter `π` at `v = ∞` this says that `L(π∞)` factors through the dual group
+  of `π`'s type, the input of §1.8. §3.15: local Arthur packets with
   their pairings, under a fixed Whittaker datum. §3.17: Arthur's multiplicity formula. §§3.20–3.21:
   Adams–Johnson parameters and the identification of real Arthur packets of cohomological
   parameters with Adams–Johnson packets. §3.22: the Mœglin–Renard criterion for a scalar unitary
@@ -618,20 +628,39 @@ on each fibre with fixed points exactly the self-dual classes, so `N − N⊥` i
 
 ### 1.8 Self-dual type and pair root numbers
 
-Prove: a regular self-dual `π ∈ Π_alg` is symplectic when `w(π)` is odd and orthogonal when `w(π)` is
-even; for self-dual `π, π′` of the same type `ε(π × π′) = 1`; and at level one the global root
-number of a pair is `ε(L(π∞) L(π′∞))` (CT20 §2.2 and §5.1). For opposite types the sign is computed,
-and may be `−1`.
+Prove: at level one the global root number of a pair is `ε(L(π∞) L(π′∞))` (CT20 §2.2 and §5.1); and,
+under the standing premises of the Conventions, a self-dual `π ∈ Π_alg` some weight of which has
+multiplicity one in `L(π∞)` is symplectic when `w(π)` is odd and orthogonal when `w(π)` is even (CT20
+§2.2, last paragraph, p. 14; used for a simple `I_w` in the proof of Proposition 4.1, p. 37), and for
+self-dual `π, π′` of the same type `ε(π × π′) = 1`. For opposite types the sign is computed, and may be
+`−1`. A regular `π` is the special case: it has a weight of multiplicity one, since a regular vector
+repeats only a central zero, and only in rank divisible by four, where nonzero weights also occur.
 
-*Needs:* §§1.1 and 1.6; ModularityAndLanglandsExtensions §3.4 and the root-number statement
-requested there; AutomorphicLFunctionsAndLocalFactors §AL.3.6.2.
+Route for the type: by ModularityAndLanglandsExtensions §§3.4 and 3.8 the archimedean localization of
+the simple generic parameter of `π` takes values in the dual group of `π`'s type, so `L(π∞)` preserves
+a nondegenerate alternating form when `π` is symplectic and a nondegenerate symmetric one when `π` is
+orthogonal. The irreducible constituents `1`, `e`, `I_v` of an element of `K∞` are self-dual and pairwise
+non-isomorphic, so the form restricts to a nondegenerate invariant form on each isotypic component. A
+weight `v/2 > 0` of multiplicity one is carried by a single copy of `I_v`, whose invariant forms are the
+multiples of one form, alternating for odd `v` (`det I_v = 1`) and symmetric for even `v`
+(`det I_v = e`); a weight `0` of multiplicity one is carried by a single character `1` or `e`, which has
+only symmetric invariant forms. All `v` occurring have the parity of `w(π)` (§1.5).
+
+*Needs:* §§1.1, 1.4–1.6; ModularityAndLanglandsExtensions §3.4, §3.8 (localization of a discrete
+parameter at a place) and the root-number statement requested there; AutomorphicLFunctionsAndLocalFactors
+§AL.3.6.2.
 
 **Checks.**
 
 - `ε(Δ₁₁ × Δ₁₅) = ε(I₁₁ I₁₅) = ε(I₂₆ + I₄) = i²⁷ · i⁵ = 1`, as two symplectic classes require.
 - `ε(Δ₁₇ × 1) = ε(I₁₇) = i¹⁸ = −1`, an opposite-type pair with sign `−1`.
-- Regularity is needed: the parity of the motivic weight alone does not decide the type of a
-  nonregular class, and no type is asserted for it here.
+- A nonregular parameter with a simple weight: `U = I₁ + 2I₂₃` has dimension `2 + 4 = 6`, determinant
+  `e² · e⁴⁸ = 1`, simple weights `±1/2` and repeated weights `±23/2`. A self-dual class with this parameter
+  is symplectic, as `w = 23` is odd: the lone `I₁` admits only alternating invariant forms. A criterion
+  stated for regular classes alone says nothing about it.
+- No simple weight: for `U = 2I₁ = I₁ ⊗ ℂ²` every weight has multiplicity two, and `U` preserves both
+  an alternating form (alternating on `I₁` times symmetric on `ℂ²`) and a symmetric one (alternating times
+  alternating), so the archimedean parameter does not decide the type and none is asserted.
 
 ### 1.9 Highest weights of classical groups and dual infinitesimal weights
 
@@ -675,7 +704,7 @@ weight 22, which is `Sym²Δ₁₁`.
 ### Dependencies
 
 AutomorphicFormsOnReductiveGroups §§2.5, 3.5, 4.2, 5.1, 5.5; AutomorphicLFunctionsAndLocalFactors
-§§AL.1.4, AL.3.3.8, AL.3.6; AutomorphicSpectralTheory §4.5; ModularityAndLanglandsExtensions §3.4;
+§§AL.1.4, AL.3.3.8, AL.3.6; AutomorphicSpectralTheory §4.5; ModularityAndLanglandsExtensions §§3.4, 3.8;
 ReductiveGroups Layer 9; LieHighestWeight Layer 6; ClassicalGroups Layer 3; Tau Ceti's symplectic
 group scheme.
 
@@ -761,16 +790,29 @@ symmetric bilinear form `B∞^F(U, V) = J_F(UV)` (CT20 (2.3.4)).
 
 - The integral converges for every test function of §2.1 and is real.
 - `J_F(U + V) = J_F(U) + J_F(V)`, and `B∞^F` is symmetric because `K∞` is commutative.
-- `J_F(I₀) = J_F(1) + J_F(e)`; `J_F(1 − e)` is the integral of the difference of the two
-  logarithmic derivatives `Γ_ℝ′/Γ_ℝ(s) − Γ_ℝ′/Γ_ℝ(s + 1)`.
+- `J_F(I₀) = J_F(1) + J_F(e)`, and, with the leading minus sign of the definition,
+  `J_F(1 − e) = −∫_ℝ (Γ_ℝ′/Γ_ℝ(1/2 + 2πit) − Γ_ℝ′/Γ_ℝ(3/2 + 2πit)) F̂(t) dt`.
+- For every test function of §2.1, `J_F(1 − e) = ∫_0^∞ F(x)/(2 cosh(x/2)) dx`; in particular
+  `J_F(1 − e) ≥ 0` when `F ≥ 0`. Route: for `Re s > 0` put `D(s) = Γ_ℝ′/Γ_ℝ(s) − Γ_ℝ′/Γ_ℝ(s + 1)` and
+  `D₀(s) = ∫_0^∞ e^{−sx}/(1 + e^{−x}) dx`. The recurrence `Γ_ℝ(s + 2) = (s/(2π)) Γ_ℝ(s)` gives
+  `D(s) + D(s + 1) = −1/s`, and `D₀(s) + D₀(s + 1) = 1/s` directly, so `D + D₀` has period `2`; for real
+  `x > 0` the log-convexity of `Γ` gives `|D(x)| ≤ 1/x`, and `0 ≤ D₀(x) ≤ 1/x`, so `D + D₀` vanishes on
+  `(0, ∞)`, hence on `Re s > 0` by the identity theorem. At `s = 1/2 + 2πit` this reads
+  `D = −∫_0^∞ e^{−2πitx}/(2 cosh(x/2)) dx`; since `F̂` is integrable on `ℝ` (`F` is `C²` with compact
+  support), Fubini and Fourier inversion for the even function `F` conclude.
 
-*Needs:* §§1.4, 2.1.
+*Needs:* §§1.4, 2.1; Mathlib `Complex.Gamma_add_one`, `Real.convexOn_log_Gamma` and
+`Continuous.fourierInv_fourier_eq`.
 
 **Checks.**
 
 - `B∞^F(I₁, I₁) = J_F(I₂) + J_F(1) + J_F(e)`, by `I₁² = I₂ + I₀`.
 - `J_F(1 − e)` differs from `J_F(I₀)`; using `1 + e` in place of `1 − e` changes the sign of the
   `e`-term.
+- Sign witness: for the even `C²` function `F(x) = (1 − x²)³` on `|x| ≤ 1`, zero outside,
+  `J_F(1 − e) = ∫_0^1 (1 − x²)³/(2 cosh(x/2)) dx ≈ +0.2254836448`, the integral of a function positive on
+  `(0, 1)`, while the integral `∫_ℝ (Γ_ℝ′/Γ_ℝ(1/2 + 2πit) − Γ_ℝ′/Γ_ℝ(3/2 + 2πit)) F̂(t) dt` without the
+  leading minus is `≈ −0.2254836448`; reading `J_F(1 − e)` as that unsigned integral gives the wrong sign.
 - The bilinear form uses the product `UV`: `B∞^F(1, 1) = J_F(1)`, whereas the incorrect
   `J_F(U + V)` would give `J_F(2·1) = 2J_F(1)`.
 
@@ -910,8 +952,10 @@ symmetric matrix `β_ij = (A_F/m_i) δ_ij − J_F(U_iU_j) − (B_F/4) δ_iδ_j (
 
 - The diagonal entry is `β_ii = A_F/m_i − J_F(U_i²) − (B_F/4) δ_i (1 − ε(U_i²))`, with the factor
   `1/m_i` and the root coefficient `1/4`. It equals `A_F/m_i − J_F(U_i²)` when `δ_i = 0` or
-  `ε(U_i²) = 1`, in particular when `U_i = L(π∞)` for a self-dual `π ∈ Π_alg`, since then
-  `ε(U_i²) = ε(π × π) = 1` by §1.8.
+  `ε(U_i²) = 1`, in particular when `U_i = L(π∞)` for some `π ∈ Π_alg`: then `det U_i = 1`, and
+  `ε(U²) = 1` for every effective `U ∈ K∞` with `det U = 1` (for `U = a·1 + b·e + Σ c_v I_v`, multiplying
+  out gives `ε(U²) = (−1)^{ab + (a + b + 1) Σ c_v (v + 1)}`, and `det U = 1` makes `Σ c_v (v + 1) ≡ b`
+  mod `2`), so no premise of the Conventions enters.
 - The minimum is attained, since `D_r` is compact and nonempty.
 - `μ_F(Q) < 0` exactly when `tᵀβt < 0` for some nonzero `t ≥ 0`.
 
@@ -2073,8 +2117,10 @@ classes with weights `±23/2, ±v/2`, `v ∈ {7, 9, 13}`; seven `PGL₆` classes
 Prove (CT20 Proposition 4.1): let `U ∈ K∞^{≤23}` be effective with `I₂₃` of multiplicity at least two and
 `T = {π ∈ Π_alg : L(π∞) = U}`. If `|T| ≥ 2`, then `U = U_exc` and `T` is a dual pair of non-self-dual
 classes. If `T = {π}`, then `U ∈ V` and `π` is symplectic. In particular there are at most 183 such
-classes, one at each of the 181 elements of `V` and two at `U_exc`; no existence is asserted. The simple
-odd summand `I_w`, `w ≤ 5`, forces the symplectic type of a self-dual `π`.
+classes, one at each of the 181 elements of `V` and two at `U_exc`; no existence is asserted. Every
+element of `V` contains some `I_w`, `w ∈ {1, 3, 5}`, with multiplicity one (§5.4), so its weight `w/2` is
+simple and §1.8 makes a self-dual `π` with that parameter symplectic, `w(π) = 23` being odd; the
+parameter itself is not regular, `I₂₃` being repeated.
 
 *Needs:* §§1.8, 5.4, 5.5.
 
@@ -2150,7 +2196,7 @@ weight at most 24 with top weight simple, by §§5.3, 5.6 and 5.10. In weight 23
 ### Dependencies
 
 Layers 2 and 4 (§§2.8, 2.16–2.18, 2.20, 3.16, 4.14–4.15); ComputationalNumberTheory §5.1;
-ModularityAndLanglandsExtensions §3.4 through §1.8.
+ModularityAndLanglandsExtensions §§3.4, 3.8 through §1.8.
 
 ## Layer 6: Siegel forms at level one, lattice theta maps and first occurrence
 
@@ -2441,7 +2487,12 @@ MetaplecticAutomorphicForms; the five cases are the ones used in §8.8.
 
 - The `L`-value is evaluated at `n/2 − g + 2s`: `0` for `(8, 16)`, `4` for `(8, 24)`, `0` for `(12, 24)`, `−4` for
   `(16, 24)` and `−12` for `(24, 24)`.
-- `ω_g` is in the denominator: its zeros at `ζ(−2), ζ(−4), …` raise the order of `R`.
+- `ω_g` is in the denominator, so each simple trivial zero `ζ(−2), ζ(−4), …` among its factors at `s = 0`
+  lowers the order of `R` by one. For `(g, n, ν) = (16, 24, 1)` the factors `ζ(24 − 2i)` with `i = 13, …, 16`
+  vanish and `ζ(12) ≠ 0`, so `ω₁₆(12 + 2s)` has order `4` and its reciprocal order `−4`; with the other
+  orders of §8.7 the total is `0 − 4 − 4 − 1 + 9 = 0`, whereas reading the zeros as raising the order gives
+  `0 + 4 − 4 − 1 + 9 = 8`. For `g = 24` the reciprocal has order `−12` and the total is again `0`; with the
+  sign reversed it would be `24`.
 - Böcherer's gamma factor `γ_g^k` is not the archimedean factor of the standard `L`-function; the two must not
   be identified.
 

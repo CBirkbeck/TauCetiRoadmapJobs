@@ -41,6 +41,11 @@ Not statable at the pins, with the missing carrier:
   Riemann hypothesis (§§5.3–5.10), Miller's vanishing (§2.19), the repeated-weight `PGL₄` vanishing
   (§2.21) and the Stark–Odlyzko cone inequality (§2.7): cuspidal automorphic representations of
   `GL_m` over the adèles and their Rankin–Selberg `L`-functions are absent;
+* the triangular relation `EP(G; λ) = κ(G, λ) N⊥(w(λ)) + R(G, λ)` between level-one
+  Euler–Poincaré characteristics and self-dual cuspidal counts (§3.16), with the packet
+  contributions it rests on (§3.15): the square-integrable automorphic spectrum of
+  `G(ℚ)\G(𝔸)` and its `(𝔤, K)`-cohomology with coefficients, global Arthur parameters with their
+  real packets, and the counts `N⊥` of level-one cuspidal representations of `PGL_m` are absent;
 * the masses of torsion classes of `SO_d` (`d ≤ 17`) and `Sp_{2n}` (`n ≤ 8`) (§§4.13–4.18): the
   elliptic part of Arthur's `L²`-Lefschetz trace formula and its orbital integrals are absent;
 * the exact value `±n_g e_g` of the `Q_g`-Fourier coefficient of the Leech theta series (§8.6):
