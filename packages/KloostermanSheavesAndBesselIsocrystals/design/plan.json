@@ -3555,8 +3555,14 @@
    "section": "Layer 0 §0.14"
   },
   {
+   "slug": "equal-characteristic-central-sheaves",
+   "needs": "For a split connected reductive group over a finite field and ℓ ≠ p, Gaitsgory's central functor: the nearby cycles Ψ(IC_W) of the normalized Satake sheaves along the Beilinson–Drinfeld degeneration over 𝔸¹ of the affine Grassmannian to the Iwahori affine flag variety at 0 are Iwahori-equivariant perverse sheaves with unipotent inertia action (Gaitsgory, Theorems 1 and 2), and (Görtz–Haines, Theorem 1.1 and Corollary 1.2) their Jordan–Hölder constituents are Tate twists IC_w(−i) of the intersection complexes of the Iwahori orbit closures, those on the zero-dimensional orbits of length-zero elements carrying with multiplicity the Frobenius eigenvalues of H^*(Gr_G, IC_W) (HNY §4.3, pp. 270–271).",
+   "supplier": "GlobalShtukasAndFunctionFieldLanglands",
+   "section": "Layer 1 §§1.1, 1.6, 1.9"
+  },
+  {
    "slug": "arithmetic-d-module-operations",
-   "needs": "Holonomic arithmetic D-modules with and without Frobenius on realizable separated k-schemes of finite type and on quotient stacks by smooth descent, with the six operations and duality, the holonomic t-structure, the Abe–Caro weight theory, Abe's nearby and vanishing cycles, the trace formula and the equality of trace functions with ℓ-adic sheaves built by the same operations (Gabber–Fujiwara independence), overconvergent F-isocrystals being the smooth objects.",
+   "needs": "Holonomic arithmetic D-modules with and without Frobenius on realizable separated k-schemes of finite type and on quotient stacks by smooth descent, with the six operations and duality, the holonomic t-structure, the Abe–Caro weight theory including the geometric semisimplicity of pure objects (Abe–Caro Theorem 4.3.1), Abe's nearby and vanishing cycles, the trace formula and the equality of trace functions with ℓ-adic sheaves built by the same operations, nearby cycles included (Gabber–Fujiwara independence), overconvergent F-isocrystals being the smooth objects, and, for an overconvergent F-isocrystal on a curve unipotent at a boundary point, the Frobenius-compatible identification of its unipotent nearby cycles there with its logarithmic fibre (Xu–Zhu Proposition 2.9.4).",
    "supplier": "PadicDifferentialEquationsAndRigidCohomology",
    "section": "Layer RD.6"
   },
