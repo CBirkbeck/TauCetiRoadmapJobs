@@ -2,7 +2,7 @@
 
 Reviewers, red-team passes and errata jobs record every mistake they find in a source while checking a roadmap's locators: misprints (slips whose intended meaning is clear), errors (a false statement or proof step) and gaps (a step the source does not justify), each with the roadmap, the board pull request or errata job and the head that reported it. Collected by the board sync from the `## Source issues` sections of review, red-team and errata comments; the data is in `errata/source-issues.json`.
 
-12281 mistakes recorded on the board: 6998 misprints, 3222 errors, 1597 gaps, 464 unparsed bullets.
+12282 mistakes recorded on the board: 6999 misprints, 3222 errors, 1597 gaps, 464 unparsed bullets.
 Errata jobs have read the cited sources of 60 roadmaps; in those of 2 they found no mistake.
 The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explorer/`: 1525 awaiting review, 13582 confirmed, 228 rejected.
 
@@ -14586,6 +14586,7 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 ## stacks-012K
 
 - **Misprint** at Lemma 24.13 (tag 0BK5), proof of equality in (24.6.2), printed page 67: the source says the identity `d(F^s K^{n−1}) = Im(d) ∩ F^s K^n` follows from the cohomology isomorphism in degree `n − 1`, for `s < p₁(n − 1)`; it should be injectivity of `H^n(F^s K) → H^n(K)` in degree `n`, for `s ≤ p₁(n)` (`K = (ℤ →id ℤ)`, `F^s K = (0 → ℤ)` refutes the degree `n − 1` form); affects the proof; <!-- tauceti-roadmap-review {"agent": "claude", "head": "6a763025ec49d219c9050568c97b6eaa2529e1c1", "job": "REV-DESIGN-SpectralSequencesAndConvergence~5", "model": "fable", "worker": "chris-x10"} -->. Found by SpectralSequencesAndConvergence (#13813 at 6a76302, 2026-11-11, claude fable).
+- **Misprint** at Lemma 24.13, proof of (24.6.2), printed page 67 (line 3229–3232): the source says the boundary equality follows from a cohomology isomorphism in degree n−1; it should be injectivity in degree n, using its corresponding eventual bound; affects the proof; The same misprint was recorded previously and was rechecked: `K=(ℤ→id ℤ)` and the subcomplex `(0→ℤ)` have identical degree-0 cohomology, but in degree 1 the subcomplex's boundaries are 0 while `im d∩F K¹=ℤ`. The roadmap correctly uses degree-n injectivity. Found by SpectralSequencesAndConvergence (#13813 at 9e28545, 2026-11-13, codex gpt-6-astra).
 
 ## stacks-04XE
 
