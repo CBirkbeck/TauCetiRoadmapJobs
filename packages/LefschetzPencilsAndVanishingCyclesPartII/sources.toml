@@ -34,7 +34,7 @@ sha256 = "52bbee7fc56a181b5c745d729a9125e4bfd702a5a860058043874bfba0d17e9d"
 licence_class = "author-page"
 status = "certified"
 accessed = "2026-10-26"
-cited_for = ["Scope and ownership"]
+cited_for = ["Scope and ownership", "2.4", "Downstream consumers"]
 
 [[source]]
 id = "Stacks-Morphisms"
