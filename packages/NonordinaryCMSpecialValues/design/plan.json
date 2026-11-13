@@ -1889,20 +1889,7 @@
       ]
     }
   ],
-  "gaps": [
-    {
-      "slug": "al-local-frohlich-queyrut",
-      "needs": "The local Fröhlich–Queyrut theorem: for a quadratic extension E/F of local fields, a quasi-character χ of E× trivial on F× and ψ_E = ψ_F ∘ Tr_{E/F}, ε(1/2, χ, ψ_E) = χ(Δ) for every Δ ∈ E× with Δ² ∈ F× and Δ ∉ F.",
-      "supplier": "AutomorphicLFunctionsAndLocalFactors",
-      "section": "Layer AL.1, Local epsilon factors and Gauss sums"
-    },
-    {
-      "slug": "sic-character-twist",
-      "needs": "The twist isomorphism of Iwasawa cohomology for a finite free O-module T whose G_K-action factors through Gal(F_∞/K) of a p-adic Lie tower F_∞/K, identifying lim_cor H¹(F_n, Z_p(1)) ⊗ T with lim_cor H¹(F_n, T(1)) equivariantly for the diagonal action, compatibly with localisation and corestriction, with the finite-S Kummer completion retained.",
-      "supplier": "SelmerIwasawaCohomology",
-      "section": "§3.7 Twisting Iwasawa cohomology"
-    }
-  ],
+  "gaps": [],
   "restructure": [
     {
       "action": "rescope",
