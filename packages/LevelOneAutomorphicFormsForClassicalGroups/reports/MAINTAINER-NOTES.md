@@ -1,0 +1,8 @@
+# Maintainer notes
+
+Unchecked claims from a targeted source check of this package's README (wording, tables and arrangement only). Line numbers are those of the README on the board's main when the check ran. Check each claim against the files; raise those that hold.
+
+1. **Whole tables, judged to be the theorem.** README lines 2438–2468 and 2484–2517 give all 29 and all 32 rows of the two tables at `CT20` lines 2343–2372 and 2378–2410, with columns permuted, summands reordered and two tied rows swapped. Lines 2177–2191 give 24 of 24 parameters of `CL14` lines 559–573 and 16636–16656, regrouped by degree. Lines 1596–1598 give the 32 cardinalities of `CT20` lines 1144–1146 and 1284–1287, one corrected. Lines 2732–2733 give the 4 × 5 orders of `BoechererNote` lines 114–118. The check judged these to be the statement of a complete classification, every row a target and none the source's selection. Confirm that reading, or raise the tables as taken over.
+2. **Captions.** README lines 2434 and 2480 cite Tables 5 and 6 of `CT20` the other way round from the captions in the cached text (lines 2373 and 2411).
+3. **Arrangement, judged independent.** Layers 2, 4 and 5 are close in scope to §§2, 3 and 4 of `CT20`, each with material from other sources, and the block for §§5.1–5.2 stands before §3, so the layers are not a run in the source's order.
+4. **For the human reviewers (licence).** `BoechererNote` is an unpublished three-page note on an author's web page; README lines 2256–2264 and 2727–2734 restate its criterion and its table of orders. `KT87` has no cached text and no licence class (line 1618).
