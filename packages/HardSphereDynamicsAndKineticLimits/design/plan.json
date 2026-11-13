@@ -744,7 +744,7 @@
      ],
      "locator": {
       "source": "GST2013",
-      "where": "line 883 (invariance of the measure, used); DengHaniMa2024 Proposition 1.2(3) lines 186–187; BGSS2023 lines 133–137"
+      "where": "line 883 (invariance of the measure, used); DengHaniMa2024 Proposition 1.2(3) lines 186–187"
      },
      "prerequisites": [
       "target:4.1",
@@ -1337,7 +1337,7 @@
      "id": "7.2",
      "kind": "theorem",
      "name": "HardSphere.measurePreserving_flow",
-     "statement": "For every t, T_t is measure preserving for λ_N and for λ_N restricted to 𝒟̄.",
+     "statement": "For every t, T_t is measure preserving for λ_N and for λ_N restricted to 𝒟̄. The Borel set G ∪ 𝒟̄ᶜ with the trajectory action on G and the identity on 𝒟̄ᶜ is a conull flow on (Fin N → X × E, λ_N) in the sense of ClassicalErgodicTheory §3.5 item 1, G with the trajectory action is one on (Fin N → X × E, λ_N|𝒟̄), and T_t is the identity extension of both.",
      "hypotheses": [
       "0 < ε < ρ"
      ],
@@ -1349,7 +1349,9 @@
       "target:6.2",
       "target:6.4",
       "target:7.1",
-      "mathlib:MeasureTheory.MeasurePreserving"
+      "mathlib:MeasureTheory.MeasurePreserving",
+      "target:5.5",
+      "roadmap:ClassicalErgodicTheory §3.5"
      ],
      "api": [],
      "tests": [
@@ -1367,6 +1369,11 @@
        "name": "inelastic",
        "kind": "non-example",
        "statement": "The totally inelastic rule maps colliding configurations to a null set."
+      },
+      {
+       "name": "conull_carrier",
+       "kind": "non-example",
+       "statement": "E, d = 2, ε = 1, N = 2: 𝒟̄ᶜ = {|x_1 − x_2| < 1} has infinite measure, so G alone is not conull for λ_N (it is for λ_N|𝒟̄); unit torus, d = 2, ε = 0.4, N = 8: 𝒟̄ = G = ∅, the carrier is the whole phase space with the trivial action and T_t = id."
       }
      ]
     },
@@ -1477,7 +1484,7 @@
      "id": "7.5",
      "kind": "construction",
      "name": "HardSphere.grandPhaseSpace",
-     "statement": "𝒟^ε = Σ_{N ≥ 0} (Fin N → X × E) with the componentwise flow and Λ = Σ_N (1/N!) λ_N|𝒟̄_N; the componentwise flow is a group action preserving Λ, the particle number and the empty configuration.",
+     "statement": "𝒟^ε = Σ_{N ≥ 0} (Fin N → X × E) with the componentwise flow T_t(N, Z) = (N, T_t Z) and Λ = Σ_N (1/N!) λ_N|𝒟̄_N; (X_N, μ_N) = (Fin N → X × E, (1/N!) λ_N|𝒟̄_N) with carriers G_N are conull flows (7.2), Λ is their sum measure, and the componentwise flow is the identity extension of their disjoint union, preserving Λ by ClassicalErgodicTheory §3.5 item 3; it is a group action preserving the particle number and fixing the empty configuration.",
      "hypotheses": [
       "0 < ε < ρ"
      ],
@@ -1489,7 +1496,8 @@
       "target:7.1",
       "target:7.2",
       "mathlib:Sigma.instMeasurableSpace",
-      "mathlib:MeasureTheory.Measure.sum"
+      "mathlib:MeasureTheory.Measure.sum",
+      "roadmap:ClassicalErgodicTheory §3.5"
      ],
      "api": [
       {
@@ -1531,7 +1539,7 @@
      "id": "8.1",
      "kind": "definition",
      "name": "HardSphere.transport",
-     "statement": "For measurable W⁰ vanishing off 𝒟̄, W(t) = W⁰ ∘ T_{−t}; W(0) = W⁰, W(s + t) = W(s) ∘ T_{−t}, ∫ W(t)φ = ∫ W⁰(φ ∘ T_t), ‖W(t)‖_p = ‖W⁰‖_p, symmetry preserved, W(t) = U_t W⁰.",
+     "statement": "For measurable W⁰ vanishing off 𝒟̄, W(t) = W⁰ ∘ T_{−t}; W(0) = W⁰, W(s + t) = W(s) ∘ T_{−t}, ∫ W(t)φ = ∫ W⁰(φ ∘ T_t) (for W⁰ ≥ 0 the instance of ClassicalErgodicTheory §3.5 item 4 for the conull flow of 7.2, the signed integrable case by splitting), ‖W(t)‖_p = ‖W⁰‖_p, symmetry preserved, W(t) = U_t W⁰.",
      "hypotheses": [
       "W⁰ measurable",
       "W⁰ = 0 off 𝒟̄",
@@ -1544,7 +1552,8 @@
      "prerequisites": [
       "target:7.1",
       "target:7.2",
-      "target:7.4"
+      "target:7.4",
+      "roadmap:ClassicalErgodicTheory §3.5"
      ],
      "api": [
       {
@@ -1708,10 +1717,12 @@
      "id": "8.4",
      "kind": "theorem",
      "name": "HardSphere.lintegral_sum_injective_eq_marginal",
-     "statement": "For s ≤ N, a symmetric probability density W_N and measurable h ≥ 0 on (Fin s → X × E), ∫ W_N Σ_{i injective} h(z_{i_1}, …, z_{i_s}) = N!/(N − s)! ∫ W^{(s)}_N h, N!/(N − s)! = Nat.descFactorial N s being the number of injective i : Fin s → Fin N.",
+     "statement": "For s ≤ N, a symmetric measurable W_N ≥ 0 (no normalisation; the marginal W^{(s)}_N is the integral formula of 8.3, without its support condition) and measurable h ≥ 0 on (Fin s → X × E), ∫ W_N Σ_{i injective} h(z_{i_1}, …, z_{i_s}) = N!/(N − s)! ∫ W^{(s)}_N h, N!/(N − s)! = Nat.descFactorial N s being the number of injective i : Fin s → Fin N.",
      "hypotheses": [
       "s ≤ N",
-      "W_N symmetric"
+      "W_N symmetric",
+      "W_N ≥ 0 measurable",
+      "h ≥ 0 measurable"
      ],
      "locator": {
       "source": "BGSS2023",
@@ -1728,7 +1739,7 @@
       {
        "name": "s_one",
        "kind": "computation",
-       "statement": "s = 1, h = 1: both sides N."
+       "statement": "s = 1, h = 1: both sides N ∫ W_N (N for a probability density)."
       },
       {
        "name": "s_N",
@@ -1738,12 +1749,17 @@
       {
        "name": "non_injective",
        "kind": "non-example",
-       "statement": "s = 2, N = 3, h = 1: both sides 6; summing over all maps would give 9."
+       "statement": "s = 2, N = 3, h = 1: both sides 6 ∫ W_3; summing over all maps would give 9 ∫ W_3."
       },
       {
        "name": "count_beyond_N",
        "kind": "degenerate",
        "statement": "N = 1, s = 2: no injective map Fin 2 → Fin 1, Nat.descFactorial 1 2 = 0, whereas 1!/(1 − 2)! with truncated subtraction is 1."
+      },
+      {
+       "name": "unnormalised",
+       "kind": "computation",
+       "statement": "One-particle density of 9.3 at ε = 0, μ = 2, ∫ f⁰ = 1, total mass 2e^{−2} ≈ 0.27067, N = s = 1, h = 1: both sides 0.27067; unit torus, d = 2, ε = 0.4, N = 8: W_8 = 0 and both sides 0."
       }
      ]
     }
@@ -1932,14 +1948,15 @@
      ],
      "locator": {
       "source": "BGSS2023",
-      "where": "lines 479–483 (the equilibrium f⁰ = M and its invariant measure named), line 3539 (M(z₁')M(z₂') = M(z₁)M(z₂)), lines 267–268 (transport); the invariance is derived here from 9.2 componentwise"
+      "where": "lines 267–268 (transport); lines 479–483 (the equilibrium f⁰ = M and its invariant measure named); line 3539 (M(z₁')M(z₂') = M(z₁)M(z₂)); the invariance is derived here from 9.2 in each component"
      },
      "prerequisites": [
       "target:7.5",
       "target:8.1",
       "target:9.1",
       "target:9.2",
-      "target:9.3"
+      "target:9.3",
+      "roadmap:ClassicalErgodicTheory §3.5"
      ],
      "api": [],
      "tests": [
@@ -2360,7 +2377,15 @@
    ]
   }
  ],
- "suppliers": [],
+ "suppliers": [
+  {
+   "roadmap": "ClassicalErgodicTheory",
+   "sections": [
+    "3.5"
+   ],
+   "what": "Flows defined almost everywhere on a standard Borel space with a σ-finite measure: item 1 (a conull flow extended by the identity is a jointly measurable measure-preserving family with the group law everywhere), consumed in 7.2; item 3 (countable disjoint unions with the sum measure; a measure on the union is invariant iff each component restriction is), consumed in 7.5 and 9.4; item 4 (transport of densities, (Φ t)_* (μ.withDensity W) = μ.withDensity (W ∘ Φ (−t))), consumed in 8.1."
+  }
+ ],
  "consumers": [
   {
    "roadmap": "future roadmap: BBGKY hierarchy and Lanford's theorem",

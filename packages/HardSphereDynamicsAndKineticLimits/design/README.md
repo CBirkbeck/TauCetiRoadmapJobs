@@ -1,6 +1,6 @@
 # Roadmap: hard-sphere dynamics and kinetic limits
 
-**Summary.** Build the microscopic model of classical kinetic theory: finitely many hard spheres of diameter ε in a flat position space (Euclidean space ℝᵈ or a flat torus ℝᵈ/L), their elastic scattering law, their trajectories, and the almost-everywhere defined hard-sphere flow. The core theorem is Alexander's theorem for finitely many particles: outside a Lebesgue-null set every configuration has a global trajectory with only binary, non-grazing collisions, finitely many in bounded time, and the resulting maps form a measure-preserving group. On this flow the roadmap builds the transport of densities and the weak Liouville equation with specular reflection, marginals and correlation functions, the canonical and grand canonical equilibrium ensembles with their invariance, and the hard-sphere Boltzmann collision operator. It states Lanford's theorem on the Boltzmann–Grad limit as a proposition for the roadmaps that prove it, and proves here its law-of-large-numbers consequence: convergence of the first two correlation functions forces the rescaled empirical measure to concentrate on the Boltzmann solution. Everything rests on Mathlib's Lebesgue change of variables, lattice quotients and Gaussian integrals, and on Tau Ceti's Gaussian densities, strongly continuous groups and empirical measures.
+**Summary.** Build the microscopic model of classical kinetic theory: finitely many hard spheres of diameter ε in a flat position space (Euclidean space ℝᵈ or a flat torus ℝᵈ/L), their elastic scattering law, their trajectories, and the almost-everywhere defined hard-sphere flow. The core theorem is Alexander's theorem for finitely many particles: outside a Lebesgue-null set every configuration has a global trajectory with only binary, non-grazing collisions, finitely many in bounded time, and the resulting maps form a measure-preserving group. On this flow the roadmap builds the transport of densities and the weak Liouville equation with specular reflection, marginals and correlation functions, the canonical and grand canonical equilibrium ensembles with their invariance, and the hard-sphere Boltzmann collision operator. It states Lanford's theorem on the Boltzmann–Grad limit as a proposition for the roadmaps that prove it, and proves here its law-of-large-numbers consequence: convergence of the first two correlation functions forces the rescaled empirical measure to concentrate on the Boltzmann solution. Everything rests on Mathlib's Lebesgue change of variables, lattice quotients and Gaussian integrals, on Tau Ceti's Gaussian densities, strongly continuous groups and empirical measures, and on the flows defined almost everywhere of ClassicalErgodicTheory §3.5.
 
 ## Scope and ownership
 
@@ -9,6 +9,8 @@ This roadmap owns: flat position spaces as quotients of Euclidean space carrying
 Already in the library and consumed, not restated: Lebesgue change of variables for injective differentiable maps, Haar measure on quotients by a lattice and fundamental domains, quotient norms, polar coordinates and the surface measure `MeasureTheory.Measure.toSphere`, Gaussian integrals, `ProbabilityTheory.poissonMeasure`, composition operators on `Lp` (Mathlib); the multivariate Gaussian density, strongly continuous one-parameter groups and the empirical measure of a finite population (Tau Ceti). The multivariate Gaussian density is the material of StandardDistributions, Layer 5, and the strongly continuous group is the material of OneParameterSemigroups; both are cited here through their pinned Tau Ceti declarations.
 
 Left to other roadmaps. The proof of Lanford's theorem (the BBGKY and Boltzmann hierarchies, their Cauchy problems and term-by-term convergence) belongs to a roadmap on the BBGKY hierarchy, which proves the proposition stated in §10.4. The Cauchy problem for the Boltzmann equation, the H theorem and the converse characterisation of collision invariants belong to a roadmap on the Boltzmann equation, which consumes §10.2–10.3. Fluctuations and large deviations of the empirical measure, long-time derivations, infinite hard-sphere systems, short-range potentials, uniform bounds on the number of collisions, and ergodicity of hard-sphere systems are subjects of later roadmaps listed under Downstream consumers. Finite point processes with a density against a Poisson process, Janossy measures and Papangelou intensities on unlabelled point measures are the subject of the PointProcesses roadmap; the grand canonical measure here lives on labelled configurations, where the flow acts, and its image in point measures is not restated. Complex tori as complex Lie groups are owned by ComplexTori; the real flat torus here carries a metric and a measure, not a complex structure. Smooth Hamiltonian flows and Liouville's theorem for smooth vector fields are not used: free transport is a shear, and the measure preservation of the hard-sphere flow is proved directly from the two-body Jacobian.
+
+Flows defined off a null set in general (a measurable flow on a conull carrier extended by the identity, countable disjoint unions of such flows with the sum measure, the transport of densities, point realisation) are ClassicalErgodicTheory §3.5. This roadmap constructs the conull carrier `G`, the trajectory action on it and its measure preservation (Layers 5–7), which are what §3.5 takes as input, and consumes §3.5 items 1, 3 and 4 in §7.2, §7.5, §8.1 and §9.4. Ergodic properties of the flow are not part of this roadmap. The strong continuity of the Koopman group (§7.4) is a target here and not a citation: ClassicalErgodicTheory §0.2 assumes a finite invariant measure and MathematicalBilliards §12.3 a probability space, while `λ_N|𝒟̄` has total mass `q_N · ∞`, infinite already for `N = d = 1` on the unit circle.
 
 Uniqueness of weak solutions of the Liouville equation with specular reflection is not part of this roadmap: the transported density is characterised by its Lagrangian identity (§8.1), which is what every consumer uses.
 
@@ -57,6 +59,7 @@ Every declaration below was read at the pinned Mathlib.
 - `Nat.descFactorial`, `Nat.descFactorial_eq_div` and `Nat.descFactorial_eq_zero_iff_lt` (`Mathlib/Data/Nat/Factorial/Basic.lean`): the falling factorial `n(n − 1)⋯(n − k + 1)`, equal to `n!/(n − k)!` when `k ≤ n` and zero exactly when `n < k`.
 - `Sigma.instMeasurableSpace` (`Mathlib/MeasureTheory/MeasurableSpace/Constructions.lean`) and `MeasureTheory.Measure.sum`: the measurable space and measures on the grand canonical phase space.
 - `Flow` (`Mathlib/Dynamics/Flow.lean`): a jointly continuous action of a topological monoid; the hard-sphere flow is not continuous and is not an instance, while free transport is.
+- `secondCountable_of_proper` (`Mathlib/Topology/MetricSpace/ProperSpace.lean`), `standardBorel_of_polish`, `StandardBorelSpace.prod` and `StandardBorelSpace.pi_countable` (`Mathlib/MeasureTheory/Constructions/Polish/Basic.lean`): a proper metric space is complete and second countable, hence Polish; a Polish space with its Borel σ-algebra is standard Borel, and finite products of standard Borel spaces are standard Borel. So the phase space `Fin N → X × E` is standard Borel, as ClassicalErgodicTheory §3.5 requires.
 
 ### From Tau Ceti
 
@@ -67,9 +70,13 @@ Every declaration below was read at the pinned Tau Ceti.
 - `TauCeti.Probability.empiricalMeasureOfFintype` (`TauCeti/Probability/Process/EmpiricalMeasure.lean`): the probability measure `(1/|κ|) Σ_i δ_{x_i}` of a nonempty finite population.
 - `TauCeti.flowOfLipschitz` (`TauCeti/Dynamics/Flow/OfLipschitz.lean`): the global flow of a globally Lipschitz vector field on a Banach space.
 
-### From other roadmaps
+### From TauCetiRoadmap.ClassicalErgodicTheory — §3.5
 
-No roadmap section is consumed. Every input is a pinned declaration or a target of this roadmap.
+Consumed on a standard Borel space with a σ-finite measure `μ`; a conull flow there is a measurable set `X₀` with `μ(X₀ᶜ) = 0` carrying a jointly measurable `AddAction ℝ X₀` whose time-`t` maps preserve `μ` restricted to `X₀`. The phase spaces here are standard Borel (Mathlib above) and `λ_N`, `λ_N|𝒟̄` and `(1/N!) λ_N|𝒟̄_N` are σ-finite.
+
+- §3.5 item 1 (conull flows): the extension of each time-`t` map by the identity off `X₀` is a jointly measurable family of `μ`-preserving maps satisfying the group law everywhere. Consumed in §7.2.
+- §3.5 item 3 (disjoint unions): for countably many conull flows on `(X_N, μ_N)`, the componentwise flow on `Σ N, X_N` with the sum measure is a conull flow, and a measure on the union is invariant exactly when each of its component restrictions is. Consumed in §7.5 and §9.4.
+- §3.5 item 4 (transport of densities): for a conull flow with identity extension `Φ` and a measurable `W ≥ 0`, `(Φ t)_* (μ.withDensity W) = μ.withDensity (W ∘ Φ (−t))`. Consumed in §8.1.
 
 ## How to read the build
 
@@ -330,7 +337,7 @@ API:
 
 ### 4.3 The collision map and its Jacobian
 
-On the open set `U = {|a| > ε, ⟨a, u⟩ < 0, D > 0}` define the collision map `C(a, u) = (a + τ(u − R_q u), R_q u)`, so that `B_s = S_s ∘ C` on `U ∩ {τ < s}` with `S_s(a, u) = (a + s u, u)`. Prove that `C` is smooth on `U` and that `det DC(a, u) = 1` at every point of `U`. Route: with `w = da + τ du` the differential of `Y + τ U'` (where `(Y, U') = C(a, u)`) is `R_q w`, and the differential of `U'` is `R_q du` plus a term depending only on `w`; in the coordinates `(w, du)` and `(dY + τ dU', dU')`, obtained by shears of determinant 1, the Jacobian is block lower triangular with diagonal blocks `R_q, R_q`, whose determinant is `(det R_q)² = 1` (`Matrix.det_fromBlocks_zero₁₂`). Consequently, for each fixed `s ≥ 0`, the derivative of `(a, u) ↦ B_s(a, u)` with `s` held fixed has determinant 1 on `U ∩ {τ < s}` (statement used in GST2013 line 883; DengHaniMa2024 lines 186–187; BGSS2023 lines 133–137).
+On the open set `U = {|a| > ε, ⟨a, u⟩ < 0, D > 0}` define the collision map `C(a, u) = (a + τ(u − R_q u), R_q u)`, so that `B_s = S_s ∘ C` on `U ∩ {τ < s}` with `S_s(a, u) = (a + s u, u)`. Prove that `C` is smooth on `U` and that `det DC(a, u) = 1` at every point of `U`. Route: with `w = da + τ du` the differential of `Y + τ U'` (where `(Y, U') = C(a, u)`) is `R_q w`, and the differential of `U'` is `R_q du` plus a term depending only on `w`; in the coordinates `(w, du)` and `(dY + τ dU', dU')`, obtained by shears of determinant 1, the Jacobian is block lower triangular with diagonal blocks `R_q, R_q`, whose determinant is `(det R_q)² = 1` (`Matrix.det_fromBlocks_zero₁₂`). Consequently, for each fixed `s ≥ 0`, the derivative of `(a, u) ↦ B_s(a, u)` with `s` held fixed has determinant 1 on `U ∩ {τ < s}` (statement used in GST2013 line 883; DengHaniMa2024 lines 186–187).
 
 **Checks.**
 
@@ -519,7 +526,7 @@ Layers 4–5.
 
 ### 7.1 The flow
 
-Define `HardSphere.flow ε N t` as the map sending `Z ∈ G` to the value at time `t` of its trajectory and fixing every `Z ∉ G`. Prove `HardSphere.flow_add`: `T_0 = id` and `T_{s+t} = T_s ∘ T_t` for all real `s, t`; each `T_t` is a bijection preserving `G`, `𝒟̄` and their complements; `(t, Z) ↦ T_t Z` is measurable; `t ↦ T_t Z` has continuous positions and right-continuous piecewise constant velocities; `T_t Z = S_t Z` for every `Z ∈ G` whose trajectory has no contact on the closed interval between 0 and `t` (off `G` the flow is the identity, so the membership is needed) (GST2013 line 862; BGSS2023 lines 132–139; DengHaniMa2024 lines 173–178).
+Define `HardSphere.flow ε N t` as the map sending `Z ∈ G` to the value at time `t` of its trajectory and fixing every `Z ∉ G`. Prove `HardSphere.flow_add`: `T_0 = id` and `T_{s+t} = T_s ∘ T_t` for all real `s, t`; each `T_t` is a bijection preserving `G`, `𝒟̄` and their complements; `(t, Z) ↦ T_t Z` is measurable; `t ↦ T_t Z` has continuous positions and right-continuous piecewise constant velocities; `T_t Z = S_t Z` for every `Z ∈ G` whose trajectory has no contact on the closed interval between 0 and `t` (off `G` the flow is the identity, so the membership is needed) (GST2013 line 862; BGSS2023 lines 132–139; DengHaniMa2024 lines 173–178). The group law off `G` is the identity case and needs only the invariance of `G`; that `T_t` is the identity extension of a conull flow in the sense of ClassicalErgodicTheory §3.5 item 1 needs the measure preservation and is proved in §7.2.
 
 **Checks.**
 
@@ -532,15 +539,16 @@ Define `HardSphere.flow ε N t` as the map sending `Z ∈ G` to the value at tim
 
 ### 7.2 Measure preservation
 
-Prove `HardSphere.measurePreserving_flow`: for every `t`, `T_t` is measure preserving for `λ_N` and for `λ_N` restricted to `𝒟̄`. Route: on `G ∩ {|V| ≤ R}` the map `T_t` is, on each set where the configurations at the times `jδ` lie in `S_{δ,R}`, a composition of step maps, which preserve measure by §6.2; these sets exhaust `G` up to a null set (§6.4); off `G`, `T_t` is the identity (GST2013 line 883; DengHaniMa2024 line 186).
+Prove `HardSphere.measurePreserving_flow`: for every `t`, `T_t` is measure preserving for `λ_N` and for `λ_N` restricted to `𝒟̄`. Prove also that the Borel set `G ∪ 𝒟̄ᶜ`, with the trajectory action on `G` and the identity on `𝒟̄ᶜ`, is a conull flow on `(Fin N → X × E, λ_N)` in the sense of ClassicalErgodicTheory §3.5 item 1, and that `G` with the trajectory action is one on `(Fin N → X × E, λ_N|𝒟̄)`; `T_t` is the identity extension of both. Route: on `G ∩ {|V| ≤ R}` the map `T_t` is, on each set where the configurations at the times `jδ` lie in `S_{δ,R}`, a composition of step maps, which preserve measure by §6.2; these sets exhaust `G` up to a null set (§6.4), so the trajectory action preserves `λ_N` restricted to `G`; `G` and `𝒟̄ᶜ` are disjoint invariant Borel sets (§5.5, §6.4, §7.1), the action is jointly measurable (§7.1), and the complement of `G ∪ 𝒟̄ᶜ` is `𝒟̄ ∖ G`, null by §6.4; item 1 then gives that `T_t` preserves `λ_N`, and the same argument with carrier `G` gives `λ_N|𝒟̄` (GST2013 line 883; DengHaniMa2024 line 186).
 
 **Checks.**
 
 - `N = 2` on `E`: preservation reduces to §4.4 in relative coordinates and translation in the centre of mass.
 - The indicator of `𝒟̄` is invariant exactly, since `T_t` preserves `𝒟̄`.
 - Non-example: replacing specular scattering by the totally inelastic rule of §4.4 gives a map that sends the positive-measure set of colliding configurations to a null set, so the scattering law, not only free transport, carries the measure preservation.
+- The carrier for `λ_N` must contain `𝒟̄ᶜ`: on `E` with d = 2, ε = 1 and `N = 2`, the set `𝒟̄ᶜ = {|x_1 − x_2| < 1}` has infinite measure, so `G` alone is not conull for `λ_N`, although it is conull for `λ_N|𝒟̄`. On the unit torus with d = 2, ε = 0.4 and `N = 8`, `𝒟̄ = G = ∅`, the carrier is the whole phase space with the trivial action, and `T_t` is the identity.
 
-*Needs:* §6.2, §6.4, §7.1.
+*Needs:* §5.5, §6.2, §6.4, §7.1, ClassicalErgodicTheory §3.5 (item 1).
 
 ### 7.3 Symmetries and conservation laws
 
@@ -570,7 +578,7 @@ For `1 ≤ p < ∞` define the Koopman group `U_t f = f ∘ T_{−t}` on `Lp ℝ
 
 ### 7.5 The grand canonical phase space
 
-Define the grand canonical phase space `𝒟^ε = Σ_{N ≥ 0} (Fin N → X × E)` with the componentwise flow and the measure `Λ = Σ_N (1/N!) λ_N` restricted to `𝒟̄_N` on the `N`-th component (BGSS2023 lines 158–166; DengHaniMa2024 lines 199–204). Prove that the componentwise flow is a group action preserving `Λ`, preserving the particle number and fixing the empty configuration.
+Define the grand canonical phase space `𝒟^ε = Σ_{N ≥ 0} (Fin N → X × E)` with the componentwise flow `T_t(N, Z) = (N, T_t Z)` and the measure `Λ = Σ_N (1/N!) λ_N` restricted to `𝒟̄_N` on the `N`-th component (BGSS2023 lines 158–166; DengHaniMa2024 lines 199–204). The spaces `X_N = Fin N → X × E` with `μ_N = (1/N!) λ_N|𝒟̄_N`, carriers `G_N` and the trajectory actions form a countable family of conull flows (§7.2), and `Λ` is their sum measure; the componentwise flow is the identity extension of their disjoint union, so it preserves `Λ` by ClassicalErgodicTheory §3.5 item 3. Prove that the componentwise flow is a group action (componentwise §7.1), preserves the particle number and fixes the empty configuration.
 
 **Checks.**
 
@@ -578,7 +586,7 @@ Define the grand canonical phase space `𝒟^ε = Σ_{N ≥ 0} (Fin N → X × E
 - On the unit torus with ε = 0.4 in d = 2, the components with `N ≥ 8` are `Λ`-null.
 - The `N = 1` component carries `μ_X ⊗ vol` with weight 1.
 
-*Needs:* §7.1, §7.2, Mathlib `Sigma.instMeasurableSpace`, `MeasureTheory.Measure.sum`.
+*Needs:* §7.1, §7.2, Mathlib `Sigma.instMeasurableSpace`, `MeasureTheory.Measure.sum`, ClassicalErgodicTheory §3.5 (item 3).
 
 ### Examples
 
@@ -592,7 +600,7 @@ Layers 5–6.
 
 ### 8.1 Transported densities
 
-For a measurable `W⁰ : (Fin N → X × E) → ℝ` vanishing off `𝒟̄`, define `W(t) = W⁰ ∘ T_{−t}`. Prove: `W(0) = W⁰`; `W(s + t) = W(s) ∘ T_{−t}`; `W(t)` vanishes off `𝒟̄`; `∫ W(t) φ dλ = ∫ W⁰ (φ ∘ T_t) dλ` for measurable `φ` with either side integrable or both functions nonnegative; `‖W(t)‖_p = ‖W⁰‖_p`; `W(t)` is symmetric when `W⁰` is; and `W(t) = U_t W⁰` in `Lp` (BGSS2023 lines 145–157; GST2013 lines 1138–1140; DengHaniMa2024 lines 233–234).
+For a measurable `W⁰ : (Fin N → X × E) → ℝ` vanishing off `𝒟̄`, define `W(t) = W⁰ ∘ T_{−t}`. Prove: `W(0) = W⁰`; `W(s + t) = W(s) ∘ T_{−t}`; `W(t)` vanishes off `𝒟̄`; `∫ W(t) φ dλ = ∫ W⁰ (φ ∘ T_t) dλ` for measurable `φ` with either side integrable or both functions nonnegative; `‖W(t)‖_p = ‖W⁰‖_p`; `W(t)` is symmetric when `W⁰` is; and `W(t) = U_t W⁰` in `Lp` (BGSS2023 lines 145–157; GST2013 lines 1138–1140; DengHaniMa2024 lines 233–234). Route for the duality: for `W⁰ ≥ 0` it is the instance of ClassicalErgodicTheory §3.5 item 4 for the conull flow of §7.2 on `(Fin N → X × E, λ_N)`, `(T_t)_* (λ_N.withDensity W⁰) = λ_N.withDensity (W⁰ ∘ T_{−t})`, integrated against `φ`; the integrable signed case follows by splitting `W⁰` and `φ` into positive and negative parts.
 
 **Checks.**
 
@@ -601,7 +609,7 @@ For a measurable `W⁰ : (Fin N → X × E) → ℝ` vanishing off `𝒟̄`, def
 - A density that is a function of `H` and `P` times the indicator of `𝒟̄` is constant in time.
 - Non-example: `W⁰ ∘ T_t` (the wrong sign) moves mass in the direction `−v` for `N = 1`.
 
-*Needs:* §7.1, §7.2, §7.4.
+*Needs:* §7.1, §7.2, §7.4, ClassicalErgodicTheory §3.5 (item 4).
 
 ### 8.2 The weak Liouville equation with specular reflection
 
@@ -636,13 +644,14 @@ For a symmetric `W_N ≥ 0` vanishing off `𝒟̄_N` and `s ≤ N`, define the m
 
 ### 8.4 Symmetric expectations
 
-Prove: for `s ≤ N`, a symmetric probability density `W_N` on `(Fin N → X × E)` and measurable `h ≥ 0` on `(Fin s → X × E)`, `∫ W_N Σ_{i} h(z_{i_1}, …, z_{i_s}) dλ = N!/(N − s)! ∫ W^{(s)}_N h dλ_s`, the sum over injective `i : Fin s → Fin N`, whose number is the falling factorial `Nat.descFactorial N s = N!/(N − s)!`. This is the fixed-`N` form of the distinct-label identity, the first equality of BGSS2023 (1.1.9), lines 241–266, printed p. 3, with the indicator `δ_{N ≥ n}` at line 249. Route: extend each injective `i` to a permutation of `Fin N` sending `1, …, s` to `i_1, …, i_s`; relabelling preserves `λ_N` (§3.1) and `W_N`, so each of the `Nat.descFactorial N s` terms equals `∫ W_N h(z_1, …, z_s) dλ = ∫ W^{(s)}_N h dλ_s` by Fubini and the definition of the marginal. The hypothesis `s ≤ N` is needed for the marginal `W^{(s)}_N` to exist; the count `Nat.descFactorial N s` is also correct for `s > N`, where it is 0.
+Prove: for `s ≤ N`, a symmetric measurable `W_N ≥ 0` on `(Fin N → X × E)` and measurable `h ≥ 0` on `(Fin s → X × E)`, `∫ W_N Σ_{i} h(z_{i_1}, …, z_{i_s}) dλ = N!/(N − s)! ∫ W^{(s)}_N h dλ_s`, the sum over injective `i : Fin s → Fin N`, whose number is the falling factorial `Nat.descFactorial N s = N!/(N − s)!`. No normalisation of `W_N` is assumed, since its consumer §9.5 applies it to `W_N(t)`, of total mass `N!` times the probability of `N` particles; and `W^{(s)}_N` is the integral formula of §8.3, which is defined for every measurable `W_N ≥ 0`, the support condition of §8.3 not being used here. This is the fixed-`N` form of the distinct-label identity, the first equality of BGSS2023 (1.1.9), lines 241–266, printed p. 3, with the indicator `δ_{N ≥ n}` at line 249. Route: extend each injective `i` to a permutation of `Fin N` sending `1, …, s` to `i_1, …, i_s`; relabelling preserves `λ_N` (§3.1) and `W_N`, so each of the `Nat.descFactorial N s` terms equals `∫ W_N h(z_1, …, z_s) dλ = ∫ W^{(s)}_N h dλ_s` by Fubini and the definition of the marginal. The hypothesis `s ≤ N` is needed for the marginal `W^{(s)}_N` to exist; the count `Nat.descFactorial N s` is also correct for `s > N`, where it is 0.
 
 **Checks.**
 
-- `s = 1`, `h = 1`: both sides are `N`.
+- `s = 1`, `h = 1`: both sides are `N ∫ W_N`, which is `N` for a probability density.
 - `s = N`: both sides are `N! ∫ W_N h` for symmetric `h`.
-- `s = 2`, `N = 3`, `h = 1`: both sides are `6 = 3 · 2`; a sum over all maps `Fin 2 → Fin 3`, injective or not, would give `9`.
+- `s = 2`, `N = 3`, `h = 1`: both sides are `6 ∫ W_3 = 3 · 2 ∫ W_3`; a sum over all maps `Fin 2 → Fin 3`, injective or not, would give `9 ∫ W_3`.
+- Normalisation is not used: for the one-particle density of §9.3 at ε = 0, μ = 2, `∫ f⁰ = 1`, of total mass `2e^{−2} ≈ 0.27067`, with `N = s = 1` and `h = 1`, both sides are `0.27067`; on the unit torus with d = 2, ε = 0.4 and `N = 8`, the density vanishes and both sides are 0. A statement for probability densities only would cover neither.
 - The count at `s > N`: for `N = 1`, `s = 2` there is no injective map `Fin 2 → Fin 1` and `Nat.descFactorial 1 2 = 0`, whereas `1!/(1 − 2)!` computed with truncated natural subtraction is `1!/0! = 1`.
 
 *Needs:* §3.1, §8.3, Mathlib `Nat.descFactorial`, `MeasureTheory.measurePreserving_piCongrLeft`.
@@ -702,7 +711,7 @@ API:
 
 ### 9.4 Invariance of the grand canonical measure
 
-Prove `HardSphere.grandCanonical_flow_invariant`: on a position space of finite measure, for `0 < ε < ρ`, `μ > 0`, `c > 0`, `β > 0`, `u ∈ E` and `f⁰(x, v) = c M_{β,u}(v)`, the grand canonical measure is invariant under the componentwise flow. For general `f⁰` the measure is transported by §8.1 componentwise The equilibrium `f⁰ = M` and its invariant measure are named in BGSS2023 lines 479–483, the product identity `M(z₁')M(z₂') = M(z₁)M(z₂)` is BGSS2023 line 3539, and the transport is BGSS2023 lines 267–268; the invariance is derived here from §9.2 applied in each component.
+Prove `HardSphere.grandCanonical_flow_invariant`: on a position space of finite measure, for `0 < ε < ρ`, `μ > 0`, `c > 0`, `β > 0`, `u ∈ E` and `f⁰(x, v) = c M_{β,u}(v)`, the grand canonical measure is invariant under the componentwise flow. For general `f⁰` the measure is transported by §8.1 componentwise (BGSS2023 lines 267–268). The equilibrium `f⁰ = M` and its invariant measure are named in BGSS2023 lines 479–483 and the product identity `M(z₁')M(z₂') = M(z₁)M(z₂)` at BGSS2023 line 3539; the invariance is derived here from §9.2 applied in each component, a measure on the disjoint union being invariant exactly when each of its component restrictions is (ClassicalErgodicTheory §3.5 item 3).
 
 **Checks.**
 
@@ -711,7 +720,7 @@ Prove `HardSphere.grandCanonical_flow_invariant`: on a position space of finite 
 - Non-example: the radial non-Gaussian profile `g(v) = 1_{|v| ≤ 1}` is not invariant: in d = 2 at ν = (1, 0), `v = (0, 0.9)`, `w = (0.9, 0)` gives `g(v)g(w) = 1` and `σ_ν(v, w) = ((0.9, 0.9), 0)` gives `g(0.9, 0.9) g(0) = 0` since `|(0.9, 0.9)| ≈ 1.2728`.
 - Non-example: a position-dependent profile is moved by free transport. On the unit circle (d = 1) take `f⁰(x, v) = ρ(x) M_{1,0}(v)` with `ρ(x) = 1 + 0.5 cos(2πx)`: the `N = 1` component of the measure has density `(μ/Z) ρ(x) M(v)` at time 0 and, after the flow for time `t`, `(μ/Z) ρ(x − t v) M(v)`; at `t = 1/4`, `x = 0`, `v = 1` the position factor changes from `ρ(0) = 1.5` to `ρ(−1/4) = 1`, and by continuity the two densities differ on a set of positive measure. Nonconstancy as a function is not enough: `ρ = 1 + 1_{x = 0}` is nonconstant but equal to 1 almost everywhere, so it defines the invariant Maxwellian measure.
 
-*Needs:* §7.5, §8.1, §9.1–9.3.
+*Needs:* §7.5, §8.1, §9.1–9.3, ClassicalErgodicTheory §3.5 (item 3).
 
 ### 9.5 Correlation functions
 
