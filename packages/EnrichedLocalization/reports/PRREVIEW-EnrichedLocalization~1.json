@@ -1,0 +1,13 @@
+{
+  "review": {
+    "status": "needs_changes",
+    "reviewer": "independent-review-PRREVIEW-EnrichedLocalization~1",
+    "head": "3bceb5a4dc344cdca030b3a7d7e2e90d5a6508d9",
+    "pr": 2269,
+    "folder": "ModelCategoryTheory/EnrichedLocalization",
+    "date": "2026-11-13",
+    "findings": 8,
+    "blocking": 5,
+    "notes": "Full read-only review: 15 seeded sections, 44 numbered target blocks, 5 headlines, computed adversarial table, five readable sources and uncertified DK80; main/open ownership audit; dependency check 0 problems. Gate fails missing Tau Ceti import/build. Scratch repair against pinned realization weak equivalences elaborates with all three signatures; original head does not."
+  }
+}
