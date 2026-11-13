@@ -124,3 +124,20 @@ status = "uncertified"
 version_note = "paywalled; cited by its locator without the text"
 cited_for = ["4.10"]
 
+[[source]]
+id = "MR18"
+authors = "Colette Moeglin, David Renard"
+title = "Sur les paquets d'Arthur de Sp(2n, R) contenant des modules unitaires de plus haut poids, scalaires"
+year = 2018
+arxiv = "1802.04611v4"
+locator_scheme = "theorem"
+locator = "Proposition 18.3 and Remarque 18.4, p. 46"
+url = "https://arxiv.org/abs/1802.04611v4"
+fetched_from = "https://arxiv.org/pdf/1802.04611v4"
+fetched_at = "2026-11-13T16:27:39Z"
+sha256 = "6fadbad5b976e5b55264cfb8ebacb485bd7e3aa6187bf5e1cc9cc450884a9b61"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-13"
+version_note = "arXiv v4, the version CT20 cites"
+cited_for = ["Exact supplier contracts (gap:scalar-lowest-weight-packet-character)", "3.9", "3.11", "3.12"]
