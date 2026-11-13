@@ -3032,12 +3032,6 @@
   ],
   "gaps": [
     {
-      "slug": "kummer-tower-tame-quotient",
-      "supplier": "LocalFieldsRamification",
-      "section": "Layer 4",
-      "needs": "for finite `K/ℚ_p` and the Kummer tower `K∞` of a compatible system of `p`-power roots of a uniformiser, the composite `G_{K∞} → G_K → G_K/P_K` is surjective with kernel `G_{K∞} ∩ P_K`, so that restriction identifies the tame quotients and preserves a chosen Frobenius lift."
-    },
-    {
       "slug": "fundamental-character-artin",
       "supplier": "PadicLocalLanglandsForGL2Qp",
       "section": "§0.3",

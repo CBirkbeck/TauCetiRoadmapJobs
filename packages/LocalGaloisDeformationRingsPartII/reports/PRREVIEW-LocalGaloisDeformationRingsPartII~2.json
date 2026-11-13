@@ -1,0 +1,22 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-LocalGaloisDeformationRingsPartII~2",
+  "head": "6f34703c17015bbbc3c30e1d7b45dae083a23a2d",
+  "pr": 2278,
+  "folder": "LocalGaloisDeformationRingsPartII",
+  "date": "2026-11-13",
+  "findings": 2,
+  "blocking": 1,
+  "notes": "incremental re-review of 101 changed lines since 7f3bea4. All five previous findings (R01-R05) are repaired. New: R01 (P2) the rank-n statement of 1.1-1.2 gives at n = 3 a second definition of the Frobenius matrix and shape owned by LocalGaloisDeformationRings 6.9, with no comparison; R02 (P3) the new LLHLM23 page locators cite arXiv v2 pages while the reference names no version. Checked: 21 source locators in the changed passages against BHHMS23, LLHL19 and LLHLM23 (seeded targets 0.2, 0.4, 1.3, 2.1, 3.2, 3.4, 3.6, 3.8 among them); adversarial rows with computed values for every changed statement (n = 3 tame type, 3.2 digit argument, 3.6 coefficient field, 3.7 with p >= 3n and the n = 1, p = 2 case, 7.5 Check); the pull request text against the head; gate passes, depcheck 0 problems, Suggested.lean elaborates with sorry the only warning. Remark for the board: the README's gap slug descent-kisin-modules differs from the design plan's rank-two-descent-kisin-modules.",
+  "deferred": [
+   {
+    "id": "D01",
+    "severity": "",
+    "title": "Not tested: the board's `design/plan.json` entry `rank-two-descent-kisin-modules` has to become `descent-kisin-modules` and ask `LocalGaloisDeformationRings` for the §6.9 construction in every rank `n",
+    "where": "board design plan: rename gap rank-two-descent-kisin-modules to descent-kisin-modules, every rank",
+    "raised": "PRREVIEW-LocalGaloisDeformationRingsPartII~2"
+   }
+  ]
+ }
+}
