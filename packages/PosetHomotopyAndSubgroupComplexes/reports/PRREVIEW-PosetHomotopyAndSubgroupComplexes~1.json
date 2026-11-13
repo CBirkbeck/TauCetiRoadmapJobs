@@ -1,0 +1,13 @@
+{
+  "review": {
+    "status": "needs_changes",
+    "reviewer": "independent-review-PRREVIEW-PosetHomotopyAndSubgroupComplexes~1",
+    "head": "a86135c56b363c76ead3f1f6fbf96b35eaa0bdb1",
+    "pr": 2296,
+    "folder": "PosetHomotopyAndSubgroupComplexes",
+    "date": "2026-11-13",
+    "findings": 15,
+    "blocking": 8,
+    "notes": "Full folder review; all 15 seeded targets assessed, 8 checked against readable source text and 7 original Quillen locators uncertified. 22 works requested; 12 texts obtained. Gate FAIL solely dropped=16; targeted build passed; independent elaboration passed with 15 sorry warnings. 19 signatures checked; 15 one-tactic probes found no padding. Adversarial table, ownership, dependency, PR-text and source-independence checks recorded."
+  }
+}
