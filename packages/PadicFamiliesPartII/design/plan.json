@@ -3846,7 +3846,7 @@
     },
     {
       "slug": "lci-fundamental-class",
-      "needs": "For a proper lci morphism between normal flat lci Z_p-schemes that is not finite flat, supply the fundamental class p^*O → p^!O, its compatibility with base change along the generic and ordinary loci, and extension of divisibilities across closed subsets of codimension two (P20 §4.2 and §7.1).",
+      "needs": "For a proper morphism f : X → Y between flat lci Z_p-schemes of the same pure relative dimension, X normal, with an open V ⊂ X smooth over Z_p whose complement has codimension at least two and whose image lies in an open of Y smooth over Z_p, supply the fundamental class f^*O_Y → f^!O_Y into the invertible sheaf f^!O_Y = ω_{X/Z_p} ⊗ f^*ω_{Y/Z_p}^{−1}, defined on V as the determinant of df and extended by normality, its agreement with the trace of f where f is finite flat, its compatibility with restriction to the generic fibre and to the ordinary loci used by the Hecke correspondences, and the extension of divisibilities between such invertible lattices across closed subsets of codimension two (P20 Corollary 4.1.3.1 and §§4.2.1–4.2.3).",
       "supplier": "SchemeAndStackFoundations",
       "section": "§2.19"
     },
@@ -3879,6 +3879,24 @@
       "needs": "In item 4 of §9.6, supply the intertwining of the Klingen relative BGG differential θ : F^(k,w) ⊗ ω^r → F^(−2−k,w) ⊗ ω^(k+r+1) in the form θ ∘ U = p^(k+1) U ∘ θ, so that U on the middle term corresponds to p^(k+1)U on the last term, the normalization from which its slope ranges s<k−2 and s<k+1 follow (AIP15 Proposition 7.2.3; P20 Proposition 13.3.3.1 with the sign of the exponent corrected).",
       "supplier": "HigherHidaAndColemanTheory",
       "section": "§9.6"
+    },
+    {
+      "slug": "spherical-composite-hecke",
+      "needs": "For the paramodular composite C_r of §7.5 acting on RΓ(X, Ω(d,r)) and RΓ(X, Ω(d,r)(−D)) in every cohomological degree, and on their reductions modulo p^n, supply its independence of the toroidal fan and its commutation with the prime-to-p Hecke correspondences, which §7.6 states on global forms.",
+      "supplier": "AlgebraicModularFormsAndSerreWeightsPartII",
+      "section": "§7.5"
+    },
+    {
+      "slug": "solid-positive-monoid",
+      "needs": "For a torus T over Q_p with maximal compact subgroup T(Z_p) and a positive monoid T⁺(Q_p) ≅ T(Z_p) × Z^s × Z_{≥0}^{r−s}, supply the solidification E_■[T⁺(Q_p)] of the condensed monoid algebra, the category of solid E_■[T⁺(Q_p)]-modules and its derived category, base change along E_■[T⁺(Q_p)] → E_■[T(Q_p)] with restriction of scalars back, and the λ-smooth objects among them (BCGP25 §4.6.46).",
+      "supplier": "LocallyAnalyticRepresentationsOfLocalGroups",
+      "section": "§3.4"
+    },
+    {
+      "slug": "infinitesimal-lambda-smooth",
+      "needs": "For a locally Q_p-analytic group H with Lie algebra h, an open submonoid containing a compact open subgroup, and a weight λ : h → E (here an element of X^*(T)_E through b → t), supply the category of solid representations on which the map from locally analytic vectors is an isomorphism and h acts through λ, its derived category, the same for the monoid, restriction to closed subgroups and to the monoid, invariants under compact open subgroups, and its identification with the λ-smooth category of §3.5 whenever λ is the differential of a continuous character H → E^× (BCGP25 §4.1, p. 68; Definition 2.2.26).",
+      "supplier": "LocallyAnalyticRepresentationsOfLocalGroups",
+      "section": "§3.5"
     }
   ],
   "sourceIssues": [
