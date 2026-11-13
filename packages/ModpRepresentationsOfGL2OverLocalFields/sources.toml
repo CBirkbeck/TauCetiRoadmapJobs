@@ -285,7 +285,6 @@ year = 1977
 venue = "Astérisque 46, Société Mathématique de France (1977)"
 locator_scheme = "chapter"
 locator = "Chapter II, §1.4, Théorème 3 and Corollaire 1 (Ihara)"
-cited_for = ["0.5"]
 url = "https://www.numdam.org/item/AST_1983__46__1_0.pdf"
 fetched_from = "https://www.numdam.org/item/AST_1983__46__1_0.pdf"
 fetched_at = "2026-11-11T05:34:50Z"
@@ -294,6 +293,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-11"
 resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/6807#issuecomment-6787957825"
+cited_for = ["0.5"]
 
 [[source]]
 id = "BARTHEL-LIVNE94"
@@ -304,11 +304,11 @@ venue = "Duke Math. J. 75 (1994), 261-292"
 doi = "10.1215/s0012-7094-94-07508-x"
 locator_scheme = "theorem"
 locator = "Proposition 18; Theorem 30; Theorems 33-34; Corollary 36"
-cited_for = ["1.1", "Exact supplier contracts"]
-version_note = "not read; the theorem numbers are those under which HU12 (pp. 16, 29) and BP12 (pp. 43-44) cite this paper; CDN23 attributes Proposition 8, Proposition 18 and Theorem 19 to its reference [3], the authors' J. Number Theory 55 (1995) paper, while HU12 and BP12 cite Proposition 8 and Theorem 19 from this Duke paper"
 licence_class = "none"
 status = "waived"
+version_note = "not read; the theorem numbers are those under which HU12 (pp. 16, 29) and BP12 (pp. 43-44) cite this paper; CDN23 attributes Proposition 8, Proposition 18 and Theorem 19 to its reference [3], the authors' J. Number Theory 55 (1995) paper, while HU12 and BP12 cite Proposition 8 and Theorem 19 from this Duke paper"
 resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/6807#issuecomment-6787957825"
+cited_for = ["1.1", "Exact supplier contracts"]
 
 [[source]]
 id = "LE19"
@@ -327,3 +327,23 @@ status = "certified"
 accessed = "2026-11-13"
 version_note = "arXiv:1809.10247v3; published in Math. Res. Lett. 26 (2019), 1747-1758, whose Theorem 1.1 is that of v3; locators use the arXiv numbering and pagination"
 cited_for = ["2.4"]
+
+[[source]]
+id = "BDJ10"
+authors = "Kevin Buzzard, Fred Diamond, Frazer Jarvis"
+title = "On Serre's conjecture for mod l Galois representations over totally real fields"
+year = 2010
+venue = "Duke Math. J. 155, no. 1 (2010), 105-161"
+doi = "10.1215/00127094-2010-052"
+arxiv = "0810.2106v5"
+locator_scheme = "section"
+locator = "§3.1, pp. 18-19 (irreducible case, at most one weight for each subset); §3.2, pp. 21-22 (reducible case, the count of solutions for each subset)"
+url = "https://arxiv.org/abs/0810.2106v5"
+fetched_from = "https://arxiv.org/pdf/0810.2106v5"
+fetched_at = "2026-11-13T15:56:57Z"
+sha256 = "29515a96071cc632970d41394a6a867f938ba8b09ae39a22862073fbf3ceb237"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-13"
+version_note = "arXiv:0810.2106v5 (21 April 2010); locators use the arXiv pagination; the tame recipe is read for semisimple restrictions to inertia only"
+cited_for = ["3.4"]

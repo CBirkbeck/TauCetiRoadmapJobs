@@ -25,7 +25,9 @@ This roadmap owns:
   and its exact-sequence calculus (§§0.3–0.4, 0.7), coherence for amalgams of compact open
   subgroups and its consequence for `GL₂(F)/ϖ^ℤ` (§0.5), Hom base change for finitely generated
   group-algebra modules (§0.6), and the compact-induction obstruction space of Hu (§0.8);
-- the `ℚ_p` finite-length criteria of Colmez–Dospinescu–Nizioł §1.4 (Layer 1);
+- the finite-length criteria for finitely generated smooth representations of `GL₂(ℚ_p)/p^ℤ`:
+  finite type implies finite presentation, finite cosocle implies finite length, and finite length
+  is detected by the smooth vectors of the dual (Layer 1);
 - the category `𝒞` of admissible finitely presented torsion representations of `GL₂(F)`, the
   extension of Emerton's ordinary-parts adjunction from `GL₂(ℚ_p)` to `GL₂(F)` for every finite
   `F/ℚ_p` on torsion-admissible representations, with its identification for `F = ℚ_p` with the
@@ -33,7 +35,8 @@ This roadmap owns:
   constituents for `F ≠ ℚ_p`, and the finite-error counit with its Banach-lattice version
   (Layer 2);
 - the labelled weight coordinates, the extension-graph map, the tame weight set `W(ρ̄)` for
-  unramified `F` and the Diamond modules `D₀(ρ̄)`, `D₁(ρ̄)` (Layer 3);
+  unramified `F`, the Buzzard–Diamond–Jarvis set `W_BDJ(ρ̄)` of a tame `ρ̄` with its comparison to
+  `W(ρ̄)`, and the Diamond modules `D₀(ρ̄)`, `D₁(ρ̄)` (Layer 3);
 - the Gelfand–Kirillov dimension of an admissible smooth representation, the central-regular-
   sequence dimension comparison, the explicit saturated valuation and graded algebra of the pro-`p`
   Iwahori subgroup, the crossing algebra, the truncations `W_{χ,n}` and the Iwahori dimension
@@ -54,25 +57,31 @@ It leaves to other roadmaps, by section:
   *frobenius-reciprocity*, *induction-exactness* (SR.2.1). The smooth-dual criterion of §1.6 is
   stated on SR's smooth contragredient; Suggested.lean carries a local copy of the smoothness
   predicate (`IsSmoothRep`, every vector has open stabiliser) and of the span of the smooth vectors
-  of the full linear dual (`smoothDualSpan`) only so that its statements elaborate;
+  of the full linear dual (`smoothDualSpan`) only so that its statements elaborate; the pinned
+  `TauCeti.IsSmoothDiscrete` (below) is the same open-stabiliser condition on a topological
+  representation with discrete underlying module;
 - the `GL₂(ℚ_p)` torsion categories, their admissibility (the `GL₂(ℚ_p)` specialisation of §0.1),
   local finiteness, the dual category and projective envelopes: PadicLocalLanglandsForGL2Qp
   §§2.1–2.3; the classification of irreducible mod `p` representations of `GL₂(ℚ_p)`, the Hecke
   operator `T` on `I(σ_r)`, `End_G(I(σ_r)) ≅ k[T]` and freeness: §2.7; the failures for `F ≠ ℚ_p`
   (non-finite-presentation of supersingulars): §2.9; blocks, the Gabriel decomposition and
-  projective envelopes: §§5.1, 5.3; the finite-residue fundamental characters and the
+  projective envelopes: §§5.1, 5.3; the list of blocks, each a finite set of irreducibles, and the
+  `Ext¹` computations between irreducibles: §5.2; the finite-residue fundamental characters and the
   coefficient-linear torsion dual `Hom_𝒪(M, L/𝒪)` of a discrete torsion module: §0.3; Schikhof
   duality and admissible Banach representations: §0.1;
-- Serre weights of `GL₂(F)` for every local field including `F = ℚ_p`, `I(σ) = c-Ind_{KZ}^G σ`,
-  its Hecke algebra `k̄[T]` and freeness (`SerreWeight`, `compactInduction`, `heckeOperatorT`,
-  `endEquivPolynomial`, `compactInduction_free`): FiniteFlatGroupsAndIntegralPadicHodgeTheory
-  R07.5.15; for every finite `F/ℚ_p`, the Barthel–Livné classification of the non-supersingular
+- Serre weights of `GL₂(F)` for every local field, `I(σ) = c-Ind_{KZ}^G σ`, its Hecke algebra
+  `k̄[T]` and freeness (`SerreWeight`, `compactInduction`, `heckeOperatorT`, `endEquivPolynomial`,
+  `compactInduction_free`): FiniteFlatGroupsAndIntegralPadicHodgeTheory R07.5.15, which extends
+  to every `F` the declarations of PadicLocalLanglandsForGL2Qp §§2.7–2.8 for `F = ℚ_p` (at
+  `F = ℚ_p` they are those after extension of scalars to `k̄`); for every finite `F/ℚ_p`, the
+  Barthel–Livné classification of the non-supersingular
   irreducibles and the presentation of irreducible principal series and Steinberg twists by Hecke
   quotients of `I(σ)`: the same section (gap:barthel-livne-ordinary-classification,
   gap:ordinary-irreducible-hecke-presentation);
 - ordinary parts as `N(𝒪)`-invariants with the transfer Hecke action of the positive torus,
   followed by localisation: PotentialAutomorphyInfrastructure §3.7 (`LocalOrdinaryParts`); their
-  derived version on the derived smooth category: §3.12; §2.1 here keeps Emerton's right adjoint
+  derived version, `N(𝒪)`-invariants derived in the smooth monoid category and then localised: the
+  same §3.7; §2.1 here keeps Emerton's right adjoint
   on admissible representations of `GL₂(F)`, built on the same Hecke action;
 - Emerton's ordinary-parts functor `Ord_B` for `GL₂(ℚ_p)` with its adjunction
   `Hom_G(Ind_{B̄}^G U, V) ≅ Hom_T(U, Ord_B V)` on admissible representations over complete local
@@ -94,14 +103,16 @@ It leaves to other roadmaps, by section:
   SchemeAndStackFoundations §0.17;
 - the absolute local Artin map and its geometric normalisation `geometricArtinMap`:
   ClassFieldTheory Layer 7;
-- finite-dimensional algebras, injective envelopes, socles, radicals and Krull–Schmidt:
-  RepresentationTheory/QuiverRepresentations Layer 3 (on main);
-- Brauer characters of a finite group, the pairing of simple modules with their projective covers
-  (`dim Hom(P_σ, M) = [M : σ]` over a splitting field) and the comparison of the Brauer character of
-  the reduction of a stable lattice with its ordinary character: GL2AutomorphicRepresentationsAndTransfer
-  §R17.5.11. Brauer reciprocity and decomposition numbers for arbitrary finite groups are not part
-  of this roadmap: §5.4 obtains the instance `[L ⊗ P̃_σ : V] = [V̄ : σ]` for `Γ = GL₂(k_F)` by
-  composing that pairing with the pinned projective lifts below and Hom base change;
+- finite-length Krull–Schmidt decompositions: RepresentationTheory/QuiverRepresentations §2.1;
+  for a finite-dimensional algebra, its nilpotent Jacobson radical, semisimple quotient and
+  projective covers: the same roadmap, §3.1; the duality between finitely generated left and right
+  modules over an Artin algebra, exchanging projectives and injectives:
+  RepresentationTheory/ArtinAlgebras §2.3 (all on main); socles and injective envelopes of modules:
+  Tau Ceti (below);
+- Brauer reciprocity and decomposition numbers for arbitrary finite groups are not part of this
+  roadmap: §5.4 obtains the instance `[L ⊗ P̃_σ : V] = [V̄ : σ]` for `Γ = GL₂(k_F)` by composing the
+  pinned multiplicity formula for projective covers with the pinned projective lifts and Hom base
+  change;
 - completed group algebras, their level actions on finite quotients and their compact-module
   actions: Tau Ceti (`TauCeti.completedGroupAlgebra`,
   `TauCeti.completedGroupAlgebra.toQuotientEnd`, `TauCeti.IsCompactModule.completedGroupAlgebraModule`,
@@ -109,7 +120,13 @@ It leaves to other roadmaps, by section:
   the action on a discrete smooth module that is not compact is assembled in §0.2; projective
   covers over a ring finite over an Artinian ring, in particular over a finite-dimensional algebra
   over a field: Tau Ceti (`TauCeti.exists_isProjectiveCover_of_finite`,
-  `TauCeti/Algebra/Module/ProjectiveCover/Existence.lean`); lifting of projective modules along a
+  `TauCeti/Algebra/Module/ProjectiveCover/Existence.lean`), and the dimension of `Hom` out of a
+  projective cover as a Jordan–Hölder multiplicity: Tau Ceti
+  (`TauCeti.IsProjectiveCover.finrank_linearMap_eq_jordanHolderMultiplicity`,
+  `TauCeti/Algebra/Module/ProjectiveCover/Multiplicity.lean`); injective envelopes of modules over
+  a ring: Tau Ceti (`TauCeti.exists_isInjectiveEnvelope`,
+  `TauCeti/Algebra/Module/Injective/Envelope/Existence.lean`); the socle of a module: Tau Ceti
+  (`TauCeti.socle`, `TauCeti/RingTheory/SimpleModule/Socle.lean`); lifting of projective modules along a
   complete principal ideal and their uniqueness: Tau Ceti
   (`TauCeti.exists_projective_quotient_smul_top_linearEquiv`,
   `TauCeti/Algebra/Module/Projective/Lift.lean`, and `Ideal.nonempty_linearEquiv_of_quotient_smul_top`,
@@ -152,6 +169,12 @@ of Layer 7 is an upper bound under explicit multiplicity hypotheses.
   `N ≤ r_i ≤ p − N − 2`.
 - `χ_λ` is the character of `I` on the `I₁`-invariant line of `F(λ)`, and `χ^s` swaps its two
   diagonal entries. In characters `α_i(diag(a,d)) = σ_i(a/d)`.
+- Socles and radicals: for a module `M` over a ring (a group algebra or a finite-dimensional
+  algebra `A₁`), `soc M` is the sum of its simple submodules, Tau Ceti's `TauCeti.socle`; for `M` of
+  finite length, `rad M` is the intersection of its maximal submodules, Mathlib's
+  `Module.jacobson`, the cosocle is `cosoc M = M / rad M`, and the Loewy length of `M` is the least
+  `n` with `rad^n M = 0`, `rad^n` being `rad` iterated `n` times. A subscript (`soc_K`, `cosoc_K`)
+  names the group whose group algebra is meant.
 - `V^∨` is the Pontryagin dual of a smooth torsion representation (PadicLocalLanglandsForGL2Qp §0.3)
   and, over `k`, the full linear dual with the topology of pointwise convergence; dual actions use
   `g ↦ (f ↦ f ∘ g⁻¹)`. `(−)_{K₁}` denotes coinvariants and `(−)^{K₁}` invariants.
@@ -190,7 +213,9 @@ of Layer 7 is an upper bound under explicit multiplicity hypotheses.
 - `Rep` (`Mathlib/RepresentationTheory/Rep/Basic.lean`): bundled representations, used for the
   finite-length modules `W_i` of a presentation.
 - `IsFiniteLength`, `Module.length`, `IsSemisimpleModule`, `Module.Finite`,
-  `Module.IsTorsion'`, `Module.Dual`, `Submodule.span`.
+  `Module.IsTorsion'`, `Module.Dual`, `Submodule.span`; `Module.jacobson`
+  (`Mathlib/RingTheory/Jacobson/Radical.lean`), the radical of a module, used for `rad` and `cosoc`
+  (Conventions).
 - `IsNonarchimedeanLocalField` with `𝒪[K]` and `𝓀[K]` (`Mathlib/NumberTheory/LocalField/Basic.lean`,
   `Mathlib/Topology/Algebra/Valued/ValuativeRel.lean`), the instance for `ℚ_[p]`
   (`Mathlib/NumberTheory/Padics/LocalField.lean`); `GL (Fin 2) F` with the topology of units of
@@ -236,6 +261,36 @@ of Layer 7 is an upper bound under explicit multiplicity hypotheses.
   `A`-module has a projective cover, with no finiteness asked of the module; applied with `K = k`
   a field and `A = k[GL₂(k_F)]`, a finite-dimensional algebra, it gives `P_σ = Proj_{GL₂(k_F)} σ`.
   It gives no cover in a pseudocompact category; that is §4.6 here.
+- `TauCeti.IsProjectiveCover.finrank_linearMap_eq_jordanHolderMultiplicity`
+  (`TauCeti/Algebra/Module/ProjectiveCover/Multiplicity.lean`): for a field `k`, a `k`-algebra `A`,
+  a projective cover `P → S` of a simple `A`-module `S` with `dim_k End_A(S) = 1`, and an
+  `A`-module `M` finite-dimensional over `k`, `dim_k Hom_A(P, M)` is the Jordan–Hölder
+  multiplicity `TauCeti.jordanHolderMultiplicity A M S`. Applied in §5.4 with `A = k[Γ]`, `S = σ`
+  and `M = V̄`; the hypothesis `End_Γ(σ) = k` holds because `k` splits `Γ`.
+- `TauCeti.exists_isInjectiveEnvelope` (`TauCeti/Algebra/Module/Injective/Envelope/Existence.lean`)
+  with `TauCeti.IsInjectiveEnvelope` (`.../Envelope/Basic.lean`): every module over a ring has an
+  injective envelope, an injective module containing it as an essential submodule. Applied in §4.6
+  to `k[U]`-modules, `U` a compact `p`-adic analytic group, before passing to smooth vectors.
+  `TauCeti.IsEssentialMono.exists_iso` (`TauCeti/CategoryTheory/Injective/Envelope.lean`): two
+  essential monomorphisms of an object into injective objects differ by an isomorphism of the
+  targets, so envelopes are unique up to isomorphism.
+  `TauCeti.exists_isInjectiveEnvelope_of_finite` (`.../Envelope/FiniteDimensional.lean`): over a
+  finite-dimensional algebra a finitely generated module has a finite-dimensional injective
+  envelope; it gives `Inj_Γ σ`, `Inj_{B(k_F)} χ` and `Inj_{A₁} σ` (Layer 5).
+- `TauCeti.socle`, with `TauCeti.le_socle_iff_isSemisimpleModule` and `TauCeti.socle_eq_top_iff`
+  (`TauCeti/RingTheory/SimpleModule/Socle.lean`): the socle, the largest semisimple submodule, used
+  for `soc` throughout Layers 3 and 5–9 (Conventions).
+- `TauCeti.IsSmoothDiscrete`
+  (`TauCeti/RepresentationTheory/Homological/ContCohomology/SmoothDiscrete/Basic.lean`): an object
+  of `TopRep R G`, for a topological ring `R` and a topological monoid `G`, with discrete underlying
+  module and open point stabilisers; the coefficients of `TauCeti.ContCohomology.coindAcyclic` are of
+  this kind. It needs a topology on the coefficient ring and on the module, so `IsSmoothRep` of
+  Suggested.lean states its stabiliser condition for a bare `Representation`; when the module
+  carries the discrete topology the two conditions agree.
+- `TauCeti.UniversalEnvelopingAlgebra.pbwAssociatedGradedEquiv`
+  (`TauCeti/Algebra/Lie/UniversalEnveloping/PBW/Injective.lean`): for a Lie algebra `L` free over a
+  commutative ring `R`, the symmetric algebra `Sym_R(L)` is isomorphic to the associated graded ring
+  of the PBW filtration of Mathlib's `UniversalEnvelopingAlgebra R L`; used in §4.4 with `R = k`.
 - `TauCeti.exists_projective_quotient_smul_top_linearEquiv`
   (`TauCeti/Algebra/Module/Projective/Lift.lean`): for a commutative ring `R`, `r ∈ R`, an
   `R`-algebra `A` and a projective `A`-module `N` whose endomorphism ring is `(r)`-adically
@@ -260,10 +315,13 @@ of Layer 7 is an upper bound under explicit multiplicity hypotheses.
 - SR.0.1–SR.0.4: *is-smooth*, *smooth-rep-category*, *smooth-rep-abelian*,
   *compact-open-invariants*, *admissible*, *finiteness-conditions*, *smooth-dual*,
   *coefficient-change*, *smooth-centre*. Assumed: the smooth category over a commutative ring is
-  abelian, invariants under compact opens are a functor, the smooth contragredient is the smooth
-  part of the algebraic dual with the inverse action.
-- SR.0d.1: the smooth category is Grothendieck abelian with enough injectives; used for injective
-  envelopes of smooth representations of compact groups in §§4.6 and 5.6.
+  abelian, the smooth part `V ↦ V^∞` is right adjoint to the inclusion of smooth representations
+  into all representations (*smooth-rep-category*, SR.0.2), invariants under compact opens are a
+  functor, the smooth contragredient is the smooth part of the algebraic dual with the inverse
+  action. The adjunction gives the injective envelopes of §4.6.
+- SR.0d.1: the smooth category is Grothendieck abelian with enough injectives; used for the derived
+  functors of `Ord_B` in §2.2. It states no essential (minimal) injective envelopes; those are
+  constructed in §4.6.
 - SR.2.1: *smooth-induction* (unnormalised, right translation), *compact-induction* (with the
   identification of `c-Ind_U^G` with Mathlib's induction for open `U`), *frobenius-reciprocity*,
   *induction-exactness*, *mackey-filtration*. Used for `c-Ind`, `Ind_{B̄}^G` and Frobenius
@@ -283,11 +341,20 @@ of Layer 7 is an upper bound under explicit multiplicity hypotheses.
   §2.6 here.
 - §2.7: the classification of absolutely irreducible smooth representations of `GL₂(ℚ_p)` with
   central character as the `Π(r, λ, χ)`; their admissibility and finite presentation; Galois
-  descent of irreducibles. The Serre weights, the compact induction and the Hecke operator it
-  uses are the declarations of FiniteFlatGroupsAndIntegralPadicHodgeTheory R07.5.15 below.
+  descent of irreducibles. For `F = ℚ_p` the declarations `SerreWeight`, `compactInduction`,
+  `heckeOperatorT`, `endEquivPolynomial` and `compactInduction_free` are those of §§2.7–2.8, over a
+  sufficiently large finite field; FiniteFlatGroupsAndIntegralPadicHodgeTheory R07.5.15 extends
+  them to every `F` over `k̄` and identifies the two at `F = ℚ_p`.
 - §2.9: supersingular representations of `GL₂(F)`, `F ≠ ℚ_p`, are not finitely presented.
-- §5.1: blocks with fixed central character and finite block support of finite-length objects
-  (used by §1.4); §5.3: projective envelopes.
+- §5.1: blocks with fixed central character, defined as the classes of irreducibles linked by
+  nonzero `Ext¹`, and finite block support of finite-length objects; §5.2: the list of blocks,
+  each a finite set of irreducibles, for every `p` including `p = 2, 3`, over `𝔽̄_p` and, by Galois
+  orbits, over finite fields (both used by §1.4); §5.3: projective envelopes.
+- What PadicLocalLanglandsForGL2Qp must provide (gap:fixed-central-character-ext1-finite): for
+  `G = GL₂(ℚ_p)`, every prime `p`, a finite field `k` of characteristic `p` and absolutely
+  irreducible smooth `k[G]`-modules `π, π′` with the same central character `ζ`, the space
+  `Ext¹_{G,ζ}(π, π′)` in the category of smooth `k[G]`-modules with central character `ζ` is
+  finite-dimensional over `k` (CDN23, proof of Lemme 1.23, p. 18, which calls it classical), in §5.2.
 - What PadicLocalLanglandsForGL2Qp must provide (gap:ext1-finite-length-into-compact-induction):
   for `G′ = GL₂(ℚ_p)/p^ℤ`, a smooth finite-length `k[G′]`-representation `π` and a Serre weight
   `σ`, the space `Ext¹_{G′}(π, I(σ))` is finite-dimensional over `k`, for every prime `p`
@@ -299,7 +366,8 @@ of Layer 7 is an upper bound under explicit multiplicity hypotheses.
   character (`SerreWeight`), `I(σ) = c-Ind_{KZ}^G σ` (`compactInduction`), the Hecke operator
   `T` supported on `KZ diag(1,ϖ)^{±1} KZ` (`heckeOperatorT`), `End_G(I(σ)) ≅ k̄[T]`
   (`endEquivPolynomial`), freeness of `I(σ)` over `k̄[T]` (`compactInduction_free`), for every
-  `F` including `F = ℚ_p`. A *supersingular* representation of `GL₂(F)` is an irreducible
+  `F`; at `F = ℚ_p` they are PadicLocalLanglandsForGL2Qp §§2.7–2.8's after extension of scalars
+  to `k̄`. A *supersingular* representation of `GL₂(F)` is an irreducible
   quotient of `I(σ)/(T)` for some Serre weight `σ` (CDN23, §1.2.1, p. 11).
 - What FiniteFlatGroupsAndIntegralPadicHodgeTheory must provide (gap:barthel-livne-finite-codimension):
   for a Serre weight `σ` of `GL₂(F)` and a nonzero `G`-subrepresentation `π′ ⊆ I(σ)`, the
@@ -327,9 +395,10 @@ of Layer 7 is an upper bound under explicit multiplicity hypotheses.
   `t·v = Σ_{n ∈ N(𝒪)/tN(𝒪)t⁻¹} n t v` of the positive torus monoid, its localisation and
   functoriality. Used for `GL₂` at a single place, with `N₀ = N(𝒪_F)` and `T⁺` the monoid
   contracting `N₀`.
-- §3.12 (derived ordinary comparison): the derived functor `RΓ(N(𝒪), −)` on the bounded-below
-  derived smooth category with its Hecke action, followed by the localisation; used for the
-  cohomological ordinary parts `H^•Ord_B` of §2.2.
+- §3.7, last interface item: `N(𝒪)`-invariants derived in the smooth monoid category, with the
+  Hecke action of the positive torus on each `H^i(N(𝒪), −)`, followed by the exact localisation;
+  used for the cohomological ordinary parts `H^•Ord_B` of §2.2, whose `T`-finite Hom localisation
+  is defined there.
 
 ### From TauCetiRoadmap.CompletedCohomologyAndLocalGlobalCompatibility
 
@@ -347,8 +416,23 @@ of Layer 7 is an upper bound under explicit multiplicity hypotheses.
   finite-index grade comparison (restriction along an open inclusion preserves grade).
 - §0.3: completed group algebras are free of finite rank over the completed algebra of an open
   subgroup, on both sides.
-- §0.5: complete filtrations with noetherian graded ring lift noetherianity, domain, global
-  dimension and (under the closure condition) Auslander regularity with `j_R(M) = j_{gr R}(gr M)`.
+- §0.5: for a complete separated nonnegative adic filtration with `F¹R ⊆ Jac(R)` and noetherian
+  `gr R`, noetherianity, domain and the global-dimension bound lift from `gr R` to `R`;
+  `j_R(M) ≥ j_{gr R}(gr M)` for a finitely generated `M` with a good filtration; and, under the
+  closure condition (which holds for compact `R`), `R` is Auslander regular when `gr R` is. Used in
+  §4.2 for `R = k[[U]]`, `U` pro-`p`, with its augmentation-adic filtration. It does not apply to an
+  increasing filtration such as the PBW filtration of an enveloping algebra.
+- What NoncommutativeAndEquivariantIwasawa must provide (gap:filtered-grade-equality): for a ring
+  `R` with a complete separated nonnegative adic filtration, `F¹R ⊆ Jac(R)`, noetherian `gr R` and
+  the closure condition, if `gr R` is Auslander regular then `j_R(M) = j_{gr R}(gr M)` for every
+  finitely generated `R`-module `M` with a good filtration (the equality of grades that §0.5
+  attributes to Venjakob, Theorem 3.21), in §0.5.
+- What NoncommutativeAndEquivariantIwasawa must provide (gap:enveloping-auslander-regular): for a
+  field `k` and a finite-dimensional Lie algebra `𝔤` over `k`, the universal enveloping algebra
+  `U_k(𝔤)` is Auslander regular, by the filtered-to-graded transfer for its exhaustive increasing
+  PBW filtration, whose associated graded ring is the polynomial ring `Sym_k(𝔤)` (Tau Ceti
+  `TauCeti.UniversalEnvelopingAlgebra.pbwAssociatedGradedEquiv`; BHHMS23, proof of Theorem 5.3.4,
+  p. 54, cites this for the graded Iwahori algebra), in §0.5.
 - §§0.7–0.8: `p`-valuations, finite rank, saturation and ordered bases; the weighted graded algebra
   `gr_ω 𝒪[[G]] ≅ gr 𝒪 ⊗_{𝔽_p[P]} U(gr G)` for a finite-rank `p`-valued `G` with ordered basis.
 - §§0.10–0.11: Auslander regularity and global dimension `d` of `k[[G]]` for compact analytic `G`
@@ -384,19 +468,19 @@ of Layer 7 is an upper bound under explicit multiplicity hypotheses.
 
 ### From TauCetiRoadmap.RepresentationTheory.QuiverRepresentations
 
-- Layer 3: finite-dimensional algebras, Jacobson radical, socle and radical series, injective
-  envelopes and projective covers, Krull–Schmidt, and duality between left and right modules; used
+- §2.1: finite-length Krull–Schmidt decomposition (indecomposables of finite length have local
+  endomorphism rings, and decompositions are unique).
+- §3.1: for a finite-dimensional algebra, the nilpotent Jacobson radical, the semisimple quotient,
+  projective covers, and the finite-dimensional injective envelopes it consumes from Tau Ceti; used
   for `GL₂(k_F)`-modules and for the finite-dimensional algebras `k[[K/Z₁]]/𝔪_{K₁}²` and
   `k[[I/Z₁]]/𝔪_{I₁}^n`.
 
-### From TauCetiRoadmap.GL2AutomorphicRepresentationsAndTransfer
+### From TauCetiRoadmap.RepresentationTheory.ArtinAlgebras
 
-- §R17.5.11: for a finite group `Γ` and an algebraically closed field of characteristic `p`, Brauer
-  characters, their additivity, the pairing `dim Hom(P_σ, M) = [M : σ]` of a simple module `σ` with
-  its projective cover, and, for a splitting modular system, the equality of the Brauer character of
-  the reduction of a stable lattice with its ordinary character on `p`-regular elements, so that the
-  composition factors of the reduction do not depend on the lattice. Used in §5.4 for
-  `Γ = GL₂(k_F)`, over a finite splitting field `k` after base change to `k̄` (§0.6).
+- §2.3: for an Artin algebra, the duality `D` between finitely generated left and right modules,
+  exchanging projectives and injectives; used with base ring `k` for the dual forms of §§5.6 and
+  9.2, combined with the anti-involution `g ↦ g⁻¹` of `k[[K/Z₁]]/𝔪_{K₁}²`, which turns right
+  modules into left ones.
 
 ## How to read the build
 
@@ -411,7 +495,7 @@ Layers 5 and 6 compute finite and first-order extensions and build the multiplic
 enlargements of Diamond boxes. Layer 7 proves multiplicity one through the third Iwahori layer and
 the local dimension bound. Layers 8 and 9 build the gluing lattice from a projective cover of the
 finite group, identify its reduction with the first-order projective truncation, and compute
-its endomorphisms. Layers 0–2 and Layers 3–9 are independent except for §0.6, used in §§5.4 and 9.1;
+its endomorphisms. Layers 0–2 and Layers 3–9 are independent except for §0.6, used in §9.1;
 inside Layers 3–9 the Gelfand–Kirillov chain (Layers 4, 6, 7) and the lattice chain (Layers 8–9)
 share Layers 3 and 5.
 
@@ -799,9 +883,23 @@ Prove that every irreducible smooth `k[G′]`-module has a central character wit
 trivially, and `x^{p−1} = 1` for a generator `x` of `𝔽_p^×` splits over `𝔽_p ⊆ k`. Prove that for
 a finite-length smooth `k[G]`-module `π` with central character and every irreducible smooth `π′`
 with central character, `Ext¹_G(π, π′)` is finite-dimensional, and nonzero for only finitely many
-isomorphism classes of `π′` (CDN23, Lemme 1.23, p. 18). Route: reduce to `π` irreducible, extend
-scalars to `k̄` by §0.6, separate central characters, and use the finite Ext computation inside a
-block. *Needs:* §0.6; PadicLocalLanglandsForGL2Qp §§2.7 and 5.1.
+isomorphism classes of `π′` (CDN23, Lemme 1.23, p. 18). Route: by dévissage along a composition
+series reduce to `π` irreducible. Choose a finite extension `k′/k` over which `π` and `π′` split
+into absolutely irreducible summands (§0.6). Since `− ⊗_k k′` is exact and left adjoint to
+restriction of scalars, `Ext¹_{k′[G]}(π ⊗ k′, π′ ⊗ k′) = Ext¹_{k[G]}(π, π′ ⊗_k k′)`, whose
+`k`-dimension is `[k′ : k]` times that of `Ext¹_{k[G]}(π, π′)`; so it suffices to treat absolutely
+irreducible `π, π′` over `k′`. If their central characters differ, `Ext¹_G(π, π′) = 0`: a central
+`z` on which they differ splits every extension into its generalised eigenspaces, which are
+`G`-stable. If both have central character `ζ`, then for an extension `E` of `π` by `π′` and
+`z ∈ Z` the endomorphism `ζ(z)^{−1}z − 1` of `E` factors through a `G`-map `π → π′`, additive and
+locally constant in `z`; this gives an exact sequence
+`0 → Ext¹_{G,ζ}(π, π′) → Ext¹_G(π, π′) → Hom_{cont}(Z, Hom_G(π, π′))`, whose last term is `0` unless
+`π ≅ π′` and is `Hom_{cont}(ℚ_p^×, k′)`, of dimension `2` for odd `p` and `3` for `p = 2`,
+otherwise. `Ext¹_{G,ζ}(π, π′)` is finite-dimensional by gap:fixed-central-character-ext1-finite,
+and it is nonzero only when `π′` lies in the block of `π` (PadicLocalLanglandsForGL2Qp §§5.1–5.2),
+a finite set by the list of blocks of §5.2, which includes the blocks of `p = 2` and `p = 3`. Only
+left exactness of the displayed sequence is used. *Needs:* §0.6; PadicLocalLanglandsForGL2Qp §§2.7,
+5.1 and 5.2 (with gap:fixed-central-character-ext1-finite).
 
 **Checks.**
 
@@ -812,7 +910,12 @@ block. *Needs:* §0.6; PadicLocalLanglandsForGL2Qp §§2.7 and 5.1.
   `δ² ≠ 1`, which exists exactly when `p > 3`. The scalar `z` acts on the two summands by
   `ω_σ(z)` and `ω_σ(z)δ(z²)`: for `p = 5` and `δ(u) = ū` (so `δ(2) = 2`), at `z = 2` they differ by
   `δ(4) = 4 ≠ 1`. For `δ` quadratic, `δ(z²) = 1` and the sum does have a central character.
-- For `π = π′` the trivial character, `Ext¹_G(1, 1) = Hom(G, k)` is finite-dimensional.
+- For `π = π′` the trivial character, `Ext¹_G(1, 1) = Hom_{cont}(G, k) = Hom_{cont}(ℚ_p^×, k)`
+  through `det` (`SL₂(ℚ_p)` being perfect), finite-dimensional. At `p = 2` it has dimension `3`,
+  and its image under the comparison map to `Hom_{cont}(Z, k)` is `z ↦ ℓ(det z) = ℓ(z²) = 2ℓ(z) = 0`:
+  the map is zero although its target has dimension `3`, so the sequence of the route is not exact
+  on the right, and every self-extension of `1` has trivial central action, `Ext¹_{G,1}(1, 1)`
+  being all of `Ext¹_G(1, 1)` there.
 
 ### 1.5 Finite cosocle implies finite length
 
@@ -880,8 +983,9 @@ PadicLocalLanglandsForGL2Qp §§0.3, 2.7 (and its gap); NoncommutativeAndEquivar
 
 ### Dependencies
 
-Layer 0; PadicLocalLanglandsForGL2Qp §§0.3, 2.7, 2.9, 5.1 (with
-gap:ext1-finite-length-into-compact-induction); FiniteFlatGroupsAndIntegralPadicHodgeTheory
+Layer 0; PadicLocalLanglandsForGL2Qp §§0.3, 2.7, 2.9, 5.1, 5.2 (with
+gap:ext1-finite-length-into-compact-induction and gap:fixed-central-character-ext1-finite);
+FiniteFlatGroupsAndIntegralPadicHodgeTheory
 R07.5.15 (with gap:barthel-livne-finite-codimension); SmoothRepresentationsOfLocalGroups
 *smooth-dual*, *induction-exactness*; NoncommutativeAndEquivariantIwasawa §F.1.
 
@@ -976,7 +1080,7 @@ With these: `R¹Ord_B(Ind_{B̄}^G U) ↪ H¹Ord_B(Ind_{B̄}^G U) = 0` (HAUSEUX, 
 `Ord_B(χ∘det) = 0` by the §2.1 Check, and `Ord_B` applied to the Steinberg sequence gives
 `Ord_B(St ⊗ χ∘det) ≅ Ord_B(Ind_{B̄}^G(χ⊗χ)) ≅ χ ⊗ χ`. CDN23 justifies its Steinberg clause by
 EMERTON2, Theorem 4.2.12, a statement about `GL₂(ℚ_p)` only; the route above replaces it.
-*Needs:* §2.1; PotentialAutomorphyInfrastructure §§3.7 and 3.12; SmoothRepresentationsOfLocalGroups
+*Needs:* §2.1; PotentialAutomorphyInfrastructure §3.7; SmoothRepresentationsOfLocalGroups
 SR.0d.1, *smooth-induction*, *mackey-filtration*; Tau Ceti `TauCeti.ContCohomology.coindAcyclic`.
 
 **Checks.**
@@ -1129,8 +1233,8 @@ API:
   Definition 11.7, and the parameters `λ₀ = 1`, `λ_i = 2` for `i ≠ 0`. Write `D₀(ρ̄)` for the
   finite-dimensional `KZ`-module that BP12, Theorem 13.8, p. 79, attaches to `ρ̄` (LE19, §2.1,
   p. 3); when `ρ̄|_{I_F} ≅ τ(s, μ)` with `μ − η` 1-deep it is the module `D₀(W(ρ̄))` of §3.5,
-  inflated to `KZ` with `p` acting trivially, `W(ρ̄)` being then the set of Buzzard–Diamond–Jarvis
-  weights of `ρ̄` (§3.4). Le's representation `π` is
+  inflated to `KZ` with `p` acting trivially, `W(ρ̄)` being then `W_BDJ(ρ̄)`, the
+  Buzzard–Diamond–Jarvis weights of the irreducible `ρ̄` (§3.4). Le's representation `π` is
   an absolutely irreducible smooth `k[G′]`-module with a central character whose restriction to
   `KZ` contains `⊕_{i∈ℤ} D₀(ρ̄)`, infinitely many copies of a nonzero finite-dimensional module on
   which `K₁ = 1 + pM₂(𝒪_F)` acts trivially (LE19, Theorem 1.1, p. 1, proved by §§2.1–2.2,
@@ -1241,7 +1345,7 @@ CompletedCohomologyPartII F.1; PadicLocalLanglandsForGL2Qp §0.1; SmoothRepresen
 
 ### Dependencies
 
-Layer 0; PotentialAutomorphyInfrastructure §§3.7 and 3.12; CompletedCohomologyAndLocalGlobalCompatibility
+Layer 0; PotentialAutomorphyInfrastructure §3.7; CompletedCohomologyAndLocalGlobalCompatibility
 §0.1 (the `F = ℚ_p` functor of §2.1); SmoothRepresentationsOfLocalGroups SR.0d.1 and SR.2.1; Tau Ceti
 `TauCeti.ContCohomology.coindAcyclic`; Mathlib `ContRepresentation.coind`; PadicLocalLanglandsForGL2Qp
 §§0.1, 2.6, 2.7, 2.9; FiniteFlatGroupsAndIntegralPadicHodgeTheory R07.5.15 (with
@@ -1262,7 +1366,7 @@ Define, for `λ = ((a_i,b_i))` with `0 ≤ r_i ≤ p−1`, the labelled Serre we
 tensor-product form). Call `λ`
 *regular* when `0 ≤ r_i ≤ p−2` for all `i`, and `N`-deep when `N < r_i + 1 < p − N` for all `i`
 (BHHMS23, §2.4, pp. 15–17). *Needs:* FiniteFlatGroupsAndIntegralPadicHodgeTheory R07.5.15;
-RepresentationTheory/QuiverRepresentations Layer 3.
+RepresentationTheory/QuiverRepresentations §3.1.
 
 API:
 
@@ -1319,7 +1423,7 @@ case `f = 1` assumes `p > 2`). For `(p, f) = (2, 1)` the formula fails and the e
 part of the target: the only regular weight is the trivial character of `GL₂(𝔽₂) ≅ S₃` (`r = 0`,
 and `det` is trivial), `Λ_W^μ = {0}`, and `Ext¹_{S₃}(k, k) = Hom(S₃, k) = Hom(C₂, k)` is
 one-dimensional although `0` is not adjacent to itself. *Needs:* §3.2;
-RepresentationTheory/QuiverRepresentations Layer 3.
+RepresentationTheory/QuiverRepresentations §3.1.
 
 **Checks.**
 
@@ -1341,7 +1445,20 @@ RepresentationTheory/QuiverRepresentations Layer 3.
 
 ### 3.4 Tame Galois weights
 
-Let `ρ̄ : G_F → GL₂(k)` be tame. For `s = (s_i) ∈ S₂^J` let `r ∈ {1, 2}` be the order of
+Let `ρ̄ : G_F → GL₂(k)` be tame, and assume `𝔽_{p^{2f}} ⊆ k` when `ρ̄` is irreducible. The
+Buzzard–Diamond–Jarvis set of a tame `ρ̄` depends only on `ρ̄|_{I_F}` (BHHMS23, §2.2, p. 14); define
+`W_BDJ(ρ̄)` as the set of Serre weights `F(λ)`, `λ = ((a_i, b_i))_{i∈J}`, `r_i = a_i − b_i`,
+`0 ≤ r_i ≤ p − 1`, such that: when `ρ̄` is reducible, there is `A ⊆ J` with
+`ρ̄|_{I_F} ≅ ω_f^{Σ_i b_i p^i} ⊗ (ω_f^{Σ_{i∈A}(r_i+1)p^i} ⊕ ω_f^{Σ_{i∉A}(r_i+1)p^i})`; when `ρ̄` is
+irreducible, there is `A ⊆ ℤ/2f` containing exactly one of `i` and `i + f` for every `i`, with
+`ρ̄|_{I_F} ≅ ω_f^{Σ_i b_i p^i} ⊗ (ω_{2f}^{Σ_{i∈A}(r_i+1)p^i} ⊕ ω_{2f}^{Σ_{i∉A}(r_i+1)p^i})`, the `r_i`
+being extended `f`-periodically (BDJ10, §3.1, p. 18, and §3.2, pp. 21–22; their weight with
+parameters `a_τ, b_τ` at `τ = σ_i` is `det^{b_i} ⊗ Sym^{r_i}` here, `a_τ = b_i`, `b_τ = r_i + 1`, and
+their fundamental character at `σ_i` is `ω_f^{p^i}`, both papers normalising class field theory so
+that uniformisers go to geometric Frobenius elements, as the Conventions do). The fundamental
+characters `ω_f`, `ω_{2f}` are those of the Conventions.
+
+For `s = (s_i) ∈ S₂^J` let `r ∈ {1, 2}` be the order of
 `s_0 s_{f−1} ⋯ s_1`, `f′ = rf`, `F′/F` the unramified extension of degree `r`, and assume that `k`
 contains the image of an embedding `σ′_0 : k_{F′} → k` extending `σ_0` (for `r = 2`, that
 `𝔽_{p^{2f}} ⊆ k`); let `ω_{f′} : I_F = I_{F′} → k^×` be the fundamental character of the Conventions,
@@ -1349,27 +1466,62 @@ built from the Artin map of `F′`. Extend `s_i`, `ν_i`
 periodically, put `a_j = s_1^{−1} ⋯ s_j^{−1}(ν_j)` (empty product at `j = 0`), and let `τ(s,ν)` be
 the sum of the two characters `ω_{f′}^{Σ_{j=0}^{f′−1} p^j a_{j,c}}`, `c = 1, 2`, of inertia. If
 `ρ̄|_{I_F} ≅ τ(s,μ)` with `μ − η` 1-deep, define `W(ρ̄) = {F(t_{μ−η}(sω)) : ω ∈ Σ}` (BHHMS23,
-Definition 2.3.1, pp. 13–14; Proposition 2.4.2, p. 16). Prove that `W(ρ̄)` does not depend on the
-inertial presentation `(s, μ)`, and that it is the set of Buzzard–Diamond–Jarvis weights of `ρ̄`
-(the obvious weights, identified in BHHMS23, proof of Proposition 2.4.2).
-The definition is for tame `ρ̄` only. *Needs:* §3.2; PadicLocalLanglandsForGL2Qp §0.3
-(fundamental characters); ClassFieldTheory Layer 7 (`geometricArtinMap` for `F′`, and the norm
-functoriality of the Artin maps).
+Definition 2.3.1, pp. 13–14; Proposition 2.4.2, p. 16).
+
+Prove that, when `μ − η` is 1-deep, `W(ρ̄)` is the set of regular weights in `W_BDJ(ρ̄)`, and that
+`W(ρ̄) = W_BDJ(ρ̄)` when moreover `ρ̄` is irreducible or `μ − η` is 2-deep (BHHMS23, Proposition
+2.4.2, p. 16, which states the equality under the 1-deep hypothesis alone; the boundary Check at
+`p = 5` below shows that a non-regular weight of `W_BDJ(ρ̄)` can then be missing). In particular
+`W(ρ̄)` depends only on `ρ̄|_{I_F}`, not on the inertial presentation `(s, μ)`. Route: every
+`F(t_{μ−η}(sω))` is an obvious weight of `ρ̄` and lies in `W_BDJ(ρ̄)` (BHHMS23, proof of
+Proposition 2.4.2, p. 16); `t_{μ−η}` is injective with regular values on `Λ_W^{μ−η}` (BHHMS23, §2.4,
+p. 15), which contains `sΣ` because the coordinates `m_i = x_i − y_i` of `μ − η = ((x_i, y_i))`
+satisfy `1 ≤ m_i ≤ p − 3` and `(sω)_i ∈ {−1, 0, 1}`, so `W(ρ̄)` has `2^f` regular elements. In the
+irreducible case each `A` admits at most one weight (BDJ10, §3.1, pp. 18–19), so `W_BDJ(ρ̄)` has at
+most `2^f` elements. In the reducible case, fix an ordering `ρ̄|_{I_F} ≅ χ₁ ⊕ χ₂`, let `A` record
+the exponents carried by `χ₁` and write `χ₁χ₂^{−1} = ω_f^n`: each `A` admits one weight, or two when
+`n ≡ n_A = Σ_{i∈A} p^{i+1} − Σ_{i∉A} p^i` modulo `p^f − 1`, and then the two have `r_i = p − 1` for
+`i ∈ A` and `r_i = 0` otherwise, respectively `r_i = 0` for `i ∈ A` and `r_i = p − 1` otherwise
+(BDJ10, §3.2, p. 22), so at most one of them is regular; hence `W_BDJ(ρ̄)` has at most `2^f`
+regular weights, and the inclusion is an equality on regular weights. When `μ − η` is 2-deep, the
+base-`p` digits of `±n` modulo `p^f − 1` lie in `[2, p − 3]` (before normalisation they are
+`±(m_i + 1)` with `3 ≤ m_i + 1 ≤ p − 3`; a negative digit `d` becomes `d + p` and lends one to the
+next place, and every result lies in `[2, p − 3]`), while those of every `n_A` lie in
+`{0, 1, p − 2, p − 1}`; so no `A` admits two weights, `W_BDJ(ρ̄)` has at most `2^f` elements, and
+the inclusion is an equality. The definitions are for tame `ρ̄` only. *Needs:* §3.2;
+PadicLocalLanglandsForGL2Qp §0.3 (fundamental characters); ClassFieldTheory Layer 7
+(`geometricArtinMap` for `F′`, and the norm functoriality of the Artin maps).
 
 API:
 
 - `σ ∈ W(ρ̄)` exactly when `σ = F(t_{μ−η}(sω))` for some `ω ∈ Σ`.
-- Equivalent inertial presentations give the same set.
+- `W_BDJ(ρ̄)` depends only on `ρ̄|_{I_F}`, and `σ ∈ W_BDJ(ρ̄)` exactly when the displayed
+  isomorphism holds for some admissible `A`.
+- For `μ − η` 1-deep, `W(ρ̄)` is the set of regular members of `W_BDJ(ρ̄)`, all of it when `ρ̄` is
+  irreducible or `μ − η` is 2-deep; equivalent inertial presentations give the same set.
 - `W(ρ̄)` is nonempty with at most `2^f` elements (one for each `ω ∈ Σ`).
 - The `c`-th character of `τ(s,ν)` has exponent `Σ_j p^j (s_1^{−1}⋯s_j^{−1} ν_j)_c` modulo
   `p^{f′} − 1`; no `η` is added to the input `ν`.
 
 **Checks.**
 
-- `f = 1`, `s = 1`, `μ − η = (5,0)`, `p = 17`: `W(ρ̄) = {F(5,0), F(−1,−10)} = {Sym^5, Sym^9 ⊗ det^6}`, the
-  weights of `ρ̄|_I = ω^6 ⊕ 1` (Serre's recipe gives `Sym^r` and `Sym^{p−3−r} ⊗ det^{r+1}` for
-  `ω^{r+1} ⊕ 1`).
+- `f = 1`, `s = 1`, `μ − η = (5,0)`, `p = 17`: `W(ρ̄) = {F(5,0), F(−1,−10)} = {Sym^5, Sym^9 ⊗ det^6}`
+  for `ρ̄|_I = ω^6 ⊕ 1`. The recipe for `W_BDJ(ρ̄)` gives the same two weights: `Sym^5` with
+  `A = {0}` (`ω^6 ⊕ 1`), and `Sym^9 ⊗ det^6` with `A = ∅`, as `ω^6 ⊗ (1 ⊕ ω^{10}) = ω^6 ⊕ ω^{16}` and
+  `ω` has order `16`; no other `r ≤ 16` and `b` modulo `16` solve either equation, and `μ − η` is
+  2-deep (`2 < 6 < 15`), as the comparison requires.
 - The empty subset gives `F(μ − η) ∈ W(ρ̄)`, so `W(ρ̄)` is never empty.
+- Irreducible case, `f = 1`, `p = 17`, `ρ̄|_I = ω₂^6 ⊕ ω₂^{102}` (`ω = ω₂^{18}`): `Sym^5` lies in
+  `W_BDJ(ρ̄)` with `A = {0}`, giving `ω₂^6 ⊕ ω₂^{6·17}`, and `Sym^{11} ⊗ det^5` with `A = {0}`, giving
+  `ω₂^{90} ⊗ (ω₂^{12} ⊕ ω₂^{204}) = ω₂^{102} ⊕ ω₂^{294}`, where `294 ≡ 6` modulo `288`; these are the
+  two weights of the irreducible `ρ̄` of §3.5, and `W(ρ̄) = W_BDJ(ρ̄)` there, `ρ̄` being irreducible.
+- Boundary of the comparison: `f = 1`, `p = 5`, `s = 1`, `μ − η = (2, 0)`, which is 1-deep
+  (`1 < 3 < 4`) but not 2-deep, and `ρ̄|_I = ω³ ⊕ 1`. Then `W(ρ̄) = {F(2,0), F(−1,−1)} = {Sym², det³}`,
+  while `W_BDJ(ρ̄) = {Sym², det³, det³ ⊗ Sym⁴}`: with `χ₁ = ω³`, `A = {0}` gives `Sym²` and `A = ∅`
+  gives `ω^b = ω³` and `ω^{b+r+1} = 1`, so `r + 1 ∈ {1, 5}`, two weights, as `n = 3 ≡ n_∅ = −1`
+  modulo `4`. The extra weight `det³ ⊗ Sym⁴` has `r = p − 1` and is not regular, so `W(ρ̄)` is the
+  regular part of `W_BDJ(ρ̄)` and not all of it; a statement of equality under 1-deep alone would
+  be false here.
 - For `f = 1`, `s = 1`, `ν = (a,b)`, `τ = ω_1^a ⊕ ω_1^b` with `ω_1` the reduction of the cyclotomic
   character on inertia; with the arithmetic Artin normalisation `ω_1` would be replaced by its
   inverse and `W(ρ̄)` by the weights of the dual.
@@ -1389,7 +1541,8 @@ multiplicity one. Prove that it has socle `⊕_{𝒟} σ` and decomposes as `⊕
 §6.4, pp. 72–73). For tame `ρ̄` with `μ − η` 1-deep put `D₀(ρ̄) = D₀(W(ρ̄))` and
 `D₁(ρ̄) = D₀(ρ̄)^{I₁}`, an `I`-representation inflated from `H`. Only these finite modules are
 used; no choice of the normaliser action of a full diagram is made. *Needs:* §3.4;
-RepresentationTheory/QuiverRepresentations Layer 3; SmoothRepresentationsOfLocalGroups
+RepresentationTheory/QuiverRepresentations §3.1; Tau Ceti `TauCeti.socle` and
+`TauCeti.exists_isInjectiveEnvelope_of_finite`; SmoothRepresentationsOfLocalGroups
 *compact-open-invariants*.
 
 API:
@@ -1427,8 +1580,9 @@ API:
 ### Dependencies
 
 FiniteFlatGroupsAndIntegralPadicHodgeTheory R07.5.15; PadicLocalLanglandsForGL2Qp §0.3;
-ClassFieldTheory Layer 7; RepresentationTheory/QuiverRepresentations Layer 3;
-SmoothRepresentationsOfLocalGroups *compact-open-invariants*.
+ClassFieldTheory Layer 7; RepresentationTheory/QuiverRepresentations §3.1; Tau Ceti `TauCeti.socle`
+and `TauCeti.exists_isInjectiveEnvelope_of_finite`; SmoothRepresentationsOfLocalGroups
+*compact-open-invariants*.
 
 ## Layer 4: Iwahori filtrations and Gelfand–Kirillov dimension
 
@@ -1483,15 +1637,21 @@ API:
 ### 4.2 Quotient and central-regular-sequence comparisons
 
 Prove: if a closed normal analytic subgroup `N` of `G` acts trivially on admissible `V`, then
-`dim_G V = dim_{G/N} V` (BHHMS23, Lemma 5.1.2, p. 47). Let `U` be compact analytic without
-`p`-torsion, `R = k[[U]]` with its `𝔪`-adic filtration and `gr R` Auslander regular; let
-`z₁, …, z_r ∈ gr R` be a homogeneous central regular sequence generating `𝔍` with `gr R/𝔍` a
-commutative polynomial ring in `dim U − r` variables. If `𝔍` annihilates `gr M` for a finitely
-generated `R`-module `M` with good filtration, then `dim U − j_R(M)` is the Krull dimension of the
-support of `gr M` over `gr R/𝔍` (BHHMS23, Lemma 5.1.3, pp. 47–48). Route: the filtered grade
-equality of NoncommutativeAndEquivariantIwasawa §0.5, and for the central regular sequence the
-change-of-rings spectral sequence, which shifts grade by `r` exactly as the dimension drops by `r`.
-*Needs:* §4.1; NoncommutativeAndEquivariantIwasawa §§0.5, F.1; Mathlib `ringKrullDim`.
+`dim_G V = dim_{G/N} V` (BHHMS23, Lemma 5.1.2, p. 47). Let `U` be a compact analytic pro-`p` group
+without `p`-torsion, so that `R = k[[U]]` is local with maximal ideal the augmentation ideal `𝔪`;
+give `R` and its finitely generated modules their `𝔪`-adic filtrations, and assume `gr R`
+Auslander regular; let `z₁, …, z_r ∈ gr R` be a homogeneous central regular sequence generating
+`𝔍` with `gr R/𝔍` a commutative polynomial ring in `dim U − r` variables. If `𝔍` annihilates
+`gr M` for a finitely generated `R`-module `M` with good filtration, then `dim U − j_R(M)` is the
+Krull dimension of the support of `gr M` over `gr R/𝔍` (BHHMS23, Lemma 5.1.3, pp. 47–48, stated
+for pro-`p` groups). Route: the `𝔪`-adic filtration of `R` is complete, separated, nonnegative and
+adic with `F¹R = 𝔪 = Jac(R)`, and `R` is compact, so the grade comparison of
+NoncommutativeAndEquivariantIwasawa §0.5 applies: `j_R(M) ≥ j_{gr R}(gr M)`, with equality by
+gap:filtered-grade-equality; for the central regular sequence the change-of-rings spectral
+sequence shifts grade by `r` exactly as the dimension drops by `r`. The inequality alone gives
+`dim U − j_R(M) ≤` the Krull dimension of the support, which is the direction §4.7 uses.
+*Needs:* §4.1; NoncommutativeAndEquivariantIwasawa §§0.5 (with gap:filtered-grade-equality), F.1;
+Mathlib `ringKrullDim`.
 
 **Checks.**
 
@@ -1500,6 +1660,13 @@ change-of-rings spectral sequence, which shifts grade by `r` exactly as the dime
   and the formula is applied only to modules killed by the central `h`, over `k[e,f]`.
 - For `U = ℤ_p^d` and `𝔍 = 0`, the statement is the commutative equality
   `d − j(M) = dim Supp(gr M)`; for `M = k` it gives `0`.
+- The pro-`p` hypothesis is needed: for `p = 5`, `U = C₂` (finite, so analytic of dimension `0`
+  and without `5`-torsion) and `M = k` the sign character, `R = k[C₂] ≅ k × k` and the
+  augmentation ideal `𝔪` is the factor on which the generator acts by `−1`, an idempotent ideal:
+  `𝔪 = 𝔪²`, so the `𝔪`-adic filtration is not separated and `Jac(R) = 0 ≠ 𝔪`. Here `gr R = R/𝔪 = k`
+  is Auslander regular, `𝔍 = 0`, and `gr M = 0` because `𝔪M = M` (the generator minus `1` acts by
+  `−2 ≠ 0`); so the right side is the dimension of an empty support, `−∞`, while `M` is projective
+  over the semisimple `R`, `j_R(M) = 0` and `dim U − j_R(M) = 0`.
 
 ### 4.3 The nonuniform pro-p Iwahori valuation
 
@@ -1539,8 +1706,16 @@ regular sequence, and the quotient by them is the polynomial ring `k[e_i, f_i : 
 Lemma 5.3.2 and Proposition 5.3.3, pp. 52–53; equations (42)–(43) and Theorem 5.3.4(i),
 pp. 53–54). Route: the weighted graded algebra of NoncommutativeAndEquivariantIwasawa §0.8 for the
 saturated `p`-valued group `(P, ω)`, reduced modulo `p`, with the brackets computed after splitting
-`𝒪_F ⊗ k = ∏_J k`; PBW and §0.5 give Auslander regularity. *Needs:* §4.3;
-NoncommutativeAndEquivariantIwasawa §§0.5, 0.8.
+`𝒪_F ⊗ k = ∏_J k`, identifies `gr_𝔪 A` with the enveloping algebra `U_k(⊕_{i∈J} 𝔥_i)` of a Lie
+algebra of dimension `3f`; Auslander regularity is then gap:enveloping-auslander-regular. The
+complete-filtration transfer of §0.5 does not apply here: the PBW filtration of an enveloping
+algebra is increasing, and its associated graded ring (Tau Ceti
+`TauCeti.UniversalEnvelopingAlgebra.pbwAssociatedGradedEquiv`) is a polynomial ring. The central
+regular sequence and the quotient: the `h_i` are central by the bracket relations, and each
+successive quotient is the enveloping algebra of a quotient Lie algebra, a domain by PBW, so
+`h_{i+1}` is regular on it (BHHMS23, proof of Theorem 5.3.4(i), p. 54). *Needs:* §4.3;
+NoncommutativeAndEquivariantIwasawa §0.8 and gap:enveloping-auslander-regular; Tau Ceti
+`TauCeti.UniversalEnvelopingAlgebra.pbwAssociatedGradedEquiv`.
 
 **Checks.**
 
@@ -1549,6 +1724,10 @@ NoncommutativeAndEquivariantIwasawa §§0.5, 0.8.
   quadratic monomials in the `e, f` plus the `h_i`).
 - For `f = 1`, the `H`-weights in degree two are `α², α^{−2}` (for `e²`, `f²`) and `1` (for `ef`,
   `h`); in particular the trivial-weight part of `gr²` is spanned by `h` and `ef`.
+- The PBW filtration is not a complete adic filtration in the sense of §0.5: for `f = 1` its
+  filtration degree `≤ 1` piece is spanned by `1, e, f, h`, it is increasing with `F₀ = k ≠ U(𝔥)`,
+  and indexing it decreasingly does not make `U(𝔥)` its degree-zero piece; Auslander regularity of
+  `U(𝔥)` is therefore taken from gap:enveloping-auslander-regular and not from §0.5.
 
 ### 4.5 The crossing algebra
 
@@ -1579,19 +1758,32 @@ API:
 
 ### 4.6 Truncated projective Iwahori modules
 
-For a compact `p`-adic analytic group `U` define the projective envelope `Proj_U(τ)` of a smooth
-irreducible `τ` in the category of pseudocompact `k[[U]]`-modules as the Pontryagin dual of the
-injective envelope of `τ^∨` in the smooth category (SmoothRepresentationsOfLocalGroups SR.0d.1).
-For a smooth character `χ : I → k^×` trivial on `Z₁` and `n ≥ 1` put
+For a compact `p`-adic analytic group `U` and a smooth representation `τ` of `U` over `k`, prove
+that `τ` has an injective envelope in the category of smooth `k`-representations of `U`: choose
+an injective envelope `τ → E` of `k[U]`-modules (Tau Ceti `TauCeti.exists_isInjectiveEnvelope`)
+and put `J = E^∞`, its smooth part. The smooth part is right adjoint to the exact inclusion of
+smooth representations into all `k[U]`-modules (SmoothRepresentationsOfLocalGroups
+*smooth-rep-category*, SR.0.2), so `Hom_U(−, J) = Hom_{k[U]}(−, E)` on smooth representations is
+exact and `J` is injective; `τ ⊆ J` because `τ` is smooth; and every nonzero subrepresentation of
+`J` is a nonzero submodule of `E`, so it meets `τ`, `τ` being essential in `E`. Hence `τ → J` is
+an essential embedding into an injective object, unique up to isomorphism over `τ`, written
+`Inj_U τ`. Define the projective envelope `Proj_U(τ)` of a smooth irreducible `τ` in the category
+of pseudocompact `k[[U]]`-modules as the Pontryagin dual `(Inj_U(τ^∨))^∨`, which surjects onto
+`τ^{∨∨} = τ`. For a smooth character `χ : I → k^×` trivial on `Z₁` and `n ≥ 1` put
 `W_{χ,n} = Proj_{I/Z₁}(χ)/𝔪_{I₁}^n Proj_{I/Z₁}(χ)`. Prove that `Proj_{I/Z₁}(χ) = χ ⊗ k[[I₁/Z₁]]`, with
 `I₁` acting by left multiplication and `H` by conjugation, so that
 `W_{χ,n} = χ ⊗ k[[I₁/Z₁]]/𝔪^n` is finite-dimensional with simple cosocle `χ` (BHHMS23, equation
 (45) and the following paragraph, p. 56). For `n = 2, 3` these are radical quotients of the
-projective envelope, not socle truncations. *Needs:* Tau Ceti `TauCeti.completedGroupAlgebra`;
-SmoothRepresentationsOfLocalGroups SR.0d.1; PadicLocalLanglandsForGL2Qp §0.3; §4.4.
+projective envelope, not socle truncations. *Needs:* Tau Ceti `TauCeti.completedGroupAlgebra` and
+`TauCeti.exists_isInjectiveEnvelope`; SmoothRepresentationsOfLocalGroups *smooth-rep-category*;
+PadicLocalLanglandsForGL2Qp §0.3; §4.4.
 
 API:
 
+- Every smooth representation `τ` of `U` has an injective envelope `τ → Inj_U τ` in the smooth
+  category, the smooth part of a `k[U]`-module envelope, unique up to isomorphism over `τ` (Tau Ceti
+  `TauCeti.IsEssentialMono.exists_iso`, for essential monomorphisms into injective objects of any
+  category).
 - `W_{χ,1} = χ`, compatibly with the projection from the envelope.
 - For `m ≤ n` there is a surjection `W_{χ,n} → W_{χ,m}` with kernel `𝔪^m W_{χ,n}`.
 - `dim W_{χ,2} = 1 + 2f` and `dim W_{χ,3} = 1 + 4f + 2f²`.
@@ -1603,6 +1795,12 @@ API:
   give `6`.
 - The `𝔪_{I₁}`-action factors through `I₁/Z₁`, and the `H`-characters of `W_{χ,2}` are `χ`,
   `χα_i`, `χα_i^{−1}`.
+- Essentiality is what makes the envelope minimal: for `U = {1}` and `τ = k`, the embedding
+  `k → k²` has injective target but is not essential, and its dual `k² → k` is not a projective
+  cover; the envelope is `k` itself. For `U = ℤ_p` and `τ = k` trivial, `Inj_U k = C^∞(ℤ_p, k)`
+  (injective, being smooth induction from the trivial group, with `ℤ_p`-invariants the constants,
+  which meet every nonzero smooth subrepresentation because `ℤ_p` is pro-`p`), and its dual is the
+  cover `k[[T]] → k`, of infinite dimension, so no finite-dimensional algebra envelope gives it.
 
 ### 4.7 A multiplicity criterion for Gelfand–Kirillov dimension
 
@@ -1630,15 +1828,18 @@ everything; then §4.2 and §4.5 give the bound. *Needs:* §§4.2, 4.5, 4.6.
 
 ### Dependencies
 
-Layer 0 (§0.1); NoncommutativeAndEquivariantIwasawa §§0.5, 0.7, 0.8, 0.10–0.11, F.1;
-CompletedCohomologyPartII §5.8; SmoothRepresentationsOfLocalGroups SR.0d.1; Tau Ceti completed
-group algebras; DeformationAndDerivedPatchingAlgebra §3.4; SchemeAndStackFoundations §0.17;
+Layer 0 (§0.1); NoncommutativeAndEquivariantIwasawa §§0.5, 0.7, 0.8, 0.10–0.11, F.1 (with
+gap:filtered-grade-equality and gap:enveloping-auslander-regular); CompletedCohomologyPartII §5.8;
+SmoothRepresentationsOfLocalGroups *smooth-rep-category*; Tau Ceti completed group algebras,
+`TauCeti.exists_isInjectiveEnvelope` and `TauCeti.UniversalEnvelopingAlgebra.pbwAssociatedGradedEquiv`;
+DeformationAndDerivedPatchingAlgebra §3.4; SchemeAndStackFoundations §0.17;
 Mathlib commutative algebra; Layer 3 (§3.1).
 
 ## Layer 5: Finite and first-order extension modules
 
 `p > 3`, `F` unramified of degree `f`, `Γ = GL₂(k_F)`, `P_σ = Proj_Γ σ` (Tau Ceti
-`TauCeti.exists_isProjectiveCover_of_finite`) and `Inj_Γ σ` its injective envelope.
+`TauCeti.exists_isProjectiveCover_of_finite`) and `Inj_Γ σ` its injective envelope (Tau Ceti
+`TauCeti.exists_isInjectiveEnvelope_of_finite`).
 
 ### 5.1 Iwahori character extensions and truncation embeddings
 
@@ -1669,7 +1870,7 @@ cosocle `χα_0^{−j}` has constituents `χα_0^{−ℓ}` with `0 ≤ ℓ_i ≤
 corresponding statements for `J_χ`, the inflation to `I` conjugated by `w = (0 1; p 0)`, which has
 socle and cosocle `χ^s` and other constituents `χ^s α_0^{j}` with the same digit order (BHHMS23,
 Lemma 6.1.3 and Corollary 6.1.4, pp. 57–58). *Needs:* RepresentationTheory/QuiverRepresentations
-Layer 3; SmoothRepresentationsOfLocalGroups *smooth-induction*; §3.1.
+§3.1; Tau Ceti `TauCeti.socle`; SmoothRepresentationsOfLocalGroups *smooth-induction*; §3.1.
 
 API:
 
@@ -1692,8 +1893,9 @@ the `F(t_λ(Σ a_i η_i))`, `a_i ∈ {−1, 0, 1}`; and for such a constituent `
 submodule `I(F(λ), σ_a)` of `Inj_Γ F(λ)` with cosocle `σ_a` in which `F(λ)` occurs once; it is
 multiplicity-free with constituents `σ_b`, `b_i ∈ {0, a_i}`, and length `2^{#{i : a_i ≠ 0}}`
 (BHHMS23, Lemma 6.2.1, pp. 58–59; BP12, Corollary 3.12, p. 26). *Needs:* §§3.3, 5.2;
-RepresentationTheory/QuiverRepresentations Layer 3; Tau Ceti
-`TauCeti.exists_isProjectiveCover_of_finite`.
+RepresentationTheory/QuiverRepresentations §3.1; Tau Ceti
+`TauCeti.exists_isProjectiveCover_of_finite`, `TauCeti.exists_isInjectiveEnvelope_of_finite` and
+`TauCeti.socle`.
 
 API:
 
@@ -1730,12 +1932,13 @@ is obtained by composing imported inputs along the chain
 
 The first equality holds as `L ⊗_𝒪 P̃_σ` is semisimple (Maschke, characteristic zero) and
 `End(V) = L`; the second as `Hom_{𝒪[Γ]}(P̃_σ, V°)` is a full `𝒪`-lattice in the rational Hom space;
-the third is the Hom base change below, the Hom module being free over `𝒪`; the last is the
-projective-cover pairing of GL2AutomorphicRepresentationsAndTransfer §R17.5.11, read over `k̄` and
-descended to the splitting field `k` with §0.6. In particular `[V̄ : σ]` does not depend on the
-lattice. *Needs:* Tau Ceti `TauCeti.exists_projective_quotient_smul_top_linearEquiv`,
-`Ideal.nonempty_linearEquiv_of_quotient_smul_top` and `TauCeti.exists_isProjectiveCover_of_finite`;
-GL2AutomorphicRepresentationsAndTransfer §R17.5.11; §0.6.
+the third is the Hom base change below, the Hom module being free over `𝒪`; the last is Tau Ceti
+`TauCeti.IsProjectiveCover.finrank_linearMap_eq_jordanHolderMultiplicity` for `A = k[Γ]`, the
+projective cover `P_σ → σ` and `M = V̄`, its hypothesis `dim_k End_Γ(σ) = 1` holding because `k`
+splits `Γ`. In particular `[V̄ : σ]` does not depend on the lattice. *Needs:* Tau Ceti
+`TauCeti.exists_projective_quotient_smul_top_linearEquiv`,
+`Ideal.nonempty_linearEquiv_of_quotient_smul_top`, `TauCeti.exists_isProjectiveCover_of_finite` and
+`TauCeti.IsProjectiveCover.finrank_linearMap_eq_jordanHolderMultiplicity`.
 
 API:
 
@@ -1802,7 +2005,7 @@ characters. *Needs:* §§3.1, 5.3, 5.4; Tau Ceti
 ### 5.6 First-order Serre-weight hulls
 
 Let `A₁ = k[[K/Z₁]]/𝔪_{K₁}²` (finite-dimensional). For a smooth irreducible `σ`, the injective
-envelope `Inj_{K/Z₁} σ` (SmoothRepresentationsOfLocalGroups SR.0d.1) has
+envelope `Inj_{K/Z₁} σ` of §4.6 has
 `Inj_{K/Z₁}σ[𝔪_{K₁}²] = Inj_{A₁} σ`, finite-dimensional, with `K₁`-invariants `Inj_Γ σ` and quotient
 embedded in `Inj_Γ σ ⊗ H¹(K₁/Z₁, k)`, where `H¹(K₁/Z₁, k) ≅ ⊕_i A_i^*` (NoncommutativeAndEquivariantIwasawa
 §0.13 for `K₁/Z₁` uniform of dimension `3f`). Prove (for `p > 3`): for 2-deep `σ` and
@@ -1813,17 +2016,30 @@ for 2-deep `τ` a quotient of `Proj_{A₁} τ` with simple socle `σ` and `[V : 
 and `K₁`-trivial. For distinct regular `σ, σ′`, inflation identifies `Ext¹_Γ(σ,σ′)`,
 `Ext¹_{K/Z₁}(σ,σ′)` and `Ext¹_{A₁}(σ,σ′)`; `Ext¹_{K/Z₁}(σ,σ) = 0` for regular `σ` when `f ≥ 2`, and
 for `f = 1` when `0 ≤ r ≤ p−3` (HW22, Lemma 2.10, p. 12; Theorem 2.23 and Corollaries 2.25–2.26,
-p. 17; Theorem 2.30 and Corollary 2.31, p. 20). *Needs:* §§3.3, 5.3; Tau Ceti
-`TauCeti.completedGroupAlgebra`; SmoothRepresentationsOfLocalGroups SR.0d.1;
-NoncommutativeAndEquivariantIwasawa §0.13; RepresentationTheory/QuiverRepresentations Layer 3.
+p. 17; Theorem 2.30 and Corollary 2.31, p. 20). The dual statements follow from the direct ones by
+the duality of RepresentationTheory/ArtinAlgebras §2.3 for the finite-dimensional algebra `A₁`,
+which exchanges `Proj_{A₁} τ` and `Inj_{A₁} τ^*`. *Needs:* §§3.3, 4.6, 5.3; Tau Ceti
+`TauCeti.completedGroupAlgebra`, `TauCeti.exists_isProjectiveCover_of_finite` and `TauCeti.socle`;
+NoncommutativeAndEquivariantIwasawa §0.13; RepresentationTheory/QuiverRepresentations §3.1;
+RepresentationTheory/ArtinAlgebras §2.3.
 
 **Checks.**
 
-- The 2-deep condition means `2 ≤ r_i ≤ p−4`; uniqueness is for submodules of the fixed hull with
-  `[V:σ] = 1`, not for arbitrary `K`-extensions with prescribed constituents.
+- `f = 1`, `p = 17`, `σ = Sym^5` (2-deep: `2 ≤ 5 ≤ 13`). For `τ = σ` the submodule `V` with
+  `cosoc V = σ` and `[V : σ] = 1` is `σ` itself, of dimension `6`, since `V` has socle inside
+  `soc Inj_{A₁} σ = σ`. For `τ = Sym^9 ⊗ det^6`, a constituent of `Inj_Γ σ` (§5.3), `V` is
+  `I(σ, τ)`, the nonsplit extension with socle `σ` and cosocle `τ`, of dimension `6 + 10 = 16`, on
+  which `K₁` acts trivially. Without the condition `[V : σ] = 1` the submodule with cosocle `σ` is
+  not unique: `Inj_Γ σ ⊆ Inj_{A₁} σ` also has cosocle `σ` (`k[Γ]` is a symmetric algebra, so
+  `Inj_Γ σ ≅ P_σ`), with constituents `σ` twice, `Sym^9 ⊗ det^6` and `Sym^{11} ⊗ det^5`, of
+  dimension `6 + 6 + 10 + 12 = 34 = 2p`.
 - `dim_k H¹(K₁/Z₁, k) = 3f`: `K₁/Z₁` is uniform of dimension `3f` (as `p > 2`), and
   `dim Inj_{A₁} σ ≤ (1 + 3f) dim Inj_Γ σ`.
-- For `f = 1` and `r = p−2`, the self-extension clause is excluded, since the bound `r ≤ p−3` fails.
+- The self-extension bound is sharp: for `f = 1` and `p = 17`, `Ext¹_{K/Z₁}(Sym^{14}, Sym^{14}) = 0`
+  (`r = 14 = p − 3`), whereas `Ext¹_{K/Z₁}(Sym^{15}, Sym^{15}) ≠ 0` (`r = 15 = p − 2`, still
+  regular) (HW22, proof of Lemma 2.10, p. 12; HW22 line 564), while
+  `Ext¹_Γ(Sym^{15}, Sym^{15}) = 0` (§3.3, `0` not being adjacent to itself): the nonzero class is not
+  inflated from `Γ`, so a statement for all regular `σ` at `f = 1` would be false.
 
 ### Examples
 
@@ -1834,10 +2050,10 @@ NoncommutativeAndEquivariantIwasawa §0.13; RepresentationTheory/QuiverRepresent
 
 ### Dependencies
 
-Layers 3–4; RepresentationTheory/QuiverRepresentations Layer 3; Tau Ceti projective covers and
-completed group algebras; Tau Ceti projective lifting and its uniqueness;
-GL2AutomorphicRepresentationsAndTransfer §R17.5.11; Layer 0 (§0.6); SmoothRepresentationsOfLocalGroups
-SR.0d.1 and SR.2.1; NoncommutativeAndEquivariantIwasawa §0.13.
+Layers 3–4 (the envelopes of §4.6); RepresentationTheory/QuiverRepresentations §3.1;
+RepresentationTheory/ArtinAlgebras §2.3; Tau Ceti projective covers, their multiplicity formula,
+injective envelopes, socles and completed group algebras; Tau Ceti projective lifting and its
+uniqueness; SmoothRepresentationsOfLocalGroups SR.2.1; NoncommutativeAndEquivariantIwasawa §0.13.
 
 ## Layer 6: Diamond boxes and multiplicity-preserving enlargements
 
@@ -1885,8 +2101,8 @@ when `ε_i = −1` and `3 ≤ r_i ≤ p − 4 − 2⌊B_i/2⌋` when `ε_i = +1`
 `0 ≤ n − 1 ≤ Σ_i ⌊B_i/2⌋`, `V[𝔪_{K₁}^n]` has cosocle `⊕ σ_a` over the `a` with `0 ≤ a_i ≤ B_i`,
 each `a_i` odd or equal to `B_i`, and `Σ_i ⌊a_i/2⌋ = n − 1`, and it is the union of the
 corresponding lower intervals (BHHMS23, Lemma 6.2.3 and Proposition 6.2.4, pp. 60–61). *Needs:*
-§§5.6, 6.1; RepresentationTheory/QuiverRepresentations Layer 3; SmoothRepresentationsOfLocalGroups
-*compact-open-invariants*.
+§§5.6, 6.1; RepresentationTheory/QuiverRepresentations §3.1; Tau Ceti `TauCeti.socle`;
+SmoothRepresentationsOfLocalGroups *compact-open-invariants*.
 
 **Checks.**
 
@@ -1904,8 +2120,8 @@ for `χ′ = χα_i` and `0 < r_j < p−3`, `Ind_I^K E_{χ′,χ}` is multiplici
 nonzero map `P_{σ_χ} → Ind_I^K E_{χα_i,χ}` (unique up to scalar) has constituents the intersection
 of the two Jordan–Hölder sets, and for every quotient `Q` of this induced extension with
 `[Q : σ_χ] = 0`, `Ext¹_K(τ, σ_χ) = 0` for all `τ ∈ JH(Q)` (BHHMS23, Lemmas 6.3.1 and 6.3.3–6.3.5,
-pp. 61–63). *Needs:* §§5.1, 5.3, 6.1; RepresentationTheory/QuiverRepresentations Layer 3;
-SmoothRepresentationsOfLocalGroups *frobenius-reciprocity*.
+pp. 61–63). *Needs:* §§5.1, 5.3, 6.1; RepresentationTheory/QuiverRepresentations §3.1; Tau Ceti
+`TauCeti.socle`; SmoothRepresentationsOfLocalGroups *frobenius-reciprocity*.
 
 **Checks.**
 
@@ -1946,7 +2162,7 @@ of adjacent constituents occurs, in one orientation, as a nonsplit length-two su
 (BHHMS23, Lemmas 6.3.7–6.3.9 and Proposition 6.3.10, pp. 63–68). Route: §5.5 for a single weight;
 the explicit length-two computation of Lemma 6.3.9 (three successive nonsplit length-two layers with
 labels `(2ε, 3ε)`, `(0, ε)`, `(−2ε, −ε)` along `η_j`); glue across the Boolean box. *Needs:* §§3.3, 5.5,
-6.3, 6.4; RepresentationTheory/QuiverRepresentations Layer 3.
+6.3, 6.4; RepresentationTheory/QuiverRepresentations §§2.1 and 3.1; Tau Ceti `TauCeti.socle`.
 
 **Checks.**
 
@@ -1964,8 +2180,7 @@ that `W` is multiplicity-free, `W^{K₁} = D_{λ,ε}`, and
 constituents `σ_b` of `W` with `0 ≤ b_i ≤ a_i` (BHHMS23, Theorem 6.3.11, pp. 68–69). Route: sums of
 submodules preserving the protected multiplicities preserve them, giving `W`; `W/D` embeds into
 `D ⊗ H¹(K₁/Z₁, k)` and the adjoint filtration of §6.5 selects the allowed shifted boxes. *Needs:*
-§§3.5, 5.6, 6.2, 6.5; NoncommutativeAndEquivariantIwasawa §0.13; SmoothRepresentationsOfLocalGroups
-SR.0d.1.
+§§3.5, 4.6, 5.6, 6.2, 6.5; NoncommutativeAndEquivariantIwasawa §0.13.
 
 API:
 
@@ -1992,10 +2207,19 @@ distinct `V_σ` have disjoint Jordan–Hölder sets, that for `σ = F(λ)` with 
 
 **Checks.**
 
-- The multiplicities `m_σ` are carried by the invariants; no multiplicity-one assumption on the
-  socle is made.
-- For `f = 1`, `W(ρ̄)` has two weights `σ₁, σ₂`, and `V_{σ₁}`, `V_{σ₂}` have disjoint constituents, each
-  of length four.
+- `f = 1`, `p = 23`, `μ − η = (10, 0)`, 8-deep since `8 < 11 < 15`: `W(ρ̄)` has two weights
+  `σ₁, σ₂`, and with `m_{σ₁} = m_{σ₂} = 1` each `V_σ` has the four constituents `a ∈ {0, 1, 2, 3}`
+  (`⌊a/2⌋ ≤ 1`) and `V_σ^{K₁} = D_{0,σ}(ρ̄)` the two with `a ≤ 1`; so `V = V_{σ₁} ⊕ V_{σ₂}` has length
+  `8`, `V^{K₁}` length `4` and `V/V^{K₁}` length `4`, the constituent sets of `V_{σ₁}` and `V_{σ₂}`
+  being disjoint.
+- The multiplicities are carried: for the same parameter with `m_{σ₁} = 2` and `m_{σ₂} = 3`, the
+  lengths of `V`, `V^{K₁}` and `V/V^{K₁}` become `20`, `10` and `10`; a construction taking one copy of
+  each hull, as for a multiplicity-free socle, would give `8`, `4` and `4`.
+- `f = 2`, `p = 23`, `μ − η = ((10,0),(10,0))` and `s = (1, 1)`, every `m_σ = 1`: `W(ρ̄)` has the four
+  weights `F(t_{μ−η}(ω))`, `ω ∈ Σ`; each `V_σ` has the `12` constituents `a ∈ {0,1,2,3}²` with
+  `⌊a₀/2⌋ + ⌊a₁/2⌋ ≤ 1` (`4` with both `a_i ≤ 1` and `8` with exactly one `a_i ≥ 2`), and
+  `V_σ^{K₁} = D_{0,σ}(ρ̄)` has the `4` with both `a_i ≤ 1`; so `V` has length `48` and `V^{K₁}` length
+  `16`. Counting by the box rank `Σ a_i ≤ 1` instead would give `3` constituents for each `V_σ`.
 
 ### Examples
 
@@ -2006,9 +2230,9 @@ distinct `V_σ` have disjoint Jordan–Hölder sets, that for `σ = F(λ)` with 
 
 ### Dependencies
 
-Layers 3 and 5; NoncommutativeAndEquivariantIwasawa §0.13; SmoothRepresentationsOfLocalGroups
-SR.0d.1, *compact-open-invariants*, *frobenius-reciprocity*; RepresentationTheory/QuiverRepresentations
-Layer 3.
+Layers 3 and 5, and §4.6 (envelopes); NoncommutativeAndEquivariantIwasawa §0.13;
+SmoothRepresentationsOfLocalGroups *compact-open-invariants*, *frobenius-reciprocity*;
+RepresentationTheory/QuiverRepresentations §§2.1 and 3.1; Tau Ceti `TauCeti.socle`.
 
 ## Layer 7: Multiplicity one and the local dimension bound
 
@@ -2345,6 +2569,10 @@ Layers 0 (§0.6), 5 and 8.
 - LocalGaloisDeformationRings, Part II: the weight coordinates, the extension-graph map and the tame
   weight set of §§3.1–3.4 for the Serre-weight side of local deformation rings of `GL₂` over
   unramified `F`.
+- HilbertModularVarietiesAndShimuraCurvesPartII §0.2: the tame Buzzard–Diamond–Jarvis set
+  `W_BDJ(ρ̄)` of §3.4, which it extends to every continuous `ρ̄` (wild and nonsplit), and the
+  comparison of §3.4 with `W(ρ̄)`: equality for irreducible `ρ̄` or a 2-deep presentation, and only
+  the regular part for a presentation that is 1-deep but not 2-deep.
 - Roadmaps on mod `p` cohomology and patching for `GL₂` over unramified fields: the local dimension
   bound of §7.6, the gluing lattice and its truncation (§§8.4–8.6) and relative projectivity
   (§9.3).
@@ -2437,9 +2665,9 @@ Consumers that cite this roadmap by its former target identifiers find the conte
 - **HW22** — Yongquan Hu, Haoran Wang, *On the mod p cohomology for GL₂: the non-semisimple case*;
   locators use arXiv:2009.09640v4.
 - **VIGNERAS11** — Marie-France Vignéras, *Le foncteur de Colmez pour GL(2,F)*, Arithmetic Geometry and
-  Automorphic Forms, ALM 19 (2011), 531–557; locators use arXiv:0909.4003v1 (§5: Théorème 6,
-  pp. 19–21; Proposition 8 and Lemme 11, p. 21; Propositions 9–10, p. 22), whose numbering differs
-  from the published Propositions 5.5–5.8.
+  Automorphic Forms, ALM 19 (2011), 531–557; locators use the preprint arXiv:0909.4003v1, titled
+  *De GL(2,F) à* `Gal_{ℚ_p}` (§5: Théorème 6, pp. 19–21; Proposition 8 and Lemme 11, p. 21;
+  Propositions 9–10, p. 22), whose numbering differs from the published Propositions 5.5–5.8.
 - **LE19** — Daniel Le, *On some nonadmissible smooth irreducible representations for GL₂*, Math.
   Res. Lett. 26 (2019), 1747–1758; locators use arXiv:1809.10247v3.
 - **HU12** — Yongquan Hu, *Diagrammes canoniques et représentations modulo p de GL₂(F)*, J. Inst.
@@ -2456,6 +2684,9 @@ Consumers that cite this roadmap by its former target identifiers find the conte
   Mathematics 42, Springer (1977), Part III, Chapters 14–15.
 - **SERRE-TREES** — Jean-Pierre Serre, *Arbres, amalgames, SL₂*, Astérisque 46, Société
   Mathématique de France (1977); Chapter II, §1.4, Théorème 3 and Corollaire 1 (Ihara).
+- **BDJ10** — Kevin Buzzard, Fred Diamond, Frazer Jarvis, *On Serre's conjecture for mod ℓ Galois
+  representations over totally real fields*, Duke Math. J. 155 (2010), 105–161; locators use
+  arXiv:0810.2106v5 (§3.1, pp. 18–19; §3.2, pp. 21–22).
 - **BARTHEL-LIVNE94** — L. Barthel, R. Livné, *Irreducible modular representations of GL₂ of a
   local field*, Duke Math. J. 75 (1994), 261–292; Proposition 18, Theorem 30, Theorems 33–34 and
   Corollary 36, numbered as HU12 (pp. 16, 29) and BP12 (pp. 43–44) cite them; the classification

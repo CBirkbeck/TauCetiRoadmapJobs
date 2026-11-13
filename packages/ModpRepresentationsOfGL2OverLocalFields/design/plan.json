@@ -3788,6 +3788,24 @@
       "needs": "For every finite F/Qp, every principal series Ind_B^G(chi_1 (x) chi_2) with chi_1 != chi_2 and every Steinberg twist St (x) chi o det over k-bar is the quotient of I(sigma) (x) (chi' o det), for some Serre weight sigma and smooth character chi', by a finitely generated G-subrepresentation: the image of T - lambda with lambda != 0, plus one further vector for the Steinberg twist (Barthel-Livne, Theorem 30, as used in Hu, proof of Theoreme 3.27).",
       "supplier": "FiniteFlatGroupsAndIntegralPadicHodgeTheory",
       "section": "R07.5.15"
+    },
+    {
+      "slug": "fixed-central-character-ext1-finite",
+      "needs": "For G = GL2(Qp), every prime p, a finite field k of characteristic p and absolutely irreducible smooth k[G]-modules pi, pi' with the same central character zeta, Ext^1_{G,zeta}(pi, pi') in the category of smooth k[G]-modules with central character zeta is finite-dimensional over k (CDN23, proof of Lemme 1.23).",
+      "supplier": "PadicLocalLanglandsForGL2Qp",
+      "section": "§5.2"
+    },
+    {
+      "slug": "filtered-grade-equality",
+      "needs": "For a ring R with a complete separated nonnegative adic filtration, F^1 R contained in Jac(R), noetherian gr R and the closure condition, if gr R is Auslander regular then j_R(M) = j_{gr R}(gr M) for every finitely generated R-module M with a good filtration (Venjakob, Theorem 3.21).",
+      "supplier": "NoncommutativeAndEquivariantIwasawa",
+      "section": "§0.5"
+    },
+    {
+      "slug": "enveloping-auslander-regular",
+      "needs": "For a field k and a finite-dimensional Lie algebra g over k, the universal enveloping algebra U_k(g) is Auslander regular, by the filtered-to-graded transfer for its increasing PBW filtration, whose associated graded ring is the polynomial ring Sym_k(g).",
+      "supplier": "NoncommutativeAndEquivariantIwasawa",
+      "section": "§0.5"
     }
   ],
   "restructure": [
