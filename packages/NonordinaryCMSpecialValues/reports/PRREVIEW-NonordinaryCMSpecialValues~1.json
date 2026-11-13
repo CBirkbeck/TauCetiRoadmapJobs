@@ -1,0 +1,13 @@
+{
+  "review": {
+    "status": "needs_changes",
+    "reviewer": "independent-review-PRREVIEW-NonordinaryCMSpecialValues~1",
+    "head": "ecbdd2f6b3f3d77f5f435e08e603006d97862e8c",
+    "pr": 2290,
+    "folder": "NonordinaryCMSpecialValues",
+    "date": "2026-11-13",
+    "findings": 9,
+    "blocking": 8,
+    "notes": "Full folder review: all 15 seeded source targets, all 44 target sections, adversarial table, pinned-library and ownership audits, 20 supplier roadmaps, passing worker gate and independent dependency check. Direct Lean elaboration passes with three sorry warnings; 11 signatures checked, no dropped binders; three padding probes fail. Primary source limits recorded."
+  }
+}

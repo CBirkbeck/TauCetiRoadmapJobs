@@ -175,3 +175,19 @@ locator = "Théorème 1, pp. 1063–1066"
 licence_class = "none"
 status = "waived"
 resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/13118#issuecomment-6787957436"
+
+[[source]]
+id = "YANG97"
+authors = "Tonghai Yang"
+title = "Theta liftings and Hecke L-functions"
+year = 1997
+locator_scheme = "theorem"
+locator = "Theorem 2.6 (2.19), p.43; Theorem 2.15, p.48"
+url = "https://gdz.sub.uni-goettingen.de/download/pdf/PPN243919689_0485/LOG_0007.pdf"
+fetched_from = "https://gdz.sub.uni-goettingen.de/download/pdf/PPN243919689_0485/LOG_0007.pdf"
+fetched_at = "2026-11-13T16:42:44Z"
+sha256 = "a98a539aaaba14a84da1c3e1b42c582dd4e757b4b169385ea20b44e4d25ea16b"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-13"
+cited_for = ["4.2"]
