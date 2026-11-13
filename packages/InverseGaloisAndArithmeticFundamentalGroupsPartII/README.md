@@ -67,20 +67,22 @@ It does not own, and consumes by name:
   class*). Suggested.lean restates the Hurwitz action on the pinned braid group as
   `hurwitzAction`, because a roadmap module cannot be imported; it is the same action
   `(a, b) ↦ (a b a⁻¹, a)`, and the README target is the parent's;
-- configuration spaces, their braid groups and asphericity, the marked topological Hurwitz spaces
-  `Hur_{G,n}`, `Hur^c_{G,n}`, `CHur_{G,n}`, `CHur^c_{G,n}` and the forgetting of the boundary
-  marking with its stabilizers `C_G(H)`: §§IG.5.1–IG.5.2 of the same roadmap;
+- the asphericity of `Conf_n(𝔻)` with the identification of its fundamental group with
+  `TauCeti.BraidGroup n` through which the Hurwitz spaces are defined, the marked topological
+  Hurwitz spaces `Hur_{G,n}`, `Hur^c_{G,n}`, `CHur_{G,n}`, `CHur^c_{G,n}` and the forgetting of the
+  boundary marking with its stabilizers `C_G(H)`: §§IG.5.1–IG.5.2 of the same roadmap;
 - the arithmetic Hurwitz schemes, their complex comparison, the fixed-degree mod-`ℓ` comparison and
   the coefficient towers: §IG.5.3 (*Arithmetic Hurwitz stacks and schemes*, *Analytic and
   topological Hurwitz comparison*) and §IG.5.5 (*Fixed-degree Hurwitz mod-`ℓ` comparison*,
   *Coefficient towers and rational Betti dimensions*);
-- plane configuration spaces, the identification of `π_1(Conf_n(ℂ))` with `TauCeti.BraidGroup n`
-  and the half-twist convention: ReductiveGroups Layer 11A; the finite Salvetti complex of a finite
-  Weyl arrangement (a finite reduced crystallographic root pairing) and its comparison with the
-  complexified complement: ReductiveGroups Layer 11B. The type-A poset model and its coarsening are
-  therefore not built here; Layer 5 specializes the ReductiveGroups model to the Weyl group
-  `W = S_n` of type `A_(n−1)` and lifts it to Hurwitz covers. Plane and disc configurations are
-  compared through Mathlib's `Homeomorph.unitBall`, applied coordinatewise (§5.1);
+- the topological configuration spaces of the plane and of the open unit disc (`Conf_n(𝔻)` of
+  §IG.5.1 is the same space), the `S_n`-equivariant homeomorphisms between them induced by
+  `z ↦ z/√(1 + |z|²)`, the identification of `π_1(Conf_n(ℂ))` with `TauCeti.BraidGroup n` and the
+  half-twist convention: ReductiveGroups Layer 11A; the finite Salvetti complex of a finite Weyl arrangement (a finite reduced
+  crystallographic root pairing) and its comparison with the complexified complement:
+  ReductiveGroups Layer 11B. The type-A poset model and its coarsening are therefore not built
+  here; Layer 5 specializes the ReductiveGroups model to the Weyl group `W = S_n` of type `A_(n−1)`
+  and lifts it to Hurwitz covers;
 - homology of a `K(G, 1)` with local coefficients as group homology: ClassifyingSpaces Stage 4,
   items 16–17;
 - singular homology, cellular homology, the Künneth theorem over a field, finite covers, transfer,
@@ -90,13 +92,16 @@ It does not own, and consumes by name:
 - collars, tubular neighbourhoods, diffeomorphism groups of compact manifolds relative to the
   boundary, isotopy extension and the restriction fibration, cutting a surface along a proper arc,
   and Smale's disc theorem: GeometricTopology Layers 1 and 3 (§§3.3, 3.4) and §1.7.2;
-- the block inclusion `TauCeti.BraidGroup.natAdd` of a braid group on the last strands of a larger
-  one, with its value on generators `TauCeti.BraidGroup.natAdd_sigma`; the diffeomorphism group
-  `TauCeti.DiscDiff 2` of the disc fixing its boundary pointwise, the thick realization
-  `TauCeti.fatRealization` of a semisimplicial space, the abelian category
+- the block inclusions `TauCeti.BraidGroup.natAdd` and `TauCeti.BraidGroup.castAdd` of a braid
+  group on the last and on the first strands of a larger one, with their values on generators
+  `TauCeti.BraidGroup.natAdd_sigma` and `TauCeti.BraidGroup.castAdd_sigma`; the Serre fibrations
+  `TauCeti.TopCat.serreFibrations` and the theorem that a locally trivial map is one; the
+  diffeomorphism group `TauCeti.DiscDiff 2` of the disc fixing its boundary pointwise, the thick
+  realization `TauCeti.fatRealization` of a semisimplicial space, the abelian category
   `TauCeti.GradedModuleCat` of internally graded modules over a graded algebra, its shifts and
   graded free modules, and the graded balanced tensor product: Tau Ceti;
-- the long exact sequences and spectral sequences of graded `Tor`: DGAInfinity Layer 5;
+- the long exact sequences and spectral sequences of graded `Tor`: DGAInfinity Layer 5
+  (gap:dga-graded-tor-spectral-sequences);
 - group homology, representations, monoid algebras and their gradings, graded objects and
   spectral-sequence pages: Mathlib.
 
@@ -176,8 +181,6 @@ IG.5 are for one `n` at a time.
   sets. `AddMonoidAlgebra.gradeBy` with its `GradedAlgebra` instance
   (`Mathlib/Algebra/MonoidAlgebra/Grading.lean`) and `MonoidAlgebra.toAdditiveAlgEquiv`
   (`Mathlib/Algebra/MonoidAlgebra/Basic.lean`) grade a monoid algebra by a homomorphism to `ℤ`.
-- `Homeomorph.unitBall` (`Mathlib/Analysis/Normed/Module/Ball/Homeomorph.lean`): the homeomorphism
-  `x ↦ (1 + ‖x‖²)^(−1/2) x` of a real normed space onto its open unit ball, fixing `0`.
 - `Rep`, `Rep.ofMulAction`, `Rep.res`, `Rep.ofHom`, `Representation.ofMulAction`,
   `groupHomology`, `groupHomology.map` (`Mathlib/RepresentationTheory/`): representations, the
   permutation representation of an action, restriction along a homomorphism and group homology,
@@ -213,6 +216,19 @@ IG.5 are for one `n` at a time.
   `TauCeti.BraidGroup.natAdd m : TauCeti.BraidGroup (n + 1) →* TauCeti.BraidGroup (m + n + 1)`
   places a braid on the last `n + 1` strands and sends `σ_i` to `σ_(m+i)`. It is defined only on
   braid groups with at least one strand, and neither its injectivity nor its image is pinned.
+- `TauCeti.BraidGroup.castAdd` and `TauCeti.BraidGroup.castAdd_sigma` (same module): for
+  `m, n ≥ 0`, the homomorphism
+  `TauCeti.BraidGroup.castAdd m : TauCeti.BraidGroup (n + 1) →* TauCeti.BraidGroup (n + m + 1)`
+  places a braid on the first `n + 1` strands and keeps the index of each generator.
+- `TauCeti.TopCat.serreFibrations` (`TauCeti/Topology/Homotopy/SerreFibration/Basic.lean`): the
+  Serre fibrations, as the `MorphismProperty` of `TopCat` given by the right lifting property
+  against the inclusions `Dⁿ → Dⁿ × I` of the discs as bottoms of their cylinders; and
+  `TauCeti.TopCat.mem_serreFibrations_of_exists_trivialization`
+  (`TauCeti/Topology/Homotopy/SerreFibration/FiberBundle.lean`): a map of `TopCat` whose base is
+  covered by the base sets of trivializations with a fixed fibre is a Serre fibration, with no
+  hypothesis on the base. No exact sequence of homotopy groups of a fibration is pinned; §2.1
+  combines this lifting property with the exact sequence of a based pair (AlgebraicTopology
+  Stage 8).
 - `TauCeti.DiscDiff 2` (`TauCeti/Geometry/Diffeomorphism/Disc.lean`): the group of smooth
   diffeomorphisms of the closed unit disc of `ℝ²` fixing the unit circle pointwise, the fixing
   subgroup `TauCeti.RelativeDiff` of the boundary, closed by `Diffeomorph.isClosed_fixingSubgroup`,
@@ -264,18 +280,23 @@ IG.5 are for one `n` at a time.
   `(g, g_2, …, g_n)` for any prescribed `g ∈ c`, with `(g_2, …, g_n)` still generating.
 - §IG.5.1, *Ordered and unordered configurations* and *Configurations and punctured-disc groups*:
   `Conf_n(𝔻)` is aspherical with fundamental group `TauCeti.BraidGroup n`, the adjacent exchanges
-  corresponding to `TauCeti.BraidGroup.sigma`.
+  corresponding to `TauCeti.BraidGroup.sigma`, with the orientation left to §IG.3.2. Through this
+  identification §IG.5.2 defines `Hur_n` and §0.5 computes its homology. Layer 2 uses the
+  identification of ReductiveGroups Layer 11A instead, and no statement here compares the two
+  (§2.1).
 - §IG.5.2, *Marked topological Hurwitz spaces*: `Hur_{G,n} = Ẽ ×_{B_n} G^n` and its subcovers with
   fibres `c^n`, generating tuples, and generating tuples in `c^n`; §IG.5.2, *Forgetting the boundary
   marking*: `G` acts by simultaneous conjugation, the quotient forgets the boundary marking, and
   the stabilizer of a tuple with exact image `H` is `C_G(H)`.
 - §IG.5.3, *Arithmetic Hurwitz stacks and schemes*: the tame Hurwitz schemes over `ℤ[1/|G|]`,
   with exactly `n` branch points, including the variant with affine branch locus that is ramified
-  or unramified at `∞`, which is EVW's `Hn_{G,n}`, and its class loci for rational classes;
-  §IG.5.3, *Analytic and topological Hurwitz comparison*: for centreless `G` and a
-  conjugation-invariant `c ⊆ G ∖ {1}`, the complex points of `Hn^c_{G,n}` are `CHur^c_{G,n}/G`.
-  The branch locus is exact, so tuples with an identity entry are not points of the scheme; the
-  comparison is not asserted when `1 ∈ c`.
+  or unramified at `∞`, which is EVW's `Hn_{G,n}`, and the open and closed loci over `ℤ[1/|G|]`
+  defined by rational classes; §IG.5.3, *Analytic and topological Hurwitz comparison*: for
+  centreless `G`, the complex points of `Hn_{G,n}` are `CHur^{c₁}_{G,n}/G`, `c₁ = G ∖ {1}`, for the
+  Hurwitz space of the plane, the construction of §IG.5.2 with the disc replaced by `ℂ` and the
+  boundary base point near `∞`. The branch locus is exact, so tuples with an identity entry are not
+  points of the scheme. That target does not state the complex points of the class loci of the
+  unmarked scheme, nor compare the plane with the disc; §5.3 derives both.
 - §IG.5.5, *Fixed-degree Hurwitz mod-`ℓ` comparison*: for centreless `G`, a rational class `c`
   generating `G`, `q` prime to `|G|`, fixed `n` and a prime `ℓ > max(|G|, q, n)`, an isomorphism
   `H^i(Hn^c_{G,n}(ℂ), ℤ/ℓ) ≅ H^i_ét(Hn^c_{G,n} ⊗ 𝔽̄_q, ℤ/ℓ)` for every `i`; §IG.5.5, *Coefficient
@@ -287,8 +308,11 @@ IG.5 are for one `n` at a time.
 - Layer 11A: the plane configuration spaces `PConf_n(ℂ)` and `Conf_n(ℂ)`, the finite covering
   `PConf_n(ℂ) → Conf_n(ℂ)`, and the based isomorphism `π_1(Conf_n(ℂ)) ≅ TauCeti.BraidGroup n`
   sending the counterclockwise half twist of the points `i` and `i + 1` of the base configuration
-  `z_j = j` to `TauCeti.BraidGroup.sigma i`. The comparison with configurations in the open disc
-  is not part of it; §5.1 transports it along `Homeomorph.unitBall`.
+  `z_j = j`, `0 ≤ j ≤ n − 1`, to `TauCeti.BraidGroup.sigma i`, with Mathlib's product
+  `p * q = q.trans p` of loops. Layer 11A also constructs `PConf_n` and `Conf_n` of the open unit
+  disc and the `S_n`-equivariant homeomorphisms with the plane ones induced by
+  `z ↦ z/√(1 + |z|²)`, with inverse `w ↦ w/√(1 − |w|²)`; this roadmap takes as base
+  configuration of the disc the image `z_j = j/√(1 + j²)`, `0 ≤ j ≤ n − 1`, of the plane one.
 - Layer 11B: for a finite reduced crystallographic root pairing with a base (a finite Weyl
   arrangement; type `A_(n−1)`, with Weyl group `S_n`, is the case used here), the face/chamber
   Salvetti model with its comparison with the complexified root-hyperplane complement by
@@ -527,12 +551,19 @@ it (`hurwitzAction_shift`). Define `glue c full m g`, which prepends the constan
 condition and generation, is equivariant along the block inclusion (`glue_smul`), and satisfies
 `glue g (h s h⁻¹) = h · glue (h⁻¹ g h) s · h⁻¹` (`glue_conjFibre`). Geometrically, for a fixed
 point `t ∈ c^m` the map `Hur_n → Hur_(m+n)` induced on Borel constructions by
-`(shiftHom m n, t ++ −)` glues the cover with monodromy `t` to the left; the general gluing
-`Hur_m × Hur_n → Hur_(m+n)` from the block inclusion `B_m × B_n → B_(m+n)` and concatenation is
-associative and unital up to coherent homotopy and equivariant for simultaneous conjugation
-(EVW16 §2.6, pp. 11–12; EVW16 line 509). *Needs:* §0.3; Tau Ceti `TauCeti.BraidGroup.natAdd`,
-`TauCeti.BraidGroup.natAdd_sigma`; §IG.5.2 *Marked topological Hurwitz spaces*; AlgebraicTopology
-Stage 5 (gap:algtop-borel-construction) for the gluing of spaces.
+`(shiftHom m n, t ++ −)` glues the cover with monodromy `t` to the left. The general gluing
+`Hur_m × Hur_n → Hur_(m+n)` is induced on Borel constructions by concatenation and the
+homomorphism `B_m × B_n → B_(m+n)`, `(x, y) ↦ x' · shiftHom m n y`, where `x'` is the image of `x`
+under `TauCeti.BraidGroup.castAdd n` on the first `m` strands for `m ≥ 1` and `x' = 1` for
+`m = 0`; the two images commute by `TauCeti.BraidGroup.sigma_mul_sigma_comm`, since the native
+generator indices of the first are at most `m − 2` and those of the second at least `m`. This
+gluing is associative and unital up to homotopy, so it makes the union of the Hurwitz spaces an
+H-space and is associative and unital on homology, and it is equivariant for simultaneous
+conjugation (EVW16 §2.6, pp. 11–12; EVW16 lines 509–517). *Needs:* §0.3; Tau Ceti
+`TauCeti.BraidGroup.natAdd`, `TauCeti.BraidGroup.natAdd_sigma`, `TauCeti.BraidGroup.castAdd`,
+`TauCeti.BraidGroup.castAdd_sigma`, `TauCeti.BraidGroup.sigma_mul_sigma_comm`; §IG.5.2 *Marked
+topological Hurwitz spaces*; AlgebraicTopology Stage 5 (gap:algtop-borel-construction) for the
+gluing of spaces.
 
 - The glued tuple has boundary product `∂t · ∂s`, in this order, and generated subgroup
   `⟨⟨t⟩, ⟨s⟩⟩`.
@@ -552,6 +583,10 @@ Stage 5 (gap:algtop-borel-construction) for the gluing of spaces.
   constant tuple of length `m`, which is a point of `HurwitzFibre c false m`.
 - Gluing a tuple generating a proper subgroup `H` with an element outside `H` leaves the stratum of
   exact image `H`, so gluing does not preserve exact-image strata.
+- For `m = n = 2` the two blocks of `B_4` are generated by the native `σ_0` (from `castAdd`) and
+  `σ_2` (from `shiftHom 2 2`); `0 + 2 ≤ 2`, so they commute. Placing the first factor by
+  `TauCeti.BraidGroup.natAdd` as well would send both native `σ_0` to the same `σ_2`, and the map
+  `B_2 × B_2 → B_4` would not be the block inclusion.
 
 ### 0.5 Hurwitz homology as braid-group homology
 
@@ -784,7 +819,8 @@ reduces to `N = k`. *Needs:* §1.1, §1.2; Tau Ceti `TauCeti.BalancedTensorProdu
 Prove: for a graded left `R̄`-module `V`, `deg Tor_i^(R̄)(k, V) ≤ i deg R̄ + deg V` for every `i ≥ 0`,
 and in particular `≤ i A1 + deg V` (EVW16 Lemma 4.5, p. 17; EVW16 line 800). *Proof sketch.* A
 graded free right resolution of `k` over `R̄` can be chosen with `i`-th term generated in degrees
-`≤ i deg R̄`; tensor with `V` and apply §1.4. *Needs:* §1.4, §1.2; DGAInfinity Layer 5.
+`≤ i deg R̄`; tensor with `V` and apply §1.4. *Needs:* §1.4, §1.2; DGAInfinity Layer 5
+(gap:dga-graded-tor-spectral-sequences).
 
 **Checks.**
 
@@ -798,7 +834,7 @@ Prove: for every graded left `R`-module `M`, `A(M) ≤ δ(M) + A1`; more precise
 second map has degree `a` (EVW16 Lemma 4.6 and (4.6.3), p. 18; EVW16 lines 828–864). *Proof
 sketch.* Factor `U : M → M` through `UR ⊗_R M`, tensor the sequences `R[U] → R → UR` and
 `UR → R → R̄` with `M`, and apply §1.4 with `deg H_0^aug(M) ≤ deg M/UM ≤ δ(M)`. *Needs:* §1.2,
-§1.4; DGAInfinity Layer 5.
+§1.4; DGAInfinity Layer 5 (gap:dga-graded-tor-spectral-sequences).
 
 **Checks.**
 
@@ -860,7 +896,7 @@ Prove: for a graded right `R`-module `N` and a graded left `R`-module `M`,
 (EVW16 Proposition 4.10, p. 20; EVW16 lines 928–945). *Proof sketch.* Reduce to `N = k` by
 filtering; in §1.3 a term of total degree `i = a' + b` has degree at most
 `a' deg R̄ + b A1 + δ(M)` by §1.5 and §1.7, and §1.9 bounds `δ(M)`. *Needs:* §1.3, §1.5,
-§1.7, §1.9; DGAInfinity Layer 5.
+§1.7, §1.9; DGAInfinity Layer 5 (gap:dga-graded-tor-spectral-sequences).
 
 **Checks.**
 
@@ -870,9 +906,9 @@ filtering; in §1.3 a term of total degree `i = a' + b` has degree at most
 ### 1.11 The K-complex
 
 Define, for a graded left `R`-module `M`, the homological complex `K(M)` with
-`K(M)_q = k[c^q] ⊗_k M[q]`, `q ≥ 0`, and differential
-`(g_0, …, g_q) ⊗ m ↦ Σ_i (−1)^i (g_0, …, ĝ_i, …, g_q) ⊗ r(g_i^(g_(i+1) ⋯ g_q)) m`, the empty suffix
-product being `1`; `k[c^q]` sits in internal degree zero (EVW16 §4.1 and (4.1.1), p. 16;
+`K(M)_q = k[c^q] ⊗_k M[q]`, `q ≥ 0`, and differential `K(M)_(q+1) → K(M)_q`,
+`(g_0, …, g_q) ⊗ m ↦ Σ_(i=0)^q (−1)^i (g_0, …, ĝ_i, …, g_q) ⊗ r(g_i^(g_(i+1) ⋯ g_q)) m`, the empty
+suffix product being `1`; `k[c^q]` sits in internal degree zero (EVW16 §4.1 and (4.1.1), p. 16;
 EVW16 lines 726–740). *Needs:* §0.6, §1.1; Mathlib `TensorProduct`, `HomologicalComplex`; Tau Ceti
 `TauCeti.GradedModuleCat`.
 
@@ -967,7 +1003,8 @@ p. 21, with the positive slope of the conventions; EVW16 lines 979–988). *Proo
 hyperhomology spectral sequence to the right-free complex `K(R)` and a free resolution of `M`; on
 the diagonal `i + j = q`, §1.10 and §1.15 give
 `max(deg H_0^aug, deg H_1^aug) + (A2 + j) + A1 i + 4 A1`, and `j + A1 i ≤ A1 q` because `A1 ≥ 1`.
-*Needs:* §1.12, §1.15, §1.10; DGAInfinity Layer 5; Mathlib `CategoryTheory.SpectralSequence`.
+*Needs:* §1.12, §1.15, §1.10; DGAInfinity Layer 5
+(gap:dga-graded-tor-spectral-sequences); Mathlib `CategoryTheory.SpectralSequence`.
 
 **Checks.**
 
@@ -984,7 +1021,7 @@ Prove: there are a natural isomorphism `H_0^aug(M) ≅ H_0(K(M))` and a natural 
 `i = 0, 1` (EVW16 (4.14.1), p. 22; EVW16 lines 1007–1035). *Proof sketch.* Factor
 `K(M)_1 → M` as `k[c] ⊗ M[1] → R_+ ⊗_R M → M`; the first map is surjective, kills the image of
 `K(M)_2` by the relation of §0.6, and the kernel of the second is `Tor_1^R(k, M)`. *Needs:*
-§1.11, §1.2; DGAInfinity Layer 5.
+§1.11, §1.2; DGAInfinity Layer 5 (gap:dga-graded-tor-spectral-sequences).
 
 **Checks.**
 
@@ -1027,7 +1064,8 @@ constants depend only on `(G, c)` and `D`, not on the permitted field (EVW16 The
 
 ### Dependencies
 
-Layer 0; DGAInfinity Layer 5; Tau Ceti `TauCeti.GradedModuleCat`, `TauCeti.BalancedTensorProduct`;
+Layer 0; DGAInfinity Layer 5 (gap:dga-graded-tor-spectral-sequences);
+Tau Ceti `TauCeti.GradedModuleCat`, `TauCeti.BalancedTensorProduct`;
 Mathlib `CategoryTheory.GradedObject`, `CategoryTheory.SpectralSequence`,
 `CategoryTheory.Functor.leftDerived`.
 
@@ -1035,9 +1073,12 @@ Mathlib `CategoryTheory.GradedObject`, `CategoryTheory.SpectralSequence`,
 
 `D` is a closed oriented smooth disc with a boundary base point `∗` and a set `P` of `n` interior
 points, numbered `P_1, …, P_n` so that the straight segments from `∗` to them leave `∗` in
-clockwise order. For the closed unit disc, the base configuration `P_j = j/√(1 + j²)` of §5.1 and
-`∗ = −i`, this is the order of the real parts. The classical generator `σ_i` is the
-counterclockwise half twist exchanging `P_i` and `P_(i+1)` (§2.1).
+clockwise order. For the closed unit disc, `∗ = −i` and the base configuration
+`P_j = (j − 1)/√(1 + (j − 1)²)`, `1 ≤ j ≤ n`, the image of the plane base configuration
+`z_(j−1) = j − 1` of ReductiveGroups Layer 11A under its homeomorphism `z ↦ z/√(1 + |z|²)` onto the
+open disc, this is the order of the real parts. The classical generator `σ_i`, the native
+`TauCeti.BraidGroup.sigma (i − 1)`, is the counterclockwise half twist exchanging `P_i` and
+`P_(i+1)` (§2.1).
 
 ### 2.1 The braid group as the mapping class group of the marked disc
 
@@ -1071,7 +1112,8 @@ diffeomorphism fixing `∂D` pointwise preserves the orientation. *Needs:* Tau C
   twist exchanges the two points and is excluded, as `Mod(D, P) → Sym(P)` records.
 
 Prove: there are compatible isomorphisms
-`π_0 Diff(D, P; ∂D) ≅ Mod(D, P) ≅ TauCeti.BraidGroup n ≅ π_1(Conf_n)`, under which the generator
+`π_0 Diff(D, P; ∂D) ≅ Mod(D, P) ≅ TauCeti.BraidGroup n ≅ π_1(Conf_n(int D), P)`, the last the
+identification of ReductiveGroups Layer 11A transported to the disc, under which the generator
 `σ_i` corresponds to the positive half twist exchanging the `i`-th and `(i+1)`-st points (EVW16 §2.1,
 p. 8; EVW16 lines 354–368). *Proof sketch.* The evaluation map `Diff(D, ∂D) → Conf_n(int D)`,
 `φ ↦ φ(P)`, is a locally trivial fibre bundle with fibre `Diff(D, P; ∂D)` over `P`. The
@@ -1093,19 +1135,31 @@ lines 15–17, 124–129). The corresponding subgroup `Diff_c(D)` of `Diff(D, �
 equal to the identity on a neighbourhood of `∂D`, is not closed (Checks below), so it is not a
 retract of `Diff(D, ∂D)`; its inclusion is a weak homotopy equivalence, whose homotopies straighten
 a compact family near `∂D` along a collar and move members of `Diff_c(D)` within `Diff_c(D)`.
-The homotopy exact sequence of the bundle then
-makes the boundary map `π_1(Conf_n, P) → π_0 Diff(D, P; ∂D)`, the class of a loop to the end of its
-lifted isotopy, an isomorphism; compose with `π_1(Conf_n) ≅ TauCeti.BraidGroup n` of §IG.5.1 and
-with `π_0 Diff(D, P; ∂D) ≅ Mod(D, P)`. The loop exchanging two adjacent points counterclockwise
-lifts to the positive half twist, the convention of §IG.3.2 and of ReductiveGroups Layer 11A
-transported to the disc by the radial homeomorphism of §5.1, which preserves orientation.
-*Needs:* Tau Ceti `TauCeti.BraidGroup`, `TauCeti.DiscDiff`, `Diffeomorph.isTopologicalGroup`,
-`TauCeti.TopCat.serreFibrations`; §IG.5.1; ReductiveGroups Layer 11A; GeometricTopology §3.3 (the
-restriction fibration), Layer 3 (gap:geomtop-marked-disc-diffeomorphisms) and §3.4
-(gap:geomtop-boundary-pointwise-disc-smale);
-AlgebraicTopology Stage 8 (the exact sequence of the based pair
-`(Diff(D, ∂D), Diff(D, P; ∂D))`, whose relative homotopy groups the lifting property of the bundle
-identifies with those of `Conf_n`).
+Being locally trivial, the bundle is a Serre fibration
+(`TauCeti.TopCat.mem_serreFibrations_of_exists_trivialization`), and its lifting property
+identifies the relative homotopy groups of the based pair `(Diff(D, ∂D), Diff(D, P; ∂D))` with the
+homotopy groups of `Conf_n(int D)`; the exact sequence of that pair then makes the boundary map
+`π_1(Conf_n(int D), P) → π_0 Diff(D, P; ∂D)`, the class of a loop to the end of its lifted isotopy,
+an isomorphism. Compose it with `π_0 Diff(D, P; ∂D) ≅ Mod(D, P)` and with the isomorphism
+`π_1(Conf_n(int D), P) ≅ TauCeti.BraidGroup n` obtained from that of ReductiveGroups Layer 11A for
+the plane through its homeomorphism `Conf_n(ℂ) ≅ Conf_n(int D)`, which carries the base
+configuration `z_j = j` to `P`. Under it the native `TauCeti.BraidGroup.sigma (i − 1)` is the class
+of the image of Layer 11A's loop turning `z_(i−1)` and `z_i` counterclockwise about their midpoint.
+The map `z ↦ z/√(1 + |z|²)` preserves arguments and the orientation and maps the real axis to
+itself, so this image exchanges `P_i` and `P_(i+1)` counterclockwise inside a disc meeting `P` in
+those two points, and its lifted isotopy ends at the counterclockwise half twist about the segment
+`[P_i, P_(i+1)]`.
+
+This identification is the only one Layer 2 uses. The identification of §IG.5.1, through which
+§IG.5.2 defines `Hur_n` and §0.5 computes its homology, is not compared with it, and nothing here
+needs the comparison: Layer 3 uses the arc complex only through the semisimplicial `B_n`-set
+`A(n)` of §2.3, on which `B_n` acts by left multiplication of cosets, and through the connectivity
+of its realization (§§2.5–2.6), which involves no action at all. *Needs:* Tau Ceti
+`TauCeti.BraidGroup`, `TauCeti.DiscDiff`, `Diffeomorph.isTopologicalGroup`,
+`TauCeti.TopCat.serreFibrations`, `TauCeti.TopCat.mem_serreFibrations_of_exists_trivialization`;
+ReductiveGroups Layer 11A; GeometricTopology §3.3 (the restriction fibration), Layer 3
+(gap:geomtop-marked-disc-diffeomorphisms) and §3.4 (gap:geomtop-boundary-pointwise-disc-smale);
+AlgebraicTopology Stage 8 (the exact sequence of a based pair).
 
 **Checks.**
 
@@ -1316,7 +1370,8 @@ gives the Cohen–Macaulay property (HW10 lines 1645–1648). *Needs:* §2.2, §
 ### Dependencies
 
 Tau Ceti `TauCeti.BraidGroup`, `TauCeti.DiscDiff`, `Diffeomorph.isTopologicalGroup`,
-`TauCeti.TopCat.serreFibrations`; §IG.5.1; ReductiveGroups Layer 11A; GeometricTopology Layer 1
+`TauCeti.TopCat.serreFibrations`, `TauCeti.TopCat.mem_serreFibrations_of_exists_trivialization`;
+§IG.5.1 (for §2.3); ReductiveGroups Layer 11A; GeometricTopology Layer 1
 (§1.7.2) and Layer 3 (§§3.3, 3.4); AlgebraicTopology Stages 4, 5, 8. Independent of Layer 1.
 
 ## Layer 3: the arc spectral sequence for Hurwitz homology
@@ -1533,7 +1588,8 @@ gap:algtop-borel-construction); §0.3, §0.5.
 Prove: for a nonsplitting class `c` and every permitted field, `U` induces isomorphisms
 `H_p(Hur_n/G; k) → H_p(Hur_(n+a)/G; k)` and `H_p(CHur_n/G; k) → H_p(CHur_(n+a)/G; k)` for
 `n > A p + B`, with the constants of §§4.2–4.3. EVW state this for centreless `G`, the case in
-which `CHur^c_{G,n}/G` is the complex Hurwitz scheme of §5.3; the argument does not use
+which `CHur^c_{G,n}/G` is homeomorphic to the complex points of the Hurwitz scheme
+`Hn^c_{G,n}` of §5.3 (for `1 ∉ c`); the argument does not use
 centrelessness (EVW16 Corollary 6.2, p. 29; EVW16 lines 1341–1346). *Proof sketch.* `U` is fixed
 by conjugation and gluing is equivariant, so the isomorphisms of §§4.2–4.3 are isomorphisms of
 `k[G]`-modules; take coinvariants and apply §4.4.
@@ -1580,14 +1636,13 @@ Corollary 2.2.3, p. 9; CD95 lines 181, 334). *Proof sketch.* Specialize the Salv
 ReductiveGroups Layer 11B to the Weyl arrangement of type `A_(n−1)`, the root hyperplanes
 `z_i = z_j` of `ℂ^n` with Weyl group `S_n`: its complement is `PConf_n(ℂ)` (the diagonal line is a
 `W`-fixed central summand, a contractible factor), its quotient by `S_n` is `Conf_n(ℂ)`, and the
-quotient complex has one cell per subset of simple reflections. Applying `Homeomorph.unitBall` of
-`ℂ` coordinatewise preserves distinctness of coordinates and commutes with permutations, so it
-induces homeomorphisms `PConf_n(ℂ) ≅ PConf_n(int D)` and `Conf_n(ℂ) ≅ Conf_n(int D)` carrying the
-base configuration `z_j = j` of ReductiveGroups Layer 11A to `z_j = j/√(1 + j²)`. Pull each Hurwitz
-cover of §IG.5.2 back along the resulting homotopy equivalence `Z_n → Conf_n(int D)`; a covering
-of degree `≤ |G|^n` lifts each cell to at most `|G|^n` cells. *Needs:* ReductiveGroups Layers 11A,
-11B (gap:reductive-salvetti-homotopy-type); Mathlib `Homeomorph.unitBall`; §§IG.5.1, IG.5.2;
-AlgebraicTopology Stages 4, 5.
+quotient complex has one cell per subset of simple reflections. By ReductiveGroups Layer 11A the
+homeomorphism `z ↦ z/√(1 + |z|²)` of `ℂ` onto the open unit disc induces `S_n`-equivariant
+homeomorphisms `PConf_n(ℂ) ≅ PConf_n(int D)` and `Conf_n(ℂ) ≅ Conf_n(int D)`, carrying the base
+configuration `z_j = j`, `0 ≤ j ≤ n − 1`, to `z_j = j/√(1 + j²)`. Pull each Hurwitz cover of
+§IG.5.2 back along the resulting homotopy equivalence `Z_n → Conf_n(int D)`; a covering of degree
+`≤ |G|^n` lifts each cell to at most `|G|^n` cells. *Needs:* ReductiveGroups Layers 11A, 11B
+(gap:reductive-salvetti-homotopy-type); §§IG.5.1, IG.5.2; AlgebraicTopology Stages 4, 5.
 
 - For `n ≥ 1` the `q`-cells of `Z_n` are indexed by the `q`-element subsets of `{1, …, n − 1}`.
 - `Z_n` is homotopy equivalent to `Conf_n`, compatibly with the identification of the fundamental
@@ -1605,7 +1660,8 @@ AlgebraicTopology Stages 4, 5.
   wrong.
 - A `d`-sheeted cover lifts each open cell to `d` cells; omitting the sheet factor would give the
   bound `2^n` for `Hur_n`.
-- The plane/disc transport sends `0 ↦ 0`, `1 ↦ 1/√2` and `2 ↦ 2/√5`, so the base configuration
+- The transport `z ↦ z/√(1 + |z|²)` of ReductiveGroups Layer 11A sends `0 ↦ 0`, `1 ↦ 1/√2` and
+  `2 ↦ 2/√5`, so the base configuration
   `(0, 1)` of `Conf_2(ℂ)` goes to `(0, 1/√2)` in the open unit disc, and its inverse sends `1/√2`
   back to `1`. It fixes the empty configuration and commutes with every permutation of the
   coordinates; a constant rescaling such as `z ↦ z/2` is not onto the open disc and gives no
@@ -1642,8 +1698,10 @@ source degree above the threshold. Then `(2|G|)^m ≤ C^(i+1)`. *Needs:* §5.1, 
 
 Prove: let `G` be finite and centreless, `c` a rational conjugacy class, generating `G` and
 nonsplitting, `q` a prime power prime to `|G|`, and `Hn^c_{G,n}` the Hurwitz scheme over
-`ℤ[1/|G|]` of tame `G`-covers of `ℙ¹` branched at `n` points of `𝔸¹` and possibly at `∞`, with
-inertia in `c` (§IG.5.3). There is `C = C(G, c)` such that for every `i, n ≥ 0` and every prime
+`ℤ[1/|G|]` of tame `G`-covers of `ℙ¹` branched at `n` points of `𝔸¹` and possibly at `∞`, whose
+inertia at each of the `n` finite branch points has a generator in `c`, with no condition at `∞`
+(the class locus of §IG.5.3; EVW16 §7.3, p. 32; EVW16 lines 1461–1466). There is `C = C(G, c)` such
+that for every `i, n ≥ 0` and every prime
 `ℓ > max(|G|, q, n)`,
 `dim_(ℚ_ℓ) H^i_ét(Hn^c_{G,n} ⊗ 𝔽̄_q, ℚ_ℓ) ≤ C^(i+1)` and
 `dim_(𝔽_ℓ) H^i_ét(Hn^c_{G,n} ⊗ 𝔽̄_q, 𝔽_ℓ) ≤ C^(i+1)`
@@ -1652,15 +1710,27 @@ inertia in `c` (§IG.5.3). There is `C = C(G, c)` such that for every `i, n ≥ 
 `Hn^c_{1,0}` is `Spec ℤ` and `Hn^c_{1,n}` is empty for `n ≥ 1`, and every dimension is `1` for
 `(i, n) = (0, 0)` and `0` otherwise, at most `C^(i+1)` for every `C ≥ 1`. Otherwise `1 ∉ c`,
 because the class `{1}` generates only the trivial group, so `c ⊆ G ∖ {1}`. For the given `n`,
-§IG.5.5 identifies the mod-`ℓ` étale cohomology with `H^i(Hn^c_{G,n}(ℂ), 𝔽_ℓ)`, and §IG.5.3, for
-`c ⊆ G ∖ {1}`, identifies `Hn^c_{G,n}(ℂ)` with `CHur_n/G`; its mod-`ℓ`
-cohomology has the dimension of its mod-`ℓ` homology, a finite complex being given by §5.1, and
-§5.2 with `k = 𝔽_ℓ` (permitted, as `ℓ > |G|`) bounds it. The coefficient towers of §IG.5.5 bound
-the `ℚ_ℓ`-dimension by the `𝔽_ℓ`-dimension. Only the comparison at the given `n` is used; no
-comparison at `n + a` and no Frobenius-equivariant stabilization is needed. *Needs:* §5.2, §4.5;
-§IG.5.3 *Arithmetic Hurwitz stacks and schemes*, *Analytic and topological Hurwitz comparison*;
-§IG.5.5 *Fixed-degree Hurwitz mod-`ℓ` comparison*, *Coefficient towers and rational Betti
-dimensions*.
+§IG.5.5 identifies the mod-`ℓ` étale cohomology with `H^i(Hn^c_{G,n}(ℂ), 𝔽_ℓ)`. §IG.5.3 identifies
+`Hn_{G,n}(ℂ)` with the quotient by `G` of the Hurwitz space `CHur^{c₁}_{G,n}` of the plane,
+`c₁ = G ∖ {1}`, whose fibre over a configuration is the set of generating tuples of local
+monodromies at the `n` finite branch points, all different from `1`. In it the class locus is the
+open and closed part where each local monodromy, a generator of the inertia group at its branch
+point, lies in `c`: as `c` is rational the condition does not depend on the generator, and as `c`
+is conjugation invariant it descends to the quotient, so this part is `CHur^c_{G,n}/G` of the plane.
+The homeomorphism `Conf_n(ℂ) ≅ Conf_n(int D)` of ReductiveGroups Layer 11A comes from
+`z ↦ z/√(1 + |z|²)`, which extends to a homeomorphism from `ℂ` with its circle of directions at `∞`
+adjoined onto `D`, that circle going to `∂D`. §IG.5.2 identifies `Hur_{G,n}` with the space of
+marked branched `G`-covers of `D`; transporting marked covers along this extension, with the base
+point near `∞` read on the circle at `∞`, identifies the plane `CHur^c_{G,n}` with the pullback of
+`CHur_n` along `Conf_n(ℂ) ≅ Conf_n(int D)`, compatibly with simultaneous conjugation. Hence
+`Hn^c_{G,n}(ℂ)` is homeomorphic to `CHur_n/G`. Its mod-`ℓ` cohomology has the dimension of its
+mod-`ℓ` homology, a finite complex being given by §5.1, and §5.2 with `k = 𝔽_ℓ` (permitted, as
+`ℓ > |G|`) bounds it. The coefficient towers of §IG.5.5 bound the `ℚ_ℓ`-dimension by the
+`𝔽_ℓ`-dimension. Only the comparison at the given `n` is used; no comparison at `n + a` and no
+Frobenius-equivariant stabilization is needed. *Needs:* §5.2, §4.5; §IG.5.2 *Marked topological
+Hurwitz spaces*, *Forgetting the boundary marking*; §IG.5.3 *Arithmetic Hurwitz stacks and
+schemes*, *Analytic and topological Hurwitz comparison*; §IG.5.5 *Fixed-degree Hurwitz mod-`ℓ`
+comparison*, *Coefficient towers and rational Betti dimensions*; ReductiveGroups Layer 11A.
 
 **Checks.**
 
@@ -1676,6 +1746,11 @@ dimensions*.
   with `H_0` of dimension `1`. So `Hn^c_{G,n}(ℂ)` is not `CHur^c_{G,n}/G` when `1 ∈ c`, and the
   trivial group is treated separately. For `S₃` with its transpositions, `1 ∉ c` and the comparison
   applies unchanged.
+- The class condition is at the finite branch points only. For `S₃`, its transpositions and
+  `n = 2`, the six generating pairs `(t, t')`, `t ≠ t'`, all have boundary product a `3`-cycle, so
+  each such cover is ramified at `∞` with inertia outside `c`. The fibre of `CHur_2/G` is one
+  point, the six pairs up to the free conjugation of `S₃`; imposing the condition at `∞` as well
+  would make the fibre of `Hn^c_{S₃,2}(ℂ)` empty.
 
 ### Examples
 
@@ -1687,7 +1762,7 @@ dimensions*.
 ### Dependencies
 
 Layers 0–4; ReductiveGroups Layers 11A, 11B; §§IG.5.1–IG.5.3, IG.5.5; AlgebraicTopology
-Stages 4, 5; Mathlib `Homeomorph.unitBall`.
+Stages 4, 5.
 
 ## Notes on the sources
 
@@ -1723,6 +1798,11 @@ following statements of the source are corrected where they are used.
   (EVW16 lines 360–368). With the counterclockwise half twist of ReductiveGroups Layer 11A the face
   formula `∂_i(v_q) = s_(q,i) v_(q−1)` holds for the clockwise order, which §2.2 uses (§2.5,
   Checks); the counterclockwise order goes with the clockwise half twist.
+- EVW16 §7.3 and Lemma 7.4 (p. 32; EVW16 lines 1461–1471): the class locus asks a generator of
+  inertia at each branch point of the cover to lie in `c`, while Lemma 7.4 identifies its complex
+  points with `CHur^c_{G,n}/G`, which puts no condition on the boundary monodromy. The two agree
+  when the condition is read at the `n` finite branch points only, as §5.3 states it (§5.3,
+  Checks).
 - HW10 Lemma 7.1 and Proposition 7.2 (pp. 34–35; HW10 lines 1625–1644) take `Δ_0` finite; it has to
   be nonempty, since for `Δ_0 = ∅` there are no arcs. They are stated for a connected surface with
   `Δ_0` on one boundary circle, and on an orientable surface of positive genus the pieces cut off
@@ -1731,12 +1811,12 @@ following statements of the source are corrected where they are used.
 
 ## Downstream consumers
 
-- ArithmeticStatisticsPartVIII §5.19 uses the uniform étale Betti bound for the generalized
-  dihedral data `(G_A, c_A)` in the form stated by ArithmeticStatisticsPartVIII §5.16 (*Uniform
-  Betti numbers of Hurwitz schemes*), which has the hypotheses of §5.3: `G` centreless, `c`
-  rational, nonsplitting and generating, coefficient primes `ℓ > max(|G|, q, n)`. A roadmap that
-  needs the unmarked stability or the field Betti bounds for a group with nontrivial centre, or for
-  `Hur_n/G`, cites §4.5 and §5.2.
+- No roadmap on main or earlier in the build order consumes a target of this one.
+  ArithmeticStatisticsPartVIII, earlier in the build order, takes the uniform étale Betti bound for
+  its §5.19 from its own §5.16 (*Uniform Betti numbers of Hurwitz schemes*), with the hypotheses of
+  §5.3 here: `G` centreless, `c` rational, nonsplitting and generating, coefficient primes
+  `ℓ > max(|G|, q, n)`. A roadmap that needs the unmarked stability or the field Betti bounds for a
+  group with nontrivial centre, or for `Hur_n/G`, cites §4.5 and §5.2.
 
 ## Worked examples
 
