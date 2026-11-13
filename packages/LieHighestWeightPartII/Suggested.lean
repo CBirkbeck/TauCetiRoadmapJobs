@@ -58,6 +58,20 @@ structure IsSl2TripleOrZero {L : Type*} [LieRing L] (h e f : L) : Prop where
   lie_h_e_nsmul : ⁅h, e⁆ = 2 • e
   lie_h_f_nsmul : ⁅h, f⁆ = -(2 • f)
 
+/-- **Triple conjugacy from the neutral element.** In a finite-dimensional Lie algebra `L` with
+nondegenerate Killing form over an algebraically closed field of characteristic zero, two
+zero-inclusive triples are conjugate under `Int(L)` if and only if their neutral elements are.
+In particular a triple is determined up to `Int(L)` by its neutral element, and the zero triple
+is conjugate only to itself (README §0.3; Mal'cev's theorem, Sommers, §3.1; de Graaf, §3,
+Lemmas 2–3). -/
+theorem exists_innerAut_iff_neutral_conjugate
+    {K L : Type*} [Field K] [IsAlgClosed K] [CharZero K] [LieRing L] [LieAlgebra K L]
+    [LieAlgebra ℚ L] [FiniteDimensional K L] [LieAlgebra.IsKilling K L]
+    {h e f h' e' f' : L}
+    (t : IsSl2TripleOrZero h e f) (t' : IsSl2TripleOrZero h' e' f') :
+    (∃ φ ∈ TauCeti.intLieAlgebra K L, φ • h = h' ∧ φ • e = e' ∧ φ • f = f') ↔
+      ∃ φ ∈ TauCeti.intLieAlgebra K L, φ • h = h' := sorry
+
 /-! ## Layer 1: representation filtrations -/
 
 /-- The increasing weight filtration of a neutral element `h` on a Lie module `M`: its `i`-th
@@ -255,12 +269,24 @@ def IsPositiveRealPart {H : TauCeti.FiniteTypeCommHopfAlgCat.{0, 0} ℂ}
     v ∈ (TauCeti.Comodule.basePointsRepresentation (H := H) M s).eigenspace μ →
       TauCeti.Comodule.basePointsRepresentation (H := H) M r v = ((‖μ‖ : ℝ) : ℂ) • v
 
+/-- **Existence and uniqueness of the positive real part.** Let `H` be the coordinate algebra of
+a connected complex reductive group (`TauCeti.reductiveCommHopfAlgProperty`) and `s` a
+semisimple point. Exactly one point `r` acts on every eigenspace of `s`, on every
+finite-dimensional `H`-comodule, by the absolute value of its eigenvalue: the positive real part
+`r(s)`, which on a maximal torus containing `s` takes each character `χ` to `|χ(s)|`
+(Ciubotaru–Harris, §10.1, proof of Proposition 10.2; README §5.4). -/
+theorem existsUnique_positiveRealPart
+    {H : TauCeti.FiniteTypeCommHopfAlgCat.{0, 0} ℂ}
+    (hH : TauCeti.reductiveCommHopfAlgProperty ℂ H)
+    {s : WithConv (H →ₐ[ℂ] ℂ)} (hs : TauCeti.HopfAlgebra.IsSemisimplePoint s) :
+    ∃! r : WithConv (H →ₐ[ℂ] ℂ), IsPositiveRealPart s r := sorry
+
 /-- **Recognition of the positive real part.** Let `H` be the coordinate algebra of a connected
 complex reductive group (`TauCeti.reductiveCommHopfAlgProperty`), `q > 1`, and `s, s'`
 semisimple `q`-geometric points with equal weight patterns on every finite-dimensional
 `H`-comodule in every degree. Then positive real parts `r` of `s` and `r'` of `s'` are conjugate
-by a point of `H` (Ciubotaru–Harris, Proposition 10.2; README §5.5). Existence of a positive real
-part of a semisimple point is README §5.4. -/
+by a point of `H` (Ciubotaru–Harris, Proposition 10.2; README §5.5). The positive real parts `r`
+and `r'` exist and are unique by `existsUnique_positiveRealPart`. -/
 theorem exists_conj_positiveRealPart_of_weightPattern_eq
     {q : ℝ} (hq : 1 < q) {H : TauCeti.FiniteTypeCommHopfAlgCat.{0, 0} ℂ}
     (hH : TauCeti.reductiveCommHopfAlgProperty ℂ H)

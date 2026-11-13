@@ -2177,7 +2177,14 @@
       "remaining": []
     }
   ],
-  "gaps": [],
+  "gaps": [
+    {
+      "slug": "orbit-map-differential",
+      "needs": "Over an algebraically closed field of characteristic zero, for an affine algebraic group G acting linearly on a finite-dimensional vector space V and a point v of V, the Lie algebra of the stabilizer of v is the kernel of the differential at the identity of the orbit morphism g ↦ g·v, and if that differential is surjective onto V then the orbit G·v is Zariski open in V.",
+      "supplier": "ReductiveGroups",
+      "section": "3A"
+    }
+  ],
   "sourceIssues": [
     {
       "id": "LieHighestWeightPartII/E1",
