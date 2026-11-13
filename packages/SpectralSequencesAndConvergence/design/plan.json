@@ -2,7 +2,7 @@
  "roadmap": "SpectralSequencesAndConvergence",
  "title": "Spectral sequences and convergence",
  "parent": null,
- "summary": "The common language of convergence for spectral sequences in an arbitrary abelian category, on Mathlib's SpectralSequence carrier and Tau Ceti's spectral-object abutments: cycle and boundary towers, stabilisation and the limit page; bidegree assignments, boundedness and Euler characteristics; weak, ordinary and strong convergence in a set of total degrees, morphisms, the comparison theorem and the standard consequences; the towers, limit page and convergence of spectral sequences of spectral objects (Stacks 24.13 in spectral-object form, Mathlib's quadrant cases); filtered complexes in classical indexing (finite, cohomologically bounded, exhaustive bounded below); exact couples in Mathlib's carrier and their identification with spectral objects; lim and lim¹ in abelian categories, Boardman's conditional convergence with the whole-plane obstruction, and the complete convergence theorem.",
+ "summary": "The common language of convergence for spectral sequences in an arbitrary abelian category, on Mathlib's SpectralSequence carrier and Tau Ceti's spectral-object abutments: cycle and boundary towers, stabilisation and the limit page; bidegree assignments, boundedness and Euler characteristics; weak, ordinary and strong convergence in a set of total degrees, morphisms, the comparison theorem and the standard consequences; the towers, limit page and convergence of spectral sequences of spectral objects (Stacks 24.13 in spectral-object form, Mathlib's quadrant cases); filtered complexes in classical indexing (finite, cohomologically bounded, exhaustive bounded below); exact couples in Mathlib's carrier and their identification with spectral objects; lim and lim¹ in abelian categories and the characterisation of Tau Ceti's repleteness through lim¹, Boardman's conditional convergence in replete abelian categories with the whole-plane obstruction, and the complete convergence theorem.",
  "baseline": {
   "mathlib": "1b1ccf4b088b32fa3f23f2de1127433254a81e1e",
   "tauceti": "2fd255d997f47c0b5d834ee416c7015d55444ce5"
@@ -1221,14 +1221,15 @@
       "target:5.2",
       "mathlib:CategoryTheory.HasExactColimitsOfShape",
       "mathlib:CategoryTheory.AB5",
-      "mathlib:CategoryTheory.AB5OfSize_shrink"
+      "mathlib:CategoryTheory.AB5OfSize_shrink",
+      "tauceti:CochainComplex.exists_mem_range_filtrationAbutmentFiltrationι"
      ],
      "api": [],
      "tests": [
       {
        "name": "modules_instance",
        "kind": "compatibility",
-       "statement": "ModuleCat.{u} R for R : Type u has exact sequential colimits (Mathlib's AB5 instance and AB5OfSize_shrink); there exhaustiveness by submodules means every element lies in a step, and the statement contains Tau Ceti exists_mem_range_filtrationAbutmentFiltrationι in that universe and DGFloer's classical convergence."
+       "statement": "ModuleCat.{u} R for R : Type u has exact sequential colimits (Mathlib's AB5 instance and AB5OfSize_shrink); there exhaustiveness by submodules means every element lies in a step, the theorem contains DGFloer's classical convergence, and the exhaustiveness step of the route (exhaustive on K^n alone gives an exhaustive induced filtration of H^n) is Tau Ceti CochainComplex.exists_mem_range_filtrationAbutmentFiltrationι. The ℓ-adic filtration of ℤ in degree 0 satisfies the step (F^0 H^0 = H^0) and not the theorem (not bounded below on K^0)."
       },
       {
        "name": "exhaustive_needed",
@@ -1500,45 +1501,51 @@
     },
     {
      "id": "7.2",
-     "kind": "definition",
-     "name": "CategoryTheory.Abelian.HasLimAcyclicEpiTowers",
-     "statement": "C has lim-acyclic epimorphic towers if it has countable products and every tower with epimorphic transitions has lim¹ = 0 and epimorphic limit projections. Countable products and EnoughProjectives imply it. Under CountableAB4Star and this hypothesis, Mittag–Leffler towers have lim¹ = 0 and a short exact sequence of towers with Mittag–Leffler first term gives a short exact sequence of limits.",
+     "kind": "theorem",
+     "name": "CategoryTheory.Abelian.isReplete_iff_countableAB4Star_and_limOne_eq_zero",
+     "statement": "For C abelian with countable products, replete means Tau Ceti's TauCeti.IsReplete (every projection of every limit cone of a tower of epimorphisms is an epimorphism, TauCeti.IsReplete.epi_π_app); a replete C satisfies CountableAB4Star (Tau Ceti instance TauCeti.IsReplete.countableAB4Star). C is replete iff CountableAB4Star holds and every tower with epimorphic transitions has lim¹ = 0 (7.1). Route ⇒: P_n = F_n ⊕ ∏_k F_k with transitions (a, t) ↦ (f_n a + π_n t, t) (epimorphisms), limit cone ∏_n F_n → P_n, x ↦ (π_n x, (1 − s)x), so repleteness makes 1 − s an epimorphism. Route ⇐: K_n = ker(F_n → F_0) is an epimorphic tower, and the six-term sequence of 0 → K → F → F_0 → 0 makes lim F → F_0 an epimorphism. Countable products and EnoughProjectives imply repleteness. In a replete C, Mittag–Leffler towers have lim¹ = 0 and a short exact sequence of towers with Mittag–Leffler first term gives a short exact sequence of limits.",
      "hypotheses": [
       "C abelian",
       "HasCountableProducts C"
      ],
      "locator": {
-      "source": "stacks-012K",
-      "where": "line 3715–3735, Definition 31.2 and Lemma 31.3, tags 02N0, 02N1; line 3720–3724 (Neeman)"
+      "source": "bhatt-scholze2015",
+      "where": "line 701–702, Definition 3.1.1, and line 755–770, Proposition 3.1.10 (topos case); stacks-012K line 3715–3735, Definition 31.2 and Lemma 31.3, tags 02N0, 02N1; line 3720–3724 (Neeman)"
      },
      "prerequisites": [
       "target:1.2",
       "target:7.1",
+      "tauceti:TauCeti.IsReplete",
+      "tauceti:TauCeti.IsReplete.epi_π_app",
+      "tauceti:TauCeti.IsReplete.countableAB4Star",
+      "tauceti:TauCeti.IsReplete.of_reflectsEpimorphisms",
+      "tauceti:TauCeti.isReplete_type",
+      "mathlib:CategoryTheory.Limits.HasCountableProducts",
       "mathlib:CategoryTheory.EnoughProjectives",
       "mathlib:CategoryTheory.CountableAB4Star",
       "mathlib:CategoryTheory.IsArtinianObject",
-      "mathlib:CategoryTheory.AB4Star"
+      "mathlib:ModuleCat.forget_preservesEpimorphisms"
      ],
      "api": [
       {
        "name": "of_enoughProjectives",
        "role": "instance",
-       "statement": "Countable products and enough projectives give lim-acyclic epimorphic towers."
+       "statement": "Countable products and enough projectives give repleteness."
       },
       {
        "name": "limOne_eq_zero_of_isMittagLeffler",
        "role": "vanishing",
-       "statement": "Mittag–Leffler ⇒ lim¹ = 0 (stable-image epimorphic subtower, pro-zero quotient, 7.1)."
+       "statement": "In a replete C, Mittag–Leffler ⇒ lim¹ = 0 (stable-image epimorphic subtower, pro-zero quotient, 7.1)."
       },
       {
        "name": "lim_shortExact_of_isMittagLeffler",
        "role": "exactness",
-       "statement": "Mittag–Leffler first term ⇒ short exact sequence of limits."
+       "statement": "In a replete C, Mittag–Leffler first term ⇒ short exact sequence of limits."
       },
       {
        "name": "moduleCat_instance",
        "role": "instance",
-       "statement": "ModuleCat.{u} R for a ring R : Type u satisfies the hypothesis and CountableAB4Star, from Mathlib's EnoughProjectives and AB4Star instances (Mathlib's AB4Star instance exists only for ModuleCat.{u} R with R : Type u)."
+       "statement": "ModuleCat.{v} R is replete for every ring R and universe v (TauCeti.IsReplete.of_reflectsEpimorphisms along the faithful forgetful functor to Type v, which preserves limits and epimorphisms, with TauCeti.isReplete_type; under Small.{v} R also by enough projectives), hence has exact countable products by TauCeti.IsReplete.countableAB4Star."
       },
       {
        "name": "cycleTower_isMittagLeffler_of_isArtinianObject",
@@ -1550,17 +1557,22 @@
       {
        "name": "Zp_tower",
        "kind": "computation",
-       "statement": "ℤ/ℓ^{n+1} ↠ ℤ/ℓ^n: lim = ℤ_ℓ, lim¹ = 0, projections surjective."
+       "statement": "ℤ/ℓ^{n+1} ↠ ℤ/ℓ^n in ModuleCat ℤ: lim = ℤ_ℓ, lim¹ = 0, projections surjective; 1 − s onto ∏ ℤ/ℓ^n (x_0 = 0, x_{n+1} lifting x_n − y_n)."
       },
       {
        "name": "times_ell_not_ML",
        "kind": "non-example",
-       "statement": "×ℓ on ℤ is not Mittag–Leffler and has lim¹ ≠ 0."
+       "statement": "×ℓ on ℤ has non-epimorphic transitions (repleteness says nothing), is not Mittag–Leffler and has lim¹ ≅ ℤ_ℓ/ℤ ≠ 0."
       },
       {
        "name": "finite_towers_ML",
        "kind": "compatibility",
        "statement": "Towers of finite groups are Mittag–Leffler; agrees with TauCeti.ModuleTower.subsingleton_limOne_of_isMittagLeffler."
+      },
+      {
+       "name": "galois_modules_not_replete",
+       "kind": "non-example",
+       "statement": "Discrete Gal(ℚ̄/ℚ)-modules: the tower μ_{ℓ^{n+1}} → μ_{ℓ^n} has epimorphic transitions and limit the smooth vectors of ℤ_ℓ(1), which are 0 (some g in each open subgroup has χ(g) ≠ 1); projections 0 → μ_{ℓ^n} are not epimorphisms, so not replete."
       }
      ]
     },
@@ -1568,7 +1580,7 @@
      "id": "7.3",
      "kind": "theorem",
      "name": "CategoryTheory.Functor.limOne_doubleTower_shortExact",
-     "statement": "For (A^s)_{s∈ℤ} with i : A^{s+1} → A^s in an abelian category with countable products and CountableAB4Star, Im^rA^s = im(i^r : A^{s+r} → A^s), Q^s = lim_r Im^rA^s, RQ^s = lim¹_r Im^rA^s: 0 → lim¹_s Q^s → lim¹_s A^s → lim_s RQ^s → 0 is exact (limits as s → +∞). Under lim-acyclic epimorphic towers, epimorphic Q^{s+1} → Q^s give epimorphic lim_s Q^s → Q^s.",
+     "statement": "For (A^s)_{s∈ℤ} with i : A^{s+1} → A^s in an abelian category with countable products and CountableAB4Star, Im^rA^s = im(i^r : A^{s+r} → A^s), Q^s = lim_r Im^rA^s, RQ^s = lim¹_r Im^rA^s: 0 → lim¹_s Q^s → lim¹_s A^s → lim_s RQ^s → 0 is exact (limits as s → +∞). If C is replete (7.2), epimorphic Q^{s+1} → Q^s give epimorphic lim_s Q^s → Q^s (TauCeti.IsReplete.epi_π_app for m ↦ Q^{s+m}).",
      "hypotheses": [
       "C abelian",
       "HasCountableProducts C",
@@ -1580,7 +1592,7 @@
      },
      "prerequisites": [
       "target:7.1",
-      "target:7.2"
+      "tauceti:TauCeti.IsReplete.epi_π_app"
      ],
      "api": [],
      "tests": [
@@ -1605,14 +1617,13 @@
      "id": "7.4",
      "kind": "theorem",
      "name": "CategoryTheory.ExactCouple.boardman_weakConvergence",
-     "statement": "In an abelian category with countable products and coproducts, CountableAB4Star, exact sequential colimits and lim-acyclic epimorphic towers, for a cohomological exact couple with A^s = D^{s,n−s}: A^{−∞} = colim_{s→−∞}, F^s = im(A^s → A^{−∞}); A^{+∞} = lim_{s→+∞}, RA^{+∞} = lim¹, F^s = ker(A^{+∞} → A^s); conditional convergence to the colimit (A^{+∞} = RA^{+∞} = 0) or to the limit (A^{−∞} = 0); RE_∞ = lim¹_r Z_r; W^n = colim_{s→−∞} lim¹_r(ker(A^s → A^{−∞}) ∩ Im^rA^s). Theorems: conditional convergence to the colimit with RE_∞ = 0 ⇒ weak convergence to A^{−∞}, exhaustive filtration with lim¹_s F^s = 0 (complete in the sense of helle-rognes2024 Definition 2.5; complete in the sense of 3.1 iff W^n = 0), meet lim_s F^s ≅ W^n; to the limit with RE_∞ = 0 ⇒ strong convergence to A^{+∞}, RA^{+∞} ≅ W^n; E_1 vanishing for s < s₀ in degrees n−1, n ⇒ W^n = 0; E_1 vanishing for s > s₁ in degrees n−1, n, n+1 ⇒ RE_∞ = 0 = W^n in degree n; regular positions have RE_∞ = 0.",
+     "statement": "In a replete abelian category (7.2) with countable products and coproducts and exact sequential colimits (so CountableAB4Star holds by TauCeti.IsReplete.countableAB4Star and epimorphic towers have lim¹ = 0 by 7.2), for a cohomological exact couple with A^s = D^{s,n−s}: A^{−∞} = colim_{s→−∞}, F^s = im(A^s → A^{−∞}); A^{+∞} = lim_{s→+∞}, RA^{+∞} = lim¹, F^s = ker(A^{+∞} → A^s); conditional convergence to the colimit (A^{+∞} = RA^{+∞} = 0) or to the limit (A^{−∞} = 0); RE_∞ = lim¹_r Z_r; W^n = colim_{s→−∞} lim¹_r(ker(A^s → A^{−∞}) ∩ Im^rA^s). Theorems: conditional convergence to the colimit with RE_∞ = 0 ⇒ weak convergence to A^{−∞}, exhaustive filtration with lim¹_s F^s = 0 (complete in the sense of helle-rognes2024 Definition 2.5; complete in the sense of 3.1 iff W^n = 0), meet lim_s F^s ≅ W^n; to the limit with RE_∞ = 0 ⇒ strong convergence to A^{+∞}, RA^{+∞} ≅ W^n; E_1 vanishing for s < s₀ in degrees n−1, n ⇒ W^n = 0; E_1 vanishing for s > s₁ in degrees n−1, n, n+1 ⇒ RE_∞ = 0 = W^n in degree n; regular positions have RE_∞ = 0.",
      "hypotheses": [
       "C abelian",
       "HasCountableProducts C",
       "HasCountableCoproducts C",
-      "CountableAB4Star C",
       "HasExactColimitsOfShape ℕ C",
-      "lim-acyclic epimorphic towers"
+      "TauCeti.IsReplete C"
      ],
      "locator": {
       "source": "helle-rognes2024",
@@ -1627,7 +1638,9 @@
       "target:7.2",
       "target:7.3",
       "mathlib:CategoryTheory.AB5",
-      "mathlib:CategoryTheory.AB5OfSize_shrink"
+      "mathlib:CategoryTheory.AB5OfSize_shrink",
+      "tauceti:TauCeti.IsReplete",
+      "tauceti:TauCeti.IsReplete.countableAB4Star"
      ],
      "api": [
       {
@@ -1751,7 +1764,7 @@
    "sections": [
     "§S.1"
    ],
-   "what": "First-quadrant double-complex spectral sequence of modules; an instance of 3.6 and 4.5."
+   "what": "Spectral sequence of a first-quadrant double complex in an abelian category, with its column filtration, E_∞ identification, edge morphisms and five-term sequence; an instance of 3.6 and 4.5, not consumed by proofs."
   }
  ],
  "consumers": [

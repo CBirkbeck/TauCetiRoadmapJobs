@@ -130,3 +130,20 @@ status = "uncertified"
 version_note = "paywalled; cited by its locator without the text"
 cited_for = ["References"]
 
+[[source]]
+id = "bhatt-scholze2015"
+authors = "Bhargav Bhatt, Peter Scholze"
+title = "The pro-étale topology for schemes"
+year = 2013
+arxiv = "1309.1198v2"
+locator_scheme = "theorem"
+locator = "Definition 3.1.1, Proposition 3.1.10"
+url = "https://arxiv.org/abs/1309.1198v2"
+fetched_from = "https://arxiv.org/pdf/1309.1198v2"
+fetched_at = "2026-11-13T12:25:40Z"
+sha256 = "ae0960a28f0f25300211569cd350def057d6c0f781f635694182868e766d3c84"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-13"
+version_note = "arXiv v2"
+cited_for = ["7.2"]

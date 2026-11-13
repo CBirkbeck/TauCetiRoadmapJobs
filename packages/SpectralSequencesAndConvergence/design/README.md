@@ -16,10 +16,10 @@ a spectral object, with convergence criteria in a range of degrees (Stacks Lemma
 spectral-object form) and the convergence of Mathlib's first- and third-quadrant sequences;
 convergence of the spectral sequence of a filtered complex in the finite, cohomologically bounded
 and exhaustive-bounded-below cases; the spectral sequence of an exact couple, its towers, and its
-identification with the spectral sequence of a spectral object; and, in abelian categories whose
-countable products and sequential colimits are exact and whose epimorphic towers are
-lim-acyclic, Boardman's conditional-convergence theorems with the whole-plane obstruction and
-the complete convergence theorem for filtered complexes.
+identification with the spectral sequence of a spectral object; and, in replete abelian
+categories (Tau Ceti's `TauCeti.IsReplete`) with countable products and coproducts and exact
+sequential colimits, Boardman's conditional-convergence theorems with the whole-plane obstruction
+and the complete convergence theorem for filtered complexes.
 
 ## Scope and ownership
 
@@ -40,10 +40,10 @@ This roadmap owns:
   exact sequential colimits;
 - the spectral sequence of an exact couple in Mathlib's carrier, its towers, and the exact couple
   of a spectral object and of a filtered complex with the identification of spectral sequences;
-- lim and lim¹ of towers in abelian categories with countable products, the hypothesis that
-  epimorphic towers are lim-acyclic, Boardman's double-tower sequence, conditional convergence
-  and Boardman's theorems for exact couples, and the complete convergence theorem for filtered
-  complexes, in abelian categories.
+- lim and lim¹ of towers in abelian categories with countable products, the characterisation of
+  repleteness through lim¹ and the Mittag–Leffler vanishing in replete abelian categories,
+  Boardman's double-tower sequence, conditional convergence and Boardman's theorems for exact
+  couples, and the complete convergence theorem for filtered complexes, in abelian categories.
 
 It leaves to named owners:
 
@@ -59,8 +59,9 @@ It leaves to named owners:
   complex with its first page and first differential, the exhaustive convergence theorems for
   complexes of modules, the row-filtration spectral sequence of a first-quadrant bicomplex, the
   product–difference map of a tower, module towers with lim, lim¹ and Mittag–Leffler
-  vanishing, and the Euler–Poincaré engine for additive invariants. These are consumed as they
-  stand; this roadmap restates none of them.
+  vanishing, replete categories with the exactness of countable products in a replete abelian
+  category and the repleteness of sheaves on a replete topos, and the Euler–Poincaré engine for
+  additive invariants. These are consumed as they stand; this roadmap restates none of them.
 - **DGFloer, Layer 1 item 3**: the homological and cohomological adapters for filtered complexes
   of modules over a ring, Weibel's classical convergence theorem 5.5.1(2) and the complete
   convergence theorem 5.5.10 for module complexes. This roadmap's abelian-category theorems
@@ -69,9 +70,9 @@ It leaves to named owners:
 - **AlgebraicTopology, Stage 6, item 0**: countable towers of modules, lim, lim¹, the six-term
   sequence, Mittag–Leffler vanishing and the Milnor sequences. Layer 7 here owns lim and lim¹
   only in an abelian category, and identifies them with these on modules as a Check.
-- **DerivedModuleAlgebra, §S.1**: the first-quadrant double-complex spectral sequence of modules
-  with its abutment filtration, edge morphisms and five-term sequence; an instance (a Check) of
-  Layers 3 and 4.
+- **DerivedModuleAlgebra, §S.1**: the spectral sequence of a first-quadrant double complex in an
+  abelian category, with the column filtration of its abutment, edge morphisms and five-term
+  sequence; an instance (a Check) of Layers 3 and 4.
 - **StableHomotopyKTheory, §7.22**: bigraded exact couples in an abelian category and their derived
   couples. Layer 6 assembles the iterated derived couples into Mathlib's carrier and proves the
   identifications. **StableHomotopyKTheory, §§7.21 and 7.23–7.26**: filtered spectra, their
@@ -80,6 +81,10 @@ It leaves to named owners:
 - **SchemeAndStackFoundations, §2.2** (Leray and Čech spectral sequences), **ComplexKahlerGeometry,
   K8** (the Frölicher spectral sequence), **HeegaardFloer** and **MorseTheory** (finite filtered
   complexes of modules): instances that stay with their owners.
+- **SchemeAndStackFoundations, §2.17**: replete topoi, and *IsReplete.derived_limits* (in a
+  replete topos, `R lim` of a tower of abelian sheaves with epimorphic transitions is `lim`, and
+  `lim¹ = 0`). The vanishing of `lim¹` there is an instance of 7.2, through Tau Ceti's
+  `TauCeti.isReplete_sheaf`.
 
 Multiplicative structures on spectral sequences, the Adams and Atiyah–Hirzebruch spectral
 sequences, and spectral sequences in triangulated or stable ∞-categories beyond Mathlib's
@@ -92,8 +97,9 @@ part of this roadmap.
   target that uses it: countable products (`HasCountableProducts`), countable coproducts
   (`HasCountableCoproducts`), exact countable products (`CountableAB4Star`), exact sequential
   colimits (`HasColimitsOfShape ℕ C` together with `HasExactColimitsOfShape ℕ C`), and, in Layer
-  7, lim-acyclicity of epimorphic towers. No universe or smallness hypothesis is imposed beyond
-  what Mathlib's classes carry.
+  7, repleteness (Tau Ceti's `TauCeti.IsReplete`), which with countable products gives
+  `CountableAB4Star`. No universe or smallness hypothesis is imposed beyond what Mathlib's and
+  Tau Ceti's classes carry.
 - **Spectral sequences.** A spectral sequence is an object of Mathlib's
   `CategoryTheory.SpectralSequence C c r₀`: pages `E.page r` for `r ≥ r₀`, homological complexes
   of shape `c r` on an index type `κ`, and isomorphisms `E.iso r (r+1) pq` from the homology of
@@ -200,6 +206,11 @@ part of this roadmap.
   `Mathlib/CategoryTheory/Preadditive/Projective/Basic.lean`,
   `Mathlib/Algebra/Category/ModuleCat/AB.lean`,
   `Mathlib/Algebra/Category/ModuleCat/Projective.lean`).
+- `ModuleCat.forget_preservesEpimorphisms` (`Mathlib/Algebra/Category/ModuleCat/EpiMono.lean`)
+  and the instance, dual to `CategoryTheory.Functor.reflectsMonomorphisms_of_faithful`, by which a
+  faithful functor reflects epimorphisms (`Mathlib/CategoryTheory/Functor/EpiMono.lean`): the
+  forgetful functor from `ModuleCat.{v} R` to `Type v` preserves and reflects epimorphisms, in
+  every universe `v`.
 - `CategoryTheory.IsArtinianObject` and
   `CategoryTheory.antitone_chain_condition_of_isArtinianObject`
   (`Mathlib/CategoryTheory/Subobject/ArtinianObject.lean`): an object is Artinian when
@@ -253,6 +264,17 @@ part of this roadmap.
   (`TauCeti/CategoryTheory/Preadditive/TowerDifference.lean`): the map `1 − s` in a preadditive
   category with the product; its kernel is the limit; for a pro-zero tower it is an isomorphism
   without any exactness hypothesis.
+- `TauCeti.IsReplete`, `TauCeti.IsReplete.epi_π_app`, `TauCeti.IsReplete.countableAB4Star`,
+  `TauCeti.IsReplete.of_reflectsEpimorphisms`, `TauCeti.isReplete_type`
+  (`TauCeti/CategoryTheory/Limits/Replete.lean`) and `TauCeti.isReplete_sheaf`
+  (`TauCeti/CategoryTheory/Sites/Replete.lean`). A category is replete when, for every tower
+  `F : ℕᵒᵖ ⥤ C` whose transitions are epimorphisms, the projection to `F 0` of every limit cone is
+  an epimorphism; every projection is then one (`epi_π_app`). A replete abelian category with
+  countable products satisfies `CountableAB4Star` (the instance `countableAB4Star`). Repleteness
+  descends along a functor that preserves sequential limits and preserves and reflects
+  epimorphisms; `Type u` is replete; sheaves with values in a concrete category on a replete
+  topos are replete, under the hypotheses of `isReplete_sheaf`. The definition says nothing
+  about `lim¹`; 7.2 supplies that.
 - `TauCeti.ModuleTower.lim`, `TauCeti.ModuleTower.limOne`, `TauCeti.ModuleTower.IsMittagLeffler`,
   `TauCeti.ModuleTower.subsingleton_limOne_of_isMittagLeffler`
   (`TauCeti/Algebra/Category/ModuleCat/Tower/`).
@@ -284,9 +306,11 @@ part of this roadmap.
 
 ### From TauCetiRoadmap.DerivedModuleAlgebra
 
-- §S.1: the first-quadrant double-complex spectral sequence of modules, with
-  `DoubleComplex.abutmentFiltration`, `DoubleComplex.eInftyIsoGr`, `DoubleComplex.page_eq_eInfty`
-  and `DoubleComplex.fiveTerm_exact`. Compared with Layers 3 and 4 in Examples.
+- §S.1: the spectral sequence of a first-quadrant double complex `A` in an abelian category, the
+  column filtration of `Hⁿ(Tot A)`, the identification `E_∞^{pq} ≅ FᵖH^{p+q}/F^{p+1}H^{p+q}`, the
+  stabilisation `E_r^{pq} = E_∞^{pq}` for `r > max(p, q + 1)`, the edge morphisms (cited there as
+  `DoubleComplex.edgeBottom` and `DoubleComplex.edgeLeft`) and the five-term sequence. Compared
+  with Layers 3 and 4 in Examples, not consumed by any proof.
 
 ## How to read the build
 
@@ -303,9 +327,9 @@ Mathlib's quadrant cases. Layer 5 specialises to decreasingly filtered complexes
 classical indexing: finite, cohomologically bounded and exhaustive-bounded-below filtrations.
 Layer 6 puts the spectral sequence of an exact couple into Mathlib's carrier, computes its
 towers, and identifies the exact couple of a spectral object and of a filtered complex with
-Layers 4 and 5. Layer 7 builds lim and lim¹ in abelian categories, states the exact
-hypotheses on `C` under which tower arguments hold, and proves Boardman's conditional-convergence
-theorems and the complete convergence theorem.
+Layers 4 and 5. Layer 7 builds lim and lim¹ in abelian categories, characterises Tau Ceti's
+repleteness through lim¹, the hypothesis on `C` under which tower arguments hold, and proves
+Boardman's conditional-convergence theorems and the complete convergence theorem.
 
 ## Layer 1: cycle and boundary towers and the limit page
 
@@ -755,8 +779,9 @@ mccleary2001 Ch. 2, uncertified):
 
 ### Examples
 
-DerivedModuleAlgebra §S.1's `DoubleComplex.eInftyIsoGr` and `DoubleComplex.fiveTerm_exact` are
-the first-quadrant consequences above for module double complexes. The geometric circle method
+DerivedModuleAlgebra §S.1's identification of `E_∞` with the graded pieces of the column
+filtration and its five-term sequence are the first-quadrant consequences above for double
+complexes in an abelian category. The geometric circle method
 gives a strong convergence in a range of degrees: browning-sawin2020 line 57–75, Theorem 1.1,
 and line 568–587, Theorem 2.7, state a spectral sequence of `ℚ_ℓ`-vector spaces with `E_1`
 supported in `0 ≤ m ≤ d`, with differential of bidegree `(r, 1 − r)`, converging to a complex
@@ -958,9 +983,10 @@ converging structures (3.3) between the structures of 4.4, built from Tau Ceti
 ### Examples
 
 Tau Ceti's `HomologicalComplex₂.rowFiltrationSpectralSequence` (rows of a first-quadrant
-bicomplex) and DerivedModuleAlgebra §S.1's `DoubleComplex.spectralSequence` converge strongly by
-4.4 and 4.5. The convergence structure recovers
-`HomologicalComplex₂.rowFiltrationSpectralSequencePageXIsoEInfty` and `DoubleComplex.eInftyIsoGr`.
+bicomplex) and the spectral sequence of DerivedModuleAlgebra §S.1 converge strongly by 4.4 and
+4.5. The convergence structure recovers
+`HomologicalComplex₂.rowFiltrationSpectralSequencePageXIsoEInfty` and §S.1's identification of
+`E_∞` with the graded pieces of the column filtration.
 
 ### Dependencies
 
@@ -1078,15 +1104,18 @@ Exhaustiveness on `K^n` makes the induced filtration of `H^n` exhaustive, and bo
 the module bullet.
 
 - For complexes in `ModuleCat.{u} R` over a ring `R : Type u`, which has exact sequential
-  colimits by Mathlib's `AB5` instance and `AB5OfSize_shrink`, this contains Tau Ceti's
-  `CochainComplex.exists_mem_range_filtrationAbutmentFiltrationι` in that universe and DGFloer
-  Layer 1 item 3's classical convergence theorem.
+  colimits by Mathlib's `AB5` instance and `AB5OfSize_shrink`, the theorem contains DGFloer
+  Layer 1 item 3's classical convergence theorem. The exhaustiveness step of the route
+  (exhaustiveness on `K^n` alone makes the induced filtration of `H^n` exhaustive) is, for
+  complexes of modules, Tau Ceti's `CochainComplex.exists_mem_range_filtrationAbutmentFiltrationι`.
 
 **Checks.**
 
 - For `ModuleCat.{u} R` with `R : Type u`, exhaustiveness of a filtration of `K^m` by submodules
-  means every element lies in some step. The theorem then gives Tau Ceti's exhaustive-filtration
-  statement for these complexes.
+  means every element lies in some step, and the exhaustiveness step of the route is then Tau
+  Ceti's statement. The theorem asks more: on the `ℓ`-adic filtration of the complex `ℤ` in
+  degree `0` the step applies (`F^0 H^0 = H^0`), while the theorem does not, the filtration not
+  being bounded below on `K^0`.
 - *Exhaustiveness on `K^{n−1}` is needed.* The non-exhaustive complex of 4.3 is bounded below
   and exhaustive on `K^0`, but not on `K^{−1}`, which is `K^{n−1}` for `n = 0`; weak convergence
   fails at `(0, 0)` (`E_∞^{0,0} = ℤ`, `H^0(K) = 0`).
@@ -1097,7 +1126,7 @@ the module bullet.
 
 The skeletal filtration of a cochain complex of sheaves and the column filtration of a
 first-quadrant double complex are finite in each degree (5.3). DerivedModuleAlgebra §S.1 is the
-module double-complex case.
+double-complex case.
 
 ### Dependencies
 
@@ -1261,24 +1290,45 @@ used). Prove:
 
 ### 7.2 Epimorphic towers and the Mittag–Leffler condition
 
-Define: `C` has *lim-acyclic epimorphic towers* if `C` has countable products and every tower
-whose transitions are epimorphisms has `lim¹ = 0` and epimorphic limit projections. Prove: an
-abelian category with countable products and enough projectives has lim-acyclic epimorphic
-towers (lift recursively along the transitions from an epimorphism out of a projective
-object). Under `CountableAB4Star` and lim-acyclic
-epimorphic towers, a tower satisfying the Mittag–Leffler condition has `lim¹ = 0`, and a short
+Let `C` be an abelian category with countable products. `C` is *replete* when it satisfies Tau
+Ceti's `TauCeti.IsReplete`: for every tower whose transitions are epimorphisms, every projection
+of every limit cone is an epimorphism (`TauCeti.IsReplete.epi_π_app`; bhatt-scholze2015 line
+701–702, Definition 3.1.1, for topoi). A replete `C` has exact countable products, by Tau Ceti's
+instance `TauCeti.IsReplete.countableAB4Star`. Prove: `C` is replete if and only if it satisfies
+`CountableAB4Star` and every tower with epimorphic transitions has `lim¹ = 0` in the sense of 7.1
+(bhatt-scholze2015 line 755–770, Proposition 3.1.10, for abelian sheaves on a replete topos).
+The route from repleteness to `lim¹ = 0`: for a tower `f_n : F_{n+1} → F_n` of epimorphisms put
+`T = ∏_k F_k` and `P_n = F_n ⊕ T`, with transitions `(a, t) ↦ (f_n a + π_n t, t)`; each is
+`f_n ⊕ 1` followed by a shear automorphism, so an epimorphism. The cone `∏_n F_n → P_n`,
+`x ↦ (π_n x, (1 − s) x)`, is a limit cone: a compatible family `(x_n, t)` satisfies
+`x_n − f_n x_{n+1} = π_n t`, that is `(1 − s) x = t`. Repleteness makes its projection
+`(π_0, 1 − s)` to `P_0`, and hence `1 − s`, an epimorphism. The converse route: the kernels
+`K_n` of the composites `F_n → F_0` form a tower with epimorphic transitions (snake lemma), and
+the six-term sequence of 7.1 for `0 → K → F → F_0 → 0`, with `F_0` the constant tower, makes
+`lim F → F_0` an epimorphism. Prove also that an abelian category with countable products and
+enough projectives is replete: lift an epimorphism `P → F_0` out of a projective object
+recursively along the transitions; the resulting cone factors it through `lim F`.
+
+In a replete `C`, a tower satisfying the Mittag–Leffler condition has `lim¹ = 0`, and a short
 exact sequence of towers with Mittag–Leffler first term gives a short exact sequence of limits
 (stacks-012K line 3715–3735, Definition 31.2 and Lemma 31.3, tags 02N0 and 02N1, for abelian
 groups). The route: the stable images form an epimorphic subtower with pro-zero quotient, and
-7.1 applies. stacks-012K line 3720–3724 records Neeman's theorem that in an abelian category
-with exact products the Mittag–Leffler condition alone does not force `lim¹ = 0`. That theorem
-is why the epimorphic-tower hypothesis is part of the statement. *Needs:* 7.1; Mathlib
-`EnoughProjectives`, `CountableAB4Star`; Mathlib's `AB4Star` and `EnoughProjectives` instances
-for `ModuleCat` for the module bullet; 1.2 and Mathlib `IsArtinianObject` for the cycle-tower
-bullet.
+7.1 applies with the vanishing just proved. stacks-012K line 3720–3724 records Neeman's theorem
+that in an abelian category with exact products the Mittag–Leffler condition alone does not
+force `lim¹ = 0`; by the statement above such a category is not replete, so repleteness is a
+hypothesis beyond `CountableAB4Star`. *Needs:* 7.1; Tau Ceti `TauCeti.IsReplete`,
+`TauCeti.IsReplete.epi_π_app`, `TauCeti.IsReplete.countableAB4Star`; Mathlib
+`HasCountableProducts`, `CountableAB4Star`, `EnoughProjectives`; for the module bullet Tau Ceti
+`TauCeti.IsReplete.of_reflectsEpimorphisms`, `TauCeti.isReplete_type`, Mathlib
+`ModuleCat.forget_preservesEpimorphisms` and Mathlib's `EnoughProjectives` instance for
+`ModuleCat`; 1.2 and Mathlib `IsArtinianObject` for the cycle-tower bullet.
 
-- `ModuleCat.{u} R` for a ring `R : Type u` has lim-acyclic epimorphic towers and
-  `CountableAB4Star`, from Mathlib's `EnoughProjectives` and `AB4Star` instances.
+- `ModuleCat.{v} R` is replete for every ring `R` and every universe `v`: the forgetful functor
+  to `Type v` is faithful, preserves limits and preserves epimorphisms
+  (`ModuleCat.forget_preservesEpimorphisms`), and `Type v` is replete (`TauCeti.isReplete_type`),
+  so `TauCeti.IsReplete.of_reflectsEpimorphisms` applies. When `Small.{v} R` the enough-projectives
+  statement gives it as well, through Mathlib's `EnoughProjectives` instance. Countable products
+  of modules are then exact by `TauCeti.IsReplete.countableAB4Star`, in every universe.
 - The cycle tower `r ↦ Z_r(pq)` of 1.2 at a position whose first-page object
   `(E.page r₀).X pq` is Artinian (descending chains of subobjects stabilise; every object of
   finite length is Artinian) is eventually constant, hence Mittag–Leffler. Its `lim¹` vanishes
@@ -1286,11 +1336,20 @@ bullet.
 
 **Checks.**
 
-- The tower `ℤ/ℓ^{n+1} ↠ ℤ/ℓ^n` has `lim = ℤ_ℓ`, `lim¹ = 0`, and the projection `ℤ_ℓ → ℤ/ℓ^n` is
-  surjective.
-- The tower `×ℓ` on `ℤ` is not Mittag–Leffler, and its `lim¹ ≠ 0`.
+- The tower `ℤ/ℓ^{n+1} ↠ ℤ/ℓ^n` in `ModuleCat ℤ` has `lim = ℤ_ℓ`, `lim¹ = 0`, and the projection
+  `ℤ_ℓ → ℤ/ℓ^n` is surjective. As the route predicts, `1 − s` is onto `∏_n ℤ/ℓ^n`: for `y` in the
+  product put `x_0 = 0` and choose `x_{n+1}` lifting `x_n − y_n`.
+- The tower `×ℓ` on `ℤ` has non-epimorphic transitions, so repleteness says nothing about it. It
+  is not Mittag–Leffler, and its `lim¹ ≅ ℤ_ℓ/ℤ ≠ 0`.
 - In `ModuleCat ℤ`, a tower of finite groups is Mittag–Leffler. Tau Ceti's
   `TauCeti.ModuleTower.subsingleton_limOne_of_isMittagLeffler` agrees with the theorem here.
+- *A non-replete category.* Discrete modules over the profinite group `Gal(ℚ̄/ℚ)` form an abelian
+  category with countable products (the smooth vectors of the product). The tower
+  `μ_{ℓ^{n+1}} → μ_{ℓ^n}` of `ℓ`-th power maps has epimorphic transitions, and its limit is the
+  module of smooth vectors of `ℤ_ℓ(1)`, which is `0`: an open subgroup contains some `g` whose
+  cyclotomic character `χ(g)` is not `1`, and `(χ(g) − 1) x = 0` forces `x = 0` in `ℤ_ℓ`. The
+  projections `0 → μ_{ℓ^n}` are not epimorphisms, so the category is not replete;
+  SchemeAndStackFoundations §2.17 records the same tower for étale sheaves on `Spec ℚ`.
 
 ### 7.3 Boardman's double-tower sequence
 
@@ -1302,10 +1361,11 @@ products and `CountableAB4Star`. Put `Im^r A^s = im(i^r : A^{s+r} → A^s)`,
 The route: the bi-indexed system `(Im^r A^s)_{r,s}` is pro-isomorphic along the diagonal to
 `(A^s)`. Its lim¹ is the first cohomology of the two-by-two double complex of products, whose
 column filtration gives the short exact sequence; only the exactness of countable products is
-used. *Needs:* 7.1; 7.2 for the epimorphic-limit bullet.
+used. *Needs:* 7.1; Tau Ceti `TauCeti.IsReplete.epi_π_app` for the epimorphic-limit bullet.
 
-- Under lim-acyclic epimorphic towers, if every `Q^{s+1} → Q^s` is an epimorphism, then every
-  `lim_s Q^s → Q^s` is an epimorphism (helle-rognes2024 line 213–214, Lemma 3.15 (c)).
+- If `C` is replete (7.2) and every `Q^{s+1} → Q^s` is an epimorphism, then every
+  `lim_s Q^s → Q^s` is an epimorphism: this is `TauCeti.IsReplete.epi_π_app` for the tower
+  `m ↦ Q^{s+m}`, whose limit is `lim_s Q^s` (helle-rognes2024 line 213–214, Lemma 3.15 (c)).
 
 **Checks.**
 
@@ -1319,9 +1379,10 @@ used. *Needs:* 7.1; 7.2 for the epimorphic-limit bullet.
 
 ### 7.4 Conditional convergence and Boardman's theorems
 
-Let `C` be abelian with countable products and coproducts, `CountableAB4Star`, exact sequential
-colimits and lim-acyclic epimorphic towers. For a cohomological exact couple (6.1) and a total
-degree `n`, put `A^s = D^{s, n−s}`, with `i : A^{s+1} → A^s`. Define
+Let `C` be abelian with countable products and coproducts, exact sequential colimits, and
+replete (7.2); countable products are then exact (`TauCeti.IsReplete.countableAB4Star`) and
+every tower with epimorphic transitions has `lim¹ = 0` (7.2). For a cohomological exact couple
+(6.1) and a total degree `n`, put `A^s = D^{s, n−s}`, with `i : A^{s+1} → A^s`. Define
 (helle-rognes2024 line 145–156, Definitions 3.6 and 3.7, citing boardman1999 Definition 5.10;
 line 71–80, Definition 2.3 and Remark 2.4; line 169–178, Definition 3.11, citing boardman1999
 §§3 and 8, uncertified):
@@ -1356,11 +1417,12 @@ uncertified, in the indexing `s ↦ −s`; and line 185–247 for Lemmas 3.13–
   (helle-rognes2024 line 13–25, summarising boardman1999 Theorems 7.1 and 8.2, uncertified).
 - A regular position has `RE_∞ = 0` (helle-rognes2024 line 78–80, Remark 2.4).
 
-*Needs:* 1.4, 3.2, 6.1, 6.2, 7.1–7.3; Mathlib's `AB5` instance for `ModuleCat` and
+*Needs:* 1.4, 3.2, 6.1, 6.2, 7.1–7.3; Tau Ceti `TauCeti.IsReplete`,
+`TauCeti.IsReplete.countableAB4Star`; Mathlib's `AB5` instance for `ModuleCat` and
 `AB5OfSize_shrink` for the module bullet.
 
-- On `ModuleCat.{u} R` with `R : Type u`, which satisfies the hypotheses on `C` (7.2, and
-  Mathlib's `AB5` instance with `AB5OfSize_shrink` for sequential colimits), these are
+- On `ModuleCat.{u} R` with `R : Type u`, which satisfies the hypotheses on `C` (replete by 7.2,
+  and Mathlib's `AB5` instance with `AB5OfSize_shrink` for sequential colimits), these are
   Helle–Rognes's statements for graded modules, and on abelian groups the algebraic content of
   StableHomotopyKTheory §7.26.
 
@@ -1425,8 +1487,8 @@ Towers of finite groups (Mittag–Leffler, hence `RE_∞ = 0`), the Bockstein co
 
 ### Dependencies
 
-Layers 1, 3, 5 and 6; Tau Ceti `TowerDifference.lean` and module towers; Mathlib Grothendieck
-axioms and `EnoughProjectives`.
+Layers 1, 3, 5 and 6; Tau Ceti `TowerDifference.lean`, `Replete.lean` and module towers; Mathlib
+Grothendieck axioms and `EnoughProjectives`.
 
 ## Downstream consumers
 
@@ -1449,6 +1511,8 @@ axioms and `EnoughProjectives`.
   Cartan–Eilenberg systems*, Lemmas 2.2, 2.6, 3.4, 3.13–3.15, Definitions 2.3, 2.5, 2.7, 3.3, 3.6,
   3.7, 3.11, 4.5, Remarks 2.4, 3.5, 4.6, 4.10, the sequence (3.1), Theorems 3.9, 3.10, Example
   8.1.
+- bhatt-scholze2015: B. Bhatt, P. Scholze, *The pro-étale topology for schemes*, Astérisque 369
+  (2015); arXiv 1309.1198v2, Definition 3.1.1 and Proposition 3.1.10.
 - browning-sawin2020: T. Browning, W. Sawin, *A geometric version of the circle method*, Ann. of
   Math. 191 (2020); arXiv 1711.10451v3, Theorems 1.1 and 2.7.
 - weibel1994: C. A. Weibel, *An Introduction to Homological Algebra*, §§3.5, 5.2, 5.5, 5.9
