@@ -9,9 +9,9 @@ with the few definitions those statements need: raw Kloosterman sums, the even o
 exponential sum `U_n`, the quadratic hypergeometric sum, the trace character of a finite field and
 the block truncations of a Dwork series.
 
-The statable headlines are the exponential-sum identities obtained from the comparison of Bessel
-F-isocrystals for different groups (README §11.1), the everywhere ordinarity of the odd and even
-orthogonal Bessel F-isocrystals read on their trace functions (README §11.3), and the signed
+The statable headlines are the two exponential-sum identities (i) and (ii) of README §11.1, obtained
+from the comparison of Bessel F-isocrystals for different groups, the everywhere ordinarity of the odd
+and even orthogonal Bessel F-isocrystals read on their trace functions (README §11.3), and the signed
 2-adic refinement of Dwork's congruences (README §10.2).
 
 The following headline theorems are not statable at the pins, and nothing is stated in their place:
@@ -147,17 +147,6 @@ theorem gaussSum_mul_orthogonalSum_sub_card (F : Type*) [Field F] [Finite F]
     (n : ℕ) (hn : 1 ≤ n) (a : Fˣ) :
     (∑ᶠ y : F, quadraticCharIn F K y * ψ (-y)) * (orthogonalSum ψ n a - Nat.card F)
       = quadraticHypergeometricSum ψ (2 * n + 1) (4 * (a : F)) := by
-  sorry
-
-/-- **The orthogonal convolution identity** (Xu–Zhu, Corollary 5.3.11(i) and (1.2.9.2), with the
-half twist and sign corrected in README §9.4 and §11.1). Over every finite field and for every
-nontrivial additive character, for `N ≥ 2`,
-`U_N(a) − |F| = ∑_{uv = a} (Kl₂(u)² − |F|) · Kl_{2N−2}(v)` in raw sums. -/
-theorem orthogonalSum_sub_card_eq_convolution (F : Type*) [Field F] [Finite F]
-    {K : Type*} [Field K] (ψ : AddChar F K) (hψ : ψ ≠ 1) (N : ℕ) (hN : 2 ≤ N) (a : Fˣ) :
-    orthogonalSum ψ N a - Nat.card F
-      = ∑ᶠ u : Fˣ, (kloostermanSum ψ 2 u ^ 2 - Nat.card F)
-          * kloostermanSum ψ (2 * N - 2) (a * u⁻¹) := by
   sorry
 
 /-- **Everywhere ordinarity of the orthogonal Bessel F-isocrystals, on trace functions**
