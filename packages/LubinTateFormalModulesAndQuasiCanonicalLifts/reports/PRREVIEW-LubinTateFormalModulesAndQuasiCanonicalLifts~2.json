@@ -1,0 +1,22 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-LubinTateFormalModulesAndQuasiCanonicalLifts~2",
+  "head": "41b29722c731f47c08617d949550a679cd7bc083",
+  "pr": 2284,
+  "folder": "LubinTateFormalModulesAndQuasiCanonicalLifts",
+  "date": "2026-11-13",
+  "findings": 2,
+  "blocking": 0,
+  "notes": "Full re-review. Previous R01-R03 repaired. Two P3 findings: Y95 Proposition 4 locator in section 6.4; the description's summary block still says finite extensions of Q_p. Sample: 15 sections, 47 non-LT65 locators checked against VZ07, Y95, G86, BKO21, H70, H68, LT66 (LT65 uncertified, not readable). Gate passed; depcheck 0 problems; Suggested.lean elaborates with sorry as the only warning; signatures compared; padding decided by reading; 22 pinned declarations opened; overlap with FunctionFieldArithmetic 4.1 recorded (owner: this roadmap).",
+  "carried": {
+   "from": "41b29722c731f47c08617d949550a679cd7bc083",
+   "head": "9147ad2c4b48bff7017f9c47952c6da55fb422b5",
+   "findings": 2,
+   "lines": 6,
+   "folders": [
+    "LubinTateFormalModulesAndQuasiCanonicalLifts"
+   ]
+  }
+ }
+}
