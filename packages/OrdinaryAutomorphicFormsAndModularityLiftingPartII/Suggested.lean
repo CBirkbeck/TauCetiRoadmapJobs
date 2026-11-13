@@ -15,11 +15,14 @@ statable at the pins. The headline theorems, and the carriers each one lacks, ar
   rings above 2), and ordinary RACSDC automorphic representations of `GL_n(𝔸_F)` for the
   hypothesis on the seed; neither exists at the pins.
 * **The dyadic ordinary reduced R = T theorem** (README 4.8; the same theorem, second
-  assertion): for sufficiently deep tame level, `R^{T,ord} → 𝕋^{T,ord}(U(l^∞))_𝔪` has nilpotent
-  kernel. Besides the carriers above it lacks algebraic modular forms on a definite unitary
-  group and their universal ordinary Hecke algebra.
-* **The dyadic dimension bound** (README 3.2(b)): every component of `Spec R_{S_χ}` has dimension
-  at least `1 + n[F⁺:ℚ]`. It lacks the same deformation rings.
+  assertion): assuming the dimension bound of README 3.2(b), for sufficiently deep tame level
+  `R^{T,ord} → 𝕋^{T,ord}(U(l^∞))_𝔪` has nilpotent kernel. Besides the carriers above it lacks
+  algebraic modular forms on a definite unitary group and their universal ordinary Hecke
+  algebra.
+* **The dyadic dimension bound** (README 3.2(b); Lemma 5.7.7 of the same paper, whose printed
+  proof gives only `n[F⁺:ℚ]`): if `H¹(ρ̄(G_F), k) = 0`, every component of `Spec R^{T,ord}` has
+  dimension at least `1 + n[F⁺:ℚ]`. Its inputs (★) and (C) are not proved in the sources. It
+  lacks the same deformation rings.
 * **The symplectic ordinary reduced R = T theorem for `p > 2`** (README 6.3; Theorem 6.3.4 of
   the same paper) and **finiteness of the selected symplectic ordinary deformation ring**
   (README 6.4): they lack cuspidal automorphic representations of `GSp₄(𝔸_{F⁺})` and their

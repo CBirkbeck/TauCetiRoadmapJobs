@@ -2201,10 +2201,10 @@
     },
     {
       "slug": "hilbert-siegel-ordinary-classicality",
-      "title": "Classicality for the ordinary Hilbert–Siegel Hecke algebra",
+      "title": "Control and semisimplicity for the ordinary Hilbert–Siegel Hecke algebra",
       "supplier": "AutomorphicBundles",
       "section": "Layer 12: Hecke action and Fourier expansions",
-      "needs": "Every ℚ̄_p-point of the Hecke algebra acting on M¹ above a Zariski-dense set of arithmetic weights of Λ_{GSp₄,F⁺} is the Hecke eigensystem of an ordinary cuspidal automorphic representation of GSp₄(𝔸_{F⁺}) of large regular weight (BCGP21 §7.9).",
+      "needs": "In the setting of hilbert-siegel-hida-module-free, for a Zariski-dense set of classical weights κ of Λ_{GSp₄,F⁺} (in the coordinates of BCGP21, k_v ≥ l_v ≥ 4), the specialization M¹ ⊗_{Λ,κ} E is Hecke-equivariantly dual to the ordinary part of the classical cuspidal forms of weight κ and the given level (control; BCGP21 Lemma 7.8.5 and Theorem 6.6.5), and that space is a direct sum of the finite parts of ordinary cuspidal automorphic representations π of GSp₄(𝔸_{F⁺}) of weight κ, on each of which the Hecke algebra acts through a character Θ_π (BCGP21 Theorem 3.10.1 and the proof of Theorem 7.9.4, pp. 417–418); consequently the Hecke algebra acting on M¹ is reduced and embeds in ∏_π O_{E_π}, and each of its ℚ̄_p-points above such κ is some Θ_π.",
       "detail": "AutomorphicBundles Layer B5 constructs geometric Hecke operators on classical sections (B5.10–B5.12) in four settings: determinant-weight and vector-coefficient good-prime PEL models, prime-to-p ramified Hilbert models and the characteristic-zero classical Siegel comparison; it states nothing specific to Hilbert–Siegel varieties and no ordinary Hida theory. No roadmap on main, earlier in the merge order or among the open roadmap pull requests owns higher Hida theory on Hilbert–Siegel varieties; AutomorphicBundles is the closest earlier owner of coherent automorphic forms with Hecke action, and an extension in its direction would be AutomorphicBundles, Part II.",
       "neededBy": [
         "OrdinaryAutomorphicFormsAndModularityLiftingPartII:OL.4/gsp4-hida-galois-representation"
@@ -2228,7 +2228,7 @@
       "supplier": "GlobalGaloisDeformations",
       "section": "§8.4 Presentations of polarized deformation rings",
       "needs": "For p = 2, F/F⁺ unramified at every finite place and every place above 2 split in F, the O-coefficient polarized theory of Thorne 2017 §2.1 and Lemmas 2.8–2.15: representability with strict equivalence by Ĝ_n, the framed torsor of relative dimension (n² + 1)#T − 1, Thorne's complex with h² = h¹_{𝒮^⊥,T} and h³ = h⁰(F(S)/F⁺, ad r̄(1)), its Euler characteristic (Corollary 2.14) and the generator count over R^loc (Lemma 2.12).",
-      "detail": "GlobalGaloisDeformations §8.1 fixes p odd. PotentialAutomorphyInfrastructurePartII declares the same request under the same slug. Layer 1 of this roadmap states only the forms over a weight algebra Λ and deduces them from this contract.",
+      "detail": "GlobalGaloisDeformations §8.1 fixes p odd. PotentialAutomorphyInfrastructurePartII declares the same slug for strongly residually odd complex conjugations; this request makes no oddness assumption and adds representability, the framed torsor and h³, so the supplier's answer must cover both. Layer 1 of this roadmap states only the forms over a weight algebra Λ and deduces them from this contract.",
       "neededBy": [
         "OrdinaryAutomorphicFormsAndModularityLiftingPartII:OL.0/lambda-polarized-deformation-problem",
         "OrdinaryAutomorphicFormsAndModularityLiftingPartII:OL.0/dyadic-dual-selmer-group"
