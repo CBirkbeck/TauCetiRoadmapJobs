@@ -1,0 +1,22 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-KTheoryFiniteLocalFields~5",
+  "head": "6fe116ec3335f26053568aedbf3106b0475fe955",
+  "pr": 1281,
+  "folder": "KTheoryFiniteLocalFields",
+  "date": "2026-11-13",
+  "findings": 2,
+  "blocking": 0,
+  "notes": "Full review at 6fe116e. All nine findings of the previous review (at e987a1b) are repaired. Two P3 findings remain: HM03 section page ranges in References and at README lines 775 and 826 disagree with arXiv v2; Milne's Class Field Theory is cited at line 576 with no References entry. Seeded sample of 15 targets checked against the cached texts (KBOOK, HM03, HANDBOOK, WEIBELCHERN, HM97A, HESS96, HESS05, GH06, CMM, BOUSFIELD, HAINE, JANNSEN, SOULE, Huber-Wildeshaus, Huber-Kings, MILNE): about 115 locators, mismatches only R01; DM could not be read legally (listed under Not verifiable). Adversarial table of 26 rows with computed values, including the five headline theorems. 96 library names located at the pins; about 95 cross-roadmap section ids in 30 roadmaps resolved on main or at open heads. Gate: every check passed; depcheck 0 problems; Suggested.lean elaborates with sorry the only warning; one-tactic probe closes none of the five theorems; 8 elaborated signatures match the README. Pull-request text agrees with the head. Ownership against open pull requests checked with the roadmaps tools; no object has two owners.",
+  "carried": {
+   "from": "6fe116ec3335f26053568aedbf3106b0475fe955",
+   "head": "0bca594ec6c86cc451d821e586912c4988559bce",
+   "findings": 2,
+   "lines": 21,
+   "folders": [
+    "KTheoryFiniteLocalFields"
+   ]
+  }
+ }
+}
