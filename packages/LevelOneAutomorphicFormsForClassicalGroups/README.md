@@ -24,23 +24,22 @@ range `g ≥ 2k` (Layer 8). The end theorems are Chenevier–Taïbi's Theorems 1
 
 ## Scope and ownership
 
-This roadmap owns the level-one specialization and everything that is specific to the
-Chenevier–Taïbi method: the set `Π_alg` and its counting functions; the archimedean ring `K∞` with
-its parity-truncated weight filtrations; the Rankin–Selberg explicit-formula bilinear forms, the
-Stark–Odlyzko cone inequality for pairs of level-one representations and the finite-dimensional
-quadratic minimization built on it, including the Rayleigh least-eigenvalue refinement (the
-Odlyzko kernel and test function are imported); Miller's vanishing theorem (no other roadmap plans a second proof of
-it); level-one Arthur parameters, their packet characters in the holomorphic cases and the
-triangular Euler–Poincaré relation; the masses of torsion classes, the spinor obstruction on
-their characteristic polynomials, resting on the imported Zassenhaus spinor-norm formula; Taïbi's
-explicit evaluation of the geometric side of the level-one `L²`-Lefschetz formula; the
-low-weight classifications; the genus-`g` unweighted theta map on even unimodular lattices, the
-harmonic theta map, first occurrence and the Rallis parameter relation at level one; the
-Siegel-modular-form inputs needed at level one (the Siegel operator and its standard-`L`-function
-relation, the vanishing and spanning theorems of the singular range, odd-weight boundary
-vanishing); the classification of Siegel eigenforms in low weight; the invariant alternating forms
-of Niemeier lattices, the Mathieu orbit-sum forms on the Leech lattice, the sublattices `Q_g` and
-the harmonic Leech theta series; and the stable range.
+This roadmap owns the level-one specialization and everything that is specific to the Chenevier–Taïbi
+method: the set `Π_alg` and its counting functions; the archimedean ring `K∞` with its parity-truncated
+weight filtrations; the Rankin–Selberg explicit-formula bilinear forms, the Stark–Odlyzko cone inequality
+for pairs of level-one representations and the finite-dimensional quadratic minimization built on it,
+including the Rayleigh least-eigenvalue refinement (the Odlyzko kernel and test function are imported);
+Miller's vanishing theorem (no other roadmap plans a second proof of it); level-one Arthur parameters, the
+level-one shape of the regular holomorphic parameters, the packet characters in the scalar holomorphic cases
+and the triangular Euler–Poincaré relation; the masses of torsion classes, the spinor obstruction on their
+characteristic polynomials, resting on the imported Zassenhaus spinor-norm formula; Taïbi's explicit
+evaluation of the geometric side of the level-one `L²`-Lefschetz formula; the low-weight classifications;
+the genus-`g` unweighted theta map on even unimodular lattices, the harmonic theta map, first occurrence and
+the Rallis parameter relation at level one; the Siegel-modular-form inputs needed at level one (the Siegel
+operator and its standard-`L`-function relation, the vanishing and spanning theorems of the singular range,
+odd-weight boundary vanishing); the classification of Siegel eigenforms in low weight; the invariant
+alternating forms of Niemeier lattices, the Mathieu orbit-sum forms on the Leech lattice, the sublattices
+`Q_g` and the harmonic Leech theta series; and the stable range.
 
 It leaves to named roadmaps, by section:
 
@@ -71,7 +70,8 @@ It leaves to named roadmaps, by section:
   cuspidality criterion, Euler–Poincaré functions and Arthur's `L²`-Lefschetz trace formula:
   AutomorphicSpectralTheory §§4.4, 4.5, 4.10, 6.9, 6.17, 6.19 and 6.20.
 - Global Arthur parameters, component groups, the epsilon character, local Arthur packets, the
-  multiplicity formula, Adams–Johnson packets and the Mœglin–Renard description of packets with a
+  multiplicity formula, Adams–Johnson packets, the regular holomorphic occurrence criterion with its
+  packet character (Chenevier–Taïbi (5.2.1)) and the Mœglin–Renard description of packets with a
   scalar unitary lowest-weight module, together with the standing premises under which they are
   stated: ModularityAndLanglandsExtensions, Exact supplier contracts, and §§3.4, 3.8, 3.15, 3.17,
   3.20, 3.21 and 3.22.
@@ -119,20 +119,26 @@ again here.
 Two neighbours consume this roadmap rather than supply it. SiegelModularForms imports the
 genus-`g` and harmonic lattice theta maps of §§6.4 and 6.7 and compares them with its own theta
 series of general lattices; its Ikeda lift is compared there with the genus-12 form of §7.5. The
-Siegel operator, the cusp-form kernel theorem and the singular-range statements of §§6.1–6.2 are
-stated here because this roadmap needs them before any Siegel roadmap that consumes it.
+Siegel operator, the cusp-form kernel theorem and the singular-range statements of §§6.1–6.2 (with
+Freitag's spanning theorem at the end of §6.4, after the theta map it uses) are stated here because this
+roadmap needs them before any Siegel roadmap that consumes it.
 
 ## Conventions
 
 **Groups and weights.** `Γ_g = Sp_{2g}(ℤ)`. For a dominant integral `k = (k₁ ≥ ⋯ ≥ k_g)` write
 `M_k(Γ_g)` and `S_k(Γ_g)` for the level-one Siegel modular and cusp forms with values in the
-irreducible polynomial representation of `GL_g(ℂ)` of highest weight `k`; a scalar `k` means
+irreducible algebraic representation of `GL_g(ℂ)` of highest weight `k`, that is `det^{k_g}` times
+the polynomial representation of highest weight `(k₁ − k_g, …, k_{g−1} − k_g, 0)`; it is polynomial
+exactly when `k_g ≥ 0`, and it is the coefficient `S_a(ω) ⊗ det(ω)^{λ_g}` of AutomorphicBundles §11.16.
+For `g = 1` and `k = −1` it is `det⁻¹`, and for `k = (1, −1)` it is `det⁻¹ ⊗ Sym²`. A scalar `k` means
 `(k, …, k)`; genus zero means the one-dimensional constant space. For a classical group `G`
 distinguish `d_G = dim Std(G)`, the degree of a characteristic polynomial of `G`, from
 `m_G = dim Std(Ĝ)`: `(d_G, m_G) = (2n, 2n+1)` for `Sp_{2n}`, `(2n+1, 2n)` for `SO_{2n+1}` and
-`(2n, 2n)` for `SO_{2n}`. The permitted groups of the mass computation are those whose real
-points have discrete series: `Sp_{2n}`, `SO_{2n+1}` and `SO_{4n}`. Level one means the integral
-model's `G(Ẑ)`, including at `p = 2`; maximal compact subgroups are those of the full real group.
+`(2n, 2n)` for `SO_{2n}`. The permitted groups of the mass computation are the groups of positive rank
+whose real points have discrete series: `Sp_{2n}`, `SO_{2n+1}` and `SO_{4n}` with `n ≥ 1`. The trivial
+groups `Sp₀`, `SO₁` and `SO₀` are not permitted; they occur only as the factor `G′` of a Levi subgroup
+in §4.3, where `T_ell = EP = 1`. Level one means the integral model's `G(Ẑ)`, including at `p = 2`;
+maximal compact subgroups are those of the full real group.
 
 **The real Weil representation ring.** `W_ℝ = ℂ^× ⊔ jℂ^×` with `j² = −1`. `K∞` is the Grothendieck
 ring of finite-dimensional semisimple continuous representations of `W_ℝ` trivial on `ℝ_{>0}`. Its
@@ -275,13 +281,17 @@ sets of classes are counted as natural numbers only after their finiteness is pr
   `∏_{i,j} (1 − α_iβ_j p^{−s})^{−1}`. §AL.3.3.8: the Jacquet–Shalika bound
   `p^{−1/2} < |α_i| < p^{1/2}` for every unitary-normalized Satake root of a unitary cuspidal
   representation at an unramified place; it does not assert temperedness.
-- §AL.3.6: continuation of `Λ(s, π × π′)`, simple poles exactly at `s = 0, 1` when `π′ ≅ π^∨` up to
-  a unitary norm twist (§AL.3.6.1), the functional equation (§AL.3.6.2) and boundary nonvanishing
-  (§AL.3.6.3); §AL.3.9.2: the predicate of boundedness on vertical strips of finite width, which a
-  function with a pole in the strip fails; §AL.3.9.4, its Rankin–Selberg instance: for unitary
-  cuspidal `π, π′` of any ranks the completed `Λ(s, π × π′)` is bounded on every vertical strip of
-  finite width outside fixed neighbourhoods of its poles; §AL.3.7: strong multiplicity one for
-  cuspidal representations and for isobaric sums.
+- §AL.3.6: continuation of `Λ(s, π × π′)` for unitary cuspidal `π` of `GL_n` and `π′` of `GL_m`, entire when
+  `n ≠ m`, and for `n = m` with only simple poles, at `s = iσ` and `s = 1 + iσ` for the real `σ` with
+  `π^∨ ≅ π′ ⊗ |det|^{iσ}` (§AL.3.6.1); the functional equation (§AL.3.6.2) and boundary nonvanishing
+  (§AL.3.6.3). For `π, π′ ∈ Π_alg` both central characters are trivial, while `π′ ⊗ |det|^{iσ}` has central
+  character `|·|^{inσ}`, so `σ = 0`: the poles are at `s = 0, 1`, and occur exactly when `π′ ≅ π^∨`. The
+  supplier's pair `(1, |·|^{2i})` of `GL₁`, with `σ = −2` and poles at `−2i` and `1 − 2i`, has no
+  counterpart in `Π_alg`; §AL.3.9.2: the predicate of boundedness on vertical strips of finite width, which
+  a function with a pole in the strip fails; §AL.3.9.4, its Rankin–Selberg instance: for unitary cuspidal
+  `π, π′` of any ranks the completed `Λ(s, π × π′)` is bounded on every vertical strip of finite width
+  outside fixed neighbourhoods of its poles; §AL.3.7: strong multiplicity one for cuspidal representations
+  and for isobaric sums.
 
 ### From TauCetiRoadmap.AnalyticNumberTheoryPartI
 
@@ -338,8 +348,14 @@ sets of classes are counted as natural numbers only after their finiteness is pr
   of `π`'s type, the input of §1.8. §3.15: local Arthur packets with
   their pairings, under a fixed Whittaker datum. §3.17: Arthur's multiplicity formula. §§3.20–3.21:
   Adams–Johnson parameters and the identification of real Arthur packets of cohomological
-  parameters with Adams–Johnson packets. §3.22: the Mœglin–Renard criterion for a scalar unitary
-  lowest-weight module of `Sp_{2g}(ℝ)` to lie in a real Arthur packet, with multiplicity one.
+  parameters with Adams–Johnson packets, with multiplicity one; and, in §3.21, the regular
+  holomorphic occurrence criterion of Chenevier–Taïbi (5.2.1): for `Sp_{2g}`, a dominant `k` with
+  `k_g > g` and a discrete parameter `ψ = ⊕ π_i[d_i]` with infinitesimal weights `0, ±(k_i − i)` and
+  odd-dimensional block `π_{i₀}[d_{i₀}]`, the module `ρ_k` lies in the real packet of `ψ` exactly when
+  `d_{i₀} = 1`, and then its character is `χ(s_i) = (−1)^{n_id_i/4}` for even `d_i` and `(−1)^{e_i}` for odd
+  `d_i`, `e_i` the number of odd `j ∈ {1, …, g}` with `k_j − j` a weight of `π_i`. §3.22: the
+  Mœglin–Renard criterion for a scalar unitary lowest-weight module of `Sp_{2g}(ℝ)` to lie in a real
+  Arthur packet, with multiplicity one.
 
 ### From TauCetiRoadmap.AutomorphicBundles
 
@@ -491,7 +507,8 @@ representation.
 - The adelic description and the description by level-one cuspidal functions on
   `PGL_m(ℤ)\PGL_m(ℝ)` give the same set.
 
-*Needs:* AutomorphicFormsOnReductiveGroups §§2.5, 3.5, 4.2 and 5.1; AutomorphicLFunctionsAndLocalFactors
+*Needs:* AutomorphicFormsOnReductiveGroups §§2.5, 3.2, 3.4, 3.5, 4.2 and 5.1 (automorphic
+representations and their restricted tensor products in §§3.2 and 3.4); AutomorphicLFunctionsAndLocalFactors
 §AL.3.3.8.
 
 **Checks.**
@@ -542,8 +559,9 @@ forms `x₁x_{2n+1} + ⋯ + x_nx_{n+2} + x_{n+1}²` and `x₁x_{2n} + ⋯ + x_nx
 Chevalley–Demazure groups of types `B_n` and `D_n` (CT20 §1.4 and §3.1). Level one means `G(Ẑ)` for
 these models, including `p = 2`.
 
-- The permitted groups for the mass computation are `Sp_{2n}`, `SO_{2n+1}` and `SO_{4n}`; `SO_{4n+2}`
-  has no discrete series and is excluded.
+- The permitted groups for the mass computation are `Sp_{2n}`, `SO_{2n+1}` and `SO_{4n}` with `n ≥ 1`;
+  `SO_{4n+2}` has no discrete series and is excluded, and so are the rank-zero groups, which are
+  trivial.
 - For `R = ℤ_p`, the `R`-points of the special orthogonal model are the matrices of determinant one
   preserving the quadratic form; this is the set `specialOrthogonalPoints` of §4.7 for the
   corresponding Gram data.
@@ -723,7 +741,7 @@ weight 22, which is `Sym²Δ₁₁`.
 
 ### Dependencies
 
-AutomorphicFormsOnReductiveGroups §§2.5, 3.5, 4.2, 5.1, 5.5; AutomorphicLFunctionsAndLocalFactors
+AutomorphicFormsOnReductiveGroups §§2.5, 3.2, 3.4, 3.5, 4.2, 5.1, 5.5; AutomorphicLFunctionsAndLocalFactors
 §§AL.1.4, AL.3.3.8, AL.3.6; AutomorphicSpectralTheory §4.5; ModularityAndLanglandsExtensions §§3.4, 3.8;
 ReductiveGroups Layer 9; LieHighestWeight Layer 6; ClassicalGroups Layer 3; Tau Ceti's symplectic
 group scheme.
@@ -888,7 +906,15 @@ diagonal; and `C^F(π, π′) = A_F δ(π, π′) − J_F(L(π∞)L(π′∞)) �
 
 Prove that for every test function of §2.1, `B_f^F + B∞^F + (1/2) Z^F = A_F δ` as bilinear forms on
 `ℝ[Π_alg]` (CT20 (2.3.5)). Apply AnalyticNumberTheoryPartI §1.8 to `Λ₁(s) = Λ(s, π^∨ × π′)` and
-`Λ₂(s) = Λ(s, π × π′^∨)` with `c = 1`, which §2.1 makes admissible. At level one every prime is
+`Λ₂(s) = Λ(s, π × π′^∨)` with `c = 1`, which §2.1 makes admissible, after dividing out a constant: the
+supplier's hypothesis (iv) asks for gamma factors `A^s ∏ Γ(a_i s + b_i)` without a constant factor,
+while `Γ(s, I_w) = Γ_ℂ(s + w/2) = 2(2π)^{−w/2} · (2π)^{−s} Γ(s + w/2)` carries `2(2π)^{−w/2}` and
+`Γ(s, e) = Γ_ℝ(s + 1) = π^{−1/2} · π^{−s/2} Γ(s/2 + 1/2)` carries `π^{−1/2}` (`Γ(s, 1) = Γ_ℝ(s)` carries
+none). Let `κ` be the product of these constants over the summands `e` and `I_w` of `L(π∞)L(π′∞)`, the
+archimedean parameter of both `Λ₁` and `Λ₂` by §1.5, and apply §1.8 to `κ⁻¹Λ₁` and `κ⁻¹Λ₂`. They satisfy (i)–(iii)
+with the same `w`, have the zeros, poles and logarithmic derivatives of `Λ₁` and `Λ₂`, and give the same
+formula, with `A = B = π^{−a/2}(2π)^{−b}` for `a` characters and `b` summands `I_w` in `L(π∞)L(π′∞)`;
+this is the `log π` and `log 2π` content of `J_F`. At level one every prime is
 unramified, so by AutomorphicLFunctionsAndLocalFactors §AL.3.2.3 the Euler factor of `Λ₁` at `p` has
 the roots `α_i^{−1}β_j` (`α_i`, `β_j` the Satake roots of `π_p`, `π′_p`), each of absolute value below
 `p^{1/2} · p^{1/2} = p` by the Jacquet–Shalika bound §AL.3.3.8; the Euler products then converge
@@ -899,9 +925,9 @@ closed discs `Λ_i` minus its principal parts is holomorphic, hence bounded. Whe
 pole and §AL.3.9.4 bounds `Λ_i` on the whole strip. The zeros and poles that §1.8 sums are those with
 `−1 ≤ Re s ≤ 2`: by the boundary nonvanishing §AL.3.6.3, the functional equation §AL.3.6.2 and the absence of zeros of the
 gamma factors, every zero of `Λ₁` lies in `0 < Re s < 1`, so the zero sum is the sum over the critical
-strip; the poles of `Λ(s, π^∨ × π′)` contribute exactly `δ(π, π′)` at `s = 0` and `s = 1`, the norm
-twists allowed by the pole theorem §AL.3.6.1 being excluded by the fixed unitary algebraic infinity
-types; then extend bilinearly.
+strip; the poles of `Λ(s, π^∨ × π′)` contribute exactly `δ(π, π′)` at `s = 0` and `s = 1`: by §AL.3.6.1
+they lie at `iσ` and `1 + iσ` with `π ≅ π′ ⊗ |det|^{iσ}`, and the trivial central characters of `π` and
+`π′` force `σ = 0` (Exact supplier contracts); then extend bilinearly.
 
 *Needs:* §§2.1, 2.5; AnalyticNumberTheoryPartI §§1.3 and 1.8; AutomorphicLFunctionsAndLocalFactors
 §§AL.3.2.3, AL.3.3.8, AL.3.6, AL.3.9.2 and AL.3.9.4.
@@ -918,6 +944,13 @@ types; then extend bilinearly.
   (`Γ_ℝ(s) ∼ 2/s` and `ζ(0) = −1/2`; `Γ_ℝ(1) = 1`). It is unbounded on every strip containing `0` or `1`, so
   it fails the strip predicate of §AL.3.9.2 itself; the bound needed is the one of §AL.3.9.4 away from the
   poles, and `Λ₁(s) + 1/s − 1/(s − 1)` is entire and bounded on every vertical strip of finite width.
+- The constant divided out before applying §1.8: for `(π, π′) = (1, Δ₁₁)`, `L(1∞)L(Δ₁₁,∞) = I₁₁` and
+  `Γ(s, I₁₁) = 2(2π)^{−11/2}(2π)^{−s}Γ(s + 11/2)`, so `κ = 2(2π)^{−11/2} ≈ 8.148·10⁻⁵ ≠ 1` and
+  `A = B = (2π)^{−1}`; for `(1, 1)`, `κ = 1` and `A = B = π^{−1/2}`, the data of the completed Riemann zeta
+  function in §1.8. A check at `(1, 1)` alone cannot see the constant.
+- Negative control for the pole positions: the supplier's pair `(1, |·|^{2i})` of `GL₁` has poles at
+  `−2i` and `1 − 2i`, not at `0` and `1`; it is excluded here because `|·|^{2i}` has nontrivial central
+  character, so it is not in `Π_alg`.
 
 ### 2.7 The Stark–Odlyzko cone inequality
 
@@ -1104,9 +1137,11 @@ Prove: let `Q` be admissible, `ℓ > 0` rational, `F` one of `F_ℓ` and `G_ℓ`
 vector; if rational intervals containing the four scalars of §2.4 attached to `F` at `ℓ` (`F̂(0)`,
 `F̂(i/(4π))`, `J_F(I_w)` for the `w` that occur, and `J_F(1 − e)`) give an upper bound for `β^F_Q(t, t)`
 that is strictly negative, then `μ_F(Q) < 0` (CT20 §2.4.4 for `F_ℓ`, §4.3 for `G_ℓ`). The proof combines §2.4
-with the validity of rational Gram witnesses in ComputationalNumberTheory §§4.29–4.33.
+with the interval arithmetic of ComputationalNumberTheory §§4.1–4.7 and the validity of rational Gram
+witnesses in its §§4.29–4.33; the intervals that every application of this statement uses (§§2.19, 2.21,
+4.13, 4.15 and Layer 5) are the rational enclosures of its §4.18.
 
-*Needs:* §§2.4, 2.9; ComputationalNumberTheory §§4.29–4.33.
+*Needs:* §§2.4, 2.9; ComputationalNumberTheory §§4.1–4.7, 4.18 and 4.29–4.33.
 
 **Checks.**
 
@@ -1236,8 +1271,8 @@ is the smallest case where the normalized minima differ.
 AnalyticNumberTheoryPartI §§1.3, 1.8; SmallRamificationAndAbelianVarietyBaseCases §§1.5–1.7;
 AutomorphicLFunctionsAndLocalFactors §§AL.1.4, AL.3.2.3, AL.3.3.8, AL.3.6, AL.3.9.2, AL.3.9.4;
 AutomorphicFormsOnReductiveGroups §7.2; Tau Ceti's level-one newform basis
-(`HeckeRing.GL2.Newform.basis`, `TauCeti.cuspFormsNew_one`); ComputationalNumberTheory §§4.17,
-4.17a, 4.26, 4.29–4.34; Mathlib's Rayleigh quotient and level-one dimension formula; Layer 1.
+(`HeckeRing.GL2.Newform.basis`, `TauCeti.cuspFormsNew_one`); ComputationalNumberTheory §§4.1–4.7,
+4.17, 4.17a, 4.18, 4.26, 4.29–4.34; Mathlib's Rayleigh quotient and level-one dimension formula; Layer 1.
 
 ## Layer 3: Arthur parameters, packet characters and triangular counts
 
@@ -1343,8 +1378,8 @@ holomorphic discrete series range is the separate condition `k_g > g` (CT20 §5.
 - Regularity of the infinitesimal character is the stated condition on the `a_i`.
 - For `k_g > g`, `ρ_k` is a holomorphic discrete series and the infinitesimal character is regular.
 
-*Needs:* AutomorphicFormsOnReductiveGroups §§6.7–6.8 with the extension requested there;
-ModularityAndLanglandsExtensions §3.22.
+*Needs:* AutomorphicFormsOnReductiveGroups §2.4 (discrete series) and §§6.7–6.8 with the extension
+requested there; ModularityAndLanglandsExtensions §3.22.
 
 **Checks.**
 
@@ -1357,19 +1392,32 @@ ModularityAndLanglandsExtensions §3.22.
 
 ### 3.5 The regular holomorphic packet
 
-Prove: if `k_g > g` and `ψ ∈ Ψ₁(Sp_{2g})` has infinitesimal weights `0, ±(k_i − i)`, then every `π_i` is
-regular, `I_odd = {i₀}`, every `i ∈ I_even` has `n_id_i ≡ 0 mod 4`, and `ρ_k` lies in the real packet of
-`ψ` exactly when `d_{i₀} = 1`, with multiplicity one. Its character is `χ(s_i) = (−1)^{n_id_i/4}` for
-even `d_i` and `χ(s_i) = (−1)^{e_i}` for odd `d_i`, where `e_i` counts the odd `j ∈ {1, …, g}` with `k_j − j`
-a weight of `π_i` (CT20 §5.2.1, (5.2.1)).
+Prove the level-one shape of these parameters: if `k_g > g` and `ψ ∈ Ψ₁(Sp_{2g})` has infinitesimal weights
+`0, ±(k_i − i)`, then these `2g + 1` weights are distinct (`k_i − i ≥ k_g − g > 0` decreases strictly),
+every `π_i` is regular, `I_odd = {i₀}` is a singleton (a block `π_i[d_i]` with `n_id_i` odd carries the
+weight `0`, which occurs once), and every `i ∈ I_even` has `n_id_i ≡ 0 mod 4` (CT20 §5.2.1, p. 42): for even
+`d_i` the class `π_i` is symplectic of even rank, and for odd `d_i` it is orthogonal of even rank with
+simple nonzero weights, so `L(π_i,∞)` is a sum of `n_i/2` summands `I_v` with `v` even and
+`1 = det L(π_i,∞) = e^{n_i/2}` (§§1.4 and 1.8). Then specialize to `Ψ₁(Sp_{2g})` the regular holomorphic
+occurrence criterion of ModularityAndLanglandsExtensions §3.21 (CT20 (5.2.1)), which is imported and not
+proved again: `ρ_k` lies in the real packet of `ψ` exactly when `d_{i₀} = 1`, with multiplicity one, and its
+character on the generators `s_i` (`i ∈ I_even`) of `C_ψ` in §3.2 is `χ(s_i) = (−1)^{n_id_i/4}` for even
+`d_i` and `χ(s_i) = (−1)^{e_i}` for odd `d_i`, where `e_i` counts the odd `j ∈ {1, …, g}` with `k_j − j` a
+weight of `π_i`. Prove that both exponents are integers determined by the level-one data: `n_id_i/4` by the
+congruence above, and `e_i` through the weights of `π_i` of §1.6.
 
-*Needs:* §§3.2, 3.4; ModularityAndLanglandsExtensions §3.21.
+*Needs:* §§1.4, 1.6, 1.8, 3.1, 3.2, 3.4; ModularityAndLanglandsExtensions §3.21 with its standing
+premises.
 
 **Checks.**
 
 - `ψ = Δ_w[2] ⊕ [1]`, `g = 2`: `I_odd` is the `[1]` block with `d = 1`, and `χ(s₁) = (−1)^{4/4} = −1`.
-- The equivalence with `d_{i₀} = 1` is two-sided: a regular parameter with `d_{i₀} = 3` does not contain
-  `ρ_k`.
+- The equivalence with `d_{i₀} = 1` is two-sided: `ψ = Δ₁₁[2] ⊕ [3]` of `Sp₆` (dimension `4 + 3 = 7`) has
+  the weights `±6, ±5` and `±1, 0`, which are `0, ±(k_i − i)` for `k = (7, 7, 4)` with `k₃ = 4 > 3`; its even
+  block has `n d = 4 ≡ 0 mod 4`, but its odd block has `d_{i₀} = 3`, so `ρ_{(7,7,4)}` is not in its packet.
+- Negative control for the singleton `I_odd`: `Sym²Δ₁₁[1] ⊕ [3] ⊕ [1]` (dimension `3 + 3 + 1 = 7`) has three
+  odd blocks and the weight `0` three times, while `k_g > g` gives it once; three odd blocks never occur in
+  the regular range, and §3.12 treats them in the scalar case (H).
 - Counting the even positions `j` instead of the odd ones gives the same parity: for odd `d_i`,
   `n_id_i ≡ 0 mod 4` forces `n_i ≡ 0 mod 4`, so `π_i` has an even number `n_i/2` of positive weights,
   each equal to exactly one `k_j − j`.
@@ -1609,6 +1657,11 @@ rank, and the same class may occur with several `d`.
 - The induction is on `m_G`, the dual standard dimension, not on the motivic weight.
 - The nonsimple parameter `Δ₁₇[2] ⊕ Δ₁₇[4] ⊕ [1]` of `Sp₁₂` (dimension `4 + 8 + 1 = 13`) uses one
   class at two lengths; it is enumerated once with that class, not as two independent classes.
+- Negative control for positive rank: `SO₁` is the trivial group, with `m_G = 0` and
+  `EP(SO₁; 0) = dim H⁰ = 1` from the constants, but `Π_alg` has no class of rank zero, so no simple
+  parameter defines `κ` and `N⊥` of the empty weight vector is `0`; the relation is stated for the
+  permitted groups of positive rank, and the trivial group enters only as the base value
+  `T_ell = EP = 1` of the Levi recursion of §4.3.
 
 ### Examples
 
@@ -1637,7 +1690,7 @@ weights `0, ±(k − 1)`, the adjoint `Sym²Δ_{k−1}` of an elliptic eigenform
 ### Dependencies
 
 ModularityAndLanglandsExtensions §§3.4, 3.8, 3.15, 3.17, 3.20–3.22 with its standing premises;
-AutomorphicFormsOnReductiveGroups §§2.2, 6.7–6.8; AutomorphicSpectralTheory §§4.4–4.5, 6.19;
+AutomorphicFormsOnReductiveGroups §§2.2, 2.4, 6.7–6.8; AutomorphicSpectralTheory §§4.4–4.5, 6.19;
 Layer 1.
 
 ## Layer 4: geometric torsion classes and exact mass recovery
@@ -1671,7 +1724,16 @@ characteristic function of `G(Ẑ)`, with `vol(G(ℤ_p)) = 1` and the Euler–Po
 **Checks.**
 
 - The identity class of `SO₃` has mass `−1/12`: masses are signed, not probabilities.
-- Two rational classes in one geometric class contribute to a single coefficient, not to two.
+- Grouping by geometric class: in `SO₃` (the form `x₁x₃ + x₂²`) an involution is `−1` on a plane and
+  fixes the orthogonal line, which is nondegenerate; its `G(ℚ)`-class is determined by the square class
+  of the value of the form on that line, and the form, being isotropic, takes every value in `ℚ^×`. So
+  the one geometric class with characteristic polynomial `Φ₁Φ₂²` contains infinitely many rational
+  classes, and they share the single coefficient `1/4` of §4.12; coefficients indexed by rational classes
+  would form an infinite family.
+- Finite order is part of the definition, not a consequence of the characteristic polynomial: in
+  `Sp₂ = SL₂` the unipotent `u = [[1, 1], [0, 1]]` has the characteristic polynomial `(X − 1)²` of the
+  identity, but `u^r = [[1, r], [0, 1]] ≠ 1` for every `r ≥ 1` (upper-right entries `1, 2, 3, …` against
+  `0`), and every conjugate of `u` is unipotent and nontrivial, so its geometric class is not in `C(G)`.
 - A geometric torsion class with no integral representative at some prime has mass `0` (§4.7 gives
   such classes in `SO₃`: orders `4` and `6`).
 
@@ -1694,7 +1756,8 @@ centralizer at non-positive critical integers, which are rational. No sign or po
 
 Prove `EP(G; λ) = T_geom(G; λ)`, where the elliptic part of `T_geom` is `T_ell` of §4.1 and every term
 for a proper Levi subgroup `GL₁^a × GL₂^b × G′` is an explicit rational combination of the `T_ell(G′; λ′)`
-for smaller `G′` and, when `b > 0`, of `T_ell(SO₃; λ″)`; the coefficients, Weyl-length signs and weight
+for smaller `G′` of the same type (permitted, or the trivial group of rank zero, for which
+`T_ell = EP = 1`) and, when `b > 0`, of `T_ell(SO₃; λ″)`; the coefficients, Weyl-length signs and weight
 shuffles are those of Tai17 Theorems 3.3.3–3.3.5, and Levi factors `GL_d` with `d ≥ 3` contribute zero
 (CT20 (1.4.1)–(1.4.2); Tai17 §3.3.4).
 
@@ -1767,7 +1830,8 @@ even. The spinor norm is Tau Ceti's `CliffordAlgebra.orthogonalSpinorNorm`, in w
 its formula; on the even-dimensional `V₋` the discriminants of the polar form and of the associated form
 `B(x, x) = q(x)` differ by the square `2^{dim V₋}`, so the class `disc(q|V₋)` is the same for both.
 
-*Needs:* SymplecticReidemeisterTorsionModSquares §4.1; Tau Ceti `CliffordAlgebra.orthogonalSpinorNorm`.
+*Needs:* SymplecticReidemeisterTorsionModSquares §4.1; OrthogonalSpinGroups Layer 1, which is Tau Ceti's
+`CliffordAlgebra.orthogonalSpinorNorm`.
 
 **Checks.**
 
@@ -1839,24 +1903,35 @@ integers.
 
 ### 4.9 The sizes of the index sets
 
-Prove (CT20 Tables 2–3): `|P(Sp_{2n})/∼| = 3, 12, 32, 92, 219, 530, 1158, 2521` for `n = 1, …, 8`; for
-`SO_d` with `d = 3, 4, 5, 7, 8, 9, 11, 12, 13, 15, 16, 17`, `|P(SO_d)/∼| = 5, 12, 19, 59, 92, 165, 419, 530,
-1001, 2257, 2521, 4877` and `|P₁(SO_d)/∼| = 3, 6, 12, 34, 40, 99, 244, 211, 598, 1339, 992, 2948`. The
-count for `Sp₁₄` is `1158`; the printed value `1157` is inconsistent with the definition.
+Prove (CT20 Tables 2–3) the relations that reduce every count to symplectic ones, and the counts the
+later rank statements use. For every `n ≥ 1`, `P(SO_{2n}) = P(Sp_{2n})` with the same relation `∼`, both
+being the products of cyclotomic polynomials of degree `2n` with even `a₂`; and `P ↦ Φ₁P` is a bijection
+from `P(Sp_{2n})` onto `P(SO_{2n+1})`, since in odd degree `a₂` even forces `a₁` odd. For `d_G` even,
+`|P(G)/∼| = (|P(G)| + |P(G)^−|)/2`, where `P(G)^−` is the set of `P` with `P^− = P`, because `P ↦ P^−` is an
+involution (§4.4); the same holds for `P₁(G)`, which is stable under `∼` (§4.8). The values used as column
+counts in §§4.11–4.17 are `|P₁(SO₃)| = 3`, `|P₁(SO₁₅)| = 1339`, `|P(Sp₁₄)/∼| = 1158`,
+`|P₁(SO₁₆)/∼| = 992`, `|P₁(SO₁₇)| = 2948` and `|P(Sp₁₆)/∼| = 2521`. The source prints `1157` for `Sp₁₄`,
+which is inconsistent with the definition.
 
 *Needs:* §§4.4, 4.8.
 
 **Checks.**
 
-- `|P(SO₄)/∼| = |P(Sp₄)/∼| = 12`: both are the degree-4 products with even `a₂` modulo negation.
-- `|P₁(SO₃)| = 3`, matching the three nonzero masses of §4.12.
-- The `Sp₁₄` count is `1158`, one more than the printed table, by direct enumeration of exponent
-  vectors of degree 14 modulo negation.
+- Degree 2: `P(Sp₂)` has the five elements `Φ₁², Φ₂², Φ₃, Φ₄, Φ₆`, of which only `Φ₄` is fixed by
+  negation, so `|P(Sp₂)/∼| = (5 + 1)/2 = 3`, the three classes of §4.4; and `P(SO₃) = Φ₁ · P(Sp₂)` has five
+  elements, of which `3` lie in `P₁(SO₃)`, matching the three nonzero masses of §4.12.
+- Degree 4: `19` products with even `a₂`, of which `5` are fixed by negation, give
+  `|P(SO₄)/∼| = |P(Sp₄)/∼| = (19 + 5)/2 = 12`, and `|P(SO₅)| = 19`.
+- Degree 14: `2257` products with even `a₂`, of which `59` are fixed by negation, give
+  `|P(Sp₁₄)/∼| = (2257 + 59)/2 = 1158`, one more than the printed value; `|P(SO₁₅)| = 2257` is the same
+  count, by the bijection with `P(Sp₁₄)`. Counting orbits as `|P(G)|/2` would give the non-integer
+  `1128.5`.
 
 ### 4.10 Exact torsion characters
 
-For an integral polynomial `P` of degree `d_G` let `e_j` be its elementary symmetric functions of the
-roots (`e₀ = 1`, `e_j = 0` outside `[0, d_G]`), and for a nonnegative highest weight `λ` let `λ′` be the
+For a monic `P ∈ ℤ[X]` of degree `d_G` (in the application `P ∈ P(G)`, a characteristic polynomial of an
+element of `G`) let `e_j` be the elementary symmetric functions of its roots counted with multiplicity
+(`e₀ = 1`, `e_j = 0` outside `[0, d_G]`), and for a nonnegative highest weight `λ` let `λ′` be the
 conjugate partition and `l = λ₁`. Prove that the symplectic character at an element with characteristic
 polynomial `P` is `det(e_{λ′_i − i + j} − e_{λ′_i − i − j})_{1 ≤ i, j ≤ l}`, that the character of the full
 orthogonal group is `1` for `l = 0` and `(1/2) det(e_{λ′_i − i + j} + e_{λ′_i − i − j + 2})` otherwise, and
@@ -1864,7 +1939,7 @@ that for `SO_{2n}` with `λ_n > 0` the orthogonal value is `χ_λ + χ_{λ^θ}`,
 (KT87, as used in CT20 §§1.4 and 3.1). Deduce `tr(P; λ)` of §4.5 exactly, including at singular elements,
 from the Weyl character formula of LieHighestWeight Layer 6.
 
-- `e_j = (−1)^j` times the coefficient of `X^{d_G − j}` in `P`.
+- For monic `P`, `e_j = (−1)^j` times the coefficient of `X^{d_G − j}` in `P`, for `0 ≤ j ≤ d_G`.
 - The empty partition gives the value `1`.
 - In `SO_{2n}`, `tr(P; λ)` is the orthogonal value multiplied by the fibre size of `P` and divided by the
   size of the outer orbit of `λ`.
@@ -1879,12 +1954,17 @@ from the Weyl character formula of LieHighestWeight Layer 6.
   `x² + x + 1 + x⁻¹ + x⁻²`, and is `5` at `P = Φ₁³`.
 - In `SO_{2n}`, for `λ_n > 0` and a one-class fibre the orthogonal value must be halved, and for `λ_n = 0`
   and a two-class fibre the trace sum must be doubled; ignoring either factor of two gives wrong rows.
+- Negative control for monicity: `P = 2(X − 1)² = 2X² − 4X + 2` has the roots `1, 1`, so
+  `(e₀, e₁, e₂) = (1, 2, 1)`, while the signed coefficients are `(2, 4, 2)`; for the monic `(X − 1)²` both
+  are `(1, 2, 1)`. No element of `G` has a nonmonic characteristic polynomial, so the hypothesis costs
+  nothing.
 
 ### 4.11 Mass recovery from vanishing rows
 
 Prove (CT20 §1.4 Strategy and §3.3, (P1′)–(P2′)): let `Λ` be a finite set of dominant weights of `G`
 trivial on the centre, with `λ_n ≥ 0` in `SO_{2n}`, such that `N⊥(w(λ)) = 0` for every `λ ∈ Λ`. Suppose the
-masses of all permitted groups of smaller dual dimension are known, and the matrix
+masses of all permitted groups of smaller dual dimension are known (the trivial group of rank zero
+contributes its single value `1` through §4.3), and the matrix
 `(e_P tr(P; λ))_{λ ∈ Λ, P ∈ P₁(G)/∼}` has rank `|P₁(G)/∼|`. Then by §§3.16 and 4.3 the masses solve a
 rational system `A m = b` with known right-hand side, and they are its unique solution.
 
@@ -1892,7 +1972,10 @@ rational system `A m = b` with known right-hand side, and they are its unique so
 
 **Checks.**
 
-- Full row rank does not suffice when `|Λ| > |P₁(G)/∼|`; full column rank is the condition.
+- Full column rank is the condition, and full row rank does not replace it when there are fewer rows
+  than columns: `A = [[1, 0, 0], [0, 1, 0]]` has full row rank `2`, yet `A m = 0` has the two solutions
+  `(0, 0, 0)` and `(0, 0, 1)`, and its null space has dimension `1`. A matrix with more rows than columns
+  never has full row rank.
 - A rational vector solving the system without the vanishing of every row of `Λ` does not determine the
   masses.
 - For `SO₃`, `Λ` with three weights and the three columns of `P₁(SO₃)` already suffices (CT20 Table 4).
@@ -2002,17 +2085,20 @@ thus determined.
 
 ### 4.18 The values of the masses
 
-Prove that the masses of §§4.12–4.17 are the rational numbers listed in the tables accompanying CT20
-Theorems 6–7 (p. 12); this identifies each listed value with the intrinsic mass through §4.11. Prove also,
+Prove that the masses of §§4.12–4.17 are the unique solutions of the rational systems of §4.11 as
+instantiated in §§4.12, 4.13, 4.15 and 4.17 (CT20 Theorems 6–7, p. 12, which print no values and refer to
+the authors' online tables for them); no table of values is taken over, and the only values stated here
+are those of `SO₃` in §4.12. Prove also,
 for `G` one of the groups of CT20 Theorem 6, namely `SO_d` with `d ≤ 17` and `G(ℝ)` admitting discrete
 series, and `Sp_{2n}` with `n ≤ 7`, that `m_P ≠ 0` for every `P ∈ P₁(G)` except six indices for `SO₁₃` and
 six for `SO₁₇` (CT20 Remark 3.10, p. 33). The nonvanishing clause makes no assertion about `Sp₁₆`.
 
-*Needs:* §§4.11, 4.15, 4.17.
+*Needs:* §§4.11–4.13, 4.15, 4.17.
 
 **Checks.**
 
-- The `SO₃` row of the tables is `(−1/12, 1/4, 1/3)` on `P₁(SO₃)` = `{Φ₁³, Φ₁Φ₂², Φ₁Φ₃}`.
+- The `SO₃` masses of §4.12 are `(−1/12, 1/4, 1/3)` on `P₁(SO₃)` = `{Φ₁³, Φ₁Φ₂², Φ₁Φ₃}`, all nonzero, as
+  the nonvanishing clause asserts for `SO₃`.
 - For the groups of CT20 Theorem 6 the number of exceptional zero masses is twelve in total, so `P₁` is
   almost sharp but not sharp there.
 - The range of the nonvanishing clause is that of CT20 Theorem 6: `Sp₁₄` is in it (`14 ≤ 14`) and `Sp₁₆`
@@ -2287,7 +2373,8 @@ Zharkovskaya relation, CT20 §5.3 footnote 17).
 - `ker Φ_g = S_k(Γ_g)`, and `Φ_g` of a cusp form is `0`.
 - For an eigenform with `Φ_g F ≠ 0`, the standard `L`-function relation above holds.
 
-*Needs:* AutomorphicBundles §§11.1–11.2, 11.9, 11.16, 12.10, 12.11 and 12.15.
+*Needs:* AutomorphicBundles §§11.1–11.2, 11.9, 11.16, 12.10, 12.11, 12.13 and 12.15 (§12.13 for the
+Hecke operators at the level `Sp_{2g}(ℤ)`, which contains `−1` and is not neat).
 
 **Checks.**
 
@@ -2296,7 +2383,7 @@ Zharkovskaya relation, CT20 §5.3 footnote 17).
 - `Φ` of the genus-`g` Eisenstein series of weight `k` is the genus-`(g − 1)` one, and `Φ` of a constant
   of weight `0` is the same constant.
 
-### 6.2 Boundary, vanishing and spanning theorems at level one
+### 6.2 Boundary and vanishing theorems at level one
 
 Prove the following statements, each attributed and located in CT20:
 
@@ -2308,16 +2395,18 @@ Prove the following statements, each attributed and located in CT20:
 - Weissauer: if `g ≥ 2k ≥ 0`, every element of `M_k(Γ_g)` is square-integrable, `M_k(Γ_g) = L²_k(Γ_g)` (CT20
   §5.5, from Weissauer's Satz 3).
 - Resnikoff and Freitag: `S_k(Γ_g) = 0` for `g > 2k` (CT20 (5.5.2)).
-- Freitag: for `g > 2k`, `M_k(Γ_g)` is spanned by theta series of even unimodular lattices of rank `2k` when
-  `k ≡ 0 mod 4`, and is `0` otherwise (CT20 (5.5.2)).
+
+The spanning companion of these statements in the same range, Freitag's theorem that `M_k(Γ_g)` is
+spanned by lattice theta series for `g > 2k`, needs the theta map and is the last target of §6.4.
 
 *Needs:* §6.1; AutomorphicSpectralTheory §4.10; AutomorphicFormsOnReductiveGroups §7.2a with the
-extension requested there; §6.4 for the theta series in the last item.
+extension requested there.
 
 **Checks.**
 
 - `M₁₃(Γ₉) = 0` by odd genus and odd weight; `M₁₃(Γ₈) = S₁₃(Γ₈)`.
-- `S₄(Γ₉) = 0` by Resnikoff–Freitag, while `M₄(Γ₉) ∋ θ₉[E₈] ≠ 0`.
+- `S₄(Γ₉) = 0` by Resnikoff–Freitag (`9 > 8`), so `Φ₉ : M₄(Γ₉) → M₄(Γ₈)` is injective, its kernel being
+  `S₄(Γ₉)` by §6.1; the vanishing concerns cusp forms only and says nothing about `M₄(Γ₉)` itself.
 - The strict inequality matters: `S₁₂(Γ₂₄)` need not vanish by this statement at `g = 2k = 24`; in fact
   §7.9 shows it is `0`, but `S₁₃(Γ₂₄) ≠ 0` with `g < 2k = 26`.
 
@@ -2351,8 +2440,8 @@ Completed/IntegralLattices Layer 1; IntegralLattices §4G.
 - On `ℂ[X₈]`, `T_p[E₈]` is the number of `p`-neighbours of `E₈` times `[E₈]`, the number of isotropic
   lines of the quadratic space `E₈/pE₈`; for `p = 2` it is `(2⁴ − 1)(2³ + 1) = 135`.
 - The weights on the two sides of the duality in rank 16. On `ℂ[X₁₆]`, `T₂` has the cross counts
-  `N₂(D₁₆⁺, E₈ ⊕ E₈) = 12870` and `N₂(E₈ ⊕ E₈, D₁₆⁺) = 18225` (CL14 III §2, p. 63), and
-  `|O(E₈ ⊕ E₈)| / |O(D₁₆⁺)| = 405/286` (CL14 III §2, p. 64); write `|O(E₈ ⊕ E₈)| = 405u` and
+  `N₂(D₁₆⁺, E₈ ⊕ E₈) = 12870` and `N₂(E₈ ⊕ E₈, D₁₆⁺) = 18225` (CL14 III §3.1, pp. 63–64), and
+  `|O(E₈ ⊕ E₈)| / |O(D₁₆⁺)| = 405/286` (CL14 III §3.2, p. 64); write `|O(E₈ ⊕ E₈)| = 405u` and
   `|O(D₁₆⁺)| = 286u`. With these automorphism-order weights both cross terms of `( | )` equal
   `12870 · 405u = 18225 · 286u = 5212350u`; with the reciprocal weights on the free basis they would be
   `12870/(405u) = 286/(9u)` and `18225/(286u)`, which differ. The reciprocal weights
@@ -2379,10 +2468,21 @@ MetaplecticAutomorphicForms §3.21 (CT20 §5.3.2; CL14 V and VII §1).
 - `θ₁` agrees with the genus-one theta series of ThetaSeries Layer 5 through the rational-to-real lattice
   bridge.
 
-*Needs:* §§6.1, 6.3; ThetaSeries Layers 1 and 5; MetaplecticAutomorphicForms §§3.21 and 5.1.
+Prove also Freitag's spanning theorem in the singular range (CT20 (5.5.2)): for `g > 2k ≥ 0`, `M_k(Γ_g)` is
+spanned by the theta series `θ_g[L]` of the even unimodular lattices of rank `2k` when `k ≡ 0 mod 4`, and
+is `0` otherwise; that is, `θ_g : ℂ[X_{2k}] → M_k(Γ_g)` is surjective, with `X_{2k}` empty when `8 ∤ 2k`.
+It completes the vanishing statements of §6.2 in the same range.
+
+*Needs:* §§6.1, 6.3; ThetaSeries Layers 1 and 5; MetaplecticAutomorphicForms §§0.15, 2.4c, 3.21 and 5.1
+(§§0.15 and 2.4c for the Weil representation behind the theta kernel); the theta map constructed above
+for the spanning theorem.
 
 **Checks.**
 
+- Spanning at `k = 4`, `g = 9`: `X₈ = {E₈}` and `9 > 8`, so `M₄(Γ₉) = ℂ θ₉[E₈]`, a line whose generator
+  has constant coefficient `1`, while `S₄(Γ₉) = 0` (§6.2). At `k = 2`, `g = 5`: `4 ∤ 2`, there is no even
+  unimodular lattice of rank `4`, and `M₂(Γ₅) = 0`; a reading of the theorem as nonvanishing in every
+  weight would be false there.
 - Every `θ_g[L]` has constant coefficient `1`.
 - `θ₁[E₈] = E₄` (ThetaSeries Layer 8).
 - The normalization is fixed by the constant coefficient, not by the Siegel operator: rescaling every
@@ -2502,7 +2602,8 @@ Prove (CT20 Lemma 5.7, from Rallis and Mœglin–Waldspurger): if `v` has degree
 `g > n − 1 − g₀`, then `θ_g(v)` is square-integrable and `ψ_F = ψ_G ⊕ [2g − n + 1]`; it is not cuspidal, since
 `g > g₀` gives `Φ θ_g(v) = θ_{g−1}(v) ≠ 0`.
 
-*Needs:* §§6.1, 6.5, 6.9; MetaplecticAutomorphicForms §§3.10 and 6.14.
+*Needs:* §§6.1, 6.5, 6.9; MetaplecticAutomorphicForms §§3.4, 3.5, 3.7, 3.10, 5.6 and 6.14 (the big and
+small theta modules, Howe duality and the global theta lift behind the square-integrability).
 
 **Checks.**
 
@@ -2511,18 +2612,31 @@ Prove (CT20 Lemma 5.7, from Rallis and Mœglin–Waldspurger): if `v` has degree
   `[7] ⊕ [1] ⊕ [9]`.
 - `2g + 1 > g + g₀ + 1 > n` follows from the hypotheses, so the second branch of §6.9 applies.
 
-### 6.11 Central values of two PGL₄ classes
+### 6.11 Central orders of the self-dual classes of motivic weight at most 22
 
-Prove: the completed standard `L`-functions of `Δ₁₉,₇` and `Δ₂₁,₁₃` do not vanish at `s = 1/2` (CL14 IX
-Proposition 3.38: for self-dual `π` of motivic weight at most 22, the order at `1/2` is `0` when `ε(π) = 1`
-and `1` otherwise, and `ε(π) = −1` exactly for `Δ₁₇` and `Δ₂₁`).
+Prove (CL14 IX Proposition 3.38, p. 322): for every self-dual `π ∈ Π_alg` of motivic weight at most 22, the
+completed standard `L`-function `Λ(s, π) = Λ(s, π × 1)` has order `(1 − ε(π))/2` at `s = 1/2`, that is `0`
+when `ε(π) = 1` and `1` when `ε(π) = −1`; and `ε(π) = −1` exactly for `π = Δ₁₇` and `π = Δ₂₁`. Route: the
+functional equation `Λ(s, π) = ε(π)Λ(1 − s, π)` makes the order `r` even exactly when `ε(π) = 1`, so it
+suffices to prove `r < 2`. For `π = 1`, `Λ(1/2, 1) = Γ_ℝ(1/2)ζ(1/2) ≠ 0`. For each of the ten nontrivial
+classes of §5.3, with `V = L(π∞)`, apply §2.6 to `x = aπ + b·1` with `a, b ≥ 0` and a test function `F`
+satisfying (POS): the zero of order `r` of `Λ(s, π)` at the centre gives `Z^F(π, 1) ≥ rB_F`, so `r ≥ 2`
+would make `a²(A_F − J_F(V²)) + b²(A_F − J_F(1)) − 2ab(J_F(V) + B_F)` nonnegative for all `a, b ≥ 0`. By
+§2.12 this form is negative somewhere on the cone for `F = F_ℓ` at `ℓ = log 4`, where CL14 evaluates it
+(CL14 IX, proof of Proposition 3.38, p. 322), hence at a rational `ℓ` near `log 4`, the inequality being
+strict and the scalars of §2.4 continuous in `ℓ`; the rational certificate is that of §2.16. The root
+numbers are those of §1.8 on the list of §5.3.
 
-*Needs:* §§2.6, 5.3.
+*Needs:* §§1.8, 2.2, 2.4, 2.6, 2.8, 2.12, 2.16, 5.3; AutomorphicLFunctionsAndLocalFactors §AL.3.6.2.
 
 **Checks.**
 
-- `ε(Δ₁₉,₇) = ε(I₁₉)ε(I₇) = i²⁰ · i⁸ = 1` and `ε(Δ₂₁,₁₃) = i²² · i¹⁴ = 1`.
-- `ε(Δ₁₇) = i¹⁸ = −1`, so `Λ(1/2, Δ₁₇) = 0`.
+- `ε(Δ₁₉,₇) = ε(I₁₉)ε(I₇) = i²⁰ · i⁸ = 1` and `ε(Δ₂₁,₁₃) = i²² · i¹⁴ = 1`, so both central values are
+  nonzero; these are the instances that §§6.12 and 8.7 use.
+- `ε(Δ₁₇) = i¹⁸ = −1` and `ε(Δ₂₁) = i²² = −1`, so `Λ(s, Δ₁₇)` and `Λ(s, Δ₂₁)` vanish at `s = 1/2` to order
+  exactly `1`; parity alone allows `3`, which only the inequality excludes. Every other class of §5.3 has
+  root number `1`, for example `ε(Δ₂₁,₅) = i²² · i⁶ = 1` and `ε(Sym²Δ₁₁) = ε(I₂₂ + e) = i²³ · i = 1`.
+- `π = 1`: `ζ(1/2) ≈ −1.4604` and `Γ_ℝ(1/2) = π^{−1/4}Γ(1/4) > 0`, so the order is `0`, as `ε(1) = 1` requires.
 - The statement concerns the completed function; the Euler product does not converge at `s = 1/2`.
 
 ### 6.12 Böcherer's criterion in five cases
@@ -2558,10 +2672,11 @@ MetaplecticAutomorphicForms; the five cases are the ones used in §8.8.
 
 ### Dependencies
 
-AutomorphicBundles §§11.1–11.2, 11.9, 11.16, 12.10–12.11, 12.15; AutomorphicSpectralTheory §4.10;
-AutomorphicFormsOnReductiveGroups §§7.2a, 7.4–7.5; MetaplecticAutomorphicForms §§3.1, 3.10, 3.21, 5.1, 6.14;
-OrthogonalTamagawaAndLatticeMass §§3.1, 4.1–4.2; ThetaSeries Layers 1, 5, 8; Completed/IntegralLattices
-Layer 1; IntegralLattices §4G; AutomorphicLFunctionsAndLocalFactors §AL.3.7; Layers 3 and 5.
+AutomorphicBundles §§11.1–11.2, 11.9, 11.16, 12.10–12.11, 12.13, 12.15; AutomorphicSpectralTheory §4.10;
+AutomorphicFormsOnReductiveGroups §§7.2a, 7.4–7.5; MetaplecticAutomorphicForms §§0.15, 2.4c, 3.1, 3.4, 3.5,
+3.7, 3.10, 3.21, 5.1, 5.6, 6.14; OrthogonalTamagawaAndLatticeMass §§3.1, 4.1–4.2; ThetaSeries Layers 1, 5, 8;
+Completed/IntegralLattices Layer 1; IntegralLattices §4G; AutomorphicLFunctionsAndLocalFactors §§AL.3.6.2,
+AL.3.7; Layers 1–3 and 5.
 
 ## Layer 7: Siegel cusp dimensions and the four weight-thirteen forms
 
@@ -2895,9 +3010,16 @@ Rank24LatticeConstructions Layer 6; `TauCeti.BinaryGolay.code`, `TauCeti.BinaryG
 
 - The average characteristic polynomial has coefficient `2` at `t¹⁶`, `t¹²` and `t⁸`: the `M₂₄`-invariants of
   `⋀^g` have dimension two for `g = 8, 12, 16`, one of which is not `N`-invariant.
-- An element `S ∈ G₂₄` acts on `σ_T` by `(−1)^{|S ∩ T|}`; since codewords meet in an even number of points,
-  `σ_C` is `N`-invariant, while `C + {p}` with `p ∉ C` is negated by the complement of `C`.
-- A non-orientable subset gives `σ = 0`: its stabilizer contains an odd permutation of it.
+- Sign changes act diagonally on wedge monomials, not on orbit sums: the sign change of a codeword `S`
+  sends the monomial `β_T = e_{t₁} ∧ ⋯ ∧ e_{t_g}` to `(−1)^{|S ∩ T|}β_T`. For `T` a codeword every monomial
+  `β_{γT}` of `σ_T` has `γT ∈ G₂₄`, which meets `S` evenly, so `σ_C` is fixed by every sign change. For
+  `T = {p}`, `σ_T = Σ_i e_i`, and an octad `S ∋ p` sends it to `Σ_i e_i − 2Σ_{i ∈ S} e_i`, with eight negative
+  and sixteen positive coefficients: neither `σ_T` nor `−σ_T`. For the orientable `T = C + {p}` with
+  `p ∉ C`, the codeword `Ω ∖ C` meets `T` in `{p}`, so the coefficient of `β_T` changes sign and `σ_T` is
+  not `N`-invariant.
+- A non-orientable subset `T` has no orbit sum: an element of its stabilizer permutes `T` oddly and sends
+  `β_T` to `−β_T`, so a sum over cosets of the stabilizer is not well defined, the sum over all of `M₂₄`
+  of the translates of `β_T` is `0`, and every invariant has coefficient `0` on `β_T`.
 
 ### 8.5 Invariant alternating forms of Niemeier lattices
 
@@ -2983,20 +3105,44 @@ AlgebraicCodingTheory Layer 5.
 ### 8.7 The five order computations
 
 Prove (BoechererNote pp. 2–3): in the five cases of §6.12 the function `R(s)` has order `0` at `s = 0` with a
-nonzero leading coefficient. Writing `Λ_A = L(s, F_g, St) Γ_A(s)` with `Γ_A` the archimedean factor of the
-Arthur parameter (a product of `Γ_ℝ` and `Γ_ℂ`, distinct from Böcherer's `γ_g^k`), the orders at `s = 0` of
-`(C, 1/ω, γ, Λ_A, 1/Γ_A)` are `(0, 0, 0, −1, 1)` for `(g, n, ν) = (8, 16, 5)`, and `(0, 0, 0, 0, 0)`,
-`(0, 0, 0, −1, 1)`, `(0, −4, −4, −1, 9)`, `(0, −12, −12, −1, 25)` for `n = 24`, `ν = 1` and `g = 8, 12, 16, 24`.
-The nonvanishing at the two central points uses §6.11.
+nonzero leading coefficient. Write `Λ_A(s) = L(s, F_g, St) Γ_A(s)`, with `Γ_A` the archimedean factor of the
+Arthur parameter `ψ` of §7.10 (a product of `Γ_ℝ` and `Γ_ℂ`, distinct from Böcherer's `γ_g^k`), so that `R`
+is the product of the five factors `C_g(n/2 + s, ν)`, `1/ω_g(n/2 + 2s)`, `γ_g^k(s)`, `Λ_A(n/2 − g + 2s)` and
+`1/Γ_A(n/2 − g + 2s)`. Prove that their orders at `s = 0` sum to `0` and that each has a nonzero leading
+coefficient, computing the orders from the definitions of §6.12 and the blocks of `ψ`:
 
-*Needs:* §§3.1, 6.11, 6.12, 7.10; AutomorphicLFunctionsAndLocalFactors §AL.1.4.
+- `C_g(n/2 + s, ν)` is a product of the linear factors `i/2 − n/2 − j − s` with `0 ≤ i ≤ g − 1 < n`, none of
+  which vanishes at `0`, so its order is `0`;
+- `1/ω_g(n/2 + 2s)` has order `−max(0, g − n/2)`, one for each trivial zero `ζ(n − 2i)` with `n/2 < i ≤ g`,
+  the values `ζ(n/2)` and `ζ(0) = −1/2` being nonzero;
+- `γ_g^k(s)` has order minus the number of `i ∈ {0, …, g − 1}` with `i ≡ g + 1 mod 2` and `i ≥ 2k − g − 1`,
+  the poles of `Γ(k + s − (g + 1 + i)/2)`; its denominator `Γ_g(k + s)` has neither zero nor pole at `0`;
+- `Λ_A` at `n/2 − g` is the product over the blocks `π[d]` of `ψ` of the completed `Λ(n/2 − g + (d − 1)/2 − r, π)`,
+  `0 ≤ r < d`: each factor with `π = 1` contributes the pole of `Λ(s, 1)` when its argument is `0` or `1`, and
+  every other factor is finite and nonzero, by the functional equation, the boundary nonvanishing of
+  AutomorphicLFunctionsAndLocalFactors §AL.3.6.3 and, at the central point, §6.11;
+- `Γ_A` at `n/2 − g` has a simple pole for each factor `Γ_ℝ` at a non-positive even integer and each factor
+  `Γ_ℂ` at a non-positive integer, and `1/Γ_A` has the opposite order.
+
+*Needs:* §§3.1, 6.11, 6.12, 7.10; AutomorphicLFunctionsAndLocalFactors §§AL.1.4 and AL.3.6.2–AL.3.6.3.
 
 **Checks.**
 
-- Every row sums to `0`.
-- For `g = 24` the order of `ω₂₄(12 + 2s)` at `0` is the number of `i ≤ 24` with `24 − 2i < 0`, that is `12`, and
-  `Γ_A` has order `−13 − 12 = −25` at `s = −12`.
-- For `g = 16`, `γ` has order `−4`: the odd `i < 16` with `i ≥ 2k − g − 1 = 9` are `9, 11, 13, 15`.
+- `(g, n, ν) = (16, 24, 1)`, `ψ = Δ₁₇[8] ⊕ [9] ⊕ [7] ⊕ [1]`, argument `−4`: the block `[9]` has the arguments
+  `0, −1, …, −8` and gives the one pole of `Λ_A`; `Γ_A` has the poles of `Γ_ℝ` at `0, −2, −4, −6, −8` (block
+  `[9]`), `−2, −4, −6` (block `[7]`) and `−4` (block `[1]`), nine in all, while the `Γ_ℂ` factors of `Δ₁₇[8]`
+  sit at `8, 7, …, 1`; with `−4` from `1/ω₁₆` and `−4` from `γ` (the odd `i` from `9` to `15`) the total is
+  `0 − 4 − 4 − 1 + 9 = 0`.
+- `(24, 24, 1)`, `ψ = Δ₁₁[12] ⊕ [25]`, argument `−12`: `1/ω₂₄` has order `−12`, `γ` has order `−12` (the odd
+  `i` from `1` to `23`), `Λ_A` has the one pole from the argument `0` of `[25]`, and `Γ_A` has `13` poles of
+  `Γ_ℝ` (at `0, −2, …, −24`) and `12` of `Γ_ℂ` (the factors of `Δ₁₁[12]` at `−1, …, −12`), so `1/Γ_A` has
+  order `25` and the total is `0 − 12 − 12 − 1 + 25 = 0`.
+- The same form `F₈`, of parameter `Δ₂₁,₁₃[4] ⊕ [1]`, in two cases: at the argument `4` of `(8, 24, 1)` every
+  factor is finite and nonzero, the arguments `11/2, …, 5/2` and `4` of `Λ_A` lying in the region of absolute
+  convergence and those of `Γ_A` being positive, so all five orders are `0`; at the argument `0` of
+  `(8, 16, 5)` the block `[1]` gives `Λ_A` the pole of `Λ(s, 1)` at `0` and `Γ_A` the pole of `Γ_ℝ` at `0`,
+  while the central factor `Λ(1/2, Δ₂₁,₁₃)` is nonzero by §6.11, so the orders of `Λ_A` and `1/Γ_A` are
+  `−1` and `1`. The orders depend on the argument, not on the form alone.
 
 ### 8.8 Harmonic theta realization of the four forms
 
@@ -3095,7 +3241,7 @@ It is injective because `S_k(Γ_{g+1}) = 0` for `g + 1 > 2k` (§6.2), and the di
 
 Prove (CT20 Corollary 5.15(2)): for `4 | k` and `g ≥ 2k`, `θ_g : ℂ[X_{2k}] → M_k(Γ_g)` is an isomorphism. Injectivity at
 `g = 2k` holds because the Fourier coefficient at the full Gram matrix of a basis of `L` distinguishes isometry
-classes, and propagates by `Φ θ_{g+1} = θ_g`; surjectivity for `g > 2k` is Freitag's theorem of §6.2, and at
+classes, and propagates by `Φ θ_{g+1} = θ_g`; surjectivity for `g > 2k` is Freitag's theorem of §6.4, and at
 `g = 2k` it follows from the surjectivity of `θ_{2k+1}` and of `Φ_{2k+1}` (§8.13). For `k = 0`, the rank-zero
 lattice maps to `1`.
 
