@@ -1,0 +1,22 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-CrystallineCohomologyPartII~1",
+  "head": "8bd69be96aec62ed81ff010dc641475dbd84c77b",
+  "pr": 2265,
+  "folder": "CrystallineCohomologyPartII",
+  "date": "2026-11-13",
+  "findings": 2,
+  "blocking": 1,
+  "notes": "Full review. Gate passed (all checks); depcheck 0 problems; Suggested.lean elaborates with sorry as the only warning; one-tactic probes fail on all 5 theorems. Seeded sample of 15 targets checked against BBE07, BS17, CR12, CR11, GNT19, NT20, ESN03, HW23, Tan18 (61 locators, all in place); 12 pinned line numbers exact; all supplier sections resolved on main or at open heads; 4 declared gaps precise and not already supplied. Findings: R01 (P2) two subjects the parent assigns to this Part II are declined with no owner named; R02 (P3) three Checks restate their statement. Seven source issues recorded (BS17, GNT19, CR12, NT20). Not verifiable: Stacks tags 02RH and 0BED; uncertified sources by locator only.",
+  "deferred": [
+   {
+    "id": "D01",
+    "severity": "P2",
+    "title": "Two subjects the parent assigns to this Part II are disowned and left without an owner",
+    "where": "CrystallineCohomology, Scope and ownership, the “Not here” sentence naming this Part II",
+    "raised": "PRREVIEW-CrystallineCohomologyPartII~1"
+   }
+  ]
+ }
+}
