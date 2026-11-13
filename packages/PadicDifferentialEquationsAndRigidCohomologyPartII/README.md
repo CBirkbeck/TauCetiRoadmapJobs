@@ -272,7 +272,7 @@ The sections are consumed with their stated hypotheses:
   a smooth affine with a formal lift and Frobenius lift they are the vector bundles with connection
   and Frobenius on its affinoid generic fibre, that is, finite projective `(φ,∇)`-modules over the
   completed algebra (`Â_(C,K)` for an affine curve `C` as in MS.0.1). Used for the convergent PBQ
-  filtration of MS.2.9.
+  filtration of MS.2.9 and for the convergent image in the curve rank theorem MS.4.2.
 - §RD.3.41: finite étale pushforward, exact, adjoint to pullback up to the trace and multiplying
   ranks by the degree.
 - §RD.3.45, §RD.3.47: the slope filtration on a dense open; unit-root objects.
@@ -1588,17 +1588,31 @@ slope-filtered `N`, and `N → P` a surjection of convergent F-isocrystals. If t
 `Γ(U, N†) → Γ(U, P)` of sections is injective for one dense affine open `U`, prove that
 `λmax(N) = slope(P)` and `rank Top(N) = rank P` (Tsuzuki, Proposition 6.1, pp. 26–27).
 
-Proof route. The first step of the curve PBQ filtration of `N†` (MS.2.5) has nonzero dagger sections,
-which inject into the sections of `P`, so it maps nontrivially to `P` and MS.2.4 fixes its maximal
-slope: `λmax(N) = slope(P)`. Surjectivity gives `rank Top(N) ≥ rank P`; if strict, MS.4.1 glues a
-nonzero overconvergent subobject killed in `P`, contradicting injectivity on sections. For proper `C`
-the overconvergent and convergent categories coincide and slope separation gives the claim directly.
+Proof route. `N ≠ 0` because it surjects onto `P ≠ 0`. The first step `P_1(N†)` of the curve PBQ
+filtration of `N†` (MS.2.5) is nonzero, so its dagger sections over `U` are nonzero; they lie in
+`Γ(U, N†)` and inject into the sections of `P`. Hence its convergent realisation `P_1(N)` (§RD.3.37),
+the first step of the convergent PBQ filtration of `N` (MS.2.9), has nonzero image `Q ⊆ P` in the
+abelian category of convergent F-isocrystals (§RD.3.34). `Q` is a nonzero convergent quotient of the
+convergent PBQ object `P_1(N)`, so it is PBQ with `λmax(Q_η) = λmax(P_1(N)_η) = λmax(N)` (MS.2.9); it
+need not be overconvergent, and the overconvergent quotient statement MS.2.4 does not apply to it. As
+`Q_η` is a nonzero submodule of the isoclinic `P_η`, and isoclinic generic modules of one slope are
+closed under subquotients (§RD.1.36), `Q` is isoclinic of slope `slope(P)`, so `λmax(N) = slope(P)`.
+Surjectivity gives `rank Top(N) ≥ rank P`; if strict, MS.4.1 glues a nonzero overconvergent subobject
+killed in `P`, contradicting injectivity on sections. For proper `C` the overconvergent and convergent
+categories coincide and slope separation (§RD.1.37) gives the claim directly.
 
-*Needs:* MS.2.4; MS.2.5; MS.4.1; PadicDifferentialEquationsAndRigidCohomology §RD.1.37.
+*Needs:* MS.2.5; MS.2.9; MS.4.1; PadicDifferentialEquationsAndRigidCohomology §§RD.1.36, RD.1.37,
+RD.3.34, RD.3.37.
 
 **Checks.**
 
 - For `N† = P†` isoclinic and the identity map, both sides are equal.
+- The image of the first PBQ step need not be overconvergent: on the ordinary locus `U` of MS.2.7
+  (third Check), taken as the curve, let `N† = L†|_U`, which is irreducible and hence PBQ and saturated
+  (MS.2.5, MS.3.9), so injective on dagger sections into `P = Top(L|_U)` over the affine `U`. The first
+  step is `N†` itself (rank 2, maximal slope 1) and its image `Q` is all of `P` (rank 1, slope 1), which
+  has no overconvergent structure. The convergent quotient statement of MS.2.9 gives
+  `λmax(N) = 1 = slope(P)`, and the theorem gives `rank Top(N) = 1 = rank P`.
 - The injectivity hypothesis cannot be dropped: for `N† = O(−1) ⊕ O(0)` constant and `P = O(0)`, the
   projection kills `O(−1)` and `λmax(N) = 1 ≠ 0`.
 - For `N†` the logarithmic object on `G_m` and `P = Top(N)` the unit, the map on sections has kernel the
@@ -1746,8 +1760,9 @@ minimal piece determines the object together with the isomorphism.
 
 ### Dependencies
 
-MS.0, MS.1, MS.2 (including the convergent PBQ filtration of MS.2.9, used in MS.4.1), MS.3;
-PadicDifferentialEquationsAndRigidCohomology §§RD.1.37, RD.3.37, RD.3.45, RD.5.8, RD.5.112.
+MS.0, MS.1, MS.2 (including the convergent PBQ filtration of MS.2.9 and its quotient statement, used
+in MS.4.1 and MS.4.2), MS.3; PadicDifferentialEquationsAndRigidCohomology §§RD.1.36, RD.1.37, RD.3.34,
+RD.3.37, RD.3.45, RD.5.8, RD.5.112.
 
 ## Layer MS.5: Dagger hulls and minimal slopes
 
@@ -2494,6 +2509,11 @@ the correction.
 - **Tsuzuki, proof of Lemma 3.33, p. 20, rank-one step.** A rank-one generic submodule need not be
   unit-root; twist after the fixed-field normalisation, glue, untwist (MS.2.3).
 - **Tsuzuki, §3.9, p. 21.** The support-forgetting map starts from `H¹_(rig,c)`.
+- **Tsuzuki, proof of Proposition 6.1, p. 26, slope step.** The image of the maximally PBQ subobject in
+  the isoclinic convergent target is a convergent quotient, so its maximal slope is fixed by
+  Lemma 3.17(2) on generic modules (MS.2.9 in MS.4.2), not by Lemma 3.30, which concerns overconvergent
+  quotients. Check: on the ordinary Legendre locus the image is the slope-one top, which is not
+  overconvergent.
 - **Tsuzuki, Theorem 6.4, p. 27.** `h` is a convergent map between the global convergent bounded
   quotients, not a map of overconvergent objects into a generic fibre.
 - **Tsuzuki, proof of Corollary 6.8, p. 29.** The intermediate isomorphism ends at the restriction of
