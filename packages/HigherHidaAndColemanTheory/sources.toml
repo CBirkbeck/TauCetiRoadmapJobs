@@ -30,7 +30,7 @@ sha256 = "d340c9a020cc5fdbca781a8630b6fae35e14607142bed700d6ab82334faa80ae"
 licence_class = "author-page"
 status = "certified"
 accessed = "2026-10-25"
-cited_for = ["1.1", "1.2", "5.1", "5.2", "5.3", "5.4", "5.5", "5.6", "5.7", "5.8", "5.9", "5.10", "6.1", "6.1a", "6.2", "6.3", "6.4", "6.5", "6.6", "6.7", "6.8", "6.9", "6.10", "7.1", "7.2", "7.3", "7.4", "7.5", "7.6", "8.5", "9.1", "9.2", "9.3", "9.9", "Source issues/E3", "Source issues/E4", "Source issues/E5", "Source issues/E6", "Source issues/E7", "Conventions"]
+cited_for = ["1.1", "1.2", "5.1", "5.2", "5.3", "5.4", "5.5", "5.6", "5.7", "5.8", "6.1", "6.1a", "6.2", "6.3", "6.4", "6.5", "6.6", "6.7", "6.8", "6.9", "6.10", "7.1", "7.2", "7.3", "7.4", "7.5", "7.6", "8.5", "9.1", "9.2", "9.3", "9.9", "Source issues/E3", "Source issues/E4", "Source issues/E5", "Source issues/E6", "Source issues/E7", "Conventions"]
 authors = "George Boxer and Vincent Pilloni"
 title = "Higher Coleman theory"
 year = 2021
@@ -42,7 +42,7 @@ comparison_sha256 = "85526b90c48d0955f2a042f63d619a22584e3801391934504563994733d
 [[source]]
 id = "Pilloni-Singular"
 locator_scheme = "theorem"
-locator = "§9.1–9.4, pp. 54–57; §10.7 and §§11.1–11.3, pp. 66–72; Proposition 5.1.5.1 and Lemma 5.1.5.2, p. 22; proof of Lemma 14.8.3, p. 102; Theorem 11.3.1 and Corollary 11.2.1, p. 71; Theorem 14.8.1 and Lemmas 14.8.2–14.8.4, pp. 100–102; Theorem 1.1, pp. 2–3; §14.9, pp. 103–106, especially Lemmas 14.9.1–14.9.2 and Lemma 14.9.2.1; §5.1.5, pp. 21–22, author edition, paragraph before Proposition 5.1.5.2; §§12.6.2 and 12.8, pp. 76–80; Proposition 12.8.2.1, p. 79; §13.2, p. 85; §§13.2.2–13.2.3, pp. 86–87; Proposition 13.3.1.1, p. 88; Propositions 13.3.2.1 and 13.3.3.1 and Corollaries 13.3.2.1 and 13.3.3.1, pp. 89–90; §13.4 and Proposition 13.4.1, p. 91; §§14.1–14.6, pp. 91–99; Lemma 14.7.1 and Theorem 14.7.1, p. 99; Corollary 14.7.1, p. 100"
+locator = "§9.1–9.4, pp. 54–57; §10.7 and §§11.1–11.3, pp. 66–72; Proposition 5.1.5.1 and Lemma 5.1.5.2, p. 22; proof of Lemma 14.8.3, p. 102; Theorem 11.3.1 and Corollary 11.2.1, p. 71; Theorem 14.8.1 and Lemmas 14.8.2–14.8.4, pp. 100–102; Theorem 1.1, pp. 2–3; §14.9, pp. 103–106, especially Lemmas 14.9.1–14.9.2 and Lemma 14.9.2.1; §5.1.5, pp. 21–22, author edition, paragraph before Proposition 5.1.5.2; §§12.6.2 and 12.8, pp. 76–80; Proposition 12.8.2.1, p. 79; §13.2, p. 85; §12.3, p. 75; Lemma 13.2.2.1 (and proof), p. 86; §§13.2.2–13.2.3, pp. 86–87; Corollary 13.2.4.2 and Remark 13.2.4.1, pp. 87–88; Proposition 13.3.1.1, p. 88; Lemma 13.3.2.1, p. 89; Propositions 13.3.2.1 and 13.3.3.1 and Corollaries 13.3.2.1 and 13.3.3.1, pp. 89–90; §13.4 and Proposition 13.4.1, p. 91; §§14.1–14.6, pp. 91–99; Lemma 14.7.1 and Theorem 14.7.1, p. 99; Corollary 14.7.1, p. 100"
 url = "https://www.imo.universite-paris-saclay.fr/~vincent.pilloni/complexhidatheorygsp4.pdf"
 fetched_from = "https://www.imo.universite-paris-saclay.fr/~vincent.pilloni/complexhidatheorygsp4.pdf"
 fetched_at = "2026-10-25T13:34:24Z"

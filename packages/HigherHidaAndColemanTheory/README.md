@@ -274,7 +274,7 @@ That roadmap leaves the Klingen computations for GSp₄ to other roadmaps; §9.5
 
 Layer 1 fixes the cohomological weight and slope dictionary. Layer 2 specializes the supplied solid operations to Artinian coefficients and proves the dynamic ordinary theorems, using the generic coherent correspondence and partial-support contracts. Layer 3 applies them to integral Siegel strata, with the away-p spherical Hecke algebra acting on the supported complexes, and Layer 4 interpolates the fixed-weight complexes over the torus Iwasawa algebra. Layer 5 constructs geometric finite-slope cohomology; Layer 6 applies analytic coefficients, proves BGG control in families and makes the away-S Hecke algebra act on family cohomology. Layer 7 constructs the cohomological eigenvariety and its interior deformation theorem. Layer 8 compares integral ordinary and finite-slope objects, giving rational amplitude and sharp Siegel bounds. Layer 9 tests the conventions in modular, Siegel, singular Klingen and split-unitary cases, and constructs the Klingen analytic family and small-slope extension on which the Klingen control theorem rests. Every missing supplier strengthening is named by its gap in the consuming target's Needs line.
 
-The headline theorems are derived arithmetic Hida control (§4.6) and integral Iwasawa Serre duality (§4.8) for Siegel varieties of every genus, integral amplitude in genera one and two (§4.9) and rational amplitude in every genus (§8.4), regular and singular geometric classicality (§5.10), the cohomological eigenvariety (§7.1) with the equidimensionality and deformation of interior eigenpackets (§7.5), sharp interior slope bounds (§7.6) and sharp Siegel bounds (§8.5), and the two-term Klingen control theorem (§9.8). Their statements require Shimura varieties and their toroidal models, Igusa towers, supported coherent cohomology of automorphic bundles and analytic coefficient complexes, none of which exists in the pinned Mathlib or Tau Ceti; Suggested.lean therefore states none of them and names, for each, the carrier it lacks. Scalar and root-coordinate calculations serve as Checks in this README.
+The headline theorems are derived arithmetic Hida control (§4.6) and integral Iwasawa Serre duality (§4.8) for Siegel varieties of every genus, integral amplitude in genera one and two (§4.9) and rational amplitude in every genus (§8.4), regular and singular geometric classicality (§5.8), the cohomological eigenvariety (§7.1) with the equidimensionality and deformation of interior eigenpackets (§7.5), sharp interior slope bounds (§7.6) and sharp Siegel bounds (§8.5), and the two-term Klingen control theorem (§9.8). Their statements require Shimura varieties and their toroidal models, Igusa towers, supported coherent cohomology of automorphic bundles and analytic coefficient complexes, none of which exists in the pinned Mathlib or Tau Ceti; Suggested.lean therefore states none of them and names, for each, the carrier it lacks. Scalar and root-coordinate calculations serve as Checks in this README.
 
 
 ## Layer 1: Weights, supports and operator conventions
@@ -320,7 +320,7 @@ The basic properties of this construction are:
 
 - a≤b iff each positive cocharacter evaluates a≤b, including equality of the central component.
 - For each wrong w, require failure of at least one of the two proved bounds.
-- The proved exclusion region implies the sharp exclusion region, by the root-cone comparison of §5.11.
+- The proved exclusion region implies the sharp exclusion region, by the root-cone comparison of BP-Coleman §5.11.
 - Twisting the eigencharacter by an algebraic η replaces λ by λ+η on T^d.
 
 **Checks.**
@@ -448,11 +448,17 @@ The equivariant result applies even when p divides |Γ|.
 
 ### 2.7 Transposed ordinary Serre duality
 
-Suppose C and X are smooth over S=Spec A with A Artinian, X is pure of relative dimension d and F is finite locally free. Put D_XF=RHom(F,p!A), using p!A=Ω^d[d]. Transpose the coefficient correspondence and swap D±. The perfect ordinary complexes satisfy RΓ^ord_C(X,F)≃RHom_A(RΓ^ord_Ct(X,D_XF),A), and conversely. Thus an untwisted dual bundle appears in complementary cohomological degrees after the canonical-bundle and boundary twists are included. (BP-Hida, Propositions 2.7.2–2.7.3 and Theorem 2.7.4, pp. 23–24).
+Suppose C and X are smooth over S=Spec A with A Artinian, the correspondence (C,X,p1,p2) admits a strict dynamical compactification over S in the sense of §2.2, X is pure of relative dimension d and F is finite locally free. Put D_XF=RHom(F,p!A), using p!A=Ω^d[d]. Transposition carries a strict dynamical compactification of (C,X,p1,p2) to one of the transpose C^t=(C,X,p2,p1), with D+ and D− exchanged: the inequalities p2*D+≤s p1*D+ and p1*D−≤s p2*D− are the two strict inequalities for the transpose. So both ordinary complexes below are the compactification-independent objects of §2.4, and both are perfect over A by §2.6 applied on each local factor of A, F and the shifted locally free D_XF being A-flat. Transpose the coefficient correspondence and swap D±. Then RΓ^ord_C(X,F)≃RHom_A(RΓ^ord_Ct(X,D_XF),A), and conversely. Thus an untwisted dual bundle appears in complementary cohomological degrees after the canonical-bundle and boundary twists are included. Compactifications proper over S that are not strictly dynamical do not suffice. (BP-Hida, Propositions 2.7.2–2.7.3 and Theorem 2.7.4, pp. 23–24).
 
-A proof route is as follows: Apply six-functor duality to the two open immersions. Use the supplied transpose of a coherent correspondence; restrict it to the two solid support orders. Use ordinary/nonordinary orthogonality and perfectness to restrict the duality.
+A proof route is as follows: Choose a strict dynamical compactification on which F extends to a locally free sheaf and D+, D− are Cartier divisors. Apply six-functor duality to the two open immersions. Use the supplied transpose of a coherent correspondence; restrict it to the two solid support orders. Use ordinary/nonordinary orthogonality and perfectness to restrict the duality.
 
-*Needs:* §2.6; AutomorphicBundlesPartII §3.0a; AutomorphicBundlesPartII §3.9; §2.1; gap:coherent-correspondences.
+*Needs:* §2.2; §2.4; §2.6; AutomorphicBundlesPartII §3.0a; AutomorphicBundlesPartII §3.9; §2.1; gap:coherent-correspondences.
+
+**Checks.**
+
+- Negative control for strict dynamics. Take A=𝔽₂, C=X=𝔸¹_(𝔽₂), p1=p2=id, F=O and T=id, compactified by Xbar=Cbar=ℙ¹ with D+={∞} and D−=∅. Everything is smooth, Xbar is proper over Spec 𝔽₂ and the set-theoretic inclusions of §2.2 hold, but strictness fails at ∞ (§2.4, second Check). The support object K+−=RΓ(ℙ¹,j_*O)=RΓ(𝔸¹,O) is 𝔽₂[t] in degree 0. T acts invertibly on this discrete module, so ordinary localization leaves it unchanged (BP-Hida, proof of Lemma 2.4.3, case (2)), and the result is infinite-dimensional over 𝔽₂, not perfect. Properness of the compactification alone gives neither perfectness nor this duality.
+- The proper point X=C=Xbar=Spec 𝔽₂ with empty boundaries, where strictness holds vacuously, d=0, F=O and T=id: both ordinary complexes are 𝔽₂[0] and the pairing is multiplication 𝔽₂×𝔽₂→𝔽₂, which is perfect. With T=0 both complexes are 0.
+- Degree witness. For X=C=Xbar=ℙ¹_(𝔽₂) with empty boundaries, p1=p2=id, F=O and T=id, d=1: RΓ^ord(X,O)=𝔽₂ in degree 0, and D_XO=Ω¹[1] has RΓ with H^(−1)=H^0(ℙ¹,Ω¹)=0 and H^0=H^1(ℙ¹,Ω¹)=𝔽₂, so RHom_A(RΓ(X,Ω¹[1]),A)=𝔽₂[0], as asserted. Omitting the shift [d] would put the dual in degree −1.
 
 The shift is fixed by H^i pairing with H^(d−i), not by an ungraded vector-space dual.
 
@@ -773,9 +779,9 @@ Use the integral Siegel datum of Conventions.
 
 For w*=w0M w w0 there is a perfect derived pairing M_w^0⊗^L_Λ M_(w*)^1→Λ[−d], with the Λ-action on the second factor transported as in the source duality. At fixed weight it pairs C_w(κ,χ,0) with C_(w*)(κ∨,w0χ⁻¹,1) into O[−d]. The adjoint of t is w0(t⁻¹), and prime-to-p double cosets are replaced by their inverses. This is a duality of perfect complexes; individual cohomology modules may have Ext terms integrally. (BP-Hida, Theorems 5.5.1–5.5.2, p. 57).
 
-A proof route is as follows: Apply the integral supported duality before passing to the tower. Transport the negative torus chamber by w0 and match w*. Use the perfect Iwasawa models to commute duality with arithmetic derived specialization.
+A proof route is as follows: Apply the ordinary duality of §2.7 modulo each p^s before passing to the tower; its strict-dynamics hypothesis is §3.3. Transport the negative torus chamber by w0 and match w*. Use the perfect Iwasawa models to commute duality with arithmetic derived specialization.
 
-*Needs:* §4.5; §2.7; §4.6; AutomorphicBundles §5.3; AutomorphicBundles §5.4; AutomorphicBundles §6.1.
+*Needs:* §4.5; §2.7; §3.3; §4.6; AutomorphicBundles §5.3; AutomorphicBundles §5.4; AutomorphicBundles §6.1.
 
 The cohomological complementary degree and the boundary twist must both match.
 
@@ -801,6 +807,18 @@ AutomorphicBundles §3.3; AutomorphicBundles §5.10; AutomorphicBundles §5.3; A
 
 
 ## Layer 5: Geometric higher Coleman cohomology
+
+After the supported objects, their finite-slope continuation and their level control (§§5.1–5.4), the layer proves the three inputs of geometric classicality (§5.8): the local slope bounds that remove the incompatible Bruhat strata (§5.5), the complementary degree ranges of local cohomology (§5.6), and the Bruhat-filtered Cousin complex that assembles local cohomology into global and interior cohomology (§5.7).
+
+Sections 5.1–5.4 and 5.6 keep their numbers, and §5.6 also contains the finite-slope Serre duality theorem; the other sections of the former numbering of this layer map as follows.
+
+| Former numbering | Section |
+| --- | --- |
+| §5.5 | §5.7(a) |
+| §5.7 | §5.6(b) |
+| §5.8 | §5.7(b) |
+| §5.9 | §5.5 |
+| §5.10 | §5.8 |
 
 ### 5.1 Bruhat geometry at finite level
 
@@ -867,55 +885,49 @@ A proof route is as follows: Factor the two level maps through iterated positive
 
 The m and b parameters have different control mechanisms.
 
-### 5.5 The finite-slope Bruhat Cousin spectral sequence
+### 5.5 Proved local slope bounds
 
 Use the Coleman datum of Conventions.
 
-For each sign and boundary variant there is a Hecke-equivariant spectral sequence E1^(r,q)=⊕_(ℓ±(w)=r) H_w^(r+q)(K^p,κ,χ,ε)^±,fs ⇒ H^(r+q)(K^p,κ,χ,ε)^±,fs, whose target is classical toroidal coherent cohomology at the matching p-level/character. The filtration comes from the length filtration by closed Bruhat unions on the flag quotient. There is no regularity assumption here and every contributing w is kept. (BP-Coleman, Theorem 5.5.1, pp. 113–115).
+A smooth eigencharacter in local canonical or cuspidal + cohomology has valuation λ≥w⁻¹w0Mκ and λ≥w⁻¹w0Mκ+w⁻¹2ρ_nc. In − cohomology it has λ≤w⁻¹κ and λ≤w⁻¹κ+w⁻¹2ρ_nc. The sharper desired + bound λ≥w⁻¹w0M(κ+ρ)+ρ and − bound λ≤w⁻¹(κ+ρ)−ρ are not used here. Their full general noncompact versions remain conjectural. Interior (hence compact) and Siegel improvements are separate downstream Layer 7 and Layer 8 targets. (BP-Coleman, Conjecture 5.9.2 and Theorem 5.9.6, pp. 122–124).
 
-A proof route is as follows: Pull back the finite closed Bruhat filtration to the toroidal space. Apply the supported localization triangles to obtain the exact couple. Use continuation to identify each finite-slope graded term and verify Hecke compatibility on common fan refinements.
+A proof route is as follows: Choose the integral lattice in the algebraic representation on the reduced torsor. Estimate pullback and trace on the small smooth affinoids, retaining their separate normalization factors. Retain the two proved bounds here; the downstream interior and integral Siegel arguments supply sharp improvements.
 
-*Needs:* §5.3; §5.4; AutomorphicBundlesPartII §3.10; AutomorphicBundlesPartII §3.12; gap:coherent-correspondences; ShimuraData §3.8; ShimuraData §3.10; ShimuraData §3.13; AutomorphicBundles §5.3; AutomorphicBundles §5.4; AutomorphicBundles §6.1.
+*Needs:* §5.3; §1.2; AutomorphicBundles §12.1; AutomorphicBundles §12.11; AutomorphicBundlesPartII §3.2; gap:coherent-correspondences; AdicSpacesPartIII §R3.1; AdicSpacesPartIII §R3.4; AdicSpacesPartIII §R3.6; AdicSpacesPartIII §R3.8; gap:projective-banach-cohomology.
 
-In rank one the two columns give a four-term exact sequence rather than a forced direct sum.
+Do not use the conjectural sharp bound to prove general full-space classicality.
 
-### 5.6 Cuspidal vanishing by Bruhat length
-
-Use the Coleman datum of Conventions.
-
-For each w and either sign the cuspidal finite-slope local cohomology is concentrated in [0,ℓ±(w)]. This uses subcanonical higher-direct-image vanishing to the minimal compactification and the quasi-Stein/affinoid tube cover with its support codimension. The result holds for the supported general abelian-type datum; it is not a statement that every canonical bundle has acyclic pushforward to the minimal compactification. (BP-Coleman, Theorem 4.1.7, pp. 51–53; Theorem 5.6.1, pp. 115–117).
-
-A proof route is as follows: Push the subcanonical coefficient to the minimal compactification using the supplied R^iπ_* vanishing. Compute supported cohomology on the finite quasi-Stein cover of affinoid inverse images. Count the length/codimension of the local Bruhat directions and apply finite-slope continuation.
-
-*Needs:* §5.3; ShimuraCompactifications §0.14; ShimuraCompactifications §4.10; AutomorphicBundles §5.3; AutomorphicBundles §5.4; AutomorphicBundles §6.1; AdicSpacesPartIII §R3.1; AdicSpacesPartIII §R3.4; AdicSpacesPartIII §R3.6; AdicSpacesPartIII §R3.8; gap:projective-banach-cohomology; gap:abelian-subcanonical-vanishing.
-
-The ε=1 hypothesis cannot be dropped at this step.
-
-### 5.7 Finite-slope Serre duality and complementary ranges
+### 5.6 Complementary degree ranges of local cohomology
 
 Use the Coleman datum of Conventions.
 
-There is a nondegenerate pairing H_w^i(κ,χ,1)^±,fs × H_w^(d−i)(κ∨,χ⁻¹,0)^∓,fs→F, adjoint for t and t⁻¹ and inverse prime-to-p double cosets. It is perfect on each matching finite-dimensional generalized eigenblock. Consequently canonical finite-slope cohomology is concentrated in [ℓ±(w),d]. The pairing on the whole finite-slope union is not identified with the unrestricted algebraic dual of that union. (BP-Coleman, Theorems 5.7.1–5.7.3, pp. 117–120; Theorem 2.7.1 and Proposition 2.7.3, pp. 31–32).
+The two boundary variants of local finite-slope cohomology live in complementary degree ranges: the cuspidal one in [0,ℓ±(w)] by (a), and the canonical one in [ℓ±(w),d] by the Serre duality (b), which exchanges the boundary variants and the degrees i and d−i.
 
-A proof route is as follows: Apply the supplied dagger LB/Fréchet support duality to the supported coefficient complex. Use coefficient evaluation and the canonical bundle V_(−2ρ_nc)(−D). Match compact Hecke slope projectors under transposition, then dualize the cuspidal vanishing range.
+(a) Cuspidal vanishing by Bruhat length. For each w and either sign the cuspidal finite-slope local cohomology is concentrated in [0,ℓ±(w)]. This uses subcanonical higher-direct-image vanishing to the minimal compactification and the quasi-Stein/affinoid tube cover with its support codimension. The result holds for the supported general abelian-type datum; it is not a statement that every canonical bundle has acyclic pushforward to the minimal compactification. (BP-Coleman, Theorem 4.1.7, pp. 51–53; Theorem 5.6.1, pp. 115–117).
 
-*Needs:* §5.6; §1.1; AdicSpacesPartIV §F1.10; AutomorphicBundles §5.3; AutomorphicBundles §5.4; AutomorphicBundles §6.1; gap:banach-support-duality.
+(b) Finite-slope Serre duality. There is a nondegenerate pairing H_w^i(κ,χ,1)^±,fs × H_w^(d−i)(κ∨,χ⁻¹,0)^∓,fs→F, adjoint for t and t⁻¹ and inverse prime-to-p double cosets. It is perfect on each matching finite-dimensional generalized eigenblock. Consequently, by (a), canonical finite-slope cohomology is concentrated in [ℓ±(w),d]. The pairing on the whole finite-slope union is not identified with the unrestricted algebraic dual of that union. (BP-Coleman, Theorems 5.7.1–5.7.3, pp. 117–120; Theorem 2.7.1 and Proposition 2.7.3, pp. 31–32).
+
+A proof route is as follows: For (a), push the subcanonical coefficient to the minimal compactification using the supplied R^iπ_* vanishing; compute supported cohomology on the finite quasi-Stein cover of affinoid inverse images; count the length/codimension of the local Bruhat directions and apply finite-slope continuation. For (b), apply the supplied dagger LB/Fréchet support duality to the supported coefficient complex; use coefficient evaluation and the canonical bundle V_(−2ρ_nc)(−D); match compact Hecke slope projectors under transposition, then dualize the cuspidal vanishing range of (a).
+
+*Needs:* §5.3; §1.1; ShimuraCompactifications §0.14; ShimuraCompactifications §4.10; AutomorphicBundles §5.3; AutomorphicBundles §5.4; AutomorphicBundles §6.1; AdicSpacesPartIII §R3.1; AdicSpacesPartIII §R3.4; AdicSpacesPartIII §R3.6; AdicSpacesPartIII §R3.8; AdicSpacesPartIV §F1.10; gap:projective-banach-cohomology; gap:abelian-subcanonical-vanishing; gap:banach-support-duality.
 
 **Checks.**
 
 - For a smooth affinoid dagger surface and a finite line, H⁰ pairs with H_c² using Ω². The supported complex is already in degree 2; adding another [−2] would place it in degree 4. For a point d=0 this reduces to F×F→F, multiplication.
 
-The shift pairs degrees i and d−i and exchanges ε=1 with ε=0.
+The ε=1 hypothesis cannot be dropped in (a). The shift in (b) pairs degrees i and d−i and exchanges ε=1 with ε=0.
 
-### 5.8 Interior cohomology and Cousin subquotients
+### 5.7 The Bruhat-filtered Cousin complex and interior cohomology
 
 Use the Coleman datum of Conventions.
 
-Define H_w,!^i as the image of local cuspidal to canonical H_w^i. It vanishes outside i=ℓ±(w). The global interior H_!^i=Im(H_cusp^i→H_can^i) is a subquotient of degree-i cohomology of the interior Cousin complex built from H_w,!^(ℓ±(w)); equality is not asserted for arbitrary boundary. If the Shimura variety is compact, D=∅ and the local cohomology is concentrated exactly at ℓ±(w), so the Cousin complex computes the full cohomology. (BP-Coleman, Corollaries 5.7.5 and 5.7.7 and Remark 5.7.6, p. 120; Corollary 5.8.1, pp. 120–121).
+(a) The finite-slope Bruhat Cousin spectral sequence. For each sign and boundary variant there is a Hecke-equivariant spectral sequence E1^(r,q)=⊕_(ℓ±(w)=r) H_w^(r+q)(K^p,κ,χ,ε)^±,fs ⇒ H^(r+q)(K^p,κ,χ,ε)^±,fs, whose target is classical toroidal coherent cohomology at the matching p-level/character. The filtration comes from the length filtration by closed Bruhat unions on the flag quotient. There is no regularity assumption here and every contributing w is kept. (BP-Coleman, Theorem 5.5.1, pp. 113–115).
 
-A proof route is as follows: Intersect the two local cohomological ranges. Map the cuspidal filtered complex to the canonical one and take the surviving interior terms. Use the induced spectral-sequence filtrations to obtain the subquotient; specialize to identical coefficients when D is empty.
+(b) Interior cohomology and Cousin subquotients. Define H_w,!^i as the image of local cuspidal to canonical H_w^i. It vanishes outside i=ℓ±(w). The global interior H_!^i=Im(H_cusp^i→H_can^i) is a subquotient of degree-i cohomology of the interior Cousin complex built from H_w,!^(ℓ±(w)); equality is not asserted for arbitrary boundary. If the Shimura variety is compact, D=∅ and the local cohomology is concentrated exactly at ℓ±(w), so the Cousin complex computes the full cohomology. (BP-Coleman, Corollaries 5.7.5 and 5.7.7 and Remark 5.7.6, p. 120; Corollary 5.8.1, pp. 120–121).
 
-*Needs:* §5.5; §5.7.
+A proof route is as follows: For (a), pull back the finite closed Bruhat filtration to the toroidal space; apply the supported localization triangles to obtain the exact couple; use continuation to identify each finite-slope graded term and verify Hecke compatibility on common fan refinements. For (b), intersect the two local cohomological ranges of §5.6; map the cuspidal filtered complex of (a) to the canonical one and take the surviving interior terms; use the induced spectral-sequence filtrations to obtain the subquotient; specialize to identical coefficients when D is empty.
+
+*Needs:* §5.3; §5.4; §5.6; AutomorphicBundlesPartII §3.10; AutomorphicBundlesPartII §3.12; gap:coherent-correspondences; ShimuraData §3.8; ShimuraData §3.10; ShimuraData §3.13; AutomorphicBundles §5.3; AutomorphicBundles §5.4; AutomorphicBundles §6.1.
 
 The basic properties of this construction are:
 
@@ -930,29 +942,17 @@ The basic properties of this construction are:
 - If that map is the identity of F, the interior group is F; replacing the image by the kernel would give 0.
 - For GL₂ (d=1) and w=id, cuspidal local cohomology lies in degree 0 and canonical in degrees [0,1], so H_id,!^1=0 even when canonical H_id^1 is nonzero. At a fixed weight the interior group is the image of the fixed-weight map: the family map t:F⟨t⟩→F⟨t⟩ has image (t) with fibre F at t=0, whereas the specialized map 0:F→F has image 0, so the fibre of a family image is not the fixed-weight interior group.
 
-Taking images is not an exact functor on general spectral sequences.
+In rank one the two columns of (a) give a four-term exact sequence rather than a forced direct sum. Taking images is not an exact functor on general spectral sequences.
 
-### 5.9 Proved geometric slope bounds
-
-Use the Coleman datum of Conventions.
-
-A smooth eigencharacter in local canonical or cuspidal + cohomology has valuation λ≥w⁻¹w0Mκ and λ≥w⁻¹w0Mκ+w⁻¹2ρ_nc. In − cohomology it has λ≤w⁻¹κ and λ≤w⁻¹κ+w⁻¹2ρ_nc. The sharper desired + bound λ≥w⁻¹w0M(κ+ρ)+ρ and − bound λ≤w⁻¹(κ+ρ)−ρ are not used here. Their full general noncompact versions remain conjectural. Interior (hence compact) and Siegel improvements are separate downstream Layer 7 and Layer 8 targets. (BP-Coleman, Conjecture 5.9.2 and Theorem 5.9.6, pp. 122–124).
-
-A proof route is as follows: Choose the integral lattice in the algebraic representation on the reduced torsor. Estimate pullback and trace on the small smooth affinoids, retaining their separate normalization factors. Retain the two proved bounds here; the downstream interior and integral Siegel arguments supply sharp improvements.
-
-*Needs:* §5.3; §1.2; AutomorphicBundles §12.1; AutomorphicBundles §12.11; AutomorphicBundlesPartII §3.2; gap:coherent-correspondences; AdicSpacesPartIII §R3.1; AdicSpacesPartIII §R3.4; AdicSpacesPartIII §R3.6; AdicSpacesPartIII §R3.8; gap:projective-banach-cohomology.
-
-Do not use the conjectural sharp bound to prove general full-space classicality.
-
-### 5.10 Geometric classicality in regular and singular weights
+### 5.8 Geometric classicality in regular and singular weights
 
 Use the Coleman datum of Conventions.
 
 On the geometric strongly small region of Layer 1, all local terms with w∉Cκ± vanish. If κ+ρ is regular and Cκ±={w}, the Cousin edge map is an equivalence between local finite-slope and global classical cohomology in that region, for both boundary variants. For singular κ retain the entire compatible Cousin complex: with l_min=min_(Cκ±)ℓ± and l_max=max_(Cκ±)ℓ±, classical cuspidal cohomology lies in [0,l_max], canonical in [l_min,d] and interior in [l_min,l_max]. The downstream Layer 7 theorem supplies the compact improvement and Layer 8 the Siegel improvement; this target itself uses the proved strongly small region. (BP-Coleman, Theorems 5.12.3 and 5.12.5, p. 135).
 
-A proof route is as follows: Apply the proved inequalities to kill every incompatible w-summand. Use the finite Cousin filtration for the regular equivalence. For a singular chamber set use the local degree ranges without inventing degeneration between the remaining strata.
+A proof route is as follows: Apply the proved inequalities of §5.5 to kill every incompatible w-summand of the spectral sequence of §5.7(a). Use the finite Cousin filtration for the regular equivalence. For a singular chamber set use the local degree ranges of §5.6 and the interior subquotient of §5.7(b), without inventing degeneration between the remaining strata.
 
-*Needs:* §5.5; §5.9; §5.8; §1.2.
+*Needs:* §5.5; §5.6; §5.7; §1.2.
 
 The equality endpoint of a small-slope threshold is not included.
 
@@ -1126,7 +1126,7 @@ On each eigenblock satisfying BGGsafe, the algebraic-to-analytic + comparison (w
 
 A proof route is as follows: Apply the two slope bounds to each nonidentity shifted BGG term. Use the finite spectral sequence with only its identity column remaining. Apply the dual coefficient comparison for the negative theory.
 
-*Needs:* §6.7; §6.6; §5.7; §6.3.
+*Needs:* §6.7; §6.6; §5.6; §6.3.
 
 Combining this with geometric classicality is a separate step: coefficient classicality alone does not identify local with global cohomology.
 
@@ -1138,7 +1138,7 @@ Over weight affinoids, cuspidal H_w,an^i is zero outside [0,ℓ±(w)] and canoni
 
 A proof route is as follows: Use the integral local-trivialization form of subcanonical acyclicity for the analytic Banach coefficient. Apply the Bruhat support dimension argument to obtain the cuspidal range. Over fields use finite-block Serre duality; use perfect-family fiber amplitude to obtain the canonical range and bottom-degree torsion freeness.
 
-*Needs:* §6.3; §6.4; §6.1a; §5.6; §5.7; ShimuraCompactifications §0.14; ShimuraCompactifications §4.10; AdicSpacesPartIV §F1.10; gap:banach-support-duality; gap:abelian-subcanonical-vanishing.
+*Needs:* §6.3; §6.4; §6.1a; §5.6; ShimuraCompactifications §0.14; ShimuraCompactifications §4.10; AdicSpacesPartIV §F1.10; gap:banach-support-duality; gap:abelian-subcanonical-vanishing.
 
 A torsion-free finite module over a higher-dimensional affinoid need not be projective.
 
@@ -1172,7 +1172,7 @@ Over A=F⟨t⟩, the complex A→tA in degrees zero and one has H⁰=0 and H¹=A
 
 ### Dependencies
 
-§1.2; AdicSpacesPartIII §R3.1; AdicSpacesPartIII §R3.4; AdicSpacesPartIII §R3.6; AdicSpacesPartIII §R3.8; AdicSpacesPartIV §F1.10; AutomorphicBundles §1.4; AutomorphicBundles §1.5; AutomorphicBundles §1.9; AutomorphicBundles §12.1; AutomorphicBundles §12.11; AutomorphicBundlesPartII §3.2; AutomorphicBundlesPartII §3.3; AutomorphicBundlesPartII §3.13; §5.2; §5.1; §5.7; §5.6; DeformationAndDerivedPatchingAlgebra §7.1; DeformationAndDerivedPatchingAlgebra §7.10; DeformationAndDerivedPatchingAlgebra §7.3; DeformationAndDerivedPatchingAlgebra §7.5; DeformationAndDerivedPatchingAlgebra §7.6; DeformationAndDerivedPatchingAlgebra §7.8; LieHighestWeight Layer 3; LocallyAnalyticDistributions §4.16; OverconvergentAutomorphicForms §0.4; OverconvergentAutomorphicForms §8.6; OverconvergentAutomorphicForms §8.7; PerfectoidShimuraVarieties §3.13; PerfectoidShimuraVarieties §6.4; PerfectoidShimuraVarieties §6.5; PerfectoidShimuraVarieties §6.6; PerfectoidShimuraVarieties §6.7; PerfectoidShimuraVarieties §6.9; PerfectoidShimuraVarieties §6.14; PerfectoidShimuraVarieties §6.15; ShimuraCompactifications §0.14; ShimuraCompactifications §4.10; gap:abelian-subcanonical-vanishing; gap:banach-support-duality; gap:coherent-correspondences; gap:projective-banach-cohomology; §5.3; LocallyAnalyticDistributions §4.17; PerfectoidShimuraVarieties §6.8; PerfectoidShimuraVarieties §6.10.
+§1.2; AdicSpacesPartIII §R3.1; AdicSpacesPartIII §R3.4; AdicSpacesPartIII §R3.6; AdicSpacesPartIII §R3.8; AdicSpacesPartIV §F1.10; AutomorphicBundles §1.4; AutomorphicBundles §1.5; AutomorphicBundles §1.9; AutomorphicBundles §12.1; AutomorphicBundles §12.11; AutomorphicBundlesPartII §3.2; AutomorphicBundlesPartII §3.3; AutomorphicBundlesPartII §3.13; §5.2; §5.1; §5.6; DeformationAndDerivedPatchingAlgebra §7.1; DeformationAndDerivedPatchingAlgebra §7.10; DeformationAndDerivedPatchingAlgebra §7.3; DeformationAndDerivedPatchingAlgebra §7.5; DeformationAndDerivedPatchingAlgebra §7.6; DeformationAndDerivedPatchingAlgebra §7.8; LieHighestWeight Layer 3; LocallyAnalyticDistributions §4.16; OverconvergentAutomorphicForms §0.4; OverconvergentAutomorphicForms §8.6; OverconvergentAutomorphicForms §8.7; PerfectoidShimuraVarieties §3.13; PerfectoidShimuraVarieties §6.4; PerfectoidShimuraVarieties §6.5; PerfectoidShimuraVarieties §6.6; PerfectoidShimuraVarieties §6.7; PerfectoidShimuraVarieties §6.9; PerfectoidShimuraVarieties §6.14; PerfectoidShimuraVarieties §6.15; ShimuraCompactifications §0.14; ShimuraCompactifications §4.10; gap:abelian-subcanonical-vanishing; gap:banach-support-duality; gap:coherent-correspondences; gap:projective-banach-cohomology; §5.3; LocallyAnalyticDistributions §4.17; PerfectoidShimuraVarieties §6.8; PerfectoidShimuraVarieties §6.10.
 
 
 ## Layer 7: Eigenvarieties and interior deformation
@@ -1211,7 +1211,7 @@ Every finite-slope eigenpacket in any classical canonical or cuspidal H^i produc
 
 A proof route is as follows: Lift a classical eigenpacket to a nonzero graded term of the finite Bruhat Cousin sequence. Lift again to a Levi BGG term, and then to a Tor term supported on a family cohomology sheaf. For the converse choose maximal nonzero cohomology degree at the eigenpacket to survive specialization, then apply the two explicit exclusion theorems.
 
-*Needs:* §7.1; §6.4; §6.6; §6.8; §5.10.
+*Needs:* §7.1; §6.4; §6.6; §6.8; §5.8.
 
 Not every classical class occurs at the family weight indexed solely by its initial Bruhat representative.
 
@@ -1261,7 +1261,7 @@ Each nonempty E!_w and Z!_w, and their nonempty finite unions, is equidimensiona
 
 A proof route is as follows: Prove the finite-module support dimension statement over domain weight affinoids: the faithful finite image algebra embeds in the endomorphisms of a nonzero weight-torsion-free interior module, so it is weight-torsion-free and every minimal prime lies over the generic point. Use interior specialization and the algebraic comparison directions to place local classical specifications on E!_w. Use the interior Cousin subquotient to find w with the correct length for a global degree-i specification.
 
-*Needs:* §7.4; PadicFamilies §2a.15; PadicFamilies §2a.16; §5.8.
+*Needs:* §7.4; PadicFamilies §2a.15; PadicFamilies §2a.16; §5.7.
 
 No cuspidal/full-interior equality is presumed in the presence of boundary.
 
@@ -1273,9 +1273,9 @@ At locally algebraic weights, analytic interior slopes satisfy λ≥0 in + and �
 
 Degree-zero classicality is a separate statement in the identity chamber. Let κ be M-dominant algebraic with Cκ+={id}, and let χ be a finite-order character of Tʳ(ℤ_p). Then κ+ρ is regular, since Cκ+ is a single element exactly when κ+ρ is regular (BP-Coleman, Proposition 5.10.2(3), p. 124). On the + geometric small-slope parts of §1.2, the map H_id^0(κ,χ,1)^+,fs→H_id^0(κ,χ,0)^+,fs from identity-stratum cuspidal to identity-stratum canonical local cohomology factors through classical canonical H^0(κ,χ,0)^+,fs, which the Cousin edge map embeds in H_id^0(κ,χ,0)^+,fs. The argument does not show that the classical class is cuspidal. Outside the small region an overconvergent cuspidal class can come from a noncuspidal classical one. The hypothesis is not weakened to id∈Cκ+. At a singular κ with id∈Cκ+, the set Cκ+ is the stabilizer of w0M(κ+ρ) in W (BP-Coleman, Proposition 5.10.2(1)–(2), p. 124). This is a nontrivial subgroup generated by simple reflections, so it contains a chamber of length one, and the argument does not remove that chamber's degree-one interior term. (BP-Coleman, Theorem 6.10.3, p. 173, and Remark 6.10.4, pp. 173–174; Proposition 5.7.4, p. 120).
 
-A proof route is as follows: Use maximal-dimensional interior support and sufficiently dominant arithmetic weights to find a dense set of regular classical points in an adapted neighborhood: check that the fixed adapted slope window satisfies both geometric strong smallness and the BGGsafe exclusions as the dominant weight increases. This chamber-cone calculation is part of the proof, not density of arbitrary classical weights assumed as input. Apply the optimal bounds at those points and local constancy of eigenvalue valuations. Apply the interior Cousin subquotient and the sharp exclusions. For the degree-zero factorization, the canonical range [ℓ+(w),d] of §5.7 removes every E1 term of the canonical Cousin spectral sequence of §5.5 with q<0. Hence 0→H^0(κ,χ,0)^+,fs→H_id^0(κ,χ,0)^+,fs→⊕_(ℓ(w)=1)H_w^1(κ,χ,0)^+,fs is exact. By naturality for O(−D)→O, composing the cuspidal identity-stratum map with the last arrow gives the cuspidal Cousin differential followed by the boundary maps ⊕_(ℓ(w)=1)H_w^1(κ,χ,1)^+,fs→H_w^1(κ,χ,0)^+,fs, and these maps have image the interior ⊕_(ℓ(w)=1)H_w,!^1 of §5.8. Every length-one w lies outside Cκ+={id}. On that interior the sharp bound forces λ≥A_w and geometric smallness excludes λ≥A_w, so its small-slope part is zero.
+A proof route is as follows: Use maximal-dimensional interior support and sufficiently dominant arithmetic weights to find a dense set of regular classical points in an adapted neighborhood: check that the fixed adapted slope window satisfies both geometric strong smallness and the BGGsafe exclusions as the dominant weight increases. This chamber-cone calculation is part of the proof, not density of arbitrary classical weights assumed as input. Apply the optimal bounds at those points and local constancy of eigenvalue valuations. Apply the interior Cousin subquotient and the sharp exclusions. For the degree-zero factorization, the canonical range [ℓ+(w),d] of §5.6(b) removes every E1 term of the canonical Cousin spectral sequence of §5.7(a) with q<0. Hence 0→H^0(κ,χ,0)^+,fs→H_id^0(κ,χ,0)^+,fs→⊕_(ℓ(w)=1)H_w^1(κ,χ,0)^+,fs is exact. By naturality for O(−D)→O, composing the cuspidal identity-stratum map with the last arrow gives the cuspidal Cousin differential followed by the boundary maps ⊕_(ℓ(w)=1)H_w^1(κ,χ,1)^+,fs→H_w^1(κ,χ,0)^+,fs, and these maps have image the interior ⊕_(ℓ(w)=1)H_w,!^1 of §5.7(b). Every length-one w lies outside Cκ+={id}. On that interior the sharp bound forces λ≥A_w and geometric smallness excludes λ≥A_w, so its small-slope part is zero.
 
-*Needs:* §7.5; §7.2; §5.9; §5.8; §5.7; §5.5; §1.2; §6.1; ShimuraData §3.8; ShimuraData §3.10; ShimuraData §3.13.
+*Needs:* §7.5; §7.2; §5.5; §5.6; §5.7; §1.2; §6.1; ShimuraData §3.8; ShimuraData §3.10; ShimuraData §3.13.
 
 **Checks.**
 
@@ -1292,7 +1292,7 @@ For an acyclic family, the annihilator support and eigenvariety are empty. A fam
 
 ### Dependencies
 
-AutomorphicBundles §12.1; AutomorphicBundles §12.11; AutomorphicBundlesPartII §3.13; §1.2; §5.5; §5.7; §5.10; §5.8; §5.9; §6.8; §6.1; §6.6; §6.9; §6.10; §6.3; §6.4; IntegralHeckeAndGaloisDeterminants §2.1; LocallyAnalyticDistributions §3.3; PadicFamilies §2a.15; PadicFamilies §2a.16; PhiGammaModulesAndIwasawaCohomology §2.7; ShimuraData §3.10; ShimuraData §3.13; ShimuraData §3.8; gap:coherent-correspondences.
+AutomorphicBundles §12.1; AutomorphicBundles §12.11; AutomorphicBundlesPartII §3.13; §1.2; §5.5; §5.6; §5.7; §5.8; §6.8; §6.1; §6.6; §6.9; §6.10; §6.3; §6.4; IntegralHeckeAndGaloisDeterminants §2.1; LocallyAnalyticDistributions §3.3; PadicFamilies §2a.15; PadicFamilies §2a.16; PhiGammaModulesAndIwasawaCohomology §2.7; ShimuraData §3.10; ShimuraData §3.13; ShimuraData §3.8; gap:coherent-correspondences.
 
 
 ## Layer 8: Ordinary and finite-slope comparison
@@ -1370,7 +1370,7 @@ For all Siegel strata the sharp geometric + bound is λ≥w⁻¹w0M(κ+ρ)+ρ an
 
 A proof route is as follows: Show each normalized potent t preserves a lattice on every finite-dimensional slope block. Read off nonnegative normalized eigenvalue valuations and extend from the potent cone to the required positive cone. Remove the nonidentity BGG terms with the sharp analytic bound, and the unwanted geometric Cousin terms with geometric smallness.
 
-*Needs:* §8.2; §8.3; §5.9; §5.10; §6.6; §6.7; §7.2.
+*Needs:* §8.2; §8.3; §5.5; §5.8; §6.6; §6.7; §7.2.
 
 At an equality threshold the excluded cone inequality holds; a strict classicality test does not include that boundary.
 
@@ -1380,7 +1380,7 @@ At p inverted, a vertical divisor contributes no twist. For g=3, d=6 and the can
 
 ### Dependencies
 
-AdicSpacesPartIII §R3.1; AdicSpacesPartIII §R3.4; AdicSpacesPartIII §R3.6; AdicSpacesPartIII §R3.8; §5.3; §5.10; §5.9; §2.8; §2.1; AutomorphicBundlesPartII §3.0a; AutomorphicBundlesPartII §3.11; DeformationAndDerivedPatchingAlgebra §7.1; DeformationAndDerivedPatchingAlgebra §7.10; DeformationAndDerivedPatchingAlgebra §7.3; DeformationAndDerivedPatchingAlgebra §7.5; DeformationAndDerivedPatchingAlgebra §7.6; DeformationAndDerivedPatchingAlgebra §7.8; §7.2; §6.1; §6.6; §6.7; §6.9; §3.5; §3.2; §4.6; §4.8; §4.5; OverconvergentAutomorphicForms §8.7; PerfectoidShimuraVarieties §6.13; PerfectoidShimuraVarieties §6.13a; ResolutionOfSingularitiesCharacteristicZero §6.3; ShimuraCompactifications §7.19; ShimuraCompactifications §7.20; ShimuraCompactifications §7.21; SolidAnalyticRings §7.3; SolidAnalyticRings §7.4; gap:coherent-correspondences; gap:discrete-adic-solid-comparison; AutomorphicBundlesPartII §5.1; AutomorphicBundlesPartII §5.2; gap:projective-banach-cohomology; gap:siegel-ordinary-igusa; gap:solid-localization-kernel.
+AdicSpacesPartIII §R3.1; AdicSpacesPartIII §R3.4; AdicSpacesPartIII §R3.6; AdicSpacesPartIII §R3.8; §5.3; §5.8; §5.5; §2.8; §2.1; AutomorphicBundlesPartII §3.0a; AutomorphicBundlesPartII §3.11; DeformationAndDerivedPatchingAlgebra §7.1; DeformationAndDerivedPatchingAlgebra §7.10; DeformationAndDerivedPatchingAlgebra §7.3; DeformationAndDerivedPatchingAlgebra §7.5; DeformationAndDerivedPatchingAlgebra §7.6; DeformationAndDerivedPatchingAlgebra §7.8; §7.2; §6.1; §6.6; §6.7; §6.9; §3.5; §3.2; §4.6; §4.8; §4.5; OverconvergentAutomorphicForms §8.7; PerfectoidShimuraVarieties §6.13; PerfectoidShimuraVarieties §6.13a; ResolutionOfSingularitiesCharacteristicZero §6.3; ShimuraCompactifications §7.19; ShimuraCompactifications §7.20; ShimuraCompactifications §7.21; SolidAnalyticRings §7.3; SolidAnalyticRings §7.4; gap:coherent-correspondences; gap:discrete-adic-solid-comparison; AutomorphicBundlesPartII §5.1; AutomorphicBundlesPartII §5.2; gap:projective-banach-cohomology; gap:siegel-ordinary-igusa; gap:solid-localization-kernel.
 
 
 ## Layer 9: Modular, Siegel and unitary checks
@@ -1418,7 +1418,7 @@ For GL₂, d=1 and W_M={1}; the geometric finite-slope Cousin sequence reads 0�
 
 A proof route is as follows: Specialize the two Bruhat cells and their support long exact sequence. Subtract min(1,k) from both naive slope bounds. Use genus-one ordinary control and Serre duality to recover the complementary family; import the existing degree-zero Hida theorem.
 
-*Needs:* §5.5; §5.10; §4.6; §4.8; PadicFamilies Layer 0a; PadicFamilies Layer 0.
+*Needs:* §5.7; §5.8; §4.6; §4.8; PadicFamilies Layer 0a; PadicFamilies Layer 0.
 
 At k=2 the standard threshold is 1; equality slope 1 is not covered. At k=0 the degree-one integral threshold is 1.
 
@@ -1483,21 +1483,22 @@ The basic properties of this construction are:
 
 ### 9.6 The Klingen analytic overconvergent family
 
-Let X_Kli(p^n,ε) be the strict neighbourhood of the p-rank-at-least-one locus at Klingen level p^n, for rational 0<ε≤n−1/(p−1), and let U=U1U2 be the Pilloni operator, given by the cohomological correspondence of triples (A,H_n,L) with the raw normalization of §9.4. For rational 0<w′≤w≤ε, a p-adically complete coefficient algebra A in the source's admissible class and a w′-analytic character κ_A:ℤ_p^×→A^×, define the Banach sheaf F^(κ_A,w) as the Kli(ℤ/p^n)-invariants of the pushforward to X_Kli(p^n,ε) of the invertible sheaf L_(κ_A) on the analytic flag space FL_(n,ε,w), and put C(n,ε,w,κ_A,r)=RΓ(X_Kli(p^n,ε),F^(κ_A,w)⊗ω^r) and its cuspidal version with −D. Prove:
+Let X_Kli(p^n,ε) be the strict neighbourhood of the p-rank-at-least-one locus at Klingen level p^n, for rational 0<ε≤n−1/(p−1), and let U=U1U2 be the Pilloni operator, given by the cohomological correspondence of triples (A,H_n,L) with the raw normalization of §9.4. For rational 0<w′≤w≤ε, a p-adically complete coefficient algebra A in the source's admissible class and a w′-analytic character κ_A:ℤ_p^×→A^×, define the Banach sheaf F^(κ_A,w) as the Kli(ℤ/p^n)-invariants of the pushforward to X_Kli(p^n,ε) of the invertible sheaf L_(κ_A) on the analytic flag space FL_(n,ε,w), and put C(n,ε,w,κ_A,r)=RΓ(X_Kli(p^n,ε),F^(κ_A,w)⊗ω^r) and its cuspidal version with −D. A larger parameter gives a smaller flag neighbourhood: the flags in FL_(n,ε,w) are those congruent to the canonical one modulo p^w, so FL_(n,ε,v′)⊂FL_(n,ε,v) for v<v′, and restriction gives maps F^(κ_A,v)→F^(κ_A,v′) (Pilloni-Singular, §12.3, p. 75; proof of Lemma 13.2.2.1, p. 86). For an algebraic weight η∈ℤ, whose character z↦z^η is analytic for every positive radius parameter, define the radius colimit F^(η,w−)=colim_(0<v<w) F^(η,v) over rational v along these restriction maps, and C(n,ε,w−,η,r)=colim_(0<v<w) C(n,ε,v,η,r), with its cuspidal version with −D (Pilloni-Singular, §13.3.2, p. 90). Restriction to the parameter w gives maps F^(η,w−)→F^(η,w) and C(n,ε,w−,η,r)→C(n,ε,w,η,r). Prove:
 
 1. Both complexes are represented by bounded complexes of projective Banach A[1/p]-modules on which U acts compactly; U has slopes ≥−3 on every H^i and ≥0 on H^0, for canonical and cuspidal coefficients.
 2. Over the one-variable analytic weight space W of Λ1, covered by affinoids Spa(A_l[1/p],A_l) with universal character κ_(A_l), the finite-slope cuspidal part at r=2 is a complex C_cusp(A_l) over Spa(A_l[1/p],A_l)×G_m, concentrated in degrees 0 and 1 and independent of n,ε,w, on which the spectral coordinate X acts as U⁻¹. For a point κ of Spa(A_l[1/p],A_l) with residue field L and α∈L^×, form the derived pullback of C_cusp(A_l) to {κ}×G_m, that is, derived specialization over the weight factor only; it is a complex of coherent sheaves on the rigid analytic G_m over L whose cohomology has discrete support. Take its stalk at the point X=α⁻¹, the localization at the maximal ideal (X−α⁻¹). Its H^i is the generalized eigenspace H^i_cusp(†,κ,2)[(U−α)^∞], the α-primary component of U on the finite-slope cuspidal cohomology at weight κ, with its nilpotent part retained. This is not the derived fibre at the point (κ,α⁻¹) of Spa(A_l[1/p],A_l)×G_m: tensoring further with the residue field of the spectral point adds the Tor terms of X−α⁻¹ and replaces each primary component by its residue fibre (PadicFamilies §2a.17). The cohomology annihilator of C_cusp(A_l) defines a spectral variety Z→W, on each chart the spectral variety of PadicFamilies §2a.16 for the cuspidal complex of (1) over A_l at r=2 with its compact operator U, that is quasi-finite and locally finite; the charts glue over W.
 3. The function k↦dim H^1_cusp(†,k,2)_(=0)−dim H^0_cusp(†,k,2)_(=0) on ℤ_≥0⊂W is locally constant; up to sign it is the exact-slope-zero Euler characteristic, so this is the instance h=0 of the Euler-characteristic local constancy of PadicFamilies §2a.16 for the cuspidal complexes of (1) at r=2 over the reduced affinoids A_l[1/p], at the rank-one points k.
-4. For (k,r)∈ℤ_≥0², the two-term relative BGG sequence 0→Ω(k,r)→F^(k,w−)⊗ω^r→F^(−2−k,w−)⊗ω^(k+r+1)→0 is exact on X_Kli(p^n,ε), and its differential d1 satisfies d1∘U=p^(k+1)U∘d1, U being normalized on both terms by the pullback, coefficient map and p⁻³-trace of the correspondence (Pilloni-Singular §13.2.3, p. 87). Thus d1 carries a U-eigenclass of eigenvalue λ to one of eigenvalue p^(−k−1)λ and lowers slopes by k+1. By (1) the slopes of U on the cohomology of the last term are at least −3, and at least 0 on H^0, so the slopes of p^(k+1)U there are at least k−2, and at least k+1 on H^0; in the long exact sequence of slope parts for U on the first two terms and p^(k+1)U on the last, the last term has no slope <k−2 in any degree and no slope <k+1 in degree 0. Consequently the map from Ω(k,r) to F^(k,w)⊗ω^r induces isomorphisms on H^i of slope <k−2 in every degree, isomorphisms on H^0 and injections on H^1 of slope <k+1, for canonical and cuspidal coefficients. The printed equivariance has the opposite exponent (source issue E10).
+4. For (k,r)∈ℤ_≥0², the two-term relative BGG sequence 0→Ω(k,r)→F^(k,w−)⊗ω^r→F^(−2−k,w−)⊗ω^(k+r+1)→0 of radius colimits is exact on X_Kli(p^n,ε) (Pilloni-Singular, Lemma 13.3.2.1 and Proposition 13.3.2.1, pp. 89–90). The colimit is part of the statement: the differential d1 is the (k+1)-st derivative in the flag coordinate, and an antiderivative of a function analytic on a closed disc converges in general only on smaller discs, so the sequence of the fixed-radius sheaves F^(k,w) and F^(−2−k,w) is not exact on the right (first Check below). Cohomology of the quasi-compact and quasi-separated space X_Kli(p^n,ε), the generic fibre of an admissible formal scheme, commutes with the filtered colimit, so the sequence gives an exact triangle RΓ(X_Kli(p^n,ε),Ω(k,r))→C(n,ε,w−,k,r)→C(n,ε,w−,−2−k,k+r+1), and its cuspidal version (Pilloni-Singular, Corollary 13.3.2.1, p. 90). For v<w the restriction C(n,ε,v,η,r)→C(n,ε,w,η,r) is an isomorphism on finite-slope cohomology, because U factors through a restriction that improves the radius parameter (Pilloni-Singular, Corollary 13.2.4.2 and Remark 13.2.4.1, pp. 87–88). The restriction maps commute with U and so preserve slope-<h decompositions: on the cohomology of the colimit the slope-<h parts form a constant system, and the slope-<h factor of U stays invertible on the colimit of the complements. Hence C(n,ε,w−,η,r)→C(n,ε,w,η,r) is also an isomorphism on slope-<h cohomology for every rational h, for canonical and cuspidal coefficients; this transfers the triangle to the fixed parameter w on finite slopes. The differential d1 satisfies d1∘U=p^(k+1)U∘d1, U being normalized on both terms by the pullback, coefficient map and p⁻³-trace of the correspondence (Pilloni-Singular §13.2.3, p. 87). Thus d1 carries a U-eigenclass of eigenvalue λ to one of eigenvalue p^(−k−1)λ and lowers slopes by k+1. By (1) the slopes of U on the cohomology of the last term are at least −3, and at least 0 on H^0, so the slopes of p^(k+1)U there are at least k−2, and at least k+1 on H^0; in the long exact sequence of slope parts for U on the first two terms and p^(k+1)U on the last, the last term has no slope <k−2 in any degree and no slope <k+1 in degree 0. Consequently, through the triangle and the finite-slope isomorphism to the parameter w, the map from Ω(k,r) to F^(k,w)⊗ω^r induces isomorphisms on H^i of slope <k−2 in every degree, isomorphisms on H^0 and injections on H^1 of slope <k+1, for canonical and cuspidal coefficients. The printed equivariance has the opposite exponent (source issue E10).
 
-(Pilloni-Singular, §§12.6.2 and 12.8, pp. 76–80, Proposition 12.8.2.1, p. 79; §13.2, p. 85; Proposition 13.3.1.1, p. 88; Proposition 13.3.2.1, Corollary 13.3.2.1, Proposition 13.3.3.1 and Corollary 13.3.3.1, pp. 89–90; §13.4 and Proposition 13.4.1, p. 91.)
+(Pilloni-Singular, §§12.6.2 and 12.8, pp. 76–80, Proposition 12.8.2.1, p. 79; §13.2, p. 85; Corollary 13.2.4.2 and Remark 13.2.4.1, pp. 87–88; Proposition 13.3.1.1, p. 88; Lemma 13.3.2.1, Proposition 13.3.2.1, Corollary 13.3.2.1, Proposition 13.3.3.1 and Corollary 13.3.3.1, pp. 89–90; §13.4 and Proposition 13.4.1, p. 91.)
 
-A proof route is as follows: Trivialize L_(κ_A) on a Kli(ℤ/p^n)-stable affinoid cover of FL_(n,ε,w) and take the invariant direct factor of the Čech complex; the group order is invertible in A[1/p]. Factor U through a restriction that improves ε and w to obtain compactness and the slope lower bounds. Apply the imported compact-slope charts to obtain the finite-slope complex and its spectral variety; specialize derived over the weight chart first and then localize at the spectral maximal ideal, and read the Euler characteristic off a finite perfect slope block. For the equivariance in (4), the correspondence acts on the flag coordinate of the analytic flag space by the contraction z↦pz (Pilloni-Singular §13.2.2, p. 86), so the (k+1)-st derivative in z picks up the factor p^(k+1); compare the remaining coefficient and trace factors of the two terms in the normalization of §13.2.3. Derive the classicality ranges from the BGG triangle and the slope bounds on its third term.
+A proof route is as follows: Trivialize L_(κ_A) on a Kli(ℤ/p^n)-stable affinoid cover of FL_(n,ε,w) and take the invariant direct factor of the Čech complex; the group order is invertible in A[1/p]. Factor U through a restriction that improves ε and w to obtain compactness and the slope lower bounds. Apply the imported compact-slope charts to obtain the finite-slope complex and its spectral variety; specialize derived over the weight chart first and then localize at the spectral maximal ideal, and read the Euler characteristic off a finite perfect slope block. For the equivariance in (4), the correspondence acts on the flag coordinate of the analytic flag space by the contraction z↦pz (Pilloni-Singular §13.2.2, p. 86), so the (k+1)-st derivative in z picks up the factor p^(k+1); compare the remaining coefficient and trace factors of the two terms in the normalization of §13.2.3. Derive the classicality ranges from the BGG triangle of radius colimits, the slope bounds on its third term and the finite-slope identification of each colimit with the complex at the parameter w.
 
 *Needs:* §9.4; AutomorphicBundlesPartII §3.0b; ShimuraCompactifications §6.16; ShimuraCompactifications §6.17; ShimuraCompactifications §7.19; ShimuraCompactifications §7.20; ShimuraCompactifications §7.21; OverconvergentAutomorphicForms §0.4; PhiGammaModulesAndIwasawaCohomology §2.7; AdicSpacesPartIII §R3.1; AdicSpacesPartIII §R3.4; AdicSpacesPartIII §R3.6; gap:projective-banach-cohomology; gap:coherent-correspondences; LocallyAnalyticDistributions §4.16; PadicFamilies §2a.15; PadicFamilies §2a.16; PadicFamilies §2a.17.
 
 **Checks.**
 
+- Radius loss in (4). Over ℚ₂ let f(z)=Σ_(m≥1)2^m z^(2^m−1). Its coefficients 2^m tend to 0, so f is analytic on the closed unit disc. Every antiderivative has coefficient 1 at z^(2^m) for each m≥1, which does not tend to 0, so none is analytic on that disc; on the closed disc of radius ρ<1 these terms have sup-norm ρ^(2^m)→0, so the antiderivative converges there. So d/dz, the k=0 differential, is not surjective on the functions of one closed disc; in the colimit F^(0,w−) a function given at a parameter v has its antiderivative at any larger parameter v′<w, whose disc is smaller, so the cokernel vanishes there. The polynomial z has antiderivative z²/2 even at p=2, and the kernel of d/dz on these functions is the constants, the image of Ω(0,r).
 - At k=0 the all-degree threshold is k−2=−2, so ordinary slope 0 is not covered in degree 1; the degree-0 threshold is k+1=1, so slope 0 is covered on H^0 and slope 1 is not.
 - At k=3 the all-degree threshold is k−2=1: ordinary slope 0 is covered, which is where the degree-one equality d†′₁(k)=d†₁(k) of §9.8 starts.
 - Weight space has one variable: a point of Z lies over one character of ℤ_p^×, not over a two-variable Siegel Borel weight; replacing W by the two-variable space changes the local constancy statement.
@@ -1542,7 +1543,7 @@ For unitary signature (n,1), n≥1, at a split good prime with neat tame level a
 
 A proof route is as follows: Compute W_M\W by the omitted position of the last coordinate, checking the left-coset and inverse-action conventions. Substitute the A_n half-sum; the final shifted weights are integral despite possible half-integral individual ρ coordinates. Apply the general Coleman theorems in each of the n+1 strata and retain only the supported integral scope.
 
-*Needs:* §1.1; §5.6; §5.7; §6.9; §7.5; ShimuraData §3.8; ShimuraData §3.10; ShimuraData §3.13; PELModuli §M5.5; PELModuli §M5.6.
+*Needs:* §1.1; §5.6; §6.9; §7.5; ShimuraData §3.8; ShimuraData §3.10; ShimuraData §3.13; PELModuli §M5.5; PELModuli §M5.6.
 
 The unitary result is not a proof of the general integral Hodge/PEL target.
 
@@ -1552,7 +1553,7 @@ At k=2 on the modular curve the standard classicality endpoint is 1. At genus-tw
 
 ### Dependencies
 
-§1.1; AdicSpacesPartIII §R3.1; AdicSpacesPartIII §R3.4; AdicSpacesPartIII §R3.6; AutomorphicBundles §11.10; AutomorphicBundles §11.16; AutomorphicBundles §12.1; AutomorphicBundles §12.11; AutomorphicBundlesPartII §3.0b; AutomorphicBundlesPartII §3.13; §8.5; §5.5; §5.10; §5.7; §5.6; CompletedCohomologyPartII §3.11; CompletedCohomologyPartII §3.12; §2.6; DeformationAndDerivedPatchingAlgebra §7.1; DeformationAndDerivedPatchingAlgebra §7.10; DeformationAndDerivedPatchingAlgebra §7.3; DeformationAndDerivedPatchingAlgebra §7.5; DeformationAndDerivedPatchingAlgebra §7.6; DeformationAndDerivedPatchingAlgebra §7.8; §7.5; §6.9; §4.6; §4.8; §4.9; LocallyAnalyticDistributions §4.16; OverconvergentAutomorphicForms §0.4; PELModuli §M5.5; PELModuli §M5.6; PadicFamilies Layer 0; PadicFamilies Layer 0a; PadicFamilies §2a.15; PadicFamilies §2a.16; PadicFamilies §2a.17; PadicMeasuresIwasawaAlgebras §1.1; PadicMeasuresIwasawaAlgebras §1.7; PhiGammaModulesAndIwasawaCohomology §2.7; ShimuraCompactifications §6.16; ShimuraCompactifications §6.17; ShimuraCompactifications §7.19; ShimuraCompactifications §7.20; ShimuraCompactifications §7.21; ShimuraData §3.10; ShimuraData §3.13; ShimuraData §3.8; ShimuraData §5.10; ShimuraData §5.11; ShimuraData §5.5; ShimuraData §5.6; SmoothRepresentationsOfLocalGroups §SR.0.2; SmoothRepresentationsOfLocalGroups §SR.1.4; SmoothRepresentationsOfLocalGroups §SR.4.5; gap:coherent-correspondences; gap:klingen-height-one-igusa; AutomorphicBundlesPartII §5.1; AutomorphicBundlesPartII §5.2; gap:projective-banach-cohomology.
+§1.1; AdicSpacesPartIII §R3.1; AdicSpacesPartIII §R3.4; AdicSpacesPartIII §R3.6; AutomorphicBundles §11.10; AutomorphicBundles §11.16; AutomorphicBundles §12.1; AutomorphicBundles §12.11; AutomorphicBundlesPartII §3.0b; AutomorphicBundlesPartII §3.13; §8.5; §5.7; §5.8; §5.6; CompletedCohomologyPartII §3.11; CompletedCohomologyPartII §3.12; §2.6; DeformationAndDerivedPatchingAlgebra §7.1; DeformationAndDerivedPatchingAlgebra §7.10; DeformationAndDerivedPatchingAlgebra §7.3; DeformationAndDerivedPatchingAlgebra §7.5; DeformationAndDerivedPatchingAlgebra §7.6; DeformationAndDerivedPatchingAlgebra §7.8; §7.5; §6.9; §4.6; §4.8; §4.9; LocallyAnalyticDistributions §4.16; OverconvergentAutomorphicForms §0.4; PELModuli §M5.5; PELModuli §M5.6; PadicFamilies Layer 0; PadicFamilies Layer 0a; PadicFamilies §2a.15; PadicFamilies §2a.16; PadicFamilies §2a.17; PadicMeasuresIwasawaAlgebras §1.1; PadicMeasuresIwasawaAlgebras §1.7; PhiGammaModulesAndIwasawaCohomology §2.7; ShimuraCompactifications §6.16; ShimuraCompactifications §6.17; ShimuraCompactifications §7.19; ShimuraCompactifications §7.20; ShimuraCompactifications §7.21; ShimuraData §3.10; ShimuraData §3.13; ShimuraData §3.8; ShimuraData §5.10; ShimuraData §5.11; ShimuraData §5.5; ShimuraData §5.6; SmoothRepresentationsOfLocalGroups §SR.0.2; SmoothRepresentationsOfLocalGroups §SR.1.4; SmoothRepresentationsOfLocalGroups §SR.4.5; gap:coherent-correspondences; gap:klingen-height-one-igusa; AutomorphicBundlesPartII §5.1; AutomorphicBundlesPartII §5.2; gap:projective-banach-cohomology.
 
 
 ## Downstream consumers
