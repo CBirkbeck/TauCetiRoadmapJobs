@@ -69,3 +69,21 @@ status = "certified"
 accessed = "2026-11-05"
 version_note = "lecture-notes draft on the author's page; the published book (Cambridge University Press, 2008) was not collated"
 cited_for = ["2.0"]
+
+[[source]]
+id = "MAT"
+authors = "Dmytro Matvieievskyi"
+title = "On the affinization of a nilpotent orbit cover"
+year = 2020
+arxiv = "2003.09356v2"
+locator_scheme = "theorem"
+locator = "Proposition 2.1.1 and the paragraph after it, p.2"
+url = "https://arxiv.org/abs/2003.09356v2"
+fetched_from = "https://arxiv.org/pdf/2003.09356v2"
+fetched_at = "2026-11-13T16:02:48Z"
+sha256 = "7ca08ea10aef99484e42b00a154673bb1be00099d9ddd637b59c2106945275b4"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-13"
+version_note = "arXiv v2"
+cited_for = ["2.2"]
