@@ -2,7 +2,7 @@
 
 Reviewers, red-team passes and errata jobs record every mistake they find in a source while checking a roadmap's locators: misprints (slips whose intended meaning is clear), errors (a false statement or proof step) and gaps (a step the source does not justify), each with the roadmap, the board pull request or errata job and the head that reported it. Collected by the board sync from the `## Source issues` sections of review, red-team and errata comments; the data is in `errata/source-issues.json`.
 
-12838 mistakes recorded on the board: 7300 misprints, 3398 errors, 1673 gaps, 467 unparsed bullets.
+12853 mistakes recorded on the board: 7314 misprints, 3398 errors, 1674 gaps, 467 unparsed bullets.
 Errata jobs have read the cited sources of 60 roadmaps; in those of 2 they found no mistake.
 The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explorer/`: 1525 awaiting review, 13582 confirmed, 228 rejected.
 
@@ -8870,7 +8870,10 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 
 ## helle-rognes2024
 
+- **Misprint** at Lemma 2.2 proof, printed p. 2, line 69: the source says to use the image of the differential leaving position s as boundaries there; it should be the image entering s from s+r; affects the proof. Found by SpectralSequencesAndConvergence (#13813 at 26568fc, 2026-11-13, codex gpt-6-astra).
 - **Misprint** at Lemma 2.2, proof, printed p. 2 (line 69): the source says the image of the differential leaving s is a subobject at s; it should be the image of the differential entering s from s+r; affects the proof. Found by SpectralSequencesAndConvergence (#13813 at 10d27c0, 2026-11-13, codex gpt-6-astra).
+- **Misprint** at Lemma 3.13 proof, printed p. 4, line 186: the source says πs from A−∞ to Aˢ is a colimit structure map; it should be a limit projection; affects nothing; For the first gap, a two-term identity complex ℤ→ℤ and its subcomplex 0→ℤ both have H⁰=0, while their degree-1 boundaries are ℤ and 0. Thus degree-(n−1) cohomology alone does not supply that boundary equality. The design uses its separately stated sufficient hypotheses and does not inherit this proof step. Found by SpectralSequencesAndConvergence (#13813 at 26568fc, 2026-11-13, codex gpt-6-astra).
+- **Misprint** at Proposition 4.9 proof, printed p. 6, line 332: the source says the incoming differential image starts at s−r; it should be start at s+r under that indexing; affects the proof. Found by SpectralSequencesAndConvergence (#13813 at 26568fc, 2026-11-13, codex gpt-6-astra).
 - **Misprint** at Proposition 4.9, proof, printed p. 6 (line 332): the source says the relevant image differential starts at s−r; it should be start at s+r, as in the proposition's statement; affects the proof; The first slip was recorded in the previous round and rechecked: `(0→ℤ)⊂(ℤ→id ℤ)` gives identical degree-0 cohomology, but in degree 1 the subcomplex has boundaries 0 and `im d∩F=ℤ`. None of these source slips is used as a roadmap formula. The roadmap uses the correct neighboring degree, boundary hypothesis and entering-differential convention. Found by SpectralSequencesAndConvergence (#13813 at 10d27c0, 2026-11-13, codex gpt-6-astra).
 
 ## Helm (Hel16, arXiv:1201.1874v3)
@@ -9529,6 +9532,7 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 
 - **Misprint** at Corollary 3.3 proof, printed p. 12 (line 518): the source says the nonzero homology residue is 3 modulo 3; it should be 3 modulo 4, as in the corollary; affects the proof. Found by CohomologyOfGroups (#14777 at e75c7b5, 2026-11-13, codex gpt-6-astra).
 - **Misprint** at Corollary 3.3 proof, printed p. 12, line 518: the source says the second odd residue case is 3 modulo 3; it should be 3 modulo 4; affects the proof. Found by CohomologyOfGroups (#14777 at 2a8a308, 2026-11-13, codex gpt-6-astra).
+- **Misprint** at Corollary3.3 proof, printed p.12, line518: the source says the relevant odd degrees are 3 modulo 3; it should be 3 modulo 4; affects the proof. Found by CohomologyOfGroups (#14777 at a5cef00, 2026-11-13, codex gpt-6-astra).
 
 ## Huybrechts, Lectures on K3 surfaces (author draft)
 
@@ -11538,12 +11542,16 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 
 - **Misprint** at Corollary 3.2.23 proof, printed p. 136 (lines 5903, 5908, 5927): the source says the tensor resolution has G in both factors; it should be G in the first factor and H in the second; affects the proof. Found by CohomologyOfGroups (#14777 at e75c7b5, 2026-11-13, codex gpt-6-astra).
 - **Misprint** at Corollary 3.2.23 proof, printed p. 136, lines 5903, 5908 and 5927: the source says both tensor factors use the resolution of G; it should be the resolutions of G and H respectively; affects the proof. Found by CohomologyOfGroups (#14777 at 2a8a308, 2026-11-13, codex gpt-6-astra).
+- **Misprint** at Corollary3.2.23 proof, printed p.136, lines5903,5908,5927: the source says both tensor factors use the resolution of G; it should be the resolutions of G and H; affects the proof. Found by CohomologyOfGroups (#14777 at a5cef00, 2026-11-13, codex gpt-6-astra).
 - **Misprint** at Example 3.2.24, printed p. 137 (lines 5954–5955): the source says integral homology of ℤ² vanishes for n≥2; it should be n≥3, since the immediately preceding computation gives H₂=ℤ; affects a stated result. Found by CohomologyOfGroups (#14777 at e75c7b5, 2026-11-13, codex gpt-6-astra).
 - **Misprint** at Example 3.2.24, printed p. 137, lines 5954–5955: the source says the integral homology of the rank-two free abelian group vanishes from degree two; it should be from degree three, with degree two equal to ℤ; affects a stated result. Found by CohomologyOfGroups (#14777 at 2a8a308, 2026-11-13, codex gpt-6-astra).
 - **Misprint** at Example 3.2.24, printed p. 137, lines 5954–5955: the source says integral homology of the rank-two free abelian group vanishes from degree two; it should be from degree three, with degree two equal to ℤ; affects a stated result. Found by CohomologyOfGroups (#14777 at 6c08ac7, 2026-11-13, codex gpt-6-astra).
 - **Misprint** at Example 3.2.25 conclusion, printed p. 138 (lines 5976–5980): the source says integral-coefficient Hₙ is an n-dimensional vector space over 𝔽_p; it should be Hₙ with 𝔽_p coefficients, of dimension n+1; affects a stated result. Found by CohomologyOfGroups (#14777 at e75c7b5, 2026-11-13, codex gpt-6-astra).
 - **Misprint** at Example 3.2.25 conclusion, printed p. 138, lines 5976–5980: the source says the computed groups have integral coefficients and dimension n; it should be coefficients 𝔽_p and dimension n+1 in degree n; affects a stated result. Found by CohomologyOfGroups (#14777 at 2a8a308, 2026-11-13, codex gpt-6-astra).
+- **Misprint** at Example3.2.24, printed p.137, lines5954–5955: the source says integral homology of ℤ² vanishes from degree two; it should be from degree three, with degree two ℤ; affects a stated result. Found by CohomologyOfGroups (#14777 at a5cef00, 2026-11-13, codex gpt-6-astra).
+- **Misprint** at Example3.2.25 conclusion, printed p.138, lines5976–5980: the source says integral coefficients and dimension n; it should be coefficients 𝔽_p and dimension n+1; affects a stated result. Found by CohomologyOfGroups (#14777 at a5cef00, 2026-11-13, codex gpt-6-astra).
 - **Misprint** at Theorem 3.2.18 proof, printed p. 130, line 5643: the source says the E² term at (2,0) is H₁ of the quotient with invariant coefficients; it should be H₂ of that quotient with invariant coefficients; affects the proof. Found by CohomologyOfGroups (#14777 at 6c08ac7, 2026-11-13, codex gpt-6-astra).
+- **Misprint** at Theorem3.2.18 proof, printed p.130, line5643: the source says the (2,0) term uses first homology of the quotient; it should be second homology of the quotient; affects the proof. Found by CohomologyOfGroups (#14777 at a5cef00, 2026-11-13, codex gpt-6-astra).
 
 ## LOU17
 
@@ -11883,8 +11891,10 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 
 ## may-primer
 
+- **Misprint** at Example 2.3, printed p. 4: the source says an infinite cyclic summand gives the integers on every page of the mod `p` sequence; it should be the field with `p` elements; affects a stated result. Found by SpectralSequencesAndConvergencePartII (#14773 at 6de1805, 2026-11-13, claude fable).
 - **Misprint** at Example 2.3, printed p. 4, line 162: the source says a free integral homology summand contributes an integral summand to the mod-p page; it should be contribute a copy of 𝔽_p; affects a stated result. Found by SpectralSequencesAndConvergencePartII (#14773 at 33aeacd, 2026-11-13, codex gpt-6-astra).
 - **Misprint** at Example 2.3, printed p.4 (line 162): the source says a free integral summand contributes ℤ on every mod-p Bockstein page; it should be 𝔽_p on every page; affects a stated result. Found by SpectralSequencesAndConvergencePartII (#14773 at c590ef8, 2026-11-13, codex gpt-6-astra).
+- **Misprint** at Proposition 4.1, printed p. 7: the source says `μ_n` for the pairing is equivalent to `μ_{n−1}` for the derived pairing, for every `n`; it should be restrict to `n ≥ 1`; affects a stated result. Found by SpectralSequencesAndConvergencePartII (#14773 at 6de1805, 2026-11-13, claude fable).
 - **Misprint** at Proposition 4.1, printed p. 7, line 267–279: the source says the condition descends from index n to n−1 without specifying a positive index; it should be restrict that equivalence to n ≥ 1; affects a stated result. Found by SpectralSequencesAndConvergencePartII (#14773 at 33aeacd, 2026-11-13, codex gpt-6-astra).
 - **Misprint** at Proposition 4.1, printed p.7 (line 267–268): the source says the derivation equivalence with index n−1 without restricting n; it should be stated for n≥1; affects a stated result. Found by SpectralSequencesAndConvergencePartII (#14773 at c590ef8, 2026-11-13, codex gpt-6-astra).
 
@@ -15124,9 +15134,12 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 ## stacks-012K
 
 - **Misprint** at Lemma 24.11, proof of (24.6.1), printed p. 65 (line 3162): the source says vanishing of the filtration step in degree n yields the cycle equality; it should be vanishing in degree n+1; affects the proof. Found by SpectralSequencesAndConvergence (#13813 at 10d27c0, 2026-11-13, codex gpt-6-astra).
+- **Misprint** at Lemma 24.11, proof of (24.6.1), printed p. 65, line 3162: the source says the vanishing step used for the cycle condition concerns Kⁿ; it should be the corresponding step of Kⁿ⁺¹; affects the proof. Found by SpectralSequencesAndConvergence (#13813 at 26568fc, 2026-11-13, codex gpt-6-astra).
 - **Misprint** at Lemma 24.13 (tag 0BK5), proof of equality in (24.6.2), printed page 67: the source says the identity `d(F^s K^{n−1}) = Im(d) ∩ F^s K^n` follows from the cohomology isomorphism in degree `n − 1`, for `s < p₁(n − 1)`; it should be injectivity of `H^n(F^s K) → H^n(K)` in degree `n`, for `s ≤ p₁(n)` (`K = (ℤ →id ℤ)`, `F^s K = (0 → ℤ)` refutes the degree `n − 1` form); affects the proof; <!-- tauceti-roadmap-review {"agent": "claude", "head": "6a763025ec49d219c9050568c97b6eaa2529e1c1", "job": "REV-DESIGN-SpectralSequencesAndConvergence~5", "model": "fable", "worker": "chris-x10"} -->. Found by SpectralSequencesAndConvergence (#13813 at 6a76302, 2026-11-11, claude fable).
 - **Misprint** at Lemma 24.13, proof of (24.6.1), printed p. 67 (line 3225–3226): the source says to add the differential image of the degree-n filtration term to degree-n cycles; it should be the degree-n filtration term itself; affects the proof. Found by SpectralSequencesAndConvergence (#13813 at 10d27c0, 2026-11-13, codex gpt-6-astra).
+- **Misprint** at Lemma 24.13, proof of (24.6.1), printed p. 67, line 3225–3226: the source says to add d(Fᵖ⁺ʳKⁿ) to cycles in degree n; it should be Fᵖ⁺ʳKⁿ at that step; affects the proof. Found by SpectralSequencesAndConvergence (#13813 at 26568fc, 2026-11-13, codex gpt-6-astra).
 - **Misprint** at Lemma 24.13, proof of (24.6.2), printed p. 67 (line 3229–3232): the source says degree-n−1 cohomology isomorphism gives the boundary equality; it should be degree-n injectivity with the corresponding bound; affects the proof. Found by SpectralSequencesAndConvergence (#13813 at 10d27c0, 2026-11-13, codex gpt-6-astra).
+- **Gap** at Lemma 24.13, proof of (24.6.2), printed p. 67, line 3229–3232: the source says an isomorphism in degree n−1 identifies the boundaries; it should be justified using degree-n injectivity and the neighboring-degree bound; affects the proof. Found by SpectralSequencesAndConvergence (#13813 at 26568fc, 2026-11-13, codex gpt-6-astra).
 - **Misprint** at Lemma 24.13, proof of (24.6.2), printed page 67 (line 3229–3232): the source says the boundary equality follows from a cohomology isomorphism in degree n−1; it should be injectivity in degree n, using its corresponding eventual bound; affects the proof; The same misprint was recorded previously and was rechecked: `K=(ℤ→id ℤ)` and the subcomplex `(0→ℤ)` have identical degree-0 cohomology, but in degree 1 the subcomplex's boundaries are 0 while `im d∩F K¹=ℤ`. The roadmap correctly uses degree-n injectivity. Found by SpectralSequencesAndConvergence (#13813 at 9e28545, 2026-11-13, codex gpt-6-astra).
 
 ## stacks-04XE
@@ -15135,7 +15148,9 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 
 ## stacks-05QI
 
+- **Misprint** at Lemma 18.4 (proof), printed p. 65: the source says the residual map subtracts the homotopy component of index `n − 1`, and composes the chain map and differential in the wrong order; it should be use the component of index `n` and `αⁿ ∘ d^{n−1}`; affects the proof. Found by SpectralSequencesAndConvergencePartII (#14773 at 6de1805, 2026-11-13, claude fable).
 - **Misprint** at Lemma 18.4 proof, printed p. 65, line 3277–3283: the source says the induction residual subtracts a wrongly indexed homotopy component and uses a wrongly indexed chain-map component; it should be subtract d_I^{n−1}h^n and use α^n d_K^{n−1}=d_I^{n−1}α^{n−1}; affects the proof. Found by SpectralSequencesAndConvergencePartII (#14773 at 33aeacd, 2026-11-13, codex gpt-6-astra).
+- **Misprint** at Lemma 22.1 (proof), printed p. 74: the source says the transformation is evaluated on the value of the first derived functor at an injective; it should be evaluated at the injective placed in degree zero; affects the proof. Found by SpectralSequencesAndConvergencePartII (#14773 at 6de1805, 2026-11-13, claude fable).
 - **Misprint** at Lemma 22.1 proof, printed p. 74, line 3712–3713: the source says to evaluate the comparison transformation at RF(I); it should be evaluate at I[0], then identify RF(I[0]) with F(I)[0]; affects the proof. Found by SpectralSequencesAndConvergencePartII (#14773 at 33aeacd, 2026-11-13, codex gpt-6-astra).
 
 ## stacks-06RD
