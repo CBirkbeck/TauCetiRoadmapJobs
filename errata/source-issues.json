@@ -207291,10 +207291,42 @@
    "reported": "2026-11-13",
    "reporter": "codex gpt-6-astra",
    "comment": "https://github.com/TauCetiProject/TauCetiRoadmapJobs/pull/13156#issuecomment-6862760396"
+  },
+  {
+   "kind": "misprint",
+   "source": "Loh19",
+   "locator": "Example 3.2.24, printed p. 137, lines 5954–5955",
+   "says": "integral homology of the rank-two free abelian group vanishes from degree two",
+   "should": "from degree three, with degree two equal to ℤ",
+   "affects": "a stated result",
+   "note": "",
+   "roadmap": "CohomologyOfGroups",
+   "job": "REV-DESIGN-CohomologyOfGroups~3",
+   "board_pr": 14777,
+   "head": "6c08ac7",
+   "reported": "2026-11-13",
+   "reporter": "codex gpt-6-astra",
+   "comment": "https://github.com/TauCetiProject/TauCetiRoadmapJobs/pull/14777#issuecomment-6863924928"
+  },
+  {
+   "kind": "misprint",
+   "source": "Loh19",
+   "locator": "Theorem 3.2.18 proof, printed p. 130, line 5643",
+   "says": "the E² term at (2,0) is H₁ of the quotient with invariant coefficients",
+   "should": "H₂ of that quotient with invariant coefficients",
+   "affects": "the proof",
+   "note": "",
+   "roadmap": "CohomologyOfGroups",
+   "job": "REV-DESIGN-CohomologyOfGroups~3",
+   "board_pr": 14777,
+   "head": "6c08ac7",
+   "reported": "2026-11-13",
+   "reporter": "codex gpt-6-astra",
+   "comment": "https://github.com/TauCetiProject/TauCetiRoadmapJobs/pull/14777#issuecomment-6863924928"
   }
  ],
- "scanned_to": "2026-11-13T20:16:36Z",
- "updated": "2026-11-13T20:20:57Z",
+ "scanned_to": "2026-11-13T20:22:13Z",
+ "updated": "2026-11-13T20:44:09Z",
  "covered": [
   {
    "job": "ERRATA-TemperleyLieb",
