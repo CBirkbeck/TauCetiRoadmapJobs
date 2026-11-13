@@ -1,0 +1,20 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-PadicHodgeParametersInLocallyAnalyticRepresentations~1",
+  "head": "c1ff1677b1822024faac916b0a3d98ff798c7f85",
+  "pr": 2257,
+  "folder": "PadicHodgeParametersInLocallyAnalyticRepresentations",
+  "date": "2026-11-13",
+  "findings": 2,
+  "blocking": 0,
+  "notes": "Full review. Two P3 findings, both on the pull request description (principal supplier LocallyAnalyticRepresentationsOfLocalGroups not listed although it is neither on main nor in a pull request; the description says the Lean states definitions and theorems while Suggested.lean declares nothing). No finding against README.md or Suggested.lean. Checked: all 15 seeded sample targets and the 8 headline groups against DING25 pp. 47-59 (34 locators) and CEGGPS16 Lemma 3.22 (1 locator), all correct; adversarial table of 23 rows with computed values; every cited supplier section resolved at open heads, on main, or in the board package; declared gap principal-series-bernstein-completion consistent in plan and README; pinned Tau Ceti and Mathlib declarations opened; gate passes; depcheck 211 roadmaps, 1914 edges, 0 problems; Suggested.lean elaborates with no output and has no declaration. Two source-correction entries outside the sample not compared with the text.",
+  "carried": {
+   "from": "c1ff1677b1822024faac916b0a3d98ff798c7f85",
+   "head": "c1ff1677b1822024faac916b0a3d98ff798c7f85",
+   "findings": 2,
+   "lines": 0,
+   "folders": []
+  }
+ }
+}
