@@ -1,0 +1,22 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-KloostermanMomentsAndPotentialAutomorphy~1",
+  "head": "399a75bbea43a9099f1b210f3f531443285b38e5",
+  "pr": 2301,
+  "folder": "KloostermanMomentsAndPotentialAutomorphy",
+  "date": "2026-11-14",
+  "findings": 3,
+  "blocking": 0,
+  "notes": "Full review. Gate: every check 0, build OK; depcheck 241 roadmaps, 2192 edges, 0 problems; outside-folder diff empty. Seeded sample of 15 targets verified against FSY, XZ, Yun-moments and Serre-orthogonal (53 locators, one wrong: R03). Adversarial table of 21 rows with recomputed moments over F_p (p = 2..13, k <= 12), degrees, Euler factors, conductors, signs and the p = 2 invariant counts. 152 supplier section headings and 6 named declarations resolved; six declared gaps match plan.json. Suggested.lean elaborates with sorry as the only warning; signatures compared by #check; one-tactic probes left open; no padding. Findings, all P3: R01 the excluded case p = 2, k even of the coefficient divisibility is Haessig's theorem per the cited FSY Remark 5.28 and the README should say so; R02 the pull request description omits the hypothesis p odd or k odd; R03 locator of README 2.4 (Proposition 2.7 is in FSY 2.2, p. 12). Five source issues recorded for the errata register.",
+  "carried": {
+   "from": "399a75bbea43a9099f1b210f3f531443285b38e5",
+   "head": "954c2942f3f7d9dee7a7a8fe6e4b8a0e58b76f70",
+   "findings": 3,
+   "lines": 30,
+   "folders": [
+    "KloostermanMomentsAndPotentialAutomorphy"
+   ]
+  }
+ }
+}
