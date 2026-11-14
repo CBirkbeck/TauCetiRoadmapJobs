@@ -22,7 +22,7 @@ authors = ["The Stacks Project Authors"]
 title = "The Stacks Project, chapter Homological Algebra"
 year = 2026
 locator_scheme = "tag"
-locator = "012K; §18 Definition 18.3 (tag 012Z, line 2154–2164); §25 (tags 012X, 0130–0133, line 3241–3315); §26 (tags 0E1P, 0E1Q, 09J0, 0E1R, line 3347–3438, including the complex Tot_π at line 3400–3409)"
+locator = "012K; §18 Definition 18.3 (tag 012Z, line 2154–2164); §24 Definition 24.9 (tag 012U, line 3131–3140); §25 (tags 012X, 0130–0133, line 3241–3315); §26 (tags 0E1P, 0E1Q, 09IZ, 09J0, 0E1R, line 3347–3438, including the complex Tot_π at line 3400–3409)"
 url = "https://stacks.math.columbia.edu/tag/012K"
 fetched_from = "https://stacks.math.columbia.edu/download/homology.pdf#nameddest=012K"
 fetched_at = "2026-11-13T12:41:55Z"
@@ -30,7 +30,7 @@ sha256 = "f3d73df1c27a6d88f9e4dd0f01697b3dd8553b88e3ea078539a9b512dc4d9576"
 licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-13"
-cited_for = ["Conventions", "1.1", "1.2", "1.3", "1.4", "1.5"]
+cited_for = ["Scope and ownership", "Conventions", "Exact supplier contracts", "1.1", "1.2", "1.3", "1.4", "1.5"]
 
 [[source]]
 id = "stacks-05QI"
@@ -137,7 +137,7 @@ locator = "Ch. 2 (multiplicative structures); Ch. 10 (the Bockstein spectral seq
 licence_class = "none"
 status = "uncertified"
 version_note = "paywalled; cited by its locator without the text"
-cited_for = ["5.2", "6.1", "6.2"]
+cited_for = ["5.2", "6.1"]
 
 [[source]]
 id = "cartan-eilenberg1956"

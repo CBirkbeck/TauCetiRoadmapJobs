@@ -1379,7 +1379,7 @@
      ],
      "locator": {
       "source": "may-primer",
-      "where": "line 147–168, Example 2.3 (higher universal-coefficient sequences and the limit page for finite type over ℤ); hatcher-at line 13330–13337, Proposition 3E.3; mccleary2001 Ch. 10 (uncertified)"
+      "where": "line 147–168, Example 2.3 (higher universal-coefficient sequences and the limit page for finite type over ℤ); hatcher-at line 13330–13337, Proposition 3E.3"
      },
      "prerequisites": [
       "target:6.1",
@@ -1586,7 +1586,7 @@
    "slug": "base-induced-filtration",
    "supplier": "SpectralSequencesAndConvergence",
    "section": "§5.2",
-   "needs": "for a cochain complex K with an antitone family F : ℤ → Subobject K of subcomplexes, the induced filtration F^p H^n(K) = im(H^n(F^p K) → H^n(K)) as a decreasingly filtered object, functorial in filtered morphisms, and, wherever the spectral sequence of (K, F) in the classical indexing has a limit page at (p, n − p), the canonical presentation of gr^p H^n(K) as a subquotient of E_∞^{p,n−p}, an inclusion Zᵗ/B_∞ ↪ E_∞^{p,n−p} followed by a projection Zᵗ/B_∞ ↠ Zᵗ/Bᵗ ≅ gr^p H^n(K) (the comparison of gap:base-einfty-comparison read through Tau Ceti's CochainComplex.filtrationAbutmentIso), natural in filtered morphisms of complexes. When both maps of this presentation are isomorphisms, their composite supplies the weak-convergence isomorphism β at (p, n − p) of gap:base-convergence-structures; convergence through this presentation means that both maps are isomorphisms at every position concerned (stacks-012K line 3131–3140, Definition 24.9). The existence of some other isomorphism E_∞^{p,n−p} ≅ gr^p H^n(K) is not asserted to make the presentation invertible.",
+   "needs": "for a cochain complex K with an antitone family F : ℤ → Subobject K of subcomplexes, the induced filtration F^p H^n(K) = im(H^n(F^p K) → H^n(K)) as a decreasingly filtered object, functorial in filtered morphisms, and, wherever the spectral sequence of (K, F) in the classical indexing has a limit page at (p, n − p), the canonical presentation of gr^p H^n(K) as a subquotient of E_∞^{p,n−p}, an inclusion Zᵗ/B_∞ ↪ E_∞^{p,n−p} followed by a projection Zᵗ/B_∞ ↠ Zᵗ/Bᵗ ≅ gr^p H^n(K) (the comparison of gap:base-einfty-comparison read through Tau Ceti's CochainComplex.filtrationAbutmentIso), natural in filtered morphisms of complexes. When both maps of this presentation are isomorphisms, their composite supplies the weak-convergence isomorphism β at (p, n − p) of gap:base-convergence-structures; convergence through this presentation means that both maps are isomorphisms at every position concerned (stacks-012K line 3131–3140, Definition 24.9, tag 012U). The existence of some other isomorphism E_∞^{p,n−p} ≅ gr^p H^n(K) is not asserted to make the presentation invertible.",
    "neededBy": [
     "1.2",
     "1.4",
@@ -1658,7 +1658,7 @@
    "slug": "base-complete-convergence",
    "supplier": "SpectralSequencesAndConvergence",
    "section": "§7.5",
-   "needs": "in an abelian category with countable products and coproducts, CountableAB4Star, exact sequential colimits and lim-acyclic epimorphic towers (gap:base-tower-exact-categories), for a decreasingly filtered cochain complex (K, F) whose filtration is exhaustive and complete (K^m ≅ lim_p K^m/F^p K^m) in every degree and whose spectral sequence in the classical indexing is regular at every position, and such that for every n there is a bound below which E_1^{p,m−p} = 0 for m ∈ {n − 1, n}, the spectral sequence converges strongly in every degree to H^*(K) with the induced filtration.",
+   "needs": "in an abelian category with countable products and coproducts, CountableAB4Star, exact sequential colimits and lim-acyclic epimorphic towers (gap:base-tower-exact-categories), for a decreasingly filtered cochain complex (K, F) whose filtration is exhaustive and complete (K^m ≅ lim_p K^m/F^p K^m) in every degree and whose spectral sequence in the classical indexing is regular at every position, and such that for every n there is a bound below which E_1^{p,m−p} = 0 for m ∈ {n − 1, n}, the spectral sequence converges strongly in every degree to H^*(K) with the induced filtration, through the canonical isomorphisms of gap:base-induced-filtration.",
    "neededBy": [
     "1.3",
     "1.5"

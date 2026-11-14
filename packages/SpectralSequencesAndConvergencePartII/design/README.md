@@ -483,8 +483,8 @@ lim-acyclic epimorphic towers (gap:base-tower-exact-categories), for a decreasin
 complex `(K, F)` whose filtration is exhaustive and complete (`K^m ≅ lim_p K^m/F^p K^m`) in every
 degree and whose spectral sequence in the classical indexing is regular at every position, and such
 that for every `n` there is a bound below which `E_1^{p,m−p} = 0` for `m ∈ {n − 1, n}`, the spectral
-sequence converges strongly in every degree to `H^*(K)` with the induced filtration. Supplier
-section: §7.5. Used in 1.3(c) and 1.5.
+sequence converges strongly in every degree to `H^*(K)` with the induced filtration, through the
+canonical isomorphisms of gap:base-induced-filtration. Supplier section: §7.5. Used in 1.3(c) and 1.5.
 
 ### From TauCetiRoadmap.StableHomotopyKTheory
 
@@ -1683,7 +1683,8 @@ Tau Ceti's filtered-complex spectral sequence; Layer 5 for multiplicativity; Sta
 ## References
 
 - stacks-012K: The Stacks Project Authors, *The Stacks Project*, chapter Homological Algebra, §18
-  (Definition 18.3, tag 012Z), §25 (tags 012X, 0130–0133), §26 (tags 0E1P, 0E1Q, 09IZ, 09J0, 0E1R).
+  (Definition 18.3, tag 012Z), §24 (Definition 24.9, tag 012U), §25 (tags 012X, 0130–0133), §26 (tags
+  0E1P, 0E1Q, 09IZ, 09J0, 0E1R).
 - stacks-05QI: The Stacks Project Authors, *The Stacks Project*, chapter Derived Categories, §16
   (tags 05TC, 015A, 05TD, 015C, 05TE, 015E), §18 (tags 013R, 013P, 013S, 013T), §19, §21 (tags 015G–015K),
   §22 (tags 015L–015N).
