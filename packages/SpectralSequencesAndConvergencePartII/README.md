@@ -10,8 +10,8 @@ algebra inside that language and proves that they converge: the two spectral seq
 complex for the direct-sum and the product totalisation, with the half-plane convergence theorems,
 the comparison of totals and the acyclic assembly lemma; horseshoe and Cartan–Eilenberg
 resolutions, the right derived functors of Mathlib's bounded-below derived category compared with
-the classical ones, and the two hypercohomology spectral sequences of a left exact functor, with
-their duals for right exact and contravariant functors; the composition theorem for right derived
+the classical ones, and the two hypercohomology spectral sequences of an additive functor, with
+their hyperhomology and contravariant duals; the composition theorem for right derived
 functors and the composite-functor spectral sequence of a complex; the balancing of Tor, the
 universal-coefficient, Künneth and change-of-rings spectral sequences over rings; pairings of exact
 couples, filtered complexes and double complexes with the Leibniz rule on every page; and the
@@ -72,10 +72,10 @@ It leaves to named owners:
 - **ArithmeticGaloisDuality, §D7.1**, target *Derived composite spectral sequence*: the
   composite-functor spectral sequence `E₂^{a,b} = R^aH(R^bF(X)) ⇒ R^{a+b}(H ∘ F)(X)` of an object
   `X`, with finite filtrations and edge maps the canonical maps. Layer 3 states the sequence of a
-  complex in `D⁺`, of which §D7.1's is the case of an object (§D7.1 builds on DerivedModuleAlgebra
-  §S.1's spectral sequence, identified with Layer 1's by 1.3(a′)), and adds the composition theorem,
-  the low-degree sequences, naturality in the functors and the right exact and mixed-variance
-  forms.
+  complex in `D⁺` for an additive first functor, of which §D7.1's is the case of an object and a left
+  exact first functor (§D7.1 builds on DerivedModuleAlgebra §S.1's spectral sequence, identified
+  with Layer 1's by 1.3(a′)), and adds the composition theorem, the low-degree sequences, naturality
+  in the functors and the right exact and mixed-variance forms.
 - **ArithmeticStatisticsPartVIII, §5.16** (*Tor spectral sequences over graded algebras*): the
   balance, universal-coefficient, hyperhomology and change-of-rings sequences for graded modules
   over a nonnegatively graded, possibly noncommutative algebra over a field, on its own graded
@@ -86,8 +86,12 @@ It leaves to named owners:
   balancing of Ext is a Check of Layer 4, not a target.
 - **Tau Ceti** (at the pin): the row- and column-filtration spectral sequences of a first-quadrant
   homological bicomplex with their first pages and convergence, the quasi-isomorphism of totals
-  induced by a quasi-isomorphism on rows and the exact-augmentation form, the horseshoe of finite
-  projective resolutions of the outer terms of a conflation in an exact category (in an abelian
+  induced by a quasi-isomorphism on rows and the exact-augmentation form, the comparison theorem for
+  filtered cochain complexes with finite filtrations and its degreewise form for exhaustive
+  filtrations of complexes of modules
+  (`CochainComplex.isIso_homologyMap_of_isIso_spectralSequence_page`,
+  `CochainComplex.isIso_homologyMap_of_isIso_spectralSequence_page_of_exhaustive`), the horseshoe of
+  finite projective resolutions of the outer terms of a conflation in an exact category (in an abelian
   category, the finite case of the projective form of 2.1(a) for objects), the Künneth short
   exact sequence for `ℕ`-indexed chain complexes `K`, `L` of modules over a commutative ring whose
   cycles `Z_q(L)` and quotients `L_q/Z_q(L)` are projective, with no condition on `K`
@@ -190,7 +194,8 @@ dimension, and the resolutions of unbounded complexes with exact kernel or coker
   means `RⁿF` of `DerivedCategory.Plus.singleFunctor 𝒜 0`
   applied to `A`. An object `B` is *right acyclic* for `F`, or `F`-acyclic, when `RⁱF(B) = 0` for
   every integer `i > 0` (`IsRightAcyclic`); for a left exact `F` this is Stacks's notion
-  (stacks-05QI line 2925–2935, Lemma 16.4, tag 015C), and it is used only for left exact functors.
+  (stacks-05QI line 2925–2935, Lemma 16.4, tag 015C), and it is a hypothesis only of statements
+  about left exact functors (Checks use it for `− ⊗ ℤ/2` to show why).
 - **Opposite categories.** A bounded-above cochain complex `K` of `𝒜` corresponds under Mathlib's
   `CochainComplex.opEquivalence` to the bounded-below complex `K°` of `𝒜ᵒᵖ` with `(K°)^n = op K^{−n}`.
   Right exact functors, left derived functors, projective resolutions and contravariant functors
@@ -325,6 +330,18 @@ dimension, and the resolutions of unbounded complexes with exact kernel or coker
 - `CategoryTheory.SpectralSequence.Hom.isIso_hom_f_of_le`
   (`TauCeti/Algebra/Homology/SpectralSequence/Comparison.lean`): a morphism of spectral sequences that
   is an isomorphism at every position of page `r` is one on every later page.
+- `CochainComplex.isIso_homologyMap_of_isIso_spectralSequence_page`
+  (`TauCeti/Algebra/Homology/SpectralSequence/Filtered/Comparison.lean`): in any abelian category, for
+  monotone filtrations `F` of `K` and `G` of `L` by subobjects, indexed by `ℤ`, that are finite as
+  filtrations of complexes (`F_a = G_a = ⊥` and `F_b = G_b = ⊤` for some `a ≤ b`), a morphism of the
+  filtration functors that induces an isomorphism at every position of some native page `r ≥ 2` induces
+  isomorphisms `Hⁿ(K) → Hⁿ(L)` for every `n`.
+  `CochainComplex.isIso_homologyMap_of_isIso_spectralSequence_page_of_exhaustive`
+  (`Filtered/Exhaustive.lean`): the same conclusion in one degree `n`, for cochain complexes of modules
+  over a ring, when, for some `a ≤ b`, the stages of index `≤ a` of both filtrations have no cohomology
+  in degrees `n`, `n + 1`, both filtrations are exhaustive in degrees `n − 1`, `n`, and the graded pieces
+  of index `≥ b` have no cohomology in degrees `n − 1`, `n`. Special cases of base §3.5 for the
+  spectral sequences of filtered complexes, used in 1.4 for the finite case.
 - `HomologicalComplex₂.rowFiltrationSpectralSequence`,
   `HomologicalComplex₂.columnFiltrationSpectralSequence`,
   `HomologicalComplex₂.columnFiltrationSpectralSequenceFirstPageXIso`
@@ -652,8 +669,8 @@ shape `up ℤ`. *Needs:* Mathlib `HomologicalComplex₂`, `HomologicalComplex₂
   isomorphism `⊕ D_p → ⊕ O_p`; on `Tot^Π` its kernel is spanned by `(1, 1, −1, −1, 1, 1, …)`, so
   `H^0(Tot^⊕ K) = 0` and `H^0(Tot^Π K) = ℤ`. The comparison `κ` is injective and not surjective in
   degree `0`.
-- The zero double complex has zero totals; a double complex concentrated in column `0` has both
-  totals equal to that column.
+- *Column `0` carries no sign.* A double complex concentrated in column `0` has both totals equal to
+  that column, with the same differential (`(−1)^0 = 1`); the sign `(−1)^{p+1}` would negate it.
 
 ### 1.2 The column and row filtrations and the two spectral sequences
 
@@ -813,7 +830,6 @@ and §5.2 (gap:base-induced-filtration), DerivedModuleAlgebra §S.1, Mathlib
   contradicted: the first fails its hypothesis at `′E_1^{1,0} = ℚ/ℤ` on page `1` and at
   `′E_2^{0,0} = ℤ` on every later page; the second cannot use `r = 1`, since `′d_1` leaves `(0, 0)`
   nonzero, and fails at `′E_2^{0,0} = ℤ` for `r ≥ 2`.
-- The zero double complex converges to zero in every case.
 - *(a′) on a single row.* If `K^{p,q} = 0` for `q ≠ 0`, both sequences of (a′) are concentrated on the
   row `q = 0`, with `E₂^{n,0} = Hⁿ(K^{•,0}) = Hⁿ(Tot K)`, `F_I^n Hⁿ = Hⁿ` and `F_I^{n+1} Hⁿ = 0`, and both
   edge morphisms `E₂^{n,0} → Hⁿ` are the identity (§S.1's first Check). The automorphism `−1` of
@@ -854,16 +870,24 @@ hence on every page (Tau Ceti `CategoryTheory.SpectralSequence.Hom.isIso_hom_f_o
 map `Tot(f)` gives a morphism of the converging structures of 1.3 (base §3.3), because these are
 through the canonical presentation of base §5.2, which is natural in filtered morphisms, and the
 comparison theorem (base §3.5, its finite case for the first case and its strongly convergent case
-for the others) makes `Hⁿ(Tot f)` an isomorphism. For the two direct-sum cases a second route
-avoids spectral sequences: the mapping cone of `Tot(f)` is isomorphic, through signs on the
-summands, to the total complex of the double complex whose columns are the mapping cones of the
-columns of `f` (both have the terms `K^{p,n+1−p} ⊕ L^{p,n−p}` in degree `n`); these columns are
-exact, and the double complex satisfies the same
-vanishing (with `b(n)` replaced by the larger of the bounds for `K` in degree `n + 1` and `L` in
+for the others) makes `Hⁿ(Tot f)` an isomorphism. In the first case, when `K` and `L` have only
+finitely many nonzero columns, the column filtrations are finite as filtrations of complexes and
+Tau Ceti's `CochainComplex.isIso_homologyMap_of_isIso_spectralSequence_page` gives the conclusion
+from the page-`1` isomorphism (native page `2`); for complexes of modules the first case follows in
+each degree `n` from `CochainComplex.isIso_homologyMap_of_isIso_spectralSequence_page_of_exhaustive`,
+whose hypotheses in degree `n` hold because the antidiagonals `n − 1`, `n` and `n + 1` of `K` and `L`
+are finite. For the two direct-sum cases a second route avoids spectral sequences: the mapping cone
+of `Tot(f)` is isomorphic, through signs on the summands, to the total complex of the double complex
+whose columns are the mapping cones of the columns of `f` (both have the terms
+`K^{p,n+1−p} ⊕ L^{p,n−p}` in degree `n`); these columns are exact, and the double complex satisfies
+the same vanishing (with `b(n)` replaced by the larger of the bounds for `K` in degree `n + 1` and `L` in
 degree `n`), so the acyclic assembly lemma 1.5 applies. *Needs:* 1.2, 1.3; base §3.3
 (gap:base-converging-morphisms), §3.5 (gap:base-comparison-theorem), §5.2
 (gap:base-induced-filtration); Tau Ceti `CategoryTheory.SpectralSequence.Hom.isIso_hom_f_of_le`; for
-the second route instead, 1.5 and Mathlib mapping cones; Mathlib `HomologicalComplex₂.total.map`,
+the first case with finitely many columns or over modules, Tau Ceti
+`CochainComplex.isIso_homologyMap_of_isIso_spectralSequence_page` and
+`CochainComplex.isIso_homologyMap_of_isIso_spectralSequence_page_of_exhaustive`; for the second route
+instead, 1.5 and Mathlib mapping cones; Mathlib `HomologicalComplex₂.total.map`,
 `HomologicalComplex₂.flipFunctor`, `QuasiIso`.
 
 **Checks.**
@@ -874,7 +898,16 @@ the second route instead, 1.5 and Mathlib mapping cones; Mathlib `HomologicalCom
   (`H^0 = 0` against `ℤ`), and the staircase fails the hypothesis of (b) for `′E`.
 - For first-quadrant homological bicomplexes and quasi-isomorphisms on rows, the statement is Tau
   Ceti's `HomologicalComplex₂.quasiIso_total_map_of_rows`.
-- The identity of `K` gives the identity of `Tot(K)`.
+- *Finite antidiagonals ask less than finitely many columns.* Let `L^{p,p} = ℤ` for every `p ∈ ℤ`, all
+  other terms and all differentials zero, and `K = L ⊕ C`, where column `p` of `C` is `ℤ →(id) ℤ` in
+  rows `p`, `p + 1` and `C` has `d₁ = 0`. Each antidiagonal of `K` has exactly one nonzero position,
+  `(p, p)` on antidiagonal `2p` and `(p, p + 1)` on antidiagonal `2p + 1`, each antidiagonal of `L` at
+  most one, and the projection `K → L` is a quasi-isomorphism on every column. The first case gives
+  `H^{2p}(Tot K) ≅ H^{2p}(Tot L) = ℤ` and `H^{2p+1} = 0` on both sides, as a direct computation confirms
+  (`Tot C` is the sum over `p` of `ℤ →(±1) ℤ` in degrees `2p`, `2p + 1`). Every column of `L` is nonzero,
+  so no stage of the column filtration of `Tot L` is `⊥` or `⊤`, and Tau Ceti's finite-filtration
+  `CochainComplex.isIso_homologyMap_of_isIso_spectralSequence_page` does not apply; its degreewise
+  exhaustive form does, in each degree.
 
 ### 1.5 The acyclic assembly lemma
 
@@ -1158,7 +1191,6 @@ complex), 2.1; Mathlib `HomologicalComplex₂`, `InjectiveResolution`.
 
 - For `K = A[0]`, a Cartan–Eilenberg resolution is an injective resolution of `A` placed in column
   `0`: `Z^0 = K^0 = A`, `B = 0` and `H^0 = A`.
-- The zero double complex is a Cartan–Eilenberg resolution of the zero complex.
 - *Column resolutions are not enough.* For `K = (ℤ →(×2) ℤ)` in degrees `0, 1` over abelian groups,
   the double complex whose columns are both `ℚ → ℚ/ℤ` and whose `d₁` is multiplication by `2` has
   columns resolving `K^0` and `K^1`, but its horizontal cohomology `H_I^1` is `ℚ/2ℚ = 0` and
@@ -1169,10 +1201,12 @@ complex), 2.1; Mathlib `HomologicalComplex₂`, `InjectiveResolution`.
 
 ### 2.4 The first hypercohomology spectral sequence
 
-Let `F : 𝒜 → ℬ` be left exact, `𝒜` with enough injectives, `K` bounded below and `I` a
+Let `F : 𝒜 → ℬ` be additive, `𝒜` with enough injectives, `K` bounded below and `I` a
 Cartan–Eilenberg resolution of `K`. Define the *first hypercohomology spectral sequence* `′E(F, K)` as
-the first spectral sequence (1.2) of the double complex `F(I)`. Prove (stacks-05QI line 3655–3681,
-Lemma 21.3, tag 015J, first spectral sequence; grothendieck1957 line 1236–1252, (2.4.2)):
+the first spectral sequence (1.2) of the double complex `F(I)`. Prove, for additive `F`
+(stacks-05QI line 3655–3681, Lemma 21.3, tag 015J, first spectral sequence, for left exact `F`;
+grothendieck1957 line 1236–1252, (2.4.2), for any additive `F`; the proof uses `F` only through
+2.2(ii) and `Tot F(I) = F(Tot I)`, and left exactness is assumed only where a statement says so):
 
 - `′E_1^{p,q} ≅ R^qF(K^p)`, with `′d_1 = R^qF(d_K^p)`, and `′E_2^{p,q} ≅ H^p(R^qF(K^•))`;
 - it converges strongly in every degree to `R^{p+q}F(K)`, with finite filtrations, and
@@ -1203,14 +1237,19 @@ Lemma 21.3, tag 015J, first spectral sequence; grothendieck1957 line 1236–1252
   abutment is `ℤ/2` in degrees `1` and `2`,
   agreeing with `K ≃ ℤ/2[−1]` and `Ext^{n−1}(ℤ/2, ℤ/2)`.
 - For `K = A[0]` the sequence is concentrated in column `0` with `′E_1^{0,q} = R^qF(A)`.
-- If every `K^p` is `F`-acyclic, `′E_1` is concentrated in row `0` and gives `RⁿF(K) ≅ Hⁿ(F(K))`, as
-  Leray's acyclicity lemma 2.2(v) asserts.
+- If `F` is left exact and every `K^p` is `F`-acyclic, `′E_1` is concentrated in row `0` and gives
+  `RⁿF(K) ≅ Hⁿ(F(K))`, as Leray's acyclicity lemma 2.2(v) asserts. Left exactness is needed: for
+  `F = − ⊗ ℤ/2` on abelian groups and `K = ℤ[0]`, `ℤ` is `F`-acyclic (2.2's Checks), `′E_1` is zero
+  (`′E_1^{0,q} = R^qF(ℤ) = 0` for every `q`) and converges to `RⁿF(ℤ[0]) = 0`, while
+  `H^0(F(K)) = ℤ/2`.
 
 ### 2.5 The second hypercohomology spectral sequence
 
-With `F`, `K` and `I` as in 2.4, define the *second hypercohomology spectral sequence* `″E(F, K)` as
-the second spectral sequence (1.2) of `F(I)`. Prove (stacks-05QI line 3655–3689, Lemma 21.3, tag
-015J; grothendieck1957 line 1236–1252 and 1291–1299):
+With `F` additive, `K` and `I` as in 2.4, define the *second hypercohomology spectral sequence*
+`″E(F, K)` as the second spectral sequence (1.2) of `F(I)`. Prove (stacks-05QI line 3655–3689, Lemma
+21.3, tag 015J, for left exact `F`; grothendieck1957 line 1236–1252 and 1291–1299, for any additive
+`F`; the first three items use `F` only through 2.2(ii), the split rows of 2.3 and
+`Tot F(I) = F(Tot I)`):
 
 - `″E_1^{p,q} ≅ F(H_I^q(I)^p)`, where `H_I^q(I)` is the complex, in the resolution degree, of horizontal
   cohomologies, with `″d_1` induced by its differential, and
@@ -1222,15 +1261,18 @@ the second spectral sequence (1.2) of `F(I)`. Prove (stacks-05QI line 3655–368
   lift. A quasi-isomorphism induces an isomorphism from page `2` on. Hence, restricted to its pages
   `r ≥ 2`, `″E(F, −)` factors through the localisation `DerivedCategory.Plus.Q` and is a functor on
   `DerivedCategory.Plus 𝒜`; it is natural in `F`;
-- *F-acyclic Cartan–Eilenberg resolutions* (grothendieck1957 line 1295–1298). If `L` is a double
-  complex satisfying the conditions of 2.3 with "injective resolution" replaced by "resolution by
-  `F`-acyclic objects", then `F` commutes with the horizontal cycles, boundaries and cohomology of `L`,
+- *F-acyclic Cartan–Eilenberg resolutions* (grothendieck1957 line 1295–1298). For `F` left exact: if
+  `L` is a double complex satisfying the conditions of 2.3 with "injective resolution" replaced by
+  "resolution by `F`-acyclic objects", then `F` commutes with the horizontal cycles, boundaries and
+  cohomology of `L`,
   and the second spectral sequence of `F(L)` is isomorphic from page `2` on, compatibly with the
   abutments, to `″E(F, K)`. Route: lift the identity of `K` from `L` to a Cartan–Eilenberg resolution
   (2.3, lifting from resolutions); on page `2` the induced map is the identity of `R^pF(H^q K)`, the
   two sides being computed by Leray's acyclicity lemma 2.2(v);
-- (grothendieck1957 line 1352–1356, Remarque 3) if every `K^p` is `F`-acyclic, the sequence is
-  `″E_2^{p,q} = R^pF(H^q(K)) ⇒ H^{p+q}(F(K))`.
+- (grothendieck1957 line 1352–1356, Remarque 3) for `F` left exact, if every `K^p` is `F`-acyclic,
+  the sequence is `″E_2^{p,q} = R^pF(H^q(K)) ⇒ H^{p+q}(F(K))`, the abutment being identified by
+  Leray's acyclicity lemma 2.2(v); the example in 2.4's last Check, where `″E_2^{p,0} = R^pF(ℤ) = 0`
+  and `H^0(F(K)) = ℤ/2`, shows that left exactness is needed.
 
 *Needs:* 1.2, 1.3(a); 2.2(ii), 2.2(v), 2.3; base §3.3 (gap:base-converging-morphisms); Mathlib
 `CategoryTheory.SpectralSequence.Hom`,
@@ -1250,14 +1292,15 @@ the second spectral sequence (1.2) of `F(I)`. Prove (stacks-05QI line 3655–368
 
 ### 2.6 Right exact and contravariant functors
 
-Let `F : 𝒜 → ℬ` be right exact with `𝒜` having enough projectives, so that `Fᵒᵖ : 𝒜ᵒᵖ → ℬᵒᵖ` is left
-exact and `𝒜ᵒᵖ` has enough injectives. Define, for a bounded-above complex `K` of `𝒜`, the
-*hyper-left-derived functors* `L_nF(K) := unop R^nFᵒᵖ(K°)`. Prove (grothendieck1957 line 1304–1308;
-stacks-05QI line 3449–3478, §19, the dual statements; weibel1994 §5.7, uncertified):
+Let `F : 𝒜 → ℬ` be additive with `𝒜` having enough projectives, so that `Fᵒᵖ : 𝒜ᵒᵖ → ℬᵒᵖ` is additive
+and `𝒜ᵒᵖ` has enough injectives; `Fᵒᵖ` is left exact exactly when `F` is right exact. Define, for a
+bounded-above complex `K` of `𝒜`, the *hyper-left-derived functors* `L_nF(K) := unop R^nFᵒᵖ(K°)`. Prove
+(grothendieck1957 line 1304–1308; stacks-05QI line 3449–3478, §19, the dual statements; weibel1994
+§5.7, uncertified):
 
 - for an object `A`, `L_nF(A) ≅ (F.leftDerived n).obj A` naturally (a projective resolution of `A` is
   an injective resolution of `op A` in `𝒜ᵒᵖ`; Mathlib `ProjectiveResolution.isoLeftDerivedObj`);
-  `L_0F(A) ≅ F(A)` (Mathlib `Functor.leftDerivedZeroIsoSelf`);
+  for `F` right exact, `L_0F(A) ≅ F(A)` (Mathlib `Functor.leftDerivedZeroIsoSelf`);
 - *projective Cartan–Eilenberg resolutions* of `K` are the unop of Cartan–Eilenberg resolutions of
   `K°`; they exist, their rows split, their total complex is a bounded-above complex of projectives
   quasi-isomorphic to `K`, and chain maps lift;
@@ -1265,7 +1308,7 @@ stacks-05QI line 3449–3478, §19, the dual statements; weibel1994 §5.7, uncer
   with `K_p = K^{−p}` and `H_q = H^{−q}`, are the unop of 2.4 and 2.5 for `Fᵒᵖ` at `K°`; they converge
   strongly with finite filtrations to `L_{p+q}F(K)` in the homological bidegree assignment of base
   §2.1, with the same independence and naturality;
-- a contravariant left exact functor `G : 𝒜ᵒᵖ → ℬ` has hypercohomology spectral sequences at `K°`:
+- a contravariant additive functor `G : 𝒜ᵒᵖ → ℬ` has hypercohomology spectral sequences at `K°`:
   `′E_1^{p,q} = R^qG(op K^{−p})` and `″E_2^{p,q} = R^pG(op H^{−q}(K))`, converging to `R^{p+q}G(K°)`,
   computed from projective Cartan–Eilenberg resolutions of `K`.
 
@@ -1351,23 +1394,28 @@ when the unit `G(F(J)) → RG(F(J))` is, which Leray's acyclicity lemma 2.2(v) g
 
 ### 3.2 The composite-functor spectral sequence of a complex
 
-Let `F`, `G` be left exact and satisfy the equivalent conditions of 3.1, and `X` be an object of
-`DerivedCategory.Plus 𝒜`. Define the *composite-functor spectral sequence* `E(F, G; X)` as the second
-hypercohomology spectral sequence `″E(G, F(J))` (2.5), for a bounded-below complex `J` of injectives
-representing `X`, with abutment `RⁿG(F(J)) ≅ Hⁿ(RG(RF(X))) ≅ Rⁿ(G ∘ F)(X)` through `t⁻¹`. Prove
-(stacks-05QI line 3718–3730, Lemma 22.2, tag 015N; grothendieck1957 line 1309–1337, Théorème 2.4.1):
+Let `F` be additive and `G` left exact, satisfying the equivalent conditions of 3.1, and `X` be an
+object of `DerivedCategory.Plus 𝒜`. Define the *composite-functor spectral sequence* `E(F, G; X)` as the
+second hypercohomology spectral sequence `″E(G, F(J))` (2.5), for a bounded-below complex `J` of
+injectives representing `X`, with abutment `RⁿG(F(J)) ≅ Hⁿ(RG(RF(X))) ≅ Rⁿ(G ∘ F)(X)` through `t⁻¹`
+(`F(J) ≅ RF(X)` by the unit of `RF`, invertible on bounded-below complexes of injectives for every
+additive `F`). Prove (stacks-05QI line 3718–3730, Lemma 22.2, tag 015N, for left exact `F`;
+grothendieck1957 line 1309–1337, Théorème 2.4.1, which asks left exactness of the second functor
+only):
 
 - `E₂^{p,q} ≅ R^pG(H^q(RF(X)))`, and for `X = A[0]`, `E₂^{p,q} ≅ R^pG(R^qF(A))`;
 - it converges strongly in every degree to `R^{p+q}(G ∘ F)(X)`, with finite filtrations, and
   `E₂^{p,q} = 0` unless `p ≥ 0` and `q ≥ a` when `Hⁱ(X) = 0` for `i < a`;
 - from page `2` on it does not depend on `J` and is a functor of `X` on `DerivedCategory.Plus 𝒜`;
 - *computation by F-acyclic resolutions* (grothendieck1957 line 1343–1347, Remarque 2, and line
-  1506–1529, Proposition 2.5.4): for any bounded-below complex `L` of `F`-acyclic objects
-  quasi-isomorphic to `X`, `E(F, G; X)` is isomorphic from page `2` on to `″E(G, F(L))`. Route: `F(L)` and
-  `F(J)` are isomorphic in `DerivedCategory.Plus ℬ` (2.2(v)), and `″E(G, −)` is a functor there (2.5);
-- for `X = A[0]` this is ArithmeticGaloisDuality §D7.1's *Derived composite spectral sequence*, with
-  its edge maps: §D7.1 takes DerivedModuleAlgebra §S.1's spectral sequence of the double complex
-  `G(I)` of this construction (`I` a Cartan–Eilenberg resolution of `F(J)`, `J` an injective
+  1506–1529, Proposition 2.5.4): for `F` left exact and any bounded-below complex `L` of
+  `F`-acyclic objects quasi-isomorphic to `X`, `E(F, G; X)` is isomorphic from page `2` on to
+  `″E(G, F(L))`. Route: `F(L)` and `F(J)` are isomorphic in `DerivedCategory.Plus ℬ` (2.2(v)), and
+  `″E(G, −)` is a functor there (2.5);
+- for `F` left exact (as §D7.1 assumes) and `X = A[0]`, this is ArithmeticGaloisDuality §D7.1's
+  *Derived composite spectral sequence*, with its edge maps: §D7.1 takes DerivedModuleAlgebra
+  §S.1's spectral sequence of the double complex `G(I)` of this construction (`I` a Cartan–Eilenberg
+  resolution of `F(J)`, `J` an injective
   resolution of `A`), filtered by rows; `G(I)` is first-quadrant, so 1.3(a′), through the flip,
   identifies that sequence from page `2` on with `″E(G, F(J))` and its edge maps with the edge
   morphisms of base §3.6. Both abutments are identified with `Rⁿ(G ∘ F)(A)` through the
@@ -1384,6 +1432,11 @@ representing `X`, with abutment `RⁿG(F(J)) ≅ Hⁿ(RG(RF(X))) ≅ Rⁿ(G ∘ 
 - *Acyclicity cannot be dropped.* For the pair of 3.1's first Check at `A = ℚ/ℤ`, the would-be page
   `R^pG(R^qF(ℚ/ℤ))` is the single row `q = 0` with `E₂^{1,0} = Ext¹(ℤ/2, ℤ/2) = ℤ/2`, which would survive
   and force `R¹(G ∘ F)(ℚ/ℤ) ≠ 0`; in fact `R¹(G ∘ F)(ℚ/ℤ) = 0`.
+- *Additive `F`, and where left exactness enters.* For `F = − ⊗ ℤ/2` and `G` the identity of abelian
+  groups (3.1's last Check) at `X = ℤ[0]`: `J = (ℚ → ℚ/ℤ)` gives `F(J) = 0`, so `E(F, G; ℤ[0]) = 0`;
+  this agrees with `R^pG(R^qF(ℤ)) = 0` (`R⁰F(ℤ) = R¹F(ℤ) = 0`, 2.2's Checks) and with the abutment
+  `Rⁿ(G ∘ F)(ℤ) = RⁿF(ℤ) = 0`. The computation by `F`-acyclic resolutions fails for this `F`: `L = ℤ[0]`
+  consists of `F`-acyclic objects, yet `″E(G, F(L)) = ″E(G, ℤ/2[0])` has `E₂^{0,0} = ℤ/2`.
 - For `ℤ/4 → ℤ/2`, `F = Hom_{ℤ/4}(ℤ/2, −)` (coextension of scalars) and `G = Hom_{ℤ/2}(ℤ/2, −)`, at
   `A = ℤ/2`: `R^qF(ℤ/2) = Ext^q_{ℤ/4}(ℤ/2, ℤ/2) = ℤ/2` for every `q ≥ 0` (`ℤ/4` is self-injective, and
   `Hom_{ℤ/4}(ℤ/2, −)` of the injective resolution `ℤ/2 → ℤ/4 →(×2) ℤ/4 →(×2) ⋯` has zero
@@ -1392,16 +1445,22 @@ representing `X`, with abutment `RⁿG(F(J)) ≅ Hⁿ(RG(RF(X))) ≅ Rⁿ(G ∘ 
 
 ### 3.3 Low degrees and naturality in the functors
 
-For an object `A` of `𝒜`, prove (base §3.6, first quadrant, applied to the sequence of 3.2, which
-for an object is the spectral sequence of grothendieck1957 line 1330–1337, Théorème 2.4.1):
+Let `F`, `G` be as in 3.2 and `A` an object of `𝒜`. Prove (base §3.6, first quadrant, applied to the
+sequence of 3.2, which for an object is the spectral sequence of grothendieck1957 line 1330–1337,
+Théorème 2.4.1):
 
-- the five-term exact sequence
+- for `F` left exact, the five-term exact sequence
   `0 → R¹G(F(A)) → R¹(G ∘ F)(A) → G(R¹F(A)) → R²G(F(A)) → R²(G ∘ F)(A)`, whose first, second and
   fourth maps are the edge morphisms of base §3.6 for the sequence of 3.2, which are the canonical
   maps `R^aG(F(A)) → R^a(G ∘ F)(A)` and `R¹(G ∘ F)(A) → G(R¹F(A))` of ArithmeticGaloisDuality §D7.1
   (3.2's comparison with §D7.1, through 1.3(a′)), and whose third map is `d₂`;
-- for `m ≥ 1`, if `R^qF(A) = 0` for `0 < q < m`, then `R^jG(F(A)) ≅ R^j(G ∘ F)(A)` for `j < m` and
+- for `F` left exact and `m ≥ 1`, if `R^qF(A) = 0` for `0 < q < m`, then
+  `R^jG(F(A)) ≅ R^j(G ∘ F)(A)` for `j < m` and
   `0 → R^mG(F(A)) → R^m(G ∘ F)(A) → G(R^mF(A)) → R^{m+1}G(F(A)) → R^{m+1}(G ∘ F)(A)` is exact;
+- for `F` merely additive, the same two statements with `R⁰F(A)` in place of `F(A)`, their maps being
+  the edge morphisms of base §3.6 and `d₂` (`F(A)` itself is wrong there: for `F = − ⊗ ℤ/2`, `G` the
+  identity and `A = ℤ`, the case `j = 0` reads `R⁰G(R⁰F(ℤ)) = 0 = R⁰(G ∘ F)(ℤ)`, while
+  `G(F(ℤ)) = ℤ/2`);
 - *naturality in the functors:* natural transformations `α : F ⟶ F′` and `β : G ⟶ G′`, between pairs
   satisfying 3.1's condition, induce morphisms of composite-functor spectral sequences (base §3.3)
   whose page-`2` components are `R^pG(R^qα)` and `R^pβ(R^qF)` and whose abutment components are those
@@ -1422,20 +1481,29 @@ Mathlib `CategoryTheory.NatTrans.rightDerivedFunctorPlus`.
 - For the coextension example of 3.2, the five-term sequence reads
   `0 → 0 → ℤ/2 → ℤ/2 → 0 → ℤ/2`, with the middle map an isomorphism.
 - If `F` is exact the hypothesis holds for every `m`, and `R^jG(F(A)) ≅ R^j(G ∘ F)(A)` for all `j`.
-- The identity transformations induce identity morphisms.
+- *The third map can be nonzero.* For `ℤ → ℤ/4`, `F = ModuleCat.coextendScalars` (`Hom_ℤ(ℤ/4, −)`,
+  which preserves injectives by 3.1's third Check) and `G = Hom_{ℤ/4}(ℤ/2, −)`, so that
+  `G ∘ F ≅ Hom_ℤ(ℤ/2, −)`, at `A = ℤ/2` (4.4(b) with `M = N = ℤ/2`): `R^qF(ℤ/2) = Ext^q_ℤ(ℤ/4, ℤ/2)` is
+  `ℤ/2` for `q = 0, 1` and `0` otherwise, and `Ext^p_{ℤ/4}(ℤ/2, ℤ/2) = ℤ/2` for every `p ≥ 0`, so
+  `E₂^{p,q} = ℤ/2` for `p ≥ 0`, `q ∈ {0, 1}`, while the abutment `Ext^n_ℤ(ℤ/2, ℤ/2)` vanishes for
+  `n ≥ 2`. The five-term sequence reads `0 → ℤ/2 → ℤ/2 → ℤ/2 → ℤ/2 → 0`; exactness at `R²G(F(A))` forces
+  `d₂ : G(R¹F(A)) → R²G(F(A))` to be an isomorphism, hence the second map to be `0` and the first an
+  isomorphism. A sequence with `0` as its third map would not be exact there.
 
 ### 3.4 Right exact and mixed-variance composites
 
 Prove, by 3.1–3.3 applied in opposite categories (2.6) (weibel1994 §5.8, uncertified;
 cartan-eilenberg1956 Ch. XVI, uncertified):
 
-- *Right exact composites.* For right exact `F : 𝒜 → ℬ`, `G : ℬ → 𝒞` with `𝒜`, `ℬ` having enough
-  projectives and `F` sending projectives to objects `B` with `L_qG(B) = 0` for `q > 0`: the composition
-  transformation of 3.1 for `Fᵒᵖ`, `Gᵒᵖ` is an isomorphism, and for an object `A` there is a spectral
-  sequence `E²_{p,q} = L_pG(L_qF(A)) ⇒ L_{p+q}(G ∘ F)(A)`, converging strongly with finite filtrations
-  in the homological bidegree assignment, with the exact sequence
-  `L₂(G ∘ F)(A) → L₂G(F(A)) → G(L₁F(A)) → L₁(G ∘ F)(A) → L₁G(F(A)) → 0` and naturality as in 3.3.
-- *Mixed variance.* For right exact `F : 𝒜 → ℬ` (enough projectives in `𝒜` and `ℬ`) and a left exact
+- *Right exact composites.* For additive `F : 𝒜 → ℬ` and right exact `G : ℬ → 𝒞` with `𝒜`, `ℬ` having
+  enough projectives and `F` sending projectives to objects `B` with `L_qG(B) = 0` for `q > 0`: the
+  composition transformation of 3.1 for `Fᵒᵖ`, `Gᵒᵖ` is an isomorphism, and for an object `A` there is a
+  spectral sequence `E²_{p,q} = L_pG(L_qF(A)) ⇒ L_{p+q}(G ∘ F)(A)`, converging strongly with finite
+  filtrations in the homological bidegree assignment, with naturality as in 3.3 and, for `F` right
+  exact, the exact sequence
+  `L₂(G ∘ F)(A) → L₂G(F(A)) → G(L₁F(A)) → L₁(G ∘ F)(A) → L₁G(F(A)) → 0` (for additive `F`, the same with
+  `L₀F(A)` in place of `F(A)`).
+- *Mixed variance.* For additive `F : 𝒜 → ℬ` (enough projectives in `𝒜` and `ℬ`) and a left exact
   `G : ℬᵒᵖ → 𝒞`, with `R^qG(op F(P)) = 0` for `q > 0` and every projective `P`, there is a spectral sequence
   `E₂^{p,q} = R^pG(op L_qF(A)) ⇒ R^{p+q}(G ∘ Fᵒᵖ)(op A)`, with the low-degree sequences of 3.3.
 
@@ -1737,7 +1805,6 @@ StableHomotopyKTheory §7.22; Mathlib `ModuleCat`.
 
 **Checks.**
 
-- The zero pairing satisfies `μ` (take `c = 0`).
 - For the Bockstein couple of `ℤ` (base §6.2's Check: `D = ℤ`, `i = ×ℓ`, `E = ℤ/ℓ`, `k = 0`) with the
   multiplication of `ℤ/ℓ`, `μ_n` holds with `c = 0`: `iⁿ(a) = 0` forces `a = 0` in `ℤ`.
 - *A non-example.* For the couple of the stupid filtration of `ℤ →(×2) ℤ` (`E₁^{0,0} = E₁^{1,0} = ℤ`,

@@ -34,9 +34,9 @@ Stated here:
 Headline theorems that are not statable at the pins, and what each lacks:
 
 * the product totalisation of a double complex and every statement about it: its convergence
-  theorem 1.3(c), the comparison of totals and the acyclic assembly lemma for it (1.4, 1.5). Neither
-  library has a product total complex of a bicomplex; the comparison and the acyclic assembly
-  lemma for it also need the class of abelian categories with lim-acyclic epimorphic towers of
+  (1.3(c)), and the comparison of totals and acyclic assembly for it (1.4, 1.5). Neither library
+  has a product total complex of a bicomplex; the comparison and acyclic assembly for it also
+  need the class of abelian categories with lim-acyclic epimorphic towers of
   SpectralSequencesAndConvergence §7.2;
 * the two spectral sequences of a double complex with their second pages and their convergence
   (1.2, 1.3), the two hypercohomology spectral sequences and their hyperhomology duals (2.4–2.6),
