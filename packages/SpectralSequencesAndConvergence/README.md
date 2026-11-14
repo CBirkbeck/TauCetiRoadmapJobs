@@ -1078,9 +1078,9 @@ Let `I ⊆ ℤ` and suppose `X` has convergence bounds in every degree `n ∈ I`
 abutment of 4.2 with the E₂ assignment, through the isomorphisms of 4.3. The filtration of `H^n`
 is finite (`F^p = H^n` for `p ≤ n + 1 − b` and `F^p = 0` for `p ≥ n + 1 − a`). Every position
 `(p, q)` of total degree `n` stabilises from page `max(2, q − a + 2, b − q + 1)`: from page
-`b − a + 1` at most if `a ≤ q < b`, and from page `q − a + 2` with zero limit page if `q ≥ b`
-(stacks-012K line 3202–3240, Lemma 24.13, tag 0BK5, in its filtered-complex form). *Needs:* 3.2,
-3.4, 4.2, 4.3; Tau Ceti `isZero_abutmentFiltration`, `isIso_abutmentFiltrationι`.
+`b − a + 1` at most if `a ≤ q < b`, and from page `max(2, q − a + 2)` with zero limit page if
+`q ≥ b` (stacks-012K line 3202–3240, Lemma 24.13, tag 0BK5, in its filtered-complex form).
+*Needs:* 3.2, 3.4, 4.2, 4.3; Tau Ceti `isZero_abutmentFiltration`, `isIso_abutmentFiltrationι`.
 
 Against the pins this reads `convergence_of_hasConvergenceBounds`: if
 `HasConvergenceBounds X n a b`, then `abutmentFiltration i n` is zero for `i ≤ a`,
@@ -1117,6 +1117,11 @@ the second by the boundary side of 4.3, the statement that has no counterpart at
   as well, so the top vanishing that Tau Ceti's `spectralSequencePageXIsoEInfty` assumes does not
   give convergence either.
 - With `I = ∅` there is nothing to prove.
+- *No order between the bounds.* The zero spectral object has convergence bounds `a = 5` and
+  `b = 0` in every degree. At `q = 1 ≥ b` the page bound is `max(2, −2, 0) = 2`, while
+  `q − a + 2 = −2` is no page; the clause for `q ≥ b` gives `max(2, −2) = 2`. For `ℤ →(×2) ℤ`
+  in degree `1` (`a = −2`, `b = 0`) at `q = 0` it gives `max(2, 4) = 4 = max(2, 4, 1)`, and the
+  limit page `EInfty 0 1 ≅ gr^1 H^1 = F^1 H^1 / F^2 H^1 = (ℤ/2)/(ℤ/2)` is zero (4.2).
 - The non-exhaustive complex of 4.3 violates the hypothesis at `j`: for `j ≥ 0`,
   `H^0(⊥ ≤ j) = H^0(G_j) = ℤ` while `H^0(⊥ ≤ ⊤) = H^0(K) = 0`, so the map is not a monomorphism.
   Its failure of weak convergence shows the hypothesis cannot be dropped.
@@ -1810,8 +1815,16 @@ total degree `n`. *Needs:* 5.1, 5.2, 6.3, 7.1, 7.2, 7.4.
   `E_1 = E_∞ = ℤ/ℓ` in filtration degrees `p ≥ 0`. The convergence to `H^0 = ℤ_ℓ` is strong.
 - The `ℓ`-adic filtration of `ℤ` is exhaustive and not complete, and strong convergence fails
   (3.2). The completeness hypothesis cannot be dropped.
-- For a first-quadrant filtered complex the regularity and lower-bound hypotheses hold, and the
-  theorem reduces to 5.3.
+- *Filtrations concentrated in the first quadrant.* Let `F^0 K = K` and `F^{m+1} K^m = 0` for
+  every `m` (which forces `K^m = 0` for `m < 0`). Then `gr^p K^m ≠ 0` only for `0 ≤ p ≤ m`, so
+  `E_1^{p,q} = 0` unless `p, q ≥ 0`. The filtration is finite in each degree, hence exhaustive and
+  complete; the spectral sequence is bounded (`β(n) = n + 1`, `α(n) = −1`), hence regular (2.2);
+  and `E_1^{p,n−p} = 0` for `p < 0`. The theorem gives strong convergence, as does 5.3 with
+  `p₁ = 0` and `p₀ = n + 2`. For `K^m = ℤ` (`m ≥ 0`), `d = 0`, `F^p K^m = ℤ` exactly when
+  `p ≤ m` (the second Check of 5.3), both give `gr^n H^n = ℤ = E_∞^{n,0}` for `n ≥ 0`. Vanishing
+  of `E_1` outside the first quadrant alone is not enough: the constant filtration `F^p K^0 = ℤ`
+  of `ℤ` in degree `0` has `E_1 = 0` and `H^0 = ℤ`; it is exhaustive and not complete, and 5.3's
+  hypothesis fails.
 
 ### Examples
 
