@@ -324,7 +324,9 @@
       "mathlib:DerivedCategory",
       "mathlib:groupCohomologyIsoExt",
       "roadmap:SchemeKTheoryOperations §6.7",
-      "roadmap:K3BlochGroups §4.1"
+      "roadmap:K3BlochGroups §4.1",
+      "tauceti:MonoidHom.groupHomologyIso_hom_naturality",
+      "tauceti:MonoidHom.groupCohomologyIso_hom_naturality"
      ],
      "api": [
       {
@@ -892,7 +894,7 @@
      "id": "4.4",
      "kind": "definition",
      "name": "TauCeti.Rep.DiagonalApprox",
-     "statement": "A diagonal approximation of a projective resolution P of k is a chain map Δ : P ⟶ P ⊗ P lifting k ≅ k ⊗ k; Alexander–Whitney is one on Rep.standardResolution; two are homotopic after comparison; μ ∘ (φ ⊗ ψ) ∘ Δ computes ∪_μ for every (P, Δ).",
+     "statement": "A diagonal approximation of a projective resolution P of k is a chain map Δ : P ⟶ P ⊗ P lifting k ≅ k ⊗ k; Alexander–Whitney is one on Rep.standardResolution; two are homotopic after comparison; the cup product along Δ, Tau Ceti's TauCeti.ChainComplex.cup in Rep k G for A = B = E = P and D = Δ (on cochains μ ∘ (φ ⊗ ψ) ∘ Δ), computes ∪_μ through groupCohomologyIso for every (P, Δ).",
      "hypotheses": [
       "k G : Type u",
       "[CommRing k]",
@@ -906,7 +908,10 @@
      "prerequisites": [
       "target:4.1",
       "mathlib:Rep.standardResolution",
-      "mathlib:groupCohomologyIso"
+      "mathlib:groupCohomologyIso",
+      "tauceti:TauCeti.ChainComplex.cupCochain",
+      "tauceti:TauCeti.ChainComplex.d_comp_cupCochain",
+      "tauceti:TauCeti.ChainComplex.cup"
      ],
      "api": [
       {
@@ -1000,7 +1005,13 @@
       "target:4.4",
       "target:4.3",
       "tauceti:TauCeti.groupHomology.transfer",
-      "roadmap:IntegralIwasawaTheoryPartII §0.7"
+      "roadmap:IntegralIwasawaTheoryPartII §0.7",
+      "tauceti:TauCeti.ChainComplex.capChain",
+      "tauceti:TauCeti.ChainComplex.capChain_comp_d",
+      "tauceti:TauCeti.ChainComplex.kronecker",
+      "tauceti:HomologicalComplex.coinvariantsTensorObjLinearYonedaObjIso",
+      "tauceti:Rep.groupCohomologyIhomIso",
+      "mathlib:groupHomologyIso"
      ],
      "api": [
       {
@@ -1032,6 +1043,16 @@
        "name": "eval_eq_cap_IIT",
        "role": "comparison",
        "statement": "For k = A = ℂ_p, the evaluation Hⁿ(G, M^∨) ⊗ Hₙ(G, M) → ℂ_p is IntegralIwasawaTheoryPartII §0.7's cap product, under [g₁|…|gₙ] ↔ (1, g₁, …, g₁⋯gₙ)."
+      },
+      {
+       "name": "cap_chain_form",
+       "role": "comparison",
+       "statement": "For y of degree q and a chain of degree n, y ∩ c is (−1)^{q(n−q)} times the coinvariants of TauCeti.ChainComplex.capChain in Rep k G along X ⊗ N → X ⊗ (X ⊗ N) (Δ, the Koszul symmetry of X ⊗ X, the associator) with the action M ⊗ (X ⊗ N) → X ⊗ P through μ, so the cochain is evaluated on the back face; on classes the front-face product along Δ is (−1)^{q(n−q)} y ∩ z."
+      },
+      {
+       "name": "eval_kronecker",
+       "role": "comparison",
+       "statement": "Through Rep.groupCohomologyIhomIso (φ ↦ [m ⊗ x] ↦ φ(x)(m)) and groupHomologyIso for the bar resolution, the evaluation is TauCeti.ChainComplex.kronecker for (M ⊗ X)_G and A."
       }
      ],
      "tests": [
@@ -1054,6 +1075,11 @@
        "name": "eval_torus",
        "kind": "computation",
        "statement": "Coordinate classes x, y of ℤ²: ⟨x ∪ y, [e₁|e₂] − [e₂|e₁]⟩ = 1 and ⟨y ∪ x, [e₁|e₂] − [e₂|e₁]⟩ = −1."
+      },
+      {
+       "name": "cap_face_Z2",
+       "kind": "computation",
+       "statement": "G = ℤ², x, y the coordinate classes, z = [e₁|e₂] − [e₂|e₁]: back face y ∩ z = y(e₂)[e₁] − y(e₁)[e₂] = [e₁], ⟨x, y ∩ z⟩ = 1 = ⟨x ∪ y, z⟩; the front-face capChain along Alexander–Whitney gives −[e₁] = (−1)^{1·1} y ∩ z and breaks the adjunction law."
       }
      ]
     },
@@ -1134,7 +1160,8 @@
       "tauceti:HomologicalComplex.homologyKunnethShortComplex_shortExact",
       "tauceti:HomologicalComplex.homologyKunnethShortComplexSplitting",
       "tauceti:HomologicalComplex.homologyKunneth",
-      "gap:flat-kunneth"
+      "gap:flat-kunneth",
+      "roadmap:InductionRestrictionPartII RS.6.8"
      ],
      "api": [
       {
@@ -1146,6 +1173,11 @@
        "name": "cross_assoc_comm",
        "role": "structure",
        "statement": "Associative and graded commutative under G × H ≅ H × G with sign (−1)^{pq}."
+      },
+      {
+       "name": "cross_degree_two_integral",
+       "role": "comparison",
+       "statement": "k = ℤ, trivial ℤ, n = 2: the Tor terms vanish and the cross product is an isomorphism H₂(G, ℤ) ⊕ (G^ab ⊗ H^ab) ⊕ H₂(H, ℤ) ≅ H₂(G × H, ℤ), inclusions on the outer summands and g ⊗ h ↦ [(g, 1)|(1, h)] − [(1, h)|(g, 1)]; for abelian G, H : Type it is the inverse of InductionRestrictionPartII RS.6.8's degree-two Künneth isomorphism."
       }
      ],
      "tests": [
@@ -1180,7 +1212,7 @@
      "id": "5.2",
      "kind": "theorem",
      "name": "TauCeti.groupHomology.universalCoefficients",
-     "statement": "For k of global dimension ≤ 1 and trivial A: 0 → Hₙ(G, k) ⊗ A → Hₙ(G, A) → Tor₁(Hₙ₋₁(G, k), A) → 0 and 0 → Ext¹(Hₙ₋₁(G, k), A) → Hⁿ(G, A) → Hom(Hₙ(G, k), A) → 0, natural, split not naturally; the second map is the evaluation.",
+     "statement": "For k of global dimension ≤ 1 and trivial A: 0 → Hₙ(G, k) ⊗ A → Hₙ(G, A) → Tor₁(Hₙ₋₁(G, k), A) → 0 and 0 → Ext¹(Hₙ₋₁(G, k), A) → Hⁿ(G, A) → Hom(Hₙ(G, k), A) → 0, natural, split not naturally; the second map is the evaluation, TauCeti.ChainComplex.kronecker for C(G; k). For finite G and k = ℤ these are ArithmeticGaloisDuality §D7.2's sequence and H^{n+1}(G, ℤ) ≅ Ext¹(Hₙ(G, ℤ), ℤ).",
      "hypotheses": [
       "k G : Type u",
       "[CommRing k]",
@@ -1197,9 +1229,19 @@
       "tauceti:HomologicalComplex.homologyKunnethShortComplex_shortExact",
       "tauceti:TauCeti.ChainComplex.extToHomology",
       "tauceti:TauCeti.ChainComplex.exact_extToHomology_kronecker",
-      "tauceti:TauCeti.ChainComplex.extToHomology_injective"
+      "tauceti:TauCeti.ChainComplex.extToHomology_injective",
+      "tauceti:TauCeti.ChainComplex.kronecker",
+      "tauceti:HomologicalComplex.coinvariantsTensorObjLinearYonedaObjIso",
+      "tauceti:TauCeti.groupHomology.transfer_comp_map_subtype_id",
+      "roadmap:ArithmeticGaloisDuality §D7.2"
      ],
-     "api": [],
+     "api": [
+      {
+       "name": "uct_finite_comparison",
+       "role": "comparison",
+       "statement": "Finite G, k = ℤ: the homological sequence is ArithmeticGaloisDuality §D7.2's; Hₘ(G, ℤ) is killed by |G| for m ≥ 1 (transfer_comp_map_subtype_id), so Hom(Hₘ(G, ℤ), ℤ) = 0 and H^{n+1}(G, ℤ) ≅ Ext¹(Hₙ(G, ℤ), ℤ) for n ≥ 0; for a field k and A = k, the evaluation duality Hⁿ(G, k) ≅ Hom_k(Hₙ(G, k), k), §D7.2's for a finite field."
+      }
+     ],
      "tests": [
       {
        "name": "uct_Z2",
@@ -1215,6 +1257,11 @@
        "name": "uct_tor_needed",
        "kind": "non-example",
        "statement": "H₂(ℤ/2, ℤ/2) = ℤ/2 comes from the Tor term."
+      },
+      {
+       "name": "uct_hom_term_infinite",
+       "kind": "non-example",
+       "statement": "G = ℤ, k = A = ℤ, n = 1: Ext¹(H₀, ℤ) = Ext¹(ℤ, ℤ) = 0 and H¹(ℤ, ℤ) = Hom(ℤ, ℤ) = ℤ; the finite-group formula H^{n+1} ≅ Ext¹(Hₙ, ℤ) of §D7.2 would give 0 at n = 0; for finite G, H¹(G, ℤ) = 0 = Ext¹(ℤ, ℤ)."
       }
      ]
     },
@@ -1294,7 +1341,7 @@
      "id": "5.4",
      "kind": "construction",
      "name": "TauCeti.groupHomology.pontryagin",
-     "statement": "For abelian A, H•(A, k) is a graded-commutative associative unital k-algebra under the Pontryagin product, natural in A, with degree-one classes squaring to zero; ψ : Λ_k(A ⊗ k) → H•(A, k) is an isomorphism in degrees ≤ 2 for k = ℤ, in all degrees for torsion-free A and for ℚ-algebras k; over a field H•(A × B, k) ≅ H•(A, k) ⊗ H•(B, k) as algebras.",
+     "statement": "For abelian A, H•(A, k) is a graded-commutative associative unital k-algebra under the Pontryagin product, natural in A, with degree-one classes squaring to zero; ψ : Λ_k(A ⊗ k) → H•(A, k) sends (a ⊗ 1) ∧ (b ⊗ 1) to the class of [a|b] − [b|a] (InductionRestrictionPartII RS.6.8's ⟨a, b⟩ for k = ℤ) and is an isomorphism in degrees ≤ 2 for k = ℤ (extending RS.6.8's Λ²A ≅ H₂(A, ℤ) from finite A), in all degrees for torsion-free A and for ℚ-algebras k; over a field H•(A × B, k) ≅ H•(A, k) ⊗ H•(B, k) as algebras.",
      "hypotheses": [
       "k A : Type u",
       "[CommRing k]",
@@ -1310,7 +1357,8 @@
       "target:3.6",
       "roadmap:SchemeKTheoryOperations §6.7",
       "tauceti:groupHomology.exists_map_subtype_eq",
-      "tauceti:TauCeti.groupHomology.isZero_groupHomology_of_directed"
+      "tauceti:TauCeti.groupHomology.isZero_groupHomology_of_directed",
+      "roadmap:InductionRestrictionPartII RS.6.8"
      ],
      "api": [
       {
@@ -1329,9 +1377,14 @@
        "statement": "H₁(A, k) ≅ A ⊗ k and x² = 0 there, so ψ : Λ_k(A ⊗ k) → H•(A, k) is defined."
       },
       {
+       "name": "pontryagin_degree_two_class",
+       "role": "evaluation",
+       "statement": "ψ((a ⊗ 1) ∧ (b ⊗ 1)) is the class of [a|b] − [b|a], the image under A × A → A of [a] × [b] = [(a, 1)|(1, b)] − [(1, b)|(a, 1)]; for k = ℤ it is InductionRestrictionPartII RS.6.8's ⟨a, b⟩, and for finite A : Type the degree-two part of ψ is RS.6.8's isomorphism Λ²A ≅ H₂(A, ℤ)."
+      },
+      {
        "name": "pontryagin_integral",
        "role": "comparison",
-       "statement": "For k = ℤ, ψ is an isomorphism in degrees ≤ 2; H₂(A, ℤ) ≅ Λ²A."
+       "statement": "For k = ℤ, ψ is an isomorphism in degrees ≤ 2; H₂(A, ℤ) ≅ Λ²A for every abelian A, extending InductionRestrictionPartII RS.6.8 from finite A."
       },
       {
        "name": "pontryagin_torsionFree",
@@ -1369,6 +1422,11 @@
        "name": "pont_Q",
        "kind": "computation",
        "statement": "ℚ = ⋃ (1/m!)ℤ: colim of H₁ = ℤ along ×(m+1) is ℚ = H₁(ℚ, ℤ), H₂(ℚ, ℤ) = Λ²ℚ = 0; class-surjectivity alone leaves H₁ a quotient of ℚ."
+      },
+      {
+       "name": "pont_orientation_Z3sq",
+       "kind": "compatibility",
+       "statement": "A = ℤ/3 × ℤ/3, a = (1, 0), b = (0, 1): [a|b] − [b|a] is the cross product of the factor generators and generates H₂(A, ℤ) = ℤ/3; ψ(a ∧ b) and RS.6.8's ⟨a, b⟩ are both this class; the opposite orientation gives −⟨a, b⟩ ≠ ⟨a, b⟩."
       }
      ]
     }
@@ -1567,7 +1625,9 @@
       "mathlib:groupCohomology.infNatTrans",
       "mathlib:groupHomology.coresNatTrans",
       "mathlib:groupHomology.coinfNatTrans",
-      "gap:homological-low-degree"
+      "gap:homological-low-degree",
+      "tauceti:MonoidHom.groupHomologyIso_hom_naturality",
+      "roadmap:IntegralIwasawaTheoryPartII §0.7"
      ],
      "api": [],
      "tests": [
@@ -1585,6 +1645,11 @@
        "name": "edge_Z4",
        "kind": "computation",
        "statement": "ℤ/2 ⊂ ℤ/4, 𝔽₂: inflation on H¹ is an isomorphism, restriction on H¹ is zero."
+      },
+      {
+       "name": "edge_spiess",
+       "kind": "compatibility",
+       "statement": "If H_q(N, M) = 0 for q > 0, 6.3 is the row q = 0 and coinflation Hₙ(G, M) ≅ Hₙ(Q, M_N), IntegralIwasawaTheoryPartII §0.7's edge isomorphism: G = ℤ², N = 0 × ℤ, M = k[N] (Ind_{ℤ×0}^{ℤ²} k) gives k, k, 0, … on both sides; for k ≠ 0 and trivial M = k, H₁(N, k) = k ≠ 0 and H₂(ℤ², k) = k → H₂(ℤ, k) = 0 is not injective."
       }
      ]
     },
@@ -1937,7 +2002,9 @@
       "roadmap:K3BlochGroups §5.2",
       "tauceti:TauCeti.groupCohomology.eq_zero_of_pow_nsmul_eq_zero_of_map_sylow_eq_zero",
       "roadmap:ClassFieldTheory §0.1",
-      "mathlib:Sylow"
+      "mathlib:Sylow",
+      "roadmap:ArithmeticGaloisDuality §D7.2",
+      "roadmap:InductionRestrictionPartII RS.0.3"
      ],
      "api": [
       {
@@ -1969,6 +2036,16 @@
        "name": "stable_K3_comparison",
        "role": "comparison",
        "statement": "M = ℤ_(r), p = r, n ≥ 1: the cohomological isomorphism is K3BlochGroups §5.2's."
+      },
+      {
+       "name": "stable_AGD_comparison",
+       "role": "comparison",
+       "statement": "k = ℤ, n ≥ 1: every element of Hₙ(G, M)(p) is the corestriction of a stable class, refining ArithmeticGaloisDuality §D7.2's homological Sylow statement."
+      },
+      {
+       "name": "stable_IRP2_comparison",
+       "role": "comparison",
+       "statement": "P normal, k = M = ℤ, n = 2: the stable classes are H₂(P, ℤ)^G, mapped isomorphically onto H₂(P, ℤ)_G since |G ⧸ P| is invertible on the p-group H₂(P, ℤ); the homological isomorphism is InductionRestrictionPartII RS.0.3's for the normal Hall subgroup P."
       }
      ],
      "tests": [
@@ -1991,6 +2068,11 @@
        "name": "stable_twisted",
        "kind": "non-example",
        "statement": "G = C₂ × S₃, p = 2, P = C₂ × ⟨(12)⟩ = N_G(P), M = 𝔽₂³ permutation module: the cocycle z ↦ e₃, (12) ↦ 0 is N_G(P)-invariant but c_{(23)} sends its restriction to ⟨z⟩ to e₂ ≠ e₃; invariants have dimension 3, stable classes dimension 2."
+      },
+      {
+       "name": "stable_normal_sylow_homology",
+       "kind": "compatibility",
+       "statement": "G = (ℤ/3)² ⋊ ℤ/2 (inversion), p = 3, M = ℤ: ℤ/2 acts on H₂(P, ℤ) = Λ²P = ℤ/3 by (−1)² = 1, so H₂(G, ℤ)(3) = ℤ/3 = H₂(G, ℤ), InductionRestrictionPartII RS.0.3's value; acting by −1 as on P would give 0."
       }
      ]
     }
@@ -2342,7 +2424,22 @@
    "sections": [
     "§0.7"
    ],
-   "what": "The cap product H^q(U, M^∨) × H_q(U, M) → ℂ_p, compared with the evaluation pairing of 4.6."
+   "what": "The cap product H^q(U, M^∨) × H_q(U, M) → ℂ_p, compared with the evaluation pairing of 4.6; the vanishing of H_q(S, M), q > 0, for M flat over k[S] and the edge isomorphism Hₙ(G, M) ≅ Hₙ(G ⧸ S, M_S) when H_q(S, M) = 0 for q > 0, compared with 6.4 in a Check."
+  },
+  {
+   "roadmap": "ArithmeticGaloisDuality",
+   "sections": [
+    "§D7.2"
+   ],
+   "what": "For finite G: the integral homological universal coefficient sequence, H^{n+1}(G, ℤ) ≅ Ext¹(Hₙ(G, ℤ), ℤ), evaluation duality over a finite field, and every ℓ-primary class of Hₙ(G, M) a corestriction from a Sylow ℓ-subgroup; compared with 5.2 and 7.2, not used in their routes."
+  },
+  {
+   "roadmap": "InductionRestrictionPartII",
+   "sections": [
+    "RS.0.3",
+    "RS.6.8"
+   ],
+   "what": "RS.6.8: the degree-two Künneth isomorphism H₂(A × B, ℤ) ≅ H₂(A, ℤ) ⊕ H₂(B, ℤ) ⊕ (A ⊗ B) for abelian A, B and Λ²A ≅ H₂(A, ℤ), a ∧ b ↦ [a|b] − [b|a], for finite abelian A (used in the route of 5.4 for finite A; compared with 5.1 and 5.4); RS.0.3: corestriction H₂(H, ℤ)_G ≅ H₂(G, ℤ) primary part for a normal Hall subgroup H (compared with 7.2)."
   }
  ],
  "consumers": [],
