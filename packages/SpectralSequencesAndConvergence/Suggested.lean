@@ -50,8 +50,8 @@ Headline theorems that are not statable at the pins, and what each lacks:
   (`coreE₂CohomologicalNat`, `coreE₂HomologicalNat`, README 4.5) as convergence structures: this is
   the structure of 3.2. The identification of a page object with an object `E^n(⊥ ≤ i₁ ≤ i₂ ≤ ⊤)`
   on the pages that 4.5 names is already at the pins: Mathlib's `spectralSequencePageXIso` for
-  these recipes followed by `isoMapFourδ₁Toδ₀'` and `isoMapFourδ₄Toδ₃'`, whose vanishing
-  hypotheses the classes `IsFirstQuadrant` and `IsThirdQuadrant` supply;
+  these recipes followed by the inverse of `isoMapFourδ₁Toδ₀'` and by `isoMapFourδ₄Toδ₃'`, whose
+  vanishing hypotheses the classes `IsFirstQuadrant` and `IsThirdQuadrant` supply;
 * the classical convergence theorem for exhaustive filtrations bounded below (README 5.4) and the
   complete convergence theorem (README 7.5): at a position that is regular but not coregular the
   boundary tower has no last term, so the limit page `E_∞` of README 1.4 is needed, and 7.5 also
@@ -137,7 +137,7 @@ every page `r ≥ 2` with `q - a + 2 ≤ r` and `b - q + 1 ≤ r`:
 
 * both canonical maps
   `E^n(q - r + 2 ≤ q ≤ q + 1 ≤ q + r - 1) ⟵ E^n(⊥ ≤ q ≤ q + 1 ≤ q + r - 1) ⟶ E^n(⊥ ≤ q ≤ q + 1 ≤ ⊤)`
-  are isomorphisms; the source of the first is the page object, by Mathlib's
+  are isomorphisms; the target of the first is the page object, by Mathlib's
   `spectralSequencePageXIso`, and the target of the second is Tau Ceti's `EInfty q n`, the graded
   piece of the abutment by `EInftyIsoCokernel`;
 * the differentials of page `r` leaving and entering `(n - q, q)` vanish.
