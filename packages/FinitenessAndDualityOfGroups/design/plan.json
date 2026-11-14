@@ -1942,22 +1942,29 @@
      "id": "8.5",
      "kind": "theorem",
      "name": "Group.eulerChar_twisted",
-     "statement": "For G of type FP over ℤ, a field K and a finite-dimensional KG-module V, Σ (−1)^i dim_K H^i(G, V) = χ(G) dim_K V; for Γ' ◁ G of finite index the virtual G/Γ'-character on H*(Γ', V) is χ(G) dim_K V times the regular character.",
+     "statement": "For G of type FP over ℤ, a field K and a finite-dimensional KG-module V, Σ (−1)^i dim_K H^i(G, V) = χ(G) dim_K V; for Γ' ◁ G of finite index, in the Grothendieck group G₀(K[G/Γ']) of finite-dimensional representations of the finite group G/Γ' over K, Σ (−1)^i [H^i(Γ', V)] = χ(G) · dim_K V · [K[G/Γ']], with G/Γ' acting on H^i(Γ', V) as in CohomologyOfGroups §1.2 and χ(G) = χ_ℚ(G) ∈ ℤ; in characteristic zero this is equivalent to: the alternating sum of the characters of G/Γ' on H*(Γ', V) is χ(G) dim_K V times the regular character.",
      "hypotheses": [
       "G : Type",
       "type FP over ℤ",
       "[Field K]",
-      "[FiniteDimensional K V]"
+      "[FiniteDimensional K V]",
+      "[Γ'.Normal] [Γ'.FiniteIndex]",
+      "character form: [CharZero K]"
      ],
      "locator": {
       "source": "Brown1974",
-      "where": "§4, Theorem 4 and Corollary 1, lines 425-451"
+      "where": "§4, Theorem 4 and Corollary 1, lines 425-451 (characteristic zero); Appendix A, Theorem 7, lines 1284-1355 (freeness over every field)"
      },
      "prerequisites": [
       "target:7.5",
       "target:8.3",
       "target:8.4",
-      "target:1.4"
+      "target:4.4",
+      "target:1.4",
+      "roadmap:CohomologyOfGroups §1.2",
+      "tauceti:TauCeti.AbelianK0",
+      "tauceti:TauCeti.AbelianK0.eulerChar_eq_homologyEulerChar",
+      "tauceti:FDRep.nonempty_iso_of_character_eq"
      ],
      "api": [],
      "tests": [
@@ -1975,6 +1982,16 @@
        "name": "needs_FP",
        "kind": "non-example",
        "statement": "G = ℤ/2, V = ℚ: sum 1 ≠ 1/2."
+      },
+      {
+       "name": "F2_index2_Q",
+       "kind": "computation",
+       "statement": "G = F_2, Γ' = ker(a ↦ 1, b ↦ 0) onto ℤ/2 (free on b, aba⁻¹, a²), V = ℚ: H⁰ = 𝟙, H¹ ≅ 2·𝟙 ⊕ sgn, class −𝟙 − sgn = −[ℚ[ℤ/2]] = χ(F_2)·[ℚ[ℤ/2]]; the dimension count −2 alone would allow −2·𝟙."
+      },
+      {
+       "name": "F2_index2_F2",
+       "kind": "non-example",
+       "statement": "Same G, Γ', V = 𝔽₂: G₀(𝔽₂[ℤ/2]) ≅ ℤ by length, class 1 − 3 = −2 = χ(F_2)·2, while the regular trace is 0 at both elements in 𝔽₂, so a trace identity reads 0 = 0 and misses the class."
       }
      ]
     },
