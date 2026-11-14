@@ -1,0 +1,179 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "OcneanuRigidity"
+
+[[source]]
+id = "ENO2005"
+authors = "Pavel Etingof, Dmitri Nikshych, Viktor Ostrik"
+title = "On fusion categories"
+year = 2002
+arxiv = "math/0203060v11"
+locator_scheme = "theorem"
+locator = "Proposition 2.1; Theorems 2.3, 2.28, 2.31; Corollary 2.35; §9.1 (v11)"
+url = "https://arxiv.org/abs/math/0203060v11"
+fetched_from = "https://arxiv.org/pdf/math/0203060v11"
+fetched_at = "2026-11-14T10:20:29Z"
+sha256 = "fa7e21ceab3e9933f7fe22e13dbfb4678d092edfd062f2ac48e94463f7f15124"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-14"
+version_note = "arXiv v11"
+cited_for = ["Layers 1, 6, 7, 9, 11"]
+
+[[source]]
+id = "ENO2004"
+authors = "Pavel Etingof, Dmitri Nikshych, Viktor Ostrik"
+title = "An analogue of Radford's S^4 formula for finite tensor categories"
+year = 2004
+venue = "International Mathematics Research Notices 54 (2004), 2915--2933."
+arxiv = "math/0404504v1"
+locator_scheme = "section"
+locator = "Theorem 7.3"
+url = "https://arxiv.org/abs/math/0404504v1"
+fetched_from = "https://arxiv.org/pdf/math/0404504v1"
+fetched_at = "2026-11-14T10:21:49Z"
+sha256 = "5ef465bdf2c0ed7764fb262778c63b599cdb65a13d04ba79ba444d1a2f0d3645"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-14"
+version_note = "arXiv v1"
+cited_for = ["Layer 10"]
+
+[[source]]
+id = "GHS"
+authors = "Azat M. Gainutdinov, Jonas Haferkamp, Christoph Schweigert"
+title = "Davydov-Yetter cohomology, comonads and Ocneanu rigidity"
+year = 2019
+venue = "Advances in Mathematics, Volume 414, 2023, Article 108853"
+doi = "10.1016/j.aim.2022.108853"
+arxiv = "1910.06094v2"
+locator_scheme = "section"
+locator = "Definitions 2.4, 3.1, 3.2; Proposition 2.12; Theorem 3.11"
+url = "https://arxiv.org/abs/1910.06094v2"
+fetched_from = "https://arxiv.org/pdf/1910.06094v2"
+fetched_at = "2026-11-14T10:21:56Z"
+sha256 = "14b5a73001b6b253c67abe1259ce9d12f7a8394ef55cfd161cd2abaefe342a60"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-14"
+version_note = "arXiv v2"
+cited_for = ["Layers 2–5"]
+
+[[source]]
+id = "EGNO"
+locator_scheme = "section"
+locator = "Sections 7.9, 7.18–7.22, 9.1–9.3"
+url = "https://math.mit.edu/~etingof/egnobookfinal.pdf"
+fetched_from = "https://math.mit.edu/~etingof/egnobookfinal.pdf"
+fetched_at = "2026-11-14T10:22:10Z"
+sha256 = "a40d076197b666d8b3b231ac59748a95f9b311d49ce57f4024c0da8308796db3"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-14"
+cited_for = ["Layers 1–11"]
+
+[[source]]
+id = "BarrBeck"
+authors = "M. Barr, J. Beck"
+title = "Homology and standard constructions"
+year = 1969
+venue = "Lecture Notes in Mathematics"
+doi = "10.1007/bfb0083087"
+locator_scheme = "section"
+locator = "Sections 1–4"
+url = "https://doi.org/10.1007/bfb0083087"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["Layer 3"]
+
+[[source]]
+id = "Davydov"
+authors = "A. A. Davydov"
+title = "Twisting of monoidal structures"
+year = 1997
+arxiv = "q-alg/9703001v1"
+locator_scheme = "section"
+locator = "Sections 3–5"
+url = "https://arxiv.org/abs/q-alg/9703001v1"
+fetched_from = "https://arxiv.org/pdf/q-alg/9703001v1"
+fetched_at = "2026-11-14T10:22:32Z"
+sha256 = "1fef2d3160910bdf26ab814471fdae186a562c5fe2ea8e04cb680abf52d676cd"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-14"
+version_note = "arXiv v1"
+cited_for = ["Layer 6"]
+
+[[source]]
+id = "Yetter"
+authors = "D. Yetter"
+title = "Braided deformations of monoidal categories and Vassiliev invariants"
+year = 1998
+arxiv = "q-alg/9710010v1"
+locator_scheme = "section"
+locator = "Deformation theory"
+url = "https://arxiv.org/abs/q-alg/9710010v1"
+fetched_from = "https://arxiv.org/pdf/q-alg/9710010v1"
+fetched_at = "2026-11-14T10:22:37Z"
+sha256 = "e5bfce21ea9dca27adcc66713dc4b2e3b95666034901db517774de139a25f659"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-14"
+version_note = "arXiv v1"
+cited_for = ["Layer 6"]
+
+[[source]]
+id = "MugerI"
+authors = "Michael Mueger"
+title = "From Subfactors to Categories and Topology I. Frobenius algebras in and Morita equivalence of tensor categories"
+year = 2001
+venue = "J. Pure Appl. Alg. 180, 81-157 (2003)"
+arxiv = "math/0111204v2"
+locator_scheme = "section"
+locator = "Sections 3–5"
+url = "https://arxiv.org/abs/math/0111204v2"
+fetched_from = "https://arxiv.org/pdf/math/0111204v2"
+fetched_at = "2026-11-14T10:22:46Z"
+sha256 = "0349342a64c34fb0f96710db3295bd827aab662a238a0c22b1ad60f940d5757a"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-14"
+version_note = "arXiv v2"
+cited_for = ["Layer 2"]
+
+[[source]]
+id = "MugerII"
+authors = "Michael Mueger"
+title = "From Subfactors to Categories and Topology II. The quantum double of tensor categories and subfactors"
+year = 2001
+venue = "J. Pure Appl. Alg. 180, 159-219 (2003)"
+arxiv = "math/0111205v1"
+locator_scheme = "section"
+locator = "Sections 3–5"
+url = "https://arxiv.org/abs/math/0111205v1"
+fetched_from = "https://arxiv.org/pdf/math/0111205v1"
+fetched_at = "2026-11-14T10:23:00Z"
+sha256 = "66325a21651aff89b24b08c459728ef3e03b483d9c0108d0790da3b2da7aea32"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-14"
+version_note = "arXiv v1"
+cited_for = ["Layer 2"]
+
+[[source]]
+id = "Ostrik"
+authors = "Viktor Ostrik"
+title = "Module categories, weak Hopf algebras and modular invariants"
+year = 2001
+arxiv = "math/0111139v1"
+locator_scheme = "section"
+locator = "Module categories"
+url = "https://arxiv.org/abs/math/0111139v1"
+fetched_from = "https://arxiv.org/pdf/math/0111139v1"
+fetched_at = "2026-11-14T10:23:05Z"
+sha256 = "875af9a40743ec50b01c1102d45419f678e6b5d3a22a40fbcc614bb7b995bf4e"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-14"
+version_note = "arXiv v1"
+cited_for = ["Layer 7"]

@@ -1,0 +1,13 @@
+{
+  "review": {
+    "status": "needs_changes",
+    "reviewer": "independent-review-PRREVIEW-OcneanuRigidity~1",
+    "head": "31f02eba76293b063a47a6a70142e0f9317f1cfa",
+    "pr": 2316,
+    "folder": "OcneanuRigidity",
+    "date": "2026-11-14",
+    "findings": 15,
+    "blocking": 11,
+    "notes": "Full README review; worker seeded sample has no target IDs. All 32 explicit locator occurrences audited using legal source copies; computed adversarial table includes all headline families. Gate fails missing Suggested.lean; direct elaboration confirms absence. Scratch Radford headline elaborates with only sorry warning; dependency check: 244 roadmaps, 2197 edges, 0 problems. Source-version limitations are recorded."
+  }
+}
