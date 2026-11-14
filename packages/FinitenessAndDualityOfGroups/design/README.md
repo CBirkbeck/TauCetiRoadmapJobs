@@ -1003,9 +1003,11 @@ the augmentation is an invariant element of `RG` of augmentation `1`, which forc
 
 ### 2.8 Comparison with the profinite invariant
 
-Prove that for `G : Type` with the discrete topology, `TauCeti.cohomologicalDimension.{0} G ≤ cd_ℤ G`:
-for a discrete torsion `G`-module `M` every action is continuous, and CohomologyOfGroups §1.5
-identifies the continuous cohomology with `Hᵏ(G, M)`, which vanishes above `cd_ℤ G`. *Needs:* 2.1;
+Prove that for `G : Type` with the discrete topology, `TauCeti.cohomologicalDimension.{0} G ≤ cd_ℤ G`,
+where `cd_ℤ` is the discrete invariant of 2.1 (Serre1971Bourbaki 1.1, lines 40–42; the comparison is
+the following argument): for a discrete torsion `G`-module `M` every action is continuous, and
+CohomologyOfGroups §1.5 identifies the continuous cohomology with `Hᵏ(G, M)`, which vanishes above
+`cd_ℤ G`. *Needs:* 2.1;
 CohomologyOfGroups §1.5; Tau Ceti `TauCeti.cohomologicalDimension`.
 
 **Checks.**
@@ -1818,8 +1820,8 @@ and the finite case applies; in general, the finitely many matrices of generator
 generated subring of `K`, whose residue fields at maximal ideals are finite (a field finitely
 generated as a ring is finite), so `V` has a `Γ`-stable lattice `L` over a local ring `A ⊂ K` with
 finite residue field `k`; `Hom_{ℤΓ'}(P, L)` is finitely generated projective over `A[Γ/Γ']` (it is
-induced from `L` when `P = ℤΓ`, Brown1974 Lemma 1), its reduction is free of the stated rank by the
-finite case, and a finitely generated projective module over `A[Δ]`, `Δ` finite, whose reduction is
+induced from `L` when `P = ℤΓ`, Brown1974 Appendix A, Lemma 1, lines 1295–1302), its reduction is
+free of the stated rank by the finite case, and a finitely generated projective module over `A[Δ]`, `Δ` finite, whose reduction is
 free is free (lift the isomorphism, Nakayama). *Needs:* 7.3, 7.4; Mathlib `IsLocalRing`, Nakayama's lemma,
 `Module.Projective`.
 

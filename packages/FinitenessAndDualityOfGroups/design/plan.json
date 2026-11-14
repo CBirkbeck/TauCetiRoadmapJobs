@@ -66,7 +66,7 @@
      ],
      "locator": {
       "source": "BieriEckmann1973",
-      "where": "§4.1, lines 540-544 (types FP, FF); BieriEckmann1974 §3.3 lines 286-287; Brown1974 §3 lines 345-351"
+      "where": "§4.1, lines 540-544 (types FP, FF); BieriEckmann1974 §3.3 lines 286-287; Brown1974 §3 lines 345-351; Serre1971Bourbaki 1.2, lines 55-58 (type FL); BrownGTM87 §VIII.6 (FP against FL by the Eilenberg swindle)"
      },
      "prerequisites": [
       "mathlib:MonoidAlgebra",
@@ -281,7 +281,7 @@
      ],
      "locator": {
       "source": "BieriEckmann1974",
-      "where": "Proposition 3.3(a), lines 298-313 (FP_∞ and FP over ℤ); for finite n and arbitrary R the route through 1.5(c) is the proof"
+      "where": "Proposition 3.3(a), lines 298-313 (FP_∞ and FP over ℤ); for finite n and arbitrary R the route through 1.5(c) is the proof; BrownGTM87 §VIII.5 for products"
      },
      "prerequisites": [
       "target:1.2",
@@ -778,7 +778,7 @@
      ],
      "locator": {
       "source": "Serre1971Prospects",
-      "where": "n°1.7, Théorème 1 (cited at Brown1974 line 354, BieriEckmann1973 line 396); BieriEckmann1974 Proposition 3.3(b), lines 300-313"
+      "where": "n°1.7, Théorème 1 (cited at Brown1974 line 354, BieriEckmann1973 line 396); BrownGTM87 §VIII.3; BieriEckmann1974 Proposition 3.3(b), lines 300-313"
      },
      "prerequisites": [
       "target:3.1",
@@ -1749,7 +1749,7 @@
      ],
      "locator": {
       "source": "Brown1974",
-      "where": "Appendix A, Theorem 7, lines 1284-1355"
+      "where": "Appendix A, Theorem 7, lines 1284-1355; Appendix A, Lemma 1, lines 1295-1302"
      },
      "prerequisites": [
       "target:7.3",
@@ -2187,7 +2187,7 @@
      ],
      "locator": {
       "source": "Brown1974",
-      "where": "§6, Corollary 1 of Theorem 5, lines 603-610 (empty family); proof of Theorem 5, lines 652-673; Serre1971Prospects n°1.8 Proposition 13, cited at lines 611-614"
+      "where": "§6, Corollary 1 of Theorem 5, lines 603-610 (empty family); proof of Theorem 5, lines 652-673; Serre1971Prospects n°1.8 Proposition 13, cited at lines 611-614; §5, Proposition 4, lines 558-563 (virtual torsion-freeness)"
      },
      "prerequisites": [
       "target:8.8",
