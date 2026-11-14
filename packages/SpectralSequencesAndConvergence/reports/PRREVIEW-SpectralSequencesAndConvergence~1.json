@@ -1,0 +1,22 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-SpectralSequencesAndConvergence~1",
+  "head": "00c224712500d0d7fccb43255ce9ea66110f2425",
+  "pr": 2302,
+  "folder": "SpectralSequencesAndConvergence",
+  "date": "2026-11-14",
+  "findings": 1,
+  "blocking": 0,
+  "notes": "Full review. One P3 (R01): the comparison theorem of 5.4 asks termwise vanishing at the bounded end where its route and the pinned Tau Ceti theorem ask cohomological vanishing; replacement binders elaborate. Sample: all 15 seeded targets and all 10 stated theorems recomputed (adversarial table, 26 rows). Sources: 66 locators of stacks-012K, helle-rognes2024, bhatt-scholze2015, browning-sawin2020 opened and matching; six uncertified works not read; one misprint recorded in stacks-012K Lemma 24.13 (proof). Pins: Mathlib and Tau Ceti declarations opened by file and line; 11 cross-roadmap citations resolved on main; declared gap exact-couple-morphisms precise and minimal. Gate passed; depcheck 0 problems; Suggested.lean elaborates with 10 sorry warnings only; one-tactic probe closes none; no overlap or second owner found.",
+  "carried": {
+   "from": "00c224712500d0d7fccb43255ce9ea66110f2425",
+   "head": "b60fcaf574356ffc28b2c1ae6d180cda38ce975d",
+   "findings": 1,
+   "lines": 74,
+   "folders": [
+    "SpectralSequencesAndConvergence"
+   ]
+  }
+ }
+}
