@@ -64,14 +64,16 @@ It leaves to named owners:
   comparison and homological form. Layer 1 states the second page and convergence for an arbitrary
   double complex whose totalisation exists; on first-quadrant double complexes, read in §S.1's
   convention of anticommuting differentials through `d′ = d₁`, `d″ = (−1)^p d₂` (1.2), it is §S.1's
-  statement, and the edge morphisms and low-degree sequences of double complexes are not restated.
+  statement (the comparison 1.3(a′), which identifies the two sequences with their edge morphisms),
+  and the edge morphisms and low-degree sequences of double complexes are not restated.
 - **DerivedModuleAlgebra, §0.2**: the derived tensor product on `D(R)` for a commutative ring `R`,
   computed by `Tot(P ⊗ L)` when `P` is a bounded-above complex of flat modules. Layer 4 consumes it
   as the abutment of the universal-coefficient and Künneth spectral sequences.
 - **ArithmeticGaloisDuality, §D7.1**, target *Derived composite spectral sequence*: the
   composite-functor spectral sequence `E₂^{a,b} = R^aH(R^bF(X)) ⇒ R^{a+b}(H ∘ F)(X)` of an object
   `X`, with finite filtrations and edge maps the canonical maps. Layer 3 states the sequence of a
-  complex in `D⁺`, of which §D7.1's is the case of an object, and adds the composition theorem,
+  complex in `D⁺`, of which §D7.1's is the case of an object (§D7.1 builds on DerivedModuleAlgebra
+  §S.1's spectral sequence, identified with Layer 1's by 1.3(a′)), and adds the composition theorem,
   the low-degree sequences, naturality in the functors and the right exact and mixed-variance
   forms.
 - **ArithmeticStatisticsPartVIII, §5.16** (*Tor spectral sequences over graded algebras*): the
@@ -87,10 +89,15 @@ It leaves to named owners:
   induced by a quasi-isomorphism on rows and the exact-augmentation form, the horseshoe of finite
   projective resolutions of the outer terms of a conflation in an exact category (in an abelian
   category, the finite case of the projective form of 2.1(a) for objects), the Künneth short
-  exact sequence over rings whose modules have projective dimension at most one, the universal
-  coefficient sequence for cohomology, K-flat complexes, `Tor` from presentations of length one,
-  and the first-order Bockstein maps of continuous cohomology. These are instances of Layers 1, 2,
-  4 and 6 and are consumed as they stand.
+  exact sequence for `ℕ`-indexed chain complexes `K`, `L` of modules over a commutative ring whose
+  cycles `Z_q(L)` and quotients `L_q/Z_q(L)` are projective, with no condition on `K`
+  (`HomologicalComplex.homologyKunnethShortComplex_shortExact`), the universal coefficient sequence
+  for cohomology, K-flat complexes, `Tor₁` and the vanishing of `Tor_{≥2}` from a projective
+  presentation of length one of the second variable
+  (`CategoryTheory.ShortComplex.ShortExact.torOneIsoKernel`,
+  `CategoryTheory.ShortComplex.ShortExact.isZero_Tor_add_two`), and the Bocksteins of continuous
+  cohomology of a compact group with trivial cyclic coefficients (`TauCeti.cyclicBockstein`). These
+  are instances of Layers 1, 2, 4 and 6 and are consumed as they stand.
 - **KhovanovHomology, §K5**: for bounded complexes of finitely generated free `ℤ`-modules and an
   abelian group `M`, the universal-coefficient short exact sequences for `C ⊗ M` and for
   `Hom(C, M)`, the Künneth short exact sequence of two such complexes, and the comparison of
@@ -268,7 +275,9 @@ dimension, and the resolutions of unbounded complexes with exact kernel or coker
   `CategoryTheory.InjectiveResolution.extEquivCohomologyClass`
   (`Mathlib/CategoryTheory/Abelian/Projective/Ext.lean`, `Injective/Ext.lean`),
   `CochainComplex.IsKInjective`, `CochainComplex.IsKProjective`.
-- `CochainComplex.isKInjective_of_injective`
+- `CochainComplex.IsStrictlyGE` (`Mathlib/Algebra/Homology/Embedding/CochainComplex.lean`): a
+  cochain complex indexed by `ℤ` whose terms vanish below a given degree.
+  `CochainComplex.isKInjective_of_injective`
   (`Mathlib/Algebra/Homology/HomotopyCategory/KInjective.lean`): a cochain complex indexed by `ℤ`,
   strictly bounded below, with injective terms is K-injective, that is, every map into it from an
   acyclic complex is null-homotopic. `CochainComplex.IsKInjective.Qh_map_bijective`
@@ -280,8 +289,11 @@ dimension, and the resolutions of unbounded complexes with exact kernel or coker
   injectives strictly bounded below by `n`. `CategoryTheory.InjectiveResolution.desc` and
   `CategoryTheory.InjectiveResolution.descHomotopy`
   (`Mathlib/CategoryTheory/Abelian/Injective/Resolution.lean`): a morphism of objects lifts to their
-  injective resolutions, uniquely up to homotopy. Assumed: nothing beyond these statements; Mathlib's
-  injective resolutions are indexed by `ℕ` and are extended to `ℤ` where K-injectivity is used.
+  injective resolutions, uniquely up to homotopy; dually `CategoryTheory.ProjectiveResolution.lift`
+  and `CategoryTheory.ProjectiveResolution.liftHomotopy`
+  (`Mathlib/CategoryTheory/Abelian/Projective/Resolution.lean`) for projective resolutions.
+  Assumed: nothing beyond these statements; Mathlib's injective resolutions are indexed by `ℕ` and
+  are extended to `ℤ` where K-injectivity is used.
 - `ModuleCat.restrictScalars`, `ModuleCat.coextendScalars` and `ModuleCat.restrictCoextendScalarsAdj`
   for any rings, `ModuleCat.extendScalars` and `ModuleCat.extendRestrictScalarsAdj` for
   commutative rings (`Mathlib/Algebra/Category/ModuleCat/ChangeOfRings.lean`).
@@ -305,6 +317,11 @@ dimension, and the resolutions of unbounded complexes with exact kernel or coker
   the cohomology of the graded pieces when the filtration maps are monomorphisms (the instance on
   `filtrationFunctor`), its first differential as the connecting morphism, and the morphisms induced
   by morphisms of filtrations. Read in the classical indexing of the Conventions.
+  `CochainComplex.filtrationAbutmentIso` (`Filtered/Convergence.lean`) and
+  `CochainComplex.filtrationSpectralSequencePageXIsoEInfty` (`Filtered/Stabilization.lean`): the
+  abutment of that spectral sequence is `Hⁿ(K)`, and a page on which the relevant cohomology of the
+  filtration steps vanishes is the limit term `EInfty`; the identification of `E_∞` with the graded
+  pieces that DerivedModuleAlgebra §S.1 uses, compared with the canonical presentation in 1.3(a′).
 - `CategoryTheory.SpectralSequence.Hom.isIso_hom_f_of_le`
   (`TauCeti/Algebra/Homology/SpectralSequence/Comparison.lean`): a morphism of spectral sequences that
   is an isomorphism at every position of page `r` is one on every later page.
@@ -337,7 +354,24 @@ dimension, and the resolutions of unbounded complexes with exact kernel or coker
 - `HomologicalComplex.homologyCross`, `HomologicalComplex.homologyKunnethShortComplex_shortExact`
   (`TauCeti/Algebra/Homology/Monoidal/Homology/Cross.lean`, `Kunneth/Sequence.lean`) and
   `TauCeti.ChainComplex.exact_extToHomology_kronecker`
-  (`TauCeti/Algebra/Homology/UniversalCoefficient/Basic.lean`): compared in Checks.
+  (`TauCeti/Algebra/Homology/UniversalCoefficient/Basic.lean`): compared in Checks. The Künneth
+  sequence is stated for `ℕ`-indexed chain complexes `K`, `L` of modules over a commutative ring,
+  under the hypotheses that the cycles `Z_q(L)` and the quotients `L_q/Z_q(L)` be projective, and
+  none on `K` or on the ring; it reads
+  `0 → ⊕_{p+q=m+1} H_p(K) ⊗ H_q(L) → H_{m+1}(K ⊗ L) → ⊕_{p+q=m} Tor₁(H_p K, H_q L) → 0`.
+- `CategoryTheory.ShortComplex.ShortExact.torOneIsoKernel` and
+  `CategoryTheory.ShortComplex.ShortExact.isZero_Tor_add_two`
+  (`TauCeti/CategoryTheory/Monoidal/Tor.lean`): in a monoidal abelian category with
+  `MonoidalPreadditive` and `HasProjectiveResolutions`, for a short exact sequence
+  `0 → P₁ → P₀ → M → 0` with `P₁`, `P₀` projective, `Tor₁(X, M) ≅ ker(X ⊗ P₁ → X ⊗ P₀)` and
+  `Tor_n(X, M) = 0` for `n ≥ 2`; the presentation is of the second variable, the one Mathlib's `Tor`
+  derives. Compared in the Check *Resolutions of length one* of 4.1.
+- `TauCeti.cyclicBockstein`
+  (`TauCeti/RepresentationTheory/Homological/ContCohomology/Bockstein/AllDegrees.lean`): for a
+  compact group `G` and a natural number `n ≠ 0`, the connecting map of
+  `0 → ℤ/n →(×n) ℤ/n² → ℤ/n → 0` (trivial action) on continuous cohomology, which Tau Ceti defines
+  as the connecting map of the short exact sequence of homogeneous continuous cochains. Compared in
+  the Examples of Layer 6.
 
 ### From TauCetiRoadmap.SpectralSequencesAndConvergence
 
@@ -435,7 +469,7 @@ sequence `0 → E_2^{1,0} → H^1 → E_2^{0,1} → E_2^{2,0} → H^2`, whose ma
 `d_2` and whose other maps are the edge morphisms; and, for `m ≥ 1` with `E_2^{p,q} = 0` for all `p`
 and `0 < q < m`, under convergence in degrees up to `m + 1`, the isomorphisms `E_2^{j,0} ≅ H^j` for
 `j < m` and the exact sequence `0 → E_2^{m,0} → H^m → E_2^{0,m} → E_2^{m+1,0} → H^{m+1}`. Supplier
-section: §3.6. Used in 3.3, and through 2.6 in the low-degree sequences of 3.4 and 4.4.
+section: §3.6. Used in 1.3(a′) and 3.3, and through 2.6 in the low-degree sequences of 3.4 and 4.4.
 
 What SpectralSequencesAndConvergence must provide (gap:base-einfty-comparison): for a spectral object
 `X : CategoryTheory.Abelian.SpectralObject C EInt` and a position `(p, q)`, `n = p + q`, at which
@@ -529,9 +563,14 @@ canonical isomorphisms of gap:base-induced-filtration. Supplier section: §7.5. 
 - §0.2: the derived tensor bifunctor on `D(R)` for a commutative ring `R`, symmetric monoidal with
   unit `R[0]`, with `P ⊗^L L ≅ Tot(P ⊗ L)` naturally for every bounded-above complex `P` of flat
   modules.
-- §S.1: the first-quadrant double complex spectral sequence and its consequences, for double
-  complexes with anticommuting differentials, compared with Layer 1 through `d′ = d₁`,
-  `d″ = (−1)^p d₂` (1.2).
+- §S.1: the first-quadrant double complex spectral sequence and its consequences (second page,
+  abutment filtration, edge morphisms, five-term and extended sequences), for double complexes with
+  anticommuting differentials, compared with Layer 1 through `d′ = d₁`, `d″ = (−1)^p d₂` (1.2) and
+  identified with `′E` of a first-quadrant double complex, with its edge morphisms, in 1.3(a′).
+  Assumed: what its API and proof sketch state, that its spectral sequence is Tau Ceti's spectral
+  sequence of the column filtration of the total complex, with abutment and `E_∞` identified
+  through Tau Ceti's `CochainComplex.filtrationAbutmentIso` and
+  `CochainComplex.filtrationSpectralSequencePageXIsoEInfty`.
 
 ### From TauCetiRoadmap.ArithmeticGaloisDuality
 
@@ -539,9 +578,14 @@ canonical isomorphisms of gap:base-induced-filtration. Supplier section: §7.5. 
   with `𝒜, ℬ` having enough injectives and `F` sending injectives to `H`-acyclic objects, the
   natural convergent first-quadrant spectral sequence `E₂^{a,b} = R^aH(R^bF(X)) ⇒ R^{a+b}(H ∘ F)(X)`
   of an object `X`, with finite filtrations, whose edge maps are the canonical maps
-  `R^aH(F(X)) → R^a(H ∘ F)(X)` and `R^b(H ∘ F)(X) → H(R^bF(X))`. Assumed: its construction is the one
-  of 3.2 (an injective resolution of `X`, a Cartan–Eilenberg resolution of `F` applied to it, and
-  the second spectral sequence of `H`), so that 3.2 and 3.3 apply to it.
+  `R^aH(F(X)) → R^a(H ∘ F)(X)` and `R^b(H ∘ F)(X) → H(R^bF(X))`. Assumed: what its statement, its
+  *Needs* line and its proof sketch say, that the sequence is DerivedModuleAlgebra §S.1's spectral
+  sequence of the first-quadrant double complex obtained by applying `H` to a Cartan–Eilenberg
+  resolution of `F` applied to an injective resolution of `X`, filtered so that its second page is
+  `R^aH(R^bF(X))`, with abutment identified with `R^{a+b}(H ∘ F)(X)` through the acyclicity of the
+  `F` of the injective terms. That double complex is the one of 3.2 for `X[0]`, and 1.3(a′),
+  through the flip, identifies §S.1's sequence of it and its edge morphisms with `E(F, H; X[0])` of
+  3.2 and the edge morphisms of base §3.6; nothing else of §D7.1's construction is used.
 
 ## How to read the build
 
@@ -561,7 +605,8 @@ pages and its limit page.
 
 The roadmap is this README. `Suggested.lean` states the headline theorems whose carriers exist at the
 pins: the direct-sum forms of the comparison of totals and of the acyclic assembly lemma (1.4, 1.5),
-the horseshoe lemma for injective resolutions of objects (2.1(a)), the comparison of Mathlib's two
+the horseshoe lemma for injective resolutions of objects and of bounded-below complexes and the
+relative horseshoe lemma (2.1(a), (a′), (b)), the comparison of Mathlib's two
 right derived functors and Leray's acyclicity lemma (2.2(i), (v)), Grothendieck's criterion for the
 composition of right derived functors (3.1) and the balancing of Tor (4.1). The spectral sequences
 themselves, their convergence and products, the product totalisation, Cartan–Eilenberg resolutions
@@ -666,7 +711,7 @@ grothendieck1957 line 1226–1235, (2.4.1)):
   `H_I H_II`, are unchanged. On the unit square of the Conventions, `d″` is `+1` on `K^{0,0}` and `−1`
   on `K^{1,0}`, matching the total differential computed there; taking `d″ = d₂` instead would give
   `d′d″ + d″d′ = 2` on `K^{0,0}`. For a first-quadrant `K`, `′E_2 ≅ H_I H_II(K)` is then §S.1's
-  identification, and for a first-quadrant homological bicomplex the first page agrees with Tau
+  identification (1.3(a′)), and for a first-quadrant homological bicomplex the first page agrees with Tau
   Ceti's `HomologicalComplex₂.columnFiltrationSpectralSequenceFirstPageXIso`.
 - For the staircase, `′E_1` of both totals is `ℤ` at `(0, 0)` and zero elsewhere, and `κ` is an
   isomorphism on it although it is not a quasi-isomorphism.
@@ -687,8 +732,10 @@ grothendieck1957 line 1226–1235, (2.4.1)):
 
 ### 1.3 Convergence
 
-Prove (stacks-012K line 3284–3291, Lemma 25.3, tag 0132, for (a); weibel1994 §5.6, uncertified,
-for (b) and (c)):
+Prove (stacks-012K line 3284–3291, Lemma 25.3, tag 0132, for (a); stacks-012K line 3250–3257 and
+3271–3283, §25 and Definition 25.2, tags 012X and 0131, for (a′), where both spectral sequences are
+that of the filtration `F_I` with convergence through the canonical comparison of `E_∞` with the
+graded pieces; weibel1994 §5.6, uncertified, for (b) and (c)):
 
 - (a) *Finite antidiagonals.* In any abelian category, if for every `n` only finitely many
   `K^{p,n−p}` are nonzero, both spectral sequences converge strongly in every degree to `H^*(Tot K)`,
@@ -700,6 +747,24 @@ for (b) and (c)):
   3.4); similarly for `″E`. Route: the filtrations are finite in each degree, base §5.3 and §3.4;
   for the first weak Serre form, closure under kernels and cokernels carries the hypothesis from
   page `r` to every later page, hence to a page from which total degree `n` stabilises.
+- (a′) *First-quadrant double complexes.* If `K^{p,q} = 0` for `p < 0` or `q < 0`, then from page `2`
+  on `′E(K)`, in the classical indexing and with the convergence of (a), is isomorphic to the
+  spectral sequence of DerivedModuleAlgebra §S.1 of the anticommuting pair `d′ = d₁`,
+  `d″ = (−1)^p d₂`, by an isomorphism compatible with the two identifications of the second page
+  with `H_I^p H_II^q(K)` (1.2 and §S.1). Both abut to `Hⁿ(Tot K)` with the same filtration
+  `F_I^p Hⁿ = im(Hⁿ(F_I^p Tot K) → Hⁿ(Tot K))`, and the isomorphism of limit pages carries the
+  isomorphisms `β` of (a) to §S.1's `E_∞^{p,q} ≅ F^pH^{p+q}/F^{p+1}H^{p+q}`. Hence the edge morphisms,
+  the five-term exact sequence and the extended sequences of base §3.6 for `′E(K)` are §S.1's.
+  Applied to `K.flip`, the same holds for `″E(K)` and §S.1's sequence of the pair `d′ = d₂`,
+  `d″ = (−1)^q d₁` on `K.flip`, the abutments being identified through
+  `HomologicalComplex₂.totalFlipIso`. Route: §S.1 takes Tau Ceti's spectral sequence of the column
+  filtration of the total complex of its pair (its API and proof sketch), and by the dictionary
+  Check of 1.2 that filtered complex is `(Tot K, F_I)`; so the two sequences are built from one
+  filtered complex and differ only in the numbering of pages and positions. Both identify `E_∞`
+  with the graded pieces of `Hⁿ(Tot K)` through Tau Ceti's `CochainComplex.filtrationAbutmentIso`
+  (for `′E`, through the canonical presentation of base §5.2), and the edge morphisms of both are
+  these identifications composed with `E₂^{n,0} ↠ E_∞^{n,0}`, `FⁿHⁿ ↪ Hⁿ`, `Hⁿ ↠ Hⁿ/F¹Hⁿ` and
+  `E_∞^{0,n} ↪ E₂^{0,n}`.
 - (b) *The direct-sum totalisation.* Let the category have exact sequential colimits and let
   `Tot^⊕(K)` exist (for instance, the category has countable coproducts). If for every `n` there is
   `b(n)` with `K^{p,n−p} = 0` for `p > b(n)`, then `′E(K)` converges
@@ -724,7 +789,10 @@ for (b) and (c)):
 (gap:base-finite-filtration-convergence), §5.3 (gap:base-finite-filtered-convergence), §5.4
 (gap:base-exhaustive-bounded-below-convergence), §7.5 (gap:base-complete-convergence), and the class
 of categories of §7.4 (gap:base-tower-exact-categories); Mathlib `HomologicalComplex₂.HasTotal`,
-`HasExactColimitsOfShape`, `CountableAB4Star`.
+`HasExactColimitsOfShape`, `CountableAB4Star`; for (a′), base §3.6 (gap:base-first-quadrant-sequences)
+and §5.2 (gap:base-induced-filtration), DerivedModuleAlgebra §S.1, Mathlib
+`HomologicalComplex₂.totalFlipIso` and Tau Ceti `CochainComplex.spectralSequence`,
+`CochainComplex.filtrationAbutmentIso`.
 
 - In (a), the stabilisation page in total degree `n` is bounded by the number of columns meeting the
   antidiagonals `n − 1, n, n + 1`, plus one.
@@ -746,6 +814,25 @@ of categories of §7.4 (gap:base-tower-exact-categories); Mathlib `HomologicalCo
   `′E_2^{0,0} = ℤ` on every later page; the second cannot use `r = 1`, since `′d_1` leaves `(0, 0)`
   nonzero, and fails at `′E_2^{0,0} = ℤ` for `r ≥ 2`.
 - The zero double complex converges to zero in every case.
+- *(a′) on a single row.* If `K^{p,q} = 0` for `q ≠ 0`, both sequences of (a′) are concentrated on the
+  row `q = 0`, with `E₂^{n,0} = Hⁿ(K^{•,0}) = Hⁿ(Tot K)`, `F_I^n Hⁿ = Hⁿ` and `F_I^{n+1} Hⁿ = 0`, and both
+  edge morphisms `E₂^{n,0} → Hⁿ` are the identity (§S.1's first Check). The automorphism `−1` of
+  `′E(K)` is a morphism of spectral sequences; composed with the isomorphism of (a′) it would still
+  be an isomorphism onto §S.1's sequence, but it is not compatible with the second-page
+  identifications and turns one edge morphism into the negative of the other.
+- *(a′) on a single column.* If `K` is concentrated in column `0`, `E₂^{0,n} = Hⁿ(K^{0,•}) = Hⁿ(Tot K)`,
+  `F_I^0 Hⁿ = Hⁿ`, `F_I^1 Hⁿ = 0`, and both edge morphisms `Hⁿ → E₂^{0,n}` are the identity (§S.1's
+  second Check).
+- *(a′) needs the dictionary.* Let `K^{0,1} = ℤx`, `K^{1,0} = ℤy`, `K^{1,1} = ℤz`, `K^{2,0} = ℤw`, other
+  terms zero, with `d₁x = z`, `d₂y = z`, `d₁y = w` (every square has a zero corner). Column `1` is exact,
+  so `′E₂ = ′E₁` is `ℤ[x]` at `(0, 1)` and `ℤ[w]` at `(2, 0)`; the total differential sends `x ↦ z` and
+  `y ↦ w − z`, an isomorphism `ℤ² → ℤ²`, so `H¹ = H² = 0`, `d(x + y) = w`, and `d₂ : ℤ[x] → ℤ[w]` is an
+  isomorphism, as the five-term sequence `0 → 0 → 0 → ℤ → ℤ → 0` requires. §S.1's sequence of
+  `d′ = d₁`, `d″ = (−1)^p d₂` has the same total complex and filtration, hence the same `d₂`. Here
+  `d₁d₂ = d₂d₁ = 0`, so `(d₁, d₂)` also anticommutes, but its total differential sends `y ↦ w + z`; the
+  sign change `y ↦ −y`, `w ↦ −w` is an isomorphism of filtered complexes between the two totals that is
+  the identity on `ℤ[x]` and `−1` on `ℤ[w]`, so the `d₂` of that pair is the negative of `′E(K)`'s and no
+  isomorphism compatible with the second-page identifications joins the two.
 
 ### 1.4 Comparison of totals
 
@@ -853,19 +940,20 @@ The unit square pins the total sign, the column-sign complex pins the flip sign,
 and the dual staircase separate the direct-sum and product totalisations, the two convergence
 theorems and the two acyclic assembly statements, the first through its exact rows and the second
 through its exact columns. First-quadrant double complexes are DerivedModuleAlgebra §S.1's
-instances, through the dictionary `d′ = d₁`, `d″ = (−1)^p d₂` of 1.2, and Tau Ceti's row- and
-column-filtration spectral sequences their homological form.
+instances, through the dictionary `d′ = d₁`, `d″ = (−1)^p d₂` of 1.2 and the comparison 1.3(a′), and
+Tau Ceti's row- and column-filtration spectral sequences their homological form.
 
 ### Dependencies
 
-Base §§1.3, 2.2, 3.2–3.5, 5.2–5.4, 7.2 (the class of §7.4) and 7.5, through
+Base §§1.3, 2.2, 3.2–3.6, 5.2–5.4, 7.2 (the class of §7.4) and 7.5, through
 gap:base-stabilisation-regularity, gap:base-bounded-below-regularity,
 gap:base-convergence-structures, gap:base-converging-morphisms,
-gap:base-finite-filtration-convergence, gap:base-comparison-theorem, gap:base-induced-filtration,
+gap:base-finite-filtration-convergence, gap:base-comparison-theorem,
+gap:base-first-quadrant-sequences, gap:base-induced-filtration,
 gap:base-finite-filtered-convergence, gap:base-exhaustive-bounded-below-convergence,
 gap:base-tower-exact-categories and gap:base-complete-convergence; Mathlib double complexes, total
 complexes and their flip; Tau Ceti's filtered-complex spectral sequence and comparison.
-DerivedModuleAlgebra §S.1 enters Checks only.
+DerivedModuleAlgebra §S.1 is compared in 1.3(a′) and in Checks.
 
 ## Layer 2: Cartan–Eilenberg resolutions and hyper-derived functors
 
@@ -881,18 +969,25 @@ uncertified):
   augmentations, that form a split short exact sequence in every degree; in particular
   `I₂^n ≅ I₁^n ⊕ I₃^n` (`exists_injectiveResolution_horseshoe`). No supply of injectives is needed:
   the construction lifts only into the given terms `I₁^n`.
-- (a′) *Horseshoe for complexes.* Let `𝒜` have enough injectives. For a short exact sequence
-  `0 → A → B → C → 0` of bounded-below complexes and an injective resolution `A → I₁`, there are
-  injective resolutions `B → I₂` and `C → I₃` and a degreewise split short exact sequence
-  `0 → I₁ → I₂ → I₃ → 0` compatible with the augmentations; if `A`, `B`, `C` and `I₁` vanish in
-  negative degrees, `I₂` and `I₃` can be chosen to.
+- (a′) *Horseshoe for complexes.* Let `𝒜` have enough injectives and `n` be an integer. For a short
+  exact sequence `0 → A → B → C → 0` of cochain complexes indexed by `ℤ` that vanish below degree
+  `n`, and a quasi-isomorphism `A → I₁` into a complex of injective objects vanishing below degree
+  `n`, there are complexes `I₂`, `I₃` of injective objects vanishing below degree `n`,
+  quasi-isomorphisms `B → I₂` and `C → I₃`, and a degreewise split short exact sequence
+  `0 → I₁ → I₂ → I₃ → 0` compatible with these quasi-isomorphisms and with the maps of the given
+  sequence (`exists_quasiIso_injective_horseshoe`). Since bounded-below complexes have a common
+  lower bound, this is the horseshoe for bounded-below complexes with a prescribed injective
+  resolution of `A`, and, for `n = 0`, its refinement in which `I₂`, `I₃` vanish in negative degrees
+  when `A`, `B`, `C`, `I₁` do (stacks-05QI line 3402–3420, Lemma 18.9 (1)–(3)).
 - (b) *Relative horseshoe.* Given a morphism `(f₁, f₂, f₃)` from a short exact sequence of objects
-  `0 → A → B → C → 0` to `0 → A′ → B′ → C′ → 0`, a short exact sequence `0 → R₁ → R₂ → R₃ → 0` of
-  resolutions of `A`, `B`, `C` compatible with the augmentations, a degreewise split short exact
-  sequence `0 → I₁′ → I₂′ → I₃′ → 0` of injective resolutions of `A′`, `B′`, `C′`, and chain maps
-  `α : R₁ → I₁′` over `f₁` and `β : R₃ → I₃′` over `f₃`, there is a chain map `μ : R₂ → I₂′` over `f₂`
-  restricting to `α` and inducing `β`. Route: choose any `ν : R₂ → I₂′` over `f₂` (stacks-05QI line
-  3301–3310, Lemma 18.6, tag 013P); the two maps `R₂ → I₃′` over `f₃` differ by a null-homotopic map
+  `0 → A → B → C → 0` to `0 → A′ → B′ → C′ → 0`, a sequence `R₁ → R₂ → R₃` of `ℕ`-indexed cochain
+  complexes that is short exact in every degree, with quasi-isomorphisms from `A`, `B`, `C` placed in
+  degree `0` into `R₁`, `R₂`, `R₃` compatible with it (resolutions of `A`, `B`, `C`, not necessarily
+  injective), a degreewise split short exact sequence `0 → I₁′ → I₂′ → I₃′ → 0` of injective
+  resolutions of `A′`, `B′`, `C′` compatible with the augmentations, and chain maps `α : R₁ → I₁′`
+  over `f₁` and `β : R₃ → I₃′` over `f₃`, there is a chain map `μ : R₂ → I₂′` over `f₂` restricting
+  to `α` and inducing `β` (`exists_horseshoe_lift`). Route: choose any `ν : R₂ → I₂′` over `f₂`
+  (stacks-05QI line 3301–3310, Lemma 18.6, tag 013P); the two maps `R₂ → I₃′` over `f₃` differ by a null-homotopic map
   (Lemma 18.7, tag 013S), whose homotopy lifts through the split epimorphism `I₂′ → I₃′`; correcting
   `ν` by it makes the right square commute, after which the restriction to `R₁` differs from `α` by
   a null-homotopic map, whose homotopy extends along the degreewise monomorphism `R₁ → R₂` into the
@@ -917,7 +1012,8 @@ uncertified):
 `CategoryTheory.ShortComplex.ShortExact`, `CategoryTheory.ShortComplex.Splitting` and Tau Ceti
 `TauCeti.ExactStructure.exists_conflation_of_conflation_of_injective`,
 `TauCeti.ExactStructure.abelian`, `TauCeti.ExactStructure.abelian_isInjective_iff`; for (a′) and (b),
-Mathlib `InjectiveResolution`, `EnoughInjectives`, `CochainComplex.isKInjective_of_injective`,
+Mathlib `InjectiveResolution`, `EnoughInjectives` (for (a′) only), `CochainComplex.IsStrictlyGE`,
+`QuasiIso`, `CochainComplex.isKInjective_of_injective`,
 `CochainComplex.IsKInjective.Qh_map_bijective`, `CategoryTheory.InjectiveResolution.desc`,
 `CategoryTheory.InjectiveResolution.descHomotopy`, `CochainComplex.Plus.exists_quasiIso_injective`.
 
@@ -948,6 +1044,11 @@ Mathlib `InjectiveResolution`, `EnoughInjectives`, `CochainComplex.isKInjective_
   the identity is not a chain map. For `h` the identity in both degrees the two differentials agree,
   but the identity still does not lie over `f₂`: the transported augmentation sends `(a, c)` to
   `(ε₁a + ε₃c, ε₃c)`, where `ε₁`, `ε₃` are the augmentations of `I₁`, `I₃`, and `ε₃c ≠ 0` for `c ≠ 0`.
+- *The lower bound of (a′) needs the bound on `I₁`.* For `0 → ℤ[0] →(×2) ℤ[0] → ℤ/2[0] → 0` and `n = 0`,
+  let `I₁` be `ℚ → ℚ/ℤ` in degrees `0, 1` plus the contractible `ℚ/ℤ →(id) ℚ/ℤ` in degrees `−1, 0`: it is
+  a complex of injectives quasi-isomorphic to `ℤ[0]`, but `I₁^{−1} = ℚ/ℤ` is a direct summand of
+  `I₂^{−1}` in any horseshoe, so no `I₂` vanishes below degree `0`. With `I₁ = (ℚ → ℚ/ℤ)` the bound holds,
+  and the horseshoe of the second Check, extended by zero to `ℤ`, is one that (a′) asserts.
 
 ### 2.2 Right derived functors of objects and complexes
 
@@ -1264,10 +1365,17 @@ representing `X`, with abutment `RⁿG(F(J)) ≅ Hⁿ(RG(RF(X))) ≅ Rⁿ(G ∘ 
   1506–1529, Proposition 2.5.4): for any bounded-below complex `L` of `F`-acyclic objects
   quasi-isomorphic to `X`, `E(F, G; X)` is isomorphic from page `2` on to `″E(G, F(L))`. Route: `F(L)` and
   `F(J)` are isomorphic in `DerivedCategory.Plus ℬ` (2.2(v)), and `″E(G, −)` is a functor there (2.5);
-- for `X = A[0]` this is ArithmeticGaloisDuality §D7.1's *Derived composite spectral sequence*, built
-  by the same construction, with its edge maps.
+- for `X = A[0]` this is ArithmeticGaloisDuality §D7.1's *Derived composite spectral sequence*, with
+  its edge maps: §D7.1 takes DerivedModuleAlgebra §S.1's spectral sequence of the double complex
+  `G(I)` of this construction (`I` a Cartan–Eilenberg resolution of `F(J)`, `J` an injective
+  resolution of `A`), filtered by rows; `G(I)` is first-quadrant, so 1.3(a′), through the flip,
+  identifies that sequence from page `2` on with `″E(G, F(J))` and its edge maps with the edge
+  morphisms of base §3.6. Both abutments are identified with `Rⁿ(G ∘ F)(A)` through the
+  augmentation `G(F(J)) → Tot G(I)`, which lands in row `0`, where the flip signs `(−1)^{pq}` are `1`
+  (for 3.2 by 3.1's route: `t` at `J` is the unit of `RG` at `F(J)`).
 
-*Needs:* 2.2(v), 2.5, 3.1; ArithmeticGaloisDuality §D7.1; Mathlib `DerivedCategory.Plus`.
+*Needs:* 2.2(v), 2.5, 3.1; for the comparison with ArithmeticGaloisDuality §D7.1, 1.3(a′) and
+§D7.1; Mathlib `DerivedCategory.Plus`.
 
 **Checks.**
 
@@ -1289,7 +1397,9 @@ for an object is the spectral sequence of grothendieck1957 line 1330–1337, Th�
 
 - the five-term exact sequence
   `0 → R¹G(F(A)) → R¹(G ∘ F)(A) → G(R¹F(A)) → R²G(F(A)) → R²(G ∘ F)(A)`, whose first, second and
-  fourth maps are the edge maps of ArithmeticGaloisDuality §D7.1 and whose third map is `d₂`;
+  fourth maps are the edge morphisms of base §3.6 for the sequence of 3.2, which are the canonical
+  maps `R^aG(F(A)) → R^a(G ∘ F)(A)` and `R¹(G ∘ F)(A) → G(R¹F(A))` of ArithmeticGaloisDuality §D7.1
+  (3.2's comparison with §D7.1, through 1.3(a′)), and whose third map is `d₂`;
 - for `m ≥ 1`, if `R^qF(A) = 0` for `0 < q < m`, then `R^jG(F(A)) ≅ R^j(G ∘ F)(A)` for `j < m` and
   `0 → R^mG(F(A)) → R^m(G ∘ F)(A) → G(R^mF(A)) → R^{m+1}G(F(A)) → R^{m+1}(G ∘ F)(A)` is exact;
 - *naturality in the functors:* natural transformations `α : F ⟶ F′` and `β : G ⟶ G′`, between pairs
@@ -1297,13 +1407,15 @@ for an object is the spectral sequence of grothendieck1957 line 1330–1337, Th�
   whose page-`2` components are `R^pG(R^qα)` and `R^pβ(R^qF)` and whose abutment components are those
   of `Mathlib`'s `CategoryTheory.NatTrans.rightDerivedFunctorPlus`; the morphisms are natural in `A`.
 
-Route: base §3.6 applied to the first-quadrant convergence of 3.2, with ArithmeticGaloisDuality
-§D7.1's identification of the edge maps; for naturality, `α` gives a chain map `F(J) → F′(J)` and 2.5's
-naturality in the complex, and `β` gives `G(I) → G′(I)` and 2.5's naturality in the functor.
+Route: base §3.6 applied to the first-quadrant convergence of 3.2; the double complex `G(I)` of 3.2
+for `X = A[0]` is first-quadrant, so 1.3(a′), through the flip, identifies the edge morphisms of base
+§3.6 with those of DerivedModuleAlgebra §S.1's sequence of `G(I)`, which ArithmeticGaloisDuality
+§D7.1 identifies with the canonical maps (3.2, last item); for naturality, `α` gives a chain map
+`F(J) → F′(J)` and 2.5's naturality in the complex, and `β` gives `G(I) → G′(I)` and 2.5's naturality in the functor.
 *Needs:* 3.1 (the condition on the pairs), 3.2; 2.5 (its naturality in the complex and in the
 functor, for naturality in the functors); base §3.3 (gap:base-converging-morphisms), §3.6
-(gap:base-first-quadrant-sequences); ArithmeticGaloisDuality §D7.1; Mathlib
-`CategoryTheory.NatTrans.rightDerivedFunctorPlus`.
+(gap:base-first-quadrant-sequences); for the edge maps, 1.3(a′) and ArithmeticGaloisDuality §D7.1;
+Mathlib `CategoryTheory.NatTrans.rightDerivedFunctorPlus`.
 
 **Checks.**
 
@@ -1354,7 +1466,7 @@ exact inflation, so invariants under `N` followed by invariants under `G/N` sati
 ### Dependencies
 
 Layer 2; base §3.3 (gap:base-converging-morphisms), §3.6 (gap:base-first-quadrant-sequences);
-ArithmeticGaloisDuality §D7.1; Mathlib derived functors on `D⁺`.
+1.3(a′) and ArithmeticGaloisDuality §D7.1, for the edge maps; Mathlib derived functors on `D⁺`.
 
 ## Layer 4: Tor and Ext over rings
 
@@ -1408,7 +1520,11 @@ being flat. *Needs:* Mathlib `CategoryTheory.Tor`, `CategoryTheory.Tor'`,
   KhovanovHomology §K5's comparison of `CategoryTheory.Tor'` and `CategoryTheory.Tor` for
   `X = Hⁱ(C)`. For `X = ℤ/2 ⊕ ℤ`, presented by `ℤ →(2, 0) ℤ²`, and `M = ℤ/2`, the kernel of
   `ℤ/2 → (ℤ/2)²`, `1 ↦ (0, 0)`, is `ℤ/2`, and resolving `M` by `ℤ →(×2) ℤ` gives the kernel of `×2` on
-  `ℤ/2 ⊕ ℤ`, again `ℤ/2`: the free summand contributes nothing on either side. The cokernel of the
+  `ℤ/2 ⊕ ℤ`, again `ℤ/2`: the free summand contributes nothing on either side. The second computation
+  presents the second variable and is Tau Ceti's `CategoryTheory.ShortComplex.ShortExact.torOneIsoKernel`
+  for `0 → ℤ →(×2) ℤ → ℤ/2 → 0`, with `Tor_n(X, ℤ/2) = 0` for `n ≥ 2` by
+  `CategoryTheory.ShortComplex.ShortExact.isZero_Tor_add_two`; the first, which presents `X`, needs the
+  balance proved here. The cokernel of the
   same map, `(ℤ/2)² = X ⊗ M`, is `Tor_0`, not `Tor_1`.
 - *Ext needs no balancing at the pin.* `Ext¹_ℤ(ℤ/2, ℤ)` is `ℤ/2` both from `ℤ →(×2) ℤ → ℤ/2` (Mathlib
   `ProjectiveResolution.extEquivCohomologyClass`) and from `ℤ → ℚ → ℚ/ℤ` (Mathlib
@@ -1419,7 +1535,12 @@ being flat. *Needs:* Mathlib `CategoryTheory.Tor`, `CategoryTheory.Tor'`,
 
 - (a) *Tor form.* For a commutative ring `R`, a complex `K` of `R`-modules (no boundedness) and an
   `R`-module `M`, there is a spectral sequence `E₂^{p,q} = Tor^R_{−p}(H^q(K), M) ⇒ H^{p+q}(K ⊗^L M)`,
-  converging strongly, with `E₂^{p,q} = 0` for `p > 0`, natural in `K` and `M`. It is `″E` of the double
+  converging strongly, with `E₂^{p,q} = 0` for `p > 0`, natural in `K`; from page `2` on it does not
+  depend on `P` and is natural in `M`: a map `M → M′` lifts to a chain map of projective resolutions
+  (Mathlib `CategoryTheory.ProjectiveResolution.lift`), which induces a map of double complexes, any
+  two lifts are homotopic (`CategoryTheory.ProjectiveResolution.liftHomotopy`), and homotopic chain maps
+  induce the same map on `″E₂^{p,q} = H^p(H^q(K) ⊗ P^•)` and on the abutment, hence on every later page
+  (the field `comm` of `CategoryTheory.SpectralSequence.Hom`). It is `″E` of the double
   complex `K ⊠ P` on `Tot^⊕`, for a projective resolution `P` of `M` in degrees `≤ 0`: its rows vanish
   for `q > 0`, so 1.3(b) applies; `″E_1^{p,q} = H^q(K) ⊗ P^p` since `P^p` is flat, so
   `″E_2^{p,q} = Tor_{−p}(H^q K, M)` (Mathlib `CategoryTheory.Tor` resolves the second variable); and
@@ -1450,7 +1571,9 @@ being flat. *Needs:* Mathlib `CategoryTheory.Tor`, `CategoryTheory.Tor'`,
 *Needs:* 1.2, 1.3(b), 2.4–2.6; base §1.3 (gap:base-stabilisation-regularity), §3.4
 (gap:base-finite-filtration-convergence); DerivedModuleAlgebra §0.2; Mathlib `CategoryTheory.Tor`,
 `CategoryTheory.Abelian.Ext`, `CategoryTheory.InjectiveResolution.extEquivCohomologyClass`,
-`CochainComplex.IsKInjective`, `CochainComplex.IsKProjective`.
+`CochainComplex.IsKInjective`, `CochainComplex.IsKProjective`, and, for the naturality in `M` of (a),
+`CategoryTheory.ProjectiveResolution.lift`, `CategoryTheory.ProjectiveResolution.liftHomotopy`,
+`CategoryTheory.SpectralSequence.Hom`.
 
 **Checks.**
 
@@ -1518,9 +1641,15 @@ the two-column sequence; DerivedModuleAlgebra §0.2; Tau Ceti `CochainComplex.sp
   `H^{−n}(k ⊗^L k) = k` for every `n ≥ 0`: infinitely many columns, one term in each total degree.
 - `K = R[0]` gives `E₂^{0,q} = H^q(L)` and nothing else.
 - With `L = M[0]` the page and abutment are those of 4.2(a) for the bounded-above complex `K`.
-- Over a ring of global dimension at most one, for complexes of projective modules indexed by `ℕ`
-  placed in non-positive degrees, the two-column sequence is Tau Ceti's
-  `HomologicalComplex.homologyKunnethShortComplex_shortExact`.
+- Over a ring of global dimension at most one (so that the two-column item applies), for `ℕ`-indexed
+  chain complexes `K`, `L` placed in non-positive degrees with `L` a complex of projective modules,
+  `K ⊗ L` computes `K ⊗^L L` and the two-column sequence is Tau Ceti's
+  `HomologicalComplex.homologyKunnethShortComplex_shortExact` in the degrees `n = −m − 1 ≤ −1` it
+  covers, the Tor term summed over `i + j = n + 1` (its `p + q = m`). That declaration asks less:
+  only that the cycles `Z_q(L)` and the quotients `L_q/Z_q(L)` be projective, which over such a ring
+  holds for every complex of projectives (submodules of projectives being projective), and nothing
+  of `K` or of the ring. Under those hypotheses alone each `H_q(L)` has the projective presentation
+  `0 → L_{q+1}/Z_{q+1}(L) → Z_q(L) → H_q(L) → 0`, so the Tor terms in columns `p ≤ −2` still vanish.
 - *Bounded finite free integral complexes.* For two bounded complexes `C`, `D` of finitely generated
   free `ℤ`-modules, `C ⊗^L D = C ⊗ D` and the two-column sequence is KhovanovHomology §K5's Künneth
   sequence, with the Tor term summed over `i + j = n + 1`. For `C = D = (ℤ →(×2) ℤ)` in degrees `−1, 0`,
@@ -1623,6 +1752,11 @@ StableHomotopyKTheory §7.22; Mathlib `ModuleCat`.
   `j(a)·1 + 1·j(b) = 0`: `μ_1` fails for `φ`. Likewise `d₂(1·1) = j(1) = 1` in `E^{2,−1}` while
   `d₂(1)·1 + 1·d₂(1) = 0`: `μ_0` fails for `φ′`. The equivalence at `m = 0` reads false ⟺ false; a reading
   of the shift at index `0` that sends `μ_0` for `φ` to `μ_0` for `φ′` would claim true ⟺ false.
+- *The sign `(−1)^{s+t}` in `μ_n`.* For the couple of the degree filtration of `A = ℤ[v] ⊗ Λ(u)`, `du = v`
+  (the last Check of 5.2: `E^{s,0} = A^s`, `jk = d`) with the product of `A`, `μ_0` reads
+  `jk(xy) = jk(x)y + (−1)^{s+t} x jk(y)`, which holds since `d` is a derivation of `A`. At `x = y = u ∈ E^{1,0}`
+  both sides are `0` (`u² = 0`, `vu − uv = 0`), while the condition with `+ x j₂(b)` in place of
+  `(−1)^{s+t} x j₂(b)` would ask `0 = vu + uv = 2uv ≠ 0` in `E^{3,0} = ℤ·uv`.
 
 ### 5.2 Pairings of filtered complexes
 
@@ -1657,7 +1791,14 @@ then 5.1. *Needs:* 5.1; base §4.3 (gap:base-einfty-comparison), §5.2 (gap:base
   which is `H(A)` with its product.
 - The trivial filtration `F^0 = A`, `F^1 = 0` of a differential graded algebra gives `E₁ = H(A)` with its
   cohomology product and all differentials zero.
-- For multiplicative filtrations of the zero complex all pairings are zero.
+- *The Leibniz sign over `ℤ`.* Let `A = ℤ[v] ⊗ Λ(u)`, the free graded-commutative `ℤ`-algebra on `u` of
+  degree `1` and `v` of degree `2` (`u² = 0`, `uv = vu`), with `du = v` and `dv = 0`, so that
+  `d(v^k) = 0` and `d(u v^k) = v^{k+1}`, and filter it by degree, `F^p = A^{≥p}`, a multiplicative
+  filtration. Then `gr^p A = A^p` with zero differential, `E₁^{p,0} = A^p` and `E₁^{p,q} = 0` for `q ≠ 0`,
+  `d₁ = d` and the page-`1` pairing is the product of `A`. For `x = y = u` at `(1, 0)`: `d₁(u·u) = d₁(0) = 0`
+  and `d₁(u)·u − u·d₁(u) = vu − uv = 0`, while the rule without the sign `(−1)^{p+q}` would give
+  `vu + uv = 2uv`, which is nonzero since `uv` is a basis element of `A³ = ℤ·uv`. `E₂ = H(A) = ℤ` at
+  `(0, 0)`.
 
 ### 5.3 Pairings of double complexes
 
@@ -1813,8 +1954,13 @@ only); base §1.3 (gap:base-stabilisation-regularity), §1.4 (gap:base-limit-pag
 ### Examples
 
 The Bockstein spectral sequences of torsion-free complexes over a principal ideal domain with a prime
-`p`, and of torsion-free abelian groups, are the cases `A` a principal ideal domain and `A = ℤ`. The
-first-order Bockstein maps of Tau Ceti's continuous cohomology are `d_1` of 6.1 for continuous cochains.
+`p`, and of torsion-free abelian groups, are the cases `A` a principal ideal domain and `A = ℤ`. Tau
+Ceti's `TauCeti.cyclicBockstein`, for a compact group `G` and `n ≠ 0`, is `d_1` of 6.1 for `A = ℤ`,
+`f = n` and `M` the homogeneous continuous cochains of `G` with values in `ℤ` (trivial action), on
+whose terms multiplication by `n` is injective: since `G` is compact, a continuous map from a power of
+`G` to `ℤ/n` or `ℤ/n²` lifts to `ℤ`, so `M/nM` and `M/n²M` are the continuous cochains with values in
+`ℤ/n` and `ℤ/n²`, and `0 → M/nM →(n) M/n²M → M/nM → 0` is the sequence of cochains of
+`0 → ℤ/n → ℤ/n² → ℤ/n → 0` whose connecting map Tau Ceti takes.
 
 ### Dependencies
 

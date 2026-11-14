@@ -1570,6 +1570,7 @@
    "section": "§3.6",
    "needs": "for an E₂ cohomological spectral sequence with the cohomological assignment and E_2^{p,q} = 0 for p < 0 or q < 0: under convergence in degree n, the edge morphisms E_2^{n,0} ↠ E_∞^{n,0} ≅ F^n H^n ↪ H^n and H^n ↠ H^n/F^1 H^n ≅ E_∞^{0,n} ↪ E_2^{0,n}; under convergence in degrees 1 and 2, the exact sequence 0 → E_2^{1,0} → H^1 → E_2^{0,1} → E_2^{2,0} → H^2, whose map E_2^{0,1} → E_2^{2,0} is d_2 and whose other maps are the edge morphisms; and, for m ≥ 1 with E_2^{p,q} = 0 for all p and 0 < q < m, under convergence in degrees up to m + 1, the isomorphisms E_2^{j,0} ≅ H^j for j < m and the exact sequence 0 → E_2^{m,0} → H^m → E_2^{0,m} → E_2^{m+1,0} → H^{m+1}.",
    "neededBy": [
+    "1.3",
     "3.3"
    ]
   },

@@ -18,7 +18,10 @@ Stated here:
   any abelian category, and in the half-plane cases, in an abelian category with exact sequential
   colimits (README 1.4, 1.5);
 * the horseshoe lemma for injective resolutions of the outer terms of a short exact sequence of
-  objects (README 2.1(a));
+  objects (README 2.1(a)), its form for short exact sequences of complexes vanishing below a
+  given degree (README 2.1(a′)), and the relative horseshoe lemma, which lifts a morphism of short
+  exact sequences to a prescribed degreewise split sequence of injective resolutions through
+  prescribed maps on the outer terms (README 2.1(b));
 * the agreement of the cohomology of Mathlib's `Functor.rightDerivedFunctorPlus` on objects with
   the classical right derived functors `Functor.rightDerived`, naturally in the object and in the
   functor (README 2.2(i));
@@ -143,6 +146,61 @@ theorem exists_injectiveResolution_horseshoe {C : Type u₁} [Category.{v₁} C]
       I₁.ι ≫ i = (CochainComplex.single₀ C).map S.f ≫ I₂.ι ∧
       I₂.ι ≫ p = (CochainComplex.single₀ C).map S.g ≫ I₃.ι ∧
       ∀ n : ℕ, ∃ w : i.f n ≫ p.f n = 0, Nonempty (ShortComplex.mk (i.f n) (p.f n) w).Splitting := by
+  sorry
+
+/-- **The horseshoe lemma for bounded-below complexes** (README 2.1(a′); Stacks, Derived
+Categories, Lemma 18.9, tag 013T, items (1)–(3)). In an abelian category with enough injectives,
+let `0 → A → B → C → 0` be a short exact sequence of cochain complexes indexed by `ℤ` that vanish
+below degree `n`, and let `A ⟶ I₁` be a quasi-isomorphism into a complex of injective objects that
+vanishes below degree `n`. Then there are complexes `I₂`, `I₃` of injective objects vanishing below
+degree `n`, quasi-isomorphisms `B ⟶ I₂` and `C ⟶ I₃`, and chain maps `I₁ ⟶ I₂ ⟶ I₃` commuting
+with the given maps and these quasi-isomorphisms, that form a split short exact sequence in every
+degree. -/
+theorem exists_quasiIso_injective_horseshoe {C : Type u₁} [Category.{v₁} C] [Abelian C]
+    [EnoughInjectives C] (S : ShortComplex (CochainComplex C ℤ)) (hS : S.ShortExact) (n : ℤ)
+    [S.X₁.IsStrictlyGE n] [S.X₂.IsStrictlyGE n] [S.X₃.IsStrictlyGE n]
+    (I₁ : CochainComplex C ℤ) [I₁.IsStrictlyGE n] [∀ k, Injective (I₁.X k)]
+    (ι₁ : S.X₁ ⟶ I₁) [QuasiIso ι₁] :
+    ∃ (I₂ I₃ : CochainComplex C ℤ) (ι₂ : S.X₂ ⟶ I₂) (ι₃ : S.X₃ ⟶ I₃)
+      (i : I₁ ⟶ I₂) (p : I₂ ⟶ I₃),
+      I₂.IsStrictlyGE n ∧ I₃.IsStrictlyGE n ∧ (∀ k, Injective (I₂.X k)) ∧
+      (∀ k, Injective (I₃.X k)) ∧ QuasiIso ι₂ ∧ QuasiIso ι₃ ∧
+      S.f ≫ ι₂ = ι₁ ≫ i ∧ S.g ≫ ι₃ = ι₂ ≫ p ∧
+      ∀ k : ℤ, ∃ w : i.f k ≫ p.f k = 0, Nonempty (ShortComplex.mk (i.f k) (p.f k) w).Splitting := by
+  sorry
+
+/-- **The relative horseshoe lemma** (README 2.1(b); Stacks, Derived Categories, Lemmas 18.6
+and 18.7, tags 013P and 013S, for the lifting and the homotopies it corrects). In any abelian
+category, let `φ = (f₁, f₂, f₃)` be a morphism from a short exact sequence `0 → A → B → C → 0` to a
+short exact sequence `0 → A' → B' → C' → 0`. Let `R₁ ⟶ R₂ ⟶ R₃` be chain maps of `ℕ`-indexed
+cochain complexes forming a short exact sequence in every degree, with quasi-isomorphisms
+`εᵢ` from `A`, `B`, `C` placed in degree `0` compatible with them, and let `I₁' ⟶ I₂' ⟶ I₃'` be
+chain maps between injective resolutions of `A'`, `B'`, `C'`, compatible with the augmentations,
+forming a split short exact sequence in every degree. Then for chain maps `α : R₁ ⟶ I₁'` over `f₁`
+and `β : R₃ ⟶ I₃'` over `f₃` there is a chain map `μ : R₂ ⟶ I₂'` over `f₂` whose composite with
+`R₁ ⟶ R₂` is `α` followed by `I₁' ⟶ I₂'` and whose composite with `I₂' ⟶ I₃'` is `R₂ ⟶ R₃`
+followed by `β`. -/
+theorem exists_horseshoe_lift {C : Type u₁} [Category.{v₁} C] [Abelian C]
+    {S S' : ShortComplex C} (hS : S.ShortExact) (hS' : S'.ShortExact) (φ : S ⟶ S')
+    {R₁ R₂ R₃ : CochainComplex C ℕ} (r₁ : R₁ ⟶ R₂) (r₂ : R₂ ⟶ R₃)
+    (hR : ∀ k : ℕ, ∃ w : r₁.f k ≫ r₂.f k = 0, (ShortComplex.mk (r₁.f k) (r₂.f k) w).ShortExact)
+    (ε₁ : (CochainComplex.single₀ C).obj S.X₁ ⟶ R₁)
+    (ε₂ : (CochainComplex.single₀ C).obj S.X₂ ⟶ R₂)
+    (ε₃ : (CochainComplex.single₀ C).obj S.X₃ ⟶ R₃) [QuasiIso ε₁] [QuasiIso ε₂] [QuasiIso ε₃]
+    (hε₁ : ε₁ ≫ r₁ = (CochainComplex.single₀ C).map S.f ≫ ε₂)
+    (hε₂ : ε₂ ≫ r₂ = (CochainComplex.single₀ C).map S.g ≫ ε₃)
+    (I₁ : InjectiveResolution S'.X₁) (I₂ : InjectiveResolution S'.X₂)
+    (I₃ : InjectiveResolution S'.X₃) (i : I₁.cocomplex ⟶ I₂.cocomplex)
+    (p : I₂.cocomplex ⟶ I₃.cocomplex)
+    (hi : I₁.ι ≫ i = (CochainComplex.single₀ C).map S'.f ≫ I₂.ι)
+    (hp : I₂.ι ≫ p = (CochainComplex.single₀ C).map S'.g ≫ I₃.ι)
+    (hip : ∀ k : ℕ, ∃ w : i.f k ≫ p.f k = 0,
+      Nonempty (ShortComplex.mk (i.f k) (p.f k) w).Splitting)
+    (α : R₁ ⟶ I₁.cocomplex) (β : R₃ ⟶ I₃.cocomplex)
+    (hα : ε₁ ≫ α = (CochainComplex.single₀ C).map φ.τ₁ ≫ I₁.ι)
+    (hβ : ε₃ ≫ β = (CochainComplex.single₀ C).map φ.τ₃ ≫ I₃.ι) :
+    ∃ μ : R₂ ⟶ I₂.cocomplex, ε₂ ≫ μ = (CochainComplex.single₀ C).map φ.τ₂ ≫ I₂.ι ∧
+      r₁ ≫ μ = α ≫ i ∧ μ ≫ p = r₂ ≫ β := by
   sorry
 
 /-- An object `B` is right acyclic for an additive functor `F` when the cohomology of
