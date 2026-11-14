@@ -1,0 +1,28 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "CountableStructureSpaces"
+
+[[source]]
+id = "marker2013notes"
+locator_scheme = "theorem"
+locator = "Theorem 11.19"
+url = "https://homepages.math.uic.edu/~marker/math512-F13/inf.pdf"
+fetched_from = "https://homepages.math.uic.edu/~marker/math512-F13/inf.pdf"
+fetched_at = "2026-11-14T22:00:34Z"
+sha256 = "05dcf4be09e155851a2841da9adcaf6ea4fcfd83ea25cabf8201d513cb1456b1"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-14"
+cited_for = ["4.3"]
+
+[[source]]
+id = "vaught1974"
+locator_scheme = "page"
+locator = "pp. 280-285"
+url = "http://matwbn.icm.edu.pl/ksiazki/fm/fm82/fm82118.pdf"
+fetched_from = "https://matwbn.icm.edu.pl/ksiazki/fm/fm82/fm82118.pdf"
+fetched_at = "2026-11-14T22:09:44Z"
+sha256 = "70bfd3f3b350399ab485be78013776a69dedeb376dfd70882f2cc25d91529fb2"
+licence_class = "institutional"
+status = "certified"
+accessed = "2026-11-14"
+cited_for = ["1.1", "4.1", "5.3", "6.1"]
