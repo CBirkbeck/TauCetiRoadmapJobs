@@ -1024,6 +1024,7 @@
      "prerequisites": [
       "mathlib:Topology.CWComplex",
       "tauceti:TauCeti.IsEilenbergMacLaneSpaceOne",
+      "tauceti:TauCeti.IsAspherical",
       "tauceti:TauCeti.leastENatBound",
       "tauceti:TauCeti.isEilenbergMacLaneSpaceOne_cellularClassifyingSpace",
       "roadmap:ClassifyingSpaces Stage 2 item 10"
@@ -1060,6 +1061,11 @@
        "name": "finite",
        "kind": "non-example",
        "statement": "gd G = ⊤ for a nontrivial finite group."
+      },
+      {
+       "name": "no_one_cells_not_point",
+       "kind": "non-example",
+       "statement": "Absence of 1-cells is weaker than dimension zero: S² with one 0-cell and one 2-cell is path-connected without 1-cells but H₂(S², ℤ) = ℤ ≠ 0 = H₂(point), and π₂(S²) = ℤ so it is no K(1,1); the two-point discrete space is zero-dimensional but not path-connected, hence no K(G,1)."
       }
      ]
     },

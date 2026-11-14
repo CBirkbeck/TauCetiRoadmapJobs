@@ -1112,10 +1112,13 @@ Hausdorff space `X : Type u` with a CW structure on `univ` having no cells of di
 (BrownGTM87, §VIII.7). A `K(G, 1)` CW complex exists for every group (ClassifyingSpaces Stage 2 item
 10; Tau Ceti `TauCeti.isEilenbergMacLaneSpaceOne_cellularClassifyingSpace`), so `gd G = ⊤` means that
 none is finite dimensional. *Needs:* Mathlib `Topology.CWComplex`; Tau Ceti
-`TauCeti.IsEilenbergMacLaneSpaceOne`, `TauCeti.leastENatBound`.
+`TauCeti.IsEilenbergMacLaneSpaceOne`, `TauCeti.IsAspherical`, `TauCeti.leastENatBound`.
 
 - `gd` is invariant under isomorphism of groups.
-- `gd G = 0` exactly when `G` is trivial: a path-connected CW complex without `1`-cells is a point.
+- `gd G = 0` exactly when `G` is trivial: a `K(G, 1)` is nonempty and path-connected (both are part
+  of `TauCeti.IsAspherical`), a CW complex with no cells of positive dimension is discrete, so a
+  nonempty path-connected one has exactly one `0`-cell and is a point with trivial fundamental
+  group; conversely the point is a `K(1, 1)`.
 - `gd G ≤ n` exactly when a `K(G, 1)` CW complex of dimension at most `n` exists.
 
 **Checks.**
@@ -1125,6 +1128,11 @@ none is finite dimensional. *Needs:* Mathlib `Topology.CWComplex`; Tau Ceti
 - `gd ℤⁿ = n`: the product of `n` circles with the product CW structure (`TauCeti.cwComplexProd`) is
   an `n`-dimensional `K(ℤⁿ, 1)`, and `gd ≥ cd_ℤ = n`.
 - `gd G = ⊤` for a nontrivial finite group, since `cd_ℤ G = ⊤` (2.7, 5.2).
+- Dimension zero, not the absence of `1`-cells, is what makes a path-connected CW complex a point:
+  `S²` with one `0`-cell and one `2`-cell is path-connected and has no `1`-cells, yet
+  `H₂(S², ℤ) = ℤ` while a point has `H₂ = 0`; nor is it a `K(1, 1)`, since
+  `π₂(S²) ≅ H₂(S², ℤ) = ℤ` by the Hurewicz theorem. The two-point discrete space is zero-dimensional
+  but not path-connected, hence no `K(G, 1)`.
 
 ### 5.2 Cohomological against geometric dimension, and finite classifying spaces
 
