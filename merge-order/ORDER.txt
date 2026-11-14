@@ -315,6 +315,7 @@ KloostermanMomentsAndPotentialAutomorphy
 GeometricFreyMazur
 ModularCurvesPartIII
 IntegralIwasawaTheoryPartII
+CohomologyOfGroups
 HopfologicalAlgebra
 McKaySkewGroup
 LocalLanglandsCorrespondenceForG2
