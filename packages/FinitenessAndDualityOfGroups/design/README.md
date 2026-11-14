@@ -340,8 +340,12 @@ Pinned at `2fd255d997f47c0b5d834ee416c7015d55444ce5`.
   (`TauCeti/AlgebraicTopology/Homotopy/Hurewicz/Absolute.lean` line 161, spaces in `Type`);
   `TauCeti.contractibleSpace_of_subsingleton_homotopyGroup` (`.../Homotopy/Whitehead.lean` line 356).
 - `TauCeti.WedgeSum.isEilenbergMacLaneSpaceOne_circle` (`.../EilenbergMacLane/OneDimensional.lean`
-  line 105), `TauCeti.isZero_groupHomology_freeGroup`, `TauCeti.isZero_groupHomology_pi_multiplicative_int`,
-  `TauCeti.groupHomology.isZero_groupHomology_of_directed`.
+  line 105), `TauCeti.isZero_groupHomology_freeGroup`, `TauCeti.isZero_groupHomology_pi_multiplicative_int`.
+- `TauCeti.groupHomology.isZero_groupHomology_of_directed`
+  (`TauCeti/RepresentationTheory/Homological/GroupHomology/DirectedUnion.lean` line 132): for
+  `{k G : Type u}`, `k` commutative, a nonempty directed family of subgroups `S_i` with supremum `G`
+  and `A : Rep k G`, if `Hₙ(S_i, A) = 0` for every `i` then `Hₙ(G, A) = 0`. Only this half of the
+  colimit statement is at the pin; it is all that 6.4 uses.
 - `TauCeti.groupCohomology.corestriction` for a subgroup of finite index, with
   `TauCeti.groupCohomology.map_subtype_id_comp_corestriction`
   (`TauCeti/RepresentationTheory/Homological/GroupCohomology/Corestriction.lean` line 165):
@@ -414,6 +418,17 @@ Pinned at `2fd255d997f47c0b5d834ee416c7015d55444ce5`.
   of the barycentric subdivision is homeomorphic to that of `K`, a face-vertex going to the
   barycentre of the face. Both sides of this homeomorphism are realizations of abstract simplicial
   complexes; nothing at the pins compares either with the realization of a simplicial set. Used in 5.4.
+- `AbstractSimplicialComplex.realizationCWComplex K`
+  (`TauCeti/AlgebraicTopology/SimplicialComplex/Realization/CWComplex/Basic.lean` line 172), for `K`
+  on a linearly ordered vertex type: the CW structure on the (Hausdorff) realization `|K|` whose
+  `n`-cells are the faces with `n + 1` vertices, enumerated increasingly; and
+  `TauCeti.cellularChainComplexRealizationIso`
+  (`…/Realization/CWComplex/OrderedChainComplex.lean` line 132), for a vertex type `ι : Type u`
+  and a ring `R : Type u`: an isomorphism of chain complexes from the cellular chains of `|K|` with
+  this CW structure to the ordered simplicial chains `TauCeti.orderedSimplicialChainComplex K R`
+  (`TauCeti/AlgebraicTopology/SimplicialComplex/ChainComplex.lean` line 186), free on the faces with
+  boundary `∂[v₀, …, vₙ₊₁] = Σ_j (−1)ʲ [v₀, …, v̂ⱼ, …, vₙ₊₁]`, sending the cellular basis vector of a
+  cell to a unit multiple, depending only on `n`, of that face. Used in the second route of 5.4(a).
 - `SSet.eilenbergZilberHomotopyEquiv` (`TauCeti/AlgebraicTopology/SimplicialSet/EilenbergZilber.lean`
   line 761): for simplicial sets `K, L`, the Alexander–Whitney map from the chains of `K ⊗ L` (the
   product) to the tensor product of chains is a chain homotopy equivalence, with inverse the shuffle
@@ -1349,7 +1364,18 @@ cell per nondegenerate simplex (AlgebraicTopology §4.7), so they form a free re
 `ℤΓ` of length at most `N` (`TauCeti.cellularResolutionOfIsAspherical`,
 `TauCeti.cellularChainRepIsoFree`; ClassifyingSpaces Stage 4 item 16), and `W` is acyclic, its
 homology `SSet.homology` being that of the normalized chains
-(`SSet.homotopyEquivNormalizedChainComplex`). Route for (b): a choice of representatives of `Γ\G`
+(`SSet.homotopyEquivNormalizedChainComplex`). A second route for (a) avoids `sd K` and the
+homeomorphisms above: choose a linear order on the vertices of `K` and let `K_≤` be the simplicial
+set whose `k`-simplices are the weakly increasing strings `v₀ ≤ ⋯ ≤ v_k` of vertices spanning a face
+of `K`, with faces by deletion and degeneracies by repetition. Its nondegenerate simplices are the
+faces of `K` with their increasing enumeration, so it has dimension at most `N`, and its normalized
+chains are the ordered simplicial chains `TauCeti.orderedSimplicialChainComplex K ℤ`, which
+`TauCeti.cellularChainComplexRealizationIso` identifies with the cellular chains of `|K|` for the CW
+structure `AbstractSimplicialComplex.realizationCWComplex K`. The realized simplex of a string is
+the affine simplex of `|K|` through its vertices; building `W` from `K_≤` and lifts of these
+simplices as above, with `B = |K|` and this CW structure in `TauCeti.cellularResolutionOfIsAspherical`,
+gives the same conclusions without the nerve comparison or the subdivision homeomorphism.
+Route for (b): a choice of representatives of `Γ\G`
 identifies `Z` with the product of `[G : Γ]` copies of `W`; its chains are homotopy equivalent to
 the tensor power of the chains of `W` (Tau Ceti `SSet.eilenbergZilberHomotopyEquiv`, iterated),
 which is quasi-isomorphic to `ℤ` by the Künneth formula for complexes of free abelian groups; a
@@ -1365,7 +1391,9 @@ gap:order-complex-nerve-realization; ClassifyingSpaces Stage 4 item 16; Tau Ceti
 `SSet.eilenbergZilberHomotopyEquiv`, `TauCeti.SetLike.Face`,
 `TauCeti.AbstractSimplicialComplex.orderComplex`,
 `TauCeti.PreAbstractSimplicialComplex.barycentricSubdivision_eq_orderComplex`,
-`AbstractSimplicialComplex.barycentricSubdivisionRealizationHomeomorph`; Mathlib
+`AbstractSimplicialComplex.barycentricSubdivisionRealizationHomeomorph`, and for the second route
+`AbstractSimplicialComplex.realizationCWComplex`, `TauCeti.orderedSimplicialChainComplex`,
+`TauCeti.cellularChainComplexRealizationIso`; Mathlib
 `CategoryTheory.nerve`, `SSet.toTop`, `PartialOrder.mem_nerve_nonDegenerate_iff_strictMono`,
 `SSet`, `SSet.chainComplex`, `SSet.homology`,
 `SSet.normalizedChainComplex`, `SSet.homotopyEquivNormalizedChainComplex`,
@@ -1394,11 +1422,15 @@ gap:order-complex-nerve-realization; ClassifyingSpaces Stage 4 item 16; Tau Ceti
   vertices and two nondegenerate edges against two vertices and one edge for `K`, Euler
   characteristic `3 − 2 = 1 = 2 − 1`; its realization is an interval subdivided at the vertex
   `{0, 1}`, which the composite homeomorphism sends to the midpoint of `|K|`, and `{0}`, `{1}` to the
-  endpoints. For `K` a single vertex both realizations are a point.
+  endpoints. For `K` a single vertex both realizations are a point. The simplicial set `K_≤` of the
+  second route has the ranks `(2, 1)` of `K` itself in its normalized chains, Euler characteristic
+  `1`, matching the cellular chains of `|K|`.
 - The empty face is excluded: for `K = ∂Δ²` (three vertices, three edges, no `2`-face), `Face K` has
   six elements and `sd K` has six nondegenerate vertices, six nondegenerate edges (a vertex below an
   edge containing it) and no nondegenerate `2`-simplex, a hexagon with `H₁ = ℤ` like `|K| = S¹`. With
   the empty face adjoined as a least element the nerve would be a cone, contractible with `H₁ = 0`.
+  For the same `K`, the ordered simplicial chains of the second route have ranks `(3, 3)`, boundary
+  `[a, b] ↦ [b] − [a]` on the three edges `a < b`, and `H₀ = H₁ = ℤ`, the homology of `S¹`.
 
 ### Examples
 
@@ -1413,7 +1445,8 @@ Layers 1–2 and 4.1; ClassifyingSpaces Stage 2 item 10 and Stage 4 item 16; Alg
 8.1, 8.3, 8.5 and 8.11a, with gap:simplicial-replacement-dimension and
 gap:order-complex-nerve-realization; Tau Ceti's cell attachment, Hurewicz and Whitehead theorems,
 cellular resolution of an aspherical CW complex, Eilenberg–Zilber theorem, product CW structures,
-wedges of circles, order complexes and the barycentric-subdivision homeomorphism; Mathlib's
+wedges of circles, order complexes and the barycentric-subdivision homeomorphism, the CW structure
+of a simplicial realization with its ordered cellular chains; Mathlib's
 simplicial sets with their normalized chains, nerves of partial orders, and lifting along coverings.
 
 ---
@@ -1470,7 +1503,9 @@ fundamental class `e`:
 - (f) `D` admits a resolution of length `n` by finitely generated projective `RG`-modules (Brown1975
   Corollary 2 of Theorem 3, lines 208–215).
 
-*Needs:* 6.1, 1.5, 2.2, 2.1; CohomologyOfGroups §4.6.
+Finite generation in (d) is type `FP_1` through 1.4(b), `R` being nontrivial; the vanishing of the
+homology of `RG ⊗_R M` in positive degrees used in (e) is CohomologyOfGroups §1.4 for the free
+`G`-set `G`. *Needs:* 6.1, 1.4, 1.5, 2.2, 2.1; CohomologyOfGroups §§1.4, 4.6.
 
 **Checks.**
 
@@ -1501,8 +1536,9 @@ and some `e ∈ Hₙ(G, C)` makes `x ↦ x ∩ e : Hⁿ(G, F) → C ⊗_{RG} F` 
 (BieriEckmann1973 Theorem 2.3, lines 317–323, with Propositions 2.1–2.2, lines 280–298). Route: (b)
 by dimension shifting along free presentations `0 → K → F → A → 0`, where `R`-flatness of `C` keeps
 `C ⊗ K → C ⊗ F → C ⊗ A` exact and `Hⱼ(G, C ⊗ F) = 0` for `j > 0` because `C ⊗_R F` is induced
-(BieriEckmann1973 Lemma 1.3, lines 178–191); (a) from (b) and 2.2(c), cohomology of a group of type
-`FP` commuting with direct sums. *Needs:* 6.1, 6.2, 2.2, 1.2; CohomologyOfGroups §4.6.
+(BieriEckmann1973 Lemma 1.3, lines 178–191; for `F = R[X]` with `X` a free `G`-set this is
+CohomologyOfGroups §1.4); (a) from (b) and 2.2(c), cohomology of a group of type
+`FP` commuting with direct sums. *Needs:* 6.1, 6.2, 2.2, 1.2; CohomologyOfGroups §§1.4, 4.6.
 
 **Checks.**
 
@@ -1527,13 +1563,19 @@ through `sgn` of lines 261–266). Prove, over `ℤ`:
 for every `A`, together with `Hᵏ(G, A) = 0` for `k > n` and `Hⱼ(G, A) = 0` for `j > n`, then `G` is a
 Poincaré duality group of dimension `n` with orientation character `sgn` (BieriEckmann1974 Theorem
 3.4, lines 327–334). Route for (b): `G` is finitely generated by the argument of BieriEckmann1973
-Theorem 4.6 (lines 625–643), which uses only that `Hₙ(G, ℤ_sgn) ≅ H⁰(G, ℤ) = ℤ` and that
-`Hₙ(S, ℤ_sgn) ≅ H⁰(G, ℤ[G/S]) = 0` for a finitely generated subgroup `S` of infinite index; then
+Theorem 4.6 (lines 625–643). `G` is the union of the directed family of its finitely generated
+subgroups and `Hₙ(G, ℤ_sgn) ≅ H⁰(G, ℤ) = ℤ` is nonzero, so `Hₙ(S, ℤ_sgn) ≠ 0` for some finitely
+generated `S` (`TauCeti.groupHomology.isZero_groupHomology_of_directed`); and
+`Hₙ(S, ℤ_sgn) ≅ Hₙ(G, ℤ_sgn ⊗ ℤ[G/S]) ≅ H⁰(G, ℤ[G/S])` (CohomologyOfGroups §1.4, then the given
+isomorphism with `k = 0`), which is `0` unless `[G : S]` is finite, a permutation module on an
+infinite transitive `G`-set having no nonzero invariants. Then
 `Hₖ(G, ∏ ℤG) ≅ ∏ Hₖ(G, ℤG) = 0` for `k ≥ 1` through the given isomorphisms and the commutation of
-cohomology with products (BieriEckmann1974 lines 314–323), so `G` is of type `FP_∞` (1.5) and, with
-`cd_ℤ G ≤ n`, of type `FP`; `Hᵏ(G, ℤG) = 0` for `k ≠ n` and `Hⁿ(G, ℤG) ≅ ℤ`, so 6.3 applies; finally
+cohomology with products (BieriEckmann1974 lines 314–323); with `G` of type `FP_1` (1.4(b)) this is
+condition 1.5(e) in every degree, so `G` is of type `FP_∞` (1.5) and, with `cd_ℤ G ≤ n` (2.1), of
+type `FP`; `Hᵏ(G, ℤG) = 0` for `k ≠ n` and `Hⁿ(G, ℤG) ≅ ℤ`, so 6.3 applies; finally
 the orientation character is `sgn`, because otherwise the true duality for `M = ℤ_{sgn·w}` gives
-`0 = H⁰(G, ℤ_{sgn·w}) ≅ Hₙ(G, ℤ_sgn) ≅ ℤ`. *Needs:* 6.1–6.3, 1.5, 2.1.
+`0 = H⁰(G, ℤ_{sgn·w}) ≅ Hₙ(G, ℤ_sgn) ≅ ℤ`. *Needs:* 6.1–6.3, 1.4, 1.5, 2.1; CohomologyOfGroups
+§1.4; Tau Ceti `TauCeti.groupHomology.isZero_groupHomology_of_directed`.
 
 **Checks.**
 
@@ -1627,8 +1669,9 @@ groups, with the Steinberg module as dualizing module, is an instance owned by A
 
 ### Dependencies
 
-Layers 1–3 and 5; CohomologyOfGroups §§1.2, 4.6 and 6.2; AlgebraicTopology §§6.3–6.4 and 8.7;
-ClassifyingSpaces Stage 4 item 17.
+Layers 1–3 and 5; CohomologyOfGroups §§1.2, 1.4, 4.6 and 6.2; AlgebraicTopology §§6.3–6.4 and
+8.7; ClassifyingSpaces Stage 4 item 17; Tau Ceti's vanishing of the homology of a directed union of
+subgroups with vanishing homology.
 
 ---
 
@@ -2116,11 +2159,16 @@ of every `Q`-orbit. By 8.8(d), `d ∣ χ_ℚ(Γ')`, and `m · χ(G) = m · χ_�
 conversely each prime power exactly dividing the denominator then divides `m`. *Needs:* 8.8, 8.4,
 5.4, 4.1, 4.4; Mathlib `groupHomologyIsoTor`, `Sylow`.
 
-- If `G` acts on an acyclic simplicial complex with finitely many orbits of simplices and finite
-  stabilizers (more generally, `C` as in 8.7 with every `G_σ` finite), then 8.7 gives
+- If `G` is virtually torsion-free and acts on an acyclic simplicial complex with finitely many
+  orbits of simplices and finite stabilizers (more generally, `C` as in 8.7 with every `G_σ`
+  finite), then a torsion-free normal subgroup `Γ'` of finite index meets every stabilizer
+  trivially and acts freely with finitely many orbits (for `C`: its restriction to `Γ'` is a
+  finite resolution by finitely generated free modules, each `Ind_{G_σ}^G(ℤ_σ)` restricting to a
+  sum over the finitely many double cosets `Γ'\G/G_σ` of copies of `ℤΓ'`), so `G` is virtually of
+  type `FL` and has finite homological type (4.4); 8.7 then gives
   `χ(G) = Σ_σ (−1)^{dim σ}/|G_σ|`, so `m_C · χ(G) ∈ ℤ` for the least common multiple `m_C` of the
-  stabilizer orders, which divides `m`; and `G` is then virtually of type `FL`, a torsion-free
-  finite-index subgroup acting freely with finitely many orbits.
+  stabilizer orders, which divides `m` (Brown1974 Proposition 4, lines 558–563, assumes virtual
+  torsion-freeness in the same way).
 - For `G` torsion-free, `m = 1` and the statement is `χ(G) ∈ ℤ` (8.4(c)).
 
 **Checks.**
@@ -2133,6 +2181,12 @@ conversely each prime power exactly dividing the denominator then divides `m`. *
   `3 · (−1/6) = −1/2`.
 - For `G` finite, `m = |G|` and `|G| · 1/|G| = 1`; for `ℤ/2 × ℤ`, whose finite subgroups have order
   at most `2`, `m = 2` and `2 · 0 = 0`.
+- For `ℤ/4 ∗_{ℤ/2} ℤ/6` on its Bass–Serre tree (vertex stabilizers of orders `4` and `6`, one edge
+  orbit with stabilizer of order `2`), the action bullet gives `1/4 + 1/6 − 1/2 = −1/12` and
+  `m_C = 12 = m`; the kernel `Γ'` of the map to `ℤ/12` of 4.1 acts freely with `12/4 + 12/6 = 5`
+  vertex orbits and `12/2 = 6` edge orbits, so `χ(Γ') = 5 − 6 = −1 = 12 · (−1/12)` and `Γ'` is free
+  of rank `2`. Virtual torsion-freeness is necessary for the conclusion of that bullet: a
+  finite-index subgroup of type `FL` has finite `cd_ℤ` and so is torsion-free (2.7).
 
 ### Examples
 

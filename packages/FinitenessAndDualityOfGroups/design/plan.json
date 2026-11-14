@@ -1192,6 +1192,9 @@
       "tauceti:TauCeti.AbstractSimplicialComplex.orderComplex",
       "tauceti:TauCeti.PreAbstractSimplicialComplex.barycentricSubdivision_eq_orderComplex",
       "tauceti:AbstractSimplicialComplex.barycentricSubdivisionRealizationHomeomorph",
+      "tauceti:AbstractSimplicialComplex.realizationCWComplex",
+      "tauceti:TauCeti.orderedSimplicialChainComplex",
+      "tauceti:TauCeti.cellularChainComplexRealizationIso",
       "mathlib:CategoryTheory.nerve",
       "mathlib:SSet.toTop",
       "mathlib:PartialOrder.mem_nerve_nonDegenerate_iff_strictMono",
@@ -1224,12 +1227,12 @@
       {
        "name": "edge_face_nerve",
        "kind": "computation",
-       "statement": "K one edge {0,1}: Face K = {0},{1} < {0,1}; sd K = nerve (Face K) has 3 nondegenerate vertices and 2 edges (Euler 1 = 2 − 1); the composite homeomorphism (gap:order-complex-nerve-realization, barycentricSubdivision_eq_orderComplex, barycentricSubdivisionRealizationHomeomorph) sends {0,1} to the midpoint of |K|. A single vertex gives a point on both sides."
+       "statement": "K one edge {0,1}: Face K = {0},{1} < {0,1}; sd K = nerve (Face K) has 3 nondegenerate vertices and 2 edges (Euler 1 = 2 − 1); the composite homeomorphism (gap:order-complex-nerve-realization, barycentricSubdivision_eq_orderComplex, barycentricSubdivisionRealizationHomeomorph) sends {0,1} to the midpoint of |K|. A single vertex gives a point on both sides. The simplicial set K_≤ of weakly increasing vertex strings (second route) has normalized chains of ranks (2, 1), Euler characteristic 1, the cellular chains of |K| by cellularChainComplexRealizationIso."
       },
       {
        "name": "empty_face_excluded",
        "kind": "non-example",
-       "statement": "K = ∂Δ²: Face K has 6 elements, sd K has 6 nondegenerate vertices, 6 edges and no 2-simplex, a hexagon with H₁ = ℤ like |K| = S¹; adjoining the empty face as a least element would give a cone, contractible with H₁ = 0."
+       "statement": "K = ∂Δ²: Face K has 6 elements, sd K has 6 nondegenerate vertices, 6 edges and no 2-simplex, a hexagon with H₁ = ℤ like |K| = S¹; adjoining the empty face as a least element would give a cone, contractible with H₁ = 0. The ordered simplicial chains of K have ranks (3, 3), boundary [a, b] ↦ [b] − [a], H₀ = H₁ = ℤ."
       }
      ]
     }
@@ -1308,9 +1311,11 @@
      },
      "prerequisites": [
       "target:6.1",
+      "target:1.4",
       "target:1.5",
       "target:2.2",
       "target:2.1",
+      "roadmap:CohomologyOfGroups §1.4",
       "roadmap:CohomologyOfGroups §4.6"
      ],
      "api": [],
@@ -1354,6 +1359,7 @@
       "target:6.2",
       "target:2.2",
       "target:1.2",
+      "roadmap:CohomologyOfGroups §1.4",
       "roadmap:CohomologyOfGroups §4.6",
       "mathlib:Module.Flat"
      ],
@@ -1393,8 +1399,11 @@
       "target:6.1",
       "target:6.2",
       "target:6.3",
+      "target:1.4",
       "target:1.5",
-      "target:2.1"
+      "target:2.1",
+      "roadmap:CohomologyOfGroups §1.4",
+      "tauceti:TauCeti.groupHomology.isZero_groupHomology_of_directed"
      ],
      "api": [
       {
@@ -1415,7 +1424,7 @@
       {
        "name": "of_abstract_iso",
        "role": "characterisation",
-       "statement": "BieriEckmann1974 Theorem 3.4 with finite generation from the argument of BieriEckmann1973 Theorem 4.6."
+       "statement": "BieriEckmann1974 Theorem 3.4, with finite generation from the argument of BieriEckmann1973 Theorem 4.6: a nonzero H_n(G, ℤ_sgn) ≅ ℤ forces H_n(S, ℤ_sgn) ≠ 0 for a finitely generated S (TauCeti.groupHomology.isZero_groupHomology_of_directed), and H_n(S, ℤ_sgn) ≅ H⁰(G, ℤ[G/S]) (CohomologyOfGroups §1.4) vanishes unless [G : S] is finite; then FP_1 (1.4(b)) and the vanishing of H_k(G, ∏ ℤG) for k ≥ 1 give FP_∞ by 1.5."
       }
      ],
      "tests": [
@@ -2171,7 +2180,7 @@
      "id": "8.9",
      "kind": "theorem",
      "name": "Group.lcm_mul_eulerChar_isInt",
-     "statement": "If G has finite homological type and m is the least common multiple of the orders of the finite subgroups of G (which divide [G : Γ'] for a torsion-free normal Γ' of finite index), then m · χ(G) ∈ ℤ; equivalently every prime power dividing the denominator of χ(G) is the order of a subgroup of G. For an action on an acyclic complex with finitely many orbits and finite stabilizers, 8.7 gives χ(G) = Σ (−1)^{dim σ}/|G_σ|.",
+     "statement": "If G has finite homological type and m is the least common multiple of the orders of the finite subgroups of G (which divide [G : Γ'] for a torsion-free normal Γ' of finite index), then m · χ(G) ∈ ℤ; equivalently every prime power dividing the denominator of χ(G) is the order of a subgroup of G. If G is virtually torsion-free and acts on an acyclic complex with finitely many orbits and finite stabilizers, then G is virtually of type FL (so of finite homological type) and 8.7 gives χ(G) = Σ (−1)^{dim σ}/|G_σ|.",
      "hypotheses": [
       "G : Type, [Group G]",
       "G of finite homological type (4.4)"
@@ -2205,6 +2214,11 @@
        "name": "finite_and_Z2_times_Z",
        "kind": "degenerate",
        "statement": "G finite: m = |G|, |G| · 1/|G| = 1; ℤ/2 × ℤ: m = 2, 2 · 0 = 0."
+      },
+      {
+       "name": "SL2_tree_action",
+       "kind": "computation",
+       "statement": "ℤ/4 ∗_{ℤ/2} ℤ/6 on its Bass–Serre tree: 1/4 + 1/6 − 1/2 = −1/12, m_C = 12 = m; the index-12 kernel acts freely with 12/4 + 12/6 = 5 vertex orbits and 12/2 = 6 edge orbits, χ = −1 = 12 · (−1/12), free of rank 2. Virtual torsion-freeness is necessary for the virtual-FL conclusion: a finite-index subgroup of type FL has finite cd_ℤ and is torsion-free (2.7)."
       }
      ]
     }
