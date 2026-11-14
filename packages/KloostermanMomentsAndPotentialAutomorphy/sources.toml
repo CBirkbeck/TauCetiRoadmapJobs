@@ -92,3 +92,21 @@ status = "certified"
 accessed = "2026-11-13"
 version_note = "arXiv v2"
 cited_for = ["§1.6 (local monodromy of Kl₂ at ∞ at every prime; Swan conductors, inertia invariants and Frobenius eigenvalues of its symmetric powers at p = 2)", "§§8.1–8.2 (degrees and trivial factors through §1.6)"]
+
+[[source]]
+id = "Haessig-Hecke"
+authors = "C. Douglas Haessig"
+title = "Kloosterman sums and Hecke polynomials in characteristics 2 and 3"
+year = 2020
+arxiv = "2012.00570v1"
+locator_scheme = "theorem"
+locator = "Theorem 1.1, p. 1; Theorem 4.1, p. 5"
+url = "https://arxiv.org/abs/2012.00570v1"
+fetched_from = "https://arxiv.org/pdf/2012.00570v1"
+fetched_at = "2026-11-14T02:34:57Z"
+sha256 = "301642bf71fb40e242e3723575676adbc99a39c4140e3abc5c818be7861ad9e6"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-14"
+version_note = "arXiv v1"
+cited_for = ["§11.2 (the coefficient bound for p = 2 and even k, outside this roadmap) and Scope and ownership"]
