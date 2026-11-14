@@ -609,7 +609,7 @@
       {
        "name": "free_cyclic",
        "kind": "computation",
-       "statement": "G = ℤ/m with the periodic resolution: ℤ/m in odd degrees, 0 in positive even degrees."
+       "statement": "G = ℤ/m, m ≥ 1, with the periodic resolution: ℤ/m in odd degrees, 0 in positive even degrees."
       },
       {
        "name": "free_needed",
@@ -1775,7 +1775,7 @@
       {
        "name": "hopf_cyclic",
        "kind": "computation",
-       "statement": "G = ℤ/n, F = ℤ, R = nℤ: H₂ = 0; the model R/[F, R] would give nℤ ≅ ℤ."
+       "statement": "For n ≥ 1, G = ℤ/n, F = ℤ, R = nℤ: H₂ = 0; the model R/[F, R] would give nℤ ≅ ℤ. At n = 0 (G = ℤ, R = 0) both give 0, so this boundary case does not separate the models."
       },
       {
        "name": "hopf_Z2",
@@ -2277,10 +2277,9 @@
    "roadmap": "AlgebraicTopology",
    "sections": [
     "§5.3",
-    "§5.4",
-    "§8.15"
+    "§5.4"
    ],
-   "what": "Quotient-chain comparison and Cartan–Leray for surjective finite regular covers with constant coefficients (a Check of 3.3), torus homology (a Check of 5.4) and C_p × C_p actions on spheres (a Check of 8.5)."
+   "what": "Quotient-chain comparison and Cartan–Leray for surjective finite regular covers with constant coefficients (a Check of 3.3) and torus homology (a Check of 5.4)."
   },
   {
    "roadmap": "StableHomotopyKTheory",
