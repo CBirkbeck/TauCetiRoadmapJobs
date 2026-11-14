@@ -1635,7 +1635,7 @@
      "id": "6.6",
      "kind": "definition",
      "name": "TauCeti.groupCohomology.transgression",
-     "statement": "x ∈ Hⁿ(N, M) is transgressive if some f ∈ C̄ⁿ(G, M) restricts to a representing cocycle and has df inflated from c ∈ C̄ⁿ⁺¹(Q, M^N); τ(x) = [c] in E_{n+1}^{n+1,0}. Transgressive classes are the image of E_{n+1}^{0,n} and τ = d_{n+1}; for n = 1, with MappingClassGroupsAndCanonicalRepresentations §1.1's section lift, every Q-invariant class is transgressive and τ = tg = d₂; if N acts trivially on M, d₂(u) = −c ∪ u with c the class of 1 → N^ab → G ⧸ [N, N] → Q → 1.",
+     "statement": "x ∈ Hⁿ(N, M) is transgressive if some f ∈ C̄ⁿ(G, M) restricts to a representing cocycle and has df inflated from c ∈ C̄ⁿ⁺¹(Q, M^N); τ(x) = [c] in E_{n+1}^{n+1,0}. Transgressive classes are the image of E_{n+1}^{0,n} and τ = d_{n+1}; for n = 1, with MappingClassGroupsAndCanonicalRepresentations §1.1's section lift, every Q-invariant class is transgressive and τ = tg = d₂; if N acts trivially on M, d₂(u) = −c_k ∪ u on Hᵖ(Q, Hom(N^ab, M)) ≅ Hᵖ(Q, Hom_k(N^ab_k, M)) (φ ↦ (b ⊗ a ↦ a·φ(b))), for every commutative k, where N^ab_k = Additive N^ab ⊗_ℤ k, c_k ∈ H²(Q, N^ab_k) is the class of the factor set of 1 → N^ab → G ⧸ [N, N] → Q → 1 followed by b ↦ b ⊗ 1 (independent of the section; c_ℤ = c), and the pairing is the evaluation N^ab_k ⊗ Hom_k(N^ab_k, M) ⟶ M.",
      "hypotheses": [
       "k G : Type u",
       "[CommRing k]",
@@ -1643,20 +1643,22 @@
       "N : Subgroup G",
       "[N.Normal]",
       "n ≥ 1",
-      "for d₂ = −c ∪: N acts trivially on M"
+      "for d₂ = −c_k ∪: N acts trivially on M"
      ],
      "locator": {
       "source": "HS53",
-      "where": "Ch. III §3 Prop. 1, pp. 128–129; Ch. III §6 Thm. 4, p. 133"
+      "where": "Ch. III §3 Prop. 1, pp. 128–129; Ch. III §6 Thm. 4, p. 133 (HS53 line 984–990, abelian-group coefficients, the case k = ℤ)"
      },
      "prerequisites": [
       "target:1.2",
+      "target:4.1",
       "target:4.3",
       "target:6.1",
       "target:6.2",
       "target:6.5",
       "roadmap:MappingClassGroupsAndCanonicalRepresentations §1.1",
-      "tauceti:TauCeti.ContCohomology.IsTransgressionLift"
+      "tauceti:TauCeti.ContCohomology.IsTransgressionLift",
+      "mathlib:Rep.ihom"
      ],
      "api": [
       {
@@ -1682,7 +1684,7 @@
       {
        "name": "d2_eq_neg_cup",
        "role": "computation",
-       "statement": "d₂ = −c ∪ when N acts trivially."
+       "statement": "When N acts trivially on M, d₂ = −c_k ∪ (−) on Hᵖ(Q, Hom(N^ab, M)) ≅ Hᵖ(Q, Hom_k(N^ab_k, M)) for every commutative k, with the scalarised class c_k ∈ H²(Q, N^ab_k) and the evaluation pairing; c_ℤ is the integral extension class c."
       }
      ],
      "tests": [
@@ -1699,7 +1701,17 @@
       {
        "name": "tg_sign_Z9",
        "kind": "non-example",
-       "statement": "ℤ/3 ⊂ ℤ/9, 𝔽₃: τ(u) = −[carry]; d₂ = +c ∪ would give the other generator."
+       "statement": "ℤ/3 ⊂ ℤ/9, 𝔽₃, u(3) = 1, lift f(i) = ⌊i/3⌋ mod 3: df(2, 1) = −1, so τ(u) = −[carry] = −c_{𝔽₃} ∪ u (N^ab_{𝔽₃} ≅ 𝔽₃ by 3 ⊗ 1 ↦ 1); d₂ = +c_{𝔽₃} ∪ would give the other generator."
+      },
+      {
+       "name": "tg_coefficients_Z27",
+       "kind": "computation",
+       "statement": "N = 3ℤ/27 ≅ ℤ/9 ⊂ ℤ/27, Q = ℤ/3, k = M = 𝔽₃: N^ab is not an 𝔽₃-module (3·3 = 9 ≠ 0), so the integral c ∈ H²(ℤ/3, ℤ/9) cannot enter the k-linear cup product; N^ab_{𝔽₃} ≅ 𝔽₃ and c_{𝔽₃} is the carry cocycle. For u(3) = 1 and f(i) = ⌊i/3⌋ mod 3, df(a, b) = −carry(a mod 3, b mod 3) for all a, b (df(2, 1) = −1 = 2), so τ(u) = −c_{𝔽₃} ∪ u ≠ 0; for k = ℚ both sides are 0."
+      },
+      {
+       "name": "tg_nonabelian_Q8",
+       "kind": "computation",
+       "statement": "Q₈ ⊃ N = ⟨i⟩ ≅ ℤ/4, Q = ℤ/2 acting on N^ab by inversion, k = M = 𝔽₂: with s(σ) = j the factor set is 2 ∈ ℤ/4 at (σ, σ), so c ≠ 0 in H²(ℤ/2, ℤ/4) = ℤ/2, but 2 ⊗ 1 = 0 in N^ab_{𝔽₂} = 𝔽₂, so c_{𝔽₂} = 0 and d₂ = 0 on E₂^{0,1} = 𝔽₂, as dim H¹(Q₈, 𝔽₂) = 2 = dim E₂^{1,0} + dim E₂^{0,1} requires."
       }
      ]
     },
@@ -1753,7 +1765,7 @@
      "id": "6.8",
      "kind": "theorem",
      "name": "TauCeti.groupHomology.hopfFormula",
-     "statement": "For F = FreeGroup S, R ◁ F, G = F ⧸ R: the map h : H₂(G, ℤ) → (R ⊓ ⁅F, F⁆) ⧸ ⁅F, R⁆ is a well-defined isomorphism, natural in presentations, where for a 2-cycle z of the inhomogeneous chains of G (d[x|y] = [y] − [xy] + [x]) and a lift z̃ to F, h[z] is the image of dz̃ ∈ ker(C₁(F) → C₁(G)) under [x] − [y] ↦ xy⁻¹ (x, y ∈ F of equal image in G). Route: the connecting map of 0 → K → C(F) → C(G) → 0, H₁(K) ≅ R ⧸ ⁅F, R⁆ with inverse r ↦ [r] − [1], and H₂(F, ℤ) = 0.",
+     "statement": "For F = FreeGroup S, R ◁ F and G = F ⧸ R (so for every group G): the map h : H₂(G, ℤ) → R ⧸ ⁅F, R⁆ whose normalisation K2SymbolsBrauer §1.1 fixes (for a 2-cycle z of the inhomogeneous chains of G, d[x|y] = [y] − [xy] + [x], and a lift z̃ to F, h[z] is the image of dz̃ ∈ ker(C₁(F) → C₁(G)) under [x] − [y] ↦ xy⁻¹, x, y ∈ F of equal image in G) is well defined, has image (R ⊓ ⁅F, F⁆) ⧸ ⁅F, R⁆, and is an isomorphism H₂(G, ℤ) ≅ (R ⊓ ⁅F, F⁆) ⧸ ⁅F, R⁆. Its torus value and naturality under maps of free presentations are §1.1's. Route: the connecting map of 0 → K → C(F) → C(G) → 0, H₁(K) ≅ R ⧸ ⁅F, R⁆ with inverse r ↦ [r] − [1], and H₂(F, ℤ) = 0.",
      "hypotheses": [
       "S : Type",
       "R : Subgroup (FreeGroup S)",
@@ -1765,24 +1777,14 @@
      },
      "prerequisites": [
       "target:3.6",
+      "roadmap:K2SymbolsBrauer §1.1",
       "mathlib:FreeGroup",
       "mathlib:groupHomology.inhomogeneousChains",
       "mathlib:CategoryTheory.ShortComplex.ShortExact.δ",
       "mathlib:groupHomology.H1AddEquivOfIsTrivial",
       "roadmap:StableHomotopyKTheory §3.29"
      ],
-     "api": [
-      {
-       "name": "hopf_natural",
-       "role": "naturality",
-       "statement": "A homomorphism F → F′ carrying R into R′ commutes with h and the induced maps on both sides."
-      },
-      {
-       "name": "hopf_perfect",
-       "role": "comparison",
-       "statement": "For perfect G, (R ⊓ ⁅F, F⁆) ⧸ ⁅F, R⁆ is the kernel of the universal central extension ⁅F, F⁆ ⧸ ⁅F, R⁆ → G and h is a kernel–H₂ identification natural under presentation comparisons, as in StableHomotopyKTheory §3.29 (used for this comparison), which does not fix the map; h fixes it."
-      }
-     ],
+     "api": [],
      "tests": [
       {
        "name": "hopf_cyclic",
@@ -1797,12 +1799,17 @@
       {
        "name": "hopf_normalisation",
        "kind": "non-example",
-       "statement": "ℤ² = ⟨a, b | ⁅a, b⁆⟩: z = [e₁|e₂] − [e₂|e₁] (pairing +1 with x ∪ y) lifts to [a|b] − [b|a] with boundary [ba] − [ab], so h[z] = ba(ab)⁻¹ = ⁅a, b⁆⁻¹ (⁅x, y⁆ = xyx⁻¹y⁻¹); h composed with inversion, equally natural and passing the other tests, gives ⁅a, b⁆. Writing y⁻¹x for xy⁻¹ gives the same value."
+       "statement": "Compared with K2SymbolsBrauer §1.1: ℤ² = ⟨a, b | ⁅a, b⁆⟩, z = [e₁|e₂] − [e₂|e₁] (pairing +1 with x ∪ y) lifts to [a|b] − [b|a] with boundary [ba] − [ab], so h[z] = ba(ab)⁻¹ = ⁅a, b⁆⁻¹ (⁅x, y⁆ = xyx⁻¹y⁻¹), §1.1's torus value; h composed with inversion, equally natural and passing the other tests, gives ⁅a, b⁆, the normalisation §1.1 excludes. Writing y⁻¹x for xy⁻¹ gives the same value."
       },
       {
        "name": "hopf_free",
        "kind": "degenerate",
        "statement": "G = F free, R = 1: both sides 0, as 3.6 requires."
+      },
+      {
+       "name": "hopf_perfect",
+       "kind": "compatibility",
+       "statement": "Compared with StableHomotopyKTheory §3.29: for perfect G, ⁅F, F⁆R = F, so ⁅F, F⁆ ⧸ ⁅F, R⁆ → G is onto with kernel (R ⊓ ⁅F, F⁆) ⧸ ⁅F, R⁆, which h identifies with H₂(G, ℤ) (§3.29 fixes no map); G = 1, F = R free on one letter: both sides 0; G = A₅: both ℤ/2 (kernel {±1} of SL₂(𝔽₅) → A₅)."
       }
      ]
     },
@@ -2299,7 +2306,14 @@
    "sections": [
     "§3.29"
    ],
-   "what": "For a perfect group with a free presentation, the identification of (R ∩ [F, F])/[F, R], the kernel of the universal central extension, with H₂(P; ℤ), natural under presentation comparisons, no particular map assumed; compared with 6.8."
+   "what": "For a perfect group with a free presentation, the identification of (R ∩ [F, F])/[F, R], the kernel of the universal central extension, with H₂(P; ℤ), natural under presentation comparisons, no particular map assumed; compared with 6.8 in a Check."
+  },
+  {
+   "roadmap": "K2SymbolsBrauer",
+   "sections": [
+    "§1.1"
+   ],
+   "what": "The bar normalisation of the Hopf map of a free presentation: the connecting map sending a 2-cycle to the boundary of a lift, with [a] − [b] read as ab⁻¹ in R ⧸ ⁅F, R⁆, its value ⁅s, t⁆⁻¹ on the ordered torus cycle and its naturality under maps of free presentations; existence, image and bijectivity for a general group are not assumed of it and are proved in 6.8."
   },
   {
    "roadmap": "SchemeKTheoryOperations",

@@ -94,8 +94,14 @@ continuous cup product `TauCeti.TopPairing.cup` and the continuous Mackey formul
 - InductionRestrictionPartII RS.0.1 owns the exact sequence
   `H₂(E, ℤ) → H₂(G, ℤ) → A → E^ab → G^ab → 0` of a central extension `1 → A → E → G → 1`.
   StableHomotopyKTheory §3.29 owns the identification of `H₂` of a perfect group with the kernel of
-  its universal central extension. 6.8 is Hopf's formula for every group, with the map fixed by a
-  chain-level formula, and is compared with §3.29 for perfect groups.
+  its universal central extension. K2SymbolsBrauer §1.1 owns the bar normalisation of the Hopf map
+  of a free presentation `G = F ⧸ R`: the connecting map sending the class of a 2-cycle to the
+  boundary of a lift, read in `R ⧸ ⁅F, R⁆` through `[x] − [y] ↦ xy⁻¹`, its value `⁅s, t⁆⁻¹` on the
+  ordered torus cycle and its naturality
+  under maps of free presentations and of universal central extensions; it leaves the existence
+  and bijectivity of the Hopf equivalence of a general group to its supplier. 6.8 is Hopf's formula
+  for every group for that map: it is well defined and an isomorphism onto
+  `(R ⊓ ⁅F, F⁆) ⧸ ⁅F, R⁆`; it is compared with §3.29 for perfect groups in a Check.
 - K3BlochGroups §5.2 owns, for finite groups, the stable-element theorem with trivial coefficients
   `ℤ_(r)`, the duality `H^{d+1}(G, ℤ) ≅ Hom(H_d(G, ℤ), ℚ/ℤ)` for `d ≥ 1`, the four-periodic free
   resolution of the generalised quaternion groups with its period class in `Ĥ⁴`, the invertibility
@@ -150,9 +156,17 @@ continuous cup product `TauCeti.TopPairing.cup` and the continuous Mackey formul
   `+1` with the class of `[e₁|e₂] − [e₂|e₁]` in `H₂(G, ℤ)`; the homogeneous convention with a
   factor `(−1)^{pq}` (Loh19 Outlook 3.2.28, p. 139) gives `−1`.
 - **Extension classes.** For `1 → A → E → Q → 1` with `A` abelian and a set-theoretic section
-  `s` with `s(1) = 1`, the class `c ∈ H²(Q, A)` is that of the factor set
-  `(x, y) ↦ s(x)s(y)s(xy)⁻¹`. Witness: for `ℤ/3 ⊂ ℤ/9` and `s(x) ∈ {0, 1, 2}`, `c` is the carry
-  cocycle, nonzero at `(1, 2)`, `(2, 1)` and `(2, 2)`.
+  `s` with `s(1) = 1`, `Q` acts on `A` by `x·a = s(x)as(x)⁻¹`, and the integral class
+  `c ∈ H²(Q, A)` is that of the factor set `(x, y) ↦ s(x)s(y)s(xy)⁻¹`. For a commutative ring `k`,
+  put `A_k = Additive A ⊗_ℤ k`, with `Q` acting on the first factor; the *scalarised class*
+  `c_k ∈ H²(Q, A_k)` is the class of the factor set followed by `a ↦ a ⊗ 1`. Replacing `s` by
+  `x ↦ b(x)s(x)` with `b(1) = 1` adds to the factor set the coboundary of the normalized
+  `A`-valued cochain `b`, and `a ↦ a ⊗ 1` is `Q`-equivariant, so `c_k` does not depend on `s`; and
+  `c_ℤ = c`. `A_k` is a representation in `Rep.{u} k Q` for every `k` in the universe of `Q`,
+  whereas `A` itself need not be a `k`-module: for `A = 3ℤ/27 ≅ ℤ/9` and `k = 𝔽₃`, `3·3 = 9 ≠ 0`
+  in `A`, while `A_k ≅ 𝔽₃` by `3 ⊗ 1 ↦ 1`. Witness: for `ℤ/3 ⊂ ℤ/9` and `s(x) ∈ {0, 1, 2}`, `c` is
+  the carry cocycle, nonzero (equal to `3`) at `(1, 2)`, `(2, 1)` and `(2, 2)` and `0` elsewhere,
+  and `c_{𝔽₃}` is the same cocycle under `3 ⊗ 1 ↦ 1`.
 - **Spectral sequences.** Indexing is classical: a cohomological sequence has
   `d_r : E_r^{p,q} → E_r^{p+r, q−r+1}`, a homological one `d^r : E^r_{p,q} → E^r_{p−r, q+r−1}`.
   The translation to Mathlib's numbering, where the first page is numbered `2`, is the one fixed by
@@ -357,7 +371,17 @@ continuous cup product `TauCeti.TopPairing.cup` and the continuous Mackey formul
 - §3.29: for a perfect group `P` with a free presentation `1 → R → F → P → 1`, the identification
   of `(R ∩ [F, F])/[F, R]`, the kernel of the universal central extension `[F, F]/[F, R] → P`, with
   `H₂(P; ℤ)`, natural under presentation comparisons; no particular map is assumed. Compared with
-  6.8, whose formula fixes the map.
+  6.8 in a Check.
+
+### From TauCetiRoadmap.K2SymbolsBrauer
+
+- §1.1 (*The bar-calibrated kernel identification*): for a free presentation `F → G` with kernel
+  `R` and the inhomogeneous differential `d[a|b] = [b] − [ab] + [a]`, the normalisation of the Hopf
+  map `H₂(G, ℤ) → R ⧸ ⁅F, R⁆` as the connecting map sending the class of a 2-cycle to the boundary
+  of a lift, with the relative 1-cycle `[a] − [b]` (`a`, `b` of equal image in `G`) read as `ab⁻¹`; its
+  value `⁅s, t⁆⁻¹` on the ordered torus cycle `[s|t] − [t|s]` of `ℤ² = ⟨s, t | ⁅s, t⁆⟩`; and its
+  naturality under maps of free presentations. Nothing is assumed of its existence, image or
+  bijectivity for a general group, which §1.1 leaves to its supplier and 6.8 proves. Used in 6.8.
 
 ### From TauCetiRoadmap.SchemeKTheoryOperations
 
@@ -1419,10 +1443,20 @@ the paragraph after it, pp. 128–129). In degree one, MappingClassGroupsAndCano
 `s(1) = 1` to a cochain satisfying `TauCeti.ContCohomology.IsTransgressionLift` (with `G` and `M`
 discrete) and defines its transgression `tg`; prove that every class of `H¹(N, M)^Q` is
 transgressive and that `τ = tg = d₂` on `E₂^{0,1}`. Prove that when `N` acts trivially on `M`,
-`d₂ : Hᵖ(Q, Hom(N^ab, M)) → H^{p+2}(Q, M)` is `u ↦ −c ∪ u`, where `c ∈ H²(Q, N^ab)` is the class
-(Conventions) of `1 → N^ab → G ⧸ [N, N] → Q → 1` and the pairing is evaluation (HS53 Ch. III §6
-Thm. 4, p. 133). *Needs:* 1.2, 4.3, 6.1, 6.2, 6.5; MappingClassGroupsAndCanonicalRepresentations
-§1.1; Tau Ceti `TauCeti.ContCohomology.IsTransgressionLift`.
+`d₂ : Hᵖ(Q, Hom(N^ab, M)) → H^{p+2}(Q, M)` is `u ↦ −c_k ∪ u`, where `N^ab_k = Additive N^ab ⊗_ℤ k`,
+`c_k ∈ H²(Q, N^ab_k)` is the scalarised class (Conventions) of `1 → N^ab → G ⧸ [N, N] → Q → 1`,
+`Hom(N^ab, M)` is identified with `Hom_k(N^ab_k, M)` (`Rep.ihom`) by `φ ↦ (b ⊗ a ↦ a·φ(b))`, and
+the pairing of 4.1 is the evaluation `N^ab_k ⊗ Hom_k(N^ab_k, M) ⟶ M` (HS53 Ch. III §6 Thm. 4,
+p. 133, HS53 line 984–990, with abelian-group coefficients, where `c` pairs with `Hom(N, M)`
+directly; this is the case `k = ℤ`). Route, as in that proof: the class `o ∈ H¹(N, N^ab_k)^Q` of
+`n ↦ n̄ ⊗ 1` is transgressive with `τ(o) = −c_k`, since the cochain `σ·s(x) ↦ σ̄ ⊗ 1` (`σ ∈ N`, `s`
+a section with `s(1) = 1`) has coboundary the inflation of minus the scalarised factor set;
+`u ∈ E₂^{p,1}` is the product of `o ∈ E₂^{0,1}` with the class `u′ ∈ E₂^{p,0}` that `u` defines in
+the spectral sequence with coefficients `Hom_k(N^ab_k, M)`, and the derivation rule and product
+identification of 6.5, with `d₂u′ = 0` in the bottom row, give `d₂u = d₂o ∪ u′ = −c_k ∪ u`.
+*Needs:* 1.2, 4.1, 4.3, 6.1, 6.2, 6.5;
+MappingClassGroupsAndCanonicalRepresentations §1.1; Tau Ceti
+`TauCeti.ContCohomology.IsTransgressionLift`; Mathlib `Rep.ihom`.
 
 - The transgressive classes form a `k`-submodule of `Hⁿ(N, M)^Q`, equal to the image of
   `E_{n+1}^{0,n}`.
@@ -1432,7 +1466,10 @@ Thm. 4, p. 133). *Needs:* 1.2, 4.3, 6.1, 6.2, 6.5; MappingClassGroupsAndCanonica
   `H²(Q, M^N)`, and equals §1.1's `tg` and `d₂`.
 - Naturality: `τ` commutes with the maps induced by morphisms of extensions with compatible
   coefficient maps.
-- Trivial action: when `N` acts trivially on `M`, `d₂ = −c ∪ (−)` on `Hᵖ(Q, Hom(N^ab, M))`.
+- Trivial action: when `N` acts trivially on `M`, `d₂ = −c_k ∪ (−)` on
+  `Hᵖ(Q, Hom(N^ab, M)) ≅ Hᵖ(Q, Hom_k(N^ab_k, M))`, for every commutative `k`, with the scalarised
+  class `c_k ∈ H²(Q, N^ab_k)` and the evaluation pairing; for `k = ℤ`, `c_ℤ` is the integral class
+  `c` of the extension.
 
 **Checks.**
 
@@ -1440,9 +1477,24 @@ Thm. 4, p. 133). *Needs:* 1.2, 4.3, 6.1, 6.2, 6.5; MappingClassGroupsAndCanonica
   `H²(ℤ/2, 𝔽₂)`.
 - The split extension `ℤ/2 ⊂ ℤ/2 × ℤ/2`: every character of the kernel extends, and `τ = 0`.
 - Sign: for `ℤ/3 ⊂ ℤ/9`, `M = 𝔽₃` and `u : 3ℤ/9 → 𝔽₃` with `u(3) = 1`, lifting `u` by
-  `f(i) = ⌊i/3⌋ mod 3` gives `df(2, 1) = 0 − 1 + 0 = −1`, so `τ(u) = −[carry] = −c ∪ u`; the model
-  `d₂ = +c ∪` gives the other generator of `H²(ℤ/3, 𝔽₃) = 𝔽₃`. This agrees with the sign Check of
-  ProfiniteCohomology §5.5.
+  `f(i) = ⌊i/3⌋ mod 3` gives `df(2, 1) = 0 − 1 + 0 = −1`, so `τ(u) = −[carry] = −c_{𝔽₃} ∪ u` (here
+  `N^ab_{𝔽₃} ≅ 𝔽₃` by `3 ⊗ 1 ↦ 1`); the model `d₂ = +c_{𝔽₃} ∪` gives the other generator of
+  `H²(ℤ/3, 𝔽₃) = 𝔽₃`. This agrees with the sign Check of ProfiniteCohomology §5.5.
+- Coefficients: for `N = 3ℤ/27 ≅ ℤ/9` in `G = ℤ/27`, `Q = ℤ/3` and `k = M = 𝔽₃`, `N^ab` is not an
+  `𝔽₃`-module (`3·3 = 9 ≠ 0`), so the integral class `c ∈ H²(ℤ/3, ℤ/9)` is not a class of an
+  `𝔽₃`-representation and cannot enter the cup product of 4.1 over `𝔽₃`; `N^ab_{𝔽₃} ≅ 𝔽₃` by
+  `3 ⊗ 1 ↦ 1`,
+  and for `s(x) ∈ {0, 1, 2}` the scalarised class `c_{𝔽₃}` is the carry cocycle of `ℤ/3`. For `u`
+  with `u(3) = 1` and the lift `f(i) = ⌊i/3⌋ mod 3`, writing `a = 3α + r` and `b = 3β + t` with
+  `0 ≤ r, t ≤ 2` gives `df(a, b) = −1` if `r + t ≥ 3` and `0` otherwise, the inflation of minus the
+  carry; so `df(2, 1) = 0 − 1 + 0 = −1 = 2` and `τ(u) = −c_{𝔽₃} ∪ u ≠ 0`. The formula keeps the
+  nonzero transgression although the exponent `9` of `N^ab` exceeds the characteristic. For
+  `k = ℚ` both sides vanish: `N^ab_ℚ = ℤ/9 ⊗ ℚ = 0` and `Hom(ℤ/9, M) = 0` for every `ℚ`-module `M`.
+- Non-abelian: `G = Q₈`, `N = ⟨i⟩ ≅ ℤ/4`, `Q = ℤ/2 = ⟨σ⟩` acting on `N^ab` by inversion,
+  `k = M = 𝔽₂`. With `s(σ) = j` the factor set is `j² = i²`, that is `2 ∈ ℤ/4` at `(σ, σ)` and `0`
+  elsewhere, so `c` is the nonzero class of `H²(ℤ/2, ℤ/4) = {0, 2}/(1 + σ)(ℤ/4) = ℤ/2`; but
+  `2 ⊗ 1 = 0` in `N^ab_{𝔽₂} = 𝔽₂`, so `c_{𝔽₂} = 0` and `d₂ = 0` on `E₂^{0,1} = Hom(ℤ/4, 𝔽₂) = 𝔽₂`,
+  as `dim H¹(Q₈, 𝔽₂) = dim Hom(Q₈^ab, 𝔽₂) = 2 = dim E₂^{1,0} + dim E₂^{0,1}` requires.
 
 ### 6.7 Exact sequences of low degree
 
@@ -1482,12 +1534,15 @@ Prove:
 
 Let `F = FreeGroup S` with `S : Type`, `R ◁ F` and `G = F ⧸ R`, and write `C(−)` for the
 inhomogeneous chains with trivial coefficients `ℤ` (Mathlib's `groupHomology.inhomogeneousChains`),
-where `d[x] = 0` and `d[x|y] = [y] − [xy] + [x]`. Define `h : H₂(G, ℤ) → (R ⊓ ⁅F, F⁆) ⧸ ⁅F, R⁆`:
-lift a 2-cycle `z` of `G` to a chain `z̃` of `F`; its boundary `dz̃` lies in the kernel `K₁` of
-`C₁(F) → C₁(G)`, which is spanned by the differences `[x] − [y]` with `x, y ∈ F` of equal image in
-`G`, and `h[z]` is the image of `dz̃` under the homomorphism `K₁ → R ⧸ ⁅F, R⁆`, `[x] − [y] ↦ xy⁻¹`.
-Prove that `h` is well defined and an isomorphism, natural in presentations (Loh19 Thm. 1.5.1,
-p. 30, and Thm. 3.2.18, p. 129, where the isomorphism is given without fixing the map).
+where `d[x] = 0` and `d[x|y] = [y] − [xy] + [x]`. The map `h : H₂(G, ℤ) → R ⧸ ⁅F, R⁆` is the one
+whose normalisation K2SymbolsBrauer §1.1 fixes: lift a 2-cycle `z` of `G` to a chain `z̃` of `F`;
+its boundary `dz̃` lies in the kernel `K₁` of `C₁(F) → C₁(G)`, which is spanned by the differences
+`[x] − [y]` with `x, y ∈ F` of equal image in `G`, and `h[z]` is the image of `dz̃` under
+`K₁ → R ⧸ ⁅F, R⁆`, `[x] − [y] ↦ xy⁻¹`. Its value on the torus cycle and its naturality under maps
+of free presentations are §1.1's. Prove Hopf's formula for every group with this map: `h` is well
+defined, its image is `(R ⊓ ⁅F, F⁆) ⧸ ⁅F, R⁆`, and `h : H₂(G, ℤ) → (R ⊓ ⁅F, F⁆) ⧸ ⁅F, R⁆` is an
+isomorphism (Loh19 Thm. 1.5.1, p. 30, and Thm. 3.2.18, p. 129, where the isomorphism is given
+without fixing the map).
 
 Route: `h` is the connecting map of the short exact sequence of complexes
 `0 → K → C(F) → C(G) → 0` followed by `K₁ → R ⧸ ⁅F, R⁆`. That homomorphism is well defined (it is
@@ -1500,17 +1555,11 @@ modulo `d(K₂)`, `[r] + [r′] − [rr′] − [1] = d([r|r′] − [1|1])` mak
 `H₁(F, ℤ) ≅ F^ab`, `[f] ↦ f`, the map `H₁(K) → H₁(F, ℤ)` is `R ⧸ ⁅F, R⁆ → F^ab`; since
 `H₂(F, ℤ) = 0` (3.6), the long exact sequence makes `h` an isomorphism onto its kernel
 `(R ⊓ ⁅F, F⁆) ⧸ ⁅F, R⁆`. Loh19 obtains the abstract isomorphism from the five-term sequence of 6.7;
-the chain-level map fixes the normalisation independently of the sign of that sequence's `d²`.
-*Needs:* 3.6; Mathlib `FreeGroup`, `groupHomology.inhomogeneousChains`,
-`CategoryTheory.ShortComplex.ShortExact.δ`, `groupHomology.H1AddEquivOfIsTrivial`;
-StableHomotopyKTheory §3.29 for the comparison.
-
-- Naturality: a homomorphism `F → F′` carrying `R` into `R′` commutes with `h` and the induced
-  maps on both sides.
-- Comparison with perfect groups: if `G` is perfect, `(R ⊓ ⁅F, F⁆) ⧸ ⁅F, R⁆` is the kernel of the
-  universal central extension `⁅F, F⁆ ⧸ ⁅F, R⁆ → G`, and `h` identifies it with `H₂(G, ℤ)`
-  naturally under presentation comparisons: an identification as in StableHomotopyKTheory §3.29,
-  which does not fix the map; `h` fixes it.
+the chain-level normalisation of K2SymbolsBrauer §1.1 does not depend on the sign of that
+sequence's `d²`. The route uses neither the torus value nor the naturality of §1.1. *Needs:* 3.6;
+K2SymbolsBrauer §1.1 (the normalisation); Mathlib `FreeGroup`,
+`groupHomology.inhomogeneousChains`, `CategoryTheory.ShortComplex.ShortExact.δ`,
+`groupHomology.H1AddEquivOfIsTrivial`; StableHomotopyKTheory §3.29 for a Check.
 
 **Checks.**
 
@@ -1519,14 +1568,21 @@ StableHomotopyKTheory §3.29 for the comparison.
   `R = 0`, and both give `0`: this boundary case does not separate the two models.
 - `G = ℤ²` with `F` free on `a, b`: `R = [F, F]`, and `[F, F]/[F, [F, F]] ≅ ℤ` is generated by
   `[a, b]`, so `H₂(ℤ², ℤ) = ℤ`.
-- Normalisation, for `ℤ² = ⟨a, b | ⁅a, b⁆⟩`: the class of `z = [e₁|e₂] − [e₂|e₁]`, which pairs to
-  `+1` with `x ∪ y` (Conventions), lifts to `[a|b] − [b|a]`, whose boundary is
-  `([b] − [ab] + [a]) − ([a] − [ba] + [b]) = [ba] − [ab]`; so `h[z] = ba(ab)⁻¹ = bab⁻¹a⁻¹ = ⁅a, b⁆⁻¹`
-  (Mathlib's `⁅x, y⁆ = xyx⁻¹y⁻¹`). The composite of `h` with inversion, which passes the other
-  Checks and is as natural, gives `⁅a, b⁆`, the other generator of `⁅F, F⁆ ⧸ ⁅F, ⁅F, F⁆⁆ ≅ ℤ`.
-  Writing `y⁻¹x` for `xy⁻¹` gives the same value, since `F` acts trivially on `R ⧸ ⁅F, R⁆`.
+- Normalisation, compared with K2SymbolsBrauer §1.1, for `ℤ² = ⟨a, b | ⁅a, b⁆⟩`: the class of
+  `z = [e₁|e₂] − [e₂|e₁]`, which pairs to `+1` with `x ∪ y` (Conventions), lifts to
+  `[a|b] − [b|a]`, whose boundary is `([b] − [ab] + [a]) − ([a] − [ba] + [b]) = [ba] − [ab]`; so
+  `h[z] = ba(ab)⁻¹ = bab⁻¹a⁻¹ = ⁅a, b⁆⁻¹` (Mathlib's `⁅x, y⁆ = xyx⁻¹y⁻¹`), the value §1.1 assigns to
+  the ordered torus cycle. The composite of `h` with inversion, which passes the other Checks and
+  is as natural, gives `⁅a, b⁆`, the other generator of `⁅F, F⁆ ⧸ ⁅F, ⁅F, F⁆⁆ ≅ ℤ`: it is the
+  normalisation §1.1 excludes. Writing `y⁻¹x` for `xy⁻¹` gives the same value, since `F` acts
+  trivially on `R ⧸ ⁅F, R⁆`.
 - A free group `G = F` with `R = 1` gives `0` on both sides, as `Hₙ(F, ℤ) = 0` for `n ≥ 2` (3.6)
   requires.
+- Perfect groups, compared with StableHomotopyKTheory §3.29: if `G` is perfect then
+  `⁅F, F⁆R = F`, so `⁅F, F⁆ ⧸ ⁅F, R⁆ → G` is onto with kernel `(R ⊓ ⁅F, F⁆) ⧸ ⁅F, R⁆`, the kernel
+  of the universal central extension, and 6.8 identifies it with `H₂(G, ℤ)` through `h`, where
+  §3.29 fixes no map. For `G = 1` and `F = R` free on one letter, `⁅F, F⁆ = 1` and both sides are
+  `0`; for `G = A₅` both are `ℤ/2`, the kernel `{±1}` of `SL₂(𝔽₅) → A₅` in §3.29's Check.
 
 ### 6.9 Comparison with the profinite theory for finite groups
 
@@ -1552,7 +1608,8 @@ MappingClassGroupsAndCanonicalRepresentations §1.1; ProfiniteCohomology §3.1, 
 ### Examples
 
 For `ℤ/2 ⊂ ℤ/4` with `𝔽₂`, `E₂ = 𝔽₂[x, y]` with `x ∈ E₂^{1,0}` and `y ∈ E₂^{0,1}` (6.5; signs are
-invisible mod `2`). By 6.6, `d₂y = x²`, the extension class, and `d₂x = 0`, so
+invisible mod `2`). By 6.6, `d₂y = x²`, the scalarised extension class `c_{𝔽₂}` (here
+`N^ab_{𝔽₂} = ℤ/2 ⊗ 𝔽₂ = 𝔽₂`, and `c_{𝔽₂} ≠ 0` because `ℤ/4` does not split), and `d₂x = 0`, so
 `d₂(xᵖy^q) = q·x^{p+2}y^{q−1}`: an isomorphism for odd `q` and zero for even `q`. The `E₃` page is
 `𝔽₂[x, y²]/(x²)`, supported in the columns `p = 0, 1` and the even rows; every later differential
 `d_r`, `r ≥ 3`, leaves these two columns, so `E₃ = E_∞`, with one copy of `𝔽₂` in each total degree
@@ -1562,8 +1619,8 @@ invisible mod `2`). By 6.6, `d₂y = x²`, the extension class, and `d₂x = 0`,
 
 Layers 1–4 and 3.6; MappingClassGroupsAndCanonicalRepresentations §1.1; Tau Ceti's filtered
 spectral sequences, inflation–restriction and transgression lift; DerivedModuleAlgebra §S.1 with
-`gap:homological-low-degree`; ProfiniteCohomology §§3.1, 5.5 for 6.9; StableHomotopyKTheory §3.29
-for the comparison of 6.8.
+`gap:homological-low-degree`; ProfiniteCohomology §§3.1, 5.5 for 6.9; K2SymbolsBrauer §1.1 for the
+normalisation of the map of 6.8; StableHomotopyKTheory §3.29 for a Check of 6.8.
 
 ---
 
