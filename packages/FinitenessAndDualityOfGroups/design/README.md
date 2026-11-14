@@ -58,8 +58,11 @@ Whitehead theorems; the vanishing of characters of projective modules at `p`-sin
 `TauCeti.nonempty_linearEquiv_of_projective_of_tensorRat`; the determination of
 finite-dimensional representations of a finite group by their characters in characteristic zero,
 `FDRep.nonempty_iso_of_character_eq`; and the Grothendieck group of an abelian category
-`TauCeti.AbelianK0` with its Euler–Poincaré relation for bounded complexes. Exact statements are
-under Exact supplier contracts.
+`TauCeti.AbelianK0` with its Euler–Poincaré relation for bounded complexes; Mathlib's nerves of
+categories `CategoryTheory.nerve` and geometric realization `SSet.toTop`, and Tau Ceti's order
+complexes `TauCeti.AbstractSimplicialComplex.orderComplex` with the barycentric-subdivision
+homeomorphism `AbstractSimplicialComplex.barycentricSubdivisionRealizationHomeomorph`. Exact
+statements are under Exact supplier contracts.
 
 **Owned elsewhere and imported by section.**
 - CohomologyOfGroups owns the operations on group (co)homology used throughout: permutation
@@ -80,13 +83,18 @@ under Exact supplier contracts.
 - SchemeKTheoryOperations §6.7 owns the identification of the homology of a directed union of
   subgroups with the colimit of their homology, over any commutative ring.
 - EtaleCohomologyFoundations §F.10.3 owns the Hattori–Stallings trace of finite projective modules
-  over an arbitrary ring with its additivity and scalar extension; Layer 7 specialises it to group
-  rings.
+  over an arbitrary ring with its additivity and scalar extension, and, for a finite group, the
+  identity-coefficient trace with the centralizer formula `Tr_Λ(γ, P) = |Z_γ| · Tr^{Z_γ}_Λ(γ, P)`;
+  Layer 7 specialises the trace to group rings, and 7.2 imports the centralizer formula, proving
+  only its comparison with the conjugacy-class coordinates of the rank of 7.1.
 - ClassifyingSpaces owns `K(G, 1)` CW complexes, their cellular chains as free resolutions (Stage 4
   item 16) and the identification of their (co)homology with local coefficients with group
   (co)homology (Stage 4 item 17). AlgebraicTopology owns cellular connectivity (§8.1), the absolute
   Hurewicz theorem in every universe (§8.3), Whitehead's theorem (§8.5), the finite CW type of
-  compact Hausdorff smooth manifolds (§8.7) and twisted Poincaré duality of manifolds (§§6.3–6.4).
+  compact Hausdorff smooth manifolds (§8.7), twisted Poincaré duality of manifolds (§§6.3–6.4), the
+  realization CW structure of simplicial sets and, as a declared gap, the homeomorphism between the
+  realized order complex and the realized nerve of a partial order (§4.7), and the replacement of
+  CW complexes by abstract simplicial complexes (§8.11a).
 - ProfiniteCohomology Layer 11 owns the cohomological dimension of profinite groups, carried by Tau
   Ceti's `TauCeti.cohomologicalDimension` (continuous cohomology with discrete torsion
   coefficients). The invariant of this roadmap is the discrete one, under another name, compared
@@ -257,6 +265,13 @@ Pinned at `1b1ccf4b088b32fa3f23f2de1127433254a81e1e`.
   lines 32 and 36: every nondegenerate simplex has dimension at most `N`), and
   `SSet.hasDimensionLE_prod` (`Mathlib/AlgebraicTopology/SimplicialSet/FiniteProd.lean` line 66)
   bounds the dimension of a product by the sum of the dimensions.
+- `CategoryTheory.nerve` (`Mathlib/AlgebraicTopology/SimplicialSet/Nerve.lean` line 37), the nerve of
+  a category, applied to a partial order as a category; `PartialOrder.mem_nerve_nonDegenerate_iff_strictMono`
+  (`Mathlib/AlgebraicTopology/SimplicialSet/NerveNondegenerate.lean` line 58): for a partial order, an
+  `n`-simplex of the nerve is nondegenerate exactly when it is a strictly increasing chain;
+  `SSet.toTop` (`Mathlib/AlgebraicTopology/SingularSet.lean` line 66), geometric realization; and
+  `AbstractSimplicialComplex` (`Mathlib/AlgebraicTopology/SimplicialComplex/Basic.lean`), whose faces
+  are nonempty finite sets closed under passing to nonempty subsets; used in 5.4.
 - `IsCoveringMap.existsUnique_continuousMap_lifts` (`Mathlib/Topology/Homotopy/Lifting.lean`
   line 489): a map from a simply connected, locally path-connected space lifts uniquely along a
   covering map once the lift of one point is fixed.
@@ -386,6 +401,19 @@ Pinned at `2fd255d997f47c0b5d834ee416c7015d55444ce5`.
   universal cover by homotopy classes of based paths, with `TauCeti.UniversalCover.isCoveringMap`
   (`.../UniversalCover/Covering.lean` line 58) for locally path-connected, semilocally simply
   connected spaces.
+- `AbstractSimplicialComplex.Realization` (`TauCeti/AlgebraicTopology/SimplicialComplex/Realization/Basic.lean`
+  line 71), the realization of an abstract simplicial complex; `TauCeti.SetLike.Face K`
+  (`TauCeti/AlgebraicTopology/SimplicialComplex/Basic.lean` line 27), the faces of `K` ordered by
+  inclusion; `TauCeti.AbstractSimplicialComplex.orderComplex P`
+  (`TauCeti/AlgebraicTopology/SimplicialComplex/OrderComplex.lean` line 57), the complex of nonempty
+  finite chains of a preorder; `TauCeti.PreAbstractSimplicialComplex.barycentricSubdivision_eq_orderComplex`
+  (`TauCeti/AlgebraicTopology/SimplicialComplex/Subdivision/Basic.lean` line 76): the barycentric
+  subdivision of `K` is the order complex of `Face K`; and
+  `AbstractSimplicialComplex.barycentricSubdivisionRealizationHomeomorph`
+  (`TauCeti/AlgebraicTopology/SimplicialComplex/Subdivision/Homeomorph.lean` line 221): the realization
+  of the barycentric subdivision is homeomorphic to that of `K`, a face-vertex going to the
+  barycentre of the face. Both sides of this homeomorphism are realizations of abstract simplicial
+  complexes; nothing at the pins compares either with the realization of a simplicial set. Used in 5.4.
 - `SSet.eilenbergZilberHomotopyEquiv` (`TauCeti/AlgebraicTopology/SimplicialSet/EilenbergZilber.lean`
   line 761): for simplicial sets `K, L`, the Alexander–Whitney map from the chains of `K ⊗ L` (the
   product) to the tensor product of chains is a chain homotopy equivalence, with inverse the shuffle
@@ -464,6 +492,14 @@ These are used with `P` the finite-dimensional `ℚ`-vector spaces and `v` the d
   split exact sequences, and scalar extension along ring homomorphisms. Right modules are left
   modules over the opposite ring; 7.1 applies it to `(RG)ᵐᵒᵖ`, whose right modules are the left
   `RG`-modules, and `(RG)ᵐᵒᵖ/[,]` is `RG/[RG, RG]` as an additive group.
+- §F.10.3: over a commutative ring, the Hattori–Stallings trace agrees with
+  `LinearMap.projectiveTrace`. For a finite group `G`, the identity coefficient
+  `ε : Λ[G]/[Λ[G], Λ[G]] → Λ/[Λ, Λ]` and `Tr^G = ε ∘ Tr_HS` on finite projective `Λ[G]`-modules.
+  The centralizer formula, proved without dividing by `|G|`: let `1 → G → Γ̃ → ℤ → 1` be an
+  extension, `Γ` the inverse image of `ℕ`, `P` a `Λ[Γ]`-module finite projective over `Λ[G]`, `γ ∈ Γ`
+  and `Z_γ = {g ∈ G | gγ = γg}`; then `Tr_Λ(γ, P) = |Z_γ| · Tr^{Z_γ}_Λ(γ, P)`. 7.2 applies it to
+  `Γ̃ = G × ℤ` with `ℤ` acting trivially and `γ = (g, 1)`, where `Z_γ = C_G(g)` and `Tr_Λ(γ, P)` is
+  the trace of `g` on `P`.
 
 ### From TauCetiRoadmap.ClassifyingSpaces
 
@@ -501,6 +537,12 @@ These are used with `P` the finite-dimensional `ℚ`-vector spaces and `v` the d
 What AlgebraicTopology must provide (gap:simplicial-replacement-dimension): in §8.11a, the abstract
 simplicial complex replacing a CW complex of dimension at most `N` can be chosen of dimension at most
 `N`, as the skeletal construction gives.
+
+What AlgebraicTopology must provide (gap:order-complex-nerve-realization): in §4.7, for every partial
+order `P`, a homeomorphism from
+`AbstractSimplicialComplex.Realization (TauCeti.AbstractSimplicialComplex.orderComplex P)` to
+`SSet.toTop.obj (CategoryTheory.nerve P)` that is affine on each simplex and sends the vertex `p` to
+the vertex `p` of the nerve.
 
 ## How to read the build
 
@@ -988,16 +1030,27 @@ chain maps, and its underlying complex of `R`-modules is `F^{⊗_R d}`, so it ca
 are `R`-linear homotopy equivalences to `R`-linear homotopy equivalences;
 (d) if `F → R` is a resolution of the trivial module by `R`-projective terms, then
 `Ind_H^{G,⊗} F → R^{⊗ d} = R` is a resolution of the trivial `RG`-module; (e) if `F_k = 0` for `k > n`
-then `(Ind_H^{G,⊗} F)_k = 0` for `k > nd`; (f) if each `F_k` is a free `RH`-module on an `H`-free basis
-set, then each `(Ind_H^{G,⊗} F)_k` is a direct sum of modules `Ind_K^G(R_χ)`, where `K` is the
-stabilizer of a line spanned by a tensor of basis elements and `χ : K → {±1}` a sign character, and
-every such `K` meets the normal core `⋂_g gHg⁻¹` trivially, so is finite. (Brown1974, §6, lines
-643–651, for Serre's multiplicative induction of a complex and its fixed points; Serre1971Prospects
-n°1.7; BrownGTM87, §VIII.3.) Route: (a)–(b) from the monomial description of the wreath-product
-action, as in Tau Ceti's sign-free `Representation.wreathTensor`, with the Koszul sign added; (d)
-because a resolution by `R`-projective terms of the projective `R`-module `R` is an `R`-linear
-homotopy equivalence `F ≃ R`, and (c); (f) because an element of the core acts on the `i`-th factor
-by `t_i⁻¹ g t_i ∈ H`, which fixes no basis element unless it is `1`. *Needs:* Tau Ceti
+then `(Ind_H^{G,⊗} F)_k = 0` for `k > nd`; (f) suppose each `F_k` is a free `RH`-module with a
+chosen basis `S_k`, so that `F_k = R[X_k]` is the permutation module on the free `H`-set
+`X_k = H × S_k` (its *regular `R`-basis*, `H` acting by left multiplication on the first factor).
+Then the tensors `x_1 ⊗ ⋯ ⊗ x_d` with `x_j ∈ X_{k_j}` and `Σ_j k_j = k` form an `R`-basis of
+`(Ind_H^{G,⊗} F)_k` indexed by the set `T_k` of these index tuples; `G` acts on `T_k` by
+`g · (x_j)_j = (h_{σ_g⁻¹(j)}(g) x_{σ_g⁻¹(j)})_j`, and on the module by this permutation of the basis
+times the Koszul sign. For an index tuple `τ ∈ T_k` let `K_τ` be its stabilizer in the `G`-set `T_k`
+and `χ_τ : K_τ → {±1}` the Koszul sign of the permutation of the graded factors of `τ` by which an
+element of `K_τ` acts (a homomorphism, read in `R` through `ℤ → R`). Prove that
+`(Ind_H^{G,⊗} F)_k ≅ ⊕_τ Ind_{K_τ}^G(R_{χ_τ})`, the sum over representatives of the `G`-orbits on
+`T_k`, and that every `K_τ` meets the normal core `N = ⋂_g gHg⁻¹` trivially, so is finite. The
+stabilizer is that of the index tuple, defined independently of `R`, and not that of the submodule
+spanned by the basis tensor: over the zero ring that submodule is `0` and its stabilizer is all of
+`G`. (Brown1974, §6, lines 643–651, for Serre's multiplicative induction of a complex and its fixed
+points; Serre1971Prospects n°1.7; BrownGTM87, §VIII.3.) Route: (a)–(b) from the monomial description
+of the wreath-product action, as in Tau Ceti's sign-free `Representation.wreathTensor`, with the
+Koszul sign added; (d) because a resolution by `R`-projective terms of the projective `R`-module `R`
+is an `R`-linear homotopy equivalence `F ≃ R`, and (c); (f) by the orbit decomposition of a signed
+permutation module (over `ℤ`, then by base change to `R`), and because an element `g` of `N` has
+`σ_g = id` and acts on the `j`-th index by `t_j⁻¹ g t_j ∈ H`, which fixes no element of the free
+`H`-set `X_{k_j}` unless it is `1`. *Needs:* Tau Ceti
 `Subgroup.tensorInducedRepresentation`, `Representation.wreathTensor`; Mathlib `PiTensorProduct`,
 `HomologicalComplex`.
 
@@ -1008,7 +1061,9 @@ by `t_i⁻¹ g t_i ∈ H`, which fixes no basis element unless it is `1`. *Needs
 **Checks.**
 
 - For `H = 1`, `G = ℤ/2 = ⟨s⟩` and `F = R·x` concentrated in degree `1`, the degree-`2` term is
-  `R·(x ⊗ x)` with `s · (x ⊗ x) = −x ⊗ x`: the stabilizer `ℤ/2` acts by the sign character. For
+  `R·(x ⊗ x)` with `s · (x ⊗ x) = −x ⊗ x`: the index tuple `(x, x)` has stabilizer `K = ℤ/2`, and
+  `χ(s) = −1` because `s` exchanges two odd factors; the term is `Ind_K^G(R_χ) = R_χ`, the sign
+  representation, for every `R` (over `𝔽₂` the image of `χ` in `R` is trivial). For
   `F = (R·x → R·y)`, `dx = y`, one has `d(x ⊗ x) = y ⊗ x − x ⊗ y`; the signed action sends `x ⊗ x`
   to `−x ⊗ x` and `y ⊗ x − x ⊗ y` to `x ⊗ y − y ⊗ x`, so it commutes with `d`, while the sign-free
   swap `s'` fixes `x ⊗ x` and also sends `y ⊗ x − x ⊗ y` to its negative, so
@@ -1027,6 +1082,13 @@ by `t_i⁻¹ g t_i ∈ H`, which fixes no basis element unless it is `1`. *Needs
   its tensor induction is not `RG`-linearly contractible: (c) is a statement about `R`-linear
   homotopy equivalences only.
 - For `H = G` and any `F`, the result is `F`.
+- The stabilizers of (f) are taken on indices, so the zero ring is covered: for `R = 0`,
+  `H = G = ℤ` (so `d = 1` and `N = ℤ`) and `F = RH` in degree `0` with the basis `{1}`, the index set
+  is `T_0 = X_0 = ℤ` with the regular action, every index has stabilizer `1`, which meets `N` in
+  `1`, and the single orbit contributes `Ind_1^ℤ(0) = 0 = F_0`. The stabilizer of the submodule
+  spanned by a basis tensor would be the stabilizer of `0`, namely `ℤ`, infinite and equal to its
+  intersection with `N`. For `R ≠ 0` the two stabilizers agree, since, writing `e_τ` for the basis
+  tensor of `τ`, `±e_{τ'}` lies in `R·e_τ` only for `τ' = τ`.
 
 ### 3.2 Serre's theorem
 
@@ -1034,10 +1096,10 @@ Prove that if `G` is torsion-free (`IsMulTorsionFree G`) and `H ≤ G` has finit
 `cd_ℤ G = cd_ℤ H` (Serre1971Prospects n°1.7, Théorème 1, as cited at Brown1974 line 354 and
 BieriEckmann1973 line 396; BrownGTM87, §VIII.3). Deduce that a torsion-free group with a finite-index subgroup of type `FP` over
 `ℤ` is of type `FP` (BieriEckmann1974 Proposition 3.3(b), lines 300–313). Route: if `cd_ℤ H = n`,
-modify a projective resolution of length `n` by the Eilenberg swindle on its top term into a free
-resolution of length `n` on `H`-free bases; by 3.1(d)–(f) its tensor induction is a resolution of `ℤ`
-over `ℤG` of length `nd` whose terms are sums of `Ind_K^G(ℤ_χ)` with `K` finite, hence `K = 1` and the
-terms are free; so `cd_ℤ G < ⊤` and 2.3(b) gives equality. *Needs:* 3.1, 2.3, 2.7, 1.6; Mathlib
+modify a projective resolution of length `n` by the Eilenberg swindle on its top term into a
+resolution of length `n` by free `ℤH`-modules with chosen bases; by 3.1(d)–(f) its tensor induction
+is a resolution of `ℤ` over `ℤG` of length `nd` whose terms are sums of `Ind_{K_τ}^G(ℤ_{χ_τ})` with
+`K_τ` finite, hence `K_τ = 1` and the terms are free; so `cd_ℤ G < ⊤` and 2.3(b) gives equality. *Needs:* 3.1, 2.3, 2.7, 1.6; Mathlib
 `IsMulTorsionFree`.
 
 **Checks.**
@@ -1264,10 +1326,20 @@ by permutation modules, through `SSet.normalizedChainComplexMap`. Prove:
 the acyclicity of the fixed points of finite subgroups; Serre1971Prospects n°1.7, as cited there.)
 Route for (a): 5.3 gives a `K(Γ, 1)` CW complex `B` of dimension at most `N`; AlgebraicTopology
 §8.11a replaces `B` up to homotopy equivalence by the realization of an abstract simplicial complex
-`K`, of dimension at most `N` (gap:simplicial-replacement-dimension), so `|K|` is a `K(Γ, 1)`; let
-`sd K` be the nerve of the poset of simplices of `K`, a simplicial set whose realization is `|K|`,
-and `W` the simplicial set whose `k`-simplices are the pairs of a `k`-simplex of `sd K` and a lift of
-its realized simplex to the universal covering `TauCeti.UniversalCover` of `|K|` (a covering map by
+`K`, of dimension at most `N` (gap:simplicial-replacement-dimension), so `|K|` is a `K(Γ, 1)`. Let
+`sd K = CategoryTheory.nerve (TauCeti.SetLike.Face K)` be the nerve of the partial order of the faces
+of `K` under inclusion (faces of Mathlib's `AbstractSimplicialComplex` are nonempty, so the empty
+face is not a vertex); its nondegenerate `k`-simplices are the strict chains `σ₀ ⊊ ⋯ ⊊ σ_k`
+(`PartialOrder.mem_nerve_nonDegenerate_iff_strictMono`), so it has dimension at most `N`. Its
+realization `SSet.toTop.obj (sd K)` is homeomorphic to `|K|` in three steps: it is homeomorphic to
+the realization of the order complex `TauCeti.AbstractSimplicialComplex.orderComplex (Face K)`
+(gap:order-complex-nerve-realization); that order complex is the barycentric subdivision of `K`
+(`TauCeti.PreAbstractSimplicialComplex.barycentricSubdivision_eq_orderComplex`); and the realization
+of the barycentric subdivision is homeomorphic to `|K|`
+(`AbstractSimplicialComplex.barycentricSubdivisionRealizationHomeomorph`). These are homeomorphisms
+between different constructions, not equalities. Let `W` be the simplicial set whose `k`-simplices
+are the pairs of a `k`-simplex of `sd K` and a lift of its realized simplex, carried into `|K|` by
+this composite homeomorphism, to the universal covering `TauCeti.UniversalCover` of `|K|` (a covering map by
 `TauCeti.UniversalCover.isCoveringMap`, the realization being locally path-connected and
 semilocally simply connected), which exists and is determined by the image of one point because the
 simplex is simply connected (`IsCoveringMap.existsUnique_continuousMap_lifts`).
@@ -1286,10 +1358,16 @@ nondegenerate simplex of a product has dimension at most the sum of the dimensio
 `γ = 1` by freeness; hence `G_f ∩ Γ = 1`, and `G_f` injects into `Γ\G`. A torsion-free `Γ'` meets
 every finite `G_f` trivially, so it permutes the nondegenerate simplices of `Z` freely and the
 normalized chains of `Z`, zero above `[G : Γ] · N`, are free over `ℤΓ'`. *Needs:* 5.3, 4.1;
-AlgebraicTopology §4.7, §8.11a; gap:simplicial-replacement-dimension; ClassifyingSpaces Stage 4
-item 16; Tau Ceti `TauCeti.UniversalCover`, `TauCeti.UniversalCover.isCoveringMap`,
+AlgebraicTopology §4.7, §8.11a; gap:simplicial-replacement-dimension;
+gap:order-complex-nerve-realization; ClassifyingSpaces Stage 4 item 16; Tau Ceti
+`TauCeti.UniversalCover`, `TauCeti.UniversalCover.isCoveringMap`,
 `TauCeti.cellularResolutionOfIsAspherical`, `TauCeti.cellularChainRepIsoFree`,
-`SSet.eilenbergZilberHomotopyEquiv`; Mathlib `SSet`, `SSet.chainComplex`, `SSet.homology`,
+`SSet.eilenbergZilberHomotopyEquiv`, `TauCeti.SetLike.Face`,
+`TauCeti.AbstractSimplicialComplex.orderComplex`,
+`TauCeti.PreAbstractSimplicialComplex.barycentricSubdivision_eq_orderComplex`,
+`AbstractSimplicialComplex.barycentricSubdivisionRealizationHomeomorph`; Mathlib
+`CategoryTheory.nerve`, `SSet.toTop`, `PartialOrder.mem_nerve_nonDegenerate_iff_strictMono`,
+`SSet`, `SSet.chainComplex`, `SSet.homology`,
 `SSet.normalizedChainComplex`, `SSet.homotopyEquivNormalizedChainComplex`,
 `SSet.normalizedChainComplexMap`, `SSet.hasDimensionLE_prod`,
 `IsCoveringMap.existsUnique_continuousMap_lifts`.
@@ -1312,6 +1390,15 @@ item 16; Tau Ceti `TauCeti.UniversalCover`, `TauCeti.UniversalCover.isCoveringMa
   freely, so the normalized chains of a finite-dimensional acyclic `Z` would resolve `ℤ` by free
   modules in finite length; the free abelian group of countable rank has `cd_ℤ = ⊤` (it contains
   `ℤⁿ` for every `n`, 2.3, 2.4), so it has no such `Z`.
+- For `K` a single edge `{0, 1}`, `Face K` is `{0}, {1} < {0, 1}`, so `sd K` has three nondegenerate
+  vertices and two nondegenerate edges against two vertices and one edge for `K`, Euler
+  characteristic `3 − 2 = 1 = 2 − 1`; its realization is an interval subdivided at the vertex
+  `{0, 1}`, which the composite homeomorphism sends to the midpoint of `|K|`, and `{0}`, `{1}` to the
+  endpoints. For `K` a single vertex both realizations are a point.
+- The empty face is excluded: for `K = ∂Δ²` (three vertices, three edges, no `2`-face), `Face K` has
+  six elements and `sd K` has six nondegenerate vertices, six nondegenerate edges (a vertex below an
+  edge containing it) and no nondegenerate `2`-simplex, a hexagon with `H₁ = ℤ` like `|K| = S¹`. With
+  the empty face adjoined as a least element the nerve would be a cone, contractible with `H₁ = 0`.
 
 ### Examples
 
@@ -1323,10 +1410,11 @@ a finite-dimensional acyclic simplicial set (5.4), the input of the denominator 
 ### Dependencies
 
 Layers 1–2 and 4.1; ClassifyingSpaces Stage 2 item 10 and Stage 4 item 16; AlgebraicTopology §§4.7,
-8.1, 8.3, 8.5 and 8.11a, with gap:simplicial-replacement-dimension; Tau Ceti's cell attachment,
-Hurewicz and Whitehead theorems, cellular resolution of an aspherical CW complex, Eilenberg–Zilber
-theorem, product CW structures and wedges of circles; Mathlib's simplicial sets with their
-normalized chains, and lifting along coverings.
+8.1, 8.3, 8.5 and 8.11a, with gap:simplicial-replacement-dimension and
+gap:order-complex-nerve-realization; Tau Ceti's cell attachment, Hurewicz and Whitehead theorems,
+cellular resolution of an aspherical CW complex, Eilenberg–Zilber theorem, product CW structures,
+wedges of circles, order complexes and the barycentric-subdivision homeomorphism; Mathlib's
+simplicial sets with their normalized chains, nerves of partial orders, and lifting along coverings.
 
 ---
 
@@ -1579,33 +1667,54 @@ projective `R`-module `R ⊗_{RG} P`, its rank when `R` is a field or `ℤ`. *Ne
 
 ### 7.2 Characters of projective modules over finite groups
 
-Prove that for `R` an arbitrary commutative ring, `G` finite and `P` a finitely generated
-projective `RG`-module (hence finitely generated projective over `R`, which need not be free), the
-trace of `g` on `P` as a finite projective `R`-module, `χ_P(g) = LinearMap.projectiveTrace R P (g · −)`,
-is `|C_G(g)| · r_P([g⁻¹])` (BrownGTM87, §IX.2). The trace is Tau Ceti's `LinearMap.projectiveTrace`,
-not Mathlib's `LinearMap.trace`, which is `0` on a module without a finite basis. Route: both sides
-are additive; for `P = RGᵐ·e` with `e` an idempotent matrix acting on the right, cyclicity
-(`LinearMap.projectiveTrace_cyclic`, applied to the projection `v ↦ ve` of `RGᵐ` onto `P` and the
-inclusion) identifies `χ_P(g)` with the trace of `v ↦ g v e` on the free `R`-module `RGᵐ`, which is
-its Mathlib trace (`LinearMap.projectiveTrace_eq_trace`), and that is `Σ_i Σ_h` (coefficient of `h`
-in `g h e_{ii}`), which is `|C_G(g)|` times the sum of the coefficients of `e_{ii}` on the class of
-`g⁻¹`. *Needs:* 7.1; Tau Ceti `LinearMap.projectiveTrace`, `LinearMap.projectiveTrace_cyclic`,
-`LinearMap.projectiveTrace_eq_trace`; Mathlib `Representation.ofModule'`.
+Let `R` be an arbitrary commutative ring, `G` a finite group, `P` a finitely generated projective
+`RG`-module (hence finitely generated projective over `R`, which need not be free), `g ∈ G` and
+`C = C_G(g)` its centralizer. Left multiplication by `g` is an `RC`-linear endomorphism of `P`, and
+`P` is finitely generated projective over `RC`; write `Tr^C(g, P) = ε(Tr_HS(g · −))` for its
+identity-coefficient trace over `RC` in the sense of EtaleCohomologyFoundations §F.10.3 (`ε` the
+coefficient of `1`). Prove that `Tr^C(g, P) = r_P([g⁻¹])`, the coefficient at the class of `g⁻¹` of
+the Hattori–Stallings rank of 7.1 over the whole of `G` (BrownGTM87, §IX.2). This comparison is what
+7.2 adds to the supplier, which states the centralizer formula but not the conjugacy-class
+coordinates of the rank. Deduce that the trace of `g` on `P` as a finite projective `R`-module,
+`χ_P(g) = LinearMap.projectiveTrace R P (g · −)`, is `|C_G(g)| · r_P([g⁻¹])`: apply §F.10.3's formula
+`Tr_R(γ, P) = |Z_γ| · Tr^{Z_γ}_R(γ, P)` to the extension `G × ℤ` of `ℤ` by `G`, with `ℤ` acting
+trivially on `P` and `γ = (g, 1)`, so that `Z_γ = C`, together with §F.10.3's agreement of the
+commutative Hattori–Stallings trace with `LinearMap.projectiveTrace`. The trace is Tau Ceti's
+`LinearMap.projectiveTrace`, not Mathlib's `LinearMap.trace`, which is `0` on a module without a
+finite basis. Route for the comparison: both sides are invariant under isomorphism, so take
+`P = RGᵐ·e` with `e` an idempotent matrix acting on the right; complement independence of the trace
+over `RC` (§F.10.3) identifies `Tr^C(g, P)` with `ε` of the trace over `RC` of `v ↦ g v e` on `RGᵐ`.
+Choose representatives `x` of the right cosets `Cx` of `C` in `G`, so that the `u_i x`, with
+`u_1, …, u_m` the standard basis of `RGᵐ`, form an `RC`-basis of `RGᵐ`; the identity coefficient of
+the diagonal entry at `u_i x` is the coefficient of `x` in `g x e_{ii}`, namely the coefficient of
+`x⁻¹ g⁻¹ x` in `e_{ii}`. Since `Cx ↦ x⁻¹ g⁻¹ x` is a bijection from the right
+cosets onto the conjugacy class of `g⁻¹`, whose centralizer is `C`, the sum over `i` and `x` is the
+coefficient of `[g⁻¹]` in `Σ_i e_{ii}`, which is `r_P([g⁻¹])`. No division by `|C|` occurs, so the
+comparison holds where `|C|` is a zero divisor and carries more than the character identity.
+*Needs:* 7.1; EtaleCohomologyFoundations §F.10.3; Tau Ceti `LinearMap.projectiveTrace`; Mathlib
+`Representation.ofModule'`.
 
 **Checks.**
 
-- For `P = RG`, `χ_P(g) = |G| · [g = 1]` and `|C_G(1)| · r_P([1]) = |G|`.
-- For the trivial module `P = R·e` of 7.1, `χ_P(g) = 1 = |C_G(g)| · 1/|C_G(g⁻¹)|`, using
-  `|C_G(g)| = |C_G(g⁻¹)|`.
-- For `G` trivial both sides are the trace of the identity of `P`. For `R = ℚ × ℚ` and
-  `P = R·(1, 0)`, a finitely generated projective `R`-module without a basis (its ranks at the two
-  factors are `1` and `0`), both sides are `(1, 0)`: the Hattori–Stallings trace of the idempotent
-  `(1, 0)` and the projective trace of the identity. Mathlib's `LinearMap.trace` of the identity is
-  `0` there, so a statement with it would be false.
+- For `P = RG`, the coset basis gives the diagonal entries `g`, `[G : C]` of them, so
+  `Tr^C(g, RG) = [G : C] · [g = 1] = [g = 1]` (`g = 1` forces `C = G`), equal to `r_{RG}([g⁻¹]) =
+  [g = 1]`; the consequence is `χ_{RG}(g) = |G| · [g = 1] = |C_G(g)| · [g = 1]`.
+- For `|G|` a unit and the trivial module `P = R·e` of 7.1, `P ≅ RC·e_C` over `RC` with
+  `e_C = |C|⁻¹ Σ_{c ∈ C} c`, and `g` acts on it as the identity, so `Tr^C(g, P) = ε(e_C) = 1/|C|`;
+  and `r_P([g⁻¹]) = |[g⁻¹]|/|G| = 1/|C_G(g⁻¹)| = 1/|C|`. The consequence is
+  `χ_P(g) = 1 = |C| · 1/|C|`.
+- For `G` trivial both sides are the Hattori–Stallings trace of the identity of `P`, and the factor
+  `|C|` is `1`. For `R = ℚ × ℚ` and `P = R·(1, 0)`, a finitely generated projective `R`-module without
+  a basis (its ranks at the two factors are `1` and `0`), both sides are `(1, 0)`, and so is the
+  projective trace of the identity. Mathlib's `LinearMap.trace` of the identity is `0` there, so a
+  statement with it would be false.
 - The inverse in `r_P([g⁻¹])` is forced: for `G = ℤ/3 = ⟨g⟩` over `ℂ`, a character `ζ` with
   `ζ(g) = ω` a primitive cube root of unity, and `P = ℂG·e` with `e = (1/3) Σ_h ζ(h)⁻¹ h`, one has
-  `g e = ω e`, so `χ_P(g) = ω`; the coefficient of `g⁻¹` in `e` is `ζ(g⁻¹)⁻¹/3 = ω/3`, and
-  `|C_G(g)| · r_P([g⁻¹]) = 3 · ω/3 = ω`, while `r_P([g])` would give `ω⁻¹ ≠ ω`.
+  `g e = ω e`, so `g` acts on `P` as `ω` and `Tr^G(g, P) = ω · ε(e) = ω/3`; the coefficient of `g⁻¹`
+  in `e` is `ζ(g⁻¹)⁻¹/3 = ω/3`, while that of `g` is `ω⁻¹/3`. The consequence is
+  `χ_P(g) = 3 · ω/3 = ω`.
+- The comparison is not the character identity divided by `|C|`: for `R = 𝔽_p`, `G = ℤ/p`,
+  `P = 𝔽_p G` and `g = 1`, `χ_P(1) = p = 0` in `𝔽_p`, while `Tr^G(1, P) = r_P([1]) = 1`.
 
 ### 7.3 Swan's theorem, rational form
 
@@ -1687,8 +1796,9 @@ representation is computed by its rank alone.
 
 ### Dependencies
 
-EtaleCohomologyFoundations §F.10.3; Tau Ceti's character vanishing, Swan's theorem for `ℤ_p[G]` and
-the determination of representations by characters.
+EtaleCohomologyFoundations §F.10.3 (the Hattori–Stallings trace and the centralizer formula); Tau
+Ceti's projective trace, character vanishing, Swan's theorem for `ℤ_p[G]` and the determination of
+representations by characters.
 
 ---
 

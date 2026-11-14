@@ -703,12 +703,13 @@
      "id": "3.1",
      "kind": "construction",
      "name": "Subgroup.tensorInducedComplex",
-     "statement": "For H ≤ G of index d with a transversal and a chain complex F of RH-modules indexed by ℕ, the complex F^{⊗_R d} with Koszul-signed differential and the G-action g·(⊗x_i) = ε ⊗_j h_{σ⁻¹ j}(g) x_{σ⁻¹ j}; it is a complex of RG-modules, independent of the transversal up to natural isomorphism, functorial, carries R-linear homotopy equivalences to R-linear homotopy equivalences, sends a resolution of R by R-projective terms to a resolution of R over RG, multiplies length by d, and, for H-free bases, has terms ⊕ Ind_K^G(R_χ) with K finite (K ∩ core H = 1) and χ a sign character.",
+     "statement": "For H ≤ G of index d with a transversal and a chain complex F of RH-modules indexed by ℕ, the complex F^{⊗_R d} with Koszul-signed differential and the G-action g·(⊗x_i) = ε ⊗_j h_{σ⁻¹ j}(g) x_{σ⁻¹ j}; it is a complex of RG-modules, independent of the transversal up to natural isomorphism, functorial, carries R-linear homotopy equivalences to R-linear homotopy equivalences, sends a resolution of R by R-projective terms to a resolution of R over RG, multiplies length by d, and, when each F_k is free over RH with a chosen basis S_k (so F_k = R[H × S_k], an R-basis indexed by a free H-set), has terms ⊕_τ Ind_{K_τ}^G(R_{χ_τ}) over the G-orbits of the set T_k of basis-index tuples, where K_τ is the stabilizer of the index tuple τ in the G-set T_k (not of the submodule spanned by its basis tensor, which over the zero ring is 0 with stabilizer G), K_τ ∩ core H = 1 so K_τ is finite, and χ_τ is the Koszul sign of the graded permutation of the factors of τ.",
      "hypotheses": [
       "H : Subgroup G",
       "[H.FiniteIndex]",
       "a transversal of G ⧸ H",
-      "F : ChainComplex (ModuleCat (MonoidAlgebra R H)) ℕ"
+      "F : ChainComplex (ModuleCat (MonoidAlgebra R H)) ℕ",
+      "for (f): each F_k free over MonoidAlgebra R H with a chosen basis S_k"
      ],
      "locator": {
       "source": "Brown1974",
@@ -746,7 +747,7 @@
       {
        "name": "koszul_sign",
        "kind": "computation",
-       "statement": "H = 1, G = ℤ/2 = ⟨s⟩, F = R·x in degree 1: s·(x ⊗ x) = −x ⊗ x. For F = (R·x → R·y), dx = y: the signed action commutes with d, while for the sign-free swap s' one has d s'(x ⊗ x) − s' d(x ⊗ x) = 2(y ⊗ x − x ⊗ y), nonzero when 2 ≠ 0 in R (R = ℤ); over 𝔽₂ the two models coincide."
+       "statement": "H = 1, G = ℤ/2 = ⟨s⟩, F = R·x in degree 1: s·(x ⊗ x) = −x ⊗ x; the index tuple (x, x) has stabilizer ℤ/2 and χ(s) = −1 (two odd factors exchanged), for every R. For F = (R·x → R·y), dx = y: the signed action commutes with d, while for the sign-free swap s' one has d s'(x ⊗ x) − s' d(x ⊗ x) = 2(y ⊗ x − x ⊗ y), nonzero when 2 ≠ 0 in R (R = ℤ); over 𝔽₂ the two models coincide."
       },
       {
        "name": "contractible",
@@ -757,6 +758,11 @@
        "name": "H_eq_G",
        "kind": "degenerate",
        "statement": "For H = G the result is F."
+      },
+      {
+       "name": "zero_ring_index_stabilizer",
+       "kind": "degenerate",
+       "statement": "R = 0, H = G = ℤ (d = 1, core ℤ), F = RH in degree 0 with basis {1}: T_0 = ℤ with the regular action, index stabilizers 1, contribution Ind_1^ℤ(0) = 0 = F_0; the stabilizer of the spanned submodule 0 would be ℤ, infinite and equal to its intersection with the core. For R ≠ 0 the two stabilizers agree."
       }
      ]
     },
@@ -1175,12 +1181,20 @@
       "roadmap:AlgebraicTopology §4.7",
       "roadmap:AlgebraicTopology §8.11a",
       "gap:simplicial-replacement-dimension",
+      "gap:order-complex-nerve-realization",
       "roadmap:ClassifyingSpaces Stage 4 item 16",
       "tauceti:TauCeti.UniversalCover",
       "tauceti:TauCeti.UniversalCover.isCoveringMap",
       "tauceti:TauCeti.cellularResolutionOfIsAspherical",
       "tauceti:TauCeti.cellularChainRepIsoFree",
       "tauceti:SSet.eilenbergZilberHomotopyEquiv",
+      "tauceti:TauCeti.SetLike.Face",
+      "tauceti:TauCeti.AbstractSimplicialComplex.orderComplex",
+      "tauceti:TauCeti.PreAbstractSimplicialComplex.barycentricSubdivision_eq_orderComplex",
+      "tauceti:AbstractSimplicialComplex.barycentricSubdivisionRealizationHomeomorph",
+      "mathlib:CategoryTheory.nerve",
+      "mathlib:SSet.toTop",
+      "mathlib:PartialOrder.mem_nerve_nonDegenerate_iff_strictMono",
       "mathlib:SSet",
       "mathlib:SSet.chainComplex",
       "mathlib:SSet.homology",
@@ -1206,6 +1220,16 @@
        "name": "infinite_rank_free_abelian",
        "kind": "non-example",
        "statement": "ℤ^(ℕ) is torsion-free with cd_ℤ = ⊤; a finite-dimensional acyclic Z with finite stabilizers would be free and give a finite free resolution, so none exists: vcd < ⊤ is used."
+      },
+      {
+       "name": "edge_face_nerve",
+       "kind": "computation",
+       "statement": "K one edge {0,1}: Face K = {0},{1} < {0,1}; sd K = nerve (Face K) has 3 nondegenerate vertices and 2 edges (Euler 1 = 2 − 1); the composite homeomorphism (gap:order-complex-nerve-realization, barycentricSubdivision_eq_orderComplex, barycentricSubdivisionRealizationHomeomorph) sends {0,1} to the midpoint of |K|. A single vertex gives a point on both sides."
+      },
+      {
+       "name": "empty_face_excluded",
+       "kind": "non-example",
+       "statement": "K = ∂Δ²: Face K has 6 elements, sd K has 6 nondegenerate vertices, 6 edges and no 2-simplex, a hexagon with H₁ = ℤ like |K| = S¹; adjoining the empty face as a least element would give a cone, contractible with H₁ = 0."
       }
      ]
     }
@@ -1578,11 +1602,12 @@
      "id": "7.2",
      "kind": "theorem",
      "name": "MonoidAlgebra.trace_eq_card_centralizer_mul_rank",
-     "statement": "For R an arbitrary commutative ring, G finite and P finitely generated projective over RG, the trace of g on P as a finite projective R-module (LinearMap.projectiveTrace, not Mathlib's LinearMap.trace, which vanishes without a finite basis) equals |C_G(g)| · r_P([g⁻¹]).",
+     "statement": "For R an arbitrary commutative ring, G finite, P finitely generated projective over RG and g ∈ G with centralizer C = C_G(g): the identity-coefficient trace over RC of the RC-linear map g·− on P (Tr^C(g, P) = ε ∘ Tr_HS of EtaleCohomologyFoundations §F.10.3) equals r_P([g⁻¹]), the coefficient at the class of g⁻¹ of the Hattori–Stallings rank over G (7.1); proved on the RC-basis of RGᵐ given by right coset representatives, without dividing by |C|. Consequently, by §F.10.3's centralizer formula Tr_R(γ, P) = |Z_γ| · Tr^{Z_γ}_R(γ, P) applied to G × ℤ with ℤ acting trivially and γ = (g, 1) (so Z_γ = C), the trace of g on P as a finite projective R-module (LinearMap.projectiveTrace, not Mathlib's LinearMap.trace, which vanishes without a finite basis) equals |C_G(g)| · r_P([g⁻¹]). The centralizer formula is imported, not reproved.",
      "hypotheses": [
       "R : Type u, [CommRing R]",
       "G : Type u, [Group G] [Finite G]",
-      "P finitely generated projective over MonoidAlgebra R G"
+      "P finitely generated projective over MonoidAlgebra R G",
+      "g : G"
      ],
      "locator": {
       "source": "BrownGTM87",
@@ -1590,9 +1615,8 @@
      },
      "prerequisites": [
       "target:7.1",
+      "roadmap:EtaleCohomologyFoundations §F.10.3",
       "tauceti:LinearMap.projectiveTrace",
-      "tauceti:LinearMap.projectiveTrace_cyclic",
-      "tauceti:LinearMap.projectiveTrace_eq_trace",
       "mathlib:Representation.ofModule'"
      ],
      "api": [],
@@ -1600,22 +1624,27 @@
       {
        "name": "regular",
        "kind": "computation",
-       "statement": "P = RG: |G|[g = 1] on both sides."
+       "statement": "P = RG: Tr^C(g, RG) = [G : C]·[g = 1] = [g = 1] = r_{RG}([g⁻¹]); consequence χ(g) = |G|[g = 1]."
       },
       {
        "name": "trivial_module",
        "kind": "computation",
-       "statement": "Trivial module: 1 = |C_G(g)| · 1/|C_G(g⁻¹)|."
+       "statement": "|G| a unit, trivial module: over RC it is RC·e_C, e_C = |C|⁻¹Σc, g acts as identity, Tr^C(g, P) = 1/|C| = 1/|C_G(g⁻¹)| = r_P([g⁻¹]); consequence χ(g) = 1."
       },
       {
        "name": "trivial_group",
        "kind": "degenerate",
-       "statement": "G trivial: both sides are the projective trace of id_P. R = ℚ × ℚ, P = R·(1, 0) (projective, not free): both sides are (1, 0), while Mathlib's LinearMap.trace of id is 0."
+       "statement": "G trivial: both sides are the Hattori–Stallings trace of id_P, factor 1. R = ℚ × ℚ, P = R·(1, 0) (projective, not free): both sides and the projective trace are (1, 0), while Mathlib's LinearMap.trace of id is 0."
       },
       {
        "name": "inverse_convention",
        "kind": "convention",
-       "statement": "G = ℤ/3 = ⟨g⟩ over ℂ, ζ(g) = ω, P = ℂG·e with e = (1/3) Σ ζ(h)⁻¹ h: χ_P(g) = ω = 3 · (ω/3) = |C_G(g)| r_P([g⁻¹]); r_P([g]) would give ω⁻¹."
+       "statement": "G = ℤ/3 = ⟨g⟩ over ℂ, ζ(g) = ω, P = ℂG·e with e = (1/3) Σ ζ(h)⁻¹ h: g acts as ω, Tr^G(g, P) = ω/3 = coefficient of g⁻¹ in e; the coefficient of g is ω⁻¹/3; consequence χ_P(g) = ω."
+      },
+      {
+       "name": "no_division",
+       "kind": "non-example",
+       "statement": "R = 𝔽_p, G = ℤ/p, P = 𝔽_pG, g = 1: χ_P(1) = p = 0 while Tr^G(1, P) = r_P([1]) = 1, so the comparison is not recoverable from the character identity by dividing by |C|."
       }
      ]
     },
@@ -2465,7 +2494,7 @@
    "sections": [
     "§F.10.3"
    ],
-   "what": "Hattori–Stallings trace of finite projective modules over any ring with additivity and scalar extension."
+   "what": "Hattori–Stallings trace of finite projective modules over any ring with additivity, complement independence, scalar extension and agreement with LinearMap.projectiveTrace over commutative rings; for a finite group the identity-coefficient trace Tr^G = ε ∘ Tr_HS and the centralizer formula Tr_Λ(γ, P) = |Z_γ| · Tr^{Z_γ}_Λ(γ, P) for extensions of ℤ by G (used in 7.2)."
   },
   {
    "roadmap": "ClassifyingSpaces",
@@ -2488,7 +2517,7 @@
     "§8.7",
     "§8.11a"
    ],
-   "what": "Realization CW structure of simplicial sets, orientation local system, twisted Poincaré duality of compact Hausdorff manifolds, cellular connectivity, absolute Hurewicz in every universe, Whitehead's theorem, finite CW type of compact Hausdorff second-countable smooth manifolds, simplicial replacement of CW complexes."
+   "what": "Realization CW structure of simplicial sets (with gap:order-complex-nerve-realization), orientation local system, twisted Poincaré duality of compact Hausdorff manifolds, cellular connectivity, absolute Hurewicz in every universe, Whitehead's theorem, finite CW type of compact Hausdorff second-countable smooth manifolds, simplicial replacement of CW complexes."
   }
  ],
  "consumers": [
@@ -2507,6 +2536,15 @@
    "supplier": "AlgebraicTopology",
    "section": "§8.11a",
    "needs": "The abstract simplicial complex replacing a CW complex of dimension at most N up to homotopy equivalence can be chosen of dimension at most N, as the skeletal construction (Hatcher Theorem 2C.5) gives.",
+   "neededBy": [
+    "5.4"
+   ]
+  },
+  {
+   "slug": "order-complex-nerve-realization",
+   "supplier": "AlgebraicTopology",
+   "section": "§4.7",
+   "needs": "For every partial order P, a homeomorphism from AbstractSimplicialComplex.Realization (TauCeti.AbstractSimplicialComplex.orderComplex P) to SSet.toTop.obj (CategoryTheory.nerve P) that is affine on each simplex and sends the vertex p to the vertex p of the nerve.",
    "neededBy": [
     "5.4"
    ]
