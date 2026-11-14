@@ -16,7 +16,7 @@
      "id": "1.1",
      "kind": "definition",
      "name": "TauCeti.groupCohomology.conj",
-     "statement": "For H ≤ G and g ∈ G, conjugation c_g : Hⁿ(H, M) → Hⁿ(gHg⁻¹, M) is the compatible-pair map of (x ↦ g⁻¹xg, m ↦ g·m); likewise c_g : Hₙ(H, M) → Hₙ(gHg⁻¹, M) from (h ↦ ghg⁻¹, m ↦ g·m), and on Ĥⁿ(H, M) for finite G. Conjugation by an element of H is the identity on the (co)homology of H.",
+     "statement": "For H ≤ G and g ∈ G, conjugation c_g : Hⁿ(H, M) → Hⁿ(gHg⁻¹, M) is the compatible-pair map of (x ↦ g⁻¹xg, m ↦ g·m); likewise c_g : Hₙ(H, M) → Hₙ(gHg⁻¹, M) from (h ↦ ghg⁻¹, m ↦ g·m), and on Ĥⁿ(H, M) for finite G as Tau Ceti's TauCeti.TateCohomology.map of the pair (e : H ≃* gHg⁻¹, x ↦ gxg⁻¹; m ↦ g·m), which is the cohomological pair in degrees ≥ 1 and the homological pair in degrees ≤ −2. Conjugation by an element of H is the identity on the (co)homology of H.",
      "hypotheses": [
       "k G : Type u",
       "[CommRing k]",
@@ -35,7 +35,11 @@
       "mathlib:groupHomology.map",
       "mathlib:tateCohomology",
       "tauceti:TauCeti.groupCohomology.corestriction",
-      "tauceti:TauCeti.groupHomology.transfer"
+      "tauceti:TauCeti.groupHomology.transfer",
+      "tauceti:TauCeti.TateCohomology.map",
+      "tauceti:TauCeti.TateCohomology.mapIso",
+      "tauceti:TauCeti.TateCohomology.map_comp_isoGroupCohomology_hom",
+      "tauceti:TauCeti.TateCohomology.map_comp_isoGroupHomology_hom"
      ],
      "api": [
       {
@@ -212,7 +216,9 @@
       "mathlib:groupCohomology.coindIso",
       "mathlib:Rep.ofMulAction",
       "tauceti:TauCeti.indTrivialIso",
-      "tauceti:TauCeti.indResProjection"
+      "tauceti:TauCeti.indResProjection",
+      "tauceti:TauCeti.groupHomology.indIso_inv",
+      "tauceti:TauCeti.groupCohomology.coindIso_hom"
      ],
      "api": [],
      "tests": [
@@ -683,7 +689,9 @@
       "target:1.4",
       "target:3.4",
       "mathlib:groupHomology",
-      "mathlib:groupCohomology"
+      "mathlib:groupCohomology",
+      "tauceti:TauCeti.groupHomology.indIso_inv_comp_map_counit",
+      "tauceti:TauCeti.groupCohomology.map_unit_comp_coindIso_hom"
      ],
      "api": [],
      "tests": [
@@ -1358,7 +1366,9 @@
       "roadmap:SchemeKTheoryOperations §6.7",
       "tauceti:groupHomology.exists_map_subtype_eq",
       "tauceti:TauCeti.groupHomology.isZero_groupHomology_of_directed",
-      "roadmap:InductionRestrictionPartII RS.6.8"
+      "roadmap:InductionRestrictionPartII RS.6.8",
+      "mathlib:Rep.FiniteCyclicGroup.groupHomologyIsoEven",
+      "mathlib:Rep.FiniteCyclicGroup.groupHomologyIsoOdd"
      ],
      "api": [
       {
@@ -1951,7 +1961,10 @@
       "target:1.4",
       "tauceti:TauCeti.groupCohomology.corestriction",
       "tauceti:TauCeti.groupHomology.transfer",
-      "mathlib:DoubleCoset.Quotient"
+      "mathlib:DoubleCoset.Quotient",
+      "tauceti:TauCeti.groupCohomology.coindIso_hom_comp_corestriction",
+      "tauceti:TauCeti.groupHomology.transfer_comp_indIso_inv",
+      "tauceti:TauCeti.groupHomology.indIso_inv_comp_map_counit"
      ],
      "api": [],
      "tests": [
