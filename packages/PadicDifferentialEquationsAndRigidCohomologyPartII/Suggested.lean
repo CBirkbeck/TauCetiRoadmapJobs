@@ -34,7 +34,8 @@ few lines. The headline theorems and what each lacks:
 * The local theorems (README MS.0.7, MS.1.1, MS.1.8, MS.3.7: bounded splitting, the PBQ
   filtration, logarithmic growth versus Frobenius slopes, local reconstruction) lack the Amice
   and bounded Robba fields with Frobenius lift and derivation, generic solution spaces on the
-  generic disc, and Frobenius slopes of `φ`-modules over them.
+  generic disc, solution spaces in the logarithmic Robba ring with their log-growth filtration, and
+  Frobenius slopes of `φ`-modules over them.
 * The finite-field theorems (README MS.6.13, MS.6.14; Tsuzuki, Theorem 7.20) lack overconvergent
   `Q̄_p`-F-isocrystals on smooth varieties over finite fields, their Frobenius fibres and
   `ι`-weights, and Lefschetz curves.
