@@ -3,7 +3,7 @@ module
 import Mathlib
 import TauCeti.Algebra.Homology.SpectralObject.Abutment
 import TauCeti.Algebra.Homology.SpectralObject.SpectralSequenceMap
-import TauCeti.Algebra.Homology.SpectralSequence.Filtered.Naturality
+import TauCeti.Algebra.Homology.SpectralSequence.Filtered.SpectralObject
 import TauCeti.CategoryTheory.Preadditive.TowerDifference
 import TauCeti.CategoryTheory.Limits.Replete
 
@@ -296,11 +296,12 @@ theorem isIso_homologyMap_of_isIso_page_of_exhaustive_of_boundedBelow
 
 /-! ## Layer 7: towers and conditional convergence -/
 
-/-- **Repleteness through `lim¹`** (README 7.2; Bhatt–Scholze, Proposition 3.1.10, for abelian
-sheaves on a replete topos). An abelian category with countable products is replete in the sense
-of Tau Ceti's `TauCeti.IsReplete` if and only if countable products are exact and every tower with
-epimorphic transitions has `lim¹ = 0`, that is, its product–difference map `1 - s` is an
-epimorphism. -/
+/-- **Repleteness through `lim¹`** (README 7.2; the implication from repleteness is, for a
+replete topos, Bhatt–Scholze, Proposition 3.1.9 for the exactness of countable products and
+Proposition 3.1.10 for `lim¹ = 0` of abelian sheaves; the converse is README 7.2's). An abelian
+category with countable products is replete in the sense of Tau Ceti's `TauCeti.IsReplete` if and
+only if countable products are exact and every tower with epimorphic transitions has `lim¹ = 0`,
+that is, its product–difference map `1 - s` is an epimorphism. -/
 theorem isReplete_iff_countableAB4Star_and_epi_towerDifference {C : Type u} [Category.{v} C]
     [Abelian C] [HasCountableProducts C] :
     TauCeti.IsReplete C ↔ CountableAB4Star C ∧
@@ -320,7 +321,8 @@ def IsMittagLeffler {C : Type u} [Category.{v} C] [Abelian C] (F : ℕᵒᵖ ⥤
 Stacks, Tag 02N1, Lemma 31.3, for abelian groups). In a replete abelian category with countable
 products, the product–difference map `1 - s` of a Mittag–Leffler tower is an epimorphism. In an
 abelian category with exact countable products that is not replete this can fail (Neeman's
-example, recorded at Stacks, Tag 02N0). -/
+example, recorded in Stacks, Homological Algebra, Section 31, in the paragraph after
+Definition 31.2). -/
 theorem epi_towerDifference_of_isMittagLeffler {C : Type u} [Category.{v} C] [Abelian C]
     [HasCountableProducts C] [TauCeti.IsReplete C] {F : ℕᵒᵖ ⥤ C} (hF : IsMittagLeffler F) :
     Epi F.towerDifference := by

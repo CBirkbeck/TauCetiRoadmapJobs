@@ -74,9 +74,13 @@ It leaves to named owners:
   convergence theorem 5.5.10 for module complexes. This roadmap's abelian-category theorems
   specialise to these; the specialisation is a Check, and the module statements are not restated.
   **DGFloer, Layer 1 item 2** owns the Serre spectral sequences.
-- **AlgebraicTopology, Stage 6, item 0**: countable towers of modules, lim, lim¹, the six-term
-  sequence, Mittag–Leffler vanishing and the Milnor sequences. Layer 7 here owns lim and lim¹
-  only in an abelian category, and identifies them with these on modules as a Check.
+- **AlgebraicTopology, §6.0**: the restriction towers of singular and cellular cochains of a CW
+  pair, and the maps of homotopy limits induced by maps of towers of module complexes whose
+  squares commute up to specified homotopies. The module tower algebra it builds on (lim, lim¹,
+  the six-term sequence, Mittag–Leffler vanishing, the Milnor sequences) is Tau Ceti's
+  `TauCeti.ModuleTower` and `TauCeti.ComplexTower`. Layer 7 here owns lim and lim¹ only in an
+  abelian category, states no homotopy limit, and identifies its lim and lim¹ on modules with
+  Tau Ceti's (7.1).
 - **DerivedModuleAlgebra, §S.1**: the spectral sequence of a first-quadrant double complex in an
   abelian category, with the column filtration of its abutment, edge morphisms and five-term
   sequence; an instance (a Check) of Layers 3 and 4.
@@ -359,8 +363,10 @@ part of this roadmap.
 
 ### From TauCetiRoadmap.AlgebraicTopology
 
-- Stage 6, item 0: module towers, lim, lim¹, the six-term sequence, Mittag–Leffler vanishing
-  and the Milnor sequences. Compared with Layer 7 on `ModuleCat R` in Checks.
+- §6.0: restriction towers and the homotopy-square maps of towers of module complexes, built on
+  Tau Ceti's `TauCeti.ModuleTower` and `TauCeti.ComplexTower`. Not consumed by any proof here:
+  the lim and lim¹ on `ModuleCat R` that 7.1 identifies with Layer 7's are Tau Ceti's (From Tau
+  Ceti), the ones §6.0 builds on.
 
 ### From TauCetiRoadmap.DerivedModuleAlgebra
 
@@ -457,7 +463,13 @@ Definition 20.1, tag 011N; helle-rognes2024 line 65–70, Lemma 2.2). *Needs:* 1
   `E_2^{2,0} = ℤ`, `d_2 = ×2` between them and every other object zero; its pages from `3` on are
   `E^{0,1} = 0` and `E^{2,0} = ℤ/2`. Then `Z_3(0,1) = 0 = B_3(0,1)`, while `Z_3(2,0) = ℤ` and
   `B_3(2,0) = 2ℤ`. A model with `B_{r+1} := B_r` would give `E_3^{2,0} = ℤ`.
-- In the same example `E_3^{0,1} = 0` and `Z_3(0,1) = B_3(0,1)`, as the third API item requires.
+- *Naturality with a nonzero boundary.* Let `E'` have the same objects as the `×2` example and
+  `d_2 = ×4`, and map `E → E'` on page `2` by the identity at `(0, 1)` and `×2` at `(2, 0)`; the
+  square commutes since `4 · 1 = 2 · 2`, and from page `3` on the map is the induced one,
+  `ℤ/2 → ℤ/4`, `[1] ↦ [2]`, at `(2, 0)` and `0 → 0` at `(0, 1)`. On the towers at `(2, 0)`,
+  `×2` sends `B_3 = 2ℤ` onto `4ℤ = B′_3` and `Z_3 = ℤ` into `Z′_3 = ℤ`, and the induced map
+  `Z_3 / B_3 → Z′_3 / B′_3` is `[1] ↦ [2]`, injective and nonzero, which is the page-`3`
+  component. A model of the induced map that is zero on every quotient misses `[2] ≠ 0`.
 
 ### 1.3 Stabilisation, regularity and degeneration
 
@@ -662,8 +674,15 @@ because kernels, images and cohomology lie in `P`. Stacks' even–odd argument (
   `E_3^{0,1} = ℤ/2` and `E_3^{2,0} = 0`, and both pages have Euler characteristic
   `−2 + 1 = −1 = −1 + 0`.
 - The `×2` example over `ℚ` (`E_2 ⊗ ℚ`) has `−1 + 1 = 0` on page `2` and `0` on page `3`.
-- Without `P`: `finrank` is not additive on `0 → k → k^(ℕ) → k^(ℕ) → 0` (it gives `0 ≠ 1 + 0`), so
-  the Serre-class hypothesis is necessary for the identity to be meaningful.
+- *Additivity on `P` cannot be dropped.* Over a field `k`, let `P` hold of every object of
+  `ModuleCat k` (it satisfies the four closure conditions) and `v` the integer-valued
+  `Module.finrank`, which is `0` on infinite-dimensional spaces. Take
+  `E_2^{0,1} = E_2^{2,0} = k^(ℕ)`, all else zero, and `d_2` the left shift, which is onto with
+  kernel `k·e₀`. Page `2` has sum `−0 + 0 = 0`, while page `3` has `E_3^{0,1} = k` and
+  `E_3^{2,0} = 0`, with sum `−1 + 0 = −1`. The hypothesis that fails is the
+  additivity of `v`: on `0 → k → k^(ℕ) → k^(ℕ) → 0` (first coordinate, then left shift) `finrank`
+  gives `0 ≠ 1 + 0`. With `P` the finite-dimensional spaces `finrank` is additive, and this page
+  fails instead the hypothesis that its positions in `s` satisfy `P`.
 
 ### Examples
 
@@ -1594,7 +1613,7 @@ used). Prove:
 `CountableAB4Star`.
 
 - On `ModuleCat R`, lim and lim¹ are Tau Ceti's `TauCeti.ModuleTower.lim` and
-  `TauCeti.ModuleTower.limOne`, which AlgebraicTopology Stage 6 item 0 uses.
+  `TauCeti.ModuleTower.limOne`, on which AlgebraicTopology §6.0 builds.
 
 **Checks.**
 
@@ -1619,8 +1638,10 @@ instance `TauCeti.IsReplete.countableAB4Star`. Prove
 (`isReplete_iff_countableAB4Star_and_epi_towerDifference`): `C` is replete if and only if it
 satisfies `CountableAB4Star` and every tower with epimorphic transitions has `lim¹ = 0` in the
 sense of 7.1, that is, its product–difference map `CategoryTheory.Functor.towerDifference` is an
-epimorphism (bhatt-scholze2015 line 755–770, Proposition 3.1.10, for abelian sheaves on a replete
-topos).
+epimorphism. The implication from repleteness is, for a replete topos, bhatt-scholze2015 line
+750–753, Proposition 3.1.9 (countable products are exact), and line 755–770, Proposition 3.1.10
+(for abelian sheaves with epimorphic transitions `lim ≃ R lim`, so `lim¹ = 0`); the source states
+no converse, which is proved here by the route below.
 The route from repleteness to `lim¹ = 0`: for a tower `f_n : F_{n+1} → F_n` of epimorphisms put
 `T = ∏_k F_k` and `P_n = F_n ⊕ T`, with transitions `(a, t) ↦ (f_n a + π_n t, t)`; each is
 `f_n ⊕ 1` followed by a shear automorphism, so an epimorphism. The cone `∏_n F_n → P_n`,
@@ -1910,7 +1931,7 @@ Grothendieck axioms and `EnoughProjectives`.
   the sequence (3.1), Theorems 3.9, 3.10, Example 8.1. Line locators refer to the authors' draft
   dated 2 February 2018, whose numbering of these items agrees with the published version.
 - bhatt-scholze2015: B. Bhatt, P. Scholze, *The pro-étale topology for schemes*, Astérisque 369
-  (2015); arXiv 1309.1198v2, Definition 3.1.1 and Proposition 3.1.10.
+  (2015); arXiv 1309.1198v2, Definition 3.1.1 and Propositions 3.1.9 and 3.1.10.
 - browning-sawin2020: T. Browning, W. Sawin, *A geometric version of the circle method*, Ann. of
   Math. 191 (2020); arXiv 1711.10451v3, Theorems 1.1 and 2.7.
 - weibel1994: C. A. Weibel, *An Introduction to Homological Algebra*, §§3.5, 5.2, 5.5, 5.9
