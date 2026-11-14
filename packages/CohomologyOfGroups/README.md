@@ -53,11 +53,18 @@ with abelian kernel, `TauCeti.FactorSet.cohomologyClass`, with its independence 
 - SpectralSequencesAndConvergencePartII, Layer 2, owns the hypercohomology spectral sequences of a
   left exact functor on a bounded-below complex, built from Cartan–Eilenberg resolutions, and the
   hyperhomology spectral sequences of a right exact functor obtained from them; it leaves the
-  first-quadrant edge morphisms and low-degree sequences to DerivedModuleAlgebra §S.1 and does not
-  treat the spectral sequences of group extensions. The sequences of 2.3 are the instance for the
-  invariant and coinvariant functors of `Rep k G`, read on the explicit bicomplex of inhomogeneous
-  (co)chains, as the integral sequence of SchemeKTheoryOperations §6.7 is; the Hochschild–Serre
-  spectral sequences of Layer 6 are this roadmap's.
+  edge morphisms and low-degree sequences of first-quadrant double complexes to
+  DerivedModuleAlgebra §S.1. The sequences of 2.3 are the instance for the invariant and
+  coinvariant functors of `Rep k G`, read on the explicit bicomplex of inhomogeneous (co)chains, as
+  the integral sequence of SchemeKTheoryOperations §6.7 is. Its Layer 3 owns the composite-functor
+  spectral sequences with their low-degree sequences (§§3.2–3.4), of which the Hochschild–Serre
+  spectral sequences are instances: invariants under `N` followed by invariants under `G ⧸ N`
+  (§3.2), and coinvariants in the same order (§3.4). 6.2 and 6.3 construct them on the filtration
+  of the normalized cochains and on the explicit bicomplex, where the edge maps, products and
+  transgression are computed, and do not compare them with §3.2's and §3.4's. Its §5.2 owns the
+  pairings of the spectral sequences of multiplicatively filtered complexes, with the derivation
+  rule for every `d_r` and the product on `E_∞`; 6.5 applies it to the cup product and the
+  filtration of 6.1, and identifies the pairing on `E₂`.
 - ProfiniteCohomology owns continuous cohomology of profinite groups: its explicit low-degree model
   and comparisons (§§3.1–3.2), the profinite five-term sequence with transgression (§5.5), the
   continuous Mackey formula (§§6.4, 10.5), the finite-quotient colimit (§10.1) and the continuous
@@ -74,13 +81,15 @@ with abelian kernel, `TauCeti.FactorSet.cohomologyClass`, with its independence 
   structure on their cellular chains are not constructed here, and the topological forms of 8.3
   (a free cellular action on a finite-dimensional complex with the homology of a sphere) are
   instances that a roadmap owning `G`-CW complexes obtains by applying 8.3 to the cellular chains.
-- The algebraic Künneth and universal-coefficient spectral sequences of complexes over an
-  arbitrary ring are statements about complexes of `k`-modules, owned by a spectral-sequence
-  roadmap; this roadmap supplies the chain-level identification of 5.1 to which they apply. The
-  two-term Künneth sequence of two complexes, one of them flat in every degree, over a ring of
-  global dimension at most one is what DerivedModuleAlgebra §0.2 must provide (Exact supplier
-  contracts); this roadmap proves the group-homology sequences of 5.1 and 5.2 from it and from Tau
-  Ceti's sequence for complexes with projective cycles and boundaries.
+- The algebraic Künneth and universal-coefficient spectral sequences of complexes of modules over
+  a commutative ring are owned by SpectralSequencesAndConvergencePartII §§4.2–4.3; this roadmap
+  supplies the chain-level identification of 5.1 to which they apply. Its §4.3 gives, when
+  `Tor_i^k = 0` for `i ≥ 2`, the two-term Künneth sequence of two bounded-above complexes, one of
+  them flat in every degree, with the cross product as first map; its naturality is what that
+  section must provide (Exact supplier contracts). This roadmap proves the group-homology sequence
+  of 5.1 from it, its splitting from Tau Ceti's splitting for complexes of projective modules, and
+  the sequences of 5.2 from Tau Ceti's sequences for complexes with projective cycles and
+  boundaries.
 - Finiteness conditions, cohomological and virtual cohomological dimension, duality groups, Euler
   characteristics and Farrell cohomology are not planned here; no target uses them, and the
   finiteness hypothesis of 5.3 is stated directly on the homology of a factor.
@@ -261,6 +270,8 @@ with abelian kernel, `TauCeti.FactorSet.cohomologyClass`, with its independence 
 - `HomologicalComplex₂`, `HomologicalComplex₂.total`, `DerivedCategory`, `QuaternionGroup`,
   `Sylow`, `IsPGroup`, `DoubleCoset.Quotient`, `DoubleCoset.mk`, `Monoid.PushoutI`, `HNNExtension`,
   `FreeGroup`, `Monoid.Coprod`, `IsCyclic`, `IsAddCyclic`, `IsMulCommutative`, `GroupExtension`,
+  `ComplexShape.embeddingDownNat` (chain complexes indexed by `ℕ` as cochain complexes in degrees
+  `≤ 0`),
   `Abelianization`, `AddCircle`, `exteriorPower` (written `⋀[R]^n M`), `commutator` (`⁅⊤, ⊤⁆`),
   `MulAut.conj`,
   `Subgroup.comap`, `Subgroup.subgroupOf`, `Set.BijOn`, `finsum`, `List.TFAE`.
@@ -370,7 +381,21 @@ with abelian kernel, `TauCeti.FactorSet.cohomologyClass`, with its independence 
   (`Algebra/Homology/Monoidal/Homology/Kunneth/`): the Künneth short exact sequence for chain
   complexes of modules indexed by `ℕ` whose second factor has projective cycles and projective
   quotients by its cycles, and its splitting (not natural) when the cycles of the first factor
-  split off its terms.
+  split off its terms. `HomologicalComplex.homologyCross` (`…/Monoidal/Homology/Cross.lean`): the
+  cross product `[z] ⊗ [w] ↦ [z ⊗ w]`, natural in both complexes. Used in 5.1.
+- `HomologicalComplex.projective_cycles_of_hasProjectiveDimensionLE_one`,
+  `HomologicalComplex.projective_cokernel_iCycles_of_hasProjectiveDimensionLE_one`
+  (`Algebra/Homology/HomologicalComplex/Projective/Dimension.lean`) and
+  `HomologicalComplex.isSplitMono_iCycles_of_projective` (`Algebra/Homology/Split.lean`): when every
+  object has projective dimension at most one, a projective term has projective cycles, its
+  quotient by them is projective when the next term is, and then the cycles split off.
+  `CochainComplex.exists_quasiIso_projective` (`Algebra/Homology/CochainComplex/ProjectiveResolution.lean`):
+  with enough projectives, a cochain complex strictly bounded above by `n` receives a
+  quasi-isomorphism from a complex of projectives strictly bounded above by `n`.
+  `CochainComplex.isKFlat_of_boundedAbove_flat` and `CochainComplex.quasiIso_id_tensorHom`
+  (`Algebra/Homology/Monoidal/KFlat/Basic.lean`): a strictly bounded-above complex with flat terms
+  is K-flat, and tensoring a quasi-isomorphism with a K-flat complex gives a quasi-isomorphism.
+  Used for the splitting in 5.1.
 - `TauCeti.ChainComplex.extToHomology`, `TauCeti.ChainComplex.exact_extToHomology_kronecker`,
   `TauCeti.ChainComplex.extToHomology_injective` (`Algebra/Homology/UniversalCoefficient/`): the
   cohomological universal coefficient sequence.
@@ -433,19 +458,43 @@ with abelian kernel, `TauCeti.FactorSet.cohomologyClass`, with its independence 
   `H₂(Tot C) → E²_{2,0} → E²_{0,1} → H₁(Tot C) → E²_{1,0} → 0`. §S.1 states the edge
   morphisms and the five-term sequence in cohomological indexing; its homological form stops at
   the second page and convergence. Targets 6.3, 6.4 and 6.7 use them.
-- What DerivedModuleAlgebra must provide (gap:flat-kunneth): in §0.2, for a commutative ring `R`
-  of global dimension at most one and chain complexes `K`, `L` of `R`-modules indexed by `ℕ`, with
-  `L` flat in every degree, the sequence
-  `0 → ⊕_{p+q=n} H_p(K) ⊗_R H_q(L) → Hₙ(K ⊗_R L) → ⊕_{p+q=n−1} Tor₁^R(H_p(K), H_q(L)) → 0`, whose
-  first map is the cross product `[z] ⊗ [w] ↦ [z ⊗ w]`, is exact for every `n`, natural in `K` and
-  `L`, and split (not naturally). One route: choose quasi-isomorphisms `K′ → K` and `L′ → L` from
-  complexes of projective modules indexed by `ℕ`; a complex of flat modules indexed by `ℕ` is
-  bounded above in cohomological degrees, hence K-flat (§0.2), so `K′ ⊗ L′ → K′ ⊗ L → K ⊗ L` are
-  quasi-isomorphisms; over such `R` a complex of projective modules has projective cycles and
-  boundaries and its cycles split off, so Tau Ceti's sequence and its splitting for `K′, L′`
-  transport to `K, L`. §0.2 has the K-flat replacements and tensor laws but no Künneth sequence,
-  and Tau Ceti's sequence needs projective cycles in `L`, which a complex of flat modules such as
-  `ℤ[1/3]` in degree `0` does not have. Target 5.1 uses it.
+
+### From TauCetiRoadmap.SpectralSequencesAndConvergencePartII
+
+- §4.3 (*The Künneth spectral sequence*): for a commutative ring `R` and complexes `K`, `L` of
+  `R`-modules represented by bounded-above complexes, the spectral sequence
+  `E₂^{p,q} = ⊕_{i+j=q} Tor^R_{−p}(Hⁱ(K), Hʲ(L)) ⇒ H^{p+q}(K ⊗^L L)`, converging strongly with finite
+  filtrations and natural in `K` and `L` from page `2`; its edge map
+  `E₂^{0,n} → Hⁿ(K ⊗^L L)` is the cross product (Tau Ceti `HomologicalComplex.homologyCross`,
+  `Algebra/Homology/Monoidal/Homology/Cross.lean`, on representatives); its abutment is
+  `Hⁿ(Tot(K ⊗ L))` when `K` is a bounded-above complex of flat modules; and, when `Tor^R_i = 0` for
+  `i ≥ 2`, its two columns give the exact sequence
+  `0 → ⊕_{i+j=n} Hⁱ(K) ⊗ Hʲ(L) → Hⁿ(K ⊗^L L) → ⊕_{i+j=n+1} Tor^R_1(Hⁱ(K), Hʲ(L)) → 0`. A chain
+  complex indexed by `ℕ` is read as a cochain complex in degrees `≤ 0`, so it is bounded above,
+  `Hⁱ` is `H_{−i}`, and in homological degree `m = −n` the index sets read `p + q = m` and
+  `p + q = m − 1`. No splitting is assumed. Used in 5.1.
+- What SpectralSequencesAndConvergencePartII must provide (gap:flat-kunneth): in §4.3, for a
+  commutative ring `R` with `Tor^R_i = 0` for `i ≥ 2` and complexes `K`, `L` of `R`-modules
+  represented by bounded-above complexes, that the two-column exact sequence above, whose first map
+  is the edge map (the cross product), is natural in `K` and `L`. §4.3 states the spectral sequence
+  natural from page `2` and the two-column sequence, but not the naturality of that sequence. It
+  follows by reading the sequence off `E₂ = E_∞` and the induced filtration of the abutment: a map
+  `P → P′` of Cartan–Eilenberg resolutions lifting `K → K′` preserves their rows, so with `L → L′`
+  it induces a filtered map `Tot(P) ⊗ L → Tot(P′) ⊗ L′`. Target 5.1 uses it.
+- §5.2 (*Pairings of filtered complexes*): for a commutative ring `R`, decreasingly filtered
+  cochain complexes `A`, `B`, `C` of `R`-modules and a chain map `φ : A ⊗ B → C` from the tensor
+  product with the sign `d(x ⊗ y) = dx ⊗ y + (−1)^{|x|} x ⊗ dy`, with `φ(F^pA ⊗ F^{p′}B) ⊆ F^{p+p′}C`:
+  pairings `E_r^{p,q}(A) ⊗ E_r^{p′,q′}(B) → E_r^{p+p′,q+q′}(C)` for every `r ≥ 1`, with
+  `d_r(xy) = d_r(x)y + (−1)^{p+q} x d_r(y)` and the pairing of page `r + 1` induced by that of page
+  `r`; on page `1` the pairing induced by `φ` on the cohomology of the graded pieces; at every
+  position where the three spectral sequences converge through their canonical presentations (in
+  particular when the filtrations are finite in the degrees concerned), the pairing of limit pages
+  induced on graded pieces by `H(A) ⊗ H(B) → H(C)`, which respects the induced filtrations; and
+  naturality in filtered maps compatible with the pairings. Its spectral sequence of a decreasingly
+  filtered complex is Tau Ceti's `CochainComplex.spectralSequence` for `F_t = F^{−t}`, the classical
+  `E_r^{p,q}` being the object at `(2p + q + 1, −p − 1)` on page `r + 1`, the indexing of 6.2. Used
+  in 6.5.
+- Layers 2 and 3 are cited in Scope and ownership only; nothing is consumed from them.
 
 ### From TauCetiRoadmap.ProfiniteCohomology
 
@@ -800,7 +849,8 @@ inhomogeneous `p`-cochains with values in `D^q`, from `groupCohomology.cochainsF
 complex `C` with `C_i = 0` for `i < b` is reindexed to `C′_r = C_{r+b}` with the same differential,
 and `Hₙ(G; C) = H_{n−b}(G; C′)` for `n ≥ b`, `0` for `n < b`; dually for cochain complexes.
 (HS53 Ch. I §4, p. 114, for the cochain bicomplex `C(Π, U)`, and Ch. I §2 Prop. 1, p. 111, for
-independence of the resolution.) For
+independence of the resolution, both in cohomology; the homological forms by the remark closing
+HS53 Ch. I §7, p. 118, HS53 line 355–362.) For
 `k = ℤ` and chain complexes this is the group hyperhomology of SchemeKTheoryOperations §6.7; the
 target adds arbitrary `k` and hypercohomology. *Needs:* Mathlib `groupHomology.chainsFunctor`,
 `groupCohomology.cochainsFunctor`, `HomologicalComplex₂.total`; Tau Ceti
@@ -860,7 +910,8 @@ Prove that for a chain complex `C` indexed by `ℕ` there are natural spectral s
 converge, with filtrations finite in each total degree. They are the two spectral sequences of the
 defining bicomplex: filtering by the degree of `C` gives the first, and since inhomogeneous chains
 are exact in the coefficients, filtering by the bar degree gives the second (HS53 Ch. I §5,
-Lemma 1, p. 115; Lemma 2 and Prop. 5, p. 116). For `k = ℤ` the two homological sequences are those of
+Lemma 1, p. 115; Lemma 2 and Prop. 5, p. 116, in cohomology; in homology by the remark closing
+HS53 Ch. I §7, p. 118). For `k = ℤ` the two homological sequences are those of
 SchemeKTheoryOperations §6.7 under the comparison of 2.1; the target adds arbitrary `k` and the
 cohomological sequences. *Needs:* 2.1; DerivedModuleAlgebra §S.1; SchemeKTheoryOperations §6.7
 for the comparison; Tau Ceti `HomologicalComplex₂.rowFiltrationSpectralSequence`,
@@ -870,7 +921,7 @@ for the comparison; Tau Ceti `HomologicalComplex₂.rowFiltrationSpectralSequenc
   `k = ℤ` this is the vanishing statement of SchemeKTheoryOperations §6.7.
 - If `C_p` is acyclic for `H_*(G, −)` in positive degrees for every `p`, then
   `Hₙ(G; C) ≅ Hₙ((C)_G)`; dually `Hⁿ(G; D) ≅ Hⁿ(D^G)` (the exact-rows comparison of
-  DerivedModuleAlgebra §S.1; HS53 Ch. I §4 Prop. 4, p. 114).
+  DerivedModuleAlgebra §S.1; HS53 Ch. I §4 Prop. 4, p. 114, for the cohomological form).
 
 **Checks.**
 
@@ -960,8 +1011,9 @@ permutes the cells, `Σ_p` the orbit representatives of `p`-cells, `G_σ` their 
 `E¹_{p,q} = ⊕_{σ ∈ Σ_p} H_q(G_σ, k_σ ⊗ M) ⇒ H^G_{p+q}(C; M)` and dually
 `E₁^{p,q} = ∏_{σ ∈ Σ_p} H^q(G_σ, Hom_k(k_σ, M)) ⇒ H_G^{p+q}(C; M)`, with `d¹` the map induced by
 `∂` transported through the Shapiro isomorphisms of 1.4 (Brown82 Ch. VII). The identification is
-the first sequence of 2.3, filtered by the degree of `C` in the bicomplex of HS53 Ch. I §4, p. 114,
-with its terms computed by 1.3 and 1.4. For `k = ℤ`, trivial characters and `C_p = ℤ[X]` with `X`
+the first sequence of 2.3, filtered by the degree of `C` in the bicomplex of HS53 Ch. I §4, p. 114
+(a cochain bicomplex; its chain form by the remark closing HS53 Ch. I §7, p. 118), with its terms
+computed by 1.3 and 1.4. For `k = ℤ`, trivial characters and `C_p = ℤ[X]` with `X`
 transitive it is the first-page identification of SchemeKTheoryOperations §6.7; the target adds
 monomial modules with characters, arbitrary `k`, `M` and the cohomological sequence.
 *Needs:* 1.3, 1.4, 2.3; SchemeKTheoryOperations §6.7 for the comparison.
@@ -983,7 +1035,8 @@ Prove that if every `G_σ` is trivial (each `C_p` free over `k[G]` on a basis), 
 `H^G_n(C; M) ≅ Hₙ((C ⊗ M)_G)`, the second sequence of 2.3 is
 `E²_{p,q} = H_p(G, H_q(C ⊗ M)) ⇒ H_{p+q}((C ⊗ M)_G)`, and, if moreover `C` resolves `k`,
 `Hₙ((C ⊗ M)_G) ≅ Hₙ(G, M)`. This is the algebraic form of the Cartan–Leray spectral sequence
-(HS53 Ch. I §5 Prop. 5, p. 116). *Needs:* 3.1, 3.2, 2.3; Tau Ceti
+(HS53 Ch. I §5 Prop. 5, p. 116, in cohomology; the homological transcription is the remark closing
+HS53 Ch. I §7, p. 118, HS53 line 355–362). *Needs:* 3.1, 3.2, 2.3; Tau Ceti
 `groupHomology.isZero_indBot_succ`.
 
 **Checks.**
@@ -1352,20 +1405,37 @@ dimension at most one and one of `M`, `N` is flat over `k`, then
 is exact for every `n`, natural in compatible pairs on both factors, and split (not naturally); and
 that over a field the cross product is an isomorphism (Loh19 Thm. 3.2.22 and Cor. 3.2.23,
 pp. 135–136, for a principal ideal domain and one complex of flat modules; Brown82 Ch. V). Route:
-through the homotopy equivalence the sequence is the Künneth sequence of the complexes `C(G; M)`
-and `C(H; N)`, whose terms are direct sums of copies of `M` and of `N`. If `N` is flat, `C(H; N)`
-is flat in every degree and `gap:flat-kunneth` applies; if `M` is flat, exchange the factors along
-`G × H ≅ H × G`, using the symmetry of `Tor₁^k` and the graded commutativity of the cross product,
-which changes the first map only by a sign on each summand. When `N` is projective, the cycles and
-boundaries of `C(H; N)` are projective (over a ring of global dimension at most one, submodules of
-projective modules are projective), and Tau Ceti's
-`HomologicalComplex.homologyKunnethShortComplex_shortExact` gives the sequence directly, with the
-splitting `HomologicalComplex.homologyKunnethShortComplexSplitting` when `M` is projective too.
-*Needs:* Mathlib `Rep.standardResolution`, `groupHomologyIso`; Tau Ceti
-`HomologicalComplex.homologyKunnethShortComplex_shortExact`,
-`HomologicalComplex.homologyKunnethShortComplexSplitting`, `HomologicalComplex.homologyKunneth`;
-`gap:flat-kunneth` (DerivedModuleAlgebra §0.2); InductionRestrictionPartII RS.6.8 for the
-comparison.
+through the homotopy equivalence the sequence is the Künneth sequence of the complexes
+`K = C(G; M)` and `L = C(H; N)`, whose terms are direct sums of copies of `M` and of `N`, read as
+cochain complexes in degrees `≤ 0`; over `k`, `Tor_i^k = 0` for `i ≥ 2`. If `M` is flat, `K` is a
+bounded-above complex of flat modules, so `K ⊗ L` computes `K ⊗^L L`, and
+SpectralSequencesAndConvergencePartII §4.3 gives the exact sequence, with the cross product as
+first map, natural in both complexes by `gap:flat-kunneth`; if `N` is flat, exchange the factors
+along `G × H ≅ H × G`, using the symmetry of `Tor₁^k` and the graded commutativity of the cross
+product, which changes the first map only by a sign on each summand. For the splitting, choose
+quasi-isomorphisms `K′ → K` and `L′ → L` from complexes of projective `k`-modules in degrees `≤ 0` (Tau Ceti
+`CochainComplex.exists_quasiIso_projective`, with Mathlib's `ComplexShape.embeddingDownNat`). Over
+`k` the cycles of `K′` and `L′` and the quotients by their cycles are projective, so the cycles
+split off (Tau Ceti `HomologicalComplex.projective_cycles_of_hasProjectiveDimensionLE_one`,
+`HomologicalComplex.projective_cokernel_iCycles_of_hasProjectiveDimensionLE_one`,
+`HomologicalComplex.isSplitMono_iCycles_of_projective`), and
+`HomologicalComplex.homologyKunnethShortComplexSplitting` gives a retraction of the cross product
+of `K′` and `L′`. The map `K′ ⊗ L′ → K ⊗ L` is the composite of two maps, each the tensor product
+of a quasi-isomorphism with a K-flat complex (`K′`, `L′` and the flat one of `K`, `L` are
+bounded-above complexes of flat modules), hence a quasi-isomorphism (Tau Ceti
+`CochainComplex.isKFlat_of_boundedAbove_flat`, `CochainComplex.quasiIso_id_tensorHom`); the cross
+product is natural, so the retraction transports to one of the cross product of `K` and `L`. When
+`N` is projective, Tau Ceti's `HomologicalComplex.homologyKunnethShortComplex_shortExact` gives the
+sequence directly, with no condition on `M`. *Needs:* Mathlib `Rep.standardResolution`,
+`groupHomologyIso`, `ComplexShape.embeddingDownNat`; SpectralSequencesAndConvergencePartII §4.3
+with `gap:flat-kunneth`; Tau Ceti `HomologicalComplex.homologyCross`,
+`HomologicalComplex.homologyKunneth`, `HomologicalComplex.homologyKunnethShortComplex_shortExact`,
+`HomologicalComplex.homologyKunnethShortComplexSplitting`,
+`CochainComplex.exists_quasiIso_projective`,
+`HomologicalComplex.projective_cycles_of_hasProjectiveDimensionLE_one`,
+`HomologicalComplex.projective_cokernel_iCycles_of_hasProjectiveDimensionLE_one`,
+`HomologicalComplex.isSplitMono_iCycles_of_projective`, `CochainComplex.isKFlat_of_boundedAbove_flat`,
+`CochainComplex.quasiIso_id_tensorHom`; InductionRestrictionPartII RS.6.8 for the comparison.
 
 - The cross product is natural in compatible pairs on both factors and bilinear.
 - It is associative and graded commutative under `G × H ≅ H × G`, with the sign `(−1)^{pq}`.
@@ -1531,8 +1601,10 @@ directed-union identification of SchemeKTheoryOperations §6.7, whose surjective
 ### Dependencies
 
 Layers 3–4; Tau Ceti's Künneth and universal coefficient sequences, Kronecker map and the
-identification of `Hom((A ⊗ P)_G, N)`; DerivedModuleAlgebra §0.2 (`gap:flat-kunneth`) for the flat
-case of 5.1; InductionRestrictionPartII RS.6.8 for finite abelian groups in 5.4 and for
+identification of `Hom((A ⊗ P)_G, N)`, its projective replacements of bounded-above complexes,
+K-flatness of bounded-above complexes of flat modules and split cycles over a ring of global
+dimension at most one; SpectralSequencesAndConvergencePartII §4.3 with `gap:flat-kunneth` for the
+flat case of 5.1; InductionRestrictionPartII RS.6.8 for finite abelian groups in 5.4 and for
 comparisons; ArithmeticGaloisDuality §D7.2 for the comparison of 5.2; Mathlib's finite cyclic
 computations; AlgebraicTopology §5.4 for a Check.
 
@@ -1634,7 +1706,8 @@ Define the complex `C_N(M) = (P ⊗ M)_N` of representations of `Q`, for `P = Re
 are induced from the trivial subgroup of `Q`, so the augmented rows are exact:
 `HomologicalComplex₂.quasiIso_totalAugmentation_of_rows`) and `H_q(C_N(M)) ≅ H_q(N, M)` as
 representations of `Q`. The second sequence of 2.3 is then the natural spectral sequence
-`E²_{p,q} = H_p(Q, H_q(N, M)) ⇒ H_{p+q}(G, M)` (Loh19 Thm. 3.2.12(1), p. 123; HS53 line 355–362).
+`E²_{p,q} = H_p(Q, H_q(N, M)) ⇒ H_{p+q}(G, M)` (Loh19 Thm. 3.2.12(1), p. 123; the remark closing
+HS53 Ch. I §7, p. 118, HS53 line 355–362).
 *Needs:* 1.2, 2.3; Mathlib `Rep.quotientToCoinvariantsFunctor`, `Rep.standardResolution`;
 Tau Ceti `HomologicalComplex₂.quasiIso_totalAugmentation_of_rows`,
 `groupHomology.isZero_indBot_succ`; DerivedModuleAlgebra §S.1;
@@ -1678,16 +1751,22 @@ IntegralIwasawaTheoryPartII §0.7 for the comparison.
 
 ### 6.5 Multiplicativity
 
-Prove that for a pairing `μ : M ⊗ M' ⟶ P` the pages of 6.2 carry pairings
-`E_r^{p,q} ⊗ E_r^{p',q'} → E_r^{p+p',q+q'}` for which every `d_r` is a derivation
-(`d_r(u ∪ v) = d_r u ∪ v + (−1)^{p+q} u ∪ d_r v`); that for `u ∈ E₂^{p,q}` and `v ∈ E₂^{p',q'}`,
-under the identification of 6.2 (restriction of the first `q` arguments to `N`), `u ∪ v` is
-`(−1)^{pq'}` times the cup product of 4.1 on `Q` of the classes of `u` and `v`, with coefficients
-paired by the cup product on `N`; and that on `E_∞` it is induced by the cup product on `G` with
-`A_pH ∪ A_{p'}H ⊂ A_{p+p'}H` (HS53 Ch. II §5 Thm. 3 and the remark after it, p. 126,
-HS53 line 686–700; HS53 line 397–400). With `d₁ = (−1)^q d` of 6.2 the derivation rule on `E₁` is
-compatible with the sign `(−1)^{pq'}`; with `(−1)^{qp'}` the term `d₁u ∪ v` would acquire an extra
-factor `(−1)^{q'}`. *Needs:* 4.1, 4.3, 6.1, 6.2; Tau Ceti `CochainComplex.filtrationFunctorMap`.
+For a pairing `μ : M ⊗ M' ⟶ P`, the cup product of 4.1 preserves normalized cochains (an argument
+equal to `1` falls among the arguments of one factor), is a chain map
+`C̄(G, M) ⊗ C̄(G, M') → C̄(G, P)` for the sign `d(φ ⊗ ψ) = dφ ⊗ ψ + (−1)^p φ ⊗ dψ` of the tensor
+product, by the Leibniz rule of the Conventions, and satisfies `A_r ∪ A_s ⊂ A_{r+s}` (6.1). So
+SpectralSequencesAndConvergencePartII §5.2 gives the pairings of the pages of 6.2,
+`E_r^{p,q} ⊗ E_r^{p',q'} → E_r^{p+p',q+q'}`, for which every `d_r` is a derivation
+(`d_r(u ∪ v) = d_r u ∪ v + (−1)^{p+q} u ∪ d_r v`), and, the filtration being finite in each degree
+(6.1), the product on `E_∞` induced by the cup product on `G` with `A_pH ∪ A_{p'}H ⊂ A_{p+p'}H`,
+natural in morphisms of extensions with compatible coefficient maps (HS53 line 397–400). Prove
+that for `u ∈ E₂^{p,q}` and `v ∈ E₂^{p',q'}`, under the identification of 6.2 (restriction of the
+first `q` arguments to `N`), `u ∪ v` is `(−1)^{pq'}` times the cup product of 4.1 on `Q` of the
+classes of `u` and `v`, with coefficients paired by the cup product on `N` (HS53 Ch. II §5 Thm. 3
+and the remark after it, p. 126, HS53 line 686–700). With `d₁ = (−1)^q d` of 6.2 the derivation
+rule on `E₁` is compatible with the sign `(−1)^{pq'}`; with `(−1)^{qp'}` the term `d₁u ∪ v` would
+acquire an extra factor `(−1)^{q'}`. *Needs:* 4.1, 4.3, 6.1, 6.2; SpectralSequencesAndConvergencePartII
+§5.2; Tau Ceti `CochainComplex.filtrationFunctorMap`.
 
 **Checks.**
 
@@ -1895,7 +1974,8 @@ invisible mod `2`). By 6.6, `d₂y = x²`, the scalarised extension class `c_{�
 Layers 1–4 and 3.6; MappingClassGroupsAndCanonicalRepresentations §1.1; Tau Ceti's filtered
 spectral sequences, inflation–restriction, transgression lift and the naturality of
 `groupHomologyIso` in the group; DerivedModuleAlgebra §S.1 with `gap:homological-low-degree`;
-ProfiniteCohomology §§3.1, 5.5 for 6.9; K2SymbolsBrauer §1.1 for the normalisation of the map of
+SpectralSequencesAndConvergencePartII §5.2 for the pairings of 6.5; ProfiniteCohomology §§3.1, 5.5
+for 6.9; K2SymbolsBrauer §1.1 for the normalisation of the map of
 6.8; StableHomotopyKTheory §3.29 for a Check of 6.8; IntegralIwasawaTheoryPartII §0.7 for a Check
 of 6.4.
 
