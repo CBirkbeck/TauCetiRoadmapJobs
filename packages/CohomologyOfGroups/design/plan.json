@@ -1113,7 +1113,7 @@
      "id": "5.1",
      "kind": "construction",
      "name": "TauCeti.groupHomology.cross",
-     "statement": "C(G; M) ⊗_k C(H; N) ≃ C(G × H; M ⊠ N) (homotopy equivalence); natural cross product H_p(G, M) ⊗ H_q(H, N) → H_{p+q}(G × H, M ⊠ N) induced by the Eilenberg–Zilber shuffle map ([g] × [h] = [(g,1)|(1,h)] − [(1,h)|(g,1)] for trivial coefficients); for k of global dimension ≤ 1 and N k-projective, the Künneth short exact sequence with Tor₁ terms, split when M is k-projective; over a field the cross product is an isomorphism.",
+     "statement": "C(G; M) ⊗_k C(H; N) ≃ C(G × H; M ⊠ N) (homotopy equivalence); natural cross product H_p(G, M) ⊗ H_q(H, N) → H_{p+q}(G × H, M ⊠ N) induced by the Eilenberg–Zilber shuffle map ([g] × [h] = [(g,1)|(1,h)] − [(1,h)|(g,1)] for trivial coefficients); for k of global dimension ≤ 1 and one of M, N flat over k, the Künneth short exact sequence 0 → ⊕_{p+q=n} H_p(G, M) ⊗ H_q(H, N) → Hₙ(G × H, M ⊠ N) → ⊕_{p+q=n−1} Tor₁^k(H_p(G, M), H_q(H, N)) → 0, natural in compatible pairs and split (not naturally); over a field the cross product is an isomorphism.",
      "hypotheses": [
       "k G : Type u",
       "[CommRing k]",
@@ -1122,17 +1122,19 @@
       "[Group H]",
       "M : Rep k G",
       "N : Rep k H",
-      "for the sequence: k of global dimension ≤ 1, N projective over k"
+      "for the sequence: k of global dimension ≤ 1, M or N flat over k"
      ],
      "locator": {
       "source": "Loh19",
-      "where": "Thm. 3.2.22 and Cor. 3.2.23, pp. 135–136"
+      "where": "Thm. 3.2.22 and Cor. 3.2.23, pp. 135–136 (principal ideal domain, one complex of flat modules)"
      },
      "prerequisites": [
       "mathlib:Rep.standardResolution",
       "mathlib:groupHomologyIso",
       "tauceti:HomologicalComplex.homologyKunnethShortComplex_shortExact",
-      "tauceti:HomologicalComplex.homologyKunneth"
+      "tauceti:HomologicalComplex.homologyKunnethShortComplexSplitting",
+      "tauceti:HomologicalComplex.homologyKunneth",
+      "gap:flat-kunneth"
      ],
      "api": [
       {
@@ -1161,6 +1163,16 @@
        "name": "kunneth_Fp",
        "kind": "computation",
        "statement": "Hₙ(ℤ/p × ℤ/p, 𝔽_p) = 𝔽_p^{n+1}."
+      },
+      {
+       "name": "kunneth_flat_nonprojective",
+       "kind": "computation",
+       "statement": "k = ℤ, G = H = ℤ/2, trivial M = 𝔽₂ and N = ℤ[1/3] (flat, not projective; neither factor projective): in degree 2 the tensor terms are 𝔽₂², the Tor term Tor₁(𝔽₂, ℤ/2) = 𝔽₂, and H₂(ℤ/2 × ℤ/2, 𝔽₂) = 𝔽₂³; in degree 0, 𝔽₂ ⊗ ℤ[1/3] = 𝔽₂ = H₀."
+      },
+      {
+       "name": "kunneth_flat_factor_needed",
+       "kind": "non-example",
+       "statement": "k = ℤ, G = H = 1, M = N = ℤ/2 (neither flat): H₁(1, ℤ/2 ⊗ ℤ/2) = 0 but the Tor term in degree 1 is Tor₁(ℤ/2, ℤ/2) = ℤ/2, so the sequence is not exact."
       }
      ]
     },
@@ -2236,9 +2248,10 @@
   {
    "roadmap": "DerivedModuleAlgebra",
    "sections": [
-    "§S.1"
+    "§S.1",
+    "§0.2"
    ],
-   "what": "First-quadrant double-complex spectral sequences (cohomological and homological): E₂, convergence, edge morphisms, five-term and extended sequences, exact-rows comparison, naturality."
+   "what": "First-quadrant double-complex spectral sequences (cohomological and homological): E₂, convergence, edge morphisms, five-term and extended sequences, exact-rows comparison, naturality; the Künneth sequence of two ℕ-indexed complexes, one flat in every degree, over a ring of global dimension ≤ 1 (gap:flat-kunneth, §0.2), used in 5.1."
   },
   {
    "roadmap": "ProfiniteCohomology",
@@ -2332,6 +2345,17 @@
    "needs": "The edge morphisms H_n(Tot C) → E²_{n,0}, E²_{0,n} → H_n(Tot C) and the exact sequence H₂(Tot C) → E²_{2,0} → E²_{0,1} → H₁(Tot C) → E²_{1,0} → 0 for a first-quadrant homological double complex.",
    "supplier": "DerivedModuleAlgebra",
    "section": "§S.1"
+  },
+  {
+   "slug": "flat-kunneth",
+   "title": "Künneth sequence for a complex of flat modules over a ring of global dimension at most one",
+   "neededBy": [
+    "5.1"
+   ],
+   "detail": "Tau Ceti's HomologicalComplex.homologyKunnethShortComplex_shortExact assumes projective cycles and projective quotients by cycles in the second complex, and its splitting split cycles in the first; DerivedModuleAlgebra §0.2 has K-flat replacements and the invariance of tensor products under quasi-isomorphisms but no Künneth sequence. Chains with flat, non-projective coefficients such as ℤ[1/3] are not covered.",
+   "needs": "For a commutative ring R of global dimension at most one and ℕ-indexed chain complexes K, L of R-modules with L flat in every degree, the sequence 0 → ⊕_{p+q=n} H_p(K) ⊗ H_q(L) → Hₙ(K ⊗ L) → ⊕_{p+q=n−1} Tor₁^R(H_p(K), H_q(L)) → 0, first map the cross product, is exact for every n, natural in K and L, and split (not naturally).",
+   "supplier": "DerivedModuleAlgebra",
+   "section": "§0.2"
   }
  ]
 }

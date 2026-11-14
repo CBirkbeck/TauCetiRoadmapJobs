@@ -66,8 +66,11 @@ continuous cup product `TauCeti.TopPairing.cup` and the continuous Mackey formul
   instances that a roadmap owning `G`-CW complexes obtains by applying 8.3 to the cellular chains.
 - The algebraic Künneth and universal-coefficient spectral sequences of complexes over an
   arbitrary ring are statements about complexes of `k`-modules, owned by a spectral-sequence
-  roadmap; this roadmap supplies the chain-level identification of 5.1 to which they apply, and
-  proves the two-term sequences over rings of global dimension at most one.
+  roadmap; this roadmap supplies the chain-level identification of 5.1 to which they apply. The
+  two-term Künneth sequence of two complexes, one of them flat in every degree, over a ring of
+  global dimension at most one is what DerivedModuleAlgebra §0.2 must provide (Exact supplier
+  contracts); this roadmap proves the group-homology sequences of 5.1 and 5.2 from it and from Tau
+  Ceti's sequence for complexes with projective cycles and boundaries.
 - Finiteness conditions, cohomological and virtual cohomological dimension, duality groups, Euler
   characteristics and Farrell cohomology are not planned here; no target uses them, and the
   finiteness hypothesis of 5.3 is stated directly on the homology of a factor.
@@ -270,9 +273,12 @@ continuous cup product `TauCeti.TopPairing.cup` and the continuous Mackey formul
   (`Algebra/Homology/SpectralSequence/Bicomplex.lean`, `Algebra/Homology/TotalComplex.lean`): the
   two spectral sequences of a first-quadrant homological bicomplex and the comparison of a
   bicomplex with exact augmented rows to its augmentation.
-- `HomologicalComplex.homologyKunnethShortComplex_shortExact`, `HomologicalComplex.homologyKunneth`
+- `HomologicalComplex.homologyKunnethShortComplex_shortExact`, `HomologicalComplex.homologyKunneth`,
+  `HomologicalComplex.homologyKunnethShortComplexSplitting`
   (`Algebra/Homology/Monoidal/Homology/Kunneth/`): the Künneth short exact sequence for chain
-  complexes of modules whose second factor has projective cycles and boundaries.
+  complexes of modules indexed by `ℕ` whose second factor has projective cycles and projective
+  quotients by its cycles, and its splitting (not natural) when the cycles of the first factor
+  split off its terms.
 - `TauCeti.ChainComplex.extToHomology`, `TauCeti.ChainComplex.exact_extToHomology_kronecker`,
   `TauCeti.ChainComplex.extToHomology_injective` (`Algebra/Homology/UniversalCoefficient/`): the
   cohomological universal coefficient sequence.
@@ -296,6 +302,19 @@ continuous cup product `TauCeti.TopPairing.cup` and the continuous Mackey formul
   `H₂(Tot C) → E²_{2,0} → E²_{0,1} → H₁(Tot C) → E²_{1,0} → 0` of a first-quadrant homological
   double complex. §S.1 states these in cohomological indexing only; its homological form stops at
   `E²` and convergence. Targets 6.3, 6.4 and 6.7 use them.
+- **What DerivedModuleAlgebra §0.2 must provide** (`gap:flat-kunneth`): for a commutative ring `R`
+  of global dimension at most one and chain complexes `K`, `L` of `R`-modules indexed by `ℕ`, with
+  `L` flat in every degree, the sequence
+  `0 → ⊕_{p+q=n} H_p(K) ⊗_R H_q(L) → Hₙ(K ⊗_R L) → ⊕_{p+q=n−1} Tor₁^R(H_p(K), H_q(L)) → 0`, whose
+  first map is the cross product `[z] ⊗ [w] ↦ [z ⊗ w]`, is exact for every `n`, natural in `K` and
+  `L`, and split (not naturally). One route: choose quasi-isomorphisms `K′ → K` and `L′ → L` from
+  complexes of projective modules indexed by `ℕ`; then `K′ ⊗ L′ → K′ ⊗ L → K ⊗ L` are
+  quasi-isomorphisms, because tensoring with a bounded-below complex of flat modules (`K′`, then
+  `L`) preserves quasi-isomorphisms (§0.2's K-flat laws), and over such `R` a complex of projective
+  modules has projective cycles and boundaries and its cycles split off, so Tau Ceti's sequence and
+  its splitting for `K′, L′` transport to `K, L`. §0.2 has the K-flat replacements and tensor laws
+  but no Künneth sequence, and Tau Ceti's sequence needs projective cycles in `L`, which a complex
+  of flat modules such as `ℤ[1/3]` in degree `0` does not have. Target 5.1 uses it.
 
 ### From TauCetiRoadmap.ProfiniteCohomology
 
@@ -1085,12 +1104,24 @@ because each is contractible over `k` (Loh19 proof of Cor. 3.2.23, p. 136). Defi
 product `× : H_p(G, M) ⊗_k H_q(H, N) → H_{p+q}(G × H, M ⊠ N)` as the map induced by the
 Eilenberg–Zilber shuffle map of the standard resolutions: a `(p, q)`-shuffle contributes its sign,
 so for trivial coefficients `[g] × [h] = [(g, 1)|(1, h)] − [(1, h)|(g, 1)]`. Prove that if `k` has global
-dimension at most one and `N` is projective over `k`, then
+dimension at most one and one of `M`, `N` is flat over `k`, then
 `0 → ⊕_{p+q=n} H_p(G, M) ⊗ H_q(H, N) → Hₙ(G × H, M ⊠ N) → ⊕_{p+q=n−1} Tor₁^k(H_p(G, M), H_q(H, N)) → 0`
-is exact, and split (not naturally) when also `M` is projective over `k`; and that over a field the
-cross product is an isomorphism (Loh19 Thm. 3.2.22 and Cor. 3.2.23, pp. 135–136; Brown82 Ch. V).
+is exact for every `n`, natural in compatible pairs on both factors, and split (not naturally); and
+that over a field the cross product is an isomorphism (Loh19 Thm. 3.2.22 and Cor. 3.2.23,
+pp. 135–136, for a principal ideal domain and one complex of flat modules; Brown82 Ch. V). Route:
+through the homotopy equivalence the sequence is the Künneth sequence of the complexes `C(G; M)`
+and `C(H; N)`, whose terms are direct sums of copies of `M` and of `N`. If `N` is flat, `C(H; N)`
+is flat in every degree and `gap:flat-kunneth` applies; if `M` is flat, exchange the factors along
+`G × H ≅ H × G`, using the symmetry of `Tor₁^k` and the graded commutativity of the cross product,
+which changes the first map only by a sign on each summand. When `N` is projective, the cycles and
+boundaries of `C(H; N)` are projective (over a ring of global dimension at most one, submodules of
+projective modules are projective), and Tau Ceti's
+`HomologicalComplex.homologyKunnethShortComplex_shortExact` gives the sequence directly, with the
+splitting `HomologicalComplex.homologyKunnethShortComplexSplitting` when `M` is projective too.
 *Needs:* Mathlib `Rep.standardResolution`, `groupHomologyIso`; Tau Ceti
-`HomologicalComplex.homologyKunnethShortComplex_shortExact`, `HomologicalComplex.homologyKunneth`.
+`HomologicalComplex.homologyKunnethShortComplex_shortExact`,
+`HomologicalComplex.homologyKunnethShortComplexSplitting`, `HomologicalComplex.homologyKunneth`;
+`gap:flat-kunneth` (DerivedModuleAlgebra §0.2).
 
 - The cross product is natural in compatible pairs on both factors and bilinear.
 - It is associative and graded commutative under `G × H ≅ H × G`, with the sign `(−1)^{pq}`.
@@ -1102,6 +1133,17 @@ cross product is an isomorphism (Loh19 Thm. 3.2.22 and Cor. 3.2.23, pp. 135–13
 - `H₃(ℤ/2 × ℤ/2, ℤ) = (ℤ/2)³`: two tensor terms `H₃ ⊗ H₀`, `H₀ ⊗ H₃` and one `Tor₁(H₁, H₁)`; the cross
   product alone is not surjective.
 - `Hₙ(ℤ/p × ℤ/p, 𝔽_p) = 𝔽_p^{n+1}` (Loh19 Example 3.2.25, p. 137).
+- Flat but not projective coefficients: for `k = ℤ`, `G = H = ℤ/2` and trivial actions on
+  `M = 𝔽₂` and `N = ℤ[1/3]`, `N` is flat and not projective (every homomorphism `ℤ[1/3] → ℤ`
+  vanishes, its value at `1` being divisible by every power of `3`) and `M` is not projective, so
+  the projective case says nothing. `H_*(ℤ/2, N)` is `N, ℤ/2, 0, ℤ/2, 0, …` and `H_*(ℤ/2, 𝔽₂)` is
+  `𝔽₂` in every degree; in degree `2` the tensor terms `H₁ ⊗ H₁ ⊕ H₂ ⊗ H₀` give `𝔽₂²`, the `Tor`
+  terms give `Tor₁(𝔽₂, ℤ/2) ⊕ Tor₁(𝔽₂, ℤ[1/3]) = 𝔽₂`, and `M ⊠ N = 𝔽₂` with
+  `H₂(ℤ/2 × ℤ/2, 𝔽₂) = 𝔽₂³`. In degree `0` the sequence is `𝔽₂ ⊗ ℤ[1/3] = 𝔽₂ = H₀`, with no `Tor`
+  term.
+- One flat factor is needed: for `k = ℤ`, `G = H = 1` and `M = N = ℤ/2`, neither flat,
+  `H₁(1, ℤ/2 ⊗ ℤ/2) = 0` while the `Tor` term in degree `1` is `Tor₁(ℤ/2, ℤ/2) = ℤ/2`: the chains
+  compute the underived tensor product, and the sequence is not exact.
 
 ### 5.2 Universal coefficient sequences
 
@@ -1205,8 +1247,9 @@ unions); Mathlib `groupHomology` of finite cyclic groups
 
 ### Dependencies
 
-Layers 3–4; Tau Ceti's Künneth and universal coefficient sequences; Mathlib's finite cyclic
-computations; AlgebraicTopology §5.4 for a Check.
+Layers 3–4; Tau Ceti's Künneth and universal coefficient sequences; DerivedModuleAlgebra §0.2
+(`gap:flat-kunneth`) for the flat case of 5.1; Mathlib's finite cyclic computations;
+AlgebraicTopology §5.4 for a Check.
 
 ---
 
