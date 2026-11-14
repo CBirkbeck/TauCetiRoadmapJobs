@@ -67,6 +67,11 @@ finite-dimensional representations of a finite group by their characters in char
   the tree, amalgam, HNN and free-group sequences (§§3.4–3.6), the cap product (§4.6), the universal
   coefficient sequences (§5.2) and the Hochschild–Serre spectral sequences with convergence
   (§§6.2–6.3). This roadmap proves no spectral sequence and no product.
+- SpectralSequencesAndConvergence owns the Euler identity of a spectral sequence converging in
+  every total degree with finite filtrations and a page with finitely many nonzero terms in a weak
+  Serre class (§3.4), and its form for the spectral sequence of a complex with a filtration finite
+  in each degree (§5.3). 8.6 and 8.7 apply it, with the finite-dimensional `ℚ`-vector spaces and
+  their dimension, to the Hochschild–Serre and orbit spectral sequences of CohomologyOfGroups.
 - FreeGroupsAndLimitGroups owns graphs of groups, the identification of one-edge splittings with
   Mathlib's amalgams and HNN extensions (§4.5), the Bass–Serre tree (§4.7), the structure theorem
   for actions on trees (§4.8) and the fixed points of finite groups acting on trees (§4.9).
@@ -108,7 +113,7 @@ not finitely presented) and the Eilenberg–Ganea problem in dimension two. The 
 noncommutative rings. Brown's refinements of the denominator theorem through the poset of nontrivial
 finite subgroups, which need its equivariant Euler characteristic and the acyclic-cover comparison
 of Brown1974 Appendix B: Theorem 5 for a nonempty family of finite subgroups, its Corollaries 2 and
-3, Theorem 6 with the formula for `χ − χ̃`, and the `p`-fractional part of `χ` (Brown1974 §§6–7).
+3, Theorem 6 with the formula for `χ − χ_ℚ`, and the `p`-fractional part of `χ` (Brown1974 §§6–7).
 Products on Farrell cohomology, which need a complete diagonal approximation. `L²`-invariants,
 Bieri–Neumann–Strebel invariants, and the comparison of the Hattori–Stallings and rational Euler
 characteristics beyond type `FL` (the Bass conjecture). The dimension theory of profinite groups.
@@ -201,10 +206,31 @@ Pinned at `1b1ccf4b088b32fa3f23f2de1127433254a81e1e`.
   that `cell C n` is empty for all large `n`, finite type that each `cell C n` is finite.
 - `Module.Flat` for modules over a commutative ring (used only for `R`-modules, never for
   `RG`-modules), `Module.Projective` and `Module.Finite` over any semiring, `PadicInt`.
+- `IsMulTorsionFree` (`Mathlib/Algebra/Group/Monoid.lean` line 552), the meaning of *torsion-free*
+  throughout: commuting elements with equal nonzero powers are equal; for a group it holds exactly
+  when no element other than `1` has finite order (`isMulTorsionFree_iff_not_isOfFinOrder`,
+  `Mathlib/GroupTheory/OrderOfElement.lean` line 911). Multiplicative `ℤ` satisfies it and `ℤ/2`
+  does not (`s² = 1²` with `s ≠ 1`).
 - `SSet`, its chain complex `SSet.chainComplex` and homology `SSet.homology`
   (`Mathlib/AlgebraicTopology/SimplicialSet/Homology/Basic.lean` lines 67 and 124): the unnormalized
-  simplicial chains with coefficients in an object of a preadditive category; used for the
-  simplicial sets of 5.4 and 8.8.
+  simplicial chains with coefficients in an object of a preadditive category, whose degree-`n` term
+  is a coproduct over all `n`-simplices, degenerate ones included, so it does not vanish above the
+  dimension (for `Δ[0]` it is `ℤ` in every degree). Homology is always `SSet.homology`; every
+  chain-level argument of 5.4, 8.8 and 8.9 uses the normalized chains of
+  `Mathlib/AlgebraicTopology/SimplicialSet/Homology/Nondegenerate.lean`:
+  `SSet.normalizedChainComplex` (line 43, built from the canonical splitting `SSet.splitting` by
+  nondegenerate simplices), whose degree-`n` term is the coproduct over the nondegenerate
+  `n`-simplices (`SSet.isColimitCofanNormalizedChainComplex`, line 167);
+  `SSet.homotopyEquivNormalizedChainComplex` (line 86), a homotopy equivalence from the unnormalized
+  to the normalized chains, so both have the homology `SSet.homology`;
+  `SSet.normalizedChainComplexMap` (line 200), the functoriality in simplicial maps;
+  `SSet.isZero_normalizedChainComplex_X_of_hasDimensionLT` (line 182) and
+  `SSet.isZero_homology_of_hasDimensionLT` (line 252): for `X.HasDimensionLT d` the normalized
+  chains and the homology vanish in degrees `≥ d`. A simplicial set is finite-dimensional when
+  `SSet.HasDimensionLE X N` holds for some `N` (`Mathlib/AlgebraicTopology/SimplicialSet/Dimension.lean`
+  lines 32 and 36: every nondegenerate simplex has dimension at most `N`), and
+  `SSet.hasDimensionLE_prod` (`Mathlib/AlgebraicTopology/SimplicialSet/FiniteProd.lean` line 66)
+  bounds the dimension of a product by the sum of the dimensions.
 - `IsCoveringMap.existsUnique_continuousMap_lifts` (`Mathlib/Topology/Homotopy/Lifting.lean`
   line 489): a map from a simply connected, locally path-connected space lifts uniquely along a
   covering map once the lift of one point is fixed.
@@ -314,10 +340,12 @@ Pinned at `2fd255d997f47c0b5d834ee416c7015d55444ce5`.
   `Hₙ(G, k[X] ⊗ M) ≅ ⊕_{x ∈ Σ} Hₙ(G_x, M)` and `Hⁿ(G, Hom_k(k[X], M)) ≅ ∏_{x ∈ Σ} Hⁿ(G_x, M)`, and the
   versions with a character of the stabilizer.
 - §1.5: for `G` discrete and a discrete representation `A`, `Θₙ : continuousCohomology n A ≅ Hⁿ(G, A)`.
+- §2.3: the two spectral sequences of a complex, converging with filtrations finite in each total
+  degree.
 - §3.2: for a monomial complex `C` (each `C_p ≅ ⊕_{σ ∈ Σ_p} Ind_{G_σ}^G(k_σ)` with `k_σ` a character),
-  the orbit spectral sequence `E¹_{p,q} = ⊕_{σ ∈ Σ_p} H_q(G_σ, k_σ ⊗ M) ⇒ H^G_{p+q}(C; M)` and its
-  cohomological dual; 3.1 there identifies `H^G_*(C; M)` with `H_*(G, M)` when `C` resolves `k` by
-  `k`-flat terms.
+  the orbit spectral sequence `E¹_{p,q} = ⊕_{σ ∈ Σ_p} H_q(G_σ, k_σ ⊗ M) ⇒ H^G_{p+q}(C; M)`, the first
+  sequence of §2.3, and its cohomological dual; 3.1 there identifies `H^G_*(C; M)` with `H_*(G, M)`
+  when `C` resolves `k` by `k`-flat terms.
 - §3.4: for a `G`-tree (an action without inversions, with a `G`-invariant orientation `E⁺` of the
   edges), the exact sequence `0 → k[E⁺] → k[V] → k → 0` of permutation representations, split after
   forgetting the `G`-action (split over `k`) and not `G`-equivariantly: for `G = ℤ` translating the
@@ -331,10 +359,26 @@ Pinned at `2fd255d997f47c0b5d834ee416c7015d55444ce5`.
   coefficients, compatible with connecting maps, with the projection formula
   `f_*(f^*x ∩ z) = x ∩ f_*z` and, for finite index, `tr(y ∩ z) = res y ∩ tr z`.
 - §5.2: the universal coefficient sequences over a ring of global dimension at most one (Checks only).
-- §6.2: for `N ◁ G` and `M : Rep k G`, the convergent spectral sequence
+- §§6.1–6.2: for `N ◁ G` and `M : Rep k G`, the convergent spectral sequence
   `E₂^{p,q} = Hᵖ(G ⧸ N, H^q(N, M)) ⇒ H^{p+q}(G, M)`, natural in `M` and in morphisms of extensions,
-  with `H^{p+q}(G, M)` finitely filtered by subquotients of the `E₂^{p, n−p}`.
+  with `H^{p+q}(G, M)` finitely filtered by subquotients of the `E₂^{p, n−p}`; it is realised as the
+  spectral sequence of a filtration of the normalized cochains that is finite in each degree (§6.1),
+  with the classical `E_r` on the native page `r + 1`.
 - §6.3: the homological spectral sequence `E²_{p,q} = H_p(G ⧸ N, H_q(N, M)) ⇒ H_{p+q}(G, M)`.
+
+### From TauCetiRoadmap.SpectralSequencesAndConvergence
+
+- §3.4 (Euler identity): for a spectral sequence in Mathlib's carrier with a bidegree assignment
+  (§2.1), converging weakly in every total degree to an abutment whose filtrations are finite, and a
+  page `r` whose nonzero positions are finitely many and all lie in a weak Serre class `P`, only finitely
+  many `Hⁿ` are nonzero and `Σ_n (−1)ⁿ v(Hⁿ) = Σ_{pq} (−1)^{deg pq} v(E_r(pq))` for every `v`
+  additive on short exact sequences in `P`.
+- §5.3 (Euler characteristic of a filtered complex): the same identity for Tau Ceti's spectral
+  sequence of a cochain complex with a filtration finite in each degree, on a native page `r ≥ 2`
+  (the classical `E_{r−1}`), with the sign `(−1)^{p+q}` of the total degree; the Hochschild–Serre
+  sequence of CohomologyOfGroups §6.2 and the bicomplex sequences of its §2.3 are of this form.
+
+These are used with `P` the finite-dimensional `ℚ`-vector spaces and `v` the dimension.
 
 ### From TauCetiRoadmap.FreeGroupsAndLimitGroups
 
@@ -723,6 +767,11 @@ finitely generated projective, through `Hom_{RG}(P_n, A) ≅ P_n^* ⊗_{RG} A`);
 - (d) needs type `FP`: for the additive group `ℚ`, `hd_ℤ ℚ = 1` and `cd_ℤ ℚ = 2` (2.5).
 - For the finite group `ℤ/2` over `ℤ`, `hd = cd = ⊤`, and `(ℤ[ℤ/2])^{ℤ/2} ≠ 0` while
   `Hᵏ(ℤ/2, ℤ[ℤ/2]) = 0` for `k > 0`: (d) is not claimed outside type `FP`.
+- Over the zero ring and `G = 1`, `cd_0 1 = 0` and every `Hᵏ(1, F)` is zero, so no degree carries
+  nonzero cohomology with free coefficients: (b) gives `cd_0 1 ≤ n` for every `n ∈ ℕ`, which is
+  true, while a model of `cd_R G` as the largest `k` with some `Hᵏ(G, F) ≠ 0` would have no value.
+  This is why (b) is an upper bound and the characterization in (d) assumes `R` nontrivial; over
+  `R ≠ 0` and `G = ℤ²`, `H²(ℤ², Rℤ²) = R ≠ 0` and `cd_R ℤ² = 2`.
 
 ### 2.3 Subgroups
 
@@ -894,14 +943,15 @@ by `t_i⁻¹ g t_i ∈ H`, which fixes no basis element unless it is `1`. *Needs
 
 ### 3.2 Serre's theorem
 
-Prove that if `G` is torsion-free and `H ≤ G` has finite index, then `cd_ℤ G = cd_ℤ H`
-(Serre1971Prospects n°1.7, Théorème 1, as cited at Brown1974 line 354 and BieriEckmann1973 line 396;
-BrownGTM87, §VIII.3). Deduce that a torsion-free group with a finite-index subgroup of type `FP` over
+Prove that if `G` is torsion-free (`IsMulTorsionFree G`) and `H ≤ G` has finite index, then
+`cd_ℤ G = cd_ℤ H` (Serre1971Prospects n°1.7, Théorème 1, as cited at Brown1974 line 354 and
+BieriEckmann1973 line 396; BrownGTM87, §VIII.3). Deduce that a torsion-free group with a finite-index subgroup of type `FP` over
 `ℤ` is of type `FP` (BieriEckmann1974 Proposition 3.3(b), lines 300–313). Route: if `cd_ℤ H = n`,
 modify a projective resolution of length `n` by the Eilenberg swindle on its top term into a free
 resolution of length `n` on `H`-free bases; by 3.1(d)–(f) its tensor induction is a resolution of `ℤ`
 over `ℤG` of length `nd` whose terms are sums of `Ind_K^G(ℤ_χ)` with `K` finite, hence `K = 1` and the
-terms are free; so `cd_ℤ G < ⊤` and 2.3(b) gives equality. *Needs:* 3.1, 2.3, 2.7, 1.6.
+terms are free; so `cd_ℤ G < ⊤` and 2.3(b) gives equality. *Needs:* 3.1, 2.3, 2.7, 1.6; Mathlib
+`IsMulTorsionFree`.
 
 **Checks.**
 
@@ -1094,8 +1144,12 @@ acyclic cellular chains, so it is contractible by the Hurewicz and Whitehead the
 
 Simplicial sets are Mathlib's `SSet`, with homology `SSet.homology` of the chain complex
 `SSet.chainComplex`; a simplicial set is *finite-dimensional* when its nondegenerate simplices have
-bounded dimension, and *acyclic* when its integral homology is `ℤ` in degree `0` (through the
-augmentation) and zero in positive degrees. Prove:
+bounded dimension (`SSet.HasDimensionLE`), and *acyclic* when its integral homology is `ℤ` in degree
+`0` (through the augmentation) and zero in positive degrees. Chain-level statements use the
+normalized chains `SSet.normalizedChainComplex`, free on the nondegenerate simplices and zero above
+the dimension, which compute `SSet.homology` through `SSet.homotopyEquivNormalizedChainComplex`; a
+group acting by simplicial automorphisms permutes the nondegenerate simplices and so acts on them
+by permutation modules, through `SSet.normalizedChainComplexMap`. Prove:
 
 - (a) for `Γ : Type` with `cd_ℤ Γ < ⊤` there is an acyclic simplicial set `W` whose nondegenerate
   simplices have dimension at most `N = max(3, cd_ℤ Γ)`, with an action of `Γ` by simplicial
@@ -1106,8 +1160,9 @@ augmentation) and zero in positive degrees. Prove:
   `γ ∈ Γ`, with faces and degeneracies taken pointwise and `G` acting by `(g · f)(x) = f(xg)`, is
   acyclic, its nondegenerate simplices have dimension at most `[G : Γ] · N`, and the stabilizer
   `G_f` of every simplex `f` meets `Γ` trivially, so has order at most `[G : Γ]`; in particular
-  every torsion-free subgroup of `G` acts freely on the simplices of `Z`, and the chains of `Z` are a
-  resolution of `ℤ` over `ℤΓ'` by free modules for every torsion-free `Γ' ≤ G`.
+  every torsion-free subgroup of `G` acts freely on the simplices of `Z`, and the normalized chains
+  of `Z` are a resolution of `ℤ` over `ℤΓ'` of length at most `[G : Γ] · N` by free modules for
+  every torsion-free `Γ' ≤ G`.
 
 (Brown1974 §6, Lemma, lines 637–651, which states (b) for semi-simplicial complexes together with
 the acyclicity of the fixed points of finite subgroups; Serre1971Prospects n°1.7, as cited there.)
@@ -1121,20 +1176,26 @@ its realized simplex to the universal covering `TauCeti.UniversalCover` of `|K|`
 semilocally simply connected), which exists and is determined by the image of one point because the
 simplex is simply connected (`IsCoveringMap.existsUnique_continuousMap_lifts`).
 The deck group `Γ` acts on the lifts, freely since a deck transformation fixing a lift fixes a point.
-The chains of `W` are the lifted cellular chains of the CW structure on `|sd K|` with one cell per
-nondegenerate simplex (AlgebraicTopology §4.7), so they form a free resolution of `ℤ` over `ℤΓ`
-(`TauCeti.cellularResolutionOfIsAspherical`, `TauCeti.cellularChainRepIsoFree`; ClassifyingSpaces
-Stage 4 item 16), and `W` is acyclic. Route for (b): a choice of representatives of `Γ\G`
+The normalized chains of `W` are the lifted cellular chains of the CW structure on `|sd K|` with one
+cell per nondegenerate simplex (AlgebraicTopology §4.7), so they form a free resolution of `ℤ` over
+`ℤΓ` of length at most `N` (`TauCeti.cellularResolutionOfIsAspherical`,
+`TauCeti.cellularChainRepIsoFree`; ClassifyingSpaces Stage 4 item 16), and `W` is acyclic, its
+homology `SSet.homology` being that of the normalized chains
+(`SSet.homotopyEquivNormalizedChainComplex`). Route for (b): a choice of representatives of `Γ\G`
 identifies `Z` with the product of `[G : Γ]` copies of `W`; its chains are homotopy equivalent to
 the tensor power of the chains of `W` (Tau Ceti `SSet.eilenbergZilberHomotopyEquiv`, iterated),
 which is quasi-isomorphic to `ℤ` by the Künneth formula for complexes of free abelian groups; a
-nondegenerate simplex of a product has dimension at most the sum of the dimensions of the factors.
-If `γ ∈ Γ` fixes `f`, then `γ f(1) = f(γ) = (γ · f)(1) = f(1)`, so `γ = 1` by freeness; hence
-`G_f ∩ Γ = 1`, and `G_f` injects into `Γ\G`. *Needs:* 5.3, 4.1; AlgebraicTopology §4.7, §8.11a;
-gap:simplicial-replacement-dimension; ClassifyingSpaces Stage 4 item 16; Tau Ceti
-`TauCeti.UniversalCover`, `TauCeti.UniversalCover.isCoveringMap`,
+nondegenerate simplex of a product has dimension at most the sum of the dimensions of the factors
+(`SSet.hasDimensionLE_prod`). If `γ ∈ Γ` fixes `f`, then `γ f(1) = f(γ) = (γ · f)(1) = f(1)`, so
+`γ = 1` by freeness; hence `G_f ∩ Γ = 1`, and `G_f` injects into `Γ\G`. A torsion-free `Γ'` meets
+every finite `G_f` trivially, so it permutes the nondegenerate simplices of `Z` freely and the
+normalized chains of `Z`, zero above `[G : Γ] · N`, are free over `ℤΓ'`. *Needs:* 5.3, 4.1;
+AlgebraicTopology §4.7, §8.11a; gap:simplicial-replacement-dimension; ClassifyingSpaces Stage 4
+item 16; Tau Ceti `TauCeti.UniversalCover`, `TauCeti.UniversalCover.isCoveringMap`,
 `TauCeti.cellularResolutionOfIsAspherical`, `TauCeti.cellularChainRepIsoFree`,
 `SSet.eilenbergZilberHomotopyEquiv`; Mathlib `SSet`, `SSet.chainComplex`, `SSet.homology`,
+`SSet.normalizedChainComplex`, `SSet.homotopyEquivNormalizedChainComplex`,
+`SSet.normalizedChainComplexMap`, `SSet.hasDimensionLE_prod`,
 `IsCoveringMap.existsUnique_continuousMap_lifts`.
 
 - `Z` is functorial in `W` for `Γ`-equivariant simplicial maps, and for `Γ = G` it is `W`.
@@ -1168,8 +1229,8 @@ a finite-dimensional acyclic simplicial set (5.4), the input of the denominator 
 Layers 1–2 and 4.1; ClassifyingSpaces Stage 2 item 10 and Stage 4 item 16; AlgebraicTopology §§4.7,
 8.1, 8.3, 8.5 and 8.11a, with gap:simplicial-replacement-dimension; Tau Ceti's cell attachment,
 Hurewicz and Whitehead theorems, cellular resolution of an aspherical CW complex, Eilenberg–Zilber
-theorem, product CW structures and wedges of circles; Mathlib's simplicial sets and lifting along
-coverings.
+theorem, product CW structures and wedges of circles; Mathlib's simplicial sets with their
+normalized chains, and lifting along coverings.
 
 ---
 
@@ -1379,8 +1440,8 @@ ClassifyingSpaces Stage 4 item 17.
 Define, for a finitely generated projective left `RG`-module `P`, its *Hattori–Stallings rank* `r_P`,
 the finitely supported function on the conjugacy classes of `G` with values in `R` obtained from the
 Hattori–Stallings trace of EtaleCohomologyFoundations §F.10.3 (applied to `(RG)ᵐᵒᵖ`) through the
-`R`-linear isomorphism `RG/[RG, RG] ≅ R^{(G/conj)}`, `Σ a_g g ↦ Σ a_g [g]` (BrownGTM87, §IX.2;
-Brown1974 lines 81–86). Prove that `[RG, RG]` is the `R`-span of the `g − hgh⁻¹`, so that this map is
+`R`-linear isomorphism `RG/[RG, RG] ≅ R^{(G/conj)}`, `Σ a_g g ↦ Σ a_g [g]` (BrownGTM87, §IX.2).
+Prove that `[RG, RG]` is the `R`-span of the `g − hgh⁻¹`, so that this map is
 an isomorphism, and that `r_P` is: additive in `P` and invariant under isomorphism; equal to
 `δ_{[1]}` for `P = RG`; compatible with base change along `R → R'`; compatible with induction from
 `H ≤ G`, `r_{RG ⊗_{RH} P}([g]_G) = Σ r_P([h]_H)` over the `H`-classes contained in `[g]_G`; and, for
@@ -1550,12 +1611,13 @@ Lefschetz numbers are computed on chains. *Needs:* 8.1, 7.3.
 - For the cellular chains of the circle with `ℤ/2` acting by the rotation of order `2` (free on
   cells), `χ(C) = 0 = 2 · χ(circle)`.
 
-### 8.3 The rational and the naive Euler characteristic
+### 8.3 The rational Euler characteristic and the identity-class rank
 
 Define, for a group with `H_*(G, ℚ)` of finite total dimension, `χ_ℚ(G) = Σᵢ (−1)ⁱ dim_ℚ Hᵢ(G, ℚ)`
-(Brown1974, §4, lines 386–387), and for `G` of type `FP` over `ℤ` with a finite projective resolution
-`P`, the *naive Euler characteristic* `χ̃(G) = Σᵢ (−1)ⁱ r_{Pᵢ}([1]) ∈ ℤ` (Brown1974 lines 81–86).
-Prove: `χ̃(G)` does not depend on `P` (generalized Schanuel lemma and the additivity of 7.1);
+(Brown1974, §4, lines 386–387; this is the invariant Brown1974 calls the naive Euler characteristic,
+lines 82–83). For `G` of type `FP` over `ℤ` and a finite projective resolution `P` of the trivial
+`ℤG`-module, define `χ̃(G) = Σᵢ (−1)ⁱ r_{Pᵢ}([1]) ∈ ℤ`, the alternating sum of the identity-class
+coefficients of the Hattori–Stallings ranks of 7.1 (the ranks as in BrownGTM87, §IX.2). Prove: `χ̃(G)` does not depend on `P` (generalized Schanuel lemma and the additivity of 7.1);
 `χ̃(H) = [G : H] · χ̃(G)` for `H` of finite index (7.1); for type `FP`,
 `χ_ℚ(G) = Σᵢ (−1)ⁱ Σ_{[g]} r_{Pᵢ}([g]) = Σᵢ (−1)ⁱ rank_ℤ(ℤ ⊗_{ℤG} Pᵢ)`; and for type `FL`,
 `χ_ℚ(G) = χ̃(G) = Σᵢ (−1)ⁱ rank Fᵢ` (Brown1974 lines 402–410). *Needs:* 7.1, 1.2; Tau Ceti's Schanuel
@@ -1618,21 +1680,28 @@ every field). Route: compute on `Hom_{ℤΓ'}(P, V)` for a finite projective res
 
 ### 8.6 Extensions
 
-Prove: (a) for a convergent first-quadrant spectral sequence of vector spaces over a field whose
-`E₂`-page has finitely many nonzero terms, all finite-dimensional, the abutment is finite-dimensional
-and `Σ_n (−1)ⁿ dim Hⁿ = Σ_{p,q} (−1)^{p+q} dim E₂^{p,q}` (each page is the homology of the previous one
-and `E_∞` is the graded object of a finite filtration); (b) if `N ◁ G`, `N` and `G ⧸ N` are virtually
-of type `FP` and `G` is virtually torsion-free, then `G` is virtually of type `FP` and
-`χ(G) = χ(N) · χ(G ⧸ N)` (Brown1974, §4, Corollary 2, lines 452–463). Route for (b): pass to a
-torsion-free finite-index subgroup of `G` whose intersection with `N` and image in `G ⧸ N` are of type
-`FP` (4.4, 8.4(c)); it is of type `FP` (2.4), and the spectral sequence of CohomologyOfGroups §6.2 with
-coefficients `ℚ`, `E₂^{p,q} = Hᵖ(Q, H^q(N, ℚ))`, has by 8.5 alternating row sums
-`χ(Q) · dim H^q(N, ℚ)`, so (a) gives the product. *Needs:* 8.4, 8.5, 4.4, 2.4; CohomologyOfGroups §6.2.
+Prove that if `N ◁ G`, `N` and `G ⧸ N` are virtually of type `FP` and `G` is virtually torsion-free,
+then `G` is virtually of type `FP` and `χ(G) = χ(N) · χ(G ⧸ N)` (Brown1974, §4, Corollary 2,
+lines 452–463). Route: pass to a torsion-free finite-index subgroup `Γ` of `G` whose intersection
+`Γ ∩ N` and image `Q` in `G ⧸ N` are of type `FP` (4.4, 8.4(c)); it is of type `FP` (2.4). The
+spectral sequence of CohomologyOfGroups §6.2 for `Γ ∩ N ◁ Γ` with coefficients `ℚ`,
+`E₂^{p,q} = Hᵖ(Q, H^q(Γ ∩ N, ℚ))`, is the spectral sequence of a filtration of the normalized
+cochains that is finite in each degree (CohomologyOfGroups §6.1); its `E₂`-page is zero unless
+`p ≤ cd_ℤ Q` and `q ≤ cd_ℤ(Γ ∩ N)`, its terms are finite-dimensional, and by 8.5 its alternating row
+sums are `χ(Q) · dim H^q(Γ ∩ N, ℚ)`. The Euler characteristic identity of SpectralSequencesAndConvergence
+§5.3, with the finite-dimensional `ℚ`-vector spaces as weak Serre class and the dimension as
+additive invariant, applied on the classical `E₂` (its native page `3`), gives
+`χ_ℚ(Γ) = Σ_{p,q} (−1)^{p+q} dim E₂^{p,q} = χ(Q) · χ_ℚ(Γ ∩ N)`; dividing by
+`[G : Γ] = [G ⧸ N : Q] · [N : Γ ∩ N]` gives the product (8.4). *Needs:* 8.4, 8.5, 4.4, 2.4;
+CohomologyOfGroups §§6.1–6.2; SpectralSequencesAndConvergence §5.3.
 
 **Checks.**
 
 - `χ(ℤ/2 × ℤ) = χ(ℤ/2) · χ(ℤ) = 0`.
-- `χ(F_2 × F_3) = (−1)(−2) = 2`, also `χ_ℚ` of the product by the Künneth formula.
+- `χ(F_2 × F_3) = (−1)(−2) = 2`, also `χ_ℚ` of the product by the Künneth formula. With `N = F_3`,
+  the `E₂`-terms `H⁰(F_2, ℚ) ⊗ H^q(F_3, ℚ)` and `H¹(F_2, ℚ) ⊗ H^q(F_3, ℚ)` have dimensions `1, 3`
+  and `2, 6`, so the total degrees `0, 1, 2` carry dimensions `1, 5, 6` and the supplied Euler
+  identity gives `1 − 5 + 6 = 2`.
 - For the Klein bottle group as an extension of `ℤ` by `ℤ`, `χ = 0 · 0 = 0`.
 
 ### 8.7 Actions on acyclic complexes, amalgams and HNN extensions
@@ -1650,10 +1719,14 @@ HNN extensions of finite homological type whose vertex and edge groups have fini
 tree (CohomologyOfGroups §3.4; FreeGroupsAndLimitGroups §§4.5, 4.7). Route: restrict to a torsion-free
 normal subgroup `Γ'` of finite index, decomposing each `Ind_{G_σ}^G` over the double cosets
 `Γ'\G/G_σ`; the orbit spectral sequence of CohomologyOfGroups §3.2 with rational coefficients,
-`E¹_{p,q} = ⊕ H_q(Γ'_σ, ℚ_σ) ⇒ H_{p+q}(Γ', ℚ)`, and 8.6(a) give `χ_ℚ(Γ')`; a character `ε` of a
-torsion-free group `T` of finite homological type does not change it, `χ_ℚ(T; ℚ_ε) = χ_ℚ(T)`, by 8.4(a)
-for `ker ε`. *Needs:* 8.4, 8.6, 4.4; CohomologyOfGroups §3.2, §3.4; FreeGroupsAndLimitGroups §4.5,
-§4.7.
+`E¹_{p,q} = ⊕ H_q(Γ'_σ, ℚ_σ) ⇒ H_{p+q}(Γ', ℚ)`, converging with filtrations finite in each total
+degree (CohomologyOfGroups §2.3, where it is the spectral sequence of the row filtration of a
+first-quadrant bicomplex), has finitely many nonzero `E¹`-terms, all finite-dimensional, so the
+Euler identity of SpectralSequencesAndConvergence §3.4, in its filtered-complex form §5.3 (the
+finite-dimensional `ℚ`-vector spaces and their dimension), gives `χ_ℚ(Γ')`; a character `ε` of a
+torsion-free group `T` of finite homological type does not change it, `χ_ℚ(T; ℚ_ε) = χ_ℚ(T)`, by
+8.4(a) for `ker ε`. *Needs:* 8.4, 4.4; CohomologyOfGroups §§2.3, 3.2, 3.4;
+SpectralSequencesAndConvergence §§3.4, 5.3; FreeGroupsAndLimitGroups §4.5, §4.7.
 
 **Checks.**
 
@@ -1670,7 +1743,18 @@ for `ker ε`. *Needs:* 8.4, 8.6, 4.4; CohomologyOfGroups §3.2, §3.4; FreeGroup
 Let a finite group `G` act by simplicial automorphisms on a finite-dimensional simplicial set `X`
 (5.4). For `H ≤ G` the `H`-fixed simplices form a simplicial subset `X^H`, a face of a fixed simplex
 being fixed, and `X/H` is the orbit simplicial set. Homology is `SSet.homology`; with coefficients in
-`𝔽_p`, `χ_p(Y) = Σᵢ (−1)ⁱ dim_{𝔽_p} Hᵢ(Y; 𝔽_p)` whenever the total dimension is finite. Prove:
+`𝔽_p`, `χ_p(Y) = Σᵢ (−1)ⁱ dim_{𝔽_p} Hᵢ(Y; 𝔽_p)` whenever the total dimension is finite. Chains are
+the normalized chains `N(Y) = SSet.normalizedChainComplex` (5.4), zero above the dimension of `Y`
+(`SSet.isZero_normalizedChainComplex_X_of_hasDimensionLT`) and computing `SSet.homology`
+(`SSet.homotopyEquivNormalizedChainComplex`); `G` acts on `N(X)` through
+`SSet.normalizedChainComplexMap`, permuting the basis of nondegenerate simplices. Prove first the two
+compatibilities the arguments below use: for `H ≤ G`, a simplex of `X^H` is degenerate in `X^H` if
+and only if it is degenerate in `X` (if `x = s_i y` then `y = d_i x` is `H`-fixed), so `N(X^H)` is
+the subcomplex of `N(X)` spanned by the `H`-fixed nondegenerate simplices, and for a union of fixed
+simplicial subsets the relative normalized chains are spanned by the nondegenerate simplices outside
+it; and the image in `X/H` of a nondegenerate simplex is nondegenerate (if `[x] = s_i[y]` then
+`x = h · s_i y = s_i(h · y)` for some `h ∈ H`), so `N(X/H)` is the module of `H`-coinvariants
+`ℤ ⊗_{ℤH} N(X)`, compatibly with the differentials. Prove:
 
 - (a) (Smith, Floyd) for a prime `p`, `G = ℤ/p` and `Σᵢ dim Hᵢ(X; 𝔽_p) < ∞`: `X^G` and `X/G` have
   finite total mod-`p` homology, `Σ_{i ≥ n} dim Hᵢ(X^G; 𝔽_p) ≤ Σ_{i ≥ n} dim Hᵢ(X; 𝔽_p)` for every
@@ -1686,7 +1770,8 @@ being fixed, and `X/H` is the orbit simplicial set. Homology is `SSet.homology`;
 - (c) for a finite `p`-group `G` and a finite-dimensional chain complex `C` of projective
   `𝔽_p[G]`-modules with finite total homology, `C_G = 𝔽_p ⊗_{𝔽_p[G]} C` has finite total homology
   and `χ(C) = |G| · χ(C_G)` (Brown1974 Theorem 1′, lines 174–185);
-- (d) (Brown) if every `Hᵢ(X; ℤ)` is finitely generated (they vanish above the dimension of `X`),
+- (d) (Brown) if every `Hᵢ(X; ℤ)` is finitely generated (they vanish above the dimension of `X`,
+  `SSet.isZero_homology_of_hasDimensionLT`),
   and an integer `d ≥ 1` divides the cardinality of the `G`-orbit of every nondegenerate simplex of
   `X`, then
   `d ∣ χ(X) = Σᵢ (−1)ⁱ rank Hᵢ(X; ℤ)` (Brown1974 §2, Corollary of Theorems 2 and 2′, lines 251–260,
@@ -1694,10 +1779,11 @@ being fixed, and `X/H` is the orbit simplicial set. Homology is `SSet.homology`;
 
 Route: (a) as in Floyd1952 §§2 and 4, whose chain-level arguments apply verbatim to a simplicial
 set, since for `G = ℤ/p` a nondegenerate simplex is either fixed or has `p` distinct translates, so
-the chains of `X` over `𝔽_p` are the chains of `X^G` plus free `𝔽_p[G]`-modules; for a simplicial
-set Smith's facts (3.4)–(3.6) hold at the chain level, the chains vanishing above the dimension of
-`X` and the norm `1 + g + ⋯ + g^{p−1}` identifying the free part modulo `1 − g` with the chains of
-`X/G` relative to the image of `X^G`; (b) by (a) along a chain `1 = H₀ < H₁ < ⋯ < H_r = H`
+the normalized chains of `X` over `𝔽_p` are those of `X^G` plus free `𝔽_p[G]`-modules; for a
+simplicial set Smith's facts (3.4)–(3.6) hold at the chain level, the normalized chains vanishing
+above the dimension of `X` and the norm `1 + g + ⋯ + g^{p−1}` identifying the free part modulo
+`1 − g` with the normalized chains of `X/G` relative to the image of `X^G` (the compatibilities
+above); (b) by (a) along a chain `1 = H₀ < H₁ < ⋯ < H_r = H`
 with each `H_{i−1}` normal in `H_i` of index `p`, as `X^{H_i} = (X^{H_{i−1}})^{H_i/H_{i−1}}`; (c)
 because `𝔽_p[G]` is local, so projective modules are free, and 8.1 over the noetherian ring
 `𝔽_p[G]` (the vanishing hypothesis holds above the dimension of `C`) replaces `C` by a bounded
@@ -1706,13 +1792,18 @@ each prime `p` with `p^e ∥ d`, restrict to a Sylow `p`-subgroup `P`, whose orb
 cardinality divisible by `p^e`; decompose `X` by isotropy type, `X_H` being the simplices with
 stabilizer exactly `H`, a difference of the simplicial subsets `X^H` and `⋃_{H′ > H} X^{H′}`, which
 have finite mod-`p` homology by (b) and Mayer–Vietoris (the family of fixed simplicial subsets is
-closed under intersection); `N_P(H)/H` acts freely on the relative chains of `X_H`, so (c) gives
+closed under intersection); `N_P(H)/H` acts freely on the basis of the relative normalized chains
+of `X_H`, a finite-dimensional complex of free `𝔽_p[N_P(H)/H]`-modules, so (c) gives
 `χ_p(X_H) = (N_P(H) : H) · χ_p(Y_H)` with `Y_H = X_H/N_P(H)`, and additivity along the filtration of
 `X` by `P`-invariant simplicial subsets gives `χ_p(X) = Σ_H (P : H) · χ_p(Y_H)` over representatives
-`H` of the occurring conjugacy classes of isotropy groups (Brown1974 lines 261–326); every term is
+`H` of the occurring conjugacy classes of isotropy groups (Brown1974 lines 261–326, applying its
+Theorem 1 to the normalized chain complex at line 302); every term is
 divisible by `p^e`; finally
 `χ_p(X) = χ(X)` by universal coefficients, the integral homology being finitely generated. *Needs:*
-8.1; Mathlib `SSet`, `SSet.homology`, `Sylow`.
+8.1; Mathlib `SSet`, `SSet.homology`, `SSet.normalizedChainComplex`,
+`SSet.homotopyEquivNormalizedChainComplex`, `SSet.normalizedChainComplexMap`,
+`SSet.isZero_normalizedChainComplex_X_of_hasDimensionLT`, `SSet.isZero_homology_of_hasDimensionLT`,
+`Sylow`.
 
 - The Smith inequality of (a) with `n = 0` bounds the total mod-`p` homology of `X^G` by that of `X`;
   in particular, for a finite `p`-group acting on a finite-dimensional simplicial set with the mod-`p`
@@ -1736,6 +1827,16 @@ divisible by `p^e`; finally
   `k`-simplices are the `(k + 1)`-tuples of elements of `ℤ/2`, so every orbit has two elements, while
   its Euler characteristic is `1`, not divisible by `2`; it has nondegenerate simplices in every
   dimension.
+- Normalized, not unnormalized, chains: for `X = Δ[0]` the unnormalized chains `SSet.chainComplex`
+  are `ℤ` in every degree, with `d_n` the alternating sum of `n + 1` identities, so `d₁ = 0` and
+  `d₂ = id`, while the normalized chains are `ℤ` in degree `0` and `0` above. Both give `H₀ = ℤ` and
+  `Hᵢ = 0` for `i > 0`, but only the normalized complex has finite length, as (a), (c), (d) and 5.4
+  require; a chain model counting degenerate simplices would make every complex of this section
+  unbounded.
+- Finite total homology of `X` is used in (b): `ℤ/2` acting trivially on the discrete simplicial set
+  `ℕ` (dimension `0`) has `X^G = X` with `H₀(X^G; 𝔽₂) = 𝔽₂^{(ℕ)}` of infinite dimension, and is
+  excluded because `H₀(X; 𝔽₂)` is infinite as well. For a point both totals are `1`; for the
+  reflection of the circle above the total for `X` is `2` and for `X^G` it is `2`.
 
 ### 8.9 Denominators
 
@@ -1747,8 +1848,9 @@ Brown1974 lines 611–614, for the weaker statement that some power of `m` works
 multiple exists: for a torsion-free normal subgroup `Γ'` of finite index (the normal core of a
 torsion-free finite-index subgroup, 4.1), every finite subgroup of `G` meets `Γ'` trivially, so its
 order divides `[G : Γ']`. Route: let `Q = G ⧸ Γ'` and `Z` the simplicial set of 5.4(b); `Γ'` acts
-freely on `Z`, so `X = Z/Γ'` is a finite-dimensional simplicial set whose chains are those of `Z`
-tensored over `ℤΓ'` with `ℤ`, hence `Hᵢ(X; ℤ) ≅ Hᵢ(Γ', ℤ)` (`groupHomologyIsoTor`), finitely
+freely on `Z`, so `X = Z/Γ'` is a finite-dimensional simplicial set whose normalized chains are
+those of `Z` tensored over `ℤΓ'` with `ℤ` (8.8); as the normalized chains of `Z` are a free
+resolution of `ℤ` over `ℤΓ'` (5.4(b)), `Hᵢ(X; ℤ) ≅ Hᵢ(Γ', ℤ)` (`groupHomologyIsoTor`), finitely
 generated as `G` has finite homological type, and `χ(X) = χ_ℚ(Γ')`. The group `Q` acts on `X`, and the
 stabilizer of the image of a simplex `z` is the image of `G_z`, isomorphic to `G_z` since
 `G_z ∩ Γ' = 1`; its order divides `m`, and `m` divides `|Q|`, so `d = |Q|/m` divides the cardinality
@@ -1784,8 +1886,9 @@ the Checks are stated for the amalgam.
 
 ### Dependencies
 
-Layers 1, 2, 4, 5 (Serre's construction 5.4) and 7; CohomologyOfGroups §§3.2, 3.4 and 6.2;
-FreeGroupsAndLimitGroups §§4.5, 4.7 and 4.9; Mathlib's simplicial sets and Sylow subgroups.
+Layers 1, 2, 4, 5 (Serre's construction 5.4) and 7; CohomologyOfGroups §§2.3, 3.2, 3.4, 6.1 and 6.2;
+SpectralSequencesAndConvergence §§3.4 and 5.3; FreeGroupsAndLimitGroups §§4.5, 4.7 and 4.9; Mathlib's
+simplicial sets with their normalized chains, and Sylow subgroups.
 
 ---
 

@@ -59,7 +59,7 @@ title = "Euler characteristics of discrete groups and G-spaces"
 year = 1974
 venue = "Inventiones Mathematicae 27 (1974)"
 locator_scheme = "theorem"
-locator = "§1 Theorem 1, Theorem 1′ and Swan's theorem; §2 Theorem 2′ and its Corollary with proofs (lines 243-333); §3 Definition and Proposition 1; §4 Theorem 3, Corollaries 1 and 2; §5 Proposition 2; §6 Theorem 5, Corollary 1 and the Lemma (Serre's construction, lines 637-651); Appendix A Theorem 7"
+locator = "introduction, lines 82-83 (the naive Euler characteristic, the rational one of §4); §1 Theorem 1, Theorem 1′ and Swan's theorem; §2 Theorem 2′ and its Corollary with proofs (lines 243-333, normalized chain complex at line 302); §3 Definition and Proposition 1; §4 Theorem 3, Corollaries 1 and 2; §5 Proposition 2; §6 Theorem 5, Corollary 1 and the Lemma (Serre's construction, lines 637-651); Appendix A Theorem 7"
 url = "https://gdz.sub.uni-goettingen.de/download/pdf/PPN356556735_0027/LOG_0027.pdf"
 fetched_from = "https://gdz.sub.uni-goettingen.de/download/pdf/PPN356556735_0027/LOG_0027.pdf"
 fetched_at = "2026-11-14T07:18:46Z"
@@ -67,7 +67,7 @@ sha256 = "775a0e7a65446f211d49ea405915206c7c86619c066583d55d3aaf5bf9baa64b"
 licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-14"
-cited_for = ["1.2", "1.4", "2.1", "2.7", "3.1", "3.2", "4.1", "4.4", "5.4", "7.1", "7.3", "7.4", "7.5", "8.1", "8.2", "8.3", "8.4", "8.5", "8.6", "8.7", "8.8", "8.9"]
+cited_for = ["1.2", "1.4", "2.1", "2.7", "3.1", "3.2", "4.1", "4.4", "5.4", "7.3", "7.4", "7.5", "8.1", "8.2", "8.3", "8.4", "8.5", "8.6", "8.7", "8.8", "8.9"]
 
 [[source]]
 id = "Brown1975"
@@ -99,7 +99,7 @@ url = "https://doi.org/10.1007/978-1-4684-9327-6"
 licence_class = "none"
 status = "uncertified"
 version_note = "paywalled; cited by its locator without the text"
-cited_for = ["1.2", "1.3", "1.6", "1.7", "2.3", "2.5", "2.6", "3.1", "3.2", "4.2", "4.3", "5.1", "5.2", "5.3", "7.1", "7.2", "9.1", "9.2", "9.3", "9.4", "9.5"]
+cited_for = ["1.2", "1.3", "1.6", "1.7", "2.3", "2.5", "2.6", "3.1", "3.2", "4.2", "4.3", "5.1", "5.2", "5.3", "7.1", "7.2", "8.3", "9.1", "9.2", "9.3", "9.4", "9.5"]
 
 [[source]]
 id = "Farrell1977"
