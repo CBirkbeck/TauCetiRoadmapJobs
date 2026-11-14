@@ -485,7 +485,8 @@
       "mathlib:groupHomology.indIso",
       "tauceti:TauCeti.groupCohomology.corestriction",
       "tauceti:TauCeti.groupCohomology.map_subtype_id_comp_corestriction",
-      "tauceti:TauCeti.groupHomology.transfer"
+      "tauceti:TauCeti.groupHomology.transfer",
+      "tauceti:TauCeti.groupHomology.transfer_comp_map_subtype_id"
      ],
      "api": [],
      "tests": [

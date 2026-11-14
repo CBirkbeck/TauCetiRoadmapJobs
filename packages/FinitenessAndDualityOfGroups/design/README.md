@@ -36,8 +36,8 @@ groups and the Farrell cohomology of groups of finite virtual cohomological dime
 instance, and a statement is made over `ℤ` only where the theory is integral: Serre's theorem, the
 virtual cohomological dimension, the Euler characteristic, and Poincaré duality from abstract
 isomorphisms. No other roadmap plans these objects:
-CohomologyOfGroups excludes them by name in its Scope and names this roadmap among its downstream
-consumers.
+CohomologyOfGroups excludes them by name in its Scope and describes a roadmap on finiteness
+conditions and duality groups among its downstream consumers.
 
 **Already in the library and used as it stands.** Mathlib's `groupCohomology`, `groupHomology` and
 `tateCohomology` on `Rep R G`; the comparisons `groupCohomologyIsoExt`, `groupHomologyIsoTor` and
@@ -210,6 +210,20 @@ Pinned at `1b1ccf4b088b32fa3f23f2de1127433254a81e1e`.
   that `cell C n` is empty for all large `n`, finite type that each `cell C n` is finite.
 - `Module.Flat` for modules over a commutative ring (used only for `R`-modules, never for
   `RG`-modules), `Module.Projective` and `Module.Finite` over any semiring, `PadicInt`.
+- Further carriers the layers name: `MonoidAlgebra`
+  (`Mathlib/Algebra/MonoidAlgebra/Defs.lean` line 76), the group ring `RG` (1.2, 7.1); `Rep.trivial`
+  (`Mathlib/RepresentationTheory/Rep/Basic.lean` line 288), the trivial representation as an object
+  of `Rep` (2.1); `Representation.ofModule'` (`Mathlib/RepresentationTheory/Basic.lean` line 191), the
+  representation of `G` on an `RG`-module (7.2); `ConjClasses` (`Mathlib/Algebra/Group/Conj.lean`
+  line 133), the conjugacy classes indexing Hattori–Stallings ranks (7.1); `PiTensorProduct`
+  (`Mathlib/LinearAlgebra/PiTensorProduct/Basic.lean` line 104) and `HomologicalComplex`
+  (`Mathlib/Algebra/Homology/HomologicalComplex.lean` line 59) for tensor induction (3.1) and 8.1;
+  `QuasiIso` (`Mathlib/Algebra/Homology/QuasiIso.lean` line 138: an isomorphism on homology in
+  every degree) and `IsNoetherianRing` (`Mathlib/RingTheory/Noetherian/Defs.lean` line 191) for
+  Wall's finite replacement of complexes (8.1); `IsLocalRing` (`Mathlib/RingTheory/LocalRing/Defs.lean`
+  line 30) for 7.5; `Sylow` (`Mathlib/GroupTheory/Sylow.lean` line 54) with Sylow's existence theorem
+  `Sylow.exists_subgroup_card_pow_prime` (line 723: a finite group whose order is divisible by `pⁿ`
+  has a subgroup of order `pⁿ`), for 8.8 and 8.9.
 - `Localization.AtPrime` (`Mathlib/RingTheory/Localization/AtPrime/Basic.lean` line 55), a local
   ring by the instance `Localization.AtPrime.isLocalRing` (line 105), and Nakayama's lemma
   `Submodule.eq_bot_of_le_smul_of_le_jacobson` (`Mathlib/RingTheory/Nakayama.lean` line 117): a
@@ -257,7 +271,9 @@ Pinned at `2fd255d997f47c0b5d834ee416c7015d55444ce5`.
   line 89), for `[Ring A]` and `m : ℕ∞`: a resolution `⋯ → A^{n₁} → A^{n₀} → M → 0` by coordinate
   finite free modules, exact at `M, F₀, …, F_{m−1}`. With `.zero_iff` (finitely generated),
   `.one_iff` (finitely presented), `.mono`, `.of_equiv`, `.succ_iff_ker`, `.ker_of_projective`,
-  `.top_iff`, `.of_projective`, `.prod`, `.pi`; `.extension`, `.cokernel` and `.kernel` of
+  `.top_iff`, `.of_projective`, `.prod`, `.pi`; `TauCeti.Huber.IsPseudoCoherentOver.of_isNoetherianRing`
+  (line 391: over a noetherian ring a finitely generated module is `⊤`-pseudocoherent, used in the
+  Checks of 1.2); `.extension`, `.cokernel` and `.kernel` of
   `TwoOutOfThree.lean` (a cokernel of an injection from an `(m − 1)`- into an `m`-pseudocoherent
   module is `m`-pseudocoherent); and `TauCeti.Huber.isPseudoCoherentOver_restrictScalars_iff`
   (`RestrictScalars.lean` line 155), for `[Ring A] [Ring S] [Module A S] [IsScalarTower A S S]` with
@@ -284,6 +300,8 @@ Pinned at `2fd255d997f47c0b5d834ee416c7015d55444ce5`.
   `CochainComplex.isTotallyAcyclicProjective_splice` (`.../Abelian/Extension.lean` line 63: a splice
   of short exact sequences with projective middle terms and ends with `Ext¹(−, Q) = 0` for projective
   `Q` is totally acyclic); `CategoryTheory.isGorensteinProjective.ext_eq_zero`;
+  `CategoryTheory.isGorensteinProjective_of_projective` (`.../Abelian.lean` line 263: a projective
+  object is Gorenstein projective, through the complete resolution `Q →𝟙 Q` in degrees `−1` and `0`);
   `CategoryTheory.GorensteinProjective.exactStructure_isFrobenius` (`.../Abelian/Frobenius.lean`
   line 195) with relative projectives and injectives the projective objects;
   `TauCeti.ExactStructure.CompleteResolution`, `.lift`, `.nonempty_homotopy_zero_iff` and
@@ -311,6 +329,23 @@ Pinned at `2fd255d997f47c0b5d834ee416c7015d55444ce5`.
   `TauCeti.groupCohomology.map_subtype_id_comp_corestriction`
   (`TauCeti/RepresentationTheory/Homological/GroupCohomology/Corestriction.lean` line 165):
   restriction followed by corestriction is multiplication by the index on `Hⁿ(G, A)`.
+- `TauCeti.groupHomology.transfer M S n : Hₙ(G, M) ⟶ Hₙ(S, M)` for `M : Rep R G` and
+  `[S.FiniteIndex]` (`TauCeti/RepresentationTheory/Homological/GroupHomology/Transfer/Basic.lean`
+  line 79), with `TauCeti.groupHomology.transfer_comp_map_subtype_id` (line 121): transfer followed
+  by corestriction `Hₙ(S, M) ⟶ Hₙ(G, M)` is multiplication by `[G : S]` on `Hₙ(G, M)`, in every
+  degree `n`; used in 2.3(c).
+- `TauCeti.exists_linearEquiv_comp_fst_eq_comp_snd_comp` (`TauCeti/Algebra/Module/Projective/Schanuel.lean`
+  line 82): Schanuel's lemma in automorphism form, over any semiring: for linear maps `a : A → E` and
+  `b : B → E` from projective modules with the same range, `a ∘ fst` and `b ∘ snd` differ by a linear
+  automorphism of `A × B`; for surjective `a`, `b` it carries `ker a × B` onto `A × ker b`. Used in
+  8.3, applied degree by degree to the syzygies of two finite projective resolutions (the
+  generalized Schanuel lemma), for the independence of `χ̃` from the resolution.
+- `TauCeti.groupHomologyPiMultiplicativeIntExteriorPowerEquiv` (`TauCeti/AlgebraicTopology/ClassifyingSpace/Torus.lean`
+  line 243): for a commutative ring `k` and a finite type `ι` in the same universe,
+  `⋀ⁿ H₁(ℤ^ι, k) ≃ Hₙ(ℤ^ι, k)` with trivial coefficients; used in the Checks of 2.4.
+- `TauCeti.cwComplexProd` (`TauCeti/Topology/CWComplex/Classical/Product.lean` line 194): the product
+  CW structure on `C ×ˢ D` for finite CW complexes `C`, `D`, with `n`-cells the pairs of a `p`-cell
+  and a `q`-cell with `p + q = n`; used in the Checks of 5.1.
 - `TauCeti.trace_ofModule'_eq_zero_of_dvd_orderOf` (`TauCeti/Algebra/MonoidAlgebra/ProjectiveTrace.lean`
   line 67): `A` commutative local with the prime `p` not a unit, `G` finite, `X` finitely generated
   projective over `A[G]`; if `p ∣ orderOf g` then the Mathlib trace `LinearMap.trace A X` of `g` on
@@ -325,7 +360,10 @@ Pinned at `2fd255d997f47c0b5d834ee416c7015d55444ce5`.
   the module has no finite basis, so it is not the trace of a finite projective module.
 - `TauCeti.nonempty_linearEquiv_of_projective_of_tensorRat` (`TauCeti/NumberTheory/Padics/GroupAlgebra/Swan.lean`
   line 58): finitely generated projective `ℤ_p[G]`-modules with isomorphic rationalizations are
-  isomorphic, `G` finite.
+  isomorphic, `G` finite; and its coprime case
+  `TauCeti.nonempty_linearEquiv_of_projective_of_tensorRat_of_not_dvd`
+  (`TauCeti/NumberTheory/Padics/GroupAlgebra/Rational.lean` line 134), the same conclusion for
+  `p ∤ |G|`, used in the Checks of 7.4.
 - `FDRep.nonempty_iso_of_character_eq` and `Representation.nonempty_equiv_of_character_eq`
   (`TauCeti/RepresentationTheory/CharacterTable/Determined.lean` line 59): over a field of
   characteristic zero, finite-dimensional representations of a finite group with equal characters
@@ -802,7 +840,8 @@ line 396); (c) if `H` has finite index and `[G : H]` is a unit of `R`, then `cd_
 `hd_R G ≤ hd_R H`, since restriction followed by corestriction is multiplication by `[G : H]`
 (BrownGTM87, §III.10). *Needs:* 2.1, 2.2; Mathlib `groupCohomology.coindIso`, `groupHomology.indIso`;
 Tau Ceti `TauCeti.groupCohomology.corestriction`,
-`TauCeti.groupCohomology.map_subtype_id_comp_corestriction`, `TauCeti.groupHomology.transfer`.
+`TauCeti.groupCohomology.map_subtype_id_comp_corestriction`, `TauCeti.groupHomology.transfer`,
+`TauCeti.groupHomology.transfer_comp_map_subtype_id`.
 
 **Checks.**
 
