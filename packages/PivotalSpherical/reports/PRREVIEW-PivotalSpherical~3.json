@@ -1,0 +1,13 @@
+{
+  "review": {
+    "status": "needs_changes",
+    "reviewer": "independent-review-PRREVIEW-PivotalSpherical~3",
+    "head": "20de8ee230947a2819a22301368678b6ab644def",
+    "pr": 2311,
+    "folder": "PivotalSpherical",
+    "date": "2026-11-14",
+    "findings": 11,
+    "blocking": 5,
+    "notes": "Full review of 21 target groups and all 17 actual Lean declarations; worker provided no identifiable seeded-sample targets. All 11 claim-level source citation groups checked in 5 cached texts. Gate fails readme-ids-missing and target-ids; targeted build and direct elaboration pass. Three centre signatures lose hypotheses; scratch include-k repair and missing-headline statability probes elaborate. Dependency check: 244 roadmaps, 2198 edges, 0 problems."
+  }
+}
