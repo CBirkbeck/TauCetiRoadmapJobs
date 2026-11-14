@@ -4017,7 +4017,7 @@
     },
     {
       "slug": "coefficient-linear-weil-ii",
-      "needs": "for an overconvergent F-isocrystal `E` on a separated `𝔽_q`-scheme with a `K`-algebra map `L → End(E)` (`L/K` finite), `ι`-mixed of weight `≤ w` for the `L`-linear Frobenius at every closed point, each `Hⁱ_(c,rig)(X, E)` with its `L`-linear Frobenius is `ι`-mixed of weight `≤ w + i` (the coefficient-linear form of §RD.6.85).",
+      "needs": "for a separated scheme `X` of finite type over `𝔽_q`, `K` with residue field `𝔽_q` and `σ_K = id`, a finite extension `L ⊂ K^alg` of `K`, a field isomorphism `ι : K^alg → ℂ`, a real `w`, and an overconvergent F-isocrystal `E` on `X/K` with a `K`-algebra map `L → End(E)` that is `ι`-realizable for the `L`-linear Frobenius (a direct summand, among objects with `L`-structure, of one whose `L`-linear Frobenius at every closed point has a characteristic polynomial with coefficients sent into `ℝ` by `ι`) and `ι`-mixed of weight `≤ w` for the `L`-linear Frobenius (at a closed point of degree `d` every eigenvalue has `|ι(·)| ≤ q^(wd/2)`), each `Hⁱ_(c,rig)(X, E)` with its `L`-linear Frobenius is `ι`-mixed of weight `≤ w + i` (the coefficient-linear form of §RD.6.85(a), with the realizability hypothesis of §RD.6.57 taken for the `L`-linear Frobenius); an `E` that is `ι`-pure of weight `w` for the `L`-linear Frobenius is so realizable when `L` contains a `c` with `ι(c) = q^w`, through `E ⊕ (E^∨ ⊗_L L_c)` with `E^∨` the `L`-dual and `L_c` the constant `L`-line with Frobenius `c`.",
       "supplier": "PadicDifferentialEquationsAndRigidCohomology",
       "section": "RD.6.85"
     },
