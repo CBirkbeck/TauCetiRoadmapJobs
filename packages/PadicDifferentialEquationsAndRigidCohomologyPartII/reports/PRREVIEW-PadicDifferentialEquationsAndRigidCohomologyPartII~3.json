@@ -1,0 +1,31 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-PadicDifferentialEquationsAndRigidCohomologyPartII~3",
+  "head": "807aec53cb86ac0144599d31b53776709d7e56e3",
+  "pr": 2300,
+  "folder": "PadicDifferentialEquationsAndRigidCohomologyPartII",
+  "date": "2026-11-14",
+  "findings": 3,
+  "blocking": 0,
+  "notes": "Full review at an unchanged head. Three P3 findings: the first Check of MS.0.4 has no Frobenius structure and is not an instance of the theorem (replacement instance given and computed); the Suggested.lean docstring does not name MS.2.8, which the README table lists as a headline target; the page range of Tsuzuki Corollary 5.5 and Proposition 5.6 is p. 25, not pp. 25-26. Previous R01 is deferred (D01, board plan.json, stands). Checked: seeded sample (PBQ at TSU lines 864-866, Lefschetz condition at TSU lines 1456-1463), 146 cited statements located in 8 cached sources, 75 parent section ids at the parent's open head, RigidAnalyticGeometry Layer 5 and AlgebraicCurves Layer 12 on main, 20 pinned Mathlib and Tau Ceti declarations, nine declared gaps, adversarial table of 22 rows with computed values. Gate: all checks 0, OK. Depcheck: 241 roadmaps, 2192 edges, 0 problems. lake env lean on Suggested.lean: exit 0, no warning, no declarations (no #check or one-tactic probe instance). Not verifiable: DEJONG98 and TSU98 (uncertified), the K3 input of MS.2.8, the two counterexamples to DAD Proposition 4.2.12.",
+  "deferred": [
+   {
+    "id": "D01",
+    "severity": "P2",
+    "title": "The declared Legendre supplier contract still lacks the repaired hypotheses",
+    "where": "board supplier-contract text",
+    "raised": "PRREVIEW-PadicDifferentialEquationsAndRigidCohomologyPartII~2"
+   }
+  ],
+  "carried": {
+   "from": "807aec53cb86ac0144599d31b53776709d7e56e3",
+   "head": "1da98b69d02e03122e9c5394685c701d48689d45",
+   "findings": 3,
+   "lines": 22,
+   "folders": [
+    "PadicDifferentialEquationsAndRigidCohomologyPartII"
+   ]
+  }
+ }
+}
