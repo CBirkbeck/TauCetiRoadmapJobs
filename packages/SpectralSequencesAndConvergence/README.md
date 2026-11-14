@@ -1113,7 +1113,9 @@ the second by the boundary side of 4.3, the statement that has no counterpart at
   filtration `G_j = 0` for every integer `j`, each `H^0(⊥ ≤ j) = 0 → H^0(⊥ ≤ ⊤) = ℤ` is a
   monomorphism, every page is zero, and every `abutmentFiltration j 0` is zero: the filtration of
   the abutment `ℤ` is not exhaustive. The page identifications of 4.3 survive, the convergence
-  does not, and `HasConvergenceBounds` rightly fails.
+  does not, and `HasConvergenceBounds` rightly fails. Here `H^{−1}(j ≤ ⊤) = H^{−1}(K / G_j) = 0`
+  as well, so the top vanishing that Tau Ceti's `spectralSequencePageXIsoEInfty` assumes does not
+  give convergence either.
 - With `I = ∅` there is nothing to prove.
 - The non-exhaustive complex of 4.3 violates the hypothesis at `j`: for `j ≥ 0`,
   `H^0(⊥ ≤ j) = H^0(G_j) = ℤ` while `H^0(⊥ ≤ ⊤) = H^0(K) = 0`, so the map is not a monomorphism.

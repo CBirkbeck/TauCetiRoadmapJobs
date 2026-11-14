@@ -22,10 +22,13 @@ Stated here:
   (README 2.2, Stacks Lemma 24.8);
 * the Euler-characteristic identity for a complex whose filtration is finite in each degree and a
   weak Serre class (README 5.3, Stacks Lemma 24.12);
-* the convergence of the spectral sequence of a spectral object indexed by `EInt` in one degree,
-  under bounds on the bottom and a monomorphism condition at the top, through the canonical maps
-  of Mathlib's spectral objects (README 4.3–4.4, Stacks Lemma 24.13 in spectral-object form);
-* the comparison theorem for spectral objects under the same bounds (README 4.6);
+* the convergence of the spectral sequence of a spectral object indexed by `EInt` in one degree
+  `n` under convergence bounds `a`, `b`: `H^n(⊥ ≤ i)` and `H^{n+1}(⊥ ≤ i)` vanish for every integer
+  `i ≤ a`, and `H^n(⊥ ≤ j) ⟶ H^n(⊥ ≤ ⊤)` is an isomorphism, not merely a monomorphism, for every
+  integer `j ≥ b`; through the canonical maps of Mathlib's spectral objects (README 4.3–4.4,
+  Stacks Lemma 24.13 in spectral-object form);
+* the comparison theorem for spectral objects that both have these convergence bounds
+  (README 4.6);
 * the comparison theorem for exhaustive filtrations that vanish termwise below a bound, in an
   abelian category with exact sequential colimits (README 3.5 with 5.4);
 * the characterisation of Tau Ceti's repleteness through `lim¹` of towers with epimorphic
@@ -139,8 +142,11 @@ every page `r ≥ 2` with `q - a + 2 ≤ r` and `b - q + 1 ≤ r`:
   piece of the abutment by `EInftyIsoCokernel`;
 * the differentials of page `r` leaving and entering `(n - q, q)` vanish.
 
-The top condition is weaker than the vanishing of `H^{n-1}(j ≤ ⊤)` that Tau Ceti's
-`spectralSequencePageXIsoEInfty` assumes. -/
+The second map is an isomorphism as soon as `H^n(⊥ ≤ q + r - 1) ⟶ H^n(⊥ ≤ ⊤)` is a monomorphism
+(README 4.3, boundary side), a condition weaker than the vanishing of `H^{n-1}(q + r - 1 ≤ ⊤)` that
+Tau Ceti's `spectralSequencePageXIsoEInfty` assumes. The top condition of `HasConvergenceBounds`
+asks for an isomorphism because the filtration must also exhaust the abutment, and neither the
+monomorphism nor that vanishing suffices for this (README 4.4, Checks). -/
 theorem convergence_of_hasConvergenceBounds {C : Type u} [Category.{v} C] [Abelian C]
     (X : Abelian.SpectralObject C EInt) {n a b : ℤ} (hX : HasConvergenceBounds X n a b) :
     (∀ i : ℤ, i ≤ a → IsZero (X.abutmentFiltration i n)) ∧
