@@ -1,9 +1,13 @@
 module
 
 import Mathlib
+import TauCeti.Algebra.Group.Subgroup.Finite
 import TauCeti.RepresentationTheory.Homological.GroupCohomology.Corestriction
+import TauCeti.RepresentationTheory.Homological.GroupHomology.Transfer.Basic
 import TauCeti.RepresentationTheory.Homological.TateCohomology.Cup.Product
 import TauCeti.RepresentationTheory.Homological.TateCohomology.Character
+import TauCeti.RepresentationTheory.Homological.TateCohomology.Functoriality
+import TauCeti.RepresentationTheory.Homological.TateCohomology.Restriction.AllDegrees
 
 /-!
 # Cohomology of groups: target signatures
@@ -11,16 +15,21 @@ import TauCeti.RepresentationTheory.Homological.TateCohomology.Character
 The roadmap is `README.md`; this file is not the roadmap. It states the roadmap's headline theorems
 that are statable against the pinned Mathlib and Tau Ceti, each with `sorry`, on Mathlib's carriers
 `groupHomology`, `groupCohomology` and `tateCohomology`, Tau Ceti's corestriction
-`TauCeti.groupCohomology.corestriction`, Tate cup product `TauCeti.TateCohomology.cup` and
-character class `TauCeti.TateCohomology.characterConnectingClass`. Three definitions make them
-statable: `conjRes` (conjugation followed by restriction, README 1.1), `doubleCosetTerm` (the
-summand of the double coset formula, README 7.1) and `IsStableClass` (stable classes, README 7.2).
+`TauCeti.groupCohomology.corestriction`, transfer `TauCeti.groupHomology.transfer`, Tate
+restriction `TauCeti.TateCohomology.res`, Tate change of group `TauCeti.TateCohomology.map`, Tate
+cup product `TauCeti.TateCohomology.cup` and character class
+`TauCeti.TateCohomology.characterConnectingClass`. Seven definitions make them statable: `conjRes`
+and `conjCores` (conjugation followed by restriction, and in homology by corestriction, README 1.1),
+`doubleCosetTerm` and `doubleCosetTermHomology` (the summands of the two double coset formulas,
+README 7.1), and `IsStableClass`, `IsHomologyStableClass` and `IsTateStableClass` (stable classes in
+cohomology, homology and Tate cohomology, README 7.2).
 
 Stated below: the vanishing of the (co)homology of free groups in degrees `≥ 2` and the free
 product formula (README 3.6); `H₂(A, ℤ) ≅ Λ²A` for every abelian group (README 5.4) and Hopf's
 formula (README 6.8), both as the existence of an additive isomorphism, the specific maps `ψ` and
-`h` of the README being constructions of those targets; the double coset formula (README 7.1); the
-stable element theorem in cohomology (README 7.2); Tate duality (README 8.1); the cup-product
+`h` of the README being constructions of those targets; the double coset formula in cohomology and
+in homology (README 7.1); the stable element theorem in cohomology, in homology and in Tate
+cohomology (README 7.2); Tate duality (README 8.1); the cup-product
 periodicity of finite cyclic groups in all degrees (README 8.4); and the periodicity theorem
 (README 8.5).
 
@@ -71,6 +80,26 @@ def conjRes {k G : Type u} [CommRing k] [Group G] (M : Rep k G) (A : Subgroup G)
     (Rep.ofHom ⟨M.ρ g, fun b => by
       ext v
       change M.ρ g (M.ρ (g⁻¹ * β b * g) v) = M.ρ (β b) (M.ρ g v)
+      rw [← mul_apply_eq_comp, ← map_mul, ← mul_apply_eq_comp, ← map_mul]
+      congr 2
+      group⟩) n
+
+/-- **Conjugation followed by corestriction** (README 1.1), the homological counterpart of
+`conjRes`. For a subgroup `A` of `G`, a group `B` with `β : B →* G` and `g : G` with
+`g⁻¹ β(b) g ∈ A` for every `b`, the map `Hₙ(B, Res_β M) → Hₙ(A, Res M)` induced by the compatible
+pair `b ↦ g⁻¹ β(b) g` and `m ↦ g⁻¹ • m`. For `g = 1` and `β` the inclusion of a subgroup of `A` it
+is homological corestriction; for `β` injective it is `c_{g⁻¹}` from the image of `β` followed by
+corestriction to `A`. -/
+def conjCores {k G : Type u} [CommRing k] [Group G] (M : Rep k G) (A : Subgroup G) {B : Type u}
+    [Group B] (β : B →* G) (g : G) (h : ∀ b, g⁻¹ * β b * g ∈ A) (n : ℕ) :
+    groupHomology (Rep.res β M) n ⟶ groupHomology (Rep.res A.subtype M) n :=
+  groupHomology.map
+    { toFun := fun b => ⟨g⁻¹ * β b * g, h b⟩
+      map_one' := Subtype.ext (by simp)
+      map_mul' := fun a b => Subtype.ext (by simp [mul_assoc]) }
+    (Rep.ofHom ⟨M.ρ g⁻¹, fun b => by
+      ext v
+      change M.ρ g⁻¹ (M.ρ (β b) v) = M.ρ (g⁻¹ * β b * g) (M.ρ g⁻¹ v)
       rw [← mul_apply_eq_comp, ← map_mul, ← mul_apply_eq_comp, ← map_mul]
       congr 2
       group⟩) n
@@ -149,6 +178,34 @@ theorem res_comp_corestriction_eq_finsum {k G : Type u} [CommRing k] [Group G] (
         groupCohomology.map K.subtype (𝟙 (Rep.res K.subtype M)) n =
       ∑ᶠ q, doubleCosetTerm H K M n (r q) := sorry
 
+/-- **The summand of the homological double coset formula** (README 7.1): for `H` of finite index,
+`K ≤ G` and `g : G`, the map `Hₙ(K, M) → Hₙ(H, M)` given by the transfer from `K` to its subgroup
+`K ∩ gHg⁻¹`, which has finite index in `K`, followed by `conjCores` from that subgroup to `H` with
+the element `g`. It is `cor^H_{H ∩ g⁻¹Kg} ∘ c_{g⁻¹} ∘ tr^K_{K ∩ gHg⁻¹}`. -/
+def doubleCosetTermHomology {k G : Type u} [CommRing k] [Group G] (H K : Subgroup G)
+    [H.FiniteIndex] (M : Rep k G) (n : ℕ) (g : G) :
+    groupHomology (Rep.res K.subtype M) n ⟶ groupHomology (Rep.res H.subtype M) n :=
+  TauCeti.groupHomology.transfer (Rep.res K.subtype M)
+      ((H.comap (MulAut.conj g⁻¹).toMonoidHom).subgroupOf K) n ≫
+    conjCores M H (K.subtype.comp ((H.comap (MulAut.conj g⁻¹).toMonoidHom).subgroupOf K).subtype) g
+      (fun b => by
+        show g⁻¹ * ((b : ↥K) : G) * g ∈ H
+        have hb := b.2
+        rw [Subgroup.mem_subgroupOf, Subgroup.mem_comap] at hb
+        simpa [MulAut.conj_apply] using hb) n
+
+/-- **The homological double coset formula** (README 7.1): for any group `G`, a subgroup `H` of
+finite index, a subgroup `K`, `M : Rep k G`, every degree `n` and every choice `r` of
+representatives of the double cosets `K\G/H`, corestriction from `K` to `G` followed by the
+transfer from `G` to `H` is the sum over the double cosets of
+`cor^H_{H ∩ g⁻¹Kg} ∘ c_{g⁻¹} ∘ tr^K_{K ∩ gHg⁻¹}` at `g = r q` (Brown, Ch. III §§8–9). -/
+theorem transfer_comp_cores_eq_finsum {k G : Type u} [CommRing k] [Group G] (H K : Subgroup G)
+    [H.FiniteIndex] (M : Rep k G) (n : ℕ) (r : DoubleCoset.Quotient (K : Set G) (H : Set G) → G)
+    (hr : ∀ q, DoubleCoset.mk K H (r q) = q) :
+    groupHomology.map K.subtype (𝟙 (Rep.res K.subtype M)) n ≫
+        TauCeti.groupHomology.transfer M H n =
+      ∑ᶠ q, doubleCosetTermHomology H K M n (r q) := sorry
+
 /-- **Stable classes** (README 7.2): a class `z ∈ Hⁿ(P, M)` is stable when, for every `g : G`, its
 restriction to `P ∩ gPg⁻¹` equals the restriction of its conjugate `c_g z` to `P ∩ gPg⁻¹`; both are
 `conjRes` from `P` to `P ∩ gPg⁻¹`, for the elements `1` and `g`. -/
@@ -172,6 +229,105 @@ theorem bijOn_res_sylow_isStableClass {k G : Type u} [CommRing k] [Group G] [Fin
       (fun x => groupCohomology.map (P : Subgroup G).subtype
         (𝟙 (Rep.res (P : Subgroup G).subtype M)) n x)
       {x | ∃ j : ℕ, p ^ j • x = 0} {z | IsStableClass M (P : Subgroup G) n z} := sorry
+
+/-- **Stable classes in homology** (README 7.2): for a finite group `G`, a subgroup `P` and
+`z ∈ Hₙ(P, M)`, `z` is stable when, for every `g : G`, the transfer of `z` to `P ∩ gPg⁻¹` equals
+`c_g` applied to the transfer of `z` to `P ∩ g⁻¹Pg`. Both intersections are subgroups of `P`; the two
+classes are compared in `Hₙ(P ∩ gPg⁻¹, M)`, through `conjCores` with the elements `1` and `g⁻¹`. -/
+def IsHomologyStableClass {k G : Type u} [CommRing k] [Group G] [Finite G] (M : Rep k G)
+    (P : Subgroup G) (n : ℕ) (z : groupHomology (Rep.res P.subtype M) n) : Prop :=
+  ∀ g : G,
+    conjCores M (P ⊓ P.comap (MulAut.conj g⁻¹).toMonoidHom)
+        (P.subtype.comp ((P.comap (MulAut.conj g⁻¹).toMonoidHom).subgroupOf P).subtype) 1
+        (fun b => by
+          show 1⁻¹ * ((b : ↥P) : G) * 1 ∈ P ⊓ P.comap (MulAut.conj g⁻¹).toMonoidHom
+          have hb := b.2
+          rw [Subgroup.mem_subgroupOf] at hb
+          simpa using Subgroup.mem_inf.2 ⟨(b : ↥P).2, hb⟩) n
+        (TauCeti.groupHomology.transfer (Rep.res P.subtype M)
+          ((P.comap (MulAut.conj g⁻¹).toMonoidHom).subgroupOf P) n z) =
+      conjCores M (P ⊓ P.comap (MulAut.conj g⁻¹).toMonoidHom)
+        (P.subtype.comp ((P.comap (MulAut.conj g).toMonoidHom).subgroupOf P).subtype) g⁻¹
+        (fun b => by
+          show g⁻¹⁻¹ * ((b : ↥P) : G) * g⁻¹ ∈ P ⊓ P.comap (MulAut.conj g⁻¹).toMonoidHom
+          have hb := b.2
+          rw [Subgroup.mem_subgroupOf, Subgroup.mem_comap] at hb
+          refine Subgroup.mem_inf.2 ⟨?_, ?_⟩
+          · simpa [MulAut.conj_apply] using hb
+          · rw [Subgroup.mem_comap]
+            simp [mul_assoc]) n
+        (TauCeti.groupHomology.transfer (Rep.res P.subtype M)
+          ((P.comap (MulAut.conj g).toMonoidHom).subgroupOf P) n z)
+
+/-- **The stable element theorem in homology** (README 7.2; Brown, Ch. III §10): for a finite group
+`G`, a prime `p`, a Sylow `p`-subgroup `P`, any commutative ring `k`, `M : Rep k G` and `n ≠ 0`,
+corestriction maps the stable classes of `Hₙ(P, M)` bijectively onto the classes of `Hₙ(G, M)`
+killed by a power of `p`. -/
+theorem bijOn_cores_sylow_isHomologyStableClass {k G : Type u} [CommRing k] [Group G] [Finite G]
+    (p : ℕ) [Fact p.Prime] (P : Sylow p G) (M : Rep k G) {n : ℕ} (hn : n ≠ 0) :
+    Set.BijOn
+      (fun z => groupHomology.map (P : Subgroup G).subtype
+        (𝟙 (Rep.res (P : Subgroup G).subtype M)) n z)
+      {z | IsHomologyStableClass M (P : Subgroup G) n z} {x | ∃ j : ℕ, p ^ j • x = 0} := sorry
+
+section TateStableElements
+
+attribute [local instance] Subgroup.fintypeOfFinite
+
+/-- **Stable classes in Tate cohomology** (README 7.2): for a finite group `G`, a subgroup `P`,
+`n : ℤ` and `z ∈ Ĥⁿ(P, M)`, `z` is stable when, for every `g : G`, the Tate restriction of `z` to
+`P ∩ gPg⁻¹` equals `c_g` applied to its Tate restriction to `P ∩ g⁻¹Pg`, where `c_g` is Tate
+cohomology along the isomorphism `y ↦ g y g⁻¹` of these two subgroups of `P` with the coefficient
+map `m ↦ g • m`. Subgroups of finite groups carry the `Fintype` structure
+`Subgroup.fintypeOfFinite`, as in `TauCeti.TateCohomology.res`. -/
+def IsTateStableClass {k G : Type u} [CommRing k] [Group G] [Fintype G] (M : Rep k G)
+    (P : Subgroup G) (n : ℤ) (z : tateCohomology (Rep.res P.subtype M) n) : Prop :=
+  ∀ g : G,
+    TauCeti.TateCohomology.res (Rep.res P.subtype M)
+        ((P.comap (MulAut.conj g⁻¹).toMonoidHom).subgroupOf P) n z =
+      TauCeti.TateCohomology.map
+        (M := Rep.res ((P.comap (MulAut.conj g).toMonoidHom).subgroupOf P).subtype
+          (Rep.res P.subtype M))
+        (N := Rep.res ((P.comap (MulAut.conj g⁻¹).toMonoidHom).subgroupOf P).subtype
+          (Rep.res P.subtype M))
+        (e :=
+          { toFun := fun y => ⟨⟨g * ((y : ↥P) : G) * g⁻¹, by
+                have hy := y.2
+                rw [Subgroup.mem_subgroupOf, Subgroup.mem_comap] at hy
+                simpa using hy⟩, by
+                rw [Subgroup.mem_subgroupOf, Subgroup.mem_comap]
+                simp [mul_assoc]⟩
+            invFun := fun x => ⟨⟨g⁻¹ * ((x : ↥P) : G) * g, by
+                have hx := x.2
+                rw [Subgroup.mem_subgroupOf, Subgroup.mem_comap] at hx
+                simpa [MulAut.conj_apply] using hx⟩, by
+                rw [Subgroup.mem_subgroupOf, Subgroup.mem_comap]
+                simp [MulAut.conj_apply, mul_assoc]⟩
+            left_inv := fun y => by ext; simp [mul_assoc]
+            right_inv := fun x => by ext; simp [mul_assoc]
+            map_mul' := fun a b => by
+              ext
+              simp only [MulMemClass.coe_mul]
+              group })
+        (φ := M.ρ g)
+        ⟨fun y v => by
+          change M.ρ g (M.ρ ((y : ↥P) : G) v) = M.ρ (g * ((y : ↥P) : G) * g⁻¹) (M.ρ g v)
+          rw [← mul_apply_eq_comp, ← map_mul, ← mul_apply_eq_comp, ← map_mul]
+          congr 2
+          group⟩ n
+        (TauCeti.TateCohomology.res (Rep.res P.subtype M)
+          ((P.comap (MulAut.conj g).toMonoidHom).subgroupOf P) n z)
+
+/-- **The stable element theorem in Tate cohomology** (README 7.2; Brown, Ch. III §10): for a
+finite group `G`, a prime `p`, a Sylow `p`-subgroup `P`, any commutative ring `k`, `M : Rep k G`
+and every `n : ℤ`, Tate restriction maps the classes of `Ĥⁿ(G, M)` killed by a power of `p`
+bijectively onto the stable classes of `Ĥⁿ(P, M)`. -/
+theorem bijOn_tateRes_sylow_isTateStableClass {k G : Type u} [CommRing k] [Group G] [Fintype G]
+    (p : ℕ) [Fact p.Prime] (P : Sylow p G) (M : Rep k G) (n : ℤ) :
+    Set.BijOn (fun x => TauCeti.TateCohomology.res M (P : Subgroup G) n x)
+      {x | ∃ j : ℕ, p ^ j • x = 0} {z | IsTateStableClass M (P : Subgroup G) n z} := sorry
+
+end TateStableElements
 
 /-! ## Layer 8: Tate duality and periodicity of finite groups -/
 

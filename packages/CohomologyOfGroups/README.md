@@ -34,7 +34,10 @@ Shapiro's lemma (`groupCohomology.coindIso`, `groupHomology.indIso`), the resolu
 (`groupCohomologyIso`, `groupHomologyIso`, `groupCohomologyIsoExt`, `groupHomologyIsoTor`) and the
 Tate comparisons (`TateCohomology.isoGroupCohomology`, `TateCohomology.isoGroupHomology`).
 Tau Ceti's corestriction `TauCeti.groupCohomology.corestriction`, transfer
-`TauCeti.groupHomology.transfer`, inflation–restriction `TauCeti.groupCohomology.HInfRes_exact`,
+`TauCeti.groupHomology.transfer`, Tate restriction and corestriction in every degree
+(`TauCeti.TateCohomology.res`, `TauCeti.TateCohomology.cor`), the projection formula
+`TauCeti.indProjection` and the Mackey decomposition `Rep.mackeyDecomposition` of induced
+representations, inflation–restriction `TauCeti.groupCohomology.HInfRes_exact`,
 Sylow injectivity `TauCeti.groupCohomology.eq_zero_of_pow_nsmul_eq_zero_of_map_sylow_eq_zero`, the
 Tate cup product `TauCeti.TateCohomology.cup` with `cup_assoc`, `cup_gradedComm`,
 `cup_projection` and `cup_res`, cyclic periodicity `Rep.FiniteCyclicGroup.periodicIso`, the
@@ -271,6 +274,8 @@ to every coefficient representation, to cohomology and to the universe `u`.
 - `continuousCohomology`, `TopRep.homogeneousCochains` (`…/ContCohomology/Basic.lean`): continuous
   cohomology of a topological group as the cohomology of invariant iterated function spaces; its
   module docstring records the comparison with `groupCohomology` for discrete groups as missing.
+- `Rep.indCoindIso` (`RepresentationTheory/FiniteIndex.lean`): for a subgroup `S ≤ G` of finite
+  index and `A : Rep k S`, the isomorphism `Ind_S^G A ≅ Coind_S^G A`. Used in 7.1.
 - `Rep.ihom`, `Rep.quotientToInvariantsFunctor`, `Rep.quotientToCoinvariantsFunctor`, `Rep.res`,
   `Rep.ofMulAction`, `Rep.ofHom` (`RepresentationTheory/Rep/Basic.lean`): internal Hom, the
   quotient actions on invariants and coinvariants of a normal subgroup, restriction, permutation
@@ -340,13 +345,25 @@ to every coefficient representation, to cohomology and to the universe `u`.
   the pairing `M ⊗ N`, with the sign `x ∪ δy = (−1)^p δ(x ∪ y)`.
 - `TauCeti.TateCohomology.map`, `TauCeti.TateCohomology.mapIso`,
   `TauCeti.TateCohomology.map_comp_isoGroupCohomology_hom`,
-  `TauCeti.TateCohomology.map_comp_isoGroupHomology_hom` (`…/TateCohomology/Functoriality.lean`):
+  `TauCeti.TateCohomology.map_comp_isoGroupHomology_hom`, `TauCeti.TateCohomology.δ_comp_map`
+  (`…/TateCohomology/Functoriality.lean`):
   for finite groups `G`, `H`, an isomorphism `e : G ≃* H`, `M : Rep k G`, `N : Rep k H` and a
   `k`-linear map `φ : M → N` with `φ ∘ ρ(x) = σ(e x) ∘ φ` for every `x ∈ G`, the induced map
   `Ĥⁿ(G, M) → Ĥⁿ(H, N)` for every `n ∈ ℤ`, an isomorphism when `φ` is a linear equivalence; through
   `TateCohomology.isoGroupCohomology` and `TateCohomology.isoGroupHomology` it is
   `groupCohomology.map` along `e.symm` in degrees `n ≥ 1` and `groupHomology.map` along `e` in
-  degrees `n ≤ −2`. Used in 1.1.
+  degrees `n ≤ −2`; it commutes with the connecting maps of short exact sequences related by
+  compatible pairs. Used in 1.1 and 7.2.
+- `TauCeti.TateCohomology.res`, `TauCeti.TateCohomology.cor`, `TauCeti.TateCohomology.res_comp_cor`,
+  `TauCeti.TateCohomology.δ_comp_res` (`…/TateCohomology/Restriction/AllDegrees.lean`,
+  `…/Restriction/Delta.lean`) and `Subgroup.fintypeOfFinite` (`Algebra/Group/Subgroup/Finite.lean`):
+  for a finite group `G`, `H ≤ G` and `M : Rep k G`, restriction `Ĥⁿ(G, M) → Ĥⁿ(H, M)` and
+  corestriction `Ĥⁿ(H, M) → Ĥⁿ(G, M)` in every degree `n ∈ ℤ`; restriction is the inclusion of
+  invariants in degree `0`, the relative transfer on norm kernels in degree `−1`, ordinary
+  restriction in degrees `≥ 1` and the homological transfer in degrees `≤ −2`; corestriction after
+  restriction is `[G : H]`, and restriction commutes with connecting maps. Subgroups of a finite
+  group carry the `Fintype` structure `Subgroup.fintypeOfFinite`, which is not a global instance.
+  Used in 7.2.
 - `TauCeti.TateCohomology.characterConnectingClass`,
   `TauCeti.TateCohomology.cup_characterConnectingClass_eq_groupCohomologyπEven`
   (`…/TateCohomology/Character.lean`, `…/Cup/Cyclic.lean`): for a finite cyclic group (in `Type`,
@@ -480,9 +497,21 @@ to every coefficient representation, to cohomology and to the universe `u`.
   the resolutions. Used in 2.1 and 6.4.
 - `TauCeti.indTrivialIso`, `TauCeti.indResProjection` (`RepresentationTheory/Induction/Permutation.lean`):
   `Ind_H^G k ≅ k[G ⧸ H]` and `Ind_H^G Res M ≅ k[G ⧸ H] ⊗ M`.
-- `Rep.dimensionShiftUp` (`RepresentationTheory/Induction/DimensionShift.lean`) and
-  `groupHomology.isZero_indBot_succ` (`…/GroupHomology/Induced.lean`): dimension shifting
-  and the acyclicity of modules induced from the trivial subgroup.
+- `TauCeti.indProjection` (`RepresentationTheory/Induction/Projection.lean`): the projection
+  formula, for a homomorphism `φ : G' →* G`, `X : Rep k G'` and `Y : Rep k G`, the isomorphism
+  `Ind_φ(X ⊗ Res_φ Y) ≅ Ind_φ X ⊗ Y` in `Rep k G`, over any commutative ring, sending
+  `⟦g ⊗ (x ⊗ y)⟧` to `⟦g ⊗ x⟧ ⊗ g⁻¹·y` and natural in `X` and `Y`; for `φ` the inclusion of `H` and
+  `X = k` it is `TauCeti.indResProjection`. Used in 1.4.
+- `Rep.mackeyDecomposition`, `Rep.mackeyDecompositionNatIso`
+  (`RepresentationTheory/Induction/Mackey/Decomposition.lean`): for subgroups `H`, `K` of any group
+  `G` and `A : Rep k H`, the isomorphism `Res_K Ind_H^G A ≅ ⊕_{KsH ∈ K\G/H} Ind_{K ∩ sHs⁻¹}^K(ˢA)` in
+  `Rep k K`, `s` the chosen representative of each double coset and `ˢA` the restriction of `A`
+  along `y ↦ s⁻¹ys : K ∩ sHs⁻¹ → H`, natural in `A`, with no finiteness hypothesis. Nothing is
+  assumed of coinduction. Used in 7.1.
+- `Rep.dimensionShiftUp`, `Rep.dimensionShiftDown` (`RepresentationTheory/Induction/DimensionShift.lean`)
+  and `groupHomology.isZero_indBot_succ` (`…/GroupHomology/Induced.lean`): the dimension-shifting
+  sequences `0 → A → Coind_1^G A → A′ → 0` and `0 → A″ → Ind_1^G A → A → 0`, short exact after
+  restriction to any subgroup, and the acyclicity of modules induced from the trivial subgroup.
 - `TauCeti.isZero_groupHomology_freeGroup` (`AlgebraicTopology/ClassifyingSpace/WedgeCircles.lean`):
   for `S : Type`, a commutative ring `k : Type` and `n ≥ 2`, `Hₙ(FreeGroup S, k) = 0` with trivial
   coefficients `k`, proved through the wedge of circles indexed by `S`. It is the
@@ -734,7 +763,7 @@ Loh19 Prop. 3.2.13, p. 124). *Needs:* Mathlib `groupCohomology.map`, `groupHomol
 `TauCeti.groupCohomology.corestriction`, `TauCeti.groupHomology.transfer`,
 `TauCeti.TateCohomology.map`, `TauCeti.TateCohomology.mapIso`,
 `TauCeti.TateCohomology.map_comp_isoGroupCohomology_hom`,
-`TauCeti.TateCohomology.map_comp_isoGroupHomology_hom`.
+`TauCeti.TateCohomology.map_comp_isoGroupHomology_hom`, `TauCeti.TateCohomology.res`.
 
 Conjugation followed by restriction is one compatible pair, and it is the form in which Layer 7
 uses it. Define `conjRes M A β g h n`, for a subgroup `A ≤ G`, a group `B` with a homomorphism
@@ -746,15 +775,30 @@ and `β` the inclusion of a subgroup of `A` it is restriction; in general it is 
 restriction from `gAg⁻¹` to the image of `β`. *Needs:* Mathlib `groupCohomology.map`, `Rep.res`,
 `Rep.ofHom`.
 
+In homology the same data give the map in the other direction, and it is the form in which the
+homological clauses of Layer 7 use conjugation. Define `conjCores M A β g h n`, for `A`, `β`, `g`
+and `h` as above, as the map `Hₙ(B, Res_β M) → Hₙ(A, Res M)` of `groupHomology.map` for the pair
+consisting of `b ↦ g⁻¹β(b)g : B →* A` and `m ↦ g⁻¹·m`; the latter is equivariant because
+`ρ(g⁻¹)ρ(β(b)) = ρ(g⁻¹β(b)g)ρ(g⁻¹)`. For `g = 1` and `β` the inclusion
+of a subgroup of `A` it is homological corestriction; for `β` injective it is `c_{g⁻¹}` from the
+image of `β` to `g⁻¹β(B)g` followed by corestriction from `g⁻¹β(B)g` to `A`. *Needs:* Mathlib
+`groupHomology.map`, `Rep.res`, `Rep.ofHom`.
+
 - `c_1` is the identity, and `c_{gh} = c_g ∘ c_h` (after the equality `g(hHh⁻¹)g⁻¹ = (gh)H(gh)⁻¹`).
 - For `g ∈ H`, `c_g` is the identity of `Hⁿ(H, M)`, of `Hₙ(H, M)` and of `Ĥⁿ(H, M)`.
 - `c_g` commutes with coefficient maps, with connecting maps of short exact sequences of
-  representations, with restriction to `K ≤ H` (landing in `gKg⁻¹`), with corestriction and
-  transfer for `K ≤ H` of finite index, and with the homological corestriction.
+  representations, with restriction to `K ≤ H` (landing in `gKg⁻¹`; for Tate cohomology,
+  `TauCeti.TateCohomology.res` in every degree), with corestriction and transfer for `K ≤ H` of
+  finite index, and with the homological corestriction.
 - In degree `0`, `c_g(m) = g·m` on `M^H` and `c_g[m] = [g·m]` on `M_H`.
 - `conjRes` composes: `conjRes` for `(A, β, g)` followed by restriction along `β′ : B′ →* B` is
   `conjRes` for `(A, β ∘ β′, g)`; and for `a ∈ A`, `conjRes` for `(A, β, ga)` is `conjRes` for
   `(A, β, g)` after `c_a` on `Hⁿ(A, M)`, so the two agree by inner triviality.
+- `conjCores` composes dually: the map along `β′ : B′ →* B` from `Hₙ(B′, Res_{β ∘ β′} M)` to
+  `Hₙ(B, Res_β M)` followed by `conjCores` for `(A, β, g)` is `conjCores` for `(A, β ∘ β′, g)`; and
+  for `a ∈ A`, `conjCores` for `(A, β, ga)` is `conjCores` for `(A, β, g)` followed by `c_{a⁻¹}` on
+  `Hₙ(A, M)`, so the two agree by inner triviality.
+- In degree `0`, `conjCores` is `[m] ↦ [g⁻¹·m]` from the coinvariants of `Res_β M` to `M_A`.
 
 **Checks.**
 
@@ -777,6 +821,20 @@ restriction from `gAg⁻¹` to the image of `β`. *Needs:* Mathlib `groupCohomol
   fixes `1` while `xg⁻¹ = (23)(132)` sends `1` to `2`, and the permutation representation `ℤ³` of
   `S₃` is faithful. For an involution `g` the two models agree, so this Check needs an element of
   order `3`.
+- `conjCores` with `g ∈ A` and `β` the inclusion of `A` is the identity of `Hₙ(A, M)`: for
+  `G = A = ℤ/2` acting on `M = ℤ` by `−1` and `g` the generator, in degree `0` it is `[m] ↦ [−m]`
+  on `M_G = ℤ/2`, which is the identity.
+- `conjCores` with `g = 1` and `β` the inclusion of the trivial subgroup is the map
+  `M = H₀(1, M) → M_A`, `m ↦ [m]`, in degree `0`, and zero in positive degrees, where
+  `Hₙ(1, M) = 0`.
+- A model of `conjCores` with the coefficient map `m ↦ g·m` is not equivariant: with
+  `A = ⟨(12)⟩`, `β` the inclusion of `⟨(23)⟩`, `g = (123)` (so `g⁻¹(23)g = (12)`) and `x = (23)`,
+  it would need `ρ(g)ρ(x) = ρ(g⁻¹xg)ρ(g)`, that is `g²x = xg²`; but `g²x` sends `1` to `3` while
+  `xg²` sends `1` to `2`, and the permutation representation `ℤ³` of `S₃` is faithful. With
+  `m ↦ g⁻¹·m`, for `g = (13)`, the degree-`0` map sends the class of `e₁` in the coinvariants of
+  `⟨(23)⟩` to the class of `e₃` in those of `⟨(12)⟩`. Forgetting the coefficient map is not even
+  well defined there: `[e₂] = [e₃]` among the coinvariants of `⟨(23)⟩`, while among those of
+  `⟨(12)⟩`, `[e₂] = [e₁] ≠ [e₃]`.
 
 ### 1.2 The quotient action on the (co)homology of a normal subgroup
 
@@ -829,14 +887,18 @@ character `χ : H →* kˣ` with `k_χ` the corresponding rank-one representatio
 `Hₙ(G, Ind_H^G(k_χ) ⊗ M) ≅ Hₙ(H, k_χ ⊗ M)` and its cohomological dual. For a `G`-set `X` with a set
 `Σ` of orbit representatives, combine these with 1.3 into
 `Hₙ(G, k[X] ⊗ M) ≅ ⊕_{x ∈ Σ} Hₙ(G_x, M)` and `Hⁿ(G, Hom_k(k[X], M)) ≅ ∏_{x ∈ Σ} Hⁿ(G_x, M)`.
-Route: `TauCeti.indResProjection` (for the trivial character) or the projection formula for
-`Ind_H^G`, Shapiro's lemma `groupHomology.indIso` and `groupCohomology.coindIso` in the explicit
-forms `TauCeti.groupHomology.indIso_inv` (the inverse is induced by `a ↦ 1 ⊗ a`) and
+Route: the projection formula `TauCeti.indProjection` for the inclusion of `H`, `X = k_χ` and
+`Y = M`, which gives `Ind_H^G(k_χ ⊗ Res M) ≅ Ind_H^G(k_χ) ⊗ M` (for the trivial character it is
+`TauCeti.indResProjection`, `Ind_H^G Res M ≅ k[G ⧸ H] ⊗ M`), Shapiro's lemma
+`groupHomology.indIso` and `groupCohomology.coindIso` in the explicit forms
+`TauCeti.groupHomology.indIso_inv` (the inverse is induced by `a ↦ 1 ⊗ a`) and
 `TauCeti.groupCohomology.coindIso_hom` (restriction followed by evaluation at `1`), the isomorphism
-`Hom_k(k[G ⧸ H], M) ≅ Coind_H^G M`, and the orbit decomposition `X ≅ ⊔_{x ∈ Σ} G ⧸ G_x` (SerreArbres
-II §2.8, p. 168). *Needs:* 1.3; Mathlib `groupHomology.indIso`, `groupCohomology.coindIso`,
-`Rep.ofMulAction`; Tau Ceti `TauCeti.indTrivialIso`, `TauCeti.indResProjection`,
-`TauCeti.groupHomology.indIso_inv`, `TauCeti.groupCohomology.coindIso_hom`.
+`Hom_k(Ind_H^G X, M) ≅ Coind_H^G Hom_k(X, Res M)`, `F ↦ (g ↦ (x ↦ g·F(⟦g ⊗ x⟧)))`, for every
+`H` (for `X = k` it is `Hom_k(k[G ⧸ H], M) ≅ Coind_H^G M`), and the orbit decomposition
+`X ≅ ⊔_{x ∈ Σ} G ⧸ G_x` (SerreArbres II §2.8, p. 168). *Needs:* 1.3; Mathlib `groupHomology.indIso`,
+`groupCohomology.coindIso`, `Rep.ofMulAction`; Tau Ceti `TauCeti.indProjection`,
+`TauCeti.indTrivialIso`, `TauCeti.indResProjection`, `TauCeti.groupHomology.indIso_inv`,
+`TauCeti.groupCohomology.coindIso_hom`.
 
 **Checks.**
 
@@ -890,7 +952,8 @@ in 6.2 and 7.2.
 ### Dependencies
 
 Mathlib's carriers, functoriality, Shapiro's lemma and continuous cohomology; Tau Ceti's
-corestriction, transfer and permutation-module isomorphisms; ProfiniteCohomology §§3.1–3.2 for 1.5.
+corestriction, transfer, permutation-module isomorphisms and projection formula;
+ProfiniteCohomology §§3.1–3.2 for 1.5.
 
 ---
 
@@ -2083,16 +2146,21 @@ each summand independent of the representative `g` (by 1.1); there are finitely 
 and each `K ∩ gHg⁻¹` has finite index in `K`. Prove the homological form
 `tr^G_H ∘ cor^G_K = Σ_{KgH} cor^H_{H ∩ g⁻¹Kg} ∘ c_{g⁻¹} ∘ tr^K_{K ∩ gHg⁻¹}` on `Hₙ(K, M)`. Route:
 through Shapiro's lemma corestriction is induced by the trace `Coind_H^G M → M`
-(`TauCeti.groupCohomology.coindIso_hom_comp_corestriction`), and the restriction
-to `K` of `Coind_H^G M` decomposes over `K\G/H` (Brown82 Ch. III §§8–9); in homology the transfer
+(`TauCeti.groupCohomology.coindIso_hom_comp_corestriction`); `Coind_H^G Res M ≅ Ind_H^G Res M` as
+`H` has finite index (`Rep.indCoindIso`), and the restriction to `K` of `Ind_H^G Res M` is the sum
+over `K\G/H` of the representations `Ind_{K ∩ gHg⁻¹}^K` of the conjugated restrictions of `M`
+(`Rep.mackeyDecomposition`; Brown82 Ch. III §§8–9), each coinduced too, as `K ∩ gHg⁻¹` has finite
+index in `K`, so that Shapiro's lemma applies summand by summand; in homology the transfer
 and corestriction are induced by the unit `M → Ind_H^G Res M` and the counit `Ind_K^G Res M → M`
 (`TauCeti.groupHomology.transfer_comp_indIso_inv`, `TauCeti.groupHomology.indIso_inv_comp_map_counit`),
-and the restriction to `H` of `Ind_K^G Res M` decomposes over `H\G/K`, in bijection with `K\G/H` by
-`g ↦ g⁻¹`. *Needs:* 1.1, 1.4;
-Tau Ceti `TauCeti.groupCohomology.corestriction`, `TauCeti.groupHomology.transfer`,
+and the restriction to `H` of `Ind_K^G Res M` decomposes over `H\G/K` by the same Mackey
+decomposition with `H` and `K` interchanged, naturally in the representation
+(`Rep.mackeyDecompositionNatIso`); `H\G/K` is in bijection with `K\G/H` by `g ↦ g⁻¹`. *Needs:* 1.1,
+1.4; Tau Ceti `TauCeti.groupCohomology.corestriction`, `TauCeti.groupHomology.transfer`,
 `TauCeti.groupCohomology.coindIso_hom_comp_corestriction`,
-`TauCeti.groupHomology.transfer_comp_indIso_inv`, `TauCeti.groupHomology.indIso_inv_comp_map_counit`;
-Mathlib `DoubleCoset.Quotient`, `DoubleCoset.mk`, `finsum`.
+`TauCeti.groupHomology.transfer_comp_indIso_inv`, `TauCeti.groupHomology.indIso_inv_comp_map_counit`,
+`Rep.mackeyDecomposition`, `Rep.mackeyDecompositionNatIso`; Mathlib `Rep.indCoindIso`,
+`DoubleCoset.Quotient`, `DoubleCoset.mk`, `finsum`.
 
 Each summand is a single map. Define `doubleCosetTerm H K M n g : Hⁿ(H, M) → Hⁿ(K, M)` as `conjRes`
 (1.1) from `H` to the subgroup `K ∩ gHg⁻¹` of `K`, written
@@ -2112,6 +2180,26 @@ quotient of `G/H`.
   identity by inner triviality, once `c_k` is moved past the corestriction (1.1).
 - It is natural in `M` for morphisms of representations, as `conjRes` and corestriction are.
 
+In homology each summand is likewise a single map. Define
+`doubleCosetTermHomology H K M n g : Hₙ(K, M) → Hₙ(H, M)` as the transfer
+`TauCeti.groupHomology.transfer` from `K` to its subgroup `K ∩ gHg⁻¹`, written
+`(H.comap (MulAut.conj g⁻¹).toMonoidHom).subgroupOf K`, followed by `conjCores` (1.1) from that
+subgroup, mapped to `G` through `K`, to `H` with the element `g`; it is
+`cor^H_{H ∩ g⁻¹Kg} ∘ c_{g⁻¹} ∘ tr^K_{K ∩ gHg⁻¹}`, since `conjCores` with `g` is the pair
+`(x ↦ g⁻¹xg : K ∩ gHg⁻¹ → H, m ↦ g⁻¹·m)`. The homological formula then reads: for every choice `r`
+of representatives of `K\G/H` as above, corestriction from `K` to `G` (`groupHomology.map` along
+the inclusion of `K`) followed by `TauCeti.groupHomology.transfer` from `G` to `H` is the finite sum
+`∑ᶠ q, doubleCosetTermHomology H K M n (r q)` (`transfer_comp_cores_eq_finsum`), for any group `G`,
+`H` of finite index, any `K`, any `k`, `M : Rep k G` and `n ≥ 0`.
+
+- For `g = 1`, `doubleCosetTermHomology` is the transfer from `K` to `K ∩ H` followed by
+  corestriction to `H`.
+- It depends only on the double coset `KgH`: for `k ∈ K` and `h ∈ H`, the term of `kgh` is the
+  term of `g` preceded by `c_{k⁻¹}` on `Hₙ(K, M)` and followed by `c_{h⁻¹}` on `Hₙ(H, M)`, both the
+  identity by inner triviality, once `c_{k⁻¹}` is moved past the transfer (1.1).
+- It is natural in `M` for morphisms of representations, as the transfer
+  (`TauCeti.groupHomology.map_comp_transfer`) and `conjCores` are.
+
 **Checks.**
 
 - For finite `G` with the discrete topology, the formula agrees under `Θ` (1.5) with
@@ -2123,6 +2211,20 @@ quotient of `G/H`.
 - Degree `0` in homology: the elements `g⁻¹s`, `s ∈ (K ∩ gHg⁻¹)\K`, run over `H\G` as `KgH` runs
   over `K\G/H`, as the transfer requires; `c_g` in place of `c_{g⁻¹}` would land in the homology
   of `gKg⁻¹ ∩ g²Hg⁻²`, which is not a subgroup of `H` in general.
+- `doubleCosetTermHomology` for `G = S₃`, `H = K = ⟨(12)⟩`, trivial `ℤ`, degree `0`: corestriction
+  followed by transfer is multiplication by `[G : H] = 3` on `H₀(K, ℤ) = ℤ`; the term of `g = 1` is
+  the transfer from `K` to `K ∩ H = K`, multiplication by `1`, and the term of `g = (13)`, for which
+  `K ∩ gHg⁻¹ = ⟨(12)⟩ ∩ ⟨(23)⟩ = 1`, is the transfer to `1`, multiplication by `2`, followed by
+  `H₀(1, ℤ) = ℤ → H₀(H, ℤ) = ℤ`, the identity; `1 + 2 = 3`. In positive degrees the second term
+  factors through `Hₙ(1, M) = 0`, so `tr ∘ cor` is the identity of `Hₙ(⟨(12)⟩, M)`.
+- `doubleCosetTermHomology` for `H = G`: there is one double coset, and the term of `g` is the
+  transfer from `K` to its top subgroup, an isomorphism, followed by `c_{g⁻¹}` and corestriction to
+  `G`, which is `c_{g⁻¹} ∘ cor^G_K = cor^G_K`, as `c_{g⁻¹}` commutes with corestriction and is the
+  identity on `Hₙ(G, M)` (1.1); both sides of the formula are `cor^G_K`.
+- `doubleCosetTermHomology` for `K = 1`, degree `0`: the double cosets are the cosets `gH`, every
+  intersection `K ∩ gHg⁻¹` is `1`, and the term of `g` is `m ↦ [g⁻¹·m]` from `M` to `M_H`; their sum
+  `Σ_{gH ∈ G/H} [g⁻¹·m]` is the transfer `Σ_{Ht ∈ H\G} [t·m]` of the class of `m`, the elements
+  `g⁻¹` running over representatives of `H\G`.
 
 ### 7.2 Stable elements
 
@@ -2136,15 +2238,29 @@ and that in Tate cohomology restriction maps `Ĥⁿ(G, M)(p)` isomorphically ont
 the invariants of `N_G(P)` acting by conjugation (Brown82 Ch. III §10): by Burnside's fusion
 argument, for `A ≤ P` and `g` with `gAg⁻¹ ≤ P` some `n ∈ N_G(P)` induces the same map `A → P` as
 `g`, and with trivial coefficients `c_g` depends only on that map. For a nontrivial action the
-fusion conditions remain (Checks). Route: injectivity is Tau Ceti's Sylow theorem; for a stable
-`z`, 7.1 gives `res cor z = [G : P] z` with `[G : P]` prime to `p` (MilneCFT Ch. II Prop. 1.30 and
-Cor. 1.33, pp. 70–71; Hutchinson13 §3, p. 11, Hutchinson13 line 482–491). For `M = ℤ_(r)` with
-trivial action and `n ≥ 1`, the cohomological statement is the stable-element theorem of
-K3BlochGroups §5.2; the target adds arbitrary coefficients, homology and Tate cohomology.
-*Needs:* 1.1, 7.1; K3BlochGroups §5.2, ArithmeticGaloisDuality §D7.2 and
-InductionRestrictionPartII RS.0.3 for the comparisons; Tau Ceti
-`TauCeti.groupCohomology.eq_zero_of_pow_nsmul_eq_zero_of_map_sylow_eq_zero`; ClassFieldTheory
-Layer 0 (Tate restriction and corestriction); Mathlib `Sylow`.
+fusion conditions remain (Checks). Route: in cohomology, injectivity is Tau Ceti's Sylow theorem;
+for a stable `z`, 7.1 gives `res cor z = [G : P] z` with `[G : P]` prime to `p` (MilneCFT Ch. II
+Prop. 1.30 and Cor. 1.33, pp. 70–71; Hutchinson13 §3, p. 11, Hutchinson13 line 482–491). In
+homology, `cor ∘ tr = [G : P]` (`TauCeti.groupHomology.transfer_comp_map_subtype_id`), the
+transfer of every class of `G` is stable, and the homological formula of 7.1 gives
+`tr cor z = [G : P] z` for a stable `z`; `Hₙ(P, M)` is killed by `|P|` for `n ≥ 1`. In Tate
+cohomology, `TauCeti.TateCohomology.res` is ordinary restriction in degrees `≥ 1` and the
+homological transfer in degrees `≤ −2`, where the Tate clause is the cohomological clause and,
+through `cor ∘ tr = [G : P]`, the homological one; degrees `0` and `−1` follow from degrees `1` and
+`−2` by the connecting isomorphisms of the dimension-shifting sequences of `Rep.dimensionShiftDown`
+and `Rep.dimensionShiftUp`, restricted to the subgroups concerned, which commute with Tate
+restriction (`TauCeti.TateCohomology.δ_comp_res`) and with conjugation
+(`TauCeti.TateCohomology.δ_comp_map`). For `M = ℤ_(r)` with trivial action and `n ≥ 1`, the
+cohomological statement is the stable-element theorem of K3BlochGroups §5.2; the target adds
+arbitrary coefficients, homology and Tate cohomology. *Needs:* 1.1, 7.1; K3BlochGroups §5.2,
+ArithmeticGaloisDuality §D7.2 and InductionRestrictionPartII RS.0.3 for the comparisons; Tau Ceti
+`TauCeti.groupCohomology.eq_zero_of_pow_nsmul_eq_zero_of_map_sylow_eq_zero`,
+`TauCeti.groupHomology.transfer`, `TauCeti.groupHomology.transfer_comp_map_subtype_id`,
+`TauCeti.TateCohomology.res`, `TauCeti.TateCohomology.cor`, `TauCeti.TateCohomology.res_comp_cor`,
+`TauCeti.TateCohomology.δ_comp_res`, `TauCeti.TateCohomology.map`,
+`TauCeti.TateCohomology.δ_comp_map`, `Subgroup.fintypeOfFinite`, `Rep.dimensionShiftUp`,
+`Rep.dimensionShiftDown`; Mathlib `Sylow`, `TateCohomology.isoGroupCohomology`,
+`TateCohomology.isoGroupHomology`.
 
 Define the predicate `IsStableClass`: for a subgroup `P ≤ G` and `z ∈ Hⁿ(P, M)`,
 `IsStableClass M P n z` holds when, for every `g ∈ G`, `conjRes` (1.1) from `P` to `P ∩ gPg⁻¹`,
@@ -2156,15 +2272,46 @@ ring `k`, `M : Rep k G` and `n ≠ 0`, restriction `groupCohomology.map` along t
 is a bijection (`Set.BijOn`) from the classes of `Hⁿ(G, M)` killed by a power of `p` onto the
 classes `z` with `IsStableClass M P n z`.
 
+In homology, define the predicate `IsHomologyStableClass`: for finite `G`, a subgroup `P ≤ G` and
+`z ∈ Hₙ(P, M)`, `IsHomologyStableClass M P n z` holds when, for every `g ∈ G`, the transfer of `z`
+to `P ∩ gPg⁻¹` and the image under `c_g` of its transfer to `P ∩ g⁻¹Pg` are equal. Both
+intersections are subgroups of `P`, written `(P.comap (MulAut.conj g⁻¹).toMonoidHom).subgroupOf P`
+and `(P.comap (MulAut.conj g).toMonoidHom).subgroupOf P`; the two classes are compared in
+`Hₙ(P ⊓ P.comap (MulAut.conj g⁻¹).toMonoidHom, M)` through `conjCores` (1.1), with the element `1`
+for the first (an isomorphism of the two copies of `P ∩ gPg⁻¹`) and the element `g⁻¹` for the
+second (the pair `(y ↦ gyg⁻¹, m ↦ g·m)`, which is `c_g`). As `c_g` commutes with the transfer
+(1.1), `c_g(tr^P_{P ∩ g⁻¹Pg} z) = tr^{gPg⁻¹}_{P ∩ gPg⁻¹}(c_g z)`, so this is the homological
+stability condition above. The homological clause is `bijOn_cores_sylow_isHomologyStableClass`:
+for finite `G`, a prime `p`, `P : Sylow p G`, any commutative ring `k`, `M : Rep k G` and `n ≠ 0`,
+`groupHomology.map` along the inclusion of `P` is a bijection from the classes `z` with
+`IsHomologyStableClass M P n z` onto the classes of `Hₙ(G, M)` killed by a power of `p`.
+
+In Tate cohomology, define the predicate `IsTateStableClass`: for `[Fintype G]`, a subgroup
+`P ≤ G`, `n ∈ ℤ` and `z ∈ Ĥⁿ(P, M)`, `IsTateStableClass M P n z` holds when, for every `g ∈ G`, the
+Tate restriction `TauCeti.TateCohomology.res` of `z` to `P ∩ gPg⁻¹` equals the image of its Tate
+restriction to `P ∩ g⁻¹Pg` under `TauCeti.TateCohomology.map` for the isomorphism
+`P ∩ g⁻¹Pg ≃* P ∩ gPg⁻¹`, `y ↦ gyg⁻¹`, and the coefficient map `m ↦ g·m`, which is `c_g` of 1.1.
+The two intersections are the subgroups of `P` above, and subgroups of finite groups carry Tau
+Ceti's `Subgroup.fintypeOfFinite`, as in `TauCeti.TateCohomology.res`. As Tate restriction commutes
+with `c_g`, this is the Tate stability condition above. The Tate clause is
+`bijOn_tateRes_sylow_isTateStableClass`: for `[Fintype G]`, a prime `p`, `P : Sylow p G`, any
+commutative ring `k`, `M : Rep k G` and every `n ∈ ℤ`, `TauCeti.TateCohomology.res` to `P` is a
+bijection from the classes of `Ĥⁿ(G, M)` killed by a power of `p` onto the classes `z` with
+`IsTateStableClass M P n z`.
+
 - The stable classes form a `k`-submodule of `Hⁿ(P, M)` (respectively of `Ĥⁿ(P, M)`, and, with the
   transfer condition, of `Hₙ(P, M)`) containing the restriction (respectively the transfer) of
   every class of `G`.
 - Cohomology, `n ≥ 1`: `res^G_P` restricts to an isomorphism from `Hⁿ(G, M)(p)` onto the stable
   classes, inverse to `[G : P]⁻¹ cor^G_P`, `[G : P]` acting invertibly on `p`-primary parts.
 - Homology, `n ≥ 1`: the homological corestriction is an isomorphism from the stable classes of
-  `Hₙ(P, M)` onto `Hₙ(G, M)(p)`.
+  `Hₙ(P, M)` onto `Hₙ(G, M)(p)`, inverse to `[G : P]⁻¹ tr^G_P`.
 - Tate cohomology, every `n ∈ ℤ`: `res^G_P` restricts to an isomorphism from `Ĥⁿ(G, M)(p)` onto the
-  stable classes of `Ĥⁿ(P, M)`.
+  stable classes of `Ĥⁿ(P, M)`, inverse to `[G : P]⁻¹ cor^G_P` (`TauCeti.TateCohomology.cor`).
+- The three predicates agree where the theories do: for `n ≥ 1`, `TateCohomology.isoGroupCohomology`
+  carries the classes with `IsTateStableClass M P n` onto those with `IsStableClass M P n`, and for
+  `n = −m − 1 ≤ −2`, `TateCohomology.isoGroupHomology` carries them onto those with
+  `IsHomologyStableClass M P m`.
 - Abelian Sylow subgroup and trivial action: the stable classes are the `N_G(P)`-invariants.
 - Comparison: for `M = ℤ_(r)` with trivial action, `p = r` and `n ≥ 1`, `Hⁿ(G, ℤ_(r))(r) = Hⁿ(G, ℤ_(r))`
   and the cohomological isomorphism is that of K3BlochGroups §5.2.
@@ -2199,6 +2346,25 @@ classes `z` with `IsStableClass M P n z`.
   inversion acts by `(−1)² = 1`; so `H₂(G, ℤ)(3) = ℤ/3`, RS.0.3's value, and as the Sylow
   `2`-subgroup `ℤ/2` has `H₂(ℤ/2, ℤ) = 0`, `H₂(G, ℤ) = ℤ/3`. A model letting `ℤ/2` act on
   `H₂(P, ℤ)` as on `P`, by `−1`, would give `0`.
+- `IsHomologyStableClass` for `G = S₃`, `p = 3`, `P = A₃`, `M = ℤ`, `n = 1`: both intersections
+  are `A₃`, the transfers are isomorphisms, and `c_{(12)}` acts on `H₁(A₃, ℤ) = A₃ = ℤ/3` by
+  `x ↦ x⁻¹`, that is by `−1`; so the stable classes are those with `z = −z`, only `0`, matching
+  `H₁(S₃, ℤ)(3) = (ℤ/2)(3) = 0`. Counting every class of `H₁(P, ℤ)` as stable would give `ℤ/3`.
+- `IsHomologyStableClass` in degree `0`, excluded from the homological clause: for `G = S₃`,
+  `p = 3` and `M = ℤ`, every class of `H₀(A₃, ℤ) = ℤ` is stable and corestriction
+  `H₀(A₃, ℤ) → H₀(S₃, ℤ)` is the identity of `ℤ`, while `H₀(S₃, ℤ)(3) = 0`.
+- `IsTateStableClass` in degree `0`: for `G = P = ℤ/2` and `M = ℤ`, `Ĥ⁰(G, ℤ) = ℤ/2` is
+  `2`-primary and every class is stable, while the ordinary `H⁰(G, ℤ)(2)` is `0`. For `G = S₃`,
+  `p = 2`, `P = ⟨(12)⟩` and `M = ℤ`, restriction `Ĥ⁰(S₃, ℤ) = ℤ/6 → Ĥ⁰(P, ℤ) = ℤ/2` is reduction
+  modulo `2` and maps the `2`-primary part `{0, 3}` bijectively onto `ℤ/2`; every class is stable,
+  since `P ∩ gPg⁻¹ = 1` for `g ∉ P = N_G(P)`, and `Ĥ⁰(1, ℤ) = 0`.
+- `IsTateStableClass` uses the coefficient action: for `G = S₃`, `p = 3`, `P = A₃` and
+  `M = ℤ_sgn` (`S₃` acting by the sign), `A₃` acts trivially, `Ĥ⁰(A₃, ℤ_sgn) = ℤ/3` and `c_{(12)}`
+  is `m ↦ −m` there, so only `0` is stable, matching `Ĥ⁰(S₃, ℤ_sgn) = (ℤ_sgn)^{S₃}/N(ℤ_sgn) = 0`;
+  a conjugation without the coefficient map would make all of `ℤ/3` stable. With `M = ℤ` instead,
+  `c_{(12)}` is the identity on `Ĥ⁰(A₃, ℤ) = ℤ/3`, every class is stable, and restriction maps the
+  `3`-primary part `{0, 2, 4}` of `Ĥ⁰(S₃, ℤ) = ℤ/6` onto it by reduction modulo `3`; on
+  `Ĥ²(A₃, ℤ) = ℤ/3` the same element acts by `−1`, so a single sign for all degrees is wrong.
 
 ### Examples
 
@@ -2207,8 +2373,10 @@ For `G = A₄`, `p = 2`, `P = V₄` normal with `N_G(P)/P = ℤ/3` permuting the
 
 ### Dependencies
 
-Layer 1; Tau Ceti's corestriction, transfer and Sylow theorem; ClassFieldTheory Layer 0;
-ProfiniteCohomology §6.4 and Tau Ceti's continuous Mackey formula for a Check; K3BlochGroups §5.2,
+Layer 1; Tau Ceti's corestriction, transfer, Tate restriction and corestriction, Tate change of
+group, dimension-shifting sequences, Mackey decomposition and Sylow theorem; Mathlib's
+`Rep.indCoindIso`; ProfiniteCohomology §6.4 and Tau Ceti's continuous Mackey formula for a Check;
+K3BlochGroups §5.2,
 ArithmeticGaloisDuality §D7.2 and InductionRestrictionPartII RS.0.3 for the comparisons of 7.2;
 Layer 5 (5.4) for a Check of 7.2.
 
