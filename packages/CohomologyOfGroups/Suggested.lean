@@ -2,6 +2,10 @@ module
 
 import Mathlib
 import TauCeti.Algebra.Group.Subgroup.Finite
+import TauCeti.Algebra.Homology.Kronecker
+import TauCeti.Algebra.Homology.LinearYoneda
+import TauCeti.Algebra.Homology.UniversalCoefficient.Basic
+import TauCeti.RepresentationTheory.Homological.GroupCohomology.CoinvariantsTensor
 import TauCeti.RepresentationTheory.Homological.GroupCohomology.Corestriction
 import TauCeti.RepresentationTheory.Homological.GroupHomology.Transfer.Basic
 import TauCeti.RepresentationTheory.Homological.TateCohomology.Cup.Product
@@ -18,19 +22,24 @@ that are statable against the pinned Mathlib and Tau Ceti, each with `sorry`, on
 `TauCeti.groupCohomology.corestriction`, transfer `TauCeti.groupHomology.transfer`, Tate
 restriction `TauCeti.TateCohomology.res`, Tate change of group `TauCeti.TateCohomology.map`, Tate
 cup product `TauCeti.TateCohomology.cup` and character class
-`TauCeti.TateCohomology.characterConnectingClass`. Seven definitions make them statable: `conjRes`
-and `conjCores` (conjugation followed by restriction, and in homology by corestriction, README 1.1),
-`doubleCosetTerm` and `doubleCosetTermHomology` (the summands of the two double coset formulas,
-README 7.1), and `IsStableClass`, `IsHomologyStableClass` and `IsTateStableClass` (stable classes in
-cohomology, homology and Tate cohomology, README 7.2).
+`TauCeti.TateCohomology.characterConnectingClass`, and on Tau Ceti's Kronecker map
+`TauCeti.ChainComplex.kronecker` and universal coefficient map
+`TauCeti.ChainComplex.extToHomology`. Nine definitions make them statable: `conjRes` and
+`conjCores` (conjugation followed by restriction, and in homology by corestriction, README 1.1),
+`cohomologyEvaluation` and `extToCohomology` (the two maps of the cohomological universal
+coefficient sequence, README 5.2), `doubleCosetTerm` and `doubleCosetTermHomology` (the summands of
+the two double coset formulas, README 7.1), and `IsStableClass`, `IsHomologyStableClass` and
+`IsTateStableClass` (stable classes in cohomology, homology and Tate cohomology, README 7.2).
 
 Stated below: the vanishing of the (co)homology of free groups in degrees `≥ 2` and the free
-product formula (README 3.6); Hopf's formula (README 6.8), as the existence of an additive
-isomorphism, the specific map `h` of the README being a construction of that target; the double
-coset formula in cohomology and in homology (README 7.1); the stable element theorem in
-cohomology, in homology and in Tate cohomology (README 7.2); Tate duality with coefficients `ℚ/ℤ` and its integral form for coefficients
-free as abelian groups (README 8.1); the cup-product periodicity of finite cyclic groups in all
-degrees (README 8.4); and the periodicity theorem and its `p`-primary form (README 8.5).
+product formula (README 3.6); the universal coefficient sequence in cohomology over a ring of
+global dimension at most one (README 5.2); Hopf's formula (README 6.8), as the existence of an
+additive isomorphism, the specific map `h` of the README being a construction of that target; the
+double coset formula in cohomology and in homology (README 7.1); the stable element theorem in
+cohomology, in homology and in Tate cohomology (README 7.2); Tate duality with coefficients `ℚ/ℤ`
+and its integral form for coefficients free as abelian groups (README 8.1); the cup-product
+periodicity of finite cyclic groups in all degrees (README 8.4); and the periodicity theorem and
+its `p`-primary form (README 8.5).
 
 Headline theorems of the roadmap that are not statable at the pins, and what each lacks:
 
@@ -44,11 +53,15 @@ Headline theorems of the roadmap that are not statable at the pins, and what eac
 * the tree sequences and the Mayer–Vietoris sequences of amalgams and HNN extensions (README
   3.5–3.6): groups acting on trees without inversion (FreeGroupsAndLimitGroups §4.6) and the
   connecting maps of the sequences;
-* the Künneth theorem in homology and in cohomology (README 5.1, 5.3) and the universal coefficient
-  sequences (README 5.2): the cross product of group homology (Tau Ceti has the shuffle map
-  `SSet.shuffle` of simplicial chains, not its transport to the standard resolutions and to
-  coinvariants), the cup product of README 4.1 for arbitrary groups and pairings, and the
-  evaluation pairing of README 4.6;
+* the Künneth theorem in homology and in cohomology (README 5.1, 5.3): the cross product of group
+  homology (Tau Ceti has the shuffle map `SSet.shuffle` of simplicial chains, not its transport to
+  the standard resolutions and to coinvariants) and the cup product of README 4.1 for arbitrary
+  groups and pairings;
+* the universal coefficient sequence in homology (README 5.2): its map
+  `Hₙ(G, A) → Tor₁^k(Hₙ₋₁(G, k), A)`, which Tau Ceti's Künneth sequence
+  `HomologicalComplex.homologyKunnethShortComplex_shortExact` gives for the tensor product of
+  `C(G; k)` with `A` in degree `0`, needs the identification of that tensor product with the chains
+  `C(G; A)` of Mathlib's `groupHomology`, which the pins lack;
 * the periodicity forced by an exact sequence of cohomologically trivial modules from `ℤ_χ` to `ℤ`
   (README 8.3): the class obtained from `1 ∈ Ĥ⁰(G, ℤ)` by the iterated connecting maps of the
   sequence.
@@ -126,6 +139,68 @@ theorem coprod_groupHomology_bijective {k A B : Type u} [CommRing k] [Group A] [
             (𝟙 (Rep.res (Monoid.Coprod.inl : A →* Monoid.Coprod A B) M)) n x.1 +
           groupHomology.map (Monoid.Coprod.inr : B →* Monoid.Coprod A B)
             (𝟙 (Rep.res (Monoid.Coprod.inr : B →* Monoid.Coprod A B) M)) n x.2) := sorry
+
+/-! ## Layer 5: products of groups and abelian groups -/
+
+/-- **The evaluation map** (README 4.6 and 5.2): for a group `G`, a commutative ring `k`, a
+`k`-module `A` with trivial action and `n : ℕ`, the `k`-linear map
+`Hⁿ(G, A) → Hom_k(Hₙ(G, k), A)` evaluating cocycles on cycles: the evaluation pairing of README 4.6
+for the coefficients `Hom_k(k, A)`, that is, Tau Ceti's Kronecker map of the inhomogeneous chains
+`C(G; k)`, read through `A ≅ Hom_k(k, A)` (`MonoidalClosed.unitNatIso`, the monoidal unit of
+`Rep k G` being `Rep.trivial k G k`), the identification `Rep.groupCohomologyIhomIso` of
+`Hⁿ(G, Hom_k(k, A))` with the cohomology of `Hom((k ⊗ P)_G, A)` for the bar resolution `P`, and
+the isomorphism `groupHomology.inhomogeneousChainsIso` of `C(G; k)` with `(k ⊗ P)_G`. -/
+def cohomologyEvaluation {k G : Type u} [CommRing k] [Group G] (A : Type u) [AddCommGroup A]
+    [Module k A] (n : ℕ) :
+    groupCohomology (Rep.trivial k G A) n →ₗ[k]
+      (groupHomology (Rep.trivial k G k) n ⟶ ModuleCat.of k A) :=
+  haveI := Classical.decEq G
+  TauCeti.ChainComplex.kronecker k (groupHomology.inhomogeneousChains (Rep.trivial k G k))
+      (ModuleCat.of k A) n ∘ₗ
+    ((groupCohomology.functor k G n).mapIso
+        (MonoidalClosed.unitNatIso.app (Rep.trivial k G A)) ≪≫
+      Rep.groupCohomologyIhomIso (Rep.trivial k G k) A n (Rep.barResolution k G) ≪≫
+      (HomologicalComplex.homologyFunctor _ _ n).mapIso
+        ((TauCeti.ChainComplex.linearYonedaFunctor k (ModuleCat.of k A)).mapIso
+          (groupHomology.inhomogeneousChainsIso (Rep.trivial k G k)).op)).hom.hom
+
+/-- **The `Ext` term of the universal coefficient sequence** (README 5.2): for a commutative ring
+`k` of global dimension at most one (every `k`-module has projective dimension at most one), a
+group `G`, a `k`-module `A` with trivial action and `n : ℕ`, the `k`-linear map
+`Ext¹_k(Hₙ(G, k), A) → Hⁿ⁺¹(G, A)` that sends the class of a map `β : Bₙ → A` from the boundaries
+of `C(G; k)` in degree `n` to the class of the cocycle `Cₙ₊₁(G; k) → Bₙ → A`: Tau Ceti's
+`TauCeti.ChainComplex.extToHomology` for the chains `C(G; k)`, read through the identifications of
+`cohomologyEvaluation`. -/
+def extToCohomology {k G : Type u} [CommRing k] [Group G]
+    [∀ X : ModuleCat.{u} k, HasProjectiveDimensionLE X 1] (A : Type u) [AddCommGroup A]
+    [Module k A] (n : ℕ) :
+    Abelian.Ext.{u} (groupHomology (Rep.trivial k G k) n) (ModuleCat.of k A) 1 →ₗ[k]
+      groupCohomology (Rep.trivial k G A) (n + 1) :=
+  haveI := Classical.decEq G
+  ((groupCohomology.functor k G (n + 1)).mapIso
+        (MonoidalClosed.unitNatIso.app (Rep.trivial k G A)) ≪≫
+      Rep.groupCohomologyIhomIso (Rep.trivial k G k) A (n + 1) (Rep.barResolution k G) ≪≫
+      (HomologicalComplex.homologyFunctor _ _ (n + 1)).mapIso
+        ((TauCeti.ChainComplex.linearYonedaFunctor k (ModuleCat.of k A)).mapIso
+          (groupHomology.inhomogeneousChainsIso (Rep.trivial k G k)).op)).inv.hom ∘ₗ
+    TauCeti.ChainComplex.extToHomology k (groupHomology.inhomogeneousChains (Rep.trivial k G k))
+      (ModuleCat.of k A) (n + 1) n
+
+/-- **The universal coefficient theorem in group cohomology** (README 5.2): for a commutative ring
+`k` of global dimension at most one, any group `G`, a `k`-module `A` with trivial action and
+`n : ℕ`, the sequence
+`0 → Ext¹_k(Hₙ(G, k), A) → Hⁿ⁺¹(G, A) → Hom_k(Hₙ₊₁(G, k), A) → 0`
+of `extToCohomology` and `cohomologyEvaluation` is exact, and the evaluation has a `k`-linear right
+inverse, so that the sequence splits. -/
+theorem universalCoefficient_cohomology {k G : Type u} [CommRing k] [Group G]
+    [∀ X : ModuleCat.{u} k, HasProjectiveDimensionLE X 1] (A : Type u) [AddCommGroup A]
+    [Module k A] (n : ℕ) :
+    Function.Injective (extToCohomology (k := k) (G := G) A n) ∧
+      Function.Exact (extToCohomology (k := k) (G := G) A n)
+        (cohomologyEvaluation (k := k) (G := G) A (n + 1)) ∧
+      ∃ s : (groupHomology (Rep.trivial k G k) (n + 1) ⟶ ModuleCat.of k A) →ₗ[k]
+          groupCohomology (Rep.trivial k G A) (n + 1),
+        cohomologyEvaluation (k := k) (G := G) A (n + 1) ∘ₗ s = LinearMap.id := sorry
 
 /-! ## Layer 6: group extensions -/
 

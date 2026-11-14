@@ -2480,6 +2480,17 @@
    "needs": "For a commutative ring R with Tor^R_i = 0 for i ≥ 2 and complexes K, L of R-modules represented by bounded-above complexes, the two-column exact sequence 0 → ⊕_{i+j=n} Hⁱ(K) ⊗ Hʲ(L) → Hⁿ(K ⊗^L L) → ⊕_{i+j=n+1} Tor^R_1(Hⁱ(K), Hʲ(L)) → 0 of §4.3, whose first map is its edge map, the cross product, is natural in K and L.",
    "supplier": "SpectralSequencesAndConvergencePartII",
    "section": "§4.3"
+  },
+  {
+   "slug": "least-r-period",
+   "title": "Minimality of the r-period of a finite group with periodic Sylow r-subgroup",
+   "neededBy": [
+    "8.4"
+   ],
+   "detail": "K3BlochGroups §5.2 (finiteGroup_period_fromSylow) states Swan's values 2·|N_G(P)/C_G(P)|, 2 and 4 of the r-period without defining the r-period, and Hutchinson's definition calls every d ≥ 2 with H_{d−1}(G, ℤ_(r)) cyclic of order |G|_r a period (for S₃ and r = 3 both d = 4 and d = 8). Target 8.4 identifies Swan's value with its own p-period, the least such d; target 8.5 uses only that the period class exists.",
+   "needs": "For a finite group G and a prime r dividing |G| whose Sylow r-subgroup is cyclic or, for r = 2, generalised quaternion, the r-period of finiteGroup_period_fromSylow is the least d ≥ 2 such that H_{d−1}(G, ℤ_(r)) is cyclic of order |G|_r.",
+   "supplier": "K3BlochGroups",
+   "section": "§5.2"
   }
  ]
 }
