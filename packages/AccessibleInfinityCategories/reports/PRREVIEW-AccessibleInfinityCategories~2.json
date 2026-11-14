@@ -1,0 +1,4 @@
+{"review": {"status": "needs_changes", "reviewer": "independent-review-PRREVIEW-AccessibleInfinityCategories~2",
+            "head": "7e04598b8fe81f4af63f379d72f1eaeeb92c7969", "pr": 2270, "folder": "InfinityCategoryTheory/AccessibleInfinityCategories", "date": "2026-11-14",
+            "findings": 8, "blocking": 3,
+            "notes": "Full re-review. Previous R01 (build at the pin) and R02 (EnhancedDerivedSheaves E0.8 owns accessibility) not repaired, R03 repaired, R04 partly. New: section 4.5.3 lost its statement (P2); mis-pointed labels, a misplaced declaration name, six Lean names absent from the README, stray NOTES.md, six broken code spans (P3). Sample: 15 seeded targets, 32 locators in htt and ha checked against the text, all agree. 151 sibling citations and 13 ModelCategoryTheory labels resolved. Gate FAIL (imports=6, build=13, stray-files=1, tex=12); depcheck 0 problems. Suggested.lean could not be elaborated at the pin."}}
