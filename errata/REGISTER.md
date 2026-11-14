@@ -2,7 +2,7 @@
 
 Reviewers, red-team passes and errata jobs record every mistake they find in a source while checking a roadmap's locators: misprints (slips whose intended meaning is clear), errors (a false statement or proof step) and gaps (a step the source does not justify), each with the roadmap, the board pull request or errata job and the head that reported it. Collected by the board sync from the `## Source issues` sections of review, red-team and errata comments; the data is in `errata/source-issues.json`.
 
-13154 mistakes recorded on the board: 7523 misprints, 3459 errors, 1704 gaps, 468 unparsed bullets.
+13157 mistakes recorded on the board: 7525 misprints, 3459 errors, 1705 gaps, 468 unparsed bullets.
 Errata jobs have read the cited sources of 60 roadmaps; in those of 2 they found no mistake.
 The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explorer/`: 1525 awaiting review, 13582 confirmed, 228 rejected.
 
@@ -2682,6 +2682,10 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 - **Misprint** at Lemma 3.19, p. 13 (BHW line 613): the source says γ*s equals (cz+d)γ; it should be (cz+d)s, as computed in the proof; affects a stated result. Found by PerfectoidTowers (ERRATA-PerfectoidTowers at 537fec2, 2026-10-24, codex gpt-6-astra).
 - **Misprint** at Lemma 3.7, proof, p. 10 (BHW line 465): the source says O⁺ on X_U is evaluated at V×U, while O⁺ on Y_U is evaluated at W×U; it should be O⁺(W×U)^Γ = O⁺(V×U), with W the preimage of V under X → Y; affects the proof. Found by PerfectoidTowers (ERRATA-PerfectoidTowers at 537fec2, 2026-10-24, codex gpt-6-astra).
 - **Misprint** at Proposition 3.24, proof, p. 15 (BHW line 694): the source says the Γ₀(p∞)-level tower over Γ₀(p)-level supplies the pro-étale torsor for descent; it should be the Γ(p∞)-level tower over Γ₀(p)-level, with group Γ₀(p), away from the cusps; affects the proof. Found by PerfectoidTowers (ERRATA-PerfectoidTowers at 537fec2, 2026-10-24, codex gpt-6-astra).
+
+## BieriEckmann1974
+
+- **Misprint** at Theorem 3.4 proof, printed p. 82, line 334: the source says its conclusion follows from Bieri–Eckmann 1973 Theorem 4.6; it should be Theorem 4.5, the duality criterion; affects the proof. Found by FinitenessAndDualityOfGroups (#15109 at 5fca6b3, 2026-11-14, codex gpt-6-astra).
 
 ## Bigelow–Penneys
 
@@ -11666,6 +11670,7 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 - **Misprint** at Example 3.2.24, printed p.137 (line 5954–5955): the source says torus homology vanishes in degrees at least two; it should be at least three, with H₂ equal to ℤ; affects a stated result. Found by CohomologyOfGroups (#14777 at 95b03fe, 2026-11-14, codex gpt-6-astra).
 - **Misprint** at Example 3.2.25 conclusion, printed p. 138 (lines 5976–5980): the source says integral-coefficient Hₙ is an n-dimensional vector space over 𝔽_p; it should be Hₙ with 𝔽_p coefficients, of dimension n+1; affects a stated result. Found by CohomologyOfGroups (#14777 at e75c7b5, 2026-11-13, codex gpt-6-astra).
 - **Misprint** at Example 3.2.25 conclusion, printed p. 138, lines 5976–5980: the source says the computed groups have integral coefficients and dimension n; it should be coefficients 𝔽_p and dimension n+1 in degree n; affects a stated result. Found by CohomologyOfGroups (#14777 at 2a8a308, 2026-11-13, codex gpt-6-astra).
+- **Misprint** at Example 3.2.25 continuation, printed p.138 (Loh19 line 5976 and line 5980): the source says the displayed homology has integral coefficients and dimension n over the prime field; it should be have prime-field coefficients and dimension n+1; affects a stated result. Found by CohomologyOfGroups (#15095 at d78d6b8, 2026-11-14, codex gpt-6-astra).
 - **Misprint** at Example 3.2.25, printed p. 138 (lines 5976–5980): the source says integral coefficients and an n-dimensional result after summing n+1 field terms; it should be 𝔽ₚ coefficients and dimension n+1; affects a stated result. Found by CohomologyOfGroups (#14777 at 35fb1a6, 2026-11-14, codex gpt-6-astra).
 - **Misprint** at Example 3.2.25, printed p. 138, Loh19 line 5976: the source says the displayed homology has integral coefficients; it should be homology with coefficients in the field of p elements; affects a stated result. Found by CohomologyOfGroups (#14777 at 4acbf20, 2026-11-14, codex gpt-6-astra).
 - **Misprint** at Example 3.2.25, printed p. 138, Loh19 line 5980: the source says the field dimension is n; it should be n+1, from the displayed sum indexed from zero through n; affects a stated result. Found by CohomologyOfGroups (#14777 at 4acbf20, 2026-11-14, codex gpt-6-astra).
@@ -12224,6 +12229,7 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 - **Gap** at Ch. II Remark 3.5, p. 81 (MilneCFT line 3813–3817): the source says the periodicity isomorphism is cup product with the class of the chosen character and postpones the proof; it should be proved, as 8.4 plans; affects a stated result. Found by CohomologyOfGroups (#15095 at 7bfdf06, 2026-11-14, claude fable).
 - **Gap** at Ch. II Remark 3.5, p. 81 (MilneCFT line 3813–3822): the source says the periodicity isomorphism is cup product with the class of the chosen character and defers the proof; it should be proved, as the roadmap's 8.4 does; affects a stated result. Found by CohomologyOfGroups (#15095 at cf9d800, 2026-11-14, claude fable).
 - **Gap** at Chapter II Remark 3.5, printed p.81 (MilneCFT line 3813–3822): the source says the periodic isomorphism is cup with the normalized character class, postponing proof; it should be justify that normalization or invoke its cited proof explicitly; affects the proof. Found by CohomologyOfGroups (#15095 at 80f3b7c, 2026-11-14, codex gpt-6-astra).
+- **Gap** at Chapter II Remark 3.5, printed p.81 (MilneCFT line 3813–3822): the source says cyclic periodicity is cup with the normalized character class, postponing proof; it should be supply the normalization computation or the proof referenced there; affects the proof; The new Loh19 misprint was checked against the rendered source page, not merely extraction. For n=0 the correct dimension is 1, and for n=1 it is 2. The package uses n+1 and does not inherit it. Milne's item records a locally deferred proof, not a counterexample to its statement. None of these source issues requires another package change. Found by CohomologyOfGroups (#15095 at d78d6b8, 2026-11-14, codex gpt-6-astra).
 
 ## MilneLEC
 
