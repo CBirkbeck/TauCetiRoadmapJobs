@@ -1,0 +1,4 @@
+{"review": {"status": "needs_changes", "reviewer": "independent-review-PRREVIEW-BorelEquivalenceRelations~9",
+            "head": "b4d6f21d02810018c612891d57be43f4f58f1e7d", "pr": 1616, "folder": "BorelEquivalenceRelations", "date": "2026-11-14",
+            "findings": 1, "blocking": 0,
+            "notes": "incremental re-review of 40 changed lines since 6ca8a4f. Previous R01 (locators) and R02 (scope table, completion criteria) repaired; R03 (the description's Alexandrov sentence) not repaired, carried as R01 (P3). Miller Lecture I Ex. 16 p. 8 and HKL 1990 Cor. 1.2 p. 905 checked against open texts. Seeded sample: 4.2 and 5.2 are in the changed passages and were checked; the other 13 stand from r8. Scope claims checked at the Tau Ceti pin 2fd255d9 (12 declarations opened, both open targets absent). Gate OK, depcheck 0 problems, elaboration: two sorry warnings only, exact? probes fail."}}
