@@ -1,0 +1,2485 @@
+{
+ "roadmap": "CohomologyOfGroups",
+ "title": "Cohomology of groups",
+ "parent": null,
+ "summary": "Homology and cohomology of arbitrary groups with coefficients in k-linear representations on Mathlib's carriers: conjugation and quotient actions, hyper(co)homology, permutation complexes and trees, cup and cap products, Künneth and universal coefficients, the Pontryagin ring, the Hochschild–Serre spectral sequence with edge maps, transgression, products and Hopf's formula, the double coset formula, and for finite groups stable elements, Tate duality and periodicity.",
+ "baseline": {
+  "mathlib": "1b1ccf4b088b32fa3f23f2de1127433254a81e1e",
+  "tauceti": "2fd255d997f47c0b5d834ee416c7015d55444ce5"
+ },
+ "layers": [
+  {
+   "key": "1",
+   "title": "Conjugation, quotient actions and permutation modules",
+   "targets": [
+    {
+     "id": "1.1",
+     "kind": "definition",
+     "name": "TauCeti.groupCohomology.conj",
+     "statement": "For H ≤ G and g ∈ G, conjugation c_g : Hⁿ(H, M) → Hⁿ(gHg⁻¹, M) is the compatible-pair map of (x ↦ g⁻¹xg, m ↦ g·m); likewise c_g : Hₙ(H, M) → Hₙ(gHg⁻¹, M) from (h ↦ ghg⁻¹, m ↦ g·m), and on Ĥⁿ(H, M) for finite G as Tau Ceti's TauCeti.TateCohomology.map of the pair (e : H ≃* gHg⁻¹, x ↦ gxg⁻¹; m ↦ g·m), which is the cohomological pair in degrees ≥ 1 and the homological pair in degrees ≤ −2. Conjugation by an element of H is the identity on the (co)homology of H.",
+     "hypotheses": [
+      "k G : Type u",
+      "[CommRing k]",
+      "[Group G]",
+      "H : Subgroup G",
+      "g : G",
+      "M : Rep k G",
+      "for Tate cohomology: [Fintype G]"
+     ],
+     "locator": {
+      "source": "HS53",
+      "where": "Ch. I §2, corollary to Prop. 2, p. 113 (HS53 line 154–160)"
+     },
+     "prerequisites": [
+      "mathlib:groupCohomology.map",
+      "mathlib:groupHomology.map",
+      "mathlib:tateCohomology",
+      "tauceti:TauCeti.groupCohomology.corestriction",
+      "tauceti:TauCeti.groupHomology.transfer",
+      "tauceti:TauCeti.TateCohomology.map",
+      "tauceti:TauCeti.TateCohomology.mapIso",
+      "tauceti:TauCeti.TateCohomology.map_comp_isoGroupCohomology_hom",
+      "tauceti:TauCeti.TateCohomology.map_comp_isoGroupHomology_hom"
+     ],
+     "api": [
+      {
+       "name": "conj_one",
+       "role": "unit",
+       "statement": "c_1 is the identity."
+      },
+      {
+       "name": "conj_mul",
+       "role": "composition",
+       "statement": "c_{gh} = c_g ∘ c_h after g(hHh⁻¹)g⁻¹ = (gh)H(gh)⁻¹."
+      },
+      {
+       "name": "conj_eq_id_of_mem",
+       "role": "inner triviality",
+       "statement": "For g ∈ H, c_g is the identity of Hⁿ(H, M), Hₙ(H, M) and Ĥⁿ(H, M)."
+      },
+      {
+       "name": "conj_naturality",
+       "role": "naturality",
+       "statement": "c_g commutes with coefficient maps, connecting maps, restriction to K ≤ H, corestriction and transfer for finite-index K ≤ H, and homological corestriction."
+      },
+      {
+       "name": "conj_zero",
+       "role": "degree zero",
+       "statement": "In degree 0, c_g(m) = g·m on M^H and c_g[m] = [g·m] on M_H."
+      }
+     ],
+     "tests": [
+      {
+       "name": "conj_S3_transposition",
+       "kind": "computation",
+       "statement": "G = S₃, H = ⟨(12)⟩, g = (13), 𝔽₂: c_g sends the nonzero character of H to the character of ⟨(23)⟩ with value 1."
+      },
+      {
+       "name": "conj_wrong_direction",
+       "kind": "non-example",
+       "statement": "For g = (123), gHg⁻¹ = ⟨(23)⟩ but g⁻¹Hg = ⟨(13)⟩: conjugating by g⁻¹ lands in the wrong subgroup."
+      },
+      {
+       "name": "conj_abelian_trivial",
+       "kind": "degenerate",
+       "statement": "For abelian G and trivial coefficients, c_g is the identity."
+      },
+      {
+       "name": "conj_outer_nontrivial",
+       "kind": "non-example",
+       "statement": "G = S₃, H = A₃, g = (12), 𝔽₃: c_g acts by −1 on H¹(A₃, 𝔽₃) ≅ 𝔽₃, so inner triviality needs g ∈ H."
+      }
+     ]
+    },
+    {
+     "id": "1.2",
+     "kind": "definition",
+     "name": "TauCeti.groupCohomology.quotientRep",
+     "statement": "For N ◁ G and Q = G ⧸ N, the representations of Q on Hⁿ(N, M) and Hₙ(N, M) given by qN ↦ c_q; in degree 0 they are M^N (Rep.quotientToInvariantsFunctor) and M_N (Rep.quotientToCoinvariantsFunctor).",
+     "hypotheses": [
+      "k G : Type u",
+      "[CommRing k]",
+      "[Group G]",
+      "N : Subgroup G",
+      "[N.Normal]",
+      "M : Rep k G"
+     ],
+     "locator": {
+      "source": "HS53",
+      "where": "Ch. I §7, description of the G/K-operators, p. 117–118 (HS53 line 345–354)"
+     },
+     "prerequisites": [
+      "target:1.1",
+      "mathlib:Rep.quotientToInvariantsFunctor",
+      "mathlib:Rep.quotientToCoinvariantsFunctor"
+     ],
+     "api": [
+      {
+       "name": "quotientRep_functorial",
+       "role": "functoriality",
+       "statement": "Functorial in M; connecting maps of short exact sequences of G-representations are Q-equivariant."
+      },
+      {
+       "name": "quotientRep_naturality",
+       "role": "naturality",
+       "statement": "Natural for morphisms of pairs (G', N') → (G, N) with f(N') ≤ N."
+      },
+      {
+       "name": "quotientRep_zero",
+       "role": "degree zero",
+       "statement": "In degree 0 the representation is Rep.quotientToInvariantsFunctor N M, respectively the coinvariant one."
+      },
+      {
+       "name": "quotientRep_H1_trivial",
+       "role": "computation",
+       "statement": "If N acts trivially on M, H¹(N, M) ≅ Hom(N^ab, M) with (gN·φ)(n) = g·φ(g⁻¹ng)."
+      }
+     ],
+     "tests": [
+      {
+       "name": "quotientRep_extremes",
+       "kind": "degenerate",
+       "statement": "N = G gives the trivial group Q; N = 1 gives M in degree 0 and zero above."
+      },
+      {
+       "name": "quotientRep_S3",
+       "kind": "computation",
+       "statement": "G = S₃, N = A₃, 𝔽₃: the transposition acts by −1 on H¹(A₃, 𝔽₃), so the invariants vanish."
+      },
+      {
+       "name": "quotientRep_coefficient_action",
+       "kind": "non-example",
+       "statement": "G = ℤ/4, N = 2ℤ/4, M = ℤ with generator acting by −1: on H⁰(N, M) = M the action is −1; the model ignoring the coefficient action gives +1."
+      }
+     ]
+    },
+    {
+     "id": "1.3",
+     "kind": "theorem",
+     "name": "TauCeti.groupHomology.sigmaIso",
+     "statement": "For a family (M_i)_{i : ι}, ⊕ᵢ Hₙ(G, M_i) → Hₙ(G, ⊕ᵢ M_i) and Hⁿ(G, ∏ᵢ M_i) → ∏ᵢ Hⁿ(G, M_i) are isomorphisms; for finite ι cohomology commutes with direct sums.",
+     "hypotheses": [
+      "k G : Type u",
+      "[CommRing k]",
+      "[Group G]",
+      "ι : Type u",
+      "M : ι → Rep k G"
+     ],
+     "locator": {
+      "source": "Brown82",
+      "where": "Ch. III (homology commutes with direct sums; uncertified)"
+     },
+     "prerequisites": [
+      "mathlib:groupHomology.chainsFunctor",
+      "mathlib:groupCohomology.cochainsFunctor"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "sigma_point",
+       "kind": "degenerate",
+       "statement": "For ι a point both maps are identities."
+      },
+      {
+       "name": "pi_not_sum",
+       "kind": "non-example",
+       "statement": "A = ℤ^(ℕ) trivial action: the identity of A lies in H¹(A, ℤ^(ℕ)) = Hom(A, ℤ^(ℕ)) but not in ⊕ Hom(A, ℤ)."
+      },
+      {
+       "name": "sigma_Z2",
+       "kind": "computation",
+       "statement": "H₁(ℤ/2, ℤ^(ι)) = (ℤ/2)^(ι)."
+      }
+     ]
+    },
+    {
+     "id": "1.4",
+     "kind": "theorem",
+     "name": "TauCeti.groupHomology.permutationIso",
+     "statement": "Natural isomorphisms Hₙ(G, k[G ⧸ H] ⊗ M) ≅ Hₙ(H, M), Hⁿ(G, Hom_k(k[G ⧸ H], M)) ≅ Hⁿ(H, M), their twisted forms for Ind_H^G k_χ, and for a G-set X with orbit representatives Σ: Hₙ(G, k[X] ⊗ M) ≅ ⊕_{x∈Σ} Hₙ(G_x, M), Hⁿ(G, Hom_k(k[X], M)) ≅ ∏_{x∈Σ} Hⁿ(G_x, M).",
+     "hypotheses": [
+      "k G : Type u",
+      "[CommRing k]",
+      "[Group G]",
+      "H : Subgroup G",
+      "M : Rep k G",
+      "χ : H →* kˣ",
+      "X a G-set in Type u"
+     ],
+     "locator": {
+      "source": "SerreArbres",
+      "where": "II §2.8, p. 168 (Shapiro's lemma for permutation modules)"
+     },
+     "prerequisites": [
+      "target:1.3",
+      "mathlib:groupHomology.indIso",
+      "mathlib:groupCohomology.coindIso",
+      "mathlib:Rep.ofMulAction",
+      "tauceti:TauCeti.indTrivialIso",
+      "tauceti:TauCeti.indResProjection",
+      "tauceti:TauCeti.groupHomology.indIso_inv",
+      "tauceti:TauCeti.groupCohomology.coindIso_hom"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "perm_point",
+       "kind": "degenerate",
+       "statement": "X a point: the identity."
+      },
+      {
+       "name": "perm_free",
+       "kind": "computation",
+       "statement": "X = G: Hₙ(G, k[G] ⊗ M) = 0 for n > 0."
+      },
+      {
+       "name": "perm_orbits_not_points",
+       "kind": "non-example",
+       "statement": "G = ℤ/2, X = G ⊔ pt: H₀(G, ℤ[X]) = ℤ², while summing over points gives ℤ³."
+      }
+     ]
+    },
+    {
+     "id": "1.5",
+     "kind": "construction",
+     "name": "TauCeti.ContCohomology.discreteIso",
+     "statement": "For G with the discrete topology, k discrete and A : TopRep k G with discrete carrier, an isomorphism Θₙ : continuousCohomology n A ≅ Hⁿ(G, A) of k-modules, natural in compatible pairs and in A, compatible with connecting maps, agreeing in degrees 0, 1, 2 with ProfiniteCohomology §§3.1–3.2.",
+     "hypotheses": [
+      "G : Type u",
+      "[Group G]",
+      "[TopologicalSpace G]",
+      "[DiscreteTopology G]",
+      "k discrete commutative ring",
+      "A : TopRep k G with discrete carrier"
+     ],
+     "locator": {
+      "source": "HS53",
+      "where": "Ch. I §2, homogeneous and non-homogeneous cochains, pp. 112–113 (HS53 line 129–141)"
+     },
+     "prerequisites": [
+      "mathlib:continuousCohomology",
+      "mathlib:TopRep.homogeneousCochains",
+      "mathlib:Rep.standardResolution",
+      "mathlib:groupCohomologyIso",
+      "roadmap:ProfiniteCohomology §3.1",
+      "roadmap:ProfiniteCohomology §3.2",
+      "tauceti:TauCeti.ContCohomology.explicitH1IsoGroupCohomology",
+      "tauceti:TauCeti.ContCohomology.explicitH2IsoGroupCohomology"
+     ],
+     "api": [
+      {
+       "name": "discreteIso_zero",
+       "role": "degree zero",
+       "statement": "Θ₀ identifies both sides with A^G."
+      },
+      {
+       "name": "discreteIso_naturality",
+       "role": "naturality",
+       "statement": "Natural for homomorphisms of discrete groups with compatible maps, and in A."
+      },
+      {
+       "name": "discreteIso_finite",
+       "role": "compatibility",
+       "statement": "For k = ℤ and finite G : Type, Θₙ realises TauCeti.ContCohomology.nonempty_continuousCohomology_addEquiv_groupCohomology."
+      }
+     ],
+     "tests": [
+      {
+       "name": "discreteIso_trivial",
+       "kind": "degenerate",
+       "statement": "Trivial group: both sides A in degree 0, zero above."
+      },
+      {
+       "name": "discreteIso_Z",
+       "kind": "computation",
+       "statement": "G = ℤ discrete, A = ℤ: both sides of Θ₁ are Hom(ℤ, ℤ); with the profinite topology on ℤ, H¹_cont = 0."
+      },
+      {
+       "name": "discreteIso_sign",
+       "kind": "non-example",
+       "statement": "The homogeneous cocycle f(g₀) − f(g₁) instead of f(g₁) − f(g₀) gives −f, different for G = ℤ, A = ℤ/3."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "key": "2",
+   "title": "Coefficients in a complex",
+   "targets": [
+    {
+     "id": "2.1",
+     "kind": "definition",
+     "name": "TauCeti.hyperHomology",
+     "statement": "For C : ChainComplex (Rep k G) ℕ, Hₙ(G; C) is the homology of the total complex of the bicomplex of inhomogeneous chains of the C_q; for D : CochainComplex (Rep k G) ℕ, Hⁿ(G; D) is the cohomology of the total complex of inhomogeneous cochains with values in the D^q. A complex bounded below by b is reindexed to C′_r = C_{r+b}. For k = ℤ and chain complexes this is SchemeKTheoryOperations §6.7's group hyperhomology; the target adds arbitrary k and hypercohomology.",
+     "hypotheses": [
+      "k G : Type u",
+      "[CommRing k]",
+      "[Group G]",
+      "C : ChainComplex (Rep k G) ℕ",
+      "D : CochainComplex (Rep k G) ℕ"
+     ],
+     "locator": {
+      "source": "HS53",
+      "where": "Ch. I §4, p. 114, and Ch. I §2 Prop. 1, p. 111"
+     },
+     "prerequisites": [
+      "mathlib:groupHomology.chainsFunctor",
+      "mathlib:groupCohomology.cochainsFunctor",
+      "mathlib:HomologicalComplex₂.total",
+      "mathlib:DerivedCategory",
+      "mathlib:groupCohomologyIsoExt",
+      "roadmap:SchemeKTheoryOperations §6.7",
+      "roadmap:K3BlochGroups §4.1",
+      "tauceti:MonoidHom.groupHomologyIso_hom_naturality",
+      "tauceti:MonoidHom.groupCohomologyIso_hom_naturality"
+     ],
+     "api": [
+      {
+       "name": "hyperHomology_map",
+       "role": "functoriality",
+       "statement": "Functorial in chain maps and in compatible pairs (f : G' →* G, C' ⟶ Res_f C)."
+      },
+      {
+       "name": "hyperHomologyIso",
+       "role": "resolution independence",
+       "statement": "For a projective resolution P of k, Hₙ(G; C) ≅ Hₙ(Tot (P_p ⊗ C_q)_G), compatibly for two resolutions; dually for hypercohomology."
+      },
+      {
+       "name": "hyperHomology_quasiIso",
+       "role": "invariance",
+       "statement": "Quasi-isomorphisms induce isomorphisms."
+      },
+      {
+       "name": "hyperHomology_single",
+       "role": "compatibility",
+       "statement": "For C concentrated in degree 0 on M, Hₙ(G; C) ≅ Hₙ(G, M); dually Hⁿ(G; D) ≅ Hⁿ(G, M)."
+      },
+      {
+       "name": "hyperCohomologyIsoDerived",
+       "role": "compatibility",
+       "statement": "Hⁿ(G; D) ≅ Hom in DerivedCategory (Rep k G) from k to D[n], recovering groupCohomologyIsoExt in degree 0."
+      },
+      {
+       "name": "hyperHomology_int_comparison",
+       "role": "comparison",
+       "statement": "For k = ℤ and C in degrees ≥ 0, Hₙ(G; C) is naturally isomorphic to SchemeKTheoryOperations §6.7's group hyperhomology; for integral bounded-below C the reindexing is K3BlochGroups §4.1's."
+      }
+     ],
+     "tests": [
+      {
+       "name": "hyper_Z2",
+       "kind": "computation",
+       "statement": "G = ℤ/2, C = ℤ in degree 0: H₁ = ℤ/2."
+      },
+      {
+       "name": "hyper_S3",
+       "kind": "non-example",
+       "statement": "G = S₃, C = ℤ[S₃ ⧸ A₃] → ℤ: H₀ = 0, H₁ = ℤ/2 although the coinvariant complex is acyclic."
+      },
+      {
+       "name": "hyper_trivial_group",
+       "kind": "degenerate",
+       "statement": "For the trivial group Hₙ(1; C) = Hₙ(C)."
+      }
+     ]
+    },
+    {
+     "id": "2.2",
+     "kind": "theorem",
+     "name": "TauCeti.hyperHomology.δ",
+     "statement": "A degreewise short exact sequence of complexes of representations gives natural long exact sequences in hyperhomology and hypercohomology.",
+     "hypotheses": [
+      "k G : Type u",
+      "[CommRing k]",
+      "[Group G]",
+      "0 → C' → C → C'' → 0 degreewise short exact"
+     ],
+     "locator": {
+      "source": "CE56",
+      "where": "Ch. XVII (hyperhomology; uncertified)"
+     },
+     "prerequisites": [
+      "target:2.1"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "les_single",
+       "kind": "compatibility",
+       "statement": "For complexes in degree 0 these are Mathlib's long exact sequences."
+      },
+      {
+       "name": "les_acyclic",
+       "kind": "computation",
+       "statement": "If C is acyclic the connecting maps are isomorphisms Hₙ(G; C'') ≅ Hₙ₋₁(G; C')."
+      },
+      {
+       "name": "les_trivial_group",
+       "kind": "degenerate",
+       "statement": "For G trivial, the homology sequence of complexes."
+      }
+     ]
+    },
+    {
+     "id": "2.3",
+     "kind": "theorem",
+     "name": "TauCeti.hyperHomology.spectralSequences",
+     "statement": "Natural convergent spectral sequences E¹_{p,q} = H_q(G, C_p) ⇒ H_{p+q}(G; C) with d¹ = H_q(G, ∂), E²_{p,q} = H_p(G, H_q(C)) ⇒ H_{p+q}(G; C), and their cohomological duals; if Hᵢ(C) = 0 for i ≤ t then Hₙ(G; C) = 0 for n ≤ t; if the C_p are acyclic, Hₙ(G; C) ≅ Hₙ(C_G). For k = ℤ the homological sequences and the vanishing statement are SchemeKTheoryOperations §6.7's.",
+     "hypotheses": [
+      "k G : Type u",
+      "[CommRing k]",
+      "[Group G]",
+      "C : ChainComplex (Rep k G) ℕ",
+      "D : CochainComplex (Rep k G) ℕ"
+     ],
+     "locator": {
+      "source": "HS53",
+      "where": "Ch. I §5, Lemma 1, p. 115; Lemma 2 and Prop. 5, p. 116; Ch. I §4 Prop. 4, p. 114"
+     },
+     "prerequisites": [
+      "target:2.1",
+      "roadmap:DerivedModuleAlgebra §S.1",
+      "roadmap:SchemeKTheoryOperations §6.7",
+      "tauceti:HomologicalComplex₂.rowFiltrationSpectralSequence",
+      "tauceti:HomologicalComplex₂.columnFiltrationSpectralSequence"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "ss_single",
+       "kind": "degenerate",
+       "statement": "C in degree 0: one row, Hₙ(G, C₀)."
+      },
+      {
+       "name": "ss_S3_first",
+       "kind": "computation",
+       "statement": "For ℤ[S₃ ⧸ A₃] → ℤ: d¹ is the corestriction, iso on q = 0 and zero on q = 1; H₁ = ℤ/2, H₂ = ℤ/3."
+      },
+      {
+       "name": "ss_no_converse",
+       "kind": "non-example",
+       "statement": "With S₃ ⧸ ⟨(12)⟩, H₀ = H₁ = 0 although H₁(C) ≅ ℤ²."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "key": "3",
+   "title": "Complexes of permutation modules and actions on trees",
+   "targets": [
+    {
+     "id": "3.1",
+     "kind": "definition",
+     "name": "TauCeti.equivariantHomology",
+     "statement": "H^G_n(C; M) = Hₙ(G; C ⊗ M) and H_G^n(C; M) = Hⁿ(G; Hom_k(C, M)). For C a resolution of k: if every C_p is k-flat, C ⊗ M → M is a quasi-isomorphism and H^G_n(C; M) ≅ Hₙ(G, M); if every C_p is k-projective, M → Hom_k(C, M) is a quasi-isomorphism and H_G^n(C; M) ≅ Hⁿ(G, M). Flatness alone does not give the cohomological statement.",
+     "hypotheses": [
+      "k G : Type u",
+      "[CommRing k]",
+      "[Group G]",
+      "C : ChainComplex (Rep k G) ℕ",
+      "M : Rep k G",
+      "homological comparison: C resolves k and every C_p is flat over k",
+      "cohomological comparison: C resolves k and every C_p is projective over k"
+     ],
+     "locator": {
+      "source": "Brown82",
+      "where": "Ch. VII (equivariant homology; uncertified)"
+     },
+     "prerequisites": [
+      "target:2.1",
+      "target:2.2"
+     ],
+     "api": [
+      {
+       "name": "equivariantHomology_les",
+       "role": "exactness",
+       "statement": "A short exact sequence 0 → C' → C → C'' → 0 that stays degreewise short exact after − ⊗ M (e.g. split over k in each degree, M k-flat, or every C''_p k-flat) gives a natural long exact sequence in H^G_*(−; M); one that stays degreewise short exact after Hom_k(−, M) (split over k, M k-injective, or every C''_p k-projective) gives one in H_G^*(−; M)."
+      },
+      {
+       "name": "equivariantHomology_les_coeff",
+       "role": "exactness",
+       "statement": "A short exact sequence of representations M gives a long exact sequence in H^G_*(C; −) when every C_p is k-flat and in H_G^*(C; −) when every C_p is k-projective."
+      },
+      {
+       "name": "equivariantHomology_map",
+       "role": "naturality",
+       "statement": "H^G_n covariant and H_G^n contravariant in chain maps, both functorial in M and natural for compatible pairs."
+      },
+      {
+       "name": "equivariantHomology_acyclic",
+       "role": "comparison",
+       "statement": "For a resolution C of k, termwise k-flat: H^G_n(C; M) ≅ Hₙ(G, M); termwise k-projective: H_G^n(C; M) ≅ Hⁿ(G, M); natural in M and compatible with the long exact sequences in the coefficients."
+      }
+     ],
+     "tests": [
+      {
+       "name": "eq_standard",
+       "kind": "compatibility",
+       "statement": "For the standard resolution the isomorphism is groupHomologyIso."
+      },
+      {
+       "name": "eq_not_resolution",
+       "kind": "non-example",
+       "statement": "C = ℤ[ℤ/2] in degree 0: H^G_1 = 0 ≠ H₁(ℤ/2, ℤ)."
+      },
+      {
+       "name": "eq_flatness",
+       "kind": "non-example",
+       "statement": "k = ℤ/4, G trivial, M = ℤ/2, C = k ⊕ (ℤ/2 → ℤ/4 → ℤ/2): C → k quasi-iso but H^G_2 = ℤ/2."
+      },
+      {
+       "name": "eq_projectivity",
+       "kind": "non-example",
+       "statement": "k = ℤ, G trivial, M = ℤ, C = ℤ ⊕ (F →u F →v ℤ[1/2]) with F = ℤ^(ℕ), u(e_i) = e_i − 2e_{i+1}, v(e_i) = 2^{−i}: flat terms, C → ℤ quasi-iso, but (1, 0, 1, 0, …) is not of the form (a_i − 2a_{i+1}) (a₀ would be −1/3 in ℤ₂), so H_G^2(C; ℤ) ≠ 0 = H²(1, ℤ)."
+      },
+      {
+       "name": "eq_les_exactness",
+       "kind": "non-example",
+       "statement": "G trivial, M = ℤ/2, 0 → ℤ →2 ℤ → ℤ/2 → 0 in degree 0: tensoring gives ℤ/2 →0 ℤ/2 →id ℤ/2, and a long exact sequence would need the zero map H^G_0(C'; M) → H^G_0(C; M) to be injective."
+      }
+     ]
+    },
+    {
+     "id": "3.2",
+     "kind": "theorem",
+     "name": "TauCeti.equivariantHomology.orbitSpectralSequence",
+     "statement": "For C_p ≅ ⊕_{σ∈Σ_p} Ind_{G_σ}^G k_σ, the first sequence of 2.3 for C ⊗ M is E¹_{p,q} = ⊕_σ H_q(G_σ, k_σ ⊗ M) ⇒ H^G_{p+q}(C; M), dually E₁^{p,q} = ∏_σ H^q(G_σ, Hom_k(k_σ, M)); d¹ is H_q(G, ∂) through the Shapiro isomorphisms. For k = ℤ, trivial characters and transitive permutation modules this is SchemeKTheoryOperations §6.7's first-page identification.",
+     "hypotheses": [
+      "k G : Type u",
+      "[CommRing k]",
+      "[Group G]",
+      "C_p monomial: ⊕_σ Ind_{G_σ}^G k_σ, χ_σ : G_σ →* kˣ"
+     ],
+     "locator": {
+      "source": "Brown82",
+      "where": "Ch. VII (equivariant spectral sequence; uncertified); the bicomplex is HS53 Ch. I §4, p. 114"
+     },
+     "prerequisites": [
+      "target:1.3",
+      "target:1.4",
+      "target:2.3",
+      "roadmap:SchemeKTheoryOperations §6.7"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "orbit_fixed",
+       "kind": "degenerate",
+       "statement": "All G_σ = G, trivial characters: E¹_{p,q} = H_q(G, M)^(Σ_p)."
+      },
+      {
+       "name": "orbit_tree",
+       "kind": "compatibility",
+       "statement": "For a tree the sequence has two columns and gives 3.5."
+      },
+      {
+       "name": "orbit_reflection_vs_rotation",
+       "kind": "computation",
+       "statement": "Circle with two vertices: ℤ/2 by reflection has E¹_{0,q} = H_q(ℤ/2, ℤ)² surviving in odd q ≥ 3; by rotation, all stabilisers trivial."
+      }
+     ]
+    },
+    {
+     "id": "3.3",
+     "kind": "theorem",
+     "name": "TauCeti.equivariantHomology.free",
+     "statement": "If every C_p is free over k[G], H^G_n(C; M) ≅ Hₙ((C ⊗ M)_G), with E²_{p,q} = H_p(G, H_q(C ⊗ M)) ⇒ H_{p+q}((C ⊗ M)_G); if C resolves k, Hₙ((C ⊗ M)_G) ≅ Hₙ(G, M).",
+     "hypotheses": [
+      "k G : Type u",
+      "[CommRing k]",
+      "[Group G]",
+      "each C_p free over k[G]"
+     ],
+     "locator": {
+      "source": "HS53",
+      "where": "Ch. I §5 Prop. 5, p. 116 (Cartan–Leray)"
+     },
+     "prerequisites": [
+      "target:3.1",
+      "target:3.2",
+      "target:2.3",
+      "tauceti:groupHomology.isZero_indBot_succ"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "free_cover",
+       "kind": "compatibility",
+       "statement": "For a surjective finite regular cover p : E → B with deck group G, C = C_*(E; k) (free over k[G]) and a k-module M with trivial G-action, (C ⊗ M)_G = C_*(E; M)_G ≅ C_*(B; M) through p_* (AlgebraicTopology §5.3, constant coefficients only): the abutment is Hₙ(B; M) and E² = H_p(G, H_q(E; M)) is that of §5.3's Cartan–Leray sequence."
+      },
+      {
+       "name": "free_cover_sign",
+       "kind": "non-example",
+       "statement": "Trivial action is needed: E = ℝ/2ℤ → B = ℝ/ℤ, G = ℤ/2 by x ↦ x + 1, k = ℤ, M = ℤ_sgn. Cellular chains ℤG →(t−1) ℤG give (C ⊗ M)_G = (ℤ →(−2) ℤ), so H₀ = ℤ/2, H₁ = 0, against H₀(B; ℤ) = H₁(B; ℤ) = ℤ; for trivial M = ℤ the differential is 0. Singular chains agree via 0 → ℤ_sgn → ℤG → ℤ → 0 and p_* = 2 on H₁."
+      },
+      {
+       "name": "free_cyclic",
+       "kind": "computation",
+       "statement": "G = ℤ/m, m ≥ 1, with the periodic resolution: ℤ/m in odd degrees, 0 in positive even degrees."
+      },
+      {
+       "name": "free_needed",
+       "kind": "non-example",
+       "statement": "C = ℤ in degree 0: H₁(C_G) = 0 while H₁(G; C) = G^ab."
+      }
+     ]
+    },
+    {
+     "id": "3.4",
+     "kind": "theorem",
+     "name": "TauCeti.GTree.augmentedChains_exact",
+     "statement": "For a G-tree X with a G-invariant orientation E⁺, 0 → k[E⁺] → k[V] → k → 0 with ∂e = t(e) − o(e) is an exact sequence of permutation representations, split over k.",
+     "hypotheses": [
+      "k G : Type u",
+      "[CommRing k]",
+      "[Group G]",
+      "X a G-tree (FreeGroupsAndLimitGroups §4.6)",
+      "E⁺ a G-invariant orientation"
+     ],
+     "locator": {
+      "source": "SerreArbres",
+      "where": "II §2.8, p. 168"
+     },
+     "prerequisites": [
+      "roadmap:FreeGroupsAndLimitGroups §4.6",
+      "tauceti:TauCeti.SerreGraph.IsTree",
+      "mathlib:Rep.ofMulAction"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "tree_point",
+       "kind": "degenerate",
+       "statement": "One-vertex tree: 0 → 0 → k → k → 0."
+      },
+      {
+       "name": "tree_line",
+       "kind": "computation",
+       "statement": "ℤ acting on the line: ∂ = t − 1 on k[ℤ], injective with cokernel k."
+      },
+      {
+       "name": "tree_loop",
+       "kind": "non-example",
+       "statement": "One vertex with a loop: ∂ = 0, not exact; acyclicity is used."
+      }
+     ]
+    },
+    {
+     "id": "3.5",
+     "kind": "theorem",
+     "name": "TauCeti.groupHomology.treeSequence",
+     "statement": "Natural long exact sequences … → ⊕_{e∈Σ₁} Hₙ(G_e, M) → ⊕_{v∈Σ₀} Hₙ(G_v, M) → Hₙ(G, M) → ⊕_{e∈Σ₁} Hₙ₋₁(G_e, M) → … and dually with products in cohomology; vertex maps are corestriction/restriction, and for t(e) = a·v, o(e) = b·w the edge map is c_{a⁻¹}∘cor into v minus c_{b⁻¹}∘cor into w.",
+     "hypotheses": [
+      "k G : Type u",
+      "[CommRing k]",
+      "[Group G]",
+      "X a G-tree",
+      "Σ₀, Σ₁ orbit representatives of vertices and oriented edges",
+      "M : Rep k G"
+     ],
+     "locator": {
+      "source": "SerreArbres",
+      "where": "II §2.8 Prop. 13 and Remarque 1, p. 169"
+     },
+     "prerequisites": [
+      "target:1.1",
+      "target:1.3",
+      "target:1.4",
+      "target:3.4",
+      "mathlib:groupHomology",
+      "mathlib:groupCohomology",
+      "tauceti:TauCeti.groupHomology.indIso_inv_comp_map_counit",
+      "tauceti:TauCeti.groupCohomology.map_unit_comp_coindIso_hom"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "tree_Z_line",
+       "kind": "computation",
+       "statement": "ℤ on the line: H₁(ℤ, M) = M^ℤ, H₀(ℤ, M) = M_ℤ, Hₙ = 0 for n ≥ 2."
+      },
+      {
+       "name": "tree_fixed_vertex",
+       "kind": "degenerate",
+       "statement": "One-vertex tree: Hₙ(G_{v₀}, M) = Hₙ(G, M)."
+      },
+      {
+       "name": "tree_sum_wrong",
+       "kind": "non-example",
+       "statement": "With a sum instead of a difference the line gives H₀(ℤ, ℤ) = ℤ/2."
+      }
+     ]
+    },
+    {
+     "id": "3.6",
+     "kind": "theorem",
+     "name": "TauCeti.groupHomology.amalgamSequence",
+     "statement": "Mayer–Vietoris sequences for amalgams A ∗_C B (Monoid.PushoutI), first map x ↦ (−cor x, cor x), and for HNN extensions (HNNExtension H A B φ), first map the difference of the maps induced by A ≤ H and by ι_B ∘ φ with m ↦ t·m; free products Hₙ(A ∗ B, M) ≅ Hₙ(A, M) ⊕ Hₙ(B, M) for n ≥ 2 and every M, with the degree-one exact sequence 0 → H₁(A, M) ⊕ H₁(B, M) → H₁(A ∗ B, M) → M → M_A ⊕ M_B → M_{A∗B} → 0 (direct sum also for n = 1 when the action is trivial); free groups Hₙ(F, M) = Hⁿ(F, M) = 0 for n ≥ 2 and 0 → H₁(F, M) → M^(S) → M → H₀(F, M) → 0.",
+     "hypotheses": [
+      "k G : Type u",
+      "[CommRing k]",
+      "[Group G]",
+      "injective C →* A, C →* B",
+      "A B ≤ H, φ : A ≃* B",
+      "S : Type u"
+     ],
+     "locator": {
+      "source": "SerreArbres",
+      "where": "II §2.8, example after Prop. 13, p. 169"
+     },
+     "prerequisites": [
+      "target:3.5",
+      "roadmap:FreeGroupsAndLimitGroups §2.2",
+      "roadmap:FreeGroupsAndLimitGroups §4.2",
+      "roadmap:FreeGroupsAndLimitGroups §4.5",
+      "roadmap:FreeGroupsAndLimitGroups §4.7",
+      "mathlib:Monoid.PushoutI",
+      "mathlib:HNNExtension",
+      "mathlib:FreeGroup"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "amalgam_SL2Z",
+       "kind": "computation",
+       "statement": "ℤ/4 ∗_{ℤ/2} ℤ/6: H₁ = ℤ/12."
+      },
+      {
+       "name": "hnn_BS12",
+       "kind": "non-example",
+       "statement": "BS(1,2): H₁ = ℤ; the sum instead of the difference gives ℤ/3."
+      },
+      {
+       "name": "free_group",
+       "kind": "computation",
+       "statement": "FreeGroup S: H₁ = ℤ^(S), Hₙ = 0 for n ≥ 2; ℤ/2 ∗ ℤ/2 has (ℤ/2)² in odd degrees."
+      },
+      {
+       "name": "free_product_twisted",
+       "kind": "non-example",
+       "statement": "ℤ ∗ ℤ with M = ℤ, both generators acting by −1: H₁ = ker(−2m_a − 2m_b) ≅ ℤ but H₁(ℤ, M) = 0 for each factor; the kernel of M → M_A ⊕ M_B = (ℤ/2)² is 2ℤ ≅ ℤ."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "key": "4",
+   "title": "Cup and cap products",
+   "targets": [
+    {
+     "id": "4.1",
+     "kind": "definition",
+     "name": "TauCeti.groupCohomology.cup",
+     "statement": "For μ : M ⊗ N ⟶ P, (φ ∪ ψ)(g₁,…,g_{p+q}) = μ(φ(g₁,…,g_p) ⊗ (g₁⋯g_p)·ψ(g_{p+1},…,g_{p+q})), with d(φ ∪ ψ) = dφ ∪ ψ + (−1)^p φ ∪ dψ, inducing a k-bilinear ∪_μ : Hᵖ(G, M) × H^q(G, N) → H^{p+q}(G, P).",
+     "hypotheses": [
+      "k G : Type u",
+      "[CommRing k]",
+      "[Group G]",
+      "M N P : Rep k G",
+      "μ : M ⊗ N ⟶ P"
+     ],
+     "locator": {
+      "source": "MilneCFT",
+      "where": "Ch. II Prop. 1.38 and its proof, p. 73"
+     },
+     "prerequisites": [
+      "mathlib:groupCohomology.cochainsFunctor"
+     ],
+     "api": [
+      {
+       "name": "cup_bilinear",
+       "role": "structure",
+       "statement": "Bilinear, and natural in μ: φ ∪_{μ≫f} ψ = f ∘ (φ ∪_μ ψ)."
+      },
+      {
+       "name": "cup_descends",
+       "role": "well-definedness",
+       "statement": "Cocycles to cocycles, coboundary times cocycle a coboundary."
+      },
+      {
+       "name": "cup_zero_zero",
+       "role": "evaluation",
+       "statement": "In bidegree (0,0), (m, n) ↦ μ(m ⊗ n)."
+      }
+     ],
+     "tests": [
+      {
+       "name": "cup_Z2_square",
+       "kind": "computation",
+       "statement": "G = ℤ/2, 𝔽₂: x ∪ x is the nonzero class of H²."
+      },
+      {
+       "name": "cup_Z2_witness",
+       "kind": "computation",
+       "statement": "On ℤ², the product of the two projections pairs to +1 with [e₁|e₂] − [e₂|e₁]; the (−1)^{pq} convention gives −1."
+      },
+      {
+       "name": "cup_no_twist",
+       "kind": "non-example",
+       "statement": "Without the action on the second factor, for G = ℤ, N = P = ℤ[ℤ], φ = id, ψ(1) = 1, the product has coboundary 2(t − 1) ≠ 0."
+      }
+     ]
+    },
+    {
+     "id": "4.2",
+     "kind": "theorem",
+     "name": "TauCeti.groupCohomology.cup_δ",
+     "statement": "δx'' ∪ y = δ(x'' ∪ y) and x ∪ δy'' = (−1)^p δ(x ∪ y'') for short exact sequences that stay exact after tensoring; the cup product is the unique family natural in M, N, equal to the invariant product in degree (0,0), satisfying both rules for the coinduction sequences.",
+     "hypotheses": [
+      "k G : Type u",
+      "[CommRing k]",
+      "[Group G]",
+      "short exact sequences whose tensor with the other factor is short exact"
+     ],
+     "locator": {
+      "source": "MilneCFT",
+      "where": "Ch. II Prop. 1.38(c), (d) and uniqueness, p. 73"
+     },
+     "prerequisites": [
+      "target:4.1",
+      "tauceti:Rep.dimensionShiftUp"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "cup_δ_needs_exact",
+       "kind": "non-example",
+       "statement": "0 → ℤ → ℤ → ℤ/2 → 0 tensored with ℤ/2 is not exact."
+      },
+      {
+       "name": "cup_δ_degree_zero",
+       "kind": "computation",
+       "statement": "In bidegree (0,0) the rule is the definition of δ applied to μ."
+      },
+      {
+       "name": "cup_Loh_convention",
+       "kind": "non-example",
+       "statement": "(−1)^{pq} x ∪ y satisfies the right rule without sign and the left rule with (−1)^q; it is −∪ on H¹(ℤ²) × H¹(ℤ²)."
+      }
+     ]
+    },
+    {
+     "id": "4.3",
+     "kind": "theorem",
+     "name": "TauCeti.groupCohomology.cup_assoc",
+     "statement": "∪ is unital, associative for compatible pairings, graded commutative x ∪_μ y = (−1)^{pq} y ∪_{μ'} x (μ' = μ after the braiding), and natural for compatible pairs, in particular restriction, inflation and coefficient maps.",
+     "hypotheses": [
+      "k G : Type u",
+      "[CommRing k]",
+      "[Group G]"
+     ],
+     "locator": {
+      "source": "MilneCFT",
+      "where": "Ch. II Prop. 1.39(a), (b), (c), (e), pp. 73–74"
+     },
+     "prerequisites": [
+      "target:4.1",
+      "target:4.2"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "cup_trivial_group",
+       "kind": "degenerate",
+       "statement": "G trivial: μ in degree 0."
+      },
+      {
+       "name": "cup_comm_Z2",
+       "kind": "computation",
+       "statement": "x ∪ y = −y ∪ x on H*(ℤ², ℤ)."
+      },
+      {
+       "name": "cup_comm_cochains",
+       "kind": "non-example",
+       "statement": "On cochains x ∪ y and −y ∪ x differ at (e₁, e₂)."
+      }
+     ]
+    },
+    {
+     "id": "4.4",
+     "kind": "definition",
+     "name": "TauCeti.Rep.DiagonalApprox",
+     "statement": "A diagonal approximation of a projective resolution P of k is a chain map Δ : P ⟶ P ⊗ P lifting k ≅ k ⊗ k; Alexander–Whitney is one on Rep.standardResolution; two are homotopic after comparison; the cup product along Δ, Tau Ceti's TauCeti.ChainComplex.cup in Rep k G for A = B = E = P and D = Δ (on cochains μ ∘ (φ ⊗ ψ) ∘ Δ), computes ∪_μ through groupCohomologyIso for every (P, Δ).",
+     "hypotheses": [
+      "k G : Type u",
+      "[CommRing k]",
+      "[Group G]",
+      "P a projective resolution of the trivial representation k"
+     ],
+     "locator": {
+      "source": "Brown82",
+      "where": "Ch. V (diagonal approximations; uncertified)"
+     },
+     "prerequisites": [
+      "target:4.1",
+      "mathlib:Rep.standardResolution",
+      "mathlib:groupCohomologyIso",
+      "tauceti:TauCeti.ChainComplex.cupCochain",
+      "tauceti:TauCeti.ChainComplex.d_comp_cupCochain",
+      "tauceti:TauCeti.ChainComplex.cup"
+     ],
+     "api": [
+      {
+       "name": "diagonalApprox_exists",
+       "role": "existence",
+       "statement": "Every projective resolution has one, unique up to homotopy."
+      },
+      {
+       "name": "cup_eq_diagonalApprox",
+       "role": "comparison",
+       "statement": "The cup computed with (P, Δ) equals 4.1 through groupCohomologyIso."
+      }
+     ],
+     "tests": [
+      {
+       "name": "diag_trivial",
+       "kind": "degenerate",
+       "statement": "G trivial, P = k: Δ is the unitor."
+      },
+      {
+       "name": "diag_Z2",
+       "kind": "computation",
+       "statement": "G = ℤ/2: AW and a diagonal of the periodic resolution both give x² ≠ 0."
+      },
+      {
+       "name": "diag_wrong_degree",
+       "kind": "non-example",
+       "statement": "(g₀..gₙ) ↦ (g₀..gₙ) ⊗ (g₀..gₙ) raises degree to 2n."
+      }
+     ]
+    },
+    {
+     "id": "4.5",
+     "kind": "theorem",
+     "name": "TauCeti.groupCohomology.corestriction_cup",
+     "statement": "For H ≤ G of finite index, x ∈ Hᵖ(H, M), y ∈ H^q(G, N): cor(x ∪ res y) = cor(x) ∪ y and cor(res y ∪ x) = y ∪ cor(x).",
+     "hypotheses": [
+      "k G : Type u",
+      "[CommRing k]",
+      "[Group G]",
+      "H : Subgroup G",
+      "[H.FiniteIndex]",
+      "μ : M ⊗ N ⟶ P"
+     ],
+     "locator": {
+      "source": "MilneCFT",
+      "where": "Ch. II Prop. 1.39(d), p. 74"
+     },
+     "prerequisites": [
+      "target:4.2",
+      "target:4.3",
+      "tauceti:TauCeti.groupCohomology.corestriction",
+      "tauceti:TauCeti.groupCohomology.δ_comp_corestriction"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "proj_H_eq_G",
+       "kind": "degenerate",
+       "statement": "H = G: both sides x ∪ y."
+      },
+      {
+       "name": "proj_res",
+       "kind": "computation",
+       "statement": "x = res z: [G : H](z ∪ y), consistent with map_subtype_id_comp_corestriction."
+      },
+      {
+       "name": "proj_tate",
+       "kind": "compatibility",
+       "statement": "For finite G agrees with TauCeti.TateCohomology.cup_projection through 4.7(a)."
+      }
+     ]
+    },
+    {
+     "id": "4.6",
+     "kind": "definition",
+     "name": "TauCeti.groupHomology.cap",
+     "statement": "Cap product ∩ : Hᵖ(G, M) ⊗ Hₙ(G, N) → Hₙ₋ₚ(G, P) for μ : M ⊗ N ⟶ P through a diagonal approximation, and the evaluation ⟨−,−⟩ : Hⁿ(G, Hom_k(M, A)) ⊗ Hₙ(G, M) → A for trivial A, given on inhomogeneous representatives by ⟨φ, Σ a_i [g_{i,1}|…|g_{i,n}] ⊗ m_i⟩ = Σ a_i φ(g_{i,1}, …, g_{i,n})(m_i), with ⟨dφ, c⟩ = ⟨φ, ∂c⟩ without sign.",
+     "hypotheses": [
+      "k G : Type u",
+      "[CommRing k]",
+      "[Group G]",
+      "μ : M ⊗ N ⟶ P",
+      "A a k-module with trivial action"
+     ],
+     "locator": {
+      "source": "Brown82",
+      "where": "Ch. V (cap products; uncertified)"
+     },
+     "prerequisites": [
+      "target:4.4",
+      "target:4.3",
+      "tauceti:TauCeti.groupHomology.transfer",
+      "roadmap:IntegralIwasawaTheoryPartII §0.7",
+      "tauceti:TauCeti.ChainComplex.capChain",
+      "tauceti:TauCeti.ChainComplex.capChain_comp_d",
+      "tauceti:TauCeti.ChainComplex.kronecker",
+      "tauceti:HomologicalComplex.coinvariantsTensorObjLinearYonedaObjIso",
+      "tauceti:Rep.groupCohomologyIhomIso",
+      "mathlib:groupHomologyIso"
+     ],
+     "api": [
+      {
+       "name": "cap_one",
+       "role": "unit",
+       "statement": "1 ∩ z = z."
+      },
+      {
+       "name": "cap_cup",
+       "role": "associativity",
+       "statement": "(x ∪ y) ∩ z = x ∩ (y ∩ z)."
+      },
+      {
+       "name": "cap_projection",
+       "role": "naturality",
+       "statement": "f_*(f^*x ∩ z) = x ∩ f_*z for f : G' →* G."
+      },
+      {
+       "name": "cap_transfer",
+       "role": "finite index",
+       "statement": "tr(y ∩ z) = res y ∩ tr z and cor(x ∩ tr z) = cor(x) ∩ z, the first cor homological Hₙ₋ₚ(H, P) → Hₙ₋ₚ(G, P), the second cohomological Hᵖ(H, M) → Hᵖ(G, M)."
+      },
+      {
+       "name": "eval_cup",
+       "role": "compatibility",
+       "statement": "⟨x ∪ y, z⟩ = ⟨x, y ∩ z⟩ for x ∈ Hᵖ(G, Hom_k(M', A)), y ∈ H^q(G, Hom_k(M, M')), z ∈ H_{p+q}(G, M), composition and evaluation as pairings; for x = 1, ⟨y, z⟩ is the image of y ∩ z in H₀(G, A) = A."
+      },
+      {
+       "name": "eval_eq_cap_IIT",
+       "role": "comparison",
+       "statement": "For k = A = ℂ_p, the evaluation Hⁿ(G, M^∨) ⊗ Hₙ(G, M) → ℂ_p is IntegralIwasawaTheoryPartII §0.7's cap product, under [g₁|…|gₙ] ↔ (1, g₁, …, g₁⋯gₙ)."
+      },
+      {
+       "name": "cap_chain_form",
+       "role": "comparison",
+       "statement": "For y of degree q and a chain of degree n, y ∩ c is (−1)^{q(n−q)} times the coinvariants of TauCeti.ChainComplex.capChain in Rep k G along X ⊗ N → X ⊗ (X ⊗ N) (Δ, the Koszul symmetry of X ⊗ X, the associator) with the action M ⊗ (X ⊗ N) → X ⊗ P through μ, so the cochain is evaluated on the back face; on classes the front-face product along Δ is (−1)^{q(n−q)} y ∩ z."
+      },
+      {
+       "name": "eval_kronecker",
+       "role": "comparison",
+       "statement": "Through Rep.groupCohomologyIhomIso (φ ↦ [m ⊗ x] ↦ φ(x)(m)) and groupHomologyIso for the bar resolution, the evaluation is TauCeti.ChainComplex.kronecker for (M ⊗ X)_G and A."
+      }
+     ],
+     "tests": [
+      {
+       "name": "cap_Z2_perfect",
+       "kind": "computation",
+       "statement": "G = ℤ/2, 𝔽₂: evaluation H¹ ⊗ H₁ → 𝔽₂ is perfect."
+      },
+      {
+       "name": "cap_degree_zero",
+       "kind": "degenerate",
+       "statement": "p = n = 0: x ∩ [n] = [μ(x ⊗ n)]."
+      },
+      {
+       "name": "cap_finite_index_zero",
+       "kind": "computation",
+       "statement": "Degree 0: both sides of cor(x ∩ tr z) = cor(x) ∩ z are Σ_{gH} [μ(g·x ⊗ n)]."
+      },
+      {
+       "name": "eval_torus",
+       "kind": "computation",
+       "statement": "Coordinate classes x, y of ℤ²: ⟨x ∪ y, [e₁|e₂] − [e₂|e₁]⟩ = 1 and ⟨y ∪ x, [e₁|e₂] − [e₂|e₁]⟩ = −1."
+      },
+      {
+       "name": "cap_face_Z2",
+       "kind": "computation",
+       "statement": "G = ℤ², x, y the coordinate classes, z = [e₁|e₂] − [e₂|e₁]: back face y ∩ z = y(e₂)[e₁] − y(e₁)[e₂] = [e₁], ⟨x, y ∩ z⟩ = 1 = ⟨x ∪ y, z⟩; the front-face capChain along Alexander–Whitney gives −[e₁] = (−1)^{1·1} y ∩ z and breaks the adjunction law."
+      }
+     ]
+    },
+    {
+     "id": "4.7",
+     "kind": "theorem",
+     "name": "TauCeti.groupCohomology.cup_eq_tateCup",
+     "statement": "(a) For finite G, p, q ≥ 1, TateCohomology.isoGroupCohomology carries ∪ for 𝟙 to TauCeti.TateCohomology.cup, and degree 0 through H⁰ ↠ Ĥ⁰; (b) for discrete G, Θ (1.5) carries TauCeti.TopPairing.cup to ∪; (c) for profinite G, TauCeti.TopPairing.cup is the colimit of the cups on G ⧸ U.",
+     "hypotheses": [
+      "k G : Type u",
+      "[CommRing k]",
+      "[Group G]",
+      "(a) [Fintype G]",
+      "(b) discrete G and coefficients",
+      "(c) profinite G, discrete M, N"
+     ],
+     "locator": {
+      "source": "MilneCFT",
+      "where": "Ch. II Prop. 1.38 (uniqueness), p. 73"
+     },
+     "prerequisites": [
+      "target:1.5",
+      "target:4.2",
+      "target:4.3",
+      "tauceti:TauCeti.TateCohomology.cup",
+      "tauceti:TauCeti.TopPairing.cup",
+      "tauceti:TauCeti.ContCohomology.continuousFiniteQuotientColimit",
+      "mathlib:TateCohomology.isoGroupCohomology",
+      "roadmap:ProfiniteCohomology §10.1"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "tate_Z2",
+       "kind": "computation",
+       "statement": "G = ℤ/2: both send (x, x) to the nonzero class of H²(G, 𝔽₂)."
+      },
+      {
+       "name": "tate_norm_zero",
+       "kind": "degenerate",
+       "statement": "Norm elements of Ĥ⁰ cup to zero in positive degree, as in H^q by the projection formula."
+      },
+      {
+       "name": "profinite_abstract",
+       "kind": "non-example",
+       "statement": "G = ∏_ℕ ℤ/p: H¹_cont countable, abstract H¹ uncountable; only finite quotients are compared."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "key": "5",
+   "title": "Products of groups and abelian groups",
+   "targets": [
+    {
+     "id": "5.1",
+     "kind": "construction",
+     "name": "TauCeti.groupHomology.cross",
+     "statement": "C(G; M) ⊗_k C(H; N) ≃ C(G × H; M ⊠ N) (homotopy equivalence); natural cross product H_p(G, M) ⊗ H_q(H, N) → H_{p+q}(G × H, M ⊠ N) induced by the Eilenberg–Zilber shuffle map ([g] × [h] = [(g,1)|(1,h)] − [(1,h)|(g,1)] for trivial coefficients); for k of global dimension ≤ 1 and one of M, N flat over k, the Künneth short exact sequence 0 → ⊕_{p+q=n} H_p(G, M) ⊗ H_q(H, N) → Hₙ(G × H, M ⊠ N) → ⊕_{p+q=n−1} Tor₁^k(H_p(G, M), H_q(H, N)) → 0, natural in compatible pairs and split (not naturally); over a field the cross product is an isomorphism.",
+     "hypotheses": [
+      "k G : Type u",
+      "[CommRing k]",
+      "[Group G]",
+      "H : Type u",
+      "[Group H]",
+      "M : Rep k G",
+      "N : Rep k H",
+      "for the sequence: k of global dimension ≤ 1, M or N flat over k"
+     ],
+     "locator": {
+      "source": "Loh19",
+      "where": "Thm. 3.2.22 and Cor. 3.2.23, pp. 135–136 (principal ideal domain, one complex of flat modules)"
+     },
+     "prerequisites": [
+      "mathlib:Rep.standardResolution",
+      "mathlib:groupHomologyIso",
+      "tauceti:HomologicalComplex.homologyKunnethShortComplex_shortExact",
+      "tauceti:HomologicalComplex.homologyKunnethShortComplexSplitting",
+      "tauceti:HomologicalComplex.homologyKunneth",
+      "gap:flat-kunneth",
+      "roadmap:InductionRestrictionPartII RS.6.8"
+     ],
+     "api": [
+      {
+       "name": "cross_natural",
+       "role": "naturality",
+       "statement": "Natural in compatible pairs on both factors, bilinear."
+      },
+      {
+       "name": "cross_assoc_comm",
+       "role": "structure",
+       "statement": "Associative and graded commutative under G × H ≅ H × G with sign (−1)^{pq}."
+      },
+      {
+       "name": "cross_degree_two_integral",
+       "role": "comparison",
+       "statement": "k = ℤ, trivial ℤ, n = 2: the Tor terms vanish and the cross product is an isomorphism H₂(G, ℤ) ⊕ (G^ab ⊗ H^ab) ⊕ H₂(H, ℤ) ≅ H₂(G × H, ℤ), inclusions on the outer summands and g ⊗ h ↦ [(g, 1)|(1, h)] − [(1, h)|(g, 1)]; for abelian G, H : Type it is the inverse of InductionRestrictionPartII RS.6.8's degree-two Künneth isomorphism."
+      }
+     ],
+     "tests": [
+      {
+       "name": "kunneth_V4_H2",
+       "kind": "computation",
+       "statement": "H₂(ℤ/2 × ℤ/2, ℤ) = ℤ/2."
+      },
+      {
+       "name": "kunneth_V4_H3",
+       "kind": "non-example",
+       "statement": "H₃(ℤ/2 × ℤ/2, ℤ) = (ℤ/2)³: the cross product is not surjective."
+      },
+      {
+       "name": "kunneth_Fp",
+       "kind": "computation",
+       "statement": "Hₙ(ℤ/p × ℤ/p, 𝔽_p) = 𝔽_p^{n+1}."
+      },
+      {
+       "name": "kunneth_flat_nonprojective",
+       "kind": "computation",
+       "statement": "k = ℤ, G = H = ℤ/2, trivial M = 𝔽₂ and N = ℤ[1/3] (flat, not projective; neither factor projective): in degree 2 the tensor terms are 𝔽₂², the Tor term Tor₁(𝔽₂, ℤ/2) = 𝔽₂, and H₂(ℤ/2 × ℤ/2, 𝔽₂) = 𝔽₂³; in degree 0, 𝔽₂ ⊗ ℤ[1/3] = 𝔽₂ = H₀."
+      },
+      {
+       "name": "kunneth_flat_factor_needed",
+       "kind": "non-example",
+       "statement": "k = ℤ, G = H = 1, M = N = ℤ/2 (neither flat): H₁(1, ℤ/2 ⊗ ℤ/2) = 0 but the Tor term in degree 1 is Tor₁(ℤ/2, ℤ/2) = ℤ/2, so the sequence is not exact."
+      }
+     ]
+    },
+    {
+     "id": "5.2",
+     "kind": "theorem",
+     "name": "TauCeti.groupHomology.universalCoefficients",
+     "statement": "For k of global dimension ≤ 1 and trivial A: 0 → Hₙ(G, k) ⊗ A → Hₙ(G, A) → Tor₁(Hₙ₋₁(G, k), A) → 0 and 0 → Ext¹(Hₙ₋₁(G, k), A) → Hⁿ(G, A) → Hom(Hₙ(G, k), A) → 0, natural, split not naturally; the second map is the evaluation, TauCeti.ChainComplex.kronecker for C(G; k). For finite G and k = ℤ these are ArithmeticGaloisDuality §D7.2's sequence and H^{n+1}(G, ℤ) ≅ Ext¹(Hₙ(G, ℤ), ℤ).",
+     "hypotheses": [
+      "k G : Type u",
+      "[CommRing k]",
+      "[Group G]",
+      "k of global dimension ≤ 1",
+      "A a k-module with trivial action"
+     ],
+     "locator": {
+      "source": "Loh19",
+      "where": "Cor. 3.2.21, p. 135, and Outlook 3.2.26, p. 138"
+     },
+     "prerequisites": [
+      "target:4.6",
+      "tauceti:HomologicalComplex.homologyKunnethShortComplex_shortExact",
+      "tauceti:TauCeti.ChainComplex.extToHomology",
+      "tauceti:TauCeti.ChainComplex.exact_extToHomology_kronecker",
+      "tauceti:TauCeti.ChainComplex.extToHomology_injective",
+      "tauceti:TauCeti.ChainComplex.kronecker",
+      "tauceti:HomologicalComplex.coinvariantsTensorObjLinearYonedaObjIso",
+      "tauceti:TauCeti.groupHomology.transfer_comp_map_subtype_id",
+      "roadmap:ArithmeticGaloisDuality §D7.2"
+     ],
+     "api": [
+      {
+       "name": "uct_finite_comparison",
+       "role": "comparison",
+       "statement": "Finite G, k = ℤ: the homological sequence is ArithmeticGaloisDuality §D7.2's; Hₘ(G, ℤ) is killed by |G| for m ≥ 1 (transfer_comp_map_subtype_id), so Hom(Hₘ(G, ℤ), ℤ) = 0 and H^{n+1}(G, ℤ) ≅ Ext¹(Hₙ(G, ℤ), ℤ) for n ≥ 0; for a field k and A = k, the evaluation duality Hⁿ(G, k) ≅ Hom_k(Hₙ(G, k), k), §D7.2's for a finite field."
+      }
+     ],
+     "tests": [
+      {
+       "name": "uct_Z2",
+       "kind": "computation",
+       "statement": "H²(ℤ/2, 𝔽₂) = Ext¹(ℤ/2, 𝔽₂) = 𝔽₂."
+      },
+      {
+       "name": "uct_field",
+       "kind": "degenerate",
+       "statement": "Over a field Hⁿ(G, A) = Hom(Hₙ(G, k), A)."
+      },
+      {
+       "name": "uct_tor_needed",
+       "kind": "non-example",
+       "statement": "H₂(ℤ/2, ℤ/2) = ℤ/2 comes from the Tor term."
+      },
+      {
+       "name": "uct_hom_term_infinite",
+       "kind": "non-example",
+       "statement": "G = ℤ, k = A = ℤ, n = 1: Ext¹(H₀, ℤ) = Ext¹(ℤ, ℤ) = 0 and H¹(ℤ, ℤ) = Hom(ℤ, ℤ) = ℤ; the finite-group formula H^{n+1} ≅ Ext¹(Hₙ, ℤ) of §D7.2 would give 0 at n = 0; for finite G, H¹(G, ℤ) = 0 = Ext¹(ℤ, ℤ)."
+      }
+     ]
+    },
+    {
+     "id": "5.3",
+     "kind": "definition",
+     "name": "TauCeti.groupCohomology.cross",
+     "statement": "x × y = pr₁^*x ∪ pr₂^*y; for a field k, trivial coefficients and H_q(H, k) finite-dimensional for q ≤ n, ⊕_{p+q=n} Hᵖ(G, k) ⊗ H^q(H, k) → Hⁿ(G × H, k) is an isomorphism.",
+     "hypotheses": [
+      "k G : Type u",
+      "[CommRing k]",
+      "[Group G]",
+      "k a field (for the isomorphism)",
+      "dim H_q(H, k) < ∞ for q ≤ n"
+     ],
+     "locator": {
+      "source": "Loh19",
+      "where": "Outlook 3.2.26, p. 138 (Loh19 line 5985–5994), statement without proof; the generality follows from 5.1 and 5.2"
+     },
+     "prerequisites": [
+      "target:4.3",
+      "target:4.6",
+      "target:5.1",
+      "target:5.2"
+     ],
+     "api": [
+      {
+       "name": "cross_natural_cohom",
+       "role": "naturality",
+       "statement": "Bilinear and natural in compatible pairs on both factors and in the coefficients."
+      },
+      {
+       "name": "cross_one",
+       "role": "unit",
+       "statement": "x × 1 = pr₁^*x and 1 × y = pr₂^*y."
+      },
+      {
+       "name": "cross_comm",
+       "role": "structure",
+       "statement": "τ^*(y × x) = (−1)^{pq} x × y under τ : G × H ≅ H × G."
+      },
+      {
+       "name": "cross_eval",
+       "role": "compatibility",
+       "statement": "⟨x × y, a × b⟩ = ⟨x, a⟩⟨y, b⟩ for trivial coefficients, with the evaluation of 4.6 and the shuffle cross product of 5.1."
+      },
+      {
+       "name": "cross_kunneth",
+       "role": "comparison",
+       "statement": "For a field k and H_q(H, k) finite-dimensional for q ≤ n, ⊕_{p+q=n} Hᵖ(G, k) ⊗ H^q(H, k) ≅ Hⁿ(G × H, k)."
+      }
+     ],
+     "tests": [
+      {
+       "name": "cross_Fp",
+       "kind": "computation",
+       "statement": "dim Hⁿ(ℤ/p × ℤ/p, 𝔽_p) = n + 1."
+      },
+      {
+       "name": "cross_infinite",
+       "kind": "non-example",
+       "statement": "G = H = ℤ^(ℕ), k = ℚ: not surjective in degree 2."
+      },
+      {
+       "name": "cross_trivial_factor",
+       "kind": "degenerate",
+       "statement": "H trivial: the map is pr₁^*."
+      },
+      {
+       "name": "cross_eval_11",
+       "kind": "computation",
+       "statement": "G = H = ℤ, k = ℚ, identity characters x, y, a = b = [1]: a × b = [e₁|e₂] − [e₂|e₁], ⟨x × y, a × b⟩ = 1 − 0 = 1 = ⟨x, a⟩⟨y, b⟩; the Koszul sign (−1)^{|y||a|} gives −1."
+      }
+     ]
+    },
+    {
+     "id": "5.4",
+     "kind": "construction",
+     "name": "TauCeti.groupHomology.pontryagin",
+     "statement": "For abelian A, H•(A, k) is a graded-commutative associative unital k-algebra under the Pontryagin product, natural in A, with degree-one classes squaring to zero; ψ : Λ_k(A ⊗ k) → H•(A, k) sends (a ⊗ 1) ∧ (b ⊗ 1) to the class of [a|b] − [b|a] (InductionRestrictionPartII RS.6.8's ⟨a, b⟩ for k = ℤ) and is an isomorphism in degrees ≤ 2 for k = ℤ (extending RS.6.8's Λ²A ≅ H₂(A, ℤ) from finite A), in all degrees for torsion-free A and for ℚ-algebras k; over a field H•(A × B, k) ≅ H•(A, k) ⊗ H•(B, k) as algebras.",
+     "hypotheses": [
+      "k A : Type u",
+      "[CommRing k]",
+      "[CommGroup A]",
+      "k = ℤ clauses: A : Type"
+     ],
+     "locator": {
+      "source": "Brown82",
+      "where": "Ch. V (Pontryagin product; uncertified)"
+     },
+     "prerequisites": [
+      "target:5.1",
+      "target:3.6",
+      "roadmap:SchemeKTheoryOperations §6.7",
+      "tauceti:groupHomology.exists_map_subtype_eq",
+      "tauceti:TauCeti.groupHomology.isZero_groupHomology_of_directed",
+      "roadmap:InductionRestrictionPartII RS.6.8",
+      "mathlib:Rep.FiniteCyclicGroup.groupHomologyIsoEven",
+      "mathlib:Rep.FiniteCyclicGroup.groupHomologyIsoOdd"
+     ],
+     "api": [
+      {
+       "name": "pontryagin_natural",
+       "role": "naturality",
+       "statement": "A homomorphism of abelian groups induces a homomorphism of graded k-algebras."
+      },
+      {
+       "name": "pontryagin_algebra",
+       "role": "structure",
+       "statement": "Associative, unital (1 ∈ H₀(A, k) = k) and graded commutative."
+      },
+      {
+       "name": "pontryagin_degree_one",
+       "role": "evaluation",
+       "statement": "H₁(A, k) ≅ A ⊗ k and x² = 0 there, so ψ : Λ_k(A ⊗ k) → H•(A, k) is defined."
+      },
+      {
+       "name": "pontryagin_degree_two_class",
+       "role": "evaluation",
+       "statement": "ψ((a ⊗ 1) ∧ (b ⊗ 1)) is the class of [a|b] − [b|a], the image under A × A → A of [a] × [b] = [(a, 1)|(1, b)] − [(1, b)|(a, 1)]; for k = ℤ it is InductionRestrictionPartII RS.6.8's ⟨a, b⟩, and for finite A : Type the degree-two part of ψ is RS.6.8's isomorphism Λ²A ≅ H₂(A, ℤ)."
+      },
+      {
+       "name": "pontryagin_integral",
+       "role": "comparison",
+       "statement": "For k = ℤ, ψ is an isomorphism in degrees ≤ 2; H₂(A, ℤ) ≅ Λ²A for every abelian A, extending InductionRestrictionPartII RS.6.8 from finite A."
+      },
+      {
+       "name": "pontryagin_torsionFree",
+       "role": "comparison",
+       "statement": "For torsion-free A and every k, ψ is an isomorphism in all degrees."
+      },
+      {
+       "name": "pontryagin_rational",
+       "role": "comparison",
+       "statement": "For a ℚ-algebra k and every A, ψ is an isomorphism in all degrees."
+      },
+      {
+       "name": "pontryagin_product",
+       "role": "comparison",
+       "statement": "Over a field, H•(A × B, k) ≅ H•(A, k) ⊗ H•(B, k) as graded algebras."
+      }
+     ],
+     "tests": [
+      {
+       "name": "pont_V4",
+       "kind": "computation",
+       "statement": "H₂(ℤ/2 × ℤ/2, ℤ) = Λ² = ℤ/2; H₂(ℤ/n, ℤ) = 0."
+      },
+      {
+       "name": "pont_Zn",
+       "kind": "compatibility",
+       "statement": "H•(ℤⁿ, ℤ) ≅ Λ(ℤⁿ), ranks C(n, i), as AlgebraicTopology §5.4."
+      },
+      {
+       "name": "pont_degree3",
+       "kind": "non-example",
+       "statement": "Λ³(ℤ/2) = 0 but H₃(ℤ/2, ℤ) = ℤ/2."
+      },
+      {
+       "name": "pont_Q",
+       "kind": "computation",
+       "statement": "ℚ = ⋃ (1/m!)ℤ: colim of H₁ = ℤ along ×(m+1) is ℚ = H₁(ℚ, ℤ), H₂(ℚ, ℤ) = Λ²ℚ = 0; class-surjectivity alone leaves H₁ a quotient of ℚ."
+      },
+      {
+       "name": "pont_orientation_Z3sq",
+       "kind": "compatibility",
+       "statement": "A = ℤ/3 × ℤ/3, a = (1, 0), b = (0, 1): [a|b] − [b|a] is the cross product of the factor generators and generates H₂(A, ℤ) = ℤ/3; ψ(a ∧ b) and RS.6.8's ⟨a, b⟩ are both this class; the opposite orientation gives −⟨a, b⟩ ≠ ⟨a, b⟩."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "key": "6",
+   "title": "Group extensions",
+   "targets": [
+    {
+     "id": "6.1",
+     "kind": "definition",
+     "name": "TauCeti.groupCohomology.extensionFiltration",
+     "statement": "Normalized cochains C̄(G, M) (a subcomplex, inclusion a quasi-isomorphism) and the filtration A_j: all of C̄ⁿ for j ≤ 0, cochains vanishing whenever n − j + 1 arguments lie in N for 0 < j ≤ n, zero for j > n; subcomplexes, finite, multiplicative, natural; A*_j gives the same spectral sequence from E₁.",
+     "hypotheses": [
+      "k G : Type u",
+      "[CommRing k]",
+      "[Group G]",
+      "N : Subgroup G",
+      "[N.Normal]",
+      "M : Rep k G"
+     ],
+     "locator": {
+      "source": "HS53",
+      "where": "Ch. II §1, filtrations, Prop. 1 and Lemma 1, pp. 118–121 (HS53 line 368–411)"
+     },
+     "prerequisites": [
+      "mathlib:groupCohomology.cochainsFunctor",
+      "mathlib:AlgebraicTopology.DoldKan.homotopyEquivNormalizedMooreComplexAlternatingFaceMapComplex",
+      "mathlib:AlgebraicTopology.inclusionOfMooreComplexMap",
+      "tauceti:CochainComplex.filtrationFunctor"
+     ],
+     "api": [
+      {
+       "name": "normalized_quasiIso",
+       "role": "comparison",
+       "statement": "C̄(G, M) ↪ C(G, M) is a quasi-isomorphism."
+      },
+      {
+       "name": "filtration_finite",
+       "role": "structure",
+       "statement": "A_j ∩ C̄ⁿ = C̄ⁿ for j ≤ 0, A_{n+1} ∩ C̄ⁿ = 0, d(A_j) ⊂ A_j, A_{j+1} ⊂ A_j; as F_t = A_{−t}, F_t = C̄ for t ≥ 0. The filtration is bounded in each degree; a global lower bound is not guaranteed: some F_t is zero exactly when N = G or M = 0 (then F_{−1} = A_1 = 0), and for N ≠ G, M ≠ 0 the cochain of degree j ≥ 1 with value m ≠ 0 at (g, …, g), g ∉ N, and 0 elsewhere lies in A_j."
+      },
+      {
+       "name": "filtration_cup",
+       "role": "multiplicativity",
+       "statement": "A_r ∪ B_s ⊂ C_{r+s} for a pairing."
+      },
+      {
+       "name": "filtration_natural",
+       "role": "naturality",
+       "statement": "A morphism of pairs (G', N') → (G, N) with a compatible coefficient map sends A_j into A_j."
+      },
+      {
+       "name": "filtration_star",
+       "role": "comparison",
+       "statement": "A*_j ⊂ A_j induces an isomorphism of spectral sequences from E₁."
+      }
+     ],
+     "tests": [
+      {
+       "name": "filt_N_trivial",
+       "kind": "degenerate",
+       "statement": "N = 1: filtration by degree, E₂^{p,0} = Hᵖ(G, M); for G = ℤ/2, M = 𝔽₂, C̄ⁿ = 𝔽₂ ⊂ A_j for every n ≥ max(j, 0), so every F_t is nonzero."
+      },
+      {
+       "name": "filt_N_G",
+       "kind": "degenerate",
+       "statement": "N = G: A_j ∩ C̄ⁿ = 0 for j > 0, single column; for G = ℤ/2, M = 𝔽₂, C̄ⁿ = 𝔽₂ in every degree (C̄ unbounded) yet F_{−1} = A_1 = 0."
+      },
+      {
+       "name": "filt_star_strict",
+       "kind": "non-example",
+       "statement": "G = ℤ/4, N = 2ℤ/4, n = 1: A*_1 ⊊ A_1."
+      }
+     ]
+    },
+    {
+     "id": "6.2",
+     "kind": "theorem",
+     "name": "TauCeti.groupCohomology.hochschildSerre",
+     "statement": "Realises MappingClassGroupsAndCanonicalRepresentations §1.1's spectral sequence as that of F_t = A_{−t} (classical E_r^{p,q} at (2p + q + 1, −p − 1) on Mathlib page r + 1): E₁^{p,q} ≅ C̄^p(Q, H^q(N, M)) by restricting the first q arguments of A*_p-representatives to N, d₁ = (−1)^q times the coboundary, E₂^{p,q} ≅ Hᵖ(Q, H^q(N, M)) ⇒ H^{p+q}(G, M); E_∞^{p,q} ≅ A_pH^{p+q}/A_{p+1}H^{p+q}, the hypotheses of filtrationSpectralSequencePageXIsoEInfty holding from page max(q + 3, p + 2); natural for morphisms of extensions.",
+     "hypotheses": [
+      "k G : Type u",
+      "[CommRing k]",
+      "[Group G]",
+      "N : Subgroup G",
+      "[N.Normal]",
+      "M : Rep k G"
+     ],
+     "locator": {
+      "source": "HS53",
+      "where": "Ch. II §2 Thm. 1, p. 121; Ch. II §4 Thm. 2, p. 125"
+     },
+     "prerequisites": [
+      "target:1.2",
+      "target:6.1",
+      "roadmap:MappingClassGroupsAndCanonicalRepresentations §1.1",
+      "tauceti:CochainComplex.spectralSequence",
+      "tauceti:CochainComplex.spectralSequenceFirstPageXIsoCokernel",
+      "tauceti:CochainComplex.spectralSequence_first_page_d_eq",
+      "tauceti:CochainComplex.filtrationAbutmentIso",
+      "tauceti:CochainComplex.filtrationSpectralSequencePageXIsoEInfty",
+      "tauceti:CategoryTheory.Abelian.SpectralObject.EInftyIsoCokernel",
+      "tauceti:CochainComplex.filtrationFunctorMap"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "hs_extremes",
+       "kind": "degenerate",
+       "statement": "N = 1: one row; N = G: one column."
+      },
+      {
+       "name": "hs_S3",
+       "kind": "computation",
+       "statement": "G = S₃, N = A₃, 𝔽₃: H^q(S₃, 𝔽₃) = 𝔽₃ for q ≡ 0, 3 mod 4, else 0."
+      },
+      {
+       "name": "hs_Z4",
+       "kind": "non-example",
+       "statement": "ℤ/2 ⊂ ℤ/4, 𝔽₂: E₂ = 𝔽₂ everywhere but Hⁿ = 𝔽₂, so E₂ ≠ E_∞."
+      },
+      {
+       "name": "hs_no_global_bound",
+       "kind": "non-example",
+       "statement": "N = 1, G = ℤ/2, 𝔽₂: every A_j is nonzero, so the finite-filtration theorem does not apply; in bidegree (p, 0) the vanishing hypotheses hold from page max(3, p + 2) and E_∞^{p,0} = 𝔽₂."
+      }
+     ]
+    },
+    {
+     "id": "6.3",
+     "kind": "theorem",
+     "name": "TauCeti.groupHomology.hochschildSerre",
+     "statement": "For C_N(M) = (P ⊗ M)_N as a complex of Q-representations, Hₙ(Q; C_N(M)) ≅ Hₙ(G, M) and H_q(C_N(M)) ≅ H_q(N, M), giving E²_{p,q} = H_p(Q, H_q(N, M)) ⇒ H_{p+q}(G, M), natural.",
+     "hypotheses": [
+      "k G : Type u",
+      "[CommRing k]",
+      "[Group G]",
+      "N : Subgroup G",
+      "[N.Normal]",
+      "M : Rep k G"
+     ],
+     "locator": {
+      "source": "Loh19",
+      "where": "Thm. 3.2.12(1), p. 123"
+     },
+     "prerequisites": [
+      "target:1.2",
+      "target:2.3",
+      "mathlib:Rep.quotientToCoinvariantsFunctor",
+      "mathlib:Rep.standardResolution",
+      "tauceti:HomologicalComplex₂.quasiIso_totalAugmentation_of_rows",
+      "tauceti:groupHomology.isZero_indBot_succ",
+      "roadmap:DerivedModuleAlgebra §S.1",
+      "gap:homological-low-degree"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "hsh_extremes",
+       "kind": "degenerate",
+       "statement": "N = 1 and N = G: one row, one column."
+      },
+      {
+       "name": "hsh_Z4",
+       "kind": "computation",
+       "statement": "ℤ/2 ⊂ ℤ/4, 𝔽₂: E² = 𝔽₂ everywhere, Hₙ(ℤ/4, 𝔽₂) = 𝔽₂, so d² ≠ 0."
+      },
+      {
+       "name": "hsh_V4",
+       "kind": "compatibility",
+       "statement": "ℤ/2 × ℤ/2: degenerates, dim Hₙ = n + 1 as in 5.1."
+      }
+     ]
+    },
+    {
+     "id": "6.4",
+     "kind": "theorem",
+     "name": "TauCeti.groupCohomology.hochschildSerre_edge",
+     "statement": "Cohomological edge maps are inflation and restriction; homological edge maps are corestriction (inclusion-induced) and coinflation.",
+     "hypotheses": [
+      "k G : Type u",
+      "[CommRing k]",
+      "[Group G]",
+      "N : Subgroup G",
+      "[N.Normal]"
+     ],
+     "locator": {
+      "source": "HS53",
+      "where": "Ch. III §1, p. 126"
+     },
+     "prerequisites": [
+      "target:6.2",
+      "target:6.3",
+      "mathlib:groupCohomology.infNatTrans",
+      "mathlib:groupHomology.coresNatTrans",
+      "mathlib:groupHomology.coinfNatTrans",
+      "gap:homological-low-degree",
+      "tauceti:MonoidHom.groupHomologyIso_hom_naturality",
+      "roadmap:IntegralIwasawaTheoryPartII §0.7"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "edge_N_G",
+       "kind": "degenerate",
+       "statement": "N = G: restriction edge is the identity."
+      },
+      {
+       "name": "edge_N_trivial",
+       "kind": "degenerate",
+       "statement": "N = 1: inflation edge is the identity."
+      },
+      {
+       "name": "edge_Z4",
+       "kind": "computation",
+       "statement": "ℤ/2 ⊂ ℤ/4, 𝔽₂: inflation on H¹ is an isomorphism, restriction on H¹ is zero."
+      },
+      {
+       "name": "edge_spiess",
+       "kind": "compatibility",
+       "statement": "If H_q(N, M) = 0 for q > 0, 6.3 is the row q = 0 and coinflation Hₙ(G, M) ≅ Hₙ(Q, M_N), IntegralIwasawaTheoryPartII §0.7's edge isomorphism: G = ℤ², N = 0 × ℤ, M = k[N] (Ind_{ℤ×0}^{ℤ²} k) gives k, k, 0, … on both sides; for k ≠ 0 and trivial M = k, H₁(N, k) = k ≠ 0 and H₂(ℤ², k) = k → H₂(ℤ, k) = 0 is not injective."
+      }
+     ]
+    },
+    {
+     "id": "6.5",
+     "kind": "theorem",
+     "name": "TauCeti.groupCohomology.hochschildSerre_cup",
+     "statement": "For μ : M ⊗ M' ⟶ P, the pages carry pairings with d_r derivations (d_r(u ∪ v) = d_r u ∪ v + (−1)^{p+q} u ∪ d_r v); for u ∈ E₂^{p,q}, v ∈ E₂^{p',q'}, under the restriction identification of 6.2, u ∪ v is (−1)^{pq'} times the cup on Q with coefficients paired by the cup on N; on E_∞ it is induced by the cup on G with A_pH ∪ A_{p'}H ⊂ A_{p+p'}H.",
+     "hypotheses": [
+      "k G : Type u",
+      "[CommRing k]",
+      "[Group G]",
+      "N : Subgroup G",
+      "[N.Normal]",
+      "μ : M ⊗ M' ⟶ P"
+     ],
+     "locator": {
+      "source": "HS53",
+      "where": "Ch. II §5 Thm. 3 and the remark after it, p. 126 (HS53 line 686–700)"
+     },
+     "prerequisites": [
+      "target:4.1",
+      "target:4.3",
+      "target:6.1",
+      "target:6.2",
+      "tauceti:CochainComplex.filtrationFunctorMap"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "mult_N_trivial",
+       "kind": "degenerate",
+       "statement": "N = 1: the cup product on G."
+      },
+      {
+       "name": "mult_V4",
+       "kind": "computation",
+       "statement": "ℤ/2 × ℤ/2 ⊃ 0 × ℤ/2, 𝔽₂: E₂ = 𝔽₂[x] ⊗ 𝔽₂[y]."
+      },
+      {
+       "name": "mult_sign",
+       "kind": "non-example",
+       "statement": "ℤ × ℤ ⊃ 0 × ℤ, M = ℤ, x ∈ E₂^{1,0}, y ∈ E₂^{0,1} identity characters: ỹ ∪ x̃ ∈ A*_1 restricts to (σ, γ) ↦ y(σ)x(γ), so y ∪ x ↦ +x·y and x ∪ y ↦ −x·y, as (−1)^{pq'} predicts; (−1)^{qp'} gives the opposite values, and anticommutativity alone does not distinguish them."
+      }
+     ]
+    },
+    {
+     "id": "6.6",
+     "kind": "definition",
+     "name": "TauCeti.groupCohomology.transgression",
+     "statement": "x ∈ Hⁿ(N, M) is transgressive if some f ∈ C̄ⁿ(G, M) restricts to a representing cocycle and has df inflated from c ∈ C̄ⁿ⁺¹(Q, M^N); τ(x) = [c] in E_{n+1}^{n+1,0}. Transgressive classes are the image of E_{n+1}^{0,n} and τ = d_{n+1}; for n = 1, with MappingClassGroupsAndCanonicalRepresentations §1.1's section lift, every Q-invariant class is transgressive and τ = tg = d₂; if N acts trivially on M, d₂(u) = −c_k ∪ u on Hᵖ(Q, Hom(N^ab, M)) ≅ Hᵖ(Q, Hom_k(N^ab_k, M)) (φ ↦ (b ⊗ a ↦ a·φ(b))), for every commutative k, where N^ab_k = Additive N^ab ⊗_ℤ k, c_k ∈ H²(Q, N^ab_k) is the class of the factor set of 1 → N^ab → G ⧸ [N, N] → Q → 1 followed by b ↦ b ⊗ 1 (independent of the section; c_ℤ = c), and the pairing is the evaluation N^ab_k ⊗ Hom_k(N^ab_k, M) ⟶ M.",
+     "hypotheses": [
+      "k G : Type u",
+      "[CommRing k]",
+      "[Group G]",
+      "N : Subgroup G",
+      "[N.Normal]",
+      "n ≥ 1",
+      "for d₂ = −c_k ∪: N acts trivially on M"
+     ],
+     "locator": {
+      "source": "HS53",
+      "where": "Ch. III §3 Prop. 1, pp. 128–129; Ch. III §6 Thm. 4, p. 133 (HS53 line 984–990, abelian-group coefficients, the case k = ℤ)"
+     },
+     "prerequisites": [
+      "target:1.2",
+      "target:4.1",
+      "target:4.3",
+      "target:6.1",
+      "target:6.2",
+      "target:6.5",
+      "roadmap:MappingClassGroupsAndCanonicalRepresentations §1.1",
+      "tauceti:TauCeti.ContCohomology.IsTransgressionLift",
+      "mathlib:Rep.ihom"
+     ],
+     "api": [
+      {
+       "name": "transgressive_submodule",
+       "role": "structure",
+       "statement": "The transgressive classes form a k-submodule of Hⁿ(N, M)^Q."
+      },
+      {
+       "name": "transgressive_iff",
+       "role": "characterisation",
+       "statement": "Transgressive iff in the image of E_{n+1}^{0,n}; τ is well defined with values in E_{n+1}^{n+1,0}, k-linear, and τ = d_{n+1}."
+      },
+      {
+       "name": "transgression_one",
+       "role": "comparison",
+       "statement": "For n = 1, τ is defined on all of H¹(N, M)^Q for every group and equals MappingClassGroupsAndCanonicalRepresentations §1.1's tg and d₂."
+      },
+      {
+       "name": "transgression_natural",
+       "role": "naturality",
+       "statement": "τ commutes with maps induced by morphisms of extensions with compatible coefficient maps."
+      },
+      {
+       "name": "d2_eq_neg_cup",
+       "role": "computation",
+       "statement": "When N acts trivially on M, d₂ = −c_k ∪ (−) on Hᵖ(Q, Hom(N^ab, M)) ≅ Hᵖ(Q, Hom_k(N^ab_k, M)) for every commutative k, with the scalarised class c_k ∈ H²(Q, N^ab_k) and the evaluation pairing; c_ℤ is the integral extension class c."
+      }
+     ],
+     "tests": [
+      {
+       "name": "tg_Z4",
+       "kind": "computation",
+       "statement": "ℤ/2 ⊂ ℤ/4, 𝔽₂: τ is the nonzero class."
+      },
+      {
+       "name": "tg_split",
+       "kind": "degenerate",
+       "statement": "ℤ/2 ⊂ ℤ/2 × ℤ/2: τ = 0."
+      },
+      {
+       "name": "tg_sign_Z9",
+       "kind": "non-example",
+       "statement": "ℤ/3 ⊂ ℤ/9, 𝔽₃, u(3) = 1, lift f(i) = ⌊i/3⌋ mod 3: df(2, 1) = −1, so τ(u) = −[carry] = −c_{𝔽₃} ∪ u (N^ab_{𝔽₃} ≅ 𝔽₃ by 3 ⊗ 1 ↦ 1); d₂ = +c_{𝔽₃} ∪ would give the other generator."
+      },
+      {
+       "name": "tg_coefficients_Z27",
+       "kind": "computation",
+       "statement": "N = 3ℤ/27 ≅ ℤ/9 ⊂ ℤ/27, Q = ℤ/3, k = M = 𝔽₃: N^ab is not an 𝔽₃-module (3·3 = 9 ≠ 0), so the integral c ∈ H²(ℤ/3, ℤ/9) cannot enter the k-linear cup product; N^ab_{𝔽₃} ≅ 𝔽₃ and c_{𝔽₃} is the carry cocycle. For u(3) = 1 and f(i) = ⌊i/3⌋ mod 3, df(a, b) = −carry(a mod 3, b mod 3) for all a, b (df(2, 1) = −1 = 2), so τ(u) = −c_{𝔽₃} ∪ u ≠ 0; for k = ℚ both sides are 0."
+      },
+      {
+       "name": "tg_nonabelian_Q8",
+       "kind": "computation",
+       "statement": "Q₈ ⊃ N = ⟨i⟩ ≅ ℤ/4, Q = ℤ/2 acting on N^ab by inversion, k = M = 𝔽₂: with s(σ) = j the factor set is 2 ∈ ℤ/4 at (σ, σ), so c ≠ 0 in H²(ℤ/2, ℤ/4) = ℤ/2, but 2 ⊗ 1 = 0 in N^ab_{𝔽₂} = 𝔽₂, so c_{𝔽₂} = 0 and d₂ = 0 on E₂^{0,1} = 𝔽₂, as dim H¹(Q₈, 𝔽₂) = 2 = dim E₂^{1,0} + dim E₂^{0,1} requires."
+      }
+     ]
+    },
+    {
+     "id": "6.7",
+     "kind": "theorem",
+     "name": "TauCeti.groupCohomology.fiveTerm_exact",
+     "statement": "For m ≥ 2 and H^q(N, M) = 0 for 0 < q < m: 0 → H^m(Q, M^N) → H^m(G, M) → H^m(N, M)^Q →τ H^{m+1}(Q, M^N) → H^{m+1}(G, M) exact, all of H^m(N, M)^Q transgressive (m = 1 is MappingClassGroupsAndCanonicalRepresentations §1.1's five-term sequence, with τ of 6.6); homological five-term sequence H₂(G, M) → H₂(Q, M_N) → H₁(N, M)_Q → H₁(G, M) → H₁(Q, M_N) → 0.",
+     "hypotheses": [
+      "k G : Type u",
+      "[CommRing k]",
+      "[Group G]",
+      "N : Subgroup G",
+      "[N.Normal]",
+      "m ≥ 2 and H^q(N, M) = 0 for 0 < q < m"
+     ],
+     "locator": {
+      "source": "HS53",
+      "where": "Ch. III §4 Thm. 2 and the remark after it, pp. 129–130"
+     },
+     "prerequisites": [
+      "target:6.2",
+      "target:6.3",
+      "target:6.4",
+      "target:6.6",
+      "roadmap:MappingClassGroupsAndCanonicalRepresentations §1.1",
+      "tauceti:TauCeti.groupCohomology.HInfRes_exact",
+      "mathlib:groupHomology.H1CoresCoinf",
+      "gap:homological-low-degree"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "ft_extremes",
+       "kind": "degenerate",
+       "statement": "N = 1 and N = G: isomorphisms of the outer terms."
+      },
+      {
+       "name": "ft_degree_two",
+       "kind": "computation",
+       "statement": "2ℤ/4 ⊂ ℤ/4, M = ℤ, m = 2: 0 → ℤ/2 → ℤ/4 → ℤ/2 → H³(ℤ/2, ℤ) = 0; with M = 𝔽₂, H¹(N, 𝔽₂) ≠ 0 and inflation H²(ℤ/2, 𝔽₂) → H²(ℤ/4, 𝔽₂) is zero."
+      },
+      {
+       "name": "ft_homological",
+       "kind": "computation",
+       "statement": "ℤ/2 ⊂ ℤ/4, M = ℤ: 0 → H₁(N)_Q = ℤ/2 → ℤ/4 → ℤ/2 → 0, corestriction 1 ↦ 2."
+      }
+     ]
+    },
+    {
+     "id": "6.8",
+     "kind": "theorem",
+     "name": "TauCeti.groupHomology.hopfFormula",
+     "statement": "For F = FreeGroup S, R ◁ F and G = F ⧸ R (so for every group G): the map h : H₂(G, ℤ) → R ⧸ ⁅F, R⁆ whose normalisation K2SymbolsBrauer §1.1 fixes (for a 2-cycle z of the inhomogeneous chains of G, d[x|y] = [y] − [xy] + [x], and a lift z̃ to F, h[z] is the image of dz̃ ∈ ker(C₁(F) → C₁(G)) under [x] − [y] ↦ xy⁻¹, x, y ∈ F of equal image in G) is well defined, has image (R ⊓ ⁅F, F⁆) ⧸ ⁅F, R⁆, and is an isomorphism H₂(G, ℤ) ≅ (R ⊓ ⁅F, F⁆) ⧸ ⁅F, R⁆. Its torus value and naturality under maps of free presentations are §1.1's. Route: the connecting map of 0 → K → C(F) → C(G) → 0, H₁(K) ≅ R ⧸ ⁅F, R⁆ with inverse r ↦ [r] − [1], and H₂(F, ℤ) = 0.",
+     "hypotheses": [
+      "S : Type",
+      "R : Subgroup (FreeGroup S)",
+      "[R.Normal]"
+     ],
+     "locator": {
+      "source": "Loh19",
+      "where": "Thm. 1.5.1, p. 30, and Thm. 3.2.18, p. 129"
+     },
+     "prerequisites": [
+      "target:3.6",
+      "roadmap:K2SymbolsBrauer §1.1",
+      "mathlib:FreeGroup",
+      "mathlib:groupHomology.inhomogeneousChains",
+      "mathlib:CategoryTheory.ShortComplex.ShortExact.δ",
+      "mathlib:groupHomology.H1AddEquivOfIsTrivial",
+      "roadmap:StableHomotopyKTheory §3.29"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "hopf_cyclic",
+       "kind": "computation",
+       "statement": "For n ≥ 1, G = ℤ/n, F = ℤ, R = nℤ: H₂ = 0; the model R/[F, R] would give nℤ ≅ ℤ. At n = 0 (G = ℤ, R = 0) both give 0, so this boundary case does not separate the models."
+      },
+      {
+       "name": "hopf_Z2",
+       "kind": "computation",
+       "statement": "G = ℤ²: R = [F, F], [F,F]/[F,[F,F]] ≅ ℤ, H₂ = ℤ."
+      },
+      {
+       "name": "hopf_normalisation",
+       "kind": "non-example",
+       "statement": "Compared with K2SymbolsBrauer §1.1: ℤ² = ⟨a, b | ⁅a, b⁆⟩, z = [e₁|e₂] − [e₂|e₁] (pairing +1 with x ∪ y) lifts to [a|b] − [b|a] with boundary [ba] − [ab], so h[z] = ba(ab)⁻¹ = ⁅a, b⁆⁻¹ (⁅x, y⁆ = xyx⁻¹y⁻¹), §1.1's torus value; h composed with inversion, equally natural and passing the other tests, gives ⁅a, b⁆, the normalisation §1.1 excludes. Writing y⁻¹x for xy⁻¹ gives the same value."
+      },
+      {
+       "name": "hopf_free",
+       "kind": "degenerate",
+       "statement": "G = F free, R = 1: both sides 0, as 3.6 requires."
+      },
+      {
+       "name": "hopf_perfect",
+       "kind": "compatibility",
+       "statement": "Compared with StableHomotopyKTheory §3.29: for perfect G, ⁅F, F⁆R = F, so ⁅F, F⁆ ⧸ ⁅F, R⁆ → G is onto with kernel (R ⊓ ⁅F, F⁆) ⧸ ⁅F, R⁆, which h identifies with H₂(G, ℤ) (§3.29 fixes no map); G = 1, F = R free on one letter: both sides 0; G = A₅: both ℤ/2 (kernel {±1} of SL₂(𝔽₅) → A₅)."
+      }
+     ]
+    },
+    {
+     "id": "6.9",
+     "kind": "theorem",
+     "name": "TauCeti.groupCohomology.fiveTerm_eq_continuous",
+     "statement": "For finite discrete G, the cohomological five-term sequence (MappingClassGroupsAndCanonicalRepresentations §1.1, with τ of 6.6) corresponds under Θ and ProfiniteCohomology §3.1 to ProfiniteCohomology §5.5, and τ is TauCeti.ContCohomology.transgression; the comparison is fixed by the pinned definitions, HS53 supplying only the sequence.",
+     "hypotheses": [
+      "k G : Type u",
+      "[CommRing k]",
+      "[Group G]",
+      "[Finite G]",
+      "discrete topology"
+     ],
+     "locator": {
+      "source": "HS53",
+      "where": "Ch. III §4, remark after Thm. 2, p. 130 (HS53 line 854–856), for the five-term sequence only"
+     },
+     "prerequisites": [
+      "target:1.5",
+      "target:6.6",
+      "target:6.7",
+      "roadmap:MappingClassGroupsAndCanonicalRepresentations §1.1",
+      "roadmap:ProfiniteCohomology §3.1",
+      "roadmap:ProfiniteCohomology §5.5",
+      "tauceti:TauCeti.ContCohomology.transgression",
+      "tauceti:TauCeti.ContCohomology.fiveTerm_exact_H1N"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "cmp_Z9",
+       "kind": "computation",
+       "statement": "ℤ/3 ⊂ ℤ/9: both give −[carry]."
+      },
+      {
+       "name": "cmp_N_G",
+       "kind": "degenerate",
+       "statement": "N = G: both transgressions land in H²(1, −) = 0."
+      },
+      {
+       "name": "cmp_section",
+       "kind": "compatibility",
+       "statement": "For finite G every section is continuous, so the lifts coincide."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "key": "7",
+   "title": "Subgroups of finite index",
+   "targets": [
+    {
+     "id": "7.1",
+     "kind": "theorem",
+     "name": "TauCeti.groupCohomology.res_comp_corestriction_eq_sum",
+     "statement": "For any G, H ≤ G of finite index, K ≤ G: res^G_K ∘ cor^G_H = Σ_{KgH} cor^K_{K∩gHg⁻¹} ∘ c_g ∘ res^H_{H∩g⁻¹Kg}, summands independent of g; homologically tr^G_H ∘ cor^G_K = Σ_{KgH} cor^H_{H∩g⁻¹Kg} ∘ c_{g⁻¹} ∘ tr^K_{K∩gHg⁻¹}.",
+     "hypotheses": [
+      "k G : Type u",
+      "[CommRing k]",
+      "[Group G]",
+      "H K : Subgroup G",
+      "[H.FiniteIndex]",
+      "M : Rep k G"
+     ],
+     "locator": {
+      "source": "Brown82",
+      "where": "Ch. III §§8–9 (uncertified)"
+     },
+     "prerequisites": [
+      "target:1.1",
+      "target:1.4",
+      "tauceti:TauCeti.groupCohomology.corestriction",
+      "tauceti:TauCeti.groupHomology.transfer",
+      "mathlib:DoubleCoset.Quotient",
+      "tauceti:TauCeti.groupCohomology.coindIso_hom_comp_corestriction",
+      "tauceti:TauCeti.groupHomology.transfer_comp_indIso_inv",
+      "tauceti:TauCeti.groupHomology.indIso_inv_comp_map_counit"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "mackey_continuous",
+       "kind": "compatibility",
+       "statement": "For finite G agrees under Θ with TauCeti.ContinuousCohomology.corestriction_mackey; S₃, H = K = ⟨(12)⟩: res ∘ cor = id in positive degrees."
+      },
+      {
+       "name": "mackey_K_trivial",
+       "kind": "degenerate",
+       "statement": "K = 1, degree 0: Σ_{gH} g·m."
+      },
+      {
+       "name": "mackey_normal",
+       "kind": "computation",
+       "statement": "K = H normal: res cor = Σ_{gH} c_g."
+      },
+      {
+       "name": "mackey_homology_reps",
+       "kind": "non-example",
+       "statement": "c_g instead of c_{g⁻¹} lands outside H."
+      }
+     ]
+    },
+    {
+     "id": "7.2",
+     "kind": "theorem",
+     "name": "TauCeti.groupCohomology.stableElements",
+     "statement": "For finite G, a Sylow p-subgroup P and n ≥ 1, restriction maps Hⁿ(G, M)(p) isomorphically onto the stable classes; homological corestriction maps the transfer-stable classes of Hₙ(P, M) onto Hₙ(G, M)(p); in Tate cohomology for all n ∈ ℤ; for abelian P and trivial action of G on M the stable classes are the N_G(P)-invariants. For M = ℤ_(r) it is K3BlochGroups §5.2's stable-element theorem.",
+     "hypotheses": [
+      "k G : Type u",
+      "[CommRing k]",
+      "[Group G]",
+      "[Finite G]",
+      "p prime",
+      "P : Sylow p G",
+      "n ≥ 1 (ordinary cohomology and homology)",
+      "abelian simplification: P abelian and G acting trivially on M"
+     ],
+     "locator": {
+      "source": "Hutchinson13",
+      "where": "§3, p. 11 (Hutchinson13 line 482–491)"
+     },
+     "prerequisites": [
+      "target:1.1",
+      "target:7.1",
+      "roadmap:K3BlochGroups §5.2",
+      "tauceti:TauCeti.groupCohomology.eq_zero_of_pow_nsmul_eq_zero_of_map_sylow_eq_zero",
+      "roadmap:ClassFieldTheory §0.1",
+      "mathlib:Sylow",
+      "roadmap:ArithmeticGaloisDuality §D7.2",
+      "roadmap:InductionRestrictionPartII RS.0.3"
+     ],
+     "api": [
+      {
+       "name": "stable_submodule",
+       "role": "structure",
+       "statement": "Stable classes form a k-submodule containing the restriction (transfer) of every class of G."
+      },
+      {
+       "name": "stable_cohomology",
+       "role": "comparison",
+       "statement": "n ≥ 1: res^G_P : Hⁿ(G, M)(p) ≅ stable classes, inverse [G : P]⁻¹ cor."
+      },
+      {
+       "name": "stable_homology",
+       "role": "comparison",
+       "statement": "n ≥ 1: homological corestriction from the stable classes of Hₙ(P, M) onto Hₙ(G, M)(p) is an isomorphism."
+      },
+      {
+       "name": "stable_tate",
+       "role": "comparison",
+       "statement": "Every n ∈ ℤ: res^G_P : Ĥⁿ(G, M)(p) ≅ stable classes of Ĥⁿ(P, M)."
+      },
+      {
+       "name": "stable_abelian",
+       "role": "computation",
+       "statement": "P abelian, trivial action: stable classes = N_G(P)-invariants."
+      },
+      {
+       "name": "stable_K3_comparison",
+       "role": "comparison",
+       "statement": "M = ℤ_(r), p = r, n ≥ 1: the cohomological isomorphism is K3BlochGroups §5.2's."
+      },
+      {
+       "name": "stable_AGD_comparison",
+       "role": "comparison",
+       "statement": "k = ℤ, n ≥ 1: every element of Hₙ(G, M)(p) is the corestriction of a stable class, refining ArithmeticGaloisDuality §D7.2's homological Sylow statement."
+      },
+      {
+       "name": "stable_IRP2_comparison",
+       "role": "comparison",
+       "statement": "P normal, k = M = ℤ, n = 2: the stable classes are H₂(P, ℤ)^G, mapped isomorphically onto H₂(P, ℤ)_G since |G ⧸ P| is invertible on the p-group H₂(P, ℤ); the homological isomorphism is InductionRestrictionPartII RS.0.3's for the normal Hall subgroup P."
+      }
+     ],
+     "tests": [
+      {
+       "name": "stable_p_group",
+       "kind": "degenerate",
+       "statement": "G = P: every class is stable."
+      },
+      {
+       "name": "stable_S3",
+       "kind": "computation",
+       "statement": "S₃, p = 3: H²(S₃, ℤ)(3) = 0, H⁴(S₃, ℤ)(3) = ℤ/3."
+      },
+      {
+       "name": "stable_degree_zero",
+       "kind": "non-example",
+       "statement": "n = 0, M = ℤ: H⁰(G, ℤ)(p) = 0 but all of H⁰(P, ℤ) = ℤ is stable."
+      },
+      {
+       "name": "stable_twisted",
+       "kind": "non-example",
+       "statement": "G = C₂ × S₃, p = 2, P = C₂ × ⟨(12)⟩ = N_G(P), M = 𝔽₂³ permutation module: the cocycle z ↦ e₃, (12) ↦ 0 is N_G(P)-invariant but c_{(23)} sends its restriction to ⟨z⟩ to e₂ ≠ e₃; invariants have dimension 3, stable classes dimension 2."
+      },
+      {
+       "name": "stable_normal_sylow_homology",
+       "kind": "compatibility",
+       "statement": "G = (ℤ/3)² ⋊ ℤ/2 (inversion), p = 3, M = ℤ: ℤ/2 acts on H₂(P, ℤ) = Λ²P = ℤ/3 by (−1)² = 1, so H₂(G, ℤ)(3) = ℤ/3 = H₂(G, ℤ), InductionRestrictionPartII RS.0.3's value; acting by −1 as on P would give 0."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "key": "8",
+   "title": "Tate duality and periodicity of finite groups",
+   "targets": [
+    {
+     "id": "8.1",
+     "kind": "theorem",
+     "name": "TauCeti.TateCohomology.tateDuality",
+     "statement": "Cup with evaluation M^∨ ⊗ M → ℚ/ℤ and Ĥ⁻¹(G, ℚ/ℤ) ⊂ ℚ/ℤ gives Ĥⁱ(G, M^∨) ≅ Hom(Ĥ^{−1−i}(G, M), ℚ/ℤ) for all i; for ℤ-free M, Ĥⁱ(G, Hom(M, ℤ)) ≅ Hom(Ĥ^{−i}(G, M), ℚ/ℤ). For M = ℤ and i ≥ 1 this is K3BlochGroups §5.2's H^{i+1}(G, ℤ) ≅ Hom(H_i(G, ℤ), ℚ/ℤ).",
+     "hypotheses": [
+      "G : Type",
+      "[Group G]",
+      "[Fintype G]",
+      "M : Rep ℤ G",
+      "integral form: M free as an abelian group"
+     ],
+     "locator": {
+      "source": "Brown82",
+      "where": "Ch. VI §7 (uncertified)"
+     },
+     "prerequisites": [
+      "target:4.7",
+      "roadmap:K3BlochGroups §5.2",
+      "tauceti:TauCeti.TateCohomology.cup",
+      "tauceti:TauCeti.TateCohomology.cup_δ_of_flat",
+      "tauceti:TauCeti.TateCohomology.δ_cup_of_leftInverse",
+      "roadmap:ClassFieldTheory §0.1"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "tate_dual_Z2",
+       "kind": "computation",
+       "statement": "G = ℤ/2, M = ℤ: Ĥ⁰(ℚ/ℤ) = 0, Ĥ¹(ℚ/ℤ) = ℤ/2 = Hom(H₁, ℚ/ℤ)."
+      },
+      {
+       "name": "tate_dual_d0",
+       "kind": "non-example",
+       "statement": "Integral instance needs i ≥ 1: H²(ℤ/2, ℤ) = ℤ/2 = Hom(H₁, ℚ/ℤ), but in degree 0, H¹(G, ℤ) = 0 while Hom(H₀, ℚ/ℤ) = ℚ/ℤ."
+      },
+      {
+       "name": "tate_dual_free",
+       "kind": "non-example",
+       "statement": "M = ℤ/2 not free: Ĥ⁰(Hom(M, ℤ)) = 0 but the dual of Ĥ⁰(ℤ/2, ℤ/2) is ℤ/2."
+      }
+     ]
+    },
+    {
+     "id": "8.2",
+     "kind": "theorem",
+     "name": "TauCeti.IsPGroup.isCyclic_or_quaternion",
+     "statement": "For a prime p, a finite group P with IsPGroup p P whose abelian subgroups are cyclic is cyclic (p odd), or cyclic or ≅ QuaternionGroup (2^(s−2)), s ≥ 3 (p = 2); conversely cyclic and generalised quaternion groups have all abelian subgroups cyclic.",
+     "hypotheses": [
+      "p : ℕ",
+      "Nat.Prime p",
+      "P : Type u",
+      "[Group P]",
+      "[Finite P]",
+      "IsPGroup p P",
+      "every abelian subgroup cyclic"
+     ],
+     "locator": {
+      "source": "Loh19",
+      "where": "Cor. 1.6.18–1.6.19 (odd prime), p. 53; Outlook 1.6.20, p. 54"
+     },
+     "prerequisites": [
+      "mathlib:Nat.Prime",
+      "mathlib:IsPGroup",
+      "mathlib:IsCyclic",
+      "mathlib:QuaternionGroup"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "burnside_Q8",
+       "kind": "computation",
+       "statement": "Q₈: abelian subgroups ⟨i⟩, ⟨j⟩, ⟨k⟩, ⟨−1⟩, 1 cyclic."
+      },
+      {
+       "name": "burnside_D8",
+       "kind": "non-example",
+       "statement": "D₈ and ℤ/p × ℤ/p contain ℤ/p × ℤ/p."
+      },
+      {
+       "name": "burnside_heisenberg",
+       "kind": "non-example",
+       "statement": "p odd: the Heisenberg group of order p³ contains ℤ/p × ℤ/p."
+      },
+      {
+       "name": "burnside_composite_21",
+       "kind": "non-example",
+       "statement": "p = 21 (odd, not prime): P = ℤ/7 ⋊ ℤ/3 (generator acting by 2) has elements of orders 1, 7 (6 of them), 3 (14 of them), so IsPGroup 21 P; it is non-abelian ((1,0)(0,1) = (1,1), (0,1)(1,0) = (2,1)), so its abelian subgroups have order 1, 3 or 7 and are cyclic, yet P is not cyclic. Primality is needed."
+      }
+     ]
+    },
+    {
+     "id": "8.3",
+     "kind": "theorem",
+     "name": "TauCeti.TateCohomology.periodic_of_exact",
+     "statement": "An exact sequence 0 → ℤ_χ → C_n → … → C_0 → ℤ → 0 with each C_i ℤ-free and cohomologically trivial gives, by cup with the iterated connecting class e ∈ Ĥⁿ⁺¹(G, ℤ_χ), isomorphisms Ĥⁱ(G, M) ≅ Ĥ^{i+n+1}(G, M ⊗ ℤ_χ); period divides 2(n+1), and n+1 if χ is trivial; such a sequence exists for a bounded complex of free ℤ[G]-modules with homology ℤ in degree 0 and ℤ_χ in degree n ≥ 1.",
+     "hypotheses": [
+      "G : Type",
+      "[Group G]",
+      "[Fintype G]",
+      "χ : G →* ℤˣ",
+      "C_i free abelian and cohomologically trivial"
+     ],
+     "locator": {
+      "source": "Loh19",
+      "where": "Thm. 4.3.7, p. 165, and its proof, pp. 165–167"
+     },
+     "prerequisites": [
+      "target:4.7",
+      "tauceti:TauCeti.TateCohomology.cup_δ_of_flat",
+      "tauceti:TauCeti.TateCohomology.δ_cup_of_leftInverse",
+      "roadmap:ClassFieldTheory §0.1"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "free_cyclic_circle",
+       "kind": "computation",
+       "statement": "ℤ/m with 0 → ℤ → ℤG → ℤG → ℤ → 0: period divides 2."
+      },
+      {
+       "name": "free_n_zero",
+       "kind": "degenerate",
+       "statement": "ℤ/2, n = 0: 0 → ℤ_sgn → ℤG → ℤ → 0, period divides 2."
+      },
+      {
+       "name": "free_CpCp",
+       "kind": "non-example",
+       "statement": "C_p × C_p admits no such sequence."
+      }
+     ]
+    },
+    {
+     "id": "8.4",
+     "kind": "theorem",
+     "name": "TauCeti.TateCohomology.pPeriod",
+     "statement": "p-period = least d > 0 with Ĥ^d(G, ℤ)(p) cyclic of order |G|_p (p ∣ |G|). Cyclic G: cup with δχ ∈ Ĥ²(G, ℤ) is an isomorphism Ĥⁿ(G, M) → Ĥⁿ⁺²(G, M) for every n ∈ ℤ and every M. The generalised quaternion case (the period class u ∈ Ĥ⁴(Q_{2^s}, ℤ) with invertible cup product, 2-period 4) and Swan's theorem (odd p, cyclic Sylow P: 2|N_G(P)/C_G(P)|; 2-period 2 or 4) are K3BlochGroups §5.2's, whose period is assumed to be this one (§5.2 does not define it).",
+     "hypotheses": [
+      "G : Type",
+      "[Group G]",
+      "[Fintype G]",
+      "p prime",
+      "p ∣ |G|",
+      "[IsCyclic G] (cyclic clause)"
+     ],
+     "locator": {
+      "source": "MilneCFT",
+      "where": "Ch. II Prop. 3.4 and Remark 3.5, p. 81 (cyclic periodicity; the cup-product description stated without proof); p-period: Hutchinson13 p. 12; Swan's theorem SwanPPeriod60 Thms. 1 and 2 (waived; Hutchinson13 Thm. 3.1, p. 12) through K3BlochGroups §5.2"
+     },
+     "prerequisites": [
+      "target:8.1",
+      "roadmap:K3BlochGroups §5.2",
+      "tauceti:TauCeti.TateCohomology.characterConnectingClass",
+      "tauceti:TauCeti.TateCohomology.cup_characterConnectingClass_eq_groupCohomologyπEven",
+      "tauceti:Rep.FiniteCyclicGroup.periodicIsoOfGenerator",
+      "tauceti:TauCeti.TateCohomology.cup_δ_of_flat",
+      "mathlib:IsCyclic"
+     ],
+     "api": [
+      {
+       "name": "pPeriod_def",
+       "role": "definition",
+       "statement": "The least d > 0 with Ĥ^d(G, ℤ)(p) cyclic of order |G|_p, for p ∣ |G| when such d exists."
+      },
+      {
+       "name": "pPeriod_ge_two",
+       "role": "structure",
+       "statement": "The p-period is at least 2, since Ĥ¹(G, ℤ) = 0 and |G|_p > 1."
+      },
+      {
+       "name": "pPeriod_cyclic",
+       "role": "computation",
+       "statement": "G cyclic of order m, p ∣ m: p-period 2."
+      },
+      {
+       "name": "pPeriod_eq_K3",
+       "role": "comparison",
+       "statement": "For d ≥ 2, Ĥ^d(G, ℤ)(p) is cyclic of order |G|_p iff H_{d−1}(G, ℤ_(p)) is (8.1), so the p-period is the least d ≥ 2 with H_{d−1}(G, ℤ_(p)) cyclic of order |G|_p, which is K3BlochGroups §5.2's p-period under the assumption of the supplier contract."
+      }
+     ],
+     "tests": [
+      {
+       "name": "swan_S3",
+       "kind": "computation",
+       "statement": "S₃: 3-period 4, 2-period 2."
+      },
+      {
+       "name": "swan_SL2",
+       "kind": "computation",
+       "statement": "SL₂(𝔽_q), q odd: 2-period 4, H_k(−, ℤ_(2)) = ℤ_(2)/q(q²−1) for k ≡ 3 mod 4."
+      },
+      {
+       "name": "swan_coprime",
+       "kind": "non-example",
+       "statement": "p ∤ |G|: the least d is 1, not 2|N/C| = 2."
+      },
+      {
+       "name": "pPeriod_quaternion",
+       "kind": "computation",
+       "statement": "Q_{2^s}, s ≥ 3, through K3BlochGroups §5.2's quaternion case: H₁ = (ℤ/2)², H₂ = 0, H₃ = ℤ/2^s and 8.1 give Ĥ¹ = 0, Ĥ² = (ℤ/2)² (not cyclic), Ĥ³ = 0, Ĥ⁴ = ℤ/2^s, so 2-period 4 (Swan's value). For Q₈, cup with the imported period class u is Ĥ⁰ = ℤ/8 ≅ Ĥ⁴ = ℤ/8, 1 ↦ u; a period-2 model would make Ĥ²(Q₈, ℤ) cyclic of order 8."
+      }
+     ]
+    },
+    {
+     "id": "8.5",
+     "kind": "theorem",
+     "name": "TauCeti.TateCohomology.periodic_tfae",
+     "statement": "TFAE for finite G: (a) cup with some u ∈ Ĥ^d(G, ℤ), d > 0, is an isomorphism in all degrees for all M; (b) Ĥ^d(G, ℤ) cyclic of order |G| for some d ≠ 0; (c) every abelian subgroup cyclic; (d) every Sylow subgroup cyclic or generalised quaternion; and the p-primary form.",
+     "hypotheses": [
+      "G : Type",
+      "[Group G]",
+      "[Fintype G]",
+      "p prime (p-primary form)"
+     ],
+     "locator": {
+      "source": "Brown82",
+      "where": "Ch. VI §9 (uncertified)"
+     },
+     "prerequisites": [
+      "target:5.3",
+      "target:7.2",
+      "target:8.1",
+      "target:8.2",
+      "target:8.3",
+      "target:8.4",
+      "roadmap:K3BlochGroups §5.2",
+      "tauceti:TauCeti.TateCohomology.cup_assoc",
+      "tauceti:TauCeti.TateCohomology.cup_res"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "per_CpCp",
+       "kind": "non-example",
+       "statement": "C_p × C_p: dim Hⁿ(−, 𝔽_p) = n + 1 unbounded, not periodic."
+      },
+      {
+       "name": "per_SL2",
+       "kind": "non-example",
+       "statement": "SL₂(𝔽_q), q = p^f odd: Sylow 2 generalised quaternion, Sylow ℓ cyclic for odd ℓ ≠ p, 2-period 4; the Sylow p-subgroup (𝔽_q, +) ≅ (ℤ/p)^f is cyclic iff f = 1. SL₂(𝔽₉) is not periodic: its unipotent ℤ/3 × ℤ/3 is a full Sylow 3-subgroup (|SL₂(𝔽₉)| = 720)."
+      },
+      {
+       "name": "per_trivial",
+       "kind": "degenerate",
+       "statement": "Trivial group: all conditions hold with u = 0; S₃ has d = 4; A₄ fails (c)."
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "suppliers": [
+  {
+   "roadmap": "DerivedModuleAlgebra",
+   "sections": [
+    "§S.1",
+    "§0.2"
+   ],
+   "what": "First-quadrant double-complex spectral sequences (cohomological and homological): E₂, convergence, edge morphisms, five-term and extended sequences, exact-rows comparison, naturality; the Künneth sequence of two ℕ-indexed complexes, one flat in every degree, over a ring of global dimension ≤ 1 (gap:flat-kunneth, §0.2), used in 5.1."
+  },
+  {
+   "roadmap": "ProfiniteCohomology",
+   "sections": [
+    "§3.1",
+    "§3.2",
+    "§5.5",
+    "§6.4",
+    "§10.1",
+    "§10.5",
+    "Layer 12"
+   ],
+   "what": "Explicit low-degree comparisons, profinite five-term sequence, continuous Mackey formula, finite-quotient colimit, continuous cup product; used in the comparisons 1.5, 4.7, 6.9 and a Check of 7.1."
+  },
+  {
+   "roadmap": "ClassFieldTheory",
+   "sections": [
+    "§0.1"
+   ],
+   "what": "Tate-cohomology interface: restriction, corestriction, cohomological triviality, Nakayama–Rim."
+  },
+  {
+   "roadmap": "FreeGroupsAndLimitGroups",
+   "sections": [
+    "§2.2",
+    "§4.1",
+    "§4.2",
+    "§4.5",
+    "§4.6",
+    "§4.7",
+    "§4.8"
+   ],
+   "what": "G-trees, Bass–Serre trees, one-edge splittings as PushoutI and HNNExtension, free groups as fundamental groups of roses; the structure theorem with SL(2, ℤ) recovering ℤ/4 ∗_{ℤ/2} ℤ/6 (§4.8, a Check of 3.6)."
+  },
+  {
+   "roadmap": "AlgebraicTopology",
+   "sections": [
+    "§5.3",
+    "§5.4"
+   ],
+   "what": "Quotient-chain comparison and Cartan–Leray for surjective finite regular covers with constant coefficients (a Check of 3.3) and torus homology (a Check of 5.4)."
+  },
+  {
+   "roadmap": "StableHomotopyKTheory",
+   "sections": [
+    "§3.29"
+   ],
+   "what": "For a perfect group with a free presentation, the identification of (R ∩ [F, F])/[F, R], the kernel of the universal central extension, with H₂(P; ℤ), natural under presentation comparisons, no particular map assumed; compared with 6.8 in a Check."
+  },
+  {
+   "roadmap": "K2SymbolsBrauer",
+   "sections": [
+    "§1.1"
+   ],
+   "what": "The bar normalisation of the Hopf map of a free presentation: the connecting map sending a 2-cycle to the boundary of a lift, with [a] − [b] read as ab⁻¹ in R ⧸ ⁅F, R⁆, its value ⁅s, t⁆⁻¹ on the ordered torus cycle and its naturality under maps of free presentations; existence, image and bijectivity for a general group are not assumed of it and are proved in 6.8."
+  },
+  {
+   "roadmap": "SchemeKTheoryOperations",
+   "sections": [
+    "§6.7"
+   ],
+   "what": "Integral group hyperhomology of complexes in degrees ≥ 0 with its two spectral sequences, vanishing and permutation-module Shapiro identification (compared with 2.1, 2.3, 3.2); the directed-union identification H_m(G, A) = colim H_m(G_i, A) for any coefficient ring (used in 5.4)."
+  },
+  {
+   "roadmap": "K3BlochGroups",
+   "sections": [
+    "§4.1",
+    "§5.2"
+   ],
+   "what": "Bounded-below reindexing of integral hyperhomology (compared with 2.1); for finite groups the stable-element theorem with ℤ_(r) coefficients (compared with 7.2), the duality H^{d+1}(G, ℤ) ≅ Hom(H_d(G, ℤ), ℚ/ℤ) (compared with 8.1), the four-periodic resolution of Q_{2^s} with its period class u ∈ Ĥ⁴ and the invertibility of cup product with u (a Check of 8.4, the Layer 8 Examples), and Swan's r-period theorem (used in 8.4, 8.5), its r-period assumed to be the least d ≥ 2 with H_{d−1}(G, ℤ_(r)) cyclic of order |G|_r (§5.2 does not define it; Hutchinson13 line 494–497 calls every such d a period)."
+  },
+  {
+   "roadmap": "MappingClassGroupsAndCanonicalRepresentations",
+   "sections": [
+    "§1.1"
+   ],
+   "what": "Existence and naturality of the cohomological Hochschild–Serre spectral sequence of a discrete extension, the section lift and transgression in degree one, and the cohomological five-term exact sequence (realised in 6.2, used in 6.6, 6.7, 6.9)."
+  },
+  {
+   "roadmap": "IntegralIwasawaTheoryPartII",
+   "sections": [
+    "§0.7"
+   ],
+   "what": "The cap product H^q(U, M^∨) × H_q(U, M) → ℂ_p, compared with the evaluation pairing of 4.6; the vanishing of H_q(S, M), q > 0, for M flat over k[S] and the edge isomorphism Hₙ(G, M) ≅ Hₙ(G ⧸ S, M_S) when H_q(S, M) = 0 for q > 0, compared with 6.4 in a Check."
+  },
+  {
+   "roadmap": "ArithmeticGaloisDuality",
+   "sections": [
+    "§D7.2"
+   ],
+   "what": "For finite G: the integral homological universal coefficient sequence, H^{n+1}(G, ℤ) ≅ Ext¹(Hₙ(G, ℤ), ℤ), evaluation duality over a finite field, and every ℓ-primary class of Hₙ(G, M) a corestriction from a Sylow ℓ-subgroup; compared with 5.2 and 7.2, not used in their routes."
+  },
+  {
+   "roadmap": "InductionRestrictionPartII",
+   "sections": [
+    "RS.0.3",
+    "RS.6.8"
+   ],
+   "what": "RS.6.8: the degree-two Künneth isomorphism H₂(A × B, ℤ) ≅ H₂(A, ℤ) ⊕ H₂(B, ℤ) ⊕ (A ⊗ B) for abelian A, B and Λ²A ≅ H₂(A, ℤ), a ∧ b ↦ [a|b] − [b|a], for finite abelian A (used in the route of 5.4 for finite A; compared with 5.1 and 5.4); RS.0.3: corestriction H₂(H, ℤ)_G ≅ H₂(G, ℤ) primary part for a normal Hall subgroup H (compared with 7.2)."
+  }
+ ],
+ "consumers": [],
+ "gaps": [
+  {
+   "slug": "homological-low-degree",
+   "title": "Homological edge morphisms and five-term sequence of a first-quadrant double complex",
+   "neededBy": [
+    "6.3",
+    "6.4",
+    "6.7"
+   ],
+   "detail": "DerivedModuleAlgebra §S.1 states edge morphisms and the five-term and extended sequences in cohomological indexing; its homological form gives E² and convergence only.",
+   "needs": "The edge morphisms H_n(Tot C) → E²_{n,0}, E²_{0,n} → H_n(Tot C) and the exact sequence H₂(Tot C) → E²_{2,0} → E²_{0,1} → H₁(Tot C) → E²_{1,0} → 0 for a first-quadrant homological double complex.",
+   "supplier": "DerivedModuleAlgebra",
+   "section": "§S.1"
+  },
+  {
+   "slug": "flat-kunneth",
+   "title": "Künneth sequence for a complex of flat modules over a ring of global dimension at most one",
+   "neededBy": [
+    "5.1"
+   ],
+   "detail": "Tau Ceti's HomologicalComplex.homologyKunnethShortComplex_shortExact assumes projective cycles and projective quotients by cycles in the second complex, and its splitting split cycles in the first; DerivedModuleAlgebra §0.2 has K-flat replacements and the invariance of tensor products under quasi-isomorphisms but no Künneth sequence. Chains with flat, non-projective coefficients such as ℤ[1/3] are not covered.",
+   "needs": "For a commutative ring R of global dimension at most one and ℕ-indexed chain complexes K, L of R-modules with L flat in every degree, the sequence 0 → ⊕_{p+q=n} H_p(K) ⊗ H_q(L) → Hₙ(K ⊗ L) → ⊕_{p+q=n−1} Tor₁^R(H_p(K), H_q(L)) → 0, first map the cross product, is exact for every n, natural in K and L, and split (not naturally).",
+   "supplier": "DerivedModuleAlgebra",
+   "section": "§0.2"
+  }
+ ]
+}
