@@ -17,14 +17,16 @@ character, criterion and inheritance; defines the Hattori–Stallings rank of pr
 group rings and proves Swan's theorem in its rational and mod-`p` forms; defines the Euler
 characteristic of groups of finite homological type and proves its multiplicativity under finite
 index and extensions, the equivariant formula for actions on acyclic complexes, and the
-denominator bound for groups acting properly and cocompactly on such complexes; and constructs
+denominator theorem for groups of finite homological type, through Serre's action with finite
+stabilizers on a finite-dimensional acyclic simplicial set and the classical Smith theory of finite
+`p`-groups acting on such simplicial sets; and constructs
 complete resolutions and Farrell cohomology for groups with a finite-index subgroup of finite
 cohomological dimension, compared with ordinary cohomology above that dimension and with Tate
 cohomology for finite groups. The end theorems are the finiteness criterion (1.5), Serre's theorem
 (3.2), the Eilenberg–Ganea theorem (5.3), the duality criterion (6.3), the Euler characteristic of
 groups of finite homological type with its multiplicativity (8.4, 8.6) and equivariant formula
-(8.7), and the comparison of Farrell cohomology with ordinary cohomology above the virtual
-cohomological dimension (9.4).
+(8.7), Brown's denominator theorem (8.9), and the comparison of Farrell cohomology with ordinary
+cohomology above the virtual cohomological dimension (9.4).
 
 ## Scope and ownership
 
@@ -77,7 +79,7 @@ finite-dimensional representations of a finite group by their characters in char
   item 16) and the identification of their (co)homology with local coefficients with group
   (co)homology (Stage 4 item 17). AlgebraicTopology owns cellular connectivity (§8.1), the absolute
   Hurewicz theorem in every universe (§8.3), Whitehead's theorem (§8.5), the finite CW type of
-  compact smooth manifolds (§8.7) and twisted Poincaré duality of manifolds (§§6.3–6.4).
+  compact Hausdorff smooth manifolds (§8.7) and twisted Poincaré duality of manifolds (§§6.3–6.4).
 - ProfiniteCohomology Layer 11 owns the cohomological dimension of profinite groups, carried by Tau
   Ceti's `TauCeti.cohomologicalDimension` (continuous cohomology with discrete torsion
   coefficients). The invariant of this roadmap is the discrete one, under another name, compared
@@ -92,16 +94,22 @@ finite-dimensional representations of a finite group by their characters in char
 - GorensteinHomologicalAlgebra owns Gorenstein dimensions of modules over rings and excludes complete
   cohomology of groups. Layer 9 uses only the pinned Gorenstein-projective objects of an abelian
   category and owns Farrell cohomology.
+- SheafTheoreticSmithTheory owns Smith restriction for prime-order actions on étale sheaves, a
+  different theory. The classical Smith theory of 8.8 (finite `p`-groups acting on
+  finite-dimensional simplicial sets with finite mod-`p` homology) and Serre's construction 5.4 of a
+  finite-dimensional acyclic simplicial set with finite stabilizers have no other owner and are owned
+  here.
 
 **Non-goals.** Stallings' theorem on ends and the Stallings–Swan theorem that a group of
 cohomological dimension one is free (so the classification of duality groups of dimension one is not
 stated). Separations of the finiteness types (Bestvina–Brady groups, a group of type `FP_2` that is
 not finitely presented) and the Eilenberg–Ganea problem in dimension two. The inequality
 `cd_R G ≤ hd_R G + 1` for countable groups, which needs the Govorov–Lazard theorem over
-noncommutative rings. Brown's integrality theorems for groups of finite homological type that need
-classical Smith theory: the denominator bound without a proper cocompact action, Brown's formula for
-`χ − χ̃` and the `p`-fractional part of `χ` (Brown1974 Theorems 2′, 5 and 6, §7). Products on
-Farrell cohomology, which need a complete diagonal approximation. `L²`-invariants,
+noncommutative rings. Brown's refinements of the denominator theorem through the poset of nontrivial
+finite subgroups, which need its equivariant Euler characteristic and the acyclic-cover comparison
+of Brown1974 Appendix B: Theorem 5 for a nonempty family of finite subgroups, its Corollaries 2 and
+3, Theorem 6 with the formula for `χ − χ̃`, and the `p`-fractional part of `χ` (Brown1974 §§6–7).
+Products on Farrell cohomology, which need a complete diagonal approximation. `L²`-invariants,
 Bieri–Neumann–Strebel invariants, and the comparison of the Hattori–Stallings and rational Euler
 characteristics beyond type `FL` (the Bass conjecture). The dimension theory of profinite groups.
 
@@ -193,6 +201,17 @@ Pinned at `1b1ccf4b088b32fa3f23f2de1127433254a81e1e`.
   that `cell C n` is empty for all large `n`, finite type that each `cell C n` is finite.
 - `Module.Flat` for modules over a commutative ring (used only for `R`-modules, never for
   `RG`-modules), `Module.Projective` and `Module.Finite` over any semiring, `PadicInt`.
+- `SSet`, its chain complex `SSet.chainComplex` and homology `SSet.homology`
+  (`Mathlib/AlgebraicTopology/SimplicialSet/Homology/Basic.lean` lines 67 and 124): the unnormalized
+  simplicial chains with coefficients in an object of a preadditive category; used for the
+  simplicial sets of 5.4 and 8.8.
+- `IsCoveringMap.existsUnique_continuousMap_lifts` (`Mathlib/Topology/Homotopy/Lifting.lean`
+  line 489): a map from a simply connected, locally path-connected space lifts uniquely along a
+  covering map once the lift of one point is fixed.
+- `ChartedSpace.secondCountable_of_sigmaCompact` (`Mathlib/Geometry/Manifold/ChartedSpace.lean`
+  line 236): a σ-compact charted space over a second-countable model is second countable. Mathlib's
+  `ChartedSpace` (line 141) and `IsManifold` (`Mathlib/Geometry/Manifold/IsManifold/Basic.lean`
+  line 777) include no separation axiom, so 6.6 assumes `T2Space` explicitly.
 
 ### From Tau Ceti
 
@@ -208,7 +227,12 @@ Pinned at `2fd255d997f47c0b5d834ee416c7015d55444ce5`.
   (`RestrictScalars.lean` line 155), for `[Ring A] [Ring S] [Module A S] [IsScalarTower A S S]` with
   `S` `m`-pseudocoherent over `A`, noncommutative rings allowed.
 - `TauCeti.Module.IsFPD A M m` (`TauCeti/Algebra/Module/PseudoCoherent/FiniteProjectiveDimension.lean`
-  line 69): a finite free resolution exact everywhere whose `m`-th syzygy is projective;
+  line 69): a possibly unbounded resolution `⋯ → A^{n₁} → A^{n₀} → M → 0` by finitely generated free
+  modules, exact everywhere, whose `m`-th syzygy is projective; equivalently, a resolution of length
+  at most `m` by finitely generated projective modules. It does not say that the free resolution
+  terminates: over `ℚ[ℤ/2]` the trivial module `ℚ` satisfies `IsFPD` with `m = 0` (it is
+  projective, `2` being invertible) but has no finite resolution by finitely generated free modules, since
+  every such resolution has even alternating sum of `ℚ`-dimensions while `dim_ℚ ℚ = 1`;
   `TauCeti.Module.IsFPD.isPseudoCoherentOver`, `TauCeti.Module.IsFPD.zero_iff`, `.mono`, and
   `TauCeti.Module.isFPD_iff_hasProjectiveDimensionLE` (line 153): for `M : Type u` in the universe of
   `A`, `IsFPD A M m ↔ IsPseudoCoherentOver A M ⊤ ∧ HasProjectiveDimensionLE (ModuleCat.of A M) m`.
@@ -253,7 +277,16 @@ Pinned at `2fd255d997f47c0b5d834ee416c7015d55444ce5`.
   restriction followed by corestriction is multiplication by the index on `Hⁿ(G, A)`.
 - `TauCeti.trace_ofModule'_eq_zero_of_dvd_orderOf` (`TauCeti/Algebra/MonoidAlgebra/ProjectiveTrace.lean`
   line 67): `A` commutative local with the prime `p` not a unit, `G` finite, `X` finitely generated
-  projective over `A[G]`; if `p ∣ orderOf g` then the `A`-trace of `g` on `X` is `0`.
+  projective over `A[G]`; if `p ∣ orderOf g` then the Mathlib trace `LinearMap.trace A X` of `g` on
+  `X` is `0` (`X` is free over the local ring `A`, so this is its trace as a free module).
+- `LinearMap.projectiveTrace R M` (`TauCeti/LinearAlgebra/Trace/Projective.lean` line 72), for
+  `[CommSemiring R]`, `[Module.Finite R M]`, `[Module.Projective R M]`: the trace of an endomorphism of
+  a finite projective module, the contraction `Dual R M ⊗ M → R` transported along
+  `dualTensorHomEquiv`; with `LinearMap.projectiveTrace_cyclic` (line 96, cyclicity across two finite
+  projective modules), `LinearMap.projectiveTrace_eq_trace` (line 118, equal to Mathlib's
+  `LinearMap.trace` on finite free modules) and `LinearMap.projectiveTrace_baseChange` (line 158).
+  Mathlib's `LinearMap.trace` (`Mathlib/LinearAlgebra/Trace.lean` line 75) is defined to be `0` when
+  the module has no finite basis, so it is not the trace of a finite projective module.
 - `TauCeti.nonempty_linearEquiv_of_projective_of_tensorRat` (`TauCeti/NumberTheory/Padics/GroupAlgebra/Swan.lean`
   line 58): finitely generated projective `ℤ_p[G]`-modules with isomorphic rationalizations are
   isomorphic, `G` finite.
@@ -261,6 +294,14 @@ Pinned at `2fd255d997f47c0b5d834ee416c7015d55444ce5`.
   (`TauCeti/RepresentationTheory/CharacterTable/Determined.lean` line 59): over a field of
   characteristic zero, finite-dimensional representations of a finite group with equal characters
   are isomorphic.
+- `TauCeti.UniversalCover x₀` (`TauCeti/AlgebraicTopology/UniversalCover/Basic.lean` line 70), the
+  universal cover by homotopy classes of based paths, with `TauCeti.UniversalCover.isCoveringMap`
+  (`.../UniversalCover/Covering.lean` line 58) for locally path-connected, semilocally simply
+  connected spaces.
+- `SSet.eilenbergZilberHomotopyEquiv` (`TauCeti/AlgebraicTopology/SimplicialSet/EilenbergZilber.lean`
+  line 761): for simplicial sets `K, L`, the Alexander–Whitney map from the chains of `K ⊗ L` (the
+  product) to the tensor product of chains is a chain homotopy equivalence, with inverse the shuffle
+  map.
 - `Subgroup.tensorInducedRepresentation` and `Representation.wreathTensor`
   (`TauCeti/RepresentationTheory/Tensor/Induction/Basic.lean`): tensor induction of representations
   along a transversal; the complex-level construction there is sign-free and is used only in
@@ -277,7 +318,12 @@ Pinned at `2fd255d997f47c0b5d834ee416c7015d55444ce5`.
   the orbit spectral sequence `E¹_{p,q} = ⊕_{σ ∈ Σ_p} H_q(G_σ, k_σ ⊗ M) ⇒ H^G_{p+q}(C; M)` and its
   cohomological dual; 3.1 there identifies `H^G_*(C; M)` with `H_*(G, M)` when `C` resolves `k` by
   `k`-flat terms.
-- §3.4: for a `G`-tree, the split exact sequence `0 → k[E⁺] → k[V] → k → 0` of permutation modules.
+- §3.4: for a `G`-tree (an action without inversions, with a `G`-invariant orientation `E⁺` of the
+  edges), the exact sequence `0 → k[E⁺] → k[V] → k → 0` of permutation representations, split after
+  forgetting the `G`-action (split over `k`) and not `G`-equivariantly: for `G = ℤ` translating the
+  line it is `0 → k[t, t⁻¹] →(t − 1) k[t, t⁻¹] → k → 0`, where the `k`-linear section `1 ↦ [0]` is
+  moved to `[1]` by `t`, and an equivariant section would be an invariant element of `k[ℤ]` of
+  augmentation `1`, which does not exist for `k ≠ 0`. Layers 1 and 8 use only its exactness.
 - §§3.5–3.6: the tree sequences, and for amalgams, HNN extensions and free groups the long exact
   sequences in homology and cohomology; for `F = FreeGroup S`, `Hⁿ(F, M) = Hₙ(F, M) = 0` for `n ≥ 2`
   and `0 → H₁(F, M) → M^{(S)} → M → H₀(F, M) → 0`.
@@ -329,12 +375,26 @@ Pinned at `2fd255d997f47c0b5d834ee416c7015d55444ce5`.
 - §8.3: the absolute Hurewicz theorem: an `(n − 1)`-connected space has vanishing reduced homology
   below `n` and `π_n ≅ H_n` for `n ≥ 2`, in every universe.
 - §8.5: Whitehead's theorem for spaces of CW type.
-- §8.7: a compact Hausdorff second-countable smooth manifold has finite CW type.
+- §8.7: a compact Hausdorff second-countable smooth manifold with the Euclidean model has finite CW
+  type (a homotopy equivalence to a finite CW complex).
 - §6.3: the integral orientation local system `or_M` of a boundaryless manifold, built from the
   local homology system with its transport along paths; its monodromy `π₁(M, x) → {±1}` is the
   orientation character used in 6.6.
-- §6.4: twisted Poincaré duality of a closed `n`-manifold: cap product with the fundamental class is
-  an isomorphism `Hᵏ(M; L) ≅ H_{n−k}(M; L ⊗ or_M)` for every local system `L` of modules.
+- §6.4: twisted Poincaré duality of a closed `n`-manifold (compact and Hausdorff, charted on
+  `EuclideanSpace ℝ (Fin n)`): cap product with the fundamental class is an isomorphism
+  `Hᵏ(M; L) ≅ H_{n−k}(M; L ⊗ or_M)` for every local system `L` of modules.
+- §4.7: the realization of every simplicial set is a CW complex with one `n`-cell for each
+  nondegenerate `n`-simplex, the characteristic map being the realized simplex composed with a fixed
+  orientation homeomorphism carrying the ball class to the ordered simplex class; through the
+  cellular boundary formula (§§4.2–4.3) the cellular chains of the realization are then the
+  normalized simplicial chains, the identification 5.4 uses.
+- §8.11a: every CW complex is homotopy equivalent to the realization of an abstract simplicial
+  complex, by skeletal simplicial approximation and mapping cylinders (Hatcher's Theorem 2C.5, as
+  cited there).
+
+What AlgebraicTopology must provide (gap:simplicial-replacement-dimension): in §8.11a, the abstract
+simplicial complex replacing a CW complex of dimension at most `N` can be chosen of dimension at most
+`N`, as the skeletal construction gives.
 
 ## How to read the build
 
@@ -347,13 +407,16 @@ groups, and compares `cd_ℤ` with the profinite invariant. Layer 3 constructs t
 induction of complexes and proves Serre's theorem, which Layer 4 needs to make the virtual
 cohomological dimension independent of the subgroup; Layer 4 also defines the virtual types and the
 groups of finite homological type on which Layer 8 rests. Layer 5 compares `cd` with the geometric
-dimension and proves the Eilenberg–Ganea theorem; later layers use only its comparison 5.2, in the
-manifold theorem 6.6. Layer
-6 develops duality groups from the cap product of CohomologyOfGroups and the finiteness criterion of
+dimension, proves the Eilenberg–Ganea theorem and builds Serre's action of a group of finite `vcd`
+with finite stabilizers on a finite-dimensional acyclic simplicial set; later layers use its
+comparison 5.2, in the manifold theorem 6.6, and Serre's construction 5.4, in the denominator theorem
+8.9. Layer 6 develops duality groups from the cap product of CohomologyOfGroups and the finiteness criterion of
 Layer 1. Layer 7 is independent of Layers 2–6: it specialises the Hattori–Stallings trace to group
 rings and proves Swan's theorem and Brown's theorem on `Hom` from a projective module into a
 finite-dimensional representation, which Layer 8 uses to define and multiply Euler
-characteristics. Layer 9 builds complete resolutions and Farrell cohomology from the pinned
+characteristics; Layer 8 also proves the classical Smith theory of finite `p`-groups acting on
+finite-dimensional simplicial sets, which with 5.4 bounds the denominator of the Euler
+characteristic. Layer 9 builds complete resolutions and Farrell cohomology from the pinned
 Gorenstein-projective objects, using Layers 2 and 4.
 
 ---
@@ -475,9 +538,12 @@ dimension at least `3`; so its terms of degree `≤ 2` are finitely generated.
 
 - `ℚ` and the free group on an infinite set are not finitely generated, hence not of type `FP_1` over
   any nonzero `R`; over the zero ring they are (1.2), so the nontriviality hypothesis of (b) is used.
-- A finite group is finitely presented, so of type `FP_2` over every `R`; the free group on two
-  generators is finitely presented with no relator, and its resolution of (c) has terms `R`, `RG²`,
-  `0` in degrees `0, 1, 2`.
+- A finite group is finitely presented, so of type `FP_2` over every `R`; the free group `G` on two
+  generators `s, t` is finitely presented with no relator, and its resolution of (c) has terms `RG`,
+  `(RG)²`, `0` in degrees `0, 1, 2` over the augmentation `RG → R` in degree `−1`, the boundary being
+  `(a, b) ↦ a(s − 1) + b(t − 1)`: over `ℤ` the degree-`0` term `ℤG` (one free orbit of vertices of
+  the universal cover) has infinite rank as an abelian group, while a model putting `R` in degree `0`
+  would give rank `1`.
 - The normal closure of `b` in `FreeGroup {a, b}` is free on the conjugates `aᵏba⁻ᵏ`, `k ∈ ℤ`, so its
   abelianization is free of infinite rank and it is not of type `FP_1`: `FP_1` does not pass to
   subgroups of infinite index.
@@ -536,18 +602,27 @@ types `FP` and `FL` pass from `G` to `H` (BrownGTM87, §VIII.5). Route: `RG` is 
 
 ### 1.7 Extensions and products
 
-Prove: (a) if `N ◁ G` and `N` and `G ⧸ N` are of type `FP_n` over `R`, then so is `G` (Bieri1981;
-BieriEckmann1974 Proposition 3.3(a), lines 298–313, for `FP_∞` and `FP` over `ℤ`); (b) if `A` and `B`
+Prove: (a) if `N ◁ G` and `N` and `G ⧸ N` are of type `FP_n` over `R`, then so is `G`
+(BieriEckmann1974 Proposition 3.3(a), lines 298–313, states it for `FP_∞` and `FP` over `ℤ`, by the
+spectral sequence of the extension; for finite `n` and arbitrary `R` the route below, through the
+criterion 1.5(c), is the proof); (b) if `A` and `B`
 are of type `FL` (`FP`, `FP_n`) over `R`, so is `A × B` (BrownGTM87, §VIII.5). Route for (a):
 criterion 1.5(c). For a directed system `(M_i)` with zero colimit, the spectral sequences of
 CohomologyOfGroups §6.2 for the `M_i` form a directed system whose colimit is a convergent spectral
 sequence (directed colimits are exact) with `E₂`-terms `colim_i Hᵖ(G ⧸ N, H^q(N, M_i))`. For `q ≤ n`
 the system `(H^q(N, M_i))_i` of `G ⧸ N`-representations (CohomologyOfGroups §1.2) has zero colimit by
 1.5(c) for `N`, so 1.5(c) for `G ⧸ N` kills these terms for `p ≤ n`; hence every graded piece of
-`colim_i Hᵏ(G, M_i)` vanishes for `k ≤ n`. Route for (b): the tensor product over `R` of resolutions
-of `R` by free `RA`- and `RB`-modules is a resolution of `R` over `RA ⊗_R RB = R[A × B]` (Künneth over
-`R` for complexes of free `R`-modules), with finitely generated free terms in the required degrees.
-*Needs:* 1.2, 1.5; CohomologyOfGroups §1.2, §6.2.
+`colim_i Hᵏ(G, M_i)` vanishes for `k ≤ n`. Route for (b): for resolutions `P → R` over `RA` and
+`Q → R` over `RB` whose terms are projective over `R` (projective over the group ring, `RA` and `RB`
+being free over `R`), the tensor product `P ⊗_R Q` is a resolution of `R` over
+`RA ⊗_R RB = R[A × B]` (Künneth over `R` for complexes of projective, hence flat, `R`-modules), with
+`P_i ⊗_R Q_j` a finitely generated projective (free) `R[A × B]`-module when `P_i` and `Q_j` are
+finitely generated projective (free). For type `FL` take finite resolutions by finitely generated
+free modules; for type `FP` finite resolutions by finitely generated projective modules, which
+`TauCeti.Module.IsFPD` provides but which need not be free (the trivial `ℚ[ℤ/2]`-module `ℚ` of the
+Tau Ceti supplier contract); for type `FP_n` free resolutions whose terms in degrees `≤ n` are finitely generated, so that the total
+degree `k ≤ n` term `⊕_{i+j=k} P_i ⊗_R Q_j` is finitely generated. *Needs:* 1.2, 1.5;
+CohomologyOfGroups §1.2, §6.2; Tau Ceti `TauCeti.Module.IsFPD`.
 
 **Checks.**
 
@@ -562,7 +637,9 @@ Prove: (a) for injective `C →* A` and `C →* B`, if `A` and `B` are of type `
 of type `FP_{n−1}`, then the amalgam `A ∗_C B` (`Monoid.PushoutI` over `Bool`) is of type `FP_n`;
 (b) for `A, B ≤ H` with `φ : A ≃* B`, if `H` is of type `FP_n` and `A` of type `FP_{n−1}`, then
 `HNNExtension H A B φ` is of type `FP_n`; (c) the free group on a finite set `S` is of type `FL` over
-every `R`, with the resolution `0 → RF^{(S)} → RF → R → 0` (Bieri1981; CohomologyOfGroups §3.6).
+every `R`, with the resolution `0 → RF^{(S)} → RF → R → 0` (BieriEckmann1973 Proposition 5.1, lines 646–650,
+type (FF) over `ℤ` for nontrivial free groups; CohomologyOfGroups §3.6; for (a) and (b) the route
+below, through the Bass–Serre tree and the cokernel lemma for pseudocoherence, is the proof).
 Here `n − 1` is subtraction in `ℕ∞`, so `0 − 1 = 0` and `⊤ − 1 = ⊤`. Route: the Bass–Serre tree of
 the one-edge graph of groups (FreeGroupsAndLimitGroups §§4.5, 4.7) gives by CohomologyOfGroups §3.4
 the exact sequences `0 → R[G/C] → R[G/A] ⊕ R[G/B] → R → 0` and `0 → R[G/A] → R[G/H] → R → 0` of
@@ -582,9 +659,9 @@ exact and sends `RAᵏ` to `RGᵏ`, so it preserves `m`-pseudocoherence; conclud
 ### Examples
 
 `ℤⁿ`, free groups of finite rank and `BS(1, 2)` are of type `FL` (the last as an HNN extension of
-`ℤ` over `ℤ`, with resolution of length `2`); finite groups and `ℤ/2 × ℤ` are of type `FP_∞` but not
-`FP` over `ℤ`, and of type `FP` over `ℚ`; `ℚ` and infinitely generated free groups are not of type
-`FP_1`.
+`ℤ` over `ℤ`, with resolution of length `2`); nontrivial finite groups and `ℤ/2 × ℤ` are of type `FP_∞` but
+not `FP` over `ℤ`, and of type `FP` over `ℚ`, while the trivial group is of type `FL` over every
+`R`; `ℚ` and infinitely generated free groups are not of type `FP_1` over any nonzero `R`.
 
 ### Dependencies
 
@@ -687,8 +764,9 @@ lines 298–313; 1.7 and 1.2). *Needs:* 2.1, 1.7; CohomologyOfGroups §6.2, §6.
 
 Prove: (a) if `G` is the union of a directed family of subgroups `G_i`, then
 `hd_R G = sup_i hd_R G_i` (SchemeKTheoryOperations §6.7 and 2.3(a)); (b) if `G` is the union of an
-increasing sequence of subgroups `G_0 ≤ G_1 ≤ ⋯`, then `cd_R G ≤ sup_i cd_R G_i + 1` (Bieri1981;
-BrownGTM87, §VIII.2). Route for (b): the telescope sequence
+increasing sequence of subgroups `G_0 ≤ G_1 ≤ ⋯`, then `cd_R G ≤ sup_i cd_R G_i + 1`
+(BrownGTM87, §VIII.2; the telescope argument below, valid over every `R`, is the proof). Route for
+(b): the telescope sequence
 `0 → ⊕_i R[G/G_i] → ⊕_i R[G/G_i] → R → 0`, with first map `a ↦ a − (image of a in the next term)`, is
 exact because `colim_i R[G/G_i] = R`; its long exact `Ext`-sequence and
 `Ext^k_{RG}(⊕_i R[G/G_i], M) ≅ ∏_i Hᵏ(G_i, M)` (CohomologyOfGroups §1.4) give `Hᵏ(G, M) = 0` above
@@ -754,9 +832,9 @@ CohomologyOfGroups §1.5; Tau Ceti `TauCeti.cohomologicalDimension`.
 
 ### Examples
 
-`cd_ℤ` and `hd_ℤ` of `ℤⁿ`, free groups and the Klein bottle group are `n`, `1` and `2`; finite
-nontrivial groups have both equal to `⊤` over `ℤ` and `0` over `ℚ`; the additive group `ℚ` has
-`hd_ℤ = 1 < cd_ℤ = 2`.
+`cd_ℤ` and `hd_ℤ` of `ℤⁿ`, nontrivial free groups and the Klein bottle group are `n`, `1` and `2`,
+while the free group of rank `0` is trivial with both equal to `0`; finite nontrivial groups have
+both equal to `⊤` over `ℤ` and `0` over `ℚ`; the additive group `ℚ` has `hd_ℤ = 1 < cd_ℤ = 2`.
 
 ### Dependencies
 
@@ -804,9 +882,12 @@ by `t_i⁻¹ g t_i ∈ H`, which fixes no basis element unless it is `1`. *Needs
 
 - For `H = 1`, `G = ℤ/2 = ⟨s⟩` and `F = R·x` concentrated in degree `1`, the degree-`2` term is
   `R·(x ⊗ x)` with `s · (x ⊗ x) = −x ⊗ x`: the stabilizer `ℤ/2` acts by the sign character. For
-  `F = (R·x → R·y)`, `dx = y`, one has `d(x ⊗ x) = y ⊗ x − x ⊗ y`; the sign-free swap `s'` fixes
-  `x ⊗ x` and sends `y ⊗ x − x ⊗ y` to its negative, so `d s' = −s' d` there: the model without the
-  Koszul sign is not a chain map.
+  `F = (R·x → R·y)`, `dx = y`, one has `d(x ⊗ x) = y ⊗ x − x ⊗ y`; the signed action sends `x ⊗ x`
+  to `−x ⊗ x` and `y ⊗ x − x ⊗ y` to `x ⊗ y − y ⊗ x`, so it commutes with `d`, while the sign-free
+  swap `s'` fixes `x ⊗ x` and also sends `y ⊗ x − x ⊗ y` to its negative, so
+  `d s'(x ⊗ x) − s' d(x ⊗ x) = 2(y ⊗ x − x ⊗ y)`. When `2 ≠ 0` in `R` (for instance `R = ℤ`) this is
+  nonzero and the model without the Koszul sign is not a chain map; over `𝔽₂` the two models
+  coincide, which is why Tau Ceti's sign-free construction is used only in characteristic two.
 - For `H = 1`, `G = ℤ/2` and `F = (R →id R)` in degrees `1, 0`, which is contractible, the tensor
   induction is contractible, of length `2 = 1 · 2`.
 - For `H = G` and any `F`, the result is `F`.
@@ -937,7 +1018,7 @@ Layers 1–3; CohomologyOfGroups §6.3; FreeGroupsAndLimitGroups §§4.8–4.9 f
 
 ---
 
-## Layer 5: geometric dimension and the Eilenberg–Ganea theorem
+## Layer 5: geometric dimension, the Eilenberg–Ganea theorem and proper actions
 
 ### 5.1 Geometric dimension
 
@@ -1009,17 +1090,86 @@ acyclic cellular chains, so it is contractible by the Hurewicz and Whitehead the
   to be attained in dimension `2`, and dimension `1` (the Stallings–Swan theorem) is a non-goal.
 - For a nontrivial finite group `cd_ℤ = ⊤`, and the theorem says nothing beyond `gd = ⊤`.
 
+### 5.4 Proper actions on finite-dimensional acyclic simplicial sets
+
+Simplicial sets are Mathlib's `SSet`, with homology `SSet.homology` of the chain complex
+`SSet.chainComplex`; a simplicial set is *finite-dimensional* when its nondegenerate simplices have
+bounded dimension, and *acyclic* when its integral homology is `ℤ` in degree `0` (through the
+augmentation) and zero in positive degrees. Prove:
+
+- (a) for `Γ : Type` with `cd_ℤ Γ < ⊤` there is an acyclic simplicial set `W` whose nondegenerate
+  simplices have dimension at most `N = max(3, cd_ℤ Γ)`, with an action of `Γ` by simplicial
+  automorphisms that is free on simplices;
+- (b) (Serre's construction) for `G : Type` with a finite-index subgroup `Γ` such that
+  `cd_ℤ Γ < ⊤` (equivalently `vcd G < ⊤`, 4.1), and `W` as in (a) for `Γ`, the simplicial set
+  `Z = Map_Γ(G, W)` whose `k`-simplices are the maps `f : G → W_k` with `f(γx) = γ f(x)` for
+  `γ ∈ Γ`, with faces and degeneracies taken pointwise and `G` acting by `(g · f)(x) = f(xg)`, is
+  acyclic, its nondegenerate simplices have dimension at most `[G : Γ] · N`, and the stabilizer
+  `G_f` of every simplex `f` meets `Γ` trivially, so has order at most `[G : Γ]`; in particular
+  every torsion-free subgroup of `G` acts freely on the simplices of `Z`, and the chains of `Z` are a
+  resolution of `ℤ` over `ℤΓ'` by free modules for every torsion-free `Γ' ≤ G`.
+
+(Brown1974 §6, Lemma, lines 637–651, which states (b) for semi-simplicial complexes together with
+the acyclicity of the fixed points of finite subgroups; Serre1971Prospects n°1.7, as cited there.)
+Route for (a): 5.3 gives a `K(Γ, 1)` CW complex `B` of dimension at most `N`; AlgebraicTopology
+§8.11a replaces `B` up to homotopy equivalence by the realization of an abstract simplicial complex
+`K`, of dimension at most `N` (gap:simplicial-replacement-dimension), so `|K|` is a `K(Γ, 1)`; let
+`sd K` be the nerve of the poset of simplices of `K`, a simplicial set whose realization is `|K|`,
+and `W` the simplicial set whose `k`-simplices are the pairs of a `k`-simplex of `sd K` and a lift of
+its realized simplex to the universal covering `TauCeti.UniversalCover` of `|K|` (a covering map by
+`TauCeti.UniversalCover.isCoveringMap`, the realization being locally path-connected and
+semilocally simply connected), which exists and is determined by the image of one point because the
+simplex is simply connected (`IsCoveringMap.existsUnique_continuousMap_lifts`).
+The deck group `Γ` acts on the lifts, freely since a deck transformation fixing a lift fixes a point.
+The chains of `W` are the lifted cellular chains of the CW structure on `|sd K|` with one cell per
+nondegenerate simplex (AlgebraicTopology §4.7), so they form a free resolution of `ℤ` over `ℤΓ`
+(`TauCeti.cellularResolutionOfIsAspherical`, `TauCeti.cellularChainRepIsoFree`; ClassifyingSpaces
+Stage 4 item 16), and `W` is acyclic. Route for (b): a choice of representatives of `Γ\G`
+identifies `Z` with the product of `[G : Γ]` copies of `W`; its chains are homotopy equivalent to
+the tensor power of the chains of `W` (Tau Ceti `SSet.eilenbergZilberHomotopyEquiv`, iterated),
+which is quasi-isomorphic to `ℤ` by the Künneth formula for complexes of free abelian groups; a
+nondegenerate simplex of a product has dimension at most the sum of the dimensions of the factors.
+If `γ ∈ Γ` fixes `f`, then `γ f(1) = f(γ) = (γ · f)(1) = f(1)`, so `γ = 1` by freeness; hence
+`G_f ∩ Γ = 1`, and `G_f` injects into `Γ\G`. *Needs:* 5.3, 4.1; AlgebraicTopology §4.7, §8.11a;
+gap:simplicial-replacement-dimension; ClassifyingSpaces Stage 4 item 16; Tau Ceti
+`TauCeti.UniversalCover`, `TauCeti.UniversalCover.isCoveringMap`,
+`TauCeti.cellularResolutionOfIsAspherical`, `TauCeti.cellularChainRepIsoFree`,
+`SSet.eilenbergZilberHomotopyEquiv`; Mathlib `SSet`, `SSet.chainComplex`, `SSet.homology`,
+`IsCoveringMap.existsUnique_continuousMap_lifts`.
+
+- `Z` is functorial in `W` for `Γ`-equivariant simplicial maps, and for `Γ = G` it is `W`.
+- For `Γ'` torsion-free and normal of finite index in `G`, the quotient `Z/Γ'` is a
+  finite-dimensional simplicial set with integral homology `H_*(Γ', ℤ)`, on which `G ⧸ Γ'` acts
+  with the stabilizer of the image of `f` isomorphic to `G_f`.
+
+**Checks.**
+
+- For `G` finite and `Γ = 1`, take `W` a point (`cd_ℤ 1 = 0`): `Z` is a point and its stabilizer is
+  all of `G`, of order `[G : 1]`, so the bound on stabilizers is attained.
+- For `G = ℤ/2 × ℤ = ⟨s⟩ × ⟨t⟩` and `Γ = ⟨t⟩`, take `W` the line (vertices `ℤ`, edges `i → i + 1`).
+  A simplex `f` is the pair `(f(1), f(s))` of simplices of `W`; `t` acts diagonally by translation
+  and `s` swaps the two entries (`(s · f)(1) = f(s)`, `(s · f)(s) = f(s²) = f(1)`). So `Z` is the
+  plane `W × W`, of dimension `2 = [G : Γ] · 1` although `vcd G = 1`, and the stabilizers are `⟨s⟩`
+  on the diagonal and trivial elsewhere: finite, and trivial on the torsion-free subgroup `Γ`.
+- The hypothesis `vcd G < ⊤` is used: a torsion-free group acting with finite stabilizers acts
+  freely, so the normalized chains of a finite-dimensional acyclic `Z` would resolve `ℤ` by free
+  modules in finite length; the free abelian group of countable rank has `cd_ℤ = ⊤` (it contains
+  `ℤⁿ` for every `n`, 2.3, 2.4), so it has no such `Z`.
+
 ### Examples
 
 Free groups, `ℤⁿ` and finitely presented groups give `gd` from explicit complexes; for groups of
 `cd_ℤ ≥ 3`, the Eilenberg–Ganea theorem turns every algebraic computation of `cd_ℤ` into a geometric
-one.
+one. A group of finite `vcd`, such as `ℤ/2 × ℤ` or `ℤ/4 ∗_{ℤ/2} ℤ/6`, acts with finite stabilizers on
+a finite-dimensional acyclic simplicial set (5.4), the input of the denominator theorem 8.9.
 
 ### Dependencies
 
-Layers 1–2; ClassifyingSpaces Stage 2 item 10 and Stage 4 item 16; AlgebraicTopology §§8.1, 8.3, 8.5;
-Tau Ceti's cell attachment, Hurewicz and Whitehead theorems, product CW structures and wedges of
-circles.
+Layers 1–2 and 4.1; ClassifyingSpaces Stage 2 item 10 and Stage 4 item 16; AlgebraicTopology §§4.7,
+8.1, 8.3, 8.5 and 8.11a, with gap:simplicial-replacement-dimension; Tau Ceti's cell attachment,
+Hurewicz and Whitehead theorems, cellular resolution of an aspherical CW complex, Eilenberg–Zilber
+theorem, product CW structures and wedges of circles; Mathlib's simplicial sets and lifting along
+coverings.
 
 ---
 
@@ -1031,8 +1181,8 @@ Define `G` to be a *duality group of dimension `n ∈ ℕ` over `R`* with *duali
 `D : Rep R G` and *fundamental class* `e ∈ Hₙ(G, D)` when, for every `M : Rep R G`, the duality map
 `x ↦ x ∩ e : Hᵏ(G, M) → Hₙ₋ₖ(G, D ⊗_R M)` of the Conventions is bijective for every `k ≤ n`, and
 `Hᵏ(G, M) = 0` for every `k > n` (BieriEckmann1973 Definition 1.1, line 116–121, over `ℤ` with a right
-dualizing module and the conventions of lines 122–135; Bieri1981 over `R`; Brown1975 lines
-195–199). The vanishing clause replaces the source's convention `H_j = 0` for `j < 0`, which
+dualizing module and the conventions of lines 122–135; Brown1975 lines 195–199, over `ℤ`; the definition over `R`
+replaces `ℤ` by `R` and `ℤG` by `RG` throughout). The vanishing clause replaces the source's convention `H_j = 0` for `j < 0`, which
 natural-number subtraction would misread. *Needs:* CohomologyOfGroups §4.6; Mathlib
 `groupCohomology`, `groupHomology`, the monoidal structure of `Rep R G`.
 
@@ -1081,17 +1231,26 @@ fundamental class `e`:
 
 - For `ℤ` over `R`: `H¹(ℤ, Rℤ) = Rℤ/(t − 1) ≅ R` with trivial action, so `D = R`, and
   `H⁰(ℤ, Rℤ) = 0`.
-- For the free group `F` of rank `r ≥ 2`, `D = H¹(F, RF)` is the cokernel of `RF → (RF)^r`,
-  `a ↦ (a(s_i − 1))_i`; over a field it has infinite dimension, so `F` is a duality group of
-  dimension `1` that is not a Poincaré duality group.
+- For the free group `F` of rank `r ≥ 2` on `s_1, …, s_r`, `D = H¹(F, RF)` is the cokernel of
+  `RF → (RF)^r`, `a ↦ ((s_i − 1)a)_i`: this is `Hom_{RF}(−, RF)` applied to the boundary
+  `(a_i)_i ↦ Σ_i a_i(s_i − 1)` of the resolution of 1.8(c), and it is right `RF`-linear, so the
+  quotient carries the right multiplication of the Conventions. Over a field `D` has infinite
+  dimension, so `F` is a duality group of dimension `1` that is not a Poincaré duality group.
+- The order of the factors in that cokernel is forced: for `R ≠ 0` and `F = ⟨s, t⟩`, the vector
+  `(s − 1, t − 1)` is the image of `1` under both `a ↦ ((s − 1)a, (t − 1)a)` and
+  `a ↦ (a(s − 1), a(t − 1))`. Its right translate `((s − 1)t, (t − 1)t)` is the image of `t` under
+  the first map, but not an image under the second: the second coordinate forces `a = t` (no nonzero
+  element of `RF` is fixed by right multiplication by `t`, which has infinite order), and then the
+  first would need `t(s − 1) = (s − 1)t`, false as `ts ≠ st`. So the second quotient carries no right
+  action. For `F = ℤ` both maps give `R[t, t⁻¹]/(t − 1) ≅ R`.
 - For a finite group of order invertible in `R`, `H⁰(G, RG) = R·Σ_g g ≅ R` with trivial action.
 
 ### 6.3 The duality criterion
 
 Prove: (a) `G` is a duality group of dimension `n` over `R` if and only if `G` is of type `FP` over
 `R`, `Hᵏ(G, RG) = 0` for `k ≠ n`, and `Hⁿ(G, RG)` is flat as an `R`-module (BieriEckmann1973
-Theorem 4.5, lines 612–621, over `ℤ`, where flat means torsion-free; Bieri1981 over `R`; 6.2 for the
-converse); (b) without finiteness: `G` is a duality group of dimension `n` over `R` if and only if
+Theorem 4.5, lines 612–621, over `ℤ`, where flat means torsion-free; over `R` the route below, with
+`R`-flatness in place of torsion-freeness, is the proof; 6.2 for the converse); (b) without finiteness: `G` is a duality group of dimension `n` over `R` if and only if
 `cd_R G < ⊤`, `Hᵏ(G, F) = 0` for `k ≠ n` and every free `RG`-module `F`, `C = Hⁿ(G, RG)` is `R`-flat,
 and some `e ∈ Hₙ(G, C)` makes `x ↦ x ∩ e : Hⁿ(G, F) → C ⊗_{RG} F` bijective for every free `F`
 (BieriEckmann1973 Theorem 2.3, lines 317–323, with Propositions 2.1–2.2, lines 280–298). Route: (b)
@@ -1116,7 +1275,8 @@ Define a *Poincaré duality group of dimension `n` over `R`* as a duality group 
 `R` whose dualizing module is free of rank one as an `R`-module, and its *orientation character*
 `w : G →* Rˣ` as the scalar by which `g` acts on `D ≅ R` (independent of the chosen isomorphism, `R`
 being commutative); `G` is *orientable* when `w = 1`. The duality then reads
-`Hᵏ(G, M) ≅ Hₙ₋ₖ(G, R_w ⊗_R M)` (BieriEckmann1974, §3.1, lines 253–257; Bieri1981). Prove, over `ℤ`:
+`Hᵏ(G, M) ≅ Hₙ₋ₖ(G, R_w ⊗_R M)` (BieriEckmann1974, §3.1, lines 253–257, over `ℤ`, with the passage between right and left modules
+through `sgn` of lines 261–266). Prove, over `ℤ`:
 (a) `w` takes values in `{±1}`; (b) if `sgn : G →* {±1}` and isomorphisms
 `Hᵏ(G, A) ≅ Hₙ₋ₖ(G, ℤ_sgn ⊗ A)` for `k ≤ n`, not assumed natural or given by a cap product, exist
 for every `A`, together with `Hᵏ(G, A) = 0` for `k > n` and `Hⱼ(G, A) = 0` for `j > n`, then `G` is a
@@ -1149,8 +1309,8 @@ of `S` (BieriEckmann1973 Theorem 3.2, lines 366–386, from Shapiro's lemma and 
 duality group of dimension `n` is one (BieriEckmann1973 Theorem 3.3, lines 388–465, with Serre's
 theorem 3.2); (c) for `N ◁ G` with `N` and `G ⧸ N` duality groups over `R` of dimensions `n` and `m`,
 `G` is a duality group of dimension `n + m` over `R` and `D_G ≅ D_{G⧸N} ⊗_R D_N` with `G` acting
-diagonally (BieriEckmann1973 Theorem 3.5 and Proposition 1.8, lines 255–272 and 468–516; Bieri1981
-over `R`). Route for (c): CohomologyOfGroups §6.2 collapses for coefficients `A` with
+diagonally (BieriEckmann1973 Theorem 3.5 and Proposition 1.8, lines 255–272 and 468–516, over `ℤ`;
+over `R` the route below is the proof). Route for (c): CohomologyOfGroups §6.2 collapses for coefficients `A` with
 `H^q(N, A) = 0` for `q ≠ n`, the duality isomorphism of `N` is `G ⧸ N`-equivariant (BieriEckmann1973
 Proposition 1.8; over `R` the scalar by which `g` moves `e_N` is killed on `D_N`, hence on
 `Hₙ(N, D_N) ≅ R`, so it is `1`), and 6.3(b) applies. *Needs:* 6.1–6.3, 3.2; CohomologyOfGroups §1.2,
@@ -1166,16 +1326,21 @@ Proposition 1.8; over `R` the scalar by which `g` moves `e_N` is killed on `D_N`
 
 ### 6.6 Closed aspherical manifolds
 
-Prove that if `M : Type` is a compact connected smooth manifold without boundary of dimension `n`,
-modelled on `EuclideanSpace ℝ (Fin n)`, and is aspherical, then `G = π₁(M, x)` is a Poincaré duality
-group of dimension `n` over every `R : Type`, with orientation character the image in `Rˣ` of the
-orientation character of `M` (Serre1971Bourbaki 1.4, lines 63–67; BieriEckmann1974, §3.2, lines
-271–281). Route: `M` has finite CW type (AlgebraicTopology §8.7), so `G` is of type `FL` (5.2); `M`
+Prove that if `M : Type` is a compact connected Hausdorff (`T2Space M`) smooth manifold without
+boundary of dimension `n`, modelled on `EuclideanSpace ℝ (Fin n)`, and is aspherical, then
+`G = π₁(M, x)` is a Poincaré duality group of dimension `n` over every `R : Type`, with orientation
+character the image in `Rˣ` of the orientation character of `M` (Serre1971Bourbaki 1.4, lines 63–67;
+BieriEckmann1974, §3.2, lines 271–281). Mathlib's `ChartedSpace` and `IsManifold` include no
+separation axiom, so Hausdorffness is a hypothesis; second countability is not, since a compact
+charted space over `EuclideanSpace ℝ (Fin n)` is covered by finitely many chart domains and is second
+countable (`ChartedSpace.secondCountable_of_sigmaCompact`). Route: `M` has finite CW type
+(AlgebraicTopology §8.7, for compact Hausdorff second-countable smooth manifolds), so `G` is of type
+`FL` (5.2); `M`
 is a `K(G, 1)` of CW type, so its cohomology with local coefficients is group cohomology
 (ClassifyingSpaces Stage 4 item 17); twisted Poincaré duality with coefficients in the local system
 `RG` (AlgebraicTopology §6.4) gives `Hᵏ(G, RG) ≅ Hₙ₋ₖ(G, RG ⊗ R_w)`, which is `0` for `k ≠ n` and
 `R_w` for `k = n`, and 6.3(a) applies. *Needs:* 6.3, 6.4, 5.2; AlgebraicTopology §6.3, §6.4, §8.7;
-ClassifyingSpaces Stage 4 item 17.
+ClassifyingSpaces Stage 4 item 17; Mathlib `ChartedSpace.secondCountable_of_sigmaCompact`.
 
 **Checks.**
 
@@ -1185,10 +1350,17 @@ ClassifyingSpaces Stage 4 item 17.
   non-orientable character of 6.4.
 - Asphericity is used: `S²` is a closed manifold with trivial fundamental group, which is a Poincaré
   duality group of dimension `0`, not `2`.
+- Hausdorffness is used: the circle with one point doubled (two copies of the circle glued along the
+  complement of a point) is compact, connected and a smooth `1`-manifold in Mathlib's sense, and is
+  the union of two open circles meeting in an open interval, so it is weakly equivalent to `S¹ ∨ S¹`:
+  aspherical with fundamental group `F₂`. But `F₂` is not a Poincaré duality group of dimension `1`:
+  `H¹(F₂, ℤ) = ℤ²`, while `H₀(F₂, ℤ_w)` is `ℤ` or `ℤ/2` for every `w`.
 
 ### Examples
 
-Free groups of finite rank are duality groups of dimension `1`; `ℤⁿ`, the Klein bottle group and the
+Free groups of finite positive rank are duality groups of dimension `1` over every nonzero `R`, and
+the free group of rank `0` is the trivial group, a duality group of dimension `0`; `ℤⁿ`, the Klein
+bottle group and the
 fundamental groups of closed aspherical manifolds are Poincaré duality groups; products and
 extensions of duality groups are duality groups. The Borel–Serre duality of torsion-free arithmetic
 groups, with the Steinberg module as dualizing module, is an instance owned by ArithmeticKTheory §3.2.
@@ -1220,7 +1392,8 @@ projective `R`-module `R ⊗_{RG} P`, its rank when `R` is a field or `ℤ`. *Ne
 - `r_{P ⊕ Q} = r_P + r_Q` and `r_P = r_Q` for `P ≅ Q`.
 - `r_{RGⁿ} = n · δ_{[1]}`.
 - `r_{R' ⊗_R P}` is the image of `r_P` under `R → R'`.
-- For `G` trivial, `r_P([1])` is the trace of the identity of the projective `R`-module `P`.
+- For `G` trivial, `r_P([1])` is the trace of the identity of the finite projective `R`-module `P`
+  in the sense of `LinearMap.projectiveTrace` (its rank function when `R` is connected).
 
 **Checks.**
 
@@ -1233,19 +1406,33 @@ projective `R`-module `R ⊗_{RG} P`, its rank when `R` is a field or `ℤ`. *Ne
 
 ### 7.2 Characters of projective modules over finite groups
 
-Prove that for `G` finite and `P` a finitely generated projective `RG`-module (hence finitely
-generated projective over `R`), the `R`-trace of `g` on `P` is `χ_P(g) = |C_G(g)| · r_P([g⁻¹])`
-(BrownGTM87, §IX.2). Route: both sides are additive; for `P = RGᵐ·e` with `e` an idempotent matrix,
-the trace of `v ↦ g v e` on `RGᵐ` is `Σ_i Σ_h` (coefficient of `h` in `g h e_{ii}`), which is
-`|C_G(g)|` times the sum of the coefficients of `e_{ii}` on the class of `g⁻¹`. *Needs:* 7.1; Mathlib
-`LinearMap.trace`, `Representation.ofModule'`.
+Prove that for `R` an arbitrary commutative ring, `G` finite and `P` a finitely generated
+projective `RG`-module (hence finitely generated projective over `R`, which need not be free), the
+trace of `g` on `P` as a finite projective `R`-module, `χ_P(g) = LinearMap.projectiveTrace R P (g · −)`,
+is `|C_G(g)| · r_P([g⁻¹])` (BrownGTM87, §IX.2). The trace is Tau Ceti's `LinearMap.projectiveTrace`,
+not Mathlib's `LinearMap.trace`, which is `0` on a module without a finite basis. Route: both sides
+are additive; for `P = RGᵐ·e` with `e` an idempotent matrix acting on the right, cyclicity
+(`LinearMap.projectiveTrace_cyclic`, applied to the projection `v ↦ ve` of `RGᵐ` onto `P` and the
+inclusion) identifies `χ_P(g)` with the trace of `v ↦ g v e` on the free `R`-module `RGᵐ`, which is
+its Mathlib trace (`LinearMap.projectiveTrace_eq_trace`), and that is `Σ_i Σ_h` (coefficient of `h`
+in `g h e_{ii}`), which is `|C_G(g)|` times the sum of the coefficients of `e_{ii}` on the class of
+`g⁻¹`. *Needs:* 7.1; Tau Ceti `LinearMap.projectiveTrace`, `LinearMap.projectiveTrace_cyclic`,
+`LinearMap.projectiveTrace_eq_trace`; Mathlib `Representation.ofModule'`.
 
 **Checks.**
 
 - For `P = RG`, `χ_P(g) = |G| · [g = 1]` and `|C_G(1)| · r_P([1]) = |G|`.
 - For the trivial module `P = R·e` of 7.1, `χ_P(g) = 1 = |C_G(g)| · 1/|C_G(g⁻¹)|`, using
   `|C_G(g)| = |C_G(g⁻¹)|`.
-- For `G` trivial both sides are the rank of `P`.
+- For `G` trivial both sides are the trace of the identity of `P`. For `R = ℚ × ℚ` and
+  `P = R·(1, 0)`, a finitely generated projective `R`-module without a basis (its ranks at the two
+  factors are `1` and `0`), both sides are `(1, 0)`: the Hattori–Stallings trace of the idempotent
+  `(1, 0)` and the projective trace of the identity. Mathlib's `LinearMap.trace` of the identity is
+  `0` there, so a statement with it would be false.
+- The inverse in `r_P([g⁻¹])` is forced: for `G = ℤ/3 = ⟨g⟩` over `ℂ`, a character `ζ` with
+  `ζ(g) = ω` a primitive cube root of unity, and `P = ℂG·e` with `e = (1/3) Σ_h ζ(h)⁻¹ h`, one has
+  `g e = ω e`, so `χ_P(g) = ω`; the coefficient of `g⁻¹` in `e` is `ζ(g⁻¹)⁻¹/3 = ω/3`, and
+  `|C_G(g)| · r_P([g⁻¹]) = 3 · ω/3 = ω`, while `r_P([g])` would give `ω⁻¹ ≠ ω`.
 
 ### 7.3 Swan's theorem, rational form
 
@@ -1382,7 +1569,10 @@ lemma `TauCeti.exists_linearEquiv_comp_fst_eq_comp_snd_comp`.
 - `χ_ℚ(ℤ) = χ̃(ℤ) = 1 − 1 = 0`, `χ_ℚ(F_r) = 1 − r` from `0 → ℤF^r → ℤF → ℤ → 0`, and
   `χ_ℚ(ℤⁿ) = Σ_k (−1)ᵏ (n choose k) = 0` for `n ≥ 1`.
 - For a finite group `G`, `χ_ℚ(G) = 1` for every order, so `χ_ℚ` does not see the order of a finite
-  group (compare `χ` in 8.4), and `χ̃` is not defined (no finite projective resolution over `ℤ`).
+  group (compare `χ` in 8.4). For a nontrivial finite group `χ̃` is not defined (`cd_ℤ G = ⊤` by
+  2.7, so there is no finite projective resolution over `ℤ`): for `G = ℤ/2` one has `χ_ℚ = 1`,
+  `χ = 1/2` and no `χ̃`. For `G = 1` the resolution `0 → ℤ → ℤ → 0` of length `0` gives
+  `χ̃(1) = 1 = χ_ℚ(1) = χ(1)`.
 - For the additive group `ℚ`, `χ_ℚ(ℚ) = 1 − 1 = 0` although `ℚ` is not of type `FP_1`.
 
 ### 8.4 Normal subgroups of finite index and groups of finite homological type
@@ -1475,24 +1665,116 @@ for `ker ε`. *Needs:* 8.4, 8.6, 4.4; CohomologyOfGroups §3.2, §3.4; FreeGroup
 - The free group on `r` generators acts on its Cayley tree with one vertex orbit and `r` edge orbits,
   all stabilizers trivial: `1 − r`. `BS(1, 2)` as an HNN extension of `ℤ` over `ℤ` gives `0 − 0 = 0`.
 
-### 8.8 Denominators
+### 8.8 Smith theory and orbit counting
 
-Prove that if `G` is virtually torsion-free and acts simplicially on an acyclic simplicial complex
-with finitely many simplices modulo `G` and finite stabilizers (more generally, `C` as in 8.7 with
-every `G_σ` finite), then `G` is virtually of type `FL`, and `m · χ(G) ∈ ℤ` for `m` the least common
-multiple of the orders of the stabilizers, which divides the least common multiple of the orders of
-the finite subgroups of `G`; so every prime power dividing the denominator of `χ(G)` is the order of
-a subgroup of `G` (Brown1974, §6, Corollary 1 of Theorem 5, lines 603–610, for all groups of finite
-homological type; Serre1971Prospects n°1.8, Proposition 13, as cited at Brown1974 lines 611–614).
-Route: a torsion-free finite-index subgroup acts freely, so the chains are a finite free resolution
-over it; then 8.7 with `χ(G_σ) = 1/|G_σ|`, and Sylow's theorem. *Needs:* 8.7, 4.4.
+Let a finite group `G` act by simplicial automorphisms on a finite-dimensional simplicial set `X`
+(5.4). For `H ≤ G` the `H`-fixed simplices form a simplicial subset `X^H`, a face of a fixed simplex
+being fixed, and `X/H` is the orbit simplicial set. Homology is `SSet.homology`; with coefficients in
+`𝔽_p`, `χ_p(Y) = Σᵢ (−1)ⁱ dim_{𝔽_p} Hᵢ(Y; 𝔽_p)` whenever the total dimension is finite. Prove:
+
+- (a) (Smith, Floyd) for a prime `p`, `G = ℤ/p` and `Σᵢ dim Hᵢ(X; 𝔽_p) < ∞`: `X^G` and `X/G` have
+  finite total mod-`p` homology, `Σ_{i ≥ n} dim Hᵢ(X^G; 𝔽_p) ≤ Σ_{i ≥ n} dim Hᵢ(X; 𝔽_p)` for every
+  `n`, and `χ_p(X) + (p − 1) χ_p(X^G) = p χ_p(X/G)` (Floyd1952 Theorem 4.2, lines 292–330, and
+  Theorem 4.4, lines 333–348, for locally compact finite-dimensional Hausdorff spaces; the proof
+  rests on the chain-level Smith sequences (A) and (B) of Floyd1952 Theorems 2.3–2.4, lines 110–176,
+  stated for a simplicial action of prime period whose fixed points form a subcomplex, and on
+  Smith's facts (3.4)–(3.6), lines 261–267: the special homology vanishes above the dimension, and
+  the special homology relative to the fixed points is the homology of the orbit space relative to
+  the image of the fixed points);
+- (b) for a finite `p`-group `G` with `Σᵢ dim Hᵢ(X; 𝔽_p) < ∞`, every `X^H`, `H ≤ G`, has finite total
+  mod-`p` homology (Brown1974 lines 327–333, which attributes this to Smith theory);
+- (c) for a finite `p`-group `G` and a finite-dimensional chain complex `C` of projective
+  `𝔽_p[G]`-modules with finite total homology, `C_G = 𝔽_p ⊗_{𝔽_p[G]} C` has finite total homology
+  and `χ(C) = |G| · χ(C_G)` (Brown1974 Theorem 1′, lines 174–185);
+- (d) (Brown) if every `Hᵢ(X; ℤ)` is finitely generated (they vanish above the dimension of `X`),
+  and an integer `d ≥ 1` divides the cardinality of the `G`-orbit of every nondegenerate simplex of
+  `X`, then
+  `d ∣ χ(X) = Σᵢ (−1)ⁱ rank Hᵢ(X; ℤ)` (Brown1974 §2, Corollary of Theorems 2 and 2′, lines 251–260,
+  with `X′` empty).
+
+Route: (a) as in Floyd1952 §§2 and 4, whose chain-level arguments apply verbatim to a simplicial
+set, since for `G = ℤ/p` a nondegenerate simplex is either fixed or has `p` distinct translates, so
+the chains of `X` over `𝔽_p` are the chains of `X^G` plus free `𝔽_p[G]`-modules; for a simplicial
+set Smith's facts (3.4)–(3.6) hold at the chain level, the chains vanishing above the dimension of
+`X` and the norm `1 + g + ⋯ + g^{p−1}` identifying the free part modulo `1 − g` with the chains of
+`X/G` relative to the image of `X^G`; (b) by (a) along a chain `1 = H₀ < H₁ < ⋯ < H_r = H`
+with each `H_{i−1}` normal in `H_i` of index `p`, as `X^{H_i} = (X^{H_{i−1}})^{H_i/H_{i−1}}`; (c)
+because `𝔽_p[G]` is local, so projective modules are free, and 8.1 over the noetherian ring
+`𝔽_p[G]` (the vanishing hypothesis holds above the dimension of `C`) replaces `C` by a bounded
+complex of finitely generated free modules, on which both sides are computed from ranks; (d) for
+each prime `p` with `p^e ∥ d`, restrict to a Sylow `p`-subgroup `P`, whose orbits all have
+cardinality divisible by `p^e`; decompose `X` by isotropy type, `X_H` being the simplices with
+stabilizer exactly `H`, a difference of the simplicial subsets `X^H` and `⋃_{H′ > H} X^{H′}`, which
+have finite mod-`p` homology by (b) and Mayer–Vietoris (the family of fixed simplicial subsets is
+closed under intersection); `N_P(H)/H` acts freely on the relative chains of `X_H`, so (c) gives
+`χ_p(X_H) = (N_P(H) : H) · χ_p(Y_H)` with `Y_H = X_H/N_P(H)`, and additivity along the filtration of
+`X` by `P`-invariant simplicial subsets gives `χ_p(X) = Σ_H (P : H) · χ_p(Y_H)` over representatives
+`H` of the occurring conjugacy classes of isotropy groups (Brown1974 lines 261–326); every term is
+divisible by `p^e`; finally
+`χ_p(X) = χ(X)` by universal coefficients, the integral homology being finitely generated. *Needs:*
+8.1; Mathlib `SSet`, `SSet.homology`, `Sylow`.
+
+- The Smith inequality of (a) with `n = 0` bounds the total mod-`p` homology of `X^G` by that of `X`;
+  in particular, for a finite `p`-group acting on a finite-dimensional simplicial set with the mod-`p`
+  homology of a point, `X^G` has the mod-`p` homology of a point (by (a) and Floyd's relation, its
+  Euler characteristic is `1 mod p`, so it is nonempty).
+- For `G = ℤ/p` acting without fixed simplices, (a) and (d) with `d = p` agree:
+  `χ_p(X) = p χ_p(X/G)`.
 
 **Checks.**
 
-- For `ℤ/4 ∗_{ℤ/2} ℤ/6`, `m = 12` and `12 · (−1/12) = −1`; the denominator `12 = 4 · 3` gives
-  subgroups of orders `4` and `3`.
-- A finite group acting on a point: `m = |G|` and `|G| · χ(G) = 1`.
-- `ℤ/2 × ℤ` acting on the line (`ℤ` by translation, `ℤ/2` trivially): `m = 2` and `2 · 0 ∈ ℤ`.
+- Floyd's relation, with fixed points: let `X` be the circle with vertices `v₀, v₁, v₂, v₃` and edges
+  `v₀ → v₁`, `v₂ → v₁`, `v₀ → v₃`, `v₂ → v₃`, and `ℤ/2` swap `v₁` and `v₃`. Then `X^G = {v₀, v₂}`
+  (`χ = 2`, total dimension `2 ≤ 2`), `X/G` is the path `v₀ → [v₁] ← v₂` (`χ = 1`), and
+  `0 + (2 − 1) · 2 = 2 · 1`. A relation without the fixed-point term would give `0 = 2`.
+- Free actions: on the same `X` let `ℤ/2` swap `v₀ ↔ v₂` and `v₁ ↔ v₃`. It acts freely, `X/G` is a
+  circle with two vertices and two edges, and `0 + 0 = 2 · 0`; every orbit has two elements and
+  `2 ∣ χ(X) = 0`, as (d) says. On the subdivided interval (vertices `v₀, v₁, c`, edges `v₀ → c` and
+  `v₁ → c`) with `v₀ ↔ v₁` swapped, `χ = 1`, the fixed vertex `c` has an orbit of one element, and
+  `X^G = {c}` has the homology of a point, as Smith theory requires.
+- Finite dimension is used: `ℤ/2` acts freely on the contractible simplicial set `E(ℤ/2)` whose
+  `k`-simplices are the `(k + 1)`-tuples of elements of `ℤ/2`, so every orbit has two elements, while
+  its Euler characteristic is `1`, not divisible by `2`; it has nondegenerate simplices in every
+  dimension.
+
+### 8.9 Denominators
+
+Prove that if `G` has finite homological type (4.4) and `m` is the least common multiple of the orders
+of the finite subgroups of `G`, then `m · χ(G) ∈ ℤ`; equivalently, every prime power dividing the
+denominator of `χ(G)` is the order of a subgroup of `G` (Brown1974, §6, Corollary 1 of Theorem 5,
+lines 603–610, the case of the empty family; Serre1971Prospects n°1.8, Proposition 13, as cited at
+Brown1974 lines 611–614, for the weaker statement that some power of `m` works). The least common
+multiple exists: for a torsion-free normal subgroup `Γ'` of finite index (the normal core of a
+torsion-free finite-index subgroup, 4.1), every finite subgroup of `G` meets `Γ'` trivially, so its
+order divides `[G : Γ']`. Route: let `Q = G ⧸ Γ'` and `Z` the simplicial set of 5.4(b); `Γ'` acts
+freely on `Z`, so `X = Z/Γ'` is a finite-dimensional simplicial set whose chains are those of `Z`
+tensored over `ℤΓ'` with `ℤ`, hence `Hᵢ(X; ℤ) ≅ Hᵢ(Γ', ℤ)` (`groupHomologyIsoTor`), finitely
+generated as `G` has finite homological type, and `χ(X) = χ_ℚ(Γ')`. The group `Q` acts on `X`, and the
+stabilizer of the image of a simplex `z` is the image of `G_z`, isomorphic to `G_z` since
+`G_z ∩ Γ' = 1`; its order divides `m`, and `m` divides `|Q|`, so `d = |Q|/m` divides the cardinality
+of every `Q`-orbit. By 8.8(d), `d ∣ χ_ℚ(Γ')`, and `m · χ(G) = m · χ_ℚ(Γ')/|Q| = χ_ℚ(Γ')/d ∈ ℤ`
+(8.4(b)). The equivalence: if `mχ(G) ∈ ℤ`, a prime power `p^a` dividing the denominator divides
+`m`, hence the order of a finite subgroup, which has a subgroup of order `p^a` by Sylow's theorem;
+conversely each prime power exactly dividing the denominator then divides `m`. *Needs:* 8.8, 8.4,
+5.4, 4.1, 4.4; Mathlib `groupHomologyIsoTor`, `Sylow`.
+
+- If `G` acts on an acyclic simplicial complex with finitely many orbits of simplices and finite
+  stabilizers (more generally, `C` as in 8.7 with every `G_σ` finite), then 8.7 gives
+  `χ(G) = Σ_σ (−1)^{dim σ}/|G_σ|`, so `m_C · χ(G) ∈ ℤ` for the least common multiple `m_C` of the
+  stabilizer orders, which divides `m`; and `G` is then virtually of type `FL`, a torsion-free
+  finite-index subgroup acting freely with finitely many orbits.
+- For `G` torsion-free, `m = 1` and the statement is `χ(G) ∈ ℤ` (8.4(c)).
+
+**Checks.**
+
+- For `ℤ/4 ∗_{ℤ/2} ℤ/6`, the finite subgroups are conjugate into a factor (FreeGroupsAndLimitGroups
+  §4.9), of orders `1, 2, 3, 4, 6`, so `m = 12` and `12 · (−1/12) = −1`; the denominator `12 = 4 · 3`
+  gives subgroups of orders `4` and `3`. A model with `m` the largest order of a finite subgroup
+  would give `6 · (−1/12) = −1/2 ∉ ℤ`.
+- For `ℤ/2 ∗ ℤ/3`, `m = 6` and `6 · (−1/6) = −1`, while the largest finite order `3` gives
+  `3 · (−1/6) = −1/2`.
+- For `G` finite, `m = |G|` and `|G| · 1/|G| = 1`; for `ℤ/2 × ℤ`, whose finite subgroups have order
+  at most `2`, `m = 2` and `2 · 0 = 0`.
 
 ### Examples
 
@@ -1502,7 +1784,8 @@ the Checks are stated for the amalgam.
 
 ### Dependencies
 
-Layers 1, 2, 4 and 7; CohomologyOfGroups §§3.2, 3.4 and 6.2; FreeGroupsAndLimitGroups §§4.5 and 4.7.
+Layers 1, 2, 4, 5 (Serre's construction 5.4) and 7; CohomologyOfGroups §§3.2, 3.4 and 6.2;
+FreeGroupsAndLimitGroups §§4.5, 4.7 and 4.9; Mathlib's simplicial sets and Sylow subgroups.
 
 ---
 
@@ -1639,10 +1922,11 @@ CohomologyOfGroups §3.6 for Checks.
   cohomology above `vcd`).
 - PosetHomotopyAndSubgroupComplexes, which leaves Brown's theorems on `χ` and the finite subgroups to
   a roadmap with `vcd` and `χ`, consumes Layers 4 and 8.
-- Roadmaps that state instances (ArithmeticKTheory §3.2 for Borel–Serre duality, the arithmetic
-  roadmaps for `vcd` and `χ` of arithmetic groups, BianchiModularForms §9.3 and FuchsianOrbifolds for
-  orbifold Euler characteristics, MappingClassGroupsAndCanonicalRepresentations for mapping class
-  groups) sit earlier and compare with Layers 4, 6 and 8 in revisions placed after this roadmap.
+- ArithmeticKTheory §3.2 (Borel–Serre duality), the arithmetic roadmaps (`vcd` and `χ` of
+  arithmetic groups), BianchiModularForms §9.3 and FuchsianOrbifolds (orbifold Euler
+  characteristics) and MappingClassGroupsAndCanonicalRepresentations (mapping class groups) state
+  instances: these arithmetic and mapping-class-group instances provide comparisons with the
+  general invariants of Layers 4, 6 and 8.
 
 ## References
 
@@ -1658,11 +1942,11 @@ CohomologyOfGroups §3.6 for Checks.
   (1974), 229–264.
 - [Brown1975] K. S. Brown, *Homological criteria for finiteness*, Comment. Math. Helv. 50 (1975),
   129–135.
-- [Bieri1981] R. Bieri, *Homological Dimension of Discrete Groups*, 2nd ed., Queen Mary College
-  Mathematics Notes, 1981.
 - [BrownGTM87] K. S. Brown, *Cohomology of Groups*, Graduate Texts in Mathematics 87, 1982.
 - [Farrell1977] F. T. Farrell, *An extension of Tate cohomology to a class of infinite groups*, J. Pure
   Appl. Algebra 10 (1977).
 - [EilenbergGanea1957] S. Eilenberg, T. Ganea, *On the Lusternik–Schnirelmann category of abstract
   groups*, Ann. of Math. 65 (1957).
 - [Wall1961] C. T. C. Wall, *Rational Euler characteristics*, Proc. Cambridge Philos. Soc. 57 (1961).
+- [Floyd1952] E. E. Floyd, *On periodic maps and the Euler characteristics of associated spaces*,
+  Trans. Amer. Math. Soc. 72 (1952), 138–147.

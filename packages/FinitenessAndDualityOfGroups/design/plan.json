@@ -2,7 +2,7 @@
  "roadmap": "FinitenessAndDualityOfGroups",
  "title": "Finiteness and duality of groups",
  "parent": null,
- "summary": "Homological finiteness and dimension theory of discrete groups over a commutative ring: the finiteness types FP_n, FP_∞, FP, FL with the Bieri–Eckmann–Brown criterion and stability under finite index, extensions, products and splittings; cohomological and homological dimension; signed tensor induction and Serre's theorem; virtual cohomological dimension, virtual types and finite homological type; geometric dimension and the Eilenberg–Ganea theorem; duality and Poincaré duality groups; Hattori–Stallings ranks over group rings and Swan's theorem; Euler characteristics of groups of finite homological type with multiplicativity, the equivariant formula and denominators for proper cocompact actions; complete resolutions and Farrell cohomology.",
+ "summary": "Homological finiteness and dimension theory of discrete groups over a commutative ring: the finiteness types FP_n, FP_∞, FP, FL with the Bieri–Eckmann–Brown criterion and stability under finite index, extensions, products and splittings; cohomological and homological dimension; signed tensor induction and Serre's theorem; virtual cohomological dimension, virtual types and finite homological type; geometric dimension and the Eilenberg–Ganea theorem; duality and Poincaré duality groups; Hattori–Stallings ranks over group rings and Swan's theorem; Euler characteristics of groups of finite homological type with multiplicativity, the equivariant formula, classical Smith theory and Brown's denominator theorem through Serre's action with finite stabilizers on a finite-dimensional acyclic simplicial set; complete resolutions and Farrell cohomology.",
  "baseline": {
   "mathlib": "1b1ccf4b088b32fa3f23f2de1127433254a81e1e",
   "tauceti": "2fd255d997f47c0b5d834ee416c7015d55444ce5"
@@ -189,7 +189,7 @@
       {
        "name": "free2_resolution",
        "kind": "computation",
-       "statement": "For the free group on two generators the resolution of (c) has terms R, RG², 0 in degrees 0, 1, 2."
+       "statement": "For the free group G on s, t the resolution of (c) has terms RG, (RG)², 0 in degrees 0, 1, 2 over the augmentation RG → R in degree −1, with boundary (a, b) ↦ a(s − 1) + b(t − 1); over ℤ the degree-0 term ℤG has infinite abelian rank, not rank 1."
       },
       {
        "name": "infinite_index",
@@ -281,7 +281,7 @@
      ],
      "locator": {
       "source": "BieriEckmann1974",
-      "where": "Proposition 3.3(a), lines 298-313 (FP_∞ and FP over ℤ); Bieri1981 over R"
+      "where": "Proposition 3.3(a), lines 298-313 (FP_∞ and FP over ℤ); for finite n and arbitrary R the route through 1.5(c) is the proof"
      },
      "prerequisites": [
       "target:1.2",
@@ -318,8 +318,8 @@
       "[Finite S] for the free group"
      ],
      "locator": {
-      "source": "Bieri1981",
-      "where": "amalgamated products and HNN extensions (waived; cited by locator)"
+      "source": "BieriEckmann1973",
+      "where": "Proposition 5.1, lines 646-650 (nontrivial finitely generated free groups are of type FF over ℤ); the amalgam and HNN statements are proved by the route through the Bass–Serre tree"
      },
      "prerequisites": [
       "target:1.2",
@@ -547,8 +547,8 @@
       "ℕ-indexed increasing sequence for the cd bound"
      ],
      "locator": {
-      "source": "Bieri1981",
-      "where": "countable groups and directed unions (waived; cited by locator); BrownGTM87 §VIII.2"
+      "source": "BrownGTM87",
+      "where": "§VIII.2; the telescope argument of the route, valid over every R, is the proof"
      },
      "prerequisites": [
       "target:2.1",
@@ -739,7 +739,7 @@
       {
        "name": "koszul_sign",
        "kind": "computation",
-       "statement": "H = 1, G = ℤ/2 = ⟨s⟩, F = R·x in degree 1: s·(x ⊗ x) = −x ⊗ x; the sign-free model gives the trivial action."
+       "statement": "H = 1, G = ℤ/2 = ⟨s⟩, F = R·x in degree 1: s·(x ⊗ x) = −x ⊗ x. For F = (R·x → R·y), dx = y: the signed action commutes with d, while for the sign-free swap s' one has d s'(x ⊗ x) − s' d(x ⊗ x) = 2(y ⊗ x − x ⊗ y), nonzero when 2 ≠ 0 in R (R = ℤ); over 𝔽₂ the two models coincide."
       },
       {
        "name": "contractible",
@@ -999,7 +999,7 @@
   },
   {
    "key": "5",
-   "title": "Geometric dimension and the Eilenberg–Ganea theorem",
+   "title": "Geometric dimension, the Eilenberg–Ganea theorem and proper actions",
    "targets": [
     {
      "id": "5.1",
@@ -1140,6 +1140,56 @@
        "statement": "Nontrivial finite G: cd = ⊤ and the bound says nothing beyond gd = ⊤."
       }
      ]
+    },
+    {
+     "id": "5.4",
+     "kind": "theorem",
+     "name": "Group.exists_acyclic_sSet_finite_stabilizers",
+     "statement": "(a) For Γ : Type with cd_ℤ Γ < ⊤ there is an acyclic simplicial set W with nondegenerate simplices of dimension ≤ max(3, cd_ℤ Γ) and a simplicial Γ-action free on simplices. (b) Serre's construction: for G : Type with a finite-index Γ ≤ G, cd_ℤ Γ < ⊤, the simplicial set Z = Map_Γ(G, W) (k-simplices the f : G → W_k with f(γx) = γ f(x), G acting by (g·f)(x) = f(xg)) is acyclic, of dimension ≤ [G : Γ] · max(3, cd_ℤ Γ), and every simplex stabilizer G_f satisfies G_f ∩ Γ = 1, so |G_f| ≤ [G : Γ]; every torsion-free subgroup acts freely.",
+     "hypotheses": [
+      "G Γ : Type, [Group G]",
+      "Γ ≤ G of finite index",
+      "cd_ℤ Γ < ⊤"
+     ],
+     "locator": {
+      "source": "Brown1974",
+      "where": "§6, Lemma, lines 637-651; Serre1971Prospects n°1.7 as cited there"
+     },
+     "prerequisites": [
+      "target:5.3",
+      "target:4.1",
+      "roadmap:AlgebraicTopology §4.7",
+      "roadmap:AlgebraicTopology §8.11a",
+      "gap:simplicial-replacement-dimension",
+      "roadmap:ClassifyingSpaces Stage 4 item 16",
+      "tauceti:TauCeti.UniversalCover",
+      "tauceti:TauCeti.UniversalCover.isCoveringMap",
+      "tauceti:TauCeti.cellularResolutionOfIsAspherical",
+      "tauceti:TauCeti.cellularChainRepIsoFree",
+      "tauceti:SSet.eilenbergZilberHomotopyEquiv",
+      "mathlib:SSet",
+      "mathlib:SSet.chainComplex",
+      "mathlib:SSet.homology",
+      "mathlib:IsCoveringMap.existsUnique_continuousMap_lifts"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "finite_point",
+       "kind": "degenerate",
+       "statement": "G finite, Γ = 1: W and Z are points, the stabilizer is G, of order [G : 1]; the stabilizer bound is attained."
+      },
+      {
+       "name": "Z2_times_Z_plane",
+       "kind": "computation",
+       "statement": "G = ℤ/2 × ℤ, Γ = ℤ, W the line: Z = W × W with t diagonal and s swapping; dimension 2 = [G : Γ] · 1 > vcd = 1; stabilizers ⟨s⟩ on the diagonal, trivial elsewhere."
+      },
+      {
+       "name": "infinite_rank_free_abelian",
+       "kind": "non-example",
+       "statement": "ℤ^(ℕ) is torsion-free with cd_ℤ = ⊤; a finite-dimensional acyclic Z with finite stabilizers would be free and give a finite free resolution, so none exists: vcd < ⊤ is used."
+      }
+     ]
     }
    ]
   },
@@ -1159,7 +1209,7 @@
      ],
      "locator": {
       "source": "BieriEckmann1973",
-      "where": "Definition 1.1, lines 116-121, conventions lines 122-135; Brown1975 lines 195-199; Bieri1981 over R"
+      "where": "Definition 1.1, lines 116-121, conventions lines 122-135; Brown1975 lines 195-199; over R the route is the proof"
      },
      "prerequisites": [
       "roadmap:CohomologyOfGroups §4.6",
@@ -1231,12 +1281,17 @@
       {
        "name": "free_rank_two",
        "kind": "computation",
-       "statement": "For F of rank r ≥ 2, D = coker(RF → RF^r) has infinite dimension over a field: duality, not Poincaré."
+       "statement": "For F of rank r ≥ 2 on s_1..s_r, D = coker(RF → RF^r, a ↦ ((s_i − 1)a)_i), Hom of the boundary (a_i) ↦ Σ a_i(s_i − 1), right RF-linear; over a field D has infinite dimension: duality, not Poincaré."
       },
       {
        "name": "finite",
        "kind": "computation",
        "statement": "Finite G with |G| ∈ Rˣ: H⁰(G, RG) = R·Σg ≅ R trivial."
+      },
+      {
+       "name": "free_cokernel_order",
+       "kind": "non-example",
+       "statement": "F = ⟨s, t⟩, R ≠ 0: under a ↦ (a(s − 1), a(t − 1)) the right translate ((s − 1)t, (t − 1)t) of the image of 1 is not an image (second coordinate forces a = t, then t(s − 1) ≠ (s − 1)t); under a ↦ ((s − 1)a, (t − 1)a) it is the image of t. For F = ℤ both give R."
       }
      ]
     },
@@ -1250,7 +1305,7 @@
      ],
      "locator": {
       "source": "BieriEckmann1973",
-      "where": "Theorem 4.5, lines 612-621; Theorem 2.3, lines 317-323; Propositions 2.1-2.2, lines 280-298; Lemma 1.3 lines 178-191; Bieri1981 over R"
+      "where": "Theorem 4.5, lines 612-621; Theorem 2.3, lines 317-323; Propositions 2.1-2.2, lines 280-298; Lemma 1.3 lines 178-191; over R the route is the proof"
      },
      "prerequisites": [
       "target:6.1",
@@ -1290,7 +1345,7 @@
      ],
      "locator": {
       "source": "BieriEckmann1974",
-      "where": "§3.1, lines 253-257; Theorem 3.4, lines 327-334; BieriEckmann1973 Theorem 4.6, lines 625-643"
+      "where": "§3.1, lines 253-257 (over ℤ, left modules through sgn, lines 261-266); Theorem 3.4, lines 327-334; BieriEckmann1973 Theorem 4.6, lines 625-643"
      },
      "prerequisites": [
       "target:6.1",
@@ -1351,7 +1406,7 @@
      ],
      "locator": {
       "source": "BieriEckmann1973",
-      "where": "Theorem 3.2 lines 366-386; Theorem 3.3 lines 388-465; Theorem 3.5 and Proposition 1.8, lines 255-272 and 468-516; Bieri1981 over R"
+      "where": "Theorem 3.2 lines 366-386; Theorem 3.3 lines 388-465; Theorem 3.5 and Proposition 1.8, lines 255-272 and 468-516; over R the route is the proof"
      },
      "prerequisites": [
       "target:6.1",
@@ -1387,10 +1442,10 @@
      "id": "6.6",
      "kind": "theorem",
      "name": "Group.isPoincareDualityGroup_fundamentalGroup_of_aspherical",
-     "statement": "If M : Type is a compact connected smooth boundaryless n-manifold modelled on EuclideanSpace ℝ (Fin n) and aspherical, then π₁(M, x) is a Poincaré duality group of dimension n over every R : Type with orientation character the image of the orientation character of M.",
+     "statement": "If M : Type is a compact connected Hausdorff smooth boundaryless n-manifold modelled on EuclideanSpace ℝ (Fin n) and aspherical, then π₁(M, x) is a Poincaré duality group of dimension n over every R : Type with orientation character the image of the orientation character of M; second countability follows from compactness (ChartedSpace.secondCountable_of_sigmaCompact).",
      "hypotheses": [
       "M : Type",
-      "[CompactSpace M] [ConnectedSpace M]",
+      "[CompactSpace M] [ConnectedSpace M] [T2Space M]",
       "smooth manifold structure modelled on EuclideanSpace ℝ (Fin n), no boundary",
       "TauCeti.IsAspherical M x"
      ],
@@ -1405,7 +1460,8 @@
       "roadmap:AlgebraicTopology §6.3",
       "roadmap:AlgebraicTopology §6.4",
       "roadmap:AlgebraicTopology §8.7",
-      "roadmap:ClassifyingSpaces Stage 4 item 17"
+      "roadmap:ClassifyingSpaces Stage 4 item 17",
+      "mathlib:ChartedSpace.secondCountable_of_sigmaCompact"
      ],
      "api": [],
      "tests": [
@@ -1423,6 +1479,11 @@
        "name": "sphere",
        "kind": "non-example",
        "statement": "S² is not aspherical; its trivial fundamental group is PD of dimension 0, not 2."
+      },
+      {
+       "name": "doubled_point_circle",
+       "kind": "non-example",
+       "statement": "The circle with one point doubled is compact, connected, a smooth 1-manifold in Mathlib's sense and weakly equivalent to S¹ ∨ S¹ (aspherical, π₁ = F₂), but not Hausdorff; F₂ is not PD₁: H¹(F₂, ℤ) = ℤ² while H₀(F₂, ℤ_w) is ℤ or ℤ/2."
       }
      ]
     }
@@ -1499,9 +1560,11 @@
      "id": "7.2",
      "kind": "theorem",
      "name": "MonoidAlgebra.trace_eq_card_centralizer_mul_rank",
-     "statement": "For G finite and P finitely generated projective over RG, the R-trace of g on P equals |C_G(g)| · r_P([g⁻¹]).",
+     "statement": "For R an arbitrary commutative ring, G finite and P finitely generated projective over RG, the trace of g on P as a finite projective R-module (LinearMap.projectiveTrace, not Mathlib's LinearMap.trace, which vanishes without a finite basis) equals |C_G(g)| · r_P([g⁻¹]).",
      "hypotheses": [
-      "[Finite G]"
+      "R : Type u, [CommRing R]",
+      "G : Type u, [Group G] [Finite G]",
+      "P finitely generated projective over MonoidAlgebra R G"
      ],
      "locator": {
       "source": "BrownGTM87",
@@ -1509,7 +1572,9 @@
      },
      "prerequisites": [
       "target:7.1",
-      "mathlib:LinearMap.trace",
+      "tauceti:LinearMap.projectiveTrace",
+      "tauceti:LinearMap.projectiveTrace_cyclic",
+      "tauceti:LinearMap.projectiveTrace_eq_trace",
       "mathlib:Representation.ofModule'"
      ],
      "api": [],
@@ -1527,7 +1592,12 @@
       {
        "name": "trivial_group",
        "kind": "degenerate",
-       "statement": "G trivial: both sides are the rank of P."
+       "statement": "G trivial: both sides are the projective trace of id_P. R = ℚ × ℚ, P = R·(1, 0) (projective, not free): both sides are (1, 0), while Mathlib's LinearMap.trace of id is 0."
+      },
+      {
+       "name": "inverse_convention",
+       "kind": "convention",
+       "statement": "G = ℤ/3 = ⟨g⟩ over ℂ, ζ(g) = ω, P = ℂG·e with e = (1/3) Σ ζ(h)⁻¹ h: χ_P(g) = ω = 3 · (ω/3) = |C_G(g)| r_P([g⁻¹]); r_P([g]) would give ω⁻¹."
       }
      ]
     },
@@ -1778,7 +1848,7 @@
       {
        "name": "finite",
        "kind": "non-example",
-       "statement": "χ_ℚ(G) = 1 for every finite G (it does not see the order); χ̃ undefined."
+       "statement": "χ_ℚ(G) = 1 for every finite G (it does not see the order); for nontrivial finite G, χ̃ is undefined (cd_ℤ G = ⊤): ℤ/2 has χ_ℚ = 1, χ = 1/2, no χ̃; for G = 1, χ̃(1) = χ_ℚ(1) = χ(1) = 1 from the length-0 resolution."
       },
       {
        "name": "rationals",
@@ -1971,37 +2041,81 @@
     {
      "id": "8.8",
      "kind": "theorem",
-     "name": "Group.lcm_mul_eulerChar_isInt",
-     "statement": "If G is virtually torsion-free and acts on an acyclic simplicial complex with finitely many simplices modulo G and finite stabilizers (or C as in 8.7 with finite G_σ), then G is virtually FL and m · χ(G) ∈ ℤ for m the lcm of the stabilizer orders; every prime power dividing the denominator of χ(G) is the order of a subgroup.",
+     "name": "SSet.smith_floyd",
+     "statement": "For a finite group G acting simplicially on a finite-dimensional simplicial set X: (a) G = ℤ/p, Σ dim H_i(X; 𝔽_p) < ∞ ⇒ X^G, X/G have finite total mod-p homology, Σ_{i≥n} dim H_i(X^G) ≤ Σ_{i≥n} dim H_i(X) for every n, and χ_p(X) + (p − 1)χ_p(X^G) = pχ_p(X/G); (b) G a p-group ⇒ every X^H has finite total mod-p homology; (c) G a p-group, C a finite-dimensional complex of projective 𝔽_p[G]-modules with finite total homology ⇒ χ(C) = |G| χ(C_G); (d) H_*(X; ℤ) finitely generated and d dividing the cardinality of every orbit of nondegenerate simplices ⇒ d ∣ χ(X).",
      "hypotheses": [
-      "G : Type",
-      "virtually torsion-free",
-      "proper cocompact action on an acyclic complex"
+      "G : Type, [Group G] [Finite G]",
+      "X : SSet with a G-action by simplicial automorphisms",
+      "nondegenerate simplices of X of bounded dimension",
+      "p prime"
+     ],
+     "locator": {
+      "source": "Floyd1952",
+      "where": "Theorems 2.3-2.4, lines 110-176; facts (3.4)-(3.6), lines 261-267; Theorem 4.2, lines 292-330; Theorem 4.4, lines 333-348; Brown1974 §2 Theorem 2′ and Corollary, lines 243-260, proof lines 261-333; Theorem 1′, lines 174-185"
+     },
+     "prerequisites": [
+      "target:8.1",
+      "mathlib:SSet",
+      "mathlib:SSet.homology",
+      "mathlib:Sylow"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "floyd_reflection",
+       "kind": "computation",
+       "statement": "Circle with edges v₀→v₁, v₂→v₁, v₀→v₃, v₂→v₃, ℤ/2 swapping v₁, v₃: X^G = {v₀, v₂} (χ = 2), X/G a path (χ = 1), 0 + 1·2 = 2·1; without the fixed-point term 0 = 2."
+      },
+      {
+       "name": "free_rotation_and_interval",
+       "kind": "computation",
+       "statement": "Same circle, v₀ ↔ v₂, v₁ ↔ v₃: free, X/G a circle, 0 + 0 = 2·0, 2 ∣ χ = 0; subdivided interval with v₀ ↔ v₁: χ = 1, the fixed vertex c has orbit size 1, X^G = {c} has the homology of a point."
+      },
+      {
+       "name": "infinite_dimensional",
+       "kind": "non-example",
+       "statement": "ℤ/2 acts freely on the contractible E(ℤ/2) (all orbits of size 2) while χ = 1: finite dimension is used."
+      }
+     ]
+    },
+    {
+     "id": "8.9",
+     "kind": "theorem",
+     "name": "Group.lcm_mul_eulerChar_isInt",
+     "statement": "If G has finite homological type and m is the least common multiple of the orders of the finite subgroups of G (which divide [G : Γ'] for a torsion-free normal Γ' of finite index), then m · χ(G) ∈ ℤ; equivalently every prime power dividing the denominator of χ(G) is the order of a subgroup of G. For an action on an acyclic complex with finitely many orbits and finite stabilizers, 8.7 gives χ(G) = Σ (−1)^{dim σ}/|G_σ|.",
+     "hypotheses": [
+      "G : Type, [Group G]",
+      "G of finite homological type (4.4)"
      ],
      "locator": {
       "source": "Brown1974",
-      "where": "§6, Corollary 1 of Theorem 5, lines 603-610; Serre1971Prospects n°1.8 Proposition 13, cited at lines 611-614"
+      "where": "§6, Corollary 1 of Theorem 5, lines 603-610 (empty family); proof of Theorem 5, lines 652-673; Serre1971Prospects n°1.8 Proposition 13, cited at lines 611-614"
      },
      "prerequisites": [
-      "target:8.7",
-      "target:4.4"
+      "target:8.8",
+      "target:8.4",
+      "target:5.4",
+      "target:4.1",
+      "target:4.4",
+      "mathlib:groupHomologyIsoTor",
+      "mathlib:Sylow"
      ],
      "api": [],
      "tests": [
       {
        "name": "SL2_amalgam",
        "kind": "computation",
-       "statement": "m = 12, 12 · (−1/12) = −1; subgroups of orders 4 and 3 exist."
+       "statement": "ℤ/4 ∗_{ℤ/2} ℤ/6: finite subgroup orders 1, 2, 3, 4, 6, m = 12, 12 · (−1/12) = −1; subgroups of orders 4 and 3; the largest order 6 would give −1/2 ∉ ℤ."
       },
       {
-       "name": "finite_point",
-       "kind": "degenerate",
-       "statement": "Finite G on a point: |G| · 1/|G| = 1."
-      },
-      {
-       "name": "Z2_times_Z_line",
+       "name": "Z2_free_Z3",
        "kind": "computation",
-       "statement": "ℤ/2 × ℤ on the line: m = 2, 2 · 0 ∈ ℤ."
+       "statement": "ℤ/2 ∗ ℤ/3: m = 6, 6 · (−1/6) = −1; 3 · (−1/6) = −1/2."
+      },
+      {
+       "name": "finite_and_Z2_times_Z",
+       "kind": "degenerate",
+       "statement": "G finite: m = |G|, |G| · 1/|G| = 1; ℤ/2 × ℤ: m = 2, 2 · 0 = 0."
       }
      ]
     }
@@ -2257,7 +2371,7 @@
     "§6.2",
     "§6.3"
    ],
-   "what": "Quotient actions, permutation modules and Shapiro for G-sets, continuous versus discrete cohomology, the orbit spectral sequence of monomial complexes, the tree, amalgam, HNN and free-group sequences, the cap product, universal coefficients (Checks), and the Hochschild–Serre spectral sequences with convergence."
+   "what": "Quotient actions, permutation modules and Shapiro for G-sets, continuous versus discrete cohomology, the orbit spectral sequence of monomial complexes, the exact (split over k, not equivariantly) tree sequence, the amalgam, HNN and free-group sequences, the cap product, universal coefficients (Checks), and the Hochschild–Serre spectral sequences with convergence."
   },
   {
    "roadmap": "FreeGroupsAndLimitGroups",
@@ -2295,14 +2409,16 @@
   {
    "roadmap": "AlgebraicTopology",
    "sections": [
+    "§4.7",
     "§6.3",
     "§6.4",
     "§8.1",
     "§8.3",
     "§8.5",
-    "§8.7"
+    "§8.7",
+    "§8.11a"
    ],
-   "what": "Orientation local system, twisted Poincaré duality, cellular connectivity, absolute Hurewicz in every universe, Whitehead's theorem, finite CW type of compact smooth manifolds."
+   "what": "Realization CW structure of simplicial sets, orientation local system, twisted Poincaré duality of compact Hausdorff manifolds, cellular connectivity, absolute Hurewicz in every universe, Whitehead's theorem, finite CW type of compact Hausdorff second-countable smooth manifolds, simplicial replacement of CW complexes."
   }
  ],
  "consumers": [
@@ -2315,5 +2431,15 @@
    "what": "vcd, finite homological type and Euler characteristics (Layers 4 and 8)."
   }
  ],
- "gaps": []
+ "gaps": [
+  {
+   "slug": "simplicial-replacement-dimension",
+   "supplier": "AlgebraicTopology",
+   "section": "§8.11a",
+   "needs": "The abstract simplicial complex replacing a CW complex of dimension at most N up to homotopy equivalence can be chosen of dimension at most N, as the skeletal construction (Hatcher Theorem 2C.5) gives.",
+   "neededBy": [
+    "5.4"
+   ]
+  }
+ ]
 }
