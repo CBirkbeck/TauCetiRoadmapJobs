@@ -5418,6 +5418,16 @@
         "HigherHidaAndColemanTheory:C4/geometric-vanishing",
         "HigherHidaAndColemanTheory:F5/family-vanishing-duality"
       ]
+    },
+    {
+      "id": "gap:klingen-lci-model",
+      "slug": "klingen-lci-model",
+      "supplier": "ShimuraCompactifications",
+      "section": "§7.19 (Klingen-level moduli extension)",
+      "needs": "Supply the toroidal compactification of the moduli scheme over ℤ_p of the Siegel threefold with a subgroup H⊂G[p] of order p, normal and a local complete intersection over ℤ_p, carrying the integral isogeny chain G→G/H→G/H^⊥→G and the extension of the forgetful map to the hyperspecial toroidal model (Pilloni-Singular Proposition 6.1.4.1 and Theorem 6.1.5.1).",
+      "neededBy": [
+        "HigherHidaAndColemanTheory:X8/klingen-control"
+      ]
     }
   ],
   "sourceIssues": [
