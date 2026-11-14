@@ -130,12 +130,13 @@ to every coefficient representation, to cohomology and to the universe `u`.
   part of `H₂(G, ℤ)` primary to the primes dividing `|H|`; for a normal Sylow subgroup it is the
   degree-two integral case of the homological clause of 7.2, compared there. RS.6.8 owns, for
   abelian groups `A, B : Type`, the degree-two Künneth isomorphism
-  `H₂(A × B, ℤ) ≅ H₂(A, ℤ) ⊕ H₂(B, ℤ) ⊕ (A ⊗ B)` and, for finite abelian `A`, the isomorphism
-  `Λ²A ≅ H₂(A, ℤ)` sending `a ∧ b` to the class `⟨a, b⟩` of `[a|b] − [b|a]`. 5.1 is the Künneth
-  theorem for all groups, all degrees and every `k` of global dimension at most one, of which
-  RS.6.8's formula is the integral degree-two instance for abelian groups; the integral comparison
-  of 5.4 extends RS.6.8's isomorphism to every abelian group, and on finite ones its `ψ` is that
-  isomorphism.
+  `H₂(A × B, ℤ) ≅ H₂(A, ℤ) ⊕ H₂(B, ℤ) ⊕ (A ⊗ B)` and, for every abelian group `A : Type`, finite
+  or not, the isomorphism `Λ²A ≅ H₂(A, ℤ)` sending `a ∧ b` to the class `⟨a, b⟩` of
+  `[a|b] − [b|a]`. 5.1 is the Künneth theorem for all groups, all degrees and every `k` of global
+  dimension at most one, of which RS.6.8's formula is the integral degree-two instance for abelian
+  groups. 5.4 consumes the exterior-square isomorphism and does not prove it: it identifies the
+  degree-two part of its `ψ` at `k = ℤ` with RS.6.8's isomorphism, and its own comparisons are
+  the torsion-free and rational ones in all degrees.
   StableHomotopyKTheory §3.29 owns the identification of `H₂` of a perfect group with the kernel of
   its universal central extension. K2SymbolsBrauer §1.1 owns the bar normalisation of the Hopf map
   of a free presentation `G = F ⧸ R`: the connecting map sending the class of a 2-cycle to the
@@ -701,9 +702,13 @@ to every coefficient representation, to cohomology and to the universe `u`.
 - RS.6.8 (*The anti-diagonal model for abelian base groups*): for abelian groups `A, B : Type`, an
   isomorphism `H₂(A × B, ℤ) ≅ H₂(A, ℤ) ⊕ H₂(B, ℤ) ⊕ (A ⊗ B)` that restricts to the maps induced by
   the two inclusions on the first two summands and sends the class of
-  `[(a, 1)|(1, b)] − [(1, b)|(a, 1)]` to `a ⊗ b`; and, for finite abelian `A : Type`, an
-  isomorphism `Λ²A ≅ H₂(A, ℤ)` sending `a ∧ b` to the class `⟨a, b⟩` of `[a|b] − [b|a]`. The second
-  is used in the route of 5.4 for finite `A`; both are compared with 5.1 and 5.4.
+  `[(a, 1)|(1, b)] − [(1, b)|(a, 1)]` to `a ⊗ b`; and, for every abelian group `A : Type`, finite
+  or not, an additive isomorphism from `⋀[ℤ]^2 (Additive A)` onto
+  `groupHomology.H2 (Rep.trivial ℤ A ℤ)` (Mathlib's abbreviation of
+  `groupHomology (Rep.trivial ℤ A ℤ) 2`) sending `a ∧ b` to the class `⟨a, b⟩` of `[a|b] − [b|a]`
+  (its target abelian_multiplier_exteriorSquare). The second is the integral degree-two case of
+  5.4, which identifies the degree-two part of `ψ` with it and does not prove it; the first
+  is compared with 5.1.
 - RS.0.3 (*Hall coinvariants of the multiplier*): for a normal subgroup `H` of a finite group `G`
   with `gcd(|H|, [G : H]) = 1`, corestriction induces an isomorphism from the coinvariants of `G`
   acting on `H₂(H, ℤ)` by conjugation onto the part of `H₂(G, ℤ)` primary to the primes dividing
@@ -1728,15 +1733,16 @@ Define, for an abelian group `A` (`CommGroup A`, in `Type u`), the Pontryagin pr
 `H•(A, k) = ⊕ₙ Hₙ(A, k)` (trivial coefficients) as the cross product of 5.1 followed by the map
 induced by the multiplication `A × A →* A`, and, once degree-one classes are shown to square to
 zero, the algebra map `ψ : Λ_k(A ⊗ k) → H•(A, k)` extending `H₁(A, k) ≅ A ⊗ k`; prove the laws and
-comparisons below (Brown82 Ch. V). Routes: for torsion-free `A`, Künneth for `ℤⁿ` from
+comparisons below (Brown82 Ch. V). The isomorphism `Λ²A ≅ H₂(A, ℤ)` for every abelian group
+`A : Type` is InductionRestrictionPartII RS.6.8's and is not proved here; 5.4 identifies the
+degree-two part of `ψ` at `k = ℤ` with it. Routes: for torsion-free `A`, Künneth for `ℤⁿ` from
 `H•(ℤ, k) = Λ(k)` (3.6) and the colimit over finitely generated subgroups; for a `ℚ`-algebra, the
-torsion subgroup has trivial positive-degree homology; in degree `2`, InductionRestrictionPartII
-RS.6.8 for finite `A` (its isomorphism and `ψ` both send `a ∧ b` to the class of `[a|b] − [b|a]`),
-then for `A = ℤʳ × T` with `T` finite the degree-two case of 5.1 together with the torsion-free
-case for `ℤʳ` (`Λ²(ℤʳ ⊕ T) = Λ²ℤʳ ⊕ (ℤʳ ⊗ T) ⊕ Λ²T`), and colimits. Each colimit is the
-directed-union identification of SchemeKTheoryOperations §6.7, whose surjective half is Tau Ceti's
-`groupHomology.exists_map_subtype_eq`. *Needs:* 5.1, 3.6; InductionRestrictionPartII RS.6.8
-(finite `A`); SchemeKTheoryOperations §6.7 (directed unions); Mathlib
+torsion subgroup has trivial positive-degree homology. Each colimit is the directed-union
+identification of SchemeKTheoryOperations §6.7, whose surjective half is Tau Ceti's
+`groupHomology.exists_map_subtype_eq`. For `k = ℤ` in degree `2`, `ψ` and RS.6.8's isomorphism are
+additive maps `Λ²A → H₂(A, ℤ)` that agree on the generators `a ∧ b`, both sending `a ∧ b` to the
+class of `[a|b] − [b|a]`, so they are equal. *Needs:* 5.1, 3.6; InductionRestrictionPartII RS.6.8
+(the integral degree-two isomorphism); SchemeKTheoryOperations §6.7 (directed unions); Mathlib
 `Rep.FiniteCyclicGroup.groupHomologyIsoEven`, `Rep.FiniteCyclicGroup.groupHomologyIsoOdd`
 (`RepresentationTheory/Homological/GroupHomology/FiniteCyclic.lean`); Tau Ceti
 `groupHomology.exists_map_subtype_eq` and `TauCeti.groupHomology.isZero_groupHomology_of_directed`
@@ -1748,13 +1754,11 @@ directed-union identification of SchemeKTheoryOperations §6.7, whose surjective
 - Degree one: `x² = 0` for every `x ∈ H₁(A, k)`, so `ψ` is defined.
 - Degree-two classes: `ψ((a ⊗ 1) ∧ (b ⊗ 1))` is the class of `[a|b] − [b|a]`, the image under the
   multiplication `A × A → A` of the cross product `[a] × [b] = [(a, 1)|(1, b)] − [(1, b)|(a, 1)]` of
-  5.1. For `k = ℤ` it is the class `⟨a, b⟩` of InductionRestrictionPartII RS.6.8, and for finite
-  `A : Type` the degree-two part of `ψ` is RS.6.8's isomorphism `Λ²A ≅ H₂(A, ℤ)`.
-- Integral comparison: for `k = ℤ` (so `A : Type`), `ψ` is an isomorphism in degrees `≤ 2`; in
-  particular, for every abelian group `A : Type`, `H₂(A, ℤ)` is isomorphic as an abelian group to
-  `⋀[ℤ]^2 (Additive A)` (`nonempty_groupHomology_two_addEquiv_exteriorPower`, which states the
-  existence of an additive isomorphism; `ψ` is the one this target constructs). This extends
-  RS.6.8's isomorphism from finite to all abelian groups.
+  5.1. For `k = ℤ` it is the class `⟨a, b⟩` of InductionRestrictionPartII RS.6.8.
+- Integral comparison: for `k = ℤ` (so `A : Type`) and every abelian group `A`, finite or not,
+  the degree-two part `Λ²A → H₂(A, ℤ)` of `ψ` equals InductionRestrictionPartII RS.6.8's
+  isomorphism; as `ψ` is the identity of `ℤ` in degree `0` and the isomorphism `A ≅ H₁(A, ℤ)` in
+  degree `1`, `ψ` is an isomorphism in degrees `≤ 2`.
 - Torsion-free comparison: for torsion-free `A` and every `k`, `ψ` is an isomorphism in all degrees.
 - Rational comparison: for every `A` and every `ℚ`-algebra `k`, `ψ` is an isomorphism in all
   degrees.
@@ -1775,8 +1779,13 @@ directed-union identification of SchemeKTheoryOperations §6.7, whose surjective
   `a = (1, 0)` and `b = (0, 1)`, `[a|b] − [b|a]` is the cross product of the generators of the two
   factors, so its class generates `H₂(A, ℤ) = ℤ/3` (5.1), and `ψ(a ∧ b)` and RS.6.8's `⟨a, b⟩` are
   both this class. The opposite orientation `[b|a] − [a|b]` gives `−⟨a, b⟩ ≠ ⟨a, b⟩`, which mod `2`
-  examples such as `ℤ/2 × ℤ/2` cannot detect. `ℤ²` and `ℚ` lie outside RS.6.8's finiteness
-  hypothesis, and the integral comparison gives `Λ²ℤ² = ℤ` and `Λ²ℚ = 0` for them.
+  examples such as `ℤ/2 × ℤ/2` cannot detect.
+- Orientation on an infinite group, compared with InductionRestrictionPartII RS.6.8: for `A = ℤ²`
+  with basis `e₁, e₂`, `[e₁|e₂] − [e₂|e₁]` is a cycle (its boundary
+  `[e₂] − [e₁ + e₂] + [e₁] − [e₁] + [e₁ + e₂] − [e₂]` is `0`) and the cross product of the
+  generators of `H₁(ℤ, ℤ)` of the two factors, so its class generates `H₂(ℤ², ℤ) = ℤ` (5.1);
+  `ψ(e₁ ∧ e₂)` and RS.6.8's `⟨e₁, e₂⟩` are both this class, while the reversed orientation gives
+  the other generator, and the two maps would then differ by the automorphism `−1` of `ℤ`.
 
 ### Examples
 
@@ -1792,8 +1801,9 @@ other half; Tau Ceti's Künneth and universal coefficient sequences, Kronecker m
 identification of `Hom((A ⊗ P)_G, N)`, its projective replacements of bounded-above complexes,
 K-flatness of bounded-above complexes of flat modules and split cycles over a ring of global
 dimension at most one; SpectralSequencesAndConvergencePartII §4.3 with `gap:flat-kunneth` for the
-flat case of 5.1; InductionRestrictionPartII RS.6.8 for finite abelian groups in 5.4 and for
-comparisons; ArithmeticGaloisDuality §D7.2 for the comparison of 5.2; Mathlib's finite cyclic
+flat case of 5.1; InductionRestrictionPartII RS.6.8, the isomorphism `Λ²A ≅ H₂(A, ℤ)` for every
+abelian group with which 5.4 identifies `ψ` in degree two, and the comparison of 5.1;
+ArithmeticGaloisDuality §D7.2 for the comparison of 5.2; Mathlib's finite cyclic
 computations; AlgebraicTopology §5.4 for a Check.
 
 ---
@@ -2376,10 +2386,11 @@ bijection from the classes of `Ĥⁿ(G, M)` killed by a power of `p` onto the cl
   `M = Ind_P^G 𝔽₂` gives `dim H¹(G, M) = dim H¹(P, 𝔽₂) = 2`, the dimension of the stable classes.
 - Normal Sylow subgroup in homology, compared with InductionRestrictionPartII RS.0.3: for
   `G = (ℤ/3)² ⋊ ℤ/2` with the generator of `ℤ/2` acting by inversion, `p = 3`, `P = (ℤ/3)²` and
-  `M = ℤ`, the stable classes are the invariants of `ℤ/2` on `H₂(P, ℤ) = Λ²P = ℤ/3` (5.4), on which
-  inversion acts by `(−1)² = 1`; so `H₂(G, ℤ)(3) = ℤ/3`, RS.0.3's value, and as the Sylow
-  `2`-subgroup `ℤ/2` has `H₂(ℤ/2, ℤ) = 0`, `H₂(G, ℤ) = ℤ/3`. A model letting `ℤ/2` act on
-  `H₂(P, ℤ)` as on `P`, by `−1`, would give `0`.
+  `M = ℤ`, the stable classes are the invariants of `ℤ/2` on `H₂(P, ℤ) = Λ²P = ℤ/3`
+  (InductionRestrictionPartII RS.6.8, whose isomorphism is natural in `P` by its formula on
+  `a ∧ b`), on which inversion acts by `(−1)² = 1`; so `H₂(G, ℤ)(3) = ℤ/3`, RS.0.3's value, and
+  as the Sylow `2`-subgroup `ℤ/2` has `H₂(ℤ/2, ℤ) = 0`, `H₂(G, ℤ) = ℤ/3`. A model letting
+  `ℤ/2` act on `H₂(P, ℤ)` as on `P`, by `−1`, would give `0`.
 - `IsHomologyStableClass` for `G = S₃`, `p = 3`, `P = A₃`, `M = ℤ`, `n = 1`: both intersections
   are `A₃`, the transfers are isomorphisms, and `c_{(12)}` acts on `H₁(A₃, ℤ) = A₃ = ℤ/3` by
   `x ↦ x⁻¹`, that is by `−1`; so the stable classes are those with `z = −z`, only `0`, matching
@@ -2412,7 +2423,7 @@ group, dimension-shifting sequences, Mackey decomposition and Sylow theorem; Mat
 `Rep.indCoindIso`; ProfiniteCohomology §6.4 and Tau Ceti's continuous Mackey formula for a Check;
 K3BlochGroups §5.2,
 ArithmeticGaloisDuality §D7.2 and InductionRestrictionPartII RS.0.3 for the comparisons of 7.2;
-Layer 5 (5.4) for a Check of 7.2.
+InductionRestrictionPartII RS.6.8 for a Check of 7.2.
 
 ---
 

@@ -25,11 +25,10 @@ README 7.1), and `IsStableClass`, `IsHomologyStableClass` and `IsTateStableClass
 cohomology, homology and Tate cohomology, README 7.2).
 
 Stated below: the vanishing of the (co)homology of free groups in degrees `≥ 2` and the free
-product formula (README 3.6); `H₂(A, ℤ) ≅ Λ²A` for every abelian group (README 5.4) and Hopf's
-formula (README 6.8), both as the existence of an additive isomorphism, the specific maps `ψ` and
-`h` of the README being constructions of those targets; the double coset formula in cohomology and
-in homology (README 7.1); the stable element theorem in cohomology, in homology and in Tate
-cohomology (README 7.2); Tate duality with coefficients `ℚ/ℤ` and its integral form for coefficients
+product formula (README 3.6); Hopf's formula (README 6.8), as the existence of an additive
+isomorphism, the specific map `h` of the README being a construction of that target; the double
+coset formula in cohomology and in homology (README 7.1); the stable element theorem in
+cohomology, in homology and in Tate cohomology (README 7.2); Tate duality with coefficients `ℚ/ℤ` and its integral form for coefficients
 free as abelian groups (README 8.1); the cup-product periodicity of finite cyclic groups in all
 degrees (README 8.4); and the periodicity theorem and its `p`-primary form (README 8.5).
 
@@ -127,14 +126,6 @@ theorem coprod_groupHomology_bijective {k A B : Type u} [CommRing k] [Group A] [
             (𝟙 (Rep.res (Monoid.Coprod.inl : A →* Monoid.Coprod A B) M)) n x.1 +
           groupHomology.map (Monoid.Coprod.inr : B →* Monoid.Coprod A B)
             (𝟙 (Rep.res (Monoid.Coprod.inr : B →* Monoid.Coprod A B) M)) n x.2) := sorry
-
-/-! ## Layer 5: products of groups and abelian groups -/
-
-/-- **The second homology of an abelian group** (README 5.4): for every abelian group `A`,
-`H₂(A, ℤ)` with trivial coefficients is isomorphic to the exterior square `Λ²A` (Brown, Ch. V).
-The README constructs the isomorphism, `a ∧ b ↦ [a|b] − [b|a]`; this states its existence. -/
-theorem nonempty_groupHomology_two_addEquiv_exteriorPower (A : Type) [CommGroup A] :
-    Nonempty (groupHomology (Rep.trivial ℤ A ℤ) 2 ≃+ ⋀[ℤ]^2 (Additive A)) := sorry
 
 /-! ## Layer 6: group extensions -/
 
