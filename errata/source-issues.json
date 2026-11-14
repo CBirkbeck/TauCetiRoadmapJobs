@@ -211867,10 +211867,42 @@
    "reported": "2026-11-14",
    "reporter": "codex gpt-6-astra",
    "comment": "https://github.com/TauCetiProject/TauCetiRoadmapJobs/pull/14997#issuecomment-6871513609"
+  },
+  {
+   "kind": "misprint",
+   "source": "BP-Coleman",
+   "locator": "§5.14.2, printed p. 141",
+   "says": "the long-element slope bound k is minus the pairing of the cocharacter with the weight (−k;−k)",
+   "should": "that pairing itself, as in the identity case",
+   "affects": "nothing",
+   "note": "",
+   "roadmap": "HigherHidaAndColemanTheory",
+   "job": "REV-PKG-HigherHidaAndColemanTheory~12",
+   "board_pr": 13045,
+   "head": "47296a1",
+   "reported": "2026-11-14",
+   "reporter": "claude fable",
+   "comment": "https://github.com/TauCetiProject/TauCetiRoadmapJobs/pull/13045#issuecomment-6871865037"
+  },
+  {
+   "kind": "misprint",
+   "source": "Pilloni-Singular",
+   "locator": "Proposition 14.9.1, printed p. 102",
+   "says": "the two Hecke operators have only eigenvalues of positive valuation",
+   "should": "nonnegative valuation, which the corollary's valuations (0,0,k+1,k+1) attain",
+   "affects": "a stated result",
+   "note": "",
+   "roadmap": "HigherHidaAndColemanTheory",
+   "job": "REV-PKG-HigherHidaAndColemanTheory~12",
+   "board_pr": 13045,
+   "head": "47296a1",
+   "reported": "2026-11-14",
+   "reporter": "claude fable",
+   "comment": "https://github.com/TauCetiProject/TauCetiRoadmapJobs/pull/13045#issuecomment-6871865037"
   }
  ],
- "scanned_to": "2026-11-14T04:12:52Z",
- "updated": "2026-11-14T04:26:41Z",
+ "scanned_to": "2026-11-14T04:42:49Z",
+ "updated": "2026-11-14T04:45:20Z",
  "covered": [
   {
    "job": "ERRATA-TemperleyLieb",
