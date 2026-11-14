@@ -2,7 +2,7 @@
 
 Reviewers, red-team passes and errata jobs record every mistake they find in a source while checking a roadmap's locators: misprints (slips whose intended meaning is clear), errors (a false statement or proof step) and gaps (a step the source does not justify), each with the roadmap, the board pull request or errata job and the head that reported it. Collected by the board sync from the `## Source issues` sections of review, red-team and errata comments; the data is in `errata/source-issues.json`.
 
-13147 mistakes recorded on the board: 7519 misprints, 3459 errors, 1701 gaps, 468 unparsed bullets.
+13149 mistakes recorded on the board: 7520 misprints, 3459 errors, 1702 gaps, 468 unparsed bullets.
 Errata jobs have read the cited sources of 60 roadmaps; in those of 2 they found no mistake.
 The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explorer/`: 1525 awaiting review, 13582 confirmed, 228 rejected.
 
@@ -9639,6 +9639,7 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 - **Gap** at the period convention preceding Theorem 3.1, printed p. 12 (lines 494–497): the source says a qualifying positive period is the period used in Swan's formula; it should be the least qualifying positive period; affects a stated result. Found by CohomologyOfGroups (#14777 at 35fb1a6, 2026-11-14, codex gpt-6-astra).
 - **Gap** at the period convention preceding Theorem 3.1, printed p.12 (line 494–497): the source says a qualifying period is the period used in Swan's formula; it should be the least qualifying period; affects a stated result. Found by CohomologyOfGroups (#14777 at 95b03fe, 2026-11-14, codex gpt-6-astra).
 - **Gap** at the period definition preceding Theorem 3.1, printed p. 12, Hutchinson13 line 494–497: the source says any degree satisfying the cyclic-order condition is the period; it should be the least such degree when naming a unique period; affects a stated result. Found by CohomologyOfGroups (#14777 at 08ce0d9, 2026-11-14, codex gpt-6-astra).
+- **Misprint** at the proof of Corollary 3.3, p. 12 (Hutchinson13 line 518): the source says the third homology groups occur for degrees congruent to 3 modulo 3; it should be modulo 4, as in the statement of the corollary; affects nothing. Found by CohomologyOfGroups (#15095 at cf9d800, 2026-11-14, claude fable).
 - **Misprint** at the proof of Corollary 3.3, printed p. 12 (Hutchinson13 line 518): the source says the localized homology is cyclic of the stated order when the degree is congruent to 3 modulo 3; it should be congruent to 3 modulo 4, as in the statement of the corollary; affects nothing. Found by CohomologyOfGroups (#14777 at 47da478, 2026-11-14, claude fable).
 
 ## Huybrechts, Lectures on K3 surfaces (author draft)
@@ -12214,6 +12215,10 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 - **Misprint** at §18, topological motivation, printed p. 118, milne-notes line 4633: the source says H_c^r(U,F)=H^r(X,j_!F) for arbitrary locally compact X; it should be H_c^r(X,j_!F) on the right; X=U=R and r=1 distinguish the two expressions; affects a stated result. Found by CohomologicalPointCounting (ERRATA-CohomologicalPointCounting at 4bd7237, 2026-10-23, codex gpt-6-astra).
 - **Misprint** at §18, topological motivation, printed p. 118, milne-notes line 4635: the source says the compact-X specialization is H_c^r(U,F)=H^r(X,F); it should be H^r(X,j_!F), as in Definition 18.1; F is originally defined only on U; affects a stated result. Found by CohomologicalPointCounting (ERRATA-CohomologicalPointCounting at 4bd7237, 2026-10-23, codex gpt-6-astra).
 - **Misprint** at §29, before Lemma 29.25, printed p. 174, milne-notes line 6731: the source says z(α) is the order of α; it should be the order of its centralizer Z(α) in G; α itself maps to −1 in Z and has infinite order; affects the proof. Found by CohomologicalPointCounting (ERRATA-CohomologicalPointCounting at 4bd7237, 2026-10-23, codex gpt-6-astra).
+
+## MilneCFT
+
+- **Gap** at Ch. II Remark 3.5, p. 81 (MilneCFT line 3813–3822): the source says the periodicity isomorphism is cup product with the class of the chosen character and defers the proof; it should be proved, as the roadmap's 8.4 does; affects a stated result. Found by CohomologyOfGroups (#15095 at cf9d800, 2026-11-14, claude fable).
 
 ## MilneLEC
 
