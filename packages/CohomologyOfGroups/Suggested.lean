@@ -57,6 +57,11 @@ Headline theorems of the roadmap that are not statable at the pins, and what eac
   homology (Tau Ceti has the shuffle map `SSet.shuffle` of simplicial chains, not its transport to
   the standard resolutions and to coinvariants) and the cup product of README 4.1 for arbitrary
   groups and pairings;
+* the Pontryagin comparisons (README 5.4): for an abelian group `A`, the algebra map
+  `Λ_k(A ⊗ k) → ⊕ₙ Hₙ(A, k)` is bijective in every degree when `A` is torsion-free and `k` is any
+  commutative ring, and when `A` is arbitrary and `k` is a `ℚ`-algebra; the exterior algebra is
+  Mathlib's `ExteriorAlgebra`, but the Pontryagin product on `⊕ₙ Hₙ(A, k)` and the algebra map,
+  which README 5.4 builds from the cross product of README 5.1, are missing at the pins;
 * the universal coefficient sequence in homology (README 5.2): its map
   `Hₙ(G, A) → Tor₁^k(Hₙ₋₁(G, k), A)`, which Tau Ceti's Künneth sequence
   `HomologicalComplex.homologyKunnethShortComplex_shortExact` gives for the tensor product of

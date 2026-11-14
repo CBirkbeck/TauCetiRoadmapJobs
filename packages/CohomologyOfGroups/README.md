@@ -359,9 +359,32 @@ to every coefficient representation, to cohomology and to the universe `u`.
 - `TauCeti.TateCohomology.cup`, `TauCeti.TateCohomology.cup_assoc`,
   `TauCeti.TateCohomology.cup_gradedComm`, `TauCeti.TateCohomology.cup_projection`,
   `TauCeti.TateCohomology.cup_res`, `TauCeti.TateCohomology.cup_left_unit`,
+  `TauCeti.TateCohomology.cup_right_unit`, `TauCeti.TateCohomology.cup_δ_of_leftInverse`,
   `TauCeti.TateCohomology.cup_δ_of_flat`, `TauCeti.TateCohomology.δ_cup_of_leftInverse`
   (`…/TateCohomology/Cup/`): the Tate cup product of a finite group in all integer bidegrees, for
-  the pairing `M ⊗ N`, with the sign `x ∪ δy = (−1)^p δ(x ∪ y)`.
+  the pairing `M ⊗ N`, with the class of `1 ∈ Ĥ⁰(G, k)` as a unit on both sides and the sign
+  `x ∪ δy = (−1)^p δ(x ∪ y)` for `x` of degree `p`. The rule in the second variable holds for every
+  `M` when the first map of the short exact sequence has a `k`-linear retraction
+  (`cup_δ_of_leftInverse`), and for every short exact sequence when `M` is flat over `k`
+  (`cup_δ_of_flat`); the rule `δ(x ∪ y) = δx ∪ y` in the first variable holds when the first map
+  has a `k`-linear retraction (`δ_cup_of_leftInverse`).
+- `Rep.isZero_res_of_projective`, `Rep.isZero_res_tensor_of_projective`,
+  `Rep.projective_of_isZero_res` (`…/TateCohomology/Projective/Basic.lean`), the Nakayama–Rim
+  interface recorded by ClassFieldTheory Layer 0: if the `k[G]`-module of `P` is projective, then
+  `Ĥⁿ(S, P) = 0` and, for every representation `M`, `Ĥⁿ(S, M ⊗ P) = 0`, for every finite subgroup
+  `S` of `G` and every `n ∈ ℤ`, `k` any commutative ring; conversely, for `G` finite and `k` a
+  domain of characteristic zero in which every prime number is a unit or generates a maximal ideal
+  (for instance `ℤ`), a cohomologically trivial representation whose underlying `k`-module is
+  projective is projective over `k[G]`. Used in 8.3.
+- `TauCeti.TateCohomology.δ_bijective_of_isZero_X₂` (`…/TateCohomology/HomologySequence.lean`):
+  for a short exact sequence `0 → X₁ → X₂ → X₃ → 0` of representations of a finite group with
+  `Ĥⁿ(G, X₂) = Ĥⁿ⁺¹(G, X₂) = 0`, the connecting map `Ĥⁿ(G, X₃) → Ĥⁿ⁺¹(G, X₁)` is bijective.
+  Used in 8.3.
+- `Rep.shortExact_map_tensorLeft_of_leftInverse` (`RepresentationTheory/Rep/TensorShortExact.lean`):
+  an exact sequence `X₁ → X₂ → X₃ → 0` of representations whose first map has a `k`-linear
+  retraction becomes short exact after `M ⊗ −`, for every representation `M`. Used in 8.3.
+- `Submodule.free_of_isPrincipalIdealRing` (`LinearAlgebra/FreeModule/PID.lean`): over a principal
+  ideal domain every submodule of a free module is free, of any rank. Used in 8.3.
 - `TauCeti.TateCohomology.map`, `TauCeti.TateCohomology.mapIso`,
   `TauCeti.TateCohomology.map_comp_isoGroupCohomology_hom`,
   `TauCeti.TateCohomology.map_comp_isoGroupHomology_hom`, `TauCeti.TateCohomology.δ_comp_map`
@@ -636,8 +659,8 @@ to every coefficient representation, to cohomology and to the universe `u`.
 ### From TauCetiRoadmap.ClassFieldTheory
 
 - Layer 0 (§0.1): Tate cohomology with restriction, corestriction and the Tate cup product,
-  cohomological triviality written out, Tate–Nakayama, and the Nakayama–Rim theorem
-  (`Rep.isZero_res_of_projective`, `Rep.projective_of_isZero_res`).
+  cohomological triviality written out, Tate–Nakayama, and the Nakayama–Rim theorem; the Tau Ceti
+  declarations it records are consumed directly, under "From Tau Ceti".
 
 ### From TauCetiRoadmap.FreeGroupsAndLimitGroups
 
@@ -1820,10 +1843,10 @@ Alexander–Whitney front and back faces. *Needs:* 4.3, 4.6, 5.1, 5.2.
   `H₂(G, ℚ) ⊕ (H₁(G, ℚ) ⊗ H₁(H, ℚ)) ⊕ H₂(H, ℚ)`. On the middle summand the cross product vanishes on
   `H²(G, ℚ) ⊗ H⁰` and `H⁰ ⊗ H²(H, ℚ)`, and on `H¹ ⊗ H¹` it is the canonical map
   `ℚ^ℕ ⊗ ℚ^ℕ → (ℚ^{(ℕ)} ⊗ ℚ^{(ℕ)})^*` (by `⟨x × y, a × b⟩ = ⟨x, a⟩⟨y, b⟩`), whose image is the bilinear
-  forms of finite rank: `Σ_{m ≤ r} f_m ⊗ g_m` gives a form of rank at most `r`. The form
-  `(e_i, e_j) ↦ δ_{ij}` has infinite rank (its restriction to `⟨e₀, …, e_r⟩` has rank `r + 1`), so
-  the cross product is not onto. The two spaces both have dimension `2^{ℵ₀}` over `ℚ`, so a count of
-  dimensions does not show it.
+  forms of finite rank: a sum `Σ_{m < r} f_m ⊗ g_m` of `r` pure tensors gives a form of rank at
+  most `r`. The form `(e_i, e_j) ↦ δ_{ij}` has infinite rank (its restriction to `⟨e₀, …, e_r⟩`
+  has rank `r + 1 > r`), so the cross product is not onto. The two spaces both have dimension
+  `2^{ℵ₀}` over `ℚ`, so a count of dimensions does not show it.
 - For `H` trivial, `x × 1 = pr₁^* x` and the map is `pr₁^*`, an isomorphism.
 - Bidegree `(1, 1)` without sign: for `G = H = ℤ`, `k = ℚ`, `x, y` the identity characters and
   `a = [1]`, `b = [1]`, `a × b = [e₁|e₂] − [e₂|e₁]` in `H₂(ℤ², ℚ)` and
@@ -2579,18 +2602,22 @@ map `Ĥ^{−i}(G, M) → Ĥ⁰(G, ℤ)` is pairing with some `y` (`tate_duality_
 `a mod |G| ↦ a/|G|` identifies `Ĥ⁰(G, ℤ) = ℤ/|G|` with the subgroup of `ℚ/ℤ` killed by `|G|`, and
 `Ĥ^{−i}(G, M)` is killed by `|G|`, this is the isomorphism
 `Ĥⁱ(G, Hom(M, ℤ)) ≅ Hom(Ĥ^{−i}(G, M), ℚ/ℤ)` (Brown82 Ch. VI §7; CE56 Ch. XII). Route: degree `0`
-by the exactness of `Hom(−, ℚ/ℤ)`, then dimension shifting with Tau Ceti's `cup_δ_of_flat` and
-`δ_cup_of_leftInverse`; the integral form from `0 → Hom(M, ℤ) → Hom(M, ℚ) → M^∨ → 0` (exact for
-free `M`, and still exact after `M ⊗ −` as `M` is flat), the vanishing of `Ĥ` on the uniquely
-divisible `Hom(M, ℚ)`, and the compatibility of the cup product with the connecting maps of this
-sequence and of `0 → ℤ → ℚ → ℚ/ℤ → 0`, which carries the integral pairing to the `ℚ/ℤ` pairing up to
-sign. For `M = ℤ` and `i ≥ 1`, with `Ĥⁱ(G, ℚ/ℤ) ≅ H^{i+1}(G, ℤ)`, the
+by the exactness of `Hom(−, ℚ/ℤ)`, then dimension shifting along `0 → M″ → Ind_1^G M → M → 0` and
+its dual `0 → M^∨ → (Ind_1^G M)^∨ → (M″)^∨ → 0`, both split over `ℤ` and with middle terms of
+vanishing Tate cohomology, with Tau Ceti's `cup_δ_of_leftInverse` and `δ_cup_of_leftInverse`,
+which put no condition on `M` (`cup_δ_of_flat` needs `M` flat over `ℤ`, which fails for
+`M = ℤ/2`); the integral form from `0 → Hom(M, ℤ) → Hom(M, ℚ) → M^∨ → 0` (exact for free `M`, and
+still exact after `M ⊗ −` as `M` is flat), the vanishing of `Ĥ` on the uniquely divisible
+`Hom(M, ℚ)`, and the compatibility of the cup product with the connecting maps of this sequence
+and of `0 → ℤ → ℚ → ℚ/ℤ → 0` (`cup_δ_of_flat`, `M` being flat), which carries the integral pairing
+to the `ℚ/ℤ` pairing up to sign. For `M = ℤ` and `i ≥ 1`, with `Ĥⁱ(G, ℚ/ℤ) ≅ H^{i+1}(G, ℤ)`, the
 duality with coefficients `ℚ/ℤ` is the isomorphism `H^{i+1}(G, ℤ) ≅ Hom(H_i(G, ℤ), ℚ/ℤ)` of
 K3BlochGroups §5.2.
 *Needs:* 4.7(a); K3BlochGroups §5.2 for the comparison; Tau Ceti
-`TauCeti.TateCohomology.cup`, `TauCeti.TateCohomology.cup_δ_of_flat`,
-`TauCeti.TateCohomology.δ_cup_of_leftInverse`; Mathlib `CategoryTheory.ihom.ev`, `Module.Free`;
-ClassFieldTheory Layer 0.
+`TauCeti.TateCohomology.cup`, `TauCeti.TateCohomology.cup_δ_of_leftInverse`,
+`TauCeti.TateCohomology.cup_δ_of_flat`, `TauCeti.TateCohomology.δ_cup_of_leftInverse`,
+`Rep.dimensionShiftDown`; Mathlib `CategoryTheory.ihom.ev`, `Module.Free`; ClassFieldTheory
+Layer 0.
 
 **Checks.**
 
@@ -2646,9 +2673,27 @@ such a sequence exists when there is a bounded complex of free `ℤ[G]`-modules 
 degree `0`, `ℤ_χ` in degree `n ≥ 1` and `0` elsewhere (truncate at `n`; the boundaries in degree `n`
 have a finite free resolution, hence are cohomologically trivial). This is the algebraic form of
 the periodicity of a free cellular action on a finite-dimensional complex with the homology of
-`Sⁿ` (Loh19 Thm. 4.3.7, p. 165, and its proof, pp. 165–167; Brown82 Ch. VI §9). *Needs:* 4.7(a);
-Tau Ceti `TauCeti.TateCohomology.cup_δ_of_flat`, `TauCeti.TateCohomology.δ_cup_of_leftInverse`;
-ClassFieldTheory Layer 0 (`Rep.isZero_res_of_projective`, `Rep.projective_of_isZero_res`).
+`Sⁿ` (Loh19 Thm. 4.3.7, p. 165, and its proof, pp. 165–167; Brown82 Ch. VI §9). Route: cut the
+sequence into the `n + 1` short exact sequences `0 → Z_j → C_j → Z_{j−1} → 0`, with `Z_{−1} = ℤ`
+and `Z_n = ℤ_χ`. Each `Z_j` is a subgroup of a free abelian group, hence free
+(`Submodule.free_of_isPrincipalIdealRing`), so each of these sequences has a `ℤ`-linear retraction
+of its first map and stays short exact after `M ⊗ −` for every `M`
+(`Rep.shortExact_map_tensorLeft_of_leftInverse`). Each `C_j`, free over `ℤ` and cohomologically
+trivial, is projective over `ℤ[G]` (`Rep.projective_of_isZero_res`), so `M ⊗ C_j` has vanishing
+Tate cohomology for every `M` (`Rep.isZero_res_tensor_of_projective`; the untensored
+`Rep.isZero_res_of_projective` covers only `M = ℤ`), and the `n + 1` connecting maps of the
+tensored sequences are bijective (`TauCeti.TateCohomology.δ_bijective_of_isZero_X₂`). By the rule
+`x ∪ δy = (−1)^p δ(x ∪ y)` for a sequence with a retraction, which puts no condition on `M`
+(`TauCeti.TateCohomology.cup_δ_of_leftInverse`; `cup_δ_of_flat` would need `M` flat over `ℤ`), and
+`x ∪ 1 = x` (`TauCeti.TateCohomology.cup_right_unit`), the composite of these connecting maps is
+`x ↦ (−1)^{i(n+1)} x ∪ e` on `Ĥⁱ(G, M)`. For the existence statement, a bounded complex of free
+modules gives the boundaries in degree `n` a finite free resolution, and free modules are
+cohomologically trivial (`Rep.isZero_res_of_projective`). *Needs:* 4.7(a); Tau Ceti
+`TauCeti.TateCohomology.cup_δ_of_leftInverse`, `TauCeti.TateCohomology.cup_right_unit`,
+`TauCeti.TateCohomology.δ_bijective_of_isZero_X₂`, `Rep.shortExact_map_tensorLeft_of_leftInverse`,
+`Rep.isZero_res_of_projective`, `Rep.isZero_res_tensor_of_projective`,
+`Rep.projective_of_isZero_res`, `Submodule.free_of_isPrincipalIdealRing`; ClassFieldTheory
+Layer 0 (cohomological triviality written out).
 
 **Checks.**
 
@@ -2657,6 +2702,13 @@ ClassFieldTheory Layer 0 (`Rep.isZero_res_of_projective`, `Rep.projective_of_isZ
   `n = 1`, `χ` trivial, period dividing `2`.
 - `G = ℤ/2`, `n = 0`: `0 → ℤ_sgn → ℤG → ℤ → 0` gives `Ĥⁱ(G, M) ≅ Ĥⁱ⁺¹(G, M ⊗ ℤ_sgn)` and period
   dividing `2`.
+- Coefficients that are not flat over `ℤ`: in the same sequence take `M = ℤ/2`. Then
+  `M ⊗ ℤG = 𝔽₂[G]` is killed by `2`, so it is not projective over `ℤ[G]` (projective
+  `ℤ[G]`-modules are free abelian), but it is induced from the trivial subgroup and has no Tate
+  cohomology; `M ⊗ ℤ_sgn = ℤ/2` with trivial action, and the connecting map
+  `Ĥⁱ(G, ℤ/2) = ℤ/2 → Ĥⁱ⁺¹(G, ℤ/2) = ℤ/2` is bijective in every degree `i`. The vanishing must come
+  from the projectivity of `ℤG` and not of `M ⊗ ℤG`, and the cup-product rule from the splitting of
+  the sequence over `ℤ` and not from flatness of `M`.
 - `C_p × C_p` admits no such sequence, since `dim Hⁿ(C_p × C_p, 𝔽_p) = n + 1` (5.3) is unbounded.
 
 ### 8.4 Periods
@@ -2789,7 +2841,7 @@ class `u`; and `Ĥ²(Q₈, ℤ) = (ℤ/2)²` is not cyclic of order `8`, so the 
 
 Layers 4, 5 and 7; K3BlochGroups §5.2 (quaternion resolution and its period class, Swan's theorem
 with `gap:least-r-period`, integral duality); Tau Ceti's Tate cup product, Tate–Nakayama theorem,
-cyclic periodicity and character classes; ClassFieldTheory Layer 0.
+Nakayama–Rim theorem, cyclic periodicity and character classes; ClassFieldTheory Layer 0.
 
 ---
 
