@@ -139,6 +139,16 @@ unbounded complexes with exact kernel or cokernel complexes (stacks-012K Lemmas 
   `(3, −2)` on page `2`, and `d_1` is multiplication by `+2`. Homological sequences are read through
   the homological bidegree assignment of base §2.1 (the same gap): `E^r_{p,q}` with `d^r` of bidegree
   `(−r, r − 1)`.
+- **Convergence.** The convergence structures are the base's (§3.2, gap:base-convergence-structures),
+  whose isomorphisms `β : E_∞ ≅ gr H` are data. When the spectral sequence of a filtered complex
+  `(K, F)` (or one obtained from it by a stated reindexing) is said to converge, weakly, plainly or
+  strongly, to `H^*(K)` with the induced filtration, the convergence is *through the canonical
+  presentation* of base §5.2 (gap:base-induced-filtration): both of its maps are isomorphisms, and
+  each `β` is their composite. This is what makes a filtered morphism of complexes a morphism of
+  converging structures (base §3.3), and every convergence asserted below is of this kind (6.2
+  states its canonical comparison in the terms of its exact couple); an abstract `β` is never meant.
+  *Witness:* the last Check of 1.2, where an abstract `β` exists and the canonical presentation is
+  not invertible.
 - **Double complexes.** A double complex is a Mathlib
   `HomologicalComplex₂ 𝒜 (ComplexShape.up ℤ) (ComplexShape.up ℤ)`: a complex (in `p`) of cochain
   complexes (in `q`). Write `K^{p,q}` for its terms, `d₁ : K^{p,q} → K^{p+1,q}` (horizontal) and
@@ -409,10 +419,15 @@ What SpectralSequencesAndConvergence must provide (gap:base-induced-filtration):
 complex `K` with an antitone family `F : ℤ → Subobject K` of subcomplexes, the induced filtration
 `F^p H^n(K) = im(H^n(F^p K) → H^n(K))` as a decreasingly filtered object, functorial in filtered
 morphisms, and, wherever the spectral sequence of `(K, F)` in the classical indexing has a limit page
-at `(p, n − p)`, the canonical presentation of `gr^p H^n(K)` as a subquotient of `E_∞^{p,n−p}` (the
+at `(p, n − p)`, the canonical presentation of `gr^p H^n(K)` as a subquotient of `E_∞^{p,n−p}`, an
+inclusion `Zᵗ/B_∞ ↪ E_∞^{p,n−p}` followed by a projection `Zᵗ/B_∞ ↠ Zᵗ/Bᵗ ≅ gr^p H^n(K)` (the
 comparison of gap:base-einfty-comparison read through Tau Ceti's
-`CochainComplex.filtrationAbutmentIso`), weak convergence at `(p, n − p)` holding exactly when this
-presentation is an isomorphism. Supplier section: §5.2. Used in 1.2 and 5.2.
+`CochainComplex.filtrationAbutmentIso`), natural in filtered morphisms of complexes. When both maps of
+this presentation are isomorphisms, their composite supplies the weak-convergence isomorphism `β` at
+`(p, n − p)` of gap:base-convergence-structures; convergence *through this presentation* means that
+both maps are isomorphisms at every position concerned (stacks-012K line 3131–3140, Definition 24.9,
+tag 012U). The existence of some other isomorphism `E_∞^{p,n−p} ≅ gr^p H^n(K)` is not asserted to
+make the presentation invertible. Supplier section: §5.2. Used in the Conventions, 1.2, 1.4 and 5.2.
 
 What SpectralSequencesAndConvergence must provide (gap:base-finite-filtered-convergence): for a
 decreasingly filtered cochain complex `(K, F)` in an abelian category and an integer `n` such that the
@@ -575,7 +590,10 @@ grothendieck1957 line 1226–1235, (2.4.1)):
   the abutments (Tau Ceti `CochainComplex.filtrationFunctorMap`, `CochainComplex.spectralObjectMap`,
   `CategoryTheory.Abelian.SpectralObject.spectralSequenceMap`), functorially;
 - the induced filtrations `F_I^p Hⁿ(Tot K)` and `F_II^p Hⁿ(Tot K)` are those of base §5.2, and when the
-  limit page exists `gr^p_I Hⁿ` is a subquotient of `′E_∞^{p,n−p}` (base §5.2).
+  limit page exists `gr^p_I Hⁿ` is a subquotient of `′E_∞^{p,n−p}` through the canonical presentation of
+  base §5.2, natural in morphisms of double complexes; convergence of `′E` or `″E` (1.3) is convergence
+  through this presentation (Conventions), and the presentation can fail to be invertible while
+  `′E_∞^{p,n−p} ≅ gr^p_I Hⁿ` holds abstractly (last Check).
 
 *Needs:* 1.1; base §5.2 (gap:base-induced-filtration); Mathlib `HomologicalComplex₂.flip`,
 `HomologicalComplex₂.totalFlipIso`, `HomologicalComplex.stupidTrunc`; Tau Ceti
@@ -612,6 +630,20 @@ grothendieck1957 line 1226–1235, (2.4.1)):
   Ceti's `HomologicalComplex₂.columnFiltrationSpectralSequenceFirstPageXIso`.
 - For the staircase, `′E_1` of both totals is `ℤ` at `(0, 0)` and zero elsewhere, and `κ` is an
   isomorphism on it although it is not a quasi-isomorphism.
+- *Convergence is through the canonical presentation.* Over a field `k` let `V = ⊕_{n ≥ 0} k e_n`, and
+  let `K^{0,0} = k y_0 ⊕ V`, `K^{−m,m−1} = k x_m` and `K^{−m,m} = k y_m` for `m ≥ 1`, other terms zero, with
+  `d₂(x_m) = y_m`, `d₁(x_m) = y_{m−1}` and all other components zero. Columns `−m`, `m ≥ 1`, are exact, so
+  for both totals `′E_1 = ′E_∞` is `k y_0 ⊕ V` at `(0, 0)` and zero elsewhere. The total differential
+  sends `x_m` to `y_{m−1} + (−1)^m y_m`. On `Tot^Π` it maps `∏_m k x_m` isomorphically onto `∏_{j ≥ 0} k y_j`
+  (`a_1 = b_0`, `a_{j+1} = b_j − (−1)^j a_j`; `y_0` is the boundary of `(1, 1, −1, −1, 1, 1, …)`, which lies in
+  no `F_I^p`), so `H^0(Tot^Π K) = V = F_I^0 H^0`, `F_I^1 H^0 = 0`, `H^{−1} = 0`, and the canonical
+  presentation at `(0, 0)` is the projection `k y_0 ⊕ V ↠ V`, with kernel `k y_0` (`B_∞ = 0`,
+  `Bᵗ = k y_0`). Yet `(a y_0, Σ v_n e_n) ↦ a e_0 + Σ v_n e_{n+1}` is an isomorphism `k y_0 ⊕ V ≅ V`, and with
+  zero elsewhere an abstract strong convergence structure (the filtration of `H^0` is finite). So `′E`
+  does not converge to `H^*(Tot^Π K)` in the sense of the Conventions, and 1.3(c) does not apply
+  (`K^{−m,m} ≠ 0` for every `m`). On `Tot^⊕` the image of `⊕_m k x_m` misses `y_0` (the functional with
+  values `1, 1, −1, −1, …` on `y_0, y_1, y_2, y_3, …` kills it), so `H^0(Tot^⊕ K) = k y_0 ⊕ V` and the
+  canonical presentation is the identity, as 1.3(b) asserts for this left half-plane `K`.
 
 ### 1.3 Convergence
 
@@ -682,11 +714,12 @@ sequences being regular, and `Tot = Tot^Π`. Through the flip, the same holds fo
 on every row under the row hypotheses (weibel1994 §5.6, uncertified; stacks-012K line 3293–3315,
 Lemma 25.4, tag 0133, for an augmentation). Route: by 1.2 `′E(f)` is an isomorphism on page `1`,
 hence on every page (Tau Ceti `CategoryTheory.SpectralSequence.Hom.isIso_hom_f_of_le`); the filtered
-map `Tot(f)` gives a morphism of converging structures (base §3.3), and the comparison theorem
-(base §3.5, its finite case for the first case and its strongly convergent case for the others)
-makes `Hⁿ(Tot f)` an isomorphism. *Needs:* 1.2, 1.3; base §3.3 (gap:base-converging-morphisms),
-§3.5 (gap:base-comparison-theorem); Tau Ceti
-`CategoryTheory.SpectralSequence.Hom.isIso_hom_f_of_le`.
+map `Tot(f)` gives a morphism of the converging structures of 1.3 (base §3.3), because these are
+through the canonical presentation of base §5.2, which is natural in filtered morphisms, and the
+comparison theorem (base §3.5, its finite case for the first case and its strongly convergent case
+for the others) makes `Hⁿ(Tot f)` an isomorphism. *Needs:* 1.2, 1.3; base §3.3
+(gap:base-converging-morphisms), §3.5 (gap:base-comparison-theorem), §5.2
+(gap:base-induced-filtration); Tau Ceti `CategoryTheory.SpectralSequence.Hom.isIso_hom_f_of_le`.
 
 **Checks.**
 
@@ -1445,9 +1478,10 @@ with the sign `d(x ⊗ y) = dx ⊗ y + (−1)^{|x|} x ⊗ dy`) with `φ(F^pA ⊗
   satisfying `d_r(xy) = d_r(x)y + (−1)^{p+q} x d_r(y)`, the pairing on page `r + 1` induced on cohomology by
   the one on page `r`;
 - the pairing on page `1` is the one induced by `φ` on `H(gr^p A) ⊗ H(gr^{p′} B) → H(gr^{p+p′} C)`;
-- at every position where the three spectral sequences converge weakly through the comparison of
-  base §4.3 (in particular under base §5.3 or §5.4), the pairing of limit pages is the one induced on
-  graded pieces by `H(A) ⊗ H(B) → H(C)`, which respects the induced filtrations;
+- at every position where the three spectral sequences converge weakly through the canonical
+  presentation of base §5.2 (both of its maps isomorphisms; the comparison of base §4.3), in
+  particular under base §5.3 or §5.4, the pairing of limit pages is the one induced on graded pieces
+  by `H(A) ⊗ H(B) → H(C)`, which respects the induced filtrations;
 - the pairings are natural in filtered maps compatible with the pairings.
 
 Route: the exact couples of the three filtered complexes (base §6.3) carry the pairing induced by `φ` on

@@ -139,7 +139,7 @@
       {
        "name": "HomologicalComplex₂.columnAbutmentFiltration",
        "role": "abutment",
-       "statement": "The induced filtrations F_I^p Hⁿ(Tot K), F_II^p Hⁿ(Tot K) are those of base §5.2; gr is a subquotient of E_∞ when the limit page exists."
+       "statement": "The induced filtrations F_I^p Hⁿ(Tot K), F_II^p Hⁿ(Tot K) are those of base §5.2; when the limit page exists gr is a subquotient of E_∞ through the canonical presentation of base §5.2, natural in morphisms of double complexes; convergence of ′E or ″E (1.3) is convergence through this presentation (Conventions), which can fail to be invertible while E_∞ ≅ gr holds abstractly."
       }
      ],
      "tests": [
@@ -167,6 +167,11 @@
        "name": "staircase_kappa",
        "kind": "non-example",
        "statement": "For the staircase, ′E_1 of both totals is ℤ at (0,0) only and κ is an isomorphism on it though not a quasi-isomorphism."
+      },
+      {
+       "name": "canonical_presentation",
+       "kind": "non-example",
+       "statement": "Over a field k, V = ⊕_{n≥0} k e_n; K^{0,0} = k y_0 ⊕ V, K^{−m,m−1} = k x_m, K^{−m,m} = k y_m (m ≥ 1), d₂(x_m) = y_m, d₁(x_m) = y_{m−1}. ′E_1 = ′E_∞ = k y_0 ⊕ V at (0,0) for both totals. On Tot^Π the degree −1 differential x_m ↦ y_{m−1} + (−1)^m y_m is an isomorphism onto ∏_{j≥0} k y_j (y_0 = d(1,1,−1,−1,…), in no F_I^p), so H⁰(Tot^Π) = V = F_I^0 H⁰, F_I^1 H⁰ = 0, and the canonical presentation is the projection k y_0 ⊕ V ↠ V with kernel k y_0 (B_∞ = 0, Bᵗ = k y_0), although the basis shift k y_0 ⊕ V ≅ V gives an abstract strong convergence structure; 1.3(c) does not apply. On Tot^⊕, H⁰ = k y_0 ⊕ V (the functional 1,1,−1,−1,… kills the image) and the canonical presentation is the identity, as 1.3(b) asserts."
       }
      ]
     },
@@ -248,7 +253,8 @@
       "target:1.3",
       "gap:base-converging-morphisms",
       "gap:base-comparison-theorem",
-      "tauceti:CategoryTheory.SpectralSequence.Hom.isIso_hom_f_of_le"
+      "tauceti:CategoryTheory.SpectralSequence.Hom.isIso_hom_f_of_le",
+      "gap:base-induced-filtration"
      ],
      "api": [],
      "tests": [
@@ -1187,7 +1193,7 @@
      "id": "5.2",
      "kind": "theorem",
      "name": "CochainComplex.FilteredPairing.spectralSequencePairing",
-     "statement": "For decreasingly filtered cochain complexes A, B, C of modules over a commutative ring R and a chain map φ : A ⊗ B → C with φ(F^pA ⊗ F^{p′}B) ⊆ F^{p+p′}C: pairings E_r^{p,q}(A) ⊗ E_r^{p′,q′}(B) → E_r^{p+p′,q+q′}(C) for r ≥ 1 with d_r(xy) = d_r(x)y + (−1)^{p+q} x d_r(y), page r+1 induced by page r, page 1 induced by φ on H(gr), the limit pairing equal to the one induced on graded pieces by H(A) ⊗ H(B) → H(C) wherever the three sequences converge weakly through the comparison of base §4.3, natural in filtered maps.",
+     "statement": "For decreasingly filtered cochain complexes A, B, C of modules over a commutative ring R and a chain map φ : A ⊗ B → C with φ(F^pA ⊗ F^{p′}B) ⊆ F^{p+p′}C: pairings E_r^{p,q}(A) ⊗ E_r^{p′,q′}(B) → E_r^{p+p′,q+q′}(C) for r ≥ 1 with d_r(xy) = d_r(x)y + (−1)^{p+q} x d_r(y), page r+1 induced by page r, page 1 induced by φ on H(gr), the limit pairing equal to the one induced on graded pieces by H(A) ⊗ H(B) → H(C) wherever the three sequences converge weakly through the canonical presentation of base §5.2 (both of its maps isomorphisms; the comparison of base §4.3), natural in filtered maps.",
      "hypotheses": [
       "R commutative",
       "φ a filtered chain map"
@@ -1580,9 +1586,10 @@
    "slug": "base-induced-filtration",
    "supplier": "SpectralSequencesAndConvergence",
    "section": "§5.2",
-   "needs": "for a cochain complex K with an antitone family F : ℤ → Subobject K of subcomplexes, the induced filtration F^p H^n(K) = im(H^n(F^p K) → H^n(K)) as a decreasingly filtered object, functorial in filtered morphisms, and, wherever the spectral sequence of (K, F) in the classical indexing has a limit page at (p, n − p), the canonical presentation of gr^p H^n(K) as a subquotient of E_∞^{p,n−p} (the comparison of gap:base-einfty-comparison read through Tau Ceti's CochainComplex.filtrationAbutmentIso), weak convergence at (p, n − p) holding exactly when this presentation is an isomorphism.",
+   "needs": "for a cochain complex K with an antitone family F : ℤ → Subobject K of subcomplexes, the induced filtration F^p H^n(K) = im(H^n(F^p K) → H^n(K)) as a decreasingly filtered object, functorial in filtered morphisms, and, wherever the spectral sequence of (K, F) in the classical indexing has a limit page at (p, n − p), the canonical presentation of gr^p H^n(K) as a subquotient of E_∞^{p,n−p}, an inclusion Zᵗ/B_∞ ↪ E_∞^{p,n−p} followed by a projection Zᵗ/B_∞ ↠ Zᵗ/Bᵗ ≅ gr^p H^n(K) (the comparison of gap:base-einfty-comparison read through Tau Ceti's CochainComplex.filtrationAbutmentIso), natural in filtered morphisms of complexes. When both maps of this presentation are isomorphisms, their composite supplies the weak-convergence isomorphism β at (p, n − p) of gap:base-convergence-structures; convergence through this presentation means that both maps are isomorphisms at every position concerned (stacks-012K line 3131–3140, Definition 24.9). The existence of some other isomorphism E_∞^{p,n−p} ≅ gr^p H^n(K) is not asserted to make the presentation invertible.",
    "neededBy": [
     "1.2",
+    "1.4",
     "5.2"
    ]
   },
