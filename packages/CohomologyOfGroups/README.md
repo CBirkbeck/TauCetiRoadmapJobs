@@ -41,7 +41,14 @@ Tate cup product `TauCeti.TateCohomology.cup` with `cup_assoc`, `cup_gradedComm`
 continuous cup product `TauCeti.TopPairing.cup`, the continuous Mackey formula
 `TauCeti.ContinuousCohomology.corestriction_mackey` and the class of the factor set of an extension
 with abelian kernel, `TauCeti.FactorSet.cohomologyClass`, with its independence of the section
-`TauCeti.GroupExtension.cohomologyClass_factorSet_eq`, are used as they stand.
+`TauCeti.GroupExtension.cohomologyClass_factorSet_eq`, are used as they stand. So are Tau Ceti's
+Alexander–Whitney and shuffle maps with the Eilenberg–Zilber theorem
+(`CategoryTheory.SimplicialObject.alexanderWhitney`, `SSet.shuffle`,
+`SSet.eilenbergZilberHomotopyEquiv`), which give the diagonal approximation of 4.4 and the cross
+product of 5.1; the half of the directed-union identification it proves,
+`groupHomology.exists_map_subtype_eq`; and its vanishing of `Hₙ(FreeGroup S, k)` for `n ≥ 2` with
+trivial coefficients, `TauCeti.isZero_groupHomology_freeGroup` (`S, k : Type`), which 3.6 extends
+to every coefficient representation, to cohomology and to the universe `u`.
 
 **Owned elsewhere and imported by section.**
 - DerivedModuleAlgebra §S.1 owns the spectral sequence of a first-quadrant double complex in an
@@ -265,11 +272,23 @@ with abelian kernel, `TauCeti.FactorSet.cohomologyClass`, with its independence 
   cohomology of a topological group as the cohomology of invariant iterated function spaces; its
   module docstring records the comparison with `groupCohomology` for discrete groups as missing.
 - `Rep.ihom`, `Rep.quotientToInvariantsFunctor`, `Rep.quotientToCoinvariantsFunctor`, `Rep.res`,
-  `Rep.ofMulAction`: internal Hom, the quotient actions on invariants and coinvariants of a normal
-  subgroup, restriction and permutation representations.
+  `Rep.ofMulAction`, `Rep.ofHom` (`RepresentationTheory/Rep/Basic.lean`): internal Hom, the
+  quotient actions on invariants and coinvariants of a normal subgroup, restriction, permutation
+  representations, and the morphism of representations given by an intertwining map.
+- `Rep.standardComplex` (`RepresentationTheory/Homological/Resolution.lean`): the complex of
+  `Rep.standardResolution`, defined as the alternating face map complex of the simplicial object
+  of `Rep k G` obtained by applying the monoidal functor `Rep.linearization`
+  (`RepresentationTheory/Rep/Basic.lean`) to `classifyingSpaceUniversalCover G`, the simplicial
+  `G`-set with `n`-simplices `G^{n+1}`. `SSet.chainComplex`
+  (`AlgebraicTopology/SimplicialSet/Homology/Basic.lean`): the simplicial chain complex of a
+  simplicial set with coefficients in an object `R`. For the underlying simplicial set of
+  `classifyingSpaceUniversalCover G` and `R = k` its terms are `⊕_{G^{n+1}} k`, and the canonical
+  isomorphisms `⊕_{G^{n+1}} k ≅ k[G^{n+1}]` identify it with the underlying complex of `k`-modules
+  of `Rep.standardComplex`; that comparison is made in 5.1. Used in 4.4 and 5.1.
 - `HomologicalComplex₂`, `HomologicalComplex₂.total`, `DerivedCategory`, `QuaternionGroup`,
-  `Sylow`, `IsPGroup`, `DoubleCoset.Quotient`, `DoubleCoset.mk`, `Monoid.PushoutI`, `HNNExtension`,
-  `FreeGroup`, `Monoid.Coprod`, `IsCyclic`, `IsAddCyclic`, `IsMulCommutative`, `GroupExtension`,
+  `Sylow`, `IsPGroup`, `Nat.Prime`, `DoubleCoset.Quotient`, `DoubleCoset.mk`, `Monoid.PushoutI`,
+  `HNNExtension`, `FreeGroup`, `Monoid.Coprod` with its inclusions `Monoid.Coprod.inl` and
+  `Monoid.Coprod.inr`, `IsCyclic`, `IsAddCyclic`, `IsMulCommutative`, `GroupExtension`,
   `ComplexShape.embeddingDownNat` (chain complexes indexed by `ℕ` as cochain complexes in degrees
   `≤ 0`),
   `Abelianization`, `AddCircle`, `exteriorPower` (written `⋀[R]^n M`), `commutator` (`⁅⊤, ⊤⁆`),
@@ -418,6 +437,33 @@ with abelian kernel, `TauCeti.FactorSet.cohomologyClass`, with its independence 
   that category. In `Rep k G` that homology is not group homology, so 4.6 uses the chain-level
   product and passes to coinvariants; 4.6 evaluates on the back face, and the sign relating the two
   faces is fixed there.
+- `CategoryTheory.SimplicialObject.alexanderWhitney`, `CategoryTheory.SimplicialObject.alexanderWhitney_f`,
+  `CategoryTheory.SimplicialObject.alexanderWhitney_naturality`,
+  `CategoryTheory.SimplicialObject.alexanderWhitney_coassoc`
+  (`AlgebraicTopology/SimplicialObject/AlexanderWhitney.lean`): for simplicial objects `A`, `B` of
+  a preadditive monoidal category with finite coproducts in which the tensor product is additive in
+  each variable, the chain map from the alternating face map complex of the degreewise tensor
+  product `A ⊗ B` to the tensor product of the alternating face map complexes of `A` and `B`, in
+  degree `n` the sum over `p + q = n` of the front `p`-face of `A` (vertices `0, …, p`) tensored
+  with the back `q`-face of `B` (vertices `p, …, n`), for Mathlib's sign
+  `d(a ⊗ b) = da ⊗ b + (−1)^p a ⊗ db`; it is natural in `A` and `B` and coassociative. `Rep k G`
+  meets the hypotheses (Mathlib's `MonoidalPreadditive` and colimit instances on `Rep`). Used in
+  4.4.
+- `SSet.shuffle`, `SSet.shuffle_naturality`,
+  `SSet.ιChainComplex_tensorHom_ιChainComplex_shuffle_f_zero`,
+  `SSet.ιChainComplex_tensorHom_ιChainComplex_shuffle_f_one_one`
+  (`AlgebraicTopology/SimplicialSet/Shuffle.lean`), `SSet.alexanderWhitney`
+  (`…/SimplicialSet/AlexanderWhitney.lean`) and `SSet.eilenbergZilberHomotopyEquiv`
+  (`…/SimplicialSet/EilenbergZilber.lean`): for simplicial sets `K`, `L` and objects `R`, `S` of a
+  preadditive monoidal category with coproducts preserved by tensoring on either side (such as
+  `ModuleCat k`), the shuffle map `C(K; R) ⊗ C(L; S) ⟶ C(K × L; R ⊗ S)` of simplicial chains
+  (`SSet.chainComplex`), natural in `K` and `L`, sending a pair of vertices `(x, y)` to the vertex
+  `(x, y)` and a pair of `1`-simplices `(x, y)` to `(s₁x, s₀y) − (s₀x, s₁y)`; and the
+  Eilenberg–Zilber theorem: the Alexander–Whitney map `C(K × L; R ⊗ S) ⟶ C(K; R) ⊗ C(L; S)` and the
+  shuffle map are inverse chain homotopy equivalences, by homotopies natural in `K` and `L`. These
+  are maps of complexes of objects of that category (of `k`-modules), not of representations;
+  equivariance for groups acting on `K` and `L` by simplicial maps is not stated there and is read
+  off the naturality. Used in 5.1.
 - `TauCeti.ChainComplex.kronecker` (`Algebra/Homology/Kronecker.lean`): for a chain complex `X` and
   an object `Y` of a `k`-linear abelian category, the map `Hⁱ(Hom(X, Y)) → Hom(Hᵢ(X), Y)` sending
   the class of a cocycle to its values on cycles. `HomologicalComplex.coinvariantsTensorObjLinearYonedaObjIso`
@@ -437,6 +483,18 @@ with abelian kernel, `TauCeti.FactorSet.cohomologyClass`, with its independence 
 - `Rep.dimensionShiftUp` (`RepresentationTheory/Induction/DimensionShift.lean`) and
   `groupHomology.isZero_indBot_succ` (`…/GroupHomology/Induced.lean`): dimension shifting
   and the acyclicity of modules induced from the trivial subgroup.
+- `TauCeti.isZero_groupHomology_freeGroup` (`AlgebraicTopology/ClassifyingSpace/WedgeCircles.lean`):
+  for `S : Type`, a commutative ring `k : Type` and `n ≥ 2`, `Hₙ(FreeGroup S, k) = 0` with trivial
+  coefficients `k`, proved through the wedge of circles indexed by `S`. It is the
+  trivial-coefficient homological case of 3.6 for `S, k : Type`. Used in 6.8 with `k = ℤ`, `n = 2`.
+- `groupHomology.exists_map_subtype_eq` (in Mathlib's namespace `groupHomology`) and
+  `TauCeti.groupHomology.isZero_groupHomology_of_directed`
+  (`RepresentationTheory/Homological/GroupHomology/DirectedUnion.lean`): for a nonempty directed
+  family of subgroups `S i` of `G` with supremum `⊤` and `A : Rep k G`, every class of `Hₙ(G, A)`
+  is the image of a class of some `Hₙ(S i, A)` under the map induced by the inclusion, and
+  `Hₙ(G, A) = 0` when every `Hₙ(S i, A)` is zero. The injectivity half of the colimit
+  identification is not proved there (its module docstring says so); it is taken from
+  SchemeKTheoryOperations §6.7. Used in 5.4.
 - `TauCeti.SerreGraph`, `TauCeti.SerreGraph.IsTree` (`Combinatorics/Graph/Serre/`): Serre graphs
   and trees.
 - `TauCeti.FactorSet.cohomologyClass`, `TauCeti.GroupExtension.cohomologyClass_factorSet_eq`
@@ -650,9 +708,9 @@ continuous cups. Layer 5 treats products of groups and abelian groups (Künneth,
 coefficients before the cohomological Künneth theorem that uses them, Pontryagin ring). Layer 6
 realises the Hochschild–Serre spectral sequence of MappingClassGroupsAndCanonicalRepresentations
 §1.1 by the filtration of the cochains of `G` (and in homology through Layer 2), identifies its
-edge maps, transgression and products, and derives the low-degree sequences and Hopf's formula,
-using the free groups of Layer 3. Layer 7 proves the double coset formula for any group and, for
-finite groups, the stable element theorem. Layer 8 proves Tate duality and the periodicity
+edge maps, transgression and products, and derives the low-degree sequences and Hopf's formula.
+Layer 7 proves the double coset formula for any group and, for finite groups, the stable element
+theorem. Layer 8 proves Tate duality and the periodicity
 theorems for finite groups, using Layers 4, 5 and 7 and the period computations of K3BlochGroups
 §5.2.
 
@@ -1136,7 +1194,9 @@ example after Prop. 13, p. 169; Brown82 Ch. II §7).
   `0 → H₁(A, M) ⊕ H₁(B, M) → H₁(A ∗ B, M) → M → M_A ⊕ M_B → M_{A∗B} → 0`, whose middle map is
   `m ↦ (−[m], [m])`; so the direct-sum formula holds in degree one when `A ∗ B` acts trivially on
   `M`. For a set `S`, `F = FreeGroup S` and every `M : Rep k F`, `Hₙ(F, M) = 0` and
-  `Hⁿ(F, M) = 0` for `n ≥ 2` (`freeGroup_isZero_of_two_le`), and
+  `Hⁿ(F, M) = 0` for `n ≥ 2` (`freeGroup_isZero_of_two_le`; for `S, k : Type` and trivial
+  coefficients `k` the homological vanishing is Tau Ceti's `TauCeti.isZero_groupHomology_freeGroup`,
+  and the target adds every coefficient representation, cohomology and the universe `u`), and
   `0 → H₁(F, M) → M^{(S)} → M → H₀(F, M) → 0` is exact, from the action of `F` on its Bass–Serre
   tree for the rose with trivial groups (§§4.1–4.2, 4.7, and §2.2 for the identification with
   `FreeGroup S`).
@@ -1240,16 +1300,25 @@ cochains; graded commutativity holds in cohomology, by the uniqueness of 4.2. *N
 
 Define a *diagonal approximation* of a projective resolution `P` of `k` as a chain map
 `Δ : P ⟶ P ⊗ P` of complexes of representations (diagonal action) lifting the isomorphism
-`k ≅ k ⊗ k`. Prove that the Alexander–Whitney map
-`(g₀, …, gₙ) ↦ Σ_{p+q=n} (g₀, …, g_p) ⊗ (g_p, …, gₙ)` is one on `Rep.standardResolution`, that any
-two diagonal approximations of resolutions are chain homotopic after the comparison maps, and that
+`k ≅ k ⊗ k`. The Alexander–Whitney map
+`(g₀, …, gₙ) ↦ Σ_{p+q=n} (g₀, …, g_p) ⊗ (g_p, …, gₙ)` on `Rep.standardResolution` is Tau Ceti's
+`CategoryTheory.SimplicialObject.alexanderWhitney` of two copies of the simplicial object of
+`Rep k G` whose alternating face map complex is `Rep.standardComplex` (the linearization of
+`classifyingSpaceUniversalCover G`), composed with the map of complexes induced by the diagonal of
+that simplicial object, the linearization of `x ↦ (x, x)` followed by the comultiplication of the
+monoidal functor `Rep.linearization`, which sends `(g₀, …, gₙ)` to `(g₀, …, gₙ) ⊗ (g₀, …, gₙ)` in
+degree `n` of the degreewise tensor product (not in degree `2n` of `P ⊗ P`, the non-example below).
+Prove that this composite lifts `k ≅ k ⊗ k` (in degree `0` it sends `(g₀)` to `(g₀) ⊗ (g₀)`, and
+both augmentations give `1`), so that it is a diagonal approximation; that any
+two diagonal approximations of resolutions are chain homotopic after the comparison maps; and that
 the cup product along `Δ`, which is Tau Ceti's `TauCeti.ChainComplex.cup` in `Rep k G` for
 `A = B = E = P` and `D = Δ` (on cochains `μ ∘ (φ ⊗ ψ) ∘ Δ`, with the Leibniz rule
 `TauCeti.ChainComplex.d_comp_cupCochain`, whose sign is that of 4.1), computes `∪_μ` through
 `groupCohomologyIso` for every `P` and `Δ` (Brown82 Ch. V; HS53 Ch. II §1, pp. 118–119 for the
-cochain formula). *Needs:* 4.1; Mathlib `Rep.standardResolution`, `groupCohomologyIso`; Tau Ceti
-`TauCeti.ChainComplex.cupCochain`, `TauCeti.ChainComplex.d_comp_cupCochain`,
-`TauCeti.ChainComplex.cup`.
+cochain formula). *Needs:* 4.1; Mathlib `Rep.standardResolution`, `Rep.standardComplex`,
+`Rep.linearization`, `groupCohomologyIso`; Tau Ceti `CategoryTheory.SimplicialObject.alexanderWhitney`,
+`CategoryTheory.SimplicialObject.alexanderWhitney_f`, `TauCeti.ChainComplex.cupCochain`,
+`TauCeti.ChainComplex.d_comp_cupCochain`, `TauCeti.ChainComplex.cup`.
 
 - A diagonal approximation exists for every projective resolution and is unique up to chain
   homotopy; the comparison theorem gives the homotopy.
@@ -1383,8 +1452,9 @@ fundamental class `[e₁|e₂] − [e₂|e₁]` of `ℤ²` sends `x ∪ y` to `1
 ### Dependencies
 
 Layers 1–2; Tau Ceti's corestriction, transfer, Tate and continuous cups and finite-quotient
-colimit; Tau Ceti's cup and cap products along a diagonal, Kronecker map and identification of
-`Hom((A ⊗ P)_G, N)` with `Hom_G(P, Hom_k(A, N))`; ProfiniteCohomology §10.1 and Layer 12.
+colimit; Tau Ceti's Alexander–Whitney map of simplicial objects, for 4.4; Tau Ceti's cup and cap
+products along a diagonal, Kronecker map and identification of `Hom((A ⊗ P)_G, N)` with
+`Hom_G(P, Hom_k(A, N))`; ProfiniteCohomology §10.1 and Layer 12.
 
 ---
 
@@ -1399,7 +1469,22 @@ the tensor product of the standard resolutions is a projective resolution of `k`
 because each is contractible over `k` (Loh19 proof of Cor. 3.2.23, p. 136). Define the natural cross
 product `× : H_p(G, M) ⊗_k H_q(H, N) → H_{p+q}(G × H, M ⊠ N)` as the map induced by the
 Eilenberg–Zilber shuffle map of the standard resolutions: a `(p, q)`-shuffle contributes its sign,
-so for trivial coefficients `[g] × [h] = [(g, 1)|(1, h)] − [(1, h)|(g, 1)]`. Prove that if `k` has global
+so for trivial coefficients `[g] × [h] = [(g, 1)|(1, h)] − [(1, h)|(g, 1)]`. The shuffle map is Tau
+Ceti's `SSet.shuffle` for the underlying simplicial sets of `classifyingSpaceUniversalCover G` and
+`classifyingSpaceUniversalCover H` with coefficients `k`, whose simplicial chains
+(`SSet.chainComplex`) are, through the isomorphisms `⊕_{G^{n+1}} k ≅ k[G^{n+1}]`, the underlying
+complexes of `k`-modules of the standard resolutions; their product has the `n`-simplices
+`G^{n+1} × H^{n+1} = (G × H)^{n+1}` and is, up to that bijection, the underlying simplicial set of
+`classifyingSpaceUniversalCover (G × H)`. It is `G × H`-equivariant by `SSet.shuffle_naturality`,
+each element acting by a simplicial automorphism, and it is the identity on vertices
+(`SSet.ιChainComplex_tensorHom_ιChainComplex_shuffle_f_zero`), so it lifts `k ⊗ k ≅ k` and the
+comparison theorem makes it a homotopy equivalence of resolutions over `G × H`; over `k` its
+homotopy inverse is the Alexander–Whitney map (`SSet.eilenbergZilberHomotopyEquiv`). Its sign is
+the one above: by `SSet.ιChainComplex_tensorHom_ιChainComplex_shuffle_f_one_one` the edges
+`x = (1, g)` and `y = (1, h)` go to `(s₁x, s₀y) − (s₀x, s₁y)`, the simplices
+`((1, 1), (g, 1), (g, h))` and `((1, 1), (1, h), (g, h))`, which are `[(g, 1)|(1, h)]` and
+`[(1, h)|(g, 1)]` under `(x₀, x₁, x₂) ↦ [x₀⁻¹x₁|x₁⁻¹x₂]`, the passage under which Mathlib's
+differential reads `d[x|y] = [y] − [xy] + [x]` for trivial coefficients. Prove that if `k` has global
 dimension at most one and one of `M`, `N` is flat over `k`, then
 `0 → ⊕_{p+q=n} H_p(G, M) ⊗ H_q(H, N) → Hₙ(G × H, M ⊠ N) → ⊕_{p+q=n−1} Tor₁^k(H_p(G, M), H_q(H, N)) → 0`
 is exact for every `n`, natural in compatible pairs on both factors, and split (not naturally); and
@@ -1427,8 +1512,11 @@ bounded-above complexes of flat modules), hence a quasi-isomorphism (Tau Ceti
 product is natural, so the retraction transports to one of the cross product of `K` and `L`. When
 `N` is projective, Tau Ceti's `HomologicalComplex.homologyKunnethShortComplex_shortExact` gives the
 sequence directly, with no condition on `M`. *Needs:* Mathlib `Rep.standardResolution`,
-`groupHomologyIso`, `ComplexShape.embeddingDownNat`; SpectralSequencesAndConvergencePartII §4.3
-with `gap:flat-kunneth`; Tau Ceti `HomologicalComplex.homologyCross`,
+`Rep.standardComplex`, `SSet.chainComplex`, `groupHomologyIso`, `ComplexShape.embeddingDownNat`;
+SpectralSequencesAndConvergencePartII §4.3 with `gap:flat-kunneth`; Tau Ceti `SSet.shuffle`,
+`SSet.shuffle_naturality`, `SSet.ιChainComplex_tensorHom_ιChainComplex_shuffle_f_zero`,
+`SSet.ιChainComplex_tensorHom_ιChainComplex_shuffle_f_one_one`,
+`SSet.eilenbergZilberHomotopyEquiv`, `HomologicalComplex.homologyCross`,
 `HomologicalComplex.homologyKunneth`, `HomologicalComplex.homologyKunnethShortComplex_shortExact`,
 `HomologicalComplex.homologyKunnethShortComplexSplitting`,
 `CochainComplex.exists_quasiIso_projective`,
@@ -1600,7 +1688,10 @@ directed-union identification of SchemeKTheoryOperations §6.7, whose surjective
 
 ### Dependencies
 
-Layers 3–4; Tau Ceti's Künneth and universal coefficient sequences, Kronecker map and the
+Layers 3–4; Tau Ceti's shuffle and Alexander–Whitney maps of simplicial chains and the
+Eilenberg–Zilber theorem, for 5.1; Tau Ceti's half of the directed-union identification and the
+vanishing of the homology of directed unions, for 5.4, with SchemeKTheoryOperations §6.7 for the
+other half; Tau Ceti's Künneth and universal coefficient sequences, Kronecker map and the
 identification of `Hom((A ⊗ P)_G, N)`, its projective replacements of bounded-above complexes,
 K-flatness of bounded-above complexes of flat modules and split cycles over a ring of global
 dimension at most one; SpectralSequencesAndConvergencePartII §4.3 with `gap:flat-kunneth` for the
@@ -1907,12 +1998,13 @@ modulo `d(K₂)`, `[r] + [r′] − [rr′] − [1] = d([r|r′] − [1|1])` mak
 `[ry] − [y] ≡ [r] − [1]` (the boundary of `[r|y] − [1|y]`) makes it onto, and `[frf⁻¹] ≡ [r]`
 (the boundaries of `[f|r] − [f|1]` and `[fr|f⁻¹] − [f|f⁻¹]`) makes it kill `⁅F, R⁆`. Under
 `H₁(F, ℤ) ≅ F^ab`, `[f] ↦ f`, the map `H₁(K) → H₁(F, ℤ)` is `R ⧸ ⁅F, R⁆ → F^ab`; since
-`H₂(F, ℤ) = 0` (3.6), the long exact sequence makes `h` an isomorphism onto its kernel
+`H₂(F, ℤ) = 0` (Tau Ceti `TauCeti.isZero_groupHomology_freeGroup` with `k = ℤ`, `n = 2`), the long
+exact sequence makes `h` an isomorphism onto its kernel
 `(R ⊓ ⁅F, F⁆) ⧸ ⁅F, R⁆`. Loh19 obtains the abstract isomorphism from the five-term sequence of 6.7;
 the chain-level normalisation of K2SymbolsBrauer §1.1 does not depend on the sign of that
-sequence's `d²`. The route uses neither the torus value nor the naturality of §1.1. *Needs:* 3.6;
-K2SymbolsBrauer §1.1 (the normalisation); Mathlib `FreeGroup`,
-`groupHomology.inhomogeneousChains`, `CategoryTheory.ShortComplex.ShortExact.δ`,
+sequence's `d²`. The route uses neither the torus value nor the naturality of §1.1. *Needs:* Tau
+Ceti `TauCeti.isZero_groupHomology_freeGroup`; K2SymbolsBrauer §1.1 (the normalisation); Mathlib
+`FreeGroup`, `groupHomology.inhomogeneousChains`, `CategoryTheory.ShortComplex.ShortExact.δ`,
 `groupHomology.H1AddEquivOfIsTrivial`; StableHomotopyKTheory §3.29 for a Check.
 
 **Checks.**
@@ -1930,8 +2022,8 @@ K2SymbolsBrauer §1.1 (the normalisation); Mathlib `FreeGroup`,
   is as natural, gives `⁅a, b⁆`, the other generator of `⁅F, F⁆ ⧸ ⁅F, ⁅F, F⁆⁆ ≅ ℤ`: it is the
   normalisation §1.1 excludes. Writing `y⁻¹x` for `xy⁻¹` gives the same value, since `F` acts
   trivially on `R ⧸ ⁅F, R⁆`.
-- A free group `G = F` with `R = 1` gives `0` on both sides, as `Hₙ(F, ℤ) = 0` for `n ≥ 2` (3.6)
-  requires.
+- A free group `G = F` with `R = 1` gives `0` on both sides, as `H₂(F, ℤ) = 0`
+  (`TauCeti.isZero_groupHomology_freeGroup`) requires.
 - Perfect groups, compared with StableHomotopyKTheory §3.29: if `G` is perfect then
   `⁅F, F⁆R = F`, so `⁅F, F⁆ ⧸ ⁅F, R⁆ → G` is onto with kernel `(R ⊓ ⁅F, F⁆) ⧸ ⁅F, R⁆`, the kernel
   of the universal central extension, and 6.8 identifies it with `H₂(G, ℤ)` through `h`, where
@@ -1971,13 +2063,13 @@ invisible mod `2`). By 6.6, `d₂y = x²`, the scalarised extension class `c_{�
 
 ### Dependencies
 
-Layers 1–4 and 3.6; MappingClassGroupsAndCanonicalRepresentations §1.1; Tau Ceti's filtered
-spectral sequences, inflation–restriction, transgression lift and the naturality of
-`groupHomologyIso` in the group; DerivedModuleAlgebra §S.1 with `gap:homological-low-degree`;
-SpectralSequencesAndConvergencePartII §5.2 for the pairings of 6.5; ProfiniteCohomology §§3.1, 5.5
-for 6.9; K2SymbolsBrauer §1.1 for the normalisation of the map of
-6.8; StableHomotopyKTheory §3.29 for a Check of 6.8; IntegralIwasawaTheoryPartII §0.7 for a Check
-of 6.4.
+Layers 1, 2 and 4; Tau Ceti's vanishing of the homology of free groups with trivial coefficients,
+for 6.8; MappingClassGroupsAndCanonicalRepresentations §1.1; Tau Ceti's filtered spectral sequences,
+inflation–restriction, transgression lift and the naturality of `groupHomologyIso` in the group;
+DerivedModuleAlgebra §S.1 with `gap:homological-low-degree`; SpectralSequencesAndConvergencePartII
+§5.2 for the pairings of 6.5; ProfiniteCohomology §§3.1, 5.5 for 6.9; K2SymbolsBrauer §1.1 for the
+normalisation of the map of 6.8; StableHomotopyKTheory §3.29 for a Check of 6.8;
+IntegralIwasawaTheoryPartII §0.7 for a Check of 6.4.
 
 ---
 

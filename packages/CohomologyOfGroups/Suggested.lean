@@ -37,9 +37,10 @@ Headline theorems of the roadmap that are not statable at the pins, and what eac
   3.5–3.6): groups acting on trees without inversion (FreeGroupsAndLimitGroups §4.6) and the
   connecting maps of the sequences;
 * the Künneth theorem in homology and in cohomology (README 5.1, 5.3) and the universal coefficient
-  sequences (README 5.2): the cross product, defined through the Eilenberg–Zilber shuffle map, the
-  cup product of README 4.1 for arbitrary groups and pairings, and the evaluation pairing of
-  README 4.6;
+  sequences (README 5.2): the cross product of group homology (Tau Ceti has the shuffle map
+  `SSet.shuffle` of simplicial chains, not its transport to the standard resolutions and to
+  coinvariants), the cup product of README 4.1 for arbitrary groups and pairings, and the
+  evaluation pairing of README 4.6;
 * the periodicity forced by an exact sequence of cohomologically trivial modules from `ℤ_χ` to `ℤ`
   (README 8.3): the class obtained from `1 ∈ Ĥ⁰(G, ℤ)` by the iterated connecting maps of the
   sequence.
