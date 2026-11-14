@@ -2,7 +2,7 @@
 
 Reviewers, red-team passes and errata jobs record every mistake they find in a source while checking a roadmap's locators: misprints (slips whose intended meaning is clear), errors (a false statement or proof step) and gaps (a step the source does not justify), each with the roadmap, the board pull request or errata job and the head that reported it. Collected by the board sync from the `## Source issues` sections of review, red-team and errata comments; the data is in `errata/source-issues.json`.
 
-13151 mistakes recorded on the board: 7521 misprints, 3459 errors, 1703 gaps, 468 unparsed bullets.
+13154 mistakes recorded on the board: 7523 misprints, 3459 errors, 1704 gaps, 468 unparsed bullets.
 Errata jobs have read the cited sources of 60 roadmaps; in those of 2 they found no mistake.
 The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explorer/`: 1525 awaiting review, 13582 confirmed, 228 rejected.
 
@@ -9631,6 +9631,7 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 - **Misprint** at Corollary 3.3 proof, printed p. 12 (line 518): the source says the relevant degrees are congruent to 3 modulo 3; it should be congruent to 3 modulo 4; affects the proof. Found by CohomologyOfGroups (#14777 at 35fb1a6, 2026-11-14, codex gpt-6-astra).
 - **Misprint** at Corollary 3.3 proof, printed p. 12, Hutchinson13 line 518: the source says degrees congruent to 3 modulo 3; it should be degrees congruent to 3 modulo 4; affects the proof. Found by CohomologyOfGroups (#14777 at 08ce0d9, 2026-11-14, codex gpt-6-astra).
 - **Misprint** at Corollary 3.3 proof, printed p. 12, line 518: the source says the second odd residue case is 3 modulo 3; it should be 3 modulo 4; affects the proof. Found by CohomologyOfGroups (#14777 at 2a8a308, 2026-11-13, codex gpt-6-astra).
+- **Misprint** at Corollary 3.3 proof, printed p.12 (Hutchinson13 line 518): the source says the indicated homology degree is congruent to 3 modulo 3; it should be congruent to 3 modulo 4; affects the proof. Found by CohomologyOfGroups (#15095 at 80f3b7c, 2026-11-14, codex gpt-6-astra).
 - **Misprint** at Corollary 3.3 proof, printed p.12 (line 518): the source says the degrees are congruent to 3 modulo 3; it should be congruent to 3 modulo 4; affects the proof. Found by CohomologyOfGroups (#14777 at 95b03fe, 2026-11-14, codex gpt-6-astra).
 - **Misprint** at Corollary 3.3, proof, printed p. 12 (Hutchinson13 line 518): the source says the degrees are those congruent to 3 modulo 3; it should be 3 modulo 4, as in the statement; affects the proof. Found by CohomologyOfGroups (#14777 at f0a1227, 2026-11-13, claude fable).
 - **Misprint** at Corollary3.3 proof, printed p.12, line518: the source says the relevant odd degrees are 3 modulo 3; it should be 3 modulo 4; affects the proof. Found by CohomologyOfGroups (#14777 at a5cef00, 2026-11-13, codex gpt-6-astra).
@@ -11656,6 +11657,7 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 
 - **Misprint** at Corollary 3.2.23 proof, printed p. 136 (lines 5903, 5908, 5927): the source says the tensor resolution has G in both factors; it should be G in the first factor and H in the second; affects the proof. Found by CohomologyOfGroups (#14777 at e75c7b5, 2026-11-13, codex gpt-6-astra).
 - **Misprint** at Corollary 3.2.23 proof, printed p. 136, lines 5903, 5908 and 5927: the source says both tensor factors use the resolution of G; it should be the resolutions of G and H respectively; affects the proof. Found by CohomologyOfGroups (#14777 at 2a8a308, 2026-11-13, codex gpt-6-astra).
+- **Misprint** at Corollary 3.2.23 proof, printed p.136 (Loh19 line 5903 and line 5908): the source says the tensor resolution uses the G-complex twice; it should be use the G-complex and the H-complex; affects the proof. Found by CohomologyOfGroups (#15095 at 80f3b7c, 2026-11-14, codex gpt-6-astra).
 - **Misprint** at Corollary3.2.23 proof, printed p.136, lines5903,5908,5927: the source says both tensor factors use the resolution of G; it should be the resolutions of G and H; affects the proof. Found by CohomologyOfGroups (#14777 at a5cef00, 2026-11-13, codex gpt-6-astra).
 - **Misprint** at Example 3.2.24, printed p. 137 (lines 5954–5955): the source says integral homology of ℤ² vanishes for n≥2; it should be n≥3, since the immediately preceding computation gives H₂=ℤ; affects a stated result. Found by CohomologyOfGroups (#14777 at e75c7b5, 2026-11-13, codex gpt-6-astra).
 - **Misprint** at Example 3.2.24, printed p. 137 (lines 5954–5955): the source says torus homology vanishes in degrees at least 2; it should be degrees at least 3, with H₂ equal to ℤ; affects a stated result. Found by CohomologyOfGroups (#14777 at 35fb1a6, 2026-11-14, codex gpt-6-astra).
@@ -12221,6 +12223,7 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 
 - **Gap** at Ch. II Remark 3.5, p. 81 (MilneCFT line 3813–3817): the source says the periodicity isomorphism is cup product with the class of the chosen character and postpones the proof; it should be proved, as 8.4 plans; affects a stated result. Found by CohomologyOfGroups (#15095 at 7bfdf06, 2026-11-14, claude fable).
 - **Gap** at Ch. II Remark 3.5, p. 81 (MilneCFT line 3813–3822): the source says the periodicity isomorphism is cup product with the class of the chosen character and defers the proof; it should be proved, as the roadmap's 8.4 does; affects a stated result. Found by CohomologyOfGroups (#15095 at cf9d800, 2026-11-14, claude fable).
+- **Gap** at Chapter II Remark 3.5, printed p.81 (MilneCFT line 3813–3822): the source says the periodic isomorphism is cup with the normalized character class, postponing proof; it should be justify that normalization or invoke its cited proof explicitly; affects the proof. Found by CohomologyOfGroups (#15095 at 80f3b7c, 2026-11-14, codex gpt-6-astra).
 
 ## MilneLEC
 
