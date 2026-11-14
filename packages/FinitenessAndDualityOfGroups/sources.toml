@@ -1,0 +1,13 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "FinitenessAndDualityOfGroups"
+
+[[source]]
+id = "Bieri1981"
+authors = "R. Bieri"
+title = "Homological Dimension of Discrete Groups (Queen Mary College Mathematics Notes, 2nd ed.)"
+year = 1981
+locator_scheme = "section"
+locator = "sections on duality groups over a commutative ring, on amalgamated products, and on countable groups (numbers to be read)"
+licence_class = "none"
+status = "waived"
+resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/14492#issuecomment-6873289060"
