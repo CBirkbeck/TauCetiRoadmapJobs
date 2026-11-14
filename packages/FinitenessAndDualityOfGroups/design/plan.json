@@ -576,9 +576,9 @@
        "statement": "Free group of countable rank over R ≠ 0: hd_R = 1, bound cd_R ≤ 2, true cd_R = 1 (2.6); over the zero ring both dimensions are 0."
       },
       {
-       "name": "S3",
+       "name": "Z2_cyclic_subgroups",
        "kind": "non-example",
-       "statement": "S₃ as union of its cyclic subgroups (not directed): the colimit identification fails."
+       "statement": "ℤ² is the union of its cyclic subgroups, a family that is not directed (⟨(1,0)⟩ and ⟨(0,1)⟩ have no cyclic upper bound), each of hd_ℤ ≤ 1, while hd_ℤ ℤ² = 2 (H₂(ℤ², ℤ) = ℤ): the formula hd_R G = sup_i hd_R G_i fails without directedness."
       }
      ]
     },
@@ -1409,7 +1409,7 @@
      "id": "6.5",
      "kind": "theorem",
      "name": "Group.IsDualityGroup.of_finiteIndex",
-     "statement": "A finite-index subgroup S of a duality group of dimension n over R is one, with restricted dualizing module and transfer of the fundamental class; over ℤ a torsion-free group with a finite-index duality subgroup of dimension n is one; an extension of duality groups of dimensions n (kernel) and m (quotient) over R is a duality group of dimension n + m with D_G ≅ D_{G⧸N} ⊗_R D_N.",
+     "statement": "A finite-index subgroup S of a duality group of dimension n over R is one, with restricted dualizing module and transfer of the fundamental class; over ℤ a torsion-free group with a finite-index duality subgroup of dimension n is one; an extension of duality groups of dimensions n (kernel N) and m (quotient) over R is a duality group of dimension n + m with D_G ≅ D_{G⧸N} ⊗_R D_N as representations of G, G acting diagonally, through G ⧸ N on D_{G⧸N}, and on D_N = Hⁿ(N, RN) by conjugation on N and on the coefficients RN: (g·f)(p) = g f(g⁻¹p) g⁻¹ on cochains of a projective RG-resolution, which for g ∈ N is right multiplication by g⁻¹ on the coefficients (the action of the Conventions).",
      "hypotheses": [
       "[S.FiniteIndex]",
       "torsion-free G for the second clause",
@@ -1417,7 +1417,7 @@
      ],
      "locator": {
       "source": "BieriEckmann1973",
-      "where": "Theorem 3.2 lines 366-386; Theorem 3.3 lines 388-465; Theorem 3.5 and Proposition 1.8, lines 255-272 and 468-516; over R the route is the proof"
+      "where": "Theorem 3.2 lines 366-386; Theorem 3.3 lines 388-465; Theorem 3.5 and Proposition 1.8, lines 255-272 and 468-516; §1.5 lines 238-253 and lines 474-477 for the action of G on Hⁿ(N; ℤN); over R the route is the proof"
      },
      "prerequisites": [
       "target:6.1",
@@ -1440,7 +1440,7 @@
       {
        "name": "klein_extension",
        "kind": "computation",
-       "statement": "Klein bottle group: D = R ⊗ H¹(⟨a⟩, R⟨a⟩) with t acting by −1."
+       "statement": "Klein bottle group, N = ⟨a⟩: D = R ⊗ H¹(⟨a⟩, R⟨a⟩); on the crossed homomorphism d with d(a) = 1, (t·d)(a) = t d(a⁻¹) t⁻¹ = −a, of augmentation −1, and a acts trivially, so w(t) = −1, w(a) = 1; t acting trivially on D_N would give w = 1 and H²(K, ℤ) = ℤ instead of ℤ/2."
       },
       {
        "name": "needs_torsion_free",
@@ -1489,12 +1489,12 @@
       {
        "name": "sphere",
        "kind": "non-example",
-       "statement": "S² is not aspherical; its trivial fundamental group is PD of dimension 0, not 2."
+       "statement": "S² is not aspherical; its trivial fundamental group is, over every nonzero R, PD of dimension 0, not 2 (the duality map H⁰(1, R) = R → H₂(1, R) = 0 is not bijective); over the zero ring it is PD of every dimension (6.4)."
       },
       {
        "name": "doubled_point_circle",
        "kind": "non-example",
-       "statement": "The circle with one point doubled is compact, connected, a smooth 1-manifold in Mathlib's sense and weakly equivalent to S¹ ∨ S¹ (aspherical, π₁ = F₂), but not Hausdorff; F₂ is not PD₁: H¹(F₂, ℤ) = ℤ² while H₀(F₂, ℤ_w) is ℤ or ℤ/2."
+       "statement": "The circle with one point doubled is compact, connected, a smooth 1-manifold in Mathlib's sense and weakly equivalent to S¹ ∨ S¹ (aspherical, π₁ = F₂), but not Hausdorff; over ℤ (indeed over every nonzero R, 6.4) F₂ is not PD₁: H¹(F₂, ℤ) = ℤ² while H₀(F₂, ℤ_w) is ℤ or ℤ/2; over the zero ring it is."
       }
      ]
     }
@@ -1655,35 +1655,38 @@
      "id": "7.4",
      "kind": "theorem",
      "name": "MonoidAlgebra.swan_mod_p",
-     "statement": "For G finite, P finitely generated projective over ℤG and p prime: ℤ_p ⊗ P ≅ (ℤ_p G)^m and 𝔽_p ⊗ P ≅ (𝔽_p G)^m, m as in 7.3.",
+     "statement": "For G finite, P finitely generated projective over ℤG and p prime: ℤ_(p) ⊗ P ≅ (ℤ_(p) G)^m, ℤ_p ⊗ P ≅ (ℤ_p G)^m and 𝔽_p ⊗ P ≅ (𝔽_p G)^m, m as in 7.3, with ℤ_(p) the localization of ℤ at (p) and ℤ_p the p-adic integers; the source states the ℤ_(p) form, and the ℤ_(p) form is obtained from the 𝔽_p form by lifting the isomorphism (Nakayama over ℤ_(p)).",
      "hypotheses": [
       "[Finite G]",
       "[Fact p.Prime]"
      ],
      "locator": {
       "source": "Brown1974",
-      "where": "Appendix A, lines 1311-1320"
+      "where": "Appendix A, lines 1311-1320 (the refinement of Swan's theorem over the localization of ℤ at every prime ideal; the ℤ_p and 𝔽_p forms follow by base change)"
      },
      "prerequisites": [
       "target:7.3",
-      "tauceti:TauCeti.nonempty_linearEquiv_of_projective_of_tensorRat"
+      "tauceti:TauCeti.nonempty_linearEquiv_of_projective_of_tensorRat",
+      "mathlib:PadicInt",
+      "mathlib:Localization.AtPrime",
+      "mathlib:Submodule.eq_bot_of_le_smul_of_le_jacobson"
      ],
      "api": [],
      "tests": [
       {
        "name": "regular",
        "kind": "degenerate",
-       "statement": "P = ℤG: m = 1."
+       "statement": "P = ℤG: m = 1 in all three forms; G = 1, P = ℤ^m: ℤ_(p)^m, ℤ_p^m and 𝔽_p^m."
       },
       {
        "name": "needs_projective",
        "kind": "non-example",
-       "statement": "Trivial ℤ over ℤ/p reduces to 𝔽_p, not free over 𝔽_p[ℤ/p]."
+       "statement": "Trivial ℤ over ℤ/p reduces to 𝔽_p, not free over 𝔽_p[ℤ/p]; ℤ_(p) and ℤ_p, of rank 1 < p, are not free over ℤ_(p)[ℤ/p] and ℤ_p[ℤ/p]."
       },
       {
        "name": "coprime",
        "kind": "compatibility",
-       "statement": "For p ∤ |G| the first isomorphism is also TauCeti.nonempty_linearEquiv_of_projective_of_tensorRat_of_not_dvd."
+       "statement": "For p ∤ |G| the ℤ_p form is also TauCeti.nonempty_linearEquiv_of_projective_of_tensorRat_of_not_dvd."
       }
      ]
     },
@@ -2467,11 +2470,11 @@
  "consumers": [
   {
    "roadmap": "MotivicStructuresInModuliOfCurves",
-   "what": "vcd and its independence of the subgroup (4.1) and vanishing of rational cohomology above vcd (4.3) for mapping class groups (TC.1)."
+   "what": "§2.1 (rational vanishing above the virtual cohomological dimension of mapping class groups) is an instance of 4.1 (vcd and its independence of the subgroup) and 4.3 (vanishing of rational cohomology above vcd) and can cite them."
   },
   {
    "roadmap": "PosetHomotopyAndSubgroupComplexes",
-   "what": "vcd, finite homological type and Euler characteristics (Layers 4 and 8)."
+   "what": "Places Brown's theorem on the p-fractional part of the Euler characteristic of a group of finite vcd outside its scope; the invariants that theorem concerns are vcd (4.1) and χ (8.4) of this roadmap."
   }
  ],
  "gaps": [

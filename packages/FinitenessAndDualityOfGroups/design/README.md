@@ -210,6 +210,12 @@ Pinned at `1b1ccf4b088b32fa3f23f2de1127433254a81e1e`.
   that `cell C n` is empty for all large `n`, finite type that each `cell C n` is finite.
 - `Module.Flat` for modules over a commutative ring (used only for `R`-modules, never for
   `RG`-modules), `Module.Projective` and `Module.Finite` over any semiring, `PadicInt`.
+- `Localization.AtPrime` (`Mathlib/RingTheory/Localization/AtPrime/Basic.lean` line 55), a local
+  ring by the instance `Localization.AtPrime.isLocalRing` (line 105), and Nakayama's lemma
+  `Submodule.eq_bot_of_le_smul_of_le_jacobson` (`Mathlib/RingTheory/Nakayama.lean` line 117): a
+  finitely generated submodule `N` with `N ≤ I • N`, for an ideal `I` contained in the Jacobson
+  radical, is zero. It is stated over a commutative ring, so for modules over a group ring of a
+  finite group (7.4, 7.5) it is applied over the local coefficient ring.
 - `IsMulTorsionFree` (`Mathlib/Algebra/Group/Monoid.lean` line 552), the meaning of *torsion-free*
   throughout: commuting elements with equal nonzero powers are equal; for a group it holds exactly
   when no element other than `1` has finite order (`isMulTorsionFree_iff_not_isOfFinOrder`,
@@ -1399,9 +1405,14 @@ of `S` (BieriEckmann1973 Theorem 3.2, lines 366–386, from Shapiro's lemma and 
 `tr(y ∩ z) = res y ∩ tr z`); (b) over `ℤ`, a torsion-free group with a finite-index subgroup that is a
 duality group of dimension `n` is one (BieriEckmann1973 Theorem 3.3, lines 388–465, with Serre's
 theorem 3.2); (c) for `N ◁ G` with `N` and `G ⧸ N` duality groups over `R` of dimensions `n` and `m`,
-`G` is a duality group of dimension `n + m` over `R` and `D_G ≅ D_{G⧸N} ⊗_R D_N` with `G` acting
-diagonally (BieriEckmann1973 Theorem 3.5 and Proposition 1.8, lines 255–272 and 468–516, over `ℤ`;
-over `R` the route below is the proof). Route for (c): CohomologyOfGroups §6.2 collapses for coefficients `A` with
+`G` is a duality group of dimension `n + m` over `R` and `D_G ≅ D_{G⧸N} ⊗_R D_N` as representations
+of `G`, acting diagonally on the tensor product, through `G ⧸ N` on `D_{G⧸N}`, and on
+`D_N = Hⁿ(N, RN)` by conjugation on `N` together with conjugation `r ↦ g r g⁻¹` on the coefficients
+`RN`: on a cochain `f` of a projective resolution `P` of `R` over `RG`, `(g·f)(p) = g f(g⁻¹p) g⁻¹`.
+For `g ∈ N` this is `(g·f)(p) = f(p) g⁻¹`, right multiplication by `g⁻¹` on the coefficients, the
+action of the Conventions (BieriEckmann1973 §1.5, lines 238–253, and the remark after Theorem 3.5,
+lines 474–477; Theorem 3.5 and Proposition 1.8, lines 255–272 and 468–516, over `ℤ`; over `R` the
+route below is the proof). Route for (c): CohomologyOfGroups §6.2 collapses for coefficients `A` with
 `H^q(N, A) = 0` for `q ≠ n`, the duality isomorphism of `N` is `G ⧸ N`-equivariant (BieriEckmann1973
 Proposition 1.8; over `R` the scalar by which `g` moves `e_N` is killed on `D_N`, hence on
 `Hₙ(N, D_N) ≅ R`, so it is `1`), and 6.3(b) applies. *Needs:* 6.1–6.3, 3.2; CohomologyOfGroups §1.2,
@@ -1411,7 +1422,12 @@ Proposition 1.8; over `R` the scalar by which `g` moves `e_N` is killed on `D_N`
 
 - `ℤⁿ⁺¹` is the extension of `ℤ` by `ℤⁿ`, and (c) gives `D = R ⊗ R = R`, recovering 6.4.
 - For the Klein bottle group, (c) with `N = ⟨a⟩` and `G ⧸ N = ⟨t⟩` gives
-  `D = R ⊗ H¹(⟨a⟩, R⟨a⟩)`, on which `t` acts through conjugation `a ↦ a⁻¹`, by `−1`.
+  `D = R ⊗ H¹(⟨a⟩, R⟨a⟩)`, on which `t` acts through conjugation `a ↦ a⁻¹`, by `−1`: on the
+  crossed homomorphism `d` with `d(a) = 1`, whose class generates `H¹(⟨a⟩, R⟨a⟩) = R⟨a⟩/(a − 1) ≅ R`,
+  `(t·d)(a) = t d(a⁻¹) t⁻¹ = −t a⁻¹ t⁻¹ = −a`, of augmentation `−1`, while `a` acts by right
+  multiplication by `a⁻¹`, trivially on the quotient. So `w(a) = 1` and `w(t) = −1`, as in 6.4; a
+  model with `t` acting trivially on `D_N` would give `w = 1`, hence `H²(K, ℤ) ≅ H₀(K, ℤ) = ℤ`,
+  against the true `ℤ/2`.
 - (b) needs torsion-freeness: `ℤ/2 × ℤ` contains the duality group `ℤ` with index `2` and is not a
   duality group over `ℤ` (`cd_ℤ = ⊤`).
 
@@ -1439,13 +1455,16 @@ ClassifyingSpaces Stage 4 item 17; Mathlib `ChartedSpace.secondCountable_of_sigm
   case.
 - The Klein bottle is a closed non-orientable aspherical surface, and the conclusion is the
   non-orientable character of 6.4.
-- Asphericity is used: `S²` is a closed manifold with trivial fundamental group, which is a Poincaré
-  duality group of dimension `0`, not `2`.
+- Asphericity is used: `S²` is a closed manifold with trivial fundamental group, which over every
+  nonzero `R` is a Poincaré duality group of dimension `0`, not `2`: in dimension `2` the duality map
+  `H⁰(1, R) = R → H₂(1, R) = 0` is not bijective. Over the zero ring it is one of every dimension
+  (6.4).
 - Hausdorffness is used: the circle with one point doubled (two copies of the circle glued along the
   complement of a point) is compact, connected and a smooth `1`-manifold in Mathlib's sense, and is
   the union of two open circles meeting in an open interval, so it is weakly equivalent to `S¹ ∨ S¹`:
-  aspherical with fundamental group `F₂`. But `F₂` is not a Poincaré duality group of dimension `1`:
-  `H¹(F₂, ℤ) = ℤ²`, while `H₀(F₂, ℤ_w)` is `ℤ` or `ℤ/2` for every `w`.
+  aspherical with fundamental group `F₂`. But over `ℤ` (indeed over every nonzero `R`, 6.4) `F₂` is
+  not a Poincaré duality group of dimension `1`: `H¹(F₂, ℤ) = ℤ²`, while `H₀(F₂, ℤ_w)` is `ℤ` or
+  `ℤ/2` for every `w`. Over the zero ring it is one (6.4).
 
 ### Examples
 
@@ -1549,18 +1568,28 @@ rank_ℤ(ℤ ⊗_{ℤG} P)` (Brown1974, §1, lines 168–172, citing Swan). Rout
 ### 7.4 Swan's theorem modulo `p`
 
 Prove that for `G` finite, `P` a finitely generated projective `ℤG`-module, `p` prime and `m` as in
-7.3, `ℤ_p ⊗ P ≅ (ℤ_p G)^m` and `𝔽_p ⊗ P ≅ (𝔽_p G)^m` (Brown1974 Appendix A, lines 1311–1320, the
-refinement used in the proof of Theorem 7). Route: `ℚ_p ⊗_{ℤ_p} (ℤ_p ⊗ P) ≅ ℚ_p ⊗_ℚ (ℚ ⊗ P) ≅
-(ℚ_p G)^m` by 7.3, so `TauCeti.nonempty_linearEquiv_of_projective_of_tensorRat` gives the first
-isomorphism, and reduction modulo `p` the second. *Needs:* 7.3; Tau Ceti
-`TauCeti.nonempty_linearEquiv_of_projective_of_tensorRat`.
+7.3, `ℤ_(p) ⊗ P ≅ (ℤ_(p) G)^m`, `ℤ_p ⊗ P ≅ (ℤ_p G)^m` and `𝔽_p ⊗ P ≅ (𝔽_p G)^m`, where `ℤ_(p)` is
+the localization of `ℤ` at the prime ideal `(p)` (`Localization.AtPrime`) and `ℤ_p` the ring of
+`p`-adic integers. The source states the first form, for the localization of `ℤ` at every prime
+ideal (Brown1974 Appendix A, lines 1311–1320, the refinement used in the proof of Theorem 7; at the
+zero ideal it is 7.3(b)); the other two follow from it by base change along `ℤ_(p) → ℤ_p` and
+`ℤ_(p) → 𝔽_p`. Route: `ℚ_p ⊗_{ℤ_p} (ℤ_p ⊗ P) ≅ ℚ_p ⊗_ℚ (ℚ ⊗ P) ≅ (ℚ_p G)^m` by 7.3, so
+`TauCeti.nonempty_linearEquiv_of_projective_of_tensorRat` gives the `ℤ_p` form, and reduction
+modulo `p` the `𝔽_p` form. For the `ℤ_(p)` form, lift an isomorphism `(𝔽_p G)^m ≅ 𝔽_p ⊗ P` to a map
+`(ℤ_(p) G)^m → ℤ_(p) ⊗ P`; its cokernel, and its kernel (a direct summand, `ℤ_(p) ⊗ P` being
+projective), are finitely generated over the local ring `ℤ_(p)` because `G` is finite, and both
+vanish modulo `p`, so both are zero by Nakayama's lemma over `ℤ_(p)`. *Needs:* 7.3; Tau Ceti
+`TauCeti.nonempty_linearEquiv_of_projective_of_tensorRat`; Mathlib `PadicInt`,
+`Localization.AtPrime`, `Submodule.eq_bot_of_le_smul_of_le_jacobson`.
 
 **Checks.**
 
-- For `P = ℤG` both statements are the identity with `m = 1`.
+- For `P = ℤG` the three statements are the identity with `m = 1`; for `G` trivial and `P = ℤ^m`
+  they read `ℤ_(p)^m`, `ℤ_p^m` and `𝔽_p^m`.
 - Projectivity is used: the trivial module `ℤ` over `G = ℤ/p` reduces to `𝔽_p`, of dimension `1`,
-  which is not free over `𝔽_p G` (dimension `p`), and `ℤ_p` is not free over `ℤ_p G`.
-- For `p ∤ |G|`, the first isomorphism is also `TauCeti.nonempty_linearEquiv_of_projective_of_tensorRat_of_not_dvd`.
+  which is not free over `𝔽_p G` (dimension `p`), and `ℤ_(p)` and `ℤ_p`, of rank `1 < p`, are not free
+  over `ℤ_(p) G` and `ℤ_p G`.
+- For `p ∤ |G|`, the `ℤ_p` form is also `TauCeti.nonempty_linearEquiv_of_projective_of_tensorRat_of_not_dvd`.
 
 ### 7.5 Homomorphisms from a projective module into a finite-dimensional representation
 
@@ -2051,11 +2080,12 @@ CohomologyOfGroups §3.6 for Checks.
 
 ## Downstream consumers
 
-- MotivicStructuresInModuliOfCurves (TC.1, the virtual cohomological dimension of mapping class
-  groups) consumes 4.1 (the definition and independence of `vcd`) and 4.3 (vanishing of rational
-  cohomology above `vcd`).
-- PosetHomotopyAndSubgroupComplexes, which leaves Brown's theorems on `χ` and the finite subgroups to
-  a roadmap with `vcd` and `χ`, consumes Layers 4 and 8.
+- MotivicStructuresInModuliOfCurves §2.1 (rational vanishing above the virtual cohomological
+  dimension of mapping class groups) is an instance of 4.1 (the definition and independence of
+  `vcd`) and 4.3 (vanishing of rational cohomology above `vcd`) and can cite them.
+- PosetHomotopyAndSubgroupComplexes places Brown's theorem on the `p`-fractional part of the Euler
+  characteristic of a group of finite virtual cohomological dimension outside its scope; the
+  invariants that theorem concerns are `vcd` (4.1) and `χ` (8.4) of this roadmap.
 - ArithmeticKTheory §3.2 (Borel–Serre duality), the arithmetic roadmaps (`vcd` and `χ` of
   arithmetic groups), BianchiModularForms §9.3 and FuchsianOrbifolds (orbifold Euler
   characteristics) and MappingClassGroupsAndCanonicalRepresentations (mapping class groups) state
