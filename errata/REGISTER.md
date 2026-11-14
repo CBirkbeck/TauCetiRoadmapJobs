@@ -2,7 +2,7 @@
 
 Reviewers, red-team passes and errata jobs record every mistake they find in a source while checking a roadmap's locators: misprints (slips whose intended meaning is clear), errors (a false statement or proof step) and gaps (a step the source does not justify), each with the roadmap, the board pull request or errata job and the head that reported it. Collected by the board sync from the `## Source issues` sections of review, red-team and errata comments; the data is in `errata/source-issues.json`.
 
-13165 mistakes recorded on the board: 7532 misprints, 3459 errors, 1706 gaps, 468 unparsed bullets.
+13166 mistakes recorded on the board: 7533 misprints, 3459 errors, 1706 gaps, 468 unparsed bullets.
 Errata jobs have read the cited sources of 60 roadmaps; in those of 2 they found no mistake.
 The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explorer/`: 1525 awaiting review, 13582 confirmed, 228 rejected.
 
@@ -9641,6 +9641,7 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 - **Misprint** at Corollary 3.3 proof, printed p. 12 (line 518): the source says the relevant degrees are congruent to 3 modulo 3; it should be congruent to 3 modulo 4; affects the proof. Found by CohomologyOfGroups (#14777 at 35fb1a6, 2026-11-14, codex gpt-6-astra).
 - **Misprint** at Corollary 3.3 proof, printed p. 12, Hutchinson13 line 518: the source says degrees congruent to 3 modulo 3; it should be degrees congruent to 3 modulo 4; affects the proof. Found by CohomologyOfGroups (#14777 at 08ce0d9, 2026-11-14, codex gpt-6-astra).
 - **Misprint** at Corollary 3.3 proof, printed p. 12, line 518: the source says the second odd residue case is 3 modulo 3; it should be 3 modulo 4; affects the proof. Found by CohomologyOfGroups (#14777 at 2a8a308, 2026-11-13, codex gpt-6-astra).
+- **Misprint** at Corollary 3.3 proof, printed p. 12, line 518: the source says the relevant degree is congruent to three modulo three; it should be congruent to three modulo four; affects the proof. Found by CohomologyOfGroups (#15095 at 9b32320, 2026-11-14, codex gpt-6-astra).
 - **Misprint** at Corollary 3.3 proof, printed p.12 (Hutchinson13 line 518): the source says the indicated homology degree is congruent to 3 modulo 3; it should be congruent to 3 modulo 4; affects the proof. Found by CohomologyOfGroups (#15095 at 80f3b7c, 2026-11-14, codex gpt-6-astra).
 - **Misprint** at Corollary 3.3 proof, printed p.12 (line 518): the source says the degrees are congruent to 3 modulo 3; it should be congruent to 3 modulo 4; affects the proof. Found by CohomologyOfGroups (#14777 at 95b03fe, 2026-11-14, codex gpt-6-astra).
 - **Misprint** at Corollary 3.3, proof, printed p. 12 (Hutchinson13 line 518): the source says the degrees are those congruent to 3 modulo 3; it should be 3 modulo 4, as in the statement; affects the proof. Found by CohomologyOfGroups (#14777 at f0a1227, 2026-11-13, claude fable).
