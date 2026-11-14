@@ -1,0 +1,13 @@
+{
+  "review": {
+    "status": "needs_changes",
+    "reviewer": "independent-review-PRREVIEW-PivotalSpherical~2",
+    "head": "366c9e0dcfc8672fc0529883d7ec32f771962cc6",
+    "pr": 2311,
+    "folder": "PivotalSpherical",
+    "date": "2026-11-14",
+    "findings": 21,
+    "blocking": 11,
+    "notes": "Full folder reviewed; all eight seeded targets, seven readable mathematical sources, six upstream PR pages, pinned APIs and closest-roadmap ownership checked. Gate fails; direct Lean elaboration reproduces End/Hom mismatch, scratch asHom repair passes. Adversarial table includes matrix-category counterexample to tensor trace multiplicativity; dependency check reports zero problems."
+  }
+}

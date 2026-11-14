@@ -1,0 +1,148 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "PivotalSpherical"
+
+[[source]]
+id = "eno"
+authors = "Pavel Etingof, Dmitri Nikshych, Viktor Ostrik"
+title = "On fusion categories"
+year = 2002
+arxiv = "math/0203060v11"
+locator_scheme = "theorem"
+locator = "Proposition 2.1, Definition 2.2, Theorems 2.3 and 2.15, Proposition 8.23"
+url = "https://arxiv.org/abs/math/0203060v11"
+fetched_from = "https://arxiv.org/pdf/math/0203060v11"
+fetched_at = "2026-11-14T09:13:36Z"
+sha256 = "fa7e21ceab3e9933f7fe22e13dbfb4678d092edfd062f2ac48e94463f7f15124"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-14"
+version_note = "arXiv v11"
+cited_for = ["Layers 6 and 11"]
+
+[[source]]
+id = "hpt"
+authors = "André Henriques, David Penneys, James Tener"
+title = "Categorified trace for module tensor categories over braided tensor categories"
+year = 2015
+venue = "Documenta Mathematica 21 (2016) 1089-1149"
+arxiv = "1509.02937v1"
+locator_scheme = "theorem"
+locator = "Proposition 2.3; equation (3); Proposition A.4"
+url = "https://arxiv.org/abs/1509.02937v1"
+fetched_from = "https://arxiv.org/pdf/1509.02937v1"
+fetched_at = "2026-11-14T09:14:14Z"
+sha256 = "19da882a630a32a72ebe111a2f0522aa08b08887f66e4a186c40bec35a638158"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-14"
+version_note = "arXiv v1"
+cited_for = ["Layers 1, 2 and 10"]
+
+[[source]]
+id = "egno"
+authors = "Pavel Etingof, Shlomo Gelaki, Dmitri Nikshych, Victor Ostrik"
+title = "Tensor Categories"
+year = 2015
+version_note = "Author final version; printed page numbering"
+locator_scheme = "section"
+locator = "2.3, 2.10, 3.2–3.3, 4.7, 4.14, 7.21, 9.2–9.3"
+url = "https://math.mit.edu/~etingof/egnobookfinal.pdf"
+fetched_from = "https://math.mit.edu/~etingof/egnobookfinal.pdf"
+fetched_at = "2026-11-14T09:28:54Z"
+sha256 = "a40d076197b666d8b3b231ac59748a95f9b311d49ce57f4024c0da8308796db3"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-14"
+cited_for = ["Layers 0–11"]
+
+[[source]]
+id = "dgno"
+authors = "Vladimir Drinfeld, Shlomo Gelaki, Dmitri Nikshych, Victor Ostrik"
+title = "On braided fusion categories I"
+year = 2009
+arxiv = "0906.0620v3"
+locator_scheme = "theorem"
+locator = "Proposition 2.3(iii)"
+url = "https://arxiv.org/abs/0906.0620v3"
+fetched_from = "https://arxiv.org/pdf/0906.0620v3"
+fetched_at = "2026-11-14T09:15:23Z"
+sha256 = "ac52274d8a94fcd0f346a3ac7d0cff6e97aca14eec6ec0a7c0825722c69d0587"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-14"
+version_note = "arXiv v3"
+cited_for = ["Layer 9"]
+
+[[source]]
+id = "ns"
+authors = "Siu-Hung Ng, Peter Schauenburg"
+title = "Higher Frobenius-Schur Indicators for Pivotal Categories"
+year = 2005
+venue = "Contemporary Mathematics 441 (2007), 63-90"
+doi = "10.1090/conm/441/08500"
+arxiv = "math/0503167v2"
+locator_scheme = "theorem"
+locator = "Definition 3.1, Theorem 5.1"
+url = "https://arxiv.org/abs/math/0503167v2"
+fetched_from = "https://arxiv.org/pdf/math/0503167v2"
+fetched_at = "2026-11-14T09:16:04Z"
+sha256 = "0b2754134a943a6ffd95f15038e2e33bccc865b5bca4a078f7f6f7e7ed28476c"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-14"
+version_note = "arXiv v2"
+cited_for = ["Layer 8"]
+
+[[source]]
+id = "muger"
+authors = "Michael Mueger"
+title = "From Subfactors to Categories and Topology II. The quantum double of tensor categories and subfactors"
+year = 2001
+venue = "J. Pure Appl. Alg. 180, 159-219 (2003)"
+arxiv = "math/0111205v1"
+locator_scheme = "theorem"
+locator = "Theorems 3.9, 4.1, 4.5"
+url = "https://arxiv.org/abs/math/0111205v1"
+fetched_from = "https://arxiv.org/pdf/math/0111205v1"
+fetched_at = "2026-11-14T09:18:11Z"
+sha256 = "66325a21651aff89b24b08c459728ef3e03b483d9c0108d0790da3b2da7aea32"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-14"
+version_note = "arXiv v1"
+cited_for = ["Layer 11"]
+
+[[source]]
+id = "selinger"
+authors = "Peter Selinger"
+title = "A survey of graphical languages for monoidal categories"
+year = 2009
+venue = "Springer Lecture Notes in Physics 813, pp. 289-355, 2011"
+doi = "10.1007/978-3-642-12821-9_4"
+arxiv = "0908.3347v1"
+locator_scheme = "theorem"
+locator = "Lemma 4.11"
+url = "https://arxiv.org/abs/0908.3347v1"
+fetched_from = "https://arxiv.org/pdf/0908.3347v1"
+fetched_at = "2026-11-14T09:18:38Z"
+sha256 = "7ecac08962c1238739d2e4eb2da79ed197347d9046a136e1c39840e7a4d0bc44"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-14"
+version_note = "arXiv v1"
+cited_for = ["Layer 1 supplier provenance"]
+
+[[source]]
+id = "freyd-yetter"
+authors = "Peter J Freyd, David N Yetter"
+title = "Braided compact closed categories with applications to low dimensional topology"
+year = 1989
+venue = "Advances in Mathematics 77"
+doi = "10.1016/0001-8708(89)90018-2"
+locator_scheme = "page"
+locator = "156–182"
+url = "https://doi.org/10.1016/0001-8708(89)90018-2"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["Pivotal structure provenance"]
