@@ -7,7 +7,7 @@ authors = ["The Stacks Project Authors"]
 title = "The Stacks Project, chapter Homological Algebra"
 year = 2026
 locator_scheme = "tag"
-locator = "012K; tags 011N, 011O, 011Q–011T, 0121, 012B–012D, 012L–012W, 0BDU–0BDW, 0BK5, 02N0, 02N1"
+locator = "012K; tags 02MO, 0754, 011N, 011O, 011Q–011T, 0121, 012B–012D, 012L–012W, 0BDU–0BDW, 0BK5, 02N0, 02N1"
 url = "https://stacks.math.columbia.edu/tag/012K"
 fetched_from = "https://stacks.math.columbia.edu/download/homology.pdf#nameddest=012K"
 fetched_at = "2026-11-05T04:40:26Z"
@@ -40,7 +40,7 @@ cited_for = ["Layer 3 Examples"]
 id = "helle-rognes2024"
 authors = ["G. O. Helle", "J. Rognes"]
 title = "Boardman's whole-plane obstruction group for Cartan-Eilenberg systems"
-year = 2024
+year = 2019
 locator_scheme = "section"
 locator = "Definitions 2.3, 2.5, 2.7, 3.1, 3.3, 3.6, 3.7, 3.11, 4.5; Lemmas 2.2, 2.6, 3.4, 3.13–3.15; Theorems 3.9, 3.10; Remarks 2.4, 3.5, 4.6, 4.10; the sequence (3.1); Example 8.1"
 url = "https://www.mn.uio.no/math/personer/vit/rognes/papers/ce.pdf"
@@ -50,6 +50,7 @@ sha256 = "b57ad81f08733c2bf4e259fe3190cbc58521a79a097221646ea716439977f09f"
 licence_class = "author-page"
 status = "certified"
 accessed = "2026-11-05"
+version_note = "Published in Documenta Mathematica 24 (2019), 1855-1878 (publisher copy https://ems.press/content/serial-article-files/26495). The recorded copy is the author draft dated 2 February 2018, and every line locator refers to it. Its numbering of the cited items (Definitions 2.3, 2.5, 2.7, 3.1, 3.3, 3.6, 3.7, 3.11, 4.5; Lemmas 2.2, 2.6, 3.4, 3.13-3.15; Theorems 3.9, 3.10; Remarks 2.4, 3.5, 4.6, 4.10; the sequence (3.1); Example 8.1) agrees with the published version."
 cited_for = ["Conventions", "1.1", "1.2", "1.4", "3.1", "3.2", "4.1", "4.2", "6.2", "7.1", "7.3", "7.4"]
 
 [[source]]
@@ -99,11 +100,11 @@ title = "A User's Guide to Spectral Sequences, 2nd ed."
 year = 2001
 doi = "10.1017/CBO9780511626289"
 locator_scheme = "chapter"
-locator = "Ch. 2, Ch. 3"
+locator = "Ch. 2"
 licence_class = "none"
 status = "uncertified"
 version_note = "paywalled; cited by its locator without the text"
-cited_for = ["3.6", "References"]
+cited_for = ["3.6"]
 
 [[source]]
 id = "massey1952"
@@ -124,20 +125,20 @@ authors = ["H. Cartan", "S. Eilenberg"]
 title = "Homological Algebra"
 year = 1956
 locator_scheme = "chapter"
-locator = "Ch. XV"
+locator = "Ch. XV §2"
 licence_class = "none"
 status = "uncertified"
-version_note = "paywalled; cited by its locator without the text"
-cited_for = ["References"]
+version_note = "paywalled; cited by its locator without the text; the locator is the attribution of helle-rognes2024 line 94 (Definition 2.7)"
+cited_for = ["3.2"]
 
 [[source]]
 id = "bhatt-scholze2015"
-authors = "Bhargav Bhatt, Peter Scholze"
+authors = ["Bhargav Bhatt", "Peter Scholze"]
 title = "The pro-étale topology for schemes"
-year = 2013
+year = 2015
 arxiv = "1309.1198v2"
 locator_scheme = "theorem"
-locator = "Definition 3.1.1, Proposition 3.1.10"
+locator = "Definition 3.1.1, Propositions 3.1.9 and 3.1.10"
 url = "https://arxiv.org/abs/1309.1198v2"
 fetched_from = "https://arxiv.org/pdf/1309.1198v2"
 fetched_at = "2026-11-13T12:25:40Z"
@@ -145,5 +146,5 @@ sha256 = "ae0960a28f0f25300211569cd350def057d6c0f781f635694182868e766d3c84"
 licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-13"
-version_note = "arXiv v2"
+version_note = "Published in Astérisque 369 (2015). The recorded copy is arXiv v2 (dated 17 December 2014; v1 of 2013), and its numbering (Definition 3.1.1, Propositions 3.1.9 and 3.1.10) is used; the journal numbering was not compared."
 cited_for = ["7.2"]
