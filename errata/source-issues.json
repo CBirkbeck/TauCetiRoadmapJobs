@@ -212667,10 +212667,26 @@
    "reported": "2026-11-14",
    "reporter": "codex gpt-6-astra",
    "comment": "https://github.com/TauCetiProject/TauCetiRoadmapJobs/pull/15109#issuecomment-6879613267"
+  },
+  {
+   "kind": "misprint",
+   "source": "Hutchinson13",
+   "locator": "Corollary 3.3 proof, printed p. 12, line 518",
+   "says": "the relevant degree is congruent to three modulo three",
+   "should": "congruent to three modulo four",
+   "affects": "the proof",
+   "note": "",
+   "roadmap": "CohomologyOfGroups",
+   "job": "REV-PKG-CohomologyOfGroups~6",
+   "board_pr": 15095,
+   "head": "9b32320",
+   "reported": "2026-11-14",
+   "reporter": "codex gpt-6-astra",
+   "comment": "https://github.com/TauCetiProject/TauCetiRoadmapJobs/pull/15095#issuecomment-6881455860"
   }
  ],
- "scanned_to": "2026-11-14T15:21:17Z",
- "updated": "2026-11-14T15:32:56Z",
+ "scanned_to": "2026-11-14T17:28:30Z",
+ "updated": "2026-11-14T17:53:23Z",
  "covered": [
   {
    "job": "ERRATA-TemperleyLieb",
