@@ -91,6 +91,13 @@ It leaves to named owners:
   coefficient sequence for cohomology, K-flat complexes, `Tor` from presentations of length one,
   and the first-order Bockstein maps of continuous cohomology. These are instances of Layers 1, 2,
   4 and 6 and are consumed as they stand.
+- **KhovanovHomology, §K5**: for bounded complexes of finitely generated free `ℤ`-modules and an
+  abelian group `M`, the universal-coefficient short exact sequences for `C ⊗ M` and for
+  `Hom(C, M)`, the Künneth short exact sequence of two such complexes, and the comparison of
+  `CategoryTheory.Tor'` with `CategoryTheory.Tor` through a two-term free presentation of the first
+  variable. Over `ℤ` these are the two-column sequences of 4.2(a), 4.2(c) and 4.3 and the case of 4.1
+  for a first variable with a free resolution of length one; they stay with their owner and are
+  compared in Checks of 4.1–4.3.
 - **AlgebraicTopology, §5.1** (the Künneth spectral sequence of singular chains),
   **DGFloer, Layer 1 item 2** (the multiplicative Serre spectral sequence),
   **SchemeAndStackFoundations, §§2.2, 2.7, 2.15** (`leray_spectral_sequence`,
@@ -105,10 +112,11 @@ are not part of this roadmap. Neither are the
 uniqueness of Cartan–Eilenberg resolutions up to homotopy of double complexes (no statement here
 needs it: Layer 2 obtains the independence of the hypercohomology spectral sequences from the
 existence of lifts), Grothendieck's comparison of the composite-functor sequences of a commuting
-square of functors with resolving functors, Douady's products of spectral systems, products on the
-hypercohomology and composite-functor spectral sequences, the extension of the hypercohomology
-sequences to unbounded complexes for functors of finite injective dimension, and the resolutions of
-unbounded complexes with exact kernel or cokernel complexes (stacks-012K Lemmas 26.2 and 26.3).
+square of functors with resolving functors, Douady's products of spectral systems (douady1959 line
+143–166, §II A), products on the hypercohomology and composite-functor spectral sequences, the
+extension of the hypercohomology sequences to unbounded complexes for functors of finite injective
+dimension, and the resolutions of unbounded complexes with exact kernel or cokernel complexes
+(stacks-012K Lemmas 26.2 and 26.3).
 
 ## Conventions
 
@@ -228,8 +236,10 @@ unbounded complexes with exact kernel or cokernel complexes (stacks-012K Lemmas 
   `CategoryTheory.Functor.IsRightDerivedFunctor` for the quasi-isomorphisms
   (`Mathlib/CategoryTheory/Functor/Derived/RightDerived.lean`, a left Kan extension along the
   localisation). Assumed: nothing about left derived functors on `D⁻` (there are none at the
-  pin) and no comparison with `Functor.rightDerived` (the file's documentation records that one as
-  missing). `CategoryTheory.Functor.rightDerivedDesc`
+  pin) and no comparison with `Functor.rightDerived` (none is proved at the pin; the documentation of
+  this file and of `Mathlib/CategoryTheory/Abelian/RightDerived.lean` records only the intention to
+  redefine `Functor.rightDerived` through `rightDerivedFunctorPlus`).
+  `CategoryTheory.Functor.rightDerivedDesc`
   (`Mathlib/CategoryTheory/Functor/Derived/RightDerived.lean`): the natural transformation out of a
   right derived functor determined by a transformation out of the functor it derives, through the
   universal property of a left Kan extension along the localisation; and
@@ -1392,6 +1402,14 @@ being flat. *Needs:* Mathlib `CategoryTheory.Tor`, `CategoryTheory.Tor'`,
   kills `X`.
 - For a projective `X`, `Tor_n(X, Y) = 0` for `n > 0`, which by definition is a statement about the
   second variable and follows here from `CategoryTheory.isZero_Tor'_succ_of_projective`.
+- *Resolutions of length one.* In `ModuleCat ℤ`, let `X` have a two-term free presentation
+  `0 → B → Z → X → 0` with `B`, `Z` finitely generated. The route with `P = (B → Z)` gives
+  `Tor_1(X, M) ≅ Tor'_1(X, M) = ker(B ⊗ M → Z ⊗ M)` and `Tor_n(X, M) = 0` for `n ≥ 2`; this is
+  KhovanovHomology §K5's comparison of `CategoryTheory.Tor'` and `CategoryTheory.Tor` for
+  `X = Hⁱ(C)`. For `X = ℤ/2 ⊕ ℤ`, presented by `ℤ →(2, 0) ℤ²`, and `M = ℤ/2`, the kernel of
+  `ℤ/2 → (ℤ/2)²`, `1 ↦ (0, 0)`, is `ℤ/2`, and resolving `M` by `ℤ →(×2) ℤ` gives the kernel of `×2` on
+  `ℤ/2 ⊕ ℤ`, again `ℤ/2`: the free summand contributes nothing on either side. The cokernel of the
+  same map, `(ℤ/2)² = X ⊗ M`, is `Tor_0`, not `Tor_1`.
 - *Ext needs no balancing at the pin.* `Ext¹_ℤ(ℤ/2, ℤ)` is `ℤ/2` both from `ℤ →(×2) ℤ → ℤ/2` (Mathlib
   `ProjectiveResolution.extEquivCohomologyClass`) and from `ℤ → ℚ → ℚ/ℤ` (Mathlib
   `InjectiveResolution.extEquivCohomologyClass`); the double complex `Hom(P, I)` is first-quadrant and
@@ -1421,9 +1439,13 @@ being flat. *Needs:* Mathlib `CategoryTheory.Tor`, `CategoryTheory.Tor'`,
   0AVI).
 - (c) *Contravariant Ext form.* For any ring `R`, an `R`-module `M` and `K` with `Hⁱ(K) = 0` for `i ≫ 0`,
   there is a spectral sequence `E₂^{p,q} = Ext^p_R(H^{−q}(K), M) ⇒ Hom_{D(R)}(K, M[p+q])`, the second
-  hypercohomology sequence of the contravariant `Hom_R(−, M)` at `K°` (2.6); for `K = P` a bounded-above
-  complex of projectives the abutment is `H^{p+q}(Hom_R(P, M))`. If `Ext^i_R = 0` for `i ≥ 2`, the two
-  columns give `0 → Ext¹_R(H^{1−n}(K), M) → Hom_{D(R)}(K, M[n]) → Hom_R(H^{−n}(K), M) → 0`.
+  hypercohomology sequence of the contravariant `Hom_R(−, M)` at `K°` (2.6; grothendieck1957 line
+  1304–1308, the contravariant variant of (2.4.2); cartan-eilenberg1956 Ch. XVII, uncertified); for
+  `K = P` a bounded-above complex of projectives the abutment is `H^{p+q}(Hom_R(P, M))`. If
+  `Ext^i_R = 0` for `i ≥ 2`, the two columns give
+  `0 → Ext¹_R(H^{1−n}(K), M) → Hom_{D(R)}(K, M[n]) → Hom_R(H^{−n}(K), M) → 0` (hatcher-at line 8476–8479,
+  Theorem 3.2, for `R = ℤ` and a complex of free abelian groups; weibel1994 §3.6, the universal
+  coefficient theorem for cohomology, uncertified).
 
 *Needs:* 1.2, 1.3(b), 2.4–2.6; base §1.3 (gap:base-stabilisation-regularity), §3.4
 (gap:base-finite-filtration-convergence); DerivedModuleAlgebra §0.2; Mathlib `CategoryTheory.Tor`,
@@ -1444,6 +1466,16 @@ being flat. *Needs:* Mathlib `CategoryTheory.Tor`, `CategoryTheory.Tor'`,
   (`0 → Ext¹(H_{n−1}X, M) → Hⁿ(Hom(X, M)) → Hom(H_n X, M) → 0`).
 - For an injective `M` the contravariant sequence is concentrated in column `0` and
   `Hom_{D(R)}(K, M[n]) ≅ Hom_R(H^{−n}(K), M)`.
+- *Bounded finite free integral complexes.* For a bounded complex `C` of finitely generated free
+  `ℤ`-modules and an abelian group `M`, `C ⊗^L M = C ⊗ M` and `Hom_{D(ℤ)}(C, M[n]) = Hⁿ(Hom(C, M))` (`C`
+  is K-projective), and the two-column sequences of (a) and (c) are KhovanovHomology §K5's coefficient
+  and Hom/Ext sequences in the same indexing: `0 → Hⁿ(C) ⊗ M → Hⁿ(C ⊗ M) → Tor_1(H^{n+1}(C), M) → 0` and
+  `0 → Ext¹(H^{1−n}(C), M) → Hⁿ(Hom(C, M)) → Hom(H^{−n}(C), M) → 0`. For `C = (ℤ →(×2) ℤ)` in degrees
+  `−1, 0` (`H^{−1} = 0`, `H^0 = ℤ/2`) and `M = ℤ/2`, (a) at `n = −1` reads
+  `0 → 0 → H^{−1}(C ⊗ ℤ/2) → Tor_1(ℤ/2, ℤ/2) → 0`, and indeed `C ⊗ ℤ/2 = (ℤ/2 →(0) ℤ/2)` has `H^{−1} = ℤ/2`;
+  with `H^n(C)` in place of `H^{n+1}(C)` in the Tor term the right-hand side would be
+  `Tor_1(H^{−1}(C), ℤ/2) = 0`. For `M = ℤ`, (c) at `n = 1` reads `0 → Ext¹(ℤ/2, ℤ) → H¹(Hom(C, ℤ)) → 0 → 0`,
+  `ℤ/2` on both sides, as in the contravariant Check above.
 
 ### 4.3 The Künneth spectral sequence
 
@@ -1489,6 +1521,14 @@ the two-column sequence; DerivedModuleAlgebra §0.2; Tau Ceti `CochainComplex.sp
 - Over a ring of global dimension at most one, for complexes of projective modules indexed by `ℕ`
   placed in non-positive degrees, the two-column sequence is Tau Ceti's
   `HomologicalComplex.homologyKunnethShortComplex_shortExact`.
+- *Bounded finite free integral complexes.* For two bounded complexes `C`, `D` of finitely generated
+  free `ℤ`-modules, `C ⊗^L D = C ⊗ D` and the two-column sequence is KhovanovHomology §K5's Künneth
+  sequence, with the Tor term summed over `i + j = n + 1`. For `C = D = (ℤ →(×2) ℤ)` in degrees `−1, 0`,
+  with generators `e` in degree `−1` and `f` in degree `0`, `C ⊗ D` (with
+  `d(x ⊗ y) = dx ⊗ y + (−1)^{|x|} x ⊗ dy`, as in 5.2) is `ℤ → ℤ² → ℤ` in degrees `−2, −1, 0`, with
+  `e ⊗ e ↦ (−2, 2)` and `(a, b) ↦ 2a + 2b` on the basis `(e ⊗ f, f ⊗ e)`, so `H^{−2} = 0`, `H^{−1} = ℤ/2`
+  and `H^0 = ℤ/2`. At `n = −1` the tensor term `⊕_{i+j=−1} H^i ⊗ H^j` vanishes and the Tor term is
+  `Tor_1(H^0, H^0) = ℤ/2`, matching `H^{−1}`; summing the Tor term over `i + j = n` would give `0` there.
 
 ### 4.4 Change of rings
 
@@ -1715,12 +1755,18 @@ module `T`, and `H̄ⁿ = Hⁿ(M)/Hⁿ(M)[f^∞]`. Prove, for `r ≥ 1` and ever
 - *Higher universal-coefficient sequences* (may-primer line 147–150, Example 2.3, in homological form):
   `0 → (f^{r−1}Hⁿ(M)) ⊗_A A/f → E_rⁿ → (f^{r−1}H^{n+1}(M))[f] → 0` is exact.
 - *Higher Bocksteins.* A class of `E_rⁿ` is represented by `x ∈ Hⁿ(M/fM)` that lifts to `x̃ ∈ Hⁿ(M/f^rM)`,
-  and `d_r[x] = [β_r(x̃)]`, where `β_r` is the connecting morphism of `0 → M/fM →(f^r) M/f^{r+1}M → M/f^rM → 0`.
+  and `d_r[x] = [β_r(x̃)]`, where `β_r` is the connecting morphism of `0 → M/fM →(f^r) M/f^{r+1}M → M/f^rM → 0`
+  (mccleary2001 Ch. 10, uncertified, for `A = ℤ` and `f = p`; for a general pair `(A, f)` by the route
+  below).
 - *Stabilisation.* If `Hⁿ(M)[f^∞] = Hⁿ(M)[f^a]` and `H^{n+1}(M)[f^∞] = H^{n+1}(M)[f^b]`, the sequence
-  stabilises in total degree `n` from page `max(a, b) + 1`, and `E_∞ⁿ ≅ H̄ⁿ ⊗_A A/f`.
-- *Convergence.* Let `Hⁿ(M)[1/f]` be filtered by the images `F^s = f^s H̄ⁿ` of `f^sHⁿ(M)`; this filtration
-  is exhaustive and every `gr^s = f^sH̄ⁿ/f^{s+1}H̄ⁿ ≅ H̄ⁿ ⊗_A A/f`. The canonical comparison
-  `gr^s ≅ ker k / B_∞ ⊆ E_∞^{s,n−s}` is an isomorphism at every position of total degree `n` if and only if
+  stabilises in total degree `n` from page `max(a, b) + 1`, and `E_∞ⁿ ≅ H̄ⁿ ⊗_A A/f` (may-primer line
+  161–168, Example 2.3, for `A = ℤ`, `f = p` and homology of finite type, through the pages of each cyclic
+  summand; mccleary2001 Ch. 10, uncertified).
+- *Convergence* (mccleary2001 Ch. 10, uncertified, for `A = ℤ` and `f = p`; the criterion for a general
+  pair `(A, f)` is the exact-couple computation of the route below). Let `Hⁿ(M)[1/f]` be filtered by
+  the images `F^s = f^s H̄ⁿ` of `f^sHⁿ(M)`; this filtration is exhaustive and every
+  `gr^s = f^sH̄ⁿ/f^{s+1}H̄ⁿ ≅ H̄ⁿ ⊗_A A/f`. The canonical comparison `gr^s ≅ ker k / B_∞ ⊆ E_∞^{s,n−s}` is an
+  isomorphism at every position of total degree `n` if and only if
   `⋂_r f^r H^{n+1}(M) ∩ H^{n+1}(M)[f] = 0`, which holds under the bounded torsion of the previous item;
   then these isomorphisms are a weak convergence structure (base §3.2) to `Hⁿ(M)[1/f]` in degree `n`,
   which converges (base §3.2) when moreover `⋂_s f^s H̄ⁿ = 0`.
@@ -1813,11 +1859,12 @@ Tau Ceti's filtered-complex spectral sequence; Layer 5 for multiplicativity; Sta
   Chapitre III, §§3.7–3.8.
 - may-primer: J. P. May, *A primer on spectral sequences*: §2 (Example 2.3, the Bockstein spectral
   sequence), §4 (Proposition 4.1, Corollary 4.2, Example 4.3, pairings of filtered complexes).
-- hatcher-at: A. Hatcher, *Algebraic Topology*, §3.E, Proposition 3E.3.
+- hatcher-at: A. Hatcher, *Algebraic Topology*, §3.1, Theorem 3.2; §3.E, Proposition 3E.3.
 - douady1959: A. Douady, *La suite spectrale d'Adams : structure multiplicative*, Séminaire Henri
-  Cartan 11 (1958–1959), exposé 19, §II A (products of spectral systems, not used).
+  Cartan 11 (1958–1959), exposé 19, §II A (products of spectral systems, named in *Scope and
+  ownership* as outside this roadmap).
 - weibel1994: C. A. Weibel, *An Introduction to Homological Algebra*, §§1.2, 2.2, 2.7 (Theorem 2.7.2,
-  Lemma 2.7.3), 5.6–5.8 (uncertified).
+  Lemma 2.7.3), 3.6, 5.6–5.8 (uncertified).
 - mccleary2001: J. McCleary, *A User's Guide to Spectral Sequences*, 2nd ed., Ch. 2 and Ch. 10
   (uncertified).
 - cartan-eilenberg1956: H. Cartan, S. Eilenberg, *Homological Algebra*, Ch. XV–XVII (uncertified).
