@@ -1,0 +1,80 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "PresentationsOfMonoidalCategories"
+
+[[source]]
+id = "Kitaev2006"
+authors = "Alexei Kitaev"
+title = "Anyons in an exactly solved model and beyond"
+year = 2005
+venue = "Annals of Physics 321 (2006) 2--111"
+doi = "10.1016/j.aop.2005.10.005"
+arxiv = "cond-mat/0506438v3"
+locator_scheme = "section"
+locator = "Appendix E"
+url = "https://arxiv.org/abs/cond-mat/0506438v3"
+fetched_from = "https://arxiv.org/pdf/cond-mat/0506438v3"
+fetched_at = "2026-11-14T08:33:34Z"
+sha256 = "eb99541ee61044a6028edc53aad19dd80afed7e96778350a38420f36269e93ba"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-14"
+version_note = "arXiv v3"
+cited_for = ["Conventions"]
+
+[[source]]
+id = "JoyalStreet1993"
+authors = "A. Joyal, R. Street"
+title = "Braided Tensor Categories"
+year = 1993
+venue = "Advances in Mathematics 102"
+doi = "10.1006/aima.1993.1055"
+locator_scheme = "section"
+locator = "Sections 1-2"
+url = "https://doi.org/10.1006/aima.1993.1055"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["Layer 4"]
+
+[[source]]
+id = "Kelly1964"
+authors = "G.M Kelly"
+title = "On MacLane's conditions for coherence of natural associativities, commutativities, etc."
+year = 1964
+venue = "Journal of Algebra 1"
+doi = "10.1016/0021-8693(64)90018-3"
+locator_scheme = "theorem"
+locator = "Theorem 6, 7"
+url = "https://doi.org/10.1016/0021-8693(64)90018-3"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["Layer 0 unit conditions"]
+
+[[source]]
+id = "Bonderson2007"
+authors = "Bonderson"
+title = "Interferometry of non-Abelian anyons"
+year = 2007
+venue = "Annals of Physics 323"
+doi = "10.1016/j.aop.2008.01.012"
+locator_scheme = "chapter"
+locator = "Chapter 2"
+url = "https://doi.org/10.1016/j.aop.2008.01.012"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["Conventions"]
+
+[[source]]
+id = "EGNO2015"
+locator_scheme = "chapter"
+locator = "Chapters 2, 4, 8"
+url = "https://math.mit.edu/~etingof/egnobookfinal.pdf"
+fetched_from = "https://math.mit.edu/~etingof/egnobookfinal.pdf"
+fetched_at = "2026-11-14T08:34:38Z"
+sha256 = "a40d076197b666d8b3b231ac59748a95f9b311d49ce57f4024c0da8308796db3"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-14"
+cited_for = ["Layers 1-6"]
