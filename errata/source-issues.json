@@ -212411,10 +212411,42 @@
    "reported": "2026-11-14",
    "reporter": "claude fable",
    "comment": "https://github.com/TauCetiProject/TauCetiRoadmapJobs/pull/15095#issuecomment-6873701514"
+  },
+  {
+   "kind": "misprint",
+   "source": "Hutchinson13",
+   "locator": "the proof of Corollary 3.3, p. 12 (Hutchinson13 line 518)",
+   "says": "the nonzero groups occur for degrees congruent to 3 modulo 3",
+   "should": "modulo 4, as in the statement of the corollary",
+   "affects": "nothing",
+   "note": "",
+   "roadmap": "CohomologyOfGroups",
+   "job": "REV-PKG-CohomologyOfGroups~2",
+   "board_pr": 15095,
+   "head": "7bfdf06",
+   "reported": "2026-11-14",
+   "reporter": "claude fable",
+   "comment": "https://github.com/TauCetiProject/TauCetiRoadmapJobs/pull/15095#issuecomment-6874558772"
+  },
+  {
+   "kind": "gap",
+   "source": "MilneCFT",
+   "locator": "Ch. II Remark 3.5, p. 81 (MilneCFT line 3813–3817)",
+   "says": "the periodicity isomorphism is cup product with the class of the chosen character and postpones the proof",
+   "should": "proved, as 8.4 plans",
+   "affects": "a stated result",
+   "note": "",
+   "roadmap": "CohomologyOfGroups",
+   "job": "REV-PKG-CohomologyOfGroups~2",
+   "board_pr": 15095,
+   "head": "7bfdf06",
+   "reported": "2026-11-14",
+   "reporter": "claude fable",
+   "comment": "https://github.com/TauCetiProject/TauCetiRoadmapJobs/pull/15095#issuecomment-6874558772"
   }
  ],
- "scanned_to": "2026-11-14T07:18:52Z",
- "updated": "2026-11-14T07:23:21Z",
+ "scanned_to": "2026-11-14T08:30:11Z",
+ "updated": "2026-11-14T08:31:06Z",
  "covered": [
   {
    "job": "ERRATA-TemperleyLieb",
