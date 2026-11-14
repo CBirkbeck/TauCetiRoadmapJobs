@@ -100,11 +100,11 @@ title = "A User's Guide to Spectral Sequences, 2nd ed."
 year = 2001
 doi = "10.1017/CBO9780511626289"
 locator_scheme = "chapter"
-locator = "Ch. 2, Ch. 3"
+locator = "Ch. 2"
 licence_class = "none"
 status = "uncertified"
 version_note = "paywalled; cited by its locator without the text"
-cited_for = ["3.6", "References"]
+cited_for = ["3.6"]
 
 [[source]]
 id = "massey1952"
@@ -125,11 +125,11 @@ authors = ["H. Cartan", "S. Eilenberg"]
 title = "Homological Algebra"
 year = 1956
 locator_scheme = "chapter"
-locator = "Ch. XV"
+locator = "Ch. XV §2"
 licence_class = "none"
 status = "uncertified"
-version_note = "paywalled; cited by its locator without the text"
-cited_for = ["References"]
+version_note = "paywalled; cited by its locator without the text; the locator is the attribution of helle-rognes2024 line 94 (Definition 2.7)"
+cited_for = ["3.2"]
 
 [[source]]
 id = "bhatt-scholze2015"

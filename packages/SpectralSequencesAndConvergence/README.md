@@ -271,9 +271,10 @@ part of this roadmap.
   that is an isomorphism at every position of page `r` is one at every position of every page
   `r' ≥ r`.
 - `CategoryTheory.Abelian.SpectralObject.abutment`, `abutmentFiltration`, `abutmentFiltrationι`,
-  `abutmentFiltrationMap`, `EInfty`, `EInftyIsoCokernel`, `isZero_abutmentFiltration`,
-  `isIso_abutmentFiltrationι` (`SpectralObject/Abutment.lean`), and `spectralSequencePageXIsoEInfty`
-  and `coe_le_coe_add_one` (`SpectralObject/Stabilization.lean`). For `X` indexed by `EInt`,
+  `abutmentFiltrationMap`, `EInftyIsoCokernel`, `isZero_abutmentFiltration`,
+  `isIso_abutmentFiltrationι` (`SpectralObject/Abutment.lean`), and `EInfty`,
+  `spectralSequencePageXIsoEInfty` and `coe_le_coe_add_one` (`SpectralObject/Stabilization.lean`).
+  For `X` indexed by `EInt`,
   `abutmentFiltration q n` is the image of `H^n(⊥ ≤ q)` in `H^n(⊥ ≤ ⊤)`, increasing in `q`.
   `EInfty q n = E^n(⊥ ≤ q ≤ q + 1 ≤ ⊤)` is the cokernel of the step from `q` to `q + 1`. Page
   objects are identified with `EInfty` when `H^{n+1}(⊥ ≤ q − r + 2)` and `H^{n−1}(q + r − 1 ≤ ⊤)`
@@ -286,7 +287,11 @@ part of this roadmap.
   `isIso_opcyclesMapOfHom_of_isIso` (`SpectralObject/Map.lean`).
 - `CochainComplex.spectralObject`, `CochainComplex.spectralObjectMap`,
   `CochainComplex.filtrationFunctor`, `CochainComplex.filtrationFunctorMap`,
-  `CochainComplex.spectralSequence`, `CochainComplex.spectralSequenceFirstPageXIsoCokernel`
+  `CochainComplex.spectralSequence`, `CochainComplex.spectralSequenceFirstPageXIsoCokernel`,
+  `CochainComplex.spectralObjectHIsoCokernel` (for `f : i ⟶ j` with `F.map f` a monomorphism,
+  `H^n(f) ≅ H^n(coker F.map f)`; for the functor of a filtration and `f : ⊥ ⟶ i` this is
+  `H^n(G_i)`) and `CochainComplex.spectralObject_H_map_comp_spectralObjectHIsoCokernel_hom` (under
+  these isomorphisms the maps of the spectral object are the maps induced on cokernels)
   (`SpectralSequence/Filtered/SpectralObject.lean`, `Naturality.lean`);
   `CochainComplex.spectralSequence_first_page_d_eq` (`Filtered/FirstPage.lean`);
   `CochainComplex.isZero_spectralObject_H_bot`, `CochainComplex.isZero_spectralObject_H_top`,
@@ -474,7 +479,12 @@ stabilisation at every position from `s` (stacks-012K line 2634–2637). *Needs:
 
 **Checks.**
 
-- The spectral sequence with all differentials zero degenerates at `r₀`.
+- *Zero differentials on one page do not give degeneration there.* Start at page `1` with `ℤ/2`
+  at `(0, 1)` and at `(2, 0)`, zero elsewhere, `d_1 = 0` and `d_2 : E_2^{0,1} → E_2^{2,0}` the
+  identity. Then `E_2 = E_1` and `E_3 = 0`: every differential of page `1` vanishes, yet `E` does
+  not degenerate at page `1` (nor at `2`), and it degenerates at page `3`. A model of
+  degeneration at `s` that asks only for the differentials of page `s` to vanish would accept
+  page `1`.
 - In the `×2` example of 1.2, `E` stabilises at `(2, 0)` from page `3` and not from page `2`. At
   `(0, 1)` it is coregular from page `2`, since no differential enters, but regular only from
   page `3`, since `d_2` leaves `(0, 1)` nonzero.
@@ -622,10 +632,12 @@ cokernels of morphisms between its objects and under extensions: in Mathlib's te
 weak Serre class (stacks-012K line 1158–1161, Definition 10.1 (2), tag 02MO, characterised at line
 1177–1182, Lemma 10.3, tag 0754); every Mathlib `ObjectProperty.IsSerreClass` is one. Let `v` be a
 function from objects of `C` to an abelian group, additive on short exact sequences whose terms
-satisfy `P`. Prove: if only finitely many positions of page `r` are nonzero and all satisfy `P`,
-the same holds on page `r + 1`, and
-`Σ_pq (−1)^{deg pq} v(E_r(pq)) = Σ_pq (−1)^{deg pq} v(E_{r+1}(pq))` (stacks-012K line 3185–3195,
-the page step in the proof of Lemma 24.12, tag 0BDW, which Stacks states for filtered complexes).
+satisfy `P`. Prove (`sum_negOnePow_page_eq_sum_negOnePow_page_add_one`): for every bidegree
+assignment `(fil, deg, e)`, if every position of page `r` outside a finite set `s` is zero and
+every position in `s` satisfies `P`, the same holds on page `r + 1`, and
+`Σ_{pq ∈ s} (−1)^{deg pq} v(E_r(pq)) = Σ_{pq ∈ s} (−1)^{deg pq} v(E_{r+1}(pq))` (stacks-012K line
+3185–3195, the page step in the proof of Lemma 24.12, tag 0BDW, which Stacks states for filtered
+complexes).
 Register the `ComplexShape.EulerCharSigns` instance `(p, q) ↦ (−1)^{p+q}` for the cohomological
 page shapes. The route: Tau Ceti's Euler–Poincaré engine is stated for a `CochainComplex A ℤ`
 strictly supported in a finite interval, not for a page of shape `ComplexShape.up' (r, 1 − r)` on
@@ -702,9 +714,10 @@ of filtered objects is a Mathlib `CategoryTheory.FilteredObject.Hom`. Define its
 
 Fix `E : SpectralSequence C c r₀`, a bidegree assignment `(fil, deg, e)`, a set `I ⊆ ℤ` of total
 degrees and an abutment `H : ℤ → FilteredObject C ℤᵒᵖ`. Define
-(helle-rognes2024 line 94–98, Definition 2.7; stacks-012K line 3131–3143, Definition 24.9, tag
-012U, in its filtered-complex form, whose isomorphisms are the canonical comparisons of its
-Lemma 24.6; weibel1994 Definition 5.2.11, uncertified):
+(helle-rognes2024 line 94–98, Definition 2.7, which it attributes to cartan-eilenberg1956
+Ch. XV §2, uncertified; stacks-012K line 3131–3143, Definition 24.9, tag 012U, in its
+filtered-complex form, whose isomorphisms are the canonical comparisons of its Lemma 24.6;
+weibel1994 Definition 5.2.11, uncertified):
 
 - *weak convergence in `I`*: `E` has a limit page at every position of total degree in `I`. For
   every `n ∈ I` and every `s ∈ ℤ` there is an isomorphism `β : E_∞(pq) ≅ gr^s H^n` when
@@ -749,11 +762,20 @@ objects (stacks-012K line 3055–3061, Lemma 24.4, tag 012O, for filtered comple
 
 **Checks.**
 
-- The identity of a converging structure is a morphism.
+- *`f` does not determine `h`.* Take the `ℓ`-adic structure of 3.2 (the complex `ℤ` in degree
+  `0` with `F^p = ℓ^p ℤ`, so `E_1^{p,−p} = E_∞^{p,−p} = ℤ/ℓ` for `p ≥ 0`, all differentials zero,
+  converging to `H^0 = ℤ`), and let `f` be multiplication by `2` on every page. Multiplication by
+  an integer `u` is a filtered endomorphism of `ℤ`, and on `gr^p ℤ = ℓ^p ℤ / ℓ^{p+1} ℤ ≅ ℤ/ℓ` it
+  induces `u mod ℓ`. So `(f, 2)` and `(f, 2 + ℓ)` are both morphisms, while `(f, 3)` is not,
+  since `3 − 2 = 1` is nonzero mod every `ℓ`. The forgetful functor to spectral sequences is not
+  faithful.
 - For the structure with `E_1^{0,0} = E_∞^{0,0} = ℤ` (all else zero) converging to `H^0 = ℤ` with
   `F^0 = ℤ`, `F^1 = 0`: the pair (`−1` on every page, identity on `H^0`) is not a morphism, since
   `gr^0(id) = 1 ≠ −1 = E_∞(f)`. The compatibility with `β` is a real condition.
-- `(0, 0)` is a morphism from any converging structure to the zero one.
+- *Weak convergence does not constrain `h`.* For the zero spectral sequence converging weakly in
+  `{0}` to `H^0 = ℤ` with the constant filtration `F^p = ℤ` (3.2, third Check), every graded piece
+  is `0`, so `f = 0` together with any endomorphism of `ℤ` (each preserves every `F^p = ℤ`) is a
+  morphism. This is why the comparison theorem 3.5 needs separation.
 
 ### 3.4 Finite filtrations
 
@@ -829,7 +851,13 @@ steps detect monomorphisms) and then to the limit over `p′ → ∞`. *Needs:* 
 
 **Checks.**
 
-- The identity morphism.
+- *Finite filtrations, computed.* Let `E` start at page `1` with `ℤ/2` at `(0, n)` and at
+  `(1, n − 1)`, zero elsewhere, and all differentials zero, so `E_∞ = E_1`. It converges strongly
+  in degree `n` to `ℤ/4` with `F^0 = ℤ/4`, `F^1 = 2ℤ/4ℤ`, `F^2 = 0`, and to `ℤ/2 ⊕ ℤ/2` with
+  `F^0` everything, `F^1` the first summand and `F^2 = 0` (3.4, first Check). By the second
+  bullet there is no morphism `(id, h)` from the first structure to the second, since `h` would
+  be an isomorphism `ℤ/4 ≅ ℤ/2 ⊕ ℤ/2`. Directly: a filtered `h` sends `2 = 2 · 1` to
+  `2 h(1) = 0`, so `gr^1(h)` is zero, not the isomorphism that compatibility with `β` requires.
 - *Separation is needed.* `E = E′ = 0`, `H^0 = ℤ` with the constant filtration, `H′^0 = 0`,
   `h = 0`: weak convergence holds on both sides and `f` is an isomorphism, but `h` is not.
 - *Completeness is needed.* Let `E = E′` have `E_1^{p,−p} = ℤ/ℓ` for `p ≥ 0`, all differentials
@@ -1002,8 +1030,11 @@ exact-couple form; Tau Ceti `SpectralObject/Abutment.lean`). *Needs:* 2.1, 3.1; 
 
 - For the complex `ℤ →(×2) ℤ`: `F^3 H^1 = abutmentFiltration (−1) 1 = H^1 = ℤ/2` and
   `F^4 H^1 = abutmentFiltration (−2) 1 = 0`, so `gr^3 H^1 = ℤ/2` sits at native `(3, −2)`.
-- Using `abutmentFiltration p n` itself as the `p`th step gives an increasing family. It is not a
-  decreasing filtration, and its graded pieces would sit at the wrong positions.
+- *The reindexing is needed.* For `ℤ →(×2) ℤ` in degree `1`, `abutmentFiltration p 1` is `0` at
+  `p = −2` and `ℤ/2` at `p = −1`. Used unchanged as the `p`th step it is not decreasing
+  (`ℤ/2 ⊄ 0`), whereas the step `abutmentFiltration (n − p + 1) n` puts the one nonzero graded
+  piece at `p = 3`, as in the first Check. For the zero spectral object both families are
+  constantly `0`, so only a nonzero example tells them apart.
 - For a first-quadrant `X` (`IsFirstQuadrant`), `F^0 H^n = H^n` and `F^{n+1} H^n = 0`.
 
 ### 4.3 The limit page and `EInfty`
@@ -1116,7 +1147,12 @@ the second by the boundary side of 4.3, the statement that has no counterpart at
   does not, and `HasConvergenceBounds` rightly fails. Here `H^{−1}(j ≤ ⊤) = H^{−1}(K / G_j) = 0`
   as well, so the top vanishing that Tau Ceti's `spectralSequencePageXIsoEInfty` assumes does not
   give convergence either.
-- With `I = ∅` there is nothing to prove.
+- *Bounds are degreewise.* For the spectral object of `K = ℤ` in degree `0` with `G_j = 0` for
+  every integer `j` (the second Check), `H^1(⊥ ≤ i) = H^2(⊥ ≤ i) = 0` for every integer `i`, and
+  `H^1(⊥ ≤ j) = 0 → H^1(⊥ ≤ ⊤) = H^1(K) = 0` is an isomorphism, so `X` has convergence bounds
+  `a = b = 0` in degree `1` and converges there to `H^1 = 0`. In degree `0` it has none, the map
+  `0 → H^0(K) = ℤ` not being an isomorphism. So the theorem gives convergence in `I = {1}` and
+  not in `I = {0, 1}`; a single condition on all degrees at once would lose the first statement.
 - *No order between the bounds.* The zero spectral object has convergence bounds `a = 5` and
   `b = 0` in every degree. At `q = 1 ≥ b` the page bound is `max(2, −2, 0) = 2`, while
   `q − a + 2 = −2` is no page; the clause for `q ≥ b` gives `max(2, −2) = 2`. For `ℤ →(×2) ℤ`
@@ -1235,7 +1271,11 @@ cohomological reindexing. *Needs:* 2.1; Tau Ceti `CochainComplex.filtrationFunct
   `E_2^{0,0} = 0` and `E_2^{1,0} = ℤ/2`.
 - The trivial filtration `F^0 = K`, `F^1 = 0` gives `E_1^{0,q} = H^q(K)` and zero elsewhere, and
   degenerates at `E_1`.
-- Feeding `G_t := F^t` (no negation) to `filtrationFunctor` is not allowed: it is not monotone.
+- *The negation is needed.* For the stupid filtration of `ℤ →(×2) ℤ` (`F^0 = K`, `F^1 = K^1`,
+  `F^2 = 0`), the family `t ↦ F^t` without negation is not monotone: `0 ≤ 1`, but `F^0 = K` is not
+  contained in `F^1 = K^1`, their degree-`0` terms being `ℤ` and `0`. So it is not a filtration
+  that `filtrationFunctor` accepts. A family that is both monotone and antitone in `t ∈ ℤ` is
+  constant, and for a constant family the two indexings give the same functor.
 
 ### 5.2 The induced filtration and the limit page
 
@@ -1282,8 +1322,18 @@ degree `n` stabilise (stacks-012K line 3202–3240, Lemma 24.13, tag 0BK5, which
 The route: since `H^m(⊥ ≤ i)` of the spectral object of `G_t = F^{−t}` is `H^m(G_i)` (Tau Ceti
 `CochainComplex.spectralObjectHIsoCokernel`), the hypotheses say that the spectral object
 `CochainComplex.spectralObject (CochainComplex.filtrationFunctor G hG)` has convergence bounds `−p₀`
-and `−p₁` in degree `n` (`HasConvergenceBounds`), and 4.4 applies. *Needs:* 4.4, 5.1, 5.2; Tau Ceti
-`CochainComplex.isZero_spectralObject_H_bot`, `CochainComplex.spectralObjectHIsoCokernel`.
+and `−p₁` in degree `n` (`HasConvergenceBounds`), and 4.4 applies. Against the pins the first step
+reads `hasConvergenceBounds_spectralObject_filtrationFunctor`: for an increasing filtration `G` of
+`K` and integers `n`, `a`, `b`, if `H^n(G_i)` and `H^{n+1}(G_i)` vanish for every `i ≤ a` and the
+inclusion `G_j → K` induces an isomorphism on `H^n` for every `j ≥ b`, then the spectral object of
+`G` has convergence bounds `a`, `b` in degree `n`. The route: `spectralObjectHIsoCokernel` for
+`⊥ ≤ i` identifies `H^m(⊥ ≤ i)` with `H^m(G_i)`, the cokernel of the zero map out of `G_⊥ = 0`
+being `G_i`, and its naturality
+(`CochainComplex.spectralObject_H_map_comp_spectralObjectHIsoCokernel_hom`) identifies
+`H^n(⊥ ≤ j) → H^n(⊥ ≤ ⊤)` with the map induced by `G_j → G_⊤ = K`. *Needs:* 4.4, 5.1, 5.2; Tau Ceti
+`CochainComplex.isZero_spectralObject_H_bot`, `CochainComplex.spectralObjectHIsoCokernel`,
+`CochainComplex.spectralObject_H_map_comp_spectralObjectHIsoCokernel_hom`; for the pinned
+statement only 4.4 (`HasConvergenceBounds`) and these Tau Ceti declarations.
 
 - *Degreewise finite filtrations.* If for each `n ∈ I` the filtrations of `K^{n−1}`, `K^n` and
   `K^{n+1}` are finite, the hypotheses hold. The spectral sequence is bounded in total degree `n`
@@ -1303,7 +1353,8 @@ and `−p₁` in degree `n` (`HasConvergenceBounds`), and 4.4 applies. *Needs:* 
   of 2.1 has total degree `p + q` at the native position `(p, q)`. The route: the first bullet
   gives strong convergence with finite filtrations in every degree, and the Euler identity of 3.4
   applies; or, avoiding Layer 3, `convergence_of_hasConvergenceBounds` identifies the stabilised
-  pages with the graded pieces and 2.3 carries the page sums. *Needs:* 2.3, 3.4 and this target's
+  pages with the graded pieces and 2.3 (`sum_negOnePow_page_eq_sum_negOnePow_page_add_one`) carries
+  the page sums. *Needs:* 2.3, 3.4 and this target's
   first bullet, or 2.3 and 4.4.
 
 **Checks.**
@@ -1868,7 +1919,7 @@ Grothendieck axioms and `EnoughProjectives`.
   3.4(b), Definition 5.10, Theorems 7.1, 8.2, 8.10, 8.13 (uncertified).
 - eilenberg-moore1962: S. Eilenberg, J. C. Moore, *Limits and spectral sequences*, Topology 1,
   §7 (uncertified).
-- mccleary2001: J. McCleary, *A User's Guide to Spectral Sequences*, 2nd ed., Ch. 2 and 3
+- mccleary2001: J. McCleary, *A User's Guide to Spectral Sequences*, 2nd ed., Ch. 2
   (uncertified).
 - massey1952: W. S. Massey, *Exact couples in algebraic topology* (uncertified).
-- cartan-eilenberg1956: H. Cartan, S. Eilenberg, *Homological Algebra*, Ch. XV (uncertified).
+- cartan-eilenberg1956: H. Cartan, S. Eilenberg, *Homological Algebra*, Ch. XV §2 (uncertified).

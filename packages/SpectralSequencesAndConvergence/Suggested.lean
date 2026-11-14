@@ -20,8 +20,9 @@ Stated here:
 
 * the stabilisation of bounded spectral sequences, leaving and entering differentials separately
   (README 2.2, Stacks Lemma 24.8);
-* the Euler-characteristic identity for a complex whose filtration is finite in each degree and a
-  weak Serre class (README 5.3, Stacks Lemma 24.12);
+* the invariance of the Euler characteristic of a finitely supported page in a weak Serre class
+  under passage to the next page, for an arbitrary spectral sequence with a bidegree assignment
+  (README 2.3, the page step of Stacks Lemma 24.12);
 * the convergence of the spectral sequence of a spectral object indexed by `EInt` in one degree
   `n` under convergence bounds `a`, `b`: `H^n(⊥ ≤ i)` and `H^{n+1}(⊥ ≤ i)` vanish for every integer
   `i ≤ a`, and `H^n(⊥ ≤ j) ⟶ H^n(⊥ ≤ ⊤)` is an isomorphism, not merely a monomorphism, for every
@@ -29,6 +30,12 @@ Stated here:
   Stacks Lemma 24.13 in spectral-object form);
 * the comparison theorem for spectral objects that both have these convergence bounds
   (README 4.6);
+* the convergence bounds of the spectral object of an increasingly filtered complex whose stages
+  have vanishing `H^n` and `H^{n+1}` below one bound and compute `H^n(K)` above another, through
+  which the convergence theorem above applies to the spectral sequence of a filtered complex
+  (README 5.3, Stacks Lemma 24.13);
+* the Euler-characteristic identity for a complex whose filtration is finite in each degree and a
+  weak Serre class (README 5.3, Stacks Lemma 24.12);
 * the comparison theorem for exhaustive filtrations that vanish termwise below a bound, in an
   abelian category with exact sequential colimits (README 3.5 with 5.4);
 * the characterisation of Tau Ceti's repleteness through `lim¹` of towers with epimorphic
@@ -60,7 +67,14 @@ Headline theorems that are not statable at the pins, and what each lacks:
 * the spectral sequence of an exact couple, its towers and its identification with the spectral
   sequence of a spectral object (README 6.1–6.3), and Boardman's conditional-convergence theorems
   (README 7.4): neither library has bigraded exact couples (planned in StableHomotopyKTheory
-  §7.22), and 7.4 also needs `E_∞` and the `lim¹` of the cycle tower of README 1.2.
+  §7.22), and 7.4 also needs `E_∞` and the `lim¹` of the cycle tower of README 1.2;
+* Boardman's double-tower short exact sequence `0 → lim¹_s Q^s → lim¹_s A^s → lim_s RQ^s → 0`
+  (README 7.3): it needs the image system `Im^r A^s = im(A^{s+r} ⟶ A^s)` as a functor of `(r, s)`,
+  the towers `s ↦ Q^s = lim_r Im^r A^s` and `s ↦ RQ^s = lim¹_r Im^r A^s` with their transition
+  maps, and the map `lim¹_s A^s ⟶ lim_s RQ^s` built from them through invariance of `lim¹` under
+  cofinal subsequences; neither library has these in an abelian category (Tau Ceti proves the
+  cofinality of `lim¹` for towers of modules only), and Tau Ceti's `towerDifference` is the map
+  `1 - s` of a single tower.
 -/
 
 namespace TauCetiRoadmap.SpectralSequencesAndConvergence
@@ -113,6 +127,29 @@ theorem dTo_eq_zero_of_boundedAbove {C : Type u} [Category.{v} C] [Abelian C] {�
     (α : ℤ → ℤ) (hα : ∀ pq : κ, A.fil pq ≤ α (A.deg pq) → IsZero ((E.page r₀ le_rfl).X pq))
     (pq : κ) (r : ℤ) (hr : r₀ ≤ r) (hrα : A.fil pq - α (A.deg pq - 1) + A.e ≤ r) :
     (E.page r hr).dTo pq = 0 := by
+  sorry
+
+/-- **The Euler characteristic of a page is that of the next page** (README 2.3; Stacks, Tag
+0BDW, the page step in the proof of Lemma 24.12, there for filtered complexes). Let `A` be a
+bidegree assignment, `P` a weak Serre class (it contains a zero object and is closed under
+kernels, cokernels and extensions) and `v` a function on objects, with values in an abelian group,
+that is additive on short exact sequences of objects of `P`. If on page `r` every position outside
+a finite set `s` is zero and every position in `s` lies in `P`, then the same holds on page
+`r + 1`, and `Σ_{pq ∈ s} (-1)^(deg pq) v(E_r(pq)) = Σ_{pq ∈ s} (-1)^(deg pq) v(E_{r+1}(pq))`. -/
+theorem sum_negOnePow_page_eq_sum_negOnePow_page_add_one {C : Type u} [Category.{v} C]
+    [Abelian C] {κ : Type*} {c : ℤ → ComplexShape κ} {r₀ : ℤ} (E : SpectralSequence C c r₀)
+    (A : BidegreeAssignment c r₀) (P : ObjectProperty C) [P.ContainsZero]
+    [P.IsClosedUnderKernels] [P.IsClosedUnderCokernels] [P.IsClosedUnderExtensions]
+    {G : Type*} [AddCommGroup G] (v : C → G)
+    (hv : ∀ S : ShortComplex C, S.ShortExact → P S.X₁ → P S.X₂ → P S.X₃ →
+      v S.X₂ = v S.X₁ + v S.X₃)
+    (r : ℤ) (hr : r₀ ≤ r) (s : Finset κ)
+    (hs : ∀ pq : κ, pq ∉ s → IsZero ((E.page r hr).X pq))
+    (hsP : ∀ pq ∈ s, P ((E.page r hr).X pq)) :
+    (∀ pq : κ, pq ∉ s → IsZero ((E.page (r + 1)).X pq)) ∧
+      (∀ pq ∈ s, P ((E.page (r + 1)).X pq)) ∧
+      ∑ pq ∈ s, ((A.deg pq).negOnePow : ℤ) • v ((E.page r hr).X pq) =
+        ∑ pq ∈ s, ((A.deg pq).negOnePow : ℤ) • v ((E.page (r + 1)).X pq) := by
   sorry
 
 /-! ## Layer 4: spectral objects indexed by `EInt` -/
@@ -181,6 +218,23 @@ theorem isIso_hom_app_abutment_of_hasConvergenceBounds {C : Type u} [Category.{v
   sorry
 
 /-! ## Layer 5: filtered complexes -/
+
+/-- **Convergence bounds of the spectral object of a filtered complex** (README 5.3; Stacks,
+Tag 0BK5, Lemma 24.13, in one degree). Let `F` be an increasing filtration of a cochain complex
+`K` by subcomplexes and fix integers `n`, `a`, `b`. If `H^n(F i)` and `H^{n+1}(F i)` vanish for
+every `i ≤ a`, and the inclusion `F j ⟶ K` induces an isomorphism on `H^n` for every `j ≥ b`, then
+the spectral object of `F` has convergence bounds `a`, `b` in degree `n`, so that
+`convergence_of_hasConvergenceBounds` applies to the spectral sequence of `F`. For the decreasing
+filtration `F^s = F_{-s}` of README 5.1 with bounds `p₀` and `p₁` these are `a = -p₀` and
+`b = -p₁`. -/
+theorem hasConvergenceBounds_spectralObject_filtrationFunctor {C : Type u} [Category.{v} C]
+    [Abelian C] {K : CochainComplex C ℤ} (F : ℤ → Subobject K) (hF : Monotone F) (n a b : ℤ)
+    (hbot : ∀ i : ℤ, i ≤ a → IsZero ((F i : CochainComplex C ℤ).homology n) ∧
+      IsZero ((F i : CochainComplex C ℤ).homology (n + 1)))
+    (htop : ∀ j : ℤ, b ≤ j → IsIso (HomologicalComplex.homologyMap (F j).arrow n)) :
+    HasConvergenceBounds
+      (CochainComplex.spectralObject (CochainComplex.filtrationFunctor F hF)) n a b := by
+  sorry
 
 /-- **The Euler characteristic of a filtered complex** (README 5.3; Stacks, Tag 0BDW,
 Lemma 24.12). Let `F` be an increasing filtration of a cochain complex `K` that is finite in each
