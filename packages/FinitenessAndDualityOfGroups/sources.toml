@@ -11,3 +11,162 @@ locator = "sections on duality groups over a commutative ring, on amalgamated pr
 licence_class = "none"
 status = "waived"
 resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/14492#issuecomment-6873289060"
+cited_for = ["Final targets 1.4(c), 2.2, 2.3, 5.1, 5.3, 5.5 (forms over a commutative ring R)"]
+
+[[source]]
+id = "Serre1971Bourbaki"
+authors = "J.-P. Serre"
+title = "Cohomologie des groupes discrets (Séminaire Bourbaki, exposé 399)"
+year = 1971
+venue = "Séminaire Bourbaki 23 (1970/71), exp. 399, pp. 337-350"
+locator_scheme = "section"
+locator = "§1, nos 1.1-1.6 and the paragraph on vcd and the Euler characteristic (lines 26-86); §3, Théorème 5 and its examples (line 214)"
+url = "https://www.numdam.org/item/SB_1970-1971__13__337_0.pdf"
+fetched_from = "https://www.numdam.org/item/SB_1970-1971__13__337_0.pdf"
+fetched_at = "2026-11-14T06:59:23Z"
+sha256 = "35db73823aac5fd9e00c358b1c7a6c61c1c0e1c87b97f164ad4bf21f81e2f80f"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-14"
+cited_for = ["Final targets 2.1", "Final targets 3.2", "Final targets 4.1", "Final targets 5.6", "Final targets 6.4", "Final targets 6.8"]
+
+[[source]]
+id = "BieriEckmann1973"
+authors = "R. Bieri, B. Eckmann"
+title = "Groups with homological duality generalizing Poincaré duality"
+year = 1973
+venue = "Inventiones Mathematicae 20 (1973)"
+locator_scheme = "theorem"
+locator = "Definition 1.1; Theorems 2.3, 3.2, 3.3, 3.5, 4.5, 4.6; Corollary 4.3"
+url = "https://gdz.sub.uni-goettingen.de/download/pdf/PPN356556735_0020/LOG_0015.pdf"
+fetched_from = "https://gdz.sub.uni-goettingen.de/download/pdf/PPN356556735_0020/LOG_0015.pdf"
+fetched_at = "2026-11-14T07:05:15Z"
+sha256 = "ca2ee8fd4a803359e5e16cb38172473c3369e442ef0a6f5bf05bde00f05369a6"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-14"
+cited_for = ["Final targets 2.2", "Final targets 2.5", "Final targets 5.1-5.5"]
+
+[[source]]
+id = "BieriEckmann1974"
+authors = "R. Bieri, B. Eckmann"
+title = "Finiteness properties of duality groups"
+year = 1974
+venue = "Commentarii Mathematici Helvetici 49 (1974)"
+locator_scheme = "theorem"
+locator = "Propositions 1.2, 2.1, 3.2, 3.3; Theorems 3.1, 3.4; §3.1 (Poincaré duality groups)"
+url = "https://gdz.sub.uni-goettingen.de/download/pdf/PPN358147735_0049/LOG_0009.pdf"
+fetched_from = "https://gdz.sub.uni-goettingen.de/download/pdf/PPN358147735_0049/LOG_0009.pdf"
+fetched_at = "2026-11-14T07:08:03Z"
+sha256 = "735e3f5f7de47022817963f75b47486f1767cce4b91ffcf2d89804f90c175a5c"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-14"
+cited_for = ["Final targets 1.2-1.4", "Final targets 2.2", "Final targets 5.2", "Final targets 5.4"]
+
+[[source]]
+id = "Brown1974"
+authors = "K. S. Brown"
+title = "Euler characteristics of discrete groups and G-spaces"
+year = 1974
+venue = "Inventiones Mathematicae 27 (1974)"
+locator_scheme = "theorem"
+locator = "§1 Theorem 1 and Swan's theorem; §3 Definition and Proposition 1; §4 Theorem 3, Corollaries 1 and 2; §5 Proposition 2; §6 Theorem 5 and Corollary 1; Appendix A Theorem 7"
+url = "https://gdz.sub.uni-goettingen.de/download/pdf/PPN356556735_0027/LOG_0027.pdf"
+fetched_from = "https://gdz.sub.uni-goettingen.de/download/pdf/PPN356556735_0027/LOG_0027.pdf"
+fetched_at = "2026-11-14T07:18:46Z"
+sha256 = "775a0e7a65446f211d49ea405915206c7c86619c066583d55d3aaf5bf9baa64b"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-14"
+cited_for = ["Final targets 2.4", "Final targets 2.5", "Final targets 4.1", "Final targets 4.2", "Final targets 6.2-6.7"]
+
+[[source]]
+id = "Brown1975"
+authors = "K. S. Brown"
+title = "Homological criteria for finiteness"
+year = 1975
+venue = "Commentarii Mathematici Helvetici 50 (1975), 129-135"
+locator_scheme = "theorem"
+locator = "Theorems 1, 2 and 3; Corollaries 1 and 2 of Theorem 3"
+url = "https://gdz.sub.uni-goettingen.de/download/pdf/PPN358147735_0050/LOG_0018.pdf"
+fetched_from = "https://gdz.sub.uni-goettingen.de/download/pdf/PPN358147735_0050/LOG_0018.pdf"
+fetched_at = "2026-11-14T07:19:43Z"
+sha256 = "c972d568b5e73dfacfc1618b992f2f9efd994b300425064c942abc3cdb362594"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-14"
+cited_for = ["Final targets 1.3", "Final targets 5.2"]
+
+[[source]]
+id = "BrownGTM87"
+authors = "Kenneth S. Brown"
+title = "Cohomology of Groups"
+year = 1982
+venue = "Graduate Texts in Mathematics"
+doi = "10.1007/978-1-4684-9327-6"
+locator_scheme = "section"
+locator = "Ch. VIII §§2-11; Ch. IX §§2, 6-7, 9; Ch. X §§2-3"
+url = "https://doi.org/10.1007/978-1-4684-9327-6"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["Final targets 1-7 (coverage checklist)"]
+
+[[source]]
+id = "Farrell1977"
+authors = "F. T. Farrell"
+title = "An extension of Tate cohomology to a class of infinite groups"
+year = 1977
+venue = "Journal of Pure and Applied Algebra 10"
+doi = "10.1016/0022-4049(77)90018-4"
+locator_scheme = "section"
+locator = "whole paper: complete resolutions, the extended cohomology and its comparison with Tate cohomology"
+url = "https://doi.org/10.1016/0022-4049(77)90018-4"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["Final targets 7.1-7.3"]
+
+[[source]]
+id = "EilenbergGanea1957"
+authors = "S. Eilenberg, T. Ganea"
+title = "On the Lusternik-Schnirelmann category of abstract groups"
+year = 1957
+venue = "Annals of Mathematics 65 (1957)"
+doi = "10.2307/1970062"
+locator_scheme = "theorem"
+locator = "main theorem"
+url = "https://doi.org/10.2307/1970062"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled (the DOI resolves to JSTOR); cited by its locator without the text. The sources service filed it as missing because JSTOR is on none of its host lists; the target filed it to be cited by locator."
+cited_for = ["Final targets 3.3"]
+
+[[source]]
+id = "Wall1961"
+authors = "C. T. C. Wall"
+title = "Rational Euler characteristics"
+year = 1961
+venue = "Proceedings of the Cambridge Philosophical Society 57 (1961)"
+doi = "10.1017/s030500410003499x"
+locator_scheme = "section"
+locator = "definition of the rational Euler characteristic of a group with a finite-index subgroup having a finite K(G, 1)"
+url = "https://doi.org/10.1017/s030500410003499x"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled (the DOI resolves to an abstract page on Cambridge Core); cited by its locator without the text. The sources service filed it as missing because cambridge.org is on none of its host lists; the target filed it to be cited by locator."
+cited_for = ["Final targets 6.4"]
+
+[[source]]
+id = "Serre1971Prospects"
+authors = "J.-P. Serre"
+title = "Cohomologie des groupes discrets (Prospects in Mathematics, Annals of Mathematics Studies 70)"
+year = 1971
+venue = "Prospects in Mathematics, Ann. of Math. Studies 70, Princeton University Press (1971)"
+locator_scheme = "section"
+locator = "n°1.7, Théorème 1; n°1.8, Propositions 13 and 14(b) (as cited at Brown1974 lines 354, 402, 474 and 612)"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled book chapter; cited by its locator without the text. The sources service found no legal copy; the target filed it to be cited by locator, and Brown1974 reports the cited statements."
+cited_for = ["Final targets 2.5", "Final targets 6.4", "Final targets 6.6"]
