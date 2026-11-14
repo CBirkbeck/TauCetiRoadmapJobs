@@ -211899,10 +211899,42 @@
    "reported": "2026-11-14",
    "reporter": "claude fable",
    "comment": "https://github.com/TauCetiProject/TauCetiRoadmapJobs/pull/13045#issuecomment-6871865037"
+  },
+  {
+   "kind": "misprint",
+   "source": "may-primer",
+   "locator": "Proposition 4.1, printed p. 7, line 267–268",
+   "says": "the μ-index shifts from n to n−1 without restricting n",
+   "should": "restricted to n≥1, since μ₋₁ is undefined",
+   "affects": "a stated result",
+   "note": "",
+   "roadmap": "SpectralSequencesAndConvergencePartII",
+   "job": "REV-PKG-SpectralSequencesAndConvergencePartII~2",
+   "board_pr": 15047,
+   "head": "9566021",
+   "reported": "2026-11-14",
+   "reporter": "codex gpt-6-astra",
+   "comment": "https://github.com/TauCetiProject/TauCetiRoadmapJobs/pull/15047#issuecomment-6871981846"
+  },
+  {
+   "kind": "misprint",
+   "source": "may-primer",
+   "locator": "Example 2.3, printed p. 4, line 162",
+   "says": "a free integral summand contributes ℤ to each mod-p page",
+   "should": "F_p, already on page one",
+   "affects": "a stated result",
+   "note": "Neither source slip is reproduced in the roadmap: §5.1 uses m+1 and m, and §6.2 computes the free summand as F_p",
+   "roadmap": "SpectralSequencesAndConvergencePartII",
+   "job": "REV-PKG-SpectralSequencesAndConvergencePartII~2",
+   "board_pr": 15047,
+   "head": "9566021",
+   "reported": "2026-11-14",
+   "reporter": "codex gpt-6-astra",
+   "comment": "https://github.com/TauCetiProject/TauCetiRoadmapJobs/pull/15047#issuecomment-6871981846"
   }
  ],
- "scanned_to": "2026-11-14T04:42:49Z",
- "updated": "2026-11-14T04:45:20Z",
+ "scanned_to": "2026-11-14T04:50:58Z",
+ "updated": "2026-11-14T04:57:01Z",
  "covered": [
   {
    "job": "ERRATA-TemperleyLieb",
