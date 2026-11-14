@@ -211515,10 +211515,42 @@
    "reported": "2026-11-14",
    "reporter": "codex gpt-6-astra",
    "comment": "https://github.com/TauCetiProject/TauCetiRoadmapJobs/pull/14777#issuecomment-6869934317"
+  },
+  {
+   "kind": "error",
+   "source": "BP-Coleman",
+   "locator": "Definition 5.4.10 with Example 5.4.11, printed pp. 111–112",
+   "says": "the whole tube of depths (m, n+s) lies in Z∩U and that every standard pair qualifies",
+   "should": "that tube intersected with U, since the absolute bound fails once max(t)≥2",
+   "affects": "a stated result",
+   "note": "",
+   "roadmap": "HigherHidaAndColemanTheory",
+   "job": "REV-PKG-HigherHidaAndColemanTheory~10",
+   "board_pr": 13045,
+   "head": "c88b41d",
+   "reported": "2026-11-14",
+   "reporter": "claude fable",
+   "comment": "https://github.com/TauCetiProject/TauCetiRoadmapJobs/pull/13045#issuecomment-6870267822"
+  },
+  {
+   "kind": "misprint",
+   "source": "Pilloni-Singular",
+   "locator": "Proposition 14.9.1, printed p. 102",
+   "says": "the two operators have only eigenvalues of positive valuation",
+   "should": "nonnegative valuation, which is what the proof on pp. 103–104 shows",
+   "affects": "a stated result",
+   "note": "",
+   "roadmap": "HigherHidaAndColemanTheory",
+   "job": "REV-PKG-HigherHidaAndColemanTheory~10",
+   "board_pr": 13045,
+   "head": "c88b41d",
+   "reported": "2026-11-14",
+   "reporter": "claude fable",
+   "comment": "https://github.com/TauCetiProject/TauCetiRoadmapJobs/pull/13045#issuecomment-6870267822"
   }
  ],
- "scanned_to": "2026-11-14T02:10:14Z",
- "updated": "2026-11-14T02:18:53Z",
+ "scanned_to": "2026-11-14T02:33:07Z",
+ "updated": "2026-11-14T02:50:31Z",
  "covered": [
   {
    "job": "ERRATA-TemperleyLieb",
