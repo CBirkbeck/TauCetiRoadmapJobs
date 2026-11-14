@@ -2,7 +2,7 @@
 
 Reviewers, red-team passes and errata jobs record every mistake they find in a source while checking a roadmap's locators: misprints (slips whose intended meaning is clear), errors (a false statement or proof step) and gaps (a step the source does not justify), each with the roadmap, the board pull request or errata job and the head that reported it. Collected by the board sync from the `## Source issues` sections of review, red-team and errata comments; the data is in `errata/source-issues.json`.
 
-13149 mistakes recorded on the board: 7520 misprints, 3459 errors, 1702 gaps, 468 unparsed bullets.
+13151 mistakes recorded on the board: 7521 misprints, 3459 errors, 1703 gaps, 468 unparsed bullets.
 Errata jobs have read the cited sources of 60 roadmaps; in those of 2 they found no mistake.
 The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explorer/`: 1525 awaiting review, 13582 confirmed, 228 rejected.
 
@@ -9640,6 +9640,7 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 - **Gap** at the period convention preceding Theorem 3.1, printed p.12 (line 494–497): the source says a qualifying period is the period used in Swan's formula; it should be the least qualifying period; affects a stated result. Found by CohomologyOfGroups (#14777 at 95b03fe, 2026-11-14, codex gpt-6-astra).
 - **Gap** at the period definition preceding Theorem 3.1, printed p. 12, Hutchinson13 line 494–497: the source says any degree satisfying the cyclic-order condition is the period; it should be the least such degree when naming a unique period; affects a stated result. Found by CohomologyOfGroups (#14777 at 08ce0d9, 2026-11-14, codex gpt-6-astra).
 - **Misprint** at the proof of Corollary 3.3, p. 12 (Hutchinson13 line 518): the source says the third homology groups occur for degrees congruent to 3 modulo 3; it should be modulo 4, as in the statement of the corollary; affects nothing. Found by CohomologyOfGroups (#15095 at cf9d800, 2026-11-14, claude fable).
+- **Misprint** at the proof of Corollary 3.3, p. 12 (Hutchinson13 line 518): the source says the nonzero groups occur for degrees congruent to 3 modulo 3; it should be modulo 4, as in the statement of the corollary; affects nothing. Found by CohomologyOfGroups (#15095 at 7bfdf06, 2026-11-14, claude fable).
 - **Misprint** at the proof of Corollary 3.3, printed p. 12 (Hutchinson13 line 518): the source says the localized homology is cyclic of the stated order when the degree is congruent to 3 modulo 3; it should be congruent to 3 modulo 4, as in the statement of the corollary; affects nothing. Found by CohomologyOfGroups (#14777 at 47da478, 2026-11-14, claude fable).
 
 ## Huybrechts, Lectures on K3 surfaces (author draft)
@@ -12218,6 +12219,7 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 
 ## MilneCFT
 
+- **Gap** at Ch. II Remark 3.5, p. 81 (MilneCFT line 3813–3817): the source says the periodicity isomorphism is cup product with the class of the chosen character and postpones the proof; it should be proved, as 8.4 plans; affects a stated result. Found by CohomologyOfGroups (#15095 at 7bfdf06, 2026-11-14, claude fable).
 - **Gap** at Ch. II Remark 3.5, p. 81 (MilneCFT line 3813–3822): the source says the periodicity isomorphism is cup product with the class of the chosen character and defers the proof; it should be proved, as the roadmap's 8.4 does; affects a stated result. Found by CohomologyOfGroups (#15095 at cf9d800, 2026-11-14, claude fable).
 
 ## MilneLEC
