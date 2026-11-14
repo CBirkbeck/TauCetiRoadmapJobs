@@ -2,7 +2,7 @@
 
 Reviewers, red-team passes and errata jobs record every mistake they find in a source while checking a roadmap's locators: misprints (slips whose intended meaning is clear), errors (a false statement or proof step) and gaps (a step the source does not justify), each with the roadmap, the board pull request or errata job and the head that reported it. Collected by the board sync from the `## Source issues` sections of review, red-team and errata comments; the data is in `errata/source-issues.json`.
 
-13168 mistakes recorded on the board: 7535 misprints, 3459 errors, 1706 gaps, 468 unparsed bullets.
+13169 mistakes recorded on the board: 7536 misprints, 3459 errors, 1706 gaps, 468 unparsed bullets.
 Errata jobs have read the cited sources of 60 roadmaps; in those of 2 they found no mistake.
 The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explorer/`: 1525 awaiting review, 13582 confirmed, 228 rejected.
 
@@ -9649,6 +9649,7 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 - **Misprint** at Corollary 3.3, proof, printed p. 12 (Hutchinson13 line 518): the source says the degrees are those congruent to 3 modulo 3; it should be 3 modulo 4, as in the statement; affects the proof. Found by CohomologyOfGroups (#14777 at f0a1227, 2026-11-13, claude fable).
 - **Misprint** at Corollary 3.3, proof, printed p. 12 (Hutchinson13 line 518): the source says the degrees concerned are those congruent to 3 modulo 3; it should be congruent to 3 modulo 4, as in its statement; affects the proof. Found by CohomologyOfGroups (#15095 at f181f00, 2026-11-14, claude fable).
 - **Misprint** at Corollary3.3 proof, printed p.12, line518: the source says the relevant odd degrees are 3 modulo 3; it should be 3 modulo 4; affects the proof. Found by CohomologyOfGroups (#14777 at a5cef00, 2026-11-13, codex gpt-6-astra).
+- **Misprint** at proof of Corollary 3.3, printed p. 12: the source says the degrees with nonzero `2`-local homology are those congruent to three modulo three; it should be three modulo four, as its own statement says; affects nothing. Found by CohomologyOfGroups (#15095 at a528360, 2026-11-14, claude fable).
 - **Misprint** at proof of Corollary 3.3, printed p. 12, Hutchinson13 line 518: the source says the relevant degrees are congruent to 3 modulo 3; it should be congruence to 3 modulo 4; affects nothing. Found by CohomologyOfGroups (#14777 at 4acbf20, 2026-11-14, codex gpt-6-astra).
 - **Gap** at the paragraph before Theorem 3.1, printed p. 12 (Hutchinson13 line 494–497): the source says a number `d ≥ 2` with the periodicity property is called the period; it should be the least such `d`, since every multiple has the property; affects a stated result. Found by CohomologyOfGroups (#14777 at f0a1227, 2026-11-13, claude fable).
 - **Gap** at the period convention preceding Theorem 3.1, printed p. 12 (lines 494–497): the source says a qualifying positive period is the period used in Swan's formula; it should be the least qualifying positive period; affects a stated result. Found by CohomologyOfGroups (#14777 at 35fb1a6, 2026-11-14, codex gpt-6-astra).
