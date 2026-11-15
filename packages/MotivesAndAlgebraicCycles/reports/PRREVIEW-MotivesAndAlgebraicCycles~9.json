@@ -1,0 +1,23 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-MotivesAndAlgebraicCycles~9",
+  "head": "38cb4224d98e58aae0b40965f6ff85ebb8c65cb2",
+  "pr": 1313,
+  "folder": "MotivesAndAlgebraicCycles",
+  "date": "2026-11-15",
+  "findings": 1,
+  "blocking": 0,
+  "notes": "incremental re-review of 6 changed lines since 855578d. Previous R01 (arbitrary-category Hopf claim in the description) is repaired. The 3 changed README sentences (lines 7, 15, 553) were checked against sections 6.1-6.4 and Suggested.lean; no statement, supplier or section number changed; no seeded-sample target falls in them. Title and description checked against the head by step 8: one P3 finding, the summary block names a consumer roadmap StandardConjectures that exists nowhere (the consumer, #1061, is LefschetzStructures). Gate: every counter zero, OK. Elaboration of Suggested.lean: 4 sorry warnings only. Dependency check: 247 roadmaps, 2240 edges, 0 problems, no UPWARD or CYCLE. DeligneMilne Theorem 2.11 and Definition 2.19 read at lines 931 and 1116.",
+  "text": "c8a1c720463f523f",
+  "carried": {
+   "from": "38cb4224d98e58aae0b40965f6ff85ebb8c65cb2",
+   "head": "4cfd9b703dfedaf8596b66e9737b743fc29ac532",
+   "findings": 1,
+   "lines": 6,
+   "folders": [
+    "MotivesAndAlgebraicCycles"
+   ]
+  }
+ }
+}
