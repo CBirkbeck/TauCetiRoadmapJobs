@@ -1720,7 +1720,11 @@
       "tauceti:TauCeti.SmoothMappingTorus.flow",
       "tauceti:TauCeti.SmoothMappingTorus.flow_one_mk",
       "tauceti:TauCeti.SmoothMappingTorus.contMDiff_uncurry_flow",
-      "roadmap:DifferentialGeometry Layer 3",
+      "tauceti:TauCeti.globalFlow",
+      "tauceti:TauCeti.isMIntegralCurve_globalFlow",
+      "tauceti:TauCeti.contMDiff_globalFlow_uncurry",
+      "tauceti:TauCeti.mfderiv_globalFlow_apply_self",
+      "tauceti:TauCeti.isCompleteVectorField_of_compactSpace",
       "target:7.1",
       "target:7.2",
       "target:7.4",
@@ -2376,13 +2380,6 @@
     "§2.7"
    ],
    "what": "null-boundary partitions of small diameter; Shannon-McMillan-Breiman for finite partitions; ergodic decomposition with g_P(x) = h_{mu_x}(T,P) and entropy integration"
-  },
-  {
-   "roadmap": "DifferentialGeometry",
-   "sections": [
-    "Layer 3"
-   ],
-   "what": "toFlow and completeness on compact manifolds"
   },
   {
    "roadmap": "GeometricCurrents",
