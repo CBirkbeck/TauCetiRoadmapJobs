@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-ConvexLifting~6",
+  "head": "1ae5fd16a178fd3a53005f3dcc9ff8090d164cc5",
+  "pr": 2292,
+  "folder": "ConvexLifting",
+  "date": "2026-11-15",
+  "findings": 0,
+  "blocking": 0,
+  "notes": "incremental re-review of 0 changed lines since 1ae5fd1. Checked the pull request's title and description sentence by sentence against the head: file list, no supplier, 14 theorems / 18 defs / 1 abbrev / 1 structure, sharedOAOn and affine_coordinate_comparison, README lines 176, 216, 218, 242-243, 307, toolchain and Mathlib pin, 6 topic-checker tests, nothing outside the folder; no sentence contradicted. Adversarial rows recomputed for affine_coordinate_comparison (two anchors, and the J=empty negative control showing hD is needed) and sharedOAOn. Gate: all counters 0, OK. lake env lean: 14 sorry warnings only. depcheck: 245 roadmaps, 2206 edges, 0 problems. Overlaps: none. The seeded sample falls in no changed passage. Not verifiable: the hosted CI run cited in the description; TS05, HBO13, KLW18 (uncertified).",
+  "text": "a6b12ede8b2e1e19"
+ }
+}
