@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-ClassifyingTopoi~21",
+  "head": "02a27613ab46de115914c422df437e1f8529a069",
+  "pr": 1997,
+  "folder": "ClassifyingTopoi",
+  "date": "2026-11-15",
+  "findings": 2,
+  "blocking": 0,
+  "notes": "incremental re-review of 106 changed lines since 5edce8c. Previous R01 is repaired (2.4 cites GrothendieckTopoi 1.2 IsGrothendieckTopos.wellPowered and 1.4; Mathlib Shrink and WellPowered are in the contract and the Needs line; the Dependencies follow). New P3 R01: the pull request description's GrothendieckTopoi 1.2/1.4 bullet and its 'last commit' sentence predate this head. New P3 R02: the 1.4 gloss credits universal coequalizers alone with the pullback-stability of epimorphic families; abelian groups refute this, and universal coproducts are also needed. Checked: GrothendieckTopoi open head 1.2, 1.4 and Suggested.lean:126; Mathlib pin Logic/Small/Defs:51 and Subobject/WellPowered:50, with no pinned WellPowered for sheaves; sample target 2.4 against Car12a Lemma 3.2 and proof, p. 182 (open TAC copy). Gate rerun: every check 0, OK (worker's build=0). Depcheck: 245 roadmaps, 2229 edges, 0 problems. lake env lean: 28 sorry warnings, nothing else; Suggested.lean unchanged.",
+  "text": "17b74a3c4745f441"
+ }
+}
