@@ -32,7 +32,7 @@ the differentials, the `p`-monomial operators and the freeness of the Frobenius 
 normal local ring; and the interface statements of Layer 0 on Tau Ceti's sheaf of relative
 differentials (the comparison map, base change, closed immersions, the rank on the smooth locus),
 on Grassmannians along a surjection, on smoothness at closed points and on the normality of the base
-change of a normal scheme along a separable extension of the ground field (§0.7, which no other
+change of a normal scheme along a separable extension of the ground field (§0.6, which no other
 roadmap states and which §6.3 needs).
 
 **Supplied elsewhere and cited.** The Grassmannian of locally free rank-`r` quotients of a
@@ -316,17 +316,41 @@ derivation and the pullback–pushforward adjunction.
 
 ### 0.2 Base change and closed immersions
 
-Prove *relativeDifferentials.baseChangeIso*: for ring maps `R → R'`, a scheme `X` over `Spec R` and
-`X' = X ×_{Spec R} Spec R'` with projection `g'`, the map `c_{g'} : g'*Ω_{X/R} → Ω_{X'/R'}` (§0.1 for the
-square over `Spec R' → Spec R`) is an isomorphism (stacksNormalization, Morphisms Lemma 29.33.10, tag
-01V0, line 2926). On affine charts it is Mathlib's `KaehlerDifferential.tensorKaehlerEquiv`.
+Let `R → R'` be a ring map, `X` a scheme over `Spec R` and `X' = X ×_{Spec R} Spec R'` with projection
+`g' : X' → X`. Regard `X'` as a scheme over `Spec R` through `Spec R' → Spec R`, so that `g'` is a morphism over
+`Spec R` and §0.1 gives `c_{g'} : g'*Ω_{X/R} → Ω_{X'/R}`. Let `e : Ω_{X'/R} → Ω_{X'/R'}` be the map that
+`Scheme.relativeDifferentialsHomEquiv` attaches to the universal `R'`-derivation of `X'`, which is also an
+`R`-derivation; it sends `d_{X'/R}(h)` to `d_{X'/R'}(h)` and is surjective (stacksNormalization, Morphisms Lemma
+29.33.9, tag 01UX, line 2918, for `X' → Spec R' → Spec R`). The **base-change map** is the composite
+`b_{g'} = e ∘ c_{g'} : g'*Ω_{X/R} → Ω_{X'/R'}`: the `O_{X'}`-linear map adjoint to the `R`-derivation
+`O_X → g'_*Ω_{X'/R'}`, `h ↦ d_{X'/R'}(g'*h)`, and the unique `O_{X'}`-linear map sending `g'*(d_{X/R}h)` to
+`d_{X'/R'}(g'*h)` (stacksNormalization, Morphisms Lemma 29.33.8, tag 01UV, line 2900, where the comparison map is
+stated for a commutative square over `Spec R' → Spec R`).
+
+Prove *relativeDifferentials.baseChangeIso*: `b_{g'}` is an isomorphism (stacksNormalization, Morphisms Lemma
+29.33.10, tag 01V0, line 2926). On an affine chart `X = Spec A`, `X' = Spec B` with `B = R' ⊗_R A`, it is Mathlib's
+`KaehlerDifferential.tensorKaehlerEquiv`, `B ⊗_A Ω[A⁄R] ≅ Ω[B⁄R']`.
 
 Prove *relativeDifferentials.pullbackMap_surjective_of_isClosedImmersion*: for a closed immersion
 `i : Z → X` over `Spec R`, `c_i : i*Ω_{X/R} → Ω_{Z/R}` is surjective (stacksNormalization, Morphisms
 Lemma 29.33.15, tag 01UZ, line 2953). On affine charts it is
 `KaehlerDifferential.mapBaseChange_surjective`.
 
-*Needs:* §0.1; Mathlib `KaehlerDifferential.tensorKaehlerEquiv`, `KaehlerDifferential.mapBaseChange_surjective`.
+**Checks.**
+
+- For `R = k`, `R' = k(s)` purely transcendental and `X = Spec k`, `X' = Spec k(s)`: §0.1's `c_{g'}` is
+  `0 → Ω_{k(s)/k} = k(s)·ds`, not an isomorphism, while `e` kills `ds` and `b_{g'}` is `0 → Ω_{k(s)/k(s)} = 0`, an
+  isomorphism. A base-change map with target the differentials over `R` is excluded.
+- For `k = 𝔽_p(t)`, `k' = k(τ)` with `τ^p = t`, and `X = Spec K`, `K = k[y]/(y^p − t)`: `Ω_{K/k} = K·dy` (as
+  `d(y^p − t) = 0`), and `X' = Spec k'[u]/(u^p)` with `u = y − τ` is not reduced. `Ω_{X'/k}` is free on `dτ, du`
+  with `c_{g'}(dy) = dτ + du`, which does not generate it, whereas `Ω_{X'/k'} = (k'[u]/(u^p))·du` is free of rank
+  one and `b_{g'}(dy) = du`, an isomorphism: no flatness, separability or reducedness enters the statement.
+- For `R = ℤ`, `R' = 𝔽₂` and `X = 𝔸¹_ℤ = Spec ℤ[T]`, `X' = Spec 𝔽₂[T]` and `b_{g'}` is `𝔽₂[T]·dT → 𝔽₂[T]·dT`,
+  `dT ↦ dT`, the identity, as `tensorKaehlerEquiv` gives for `B = 𝔽₂ ⊗_ℤ ℤ[T]`; here `Ω_{𝔽₂/ℤ} = 0` and `e` is
+  already an isomorphism.
+
+*Needs:* §0.1; Tau Ceti `Scheme.relativeDifferentialsHomEquiv`; Mathlib `KaehlerDifferential.tensorKaehlerEquiv`,
+`KaehlerDifferential.mapBaseChange_surjective`.
 
 ### 0.3 The smooth locus of dimension d
 
@@ -393,7 +417,7 @@ Right exactness also keeps `h*E' → h*E` surjective with kernel the image of `h
 
 *Needs:* AlgebraicModuliForArithmeticGeometry §1.3 (`coherentGrassmannian`); Mathlib `IsClosedImmersion`.
 
-### 0.6 Smoothness at closed points over a perfect field
+### 0.5 Smoothness at closed points over a perfect field
 
 Prove *smooth_iff_isRegularLocalRing_closedPoints*: for `X` locally of finite type over a perfect field
 `k`, `X → Spec k` is smooth iff `O_{X,x}` is a regular local ring for every closed point `x`
@@ -413,7 +437,7 @@ point (`LocallyOfFiniteType.jacobsonSpace`, `nonempty_inter_closedPoints`).
 *Needs:* SchemeAndStackFoundations §4.13 (`regularLocus_eq_smoothLocus`); Mathlib
 `LocallyOfFiniteType.jacobsonSpace`, `nonempty_inter_closedPoints`, `IsRegularLocalRing`.
 
-### 0.7 Normality under separable extension of the ground field
+### 0.6 Normality under separable extension of the ground field
 
 Prove *isNormalScheme_pullback_of_isTranscendentalSeparable*: for a field `k`, a normal `k`-scheme `W` (every
 stalk an integrally closed domain, `IsNormalScheme` of SchemeAndStackFoundations §0.30) and a separable field
@@ -555,9 +579,12 @@ uniqueness is `ext_of_isDominant_of_isSeparated`.
 - In the second Check of §1.2, `Z = Spec k` mapping to the origin with the quotient
   `F ⊗ k = k² → k`, `(a, b) ↦ b`, does not factor through `N`: here `h⁻¹(U) = ∅` is not dense, so the
   density hypothesis cannot be dropped.
-- For `X` smooth over `k`, `F = Ω_{X/k}` and `h : Bl_p X → X` the blowup of a closed point, the pulled-back
-  identity quotient gives `q = h`, a morphism to `N = X` that is not an isomorphism: the universal
-  property characterises `N` as a terminal object, not every `Z` with a quotient.
+- For `X` smooth over `k` of relative dimension `r ≥ 2`, `F = Ω_{X/k}` and `h : Bl_p X → X` the blowup of a
+  closed point `p` (a regular, hence reduced, scheme with exceptional fibre `ℙ^{r−1}_{κ(p)}` over `p`), the
+  pulled-back identity quotient gives `q = h`, a morphism to `N = X` that is not an isomorphism: the universal
+  property characterises `N` as a terminal object, not every `Z` with a quotient. For `r = 1` the maximal ideal
+  of `O_{X,p}` is invertible, so `Bl_p X = X` and `q = h` is the identity (for `X = 𝔸¹` and `p` the origin the
+  ideal `(x)` is already effective Cartier): the bound `r ≥ 2` is what makes `h` a non-isomorphism.
 
 *Needs:* §1.2; Tau Ceti `vanishingIdeal_le_ker_of_range_subset`; Mathlib `IsClosedImmersion.lift`,
 `ext_of_isDominant_of_isSeparated`; AlgebraicModuliForArithmeticGeometry §1.3.
@@ -754,7 +781,7 @@ Define *nashIterate*: `X^{(0)} = X` and `X^{(i+1)} = (X^{(i)})*` (with the same 
   `X^{(i)}` is `X^{(i+j)}`, for all `i`, `j`.
 - Preservation of the Setting: if `X` is in the Setting with this `d`, then every `X^{(i)}` is in the Setting with the
   same `d` (§2.3, by induction on `i`).
-- Resolution predicate: `NashIterationResolves X d` holds iff `X^{(i)} → Spec k` is smooth for some `i`; for `X` in the
+- Resolution predicate: *NashIterationResolves* holds for `X` and `d` iff `X^{(i)} → Spec k` is smooth for some `i`; for `X` in the
   Setting, such an `X^{(i)}`, being pure of dimension `d`, is smooth of relative dimension `d` (§0.3).
 
 **Checks.**
@@ -765,8 +792,8 @@ Define *nashIterate*: `X^{(0)} = X` and `X^{(i+1)} = (X^{(i)})*` (with the same 
 - The cusp in characteristic `2` has `X^{(i)} ≅ X` for all `i` (§2.5), so the iteration does not resolve it:
   the predicate depends on the characteristic.
 - For the cusp in characteristic `2` with `d = 2` instead of its dimension `1`, `Ω_{X/k}` has rank `1` on `X_sm`, so
-  `X_sm^{(2)} = ∅` and `X^{(1)} = ∅`, which is smooth: `NashIterationResolves X 2` holds although
-  `NashIterationResolves X 1` fails (previous Check). Likewise `𝔸²_k` with `d = 1` has `X^{(1)} = ∅ ≇ 𝔸²`. The
+  `X_sm^{(2)} = ∅` and `X^{(1)} = ∅`, which is smooth: the iteration with `d = 2` resolves `X` although the
+  iteration with `d = 1` does not (previous Check). Likewise `𝔸²_k` with `d = 1` has `X^{(1)} = ∅ ≇ 𝔸²`. The
   predicate and the iterates carry meaning only for `X` in the Setting with its own `d`, which is how Layer 7 uses
   them.
 
@@ -950,8 +977,9 @@ differentiation, dividing by integers); a minimal prime `P` over `J` is `(J : x)
 
 **Checks.**
 
-- In `ℚ[x]` with `∂ = d/dx`, the stable ideal `(x²)` has minimal prime `(x)`, which is not `∂`-stable: but
-  `(x²)` is not `∂`-stable (`∂(x²) = 2x`); the only `∂`-stable ideals are `0` and `ℚ[x]`.
+- In `ℚ[x]` with `∂ = d/dx`, `(x²)` is not `∂`-stable (`∂(x²) = 2x ∉ (x²)`), so its non-stable minimal prime
+  `(x)` is no counterexample; the only `∂`-stable ideals are `0` and `ℚ[x]` (a nonzero stable ideal contains a
+  polynomial of least degree `n`, whose `n`-th derivative is `n!` times its leading coefficient, a unit).
 - In `ℚ[x, y]` with `∂ = ∂/∂x`, the stable ideal `(y²)` has stable minimal prime `(y)`.
 - In `𝔽_p[x]` with `∂ = d/dx`, `(x^p)` is stable while its minimal prime `(x)` is not: the hypothesis
   `ℚ ⊆ R` is needed.
@@ -979,7 +1007,7 @@ closed field with a proof through completions; the route below avoids completion
 5. At a closed point, `κ` is finite over `k`, hence separable as `k` has characteristic zero, so
    `m/m² ≅ κ ⊗_R Ω_{R/k} ≅ κ^d` (Tau Ceti `KaehlerDifferential.kerCotangentToTensor_bijective_of_formallyEtale`, with
    `Algebra.FormallyEtale.of_isSeparable`) and `dim_κ m/m² = d = dim R` (SchemeAndStackFoundations §0.7); so `R` is
-   regular, and §0.6 concludes.
+   regular, and §0.5 concludes.
 
 **Checks.**
 
@@ -988,7 +1016,7 @@ closed field with a proof through completions; the route below avoids completion
 - Over `𝔽_2` the cusp has a free rank-one quotient (§2.5) and is singular: the characteristic hypothesis is
   needed; the proof fails at step 4, where `(x^p)` is `∂`-stable with non-stable minimal prime (§4.3).
 
-*Needs:* §§0.3, 0.6, 1.1, 4.1, 4.2, 4.3; SchemeAndStackFoundations §0.7; Tau Ceti
+*Needs:* §§0.3, 0.5, 1.1, 4.1, 4.2, 4.3; SchemeAndStackFoundations §0.7; Tau Ceti
 `KaehlerDifferential.kerCotangentToTensor_bijective_of_formallyEtale`; Mathlib `Algebra.FormallyEtale.of_isSeparable`,
 `IsRegularLocalRing`.
 
@@ -1113,7 +1141,7 @@ nashModificationNotes2024, Section 5, lines 408–439). Route:
 Prove *nashBlowupHom_isIso_iff_smooth_of_normal*: for a perfect field `k` of characteristic `p > 0` and `X` normal
 in the Setting, `ν` is an isomorphism iff `X` is smooth over `k` (duarteNunezBetancourt2020, Theorem 3.10, line 256,
 over an algebraically closed field; nashModificationNotes2024, Theorem 5.1, line 362, where "singular" should read
-"nonsingular"). Route: §2.5 gives the quotient, §5.3 regularity at closed points, §0.6 smoothness.
+"nonsingular"). Route: §2.5 gives the quotient, §5.3 regularity at closed points, §0.5 smoothness.
 
 **Checks.**
 
@@ -1125,7 +1153,7 @@ over an algebraically closed field; nashModificationNotes2024, Theorem 5.1, line
 - The quadric cone `z² = xy` (normal) in characteristic `p ≠ 2` has Jacobian ideal `(x, y, z)`, not invertible, so
   `ν` is not an isomorphism, consistently.
 
-*Needs:* §§0.6, 2.5, 5.3.
+*Needs:* §§0.5, 2.5, 5.3.
 
 ### Examples
 
@@ -1205,7 +1233,7 @@ containing every generic point, and `η_{k'} : (X̄*)_{k'} → (X*)_{k'}` is fin
 `(η⁻¹U₀)_{k'} ≅ (U₀)_{k'}`. The inclusion of the generic points of `(X*)_{k'}` therefore factors through the
 integral `η_{k'}`, and Mathlib's `Scheme.Hom.normalizationDesc` gives a morphism `((X*)_{k'})^ν → (X̄*)_{k'}` over
 `(X*)_{k'}` (AlgebraicModuliForArithmeticGeometry §5.4 identifies `((X*)_{k'})^ν` with this relative
-normalisation). By §0.7, `(X̄*)_{k'}` is normal, so over an affine open its ring of sections is a finite product
+normalisation). By §0.6, `(X̄*)_{k'}` is normal, so over an affine open its ring of sections is a finite product
 of normal domains, integrally closed in its total ring of fractions, which is the product of the residue fields at
 its generic points; Tau Ceti's `Scheme.Hom.isIso_normalizationDesc_iff` then makes the morphism an isomorphism (in
 the source's terms, stacksNormalization, Lemma 29.55.5(3), tag 035Q, line 6566: the normalisation of the target
@@ -1224,11 +1252,11 @@ Mathlib's `normalizationPullback` is an isomorphism along smooth maps.
   not of finite type, hence not smooth, and only the general route reaches the case; a statement for finite
   separable extensions alone would miss it.
 - For `k = 𝔽_p(t)`, `p > 2`, the regular curve `C : x^p + y² + t = 0` has `C̄* = C* = C`, but over the inseparable
-  `k' = k(t^{1/p})`, `C_{k'}` is the non-normal curve `(x + t^{1/p})^p + y² = 0` (§0.7) with `(C_{k'})* = C_{k'}`
+  `k' = k(t^{1/p})`, `C_{k'}` is the non-normal curve `(x + t^{1/p})^p + y² = 0` (§0.6) with `(C_{k'})* = C_{k'}`
   (the free quotient `dx ↦ 1`, `dy ↦ 0` persists) and `(C_{k'})̄* = 𝔸¹ ≠ C_{k'} = (C̄*)_{k'}`; the comparison
   `𝔸¹ → C_{k'}`, `s ↦ (−s² − t^{1/p}, s^p)`, is bijective and not an isomorphism: separability is needed.
 
-*Needs:* §§0.7, 2.6, 6.1; AlgebraicModuliForArithmeticGeometry §5.4; Mathlib `Scheme.Hom.normalizationDesc`,
+*Needs:* §§0.6, 2.6, 6.1; AlgebraicModuliForArithmeticGeometry §5.4; Mathlib `Scheme.Hom.normalizationDesc`,
 `Scheme.Hom.normalizationPullback`, `Algebra.IsTranscendentalSeparable`; Tau Ceti
 `Scheme.Hom.isIso_normalizationDesc_iff`.
 
@@ -1260,7 +1288,7 @@ isomorphisms.
 
 ### Dependencies
 
-Layers 2, 4, 5 and §0.7; AlgebraicModuliForArithmeticGeometry §5.4; Mathlib relative normalisation; Tau Ceti
+Layers 2, 4, 5 and §0.6; AlgebraicModuliForArithmeticGeometry §5.4; Mathlib relative normalisation; Tau Ceti
 `Scheme.Hom.isIso_normalizationDesc_iff`.
 
 ## Layer 7: iteration and the never-resolves principle
@@ -1280,7 +1308,7 @@ over `k` (so smooth of relative dimension `d`, §0.3), then `X^{(i)} ≅ X ≅ Y
   iterate of `Y_i` is `Y_{i+j}`.
 - Preservation of the Setting: if `X` is in the Setting with this `d`, then every `Y_i` is in the Setting with the same
   `d`, and `Y_i` is normal for every `i ≥ 1` (§6.1); `Y_0 = X` is normal only when `X` is.
-- Resolution predicate: `NormalizedNashIterationResolves X d` holds iff `Y_i → Spec k` is smooth for some `i`.
+- Resolution predicate: *NormalizedNashIterationResolves* holds for `X` and `d` iff `Y_i → Spec k` is smooth for some `i`.
 - Smooth stabilisation: for `X` in the Setting, if `Y_i` is smooth over `k` then `Y_j ≅ Y_i` over `Y_i` for every
   `j ≥ i` (`Y_i` is pure of dimension `d`, hence smooth of relative dimension `d` by §0.3, and the theorem above
   applies to it); likewise, if `X^{(i)}` is smooth then `X^{(j)} ≅ X^{(i)}` for every `j ≥ i`.

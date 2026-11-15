@@ -76,7 +76,7 @@
      "id": "0.2",
      "kind": "theorem",
      "name": "AlgebraicGeometry.Scheme.relativeDifferentials.baseChangeIso",
-     "statement": "For R → R' and X over Spec R with X' = X ×_{Spec R} Spec R' and projection g', c_{g'} : g'^*Ω_{X/R} ⟶ Ω_{X'/R'} is an isomorphism; for a closed immersion i : Z → X over Spec R, c_i is surjective.",
+     "statement": "For R → R' and X over Spec R with X' = X ×_{Spec R} Spec R' and projection g', regard X' over Spec R through Spec R' → Spec R; the base-change map b_{g'} = e ∘ c_{g'} : g'^*Ω_{X/R} ⟶ Ω_{X'/R} ⟶ Ω_{X'/R'}, with c_{g'} from 0.1 and e the canonical surjection given by the universal R'-derivation of X' viewed as an R-derivation (equivalently the adjoint of the R-derivation h ↦ d_{X'/R'}(g'^*h)), is an isomorphism; for a closed immersion i : Z → X over Spec R, c_i : i^*Ω_{X/R} ⟶ Ω_{Z/R} is surjective.",
      "hypotheses": [
       "R → R' a ring map",
       "X a scheme over Spec R",
@@ -84,12 +84,30 @@
      ],
      "locator": {
       "source": "stacksNormalization",
-      "where": "Morphisms Lemmas 29.33.10 (01V0), line 2926, and 29.33.15 (01UZ), line 2953"
+      "where": "Morphisms Lemmas 29.33.8 (01UV), line 2900, 29.33.9 (01UX), line 2918, 29.33.10 (01V0), line 2926, and 29.33.15 (01UZ), line 2953"
      },
      "prerequisites": [
       "target:0.1",
+      "tauceti:AlgebraicGeometry.Scheme.relativeDifferentialsHomEquiv",
       "mathlib:KaehlerDifferential.tensorKaehlerEquiv",
       "mathlib:KaehlerDifferential.mapBaseChange_surjective"
+     ],
+     "tests": [
+      {
+       "name": "baseChange_target_over_extension",
+       "kind": "non-example",
+       "statement": "R = k, R' = k(s), X = Spec k: c_{g'} alone is 0 → Ω_{k(s)/k} = k(s) ds, not an isomorphism; b_{g'} is 0 → Ω_{k(s)/k(s)} = 0, an isomorphism; a target over R is excluded"
+      },
+      {
+       "name": "baseChange_inseparable_nonreduced",
+       "kind": "computation",
+       "statement": "k = 𝔽_p(t), k' = k(τ), τ^p = t, X = Spec K with K = k[y]/(y^p − t): Ω_{K/k} = K dy, X' = Spec k'[u]/(u^p) with u = y − τ; Ω_{X'/k} free on dτ, du with c_{g'}(dy) = dτ + du; b_{g'}(dy) = du generates Ω_{X'/k'} = (k'[u]/(u^p)) du: no flatness, separability or reducedness needed"
+      },
+      {
+       "name": "baseChange_Z_to_F2",
+       "kind": "compatibility",
+       "statement": "R = ℤ, R' = 𝔽₂, X = Spec ℤ[T]: b_{g'} is the identity of 𝔽₂[T] dT, as KaehlerDifferential.tensorKaehlerEquiv gives; Ω_{𝔽₂/ℤ} = 0 so e is an isomorphism"
+      }
      ]
     },
     {
@@ -193,7 +211,7 @@
      ]
     },
     {
-     "id": "0.6",
+     "id": "0.5",
      "kind": "theorem",
      "name": "AlgebraicGeometry.smooth_iff_isRegularLocalRing_closedPoints",
      "statement": "For X locally of finite type over a perfect field k, X → Spec k is smooth iff O_{X,x} is regular for every closed point x.",
@@ -230,7 +248,7 @@
      ]
     },
     {
-     "id": "0.7",
+     "id": "0.6",
      "kind": "theorem",
      "name": "AlgebraicGeometry.isNormalScheme_pullback_of_isTranscendentalSeparable",
      "statement": "For a field k, a normal k-scheme W (IsNormalScheme) and a separable field extension k'/k (every finitely generated subextension separably generated: Algebra.IsTranscendentalSeparable k k'), the base change W ×_{Spec k} Spec k' is normal. No finiteness or Noetherian hypothesis on W or k'/k.",
@@ -424,7 +442,7 @@
       {
        "name": "lift_blowup_not_terminal",
        "kind": "non-example",
-       "statement": "for X smooth and Bl_p X → X with the identity quotient, q = Bl_p X → X is not an isomorphism"
+       "statement": "for X smooth of relative dimension r ≥ 2 and Bl_p X → X the blowup of a closed point (exceptional fibre ℙ^{r−1}) with the identity quotient, q = Bl_p X → X is not an isomorphism; for r = 1 (X = 𝔸¹, p the origin) the ideal (x) is invertible, Bl_p X = X and q is the identity"
       }
      ]
     },
@@ -802,7 +820,7 @@
       {
        "name": "nashIterate_wrong_dimension",
        "kind": "non-example",
-       "statement": "cusp in characteristic 2 with d = 2: X_sm^{(2)} = ∅, X^{(1)} = ∅ is smooth, so NashIterationResolves X 2 holds while NashIterationResolves X 1 fails; 𝔸² with d = 1 has X^{(1)} = ∅; the iterates are meaningful only for X in the Setting with its own d"
+       "statement": "cusp in characteristic 2 with d = 2: X_sm^{(2)} = ∅, X^{(1)} = ∅ is smooth, so the iteration with d = 2 resolves X while the iteration with d = 1 does not; 𝔸² with d = 1 has X^{(1)} = ∅; the iterates are meaningful only for X in the Setting with its own d"
       }
      ]
     }
@@ -1112,7 +1130,7 @@
      },
      "prerequisites": [
       "target:0.3",
-      "target:0.6",
+      "target:0.5",
       "target:1.1",
       "target:4.1",
       "target:4.2",
@@ -1319,7 +1337,7 @@
       "where": "Theorem 3.10, line 256; nashModificationNotes2024 Theorem 5.1, line 362"
      },
      "prerequisites": [
-      "target:0.6",
+      "target:0.5",
       "target:2.5",
       "target:5.3"
      ],
@@ -1454,7 +1472,7 @@
       "where": "Lemma 33.27.5 (0C3N), line 2256 (normalisation and separable field extension, every separable K/k); stacksNormalization Lemma 29.54.6 (035K), line 6332 (normalisation over an open), Lemma 29.55.5(3) (035Q), line 6566, and Lemma 29.55.9 (0H7D), line 6636 (route of the general case)"
      },
      "prerequisites": [
-      "target:0.7",
+      "target:0.6",
       "target:2.6",
       "target:6.1",
       "roadmap:AlgebraicModuliForArithmeticGeometry §5.4",
@@ -1477,7 +1495,7 @@
       {
        "name": "cusp_Qu_transcendental",
        "kind": "compatibility",
-       "statement": "cusp over ℚ, transcendental k' = ℚ(u): both sides 𝔸¹_{ℚ(u)}; Spec ℚ(u) → Spec ℚ is not smooth, so only the general route (via §0.7) reaches it"
+       "statement": "cusp over ℚ, transcendental k' = ℚ(u): both sides 𝔸¹_{ℚ(u)}; Spec ℚ(u) → Spec ℚ is not smooth, so only the general route (via §0.6) reaches it"
       },
       {
        "name": "inseparable_fails",
