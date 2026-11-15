@@ -43,12 +43,10 @@ This roadmap owns:
 - the kernel `k_A ∈ L²(μ ⊗ ν)` of a Hilbert–Schmidt operator `A : L²(ν) → L²(μ)` (surjectivity of
   the kernel map onto `S₂`), the kernel calculus (adjoint, composition, multiplication operators,
   transposition) and the transformation of kernels under change of measure, measure-preserving
-  isomorphisms and passage to a sub-σ-algebra, and the conditional expectation of bounded
-  functions onto a sub-σ-algebra on which the measure is σ-finite (Layer 2; Mathlib's
-  `MeasureTheory.condExp` is `0` on every non-integrable function, so it gives this expectation
-  only for finite measures; this is the measure-theoretic form, on Mathlib's `L^∞` classes and
-  compared with `MeasureTheory.condExp`, of the normal expectation that NoncommutativeIntegration
-  §4.3 takes from Takesaki's theorem for von Neumann algebras);
+  isomorphisms and passage to a sub-σ-algebra, and, for the `L^∞` conditional expectation of
+  BochnerSpaces §7.4, the uniqueness in its pairing characterisation, its invariance under
+  `𝒜`-measurable densities, its commutation with complex conjugation and its module property
+  against `MeasureTheory.condExpL2` (Layer 2);
 - Schur multipliers on `L²(Ω, μ)` for σ-finite `(Ω, μ)`: the multiplier on `S₂`, its norms on
   `S_p`, its unique bounded extension, its completely bounded norm by amplified symbols, the finite
   (Hadamard) case, and their invariances (Layer 3); duality and interpolation (Layer 4);
@@ -80,8 +78,10 @@ It leaves to named roadmaps, and consumes from them by section:
   space and its interpolation inequality with the sharp order `O(p)` are requested of
   NoncommutativeIntegration, Part II (gap `semifinite-martingale-bmo-interpolation`).
 - **AutomorphicSpectralTheory** owns the kernel operator `T_k` of an `L²` kernel with
-  `kernel_apply`, `kernel_unique` and `kernel_norm` (§0.8) and the complex operator trace with its
-  basis formula for Hilbert–Schmidt products (§0.9). Its §0.8 is stated for standard Borel
+  `kernel_apply`, `kernel_unique` and `kernel_norm` (§0.8), and states for the trace of
+  VonNeumannAlgebras V4.Core the basis formula `Tr(BC) = Σ_j ⟨B* e_j, C e_j⟩` for
+  Hilbert–Schmidt `B`, `C` (§0.9); every trace in this roadmap, whether reached through V4.Core
+  or through §0.9, is therefore the one functional of V4.Core. Its §0.8 is stated for standard Borel
   spaces; the arbitrary σ-finite version that Layers 2, 5 and 7 need (sub-σ-algebras of a
   standard Borel space are not standard Borel) is requested of AutomorphicSpectralTheory §0.8
   (gap `sigma-finite-hilbert-schmidt-kernels`). Its trace formula
@@ -94,6 +94,15 @@ It leaves to named roadmaps, and consumes from them by section:
 - **BanachSpaceTheory** owns the Bochner density of a vector measure of bounded variation with
   values in a reflexive space (B4.0), which gives the Radon–Nikodým representation of bounded maps
   `L¹(μ) → K` used in §6.4.
+- **BochnerSpaces** owns the scalar conditional expectation on `L^∞` for a measure whose trim to
+  the sub-σ-algebra is σ-finite, defined as the adjoint of the `L¹` projection, with positivity,
+  contractivity, the tower law and agreement with `MeasureTheory.condExp` on integrable functions
+  (§7.4), and the divisibility of atomless finite measures (§7.5). §2.5 proves the further
+  properties of that expectation which Layers 5–7 use, and §7.1 applies §7.5 to the restriction
+  of an atomless measure to a set of finite measure. Mathlib's `MeasureTheory.condExp` is `0` on
+  every non-integrable function and gives this expectation only on integrable functions; the
+  normal expectation of NoncommutativeIntegration §4.3 lives on that roadmap's own `Lᵖ` carriers
+  of von Neumann algebras.
 
 Already in the pinned libraries and consumed directly: Mathlib's matrix Schur product theorem
 `Matrix.PosSemidef.hadamard`, the Hadamard three-lines theorem, the `L²` Fourier transform
@@ -178,14 +187,13 @@ differences, which belong to SchattenClassesAndSchurMultipliers, Part II (Downst
   and `MeasureTheory.condExpL2` (`…/ConditionalExpectation/CondexpL2.lean`): the closed subspace of
   `𝒜`-measurable classes and the orthogonal projection onto it, defined with no σ-finiteness
   hypothesis; `MeasureTheory.condExp` (`…/ConditionalExpectation/Basic.lean`): the conditional
-  expectation of an integrable function when `μ` is σ-finite on the sub-σ-algebra, with
-  `MeasureTheory.setIntegral_condExp`, `MeasureTheory.ae_eq_condExp_of_forall_setIntegral_eq` and
-  `MeasureTheory.condExp_condExp_of_le` (defining property, uniqueness, tower property). It is `0`
+  expectation of an integrable function when `μ` is σ-finite on the sub-σ-algebra. It is `0`
   on every non-integrable function (`MeasureTheory.condExp_of_not_integrable`): on `ℕ` with
   counting measure the conditional expectation of the constant `1` onto the full σ-algebra is
   `0`. It is therefore used only on integrable functions, in particular on bounded functions of a
-  finite measure; §2.4 uses `MeasureTheory.condExpL2` for kernels and §2.5 extends the
-  conditional expectation to bounded functions.
+  finite measure (§2.5, §5.3, §6.4); §2.4 uses `MeasureTheory.condExpL2` for kernels, and bounded
+  functions of a measure that is only σ-finite on the sub-σ-algebra take the `L^∞` conditional
+  expectation of BochnerSpaces §7.4 (§2.5).
 - `MeasureTheory.exists_pos_lintegral_lt_of_sigmaFinite`
   (`Mathlib/MeasureTheory/Integral/Lebesgue/Countable.lean`) and `MeasureTheory.lintegral_trim`:
   an everywhere positive measurable function of finite integral for a σ-finite measure, and
@@ -322,8 +330,8 @@ no operator-valued BMO and no Fourier multiplier with an `L^∞` symbol.
   measure, every measurable subset null or of full measure.
 - `MeasureTheory.Measure.exists_subset_measure_eq_of_nullSingleton`
   (`TauCeti/MeasureTheory/Measure/AtomlessStandardBorel/Transport.lean`): Sierpiński's theorem on a
-  standard Borel space under null singletons; §7.1 proves it for an arbitrary measurable space
-  under the atomless hypothesis and compares the two.
+  standard Borel space under null singletons; §7.1 takes the version for an arbitrary measurable
+  space under the atomless hypothesis from BochnerSpaces §7.5 and compares the two.
 
 Tau Ceti has no compact endpoint of the Schatten scale, no operator trace on infinite-dimensional
 spaces, no kernel theorem, no Schur multiplier and no operator-valued BMO.
@@ -402,9 +410,10 @@ semifinite operator-valued filtrations (gap `semifinite-martingale-bmo-interpola
   linear embedding of `L²(X × Y)` into the bounded operators, isometric for the Hilbert–Schmidt
   norm) and `kernel_norm`
   (`‖T_K‖_{HS} = ‖K‖₂`).
-- §0.9: the complex trace on the trace class with the absolutely convergent basis formula
-  `Tr(BC) = Σ_j ⟨B* e_j, C e_j⟩` and `‖BC‖₁ ≤ ‖B‖_HS ‖C‖_HS` for Hilbert–Schmidt `B, C`, on
-  arbitrary complex Hilbert spaces.
+- §0.9: for the trace `Tr` of VonNeumannAlgebras V4.Core (§0.9 defines no second trace), the
+  absolutely convergent basis formula `Tr(BC) = Σ_j ⟨B* e_j, C e_j⟩` for every Hilbert basis
+  `(e_j)` and `‖BC‖₁ ≤ ‖B‖_HS ‖C‖_HS` for Hilbert–Schmidt `B, C`, on arbitrary complex Hilbert
+  spaces.
 
 AutomorphicSpectralTheory must provide §0.8 for arbitrary σ-finite measure spaces `X`, `Y`, with
 no standard Borel or separability hypothesis on the measurable spaces or on `L²` (gap
@@ -427,14 +436,33 @@ on rank-one kernels and extended by continuity.
   Applied to `m(s) = a(1_s)` it represents a bounded linear `a : L¹(μ) → K` into a Hilbert space as
   `u ↦ ∫ u h dμ` with `‖h‖_{L^∞(μ; K)} = ‖a‖` (§6.4).
 
+### From TauCetiRoadmap.BochnerSpaces
+
+- §7.4: for σ-algebras `𝒜 ⊆ 𝓑` on `Ω` and a measure `μ` on `𝓑` whose trim `μ.trim h` to `𝒜` is
+  σ-finite, with complex scalars: the `L¹` projection `E₁` of `L¹(Ω, 𝓑, μ)` onto the
+  `𝒜`-measurable classes (positive, contractive, idempotent, satisfying the tower law for nested
+  σ-algebras, equal to `MeasureTheory.condExp` on integrable functions), and the contraction
+  `φ ↦ E[φ | 𝒜]` of `L^∞(Ω, 𝓑, μ)`, with values in the `𝒜`-measurable classes, defined as its
+  adjoint: `∫ E[φ | 𝒜] g dμ = ∫ φ E₁(g) dμ` for every `g ∈ L¹(μ)`, in particular
+  `∫ E[φ | 𝒜] g dμ = ∫ φ g dμ` for every `𝒜`-measurable `g ∈ L¹(μ)`; it agrees with
+  `MeasureTheory.condExpL2` on `L^∞ ∩ L²` and with `MeasureTheory.condExp` on `L^∞ ∩ L¹`.
+  Positivity, contractivity and the tower law of `E[· | 𝒜]` are those of `E₁` carried over by the
+  adjoint formula.
+- §7.5: for a finite atomless measure `ν`, a measurable set `A` and `0 ≤ t ≤ 1`, a measurable
+  `B ⊆ A` with `ν(B) = t ν(A)`. Atomless is assumed there in the sense of §7.1: no set is an atom
+  in the sense of Tau Ceti's `MeasureTheory.Measure.IsAtom`. Under the weaker reading by null
+  singletons the statement is false: the countable–cocountable probability measure on an
+  uncountable set has null singletons and no set of measure `1/2`.
+
 ## How to read the build
 
 Layer 1 completes the Schatten scale with its compact endpoint, proves norming by finite-rank
 operators and interpolation with the compact endpoint, and defines completely bounded maps by
 amplification. Layer 2 gives every Hilbert–Schmidt operator between `L²` spaces its kernel, computes
 kernels of adjoints, products, transposes, multiplication operators, changes of measure and
-compressions to sub-σ-algebras, and extends the conditional expectation to bounded functions of a
-measure that is σ-finite on the sub-σ-algebra. Layer 3 defines Schur multipliers, their norms,
+compressions to sub-σ-algebras, and proves the properties of the `L^∞` conditional expectation of
+BochnerSpaces §7.4 that the later layers use, among them its module property against the `L²`
+projection. Layer 3 defines Schur multipliers, their norms,
 extensions and completely bounded norms, with the finite case and the invariances. Layer 4 proves
 duality and interpolation. Layer 5 studies conditional expectations of symbols and martingale
 limits. Layer 6 proves the Schur product theorem and the Grothendieck–Haagerup characterisation,
@@ -786,36 +814,45 @@ counting measure and `𝒜 = 𝓑`, the kernel `k(i, j) = u_i u_j` with `u_j = 1
 ### 2.5 Conditional expectation of bounded functions
 
 Let `𝒜 ⊆ 𝓑` be σ-algebras on `Ω` and `μ` a measure on `𝓑` that is σ-finite on `𝒜`
-(`MeasureTheory.SigmaFinite (μ.trim h)`). Choose an `𝒜`-measurable `w : Ω → (0, ∞)` with
-`∫ w dμ < ∞` (`MeasureTheory.exists_pos_lintegral_lt_of_sigmaFinite` for `μ.trim h`, with
-`MeasureTheory.lintegral_trim`); then `w · μ` (`MeasureTheory.Measure.withDensity`) is a finite
-measure with the null sets of `μ`. For `φ ∈ L^∞(Ω, 𝓑, μ)` define `E[φ | 𝒜]` as the class of
-`MeasureTheory.condExp 𝒜 (w · μ) φ`, which is defined because `φ` is `w · μ`-integrable
-(lafforgue-delasalle-2011 lines 356–359 for the setting, lines 422–424 for the reduction by an
-`𝒜`-measurable density). Layer 5 and its consumers use it on `Ω × Ω` for `μ ⊗ μ` and
-`𝒜 ⊗ 𝒜`, on which `μ ⊗ μ` is σ-finite (§2.4).
+(`MeasureTheory.SigmaFinite (μ.trim h)`). For `φ ∈ L^∞(Ω, 𝓑, μ)`, `E[φ | 𝒜]` is the `L^∞`
+conditional expectation of BochnerSpaces §7.4: linear, positive and contractive, with values in
+the `𝒜`-measurable classes, satisfying the tower law `E[E[φ | 𝒜] | 𝒜'] = E[φ | 𝒜']` for
+`𝒜' ⊆ 𝒜` with `μ` σ-finite on `𝒜'`, and `∫ E[φ | 𝒜] g dμ = ∫ φ g dμ` for every `𝒜`-measurable
+`g ∈ L¹(μ)` (lafforgue-delasalle-2011 lines 356–359 for the setting). Layer 5 and its consumers
+use it on `Ω × Ω` for `μ ⊗ μ` and `𝒜 ⊗ 𝒜`, on which `μ ⊗ μ` is σ-finite (§2.4). Prove:
 
-- `E[φ | 𝒜]` is the unique `𝒜`-measurable class in `L^∞(μ)` with `∫ E[φ | 𝒜] g dμ = ∫ φ g dμ` for
-  every `𝒜`-measurable `g ∈ L¹(μ)`: apply the defining property of `condExp` for `w · μ` to the
-  bounded `φ` and the `w · μ`-integrable `g/w`; for uniqueness, test the difference `ψ` of two such
-  classes against `g = 1_A conj ψ` for the sets `A ∈ 𝒜` of finite measure. Hence `E[φ | 𝒜]` does not
-  depend on `w`, it is unchanged when `μ` is replaced by `ρ · μ` for an `𝒜`-measurable `ρ > 0` (test
-  with `ρ g`), and it equals `MeasureTheory.condExp 𝒜 μ φ` whenever `φ` is also `μ`-integrable, in
-  particular for every bounded `φ` when `μ` is finite.
-- `φ ↦ E[φ | 𝒜]` is linear and positive, commutes with complex conjugation, satisfies
-  `‖E[φ | 𝒜]‖_∞ ≤ ‖φ‖_∞` and fixes the `𝒜`-measurable classes. Tower property:
-  `E[E[φ | 𝒜] | 𝒜'] = E[φ | 𝒜']` for `𝒜' ⊆ 𝒜` with `μ` σ-finite on `𝒜'`
-  (`MeasureTheory.condExp_condExp_of_le`, with an `𝒜'`-measurable `w`).
-- Module property: for `𝒜`-measurable `k ∈ L²(μ)`, `MeasureTheory.condExpL2 (φ k) = E[φ | 𝒜] k`.
+- **Characterisation.** `E[φ | 𝒜]` is the unique `𝒜`-measurable class in `L^∞(μ)` with
+  `∫ E[φ | 𝒜] g dμ = ∫ φ g dμ` for every `𝒜`-measurable `g ∈ L¹(μ)`: for the difference `ψ` of two
+  such classes and a set `A ∈ 𝒜` of finite measure, `g = 1_A conj ψ` is admissible and gives
+  `∫_A |ψ|² dμ = 0`, and countably many such `A` cover `Ω` because the trim is σ-finite. Hence
+  `E[φ | 𝒜]` fixes the `𝒜`-measurable classes.
+- **Change of density.** For an `𝒜`-measurable `ρ : Ω → (0, ∞)`, the measure `ρ · μ` is σ-finite
+  on `𝒜`, has the null sets and the `L^∞` classes of `μ`, and its conditional expectation of `φ`
+  is `E[φ | 𝒜]`: `g ↦ ρ g` maps the `𝒜`-measurable classes of `L¹(ρ · μ)` onto those of `L¹(μ)`,
+  and the characterisation applies.
+- **Finite equivalent measure.** There is an `𝒜`-measurable `w : Ω → (0, ∞)` with `∫ w dμ < ∞`
+  (`MeasureTheory.exists_pos_lintegral_lt_of_sigmaFinite` for `μ.trim h`, with
+  `MeasureTheory.lintegral_trim`); `w · μ` (`MeasureTheory.Measure.withDensity`) is a finite
+  measure with the null sets of `μ`, and `E[φ | 𝒜]` is the class of
+  `MeasureTheory.condExp 𝒜 (w · μ) φ`, by the change of density and the agreement of
+  BochnerSpaces §7.4 with `MeasureTheory.condExp` on the `w · μ`-integrable `φ`
+  (lafforgue-delasalle-2011 lines 422–424 for the reduction by an `𝒜`-measurable density).
+  Whenever `φ` is also `μ`-integrable, `E[φ | 𝒜] = MeasureTheory.condExp 𝒜 μ φ`, in particular
+  for every bounded `φ` when `μ` is finite.
+- **Conjugation.** `E[conj φ | 𝒜] = conj E[φ | 𝒜]`: the right side is `𝒜`-measurable and
+  `∫ conj E[φ | 𝒜] g dμ = conj ∫ E[φ | 𝒜] conj g dμ = conj ∫ φ conj g dμ = ∫ conj φ g dμ`, so the
+  characterisation applies.
+- **Module property.** For `𝒜`-measurable `k ∈ L²(μ)`, `MeasureTheory.condExpL2 (φ k) = E[φ | 𝒜] k`.
   For `𝒜`-measurable `g ∈ L²(μ)` the product `conj g · k` is `𝒜`-measurable and integrable, so
-  `⟨g, φ k⟩ = ⟨g, E[φ | 𝒜] k⟩` by the first bullet, and `E[φ | 𝒜] k` is `𝒜`-measurable and
+  `⟨g, φ k⟩ = ⟨g, E[φ | 𝒜] k⟩` by the characterisation, and `E[φ | 𝒜] k` is `𝒜`-measurable and
   square-integrable.
 
 **Checks.**
 
-- Counting measure on `ℕ`, `𝒜 = 𝓑` the power set and `φ = 1`: `E[1 | 𝒜] = 1`, while
-  `MeasureTheory.condExp 𝒜 μ 1 = 0` because `1` is not integrable. For the symbol `1` on `ℕ × ℕ`
-  this is the difference between the identity multiplier, of norm `1`, and the zero multiplier.
+- Counting measure on `ℕ`, `𝒜 = 𝓑` the power set and `φ = 1`: the `L¹` projection is the
+  identity, and so is its adjoint, so `E[1 | 𝒜] = 1`, while `MeasureTheory.condExp 𝒜 μ 1 = 0`
+  because `1` is not integrable. For the symbol `1` on `ℕ × ℕ` this is the difference between the
+  identity multiplier, of norm `1`, and the zero multiplier.
 - Lebesgue measure on `ℝ` and `𝒜` generated by the intervals `[k, k + 1)`, `k ∈ ℤ`, on which it is
   σ-finite: for the `1`-periodic `φ` equal to `1` on `[0, 1/2)` and `0` on `[1/2, 1)`,
   `E[φ | 𝒜] = ∫_k^{k+1} φ = 1/2` on every `[k, k + 1)`, while `MeasureTheory.condExp` gives `0`.
@@ -823,13 +860,13 @@ measure with the null sets of `μ`. For `φ ∈ L^∞(Ω, 𝓑, μ)` define `E[�
   `𝒜`-measurable functions are the constants and the only integrable one is `0`, so every
   constant satisfies the characterising identity for `φ = 1` and nothing is determined.
 - On `{1, 2}` with masses `1` and `3` and `𝒜` trivial, `E[(a, b) | 𝒜]` is the constant
-  `(a + 3b)/4` for every constant density `w`.
+  `(a + 3b)/4`, unchanged for `ρ · μ` with a constant `ρ > 0` (masses `c`, `3c`). The density
+  must be `𝒜`-measurable: `ρ = (3, 1)` gives masses `3`, `3` and the expectation `(a + b)/2`,
+  which is `1/2` against `1/4` at `(a, b) = (1, 0)`.
 
-*Needs:* §2.4 (σ-finiteness of `μ ⊗ μ` on `𝒜 ⊗ 𝒜`); Mathlib `MeasureTheory.condExp`,
-`MeasureTheory.setIntegral_condExp`, `MeasureTheory.ae_eq_condExp_of_forall_setIntegral_eq`,
-`MeasureTheory.condExp_condExp_of_le`, `MeasureTheory.condExpL2`,
-`MeasureTheory.Measure.withDensity`, `MeasureTheory.exists_pos_lintegral_lt_of_sigmaFinite`,
-`MeasureTheory.lintegral_trim`.
+*Needs:* §2.4 (σ-finiteness of `μ ⊗ μ` on `𝒜 ⊗ 𝒜`); BochnerSpaces §7.4; Mathlib
+`MeasureTheory.condExp`, `MeasureTheory.condExpL2`, `MeasureTheory.Measure.withDensity`,
+`MeasureTheory.exists_pos_lintegral_lt_of_sigmaFinite`, `MeasureTheory.lintegral_trim`.
 
 ### Examples
 
@@ -845,8 +882,8 @@ measure with the null sets of `μ`. For `φ ∈ L^∞(Ω, 𝓑, μ)` define `E[�
 ### Dependencies
 
 Layer 1 (§1.1, §1.4); AutomorphicSpectralTheory §0.8, §0.9; OperatorIdeals Parts A–C;
-VonNeumannAlgebras V2.RectangularL2, V4.Core; Mathlib measure theory, measures with density and
-conditional expectations.
+VonNeumannAlgebras V2.RectangularL2, V4.Core; BochnerSpaces §7.4; Mathlib measure theory,
+measures with density and conditional expectations.
 
 ## Layer 3: Schur multipliers
 
@@ -1321,9 +1358,10 @@ have positive measure).
   measurable sets; if `μ` is atomless so is `μ ⊗ ν` for every σ-finite `ν`.
 - Sierpiński's theorem: if `μ` is atomless, `A` is measurable with `μ(A) < ∞` and
   `0 ≤ t ≤ μ(A)`, there is a measurable `B ⊆ A` with `μ(B) = t`; hence `A` is a disjoint union of `n`
-  measurable sets of measure `μ(A)/n` for every `n ≥ 1`. Route: a greedy exhaustion choosing at
-  each step a subset of measure at least half of the largest available below the remaining
-  target.
+  measurable sets of measure `μ(A)/n` for every `n ≥ 1`. This is BochnerSpaces §7.5 applied to the
+  finite measure `μ.restrict A` and the set `A` with the ratio `t/μ(A)` (for `μ(A) = 0`, `t = 0`
+  and `B = ∅`); `μ.restrict A` is atomless because an atom `E` of it gives the atom `E ∩ A` of `μ`.
+  The `n` pieces follow by splitting off `μ(A)/n` from the remainder `n − 1` times.
 - On a standard Borel space a σ-finite measure is atomless exactly when it has null singletons,
   by Tau Ceti's `MeasureTheory.Measure.exists_subset_measure_eq_of_nullSingleton` and the point-mass
   description of atoms in `TauCeti/MeasureTheory/Measure/Atom.lean`.
@@ -1334,12 +1372,16 @@ have positive measure).
   `{2}`; `δ₀ + ` Lebesgue measure on `[0, 1]` has the atom `{0}`.
 - The countable–cocountable measure on an uncountable set (value `0` on countable sets, `1` on
   cocountable ones) has null singletons, so it satisfies `MeasureTheory.NullSingletonClass`, but
-  the whole space is an atom: the two notions differ off standard Borel spaces.
+  the whole space is an atom: the two notions differ off standard Borel spaces. It has no set of
+  measure `1/2`, so Sierpiński's theorem fails under null singletons alone.
+- Lebesgue measure, `A = [0, 2]` and `t = 1/2`: `μ.restrict A` has mass `2`, the ratio is `1/4`,
+  and a subset of measure `(1/4) · 2 = 1/2` is `[0, 1/2]`; with the ratio taken as `t` itself the
+  subset would have measure `1`.
 - The zero measure is atomless, and every finite-measure set splits into `n` null pieces.
 
 *Needs:* Tau Ceti `MeasureTheory.Measure.IsAtom`,
 `MeasureTheory.Measure.exists_subset_measure_eq_of_nullSingleton`; Mathlib
-`MeasureTheory.NullSingletonClass`.
+`MeasureTheory.NullSingletonClass`; BochnerSpaces §7.5.
 
 ### 7.2 Equal-measure refinements
 
@@ -1399,7 +1441,7 @@ most `‖E[M | 𝓑' ⊗ 𝓑']‖_{S_p(L²(𝓑'))}` by §7.2, at most `‖M‖
 
 ### Dependencies
 
-Layers 3 and 5; Tau Ceti `MeasureTheory.Measure.IsAtom`.
+Layers 3 and 5; Tau Ceti `MeasureTheory.Measure.IsAtom`; BochnerSpaces §7.5.
 
 ## Layer 8: continuous symbols on Radon measure spaces
 

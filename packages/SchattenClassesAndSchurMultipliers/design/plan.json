@@ -426,13 +426,14 @@
     },
     {
      "id": "2.5",
-     "kind": "definition",
-     "name": "SchattenClasses.condExpBounded",
-     "statement": "For sigma-algebras A in B on Omega and a measure mu on B that is sigma-finite on A: choose an A-measurable w : Omega -> (0, infinity) with int w dmu < infinity (exists_pos_lintegral_lt_of_sigmaFinite for mu.trim, lintegral_trim); for phi in Linf(Omega, B, mu), E[phi | A] is the class of MeasureTheory.condExp A (w . mu) phi, defined because phi is integrable for the finite measure w . mu (withDensity), which has the null sets of mu.",
+     "kind": "theorem",
+     "name": "SchattenClasses.linftyCondExp_calculus",
+     "statement": "For sigma-algebras A in B on Omega and a measure mu on B that is sigma-finite on A, and phi in Linf(Omega, B, mu), E[phi | A] is the Linf conditional expectation of BochnerSpaces §7.4 (linear, positive, contractive, A-measurable values, tower law, int E[phi | A] g dmu = int phi g dmu for A-measurable g in L1(mu)). Proved here: (characterisation) E[phi | A] is the unique A-measurable class in Linf(mu) with int E[phi | A] g dmu = int phi g dmu for every A-measurable g in L1(mu) (test the difference psi against 1_S conj psi for S in A of finite measure, which cover Omega countably), hence it fixes the A-measurable classes; (change of density) for A-measurable rho : Omega -> (0, infinity), rho . mu is sigma-finite on A with the null sets and Linf classes of mu and the same conditional expectation (g -> rho g maps the A-measurable classes of L1(rho . mu) onto those of L1(mu)); (finite equivalent measure) there is an A-measurable w > 0 with int w dmu < infinity (exists_pos_lintegral_lt_of_sigmaFinite for mu.trim, lintegral_trim), w . mu (withDensity) is finite with the null sets of mu, and E[phi | A] is the class of MeasureTheory.condExp A (w . mu) phi; E[phi | A] = MeasureTheory.condExp A mu phi whenever phi is mu-integrable, in particular when mu is finite; (conjugation) E[conj phi | A] = conj E[phi | A]; (module property) for A-measurable k in L2(mu), MeasureTheory.condExpL2 (phi k) = E[phi | A] k (for A-measurable g in L2, conj g . k is A-measurable and integrable). Used on Omega x Omega for mu x mu and A x A, on which mu x mu is sigma-finite (target 2.4).",
      "hypotheses": [
       "A subset B sigma-algebras on Omega",
       "mu a measure on B, sigma-finite on A (SigmaFinite (mu.trim h))",
-      "phi in Linf(Omega, B, mu)"
+      "phi in Linf(Omega, B, mu)",
+      "for the change of density: rho A-measurable with values in (0, infinity)"
      ],
      "locator": {
       "source": "lafforgue-delasalle-2011",
@@ -440,52 +441,34 @@
      },
      "prerequisites": [
       "target:2.4",
+      "roadmap:BochnerSpaces §7.4",
       "mathlib:MeasureTheory.condExp",
-      "mathlib:MeasureTheory.setIntegral_condExp",
-      "mathlib:MeasureTheory.ae_eq_condExp_of_forall_setIntegral_eq",
-      "mathlib:MeasureTheory.condExp_condExp_of_le",
       "mathlib:MeasureTheory.condExpL2",
       "mathlib:MeasureTheory.Measure.withDensity",
       "mathlib:MeasureTheory.exists_pos_lintegral_lt_of_sigmaFinite",
       "mathlib:MeasureTheory.lintegral_trim"
      ],
-     "api": [
-      {
-       "name": "condExpBounded_unique",
-       "role": "characterisation",
-       "statement": "E[phi | A] is the unique A-measurable class in Linf(mu) with int E[phi | A] g dmu = int phi g dmu for every A-measurable g in L1(mu) (defining property of condExp for w . mu applied to g/w; uniqueness by g = 1_S conj psi on sets S in A of finite measure); hence it does not depend on w, is unchanged when mu is replaced by rho . mu for A-measurable rho > 0, and equals MeasureTheory.condExp A mu phi when phi is also mu-integrable, in particular for every bounded phi when mu is finite"
-      },
-      {
-       "name": "condExpBounded_contraction",
-       "role": "order and norm",
-       "statement": "linear, positive, commutes with complex conjugation, ||E[phi | A]||_inf <= ||phi||_inf, fixes the A-measurable classes; tower property E[E[phi | A] | A'] = E[phi | A'] for A' in A with mu sigma-finite on A' (condExp_condExp_of_le with an A'-measurable w)"
-      },
-      {
-       "name": "condExpBounded_module",
-       "role": "L2 module property",
-       "statement": "for A-measurable k in L2(mu): condExpL2 (phi k) = E[phi | A] k (for A-measurable g in L2, conj g . k is A-measurable and integrable)"
-      }
-     ],
+     "api": [],
      "tests": [
       {
-       "name": "condExpBounded_counting",
+       "name": "linftyCondExp_counting",
        "kind": "non-example",
-       "statement": "counting measure on N, A = B the power set, phi = 1: E[1 | A] = 1, while MeasureTheory.condExp A mu 1 = 0 because 1 is not integrable; for the symbol 1 on N x N this separates the identity multiplier (norm 1) from the zero multiplier"
+       "statement": "counting measure on N, A = B the power set, phi = 1: the L1 projection and its adjoint are the identity, so E[1 | A] = 1, while MeasureTheory.condExp A mu 1 = 0 because 1 is not integrable; for the symbol 1 on N x N this separates the identity multiplier (norm 1) from the zero multiplier"
       },
       {
-       "name": "condExpBounded_unit_intervals",
+       "name": "linftyCondExp_unit_intervals",
        "kind": "computation",
        "statement": "Lebesgue measure on R, A generated by the intervals [k, k+1): for the 1-periodic phi equal to 1 on [0, 1/2) and 0 on [1/2, 1), E[phi | A] = 1/2 everywhere, while MeasureTheory.condExp gives 0"
       },
       {
-       "name": "condExpBounded_needs_sigma_finite",
+       "name": "linftyCondExp_needs_sigma_finite",
        "kind": "non-example",
        "statement": "Lebesgue measure on R and A = {empty, R}: the A-measurable integrable functions are 0 only, so every constant satisfies the characterising identity for phi = 1 and nothing is determined"
       },
       {
-       "name": "condExpBounded_finite",
+       "name": "linftyCondExp_finite",
        "kind": "computation",
-       "statement": "on {1, 2} with masses 1 and 3 and A trivial: E[(a, b) | A] = (a + 3b)/4, for every constant density w"
+       "statement": "on {1, 2} with masses 1 and 3 and A trivial: E[(a, b) | A] = (a + 3b)/4, unchanged for rho . mu with constant rho > 0; the non-A-measurable density rho = (3, 1) gives masses 3, 3 and (a + b)/2, which is 1/2 against 1/4 at (a, b) = (1, 0)"
       }
      ]
     }
@@ -1048,7 +1031,8 @@
      "prerequisites": [
       "tauceti:MeasureTheory.Measure.IsAtom",
       "tauceti:MeasureTheory.Measure.exists_subset_measure_eq_of_nullSingleton",
-      "mathlib:MeasureTheory.NullSingletonClass"
+      "mathlib:MeasureTheory.NullSingletonClass",
+      "roadmap:BochnerSpaces §7.5"
      ],
      "api": [
       {
@@ -1059,7 +1043,7 @@
       {
        "name": "sierpinski",
        "role": "intermediate values",
-       "statement": "if mu is atomless, A measurable with mu(A) < infinity and 0 <= t <= mu(A), there is a measurable B in A with mu(B) = t; hence equal-measure n-partitions"
+       "statement": "if mu is atomless, A measurable with mu(A) < infinity and 0 <= t <= mu(A), there is a measurable B in A with mu(B) = t: BochnerSpaces §7.5 applied to the finite atomless measure mu.restrict A (an atom E of it gives the atom E cap A of mu) and the set A with ratio t/mu(A) (B = empty when mu(A) = 0); hence equal-measure n-partitions by splitting off mu(A)/n from the remainder n - 1 times"
       },
       {
        "name": "atomless_iff_nullSingleton",
@@ -1076,12 +1060,17 @@
       {
        "name": "cocountable",
        "kind": "non-example",
-       "statement": "the countable-cocountable measure on an uncountable set has null singletons (NullSingletonClass) but the whole space is an atom"
+       "statement": "the countable-cocountable measure on an uncountable set has null singletons (NullSingletonClass) but the whole space is an atom, and it has no set of measure 1/2, so the intermediate-value statement fails under null singletons alone"
       },
       {
        "name": "zero_measure_atomless",
        "kind": "degenerate",
        "statement": "the zero measure is atomless"
+      },
+      {
+       "name": "sierpinski_ratio",
+       "kind": "computation",
+       "statement": "Lebesgue measure, A = [0, 2], t = 1/2: mu.restrict A has mass 2, the ratio is 1/4 and [0, 1/2] has measure (1/4) . 2 = 1/2; taking the ratio to be t itself would give measure 1"
       }
      ]
     },
@@ -1937,7 +1926,7 @@
     "§0.8",
     "§0.9"
    ],
-   "what": "The L2 kernel operator with kernel_apply, kernel_unique, kernel_norm (§0.8), requested at the generality of arbitrary sigma-finite measure spaces (gap sigma-finite-hilbert-schmidt-kernels); the complex trace with its basis formula Tr(BC) = sum_j <B* e_j, C e_j> for Hilbert-Schmidt B, C (§0.9). The trace formula is derived in target 2.2."
+   "what": "The L2 kernel operator with kernel_apply, kernel_unique, kernel_norm (§0.8), requested at the generality of arbitrary sigma-finite measure spaces (gap sigma-finite-hilbert-schmidt-kernels); for the trace of VonNeumannAlgebras V4.Core (§0.9 defines no second trace), the absolutely convergent basis formula Tr(BC) = sum_j <B* e_j, C e_j> and ||BC||_1 <= ||B||_HS ||C||_HS for Hilbert-Schmidt B, C (§0.9). The trace formula is derived in target 2.2."
   },
   {
    "roadmap": "CStarAlgebras",
@@ -1953,6 +1942,14 @@
     "B4.0"
    ],
    "what": "Bochner density of a vector measure of bounded variation in a reflexive space (Radon-Nikodym representation of L1(mu) -> K)."
+  },
+  {
+   "roadmap": "BochnerSpaces",
+   "sections": [
+    "§7.4",
+    "§7.5"
+   ],
+   "what": "For sigma-algebras A in B and a measure mu on B whose trim to A is sigma-finite, with complex scalars: the L1 projection E_1 onto the A-measurable classes (positive, contractive, idempotent, tower law, equal to MeasureTheory.condExp on integrable functions) and the Linf contraction E[. | A], with values in the A-measurable classes, defined as its adjoint, int E[phi | A] g dmu = int phi E_1(g) dmu for g in L1(mu), agreeing with condExpL2 on Linf cap L2 and with condExp on Linf cap L1 (§7.4); divisibility of atomless finite measures: for measurable A and 0 <= t <= 1 a measurable subset of A of measure t nu(A), atomless meaning that no set is a MeasureTheory.Measure.IsAtom (§7.5; false under null singletons alone, by the countable-cocountable measure). Used in targets 2.5 and 7.1."
   }
  ],
  "consumers": [
