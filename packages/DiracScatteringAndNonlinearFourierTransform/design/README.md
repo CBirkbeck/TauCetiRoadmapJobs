@@ -1408,8 +1408,12 @@ because `‖ρ₂‖²_{L²} ≤ π‖q‖²_{L²(T,∞)}` (§5.3 applied to the
 - Scaling: for `q_λ = λ q(λ·)`, `(q_λ)⌃(x) = q⌃(x/λ)` (the dilation rule of §4.1 in the limit), and
   `∫ −log(1 − |q⌃(x/λ)|²) dx = λ π‖q‖² = π‖q_λ‖²`.
 - Normalisation: `O⁰` is the right outer function, since `a(∞, iy) → 1`; the outer function `O_h`
-  normalised at `i` differs from it by `e^{−(i/π)∫ x h/(1+x²)}`, which is `1` exactly when that integral
-  vanishes, as for real `q`, where `log|a(∞, ·)|` is even.
+  normalised at `i` differs from it by `e^{−(i/π)I}` with `I = ∫ x h/(1+x²) dx`, which is `1` exactly when
+  `I` is an integer multiple of `2π²`. For real `q`, `I = 0`, since `log|a(∞, ·)|` is even. For
+  `q = 0.3 e^{2iξs} 1_{[0,400]}`, `h(x) = h₀(x + ξ)` with `h₀` the boundary log-modulus at `ξ = 0`
+  (modulation rule of §4.1), and `I ≈ 12.54` at `ξ = −0.25`, where the factor `e^{−3.992i}` is not `1`
+  and `O_h ≠ a(∞, ·)`, while `I ≈ 21.71` at `ξ = −0.5`. As `I` is continuous in `ξ`, it equals
+  `2π² ≈ 19.74` for some `ξ` in between, where the two outer functions coincide although `I ≠ 0`.
 
 ### 5.5 Convergence of truncations
 
