@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-NonordinaryCMSpecialValues~5",
+  "head": "36742e667300f14c4af48f880484c0700139fd8e",
+  "pr": 2290,
+  "folder": "NonordinaryCMSpecialValues",
+  "date": "2026-11-15",
+  "findings": 0,
+  "blocking": 0,
+  "notes": "incremental re-review of 2 changed lines since 401e631. Both previous findings repaired (R01: README.md:466 now takes b prime to pa and 6pa, recomputed on K=Q(sqrt(-7)), p=5, a=f*23^2 and against KATO04 line 5332; R02: the description's summary block). Title and description read against the head sentence by sentence: no contradiction, nothing unstated. Seeded sample: §2.7 is the changed passage, checked against KATO04 lines 5326-5336 and BKO21 lines 409-416. Gate rerun: every check passes; depcheck 0 problems, no UPWARD or CYCLE; lake env lean on Suggested.lean: 3 sorry warnings only. KATO99 (uncertified) and BOXALL92 (waived) not read.",
+  "text": "1d92c0ef77649d39"
+ }
+}
