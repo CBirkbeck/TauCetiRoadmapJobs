@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-DiamondEtaleCohomology~3",
+  "head": "9e9df998250538ed3c5b19072cbc82ad247deeaa",
+  "pr": 922,
+  "folder": "DiamondEtaleCohomology",
+  "date": "2026-11-15",
+  "findings": 0,
+  "blocking": 0,
+  "notes": "incremental re-review of 64 changed lines since e465c50. Both previous P3 findings repaired: the nine undeclared own names are replaced by notation/prose, absent from main and every open head (roadmaps grep), and the C4 build-table row now says 'Imported'. Reworded C4.15 checked against ECD Corollary 18.8 (lines 4335-4347, pp. 105-106): same content, at most 6 shared words. New notation dim.trg / cd_l(y) checked against ECD Definitions 21.5, 21.7, 21.10 (pp. 123-124). Adversarial table: 20 computed rows covering every changed statement. Gate passes every check; lake env lean gives exit 0 with exactly six sorry warnings; movable depcheck 245 roadmaps, 2214 edges, 0 problems; no change outside the folder. Title and description checked against the head: nothing contradicted. Overlap check against 8 closest roadmaps; DiamondSixOperations citations of C4.15/C8.x still resolve. Seeded sample (Perfectoid field-test reduction) is outside the diff and stands as verified at e465c50.",
+  "text": "a16fd4bcb9c6a1ad"
+ }
+}
