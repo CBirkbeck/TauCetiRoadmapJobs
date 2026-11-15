@@ -733,6 +733,11 @@
        "name": "union_nonexample",
        "kind": "non-example",
        "statement": "Two disjoint shifts: permutation not a cycle, not transitive."
+      },
+      {
+       "name": "product_with_rotation_gluing_bound",
+       "kind": "computation",
+       "statement": "sigma x (rotation of Z/2): m = 2, f^2 = sigma^2 on X_1. At delta = 2^-k arbitrary segments need gluing time >= 2k; at the route's scale 2^-(k+1), M = k + 2 steps of f^2, so m(M + 2) = 2k + 8 covers 2k while M + m = k + 4 < 2k for k >= 5."
       }
      ]
     },
@@ -1642,7 +1647,9 @@
      },
      "prerequisites": [
       "tauceti:AddCircle.instIsManifold",
+      "tauceti:TauCeti.instIsManifoldPi",
       "tauceti:TauCeti.catMap",
+      "mathlib:UnitAddTorus",
       "mathlib:Diffeomorph",
       "target:7.1",
       "target:6.1",
@@ -1718,8 +1725,7 @@
       "target:7.2",
       "target:7.4",
       "target:7.5",
-      "target:2.1",
-      "roadmap:ClassicalErgodicTheory §5.5"
+      "target:2.1"
      ],
      "api": [],
      "tests": [
@@ -1921,7 +1927,6 @@
       "roadmap:ClassicalErgodicTheory §8.2",
       "target:6.8",
       "target:8.4",
-      "target:9.1",
       "target:10.1"
      ],
      "api": [],
@@ -1963,7 +1968,6 @@
       "target:6.6",
       "target:6.8",
       "target:8.5",
-      "target:9.2",
       "target:10.1"
      ],
      "api": [],
