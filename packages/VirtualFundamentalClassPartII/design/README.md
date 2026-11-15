@@ -421,7 +421,8 @@ DerivedModuleAlgebra §§0.7 and 0.25 and SchemeAndStackFoundations §4.1. Layer
 and VirtualFundamentalClass §2.5 for base change, functoriality and deformation invariance over
 bases of pure dimension, and Layer 9 combines Layers 6–7 with StableReduction and
 SchemeAndStackFoundations duality for spaces of maps from curves; its virtual class is Layer 6's.
-Each target's *Needs:* line lists what its statement and its route use, item by item.
+Each target's *Needs:* line lists what its statement and its route use, item by item; where a
+section proves statements that need different items, its line says which statement needs which.
 
 ## Layer 1: proper covers, function fields and degrees
 
@@ -455,8 +456,9 @@ lines 299–328). Prove:
   to vector bundles over `ℳ`, to products `ℳ ×_k ℳ′`, and from a stack `ℳ′` to `ℳ` along a proper
   surjective representable `ℳ′ → ℳ`.
 
-*Needs:* gap:closed-substacks-of-stacks; SchemeAndStackFoundations §§1.19–1.20 (`IsProperStack`,
-`RepresentableProperty`, `Stacks.points`); VirtualFundamentalClass §0.2.
+*Needs:* SchemeAndStackFoundations §§1.19–1.20 (`IsProperStack`, `RepresentableProperty`,
+`Stacks.points`); VirtualFundamentalClass §0.2; for the proper coverings of integral stacks and the
+passage of proper covers to closed substacks, also gap:closed-substacks-of-stacks.
 
 **API.**
 
@@ -696,10 +698,11 @@ Prove:
 - for a separated stack `ℳ`, `A_i(ℳ) ⊗ ℚ` is canonically VirtualFundamentalClass §2.1's `A_i(ℳ)_ℚ`,
   compatibly with the cycle classes of integral closed substacks.
 
-The compatibility of the operations is 4.4. *Needs:* 2.2; Tau Ceti
+The compatibility of the operations is 4.4. *Needs:* 2.2; for the comparison on schemes, also Tau Ceti
 `TauCeti.AlgebraicGeometry.Chow.cyclesOfDimension`, `TauCeti.AlgebraicGeometry.Chow.RatEquiv`,
-`TauCeti.AlgebraicGeometry.Chow.ChowGroup`, `TauCeti.AlgebraicGeometry.Chow.cycleClass`;
-SchemeAndStackFoundations §5.1; VirtualFundamentalClass §2.1.
+`TauCeti.AlgebraicGeometry.Chow.ChowGroup`, `TauCeti.AlgebraicGeometry.Chow.cycleClass` and
+SchemeAndStackFoundations §5.1; for the comparison with the separated rational groups, also
+VirtualFundamentalClass §2.1.
 
 **Checks.**
 
@@ -890,7 +893,12 @@ spaces (its Lemmas 27.1–27.2, lines 1907–1939), with the first Chern class o
 equivalence (its Lemma 21.2, lines 1477–1479). The first Chern class and the projective-bundle formula
 on such spaces are steps of this statement: the first reduces by étale localisation to the scheme case
 (its Lemma 20.1, lines 1368–1378), that of SchemeAndStackFoundations §5.3, and the second, on a dense
-open subscheme, to SchemeAndStackFoundations §5.4's projective bundle theorem.
+open subscheme, to SchemeAndStackFoundations §5.4's projective bundle theorem. *Needs:* for homotopy
+invariance, 2.2; 2.3 (its statements on algebraic spaces, through which the statement is read from
+stacks-chow-spaces Lemma 27.3, and on schemes, through which SchemeAndStackFoundations §§5.2–5.4
+apply); 3.1; 3.2 (the pushforward along closed immersions in the first Chern class,
+stacks-chow-spaces Definition 18.1, and in the localisation sequence, and along `ℙ(N ⊕ O_U) → U` in the
+projective-bundle formula, its Lemma 27.1, lines 1907–1911); 3.3; SchemeAndStackFoundations §§5.2–5.4.
 
 Define *refinedGysin* `f^! : Z_i(Y) → A_{i−c}(X)` by `f^![T] := (U → X)_*(ℱ · T)`
 (vistoli1989 (3.10), lines 1081–1100). Prove, integrally, that `f^!` passes to rational
@@ -909,10 +917,12 @@ sheaf `W_*` (2.2), defined over an algebraic space `Y` as over a scheme, while t
 descended from charts and `s^*` is defined on algebraic spaces directly. Descent of classes alone does
 not suffice, since étale pullback is not injective on integral Chow groups (3.1, last Check). This
 extends VirtualFundamentalClass §2.4's refined Gysin maps, for algebraic-space sources, to integral
-coefficients. *Needs:* 2.2; 2.3 (its statements on algebraic spaces, through which homotopy invariance
-is read from stacks-chow-spaces Lemma 27.3, and on schemes, through which SchemeAndStackFoundations
-§§5.2 and 5.5 apply); 3.1–3.3; VirtualFundamentalClass §1.5; gap:normal-cones-of-local-immersions;
-SchemeAndStackFoundations §§5.2–5.5.
+coefficients. *Needs:* for the Gysin maps, homotopy invariance above; 2.1 and 2.2 (étale descent of
+cycles and the sheaf `W_*`); 2.3 (its statement on schemes, through which SchemeAndStackFoundations
+§§5.2, 5.3 and 5.5 apply); 3.1–3.3; VirtualFundamentalClass §1.5; gap:normal-cones-of-local-immersions;
+SchemeAndStackFoundations §§5.2, 5.3 (intersection with Cartier divisors and its projection formula,
+which the proof of vistoli1989 Lemma 3.15 uses at line 1155) and 5.5 (the deformation to the normal
+cone of that proof, lines 1151–1154, and the scheme Gysin maps of the API).
 
 **API.**
 
@@ -971,7 +981,8 @@ SchemeAndStackFoundations §§5.2–5.5.
 Layers 1–2; gap:closed-substacks-of-stacks; SchemeAndStackFoundations §§1.20, 5.2–5.5;
 VirtualFundamentalClass §1.5; gap:normal-cones-of-local-immersions; Mathlib
 `AlgebraicGeometry.AlgebraicCycle.map`. Within the layer, 3.1 and 3.2 precede 3.3; 3.4 and 3.5 use
-3.1–3.3.
+3.1–3.3; within 3.5, homotopy invariance on algebraic spaces precedes the Gysin maps and needs neither
+gap:normal-cones-of-local-immersions nor SchemeAndStackFoundations §5.5.
 
 ## Layer 4: rational intersection theory on stacks
 
@@ -1152,8 +1163,9 @@ bivariant classes act only after base change to separated test stacks whose pull
 and the evaluation tests on `id_ℳ`, whose pullback is `T`; vistoli1989 Proposition 5.6 has no such
 restriction because its bivariant groups are tested on all schemes. This states for all smooth
 stacks of Convention 1, with no separatedness, the product that
-VirtualFundamentalClass §2.4's Gysin maps define on separated stacks. *Needs:* 3.4, 4.1–4.3;
-SchemeAndStackFoundations §5.6; VirtualFundamentalClass §2.5.
+VirtualFundamentalClass §2.4's Gysin maps define on separated stacks. *Needs:* 3.4, 4.1–4.3; for the
+comparison on smooth schemes, also SchemeAndStackFoundations §5.6; for Poincaré duality, also
+VirtualFundamentalClass §2.5.
 
 **API.**
 
@@ -1204,7 +1216,8 @@ isomorphism classes of `ℳ(Spec Ω)` and `M(Spec Ω)`: a *moduliSpace* in the s
   space; vistoli1989 lines 546–560 compare moduli spaces with coarse spaces up to universal
   homeomorphism.
 
-*Needs:* 1.1–1.3, 2.3, 4.1; SchemeAndStackFoundations §1.23; gap:closed-substacks-of-stacks.
+*Needs:* SchemeAndStackFoundations §1.23; for the first three statements, also 1.1–1.3, 2.3, 4.1 and
+gap:closed-substacks-of-stacks.
 
 **API.**
 
@@ -1271,8 +1284,10 @@ function field, and `Aut(x̄)` the automorphism group of a geometric point over 
   consequently the virtual degree of VirtualFundamentalClass §7.7 is `∫_M p_*[X, φ]^vir`, computed on
   a moduli space.
 
-*Needs:* 1.2–1.3, 2.3, 4.1, 4.4, 5.2; gap:closed-substacks-of-stacks; SchemeAndStackFoundations §§1.20,
-5.2; VirtualFundamentalClass §§2.1–2.2, 7.7.
+*Needs:* 2.3, 4.1, 4.4; VirtualFundamentalClass §§2.1–2.2; for the closed formula, also 1.2–1.3,
+gap:closed-substacks-of-stacks and SchemeAndStackFoundations §1.20; for the agreement on proper schemes
+and algebraic spaces, also SchemeAndStackFoundations §5.2; for the computation on a moduli space, also
+5.2 and VirtualFundamentalClass §7.7.
 
 **API.**
 
@@ -1592,8 +1607,9 @@ smooth along `Y′`, `Y′` is pulled back from `{0} × 𝔐`, and the third sta
 its own notation while its proof (lines 390–405) translates along the regularly embedded smooth stack.
 No step uses reducedness or pure dimension of `Y`, `𝔅` or `𝔐`. This extends VirtualFundamentalClass
 §2.5's invariance from smooth ambients over `k` to relative tangent directions, on ambients that need
-be neither smooth nor reduced. *Needs:* VirtualFundamentalClass §§1.5–1.6, 2.5, 9.1;
-gap:normal-cones-of-local-immersions; 2.2; SchemeAndStackFoundations §5.5.
+be neither smooth nor reduced. *Needs:* VirtualFundamentalClass §§1.5, 2.5;
+gap:normal-cones-of-local-immersions; 2.2; SchemeAndStackFoundations §5.5; for the compatibility with
+smooth factorisations and the two invariance statements, also VirtualFundamentalClass §§1.6, 9.1.
 
 **Checks.**
 
@@ -1699,8 +1715,9 @@ compatibility over `v` is used. No compatibility datum over the graph is used: o
 `g^*Ω_{Z′/𝔜} → g^*L_{Z′/Z}` to `F`, whose obstruction lies in `Ext¹(g^*Ω_{Z′/𝔜}, u^*E)` and is killed only
 in `Ext¹(g^*Ω_{Z′/𝔜}, u^*L_{X/𝔜})`. This extends VirtualFundamentalClass §9.5, which states both cases
 under the hypotheses of behrend-fantechi1997 Proposition 7.5 for separated stacks with the resolution
-property, to stacks that need not be separated. *Needs:* 3.1, 4.2–4.3, 6.1–6.2, 8.1–8.2;
-VirtualFundamentalClass §§1.6, 5.5, 8.1, 9.1, 9.5; gap:normal-cones-of-local-immersions.
+property, to stacks that need not be separated. *Needs:* 3.1, 4.2–4.3, 6.1–6.2; VirtualFundamentalClass
+§§5.5, 8.1, 9.1, 9.5; for the second case and the independence of `Z′_0`, also 8.1–8.2,
+VirtualFundamentalClass §1.6 and gap:normal-cones-of-local-immersions.
 
 **API.**
 
@@ -1922,7 +1939,8 @@ of finite rank on `𝒞_M`, `Rπ_*V` is isomorphic to a two-term complex
 of `M`, which is quasi-compact by Convention 1; behrend1997 Proposition 5, lines 165–187, using that `H⁰(C_t, L^{⊗−N}) = 0` on every fibre because the fibres are reduced connected
 curves on which `L` has positive degree on every component); hence the obstruction theory of 9.3 has the
 global resolution `[(R¹π_*G)^∨ → (R¹π_*H)^∨]` for `V = F^*T_X`, and `[M/𝔅, E]^vir` is defined (6.2).
-*Needs:* 6.2, 9.2–9.3; StableReduction Layer 2.
+*Needs:* 9.2; StableReduction Layer 2; for the global resolution of the obstruction theory and its
+class, also 6.2 and 9.3.
 
 **Checks.**
 
