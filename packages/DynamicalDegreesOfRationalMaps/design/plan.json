@@ -276,7 +276,7 @@
      ],
      "locator": {
       "source": "stacks-morphisms",
-      "where": "Lemma 26.16 (tag 081I), line 2198; truong2020 §6.3, line 1529"
+      "where": "Lemma 26.16 (tag 081I), line 2198 (flat base change of scheme-theoretic images); truong2020 §6.3, lines 1529-1533, only the convention of defining degrees through the lift to an algebraic closure (the base-change identities are proved in this target)"
      },
      "prerequisites": [
       "mathlib:AlgebraicGeometry.Scheme.PartialIso",
@@ -1035,7 +1035,7 @@
      ],
      "locator": {
       "source": "truong2020",
-      "where": "§6.3, lines 1529-1533; dang2020 lines 18-20"
+      "where": "§6.3, lines 1529-1533, and dang2020 lines 18-20, which pass to an algebraic closure by convention; the equalities are proved in this target from target 1.4 and the field-extension compatibility of CyclotomicClassGroupsAndStickelberger §4.3"
      },
      "prerequisites": [
       "target:1.4",
@@ -1279,7 +1279,7 @@
      ],
      "locator": {
       "source": "truong2020",
-      "where": "Theorem 1.1 (2), lines 159-164; §6.3, line 1529; dang2020 lines 35-46; dinhsibony2005 Corollaire 7"
+      "where": "Theorem 1.1 (2), lines 159-164 (birational invariance); §6.3, lines 1529-1533 (degrees over a field that is not algebraically closed defined through the lift to an algebraic closure; field invariance is proved in this target from target 4.3); dang2020 lines 35-46; dinhsibony2005 Corollaire 7"
      },
      "prerequisites": [
       "target:1.4",
