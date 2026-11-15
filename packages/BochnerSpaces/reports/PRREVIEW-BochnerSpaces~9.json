@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-BochnerSpaces~9",
+  "head": "9bfecd1f39364ff3daa3c5972d89d85e94e7f6ef",
+  "pr": 2249,
+  "folder": "BochnerSpaces",
+  "date": "2026-11-15",
+  "findings": 0,
+  "blocking": 0,
+  "notes": "incremental re-review of 8 changed lines since 1812565. Previous R01 repaired: lp.dualPairing and lp.norm_dualPairing are now in the Mathlib supplier contracts and in the 8.3 Needs line; the new contract bullet was compared with the pinned signatures (lpHolder.lean:264, :269, :275) and computed on three instances. Gate: every check passed in the worker's record; depcheck against the merge-order candidate 0 problems, no UPWARD or CYCLE. Suggested.lean elaborates with 25 sorry warnings only; no Lean statement changed. Pull request text agrees with the head. No seeded sample target lies in the changed lines; HvNVW locators remain uncertified (paywalled), reported to the human reviewers.",
+  "text": "b1fb705243291c92"
+ }
+}
