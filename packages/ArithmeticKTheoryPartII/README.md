@@ -266,7 +266,7 @@ At q=5, the character a=2 sends β to 2β. The trivial ideal has [O_q]−1=0, he
 
 ### Dependencies
 
-StableHomotopyKTheory §7.1; StableHomotopyKTheory §§7.3–7.4; StableHomotopyKTheory §7.28; GeneralizedCohomology G5.4–G5.6 and TopologicalKTheory T4–T5, T7; `CommRing.Pic`; `Module.Invertible`; StableHomotopyKTheory §§4.26, 5.19; GeneralAlgebraicKTheory §§7.1–7.7; GeneralizedCohomology G2.1–G2.8 and StableHomotopyKTheory §§5.1–5.19; StableHomotopyKTheory §§4.21–4.27 and GeneralizedCohomology G2.8; KTheoryFiniteLocalFields §§1.1–1.2; ArithmeticKTheory §§6.11, 6.15–6.16; ArithmeticKTheory §§5.2, 6.15–6.16; SchemeKTheoryOperations §§6.1, 6.9–6.11; ArithmeticKTheory’s full-cyclotomic-cover descent contract; ClassFieldTheory Layer 11; ClassFieldTheory Layer 13; `groupHomology`; ArithmeticGaloisDuality R02.2 (Hochschild–Serre and transgression).
+StableHomotopyKTheory §7.1; StableHomotopyKTheory §§7.3–7.4; StableHomotopyKTheory §7.28; GeneralizedCohomology G5.4–G5.6 and TopologicalKTheory T4–T5, T7; `CommRing.Pic`; `Module.Invertible`; StableHomotopyKTheory §§4.26, 5.19; GeneralAlgebraicKTheory §§7.1–7.7; GeneralizedCohomology G2.1–G2.8 and StableHomotopyKTheory §§5.1–5.19; StableHomotopyKTheory §§4.21–4.27 and GeneralizedCohomology G2.8; KTheoryFiniteLocalFields §§1.1–1.2; ArithmeticKTheory §§6.11, 6.15–6.16; ArithmeticKTheory §§5.2, 6.15–6.16; SchemeKTheoryOperations §§6.1, 6.9–6.11 and its duality-transfer contract; ArithmeticKTheory’s full-cyclotomic-cover descent contract; ClassFieldTheory Layer 11; ClassFieldTheory Layer 13; `groupHomology`; ArithmeticGaloisDuality R02.2 (Hochschild–Serre and transgression).
 
 ## Layer 1: Betti, Hodge and periodic symplectic K-theory
 
@@ -926,7 +926,7 @@ For p=3,k=1, the arithmetic K₂ kernel is 0 and c_H identifies KSp₂(ℤ;ℤ�
 
 ### Dependencies
 
-§5.4; ArithmeticGaloisDuality R02.1 (compact coefficients and limits); ArithmeticGaloisDuality R02.2 (Hochschild–Serre and transgression); StableHomotopyKTheory §§7.1–7.17, 7.28; BordismFormalGroups F6.3; GeneralAlgebraicKTheoryPartII §§4.1–4.3; §6.3; StableHomotopyKTheory §§7.9–7.13; ArithmeticKTheory §§3.1–3.5; §4.4; ArithmeticKTheory §§7.1–7.5; §6.1; §5.3; ClassFieldTheory Layer 13; §3.6; §3.4; GeneralAlgebraicKTheory §§13.8b–13.8c; KTheoryFiniteLocalFields §§1.1–1.2; ArithmeticKTheory §§3.1–3.5, 6.15–6.16; Chebotarev Layer 10; IntegralIwasawaTheory §§3.1, 7.4; EtaleCohomologyFoundations §§F.0.2, F.4.1–F.4.6 (lisse integral coefficients and restriction).
+§5.4; ArithmeticGaloisDuality R02.1 (compact coefficients and limits); ArithmeticGaloisDuality R02.2 (Hochschild–Serre and transgression); StableHomotopyKTheory §§7.1–7.17, 7.28; BordismFormalGroups F6.3; GeneralAlgebraicKTheoryPartII §§4.1–4.3; §6.3; StableHomotopyKTheory §§7.9–7.13; ArithmeticKTheory §§3.1–3.5; §4.4; ArithmeticKTheory §§7.1–7.5; §6.1; §5.3; ClassFieldTheory Layer 13; §3.6; §3.4; GeneralAlgebraicKTheory §§13.8b–13.8c; KTheoryFiniteLocalFields §§1.1–1.2 and its sphere-unit contract; ArithmeticKTheory §§3.1–3.5, 6.15–6.16; Chebotarev Layer 10; IntegralIwasawaTheory §§3.1, 7.4; EtaleCohomologyFoundations §§F.0.2, F.4.1–F.4.6 (lisse integral coefficients and restriction).
 
 ## Layer 8: Integral indecomposables and Hodge characteristic numbers
 
@@ -1027,7 +1027,7 @@ One proof route is as follows. The algebraic classifying map and fundamental cla
 
 - For the one-part partition n₁=11 and p=691, B₁₂=−691/2730 gives s∈691ℤ_(691).
 - A partition containing the part p falls outside the theorem even if a different Bernoulli factor is divisible by p. At p=3, ch₃(L)=c₁(L)³/6 has denominator with 3-adic valuation 1, so the factorial is not a unit and no integral cap product is inferred.
-- For d = 0 the empty partition has characteristic number 1 and contains no Bernoulli factor. Its antecedent is false, so divisibility by every prime is not asserted.
+- For d = 0 the only partition is the empty one, and s is the degree of the zero-cycle X(ℂ), its number of points: 1 for X = Spec ℚ and 2 for X = Spec ℚ(i). Reading X(ℂ) as connected, which gives s = 1 for every zero-dimensional X, is wrong for Spec ℚ(i). There is no Bernoulli factor, so the antecedent is false and divisibility is not asserted. Both values are units at every odd p, so the Bernoulli hypothesis cannot be dropped.
 
 *Needs:* §8.4; §7.4; IntegralIwasawaTheory §12.3 (specialization at arithmetic weights); ArithmeticKTheory §§7.1–7.5; GeneralizedCohomology G5.4–G5.6 and TopologicalKTheory T4–T5, T7; AlgebraicTopology Stage 6 (cohomology products and manifold duality); PELModuli §§M1.5, M1.12, M6.2–M6.3, M6.9.
 
@@ -1037,7 +1037,7 @@ For S¹×S¹ the positive degree-one indecomposables are ℤ_p² and the degree-
 
 ### Dependencies
 
-ArithmeticLocallySymmetricSpaces §§ALS.0.8, ALS.1.5–ALS.1.6, ALS.2.3–ALS.2.4; StableHomotopyKTheory §§3.20, 3.34–3.37, 7.3–7.4; GeneralizedCohomology G3.8; ArithmeticKTheory §3.5; GeometryOfNumbersAndQuadraticArithmetic §6.8a; AlgebraicTopology Stage 6 (cohomology products and manifold duality); §3.4; §4.3; §4.4; §1.1; GeneralizedCohomology G5.4–G5.6 and TopologicalKTheory T4–T5, T7; §7.4; IntegralIwasawaTheory §12.3 (specialization at arithmetic weights); ArithmeticKTheory §§7.1–7.5; PELModuli §§M1.5, M1.12, M6.2–M6.3, M6.9. The integral finite-type hypotheses and odd partition parts n_j<p put every characteristic-number application degree 2n_j at most 2p−4; the endpoint 2p−2 and the equality p=max n_j are outside these theorem statements.
+ArithmeticLocallySymmetricSpaces §§ALS.0.8, ALS.1.5–ALS.1.6, ALS.2.3–ALS.2.4; StableHomotopyKTheory §§3.20, 3.34–3.37, 7.3–7.4; GeneralizedCohomology G3.8; ArithmeticKTheory §3.5; GeometryOfNumbersAndQuadraticArithmetic §6.8a; AlgebraicTopology Stage 6 (cohomology products and manifold duality); §3.4; §4.3; §4.4; §1.1; GeneralizedCohomology G5.4–G5.6 and its topological-symplectic-Hodge contract; TopologicalKTheory T4–T5, T7; §7.4; IntegralIwasawaTheory §12.3 (specialization at arithmetic weights); ArithmeticKTheory §§7.1–7.5; PELModuli §§M1.5, M1.12, M6.2–M6.3, M6.9. The integral finite-type hypotheses and odd partition parts n_j<p put every characteristic-number application degree 2n_j at most 2p−4; the endpoint 2p−2 and the equality p=max n_j are outside these theorem statements.
 
 ## Downstream consumers
 
