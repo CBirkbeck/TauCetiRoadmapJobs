@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-ClassifyingSpaces~67",
+  "head": "683a4d56c1c6aa1f834707f4c87a346786d8fe3b",
+  "pr": 1807,
+  "folder": "ClassifyingSpaces",
+  "date": "2026-11-15",
+  "findings": 1,
+  "blocking": 1,
+  "notes": "incremental re-review of 63 changed lines since 89357f3. Previous R01 (cohomological connecting map in A) repaired. One new P2 in the changed 2.3 clause: naturality in A and the homology connecting map on X need a morphism of local systems for a non-invertible morphism of representations, which 2.3 builds only for isomorphisms. Checked: 9 pinned declarations the diff cites (files, lines, hypotheses), the two new negative-control Checks recomputed, the sampled 2.3 locator re-read; gate passes at this head, depcheck 0 problems, Suggested.lean elaborates with four sorry warnings only; pull request text agrees with the head.",
+  "text": "65e3dd1e040903b8"
+ }
+}
