@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-LocallyConvexDuality~10",
+  "head": "13353163edb4b2807b63a87263a95fe25ab4d331",
+  "pr": 1782,
+  "folder": "LocallyConvexDuality",
+  "date": "2026-11-15",
+  "findings": 2,
+  "blocking": 0,
+  "notes": "incremental re-review of 0 changed lines since 7bdf7f3; this round checked the pull request's title and description against the head. Two P3 findings, both on the description: it names two of Layer 5's four suppliers (AutomorphicSpectralTheory 0.11 and SpectralManifolds SM3 are left out), and it opens with 'Draft.' on a pull request that is not a draft. Folder unchanged and nothing changed outside it against origin/main; worker's gate passes (my rerun differs only by NOT IN ORDER, not a finding); depcheck with the candidate order 0 problems; Suggested.lean elaborates with 13 sorry warnings only; 4 cross-roadmap citations resolved; Mackey 1946 Theorems 8 and 10 (p. 527) and Bourbaki 1950 section 4 (p. 11) checked against the text; adversarial rows computed for 4.2, 4.4, 1.2-1.3 and the Layer 5 supplier set.",
+  "text": "2ffc34d25890ab79"
+ }
+}
