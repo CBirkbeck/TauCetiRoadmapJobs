@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-LefschetzStructures~14",
+  "head": "8bf216411a5a28a5b1bb737812bb6ffa371b4d0e",
+  "pr": 1061,
+  "folder": "LefschetzStructures",
+  "date": "2026-11-15",
+  "findings": 3,
+  "blocking": 0,
+  "notes": "incremental re-review of 16 changed lines since 2886ce3 (README only: the citations of the Montpellier fonds deleted). Checked: previous R01 (description) not repaired and raised again; the deletion leaves 1.3 without a source and a dangling 'the source's statement' (R02) and a stale 'as in the source' in a 1.2 Check (R03); Beilinson 2012 §2.3 (b) read at its locator; Kleiman 1994 and 1968 not readable; adversarial rows computed for 1.2, 1.3 and the 0.1 odd-degree Example; gate passes (all scanners 0, build 0); depcheck 0 problems; Suggested.lean elaborates with 12 sorry warnings only; no change outside the folder.",
+  "text": "56e2705980cfcda9"
+ }
+}
