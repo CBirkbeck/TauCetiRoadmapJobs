@@ -1,0 +1,23 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-ExplicitCharacterSumsAndSieves~9",
+  "head": "a1e357d269ac56bac09b96b7e03cff57eb916517",
+  "pr": 1948,
+  "folder": "ExplicitCharacterSumsAndSieves",
+  "date": "2026-11-15",
+  "findings": 1,
+  "blocking": 0,
+  "notes": "incremental re-review of 0 changed lines since b701b75; this round checked the pull request's title and description against the head. One P3 finding: the description names ExplicitPrimeCounting (a supplier, README line 327) and class numbers among the consumers. Folder unchanged, nothing changed outside it. Gate rerun: every check passes; depcheck 0 problems, no UPWARD or CYCLE; Suggested.lean elaborates with 19 sorry warnings only. Adversarial rows computed for fan_rough_count (4)-(6) (max ratios 0.7324, 0.8980, 0.9155; negative control at x = 7) and for the description's supplier and consumer claims. fan2022 lines 157-163 checked; the seeded sample falls in no changed passage. One source erratum recorded (fan2022 inequality (5) at x = 7).",
+  "text": "331b3d28607d25e9",
+  "carried": {
+   "from": "a1e357d269ac56bac09b96b7e03cff57eb916517",
+   "head": "438bce416af488d61683d38f55ca31db8e4cd2d2",
+   "findings": 1,
+   "lines": 2,
+   "folders": [
+    "ExplicitCharacterSumsAndSieves"
+   ]
+  }
+ }
+}
