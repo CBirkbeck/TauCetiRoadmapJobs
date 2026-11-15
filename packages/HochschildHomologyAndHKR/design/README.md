@@ -103,7 +103,14 @@ every commutative ring (`MvPolynomial.isWeaklyRegular_map_X`), its Koszul comple
 `TauCeti.koszulComplex` (the formalisation of DerivedModuleAlgebra §0.K.1) with the zeroth
 homology of a finite sequence (`TauCeti.koszulComplex.homologyZeroEquivSpan`) and acyclicity for
 weakly regular sequences (`TauCeti.koszulComplex.exactAt_of_isWeaklyRegular`),
-`TauCeti.BalancedTensorProduct`, the Kronecker map
+`TauCeti.BalancedTensorProduct`, the restrictions of a module over `A ⊗[k] B` to its two factors
+(`TauCeti.Algebra.TensorProduct.moduleLeft` and `TauCeti.Algebra.TensorProduct.moduleRight`, with
+`TauCeti.Algebra.TensorProduct.moduleSMulCommClass`,
+`TauCeti.Algebra.TensorProduct.moduleLeftIsScalarTower` and
+`TauCeti.Algebra.TensorProduct.moduleRightIsScalarTower`) and the linearity criterion
+`TauCeti.Algebra.TensorProduct.linearMapOfFactors`, the algebra `A` as an instance-carrying
+`B ⊗[k] Aᵐᵒᵖ`-module along an algebra map `B → A` (`TauCeti.Bimodule` with
+`TauCeti.Bimodule.smul_of`), the Kronecker map
 (`TauCeti.ChainComplex.kronecker`) and its bijectivity in degree `n` for a complex of projectives
 indexed by `ℕ` whose homology is projective below `n`
 (`TauCeti.ChainComplex.kronecker_bijective_of_projective_homology_lt`, and
@@ -158,6 +165,11 @@ Variants kept here, each differing in one stated respect from an existing object
 - the `HH²` classification of §3.6 is for an arbitrary bimodule without a deformation parameter,
   where DGAInfinity Layer 8 reads `HH²(A,A)` as infinitesimal deformations and BanachAlgebras
   Layer 6 classifies bounded extensions of Banach algebras;
+- the equivalence of §4.1 between bimodules and `ModuleCat Aᵉ` differs from Tau Ceti's restrictions
+  of an `A ⊗[k] B`-module to its factors (`TauCeti.Algebra.TensorProduct.moduleLeft`,
+  `TauCeti.Algebra.TensorProduct.moduleRight`) and its linearity criterion
+  (`TauCeti.Algebra.TensorProduct.linearMapOfFactors`) by adding the two round trips with Mathlib's
+  converse construction `TensorProduct.Algebra.module` and the equivalence of categories;
 - the cup product of §5.1 is the ungraded product on the carrier of Layer 1; §6.1 proves that it
   is DGAInfinity Layer 8's brace expression up to an explicit sign;
 - `HH_1(R,R) ≅ Ω¹_{R/k}` of §3.4 is for the classical complex of every commutative `R`, flat or
@@ -371,6 +383,25 @@ canonical map, and the determinant map is identified as `n!` times it.
   `TauCeti.BalancedTensorProduct.rid` and `TauCeti.BalancedTensorProduct.outerFactors`
   (`(M ⊗[k] L) ⊗[A] (N ⊗[k] P) ≃ (M ⊗[A] N) ⊗[k] (L ⊗[k] P)`). It is an ordinary, underived
   tensor product.
+- `TauCeti.Algebra.TensorProduct.moduleLeft`, `TauCeti.Algebra.TensorProduct.moduleRight`,
+  `TauCeti.Algebra.TensorProduct.moduleSMulCommClass`,
+  `TauCeti.Algebra.TensorProduct.moduleLeftIsScalarTower`,
+  `TauCeti.Algebra.TensorProduct.moduleRightIsScalarTower` and
+  `TauCeti.Algebra.TensorProduct.linearMapOfFactors` (`TauCeti/Algebra/TensorProduct/Module.lean`):
+  for a commutative ring `k`, `k`-algebras `A` and `B` and a module `M` over `A ⊗[k] B`, the
+  restricted actions `a • m = (a ⊗ 1) • m` and `b • m = (1 ⊗ b) • m` (abbreviations, not instances);
+  the fact that they commute; their compatibility with the `k`-action when `M` is a `k`-module with
+  `IsScalarTower k (A ⊗[k] B) M`; and the criterion that a `k`-linear map `M → N` into a second
+  `A ⊗[k] B`-module commuting with every `a ⊗ 1` and every `1 ⊗ b` is `A ⊗[k] B`-linear. At
+  `B = Aᵐᵒᵖ` the restrictions are the left action and the right action `m · a = op a • m` of the
+  conventions. The converse construction is Mathlib's `TensorProduct.Algebra.module`; neither pinned
+  library has the two round trips or the equivalence of categories, which §4.1 adds.
+- `TauCeti.Bimodule` and `TauCeti.Bimodule.smul_of` (`TauCeti/Algebra/CentralSimple/Bimodule.lean`):
+  for a commutative ring `K`, `K`-algebras `A` and `B` and `f : B →ₐ[K] A`, a type synonym
+  `TauCeti.Bimodule f` of `A` with an instance `Module (B ⊗[K] Aᵐᵒᵖ) (TauCeti.Bimodule f)` in which
+  `b ⊗ op a` acts by `x ↦ f(b) x a`. At `f = AlgHom.id k A` this agrees on pure tensors, hence
+  everywhere, with the action `AlgHom.mulLeftRight k A` of `instModuleTensorProductMop`; the
+  difference is that it is an instance on a synonym rather than an abbreviation on `A`.
 - `TauCeti.ChainComplex.kronecker` (`TauCeti/Algebra/Homology/Kronecker.lean`): the Kronecker map
   `Hⁱ(Hom(X,Y)) → (Hᵢ(X) ⟶ Y)` for a chain complex `X` in a `k`-linear abelian category, the
   source being the cohomology of `ChainComplex.linearYonedaObj`, with
@@ -1071,14 +1102,25 @@ as first-order deformations is the special case `M = A` over `k[ε]/ε²` and is
 Construct the equivalence between `A`-bimodules (with the conventions above) and `ModuleCat Aᵉ`,
 `Aᵉ = A ⊗[k] Aᵐᵒᵖ`, through `TensorProduct.Algebra.module`, `(a ⊗ op b) · m = a m b`; the bimodule `A`
 as an object of `ModuleCat Aᵉ`, whose module structure is Mathlib's `instModuleTensorProductMop`
-(the same `TensorProduct.Algebra.module` on `A`); and the right `Aᵉ`-module structure on a bimodule,
-`m · (a ⊗ op b) = b m a`, used for balanced tensor products (Ginz05 §4.2, lines 751–752, and §5.1,
-lines 934–947).
+(the same `TensorProduct.Algebra.module` on `A`; Tau Ceti's `TauCeti.Bimodule (AlgHom.id k A)` carries
+the same action as an instance on a type synonym of `A`, a carrier for places where an instance is
+required); and the right `Aᵉ`-module structure on a bimodule, `m · (a ⊗ op b) = b m a`, used for
+balanced tensor products (Ginz05 §4.2, lines 751–752, and §5.1, lines 934–947).
 
 *Needs:* Mathlib `Algebra.TensorProduct`, `MulOpposite`, `TensorProduct.Algebra.module`,
-`instModuleTensorProductMop`, `ModuleCat`; Tau Ceti `TauCeti.BalancedTensorProduct`.
+`instModuleTensorProductMop`, `ModuleCat`; Tau Ceti `TauCeti.BalancedTensorProduct`,
+`TauCeti.Algebra.TensorProduct.moduleLeft`, `TauCeti.Algebra.TensorProduct.moduleRight`,
+`TauCeti.Algebra.TensorProduct.moduleSMulCommClass`,
+`TauCeti.Algebra.TensorProduct.moduleLeftIsScalarTower`,
+`TauCeti.Algebra.TensorProduct.moduleRightIsScalarTower`,
+`TauCeti.Algebra.TensorProduct.linearMapOfFactors`, `TauCeti.Bimodule`,
+`TauCeti.Bimodule.smul_of`.
 
-- Bimodule homomorphisms are exactly `Aᵉ`-linear maps, and the equivalence is `k`-linear.
+- Bimodule homomorphisms are exactly `Aᵉ`-linear maps, and the equivalence is `k`-linear. From
+  bimodule maps to `Aᵉ`-linear maps this is `TauCeti.Algebra.TensorProduct.linearMapOfFactors`,
+  since `(a ⊗ 1) · m = a m` and `(1 ⊗ op b) · m = m b`; the inverse functor restricts an
+  `Aᵉ`-module along `TauCeti.Algebra.TensorProduct.moduleLeft` and
+  `TauCeti.Algebra.TensorProduct.moduleRight` at `B = Aᵐᵒᵖ`.
 - The left and right `Aᵉ`-structures on a bimodule commute with the `k`-structure, and for the
   bimodule `Aᵉ` itself they are left and right multiplication up to the swap `(Aᵉ)ᵐᵒᵖ ≅ Aᵉ`.
 - `M ⊗_{Aᵉ} A ≅ M/[A,M]` through `m ⊗ a ↦ [m a]`.
@@ -1192,7 +1234,13 @@ For `A = k[x]` (free over `k`) the bar resolution is a free resolution of `k[x]`
 ### Dependencies
 
 Layers 1–3; Mathlib `Ext`, projective resolutions, left derived functors; Tau Ceti balanced tensor
-products. No roadmap supplier is used.
+products, the restrictions of an `A ⊗[k] B`-module to its factors with their linearity criterion
+(`TauCeti.Algebra.TensorProduct.moduleLeft`, `TauCeti.Algebra.TensorProduct.moduleRight`,
+`TauCeti.Algebra.TensorProduct.moduleSMulCommClass`,
+`TauCeti.Algebra.TensorProduct.moduleLeftIsScalarTower`,
+`TauCeti.Algebra.TensorProduct.moduleRightIsScalarTower`,
+`TauCeti.Algebra.TensorProduct.linearMapOfFactors`) and the bimodule `TauCeti.Bimodule` with
+`TauCeti.Bimodule.smul_of` (§4.1). No roadmap supplier is used.
 
 ## Layer 5: The cup product
 
@@ -1750,7 +1798,12 @@ smooth-hkr-antisymmetrisation on RefinedTraceMethods §1.9.
 
 For `R = MvPolynomial (Fin m) k` over any commutative `k`, prove that the elements
 `t_i = X_i ⊗ 1 − 1 ⊗ X_i` of `Rᵉ = R ⊗[k] R` form a weakly regular sequence and generate the kernel of
-the multiplication map `Rᵉ → R` (HKR62 lines 268–279; Ginz05 Lemma 9.3.1, line 2187). One route:
+the multiplication map `Rᵉ → R` (the statement over every commutative `k` is proved by the route
+below; Loday98 §3.2 for the Koszul resolution of a symmetric algebra; neither of the other sources
+names the `t_i`: HKR62 lines 268–271 obtain, by citation, a regular sequence generating a prime
+ideal with regular quotient of a regular local ring, and Ginz05 §9.3, lines 2193–2196, asserts
+without proof a regular sequence generating the ideal of the diagonal of a smooth variety over an
+algebraically closed field of characteristic zero). One route:
 `Rᵉ ≅ MvPolynomial (Fin m) R`, with the first factor `R ⊗ 1` as coefficients and the second copy of
 the variables replaced by `Y_i = 1 ⊗ X_i − X_i ⊗ 1 = −t_i`. Under it the multiplication map is
 evaluation at `Y = 0`, whose kernel is spanned by the `Y_i`
@@ -1851,11 +1904,11 @@ For `R = MvPolynomial (Fin m) k` over any commutative `k`, prove that `HH_n(R,R)
 that `HH_n(R,R) = HH^n(R,R) = 0` for `n > m`. Consequently `ε^cl_n` is an isomorphism, and
 `D₁ ∧ ⋯ ∧ D_n ↦ [D₁ ∪ ⋯ ∪ D_n]` is a well-defined isomorphism `T^n_{R/k} ≅ HH^n(R,R)` (the map `Ψ_n` of
 §7.6), for polynomial algebras over every `k`, without the gap used in §6.4(d) (HKR62 lines
-268–279, the Koszul-resolution computation inside the proof of Theorem 3.1, which uses only the
-regular sequence of §8.1 and not the Noetherian and regularity hypotheses of the theorem's
-statement at line 210; Ginz05 Lemma 9.3.1, line 2187, for a regular sequence in a commutative
-algebra over an algebraically closed field of characteristic zero; Loday98 §3.2, symmetric
-algebras over any `k`; Weibel94 §9.4).
+268–279, the Koszul-resolution computation inside the proof of Theorem 3.1, which needs only a
+regular sequence generating the ideal, here the one of §8.1, and not the Noetherian and regularity
+hypotheses of the theorem's statement at line 210; Ginz05 Lemma 9.3.1, line 2187, for a regular
+sequence in a commutative algebra over an algebraically closed field of characteristic zero;
+Loday98 §3.2, symmetric algebras over any `k`; Weibel94 §9.4).
 
 *Needs:* §§4.3, 4.4, 4.5, 6.2, 6.4(a), 7.1, 7.4, 7.5, 8.2, 8.3; Mathlib `MvPolynomial.pderiv`,
 `KaehlerDifferential.mvPolynomialBasis` and `Module.Basis.exteriorPower` (the basis `dX_I` of

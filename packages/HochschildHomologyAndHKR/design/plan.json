@@ -739,7 +739,7 @@
      "id": "4.1",
      "kind": "construction",
      "name": "HochschildHKR.envModule",
-     "statement": "With Aᵉ = A ⊗[k] Aᵐᵒᵖ, bimodules are left Aᵉ-modules via TensorProduct.Algebra.module, (a⊗op b)·m = a m b, giving a k-linear equivalence with ModuleCat Aᵉ; A is an object of ModuleCat Aᵉ through Mathlib's instModuleTensorProductMop; a bimodule is a right Aᵉ-module by m·(a⊗op b)=b m a.",
+     "statement": "With Aᵉ = A ⊗[k] Aᵐᵒᵖ, bimodules are left Aᵉ-modules via TensorProduct.Algebra.module, (a⊗op b)·m = a m b, giving a k-linear equivalence with ModuleCat Aᵉ whose inverse restricts along TauCeti.Algebra.TensorProduct.moduleLeft and moduleRight at B = Aᵐᵒᵖ; A is an object of ModuleCat Aᵉ through Mathlib's instModuleTensorProductMop, whose action TauCeti.Bimodule (AlgHom.id k A) carries as an instance on a type synonym of A; a bimodule is a right Aᵉ-module by m·(a⊗op b)=b m a.",
      "hypotheses": [
       "k a commutative ring",
       "A a ring with Algebra k A"
@@ -754,13 +754,21 @@
       "mathlib:TensorProduct.Algebra.module",
       "mathlib:instModuleTensorProductMop",
       "mathlib:ModuleCat",
-      "tauceti:TauCeti.BalancedTensorProduct"
+      "tauceti:TauCeti.BalancedTensorProduct",
+      "tauceti:TauCeti.Algebra.TensorProduct.moduleLeft",
+      "tauceti:TauCeti.Algebra.TensorProduct.moduleRight",
+      "tauceti:TauCeti.Algebra.TensorProduct.moduleSMulCommClass",
+      "tauceti:TauCeti.Algebra.TensorProduct.moduleLeftIsScalarTower",
+      "tauceti:TauCeti.Algebra.TensorProduct.moduleRightIsScalarTower",
+      "tauceti:TauCeti.Algebra.TensorProduct.linearMapOfFactors",
+      "tauceti:TauCeti.Bimodule",
+      "tauceti:TauCeti.Bimodule.smul_of"
      ],
      "api": [
       {
        "name": "HochschildHKR.envModule_smul",
        "role": "evaluation",
-       "statement": "(a⊗op b)·m = a m b; bimodule maps are exactly Aᵉ-linear maps."
+       "statement": "(a⊗op b)·m = a m b; bimodule maps are exactly Aᵉ-linear maps (one way through TauCeti.Algebra.TensorProduct.linearMapOfFactors)."
       },
       {
        "name": "HochschildHKR.envModule_rightAction",
@@ -1713,8 +1721,8 @@
       "m : ℕ"
      ],
      "locator": {
-      "source": "HKR62",
-      "where": "lines 268–279; Ginz05 Lemma 9.3.1, line 2187"
+      "source": "Loday98",
+      "where": "§3.2 (Koszul resolution of a symmetric algebra); the statement over every commutative k is proved by the route of 8.1; HKR62 lines 268–271 (a regular sequence for a prime ideal with regular quotient of a regular local ring, unnamed); Ginz05 §9.3, lines 2193–2196 (the diagonal of a smooth variety over an algebraically closed field of characteristic zero, asserted, unnamed)"
      },
      "prerequisites": [
       "mathlib:MvPolynomial",
