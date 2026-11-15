@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-AInfCohomology~3",
+  "head": "8356bcc3febdeb628c3aca45361d4bb49a03bed6",
+  "pr": 1044,
+  "folder": "AInfCohomology",
+  "date": "2026-11-15",
+  "findings": 7,
+  "blocking": 0,
+  "notes": "Full re-review. The four findings of the previous review are repaired. Seven P3 findings: pinned TauCeti.Perfectoid.IsIntegralPerfectoid not cited in the supplier contracts; three references to the wrong layer; soft hyphens in two target titles; a hypothesis given by reference to the source (CK Claim 1.6.1); broken code spans; the unkeyed closing paragraph of the references; 'corrected' with nothing named. Checked: the 15 sampled targets and the headline theorems against BMS1 (arXiv v3 and published), BMS2 (arXiv and published), CK and SW20 (41 locators, all agree); adversarial table with computed values; 37 library declarations at the pins; 24 cross-roadmap citations and all 245 internal title citations; gate passes; depcheck 0 problems; Suggested.lean elaborates with sorry the only warning; one-tactic probe closes none of the six theorems. One source error recorded (BMS1 Lemma 6.9, proof).",
+  "text": "6b61e2ab84c63fc2"
+ }
+}
