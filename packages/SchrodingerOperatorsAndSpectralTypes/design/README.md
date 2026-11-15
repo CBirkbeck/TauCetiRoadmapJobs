@@ -50,7 +50,8 @@ owned elsewhere and consumed by section.
   (`TemperedDistribution.MemSobolev`) and the Fourier transform on `L²`
   (`MeasureTheory.Lp.fourierTransformₗᵢ`); the Riemannian volume (`TauCeti.riemannianVolume`), the
   scalar Laplace–Beltrami operator (`TauCeti.Manifold.laplaceBeltrami`, sign `div ∘ grad`) and its
-  Green identity (`TauCeti.Manifold.integral_mul_laplaceBeltrami`); trace-class and
+  Green identities (`TauCeti.Manifold.integral_mul_laplaceBeltrami`,
+  `TauCeti.Manifold.integral_mul_divergence_of_hasCompactSupport_right`); trace-class and
   Hilbert–Schmidt gauges (`ContinuousLinearMap.nuclearENorm`, `ContinuousLinearMap.hilbertSchmidtEnergy`).
 - **Stated by TauCetiRoadmap.OperatorTheory/SelfAdjointSpectralTheory.** The spectral
   projection-valued measure `P_A` of a self-adjoint operator (SA-E01), its resolvent formula and
@@ -145,8 +146,10 @@ owned elsewhere and consumed by section.
 
 - **Hilbert spaces.** `ℋ` is a complete complex inner-product space, inner product conjugate-linear
   in the first slot (Mathlib's `inner`). No separability is assumed unless a statement says so.
-  Operators are Mathlib `LinearPMap`s `ℋ →ₗ.[ℂ] ℋ` with their actual domains; `IsSelfAdjoint A`
-  is Mathlib's `A† = A`.
+  `teschl` assumes every Hilbert space separable (teschl line 1780, §1.2, p. 42), so where a
+  statement here drops separability its `teschl` locator gives the separable case, and the
+  general case is deduced here from the inputs of its *Needs:* line. Operators are Mathlib
+  `LinearPMap`s `ℋ →ₗ.[ℂ] ℋ` with their actual domains; `IsSelfAdjoint A` is Mathlib's `A† = A`.
 - **Spectral measures.** `P_A` is the spectral projection-valued measure of a self-adjoint `A`
   (SelfAdjointSpectralTheory SA-E01), a `TauCeti.ProjValMeasure ℝ ℋ`. For a vector `f` the vector
   spectral measure is `μ_f := P_A.diag f`, so `μ_f(B) = ⟪f, P_A(B) f⟫` is real and
@@ -251,8 +254,13 @@ owned elsewhere and consumed by section.
   `TauCeti.Manifold.divergence` in `TauCeti/Geometry/Manifold/Riemannian/Laplacian.lean` (real
   functions, sign `div ∘ grad`); `TauCeti.Manifold.integral_mul_laplaceBeltrami` in
   `.../Riemannian/DivergenceTheorem.lean` (`f` of class `C¹` with compact support, `g` of class
-  `C²`, boundaryless); `TauCeti.HyperbolicMetric` in `.../Riemannian/Hyperbolic.lean` (smooth,
-  complete, constant curvature `−1`), used in Checks.
+  `C²`, boundaryless), and `TauCeti.Manifold.integral_mul_divergence_of_hasCompactSupport_right`
+  in the same file (`f` of class `C¹`, `X` a compactly supported `C¹` vector field, boundaryless),
+  which with `X = grad u` gives the case of 3.1 where `u` has compact support, `grad u` being a
+  compactly supported `C¹` field for `u` of class `C²` with compact support by
+  `TauCeti.Manifold.contMDiff_mgradient` and `HasCompactSupport.mgradient` in
+  `.../Riemannian/Gradient/Basic.lean`; `TauCeti.HyperbolicMetric` in
+  `.../Riemannian/Hyperbolic.lean` (smooth, complete, constant curvature `−1`), used in Checks.
 - `TauCeti.Wkp` and `TauCeti.W1p` in `TauCeti/Analysis/Sobolev/` (real-valued weak-derivative
   spaces on an additive Haar measure).
 - `TauCeti.Complexification` in `TauCeti/Analysis/Normed/Module/Complexification.lean` (pairs
@@ -553,7 +561,8 @@ line 4350–4353).
 - If `ψ` is a maximal spectral vector then `μ_{P_xx ψ}` is a maximal spectral measure for `A_xx`
   for each type.
 
-Prove the following characterisations (teschl line 4315–4332 and 4420–4427).
+Prove the following characterisations (teschl line 4315–4332 and 4420–4427); the source states (3)
+through a maximal spectral measure, and (1) and (2), which assume none, are deduced here.
 
 1. **Local absolutely continuous mass.** For every `λ ∈ ℝ` the following are equivalent:
    `λ ∈ σ_ac(A)`; for every `ε > 0` there is `f ∈ ℋ` with
@@ -594,7 +603,9 @@ decomposition of SA-B85 (its nondegenerate `C₀(ℝ)` case, applied to the boun
 
 ### 1.5 The interval criterion
 
-For real `a < b` prove (teschl line 4326–4332):
+For real `a < b` prove the following. They are deduced here from 1.4 by the route below, with no
+maximal spectral vector; for one Borel measure the underlying fact is teschl line 4326–4332
+(Lemma 3.15, p. 104):
 
 - `[a, b] ⊆ σ_ac(A)` iff for every nonempty open `J ⊆ (a, b)` there is `f` with
   `(Leb.withDensity (μ_f.rnDeriv Leb))(J) > 0`;
@@ -955,8 +966,10 @@ and one has compact support (DifferentialGeometry 12.5; grigoryan09 Ch. 4).
 - `⟨du, du⟩_g = |grad Re u|² + |grad Im u|² ≥ 0`.
 - `Δ` is natural under isometries: `Δ(u ∘ φ) = (Δu) ∘ φ` for a Riemannian isometry `φ`.
 
-*Needs:* Tau Ceti `TauCeti.Manifold.laplaceBeltrami`, `TauCeti.Manifold.integral_mul_laplaceBeltrami`;
-DifferentialGeometry 12.2–12.5.
+*Needs:* Tau Ceti `TauCeti.Manifold.laplaceBeltrami`, `TauCeti.Manifold.integral_mul_laplaceBeltrami`
+(`v` compactly supported), `TauCeti.Manifold.integral_mul_divergence_of_hasCompactSupport_right`
+with `TauCeti.Manifold.contMDiff_mgradient` and `HasCompactSupport.mgradient` (`u` compactly
+supported); DifferentialGeometry 12.2–12.5.
 
 **Checks.**
 
@@ -1363,7 +1376,7 @@ ComplexKahlerGeometry K5a; PseudodifferentialOperators P1.0; SmoothBundlesConnec
 UnboundedOperators UO-C02 (with gap:weyl-criterion), UO-D06 (forms, Friedrichs extension, and the
 complexification of a real self-adjoint operator in 3.8 and 3.9);
 SelfAdjointSpectralTheory SA-C54, SA-C86; Tau Ceti Riemannian volume, Laplace–Beltrami and Green
-identity, Hilbert complexification, compact resolvents and their eigenbases.
+identities, Hilbert complexification, compact resolvents and their eigenbases.
 
 ## Layer 4: Schrödinger operators on `L²(ℝ^d)`
 
@@ -1587,10 +1600,11 @@ and 3.10 its lower inclusion.
 ## References
 
 - `teschl`: G. Teschl, *Mathematical Methods in Quantum Mechanics, with Applications to Schrödinger
-  Operators*, GSM 99, AMS (2009), author's online edition: §2.3 (Theorems 2.12–2.13), Theorem 3.7,
-  §3.3 (Lemmas 3.14–3.16, 3.19, (3.83)–(3.85)), Lemma 2.24, Corollary 4.6, Theorem 4.10, Theorem
-  4.12(i), Lemma 6.3, Theorem 6.4, Lemma 6.17, Theorem 7.8, Lemmas 7.9 and 7.11, (7.26), Theorem
-  10.2, §12.1 ((12.3), (12.6), Lemma 12.1, Theorem 12.2).
+  Operators*, GSM 99, AMS (2009), author's online edition: §1.2 (the standing separability
+  assumption), §2.3 (Theorems 2.12–2.13, (2.68)), Theorem 3.7, §3.2 ((3.79), Lemma 3.15), §3.3
+  (Lemmas 3.16, 3.19, (3.83)–(3.85)), Lemma 2.24, Corollary 4.6, Theorem 4.10, Corollary 4.11, Theorem 4.12(i), Lemma
+  6.3, Theorem 6.4, Lemma 6.17, the remark before Lemma 6.22, Theorem 7.8, Lemmas 7.9 and 7.11,
+  (7.26), Theorem 10.2, §12.1 ((12.3), (12.6), Lemma 12.1, Theorem 12.2).
 - `bms02`: M. Braverman, O. Milatovic, M. Shubin, *Essential self-adjointness of Schrödinger type
   operators on manifolds*, Russian Math. Surveys 57 (2002), arXiv math/0201231v3: §2, Theorem 2.3,
   Corollary 2.10, Remark 2.12.

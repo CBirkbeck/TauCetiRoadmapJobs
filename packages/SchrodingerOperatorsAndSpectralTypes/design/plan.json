@@ -315,7 +315,7 @@
      ],
      "locator": {
       "source": "teschl",
-      "where": "line 4315-4332 (Lemma 3.15), 4354-4366 (Lemma 3.16), 4420-4427"
+      "where": "line 4315-4332 (Lemma 3.15), 4354-4366 (Lemma 3.16), 4420-4427; the source states the essential-closure clause through a maximal spectral measure, and the local-mass and no-isolated-point clauses, which assume none, are deduced here"
      },
      "prerequisites": [
       "target:1.2",
@@ -347,7 +347,7 @@
      ],
      "locator": {
       "source": "teschl",
-      "where": "line 4326-4332"
+      "where": "line 4326-4332 (Lemma 3.15, p. 104, for one Borel measure); the criterion is deduced here from 1.4a (closedness) and 1.4d with no maximal spectral vector"
      },
      "prerequisites": [
       "target:1.4d",
@@ -972,6 +972,9 @@
      "prerequisites": [
       "target:3.1a",
       "tauceti:TauCeti.Manifold.integral_mul_laplaceBeltrami",
+      "tauceti:TauCeti.Manifold.integral_mul_divergence_of_hasCompactSupport_right",
+      "tauceti:TauCeti.Manifold.contMDiff_mgradient",
+      "tauceti:HasCompactSupport.mgradient",
       "roadmap:DifferentialGeometry 12.5"
      ],
      "api": [],
