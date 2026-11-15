@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-CohomologyComparisonsPartII~7",
+  "head": "0d00ac6661d976fe347657caafabd47cb9913ee7",
+  "pr": 1364,
+  "folder": "CohomologyComparisonsPartII",
+  "date": "2026-11-15",
+  "findings": 0,
+  "blocking": 0,
+  "notes": "incremental re-review of 0 changed lines since 0d00ac6; the title and description were read against the head: both previous findings (R01, R02, on the description) are repaired and no sentence contradicts the head (eleven headline groups against the docstring, sources per layer, seven open suppliers against the 13 supplier subsections, consumers and ownership boundaries). Gate rerun: every counter 0, OK; depcheck 0 problems, no UPWARD or CYCLE; lake env lean on Suggested.lean exit 0 with no output (no declaration); no change outside the folder. Adversarial rows computed for the non-abelian filtered category, the Frobenius-lift obstruction at e=1 and e=3, and the not-statable headlines. No source locator re-read (no changed passage). Acceptance is conditional on the declared supplier gaps.",
+  "text": "24e1c9ebc87d7029"
+ }
+}
