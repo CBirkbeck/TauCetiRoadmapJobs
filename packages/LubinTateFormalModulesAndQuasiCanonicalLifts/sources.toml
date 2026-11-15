@@ -129,3 +129,19 @@ licence_class = "none"
 status = "uncertified"
 version_note = "paywalled (JSTOR); cited by its locator without the text"
 cited_for = ["0.2", "0.3", "1.1", "1.2", "1.3", "1.4", "2.2", "2.3", "2.4", "2.5", "2.6", "8.1", "8.2", "9.1"]
+
+[[source]]
+id = "Mil20"
+authors = "James S. Milne"
+title = "Algebraic Number Theory (v3.08)"
+year = 2020
+locator_scheme = "theorem"
+locator = "Proposition 7.60, p.131; Proposition 7.61 and Corollary 7.62, p.132"
+url = "https://www.jmilne.org/math/CourseNotes/ANT.pdf"
+fetched_from = "https://www.jmilne.org/math/CourseNotes/ANT.pdf"
+fetched_at = "2026-11-15T18:08:48Z"
+sha256 = "24b83c789a89f25aebffb3cbe4ae5ca29edd0075acc072de093d140770630847"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-15"
+cited_for = ["0.4"]
