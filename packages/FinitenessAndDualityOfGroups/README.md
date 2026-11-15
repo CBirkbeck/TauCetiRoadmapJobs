@@ -58,10 +58,11 @@ Whitehead theorems; the vanishing of characters of projective modules at `p`-sin
 `TauCeti.nonempty_linearEquiv_of_projective_of_tensorRat`; the determination of
 finite-dimensional representations of a finite group by their characters in characteristic zero,
 `FDRep.nonempty_iso_of_character_eq`; and the Grothendieck group of an abelian category
-`TauCeti.AbelianK0` with its Euler–Poincaré relation for bounded complexes; Mathlib's nerves of
-categories `CategoryTheory.nerve` and geometric realization `SSet.toTop`, and Tau Ceti's order
-complexes `TauCeti.AbstractSimplicialComplex.orderComplex` with the barycentric-subdivision
-homeomorphism `AbstractSimplicialComplex.barycentricSubdivisionRealizationHomeomorph`; Mathlib's
+`TauCeti.AbelianK0` with its Euler–Poincaré relation for bounded complexes; Tau Ceti's CW
+structure `AbstractSimplicialComplex.realizationCWComplex` on the realization of an abstract
+simplicial complex with its ordered cellular chains `TauCeti.cellularChainComplexRealizationIso`;
+Mathlib's simplicial sets with group actions (`CategoryTheory.Action`), their homology
+`SSet.homology` and normalized chains, and induced representations `Rep.ind`; Mathlib's
 Euler characteristic of a complex of modules `HomologicalComplex.homologyEulerChar`, the cohomology
 and homology functors `groupCohomology.functor` and `groupHomology.functor` with the comparison maps
 `CategoryTheory.Limits.colimit.post` and `CategoryTheory.Limits.piComparison`; and Tau Ceti's
@@ -96,10 +97,8 @@ are under Exact supplier contracts.
   item 16) and the identification of their (co)homology with local coefficients with group
   (co)homology (Stage 4 item 17). AlgebraicTopology owns cellular connectivity (§8.1), the absolute
   Hurewicz theorem in every universe (§8.3), Whitehead's theorem (§8.5), the finite CW type of
-  compact Hausdorff smooth manifolds (§8.7), twisted Poincaré duality of manifolds (§§6.3–6.4), the
-  realization CW structure of simplicial sets and, as a declared gap, the homeomorphism between the
-  realized order complex and the realized nerve of a partial order (§4.7), and the replacement of
-  CW complexes by abstract simplicial complexes (§8.11a).
+  compact Hausdorff smooth manifolds (§8.7), twisted Poincaré duality of manifolds (§§6.3–6.4), and
+  the replacement of CW complexes by abstract simplicial complexes (§8.11a).
 - ProfiniteCohomology Layer 11 owns the cohomological dimension of profinite groups, carried by Tau
   Ceti's `TauCeti.cohomologicalDimension` (continuous cohomology with discrete torsion
   coefficients). The invariant of this roadmap is the discrete one, under another name, compared
@@ -305,14 +304,26 @@ Pinned at `1b1ccf4b088b32fa3f23f2de1127433254a81e1e`.
   simplex has dimension at most `N`), and `SSet.hasDimensionLE_prod`
   (`Mathlib/AlgebraicTopology/SimplicialSet/FiniteProd.lean` line 66) bounds the dimension of a
   product by the sum of the dimensions.
-- `CategoryTheory.nerve` (`Mathlib/AlgebraicTopology/SimplicialSet/Nerve.lean` line 37), the nerve
-  of a category, applied to a partial order as a category;
-  `PartialOrder.mem_nerve_nonDegenerate_iff_strictMono`
-  (`Mathlib/AlgebraicTopology/SimplicialSet/NerveNondegenerate.lean` line 58): for a partial order,
-  an `n`-simplex of the nerve is nondegenerate exactly when it is a strictly increasing chain;
-  `SSet.toTop` (`Mathlib/AlgebraicTopology/SingularSet.lean` line 66), geometric realization; and
-  `AbstractSimplicialComplex` (`Mathlib/AlgebraicTopology/SimplicialComplex/Basic.lean`), whose
+- `AbstractSimplicialComplex` (`Mathlib/AlgebraicTopology/SimplicialComplex/Basic.lean`), whose
   faces are nonempty finite sets closed under passing to nonempty subsets; used in 5.4.
+- `SSet.homologyMap` (`Mathlib/AlgebraicTopology/SimplicialSet/Homology/Basic.lean` line 129), the
+  map on `SSet.homology` induced by a map of simplicial sets, used with the map
+  `CategoryTheory.Limits.terminal.from` to the point to say that a simplicial set is acyclic (5.4);
+  `ModuleCat.of` (`Mathlib/Algebra/Category/ModuleCat/Basic.lean` line 79) gives the coefficient
+  objects `ℤ` and `𝔽_p = ZMod p` of `SSet.homology` (5.4, 8.8).
+- `CategoryTheory.Action V G` (`Mathlib/CategoryTheory/Action/Basic.lean` line 48): an object `V`
+  with a monoid homomorphism `ρ : G →* End V`; in this Mathlib `CategoryTheory.End V` is a
+  structure, and `(ρ g).asHom : V ⟶ V` is the underlying morphism. With `V = SSet` it is an action
+  of `G` by simplicial automorphisms (`ρ g⁻¹` inverts `ρ g`).
+  `Action.functorCategoryEquivalence` (line 238) turns it into a functor from the one-object
+  category of `G` to `SSet`, whose limit and colimit, computed degreewise, are the simplicial sets
+  of fixed simplices and of orbits (5.4, 8.8).
+- `Rep.ind φ A` (`Mathlib/RepresentationTheory/Induced.lean` line 102), for `φ : H →* G` and
+  `A : Rep k H`, the induced representation `(k[G] ⊗_k A)_H`, the left adjoint of restriction;
+  with `φ = S.subtype` for a subgroup `S` it is `Ind_S^G A`. `ChainComplex.single₀`
+  (`Mathlib/Algebra/Homology/Single.lean` line 195), the complex
+  concentrated in degree `0`; a resolution of the trivial representation is a complex `C` with a
+  `QuasiIso` to `single₀` of it (8.7).
 - `IsCoveringMap.existsUnique_continuousMap_lifts` (`Mathlib/Topology/Homotopy/Lifting.lean`
   line 489): a map from a simply connected, locally path-connected space lifts uniquely along a
   covering map once the lift of one point is fixed.
@@ -465,20 +476,7 @@ Pinned at `2fd255d997f47c0b5d834ee416c7015d55444ce5`.
   connected spaces.
 - `AbstractSimplicialComplex.Realization`
   (`TauCeti/AlgebraicTopology/SimplicialComplex/Realization/Basic.lean` line 71), the realization of
-  an abstract simplicial complex; `TauCeti.SetLike.Face K`
-  (`TauCeti/AlgebraicTopology/SimplicialComplex/Basic.lean` line 27), the faces of `K` ordered by
-  inclusion; `TauCeti.AbstractSimplicialComplex.orderComplex P`
-  (`TauCeti/AlgebraicTopology/SimplicialComplex/OrderComplex.lean` line 57), the complex of nonempty
-  finite chains of a preorder;
-  `TauCeti.PreAbstractSimplicialComplex.barycentricSubdivision_eq_orderComplex`
-  (`TauCeti/AlgebraicTopology/SimplicialComplex/Subdivision/Basic.lean` line 76): the barycentric
-  subdivision of `K` is the order complex of `Face K`; and
-  `AbstractSimplicialComplex.barycentricSubdivisionRealizationHomeomorph`
-  (`TauCeti/AlgebraicTopology/SimplicialComplex/Subdivision/Homeomorph.lean` line 221): the
-  realization of the barycentric subdivision is homeomorphic to that of `K`, a face-vertex going to
-  the barycentre of the face. Both sides of this homeomorphism are realizations of abstract
-  simplicial complexes; nothing at the pins compares either with the realization of a simplicial
-  set. Used in 5.4.
+  an abstract simplicial complex, used in 5.4.
 - `AbstractSimplicialComplex.realizationCWComplex K`
   (`TauCeti/AlgebraicTopology/SimplicialComplex/Realization/CWComplex/Basic.lean` line 172), for `K`
   on a linearly ordered vertex type: the CW structure on the (Hausdorff) realization `|K|` whose
@@ -489,8 +487,7 @@ Pinned at `2fd255d997f47c0b5d834ee416c7015d55444ce5`.
   chains `TauCeti.orderedSimplicialChainComplex K R`
   (`TauCeti/AlgebraicTopology/SimplicialComplex/ChainComplex.lean` line 186), free on the faces with
   boundary `∂[v₀, …, vₙ₊₁] = Σ_j (−1)ʲ [v₀, …, v̂ⱼ, …, vₙ₊₁]`, sending the cellular basis vector of
-  a cell to a unit multiple, depending only on `n`, of that face. Used in the second route of
-  5.4(a).
+  a cell to a unit multiple, depending only on `n`, of that face. Used in 5.4(a).
 - `SSet.eilenbergZilberHomotopyEquiv`
   (`TauCeti/AlgebraicTopology/SimplicialSet/EilenbergZilber.lean` line 761): for simplicial sets
   `K, L`, the Alexander–Whitney map from the chains of `K ⊗ L` (the product) to the tensor product
@@ -606,11 +603,6 @@ These are used with `P` the finite-dimensional `ℚ`-vector spaces and `v` the d
 - §6.4: twisted Poincaré duality of a closed `n`-manifold (compact and Hausdorff, charted on
   `EuclideanSpace ℝ (Fin n)`): cap product with the fundamental class is an isomorphism
   `Hᵏ(M; L) ≅ H_{n−k}(M; L ⊗ or_M)` for every local system `L` of modules.
-- §4.7: the realization of every simplicial set is a CW complex with one `n`-cell for each
-  nondegenerate `n`-simplex, the characteristic map being the realized simplex composed with a fixed
-  orientation homeomorphism carrying the ball class to the ordered simplex class; through the
-  cellular boundary formula (§§4.2–4.3) the cellular chains of the realization are then the
-  normalized simplicial chains, the identification 5.4 uses.
 - §8.11a: every CW complex is homotopy equivalent to the realization of an abstract simplicial
   complex, by skeletal simplicial approximation and mapping cylinders (Hatcher's Theorem 2C.5, as
   cited there).
@@ -618,12 +610,6 @@ These are used with `P` the finite-dimensional `ℚ`-vector spaces and `v` the d
 What AlgebraicTopology must provide (gap:simplicial-replacement-dimension): in §8.11a, the abstract
 simplicial complex replacing a CW complex of dimension at most `N` can be chosen of dimension at
 most `N`, as the skeletal construction gives.
-
-What AlgebraicTopology must provide (gap:order-complex-nerve-realization): in §4.7, for every
-partial order `P`, a homeomorphism from
-`AbstractSimplicialComplex.Realization (TauCeti.AbstractSimplicialComplex.orderComplex P)` to
-`SSet.toTop.obj (CategoryTheory.nerve P)` that is affine on each simplex and sends the vertex `p` to
-the vertex `p` of the nerve.
 
 ## How to read the build
 
@@ -984,7 +970,8 @@ Prove: (a) for `H ≤ G`, `cd_R H ≤ cd_R G` and `hd_R H ≤ hd_R G`, by Shapir
 (`Hᵏ(H, M) ≅ Hᵏ(G, Coind M)`, `Hₖ(H, M) ≅ Hₖ(G, Ind M)`); (b) if `H` has finite index and
 `cd_R G < ⊤`, then `cd_R H = cd_R G` (BieriEckmann1973 Proposition 2.1, lines 280–286, with
 `RG ≅ Coind_H^G RH` and coinduction commuting with direct sums at finite index; BieriEckmann1973
-line 396); (c) if `H` has finite index and `[G : H]` is a unit of `R`, then `cd_R G ≤ cd_R H` and
+Proposition 3.1, lines 366–369, with the isomorphism `Hom_H(ℤG, ℤH) ≅ ℤG` of lines 345–351);
+(c) if `H` has finite index and `[G : H]` is a unit of `R`, then `cd_R G ≤ cd_R H` and
 `hd_R G ≤ hd_R H`, since restriction followed by corestriction is multiplication by `[G : H]`
 (BrownGTM87, §III.10). *Needs:* 2.1, 2.2; Mathlib `groupCohomology.coindIso`,
 `groupHomology.indIso`; Tau Ceti `TauCeti.groupCohomology.corestriction`,
@@ -1421,68 +1408,64 @@ by permutation modules, through `SSet.normalizedChainComplexMap`. Prove:
   `G_f` of every simplex `f` meets `Γ` trivially, so has order at most `[G : Γ]`; in particular
   every torsion-free subgroup of `G` acts freely on the simplices of `Z`, and the normalized chains
   of `Z` are a resolution of `ℤ` over `ℤΓ'` of length at most `[G : Γ] · N` by free modules for
-  every torsion-free `Γ' ≤ G`.
+  every torsion-free `Γ' ≤ G`;
+- (c) (`exists_acyclic_action_finite_stabilizers`) for `G : Type`, a subgroup `Γ` of finite index
+  and `n : ℕ` with `cd_ℤ Γ ≤ n`, the group `G` acts by simplicial automorphisms (an `Action` of `G`
+  on an `SSet`) on an acyclic simplicial set whose nondegenerate simplices have dimension at most
+  `[G : Γ] · max(3, n)`, and the stabilizer of every simplex is finite, has at most `[G : Γ]`
+  elements and meets `Γ` only in `1`.
 
 (Brown1974 §6, Lemma, lines 637–651, which states (b) for semi-simplicial complexes together with
 the acyclicity of the fixed points of finite subgroups; Serre1971Prospects n°1.7, as cited there.)
-Route for (a): 5.3 gives a `K(Γ, 1)` CW complex `B` of dimension at most `N`; AlgebraicTopology
-§8.11a replaces `B` up to homotopy equivalence by the realization of an abstract simplicial complex
-`K`, of dimension at most `N` (gap:simplicial-replacement-dimension), so `|K|` is a `K(Γ, 1)`. Let
-`sd K = CategoryTheory.nerve (TauCeti.SetLike.Face K)` be the nerve of the partial order of the
-faces of `K` under inclusion (faces of Mathlib's `AbstractSimplicialComplex` are nonempty, so the
-empty face is not a vertex); its nondegenerate `k`-simplices are the strict chains `σ₀ ⊊ ⋯ ⊊ σ_k`
-(`PartialOrder.mem_nerve_nonDegenerate_iff_strictMono`), so it has dimension at most `N`. Its
-realization `SSet.toTop.obj (sd K)` is homeomorphic to `|K|` in three steps: it is homeomorphic to
-the realization of the order complex `TauCeti.AbstractSimplicialComplex.orderComplex (Face K)`
-(gap:order-complex-nerve-realization); that order complex is the barycentric subdivision of `K`
-(`TauCeti.PreAbstractSimplicialComplex.barycentricSubdivision_eq_orderComplex`); and the realization
-of the barycentric subdivision is homeomorphic to `|K|`
-(`AbstractSimplicialComplex.barycentricSubdivisionRealizationHomeomorph`). These are homeomorphisms
-between different constructions, not equalities. Let `W` be the simplicial set whose `k`-simplices
-are the pairs of a `k`-simplex of `sd K` and a lift of its realized simplex, carried into `|K|` by
-this composite homeomorphism, to the universal covering `TauCeti.UniversalCover` of `|K|` (a
-covering map by `TauCeti.UniversalCover.isCoveringMap`, the realization being locally path-connected
-and semilocally simply connected), which exists and is determined by the image of one point because
-the simplex is simply connected (`IsCoveringMap.existsUnique_continuousMap_lifts`). The deck group
-`Γ` acts on the lifts, freely since a deck transformation fixing a lift fixes a point. The
-normalized chains of `W` are the lifted cellular chains of the CW structure on `|sd K|` with one
-cell per nondegenerate simplex (AlgebraicTopology §4.7), so they form a free resolution of `ℤ` over
-`ℤΓ` of length at most `N` (`TauCeti.cellularResolutionOfIsAspherical`,
-`TauCeti.cellularChainRepIsoFree`; ClassifyingSpaces Stage 4 item 16), and `W` is acyclic, its
+Route for (a): 5.3 gives a `K(Γ, 1)` CW complex `B₀` of dimension at most `N`; AlgebraicTopology
+§8.11a replaces `B₀` up to homotopy equivalence by the realization `|K|` of an abstract simplicial
+complex `K`, of dimension at most `N` (gap:simplicial-replacement-dimension), so `|K|` is a
+`K(Γ, 1)`. Choose a linear order on the vertices of `K` and give `|K|` the CW structure
+`AbstractSimplicialComplex.realizationCWComplex K`, with one `n`-cell for each face with `n + 1`
+vertices. Let `K_≤` be the simplicial set whose `k`-simplices are the weakly increasing strings
+`v₀ ≤ ⋯ ≤ v_k` of vertices spanning a face of `K`, with faces by deletion and degeneracies by
+repetition. Its nondegenerate simplices are the faces of `K` with their increasing enumeration, so
+it has dimension at most `N`, and its normalized chains are the ordered simplicial chains
+`TauCeti.orderedSimplicialChainComplex K ℤ`, which `TauCeti.cellularChainComplexRealizationIso`
+identifies with the cellular chains of `|K|`. The realized simplex of a string is the affine simplex
+of `|K|` through its vertices. Let `W` be the simplicial set whose `k`-simplices are the pairs of a
+`k`-simplex of `K_≤` and a lift of its realized simplex to the universal covering
+`TauCeti.UniversalCover` of `|K|` (a covering map by `TauCeti.UniversalCover.isCoveringMap`, the
+realization being locally path-connected and semilocally simply connected), with faces and
+degeneracies acting on both entries; a lift exists and is determined by the image of one point,
+because the simplex is simply connected (`IsCoveringMap.existsUnique_continuousMap_lifts`). The deck
+group `Γ` acts on the lifts, freely since a deck transformation fixing a lift fixes a point, and
+transitively on the lifts of each simplex. A simplex of `W` is degenerate exactly when its string
+is, so the normalized chains of `W` are in each degree free over `ℤΓ` on the faces of `K`. They are
+the cellular chains of the universal cover with the lifted CW structure
+(`TauCeti.cwComplexPreimage`): its cells are the lifts of the cells of `|K|`, the boundary of the
+cell of a pair `(σ, ℓ)` meets the cells `(d_j σ, ℓ ∘ δ_j)` obtained by restricting the lift to the
+faces, one for each face of `σ`, and the projection carries each of these onto the corresponding
+cell of `|K|`, so the coefficients are those of `TauCeti.cellularChainComplexRealizationIso`. Hence
+they are the free resolution of `ℤ` over `ℤΓ` of length at most `N` that
+`TauCeti.cellularResolutionOfIsAspherical` gives for `B = |K|` with this CW structure
+(`TauCeti.cellularChainRepIsoFree`; ClassifyingSpaces Stage 4 item 16), and `W` is acyclic, its
 homology `SSet.homology` being that of the normalized chains
-(`SSet.homotopyEquivNormalizedChainComplex`). A second route for (a) avoids `sd K` and the
-homeomorphisms above: choose a linear order on the vertices of `K` and let `K_≤` be the simplicial
-set whose `k`-simplices are the weakly increasing strings `v₀ ≤ ⋯ ≤ v_k` of vertices spanning a face
-of `K`, with faces by deletion and degeneracies by repetition. Its nondegenerate simplices are the
-faces of `K` with their increasing enumeration, so it has dimension at most `N`, and its normalized
-chains are the ordered simplicial chains `TauCeti.orderedSimplicialChainComplex K ℤ`, which
-`TauCeti.cellularChainComplexRealizationIso` identifies with the cellular chains of `|K|` for the CW
-structure `AbstractSimplicialComplex.realizationCWComplex K`. The realized simplex of a string is
-the affine simplex of `|K|` through its vertices; building `W` from `K_≤` and lifts of these
-simplices as above, with `B = |K|` and this CW structure in
-`TauCeti.cellularResolutionOfIsAspherical`, gives the same conclusions without the nerve comparison
-or the subdivision homeomorphism. Route for (b): a choice of representatives of `Γ\G` identifies `Z`
-with the product of `[G : Γ]` copies of `W`; its chains are homotopy equivalent to the tensor power
-of the chains of `W` (Tau Ceti `SSet.eilenbergZilberHomotopyEquiv`, iterated), which is
-quasi-isomorphic to `ℤ` by the Künneth formula for complexes of free abelian groups; a nondegenerate
-simplex of a product has dimension at most the sum of the dimensions of the factors
+(`SSet.homotopyEquivNormalizedChainComplex`). Route for (b): a choice of representatives of `Γ\G`
+identifies `Z` with the product of `[G : Γ]` copies of `W`; its chains are homotopy equivalent to
+the tensor power of the chains of `W` (Tau Ceti `SSet.eilenbergZilberHomotopyEquiv`, iterated),
+which is quasi-isomorphic to `ℤ` by the Künneth formula for complexes of free abelian groups; a
+nondegenerate simplex of a product has dimension at most the sum of the dimensions of the factors
 (`SSet.hasDimensionLE_prod`). If `γ ∈ Γ` fixes `f`, then `γ f(1) = f(γ) = (γ · f)(1) = f(1)`, so
 `γ = 1` by freeness; hence `G_f ∩ Γ = 1`, and `G_f` injects into `Γ\G`. A torsion-free `Γ'` meets
 every finite `G_f` trivially, so it permutes the nondegenerate simplices of `Z` freely and the
-normalized chains of `Z`, zero above `[G : Γ] · N`, are free over `ℤΓ'`. *Needs:* 5.3, 4.1;
-AlgebraicTopology §4.7, §8.11a; gap:simplicial-replacement-dimension;
-gap:order-complex-nerve-realization; ClassifyingSpaces Stage 4 item 16; Tau Ceti
-`TauCeti.UniversalCover`, `TauCeti.UniversalCover.isCoveringMap`,
+normalized chains of `Z`, zero above `[G : Γ] · N`, are free over `ℤΓ'`. For (c), take `Z` of (b)
+with `N = max(3, cd_ℤ Γ) ≤ max(3, n)`; acyclicity says that `SSet.homologyMap` of the map to the
+point is an isomorphism, the point having homology `ℤ` in degree `0` and `0` above. *Needs:* 5.3,
+4.1; AlgebraicTopology §8.11a; gap:simplicial-replacement-dimension; ClassifyingSpaces Stage 4 item
+16; Tau Ceti `AbstractSimplicialComplex.realizationCWComplex`,
+`TauCeti.orderedSimplicialChainComplex`, `TauCeti.cellularChainComplexRealizationIso`,
+`TauCeti.UniversalCover`, `TauCeti.UniversalCover.isCoveringMap`, `TauCeti.cwComplexPreimage`,
 `TauCeti.cellularResolutionOfIsAspherical`, `TauCeti.cellularChainRepIsoFree`,
-`SSet.eilenbergZilberHomotopyEquiv`, `TauCeti.SetLike.Face`,
-`TauCeti.AbstractSimplicialComplex.orderComplex`,
-`TauCeti.PreAbstractSimplicialComplex.barycentricSubdivision_eq_orderComplex`,
-`AbstractSimplicialComplex.barycentricSubdivisionRealizationHomeomorph`, and for the second route
-`AbstractSimplicialComplex.realizationCWComplex`, `TauCeti.orderedSimplicialChainComplex`,
-`TauCeti.cellularChainComplexRealizationIso`; Mathlib `CategoryTheory.nerve`, `SSet.toTop`,
-`PartialOrder.mem_nerve_nonDegenerate_iff_strictMono`, `SSet`, `SSet.chainComplex`, `SSet.homology`,
-`SSet.normalizedChainComplex`, `SSet.homotopyEquivNormalizedChainComplex`,
-`SSet.normalizedChainComplexMap`, `SSet.hasDimensionLE_prod`,
+`SSet.eilenbergZilberHomotopyEquiv`; Mathlib `AbstractSimplicialComplex`, `SSet`,
+`SSet.chainComplex`, `SSet.homology`, `SSet.homologyMap`, `SSet.normalizedChainComplex`,
+`SSet.homotopyEquivNormalizedChainComplex`, `SSet.normalizedChainComplexMap`,
+`SSet.hasDimensionLE_prod`, `CategoryTheory.Action`,
 `IsCoveringMap.existsUnique_continuousMap_lifts`.
 
 - `Z` is functorial in `W` for `Γ`-equivariant simplicial maps, and for `Γ = G` it is `W`.
@@ -1503,19 +1486,17 @@ gap:order-complex-nerve-realization; ClassifyingSpaces Stage 4 item 16; Tau Ceti
   freely, so the normalized chains of a finite-dimensional acyclic `Z` would resolve `ℤ` by free
   modules in finite length; the free abelian group of countable rank has `cd_ℤ = ⊤` (it contains
   `ℤⁿ` for every `n`, 2.3, 2.4), so it has no such `Z`.
-- For `K` a single edge `{0, 1}`, `Face K` is `{0}, {1} < {0, 1}`, so `sd K` has three nondegenerate
-  vertices and two nondegenerate edges against two vertices and one edge for `K`, Euler
-  characteristic `3 − 2 = 1 = 2 − 1`; its realization is an interval subdivided at the vertex
-  `{0, 1}`, which the composite homeomorphism sends to the midpoint of `|K|`, and `{0}`, `{1}` to
-  the endpoints. For `K` a single vertex both realizations are a point. The simplicial set `K_≤` of
-  the second route has the ranks `(2, 1)` of `K` itself in its normalized chains, Euler
-  characteristic `1`, matching the cellular chains of `|K|`.
-- The empty face is excluded: for `K = ∂Δ²` (three vertices, three edges, no `2`-face), `Face K` has
-  six elements and `sd K` has six nondegenerate vertices, six nondegenerate edges (a vertex below an
-  edge containing it) and no nondegenerate `2`-simplex, a hexagon with `H₁ = ℤ` like `|K| = S¹`.
-  With the empty face adjoined as a least element the nerve would be a cone, contractible with
-  `H₁ = 0`. For the same `K`, the ordered simplicial chains of the second route have ranks `(3, 3)`,
-  boundary `[a, b] ↦ [b] − [a]` on the three edges `a < b`, and `H₀ = H₁ = ℤ`, the homology of `S¹`.
+- For `K` a single vertex, `K_≤` is the point `Δ[0]`, with normalized chains `ℤ` in degree `0`.
+  For `K` a single edge `{0 < 1}`, the nondegenerate simplices of `K_≤` are `(0)`, `(1)` and
+  `(0, 1)`, so its normalized chains have the ranks `(2, 1)` of `K` itself and Euler characteristic
+  `1`, matching the cellular chains of `|K|`; the string `(0, 0, 1)` is the degeneracy `s₀` of
+  `(0, 1)`.
+- For `K = ∂Δ²` (three vertices, three edges, no `2`-face) the ordered simplicial chains of `K_≤`
+  have ranks `(3, 3)`, boundary `[a, b] ↦ [b] − [a]` on the three edges `a < b`, and
+  `H₀ = H₁ = ℤ`, the homology of `|K| = S¹`. Weakly increasing strings are forced: with all strings
+  of vertices spanning a face, the edge `{0, 1}` alone would have the nondegenerate simplices
+  `(0, 1)`, `(1, 0)`, `(0, 1, 0)`, … in every dimension, so the simplicial set would not be
+  finite-dimensional.
 
 ### Examples
 
@@ -1526,13 +1507,13 @@ on a finite-dimensional acyclic simplicial set (5.4), the input of the denominat
 
 ### Dependencies
 
-Layers 1–2 and 4.1; ClassifyingSpaces Stage 2 item 10 and Stage 4 item 16; AlgebraicTopology §§4.7,
-8.1, 8.3, 8.5 and 8.11a, with gap:simplicial-replacement-dimension and
-gap:order-complex-nerve-realization; Tau Ceti's cell attachment, Hurewicz and Whitehead theorems,
-cellular resolution of an aspherical CW complex, Eilenberg–Zilber theorem, product CW structures,
-wedges of circles, order complexes and the barycentric-subdivision homeomorphism, the CW structure
-of a simplicial realization with its ordered cellular chains; Mathlib's
-simplicial sets with their normalized chains, nerves of partial orders, and lifting along coverings.
+Layers 1–2 and 4.1; ClassifyingSpaces Stage 2 item 10 and Stage 4 item 16; AlgebraicTopology §§8.1,
+8.3, 8.5 and 8.11a, with gap:simplicial-replacement-dimension; Tau Ceti's cell attachment, Hurewicz
+and Whitehead theorems, cellular resolution of an aspherical CW complex, lifted CW structures,
+universal covers, Eilenberg–Zilber theorem, product CW structures, wedges of circles, the CW
+structure of the realization of an abstract simplicial complex with its ordered cellular chains;
+Mathlib's simplicial sets with their homology, normalized chains and group actions, and lifting
+along coverings.
 
 ---
 
@@ -2040,21 +2021,23 @@ Serre1971Prospects n°1.8). *Needs:* 8.2, 8.3, 4.1, 4.4, 2.3.
 ### 8.5 Twisted coefficients
 
 Prove that for `G` of type `FP` over `ℤ`, a field `K` and a `KG`-module `V` of finite dimension,
-`Σᵢ (−1)ⁱ dim_K Hⁱ(G, V) = χ(G) · dim_K V`; and that for `Γ' ◁ G` of finite index, in the
-Grothendieck group `G₀(K[G/Γ'])` of finite-dimensional representations of the finite group `G/Γ'`
-over `K` (generated by the classes `[W]`, with `[W] = [W'] + [W'']` for every short exact sequence
-`0 → W' → W → W'' → 0`), `Σᵢ (−1)ⁱ [Hⁱ(Γ', V)] = χ(G) · dim_K V · [K[G/Γ']]`, where `G/Γ'` acts on
-`Hⁱ(Γ', V)` as in CohomologyOfGroups §1.2 and `χ(G) = χ_ℚ(G) ∈ ℤ` because `G` is torsion-free (4.4,
-8.4(c)). In characteristic zero, where characters are additive on short exact sequences and
-determine finite-dimensional representations, this is equivalent to the statement that the
-alternating sum of the characters of `G/Γ'` on `H*(Γ', V)` is `χ(G) · dim_K V` times the regular
-character (Brown1974, §4, Theorem 4 and Corollary 1, lines 425–451, in characteristic zero there;
-Appendix A, Theorem 7, lines 1284–1355, gives the freeness the Grothendieck-group form needs over
-every field). Route: for a finite projective resolution `P` of `ℤ` over `ℤG`, `Hom_{ℤΓ'}(P, V)` is a
-bounded complex of finite-dimensional `K[G/Γ']`-modules whose cohomology is `H*(Γ', V)` with its
-`G/Γ'`-action; by 7.5 (a group of type `FP` is finitely generated, 1.4) its degree-`i` term is free
-of rank `r(Pᵢ) · dim_K V`; the Euler–Poincaré relation in `G₀` equates the alternating sums of the
-classes of the terms and of the cohomology; and `Σ(−1)ⁱ r(Pᵢ) = χ_ℚ(G) = χ(G)` (8.3, 8.4). The first
+`Σᵢ (−1)ⁱ dim_K Hⁱ(G, V) = χ(G) · dim_K V`, a finite sum since the cohomology is finite-dimensional
+and vanishes above `cd_ℤ G` (`finsum_finrank_groupCohomology_eq_groupEulerChar_mul`); and that for
+`Γ' ◁ G` of finite index, in the Grothendieck group `G₀(K[G/Γ'])` of finite-dimensional
+representations of the finite group `G/Γ'` over `K` (generated by the classes `[W]`, with
+`[W] = [W'] + [W'']` for every short exact sequence `0 → W' → W → W'' → 0`),
+`Σᵢ (−1)ⁱ [Hⁱ(Γ', V)] = χ(G) · dim_K V · [K[G/Γ']]`, where `G/Γ'` acts on `Hⁱ(Γ', V)` as in
+CohomologyOfGroups §1.2 and `χ(G) = χ_ℚ(G) ∈ ℤ` because `G` is torsion-free (4.4, 8.4(c)). In
+characteristic zero, where characters are additive on short exact sequences and determine
+finite-dimensional representations, this is equivalent to the statement that the alternating sum of
+the characters of `G/Γ'` on `H*(Γ', V)` is `χ(G) · dim_K V` times the regular character (Brown1974,
+§4, Theorem 4 and Corollary 1, lines 425–451, in characteristic zero there; Appendix A, Theorem 7,
+lines 1284–1355, gives the freeness the Grothendieck-group form needs over every field). Route: for
+a finite projective resolution `P` of `ℤ` over `ℤG`, `Hom_{ℤΓ'}(P, V)` is a bounded complex of
+finite-dimensional `K[G/Γ']`-modules whose cohomology is `H*(Γ', V)` with its `G/Γ'`-action; by 7.5
+(a group of type `FP` is finitely generated, 1.4) its degree-`i` term is free of rank
+`r(Pᵢ) · dim_K V`; the Euler–Poincaré relation in `G₀` equates the alternating sums of the classes
+of the terms and of the cohomology; and `Σ(−1)ⁱ r(Pᵢ) = χ_ℚ(G) = χ(G)` (8.3, 8.4). The first
 identity is the image of the case `Γ' = G` under the dimension `G₀(K) → ℤ`. The character form
 follows by additivity of characters, and conversely implies the class form through
 `FDRep.nonempty_iso_of_character_eq`. *Needs:* 7.5, 8.3, 8.4, 4.4, 1.4; CohomologyOfGroups §1.2; Tau
@@ -2108,7 +2091,10 @@ CohomologyOfGroups §§6.1–6.2; SpectralSequencesAndConvergence §5.3.
 
 Prove that if `G` has finite homological type and `C` is a finite-length resolution of `ℤ` over `ℤG`
 with `C_p ≅ ⊕_{σ ∈ Σ_p} Ind_{G_σ}^G(ℤ_σ)`, each `Σ_p` finite, each `ℤ_σ` given by a character
-`G_σ → {±1}` and each `G_σ` of finite homological type, then `χ(G) = Σ_p (−1)^p Σ_{σ ∈ Σ_p} χ(G_σ)`.
+`G_σ → {±1}` and each `G_σ` of finite homological type, then `χ(G) = Σ_p (−1)^p Σ_{σ ∈ Σ_p} χ(G_σ)`
+(`groupEulerChar_eq_sum_of_monomialResolution`: the resolution is a `QuasiIso` from `C` to the
+trivial representation in degree `0`, `Ind` is Mathlib's `Rep.ind` along the inclusion of `G_σ`, and
+a character `G_σ → {±1}` is the same as a representation of `G_σ` on a free `ℤ`-module of rank one).
 In particular, for a simplicial action of `G` on an acyclic simplicial complex with finitely many
 simplices modulo `G` and simplex stabilizers of finite homological type, `χ(G)` is the equivariant
 Euler characteristic `Σ_σ (−1)^{dim σ} χ(G_σ)` over representatives `σ` of the simplices (Brown1974,
@@ -2127,7 +2113,8 @@ Euler identity of SpectralSequencesAndConvergence §3.4, in its filtered-complex
 finite-dimensional `ℚ`-vector spaces and their dimension), gives `χ_ℚ(Γ')`; a character `ε` of a
 torsion-free group `T` of finite homological type does not change it, `χ_ℚ(T; ℚ_ε) = χ_ℚ(T)`, by
 8.4(a) for `ker ε`. *Needs:* 8.4, 4.4; CohomologyOfGroups §§2.3, 3.2, 3.4;
-SpectralSequencesAndConvergence §§3.4, 5.3; FreeGroupsAndLimitGroups §4.5, §4.7.
+SpectralSequencesAndConvergence §§3.4, 5.3; FreeGroupsAndLimitGroups §4.5, §4.7; Mathlib `Rep.ind`,
+`ChainComplex.single₀`, `QuasiIso`.
 
 **Checks.**
 
@@ -2144,11 +2131,13 @@ SpectralSequencesAndConvergence §§3.4, 5.3; FreeGroupsAndLimitGroups §4.5, §
 
 Let a finite group `G` act by simplicial automorphisms on a finite-dimensional simplicial set `X`
 (5.4). For `H ≤ G` the `H`-fixed simplices form a simplicial subset `X^H`, a face of a fixed simplex
-being fixed, and `X/H` is the orbit simplicial set. Homology is `SSet.homology`; with coefficients
-in `𝔽_p`, `χ_p(Y) = Σᵢ (−1)ⁱ dim_{𝔽_p} Hᵢ(Y; 𝔽_p)` whenever the total dimension is finite. Chains
-are the normalized chains `N(Y) = SSet.normalizedChainComplex` (5.4), zero above the dimension of
-`Y` (`SSet.isZero_normalizedChainComplex_X_of_hasDimensionLT`) and computing `SSet.homology`
-(`SSet.homotopyEquivNormalizedChainComplex`); `G` acts on `N(X)` through
+being fixed, and `X/H` is the orbit simplicial set; for an action `X : Action SSet G`, viewed
+through `Action.functorCategoryEquivalence` as a functor on the one-object category of `G`, `X^G`
+and `X/G` are its limit and its colimit, computed degreewise. Homology is `SSet.homology`; with
+coefficients in `𝔽_p`, `χ_p(Y) = Σᵢ (−1)ⁱ dim_{𝔽_p} Hᵢ(Y; 𝔽_p)` whenever the total dimension is
+finite. Chains are the normalized chains `N(Y) = SSet.normalizedChainComplex` (5.4), zero above the
+dimension of `Y` (`SSet.isZero_normalizedChainComplex_X_of_hasDimensionLT`) and computing
+`SSet.homology` (`SSet.homotopyEquivNormalizedChainComplex`); `G` acts on `N(X)` through
 `SSet.normalizedChainComplexMap`, permuting the basis of nondegenerate simplices. Prove first the
 two compatibilities the arguments below use: for `H ≤ G`, a simplex of `X^H` is degenerate in `X^H`
 if and only if it is degenerate in `X` (if `x = s_i y` then `y = d_i x` is `H`-fixed), so `N(X^H)`
@@ -2160,10 +2149,14 @@ then `x = h · s_i y = s_i(h · y)` for some `h ∈ H`), so `N(X/H)` is the modu
 
 - (a) (Smith, Floyd) for a prime `p`, `G = ℤ/p` and `Σᵢ dim Hᵢ(X; 𝔽_p) < ∞`: `X^G` and `X/G` have
   finite total mod-`p` homology, `Σ_{i ≥ n} dim Hᵢ(X^G; 𝔽_p) ≤ Σ_{i ≥ n} dim Hᵢ(X; 𝔽_p)` for every
-  `n`, and `χ_p(X) + (p − 1) χ_p(X^G) = p χ_p(X/G)` (Floyd1952 Theorem 4.2, lines 292–330, and
-  Theorem 4.4, lines 333–348, for locally compact finite-dimensional Hausdorff spaces; the proof
-  rests on the chain-level Smith sequences (A) and (B) of Floyd1952 Theorems 2.3–2.4, lines 110–176,
-  stated for a simplicial action of prime period whose fixed points form a subcomplex, and on
+  `n`, and `χ_p(X) + (p − 1) χ_p(X^G) = p χ_p(X/G)` (`smith_floyd`, for `G = ℤ/p` written
+  `Multiplicative (ZMod p)` and `X` of dimension at most `N` with each `Hᵢ(X; 𝔽_p)`
+  finite-dimensional, which for a finite-dimensional `X` is the finiteness of the total dimension;
+  the sums run over the degrees `≤ N`, above which all three simplicial sets have no homology;
+  Floyd1952 Theorem 4.2, lines 292–330, and Theorem 4.4, lines 333–348, for locally compact
+  finite-dimensional Hausdorff spaces; the proof rests on the chain-level Smith sequences (A) and
+  (B) of Floyd1952 Theorems 2.3–2.4, lines 110–176, stated for a simplicial action of prime period
+  whose fixed points form a subcomplex, and on
   Smith's facts (3.4)–(3.6), lines 261–267: the special homology vanishes above the dimension, and
   the special homology relative to the fixed points is the homology of the orbit space relative to
   the image of the fixed points);
@@ -2205,7 +2198,7 @@ divisible by `p^e`; finally
 8.1; Mathlib `SSet`, `SSet.homology`, `SSet.normalizedChainComplex`,
 `SSet.homotopyEquivNormalizedChainComplex`, `SSet.normalizedChainComplexMap`,
 `SSet.isZero_normalizedChainComplex_X_of_hasDimensionLT`, `SSet.isZero_homology_of_hasDimensionLT`,
-`Sylow`.
+`Sylow`, `CategoryTheory.Action`, `Action.functorCategoryEquivalence`.
 
 - The Smith inequality of (a) with `n = 0` bounds the total mod-`p` homology of `X^G` by that of
   `X`; in particular, for a finite `p`-group acting on a finite-dimensional simplicial set with the

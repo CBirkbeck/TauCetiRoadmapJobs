@@ -21,13 +21,23 @@ Headline theorems stated here:
   product form (`isOfTypeFPn_iff_piComparison`);
 * Serre's theorem 3.2 (`cohomologicalDim_eq_of_finiteIndex`);
 * the Eilenberg–Ganea theorem 5.3 (`geometricDim_le_max`);
+* Serre's action 5.4 of a group with a finite-index subgroup of finite cohomological dimension on
+  a finite-dimensional acyclic simplicial set with finite stabilizers
+  (`exists_acyclic_action_finite_stabilizers`);
 * Swan's theorem 7.3(b), rational form (`exists_linearEquiv_tensorRat`), and 7.4, modulo a prime
   `p` (`exists_linearEquiv_tensorZMod`);
 * the Euler characteristic 8.4: independence of the subgroup (`groupEulerChar_eq_div_index`) and
   multiplicativity on subgroups of finite index (`groupEulerChar_subgroup`);
+* the Euler characteristic with twisted coefficients 8.5, in its dimension form
+  (`finsum_finrank_groupCohomology_eq_groupEulerChar_mul`);
 * multiplicativity in extensions 8.6 (`isVirtuallyOfTypeFP_and_groupEulerChar_eq_mul`);
-* the equivariant formula 8.7 for amalgams (`groupEulerChar_pushoutI`) and HNN extensions
-  (`groupEulerChar_hnnExtension`);
+* the equivariant formula 8.7 for a finite resolution by sums of representations induced from
+  rank-one characters (`groupEulerChar_eq_sum_of_monomialResolution`), and its cases of amalgams
+  (`groupEulerChar_pushoutI`) and HNN extensions (`groupEulerChar_hnnExtension`); its case of an
+  action on an acyclic simplicial complex is the instance where the resolution is the oriented
+  simplicial chain complex, and is not a separate headline;
+* the Smith–Floyd theorem 8.8(a) for an action of a group of prime order on a finite-dimensional
+  simplicial set (`smith_floyd`);
 * Brown's denominator theorem 8.9, in both of its forms (`exists_int_eq_mul_groupEulerChar`,
   `exists_subgroup_card_eq_of_dvd_den`);
 * the existence of complete resolutions 9.2, as Gorenstein projectivity of high syzygies
@@ -45,11 +55,9 @@ Headline theorems not statable at the pins:
   cohomological dimension: Farrell cohomology is the cohomology of `Hom` from a chosen complete
   resolution of the trivial representation, data whose existence is the theorem 9.2, and neither
   that functor nor its comparison map from `groupCohomology` is a pinned carrier;
-* the general equivariant formula 8.7 for a resolution whose terms are sums of monomial
-  representations `Ind_{G_σ}^G(ℤ_σ)`, and its case of an action on an acyclic simplicial complex
-  with finitely many orbits of simplices: no pinned carrier bundles a group action on a simplicial
-  complex with its orbit representatives and stabilizers, or a monomial complex
-  (CohomologyOfGroups §3.2); its amalgam and HNN-extension cases are stated;
+* the form 8.5 of the twisted Euler characteristic in the Grothendieck group `G₀(K[G/Γ'])` of the
+  finite quotient by a normal subgroup `Γ'` of finite index: it needs the action of `G/Γ'` on
+  `Hⁱ(Γ', V)` (CohomologyOfGroups §1.2), and the pins have the quotient action only on invariants;
 * Swan's theorem 7.3(a), the vanishing of the Hattori–Stallings rank of a projective `ℤG`-module
   off the identity class: the Hattori–Stallings trace of a finitely generated projective module
   over a noncommutative ring (EtaleCohomologyFoundations §F.10.3) is not at the pins.
@@ -159,6 +167,22 @@ theorem geometricDim_le_max (G : Type) [Group G] :
     geometricDim G ≤ max 3 (cohomologicalDim ℤ G) := by
   sorry
 
+/-- **Serre's proper action** (README 5.4). If `Γ` is a subgroup of finite index of `G` with
+`cd_ℤ Γ ≤ n`, then `G` acts by simplicial automorphisms on a simplicial set `Z` that is acyclic
+(its map to the point induces an isomorphism on integral homology in every degree, so `Z` is
+nonempty) and whose nondegenerate simplices have dimension at most `[G : Γ] · max(3, n)`, such that
+the stabilizer of every simplex is finite, has at most `[G : Γ]` elements and meets `Γ` only in
+`1`. (Brown 1974, §6, Lemma; Serre, *Prospects in Mathematics*, n° 1.7.) -/
+theorem exists_acyclic_action_finite_stabilizers {G : Type} [Group G] (Γ : Subgroup G)
+    [Γ.FiniteIndex] (n : ℕ) (hΓ : cohomologicalDim ℤ Γ ≤ n) :
+    ∃ Z : Action SSet.{0} G, Z.V.HasDimensionLE (Γ.index * max 3 n) ∧
+      (∀ i : ℕ, IsIso (SSet.homologyMap (terminal.from Z.V) (ModuleCat.of ℤ ℤ) i)) ∧
+      ∀ (k : ℕ) (z : Z.V.obj (Opposite.op (SimplexCategory.mk k))),
+        {g : G | (Z.ρ g).asHom.app _ z = z}.Finite ∧
+          Nat.card {g : G // (Z.ρ g).asHom.app _ z = z} ≤ Γ.index ∧
+          ∀ g ∈ Γ, (Z.ρ g).asHom.app _ z = z → g = 1 := by
+  sorry
+
 /-! ## Layer 7: projective modules over group rings and Swan's theorem -/
 
 /-- **Swan's theorem, rational form** (README 7.3(b)). For a finite group `G` and a finitely
@@ -224,6 +248,17 @@ theorem groupEulerChar_subgroup {G : Type} [Group G] (hG : HasFiniteHomologicalT
     (H : Subgroup G) [H.FiniteIndex] : groupEulerChar H = H.index * groupEulerChar G := by
   sorry
 
+/-- **The Euler characteristic with twisted coefficients** (README 8.5). If `G` is of type `FP`
+over `ℤ`, `K` is a field and `V` is a finite-dimensional representation of `G` over `K`, then
+`Σᵢ (−1)ⁱ dim_K Hⁱ(G, V) = χ(G) · dim_K V`. The cohomology is finite-dimensional and vanishes above
+`cd_ℤ G`, so the sum is finite. (Brown 1974, §4, Corollary 1 of Theorem 4, there in
+characteristic zero; Appendix A, Theorem 7, gives the input over every field.) -/
+theorem finsum_finrank_groupCohomology_eq_groupEulerChar_mul {G : Type} [Group G]
+    (hG : IsOfTypeFP ℤ G) (K : Type) [Field K] (V : Rep K G) [FiniteDimensional K V] :
+    ∑ᶠ i : ℕ, (-1 : ℚ) ^ i * (Module.finrank K (groupCohomology V i) : ℚ) =
+      groupEulerChar G * Module.finrank K V := by
+  sorry
+
 /-- **Multiplicativity in extensions** (README 8.6). If `N ◁ G`, `N` and `G ⧸ N` are virtually of
 type `FP` and `G` is virtually torsion-free, then `G` is virtually of type `FP` and
 `χ(G) = χ(N) · χ(G ⧸ N)`. (Brown 1974, §4, Corollary 2.) -/
@@ -231,6 +266,24 @@ theorem isVirtuallyOfTypeFP_and_groupEulerChar_eq_mul {G : Type} [Group G] (N : 
     (hN : IsVirtuallyOfTypeFP N) (hQ : IsVirtuallyOfTypeFP (G ⧸ N))
     (hG : ∃ H : Subgroup G, H.FiniteIndex ∧ IsMulTorsionFree H) :
     IsVirtuallyOfTypeFP G ∧ groupEulerChar G = groupEulerChar N * groupEulerChar (G ⧸ N) := by
+  sorry
+
+/-- **The equivariant Euler formula** (README 8.7). Let `G` have finite homological type and let
+`ε : C → ℤ` be a resolution of the trivial representation by a complex `C` that vanishes above
+degree `N` and whose term in degree `p` is a finite direct sum `⊕_{i ∈ ι p} Ind_{H p i}^G (L p i)`
+of representations induced from subgroups `H p i` of finite homological type, each `L p i` free of
+rank one over `ℤ` (so `H p i` acts on it through a character with values `±1`). Then
+`χ(G) = Σ_p (−1)ᵖ Σ_{i ∈ ι p} χ(H p i)`. (Brown 1974, §5, Proposition 4 with Proposition 2(i);
+Serre, *Prospects in Mathematics*, n° 1.8, Proposition 14(b).) -/
+theorem groupEulerChar_eq_sum_of_monomialResolution {G : Type} [Group G]
+    (hG : HasFiniteHomologicalType G) (C : ChainComplex (Rep ℤ G) ℕ)
+    (ε : C ⟶ (ChainComplex.single₀ (Rep ℤ G)).obj (Rep.trivial ℤ G ℤ)) [QuasiIso ε]
+    (N : ℕ) (ι : ℕ → Type) [∀ p, Fintype (ι p)] (hι : ∀ p, N < p → IsEmpty (ι p))
+    (H : ∀ p, ι p → Subgroup G) (hH : ∀ p i, HasFiniteHomologicalType (H p i))
+    (L : ∀ p i, Rep ℤ (H p i)) (hL : ∀ p i, Nonempty (L p i ≃ₗ[ℤ] ℤ))
+    (e : ∀ p, C.X p ≅ ∐ fun i : ι p => Rep.ind (H p i).subtype (L p i)) :
+    groupEulerChar G =
+      ∑ p ∈ Finset.range (N + 1), (-1 : ℚ) ^ p * ∑ i : ι p, groupEulerChar (H p i) := by
   sorry
 
 /-- **The Euler characteristic of an amalgam** (README 8.7). For injective homomorphisms
@@ -254,10 +307,37 @@ theorem groupEulerChar_hnnExtension {H : Type} [Group H] (A B : Subgroup H) (φ 
     groupEulerChar (HNNExtension H A B φ) = groupEulerChar H - groupEulerChar A := by
   sorry
 
+/-- **The Smith–Floyd theorem** (README 8.8(a)). Let `p` be a prime and let the cyclic group
+`ℤ/p` act by simplicial automorphisms on a simplicial set `X` of dimension at most `N` whose
+mod-`p` homology is finite-dimensional in each degree. Let `X^G` be the simplicial set of fixed
+simplices and `X/G` the orbit simplicial set: the limit and the colimit of the action, viewed as a
+functor on the one-object category of the group, both computed degreewise. Then `X^G` and `X/G`
+have finite-dimensional mod-`p` homology,
+`Σ_{k ≤ i ≤ N} dim Hᵢ(X^G; 𝔽_p) ≤ Σ_{k ≤ i ≤ N} dim Hᵢ(X; 𝔽_p)` for every `k`, and
+`χ_p(X) + (p − 1) χ_p(X^G) = p χ_p(X/G)`, where `χ_p` is the alternating sum of the mod-`p` Betti
+numbers in degrees `≤ N`; all three simplicial sets have dimension at most `N`, so their homology
+vanishes above `N`. (Floyd 1952, Theorems 4.2 and 4.4.) -/
+theorem smith_floyd (p : ℕ) [Fact p.Prime] (X : Action SSet.{0} (Multiplicative (ZMod p)))
+    (N : ℕ) [X.V.HasDimensionLE N]
+    (hX : ∀ i : ℕ, FiniteDimensional (ZMod p)
+      (X.V.homology (ModuleCat.of (ZMod p) (ZMod p)) i : ModuleCat (ZMod p))) :
+    let Fix := limit ((Action.functorCategoryEquivalence SSet.{0} _).functor.obj X)
+    let Orb := colimit ((Action.functorCategoryEquivalence SSet.{0} _).functor.obj X)
+    let H : SSet.{0} → ℕ → ModuleCat (ZMod p) := fun Y i =>
+      Y.homology (ModuleCat.of (ZMod p) (ZMod p)) i
+    let b : SSet.{0} → ℕ → ℕ := fun Y i => Module.finrank (ZMod p) (H Y i)
+    let χ : SSet.{0} → ℤ := fun Y => ∑ i ∈ Finset.range (N + 1), (-1) ^ i * (b Y i : ℤ)
+    (∀ i : ℕ, FiniteDimensional (ZMod p) (H Fix i)) ∧
+      (∀ i : ℕ, FiniteDimensional (ZMod p) (H Orb i)) ∧
+      (∀ k : ℕ, ∑ i ∈ Finset.Icc k N, b Fix i ≤ ∑ i ∈ Finset.Icc k N, b X.V i) ∧
+      χ X.V + ((p : ℤ) - 1) * χ Fix = p * χ Orb := by
+  sorry
+
 /-- **Brown's denominator theorem** (README 8.9). If `G` has finite homological type and `m` is a
-common multiple of the orders of the finite subgroups of `G`, then `m · χ(G)` is an integer; the
-least such `m` is the least common multiple of those orders. (Brown 1974, §6, Corollary 1 of
-Theorem 5.) -/
+common multiple of the orders of the finite subgroups of `G`, then `m · χ(G)` is an integer. The
+source states it for their least common multiple, which exists because those orders divide the
+index of a torsion-free normal subgroup of finite index; `m · χ(G)` can be an integer for smaller
+`m` as well (`χ(ℤ/2 × ℤ) = 0`). (Brown 1974, §6, Corollary 1 of Theorem 5.) -/
 theorem exists_int_eq_mul_groupEulerChar {G : Type} [Group G] (hG : HasFiniteHomologicalType G)
     (m : ℕ) (hm : ∀ K : Subgroup G, Finite K → Nat.card K ∣ m) :
     ∃ z : ℤ, (m : ℚ) * groupEulerChar G = z := by
