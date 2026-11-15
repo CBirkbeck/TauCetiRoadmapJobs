@@ -1,0 +1,21 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-CohomologyComparisonsPartII~6",
+  "head": "0d00ac6661d976fe347657caafabd47cb9913ee7",
+  "pr": 1364,
+  "folder": "CohomologyComparisonsPartII",
+  "date": "2026-11-15",
+  "findings": 2,
+  "blocking": 0,
+  "notes": "incremental re-review of 0 changed lines since 0d00ac6; the folder is unchanged and stands as accepted. This round checked the pull request's title and description against the head: two P3 findings, both in the description (it says the Lean states definitions and theorems with sorry as the only warning, but Suggested.lean declares nothing; it says the constructions follow Besser, Ertl-Niziol and Asakura-Miyatani, but Layer 5 cites only NN and HK and the all-weight bound is CN's). Gate rerun: every counter 0, OK. Depcheck: 244 roadmaps, 2229 edges, 0 problems. Elaboration of Suggested.lean: exit 0, no output. Outside-folder diff empty. Overlap lead on RigidAnalyticGeometry 8.4 checked: the open revision maps it old -> new to AdicSpacesPartIII R3.7, citation stays valid. Adversarial rows computed for four statements the description cites; no sampled source target lies in a changed passage.",
+  "text": "d4cd10e0c640c20c",
+  "carried": {
+   "from": "0d00ac6661d976fe347657caafabd47cb9913ee7",
+   "head": "0d00ac6661d976fe347657caafabd47cb9913ee7",
+   "findings": 2,
+   "lines": 0,
+   "folders": []
+  }
+ }
+}
