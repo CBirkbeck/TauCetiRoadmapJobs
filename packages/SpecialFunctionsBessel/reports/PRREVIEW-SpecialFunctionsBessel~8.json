@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-SpecialFunctionsBessel~8",
+  "head": "20229352c3268ccb94fa05506c87d45a07175057",
+  "pr": 1987,
+  "folder": "SpecialFunctionsBessel",
+  "date": "2026-11-15",
+  "findings": 1,
+  "blocking": 0,
+  "notes": "incremental re-review of 0 changed lines since 2022935; this round checked the pull request's title and description against the head. One P3 finding, in the description only: it says the README links into 'all seven' supplier roadmaps, the head and the description's own list have eight. Every other sentence of the description agrees with the head (layers, supplier sections resolved on main or at open heads, imports, pins, 49 sorry warnings, topic). Gate passes (worker's run, all rules 0); depcheck 0 problems, no UPWARD or CYCLE; Suggested.lean elaborates with sorry as the only warning; three adversarial rows computed numerically (K agreement at nu=1/2 and 0.3, Schlafli 10.9.7 at nu=0.3); seeded sample not re-read since the folder is unchanged; nothing changed outside the folder.",
+  "text": "a202763a5dda1eff"
+ }
+}
