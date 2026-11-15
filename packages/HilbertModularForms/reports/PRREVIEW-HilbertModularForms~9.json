@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-HilbertModularForms~9",
+  "head": "02ea1526dd9151a9f8cfc05b5ed3e24ddd51bf6a",
+  "pr": 1724,
+  "folder": "HilbertModularForms",
+  "date": "2026-11-15",
+  "findings": 0,
+  "blocking": 0,
+  "notes": "incremental re-review of 32 changed lines since eda7e59. Previous R01 (quaternionic weight of 10.2) repaired: weight (k-2, m), places above p with an isomorphism of the algebraic closure of Q_p with C, algebraic determinant convention; recomputed on Q(sqrt5), k=(2,4), unit (3+sqrt5)/2 (acts by 1; 0.1459 with twist 0) and S_v at p=11 (11^4 algebraic, 11^2 normalized), and matched to Dembele-Voight (7.3), p. 35 by the change of variables (0 1; -1 0). Supplier sections R17.3.8a-d read at the open head of GL2AutomorphicRepresentationsAndTransfer. Sampled 10.3: changed sentence consistent with 10.2. Gate OK at 02ea152 (all checks 0, build 0); depcheck with the merge-order candidate 0 problems; Suggested.lean elaborates with eleven sorry warnings only; no Lean statement changed; pull request text still agrees with the head.",
+  "text": "f346aeefd95b4582"
+ }
+}
