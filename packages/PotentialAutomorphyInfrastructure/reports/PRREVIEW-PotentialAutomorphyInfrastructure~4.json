@@ -1,0 +1,22 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-PotentialAutomorphyInfrastructure~4",
+  "head": "0f3131e60fa67def898560f1000ba22d06f94a12",
+  "pr": 1081,
+  "folder": "PotentialAutomorphyInfrastructure",
+  "date": "2026-11-15",
+  "findings": 2,
+  "blocking": 0,
+  "notes": "incremental re-review of 6 changed lines since 8ee2f17: previous R01 (per-weight gloss of the Kostant criterion in 1.1) is repaired, the sentence now quantifies over all dominant weights and cites ShimuraData 3.11 kostantConeCriterion, resolved at ShimuraData's open head and checked against ACC p. 906 and on n=2 instances; gate OK with build=0, depcheck 246 roadmaps 2267 edges 0 problems, lake env lean exit 0; first check of the pull request's description against the head found two P3 sentences (it says the Lean states definitions and theorems although Suggested.lean declares nothing; it says red-team passes are to follow although the branch carries them); the folder itself has no finding",
+  "text": "7248625f618aef1a",
+  "carried": {
+   "from": "0f3131e60fa67def898560f1000ba22d06f94a12",
+   "head": "eeb6a5b99815537ccf1198d682d43be13ca12d4f",
+   "findings": 2,
+   "lines": 0,
+   "folders": [],
+   "outside": true
+  }
+ }
+}
