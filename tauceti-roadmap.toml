@@ -47,8 +47,9 @@ packages_dir = "packages"
 # 30 since 2026-11-15 (owner: every roadmap in the pipeline is to be made, as fast as it can be): at 5,
 # 42 roadmaps sat parked for days, each waiting for a release by hand after every round.
 max_rounds = 30
-# Logins whose comments are the board's own (claim notices, intake notes).
-bot_logins = ["github-actions[bot]"]
+# Logins whose comments are the board's own (claim notices, intake notes): the hosted workflow's, and the GitHub App
+# under which a host may write the board's bookkeeping (`[worker] board_token_command`, set in that host's overlay).
+bot_logins = ["github-actions[bot]", "tauceti-roadmap-app[bot]"]
 # A claim or submission with no sign of progress for this long is released by `board stale --release`.
 stale_hours = 24
 # Also read targets filed as `intention` issues on the content repository's board
