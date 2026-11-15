@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-ClassifyingSpaces~66",
+  "head": "89357f3db20befdba093e50d06c54017c710a524",
+  "pr": 1807,
+  "folder": "ClassifyingSpaces",
+  "date": "2026-11-15",
+  "findings": 1,
+  "blocking": 1,
+  "notes": "Full review. One P2: README 2.3 (lines 1109-1112, also 436-438) claims the cohomology isomorphisms carry the connecting map of a short exact sequence of representations to groupCohomology.δ; no such map exists in general (k = Z, G = 1, N = Z, 0 -> Z -> Z -> Z/2 -> 0) and the pin states only a Bockstein in N for A projective. Checked: gate passes at 89357f3; depcheck 0 problems; Suggested.lean elaborates with four sorry warnings only; one-tactic probe closes none of the four headlines; 226 backticked library names elaborated at the pins; seeded sample 1.1-1.3 and 2.1-2.3 recomputed (adversarial table); 9 Hatcher locators verified against the cached text; Brown, Milnor and Schwamberger-Vogt uncertified; overlaps and pull-request text for this folder checked.",
+  "text": "5fa575d43a504403"
+ }
+}
