@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-StableMatching~2",
+  "head": "efeb5404c85e04328c803c46ab96c232882b02da",
+  "pr": 2346,
+  "folder": "StableMatching",
+  "date": "2026-11-15",
+  "findings": 3,
+  "blocking": 0,
+  "notes": "Full re-review. Previous findings R01-R11 repaired, R12 partly (now R03). Seeded sample 0.1-3.2: 20 locators in Roth 2008 (NBER version) and 4 in Roth 1982 checked against the text; Gale-Shapley 1962, Dubins-Freedman 1981, McVitie-Wilson 1970, Sotomayor 1996, Knuth 1976 not readable. Every statement brute-forced on 7,000 random markets from a re-implementation of the Lean definitions; all hold. Gate OK, depcheck 0 problems, Suggested.lean elaborates with 10 sorry warnings only, one-tactic probe closes nothing. Findings (all P3): women-proposing deferred acceptance / role swap is used by 2.1 and 2.2 but is no target; Layer 3 Dependencies name Layer 2 needlessly; the description is stale on sources, elaboration and PEquiv.",
+  "text": "691dab728518709f"
+ }
+}
