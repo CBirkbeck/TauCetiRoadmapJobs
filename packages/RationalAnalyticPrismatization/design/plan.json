@@ -809,7 +809,7 @@
      "id": "2.6",
      "kind": "definition",
      "name": "TauCeti.GelfandStack.BerkovichSpace",
-     "statement": "Define the analytic topology on affinoid Gelfand stacks: a cover of GSpec(A) is a finite family of †-rational localizations whose spectra form a strict closed cover of M(A), that is, one refined by an open cover. A derived Berkovich space is a sheaf for this topology admitting an open cover by open subspaces of affinoid Gelfand stacks; it has an underlying topological space |X| = colim |GSpec(A)| (ABLB Definition 4.3.1, p. 44, ABLB line 2295; ALRS §2.2, p. 17, ALRS line 894). Prove that the left Kan extension BerkSp → GelfStk is fully faithful (ABLB Proposition 4.3.3, p. 44, ABLB line 2330). A †-rigid space over a separable nonarchimedean field K is a derived Berkovich space locally represented by a static quotient of an overconvergent Tate algebra K⟨T_1,…,T_n⟩_{≤r} (ABLB Definition 4.3.6, p. 45, ABLB line 2384). For a rigid space X over a qfd Banach field define X′ = colim GSpec(A) over open affinoids Spa(A, A^+) ⊂ X; prove that X ↦ X′ sends rational covers to epimorphisms, depends only on the canonical compactification of X, and its restriction to partially proper rigid spaces is a fully faithful embedding into derived Berkovich spaces, with Spa(A, A^+) ↦ GSpec(A) on affinoids (ALRS Example 2.2.2, p. 17, ALRS line 910).",
+     "statement": "Define the analytic topology on affinoid Gelfand stacks: a cover of GSpec(A) is a finite family of †-rational localizations whose spectra form a strict closed cover of M(A), that is, one refined by an open cover. A derived Berkovich space is a sheaf for this topology admitting an open cover by open subspaces of affinoid Gelfand stacks; it has an underlying topological space |X| = colim |GSpec(A)| (ABLB Definition 4.3.1, p. 44, ABLB line 2295; ALRS §2.2, p. 17, ALRS line 894). Prove that the left Kan extension BerkSp → GelfStk is fully faithful (ABLB Proposition 4.3.3, p. 44, ABLB line 2330). A †-rigid space over a separable nonarchimedean field K is a derived Berkovich space locally represented by a static quotient of an overconvergent Tate algebra K⟨T_1,…,T_n⟩_{≤r} for some r > 0 (ABLB Definition 4.3.6, p. 45, ABLB line 2384). For a rigid space X over a qfd Banach field define X′ = colim GSpec(A) over open affinoids Spa(A, A^+) ⊂ X; prove that X ↦ X′ sends rational covers to epimorphisms, depends only on the canonical compactification of X, and its restriction to partially proper rigid spaces is a fully faithful embedding into derived Berkovich spaces, with Spa(A, A^+) ↦ GSpec(A) on affinoids (ALRS Example 2.2.2, p. 17, ALRS line 910).",
      "hypotheses": [
       "K is a separable nonarchimedean field over ℚ_p for †-rigid spaces; rigid spaces are over a qfd Banach field"
      ],
@@ -864,12 +864,17 @@
       {
        "name": "berk_compactification",
        "kind": "non-example",
-       "statement": "The rigid closed disc Spa(ℚ_p⟨T⟩, ℤ_p⟨T⟩) and its canonical compactification have the same Gelfand stack GSpec(ℚ_p⟨T⟩), so X ↦ X′ is not injective on rigid spaces that are not partially proper."
+       "statement": "The rigid closed disc Spa(ℚ_p⟨T⟩, ℤ_p⟨T⟩) and its canonical compactification Spa(ℚ_p⟨T⟩, ℤ_p + pℤ_p⟨T⟩) have the same open affinoid algebra ℚ_p⟨T⟩, so the colimit defining X′ gives GSpec(ℚ_p⟨T⟩) for both: X′ does not see the ring of integral elements, and the construction factors through the canonical compactification, an adic space over ℚ_p that is partially proper but not a rigid space, its ring of integral elements not being the power-bounded subring ℤ_p⟨T⟩. Full faithfulness is asserted only on partially proper rigid spaces, and the closed disc is not one."
       },
       {
        "name": "berk_overconvergent",
        "kind": "computation",
        "statement": "GSpec(ℚ_p⟨T⟩_{≤1}) and GSpec(ℚ_p⟨T⟩) have the same underlying space and different Gelfand stacks: the first is a †-rigid space and is Berkovich-smooth, the second is the canonical compactification of the closed disc and is not Berkovich-smooth (ALRS Warning 2.6.13)."
+      },
+      {
+       "name": "berk_daggerRadius",
+       "kind": "non-example",
+       "statement": "The radius r > 0 is needed. For r = 0, K⟨T⟩_{≤0} is the ring of power series in T with positive radius of convergence (1.2), with T ∈ Nil†, and GSpec(K⟨T⟩_{≤0}), the base change to K of G_a^† = GSpec(ℚ_p⟨T⟩_{≤0}) of 3.1, is a †-nilpotent thickening of a point; its underlying space is one point, so every analytic cover of it has it as a member. It is not a static quotient of K⟨T_1,…,T_n⟩_{≤r} with r > 0: a surjection K⟨T_1,…,T_n⟩_{≤r} → K⟨T⟩_{≤0} of solid K-algebras sends T_i to germs g_i with |g_i(0)| ≤ r, and on a disc |T| < ρ on which every g_i converges with |g_i(T) − g_i(0)| ≤ r, each h(g_1,…,g_n) converges, h converging on a polydisc of radius > r; so the image misses 1/(1 − T/c) for 0 < |c| < ρ. GSpec(K⟨T⟩_{≤1}) stays †-rigid."
       },
       {
        "name": "berk_empty",
@@ -4057,11 +4062,12 @@
      "id": "10.11",
      "kind": "theorem",
      "name": "TauCeti.Decompletion.torsors",
-     "statement": "For a locally classically decompleted Berkovich G^cont-space X with h: X/G^cont → X^la/G^la, and a Gelfand stack Z over X^la/G^la, let β_{X,Z}: Map(X^la/G^la, Z) → Map(X/G^cont, Z) be precomposition with h and β^ét_{X,Z} its étale-sheaf version on the Berkovich-étale site (ALRS §5.8, p. 137, ALRS line 7454). Prove that the class of Gelfand stacks Z over X^la/G^la for which β^ét_{X,Z} is an equivalence is stable under limits, contains every Z for which Z → Z^{dR/(X^la/G^la)} is an equivalence, contains Z′ whenever it contains Z and Z′ → Z is Berkovich-étale, and contains Z whenever it contains Z′ for a Berkovich-étale cover Z′ → Z (ALRS Lemma 5.8.1, p. 137, ALRS line 7473). Prove the comparison with arc-stacks for perfectoid X (ALRS Lemma 5.8.2, p. 138, ALRS line 7511), that torsors under groups !-locally induced by Gelfand rings are !-locally maps of Gelfand rings (ALRS Lemma 5.8.5, p. 139, ALRS line 7555), that for a compact p-adic Lie group H and a G^cont-equivariant H^la-torsor T → X such that β_{X,Z} is an equivalence for Z = BH^la × X^la/G^la, the G^la-equivariant H^la-torsor T′ → X^la corresponding to T under β_{X,Z}, so that T ≅ T′ ×_{X^la} X, satisfies O(T)^{G-la} ≅ O(T′) as sheaves on |X| = |X^la| (ALRS Lemma 5.8.8, p. 139, ALRS line 7581), that for p-adic Lie groups G and H and a Berkovich space W with an action of (G × H)^cont such that (i) Y := W/G^cont is a Berkovich space, locally classically decompleted for the H^cont-action with decompletion Y^{H-la}, and (ii) β_{Y,Z} is an equivalence for Z = BG^la × Y^{H-la}/H^la, one has Y^{H-la}/H^la ≅ GSpec_{|W|^Betti}(O^{(G×H)-la}_W)/(G × H)^la, and Y^{H-la}/H^la ≅ V^{G-la}/G^la when V := W/H^cont satisfies (i) and (ii) with G and H exchanged (ALRS Proposition 5.8.9, p. 139, ALRS line 7595), and that β^ét_{X,Z} is an equivalence, when perfect complexes on all Berkovich-étale X′/G^cont admit decompletions, for Z = T^an × X^la/G^la with T perfect strongly Tannakian, Z = BU × X^la/G^la with U open in H(ℚ_p)^la, and Z = BΓ^la × X^la/G^la for a p-adic Lie group Γ (ALRS Proposition 5.8.10, p. 140, ALRS line 7627).",
+     "statement": "For a locally classically decompleted Berkovich G^cont-space X with h: X/G^cont → X^la/G^la, and a Gelfand stack Z over X^la/G^la, let β_{X,Z}: Map(X^la/G^la, Z) → Map(X/G^cont, Z) be precomposition with h and β^ét_{X,Z} its étale-sheaf version on the Berkovich-étale site (ALRS §5.8, p. 137, ALRS line 7454). Prove that the class of Gelfand stacks Z over X^la/G^la for which β^ét_{X,Z} is an equivalence is stable under limits, contains every Z for which Z → Z^{dR/(X^la/G^la)} is an equivalence, contains Z′ whenever it contains Z and Z′ → Z is Berkovich-étale, and contains Z whenever it contains Z′ for a Berkovich-étale cover Z′ → Z (ALRS Lemma 5.8.1, p. 137, ALRS line 7473). Prove the comparison with arc-stacks for perfectoid X (ALRS Lemma 5.8.2, p. 138, ALRS line 7511), that torsors under groups !-locally induced by Gelfand rings are !-locally maps of Gelfand rings (ALRS Lemma 5.8.5, p. 139, ALRS line 7555), that for a compact p-adic Lie group H and a G^cont-equivariant H^la-torsor T → X such that β_{X,Z} is an equivalence for Z = BH^la × X^la/G^la, the G^la-equivariant H^la-torsor T′ → X^la corresponding to T under β_{X,Z}, so that T ≅ T′ ×_{X^la} X, satisfies O(T)^{G-la} ≅ O(T′) as sheaves on |X| = |X^la| (ALRS Lemma 5.8.8, p. 139, ALRS line 7581), that for p-adic Lie groups G and H and a Berkovich space W with an action of (G × H)^cont such that (i) Y := W/G^cont is a Berkovich space, locally classically decompleted for the H^cont-action with decompletion Y^{H-la}, and (ii) β_{Y,Z} is an equivalence for Z = BG^la × Y^{H-la}/H^la, one has Y^{H-la}/H^la ≅ GSpec_{|W|^Betti}(O^{(G×H)-la}_W)/(G × H)^la, and Y^{H-la}/H^la ≅ V^{G-la}/G^la when V := W/H^cont satisfies (i) and (ii) with G and H exchanged (ALRS Proposition 5.8.9, p. 139, ALRS line 7595), and that β^ét_{X,Z} is an equivalence, when perfect complexes on all Berkovich-étale X′/G^cont admit decompletions, for Z = T^an × X^la/G^la with T perfect strongly Tannakian, Z = BU × X^la/G^la with U an open subgroup of 𝐇(ℚ_p)^la = 𝐇^an ×_{𝐇^{an,dR}} 𝐇(ℚ_p)^dR (3.4) for an affine algebraic group 𝐇 over ℚ_p, and Z = BΓ^la × X^la/G^la for a p-adic Lie group Γ (ALRS Proposition 5.8.10, p. 140, ALRS line 7627).",
      "hypotheses": [
       "X is a locally classically decompleted Berkovich space with a G^cont-action; for Proposition 5.8.10, perfect complexes on Berkovich-étale X′/G^cont admit decompletions (e.g. X locally strongly decompleted)",
       "For Lemma 5.8.8: H is a compact p-adic Lie group, T → X a G^cont-equivariant H^la-torsor, and β_{X,Z} is an equivalence for Z = BH^la × X^la/G^la",
-      "For Proposition 5.8.9: G and H are p-adic Lie groups, W is a Berkovich space with a (G × H)^cont-action, Y = W/G^cont is a Berkovich space locally classically decompleted for the H^cont-action, and β_{Y,Z} is an equivalence for Z = BG^la × Y^{H-la}/H^la; for the second isomorphism the same holds for V = W/H^cont with G and H exchanged"
+      "For Proposition 5.8.9: G and H are p-adic Lie groups, W is a Berkovich space with a (G × H)^cont-action, Y = W/G^cont is a Berkovich space locally classically decompleted for the H^cont-action, and β_{Y,Z} is an equivalence for Z = BG^la × Y^{H-la}/H^la; for the second isomorphism the same holds for V = W/H^cont with G and H exchanged",
+      "For Proposition 5.8.10(2): 𝐇 is an affine algebraic group over ℚ_p and U an open subgroup of 𝐇(ℚ_p)^la; for (3), Γ is a p-adic Lie group"
      ],
      "locator": {
       "source": "ALRS",
@@ -4098,6 +4104,11 @@
        "name": "torsor_notBerkovich",
        "kind": "non-example",
        "statement": "For a compact p-adic Lie group G and a Berkovich space S, a G^la-torsor P → S is !-locally a map of Gelfand rings (ALRS Lemma 5.8.5), and ALRS Remark 5.8.6 leaves open whether P is a Berkovich space: for G = GL_n(ℤ_p) the induced GL_n-torsor P′ = P ×^{GL_n(ℤ_p)^la} GL_n is a Berkovich space and P is the overconvergent neighbourhood of the closed subset |P| ⊆ |P′|. Only !-local affineness is asserted, never a Berkovich structure on P; for the trivial torsor over a point, P′ = GL_n and P = GL_n(ℤ_p)^la, the overconvergent neighbourhood of the profinite set GL_n(ℤ_p) in GL_n."
+      },
+      {
+       "name": "torsor_algebraicGroup",
+       "kind": "compatibility",
+       "statement": "The choices Z = BU × X^la/G^la and Z = BΓ^la × X^la/G^la meet: for 𝐇 = GL_n and Γ = GL_n(ℤ_p), Γ^la is the open subgroup GL_n(ℤ_p)^la of GL_n(ℚ_p)^la = GL_n^an ×_{GL_n^{an,dR}} GL_n(ℚ_p)^dR (3.4, 10.3), so U = Γ^la gives the same Z. For 𝐇 = G_a, 𝐇(ℚ_p)^la = ℚ_p^la (3.4) contains U = ℤ_p^la. U is always formed from an algebraic group 𝐇: a compact p-adic Lie group such as ℤ_p has no functor of ℚ_p-points from which to form (−)(ℚ_p)^la."
       }
      ]
     },
@@ -4249,7 +4260,7 @@
      "id": "11.3",
      "kind": "theorem",
      "name": "TauCeti.Twistor.toricChart",
-     "statement": "Let X = G_m^d over ℚ_p, X̃ = lim_{T↦T^p} X the perfected torus in Gelfand stacks and Γ_d = ℤ_p^{×,la} ⋉ ℤ_p^{d,la}. Prove that X^{Div¹} ≅ X̃_{X_cyc}/(φ^ℤ × Γ_d^la) = FF^la_{X̃^{d,⋄}_{ℚ_p^cyc}}/Γ_d^la, where FF^la is glued from the spectra of Γ_d-locally analytic vectors of Γ_d-stable affinoids of FF_{X̃^{d,⋄}_{ℚ_p^cyc}}, while FF_{X^⋄} = FF_{X̃^{d,⋄}_{ℚ_p^cyc}}/Γ_d^cont, so that α_X is the natural map from the continuous to the locally analytic quotient (ALRS Remark 4.10.15, p. 90, ALRS line 4683; ALRS (1.2.1), p. 8, ALRS line 399); the Lie algebra of Γ_d acts on FF^la through (log q)q∂_q, (log q)T_i∂_{T_i}, with logarithmic poles at the Hodge–Tate locus (ALRS §4.10, p. 91, ALRS line 4704).",
+     "statement": "Let X = G_m^d over ℚ_p, X̃ = lim_{T↦T^p} X the perfected torus in Gelfand stacks and Γ_d = ℤ_p^× ⋉ ℤ_p^d, the p-adic Lie group in which ℤ_p^× acts on ℤ_p^d by multiplication (the group G_mixed of 10.10 with ℤ_p(1) trivialized), so that Γ_d^la = ℤ_p^{×,la} ⋉ ℤ_p^{d,la}. Prove that X^{Div¹} ≅ X̃_{X_cyc}/(φ^ℤ × Γ_d^la) = FF^la_{X̃^{d,⋄}_{ℚ_p^cyc}}/Γ_d^la, where FF^la is glued from the spectra of Γ_d-locally analytic vectors of Γ_d-stable affinoids of FF_{X̃^{d,⋄}_{ℚ_p^cyc}}, while FF_{X^⋄} = FF_{X̃^{d,⋄}_{ℚ_p^cyc}}/Γ_d^cont, so that α_X is the natural map from the continuous to the locally analytic quotient (ALRS Remark 4.10.15, p. 90, ALRS line 4683; ALRS (1.2.1), p. 8, ALRS line 399); the Lie algebra of Γ_d acts on FF^la through (log q)q∂_q, (log q)T_i∂_{T_i}, with logarithmic poles at the Hodge–Tate locus (ALRS §4.10, p. 91, ALRS line 4704).",
      "hypotheses": [
       "X = G_m^d over ℚ_p, d ≥ 0"
      ],
@@ -4446,7 +4457,7 @@
      "id": "11.8",
      "kind": "theorem",
      "name": "TauCeti.Twistor.mixedHT",
-     "statement": "For K/ℚ_p finite and X a smooth partially proper rigid space over K prove: (1) π_{X,1}: X^HT → X × K^HT is a BT^†_X{1}-torsor, so every M ∈ D(X^HT) is an Ω¹_X{−1}-Higgs module, compatibly with 11.5 after base change to perfectoids over Q_p^HT, descending the geometric Sen operator to X × K^HT; (2) L_{X^HT/(X×K^HT)} ≅ Ω¹_{X/K}{−1}[−1] and L_{X^HT/X} is an extension of Ω¹_{X/K}{−1}[−1] by O_{X^HT}[−1] whose pullback to X̂^⋄ is the inverse Faltings' extension, FE^−_X{−1} = L_{X^HT/X}[1]; (3) for G_FE = T_X ⋊ G_m with dual Lie algebra g*_FE, the pullback of g*_FE along X^HT → BG_FE is L_{X^HT/X}[1]; (4) the maps X^HT → BG_FE → B(Ĝ_FE ⋊ G_FE) → B(G^†_FE ⋊ G_FE) promote every sheaf on X^HT to a module over the enveloping algebra of g_{X,FE}, the analytic Harish-Chandra (Higgs–Sen) structure, restricting along T_X{1} → g_{X,FE} to the Higgs field (ALRS Theorem 6.3.2, p. 150, ALRS line 8145). Partial properness is not needed for these statements (ALRS Remark 6.3.4, p. 153, ALRS line 8277).",
+     "statement": "For K/ℚ_p finite and X a smooth partially proper rigid space over K prove: (1) π_{X,1}: X^HT → X ×_{GSpec(K)} K^HT = X × Q_p^HT, where K^HT = GSpec(K)^HT ≅ GSpec(K) × Q_p^HT by 9.1 (T_{GSpec(K)} = 0), is a BT^†_X{1}-torsor, so every M ∈ D(X^HT) is an Ω¹_X{−1}-Higgs module, compatibly with 11.5 after base change to perfectoids over Q_p^HT, descending the geometric Sen operator to X ×_{GSpec(K)} K^HT; (2) L_{X^HT/(X ×_{GSpec(K)} K^HT)} ≅ Ω¹_{X/K}{−1}[−1] and L_{X^HT/X} is an extension of Ω¹_{X/K}{−1}[−1] by O_{X^HT}[−1] whose pullback to X̂^⋄ is the inverse Faltings' extension, FE^−_X{−1} = L_{X^HT/X}[1]; (3) for G_FE = T_X ⋊ G_m with dual Lie algebra g*_FE, the pullback of g*_FE along X^HT → BG_FE is L_{X^HT/X}[1]; (4) the maps X^HT → BG_FE → B(Ĝ_FE ⋊ G_FE) → B(G^†_FE ⋊ G_FE) promote every sheaf on X^HT to a module over the enveloping algebra of g_{X,FE}, the analytic Harish-Chandra (Higgs–Sen) structure, restricting along T_X{1} → g_{X,FE} to the Higgs field (ALRS Theorem 6.3.2, p. 150, ALRS line 8145). Partial properness is not needed for these statements (ALRS Remark 6.3.4, p. 153, ALRS line 8277).",
      "hypotheses": [
       "K/ℚ_p is a finite extension; X is a smooth rigid space over K (partial properness not needed)"
      ],
@@ -4459,6 +4470,7 @@
       "target:11.5",
       "target:9.6",
       "target:9.5",
+      "target:9.1",
       "target:4.8",
       "gap:vector-group-cartier-duality",
       "gap:stacky-cartier-duality"
@@ -4479,6 +4491,11 @@
        "name": "mixed_split",
        "kind": "non-example",
        "statement": "L_{X^HT/X} is in general a non-split extension: splitting it would split Faltings' extension, which fails for G_m (9.5)."
+      },
+      {
+       "name": "mixed_base",
+       "kind": "degenerate",
+       "statement": "For K = ℚ_{p²} and X = GSpec(K), X ×_{GSpec(K)} K^HT = K^HT and π_{X,1} is the identity, a torsor under the trivial group BT^†_X{1} = B0. The product over GSpec(ℚ_p) would be GSpec(K ⊗_{ℚ_p} K) × Q_p^HT = K^HT ⊔ K^HT, as K ⊗_{ℚ_p} K ≅ K × K, and X^HT = K^HT maps isomorphically onto the diagonal copy only, so that product is not the base of the torsor."
       }
      ]
     },
