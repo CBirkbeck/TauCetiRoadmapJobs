@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-FiniteFlatGroupsAndIntegralPadicHodgeTheory~6",
+  "head": "57634fceb3ec250a4d38ce01feaa2b704d7e8889",
+  "pr": 879,
+  "folder": "FiniteFlatGroupsAndIntegralPadicHodgeTheory",
+  "date": "2026-11-15",
+  "findings": 7,
+  "blocking": 1,
+  "notes": "Full review of the 9137-line README and Suggested.lean. All seven findings of the previous review are repaired. One P2: the torsion strongly divisible categories of R07.4.31 omit Breuil's axiom phi_1(sx) = phi_1(s)phi(x), so the equivalence with Breuil modules stated in R07.4.34 fails (explicit witness over Q_p, p > 2). Six P3: R07.4.20 stated only for finite K/Q_p; Dependencies sections and supplier contracts incomplete; four Checks naming undeclared Lean identifiers; a missing reference entry and a page count; the description's supplier list. Seeded sample of 15 targets checked against mazur1977, dejong1995, dejong1998, caislau2017, savitt2005, illusie1985, raynaud1974, cdt1999, liu2013, serre1972, sharifi and breuil2000 (about 85 locators); Kisin 2006-2009, Faltings 1999, Serre 1987 and Silverman are not legally readable and are listed as not verifiable. Gate: every check 0, build 0. Depcheck: 247 roadmaps, 2247 edges, 0 problems. Suggested.lean elaborates with seven sorry warnings only; one-tactic probe closes 0 of 7; the 27 elaborated signatures were compared with the README. Cross-roadmap citations resolved at 10 open supplier heads and 13 roadmaps on main.",
+  "text": "5d62532a8f21e226"
+ }
+}
