@@ -1,0 +1,22 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-AutomorphicBundles~3",
+  "head": "fd74684be272b7a78b4ad8ec302e1e76b55b7670",
+  "pr": 1069,
+  "folder": "AutomorphicBundles",
+  "date": "2026-11-15",
+  "findings": 2,
+  "blocking": 0,
+  "notes": "incremental re-review of 38 changed lines since 54e21dd. All four previous findings (R01 Diamond22 version and Lan22/AG locators, R02 PELModuli/ShimuraData citations, R03 HodgeLineFJ transfer in 12.8-12.9, R04 the 11.8 Check) are repaired with no new problem. Checked: the changed passages against Diamond22 v1/v2, Lan22 and LanPEL in the sources cache; PELModuli M0/M5.2/M5.5, ShimuraData 3.8 and ShimuraCompactifications 7.15 at their open heads; the gate (every rule 0, build 0); the dependency check re-run (245 roadmaps, 0 problems); elaboration of Suggested.lean (sorry the only warning); no seeded-sample target lies in a changed passage. Both findings are P3 and in the pull request description only: it says the roadmap constructs the coefficient group (the head imports it from ShimuraData 4.9), and it says red-team passes are still to follow (the head contains them).",
+  "text": "9116512e2ca2035d",
+  "carried": {
+   "from": "fd74684be272b7a78b4ad8ec302e1e76b55b7670",
+   "head": "1de55715cd7f97e965e54488dbff224fac0e88e9",
+   "findings": 2,
+   "lines": 0,
+   "folders": [],
+   "outside": true
+  }
+ }
+}
