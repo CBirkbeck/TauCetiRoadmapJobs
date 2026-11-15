@@ -1,0 +1,24 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-FaltingsFinitenessAndIsogenyTheorems~3",
+  "head": "c88266994d98927941e1beb7afb9085763c0bd5d",
+  "pr": 1004,
+  "folder": "FaltingsFinitenessAndIsogenyTheorems",
+  "date": "2026-11-15",
+  "findings": 2,
+  "blocking": 0,
+  "notes": "incremental re-review of 115 changed lines since b83ebd4. Checked: the six previous findings (four repaired, R03 partly, R06 withdrawn as not a folder file); the changed passages against faltings-1983 (Lemmas 2, 5, 6, proof of Satz 7) and dm1969 Theorem 4.19; six cross-roadmap citations of the changed passages; the title and description against the head (no contradiction). Gate fails on statement-hygiene=1 (letI at Suggested.lean:137, R01 P3; deleting the line elaborates, tested); build passes, sorry the only warning; depcheck 0 problems. R02 P3: README 943-944 misattributes the ramifiedSupport route to ArithmeticGaloisDuality R02.3.1 and NumberFieldArithmetic 4.3.",
+  "text": "55470814112033cf",
+  "carried": {
+   "from": "c88266994d98927941e1beb7afb9085763c0bd5d",
+   "head": "19961e7cbb746291133971584d2c26ab6106aa61",
+   "findings": 2,
+   "lines": 64,
+   "folders": [
+    "FaltingsFinitenessAndIsogenyTheorems"
+   ],
+   "outside": true
+  }
+ }
+}
