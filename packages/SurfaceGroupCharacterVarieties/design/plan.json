@@ -2,7 +2,7 @@
  "roadmap": "SurfaceGroupCharacterVarieties",
  "title": "Surface group character varieties",
  "parent": null,
- "summary": "The action of TeichmullerGeometry's outer automorphism group on conjugacy classes of homomorphisms; the punctured-surface mapping class group completed by ambient isotopy classes of an arbitrary space, the marked-point comparison, the permutation of the punctures underlying MappingClassGroupsAndCanonicalRepresentations' pure group and the standard model of a closed surface; the outer action Psi of Mod_{g,n} on pi_1; representation schemes of finitely generated groups; real reductive data, the real-form bridge and the real Kempf-Ness theorem; the six characterizations of reductive representations; and the character variety X(Gamma, G^R) of a finitely generated group, Hausdorff, locally compact and second countable, homeomorphic to minimal vectors modulo K, equal for complex groups to the complex points of Hom(Gamma,G)//G, with Out(Gamma) and Mod_{g,n} acting by homeomorphisms.",
+ "summary": "The action of TeichmullerGeometry's outer automorphism group on conjugacy classes of homomorphisms; the punctured-surface mapping class group completed by ambient isotopy classes of an arbitrary space, the marked-point comparison, the permutation of the punctures underlying MappingClassGroupsAndCanonicalRepresentations' pure group and the standard model of a closed surface; the outer action Psi of Mod_{g,n} on pi_1; representation schemes of finitely generated groups; real reductive data, the uniqueness of the R-form attached by RealSemisimpleLieGroups to an antiholomorphic involutive automorphism, and the real Kempf-Ness theorem; the six characterizations of reductive representations; and the character variety X(Gamma, G^R) of a finitely generated group, Hausdorff, locally compact and second countable, homeomorphic to minimal vectors modulo K, equal for complex groups to the complex points of Hom(Gamma,G)//G, with Out(Gamma) and Mod_{g,n} acting by homeomorphisms.",
  "baseline": {
   "mathlib": "1b1ccf4b088b32fa3f23f2de1127433254a81e1e",
   "tauceti": "2fd255d997f47c0b5d834ee416c7015d55444ce5"
@@ -160,7 +160,7 @@
   },
   {
    "key": "2",
-   "title": "Punctured surfaces, marked points and the pure mapping class group",
+   "title": "Isotopy classes, punctures and marked points, and the standard model",
    "targets": [
     {
      "id": "2.1",
@@ -633,6 +633,7 @@
       "roadmap:AlgebraicTopology Stage 4 item 2",
       "roadmap:AlgebraicTopology Stage 4 item 3",
       "roadmap:ClassifyingSpaces Stage 3 item 11",
+      "roadmap:ClassifyingSpaces Stage 3 item 15",
       "roadmap:ClassifyingSpaces Stage 4 item 17",
       "mathlib:groupHomology",
       "mathlib:groupHomology.map",
@@ -927,38 +928,43 @@
      "id": "5.2",
      "kind": "theorem",
      "name": "RealReductiveDatum.ofAntiholomorphicInvolution",
-     "statement": "For H connected reductive over ℂ and τ an antiholomorphic involution of H(ℂ), there is a connected reductive ℝ-group 𝐆_τ with (𝐆_τ)_ℂ ≅ H under which complex conjugation is τ, unique up to unique isomorphism; H(ℂ)^τ = 𝐆_τ(ℝ); conversely conjugations of ℝ-structures are antiholomorphic involutions; a holomorphic Cartan involution σ for τ restricts to an algebraic Cartan involution of 𝐆_τ with maximal compact fixed group.",
+     "statement": "For H connected reductive over ℂ and τ an antiholomorphic involutive automorphism of H(ℂ) (a group automorphism, antiholomorphic, τ² = 1), RealSemisimpleLieGroups §2.5 supplies an ℝ-form (𝐆_τ, φ_τ : (𝐆_τ)_ℂ ≅ H) with conjugation φ_τ ∘ c ∘ φ_τ⁻¹ = τ, 𝐆_τ connected reductive, 𝐆_τ(ℝ) = H(ℂ)^τ, Cartan involutions for τ the complexifications of ArithmeticLocallySymmetricSpaces §ALS.0.1's Cartan involutions of 𝐆_τ, and K = H(ℂ)^τ ∩ H(ℂ)^σ maximal compact; so (𝐆_τ, 𝐆_τ(ℝ)) and (𝐆_τ, 𝐆_τ(ℝ)°) are real reductive data. Owned here: (uniqueness) two ℝ-forms (𝐆₁, φ₁), (𝐆₂, φ₂) of H with the same conjugation are isomorphic by exactly one ℝ-isomorphism α with φ₂ ∘ α_ℂ = φ₁; (converse) the conjugation of every ℝ-form of H is an antiholomorphic involutive automorphism of H(ℂ). Hence τ ↦ (𝐆_τ, φ_τ) is a bijection onto isomorphism classes of ℝ-forms over the identity of H. Route: φᵢ^* carries O(𝐆ᵢ) ⊗ 1 onto the fixed space of f ↦ conj ∘ f ∘ τ on O(H).",
      "hypotheses": [
       "H connected reductive over ℂ",
-      "τ an antiholomorphic involution of the complex Lie group H(ℂ)"
+      "τ an antiholomorphic involutive automorphism of the complex Lie group H(ℂ)",
+      "ℝ-forms are pairs (𝐆₀, φ : (𝐆₀)_ℂ ≅ H), isomorphisms taken over the identity of H"
      ],
      "locator": {
       "source": "BCGGO2024",
       "where": "lines 466–481"
      },
      "prerequisites": [
-      "roadmap:ReductiveGroups Layer 8",
-      "roadmap:ReductiveGroups Layer 9",
-      "roadmap:LieGroups Layer 7, Real forms and global descent",
-      "roadmap:LieGroups Layer 7, Compact-real-form pairs and algebraic morphisms",
-      "roadmap:ArithmeticLocallySymmetricSpaces §ALS.0.1"
+      "target:5.1",
+      "roadmap:RealSemisimpleLieGroups §2.5",
+      "roadmap:ArithmeticLocallySymmetricSpaces §ALS.0.1",
+      "roadmap:ReductiveGroups Layer 0"
      ],
      "api": [],
      "tests": [
       {
        "name": "GLn_forms",
        "kind": "computation",
-       "statement": "τ(g) = ḡ gives GL_n(ℝ); τ(g) = (ḡᵀ)⁻¹ gives U(n)."
+       "statement": "τ(g) = ḡ gives GL_n(ℝ), two components, with Cartan involution σ(g) = (gᵀ)⁻¹ (στ has compact fixed group U(n)) and K = O(n); τ(g) = (ḡᵀ)⁻¹ gives the compact form U(n) with σ = 1."
       },
       {
        "name": "quaternions",
        "kind": "computation",
-       "statement": "On GL₂, τ(g) = J ḡ J⁻¹ with J = [[0,−1],[1,0]] has fixed points [[a,−b̄],[b,ā]], the group ℍ^×."
+       "statement": "On GL₂, τ(g) = J ḡ J⁻¹ with J = [[0,−1],[1,0]] satisfies τ² = 1 (J real, J² = −1) and has fixed points [[a,−b̄],[b,ā]], the group ℍ^×; conversely the conjugation of the ℝ-form ℍ^× through ℍ ⊗ ℂ ≅ M₂(ℂ) is this τ."
       },
       {
-       "name": "holomorphic_involution",
+       "name": "uniqueness_over_H",
        "kind": "non-example",
-       "statement": "g ↦ (gᵀ)⁻¹ is holomorphic with complex fixed group O_n(ℂ): not a real form."
+       "statement": "For H = GL₁, τ(z) = z̄, the forms (𝔾_m, id) and (𝔾_m, z ↦ z⁻¹) have the same conjugation and the unique isomorphism over the identity of H is the inversion, while 𝔾_m has two ℝ-automorphisms: without φ the isomorphism is not unique."
+      },
+      {
+       "name": "not_automorphisms",
+       "kind": "non-example",
+       "statement": "g ↦ (gᵀ)⁻¹ is holomorphic with complex fixed group O_n(ℂ): not a real form; z ↦ 2/z̄ is an antiholomorphic involution of the manifold ℂ^× sending 1 to 2, no automorphism, with fixed set |z|² = 2 no subgroup."
       }
      ]
     },
@@ -996,7 +1002,7 @@
       {
        "name": "non_stable_embedding",
        "kind": "non-example",
-       "statement": "SO(2) embedded as u SO(2) u⁻¹, u = [[1,1],[0,1]]: the image {[[c+s, −2s],[s, c−s]]} is not transpose-stable (the transpose [[1,1],[−2,−1]] of [[1,−2],[1,−1]] is not in it), K = {±1}, 𝔭 = 0, so K exp(𝔭) ≠ G^ℝ, and ‖[[1,−2],[1,−1]] e₁‖² = 2. Conjugating SL₂(ℝ) by u ∈ SL₂(ℝ) gives SL₂(ℝ) again, transpose-stable."
+       "statement": "SO(2) embedded as u SO(2) u⁻¹, u = [[1,1],[0,1]]: the image {[[c+s, −2s],[s, c−s]]} is not transpose-stable (the transpose [[1,1],[−2,−1]] of [[1,−2],[1,−1]] is not in it), K = {±1} (columns of length one: squared lengths 1 + s(2c+s) and 1 + 2s(2s−c) force s = 0), 𝔭 = 0, so K exp(𝔭) ≠ G^ℝ, and ‖[[1,−2],[1,−1]] e₁‖² = 2. Conjugating SL₂(ℝ) by u ∈ SL₂(ℝ) gives SL₂(ℝ) again, transpose-stable."
       }
      ]
     },
@@ -1149,7 +1155,7 @@
      ],
      "locator": {
       "source": "BateMartinRohrle2005",
-      "where": "line 263"
+      "where": "Corollary 3.42, line 814 (adjoint criterion, p > 2h − 2; characteristic zero by lines 183–187); line 263"
      },
      "prerequisites": [
       "roadmap:ReductiveGroups Layer 2",
@@ -1444,6 +1450,7 @@
       "target:7.1",
       "roadmap:LanglandsParameterStacks §2.2",
       "roadmap:ArithmeticGaloisRepresentations §1.11",
+      "roadmap:ReductiveGroups Layer 1",
       "roadmap:ReductiveGroups Layer 3A",
       "roadmap:ReductiveGroups Layer 6",
       "tauceti:TauCeti.Coalgebra.IsLinearlyReductive",
@@ -1598,7 +1605,6 @@
     "§5.6",
     "§5.9",
     "§5.15",
-    "§5.16",
     "§5.17",
     "§5.19",
     "§5.20",
@@ -1659,23 +1665,23 @@
    "roadmap": "ClassifyingSpaces",
    "sections": [
     "Stage 3 item 11",
+    "Stage 3 item 15",
     "Stage 4 item 17"
    ],
-   "what": "Singular homology of a K(G,1) CW complex is Mathlib's groupHomology of the trivial module, naturally; maps of K(G,1) complexes realizing homomorphisms of fundamental groups."
+   "what": "Singular homology of a K(G,1) CW complex is Mathlib's groupHomology of the trivial module, naturally; maps of K(G,1) complexes realizing homomorphisms of fundamental groups, and homotopy functoriality of the classifying space."
   },
   {
    "roadmap": "ReductiveGroups",
    "sections": [
     "Layer 0",
+    "Layer 1",
     "Layer 2",
     "Layer 3A",
     "Layer 5",
     "Layer 6",
-    "Layer 7",
-    "Layer 8",
-    "Layer 9"
+    "Layer 7"
    ],
-   "what": "Affine group schemes, Lie algebras and Ad, closed orbits in orbit closures and boundary dimensions, unipotent radicals, characteristic-zero linear reductivity and the multiplicative centre, parabolics and cocharacters, split models."
+   "what": "Affine group schemes, representations as comodules and their invariants, Lie algebras and Ad, closed orbits in orbit closures and boundary dimensions, unipotent radicals, characteristic-zero linear reductivity and the multiplicative centre, parabolics and cocharacters."
   },
   {
    "roadmap": "ReductiveGroupsPartII",
@@ -1716,22 +1722,19 @@
    "what": "Real points as Lie groups, transpose-stable realizations, maximal compact subgroups and polar decomposition; algebraic Cartan involutions."
   },
   {
+   "roadmap": "RealSemisimpleLieGroups",
+   "sections": [
+    "§2.5"
+   ],
+   "what": "For a connected complex reductive group H and an antiholomorphic involutive automorphism τ of H(ℂ): the connected reductive ℝ-group whose complex conjugation is τ, with real points H(ℂ)^τ; the Cartan involutions for τ as complexifications of ArithmeticLocallySymmetricSpaces §ALS.0.1's Cartan involutions, their existence and conjugacy under (H^τ)°; K = H^τ ∩ H^σ maximal compact, K × 𝔭 → H^τ a diffeomorphism. Used in 5.2."
+  },
+  {
    "roadmap": "LieGroups",
    "sections": [
-    "Layer 7, Real forms and global descent",
-    "Layer 7, Representations and holomorphic descent",
-    "Layer 7, Compact-real-form pairs and algebraic morphisms",
     "Layer 9",
     "Layer 9, Restricted roots and KAK"
    ],
-   "what": "Compact real forms of connected complex reductive groups (existence, connectedness, conjugacy); holomorphic representations of the complexification versus continuous representations of the compact form; regular algebraicity of the holomorphic extension of a continuous homomorphism between compact-real-form pairs; the Cartan decomposition and, paragraph Restricted roots and KAK, Ad(K)𝔞 = 𝔭 and G = K exp(𝔞₊) K (kakDecomposition) for the global matrix models of Layer 9."
-  },
-  {
-   "roadmap": "CompactGroups",
-   "sections": [
-    "Layer 5"
-   ],
-   "what": "Peter-Weyl."
+   "what": "The Cartan decomposition and, paragraph Restricted roots and KAK, Ad(K)𝔞 = 𝔭 and G = K exp(𝔞₊) K (kakDecomposition) for the global matrix models of Layer 9."
   },
   {
    "roadmap": "SymplecticGeometry/HamiltonianReduction",

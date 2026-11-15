@@ -12,7 +12,8 @@ class group and the standard model of a closed surface, and constructs the outer
 `Ψ : Mod_{g,n} → Out(π₁(Σ_{g,n}, x))`
 with all its laws. It then builds the representation scheme `Hom(Γ, G)` of a finitely generated
 group, the real reductive groups `G^ℝ` (open subgroups of the real points of a connected reductive
-`ℝ`-group, with the bridge to real forms given by antiholomorphic involutions), the real
+`ℝ`-group, among them RealSemisimpleLieGroups' real forms given by antiholomorphic involutive
+automorphisms, together with the uniqueness of the `ℝ`-form such an automorphism determines), the real
 Kempf–Ness theory of minimal vectors, the six equivalent characterizations of reductive
 representations, and the character variety `𝒳(Γ, G^ℝ) = Hom^red(Γ, G^ℝ)/G^ℝ` of a finitely
 generated group `Γ`. The end theorems are:
@@ -58,9 +59,11 @@ This roadmap owns:
 - the representation scheme `Hom(Γ, G)` of a finitely generated group into an affine group scheme
   over a commutative ring, its topologies on real and complex points, and the surface-group
   instances (Layer 4);
-- real reductive data, the real-form bridge from antiholomorphic involutions, Cartan-compatible
-  realizations of the conjugation action, and the real Kempf–Ness theorem for linear actions of real
-  reductive groups (Layer 5);
+- real reductive data, the uniqueness, up to unique isomorphism over the identity, of the `ℝ`-form
+  of a complex reductive group whose conjugation is a given antiholomorphic involutive automorphism,
+  and the converse that the conjugation of every `ℝ`-form is one, Cartan-compatible realizations of
+  the conjugation action, and the real Kempf–Ness theorem for linear actions of real reductive groups
+  (Layer 5);
 - reductive representations and the equivalence of the six conditions (adjoint semisimplicity over
   `ℝ` and over `ℂ`, reductive Zariski closure, `G`-complete reducibility, closed complex orbit,
   closed real orbit) (Layer 6);
@@ -106,10 +109,10 @@ It leaves to named owners, which are consumed and never planned again:
   AlgebraicTopology Stage 4;
   the singular homology of a `K(G, 1)` CW complex as group homology: ClassifyingSpaces
   Stage 4;
-- affine group schemes, their Lie algebras and adjoint representations, closed orbits in orbit
-  closures, unipotent radicals, reductivity and characteristic-zero linear reductivity, Levi
-  decompositions, parabolics and cocharacters, classification and split models: ReductiveGroups
-  Layers 0, 1, 2, 3A, 5, 6, 7, 8, 9;
+- affine group schemes, their representations as comodules, their Lie algebras and adjoint
+  representations, closed orbits in orbit closures, unipotent radicals, reductivity and
+  characteristic-zero linear reductivity, Levi decompositions, parabolics and cocharacters:
+  ReductiveGroups Layers 0, 1, 2, 3A, 5, 6, 7;
 - the point topology on `X(R)` for a topological algebra `R` and Weil restriction:
   ReductiveGroupsPartII §§RG2.0.1, RG2.0a.2; the classical topology on complex points of a
   finite-type complex scheme: ComplexComparisonPartII §C-1.1;
@@ -126,10 +129,16 @@ It leaves to named owners, which are consumed and never planned again:
 - real points of linear algebraic groups as Lie groups, transpose-stable realizations, maximal
   compact subgroups, polar decomposition, and algebraic Cartan involutions:
   ArithmeticLocallySymmetricSpaces §§ALS.F.1, ALS.0.1;
-- compact real forms, holomorphic representations of complexifications and the algebraicity of
-  holomorphic extensions between compact-real-form pairs: LieGroups Layer 7;
-  the Cartan decomposition and the `K A K` decomposition: LieGroups Layer 9; Peter–Weyl:
-  CompactGroups Layer 5;
+- for a connected complex reductive group `H` and an antiholomorphic involutive automorphism `τ` of
+  `H(ℂ)`, the connected reductive `ℝ`-group whose complex conjugation is `τ`, with real points
+  `H(ℂ)^τ`, the identification of the Cartan involutions for `τ` with the complexifications of
+  ArithmeticLocallySymmetricSpaces §ALS.0.1's Cartan involutions of that `ℝ`-group, their existence
+  and conjugacy under `(H(ℂ)^τ)°`, and the maximal compact subgroup `K = H(ℂ)^τ ∩ H(ℂ)^σ` with the
+  Cartan decomposition `K × 𝔭 → H(ℂ)^τ`: RealSemisimpleLieGroups §2.5. §5.3's polar decompositions
+  are a kept variant: they are stated for every open subgroup `G^ℝ ⊆ 𝐆(ℝ)` of a real reductive datum
+  in a transpose-stable realization, and for `G(ℂ) = U exp(i𝔲)`, where RealSemisimpleLieGroups §2.5
+  treats the full fixed group `H(ℂ)^τ`;
+- the Cartan decomposition and the `K A K` decomposition: LieGroups Layer 9;
 - flat connections on a closed surface modulo gauge for compact `K` and their comparison with
   `Hom(π₁Σ, K)/K`: SymplecticGeometry/HamiltonianReduction R5, used here only as a Check.
 
@@ -305,7 +314,7 @@ on transverse oriented simple closed curves to the signed count of intersection 
 a surface of type `(g, b, n)` with `b + n = 0`, `H₁(S; ℤ) ≅ ℤ^{2g}`), §5.9 (`Mod(S)`, `Mod(S*)`,
 `Forget`, and the action of `Mod(S)`, through `Out(π₁ S)`, on isomorphism classes of finite
 coverings, `[p] ↦ [f ∘ p]`, which on monodromy is precomposition with the outer automorphism
-`(f⁻¹)_*`), §5.15 (asphericity), §5.16 (trivial centre for `χ < 0`), §5.17 (the evaluation
+`(f⁻¹)_*`), §5.15 (asphericity), §5.17 (the evaluation
 fibration of `Homeo⁺(S, ∂S)` with the compact-open topology, equivalently isotopy extension for
 moving one interior point of a surface with punctures), §5.19 (`Push : π₁(S, x) →* Mod(S*)`, acting
 on `π₁(S, x)` by `MulAut.conj`, with `Forget(Push α) = 1`), §5.20 (the Birman exact sequence for
@@ -394,22 +403,23 @@ generators negated by reversing the cell orientation).
 ### From TauCetiRoadmap.ClassifyingSpaces
 
 Stage 4 item 17 (for a `K(G, 1)` CW complex, its singular homology with integer coefficients is
-Mathlib's `groupHomology` of the trivial module, naturally in `G`), with Stage 3 items 11 and 15
-(a homomorphism of fundamental groups of `K(G, 1)` CW complexes is induced by a pointed map, unique up
-to pointed homotopy, functorially). Assumed: the identification of item 17 is compatible with the
-maps of item 11.
+Mathlib's `groupHomology` of the trivial module, naturally in `G`), with Stage 3 item 11 (a
+homomorphism of fundamental groups of `K(G, 1)` CW complexes is induced by a pointed map, unique up
+to pointed homotopy) and item 15 (homotopy functoriality: the classifying space is a functor from
+groups to the pointed homotopy category). Used in §3.4. Assumed: the identification of item 17 is
+compatible with the maps of item 11.
 
 ### From TauCetiRoadmap.ReductiveGroups
 
 Layer 0 (affine group schemes as commutative Hopf algebras and their functors of points), Layer 1
-(representations as comodules), Layer 2 (`Lie(G)`, the adjoint representation, Lie algebras of
-closed subgroups, characteristic-zero smoothness), Layer 3A (orbits are open in their closures,
-3A.2; every orbit closure contains a closed orbit, 3A.4), Layer 5 (unipotent groups, the unipotent
-radical, fixed vectors of unipotent groups), Layer 6 (reductive groups, centre of multiplicative
-type, characteristic-zero equivalence of reductivity and linear reductivity), Layer 7 (parabolic
-subgroups, Levi decompositions, cocharacter parabolics `P_λ`, `L_λ`, the limit map `c_λ`), Layer 8
-(every connected reductive group over an algebraically closed field is split, Chevalley existence),
-Layer 9 (pinned split models over `ℤ`).
+(representations as comodules; §1.1, the comodule invariants are the vectors fixed by every point
+over every algebra), Layer 2 (`Lie(G)`, the adjoint
+representation, Lie algebras of closed subgroups, characteristic-zero smoothness), Layer 3A (orbits
+are open in their closures, 3A.2; every orbit closure contains a closed orbit, 3A.4), Layer 5
+(unipotent groups, the unipotent radical, fixed vectors of unipotent groups), Layer 6 (reductive
+groups, centre of multiplicative type, characteristic-zero equivalence of reductivity and linear
+reductivity), Layer 7 (parabolic subgroups, Levi decompositions, cocharacter parabolics `P_λ`,
+`L_λ`, the limit map `c_λ`).
 
 What ReductiveGroups must provide (gap:borel-tits): the Borel–Tits theorem, that for a closed
 unipotent subgroup `U` of a connected reductive group `G` over an algebraically closed field there is
@@ -468,27 +478,28 @@ components and Lie algebra `Lie(H)`; some conjugate of `H` is transpose-stable; 
 `K = H(ℝ) ∩ O(N)` is maximal compact, `H(ℝ) = K · (H(ℝ) ∩ exp Sym_N(ℝ))`, compact subgroups lie in
 conjugates of `K`). §ALS.0.1 (`IsCartanInvolution`, existence and conjugacy by real points).
 
+### From TauCetiRoadmap.RealSemisimpleLieGroups
+
+§2.5, **Real forms of complex reductive groups** (for a connected complex reductive Lie group
+`H = 𝐇(ℂ)`, `𝐇` a connected reductive `ℂ`-group, and an antiholomorphic involutive automorphism `τ`
+of `H`: `H^τ` is a closed real Lie subgroup of `H` with finitely many components; `τ` is the complex
+conjugation of a real form `𝐇₀` of `𝐇`, a connected reductive `ℝ`-group with `𝐇₀ ⊗_ℝ ℂ = 𝐇` and
+`𝐇₀(ℝ) = H^τ`; the Cartan involutions for `τ`, the holomorphic involutive automorphisms `σ` of `H`
+commuting with `τ` with `H^{στ}` compact, are the complexifications of the Cartan involutions of
+`𝐇₀` in the sense of ArithmeticLocallySymmetricSpaces §ALS.0.1, exist, and are conjugate under
+`(H^τ)°`; `K = H^τ ∩ H^σ` is a maximal compact subgroup of `H^τ` meeting every component, and
+`K × 𝔭 → H^τ` is a diffeomorphism). Used in §5.2. Assumed: `𝐇₀ ⊗_ℝ ℂ = 𝐇` is an isomorphism of
+`ℂ`-groups under which the complex conjugation of `𝐇₀(ℂ)` is `τ`, which is what §5.2 calls an
+`ℝ`-form with conjugation `τ`.
+
 ### From TauCetiRoadmap.RepresentationTheory/LieGroups
 
-Layer 7, **Real forms and global descent** (a connected complex Lie group `H(ℂ)`, `H` connected
-affine reductive over `ℂ`, has a compact real form; every compact real form of it is connected, and
-any two are conjugate), **Representations and holomorphic descent** (restriction is an equivalence
-between finite-dimensional holomorphic representations of the complexification and continuous
-representations of the compact form), and **Compact-real-form pairs and algebraic morphisms** (for
-a compact real form `ι : K → G(ℂ)` of a connected affine reductive `G` over `ℂ`, `G(ℂ)` is the
-universal complexification of `K`, and for compact real forms `K ⊆ G(ℂ)`, `K' ⊆ G'(ℂ)` the unique
-holomorphic extension `G(ℂ) → G'(ℂ)` of a continuous homomorphism `K → K'` is a regular algebraic
-homomorphism `G → G'`). Layer 9 (the Cartan decomposition
+Layer 9 (the Cartan decomposition
 `K × 𝔭 → G`, `(k, X) ↦ k exp X`, a diffeomorphism for a real reductive group with Cartan
 involution), and its paragraph **Restricted roots and KAK** (for a maximal abelian `𝔞 ⊆ 𝔭`,
 `Ad(K)𝔞 = 𝔭` and `G = K exp(𝔞₊) K` for the closed positive chamber `𝔞₊ ⊆ 𝔞`, `kakDecomposition`),
 both for the global matrix models of that layer: a closed transpose-stable subgroup of `GL_N(ℝ)` with
 finitely many components, with Cartan involution `g ↦ (gᵀ)⁻¹`, and its finite central covers.
-
-### From TauCetiRoadmap.RepresentationTheory/CompactGroups
-
-Layer 5 (Peter–Weyl: matrix coefficients of irreducible representations span a dense subalgebra of
-`C(K)` and are orthogonal).
 
 ### From TauCetiRoadmap.SymplecticGeometry/HamiltonianReduction
 
@@ -509,9 +520,9 @@ isomorphism, compares it with MordellLawrenceVenkatesh, defines the action of `M
 conjugacy classes of representations as `Ψ` followed by Layer 1's action, and compares it with
 MordellLawrenceVenkatesh's action on finite coverings. Layer 4 builds the
 representation scheme, its topologies and its surface-group instances. Layer 5 fixes real reductive
-data, proves the real-form bridge, realizes the conjugation action compatibly with a Cartan
-involution and proves the real
-Kempf–Ness theorem. Layer 6 proves the six-way characterization of reductive representations. Layer
+data, attaches one to every real form of a complex reductive group through RealSemisimpleLieGroups
+§2.5 and proves that the `ℝ`-form is unique, realizes the conjugation action compatibly with a
+Cartan involution and proves the real Kempf–Ness theorem. Layer 6 proves the six-way characterization of reductive representations. Layer
 7 defines the character variety, proves its topological properties and the complex comparison with
 the affine quotient, and makes `Out(Γ)` and `Mod_{g,n}` act. Layers 1–3 and Layers 4–6 are
 independent; Layer 7 uses both. Every `*Needs:*` line lists what a target's statement and route use,
@@ -616,7 +627,7 @@ For non-descent, `MulAut.conj γ · ρ = ρ` holds for all `γ` exactly when eac
 Mathlib's automorphism, quotient and conjugation API; TeichmullerGeometry §4.2. Layer 1 supplies
 Layers 3 and 7.
 
-## Layer 2: Punctured surfaces, marked points and the pure mapping class group
+## Layer 2: Isotopy classes, punctures and marked points, and the standard model
 
 ### 2.1 Isotopy classes of homeomorphisms of a space
 
@@ -1012,7 +1023,7 @@ TeichmullerGeometry §0.0h; TeichmullerGeometry §4.2; TeichmullerGeometry §5.4
 TeichmullerGeometry §5.4a; MordellLawrenceVenkatesh §5.1; MordellLawrenceVenkatesh §5.5;
 MordellLawrenceVenkatesh §5.6; MordellLawrenceVenkatesh §5.15; MordellLawrenceVenkatesh §5.17;
 MordellLawrenceVenkatesh §5.19; AlgebraicTopology Stage 4 items 2–3; ClassifyingSpaces Stage 3 item
-11; ClassifyingSpaces Stage 4 item 17; Mathlib `groupHomology`, `groupHomology.map`,
+11; ClassifyingSpaces Stage 3 item 15; ClassifyingSpaces Stage 4 item 17; Mathlib `groupHomology`, `groupHomology.map`,
 `FundamentalGroup.mapOfEq`.
 
 ### 3.5 The mapping class action on conjugacy classes of representations
@@ -1210,44 +1221,71 @@ The datum has the following API.
 *Needs:* ReductiveGroups Layer 2; ReductiveGroups Layer 6; ArithmeticLocallySymmetricSpaces
 §ALS.F.1; ReductiveGroupsPartII §RG2.0a.2.
 
-### 5.2 Real forms given by antiholomorphic involutions
+### 5.2 Real forms given by antiholomorphic involutive automorphisms
 
-Prove the real-form bridge. Let `H` be a connected reductive group over `ℂ` and `τ` an
-antiholomorphic involution of the complex Lie group `H(ℂ)`. There is a connected reductive `ℝ`-group
-`𝐆_τ` with an isomorphism `(𝐆_τ)_ℂ ≅ H` under which complex conjugation is `τ`, unique up to unique
-isomorphism; in particular `H(ℂ)^τ = 𝐆_τ(ℝ)`, possibly disconnected. Conversely the complex
-conjugation of every `ℝ`-structure on `H` is an antiholomorphic involution. A holomorphic involution
-`σ` commuting with `τ` with `στ` a compact real form is a Cartan involution for `τ` in the sense of
-BCGGO2024; it restricts to an algebraic Cartan involution of `𝐆_τ` in the sense of
-ArithmeticLocallySymmetricSpaces §ALS.0.1, with fixed group `𝐆_τ(ℝ)^σ` maximal compact
-(BCGGO2024 lines 466–481; Knapp2002, Ch. VI, §§1–2).
+Let `H` be a connected reductive group over `ℂ` and `τ` an antiholomorphic involutive automorphism
+of the complex Lie group `H(ℂ)`: a group automorphism that is antiholomorphic and satisfies `τ² = 1`.
+An `ℝ`-form of `H` is a pair `(𝐆₀, φ)` of an affine group scheme `𝐆₀` over `ℝ` and an isomorphism
+`φ : (𝐆₀)_ℂ ≅ H` of `ℂ`-groups; its conjugation is `φ ∘ c ∘ φ⁻¹` on `H(ℂ)`, where `c` is the complex
+conjugation of `𝐆₀(ℂ)`. RealSemisimpleLieGroups §2.5 supplies an `ℝ`-form `(𝐆_τ, φ_τ)` with
+conjugation `τ`, `𝐆_τ` connected reductive, so that `φ_τ` identifies `𝐆_τ(ℝ)` with `H(ℂ)^τ`,
+possibly disconnected. It also supplies, for a Cartan involution `σ` for `τ` (a holomorphic
+involutive automorphism of `H(ℂ)` commuting with `τ` with `H(ℂ)^{στ}` compact, BCGGO2024 lines
+475–481), that `σ` is the complexification of a Cartan involution of `𝐆_τ` in the sense of
+ArithmeticLocallySymmetricSpaces §ALS.0.1 and that `K = H(ℂ)^τ ∩ H(ℂ)^σ` is a maximal compact
+subgroup of `𝐆_τ(ℝ)`. So `(𝐆_τ, 𝐆_τ(ℝ))` and `(𝐆_τ, 𝐆_τ(ℝ)°)` are real reductive data (§5.1).
+Prove the two statements that make `τ ↦ (𝐆_τ, φ_τ)` a bijection (BCGGO2024 lines 466–481; Knapp2002,
+Ch. VI, §§1–2):
 
-*Proof sketch.* `H` is split (ReductiveGroups Layer 8), so `H ≅ (G₀)_ℂ` for a split model `G₀` over
-`ℤ` (ReductiveGroups Layer 9), whose conjugation `τ₀` is antiholomorphic. `α = τ ∘ τ₀` is a
-holomorphic group automorphism of `H(ℂ)`, and it is algebraic: for a compact real form `K` of `H(ℂ)`
-(LieGroups Layer 7, **Real forms and global descent**), `α(K)` is again a compact real form, since
-`dα` is a complex-linear Lie algebra automorphism; by LieGroups Layer 7, **Compact-real-form pairs
-and algebraic morphisms**, the holomorphic extension of `α|_K : K → α(K)` is a regular algebraic
-endomorphism of `H`, and it equals `α` because `H(ℂ)` is the universal complexification of `K`, so
-holomorphic homomorphisms out of `H(ℂ)` that agree on `K` are equal. The same argument for `α⁻¹`
-makes `α` an algebraic automorphism, and `τ = α ∘ τ₀` because `τ₀` is an involution. Then
-`f ↦ conj ∘ f ∘ τ` is an antilinear involution of the Hopf algebra `O(H)`, and Galois descent for
-`ℂ/ℝ` (the fixed vectors
-of an antilinear involution of a complex vector space form a real form of it) gives
-`O(𝐆_τ) = O(H)^τ`.
+- *Uniqueness.* Two `ℝ`-forms `(𝐆₁, φ₁)` and `(𝐆₂, φ₂)` of `H` with the same conjugation are
+  isomorphic by exactly one isomorphism `α : 𝐆₁ ≅ 𝐆₂` of `ℝ`-groups with `φ₂ ∘ α_ℂ = φ₁`. In
+  particular the identity is the only automorphism of an `ℝ`-form over the identity of `H`.
+- *Converse.* The conjugation of every `ℝ`-form of `H` is an antiholomorphic involutive
+  automorphism of `H(ℂ)`.
+
+Hence `τ ↦ (𝐆_τ, φ_τ)` is a bijection from the antiholomorphic involutive automorphisms of `H(ℂ)` to
+the isomorphism classes of `ℝ`-forms of `H`, isomorphisms being taken over the identity of `H`: an
+isomorphism `α` over the identity is defined over `ℝ`, so `α_ℂ` commutes with the conjugations and
+the two forms have the same conjugation, and every form is `(𝐆_τ, φ_τ)` for its own conjugation `τ`
+by the converse and uniqueness.
+
+*Proof sketch.* The pullback `φᵢ^*` identifies `O(𝐆ᵢ) ⊗_ℝ ℂ` with `O(H)`, and it carries `O(𝐆ᵢ) ⊗ 1`
+onto the fixed space `F = {f ∈ O(H) : f = f^τ}` of the antilinear involution
+`f ↦ f^τ = conj ∘ f ∘ τ`; functions on `H` are determined by their values at `ℂ`-points, `H` being reduced
+and of finite type over `ℂ`. A function defined over `ℝ` takes conjugate values at conjugate points,
+so `W = φᵢ^*(O(𝐆ᵢ) ⊗ 1)` lies in `F`. Conversely `O(H) = F ⊕ iF`, since `f` is the sum of
+`(f + f^τ)/2 ∈ F` and `i · (f − f^τ)/(2i)` with `(f − f^τ)/(2i) ∈ F`; for `f ∈ F` write
+`f = w₁ + i w₂` with `wⱼ ∈ W ⊆ F`, so that `f − w₁ = i w₂ ∈ F ∩ iF = 0` and `f ∈ W`. Hence
+`φ₁^*(O(𝐆₁) ⊗ 1) = F = φ₂^*(O(𝐆₂) ⊗ 1)`, and the isomorphism of complex Hopf algebras
+`φ₁^* ∘ (φ₂^*)⁻¹` restricts to an isomorphism of real Hopf algebras `O(𝐆₂) ≅ O(𝐆₁)`, which is `α`.
+It is the only one: `α_ℂ = φ₂⁻¹ ∘ φ₁` is forced, and `α` is determined by `α_ℂ` because
+`O(𝐆ᵢ) → O(𝐆ᵢ) ⊗_ℝ ℂ` is injective. For the converse, `c` is the map on points induced by the
+`ℝ`-algebra automorphism `conj` of `ℂ`, so it is a group automorphism of `𝐆₀(ℂ)` with `c² = 1`; in a
+closed embedding of `𝐆₀` into an affine space over `ℝ` it is coordinatewise complex conjugation,
+hence antiholomorphic; and `φ` is holomorphic, so `φ ∘ c ∘ φ⁻¹` has the same three properties.
 
 **Checks.**
 
-- `H = GL_n`, `τ(g) = ḡ`: `𝐆_τ = GL_n` over `ℝ` and `H(ℂ)^τ = GL_n(ℝ)`; `τ(g) = (ḡᵀ)⁻¹`: the compact
-  form `U(n)`.
-- `H = GL₂`, `τ(g) = J ḡ J⁻¹` with `J = [[0, −1],[1, 0]]`: the fixed points are the matrices
-  `[[a, −b̄],[b, ā]]`, the group `ℍ^×` of nonzero quaternions, a non-split real form.
-- Non-example: the holomorphic involution `g ↦ (gᵀ)⁻¹` of `GL_n(ℂ)` has fixed group `O_n(ℂ)`, a
-  complex subgroup, not a real form.
+- `H = GL_n`, `τ(g) = ḡ`: `𝐆_τ = GL_n` over `ℝ`, `H(ℂ)^τ = GL_n(ℝ)` with two components;
+  `σ(g) = (gᵀ)⁻¹` is a Cartan involution for `τ`, since `στ(g) = (ḡᵀ)⁻¹` has the compact fixed group
+  `U(n)`, and `K = GL_n(ℝ) ∩ U(n) = O(n)`. For `τ(g) = (ḡᵀ)⁻¹` the form is the compact `U(n)`, with
+  Cartan involution `σ = 1`.
+- `H = GL₂`, `τ(g) = J ḡ J⁻¹` with `J = [[0, −1],[1, 0]]`: `τ² = 1` because `J` is real with
+  `J² = −1`; the fixed points are the matrices `[[a, −b̄],[b, ā]]`, the group `ℍ^×` of nonzero
+  quaternions, a non-split real form. Conversely, through `ℍ ⊗_ℝ ℂ ≅ M₂(ℂ)` the conjugation of the
+  `ℝ`-form `ℍ^×` is the antilinear map fixing these matrices, and `J ḡ J⁻¹` is antilinear and fixes
+  them (`ḡ = [[ā, −b],[b̄, a]]` and `J ḡ J⁻¹ = [[a, −b̄],[b, ā]]`), so it is this `τ`.
+- Uniqueness holds only over the identity of `H`: for `H = GL₁` and `τ(z) = z̄`, the forms `(𝔾_m, id)`
+  and `(𝔾_m, z ↦ z⁻¹)` both have conjugation `τ`, the inversion commuting with `conj`, and the only
+  isomorphism between them over the identity of `H` is `α(z) = z⁻¹`; the `ℝ`-group `𝔾_m` alone has the
+  two automorphisms `z ↦ z^{±1}`, so isomorphisms not taken over `H` are not unique.
+- Non-examples. The holomorphic involutive automorphism `g ↦ (gᵀ)⁻¹` of `GL_n(ℂ)` has fixed group
+  `O_n(ℂ)`, a complex subgroup, not a real form. On `GL₁`, `z ↦ 2/z̄` is an antiholomorphic involution
+  of the manifold `ℂ^×` (`2/conj(2/z̄) = z`) but no automorphism, since it sends `1` to `2`, and its
+  fixed set `{|z|² = 2}` is no subgroup: the word "automorphism" in the hypothesis cannot be dropped.
 
-*Needs:* ReductiveGroups Layer 8; ReductiveGroups Layer 9; LieGroups Layer 7, **Real forms and
-global descent**; LieGroups Layer 7, **Compact-real-form pairs and algebraic morphisms**;
-ArithmeticLocallySymmetricSpaces §ALS.0.1.
+*Needs:* §5.1; RealSemisimpleLieGroups §2.5; ArithmeticLocallySymmetricSpaces §ALS.0.1;
+ReductiveGroups Layer 0.
 
 ### 5.3 Cartan-compatible realizations of the conjugation action
 
@@ -1276,8 +1314,9 @@ for the trace form.
 - Transpose-stability depends on the embedding: the circle `𝐆 = SO(2)` embedded by
   `r_θ ↦ u r_θ u⁻¹` with `u = [[1,1],[0,1]]` has image `{[[c + s, −2s],[s, c − s]]}` (`c = cos θ`,
   `s = sin θ`), and the transpose `[[1,1],[−2,−1]]` of its element `[[1,−2],[1,−1]]` (`θ = π/2`) is
-  not of this form. Here `K = G^ℝ ∩ O(2) = {±1}` (orthogonality of the columns forces
-  `s(2c + s) = 0` and `s(2s − c) = 0`, hence `s = 0`) and `𝔭 = 0` (the Lie algebra
+  not of this form. Here `K = G^ℝ ∩ O(2) = {±1}` (the squared lengths of the two columns are
+  `1 + s(2c + s)` and `1 + 2s(2s − c)`, so columns of length one force `s(2c + s) = 0` and
+  `s(2s − c) = 0`, hence `s = 0`, since `s ≠ 0` would give `s = −2c = −4s`) and `𝔭 = 0` (the Lie algebra
   `ℝ·[[1,−2],[1,−1]]` contains no nonzero symmetric matrix), so `K exp(𝔭) = {±1} ≠ G^ℝ`; the compact
   group `G^ℝ` does not even preserve the norm of `ℝ²`, since `[[1,−2],[1,−1]] e₁ = (1, 1)` has squared
   norm `2`. Conjugating `SL₂(ℝ)` by the same `u` gives no non-example: `u ∈ SL₂(ℝ)`, so the image is
@@ -1338,8 +1377,8 @@ non-closed orbit, which is (ii), and the same separation gives the uniqueness in
 
 ### Dependencies
 
-ReductiveGroups Layers 2, 6, 8, 9; ReductiveGroupsPartII §RG2.0a.2; ArithmeticLocallySymmetricSpaces
-§§ALS.F.1, ALS.0.1; LieGroups Layers 7 and 9. Layer 5 supplies Layers 6 and 7.
+ReductiveGroups Layers 0, 2, 6; ReductiveGroupsPartII §RG2.0a.2; ArithmeticLocallySymmetricSpaces
+§§ALS.F.1, ALS.0.1; RealSemisimpleLieGroups §2.5; LieGroups Layer 9. Layer 5 supplies Layers 6 and 7.
 
 ## Layer 6: Reductive representations
 
@@ -1403,8 +1442,11 @@ semisimple exactly when `W` is, by the two directions above with `k = ℝ` perfe
 Prove that for a connected reductive group `G` over an algebraically closed field of characteristic
 zero and a closed subgroup `Z`, the adjoint representation of `Z` on `𝔤` is semisimple if and only if
 `Z⁰` is reductive; applied to the Zariski closure `Z` of `ρ(Γ)` in `G`, `Ad ∘ ρ` is semisimple on `𝔤`
-if and only if `Z⁰` is reductive (BateMartinRohrle2005 line 263; Sikora2012 line 228,
-Proposition 8, completely reducible subgroups as those with linearly reductive closure).
+if and only if `Z⁰` is reductive (BateMartinRohrle2005 Corollary 3.42, line 814, for the adjoint
+criterion, semisimplicity of `Lie G` as a `Z`-module against `G`-complete reducibility, stated there
+for `p > 2h − 2` and holding in characteristic zero by lines 183–187; line 263 for the
+characteristic-zero equivalence of `G`-complete reducibility with reductivity of `Z⁰`; Sikora2012
+line 228, Proposition 8, completely reducible subgroups as those with linearly reductive closure).
 
 *Proof sketch.* A subspace is `ρ(Γ)`-stable exactly when it is `Z`-stable, its stabilizer being
 closed. If `Z⁰` is reductive then `Z` is linearly reductive in characteristic zero (ReductiveGroups
@@ -1686,7 +1728,7 @@ since every point of a fibre has the closed orbit in its closure, so it factors 
   `(F + F ∘ swap)/2` of any lift `F` of an invariant of `Y` is an invariant lift.
 
 *Needs:* §4.1; §4.2; §5.3; §5.4; §6.7; §7.1; LanglandsParameterStacks §2.2;
-ArithmeticGaloisRepresentations §1.11; ReductiveGroups Layer 3A; ReductiveGroups Layer 6; Tau Ceti
+ArithmeticGaloisRepresentations §1.11; ReductiveGroups Layer 1; ReductiveGroups Layer 3A; ReductiveGroups Layer 6; Tau Ceti
 `TauCeti.Coalgebra.IsLinearlyReductive`,
 `TauCeti.Comodule.Hom.fixedMap_surjective_of_isLinearlyReductive`; ComplexComparisonPartII §C-1.1.
 
@@ -1766,7 +1808,7 @@ value (Sikora2012 lines 844–845, Example 48).
 ### Dependencies
 
 Layers 1–6; LanglandsParameterStacks §2.2; ArithmeticGaloisRepresentations §1.11; ReductiveGroups
-Layer 6; ComplexComparisonPartII
+Layers 1, 3A, 6; ComplexComparisonPartII
 §C-1.1; TeichmullerGeometry §§4.2, 4.5, 6.1; Tau Ceti's linearly reductive comodules; Mathlib's proper
 actions.
 
