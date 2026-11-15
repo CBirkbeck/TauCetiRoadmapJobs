@@ -1,0 +1,24 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-WeightsInEtaleCohomology~3",
+  "head": "9e753f81c399753acf5e3fcbfe057e8dd6b5e35a",
+  "pr": 1001,
+  "folder": "WeightsInEtaleCohomology",
+  "date": "2026-11-15",
+  "findings": 1,
+  "blocking": 0,
+  "notes": "incremental re-review of 10 changed lines since 501bdc1. Both previous findings (R01 nonexistent Lean-style names, R02 incomplete layer Needs lines) are repaired with no new problem; the five supplier sections added to the Needs lines resolve on main or at open heads earlier in the merge order. Gate rerun: every counter 0, OK. Dependency check: 247 roadmaps, 2254 edges, 0 problems. Suggested.lean elaborates with sorry as the only warning (file unchanged). No seeded sample target lies in a changed passage; no source opened. Title and description read against the head: one P3 finding, a summary-block sentence that attributes the Mathlib Representation/charpoly/IsArithFrobAt connection to the later layers when the README has it in Conventions and Layer 1 only; replacement sentence given. The folder's files have no finding.",
+  "text": "3d25fd8da73a14eb",
+  "carried": {
+   "from": "9e753f81c399753acf5e3fcbfe057e8dd6b5e35a",
+   "head": "210329060a8989fff87684068332a3aadeed0221",
+   "findings": 1,
+   "lines": 2,
+   "folders": [
+    "WeightsInEtaleCohomology"
+   ],
+   "outside": true
+  }
+ }
+}
