@@ -1,0 +1,21 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-AlgebraicModuliForArithmeticGeometryPartII~6",
+  "head": "3460198e6ccceb657c663aaa99e6552b06a8d241",
+  "pr": 1754,
+  "folder": "AlgebraicModuliForArithmeticGeometryPartII",
+  "date": "2026-11-15",
+  "findings": 2,
+  "blocking": 0,
+  "notes": "incremental re-review of 2 changed lines since 36adfc3. The review of 36adfc3 raised no findings. Changed text: the README §3.6 proof route was reworded. It is mathematically unchanged, its SchemeAndStackFoundations §0.11 and §0.23 citations resolve on main, and its locator was checked (SCH23 line 289 on p. 7, remark at line 310). Compared with SCH23 lines 289-309, the longest shared run is the formula Y' = Y⊗k' and f' = f⊗k'. The adversarial rows for contraction_descends_purelyInseparable are K = k, P^1 over F_p(t) with K = k(t^{1/p}), Spec K over k, the C/R negative control, and the route on P^1 x P^1 and on the empty scheme. The pull request's title and description were checked against the head. R01 (P3): the summary block says the theory extends AbundanceStatement, which the README neither cites nor extends and which is on the never-cite list. R02 (P3): the AI-assistance line names only codex, although 7 later commits are co-authored by Claude Opus 5.5 and Claude Fable 5.1, which CONTRIBUTING.md requires to be named. The gate re-run is OK on every counter (worker: build=0). Depcheck: 244 roadmaps, 2210 edges, 0 problems. Elaboration: 16 sorry warnings only, and Suggested.lean is unchanged since 36adfc3. Open suppliers: AlgebraicModuliForArithmeticGeometry and ComplexComparisonPartII; EtaleCohomologyFoundations and ResolutionOfSingularitiesCharacteristicZero are now on main.",
+  "text": "dff216acfa408dfb",
+  "carried": {
+   "from": "3460198e6ccceb657c663aaa99e6552b06a8d241",
+   "head": "3460198e6ccceb657c663aaa99e6552b06a8d241",
+   "findings": 2,
+   "lines": 0,
+   "folders": []
+  }
+ }
+}
