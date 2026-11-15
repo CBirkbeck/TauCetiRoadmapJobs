@@ -2022,10 +2022,10 @@
      "id": "8.4.1",
      "kind": "theorem",
      "name": "CompressibleEuler.boundary_null_of_maximal",
-     "statement": "If moreover U extends to a classical solution Ũ on N (periodically on Λ-translates) and no development (D′,U′) ≥ (D,U) with D′ ⊆ D ∪ ⋃_{λ∈Λ}(N + λ) contains q (in particular when (D,U) is maximal, since q ∉ D), then ∂_tφ(q) + ṽ(q)·∇φ(q) = c̃(q)|∇φ(q)| and ∇φ(q) ≠ 0: ∂D is null for the acoustical form of Ũ at q. Route: if strict, with a = ∂_tφ(q) + ṽ(q)·∇φ(q) > c̃(q)|∇φ(q)|, choose M with c̃ + |ṽ − ṽ(q)| < M near q and M|∇φ(q)| < a (no upper bound when ∇φ(q) = 0); the lens {φ ≥ 0} ∩ {ψ > 0} ∩ N₀, ψ the periodised moving cone (ε, x_q, ṽ(q), M), lies in a ball of radius O(ε) about q (its linearisation is {|y| − (M/a)b·y < ε}, bounded iff M|b| < a), and adding it with its Λ-translates to D gives a development above (D,U), inside D ∪ ⋃_{λ∈Λ}(N + λ), containing q, against the hypothesis. Consequence: a C¹ hypersurface H ⊆ ∂D ∩ {t > t₀}, each point q of which has N, φ as in 8.4 with D ∩ N = {φ < 0} and a classical extension of U to N, is null at each point where the hypothesis above holds for such an N; if it holds at every point of H (in particular if (D,U) is maximal), H is null. Differs from LorentzianGeometry §12.7 (∂_U D⁺_U(S) ∩ {t > t₀} = H⁺_U(S) ∩ {t > t₀}, null where C¹, for a locally Lipschitz metric on an open U of a manifold without boundary and S closed in a slice): the form exists only on D and N, S is open, D is relatively open in the half-space H_{t₀}, and nullity comes, through the lens of 6.1, from the absence of a development above (D,U) containing q and adding only points near q and its Λ-translates (maximality in particular).",
+     "statement": "If moreover U extends to a classical solution Ũ on N (periodically on Λ-translates) and no development (D′,U′) ≥ (D,U) with D′ ⊆ D ∪ ⋃_{λ∈Λ}(N + λ) contains q (in particular when (D,U) is maximal, since q ∉ D), then ∂_tφ(q) + ṽ(q)·∇φ(q) = c̃(q)|∇φ(q)| and ∇φ(q) ≠ 0: ∂D is null for the acoustical form of Ũ at q. Route: if strict, with a = ∂_tφ(q) + ṽ(q)·∇φ(q) > c̃(q)|∇φ(q)|, choose M with c̃ + |ṽ − ṽ(q)| < M near q and M|∇φ(q)| < a (no upper bound when ∇φ(q) = 0); the lens {φ ≥ 0} ∩ {ψ > 0} ∩ N₀, ψ the periodised moving cone (ε, x_q, ṽ(q), M), lies in a ball of radius O(ε) about q (its linearisation is {|y| − (M/a)b·y < ε}, bounded iff M|b| < a), and adding it with its Λ-translates to D gives a development above (D,U), inside D ∪ ⋃_{λ∈Λ}(N + λ), containing q, against the hypothesis. Consequence: a C¹ hypersurface H ⊆ ∂D ∩ {t > t₀}, each point q of which has N, φ as in 8.4 with D ∩ N = {φ < 0} and a classical extension of U to N and, Λ-periodically, to its Λ-translates (an extension to N alone gives one on a smaller ball about q by Λ-translation, as in 8.4.2), is null at each point where the hypothesis above holds for such an N; if it holds at every point of H (in particular if (D,U) is maximal), H is null. Differs from LorentzianGeometry §12.7 (∂_U D⁺_U(S) ∩ {t > t₀} = H⁺_U(S) ∩ {t > t₀}, null where C¹, for a locally Lipschitz metric on an open U of a manifold without boundary and S closed in a slice): the form exists only on D and N, S is open, D is relatively open in the half-space H_{t₀}, and nullity comes, through the lens of 6.1, from the absence of a development above (D,U) containing q and adding only points near q and its Λ-translates (maximality in particular).",
      "hypotheses": [
       "no development (D′,U′) ≥ (D,U) with D′ ⊆ D ∪ ⋃_{λ∈Λ}(N + λ) contains q (in particular (D,U) maximal)",
-      "classical extension Ũ on N",
+      "classical extension Ũ on N, Λ-periodic on its Λ-translates",
       "hypotheses of 8.4"
      ],
      "locator": {
@@ -2070,7 +2070,7 @@
      "id": "8.4.2",
      "kind": "theorem",
      "name": "CompressibleEuler.slabDevelopment_boundary_null",
-     "statement": "For the development (D,U) = (D⁺_O({t₀} × S), U) of 8.3, O = [t₀, t₀+T) × E, a point q ∈ ∂D with t₀ < t(q) < t₀ + T, an open N ∋ q with N ⊆ (t₀, t₀+T) × E and φ ∈ C¹(N) with dφ(q) ≠ 0 and D ∩ N = {φ < 0}: ∂_tφ(q) + v(q)·∇φ(q) = c(q)|∇φ(q)| for the acoustical field (c,v) of U, so the boundary is null at q. Route: 8.4.1 with Ũ = U on ⋃_{λ∈Λ}(N + λ) ⊆ O; a development above (D,U) inside D ∪ ⋃_{λ∈Λ}(N + λ) ⊆ O is contained in O, hence below (D,U), the largest development in O (8.3), so it does not contain q ∉ D. On the top t = t₀ + T only 8.4 applies.",
+     "statement": "For the development (D,U) = (D⁺_O({t₀} × S), U) of 8.3, O = [t₀, t₀+T) × E, a point q ∈ ∂D with t₀ < t(q) < t₀ + T, an open N ∋ q with N ⊆ (t₀, t₀+T) × E and φ ∈ C¹(N) with dφ(q) ≠ 0 and D ∩ N = {φ < 0}: ∂_tφ(q) + v(q)·∇φ(q) = c(q)|∇φ(q)| for the acoustical field (c,v) of U, so the boundary is null at q. Route: 8.4.1 on an open ball N₁ ⊆ N about q of diameter less than the least norm of a nonzero period (any open ball about q in N when Λ = 0), so that the translates N₁ + λ are pairwise disjoint, with Ũ(t, x + λ) = U(t, x) for (t, x) ∈ N₁, λ ∈ Λ: a Λ-periodic classical solution on ⋃_{λ∈Λ}(N₁ + λ) (Λ-translates of solutions are solutions, 1.2.2, 1.3) extending U because D is Λ-invariant and U is Λ-periodic on D, with Ũ(q) = U(q); it is U itself when U₀ is Λ-periodic, but U need not be Λ-periodic off D. A development above (D,U) inside D ∪ ⋃_{λ∈Λ}(N₁ + λ) ⊆ O is contained in O, hence below (D,U), the largest development in O (8.3), so it does not contain q ∉ D. On the top t = t₀ + T only 8.4 applies.",
      "hypotheses": [
       "hypotheses of 8.3",
       "t₀ < t(q) < t₀ + T",
@@ -2083,7 +2083,9 @@
      },
      "prerequisites": [
       "target:8.4.1",
-      "target:8.3"
+      "target:8.3",
+      "target:1.2.2",
+      "target:1.3"
      ],
      "tests": [
       {
@@ -2100,6 +2102,11 @@
        "name": "half_space_general",
        "kind": "computation",
        "statement": "constant data (ρ₀,v₀) on {x¹ > 0}: D = {x¹ > (v₀¹ + c₀)(t − t₀)} ∩ O, φ = (v₀¹ + c₀)(t − t₀) − x¹ gives ∂_tφ + v₀·∇φ = v₀¹ + c₀ − v₀¹ = c₀ = c₀|∇φ|"
+      },
+      {
+       "name": "slab_solution_not_periodic",
+       "kind": "non-example",
+       "statement": "n = 1, Λ = ℤ, t₀ = 0, c₀ = 1 at ρ₀, v₀ = 0, data (ρ₀, 0) on ⋃_k (k, k + 1/2) extended by a bump of size δ in the Riemann invariant v − ∫^ρ c/r dr, nonzero on (0.52, 0.6) only (a 7.2 datum for Λ = 0): D = ⋃_k {k + t < x < k + 1/2 − t} with U constant; at q = (0.2, 0.3), N = B(q, 0.05), D ∩ N = {φ < 0} for φ = x − 1/2 + t; U ≠ (ρ₀, 0) at (0.21, 0.33) ∈ N (backward speed −1 + O(δ) reaches t = 0 at 0.54 + O(δ)) but U = (ρ₀, 0) on N + 1 ⊆ {x ≥ 0.6 + 2t}, so U on N ∪ (N + 1) is not Λ-periodic; the translates of U|_N are, and give ∂_tφ = 1 = c|∂_xφ|"
       }
      ]
     }

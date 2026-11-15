@@ -1953,18 +1953,27 @@ about the truncation.
 - *Regular boundary hypersurfaces.* Let `H ⊆ ∂D ∩ {t > t₀}` be a `C¹` hypersurface such that
   each `q ∈ H` has an open neighbourhood `N` with `D ∩ N = {φ < 0}` for a `C¹` function `φ` on
   `N` with `dφ(q) ≠ 0` (so that `D` lies on one side of `H` near `q`), and a classical extension
-  of `U` to `N` and its Λ-translates. If `(D, U)` satisfies the hypothesis of (b) at each point of
+  of `U` to `N` and, Λ-periodically, to its Λ-translates, as (b) requires (an extension to `N`
+  alone gives one on a smaller ball about `q`, by the translation in the route of the statement on
+  developments inside a slab below). If `(D, U)` satisfies the hypothesis of (b) at each point of
   `H` for such an `N` (in particular, if `(D, U)` is maximal), then `H` is null for the acoustical
   form of the extension at each of its points; the value of the extension at `q` is the limit of
   `U` from `D`, so this form does not depend on the extension chosen.
 - *Developments inside a slab.* Let `(D, U) = (D⁺_O({t₀} × S), U)` be the development of §8.3,
   with `O = [t₀, t₀ + T) × E`, and let `q ∈ ∂D` with `t₀ < t(q) < t₀ + T`, an open `N ∋ q` with
   `N ⊆ (t₀, t₀ + T) × E` and `φ` be as above. Then `∂_tφ(q) + v(q)·∇φ(q) = c(q)|∇φ(q)|` for the
-  acoustical field `(c, v)` of `U`: the boundary is null at `q`. Route: (b) with `Ũ = U` on
-  `⋃_{λ∈Λ} (N + λ) ⊆ O`; a development above `(D, U)` contained in `D ∪ ⋃_{λ∈Λ} (N + λ) ⊆ O` is a
-  development contained in `O`, hence below `(D, U)`, the largest one (§8.3), so it does not
-  contain `q ∉ D`. On the top `{t = t₀ + T}` only (a) applies. For data on a half-space
-  `{x¹ > 0}` this is the configuration of LuoYu2023b lines 417–419.
+  acoustical field `(c, v)` of `U`: the boundary is null at `q`. Route: (b) on an open ball
+  `N₁ ⊆ N` about `q` of diameter less than the least norm of a nonzero period (any open ball about
+  `q` inside `N` when `Λ = 0`), so that the translates `N₁ + λ` are pairwise disjoint, with
+  `Ũ(t, x + λ) = U(t, x)` for `(t, x) ∈ N₁` and `λ ∈ Λ`. This `Ũ` is a Λ-periodic classical
+  solution on `⋃_{λ∈Λ} (N₁ + λ)` (Λ-translates of solutions are solutions, §1.2, §1.3), it extends
+  `U` because `D` is Λ-invariant and `U` is Λ-periodic on `D`, and `Ũ(q) = U(q)`. It is `U` itself
+  when `U₀` is Λ-periodic, but `U` need not be Λ-periodic off `D` (Check), so `U` on the
+  translates of `N` is in general not an extension of the kind (b) requires. A development above
+  `(D, U)` contained in `D ∪ ⋃_{λ∈Λ} (N₁ + λ) ⊆ O` is a development contained in `O`, hence below
+  `(D, U)`, the largest one (§8.3), so it does not contain `q ∉ D`. On the top `{t = t₀ + T}`
+  only (a) applies. For data on a half-space `{x¹ > 0}` this is the configuration of LuoYu2023b
+  lines 417–419.
 
 **Checks.**
 
@@ -1993,7 +2002,22 @@ about the truncation.
   `(0, 1) × ℝ`), and the hypothesis of (b) fails, since for small `r` (the cone inside `N`) the
   union of `D` with
   `{t ≥ 1, |x − 5| < r − 2(t − 1)}` is a development above `D` containing `(1, 5)`. So the
-  hypothesis of (b) cannot be weakened to "`U` extends classically to `N`".
+  hypothesis of (b) cannot be weakened to "`U` extends classically to `N`" by dropping the
+  condition on developments.
+- The slab solution need not be Λ-periodic off `D`: `n = 1`, `Λ = ℤ`, `t₀ = 0`, an equation of
+  state with `c₀ = 1` at `ρ₀`, and the data `(ρ₀, 0)` on `S = ⋃_{k∈ℤ} (k, k + 1/2)`, extended to
+  `U₀` equal to `(ρ₀, 0)` off `(0.52, 0.6)` and changing there only the Riemann invariant
+  `v − ∫^ρ c(r)/r dr`, by a bump of size `δ` that is nonzero on all of `(0.52, 0.6)` (a §7.2 datum
+  for the period group `0`, whose solution exists beyond `t = 1/4` for `δ` small). That invariant
+  is constant along curves of speed `v − c = −1 + O(δ)`. `U` is constant on `D`, the union of the
+  triangles `{k + t < x < k + 1/2 − t}` (§6.2). Take `q = (0.2, 0.3)` on the edge `x = 1/2 − t` and `N` the
+  ball of radius `0.05` about `q`; the apex `(1/4, 1/4)` and the edge `x = t` are at distance
+  `0.0707 > 0.05`, so `D ∩ N = {φ < 0}` with `φ = x − 1/2 + t`. At `(0.21, 0.33) ∈ N` the backward
+  curve of speed `v − c` reaches `t = 0` at `0.54 + O(δ)`, so `U ≠ (ρ₀, 0)` there, while `N + 1`
+  (`x > 1.25`, `t < 1/4`) lies in `{x ≥ 0.6 + 2t}`, where `U = (ρ₀, 0)` (§6.2, speeds below `2`).
+  So `U` on `N ∪ (N + 1)` is not Λ-periodic and is not an extension of the kind (b) requires; the
+  translates of `U|_N` (diameter `0.1 < 1`) are, and (b) gives at `q`, for the limit `c = 1`,
+  `v = 0` of `U` from `D`, `∂_tφ + v∂_xφ = 1 = c|∂_xφ|`: null.
 - The lens of (b) needs the upper bound on `M`: `n = 1`, `c̃ = 1`, `ṽ = 0`, `q = 0` and the
   strictly spacelike `φ = t − 0.9x` (`a = 1 > 0.9 = c̃|b|`). For `M = 5`, `M|b| = 4.5 > 1`, and
   the point `(t, x) = (−100, −400)` has `φ = 260 ≥ 0` and `ψ = ε − 400 + 500 > 0`: the set
@@ -2002,8 +2026,9 @@ about the truncation.
   `−ε/0.055 < x < ε/1.945`, so `|x| < 18.2ε` and `|t| < 16.4ε`.
 
 *Needs:* §3.1 (covector classification), §3.2 (local existence of causal segments), §3.3,
-LorentzianGeometry §12.6 (concatenation), §6.1 (moving cones), §8.1, §8.2; §8.3 (the largest
-development in a slab) for the statement on developments inside a slab only.
+LorentzianGeometry §12.6 (concatenation), §6.1 (moving cones), §8.1, §8.2; §1.2 and §1.3
+(Λ-translates of solutions) for the translated extensions; §8.3 (the largest development in a
+slab) for the statement on developments inside a slab only.
 
 ### Examples
 
