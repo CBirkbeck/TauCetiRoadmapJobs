@@ -1,0 +1,34 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "CrystallineCohomology"
+
+[[source]]
+id = "Ekedahl"
+authors = ["Torsten Ekedahl"]
+title = "On the multiplicative properties of the de Rham–Witt complex I"
+year = 1984
+locator_scheme = "section"
+locator = "I.5, p. 198; II, Lemma 2.1, p. 199"
+url = "https://archive.ymsc.tsinghua.edu.cn/pacm_download/116/7414-11512_2006_Article_BF02384380.pdf"
+fetched_from = "https://archive.ymsc.tsinghua.edu.cn/pacm_download/116/7414-11512_2006_Article_BF02384380.pdf"
+fetched_at = "2026-11-15T02:35:55Z"
+sha256 = "f8d748a7ccef663960ff431a0d632d13122f515938fb68a1b19703002c06dbe5"
+licence_class = "institutional"
+status = "certified"
+accessed = "2026-11-15"
+cited_for = ["CR.3:duality.1"]
+
+[[source]]
+id = "Kato"
+authors = ["Kazuya Kato"]
+title = "Logarithmic structures of Fontaine–Illusie"
+year = 1989
+locator_scheme = "theorem"
+locator = "Theorem 6.2 and Theorem 6.4, pp. 218–219"
+url = "https://math.uchicago.edu/~drinfeld/p-adic_periods/Kato_log-structures.pdf"
+fetched_from = "https://math.uchicago.edu/~drinfeld/p-adic_periods/Kato_log-structures.pdf"
+fetched_at = "2026-11-15T02:38:02Z"
+sha256 = "e68947e38accef5a9f43a5eba47ee4c8ae9cbc660cd0fb1ee8fcbcd72e3ba595"
+licence_class = "institutional"
+status = "certified"
+accessed = "2026-11-15"
+cited_for = ["CR.5.3–CR.5.4"]
