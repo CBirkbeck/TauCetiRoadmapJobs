@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-RationalHomotopyModels~6",
+  "head": "2b7b442c96d5a85a000c75a36fd4f01d147e86cc",
+  "pr": 2298,
+  "folder": "RationalHomotopyModels",
+  "date": "2026-11-15",
+  "findings": 0,
+  "blocking": 0,
+  "notes": "incremental re-review of 0 changed lines since 2b7b442. The previous review raised no finding. The pull request's title and description were read against this head: layer summaries, 13 headlines, non-statable items, ten suppliers with their sections (main and open heads resolved, EllAdicHomotopyTypesAndWeights's five contracts) and source locators; no contradiction and no unstated change. 12 source locators were checked against Sullivan1977, Morgan1978 and Hess2007. Gate: the worker's gate passes every check including the build; the rerun reports only the exempt NOT IN ORDER, and the candidate-order depcheck has 0 problems. lake env lean gives 13 sorry warnings only; #check @ of all 20 declarations elaborates. 8 adversarial rows (3.3, 5.2, 5.3, 6.4, 7.2, 7.3) carry computed values. Overlap check: no other owner of the Sullivan or A_PL objects.",
+  "text": "4e3c5914aa3104ea"
+ }
+}
