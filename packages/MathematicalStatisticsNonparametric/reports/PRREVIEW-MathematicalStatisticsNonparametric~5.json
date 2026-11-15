@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-MathematicalStatisticsNonparametric~5",
+  "head": "e7f40310c32b2c093a3de479bedc8a09d1d3b05a",
+  "pr": 2368,
+  "folder": "MathematicalStatisticsNonparametric",
+  "date": "2026-11-15",
+  "findings": 4,
+  "blocking": 1,
+  "notes": "incremental re-review of 24 changed lines since af2f0d7: the change joins seven orphaned punctuation marks in Checks and is correct (the seven Checks recomputed); none of the previous findings R01-R04 is repaired, all four carried (R01 P2 attribution of the L1 approximate identity to a ContDiffBump-only pinned lemma; R02 P3 uncited SSP-C16; R03 P3 name collision with MathematicalStatisticsAsymptotic 8.2; R04 P3 two padding declarations, probe re-run). Gate passes at this head, depcheck 0 problems, elaboration exit 0 with 204 sorry warnings only; MathematicalStatisticsHighDimensional's open head read for ownership, nothing doubly owned; pull request text agrees with the head.",
+  "text": "8c41f13b05145d96"
+ }
+}
