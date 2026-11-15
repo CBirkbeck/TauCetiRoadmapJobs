@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-RibbonKnots~7",
+  "head": "1b8c671d8cb1a0785d2fdabc0e95caf7040db907",
+  "pr": 2339,
+  "folder": "RibbonKnots",
+  "date": "2026-11-15",
+  "findings": 2,
+  "blocking": 0,
+  "notes": "incremental re-review of 18 changed lines since a688830: previous R01 and R02 repaired, R03 (description) partly repaired and carried as R02; new R01 (P3): the unknot/nontrivial split of 1.4 uses GeometricTopology 8.1's knot-group theorem (missing from Scope and the supplier contract) and 8.5.2's Haken hypotheses for nontrivial knot exteriors (not cited). Checked: sampled 0.1 (twisted-double Check, Alexander polynomials of D+(U,t)) and 1.4 (both branches, Agol2022 Thm 1.1 and proof lines 36, 97-106); GeometricTopology 8.1, 8.3.1, 8.5.2 on main and its open revision; Tau Ceti singleton_iff at the pin. Gate: worker's run all 0 with the build; depcheck with the candidate order 0 problems; elaboration 7 sorry warnings, no error; Suggested.lean unchanged since a688830.",
+  "text": "b74f0ddd7d0f8f7e"
+ }
+}
