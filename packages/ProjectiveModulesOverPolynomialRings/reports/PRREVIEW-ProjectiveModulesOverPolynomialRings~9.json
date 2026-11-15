@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-ProjectiveModulesOverPolynomialRings~9",
+  "head": "f5960d59979fc0cc6420b0adb0a87e57cd397fbe",
+  "pr": 2295,
+  "folder": "ProjectiveModulesOverPolynomialRings",
+  "date": "2026-11-15",
+  "findings": 1,
+  "blocking": 0,
+  "notes": "incremental re-review of 13 changed lines since a48935d. Checked: the previous R01-R03 (R02 and R03 repaired; R01 repaired in the README, but the description bullet its repair named is unchanged, now R01 P3); the new comaximality counterexample k[x,y]_(x,y)/(xy), f = g = x + y, computed and tested against the Lean signature without hfg; XV.4.4 bis (LombardiQuitte2015 lines 41087-41123, p. 866) at n = 2 and XV.2.2 item 4 (p. 852), from the seeded sample (3.6); the 4.4 universe sentence checked against the signatures of 3.6, 4.3 and IsExtendedFrom; gate: every check passes (depcheck with the candidate order: 0 problems); elaboration: 18 sorry warnings only; nothing outside the folder; the description read against the head (one stale adversarial-pass bullet).",
+  "text": "2e719f98872a5c94"
+ }
+}
