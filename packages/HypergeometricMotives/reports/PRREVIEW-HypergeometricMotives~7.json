@@ -1,0 +1,22 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-HypergeometricMotives~7",
+  "head": "ece7e6524afe554d38124c12bc9eccf0ff63a373",
+  "pr": 1716,
+  "folder": "HypergeometricMotives",
+  "date": "2026-11-15",
+  "findings": 2,
+  "blocking": 0,
+  "notes": "incremental re-review of 0 changed lines since ece7e65. Folder unchanged; this round read the pull request's title and description against the head. Two P3 findings, both in the description: it says the motive is cited and not constructed (README 5.0 constructs it) and counts 61 milestones (62 numbered sections since 5.0 was added). Gate rerun: every counter 0, OK; depcheck 0 problems; Suggested.lean elaborates with 46 sorry warnings only; no change outside the folder. Seeded sample: no sampled target falls in a changed passage (none changed); adversarial rows computed for the section count, the 5.0 twist on the Legendre datum and the Legendre point count at q = 5.",
+  "text": "0d27674e05f4ea27",
+  "carried": {
+   "from": "ece7e6524afe554d38124c12bc9eccf0ff63a373",
+   "head": "68b0f5fd1dc9583df7ff4290495c52e8794b88be",
+   "findings": 2,
+   "lines": 0,
+   "folders": [],
+   "outside": true
+  }
+ }
+}
