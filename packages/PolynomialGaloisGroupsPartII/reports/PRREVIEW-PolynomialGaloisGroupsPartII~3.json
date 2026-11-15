@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-PolynomialGaloisGroupsPartII~3",
+  "head": "285e665b33ae9431bd2df64bb2016cffaf1637ea",
+  "pr": 1419,
+  "folder": "PolynomialGaloisGroupsPartII",
+  "date": "2026-11-15",
+  "findings": 0,
+  "blocking": 0,
+  "notes": "incremental re-review of 0 changed lines since 285e665: this round read the pull request's title and description against the head (README and Suggested.lean); no sentence is contradicted and no change is left unstated (a new folder of three files, nothing removed, nothing outside the folder). Six adversarial rows computed for the statements the description cites (ramified_merging on X^3-2 at p=3,5; kfold_iff_multiplyPretransitive on S3 and C3 cubics; generalized_luczak_pyber exponents and quantifier order; galois_merging_certificate on X^4+1 at p=2,3; the Mertens coefficient margin; the Jordan/order-bound remark). Gate at this head OK; depcheck rerun 245 roadmaps, 0 problems, no UPWARD/CYCLE; lake env lean exit 0 with 13 sorry warnings only. Citations resolved again: AnalyticNumberTheoryPartI 0.26 (now on main), ErdosProgressionPowers 0.9 (open head), Completed/PolynomialGaloisGroups Layer 1; the CyclePower lead is a false positive (declaration at the Tau Ceti pin). Seeded sample: no target falls in a changed passage. Previous R01 (P3: the board's plan.json still declares gap mertens-prime-product, which AnalyticNumberTheoryPartI 0.26 states) is not repaired and is not carried as a finding of this folder, because the file is outside the pull request and the README already cites 0.26 as supplied; it is recorded for the human reviewers.",
+  "text": "3e76c8725bd6ad61"
+ }
+}
