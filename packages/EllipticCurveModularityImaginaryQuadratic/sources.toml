@@ -1,0 +1,37 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "EllipticCurveModularityImaginaryQuadratic"
+
+[[source]]
+id = "serre1972"
+authors = "J.-P. Serre"
+title = "Propriétés galoisiennes des points d'ordre fini des courbes elliptiques"
+year = 1972
+doi = "10.1007/BF01405086"
+locator_scheme = "theorem"
+locator = "§4.2 Théorème 2, p.294"
+url = "https://gdz.sub.uni-goettingen.de/download/pdf/PPN356556735_0015/LOG_0024.pdf"
+fetched_from = "https://gdz.sub.uni-goettingen.de/download/pdf/PPN356556735_0015/LOG_0024.pdf"
+fetched_at = "2026-11-15T21:21:47Z"
+sha256 = "cfa08081727dfdeb8aa7ecc5f11592e2cb31bb1cf207e4b00a75f1e9409048b1"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-15"
+version_note = "Inventiones mathematicae 15 (1972), 259–331; the GDZ scan is the journal printing, with the journal pagination."
+cited_for = ["5.1"]
+
+[[source]]
+id = "openai"
+authors = "OpenAI"
+title = "Modularity of elliptic curves over imaginary quadratic fields"
+year = 2026
+version_note = "Unrefereed preprint dated 4 October 2026, repository revision adc7f1241b42e322a6451854ab7e4b4c146bf78a; no journal or arXiv version was found when it was fetched. The repository's LICENSE at that revision is the Apache License 2.0, and its README states no other licence for the preprints."
+locator_scheme = "theorem"
+locator = "Theorem 1.1, p.1"
+url = "https://raw.githubusercontent.com/openai/math/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/Modularity-of-elliptic-curves-over-imaginary-quadratic-fields-October-4-2026/paper.pdf"
+fetched_from = "https://raw.githubusercontent.com/openai/math/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/Modularity-of-elliptic-curves-over-imaginary-quadratic-fields-October-4-2026/paper.pdf"
+fetched_at = "2026-11-15T21:24:22Z"
+sha256 = "c74cc37755f500be0c22ccb4d08ce81df309404a7175a7fb6cf7321330b5187c"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-15"
+cited_for = ["8.6"]
