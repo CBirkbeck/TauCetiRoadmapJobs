@@ -1,0 +1,251 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "CyclotomicClassGroupsAndStickelberger"
+
+[[source]]
+id = "milne-av-2022"
+authors = "J. S. Milne"
+title = "Abelian Varieties, notes of the 1986 article"
+year = 2022
+locator_scheme = "theorem"
+locator = "Theorem 12.5; Proposition 12.9; Theorem 17.3"
+url = "https://www.jmilne.org/math/xnotes/AVs.pdf"
+fetched_from = "https://www.jmilne.org/math/xnotes/AVs.pdf"
+fetched_at = "2026-11-15T02:34:27Z"
+sha256 = "bffdf81c57c77420b5454b31270007989d12f332abea62424be15c424079fc7c"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-15"
+cited_for = ["4.3"]
+
+[[source]]
+id = "raynaud"
+authors = "Michel Raynaud"
+title = "Schémas en groupes de type (p,…,p)"
+year = 1974
+locator_scheme = "theorem"
+locator = "Theorem 3.3.3; Corollary 3.3.6, p.268"
+url = "https://www.numdam.org/item/BSMF_1974__102__241_0/"
+fetched_from = "https://www.numdam.org/item/BSMF_1974__102__241_0.pdf"
+fetched_at = "2026-11-15T02:34:54Z"
+sha256 = "05cad2f5c2c33a2eea5739d255a8bb7de724e48e38dadb30507adc5e84f2edfe"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-15"
+cited_for = ["4.4"]
+
+[[source]]
+id = "tate"
+authors = "J. T. Tate"
+title = "p-Divisible Groups"
+year = 1967
+venue = "Proceedings of a Conference on Local Fields"
+doi = "10.1007/978-3-642-87942-5_12"
+locator_scheme = "section"
+locator = "§4.1, Theorem 3 and Corollary 2, pp.179–180"
+url = "https://doi.org/10.1007/978-3-642-87942-5_12"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["4.4"]
+
+[[source]]
+id = "sharifi"
+locator_scheme = "section"
+locator = "§§1.3–1.5, 2.8, 3.1–3.2, 4.1–4.5"
+url = "https://www.math.ucla.edu/~sharifi/iwasawa.pdf"
+fetched_from = "https://www.math.ucla.edu/~sharifi/notes/iwasawa.pdf"
+fetched_at = "2026-11-15T02:36:35Z"
+sha256 = "307667b7587861922e5a1f572ab654084d3b0039252d00c6241f211d9ecdbbd6"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-15"
+cited_for = ["Layers 0–8"]
+
+[[source]]
+id = "deligne-serre"
+locator_scheme = "section"
+locator = "§6, Lemme 6.11, p.522"
+url = "https://www.numdam.org/item/ASENS_1974_4_7_4_507_0/"
+fetched_from = "https://www.numdam.org/item/ASENS_1974_4_7_4_507_0.pdf"
+fetched_at = "2026-11-15T02:36:40Z"
+sha256 = "65b390f6d33e827e30c6c66bbc15421eca51db3180bdf5996dcee19047be97fc"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-15"
+cited_for = ["4.2"]
+
+[[source]]
+id = "ribet"
+locator_scheme = "section"
+locator = "Theorems 1.1 and 1.3; Proposition 2.1; §§3–4, pp.156–162"
+url = "https://math.berkeley.edu/~ribet/Articles/invent_34.pdf"
+fetched_from = "https://math.berkeley.edu/~ribet/Articles/invent_34.pdf"
+fetched_at = "2026-11-15T02:38:02Z"
+sha256 = "6985813b4026bb0fd7098aed3f816262e0922f62a5d2dab22e29bcc2eb323471"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-15"
+cited_for = ["Layer 4"]
+
+[[source]]
+id = "mazur"
+locator_scheme = "section"
+locator = "Part I §2, Proposition 2.8 and Corollaries 2.9–2.10, pp.50–54"
+url = "https://www.numdam.org/item/PMIHES_1977__47__33_0/"
+fetched_from = "https://www.numdam.org/item/PMIHES_1977__47__33_0.pdf"
+fetched_at = "2026-11-15T02:38:04Z"
+sha256 = "c20c7e73be20d6cc961127504b6be019f7707e0ee6154ba1fac0bbfd5973be8a"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-15"
+cited_for = ["Layer 8"]
+
+[[source]]
+id = "ribet-stein"
+locator_scheme = "section"
+locator = "Appendix, Definition 5.13 and Theorems 5.14–5.16, pp.73–79"
+url = "https://wstein.org/papers/serre/ribet-stein.pdf"
+fetched_from = "https://wstein.org/papers/serre/ribet-stein.pdf"
+fetched_at = "2026-11-15T02:38:06Z"
+sha256 = "e1bf2b5cd14de064bcb48c4ca843251198db74dd8bcfaad63c26f6773f63f604"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-15"
+cited_for = ["4.3"]
+
+[[source]]
+id = "deligne-rapoport"
+authors = "P. Deligne, M. Rapoport"
+title = "Les Schémas de Modules de Courbes Elliptiques"
+year = 1973
+venue = "Lecture Notes in Mathematics"
+doi = "10.1007/978-3-540-37855-6_4"
+locator_scheme = "section"
+locator = "Chapter V §3, Theorem 3.2 and Example 3.7(i), pp.DeRa-112–113"
+url = "https://doi.org/10.1007/978-3-540-37855-6_4"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["4.4"]
+
+[[source]]
+id = "milne-cft"
+locator_scheme = "section"
+locator = "VII §3, Proposition 3.1, Lemma 3.2 and Lemmas 3.4–3.5, pp.208–209"
+url = "https://www.jmilne.org/math/CourseNotes/CFT.pdf"
+fetched_from = "https://www.jmilne.org/math/CourseNotes/CFT.pdf"
+fetched_at = "2026-11-15T02:38:14Z"
+sha256 = "50d79af78250a9f1117ad9d337e0b231704a533fc707966ed1bfa52e13d498f5"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-15"
+cited_for = ["Layer 1"]
+
+[[source]]
+id = "milne-av-2008"
+locator_scheme = "section"
+locator = "I §14, Theorem 14.3, pp.61–62; II §1, Theorem 1.1 and Lemmas 1.2–1.3, pp.75–77"
+url = "https://www.jmilne.org/math/CourseNotes/AV.pdf"
+fetched_from = "https://www.jmilne.org/math/CourseNotes/AV.pdf"
+fetched_at = "2026-11-15T02:38:18Z"
+sha256 = "f5ca4e63e5092a4b102daad1470e4cbed5fe8f82115e3a28c8881e3f67f6aaef"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-15"
+cited_for = ["4.3"]
+
+[[source]]
+id = "stacks-intersections"
+locator_scheme = "section"
+locator = "Tags 0BEM and 0BEP–0BEV"
+url = "https://stacks.math.columbia.edu/tag/0BEL"
+fetched_from = "https://stacks.math.columbia.edu/download/varieties.pdf#nameddest=0BEL"
+fetched_at = "2026-11-15T02:38:22Z"
+sha256 = "ed339c312c86721e3f830876da14cabe89a96e83e454a78b7cd355555f4bca45"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-15"
+cited_for = ["4.3"]
+
+[[source]]
+id = "brian-conrad"
+locator_scheme = "section"
+locator = "Appendix B, Definition B.1, Lemma B.2 and Proposition B.3, pp.32–34"
+url = "https://math.stanford.edu/~conrad/papers/locchar.pdf"
+fetched_from = "https://math.stanford.edu/~conrad/papers/locchar.pdf"
+fetched_at = "2026-11-15T02:38:24Z"
+sha256 = "782fe71a3c7f26ccd67943d468f73540d384e2de5d474bf8369475b8b631d9bd"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-15"
+cited_for = ["4.4"]
+
+[[source]]
+id = "keith-conrad"
+locator_scheme = "section"
+locator = "Theorem 1, p.1; pp.6–7"
+url = "https://kconrad.math.uconn.edu/blurbs/gradnumthy/kummer.pdf"
+fetched_from = "https://kconrad.math.uconn.edu/blurbs/gradnumthy/kummer.pdf"
+fetched_at = "2026-11-15T02:38:26Z"
+sha256 = "4739a256159d1cf74184a34849d2ef3b6a5fd6dcb18ece90d02ea52bb99f1bc2"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-15"
+cited_for = ["5.3"]
+
+[[source]]
+id = "soule"
+authors = "Christophe Soulé"
+title = "Perfect forms and the Vandiver conjecture"
+year = 1998
+arxiv = "math/9812171v1"
+locator_scheme = "section"
+locator = "Introduction, p.1, version 1"
+url = "https://arxiv.org/abs/math/9812171v1"
+fetched_from = "https://arxiv.org/pdf/math/9812171v1"
+fetched_at = "2026-11-15T02:38:30Z"
+sha256 = "1e1acc3e9e375379fd863606a81943b616195cd6432081383826bf38c2ce57dd"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-15"
+version_note = "arXiv v1"
+cited_for = ["6.4"]
+
+[[source]]
+id = "montgomery-vaughan"
+locator_scheme = "section"
+locator = "Theorems 9.5 and 9.7, p.287; Theorem 9.17, pp.300–301"
+url = "https://personal.science.psu.edu/rcv4/personal/Publications/MNTI/13.0_pp_282_325_Primitive_characters_and_Gauss_sums.pdf"
+fetched_from = "https://personal.science.psu.edu/rcv4/personal/Publications/MNTI/13.0_pp_282_325_Primitive_characters_and_Gauss_sums.pdf"
+fetched_at = "2026-11-15T02:39:04Z"
+sha256 = "cb355e7c390893dd6ffc8bd9fd57216863b74f65688b0a3d0fd522bea86416e8"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-15"
+cited_for = ["3.4"]
+
+[[source]]
+id = "hilbert"
+locator_scheme = "section"
+locator = "§§54–58, pp.271–279; Satz 148, pp.393–397; Satz 156, pp.439–440"
+url = "https://www.e-rara.ch/zut/download/pdf/2944458"
+fetched_from = "https://www.e-rara.ch/zut/download/pdf/2944458"
+fetched_at = "2026-11-15T02:39:19Z"
+sha256 = "df2f2a17ca800b32f92ac121b4c9819acd48081d05c09ad049804e199e9b4eef"
+licence_class = "institutional"
+status = "certified"
+accessed = "2026-11-15"
+cited_for = ["Layers 1 and 5"]
+
+[[source]]
+id = "aintlib"
+locator_scheme = "section"
+locator = "BernoulliRegular modules listed in References"
+url = "https://cbirkbeck.github.io/AINTLIB-blueprints/flt-bernoulli/"
+fetched_from = "https://cbirkbeck.github.io/AINTLIB-blueprints/flt-bernoulli/"
+fetched_at = "2026-11-15T02:39:20Z"
+sha256 = "9d36d62ab0f698c27f009a1d41f5f967b2eca2f4e77b170b8b329bdd354fea47"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-15"
+cited_for = ["Layers 0–3 and 5"]
