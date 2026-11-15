@@ -2428,9 +2428,9 @@
   "gaps": [
     {
       "slug": "elliptic-unit-euler-system",
-      "needs": "For every finite abelian extension F of K containing H and every ideal a of O_K prime to 6pf, the norm-compatible elliptic units of auxiliary ideal a (Rubin 1991 §1), with their Euler-system norm relations over the ray class tower K(g p^∞), g prime to p, and their Kummer classes twisted by the inverse avatar to classes in lim_cor H¹(F,T′) along the two-variable tower, extending NCM.1/normalized-zeta-class beyond moduli supported on f, p and one auxiliary split prime.",
+      "needs": "For every ideal g of O_K prime to p, every n≥1, every ideal a prime to 6pg and every prime 𝔮 of K not dividing 6pa, the norm from K(g𝔮pⁿ) to K(gpⁿ) sends the standard elliptic unit of §2.2 of twist a and modulus g𝔮pⁿ to the unit of modulus gpⁿ raised to 1−Frob_𝔮⁻¹ when 𝔮∤g and to that unit itself when 𝔮|g (compare Rubin 1991 §1, (1c), in Kolyvagin's form), extending §2.2's norm compatibility along the p-tower to the primes not dividing p.",
       "supplier": "NonordinaryCMSpecialValues",
-      "section": "NCM.1"
+      "section": "§2.2"
     },
     {
       "slug": "inert-two-variable-main-conjecture",
