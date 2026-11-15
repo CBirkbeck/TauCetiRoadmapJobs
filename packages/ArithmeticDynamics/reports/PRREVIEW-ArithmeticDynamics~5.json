@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-ArithmeticDynamics~5",
+  "head": "ae79f44feb91663b2aef9341a9de929ddeb0d7b0",
+  "pr": 1335,
+  "folder": "ArithmeticDynamics",
+  "date": "2026-11-15",
+  "findings": 0,
+  "blocking": 0,
+  "notes": "incremental re-review of 0 changed lines since ae79f44. Checked the pull request's title and description sentence by sentence against the head (step 8): no sentence contradicted, no removal, renumbering or supplier change left unstated (the pull request adds the folder). Gate rerun: every counter 0, OK; depcheck 244 roadmaps, 2229 edges, 0 problems; Suggested.lean elaborates with 11 sorry warnings only. Adversarial rows computed for the Tate identity (section 1.1) and section 1.5. Overlap lead on AlgebraicCurves layers resolved (layers keep numbers and titles at the open revision's head). No seeded target lies in a changed passage. For the humans: the generated depends-on and merge-order blocks list #2112 Equidistribution, which the README does not cite as a roadmap (a match on its own target titles).",
+  "text": "955162900c914f40"
+ }
+}
