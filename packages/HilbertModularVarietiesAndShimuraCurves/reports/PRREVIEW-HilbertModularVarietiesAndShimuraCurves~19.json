@@ -1,0 +1,21 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-HilbertModularVarietiesAndShimuraCurves~19",
+  "head": "3cac94e0e5778b4724e82d3ba29ad341242420db",
+  "pr": 1005,
+  "folder": "HilbertModularVarietiesAndShimuraCurves",
+  "date": "2026-11-15",
+  "findings": 2,
+  "blocking": 0,
+  "notes": "incremental re-review of 0 changed lines since 3cac94e; the folder is unchanged and this round checked the pull request's title and description against the head. Two P3 findings, both in the description: it says the Lean states definitions and theorems and that the build warns only of sorry, while Suggested.lean declares nothing and elaborates with no warning. Title, summary block, supplier/consumer split (55 roadmap names classified) agree with the head. Gate rerun: all rules 0, OK; depcheck 0 problems; lake env lean exit 0 with no output; nothing changed outside the folder; overlaps none. Adversarial rows computed for R18.4.33, R18.5.15, H2.3.",
+  "text": "fdddc9acf8026e11",
+  "carried": {
+   "from": "3cac94e0e5778b4724e82d3ba29ad341242420db",
+   "head": "3cac94e0e5778b4724e82d3ba29ad341242420db",
+   "findings": 2,
+   "lines": 0,
+   "folders": []
+  }
+ }
+}
