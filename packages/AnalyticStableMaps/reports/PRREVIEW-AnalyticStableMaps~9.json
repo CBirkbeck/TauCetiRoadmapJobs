@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-AnalyticStableMaps~9",
+  "head": "41557bae83789a2e39fcd4fff2e2a1177cee62b8",
+  "pr": 987,
+  "folder": "AnalyticStableMaps",
+  "date": "2026-11-15",
+  "findings": 0,
+  "blocking": 0,
+  "notes": "incremental re-review of 0 changed lines since 41557ba. Checked: the rewritten pull-request title and description against the head (31 claims: layer bullets against the README headings and cited lines, the acceptance-test paragraph against Suggested.lean's imports, docstring and statements, the supplier paragraph against main and the open heads, GromovWittenTheory's citations at its open head); previous findings R01-R03 all repaired by the new description. Gate: every check 0, OK. Dependency check: 244 roadmaps, 2229 edges, 0 problems, no UPWARD or CYCLE. lake env lean on Suggested.lean: exit 0, three sorry warnings only. Nothing changed outside the folder. Adversarial table: 7 rows with computed values for statements the description cites (finite_isotropy_iff on three torus instances, the genus identity of 0.5, the escape test of 2.22, the cokernel of 2.23, the conic limit of 3.7-3.8). Seeded sample: no target in a changed passage. Overlap check: GromovWittenTheory, ComplexCurveModuli, HeegaardFloer read; nothing shared. Source independence: changed passages only, 0 compared. One remark, no change asked: GromovWittenTheory also cites 0.1, which the description's list of layers omits.",
+  "text": "da4afc9a34b0aac6"
+ }
+}
