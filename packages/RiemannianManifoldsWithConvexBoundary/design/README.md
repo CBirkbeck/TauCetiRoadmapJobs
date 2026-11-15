@@ -42,8 +42,9 @@ This roadmap owns:
   defining functions that exhibit `M` as a regular domain of its collar extension and of its
   double (the manifolds themselves are GeometricTopology's) together with the comparison of
   `M`'s atlas with Tau Ceti's sublevel atlas, the manifold-level extension of smooth functions and
-  metrics across `∂M`, the realisation theorem, and the comparison of `II` with the immersion
-  geometry of RiemannianGeometry R5a (Layer 3);
+  metrics across `∂M`, the realisation theorem for every Hausdorff second-countable `M` (its
+  compact collar-extension case is RiemannianGeometry R5c's, below), and the comparison of `II`
+  with the immersion geometry of RiemannianGeometry R5a (Layer 3);
 - geodesics of a regular domain, second-order contact of geodesics with the boundary, the normal
   exponential and signed distance of a two-sided hypersurface with its Gauss lemma, boundary
   normal coordinates, convexity functions near a strictly convex boundary point, and slight
@@ -77,8 +78,10 @@ It leaves to other roadmaps, by section:
   regular level set, with the sign of the function on each side, and the normalised defining
   function, for a hypersurface that may be non-compact or disconnected in an `N` that may be
   disconnected (4.3);
-- geodesics, the geodesic flow, the exponential map, normal balls, the Gauss lemma at a point,
-  first-variation symmetry and completeness of compact manifolds: HopfRinow Layers 1, 2 and 4;
+- geodesics, the geodesic flow, the exponential map, normal balls, the Gauss lemma at a point and
+  first-variation symmetry: HopfRinow Layers 1 and 2;
+- geodesic completeness of compact Hausdorff boundaryless Riemannian manifolds: already in Tau
+  Ceti as `TauCeti.Manifold.isGeodesicallyCompleteAt_of_compactSpace`;
 - the second fundamental form `B`, shape operator and Gauss–Codazzi–Ricci equations of isometric
   immersions: RiemannianGeometry R5a;
 - the vanishing at the centre of a normal chart of the first derivatives of the metric
@@ -96,6 +99,15 @@ It leaves to other roadmaps, by section:
   the extension of the metric (3.3–3.5);
 - the extension of smooth functions across a smooth boundary by the half-space Seeley extension:
   ComplexKahlerGeometry K5a;
+- the presentation of a compact Riemannian manifold with boundary as the closure of a relatively
+  compact smooth domain of a boundaryless Riemannian manifold, by a collar glued along the
+  boundary and K5a's Seeley extension of the metric, and a defining function with regular value
+  `0`, negative on the domain, for every relatively compact smooth domain: RiemannianGeometry R5c
+  (scalar principal eigenfunction, items 1 and 3); this roadmap adds the non-compact case, the
+  defining function `ρ̃` normalised by `ρ̃ ∘ c̃ = t` on the bicollar and the identification of
+  `M`'s atlas with Tau Ceti's sublevel atlas (3.3), the extension of functions and of arbitrary
+  sections of `T*M ⊗ T*M` to all of the ambient manifold (3.4), and, for compact `M`, a compact
+  `M̃`, connected when `M` is, the double when `∂M ≠ ∅` (3.5);
 - uniform normal radii on compact sets: SmoothBundlesConnections B6.0;
 - the geodesic X-ray transform, Santaló's formula, Pestov identities, simple manifolds and the
   boundary and lens rigidity theorems themselves: future roadmaps that consume Layers 2, 4 and 5;
@@ -246,9 +258,8 @@ with its Borel σ-algebra and a smooth metric.
 **From TauCetiRoadmap.HopfRinow** (completed): Layer 1 (geodesic equation, maximal intervals,
 geodesic spray and smooth local flow, `riemannianExp` on its natural domain), Layer 2 (normal
 neighbourhoods, local logarithm, Gauss lemma, local distance identity, covariant differentiation
-in both variation directions with `D_s ∂_t = D_t ∂_s`), Layer 4 (compact manifolds are
-geodesically complete). All of it under its boundaryless hypotheses; this roadmap applies it to a
-boundaryless `N` containing `M`.
+in both variation directions with `D_s ∂_t = D_t ∂_s`). All of it under its boundaryless
+hypotheses; this roadmap applies it to a boundaryless `N` containing `M`.
 
 **From TauCetiRoadmap.RiemannianGeometry**: R5a (for an isometric immersion of boundaryless
 manifolds: `B(X, Y) = (∇^N_X df(Y))^⊥`, `S_η X = −(∇^N_X η)^⊤`, `⟨S_η X, Y⟩ = ⟨B(X, Y), η⟩`,
@@ -265,7 +276,16 @@ connected embedded hypersurface `Σ` with a smooth unit normal field `ν`, the n
 `φ⁻¹(0) = Σ`, `Ω₊ = {φ > 0}`, `Ω₋ = {φ < 0}` and `grad φ = ν` on `Σ`, equal on `U` to `h(t)` for
 the collar coordinate `t` and a smooth nondecreasing `h` with `h(t) = t` near `0` and `h = ±1` for
 `±t ≥ ε/2`, and to `±1` on `Ω± ∖ U`; the outward unit normal of `{φ ≤ 0}` is `ν` and that of
-`{φ ≥ 0}` is `−ν`.
+`{φ ≥ 0}` is `−ν`. R5c (scalar principal eigenfunction, items 1 and 3), in RiemannianGeometry's
+standing setting (Hausdorff, second-countable, boundaryless), its manifolds having dimension
+`m ≥ 1`: a relatively compact smooth domain of such a manifold `M'` is an open `D ⊆ M'` with
+compact closure each of whose boundary points has a chart of `M'` in which `D` is the half-space
+`x_m > 0` on the last coordinate (Mathlib's `EuclideanHalfSpace` constrains coordinate `0`
+instead); every compact Riemannian manifold with boundary modelled on `𝓡∂ m` is the closure `D̄`
+of such a domain, with the restricted metric, by a collar (GeometricTopology 1.1) glued along the
+boundary (1.3) and K5a's Seeley extension of the metric, positive definite on a neighbourhood of
+`D̄`; and every such `D` has a smooth `ρ : M' → ℝ` with regular value `0`, `D = {ρ < 0}` and
+`{ρ ≤ 0}` compact (it is `D̄`: at a zero `dρ ≠ 0`, so `ρ` takes negative values nearby).
 
 **From TauCetiRoadmap.GeometricTopology**: 1.1 (Lee, *Introduction to Smooth Manifolds*,
 Theorem 9.25): a second-countable `M` has a smooth collar, a smooth embedding
@@ -362,8 +382,8 @@ are not restated. Set `ν_in := −ν_out`. Prove the rest of its Riemannian hyp
 - Dimension one: for `M = [0, 1] ⊆ ℝ`, `ν_out(0) = −∂_x` and `ν_out(1) = +∂_x` in the ambient
   coordinate, although both charts read the inward direction as `+e₀`.
 
-*Needs:* DifferentialGeometry 12.5 (`exists_halfSpaceOutwardUnitNormal`); 1.1; Tau Ceti
-`TauCeti.Manifold.mgradient`.
+*Needs:* DifferentialGeometry 12.5 (`exists_halfSpaceOutwardUnitNormal`) and 12.2 (the gradient,
+Tau Ceti `TauCeti.Manifold.mgradient`); 1.1.
 
 ### 1.3 Boundary defining functions
 
@@ -500,7 +520,7 @@ of the unit ball (`II = −h`), the solid cylinder (`H = 1/2`), the constant non
 ### Dependencies
 
 1.1 uses Tau Ceti's boundary charts and DifferentialGeometry 5.1; 1.2 uses DifferentialGeometry
-12.5 and 1.1; 1.3 uses 1.1–1.2, Tau Ceti's Hadamard factorisation and Mathlib's partitions of
+12.2 and 12.5 and 1.1; 1.3 uses 1.1–1.2, Tau Ceti's Hadamard factorisation and Mathlib's partitions of
 unity; 1.4 uses 1.1–1.3, Mathlib's Levi-Civita connection and Tau Ceti's Hessian; 1.5 uses 1.4 and
 the induced metric; 1.6 uses 1.4–1.5 and Tau Ceti's conformal formulas.
 
@@ -795,10 +815,31 @@ Route: 3.3 for `M̃` and `ρ̃` (GeometricTopology 1.3's double when `M` is comp
 otherwise the collar extension, which is `int M` with GeometricTopology 1.1's boundaryless
 structure when `∂M = ∅`), then 3.4 for `g̃`.
 
+For compact `M` and the collar extension `M̃` of 3.3, the first statement contains
+RiemannianGeometry R5c's presentation of a compact Riemannian manifold with boundary (scalar
+principal eigenfunction, item 1): `int M` is open in `M̃` (GeometricTopology 1.3) with closure
+`M`, which is compact, and near each point of `∂M` a chart of `∂M` together with the bicollar
+coordinate `t` is, through `c̃`, a chart of `M̃` in which `int M = {t > 0}`, the half-space on the
+normal coordinate, which R5c places last and Mathlib's `EuclideanHalfSpace` first. R5c's defining
+function of such a domain (item 3) is negative on it, and `−ρ̃` is one. The statement here also
+covers non-compact `M`, gives `ρ̃` with the normalisation `ρ̃ ∘ c̃ = t` and Tau Ceti's sublevel
+atlas, and gives a compact, and compact connected, `M̃`.
+
 **Checks.**
 
 - The closed unit disc is realised in `ℝ²` with `ρ = 1 − |x|²` and in its double `S²`; Layer 1
   gives `II = h` in both, since `II` is computed on the disc itself.
+- RiemannianGeometry R5c's conventions on the closed unit disc with the radial collar
+  `c(q, t) = (1 − t/2) q`: the collar extension is the open disc of radius `3/2`, with
+  `c̃(q, t) = (1 − t/2) q` for `|t| < 1`, and `ρ̃ = t = 2(1 − |x|)` for `3/4 < |x| < 5/4`. In the
+  chart `(t, θ)` of `M̃` near `(1, 0)`, `|θ| < π/2`, Mathlib's order puts the normal coordinate
+  first and `int M = {x⁰ > 0}`; R5c's order `(θ, t)` puts it last and `int M = {x_2 > 0}`.
+  Reading R5c's last coordinate in Mathlib's order gives `{θ > 0}`, which crosses the circle and
+  is not `int M`. R5c's defining functions are negative on the domain: `−ρ̃ = 2(|x| − 1)` near the
+  circle is one, and `ρ̃` has the wrong sign for R5c; for a closed `M`, `−ρ̃ ≡ −1` is R5c's
+  `ρ = −1` of a closed manifold. The half-line `[0, ∞)`, non-compact, with `M̃ ≅ (−1, ∞)` and
+  `ρ̃ = x` near `0`, is outside R5c's compact setting, and the compactness of the double `S²` is
+  not part of R5c's statement.
 - `[0, 1]` with `g = (1 + x)² dx²` is realised in the circle `D[0, 1]` with an extended metric; its
   length `∫₀¹ (1 + x) dx = 3/2` is the same in every realisation.
 - A compact manifold without boundary is its own realisation with `ρ̃ ≡ 1`.
@@ -807,7 +848,8 @@ structure when `∂M = ∅`), then 3.4 for `g̃`.
   no disjoint neighbourhoods, so it is homeomorphic to no subspace of a Hausdorff `M̃` and is no
   regular domain.
 
-*Needs:* 3.1, 3.3, 3.4; GeometricTopology 1.1 and 1.3.
+*Needs:* 3.1, 3.3, 3.4; GeometricTopology 1.1 and 1.3; RiemannianGeometry R5c (relatively
+compact smooth domains and their defining functions, for the comparison of the compact case).
 
 ### 3.6 Comparison with immersion geometry
 
@@ -843,8 +885,9 @@ the conformal ball as a domain in `(ℝⁿ⁺¹, e^{2φ} g)`.
 criterion) and Tau Ceti's sublevel atlas and pullback metric; 3.2 uses 1.4, 2.1 and 3.1;
 3.3 uses GeometricTopology 1.1 (collars, the interior) and 1.3 (the collar extension and the
 double as gluings along the boundary), Tau Ceti's sublevel atlas and 3.1; 3.4 uses 3.1,
-ComplexKahlerGeometry K5a and DifferentialGeometry 12.1; 3.5 uses 3.3–3.4 and GeometricTopology
-1.1 and 1.3; 3.6 uses Layer 1, 3.1 and RiemannianGeometry R5a.
+ComplexKahlerGeometry K5a and DifferentialGeometry 12.1; 3.5 uses 3.3–3.4, GeometricTopology
+1.1 and 1.3 and, for the comparison of the compact case, RiemannianGeometry R5c; 3.6 uses
+Layer 1, 3.1 and RiemannianGeometry R5a.
 
 ## Layer 4: Geodesics at the boundary
 
