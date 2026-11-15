@@ -167,10 +167,11 @@ Paternain–Salo–Uhlmann Lemma 3.1.13.
   closed unit ball, with `grad ρ = −2x = 2 ν_in` on the sphere.
 - **Second fundamental form.** `II(X, Y) = ⟨∇_X ν_out, Y⟩ = −⟨∇_X ν_in, Y⟩ = ⟨∇_X Y, ν_in⟩ =
   −Hess ρ(X, Y)/|dρ|` on `T∂M`. It equals Paternain–Salo–Uhlmann's `Π_x(v, w) = −⟨∇_v ν, w⟩`
-  (with `ν` inward) and `⟨B(X, Y), ν_in⟩` for RiemannianGeometry R5a's `B` of `∂M` in an
-  extension. Witness: the unit sphere bounding the closed unit ball has `II = h`, so the ball is
-  strictly convex; R5a's sphere normalisation `B = −g · position` gives `⟨B, ν_in⟩ = ⟨−⟨X,Y⟩x,
-  −x⟩ = ⟨X, Y⟩`; for `ρ = 1 − |x|²`, `Hess ρ = −2g` and `|dρ| = 2`, so `−Hess ρ/|dρ| = h`.
+  (with `ν` inward) and `⟨B(X, Y), ν_in⟩` for RiemannianGeometry R5a's `B` of `∂M` in a
+  second-countable extension (3.6). Witness: the unit sphere bounding the closed unit ball has
+  `II = h`, so the ball is strictly convex; R5a's sphere normalisation `B = −g · position` gives
+  `⟨B, ν_in⟩ = ⟨−⟨X,Y⟩x, −x⟩ = ⟨X, Y⟩`; for `ρ = 1 − |x|²`, `Hess ρ = −2g` and `|dρ| = 2`, so
+  `−Hess ρ/|dρ| = h`.
 - **Mean curvature** is the averaged trace `H = tr_h II / n` for `n ≥ 1` (RiemannianGeometry R5a's
   averaged convention, inward normal). Witness: the unit sphere has `H = 1`; the boundary of the
   exterior of the unit ball has `H = −1`.
@@ -271,9 +272,10 @@ neighbourhoods, local logarithm, Gauss lemma, local distance identity, covariant
 in both variation directions with `D_s ∂_t = D_t ∂_s`). All of it under its boundaryless
 hypotheses; this roadmap applies it to a boundaryless `N` containing `M`.
 
-**From TauCetiRoadmap.RiemannianGeometry**: R5a (for an isometric immersion of boundaryless
-manifolds: `B(X, Y) = (∇^N_X df(Y))^⊥`, `S_η X = −(∇^N_X η)^⊤`, `⟨S_η X, Y⟩ = ⟨B(X, Y), η⟩`,
-averaged mean curvature vector, Gauss equation with the pinned sign, sphere normalisation
+**From TauCetiRoadmap.RiemannianGeometry**: R5a (in RiemannianGeometry's standing setting,
+Hausdorff, second-countable, boundaryless: for an isometric immersion of such manifolds:
+`B(X, Y) = (∇^N_X df(Y))^⊥`, `S_η X = −(∇^N_X η)^⊤`, `⟨S_η X, Y⟩ = ⟨B(X, Y), η⟩`, averaged
+mean curvature vector, Gauss equation with the pinned sign, sphere normalisation
 `B = −g · position`); R7.9, on a Hausdorff second-countable boundaryless Riemannian manifold `N`
 (RiemannianGeometry's standing convention): for smooth `φ : N → ℝ` with regular value `a`, the
 inclusion `ι` of `{φ ≤ a}`, with Tau Ceti's sublevel atlas, is smooth with invertible
@@ -875,9 +877,11 @@ compact smooth domains and their defining functions, for the comparison of the c
 
 ### 3.6 Comparison with immersion geometry
 
-For a regular domain `M = {ρ ≥ 0}` of `(N, g)` (in particular a realisation from 3.5), the
-inclusion `∂M → N` is an isometric embedding of the boundaryless manifolds `(∂M, h)` and `(N, g)`.
-Prove that RiemannianGeometry R5a's second fundamental form `B` of this embedding satisfies
+For a regular domain `M = {ρ ≥ 0}` of a second-countable `(N, g)` as in 3.1 (RiemannianGeometry's
+standing setting, in which R5a is stated; in particular a realisation from 3.5), the inclusion
+`∂M → N` is an isometric embedding of the boundaryless manifolds `(∂M, h)` and `(N, g)`, both
+Hausdorff and second countable (`∂M` carries the subspace topology of `N`, by 3.1). Prove that
+RiemannianGeometry R5a's second fundamental form `B` of this embedding satisfies
 `B(u, w) = II(u, w) ν_in`, that R5a's shape operator satisfies `S_{ν_in} = S`, and that R5a's
 averaged mean curvature vector is `H ν_in` (`n ≥ 1`). Consequently R5a's Gauss equation reads, for
 tangent `X, Y, Z, W`, `⟨R^{∂M}(X, Y)Z, W⟩ = ⟨R^N(X, Y)Z, W⟩ + II(X, W) II(Y, Z) − II(X, Z) II(Y, W)`,
@@ -1437,8 +1441,8 @@ uses only calculus (Mathlib, Tau Ceti, ComplexKahlerGeometry K5a); 5.4 uses 1.4,
 
 ### 6.1 Euclidean balls and convex Euclidean domains
 
-For `R > 0` and the closed ball `B̄(c, R) = {R² − |x − c|² ≥ 0} ⊆ ℝⁿ⁺¹` with the Euclidean metric
-prove:
+For `c ∈ ℝⁿ⁺¹`, `R > 0` and the closed ball `B̄(c, R) = {R² − |x − c|² ≥ 0} ⊆ ℝⁿ⁺¹` with the
+Euclidean metric prove:
 `II = h/R`, `S = R⁻¹ id`, `H = 1/R` (`n ≥ 1`); the boundary is strictly convex; the ball is
 non-trapping with `τ(x, v) = −⟨x − c, v⟩ + √(⟨x − c, v⟩² + R² − |x − c|²)` for `x ∈ B̄(c, R)` and
 `|v| = 1`, hence, by the homogeneity of 5.2,
@@ -1481,13 +1485,13 @@ iff `D²w(0)` is positive definite, iff the principal curvatures at `q` are posi
 ### 6.2 Half-spaces and ball exteriors
 
 Prove: the closed half-space `{x⁰ ≥ 0} ⊆ ℝⁿ⁺¹` has `II = 0` and is convex, and for `n ≥ 1` it is
-nowhere strictly convex; its tangent geodesics stay in `∂M`, and `τ = ∞` on `∂₀SM`. For `R > 0` the
-closed exterior `{|x − c| ≥ R}` has `II = −h/R` and is strictly concave, with `H = −1/R` for
-`n ≥ 1`, and for `q ∈ ∂M` and `0 ≠ v ⊥ (q − c)` the tangent line `q + tv` enters `int M` to second
-order: `ρ(q + tv) = t²|v|²` for `ρ = |x − c|² − R²` (Paternain–Salo–Uhlmann, Definition 2.5.1 and
-Lemma 2.5.2, lines 2449–2473, in dimension two; the source names a circle `{r = r̄}` as seen from
-the side of the larger radii, so for the Euclidean `b(r) = r`, with `b′ = 1 > 0` and tangential
-geodesics moving to larger `r`, its strictly convex circle `{r = R}` is the strictly convex
+nowhere strictly convex; its tangent geodesics stay in `∂M`, and `τ = ∞` on `∂₀SM`. For
+`c ∈ ℝⁿ⁺¹` and `R > 0` the closed exterior `{|x − c| ≥ R}` has `II = −h/R` and is strictly
+concave, with `H = −1/R` for `n ≥ 1`, and for `q ∈ ∂M` and `0 ≠ v ⊥ (q − c)` the tangent line
+`q + tv` enters `int M` to second order: `ρ(q + tv) = t²|v|²` for `ρ = |x − c|² − R²`
+(Paternain–Salo–Uhlmann, Definition 2.5.1 and Lemma 2.5.2, lines 2449–2473, in dimension two;
+the source names a circle `{r = r̄}` as seen from the side of the larger radii, so for the
+Euclidean `b(r) = r`, with `b′ = 1 > 0` and tangential geodesics moving to larger `r`, its strictly convex circle `{r = R}` is the strictly convex
 boundary of the ball `{r ≤ R}` and the strictly concave boundary of the exterior `{r ≥ R}`).
 
 **Checks.**
@@ -1508,9 +1512,10 @@ boundary of the ball `{r ≤ R}` and the strictly concave boundary of the exteri
 ### 6.3 Spherical caps and hyperbolic domains
 
 In the unit sphere `S^{n+1} ⊆ ℝⁿ⁺²` with Tau Ceti's round metric (`TauCeti.sphereRoundMetric`),
-prove for the cap `C_R = {⟨x, p⟩ ≥ cos R}`, `0 < R < π`: `II = cot R · h`. For `n ≥ 1`, `∂C_R` is
-strictly convex iff `R < π/2`, totally geodesic at `R = π/2` and strictly concave for `R > π/2`, and
-`C_R` is non-trapping iff `R < π/2` (Hessian criterion with `u = −⟨x, p⟩`, `Hess u = ⟨x, p⟩ g`, for
+prove for `p ∈ S^{n+1}` (a unit vector of `ℝⁿ⁺²`) and the cap `C_R = {⟨x, p⟩ ≥ cos R}` of geodesic
+radius `R` about `p`, `0 < R < π`: `II = cot R · h`. For `n ≥ 1`, `∂C_R` is strictly convex iff
+`R < π/2`, totally geodesic at `R = π/2` and strictly concave for `R > π/2`, and `C_R` is
+non-trapping iff `R < π/2` (Hessian criterion with `u = −⟨x, p⟩`, `Hess u = ⟨x, p⟩ g`, for
 `R < π/2`; a great circle of the great sphere `{⟨x, p⟩ = 0}`, which lies in `C_R`, for `R ≥ π/2`)
 (Paternain–Salo–Uhlmann, Examples 2.5.4–2.5.5, lines 2499–2521, and Example 3.1.4, lines
 2677–2680). For `n = 0`, `C_R` is the arc `{|θ| ≤ R}` of `S¹` in the arc-length coordinate `θ`
@@ -1527,8 +1532,13 @@ In Tau Ceti's upper half-space model `TauCeti.UpperHalfSpace` of hyperbolic spac
 
 **Checks.**
 
-- Cap: with `ρ = ⟨x, p⟩ − cos R`, `Hess ρ = −⟨x, p⟩ g = −cos R · g` on `∂C_R` and `|dρ| = sin R`, so
-  `II = cot R · h`; `R = π/4` gives `II = h`, `R = π/2` gives `0`.
+- Cap: with `ρ = ⟨x, p⟩ − cos R`, `grad ρ = p − ⟨x, p⟩ x`, so `|dρ|² = |p|² − ⟨x, p⟩² = sin² R` on
+  `∂C_R` because `|p| = 1`, and `Hess ρ = −⟨x, p⟩ g = −cos R · g` there, so `II = cot R · h`;
+  `R = π/4` gives `II = h`, `R = π/2` gives `0`.
+- The centre must be a unit vector: for `p = 2e` with `e ∈ S^{n+1}` and `R = π/3`, the set
+  `{⟨x, p⟩ ≥ 1/2} = {⟨x, e⟩ ≥ 1/4}` is the cap of radius `arccos(1/4) ≈ 1.318` about `e`, with
+  `II = h/√15 ≈ 0.258 h` rather than `cot(π/3) h = h/√3 ≈ 0.577 h`, and
+  `|dρ| = 2 sin(arccos(1/4)) = √15/2` rather than `sin(π/3) = √3/2`.
 - Hyperbolic plane (`n = 1`, `g = (dx² + dy²)/y²`): with `Γ^x_{xy} = −1/y`, `Γ^y_{xx} = 1/y`,
   `Γ^y_{yy} = −1/y`, `u_x = x/y`, `u_y = ½ − (x² + 1)/(2y²)`, one gets
   `Hess u_{xx} = 1/(2y) + (x² + 1)/(2y³) = u/y² = u g_{xx}`, `Hess u_{xy} = −x/y² + x/y² = 0` and

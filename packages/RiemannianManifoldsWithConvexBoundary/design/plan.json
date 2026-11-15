@@ -980,9 +980,10 @@
      "id": "3.6",
      "kind": "theorem",
      "name": "secondFundamentalForm_eq_inner_immersion",
-     "statement": "For a regular domain M of (N, g), the inclusion (∂M, h) → (N, g) is an isometric embedding of boundaryless manifolds; RiemannianGeometry R5a's B satisfies B(u, w) = II(u, w)ν_in, S_{ν_in} = S, averaged mean curvature vector H ν_in (n ≥ 1); Gauss: ⟨R^{∂M}(X, Y)Z, W⟩ = ⟨R^N(X, Y)Z, W⟩ + II(X, W)II(Y, Z) − II(X, Z)II(Y, W).",
+     "statement": "For a regular domain M of a second-countable (N, g), the inclusion (∂M, h) → (N, g) is an isometric embedding of boundaryless manifolds; RiemannianGeometry R5a's B satisfies B(u, w) = II(u, w)ν_in, S_{ν_in} = S, averaged mean curvature vector H ν_in (n ≥ 1); Gauss: ⟨R^{∂M}(X, Y)Z, W⟩ = ⟨R^N(X, Y)Z, W⟩ + II(X, W)II(Y, Z) − II(X, Z)II(Y, W).",
      "hypotheses": [
       "(N, g) Hausdorff boundaryless smooth manifold over 𝓘(ℝ, E), finrank ℝ E = n + 1, with a smooth Riemannian metric",
+      "N second countable (the standing setting of RiemannianGeometry R5a); then ∂M, with the subspace topology of N (3.1), is Hausdorff and second countable",
       "ρ : N → ℝ smooth with 0 a regular value; M = {ρ ≥ 0} with Tau Ceti's sublevel atlas for −ρ and the pulled-back metric (3.1)"
      ],
      "locator": {
@@ -2028,7 +2029,7 @@
      "statement": "Closed ball B̄(c, R) ⊆ ℝⁿ⁺¹: II = h/R, S = R⁻¹ id, H = 1/R for n ≥ 1, strictly convex, non-trapping, τ(x, v) = −⟨x − c, v⟩ + √(⟨x − c, v⟩² + R² − |x − c|²) for x ∈ B̄(c, R) and |v| = 1, hence by homogeneity (5.2) τ(x, v) = (−⟨x − c, v⟩ + √(⟨x − c, v⟩² + |v|²(R² − |x − c|²)))/|v|² for v ≠ 0 and τ(x, 0) = ∞, τ̃ = −2⟨x − c, v⟩ and α(x, v) = (x − 2⟨x − c, v⟩v, v) on ∂SM, signed distance R − |x − c|.",
      "hypotheses": [
       "Euclidean metric on ℝⁿ⁺¹",
-      "R > 0"
+      "c ∈ ℝⁿ⁺¹ and R > 0"
      ],
      "locator": {
       "source": "paternain-salo-uhlmann2023",
@@ -2106,7 +2107,7 @@
      "statement": "Closed half-space: II = 0, convex, for n ≥ 1 nowhere strictly convex, tangent geodesics stay in ∂M, τ = ∞ on ∂₀SM. For R > 0 the closed exterior {|x − c| ≥ R}: II = −h/R, strictly concave, H = −1/R for n ≥ 1, and for q ∈ ∂M and 0 ≠ v ⊥ (q − c) the tangent line q + tv enters int M to second order, ρ(q + tv) = t²|v|² for ρ = |x − c|² − R².",
      "hypotheses": [
       "Euclidean metric on ℝⁿ⁺¹",
-      "R > 0 for the exterior"
+      "c ∈ ℝⁿ⁺¹ and R > 0 for the exterior"
      ],
      "locator": {
       "source": "paternain-salo-uhlmann2023",
@@ -2143,9 +2144,10 @@
      "id": "6.3.1",
      "kind": "example",
      "name": "sphericalCap",
-     "statement": "In S^{n+1} with Tau Ceti's round metric, the cap C_R = {⟨x, p⟩ ≥ cos R}, 0 < R < π: II = cot R · h. For n ≥ 1: strictly convex iff R < π/2, totally geodesic boundary at R = π/2, strictly concave for R > π/2; non-trapping iff R < π/2. For n = 0: C_R is the arc {|θ| ≤ R} of S¹, II is the zero form, and C_R is non-trapping for every 0 < R < π with τ(θ, ±1) = R ∓ θ.",
+     "statement": "In S^{n+1} with Tau Ceti's round metric, for p ∈ S^{n+1} (a unit vector of ℝⁿ⁺²), the cap C_R = {⟨x, p⟩ ≥ cos R} of geodesic radius R about p, 0 < R < π: II = cot R · h. For n ≥ 1: strictly convex iff R < π/2, totally geodesic boundary at R = π/2, strictly concave for R > π/2; non-trapping iff R < π/2. For n = 0: C_R is the arc {|θ| ≤ R} of S¹, II is the zero form, and C_R is non-trapping for every 0 < R < π with τ(θ, ±1) = R ∓ θ.",
      "hypotheses": [
       "unit round sphere S^{n+1}",
+      "p ∈ S^{n+1} (a unit vector of ℝⁿ⁺²), the centre of the cap",
       "0 < R < π"
      ],
      "locator": {
@@ -2164,12 +2166,17 @@
       {
        "name": "cap_values",
        "kind": "computation",
-       "statement": "ρ = ⟨x, p⟩ − cos R: Hess ρ = −cos R · g, |dρ| = sin R, II = cot R · h; R = π/4 gives II = h."
+       "statement": "ρ = ⟨x, p⟩ − cos R: grad ρ = p − ⟨x, p⟩x, |dρ|² = |p|² − cos² R = sin² R since |p| = 1, Hess ρ = −cos R · g, II = cot R · h; R = π/4 gives II = h."
       },
       {
        "name": "arc",
        "kind": "degenerate",
        "statement": "n = 0, R = 3π/4: exit times 3π/4 ∓ θ ≤ 3π/2 are finite although R ≥ π/2; the cut-off π/2 needs n ≥ 1."
+      },
+      {
+       "name": "unit_centre",
+       "kind": "non-example",
+       "statement": "p = 2e with e ∈ S^{n+1}, R = π/3: {⟨x, p⟩ ≥ 1/2} = {⟨x, e⟩ ≥ 1/4} is the cap of radius arccos(1/4) ≈ 1.318 about e, with II = h/√15 ≈ 0.258 h, not cot(π/3) h ≈ 0.577 h, and |dρ| = √15/2, not √3/2; the centre must be a unit vector."
       }
      ]
     },
@@ -2328,7 +2335,7 @@
     "§R5c",
     "§R7.9"
    ],
-   "what": "B, S, mean curvature vector and Gauss equation of isometric immersions with pinned signs (R5a); the inclusion of a regular sublevel {φ ≤ a} is smooth with invertible differential and v is outward iff dφ(dι v) > 0, and for a compact connected two-sided hypersurface of a connected manifold the normal collar and, when it separates, a defining function equal to the collar coordinate near it and ±1 off the collar with gradient ν (R7.9); relatively compact smooth domains (open, compact closure, a chart at each boundary point in which the domain is x_m > 0 on the last coordinate), every compact Riemannian manifold with boundary as the closure of one by a collar glued along the boundary and the Seeley extension of the metric, and a defining function with regular value 0 negative on the domain (R5c, scalar principal eigenfunction, items 1 and 3)"
+   "what": "B, S, mean curvature vector and Gauss equation of isometric immersions of Hausdorff second-countable boundaryless manifolds (RiemannianGeometry's standing setting) with pinned signs (R5a); the inclusion of a regular sublevel {φ ≤ a} is smooth with invertible differential and v is outward iff dφ(dι v) > 0, and for a compact connected two-sided hypersurface of a connected manifold the normal collar and, when it separates, a defining function equal to the collar coordinate near it and ±1 off the collar with gradient ν (R7.9); relatively compact smooth domains (open, compact closure, a chart at each boundary point in which the domain is x_m > 0 on the last coordinate), every compact Riemannian manifold with boundary as the closure of one by a collar glued along the boundary and the Seeley extension of the metric, and a defining function with regular value 0 negative on the domain (R5c, scalar principal eigenfunction, items 1 and 3)"
   },
   {
    "roadmap": "GeometricTopology",
