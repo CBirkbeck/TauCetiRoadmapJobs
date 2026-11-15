@@ -44,7 +44,9 @@ namespace_label = "roadmap-job"
 packages_dir = "packages"
 # Rounds of fix + fresh independent review before a design or package is parked for a human
 # (state:blocked). A fix worker's self-acceptance never counts.
-max_rounds = 5
+# 30 since 2026-11-15 (owner: every roadmap in the pipeline is to be made, as fast as it can be): at 5,
+# 42 roadmaps sat parked for days, each waiting for a release by hand after every round.
+max_rounds = 30
 # Logins whose comments are the board's own (claim notices, intake notes).
 bot_logins = ["github-actions[bot]"]
 # A claim or submission with no sign of progress for this long is released by `board stale --release`.
