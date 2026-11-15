@@ -1,0 +1,24 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-SheafTheoreticSmithTheory~5",
+  "head": "918421742b2f159a00663d66272a7206a62b2280",
+  "pr": 1734,
+  "folder": "SheafTheoreticSmithTheory",
+  "date": "2026-11-15",
+  "findings": 1,
+  "blocking": 0,
+  "notes": "incremental re-review of 0 changed lines since 9184217; this round read the pull request's title and description against the head: 14 sentences checked, one P3 omission (the description does not state the ownership of the loop-Grassmannian geometry over an arbitrary field, README §3.0, added after the description was written). Gate rerun passes every check; depcheck 239 roadmaps, 2255 edges, 0 problems; Suggested.lean elaborates with sorry as the only warning and both theorem signatures match README §§8.1-8.2; adversarial rows computed for algebra_tate_diagonal, tate_character_extension, the §3.0 orbit dimensions and the good-versus-very-good prime claim; Feng24 lines 1863 and 1869 and Mathlib tateCohomology opened; no sampled target lies in a changed passage.",
+  "text": "4f93ac48b278aa1d",
+  "carried": {
+   "from": "918421742b2f159a00663d66272a7206a62b2280",
+   "head": "f19b8c8e18862703715706b799ba13a556182f00",
+   "findings": 1,
+   "lines": 2,
+   "folders": [
+    "SheafTheoreticSmithTheory"
+   ],
+   "outside": true
+  }
+ }
+}
