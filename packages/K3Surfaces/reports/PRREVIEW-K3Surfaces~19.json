@@ -1,0 +1,21 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-K3Surfaces~19",
+  "head": "a23ff3aac402dd25590e3515e7f67d20f4f7d22c",
+  "pr": 1285,
+  "folder": "K3Surfaces",
+  "date": "2026-11-15",
+  "findings": 3,
+  "blocking": 0,
+  "notes": "incremental re-review of 0 changed lines since a23ff3a; checked previous repairs, PR title/prose/roadmap-summary against the base and head, relevant supplier contracts, unchanged seeded-sample scope, computed gluing and lattice witnesses, passing gate and dependency check, targeted build, direct elaboration and all six signatures. Three P3 findings concern the PR description only.",
+  "text": "2b40c0fa51e4157b",
+  "carried": {
+   "from": "a23ff3aac402dd25590e3515e7f67d20f4f7d22c",
+   "head": "a23ff3aac402dd25590e3515e7f67d20f4f7d22c",
+   "findings": 3,
+   "lines": 0,
+   "folders": []
+  }
+ }
+}
