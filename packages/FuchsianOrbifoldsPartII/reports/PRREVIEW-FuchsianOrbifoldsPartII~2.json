@@ -1,0 +1,24 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-FuchsianOrbifoldsPartII~2",
+  "head": "3d95b6c13458626e31aa6efb4abee71e2ba4a3ec",
+  "pr": 1696,
+  "folder": "FuchsianOrbifoldsPartII",
+  "date": "2026-11-15",
+  "findings": 1,
+  "blocking": 0,
+  "notes": "incremental re-review of 8 changed lines since a68a656. Previous R01 repaired: the four gap slugs in the README equal the plan's. Checked: the four changed contract paragraphs and the sections citing them (computed rows at D=12, D=8, D=5), their citations at main, the supplier's open head and the pins, gap precision and minimality against AnalyticNumberTheoryPartI 2.1c on main, the title and description against the head, the gate (OK, rerun), direct elaboration (exit 0, five sorry warnings only), depcheck (244 roadmaps, 2229 edges, 0 problems), overlaps (none). One P3 finding: the description's summary says the core of every admissible list is identified with F_A, while README 2.2 does so only for the primitive reduced period of a narrow class (witness [6], discriminant 32; [4,4]). The seeded sample falls in no changed passage. Conditional on the four declared AutomorphicSpectralTheory 4.17a gaps. No pull-request file changed.",
+  "text": "cd6849a51b9be152",
+  "carried": {
+   "from": "3d95b6c13458626e31aa6efb4abee71e2ba4a3ec",
+   "head": "f577399bdbc07164927c87b239c4f618e985f416",
+   "findings": 1,
+   "lines": 8,
+   "folders": [
+    "FuchsianOrbifoldsPartII"
+   ],
+   "outside": true
+  }
+ }
+}
