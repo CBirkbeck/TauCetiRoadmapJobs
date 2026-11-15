@@ -1,0 +1,23 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-MixedHodgeModulesAndIrregularHodgeTheory~4",
+  "head": "f23e693a2e03c004aaaa0557fc71fe861433a9db",
+  "pr": 2279,
+  "folder": "MixedHodgeModulesAndIrregularHodgeTheory",
+  "date": "2026-11-15",
+  "findings": 0,
+  "blocking": 0,
+  "notes": "incremental re-review of 71 changed lines since 248fdc1: all 16 README hunks read (thirteen headings of Layers 6, 8, 9 turned into run-in bold titles with numbers kept, eight headings renamed, eight introductory sentences added); the eight consumer lists recomputed from the Needs lines and found equal; adversarial table of 9 rows with computed values; 7 source locators checked in the sampled sections 6.3, 8.1, 9.3 (KS, FSY); sibling citations of the demoted numbers resolve; pull request title, summary block and description checked against the head, 0 contradictions; gate passes (all scanners 0), depcheck 0 problems, Suggested.lean elaborates with sorry as the only warning; conditional on the declared gaps; deferred finding D01 stands.",
+  "deferred": [
+   {
+    "id": "D01",
+    "severity": "P2",
+    "title": "The declared gaps and the README's supplier contracts disagree",
+    "where": "board plan.json `gaps` list must declare two README gaps and narrow one",
+    "raised": "PRREVIEW-MixedHodgeModulesAndIrregularHodgeTheory~1"
+   }
+  ],
+  "text": "18369e2a34ff3bec"
+ }
+}
