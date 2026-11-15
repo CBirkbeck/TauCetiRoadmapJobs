@@ -348,3 +348,105 @@ status = "certified"
 accessed = "2026-11-15"
 version_note = "arXiv v2"
 cited_for = ["§7.3"]
+
+[[source]]
+id = "walpuski2023"
+locator_scheme = "section"
+locator = "§5.13.6, Theorem 5.83, p. 120; §5.14.1, Theorem 5.84 and Remark 5.87, p. 122; §5.14.3, Theorem 5.94, pp. 126–127; §5.17, Theorem 5.96 and proof, pp. 132–134"
+url = "https://walpuski.com/Teaching/WS2324/DifferentialGeometry3/GaugeTheoryS.pdf"
+fetched_from = "https://walpuski.com/Teaching/WS2324/DifferentialGeometry3/GaugeTheoryS.pdf"
+fetched_at = "2026-11-15T05:15:56Z"
+sha256 = "087923e2c3c48f5a544401c1afde63049eb9efc56d67fb919a2b66cf40566ee5"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-15"
+cited_for = ["§§5.2–5.3"]
+authors = "Thomas Walpuski"
+title = "Differential Geometry III: Gauge Theory"
+year = 2023
+
+[[source]]
+id = "busejouanolou"
+authors = "Laurent Busé; Jean-Pierre Jouanolou"
+title = "A computational approach to the discriminant of homogeneous polynomials"
+year = 2012
+arxiv = "1210.4697v1"
+locator_scheme = "section"
+locator = "§2.2, Propositions 2.3–2.4, pp. 5–6"
+url = "https://arxiv.org/abs/1210.4697v1"
+fetched_from = "https://arxiv.org/pdf/1210.4697v1"
+fetched_at = "2026-11-15T05:15:59Z"
+sha256 = "947ab7314cf672b75a49fc53de32125ab3adf22ae55fa5d15847d643d84a6d0c"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-15"
+version_note = "arXiv v1"
+cited_for = ["§6.1"]
+
+[[source]]
+id = "hitchin1983"
+locator_scheme = "section"
+locator = "§1, Theorem (1.1), p. 167; §2, (2.4), p. 169"
+url = "https://www.numdam.org/article/SB_1982-1983__25__167_0.pdf"
+fetched_from = "https://www.numdam.org/article/SB_1982-1983__25__167_0.pdf"
+fetched_at = "2026-11-15T05:17:05Z"
+sha256 = "2ea5f17b8469fffbb4ffd3ec9bbbae2caebe88fdd6acf1082d269efecdec7811"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-15"
+cited_for = ["§§5.2–5.3"]
+authors = "Nigel J. Hitchin"
+title = "The Yang–Mills equations and the topology of 4-manifolds"
+year = 1983
+
+[[source]]
+id = "koschorke"
+authors = "Ulrich Koschorke"
+title = "Link Homotopy in S^n x R^(m-n) and Higher Order mu-invariants"
+year = 2006
+venue = "Journal of Knot Theory and its Ramifications, Vol. 13, No. 7 (2004), 917-938"
+arxiv = "math/0606034v1"
+locator_scheme = "section"
+locator = "§1, Notations and Conventions, p. 3; §2, Pinching and Hopf homomorphisms"
+url = "https://arxiv.org/abs/math/0606034v1"
+fetched_from = "https://arxiv.org/pdf/math/0606034v1"
+fetched_at = "2026-11-15T05:17:36Z"
+sha256 = "2ee339a441d2ccf849639938085c6aadc0c2542571a7c1ccef60809b9d47ca7a"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-15"
+version_note = "arXiv:math/0606034v1; locators refer to the preprint."
+cited_for = ["§2.3"]
+
+[[source]]
+id = "garza2021"
+locator_scheme = "section"
+locator = "§38, Blowups and Blowdowns"
+url = "https://dzackgarza.com/rawnotes/Class_Notes/2021/Spring/FourManifolds/FourManifolds.html"
+fetched_from = "https://dzackgarza.com/rawnotes/Class_Notes/2021/Spring/FourManifolds/FourManifolds.html"
+fetched_at = "2026-11-15T05:18:22Z"
+sha256 = "d51992ece6b4994b288dcb7aff01d114b5297e04170b12b20a94cb6470fd6285"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-15"
+cited_for = ["§1.2"]
+authors = "Zack Garza"
+title = "4-Manifolds, Spring 2021 course notes"
+year = 2021
+
+[[source]]
+id = "huybrechtscubic"
+locator_scheme = "section"
+locator = "Author manuscript, Chapter 1, §2.3, p. 32; Theorem 2.2, pp. 30–31; Corollary 2.7, pp. 33–34"
+url = "https://www.math.uni-bonn.de/people/huybrech/Notes.pdf"
+fetched_from = "https://www.math.uni-bonn.de/people/huybrech/Notes.pdf"
+fetched_at = "2026-11-15T05:17:15Z"
+sha256 = "c141f797dd289a41e65712ed0fa5d4122ad7ce74bc5f39d99c59c2ecae7a1d44"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-15"
+cited_for = ["§6.1"]
+authors = "Daniel Huybrechts"
+title = "The geometry of cubic hypersurfaces"
+year = 2023
+version_note = "Locators refer to the author manuscript, whose page numbers differ from the published book."

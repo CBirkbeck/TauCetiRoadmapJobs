@@ -1,0 +1,30 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-FourManifolds~14",
+  "head": "cf9b2be5e703b8a82eb2e57eb840977b5e0a3fb3",
+  "pr": 936,
+  "folder": "FourManifolds",
+  "date": "2026-11-15",
+  "findings": 5,
+  "blocking": 2,
+  "notes": "Full review: all 15 seeded targets assessed; 111 adversarial rows; all 20 previous findings accounted for, D01/D02 excluded. Fourteen cached sources read; 31 additional works unavailable and seven settled uncertified. Worker gate passed; independent depcheck reports 244 roadmaps, 2210 edges, 0 problems. Direct Lean elaboration passes with seven sorry warnings; all 13 actual declaration signatures inspected; seven one-tactic padding probes do not close. Main/open ownership, pinned APIs, PR prose and source independence checked.",
+  "deferred": [
+   {
+    "id": "D01",
+    "severity": "P1",
+    "title": "The missing TOP prerequisites are not declared supplier contracts",
+    "where": "GeometricTopology Part II and packages/FourManifolds/design/plan.json",
+    "raised": "PRREVIEW-FourManifolds~13"
+   },
+   {
+    "id": "D02",
+    "severity": "P2",
+    "title": "Removing a supplier name did not transfer its existing constructions",
+    "where": "HomotopySpheres and an eligible earlier owner",
+    "raised": "PRREVIEW-FourManifolds~13"
+   }
+  ],
+  "text": "86c86a4f9e023098"
+ }
+}
